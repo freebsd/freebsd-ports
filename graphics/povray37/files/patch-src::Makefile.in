@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Thu Aug  8 09:51:00 2002
-+++ src/Makefile.in	Wed Sep  4 14:03:58 2002
-@@ -89,10 +89,10 @@
+--- src/Makefile.in.orig	Tue Oct 22 09:54:20 2002
++++ src/Makefile.in	Sun Dec  1 22:52:03 2002
+@@ -89,11 +89,13 @@
  VERSION = @VERSION@
  bin_PROGRAMS = povray
  povray_SOURCES = atmosph.cpp bbox.cpp bcyl.cpp benchmark.cpp bezier.cpp blob.cpp boxes.cpp bsphere.cpp camera.cpp chi2.cpp colour.cpp colutils.cpp cones.cpp csg.cpp discs.cpp express.cpp file_pov.cpp fncode.cpp fnintern.cpp fnpovfpu.cpp fnsyntax.cpp fpmetric.cpp fractal.cpp function.cpp gif.cpp gifdecod.cpp hcmplx.cpp hfield.cpp histogra.cpp iff.cpp image.cpp interior.cpp isosurf.cpp jpeg_pov.cpp lathe.cpp lbuffer.cpp lightgrp.cpp lighting.cpp matrices.cpp media.cpp mesh.cpp normal.cpp objects.cpp octree.cpp optin.cpp optout.cpp parse.cpp parsestr.cpp parstxtr.cpp pattern.cpp pgm.cpp photons.cpp pigment.cpp planes.cpp png_pov.cpp point.cpp poly.cpp polygon.cpp polysolv.cpp pov_mem.cpp povms.cpp povmscpp.cpp povmsend.cpp povmsrec.cpp povray.cpp pov_util.cpp ppm.cpp prism.cpp quadrics.cpp quatern.cpp rad_data.cpp radiosit.cpp ray.cpp render.cpp renderio.cpp sor.cpp spheres.cpp sphsweep.cpp splines.cpp statspov.cpp super.cpp targa.cpp texture.cpp tiff_pov.cpp tokenize.cpp torus.cpp triangle.cpp truetype.cpp txttest.cpp userdisp.cpp userio.cpp vbuffer.cpp vlbuffer.cpp warps.cpp unix.cpp povxlib.c config.h jversion.h optout.h povxlib.h atmosph.h bbox.h bcyl.h bezier.h blob.h boxes.h bsphere.h camera.h chi2.h colour.h colutils.h cones.h csg.h discs.h express.h file_pov.h fncode.h fnintern.h fnpovfpu.h fnsyntax.h fpmetric.h fractal.h frame.h function.h gifdecod.h gif.h hcmplx.h hfield.h histogra.h iff.h image.h interior.h isosurf.h jpeg_pov.h lathe.h lbuffer.h lightgrp.h lighting.h matrices.h media.h mesh.h normal.h objects.h octree.h optin.h parse.h parsestr.h parstxtr.h pattern.h pgm.h photons.h pigment.h planes.h png_pov.h point.h polygon.h poly.h polysolv.h pov_err.h pov_mem.h povmscpp.h povmsend.h povmsgid.h povms.h povmsrec.h povproto.h povray.h pov_util.h ppm.h prism.h quadrics.h quatern.h radiosit.h ray.h render.h renderio.h sor.h spheres.h sphsweep.h splines.h statspov.h super.h targa.h texture.h tiff_pov.h tokenize.h torus.h triangle.h truetype.h txttest.h userdisp.h userio.h vbuffer.h vector.h vlbuffer.h warps.h  conf.h
@@ -8,12 +8,16 @@
 +DEFS = -DPREFIX=\"$(prefix)\" -DPOV_LIB_DIR=\"@datadir@/povray-3.5\" -DCOMPILER_VER=\".FreeBSD.$(CC)\" -DSYSCONFDIR=\"$(sysconfdir)\" -DUSE_IO_RESTRICTIONS=\"$(ac_use_io_restrictions)\"
  NOMULTICHAR = `if [ "X$(CC)" = "Xgcc" ]; then echo "-Wno-multichar"; fi `
  LDADD = @X_LIBS@
--CXXFLAGS = $(NOMULTICHAR) -O3
-+CXXFLAGS = $(NOMULTICHAR)
+-CFLAGS = -O3 -mcpu=i586 -march=i586 -finline-functions -ffast-math -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -foptimize-sibling-calls -minline-all-stringops -Wno-multichar
+-CXXFLAGS = $(NOMULTICHAR) -O3 -mcpu=i586 -march=i586 -finline-functions -ffast-math -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -foptimize-sibling-calls -minline-all-stringops -Wno-multichar
++#CFLAGS = -O3 -mcpu=i586 -march=i586 -finline-functions -ffast-math -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -foptimize-sibling-calls -minline-all-stringops -Wno-multichar
++#CXXFLAGS = $(NOMULTICHAR) -O3 -mcpu=i586 -march=i586 -finline-functions -ffast-math -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -foptimize-sibling-calls -minline-all-stringops -Wno-multichar
++CFLAGS = @CFLAGS@
++CXXFLAGS = @CXXFLAGS@
  LDFLAGS = @X_CFLAGS@
  EXTRA_DIST = xpovicon.xbm xpovmask.xbm xpovicon.xpm 
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -101,7 +101,7 @@
+@@ -102,7 +104,7 @@
  PROGRAMS =  $(bin_PROGRAMS)
  
  CPPFLAGS = @CPPFLAGS@
@@ -22,20 +26,13 @@
  X_CFLAGS = @X_CFLAGS@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
-@@ -122,12 +122,13 @@
+@@ -123,7 +125,8 @@
  vlbuffer.o warps.o unix.o povxlib.o
  povray_LDADD = $(LDADD)
  povray_DEPENDENCIES = 
 -povray_LDFLAGS = 
--CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 +povray_LDFLAGS = -L$(libdir)
-+INCLUDES = -I$(includedir)
-+CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) $(X_CFLAGS)
++INCLUDES = -I$(includedir) $(X_CFLAGS)
+ CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
  CXXLD = $(CXX)
  CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@
- CFLAGS = @CFLAGS@
--COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(X_CFLAGS)
- CCLD = $(CC)
- LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
- DIST_COMMON =  ./stamp-h.in Makefile.am Makefile.in conf.h.in
