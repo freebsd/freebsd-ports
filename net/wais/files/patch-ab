@@ -1,5 +1,5 @@
-*** Makefile.old	Fri Mar 10 08:16:23 1995
---- Makefile	Fri Mar 10 08:23:05 1995
+*** Makefile.ORIG	Tue Mar 15 20:30:00 1994
+--- Makefile	Sat Mar 18 23:28:59 1995
 ***************
 *** 15,21 ****
   # 
@@ -17,3 +17,56 @@
   # Revision 1.4  92/02/13  12:27:53  jonathan
   # Removed references to seeker.
   # 
+***************
+*** 118,124 ****
+  # Use this version of CFLAGS for Linux with gcc
+  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
+  
+! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
+  
+  # Solaris should use
+  #LIB = -ltcpip -lsocket -lnsl
+--- 118,124 ----
+  # Use this version of CFLAGS for Linux with gcc
+  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
+  
+! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -D__bsdi__
+  
+  # Solaris should use
+  #LIB = -ltcpip -lsocket -lnsl
+***************
+*** 133,139 ****
+  #Solaris machines don't use -k
+  MFLAGS = -k
+  
+! MAKE = make $(MFLAGS) 
+  
+  #default: config.h lib ir ui bin doc x tags
+  default: config.h lib ir ui bin x check
+--- 133,141 ----
+  #Solaris machines don't use -k
+  MFLAGS = -k
+  
+! MAKE = gmake $(MFLAGS) 
+! 
+! all: default
+  
+  #default: config.h lib ir ui bin doc x tags
+  default: config.h lib ir ui bin x check
+***************
+*** 169,175 ****
+  # you may have to edit the CFLAGS in the Makefile yourself.
+  
+  x::
+! 	cd x; xmkmf; make depend; make
+  #	cd x; (env TOP=$(TOP) CC=$(CC) CFLAGS="$(CFLAGS)" MAKE="$(MAKE)" ./makex.sh)
+  
+  bin::
+--- 171,177 ----
+  # you may have to edit the CFLAGS in the Makefile yourself.
+  
+  x::
+! 	cd x; xmkmf; ${MAKE} depend; ${MAKE}
+  #	cd x; (env TOP=$(TOP) CC=$(CC) CFLAGS="$(CFLAGS)" MAKE="$(MAKE)" ./makex.sh)
+  
+  bin::
