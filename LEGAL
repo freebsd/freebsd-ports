@@ -344,3 +344,5 @@ zh-moettf/*		ports/chinese/moettf	Contact Taiwan Ministry of
 zh-ntuttf/*		ports/chinese/ntuttf	No commercial use
 ztelnet-*		ports/net/ztelnet	zmodem code has 
 						restrictive copyright
+urchin-*		ports/www/urchin5	Commercial software, also
+						comes bundled with Apache-SSL
