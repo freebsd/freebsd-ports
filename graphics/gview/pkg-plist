@@ -6,5 +6,4 @@ share/doc/gview/ChangeLog
 share/doc/gview/NEWS
 share/doc/gview/README
 share/doc/gview/TODO
-share/locale/ko/LC_MESSAGES/gview.mo
 @dirrm share/doc/gview
