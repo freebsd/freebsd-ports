@@ -39,6 +39,7 @@ include/yaz/yconfig.h
 include/yaz/z-accdes1.h
 include/yaz/z-accform1.h
 include/yaz/z-acckrb1.h
+include/yaz/z-charneg.h
 include/yaz/z-core.h
 include/yaz/z-date.h
 include/yaz/z-diag1.h
@@ -123,6 +124,7 @@ share/doc/yaz/zoom.options.html
 share/doc/yaz/zoom.query.html
 share/doc/yaz/zoom.records.html
 share/doc/yaz/zoom.resultsets.html
+share/doc/yaz/zoom.scan.html
 share/yaz/ill/ill.tcl
 share/yaz/ill/ill9702.asn
 share/yaz/ill/item-req.asn
@@ -160,6 +162,7 @@ share/yaz/tab/var1.var
 share/yaz/tab/wais-b.est
 share/yaz/tab/wais-variant.est
 share/yaz/tab/wais.abs
+share/yaz/z39.50/charneg-3.asn
 share/yaz/z39.50/datetime.asn
 share/yaz/z39.50/esadmin.asn
 share/yaz/z39.50/esupdate.asn
