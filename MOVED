@@ -1177,3 +1177,4 @@ lang/python15||2004-06-21|removed deprecated port
 lang/python20||2004-06-21|removed deprecated port
 converters/xunicode||2004-06-21|no longer maintained
 www/mozilla-devel-gtk1||2004-06-28|removed obsolete port
+security/drwebd|security/drweb|2004-06-29|functionality already in security/drweb
