@@ -48,4 +48,8 @@ MAKE_ARGS+=	$v="${$v}"
 post-extract:
 	bzip2 -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
 
+.ifdef GD_FONTS
+SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
+.endif
+
 .include <bsd.port.mk>
