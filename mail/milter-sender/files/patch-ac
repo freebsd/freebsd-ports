@@ -1,5 +1,5 @@
---- milter-sender.sh.in.bak	Sat Nov 15 11:37:20 2003
-+++ milter-sender.sh.in	Mon Nov 17 11:54:53 2003
+--- milter-sender.sh.in.orig	Fri Jan 23 14:38:00 2004
++++ milter-sender.sh.in	Fri Jan 30 15:25:06 2004
 @@ -68,34 +68,24 @@
  start()
  {
@@ -39,13 +39,16 @@
  
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
-@@ -109,12 +99,12 @@
- 		sleep 2
- 		pid=`getpid "$PROGRAM"`
- 		if [ X"$pid" != X ]; then
--			printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
-+			echo " milter-sender:FAILED"
- 			return
+@@ -112,7 +102,7 @@
+ 			kill -KILL $pid
+ 			
+ 			if [ X"$pid" != X ]; then					
+-				printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
++				echo " milter-sender:FAILED"
+ 				return
+ 			fi
+ 			
+@@ -131,7 +121,7 @@
  		fi
  	fi
  
@@ -54,7 +57,7 @@
  }
  
  case "$1" in
-@@ -131,9 +121,9 @@
+@@ -148,9 +138,9 @@
  status)
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
