@@ -397,6 +397,7 @@
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Term-Screen
     SUBDIR += p5-Term-Size
+    SUBDIR += p5-Test-Simple
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Tie-IxHash
