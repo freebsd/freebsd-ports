@@ -10,4 +10,3 @@ share/xml/dtd/xhtml/xhtml1-transitional.dtd
 share/xml/dtd/xhtml/xhtml1.dcl
 @dirrm share/xml/dtd/xhtml
 @unexec rmdir %D/share/xml/dtd 2>/dev/null || true
-@unexec rmdir %D/share/xml 2>/dev/null || true

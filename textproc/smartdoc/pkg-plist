@@ -219,7 +219,6 @@ share/xml/smartdoc/catalog
 @unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs 2>/dev/null || true
 @dirrm share/xml/smartdoc
-@unexec rmdir %D/share/xml 2>/dev/null || true
 @dirrm share/examples/smartdoc/pure
 @dirrm share/examples/smartdoc/html4
 @dirrm share/examples/smartdoc
