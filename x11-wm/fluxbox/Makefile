@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	0.1.14
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 .if defined(WITH_REMEMBER)
 PATCH_SITES=    http://www.bugfactory.org/~gav/fluxbox/
 PATCH_DIST_STRIP=   -p1
-PATCHFILES=	remember-0.1.14-4.gz
+PATCHFILES=	remember-0.1.14-7.gz
 .endif
 
 MAINTAINER=	hendrik@scholz.net
