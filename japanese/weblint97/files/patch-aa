@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Mar  8 00:12:00 1997
-+++ Makefile	Mon Jul 21 01:32:02 1997
++++ Makefile	Sun Aug 23 23:57:27 1998
 @@ -5,12 +5,15 @@
  
  SHELL    = /bin/sh
@@ -19,7 +19,11 @@
  EXTLIB   = html-ext.pl
  I18NLIB  = htmli18n.pl
  JCODE    = jcode.pl
-@@ -48,7 +51,7 @@
+@@ -44,11 +47,10 @@
+ 	-cp $(JPDIR)/$(JPROGRAM).1 $(JMANDIR)
+ 	-cp $(EXTLIB) $(LIBDIR)
+ 	-cp $(I18NLIB) $(LIBDIR)
+-	-cp $(JCODE) $(LIBDIR)
  
  euc-jp:
  	patch < $(JPDIR)/euc-jp.patch
