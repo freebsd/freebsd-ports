@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Tue Mar 12 02:54:07 2002
++++ Makefile.in	Thu May  2 01:42:34 2002
+@@ -22,8 +22,9 @@
+   CC = gcc
+ endif
+ 
+-INSTALL_PROGRAM = ${INSTALL} -m 755
+-INSTALL_DATA = ${INSTALL} -m 644
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
++INSTALL_DATA = @INSTALL_DATA@
+ 
+ export
+ 

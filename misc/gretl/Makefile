@@ -7,26 +7,29 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	0.991
+PORTVERSION=	0.994
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	gtkextra:${PORTSDIR}/x11-toolkits/gtkextra \
-		xml:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		xml.5:${PORTSDIR}/textproc/libxml \
+		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gmake
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gmake
 INSTALLS_SHLIB=	yes
 
 MAN1=	gretl.1 gretl-config.1
@@ -36,23 +39,12 @@ MAN1=	gretl.1 gretl-config.1
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 .else
-CONFIGURE_ARGS=	--disable-gnome
+CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
-
-post-patch:
-.for file in gui/gretl.c lib/src/graphing.c
-	@${PERL} -pi -e "s,SIGCLD,SIGCHLD,g" ${WRKSRC}/${file}
-.endfor
-	@${PERL} -pi -e "s,-ldl,,g" ${WRKSRC}/lib/Makefile.in
-.for file in gui/Makefile.in plugin/Makefile.in
-	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/${file}
-.endfor
+	@${PERL} -pi -e 's|`glib-config|`\$$GLIB_CONFIG|g ; \
+		 s|/share/gretl/|/lib/gretl/|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/gui/gretl.c
 
 .include <bsd.port.post.mk>
