@@ -1,11 +1,11 @@
---- setup.py.orig	Thu Apr 18 21:49:03 2002
-+++ setup.py	Wed Apr 24 11:15:18 2002
-@@ -216,7 +216,7 @@
+--- setup.py.orig	Wed Sep 25 20:00:05 2002
++++ setup.py	Mon Sep 30 11:13:52 2002
+@@ -311,7 +311,7 @@
  if os.name == 'posix':
      setup_args['scripts'] = [
          'bin/manhole', 'bin/mktap', 'bin/twistd',
 -        'bin/im', 'bin/t-im', 'bin/tap2deb',
 +        'bin/im', 'bin/t-im',
-         'bin/coil',
+         'bin/coil', 'bin/tapconvert',
      ]
  else:
