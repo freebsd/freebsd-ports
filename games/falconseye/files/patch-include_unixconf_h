@@ -1,0 +1,60 @@
+--- include/unixconf.h.orig	Sun Jun 24 18:57:16 2001
++++ include/unixconf.h	Wed Jul  4 11:23:29 2001
+@@ -19,7 +19,12 @@
+  */
+ 
+ /* define exactly one of the following four choices */
+-/* #define BSD 1 */	/* define for 4.n BSD  */
++/* procure the real define BSD */
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
++/* #define BSD	1	/* define for 4.n BSD  */
++
+ 			/* also for relatives like SunOS 4.x, DG/UX, and */
+ 			/* older versions of Linux */
+ /* #define ULTRIX */	/* define for Ultrix v3.0 or higher (but not lower) */
+@@ -32,7 +37,7 @@
+ 
+ 
+ /* define any of the following that are appropriate */
+-#define SVR4		/* use in addition to SYSV for System V Release 4 */
++/* #define SVR4		/* use in addition to SYSV for System V Release 4 */
+ 			/* including Solaris 2+ */
+ #define NETWORK		/* if running on a networked system */
+ 			/* e.g. Suns sharing a playground through NFS */
+@@ -47,6 +52,7 @@
+ 			 * job control (note that AIX is SYSV otherwise)
+ 			 * Also define this for AIX 3.2 */
+ 
++#define TERMLIB
+ #define TERMINFO	/* uses terminfo rather than termcap */
+ 			/* Should be defined for most SYSV, SVR4 (including
+ 			 * Solaris 2+), HPUX, and Linux systems.  In
+@@ -132,7 +138,7 @@
+  * "extra output" method is used, but not all systems provide access to
+  * a fine-grained timer.
+  */
+-/* #define TIMED_DELAY */	/* usleep() */
++#define TIMED_DELAY 	/* usleep() */
+ #endif
+ 
+ /*
+@@ -143,7 +149,7 @@
+  * A stat system call is done on the mailbox every MAILCKFREQ moves.
+  */
+ 
+-#define MAIL			/* Deliver mail during the game */
++/* #define MAIL			/* Deliver mail during the game */
+ 
+ /* The Andrew Message System does mail a little differently from normal
+  * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+@@ -304,7 +310,7 @@
+ #endif
+ 
+ #ifdef TIMED_DELAY
+-# if defined(SUNOS4) || defined(LINUX)
++# if defined(SUNOS4) || defined(LINUX) || (defined(BSD) && BSD >= 199103)
+ # define msleep(k) usleep((k)*1000)
+ # endif
+ # ifdef ULTRIX

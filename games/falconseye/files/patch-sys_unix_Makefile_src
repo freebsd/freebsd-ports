@@ -1,0 +1,96 @@
+--- sys/unix/Makefile.src.orig	Sun Jun 24 18:57:24 2001
++++ sys/unix/Makefile.src	Fri Aug 24 02:20:56 2001
+@@ -1,6 +1,7 @@
+ #	NetHack Makefile.
+ #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
+ 
++.include "${NETHACKCONFIG}"
+ # newer makes predefine $(MAKE) to 'make' and do smarter processing of
+ # recursive make calls if $(MAKE) is used
+ # these makes allow $(MAKE) to be overridden by the environment if someone
+@@ -117,8 +118,8 @@
+ 
+ # flags for Linux
+ #   compile normally
+-CFLAGS = -O2 -fomit-frame-pointer -I../include -I/usr/X11/include
+-LFLAGS = -L/usr/X11/lib
++CFLAGS += -I../include -I/usr/X11/include -DHACKDIR=\"${NHDIR}\" -DHAVE_SYS_PARAM_H
++LFLAGS = -L/usr/X11R6/lib
+ #   OR compile backwards compatible a.out format
+ # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include -I/usr/X11/include
+ # LFLAGS = -b i486-linuxaout -L/usr/X11/lib
+@@ -146,7 +147,7 @@
+ # directories. You should have sdl-config in your path; it gives the 
+ # necessary compile and link flags. 
+ #
+-JTPINC=$(shell sdl-config --cflags)
++JTPINC=`sdl11-config --cflags`
+ 
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+@@ -218,8 +219,8 @@
+ 
+ #
+ #
+-WINSRC = $(WINTTYSRC) $(WINJTPSRC)
+-WINOBJ = $(WINTTYOBJ) $(WINJTPOBJ)
++WINSRC = $(WINTTYSRC) $(WINJTPSRC) $(WINX11SRC)
++WINOBJ = $(WINTTYOBJ) $(WINJTPOBJ) $(WINX11OBJ)
+ 
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -232,19 +233,19 @@
+ #
+ # libraries for tty ports
+ # WINTTYLIB = -ltermcap
+-# WINTTYLIB = -lcurses
++WINTTYLIB = -lcurses
+ # WINTTYLIB = -lcurses16
+-WINTTYLIB = -lncurses
++# WINTTYLIB = -lncurses
+ # WINTTYLIB = -ltermlib
+ #
+ 
+ # SDL libraries for Falcon's Eye
+-WINJTPLIB = $(shell sdl-config --libs)
++WINJTPLIB = `sdl11-config --libs`
+ 
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+-WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
++WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11 -lXpm
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+@@ -264,7 +265,7 @@
+ # libraries for BeOS 
+ WINBELIB = -lbe
+ 
+-WINLIB = $(WINTTYLIB) $(WINJTPLIB)
++WINLIB = $(WINTTYLIB) $(WINJTPLIB) $(WINX11LIB)
+ 
+ # any other strange libraries your system needs (for Sysunix only -- the more
+ # specialized targets should already be right)
+@@ -294,7 +295,7 @@
+ LIBS =
+ 
+ # make NetHack
+-GAME     = nethack
++GAME     = falconseye
+ # GAME     = nethack.prg
+ 
+ # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
+@@ -467,10 +468,10 @@
+ 
+ # Qt windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
++	moc2 ../include/qt_kde0.h > qt_kde0.moc
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
++	moc2 ../include/qt_win.h > qt_win.moc
+ 
+ $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
+ 		../include/objclass.h ../include/monsym.h \

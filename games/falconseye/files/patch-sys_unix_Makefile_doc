@@ -1,0 +1,24 @@
+--- sys/unix/Makefile.doc.orig	Sun Jun 24 18:57:24 2001
++++ sys/unix/Makefile.doc	Wed Jul  4 23:40:29 2001
+@@ -34,15 +34,15 @@ Guidebook.dvi:	Guidebook.tex
+ 
+ 
+ GAME	= nethack
+-MANDIR	= /usr/man/man6
++MANDIR	= ${PREFIX}/man/man6
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+-GAMEMANCREATE = cp nethack.6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = ${INSTALL_MAN} $(GAME).6
++LEVMANCREATE = ${INSTALL_MAN} lev_comp.6
++DGNMANCREATE = ${INSTALL_MAN} dgn_comp.6
++RCVRMANCREATE = ${INSTALL_MAN} recover.6
++DLBMANCREATE = ${INSTALL_MAN} dlb.6
+ # manual installation for most SYSV-style systems
+ # GAMEMANCREATE = nroff -man nethack.6 >
+ # LEVMANCREATE = nroff -man lev_comp.6 >

@@ -67,6 +67,7 @@
     SUBDIR += dungeon
     SUBDIR += eboard
     SUBDIR += empire
+    SUBDIR += falconseye
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flying

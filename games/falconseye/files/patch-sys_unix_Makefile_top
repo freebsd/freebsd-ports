@@ -1,0 +1,81 @@
+--- sys/unix/Makefile.top.orig	Sun Jun 24 18:57:24 2001
++++ sys/unix/Makefile.top	Fri Aug 24 03:27:56 2001
+@@ -15,18 +15,17 @@
+ 
+ # make NetHack
+ #PREFIX	 = /usr
+-PREFIX = $(shell pwd)/compiled
+-GAME     = nethack
++GAME     = falconseye
+ # GAME     = nethack.prg
+-GAMEUID  = games
+-GAMEGRP  = bin
++GAMEUID  = root
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
+ 
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -36,12 +35,13 @@
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
++REALGAMEDIR  = $(PREFIX)/share/$(GAME)dir
++GAMEDIR  = $(DESTDIR)${REALGAMEDIR}
+ VARDIR  = $(GAMEDIR)
+-SHELLDIR = $(PREFIX)/games
++SHELLDIR = ${DESTDIR}$(PREFIX)/bin
+ 
+ # per discussion in Install.X11 and Install.Qt
+-VARDATND = 
++# VARDATND = 
+ # VARDATND = x11tiles pet_mark.xbm
+ # VARDATND = x11tiles pet_mark.xbm rip.xpm
+ # for Atari/Gem
+@@ -67,8 +67,8 @@
+ # will only work if setuid (or setgid) behavior is not desired or required.
+ # CHOWN = chown
+ # CHGRP = chgrp
+-CHOWN = true
+-CHGRP = true
++CHOWN = chown
++CHGRP = chgrp
+ 
+ # ----------------------------------------------
+ # Extra configuration for NetHack - Falcon's Eye
+@@ -119,12 +119,15 @@
+ $(GAME):
+ 	( cd src ; $(MAKE) )
+ 
+-all:	$(GAME) Guidebook $(VARDAT) dungeon spec_levs check-dlb
++all:	$(GAME) Guidebook recover $(VARDAT) dungeon spec_levs check-dlb
+ 	@echo "Done."
+ 
+ Guidebook:
+ 	( cd doc ; $(MAKE) Guidebook )
+ 
++recover:
++	( cd util ; $(MAKE) recover )
++
+ manpages:
+ 	( cd doc ; $(MAKE) manpages )
+ 
+@@ -201,7 +204,7 @@
+ 	$(MAKE) dofiles-jtp
+ 	cp src/$(GAME) $(GAMEDIR)
+ 	-rm -f $(SHELLDIR)/$(GAME)
+-	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
++	sed -e 's;/usr/games/lib/nethackdir;$(REALGAMEDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+ 		> $(SHELLDIR)/$(GAME)
