@@ -1,5 +1,5 @@
 # ex:ts=8
-# Ports collection makefile for:  foo
+# Ports collection makefile for:  super
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -7,15 +7,12 @@
 #
 
 PORTNAME=	super
-PORTVERSION=	3.14.0
+PORTVERSION=	3.20.0
 CATEGORIES=	security sysutils
-MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/  \
-		ftp://ftp.astro.caltech.edu/users/will/  \
-		ftp://ftp.infodrom.north.de/pub/unix/utilities/super/
+MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/
+EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
-
-FORBIDDEN=	"Local root exploit. http://online.securityfocus.com/archive/1/285241"
 
 .include <bsd.port.pre.mk>
 
@@ -29,12 +26,11 @@ MAN5=		super.5
 
 post-install:
 	@strip ${PREFIX}/bin/super ${PREFIX}/bin/setuid
-	@${MKDIR} ${PREFIX}/share/examples
-	@${INSTALL_DATA} ${FILESDIR}/sample.tab ${PREFIX}/share/examples
-	@${INSTALL_DATA} ${FILESDIR}/sample.cdmount ${PREFIX}/share/examples
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/super
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/super
+	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${FILESDIR}/sample.tab ${FILESDIR}/sample.cdmount \
+		${EXAMPLESDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
