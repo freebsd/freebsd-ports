@@ -1,16 +1,16 @@
 # New ports collection makefile for:	suck
-# Version required:	3.7.0
+# Version required:	3.8.0
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id: Makefile,v 1.6 1997/10/13 09:14:53 tg Exp $
+# $Id: Makefile,v 1.7 1997/10/29 23:09:44 jseger Exp $
 #
 
-DISTNAME=	suck-3.7.0
+DISTNAME=	suck-3.8.0
 CATEGORIES=	news
 MASTER_SITES=	http://www.pixi.com/~boby/
 
-MAINTAINER=	jseger@freebsd.org
+MAINTAINER=	jseger@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
