@@ -650,11 +650,25 @@ MASTER_SITE_REDHAT_LINUX+= \
 	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.rutgers.edu/pub/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.uci.edu/mirrors/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.cso.uiuc.edu/mirrors/ftp/linux.aiss.uiuc.edu/pub/linux/redhat/linux/%SUBDIR%/ \
+	ftp://mirror.cs.wisc.edu/pub/mirrors/linux/redhat/%SUBDIR%/ \
 	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
+     ftp://ftp.crc.ca/pub/systems/linux/redhat/ftp.redhat.com/linux/%SUBDIR%/ \
+     ftp://ftp.univie.ac.at/systems/linux/ftp.redhat.com/redhat/linux/%SUBDIR%/\
+	ftp://ftp.redhat.de/pub/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.lip6.fr/pub/linux/distributions/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.inet.it/pub/Linux/redhat/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.icm.edu.pl/vol/rzm9/linux-redhat/linux/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
+     ftp://ftp.cs.nott.ac.uk/Mirrors/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.carrier.kiev.ua/pub/Linux/RedHat/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.kobe-u.ac.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/\
 	ftp://ftp.riken.go.jp/pub/Linux/redhat/releases/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.cse.cuhk.edu.hk/pub2/redhat/%SUBDIR%/ \
+	ftp://ftp.monash.edu.au/pub/linux/redhat/linux/%SUBDIR%/ \
 	ftp://ftp2.compaq.com/pub/linux/RedHat/7.2-alpha/updates/rpms/alpha/ \
 	ftp://alpha.crl.dec.com/pub/linux/redhat/7.2-alpha/updates/rpms/alpha/
 
