@@ -37,6 +37,7 @@ lib/tclhttpd%%PORTVERSION%%/status.tcl
 lib/tclhttpd%%PORTVERSION%%/stdin.tcl
 lib/tclhttpd%%PORTVERSION%%/telnet.tcl
 lib/tclhttpd%%PORTVERSION%%/thread.tcl
+lib/tclhttpd%%PORTVERSION%%/upload.tcl
 lib/tclhttpd%%PORTVERSION%%/url.tcl
 lib/tclhttpd%%PORTVERSION%%/utils.tcl
 lib/tclhttpd%%PORTVERSION%%/version.tcl
@@ -62,12 +63,15 @@ share/tclhttpd%%PORTVERSION%%/access/bydir/user.cgi
 share/tclhttpd%%PORTVERSION%%/access/bydir/.htaccess
 share/tclhttpd%%PORTVERSION%%/access/bytcl/index.tml
 share/tclhttpd%%PORTVERSION%%/access/bytcl/.tclaccess
+share/tclhttpd%%PORTVERSION%%/access/multiple/index.tml
+share/tclhttpd%%PORTVERSION%%/access/multiple/.htaccess
 share/tclhttpd%%PORTVERSION%%/access/noawe/.htaccess
 share/tclhttpd%%PORTVERSION%%/access/null/index.tml
 share/tclhttpd%%PORTVERSION%%/access/null/.tclaccess
 share/tclhttpd%%PORTVERSION%%/access/session/page.auth
 share/tclhttpd%%PORTVERSION%%/access/session/.tclaccess
 share/tclhttpd%%PORTVERSION%%/access/.htaccess
+share/tclhttpd%%PORTVERSION%%/access/htaccess.tml
 share/tclhttpd%%PORTVERSION%%/book/TCLHTTPD-1.gif
 share/tclhttpd%%PORTVERSION%%/book/TCLHTTPD-2.gif
 share/tclhttpd%%PORTVERSION%%/book/TCLHTTPD.css
@@ -200,6 +204,7 @@ share/tclhttpd%%PORTVERSION%%/.tml
 @dirrm share/tclhttpd%%PORTVERSION%%/access/auth
 @dirrm share/tclhttpd%%PORTVERSION%%/access/bydir
 @dirrm share/tclhttpd%%PORTVERSION%%/access/bytcl
+@dirrm share/tclhttpd%%PORTVERSION%%/access/multiple
 @dirrm share/tclhttpd%%PORTVERSION%%/access/noawe
 @dirrm share/tclhttpd%%PORTVERSION%%/access/null
 @dirrm share/tclhttpd%%PORTVERSION%%/access/session
