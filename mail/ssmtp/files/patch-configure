@@ -1,0 +1,11 @@
+--- configure.orig	Fri Sep 27 14:47:52 2002
++++ configure	Mon Apr  7 01:03:46 2003
+@@ -1340,7 +1340,7 @@
+ #define HAVE_SSL 1
+ EOF
+ 
+-	LIBS="$LIBS -lssl"
++	LIBS="$LIBS -lssl -lcrypto"
+ fi
+ enableval=""
+ 
