@@ -45,19 +45,33 @@ buildenv () {
     export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
     export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
 
-    export BATCH=1
-    export HAVE_MOTIF=1
-    export PACKAGE_BUILDING=1
-    export PARALLEL_PACKAGE_BUILD=1
-    export PORTOBJFORMAT=elf
-    export USA_RESIDENT=yes
-    export FTP_PASSIVE_MODE=yes
+    export __MAKE_CONF=${pb}/${arch}/make.conf
 
+    export UNAME_m=${ARCH}
+    export UNAME_n=freebsd.org
+    export UNAME_p=${ARCH}
+    export UNAME_r=${OSREL}-${BRANCH}
+    export UNAME_s=FreeBSD
+    export UNAME_v="FreeBSD ${OSREL}-${BRANCH} #0: $(date)     kris@freebsd.org:/usr/src/sys/magic/kernel/path"
+
+    export BATCH=1
+    export PACKAGE_BUILDING=1
+
+    export USA_RESIDENT=yes
+
+    # Old and mouldy?
+    export PORTOBJFORMAT=elf
+    export PARALLEL_PACKAGE_BUILD=1
+    export HAVE_MOTIF=1
+
+    export FTP_PASSIVE_MODE=yes
     #export FETCH_BEFORE_ARGS=-vvv
 
     # Need to make it fetch a full set say once a week to catch distfiles
     # which change md5 sum but not name
-    export MASTER_SITE_OVERRIDE='ftp://ftp-master.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/'
+    if [ "X${FETCH_ORIGINAL}" = "X" ]; then
+	export MASTER_SITE_OVERRIDE='ftp://ftp-master.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/'
+    fi
     export MASTER_SITE_OVERRIDE="${MASTER_SITE_OVERRIDE} ftp://bento.freebsd.org/pub/FreeBSD/distfiles/"
 
 }
