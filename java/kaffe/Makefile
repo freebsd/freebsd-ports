@@ -17,7 +17,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png
 
-CONFLICTS=	kaffe-1.[!0].* javavmwrapper-2.*
+CONFLICTS=	kaffe-devel-1.* javavmwrapper-2.*
 
 NOT_FOR_ARCHS=	amd64
 
