@@ -23,12 +23,9 @@ include/tvision/tvobjs.h
 include/tvision/util.h
 include/tvision/validate.h
 include/tvision/views.h
-@unexec install-info --delete %D/info/tvision.info %D/info/dir
-info/tvision.info
-@exec install-info %D/info/tvision.info %D/info/dir
 lib/libtvision.a
 lib/libtvision.so
-lib/libtvision.so.0.6
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libtvision.so.0.7
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/tvision
