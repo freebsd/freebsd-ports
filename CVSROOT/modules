@@ -3264,6 +3264,7 @@ libforms	src/lib/libforms
 libfpx		ports/graphics/libfpx
 libfreenet	ports/net/libfreenet
 libftpio	src/lib/libftpio
+libfxp		ports/ftp/libfxp
 libg++		ports/devel/libg++
 libgda		ports/databases/libgda
 libgdgeda	ports/graphics/libgdgeda
