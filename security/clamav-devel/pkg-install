@@ -45,7 +45,7 @@ fi
 
 if [ "$2" = "POST-INSTALL" ]; then
 	echo "===> Updating virus definitions..."
-	$1/bin/freshclam -u $3 --datadir=$4
+	freshclam -u $3 --datadir=$4
 fi
 
 exit 0
