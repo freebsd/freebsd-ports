@@ -199,6 +199,9 @@ do-install:
 	@${LN} -s /var/tmp ${LINUXBASE}/usr/tmp
 
 post-install:
+# Fix unknown uid/gids that come out of the RPMs, to avoid
+# the quotacheck warning about unknown owners.
+	@${CHOWN} root:wheel ${LINUXBASE}/usr/man/man8/setserial.8
 	@${ECHO} ''
 	@fmt ${PKGMESSAGE}
 	@${ECHO} ''
