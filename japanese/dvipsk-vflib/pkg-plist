@@ -120,4 +120,3 @@ share/doc/dvips/dvips.help
 @dirrm share/texmf/tex/latex209/dvips
 @dirrm share/texmf/tex/latex209
 @dirrm share/doc/dvips
-@unexec if [ -f %D/share/texmf/web2c/texmf.cnf.bak ] ; then rm -f %D/share/texmf/web2c/texmf.cnf ; mv %D/share/texmf/web2c/texmf.cnf.bak %D/share/texmf/web2c/texmf.cnf ; fi
