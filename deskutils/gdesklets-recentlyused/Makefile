@@ -13,7 +13,7 @@ MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX= gdesklets-
 DISTNAME=	recently-used-${PORTVERSION}
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolbar for the most recently used items from ~/.recently-used
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
