@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.1 2002-11-06 10:05:56 jkoshy Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.2 2002-11-11 01:13:27 sada Exp $
 %%BINUTILS_TARG%%/bin/addr2line
 %%BINUTILS_TARG%%/bin/ar
 %%BINUTILS_TARG%%/bin/as
@@ -96,6 +96,36 @@ include/bfdlink.h
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x149.xn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x149.xr
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x149.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x155.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x155.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x155.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x155.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x155.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x156.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x156.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x156.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x156.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x156.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x157.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x157.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x157.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x157.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x157.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x167.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x167.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x167.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x167.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x167.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x168.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x168.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x168.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x168.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x168.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x169.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x169.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x169.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x169.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x169.xu
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x311.x
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x311.xbn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x311.xn
