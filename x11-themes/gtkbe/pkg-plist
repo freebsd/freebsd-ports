@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libgtkbe.so
+share/themes/GTKBe/ICON.png
+share/themes/GTKBe/README.html
+share/themes/GTKBe/gtk/gtkrc
+@dirrm share/themes/GTKBe/gtk
+@dirrm share/themes/GTKBe
