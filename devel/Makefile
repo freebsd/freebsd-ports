@@ -317,6 +317,7 @@
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Cache-Cache
+    SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Contract
     SUBDIR += p5-Class-Date
