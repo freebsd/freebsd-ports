@@ -43,7 +43,7 @@ pre-install:
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .endif
 
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > \
+	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO_CMD} $$! > \
 		${WRKDIR}/.Xvfb.pid
 	@${REINPLACE_CMD} -e "s@--compile@--compile --display ${DISPLAYHACK}@" \
 		${WRKSRC}/Makefile

@@ -62,7 +62,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/orcasetup/flashdocs/* ${PREFIX}/lib/flash/flashdocs
 
 post-install:
-	@${ECHO} "Updating /etc/shells"
+	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/flash /etc/shells.bak; \
 	${ECHO_CMD} ${PREFIX}/bin/flash) > /etc/shells

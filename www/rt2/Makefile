@@ -111,18 +111,18 @@ MAN3=		RT::Links.3 \
 		RT::ACL.3 \
 		RT::Attachments.3
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	DB_DBA_PASSWORD=password	Your password of MySQL root ();"
-	@${ECHO} "	DB_HOST=hostname		Where MySQL resident (localhost);"
-	@${ECHO} "	DB_RT_PASS=password		Your password of MySQL RT user (rt_pass);"
-	@${ECHO} "	DB_TYPE=type			Pg for postgresql, mysql for MySQL (mysql);"
-	@${ECHO} "	INSTALL_NEW			Install a fresh port, otherwise just upgrade;"
-	@${ECHO} ""
-	@${ECHO} "IMPORTANT!!! If you want to install a fresh new port, define INSTALL_NEW to do so, otherwise this port just do a upgrade."
-	@${ECHO} ""
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	DB_DBA_PASSWORD=password	Your password of MySQL root ();"
+	@${ECHO_MSG} "	DB_HOST=hostname		Where MySQL resident (localhost);"
+	@${ECHO_MSG} "	DB_RT_PASS=password		Your password of MySQL RT user (rt_pass);"
+	@${ECHO_MSG} "	DB_TYPE=type			Pg for postgresql, mysql for MySQL (mysql);"
+	@${ECHO_MSG} "	INSTALL_NEW			Install a fresh port, otherwise just upgrade;"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "IMPORTANT!!! If you want to install a fresh new port, define INSTALL_NEW to do so, otherwise this port just do a upgrade."
+	@${ECHO_MSG} ""
 
 post-patch:
 .for _FILE in tools/testdeps

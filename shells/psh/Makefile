@@ -45,7 +45,7 @@ pre-install:
 	${REINPLACE_CMD} -e "s:/usr/local/lib/perl5/5.00503/man/man3:${MAN3PREFIX}/man/man3:g" ${WRKSRC}/Makefile;
 
 post-install:
-	@${ECHO} "Updating /etc/shells"
+	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/psh /etc/shells.bak; \
 	${ECHO_CMD} ${PREFIX}/bin/psh) > /etc/shells

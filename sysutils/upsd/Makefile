@@ -22,7 +22,7 @@ pre-build:
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/upsd.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/upsd.sh startup file."; \
+		${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/upsd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/upsd.sh ${PREFIX}/etc/rc.d/upsd.sh; \
 	fi
 	if [ ! -f ${PREFIX}/etc/upsd.conf ] ; then \

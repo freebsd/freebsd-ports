@@ -51,7 +51,7 @@ RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
 
 do-install:
 	@for R in ${RPM_SET}; do \
-		${ECHO} $$R; \
+		${ECHO_MSG} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R || true ; \
 	done
 

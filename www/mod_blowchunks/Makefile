@@ -33,18 +33,18 @@ do-extract:
 
 do-build:
 .if !defined(WITHOUT_BLOWCHUNK_LOG)
-	@${ECHO} "================================================================================"
-	@${ECHO} "If you do not want to log chunked requests, rebuild with WITHOUT_BLOWCHUNK_LOG"
-	@${ECHO} "defined."
-	@${ECHO} "================================================================================"
+	@${ECHO_MSG} "================================================================================"
+	@${ECHO_MSG} "If you do not want to log chunked requests, rebuild with WITHOUT_BLOWCHUNK_LOG"
+	@${ECHO_MSG} "defined."
+	@${ECHO_MSG} "================================================================================"
 .endif
 	cd ${WRKSRC} && ${MV} ${PKGNAME}.c ${PORTNAME}.c && \
 	${APXS} ${APXSFLAGS} -c ${PORTNAME}.c
 
 do-install:
 	cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.so
-	@${ECHO} "================================================================================"
-	@${ECHO} "Enable mod_blowchunks in Apache's config manually."
-	@${ECHO} "================================================================================"
+	@${ECHO_MSG} "================================================================================"
+	@${ECHO_MSG} "Enable mod_blowchunks in Apache's config manually."
+	@${ECHO_MSG} "================================================================================"
 
 .include <bsd.port.mk>

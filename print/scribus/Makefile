@@ -15,7 +15,7 @@ MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
-.if defined(WITH_GHOSTSCRIPT_AFP1) && ${WITH_GHOSTSCRIPT_AFP1} == yes
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
 GSPORT?=	print/ghostscript-afpl
 .else
 GSPORT?=	print/ghostscript-gnu
@@ -35,12 +35,12 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/scribus/libs \
 
 QTCFGLIBS+=	-lm
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO_MSG} ""
 .endif
 
 post-patch:

@@ -86,9 +86,9 @@ post-install:
 .for FILE in FAQ INSTALL README README.exim README.milter README.postfix README.qmail README.scanners README.sendmail doc/amavis.html doc/amavis.m4 doc/amavis.png doc/amavis.txt
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-	@${ECHO} "==============================================================================="
-	@${ECHO} "Please read ${DOCSDIR}/README.${MTA}"
-	@${ECHO} "==============================================================================="
+	@${ECHO_MSG} "==============================================================================="
+	@${ECHO_MSG} "Please read ${DOCSDIR}/README.${MTA}"
+	@${ECHO_MSG} "==============================================================================="
 .endif
 
 .include <bsd.port.mk>

@@ -40,15 +40,15 @@ CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
+pre-everything::
 .if !defined(WITH_MYSQL)
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Defaulting to udmsearch with mysql support."
-	@${ECHO}
-	@${ECHO} "You may alternately build udmsearch with either msql or"
-	@${ECHO} "postgresql support by invoking make with WITH_MSQL=yes or"
-	@${ECHO} "WITH_PGSQL=yes respectively."
-	@${ECHO}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Defaulting to udmsearch with mysql support."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may alternately build udmsearch with either msql or"
+	@${ECHO_MSG} "postgresql support by invoking make with WITH_MSQL=yes or"
+	@${ECHO_MSG} "WITH_PGSQL=yes respectively."
+	@${ECHO_MSG}
 .endif
 
 .endif
@@ -61,7 +61,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/udmsearch
 	@${STRIP_CMD} ${PREFIX}/sbin/indexer
 	@${STRIP_CMD} ${PREFIX}/share/udmsearch/search.cgi
-	@${ECHO}
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

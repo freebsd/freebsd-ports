@@ -31,12 +31,12 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		fig2dev.1 fig2ps2tex.1 pic2tpic.1 transfig.1
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO_MSG} ""
 .endif
 
 .include <bsd.port.mk>

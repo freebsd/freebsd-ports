@@ -32,17 +32,17 @@ do-build:
 	${PYTHON} -u -c 'from compileall import compile_dir; compile_dir("${WRKSRC}")'
 
 do-install:
-	@${ECHO} === Creating directories...
+	@${ECHO_MSG} === Creating directories...
 	@for dir in `${DIRS_CMD}`; do                                  \
-		${ECHO} ${PREFIX}/$$dir;                               \
+		${ECHO_MSG} ${PREFIX}/$$dir;                               \
 		${MKDIR} ${PREFIX}/$$dir;                              \
 	done
-	@${ECHO} === Installing grail files ...
+	@${ECHO_MSG} === Installing grail files ...
 	@for file in `${FILES_CMD}`; do                                \
-		${ECHO} ${GRAILDIR}/$$file;                            \
+		${ECHO_MSG} ${GRAILDIR}/$$file;                            \
 		${INSTALL_DATA} ${WRKSRC}/$$file ${GRAILDIR}/$$file;   \
 	done
-	@${ECHO} === Installing grail script...
+	@${ECHO_MSG} === Installing grail script...
 	@${SED} 's,%%GRAILDIR%%,${GRAILDIR},g' <${FILESDIR}/grail >    \
 		${WRKDIR}/grail.tmp
 	@${INSTALL_SCRIPT} ${WRKDIR}/grail.tmp ${PREFIX}/bin/grail

@@ -33,7 +33,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/USD.doc/paper.ascii.gz ${DOCSDIR}
 .endif
-	@${ECHO} "Updating /etc/shells"
+	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/44bsd-csh /etc/shells.bak; \
 		${ECHO_CMD} ${PREFIX}/bin/44bsd-csh) > /etc/shells

@@ -39,12 +39,12 @@ post-install:
 	@cd ${PREFIX}; \
 	  [ -s etc/gn_mime.types ] && \
 	  if ! cmp -s etc/gn_mime.types ${WRKSRC}/etc/gn_mime.types; then \
-		${ECHO} ${MV} etc/gn_mime.types etc/gn_mime.types.old; \
+		${ECHO_MSG} ${MV} etc/gn_mime.types etc/gn_mime.types.old; \
 		${MV} etc/gn_mime.types etc/gn_mime.types.old; \
 	  fi; \
 	  [ -s gnroot/menu ] && \
 	  if ! cmp -s gnroot/menu ${WRKSRC}/gnroot/menu; then \
-		${ECHO} ${MV} gnroot/menu gnroot/menu.old; \
+		${ECHO_MSG} ${MV} gnroot/menu gnroot/menu.old; \
 		${MV} gnroot/menu gnroot/menu.old; \
 	  fi; \
 	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \

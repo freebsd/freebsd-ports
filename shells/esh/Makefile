@@ -22,7 +22,7 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/esh ${PREFIX}/bin/esh
-	@${ECHO} "updating /etc/shells"
+	@${ECHO_MSG} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/esh /etc/shells.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/esh) > /etc/shells

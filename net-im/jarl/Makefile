@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 USE_PERL5=	yes
 
 makeplist:
-	${ECHO} bin/jarl > ${PLIST}
+	${ECHO_CMD} bin/jarl > ${PLIST}
 	${FIND} ${PREFIX}/share/jarl -type f -print | ${CUT} -d/ -f4- >> \
 		${PLIST}
 	${FIND} ${PREFIX}/share/jarl -type d -print | ${CUT} -d/ -f4- | \

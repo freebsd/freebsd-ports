@@ -29,12 +29,12 @@ FLAG!=		/usr/bin/grep -e cd9660_wchar2char \
 BROKEN=		"your FreeBSD version is not supported. Please update to the latest version and try again"
 .endif
 
-pre-fetch:
+pre-everything::
 	@if [ ! -d /sys -o ! -d ${SRCPREFIX}/sys ]; then \
-		${ECHO} "****************************************" ; \
-		${ECHO} " You need to extract kernel source tree" ; \
-		${ECHO} " before you build this package..." ; \
-		${ECHO} "****************************************" ; \
+		${ECHO_MSG} "****************************************" ; \
+		${ECHO_MSG} " You need to extract kernel source tree" ; \
+		${ECHO_MSG} " before you build this package..." ; \
+		${ECHO_MSG} "****************************************" ; \
 		${FALSE} ; \
 	fi
 

@@ -25,9 +25,9 @@ USE_PYDISTUTILS=	yes
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbismodule.so:${PORTSDIR}/audio/py-vorbis
 .else
 pre-everything::
-	@${ECHO} ""
-	@${ECHO} "Define WITH_VORBIS=yes to enable OGG/Vorbis support"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define WITH_VORBIS=yes to enable OGG/Vorbis support"
+	@${ECHO_MSG} ""
 .endif
 
 .if !defined(NOPORTDOCS)
