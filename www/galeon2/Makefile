@@ -66,12 +66,11 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/src/libnautilus
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|[%][%]PREFIX[%][%]|${PREFIX}|g ; \
-			 s|[%][%]LOCALBASE[%][%]|${LOCALBASE}|g ; \
-			 s|[%][%]X11BASE[%][%]|${X11BASE}|g ; \
-			 s|[%][%]MOZILLA[%][%]|${MOZILLA}|g' \
-			 			${WRKSRC}/src/galeon \
-						${WRKSRC}/src/nautstub.c
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+			 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+			 s|%%X11BASE%%|${X11BASE}|g ; \
+			 s|%%MOZILLA%%|${MOZILLA}|g' ${WRKSRC}/src/galeon \
+						     ${WRKSRC}/src/nautstub.c
 
 pre-install:
 	@-${X11BASE}/bin/gconftool --shutdown
