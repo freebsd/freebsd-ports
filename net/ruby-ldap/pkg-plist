@@ -1,6 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/ldap.so
+%%RUBY_SITELIBDIR%%/ldap/schema.rb
+@dirrm %%RUBY_SITELIBDIR%%/ldap
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-ldaps.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-sasl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-ssl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind.rb
@@ -16,6 +19,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/subschema.rb
 %%PORTDOCS%%@unexec rm -f %D/%%RUBY_EXAMPLESDIR%%/ldap/test 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/test.sh
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openssl
