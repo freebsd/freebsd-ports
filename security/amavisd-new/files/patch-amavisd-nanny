@@ -1,11 +1,11 @@
---- amavisd-nanny.orig	Wed Aug 11 02:39:16 2004
-+++ amavisd-nanny	Mon Aug 16 11:41:56 2004
-@@ -61,7 +61,7 @@
- # main program starts here
-   $SIG{INT} = sub { die "\n" };
-   my($env) = BerkeleyDB::Env->new(
--    '-Home'=>'/var/amavis/db', '-Flags'=> DB_INIT_CDB | DB_INIT_MPOOL);
-+    '-Home'=>'%%AMAVISDIR%%/db', '-Flags'=> DB_INIT_CDB | DB_INIT_MPOOL);
-   defined $env or die "BDB no env: $BerkeleyDB::Error $!";
-   my($db) = BerkeleyDB::Hash->new(
-     '-Filename'=>'nanny.db', '-Env'=>$env );
+--- amavisd-nanny.orig	Tue Aug 24 16:34:51 2004
++++ amavisd-nanny	Wed Aug 25 12:42:23 2004
+@@ -52,7 +52,7 @@
+ my($activettl) = 10*60; # stuck active children are sent a SIGTERM after this
+                         # many seconds
+
+-my($db_home) = '/var/amavis/db';  # DB databases directory
++my($db_home) = '%%AMAVISDIR%%/db';  # DB databases directory
+ my($dbfile)  = 'nanny.db';
+ my($wakeuptime) = 2;  # seconds
+
