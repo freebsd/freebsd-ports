@@ -17,6 +17,13 @@ MANCOMPRESSED=	no
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc -O2|${CC} ${CFLAGS}|' \
+		${WRKSRC}/conf-cc
+	@${REINPLACE_CMD} -e 's|gcc|${CC} ${LDFLAGS}|' \
+		${WRKSRC}/conf-ld
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} ncp ${PREFIX}/bin
