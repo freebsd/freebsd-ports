@@ -220,7 +220,7 @@ PLIST_SUB+=	WITH_OGG="@comment "
 .endif
 
 .if defined(WITH_MJPEG)
-LIB_DEPENDS+=	lavplay-1.6.1:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavplay-1.6.2:${PORTSDIR}/multimedia/mjpegtools
 PLIST_SUB+=	WITH_MJPEG=""
 .else
 PLIST_SUB+=	WITH_MJPEG="@comment "
