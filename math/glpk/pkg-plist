@@ -1,5 +1,7 @@
+bin/glpsol
 include/glpapi.h
 include/glpavl.h
+include/glpbbm.h
 include/glpchol.h
 include/glpduff.h
 include/glpefi.h
@@ -8,16 +10,17 @@ include/glpgel.h
 include/glphbsm.h
 include/glpimg.h
 include/glpipm.h
-include/glpmip.h
 include/glpk.h
+include/glplang.h
+include/glplp.h
 include/glpmat.h
 include/glpmps.h
-include/glpprob.h
 include/glpqmd.h
 include/glprfi.h
 include/glprsm.h
 include/glpset.h
 include/glpstr.h
+include/glptext.h
 lib/libglpk.a
 %%PORTDOCS%%share/doc/glpk/glpk_lr-1.1.1.ps
 %%PORTDOCS%%share/doc/glpk/glpk_ug-1.1.1.ps

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	2.2
+PORTVERSION=	3.0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://people.freebsd.org/~demon/distfiles/
