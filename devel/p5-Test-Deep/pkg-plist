@@ -1,0 +1,46 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Deep/.packlist
+%%SITE_PERL%%/Test/Deep.pm
+%%SITE_PERL%%/Test/Deep.pod
+%%SITE_PERL%%/Test/Deep/All.pm
+%%SITE_PERL%%/Test/Deep/Any.pm
+%%SITE_PERL%%/Test/Deep/Array.pm
+%%SITE_PERL%%/Test/Deep/ArrayEach.pm
+%%SITE_PERL%%/Test/Deep/ArrayElementsOnly.pm
+%%SITE_PERL%%/Test/Deep/ArrayLength.pm
+%%SITE_PERL%%/Test/Deep/ArrayLengthOnly.pm
+%%SITE_PERL%%/Test/Deep/Blessed.pm
+%%SITE_PERL%%/Test/Deep/Boolean.pm
+%%SITE_PERL%%/Test/Deep/Cache.pm
+%%SITE_PERL%%/Test/Deep/Cache/Simple.pm
+%%SITE_PERL%%/Test/Deep/Class.pm
+%%SITE_PERL%%/Test/Deep/Cmp.pm
+%%SITE_PERL%%/Test/Deep/Code.pm
+%%SITE_PERL%%/Test/Deep/Hash.pm
+%%SITE_PERL%%/Test/Deep/HashEach.pm
+%%SITE_PERL%%/Test/Deep/HashElements.pm
+%%SITE_PERL%%/Test/Deep/HashKeys.pm
+%%SITE_PERL%%/Test/Deep/HashKeysOnly.pm
+%%SITE_PERL%%/Test/Deep/Ignore.pm
+%%SITE_PERL%%/Test/Deep/Isa.pm
+%%SITE_PERL%%/Test/Deep/ListMethods.pm
+%%SITE_PERL%%/Test/Deep/MM.pm
+%%SITE_PERL%%/Test/Deep/Methods.pm
+%%SITE_PERL%%/Test/Deep/Number.pm
+%%SITE_PERL%%/Test/Deep/Ref.pm
+%%SITE_PERL%%/Test/Deep/RefType.pm
+%%SITE_PERL%%/Test/Deep/Regexp.pm
+%%SITE_PERL%%/Test/Deep/RegexpMatches.pm
+%%SITE_PERL%%/Test/Deep/RegexpOnly.pm
+%%SITE_PERL%%/Test/Deep/RegexpRef.pm
+%%SITE_PERL%%/Test/Deep/RegexpRefOnly.pm
+%%SITE_PERL%%/Test/Deep/ScalarRef.pm
+%%SITE_PERL%%/Test/Deep/ScalarRefOnly.pm
+%%SITE_PERL%%/Test/Deep/Set.pm
+%%SITE_PERL%%/Test/Deep/Shallow.pm
+%%SITE_PERL%%/Test/Deep/Stack.pm
+%%SITE_PERL%%/Test/Deep/String.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Deep
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Test/Deep/Cache
+@dirrm %%SITE_PERL%%/Test/Deep
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
