@@ -683,6 +683,7 @@
     SUBDIR += p5-SPOPS
     SUBDIR += p5-Search-Binary
     SUBDIR += p5-Server-FastPL
+    SUBDIR += p5-Set-Crontab
     SUBDIR += p5-Set-Infinite
     SUBDIR += p5-Set-NestedGroups
     SUBDIR += p5-Set-Object
