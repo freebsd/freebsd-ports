@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/HTML/FormatPS.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/FormatRTF.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/FormatText.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Formatter.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML-Format/.packlist
