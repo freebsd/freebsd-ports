@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/cyrus-sasl2-saslauthd/files/Attic/saslauthd.sh,v 1.5 2004-05-12 16:12:11 ume Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/cyrus-sasl2-saslauthd/files/Attic/saslauthd.sh,v 1.6 2004-06-11 15:49:48 ume Exp $
 #
 
 # PROVIDE: saslauthd
@@ -36,10 +36,9 @@ load_rc_config $name
 
 if [ -z "$saslauthd_runpath" ]; then
 	pidfile="%%SASLAUTHD_RUNPATH%%/${name}.pid"
-	flags="${saslauthd_flags}"
 else
 	pidfile="${saslauthd_runpath}/${name}.pid"
-	flags="${saslauthd_flags} -m ${saslauthd_runpath}"
+	command_args="-m ${saslauthd_runpath}"
 fi
 
 run_rc_command "$1"

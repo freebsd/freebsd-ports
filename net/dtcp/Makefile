@@ -7,7 +7,7 @@
 
 PORTNAME=	dtcp
 PORTVERSION=	20040611
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/

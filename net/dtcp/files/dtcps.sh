@@ -59,5 +59,5 @@ dtcps_prestart() {
 }
 
 load_rc_config $name
-flags="-i ${dtcps_tunif} ${dtcps_flags} ${dtcps_prefix}"
+command_args="-i ${dtcps_tunif} ${dtcps_prefix}"
 run_rc_command "$1"
