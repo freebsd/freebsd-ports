@@ -16,9 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of C++ classes for developing GNOME and GTK+ applications
 
 USE_GNOME=	glib20 gtk20 atk pango gnomehack gnomeprefix
-USE_GCC=	3.3
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	bin/inti-demo \
