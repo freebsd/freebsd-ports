@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--enable-inet6
 .if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
 CONFIGURE_ARGS+=--with-ssl=/usr
 .endif
-.else if exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
+.elif exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
 CONFIGURE_ARGS+=-with-includes=${LOCALBASE}/include/openssl --with-ssl=${LOCALBASE}
 .endif
 
