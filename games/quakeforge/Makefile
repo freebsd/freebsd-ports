@@ -29,7 +29,8 @@ CVS_DATE=	Tue Jan 4 03:20:17 GMT 2000
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	:pserver:anonymous@cvs.quake.sourceforge.net:/cvsroot/quake
-STAMPFILE=	${DISTDIR}/${PKGNAME}/.stamp
+DIRNAME=	${PORTNAME}-0.10.0pre
+STAMPFILE=	${DISTDIR}/${DIRNAME}/.stamp
 WRKSRC=		${WRKDIR}/quakeforge
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
@@ -48,9 +49,9 @@ do-fetch:
 	@if [ ! -e ${STAMPFILE} ] || \
 	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
 		${ECHO_MSG} "No stamp file (or out of date)"; \
-		if [ -e ${DISTDIR}/${PKGNAME}.${CVS_DATE_}.tar.gz ]; then \
+		if [ -e ${DISTDIR}/${DIRNAME}.${CVS_DATE_}.tar.gz ]; then \
 			cd ${DISTDIR}; \
-			${TAR} xfz ${PKGNAME}.${CVS_DATE_}.tar.gz \
+			${TAR} xfz ${DIRNAME}.${CVS_DATE_}.tar.gz \
 			    ${DISTFILES}; \
 			${ECHO} -n "${CVS_DATE}" > ${STAMPFILE}; \
 			exit; \
@@ -59,8 +60,8 @@ do-fetch:
 		if [ -n "${PORTS_CVS_RSH}" ]; then \
 			export CVS_RSH="${PORTS_CVS_RSH}"; \
 		fi; \
-		${MKDIR} ${DISTDIR}/${PKGNAME} && \
-		cd ${DISTDIR}/${PKGNAME}; \
+		${MKDIR} ${DISTDIR}/${DIRNAME} && \
+		cd ${DISTDIR}/${DIRNAME}; \
 		for CVS_SITE in ${CVS_SITES}; do \
 			${ECHO_MSG} ">> Attempting to CVS checkout from $${CVS_SITE}."; \
 			case "$${CVS_SITE}" in \
@@ -87,7 +88,7 @@ do-fetch:
 				${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
 			fi; \
 		done; \
-		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}.  Please try to retrieve"; \
+		${ECHO_MSG} ">> Couldn't CVS checkout ${DIRNAME}.  Please try to retrieve"; \
 		${ECHO_MSG} ">> a snapshot with \"make fetchsrctarball\" and try again."; \
 		exit 1; \
 	fi
@@ -96,12 +97,12 @@ do-fetch:
 makesrctarball: fetch
 	@cd ${DISTDIR}; \
 	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
-	${ECHO_MSG} ">> \"${PKGNAME}.${CVS_DATE_}.tar.gz\"."; \
-	${TAR} cfz ${PKGNAME}.${CVS_DATE_}.tar.gz ${PKGNAME}
+	${ECHO_MSG} ">> \"${DIRNAME}.${CVS_DATE_}.tar.gz\"."; \
+	${TAR} cfz ${DIRNAME}.${CVS_DATE_}.tar.gz ${DIRNAME}
 
 fetchsrctarball:
 	@cd ${DISTDIR}; \
-	file=${PKGNAME}.${CVS_DATE_}.tar.gz; \
+	file=${DIRNAME}.${CVS_DATE_}.tar.gz; \
 	if [ -e $$file ]; then \
 		exit; \
 	fi; \
@@ -120,7 +121,7 @@ fetchsrctarball:
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${CP} -r ${DISTDIR}/${PKGNAME}/${DISTNAME} ${WRKDIR}
+	@${CP} -r ${DISTDIR}/${DIRNAME}/${DISTNAME} ${WRKDIR}
 
 pre-configure:
 	@${CP} ${PKGDIR}/PLIST ${PLIST}
