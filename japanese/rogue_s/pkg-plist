@@ -1,0 +1,12 @@
+bin/rogue_s
+share/doc/rogue/README
+share/doc/rogue/README.1st
+share/doc/rogue/README.doc
+share/doc/rogue/options.doc
+share/doc/rogue/rogue.doc
+share/rogue/mesg
+share/rogue/mesg_E
+share/rogue/mesg_fj
+share/rogue/mesg_utmc
+@dirrm share/rogue
+@dirrm share/doc/rogue

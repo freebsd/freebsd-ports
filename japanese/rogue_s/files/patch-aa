@@ -1,0 +1,23 @@
+--- ../ports/work/rogue_s/Makefile.nix	Sun Sep 13 23:36:02 1992
++++ Makefile.nix	Thu Dec  3 11:46:23 1998
+@@ -11,14 +11,14 @@
+ 	trap.o use.o zap.o
+ 
+ # for BSD (Japanese, using my own CURSES)	by Yasha
+-CC	= gcc -traditional-cpp
+-CFLAGS	= -O -g -DUNIX -DUNIX_BSD4_2 -DCURSES -DJAPAN -DEUC -DTOPSCO
+-LIBS	=
++#CC	= gcc -traditional-cpp
++#CFLAGS	= -O -g -DUNIX -DUNIX_BSD4_2 -DCURSES -DJAPAN -DEUC -DTOPSCO -DCOLOR
++#LIBS	=
+ 
+ # for 386BSD (Japanese, using my own CURSES)	by Yasha
+-#CC	= gcc
+-#CFLAGS	= -O -g -DUNIX -DUNIX_BSD4_2 -DUNIX_386BSD -DCURSES -DJAPAN -DEUC -DTOPSCO
+-#LIBS	=
++CC	= cc
++CFLAGS	+= -DUNIX -DUNIX_BSD4_2 -DUNIX_386BSD -DCURSES -DJAPAN -DEUC -DTOPSCO -DCOLOR -DMESG_DIR=\"${PREFIX}/share/rogue\" -DLIST_MESSAGES
++LIBS	=
+ 
+ # for NeXT (Japanese, using jcurses of NeXT)	by Yasha
+ #CFLAGS	= -O -DUNIX -DUNIX_BSD4_2 -DJAPAN -DEUC -DTOPSCO

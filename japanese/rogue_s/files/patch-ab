@@ -1,0 +1,79 @@
+--- main.c.orig	Mon Sep 14 14:40:12 1992
++++ main.c	Sat Jul 15 02:05:20 2000
+@@ -11,6 +11,8 @@
+  */
+ 
+ #include <stdio.h>
++#include <sys/types.h>
++#include <dirent.h>
+ #include "rogue.h"
+ 
+ extern short party_room;
+@@ -62,6 +64,41 @@
+ 	}
+ }
+ 
++#ifdef LIST_MESSAGES
++/*
++ * Display the list of message files.
++ * (by mistral@imasy.or.jp)
++ */
++ 
++void list_mesg(char *dir) {
++    DIR *dirp;
++    struct dirent *dp;
++
++    if ((dirp = opendir(dir)) != NULL) {
++	while ((dp = readdir(dirp)) != NULL) {
++	    if (strncmp(dp->d_name, "mesg", strlen("mesg")) == 0) {
++		FILE *fp;
++		char buf[81];
++		char filename[FILENAME_MAX];
++		sprintf(filename, "%s/%s", dir, dp->d_name);
++		if ((fp = fopen(filename, "r")) != NULL) {
++		    while (!feof(fp)) {
++			fgets(buf, 80, fp);
++			if (strncmp(buf, "1\t", strlen("1\t")) == 0) {
++			    fprintf(stderr, "%s\t%s", dp->d_name, &buf[2]);
++			    break;
++			}
++		    }
++		    fclose(fp);
++		}
++	    }
++	}
++	closedir(dirp);
++    }
++    return;
++}
++#endif
++
+ int read_mesg(ac, av)
+ int ac;
+ char **av;
+@@ -72,12 +109,25 @@
+ 
+ 	if (ac < 2) {
+ 		fprintf(stderr, "%s: message_file [options...]\n", av[0]);
++#ifdef LIST_MESSAGES
++		fprintf(stderr, "available message_files are:\n");
++		list_mesg(".");
++		list_mesg(MESG_DIR);
++#endif
+ 		return 1;
+ 	}
+ 
+ 	if ((mesg_file = fopen(av[1], "r")) == NULL) {
++#ifdef LIST_MESSAGES
++	    char filename[FILENAME_MAX];
++	    sprintf(filename, "%s/%s", MESG_DIR, av[1]);
++	    if ((mesg_file = fopen(filename, "r")) == NULL) {
++#endif
+ 		fprintf(stderr, "Cannot open message file '%s'\n", av[1]);
+ 		return 1;
++#ifdef LIST_MESSAGES
++	    }
++#endif
+ 	}
+ 
+ 	while (fgets(buf, 256, mesg_file) != NULL) {
