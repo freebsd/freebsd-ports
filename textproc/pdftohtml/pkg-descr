@@ -1,0 +1,6 @@
+This is a port of pdftohtml, which converts pdf-files into nicely formatted 
+html, combined with png-images. 
+The HTML generated uses frames to emulate the contentlisting from the pdf.
+
+WWW: http://www.ra.informatik.uni-stuttgart.de/~gosho/pdftohtml/
+Author: Gueorgui Ovtcharov <pdftohtml@ralf.informatik.uni-stuttgart.de>

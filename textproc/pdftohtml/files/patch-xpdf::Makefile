@@ -1,0 +1,17 @@
+--- xpdf/Makefile.orig	Mon Aug  6 20:04:59 2001
++++ xpdf/Makefile	Mon Aug  6 20:05:29 2001
+@@ -8,13 +8,11 @@
+ GOOLIBDIR = ../goo
+ 
+ 
+-CXXFLAGS = -g -DHAVE_DIRENT_H=1 -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(GOOSRCDIR) -I$(srcdir)   
++CXXFLAGS += -DHAVE_DIRENT_H=1 -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(GOOSRCDIR) -I$(srcdir)   
+ 
+ LDFLAGS = 
+ 
+ OTHERLIBS = 
+-
+-CXX = c++
+ 
+ LIBPREFIX = lib
+ EXE = 

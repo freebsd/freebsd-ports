@@ -138,6 +138,7 @@
     SUBDIR += p5-libxml
     SUBDIR += par
     SUBDIR += pardiff
+    SUBDIR += pdftohtml
     SUBDIR += perl2html
     SUBDIR += pspell
     SUBDIR += pspell-ispell
