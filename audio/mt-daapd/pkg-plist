@@ -6,6 +6,7 @@ share/mt-daapd/admin-root/aspl-license.html
 share/mt-daapd/admin-root/aspl-license.txt
 share/mt-daapd/admin-root/config-update.html
 share/mt-daapd/admin-root/config.html
+share/mt-daapd/admin-root/feedback.html
 share/mt-daapd/admin-root/ftr.html
 share/mt-daapd/admin-root/gpl-license.html
 share/mt-daapd/admin-root/gpl-license.txt
@@ -18,8 +19,11 @@ share/mt-daapd/admin-root/mt-daapd.png
 share/mt-daapd/admin-root/required.gif
 share/mt-daapd/admin-root/status.html
 share/mt-daapd/admin-root/thanks.html
-%%PORTDOCS%%@dirrm share/mt-daapd/admin-root
-%%PORTDOCS%%@dirrm share/mt-daapd
+@dirrm var/mt-daapd/db
+@dirrm var/mt-daapd
+@dirrm share/mt-daapd/mp3
+@dirrm share/mt-daapd/admin-root
+@dirrm share/mt-daapd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/audio/mt-daapd/Attic/pkg-deinstall,v 1.1 2004-08-05 23:00:09 edwin Exp $
+#
+ 
+PATH=/bin:/usr/bin:/usr/sbin
+       
+case $2 in
+       
+POST-DEINSTALL)
+  echo '---> Starting post-deinstall script:'
+
+  if [ -f %%PREFIX%%/etc/mt-daapd.conf ]; then
+    echo '---> You seem to have made some custom daapd configuration.'
+    echo '--->   The "%%USER%%" user and "%%GROUP%%" group were therefore not deleted.'
+    echo '--->   You may delete them with "pw groupdel %%GROUP%%; pw userdel %%USER%%".'
+
+  else
+    echo '---> Removing group "%%GROUP%%"'
+    /usr/sbin/pw groupdel -n %%GROUP%%
+    echo '---> Removing user "%%USER%%"'
+    echo 'y' | /usr/sbin/pw userdel -n %%USER%%
+  fi
+
+  ;;
+
+esac
