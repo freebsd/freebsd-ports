@@ -214,6 +214,7 @@
     SUBDIR += pear-DB_DataObject
     SUBDIR += pear-DB_DataObject_FormBuilder
     SUBDIR += pear-DB_Pager
+    SUBDIR += pear-DB_QueryTool
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
     SUBDIR += pear-sqlite
