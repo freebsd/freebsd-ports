@@ -20,6 +20,7 @@ LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 
 BROKEN= Needs help fixing scheduling code under FreeBSD
 
+USE_BISON=	yes
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
