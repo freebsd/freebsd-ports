@@ -10,8 +10,8 @@ PORTVERSION=	0.4.3
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		ftp://ftp.gnokii.org/pub/gnokii/ \
 		http://freesoftware.fsf.org/download/gnokii/
+#		ftp://ftp.gnokii.org/pub/gnokii/
 
 MAINTAINER=	anders@FreeBSD.org
 
