@@ -8361,7 +8361,6 @@ ports_sysutils	ports/sysutils
 ports_tcpdump	ports/net/tcpdump
 ports_textproc	ports/textproc
 ports_tn3270	ports/net/tn3270
-ports_top	ports/sysutils/top
 ports_traceroute	ports/net/traceroute
 ports_ukrainian	ports/ukrainian
 ports_units	ports/math/units
