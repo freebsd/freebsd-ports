@@ -27,6 +27,8 @@ v6eval/bin/cisco-ios/reboot.rmt
 v6eval/bin/cisco-ios/reboot_async.rmt
 v6eval/bin/cisco-ios/route.rmt
 v6eval/bin/cisco-ios/rtadvd.rmt
+v6eval/bin/dhcomp
+v6eval/bin/dhgen
 v6eval/bin/freebsd-i386/cleardefr.rmt
 v6eval/bin/freebsd-i386/clearnc.rmt
 v6eval/bin/freebsd-i386/clearprefix.rmt
@@ -39,6 +41,7 @@ v6eval/bin/freebsd-i386/loginout.rmt
 v6eval/bin/freebsd-i386/manualaddrconf.rmt
 v6eval/bin/freebsd-i386/mtuconfig.rmt
 v6eval/bin/freebsd-i386/ping6.rmt
+v6eval/bin/freebsd-i386/racontrol.rmt
 v6eval/bin/freebsd-i386/reboot.rmt
 v6eval/bin/freebsd-i386/reboot_async.rmt
 v6eval/bin/freebsd-i386/route.rmt
@@ -146,6 +149,7 @@ v6eval/bin/kame-freebsd/mip6EnableMN.rmt
 v6eval/bin/kame-freebsd/mtuconfig.rmt
 v6eval/bin/kame-freebsd/multicastConfig.rmt
 v6eval/bin/kame-freebsd/ping6.rmt
+v6eval/bin/kame-freebsd/racontrol.rmt
 v6eval/bin/kame-freebsd/reboot.rmt
 v6eval/bin/kame-freebsd/reboot_async.rmt
 v6eval/bin/kame-freebsd/route.rmt
@@ -185,6 +189,17 @@ v6eval/bin/linux-v6/clearprefix.rmt
 v6eval/bin/linux-v6/clearroute.rmt
 v6eval/bin/linux-v6/dhcp6c.rmt
 v6eval/bin/linux-v6/dhcp6s.rmt
+v6eval/bin/linux-v6/ikeClearAll.rmt
+v6eval/bin/linux-v6/ikeConfig.rmt
+v6eval/bin/linux-v6/ikeDump.rmt
+v6eval/bin/linux-v6/ikeInitiate.rmt
+v6eval/bin/linux-v6/ikeStart.rmt
+v6eval/bin/linux-v6/ikeStop.rmt
+v6eval/bin/linux-v6/ikeTunnel.rmt
+v6eval/bin/linux-v6/ipsecClearAll.rmt
+v6eval/bin/linux-v6/ipsecEnable.rmt
+v6eval/bin/linux-v6/ipsecSetSAD.rmt
+v6eval/bin/linux-v6/ipsecSetSPD.rmt
 v6eval/bin/linux-v6/loginout.rmt
 v6eval/bin/linux-v6/manualaddrconf.rmt
 v6eval/bin/linux-v6/ping6.rmt
@@ -199,6 +214,15 @@ v6eval/bin/manual/clearprefix.rmt
 v6eval/bin/manual/clearroute.rmt
 v6eval/bin/manual/dhcp6c.rmt
 v6eval/bin/manual/dhcp6s.rmt
+v6eval/bin/manual/igmpv3.rmt
+v6eval/bin/manual/igmpv3config.rmt
+v6eval/bin/manual/ikeClearAll.rmt
+v6eval/bin/manual/ikeConfig.rmt
+v6eval/bin/manual/ikeDump.rmt
+v6eval/bin/manual/ikeInitiate.rmt
+v6eval/bin/manual/ikeStart.rmt
+v6eval/bin/manual/ikeStop.rmt
+v6eval/bin/manual/ikeTunnel.rmt
 v6eval/bin/manual/ipsecClearAll.rmt
 v6eval/bin/manual/ipsecEnable.rmt
 v6eval/bin/manual/ipsecSetSAD.rmt
@@ -214,6 +238,7 @@ v6eval/bin/manual/mtuconfig.rmt
 v6eval/bin/manual/multicastConfig.rmt
 v6eval/bin/manual/natpt.rmt
 v6eval/bin/manual/ping6.rmt
+v6eval/bin/manual/racontrol.rmt
 v6eval/bin/manual/reboot.rmt
 v6eval/bin/manual/reboot_async.rmt
 v6eval/bin/manual/ripng_start.rmt
@@ -390,6 +415,8 @@ v6eval/bin/unitedlinux/clearprefix.rmt
 v6eval/bin/unitedlinux/clearroute.rmt
 v6eval/bin/unitedlinux/dhcp6c.rmt
 v6eval/bin/unitedlinux/dhcp6s.rmt
+v6eval/bin/unitedlinux/igmpv3.rmt
+v6eval/bin/unitedlinux/igmpv3config.rmt
 v6eval/bin/unitedlinux/ipsecClearAll.rmt
 v6eval/bin/unitedlinux/ipsecEnable.rmt
 v6eval/bin/unitedlinux/ipsecSetSAD.rmt
@@ -416,6 +443,15 @@ v6eval/bin/unknown/clearprefix.rmt
 v6eval/bin/unknown/clearroute.rmt
 v6eval/bin/unknown/dhcp6c.rmt
 v6eval/bin/unknown/dhcp6s.rmt
+v6eval/bin/unknown/igmpv3.rmt
+v6eval/bin/unknown/igmpv3config.rmt
+v6eval/bin/unknown/ikeClearAll.rmt
+v6eval/bin/unknown/ikeConfig.rmt
+v6eval/bin/unknown/ikeDump.rmt
+v6eval/bin/unknown/ikeInitiate.rmt
+v6eval/bin/unknown/ikeStart.rmt
+v6eval/bin/unknown/ikeStop.rmt
+v6eval/bin/unknown/ikeTunnel.rmt
 v6eval/bin/unknown/ipsecClearAll.rmt
 v6eval/bin/unknown/ipsecEnable.rmt
 v6eval/bin/unknown/ipsecSetSAD.rmt
@@ -431,6 +467,7 @@ v6eval/bin/unknown/mtuconfig.rmt
 v6eval/bin/unknown/multicastConfig.rmt
 v6eval/bin/unknown/natpt.rmt
 v6eval/bin/unknown/ping6.rmt
+v6eval/bin/unknown/racontrol.rmt
 v6eval/bin/unknown/reboot.rmt
 v6eval/bin/unknown/reboot_async.rmt
 v6eval/bin/unknown/ripng_start.rmt
@@ -459,6 +496,24 @@ v6eval/bin/usagi-i386/reboot_async.rmt
 v6eval/bin/usagi-i386/route.rmt
 v6eval/bin/usagi-i386/rtadvd.rmt
 v6eval/bin/usagi-i386/tunnel.rmt
+v6eval/bin/usagi24-i386/cleardefr.rmt
+v6eval/bin/usagi24-i386/clearnc.rmt
+v6eval/bin/usagi24-i386/clearprefix.rmt
+v6eval/bin/usagi24-i386/clearroute.rmt
+v6eval/bin/usagi24-i386/ipsecClearAll.rmt
+v6eval/bin/usagi24-i386/ipsecEnable.rmt
+v6eval/bin/usagi24-i386/ipsecSetSAD.rmt
+v6eval/bin/usagi24-i386/ipsecSetSPD.rmt
+v6eval/bin/usagi24-i386/loginout.rmt
+v6eval/bin/usagi24-i386/manualaddrconf.rmt
+v6eval/bin/usagi24-i386/mip6EnableMN.rmt
+v6eval/bin/usagi24-i386/mtuconfig.rmt
+v6eval/bin/usagi24-i386/ping6.rmt
+v6eval/bin/usagi24-i386/reboot.rmt
+v6eval/bin/usagi24-i386/reboot_async.rmt
+v6eval/bin/usagi24-i386/route.rmt
+v6eval/bin/usagi24-i386/rtadvd.rmt
+v6eval/bin/usagi24-i386/tunnel.rmt
 v6eval/bin/yamaha-ws-one/clearnc.rmt
 v6eval/bin/yamaha-ws-one/loginout.rmt
 v6eval/bin/yamaha-ws-one/manualaddrconf.rmt
@@ -512,30 +567,12 @@ v6eval/man/man1/pktsend.1.gz
 @dirrm v6eval/bin/unitedlinux
 @dirrm v6eval/bin/unknown
 @dirrm v6eval/bin/usagi-i386
+@dirrm v6eval/bin/usagi24-i386
 @dirrm v6eval/bin/yamaha-ws-one
 @dirrm v6eval/bin
 @dirrm v6eval/doc
 @dirrm v6eval/include
-@dirrm v6eval/man/cat1
-@dirrm v6eval/man/cat2
-@dirrm v6eval/man/cat3
-@dirrm v6eval/man/cat4
-@dirrm v6eval/man/cat5
-@dirrm v6eval/man/cat6
-@dirrm v6eval/man/cat7
-@dirrm v6eval/man/cat8
-@dirrm v6eval/man/cat9
-@dirrm v6eval/man/catn
 @dirrm v6eval/man/man1
-@dirrm v6eval/man/man2
-@dirrm v6eval/man/man3
-@dirrm v6eval/man/man4
-@dirrm v6eval/man/man5
-@dirrm v6eval/man/man6
-@dirrm v6eval/man/man7
-@dirrm v6eval/man/man8
-@dirrm v6eval/man/man9
-@dirrm v6eval/man/mann
 @dirrm v6eval/man
 @unexec rmdir %D/v6eval/etc 2>/dev/null || true
 @dirrm v6eval
