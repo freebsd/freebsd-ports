@@ -1,0 +1,11 @@
+--- gnome-vfs-config.in.orig	Thu Aug 31 14:32:38 2000
++++ gnome-vfs-config.in	Wed Nov 29 15:04:43 2000
+@@ -3,7 +3,7 @@
+ usage="\
+     Usage: gnome-vfs-config [--version] [--config] [--cflags] [--libs]"
+ 
+-config_file="@LIBDIR@/vfsConf.sh"
++config_file="@SYSCONFDIR@/vfsConf.sh"
+ . $config_file
+ 
+ if test $# -eq 0; then
