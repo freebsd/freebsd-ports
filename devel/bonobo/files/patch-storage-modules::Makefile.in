@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- storage-modules/Makefile.in	2002/01/22 11:54:43	1.1
++++ storage-modules/Makefile.in	2002/01/22 11:55:39
+@@ -169,7 +169,7 @@
+         $(GNOME_INCLUDEDIR)
+ 
+ 
+-common_ldflags = -avoid-version
++common_ldflags = -avoid-version -module
+ 
+ bonobo_plugindir = $(PLUGIN_DIR)
+ bonobo_plugin_LTLIBRARIES = libstorage_efs.la libstorage_fs.la 
