@@ -20,7 +20,7 @@ MAN1=		tac_plus.1
 # To change the text displayed when users are prompted to enter
 # a username, set appropriately TAC_CHANGE_PROMPT variable.
 .if defined(TAC_CHANGE_PROMPT) && ${TAC_CHANGE_PROMPT} == YES
-EXTRA_PATCHES=	${FILESDIR}/patch-ba
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ba
 .endif
 
 do-install:
