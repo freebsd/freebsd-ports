@@ -76,6 +76,7 @@
     SUBDIR += mutt
     SUBDIR += muttzilla
     SUBDIR += nail
+    SUBDIR += namg
     SUBDIR += newmail
     SUBDIR += nmh
     SUBDIR += p5-Email-Find

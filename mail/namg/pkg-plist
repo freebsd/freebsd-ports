@@ -1,0 +1,3 @@
+bin/namg
+share/namg/namgrc.default
+@dirrm share/namg

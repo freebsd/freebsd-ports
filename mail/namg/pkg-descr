@@ -1,0 +1,7 @@
+NAMG ("NetAddress Mail Grabber") is a small program that downloads
+mail from a NetAddress account and forwards it to your local mail
+spool. NAMG can also forward mail to sendmail. It was written shortly
+after NetAddress made POP3 access a "Premium Service".
+
+- George Reid
+greid@ukug.uk.freebsd.org
