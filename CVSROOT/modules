@@ -7109,6 +7109,7 @@ p5-PerlPoint-Converters	ports/textproc/p5-PerlPoint-Converters
 p5-PerlPoint-Package	ports/textproc/p5-PerlPoint-Package
 p5-Pg		ports/databases/p5-Pg
 p5-PlRPC	ports/net/p5-PlRPC
+p5-Plucene	ports/textproc/p5-Plucene
 p5-Pod-Constants	ports/textproc/p5-Pod-Constants
 p5-Pod-Coverage	ports/devel/p5-Pod-Coverage
 p5-Pod-Escapes	ports/textproc/p5-Pod-Escapes
