@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ickle
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,18 +16,10 @@ MAINTAINER=	troff@paranoia.ru
 
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk--
 
-.if defined(WITH_CYRILLIC)
-PATCHFILES+=	ickle-0.1.2.koi8.patch
-PATCH_SITES+=	http://kva.paranoia.ru/~troff/
-PATCH_DIST_STRIP=	-p1
-.endif
-
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/src/contrib/libstdc++" \
-		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
