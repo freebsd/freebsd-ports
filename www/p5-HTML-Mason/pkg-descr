@@ -1,0 +1,23 @@
+Mason is a tool for building, serving and managing large web
+sites. Its features make it an ideal backend for high load sites
+serving dynamic content, such as online newspapers or database driven
+e-commerce sites.
+
+Mason's various pieces revolve around the notion of "components''. A
+component is a mix of HTML, Perl, and special Mason commands, one
+component per file. So-called "top-level" components represent entire
+web-pages, while smaller components typically return HTML snippets for
+embedding in top-level components. This object-like architecture
+greatly simplifies site maintenance: change a shared component, and
+you instantly changed all dependant pages that refer to it across a
+site (or across many virtual sites).
+
+Mason's component syntax lets designers separate a web page into
+programmatic and design elements. This means the esoteric Perl bits
+can be hidden near the bottom of a component, preloading simple
+variables for use above in the HTML. In our own experience, this frees
+content managers (i.e., non-programmers) to work on the layout without
+getting mired in programming details. Techies, however, still enjoy
+the full power of Perl.
+
+WWW: http://www.masonhq.com
