@@ -11,7 +11,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	http://r.vinot.free.fr/spacehulk/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b1/-beta1/}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Science-fiction board game in the world of Warhammer 40000
 
 GNU_CONFIGURE=	yes
