@@ -1,0 +1,13 @@
+POPFile is an automatic mail classification tool. Once properly set up and
+trained, it will scan all email as it arrives and classify it based on your
+training. You can give it a simple job, like separating out junk e-mail, or
+a complicated one -- like filing mail into a dozen folders. Think of it as a
+personal assistant for your inbox. 
+
+Before using this ports, use ${LOCALDIR}/share/popfile/popfile-setup.sh
+script to create _your_ own popfile instance.
+
+For 'Nihongo' users: this ports also imports the bugfix of Japanese
+character parsing, versioned as 0.20.1.1.
+
+WWW: http://popfile.sourceforge.net/
