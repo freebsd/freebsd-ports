@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	6.0g
+PORTVERSION=	6.0h
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
