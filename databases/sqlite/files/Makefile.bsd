@@ -29,7 +29,8 @@ sqlite.h:	sqlite.h.in VERSION
 parse.h parse.c: parse.y
 	lemon o=parse ${.ALLSRC}
 
-INCDIR	 =	${PREFIX}/include
+INCSDIR	 =	${PREFIX}/include
+INCDIR	 =	${INCSDIR}		# for pre-bsd.incs.mk API
 LIBDIR	 =	${PREFIX}/lib
 
 .include <bsd.lib.mk>
