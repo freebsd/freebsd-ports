@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.8 1998/02/15 15:43:42 steve Exp $
+# $Id: Makefile,v 1.9 1998/02/16 14:38:26 steve Exp $
 #
 
 DISTNAME=	xemacs-20.3
@@ -39,11 +39,11 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 ALL_TARGET=	all dist
 
-# Have 
+# Have
 pre-configure:
 	@echo "To compile in the MULE features, set the environment variable USE_MULE"
 .if defined(HAVE_MOTIF)
-	@echo 
+	@echo ""
 	@echo "If your MOTIF library is actually lesstif, you might occasionally"
 	@echo "experience locked-up frames."
 	@echo "In this case, set the environment variable MOTIF_STATIC and recompile, "
@@ -74,5 +74,6 @@ post-install:
 	chmod 1777 /var/run/xemacs/lock
 	chmod 755 ${PREFIX}/lib/xemacs/site-lisp
 	chmod 755 ${PREFIX}/share/emacs/site-lisp
+	${RM} -f ${PREFIX}/bin/send-pr
 
 .include <bsd.port.mk>

@@ -7,7 +7,6 @@ bin/gnuclient
 bin/gnudoit
 bin/pstogif
 bin/rcs-checkin
-bin/send-pr
 bin/xemacs-20.3
 @exec ln -s %D/%F %B/xemacs
 @unexec rm %B/xemacs
