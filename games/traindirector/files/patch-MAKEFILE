@@ -1,0 +1,47 @@
+*** MAKEFILE.orig	Sat May 20 09:37:10 2000
+--- MAKEFILE	Fri Nov 15 17:35:13 2002
+***************
+*** 1,20 ****
+! OBJS = button.o clist.o field.o gtkask.o gtkmain.o loadsave.o \
+! 	menu.o run.o table.o track.o trsim.o
+  
+  CC = gcc
+  
+! CFLAGS =
+  
+  DEBUG = -g
+  
+  all: trsim
+  
+  trsim: $(OBJS)
+! 	$(CC) -o $@ $(OBJS) `gtk-config --libs` -lcurses
+  
+  .c.o:
+! 	$(CC) `gtk-config --cflags` $(CFLAGS) $(DEBUG) -c $<
+  
+  
+  clean: 
+  	rm -f *.o trsim core
+--- 1,22 ----
+! OBJS = button.o clist.o field.o gtkask.o gtkmain.o gtkopen.o gdialog.o \
+! 	loadsave.o menu.o run.o table.o track.o trsim.o html.o tgraph.o
+  
+  CC = gcc
+  
+! CFLAGS +=
+  
+  DEBUG = -g
+  
+  all: trsim
+  
+  trsim: $(OBJS)
+! 	$(CC) -o $@ $(OBJS) `gtk12-config --libs` -lcurses
+  
+  .c.o:
+! 	$(CC) `gtk12-config --cflags` $(CFLAGS) $(DEBUG) -c $<
+  
++ install: trsim
++ 	$(INSTALL) -o bin -g bin -m 555 trsim $(PREFIX)/bin
+  
+  clean: 
+  	rm -f *.o trsim core
