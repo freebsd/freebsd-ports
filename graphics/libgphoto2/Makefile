@@ -17,7 +17,7 @@ COMMENT=	A universal digital camera picture control tool
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		usb-0.1.7:${PORTSDIR}/devel/libusb \
-		exif.8:${PORTSDIR}/graphics/libexif
+		exif.9:${PORTSDIR}/graphics/libexif
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes

@@ -14,7 +14,7 @@ MAINTAINER=	j.el-rayes@daemon.li
 COMMENT=	"Swiggle is a commandline web image gallery generator"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg:install \
-		exif.8:${PORTSDIR}/graphics/libexif:install
+		exif.9:${PORTSDIR}/graphics/libexif:install
 
 USE_REINPLACE=	yes
 
