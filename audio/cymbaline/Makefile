@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	cymbaline
-PORTVERSION=	0.9f
+PORTVERSION=	0.9g
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/cymbaline/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		aumix:${PORTSDIR}/audio/aumix
