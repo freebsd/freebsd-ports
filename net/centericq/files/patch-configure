@@ -1,7 +1,0 @@
---- configure.orig	Fri Mar  8 16:20:35 2002
-+++ configure	Fri Mar  8 16:20:55 2002
-@@ -1932,3 +1932,3 @@
- 
--ALL_LINGUAS="zh_TW.Big5 ru ro pt_BR pl nl it hu es de cs"
-+ALL_LINGUAS="zh_TW.Big5 ru ro pt_BR pl nl it hu es de cs uk"
- echo $ac_n "checking for POSIXized ISC""... $ac_c" 1>&6
