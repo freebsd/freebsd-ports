@@ -26,7 +26,7 @@ APEL is programed by MORIOKA Tomohiko <tomo@m17n.org>.
      - static: utility for static evaluation
 
   APEL is installed the following directory tree:
-	${LOCALBASE}/share/mule/site-lisp/apel/		--- apel
+	${LOCALBASE}/share/mule/19.34/site-lisp/apel/	--- apel
 	${LOCALBASE}/share/mule/19.34/site-lisp/emu/	--- emu
 
 
@@ -36,4 +36,4 @@ To use apel, put the following setup into your ~/.emacs:
 
 WWW: http://cvs.m17n.org/elisp/APEL/index.en.html
 
---- Porting by shige <shige@FreeBSD.ORG>.
+Ported by shige@FreeBSD.ORG.

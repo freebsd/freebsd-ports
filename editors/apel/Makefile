@@ -17,6 +17,13 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	shige@FreeBSD.org
 
+# emacs port setup
+.if (${PORTCLASS} == "master")
+EMACS_PORT_NAME=	emacs21
+.endif
+
+EMACS_MASTERDIR_PKGFILES=YES
+
 # distfile version
 APEL_VER=	10.3
 # setupel filename
@@ -24,18 +31,11 @@ APEL_SETUPEL=	apel-setupel.el
 # document install directory by install-doc target
 APELDOCDIR?=	share/doc/apel
 # apel lispdir
-APEL_LISPDIR?=			${LOCALBASE}/${EMACS_SITE_LISPDIR}
+APEL_LISPDIR?=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 APEL_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 # This is a master port.
 PORTCLASS?=	master
-
-# emacs port setup
-.if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs
-# emacs requires *-setupel.el
-REQUIRE_SETUPEL=  YES
-.endif
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -51,8 +51,8 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .if defined(EMACS_PORT_NAME)
 # depends on custom: emacs-19.34 or mule-19.34
 .if (${EMACS_VER} == "19.34")
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_NAME}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_NAME}
 .endif
 .if defined(EMACS_PACKAGESDIR)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/xemacs-base/advice.el:${PORTSDIR}/editors/xemacs-packages
@@ -66,7 +66,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/xemacs-base/advi
 .endif
 
 pre-configure:
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
 	@${CP} ${FILESDIR}/${APEL_SETUPEL}.in ${WRKDIR}
 .endif
 
@@ -79,7 +79,7 @@ pre-install:
 .endif
 
 post-install:
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
 	@${MAKE} setupel-install
 .endif
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
