@@ -1,0 +1,11 @@
+diff -ruN ORIG/AlaskaConformalProjection.cpp AlaskaConformalProjection.cpp
+--- ORIG/AlaskaConformalProjection.cpp	Fri May  5 07:24:56 2000
++++ AlaskaConformalProjection.cpp	Fri Apr 27 19:07:38 2001
+@@ -8,6 +8,7 @@
+ #include "AlaskaConformalProjection.h"
+ #include "DatumConvertor.h"
+ 
++#include <stdio.h>
+ // GCTPC includes
+ #include "gctpc/gctpc.h"
+ #include "gctpc/gctp.h"

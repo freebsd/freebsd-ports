@@ -1,0 +1,17 @@
+diff -ruN ORIG/MercatorProjection.cpp MercatorProjection.cpp
+--- ORIG/MercatorProjection.cpp	Fri May  5 07:24:56 2000
++++ MercatorProjection.cpp	Fri Apr 27 19:07:15 2001
+@@ -7,6 +7,7 @@
+ #include "MercatorProjection.h"
+ #include "DatumConvertor.h"
+ 
++#include <stdio.h>
+ // GCTPC includes
+ #include "gctpc/gctpc.h"
+ #include "gctpc/proj.h"
+@@ -240,4 +241,4 @@
+     }
+ 
+     return ( latitude >= -86.0 && latitude <= 86.0 );
+-}
++}
