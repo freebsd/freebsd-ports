@@ -25,8 +25,8 @@ lib/comprex/archive/libzip.la
 lib/comprex/archive/libzip.so
 lib/comprex/archive/libzlib.la
 lib/comprex/archive/libzlib.so
-lib/comprex/scheme/libcurlscm.la
-lib/comprex/scheme/libcurlscm.so
+@comment lib/comprex/scheme/libcurlscm.la
+@comment lib/comprex/scheme/libcurlscm.so
 lib/libcomprex.a
 lib/libcomprex.la
 lib/libcomprex.so
@@ -35,7 +35,7 @@ libdata/pkgconfig/libcomprex.pc
 share/aclocal/libcomprex.m4
 %%NLS%%share/locale/it/LC_MESSAGES/libcomprex.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libcomprex.mo
-@dirrm lib/comprex/scheme
+@comment @dirrm lib/comprex/scheme
 @dirrm lib/comprex/archive
 @dirrm lib/comprex
 @dirrm include/libcomprex
