@@ -16,6 +16,7 @@ MAINTAINER=	c.rued@xsb.com
 WRKSRC=		${WRKDIR}/XSB/build
 
 PLIST_SUB+=     MACHINE_ARCH=${MACHINE_ARCH} OPSYS=${OPSYS:S/BSD/bsd/g:S/F/f/g:S/O/o/g:S/N/n/g}
+USE_GMAKE=	yes
 
 do-build:
 	@ cd ${WRKSRC} ; \
