@@ -348,6 +348,7 @@
     SUBDIR += sdl_ttf
     SUBDIR += seejpeg
     SUBDIR += showimg
+    SUBDIR += simage
     SUBDIR += sketch
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
