@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.116 1998/12/10 19:28:51 steve Exp $
+# $Id: Makefile,v 1.117 1998/12/17 10:59:30 asami Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -32,6 +32,7 @@
     SUBDIR += guile
     SUBDIR += guileobjc
     SUBDIR += hugs
+    SUBDIR += ici
     SUBDIR += icon
     SUBDIR += intercal
     SUBDIR += itcl
