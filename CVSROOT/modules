@@ -2568,6 +2568,7 @@ horde2		ports/www/horde2
 host		src/usr.bin/host
 hostname	src/bin/hostname
 hotjava		ports/www/hotjava
+hotwayd		ports/mail/hotwayd
 hp2xx		ports/print/hp2xx
 hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
