@@ -14,6 +14,12 @@ MASTER_SITES=	http://www.mpa-garching.mpg.de/~martin/ray++/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of C++ classes needed for ray tracing
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-fast-handles
 USE_GMAKE=	yes
@@ -25,4 +31,4 @@ do-install:
 	  ${FIND} * -name "*.h" | cpio -pdum ${PREFIX}/include/${PORTNAME} ; \
 	  ${CHMOD} -R 755 ${PREFIX}/include/${PORTNAME} )
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
