@@ -104,6 +104,7 @@
     SUBDIR += libgnugetopt
     SUBDIR += libgtop
     SUBDIR += libmalloc
+    SUBDIR += libneural
     SUBDIR += libol
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
