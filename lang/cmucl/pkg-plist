@@ -1,10 +1,17 @@
 bin/lisp
+share/doc/cmucl/README
+share/doc/cmucl/release-18d.txt
+lib/cmucl/sample-wrapper
+lib/cmucl/internals.h
+lib/cmucl/lisp.nm
+lib/cmucl/lisp.map
 lib/cmucl/lib/lisp.core
 lib/cmucl/lib/config
 lib/cmucl/lib/config.lisp
 lib/cmucl/lib/load-foreign.csh
-lib/cmucl/lib/site-init.lisp
+lib/cmucl/lib/generic-site.lisp
 lib/cmucl/lib/subsystems/gray-streams-library.x86f
 @dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
+@dirrm share/doc/cmucl
