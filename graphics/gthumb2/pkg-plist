@@ -183,6 +183,7 @@ share/locale/de/LC_MESSAGES/gthumb.mo
 share/locale/en_CA/LC_MESSAGES/gthumb.mo
 share/locale/en_GB/LC_MESSAGES/gthumb.mo
 share/locale/es/LC_MESSAGES/gthumb.mo
+share/locale/fi/LC_MESSAGES/gthumb.mo
 share/locale/fr/LC_MESSAGES/gthumb.mo
 share/locale/ga/LC_MESSAGES/gthumb.mo
 share/locale/hr/LC_MESSAGES/gthumb.mo
@@ -190,6 +191,7 @@ share/locale/hu/LC_MESSAGES/gthumb.mo
 share/locale/it/LC_MESSAGES/gthumb.mo
 share/locale/ja/LC_MESSAGES/gthumb.mo
 share/locale/ko/LC_MESSAGES/gthumb.mo
+share/locale/lt/LC_MESSAGES/gthumb.mo
 share/locale/lv/LC_MESSAGES/gthumb.mo
 share/locale/mk/LC_MESSAGES/gthumb.mo
 share/locale/ml/LC_MESSAGES/gthumb.mo
