@@ -1,0 +1,7 @@
+This is a very simple PSTN to H.323 gateway program using the OpenH323
+library. It allows H.323 clients to make outgoing calls, and incoming
+calls to be routed to a specific H.323 client.
+
+It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty
+
+WWW: http://www.openh323.org/
