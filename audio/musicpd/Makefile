@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -93,5 +92,16 @@ do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
+
+post-install:
+	@${ECHO_CMD}
+	@${ECHO_CMD} -- IMPORTANT NOTICE ----------------------------------
+	@${ECHO_CMD} If you upgraded from a pre-0.10.0 release, you have to
+	@${ECHO_CMD} rebuild your index now by running
+	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd${RC_SUFX} stop
+	@${ECHO_CMD} ${PREFIX}/bin/mpd --create-db ${PREFIX}/etc/mpd.conf
+	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd${RC_SUFX} start
+	@${ECHO_CMD} ------------------------------------------------------
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
