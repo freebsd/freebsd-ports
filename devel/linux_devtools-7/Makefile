@@ -8,7 +8,8 @@
 PORTNAME=		linux_devtools
 PORTVERSION=		7.1
 CATEGORIES=		devel emulators linux
-MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
+MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
+MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
 DISTFILES=		${RPM_KERNEL_HEADERS} \
 			${RPM_GLIBC_DEVEL} \
 			${RPM_LIBSTDCXX_DEVEL} \
@@ -22,7 +23,8 @@ DISTFILES=		${RPM_KERNEL_HEADERS} \
 			${RPM_X_DEVEL}
 EXTRACT_ONLY=
 
-PATCH_SITES=		${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
+PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
+PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		marcel@FreeBSD.org
@@ -42,17 +44,6 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
-
-# XXX - Increase the number of mirrors. Favor those that also hold
-#	the IA-64 packages.
-RPM_MIRRORS=		\
-	ftp://ftp.rutgers.edu/pub/redhat/__DIR__/ \
-	ftp://ftp.redhat.com/redhat/__DIR__/ \
-	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/__DIR__/
-
-STDDIR=		linux/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
-UPDDIR=		linux/updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
