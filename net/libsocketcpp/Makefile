@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libsocket
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper library to the sockets
 
 GNU_CONFIGURE=	yes
