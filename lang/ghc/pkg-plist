@@ -826,7 +826,6 @@ lib/ghc-%%GHC_VERSION%%/include/Updates.h
 lib/ghc-%%GHC_VERSION%%/include/config.h
 lib/ghc-%%GHC_VERSION%%/include/consUtils.h
 lib/ghc-%%GHC_VERSION%%/include/dirUtils.h
-lib/ghc-%%GHC_VERSION%%/include/ghc_errno.h
 lib/ghc-%%GHC_VERSION%%/include/gmp.h
 lib/ghc-%%GHC_VERSION%%/include/ieee-flpt.h
 lib/ghc-%%GHC_VERSION%%/include/lockFile.h
@@ -862,6 +861,9 @@ lib/ghc-%%GHC_VERSION%%/libHSreadline.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSreadline_p.a
 lib/ghc-%%GHC_VERSION%%/libHSrts.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSrts_p.a
+lib/ghc-%%GHC_VERSION%%/libHSrts_debug.a
+lib/ghc-%%GHC_VERSION%%/libHSrts_thr.a
+lib/ghc-%%GHC_VERSION%%/libHSrts_thr_p.a
 lib/ghc-%%GHC_VERSION%%/libHStext.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHStext_p.a
 lib/ghc-%%GHC_VERSION%%/libHSunix.a
