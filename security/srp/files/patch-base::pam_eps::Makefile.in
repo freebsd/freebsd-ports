@@ -1,0 +1,11 @@
+--- base/pam_eps/Makefile.in.orig	Sun Apr  8 17:11:31 2001
++++ base/pam_eps/Makefile.in	Wed Jul 25 14:10:29 2001
+@@ -23,7 +23,7 @@
+ CHKPWD = eps_chkpwd
+ FAKEROOT = @prefix@
+ SUPPLEMENTED = /sbin
+-SECUREDIR = /lib/security
++SECUREDIR = /lib
+ EXTRAS = -DCHKPWD_HELPER=\"$(SUPPLEMENTED)/$(CHKPWD)\"
+ 
+ CPPFLAGS = @CPPFLAGS@ -I../../libsrp $(USE_LCKPWDF) $(NEED_LCKPWDF) $(EXTRAS)

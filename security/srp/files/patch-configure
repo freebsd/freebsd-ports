@@ -1,0 +1,10 @@
+--- configure.orig	Fri May 25 23:22:27 2001
++++ configure	Wed Jul 25 13:28:17 2001
+@@ -594,6 +594,7 @@
+     INSTALL="$ac_install_sh"
+   fi
+ fi
++ac_given_INSTALL="$INSTALL"
+ echo "$ac_t""$INSTALL" 1>&6
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.

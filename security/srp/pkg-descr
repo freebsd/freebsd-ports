@@ -1,0 +1,15 @@
+Excerpt from the README:  
+  SRP stands for the Secure Remote Password protocol, which is a secure
+  password-based authentication and key-exchange mechanism that can be
+  used to establish session security and mutual authentication over
+  untrusted networks without requiring an external public-key infrastructure
+  or trusted third parties.  The SRP distribution consists of a fully-
+  featured, portable library that implements SRP-based secure password
+  authentication as well as implementations of popular applications and
+  services like Telnet and FTP with support for transport security and
+  SRP.  These password-based applications leverage the strength of the
+  SRP authentication mechanism to offer fairly good protection against
+  both passive and active network attacks, which is an improvement over
+  most existing password-only techniques.
+
+WWW: http://srp.stanford.edu/
