@@ -1,0 +1,34 @@
+%%PYTHON_SITELIBDIR%%/japanese/__init__.py
+%%PYTHON_SITELIBDIR%%/japanese/euc_jp.py
+%%PYTHON_SITELIBDIR%%/japanese/iso_2022_jp.py
+%%PYTHON_SITELIBDIR%%/japanese/iso_2022_jp_1.py
+%%PYTHON_SITELIBDIR%%/japanese/iso_2022_jp_ext.py
+%%PYTHON_SITELIBDIR%%/japanese/jis_7.py
+%%PYTHON_SITELIBDIR%%/japanese/jis_x_0201_katakana.py
+%%PYTHON_SITELIBDIR%%/japanese/jis_x_0201_roman.py
+%%PYTHON_SITELIBDIR%%/japanese/shift_jis.py
+%%PYTHON_SITELIBDIR%%/japanese/sjis.py
+%%PYTHON_SITELIBDIR%%/japanese/ujis.py
+%%PYTHON_SITELIBDIR%%/japanese/mappings/__init__.py
+%%PYTHON_SITELIBDIR%%/japanese/mappings/euc_jp.py
+%%PYTHON_SITELIBDIR%%/japanese/mappings/jis_x_0208.py
+%%PYTHON_SITELIBDIR%%/japanese/mappings/jis_x_0212.py
+%%PYTHON_SITELIBDIR%%/japanese/mappings/shift_jis.py
+%%PYTHON_SITELIBDIR%%/japanese/mappings/__init__.pyc
+%%PYTHON_SITELIBDIR%%/japanese/mappings/euc_jp.pyc
+%%PYTHON_SITELIBDIR%%/japanese/mappings/jis_x_0208.pyc
+%%PYTHON_SITELIBDIR%%/japanese/mappings/jis_x_0212.pyc
+%%PYTHON_SITELIBDIR%%/japanese/mappings/shift_jis.pyc
+%%PYTHON_SITELIBDIR%%/japanese/__init__.pyc
+%%PYTHON_SITELIBDIR%%/japanese/euc_jp.pyc
+%%PYTHON_SITELIBDIR%%/japanese/iso_2022_jp.pyc
+%%PYTHON_SITELIBDIR%%/japanese/iso_2022_jp_1.pyc
+%%PYTHON_SITELIBDIR%%/japanese/iso_2022_jp_ext.pyc
+%%PYTHON_SITELIBDIR%%/japanese/jis_7.pyc
+%%PYTHON_SITELIBDIR%%/japanese/jis_x_0201_katakana.pyc
+%%PYTHON_SITELIBDIR%%/japanese/jis_x_0201_roman.pyc
+%%PYTHON_SITELIBDIR%%/japanese/shift_jis.pyc
+%%PYTHON_SITELIBDIR%%/japanese/sjis.pyc
+%%PYTHON_SITELIBDIR%%/japanese/ujis.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/japanese/mappings
+@dirrm %%PYTHON_SITELIBDIR%%/japanese
