@@ -1,0 +1,19 @@
+--- configure.orig	Mon May 14 12:54:14 2001
++++ configure	Fri Jun  1 14:34:58 2001
+@@ -3003,4 +3003,4 @@
+ 
+-echo $ac_n "checking for db_env_create in -ldb-3""... $ac_c" 1>&6
+-echo "configure:3006: checking for db_env_create in -ldb-3" >&5
++echo $ac_n "checking for db_env_create in -ldb3""... $ac_c" 1>&6
++echo "configure:3006: checking for db_env_create in -ldb3" >&5
+ ac_lib_var=`echo db-3'_'db_env_create | sed 'y%./+-%__p_%'`
+@@ -3010,3 +3010,3 @@
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldb-3  $LIBS"
++LIBS="-ldb3  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+@@ -3038,3 +3038,3 @@
+   echo "$ac_t""yes" 1>&6
+-  BDB_LIBS=-ldb-3
++  BDB_LIBS=-ldb3
+ else
