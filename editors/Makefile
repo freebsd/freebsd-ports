@@ -136,7 +136,6 @@
     SUBDIR += openoffice-1.1-es
     SUBDIR += openoffice-1.1-et
     SUBDIR += openoffice-1.1-fi
-    SUBDIR += openoffice-1.1-gr
     SUBDIR += openoffice-1.1-it
     SUBDIR += openoffice-1.1-nl
     SUBDIR += openoffice-1.1-se
