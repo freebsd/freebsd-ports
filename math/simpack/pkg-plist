@@ -32,11 +32,13 @@ lib/Sim++/olb/token.o
 lib/Sim++/olb/util.o
 lib/Sim++/olb/vlist.o
 lib/libsim++.a
-lib/libsim++.so.1.0
+lib/libsim++.so
+lib/libsim++.so.1
 lib/libqueuing.a
-lib/libqueuing.so.1.0
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+lib/libqueuing.so
+lib/libqueuing.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/SimPack/constraint/differential/deq/deq
 lib/SimPack/constraint/differential/deq/order1
 lib/SimPack/constraint/differential/deq/contsim

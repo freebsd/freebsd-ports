@@ -10,7 +10,10 @@ include/plplot/plplot.h
 include/plplot/plplotP.h
 include/plplot/plstream.h
 lib/libplplotdX.a
+lib/libplplotdX.so
 lib/libplplotdX.so.4.99
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/plplot/usaglobe.map
 lib/plplot/usa.map
 lib/plplot/globe.map

@@ -1,6 +1,8 @@
 lib/libblas.a
-lib/libblas.so.2.0
+lib/libblas.so
+lib/libblas.so.2
 lib/liblapack.a
-lib/liblapack.so.2.0
-@exec ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/liblapack.so
+lib/liblapack.so.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
