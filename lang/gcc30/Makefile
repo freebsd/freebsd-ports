@@ -23,6 +23,8 @@ MAINTAINER=	obrien@FreeBSD.org
 
 USE_BZIP2=	yes
 
+LATEST_LINK=	gcc30
+
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 

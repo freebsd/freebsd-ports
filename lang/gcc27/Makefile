@@ -20,6 +20,8 @@ MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'old version, not worth the cost in real estate'
 
+LATEST_LINK=	gcc27
+
 .include <bsd.port.pre.mk>
 
 GCC_VER=	2.7.2.3
