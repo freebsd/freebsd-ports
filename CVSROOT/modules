@@ -3681,6 +3681,7 @@ kappdock	ports/x11-wm/kappdock
 kaptain		ports/devel/kaptain
 karamba		ports/deskutils/karamba
 kaskade		ports/math/kaskade
+kaspaliste	ports/print/kaspaliste
 katalog		ports/misc/katalog
 katoob		ports/arabic/katoob
 kavmilter	ports/mail/kavmilter
