@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	listener
-PORTVERSION=	0.6
-CATEGORIES=	audio
+PORTVERSION=	0.8
+CATEGORIES=	audio security
 MASTER_SITES=	http://www.vanheusden.com/listener/
 EXTRACT_SUFX=	.tgz
 
@@ -16,7 +16,7 @@ COMMENT=	A program to listen for and record sound activity
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-DOCS=		INSTALL
+DOCS=		manual.html
 
 post-install:
 

@@ -1,5 +1,6 @@
 bin/setlistener
 bin/listener
+bin/listenersoundpipe
 etc/listener.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
