@@ -1,0 +1,77 @@
+--- Makefile.in.ORIG	Mon Feb 10 17:45:33 1997
++++ Makefile.in	Mon Feb 10 17:47:04 1997
+@@ -55,7 +55,7 @@
+ BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
+ 
+ # Directory in which to install the include file tcl.h:
+-INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
++INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
+ 
+ # Top-level directory in which to install manual entries:
+ MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -73,7 +73,7 @@
+ 
+ # To change the compiler switches, for example to change from -O
+ # to -g, change the following line:
+-CFLAGS = -O
++CFLAGS = @CFLAGS@
+ 
+ # To disable ANSI-C procedure prototypes reverse the comment characters
+ # on the following lines:
+@@ -389,7 +389,7 @@
+ 	@echo "Installing tclsh"
+ 	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
+ 	@echo "Installing tclConfig.sh"
+-	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
++	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
+ 
+ install-libraries:
+ 	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
+@@ -423,30 +423,38 @@
+ 	@cd $(TOP_DIR)/doc; for i in *.1; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
++	    rm -f $(MAN1_INSTALL_DIR)/$$i.gz; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
++		    $$i |gzip -9 > $(MAN1_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@cd $(TOP_DIR)/doc; for i in *.3; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
++	    rm -f $(MAN3_INSTALL_DIR)/$$i.gz; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
++		    $$i |gzip -9 > $(MAN3_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MAN3_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@cd $(TOP_DIR)/doc; for i in *.n; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MANN_INSTALL_DIR)/$$i; \
++	    rm -f $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
++		    $$i | gzip -9 > $(MANN_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
++	@echo "**********"
++	@echo "IMPORTANT:"
++	@echo "**********"
++	@echo "We've installed:"
++	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
++	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
++	@echo "These are NOT the default place, but good place to avoid"
++	@echo "conflicting with another version of Tcl/Tks."
+ 
+ Makefile: $(UNIX_DIR)/Makefile.in
+ 	$(SHELL) config.status
