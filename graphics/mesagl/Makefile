@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mesa
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	graphics
 MASTER_SITES= 	http://download.sourceforge.net/mesa3d/ \
 		ftp://iris.ssec.wisc.edu/pub/Mesa/ \
@@ -16,6 +16,8 @@ DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	jseger@FreeBSD.org
 
+USE_BZIP2=	yes
+
 .if defined(WANT_GGI)
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=--with-ggi=${LOCALBASE}
@@ -23,10 +25,9 @@ CONFIGURE_ARGS+=--with-ggi=${LOCALBASE}
 
 GLVER=		14
 GLUTVER=	3
-WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
+USE_GMAKE=	yes
 CONFIGURE_ENV+=	GLVER="${GLVER}" GLUTVER="${GLUTVER}"
 PLIST_SUB=	GLVER="${GLVER}" GLUTVER="${GLUTVER}"
 
