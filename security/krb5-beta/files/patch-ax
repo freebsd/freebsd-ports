@@ -1,0 +1,11 @@
+--- ../doc/Makefile.orig	Fri Sep 20 10:35:27 2002
++++ ../doc/Makefile	Tue Jul 29 18:53:08 2003
+@@ -1,7 +1,7 @@
+ SRCDIR=../src
+ DVI=texi2dvi
+ DVIPS=dvips -o "$@"
+-INFO=makeinfo
++INFO=makeinfo --no-validate
+ HTML=makeinfo --html
+ RM=rm -f
+ TAR=tar -chvf

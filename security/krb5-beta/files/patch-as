@@ -1,0 +1,195 @@
+--- clients/ksu/main.c.orig	Wed Aug 14 12:14:49 2002
++++ clients/ksu/main.c	Tue Jul 29 18:46:00 2003
+@@ -32,6 +32,10 @@
+ #include <signal.h>
+ #include <grp.h>
+ 
++#ifdef LOGIN_CAP
++#include <login_cap.h>
++#endif
++
+ /* globals */
+ char * prog_name;
+ int auth_debug =0;     
+@@ -61,7 +65,7 @@
+    ill specified arguments to commands */        
+ 
+ void usage (){
+-    fprintf(stderr, "Usage: %s [target user] [-n principal] [-c source cachename] [-k] [-D] [-r time] [-pf] [-l lifetime] [-zZ] [-q] [-e command [args... ] ] [-a [args... ] ]\n", prog_name);
++    fprintf(stderr, "Usage: %s [target user] [-m] [-n principal] [-c source cachename] [-C target cachename] [-k] [-D] [-r time] [-pf] [-l lifetime] [-zZ] [-q] [-e command [args... ] ] [-a [args... ] ]\n", prog_name);
+ }
+ 
+ /* for Ultrix and friends ... */
+@@ -77,6 +81,7 @@
+     int argc;
+     char ** argv;
+ { 
++    int asme = 0;
+     int hp =0;
+     int some_rest_copy = 0;	
+     int all_rest_copy = 0;	
+@@ -91,6 +96,7 @@
+     char * cc_target_tag = NULL; 
+     char * target_user = NULL;
+     char * source_user;
++    char * source_shell;
+     
+     krb5_ccache cc_source = NULL;
+     const char * cc_source_tag = NULL; 
+@@ -117,6 +123,11 @@
+     krb5_principal  kdc_server;
+     krb5_boolean zero_password;
+     char * dir_of_cc_target;     
++
++#ifdef LOGIN_CAP
++    login_cap_t *lc;
++    int setwhat;
++#endif
+     
+     options.opt = KRB5_DEFAULT_OPTIONS;
+     options.lifetime = KRB5_DEFAULT_TKT_LIFE;
+@@ -181,7 +192,7 @@
+ 	com_err (prog_name, errno, "while setting euid to source user");
+ 	exit (1);
+     }
+-    while(!done && ((option = getopt(pargc, pargv,"n:c:r:a:zZDfpkql:e:")) != -1)){
++    while(!done && ((option = getopt(pargc, pargv,"n:c:r:a:zZDfpkmql:e:")) != -1)){
+ 	switch (option) {
+ 	case 'r':
+ 	    options.opt |= KDC_OPT_RENEWABLE;
+@@ -227,6 +238,9 @@
+ 		errflg++;
+ 	    }
+ 	    break;
++	case 'm':
++	    asme = 1;
++	    break;
+ 	case 'n': 
+ 	    if ((retval = krb5_parse_name(ksu_context, optarg, &client))){
+ 		com_err(prog_name, retval, "when parsing name %s", optarg); 
+@@ -341,6 +355,7 @@
+     
+     /* allocate space and copy the usernamane there */        
+     source_user = xstrdup(pwd->pw_name);
++    source_shell = xstrdup(pwd->pw_shell);
+     source_uid = pwd->pw_uid;
+     source_gid = pwd->pw_gid;
+     
+@@ -672,43 +687,64 @@
+     /* get the shell of the user, this will be the shell used by su */      
+     target_pwd = getpwnam(target_user);
+     
+-    if (target_pwd->pw_shell)
+-	shell = xstrdup(target_pwd->pw_shell);
+-    else {
+-	shell = _DEF_CSH;  /* default is cshell */   
++    if (asme) {
++	if (source_shell && *source_shell) {
++	    shell = strdup(source_shell);
++	} else {
++	    shell = _DEF_CSH;
++	}
++    } else {
++	if (target_pwd->pw_shell)
++	    shell = strdup(target_pwd->pw_shell);
++	else {
++	    shell = _DEF_CSH;  /* default is cshell */
++	}
+     }
+     
+ #ifdef HAVE_GETUSERSHELL
+     
+     /* insist that the target login uses a standard shell (root is omited) */ 
+     
+-    if (!standard_shell(target_pwd->pw_shell) && source_uid) {
+-	fprintf(stderr, "ksu: permission denied (shell).\n");
+-	sweep_up(ksu_context, cc_target);
+-	exit(1);
++    if (asme) {
++	if (!standard_shell(pwd->pw_shell) && source_uid) {
++	    fprintf(stderr, "ksu: permission denied (shell).\n");
++	    sweep_up(ksu_context, cc_target);
++	    exit(1);
++	}
++    } else {
++	if (!standard_shell(target_pwd->pw_shell) && source_uid) {
++	    fprintf(stderr, "ksu: permission denied (shell).\n");
++	    sweep_up(ksu_context, cc_target);
++	    exit(1);
++	}
+     }
+ #endif /* HAVE_GETUSERSHELL */
+     
+-    if (target_pwd->pw_uid){
+-	
+-	if(set_env_var("USER", target_pwd->pw_name)){
++    if (!asme) {
++	if (target_pwd->pw_uid){
++	    if (set_env_var("USER", target_pwd->pw_name)){
++		fprintf(stderr,"ksu: couldn't set environment variable USER\n");
++		sweep_up(ksu_context, cc_target);
++		exit(1);
++	    }
++	}
++    
++	if (set_env_var( "HOME", target_pwd->pw_dir)){
+ 	    fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+ 	    sweep_up(ksu_context, cc_target);
+ 	    exit(1);
+-	} 			
+-    }	
+-    
+-    if(set_env_var( "HOME", target_pwd->pw_dir)){
+-	fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+-	sweep_up(ksu_context, cc_target);
+-	exit(1);
+-    } 			
++	}
+     
+-    if(set_env_var( "SHELL", shell)){
+-	fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+-	sweep_up(ksu_context, cc_target);
+-	exit(1);
+-    } 			
++	if (set_env_var( "SHELL", shell)){
++	    fprintf(stderr,"ksu: couldn't set environment variable USER\n");
++	    sweep_up(ksu_context, cc_target);
++	    exit(1);
++	}
++    }
++
++#ifdef LOGIN_CAP
++       lc = login_getpwclass(pwd);
++#endif
+     
+     /* set the cc env name to target */         	
+     
+@@ -718,7 +754,19 @@
+ 	sweep_up(ksu_context, cc_target);
+ 	exit(1);
+     } 			
+-    
++   
++#ifdef LOGIN_CAP
++    setwhat = LOGIN_SETUSER|LOGIN_SETGROUP|LOGIN_SETRESOURCES|LOGIN_SETPRIORITY;
++    setwhat |= LOGIN_SETPATH|LOGIN_SETUMASK|LOGIN_SETENV;
++    /*
++     * Don't touch resource/priority settings if -m has been
++     * used or -l and -c hasn't, and we're not su'ing to root.
++     */
++    if (target_pwd->pw_uid)
++	setwhat &= ~(LOGIN_SETPRIORITY|LOGIN_SETRESOURCES);
++    if (setusercontext(lc, target_pwd, target_pwd->pw_uid, setwhat) < 0)
++	err(1, "setusercontext");
++#else
+     /* set permissions */
+     if (setgid(target_pwd->pw_gid) < 0) {
+ 	perror("ksu: setgid");
+@@ -759,6 +807,7 @@
+ 	sweep_up(ksu_context, cc_target);
+ 	exit(1);
+     }   
++#endif
+     
+     if (access( cc_target_tag_tmp, R_OK | W_OK )){
+ 	com_err(prog_name, errno,
