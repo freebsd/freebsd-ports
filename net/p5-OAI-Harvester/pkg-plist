@@ -1,0 +1,19 @@
+bin/oai-listrecords
+bin/oai-listsets
+%%SITE_PERL%%/Net/OAI/Base.pm
+%%SITE_PERL%%/Net/OAI/Error.pm
+%%SITE_PERL%%/Net/OAI/GetRecord.pm
+%%SITE_PERL%%/Net/OAI/Harvester.pm
+%%SITE_PERL%%/Net/OAI/Identify.pm
+%%SITE_PERL%%/Net/OAI/ListIdentifiers.pm
+%%SITE_PERL%%/Net/OAI/ListMetadataFormats.pm
+%%SITE_PERL%%/Net/OAI/ListRecords.pm
+%%SITE_PERL%%/Net/OAI/ListSets.pm
+%%SITE_PERL%%/Net/OAI/Record.pm
+%%SITE_PERL%%/Net/OAI/Record/Header.pm
+%%SITE_PERL%%/Net/OAI/Record/OAI_DC.pm
+%%SITE_PERL%%/Net/OAI/ResumptionToken.pm
+%%SITE_PERL%%/mach/auto/OAI-Harvester/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/OAI-Harvester
+@dirrm %%SITE_PERL%%/Net/OAI/Record
+@dirrm %%SITE_PERL%%/Net/OAI
