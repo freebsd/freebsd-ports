@@ -1,0 +1,21 @@
+Truevision is a 3D modeler for Gnome. It is still in developpement, so not
+really stable and quitte not usable yet.
+
+Feature :
+   - create some objects :
+       - finite solid primitives : box, sphere, cone, cylinder, torus,
+         heightfield, superellipsoid
+       - finit patch primitive : disc
+       - infinite solid primitive : plane
+       - lights : point, cylindrical, spot, area
+       - csg operators : union, merge, intersection, difference
+       - athmospherics : background, skysphere, media, fog
+   - manipulate them ( rotate, scale, translate ... )
+   - manipulate and edit the camera.
+   - render the scene with the multithreaded povray frontend.
+   - create and edit materials ( exept slope maps ), with preview in editor.
+   - output the scene to povray.
+   - save and load scenes, objects, materials.
+   - save materials with preview in material library.
+
+WWW: http://truevision.sourceforge.net/
