@@ -46,3 +46,8 @@ gnats<=3.113.1_9|http://www.securityfocus.com/archive/1/326337|Local privilege e
 XFree86-Server>=4.1.0<4.3.0_14|http://www.xfree86.org/security/|Font file buffer overflows
 XFree86-Server>=4.3.99<4.3.99.15_2|http://www.xfree86.org/security/|Font file buffer overflows
 mailman<2.1.4|http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0965|Cross-site scripting (XSS) vulnerability
+bind<8.3.7|http://www.kb.cert.org/vuls/id/734644|negative cache poisoning
+pine<4.58|http://www.idefense.com/application/poi/display?id=5&type=vulnerabilities|remote exploitable buffer overflow
+zh-pine<4.58|http://www.idefense.com/application/poi/display?id=5&type=vulnerabilities|remote exploitable buffer overflow
+iw-pine<4.58|http://www.idefense.com/application/poi/display?id=5&type=vulnerabilities|remote exploitable buffer overflow
+samba>=3.0<3.0.1_2,1|http://www.samba.org/samba/whatsnew/samba-3.0.2.html|password initialization bug
