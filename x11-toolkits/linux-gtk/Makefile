@@ -21,16 +21,23 @@ COMMENT?=	RPM of the Gtk lib
 BUILD_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS?=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
-USE_LINUX_PREFIX=	yes
-USE_LINUX=	yes
+ONLY_FOR_ARCHS?=	i386 alpha amd64
 
-ONLY_FOR_ARCHS?=	i386 alpha
+USE_LINUX_PREFIX=	yes
+
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64")
+ARCH=		i386
+RPMFLAGS+=	--ignorearch
+.endif
+USE_LINUX=	yes
 DIST_SUBDIR?=	rpm
 EXTRACT_ONLY=
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-PLIST?=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE?=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST?=		${PKGDIR}/pkg-plist.${ARCH}
+MD5_FILE?=	${MASTERDIR}/distinfo.${ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=		en
@@ -39,15 +46,15 @@ BASEVERSION?=	7.1
 RPM_MIRRORS=	\
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/
-STDDIR=		linux/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
-UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}
-.if (${MACHINE_ARCH} == "i386")
-RPM_SET?=	gtk+-1.2.9-4.${MACHINE_ARCH}.rpm
-.elif (${MACHINE_ARCH} == "alpha")
-RPM_SET?=	gtk+-1.2.9-4.${MACHINE_ARCH}.rpm
+STDDIR=		linux/${BASEVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
+UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${ARCH}
+.if (${ARCH} == "i386")
+RPM_SET?=	gtk+-1.2.9-4.${ARCH}.rpm
+.elif (${ARCH} == "alpha")
+RPM_SET?=	gtk+-1.2.9-4.${ARCH}.rpm
 .endif
 DBPATH=		/var/lib/rpm
-RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
+RPMFLAGS+=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
 		--nodeps --replacepkgs
 RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
 
@@ -66,4 +73,4 @@ new-plist:
 		${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' \
 		>> ${PLIST}.new
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
