@@ -59,3 +59,11 @@ if( $result ) {
 	print "Failed to add/modify user majordom!\n";
 	exit 1;
 }
+
+## Add daemon to majordom group, to allow sendmail to call wrapper
+## via direct pipes in /etc/mail/aliases
+$result = system( "pw groupmod majordom -m daemon" );
+if( $result ) {
+	print "Failed to add/modify user majordom!\n";
+	exit 1;
+}

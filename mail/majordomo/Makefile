@@ -7,12 +7,14 @@
 
 PORTNAME=	majordomo
 PORTVERSION=	1.94.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/
 EXTRACT_SUFX=   .tgz
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anders@fix.no
 
 # Needs to create a user and group
 IS_INTERACTIVE= yes
@@ -22,9 +24,9 @@ INSTALL_TARGET=	install install-wrapper
 MAN1=		approve.1 bounce-remind.1 digest.1
 MAN8=		majordomo.8
 
-pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	/usr/bin/dialog --yesno "Majordomo is unsafe to use on multi-user machines: local users can run arbitrary commands as the majordomo user. Do you wish to accept the security risk and build majordomo anyway?" 8 60 || ${FALSE}
+.if defined(WITH_POSTFIX_APPROVE_PATCH)
+post-patch:
+	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/postfix-approve-patch 2>/dev/null
 .endif
 
 pre-configure:
@@ -32,8 +34,10 @@ pre-configure:
 		@ ${CP} ${FILESDIR}/aliases.majordomo ${WRKSRC}
 
 pre-install:
-		@ ${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf
-
+		@ if test -f ${WRKSRC}/majordomo.cf; then :; else \
+			${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf; \
+			/usr/bin/perl ${SCRIPTDIR}/makeseed ${WRKSRC}/majordomo.cf; \
+		fi
 post-install:
 .for file in ${MAN1}
 	@ ${INSTALL_MAN} ${WRKSRC}/Doc/man/${file} ${PREFIX}/man/man1
