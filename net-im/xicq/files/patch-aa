@@ -1,0 +1,28 @@
+diff -urN src.orig/libXicq/Makefile src/libXicq/Makefile
+--- src.orig/libXicq/Makefile	Tue Dec 15 19:13:57 1998
++++ src/libXicq/Makefile	Tue Dec 15 19:14:51 1998
+@@ -1,8 +1,8 @@
+ CC	= g++
+ SHELL	= /bin/sh
+ INCLUDE	= -I.
+-CFLAGS	= -g -Wall $(INCLUDE)
+-CXXFLAGS= -g -Wall $(INCLUDE)
++CFLAGS	= $(OPT) -g -Wall $(INCLUDE)
++CXXFLAGS= $(OPT) -g -Wall $(INCLUDE)
+ 
+ OBJECTS = libXicq.o net.o misc.o parse.o packets.o ui2lib.o contact.o
+ 
+diff -urN src.orig/xicq/Makefile src/xicq/Makefile
+--- src.orig/xicq/Makefile	Tue Dec 15 19:13:59 1998
++++ src/xicq/Makefile	Tue Dec 15 19:15:08 1998
+@@ -1,8 +1,8 @@
+ CC      = g++
+ SHELL   = /bin/sh
+ INCLUDE = -I. -I../libXicq
+-CXXFLAGS= -g -Wall $(INCLUDE)
+-CFLAGS  = -g -Wall $(INCLUDE)
++CXXFLAGS= $(OPT) -g -Wall $(INCLUDE)
++CFLAGS  = $(OPT) -g -Wall $(INCLUDE)
+ LIBDIR	= -L../libXicq
+ LIB	= -lXicq
+ 

@@ -1,3 +1,4 @@
 bin/xicq
 share/examples/xicq/contact
 share/examples/xicq/config
+@dirrm share/examples/xicq
