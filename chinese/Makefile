@@ -40,7 +40,6 @@
     SUBDIR += gb2ps
     SUBDIR += gbfs
     SUBDIR += gbscript
-    SUBDIR += ghostscript6
     SUBDIR += gnumeric
     SUBDIR += gugod-clean
     SUBDIR += hanzim
