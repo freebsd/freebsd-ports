@@ -55,6 +55,11 @@ share/doc/simulavr/internals_html/flash_8c.html
 share/doc/simulavr/internals_html/gdbserver_8c-source.html
 share/doc/simulavr/internals_html/gdbserver_8c.html
 share/doc/simulavr/internals_html/globals.html
+share/doc/simulavr/internals_html/globals_defs.html
+share/doc/simulavr/internals_html/globals_enum.html
+share/doc/simulavr/internals_html/globals_eval.html
+share/doc/simulavr/internals_html/globals_func.html
+share/doc/simulavr/internals_html/globals_vars.html
 share/doc/simulavr/internals_html/index.html
 share/doc/simulavr/internals_html/insn_decoder.html
 share/doc/simulavr/internals_html/interrupts.html
