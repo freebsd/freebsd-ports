@@ -20,11 +20,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 INSTALL_SHLIBS=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
 post-patch:
-	@${PERL} -pi -e "s/xCC/xc/" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s/xCC/xc/" ${WRKSRC}/configure
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \

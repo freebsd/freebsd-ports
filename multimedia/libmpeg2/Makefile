@@ -15,6 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS= --enable-shared
 
@@ -45,13 +46,14 @@ pre-everything::
 	@${ECHO_MSG} "====>"
 
 post-patch:
-	@${PERL} -pi -e 's|<SDL/|<SDL11/|' ${WRKSRC}/libvo/*
-	@${PERL} -pi -e 's|-O3||;s|<termio.h>|<termios.h>|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|<SDL/|<SDL11/|' ${WRKSRC}/libvo/*
+	@${REINPLACE_CMD} -e 's|-O3||;s|<termio.h>|<termios.h>|' ${WRKSRC}/configure
 
 post-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${CP} -f ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${CHMOD} u+w ${WRKSRC}/libtool
 # Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
-	@${PERL} -pi.orig \
+	@${REINPLACE_CMD} -E \
 		-e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|; \
 		s|(install_ltlibs=)yes|\1no|' \
 		${WRKSRC}/libtool

@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ONLY_FOR_ARCHS=	i386
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAKE_ARGS=	MAKE="${GMAKE}" LOCALBASE="${LOCALBASE}"
 CONFIGURE_ARGS= --cc="${CC}" --prefix="${PREFIX}" \
 		--disable-grab
@@ -44,7 +45,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
+	@${REINPLACE_CMD} -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
 		${WRKSRC}/ffserver.c
 
 post-install:
