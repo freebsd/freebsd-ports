@@ -93,7 +93,7 @@ pre-fetch:
 	@ ${ECHO}
 .endif
 .if defined(WITH_CDROM)
-.if !exists(${CD_MOUNTPT}/linux/office52/setup)
+.if !exists(/cdrom/linux/office52/setup)
 	@${ECHO}
 	@${ECHO} Please mount the Sun StarOffice 5.2 CDROM
 	@${ECHO} onto ${CD_MOUNTPT} and run make again.
@@ -171,12 +171,10 @@ do-install:
 		${ECHO} ; \
 		${FALSE} ; \
 	fi
-.if ! defined(WITH_CDROM)
 	@${ECHO_MSG} "===>   Applying sunsolve patches for ${PKGNAME}"
 	@for file in ${SUNSOLVE}/* ; do \
 		${CP} -Rv $$file ${PREFIX}/office52/ ; \
 	done
-.endif
 .endif
 
 post-install:
