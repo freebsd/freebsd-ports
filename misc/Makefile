@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.62 1995/07/15 23:34:38 torstenb Exp $
+# $Id: Makefile,v 1.63 1995/07/15 23:45:37 torstenb Exp $
 #
 
     SUBDIR += amanda
@@ -12,6 +12,7 @@
     SUBDIR += mc
 RESTRICTED += mmv               # restrictive copyright
     SUBDIR += mshell
+    SUBDIR += recode
     SUBDIR += rman
     SUBDIR += screen
 
