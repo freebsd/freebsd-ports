@@ -1,11 +1,6 @@
-Horde  2.0 is a massive upgrade of the Horde Application Framework.
-
-Many components have been added or streamlined. Inter-application
-support is much more robust, a generic MIME_Viewer framework is
-included, the preferences system supports global or application scope
-for preferences, and assorted bugs have been fixed.
+Horde is a framework used by several applications written in PHP4.
 
 Horde is used by these ports: mail/imp3, mail/turba, devel/chora,
-deskutils/kronolith, deskutils/nag, www/jonah and net/nic.
+deskutils/kronolith, deskutils/nag, www/jonah, net/nic and devel/whups.
 
 WWW: http://www.horde.org/

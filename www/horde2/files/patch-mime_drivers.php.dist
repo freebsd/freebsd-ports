@@ -1,5 +1,5 @@
---- config/mime_drivers.php.dist.orig	Sun Dec 23 22:36:27 2001
-+++ config/mime_drivers.php.dist	Sun Feb 17 10:11:21 2002
+--- config/mime_drivers.php.dist.orig	Sat Mar  9 19:43:39 2002
++++ config/mime_drivers.php.dist	Tue Mar 12 22:51:51 2002
 @@ -20,8 +20,12 @@
  
  $mime_drivers_map['horde']['registered'] = array(
@@ -15,7 +15,7 @@
      );
  
  
-@@ -101,19 +105,19 @@
+@@ -101,22 +105,22 @@
   */
  
  /* Location of the enscript binary. */
@@ -24,31 +24,37 @@
 -// $mime_drivers['horde']['enscript']['handles'] = array(
 -//     'text/html', 'x-extension/pl', 'x-extension/c',
 -//     'text/xml', 'application/x-sh', 'application/x-javascript',
--//     'x-extension/java', 'x-extension/h', 'x-extension/cpp');
+-//     'x-extension/java', 'x-extension/h', 'x-extension/cpp',
+-//     'x-extension/vhd', 'x-extension/vhdl', 'x-extension/sql',
+-//     'x-extension/vb', 'x-extension/vba', 'x-extension/el');
 -// $mime_drivers['horde']['enscript']['icons'] = array(
--//     'default'          => 'text.gif',
--//     'text/html'        => 'html.gif',
--//     'text/xml'         => 'xml.gif',
--//     'x-extension/c'    => 'source-c.gif',
--//     'x-extension/h'    => 'source-h.gif',
--//     'x-extension/java' => 'source-java.gif');
-+//UNCOMMENTWHENINSTCHORA $mime_drivers['horde']['enscript']['location'] = '%%LOCALBASE%%/bin/enscript';
-+//UNCOMMENTWHENINSTCHORA $mime_drivers['horde']['enscript']['inline'] = false;
-+//UNCOMMENTWHENINSTCHORA $mime_drivers['horde']['enscript']['handles'] = array(
-+//UNCOMMENTWHENINSTCHORA     'text/html', 'x-extension/pl', 'x-extension/c',
-+//UNCOMMENTWHENINSTCHORA     'text/xml', 'application/x-sh', 'application/x-javascript',
-+//UNCOMMENTWHENINSTCHORA     'x-extension/java', 'x-extension/h', 'x-extension/cpp');
-+//UNCOMMENTWHENINSTCHORA $mime_drivers['horde']['enscript']['icons'] = array(
-+//UNCOMMENTWHENINSTCHORA     'default'          => 'text.gif',
-+//UNCOMMENTWHENINSTCHORA     'text/html'        => 'html.gif',
-+//UNCOMMENTWHENINSTCHORA     'text/xml'         => 'xml.gif',
-+//UNCOMMENTWHENINSTCHORA     'x-extension/c'    => 'source-c.gif',
-+//UNCOMMENTWHENINSTCHORA     'x-extension/h'    => 'source-h.gif',
-+//UNCOMMENTWHENINSTCHORA     'x-extension/java' => 'source-java.gif');
+-//     'default'                  => 'text.gif',
+-//     'text/html'                => 'html.gif',
+-//     'text/xml'                 => 'xml.gif',
+-//     'x-extension/c'            => 'source-c.gif',
+-//     'x-extension/h'            => 'source-h.gif',
+-//     'x-extension/java'         => 'source-java.gif',
+-//     'application/x-javascript' => 'script-js.gif');
++//UNCOMMENTWHENINSTCHORA$mime_drivers['horde']['enscript']['location'] = '%%LOCALBASE%%/bin/enscript';
++//UNCOMMENTWHENINSTCHORA$mime_drivers['horde']['enscript']['inline'] = false;
++//UNCOMMENTWHENINSTCHORA$mime_drivers['horde']['enscript']['handles'] = array(
++//UNCOMMENTWHENINSTCHORA    'text/html', 'x-extension/pl', 'x-extension/c',
++//UNCOMMENTWHENINSTCHORA    'text/xml', 'application/x-sh', 'application/x-javascript',
++//UNCOMMENTWHENINSTCHORA    'x-extension/java', 'x-extension/h', 'x-extension/cpp',
++//UNCOMMENTWHENINSTCHORA    'x-extension/vhd', 'x-extension/vhdl', 'x-extension/sql',
++//UNCOMMENTWHENINSTCHORA    'x-extension/vb', 'x-extension/vba', 'x-extension/el');
++//UNCOMMENTWHENINSTCHORA$mime_drivers['horde']['enscript']['icons'] = array(
++//UNCOMMENTWHENINSTCHORA    'default'                  => 'text.gif',
++//UNCOMMENTWHENINSTCHORA    'text/html'                => 'html.gif',
++//UNCOMMENTWHENINSTCHORA    'text/xml'                 => 'xml.gif',
++//UNCOMMENTWHENINSTCHORA    'x-extension/c'            => 'source-c.gif',
++//UNCOMMENTWHENINSTCHORA    'x-extension/h'            => 'source-h.gif',
++//UNCOMMENTWHENINSTCHORA    'x-extension/java'         => 'source-java.gif',
++//UNCOMMENTWHENINSTCHORA    'application/x-javascript' => 'script-js.gif');
  
  
  /**
-@@ -121,7 +125,7 @@
+@@ -124,7 +128,7 @@
   */
  
  /* Location of the tar binary. */
@@ -57,7 +63,7 @@
  $mime_drivers['horde']['tgz']['inline'] = true;
  $mime_drivers['horde']['tgz']['handles'] = array(
      'x-extension/tgz',
-@@ -138,13 +142,13 @@
+@@ -142,14 +146,14 @@
   */
  
  /* Location of the zipinfo binary. */
@@ -65,6 +71,7 @@
 -// $mime_drivers['horde']['zip']['inline'] = true;
 -// $mime_drivers['horde']['zip']['handles'] = array(
 -//     'x-extension/zip',
+-//     'application/x-compressed',
 -//     'application/x-zip-compressed');
 -// $mime_drivers['horde']['zip']['icons'] = array(
 -//     'default' => 'compressed.gif');
@@ -72,32 +79,35 @@
 +//UNCOMMENTIFZIP $mime_drivers['horde']['zip']['inline'] = true;
 +//UNCOMMENTIFZIP $mime_drivers['horde']['zip']['handles'] = array(
 +//UNCOMMENTIFZIP     'x-extension/zip',
++//UNCOMMENTIFZIP     'application/x-compressed',
 +//UNCOMMENTIFZIP     'application/x-zip-compressed');
 +//UNCOMMENTIFZIP $mime_drivers['horde']['zip']['icons'] = array(
 +//UNCOMMENTIFZIP     'default' => 'compressed.gif');
  
  
  /**
-@@ -153,12 +157,12 @@
+@@ -158,13 +162,13 @@
   */
  
  /* Location of the rar binary. */
 -// $mime_drivers['horde']['rar']['location'] = '/usr/bin/rar';
 -// $mime_drivers['horde']['rar']['inline'] = true;
 -// $mime_drivers['horde']['rar']['handles'] = array(
--//     'x-extension/rar');
+-//     'x-extension/rar',
+-//     'application/x-rar-compressed');
 -// $mime_drivers['horde']['rar']['icons'] = array(
 -//     'default' => 'compressed.gif');
 +//UNCOMMENTIFRAR $mime_drivers['horde']['rar']['location'] = '%%LOCALBASE%%/bin/rar';
 +//UNCOMMENTIFRAR $mime_drivers['horde']['rar']['inline'] = true;
 +//UNCOMMENTIFRAR $mime_drivers['horde']['rar']['handles'] = array(
-+//UNCOMMENTIFRAR     'x-extension/rar');
++//UNCOMMENTIFRAR     'x-extension/rar',
++//UNCOMMENTIFRAR     'application/x-rar-compressed');
 +//UNCOMMENTIFRAR $mime_drivers['horde']['rar']['icons'] = array(
 +//UNCOMMENTIFRAR     'default' => 'compressed.gif');
  
  
  /**
-@@ -168,15 +172,15 @@
+@@ -174,15 +178,15 @@
   */
  
  /* Location of the wvHtml binary. */
@@ -122,7 +132,7 @@
  
  
  /**
-@@ -186,14 +190,14 @@
+@@ -192,14 +196,14 @@
   */
  
  /* Location of the xlhtml binary. */
@@ -145,7 +155,7 @@
  
  
  /**
-@@ -204,14 +208,14 @@
+@@ -210,14 +214,14 @@
   */
  
  /* Location of the ppthtml binary. */
