@@ -1,0 +1,79 @@
+#!/bin/sh
+
+ask() {
+	local question default answer
+
+	question=$1
+	default=$2
+	if [ -z "${PACKAGE_BUILDING}" ]; then
+		read -p "${question} [${default}]? " answer
+	fi
+	if [ x${answer} = x ]; then
+		answer=${default}
+	fi
+	echo ${answer}
+}
+
+yesno() {
+	local dflt question answer
+
+	question=$1
+	dflt=$2
+	while :; do
+		answer=$(ask "${question}" "${dflt}")
+		case "${answer}" in
+		[Yy]*)          return 0;;
+		[Nn]*)          return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
+}
+
+if which -s pw ; then
+	:
+else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  I see that it
+is missing the "pw" utility.  I need this utility.  Please get them
+and install them, and try again.  You can get the sources from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+
+	exit 1
+fi
+
+echo ""
+if grep -q "^ircd:" /etc/group; then
+	echo "You already have a group \"ircd\", so I will use it."
+else
+	echo "You need a group \"ircd\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+		pw groupadd ircd -g 72 || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		if ! grep -q "^ircd:" /etc/passwd; then
+			echo "While you're at it, please create a user \"${user}\" too,"
+			echo "with a default group of \"${group}\"."
+		fi
+		exit 1
+	fi
+fi
+
+if grep -q "^ircd:" /etc/passwd; then
+	echo "You already have a user \"ircd\", so I will use it."
+else
+	echo "You need a user \"ircd\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+		pw useradd ircd -g ircd -u 72 -h - -d /nonexistent \
+			-s /nonexistent -c "IRC Daemon" || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		exit 1
+	fi
+fi
+

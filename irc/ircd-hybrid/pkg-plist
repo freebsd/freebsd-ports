@@ -1,0 +1,6 @@
+sbin/ircd
+man/man8/ircd.8
+etc/ircd/ircd.conf
+etc/ircd/ircd.motd
+etc/ircd/kline.conf
+etc/ircd/opers.txt
