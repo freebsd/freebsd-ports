@@ -1,37 +1,26 @@
-# New ports collection makefile for: wxftp
+# New ports collection makefile for: axyftp
 # Date created: 		22 October 1998
 # Whom: 			Antti Kaipila <anttik@iki.fi>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	wxftp
-PORTVERSION=	0.4.4
+PORTNAME=	axyftp
+PORTVERSION=	0.5.1
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.4.4/ \
+MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/${PORTVERSION}/ \
 		ftp://ftp.sunsite.auc.dk/disk2/linuxberg.com/files/x11/network/ \
 		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/x11/network/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-WRKSRC=		${WRKDIR}/${PKGNAME}/src
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+GNU_CONFIGURE=  yes
+CONFIGURE_ENV=  GTK_CONFIG=${X11BASE}/bin/gtk12-config
+USE_X_PREFIX=   yes
 
-MAN1=		wxftp.1
-
-post-build:
-
-	@${CP} ${WRKSRC}/wf ${WRKDIR}/${PKGNAME}/wxftp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${PKGNAME}/wxftp ${PREFIX}/bin
-	@${CP} ${WRKDIR}/${PKGNAME}/wxftp.1X ${WRKDIR}/${PKGNAME}/wxftp.1
-	${INSTALL_MAN} ${WRKDIR}/${PKGNAME}/wxftp.1 ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/wxftp/help
-	${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/help/*  ${PREFIX}/share/wxftp/help
+MAN1=		axyftp.1
 
 .include <bsd.port.mk>
