@@ -24,7 +24,7 @@ RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 GHC=		ghc-5.04.3
 GHCDEP=		ghc5
 .else
-GHC=		ghc-6.2.1
+GHC=		ghc-6.2.2
 GHCDEP=		ghc
 .endif
 

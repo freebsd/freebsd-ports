@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A GTK2 Binding for Haskell
 
-BUILD_DEPENDS=	ghc-6.2.1:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc-6.2.1:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc-6.2.2:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc-6.2.2:${PORTSDIR}/lang/ghc
 
 USE_GNOME=	gtk20 libglade gtksourceview
 HAS_CONFIGURE=	yes
