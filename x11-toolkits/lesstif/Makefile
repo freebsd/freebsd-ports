@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.93.36
-PORTREVISION=	1
+PORTVERSION=	0.93.94
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://twtelecom.dl.sourceforge.net/sourceforge/lesstif/ \
-		http://umn.dl.sourceforge.net/sourceforge/lesstif/ \
-		http://umn.dl.sourceforge.net/sourceforge/lesstif/ \
-		http://gd.tuwien.ac.at/hci/lesstif/srcdist/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	lesstif
 
 MAINTAINER=	dinoex@freebsd.org
 COMMENT=	API compatible clone of the Motif toolkit
@@ -54,7 +51,7 @@ MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 \
 
 MAN5 =	VirtualBindings.5 mwmrc.5
 
-.if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD)
+.if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD) && !defined(WANT_LESSTIF)
 IS_INTERACTIVE=	yes
 pre-extract:
 	@${ECHO_CMD} "***********************************************************"
@@ -74,12 +71,6 @@ pre-extract:
 		;; \
 	esac)
 .endif
-
-pre-install:
-	if [ -f ${X11BASE}/lib/X11/config/host.def ]; then \
-		mv -f ${X11BASE}/lib/X11/config/host.def \
-			${X11BASE}/lib/X11/config/host.def.pre-lesstif; \
-	fi
 
 post-install:
 	${RM} -f ${PREFIX}/lib/libXm.la
