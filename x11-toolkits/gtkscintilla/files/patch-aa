@@ -1,13 +1,13 @@
 
 $FreeBSD$
 
---- Makefile.orig	Mon May 14 11:45:35 2001
-+++ Makefile	Tue May 15 15:32:34 2001
+--- Makefile.orig	Sun Jun 10 12:03:21 2001
++++ Makefile	Sun Jun 10 15:41:45 2001
 @@ -2,18 +2,18 @@
  
  NAME = GtkScintilla
  LIB_NAME = gtkscintilla
--VERSION = 0.7.0
+-VERSION = 0.7.2
 -PREFIX = $(shell gtk-config --prefix)
 +VERSION = 0
 +PREFIX = $(shell $(GTK_CONFIG) --prefix)
