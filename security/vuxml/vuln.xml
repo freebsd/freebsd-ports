@@ -40,6 +40,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <range><lt>4.43+28_1</lt></range>
       </package>
       <package>
+        <name>exim-ldap</name>
         <name>exim-ldap2</name>
         <range><lt>4.43+28_1</lt></range>
       </package>
