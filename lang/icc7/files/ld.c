@@ -272,7 +272,11 @@ main(int argc, char *argv[], char *envp[])
 		/* prepend "-melf_i386" to the commandline */
 		if (i == 0) {
 			addarg(&al, argv[0], 1);
+#if __FreeBSD_version < 500042
 			addarg(&al, "-melf_i386", 1);
+#else
+			addarg(&al, "-melf_i386_fbsd", 1);
+#endif
 			continue;
 		}
 
@@ -370,7 +374,7 @@ main(int argc, char *argv[], char *envp[])
 		 * dynamic versions have glibc dependencies.
 		 * Don't add superfluous -Bdynamic.
 		 */
-		if (ARGCMP("-Bdynamic") && i <= argc + 1) {
+		if (ARGCMP("-Bdynamic") && i < argc - 1) {
 			if (!strcmp(argv[i + 1], "-lcxa") ||
 			    (cpp && !strcmp(argv[i + 1], "-lunwind"))) {
 				addarg(&al, "-Bstatic", 1);
@@ -383,7 +387,7 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/* Don't add superfluous -Bstatic. */
-		if (ARGCMP("-Bstatic") && i <= argc + 1 &&
+		if (ARGCMP("-Bstatic") && i < argc - 1 &&
 		    (!strcmp(argv[i + 1], "-lcprts") ||
 		    (!cpp && !strcmp(argv[i + 1], "-lunwind"))))
 			continue;
