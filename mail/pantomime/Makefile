@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pantomime
-PORTVERSION=	0.4.0
+PORTVERSION=	1.0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Development/
 DISTNAME=	Pantomime-${PORTVERSION}
