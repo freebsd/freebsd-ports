@@ -63,6 +63,12 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD 6.x"
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
 
@@ -154,4 +160,4 @@ post-install:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
