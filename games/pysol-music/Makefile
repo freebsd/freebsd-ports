@@ -9,12 +9,12 @@ PORTNAME=	pysol-music
 PORTVERSION=	4.40
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
-MASTER_SITE_SUBDIR=	pysol
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serg@tmn.ru
 
 RUN_DEPENDS=	pysol:${PORTSDIR}/games/pysol
 
+USE_BZIP2=	yes
 NO_BUILD=	yes
 
 do-install:
