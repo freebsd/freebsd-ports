@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	system/fido
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 # you may commet out this line if you have another transfer-agent
-RUN_DEPENDS=	${PREFIX}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
+RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
 
 .if defined(PARALLEL_PACKAGE_BUILD)
 FORBIDDEN=	indefinite hang
