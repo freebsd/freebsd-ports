@@ -157,6 +157,7 @@
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sl
+    SUBDIR += smacx
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += speak
