@@ -8,6 +8,7 @@ lib/libclamav.so.1
 lib/libclamav.so
 lib/libclamav.la
 lib/libclamav.a
+share/clamav/mirrors.txt
 share/clamav/viruses.db
 share/clamav/viruses.db2
 @dirrm share/clamav
