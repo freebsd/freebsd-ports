@@ -1,6 +1,6 @@
---- hp2200/gdevcd8.c.orig	Wed Jun 21 20:39:33 2000
-+++ hp2200/gdevcd8.c	Sat Nov 23 03:03:58 2002
-@@ -409,19 +409,19 @@
+--- src/gdevcd8.c.orig	Mon Feb 28 16:01:59 2000
++++ src/gdevcd8.c	Wed Dec 10 21:32:53 2003
+@@ -406,19 +406,19 @@
  };
  
  private int
@@ -29,7 +29,7 @@
      {
  	rescale_byte_wise1x1, rescale_byte_wise1x2
      },
-@@ -574,16 +574,16 @@
+@@ -571,16 +571,16 @@
  };
  
      /* function pointer typedefs for device driver struct */
@@ -51,7 +51,7 @@
  
  typedef struct gx_device_cdj850_s {
      gx_device_common;
-@@ -729,60 +729,60 @@
+@@ -699,52 +699,52 @@
   *  functions.
   */
  private void
@@ -117,21 +117,10 @@
 -     cdj1600_terminate_page(P2(gx_device_printer * pdev, FILE * prn_stream));
 +     cdj1600_terminate_page(gx_device_printer * pdev, FILE * prn_stream);
  
- /*  Functions for the HP2200C */
- private void
--     chp2200_start_raster_mode(P3(gx_device_printer * pdev,
--				 int papersize, FILE * prn_stream));
-+     chp2200_start_raster_mode(gx_device_printer * pdev,
-+				 int papersize, FILE * prn_stream);
- 
- private void
--     chp2200_terminate_page(P2(gx_device_printer * pdev, FILE * prn_stream));
-+     chp2200_terminate_page(gx_device_printer * pdev, FILE * prn_stream);
  
  
- private const gx_device_procs cdj670_procs =
-@@ -855,12 +855,12 @@
- 	       chp2200_terminate_page);
+@@ -804,12 +804,12 @@
+ 		cdj1600_terminate_page);
  
  /* Forward references */
 -private int cdj_put_param_int(P6(gs_param_list *, gs_param_name,
@@ -149,7 +138,7 @@
  
  
  /*  hp_colour_open()
-@@ -1102,73 +1102,73 @@
+@@ -1028,73 +1028,73 @@
  
  /* internal functions */
  private void
@@ -247,7 +236,7 @@
  
  
  private void
-@@ -3393,13 +3393,14 @@
+@@ -2744,13 +2744,14 @@
      (y) = gx_bits_to_color_value((v) & ((1 << (b)) - 1), (b))
  
  private gx_color_index
@@ -266,7 +255,7 @@
  
      switch (pdev->color_info.depth) {
  	case 1:
-@@ -3432,9 +3433,11 @@
+@@ -2783,9 +2784,11 @@
  /* Mapping of RGB colors to gray values. */
  
  private gx_color_index
@@ -280,7 +269,7 @@
      if (gx_color_value_to_byte(r & g & b) == 0xff) {
  	return (gx_color_index) 0;	/* White */
      } else {
-@@ -3522,9 +3525,11 @@
+@@ -2873,9 +2876,11 @@
  }
  
  private gx_color_index

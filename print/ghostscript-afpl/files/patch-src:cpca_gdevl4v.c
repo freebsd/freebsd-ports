@@ -1,5 +1,5 @@
 --- src/cpca_gdevl4v.c.orig	Tue May  7 00:30:00 2002
-+++ src/cpca_gdevl4v.c	Fri Dec  6 04:59:34 2002
++++ src/cpca_gdevl4v.c	Wed Dec 10 19:54:46 2003
 @@ -316,41 +316,35 @@
  };
  
@@ -31,14 +31,13 @@
  
 -lips4v_beginpath(P2(gx_device_vector * vdev, gx_path_type_t type));
 +lips4v_beginpath(gx_device_vector * vdev, gx_path_type_t type);
-+private int
-+lips4v_moveto(gx_device_vector * vdev, floatp x0, floatp y0, floatp x,
-+	       floatp y, gx_path_type_t type);
  private int
 -lips4v_moveto(P6
 -	      (gx_device_vector * vdev, floatp x0, floatp y0, floatp x,
 -	       floatp y, gx_path_type_t type));
--private int
++lips4v_moveto(gx_device_vector * vdev, floatp x0, floatp y0, floatp x,
++	       floatp y, gx_path_type_t type);
+ private int
 -lips4v_lineto(P6
 -	      (gx_device_vector * vdev, floatp x0, floatp y0, floatp x,
 -	       floatp y, gx_path_type_t type));
@@ -63,3 +62,21 @@
  private int lips4v_setlinewidth(gx_device_vector * vdev, floatp width);
  private int lips4v_setlinecap(gx_device_vector * vdev, gs_line_cap cap);
  private int lips4v_setlinejoin(gx_device_vector * vdev, gs_line_join join);
+@@ -2296,7 +2290,7 @@
+ 	}
+ 	color_set_pure(&color, one);
+ 	code = gdev_vector_update_fill_color((gx_device_vector *) pdev,
+-					     &color);
++					     NULL, &color);
+     }
+     if (code < 0)
+ 	return 0;
+@@ -2438,7 +2432,7 @@
+     if (w <= 0 || h <= 0)
+ 	return 0;
+     if (depth > 1 ||
+-	gdev_vector_update_fill_color(vdev, pdcolor) < 0 ||
++	gdev_vector_update_fill_color(vdev, NULL, pdcolor) < 0 ||
+ 	gdev_vector_update_clip_path(vdev, pcpath) < 0 ||
+ 	gdev_vector_update_log_op(vdev, lop) < 0)
+ 	return gx_default_fill_mask(dev, data, data_x, raster, id,
