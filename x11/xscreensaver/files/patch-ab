@@ -1,25 +1,283 @@
-
-$FreeBSD$
-
---- configure.orig	Wed Jan  2 10:15:22 2002
-+++ configure	Wed Feb 13 15:53:35 2002
-@@ -5999,7 +5999,7 @@
-     PASSWD_LIBS="$PASSWD_LIBS -lkrb4 -ldes425 -lkrb5 -lk5crypto -lcrypt -lcom_err"
-   elif test "$have_kerberos" = yes ; then
+--- configure.orig	Wed Jan  2 02:15:22 2002
++++ configure	Wed Feb 13 12:55:17 2002
+@@ -3270,253 +3270,2 @@
+ 
+-
+-    echo $ac_n "checking for X app-defaults directory""... $ac_c" 1>&6
+-echo "configure:3285: checking for X app-defaults directory" >&5
+-if eval "test \"`echo '$''{'ac_cv_x_app_defaults'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  
+-  rm -fr conftestdir
+-  if mkdir conftestdir; then
+-    cd conftestdir >&-
+-    # Make sure to not put "make" in the Imakefile rules, since we grep it out.
+-    cat > Imakefile <<'EOF'
+-acfindx:
+-	@echo 'ac_x_app_defaults="${XAPPLOADDIR}"'
+-EOF
+-    if (xmkmf) >/dev/null 2>/dev/null && test -f Makefile; then
+-      # GNU make sometimes prints "make[1]: Entering...", which'd confuse us.
+-      eval `${MAKE-make} acfindx 2>/dev/null | grep -v make`
+-    fi
+-    cd .. >&-
+-    rm -fr conftestdir
+-  fi
+-      if test x"$ac_x_app_defaults" = x; then
+-        
+-  # Look for the directory under a standard set of common directories.
+-  # Check X11 before X11Rn because it's often a symlink to the current release.
+-  for ac_dir in                                 \
+-    /usr/X11/lib/app-defaults                   \
+-    /usr/X11R6/lib/app-defaults                 \
+-    /usr/X11R6/lib/X11/app-defaults             \
+-    /usr/X11R5/lib/app-defaults                 \
+-    /usr/X11R5/lib/X11/app-defaults             \
+-    /usr/X11R4/lib/app-defaults                 \
+-    /usr/X11R4/lib/X11/app-defaults             \
+-                                                \
+-    /usr/lib/X11/app-defaults                   \
+-    /usr/lib/X11R6/app-defaults                 \
+-    /usr/lib/X11R5/app-defaults                 \
+-    /usr/lib/X11R4/app-defaults                 \
+-                                                \
+-    /usr/local/X11/lib/app-defaults             \
+-    /usr/local/X11R6/lib/app-defaults           \
+-    /usr/local/X11R5/lib/app-defaults           \
+-    /usr/local/X11R4/lib/app-defaults           \
+-                                                \
+-    /usr/local/lib/X11/app-defaults             \
+-    /usr/local/lib/X11R6/app-defaults           \
+-    /usr/local/lib/X11R6/X11/app-defaults       \
+-    /usr/local/lib/X11R5/app-defaults           \
+-    /usr/local/lib/X11R5/X11/app-defaults       \
+-    /usr/local/lib/X11R4/app-defaults           \
+-    /usr/local/lib/X11R4/X11/app-defaults       \
+-                                                \
+-    /usr/X386/lib/X11/app-defaults              \
+-    /usr/x386/lib/X11/app-defaults              \
+-    /usr/XFree86/lib/X11/app-defaults           \
+-                                                \
+-    /usr/lib/X11/app-defaults                   \
+-    /usr/local/lib/X11/app-defaults             \
+-    /usr/unsupported/lib/X11/app-defaults       \
+-    /usr/athena/lib/X11/app-defaults            \
+-    /usr/local/x11r5/lib/X11/app-defaults       \
+-    /usr/lpp/Xamples/lib/X11/app-defaults       \
+-    /lib/usr/lib/X11/app-defaults               \
+-                                                \
+-    /usr/openwin/lib/app-defaults               \
+-    /usr/openwin/lib/X11/app-defaults           \
+-    /usr/openwin/share/lib/app-defaults         \
+-    /usr/openwin/share/lib/X11/app-defaults     \
+-                                                \
+-    /X11R6/lib/app-defaults                     \
+-    /X11R5/lib/app-defaults                     \
+-    /X11R4/lib/app-defaults                     \
+-    ; \
+-  do
+-    if test -d "$ac_dir"; then
+-      ac_x_app_defaults=$ac_dir
+-      break
+-    fi
+-  done
+-
+-      fi
+-      if test x"$ac_x_app_defaults" = x; then
+-        ac_cv_x_app_defaults="/usr/lib/X11/app-defaults"
+-      else
+-        # Record where we found app-defaults for the cache.
+-        ac_cv_x_app_defaults="$ac_x_app_defaults"
+-      fi
+-fi
+-
+-echo "$ac_t""$ac_cv_x_app_defaults" 1>&6
+-    eval ac_x_app_defaults="$ac_cv_x_app_defaults"
+-case "$host" in
+-    *-hpux*)
+-
+-      # The following arcana was gleaned from conversations with
+-      # Eric Schwartz <erics@col.hp.com>:
+-      #
+-      # On HPUX 10.x, the parts of X that HP considers "standard" live in
+-      # /usr/{include,lib}/X11R6/.  The parts that HP doesn't consider
+-      # "standard", notably, Xaw and Xmu, live in /usr/contrib/X11R6/.
+-      # Yet /usr/contrib/X11R6/ comes preinstalled on all HPUX systems.
+-      # Also, there are symlinks from /usr/include/ and /usr/lib/ into
+-      # /usr/{include,lib}/X11R6/, so that (if you don't use Xmu at all)
+-      # you don't need any -I or -L arguments.
+-      #
+-      # On HPUX 9.x, /usr/{include,lib}/X11R5/ and /usr/contrib/X11R5/
+-      # are the same division as 10.x.  However, there are no symlinks to
+-      # the X stuff from /usr/include/ and /usr/lib/, so -I and -L
+-      # arguments are always necessary.
+-      #
+-      # However, X11R6 was available on HPUX 9.x as a patch: if that
+-      # patch was installed, then all of X11R6 went in to
+-      # /usr/contrib/X11R6/ (there was no /usr/{include,lib}/X11R6/.)
+-      #
+-      # HPUX 8.x was the same as 9.x, but was X11R4 instead (I don't know
+-      # whether R5 was available as a patch; R6 undoubtedly was not.)
+-      #
+-      # So.  We try and use the highest numbered pair of
+-      # /usr/{include,lib}/X11R?/ and /usr/contrib/X11R?/{include,lib}/
+-      # that are available.  We do not mix and match different versions
+-      # of X.
+-      #
+-      # Question I still don't know the answer to: (do you?)
+-      #
+-      #   * On HPUX 9.x, where /usr/include/X11R5/ was standard, and
+-      #     /usr/contrib/X11R6/ could be installed as a patch, what was in
+-      #     that contrib directory?  Did it contain so-called "standard"
+-      #     X11R6, or did it include Xaw and Xmu as well?  If the former,
+-      #     where did one find Xaw and Xmu on 9.x R6 systems?  Would this
+-      #     be a situation where one had to reach into the R5 headers and
+-      #     libs to find Xmu?  That is, must both R6 and R5 directories
+-      #     be on the -I and -L lists in that case?
+-      #
+-      for version in X11R6 X11R5 X11R4 ; do
+-        # if either pair of directories exists...
+-        if test -d /usr/include/$version || test -d /usr/contrib/$version/include
+-        then
+-           # if contrib exists, use it...
+-           if test -d /usr/contrib/$version/include ; then
+-             X_CFLAGS="$X_CFLAGS -I/usr/contrib/$version/include"
+-             X_LIBS="$X_LIBS -L/usr/contrib/$version/lib"
+-           fi
+-           # if the "standard" one exists, use it.
+-           if test -d /usr/include/$version ; then
+-             X_CFLAGS="$X_CFLAGS -I/usr/include/$version"
+-             X_LIBS="$X_LIBS -L/usr/lib/$version"
+-           fi
+-           # since at least one of the pair exists, go no farther.
+-           break
+-        fi
+-      done
+-
+-      # Now find Motif.  Thanks for not making xmkmf find this by
+-      # default, you losers.
+-      #
+-      if test -d /usr/include/Motif2.1 ; then
+-        X_CFLAGS="$X_CFLAGS -I/usr/include/Motif2.1"
+-        X_LIBS="$X_LIBS -L/usr/lib/Motif2.1"
+-      elif test -d /usr/include/Motif1.2 ; then
+-        X_CFLAGS="$X_CFLAGS -I/usr/include/Motif1.2"
+-        X_LIBS="$X_LIBS -L/usr/lib/Motif1.2"
+-      elif test -d /usr/include/Motif1.1 ; then
+-        X_CFLAGS="$X_CFLAGS -I/usr/include/Motif1.1"
+-        X_LIBS="$X_LIBS -L/usr/lib/Motif1.1"
+-      fi
+-
+-      # Now let's check for the pseudo-standard locations for OpenGL and XPM.
+-      #
+-      if test -d /opt/graphics/OpenGL/include ; then
+-        # HP-UX 10.20 puts it here
+-        X_CFLAGS="-I/opt/graphics/OpenGL/include $X_CFLAGS"
+-        X_LIBS="-L/opt/graphics/OpenGL/lib $X_LIBS"
+-      elif test -d /opt/Mesa/lib ; then
+-        X_CFLAGS="-I/opt/Mesa/include $X_CFLAGS"
+-        X_LIBS="-L/opt/Mesa/lib $X_LIBS"
+-      fi
+-
+-
+-      if test -d /opt/xpm/lib/X11 ; then
+-        X_CFLAGS="-I/opt/xpm/include $X_CFLAGS"
+-        X_LIBS="-L/opt/xpm/lib/X11 $X_LIBS"
+-      fi
+-
+-      # On HPUX, default to installing in /opt/xscreensaver/ instead of
+-      # in /usr/local/, unless there is already an xscreensaver in
+-      # /usr/local/bin/.  This can be overridden with the --prefix arg
+-      # to configure.  I'm not sure this is the right thing to do, but
+-      # Richard Lloyd says so...
+-      #
+-      if test \! -x /usr/local/bin/xscreensaver ; then
+-        ac_default_prefix=/opt/xscreensaver
+-      fi
+-
+-    ;;
+-    *-solaris*)
+-
+-      # Thanks for not making xmkmf find this by default, pinheads.
+-      # And thanks for moving things around again, too.  Is this
+-      # really the standard location now?  What happened to the
+-      # joke that this kind of thing went in /opt?
+-      # cthomp says "answer: CDE (Common Disorganized Environment)"
+-      #
+-      if test -f /usr/dt/include/Xm/Xm.h ; then
+-        X_CFLAGS="$X_CFLAGS -I/usr/dt/include"
+-        X_LIBS="$X_LIBS -L/usr/dt/lib -R:/usr/dt/lib"
+-
+-        # Some versions of Slowlaris Motif require -lgen.  But not all.  Why?
+-        echo $ac_n "checking for regcmp in -lgen""... $ac_c" 1>&6
+-echo "configure:3492: checking for regcmp in -lgen" >&5
+-ac_lib_var=`echo gen'_'regcmp | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-lgen  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 3500 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char regcmp();
+-
+-int main() {
+-regcmp()
+-; return 0; }
+-EOF
+-if { (eval echo configure:3511: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  X_LIBS="$X_LIBS -lgen"
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+-      fi
+-    ;;
+-  esac
+ echo $ac_n "checking for XPointer""... $ac_c" 1>&6
+@@ -6001,3 +5750,3 @@
      # from Tim Showalter <tjs+@andrew.cmu.edu>
 -    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes"
 +    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes -lcom_err"
    fi
- 
-   if test "$have_kerberos" = yes ; then
-@@ -9881,8 +9881,8 @@
- # Now that we know whether we have Gnome, we can decide where the XML
- # config files get installed.
- if test -z "$HACK_CONF_DIR" ; then
--  if test -n "$GNOME_DATADIR" ; then
--    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
-+  if test -n "$CONFIGDIR" ; then
+@@ -7315,4 +7064,4 @@
+   GNOME_DATADIR=""
+-  if test "$have_gnome" = yes -a "$have_gtk" = yes; then
+-    GNOME_DATADIR=`$gnome_config --datadir`
++  if test "$have_gnome" = yes; then
++    GNOME_DATADIR="${prefix}/share/gnome"
+   fi
+@@ -9885,2 +9634,4 @@
+     HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
++  elif test -n "$CONFIGDIR" ; then
 +    HACK_CONF_DIR="$CONFIGDIR"
    else
-     HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
-   fi
+@@ -9940,4 +9691,2 @@
+ 
+-APPDEFAULTS=$ac_x_app_defaults
+-
+ 
+@@ -10147,3 +9896,3 @@
+ s%@HACK_CONF_DIR@%$HACK_CONF_DIR%g
+-s%@APPDEFAULTS@%$APPDEFAULTS%g
++s%@APPDEFAULTS@%$libdir/X11/app-defaults%g
+ s%@DEPEND@%$DEPEND%g

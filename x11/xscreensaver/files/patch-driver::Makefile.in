@@ -1,14 +1,7 @@
-
-$FreeBSD$
-
---- driver/Makefile.in	2002/02/13 23:22:59	1.1
-+++ driver/Makefile.in	2002/02/13 23:23:11
-@@ -18,7 +18,7 @@
- 
- GNOME_DATADIR	= @GNOME_DATADIR@
+--- driver/Makefile.in.orig	Wed Jan  2 02:15:24 2002
++++ driver/Makefile.in	Wed Feb 13 13:14:40 2002
+@@ -20,3 +20,3 @@
  GNOME_CCDIR	= $(GNOME_DATADIR)/control-center/Desktop
 -GNOME_PANELDIR	= $(GNOME_DATADIR)/gnome/apps/Settings/Desktop
 +GNOME_PANELDIR	= $(GNOME_DATADIR)/apps/Settings/Desktop
  GNOME_ICONDIR	= $(GNOME_DATADIR)/pixmaps
- GNOME_BINDIR	= $(bindir)
- HACK_CONF_DIR	= @HACK_CONF_DIR@
