@@ -109,3 +109,4 @@ lib/X11/fonts/freefont/cooprblk.pfb
 lib/X11/fonts/freefont/cheq.license
 lib/X11/fonts/freefont/zalescap.license
 lib/X11/fonts/freefont/dabkc____.license
+@dirrm lib/X11/fonts/freefont
