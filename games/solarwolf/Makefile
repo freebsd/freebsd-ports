@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	solarwolf
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.pygame.org/shredwheat/solarwolf/
 
@@ -17,6 +16,7 @@ COMMENT=	An action/arcade game originally based of SolarFox on the Atari 2600
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	yes
+MAN6=		solarwolf.6
 
 post-extract:
 	${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
@@ -32,5 +32,6 @@ do-install:
 	@printf "#!/bin/sh\ncd ${PREFIX}/share/solarwolf && \
 		exec ${PYTHON_CMD} ${PREFIX}/share/solarwolf/solarwolf.py\n" > ${WRKDIR}/solarwolf.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/solarwolf.sh ${PREFIX}/bin/solarwolf
+	@${GUNZIP_CMD} -c ${WRKSRC}/dist/${MAN6}.gz > ${MAN6PREFIX}/man/man6/${MAN6}
 
 .include <bsd.port.mk>
