@@ -265,6 +265,7 @@
     SUBDIR += p5-HTML-Parser
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-SimpleParse
+    SUBDIR += p5-HTML-StickyQuery
     SUBDIR += p5-HTML-Stream
     SUBDIR += p5-HTML-Summary
     SUBDIR += p5-HTML-Table

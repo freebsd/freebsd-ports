@@ -1,0 +1,8 @@
+This module is sub class of the HTML::Parser and uses it to
+parse HTML document and add QUERY_STRING to href attributes.
+
+You can assign Session ID or any form data without using cookie.
+
+WWW: http://search.cpan.org/search?dist=HTML-StickyQuery
+
+Seamus Venasse <svenasse@polaris.ca>
