@@ -298,6 +298,8 @@ share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/CDATAS
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/CharacterDataImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/ChildNode.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/CommentImpl.html
+share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/CoreDOMImplementationImpl.html
+share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/CoreDocumentImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/DOMImplementationImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/DeepNodeListImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/DeferredAttrImpl.html
@@ -340,6 +342,8 @@ share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/CharacterDataImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/ChildNode.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/CommentImpl.html
+share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/CoreDOMImplementationImpl.html
+share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/CoreDocumentImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/DOMImplementationImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/DeepNodeListImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/html/apiDocs/org/apache/xerces/dom/class-use/DeferredAttrImpl.html
