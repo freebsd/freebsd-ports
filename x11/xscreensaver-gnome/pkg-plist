@@ -16,6 +16,7 @@ bin/xscreensaver-hacks/barcode
 bin/xscreensaver-hacks/blaster
 bin/xscreensaver-hacks/blitspin
 bin/xscreensaver-hacks/bouboule
+bin/xscreensaver-hacks/bouncingcow
 bin/xscreensaver-hacks/boxed
 bin/xscreensaver-hacks/braid
 bin/xscreensaver-hacks/bsod
@@ -52,6 +53,7 @@ bin/xscreensaver-hacks/flipscreen3d
 bin/xscreensaver-hacks/flow
 bin/xscreensaver-hacks/fluidballs
 bin/xscreensaver-hacks/flurry
+bin/xscreensaver-hacks/flyingtoasters
 bin/xscreensaver-hacks/forest
 bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
@@ -59,6 +61,7 @@ bin/xscreensaver-hacks/gflux
 bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/glforestfire
 bin/xscreensaver-hacks/glplanet
+bin/xscreensaver-hacks/glslideshow
 bin/xscreensaver-hacks/glsnake
 bin/xscreensaver-hacks/gltext
 bin/xscreensaver-hacks/goop
@@ -73,6 +76,7 @@ bin/xscreensaver-hacks/hypercube
 bin/xscreensaver-hacks/ifs
 bin/xscreensaver-hacks/imsmap
 bin/xscreensaver-hacks/interference
+bin/xscreensaver-hacks/jigglypuff
 bin/xscreensaver-hacks/jigsaw
 bin/xscreensaver-hacks/juggle
 bin/xscreensaver-hacks/julia
@@ -193,6 +197,7 @@ share/xscreensaver/config/barcode.xml
 share/xscreensaver/config/blaster.xml
 share/xscreensaver/config/blitspin.xml
 share/xscreensaver/config/bouboule.xml
+share/xscreensaver/config/bouncingcow.xml
 share/xscreensaver/config/boxed.xml
 share/xscreensaver/config/braid.xml
 share/xscreensaver/config/bsod.xml
@@ -231,6 +236,7 @@ share/xscreensaver/config/flipscreen3d.xml
 share/xscreensaver/config/flow.xml
 share/xscreensaver/config/fluidballs.xml
 share/xscreensaver/config/flurry.xml
+share/xscreensaver/config/flyingtoasters.xml
 share/xscreensaver/config/forest.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
@@ -238,6 +244,7 @@ share/xscreensaver/config/gflux.xml
 share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glforestfire.xml
 share/xscreensaver/config/glplanet.xml
+share/xscreensaver/config/glslideshow.xml
 share/xscreensaver/config/glsnake.xml
 share/xscreensaver/config/gltext.xml
 share/xscreensaver/config/goban.xml
@@ -257,6 +264,7 @@ share/xscreensaver/config/jigsaw.xml
 share/xscreensaver/config/juggle.xml
 share/xscreensaver/config/julia.xml
 share/xscreensaver/config/kaleidescope.xml
+share/xscreensaver/config/klein.xml
 share/xscreensaver/config/kumppa.xml
 share/xscreensaver/config/lament.xml
 share/xscreensaver/config/laser.xml
