@@ -7230,6 +7230,7 @@ pybliographer	ports/misc/pybliographer
 pybook		ports/textproc/pybook
 pychecker	ports/devel/pychecker
 pyching		ports/games/pyching
+pydance		ports/games/pydance
 pydbdesigner	ports/databases/pydbdesigner
 pyfind		ports/sysutils/pyfind
 pygmy		ports/mail/pygmy
