@@ -21,7 +21,6 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextens
 CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 PREFIX?=	${X11BASE}
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 DIST_SUBDIR=	xorg
 WRKSRC=		${WRKDIR}/xc/include/extensions
 EXTRACT_AFTER_ARGS= | ${TAR} -xf - xc/include/extensions
