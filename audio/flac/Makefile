@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	flac
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	naddy@FreeBSD.org
 
@@ -27,30 +26,21 @@ PLIST_SUB=	XMMS="@comment "
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-CONFIGURE_ARGS+= --enable-sse --enable-3dnow
 .endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET= --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	INCLUDES="-I${WRKSRC}/include"
+CONFIGURE_ARGS= --with-ogg=${LOCALBASE} \
+		--enable-sse --enable-3dnow
+CONFIGURE_ENV=	CONFIG_SHELL=${SH}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+.if defined(NOPORTDOCS)
+MAKE_ENV=	DOC=""
+.else
+MAKE_ENV=	DOC=doc
+.endif
 
 INSTALLS_SHLIB=	yes
 MAN1=		flac.1
-
-pre-build:
-	@${RM} -r ${WRKSRC}/obj
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/flac
-	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.html ${PREFIX}/share/doc/flac
-	${MKDIR} ${PREFIX}/share/doc/flac/images
-	cd ${WRKSRC}/doc/images; \
-	    ${INSTALL_DATA} *.gif *.jpg ${PREFIX}/share/doc/flac/images
-.endif
 
 .include <bsd.port.mk>

@@ -1,22 +1,14 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Jan 17 15:47:34 2002
-+++ configure	Thu Jan 17 15:48:42 2002
-@@ -8240,13 +8240,13 @@
- fi
- 
- SAVE_CFLAGS="$CFLAGS"
--CFLAGS='-I$(top_builddir) -I$(srcdir)/include -I $(top_srcdir)/include -Wall -W'
-+CFLAGS='-I$(top_builddir) -I$(srcdir)/include -I $(top_srcdir)/include'
+--- configure.orig	Sat Jul  6 15:49:41 2002
++++ configure	Sat Jul  6 15:49:54 2002
+@@ -9995,7 +9995,7 @@
  if test x$debug = xtrue; then
- 	CFLAGS="$CFLAGS -g -O0 -DDEBUG"
+ 	OUR_CFLAGS_TAIL="-g -O0 -DDEBUG"
  else
--	CFLAGS="$CFLAGS -O3 -DNDEBUG"
-+	CFLAGS="$CFLAGS -DNDEBUG"
+-	OUR_CFLAGS_TAIL="-O3 -DNDEBUG"
++	OUR_CFLAGS_TAIL="-DNDEBUG"
  	if test x$GCC = xyes; then
--		CFLAGS="$CFLAGS -fomit-frame-pointer -funroll-loops -finline-functions -Winline -DFLaC__INLINE=__inline__"
-+		CFLAGS="$CFLAGS -DFLaC__INLINE=__inline__"
+ 		OUR_CFLAGS_TAIL="$OUR_CFLAGS_TAIL -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
  	fi
- fi
- CFLAGS="$CFLAGS $SAVE_CFLAGS"

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Sat Jul  6 15:54:56 2002
++++ Makefile.in	Sat Jul  6 15:55:31 2002
+@@ -137,7 +137,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-SUBDIRS = doc include man src test
++SUBDIRS = $(DOC) include man src test
+ 
+ DISTCLEANFILES = libtool-disable-static
+ 
