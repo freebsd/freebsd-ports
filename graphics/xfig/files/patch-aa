@@ -1,6 +1,6 @@
---- Imakefile.orig	Thu Jul 20 03:14:27 2000
-+++ Imakefile	Sat Jul 29 01:14:21 2000
-@@ -40,8 +40,8 @@
+--- Imakefile.orig	Wed May 30 03:32:11 2001
++++ Imakefile	Tue Jun  5 22:59:37 2001
+@@ -47,8 +47,8 @@
  
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
@@ -11,7 +11,7 @@
  #else
  JPEGLIBDIR = ../jpeg
  JPEGINCDIR = $(JPEGLIBDIR)
-@@ -59,18 +59,18 @@
+@@ -72,18 +72,18 @@
  XCOMM Change XPMLIBDIR if necessary to point to the xpm library (libXpm)
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  
@@ -34,7 +34,16 @@
  
  XCOMM Uncomment the following definition for XAW3D if you want to use
  XCOMM the 3d Athena Widget Set (highly recommended!)
-@@ -104,7 +104,7 @@
+@@ -93,7 +93,7 @@
+ #define XAW3D
+ 
+ #ifdef XAW3D
+-XAW3DINC = -I/usr/include/X11/Xaw3d
++XAW3DINC = -I$(INCDIR)/X11/Xaw3d
+ DUSEXAW3D = -DXAW3D
+ XAWLIB = -lXaw3d
+ #endif
+@@ -120,7 +120,7 @@
  XCOMM If your setlocale() dosen't support the locale, you should
  XCOMM add -DSETLOCALE to I18N_DEFS.
  
@@ -43,7 +52,7 @@
  
  XCOMM If using an input tablet uncomment the following
  
-@@ -115,7 +115,7 @@
+@@ -131,7 +131,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -52,7 +61,7 @@
  
  XCOMM use (and change) the following if you want the multi-key data base file
  XCOMM somewhere other than the standard X11 library directory
-@@ -200,7 +200,7 @@
+@@ -220,7 +220,7 @@
  #endif /* USEJPEG */
  
  #ifdef I18N
