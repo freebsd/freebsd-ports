@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Mar 10 00:00:00 1998
-+++ Makefile	Sun Mar 11 15:48:25 2001
+--- Makefile.orig	Mon Mar  9 18:00:00 1998
++++ Makefile	Mon Jul  1 03:46:01 2002
 @@ -16,8 +16,8 @@
  #
  ##############################################################################
@@ -11,12 +11,17 @@
  
  # -c: don't link yet
  # -g: produce debugging-information, don't use together with link_flag -s
-@@ -29,14 +29,14 @@
+@@ -28,15 +28,19 @@
+ # -c: don't link yet
  #COMPILE_FLAGS = -O3 -m486 -c
  
++.if exists(${X11BASE}/include/X11/forms.h)
++XFORMSINC = -I${X11BASE}/include/X11
++.endif
++
  # -O: normal optimization level  -c: don't link yet
 -COMPILE_FLAGS = -O -c
-+COMPILE_FLAGS = ${CFLAGS} -I${PREFIX}/include -I${X11BASE}/include -c
++COMPILE_FLAGS = ${CFLAGS} -I${PREFIX}/include -I${X11BASE}/include ${XFORMSINC} -c
  
  # -s: DESTROYS symbol-table
 -LINK_FLAGS = -s

@@ -1,5 +1,5 @@
---- Imakefile.orig	Fri Dec 20 04:31:12 1996
-+++ Imakefile	Sun Dec 10 17:12:58 2000
+--- Imakefile.orig	Thu Dec 19 14:31:12 1996
++++ Imakefile	Mon Jul  1 00:30:04 2002
 @@ -25,9 +25,13 @@
   */
  
@@ -7,10 +7,11 @@
 -  CC=              gcc
 +XCOMM  CC=              gcc
    EXTRA_DEFINES=   -D_HAVE_PARAM_H
+-  LOCAL_LIBRARIES= -lxforms -lXpm -lX11 -lm
 +#if defined (AlphaArchitecture)
-+  LOCAL_LIBRARIES= -lxforms -lXpm -lX11 -lm -lio
++  LOCAL_LIBRARIES= -lforms -lXpm -lX11 -lm -lio
 +#else
-   LOCAL_LIBRARIES= -lxforms -lXpm -lX11 -lm
++  LOCAL_LIBRARIES= -lforms -lXpm -lX11 -lm
 +#endif
  #else
    CFLAGS=          -O2 -m486

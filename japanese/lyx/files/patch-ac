@@ -1,0 +1,12 @@
+--- src/screen.C.orig	Tue Jul  2 00:53:03 2002
++++ src/screen.C	Tue Jul  2 00:53:23 2002
+@@ -809,9 +809,6 @@
+          // I want the buttons back before 0.12. OK, this is very simple,
+          // like what is done in xforms sources.  (Ale)
+ 
+-	// This one is too dirty. Get rid of it.
+-	extern GC fl_gc;
+-
+ 	// Please comment this annonymous variable.
+ 	int d = 2;
+ 

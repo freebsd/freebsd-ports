@@ -22,7 +22,7 @@ MAINTAINER=	flathill@FreeBSD.ORG
 #.if defined(WITH_ISPELL)
 #RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 #.endif
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XPM=	yes
 USE_PERL5=	yes
