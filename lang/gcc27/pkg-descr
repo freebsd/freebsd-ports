@@ -1,0 +1,8 @@
+GCC 2.7.2.3 was the base compiler in FreeBSD 2.2.x thru 3.x.  The new
+EGCS/GCC Project compiler is used in FreeBSD 4.0 and later.  Because of
+the large number of changes to the new C++ compiler (mostly for ISO-C++
+compliance), this ancient version of the GNU's C/C++ compiler is offered
+to allow you to build legacy systems on the latest and greatest FreeBSD
+offering.
+
+-- David O'Brien <obrien@NUXI.com>

@@ -1,0 +1,11 @@
+--- cp/reno.texi.orig	Thu Apr 14 19:00:39 1994
++++ cp/reno.texi	Mon Mar 20 13:29:12 2000
+@@ -4,7 +4,7 @@
+ @ifinfo
+ @format
+ START-INFO-DIR-ENTRY
+-* Reno 1: (reno-1).             The GNU C++ Renovation Project, Phase 1.
++* Reno 1: (reno).		The GNU C++ Renovation Project, Phase 1.
+ END-INFO-DIR-ENTRY
+ @end format
+ @end ifinfo

@@ -1,0 +1,137 @@
+--- gcc.1.orig	Sun Nov 26 11:11:33 1995
++++ gcc.1	Mon Mar 20 13:29:11 2000
+@@ -438,7 +438,17 @@
+ \-m486
+ \-mno\-486
+ \-msoft\-float
++\-mrtd
++\-mregparm
++\-msvr3\-shlib
++\-mno\-ieee\-fp
+ \-mno\-fp\-ret\-in\-387
++\-mfancy\-math\-387
++\-mno\-wide\-multiply
++\-mdebug\-addr
++\-mno\-move
++\-mprofiler\-epilogue
++\-reg\-alloc=LIST
+ .Sp
+ .I HPPA Options
+ .br
+@@ -511,6 +521,16 @@
+ \-fverbose\-asm
+ .ad b
+ .hy 1
++.SH FreeBSD SPECIFIC OPTIONS
++.TP
++.BI "\-pthread"
++Link a user-threaded process against libc_r instead of libc. Objects linked
++into user-threaded processes should be compiled with -D_THREAD_SAFE.
++.TP
++.BI "\-kthread"
++Link a kernel-threaded process against libpthread in addition to libc.
++Objects linked into kernel-threaded processes should be compiled with
++-D_THREAD_SAFE.
+ .SH OVERALL OPTIONS
+ .TP
+ .BI "\-x " "language"
+@@ -1179,13 +1199,17 @@
+ .B \-M\c
+ \&\|' but the output mentions only the user header files
+ included with `\|\c
+-.B #include "\c
++.B
++#include "\c
+ .I file\c
++.B
+ \&"\c
+ \&\|'.  System header files
+ included with `\|\c
+-.B #include <\c
++.B
++#include <\c
+ .I file\c
++.B
+ \&>\c
+ \&\|' are omitted.
+ .TP
+@@ -1462,8 +1486,10 @@
+ \&"\c
+ \&\|';
+ they are not searched for `\|\c
+-.B #include <\c
++.B
++#include <\c
+ .I file\c
++.B
+ \&>\c
+ \&\|'.
+ .Sp
+@@ -1961,7 +1987,7 @@
+ .B \-Wnested-externs
+ Warn if an \c
+ .B extern\c
+-\& declaration is encountered within an function.
++\& declaration is encountered within a function.
+ .TP
+ .B \-Wenum\-clash
+ Warn about conversion between different enumeration types (C++ only).
+@@ -2909,17 +2935,17 @@
+ .B \-mcypress
+ .TP
+ .B \-msupersparc
+-These two options select the processor for which the code is optimised.
++These two options select the processor for which the code is optimized.
+ .Sp
+ With
+ .B \-mcypress
+-(the default), the compiler optimises code for the Cypress CY7C602 chip, as
++(the default), the compiler optimizes code for the Cypress CY7C602 chip, as
+ used in the SparcStation/SparcServer 3xx series. This is also appropriate for
+ the older SparcStation 1, 2, IPX etc.
+ .Sp
+ With
+ .B \-msupersparc
+-the compiler optimises code for the SuperSparc cpu, as used in the SparcStation
++the compiler optimizes code for the SuperSparc cpu, as used in the SparcStation
+ 10, 1000 and 2000 series. This flag also enables use of the full SPARC v8
+ instruction set.
+ .PP
+@@ -3490,7 +3516,7 @@
+ value.
+ .TP
+ .B \-nocpp
+-Tell the MIPS assembler to not run it's preprocessor over user
++Tell the MIPS assembler to not run its preprocessor over user
+ assembler files (with a `\|\c
+ .B .s\c
+ \&\|' suffix) when assembling them.
+@@ -3498,6 +3524,7 @@
+ These `\|\c
+ .B \-m\c
+ \&\|' options are defined for the Intel 80386 family of computers:
++.TP
+ .B \-m486
+ .TP
+ .B \-mno\-486
+@@ -3534,6 +3561,11 @@
+ .B \-mno-fp-ret-in-387\c
+ \&\|' causes such values to be returned
+ in ordinary CPU registers instead.
++.TP
++.B \-mprofiler-epilogue
++.TP
++.B \-mno-profiler-epilogue
++Generate extra code to write profile information for function exits.
+ .PP
+ These `\|\c
+ .B \-m\c
+@@ -4069,7 +4101,7 @@
+ .B /tmp\c
+ \&).
+ .SH "SEE ALSO"
+-cpp(1), as(1), ld(1), gdb(1), adb(1), dbx(1), sdb(1).
++cpp(1), as(1), ld(1), gdb(1).
+ .br
+ .RB "`\|" gcc "\|', `\|" cpp \|',
+ .RB "`\|" as "\|', `\|" ld \|',
