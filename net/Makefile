@@ -257,6 +257,7 @@
     SUBDIR += linpopup
     SUBDIR += linux-edonkey-gui-gtk
     SUBDIR += linux-edonkey-server
+    SUBDIR += linuxigd
     SUBDIR += lla
     SUBDIR += lmd
     SUBDIR += loadd

@@ -1,0 +1,8 @@
+bin/upnpd
+etc/linuxigd/gateconnSCPD.xml
+etc/linuxigd/gatedesc.skl
+etc/linuxigd/gatedesc.xml
+etc/linuxigd/gateicfgSCPD.xml
+etc/linuxigd/gateinfoSCPD.xml
+etc/rc.d/linuxigd.sh.sample
+@dirrm etc/linuxigd

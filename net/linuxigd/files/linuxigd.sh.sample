@@ -1,0 +1,25 @@
+#!/bin/sh
+
+EXT_IF=fxp0	# external interface
+INT_IF=fxp1	# internal interface
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 1
+fi
+
+case "$1" in
+start)
+	if [ -x ${PREFIX}/bin/upnpd ]; then
+		${PREFIX}/bin/upnpd ${EXT_IF} ${INT_IF} && echo -n ' upnpd'
+	fi
+	;;
+stop)
+	killall upnpd && echo -n ' upnpd'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0
