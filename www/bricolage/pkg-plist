@@ -2645,7 +2645,6 @@ bricolage/data/burn/comp/oc_1/related_story.mc
 bricolage/data/burn/comp/oc_1/story.mc
 %%SITE_PERL%%/mach/auto/Bric/.packlist
 %%SITE_PERL%%/mach/auto/bric_bin/.packlist
-%%SITE_PERL%%/mach/perllocal.pod
 %%SITE_PERL%%/Bric.pm
 %%SITE_PERL%%/Bric/DBA.pod
 %%SITE_PERL%%/Bric/License.pod
