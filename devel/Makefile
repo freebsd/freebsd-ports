@@ -696,6 +696,7 @@
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbison
+    SUBDIR += ruby-rbtree
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-rudl
     SUBDIR += ruby-sdl
