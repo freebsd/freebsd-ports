@@ -22,7 +22,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	okazaki@FreeBSD.org
 COMMENT=	Japanese enhancement of GNU groff
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
 
@@ -31,6 +30,7 @@ TMAC_DISTNAME=	tmac-${TMAC_DATE}_2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--enable-multibyte
@@ -84,6 +84,9 @@ pre-build:
 # formatting groff.info requires texinfo 4.2
 .if ${OSVERSION} < 470000
 WITHOUT_INFO=	yes
+.endif
+
+.if defined(WITHOUT_INFO)
 PLIST_SUB+=	INFO="@comment "
 .else
 PLIST_SUB+=	INFO=""
@@ -108,35 +111,38 @@ post-build:
 	cd ${WRKSRC} && ${FIND} font -name DESC \
 	| ${XARGS} ${REINPLACE_CMD} -e 's|pro \(.*\)|pro ${PREFIX}/bin/\1|g;'
 
-post-install: install-links
+POST_INSTALL_SEQ=	install-links
 .if !defined(WITHOUT_INFO)
-	@${MAKE} install-info
+POST_INSTALL_SEQ+=	install-info
 .endif
 .if !defined(NOPORTDOCS)
-	@${MAKE} install-documents
+POST_INSTALL_SEQ+=	install-documents
 .endif
-.for FILE in ${SITETMACFILES}
-	${INSTALL_DATA} ${TMACBASE}/${FILE} ${PREFIX}/${SITETMACDIR}
+
+post-install: ${POST_INSTALL_SEQ}
+.for F in ${SITETMACFILES}
+	${INSTALL_DATA} ${TMACBASE}/${F} ${PREFIX}/${SITETMACDIR}
 .endfor
-.for FILE in ${TMACFILES}
-	${INSTALL_DATA} ${TMACBASE}/${FILE} ${PREFIX}/${TMACDIR}
+.for F in ${TMACFILES}
+	${INSTALL_DATA} ${TMACBASE}/${F} ${PREFIX}/${TMACDIR}
 .endfor
-.for FILE in ${MDOCFILES}
-	${INSTALL_DATA} ${TMACBASE}/mdoc/${FILE} ${PREFIX}/${MDOCDIR}
+.for F in ${MDOCFILES}
+	${INSTALL_DATA} ${TMACBASE}/mdoc/${F} ${PREFIX}/${MDOCDIR}
 .endfor
 
 install-documents:
 	@${MKDIR} ${DOCSDIR}
-	cd ${INSTALL_WRKSRC} \
-		&& ${INSTALL_DATA} ${DOCUMENTS} ${DOCSDIR}
+.for F in ${DOCUMENTS}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${F} ${DOCSDIR}
+.endfor
 
 install-info:
 	${INSTALL_DATA} ${WRKSRC}/doc/groff ${INFODIR}
 	install-info ${INFODIR}/groff ${INFODIR}/dir
 
 install-links:
-.for FILE in eqn neqn pic tbl
-	${LN} -sf ${FILE} ${PREFIX}/bin/g${FILE}
+.for F in eqn neqn pic tbl
+	${LN} -sf ${FILE} ${PREFIX}/bin/g${F}
 .endfor
 
 .include <bsd.port.post.mk>
