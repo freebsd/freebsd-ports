@@ -8,13 +8,36 @@
 PORTNAME=	qt-gui
 PORTVERSION=	${QT_LICQ_VER}
 CATEGORIES=	net
+.if defined(WITH_KDE)
+PKGNAMESUFFIX=	-kde
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-USE_QT_VER=	3
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 INCDIR=		${PORTSDIR}/net
+
+.if defined(WITH_KDE)
+USE_KDELIBS_VER=3
+CONFIGURE_ARGS+=--with-kde
+CONFIGURE_ENV+= KDEDIR="${LOCALBASE}"
+PLIST_SUB+=	GUI_NAME=kde
+.else
+USE_QT_VER=	3
+PLIST_SUB+=	GUI_NAME=qt
+.endif
+
+pre-fetch:
+.if defined(WITH_KDE)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Build with KDE support"
+	@${ECHO_MSG} ""
+.else
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You could define WITH_KDE if you want KDE support"
+	@${ECHO_MSG} ""
+.endif
 
 post-install:
 	${RM} -rf ${PREFIX}/share/licq/qt-gui/locale
