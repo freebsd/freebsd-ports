@@ -116,9 +116,6 @@ post-patch:
 		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
-pre-configure:
-	@(cd ${WRKSRC} && ${AUTOHEADER})
-
 # Create Cyrus user and group
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
