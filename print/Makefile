@@ -89,6 +89,7 @@
     SUBDIR += latex2slides
     SUBDIR += lgrind
     SUBDIR += libgnomeprint
+    SUBDIR += libgnomeprint20
     SUBDIR += libijs
     SUBDIR += lilypond
     SUBDIR += lout

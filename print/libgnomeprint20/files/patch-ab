@@ -1,0 +1,14 @@
+
+$FreeBSD: /tmp/pcvs/ports/print/libgnomeprint20/files/Attic/patch-ab,v 1.1 2003-02-20 18:29:05 marcus Exp $
+
+--- Makefile.in.orig	Mon Jun 10 22:13:33 2002
++++ Makefile.in	Mon Jun 10 22:14:58 2002
+@@ -105,7 +105,7 @@
+ WARN_CFLAGS = @WARN_CFLAGS@
+ cxxflags_set = @cxxflags_set@
+ 
+-SUBDIRS = libgnomeprint fonts installer tests data po doc
++SUBDIRS = libgnomeprint fonts installer data po doc
+ 
+ EXTRA_DIST = message-of-doom ChangeLog ChangeLog.old ChangeLog.old.2
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
