@@ -114,5 +114,6 @@
     SUBDIR += xsysinfo
     SUBDIR += xsysstats
     SUBDIR += xwatch
+    SUBDIR += xwipower
 
 .include <bsd.port.subdir.mk>
