@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.98 1998/04/19 20:46:10 mph Exp $
+# $Id: Makefile,v 1.99 1998/04/27 21:44:17 eivind Exp $
 #
 
     SUBDIR += ElectricFence
@@ -92,7 +92,6 @@
     SUBDIR += portlint
     SUBDIR += prc-tools
     SUBDIR += prcs
-    SUBDIR += qgl
     SUBDIR += sawt
     SUBDIR += scogdb
     SUBDIR += sfio
