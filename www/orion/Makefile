@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -92,7 +92,7 @@ do-install:
 	@# Configure the port for the RMI server
 	${CAT} ${WRKSRC}/config/rmi.xml \
 	| ${SED} "/<rmi-server>/s//<rmi-server host=\"\[ALL\]\" port=\"${RMI_PORT}\">/" \
-	> ${ORION_HOME}/config/rmi.xml
+	> ${APP_HOME}/config/rmi.xml
 
 	@# Install the control script
 	${CAT} ${FILESDIR}/${APPCTL_NAME} \
