@@ -46,6 +46,7 @@ bin/klaser.kss
 bin/klines.kss
 bin/klissie.kss
 bin/klock
+bin/kmatrix.kss
 bin/kmenuedit
 bin/kmorph3d.kss
 bin/konsole
@@ -65,6 +66,7 @@ bin/kslip.kss
 bin/kspace.kss
 bin/kstart
 bin/kswarm.kss
+bin/kthememgr
 bin/kvt
 bin/kwm
 bin/kwmcom
@@ -98,6 +100,7 @@ share/applnk/Settings/Desktop/borders.kdelnk
 share/applnk/Settings/Desktop/colors.kdelnk
 share/applnk/Settings/Desktop/fonts.kdelnk
 share/applnk/Settings/Desktop/icons.kdelnk
+share/applnk/Settings/Desktop/kthememgr.kdelnk
 share/applnk/Settings/Desktop/language.kdelnk
 share/applnk/Settings/Desktop/screensaver.kdelnk
 share/applnk/Settings/Desktop/style.kdelnk
@@ -195,31 +198,76 @@ share/apps/kappfinder/apps/WordProcessing/xpdf.kdelnk
 share/apps/kappfinder/pics/acroread.xpm
 share/apps/kappfinder/pics/applix.xpm
 share/apps/kappfinder/pics/applixware.xpm
+share/apps/kappfinder/pics/civctp.xpm
 share/apps/kappfinder/pics/dlgedit.xpm
 share/apps/kappfinder/pics/edit.xpm
 share/apps/kappfinder/pics/emacs.xpm
 share/apps/kappfinder/pics/email.xpm
 share/apps/kappfinder/pics/gimp.xpm
+share/apps/kappfinder/pics/gnu.xpm
+share/apps/kappfinder/pics/gs.xpm
 share/apps/kappfinder/pics/gv.xpm
+share/apps/kappfinder/pics/large/acroread.xpm
+share/apps/kappfinder/pics/large/applixware.xpm
+share/apps/kappfinder/pics/large/civctp.xpm
+share/apps/kappfinder/pics/large/dlgedit.xpm
+share/apps/kappfinder/pics/large/edit.xpm
+share/apps/kappfinder/pics/large/gimp.xpm
+share/apps/kappfinder/pics/large/gnu.xpm
+share/apps/kappfinder/pics/large/gs.xpm
+share/apps/kappfinder/pics/large/gv.xpm
+share/apps/kappfinder/pics/large/lyx.xpm
+share/apps/kappfinder/pics/large/mathematica.xpm
+share/apps/kappfinder/pics/large/mozilla.xpm
+share/apps/kappfinder/pics/large/nedit.xpm
+share/apps/kappfinder/pics/large/penguin.xpm
+share/apps/kappfinder/pics/large/plan.xpm
+share/apps/kappfinder/pics/large/quake2.xpm
+share/apps/kappfinder/pics/large/quake3.xpm
+share/apps/kappfinder/pics/large/wabi.xpm
+share/apps/kappfinder/pics/large/wordperfect.xpm
+share/apps/kappfinder/pics/large/x.xpm
+share/apps/kappfinder/pics/large/xcalc.xpm
+share/apps/kappfinder/pics/large/xclipboard.xpm
+share/apps/kappfinder/pics/large/xclock.xpm
+share/apps/kappfinder/pics/large/xconsole.xpm
+share/apps/kappfinder/pics/large/xedit.xpm
+share/apps/kappfinder/pics/large/xephem.xpm
+share/apps/kappfinder/pics/large/xeyes.xpm
+share/apps/kappfinder/pics/large/xfig.xpm
+share/apps/kappfinder/pics/large/xfmail.xpm
+share/apps/kappfinder/pics/large/xload.xpm
+share/apps/kappfinder/pics/large/xosview.xpm
+share/apps/kappfinder/pics/large/xpaint.xpm
+share/apps/kappfinder/pics/large/xpdf.xpm
+share/apps/kappfinder/pics/large/xv.xpm
 share/apps/kappfinder/pics/lyx.xpm
 share/apps/kappfinder/pics/mathematica.xpm
 share/apps/kappfinder/pics/mini/acroread.xpm
 share/apps/kappfinder/pics/mini/applixware.xpm
+share/apps/kappfinder/pics/mini/civctp.xpm
 share/apps/kappfinder/pics/mini/dlgedit.xpm
+share/apps/kappfinder/pics/mini/edit.xpm
 share/apps/kappfinder/pics/mini/emacs.xpm
 share/apps/kappfinder/pics/mini/email.xpm
 share/apps/kappfinder/pics/mini/gimp.xpm
+share/apps/kappfinder/pics/mini/gnu.xpm
 share/apps/kappfinder/pics/mini/gv.xpm
 share/apps/kappfinder/pics/mini/lyx.xpm
 share/apps/kappfinder/pics/mini/mathematica.xpm
 share/apps/kappfinder/pics/mini/mini-plan.xpm
 share/apps/kappfinder/pics/mini/mini-xslight.xpm
+share/apps/kappfinder/pics/mini/mozilla.xpm
 share/apps/kappfinder/pics/mini/nedit.xpm
 share/apps/kappfinder/pics/mini/netscape.xpm
 share/apps/kappfinder/pics/mini/penguin.xpm
 share/apps/kappfinder/pics/mini/pinguin.xpm
 share/apps/kappfinder/pics/mini/plan.xpm
+share/apps/kappfinder/pics/mini/quake2.xpm
+share/apps/kappfinder/pics/mini/quake3.xpm
+share/apps/kappfinder/pics/mini/vmware.xpm
 share/apps/kappfinder/pics/mini/wabi.xpm
+share/apps/kappfinder/pics/mini/wordperfect.xpm
 share/apps/kappfinder/pics/mini/wp.xpm
 share/apps/kappfinder/pics/mini/x.xpm
 share/apps/kappfinder/pics/mini/xcalc.xpm
@@ -228,19 +276,24 @@ share/apps/kappfinder/pics/mini/xclock.xpm
 share/apps/kappfinder/pics/mini/xconsole.xpm
 share/apps/kappfinder/pics/mini/xedit.xpm
 share/apps/kappfinder/pics/mini/xemacs.xpm
+share/apps/kappfinder/pics/mini/xephem.xpm
 share/apps/kappfinder/pics/mini/xeyes.xpm
 share/apps/kappfinder/pics/mini/xfig.xpm
 share/apps/kappfinder/pics/mini/xfmail.xpm
 share/apps/kappfinder/pics/mini/xload.xpm
 share/apps/kappfinder/pics/mini/xosview.xpm
 share/apps/kappfinder/pics/mini/xpaint.xpm
+share/apps/kappfinder/pics/mini/xpdf.xpm
 share/apps/kappfinder/pics/mini/xv.xpm
+share/apps/kappfinder/pics/mozilla.xpm
 share/apps/kappfinder/pics/nedit.xpm
 share/apps/kappfinder/pics/netscape.xpm
 share/apps/kappfinder/pics/nogo.xpm
 share/apps/kappfinder/pics/penguin.xpm
 share/apps/kappfinder/pics/pinguin.xpm
 share/apps/kappfinder/pics/plan.xpm
+share/apps/kappfinder/pics/quake2.xpm
+share/apps/kappfinder/pics/quake3.xpm
 share/apps/kappfinder/pics/wabi.xpm
 share/apps/kappfinder/pics/wordperfect.xpm
 share/apps/kappfinder/pics/wp.xpm
@@ -251,6 +304,7 @@ share/apps/kappfinder/pics/xclock.xpm
 share/apps/kappfinder/pics/xconsole.xpm
 share/apps/kappfinder/pics/xedit.xpm
 share/apps/kappfinder/pics/xemacs.xpm
+share/apps/kappfinder/pics/xephem.xpm
 share/apps/kappfinder/pics/xeyes.xpm
 share/apps/kappfinder/pics/xfig.xpm
 share/apps/kappfinder/pics/xfmail.xpm
@@ -258,6 +312,7 @@ share/apps/kappfinder/pics/xftp.xpm
 share/apps/kappfinder/pics/xload.xpm
 share/apps/kappfinder/pics/xosview.xpm
 share/apps/kappfinder/pics/xpaint.xpm
+share/apps/kappfinder/pics/xpdf.xpm
 share/apps/kappfinder/pics/xv.xpm
 share/apps/kcmlocale/pics/flag_C.gif
 share/apps/kcmlocale/pics/flag_br.gif
@@ -281,6 +336,8 @@ share/apps/kcmlocale/pics/flag_hr.gif
 share/apps/kcmlocale/pics/flag_hu.gif
 share/apps/kcmlocale/pics/flag_is.gif
 share/apps/kcmlocale/pics/flag_it.gif
+share/apps/kcmlocale/pics/flag_ja.gif
+share/apps/kcmlocale/pics/flag_ko.gif
 share/apps/kcmlocale/pics/flag_mk.gif
 share/apps/kcmlocale/pics/flag_nl.gif
 share/apps/kcmlocale/pics/flag_no.gif
@@ -291,12 +348,14 @@ share/apps/kcmlocale/pics/flag_ro.gif
 share/apps/kcmlocale/pics/flag_ru.gif
 share/apps/kcmlocale/pics/flag_se.gif
 share/apps/kcmlocale/pics/flag_sk.gif
+share/apps/kcmlocale/pics/flag_sl.gif
 share/apps/kcmlocale/pics/flag_sv.gif
 share/apps/kcmlocale/pics/flag_tr.gif
 share/apps/kcmlocale/pics/flag_us_eu.gif
 share/apps/kcmlocale/pics/flag_zh_CN.GB2312.gif
 share/apps/kcmlocale/pics/flag_zh_TW.Big5.gif
 share/apps/kcontrol/pics/kdekcc.xpm
+share/apps/kdisknav/CD-ROM.kdelnk
 share/apps/kdisknav/KDE.kdelnk
 share/apps/kdisknav/Root.kdelnk
 share/apps/kdisplay/app-defaults/AAAAAAGeneral.ad
@@ -362,6 +421,7 @@ share/apps/kfm/pics/kde7.xpm
 share/apps/kfm/pics/kde8.xpm
 share/apps/kfm/pics/kde9.xpm
 share/apps/kfm/pics/kmultiple.xpm
+share/apps/kfm/pics/large-kmultiple.xpm
 share/apps/kfm/pics/open.xpm
 share/apps/kfm/pics/question.xpm
 share/apps/kfm/pics/stopsign.xpm
@@ -377,10 +437,12 @@ share/apps/kikbd/csz.kimap
 share/apps/kikbd/de.kimap
 share/apps/kikbd/de_ch.kimap
 share/apps/kikbd/dv.kimap
+share/apps/kikbd/dva.kimap
 share/apps/kikbd/el1.kimap
 share/apps/kikbd/el7.kimap
 share/apps/kikbd/en.kimap
 share/apps/kikbd/es.kimap
+share/apps/kikbd/et.kimap
 share/apps/kikbd/fi.kimap
 share/apps/kikbd/fr.kimap
 share/apps/kikbd/fr_ch.kimap
@@ -394,11 +456,14 @@ share/apps/kikbd/lt.kimap
 share/apps/kikbd/no.kimap
 share/apps/kikbd/pl.kimap
 share/apps/kikbd/plnew.kimap
+share/apps/kikbd/pt-acc.kimap
+share/apps/kikbd/pt.kimap
 share/apps/kikbd/ro.kimap
 share/apps/kikbd/ru.kimap
 share/apps/kikbd/rua.kimap
 share/apps/kikbd/rui.kimap
 share/apps/kikbd/rum.kimap
+share/apps/kikbd/rumcyr.kimap
 share/apps/kikbd/ruw.kimap
 share/apps/kikbd/ruwm.kimap
 share/apps/kikbd/se.kimap
@@ -407,6 +472,7 @@ share/apps/kikbd/sky.kimap
 share/apps/kikbd/skz.kimap
 share/apps/kikbd/sv.kimap
 share/apps/kikbd/th.kimap
+share/apps/kikbd/trq.kimap
 share/apps/kikbd/ua.kimap
 share/apps/kikbd/uam.kimap
 share/apps/kikbd/uaw.kimap
@@ -433,7 +499,14 @@ share/apps/kpanel/default/Home.kdelnk
 share/apps/kpanel/default/personal_directory
 share/apps/kpanel/pics/exit.xpm
 share/apps/kpanel/pics/go.xpm
+share/apps/kpanel/pics/kdisknav.xpm
 share/apps/kpanel/pics/key.xpm
+share/apps/kpanel/pics/kfm_home.xpm
+share/apps/kpanel/pics/large/go.xpm
+share/apps/kpanel/pics/large/kdisknav.xpm
+share/apps/kpanel/pics/large/kfm_home.xpm
+share/apps/kpanel/pics/large/pers_applnk.xpm
+share/apps/kpanel/pics/large/window_list.xpm
 share/apps/kpanel/pics/mini/go.xpm
 share/apps/kpanel/pics/mini/kdisknav.xpm
 share/apps/kpanel/pics/mini/mini-exit.xpm
@@ -448,6 +521,15 @@ share/apps/kpanel/pics/shared.xpm
 share/apps/kpanel/pics/window_list.xpm
 share/apps/kscreensaver/kscience-small.gif
 share/apps/kscreensaver/kscience.gif
+share/apps/kthememgr/Themes/Astronique.tar.gz
+share/apps/kthememgr/Themes/Bryce.tar.gz
+share/apps/kthememgr/Themes/Default.tar.gz
+share/apps/kthememgr/Themes/Glax.tar.gz
+share/apps/kthememgr/Themes/MGBreizh.tar.gz
+share/apps/kthememgr/Themes/Nostalgy.tar.gz
+share/apps/kthememgr/Themes/Template.themerc
+share/apps/kthememgr/Themes/Wood.tar.gz
+share/apps/kthememgr/theme.mappings
 share/apps/kwm/pics/bluesun.gif
 share/apps/kwm/pics/close.xpm
 share/apps/kwm/pics/fog-grey.gif
@@ -505,7 +587,6 @@ share/doc/HTML/en/kcontrol/kcminput/input-2.html
 share/doc/HTML/en/kcontrol/kcminput/input.html
 share/doc/HTML/en/kcontrol/kcminput/logotp3.gif
 share/doc/HTML/en/kcontrol/kcmkeys/keys-1.html
-share/doc/HTML/en/kcontrol/kcmkeys/keys-2.html
 share/doc/HTML/en/kcontrol/kcmkeys/keys.html
 share/doc/HTML/en/kcontrol/kcmkeys/logotp3.gif
 share/doc/HTML/en/kcontrol/kcmkfm/kfm-1.html
@@ -547,6 +628,12 @@ share/doc/HTML/en/kcontrol/kdmconfig/kdm-backgnd.html
 share/doc/HTML/en/kcontrol/kdmconfig/kdm-font.html
 share/doc/HTML/en/kcontrol/kdmconfig/kdm-sess.html
 share/doc/HTML/en/kcontrol/kdmconfig/kdm-users.html
+share/doc/HTML/en/kcontrol/kthememgr/kthememgr-1.html
+share/doc/HTML/en/kcontrol/kthememgr/kthememgr-2.html
+share/doc/HTML/en/kcontrol/kthememgr/kthememgr-3.html
+share/doc/HTML/en/kcontrol/kthememgr/kthememgr-4.html
+share/doc/HTML/en/kcontrol/kthememgr/kthememgr.html
+share/doc/HTML/en/kcontrol/kthememgr/logotp3.gif
 share/doc/HTML/en/kcontrol/logotp3.gif
 share/doc/HTML/en/kdehelp/contact.html
 share/doc/HTML/en/kdehelp/devel.html
@@ -662,6 +749,8 @@ share/doc/HTML/en/kfontmanager/logotp3.gif
 share/doc/HTML/en/kikbd/advanced.gif
 share/doc/HTML/en/kikbd/general.gif
 share/doc/HTML/en/kikbd/kikbd-1.html
+share/doc/HTML/en/kikbd/kikbd-10.html
+share/doc/HTML/en/kikbd/kikbd-11.html
 share/doc/HTML/en/kikbd/kikbd-2.html
 share/doc/HTML/en/kikbd/kikbd-3.html
 share/doc/HTML/en/kikbd/kikbd-4.html
@@ -669,6 +758,7 @@ share/doc/HTML/en/kikbd/kikbd-5.html
 share/doc/HTML/en/kikbd/kikbd-6.html
 share/doc/HTML/en/kikbd/kikbd-7.html
 share/doc/HTML/en/kikbd/kikbd-8.html
+share/doc/HTML/en/kikbd/kikbd-9.html
 share/doc/HTML/en/kikbd/kikbd.html
 share/doc/HTML/en/kikbd/logotp3.gif
 share/doc/HTML/en/kikbd/startup.gif
@@ -706,6 +796,11 @@ share/doc/HTML/en/kpanel/index-4.html
 share/doc/HTML/en/kpanel/index-5.html
 share/doc/HTML/en/kpanel/index.html
 share/doc/HTML/en/kpanel/logotp3.gif
+share/doc/HTML/en/kthememgr/index-1.html
+share/doc/HTML/en/kthememgr/index-2.html
+share/doc/HTML/en/kthememgr/index-3.html
+share/doc/HTML/en/kthememgr/index.html
+share/doc/HTML/en/kthememgr/logotp3.gif
 share/doc/HTML/en/kvt/index.html
 share/doc/HTML/en/kwm/index-1.html
 share/doc/HTML/en/kwm/index-2.html
@@ -738,12 +833,15 @@ share/icons/applications_package.xpm
 share/icons/background.xpm
 share/icons/bell.xpm
 share/icons/binary.xpm
+share/icons/binary2.xpm
 share/icons/blockdevice.xpm
 share/icons/brightness.xpm
 share/icons/buttons.xpm
 share/icons/c_src.xpm
 share/icons/cdrom_mount.xpm
 share/icons/cdrom_unmount.xpm
+share/icons/cdwriter_mount.xpm
+share/icons/cdwriter_unmount.xpm
 share/icons/chardevice.xpm
 share/icons/colors.xpm
 share/icons/colourness.xpm
@@ -805,15 +903,143 @@ share/icons/kfm_trash.xpm
 share/icons/kfontmanager.xpm
 share/icons/kikbd.xpm
 share/icons/kmenuedit.xpm
+share/icons/kmultiple.xpm
 share/icons/konsole.xpm
 share/icons/kscreensaver.xpm
+share/icons/kthememgr.xpm
 share/icons/kvt.xpm
 share/icons/kwm.xpm
 share/icons/l_src.xpm
+share/icons/large/3floppy_mount.xpm
+share/icons/large/3floppy_unmount.xpm
+share/icons/large/5floppy_mount.xpm
+share/icons/large/5floppy_unmount.xpm
+share/icons/large/applications_package.xpm
+share/icons/large/bell.xpm
+share/icons/large/binary.xpm
+share/icons/large/binary2.xpm
+share/icons/large/blockdevice.xpm
+share/icons/large/buttons.xpm
+share/icons/large/c_src.xpm
+share/icons/large/cdrom_mount.xpm
+share/icons/large/cdrom_unmount.xpm
+share/icons/large/cdwriter_mount.xpm
+share/icons/large/cdwriter_unmount.xpm
+share/icons/large/chardevice.xpm
+share/icons/large/colors.xpm
+share/icons/large/core.xpm
+share/icons/large/desktop.xpm
+share/icons/large/desktop_settings.xpm
+share/icons/large/document.xpm
+share/icons/large/dvi.xpm
+share/icons/large/editors_package.xpm
+share/icons/large/exec.xpm
+share/icons/large/f_src.xpm
+share/icons/large/folder.xpm
+share/icons/large/folder_blue.xpm
+share/icons/large/folder_cyan.xpm
+share/icons/large/folder_green.xpm
+share/icons/large/folder_open.xpm
+share/icons/large/folder_red.xpm
+share/icons/large/folder_yellow.xpm
+share/icons/large/font.xpm
+share/icons/large/fonts.xpm
+share/icons/large/ftp.xpm
+share/icons/large/games_package.xpm
+share/icons/large/gf.xpm
+share/icons/large/go.xpm
+share/icons/large/graphics_package.xpm
+share/icons/large/h_src.xpm
+share/icons/large/hd_mount.xpm
+share/icons/large/hd_unmount.xpm
+share/icons/large/html.xpm
+share/icons/large/image.xpm
+share/icons/large/info.xpm
+share/icons/large/java_src.xpm
+share/icons/large/kcmdevices.xpm
+share/icons/large/kcmmemory.xpm
+share/icons/large/kcmpartitions.xpm
+share/icons/large/kcmpci.xpm
+share/icons/large/kcmprocessor.xpm
+share/icons/large/kcmscsi.xpm
+share/icons/large/kcmsyssound.xpm
+share/icons/large/kcontrol.xpm
+share/icons/large/kdehelp.xpm
+share/icons/large/kdisknav.xpm
+share/icons/large/kdmconfig.xpm
+share/icons/large/kfind.xpm
+share/icons/large/kfm.xpm
+share/icons/large/kfm_fulltrash.xpm
+share/icons/large/kfm_home.xpm
+share/icons/large/kfm_trash.xpm
+share/icons/large/kfontmanager.xpm
+share/icons/large/kikbd.xpm
+share/icons/large/kmenuedit.xpm
+share/icons/large/kmultiple.xpm
+share/icons/large/konsole.xpm
+share/icons/large/kscreensaver.xpm
+share/icons/large/kvt.xpm
+share/icons/large/kwm.xpm
+share/icons/large/l_src.xpm
+share/icons/large/library.xpm
+share/icons/large/link.xpm
+share/icons/large/locale.xpm
+share/icons/large/locked_file.xpm
+share/icons/large/lockedfolder.xpm
+share/icons/large/log.xpm
+share/icons/large/magneto-optical_mount.xpm
+share/icons/large/magneto-optical_unmount.xpm
+share/icons/large/make.xpm
+share/icons/large/man.xpm
+share/icons/large/metafont.xpm
+share/icons/large/midi.xpm
+share/icons/large/misc.xpm
+share/icons/large/moc_src.xpm
+share/icons/large/multimedia_package.xpm
+share/icons/large/network_package.xpm
+share/icons/large/o_src.xpm
+share/icons/large/p_src.xpm
+share/icons/large/package.xpm
+share/icons/large/pdf.xpm
+share/icons/large/perl.xpm
+share/icons/large/perl_doc.xpm
+share/icons/large/pk.xpm
+share/icons/large/postscript.xpm
+share/icons/large/properties.xpm
+share/icons/large/readme.xpm
+share/icons/large/readonly.xpm
+share/icons/large/resource.xpm
+share/icons/large/screensaver.xpm
+share/icons/large/script.xpm
+share/icons/large/settings_package.xpm
+share/icons/large/shredder.xpm
+share/icons/large/single_doc.xpm
+share/icons/large/socket.xpm
+share/icons/large/sound.xpm
+share/icons/large/style.xpm
+share/icons/large/system_package.xpm
+share/icons/large/tablet.xpm
+share/icons/large/tape_archive.xpm
+share/icons/large/terminal.xpm
+share/icons/large/tex.xpm
+share/icons/large/tgz.xpm
+share/icons/large/titlebar.xpm
+share/icons/large/trash.xpm
+share/icons/large/trash_full.xpm
+share/icons/large/txt.xpm
+share/icons/large/unknown.xpm
+share/icons/large/utilities_package.xpm
+share/icons/large/video.xpm
+share/icons/large/www.xpm
+share/icons/large/x.xpm
+share/icons/large/y_src.xpm
+share/icons/large/zip_mount.xpm
+share/icons/large/zip_unmount.xpm
 share/icons/library.xpm
 share/icons/link.xpm
 share/icons/locale.xpm
 share/icons/locked.xpm
+share/icons/locked_file.xpm
 share/icons/lockedfolder.xpm
 share/icons/log.xpm
 share/icons/logo.xpm
@@ -897,6 +1123,7 @@ share/icons/mini/kikbd.xpm
 share/icons/mini/kmenuedit.xpm
 share/icons/mini/konsole.xpm
 share/icons/mini/kscreensaver.xpm
+share/icons/mini/kthememgr.xpm
 share/icons/mini/kvt.xpm
 share/icons/mini/kwm.xpm
 share/icons/mini/l_src.xpm
@@ -1040,6 +1267,7 @@ share/icons/mini/x.xpm
 share/icons/mini/y_src.xpm
 share/icons/mini/zip_mount.xpm
 share/icons/mini/zip_unmount.xpm
+share/icons/misc.xpm
 share/icons/moc_src.xpm
 share/icons/monitor.xpm
 share/icons/mouse.xpm
@@ -1052,6 +1280,7 @@ share/icons/p_src.xpm
 share/icons/package.xpm
 share/icons/panel_settings.xpm
 share/icons/pdf.xpm
+share/icons/perl.xpm
 share/icons/pipe.xpm
 share/icons/pk.xpm
 share/icons/postscript.xpm
@@ -1064,6 +1293,8 @@ share/icons/s_src.xpm
 share/icons/screensaver.xpm
 share/icons/script.xpm
 share/icons/settings_package.xpm
+share/icons/shredder.xpm
+share/icons/single_doc.xpm
 share/icons/smbstatus.xpm
 share/icons/socket.xpm
 share/icons/sound.xpm
@@ -1232,6 +1463,7 @@ share/locale/de/LC_MESSAGES/kpager.mo
 share/locale/de/LC_MESSAGES/kpanel.mo
 share/locale/de/LC_MESSAGES/krootwm.mo
 share/locale/de/LC_MESSAGES/kstart.mo
+share/locale/de/LC_MESSAGES/kthememgr.mo
 share/locale/de/LC_MESSAGES/kvt.mo
 share/locale/de/LC_MESSAGES/kwm.mo
 share/locale/el/LC_MESSAGES/kcmbell.mo
@@ -1383,6 +1615,7 @@ share/locale/fi/LC_MESSAGES/kpager.mo
 share/locale/fi/LC_MESSAGES/kpanel.mo
 share/locale/fi/LC_MESSAGES/krootwm.mo
 share/locale/fi/LC_MESSAGES/kstart.mo
+share/locale/fi/LC_MESSAGES/kthememgr.mo
 share/locale/fi/LC_MESSAGES/kvt.mo
 share/locale/fi/LC_MESSAGES/kwm.mo
 share/locale/fr/LC_MESSAGES/kbgndwm.mo
@@ -1413,6 +1646,7 @@ share/locale/fr/LC_MESSAGES/kpager.mo
 share/locale/fr/LC_MESSAGES/kpanel.mo
 share/locale/fr/LC_MESSAGES/krootwm.mo
 share/locale/fr/LC_MESSAGES/kstart.mo
+share/locale/fr/LC_MESSAGES/kthememgr.mo
 share/locale/fr/LC_MESSAGES/kvt.mo
 share/locale/fr/LC_MESSAGES/kwm.mo
 share/locale/he/LC_MESSAGES/kcmbell.mo
@@ -1462,6 +1696,21 @@ share/locale/hr/LC_MESSAGES/krootwm.mo
 share/locale/hr/LC_MESSAGES/kstart.mo
 share/locale/hr/LC_MESSAGES/kvt.mo
 share/locale/hr/LC_MESSAGES/kwm.mo
+share/locale/hs/LC_MESSAGES/kcmkwm.mo
+share/locale/hs/LC_MESSAGES/kcmlocale.mo
+share/locale/hs/LC_MESSAGES/kcmpanel.mo
+share/locale/hs/LC_MESSAGES/kcontrol.mo
+share/locale/hs/LC_MESSAGES/kde.mo
+share/locale/hs/LC_MESSAGES/kdehelp.mo
+share/locale/hs/LC_MESSAGES/kdm.mo
+share/locale/hs/LC_MESSAGES/kdmconfig.mo
+share/locale/hs/LC_MESSAGES/kfm.mo
+share/locale/hs/LC_MESSAGES/konsole.mo
+share/locale/hs/LC_MESSAGES/kpanel.mo
+share/locale/hs/LC_MESSAGES/krootwm.mo
+share/locale/hs/LC_MESSAGES/kstart.mo
+share/locale/hs/LC_MESSAGES/kvt.mo
+share/locale/hs/LC_MESSAGES/kwm.mo
 share/locale/hu/LC_MESSAGES/kbgndwm.mo
 share/locale/hu/LC_MESSAGES/kcmbell.mo
 share/locale/hu/LC_MESSAGES/kcmdisplay.mo
@@ -1520,6 +1769,7 @@ share/locale/is/LC_MESSAGES/kpager.mo
 share/locale/is/LC_MESSAGES/kpanel.mo
 share/locale/is/LC_MESSAGES/krootwm.mo
 share/locale/is/LC_MESSAGES/kstart.mo
+share/locale/is/LC_MESSAGES/kthememgr.mo
 share/locale/is/LC_MESSAGES/kvt.mo
 share/locale/is/LC_MESSAGES/kwm.mo
 share/locale/it/LC_MESSAGES/kbgndwm.mo
@@ -1552,6 +1802,35 @@ share/locale/it/LC_MESSAGES/krootwm.mo
 share/locale/it/LC_MESSAGES/kstart.mo
 share/locale/it/LC_MESSAGES/kvt.mo
 share/locale/it/LC_MESSAGES/kwm.mo
+share/locale/ja/LC_MESSAGES/kbgndwm.mo
+share/locale/ja/LC_MESSAGES/kcmbell.mo
+share/locale/ja/LC_MESSAGES/kcmdisplay.mo
+share/locale/ja/LC_MESSAGES/kcminfo.mo
+share/locale/ja/LC_MESSAGES/kcminput.mo
+share/locale/ja/LC_MESSAGES/kcmkeys.mo
+share/locale/ja/LC_MESSAGES/kcmkfm.mo
+share/locale/ja/LC_MESSAGES/kcmkpanel.mo
+share/locale/ja/LC_MESSAGES/kcmkwm.mo
+share/locale/ja/LC_MESSAGES/kcmlocale.mo
+share/locale/ja/LC_MESSAGES/kcmsamba.mo
+share/locale/ja/LC_MESSAGES/kcmsample.mo
+share/locale/ja/LC_MESSAGES/kcmsyssound.mo
+share/locale/ja/LC_MESSAGES/kcontrol.mo
+share/locale/ja/LC_MESSAGES/kdehelp.mo
+share/locale/ja/LC_MESSAGES/kdm.mo
+share/locale/ja/LC_MESSAGES/kdmconfig.mo
+share/locale/ja/LC_MESSAGES/kfind.mo
+share/locale/ja/LC_MESSAGES/kfm.mo
+share/locale/ja/LC_MESSAGES/kfontmanager.mo
+share/locale/ja/LC_MESSAGES/kikbd.mo
+share/locale/ja/LC_MESSAGES/klock.mo
+share/locale/ja/LC_MESSAGES/kmenuedit.mo
+share/locale/ja/LC_MESSAGES/konsole.mo
+share/locale/ja/LC_MESSAGES/kpager.mo
+share/locale/ja/LC_MESSAGES/kpanel.mo
+share/locale/ja/LC_MESSAGES/krootwm.mo
+share/locale/ja/LC_MESSAGES/kvt.mo
+share/locale/ja/LC_MESSAGES/kwm.mo
 share/locale/ko/LC_MESSAGES/kcmbell.mo
 share/locale/ko/LC_MESSAGES/kcmdisplay.mo
 share/locale/ko/LC_MESSAGES/kcminfo.mo
@@ -1662,6 +1941,7 @@ share/locale/pl/LC_MESSAGES/kpager.mo
 share/locale/pl/LC_MESSAGES/kpanel.mo
 share/locale/pl/LC_MESSAGES/krootwm.mo
 share/locale/pl/LC_MESSAGES/kstart.mo
+share/locale/pl/LC_MESSAGES/kthememgr.mo
 share/locale/pl/LC_MESSAGES/kvt.mo
 share/locale/pl/LC_MESSAGES/kwm.mo
 share/locale/pt/LC_MESSAGES/kcmbell.mo
@@ -1745,6 +2025,7 @@ share/locale/ro/LC_MESSAGES/kpanel.mo
 share/locale/ro/LC_MESSAGES/krootwm.mo
 share/locale/ro/LC_MESSAGES/kvt.mo
 share/locale/ro/LC_MESSAGES/kwm.mo
+share/locale/ru/LC_MESSAGES/kbgndwm.mo
 share/locale/ru/LC_MESSAGES/kcmbell.mo
 share/locale/ru/LC_MESSAGES/kcmdisplay.mo
 share/locale/ru/LC_MESSAGES/kcminfo.mo
@@ -1804,10 +2085,15 @@ share/locale/sk/LC_MESSAGES/krootwm.mo
 share/locale/sk/LC_MESSAGES/kstart.mo
 share/locale/sk/LC_MESSAGES/kvt.mo
 share/locale/sk/LC_MESSAGES/kwm.mo
+share/locale/sl/LC_MESSAGES/kbgndwm.mo
 share/locale/sl/LC_MESSAGES/kcmbell.mo
+share/locale/sl/LC_MESSAGES/kcmdisplay.mo
 share/locale/sl/LC_MESSAGES/kcminfo.mo
 share/locale/sl/LC_MESSAGES/kcminput.mo
+share/locale/sl/LC_MESSAGES/kcmkeys.mo
+share/locale/sl/LC_MESSAGES/kcmkfm.mo
 share/locale/sl/LC_MESSAGES/kcmkpanel.mo
+share/locale/sl/LC_MESSAGES/kcmkwm.mo
 share/locale/sl/LC_MESSAGES/kcmlocale.mo
 share/locale/sl/LC_MESSAGES/kcmsamba.mo
 share/locale/sl/LC_MESSAGES/kcmsample.mo
@@ -1815,10 +2101,20 @@ share/locale/sl/LC_MESSAGES/kcmsyssound.mo
 share/locale/sl/LC_MESSAGES/kcontrol.mo
 share/locale/sl/LC_MESSAGES/kdehelp.mo
 share/locale/sl/LC_MESSAGES/kdm.mo
+share/locale/sl/LC_MESSAGES/kdmconfig.mo
+share/locale/sl/LC_MESSAGES/kfind.mo
 share/locale/sl/LC_MESSAGES/kfm.mo
 share/locale/sl/LC_MESSAGES/kfontmanager.mo
+share/locale/sl/LC_MESSAGES/kikbd.mo
+share/locale/sl/LC_MESSAGES/klock.mo
+share/locale/sl/LC_MESSAGES/kmenuedit.mo
+share/locale/sl/LC_MESSAGES/konsole.mo
+share/locale/sl/LC_MESSAGES/kpager.mo
 share/locale/sl/LC_MESSAGES/kpanel.mo
 share/locale/sl/LC_MESSAGES/krootwm.mo
+share/locale/sl/LC_MESSAGES/kstart.mo
+share/locale/sl/LC_MESSAGES/kthememgr.mo
+share/locale/sl/LC_MESSAGES/kvt.mo
 share/locale/sl/LC_MESSAGES/kwm.mo
 share/locale/sv/LC_MESSAGES/kbgndwm.mo
 share/locale/sv/LC_MESSAGES/kcmbell.mo
@@ -1987,6 +2283,17 @@ share/mimelnk/video/mpeg.kdelnk
 share/mimelnk/video/quicktime.kdelnk
 share/mimelnk/video/x-flic.kdelnk
 share/mimelnk/video/x-msvideo.kdelnk
+share/sounds/KDE_Close_Window.wav
+share/sounds/KDE_Logout.wav
+share/sounds/KDE_Startup.wav
+share/sounds/KDE_Window_DeIconify.wav
+share/sounds/KDE_Window_Iconify.wav
+share/sounds/KDE_Window_Maximize.wav
+share/sounds/KDE_Window_Shade_Down.wav
+share/sounds/KDE_Window_Shade_Up.wav
+share/sounds/KDE_Window_Sticky.wav
+share/sounds/KDE_Window_UnMaximize.wav
+share/sounds/KDE_Window_UnSticky.wav
 share/wallpapers/abnormal_fluid.jpg
 share/wallpapers/absolute_zero.jpg
 share/wallpapers/abstract_clay.jpg
@@ -1995,7 +2302,6 @@ share/wallpapers/ancient_glyphs.jpg
 share/wallpapers/aqua_ravines.jpg
 share/wallpapers/banana_squishie.jpg
 share/wallpapers/berries.jpg
-share/wallpapers/big_leaves.jpg
 share/wallpapers/blkmarble.jpg
 share/wallpapers/bluegrnt.jpg
 share/wallpapers/boiling_centrifuge.jpg
@@ -2128,6 +2434,7 @@ share/wallpapers/whirling_spirit.jpg
 share/wallpapers/wind_chill.jpg
 share/wallpapers/wood1.jpg
 @dirrm share/wallpapers
+@dirrm share/sounds
 @dirrm share/mimelnk/video
 @dirrm share/mimelnk/text
 @dirrm share/mimelnk/inode
@@ -2136,11 +2443,13 @@ share/wallpapers/wood1.jpg
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
 @dirrm share/icons/mini
+@dirrm share/icons/large
 @dirrm share/icons
 @dirrm share/doc/HTML/ru/kikbd
 @dirrm share/doc/HTML/ru
 @dirrm share/doc/HTML/en/kwm
 @dirrm share/doc/HTML/en/kvt
+@dirrm share/doc/HTML/en/kthememgr
 @dirrm share/doc/HTML/en/kpanel
 @dirrm share/doc/HTML/en/kpager
 @dirrm share/doc/HTML/en/konsole
@@ -2156,6 +2465,7 @@ share/wallpapers/wood1.jpg
 @dirrm share/doc/HTML/en/kdehelp/kwm
 @dirrm share/doc/HTML/en/kdehelp/kpanel
 @dirrm share/doc/HTML/en/kdehelp
+@dirrm share/doc/HTML/en/kcontrol/kthememgr
 @dirrm share/doc/HTML/en/kcontrol/kdmconfig
 @dirrm share/doc/HTML/en/kcontrol/kcmsyssound
 @dirrm share/doc/HTML/en/kcontrol/kcmsamba
@@ -2171,8 +2481,11 @@ share/wallpapers/wood1.jpg
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/apps/kwm/pics
 @dirrm share/apps/kwm
+@dirrm share/apps/kthememgr/Themes
+@dirrm share/apps/kthememgr
 @dirrm share/apps/kscreensaver
 @dirrm share/apps/kpanel/pics/mini
+@dirrm share/apps/kpanel/pics/large
 @dirrm share/apps/kpanel/pics
 @dirrm share/apps/kpanel/default
 @dirrm share/apps/kpanel
@@ -2199,6 +2512,7 @@ share/wallpapers/wood1.jpg
 @dirrm share/apps/kcmlocale/pics
 @dirrm share/apps/kcmlocale
 @dirrm share/apps/kappfinder/pics/mini
+@dirrm share/apps/kappfinder/pics/large
 @dirrm share/apps/kappfinder/pics
 @dirrm share/apps/kappfinder/apps/WordProcessing
 @dirrm share/apps/kappfinder/apps/Utilities
@@ -2227,5 +2541,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/applnk/Graphics
 @dirrm share/applnk/Games
 @dirrm share/applnk/Applications
+@unexec rm -rf %D/share/applnk/apps
 @dirrm share/applnk
 @dirrm cgi-bin

@@ -18,6 +18,55 @@ bin/ktalkdlg
 bin/mail.local
 bin/mathpod
 bin/newkrn
+lib/ksirc/libksirclistbox.a
+lib/ksirc/libksirclistbox.la
+lib/ksirc/libksirclistbox.so.0
+lib/ksirc/libpalistbox.a
+lib/ksirc/libpalistbox.la
+lib/ksirc/libpalistbox.so.0
+lib/ksirc/libpbutton.a
+lib/ksirc/libpbutton.la
+lib/ksirc/libpbutton.so.0
+lib/ksirc/libpframe.a
+lib/ksirc/libpframe.la
+lib/ksirc/libpframe.so.0
+lib/ksirc/libpkfiledialog.a
+lib/ksirc/libpkfiledialog.la
+lib/ksirc/libpkfiledialog.so.0
+lib/ksirc/libplabel.a
+lib/ksirc/libplabel.la
+lib/ksirc/libplabel.so.0
+lib/ksirc/libplined.a
+lib/ksirc/libplined.la
+lib/ksirc/libplined.so.0
+lib/ksirc/libplistbox.a
+lib/ksirc/libplistbox.la
+lib/ksirc/libplistbox.so.0
+lib/ksirc/libpmenudta.a
+lib/ksirc/libpmenudta.la
+lib/ksirc/libpmenudta.so.0
+lib/ksirc/libpobjfinder.a
+lib/ksirc/libpobjfinder.la
+lib/ksirc/libpobjfinder.so.0
+lib/ksirc/libppopmenu.a
+lib/ksirc/libppopmenu.la
+lib/ksirc/libppopmenu.so.0
+lib/ksirc/libpprogress.a
+lib/ksirc/libpprogress.la
+lib/ksirc/libpprogress.so.0
+lib/ksirc/libppushbt.a
+lib/ksirc/libppushbt.la
+lib/ksirc/libppushbt.so.0
+lib/ksirc/libptabdialog.a
+lib/ksirc/libptabdialog.la
+lib/ksirc/libptabdialog.so.0
+lib/ksirc/libptablevw.a
+lib/ksirc/libptablevw.la
+lib/ksirc/libptablevw.so.0
+lib/libkplunger.a
+lib/libpuke.a
+lib/libpuke.la
+lib/libpuke.so.0
 share/applnk/Internet/KMail.kdelnk
 share/applnk/Internet/KOrn.kdelnk
 share/applnk/Internet/Kppp.kdelnk
@@ -28,16 +77,18 @@ share/applnk/Internet/kfinger.kdelnk
 share/applnk/Internet/knu.kdelnk
 share/applnk/Internet/kppplogview.kdelnk
 share/applnk/Internet/ksirc.kdelnk
-share/applnk/Internet/pws.kdelnk
 share/applnk/Settings/Network/kcmktalkd.kdelnk
 share/apps/kbiff/pics/delete.xpm
 share/apps/kbiff/pics/mailbox.xpm
 share/apps/kbiff/pics/mini-newmail.xpm
+share/apps/kbiff/pics/mini-noconn.xpm
 share/apps/kbiff/pics/mini-nomail.xpm
 share/apps/kbiff/pics/mini-oldmail.xpm
 share/apps/kbiff/pics/newmail.xpm
+share/apps/kbiff/pics/noconn.xpm
 share/apps/kbiff/pics/nomail.xpm
 share/apps/kbiff/pics/oldmail.xpm
+share/apps/kbiff/pics/playsound.xpm
 share/apps/kmail/pics/attach.xpm
 share/apps/kmail/pics/checkmail.xpm
 share/apps/kmail/pics/closed.xpm
@@ -109,6 +160,7 @@ share/apps/kppp/Rules/Denmark/1001_Internet.rst
 share/apps/kppp/Rules/Denmark/CyberCity_1033.rst
 share/apps/kppp/Rules/Denmark/Get2Net_1001.rst
 share/apps/kppp/Rules/Denmark/Image_1049.rst
+share/apps/kppp/Rules/Denmark/Teledanmark_Favorit_Internet.rst
 share/apps/kppp/Rules/Denmark/Teledanmark_Local.rst
 share/apps/kppp/Rules/Denmark/Teledanmark_Regional.rst
 share/apps/kppp/Rules/England/BirminghamCable_Local.rst
@@ -119,7 +171,6 @@ share/apps/kppp/Rules/England/BritishTelecom_National.rst
 share/apps/kppp/Rules/England/BritishTelecom_Regional.rst
 share/apps/kppp/Rules/France/Local.rst
 share/apps/kppp/Rules/Germany/Arcor_Internet_by_Call.rst
-share/apps/kppp/Rules/Germany/NetCologne_50km.rst
 share/apps/kppp/Rules/Germany/NetCologne_City.rst
 share/apps/kppp/Rules/Germany/NetCologne_Germany.rst
 share/apps/kppp/Rules/Germany/NetCologne_Time_Line.rst
@@ -128,6 +179,8 @@ share/apps/kppp/Rules/Germany/TelePassport_Fern.rst
 share/apps/kppp/Rules/Germany/TelePassport_Nah.rst
 share/apps/kppp/Rules/Germany/Telekom_200km.rst
 share/apps/kppp/Rules/Germany/Telekom_50km.rst
+share/apps/kppp/Rules/Germany/Telekom_Activplus_City.rst
+share/apps/kppp/Rules/Germany/Telekom_Activplus_non_City.rst
 share/apps/kppp/Rules/Germany/Telekom_City.rst
 share/apps/kppp/Rules/Germany/Telekom_City_Weekend.rst
 share/apps/kppp/Rules/Germany/Telekom_Ferntarif.rst
@@ -138,6 +191,7 @@ share/apps/kppp/Rules/Hong_Kong/Hong_Kong_Telecom.rst
 share/apps/kppp/Rules/Hungary/Local.rst
 share/apps/kppp/Rules/Hungary/LocalTop_MATAV.rst
 share/apps/kppp/Rules/Hungary/Local_MATAV.rst
+share/apps/kppp/Rules/Iceland/Iceland_general.rst
 share/apps/kppp/Rules/Indonesia/Lokal_1_Metropolitan.rst
 share/apps/kppp/Rules/Indonesia/Lokal_2_Metropolitan.rst
 share/apps/kppp/Rules/Indonesia/Lokal_non_metropolitan.rst
@@ -154,6 +208,7 @@ share/apps/kppp/Rules/Japan/NTT_Local.rst
 share/apps/kppp/Rules/Kazakhstan/Akparat_Sprint.rst
 share/apps/kppp/Rules/Luxembourg/Local.rst
 share/apps/kppp/Rules/Malaysia/malaysia.rst
+share/apps/kppp/Rules/Mauritius/Mauritius_Telecoms_Internet.rst
 share/apps/kppp/Rules/Netherlands/BelBasis_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/BelBudget_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/BelPlus_Lokaal.rst
@@ -161,8 +216,12 @@ share/apps/kppp/Rules/Netherlands/NedpointBasis_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/NedpointBelBespaar_Lokaal.rst
 share/apps/kppp/Rules/Norway/Local_Area.rst
 share/apps/kppp/Rules/Norway/Long_Distance.rst
-share/apps/kppp/Rules/Poland/Poland.rst
-share/apps/kppp/Rules/Poland/Poland_Local.rst
+share/apps/kppp/Rules/Poland/Netia_100km_Niebieska.rst
+share/apps/kppp/Rules/Poland/Netia_100km_Zielona.rst
+share/apps/kppp/Rules/Poland/Netia_Lokalne_Niebieska.rst
+share/apps/kppp/Rules/Poland/Netia_Lokalne_Zielona.rst
+share/apps/kppp/Rules/Poland/TP_100km.rst
+share/apps/kppp/Rules/Poland/TP_Lokalne.rst
 share/apps/kppp/Rules/Portugal/067.rst
 share/apps/kppp/Rules/Portugal/Local+Activation_rate.rst
 share/apps/kppp/Rules/Portugal/Local.rst
@@ -416,6 +475,9 @@ share/icons/korn.xpm
 share/icons/kppp.xpm
 share/icons/krn.xpm
 share/icons/ksirc.gif
+share/icons/large/kmail.xpm
+share/icons/large/korn.xpm
+share/icons/large/kppp.xpm
 share/icons/mini/karchie.xpm
 share/icons/mini/kbiff.xpm
 share/icons/mini/kmail.xpm
@@ -441,6 +503,7 @@ share/locale/ca/LC_MESSAGES/kfinger.mo
 share/locale/ca/LC_MESSAGES/kmail.mo
 share/locale/ca/LC_MESSAGES/knu.mo
 share/locale/ca/LC_MESSAGES/kppp.mo
+share/locale/ca/LC_MESSAGES/kppplogview.mo
 share/locale/ca/LC_MESSAGES/krn.mo
 share/locale/ca/LC_MESSAGES/ktalkd.mo
 share/locale/cs/LC_MESSAGES/karchie.mo
@@ -512,13 +575,17 @@ share/locale/fi/LC_MESSAGES/kppp.mo
 share/locale/fi/LC_MESSAGES/krn.mo
 share/locale/fi/LC_MESSAGES/ksirc.mo
 share/locale/fi/LC_MESSAGES/ktalkd.mo
+share/locale/fr/LC_MESSAGES/karchie.mo
 share/locale/fr/LC_MESSAGES/kbiff.mo
+share/locale/fr/LC_MESSAGES/kcmktalkd.mo
 share/locale/fr/LC_MESSAGES/kfinger.mo
 share/locale/fr/LC_MESSAGES/kmail.mo
 share/locale/fr/LC_MESSAGES/knu.mo
 share/locale/fr/LC_MESSAGES/korn.mo
 share/locale/fr/LC_MESSAGES/kppp.mo
+share/locale/fr/LC_MESSAGES/kppplogview.mo
 share/locale/fr/LC_MESSAGES/krn.mo
+share/locale/fr/LC_MESSAGES/ksirc.mo
 share/locale/fr/LC_MESSAGES/ktalkd.mo
 share/locale/he/LC_MESSAGES/kppp.mo
 share/locale/hr/LC_MESSAGES/kbiff.mo
@@ -529,6 +596,8 @@ share/locale/hr/LC_MESSAGES/kppp.mo
 share/locale/hr/LC_MESSAGES/krn.mo
 share/locale/hr/LC_MESSAGES/ksirc.mo
 share/locale/hr/LC_MESSAGES/ktalkd.mo
+share/locale/hs/LC_MESSAGES/kmail.mo
+share/locale/hs/LC_MESSAGES/krn.mo
 share/locale/hu/LC_MESSAGES/kbiff.mo
 share/locale/hu/LC_MESSAGES/kfinger.mo
 share/locale/hu/LC_MESSAGES/kmail.mo
@@ -546,6 +615,7 @@ share/locale/is/LC_MESSAGES/krn.mo
 share/locale/is/LC_MESSAGES/ksirc.mo
 share/locale/is/LC_MESSAGES/ktalkd.mo
 share/locale/it/LC_MESSAGES/kbiff.mo
+share/locale/it/LC_MESSAGES/kcmktalkd.mo
 share/locale/it/LC_MESSAGES/kfinger.mo
 share/locale/it/LC_MESSAGES/kmail.mo
 share/locale/it/LC_MESSAGES/knu.mo
@@ -553,6 +623,18 @@ share/locale/it/LC_MESSAGES/korn.mo
 share/locale/it/LC_MESSAGES/kppp.mo
 share/locale/it/LC_MESSAGES/krn.mo
 share/locale/it/LC_MESSAGES/ktalkd.mo
+share/locale/ja/LC_MESSAGES/karchie.mo
+share/locale/ja/LC_MESSAGES/kbiff.mo
+share/locale/ja/LC_MESSAGES/kcmktalkd.mo
+share/locale/ja/LC_MESSAGES/kfinger.mo
+share/locale/ja/LC_MESSAGES/kmail.mo
+share/locale/ja/LC_MESSAGES/knu.mo
+share/locale/ja/LC_MESSAGES/korn.mo
+share/locale/ja/LC_MESSAGES/kppp.mo
+share/locale/ja/LC_MESSAGES/kppplogview.mo
+share/locale/ja/LC_MESSAGES/krn.mo
+share/locale/ja/LC_MESSAGES/ksirc.mo
+share/locale/ja/LC_MESSAGES/ktalkd.mo
 share/locale/ko/LC_MESSAGES/kmail.mo
 share/locale/ko/LC_MESSAGES/knu.mo
 share/locale/ko/LC_MESSAGES/kppp.mo
@@ -582,6 +664,7 @@ share/locale/pl/LC_MESSAGES/kmail.mo
 share/locale/pl/LC_MESSAGES/knu.mo
 share/locale/pl/LC_MESSAGES/korn.mo
 share/locale/pl/LC_MESSAGES/kppp.mo
+share/locale/pl/LC_MESSAGES/kppplogview.mo
 share/locale/pl/LC_MESSAGES/krn.mo
 share/locale/pl/LC_MESSAGES/ksirc.mo
 share/locale/pl/LC_MESSAGES/ktalkd.mo
@@ -615,7 +698,9 @@ share/locale/ru/LC_MESSAGES/kcmktalkd.mo
 share/locale/ru/LC_MESSAGES/kfinger.mo
 share/locale/ru/LC_MESSAGES/kmail.mo
 share/locale/ru/LC_MESSAGES/knu.mo
+share/locale/ru/LC_MESSAGES/korn.mo
 share/locale/ru/LC_MESSAGES/kppp.mo
+share/locale/ru/LC_MESSAGES/kppplogview.mo
 share/locale/ru/LC_MESSAGES/krn.mo
 share/locale/ru/LC_MESSAGES/ksirc.mo
 share/locale/ru/LC_MESSAGES/ktalkd.mo
@@ -630,6 +715,17 @@ share/locale/sk/LC_MESSAGES/kppp.mo
 share/locale/sk/LC_MESSAGES/krn.mo
 share/locale/sk/LC_MESSAGES/ksirc.mo
 share/locale/sk/LC_MESSAGES/ktalkd.mo
+share/locale/sl/LC_MESSAGES/karchie.mo
+share/locale/sl/LC_MESSAGES/kbiff.mo
+share/locale/sl/LC_MESSAGES/kcmktalkd.mo
+share/locale/sl/LC_MESSAGES/kfinger.mo
+share/locale/sl/LC_MESSAGES/kmail.mo
+share/locale/sl/LC_MESSAGES/knu.mo
+share/locale/sl/LC_MESSAGES/korn.mo
+share/locale/sl/LC_MESSAGES/kppp.mo
+share/locale/sl/LC_MESSAGES/krn.mo
+share/locale/sl/LC_MESSAGES/ksirc.mo
+share/locale/sl/LC_MESSAGES/ktalkd.mo
 share/locale/sv/LC_MESSAGES/karchie.mo
 share/locale/sv/LC_MESSAGES/kbiff.mo
 share/locale/sv/LC_MESSAGES/kcmtalkd.mo
@@ -656,6 +752,22 @@ share/toolbar/kcontrol.xpm
 share/toolbar/mini-clock.xpm
 share/toolbar/mini-connect.xpm
 share/toolbar/mini-ktalk.xpm
+@exec ln -sf libpuke.so.0 %D/lib/libpuke.so
+@exec ln -sf libptablevw.so.0 %D/lib/ksirc/libptablevw.so
+@exec ln -sf libptabdialog.so.0 %D/lib/ksirc/libptabdialog.so
+@exec ln -sf libppushbt.so.0 %D/lib/ksirc/libppushbt.so
+@exec ln -sf libpprogress.so.0 %D/lib/ksirc/libpprogress.so
+@exec ln -sf libppopmenu.so.0 %D/lib/ksirc/libppopmenu.so
+@exec ln -sf libpobjfinder.so.0 %D/lib/ksirc/libpobjfinder.so
+@exec ln -sf libpmenudta.so.0 %D/lib/ksirc/libpmenudta.so
+@exec ln -sf libplistbox.so.0 %D/lib/ksirc/libplistbox.so
+@exec ln -sf libplined.so.0 %D/lib/ksirc/libplined.so
+@exec ln -sf libplabel.so.0 %D/lib/ksirc/libplabel.so
+@exec ln -sf libpkfiledialog.so.0 %D/lib/ksirc/libpkfiledialog.so
+@exec ln -sf libpframe.so.0 %D/lib/ksirc/libpframe.so
+@exec ln -sf libpbutton.so.0 %D/lib/ksirc/libpbutton.so
+@exec ln -sf libpalistbox.so.0 %D/lib/ksirc/libpalistbox.so
+@exec ln -sf libksirclistbox.so.0 %D/lib/ksirc/libksirclistbox.so
 @dirrm share/sounds
 @dirrm share/doc/HTML/it/ktalkd
 @dirrm share/doc/HTML/fr/ktalkd
@@ -688,6 +800,7 @@ share/toolbar/mini-ktalk.xpm
 @dirrm share/apps/kppp/Rules/Poland
 @dirrm share/apps/kppp/Rules/Norway
 @dirrm share/apps/kppp/Rules/Netherlands
+@dirrm share/apps/kppp/Rules/Mauritius
 @dirrm share/apps/kppp/Rules/Malaysia
 @dirrm share/apps/kppp/Rules/Luxembourg
 @dirrm share/apps/kppp/Rules/Kazakhstan
@@ -695,6 +808,7 @@ share/toolbar/mini-ktalk.xpm
 @dirrm share/apps/kppp/Rules/Jamaica
 @dirrm share/apps/kppp/Rules/Italy
 @dirrm share/apps/kppp/Rules/Indonesia
+@dirrm share/apps/kppp/Rules/Iceland
 @dirrm share/apps/kppp/Rules/Hungary
 @dirrm share/apps/kppp/Rules/Hong_Kong
 @dirrm share/apps/kppp/Rules/Greece
@@ -718,3 +832,22 @@ share/toolbar/mini-ktalk.xpm
 @dirrm share/apps/kmail
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
+@unexec rm -f %D/lib/ksirc/libksirclistbox.so
+@unexec rm -f %D/lib/ksirc/libpalistbox.so
+@unexec rm -f %D/lib/ksirc/libpbutton.so
+@unexec rm -f %D/lib/ksirc/libpframe.so
+@unexec rm -f %D/lib/ksirc/libpkfiledialog.so
+@unexec rm -f %D/lib/ksirc/libplabel.so
+@unexec rm -f %D/lib/ksirc/libplined.so
+@unexec rm -f %D/lib/ksirc/libplistbox.so
+@unexec rm -f %D/lib/ksirc/libpmenudta.so
+@unexec rm -f %D/lib/ksirc/libpobjfinder.so
+@unexec rm -f %D/lib/ksirc/libppopmenu.so
+@unexec rm -f %D/lib/ksirc/libpprogress.so
+@unexec rm -f %D/lib/ksirc/libppushbt.so
+@unexec rm -f %D/lib/ksirc/libptabdialog.so
+@unexec rm -f %D/lib/ksirc/libptablevw.so
+@dirrm lib/ksirc
+@unexec rm -f %D/lib/libpuke.so
+@exec ln -sf kppp.html %D/share/doc/HTML/en/kppp/index.html
+@unexec rm -f %D/share/doc/HTML/en/kppp/index.html

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	kde-1.1.1
+DISTNAME=	kde-1.1.2
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# empty

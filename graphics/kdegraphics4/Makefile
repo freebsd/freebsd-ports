@@ -6,13 +6,14 @@
 # $FreeBSD$
 #
 
-DISTNAME=	kdegraphics-1.1.1
+DISTNAME=	kdegraphics-1.1.2
 CATEGORIES=	graphics kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 
 MAINTAINER=	se@freebsd.org
 
+BUILD_DEPENDS=	${PREFIX}/include/gif_lib.h:${PORTSDIR}/graphics/giflib
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.2:${PORTSDIR}/x11/kdelibs11

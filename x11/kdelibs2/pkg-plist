@@ -200,12 +200,14 @@ share/locale/he/LC_MESSAGES/kde.mo
 share/locale/he/charset
 share/locale/hr/LC_MESSAGES/kde.mo
 share/locale/hr/charset
+share/locale/hs/charset
 share/locale/hu/LC_MESSAGES/kde.mo
 share/locale/hu/charset
 share/locale/is/LC_MESSAGES/kde.mo
 share/locale/is/charset
 share/locale/it/LC_MESSAGES/kde.mo
 share/locale/it/charset
+share/locale/ja/LC_MESSAGES/kde.mo
 share/locale/ko/LC_MESSAGES/kde.mo
 share/locale/mk/LC_MESSAGES/kde.mo
 share/locale/nl/LC_MESSAGES/kde.mo
@@ -344,12 +346,16 @@ share/toolbar/viewzoom.xpm
 @dirrm share/locale/mk
 @dirrm share/locale/ko/LC_MESSAGES
 @dirrm share/locale/ko
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
 @dirrm share/locale/it/LC_MESSAGES
 @dirrm share/locale/it
 @dirrm share/locale/is/LC_MESSAGES
 @dirrm share/locale/is
 @dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/locale/hu
+@dirrm share/locale/hs/LC_MESSAGES
+@dirrm share/locale/hs
 @dirrm share/locale/hr/LC_MESSAGES
 @dirrm share/locale/hr
 @dirrm share/locale/he/LC_MESSAGES
@@ -382,7 +388,16 @@ share/toolbar/viewzoom.xpm
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kfiledialog
 @dirrm share/doc/HTML/en/kdelibs
-@dirrm share/doc/HTML/en
+@unexec rmdir %D/share/doc/HTML/it || true
+@unexec rmdir %D/share/doc/HTML/fr || true
+@unexec rmdir %D/share/doc/HTML/fi || true
+@unexec rmdir %D/share/doc/HTML/es || true
+@unexec rmdir %D/share/doc/HTML/en || true
+@unexec rmdir %D/share/doc/HTML/el || true
+@unexec rmdir %D/share/doc/HTML/de || true
+@unexec rmdir %D/share/doc/HTML/da || true
+@unexec rmdir %D/share/doc/HTML/cs || true
+@unexec rm -f %D/share/doc/HTML/default
 @dirrm share/doc/HTML
 @dirrm share/config
 @dirrm share/apps/khtmlw/pics
@@ -402,5 +417,4 @@ share/toolbar/viewzoom.xpm
 @unexec rm -f %D/lib/libkimgio.so
 @unexec rm -f %D/lib/libkspell.so
 @unexec rm -f %D/lib/libmediatool.so
-@unexec rm -f %D/share/doc/HTML/default
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
