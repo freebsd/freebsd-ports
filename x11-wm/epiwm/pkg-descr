@@ -1,0 +1,9 @@
+from the home page:
+
+	EPIwm is a window manager which is intended to be small,
+	fast and configurable while maintaining a large feature
+	set.  It is a computer school project from EPITA under GPL.
+
+Users must run the epiwm.inst script before starting epiwm.
+
+WWW:  http://www.nongnu.org/epiwm
