@@ -293,7 +293,6 @@ share/applnk/.hidden/konqfilemgr.desktop
 share/applnk/Applications/.directory
 share/applnk/Development/designer.desktop
 share/applnk/Editors/kwrite.desktop
-share/applnk/Editors/xedit.desktop
 share/applnk/Games/.directory
 share/applnk/Graphics/.directory
 share/applnk/Help.desktop
@@ -399,7 +398,6 @@ share/applnk/System/ScreenSavers/KSlip.desktop
 share/applnk/System/ScreenSavers/KSpace.desktop
 share/applnk/System/ScreenSavers/KSwarm.desktop
 share/applnk/System/ScreenSavers/KVm.desktop
-share/applnk/System/ScreenSavers/Worm.desktop
 share/applnk/System/kappfinder.desktop
 share/applnk/System/kfmclient.desktop
 share/applnk/System/klegacyimport.desktop
@@ -408,17 +406,14 @@ share/applnk/System/konquerorsu.desktop
 share/applnk/System/konsole.desktop
 share/applnk/System/konsolesu.desktop
 share/applnk/System/ksysguard.desktop
-share/applnk/Toys/xeyes.desktop
 share/applnk/Utilities/.directory
 share/applnk/Utilities/klipper.desktop
 share/applnk/Utilities/kpager.desktop
 share/applnk/Utilities/ktip.desktop
 share/applnk/Utilities/passwd.desktop
-share/applnk/Utilities/xcalc.desktop
 share/applnk/Utilities/xclipboard.desktop
 share/applnk/Utilities/xclock.desktop
 share/applnk/Utilities/xconsole.desktop
-share/applnk/Utilities/xload.desktop
 share/applnk/Utilities/xmag.desktop
 share/applnk/Utilities/xterm.desktop
 share/apps/clockapplet/pics/lcd.png
