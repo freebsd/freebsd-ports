@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris2
-PORTVERSION=	6.4
-PORTREVISION=	1
+PORTVERSION=	6.5
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -30,10 +29,15 @@ USE_PYTHON=	yes
 USE_SDL=	mixer
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS} -lm"
 
 INFO=		gcompris
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-DGNOME_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.mk>
