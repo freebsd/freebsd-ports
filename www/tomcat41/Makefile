@@ -18,7 +18,7 @@ COMMENT=	Open-source Java web server by Apache, stable 4.1.x branch
 
 USE_JAVA=	1.2+
 NO_BUILD=	YES
-LATEST_LINK=	jakarta-tomcat41
+LATEST_LINK=	${APP_SHORTNAME}
 
 MAN1=	tomcat41ctl.1
 
