@@ -1,0 +1,28 @@
+--- pvmpov.patch.orig	Sun Sep 12 01:25:35 1999
++++ pvmpov.patch	Wed Mar 22 12:37:19 2000
+@@ -569,10 +569,10 @@
+   
+ ***************
+ *** 36,47 ****
+-  #define POV_RAY_VERSION "3.1e"
++  #define POV_RAY_VERSION "3.1g"
+   
+-  #define DISTRIBUTION_MESSAGE_1 "This is an unofficial version compiled by:"
+-! #define DISTRIBUTION_MESSAGE_2 "FILL IN NAME HERE........................."
++  #define DISTRIBUTION_MESSAGE_1 "This is an unofficial version compiled for"
++! #define DISTRIBUTION_MESSAGE_2 "FreeBSD, http://www.freebsd.org/"
+   #define DISTRIBUTION_MESSAGE_3 "The POV-Ray Team(tm) is not responsible for supporting this version."
+   
+   /* Number of help pages (numbered 0 to MAX_HELP_PAGE). */
+@@ -582,9 +582,9 @@
+   
+   
+ --- 39,50 ----
+-  #define POV_RAY_VERSION "3.1e"
++  #define POV_RAY_VERSION "3.1g"
+   
+-  #define DISTRIBUTION_MESSAGE_1 "This is an unofficial version compiled by:"
++  #define DISTRIBUTION_MESSAGE_1 "This is an unofficial version compiled for"
+ ! #define DISTRIBUTION_MESSAGE_2 "Jakob Flierl <flierl@luga.de> - PVMPOV Version 3.1e.2"
+   #define DISTRIBUTION_MESSAGE_3 "The POV-Ray Team(tm) is not responsible for supporting this version."
+   

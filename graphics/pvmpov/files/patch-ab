@@ -1,0 +1,77 @@
+--- povray31/source/pvm/Makefile.aimk.orig	Sun Sep 12 01:25:35 1999
++++ povray31/source/pvm/Makefile.aimk	Wed Mar 22 13:17:46 2000
+@@ -63,18 +63,18 @@
+ # Use libXXX.a if you want to force static linking of the libraries.
+ # Use -Llibdir -lXXX if you want to use shared libraries (if they are
+ # available).  It doesn't matter if you only have libXXX.a libraries.
+-PNGDIR = $(SRCDIR)/libpng
+-LIBPNGINC = -I$(PNGDIR)
++PNGDIR =
++LIBPNGINC = -I%LOCALBASE%/include
+ #LIBPNGLIB = $(PNGDIR)/libpng.a
+ #LIBPNGINC = -I/usr/X11R6/include
+-LIBPNGLIB = -L$(PNGDIR) -lpng
++LIBPNGLIB = -L%LOCALBASE%/lib -lpng
+ # LIBPNGLIB = -L/usr/lib -lpng
+ # LIBPNGLIB = -L/usr/X11R6/lib -lpng
+ # LIBPNGLIB = 
+-ZLIBDIR = $(SRCDIR)/zlib
+-ZLIBINC = -I$(ZLIBDIR)
++ZLIBDIR =
++ZLIBINC =
+ #ZLIBLIB = $(ZLIBDIR)/libz.a
+-ZLIBLIB = -L$(ZLIBDIR) -lz
++ZLIBLIB = -lz
+ #ZLIBLIB = -L/usr/local/lib -lz
+ 
+ 
+@@ -92,7 +92,7 @@
+ #X11 = /usr/local/X11R6
+ #X11 = /usr/openwin        # for some SunOS systems
+ #X11 = /usr/lpp/X11        # for some AIX systems
+-X11 = /usr/X11R6
++X11 = %X11BASE%
+ 
+ # You probably won't need to change these if you have the X11 variable
+ #   above set properly...
+@@ -127,9 +127,8 @@
+ #
+ CC		= gcc
+ OBJ		= .o
+-PVMINC		= -I$(PVM_ROOT)/include
+-PVMLIB		= $(PVM_ROOT)/lib/$(PVM_ARCH)/libpvm3.a			\
+-		  $(PVM_ROOT)/lib/$(PVM_ARCH)/libgpvm3.a	
++PVMINC		= -I%LOCALBASE%/include
++PVMLIB		= -L%LOCALBASE%/lib -lpvm3 -lgpvm3
+ #PVMLIB		= /usr/lib/libpvm3.a                                    \
+ #		  /usr/lib/libgpvm3.a
+ XDIR		= $(HOME)/pvm3/bin/$(PVM_ARCH) 
+@@ -140,15 +139,15 @@
+ 
+ # some other possibilities for CFLAGS
+ #CFLAGS		= -O2 -ansi -c -DCOMPILER_VER=\".`uname`.$(CC)\" 	\
+-		   $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)
++#		   $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)
+ # HPUX compiler flags
+ #CFLAGS      	= +O2 -finline-functions -c -Aa -D_HPUX_SOURCE 		\
+-		  -DCOMPILER_VER=\".`uname`.$(CC)\" 			\
+-		  $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
++#		  -DCOMPILER_VER=\".`uname`.$(CC)\" 			\
++#		  $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
+ # ALPHA compiler flags
+ #CFLAGS		= -O6 -ansi -finline-functions -c -Wall                 \
+-		  -DCOMPILER_VER=\".`uname`.$(CC)\"                     \
+-		  $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)$(SRCINC)
++#		  -DCOMPILER_VER=\".`uname`.$(CC)\"                     \
++#		  $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)$(SRCINC)
+ 
+ #
+ # and additional file needed for PVM
+@@ -1079,7 +1078,6 @@
+                           config.h             \
+                           $(SRCDIR)/frame.h    \
+                           $(SRCDIR)/optout.h   \
+-                          $(PNGDIR)/png.h      \
+                           $(SRCDIR)/png_pov.h  \
+                           $(SRCDIR)/point.h    \
+                           $(SRCDIR)/povproto.h \

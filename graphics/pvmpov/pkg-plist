@@ -1,0 +1,9 @@
+bin/x-pvmpov
+lib/pvm/bin/FREEBSD/x-pvmpov
+share/doc/pvmpov/PVMPOV.Changelog
+share/doc/pvmpov/PVMPOV.benchmark
+share/doc/pvmpov/PVMPOV.example
+share/doc/pvmpov/PVMPOV.general
+share/doc/pvmpov/PVMPOV.install
+share/doc/pvmpov/PVMPOV.radiosity
+@dirrm share/doc/pvmpov
