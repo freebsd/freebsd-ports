@@ -1,0 +1,17 @@
+*****************************************************************************
+To build a site:
+
+1)  $ mkdir mysite; cd mysite
+2)  $ forrest seed
+3)  $ forrest site
+4)  see results in ./build/site/index.html with your web browser
+
+If you get this error:
+
+Can't connect to X11 window using ':0.0' as the value of the DISPLAY variable
+
+replace step 3) with:
+
+    $ forrest -Dforrest.jvmargs=-Djava.awt.headless=true site
+
+*****************************************************************************
