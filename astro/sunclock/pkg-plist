@@ -9,6 +9,7 @@ share/sunclock/i18n/Sunclock.fr
 share/sunclock/i18n/Sunclock.it
 share/sunclock/i18n/Sunclock.nl
 share/sunclock/i18n/Sunclock.no
+share/sunclock/i18n/Sunclock.pl
 share/sunclock/i18n/Sunclock.se
 @dirrm share/sunclock/i18n
 @dirrm share/sunclock/earthmaps/vmf

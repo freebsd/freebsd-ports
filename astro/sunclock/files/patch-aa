@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Aug 14 09:30:24 2001
-+++ Imakefile	Sat Dec  8 19:39:45 2001
+--- Imakefile.orig	Wed Aug 25 07:00:29 2004
++++ Imakefile	Sun Nov 21 13:48:06 2004
 @@ -1,15 +1,17 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -44,10 +44,10 @@
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
 @@ -52,7 +54,7 @@
  OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
-      readvmf.o readxpm.o readjpeg.o
+      readvmf.o readxpm.o readgif.o readjpeg.o readpng.o
  LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \
--     $(JLIBDIR) -ljpeg -lm
-+     $(JLIBDIR) -ljpeg -lm -lcompat
+-     $(JLIBDIR) -ljpeg -lpng -lm
++     $(JLIBDIR) -ljpeg -lpng -lm -lcompat
  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
  ComplexProgramTarget(sunclock)
