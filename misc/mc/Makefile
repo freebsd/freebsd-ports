@@ -7,7 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.6.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	misc shells
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
@@ -25,12 +25,12 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SAMBA)
+.if defined(WITH_SAMBA) || !(defined(WITHOUT_SAMBA) || defined(MINIMAL))
 CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc \
 		--with-codepagedir=${LOCALBASE}/etc/codepages
 .endif
 
-.if !defined(WITHOUT_ICONV)
+.if defined(WITH_ICONV) || !(defined(WITHOUT_ICONV) || defined(MINIMAL))
 CONFIGURE_ARGS+=--enable-charset
 USE_ICONV=	yes
 PLIST_SUB=	CHARSETS=""
@@ -38,8 +38,15 @@ PLIST_SUB=	CHARSETS=""
 PLIST_SUB=	CHARSETS="@comment "
 .endif
 
-.if !defined(WITH_X11)
+.if !defined(WITH_X11) || defined(MINIMAL)
 CONFIGURE_ARGS+=--without-x
+.endif
+
+.if !defined(WITH_EDIT) && (defined(WITHOUT_EDIT) || defined(MINIMAL))
+CONFIGURE_ARGS+=--without-edit
+PLIST_SUB+=	EDITOR="@comment "
+.else
+PLIST_SUB+=	EDITOR=""
 .endif
 
 .if ${ARCH} == "alpha"
@@ -49,7 +56,7 @@ CONFIGURE_ARGS+=--without-x
 WITHOUT_SLANG=	yes
 .endif
 
-.if defined(WITHOUT_SLANG)
+.if !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
 CONFIGURE_ARGS+=--with-screen=slang
@@ -58,12 +65,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I ${LOCALBASE}/include" \
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
 
-.if defined(WITHOUT_SUBSHELL)
+.if !defined(WITH_SUBSHELL) && (defined(WITHOUT_SUBSHELL) || defined(MINIMAL))
 CONFIGURE_ARGS+=--without-subshell
 .endif
 
+.if defined(WITH_PERL_MODULES) || !(defined(WITHOUT_PERL_MODULES) || defined(MINIMAL))
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS=    ${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
 .endif
 
 MAN1=		mc.1 mcedit.1 mcview.1
