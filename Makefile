@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+SUBDIR += arabic
 SUBDIR += archivers
 SUBDIR += astro
 SUBDIR += audio
