@@ -1,28 +1,38 @@
---- admin/Makefile.common.orig	Wed Oct 31 15:17:47 2001
-+++ admin/Makefile.common	Wed Oct 31 15:18:24 2001
-@@ -13,11 +13,11 @@
+--- admin/Makefile.common.orig	Fri Jun 15 05:54:12 2001
++++ admin/Makefile.common	Wed Jan  2 09:41:45 2002
+@@ -13,15 +13,15 @@
  	  $(MAKE) -f Makefile.am top_srcdir=. configure.in ;\
  	fi
  	@echo "*** Retrieving configure tests needed by configure.in"
 -	@aclocal
 +	@aclocal14
  	@echo "*** Scanning for include statements"
- 	@autoheader
+-	@autoheader
++	@autoheader213
  	@echo "*** Building Makefile templates"
 -	@automake
 +	@automake14
  	@echo "*** Scanning for moc files and kde tags"
  	@perl admin/am_edit
  	@echo "*** Building configure"
-@@ -48,9 +48,9 @@
+-	@autoconf
++	@autoconf213
+ 	@if test -r configure.in.in ; then \
+ 	  perl -pi -e 'print "if test \"x\$$with_fast_perl\" = \"xyes\" ;\
+ 	  then\n  perl -i.bak \$$ac_aux_dir/conf.change.pl \$$CONFIG_STATUS\
+@@ -48,11 +48,11 @@
  	@if test -r configure.in.in; then \
  	  $(MAKE) -f Makefile.am top_srcdir=. subdirs configure.in; \
  	fi ;\
 -	aclocal; \
-+	aclocal14; \
- 	autoheader; \
+-	autoheader; \
 -	automake --foreign --include-deps; \
++	aclocal14; \
++	autoheader213; \
 +	automake14 --foreign --include-deps; \
  	perl admin/am_edit; \
- 	autoconf; \
+-	autoconf; \
++	autoconf213; \
  	if test -r configure.in.in ; then \
+ 	  perl -pi -e 'print "if test \"x\$$with_fast_perl\" = \"xyes\" ;\
+ 	  then\n  perl -i.bak \$$ac_aux_dir/conf.change.pl \$$CONFIG_STATUS\

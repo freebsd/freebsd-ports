@@ -13,10 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	michiel.dewilde@rug.ac.be
 
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
-		autoconf:${PORTSDIR}/devel/autoconf
-
-GNU_CONFIGURE=	yes
+USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=2
 INSTALLS_SHLIB=	yes
