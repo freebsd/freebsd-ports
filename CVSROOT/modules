@@ -9274,6 +9274,7 @@ unadf		ports/archivers/unadf
 unarj		ports/archivers/unarj
 unclutter	ports/misc/unclutter
 undms		ports/archivers/undms
+unfs3		ports/net/unfs3
 unison		ports/net/unison
 unix2dos	ports/converters/unix2dos
 unix2tcp	ports/net/unix2tcp
