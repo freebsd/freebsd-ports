@@ -1,7 +1,6 @@
 bin/intltool-extract
 bin/intltool-merge
 bin/intltool-prepare
-bin/intltool-unicodify
 bin/intltool-update
 bin/intltoolize
 bin/xml-i18n-toolize
