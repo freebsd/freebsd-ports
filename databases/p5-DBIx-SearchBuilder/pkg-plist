@@ -3,6 +3,7 @@
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Record.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Record/Cachable.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/Informix.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/Pg.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysql.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysqlPP.pm
