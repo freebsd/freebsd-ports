@@ -1,5 +1,5 @@
 # New ports collection makefile for:	nmh
-# Version required:     1.0
+# Version required:     1.0.2
 # Date created:		07 Feb 1999
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #
@@ -29,15 +29,15 @@
 #           script's '--with-pager' option.
 #
 
-DISTNAME=	nmh-1.0
+DISTNAME=	nmh-1.0.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
 		http://www.freebsd.org/~jkoshy/PORTS/
 
 MAINTAINER=     Scott.Blachowicz@seaslug.org
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --libexecdir=${PREFIX}/libexec/nmh \
+USE_AUTOCONF=   yes
+CONFIGURE_ARGS= --libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop
 .ifdef NMH_MTS
 CONFIGURE_ARGS+= --with-mts=${NMH_MTS}
@@ -59,8 +59,12 @@ MAN1= ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
 
 MAN5= mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
       mh-sequence.5 mh-tailor.5
+MLINKS= mh-profile.5 mh_profile.5
 
 MAN8= ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
+
+pre-configure:
+	cd ${WRKSRC}; chmod +w configure
 
 # Since we patch the autoconf files as well as their outputs, avoid attempt
 # to regenerate header input files with 'autoheader' by Makefile.
