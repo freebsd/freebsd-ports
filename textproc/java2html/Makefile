@@ -3,10 +3,10 @@
 # Date created:				21 March 1999
 # Whom:					Martin Kammerhofer
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 02:55:19 steve Exp $
+# $Id: Makefile,v 1.2 1999/05/04 22:40:30 steve Exp $
 #
 
-DISTNAME=		java2html-0.5
+DISTNAME=		java2html-0.6.1
 CATEGORIES=		textproc www
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
