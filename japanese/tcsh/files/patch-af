@@ -1,5 +1,5 @@
---- ../../tcsh-6.07.06/config_f.h	Sun Jun 21 10:45:27 1998
-+++ config_f.h	Sun Jun 21 11:03:39 1998
+--- ../../tcsh-6.07.09/config_f.h	Wed Jul 22 01:03:32 1998
++++ config_f.h	Wed Jul 22 01:04:17 1998
 @@ -65,7 +65,11 @@
   *		if you don't have <nl_types.h>, you don't want
   *		to define this.
