@@ -7,6 +7,7 @@
 
 PORTNAME=	trafd
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 EXTRACT_SUFX=	.tgz
@@ -23,12 +24,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafstatd/trafstatd ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/traflog/traflog ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/traflog/traflog.format ${PREFIX}/etc
-
-post-install:
+	@${MKDIR} ${PREFIX}/var/trafd
+	@${MKDIR} ${PREFIX}/var/log
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	${MKDIR} ${PREFIX}/var/trafd
-	${MKDIR} ${PREFIX}/var/log
+
 .include <bsd.port.mk>
