@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.dict.org/pub/dict/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		dict
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER?=	dd@FreeBSD.org
 
 MAN1=		dictzip.1
 MAN8=		dictd.8
