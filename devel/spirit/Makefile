@@ -8,12 +8,16 @@
 
 PORTNAME=	spirit
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object oriented recursive descent parser generator framework
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost
+RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost
 
 USE_REINPLCE=	yes
 USE_GNOME=	gnomehack
