@@ -1,13 +1,12 @@
 # New ports collection makefile for:    linux_lib
-# Version required:	2.0
+# Version required:	2.1
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1995/11/22 11:48:12 asami Exp $
+# $Id: Makefile,v 1.8 1996/03/29 14:46:25 erich Exp $
 #
 
-DISTNAME=	linux_lib-2.0
-PKGNAME=	linux_lib-2.0
+DISTNAME=	linux_lib-2.1
 CATEGORIES=	emulators
 
 MAINTAINER=	erich@FreeBSD.org
