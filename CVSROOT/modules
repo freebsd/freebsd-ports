@@ -6530,6 +6530,7 @@ pmake		ports/devel/pmake
 pmap		ports/sysutils/pmap
 pmars		ports/games/pmars
 pmf		ports/net/pmf
+pmk		ports/devel/pmk
 pmw		ports/x11-toolkits/pmw
 png		ports/graphics/png
 png2html	ports/graphics/png2html
