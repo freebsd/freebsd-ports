@@ -1,0 +1,10 @@
+bin/pgsql2shp
+bin/shp2pgsql
+lib/postgresql/libpostgis.so
+lib/postgresql/libpostgis.so.0
+share/postgresql/README.postgis
+share/postgresql/postgis.sql
+share/postgresql/postgis_undef.sql
+share/postgresql/spatial_ref_sys.sql
+@unexec rmdir %D/lib/postgresql 2>/dev/null || true
+@unexec rmdir %D/share/postgresql 2>/dev/null || true
