@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-library-combo=gnu-gnu-gnu-xgps \
 		--with-tiff-library=${LOCALBASE}/lib \
 		--with-tiff-include=${LOCALBASE}/include # --enable-threads=posix
 CONFIGURE_TARGET=
+USE_BISON=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 MAKEFILE=
