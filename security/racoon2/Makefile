@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racoon
-PORTVERSION=	20001111a
+PORTVERSION=	20010215a
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
