@@ -6,23 +6,43 @@
 #
 
 PORTNAME=	xmbase-grok
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
-		ftp://ftp.fu-berlin.de/pub/unix/databases/xmbase-grok/
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/databases/xmbase-grok/ \
+		ftp://bitrot.de/pub/grok/
+DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
+
+USE_X_PREFIX=	yes
 USE_MOTIF=	yes
-USE_IMAKE=	yes
+MAKE_ENV=	MYCC="${CC}" DEBUG="${CFLAGS}" YO="" INCDIR="" \
+		GBIN="${PREFIX}/bin" GLIB="${DATADIR}" \
+		CF="-I${X11BASE}/include" LF="${MOTIFLIB} -lXt -lX11 -lm"
+MAN1=		grok.1
 
-GLOK_DATADIR=	${PREFIX}/lib/X11/xmbase-grok
+DATADIR=	${PREFIX}/lib/X11/xmbase-grok
 
-post-install:
-	${TAR} -C ${WRKSRC} -cf - grokdir | \
-		${TAR} -C ${GLOK_DATADIR} --unlink -xf -
-	find ${GLOK_DATADIR} | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	find ${GLOK_DATADIR} -type f | xargs ${CHMOD} ${SHAREMODE}
+pre-patch:
+	@${PERL} -pi -e 's|^GBIN =|#GBIN =|g ; \
+		 s|^GLIB =|#GLIB =|g ; \
+		 s|^DEBUG =|#DEBUG =|g' ${BUILD_WRKSRC}/Makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/grok ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/man/grok.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/misc/grok.hlp ${DATADIR}
+	@${MKDIR} ${DATADIR}/grokdir
+	@${TAR} -C ${WRKSRC}/demo -cf - . | \
+		${TAR} -C ${DATADIR}/grokdir -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/grokdir
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
