@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 
 MAINTAINER=	trevor@FreeBSD.org
 
-LIB_DEPENDS=	mcrypt.4:${PORTSDIR}/security/libmcrypt/ \
+LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
 		intl.1:${PORTSDIR}/devel/gettext/
 
