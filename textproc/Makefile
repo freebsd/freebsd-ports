@@ -120,6 +120,7 @@
     SUBDIR += jrefentry
     SUBDIR += kbedic
     SUBDIR += kdiff3
+    SUBDIR += l2a
     SUBDIR += lacheck
     SUBDIR += latex2html
     SUBDIR += latte

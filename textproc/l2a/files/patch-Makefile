@@ -1,0 +1,33 @@
+--- Makefile.orig	Wed Feb  5 14:56:06 2003
++++ Makefile	Wed Feb  5 14:58:18 2003
+@@ -18,7 +18,7 @@
+ #CC	= cl
+ 
+ # K&R cc
+-CC	= cc
++#CC	= cc
+ 
+ #---( Operating system )---
+ 
+@@ -40,8 +40,8 @@
+ #---( Files, directories, etc.)---
+ 
+ SRC	= l2a.tex Makefile l2a.l l2a.1 yywrap.c file_id.diz manifest.txt
+-BINDIR	= /local/bin
+-MANDIR	= /local/man
++BINDIR	= ${PREFIX}/bin
++MANDIR	= ${PREFIX}/man
+ 
+ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ #                         END OF  CUSTOMIZATION SECTION
+@@ -61,8 +61,8 @@
+ #---( housekeeping )----------------------------------------------------------
+ 
+ install:
+-	cp $(EXE) $(BINDIR)/$(EXE)
+-	cp l2a.1 $(MANDIR)/man1/l2a.1
++	${INSTALL_PROGRAM} $(EXE) $(BINDIR)/$(EXE)
++	${INSTALL_MAN} l2a.1 $(MANDIR)/man1/l2a.1
+ 
+ tidy:
+ 	rm -f $(OBJ) $(EXE) l2a.zip l2a.txt lex.yy.c l2a.aux l2a.log fn.tmp
