@@ -1,7 +1,10 @@
---- config/gnomerc.in.orig	Mon May 20 23:56:25 2002
-+++ config/gnomerc.in	Mon May 20 23:56:45 2002
-@@ -1 +1,4 @@
-+#!/bin/csh
-+
-+unsetenv LC_CTYPE
- exec @EXPANDED_BINDIR@/gnome-session
+--- config/gnomerc.in.orig	Wed Jul 24 15:52:07 2002
++++ config/gnomerc.in	Wed Jul 24 15:52:26 2002
+@@ -2,6 +2,7 @@
+ 
+ # Do we have gnome-volume-control?
+ # If so we should run it to load the gnome-volume-control settings
++LC_CTYPE= ; export LC_CTYPE
+ if command -v gnome-volume-control > /dev/null 2>&1; then
+ 	gnome-volume-control -i
+ else if [ -x @EXPANDED_BINDIR@/gnome-volume-control > /dev/null 2>&1; then

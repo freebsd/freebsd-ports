@@ -1,5 +1,6 @@
 bin/gdm
 bin/gdm-binary
+bin/gdmXnest
 bin/gdmXnestchooser
 bin/gdmchooser
 bin/gdmflexiserver
@@ -30,6 +31,7 @@ share/gnome/gdm/gdmchooser.glade
 share/gnome/gdm/gdmsetup.glade
 share/gnome/gdm/themes/happygnome/GdmGreeterTheme.desktop
 share/gnome/gdm/themes/happygnome/background.svg
+share/gnome/gdm/themes/happygnome/disconnect.png
 share/gnome/gdm/themes/happygnome/gnome-logo.png
 share/gnome/gdm/themes/happygnome/happygnome.xml
 share/gnome/gdm/themes/happygnome/options.png
