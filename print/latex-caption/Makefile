@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-caption
-PORTVERSION=	3.0.20040716
+PORTVERSION=	3.0.20050212
 PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
@@ -18,26 +18,27 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that supports customization of captions
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+		${TEXMF_LSR}:${PORTSDIR}/print/tex-texmflocal
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+		${TEXMF_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}
 USE_GMAKE=	YES
 
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFDIR=	share/texmf
+TEXMFLOCALDIR=	share/texmf-local
+TEXMF_LSR=	${LOCALBASE}/${TEXMFDIR}/ls-R
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 TEX_BIN=	${LOCALBASE}/bin/etex
 YES_CMD=	/usr/bin/yes
-CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
+CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	caption.dtx caption.sty caption.ins caption2.dtx caption2.sty
+CLASS_FILES=	caption.dtx caption.sty caption.ins \
+		caption2.dtx caption2.sty caption3.sty
 DOC_FILES=	anleitung.pdf anleitung.tex caption.pdf caption2.pdf caption.xml
-
-IGNORE=		is already included in the teTeX distribution
 
 do-extract:
 	${MKDIR} ${WRKSRC}
