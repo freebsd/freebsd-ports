@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.2.1.1
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -32,8 +33,7 @@ CONFIGURE_ARGS=	--enable-nss=yes \
 		--with-nss-libs=${LOCALBASE}/lib \
 		--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
-		--with-sub-version=" FreeBSD GNOME Team Port" \
-		--with-krb5=/usr
+		--with-sub-version=" FreeBSD GNOME Team Port"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -93,6 +93,18 @@ LIB_DEPENDS+=	dbus-glib-1.0:${PORTSDIR}/devel/dbus
 PLIST_SUB+=	DBUS=""
 .else
 PLIST_SUB+=	DBUS="@comment "
+.endif
+
+.if ${OSVERSION} >= 500000 && !defined(NO_KERBEROS) && \
+	exists(/usr/lib/libkrb5.so)
+CONFIGURE_ARGS+=	--with-krb5=/usr
+.else
+LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
+.if defined(HEIMDAL_HOME)
+CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME}/include
+.else
+CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
+.endif
 .endif
 
 post-patch:
