@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pvh@wfeet.za.net
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		gnomeicu:${PORTSDIR}/net/gnomeicu
