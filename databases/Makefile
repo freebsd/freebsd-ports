@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.30 1998/09/06 19:23:36 andreas Exp $
+# $Id: Makefile,v 1.31 1998/11/03 10:02:10 tg Exp $
 #
     SUBDIR += cdb
     SUBDIR += db
     SUBDIR += gadfly
     SUBDIR += gdbm
+    SUBDIR += gmysql
     SUBDIR += gnats
     SUBDIR += msql
     SUBDIR += mysql321
