@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nav
-PORTVERSION=	3.0.b8
+PORTVERSION=	3.0.b10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://metanav.ntnu.no/downloads/v3/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/_beta/}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
 		ginstall:${PORTSDIR}/sysutils/coreutils \
 		gfind:${PORTSDIR}/misc/findutils
 EXTRACT_DEPENDS+=	ginstall:${PORTSDIR}/sysutils/coreutils \
-			${LOCALBASE}/share/java/classes/snmp.jar:${PORTSDIR}/java/westhawksnmp
+			${LOCALBASE}/share/java/classes/snmp.jar:${PORTSDIR}/java/drexelsnmp
 .if exists(${LOCALBASE}/jakarta-tomcat4.1)
 TOMCAT_DEPEND=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
 CATALINA_HOME=	${LOCALBASE}/jakarta-tomcat4.1

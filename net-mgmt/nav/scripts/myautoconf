@@ -145,4 +145,10 @@ then
 	else
 		echo "Fine, see if I care."
 	fi
+else
+	echo
+	echo "Consider installing a matching ports/databases/postgresqlXX-serverfor your"
+	echo "PostgreSQL client installation if you want a local NAV database. This target"
+	echo "(auto-config) can set up the database for you then, just run make auto-config"
+	echo "again."
 fi
