@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sbd
-PORTVERSION=	1.31
+PORTVERSION=	1.36
 CATEGORIES=	net security
-MASTER_SITES=	http://www.cycom.se/uploads/114/31/
+MASTER_SITES=	http://tigerteam.se/dl/sbd/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A netcat clone with more features and crypto
