@@ -3,7 +3,7 @@
 # Date created:		17 April 1995
 # Whom:			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.3 1995/04/24 09:10:29 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/25 10:48:29 asami Exp $
 #
 
 DISTNAME=	WWW
@@ -11,6 +11,8 @@ PKGNAME=	cern_linemode-3.0
 CATEGORIES+=	networking
 MASTER_SITES=	ftp://ftp.w3.org/pub/www/src/
 DISTFILES=	WWWLineMode_3.0.tar.Z WWWLibrary_3.0.tar.Z
+
+MAINTAINER=	sa2c@and.or.jp
 
 PATCH_STRIP=	-p1
 
