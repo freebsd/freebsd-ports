@@ -426,6 +426,7 @@ share/tome/xtra/font/xm8x16.fnt
 share/tome/xtra/graf/16x16.bmp
 share/tome/xtra/graf/8x8.bmp
 share/tome/xtra/graf/mask.bmp
+share/tome/xtra/graf/tome-128.png
 share/tome/xtra/music/delete.me
 share/tome/xtra/sound/Sound.cfg
 share/tome/xtra/sound/readme.txt
