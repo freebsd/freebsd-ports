@@ -1,0 +1,8 @@
+bin/batchflow
+bin/codeflow
+bin/flowdesigner-config
+bin/flowdoc
+bin/info2def.pl
+bin/texflow
+lib/libflow-0.8.so
+lib/libflow.so
