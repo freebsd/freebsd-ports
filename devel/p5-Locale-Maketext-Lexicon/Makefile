@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.21
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -23,10 +23,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
 MAN3=		Locale::Maketext::Lexicon::Auto.3 \
 		Locale::Maketext::Lexicon::Gettext.3 \
 		Locale::Maketext::Lexicon::Msgcat.3 \
@@ -35,7 +31,14 @@ MAN3=		Locale::Maketext::Lexicon::Auto.3 \
 
 MAN1=		xgettext.pl.1
 
-pre-configure:
-	@${FIND} ${WRKSRC} -name \*.orig -delete
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} <= 500601
+.if ${PERL_LEVEL} == 500601
+BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat
+.else
+IGNORE="Need at least perl 5.6.1 to build"
+.endif
+.endif
+
+.include <bsd.port.post.mk>

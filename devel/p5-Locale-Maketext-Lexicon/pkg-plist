@@ -1,8 +1,8 @@
 bin/xgettext.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext/Lexicon.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext/Lexicon/Gettext.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext/Lexicon/Auto.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext/Lexicon/Msgcat.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext/Lexicon/Tie.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon/.packlist
+%%SITE_PERL%%/Locale/Maketext/Lexicon.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Gettext.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Auto.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Msgcat.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Tie.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon
