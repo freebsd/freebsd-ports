@@ -1,5 +1,5 @@
---- wmpinboard.c.orig	Thu Apr 13 15:01:17 2000
-+++ src/wmpinboard.c	Wed Apr 18 13:06:36 2001
+--- wmpinboard.c.orig	Fri Dec  8 20:42:23 2000
++++ src/wmpinboard.c	Wed Nov 24 02:05:22 2004
 @@ -10,6 +10,7 @@
  #include <stdlib.h>
  #include <stdio.h>
@@ -8,6 +8,15 @@
  #include <sys/stat.h>
  #include <sys/time.h>
  
+@@ -165,7 +166,7 @@
+   char t[STRING_BUF_SIZE];
+   FILE *file;
+   int pid = (int) getpid();
+-  static int sizes[6];
++  static int sizes[7];
+   sizes[0] = size_0;
+   sizes[1] = size_1;
+   sizes[2] = size_2;
 @@ -1141,13 +1142,7 @@
  void
  timer(unsigned int intv)
