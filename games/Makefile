@@ -68,6 +68,7 @@
     SUBDIR += digger-vgl
     SUBDIR += dontspace
     SUBDIR += doom
+    SUBDIR += doomlegacy
     SUBDIR += dopewars
     SUBDIR += drm
     SUBDIR += dungeon

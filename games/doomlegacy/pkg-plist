@@ -1,0 +1,21 @@
+share/doc/doomlegacy/Console.txt
+share/doc/doomlegacy/Doublescan.txt
+share/doc/doomlegacy/Legacy.txt
+share/doc/doomlegacy/README_SDL
+share/doc/doomlegacy/Readme.OS2
+share/doc/doomlegacy/Whatsnew.txt
+share/doc/doomlegacy/copying
+share/doc/doomlegacy/doomatic.txt
+share/doc/doomlegacy/doomlic.txt
+share/doc/doomlegacy/editing.txt
+share/doc/doomlegacy/faq.txt
+share/doc/doomlegacy/rules.txt
+share/doc/doomlegacy/skinspec.txt
+share/doc/doomlegacy/sound.cfg
+share/doc/doomlegacy/source.txt
+doomlegacy/llsndserv
+doomlegacy/r_opengl.so
+doomlegacy/llxdoom
+doomlegacy/doom3.wad
+@dirrm doomlegacy
+@dirrm share/doc/doomlegacy
