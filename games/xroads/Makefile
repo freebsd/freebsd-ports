@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	xroads
-PORTVERSION=	0.3
+PORTVERSION=	0.6
 CATEGORIES=	games
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/1795/ \
-		http://www.autobahn.mb.ca/~foxtrot/ \
+MASTER_SITES=	http://www.autobahn.mb.ca/~foxtrot/ \
 		http://supernova.dyn.ml.org/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	will@FreeBSD.org
 
 USE_X_PREFIX=	yes
-FETCH_BEFORE_ARGS=	-t
+FETCH_BEFORE_ARGS=	-t -b
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xroads ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/xroads
-.for file in map0 map1 map2 map3 map4 map5 map6 map7 map8
-	@ ${INSTALL_DATA} ${WRKSRC}/${file}.xrm ${PREFIX}/share/xroads
+	${INSTALL_PROGRAM} ${WRKSRC}/xroads ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/games/xroads
+.for file in 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18
+	${INSTALL_DATA} ${WRKSRC}/map${file}.xrm ${PREFIX}/share/games/xroads
 .endfor
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/xroads
+	${MKDIR} ${PREFIX}/share/doc/xroads
 .for file in BUGS CHANGELOG README
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xroads
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xroads
 .endfor
 .endif
 

@@ -1,43 +1,52 @@
---- Makefile	Mon Aug  3 17:24:42 1998
-+++ /home/andy/tmp/wrk/Makefile	Tue Aug  4 12:55:37 1998
-@@ -5,7 +5,11 @@
- # optimizations. Check the manual for your compiler.
+--- Makefile	Fri Jul 16 21:37:03 1999
++++ Makefile.new	Sat May 20 00:44:02 2000
+@@ -5,8 +5,10 @@
+ # the executable
  ###########################################################################
  
--FLAGS = -O2 -g -Wall
-+CFLAGS?=	-O2 -g -Wall
-+PREFIX?=	/usr/X11R6
-+DATADIR?=	$(PREFIX)/share/xroads
-+INCLUDE?=	-I/usr/X11R6/include
-+LIBS?=		-L/usr/X11R6/lib -lX11 -lm
+-DATAPATH = /usr/games/xroads/
+-BINPATH = /usr/X11R6/bin/
++PREFIX		?= /usr/X11R6
++X11BASE		?= /usr/X11R6
++DATAPATH	= ${PREFIX}/share/games/xroads/
++BINPATH		= ${PREFIX}/bin/
+ # I imagine you would use this BINPATH for Solaris:
+ #BINPATH = /usr/openwin/bin/
  
- # These lines ain't needed... but I'm not taking 'em out yet
- #BOGOMIPS = `grep bogomips /proc/cpuinfo | awk '{ printf("%s", $$3) }'`
-@@ -36,7 +40,7 @@
+@@ -16,7 +18,7 @@
+ ###########################################################################
+ 
+ #CFLAGS = -fomit-frame-pointer -O2 -Wall -DXRMPATH=\"$(DATAPATH)\"
+-CFLAGS = -O6 -mpentium -g -Wall -DXRMPATH=\"$(DATAPATH)\"
++CFLAGS += -Wall -DXRMPATH=\"$(DATAPATH)\" -I${X11BASE}/include
+ 
+ ###########################################################################
+ # Links necessary for X11                                                 
+@@ -33,7 +35,7 @@
+ ###########################################################################
+ 
+ ### Linux machines use this line:
+-LINK = -L/usr/X11R6/lib -I/usr/X11R6/include -lX11 -lm
++LINK = -L${X11BASE}/lib -lX11 -lm
+ 
+ ### This line should work on Sun machines:
+ #LINK = -L/usr/openwin/lib -I/usr/openwin/include -lX11 -lm
+@@ -43,8 +45,7 @@
  ###########################################################################
  
  # Your C compiler
--CC = gcc
-+CC?= gcc
+-CC = egcs
+-#CC = gcc
++CC ?= gcc
  
  # Your tar
  TAR = tar
-@@ -54,12 +58,12 @@
+@@ -71,7 +72,7 @@
  
  ## "all" of course builds XRoads.
- all:
--	$(CC) $(FLAGS) -c chardata.c
--	$(CC) $(FLAGS) -c tiledata.c
--	$(CC) $(FLAGS) -c fileops.c
--	$(CC) $(FLAGS) -c ai.c
--	$(CC) $(FLAGS) -c screens.c
--	$(CC) $(FLAGS) $(LINK) -o xroads xroads.c chardata.o tiledata.o fileops.o ai.o screens.o
-+	$(CC) $(CFLAGS) $(INCLUDE) -DDATADIR=\"$(DATADIR)\" -c chardata.c
-+	$(CC) $(CFLAGS) $(INCLUDE) -DDATADIR=\"$(DATADIR)\" -c tiledata.c
-+	$(CC) $(CFLAGS) $(INCLUDE) -DDATADIR=\"$(DATADIR)\" -c fileops.c
-+	$(CC) $(CFLAGS) $(INCLUDE) -DDATADIR=\"$(DATADIR)\" -c ai.c
-+	$(CC) $(CFLAGS) $(INCLUDE) -DDATADIR=\"$(DATADIR)\" -c screens.c
-+	$(CC) $(CFLAGS) $(INCLUDE) -DDATADIR=\"$(DATADIR)\" $(LIBS) -o xroads xroads.c chardata.o tiledata.o fileops.o ai.o screens.o
+ all: $(OBJECTS)
+-	$(CC) $(FLAGS) -o xroads $(OBJECTS) $(LINK)
++	$(CC) $(CFLAGS) -o xroads $(OBJECTS) $(LINK)
  
- ## "quick" just recompiles xroads.c and links it with the existing .o's
- ## do NOT use this unless you've been altering my code :P
+ install: all
+ 	rm -fr $(DATAPATH)

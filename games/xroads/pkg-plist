@@ -2,14 +2,24 @@ bin/xroads
 share/doc/xroads/BUGS
 share/doc/xroads/CHANGELOG
 share/doc/xroads/README
-share/xroads/map0.xrm
-share/xroads/map1.xrm
-share/xroads/map2.xrm
-share/xroads/map3.xrm
-share/xroads/map4.xrm
-share/xroads/map5.xrm
-share/xroads/map6.xrm
-share/xroads/map7.xrm
-share/xroads/map8.xrm
+share/games/xroads/map00.xrm
+share/games/xroads/map01.xrm
+share/games/xroads/map02.xrm
+share/games/xroads/map03.xrm
+share/games/xroads/map04.xrm
+share/games/xroads/map05.xrm
+share/games/xroads/map06.xrm
+share/games/xroads/map07.xrm
+share/games/xroads/map08.xrm
+share/games/xroads/map09.xrm
+share/games/xroads/map10.xrm
+share/games/xroads/map11.xrm
+share/games/xroads/map12.xrm
+share/games/xroads/map13.xrm
+share/games/xroads/map14.xrm
+share/games/xroads/map15.xrm
+share/games/xroads/map16.xrm
+share/games/xroads/map17.xrm
+share/games/xroads/map18.xrm
 @dirrm share/doc/xroads
-@dirrm share/xroads
+@dirrm share/games/xroads
