@@ -8,7 +8,7 @@
 PORTNAME=	geramik
 PORTVERSION=	0.26
 PORTREVISION=	2
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/content/files/ \
 		http://distfiles.towardex.com/
 DISTNAME=	3952-Geramik-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-themes-extras
 PORTVERSION=	0.7
-CATEGORIES=	x11-toolkits gnome
+CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome2

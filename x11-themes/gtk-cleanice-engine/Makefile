@@ -8,7 +8,7 @@
 PORTNAME=	gtk-cleanice-engine
 PORTVERSION=	1.2.8
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits gnome
+CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	elysium-project
 DISTNAME=	gtk-engines-cleanice-${PORTVERSION}

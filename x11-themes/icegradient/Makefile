@@ -8,7 +8,7 @@
 PORTNAME=	icegradient
 PORTVERSION=	200012290259
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax

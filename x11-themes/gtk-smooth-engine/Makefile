@@ -8,7 +8,7 @@
 PORTNAME=	gtk-smooth-engine
 PORTVERSION=	0.5.6
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits gnome
+CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smooth-engine
 

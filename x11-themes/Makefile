@@ -3,6 +3,11 @@
 
     COMMENT = X Windows System themes
 
+    SUBDIR += buffy
+    SUBDIR += clean-theme-gtk
+    SUBDIR += colorstep
+    SUBDIR += engradient
+    SUBDIR += geramik
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla
@@ -16,6 +21,26 @@
     SUBDIR += gnome-icons-snow-apple
     SUBDIR += gnome-icons-stylish
     SUBDIR += gnome-icons-ximian-south
+    SUBDIR += gnome-industrial-theme
+    SUBDIR += gnome-look
+    SUBDIR += gnome-themes
+    SUBDIR += gnome-themes-extras
+    SUBDIR += gtk-Mac2-theme
+    SUBDIR += gtk-aqualightblue-theme
+    SUBDIR += gtk-bluecurve-theme
+    SUBDIR += gtk-cleanice-theme
+    SUBDIR += gtk-engines
+    SUBDIR += gtk-engines-collection
+    SUBDIR += gtk-engines2
+    SUBDIR += gtk-flat-theme
+    SUBDIR += gtk-flat-theme2
+    SUBDIR += gtk-industrial-theme
+    SUBDIR += gtk-qn-x11-theme
+    SUBDIR += gtk-qnxtheme
+    SUBDIR += gtk-smooth-engine
+    SUBDIR += gtk-xfce-engine
+    SUBDIR += gtk-zenith-theme
+    SUBDIR += icegradient
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-crystalosx
@@ -44,6 +69,11 @@
     SUBDIR += metacity-theme-iridium-rounded
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
+    SUBDIR += qt-bluecurve-theme
     SUBDIR += sawfish-themes
+    SUBDIR += thinice
+    SUBDIR += whistlerk
+    SUBDIR += xenophilia
+    SUBDIR += xenostep
 
 .include <bsd.port.subdir.mk>

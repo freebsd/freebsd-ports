@@ -8,7 +8,7 @@
 PORTNAME=	gtk-qnxtheme
 PORTVERSION=	0.1
 PORTREVISION=	2
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	http://download.freshmeat.net/themes/qnxtheme/
 DISTNAME=	qnxtheme-default-${PORTVERSION}
 
