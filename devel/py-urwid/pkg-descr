@@ -1,0 +1,16 @@
+Urwid is a curses-based user interface library. It includes many
+features useful for text console application developers including:
+
+* Fluid interface resizing (xterm window resizing / fbset on Linux
+  console)
+* Support for 8-bit and CJK encodings
+* Multiple text alignment and wrapping modes built-in
+* Ability to register user-defined text alignment and wrapping modes
+* Simple markup for setting text attributes
+* Powerful list box that handles scrolling between different widget
+  types
+* List box contents may be managed with a user-defined class
+* Flexible edit box for editing many different types of text
+* Easy interface for creating HTML screen shots 
+
+WWW: http://excess.org/urwid/
