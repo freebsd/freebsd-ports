@@ -15,6 +15,12 @@ COMMENT=	X MPEG Player System - a media player with a very nice GUI
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
@@ -35,4 +41,4 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 		${WRKSRC}/libtool
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

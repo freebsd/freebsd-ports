@@ -19,6 +19,12 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -32,4 +38,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's#sdl-config#sdl11-config#; s#-lSDL # #;' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's#SDL/#SDL11/#;' ${SDLINCPFILES:S#^#${WRKSRC}/#}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,6 +18,12 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		intl.4:${PORTSDIR}/devel/gettext \
 		xml.5:${PORTSDIR}/textproc/libxml
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 SHARED=		denemo.conf denemo.keymaprc english.keymaprc french.keymaprc
@@ -54,4 +60,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

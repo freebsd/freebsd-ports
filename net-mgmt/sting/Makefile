@@ -14,6 +14,12 @@ DISTNAME=	sting
 MAINTAINER=	kbyanc@posi.net
 COMMENT=	A tool that measures end-to-end TCP connection characteristics
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:
@@ -22,4 +28,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.sting
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

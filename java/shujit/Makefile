@@ -15,6 +15,12 @@ COMMENT=	A Just In Time java bytecode compiler
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ONLY_FOR_ARCHS=	i386
 
@@ -42,4 +48,4 @@ post-install:
 	@${ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

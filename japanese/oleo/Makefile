@@ -24,6 +24,12 @@ COMMENT=	A Spreadsheet Program + Japanese patches
 # xmkmf is for configure script, not for USE_IMAKE.
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 GNU_CONFIGURE=yes
@@ -35,4 +41,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/USING.eucJP ${PREFIX}/share/doc/oleo/ja_JP.EUC/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,6 +18,12 @@ DISTNAME=	xview3.2p1-X11R6
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 IMAKEINCLUDE=	"-I${X11BASE}/lib/X11/config -I${WRKSRC}/config"
@@ -32,4 +38,4 @@ post-install:
 	@(cd $(WRKSRC); $(MAKE) -k 'SUBDIRS=doc' install)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

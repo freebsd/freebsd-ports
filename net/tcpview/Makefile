@@ -14,6 +14,12 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motif-based TCP/IP protocol analyzer
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_BISON=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
@@ -28,4 +34,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${X11BASE}/lib/X11/app-defaults/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

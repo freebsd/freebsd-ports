@@ -18,9 +18,15 @@ COMMENT=	A perl5 data debugging tool for the XS programmer
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/B/Graph.pm:${PORTSDIR}/devel/p5-B-Graph
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Apache::Peek.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
