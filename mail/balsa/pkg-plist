@@ -1,12 +1,13 @@
 bin/balsa
-etc/CORBA/servers/balsa.gnorba
 etc/sound/events/balsa.soundlist
 etc/sound/events/email.soundlist
 @exec ln -sf t1.html %D/share/gnome/help/balsa/C/index.html
 @unexec rm -f %D/share/gnome/help/balsa/C/index.html
 share/gnome/apps/Internet/balsa.desktop
-share/gnome/help/balsa/C/balsa.html
-share/gnome/help/balsa/C/g1100.html
+share/gnome/help/balsa/C/authours.html
+share/gnome/help/balsa/C/common-tasks.html
+share/gnome/help/balsa/C/getting-started.html
+share/gnome/help/balsa/C/glossary.html
 share/gnome/help/balsa/C/images/balsa_logo.png
 share/gnome/help/balsa/C/images/druid-start.png
 share/gnome/help/balsa/C/images/main-window-toolbar.png
@@ -14,16 +15,20 @@ share/gnome/help/balsa/C/images/main-window.png
 share/gnome/help/balsa/C/images/newmsg-window-attachments.png
 share/gnome/help/balsa/C/images/newmsg-window-toolbar.png
 share/gnome/help/balsa/C/images/newmsg-window.png
-share/gnome/help/balsa/C/t1.html
+share/gnome/help/balsa/C/its-not-working.html
 share/gnome/help/balsa/C/topic.dat
-share/gnome/help/balsa/C/x1009.html 
-share/gnome/help/balsa/C/x1066.html 
-share/gnome/help/balsa/C/x396.html  
-share/gnome/help/balsa/C/x61.html   
-share/gnome/help/balsa/C/x698.html  
-share/gnome/help/balsa/C/x83.html   
-share/gnome/help/balsa/C/x965.html  
-share/gnome/idl/balsa.idl
+share/gnome/help/balsa/C/win-composer.html
+share/gnome/help/balsa/C/win-config-0.html
+share/gnome/help/balsa/C/win-config-1.html
+share/gnome/help/balsa/C/win-config-2.html
+share/gnome/help/balsa/C/win-config-3.html
+share/gnome/help/balsa/C/win-config-4.html
+share/gnome/help/balsa/C/win-config-5.html
+share/gnome/help/balsa/C/win-config-6.html
+share/gnome/help/balsa/C/win-config-7.html
+share/gnome/help/balsa/C/win-config-8.html
+share/gnome/help/balsa/C/win-config.html
+share/gnome/help/balsa/C/win-main.html
 share/gnome/pixmaps/gnome-balsa2.png
 share/gnome/pixmaps/balsa/attachment.png 
 share/gnome/pixmaps/balsa/balsa-logo.png 
@@ -50,8 +55,8 @@ share/locale/lt/LC_MESSAGES/balsa.mo
 share/locale/nl/LC_MESSAGES/balsa.mo
 share/locale/no/LC_MESSAGES/balsa.mo
 share/locale/pl/LC_MESSAGES/balsa.mo
+share/locale/pt/LC_MESSAGES/balsa.mo
 share/locale/pt_BR/LC_MESSAGES/balsa.mo
-share/locale/pt_PT/LC_MESSAGES/balsa.mo
 share/locale/ru/LC_MESSAGES/balsa.mo
 share/locale/sv/LC_MESSAGES/balsa.mo
 share/locale/tr/LC_MESSAGES/balsa.mo
