@@ -57,6 +57,7 @@
     SUBDIR += hexcurse
     SUBDIR += hexedit
     SUBDIR += hexpert
+    SUBDIR += hnb
     SUBDIR += hte
     SUBDIR += iiimecf
     SUBDIR += jed
