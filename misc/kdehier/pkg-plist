@@ -87,6 +87,7 @@ share/apps/kwin/.keep_me
 share/apps/kwin/icewm-themes/.keep_me
 share/apps/kwin/pics/.keep_me
 share/config.kcfg/.keep_me
+share/doc/HTML/.keep_me
 share/doc/HTML/en/.keep_me
 share/doc/HTML/en/kcontrol/.keep_me
 share/fonts/.keep_me
@@ -369,6 +370,7 @@ share/wallpapers/.keep_me
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/config.kcfg
 @dirrm share/apps/kwin/pics
 @dirrm share/apps/kwin/icewm-themes

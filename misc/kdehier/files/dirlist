@@ -196,6 +196,7 @@ share/config.kcfg
 @comment share/doc/HTML/en/kate
 @comment -------------------------------------------------------------------
 @comment -- Documentation for additional kcontrol modules could go here.
+share/doc/HTML
 share/doc/HTML/en
 share/doc/HTML/en/kcontrol
 @comment share/doc/HTML/en/kcontrol/arts
