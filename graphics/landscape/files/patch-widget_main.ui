@@ -1,0 +1,11 @@
+--- windows/unix/widget_main.ui.orig	Tue Jan  7 05:17:48 2003
++++ windows/unix/widget_main.ui	Tue Jan  7 05:19:02 2003
+@@ -552,7 +552,7 @@
+ <customwidgets>
+     <customwidget>
+         <class>mouse_bm_view</class>
+-        <header location="global">/home/jon/projects/landscape/windows/unix/mouse_bm_view.h</header>
++        <header location="local">mouse_bm_view.h</header>
+         <sizehint>
+             <width>-1</width>
+             <height>-1</height>
