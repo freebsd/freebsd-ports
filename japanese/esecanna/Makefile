@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 
@@ -26,18 +27,18 @@ DOCS=		CREDITS CHANGES.jp README.First.jp README.jp
 PLIST_SUB=	STARTER="${STARTER}"
 
 post-extract:
-	${PERL} -pe " \
+	${SED} -e " \
 		s,!!PREFIX!!,${PREFIX},g; \
 		s,!!STARTER!!,${STARTER},g; \
 		" \
 		${FILESDIR}/esecanna.sh > ${WRKSRC}/${STARTER}
 
 post-patch:
-	cd ${WRKSRC} && ${PERL} -i -pe " \
+	${REINPLACE_CMD} -e " \
 		s,!!PREFIX!!,${PREFIX},g; \
 		" \
-		README.jp \
-		esecannarc
+		${WRKSRC}/README.jp \
+		${WRKSRC}/esecannarc
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${STARTER} ${PREFIX}/etc/rc.d/
