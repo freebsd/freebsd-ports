@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	firewolf@lightningfire.net
 COMMENT=	GKrellM wireless plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
