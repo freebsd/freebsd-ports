@@ -7431,6 +7431,7 @@ pwlib		ports/devel/pwlib
 pwm		ports/x11-wm/pwm
 pwman		ports/security/pwman
 pxe		ports/net/pxe
+pxfonts		ports/print/pxfonts
 pxtools		ports/databases/pxtools
 pxytest		ports/security/pxytest
 py-4suite	ports/textproc/py-4suite
