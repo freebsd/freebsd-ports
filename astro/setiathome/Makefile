@@ -3,7 +3,7 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.3 1999/04/22 02:00:16 stb Exp $
+# $Id: Makefile,v 1.4 1999/04/22 10:35:25 stb Exp $
 #
 
 PKGNAME=	setiathome-0.46
@@ -14,6 +14,10 @@ MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
 MAINTAINER=	stb@freebsd.org
 
 ONLY_FOR_ARCHS=	i386
+
+EXTRACT_CMD=		tar
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	
 
 .include <bsd.port.pre.mk>
 
@@ -44,6 +48,10 @@ NO_BUILD=	"binary distribution"
 
 MAN1=		setiathome.1
 
+.if !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
 pre-fetch:
 	@if [ -z "${DISTFILES}" ]; then \
 		${ECHO} "It seems you are running FreeBSD `uname -r`, which is not currently";	\
@@ -58,6 +66,7 @@ do-install:
 	${INSTALL_MAN}		${FILESDIR}/setiathome.1 ${MAN1PREFIX}/man/man1
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} PACKAGE_BUILDING=${PACKAGE_BUILDING} \
+		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
