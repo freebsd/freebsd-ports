@@ -6,35 +6,45 @@
 #
 
 PORTNAME=	gtk-qt-engine
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.freedesktop.org/Software/gtk-qt/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GTK-QT Theme Engine allows GTK2 to use QT widget styles
+MAINTAINER=	danny@ricin.com
+COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT (KDE) themes
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
-WANT_GNOME=	no
+USE_LIBTOOL_VER=	15
 USE_GNOME=	gnomehack gtk20
+USE_KDELIBS_VER=3
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 
 PLIST_SUB=	GTK_VER=2.4.0
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB+=	X11BASE=${X11BASE} LOCALBASE=${LOCALBASE}
 
 pre-configure:
-	@${RM} -f ${WRKSRC}/config.cache
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|/share/themes/|/X11R6/share/themes/|" \
+		${WRKSRC}/kcm_gtk/kcmgtk.cpp
+
+post-configure:
+	@${REINPLACE_CMD} -e "s|/usr/lib/menu|/tmp/menu|" \
+		${WRKSRC}/kcm_gtk/Makefile
+	@${REINPLACE_CMD} -e \
+		"s|/usr/share/applications|${LOCALBASE}/share/applications/kde|" \
+		${WRKSRC}/kcm_gtk/Makefile
 
 post-install:
-	@${ECHO_MSG}
-	@${SED} -e "s:/usr/X11R6:${PREFIX}:" ${FILESDIR}/pkg-message.in	\
-		> ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	@# Remove Debian stuff we didn't want in the first place
+	@${RM} /tmp/menu/kcmgtk.menu
+	@if [ "`ls /tmp/menu`" = "" ]; then ${RMDIR} /tmp/menu; fi
+	@# We do want this archive!
+	@${INSTALL_DATA} ${WRKSRC}/kcm_gtk/kcm_kcmgtk.la ${LOCALBASE}/lib/kde3/
+	@${ECHO}
+	@${ECHO} "Use \"GTK styles and fonts\" from the KDE control center to set or"
+	@${ECHO} "change the GTK style. NOTE: this will overwrite your ~/.gtkrc-2.0."
+	@${ECHO}
 
 .include <bsd.port.mk>
