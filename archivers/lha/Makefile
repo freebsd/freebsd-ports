@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lha
-PORTVERSION=	1.14g
+PORTVERSION=    1.14h
 CATEGORIES=	archivers
 MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/ \
 		ftp://ftp.win.ne.jp/pub/misc/

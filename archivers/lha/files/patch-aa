@@ -1,31 +1,41 @@
---- Makefile.orig	Sat May  6 18:55:15 2000
-+++ Makefile	Mon Aug 14 19:41:44 2000
-@@ -11,27 +11,27 @@
+--- Makefile.orig	Wed Oct  4 18:55:00 2000
++++ Makefile	Mon Dec 11 05:24:04 2000
+@@ -10,28 +10,38 @@
+ #	SWITCHES macro definitions ... see config.eng or config.jpn.
  #-----------------------------------------------------------------------
  
- SHELL=/bin/sh
+-SHELL=/bin/sh
 -MAKE = make
++#SHELL=/bin/sh
 +#MAKE = make
  
  #CC			= cc
 -CC			= gcc
 -SWITCHES	= -DNEED_INCREMENTAL_INDICATOR \
 - -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
-+#CC			= gcc
++#CC                      = gcc
++#SWITCHES        = -DNEED_INCREMENTAL_INDICATOR \
++# -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
 +SWITCHES        = -DNEED_INCREMENTAL_INDICATOR
  
  #MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
  #MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DHAVE_TM_ZONE -DSYSV_SYSTEM_DIR
 -MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DMKTIME
++#MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DMKTIME
 +MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DTIMELOCAL -DUSESTRCASECMP
  
  #OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
--OPTIMIZE	= -O2 -DSUPPORT_LH7
-+OPTIMIZE       	= ${CFLAGS} -DSUPPORT_LH7
+-OPTIMIZE	= -O2 -DSUPPORT_LH7 -DMKSTEMP
++#OPTIMIZE        = -O2 -DSUPPORT_LH7 -DMKSTEMP
++# mkstemp() usage is wrong
++OPTIMIZE        = ${CFLAGS} -DSUPPORT_LH7
  
 -BINDIR = /usr/local/bin
 -MANDIR = /usr/local/man
 -MANSECT = n
++#BINDIR = /usr/local/bin
++#MANDIR = /usr/local/man
++#MANSECT = n
 +PREFIX ?= /usr/local
 +BINDIR = ${PREFIX}/bin
 +MANDIR = ${PREFIX}/man/ja
@@ -35,6 +45,8 @@
 -INSTALLBIN = -s -m 755
 -INSTALLMAN = -m 644
 +#INSTALL = install
++#INSTALLBIN = -s -m 755
++#INSTALLMAN = -m 644
 +INSTALLBIN = -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 +INSTALLMAN = -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
  
