@@ -1,5 +1,5 @@
---- config.make.orig	Sun Aug  8 11:14:28 1999
-+++ config.make	Fri Jan 21 17:53:06 2000
+--- config.make.orig	Sun Jan 30 20:24:55 2000
++++ config.make	Sun Feb 13 13:29:53 2000
 @@ -57,13 +57,13 @@
  
  # variable parameters, can be changed at run-time, DO NOT DELETE ANYTHING!!!
@@ -28,14 +28,16 @@
  # INN 2.2
  DEFAULT_F_NEWSLIBDIR	= /usr/lib
  DEFAULT_F_NEWSSPOOLDIR	= /var/spool/news/articles
-@@ -152,8 +152,8 @@
+@@ -152,9 +152,9 @@
  SENDMAIL_CF_DIR		= /usr/lib/sendmail-cf
  
  # Directories for installing documentation, not used by subst.pl
 -INFODIR			= /usr/info
--HTMLDIR			= /home/mj/public_html/fidogate
+-HTMLDIR			= /html/mj/fidogate
+-HTMLLOGDIR		= /html/log
 +INFODIR			= ${PREFIX}/share/doc/fidogate/info
 +HTMLDIR			= ${PREFIX}/share/doc/fidogate/html
- HTMLLOGDIR		= /html/log
++HTMLLOGDIR		= ${PREFIX}/share/doc/fidogate/html
  
- ##############################################################################
+ # RedHat RPM related dirs
+ RPMBASEDIR	= /usr/src/redhat
