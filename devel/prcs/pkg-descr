@@ -3,11 +3,7 @@ PRCS's purpose is similar to that of SCCS, RCS, and CVS, but (according
 to its authors, at least), it is much simpler than any of those
 systems.
 
-The current release, version 1.0, and future releases of PRCS can be
-found at ftp://XCF.Berkeley.EDU/pub/prcs.  HTML documentation and
-recent developments are available online at
-
-WWW: http://www.XCF.Berkeley.EDU/~jmacd/prcs.html
+WWW: http://prcs.sourceforge.net
 
 PRCS is released under the GNU public license, see the file COPYING
 for details.
