@@ -27,7 +27,6 @@ CONFLICTS=	slffea-* swi-pl-*
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
-USE_XPM=	yes
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}" \
 		LOCALEOBJ="localef.o" LOCALE_FLAG="-DLOCALE" \
 		MING="-L${LOCALBASE}/lib -lming" \
@@ -38,6 +37,13 @@ MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}" \
 			-L${LOCALBASE}/include" \
 		GDFREETYPE="-DGDFREETYPE" PREFABS_DIR="${DATADIR}"
 ALL_TARGET=	plgd18
+
+.ifdef WITHOUT_X11
+MAKE_ARGS+=	NOXFLAG=-DNOX11 XLIBS= XOBJ=
+PKGNAMESUFFIX=	-nox11
+.else
+USE_XPM=	yes
+.endif
 
 MAN1=	pl.1
 
