@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ob@seicom.NET
+MAINTAINER=	ports@freebsd.org
 
 USE_X_PREFIX=	yes
 
