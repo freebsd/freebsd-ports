@@ -1,0 +1,10 @@
+--- doc/Makefile.in.orig	Mon Aug  2 10:27:22 2004
++++ doc/Makefile.in	Wed Feb 16 12:16:32 2005
+@@ -65,7 +65,6 @@
+ 		${INSTALL_DATA} ${srcdir}/$${manpage}.1 ${DESTDIR}${mandir}/man1; \
+ 		for manlink in `awk -F'\\\\' '/ \\\\- / { numlinks = split($$1, manlinks, ","); for (i = 2; i <= numlinks; i++) { print manlinks[i]; } exit; }' ${srcdir}/$${manpage}.1`; do \
+ 			echo "creating link to $${manpage}.1: $${manlink}.1"; \
+-			echo ".so man1/$${manpage}.1" > ${DESTDIR}${mandir}/man1/$${manlink}.1; \
+ 		done \
+ 	done
+ 	${MKDIR} ${DESTDIR}${mandir}/man3
