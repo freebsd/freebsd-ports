@@ -7,6 +7,7 @@
 
 PORTNAME=	pmw
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pmw
@@ -17,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level compound graphics widgets for Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-LIB_DEPENDS=	BLT24.2:${PORTSDIR}/x11-toolkits/blt
+LIB_DEPENDS=	BLT24.3:${PORTSDIR}/x11-toolkits/blt
 
 PLIST_SUB=	PMWVERSION="${PMWVERSION}"
 USE_PYTHON=	yes
