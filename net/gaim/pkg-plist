@@ -20,6 +20,9 @@ lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so
+lib/gaim/ssl-gnutls.so
+lib/gaim/ssl-nss.so
+lib/gaim/ssl.so
 lib/gaim/statenotify.so
 %%TCL:%%lib/gaim/tcl.so
 lib/gaim/ticker.so
