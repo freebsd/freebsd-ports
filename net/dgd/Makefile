@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.36 1996/02/08 02:13:38 asami Exp $
+# $Id: Makefile,v 1.37 1996/02/27 19:05:19 adam Exp $
 #
 
 DISTNAME=	dgd-1.0.41
@@ -16,11 +16,7 @@ PATCHFILES=	1.0.37-1.0.41.gz
 
 MAINTAINER=	adam@veda.is
 
-.ifdef PATCHFILES
-.if ${PATCHFILES} != ""
-PATCH_PRFX!=	echo ${DISTFILES} | sed 's/^\(.*\)\.tar\.gz$$/\1\//'
-.endif
-.endif
+DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
 
 pre-patch:
