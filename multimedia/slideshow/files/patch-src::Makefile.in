@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Wed Nov 27 01:32:38 2002
-+++ src/Makefile.in	Wed Nov 27 01:32:48 2002
-@@ -790,8 +790,6 @@
- 	uninstall-recursive
+--- src/Makefile.in.orig	Mon Aug  4 19:21:52 2003
++++ src/Makefile.in	Mon Aug  4 19:22:15 2003
+@@ -844,8 +844,6 @@
+ 	else \
+ 		echo "WARNING: You need swig in order to re-build slideshow_wrap.cxx"; \
+ 	fi;
+-SDL_defines.i : $(SDL_SDL_video_H)
+-	egrep '#define SDL_.*[[:space:]]0x[0-9]{8}' $(SDL_SDL_video_H) | grep -v OVERLAY | sed -e 's,[[:space:]]*/\*.*$$,,' >SDL_defines.i
  
- 
--MgpLoaderLex.cpp: MgpLoader.ll
--	flex++ -i -oMgpLoaderLex.cpp MgpLoader.ll
- 
- #
- # Python wrapper
+ # MgpLoaderLex.cpp \
+ # MgpLoaderYacc.cpp

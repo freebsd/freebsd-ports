@@ -1,2 +1,0 @@
-This port still has some bugs when used with a colour depth less than 24 bits.
-For now, your have to use this depth for full functionality.
