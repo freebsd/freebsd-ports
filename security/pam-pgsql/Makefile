@@ -7,16 +7,17 @@
 
 PORTNAME=	pam-pgsql
 PORTVERSION=	0.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_DEBIAN} \
 		http://libpam-pgsql.codecastle.com/${PORTNAME}-${PORTVERSION}-${PORTREVISION}/
 MASTER_SITE_SUBDIR=	pool/non-US/main/p/pam-pgsql
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
-PATCHFILES=	pam-pgsql_0.5.2-${PORTREVISION}.diff.gz
+
+PATCHFILES=	pam-pgsql_${PORTVERSION}-5.diff.gz
 PATCH_SITES=	${MASTER_SITES}
 
-MAINTAINER=	andrey@mgul.ac.ru
+MAINTAINER=	m@absolight.fr
 
 LIB_DEPENDS=	pq:${PORTSDIR}/databases/postgresql7
 

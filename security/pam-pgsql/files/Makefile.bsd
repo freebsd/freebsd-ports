@@ -2,7 +2,7 @@
 
 .PATH:	${FILESDIR}
 
-SRCS=	pam_pgsql.c pam_get_pass.c pam_std_option.c pam_get_service.c
+SRCS=	pam_pgsql.c pam_get_pass.c
 SHLIB_NAME=	pam_pgsql.so
 
 LDADD=		-lpam -L${LOCALBASE}/lib -lpq -lmd
