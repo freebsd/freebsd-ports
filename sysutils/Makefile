@@ -85,6 +85,7 @@
     SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += diskcheckd
+    SUBDIR += diskmark
     SUBDIR += diskprep
     SUBDIR += disktool
     SUBDIR += disktype
