@@ -1,5 +1,5 @@
---- configure.orig	Thu Feb 14 10:08:51 2002
-+++ configure	Sat Feb 16 02:43:04 2002
+--- configure.orig	Mon Mar 11 19:50:42 2002
++++ configure	Tue Mar 12 14:49:15 2002
 @@ -756,7 +756,7 @@
  fi
  
@@ -18,16 +18,19 @@
    SYLPHEED_GNOME_TRUE=
    SYLPHEED_GNOME_FALSE='#'
  else
-@@ -7470,7 +7470,7 @@
+@@ -7470,9 +7470,9 @@
  localedir='${prefix}/${DATADIRNAME}/locale'
  
  
 -manualdir='${prefix}/${DATADIRNAME}/${PACKAGE}/manual'
 +manualdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/manual'
  
+-faqdir='${prefix}/${DATADIRNAME}/${PACKAGE}/faq'
++faqdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/faq'
+ 
  
  if test "x${datadir}" = 'x${prefix}/share'; then
-@@ -9041,7 +9041,7 @@
+@@ -8939,7 +8939,7 @@
  
  	if test "$ac_cv_enable_ldap" = yes; then
  		CFLAGS="$CFLAGS `$GLIB_CONFIG --cflags gthread`"
