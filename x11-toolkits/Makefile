@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.29 1999/05/11 02:16:55 sada Exp $
+# $Id: Makefile,v 1.30 1999/06/26 19:34:25 cpiazza Exp $
 #
 
     SUBDIR += FWF
@@ -22,6 +22,7 @@
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
+    SUBDIR += plib
     SUBDIR += pmw
     SUBDIR += py-gnome
     SUBDIR += qt-i18n
