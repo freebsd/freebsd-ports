@@ -7,7 +7,7 @@
 
 PORTNAME=	glunarclock
 PORTVERSION=	0.30.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,8 @@ COMMENT=	GNOME applet that displays the current phase of the Moon
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomepanel gnomehack gnomeprefix
+GNOME_DESKTOP_VERSION=2
+USE_GNOME=	gnomepanel gail gnomehack gnomeprefix
 USE_LIBTOOL=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
