@@ -2241,6 +2241,7 @@ happy		ports/devel/happy
 happydoc	ports/devel/happydoc
 harvest		ports/www/harvest
 hashish		ports/security/hashish
+haxml		ports/textproc/haxml
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
