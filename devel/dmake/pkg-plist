@@ -1,165 +1,165 @@
 bin/dmake
-lib/dmake/startup/templates/tos/template.mk
-lib/dmake/startup/templates/msdos/borland/bcc30/template.mk
-lib/dmake/startup/templates/msdos/borland/bcc40/template.mk
-lib/dmake/startup/templates/msdos/borland/bcc45/template.mk
-lib/dmake/startup/templates/msdos/borland/bcc50/template.mk
-lib/dmake/startup/templates/msdos/borland/tcc20/template.mk
-lib/dmake/startup/templates/msdos/microsft/msc51/template.mk
-lib/dmake/startup/templates/msdos/microsft/msc60/template.mk
-lib/dmake/startup/templates/os2/ibm/icc/template.mk
-lib/dmake/startup/templates/qssl/template.mk
-lib/dmake/startup/templates/mac/template.mk
-lib/dmake/startup/templates/unix/solaris/gnu/template.mk
-lib/dmake/startup/templates/unix/solaris/template.mk
-lib/dmake/startup/templates/unix/bsd43/uw/template.mk
-lib/dmake/startup/templates/unix/bsd43/vf/template.mk
-lib/dmake/startup/templates/unix/bsd43/template.mk
-lib/dmake/startup/templates/unix/coherent/ver40/template.mk
-lib/dmake/startup/templates/unix/coherent/ver42/template.mk
-lib/dmake/startup/templates/unix/linux/gnu/template.mk
-lib/dmake/startup/templates/unix/386ix/template.mk
-lib/dmake/startup/templates/unix/sysvr1/template.mk
-lib/dmake/startup/templates/unix/sysvr3/pwd/template.mk
-lib/dmake/startup/templates/unix/sysvr3/template.mk
-lib/dmake/startup/templates/unix/sysvr4/template.mk
-lib/dmake/startup/templates/unix/xenix/pwd/template.mk
-lib/dmake/startup/templates/unix/xenix/template.mk
-lib/dmake/startup/templates/win95/borland/bcc50/template.mk
-lib/dmake/startup/templates/win95/microsft/vpp40/template.mk
-lib/dmake/startup/templates/winnt/borland/bcc50/template.mk
-lib/dmake/startup/templates/winnt/microsft/vpp40/template.mk
-lib/dmake/startup/win95/borland/macros.mk
-lib/dmake/startup/win95/microsft/macros.mk
-lib/dmake/startup/win95/macros.mk
-lib/dmake/startup/win95/recipes.mk
-lib/dmake/startup/unix/386ix/macros.mk
-lib/dmake/startup/unix/bsd43/macros.mk
-lib/dmake/startup/unix/bsd43/recipes.mk
-lib/dmake/startup/unix/coherent/macros.mk
-lib/dmake/startup/unix/coherent/recipes.mk
-lib/dmake/startup/unix/linux/gnu/macros.mk
-lib/dmake/startup/unix/linux/macros.mk
-lib/dmake/startup/unix/sysvr3/gnu/macros.mk
-lib/dmake/startup/unix/sysvr3/macros.mk
-lib/dmake/startup/unix/sysvr4/macros.mk
-lib/dmake/startup/unix/solaris/macros.mk
-lib/dmake/startup/unix/sysvr1/macros.mk
-lib/dmake/startup/unix/xenix/macros.mk
-lib/dmake/startup/unix/recipes.mk
-lib/dmake/startup/unix/macros.mk
-lib/dmake/startup/tos/macros.mk
-lib/dmake/startup/os2/ibm/macros.mk
-lib/dmake/startup/os2/macros.mk
-lib/dmake/startup/winnt/borland/macros.mk
-lib/dmake/startup/winnt/microsft/macros.mk
-lib/dmake/startup/winnt/macros.mk
-lib/dmake/startup/winnt/recipes.mk
-lib/dmake/startup/mac/macros.mk
-lib/dmake/startup/msdos/borland/tcc20/macros.mk
-lib/dmake/startup/msdos/borland/bcc40/macros.mk
-lib/dmake/startup/msdos/borland/bcc45/macros.mk
-lib/dmake/startup/msdos/borland/bcc30/macros.mk
-lib/dmake/startup/msdos/borland/bcc50/macros.mk
-lib/dmake/startup/msdos/borland/bcc50.32/macros.mk
-lib/dmake/startup/msdos/borland/macros.mk
-lib/dmake/startup/msdos/microsft/macros.mk
-lib/dmake/startup/msdos/zortech/macros.mk
-lib/dmake/startup/msdos/macros.mk
-lib/dmake/startup/msdos/recipes.mk
-lib/dmake/startup/qssl/qnx/macros.mk
-lib/dmake/startup/qssl/qnx/recipes.mk
-lib/dmake/startup/qssl/macros.mk
-lib/dmake/startup/qssl/recipes.mk
-lib/dmake/startup/Windows_NT/borland/macros.mk
-lib/dmake/startup/Windows_NT/microsft/macros.mk
-lib/dmake/startup/Windows_NT/macros.mk
-lib/dmake/startup/Windows_NT/recipes.mk
-lib/dmake/startup/startup.mk
-lib/dmake/startup/summary
-lib/dmake/startup/config.mk
-lib/dmake/startup/template.mk
-@dirrm lib/dmake/startup/winnt/microsft
-@dirrm lib/dmake/startup/winnt/borland
-@dirrm lib/dmake/startup/winnt
-@dirrm lib/dmake/startup/win95/microsft
-@dirrm lib/dmake/startup/win95/borland
-@dirrm lib/dmake/startup/win95
-@dirrm lib/dmake/startup/unix/xenix
-@dirrm lib/dmake/startup/unix/sysvr4
-@dirrm lib/dmake/startup/unix/sysvr3/gnu
-@dirrm lib/dmake/startup/unix/sysvr3
-@dirrm lib/dmake/startup/unix/sysvr1
-@dirrm lib/dmake/startup/unix/solaris
-@dirrm lib/dmake/startup/unix/linux/gnu
-@dirrm lib/dmake/startup/unix/linux
-@dirrm lib/dmake/startup/unix/coherent
-@dirrm lib/dmake/startup/unix/bsd43
-@dirrm lib/dmake/startup/unix/386ix
-@dirrm lib/dmake/startup/unix
-@dirrm lib/dmake/startup/tos
-@dirrm lib/dmake/startup/templates/winnt/microsft/vpp40
-@dirrm lib/dmake/startup/templates/winnt/microsft
-@dirrm lib/dmake/startup/templates/winnt/borland/bcc50
-@dirrm lib/dmake/startup/templates/winnt/borland
-@dirrm lib/dmake/startup/templates/winnt
-@dirrm lib/dmake/startup/templates/win95/microsft/vpp40
-@dirrm lib/dmake/startup/templates/win95/microsft
-@dirrm lib/dmake/startup/templates/win95/borland/bcc50
-@dirrm lib/dmake/startup/templates/win95/borland
-@dirrm lib/dmake/startup/templates/win95
-@dirrm lib/dmake/startup/templates/unix/xenix/pwd
-@dirrm lib/dmake/startup/templates/unix/xenix
-@dirrm lib/dmake/startup/templates/unix/sysvr4
-@dirrm lib/dmake/startup/templates/unix/sysvr3/pwd
-@dirrm lib/dmake/startup/templates/unix/sysvr3
-@dirrm lib/dmake/startup/templates/unix/sysvr1
-@dirrm lib/dmake/startup/templates/unix/solaris/gnu
-@dirrm lib/dmake/startup/templates/unix/solaris
-@dirrm lib/dmake/startup/templates/unix/linux/gnu
-@dirrm lib/dmake/startup/templates/unix/linux
-@dirrm lib/dmake/startup/templates/unix/coherent/ver42
-@dirrm lib/dmake/startup/templates/unix/coherent/ver40
-@dirrm lib/dmake/startup/templates/unix/coherent
-@dirrm lib/dmake/startup/templates/unix/bsd43/vf
-@dirrm lib/dmake/startup/templates/unix/bsd43/uw
-@dirrm lib/dmake/startup/templates/unix/bsd43
-@dirrm lib/dmake/startup/templates/unix/386ix
-@dirrm lib/dmake/startup/templates/unix
-@dirrm lib/dmake/startup/templates/tos
-@dirrm lib/dmake/startup/templates/qssl
-@dirrm lib/dmake/startup/templates/os2/ibm/icc
-@dirrm lib/dmake/startup/templates/os2/ibm
-@dirrm lib/dmake/startup/templates/os2
-@dirrm lib/dmake/startup/templates/msdos/microsft/msc60
-@dirrm lib/dmake/startup/templates/msdos/microsft/msc51
-@dirrm lib/dmake/startup/templates/msdos/microsft
-@dirrm lib/dmake/startup/templates/msdos/borland/tcc20
-@dirrm lib/dmake/startup/templates/msdos/borland/bcc50
-@dirrm lib/dmake/startup/templates/msdos/borland/bcc45
-@dirrm lib/dmake/startup/templates/msdos/borland/bcc40
-@dirrm lib/dmake/startup/templates/msdos/borland/bcc30
-@dirrm lib/dmake/startup/templates/msdos/borland
-@dirrm lib/dmake/startup/templates/msdos
-@dirrm lib/dmake/startup/templates/mac
-@dirrm lib/dmake/startup/templates
-@dirrm lib/dmake/startup/qssl/qnx
-@dirrm lib/dmake/startup/qssl
-@dirrm lib/dmake/startup/os2/ibm
-@dirrm lib/dmake/startup/os2
-@dirrm lib/dmake/startup/msdos/zortech
-@dirrm lib/dmake/startup/msdos/microsft
-@dirrm lib/dmake/startup/msdos/borland/tcc20
-@dirrm lib/dmake/startup/msdos/borland/bcc50.32
-@dirrm lib/dmake/startup/msdos/borland/bcc50
-@dirrm lib/dmake/startup/msdos/borland/bcc45
-@dirrm lib/dmake/startup/msdos/borland/bcc40
-@dirrm lib/dmake/startup/msdos/borland/bcc30
-@dirrm lib/dmake/startup/msdos/borland
-@dirrm lib/dmake/startup/msdos
-@dirrm lib/dmake/startup/mac
-@dirrm lib/dmake/startup/Windows_NT/microsft
-@dirrm lib/dmake/startup/Windows_NT/borland
-@dirrm lib/dmake/startup/Windows_NT
-@dirrm lib/dmake/startup
-@dirrm lib/dmake
+share/dmake/startup/templates/tos/template.mk
+share/dmake/startup/templates/msdos/borland/bcc30/template.mk
+share/dmake/startup/templates/msdos/borland/bcc40/template.mk
+share/dmake/startup/templates/msdos/borland/bcc45/template.mk
+share/dmake/startup/templates/msdos/borland/bcc50/template.mk
+share/dmake/startup/templates/msdos/borland/tcc20/template.mk
+share/dmake/startup/templates/msdos/microsft/msc51/template.mk
+share/dmake/startup/templates/msdos/microsft/msc60/template.mk
+share/dmake/startup/templates/os2/ibm/icc/template.mk
+share/dmake/startup/templates/qssl/template.mk
+share/dmake/startup/templates/mac/template.mk
+share/dmake/startup/templates/unix/solaris/gnu/template.mk
+share/dmake/startup/templates/unix/solaris/template.mk
+share/dmake/startup/templates/unix/bsd43/uw/template.mk
+share/dmake/startup/templates/unix/bsd43/vf/template.mk
+share/dmake/startup/templates/unix/bsd43/template.mk
+share/dmake/startup/templates/unix/coherent/ver40/template.mk
+share/dmake/startup/templates/unix/coherent/ver42/template.mk
+share/dmake/startup/templates/unix/linux/gnu/template.mk
+share/dmake/startup/templates/unix/386ix/template.mk
+share/dmake/startup/templates/unix/sysvr1/template.mk
+share/dmake/startup/templates/unix/sysvr3/pwd/template.mk
+share/dmake/startup/templates/unix/sysvr3/template.mk
+share/dmake/startup/templates/unix/sysvr4/template.mk
+share/dmake/startup/templates/unix/xenix/pwd/template.mk
+share/dmake/startup/templates/unix/xenix/template.mk
+share/dmake/startup/templates/win95/borland/bcc50/template.mk
+share/dmake/startup/templates/win95/microsft/vpp40/template.mk
+share/dmake/startup/templates/winnt/borland/bcc50/template.mk
+share/dmake/startup/templates/winnt/microsft/vpp40/template.mk
+share/dmake/startup/win95/borland/macros.mk
+share/dmake/startup/win95/microsft/macros.mk
+share/dmake/startup/win95/macros.mk
+share/dmake/startup/win95/recipes.mk
+share/dmake/startup/unix/386ix/macros.mk
+share/dmake/startup/unix/bsd43/macros.mk
+share/dmake/startup/unix/bsd43/recipes.mk
+share/dmake/startup/unix/coherent/macros.mk
+share/dmake/startup/unix/coherent/recipes.mk
+share/dmake/startup/unix/linux/gnu/macros.mk
+share/dmake/startup/unix/linux/macros.mk
+share/dmake/startup/unix/sysvr3/gnu/macros.mk
+share/dmake/startup/unix/sysvr3/macros.mk
+share/dmake/startup/unix/sysvr4/macros.mk
+share/dmake/startup/unix/solaris/macros.mk
+share/dmake/startup/unix/sysvr1/macros.mk
+share/dmake/startup/unix/xenix/macros.mk
+share/dmake/startup/unix/recipes.mk
+share/dmake/startup/unix/macros.mk
+share/dmake/startup/tos/macros.mk
+share/dmake/startup/os2/ibm/macros.mk
+share/dmake/startup/os2/macros.mk
+share/dmake/startup/winnt/borland/macros.mk
+share/dmake/startup/winnt/microsft/macros.mk
+share/dmake/startup/winnt/macros.mk
+share/dmake/startup/winnt/recipes.mk
+share/dmake/startup/mac/macros.mk
+share/dmake/startup/msdos/borland/tcc20/macros.mk
+share/dmake/startup/msdos/borland/bcc40/macros.mk
+share/dmake/startup/msdos/borland/bcc45/macros.mk
+share/dmake/startup/msdos/borland/bcc30/macros.mk
+share/dmake/startup/msdos/borland/bcc50/macros.mk
+share/dmake/startup/msdos/borland/bcc50.32/macros.mk
+share/dmake/startup/msdos/borland/macros.mk
+share/dmake/startup/msdos/microsft/macros.mk
+share/dmake/startup/msdos/zortech/macros.mk
+share/dmake/startup/msdos/macros.mk
+share/dmake/startup/msdos/recipes.mk
+share/dmake/startup/qssl/qnx/macros.mk
+share/dmake/startup/qssl/qnx/recipes.mk
+share/dmake/startup/qssl/macros.mk
+share/dmake/startup/qssl/recipes.mk
+share/dmake/startup/Windows_NT/borland/macros.mk
+share/dmake/startup/Windows_NT/microsft/macros.mk
+share/dmake/startup/Windows_NT/macros.mk
+share/dmake/startup/Windows_NT/recipes.mk
+share/dmake/startup/startup.mk
+share/dmake/startup/summary
+share/dmake/startup/config.mk
+share/dmake/startup/template.mk
+@dirrm share/dmake/startup/winnt/microsft
+@dirrm share/dmake/startup/winnt/borland
+@dirrm share/dmake/startup/winnt
+@dirrm share/dmake/startup/win95/microsft
+@dirrm share/dmake/startup/win95/borland
+@dirrm share/dmake/startup/win95
+@dirrm share/dmake/startup/unix/xenix
+@dirrm share/dmake/startup/unix/sysvr4
+@dirrm share/dmake/startup/unix/sysvr3/gnu
+@dirrm share/dmake/startup/unix/sysvr3
+@dirrm share/dmake/startup/unix/sysvr1
+@dirrm share/dmake/startup/unix/solaris
+@dirrm share/dmake/startup/unix/linux/gnu
+@dirrm share/dmake/startup/unix/linux
+@dirrm share/dmake/startup/unix/coherent
+@dirrm share/dmake/startup/unix/bsd43
+@dirrm share/dmake/startup/unix/386ix
+@dirrm share/dmake/startup/unix
+@dirrm share/dmake/startup/tos
+@dirrm share/dmake/startup/templates/winnt/microsft/vpp40
+@dirrm share/dmake/startup/templates/winnt/microsft
+@dirrm share/dmake/startup/templates/winnt/borland/bcc50
+@dirrm share/dmake/startup/templates/winnt/borland
+@dirrm share/dmake/startup/templates/winnt
+@dirrm share/dmake/startup/templates/win95/microsft/vpp40
+@dirrm share/dmake/startup/templates/win95/microsft
+@dirrm share/dmake/startup/templates/win95/borland/bcc50
+@dirrm share/dmake/startup/templates/win95/borland
+@dirrm share/dmake/startup/templates/win95
+@dirrm share/dmake/startup/templates/unix/xenix/pwd
+@dirrm share/dmake/startup/templates/unix/xenix
+@dirrm share/dmake/startup/templates/unix/sysvr4
+@dirrm share/dmake/startup/templates/unix/sysvr3/pwd
+@dirrm share/dmake/startup/templates/unix/sysvr3
+@dirrm share/dmake/startup/templates/unix/sysvr1
+@dirrm share/dmake/startup/templates/unix/solaris/gnu
+@dirrm share/dmake/startup/templates/unix/solaris
+@dirrm share/dmake/startup/templates/unix/linux/gnu
+@dirrm share/dmake/startup/templates/unix/linux
+@dirrm share/dmake/startup/templates/unix/coherent/ver42
+@dirrm share/dmake/startup/templates/unix/coherent/ver40
+@dirrm share/dmake/startup/templates/unix/coherent
+@dirrm share/dmake/startup/templates/unix/bsd43/vf
+@dirrm share/dmake/startup/templates/unix/bsd43/uw
+@dirrm share/dmake/startup/templates/unix/bsd43
+@dirrm share/dmake/startup/templates/unix/386ix
+@dirrm share/dmake/startup/templates/unix
+@dirrm share/dmake/startup/templates/tos
+@dirrm share/dmake/startup/templates/qssl
+@dirrm share/dmake/startup/templates/os2/ibm/icc
+@dirrm share/dmake/startup/templates/os2/ibm
+@dirrm share/dmake/startup/templates/os2
+@dirrm share/dmake/startup/templates/msdos/microsft/msc60
+@dirrm share/dmake/startup/templates/msdos/microsft/msc51
+@dirrm share/dmake/startup/templates/msdos/microsft
+@dirrm share/dmake/startup/templates/msdos/borland/tcc20
+@dirrm share/dmake/startup/templates/msdos/borland/bcc50
+@dirrm share/dmake/startup/templates/msdos/borland/bcc45
+@dirrm share/dmake/startup/templates/msdos/borland/bcc40
+@dirrm share/dmake/startup/templates/msdos/borland/bcc30
+@dirrm share/dmake/startup/templates/msdos/borland
+@dirrm share/dmake/startup/templates/msdos
+@dirrm share/dmake/startup/templates/mac
+@dirrm share/dmake/startup/templates
+@dirrm share/dmake/startup/qssl/qnx
+@dirrm share/dmake/startup/qssl
+@dirrm share/dmake/startup/os2/ibm
+@dirrm share/dmake/startup/os2
+@dirrm share/dmake/startup/msdos/zortech
+@dirrm share/dmake/startup/msdos/microsft
+@dirrm share/dmake/startup/msdos/borland/tcc20
+@dirrm share/dmake/startup/msdos/borland/bcc50.32
+@dirrm share/dmake/startup/msdos/borland/bcc50
+@dirrm share/dmake/startup/msdos/borland/bcc45
+@dirrm share/dmake/startup/msdos/borland/bcc40
+@dirrm share/dmake/startup/msdos/borland/bcc30
+@dirrm share/dmake/startup/msdos/borland
+@dirrm share/dmake/startup/msdos
+@dirrm share/dmake/startup/mac
+@dirrm share/dmake/startup/Windows_NT/microsft
+@dirrm share/dmake/startup/Windows_NT/borland
+@dirrm share/dmake/startup/Windows_NT
+@dirrm share/dmake/startup
+@dirrm share/dmake
