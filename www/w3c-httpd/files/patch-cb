@@ -1,0 +1,19 @@
+--- Library/Implementation/HTString.h.orig	Sun Mar 31 20:01:23 2002
++++ Library/Implementation/HTString.h	Sun Mar 31 20:01:33 2002
+@@ -22,16 +22,6 @@
+ extern int strcasecomp  PARAMS((CONST char *a, CONST char *b));
+ extern int strncasecomp PARAMS((CONST char *a, CONST char *b, int n));
+ 
+-/*
+-
+-Case-insensitive string inside another string
+-
+-   This works like strstr() but is not case-sensitive.
+-   
+- */
+-
+-PUBLIC char * strcasestr PARAMS((char * s1,
+-                                 char * s2));
+ 
+ /*
+ 
