@@ -1,5 +1,5 @@
---- norsk/Makefile.orig	Tue Sep  5 23:50:30 2000
-+++ norsk/Makefile	Sat Jan 13 15:23:30 2001
+--- Makefile.orig	Tue Sep  5 23:50:30 2000
++++ Makefile	Sat Mar 31 14:57:58 2001
 @@ -8,9 +8,9 @@
  SHELL = /bin/sh
  MAKE = make
@@ -22,7 +22,13 @@
  
  # The following ugly code munches a part of the base file, keeping the
  # indications of the frequency of the words.  It also removes some
-@@ -296,7 +296,7 @@
+@@ -292,19 +292,23 @@
+ # Nasty bug, and very silent.
+ 	PATH=$(PATHADDER):$$PATH; \
+ 	export PATH; \
++	TMPDIR=/tmp; \
++	export TMPDIR; \
+ 	${CATNOHEADER} \
  	  | grep -e '$(subst munched.,,$@)$$' \
  	  | sed -e 's/ .*//' -e 's/-/î/g' -e 's/ \*//' \
  	  | grep '^[${UCH}]' \
@@ -31,7 +37,9 @@
  	  > munch1.tmp
  	PATH=$(PATHADDER):$$PATH; \
  	export PATH; \
-@@ -304,7 +304,7 @@
++	TMPDIR=/tmp; \
++	export TMPDIR; \
+ 	${CATNOHEADER} \
  	  | grep -e '$(subst munched.,,$@)$$' \
  	  | sed -e 's/ .*//' -e 's/-/î/g' -e 's/ \*//' \
  	  | grep -v '^[${UCH}]' \
@@ -40,7 +48,13 @@
  	  >> munch1.tmp
  	cat munch1.tmp \
  	  | sed -e 's/\(zyzyzy\|ZYZYZY\)/\1\/\` /' \
-@@ -463,7 +463,7 @@
+@@ -459,11 +463,13 @@
+ nynorsk.mch: norsk.words ny${AFFIXES}.munch
+ 	PATH=$(PATHADDER):$$PATH; \
+ 	export PATH; \
++	TMPDIR=/tmp; \
++	export TMPDIR; \
+ 	${CATNOHEADER} \
  	  | grep '\*' \
  	  | sed -e 's/ .*//' \
  	  | tr -d '-' \
