@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	gts
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	GNU Triangulated Surface Library
 
-USE_GNOME=	glib12 gnometarget
+USE_GNOME=	glib20 gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -31,12 +31,6 @@ PORTDOCS=	*
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-release \$$(LT_RELEASE)||g'
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}
-.endif
+		's|-release \$$(LT_RELEASE)||g ; s|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'
 
 .include <bsd.port.mk>
