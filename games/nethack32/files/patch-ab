@@ -1,0 +1,49 @@
+--- sys/unix/Makefile.src.orig	Wed Dec 11 05:20:09 1996
++++ sys/unix/Makefile.src	Sun Mar 21 17:50:08 1999
+@@ -124,8 +124,8 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
+-LFLAGS = 
++CFLAGS += -O -I../include -I${X11BASE}/include
++LFLAGS =  -L${X11BASE}/lib
+ 
+ 
+ # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
+@@ -146,8 +146,8 @@
+ 	winmisc.o winstat.o wintext.o winval.o tile.o
+ #
+ # 
+-WINSRC = $(WINTTYSRC)
+-WINOBJ = $(WINTTYOBJ)
++WINSRC = $(WINTTYSRC) $(WINX11SRC)
++WINOBJ = $(WINTTYOBJ) $(WINX11OBJ)
+ 
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -167,13 +167,13 @@
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+-WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
++WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11 -lXpm
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+ #
+ #
+-WINLIB = $(WINTTYLIB)
++WINLIB = $(WINTTYLIB) $(WINX11LIB)
+ 
+ # any other strange libraries your system needs (for Sysunix only -- the more
+ # specialized targets should already be right)
+@@ -197,7 +197,7 @@
+ # IRIX 4.0.x needs -lsun if NIS (YP) is being used for passwd file lookup
+ # LIBS = -lsun
+ #
+-LIBS =
++LIBS = -lSM -lICE
+ 
+ # make NetHack
+ GAME     = nethack
