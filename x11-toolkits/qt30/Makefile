@@ -30,7 +30,7 @@ MAKE_ENV=	QTDIR=${WRKSRC}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIG=		${WRKSRC}/configs/freebsd-g++-shared
 
-.if defined(QT_GIF_AVAILABLE)
+.if defined(QT_GIF_AVAILABLE) || defined(HAVE_UNISYS_LICENSE)
 CONFIGURE_ARGS+=-gif
 RESTRICTED=	'Requires a license from UNISYS'
 .endif
