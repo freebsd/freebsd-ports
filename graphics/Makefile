@@ -49,7 +49,6 @@
     SUBDIR += gimp1
     SUBDIR += giram
     SUBDIR += gltk
-    SUBDIR += glx
     SUBDIR += gnofract4d
     SUBDIR += gnomeiconedit
     SUBDIR += gphoto
@@ -158,6 +157,7 @@
     SUBDIR += twinlib
     SUBDIR += txtmerge
     SUBDIR += urt
+    SUBDIR += utah-glx
     SUBDIR += vcdgear
     SUBDIR += vcg
     SUBDIR += whirlgif
