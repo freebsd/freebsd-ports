@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

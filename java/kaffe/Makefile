@@ -14,7 +14,7 @@ MAINTAINER=	xaa@xaa.iae.nl
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

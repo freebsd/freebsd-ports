@@ -17,7 +17,7 @@ DISTFILES=	povuni_s.tgz povuni_d.tgz
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 DIST_SUBDIR=	povray30
 

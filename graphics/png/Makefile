@@ -22,8 +22,12 @@ PATCH_SITES=    ftp://ftp.libpng.org/pub/png/src/
 MAINTAINER=     ache@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
+SHLIB_VER=	4
 
-MAN3=           libpng.3 libpngpf.3
+MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
+PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
+
+MAN3=           libpng.4 libpngpf.3
 MAN5=           png.5
 
 do-configure:

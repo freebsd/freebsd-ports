@@ -13,7 +13,7 @@ MASTER_SITES=   http://www.boutell.com/gd/http/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 .if defined(WITH_X11)
 LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype \

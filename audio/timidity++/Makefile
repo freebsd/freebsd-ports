@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-LIB_DEPENDS+=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.4:${PORTSDIR}/graphics/png
 .endif
 
 DIST_SUBDIR=	timidity

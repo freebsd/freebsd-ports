@@ -22,7 +22,7 @@ MAINTAINER=	jseger@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		df.1:${PORTSDIR}/graphics/hdf \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		ttf.4:${PORTSDIR}/print/freetype
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/imlib
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12

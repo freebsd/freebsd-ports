@@ -19,7 +19,7 @@ MAINTAINER=	wolman@cs.washington.edu
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 DIST_SUBDIR=	AbiWord

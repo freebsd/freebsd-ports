@@ -15,7 +15,7 @@ DISTNAME=	kdelibs-1.1.2
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 LIBVER=		3

@@ -15,7 +15,7 @@ DISTNAME=	AfterStep-${PORTVERSION}
 MAINTAINER=	dima@Chg.ru
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 NO_LATEST_LINK=	yes

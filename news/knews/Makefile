@@ -14,7 +14,7 @@ MAINTAINER=	andreas@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 #		compface:${PORTSDIR}/mail/faces
 RUN_DEPENDS=    newsp:${PORTSDIR}/print/mp-letter
 

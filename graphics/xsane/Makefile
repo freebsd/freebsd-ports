@@ -18,7 +18,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		sane.1:${PORTSDIR}/graphics/sane \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

@@ -15,7 +15,7 @@ DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
 MAINTAINER=	br@netland.inka.de
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
 USE_XLIB=	yes

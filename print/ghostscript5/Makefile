@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes
 EXTRACT_ONLY=	${GS_SOURCES} ${PCL3_DRV}

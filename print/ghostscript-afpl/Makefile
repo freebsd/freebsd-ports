@@ -21,7 +21,7 @@ MAINTAINER=	andreas@FreeBSD.org
 Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 PLIST_SUB=	GS_VERSION=${PORTVERSION}
 USE_XLIB=	yes

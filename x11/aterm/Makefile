@@ -14,7 +14,7 @@ MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

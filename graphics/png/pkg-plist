@@ -1,6 +1,6 @@
 include/png.h
 include/pngconf.h
 lib/libpng.a
-lib/libpng.so.3
+lib/libpng.so.%%SHLIB_VER%%
 @exec ln -sf %f %B/libpng.so
 @unexec rm -f %B/libpng.so
