@@ -1,0 +1,11 @@
+--- until/V1.2/cnf_stuff.c.orig	Mon Feb  5 21:12:59 1996
++++ until/V1.2/cnf_stuff.c	Mon Feb  5 21:08:08 1996
+@@ -147,7 +147,7 @@
+ Local char *getPlainWord(cnfBuf *cb)
+ {
+   /* return the next word */
+-  char s[256];
++  static char s[256];
+   long p;
+ 
+   skip_blanks(cb);
