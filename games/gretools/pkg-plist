@@ -4,11 +4,11 @@ bin/gretools
 %%PYTHON_SITELIBDIR%%/gretools/gretools.pyc
 %%PYTHON_SITELIBDIR%%/gretools/gretools.pyo
 share/gnome/applications/gretools.desktop
+share/gnome/gretools/glade/gretools.glade
+share/gnome/gretools/lists/default.wl
 share/gnome/help/gretools/C/figures/gretools_start_window.png
 share/gnome/help/gretools/C/gretools.xml
 share/gnome/help/gretools/C/legal.xml
-share/gnome/gretools/glade/gretools.glade
-share/gnome/gretools/lists/default.wl
 share/gnome/omf/gretools/gretools-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gretools/gretools-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gretools.png

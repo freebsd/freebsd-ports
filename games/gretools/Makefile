@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	gretools
-PORTVERSION=	1.2.2
-CATEGORIES=	games
-MASTER_SITES=	http://theory.cs.iitm.ernet.in/~arvindn/gretools/${PORTVERSION:R}/
+PORTVERSION=	1.2.4
+CATEGORIES=	games gnome
+MASTER_SITES=	http://theory.cs.iitm.ernet.in/~arvindn/gretools/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK2 vocabulary builder
+COMMENT=	GNOME vocabulary builder
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget pygnome2
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack gnometarget gnomeprefix pygnome2
-GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/bin/python|${PYTHON_CMD}|" \
-		${WRKSRC}/${PORTNAME}.in
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g ; \
+		 s|@prefix@/share/|@datadir@/|g' ${WRKSRC}/gretools.in
 
 .include <bsd.port.mk>
