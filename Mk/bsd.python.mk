@@ -351,7 +351,8 @@ PLIST_SUB+=		PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 
 # Zope specific substitutions
 .if defined(USE_ZOPE)
-PLIST_SUB+=		ZOPEBASEDIR=${SZOPEBASEDIR}
+PLIST_SUB+=		ZOPEBASEDIR=${SZOPEBASEDIR} \
+				ZOPEPRODUCTDIR=${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 .endif
 
 # XXX Hm, should I export some of the variables above to *_ENV?
