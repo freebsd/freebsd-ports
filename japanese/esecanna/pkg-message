@@ -1,22 +1,20 @@
 ************************************************************
 Quick Setup:
   Take the following steps all as root.
-    1) Install one of the esecanna-module ports
-    2) Edit `${PREFIX}/etc/esecannarc'
-    3) Stop and disable cannaserver if you have it running
-    4) Run `${PREFIX}/etc/rc.d/esecanna.sh'
+    1) Install one of the esecanna-module ports.
+    2) Edit `${PREFIX}/etc/esecannarc'.
+    3) Stop and disable cannaserver if you have it running.
+    4) Run `${PREFIX}/etc/rc.d/esecanna.sh start'.
+    5) Add `esecanna_enable=YES' to /etc/rc.conf so that
+       esecanna automatically starts on (every) boot.
 
-  Each user may want to configure the behavior by editing
-`~/.esecannarc', copied after `${PREFIX}/etc/esecannarc'.
-  
-  If you find something strange with esecanna, please consult
-the log file `/var/log/esecanna.log'.
-
-
-  Read the documents under ${PREFIX}/share/doc/esecanna/
-for details.
+User can copy `${PREFIX}/etc/esecannarc' to `~/.esecannarc'
+and customize it to his/her needs.  If esecanna does not
+work as excepted, please consult the documents under
+${PREFIX}/share/doc/esecanna/ and log output kept in
+`/var/log/esecanna.log'.
 
 Note:
   Using VJE-Delta 3.0 trial, esecannaserver will fail to
-connect to vjed before once you run vje.
+connect to vjed until after once you run vje.
 ************************************************************
