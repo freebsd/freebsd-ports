@@ -1,4 +1,4 @@
-gnuplot-3.7+1.1 is a patch package to add some enhanced functions to
+gnuplot-3.7.1+1.2.0 is a patch package to add some enhanced functions to
 gnuplot(version 3.7) and enable it to treat Japanese text.
 
 On patched gnuplot, the following are added.
