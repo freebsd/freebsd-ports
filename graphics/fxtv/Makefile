@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	aa8vb@nc.rr.com
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 # This program does not actually require the programs below unless you
 #   use audio/video recording and/or playback and save to a non-raw format.

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.siag.nu/pub/siag/ \
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d \
+LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		Magick:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		mswordview:${PORTSDIR}/textproc/mswordview \

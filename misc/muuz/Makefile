@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://toxic.magnesium.net/pub/FreeBSD/muuz/
 
 MAINTAINER=	kline@thought.org
 
-LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=	yes
 MAN1=		muuz.1
