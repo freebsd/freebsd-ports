@@ -1,38 +1,25 @@
-*** jikes/src/Makefile.orig	Wed Dec  9 21:59:34 1998
---- jikes/src/Makefile	Wed Dec  9 22:02:10 1998
-***************
-*** 131,136 ****
---- 131,152 ----
-  O=o
-  SYSOBJECTS=
-  
-+ # g++ definitions (FreeBSD)
-+ CC=g++
-+ # use -W to see warnings (should review from time to time)
-+ CCREQUIREDFLAGS=-DGNU_LIBC5 -DUNIX -funsigned-char  -c -DTYPE_bool -ansi -I.
-+ CCDEBUGFLAGS=-DTEST -g
-+ CCOPTFLAGS=-O2
-+ CCFLAGS=$(CCREQUIREDFLAGS) $(CCDEBUGFLAGS)
-+ CCFLAGS=$(CCREQUIREDFLAGS) $(CCOPTFLAGS)
-+ ERASE=rm -f
-+ EXECUTABLE=jikes
-+ LD=g++
-+ LDDEBUGFLAGS=-g
-+ LDFLAGS=-L. -o$(EXECUTABLE)
-+ O=o
-+ SYSOBJECTS=
-+ 
-  
-  OBJECTS=jikes.$(O) scanner.$(O) code.$(O) zip.$(O) unzip.$(O) ast.$(O) diagnose.$(O) \
-  	parser.$(O) lpginput.$(O) lcase.$(O) javaact.$(O) error.$(O) set.$(O) symbol.$(O) \
---- jikes/src/jikes.cpp.orig	Tue Dec 15 21:46:33 1998
-+++ jikes/src/jikes.cpp	Tue Dec 15 21:47:17 1998
-@@ -75,7 +75,7 @@
-              << "+U                 do full dependence check including Zip and Jar files\n"
-              << "+V                 generate veracious listing\n"
-              << "+Z                 treat cautions as errors\n"
--             << "\nVersion 0.41 (01 Dec 98)"
-+             << "\nVersion 0.41-FreeBSD-ae (15 Dec 98)"
-              << " by Philippe Charles and David Shields, IBM Research.\n";
-         cerr << "Please report problems to shields@watson.ibm.com.\n" ;
-     cerr << "or via browser at http://www.ibm.com/research/jikes\n";
+diff -ur jikes.orig/src/Makefile work/jikes/src/Makefile
+--- jikes.orig/src/Makefile	Thu Feb 25 07:10:47 1999
++++ work/jikes/src/Makefile	Sun Feb 28 14:40:16 1999
+@@ -215,6 +215,21 @@
+ O=o
+ SYSOBJECTS=
+ 
++# g++ definitions (FreeBSD)
++CC=g++
++# use -W to see warnings (should review from time to time)
++CCREQUIREDFLAGS=-DGNU_LIBC5 -DIEEE_DIV_0 -DNO_WCHAR_H -DUNIX -funsigned-char  -c -DTYPE_bool -ansi -I.
++CCDEBUGFLAGS=-DTEST -g
++CCOPTFLAGS=-O2
++CCFLAGS=$(CCREQUIREDFLAGS) $(CCDEBUGFLAGS)
++CCFLAGS=$(CCREQUIREDFLAGS) $(CCOPTFLAGS)
++ERASE=rm -f
++EXECUTABLE=jikes
++LD=g++
++LDDEBUGFLAGS=-g
++LDFLAGS=-L. -o$(EXECUTABLE)
++O=o
++SYSOBJECTS=
+ 
+ OBJECTS=jikes.$(O) scanner.$(O) code.$(O) zip.$(O) unzip.$(O) ast.$(O) diagnose.$(O) \
+ 	parser.$(O) lpginput.$(O) javaact.$(O) error.$(O) set.$(O) symbol.$(O) \
