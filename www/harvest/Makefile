@@ -14,15 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Collect information from all over the Internet
 
-USE_BZIP2=	yes
-USE_PERL5=	yes
-USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--prefix=${PREFIX}/${PORTNAME} \
-		--without-wish
+USE_BZIP2=		yes
+USE_PERL5=		yes
+USE_REINPLACE=		yes
+USE_LIBTOOL=		yes
+INSTALLS_SHLIB=		yes
+NO_MTREE=		yes
+CONFIGURE_ARGS?=	--without-wish
 
 STRIP=		# none
 
@@ -41,9 +39,10 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
 		libcurl-errors.3 libcurl-multi.3 libcurl.3
 MAN7=		yaz.7
 MAN8=		yaz-ztest-ssl.8 yaz-ztest.8 zebrasrv.8
-MANPREFIX=	${PREFIX}/harvest
 
 .include <bsd.port.pre.mk>
+
+PREFIX:=	${PREFIX}/${PORTNAME}
 
 post-patch:
 	@${GREP} -lR "<malloc.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
