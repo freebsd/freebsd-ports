@@ -25,7 +25,8 @@ USE_X_PREFIX=	yes
 USE_GTK=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		BUILD_CANVAS="${BUILD_CANVAS}"

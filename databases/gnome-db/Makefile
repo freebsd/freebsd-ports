@@ -23,6 +23,7 @@ USE_GNOMECTRL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-pthread -L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
