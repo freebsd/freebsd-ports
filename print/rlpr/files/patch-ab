@@ -1,0 +1,16 @@
+--- src/Makefile.in	Sat Sep  4 22:29:16 1999
++++ src/Makefile.in	Tue Mar 21 23:05:50 2000
+@@ -90,4 +90,4 @@
+ LDFLAGS		= -L../lib
+-LIBS		= @INTLLIBS@ -lrlpr
+-INCLUDES	= -I../intl -I../lib -DLOCALEDIR=\"$(localedir)\"
++LIBS		= -lrlpr
++INCLUDES	= -I../lib -DLOCALEDIR=\"$(localedir)\"
+ 
+--- Makefile.in	Sat Sep  4 22:29:12 1999
++++ Makefile.in	Tue Mar 21 23:07:50 2000
+@@ -89,3 +89,3 @@
+ EXTRA_DIST = INSTALL.generic $(PACKAGE)-$(VERSION).lsm
+-SUBDIRS = po intl lib man src
++SUBDIRS = lib man src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

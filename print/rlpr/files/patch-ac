@@ -1,0 +1,53 @@
+--- src/rlpq.c	Mon May  3 21:50:22 1999
++++ src/rlpq.c	Tue Mar 21 23:29:36 2000
+@@ -65,4 +66,6 @@
+     setlocale(LC_ALL, "");
++#ifdef ENABLE_NLS
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
++#endif
+ 
+--- src/rlpr.c	Sat Sep  4 22:09:36 1999
++++ src/rlpr.c	Tue Mar 21 23:24:48 2000
+@@ -79,4 +79,6 @@
+     setlocale(LC_ALL, "");
++#ifdef ENABLE_NLS
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
++#endif
+ 
+--- src/rlprd.c	Mon May  3 21:50:29 1999
++++ src/rlprd.c	Tue Mar 21 23:31:12 2000
+@@ -75,4 +75,6 @@
+     setlocale(LC_ALL, "");
++#ifdef ENABLE_NLS
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
++#endif
+ 
+--- src/rlprm.c	Mon May  3 21:50:22 1999
++++ src/rlprm.c	Tue Mar 21 23:30:22 2000
+@@ -63,4 +64,6 @@
+     setlocale(LC_ALL, "");
++#ifdef ENABLE_NLS
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
++#endif
+ 
+--- src/intl.h	Mon May  3 21:48:39 1999
++++ src/intl.h	Wed Mar 22 12:40:02 2000
+@@ -19,7 +19,14 @@
+ 
++#ifdef ENABLE_NLS
+ #include <libintl.h>
++#endif
+ #include <locale.h>
+ 
++#ifdef ENABLE_NLS
+ #define	_(string)	gettext(string)
+ #define	N_(string)	gettext_noop(string)
++#else
++#define _(string)	(string)
++#define N_(string)	(string)
++#endif
+ 
