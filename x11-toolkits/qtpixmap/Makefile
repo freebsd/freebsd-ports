@@ -9,6 +9,7 @@ PORTVERSION=	0.28
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.cpdrummond.freeuk.com/
+DISTNAME=	QtPixmap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
