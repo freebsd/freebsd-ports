@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.0.2e
-PORTREVISION=	1
+PORTVERSION=	0.0.3a
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.opaque.net/ming/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${SWIG}:${PORTSDIR}/devel/SWIG-devel
-LIB_DEPENDS=	ming.0:${PORTSDIR}/graphics/ming
+LIB_DEPENDS=	ming.1:${PORTSDIR}/graphics/ming
 
 USE_PYTHON=	yes
 
@@ -28,6 +27,9 @@ MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VERSION}" SWIG="${SWIG}"
 SWIG=		swig1.3
 
 EXAMPLES=	shape.py test.py
+
+post-extract:
+	${LN} -sf ../ming.i ${WRKSRC}/
 
 post-install:
 .if !defined(NOPORTDOCS)
