@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=gdvrecv
 MAINTAINER=	hmichelon@e-cml.org
 COMMENT=	DV Tools for FreeBSD
 
-BROKEN=		Incorrect pkg-plist
-
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
