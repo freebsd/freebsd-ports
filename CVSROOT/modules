@@ -2190,6 +2190,7 @@ hlserver-tsc	ports/games/hlserver-tsc
 hlserver-vs	ports/games/hlserver-vs
 hlserver-wasteland	ports/games/hlserver-wasteland
 hlserver-wizwars	ports/games/hlserver-wizwars
+hmake		ports/devel/hmake
 hmmer		ports/biology/hmmer
 hnb		ports/editors/hnb
 hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
