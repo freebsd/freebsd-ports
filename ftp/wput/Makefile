@@ -14,10 +14,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Uploads files or directories to a ftpserver with support of resuming
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	253
 USE_GETOPT_LONG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
