@@ -4,11 +4,10 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.33 1996/11/17 07:42:20 obrien Exp $
+# $Id: Makefile,v 1.34 1996/12/19 04:19:30 ache Exp $
 #
 
 DISTNAME=       elm-2.4ME+28s
-WRKSRC=         ${WRKDIR}/elm2.4.ME+.28s
 CATEGORIES=	mail
 MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 		ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/ \
@@ -16,6 +15,7 @@ MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 
 MAINTAINER=	ache@FreeBSD.ORG
 
+WRKSRC=         ${WRKDIR}/elm2.4.ME+.28s
 MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 filter.1 \
 		listalias.1 messages.1 newalias.1 printmail.1 readmsg.1
 
