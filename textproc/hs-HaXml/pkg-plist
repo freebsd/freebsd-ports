@@ -1,55 +1,154 @@
 bin/Canonicalise
-bin/DrIFT
 bin/DtdToHaskell
+bin/MkOneOf
+bin/Validate
 bin/Xtract
-lib/haxml/ExitFailure.hs
-lib/haxml/Haskell2Xml.hi
-lib/haxml/Haskell2Xml.hs
-lib/haxml/Haskell2Xml.o
-lib/haxml/ParseSTLib.hi
-lib/haxml/ParseSTLib.hs
-lib/haxml/ParseSTLib.o
-lib/haxml/Pretty.hi
-lib/haxml/Pretty.lhs
-lib/haxml/Pretty.o
-lib/haxml/SymTab.hs
-lib/haxml/Xml2Haskell.hi
-lib/haxml/Xml2Haskell.hs
-lib/haxml/Xml2Haskell.o
-lib/haxml/XmlCombinators.hi
-lib/haxml/XmlCombinators.hs
-lib/haxml/XmlCombinators.o
-lib/haxml/XmlHtmlGen.hi
-lib/haxml/XmlHtmlGen.hs
-lib/haxml/XmlHtmlGen.o
-lib/haxml/XmlHtmlPP.hs
-lib/haxml/XmlHtmlParse.hi
-lib/haxml/XmlHtmlParse.hs
-lib/haxml/XmlHtmlParse.o
-lib/haxml/XmlLex.hi
-lib/haxml/XmlLex.hs
-lib/haxml/XmlLex.o
-lib/haxml/XmlLib.hi
-lib/haxml/XmlLib.hs
-lib/haxml/XmlLib.o
-lib/haxml/XmlPP.hi
-lib/haxml/XmlPP.hs
-lib/haxml/XmlPP.o
-lib/haxml/XmlParse.hi
-lib/haxml/XmlParse.hs
-lib/haxml/XmlParse.o
-lib/haxml/XmlTypes.hi
-lib/haxml/XmlTypes.hs
-lib/haxml/XmlTypes.o
-%%PORTDOCS%%share/doc/haxml/HaXml.ps.gz
+%%NHC98%%include/nhc98/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
+%%NHC98%%include/nhc98/HaXml/Text/PrettyPrint/HughesPJ.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Combinators.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Haskell2Xml.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Generate.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Parse.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Lex.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/OneOfN.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Parse.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Pretty.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Types.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Validate.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Wrappers.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xml2Haskell.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml.hi
+%%NHC98%%lib/nhc98/ix86-FreeBSD/libHSHaXml.a
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/pkg.conf
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/PrettyPrint/HughesPJ.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Combinators.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell/Convert.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell/Instance.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell/TypeDef.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Haskell2Xml.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Generate.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Parse.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Lex.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/OneOfN.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Parse.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Pretty.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Types.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Validate.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Wrappers.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xml2Haskell.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Combinators.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Lex.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Parse.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/HSHaXml.o
+%%GHC%%lib/ghc-%%GHC_VERSION%%/libHSHaXml.a
+%%PORTDOCS%%share/doc/haxml/Combinators.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.ParserCombinators.HuttonMeijerWallace.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.PrettyPrint.HughesPJ.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Combinators.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.DtdToHaskell.Convert.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.DtdToHaskell.Instance.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.DtdToHaskell.TypeDef.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Haskell2Xml.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Html.Generate.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Html.Parse.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Html.Pretty.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Lex.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.OneOfN.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Parse.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Pretty.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Types.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Validate.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Wrappers.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Xml2Haskell.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Xtract.Combinators.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Xtract.Lex.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Xtract.Parse.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tA.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tB.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tC.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tD.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tE.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tF.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tG.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tH.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tI.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tJ.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tK.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tL.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tM.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tN.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tO.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tP.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tQ.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tR.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tS.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tT.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tU.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tV.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tW.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tX.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tY.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-tZ.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vA.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vB.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vC.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vD.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vE.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vF.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vG.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vH.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vI.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vJ.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vK.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vL.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vM.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vN.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vO.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vP.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vQ.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vR.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vS.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vT.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vU.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vV.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vW.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vX.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vY.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index-vZ.html
+%%PORTDOCS%%share/doc/haxml/HaXml/doc-index.html
+%%PORTDOCS%%share/doc/haxml/HaXml/haddock.css
+%%PORTDOCS%%share/doc/haxml/HaXml/haskell_icon.gif
+%%PORTDOCS%%share/doc/haxml/HaXml/index.html
 %%PORTDOCS%%share/doc/haxml/Haskell2Xml.html
+%%PORTDOCS%%share/doc/haxml/LICENSE
 %%PORTDOCS%%share/doc/haxml/Xml2Haskell.html
-%%PORTDOCS%%share/doc/haxml/XmlLib.html
 %%PORTDOCS%%share/doc/haxml/Xtract.html
 %%PORTDOCS%%share/doc/haxml/brubeck.gif
+%%PORTDOCS%%share/doc/haxml/changelog.html
 %%PORTDOCS%%share/doc/haxml/icfp99.dvi
 %%PORTDOCS%%share/doc/haxml/icfp99.html
 %%PORTDOCS%%share/doc/haxml/icfp99.ps.gz
 %%PORTDOCS%%share/doc/haxml/index.html
-@dirrm lib/haxml
+%%NHC98%%@dirrm include/nhc98/HaXml/Text/ParserCombinators
+%%NHC98%%@dirrm include/nhc98/HaXml/Text/PrettyPrint
+%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml/Html
+%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml
+%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML
+%%NHC98%%@dirrm include/nhc98/HaXml/Text
+%%NHC98%%@dirrm include/nhc98/HaXml
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/PrettyPrint
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text
+%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml
+%%PORTDOCS%%@dirrm share/doc/haxml/HaXml
 %%PORTDOCS%%@dirrm share/doc/haxml
+%%GHC%%@exec %D/bin/ghc-pkg -a < %D/lib/ghc-%%GHC_VERSION%%/imports/HaXml/pkg.conf
+%%GHC%%@unexec %D/bin/ghc-pkg -r HaXml

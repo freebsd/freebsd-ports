@@ -2,7 +2,7 @@ HaXml is a collection of utilities for using Haskell and XML together. It
 includes a parser for XML, a separate error-correcting parser for HTML, and
 pretty-printers for XML and HTML.
 
-WWW:	http://www.cs.york.ac.uk/fp/HaXml/
+WWW:	http://www.haskell.org/HaXml/
 
 -- Oliver Braun
 obraun@informatik.unibw-muenchen.de
