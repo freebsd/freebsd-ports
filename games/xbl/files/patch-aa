@@ -1,27 +1,18 @@
---- Makefile.in.orig	Fri Nov 13 06:57:13 1998
-+++ Makefile.in	Thu Mar 22 23:35:00 2001
-@@ -14,7 +14,7 @@
- USE_SETGID=-DUSE_SETGID
- 
- # group owner of games file
--GROUP_GID=2
-+GROUP_GID=13
- 
- ###########################################################################
- # You don't need to read below if you have xmkmf or imake
-@@ -29,26 +29,26 @@
+--- Makefile.in.orig	Tue Dec 11 22:13:49 2001
++++ Makefile.in	Tue Dec 11 22:18:05 2001
+@@ -30,26 +30,26 @@
  # Directory who contain X Resource Database
  # The default value if overrided by configure if xmkmf or imake exists.
  #
 -RESOURCEDIR=/usr/lib/X11/app-defaults
-+RESOURCEDIR=$(X11BASE)/lib/X11/app-defaults
++RESOURCEDIR=${X11BASE}/lib/X11/app-defaults
  @XAPPLOADDIR@
  
  # Directory where install binary
  # The default value if overrided by configure if xmkmf or imake exists.
  #
 -BINDIR=/usr/local/bin
-+BINDIR=$(PREFIX)/bin
++BINDIR=${PREFIX}/bin
  @BINDIR@
  
  # Directory who contain score
@@ -29,36 +20,36 @@
  # The default value if overrided by configure if xmkmf or imake exists.
  #
 -SCOREDIR=/usr/local/lib/xbl
-+SCOREDIR=$(PREFIX)/lib/X11/xbl
++SCOREDIR=${PREFIX}/lib/X11/xbl
  @SCOREDIR@
  
  # Directory where put man pages.
  # The default value if overrided by configure if xmkmf or imake exists.
  #
 -MANPATH=/usr/local/man
-+MANPATH=$(PREFIX)/man
++MANPATH=${PREFIX}/man
  @MANPATH@
  
  ###########################################################################
-@@ -82,7 +82,7 @@
+@@ -83,7 +83,7 @@
  
  # For linking (configure script will modify this line)
  # xmkmf et imake informations are take into account.
 -LIBS = @LIBS@ -lm
-+LIBS = @LIBS@ -lX11 -lm -lcompat
++LIBS = @LIBS@ -lm -lX11 -lcompat
  
  all:demo
  
-@@ -93,7 +93,7 @@
+@@ -94,7 +94,7 @@
  	 -DRESOURCEDIR=\"$(RESOURCEDIR)\" \
  	 -DXBLVERSION=\"$(XBLVERSION)\" \
  	 -DGROUP_GID=$(GROUP_GID) \
--	  $(USE_SETGID) @DEFS@ -g
-+	  $(USE_SETGID) @DEFS@ @CPPFLAGS@ @CFLAGS@
+-	  $(USE_SETGID) @DEFS@ @CFLA@ -g
++	  $(USE_SETGID) @DEFS@ @CFLA@ @CFLAGS@ @CPPFLAGS@
  # For link edit options
  LDOPTIONS=$(CFLAGS)
  LDOPTIONS=@LDOPTIONS@
-@@ -127,25 +127,20 @@
+@@ -128,25 +128,20 @@
  	@-if [ "" != "$(USE_SETGID)" ] ; then \
  		echo "You use GID=$(GROUP_GID) protection" ; \
  		fi
@@ -89,7 +80,7 @@
  	-if [ "" = "$(USE_SETGID)" ] ; then \
  	     chmod 755  $(BINDIR)/xbl ;\
  	   else \
-@@ -159,7 +154,6 @@
+@@ -160,7 +155,6 @@
  	-mkdir $(SCOREDIR) 2>/dev/null
  	$(CP) Xbl.ad  $(RESOURCEDIR)/Xbl ;	chmod 644 $(RESOURCEDIR)/Xbl
  	$(CP) Xbl.ad  $(SCOREDIR)/Xbl ;		chmod 644 $(SCOREDIR)/Xbl
