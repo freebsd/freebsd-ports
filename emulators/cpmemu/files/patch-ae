@@ -1,13 +1,18 @@
---- low.c.orig	Mon Nov 15 06:33:54 1999
-+++ low.c	Mon Nov 15 06:41:26 1999
-@@ -21,7 +21,6 @@
+--- low.c.orig	Wed Dec 11 22:44:43 2002
++++ low.c	Wed Dec 11 22:44:56 2002
+@@ -18,11 +18,10 @@
+  * space-invaders-type game working, I think it was. :-)	-rjm
+  */
+ 
++#include <sys/types.h>
  #include "cpmemu.h"
  #include <ctype.h>
  #include <unistd.h>
 -#include <sys/perm.h>		/* needed for ioperm() -rjm */
- #include <sys/types.h>
+-#include <sys/types.h>
  #include <sys/time.h>
  #include <signal.h>
+ #include <sys/mman.h>
 @@ -88,10 +87,8 @@
  
      /* get access to sound port */
