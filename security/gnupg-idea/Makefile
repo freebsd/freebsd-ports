@@ -41,6 +41,10 @@ pre-fetch:
 CONTRIB=	idea rsa
 .else
 CONTRIB=	rsa
+
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} You must set variable MAKE_IDEA to YES, only rsa is build now.
 .endif
 
 .include <bsd.port.pre.mk>
