@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=    1.3.24
-PORTREVISION=   7
+PORTVERSION=    1.3.26
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -26,14 +25,11 @@ MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/
 DISTNAME=	apache_${PORTVERSION}
 
-PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.24/
-PATCHFILES=     proxy_http1.1_chunking.patch
-PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.26/
+#PATCHFILES=
+#PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
 MAINTAINER=	ache@freebsd.org
-
-FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
-		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
 
 DATADIR=${PREFIX}/www
 DOCUMENT_ROOT=${DATADIR}/data
