@@ -4,7 +4,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/08/01 01:49:16 cpiazza Exp $
+# $Id: Makefile,v 1.12 1999/08/01 03:11:07 obrien Exp $
 #
 
 DISTNAME=	bzip2-0.9.5b
@@ -30,6 +30,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKSRC}/manual* ${PREFIX}/share/doc/bzip2
+	${PREFIX}/bin/bzip2 ${PREFIX}/share/doc/bzip2/manual.ps
 .endif
 
 .include <bsd.port.mk>
