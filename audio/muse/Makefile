@@ -8,6 +8,7 @@
 
 PORTNAME=	muse
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freesoftware.fsf.org/download/muse/ \
 		http://muse.dyne.org/releases/
@@ -15,19 +16,32 @@ DISTNAME=	MuSE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
-		ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
+		vorbis.1:${PORTSDIR}/audio/libvorbis \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_GTK=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ARGS=	--disable-debug
 
 post-patch:
-	@${PERL} -pi -e "s,-lgthread,-lgthread12,g" ${WRKSRC}/configure
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|-O3|\$$CFLAGS|g ; \
+		 s|\$$GTK_LIBS -lgthread|\$$GTK_LIBS \$$GLIB_LIBS|g ; \
+		 s|\$$GTK_FLAGS|\$$GTK_CFLAGS \$$GLIB_CFLAGS|g' \
+			${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread||g' ${WRKSRC}/Makefile.in
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/muse ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog KNOWN-BUGS NEWS README TODO USAGE
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
