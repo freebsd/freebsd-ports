@@ -116,7 +116,9 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # ONLY_FOR_ARCHS - Only build ports if ${ARCH} matches one of these.
 # NOT_FOR_ARCHS  - Only build ports if ${ARCH} doesn't match one of these.
 #
-# Use these if your port uses some of the common software packages.
+# Use these if your port uses some of the common software packages. By
+# convention these should be set to 'yes', although they only need to be
+# defined.
 #
 # USE_BZIP2		- Says that the port tarballs use bzip2, not gzip, for
 #				  compression.
@@ -136,7 +138,8 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # LIBTOOL		- Set to path of libtool (default: libtool).
 # LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
 #				  USE_AUTOCONF is set, "configure" otherwise).
-# LIBTOOLFLAGS	- Additional flags to pass to ltconfig.
+# LIBTOOLFLAGS	- Additional flags to pass to ltconfig
+#				  (default: --disable-ltlibs)
 # USE_PERL5		- Says that the port uses perl5 for building and running.
 # PERL5			- Set to full path of perl5, either in the system or
 #				  installed from a port.
@@ -409,6 +412,16 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  (default: ${WRKDIR}/.PLIST.mktmp).
 # PLIST_SUB		- List of "variable=value" pair for substitution in ${PLIST}
 # 				  (default: see below).
+# INSTALLS_SHLIBS - If set, bsd.port.mk will automatically run ldconfig commands
+#				  from post-install and also add appropriate @exec/@unexec
+#				  directives to directories listed in LDCONFIG_DIRS.
+# LDCONFIG_DIRS - List of directories to run ldconfig if
+#				  INSTALLS_SHLIBS is set (default: %%PREFIX%%/lib).
+#				  Note that this is passed through sed just like the
+#				  rest of PLIST, so ${PLIST_SUB} substitutions also
+#				  apply here.  It is recommended that you use
+#				  %%PREFIX%% for ${PREFIX}, %%LOCALBASE%% for
+#				  ${LOCALBASE} and %%X11BASE%% for ${X11BASE}.
 # 
 # Note that the install target will automatically add manpages (see
 # above) and also substitute special sequences of characters (delimited
@@ -438,7 +451,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # PATCH_DEBUG	- If set, print out more information about the patches as
 #				  it attempts to apply them.
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
-# NO_PKG_REGISTER - Don't register a port install as a package.
+# NO_PKG_REGISTER - Don't register a port installation as a package.
 # FORCE_PKG_REGISTER - If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
 # NO_DEPENDS	- Don't verify build of dependencies.
@@ -598,6 +611,8 @@ PREFIX?=		${X11BASE}
 .else
 PREFIX?=		${LOCALBASE}
 .endif
+
+PLIST_SUB+=		PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
 .if defined(USE_OPENSSL)
 .if ${OSVERSION} >= 400014
@@ -801,6 +816,9 @@ PACKAGE_COOKIE?=	${WRKDIR}/.package_done
 # do something.
 DO_NADA?=		/usr/bin/true
 
+# Use this as the first operand to always build dependency.
+NONEXISTENT?=	/nonexistent
+
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 AUTOMAKE?=		automake
@@ -881,7 +899,7 @@ EXTRACT_CMD?=			${GZIP_CMD}
 .endif
 
 # Figure out where the local mtree file is
-.if !defined(MTREE_FILE)
+.if !defined(MTREE_FILE) && !defined(NO_MTREE)
 .if defined(USE_X_PREFIX)
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
@@ -890,15 +908,6 @@ MTREE_FILE=	/etc/mtree/BSD.local.dist
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -p
-
-.if !target(mtree-file)
-mtree-file:
-.if !defined(NO_MTREE)
-	@${ECHO} ${MTREE_FILE}
-.else
-	@${DO_NADA}
-.endif
-.endif
 
 # A few aliases for *-install targets
 INSTALL_PROGRAM= \
@@ -1003,87 +1012,7 @@ ALL_TARGET?=		all
 INSTALL_TARGET?=	install
 
 # Popular master sites
-MASTER_SITE_XCONTRIB+=	\
-	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
-	ftp://uiarchive.uiuc.edu/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/%SUBDIR%/
-
-MASTER_SITE_GNU+=	\
-	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.freesoftware.com/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
-	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.ecrc.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
-	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/
-
-MASTER_SITE_PERL_CPAN+=	\
-	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/
-
-MASTER_SITE_TEX_CTAN+=  \
-	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/  \
-	ftp://wuarchive.wustl.edu/packages/TeX/%SUBDIR%/  \
-	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/  \
-	ftp://ftp.tex.ac.uk/tex-archive/%SUBDIR%/  \
-	ftp://ftp.dante.de/tex-archive/%SUBDIR%/
-
-MASTER_SITE_SUNSITE+=	\
-	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.freesoftware.com/pub/linux/sunsite/%SUBDIR%/
-
-MASTER_SITE_KDE+=	\
-	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/
-
-MASTER_SITE_COMP_SOURCES+=	\
-	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
-	ftp://ftp.uu.net/usenet/comp.sources.%SUBDIR%/ \
-	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
-
-MASTER_SITE_GNOME+=	\
-	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
-	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
-	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/
-
-MASTER_SITE_AFTERSTEP+=	\
-	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
-	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
-	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/%SUBDIR%/
-
-MASTER_SITE_WINDOWMAKER+= \
-	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
-	ftp://ftp.goldweb.com.au/pub/WindowMaker/%SUBDIR%/ \
-	ftp://ftp.io.com/pub/%SUBDIR%/ \
-	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/
-
-MASTER_SITE_PORTS_JP+=	\
-	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
-	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
-	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/
-
-MASTER_SITE_TCLTK+= \
-	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/%SUBDIR%/ \
-	ftp://sunsite.utk.edu/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/%SUBDIR%/ \
-	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/
+.include "bsd.sites.mk"
 
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
@@ -1111,10 +1040,6 @@ PATCH_SITES:=	${PATCH_SITES_TMP}
 MASTER_SITE_BACKUP?=	\
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
 MASTER_SITE_BACKUP:=	${MASTER_SITE_BACKUP:S^\${DIST_SUBDIR}/^^}
-
-# Where to put distfiles that don't have any other master site
-MASTER_SITE_LOCAL?= \
-	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/distfiles/LOCAL_PORTS/
 
 # If the user has MASTER_SITE_FREEBSD set, go to the FreeBSD repository
 # for everything, but don't search it twice by appending it to the end.
@@ -1221,9 +1146,7 @@ PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 
 # The "latest version" link -- ${PKGNAME} minus everthing after the last '-'
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
-.if !defined(PKGBASE)
-PKGBASE!=	${ECHO} ${PKGNAME} | ${SED} -e 's/-[^-]*$$//'
-.endif
+PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE?=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 
 CONFIGURE_WRKSRC?=	${WRKSRC}
@@ -1320,6 +1243,14 @@ __MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g:S/$/.gz/}
 
 .if defined(_MANPAGES) && ${MANCOMPRESSED} == "yes"
 _MANPAGES:=	${_MANPAGES:S/$/.gz/}
+.endif
+
+# Put this for down as possible so it will catch all PLIST_SUB definitions.
+
+.if defined(INSTALLS_SHLIBS)
+LDCONFIG_DIRS?=	%%PREFIX%%/lib
+LDCONFIG_PLIST!=	${ECHO} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
+LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!"
 .endif
 
 .MAIN: all
@@ -1944,6 +1875,10 @@ _PORT_USE: .USE
 .if make(real-install) && (defined(_MANPAGES) || defined(_MLINKS))
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} compress-man
 .endif
+.if make(real-install) && defined(INSTALLS_SHLIBS)
+	@${ECHO_MSG} "===>   Running ldconfig"
+	${LDCONFIG} -m ${LDCONFIG_RUNLIST}
+.endif
 .if make(real-install) && !defined(NO_PKG_REGISTER)
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fake-pkg
 .endif
@@ -2048,7 +1983,7 @@ post-${name}:
 # libtool port.  See above for default values of LIBTOOLFILES.
 #
 # This target works by first checking the version of the installed
-# libtool shell script, which is not actually used.  Rather it's path
+# libtool shell script, which is not actually used.  Rather its path
 # is determined, and used to find the path to ltconfig and ltmain.sh
 # (which is ../share/libtool/).  Then the configure script is copied
 # and the default paths for ltconfig and ltmain.sh (normally ./) is
@@ -2323,11 +2258,6 @@ package-noinstall:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PACKAGE_NOINSTALL=yes real-package
 	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
-.endif
-
-.if !target(prefix)
-prefix:
-	@${ECHO} ${PREFIX}
 .endif
 
 ################################################################
@@ -2732,6 +2662,10 @@ generate-plist:
 .endfor
 	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
 	@${ECHO} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
+.if defined(INSTALLS_SHLIBS)
+	@${ECHO} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST}" >> ${TMPPLIST}
+	@${ECHO} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
+.endif
 .if !defined(NO_FILTER_SHLIBS)
 .if (${PORTOBJFORMAT} == "aout")
 	@${SED} -e 's,\(/lib.*\.so\.[0-9]*\)$$,\1.0,' ${TMPPLIST} > ${TMPPLIST}.tmp
@@ -2831,7 +2765,7 @@ tags:
 .endif
 
 .if !defined(NOPRECIOUSMAKEVARS)
-.for softvar in CKSUMFILES _MLINKS PKGBASE
+.for softvar in CKSUMFILES _MLINKS
 .if defined(${softvar})
 __softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
 .endif
