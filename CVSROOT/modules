@@ -621,6 +621,7 @@ bpatch		ports/editors/bpatch
 bpft		ports/net/bpft
 bpl+		ports/comms/bpl+
 br-aspell	ports/textproc/br-aspell
+braa		ports/net/braa
 braincurses	ports/games/braincurses
 bricons		ports/x11/bricons
 british-ispell	ports/textproc/british-ispell
@@ -4386,6 +4387,7 @@ muttzilla	ports/mail/muttzilla
 muuz		ports/misc/muuz
 mwavem		ports/comms/mwavem
 mydns		ports/net/mydns
+mymoon		ports/astro/mymoon
 myodbc		ports/databases/myodbc
 mysql++		ports/databases/mysql++
 mysql-editor	ports/databases/mysql-editor
