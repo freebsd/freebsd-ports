@@ -41,14 +41,13 @@ NLSMAKEFILES=	nls nls/C nls/bg_BG nls/da_DK nls/de_DE nls/es_ES nls/et_EE \
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-xinerama
-.endif
-
-.if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-kde
+.if defined(WITH_DOCHTML)
+MASTER_SITES+=		http://fluxbox.org/docbook/en/tarballs/:html
+DISTFILES+=		fb-doc-mfhtml.tgz:html
+EXTRACT_ONLY+=		fb-doc-mfhtml.tgz
+PLIST_SUB+=		DOCHTML:=""
 .else
-CONFIGURE_ARGS+=	--disable-kde
+PLIST_SUB+=		DOCHTML:="@comment "
 .endif
 
 .if defined(WITH_DOCPDF)
@@ -59,13 +58,14 @@ PLIST_SUB+=		DOCPDF:=""
 PLIST_SUB+=		DOCPDF:="@comment "
 .endif
 
-.if defined(WITH_DOCHTML)
-MASTER_SITES+=		http://fluxbox.org/docbook/en/tarballs/:html
-DISTFILES+=		fb-doc-mfhtml.tgz:html
-EXTRACT_ONLY+=		fb-doc-mfhtml.tgz
-PLIST_SUB+=		DOCHTML:=""
+.if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-kde
 .else
-PLIST_SUB+=		DOCHTML:="@comment "
+CONFIGURE_ARGS+=	--disable-kde
+.endif
+
+.if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -75,6 +75,18 @@ PLIST_SUB+=		NLS:=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS:="@comment "
+.endif
+
+.if !defined(WITHOUT_SLIT)
+CONFIGURE_ARGS+=	--enable-slit
+.else
+CONFIGURE_ARGS+=	--disable-slit
+.endif
+
+.if !defined(WITHOUT_TOOLBAR)
+CONFIGURE_ARGS+=	--enable-toolbar
+.else
+CONFIGURE_ARGS+=	--disable-toolbar
 .endif
 
 .include <bsd.port.pre.mk>
@@ -92,23 +104,29 @@ pre-everything::
 .if !defined(WITH_DEBUG)
 	@${ECHO_CMD} "WITH_DEBUG=yes		Build with debugging symbols"
 .endif
-.if !defined(WITH_XINERAMA)
-	@${ECHO_CMD} "WITH_XINERAMA=yes	Enable Xinerama support"
-.endif
-.if !defined(WITH_KDE)
-	@${ECHO_CMD} "WITH_KDE=yes		Enable KDE slit support"
-.endif
-.if !defined(WITH_GNOME)
-	@${ECHO_CMD} "WITH_GNOME=yes		Enable GNOME support"
+.if !defined(WITH_DOCHTML)
+	@${ECHO_CMD} "WITH_DOCHTML=yes	Install the HTML documentation"
 .endif
 .if !defined(WITH_DOCPDF)
 	@${ECHO_CMD} "WITH_DOCPDF=yes		Install the PDF documentation"
 .endif
-.if !defined(WITH_DOCHTML)
-	@${ECHO_CMD} "WITH_DOCHTML=yes	Install the HTML documentation"
+.if !defined(WITH_GNOME)
+	@${ECHO_CMD} "WITH_GNOME=yes		Enable GNOME support"
+.endif
+.if !defined(WITH_KDE)
+	@${ECHO_CMD} "WITH_KDE=yes		Enable KDE slit support"
+.endif
+.if !defined(WITH_XINERAMA)
+	@${ECHO_CMD} "WITH_XINERAMA=yes	Enable Xinerama support"
 .endif
 .if !defined(WITHOUT_NLS)
 	@${ECHO_CMD} "WITHOUT_NLS=yes		Disable NLS support"
+.endif
+.if !defined(WITHOUT_SLIT)
+	@${ECHO_CMD} "WITHOUT_SLIT=yes	Disable slit"
+.endif
+.if !defined(WITHOUT_TOOLBAR)
+	@${ECHO_CMD} "WITHOUT_TOOLBAR=yes	Disable toolbar"
 .endif
 
 post-patch:
