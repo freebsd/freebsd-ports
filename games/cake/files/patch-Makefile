@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed Jul 16 19:13:06 2003
++++ Makefile	Fri Jul 16 18:03:40 2004
+@@ -1,10 +1,11 @@
+-INCLUDES = -I/usr/include -I/usr/local/include
+-CC = g++
+-CXXFLAGS += -g -Wall -W -O2 $(INCLUDES)
++INCLUDES = -I/usr/include -I$(LOCALBASE)/include -I$(X11BASE)/include
++CC ?= g++
++CXXFLAGS += -Wall $(INCLUDES)
+ 
+-LDFLAGS += -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lm -ldl 
+-LDFLAGS += -lpthread -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE 
+-LDFLAGS += -lcurses -ljpeg -lz -lfmod-3.63
++LDFLAGS += -L/usr/lib -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lglut -lGLU -lGL -lm
++LDFLAGS += $(PTHREAD_LIBS) -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE 
++#LDFLAGS += -lcurses -ljpeg -lz -lfmod-3.63
++LDFLAGS += -ljpeg
+ 
+ EXE = main
+ SRC_FILES = $(wildcard cake/*.cpp cake/glsetup/*.cpp cake/zip/*.cpp) main.cpp 
+@@ -17,7 +18,7 @@
+ 		$(CC) -c $(CXXFLAGS) -o $@ $<
+ 
+ $(EXE): $(OBJECTS)
+-		g++ -o $@ $(OBJECTS) $(LDFLAGS)
++		$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+ 
+ clean:
+ 		rm -f $(EXE) $(OBJECTS) $(DEPEND)

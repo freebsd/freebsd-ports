@@ -1,0 +1,19 @@
+Cake is map viewer for Quake III Arena.  It currently features:
+
+    * BSP (+PVS) support
+    * collisions detection (with normal faces + patches)
+    * shaders + textures
+    * lightmaps
+    * vertex deformations
+    * cloudbox + skybox (nearbox and farbox)
+    * volumetric fog
+    * bezier surfaces (with variable LOD)
+    * multiple viewports
+    * console
+    * record/playback demo support (DM3 format not supported)
+    * background music + 3D sounds (not under FreeBSD though)
+    * models
+    * entities (with variable LOD)
+    * zip compressed files (*.pk3)
+
+WWW: http://www.calodox.scene.org:8080/morbac/cake/index.html
