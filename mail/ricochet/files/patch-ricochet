@@ -1,5 +1,5 @@
 --- ricochet.orig	Thu Feb  8 22:23:19 2001
-+++ ricochet	Sun May 19 12:24:58 2002
++++ ricochet	Wed Jun 18 12:52:41 2003
 @@ -128,7 +128,10 @@
  										 ## List of receipients at ORIG_DOMAN 
                                           ## besides the CONTACTS.
@@ -55,12 +55,13 @@
      $received =~ /from\s(.*?)$rfc/s; my $from = " $1 "; 
      $received =~ /by\s(.*?)$rfc/s; my $by = " $1 "; 
 -    my @orig_hosts = $from =~ /($HOSTRE)/gs; 
-+
+-    my @orig_ips = $from =~ /($IPRE)/gs; 
+-    my @transmit_hosts = $by =~ /($HOSTRE)/gs; 
+ 
 +    ## Trust only "(host.name [" part, HELO can be fake
 +    my @orig_hosts = $from =~ /\([^()\[\]]*?($HOSTRE)[^()\[\]]*?\[/gs;
-     my @orig_ips = $from =~ /($IPRE)/gs; 
-     my @transmit_hosts = $by =~ /($HOSTRE)/gs; 
--
++    my @orig_ips = $from =~ /\([^()\[\]]*\[($IPRE)\]/gs;
++    my @transmit_hosts = $by =~ /($HOSTRE)/gs; 
      my @ips = $by =~ /($IPRE)/gs; 
 +
 +    my $header = $self->{MAIL}->head;
