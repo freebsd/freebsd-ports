@@ -18,6 +18,7 @@ ALL_TARGET=	all
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	docs
+BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python # XXX: Replace with USE_PYTHON_BUILD
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .else
 .undef HAVE_LATEX
