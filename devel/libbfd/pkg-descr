@@ -1,0 +1,4 @@
+Universal BFD library from the GNU binutils
+
+BFD stands for "Binary File Descriptor".  This library can handle
+almost any object file format on earth.

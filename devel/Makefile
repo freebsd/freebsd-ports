@@ -361,6 +361,7 @@
     SUBDIR += libassetml
     SUBDIR += libast
     SUBDIR += libavl
+    SUBDIR += libbfd
     SUBDIR += libbonobo
     SUBDIR += libbonobomm
     SUBDIR += libcache
