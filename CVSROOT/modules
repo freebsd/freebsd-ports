@@ -10095,6 +10095,7 @@ spice		ports/cad/spice
 spider		ports/games/spider
 spidermonkey	ports/lang/spidermonkey
 spigot		ports/multimedia/spigot
+spike-proxy	ports/security/spike-proxy
 spim		ports/emulators/spim
 spin		ports/devel/spin
 spinner		ports/sysutils/spinner
