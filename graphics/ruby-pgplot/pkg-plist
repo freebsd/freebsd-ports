@@ -11,6 +11,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgline.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgncur.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgolin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgtick.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pgplot
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pgplot/FuncUsage
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pgplot/README.en
