@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -16,10 +16,10 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
 USE_ICONV=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-shared
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--enable-shared --with-openssl=${OPENSSLBASE} \
+			--with-iconv=${LOCALBASE} --with-xml2=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
 MAN1=		yaz-asncomp.1 yaz-client-ssl.1 yaz-client.1 yaz-marcdump.1 \
