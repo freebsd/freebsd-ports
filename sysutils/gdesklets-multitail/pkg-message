@@ -15,7 +15,7 @@ To view all installed applets:
 
 To use those applets:
 
-	gdesklets ${PREFIX}/share/gnome/gdesklets/Displays/MultiTail/multitail.display
+	gdesklets open ${PREFIX}/share/gnome/gdesklets/Displays/MultiTail/multitail.display
 
 NOTE: Be sure to login as your user when you use the gdesklets command,
       as the configuration will be stored in the ~/.gdesklets/ directory.

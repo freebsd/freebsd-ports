@@ -5,11 +5,11 @@ To list displays installed by this port:
 
 To add these desklet to your desktop:
 
-    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/clock.display
-    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/disk.display
-    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/memory.display
-    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/processor.display
-    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/weather.display
+    gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/clock.display
+    gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/disk.display
+    gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/memory.display
+    gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/processor.display
+    gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%DISPLAY%%/weather.display
 
 NOTE: Be sure to login as your user when you use the gdesklets command,
       as the configuration will be stored in the ~/.gdesklets/ directory

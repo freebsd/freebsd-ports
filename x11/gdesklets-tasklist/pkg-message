@@ -1,5 +1,5 @@
 
 To add this desklet to your desktop:
 
-    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/%%NAME%%.display
+    gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/%%NAME%%.display
 
