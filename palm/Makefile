@@ -30,6 +30,7 @@
     SUBDIR += sitescooper
     SUBDIR += syncal
     SUBDIR += synce-dccm
+    SUBDIR += synce-gnomevfs
     SUBDIR += synce-librapi2
     SUBDIR += synce-libsynce
     SUBDIR += synce-serial

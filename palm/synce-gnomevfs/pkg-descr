@@ -1,0 +1,5 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+Gnomevfs gives Gnome applications like Nautilus the ability to access the file
+system on a Windows CE device via gnomevfs.
+
+WWW: http://synce.sourceforge.net/
