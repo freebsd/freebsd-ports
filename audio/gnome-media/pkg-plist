@@ -1,6 +1,4 @@
-bin/CDDBSlave2
 bin/cddb-slave2-properties
-bin/cddb-track-editor
 bin/gnome-cd
 bin/gnome-sound-recorder
 bin/gnome-volume-control
@@ -22,6 +20,8 @@ lib/libcddb-slave2.a
 lib/libcddb-slave2.so
 lib/libcddb-slave2.so.0
 libdata/bonobo/servers/GNOME_Media_CDDBSlave2.server
+libexec/CDDBSlave2
+libexec/cddb-track-editor
 share/gnome/applications/gnome-cd.desktop
 share/gnome/applications/gnome-sound-recorder.desktop
 share/gnome/applications/gnome-volume-control.desktop
@@ -233,7 +233,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-cd/themes/lcd
 @dirrm share/gnome/pixmaps/gnome-cd/themes
 @dirrm share/gnome/pixmaps/gnome-cd
-@dirrm share/gnome/omf/gnome-media
 @dirrm share/gnome/help/grecord/C/figures
 @dirrm share/gnome/help/grecord/C
 @dirrm share/gnome/help/grecord
