@@ -3,7 +3,7 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.3 1995/04/15 05:44:50 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/16 21:24:53 asami Exp $
 #
 
 DISTNAME=	smalltalk-1.1.1
@@ -11,6 +11,8 @@ CATEGORIES+=	languages
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
+
+IS_INTERACTIVE=	yes
 
 pre-configure:
 	@cp ${FILESDIR}/m-fbsd-2.h ${WRKSRC}/config/m-fbsd-2.h
