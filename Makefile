@@ -61,28 +61,28 @@ PORTSTOP=	yes
 .include <bsd.port.subdir.mk>
 
 index:
-	@rm -f ${.CURDIR}/INDEX
-	@cd ${.CURDIR} && make ${.CURDIR}/INDEX
+	@rm -f ${.CURDIR}/${INDEXFILE}
+	@cd ${.CURDIR} && make ${.CURDIR}/${INDEXFILE}
 
-${.CURDIR}/INDEX:
-	@echo -n "Generating INDEX - please wait.."; \
+${.CURDIR}/${INDEXFILE}:
+	@echo -n "Generating ${INDEXFILE} - please wait.."; \
 	export LOCALBASE=/nonexistentlocal; \
 	export X11BASE=/nonexistentx; \
 	cd ${.CURDIR} && make describe ECHO_MSG="echo > /dev/null" | \
 		perl ${.CURDIR}/Tools/make_index | \
-	sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/X11R6," > INDEX
+	sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/X11R6," > ${INDEXFILE}
 .if !defined(INDEX_NOSORT)
-	@sed -e 's./..g' ${.CURDIR}/INDEX | \
+	@sed -e 's./..g' ${.CURDIR}/${INDEXFILE} | \
 		sort -t '|' +1 -2 | \
-		sed -e 's../.g' > ${.CURDIR}/INDEX.tmp; \
-	mv -f ${.CURDIR}/INDEX.tmp ${.CURDIR}/INDEX
+		sed -e 's../.g' > ${.CURDIR}/${INDEXFILE}.tmp; \
+	mv -f ${.CURDIR}/INDEX.tmp ${.CURDIR}/${INDEXFILE}
 .endif
 	@echo " Done."
 
-print-index:	${.CURDIR}/INDEX
-	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }' < ${.CURDIR}/INDEX
+print-index:	${.CURDIR}/${INDEXFILE}
+	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }' < ${.CURDIR}/${INDEXFILE}
 
-parallel: ${.CURDIR}/INDEX
+parallel: ${.CURDIR}/${INDEXFILE}
 .if !defined(branch)
 	@echo "The parallel target requires a branch parameter,"
 	@echo "e.g.: \"make parallel branch=X\""
@@ -91,7 +91,7 @@ parallel: ${.CURDIR}/INDEX
 .for dir in ${SUBDIR}
 	@echo "all: ${dir}-all"
 .endfor
-	@awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print tmp[4] "-all: " me ".tgz"; print me ": " me ".tgz"; print me ".tgz: " bdep " " rdep; printf("\t@/var/portbuild/scripts/pdispatch ${branch} /var/portbuild/scripts/portbuild %s.tgz %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}' < ${.CURDIR}/INDEX
+	@awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print tmp[4] "-all: " me ".tgz"; print me ": " me ".tgz"; print me ".tgz: " bdep " " rdep; printf("\t@/var/portbuild/scripts/pdispatch ${branch} /var/portbuild/scripts/portbuild %s.tgz %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}' < ${.CURDIR}/${INDEXFILE}
 
 CVS?= cvs
 .if defined(SUPHOST)

@@ -728,6 +728,11 @@ X11BASE?=		${DESTDIR}/usr/X11R6
 LINUXBASE?=		${DESTDIR}/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
+.if ${OSVERSION} >= 500036
+INDEXFILE?=		INDEX-5
+.else
+INDEXFILE?=		INDEX
+.endif
 .if defined(USE_BZIP2)
 EXTRACT_SUFX?=			.tar.bz2
 .elif defined(USE_ZIP)
@@ -3625,7 +3630,7 @@ pretty-print-build-depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
 	defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO_CMD} -n 'This port requires package(s) "'
-	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$8;}'`
+	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/${INDEXFILE} | awk -F\| '{print $$8;}'`
 	@${ECHO_CMD} '" to build.'
 .endif
 .endif
@@ -3634,7 +3639,7 @@ pretty-print-build-depends-list:
 pretty-print-run-depends-list:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO_CMD} -n 'This port requires package(s) "'
-	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$9;}'`
+	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/${INDEXFILE} | awk -F\| '{print $$9;}'`
 	@${ECHO_CMD} '" to run.'
 .endif
 .endif
