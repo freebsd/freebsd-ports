@@ -6,14 +6,41 @@
 #
 
 PORTNAME=	gnet
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 
 MAINTAINER=	nakai@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+
+MAN1=	gnet-config.1
+
+post-patch:
+# fix pthreads detection
+	@${REINPLACE_CMD} -E -e 's,-lpthread|-lc_r,${PTHREAD_LIBS},' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+# remove "release" information from lib name
+	@${REINPLACE_CMD} -E -e 's|-release[ ]+\$$\(LT_RELEASE\)||g' \
+		${WRKSRC}/src/Makefile.in
+# don't install gnet-config script with odd name. We will install it ourselves
+	@${REINPLACE_CMD} -E -e 's|^(install-exec-am:).+$$|\1|' \
+		${WRKSRC}/Makefile.in
+# install gnet-config.1 man (not another name). Revise at EVERY port update
+	@${REINPLACE_CMD} -e 's|\$$\$$inst|\$$\$$file|g' \
+		${WRKSRC}/doc/Makefile.in
+# install configincludedir correctly
+	@${REINPLACE_CMD} -E -e 's|^(configincludedir).+$$|\1=\$$\(pkgincludedir\)|' \
+		${WRKSRC}/Makefile.in
+# install *.pc files in correct FreeBSD dir
+	@${REINPLACE_CMD} -E -e \
+		's|^(pkgconfigdir[ ]+=[ ]+)\$$\(libdir\)/(pkgconfig)|\1${PREFIX}/libdata/\2|' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/gnet-config ${PREFIX}/bin
 
 .include <bsd.port.mk>
