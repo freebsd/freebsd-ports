@@ -4249,6 +4249,7 @@ jakarta-tomcat4	ports/www/jakarta-tomcat4
 jakarta-tomcat41	ports/www/jakarta-tomcat41
 jakarta-tomcat5	ports/www/jakarta-tomcat5
 jakelib2	ports/devel/jakelib2
+jalbum		ports/graphics/jalbum
 jam		ports/devel/jam
 jama		ports/math/jama
 jamboree	ports/audio/jamboree
