@@ -1,0 +1,4 @@
+Parses almost all ISO 8601:2000(E) date and time formats. ISO 8601:2000(E)
+time-intervals will be supported in a later release.
+
+WWW: http://datetime.perl.org/

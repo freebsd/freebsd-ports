@@ -565,6 +565,7 @@
     SUBDIR += p5-DateTime-Format-Epoch
     SUBDIR += p5-DateTime-Format-Excel
     SUBDIR += p5-DateTime-Format-ICal
+    SUBDIR += p5-DateTime-Format-ISO8601
     SUBDIR += p5-DateTime-Format-Mail
     SUBDIR += p5-DateTime-Format-MySQL
     SUBDIR += p5-DateTime-Format-Pg
