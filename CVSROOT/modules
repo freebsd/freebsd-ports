@@ -1099,6 +1099,7 @@ conserver-com	ports/comms/conserver-com
 consolehm	ports/sysutils/consolehm
 contool		ports/sysutils/contool
 convertall	ports/math/convertall
+convmv		ports/converters/convmv
 cook		ports/devel/cook
 cooledit	ports/editors/cooledit
 coolmail	ports/mail/coolmail
