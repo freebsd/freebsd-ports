@@ -6484,6 +6484,7 @@ pftop		ports/sysutils/pftop
 pftpd		ports/ftp/pftpd
 pg		ports/misc/pg
 pgaccess	ports/databases/pgaccess
+pgadmin3	ports/databases/pgadmin3
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
 pglogd		ports/www/pglogd
@@ -8981,6 +8982,7 @@ wwwoffle	ports/www/wwwoffle
 wwwstat		ports/www/wwwstat
 wxGlade		ports/devel/wxGlade
 wxgtk		ports/x11-toolkits/wxgtk
+wxgtk-contrib	ports/x11-toolkits/wxgtk-contrib
 wxgtk-devel	ports/x11-toolkits/wxgtk-devel
 wxgtk-docs	ports/x11-toolkits/wxgtk-docs
 wy60		ports/comms/wy60
