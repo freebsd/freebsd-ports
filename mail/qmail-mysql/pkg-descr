@@ -1,0 +1,11 @@
+What is is: [excerpt from the patch homepage]
+
+A few people have done qmail - MySQL integration and this is my
+crack at it. My work is based on takeshi@softagency.co.jp's patches,
+which you can find at http://www.softagency.co.jp/mysql/qmail.en.html.
+However I wanted to tidy up some of the code to make it use strallocs
+and do more error checking. I also wanted to simplify the configuration,
+whilst at the same time allowing more flexibility. Plus there were
+some things I just didn't want: quotas and APOP support for example...
+
+WWW: http://iain.cx/unix/qmail/mysql.php
