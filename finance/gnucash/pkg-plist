@@ -34,6 +34,7 @@ share/gnome/gnucash/doc/examples/ms-money.qif
 share/gnome/gnucash/doc/examples/quicktest.qif
 share/gnome/gnucash/doc/examples/splitdemo.xac
 share/gnome/gnucash/doc/examples/swipe.qif
+share/gnome/gnucash/doc/examples/taxreport.xac
 share/gnome/gnucash/doc/examples/test.xac
 share/gnome/gnucash/doc/examples/test2.xac
 share/gnome/gnucash/doc/examples/test3.xac
@@ -77,8 +78,14 @@ share/gnome/gnucash/html/C/image/regwin-single2.gif
 share/gnome/gnucash/html/C/image/report-av-baln.gif
 share/gnome/gnucash/html/C/image/report-baln.gif
 share/gnome/gnucash/html/C/image/report-folio.gif
+share/gnome/gnucash/html/C/image/report-hierarchical-options.png
+share/gnome/gnucash/html/C/image/report-hierarchical.png
 share/gnome/gnucash/html/C/image/report-option.gif
 share/gnome/gnucash/html/C/image/report-pnl.gif
+share/gnome/gnucash/html/C/image/report-tax-options.png
+share/gnome/gnucash/html/C/image/report-tax.png
+share/gnome/gnucash/html/C/image/report-txf-options.png
+share/gnome/gnucash/html/C/image/report-txf.png
 share/gnome/gnucash/html/C/image/reportwin.gif
 share/gnome/gnucash/html/C/image/ticker-a.gif
 share/gnome/gnucash/html/C/image/ticker-b.gif
@@ -102,6 +109,7 @@ share/gnome/gnucash/html/C/xacc-globalprefs.html
 share/gnome/gnucash/html/C/xacc-globalprops.html
 share/gnome/gnucash/html/C/xacc-gpl.html
 share/gnome/gnucash/html/C/xacc-groups.html
+share/gnome/gnucash/html/C/xacc-hierarchical-report.html
 share/gnome/gnucash/html/C/xacc-main.html
 share/gnome/gnucash/html/C/xacc-mainwin.html
 share/gnome/gnucash/html/C/xacc-pnl.html
@@ -113,8 +121,14 @@ share/gnome/gnucash/html/C/xacc-recnwin.html
 share/gnome/gnucash/html/C/xacc-regwin.html
 share/gnome/gnucash/html/C/xacc-regwin_kbd.html
 share/gnome/gnucash/html/C/xacc-reports.html
+share/gnome/gnucash/html/C/xacc-tax-report-example.html
+share/gnome/gnucash/html/C/xacc-tax-report.html
 share/gnome/gnucash/html/C/xacc-ticker.html
 share/gnome/gnucash/html/C/xacc-trans_report.html
+share/gnome/gnucash/html/C/xacc-txf-categories.html
+share/gnome/gnucash/html/C/xacc-txf-export-anomalies.html
+share/gnome/gnucash/html/C/xacc-txf-export-example.html
+share/gnome/gnucash/html/C/xacc-txf-export-report.html
 share/gnome/gnucash/html/C/xacc-y2k.html
 share/gnome/gnucash/html/fr/bofa-mym.html
 share/gnome/gnucash/html/fr/image/appr-asset1.gif
@@ -216,7 +230,10 @@ share/gnome/gnucash/scm/report/budget-report.scm
 share/gnome/gnucash/scm/report/folio.scm
 share/gnome/gnucash/scm/report/hello-world.scm
 share/gnome/gnucash/scm/report/report-list.scm
+share/gnome/gnucash/scm/report/taxtxf.scm
 share/gnome/gnucash/scm/report/transaction-report.scm
+share/gnome/gnucash/scm/report/txf-export-help.scm
+share/gnome/gnucash/scm/report/txf-export.scm
 share/gnome/gnucash/scm/slib-backup.scm
 share/gnome/gnucash/scm/srfi/srfi-1.r5rs.scm
 share/gnome/gnucash/scm/srfi/srfi-1.unclear.scm
