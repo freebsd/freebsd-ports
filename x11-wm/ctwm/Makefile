@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	ctwm
-PORTVERSION=	3.5.2b
+PORTVERSION=	3.5.2c
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://slhp1.epfl.ch/pub/
+MASTER_SITES=	http://slhp1.epfl.ch/public/ctwm/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ctwm-images${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-
-MAKE_ENV=	LOCALBASE=${LOCALBASE}
 
 USE_IMAKE=	yes
 USE_XPM=	yes
