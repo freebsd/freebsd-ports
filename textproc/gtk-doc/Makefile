@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk-doc/
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Code documentation system, originally for GTK+
 
+BROKEN=		"Does not configure (different errors on 4.x and 5.x)"
+
 BUILD_DEPENDS=	${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
