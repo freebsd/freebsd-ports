@@ -47,8 +47,8 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_86_unix.tgz helpcontent_88_unix.tgz
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x (tries to link to libpthread)"
+.if ${OSVERSION} > 502010
+BROKEN=		"Does not compile on 5-current"
 .endif
 
 MAINTAINER=	openoffice@FreeBSD.org
