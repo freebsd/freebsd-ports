@@ -1,0 +1,6 @@
+Impact is an explicit Finite Element Program which simulates dynamic impact
+events. It has a range of elements, contact handling and different material
+laws. Models can be created and viewed with external programs or the
+included postprocessor.
+
+WWW: http://impact.sourceforge.net/
