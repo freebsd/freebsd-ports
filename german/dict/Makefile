@@ -3,12 +3,12 @@
 # Date created:         6 August 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/06 19:17:46 wosch Exp $
+# $Id: Makefile,v 1.2 1997/08/13 05:09:22 asami Exp $
 #
 
 DISTNAME=       dict-1.0
 CATEGORIES=	german
-MASTER_SITES=   http://www.apfel.de/~wosch/src/
+MASTER_SITES=   http://www.freebsd.org/~wosch/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
 
 MAINTAINER=     wosch@FreeBSD.org
