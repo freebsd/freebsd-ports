@@ -246,6 +246,7 @@
     SUBDIR += jabber-yahoo
     SUBDIR += jags
     SUBDIR += jarl
+    SUBDIR += java-beepcore
     SUBDIR += javadc
     SUBDIR += jumpgate
     SUBDIR += jwhois

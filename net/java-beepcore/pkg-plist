@@ -1,0 +1,233 @@
+share/java/classes/beepcore.jar
+share/java/classes/beepsasl.jar
+share/java/classes/beeptls-jsse.jar
+share/java/classes/beeptls-ptls.jar
+share/examples/beepcore/example.jar
+share/examples/beepcore/org/beepcore/beep/example/Beepd.java
+share/examples/beepcore/org/beepcore/beep/example/Bing.java
+share/examples/beepcore/org/beepcore/beep/example/README_EXAMPLE
+share/examples/beepcore/org/beepcore/beep/example/beepd-config.xml
+share/examples/beepcore/org/beepcore/beep/util/BeepLogger.java
+share/examples/beepcore/org/beepcore/beep/util/Log4JLog.java
+@dirrm share/examples/beepcore/org/beepcore/beep/util
+@dirrm share/examples/beepcore/org/beepcore/beep/example
+@dirrm share/examples/beepcore/org/beepcore/beep
+@dirrm share/examples/beepcore/org/beepcore
+@dirrm share/examples/beepcore/org
+@dirrm share/examples/beepcore
+share/doc/beepcore/GettingStarted.txt
+share/doc/beepcore/LICENSE.txt
+share/doc/beepcore/README.txt
+share/doc/beepcore/README_SASL.htm
+%%PORTDOCS%%share/doc/beepcore/core/allclasses-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/allclasses-noframe.html
+%%PORTDOCS%%share/doc/beepcore/core/constant-values.html
+%%PORTDOCS%%share/doc/beepcore/core/deprecated-list.html
+%%PORTDOCS%%share/doc/beepcore/core/help-doc.html
+%%PORTDOCS%%share/doc/beepcore/core/index-all.html
+%%PORTDOCS%%share/doc/beepcore/core/index.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/AbortChannelException.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/BEEPError.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/BEEPException.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/BEEPInterruptedException.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/ByteOutputDataStream.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/Channel.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/CloseChannelException.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/Frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/InputDataStream.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/InputDataStreamAdapter.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/Message.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/MessageListener.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/MessageStatus.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/MimeHeaders.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/OutputDataStream.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/ProfileRegistry.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/ReplyListener.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/Session.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/SessionCredential.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/SessionTuningProperties.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/StartChannelException.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/StartChannelListener.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/StartChannelProfile.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/StringOutputDataStream.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/TuningProfile.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/TuningResetException.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/core/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/ChannelPool.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/MessageQueue.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/NullReplyListener.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/Reply.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/SharedChannel.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/lib/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/Profile.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/ProfileConfiguration.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/echo/EchoProfile.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/echo/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/echo/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/echo/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/tls/TLSProfile.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/tls/TLSProfileHandshakeCompletedListener.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/tls/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/tls/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/profile/tls/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/transport/tcp/TCPSession.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/transport/tcp/TCPSessionCreator.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/transport/tcp/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/transport/tcp/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/transport/tcp/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/BufferSegment.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/ConsoleLog.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/HeaderParser.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/Log.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/LogService.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/StringUtil.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/org/beepcore/beep/util/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/overview-frame.html
+%%PORTDOCS%%share/doc/beepcore/core/overview-summary.html
+%%PORTDOCS%%share/doc/beepcore/core/overview-tree.html
+%%PORTDOCS%%share/doc/beepcore/core/package-list
+%%PORTDOCS%%share/doc/beepcore/core/packages.html
+%%PORTDOCS%%share/doc/beepcore/core/serialized-form.html
+%%PORTDOCS%%share/doc/beepcore/core/stylesheet.css
+%%PORTDOCS%%share/doc/beepcore/sasl/allclasses-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/allclasses-noframe.html
+%%PORTDOCS%%share/doc/beepcore/sasl/constant-values.html
+%%PORTDOCS%%share/doc/beepcore/sasl/deprecated-list.html
+%%PORTDOCS%%share/doc/beepcore/sasl/help-doc.html
+%%PORTDOCS%%share/doc/beepcore/sasl/index-all.html
+%%PORTDOCS%%share/doc/beepcore/sasl/index.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/AuthenticationFailureException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/Blob.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/ConfigurationException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/InvalidParameterException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/PeerAbortException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/SASLException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/SASLProfile.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/SASLSessionTable.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/anonymous/SASLAnonymousProfile.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/anonymous/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/anonymous/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/anonymous/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/IllegalOTPStateException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/OTPDictionary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/OTPGenerator.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/SASLOTPProfile.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/SequenceZeroFailure.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/Algorithm.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/AlgorithmImpl.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/md5/MD5.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/md5/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/md5/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/md5/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/sha1/SHA1.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/sha1/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/sha1/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/sha1/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/NoMorePasswordsException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/UserDBNotFoundException.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/UserDatabase.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/UserDatabaseImpl.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/UserDatabaseManager.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/UserDatabasePool.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/overview-frame.html
+%%PORTDOCS%%share/doc/beepcore/sasl/overview-summary.html
+%%PORTDOCS%%share/doc/beepcore/sasl/overview-tree.html
+%%PORTDOCS%%share/doc/beepcore/sasl/package-list
+%%PORTDOCS%%share/doc/beepcore/sasl/packages.html
+%%PORTDOCS%%share/doc/beepcore/sasl/serialized-form.html
+%%PORTDOCS%%share/doc/beepcore/sasl/stylesheet.css
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/allclasses-frame.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/allclasses-noframe.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/constant-values.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/deprecated-list.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/help-doc.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/index-all.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/index.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/org/beepcore/beep/profile/tls/jsse/TLSProfileJSSE.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/org/beepcore/beep/profile/tls/jsse/TLSProfileJSSEHandshakeCompletedListener.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/org/beepcore/beep/profile/tls/jsse/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/org/beepcore/beep/profile/tls/jsse/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/org/beepcore/beep/profile/tls/jsse/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/overview-tree.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/package-list
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/packages.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/serialized-form.html
+%%PORTDOCS%%share/doc/beepcore/tls-jsse/stylesheet.css
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/allclasses-frame.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/allclasses-noframe.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/constant-values.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/deprecated-list.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/help-doc.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/index-all.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/index.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls/ptls/TLSProfilePureTLS.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls/ptls/TLSProfilePureTLSHandshakeCompletedListener.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls/ptls/TLSProfilePureTLSPemInit.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls/ptls/package-frame.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls/ptls/package-summary.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls/ptls/package-tree.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/overview-tree.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/package-list
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/packages.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/serialized-form.html
+%%PORTDOCS%%share/doc/beepcore/tls-ptls/stylesheet.css
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls/ptls
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-ptls/org/beepcore/beep/profile/tls
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-ptls/org/beepcore/beep/profile
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-ptls/org/beepcore/beep
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-ptls/org/beepcore
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-ptls/org
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-ptls
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-jsse/org/beepcore/beep/profile/tls/jsse
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-jsse/org/beepcore/beep/profile/tls
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-jsse/org/beepcore/beep/profile
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-jsse/org/beepcore/beep
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-jsse/org/beepcore
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-jsse/org
+%%PORTDOCS%%@dirrm share/doc/beepcore/tls-jsse
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/database
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/sha1
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm/md5
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp/algorithm
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/otp
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl/anonymous
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile/sasl
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep/profile
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore/beep
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org/beepcore
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl/org
+%%PORTDOCS%%@dirrm share/doc/beepcore/sasl
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/util
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/transport/tcp
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/transport
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/profile/tls
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/profile/echo
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/profile
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/lib
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep/core
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore/beep
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org/beepcore
+%%PORTDOCS%%@dirrm share/doc/beepcore/core/org
+%%PORTDOCS%%@dirrm share/doc/beepcore/core
+@dirrm share/doc/beepcore
