@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.9 1997/02/27 09:29:38 tg Exp $
+# $Id: Makefile,v 1.10 1997/03/05 08:31:45 tg Exp $
 #
 
+    SUBDIR += aftp
     SUBDIR += bsvc
     SUBDIR += cpmemu
     SUBDIR += cpmtools
