@@ -11,7 +11,7 @@ PKGNAME=		pccts-1.33.22
 CATEGORIES=		devel
 MASTER_SITES=		http://www.polhode.com/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		obrien@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
 

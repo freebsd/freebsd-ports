@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
 MASTER_SITE_SUBDIR=	apps/editors/terminal
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		obrien@FreeBSD.org
 
 GNU_CONFIGURE=		yes
 MAN1=			le.1
