@@ -38,7 +38,7 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|\(prefix)/libdata/pkgconfig|g ; \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
                  s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 	@find ${WRKSRC} -name "*info.in" | xargs ${REINPLACE_CMD} -e \
 		's|\@datadir\@/gnome|\@datadir\@|g'
