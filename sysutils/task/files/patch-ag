@@ -1,0 +1,9 @@
+--- Makefile.orig	Mon Oct  7 00:05:18 2002
++++ Makefile	Mon Oct  7 00:05:22 2002
+@@ -1,5 +1,5 @@
+ SHELL	= /bin/sh
+-CC		= gcc
++CC	?= gcc
+ DIRS	= bin etc
+ 
+ all:	$(DIRS) compile

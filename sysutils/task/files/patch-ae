@@ -1,0 +1,17 @@
+--- ./src/hash/Makefile.orig	Mon Oct  7 00:02:28 2002
++++ ./src/hash/Makefile	Mon Oct  7 00:02:41 2002
+@@ -1,12 +1,11 @@
+ SHELL	= /bin/sh
+-CC	= gcc
+-OPT	= -O
++CC	?= gcc
+ DEBUG	= -g
+ BIN	= ../../bin
+ MAN	= ../../man
+ PROGS	= $(BIN)/md5 $(BIN)/sha1
+ MANPAGES= $(MAN)/man1/md5.1 
+-CFLAGS	= $(DEFS) $(INCL) $(OPT) $(DEBUG) -I. $(XFLAGS)
++CFLAGS	+= $(DEFS) $(INCL) $(OPT) $(DEBUG) -I. $(XFLAGS)
+ 
+ defs:
+ 	@sh ../makedefs

@@ -1,0 +1,15 @@
+--- ./src/fstools/Makefile.orig	Mon Oct  7 00:01:58 2002
++++ ./src/fstools/Makefile	Mon Oct  7 00:02:12 2002
+@@ -1,9 +1,9 @@
+ SHELL	= /bin/sh
+-CC	= gcc
+-OPT	= -O -Wall
++CC	?= gcc
++OPT	= -Wall
+ DEBUG	= -ggdb 
+ INCL	= -I../misc
+-CFLAGS	= $(DEFS) $(INCL) $(OPT) $(DEBUG)
++CFLAGS	+= $(DEFS) $(INCL) $(OPT) $(DEBUG)
+ LIBOBJ	= fs_buf.o fs_inode.o fs_io.o fs_open.o \
+ 	fs_dent.o fs_types.o fs_data.o mylseek.o get.o \
+ 	ffs.o ffs_dent.o ext2fs.o ext2fs_dent.o \

@@ -1,0 +1,6 @@
+The @stake Sleuth Kit (TASK) is the only open source forensic toolkit
+for a complete analysis of Microsoft and UNIX file systems.  TASK
+enables investigators to identify and recover evidence from images
+acquired during incident response or from live systems.
+
+WWW: http://www.atstake.com/research/tools/task/

@@ -1,0 +1,11 @@
+--- ./src/fstools/fs_tools.h.orig	Sun Oct  6 23:54:26 2002
++++ ./src/fstools/fs_tools.h	Sun Oct  6 23:56:05 2002
+@@ -91,7 +91,7 @@
+  /*
+   * FreeBSD can handle filesystems > 2GB.
+   */
+-#if defined(FREEBSD2) || defined(FREEBSD3) || defined(FREEBSD4) 
++#if defined(FREEBSD2) || defined(FREEBSD3) || defined(FREEBSD4) || defined(FREEBSD5)
+ #define SUPPORTED
+ #define LSEEK		lseek
+ #define OFF_T		off_t
