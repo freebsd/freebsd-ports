@@ -528,8 +528,8 @@ share/lincity/opening/text2
 share/lincity/opening/text3
 share/lincity/opening/winfont_16x16.fnt
 share/lincity/opening/winfont_8x8.fnt
-share/locale/ca/LC_MESSAGES/lincity.mo
-share/locale/it/LC_MESSAGES/lincity.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/lincity.mo
+%%NLS%%share/locale/it/LC_MESSAGES/lincity.mo
 @dirrm share/lincity/opening
 @dirrm share/lincity/messages
 @dirrm share/lincity/icons
