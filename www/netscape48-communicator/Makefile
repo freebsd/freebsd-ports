@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.27 1998/12/23 17:35:07 obrien Exp $
+# $Id: Makefile,v 1.28 1998/12/26 16:21:58 sada Exp $
 #
 
 DISTNAME=       netscape-communicator-4.08
@@ -45,7 +45,7 @@ do-install:
 	fi
 	rm -rf ${NDIR}/movemail-src
 	tar zxvf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
-.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
+.if defined(USE_128BIT)
 	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
 		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.08.bin
 .endif
