@@ -6,10 +6,10 @@ bin/cvspurge
 bin/cvsrmadm
 bin/cvstrim
 bin/cvsu
-%%PORTDOCS%%share/doc/cvsutils/AUTHORS
-%%PORTDOCS%%share/doc/cvsutils/ChangeLog
-%%PORTDOCS%%share/doc/cvsutils/FAQ
-%%PORTDOCS%%share/doc/cvsutils/NEWS
-%%PORTDOCS%%share/doc/cvsutils/README
-%%PORTDOCS%%share/doc/cvsutils/TODO
-%%PORTDOCS%%@dirrm share/doc/cvsutils
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
