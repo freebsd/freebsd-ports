@@ -1,0 +1,12 @@
+Module Getopt::ArgvFile is a simple supplement to other option
+handling modules.  It allows script options and parameters to be
+read from files instead of from the command line by interpolating
+file contents into @ARGV. This way it PREPARES the final option
+handling.
+
+Getopt::ArgvFile does NOT perform any option processing itself, and
+should work fine together with any other option handling module
+(e.g. Getopt::Long) or even self coded option handling.
+
+-Anton
+<tobez@FreeBSD.org>

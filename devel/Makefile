@@ -442,6 +442,7 @@
     SUBDIR += p5-Filter-CBC
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Getargs-Long
+    SUBDIR += p5-Getopt-ArgvFile
     SUBDIR += p5-Getopt-Declare
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Glade-Perl
