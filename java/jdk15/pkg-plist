@@ -791,7 +791,10 @@ jdk%%JDK_VERSION%%/jre/lib/content-types.properties
 jdk%%JDK_VERSION%%/jre/lib/flavormap.properties
 jdk%%JDK_VERSION%%/jre/lib/font.properties
 jdk%%JDK_VERSION%%/jre/lib/font.properties.ja
+jdk%%JDK_VERSION%%/jre/lib/font.properties.ru
+jdk%%JDK_VERSION%%/jre/lib/font.properties.uk
 jdk%%JDK_VERSION%%/jre/lib/font.properties.zh
+jdk%%JDK_VERSION%%/jre/lib/font.properties.zh_CN
 jdk%%JDK_VERSION%%/jre/lib/font.properties.zh_TW
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightDemiBold.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightDemiItalic.ttf
