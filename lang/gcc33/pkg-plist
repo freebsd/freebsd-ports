@@ -41,24 +41,3 @@ share/java/libgcj-%%GCC_VER%%.jar
 @comment Insert PLIST.gcj-inc here
 @comment -=[ begin PLIST.gcj-inc ]=-
 @comment -=[ end PLIST.gcj-inc ]=-
-@unexec install-info --delete %D/info/cpp.info %D/info/dir
-@unexec install-info --delete %D/info/cppinternals.info %D/info/dir
-@unexec install-info --delete %D/info/g77.info %D/info/dir
-@unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/gccint.info %D/info/dir
-@unexec install-info --delete %D/info/gcj.info %D/info/dir
-@unexec install-info --delete %D/info/fastjar.info %D/info/dir
-info/cpp.info
-info/cppinternals.info
-info/g77.info
-info/gcc.info
-info/gccint.info
-info/gcj.info
-info/fastjar.info
-@exec install-info %D/info/cpp.info %D/info/dir
-@exec install-info %D/info/cppinternals.info %D/info/dir
-@exec install-info %D/info/g77.info %D/info/dir
-@exec install-info %D/info/gcc.info %D/info/dir
-@exec install-info %D/info/gccint.info %D/info/dir
-@exec install-info %D/info/gcj.info %D/info/dir
-@exec install-info %D/info/fastjar.info %D/info/dir
