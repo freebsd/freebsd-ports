@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.0.48
+PORTVERSION=	1.0.49
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
 
