@@ -66,6 +66,7 @@
     SUBDIR += grepmail
     SUBDIR += hbiff
     SUBDIR += icqmail
+    SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imp
