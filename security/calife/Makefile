@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calife
-PORTVERSION=	2.8.4d
+PORTVERSION=	2.8.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://postfix.eu.org/pub/calife/
 
