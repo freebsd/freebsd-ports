@@ -1,10 +1,12 @@
 bin/bsetbg
 bin/bsetroot
 bin/fluxbox
+bin/fluxbox-generate_menu
 share/fluxbox/init
 share/fluxbox/keys
 share/fluxbox/menu
 share/fluxbox/nls/C/blackbox.cat
+share/fluxbox/nls/bg_BG/blackbox.cat
 share/fluxbox/nls/da_DK/blackbox.cat
 share/fluxbox/nls/es_ES/blackbox.cat
 share/fluxbox/nls/et_EE/blackbox.cat
@@ -37,10 +39,8 @@ share/fluxbox/styles/Spiff
 share/fluxbox/styles/TDF
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
-share/fluxbox/titlebar
 @unexec rm %D/share/fluxbox/nls/fr
 @unexec rm %D/share/fluxbox/nls/es
-@unexec rm %D/share/fluxbox/nls/bg_BG
 @unexec rm %D/share/fluxbox/nls/en_US   
 @unexec rm %D/share/fluxbox/nls/en   
 @unexec rm %D/share/fluxbox/nls/US_ASCII   
@@ -63,6 +63,7 @@ share/fluxbox/titlebar
 @dirrm share/fluxbox/nls/et_EE
 @dirrm share/fluxbox/nls/es_ES
 @dirrm share/fluxbox/nls/da_DK
+@dirrm share/fluxbox/nls/bg_BG
 @dirrm share/fluxbox/nls/C
 @dirrm share/fluxbox/nls
 @dirrm share/fluxbox
