@@ -6614,6 +6614,7 @@ p5-DBIx-Table	ports/databases/p5-DBIx-Table
 p5-DBIx-Tree	ports/databases/p5-DBIx-Tree
 p5-DBIx-XHTML_Table	ports/databases/p5-DBIx-XHTML_Table
 p5-DBIx-XML_RDB	ports/databases/p5-DBIx-XML_RDB
+p5-DBM-Deep	ports/databases/p5-DBM-Deep
 p5-DBZ_File	ports/databases/p5-DBZ_File
 p5-DB_File-Lock	ports/devel/p5-DB_File-Lock
 p5-DNS-Config	ports/dns/p5-DNS-Config
