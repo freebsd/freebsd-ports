@@ -1,3 +1,4 @@
+lib/esecanna/vje25.la
 lib/esecanna/vje25.so
-@unexec rmdir %D/lib/esecanna 2>/dev/null || true
+share/doc/esecanna/CHANGES.vje25.jp
 share/doc/esecanna/README.vje25.jp
