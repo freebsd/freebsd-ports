@@ -175,7 +175,6 @@
     SUBDIR += gnomekiss
     SUBDIR += gnomememoryblocks
     SUBDIR += gnomermind
-    SUBDIR += gnomoku
     SUBDIR += gnubg
     SUBDIR += gnuchess
     SUBDIR += gnugo
