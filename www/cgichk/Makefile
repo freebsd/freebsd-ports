@@ -12,17 +12,16 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	cgichk
 USE_REINPLACE=	yes
 
-pre-patch:
+post-patch:
 	${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
-		"s@/etc/@${PREFIX}/etc/@g; s/#include <getopt.h>//g; \
-		s@^(?=.+sys/socket.h)@#include <sys/types.h>\n@g;" \
+		"s@/etc/@${PREFIX}/etc/@g; s/#include <getopt.h>//g;" \
 		${WRKSRC}/cgichk.h
 
 do-install:
