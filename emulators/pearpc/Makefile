@@ -21,13 +21,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .else
 CONFIGURE_ARGS+=	--disable-fpo
 .endif
+
+.if defined(WITH_QT)
+CONFIGURE_ARGS+=	--enable-gui=qt
+USE_QT_VER=	3
+.else
+CONFIGURE_ARGS+=	--enable-gui=nogui
+.endif
+
+.include <bsd.port.pre.mk>
 
 # jitc_x86 is avaible only on x86
 .if ${ARCH} == "i386"
