@@ -1,6 +1,5 @@
 bin/ksetiwatch
 share/applnk/Applications/ksetiwatch.desktop
-share/apps/ksetiwatch/pics/MadeWithKDev.png
 share/apps/ksetiwatch/pics/mini-gaussian.png
 share/apps/ksetiwatch/pics/mini-pulse.png
 share/apps/ksetiwatch/pics/mini-seti.png
@@ -16,6 +15,7 @@ share/apps/ksetiwatch/pics/mini-setirunning.png
 share/apps/ksetiwatch/pics/mini-setistopped.png
 share/apps/ksetiwatch/pics/mini-starmap.png
 share/apps/ksetiwatch/pics/mini-triplet.png
+share/apps/ksetiwatch/pics/setilogo.png
 share/apps/ksetiwatch/pics/starmap.png
 share/apps/ksetiwatch/sounds/message.wav
 share/doc/HTML/de/ksetiwatch/addedit-client.png
@@ -83,33 +83,21 @@ share/icons/hicolor/32x32/apps/ksetiwatch.png
 share/icons/locolor/16x16/apps/ksetiwatch.png
 share/icons/locolor/32x32/apps/ksetiwatch.png
 share/locale/ca/LC_MESSAGES/ksetiwatch.mo
+share/locale/da/LC_MESSAGES/ksetiwatch.mo
 share/locale/de/LC_MESSAGES/ksetiwatch.mo
+share/locale/en_GB/LC_MESSAGES/ksetiwatch.mo
 share/locale/es/LC_MESSAGES/ksetiwatch.mo
+share/locale/et/LC_MESSAGES/ksetiwatch.mo
 share/locale/fr/LC_MESSAGES/ksetiwatch.mo
 share/locale/he/LC_MESSAGES/ksetiwatch.mo
 share/locale/hr/LC_MESSAGES/ksetiwatch.mo
 share/locale/hu/LC_MESSAGES/ksetiwatch.mo
+share/locale/it/LC_MESSAGES/ksetiwatch.mo
 share/locale/pt/LC_MESSAGES/ksetiwatch.mo
+share/locale/pt_BR/LC_MESSAGES/ksetiwatch.mo
 share/locale/sv/LC_MESSAGES/ksetiwatch.mo
-@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sv 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu 2>/dev/null || true
-@unexec rmdir %D/share/locale/hr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hr 2>/dev/null || true
-@unexec rmdir %D/share/locale/he/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/he 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
+share/locale/zh_CN/LC_MESSAGES/ksetiwatch.mo
+share/locale/zh_TW/LC_MESSAGES/ksetiwatch.mo
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true

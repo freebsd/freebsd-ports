@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ksetiwatch
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ksetiwatch
@@ -14,7 +13,6 @@ MASTER_SITE_SUBDIR=	ksetiwatch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A monitoring tool for the seti@home client
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/-1//}
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
