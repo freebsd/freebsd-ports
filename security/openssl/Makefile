@@ -55,8 +55,8 @@ USE_PERL5_BUILD=	yes
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
-	dsa.1 dsaparam.1 enc.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 openssl.1 \
-	passwd.1 pkcs12.1 pkcs7.1 pkcs8.1 rand.1 req.1 rsa.1 rsautl.1 \
+	dsa.1 dsaparam.1 enc.1 errstr.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 \
+	openssl.1 passwd.1 pkcs12.1 pkcs7.1 pkcs8.1 rand.1 req.1 rsa.1 rsautl.1 \
 	s_client.1 s_server.1 s_time.1 sess_id.1 smime.1 speed.1 spkac.1 verify.1 \
 	version.1 x509.1
 
