@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.20 1999/04/13 06:48:44 mharo Exp $
+# $Id: Makefile,v 1.21 1999/05/01 01:23:20 mharo Exp $
 
 DISTNAME=	wdm-1.0
 CATEGORIES=	x11 windowmaker
@@ -14,14 +14,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPIC}
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-BUILD_DEPENDS=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
+		wraster.2:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.1:${PORTSDIR}/devel/libPropList
-RUN_DEPENDS=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	wdm
