@@ -1,0 +1,25 @@
+bin/ftplocate
+www/cgi-bin/ftplocate/README
+www/cgi-bin/ftplocate/README.zhtw
+www/cgi-bin/ftplocate/dcollect.pl
+www/cgi-bin/ftplocate/dindex.pl
+www/cgi-bin/ftplocate/dsearch.pl
+www/cgi-bin/ftplocate/fl.config
+www/cgi-bin/ftplocate/fl.english
+www/cgi-bin/ftplocate/fl.share
+www/cgi-bin/ftplocate/fl.zhtw
+www/cgi-bin/ftplocate/flcollect.pl
+www/cgi-bin/ftplocate/flfilter.pl
+www/cgi-bin/ftplocate/flhistory.pl
+www/cgi-bin/ftplocate/flindex.pl
+www/cgi-bin/ftplocate/flsearch.pl
+www/cgi-bin/ftplocate/flserv.pl
+www/cgi-bin/ftplocate/indexer.sh
+www/data/flhelp.html
+www/data/flhelp.zhtw.html
+@exec install -d -o nobody -g nobody -m 755 %D/www/cgi-bin/ftplocate/cache
+@exec install -d %D/www/cgi-bin/ftplocate/index %D/www/cgi-bin/ftplocate/desc
+@dirrm www/cgi-bin/ftplocate/index
+@dirrm www/cgi-bin/ftplocate/desc
+@dirrm www/cgi-bin/ftplocate/cache
+@dirrm www/cgi-bin/ftplocate
