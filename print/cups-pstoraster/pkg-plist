@@ -1,0 +1,3 @@
+bin/espgs
+etc/cups/pstoraster.convs
+libexec/cups/filter/pstoraster
