@@ -17,6 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Gapped text buffer extention for Ruby
 
+BROKEN=		"Broken dependencies"
+
 USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
