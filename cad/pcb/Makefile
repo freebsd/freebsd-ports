@@ -3,7 +3,7 @@
 # Date created:		19 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.2 1994/11/17 12:59:40 jkh Exp $
+# $Id: Makefile,v 1.3 1994/12/12 03:58:06 gpalmer Exp $
 #
 
 DISTNAME=	pcb-1.2.patch_02
@@ -15,6 +15,6 @@ MAKEFILE=	makefile
 USE_IMAKE=
 NO_INSTALL_MANPAGES=	yes
 PREFIX=/usr/X11R6
-PKG_CMD=	pkg_create -N
+PKG_CMD=	pkg_create
 
 .include <bsd.port.mk>
