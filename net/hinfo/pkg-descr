@@ -5,4 +5,5 @@ spam complaints to where they may do some good.
 (maintainer's note: the DATAFILES are updated without the port version
 necessarily being updated.  Expect drift on distinfo.  See hinfo-update.)
 
-WWW: http://www.blars.org/hinfo.html
+Although the home page of the software is at www.blars.org/hinfo.html,
+that page is not reachable from the FreeBSD.org domain.
