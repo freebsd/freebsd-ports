@@ -1,5 +1,5 @@
-DISTNAME=	xsnow-1.31
-DISTFILES=	xsnow-1.31.tar.Z
+DISTNAME=	xsnow-1.39
+DISTFILES=	xsnow-1.39.tar.Z
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.x.org/contrib/games/
 
