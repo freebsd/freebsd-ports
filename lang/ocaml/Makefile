@@ -98,10 +98,8 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/camltk/images
 	@cd ${WRKSRC}/otherlibs/labltk/examples_labltk; \
 		${INSTALL_DATA} * ${EXAMPLESDIR}/labltk
-	@cd ${WRKSRC}/otherlibs/labltk/examples_camltk/images; \
-		${INSTALL_DATA} * ${EXAMPLESDIR}/camltk/images
-	@cd ${WRKSRC}/otherlibs/labltk/examples_camltk; \
-		${INSTALL_DATA} [A-Za-hj-z]* ${EXAMPLESDIR}/camltk
+	@${CP} -r ${WRKSRC}/otherlibs/labltk/examples_camltk/* \
+		${EXAMPLESDIR}/camltk
 .endif
 .for prog in camlp4o.opt camlp4r.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
 		ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
