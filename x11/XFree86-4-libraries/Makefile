@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
@@ -25,7 +25,7 @@ PATCHFILES=		4.2.0-xlib-i18n-module.patch \
 			4.2.0-libGLU-bad-extern.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
@@ -97,6 +97,7 @@ post-patch:
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
 
 post-install:
 	@${MKHTMLINDEX} ${X11BASE}/lib/X11/doc/html

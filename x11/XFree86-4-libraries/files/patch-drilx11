@@ -1,0 +1,99 @@
+--- lib/GL/mesa/src/drv/ffb/Imakefile.orig	Sat Jun  8 16:02:28 2002
++++ lib/GL/mesa/src/drv/ffb/Imakefile	Sat Jun  8 16:02:29 2002
+@@ -38,7 +38,7 @@
+ 	 SRCS = $(FFBSRCS)
+ 	 OBJS = $(FFBOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/gamma/Imakefile.orig	Sat Jun  8 16:01:51 2002
++++ lib/GL/mesa/src/drv/gamma/Imakefile	Sat Jun  8 16:01:53 2002
+@@ -46,7 +46,7 @@
+          OBJS = $(LOWOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(GAMMAOBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/i810/Imakefile.orig	Sat Jun  8 16:00:38 2002
++++ lib/GL/mesa/src/drv/i810/Imakefile	Sat Jun  8 16:01:32 2002
+@@ -46,7 +46,7 @@
+          OBJS = $(LOOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(COMMONOBJS) $(I810OBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/i830/Imakefile.orig	Sat Jun  8 16:00:43 2002
++++ lib/GL/mesa/src/drv/i830/Imakefile	Sat Jun  8 16:01:31 2002
+@@ -46,7 +46,7 @@
+          OBJS = $(LOOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(COMMONOBJS) $(I830OBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/mga/Imakefile.orig	Sat Jun  8 16:00:31 2002
++++ lib/GL/mesa/src/drv/mga/Imakefile	Sat Jun  8 16:01:29 2002
+@@ -47,7 +47,7 @@
+          OBJS = $(LOOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(COMMONOBJS) $(MGAOBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/r128/Imakefile.orig	Sat Jun  8 16:00:24 2002
++++ lib/GL/mesa/src/drv/r128/Imakefile	Sat Jun  8 16:01:34 2002
+@@ -47,7 +47,7 @@
+          OBJS = $(LOOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(COMMONOBJS) $(R128OBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/radeon/Imakefile.orig	Sat Jun  8 15:59:52 2002
++++ lib/GL/mesa/src/drv/radeon/Imakefile	Sat Jun  8 15:59:54 2002
+@@ -47,7 +47,7 @@
+          OBJS = $(LOOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(COMMONOBJS) $(RADEONOBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/sis/Imakefile.orig	Sat Jun  8 16:02:40 2002
++++ lib/GL/mesa/src/drv/sis/Imakefile	Sat Jun  8 16:02:45 2002
+@@ -53,7 +53,7 @@
+          OBJS = $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(SISOBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 
+--- lib/GL/mesa/src/drv/tdfx/Imakefile.orig	Sat Jun  8 16:00:17 2002
++++ lib/GL/mesa/src/drv/tdfx/Imakefile	Sat Jun  8 16:01:12 2002
+@@ -47,7 +47,7 @@
+          OBJS = $(LOOBJS) $(DRIOBJS) $(DRMOBJS) $(COREMESAOBJS) \
+ 		$(MESA_ASM_OBJS) $(TDFXOBJS) $(HIOBJS)
+ 
+-REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB)
++REQUIREDLIBS = MathLibrary $(LDPRELIB) $(GLXLIB) $(XONLYLIB)
+ 
+ #include <Library.tmpl>
+ 

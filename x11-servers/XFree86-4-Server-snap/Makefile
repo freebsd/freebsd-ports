@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
@@ -19,7 +19,7 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 IGNOREFILES=	Wraphelp.c
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
@@ -37,8 +37,7 @@ SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			BuildXF86DRI=${BuildXF86DRI} \
 			HasGlide3=${HasGlide3} \
 			HaveMatroxHal=${HaveMatroxHal}
-MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man WORLDOPTS=
-MAKE_ARGS=		WORLDOPTS=
+MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET=		FreeBSDPortsInstall  FreeBSDPortsInstall.man
 MAN1=			XFree86.1 \
@@ -65,6 +64,7 @@ MAN4=			mga.4 \
 			tdfx.4 \
 			glint.4 \
 			s3virge.4 \
+			r128.4 \
 			rendition.4 \
 			savage.4 \
 			nv.4 \
@@ -114,7 +114,6 @@ PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
 MAN1+=		scanpci.1
-MAN4+=		vmware.4
 .endif
 
 .if ${ARCH} == i386
@@ -129,11 +128,11 @@ MAN4+=		apm.4 \
 		i740.4 \
 		i810.4 \
 		neomagic.4 \
-		r128.4 \
 		sis.4 \
 		trident.4 \
 		tseng.4 \
-		vesa.4
+		vesa.4 \
+		vmware.4
 .else
 PLIST_SUB+=	I386:="@comment "
 .endif
@@ -198,6 +197,7 @@ PLIST_SUB+=		MATROX="@comment "
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
 
 post-build:
 	@${RM} -f ${PKGMESSAGE}
