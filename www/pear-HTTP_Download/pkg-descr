@@ -1,0 +1,13 @@
+Provides an interface to easily send hidden files or any arbitrary data to
+HTTP clients. HTTP_Download can gain its data from variables, files or
+stream resources.
+
+It features:
+- Basic caching capabilities
+- Basic throttling mechanism
+- On-the-fly gzip-compression
+- Ranges (partial downloads and resuming)
+- Delivery of on-the-fly generated archives through Archive_Tar and
+Archive_Zip
+
+WWW: http://pear.php.net/package/HTTP_Download/
