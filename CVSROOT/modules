@@ -8460,6 +8460,7 @@ zh-abiword		ports/chinese/abiword
 zh-acroread-chsfont	ports/chinese/acroread-chsfont
 zh-acroread-chtfont	ports/chinese/acroread-chtfont
 zh-arphicttf	ports/chinese/arphicttf
+zh-aterm	ports/chinese/aterm
 zh-auto-tw-l10n	ports/chinese/auto-tw-l10n
 zh-autoconvert	ports/chinese/autoconvert
 zh-bg5pdf	ports/chinese/bg5pdf
