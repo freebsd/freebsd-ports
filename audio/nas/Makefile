@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nas
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://radscan.com/nas/
 EXTRACT_SUFX=	.src.tar.gz
@@ -20,10 +20,6 @@ ALL_TARGET=	World
 XMKMF=		xmkmf
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.include "${.CURDIR}/Makefile.man"
-
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
 		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
@@ -31,4 +27,5 @@ post-patch:
 post-install:
 	@${SED} -e 's:/usr/X11R6:${PREFIX}:g' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include "Makefile.man"
+.include <bsd.port.mk>

@@ -1,6 +1,15 @@
---- ./server/dda/voxware/auvoxware.c.orig	Sun Apr 29 17:11:08 2001
-+++ ./server/dda/voxware/auvoxware.c	Sat Sep  7 17:02:34 2002
-@@ -154,16 +154,11 @@
+--- server/dda/voxware/auvoxware.c.orig	Thu Jul 25 09:42:28 2002
++++ server/dda/voxware/auvoxware.c	Sat Oct 26 02:54:26 2002
+@@ -133,7 +133,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#ifndef SVR4
++#if !defined(SVR4) && !defined(__FreeBSD__)
+ #include <getopt.h>
+ #endif
+ #include <sys/types.h>
+@@ -171,16 +171,11 @@
  #include <sys/param.h>
  #include <assert.h>
  
@@ -21,38 +30,38 @@
  #endif
  
  #include <audio/audio.h>
-@@ -624,7 +619,11 @@
- 
+@@ -659,7 +654,11 @@
      if(sndStatOut.fd == -1)
      {
-+#ifdef __FreeBSD__
-+       while ((sndStatOut.fd = open(sndStatOut.device, sndStatOut.howToOpen, 0666)) == -1 && wait)
+        while ((sndStatOut.fd = open(sndStatOut.device, 
++#if defined(__FreeBSD__)
++				    sndStatOut.howToOpen|extramode, 
 +#else
-        while ((sndStatOut.fd = open(sndStatOut.device, sndStatOut.howToOpen|O_SYNC, 0666)) == -1 && wait)
+ 				    sndStatOut.howToOpen|O_SYNC|extramode, 
 +#endif
+ 				    0666)) == -1 && wait)
         {
             osLogMsg("openDevice: waiting on output device\n");
-            sleep(1);
-@@ -1269,6 +1268,11 @@
+@@ -1310,6 +1309,11 @@
  /*
   * Setup soundcard at maximum audio quality.
   */
 +
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__)
 +#define NO_16_BIT_SAMPLING
 +#endif
 +
  static void setupSoundcard(sndStatPtr)
  SndStat* sndStatPtr;
  {
-@@ -1425,7 +1429,11 @@
- 	  osLogMsg("openDevice OUT %s mode %d\n", 
+@@ -1472,7 +1476,11 @@
  		   sndStatOut.device, sndStatOut.howToOpen);
  	
-+#ifdef __FreeBSD__
-+	if ((fd = open(sndStatOut.device, sndStatOut.howToOpen, 0)) == -1)
+ 	if ((fd = open(sndStatOut.device, 
++#if defined(__FreeBSD__)
++		       sndStatOut.howToOpen|extramode, 0)) == -1)
 +#else
- 	if ((fd = open(sndStatOut.device, sndStatOut.howToOpen|O_SYNC, 0)) == -1)
+ 		       sndStatOut.howToOpen|O_SYNC|extramode, 0)) == -1)
 +#endif
  	  {
  	    UNIDENTMSG;
