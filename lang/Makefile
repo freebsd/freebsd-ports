@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.128 1999/04/21 05:56:24 nectar Exp $
+# $Id: Makefile,v 1.129 1999/04/21 07:49:39 obrien Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -22,6 +22,8 @@
     SUBDIR += eperl
     SUBDIR += erlang
     SUBDIR += expect
+    SUBDIR += f2c
+    SUBDIR += f77
     SUBDIR += forth
     SUBDIR += g77
     SUBDIR += gawk
