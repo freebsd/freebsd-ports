@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edict-sdic
-PORTVERSION=	20000622
+PORTVERSION=	20010615
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
