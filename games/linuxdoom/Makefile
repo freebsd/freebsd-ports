@@ -3,7 +3,7 @@
 # Date created:         Mon Dec  9 09:42:37 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/11 20:54:57 erich Exp $
 #
 
 DISTNAME=	doom-1.8
@@ -11,7 +11,6 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/doom
 DISTFILES=	linux-doom-1.8.tar.gz musserver.tgz smooth-joystick4doom.tgz
-EXTRACT_SUFX=	.tgz
 
 MANINAINER=	erich@FreeBSD.org
 
