@@ -127,6 +127,7 @@
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += cook
+    SUBDIR += cpan-upload
     SUBDIR += cppadvio
     SUBDIR += cppunit
     SUBDIR += cproto
