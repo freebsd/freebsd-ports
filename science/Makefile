@@ -3,7 +3,7 @@
 
     SUBDIR += bblimage
     SUBDIR += chemtool
-    SUBDIR += chemtool-devel
+#    SUBDIR += chemtool-devel
     SUBDIR += clhep
     SUBDIR += euler
     SUBDIR += flounder
