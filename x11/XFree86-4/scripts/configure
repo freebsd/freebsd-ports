@@ -73,6 +73,7 @@ echo "#undef BuildFontServer" >>$F
 echo "#define  BuildFontServer $answ" >>$F
 echo "#undef InstallFSConfig" >>$F
 echo "#define   InstallFSConfig $answ" >>$F
+echo "#define   BuildCyrillicFonts NO" >>$F
 
 cat <<'END'
  Do you want to Build Fonts (Usually you only want to build and install
