@@ -45,6 +45,7 @@
     SUBDIR += py-PyGreSQL
     SUBDIR += rdb
     SUBDIR += ruby-gdbm
+    SUBDIR += ruby14-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-postgres
     SUBDIR += sqsh
