@@ -302,6 +302,7 @@
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-IC-Radius
     SUBDIR += p5-IO-Interface
+    SUBDIR += p5-JUNOScript
     SUBDIR += p5-Mon
     SUBDIR += p5-Net
     SUBDIR += p5-Net-CIDR
