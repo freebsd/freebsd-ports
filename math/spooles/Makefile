@@ -76,7 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/MPI/*.h ${PREFIX}/include/spooles/MPI
 .else
 	${MKDIR} ${PREFIX}/include/spooles/MT
-	${INSTALL_DATA} ${WRKSRC}/MPI/*.h ${PREFIX}/include/spooles/MT
+	${INSTALL_DATA} ${WRKSRC}/MT/*.h ${PREFIX}/include/spooles/MT
 .endif
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/spooles/
 .for i in A2 BPG Chv ChvList ChvManager Coords DenseMtx DSTree Drand \
