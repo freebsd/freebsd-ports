@@ -151,6 +151,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
