@@ -267,6 +267,7 @@
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-Daemon
     SUBDIR += p5-Net-IPv4Addr
+    SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-Jabber
     SUBDIR += p5-Net-Netmask
     SUBDIR += p5-Net-Patricia
