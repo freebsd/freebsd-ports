@@ -8,10 +8,7 @@
 PORTNAME=	eclipse-examples
 PORTVERSION=	2.1.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download2.eclipse.org/downloads/drops/%SUBDIR%/ \
-		http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/%SUBDIR%/ \
-		ftp://gd.tuwien.ac.at/softeng/eclipse/%SUBDIR%/ \
-		ftp://ftp.tu-clausthal.de/pub/eclipse/downloads/drops/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-2.1.1-200306271545
 DIST_SUBDIR=	eclipse
 
