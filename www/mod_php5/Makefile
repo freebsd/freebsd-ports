@@ -55,12 +55,14 @@ MAKE_ENV=	STANDALONE="${STANDALONE}"
 .if defined(WITH_APACHE2)
 CONFIGURE_ARGS=	--with-apxs2=${PREFIX}/sbin/apxs \
 		--with-tsrm-pth
-PLIST_SUB=	MOD_DIR=libexec/apache2
+PLIST_SUB=	MOD_DIR=libexec/apache2 \
+		NON=
 .else
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs
+PLIST_SUB=	MOD_DIR=libexec/apache \
+		NON=non-
 .endif
 CONFIGURE_ARGS+=--with-config-file-path=${PREFIX}/etc
-PLIST_SUB=	MOD_DIR=libexec/apache
 .endif
 
 CONFIGURE_ARGS+=--enable-versioning \
