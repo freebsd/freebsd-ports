@@ -2,13 +2,13 @@
 bin/ctags
 bin/b2m
 bin/rcs-checkin
-bin/emacs-19.25
+bin/emacs-19.26
 @exec ln -s %D/%F %B/emacs
 @unexec rm %B/emacs
 bin/etags
 bin/emacsclient
 lib/emacs/site-lisp
-lib/emacs/19.25
+lib/emacs/19.26
 man/man1/emacs.1
 man/man1/etags.1
 man/man1/ctags.1
