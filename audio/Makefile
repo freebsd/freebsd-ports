@@ -14,6 +14,7 @@
     SUBDIR += cdd
     SUBDIR += cdindex
     SUBDIR += cdplay
+    SUBDIR += cdplayer.app
     SUBDIR += cdrdao
     SUBDIR += cmp3
     SUBDIR += dagrab
