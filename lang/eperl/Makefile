@@ -3,7 +3,7 @@
 # Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.20 1997/12/23 09:59:20 rse Exp $
+# $Id: Makefile,v 1.21 1997/12/24 01:21:09 alex Exp $
 #
 
 DISTNAME=	eperl-2.2.9
@@ -24,6 +24,8 @@ MAINTAINER=	rse@engelschall.com
 .if defined(INSTALL_ALSO_AS_SSSL)
 RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
 .endif
+
+BROKEN=		cannot find ./etc/asc2c
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
