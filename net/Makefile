@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.249 1999/04/16 19:35:01 mharo Exp $
+# $Id: Makefile,v 1.250 1999/04/16 21:47:05 erich Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -7,7 +7,6 @@
     SUBDIR += arla
     SUBDIR += arpwatch
     SUBDIR += ascend-radius
-    SUBDIR += etherboot
     SUBDIR += bb
     SUBDIR += beroftpd
     SUBDIR += bind8
@@ -47,6 +46,7 @@
     SUBDIR += dnsutl
     SUBDIR += echoping
     SUBDIR += epic4
+#    SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += ezbounce
     SUBDIR += fping
