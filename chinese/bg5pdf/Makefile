@@ -1,0 +1,29 @@
+# New ports collection makefile for:	bg5pdf
+# Date created:		17 June 1998
+# Whom:					Shen Chuan-Hsing
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bg5pdf
+PORTVERSION=	1.0.0
+CATEGORIES=	chinese print
+MASTER_SITES=	http://students.washington.edu/cschin/bg5ps/bg5pdf/ \
+		http://freebsd.sinica.edu.tw/~statue/
+
+MAINTAINER=	statue@freebsd.sinica.edu.tw
+
+LIB_DEPENDS=    pdf.3:${PORTSDIR}/print/pdflib3
+
+USE_PYTHON=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+do-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bg5pdf ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bg5pdflib.so ${PREFIX}/lib/python2.1/site-packages
+	${INSTALL_DATA} ${WRKSRC}/test.big5 ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test.big5.pdf ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/genTest.py ${EXAMPLESDIR}
+
+.include <bsd.port.mk>

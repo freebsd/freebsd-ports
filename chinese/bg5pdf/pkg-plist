@@ -1,0 +1,6 @@
+bin/bg5pdf
+lib/%%PYTHON_VERSION%%/site-packages/bg5pdflib.so
+share/examples/bg5pdf/test.big5
+share/examples/bg5pdf/test.big5.pdf
+share/examples/bg5pdf/genTest.py
+@dirrm share/examples/bg5pdf
