@@ -1,0 +1,25 @@
+o #iZ XXXX
+o CWS nativefixer3
+http://porting.openoffice.org/servlets/ReadMsg?list=dev&msgNo=15066
+
+Index: scp2/source/ooo/file_ooo.scp
+===================================================================
+RCS file: /cvs/installation/scp2/source/ooo/file_ooo.scp,v
+retrieving revision 1.66
+diff -u -r1.66 file_ooo.scp
+--- scp2/source/ooo/file_ooo.scp	21 Jan 2005 12:14:20 -0000	1.66
++++ scp2/source/ooo/file_ooo.scp	28 Jan 2005 08:29:31 -0000
+@@ -371,13 +371,6 @@
+     Styles = (PACKED);
+ End
+ 
+-File gid_File_Bin_Gnome_Set_Default_Application
+-    BIN_FILE_BODY;
+-    Dir = gid_Dir_Program;
+-    Name = "gnome-set-default-application";
+-    Styles = (PACKED);
+-End
+-
+ #endif
+ 
+ File gid_File_Bin_Senddoc
