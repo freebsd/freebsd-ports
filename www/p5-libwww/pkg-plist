@@ -5,6 +5,7 @@ bin/lwp-mirror
 bin/lwp-request
 bin/lwp-rget
 bin/lwp-download
+lib/perl5/man/man3/Bundle::LWP.3.gz
 lib/perl5/man/man3/File::CounterFile.3.gz
 lib/perl5/man/man3/File::Listing.3.gz
 lib/perl5/man/man3/Font::AFM.3.gz
@@ -19,14 +20,15 @@ lib/perl5/man/man3/HTML::LinkExtor.3.gz
 lib/perl5/man/man3/HTML::Parse.3.gz
 lib/perl5/man/man3/HTML::Parser.3.gz
 lib/perl5/man/man3/HTML::TreeBuilder.3.gz
+lib/perl5/man/man3/HTTP::Daemon.3.gz
 lib/perl5/man/man3/HTTP::Date.3.gz
 lib/perl5/man/man3/HTTP::Headers.3.gz
 lib/perl5/man/man3/HTTP::Message.3.gz
 lib/perl5/man/man3/HTTP::Negotiate.3.gz
 lib/perl5/man/man3/HTTP::Request.3.gz
 lib/perl5/man/man3/HTTP::Response.3.gz
+lib/perl5/man/man3/HTTP::Request::Common.3.gz
 lib/perl5/man/man3/HTTP::Status.3.gz
-lib/perl5/man/man3/HTTP::Daemon.3.gz
 lib/perl5/man/man3/LWP.3.gz
 lib/perl5/man/man3/LWP::Debug.3.gz
 lib/perl5/man/man3/LWP::IO.3.gz
@@ -38,13 +40,12 @@ lib/perl5/man/man3/LWP::Simple.3.gz
 lib/perl5/man/man3/LWP::Socket.3.gz
 lib/perl5/man/man3/LWP::TkIO.3.gz
 lib/perl5/man/man3/LWP::UserAgent.3.gz
-lib/perl5/man/man3/MIME::Base64.3.gz
-lib/perl5/man/man3/MIME::QuotedPrint.3.gz
 lib/perl5/man/man3/URI::Escape.3.gz
 lib/perl5/man/man3/URI::URL.3.gz
 lib/perl5/man/man3/WWW::RobotRules.3.gz
 lib/perl5/man/man3/WWW::RobotRules::AnyDBM_File.3.gz
 lib/perl5/man/man3/lwpcook.3.gz
+lib/perl5/site_perl/Bundle/LWP.pm
 lib/perl5/site_perl/File/CounterFile.pm
 lib/perl5/site_perl/File/Listing.pm
 lib/perl5/site_perl/Font/AFM.pm
@@ -72,34 +73,33 @@ lib/perl5/site_perl/HTML/Parse.pm
 lib/perl5/site_perl/HTML/Parser.pm
 lib/perl5/site_perl/HTML/TreeBuilder.pm
 lib/perl5/site_perl/HTTP/Date.pm
+lib/perl5/site_perl/HTTP/Daemon.pm
 lib/perl5/site_perl/HTTP/Headers.pm
 lib/perl5/site_perl/HTTP/Message.pm
 lib/perl5/site_perl/HTTP/Negotiate.pm
 lib/perl5/site_perl/HTTP/Request.pm
+lib/perl5/site_perl/HTTP/Request/Common.pm
 lib/perl5/site_perl/HTTP/Response.pm
 lib/perl5/site_perl/HTTP/Status.pm
-lib/perl5/site_perl/HTTP/Daemon.pm
 lib/perl5/site_perl/LWP.pm
 lib/perl5/site_perl/LWP/Debug.pm
 lib/perl5/site_perl/LWP/IO.pm
 lib/perl5/site_perl/LWP/MediaTypes.pm
 lib/perl5/site_perl/LWP/MemberMixin.pm
 lib/perl5/site_perl/LWP/Protocol.pm
+lib/perl5/site_perl/LWP/Protocol/data.pm
 lib/perl5/site_perl/LWP/Protocol/file.pm
 lib/perl5/site_perl/LWP/Protocol/ftp.pm
 lib/perl5/site_perl/LWP/Protocol/gopher.pm
 lib/perl5/site_perl/LWP/Protocol/http.pm
 lib/perl5/site_perl/LWP/Protocol/mailto.pm
 lib/perl5/site_perl/LWP/Protocol/nntp.pm
-lib/perl5/site_perl/LWP/Protocol/data.pm
 lib/perl5/site_perl/LWP/RobotUA.pm
 lib/perl5/site_perl/LWP/Simple.pm
 lib/perl5/site_perl/LWP/Socket.pm
 lib/perl5/site_perl/LWP/TkIO.pm
 lib/perl5/site_perl/LWP/UserAgent.pm
 lib/perl5/site_perl/LWP/media.types
-lib/perl5/site_perl/MIME/Base64.pm
-lib/perl5/site_perl/MIME/QuotedPrint.pm
 lib/perl5/site_perl/URI/Escape.pm
 lib/perl5/site_perl/URI/URL.pm
 lib/perl5/site_perl/URI/URL/_generic.pm
@@ -177,6 +177,7 @@ lib/perl5/site_perl/auto/URI/URL/strict.al
 lib/perl5/site_perl/auto/URI/URL/unescape.al
 lib/perl5/site_perl/auto/URI/URL/unsafe.al
 lib/perl5/site_perl/lwpcook.pod
+man/man1/lwp-download.1.gz
 man/man1/lwp-mirror.1.gz
 man/man1/lwp-request.1.gz
 man/man1/lwp-rget.1.gz
@@ -187,7 +188,6 @@ lib/perl5/site_perl/i386-freebsd/auto/libwww-perl/.packlist
 @dirrm lib/perl5/site_perl/HTTP
 @dirrm lib/perl5/site_perl/LWP/Protocol
 @dirrm lib/perl5/site_perl/LWP
-@dirrm lib/perl5/site_perl/MIME
 @dirrm lib/perl5/site_perl/URI/URL
 @dirrm lib/perl5/site_perl/URI
 @dirrm lib/perl5/site_perl/WWW/RobotRules
