@@ -1,0 +1,30 @@
+--- ../picturebook.old/capture.h	Mon Dec 25 19:01:43 2000
++++ capture.h	Mon Dec 25 19:03:17 2000
+@@ -21,15 +21,28 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <errno.h>
++#ifdef LINUX
+ #include <sys/io.h>
++#endif
+ #include <sys/mman.h>
+ #include <dirent.h>
+ #include <ctype.h>
++#ifdef LINUX
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include <signal.h>
++#ifdef HAVE_GETOPT_H
+ #include <getopt.h>
++#endif
++#ifdef LINUX
+ #include <linux/pci.h>
++#else ifdef __FreeBSD__
++#include <sys/pciio.h>
++#include "pci.h" /*This is taken from Linux kernel*/
++#define O_SYNC O_FSYNC
++#include <sys/stat.h>
++#endif
+ #include <sys/time.h>
+ #include "mchip.h"

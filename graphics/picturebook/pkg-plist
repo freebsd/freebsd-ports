@@ -1,0 +1,4 @@
+bin/capture
+share/doc/picturebook/README
+share/doc/picturebook/README.FreeBSD
+@dirrm share/doc/picturebook

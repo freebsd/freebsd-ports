@@ -1,0 +1,89 @@
+diff -c command.c picturebook.fbsd/command.c
+*** command.c	Wed Aug  2 08:15:04 2000
+--- picturebook.fbsd/command.c	Mon Jan  1 06:16:22 2001
+***************
+*** 112,118 ****
+  
+  	avi_start(fd);
+  
+! 	printf("capturing %3.1f seconds to %s\n", captime, fname);
+  
+  	mchip_set_framerate(framerate);
+  
+--- 112,118 ----
+  
+  	avi_start(fd);
+  
+! 	fprintf(stderr, "capturing %3.1f seconds to %s\n", captime, fname);
+  
+  	mchip_set_framerate(framerate);
+  
+***************
+*** 123,133 ****
+  		double t1 = timer_end();
+  		n = mchip_cont_compression_read(buf, sizeof(buf));
+  		avi_add(fd, buf, n);
+! 		printf("."); fflush(stdout); 
+  		frame_delay(framerate, t1);
+  	}
+  	avi_end(fd, mchip_hsize(), mchip_vsize(), i/timer_end());
+! 	printf("\ncaptured %d frames\n", i);
+  	close(fd);
+  }
+  
+--- 123,133 ----
+  		double t1 = timer_end();
+  		n = mchip_cont_compression_read(buf, sizeof(buf));
+  		avi_add(fd, buf, n);
+! 		fprintf(stderr, "."); fflush(stdout); 
+  		frame_delay(framerate, t1);
+  	}
+  	avi_end(fd, mchip_hsize(), mchip_vsize(), i/timer_end());
+! 	fprintf(stderr, "\ncaptured %d frames\n", i);
+  	close(fd);
+  }
+  
+***************
+*** 146,152 ****
+  		f = find_next_file("snap.%d.jpg");
+  		write_file(f, img, n);
+  		display_image(f);
+! 		printf("captured to %s\n", f);
+  		while (spic_capture_pressed()) sdelay(1);
+  	} else {
+  		char *f;
+--- 146,152 ----
+  		f = find_next_file("snap.%d.jpg");
+  		write_file(f, img, n);
+  		display_image(f);
+! 		fprintf(stderr, "captured to %s\n", f);
+  		while (spic_capture_pressed()) sdelay(1);
+  	} else {
+  		char *f;
+***************
+*** 171,182 ****
+  				timer_start();
+  			}
+  			frames++;
+! 			printf("."); fflush(stdout);
+  		} while (spic_capture_pressed());
+  		avi_end(fd, mchip_hsize(), mchip_vsize(), 
+  			frames/timer_end());
+  		close(fd);
+! 		printf("\ncaptured %d frames to %s\n", frames, f);
+  		display_image(NULL);
+  	}
+  }
+--- 171,182 ----
+  				timer_start();
+  			}
+  			frames++;
+! 			fprintf(stderr, "."); fflush(stdout);
+  		} while (spic_capture_pressed());
+  		avi_end(fd, mchip_hsize(), mchip_vsize(), 
+  			frames/timer_end());
+  		close(fd);
+! 		fprintf(stderr, "\ncaptured %d frames to %s\n", frames, f);
+  		display_image(NULL);
+  	}
+  }
