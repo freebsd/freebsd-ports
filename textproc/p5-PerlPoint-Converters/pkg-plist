@@ -253,6 +253,25 @@ bin/pp2latex
 %%PORTDOCS%%%%DOCSDIR%%/gen_depends
 %%PORTDOCS%%%%DOCSDIR%%/getting-started.cfg
 %%PORTDOCS%%%%DOCSDIR%%/getting-started.pp
+%%PORTDOCS%%%%DOCSDIR%%/images/Logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/book.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/dot01.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/dot2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/down.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/first.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/gradient.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/image.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/info.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/karawane-50.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/last.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/o_book.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/pp-src-stream-e.png
+%%PORTDOCS%%%%DOCSDIR%%/images/pp-stream-result-e.png
+%%PORTDOCS%%%%DOCSDIR%%/images/prev.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sqr_blue1.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sqr_blue2.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/up.gif
 %%PORTDOCS%%%%DOCSDIR%%/parser-active-contents.pp
 %%PORTDOCS%%%%DOCSDIR%%/parser-faq.cfg
 %%PORTDOCS%%%%DOCSDIR%%/parser-faq.pp
@@ -263,6 +282,31 @@ bin/pp2latex
 %%PORTDOCS%%%%DOCSDIR%%/pp2html-ref-options.pp
 %%PORTDOCS%%%%DOCSDIR%%/pp2html-ref.cfg
 %%PORTDOCS%%%%DOCSDIR%%/pp2html-ref.pp
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/applet_src/FolderItem.class
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/applet_src/Item.class
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/applet_src/ItemAction.class
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/applet_src/ScrPane.class
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/applet_src/TreeApp.class
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/applet_src/TreeControl.class
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/big_blue/big_blue-bot.tpl
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/big_blue/big_blue-top.tpl
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/big_blue/big_blue.cfg
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/big_blue/karawane-50.gif
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/Logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/orange_line.png
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/orange_slides-bot.htm
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/orange_slides-frm.tpl
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/orange_slides-nav.tpl
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/orange_slides-top.htm
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/orange_slides.cfg
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/sqr_orange1.png
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/orange_slides/sqr_orange2.png
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/pp_book/Logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/pp_book/pp_book-bot.htm
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/pp_book/pp_book-frm.tpl
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/pp_book/pp_book-nav.tpl
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/pp_book/pp_book-top.htm
+%%PORTDOCS%%%%DOCSDIR%%/pp2html_styles/pp_book/pp_book.cfg
 %%PORTDOCS%%%%DOCSDIR%%/ppdoc.pp
 %%PORTDOCS%%%%DOCSDIR%%/tagdoc-example.pp
 %%PORTDOCS%%%%DOCSDIR%%/tagdoc-supported.pp
@@ -296,6 +340,12 @@ bin/pp2latex
 %%PORTDOCS%%%%DOCSDIR%%/writing-converters.cfg
 %%PORTDOCS%%%%DOCSDIR%%/writing-converters.pp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tags
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pp2html_styles/pp_book
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pp2html_styles/orange_slides
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pp2html_styles/big_blue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pp2html_styles/applet_src
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pp2html_styles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/Portability
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/Misc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq-pp2html/Layout

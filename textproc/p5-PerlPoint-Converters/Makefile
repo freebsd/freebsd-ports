@@ -7,6 +7,7 @@
 
 PORTNAME=	PerlPoint-Converters
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PerlPoint
@@ -28,10 +29,15 @@ MAN3=		Bundle::PerlPoint.3 \
 		PerlPoint::Tags::LaTeX.3
 
 .if !defined(NOPORTDOCS)
+post-patch:
+	@cd ${WRKSRC}; ${MV} pp2html_styles images doc ; ${LN} -s doc/pp2html_styles ; ${LN} -s doc/images
+	@${PERL} -pi -e 's!../(images|pp2html_styles)!$$1!g' ${WRKSRC}/doc/*.cfg
+
 post-build:
 	@cd ${WRKSRC}/doc; make
 
 post-install:
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
 .endif
 

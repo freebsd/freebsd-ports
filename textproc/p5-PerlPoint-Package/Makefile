@@ -7,6 +7,7 @@
 
 PORTNAME=	PerlPoint-Package
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PerlPoint
@@ -33,8 +34,11 @@ MAN3=		PerlPoint::Anchors.3 \
 
 .if !defined(NOPORTDOCS)
 post-install:
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
 	@cd ${WRKSRC}; ${FIND} utilities | ${CPIO} -padm ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/demo; ${FIND} . | ${CPIO} -padm ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.pre.mk>
