@@ -1,9 +1,9 @@
 bin/wmxmms
 bin/xmms
 bin/xmms-config
-%%GNOME:%%bin/gnomexmms
-%%GNOME:%%etc/CORBA/servers/gnomexmms.gnorba
-%%GNOME:%%share/gnome/applets/Multimedia/gnomexmms.desktop
+%%PANEL:%%bin/gnomexmms
+%%PANEL:%%etc/CORBA/servers/gnomexmms.gnorba
+%%PANEL:%%share/gnome/applets/Multimedia/gnomexmms.desktop
 include/xmms/configfile.h
 include/xmms/dirbrowser.h
 include/xmms/formatter.h

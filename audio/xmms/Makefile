@@ -76,10 +76,10 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gnome
 .else
 PKGNAMESUFFIX=	-gnome
 .endif
-PLIST_SUB+=	DATADIR="share/gnome"
+PLIST_SUB+=	DATADIR="share/gnome" PANEL:=""
 .else
 CONFIGURE_ARGS+=	--without-gnome
-PLIST_SUB+=	DATADIR="share"
+PLIST_SUB+=	DATADIR="share" PANEL:="@comment "
 .endif
 
 .if ${MACHINE_ARCH} != "i386"
