@@ -28,6 +28,7 @@
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
     SUBDIR += p5-Convert-Morse
+    SUBDIR += p5-Convert-PEM
     SUBDIR += p5-Convert-Recode
     SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
