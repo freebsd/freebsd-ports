@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pyxml
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		PyXML-${PORTVERSION}
 
-MAINTAINER=		wjv@FreeBSD.org
+MAINTAINER=		mike@skew.org
 COMMENT=	The Python XML package, including parser, SAX, DOM, and Expat
 
 USE_PYTHON=		yes

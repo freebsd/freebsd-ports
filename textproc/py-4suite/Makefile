@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	4Suite-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	mike@skew.org
 COMMENT=	A collection of Python tools for XML processing and object database management
 
 IGNORE=		has a broken pkg-plist that removes dozens of files not installed by this port.
