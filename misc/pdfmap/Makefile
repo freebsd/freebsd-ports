@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pdfmap
-PORTVERSION=	1.50
+PORTVERSION=	1.60
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,17 +16,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate maps in PDF format and place clickable objects on them
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/jaxml.py:${PORTSDIR}/textproc/py-jaxml \
-		${PYTHON_SITELIBDIR}/reportlab/pdfgen/canvas.py:${PORTSDIR}/print/py-reportlab \
 		${PYTHON_SITELIBDIR}/PIL/Image.py:${PORTSDIR}/graphics/py-imaging
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/pdfgen/canvas.py:${PORTSDIR}/print/py-reportlab
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-post-install:
-	@${MV} -f ${PREFIX}/bin/pdfmap.py ${PREFIX}/bin/pdfmap
+DOCS=		CREDITS NEWS README TODO doc/*.html
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/pdfmap.py ${PREFIX}/bin/pdfmap
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

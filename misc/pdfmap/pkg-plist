@@ -1,18 +1,22 @@
+@comment $FreeBSD$
 bin/pdfmap
-%%PORTDOCS%%share/doc/pdfmap/index.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Circle.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Cross.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Diamond.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Ellipse.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Image.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_MapBackground.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_MapObject.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_PDFMap.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_PDFMapCanvas.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_PDFMapError.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Rectangle.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Square.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Star.py.html
-%%PORTDOCS%%share/doc/pdfmap/pdfmap_Triangle.py.html
-%%PORTDOCS%%@dirrm share/doc/pdfmap
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Circle.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Cross.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Diamond.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Ellipse.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Image.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_MapBackground.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_MapObject.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_PDFMap.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_PDFMapError.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Rectangle.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Square.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Star.py.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Triangle.py.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
