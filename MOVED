@@ -726,3 +726,4 @@ cad/metis-edf|math/metis-edf|2003-12-09|moved to math category
 textproc/ruby-rdoc||2003-12-15|integrated into ruby18 and ruby16-shim-ruby18
 mail/mailscanner|mail/MailScanner|2003-12-16|renamed port to MailScanner
 net/py-soap||2003-12-16|author no longer distributes the module
+net/roadrunner||2003-12-19|Project discontinued, distfiles removed
