@@ -25,16 +25,16 @@ case $2 in
 	echo "    ACTUAL locations of cache \"spool\", logfiles, pidfile!"
 	tput me
 	if [ -z "${PACKAGE_BUILDING}" ]; then read skip; fi
-	chown root:wheel ${PREFIX:-/usr/local}/etc/squid/squid.conf*
-	chmod 644 ${PREFIX:-/usr/local}/etc/squid/squid.conf*
-	[ -f ${PREFIX:-/usr/local}/etc/squid/squid.conf ] || \
-		cp -fp	${PREFIX:-/usr/local}/etc/squid/squid.conf.default \
-			${PREFIX:-/usr/local}/etc/squid/squid.conf
-	[ -f ${PREFIX:-/usr/local}/etc/squid/mime.conf ] || \
-		cp -fp	${PREFIX:-/usr/local}/etc/squid/mime.conf.default \
-			${PREFIX:-/usr/local}/etc/squid/mime.conf
-	${EDITOR:-vi} ${PREFIX:-/usr/local}/etc/squid/squid.conf \
-		      ${PREFIX:-/usr/local}/etc/squid/mime.conf
+	chown root:wheel ${PREFIX}/etc/squid/squid.conf*
+	chmod 644 ${PREFIX}/etc/squid/squid.conf*
+	[ -f ${PREFIX}/etc/squid/squid.conf ] || \
+		cp -fp	${PREFIX}/etc/squid/squid.conf.default \
+			${PREFIX}/etc/squid/squid.conf
+	[ -f ${PREFIX}/etc/squid/mime.conf ] || \
+		cp -fp	${PREFIX}/etc/squid/mime.conf.default \
+			${PREFIX}/etc/squid/mime.conf
+	${EDITOR:-vi} ${PREFIX}/etc/squid/squid.conf \
+		      ${PREFIX}/etc/squid/mime.conf
 	;;
     *)
 	echo "Unexpected Argument $2!!!"
@@ -42,4 +42,3 @@ case $2 in
 	;;
 esac
 exit 0
-
