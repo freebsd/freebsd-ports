@@ -3,7 +3,7 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.12 1997/09/14 21:34:50 max Exp $
+# $Id: Makefile,v 1.13 1997/09/19 19:27:45 max Exp $
 #
 
 DISTNAME=	kon2-0.3
@@ -17,7 +17,7 @@ DISTFILES=	kon2-0.3.tar.gz k14.bdf 7x14rk.bdf
 MAINTAINER=	hideyuki@sat.t.u-tokyo.ac.jp
 
 MAN1=		kon.1
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 EXTRACT_ONLY=	kon2-0.3.tar.gz
 
 DOCDIR=		${PREFIX}/share/doc/kon2
@@ -29,7 +29,7 @@ pre-build:
 	@(cd ${WRKSRC}; ${MAKE} -f Makefile.FreeBSD config)
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/doc/kon.1 ${PREFIX}/man/ja_JP.EUC/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/kon.1 ${PREFIX}/man/ja/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/README ${WRKSRC}/doc/README.FreeBSD \
