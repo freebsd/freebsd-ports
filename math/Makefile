@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.19 1996/12/05 00:24:17 asami Exp $
+# $Id: Makefile,v 1.20 1996/12/12 03:47:50 erich Exp $
 #
 
     SUBDIR += blas
     SUBDIR += calc
     SUBDIR += calctool
     SUBDIR += eispack
+    SUBDIR += freefem
     SUBDIR += fudgit
     SUBDIR += gnuplot
     SUBDIR += hexcalc
