@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Tue Jul 20 22:32:16 2004
-+++ Makefile.PL	Tue Jul 20 22:34:25 2004
-@@ -456,14 +456,14 @@
+--- Makefile.PL.orig	Mon Oct 25 02:33:47 2004
++++ Makefile.PL	Fri Nov 26 15:29:30 2004
+@@ -466,14 +466,14 @@
  	# Guess a default value for {install} based on whether
  	# prerequisites were found.
  	#
@@ -12,19 +12,19 @@
  		      "\n");
      }
      print STDERR "\n";
--    if (not ask('Do you want to proceed with this configuration?', 1)) {
-+    if (1 or not ask('Do you want to proceed with this configuration?', 1)) {
+-    if (not ask(0, 'Do you want to proceed with this configuration?', 1)) {
++    if (1 or not ask(0, 'Do you want to proceed with this configuration?', 1)) {
  	# Need to set {install} for each component by prompting.
  	foreach my $info (@opt_components) {
  	    my $missing = $info->{missing};
-@@ -492,8 +492,8 @@
+@@ -502,8 +502,8 @@
  		die;
  	    }
  	
 -	    $info->{install} =
--	      ask($msg, not $missing);
+-	      ask(0, $msg, not $missing);
 +	    $info->{install} = 1;
-+	    #  ask($msg, not $missing);
++	    #  ask(0, $msg, not $missing);
  	}
      }
  }

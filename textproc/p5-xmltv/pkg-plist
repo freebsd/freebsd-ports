@@ -15,8 +15,8 @@ bin/tv_grab_na_icons
 bin/tv_grab_nl
 bin/tv_grab_nl_wolf
 bin/tv_grab_no
-bin/tv_grab_pt
 bin/tv_grab_se
+bin/tv_grab_uk_bleb
 bin/tv_grab_uk_rt
 bin/tv_grep
 bin/tv_imdb
@@ -27,12 +27,13 @@ bin/tv_to_latex
 bin/tv_to_text
 %%SITE_PERL%%/XMLTV.pm
 %%SITE_PERL%%/XMLTV/Ask.pm
-%%SITE_PERL%%/XMLTV/AskTerm.pm
-%%SITE_PERL%%/XMLTV/AskTk.pm
+%%SITE_PERL%%/XMLTV/Ask/Term.pm
+%%SITE_PERL%%/XMLTV/Ask/Tk.pm
 %%SITE_PERL%%/XMLTV/Clumps.pm
 %%SITE_PERL%%/XMLTV/Config_file.pm
 %%SITE_PERL%%/XMLTV/DST.pm
 %%SITE_PERL%%/XMLTV/Date.pm
+%%SITE_PERL%%/XMLTV/GUI.pm
 %%SITE_PERL%%/XMLTV/Get_nice.pm
 %%SITE_PERL%%/XMLTV/Grab_XML.pm
 %%SITE_PERL%%/XMLTV/Grep.pm
@@ -40,6 +41,10 @@ bin/tv_to_text
 %%SITE_PERL%%/XMLTV/IMDB.pm
 %%SITE_PERL%%/XMLTV/Memoize.pm
 %%SITE_PERL%%/XMLTV/Mode.pm
+%%SITE_PERL%%/XMLTV/ProgressBar.pm
+%%SITE_PERL%%/XMLTV/ProgressBar/None.pm
+%%SITE_PERL%%/XMLTV/ProgressBar/Term.pm
+%%SITE_PERL%%/XMLTV/ProgressBar/Tk.pm
 %%SITE_PERL%%/XMLTV/Summarize.pm
 %%SITE_PERL%%/XMLTV/TZ.pm
 %%SITE_PERL%%/XMLTV/Usage.pm
@@ -48,13 +53,18 @@ bin/tv_to_text
 %%DATADIR%%/tv_grab_de_tvtoday/channel_ids
 %%DATADIR%%/tv_grab_it/channel_ids
 %%DATADIR%%/tv_grab_nl/channels
+%%DATADIR%%/tv_grab_uk_bleb/icon_urls
 %%DATADIR%%/tv_grab_uk_rt/channel_ids
 %%CGIDIR%%/tv_pick.cgi
-@dirrm %%CGIDIR%%
 @dirrm %%DATADIR%%/tv_grab_uk_rt
+@dirrm %%DATADIR%%/tv_grab_uk_bleb
 @dirrm %%DATADIR%%/tv_grab_nl
 @dirrm %%DATADIR%%/tv_grab_it
 @dirrm %%DATADIR%%/tv_grab_de_tvtoday
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
+@dirrm %%SITE_PERL%%/XMLTV/ProgressBar
+@dirrm %%SITE_PERL%%/XMLTV/Ask
 @dirrm %%SITE_PERL%%/XMLTV
+@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
+@unexec rmdir %D/%%CGIDIR%% 2>/dev/null || true
