@@ -1,0 +1,29 @@
+--- Menu.C.org	Fri Nov 29 12:25:19 2002
++++ Menu.C	Fri Nov 29 12:26:57 2002
+@@ -588,7 +588,7 @@
+
+
+ CommandMenu::CommandMenu(WindowManager *manager, XEvent *e,
+-			 char* otherdir = NULL)
++			 char* otherdir)
+     : Menu(manager, e)
+ {
+     const char *home = getenv("HOME");
+--- Border.C.orig	Sat May 15 15:54:18 1999
++++ Border.C	Fri Nov 29 13:03:51 2002
+@@ -631,11 +631,10 @@
+     }
+
+     int final = rl.count();
+-    rl.append(rl.item(final-1));
+-    rl.item(final).x -= 1;
+-    rl.item(final).y += rl.item(final).height;
+-    rl.item(final).width += 1;
+-    rl.item(final).height = h - rl.item(final).height + 2;
++    rl.append(rl.item(final-1).x - 1,
++              rl.item(final-1).y + rl.item(final-1).height,
++              rl.item(final-1).width + 1,
++              h - rl.item(final-1).height + 2);
+
+     XShapeCombineRectangles(display(), m_parent, ShapeBounding,
+ 			    0, 0, rl.xrectangles(), rl.count(),
