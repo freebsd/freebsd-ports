@@ -27,6 +27,7 @@
     SUBDIR += gnomeapplets
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
+    SUBDIR += gvid
     SUBDIR += gyroscope
     SUBDIR += imwheel
     SUBDIR += kb2mb2
