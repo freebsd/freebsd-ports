@@ -26,6 +26,8 @@ LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 
 SHLIBVER?=	2
 
+NO_LATEST_LINK=	yes
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
