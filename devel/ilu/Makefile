@@ -1,15 +1,15 @@
 # New ports collection makefile for: ilu
-# Version required:     2.0alpha12
+# Version required:     2.0alpha13
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.14 1998/11/14 09:43:07 asami Exp $
+# $Id: Makefile,v 1.15 1998/11/28 00:44:32 asami Exp $
 #
 
-DISTNAME=	ilu-2.0alpha12
-PKGNAME=	ilu-2.0a12
+DISTNAME=	ilu-2.0alpha13
+PKGNAME=	ilu-2.0a13
 CATEGORIES=	devel
-MASTER_SITES=	ftp://parcftp.xerox.com/pub/ilu/2.0a12/
+MASTER_SITES=	ftp://parcftp.xerox.com/pub/ilu/2.0a13/
 
 PATCH_SITES=	http://www2.cons.org:8000/freebsd-distfiles/
 PATCHFILES=	${DISTNAME}-patches.html.gz
@@ -18,7 +18,11 @@ MAINTAINER=	cracauer@cons.org
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 
-CONFIGURE_ARGS=	--enable-http-protocol --enable-os-threads=posix
+# The FreeBSD port uses its own shared library patches. The native
+# ILU support is incomplete and disabled here.
+CONFIGURE_ARGS=	--enable-http-protocol --enable-os-threads=posix \
+		--disable-kernel-shared-library --disable-c-shared-library \
+		--disable-cplusplus-shared-libary
 
 NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes
@@ -39,13 +43,16 @@ CONFIGURE_ARGS+=	--disable-java-support
 SHLIBPATCH=files/shlib-aout.patch
 # Java support on -stable does not work (ILU runtime dumps core).
 # You might want to enable it if you know what you are doing.
-# Maybe taking -O out of patches/patch-1-cra-cflags help.
+# Taking -O out of patches/patch-1-cra-cflags may also help.
 CONFIGURE_ARGS+=	--disable-java-support
 .endif
 
 # Startup script, run at boot time
 startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.ilu.sh
+
+post-extract:
+	chmod -R u+w work
 
 post-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${SHLIBPATCH}

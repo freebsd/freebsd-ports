@@ -1,7 +1,7 @@
-*** runtime/kernel/threads.c.orig	Thu Oct  8 15:34:30 1998
---- runtime/kernel/threads.c	Thu Oct  8 15:33:58 1998
+*** ./runtime/kernel/threads.c.orig	Thu Nov  5 19:19:17 1998
+--- ./runtime/kernel/threads.c	Mon Nov 30 19:19:41 1998
 ***************
-*** 1151,1158 ****
+*** 1149,1156 ****
   	  err == ETIME
   #endif
   #if (defined(ILU_POSIX_THREADS) || defined(ILU_DCE_THREADS))
@@ -10,7 +10,7 @@
   #endif
   #ifdef ILU_WIN32_THREADS
   	  err == WAIT_TIMEOUT
---- 1151,1160 ----
+--- 1149,1158 ----
   	  err == ETIME
   #endif
   #if (defined(ILU_POSIX_THREADS) || defined(ILU_DCE_THREADS))
