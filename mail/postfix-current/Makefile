@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	20001217
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -44,79 +45,28 @@ BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
 BIN2=	postalias postcat postconf postdrop postfix \
 	postkick postlock postlog postmap postsuper sendmail
 
-.if defined(WITH_TEST)
-BIN3=   smtp-sink smtp-source
-PLIST_SUB+=		WITH_TEST=""
-.else
-PLIST_SUB+=		WITH_TEST="@comment "
-.endif
+DOCDIR=	${PREFIX}/share/doc/postfix
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
 
-.if defined(CC)
-MAKEFILEFLAGS+=	CC="${CC}"
-.endif
-
 MAKEFILEFLAGS+=	OPT="${CFLAGS}"
 
-.if defined(WITH_MYSQL)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql323-client
-POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
-POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/mysql/libmysqlclient.a -lm
-.endif
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		PREFIX="${PREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}"
 
-.if defined(WITH_LDAP)
-CONF2+=			sample-ldap.cf
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
-POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libldap.a ${PREFIX}/lib/liblber.a
-PLIST_SUB+=		WITH_LDAP=""
-.else
-PLIST_SUB+=		WITH_LDAP="@comment "
-.endif
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
 
-.if defined(WITH_PCRE)
-CONF1+=			pcre_table
-CONF2+=			sample-pcre.cf
-MAN5+=			pcre_table.5
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
-POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libpcre.a
-PLIST_SUB+=		WITH_PCRE=""
-.else
-PLIST_SUB+=		WITH_PCRE="@comment "
-.endif
-
-.if defined(WITH_SASL)
-CONF2+=			sample-auth.cf
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libsasl.a:${PORTSDIR}/security/cyrus-sasl
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libsasl.a -lpam -lcrypt
-.if exists(/usr/lib/libkrb.a)
-POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err
-.endif
-PLIST_SUB+=		WITH_SASL=""
-.else
-PLIST_SUB+=		WITH_SASL="@comment "
-.endif
-
-.if defined(WITH_TLS)
-CONF2+=			sample-tls.cf
-BIN1+=			tlsmgr
-POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl
-POSTFIX_AUXLIBS+=	-lssl -lcrypto
-DISTFILES+=		${DISTNAME}.tar.gz pfixtls-0.6.33-snap20001217-0.9.6.tar.gz
-EXTRA_PATCHES+=		${WRKDIR}/pfixtls-0.6.33-snap20001217-0.9.6/pfixtls.diff
-PATCH_STRIP=		-p1
-PLIST_SUB+=		WITH_TLS=""
-.else
-PLIST_SUB+=		WITH_TLS="@comment "
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
 post-patch:
-	(cd ${WRKSRC} && make -f Makefile.init makefiles ${MAKEFILEFLAGS} \
+	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
@@ -158,13 +108,11 @@ do-install:
 		${PREFIX}/sbin
 .endfor
 
-.if defined(WITH_TEST)
 .for file in ${BIN3}
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/src/smtpstone/${file} \
 		${PREFIX}/sbin
 .endfor
-.endif
 
 .for file in ${MAN1}
 	@${INSTALL_MAN} \
@@ -184,11 +132,11 @@ do-install:
 		${PREFIX}/man/man8
 .endfor
 
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.gif ${DOCDIR} && \
-		${ECHO_MSG} "Installed HTML documentation in ${DOCDIR}"
-.endif
+#.if !defined(NOPORTDOCS)
+#	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCDIR}
+#	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.gif ${DOCDIR} && \
+#		${ECHO_MSG} "Installed HTML documentation in ${DOCDIR}"
+#.endif
 
 	@${ECHO_MSG} '--------------------------------------------------'
 	@${ECHO_MSG} '- To replace your existing sendmail with postfix -'
@@ -197,6 +145,9 @@ do-install:
 
 post-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .include <bsd.port.pre.mk>
 
@@ -209,9 +160,9 @@ replace:
 	${ECHO} ", named ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
 	${ECHO} "#" >> /etc/mail/mailer.conf
 	${ECHO} "sendmail	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
-	${ECHO} "send-mail      ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
-	${ECHO} "mailq          ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
-	${ECHO} "newaliases     ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO} "send-mail	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO} "mailq		${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO} "newaliases	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
 .else
 	@${ECHO_MSG} "===> Replacing sendmail"
 	@if [ -e /usr/sbin/sendmail ]; then \
