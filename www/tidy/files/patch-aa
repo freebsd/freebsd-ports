@@ -1,0 +1,13 @@
+--- Makefile.orig	Sun Dec 20 13:43:23 1998
++++ Makefile	Sun Dec 20 13:45:24 1998
+@@ -1,8 +1,8 @@
+ # Makefile - for tidy
+ 
+-CC= gcc
++#CC= gcc
+ 
+-CFLAGS= -O
++CFLAGS+= -D__USE_MISC
+ 
+ OFILES=         attrs.o         istack.o        parser.o        tags.o \
+ 		entities.o      lexer.o         pprint.o        clean.o \
