@@ -55,6 +55,8 @@ MAN1=		galeon.1
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
+CONFLICTS=	galeon-*
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
