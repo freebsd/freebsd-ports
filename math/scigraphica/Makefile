@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	scigraphica
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	math gnome
 MASTER_SITES=	http://magnet.fsu.edu/~feiguin/scigraphica/src/
 DISTNAME=	sg-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/include/python1.5/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gtkextra.10:${PORTSDIR}/x11-toolkits/gtkextra \
 		xml.5:${PORTSDIR}/textproc/libxml
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		python:${PORTSDIR}/lang/python
+		python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/include/python1.5/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

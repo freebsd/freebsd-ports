@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in	2000/08/31 08:24:09	1.1
++++ pixmaps/Makefile.in	2000/08/31 08:24:43
+@@ -114,7 +114,7 @@
+ EXTRA_DIST =  	$(PIXMAPS)
+ 
+ 
+-Pixmapdir = $(datadir)/pixmaps
++Pixmapdir = $(datadir)/pixmaps/sg
+ 
+ Pixmap_DATA = $(PIXMAPS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
