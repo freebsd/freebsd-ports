@@ -1,0 +1,12 @@
+--- xfer/Makefile.orig	Thu Nov 17 19:15:22 1994
++++ xfer/Makefile	Sun Jan  9 10:21:54 2000
+@@ -28,7 +28,8 @@
+ nntpxfer.o: nntpxfer.c ../conf.h ../server/fakesyslog.h
+ 
+ install: nntpxfer
+-	cp nntpxfer ${BINDIR}
++	cp nntpxfer ${BINDIR}/nntpxfer
++	chmod 755 ${BINDIR}/nntpxfer
+ 
+ clean:
+ 	-rm -f *.o nntpxfer make*.out *.BAK *.CKP *~
