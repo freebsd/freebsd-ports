@@ -68,7 +68,6 @@ bin/chips
 bin/cirdna
 bin/codcmp
 bin/coderet
-bin/complex
 bin/compseq
 bin/cons
 bin/cpgplot
@@ -106,6 +105,7 @@ bin/garnier
 bin/geecee
 bin/getorf
 bin/helixturnhelix
+bin/hmoment
 bin/iep
 bin/infoseq
 bin/isochore
@@ -268,6 +268,7 @@ share/EMBOSS/acd/geecee.acd
 share/EMBOSS/acd/getorf.acd
 share/EMBOSS/acd/helixturnhelix.acd
 share/EMBOSS/acd/histogramtest.acd
+share/EMBOSS/acd/hmoment.acd
 share/EMBOSS/acd/iep.acd
 share/EMBOSS/acd/infoseq.acd
 share/EMBOSS/acd/isochore.acd
@@ -761,7 +762,6 @@ share/doc/EMBOSS/programs/html/codcmp.html
 share/doc/EMBOSS/programs/html/coderet.html
 share/doc/EMBOSS/programs/html/coding_regions_group.html
 share/doc/EMBOSS/programs/html/comparison_group.html
-share/doc/EMBOSS/programs/html/complex.html
 share/doc/EMBOSS/programs/html/compseq.html
 share/doc/EMBOSS/programs/html/cons.html
 share/doc/EMBOSS/programs/html/consense.html
@@ -1010,7 +1010,6 @@ share/doc/EMBOSS/programs/text/cirdna.txt
 share/doc/EMBOSS/programs/text/clique.txt
 share/doc/EMBOSS/programs/text/codcmp.txt
 share/doc/EMBOSS/programs/text/coderet.txt
-share/doc/EMBOSS/programs/text/complex.txt
 share/doc/EMBOSS/programs/text/compseq.txt
 share/doc/EMBOSS/programs/text/cons.txt
 share/doc/EMBOSS/programs/text/consense.txt
