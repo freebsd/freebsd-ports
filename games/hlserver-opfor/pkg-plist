@@ -1,0 +1,23 @@
+%%HLDSDIR%%gearbox/Sierra.inf
+%%HLDSDIR%%gearbox/cached.wad
+%%HLDSDIR%%gearbox/cl_dlls/client.dll
+%%HLDSDIR%%gearbox/custom.hpk
+%%HLDSDIR%%gearbox/decals.wad
+%%HLDSDIR%%gearbox/delta.lst
+%%HLDSDIR%%gearbox/dlls/opfor_i386.so
+%%HLDSDIR%%gearbox/game.cfg
+%%HLDSDIR%%gearbox/liblist.gam
+%%HLDSDIR%%gearbox/listenserver.cfg
+%%HLDSDIR%%gearbox/mapcycle.txt
+%%HLDSDIR%%gearbox/motd.txt
+%%HLDSDIR%%gearbox/op4ctf.wad
+%%HLDSDIR%%gearbox/op4ctf_credits.txt
+%%HLDSDIR%%gearbox/opfor.wad
+%%HLDSDIR%%gearbox/pak0.pak
+%%HLDSDIR%%gearbox/pldecal.wad
+%%HLDSDIR%%gearbox/readme1101.txt
+%%HLDSDIR%%gearbox/server.cfg
+%%HLDSDIR%%gearbox/titles.txt
+@dirrm %%HLDSDIR%%gearbox/cl_dlls
+@dirrm %%HLDSDIR%%gearbox/dlls
+@dirrm %%HLDSDIR%%gearbox
