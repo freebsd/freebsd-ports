@@ -1,0 +1,11 @@
+This compiler produces text adventure games that can be played
+using Infocom-compatible interpreters (such as jzip and xzip in
+the FreeBSD Ports Collection).
+
+This port normally installs HTML documentation in
+/usr/share/doc/inform.  If you would prefer another format, such
+as TeX, Postscript, or PDF, build the port with NOPORTDOCS=yes
+and obtain the manual from the FTP site.  The FTP site also
+contains example games and other resources.
+
+ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/
