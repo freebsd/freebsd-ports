@@ -84,8 +84,8 @@ MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
 		jcf-dump31.1 jv-scan31.1 jv-convert.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
-pre-fetch:
-	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
+pre-everything::
+	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified

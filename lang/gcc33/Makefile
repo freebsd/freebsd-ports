@@ -91,8 +91,8 @@ MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals g77 gcc gccint gcj fastjar
 
-pre-fetch:
-	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
+pre-everything::
+	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 .if !defined(WITH_BOUNDSCHECKING)
 	@${ECHO_MSG} "You can enable fine-grained bounds-checking support for compiled C programs"
 	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
@@ -114,7 +114,7 @@ do-fetch:
 		${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
 		if ${CVS_CMD} -d ${CVSROOT} co -D "${CVS_DATE}" gcc ; \
 		then \
-			( ${ECHO} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
+			( ${ECHO_CMD} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
 			exit ; \
 		fi ; \
 		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \

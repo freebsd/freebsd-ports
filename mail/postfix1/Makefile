@@ -71,7 +71,7 @@ pre-fetch:
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
-	${ECHO} "all: default" >> Makefile)
+	${ECHO_CMD} "all: default" >> Makefile)
 
 pre-patch:
 .for file in ${MAN1}

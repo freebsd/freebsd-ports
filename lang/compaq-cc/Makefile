@@ -46,10 +46,10 @@ USE_LINUX=		yes
 
 do-install:
 	@if [ -z "`kldstat -v | ${GREP} -E 'linux'`" ]; then \
-		${ECHO} 'AlphaLinux  mode is not enabled.\
+		${ECHO_MSG} 'AlphaLinux  mode is not enabled.\
 			Loading AlphaLinux kernel module...' | fmt; \
 		kldload linux || { \
-		${ECHO} 'The AlphaLinux kernel module could not be loaded.\
+		${ECHO_MSG} 'The AlphaLinux kernel module could not be loaded.\
 			Please manually load the module and retry.\
 			See "man linux" for details.' | fmt; \
 		${FALSE}; \

@@ -89,7 +89,7 @@ do-install-doc:
 create-libs: create-lib-sim++ create-lib-queuing
 
 create-lib-sim++:
-	@${ECHO} libsim++.a
+	@${ECHO_MSG} libsim++.a
 	@${MKDIR} ${WRKDIR}/temp
 	@(cd ${WRKDIR}/temp;                            \
 	for i in `${CAT} ${FILESDIR}/FILES-SRC-SIMPP` ; do \
@@ -98,7 +98,7 @@ create-lib-sim++:
 	done;                                           \
 	${AR} cq libsim++.a `lorder *.o | tsort -q `;   \
 	${RM} *.o )
-	@${ECHO} libsim++.so.${VERSION}
+	@${ECHO_MSG} libsim++.so.${VERSION}
 	@(cd ${WRKDIR}/temp;                                   \
 	for i in `${CAT} ${FILESDIR}/FILES-SRC-SIMPP` ; do        \
 	  gcc -fpic -DPIC -I${WRKSRC}/func/event/include -c -O \
@@ -115,13 +115,13 @@ create-lib-sim++:
 	${RM} *.so )
 
 create-lib-queuing:
-	@${ECHO} libqueuing.a
+	@${ECHO_MSG} libqueuing.a
 	@(cd ${WRKDIR}/temp;                            \
 	gcc -I${WRKSRC}/func/queuing -c -O              \
 	      ${WRKSRC}/func/queuing/queuing.c;         \
 	${AR} cq libqueuing.a `lorder *.o | tsort -q `; \
 	${RM} *.o )
-	@${ECHO} libqueuing.so.${VERSION}
+	@${ECHO_MSG} libqueuing.so.${VERSION}
 	@(cd ${WRKDIR}/temp;                           \
 	gcc -fpic -DPIC -I${WRKSRC}/func/queuing -c -O \
 		 -o queuing.so                         \

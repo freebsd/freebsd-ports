@@ -34,17 +34,17 @@ MAKE_ARGS+=	-DWITH_TI_RPC
 .endif
 
 pre-everything::
-	@${ECHO} "============================================================="
-	@${ECHO} "For databases compatible with other MTAs than sendmail, use:"
-	@${ECHO}
-	@${ECHO} "WITH_POSTFIX=yes	(Postfix)"
-	@${ECHO} "WITH_POSTFIX_DB3=yes	(Postfix with DB3 database maps)"
-	@${ECHO} "WITH_EXIM=yes		(Exim)"
-	@${ECHO}
-	@${ECHO} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in"
-	@${ECHO} "foreground instead of detaching itself. This breaks the"
-	@${ECHO} "startup script."
-	@${ECHO} "============================================================="
+	@${ECHO_MSG} "============================================================="
+	@${ECHO_MSG} "For databases compatible with other MTAs than sendmail, use:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WITH_POSTFIX=yes	(Postfix)"
+	@${ECHO_MSG} "WITH_POSTFIX_DB3=yes	(Postfix with DB3 database maps)"
+	@${ECHO_MSG} "WITH_EXIM=yes		(Exim)"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in"
+	@${ECHO_MSG} "foreground instead of detaching itself. This breaks the"
+	@${ECHO_MSG} "startup script."
+	@${ECHO_MSG} "============================================================="
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m

@@ -55,21 +55,21 @@ PLIST_SUB+=	EMACS_LOGO_MODE=""
 PLIST_SUB+=	EMACS_LOGO_MODE="@comment "
 .endif
 
-pre-fetch:
+pre-everything::
 .if !defined(EMACS_LOGO_MODE)
-	@${ECHO} ""
-	@${ECHO} "      Define EMACS_LOGO_MODE to build the emacs logo mode"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define EMACS_LOGO_MODE to build the emacs logo mode"
+	@${ECHO_MSG} ""
 .endif
 .if !defined(WITH_FULL_DOCS)
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_FULL_DOCS to build ps, pdf and html docs"
-	@${ECHO} "      This requires teTeX and ghostscript !"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_FULL_DOCS to build ps, pdf and html docs"
+	@${ECHO_MSG} "      This requires teTeX and ghostscript !"
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
 .endif
-	@${ECHO} ""
+	@${ECHO_MSG} ""
 .endif
 
 do-install:

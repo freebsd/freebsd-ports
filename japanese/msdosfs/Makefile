@@ -43,10 +43,10 @@ post-extract:
 
 pre-build:
 	@if [ ! -d /sys -o ! -d /usr/src/sys ]; then \
-		${ECHO} "****************************************" ; \
-		${ECHO} " You need to extract kernel source tree" ; \
-		${ECHO} " before you build this package..." ; \
-		${ECHO} "****************************************" ; \
+		${ECHO_MSG} "****************************************" ; \
+		${ECHO_MSG} " You need to extract kernel source tree" ; \
+		${ECHO_MSG} " before you build this package..." ; \
+		${ECHO_MSG} "****************************************" ; \
 		${FALSE} ; \
 	fi
 

@@ -40,8 +40,8 @@ USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
 MAN1=		cccp27.1 g++27.1 gcc27.1
 
-pre-fetch:
-	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}"
+pre-everything::
+	@${ECHO_MSG} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}"
 
 pre-patch:
 	@${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h
