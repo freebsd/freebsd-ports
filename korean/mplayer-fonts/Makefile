@@ -7,16 +7,15 @@
 PORTNAME=	mplayer-fonts
 PORTVERSION=	1.0
 CATEGORIES=	korean graphics
-MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
-		http://www.mplayerhq.hu/MPlayer/releases/ \
-		http://www2.mplayerhq.hu/MPlayer/releases/ \
-		http://fallin.lv/distfiles/:fontmap \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~perky/distfiles/ \
 		http://www.yonsei.ac.kr/yu/intro/symbol/:yonsei
-DISTFILES=	${MPLAYER_DISTNAME}.tar.bz2 \
-		mplayer-fontmap-euc-kr.tar.bz2:fontmap \
+MASTER_SITE_SUBDIR=	perky
+DISTFILES=	${SUBFONT_DISTNAME}.tar.bz2 \
+		mplayer-fontmap-euc-kr.tar.bz2 \
 		${YONSEI_TITLE_DISTNAME}:yonsei \
 		${YONSEI_TEXT_DISTNAME}:yonsei
-EXTRACT_ONLY=	${MPLAYER_DISTNAME}.tar.bz2 mplayer-fontmap-euc-kr.tar.bz2
+EXTRACT_ONLY=	${SUBFONT_DISTNAME}.tar.bz2 mplayer-fontmap-euc-kr.tar.bz2
 
 MAINTAINER=	perky@FreeBSD.org
 
@@ -26,10 +25,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${MPLAYER_DISTNAME}/TOOLS/subfont-c
+WRKSRC=		${WRKDIR}/${SUBFONT_DISTNAME}
 PLIST_SUB+=	MF=${MPLAYER_FONTDIR:S,${LOCALBASE}/,,g}
 
-MPLAYER_DISTNAME=	MPlayer-0.90pre6
+SUBFONT_DISTNAME=	subfont-c-0.90pre6
 MPLAYER_FONTDIR=	${LOCALBASE}/share/mplayer/fonts/korean
 FREETYPE_CONFIG=	${LOCALBASE}/bin/freetype-config
 
