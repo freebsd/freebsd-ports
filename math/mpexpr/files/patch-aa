@@ -1,0 +1,51 @@
+*** configure.orig	Fri Dec  4 16:04:23 1998
+--- configure	Fri May 11 17:31:55 2001
+***************
+*** 21,26 ****
+--- 21,28 ----
+  # Initialize some variables set by options.
+  # The variables have the same names as the options, with
+  # dashes changed to underlines.
++ TCL_EXEC=tclsh8.3
++ WISH_EXEC=wish8.3
+  build=NONE
+  cache_file=./config.cache
+  exec_prefix=NONE
+***************
+*** 704,711 ****
+  
+  # find include/tcl.h
+  for f in $prefix_locations ; do
+!   if test -r "$f/include/tcl.h"; then
+!     TCL_INC_DIR=$f/include
+      echo "$ac_t""setting TCL_INC_DIR to $TCL_INC_DIR" 1>&6
+      break
+    fi
+--- 706,713 ----
+  
+  # find include/tcl.h
+  for f in $prefix_locations ; do
+!   if test -r "$f/include/tcl8.3/tcl.h"; then
+!     TCL_INC_DIR=$f/include/tcl8.3
+      echo "$ac_t""setting TCL_INC_DIR to $TCL_INC_DIR" 1>&6
+      break
+    fi
+***************
+*** 713,720 ****
+   
+  # find lib/tclConfig.sh
+  for f in $exec_prefix_locations ; do
+!   if test -r "$f/lib/tclConfig.sh"; then
+!     TCL_LIB_DIR=$f/lib
+      echo "$ac_t""setting TCL_LIB_DIR to $TCL_LIB_DIR" 1>&6
+      break
+    fi
+--- 715,722 ----
+   
+  # find lib/tclConfig.sh
+  for f in $exec_prefix_locations ; do
+!   if test -r "$f/lib/tcl8.3/tclConfig.sh"; then
+!     TCL_LIB_DIR=$f/lib/tcl8.3
+      echo "$ac_t""setting TCL_LIB_DIR to $TCL_LIB_DIR" 1>&6
+      break
+    fi
