@@ -33,6 +33,12 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
 cfs-*			ports/security/cfs	Crypto; export-controlled
+clibpdf*		ports/print/clibpdf	License required for bundling
+						with other products.  Only
+						free for non-profit personal
+						use, and use by educational,
+						non-profit, and government
+						organizations.
 contool-*		ports/sysutils/contool	Don't incorporate the source
 						code into a product which is
 						subsequently sold.
