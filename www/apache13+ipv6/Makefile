@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	apache+ipv6
-PORTVERSION=    1.3.29
+PORTVERSION=	1.3.29
 PORTREVISION=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=   ${MASTER_SITE_APACHE_HTTPD}
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
 
 PATCH_SITES=	http://www.tendra.org/~asmodai/ipv6/
@@ -24,19 +24,19 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		apache+ssl-1.* apache-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
-USE_PERL5=      yes
+USE_PERL5=	yes
 
 DATADIR=${PREFIX}/www
 DOCUMENT_ROOT=${DATADIR}/data
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
 
 .if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
-EXPAT_CONF+=    --disable-rule=EXPAT
+EXPAT_CONF+=	--disable-rule=EXPAT
 .else
 .if !defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes
-LIB_DEPENDS+=   expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 .endif
-EXPAT_CONF+=    --enable-rule=EXPAT
+EXPAT_CONF+=	--enable-rule=EXPAT
 .endif
 
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
@@ -48,7 +48,7 @@ APACHE_SUEXEC_UIDMIN?=1000
 APACHE_SUEXEC_GIDMIN?=1000
 APACHE_SUEXEC_CALLER?=www
 
-SUEXEC_CONF= \
+SUEXEC_CONF=	\
 	--enable-suexec \
 	--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
 	--suexec-caller=${APACHE_SUEXEC_CALLER} \
@@ -59,22 +59,22 @@ SUEXEC_CONF= \
 	--suexec-safepath=${DEFAULT_PATH}
 
 .if defined(APACHE_SUEXEC_UMASK)
-SUEXEC_CONF+= \
+SUEXEC_CONF+=	\
 	--suexec-umask=${APACHE_SUEXEC_UMASK}
 .endif
 
-PLIST_SUB+=     SUB_SUEXEC=""
-SUEXEC_MAN=     suexec.8
+PLIST_SUB+=	SUB_SUEXEC=""
+SUEXEC_MAN=	suexec.8
 
 .else   # !SUEXEC
 
 SUEXEC_CONF=
-PLIST_SUB+=     SUB_SUEXEC="@comment "
+PLIST_SUB+=	SUB_SUEXEC="@comment "
 SUEXEC_MAN=
 
 .endif  # !SUEXEC
 
-HAS_CONFIGURE=  yes
+HAS_CONFIGURE=	yes
 # += for child ports
 CONFIGURE_ARGS+=	\
 		--prefix=${PREFIX} \
@@ -113,17 +113,17 @@ CFLAGS+=-DBUFFERED_LOGS
 CFLAGS+=-O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV=  OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}'
+CONFIGURE_ENV=	OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}'
 
 .if (!defined(WITHOUT_APACHE_EXPAT) || ${WITHOUT_APACHE_EXPAT} != yes) && \
     (!defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes)
-CONFIGURE_ENV+= \
+CONFIGURE_ENV+=	\
 		INCLUDES=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=           ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
+MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
 
 post-extract:
