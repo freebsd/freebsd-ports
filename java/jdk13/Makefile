@@ -253,6 +253,9 @@ post-build:
 	${INSTALL_PROGRAM} ${WRKDIR}/hotspot1.3.1/build/linux/linux_i486_compiler2/jvmg/libjvm_g.so ${JDKIMAGEDIR_G}/jre/lib/i386/server/
 .endif
 .endif
+	# Ensure SwingSet2 resources directory doesn't exist (sometimes it
+	# does on FreeBSD 5.x)
+	${RM} -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources
 	# Prune empty dirs
 	${FIND} ${JDKIMAGEDIR} -type d | ${SORT} -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
@@ -276,6 +279,7 @@ do-install:
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}/jre/lib/ext
+	${MKDIR} ${PREFIX}/share/doc/java
 
 post-install:
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
