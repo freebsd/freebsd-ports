@@ -8,7 +8,7 @@
 
 PORTNAME=	graphthing
 PORTVERSION=	0.7
-CATEGORIES=	misc
+CATEGORIES=	math
 MASTER_SITES=	http://members.optushome.com.au/davidsymonds/gt/
 
 MAINTAINER=	freebsdports@arved.de

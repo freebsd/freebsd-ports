@@ -38,6 +38,7 @@
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
     SUBDIR += grace
+    SUBDIR += graphthing
     SUBDIR += gri
     SUBDIR += grpn
     SUBDIR += gsl

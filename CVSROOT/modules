@@ -2072,7 +2072,7 @@ gramofile	ports/audio/gramofile
 grande		ports/games/grande
 granulate	ports/misc/granulate
 grap		ports/textproc/grap
-graphthing	ports/misc/graphthing
+graphthing	ports/math/graphthing
 graphviz	ports/graphics/graphviz
 grappa		ports/biology/grappa
 grass		ports/databases/grass
