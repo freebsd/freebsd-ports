@@ -1,0 +1,16 @@
+--- conserver.cf/conserver.cf.orig	Sun Nov  9 08:45:41 2003
++++ conserver.cf/conserver.cf	Wed Dec  3 17:51:49 2003
+@@ -50,10 +50,10 @@
+ 	motd "just a simple ssh to localhost";
+ }
+ 
+-# connect to /dev/ttya
+-console ttya {
++# connect to /dev/cuaa0
++console cuaa0 {
+ 	type device;
+-	device /dev/ttya; parity none; baud 9600;
++	device /dev/cuaa0; parity none; baud 9600;
+ 	idlestring "#";
+ 	idletimeout 5m;		# send a '#' every 5 minutes of idle
+ 	timestamp "";		# no timestamps on this console
