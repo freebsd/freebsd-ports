@@ -1,7 +1,7 @@
---- autogen.sh.orig	Mon Feb  5 17:40:21 2001
-+++ autogen.sh	Sat Jul  7 20:21:07 2001
+--- autogen.sh.orig	Wed Nov  6 00:30:46 2002
++++ autogen.sh	Wed Nov  6 00:31:22 2002
 @@ -42,15 +42,4 @@
- automake --gnu --add-missing
+ automake -a --gnu --add-missing
  cd "$THEDIR"
  
 -if test -z "$*"; then
