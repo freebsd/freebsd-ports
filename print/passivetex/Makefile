@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/texmf/web2c/xmltex.fmt:${PORTSDIR}/print/xmlte
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Broken dependency
+
 NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/passivetex
