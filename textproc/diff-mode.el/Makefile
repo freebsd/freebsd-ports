@@ -7,13 +7,14 @@
 
 PORTNAME=	diff-mode.el
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	textproc elisp
 MASTER_SITES=	ftp://rum.cs.yale.edu/pub/monnier/misc/
 DISTNAME=	diff-mode-${PORTVERSION}.el
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	okazaki@be.to
+MAINTAINER=	okazaki@FreeBSD.org
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
