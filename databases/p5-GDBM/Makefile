@@ -28,7 +28,7 @@ MAN3=		GDBM_File.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not compile
+BROKEN=		"Does not compile"
 .endif
 
 .include <bsd.port.post.mk>
