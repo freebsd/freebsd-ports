@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -36,7 +36,8 @@ RUN_DEPENDS=	battstat-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
 		gdm:${PORTSDIR}/x11/gdm2 \
 		${X11BASE}/share/themes/Metal/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gtk-engines2 \
 		nautilus-gtkhtml-view:${PORTSDIR}/www/nautilus-gtkhtml \
-		xscreensaver:${PORTSDIR}/x11/xscreensaver
+		xscreensaver:${PORTSDIR}/x11/xscreensaver \
+		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2
 
 NO_BUILD=	yes
 
