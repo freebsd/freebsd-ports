@@ -1,0 +1,28 @@
+*** ../FElt-3.00/src/Velvet/velvet.c	Wed May 31 19:03:06 1995
+--- ./src/Velvet/velvet.c	Wed Dec 18 20:50:30 1996
+***************
+*** 73,78 ****
+--- 73,81 ----
+  # include "popup.xbm"
+  # include "FElt.icon"
+  
++ #ifdef __FreeBSD__
++ #include <floatingpoint.h>
++ #endif
+  
+  static char *defaults [ ] = {
+  # include "velvet.ad.h"
+***************
+*** 595,600 ****
+--- 598,608 ----
+      static String  output_buttons [ ]  = {"dismiss", "save"};
+      static String  proceed_buttons [ ] = {"okay", "cancel"};
+      static String  qsave_buttons [ ]   = {"yes", "no", "cancel"};
++ 
++ #ifdef __FreeBSD__
++   fpsetmask (0);
++ #endif
++ 
+  
+  
+      /* Parse the initial command line options */
