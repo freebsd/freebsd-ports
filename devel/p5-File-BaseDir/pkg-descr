@@ -1,0 +1,10 @@
+This module can be used to find directories and files as
+specified by the XDG Base Directory Specification. It takes
+care of defaults and uses File::Spec to make the output
+platform specific.
+
+This module forked from File::MimeInfo.
+
+For this module the XDG basedir specification 0.6 was used.
+
+WWW: http://search.cpan.org/dist/File-BaseDir/
