@@ -49,3 +49,12 @@ lib/libudsthread.so.0
 %%PORTDOCS%%@dirrm share/doc/uds
 share/uds/udsdeff.cc
 @dirrm share/uds
+share/aclocal/uds_base.m4
+share/aclocal/uds_check.m4
+share/aclocal/uds_debug.m4
+share/aclocal/uds_def.m4
+share/aclocal/uds_extra.m4
+share/aclocal/uds_opt.m4
+share/aclocal/uds_paths.m4
+share/aclocal/uds_profile.m4
+share/aclocal/uds_prog.m4
