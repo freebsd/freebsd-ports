@@ -1,0 +1,16 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/XMLApplication/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/CGI/XMLApplication.pm
+%%PORTDOCS%%share/examples/CGI-XMLApplication/ex2_finish.xsl
+%%PORTDOCS%%share/examples/CGI-XMLApplication/ex2_form.xsl
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example1.pl
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example1.pm
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example2.pl
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example2.pm
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example3.pl
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example3.pm
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example4.pl
+%%PORTDOCS%%share/examples/CGI-XMLApplication/example4.pm
+%%PORTDOCS%%@dirrm share/examples/CGI-XMLApplication
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/XMLApplication
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
