@@ -10,6 +10,7 @@ shell=/sbin/nologin
 comment="Slim Devices SlimServer pseudo-user"
 statedir=/var/db/slimserver
 cachedir=${statedir}/cache
+playlistdir=${statedir}/playlists
 pidfile=/var/run/${name}.pid
 newsyslogfile=/etc/newsyslog.conf
 logfile=/var/log/slimserver.log
@@ -48,6 +49,10 @@ POST-INSTALL)
 	if [ ! -d ${cachedir} ]; then
 		mkdir -p ${cachedir}
 		chown -R ${u}:${g} ${cachedir}
+	fi
+	if [ ! -d ${playlistdir} ]; then
+		mkdir -p ${playlistdir}
+		chown -R ${u}:${g} ${playlistdir}
 	fi
 	if egrep -q "^${logfile}\>" ${newsyslogfile}; then
 		echo "Using existing ${newsyslogfile} entry."

@@ -7,6 +7,7 @@
 
 PORTNAME=	slimserver
 PORTVERSION?=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/${NIGHTLY}SlimServer_v${DISTVERSION}/
 DISTNAME=	SlimServer_v${DISTVERSION}
@@ -16,30 +17,17 @@ COMMENT=	Slim Devices audio streaming server
 
 DISTVERSION?=	${PORTVERSION}
 
-RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
-		${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav \
-		${SITE_PERL}/Audio/WMA.pm:${PORTSDIR}/audio/p5-Audio-WMA \
-		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
-		${SITE_PERL}/DBIx/ContextualFetch.pm:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
-		${SITE_PERL}/Ima/DBI.pm:${PORTSDIR}/databases/p5-Ima-DBI \
-		${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
-		${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/UNIVERSAL/moniker.pm:${PORTSDIR}/devel/p5-UNIVERSAL-moniker \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
-		${SITE_PERL}/XML/NamespaceSupport.pm:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
-		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+
+RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
 
 .include <bsd.port.pre.mk>
+
+SLIM_CPAN_DEPS!= cut -f 2 -d, ${FILESDIR}/pm2port | grep -v ^_builtin
+RUN_DEPENDS+=	${SLIM_CPAN_DEPS:S|^|${SITE_PERL}/|:S|:|:${PORTSDIR}/|}
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	"Perl 5.8 or newer required. Install lang/perl5.8 and try again."
+.endif
 
 .if ${OSVERSION} < 502110
 RUN_DEPENDS+=	${LOCALBASE}/bin/pgrep:${PORTSDIR}/sysutils/pkill
@@ -53,34 +41,17 @@ TMP_SLIMDIR=	${WRKDIR}/slimserver
 TMP_DOCSDIR=	${WRKDIR}/doc
 DOCFILES=	Changelog.html Installation.txt
 EXCEPTFILES=	${DOCFILES} \
-		CPAN/Audio/WMA.pm
+		CPAN/File/.exists \
+		CPAN/MP3/.exists
 EXCEPTDIRS=	Bin \
-		CPAN/arch \
-		CPAN/Audio/Wav \
-		CPAN/Bundle \
-		CPAN/Class \
-		CPAN/Data \
-		CPAN/DBIx \
-		CPAN/File \
-		CPAN/HTML \
-		CPAN/HTTP \
-		CPAN/Ima \
-		CPAN/IO \
-		CPAN/LWP \
-		CPAN/MIME \
-		CPAN/MP3 \
-		CPAN/Net \
-		CPAN/SQL \
-		CPAN/Template \
-		CPAN/Universal \
-		CPAN/URI \
-		CPAN/XML
+		CPAN/arch
 
 CPIOARGS=	--quiet -pdum -R
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	SLIMDIR=${SLIMDIR}
 
-SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
+SED_SCRIPT+=	-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%PGREPBASE%%,${PGREPBASE},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%SLIMDIR%%,${SLIMDIR},g'
@@ -94,23 +65,36 @@ pre-fetch:
 
 post-patch:
 	@${SED} ${SED_SCRIPT} <${FILESDIR}/slimserver.sh >${WRKDIR}/slimserver.sh
+	@${SED} ${SED_SCRIPT} <${FILESDIR}/softsqueeze.sh >${WRKDIR}/softsqueeze.sh
 
 SLIMDIR?=	slimserver
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
 	@cd ${WRKSRC} && \
-	    ${FIND} . -name \*.orig ${EXCEPTFILES:S/^/-o -name /} \
+	    ${FIND} . -name \*.orig ${EXCEPTFILES:S|^|-o -path ./|} \
 	    ${EXCEPTDIRS:S/$/\*/:S/^/-o -path .\//} -o -print | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${TMP_SLIMDIR}
+	@cd ${TMP_SLIMDIR}/CPAN && \
+	    for pm in `egrep -v ,$$ ${FILESDIR}/pm2port | cut -f 1 -d,`; do \
+		grep "$${pm}:" ${FILESDIR}/CPANfiles | cut -f2 -d: | xargs rm; \
+	    done
+	@find ${TMP_SLIMDIR}/CPAN -depth -type d -empty -delete
+.if defined(PORTDEV)
+	@echo "Checking for unexpected files in CPAN"
+	@cd ${TMP_SLIMDIR}/CPAN && \
+	    for file in `find . -type f | sed -e 's|^\./||'`; do \
+		egrep -q ":$${file}\$$" ${FILESDIR}/CPANfiles || \
+		    echo $${file} ; \
+	    done
+	@echo
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${TMP_DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${TMP_DOCSDIR}
 .endif
 	@${ECHO} "etc/rc.d/slimserver${PKGNAMESUFFIX}.sh" > ${PLIST}
+	@${ECHO} "bin/softsqueeze" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	@${FIND} ${TMP_DOCSDIR} -type f | \
 	    ${SED} -e 's|${TMP_DOCSDIR}|%%DOCSDIR%%|' | \
@@ -130,6 +114,9 @@ do-build:
 .endif
 	@${ECHO} '@unexec rmdir /var/db/slimserver 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/slimserver and its contents manually.")' >> ${PLIST}
 
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
 	@${LN} -s /var/db/slimserver/cache ${PREFIX}/${SLIMDIR}/Cache
@@ -138,6 +125,7 @@ do-install:
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/slimserver.sh \
 	    ${PREFIX}/etc/rc.d/slimserver${PKGNAMESUFFIX}.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${TMP_DOCSDIR} && \
