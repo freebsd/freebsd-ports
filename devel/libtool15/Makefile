@@ -3,7 +3,7 @@
 # Date created:		6 May 1998
 # Whom:			Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/27 07:41:08 fenner Exp $
+# $Id: Makefile,v 1.4 1999/05/04 22:35:26 steve Exp $
 #
 
 DISTNAME=	libtool-1.3
@@ -15,10 +15,6 @@ MAINTAINER=	reg@shale.csir.co.za
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
-
-pre-install:
-	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
+CONFIGURE_ENV=	PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
