@@ -13,7 +13,7 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	All headers which are needed to develop for Agenda VR3 PDA
 
-RUN_DEPENDS=	${LOCALBASE}/${TARGET_PLATFORM}/include/linux/errno.h:${PORTSDIR}/devel/${TARGET_PLATFORM}-kernel-headers
+RUN_DEPENDS=	${PREFIX}/${TARGET_PLATFORM}/include/linux/errno.h:${PORTSDIR}/devel/${TARGET_PLATFORM}-kernel-headers
 
 TARGET_PLATFORM=mipsel-linux
 USE_BZIP2=	yes

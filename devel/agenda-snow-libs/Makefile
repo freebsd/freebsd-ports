@@ -13,7 +13,7 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	SNOW libraries which are needed to develop for Agenda VR3 PDA
 
-RUN_DEPENDS=	${LOCALBASE}/${TARGET_PLATFORM}/include/stdio.h:${PORTSDIR}/devel/agenda-headers
+RUN_DEPENDS=	${PREFIX}/${TARGET_PLATFORM}/include/stdio.h:${PORTSDIR}/devel/agenda-headers
 
 USE_BZIP2=	yes
 
