@@ -20,7 +20,7 @@ PATCHFILES=	exiscan-acl-${EXISCAN_VERSION}.patch.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
-MAINTAINER=	sheldonh@FreeBSD.org
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
 
 .if defined(WITH_EXIMON)
