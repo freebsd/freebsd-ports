@@ -1,5 +1,5 @@
 lib/libmimelib.la
-lib/libmimelib.so.1.0
+lib/libmimelib.so.1
 lib/libmimelib.a
 lib/libQwSpriteField.la
 lib/libQwSpriteField.so.5.2
@@ -42,6 +42,6 @@ include/Pix.h
 include/QwCluster.h
 include/QwPublicList.h
 include/QwSpriteField.h
-@exec /sbin/ldconfig -m %B
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/mimelib
-@unexec /sbin/ldconfig -R
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

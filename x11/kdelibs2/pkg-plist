@@ -102,17 +102,17 @@ include/xview.h
 lib/libjscript.la
 lib/libjscript.so.0.90
 lib/libkdecore.la
-lib/libkdecore.so.1.0
+lib/libkdecore.so.1
 lib/libkdeui.la
-lib/libkdeui.so.1.0
+lib/libkdeui.so.1
 lib/libkfile.la
-lib/libkfile.so.1.0
+lib/libkfile.so.1
 lib/libkfm.la
-lib/libkfm.so.1.0
+lib/libkfm.so.1
 lib/libkhtmlw.la
-lib/libkhtmlw.so.1.0
+lib/libkhtmlw.so.1
 lib/libmediatool.la
-lib/libmediatool.so.1.0
+lib/libmediatool.so.1
 share/apps/kde/pics/arrow_down.xbm
 share/apps/kde/pics/arrow_left.xbm
 share/apps/kde/pics/arrow_right.xbm
@@ -218,7 +218,7 @@ share/toolbar/viewmag+.xpm
 share/toolbar/viewmag-.xpm
 share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
-@exec /sbin/ldconfig -m %B
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm share/toolbar
 @dirrm share/locale/zh_TW.Big5/LC_MESSAGES
 @dirrm share/locale/zh_TW.Big5
@@ -281,4 +281,4 @@ share/toolbar/viewzoom.xpm
 @dirrm share/apps/kde/pics
 @dirrm share/apps/kde
 @dirrm share/apps
-@unexec /sbin/ldconfig -R
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
