@@ -19,4 +19,11 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/Xev111
 ALL_TARGET=	xbat
 
+post-install:
+	${CHOWN} root:games ${PREFIX}/bin/xbat
+	${CHMOD} 2755 ${PREFIX}/bin/xbat
+	${CHOWN} -R root:games ${PREFIX}/lib/X11/Xbat/Score/
+	${CHMOD} 664 ${PREFIX}/lib/X11/Xbat/Score/*
+	${CHMOD} 755 ${PREFIX}/lib/X11/Xbat/Score/
+
 .include <bsd.port.mk>
