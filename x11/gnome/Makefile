@@ -22,7 +22,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gnome.3:${PORTSDIR}/x11/gnomelibs \
 		gtop.1:${PORTSDIR}/devel/libgtop \
 		xml.5:${PORTSDIR}/textproc/libxml \
-		gnomeprint.6:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.7:${PORTSDIR}/print/gnomeprint \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		obgnome.1:${PORTSDIR}/lang/gnomeobjc \
 		glade.3:${PORTSDIR}/devel/libglade
