@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -20,10 +20,10 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 USE_BZIP2=	yes
+USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--without-cdk
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--without-cdk
 MAN1=		gphoto2.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREADS_LIBS:S/"//g}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREADS_LIBS:S/"//g}|g ; \
 		 s|-g -Wall||g' ${WRKSRC}/configure
 
 post-install:

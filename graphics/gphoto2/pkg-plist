@@ -1,7 +1,7 @@
 bin/gphoto2
-%%PORTDOCS%%share/doc/gphoto2/AUTHORS
-%%PORTDOCS%%share/doc/gphoto2/NEWS
-%%PORTDOCS%%share/doc/gphoto2/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/da/LC_MESSAGES/gphoto2.mo
 share/locale/de/LC_MESSAGES/gphoto2.mo
 share/locale/es/LC_MESSAGES/gphoto2.mo
@@ -9,9 +9,12 @@ share/locale/fr/LC_MESSAGES/gphoto2.mo
 share/locale/it/LC_MESSAGES/gphoto2.mo
 share/locale/ja/LC_MESSAGES/gphoto2.mo
 share/locale/no/LC_MESSAGES/gphoto2.mo
+share/locale/pt_BR/LC_MESSAGES/gphoto2.mo
+share/locale/ro/LC_MESSAGES/gphoto2.mo
 share/locale/ru/LC_MESSAGES/gphoto2.mo
+share/locale/sk/LC_MESSAGES/gphoto2.mo
 share/locale/sl/LC_MESSAGES/gphoto2.mo
 share/locale/sv/LC_MESSAGES/gphoto2.mo
 share/locale/uk/LC_MESSAGES/gphoto2.mo
 share/locale/zh_CN/LC_MESSAGES/gphoto2.mo
-%%PORTDOCS%%@dirrm share/doc/gphoto2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
