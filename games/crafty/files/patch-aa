@@ -1,0 +1,70 @@
+*** Makefile.orig	Fri May 22 17:52:39 1998
+--- Makefile	Mon Jun  1 00:37:27 1998
+***************
+*** 68,80 ****
+  #           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B
+  # asm     = X86.o
+  
+! # FreeBSD (gcc 2.6.3)
+! #target  = FreeBSD
+  #CC      = gcc
+  #CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
+  #LDFLAGS = 
+! #opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
+! #          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
+  
+  # FreeBSD (pgcc)
+  #target  = FreeBSD
+--- 68,80 ----
+  #           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B
+  # asm     = X86.o
+  
+! # FreeBSD (gcc 2.7.2.1)
+! target  = FreeBSD
+  #CC      = gcc
+  #CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
+  #LDFLAGS = 
+! opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
+!           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
+  
+  # FreeBSD (pgcc)
+  #target  = FreeBSD
+***************
+*** 94,111 ****
+   
+  # LINUX
+  # Note: You have to uncomment exactly ONE of the `asm' lines below.
+! target  = LINUX
+! CC      = gcc
+! CFLAGS  = -pipe -D_REENTRANT -mpentiumpro -O -Wall
+! LDFLAGS = -lpthread
+! opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
+!           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4
+  
+  # Uncomment the FIRST `asm' line for a.out systems.
+  # Uncomment the SECOND `asm' line for ELF systems.
+  #
+! #asm     = X86-aout.o
+! asm     = X86-elf.o
+  
+  # NEXT
+  #target  = NEXT
+--- 94,111 ----
+   
+  # LINUX
+  # Note: You have to uncomment exactly ONE of the `asm' lines below.
+! #target  = LINUX
+! #CC      = gcc
+! #CFLAGS  = -pipe -D_REENTRANT -mpentiumpro -O -Wall
+! #LDFLAGS = -lpthread
+! #opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
+! #          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4
+  
+  # Uncomment the FIRST `asm' line for a.out systems.
+  # Uncomment the SECOND `asm' line for ELF systems.
+  #
+! asm     = X86-aout.o
+! #asm     = X86-elf.o
+  
+  # NEXT
+  #target  = NEXT
