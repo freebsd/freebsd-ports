@@ -1,0 +1,28 @@
+--- Makefile.orig	Wed May  7 09:32:24 1997
++++ Makefile	Thu May 22 19:18:35 1997
+@@ -2,7 +2,7 @@
+ DB=		BINARY_DB
+ 
+ #{{{script}}}#{{{ Linux, moria machines
+-CFLAGS=		-p -g -pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common
++#CFLAGS=		-p -g -pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common
+ CPPFLAGS=	-D$(DB)
+ LDFLAGS=	-p -g
+ LIBS=		-lcurses
+@@ -32,11 +32,11 @@
+ #}}}
+ #{{{ FreeBSD, gcc, ncurses
+ #CC=		gcc
+-#CFLAGS=		-pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common $(CPPFLAGS)
+-#CPPFLAGS=	-I.curses.h -DNO_POSIX_SOURCE -D$(DB)
+-#LIBS=		-lncurses -lmytinfo
+-#LDFLAGS=	
+-#MAKEDEPEND=	gcc -MM
++CFLAGS+=		-Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common $(CPPFLAGS)
++CPPFLAGS=	-I.curses.h -DNO_POSIX_SOURCE -D$(DB)
++LIBS=		-lncurses -lmytinfo
++LDFLAGS=	-s
++MAKEDEPEND=	gcc -MM
+ #}}}
+ #{{{ SunOS 4, gcc
+ #CC=		gcc
