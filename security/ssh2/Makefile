@@ -52,8 +52,14 @@ LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 .include <bsd.port.pre.mk>
 
+# This is necessary for a working ssh-chrootmgr. Added by mic@nethack.at
+#
+.if defined(WITH_STATIC_SFTP)
+CONFIGURE_ARGS+=	--enable-static
+.endif
+
 .if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
-	&& !defined(WITHOUT_X11))
+	&& exists(${X11BASE}/bin/xauth) && !defined(WITHOUT_X11))
 USE_XLIB=	yes
 PLIST_SUB=	WITH_X11:=""
 .else
