@@ -54,7 +54,7 @@ pre-extract:
 		${ECHO_MSG} "          the \`compat3x' package. If you have FreeBSD source code installed" ; \
 		${ECHO_MSG} "          then you can use the following command to install it:" ; \
 		${ECHO_MSG} ; \
-		${ECHO_MSG} "          # cd /usr/src/lib/compat/compat3x ; make install" ; \
+		${ECHO_MSG} "          # cd /usr/src/lib/compat/compat3x.${ARCH} ; make install" ; \
 		${ECHO_MSG} ; \
 	fi
 .endif
