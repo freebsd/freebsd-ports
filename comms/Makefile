@@ -4,6 +4,7 @@
 
     SUBDIR += asmodem
     SUBDIR += bayonne
+    SUBDIR += birda
     SUBDIR += bpl+
     SUBDIR += comserv
     SUBDIR += conserver
