@@ -3,6 +3,7 @@
 
     SUBDIR += abook
     SUBDIR += adcomplain
+    SUBDIR += althea
     SUBDIR += asmail
     SUBDIR += arrow
     SUBDIR += autorespond
