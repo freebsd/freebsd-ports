@@ -1,0 +1,32 @@
+--- Makefile	Sun Sep  5 13:54:35 1999
++++ Makefile.new	Sat Sep 18 17:23:26 1999
+@@ -1,8 +1,9 @@
+-ICONDIR = /usr/X11R6/share/wmbattery
+-BINDIR  = /usr/X11R6/bin
+-MANDIR  = /usr/X11R6/man/man1
+-INCDIR  = -I/usr/X11R6/include
+-LIBDIR  = -L/usr/X11R6/lib
++PREFIX	= /usr/X11R6
++ICONDIR = $(PREFIX)/share/wmbattery/icons
++BINDIR  = $(PREFIX)/bin
++MANDIR  = $(PREFIX)/man/man1
++INCDIR  = -I$(PREFIX)/include
++LIBDIR  = -L$(PREFIX)/lib
+ LIBS    = -lXpm -lXext
+ CFLAGS  = $(INCDIR) -g -DICONDIR=\"$(ICONDIR)\" -O2 -Wall
+ 
+@@ -13,10 +14,10 @@
+ 	rm -f wmbattery
+ 
+ install: wmbattery
+-	install -c -d $(PREFIX)$(ICONDIR) $(PREFIX)$(BINDIR) $(PREFIX)$(MANDIR)
+-	install -c -s wmbattery $(PREFIX)$(BINDIR)
+-	install -c -m 644 wmbattery.1x $(PREFIX)$(MANDIR)/wmbattery.1
+-	install -c -m 644 *.xpm $(PREFIX)$(ICONDIR)
++	install -c -d $(ICONDIR) $(BINDIR) $(MANDIR)
++	$(INSTALL_PROGRAM) wmbattery $(BINDIR)
++	$(INSTALL_MAN) wmbattery.1x $(MANDIR)/wmbattery.1
++	$(INSTALL_DATA) *.xpm $(ICONDIR)
+ 
+ test: wmbattery
+ 	./wmbattery
