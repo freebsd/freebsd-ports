@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/05/29 03:55:36 steve Exp $
+# $Id: Makefile,v 1.10 1999/06/08 23:54:19 steve Exp $
 #
 
 DISTNAME=	Gtk---1.0.0
@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" CC="${CC}" CXX="${CXX}"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 MAN3=	G_IntList.3 G_IntList_Iterator.3 G_List.3 G_List_Cpp_Iterator.3 \
 	G_List_Iterator.3 G_SList_Iterator.3 GtkBase.3 GtkBaseClass.3 \
