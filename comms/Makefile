@@ -68,6 +68,7 @@
     SUBDIR += qico
     SUBDIR += qicosi
     SUBDIR += qpage
+    SUBDIR += qsstv
     SUBDIR += qtpcr
     SUBDIR += ruby-serialport
     SUBDIR += ruby-termios
