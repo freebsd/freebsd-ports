@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	libcapsinetwork
-PORTVERSION=	0.0.13
+PORTVERSION=	0.1.1
 CATEGORIES=	devel net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	petef@FreeBSD.org
 
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${PERL} -pi -e 's!CC!CXX!g; s!CXX=!CXX?=!; s!CFLAGS=!CFLAGS+=!; \
-		s!/usr/local!${PREFIX}!' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
