@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
