@@ -120,6 +120,7 @@
     SUBDIR += scdp
     SUBDIR += scli
     SUBDIR += scotty3
+    SUBDIR += sdig
     SUBDIR += sendip
     SUBDIR += sing
     SUBDIR += sipcalc
