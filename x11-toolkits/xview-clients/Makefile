@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.9 1995/05/19 10:39:58 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/15 16:12:19 erich Exp $
 #
 
 DISTNAME=	xview-clients
@@ -11,13 +11,13 @@ PKGNAME=	xview-clients-3.2.1
 CATEGORIES=	x11
 
 DEPENDS=        ${PORTSDIR}/x11/xview-lib
-WRKSRC=      	${PORTSDIR}/x11/xview-config/work/xview3.2p1-X11R6/clients
 
+WRKSRC=      	${PORTSDIR}/x11/xview-config/work/xview3.2p1-X11R6/clients
 NO_WRKDIR=	yes
-NO_EXTRACT=     yes
 USE_X11=	yes
 
 do-fetch:
+do-extract:	# don't use NO_EXTRACT, dependency won't work
 
 post-configure:
 	(cd $(WRKSRC)/..; $(MAKE) SUBDIRS=clients depend)
