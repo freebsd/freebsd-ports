@@ -3,13 +3,13 @@
 # Date created:         4 Mar 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/05/30 12:36:17 dburr Exp $
+# $Id: Makefile,v 1.4 1998/07/20 10:13:44 asami Exp $
 #
 
 DISTNAME=	tank-0.4a-src
 PKGNAME=	tank-0.4a
 CATEGORIES=	games
-MASTER_SITES=	http://www.info.polymtl.ca/~coyote/tank/
+MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
