@@ -1047,6 +1047,7 @@ share/doc/HTML/en/kdevelop/reference/GRAPHICS/yellowball.gif
 @dirrm share/doc/HTML/en/kdevelop/reference/C/TECHNIC
 @dirrm share/doc/HTML/en/kdevelop/reference/C/X_EXAMPLES
 @dirrm share/doc/HTML/en/kdevelop/reference/C/backup
+@dirrm share/doc/HTML/en/kdevelop/reference/C
 @dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONCEPT
 @dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB/GNU_STDLIB
 @dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB
@@ -1061,3 +1062,4 @@ share/doc/HTML/en/kdevelop/reference/GRAPHICS/yellowball.gif
 @dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/X_EXAMPLES
 @dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS
 @dirrm share/doc/HTML/en/kdevelop/reference/GRAPHICS
+@unexec rmdir %D/share/doc/HTML/en/kdevelop/reference/ 2> /dev/null || true
