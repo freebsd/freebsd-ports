@@ -128,7 +128,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-LIB_DEPENDS+=	SDL-1.1:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CONFIGURE_ARGS+=	--enable-x86opt --with-win32-path=${LOCALBASE}/lib/win32

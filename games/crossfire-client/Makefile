@@ -18,7 +18,7 @@ DISTFILES=	${PORTNAME}-client-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
