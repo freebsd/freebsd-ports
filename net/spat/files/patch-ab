@@ -1,0 +1,29 @@
+--- spatd/prefs.c	2000/10/31 11:30:17	1.1
++++ spatd/prefs.c	2000/10/31 11:30:43
+@@ -16,7 +16,7 @@
+ {
+  struct ifreq ifi;
+  int sock, iftype = 0;
+- char *bcast_addy, *interface = "eth0";
++ char *bcast_addy, *interface = "ed0";
+ 
+  sock = socket(AF_INET, SOCK_DGRAM, 0);
+  if (sock < 0)
+@@ -86,7 +86,7 @@
+    printf("Failure to create config. ARG!\n");
+    exit(0);
+   }
+-  fprintf(fp, "interface: eth0\n");
++  fprintf(fp, "interface: ed0\n");
+   fprintf(fp, "away: no\n");
+   fclose(fp);
+   printf("Wrote ~/.spat/spatrc\n");
+@@ -173,7 +173,7 @@
+    printf("Failure to create config. ARG!\n");
+    exit(0);
+   }
+-  fprintf(fp, "interface: eth0\n");
++  fprintf(fp, "interface: ed0\n");
+   fprintf(fp, "away: no\n");
+   fclose(fp);
+   printf("Wrote ~/.spat/spatrc\n");

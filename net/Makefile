@@ -241,6 +241,7 @@
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += socks5
+    SUBDIR += spat
     SUBDIR += sting
     SUBDIR += suckblow
     SUBDIR += sup
