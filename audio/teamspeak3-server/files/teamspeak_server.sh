@@ -10,7 +10,7 @@ cd "$TSHOME"
 
 case "$1" in
 	start)
-		su -fm nobody -c './server_linux >/dev/null 2>&1' && echo -n ' teamspeak_server'
+		su -fm teamspeak -c './server_linux >/dev/null' && echo -n ' teamspeak_server'
 		;;
 	stop)
 		kill -TERM `cat "$PIDFILE"`

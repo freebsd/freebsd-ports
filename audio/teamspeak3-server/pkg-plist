@@ -1,4 +1,4 @@
-etc/rc.d/teamspeak_server.sh
+etc/rc.d/teamspeak_server.sh.sample
 lib/teamspeak_server/changelog.txt
 lib/teamspeak_server/httpdocs/choice_box.html
 lib/teamspeak_server/httpdocs/database_client_manager.html
