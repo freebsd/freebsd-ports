@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Wed Sep 11 01:47:50 2002
++++ doc/Makefile.in	Wed Sep 11 01:47:57 2002
+@@ -152,7 +152,7 @@
+ GPATH = $(srcdir)
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+-DOC_DIR = $(datadir)/doc$(TARGET_DIR)
++DOC_DIR = $(datadir)/doc/$(TARGET_DIR)
+ 
+ EXTRA_DIST =  	$(content_files)			$(extra_files)				$(HTML_IMAGES)				$(DOC_MAIN_SGML_FILE)			$(DOC_MODULE).types			$(DOC_MODULE)-sections.txt		$(DOC_MODULE)-overrides.txt
+ 
