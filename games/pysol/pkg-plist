@@ -58,6 +58,14 @@ share/pysol/cardset-01/back4.gif
 share/pysol/cardset-01/bottom1.gif
 share/pysol/cardset-01/bottom2.gif
 share/pysol/cardset-01/bottom3.gif
+share/pysol/cardset-01/l01.gif
+share/pysol/cardset-01/l02.gif
+share/pysol/cardset-01/l03.gif
+share/pysol/cardset-01/l04.gif
+share/pysol/cardset-01/tmp1.gif
+share/pysol/cardset-01/tmp2.gif
+share/pysol/cardset-01/tmpbot.gif
+share/pysol/cardset-01/tmpmask.gif
 share/pysol/html/credits.html
 share/pysol/html/general_rules.html
 share/pysol/html/gpl.html
@@ -66,6 +74,7 @@ share/pysol/html/installation.html
 share/pysol/html/introduction.html
 share/pysol/html/rules_8x8.html
 share/pysol/html/rules_freecell.html
+share/pysol/html/rules_gallery.html
 share/pysol/html/rules_gypsy.html
 share/pysol/html/rules_irmgard.html
 share/pysol/html/rules_klondike.html
