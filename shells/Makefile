@@ -16,7 +16,6 @@
     SUBDIR += perlsh
     SUBDIR += rc
     SUBDIR += sash
-    SUBDIR += scsh
     SUBDIR += tcsh
     SUBDIR += vshnu
     SUBDIR += wapsh
