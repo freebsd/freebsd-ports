@@ -1,0 +1,17 @@
+--- pwcheck/Makefile.am.orig	Wed Mar 22 11:06:43 2000
++++ pwcheck/Makefile.am	Thu Jan 17 19:09:06 2002
+@@ -22,9 +22,13 @@
+ # SOFTWARE.
+ #
+ 
+-sbin_PROGRAMS = pwcheck
++sbin_PROGRAMS = pwcheck pwcheck_pam
+ 
+ pwcheck_SOURCES = pwcheck.c
+ EXTRA_pwcheck_SOURCES = pwcheck_getpwnam.c pwcheck_getspnam.c
+ pwcheck_DEPENDECIES = pwcheck_@PWCHECKMETH@.lo
+ pwcheck_LDADD = pwcheck_@PWCHECKMETH@.lo @LIB_CRYPT@ @LIB_SOCKET@
++
++pwcheck_pam_SOURCES = pwcheck.c
++pwcheck_pam_DEPENDECIES = pwcheck_pam.lo
++pwcheck_pam_LDADD = pwcheck_pam.lo @LIB_CRYPT@ @LIB_SOCKET@ @LIB_PAM@

@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.27
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		http://prdownloads.sourceforge.net/cyrus-utils/ \
@@ -69,7 +69,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		WITH_LDAP2="${WITH_LDAP2}"
 
 # JavaSASL needs someone to look at to get it to build
-JAVADIR=	jdk1.1.8
+JAVADIR=	jdk1.3.1
 JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
@@ -112,18 +112,21 @@ pre-fetch:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+post-extract:
+	@${CP} ${FILESDIR}/pwcheck_pam.c ${WRKSRC}/pwcheck
+
 pre-patch:
 	@(cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAP_MYSQL_PATCH} && \
 	${MV} configure.orig configure)
 
 # Fix sasldb name in pkg-install/deinstall scripts
 post-patch:
-	@${SED} -e "/%%SASLDB%%/s##${SASLDB_NAME}#g" \
+	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
 		${.CURDIR}/pkg-install > ${PKGINSTALL}
-	@${SED} -e "/%%SASLDB%%/s##${SASLDB_NAME}#g" \
+	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${SED} -e "/%%SASLDB%%/s##${SASLDB_NAME}#g" \
-		-e "/%%PREFIX%%/s##${PREFIX}#g" \
+	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 .ifdef LDAP_MYSQL_MSG
 	@${ECHO} ${LDAP_MYSQL_MSG} | /usr/bin/fmt -w 67 >> ${PKGMESSAGE}
@@ -138,8 +141,8 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/pwcheck.sh \
-		> ${PREFIX}/etc/rc.d/pwcheck.sh
+	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
+		${FILESDIR}/pwcheck.sh > ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
 .if !defined(NOPORTDOCS)
@@ -151,6 +154,7 @@ post-install:
 	for file in `make -V EXTRA_DIST` ; do \
 		${INSTALL_DATA} ${WRKSRC}/doc/$${file} ${DOCSDIR} ; \
 	done)
+	@${INSTALL_DATA} ${WRKSRC}/java/doc/draft-weltman-java-sasl-02.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

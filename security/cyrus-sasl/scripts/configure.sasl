@@ -25,6 +25,7 @@ if [ "${BATCH}" ]; then
 		OPTIONS="${OPTIONS} \"OpenLDAP1\""
 	fi
 	if [ "${OPTIONS}" != "x" ]; then
+		OPTIONS="${OPTIONS} \"PWCHECK\""
 		set ${OPTIONS}
 	fi
 else
@@ -58,11 +59,14 @@ else
 	/usr/bin/dialog --title "Additional SASL options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
-NDBM		"ndbm DB package" ${SET_NDBM} \
-DB3		"Berkeley DB package, revision 3" ${SET_DB3} \
+NDBM		"ndbm DB" ${SET_NDBM} \
+DB3		"Berkeley DB, revision 3" ${SET_DB3} \
+JAVA		"JavaSASL [Experimental]" ${SET_JAVA} \
 MySQL		"MySQL password Authentication" ${SET_MYSQL} \
-OpenLDAP1	"OpenLDAP 1.x support" ${SET_LDAP1} \
-OpenLDAP2	"OpenLDAP 2.x support" ${SET_LDAP2} \
+OpenLDAP1	"OpenLDAP 1.x password Authentication" ${SET_LDAP1} \
+OpenLDAP2	"OpenLDAP 2.x password Authentication w/TLS" ${SET_LDAP2} \
+PWCHECK		"Use pwcheck for password Authentication" ON \
+PAMPWCHECK      "Use pwcheck_pam for password Authentication" OFF \
 2> $tempfile
 
 	retval=$?
@@ -75,6 +79,8 @@ OpenLDAP2	"OpenLDAP 2.x support" ${SET_LDAP2} \
 	case $retval in
 		0)	if [ -z "$*" ]; then
 				echo "Nothing selected"
+				OPTIONS="\"NDBM\""
+				set ${OPTIONS}
 			fi
 			;;
 		1)	echo "Cancel pressed."
@@ -112,15 +118,16 @@ while [ "$1" ]; do
 			DBLIB=1
 			;;
 		\"JAVA\")
-			echo "JAVA is disabled, Ignoring option" > /dev/stderr
-			;;
-		\"DISABLED\")
-			echo "RUN_DEPENDS=	\${LOCALBASE}/\${JAVADIR}/bin/java:\${PORTSDIR}/java/jdk"
-			echo "CONFIGURE_ARGS+=	--with-java \\"
-			echo "			--with-javabase=\${LOCALBASE}/include"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/\${JAVADIR}/bin/java:\${PORTSDIR}/java/jdk13"
+			echo "RUN_DEPENDS+=	\${LOCALBASE}/\${JAVADIR}/bin/java:\${PORTSDIR}/java/jdk13"
+			echo "USE_GMAKE=	yes"
+			echo "CONFIGURE_ARGS+=	--enable-java \\"
+			echo "			--with-javabase=\${LOCALBASE}/\${JAVADIR}"
 			echo "CONFIGURE_ENV+=	JAVAC=\"\${LOCALBASE}/\${JAVADIR}/bin/javac\" \\"
-			echo "			JAVAH=\"\${LOCALBASE}/\${JAVADIR}/bin/javah" \\"
-			echo "			JAVADOC=\"\${LOCALBASE}/\${JAVADIR}/bin/javadoc\"
+			echo "		JAVAH=\"\${LOCALBASE}/\${JAVADIR}/bin/javah\" \\"
+			echo "		JAVADOC=\"\${LOCALBASE}/\${JAVADIR}/bin/javadoc\""
+			echo "PLIST_SUB+=	JAVASASL=\"\""
+			DEFJAVA=1
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
@@ -128,7 +135,7 @@ while [ "$1" ]; do
 			MSG=1
 			;;
 		\"OpenLDAP1\")
-			if [ "$OPENLDAP2" ]; then
+			if [ "$OPENLDAP" ]; then
 				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
@@ -136,11 +143,10 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
 			echo "LIB_DEPENDS+=	lber.1:\${PORTSDIR}/net/openldap"
 			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
-			OPENLDAP1=1
-			MSG=1
+			OPENLDAP=1
 			;;
 		\"OpenLDAP2\")
-			if [ "$OPENLDAP1" ]; then
+			if [ "$OPENLDAP" ]; then
 				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
@@ -148,8 +154,23 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
 			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap2"
 			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
-			OPENLDAP2=1
-			MSG=1
+			OPENLDAP=1
+			;;
+		\"PWCHECK\")
+			if [ "$PWCHECK" ]; then
+				echo "PWCHECK or PAMPWCHECK must be choosen seperately: Defaulting to PAMPWCHECK" > /dev/stderr
+			else
+				echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck;g\""
+				PWCHECK=1
+			fi
+			;;
+		\"PAMPWCHECK\")
+			if [ "$PWCHECK" ]; then
+				echo "PWCHECK or PAMPWCHECK must be choosen seperately: Defaulting to PWCHECK" > /dev/stderr
+			else
+				echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck_pam;g\""
+				PWCHECK=1
+			fi
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
@@ -160,6 +181,20 @@ while [ "$1" ]; do
 	shift
 done
 
-if [ "x${MSG}" != "x" ]; then
+if [ "$PWCHECK" ]; then
+	echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;yes;g\""
+else
+	echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck;g\" \\"
+	echo "			-e \"s;%%ENABLEPWCHECK%%;no;g\""
+fi
+if [ ! "${DEFJAVA}" ]; then
+	echo "PLIST_SUB+=	JAVASASL=\"@comment \""
+fi
+if [ ! "${DBLIB}" ]; then
+	echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
+	echo "SASLDB_NAME=	sasldb.db"
+fi
+
+if [ "$OPENLDAP" ]; then
 	echo "LDAP_MYSQL_MSG=	\"See sysadmin.html in the Cyrus-SASL docs directory for informaion on using LDAP or MySQL for authentication.\""
 fi

@@ -1,5 +1,5 @@
---- configure.in.orig	Tue Nov 27 11:45:28 2001
-+++ configure.in	Tue Nov 27 12:49:28 2001
+--- configure.in.orig	Thu Jan 17 19:21:51 2002
++++ configure.in	Thu Jan 17 19:47:46 2002
 @@ -66,8 +66,9 @@
  dnl check for -R, etc. switch
  CMU_GUESS_RUNPATH_SWITCH
@@ -12,7 +12,16 @@
  
  AM_DISABLE_STATIC
  
-@@ -235,6 +236,13 @@
+@@ -122,8 +123,6 @@
+ 
+   AC_SUBST(JAVA_INCLUDES)
+   AC_MSG_RESULT(JAVA_INCLUDES)
+-  JAVAC=`echo "$JAVAC" | sed 's,.*/,,'`
+-  JAVAH=`echo "$JAVAH" | sed 's,.*/,,'`
+ fi
+ 
+ AM_CONDITIONAL(SAMPLE, test "$enable_sample" = yes)
+@@ -235,6 +234,13 @@
    berkeley)
      SASL_DB_BACKEND="db_${dblib}.lo"
      AC_DEFINE(SASL_BERKELEYDB)

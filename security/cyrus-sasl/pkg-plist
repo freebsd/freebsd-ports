@@ -7,6 +7,9 @@ include/sasl/sasl.h
 include/sasl/saslplug.h
 include/sasl/saslutil.h
 @dirrm include/sasl
+%%JAVASASL%%lib/libjavasasl.a
+%%JAVASASL%%lib/libjavasasl.so
+%%JAVASASL%%lib/libjavasasl.so.1
 lib/libsasl.a
 lib/libsasl.so
 lib/libsasl.so.8
@@ -34,6 +37,27 @@ lib/sasl/libplain.so.1
 sbin/sasldblistusers
 sbin/saslpasswd
 sbin/pwcheck
+sbin/pwcheck_pam
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/ClientFactory.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/GenericClient.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/GenericCommon.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/GenericServer.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/Sasl.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslClient.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslClientFactory.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslException.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslInputStream.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslOutputStream.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslServer.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslServerFactory.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/SaslUtils.class
+%%JAVASASL%%share/java/classes/sasl/CyrusSasl/ServerFactory.class
+%%JAVASASL%%share/java/classes/sasl/javax/security/auth/callback/Callback.class
+%%JAVASASL%%share/java/classes/sasl/javax/security/auth/callback/CallbackHandler.class
+%%JAVASASL%%share/java/classes/sasl/javax/security/auth/callback/NameCallback.class
+%%JAVASASL%%share/java/classes/sasl/javax/security/auth/callback/PasswordCallback.class
+%%JAVASASL%%share/java/classes/sasl/javax/security/auth/callback/RealmCallback.class
+%%JAVASASL%%share/java/classes/sasl/javax/security/auth/callback/UnsupportedCallbackException.class
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -43,6 +67,7 @@ sbin/pwcheck
 %%PORTDOCS%%%%DOCSDIR%%/Sendmail.README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/draft-newman-auth-scram-03.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-weltman-java-sasl-02.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2095.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2104.txt
@@ -54,6 +79,14 @@ sbin/pwcheck
 %%PORTDOCS%%%%DOCSDIR%%/programming.html
 %%PORTDOCS%%%%DOCSDIR%%/sysadmin.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%JAVASASL%%@dirrm share/java/classes/sasl/javax/security/auth/callback
+%%JAVASASL%%@dirrm share/java/classes/sasl/javax/security/auth
+%%JAVASASL%%@dirrm share/java/classes/sasl/javax/security
+%%JAVASASL%%@dirrm share/java/classes/sasl/javax
+%%JAVASASL%%@dirrm share/java/classes/sasl/CyrusSasl
+%%JAVASASL%%@dirrm share/java/classes/sasl
+%%JAVASASL%%@unexec rmdir %D/share/java/classes || true
+%%JAVASASL%%@unexec rmdir %D/share/java || true
 @dirrm lib/sasl
 @cwd /var
 @exec install -d -m 770 -o cyrus -g cyrus %D/pwcheck
