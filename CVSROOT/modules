@@ -6951,6 +6951,7 @@ ruby-imlib2	ports/graphics/ruby-imlib2
 ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
 ruby-irc	ports/irc/ruby-irc
+ruby-jabber4r	ports/net/ruby-jabber4r
 ruby-ldap	ports/net/ruby-ldap
 ruby-libart	ports/graphics/ruby-libart
 ruby-libart2	ports/graphics/ruby-libart2
