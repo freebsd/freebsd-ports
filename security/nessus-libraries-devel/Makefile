@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	nessus-libraries-devel
-PORTVERSION=	1.1.11
+PORTVERSION=	1.1.12
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
