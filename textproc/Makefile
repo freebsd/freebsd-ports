@@ -12,6 +12,7 @@
     SUBDIR += cocoon
     SUBDIR += code2html
     SUBDIR += cole
+    SUBDIR += cost
     SUBDIR += de-ispell
     SUBDIR += dealt-ispell
     SUBDIR += deneu-ispell

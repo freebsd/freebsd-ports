@@ -1,0 +1,21 @@
+bin/costsh
+lib/cost2.2/libcost2.2.so
+lib/cost2.2/Core.tcl
+lib/cost2.2/Counters.tcl
+lib/cost2.2/Numerals.tcl
+lib/cost2.2/Simple.tcl
+lib/cost2.2/auxfile.tcl
+lib/cost2.2/costinit.tcl
+lib/cost2.2/htmllib.tcl
+lib/cost2.2/pkgIndex.tcl
+lib/cost2.2/rtflib.tcl
+lib/cost2.2/textutil.tcl
+lib/cost2.2/winhelp-stylesheet.tcl
+lib/cost2.2/RTF.spec
+lib/cost2.2/EventHandler.itcl
+share/doc/cost/manual.html
+share/doc/cost/manual.ps
+share/doc/cost/rtflib.html
+share/doc/cost/simple.html
+@dirrm share/doc/cost
+@dirrm lib/cost2.2
