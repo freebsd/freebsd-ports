@@ -3,13 +3,13 @@
 # Date created:        10 April 1999
 # Whom:                Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.2 1999/04/14 19:55:55 mharo Exp $
+# $Id: Makefile,v 1.3 1999/04/15 03:10:06 mharo Exp $
 #
 
 DISTNAME=	cmp3-2.0pre3
 PKGNAME=	cmp3-2.0p3
 CATEGORIES=	audio
-MASTER_SITES=	http://nkk104.rh.psu.edu/cmp3/
+MASTER_SITES=	http://www.personal.psu.edu/users/n/k/nkk104/cmp3/	
 
 MAINTAINER=	cpiazza@home.net
 
