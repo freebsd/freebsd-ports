@@ -15,6 +15,7 @@
     SUBDIR += gdis
     SUBDIR += ghemical
     SUBDIR += glens
+    SUBDIR += gramps
     SUBDIR += kmovisto
     SUBDIR += libctl
     SUBDIR += libsvm
