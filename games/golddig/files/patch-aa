@@ -1,5 +1,5 @@
---- shared.c.orig	Mon May  1 18:20:48 2000
-+++ shared.c	Mon May  1 18:25:28 2000
+--- shared.c.orig	Thu Dec  2 11:49:23 2004
++++ shared.c	Thu Dec  2 11:52:16 2004
 @@ -58,7 +58,7 @@
  #include "bitmap/window.bits"
  #include "bitmap/anti.bits"
@@ -9,18 +9,35 @@
  
  /* All in and out movements except up */
  #define NOUPBITS   DLEAVE | LLEAVE | RLEAVE | HENTER | VENTER
-@@ -316,8 +316,12 @@
+@@ -312,21 +312,25 @@
+   FILE *levelfile;
+   register int i,j;
+   int x,y;
+-  char buf[300];
++  char buf[1300];
  
    /* Manufaction the file name by starting with the world name and */
    /* appending the level number to it. */
 -  strcpy(filename,LIB);
 -  strcat(filename,"/");
+-  strcat(filename,worldname);
 +  if (strchr (worldname, '/')) 
 +      *filename = 0;
 +  else {
-+      strcpy(filename,LIB);
-+      strcat(filename,"/");
++      strncpy(filename,LIB,sizeof(filename) - 3);
++      strncat(filename,"/",sizeof(filename) - 3);
 +  }
-   strcat(filename,worldname);
++  strncat(filename,worldname,sizeof(filename) - 3);
    sprintf(filename + strlen(filename),"%03d",levelnum);
    /* Open level file for reading */
+   levelfile = fopen(filename,"r");
+   /* If level file does not exist, use the default level file. */
+   if(levelfile == NULL) {
+     /* Build the default level name */
+-    strcpy(buf,LIB);
+-    strcat(buf,"/default");
++    strncpy(buf,LIB,sizeof(filename));
++    strncat(buf,"/default",sizeof(filename));
+     /* Open default level file for reading */
+     levelfile = fopen(buf,"r");
+     if(levelfile == NULL) {
