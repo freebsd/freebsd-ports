@@ -1,13 +1,12 @@
---- BITMAP-CFG.orig	Wed Jul 28 20:10:09 1999
-+++ BITMAP-CFG	Sat Oct  9 20:43:07 1999
-@@ -20,6 +20,12 @@
-       (add-to-list 'load-path (expand-file-name "flim" LISPDIR))
+--- BITMAP-CFG.orig	Wed Nov 10 10:58:34 1999
++++ BITMAP-CFG	Tue Jan 18 21:34:01 2000
+@@ -16,6 +16,11 @@
+       (add-to-list 'load-path (expand-file-name "apel" LISPDIR))
        ))
  
 +(if (not (fboundp 'normal-top-level-add-subdirs-to-load-path))
 +    (progn 
 +      (require 'apel-setupel)
-+      (require 'flim-setupel)
 +      ))
 +
  (if (boundp 'VERSION_SPECIFIC_LISPDIR)
