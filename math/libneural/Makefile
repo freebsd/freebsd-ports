@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libneural
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	math devel
 MASTER_SITES=	http://ieee.uow.edu.au/documents/contrib/
 
