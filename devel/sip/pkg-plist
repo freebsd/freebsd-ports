@@ -1,8 +1,8 @@
 bin/sip
 include/sip/sip.h
 include/sip/sipQt.h
-lib/libsip.so.6
 lib/libsip.so
-lib/libsip.la
-lib/libsip.a
+lib/libsip.so.9
+lib/libsip.so.9.2
+lib/libsip.so.9.2.0
 @dirrm include/sip
