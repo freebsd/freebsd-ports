@@ -1,0 +1,21 @@
+*** makefiles/Makefile.freebsd.orig	Sun Dec 12 09:07:47 1999
+--- makefiles/Makefile.freebsd	Mon Mar 27 07:49:08 2000
+***************
+*** 1,8 ****
+! CC=cc
+! AR=ar
+  
+  # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
+! CFLAGS=-O -I${PREFIX}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD -DUSE_XMIM
+! LIBS= ${MOTIFLIB} -L${PREFIX}/lib -lm -lXpm -lXext -lXt -lSM -lICE -lX11
+  
+! include Makefile.common
+--- 1,8 ----
+! CC?=cc
+! AR?=ar
+  
+  # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
+! CFLAGS+=-O -I${X11BASE}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD -DUSE_XMIM
+! LIBS= ${MOTIFLIB} -L${X11BASE}/lib -lm -lXpm -lXext -lXt -lSM -lICE -lX11
+  
+! include Makefile.common
