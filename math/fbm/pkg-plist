@@ -97,8 +97,8 @@ bin/net-tbl
 bin/net-wrap
 bin/rand-seed
 bin/series
-share/fbm/randfile
-@dirrm share/fbm
+%%DATADIR%%/randfile
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/Acknowledgements.doc
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/Contents.doc
@@ -142,6 +142,7 @@ share/fbm/randfile
 %%PORTDOCS%%%%DOCSDIR%%/Release.2000-08-21.doc
 %%PORTDOCS%%%%DOCSDIR%%/Release.2001-08-31.doc
 %%PORTDOCS%%%%DOCSDIR%%/Release.2003-06-29.doc
+%%PORTDOCS%%%%DOCSDIR%%/Release.2004-11-10.doc
 %%PORTDOCS%%%%DOCSDIR%%/bvg-initial.doc
 %%PORTDOCS%%%%DOCSDIR%%/bvg-mc.doc
 %%PORTDOCS%%%%DOCSDIR%%/bvg-plt.doc
@@ -193,6 +194,7 @@ share/fbm/randfile
 %%PORTDOCS%%%%DOCSDIR%%/manual
 %%PORTDOCS%%%%DOCSDIR%%/mc-ais.doc
 %%PORTDOCS%%%%DOCSDIR%%/mc-quantities.doc
+%%PORTDOCS%%%%DOCSDIR%%/mc-reweight.doc
 %%PORTDOCS%%%%DOCSDIR%%/mc-spec.doc
 %%PORTDOCS%%%%DOCSDIR%%/mc-temp-filter.doc
 %%PORTDOCS%%%%DOCSDIR%%/mc-temp-sched.doc
@@ -231,6 +233,7 @@ share/fbm/randfile
 %%PORTDOCS%%%%DOCSDIR%%/xxx-circ.doc
 %%PORTDOCS%%%%DOCSDIR%%/xxx-genp.doc
 %%PORTDOCS%%%%DOCSDIR%%/xxx-grad-test.doc
+%%PORTDOCS%%%%DOCSDIR%%/xxx-his.doc
 %%PORTDOCS%%%%DOCSDIR%%/xxx-hist.doc
 %%PORTDOCS%%%%DOCSDIR%%/xxx-mc.doc
 %%PORTDOCS%%%%DOCSDIR%%/xxx-plt.doc
@@ -277,9 +280,10 @@ share/fbm/randfile
 %%PORTDOCS%%%%DOCSDIR%%/html/Release.1999-03-13.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Release.1999-12-06.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Release.2000-08-21.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Release.2003-06-29.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Release.2001-08-31.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Release.2003-06-29.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Release.2004-11-10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bvg-initial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bvg-mc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bvg-plt.html
@@ -329,6 +333,7 @@ share/fbm/randfile
 %%PORTDOCS%%%%DOCSDIR%%/html/log.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mc-ais.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mc-quantities.html
+%%PORTDOCS%%%%DOCSDIR%%/html/mc-reweight.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mc-spec.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mc-temp-filter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mc-temp-sched.html
@@ -366,6 +371,7 @@ share/fbm/randfile
 %%PORTDOCS%%%%DOCSDIR%%/html/xxx-circ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xxx-genp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xxx-grad-test.html
+%%PORTDOCS%%%%DOCSDIR%%/html/xxx-his.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xxx-hist.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xxx-mc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xxx-plt.html
@@ -493,6 +499,7 @@ share/fbm/randfile
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex-mixdft/scmds-nmet
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex-mixdft/scmds-nogaps
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex-mixdft/sdata
+%%PORTDOCS%%%%EXAMPLESDIR%%/ex-mixdft/trace.txt
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ex-mixdft
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex-netgp/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex-netgp/bcmds.gpl
