@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	3.1
+PORTVERSION=	3.1.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://public.kitware.com/pub/vtk/
-DISTNAME=	vtk31Unix
+DISTNAME=	vtk312Unix
 
 MAINTAINER=	ports@FreeBSD.org
 
