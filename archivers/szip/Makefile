@@ -22,7 +22,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.txt ${DOCSDIR}
 .endif
