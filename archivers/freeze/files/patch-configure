@@ -1,0 +1,12 @@
+$FreeBSD$
+
+--- configure.orig	Thu Sep  6 11:08:26 2001
++++ configure	Thu Sep  6 11:08:42 2001
+@@ -126,7 +126,7 @@
+ ${CC-cc} -E conftest.c > conftest.out 2>&1
+ if egrep yes conftest.out >/dev/null 2>&1; then
+   GCC=1 # For later tests.
+-  CC="$CC -O"
++  CC="$CC"
+ fi
+ rm -f conftest*
