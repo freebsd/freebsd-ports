@@ -42,7 +42,7 @@ USE_GETOPT_LONG=yes
 
 .if !defined(WITHOUT_GETTEXT)
 CONFIGURE_ARGS+=--enable-nls
-LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext
 PLIST_SUB+=	GETTEXT=""
 .else
 CONFIGURE_ARGS+=--disable-nls

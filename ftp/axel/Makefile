@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.lintux.cx/downloads/
 MAINTAINER=	lintux@debian.org
 COMMENT=	A download accelerator
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sf@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes

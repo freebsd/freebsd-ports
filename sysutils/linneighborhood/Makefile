@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	GTK+ gui for browsing and mounting SMB filesystems
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba
 
 GNU_CONFIGURE=	yes

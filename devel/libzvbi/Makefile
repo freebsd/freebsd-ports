@@ -16,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Routines to access raw VBI capture devices
 
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

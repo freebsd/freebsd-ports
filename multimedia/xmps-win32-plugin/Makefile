@@ -15,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	xmps plugin for Win32 (TM) Codecs
 
 LIB_DEPENDS=	xmps.0:${PORTSDIR}/multimedia/xmps \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 USE_GMAKE=	yes

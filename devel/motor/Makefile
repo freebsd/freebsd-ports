@@ -13,7 +13,7 @@ MASTER_SITES=	http://konst.org.ua/download/
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A powerful text mode based programming IDE
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

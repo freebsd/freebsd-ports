@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	system/printing
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Send print jobs to lpd servers anywhere on a network
 
-#LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+#LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"

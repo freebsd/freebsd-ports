@@ -15,7 +15,7 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes

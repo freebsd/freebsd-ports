@@ -14,7 +14,7 @@ MASTER_SITES=	http://soribada.kldp.org/depot/
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Soribada client
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

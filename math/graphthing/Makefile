@@ -14,7 +14,7 @@ MASTER_SITES=	http://graph.seul.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that allows you to create, manipulate and study graphs
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_BISON=	yes

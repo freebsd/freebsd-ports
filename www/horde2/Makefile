@@ -26,7 +26,7 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #
 #-----------------------------------------------------------------------
 
-LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext
 .if !defined(WITHOUT_MCAL)
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif

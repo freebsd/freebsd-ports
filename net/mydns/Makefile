@@ -13,7 +13,7 @@ MASTER_SITES=	http://mydns.bboy.net/download/
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	DNS server designed to utilize the MySQL database
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes

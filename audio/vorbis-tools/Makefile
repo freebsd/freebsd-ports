@@ -20,7 +20,7 @@ COMMENT=	Play, encode, and manage Ogg Vorbis files
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		curl.2:${PORTSDIR}/ftp/curl \
-		intl.4:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes

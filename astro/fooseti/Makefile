@@ -14,7 +14,7 @@ MASTER_SITES=	http://www-personal.engin.umich.edu/~agorski/fooseti/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend to SETI@Home
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

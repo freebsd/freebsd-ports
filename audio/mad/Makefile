@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	jason@mastaler.com
 COMMENT=	High-quality MPEG audio decoder
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 WANT_GNOME=	yes
 

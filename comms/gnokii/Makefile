@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Tools to talk to Nokia cellular phones
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

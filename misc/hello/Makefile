@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	hello
 MAINTAINER=	shipley@dis.org
 COMMENT=	A utility for saying hello to the world and reading email
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES

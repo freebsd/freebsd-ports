@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_REINPLACE=	yes

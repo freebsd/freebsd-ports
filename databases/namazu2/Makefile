@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-de.diff
 PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 #		xlHtml:${PORTSDIR}/textproc/xlhtml \

@@ -22,7 +22,7 @@ PATCH_SITES=	${MASTER_SITES}
 MAINTAINER=	takamune@avrl.mei.co.jp
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 LISTFILES=	appendix/LIST \

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
 
 LIB_DEPENDS=	tds.2:${PORTSDIR}/databases/freetds \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

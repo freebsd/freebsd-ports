@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	textutils
 MAINTAINER=	aw1@stade.co.uk
 COMMENT=	GNU text utilities
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

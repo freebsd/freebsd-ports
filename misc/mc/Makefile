@@ -18,7 +18,7 @@ COMMENT=	Midnight Commander, a free Norton Commander Clone
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes

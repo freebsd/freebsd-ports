@@ -15,7 +15,7 @@ DISTNAME=	tre-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig

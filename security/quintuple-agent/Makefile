@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.vibe.at/tools/q-agent/
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	Quintuple Agent is a program that stores secrets for you
 
-LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	glib12
 .ifndef(WITHOUT_X11)

@@ -24,7 +24,7 @@ COMMENT=	A very artistic X window manager
 
 LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		ghttp.1:${PORTSDIR}/www/libghttp \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

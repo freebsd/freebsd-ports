@@ -25,7 +25,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra \
 		gd.2:${PORTSDIR}/graphics/gd \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_BISON=	yes
 USE_GMAKE=	yes

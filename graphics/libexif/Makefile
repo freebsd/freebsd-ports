@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Library to read digital camera file meta-data
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
