@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.21 1998/09/21 22:31:23 steve Exp $
+# $Id: Makefile,v 1.22 1998/10/10 15:27:26 kuriyama Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -33,17 +33,19 @@ MANCOMPRESSED=	no
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
+.include <bsd.port.pre.mk>
+
 pre-install:
 	${MKDIR} /var/run/canna
 	chown bin.bin /var/run/canna
 
 post-install:
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libRKC.so.1.0 ${PREFIX}/lib/libRKC.so; \
-		${LN} -sf libRKC16.so.1.0 ${PREFIX}/lib/libRKC16.so; \
-		${LN} -sf libcanna.so.1.0 ${PREFIX}/lib/libcanna.so; \
-		${LN} -sf libcanna16.so.1.0 ${PREFIX}/lib/libcanna16.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libRKC.so.1.0 ${PREFIX}/lib/libRKC.so
+	${LN} -sf libRKC16.so.1.0 ${PREFIX}/lib/libRKC16.so
+	${LN} -sf libcanna.so.1.0 ${PREFIX}/lib/libcanna.so
+	${LN} -sf libcanna16.so.1.0 ${PREFIX}/lib/libcanna16.so
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
 		echo "Installing ${STARTUP_SCRIPT} startup file."; 	\
@@ -63,4 +65,4 @@ post-install:
 	fi
 	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		06 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/04/23 06:57:54 tg Exp $
+# $Id: Makefile,v 1.3 1998/10/26 07:45:01 asami Exp $
 #
 
 DISTNAME=	ranlib.c
@@ -15,6 +15,8 @@ MAINTAINER=	tg@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
@@ -23,9 +25,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/ranlib
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/ranlib
 .endif
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libranlib.so.1.0 ${PREFIX}/lib/libranlib.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libranlib.so.1.0 ${PREFIX}/lib/libranlib.so
+.endif
 	@${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

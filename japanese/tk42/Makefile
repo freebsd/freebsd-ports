@@ -3,7 +3,7 @@
 # Date created:		
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.6 1998/09/27 08:24:35 kuriyama Exp $
+# $Id: Makefile,v 1.7 1998/09/28 09:59:02 asami Exp $
 #
 
 DISTNAME=	tk4.2p2
@@ -34,6 +34,8 @@ PATCH_ARGS=		-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_STRIP}
 
 VERSION=	4.2jp
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${MV} ${WRKDIR}/tk4.2 ${WRKDIR}/${DISTNAME}
 
@@ -50,9 +52,9 @@ pre-install:
 post-install:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} install
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libtk42jp.so.1.0 ${PREFIX}/lib/libtk42jp.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libtk42jp.so.1.0 ${PREFIX}/lib/libtk42jp.so
+.endif
 	@echo "**********"
 	@echo "IMPORTANT:"
 	@echo "**********"
@@ -68,4 +70,4 @@ test:
 install-man:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.19 1998/08/09 00:05:49 steve Exp $
+# $Id: Makefile,v 1.20 1998/09/28 09:44:23 asami Exp $
 #
 
 DISTNAME=	blas
@@ -18,13 +18,15 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}
 
+.include <bsd.port.pre.mk>
+
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKDIR}/Makefile
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libblas.so.1.0 ${PREFIX}/lib/libblas.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libblas.so.1.0 ${PREFIX}/lib/libblas.so
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

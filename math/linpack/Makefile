@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.15 1998/09/27 05:39:37 steve Exp $
+# $Id: Makefile,v 1.16 1998/09/28 10:49:17 asami Exp $
 #
 
 DISTNAME=	linpack
@@ -49,6 +49,8 @@ SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 
 DISTFILES=	${SRCS:.f=.f.gz}
 
+.include <bsd.port.pre.mk>
+
 pre-build:
 	cp Makefile.lib ${WRKDIR}/Makefile
 
@@ -57,8 +59,8 @@ pre-extract:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf liblinpack.so.1.0 ${PREFIX}/lib/liblinpack.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf liblinpack.so.1.0 ${PREFIX}/lib/liblinpack.so
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

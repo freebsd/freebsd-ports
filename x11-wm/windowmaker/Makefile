@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.35 1998/10/19 10:57:04 tg Exp $
+# $Id: Makefile,v 1.36 1998/10/30 08:24:36 tg Exp $
 
 DISTNAME=	WindowMaker-0.20.2
 PKGNAME=	windowmaker-0.20.2
@@ -35,6 +35,8 @@ MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 
 DATAFILES=	WindowMaker-data.tar.gz
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
 
@@ -42,11 +44,11 @@ post-install:
 	${MKDIR} ${PREFIX}/share/WindowMaker/Pixmaps/
 	${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \
 		${PREFIX}/share/WindowMaker/Pixmaps/
-	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
-		${LN} -sf libPropList.so.0 ${PREFIX}/lib/libPropList.so; \
-	else \
-		${LN} -sf libPropList.so.0.8 ${PREFIX}/lib/libPropList.so; \
-	fi
+.if ${PORTOBJFORMAT} == "elf"
+	${LN} -sf libPropList.so.0 ${PREFIX}/lib/libPropList.so
+.else
+	${LN} -sf libPropList.so.0.8 ${PREFIX}/lib/libPropList.so
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

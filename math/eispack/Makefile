@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.16 1998/09/28 10:49:21 asami Exp $
+# $Id: Makefile,v 1.17 1998/11/07 18:31:13 fenner Exp $
 #
 
 DISTNAME=	eispack
@@ -36,6 +36,8 @@ SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 
 DISTFILES=	${SRCS:.f=.f.gz}
 
+.include <bsd.port.pre.mk>
+
 pre-build:
 	cp Makefile.lib ${WRKDIR}/Makefile
 
@@ -44,8 +46,8 @@ pre-extract:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libeispack.so.1.0 ${PREFIX}/lib/libeispack.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libeispack.so.1.0 ${PREFIX}/lib/libeispack.so
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1998/08/25 02:26:19 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/27 20:08:00 steve Exp $
 #
 
 DISTNAME=	LAPACK
@@ -181,18 +181,20 @@ MANL=	cgbmv.l cgemm.l cgemv.l cgerc.l cgeru.l chbmv.l chemm.l chemv.l \
 	zungtr.l zunm2l.l zunm2r.l zunmbr.l zunmhr.l zunml2.l zunmlq.l \
 	zunmql.l zunmqr.l zunmr2.l zunmrq.l zunmtr.l zupgtr.l zupmtr.l \
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/BLAS/SRC/libblas.* ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack.* ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
-		${LN} -sf libblas.so.2 ${PREFIX}/lib/libblas.so; \
-		${LN} -sf liblapack.so.2 ${PREFIX}/lib/liblapack.so; \
-	else \
-		${LN} -sf libblas.so.2.0 ${PREFIX}/lib/libblas.so; \
-		${LN} -sf liblapack.so.2.0 ${PREFIX}/lib/liblapack.so; \
-	fi
+.if ${PORTOBJFORMAT} == "elf"
+	${LN} -sf libblas.so.2 ${PREFIX}/lib/libblas.so
+	${LN} -sf liblapack.so.2 ${PREFIX}/lib/liblapack.so
+.else
+	${LN} -sf libblas.so.2.0 ${PREFIX}/lib/libblas.so
+	${LN} -sf liblapack.so.2.0 ${PREFIX}/lib/liblapack.so
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKDIR}/blas/man/manl/*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/*.l ${PREFIX}/man/manl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

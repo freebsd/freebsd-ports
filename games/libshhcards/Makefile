@@ -3,7 +3,7 @@
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/09/28 02:08:56 steve Exp $
+# $Id: Makefile,v 1.4 1998/10/01 06:08:59 steve Exp $
 #
 
 DISTNAME=	shhcards-1.0.3
@@ -18,6 +18,14 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 SOLIB=		libshhcards.so
 
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+SOVERSION=	1
+.else
+SOVERSION=	1.1
+.endif
+
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/shhcards.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/${SOLIB}.${SOVERSION} ${PREFIX}/lib
@@ -27,10 +35,4 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libshhcards
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-SOVERSION=	1
-.else
-SOVERSION=	1.1
-.endif
+.include <bsd.port.post.mk>

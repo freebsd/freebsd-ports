@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.15 1998/06/14 17:31:23 hoek Exp $
+# $Id: Makefile,v 1.16 1998/09/26 23:48:21 steve Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -19,6 +19,14 @@ GNU_CONFIGURE=		yes
 MAN3=		uulib.3
 
 ALL_TARGET=	libuu.a	libuu.so.${VERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	1
+.else
+VERSION=	1.0
+.endif
 
 DOCFILES=	HISTORY doc/Makefile doc/README doc/binhex.fig \
 		doc/library.ltx doc/structure.fig doc/td-v1.c doc/td-v2.c \
@@ -42,10 +50,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-VERSION=	1
-.else
-VERSION=	1.0
-.endif
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		17 Oct 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.11 1998/09/28 15:15:04 kuriyama Exp $
+# $Id: Makefile,v 1.12 1998/10/10 04:08:54 steve Exp $
 #
 
 DISTNAME=	expect-5.28
@@ -24,10 +24,12 @@ CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl8.0jp \
 
 NO_MAN_INSTALL=	yes
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libexpect528jp.so.1.2 ${PREFIX}/lib/libexpect528jp.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libexpect528jp.so.1.2 ${PREFIX}/lib/libexpect528jp.so
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

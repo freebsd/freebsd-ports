@@ -3,7 +3,7 @@
 # Date created:       26 July 1997
 # Whom:               Filip Bovyn (bovynf@awe.be)
 #
-# $Id: Makefile,v 1.5 1998/10/12 15:36:27 jseger Exp $
+# $Id: Makefile,v 1.6 1998/10/20 01:32:14 steve Exp $
 
 DISTNAME=	amulet
 PKGNAME=	amulet-3.0
@@ -16,6 +16,14 @@ MAINTAINER=	bovynf@awe.be
 USE_X_PREFIX=	yes
 WRKSRC=		$(WRKDIR)/amulet
 MAKE_ENV=	AMULET_DIR=$(WRKSRC) AMULET_VARS_FILE=Makefile.vars.gcc.FreeBSD
+
+.include <bsd.port.pre.mk>
+
+.if $(PORTOBJFORMAT) == "elf"
+SO_VERSION=	3
+.else
+SO_VERSION=	3.0
+.endif
 
 pre-build:
 	${CP} $(FILESDIR)/Makefile.vars.gcc.FreeBSD $(WRKSRC)/bin
@@ -93,10 +101,4 @@ do-install:
 	   $(INSTALL_PROGRAM) $(WRKSRC)/bin/$$a $(PREFIX)/share/amulet/samples; \
 	 done)
 
-.include <bsd.port.mk>
-
-.if $(PORTOBJFORMAT) == "elf"
-SO_VERSION=	3
-.else
-SO_VERSION=	3.0
-.endif
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.5 1998/10/16 03:10:45 jseger Exp $
+# $Id: Makefile,v 1.6 1998/10/20 01:23:06 steve Exp $
 #
 
 DISTNAME=	iv-3.1
@@ -57,6 +57,14 @@ MANN=		Adjuster.n Banner.n BasicDialog.n Border.n Box2_6.n \
 		statevars.n stateviews.n struct.n transfns.n \
 		transforms.n uctrls.n viewcmds.n
 
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+IV_LIB_VER=	3
+.else
+IV_LIB_VER=	3.1
+.endif
+
 pre-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/diff-2.0gamma
 
@@ -69,10 +77,4 @@ post-install:
 	@${LN} -fs ${PREFIX}/lib/libUnidraw.so.${IV_LIB_VER} ${PREFIX}/lib/libUnidraw.so
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-IV_LIB_VER=	3
-.else
-IV_LIB_VER=	3.1
-.endif
+.include <bsd.port.post.mk>

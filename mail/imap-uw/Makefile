@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.20 1998/10/23 18:42:49 asami Exp $
+# $Id: Makefile,v 1.21 1998/10/26 13:54:20 steve Exp $
 #
 
 DISTNAME=	imap-4.2
@@ -17,6 +17,14 @@ MAINTAINER=	imap-uw@freebsd.ady.ro
 
 ALL_TARGET=	bsf
 MAN8=		ipopd.8 imapd.8
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+SHLIB=	libc-client.so.2
+.else
+SHLIB=	libc-client.so.2.1
+.endif
 
 #pre-build:
 #	@chmod 755 ${WRKSRC}/src/osdep/unix/drivers ${WRKSRC}/src/osdep/unix/mkauths
@@ -42,10 +50,4 @@ do-install:
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-SHLIB=	libc-client.so.2
-.else
-SHLIB=	libc-client.so.2.1
-.endif
+.include <bsd.port.post.mk>

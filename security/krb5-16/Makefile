@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.6 1998/09/27 11:34:28 markm Exp $
+# $Id: Makefile,v 1.7 1998/11/07 02:33:44 nectar Exp $
 #
 
 DISTNAME=		krb5-1.0.5
@@ -110,6 +110,8 @@ SETUID_EXE=		bin/ksu bin/v4rcp
 CHOWN?=		chown
 SUPERUSER?=	root
 
+.include <bsd.port.pre.mk>
+
 do-fetch:
 	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR};                 \
@@ -192,11 +194,11 @@ post-install:
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor
 # fixup packing list (no libs without version numbers in aout case)
-	@if test "${PORTOBJFORMAT}" = "aout"; then                   \
-		${ECHO_MSG} "Fixing packing list for a.out";         \
-		${MV} ${TMPPLIST} ${TMPPLIST}.new;                   \
-		${GREP} -v '\.so$$' ${TMPPLIST}.new > ${TMPPLIST};   \
-		${RM} ${TMPPLIST}.new;                               \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${ECHO_MSG} "Fixing packing list for a.out"
+	${MV} ${TMPPLIST} ${TMPPLIST}.new
+	${GREP} -v '\.so$$' ${TMPPLIST}.new > ${TMPPLIST}
+	${RM} ${TMPPLIST}.new
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		02 November 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/10/13 03:43:37 jseger Exp $
+# $Id: Makefile,v 1.9 1998/10/13 04:01:21 jseger Exp $
 #
 
 DISTNAME=	iNES07-FreeBSD-80x86-bin
@@ -18,6 +18,12 @@ WRKSRC=		${WRKDIR}/NES
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+STRIP=
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ines ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ines-debug ${PREFIX}/bin
@@ -26,8 +32,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/headers.tgz ${PREFIX}/share/ines
 	@${INSTALL_DATA} ${WRKSRC}/CART.* ${PREFIX}/share/ines
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-STRIP=
-.endif
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		23 Jan 1998
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.5 1998/09/27 11:17:06 kuriyama Exp $
+# $Id: Makefile,v 1.6 1998/09/28 10:23:58 asami Exp $
 #
 
 DISTNAME=	tcl8.0.3
@@ -28,6 +28,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--enable-shared
 
+.include <bsd.port.pre.mk>
+
 .if !defined(NOPORTDOCS)
 post-patch:
 	@${CP} ${FILESDIR}/README.FreeBSD.in ${TOPDIR}/README.FreeBSD.JP.in
@@ -47,9 +49,9 @@ post-install:
 	 )
 .endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libtcl80jp.so.1.2 ${PREFIX}/lib/libtcl80jp.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout" 
+	${LN} -sf libtcl80jp.so.1.2 ${PREFIX}/lib/libtcl80jp.so
+.endif
 	@${CAT}	${PKGDIR}/MESSAGE
 
 test:
@@ -58,4 +60,4 @@ test:
 install-man:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

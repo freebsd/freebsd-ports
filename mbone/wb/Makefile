@@ -3,7 +3,7 @@
 # Date created:		2 Novermber 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:31:33 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/27 01:43:59 steve Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -20,6 +20,12 @@ USE_X_PREFIX=	yes
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+STRIP=
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wb ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -30,8 +36,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lblwb.ps ${PREFIX}/share/doc/wb
 .endif
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-STRIP=
-.endif
+.include <bsd.port.post.mk>
