@@ -1,0 +1,12 @@
+--- src/lib/sfio/Sfio_dc/Makefile.orig	Sat Nov  7 15:39:40 1998
++++ src/lib/sfio/Sfio_dc/Makefile	Sat Nov  7 15:40:01 1998
+@@ -10,7 +10,8 @@
+ # Compiler and flags to use
+ CXFLAGS=
+ CCMODE=	-O
+-CCFLAGS= -I. -I$(INCDIR) $(CCMODE) $(CXFLAGS)
++CCFLAGS= $(CFLAGS)
++CCFLAGS+= -I. -I$(INCDIR)
+ AR=	ar
+ CC=	cc
+ 

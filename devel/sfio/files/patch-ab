@@ -1,0 +1,11 @@
+--- src/lib/sfio/sfhdr.h.orig	Sat Nov  7 13:29:09 1998
++++ src/lib/sfio/sfhdr.h	Sat Nov  7 13:29:25 1998
+@@ -134,7 +134,7 @@
+ #include	<floatingpoint.h>
+ #endif
+ #if _hdr_values
+-#include	<values.h>
++#include	<float.h>
+ #endif
+ #if _hdr_math
+ #include	<math.h>

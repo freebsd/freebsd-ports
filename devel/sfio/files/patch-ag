@@ -1,0 +1,11 @@
+--- src/lib/sfio/Sfio_t/runtest.orig	Sat Nov  7 15:35:55 1998
++++ src/lib/sfio/Sfio_t/runtest	Sat Nov  7 15:36:11 1998
+@@ -32,7 +32,7 @@
+ 	if $CC -g -I.. -I$INCLUDE $i $LIB/libsfio.a -lm -o t
+ 	then
+ 		if ./t
+-		then	rm t; status=passed
++		then	rm -f t; status=passed
+ 		else	status=failed
+ 		fi
+ 	else	status="Not compiled"
