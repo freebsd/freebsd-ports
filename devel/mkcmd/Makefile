@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkcmd
-PORTVERSION=	8.13d
+PORTVERSION=	8.14
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/
 EXTRACT_SUFX=	.tgz
