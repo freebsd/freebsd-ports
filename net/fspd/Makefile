@@ -8,7 +8,7 @@
 PORTNAME=	fspd
 PORTVERSION=	2.8.1.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.netsw.org/netsw/Network/IP/FileTrans/FSP/
+MASTER_SITES=	ftp://ftp.netsw.org/net/ip/filetrans/fsp/
 DISTNAME=	fsp.281-B3
 
 MAINTAINER=	trevor@FreeBSD.org
