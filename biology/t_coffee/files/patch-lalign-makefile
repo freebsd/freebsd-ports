@@ -1,0 +1,37 @@
+--- lalign/makefile.orig	Wed Jun 13 03:05:02 2001
++++ lalign/makefile	Wed Jun 27 17:29:56 2001
+@@ -4,14 +4,14 @@
+ # use the compiler option that invokes signed char's.
+ #
+ #sun (bsd)
+-CC= cc
++#CC= cc
+ # for MIPS: CFLAGS= -O -DUNIX -DBIGMEM -DSFCHAR="':'" -signed 
+-CFLAGS= -O -DUNIX -DBIGMEM -DSFCHAR="':'"
++#CFLAGS= -O -DUNIX -DBIGMEM -DSFCHAR="':'"
+ LFLAGS=  -o
+ #NRAND= nrand
+ #IBM RS/6000
+-NRAND= nrand48
+-RANFLG= -DRAND32
++#NRAND= nrand48
++#RANFLG= -DRAND32
+ #HZ=60 for sun, mips, 100 for rs/6000, SGI
+ HZ=60
+ 
+@@ -25,14 +25,13 @@
+ 
+ lalign2list : lalign.o pam.o lsim.o lgetaa.o ndispn.o time.o
+ 	$(CC) lalign.o pam.o lsim.o lgetaa.o ndispn.o time.o $(LFLAGS) lalign2list
+-	mv lalign2list $(USER_BIN)/lalign2list
+ lalign.o : lalign.c upam.gbl
+ pam.o : uascii.gbl upam.gbl
+ lsim.o : lsim.c zzgmata.gbl upam.gbl
+ 	$(CC)  $(CFLAGS) -c lsim.c
+ lgetaa.o : nxgetaa.c upam.gbl uascii.gbl  altlib.h
+ 	$(CC) $(CFLAGS) -DNOLIB -c nxgetaa.c
+-	mv nxgetaa.o lgetaa.o
++	$(MV) nxgetaa.o lgetaa.o
+ ndispn.o : upam.gbl
+ time.o : time.c
+ 	$(CC) $(CFLAGS) -DHZ=$(HZ) -c time.c
