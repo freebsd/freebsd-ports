@@ -7,6 +7,7 @@
 
 PORTNAME=	leafnode
 PORTVERSION=	1.9.52
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
@@ -23,16 +24,20 @@ COMMENT=	NNTP package for offline news caching and reading
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-.if exists(/var/spool/news) && !defined(PACKAGE_BUILDING)
-LEAFNODE_SPOOLDIR?=/var/spool/news
-.endif
-LEAFNODE_SPOOLDIR?=${PREFIX}/var/spool/leafnode
-PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if exists(/var/spool/news/leaf.node) && !defined(PACKAGE_BUILDING)
+LEAFNODE_SPOOLDIR?=/var/spool/news
+.elif exists(${LOCALBASE}/var/spool/leafnode/leaf.node) && !defined(PACKAGE_BUILDING)
+LEAFNODE_SPOOLDIR?=${LOCALBASE}/var/spool/leafnode
+.endif
+LEAFNODE_SPOOLDIR?=/var/spool/leafnode
+PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
+
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/leafnode \
-		--with-lockfile=${LEAFNODE_SPOOLDIR}/leaf.node/lock.file \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=
@@ -75,4 +80,4 @@ post-install:
 		${SH} pkg-install ${PORTNAME} POST-INSTALL
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
