@@ -1,0 +1,46 @@
+bin/goats-applet
+bin/goat-create
+etc/gconf/gconf.xml.defaults/apps/goats/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/goats/defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/goats/settings/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/goats/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/goats/defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/goats/settings/%gconf.xml
+etc/gconf/schemas/goats.schemas
+libdata/bonobo/servers/GNOME_GoatsApplet.server
+share/gnome/gnome-2.0/ui/GNOME_GoatsApplet.xml
+share/gnome/goats/alarm.png
+share/gnome/goats/cross.png
+share/gnome/goats/goats.glade2
+share/gnome/goats/goats.png
+share/gnome/goats/goats_focus.png
+share/gnome/goats/goats_logo.png
+share/gnome/goats/hide.png
+share/gnome/goats/resize.png
+share/gnome/help/goats/C/goats.xml
+share/gnome/help/goats/C/legal.xml
+share/gnome/help/goats/C/figures/alarm.png
+share/gnome/help/goats/C/figures/applet.png
+share/gnome/help/goats/C/figures/applet_menu.png
+share/gnome/help/goats/C/figures/defaults.png
+share/gnome/help/goats/C/figures/note.png
+share/gnome/help/goats/C/figures/note_menu.png
+share/gnome/help/goats/C/figures/options.png
+share/gnome/omf/goats/goats-C.omf
+share/gnome/pixmaps/goats.png
+share/gnome/sounds/goat_bleat.au
+share/locale/es/LC_MESSAGES/goats-2.0.mo
+share/locale/ru/LC_MESSAGES/goats-2.0.mo
+@exec scrollkeeper-install -q %D/share/gnome/omf/goats/goats-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/goats/goats-C.omf 2>/dev/null || /usr/bin/true
+@dirrm share/gnome/omf/goats
+@dirrm share/gnome/help/goats/C/figures
+@dirrm share/gnome/help/goats/C
+@dirrm share/gnome/help/goats
+@dirrm share/gnome/goats
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/goats/settings
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/goats/defaults
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/goats
+@dirrm etc/gconf/gconf.xml.defaults/apps/goats/settings
+@dirrm etc/gconf/gconf.xml.defaults/apps/goats/defaults
+@dirrm etc/gconf/gconf.xml.defaults/apps/goats

@@ -22,6 +22,7 @@
     SUBDIR += gnomepim
     SUBDIR += gnomeutils2
     SUBDIR += gnotime
+    SUBDIR += goats
     SUBDIR += gtimer
     SUBDIR += gucharmap
     SUBDIR += gworkspace
