@@ -114,9 +114,9 @@
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vilearn
+    SUBDIR += vim
     SUBDIR += vim-lite
     SUBDIR += vim5
-    SUBDIR += vim6
     SUBDIR += vim6+ruby
     SUBDIR += wemi-emacs
     SUBDIR += wemi-emacs-current
