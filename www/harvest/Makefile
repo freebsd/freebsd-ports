@@ -3,15 +3,13 @@
 # Date created:		Fri Mar  1 19:43:52 MET 1996
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/06/12 17:26:33 asami Exp $
+# $Id: Makefile,v 1.7 1997/10/09 21:04:41 andreas Exp $
 #
 
-DISTNAME=	harvest-1.4.pl2
-PKGNAME=	harvest-1.4.2
+DISTNAME=	harvest-1.5
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/distribs/harvest/ \
-		ftp://ftp.ask.uni-karlsruhe.de/pub/infosystems/harvest/ \
-		ftp://ftp.sunet.se/pub/nir/harvest/
+MASTER_SITES=	ftp://ftp.tardis.ed.ac.uk/pub/harvest/ \
+		ftp://ftp.nlanr.net/Mirror/Harvest/develop/snapshots/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	andreas@FreeBSD.ORG
