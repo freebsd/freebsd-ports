@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# X must be running when the scram program creates the bitmaps
-xwd -root >/dev/null 2>&1 
-if [ $? != 0 ]; then
-  echo "X needs to be started to build xmris"
-  exit 1
-fi
-
 mv ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.orig
 
 echo "LOCAL=$PREFIX" >${WRKSRC}/Imakefile || exit 1;
