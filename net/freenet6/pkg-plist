@@ -1,0 +1,6 @@
+bin/tspc
+etc/tspc.conf.sample
+bin/tspc-freebsd4.sh
+bin/tspc-freebsd44.sh
+bin/checktunnel.sh
+etc/rc.d/freenet6.sh
