@@ -3383,6 +3383,7 @@ libm		src/lib/libm
 libmalloc	ports/devel/libmalloc
 libmcal		ports/misc/libmcal
 libmcrypt	ports/security/libmcrypt
+libmcve		ports/devel/libmcve
 libmd		src/lib/libmd
 libmenu		src/lib/libmenu
 libmikmod	ports/audio/libmikmod
