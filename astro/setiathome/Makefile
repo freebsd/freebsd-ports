@@ -3,7 +3,7 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.8 1999/05/17 08:18:01 stb Exp $
+# $Id: Makefile,v 1.9 1999/05/17 10:58:07 stb Exp $
 #
 
 PKGNAME=	setiathome-1.1
@@ -19,6 +19,8 @@ ONLY_FOR_ARCHS=	i386
 EXTRACT_CMD=		tar
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	
+
+MAN1=		setiathome.1
 
 .include <bsd.port.pre.mk>
 
@@ -69,6 +71,7 @@ pre-fetch:
 
 do-install:
 	${INSTALL_PROGRAM}	${WRKDIR}/${WRKSRC}/setiathome ${PREFIX}/bin
+	${INSTALL_SCRIPT}	${FILESDIR}/setiathome.sh ${PREFIX}/etc/rc.d
 	${INSTALL_MAN}		${FILESDIR}/setiathome.1 ${MAN1PREFIX}/man/man1
 
 post-install:
