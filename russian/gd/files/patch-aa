@@ -1,27 +1,146 @@
---- Makefile.orig	Tue Aug  8 14:28:27 1995
-+++ Makefile	Sat Jun 14 18:19:04 1997
-@@ -7,9 +7,9 @@
- #If the ar command fails on your system, consult the ar manpage
+--- Makefile.orig	Thu May 18 13:39:18 2000
++++ Makefile	Sun May 21 00:55:38 2000
+@@ -5,3 +5,3 @@
+ #compiler; get gcc if you are still using it). 
+-COMPILER=gcc
++COMPILER=${CC}
+ 
+@@ -9,3 +9,3 @@
  #for your system. 
- 
--CC=gcc 
 -AR=ar
--CFLAGS=-O
-+#CC=gcc 
 +#AR=ar
+ 
+@@ -13,6 +13,10 @@
+ #header files, uncomment this (default).
+-CFLAGS=-O
 +#CFLAGS=-O
- LIBS=-L./ -lgd -lm
+ #If you do have FreeType, libjpeg and/or Xpm fully installed, uncomment a
+ #variation of this and comment out the line above. See also LIBS below.
+-#CFLAGS=-O  -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
++.if defined(WITH_X11)
++CFLAGS+=-DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
++.else
++CFLAGS+=-DHAVE_JPEG
++.endif
  
- all: libgd.a gddemo giftogd webgif
-@@ -32,3 +32,11 @@
- clean:
- 	rm -f *.o *.a gddemo giftogd 
+@@ -25,3 +29,3 @@
  
-+install:
-+	install -cs -o bin -g bin gddemo giftogd webgif ${PREFIX}/bin
-+	install -c -o bin -g bin libgd.a ${PREFIX}/lib
-+	install -c -o bin -g bin gd.h gdfonts.h ${PREFIX}/include/gd
-+	install -c -o bin -g bin gdfontt.h gdfontmb.h ${PREFIX}/include/gd
-+	install -c -o bin -g bin gdfontl.h gdfontg.h ${PREFIX}/include/gd
-+	install -c -o bin -g bin index.html ${PREFIX}/share/examples/gd
-+	install -c -o bin -g bin demoin.gif ${PREFIX}/share/examples/gd
+-LIBS=-lm -lgd -lpng -lz
++LIBS=-lm -lgd -lpng -lz -ljpeg
+ 
+@@ -35,3 +39,5 @@
+ 
+-#LIBS=-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11
++.if defined(WITH_X11)
++LIBS+= -lttf -lXpm -lX11
++.endif
+ 
+@@ -42,3 +48,6 @@
+ 
+-INCLUDEDIRS=-I. -I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
++INCLUDEDIRS=-I. -I${LOCALBASE}/include
++.if defined(WITH_X11)
++INCLUDEDIRS+=-I{LOCALBASE}/include/freetype -I${X11BASE}/include/X11 -I${X11BASE}/include
++.endif
+ 
+@@ -50,12 +59,15 @@
+ #on your system can't cause conflicts while building a new one.
+-LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
++LIBDIRS=-L. -L$(LOCALBASE)/lib
++.if defined(WITH_X11)
++LIBDIRS+=-L$(X11BASE)/lib
++.endif
+ 
+ #Location where libgd.a should be installed by "make install".
+-INSTALL_LIB=/usr/local/lib
++INSTALL_LIB=$(PREFIX)/lib
+ 
+ #Location where .h files should be installed by "make install".
+-INSTALL_INCLUDE=/usr/local/include
++INSTALL_INCLUDE=$(PREFIX)/include/gd
+ 
+ #Location where useful non-test programs should be installed by "make install".
+-INSTALL_BIN=/usr/local/bin
++INSTALL_BIN=$(PREFIX)/bin
+ 
+@@ -67,6 +79,6 @@
+ 
+-VERSION=1.8.1
++VERSION=1.8.2
+ 
+-CC=$(COMPILER) $(INCLUDEDIRS)
+-LINK=$(CC) $(LIBDIRS) $(LIBS)
++CC+= $(INCLUDEDIRS)
++#LINK=$(CC) $(LIBDIRS) $(LIBS)
+ 
+@@ -77,22 +89,29 @@
+ 
+-all: libgd.a $(PROGRAMS)
++.SUFFIXES: .c .so .o
++
++.c.so:
++	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++
++all: libgd.a libgd.so.0 $(PROGRAMS)
+ 
+ install: libgd.a $(BIN_PROGRAMS)
+-	sh ./install-item 644 libgd.a $(INSTALL_LIB)/libgd.a
+-	sh ./install-item 755 pngtogd $(INSTALL_BIN)/pngtogd
+-	sh ./install-item 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
+-	sh ./install-item 755 gdtopng $(INSTALL_BIN)/gdtopng
+-	sh ./install-item 755 gd2topng $(INSTALL_BIN)/gd2topng
+-	sh ./install-item 755 gd2copypal $(INSTALL_BIN)/gd2copypal
+-	sh ./install-item 755 gdparttopng $(INSTALL_BIN)/gdparttopng
+-	sh ./install-item 755 webpng $(INSTALL_BIN)/webpng
+-	sh ./install-item 755 bdftogd $(INSTALL_BIN)/bdftogd
+-	sh ./install-item 644 gd.h $(INSTALL_INCLUDE)/gd.h
+-	sh ./install-item 644 gdcache.h $(INSTALL_INCLUDE)/gdcache.h
+-	sh ./install-item 644 gd_io.h $(INSTALL_INCLUDE)/gd_io.h
+-	sh ./install-item 644 gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
+-	sh ./install-item 644 gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
+-	sh ./install-item 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
+-	sh ./install-item 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
+-	sh ./install-item 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
++	$(INSTALL) -c -m 644 libgd.a $(INSTALL_LIB)/libgd.a
++	$(INSTALL) -c -m 755 pngtogd $(INSTALL_BIN)/pngtogd
++	$(INSTALL) -c -m 755 libgd.so.0 $(INSTALL_LIB)/libgd.so.0
++	ln -sf libgd.so.0 $(INSTALL_LIB)/libgd.so
++	$(INSTALL) -c -m 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
++	$(INSTALL) -c -m 755 gdtopng $(INSTALL_BIN)/gdtopng
++	$(INSTALL) -c -m 755 gd2topng $(INSTALL_BIN)/gd2topng
++	$(INSTALL) -c -m 755 gd2copypal $(INSTALL_BIN)/gd2copypal
++	$(INSTALL) -c -m 755 gdparttopng $(INSTALL_BIN)/gdparttopng
++	$(INSTALL) -c -m 755 webpng $(INSTALL_BIN)/webpng
++	$(INSTALL) -c -m 755 bdftogd $(INSTALL_BIN)/bdftogd
++	$(INSTALL) -c -m 644 gd.h $(INSTALL_INCLUDE)/gd.h
++	$(INSTALL) -c -m 644 gdcache.h $(INSTALL_INCLUDE)/gdcache.h
++	$(INSTALL) -c -m 644 gd_io.h $(INSTALL_INCLUDE)/gd_io.h
++	$(INSTALL) -c -m 644 gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
++	$(INSTALL) -c -m 644 gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
++	$(INSTALL) -c -m 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
++	$(INSTALL) -c -m 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
++	$(INSTALL) -c -m 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
+ 
+@@ -131,12 +150,15 @@
+ 
+-libgd.a: gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
++OBJS=   gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
+ 	gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o gdfontt.o gdfonts.o gdfontmb.o gdfontl.o \
+-	gdfontg.o gdtables.o gdttf.o gdcache.o gdkanji.o  wbmp.o gd_wbmp.o \
+-	gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h
++	gdfontg.o gdtables.o gdttf.o gdcache.o gdkanji.o  wbmp.o gd_wbmp.o
++INCS= 	gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h
++
++libgd.a:	$(INCS) $(OBJS)
+ 	rm -f libgd.a
+-	$(AR) rc libgd.a gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o \
+-		gd_io_file.o gd_ss.o gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o \
+-		gdfontt.o gdfonts.o gdfontmb.o gdfontl.o gdfontg.o \
+-		gdtables.o gdttf.o gdcache.o gdkanji.o wbmp.o gd_wbmp.o
++	$(AR) rc libgd.a $(OBJS)
+ 	-ranlib libgd.a
++
++libgd.so.0:   $(INCS) $(OBJS:S/o$/so/g)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/o$/so/g) $(LIBDIRS) $(LIBS)
++	ln -sf libgd.so.0 libgd.so
+ 

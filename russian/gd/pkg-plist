@@ -1,14 +1,22 @@
-bin/gddemo
-bin/giftogd
-bin/webgif
+bin/bdftogd
+bin/pngtogd
+bin/pngtogd2
+bin/gdtopng
+bin/gd2topng
+bin/gd2copypal
+bin/gdparttopng
+bin/webpng
 include/gd/gd.h
+include/gd/gd_io.h
+include/gd/gdcache.h
 include/gd/gdfontg.h
 include/gd/gdfontl.h
 include/gd/gdfontmb.h
 include/gd/gdfonts.h
 include/gd/gdfontt.h
 lib/libgd.a
-share/examples/gd/demoin.gif
-share/examples/gd/index.html
+lib/libgd.so
+lib/libgd.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/gd
-@dirrm share/examples/gd
