@@ -1,0 +1,13 @@
+bin/pyzor
+bin/pyzord
+%%PYTHON_SITELIBDIR%%/pyzor/__init__.py
+%%PYTHON_SITELIBDIR%%/pyzor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyzor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyzor/client.py
+%%PYTHON_SITELIBDIR%%/pyzor/client.pyc
+%%PYTHON_SITELIBDIR%%/pyzor/client.pyo
+%%PYTHON_SITELIBDIR%%/pyzor/server.py
+%%PYTHON_SITELIBDIR%%/pyzor/server.pyc
+%%PYTHON_SITELIBDIR%%/pyzor/server.pyo
+share/doc/pyzor/usage.html
+@dirrm share/doc/pyzor
