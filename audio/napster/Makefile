@@ -8,12 +8,13 @@
 PORTNAME=	napster
 PORTVERSION=	1.4.4
 CATEGORIES=	audio net
-MASTER_SITES=	http://download.sourceforge.net/nap/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	nap
 DISTNAME=	nap-${PORTVERSION}
 
 MAINTAINER=	dburr@FreeBSD.org
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/nap
