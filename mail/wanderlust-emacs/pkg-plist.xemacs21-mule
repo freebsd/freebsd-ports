@@ -5,11 +5,13 @@
 %%EMACS_PACKAGESDIR%%/etc/wl/filter.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/imap.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/internal.xpm
+%%EMACS_PACKAGESDIR%%/etc/wl/letter.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/local.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/localnews.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/maildir.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/multi.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/news.xpm
+%%EMACS_PACKAGESDIR%%/etc/wl/no-letter.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/opened.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/pipe.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/plugged.xpm
@@ -18,6 +20,8 @@
 %%EMACS_PACKAGESDIR%%/etc/wl/trash-e.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/trash.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/unplugged.xpm
+%%EMACS_PACKAGESDIR%%/etc/wl/wl-beta-logo.xbm
+%%EMACS_PACKAGESDIR%%/etc/wl/wl-beta-logo.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-insert-signature-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-kill-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-send-from-toolbar-down.xpm
@@ -35,13 +39,14 @@
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-select-entity-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-sync-current-entity-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-zoom-entity-up.xpm
-%%EMACS_PACKAGESDIR%%/etc/wl/wl-logo.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-message-extract-content-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-message-next-content-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-message-play-content-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-message-prev-content-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-message-quit-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-message-read-up.xpm
+%%EMACS_PACKAGESDIR%%/etc/wl/wl-stable-logo.xbm
+%%EMACS_PACKAGESDIR%%/etc/wl/wl-stable-logo.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-summary-delete-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-summary-exit-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-summary-forward-up.xpm
@@ -88,6 +93,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-msgdb.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-multi.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-multi.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-net.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-net.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-nntp.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-nntp.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-pipe.el
@@ -98,18 +105,18 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-util.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-vars.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-vars.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-version.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-version.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo2.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo2.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/im-wl.el
 @unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/wl/im-wl.elc
-%%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo-2.el
-%%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo-2.elc
-%%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo-imap4-2.el
-%%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo-imap4-2.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo-imap4.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo-imap4.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/mmelmo.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/pldap.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/pldap.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/rfc2368.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/rfc2368.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/ssl.el
@@ -152,6 +159,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/wl-util.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/wl-vars.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/wl-vars.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/wl-version.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/wl-version.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/wl-xmas.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/wl-xmas.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/wl.el
@@ -205,9 +214,11 @@ share/examples/wanderlust/en/dot.wl
 share/examples/wanderlust/ja/dot.addresses
 share/examples/wanderlust/ja/dot.folders
 share/examples/wanderlust/ja/dot.wl
+share/wanderlust/ja.Emacs
 @dirrm %%EMACS_PACKAGESDIR%%/etc/wl
 @dirrm %%EMACS_PACKAGESDIR%%/lisp/wl
 @dirrm share/doc/wanderlust
 @dirrm share/examples/wanderlust/en
 @dirrm share/examples/wanderlust/ja
 @dirrm share/examples/wanderlust
+@dirrm share/wanderlust
