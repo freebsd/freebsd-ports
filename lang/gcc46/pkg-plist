@@ -29,8 +29,7 @@ bin/grepjar34
 %%LIBJAVA%%lib/libffi.la
 %%LIBJAVA%%lib/libffi.a
 %%LIBJAVA%%lib/logging.properties
-%%LIBJAVA%%lib/pkgconfig/libgcj.pc
-%%LIBJAVA%%@dirrm lib/pkgconfig
+%%LIBJAVA%%libdata/pkgconfig/libgcj.pc
 %%LIBJAVA%%lib/security/classpath.security
 %%LIBJAVA%%lib/security/libgcj.security
 %%LIBJAVA%%@dirrm lib/security
