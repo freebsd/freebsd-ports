@@ -18,11 +18,13 @@ COMMENT=	A version of JDK's `jar' command written entirely in C
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+PORTDOCS=	CHANGES README
+PLIST_FILES=	bin/fastjar bin/grepjar
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fastjar
-	cd ${WRKSRC} && ${INSTALL_DATA} CHANGES README ${PREFIX}/share/doc/fastjar/
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 	@${CAT} ${PKGMESSAGE}
 .endif
 

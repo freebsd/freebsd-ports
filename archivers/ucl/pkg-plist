@@ -5,7 +5,4 @@ include/ucl/uclconf.h
 lib/libucl.a
 lib/libucl.so
 lib/libucl.so.1
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ucl
