@@ -3,7 +3,7 @@
 # Date created:		17 April 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/25 22:06:49 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/08/26 08:35:03 asami Exp $
 #
 
 DISTNAME=	vje
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.green.machida.ne.jp/vacs/unix/FreeBSD/ \
 		ftp://ftp.vacs.co.jp/pub/unix/FreeBSD/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sada@e-mail.ne.jp
+MAINTAINER=	sada@freebsd.org
 
 DIST_SUBDIR=	${PKGNAME}
 NO_BUILD=	yes
@@ -25,6 +25,12 @@ SAMPLE_DIR=	${PREFIX}/share/examples/${PKGNAME}
 MAKESCRIPT=     ${SED} -e "s;@PREFIX@;${PREFIX};g"
 CHMOD=		/bin/chmod
 INVOKE=		${SETENV} PKG_PREFIX=${PREFIX} ${SH}
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+STRIP=
+.endif
 
 .SILENT:
 
@@ -63,4 +69,4 @@ do-install:
 .endfor
 	${INVOKE} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
