@@ -1,7 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/mysql/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD/mysql.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql/GetInfo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql/INSTALL.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Mysql.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mysql/Statement.pm
