@@ -31,7 +31,7 @@
    o  Support for explicit seeding of the PRNG from external sources
    o  Additional boolean-expression based access control facility
    o  Backward compatibility to other Apache SSL solutions
-   o  Inter-process SSL session cache
+   o  Inter-process SSL session cache (DBM and Shared Memory based)
    o  Powerful dedicated SSL engine logging facility
    o  Simple and robust application to Apache source trees
    o  Fully integrated into the Apache 1.3 configuration mechanism

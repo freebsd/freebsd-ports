@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Apache + mod_ssl
-# Version required:	1.3.6 + 2.3.1
+# Version required:	1.3.6 + 2.3.2
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.31 1999/04/30 21:48:16 rse Exp $
+# $Id: Makefile,v 1.32 1999/06/02 07:18:31 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -42,12 +42,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	rse@engelschall.com
 
 BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl \
+		mm-config:${PORTSDIR}/devel/mm \
 		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
+		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
+		${PREFIX}/lib/libmm.a:${PORTSDIR}/devel/mm
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
 VERSION_APACHE=	1.3.6
-VERSION_MODSSL=	2.3.1
+VERSION_MODSSL=	2.3.2
 
 Y2K=		http://www.engelschall.com/sw/mod_ssl/docs/2.3/ssl_faq.html#y2k
 RESTRICTED=	"Contains cryptography"
@@ -89,6 +91,7 @@ CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \
 		SSL_BASE='SYSTEM' \
+		EAPI_MM='SYSTEM' \
 		PATH="${PREFIX}/bin:${PATH}"
 
 INSTALL_TARGET=	install-quiet
