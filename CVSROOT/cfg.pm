@@ -12,7 +12,7 @@ package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
 	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS
-	    $LAST_FILE $PID $IDHEADER $UNEXPAND_RCSID);
+	    $CHECK_HEADERS $LAST_FILE $PID $IDHEADER $UNEXPAND_RCSID);
 
 
 ######################
@@ -61,6 +61,13 @@ $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";
 ######################
 ### commit_prep.pl ###
 ######################
+
+# Check for instances of $IDHEADER in committed files, and
+# bomb out if they're not present, or corrupted.
+# Exclusions can be specified in the CVSROOT/exclude file.
+# Currently $IDHEADER must be an instance of $CVSHeader$, or an alias
+# defined in CVSROOT/options.
+$CHECK_HEADERS = 1;
 
 # WARNING: You will also need to be running the version of cvs that
 # the FreeBSD project is using; I believe that we have some local patches

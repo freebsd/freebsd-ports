@@ -29,16 +29,6 @@ use strict;
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
 
-############################################################
-#
-# Configurable options
-#
-############################################################
-#
-# Check each file (except dot files) for our RCS header keyword.
-# (defined in the constants section.)
-#
-my $check_id = 0;
 
 ############################################################
 #
@@ -272,9 +262,7 @@ shift @ARGV;
 
 $directory =~ s,^$cvsroot[/]+,,;
 
-if ($directory =~ /^src/) {
-	$check_id = 1;
-}
+my $check_id = 0;
 if ($directory =~ /^ports/) {
 	$check_id = 2;
 }
@@ -287,7 +275,7 @@ if ($directory =~ /^src\/crypto/) {
 #
 # Now check each file name passed in, except those excluded.
 #
-if ($check_id != 0) {
+if ($cfg::CHECK_HEADERS) {
 	my $failed = 0;
 	foreach my $arg (@ARGV) {
 		my $hastag = ($cvstag{$arg} ne '');
