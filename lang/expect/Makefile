@@ -5,12 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.37.2
+PORTVERSION=	5.38.0
 CATEGORIES=	lang tcl83 tk83
 MASTER_SITES=	http://expect.nist.gov/src/
-
-EXPECT_VER=	5.37
-LIBEXPECT_VER=	537
 
 MAINTAINER=	jerry@thehutt.org
 
@@ -20,25 +17,28 @@ LIB_DEPENDS?=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 LIB_DEPENDS?=	tcl83.1:${PORTSDIR}/lang/tcl83
 .endif
 
+EXPECT_VER=	5.38
+LIBEXPECT_VER=	538
+
 WRKSRC=		${WRKDIR}/expect-${EXPECT_VER}
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	EXPECT_VER="${EXPECT_VER}"
 PLIST_SUB+=	LIBEXPECT_VER="${LIBEXPECT_VER}"
 
 .if defined(WITHOUT_X11)
-TK_CONFIG_ARGS =
-PLIST_SUB += XFILES="@comment "
+TK_CONFIG_ARGS=
+PLIST_SUB+=	XFILES="@comment "
 .else
-TK_CONFIG_ARGS = --with-tkconfig=${PREFIX}/lib/tk8.3 \
-		--with-tkinclude=${PREFIX}/include/tk8.3
-PLIST_SUB += XFILES=""
+TK_CONFIG_ARGS=	--with-tkconfig=${LOCALBASE}/lib/tk8.3 \
+		--with-tkinclude=${LOCALBASE}/include/tk8.3
+PLIST_SUB+=	XFILES=""
 .endif
 
-CONFIGURE_ARGS?= --enable-shared \
-		--with-tclconfig=${PREFIX}/lib/tcl8.3 \
-		--with-tclinclude=${PREFIX}/include/tcl8.3 \
+CONFIGURE_ARGS?=--enable-shared \
+		--with-tclconfig=${LOCALBASE}/lib/tcl8.3 \
+		--with-tclinclude=${LOCALBASE}/include/tcl8.3 \
 		${TK_CONFIG_ARGS}
 
 .if !defined(NO_MAN_INSTALL)
@@ -46,7 +46,7 @@ MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
 		expect.1 kibitz.1 mkpasswd.1 multixterm.1 passmass.1 \
 		tknewsbiff.1 unbuffer.1 xkibitz.1
 .if !defined(WITHOUT_X11)
-MAN1 += expectk.1
+MAN1+=		expectk.1
 .endif
 MAN3=		libexpect.3
 .endif
