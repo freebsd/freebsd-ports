@@ -1,5 +1,6 @@
 bin/testgevas
 include/gevas.h
+include/gevas-config.h
 include/gevasev_handler.h
 include/gevasevh_alpha.h
 include/gevasevh_clicks.h

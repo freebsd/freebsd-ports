@@ -6,27 +6,18 @@
 #
 
 PORTNAME=	gevas
-PORTVERSION=	0.0.0
+PORTVERSION=	0.0.3
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
-DISTNAME=	${PORTNAME}_alpha
 
 MAINTAINER=	ishmael27@home.com
 
 LIB_DEPENDS=	evas.0:${PORTSDIR}/graphics/evas
 
 USE_GTK=	yes
-USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=	yes
-
-post-extract:
-.for a in install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake/${a} ${WRKSRC}
-.endfor
 
 post-install:
 	@strip ${PREFIX}/lib/libgevas.so.0
