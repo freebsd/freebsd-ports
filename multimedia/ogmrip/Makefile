@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,13 +22,12 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		dvdread:${PORTSDIR}/multimedia/libdvdread
 
-BROKEN=		crashes due to some buffer overflow issue
-
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 glib20 libgnomeui gconf2 libgnome libglade2
 USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
+GCONF_SCHEMAS=	ogmrip.schemas
 
 CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/libdata
 
