@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	8.1
+PORTVERSION=	8.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/linux/${MACHINE_ARCH}/
 PKGNAMEPREFIX=	linux-
@@ -15,9 +15,6 @@ DIST_SUBDIR=	${MACHINE_ARCH}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	A scientific data plotting package
-
-BROKEN=		"Unfetchable"
-DEPRECATED=	"This port will be removed on April 16 if still broken at that time."
 
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386 alpha

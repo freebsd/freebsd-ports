@@ -40,6 +40,18 @@ dislin/examples/exa_c.c
 dislin/examples/exa_f77.f
 dislin/examples/map_c.c
 dislin/examples/map_f77.f
+dislin/fonts/complx10.bdf
+dislin/fonts/complx12.bdf
+dislin/fonts/complx14.bdf
+dislin/fonts/complx18.bdf
+dislin/fonts/helve10.bdf
+dislin/fonts/helve12.bdf
+dislin/fonts/helve14.bdf
+dislin/fonts/helve18.bdf
+dislin/fonts/simplx10.bdf
+dislin/fonts/simplx12.bdf
+dislin/fonts/simplx14.bdf
+dislin/fonts/simplx8.bdf
 dislin/hlp/gclhlp0.txt
 dislin/hlp/gclhlp1.txt
 dislin/hlp/gclhlp2.txt
@@ -70,7 +82,7 @@ dislin/java/color3d.java
 dislin/java/conshd.java
 dislin/java/contour.java
 dislin/java/curve.java
-dislin/java/dislin-8.1.java.tar.gz
+dislin/java/dislin-8.2.java.tar.gz
 dislin/java/dislin.jar
 dislin/java/intpol.java
 dislin/java/legend.java
@@ -84,18 +96,24 @@ dislin/java/surfcp.java
 dislin/java/symbols.java
 dislin/java/vectors.java
 dislin/java/world.java
-dislin/lib/dislin-8.1.a
-dislin/lib/dislin-8.1.so
-dislin/lib/dislnc-8.1.a
-dislin/lib/dislnc-8.1.so
+dislin/lib/dislin-8.2.a
+dislin/lib/dislin-8.2.so
+dislin/lib/dislin_d-8.2.so
+dislin/lib/dislnc-8.2.a
+dislin/lib/dislnc-8.2.so
+dislin/lib/dislnc_d-8.2.so
 dislin/libdislin.a
 dislin/libdislin.so
 dislin/libdislin.so.7
 dislin/libdislin.so.8
+dislin/libdislin_d.so
+dislin/libdislin_d.so.8
 dislin/libdislnc.a
 dislin/libdislnc.so
 dislin/libdislnc.so.7
 dislin/libdislnc.so.8
+dislin/libdislnc_d.so
+dislin/libdislnc_d.so.8
 dislin/man/appa.txt
 dislin/man/appb.txt
 dislin/man/appc.txt
@@ -142,7 +160,7 @@ dislin/perl/color3d.pl
 dislin/perl/conshd.pl
 dislin/perl/contour.pl
 dislin/perl/curve.pl
-dislin/perl/dislin-8.1.perl.tar.gz
+dislin/perl/dislin-8.2.perl.tar.gz
 dislin/perl/intpol.pl
 dislin/perl/legend.pl
 dislin/perl/logscl.pl
@@ -161,7 +179,7 @@ dislin/python/color3d.py
 dislin/python/conshd.py
 dislin/python/contour.py
 dislin/python/curve.py
-dislin/python/dislin-8.1.python.tar.gz
+dislin/python/dislin-8.2.python.tar.gz
 dislin/python/dislinmodule.so
 dislin/python/intpol.py
 dislin/python/legend.py
@@ -176,6 +194,8 @@ dislin/python/symbols.py
 dislin/python/vectors.py
 dislin/python/widgets.py
 dislin/python/world.py
+dislin/real64/dislin.h
+@dirrm dislin/real64
 @dirrm dislin/python
 @dirrm dislin/perl
 @dirrm dislin/map
@@ -183,6 +203,7 @@ dislin/python/world.py
 @dirrm dislin/lib
 @dirrm dislin/java
 @dirrm dislin/hlp
+@dirrm dislin/fonts
 @dirrm dislin/examples
 @dirrm dislin/bin
 @dirrm dislin
