@@ -70,7 +70,12 @@ pre-patch:
 	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
 
 pre-configure:
-	(cd ${WRKSRC}; aclocal -I m4)
+	(cd ${WRKSRC}; ${ACLOCAL} -I m4)
+
+pre-build:
+	@${PERL} -pi -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/; s/^(AUTOCONF = ).+/\1${AUTOCONF}/; \
+		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
+		${BUILD_WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.en ${DOCSDIR}
