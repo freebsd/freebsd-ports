@@ -25,10 +25,10 @@ MLINKS=		gpg.1 gpgm.1
 .include <bsd.port.pre.mk>
 
 .if exists(${PREFIX}/lib/libiconv.so)
-LIB_DEPENDS+=	libiconv.2:${PORTSDIR}/converter/iconv
+LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
 .endif
 .if exists(${PREFIX}/lib/libgdbm.so)
-LIB_DEPENDS+=	libgdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm
 .endif
 
 .if ${OSVERSION} < 300000
