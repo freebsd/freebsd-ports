@@ -6,32 +6,36 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.21
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://quark.sunsite.dk/ \
 		http://demian.dyndns.org/src/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Quark is an audio player, for geeks, by geeks
+COMMENT=	An audio player, for geeks, by geeks
 
 LIB_DEPENDS=	xine.12:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
-USE_GNOME=      gnomehack gnomeprefix gnomevfs2
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCS=           AUTHORS COPYING INSTALL README
+PORTDOCS=	AUTHORS COPYING INSTALL README
+GCONF_SCHEMAS=	quark.schemas strange-quark.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|CFLAGS="-g |CFLAGS="$$CFLAGS |g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

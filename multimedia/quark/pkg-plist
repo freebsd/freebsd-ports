@@ -1,17 +1,6 @@
 bin/charm-quark
 bin/quark
 bin/strange-quark
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/quark.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/quark.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/quark.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/strange-quark.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/strange-quark.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/strange-quark.schemas > /dev/null || /usr/bin/true
-%%PORTDOCS%%share/doc/quark/AUTHORS
-%%PORTDOCS%%share/doc/quark/COPYING
-%%PORTDOCS%%share/doc/quark/INSTALL
-%%PORTDOCS%%share/doc/quark/README
 share/gnome/applications/quark.desktop
 share/gnome/pixmaps/quark.png
 share/locale/ko/LC_MESSAGES/quark.mo
-@dirrm share/doc/quark
