@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cgicc
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	www devel
 MASTER_SITES=	ftp://ftp.cgicc.org/
 
