@@ -434,6 +434,7 @@ autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
 avcheck		ports/security/avcheck
 avida		ports/biology/avida
+avidemux	ports/graphics/avidemux
 aview		ports/graphics/aview
 avifile		ports/graphics/avifile
 avltree		ports/devel/avltree
