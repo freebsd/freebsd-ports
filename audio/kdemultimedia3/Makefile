@@ -28,13 +28,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib
 
-_NO_KDE_FINAL=	yes
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
-
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
 .include <bsd.port.pre.mk>
+
+_NO_KDE_FINAL=	yes
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 pre-configure:
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" \

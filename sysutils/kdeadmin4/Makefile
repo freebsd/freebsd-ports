@@ -23,6 +23,12 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
 .include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 pre-configure:
@@ -39,4 +45,4 @@ pre-configure:
 	find ${WRKSRC}/kpackage -name "*.cpp" -or -name "*.c" -or -name "*.h" \
 		| xargs ${PERL} -pi -e "s#typedef __off64_t off64_t;##g"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

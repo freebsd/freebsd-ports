@@ -38,6 +38,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt2/html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
 .include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 pre-everything::
@@ -62,4 +68,4 @@ pre-configure:
 pre-build:
 	${PERL} -pi -e "s@libkdeui.so.3@libkdeui.so@g" ${WRKSRC}/kdevelop/main.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
