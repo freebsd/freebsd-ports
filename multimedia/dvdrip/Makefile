@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.48.8
+PORTVERSION=	0.50.13
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
@@ -31,6 +31,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
+		rar:${PORTSDIR}/archivers/rar \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
 BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
