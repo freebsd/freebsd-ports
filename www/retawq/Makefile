@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	retawq
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +16,18 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-USE_GMAKE=	yes
-MAKE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" THREAD_LIBS="${PTHREAD_LIBS}"
-ALL_TARGET=	build_binary
+USE_REINPLACE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
+		--enable-i18n --enable-local-cgi --enable-ipv6
 
 MAN1=		retawq.1
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|_IN_H 0|_IN_H 1|g ; \
+		 s|_SOCKET_H 0|_SOCKET_H 1|g' ${WRKSRC}/.config
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/retawq ${PREFIX}/bin
