@@ -1,0 +1,10 @@
+--- fsck_ext2fs/setup.c.orig	Thu Apr 27 02:26:06 2000
++++ fsck_ext2fs/setup.c	Sat Jul 15 11:06:00 2000
+@@ -69,6 +69,7 @@
+ #include "fsutil.h"
+ 
+ #define POWEROF2(num)	(((num) & ((num) - 1)) == 0)
++#define FS_EXT2FS	17	/* ext2fs */
+ 
+ void badsb __P((int, char *));
+ int calcsb __P((char *, int, struct m_ext2fs *));

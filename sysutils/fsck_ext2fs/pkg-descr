@@ -1,0 +1,10 @@
+Second Extended File System consistency check and interactive repair
+
+Performs interactive filesystem consistency checks and repair for each of
+the filesystems specified on the command line.
+
+Ported from OpenBSD 2.8
+
+WWW: http://www.openbsd.org/
+
+- Roman Shterenzon <roman@xpert.com>
