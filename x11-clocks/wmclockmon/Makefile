@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmclockmon
-PORTVERSION=	0.2.2
+PORTVERSION=	0.5.2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
