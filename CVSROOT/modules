@@ -6845,6 +6845,7 @@ wmmoonclock	ports/astro/wmmoonclock
 wmmount		ports/sysutils/wmmount
 wmmp3		ports/audio/wmmp3
 wmmultipop3	ports/mail/wmmultipop3
+wmnd		ports/net/wmnd
 wmnet		ports/net/wmnet
 wmnet2		ports/net/wmnet2
 wmnetmon	ports/net/wmnetmon
