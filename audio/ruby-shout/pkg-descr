@@ -1,0 +1,5 @@
+Ruby-shout is a binding to the libshout library, which sends streaming
+MP3/Vorbis to an icecast server with libshout.
+
+Author:	jared jennings <jjenning@fastmail.fm>
+WWW:	http://www.dingoskidneys.com/~jaredj/shout.html
