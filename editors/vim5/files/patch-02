@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jan 20 12:15:36 1998
++++ configure	Tue Jan 27 02:39:35 1998
+@@ -2273,7 +2273,7 @@
+   gui_libs="`echo $x_libraries|sed 's%/^/^/*$%%'` `echo "$GUI_INC_LOC" | sed s/include/lib/` /local/Motif*/lib /local/lib/Motif* /usr/local/Motif*/lib /usr/local/lib/Motif* /usr/Motif*/lib /usr/lib/Motif* /usr/local/lib /usr/local/X11*/lib /usr/lib /usr/X11*/lib /usr/lib/X11* /usr/dt/lib $MOTIFHOME/lib $GUI_LIB_LOC"
+   GUI_LIB_LOC=
+   for try in $gui_libs; do
+-    if test -f "$try/libXm.a" -o -f "$try/libXm.so" -o -f "$try/libXm.sl"; then
++    if test -f "$try/libXm.a" -o -f "$try/libXm.so" -o -f "$try/libXm.so.0" -o -f "$try/libXm.so.0.1" -o -f "$try/libXm.sl"; then
+       GUI_LIB_LOC=$try
+     fi
+   done
