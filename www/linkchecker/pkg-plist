@@ -35,9 +35,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/DNS/lazy.py
 %%PYTHON_SITELIBDIR%%/linkcheck/DNS/lazy.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/DNS/lazy.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/DNS/win32dns.py
-%%PYTHON_SITELIBDIR%%/linkcheck/DNS/win32dns.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/DNS/win32dns.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/DNS/winreg.py
+%%PYTHON_SITELIBDIR%%/linkcheck/DNS/winreg.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/DNS/winreg.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/FileUrlData.py
 %%PYTHON_SITELIBDIR%%/linkcheck/FileUrlData.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/FileUrlData.pyo
