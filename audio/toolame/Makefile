@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lioux@FreeBSD.org
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	${PORTNAME}
 
 DOC_FILES=      CHANGES COPYING FUTURE GPL HISTORY README README.VBR
@@ -35,14 +36,14 @@ pre-everything::
 
 post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's|\$$\(TWEAKS\)||' \
+	@${REINPLACE_CMD} -E -e 's|\$$\(TWEAKS\)||' \
 		${WRKSRC}/Makefile
 .endif
 .ifndef(WITH_PROFILED)
-	@${PERL} -pi -e 's|\$$\(PG\)||' \
+	@${REINPLACE_CMD} -E -e 's|\$$\(PG\)||' \
 		${WRKSRC}/Makefile
 .endif
-	@${PERL} -pi.orig -e \
+	@${REINPLACE_CMD} -E -e \
 		's@^CC\s.+|\$$\((ARCH|DMALLOCLIB|DMAL|OPTIM|WARNING)\)@@g' \
 		${WRKSRC}/Makefile
 

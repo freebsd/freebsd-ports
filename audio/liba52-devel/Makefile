@@ -15,6 +15,7 @@ DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
 MAINTAINER=	lioux@FreeBSD.org
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LIBTOOL=	yes
@@ -48,11 +49,11 @@ pre-everything::
 
 post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi.orig -e 's!-O3!${CFLAGS}!;s!-mcpu=[^"]+"!"!' \
+	@${REINPLACE_CMD} -E -e 's!-O3!${CFLAGS}!' -e 's!-mcpu=[^"]+"!"!' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 .ifndef(WITHOUT_DJBFFT)
-	@${PERL} -pi -e 's|(fftc4.h)|djbfft/\1|' ${WRKSRC}/liba52/imdct.c
+	@${REINPLACE_CMD} -E -e 's|(fftc4.h)|djbfft/\1|' ${WRKSRC}/liba52/imdct.c
 .endif
 
 post-configure:
