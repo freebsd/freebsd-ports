@@ -22,7 +22,8 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 
-CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host" --with-gnu-ld
+CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host" --with-gnu-ld \
+		 --with-libwrap
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 .else
