@@ -8,7 +8,8 @@
 PORTNAME=	qscanplot
 PORTVERSION=	0.4
 CATEGORIES=	math
-MASTER_SITES=	http://www.gae.ucm.es/~gonzalez/qscanplot/
+# per distfile survey, mastersite disappeared in March 2003
+MASTER_SITES=	# http://www.gae.ucm.es/~gonzalez/qscanplot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to extract data from scanned plots, graphs and figures
