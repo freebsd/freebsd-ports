@@ -1,0 +1,11 @@
+--- ./sys/unix/Makefile.utl.org	Wed Dec 21 05:25:10 1994
++++ ./sys/unix/Makefile.utl	Wed Dec 21 05:46:22 1994
+@@ -72,7 +72,7 @@
+ #
+ # by issei 1994/1/10
+ # lex is required 8bit through for japanese. 
+-LEX	= flex -8
++LEX	= lex -8
+  
+ # these are the names of the output files from YACC/LEX. Under MS-DOS
+ # and similar systems, they may differ

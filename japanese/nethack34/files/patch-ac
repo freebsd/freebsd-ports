@@ -1,0 +1,11 @@
+--- ./sys/unix/Makefile.src.org	Wed Dec 21 04:43:32 1994
++++ ./sys/unix/Makefile.src	Wed Dec 21 04:50:14 1994
+@@ -97,7 +97,7 @@
+ 
+ # by issei(94/6/12)
+ #
+-CFLAGS = -g -I../include -I/usr/local/X11R6/include
++CFLAGS = -O2 -I../include -I/usr/local/X11R6/include
+ LFLAGS =
+ 
+ 
