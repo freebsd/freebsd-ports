@@ -255,6 +255,7 @@
     SUBDIR += libgnugetopt
     SUBDIR += libgtop
     SUBDIR += libmalloc
+    SUBDIR += libmcve
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop

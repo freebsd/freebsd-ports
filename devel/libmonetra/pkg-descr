@@ -1,0 +1,8 @@
+This is the library to allow connections to an MCVE Credit
+Card Processing Daemond  via SSL, unencrypted IP, and drop-files.
+It is the base of other APIs including PHP, PERL, and JAVA.
+
+WWW: http://www.mcve.com
+
+- Brad House
+brad@mcve.com
