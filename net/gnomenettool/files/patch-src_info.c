@@ -1,16 +1,26 @@
 --- src/info.c.orig	Mon Jun 14 06:52:59 2004
-+++ src/info.c	Fri Aug 20 15:52:34 2004
-@@ -37,6 +37,9 @@
++++ src/info.c	Sun Oct 31 23:35:06 2004
+@@ -37,6 +37,11 @@
  #include <sys/ioctl.h>
  #include <stdlib.h>
  #include <net/if.h>
 +#ifdef __FreeBSD__
++#include <sys/sysctl.h>
++#include <net/if_dl.h>
 +#include <net/if_media.h>
 +#endif
  
  #include "info.h"
  #include "utils.h"
-@@ -97,9 +100,39 @@
+@@ -57,6 +62,7 @@
+ 	{ N_("Ethernet Interface"),      INFO_INTERFACE_ETH,     "16_ethernet.xpm", "eth",        NULL },
+ 	{ N_("Wireless Interface"),      INFO_INTERFACE_WLAN,    "wavelan-16.png",  "wlan",       NULL },
+ 	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "ppp",        NULL },
++	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "tun",        NULL },
+ 	{ N_("Parallel Line Interface"), INFO_INTERFACE_PLIP,    "16_plip.xpm",     "plip",       NULL },
+ 	{ N_("Infrared Interface"),      INFO_INTERFACE_IRLAN,   "irda-16.png",     "irlan",      NULL },
+ 	{ N_("Loopback Interface"),      INFO_INTERFACE_LO,      "16_loopback.xpm", "lo",         NULL },
+@@ -97,9 +103,42 @@
  {
  	gint i;
  	gchar *path;
@@ -32,6 +42,9 @@
 +					break;
 +				case IFM_FDDI:
 +				case IFM_TOKEN:
++#ifdef IFM_ATM
++				case IFM_ATM:
++#endif
 +					dev_type = "other_type";
 +					break;
 +				case IFM_IEEE80211:
@@ -52,7 +65,7 @@
  			(*iface) = g_strdup_printf ("%s (%s)", info_iface_desc[i].name, dev_name);
  			if (info_iface_desc[i].pixbuf == NULL) {
  				path = g_build_filename (PIXMAPS_DIR, info_iface_desc[i].icon, NULL);
-@@ -187,17 +220,26 @@
+@@ -187,17 +226,26 @@
  	gchar tx[10], tx_error[10], tx_drop[10], tx_ovr[10]; 
  	*/
  	gchar iface[30]; /*, flags[30]; */
@@ -83,7 +96,7 @@
  	g_return_val_if_fail (info != NULL, FALSE);
  
  	model = gtk_combo_box_get_model (GTK_COMBO_BOX (info->combo));
-@@ -206,21 +248,61 @@
+@@ -206,21 +254,61 @@
  	else
  		return FALSE;
  	/*text = gtk_entry_get_text (GTK_ENTRY (info->nic));*/
@@ -147,7 +160,7 @@
  
  		if (g_ascii_strcasecmp (iface, text) == 0) {
  			/*
-@@ -248,7 +330,9 @@
+@@ -248,7 +336,9 @@
  	}
  	
  	g_io_channel_unref (io);
@@ -158,15 +171,24 @@
  
  	return TRUE;
  }
-@@ -384,6 +468,7 @@
+@@ -382,8 +472,16 @@
+ 	InfoIpAddr *ip;
+ 	gint flags;
  	mii_data_result data;
++#ifdef __FreeBSD__
++	gint hwmib[6], hwlen;
++	gchar *hwbuf;
++	guchar *hwptr;
++	struct if_msghdr *hwifm;
++	struct sockaddr_dl *hwsinptr;
++#endif
  
  	getifaddrs (&ifa0);
 +	memset (&data, 0, sizeof (data));
  
  	for (ifr6 = ifa0; ifr6; ifr6 = ifr6->ifa_next) {
  		if (strcmp (ifr6->ifa_name, nic) != 0) {
-@@ -429,7 +514,9 @@
+@@ -429,7 +527,9 @@
  			ifc.ifc_req = (struct ifreq *) buf;
  			ioctl (sockfd, SIOCGIFCONF, &ifc);
  
@@ -176,3 +198,49 @@
  
  			for (ptr = buf; ptr < buf + ifc.ifc_len;) {
  				ifr = (struct ifreq *) ptr;
+@@ -460,6 +560,45 @@
+ 				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[3],
+ 				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[4],
+ 				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[5]);
++#elif defined(__FreeBSD__)
++			hwmib[0] = CTL_NET;
++			hwmib[1] = AF_ROUTE;
++			hwmib[2] = 0;
++			hwmib[3] = AF_LINK;
++			hwmib[4] = NET_RT_IFLIST;
++			if ((hwmib[5] = if_nametoindex (nic)) == 0) {
++				g_sprintf (dst, NOT_AVAILABLE);
++				goto hwfail;
++			}
++			if (sysctl (hwmib, 6, NULL, &hwlen, NULL, 0) < 0) {
++				g_sprintf (dst, NOT_AVAILABLE);
++				goto hwfail;
++			}
++			if ((hwbuf = g_malloc (hwlen)) == NULL) {
++				g_sprintf (dst, NOT_AVAILABLE);
++				goto hwfail;
++			}
++			if (sysctl (hwmib, 6, hwbuf, &hwlen, NULL, 0) < 0) {
++				g_sprintf (dst, NOT_AVAILABLE);
++				goto hwfail;
++			}
++
++			hwifm = (struct if_msghdr *) hwbuf;
++			hwsinptr = (struct sockaddr_dl *) (hwifm + 1);
++			hwptr = (guchar *) LLADDR (hwsinptr);
++			if (*hwptr != 0 || *(hwptr + 1) != 0 ||
++				*(hwptr + 2) != 0 || *(hwptr + 3) != 0 ||
++				*(hwptr + 4) != 0 || *(hwptr + 5) != 0) {
++				g_sprintf (dst, "%02x:%02x:%02x:%02x:%02x:%02x",
++					*hwptr, *(hwptr + 1), *(hwptr + 2),
++					*(hwptr + 3), *(hwptr + 4), *(hwptr + 5));
++			}
++			else {
++				g_sprintf (dst, NOT_AVAILABLE);
++			}
++			g_free (hwbuf);
++
++hwfail:
+ #else
+ 			g_sprintf (dst, NOT_AVAILABLE);
+ #endif /* SIOCGIFHWADDR */
