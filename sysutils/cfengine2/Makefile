@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	cfengine-${PORTVERSION}
 
-MAINTAINER=	fanf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU cfengine - a systems administration tool for networks
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4

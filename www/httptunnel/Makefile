@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 		ftp://ftp.nocrew.org/pub/nocrew/unix/ \
 		http://www.nocrew.org/software/httptunnel/
 
-MAINTAINER=	brian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunnel a tcp/ip connection through a http/tcp/ip connection
 
 HAS_CONFIGURE=	yes

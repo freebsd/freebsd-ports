@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/ettercap:}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	greid@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
 USE_REINPLACE=	yes

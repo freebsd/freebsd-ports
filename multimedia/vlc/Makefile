@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
-MAINTAINER=	brian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
 
 LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \

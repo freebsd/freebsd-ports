@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/uk-postcodes/ \
 		http://people.FreeBSD.org/~brian/uk-postcodes/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	brian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	United Kingdom post codes
 
 NO_WRKSUBDIR=	yes

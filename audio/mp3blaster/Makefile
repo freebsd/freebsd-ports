@@ -10,7 +10,7 @@ PORTVERSION=	3.1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.stack.nl/~brama/mp3blaster/src/
 
-MAINTAINER=	greid@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3 console ncurses-based player
 
 .include <bsd.port.pre.mk>

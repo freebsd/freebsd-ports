@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etse.urv.es/~dmanye/quelcom/src/
 
-MAINTAINER=	greid@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of command-line utilities for MP3 and wave files
 
 USE_GETOPT_LONG=yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://teksolv.de/~jameson/
 MASTER_SITE_SUBDIR=${PORTNAME}/stable.pkg/${PORTVERSION}
 
-MAINTAINER=	greid@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable interpreter for SCI games, such as the Space Quest series
 
 USE_BZIP2=	yes
