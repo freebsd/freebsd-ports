@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	setup.rb
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1.0
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www9.xdsl.ne.jp/~aamine/soft/ \
-		http://www.xdsl.ne.jp/Cd/aamine/soft/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.loveruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:R}-${PORTVERSION}
 DIST_SUBDIR=	ruby
