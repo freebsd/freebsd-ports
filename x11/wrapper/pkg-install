@@ -5,5 +5,5 @@ if [ "X$2" != "XPOST-INSTALL" ]; then
 fi
 
 /bin/ln -sf ${PKG_PREFIX}/bin/Xwrapper ${PKG_PREFIX}/bin/X
-/bin/chmod -s ${PKG_PREFIX}/bin/XFree86
+[ -x ${PKG_PREFIX}/bin/XFree86 ] && /bin/chmod -s ${PKG_PREFIX}/bin/XFree86
 /bin/chmod +s ${PKG_PREFIX}/bin/Xwrapper
