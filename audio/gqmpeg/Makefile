@@ -1,14 +1,15 @@
 # New ports collection makefile for:	gqmpeg
-# Version required:	0.5.1
+# Version required:	0.5.2
 # Date Created:		28 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/03/15 18:30:04 nectar Exp $
+# $Id: Makefile,v 1.12 1999/04/02 03:52:51 steve Exp $
 #
 
-DISTNAME=	gqmpeg-0.5.1
+DISTNAME=	gqmpeg-0.5.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Haven/5235/
+MASTER_SITES=	http://gqview.netpedia.net/ \
+		http://www.geocities.com/SiliconValley/Haven/5235/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	nacai@iname.com
