@@ -10023,7 +10023,6 @@ xvkbd		ports/x11/xvkbd
 xvmahjongg	ports/games/xvmahjongg
 xvmines		ports/games/xvmines
 xvmixer		ports/audio/xvmixer
-xw		ports/sysutils/xw
 xwatch		ports/sysutils/xwatch
 xwatchwin	ports/x11/xwatchwin
 xwave		ports/audio/xwave
