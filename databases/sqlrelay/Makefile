@@ -7,7 +7,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
@@ -38,22 +37,22 @@ POSTGRESQL_PORT?=	databases/postgresql7
 .include "${.CURDIR}/Makefile.common"
 
 .if defined(PACKAGE_BUILDING) || defined(BATCH)
-WITH_SQLITE?=		yes
+WITH_SQLITE?=		no
 WITH_MYSQL?=		yes
 WITH_MSQL?=		no
-WITH_POSTGRESQL?=	yes
-WITH_ODBC?=		yes
-WITH_FREETDS?=		yes
-WITH_GTK?=		yes
-WITH_INTERBASE?=	yes
+WITH_POSTGRESQL?=	no
+WITH_ODBC?=		no
+WITH_FREETDS?=		no
+WITH_GTK?=		no
+WITH_INTERBASE?=	no
 .else
 WITH_SQLITE?=		no
 WITH_MYSQL?=		yes
 WITH_MSQL?=		no
-WITH_POSTGRESQL?=	yes
+WITH_POSTGRESQL?=	no
 WITH_ODBC?=		no
 WITH_FREETDS?=		no
-WITH_GTK?=		yes
+WITH_GTK?=		no
 WITH_INTERBASE?=	no
 .endif
 
@@ -141,6 +140,10 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 		IF_INTERBASE=${IF_INTERBASE} \
 		IF_GTK=${IF_GTK}
 
+MAN1=		fields.1 query.1 query.py.1 sqlr-config-gtk.1 sqlrsh.1
+MAN8=		sqlr-connection.8 sqlr-cachemanager.8 sqlr-ipclean.8 \
+		sqlr-listener.8 sqlr-scaler.8 sqlr-start.8 sqlr-stop.8
+
 #  --with-sybase-prefix          Location of Sybase
 #  --with-oracle-home            Location of Oracle
 #  --with-interbase-prefix       Location of Interbase
@@ -150,24 +153,12 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Broken pkg-plist"
-.else
-BROKEN=		"Does not compile on 5.x"
-.endif
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
-
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*
-
-PLIST_SUB+=	PROFILE="@comment "
-.else
-PLIST_SUB+=	PROFILE=""
 .endif
 
-post-extract:
-	${MKDIR} ${WRKDIR}/prefixes/libxml
-	${LN} -s ${LOCALBASE}/include/libxml2 ${WRKDIR}/prefixes/libxml/include
-	${LN} -s ${LOCALBASE}/lib ${WRKDIR}/prefixes/libxml/lib
+#post-extract:
+#	${MKDIR} ${WRKDIR}/prefixes/libxml
+#	${LN} -s ${LOCALBASE}/include/libxml2 ${WRKDIR}/prefixes/libxml/include
+#	${LN} -s ${LOCALBASE}/lib ${WRKDIR}/prefixes/libxml/lib
 
 post-patch:
 	${REINPLACE_CMD} -E \
@@ -178,10 +169,7 @@ post-patch:
 		-e 's,\.so\.\$$\(SQLR_VERSION\),\.so\.$$(basename $$(SQLR_VERSION)),g;' \
 			${WRKSRC}/src/api/c/src/Makefile \
 			${WRKSRC}/src/api/c++/src/Makefile
-
-post-install:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${MAKE} install-doc
-.endif
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
+		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 
 .include <bsd.port.post.mk>

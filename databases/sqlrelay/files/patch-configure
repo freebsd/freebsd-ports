@@ -1,115 +1,63 @@
---- configure.orig	Mon Apr 15 14:23:31 2002
-+++ configure	Thu Nov 21 19:00:36 2002
-@@ -1705,7 +1705,7 @@
- fi
- if eval "test \"`echo '$ac_cv_file_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  HAVE_GNOME_XML="yes"; XMLINCLUDES="-I$LIBXMLPATH"
-+  HAVE_GNOME_XML="yes"; XMLINCLUDES="-I$LIBXMLPATH/include"
- else
-   echo "$ac_t""no" 1>&6
+--- configure.orig	Tue Dec 16 19:06:16 2003
++++ configure	Wed May 26 17:56:40 2004
+@@ -37573,13 +37573,7 @@
  
-@@ -1784,7 +1784,7 @@
- fi
- if eval "test \"`echo '$ac_cv_file_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  HAVE_LIBXML="yes"; HAVE_GNOME_XML=""; XMLINCLUDES="-I$LIBXMLPATH"
-+  HAVE_LIBXML="yes"; HAVE_GNOME_XML=""; XMLINCLUDES="-I$LIBXMLPATH/include"
- else
-   echo "$ac_t""no" 1>&6
+ 			if ( test -n "$JAVAINCLUDES" )
+ 			then
+-				for i in `ls -d $JAVAPATH/include/*`
+-				do
+-					if ( test -d "$i" )
+-					then
+-						JAVAINCLUDES="$JAVAINCLUDES -I$i"
+-					fi
+-				done
++			JAVAINCLUDES="$JAVAINCLUDES -I`dirname $JAVAPATH/include/*/jni_md.h`"
+ 			fi
+ 		fi
  
-@@ -7314,7 +7314,7 @@
- fi
- if eval "test \"`echo '$ac_cv_file_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  INTERBASELIBSPATH="$INTERBASPATH/lib"; INTERBASELIBS="-L$INTERBASEPATH/lib -lgds -lcrypt"
-+  INTERBASELIBSPATH="$INTERBASEPATH/lib"; INTERBASELIBS="-L$INTERBASEPATH/lib -lgds -lcrypt"
- else
-   echo "$ac_t""no" 1>&6
+@@ -37958,14 +37952,14 @@
+ 		if ( test -n "$GTKPATH" )
+ 		then
  
-@@ -7403,8 +7403,8 @@
- 
- LINKFAIL=""
- if ( test -n "$INTERBASESTATIC" -a -n "$INTERBASELIBS" ); then
--	echo $ac_n "checking if Interbase can be statically linked without $DLLIB""... $ac_c" 1>&6
--echo "configure:7408: checking if Interbase can be statically linked without $DLLIB" >&5
-+	echo $ac_n "checking if Interbase can be statically linked without -lcrypt""... $ac_c" 1>&6
-+echo "configure:7408: checking if Interbase can be statically linked without -lcrypt" >&5
- 	TEMPCPPFLAGS="$CPPFLAGS"
- 	CPPFLAGS="$INTERBASESTATIC $INTERBASEINCLUDES"
- 	LIBS="$INTERBASELIBS $SOCKETLIB"
-@@ -7429,12 +7429,12 @@
- rm -f conftest*
- 	LIBS=""
- 	CPPFLAGS="$TEMPCPPFLAGS"
--	if ( test -n "$LINKFAIL" -a -n "$DLLIB" ); then
--		echo $ac_n "checking if Interbase can be statically linked with $DLLIB""... $ac_c" 1>&6
--echo "configure:7435: checking if Interbase can be statically linked with $DLLIB" >&5
-+	if ( test -n "$LINKFAIL" ); then
-+		echo $ac_n "checking if Interbase can be statically linked with -lcrypt""... $ac_c" 1>&6
-+echo "configure:7435: checking if Interbase can be statically linked with -lcrypt" >&5
- 		TEMPCPPFLAGS="$CPPFLAGS"
- 		CPPFLAGS="$INTERBASESTATIC $INTERBASEINCLUDES"
--		LIBS="$INTERBASELIBS $SOCKETLIB $DLLIB"
-+		LIBS="$INTERBASELIBS $SOCKETLIB -lcrypt"
- 		cat > conftest.$ac_ext <<EOF
- #line 7440 "configure"
- #include "confdefs.h"
-@@ -7446,7 +7446,7 @@
- EOF
- if { (eval echo configure:7448: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-   rm -rf conftest*
--  echo "$ac_t""yes" 1>&6; INTERBASELIBS="$INTERBASELIBS $DLLIB"; LINKFAIL="";
-+  echo "$ac_t""yes" 1>&6; INTERBASELIBS="$INTERBASELIBS -lcrypt"; LINKFAIL="";
- else
-   echo "configure: failed program was:" >&5
-   cat conftest.$ac_ext >&5
-@@ -7463,8 +7463,8 @@
- 	if ( test -n "$RPATHFLAG" -a -n "$INTERBASELIBSPATH" ); then
- 		INTERBASELIBS="-Wl,-rpath $INTERBASELIBSPATH $INTERBASELIBS"
- 	fi
--	echo $ac_n "checking if Interbase can be dynamically linked without $DLLIB""... $ac_c" 1>&6
--echo "configure:7468: checking if Interbase can be dynamically linked without $DLLIB" >&5
-+	echo $ac_n "checking if Interbase can be dynamically linked without -lcrypt""... $ac_c" 1>&6
-+echo "configure:7468: checking if Interbase can be dynamically linked without -lcrypt" >&5
- 	TEMPCPPFLAGS="$CPPFLAGS"
- 	CPPFLAGS="$INTERBASEINCLUDES"
- 	LIBS="$INTERBASELIBS $SOCKETLIB"
-@@ -7489,12 +7489,12 @@
- rm -f conftest*
- 	LIBS=""
- 	CPPFLAGS="$TEMPCPPFLAGS"
--	if ( test -n "$LINKFAIL" -a -n "$DLLIB" ); then
--		echo $ac_n "checking if Interbase can be dynamically linked with $DLLIB""... $ac_c" 1>&6
--echo "configure:7495: checking if Interbase can be dynamically linked with $DLLIB" >&5
-+	if ( test -n "$LINKFAIL" ); then
-+		echo $ac_n "checking if Interbase can be dynamically linked with -lcrypt""... $ac_c" 1>&6
-+echo "configure:7495: checking if Interbase can be dynamically linked with -lcrypt" >&5
- 		TEMPCPPFLAGS="$CPPFLAGS"
- 		CPPFLAGS="$INTERBASEINCLUDES"
--		LIBS="$INTERBASELIBS $SOCKETLIB $DLLIB"
-+		LIBS="$INTERBASELIBS $SOCKETLIB -lcrypt"
- 		cat > conftest.$ac_ext <<EOF
- #line 7500 "configure"
- #include "confdefs.h"
-@@ -7506,7 +7506,7 @@
- EOF
- if { (eval echo configure:7508: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-   rm -rf conftest*
--  echo "$ac_t""yes" 1>&6; INTERBASELIBS="$INTERBASELIBS $DLLIB"; LINKFAIL=""
-+  echo "$ac_t""yes" 1>&6; INTERBASELIBS="$INTERBASELIBS -lcrypt"; LINKFAIL=""
- else
-   echo "configure: failed program was:" >&5
-   cat conftest.$ac_ext >&5
-@@ -8122,10 +8122,7 @@
+-if ( test -r ""$GTKPATH/bin/gtk-config"" )
++if ( test -r ""$GTKPATH/bin/gtk12-config"" )
+ then
+-	eval "GTKCONFIG=\"$GTKPATH/bin/gtk-config\""
++	eval "GTKCONFIG=\"$GTKPATH/bin/gtk12-config\""
  fi
  
- 	if ( test -n "$JAVAINCLUDES"); then
--		for i in `ls -l $JAVAPATH/include | grep drw | awk '{print $9}'`
--		do
--			JAVAINCLUDES="$JAVAINCLUDES -I$JAVAPATH/include/$i"
--		done
-+		JAVAINCLUDES="$JAVAINCLUDES -I`dirname $JAVAPATH/include/*/jni_md.h`"
- 	fi
- fi
+ 		else
+-			# Extract the first word of ""gtk-config"", so it can be a program name with args.
+-set dummy "gtk-config"; ac_word=$2
++			# Extract the first word of ""gtk12-config"", so it can be a program name with args.
++set dummy "gtk12-config"; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ if test "${ac_cv_prog_GTKCONFIG+set}" = set; then
+@@ -37981,7 +37975,7 @@
+   test -z "$as_dir" && as_dir=.
+   for ac_exec_ext in '' $ac_executable_extensions; do
+   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_GTKCONFIG=""gtk-config""
++    ac_cv_prog_GTKCONFIG=""gtk12-config""
+     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+@@ -38003,7 +37997,7 @@
+ 			then
+ 				for i in "/usr/bin" "/usr/local/bin" "/usr/pkg/bin" "/usr/local/gtk/bin" "/usr/local/gtk+/bin" "/opt/sfw/bin"
+ 				do
+-					for j in "gtk-config" "gtk12-config" "gtk10-config"
++					for j in "gtk12-config" "gtk12-config" "gtk10-config"
+ 					do
+ 
+ if ( test -r ""$i/$j"" )
+@@ -41269,7 +41263,7 @@
+ #define SQLR_VERSION "$SQLR_VERSION"
+ _ACEOF
+ 
+-SONAME_VERSION_INFO="1:0:0"
++SONAME_VERSION_INFO="0:0:0"
+ 
+ 
  
