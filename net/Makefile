@@ -180,6 +180,7 @@
     SUBDIR += gnet2
     SUBDIR += gnewtellium
     SUBDIR += gnomba
+    SUBDIR += gnome-jabber
     SUBDIR += gnome-mud
     SUBDIR += gnome-vnc
     SUBDIR += gnomeicu
