@@ -82,7 +82,12 @@ CONFIGURE_ARGS+=	--enable-keymap=lynx
 
 .include <bsd.port.pre.mk>
 
-.if  ${OSVERSION} < 502102
+.if exists(${PORT_DBDIR}/boehm-gc/options)
+.include "${PORT_DBDIR}/boehm-gc/options"
+.endif
+
+.if defined(WITH_THREADING)
+.if ${OSVERSION} < 502102
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="${LIBS} ${PTHREAD_LIBS} -lc_r"
 .else
@@ -92,6 +97,7 @@ CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 # THREADING options.
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="${LIBS} -lpthread -lc"
+.endif
 .endif
 
 pre-everything::
