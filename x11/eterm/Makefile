@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eterm
-PORTVERSION=	0.8.10
+PORTVERSION=	0.9
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=     eterm
+MASTER_SITE_SUBDIR=	eterm
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -21,28 +21,21 @@ USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-trans=imlib --enable-utmp \
+		--enable-xim --with-theme-update
+CONFIGURE_ENV=	LIBS="-lxpg4"
 
 MAN1=		Eterm.1
 
-.if ( defined(KANJI) )
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kanji
-.endif
-
-# this is needed to remove leftover files from applied patches.
-pre-install:
-.for i in Eterm emacs irc mutt tn3270 trans
-	@${RM} -f ${WRKSRC}/themes/$i/*.orig
-.endfor
-
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
-.ifndef NOPORTDOCS
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.1.html ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.1.html ${PREFIX}/share/doc/Eterm
 .endif
 
 .include <bsd.port.mk>
