@@ -3911,6 +3911,7 @@ libgnomeprintui20	ports/x11-toolkits/libgnomeprintui20
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnomeuimm	ports/x11-toolkits/libgnomeuimm
 libgnugetopt	ports/devel/libgnugetopt
+libgpg-error	ports/security/libgpg-error
 libgphoto2	ports/graphics/libgphoto2
 libgrass5	ports/graphics/libgrass5
 libgringotts	ports/security/libgringotts
