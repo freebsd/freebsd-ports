@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Sep  4 21:39:37 2001
-+++ Makefile	Thu Sep  6 01:24:46 2001
+--- Makefile.orig	Wed Jan  2 23:23:30 2002
++++ Makefile	Sat Jan  5 19:48:56 2002
 @@ -35,7 +35,7 @@
  # (Don't bother with this on Windows; I don't have an install target
  # for Windows.)
@@ -9,64 +9,21 @@
  BINDIR = bin
  # The man pages go into $(DESTDIR)$(MANDIR)
  MANDIR = man/man1
-@@ -50,7 +50,6 @@
- # makefile was made by stripping out most of an imake-generated file.
- 
- # It's best to use gcc if you can.
--CC = gcc
- 
- # C debugging and optimization flags. 
- # In development, we turn on all reasonable warnings, thus:
-@@ -59,7 +58,6 @@
+@@ -59,7 +59,7 @@
  # code (e.g. glib) may provoke warnings.
  # Also, we do NOT enable optimization by default, because RedHat 6
  # Linux distributions have a seriously buggy C compiler.
 -CDEBUGFLAGS = -g
++#CDEBUGFLAGS = -g
  # The -Wconversion flag is also useful to detect (more than usual)
  # abuse of enums, but it generates many superfluous warnings, so
  # is not on by default.
-@@ -101,8 +99,8 @@
- GUILIBS=-LC:/gtk -lgtk-1.3 -lgdk-1.3 -lglib-1.3 -lgmodule-1.3 -Wl,-subsystem,windows
- else
- # Not Windows. If gtk+ is properly installed, this is all that's needed.
--EXTRA_INCLUDES=`gtk-config --cflags`
--GUILIBS=`gtk-config --libs`
-+EXTRA_INCLUDES=`${GTK_CONFIG} --cflags`
-+GUILIBS=`${GTK_CONFIG} --libs`
- endif
+@@ -117,7 +117,7 @@
+ # don't mess with these
+ ALLINCLUDES = $(INCLUDES) $(EXTRA_INCLUDES)
+ ALLDEFINES = $(ALLINCLUDES) $(EXTRA_DEFINES) $(DEFINES)
+-CFLAGS = $(EXTRA_CFLAGS) $(CDEBUGFLAGS) $(CCOPTIONS) $(ALLDEFINES)
++CFLAGS += $(EXTRA_CFLAGS) $(CDEBUGFLAGS) $(CCOPTIONS) $(ALLDEFINES)
+ LDOPTIONS = $(CDEBUGFLAGS) $(CCOPTIONS)  $(EXTRA_LDOPTIONS)
  
- # We use gcc to link as well
-@@ -125,7 +123,6 @@
- DEPEND = ./makedep
- DEPENDFLAGS =
- # perl is needed for generating several files
--PERL = perl
- # suffix of executables
- EXE = 
- # programs used in installation
-@@ -144,7 +141,6 @@
- DEPEND =
- DEPENDFLAGS =
- # perl is needed for generating several files
--PERL = perl
- # suffix of executables
- EXE = .exe
- # programs used in installation: not in windows
-@@ -259,8 +255,6 @@
- 
- # version.h is now made from version.h.in by the release script.
- # so if we are not making a release, we'd better provide it.
--version.h: version.h.in
--	$(CP) $< $@ 
- 
- # rule to generate the fallback tiles
- fbtiles.c: $(FALLBACKTILES) makefallbacktiles Makefile
-@@ -304,7 +298,7 @@
- 
- use.txt rules.txt: xmj.man
- 	$(RM) use.txt rules.txt
--	$(PERL) maketxt xmj.man
-+	$(xPERL) maketxt xmj.man
- 	chmod 444 use.txt rules.txt
- 
- 
+ # various auxiliary program and settings.
