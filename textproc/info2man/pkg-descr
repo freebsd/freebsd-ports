@@ -1,0 +1,9 @@
+info2man converts GNU info files to pod or -man formats.
+
+GNU info can be a pain as it demands its own special pager, it's a binary
+format, it's cruder than HTML and less documented, and most GNU- authored
+manual entries basically say "we like info so we don't maintain this manual
+entry, thus it is probably wrong". info2man thus converts info files so that
+they can be read by ordinary tools.
+
+WWW:	http://www.cskk.ezoshosting.com/cs/css/info2pod.html
