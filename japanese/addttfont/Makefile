@@ -13,6 +13,8 @@ EXTRACT_SUFX=	# none
 
 MAINTAINER=	taoka@FreeBSD.org
 
+BROKEN=		"Broken dependency"
+
 RUN_DEPENDS=	mkres.pl:${PORTSDIR}/japanese/p5-mkres \
 		VTPSfont:${PORTSDIR}/japanese/VTPSfont \
 		${X11BASE}/lib/X11/ja_JP.EUC/app-defaults/Tgif:${PORTSDIR}/japanese/tgif
