@@ -1,11 +1,14 @@
---- work/OpenSceneGraph-0.8/include/osg/Timer	Wed Jan 24 09:42:44 2001
-+++ include/osg/Timer	Mon Apr 23 18:58:17 2001
-@@ -43,7 +43,7 @@
-         }
-         #pragma optimize("",on)
- #endif
--#ifdef __linux
-+#if defined(__linux) || defined(__FreeBSD__)
-         #define CLK(x)	  __asm__ volatile (".byte 0x0f, 0x31" : "=A" (x))
- 	inline Timer_t tick( void ) {Timer_t x;CLK(x);return x;}
- #endif
+--- ./src/osgPlugins/txp/ORIG/trpage_sys.h	Sun Feb 10 05:42:55 2002
++++ ./src/osgPlugins/txp/trpage_sys.h	Thu Mar 14 19:35:15 2002
+@@ -82,6 +82,11 @@
+ typedef int64_t  int64;
+ //typedef long long int int64;
+ 
++#elif defined(__FreeBSD__)
++#include <sys/inttypes.h>
++typedef int64_t  int64;
++//typedef long long int int64;
++
+ #elif defined(__ghs__) && defined(__LL_Is_64)
+ typedef long long int64;
+ 
