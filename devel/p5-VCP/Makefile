@@ -38,4 +38,10 @@ MAN3=	RevML::Doctype.3 RevML::Writer.3 VCP.3 \
 	VCP::TestUtils.3 VCP::Utils::cvs.3 VCP::Utils::p4.3 \
 	VCP::Utils::vss.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		"Does not compile with perl ${PERL_VERSION}"
+.endif
+
+.include <bsd.port.post.mk>
