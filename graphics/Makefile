@@ -94,6 +94,7 @@
     SUBDIR += mpeg_stat
     SUBDIR += mpegedit
     SUBDIR += mplex
+    SUBDIR += mtv
     SUBDIR += netpbm
     SUBDIR += netshow
     SUBDIR += opendx
