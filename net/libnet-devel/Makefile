@@ -1,4 +1,4 @@
-# Ports collection makefile for:  libnet11
+# Ports collection makefile for:  libnet-devel
 # Date created:			Jan 7, 2003
 # Whom:				smace@freebsd.org
 #
