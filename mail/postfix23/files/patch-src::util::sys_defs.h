@@ -1,5 +1,5 @@
---- src/util/sys_defs.h.orig	Wed Aug 25 06:15:02 2004
-+++ src/util/sys_defs.h	Wed Aug 25 06:15:18 2004
+--- ./src/util/sys_defs.h.orig	Wed Aug 25 06:15:02 2004
++++ ./src/util/sys_defs.h	Wed Aug 25 06:15:18 2004
 @@ -24,7 +24,7 @@
    * 4.4BSD and close derivatives.
    */
