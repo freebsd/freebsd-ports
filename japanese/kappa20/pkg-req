@@ -19,15 +19,18 @@ if [ "$2x" = "INSTALLx" -a ! -d ${FONTDIR} ]; then
 	mkdir ${FONTDIR}
 fi
 
+grepv() {
+	awk -v SRC=$1 'BEGIN{while (getline < SRC) {ENTRY[$0]=1}} (ENTRY[$0] != 1) {print}' $2
+}
+
 if [ "$2" = "DEINSTALL" ] ; then
-	TMPFILE=/tmp/install-fonts-alias-$$
-	cat ${PKG_PREFIX}/share/doc/ja/k20fonts/fonts.alias > ${TMPFILE}
+	FAFILE=${PKG_PREFIX}/share/doc/ja/k20fonts/fonts.alias
 	echo "Updating ${FONTDIR}/fonts.alias"
 	cd ${FONTDIR}
 	touch fonts.alias
 	cp fonts.alias fonts.alias.orig
-	grep -v -- "`cat ${TMPFILE}`" fonts.alias.orig > fonts.alias
-	rm -f fonts.alias.orig ${TMPFILE}
+	grepv ${FAFILE} fonts.alias.orig > fonts.alias
+	rm -f fonts.alias.orig
 fi
 
 echo "**********************************************************"

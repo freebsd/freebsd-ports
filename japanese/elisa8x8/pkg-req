@@ -19,6 +19,10 @@ if [ "$2x" = "INSTALLx" -a ! -d ${FONTDIR} ]; then
 	mkdir ${FONTDIR}
 fi
 
+grepv() {
+	awk -v SRC=$1 'BEGIN{while (getline < SRC) {ENTRY[$0]=1}} (ENTRY[$0] != 1) {print}' $2
+}
+
 # font alias entry here!
 TMPFILE=/tmp/install-fonts-alias-$$
 cat << EOF > ${TMPFILE}
@@ -33,10 +37,10 @@ cd ${FONTDIR}
 touch fonts.alias
 cp fonts.alias fonts.alias.orig
 if [ "$2" = "INSTALL" ] ; then
-	(grep -v -e "`cat ${TMPFILE}`" fonts.alias.orig ; \
+	(grepv ${TMPFILE} fonts.alias.orig ; \
 	 cat ${TMPFILE}) > fonts.alias
 elif [ "$2" = "DEINSTALL" ] ; then
-	grep -v -e "`cat ${TMPFILE}`" fonts.alias.orig > fonts.alias
+	grepv ${TMPFILE} fonts.alias.orig > fonts.alias
 fi
 rm -f fonts.alias.orig ${TMPFILE}
 
