@@ -1,0 +1,25 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Mon Dec 17 22:13:42 2001
++++ Makefile.in	Mon Dec 17 22:14:04 2001
+@@ -6,17 +6,17 @@
+ 
+ all:
+ 	for subdir in $(SUBDIRS); do \
+-	  make -C $$subdir; \
++	  ${MAKE} -C $$subdir; \
+ 	done
+ 
+ clean:
+ 	for subdir in $(SUBDIRS); do \
+-	  make -C $$subdir clean; \
++	  ${MAKE} -C $$subdir clean; \
+ 	done
+ 
+ install:
+ 	for subdir in $(SUBDIRS); do \
+-	  make -C $$subdir install; \
++	  ${MAKE} -C $$subdir install; \
+ 	done
+ 
+ dist: Makefile

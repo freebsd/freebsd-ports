@@ -326,6 +326,7 @@
     SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
     SUBDIR += pancho
+    SUBDIR += papaya
     SUBDIR += passlogd
     SUBDIR += pathchar
     SUBDIR += pchar
