@@ -1,158 +1,86 @@
-*** Makefile.orig	Thu Feb 27 11:48:08 2003
---- Makefile	Thu Feb 27 11:48:13 2003
-***************
-*** 3,23 ****
-  #
-  # $Id: Makefile,v 1.13 2002/05/29 17:42:08 ndwinton Exp $
-  
-  ZBD_VERSION = 2.4.1
-  
-! OS = 
-  
-  ###
-  ### Locations of tools, libraries and installation directories.
-  ### You may well need to change these.
-  ###
-  
-  # Choose your C compiler
-  
-- CC_$(OS) = gcc
-- 
-  CC_win32 = c:/msys/1.0/mingw/bin/gcc
-  CC_linux = gcc -pthread
-  CC_solaris = gcc
-  CC_freebsd = gcc -pthread
-  CC_tru64 = cc
---- 3,21 ----
-  #
-  # $Id: Makefile,v 1.13 2002/05/29 17:42:08 ndwinton Exp $
-  
-  ZBD_VERSION = 2.4.1
-  
-! OS = freebsd
-  
-  ###
-  ### Locations of tools, libraries and installation directories.
-  ### You may well need to change these.
-  ###
-  
-  # Choose your C compiler
-  
-  CC_win32 = c:/msys/1.0/mingw/bin/gcc
-  CC_linux = gcc -pthread
-  CC_solaris = gcc
-  CC_freebsd = gcc -pthread
-  CC_tru64 = cc
-***************
-*** 28,38 ****
-  CC = $(CC_$(OS))
-  
-  # Optimise/debug compilation
-  
-  #OPTIM = -Wall -g
-! OPTIM = -O3
-  
-  # Location of gmp include and library
-  #
-  # NOTE: These are no longer used unless you define USE_GMP_LIBRARY (which is
-  # undefined by default). Uncomment them as necessary.
---- 26,36 ----
-  CC = $(CC_$(OS))
-  
-  # Optimise/debug compilation
-  
-  #OPTIM = -Wall -g
-! OPTIM = 
-  
-  # Location of gmp include and library
-  #
-  # NOTE: These are no longer used unless you define USE_GMP_LIBRARY (which is
-  # undefined by default). Uncomment them as necessary.
-***************
-*** 43,71 ****
-  # Location of Blowfish include and library
-  # You can use the versions from OpenSSL if you have it installed, as follows:
-  # BFINC = /usr/include/openssl
-  # BFLIB = -lcrypto
-  
-! BFINC = -I../blowfish-0.9.5a
-! BFLIB = ../blowfish-0.9.5a/libblowfish.a
-  
-  # Location of zlib include and library
-  
-! ZINC = -I../zlib-1.1.4
-! ZLIB = ../zlib-1.1.4/libz.a
-  
-  # Location of bzlib include and library
-  # Set these empty if you don't want bzib2 support
-  
-! BZINC = -I../bzip2-1.0.1
-! BZLIB = ../bzip2-1.0.1/libbz2.a
-  
-  #
-  # Tools needed for Perl "POD"-format documentation conversion.
-  #
-  PERL_$(OS) = perl
-  PERL_win32 = c:/perl/bin/perl	# Avoid Cygwin port
-  PERL = $(PERL_$(OS))
-  
-  BAT_win32 = .bat
-  
-  POD2HTML = $(PERL) -S pod2html$(BAT_$(OS))
---- 41,70 ----
-  # Location of Blowfish include and library
-  # You can use the versions from OpenSSL if you have it installed, as follows:
-  # BFINC = /usr/include/openssl
-  # BFLIB = -lcrypto
-  
-! BFINC = -I${OPENSSLINC} -I${OPENSSLINC}/openssl
-! BFLIB = ${OPENSSLLIB}/libcrypto.a
-  
-  # Location of zlib include and library
-  
-! ZINC =
-! ZLIB = -lz
-  
-  # Location of bzlib include and library
-  # Set these empty if you don't want bzib2 support
-  
-! BZINC = -I${LOCALBASE}/include
-! BZLIB = -L${LOCALBASE}/lib -lbz2
-  
-  #
-  # Tools needed for Perl "POD"-format documentation conversion.
-  #
-  PERL_$(OS) = perl
-  PERL_win32 = c:/perl/bin/perl	# Avoid Cygwin port
-+ PERL_freebsd = perl
-  PERL = $(PERL_$(OS))
-  
-  BAT_win32 = .bat
-  
-  POD2HTML = $(PERL) -S pod2html$(BAT_$(OS))
-***************
-*** 173,183 ****
-  
-  ####
-  #### You REALLY shouldn't have to modify anything beyond here ...
-  ####
-  
-! CFLAGS = $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
-  
-  LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
-  
-  OBJS = zebedee.o sha_func.o huge.o $(GETOPTOBJ) $(SERVICEOBJ)
-  
---- 172,183 ----
-  
-  ####
-  #### You REALLY shouldn't have to modify anything beyond here ...
-  ####
-  
-! CFLAGS ?= -03
-! CFLAGS += ${PTHREAD_LIBS} ${PTHREAD_CFLAGS} $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
-  
-  LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
-  
-  OBJS = zebedee.o sha_func.o huge.o $(GETOPTOBJ) $(SERVICEOBJ)
-  
+--- ./Makefile.orig	Thu May 30 00:42:08 2002
++++ ./Makefile	Wed Sep 24 16:37:09 2003
+@@ -5,7 +5,7 @@
+ 
+ ZBD_VERSION = 2.4.1
+ 
+-OS = 
++OS = freebsd
+ 
+ ###
+ ### Locations of tools, libraries and installation directories.
+@@ -14,12 +14,10 @@
+ 
+ # Choose your C compiler
+ 
+-CC_$(OS) = gcc
+-
+ CC_win32 = c:/msys/1.0/mingw/bin/gcc
+ CC_linux = gcc -pthread
+ CC_solaris = gcc
+-CC_freebsd = gcc -pthread
++CC_freebsd = gcc
+ CC_tru64 = cc
+ CC_irix = cc -n32 -woff 1110
+ CC_hpux = cc -Ae +DAportable
+@@ -30,7 +28,7 @@
+ # Optimise/debug compilation
+ 
+ #OPTIM = -Wall -g
+-OPTIM = -O3
++OPTIM = 
+ 
+ # Location of gmp include and library
+ #
+@@ -45,25 +43,26 @@
+ # BFINC = /usr/include/openssl
+ # BFLIB = -lcrypto
+ 
+-BFINC = -I../blowfish-0.9.5a
+-BFLIB = ../blowfish-0.9.5a/libblowfish.a
++BFINC = -I$(OPENSSLINC) -I$(OPENSSLINC)/openssl
++BFLIB = $(OPENSSLLIB)/libcrypto.a
+ 
+ # Location of zlib include and library
+ 
+-ZINC = -I../zlib-1.1.4
+-ZLIB = ../zlib-1.1.4/libz.a
++ZINC =
++ZLIB = -lz
+ 
+ # Location of bzlib include and library
+ # Set these empty if you don't want bzib2 support
+ 
+-BZINC = -I../bzip2-1.0.1
+-BZLIB = ../bzip2-1.0.1/libbz2.a
++BZINC = -I$(LOCALBASE)/include
++BZLIB = -L$(LOCALBASE)/lib -lbz2
+ 
+ #
+ # Tools needed for Perl "POD"-format documentation conversion.
+ #
+ PERL_$(OS) = perl
+ PERL_win32 = c:/perl/bin/perl	# Avoid Cygwin port
++PERL_freebsd = perl
+ PERL = $(PERL_$(OS))
+ 
+ BAT_win32 = .bat
+@@ -175,7 +174,8 @@
+ #### You REALLY shouldn't have to modify anything beyond here ...
+ ####
+ 
+-CFLAGS = $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
++CFLAGS ?= -03
++CFLAGS += $(PTHREAD_CFLAGS) $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
+ 
+ LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
+ 
+@@ -195,7 +195,7 @@
+ 	@ if test -z "$(OS)"; then echo "Use '$(MAKE) OS=xxx' where xxx is win32, linux, solaris, freebsd, tru64, irix, hpux, macosx or bsdi"; exit 1; fi
+ 
+ zebedee$(EXE) : $(OBJS)
+-	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS)
++	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS) $(PTHREAD_LIBS)
+ 
+ huge.o : huge.h
+ 
