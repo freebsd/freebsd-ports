@@ -1,14 +1,14 @@
---- configure.orig	Wed Oct 23 02:26:05 2002
-+++ configure	Mon Feb 17 02:04:57 2003
-@@ -865,3 +865,3 @@
- 
--PACKAGE=libtool
-+PACKAGE=libtool14
- 
-@@ -6089,6 +6089,2 @@
-       esac
--  case "$ac_given_INSTALL" in
--        [/$]*) INSTALL="$ac_given_INSTALL" ;;
--        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--        esac
- 
+--- configure.orig	Mon Apr 14 17:29:24 2003
++++ configure	Fri Apr 18 20:43:44 2003
+@@ -424,4 +424,4 @@
+ # Identity of this package.
+-PACKAGE_NAME='libtool'
+-PACKAGE_TARNAME='libtool'
++PACKAGE_NAME='libtool15'
++PACKAGE_TARNAME='libtool15'
+ PACKAGE_VERSION='1.5'
+@@ -1782,3 +1782,3 @@
+ # Define the identity of the package.
+- PACKAGE=libtool
++ PACKAGE=libtool15
+  VERSION=1.5

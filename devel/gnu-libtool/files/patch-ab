@@ -1,50 +1,54 @@
---- doc/Makefile.in.orig	Wed Oct 23 02:51:04 2002
-+++ doc/Makefile.in	Mon Feb 17 02:01:16 2003
-@@ -72,3 +72,3 @@
- LN_S = @LN_S@
+--- doc/Makefile.in.orig	Mon Apr 14 17:29:22 2003
++++ doc/Makefile.in	Fri Apr 18 20:22:58 2003
+@@ -93,3 +93,3 @@
+ LTLIBOBJS = @LTLIBOBJS@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
  NM = @NM@
-@@ -85,4 +85,4 @@
+@@ -160,4 +160,4 @@
  AUTOMAKE_OPTIONS = gnits
 -info_TEXINFOS = libtool.texi
 -libtool_TEXINFOS = PLATFORMS fdl.texi
-+info_TEXINFOS = libtool14.texi
-+libtool14_TEXINFOS = PLATFORMS fdl.texi
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -90,6 +90,6 @@
- TEXI2DVI = texi2dvi
++info_TEXINFOS = libtool15.texi
++libtool15_TEXINFOS = PLATFORMS fdl.texi
+ subdir = doc
+@@ -167,8 +167,8 @@
+ am__TEXINFO_TEX_DIR = $(srcdir)
 -INFO_DEPS = libtool.info
 -DVIS = libtool.dvi
+-PDFS = libtool.pdf
+-PSS = libtool.ps
 -TEXINFOS = libtool.texi
--DIST_COMMON =  $(libtool_TEXINFOS) Makefile.am Makefile.in mdate-sh \
-+INFO_DEPS = libtool14.info
-+DVIS = libtool14.dvi
-+TEXINFOS = libtool14.texi
-+DIST_COMMON =  $(libtool14_TEXINFOS) Makefile.am Makefile.in mdate-sh \
- stamp-vti texinfo.tex version.texi
-@@ -115,4 +115,4 @@
- 
--$(srcdir)/stamp-vti: libtool.texi $(top_srcdir)/configure.in
--	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/libtool.texi`" > vti.tmp
-+$(srcdir)/stamp-vti: libtool14.texi $(top_srcdir)/configure.in
-+	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/libtool14.texi`" > vti.tmp
- 	@echo "@set EDITION $(VERSION)" >> vti.tmp
-@@ -135,4 +135,4 @@
- 
+-DIST_COMMON = $(libtool_TEXINFOS) Makefile.am Makefile.in mdate-sh \
++INFO_DEPS = libtool15.info
++DVIS = libtool15.dvi
++PDFS = libtool15.pdf
++PSS = libtool15.ps
++TEXINFOS = libtool15.texi
++DIST_COMMON = $(libtool15_TEXINFOS) Makefile.am Makefile.in mdate-sh \
+ 	stamp-vti texinfo.tex version.texi
+@@ -207,9 +207,9 @@
+ 	$(TEXI2PDF) `test -f '$<' || echo '$(srcdir)/'`$<
 -libtool.info: libtool.texi version.texi $(libtool_TEXINFOS)
 -libtool.dvi: libtool.texi version.texi $(libtool_TEXINFOS)
-+libtool14.info: libtool14.texi version.texi $(libtool14_TEXINFOS)
-+libtool14.dvi: libtool14.texi version.texi $(libtool14_TEXINFOS)
- 
-@@ -235,6 +235,6 @@
+-libtool.pdf: libtool.texi version.texi $(libtool_TEXINFOS)
++libtool15.info: libtool15.texi version.texi $(libtool15_TEXINFOS)
++libtool15.dvi: libtool15.texi version.texi $(libtool15_TEXINFOS)
++libtool15.pdf: libtool15.texi version.texi $(libtool15_TEXINFOS)
+ version.texi:  stamp-vti
+-stamp-vti: libtool.texi $(top_srcdir)/configure
+-	@(dir=.; test -f ./libtool.texi || dir=$(srcdir); \
+-	set `$(SHELL) $(srcdir)/mdate-sh $$dir/libtool.texi`; \
++stamp-vti: libtool15.texi $(top_srcdir)/configure
++	@(dir=.; test -f ./libtool15.texi || dir=$(srcdir); \
++	set `$(SHELL) $(srcdir)/mdate-sh $$dir/libtool15.texi`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \
+@@ -270,5 +270,5 @@
  mostlyclean-aminfo:
--	-rm -f libtool.aux libtool.cp libtool.cps libtool.dvi libtool.fn \
--	  libtool.fns libtool.ky libtool.kys libtool.ps libtool.log \
--	  libtool.pg libtool.toc libtool.tp libtool.tps libtool.vr \
--	  libtool.vrs libtool.op libtool.tr libtool.cv libtool.cn
-+	-rm -f libtool14.aux libtool14.cp libtool14.cps libtool14.dvi libtool14.fn \
-+	  libtool14.fns libtool14.ky libtool14.kys libtool14.ps libtool14.log \
-+	  libtool14.pg libtool14.toc libtool14.tp libtool14.tps libtool14.vr \
-+	  libtool14.vrs libtool14.op libtool14.tr libtool14.cv libtool14.cn
+-	-rm -f libtool.aux libtool.cp libtool.cps libtool.fn libtool.ky libtool.kys \
+-	  libtool.log libtool.pg libtool.tmp libtool.toc libtool.tp \
+-	  libtool.vr libtool.dvi libtool.pdf libtool.ps
++	-rm -f libtool15.aux libtool15.cp libtool15.cps libtool15.fn libtool15.ky libtool15.kys \
++	  libtool15.log libtool15.pg libtool15.tmp libtool15.toc libtool15.tp \
++	  libtool15.vr libtool15.dvi libtool15.pdf libtool15.ps
  

@@ -7,7 +7,7 @@
 
 PORTNAME=	libltdl
 PORTREVISION=	0
-MASTERDIR=	${.CURDIR}/../libtool14
+MASTERDIR=	${.CURDIR}/../libtool15
 
 COMMENT=	System independent dlopen wrapper
 
