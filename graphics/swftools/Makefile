@@ -8,13 +8,14 @@
 
 PORTNAME=	swftools
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.quiss.org/swftools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
 
-LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib \
+LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_REINPLACE=	yes
