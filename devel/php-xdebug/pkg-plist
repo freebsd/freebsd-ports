@@ -1,0 +1,2 @@
+lib/php/%%PHP_EXT_DIR%%/xdebug.so
+@unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2>/dev/null || true
