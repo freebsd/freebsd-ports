@@ -1,0 +1,4 @@
+Constructs a hash from the /etc/services file and provides a tied interface 
+to it that takes care of things like the protocol name. 
+
+WWW: http://search.cpan.org/search?module=Net::Services

@@ -1,0 +1,22 @@
+# New ports collection makefile for:	p5-Net-Services
+# Date created:				Wed 23 Oct 2002
+# Whom:	      				Joseph Scott <joseph@randomnetworks.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-Services
+PORTVERSION=	1.3
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	joseph@randomnetworks.com
+
+PERL_CONFIGURE=	YES
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Net::Services.3
+
+.include <bsd.port.mk>
