@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-VERSION=	99.06
+VERSION=	99.12
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
 CATEGORIES=     print
