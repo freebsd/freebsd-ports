@@ -16,6 +16,7 @@ COMMENT=	Morse code training program
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 PLIST_FILES=	bin/aldo
 
@@ -25,5 +26,8 @@ PLIST_FILES=	bin/aldo
 USE_GCC=	3.3
 MAKE_ENV+=	CXX="${CXX}"
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/aldo ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
