@@ -15,8 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+PYTHON_VERSION=	python1.5
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
