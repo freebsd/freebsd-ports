@@ -47,6 +47,7 @@
     SUBDIR += libdbi
     SUBDIR += libgda
     SUBDIR += libgda2
+    SUBDIR += libgdamm
     SUBDIR += libgnomedb
     SUBDIR += libiodbc
     SUBDIR += libsdb
