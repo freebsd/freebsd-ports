@@ -7,6 +7,7 @@
 
 PORTNAME=	jext
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jext
@@ -34,11 +35,13 @@ do-install:
 	@(cd ${WRKSRC} && ${TAR} -c -f - Jython-LICENSE LICENSE README \
 		History.txt Names.txt bin lib) | \
 		(cd ${INSTSBDR} && ${TAR} --unlink -x -f -)
+	@CLASSPATH=${INSTSBDR}/lib/jython.jar javavm org.python.util.jython \
+		${INSTSBDR}/lib/Lib/compileall.py ${INSTSBDR}
 
 post-install:
-	@${ECHO_MSG} "--------------------------------------------------------------------------------"
+	@${ECHO_MSG} "-------------------------------------------------------------------------------"
 	@${ECHO_MSG} " Please note that Java2 platform (jdk/jre-1.2.x or later) is required to run"
 	@${ECHO_MSG} " this program."
-	@${ECHO_MSG} "--------------------------------------------------------------------------------"
+	@${ECHO_MSG} "-------------------------------------------------------------------------------"
 
 .include <bsd.port.mk>
