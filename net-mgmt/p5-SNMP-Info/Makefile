@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	snmp-info
@@ -29,6 +29,12 @@ MAN3=	SNMP::Info::CiscoVTP.3 SNMP::Info::MAU.3 SNMP::Info::Layer2::C2900.3 \
 	SNMP::Info.3 SNMP::Info::Layer1::Allied.3 \
 	SNMP::Info::Layer2::C1900.3 SNMP::Info::Layer3.3 \
 	SNMP::Info::CiscoStack.3 SNMP::Info::Layer2::HP.3 SNMP::Info::CDP.3 \
-	SNMP::Info::Entity.3
+	SNMP::Info::Entity.3 SNMP::Info::FDP.3 SNMP::Info::Layer1::Bayhub.3 \
+	SNMP::Info::Layer2::Allied.3 SNMP::Info::Layer2::Baystack.3 \
+	SNMP::Info::Layer2::Centillion.3 SNMP::Info::Layer2::NAP222x.3 \
+	SNMP::Info::Layer2::Orinoco.3 SNMP::Info::Layer3::AlteonAD.3 \
+	SNMP::Info::Layer3::BayRS.3 SNMP::Info::Layer3::Cisco.3 \
+	SNMP::Info::Layer3::Contivity.3	SNMP::Info::NortelStack.3 \
+	SNMP::Info::RapidCity.3 SNMP::Info::SONMP.3
 
 .include <bsd.port.mk>
