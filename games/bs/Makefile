@@ -8,7 +8,7 @@
 PORTNAME=	bs
 PORTVERSION=	2.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
+MASTER_SITES=	http://www.tuxedo.org/~esr/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -17,6 +17,6 @@ MAN6=		bs.6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bs ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bs.6 ${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/bs.6 ${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
