@@ -12,21 +12,26 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.unixfreak.org/~dima/distfiles/
 MASTER_SITE_SUBDIR=	dd
 
-MAINTAINER=	dima@unixfreak.org
+MAINTAINER=	dd@FreeBSD.org
 
+MANSECTS=	1
 MAN1=		mg.1
 MANCOMPRESSED=	maybe
 
-# This isn't very scalable, but I'm lazy..
-.if defined(NOMANCOMPRESS)
-MANNAME=	mg.1
+# MAN page COMPression SUFFIX
+.if !defined(NOMANCOMPRESS)
+MANCOMPSUFFIX=	.gz
 .else
-MANNAME=	mg.1.gz
+MANCOMPSUFFIX=
 .endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin/mg
-	@${INSTALL_MAN} ${WRKSRC}/${MANNAME} ${PREFIX}/man/man1
+.for __s in ${MANSECTS}
+.for __m in ${MAN${__s}:S/$/${MANCOMPSUFFIX}/}
+	@${INSTALL_MAN} ${WRKSRC}/${__m} ${PREFIX}/man/man${__s}/${__m}
+.endfor
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/mg
 	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/tutorial \
