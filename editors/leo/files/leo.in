@@ -8,5 +8,5 @@
 #
 # 2002/11/17 alane@freebsd.org
 #
-exec python @LOCALBASE@/share/@DISTNAME@/leo.py ${1:+"$@"}
+exec python @PKGDATADIR@/leo.py ${1:+"$@"}
 
