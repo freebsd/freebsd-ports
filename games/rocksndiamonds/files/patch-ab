@@ -1,11 +1,11 @@
---- src/Makefile.orig	Mon Jan  1 20:02:21 2001
-+++ src/Makefile	Tue Jan 30 09:14:35 2001
-@@ -96,7 +96,7 @@
- # OPTIONS = $(DEBUG) -O3 -Wall			# only for debugging purposes
+--- src/Makefile.orig	Tue Mar 19 03:43:15 2002
++++ src/Makefile	Wed Apr  3 20:51:21 2002
+@@ -101,7 +101,7 @@
+ # PROFILING = $(PROFILING_FLAGS)
+ 
+ # OPTIONS = $(DEBUG) -Wall			# only for debugging purposes
+-OPTIONS = $(DEBUG) -O3 -Wall			# only for debugging purposes
++OPTIONS ?= $(DEBUG) -O3 -Wall			# only for debugging purposes
  # OPTIONS = $(DEBUG) -Wall -ansi -pedantic	# only for debugging purposes
  # OPTIONS = -O3 -Wall -ansi -pedantic
--OPTIONS = -O3 -Wall
-+OPTIONS ?= -O3 -Wall
- # OPTIONS = -O3
- # OPTIONS = -DSYSV -Ae				# may be needed for HP-UX
- 
+ # OPTIONS = -O3 -Wall
