@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.b4
-PORTEPOCH=	1
+PORTVERSION=	1.0.r2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	ports@FreeBSD.org
 
