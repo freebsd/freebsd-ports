@@ -7,10 +7,12 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
-		ftp://pgp.iijlab.net/pub/gnupg/ \
-		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
+MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
+		ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
+MASTER_SITE_SUBDIR=	gnupg
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
