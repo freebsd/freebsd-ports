@@ -941,8 +941,10 @@ NONEXISTENT?=	/nonexistent
 
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
+ACLOCAL?=		aclocal14
 AUTOMAKE?=		automake14
 AUTOCONF?=		autoconf213
+AUTOHEADER?=		autoheader213
 LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
 .if exists(/sbin/md5)
