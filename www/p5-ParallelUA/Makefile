@@ -4,7 +4,7 @@
 # Date created:                         Sep 8 1998
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.4 1998/11/20 20:25:35 ache Exp $
+# $Id: Makefile,v 1.5 1998/11/25 10:49:24 ache Exp $
 #
 
 DISTNAME=       ParallelUserAgent-2.39
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=     LWP
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI
 
 USE_PERL5=	YES
 
