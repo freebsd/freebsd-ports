@@ -3,15 +3,17 @@ etc/squid/errors/ERR_ACCESS_DENIED
 etc/squid/errors/ERR_CACHE_ACCESS_DENIED
 etc/squid/errors/ERR_CACHE_MGR_ACCESS_DENIED
 etc/squid/errors/ERR_CANNOT_FORWARD
-etc/squid/errors/ERR_CLIENT_ABORT
 etc/squid/errors/ERR_CONNECT_FAIL
 etc/squid/errors/ERR_DNS_FAIL
 etc/squid/errors/ERR_FORWARDING_DENIED
 etc/squid/errors/ERR_FTP_DISABLED
 etc/squid/errors/ERR_FTP_FAILURE
+etc/squid/errors/ERR_FTP_FORBIDDEN
+etc/squid/errors/ERR_FTP_NOT_FOUND
 etc/squid/errors/ERR_FTP_PUT_CREATED
 etc/squid/errors/ERR_FTP_PUT_ERROR
 etc/squid/errors/ERR_FTP_PUT_MODIFIED
+etc/squid/errors/ERR_FTP_UNAVAILABLE
 etc/squid/errors/ERR_INVALID_REQ
 etc/squid/errors/ERR_INVALID_URL
 etc/squid/errors/ERR_LIFETIME_EXP
@@ -19,6 +21,7 @@ etc/squid/errors/ERR_NO_RELAY
 etc/squid/errors/ERR_ONLY_IF_CACHED_MISS
 etc/squid/errors/ERR_READ_ERROR
 etc/squid/errors/ERR_READ_TIMEOUT
+etc/squid/errors/ERR_SHUTTING_DOWN
 etc/squid/errors/ERR_SOCKET_FAILURE
 etc/squid/errors/ERR_UNSUP_REQ
 etc/squid/errors/ERR_URN_RESOLVE
