@@ -9,7 +9,8 @@ PORTNAME=	gplot
 PORTVERSION=	4.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.psc.edu/pub/gplot/
-DISTFILES=	gplot.tar.Z
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 

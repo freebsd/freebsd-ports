@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- drawcgm/Makefile.orig	Sat Oct 26 02:58:37 2002
++++ drawcgm/Makefile	Sat Oct 26 02:58:44 2002
+@@ -25,7 +25,7 @@
+ #	Here ends the section the installer should have to modify
+ #----------------------------------------------------------------------------
+ 
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ # DrawCGM and CGMGen, and test routines
+ cgmgen.o:	/usr/include/stdio.h \

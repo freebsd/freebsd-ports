@@ -1,23 +1,14 @@
-*** utils.c.orig	Sun Nov 30 01:11:39 1997
---- utils.c	Sun Nov 30 01:24:00 1997
-***************
-*** 300,308 ****
-       struct info_struct *out_info;
-       struct one_opt *opt;	/* put command line options here */
-  #define may_override(name) if (opt[(int) name].set) switch (opt[(int) name].tag) {	    \
-! 											    case integer: out_info->name = opt[(int) name].val.i; break;			    \
-! 											    case real: out_info->name = opt[(int) name].val.r; break;			    \
-! 											    case lst: case str: strcpy(out_info->name, opt[(int) name].val.str); break;}
-  {
-    /* and now overide the device if the command line wants us to */
-    may_override(pxl_in);
---- 300,308 ----
-       struct info_struct *out_info;
-       struct one_opt *opt;	/* put command line options here */
-  #define may_override(name) if (opt[(int) name].set) switch (opt[(int) name].tag) {	    \
-! 							    case integer: out_info->name = opt[(int) name].val.i; break;			    \
-! 							    case real: out_info->name = opt[(int) name].val.r; break;			    \
-! 							    case lst: case str: strncpy(out_info->name, opt[(int) name].val.str,max_str); break;}
-  {
-    /* and now overide the device if the command line wants us to */
-    may_override(pxl_in);
+--- utils.c.orig	Fri Oct 25 19:08:50 2002
++++ utils.c	Fri Oct 25 19:10:44 2002
+@@ -300,9 +300,8 @@
+      struct info_struct *out_info;
+      struct one_opt *opt;	/* put command line options here */
+ #define may_override(name) if (opt[(int) name].set) switch (opt[(int) name].tag) {	    \
+-											    case integer: out_info->name = opt[(int) name].val.i; break;			    \
+-											    case real: out_info->name = opt[(int) name].val.r; break;			    \
+-											    case lst: case str: strcpy(out_info->name, opt[(int) name].val.str); break;}
++					    case integer: out_info->name = opt[(int) name].val.i; break; \
++					    case real: out_info->name = opt[(int) name].val.r; break; }
+ {
+   /* and now overide the device if the command line wants us to */
+   may_override(pxl_in);
