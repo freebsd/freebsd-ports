@@ -4,22 +4,21 @@
 #
 # $FreeBSD$
 #
-# Version 2.90 has been released but this port retains 2.80 becaust newer
-# version requires newer glibc and FreeBSD port does not have it for now.
 
 PORTNAME=	linux_rar
-PORTVERSION=	2.80
+PORTVERSION=	2.90
 CATEGORIES=	archivers linux
-MASTER_SITES=	ftp://ftp.download.com/pub/linux/utilities/ \
-		ftp://ftp.rarsoft.com/rar/
-#		ftp://ftp.netlab.sk/public/rarsoft/rar/ \
-#		ftp://rarsoft.ti.sk/pub/rar/
+MASTER_SITES=	ftp://ftp.rarsoft.com/rar/ \
+		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
 DISTNAME=	rarlnx${PORTVERSION:S/0//S/.//}
 EXTRACT_SUFX=	.sfx
 
 MAINTAINER=	sf@FreeBSD.org
 
-USE_LINUX=	yes
+RUN_DEPENDS=	\
+	${LINUXBASE}/lib/libc-2.2.2.so:${PORTSDIR}/emulators/linux_base-7
+
+#USE_LINUX=	yes
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
@@ -32,8 +31,8 @@ EXTRACT_AFTER_ARGS=	# empty
 STRIP=			# empty: do not strip linux binary during INSTALL_PROGRAM
 WRKSRC=		${WRKDIR}/rar
 
-RARDOCS=	license.txt rar.txt rar_faq.txt rar_site.txt readme.txt \
-		register.frm register.txt rereg.txt technote.txt whatsnew.txt
+RARDOCS=	license.txt order.txt rar.txt rar_faq.txt rar_site.txt \
+		readme.txt register.txt rereg.txt technote.txt whatsnew.txt
 RARFILES=	rarfiles.lst default.sfx dos.sfx
 
 .if defined(WITH_UNRAR)

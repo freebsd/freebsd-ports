@@ -1,11 +1,11 @@
 bin/rar
 %%UNRAR%%bin/unrar
 share/doc/rar/license.txt
+share/doc/rar/order.txt
 share/doc/rar/rar.txt
 share/doc/rar/rar_faq.txt
 share/doc/rar/rar_site.txt
 share/doc/rar/readme.txt
-share/doc/rar/register.frm
 share/doc/rar/register.txt
 share/doc/rar/rereg.txt
 share/doc/rar/technote.txt
