@@ -1,4 +1,5 @@
 # New ports collection makefile for:	xripple
+# Version required:			1.0 <no version #>
 # Date created:				6 Oct 1996
 # Whom:					oly
 #

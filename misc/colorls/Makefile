@@ -1,4 +1,5 @@
 # New ports collection makefile for:	colorls
+# Version required:	FreeBSD-2.2-stable (around August '98)
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #

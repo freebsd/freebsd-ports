@@ -1,4 +1,5 @@
 # New ports collection makefile for:	GLX
+# Version required:     CVS
 # Date created:         13 September 1999
 # Whom:                 Marc E E van Woerkom  <van.woerkom@netcologne.de>
 #

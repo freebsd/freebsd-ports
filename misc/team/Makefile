@@ -1,4 +1,5 @@
 # New ports collection makefile for:	team
+# Version required:	3.1 (From the RCS Id line of team.c)
 # Date created:		1 July 1995
 # Whom:			joerg
 #
