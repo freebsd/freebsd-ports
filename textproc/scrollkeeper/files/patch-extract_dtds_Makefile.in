@@ -1,0 +1,20 @@
+--- extract/dtds/Makefile.in.orig	Mon Jun  3 15:23:05 2002
++++ extract/dtds/Makefile.in	Mon Jun  3 15:24:07 2002
+@@ -125,7 +125,7 @@
+ XSLT_CONFIG = @XSLT_CONFIG@
+ XSLT_LIBS = @XSLT_LIBS@
+ 
+-CATALOG = $(sysconfdir)/xml/catalog
++CATALOG = %%LOCALBASE%%/share/xml/catalog
+ dtdsdir = $(datadir)/xml/scrollkeeper/dtds
+ dtds_HEADERS = scrollkeeper-omf.dtd scrollkeeper-cl.dtd
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -282,7 +282,7 @@
+ 	#
+ 
+ 	# ScrollKeeper OMF Variation DTD V1.0
+-	-/usr/bin/xmlcatalog --noout --add "public" \
++	-%%LOCALBASE%%/bin/xmlcatalog --noout --add "public" \
+ 		"-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" \
+ 		"$(dtdsdir)/scrollkeeper-omf.dtd" $(CATALOG)
+ 
