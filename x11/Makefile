@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.130 1997/03/12 09:21:00 asami Exp $
+# $Id: Makefile,v 1.131 1997/03/25 15:30:45 max Exp $
 #
 
     SUBDIR += FWF
@@ -31,7 +31,7 @@
     SUBDIR += mlvwm
     SUBDIR += neXtaw
     SUBDIR += olvwm
-    SUBDIR += p5-Tk400
+    SUBDIR += p5-Tk
     SUBDIR += piewm
     SUBDIR += qt
     SUBDIR += qvwm
