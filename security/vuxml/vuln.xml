@@ -54,12 +54,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110987231502274</mlist>
-      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110988400407204</mlist>
+      <mlist msgid="20050303055339.3109.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110987231502274</mlist>
+      <mlist msgid="38599.166.68.134.174.1109875231.squirrel@166.68.134.174">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110988400407204</mlist>
     </references>
     <dates>
       <discovery>2005-02-29</discovery>
       <entry>2005-03-05</entry>
+      <modified>2005-03-06</modified>
     </dates>
   </vuln>
 
@@ -299,6 +300,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-02-27</discovery>
       <entry>2005-02-28</entry>
+      <modified>2005-03-05</modified>
     </dates>
   </vuln>
 
