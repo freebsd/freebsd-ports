@@ -7,9 +7,3 @@ Zope-CMF
 
 	- Verify that the three CMF products loaded properly by examining
 	  them in Control_Panel/Products.
-
-	You may now create a "CMF Site" object.  For further installation and
-	troubleshooting instructions, see:
-
-	  http://cmf.zope.org/download/CMF-1.1/README.txt
-

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope-cmf
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	www zope
 MASTER_SITES=	http://cmf.zope.org/download/CMF-${PORTVERSION}/
 DISTNAME=	CMF-${PORTVERSION}
