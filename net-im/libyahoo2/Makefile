@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libyahoo2
-PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTVERSION=	0.7.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,17 +17,11 @@ COMMENT=	A C library that handles the new Yahoo! Messenger protocol
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnometarget
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -ansi -pedantic||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
