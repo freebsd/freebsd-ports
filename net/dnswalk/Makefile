@@ -3,13 +3,13 @@
 # Date created:				17 January 1998
 # Whom:					Matthew Hunt <mph@pobox.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/01 18:11:27 obrien Exp $
 
 DISTNAME=	dnswalk-2.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.ohio-state.edu/~barr/dnswalk/
 
-MAINTAINER=	mph@pobox.com
+MAINTAINER=	mph@freebsd.org
 
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 

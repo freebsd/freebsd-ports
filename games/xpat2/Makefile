@@ -3,7 +3,7 @@
 # Date created:		5 March 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.2 1997/05/29 03:05:07 fenner Exp $
+# $Id: Makefile,v 1.3 1997/09/07 02:54:16 max Exp $
 #
 
 DISTNAME=	xpat2-1.04
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/solitaires
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	mph@pobox.com
+MAINTAINER=	mph@freebsd.org
 
 USE_X11=	yes
 MAN6=		xpat2.6

@@ -3,7 +3,7 @@
 # Date created:        20 April 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.4 1997/11/19 03:43:53 asami Exp $
+# $Id: Makefile,v 1.5 1998/01/08 18:52:08 fenner Exp $
 #
 
 DISTNAME=	XFrisk-0.99c0pl9
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	$(MASTER_SITE_XCONTRIB)
 MASTER_SITE_SUBDIR=	games/multiplayer
 
-MAINTAINER=	mph@pobox.com
+MAINTAINER=	mph@freebsd.org
 
 NO_CDROM=	Possible trademark infringement
 

@@ -3,7 +3,7 @@
 # Date created:        19 March 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.3 1998/02/25 12:04:28 asami Exp $
+# $Id: Makefile,v 1.4 1998/02/26 04:32:17 asami Exp $
 #
 
 DISTNAME=	c2ps-4.0
@@ -11,7 +11,7 @@ PKGNAME=	c2ps-${PAPERSIZE:S/A4/a4/:S/LETTER/letter/:S/Letter/letter/}-4.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 
-MAINTAINER=	mph@pobox.com
+MAINTAINER=	mph@freebsd.org
 
 MANUAL_PACKAGE_BUILD=  PAPERSIZE has to be set to Letter A4
 MAN1=		c2ps.1
