@@ -1,5 +1,5 @@
---- configure.orig	Sat Mar  4 10:23:00 2000
-+++ configure	Sun Apr  2 21:42:36 2000
+--- configure.orig	Wed Mar 29 18:55:23 2000
++++ configure	Sun Apr  9 14:46:44 2000
 @@ -1494,8 +1494,8 @@
  LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
  LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
@@ -37,23 +37,26 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7017,7 +7021,7 @@
+@@ -7016,8 +7020,8 @@
+ 
  fi
  
- gimpdatadir=$datadir/gimp
+-gimpdatadir=$datadir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
 -gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
++gimpdatadir=$datadir/gimp
 +gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
  localedir='${prefix}/${DATADIRNAME}/locale'
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
-@@ -8563,10 +8567,6 @@
+@@ -8602,11 +8606,6 @@
+   *) # Relative path.
+     srcdir="$ac_dots$ac_given_srcdir$ac_dir_suffix"
      top_srcdir="$ac_dots$ac_given_srcdir" ;;
-   esac
- 
+-  esac
+-
 -  case "$ac_given_INSTALL" in
 -  [/$]*) INSTALL="$ac_given_INSTALL" ;;
 -  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--  esac
+   esac
  
    echo creating "$ac_file"
-   rm -f "$ac_file"
