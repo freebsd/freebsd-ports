@@ -6616,6 +6616,8 @@ rxvt-devel	ports/x11/rxvt-devel
 s10sh		ports/graphics/s10sh
 s3mod		ports/audio/s3mod
 sa		src/usr.sbin/sa
+sablepath	ports/java/sablepath
+sablevm		ports/java/sablevm
 sablotron	ports/textproc/sablotron
 safecat		ports/sysutils/safecat
 saferpay	ports/security/saferpay
