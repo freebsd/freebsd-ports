@@ -3,13 +3,14 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/09/24 15:11:58 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/09/25 05:12:44 asami Exp $
 #
 
 DISTNAME=	rad0919
 PKGNAME=	ascend-radius-960919
 CATEGORIES+=	net
-MASTER_SITES=	ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/
+MASTER_SITES=	ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/ \
+		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Archive/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
@@ -51,8 +52,5 @@ do-install:
 		@ mkdir -p /var/log/radacct
 		@ chown root.wheel /var/log/radacct
 		@ chmod 700 /var/log/radacct
-
-pre-clean:
-		@ ${RM} -f ${PATCHDIR}/patch-zz
 
 .include <bsd.port.mk>
