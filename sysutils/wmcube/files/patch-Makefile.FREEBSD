@@ -1,6 +1,16 @@
---- Makefile.FREEBSD.orig	Tue May 29 15:20:30 2001
-+++ Makefile.FREEBSD	Tue May 29 15:22:08 2001
-@@ -9,7 +9,7 @@
+--- Makefile.FREEBSD.orig	Thu Aug 16 14:22:12 2001
++++ Makefile.FREEBSD	Thu Aug 16 14:21:42 2001
+@@ -1,15 +1,13 @@
+-CC = gcc
+ OS = -DFREEBSD
+ 
+-LIBDIR = -L/usr/X11R6/lib
+-LIBDIR = -L/usr/X11R6/lib
+-INCDIR = -I/usr/X11R6/include
++LIBDIR = -L${X11BASE}/lib -L${LOCALBASE}/lib
++INCDIR = -I${X11BASE}/include
+ 
+ # Edit OSLIBS as appropriate to include OS specific libraries.
  
  OSLIBS = -lkvm
  LIBS   = -lXpm -lXext -lX11 -lm $(OSLIBS)
@@ -9,14 +19,12 @@
  
  OBJS =	wmcube.o \
  	../wmgeneral/wmgeneral.o \
-@@ -32,7 +32,7 @@
- 	rm -f *~
+@@ -20,7 +18,7 @@
+ 	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $*.o
  
- install:: wmcube
--	cp -f wmcube /usr/local/bin/
--	chmod g+s /usr/local/bin/wmcube
--	chown root.kmem /usr/local/bin/wmcube
-+	$(BSD_INSTALL_PROGRAM) wmcube $(PREFIX)/bin/
-+	chown root:kmem $(PREFIX)/bin/wmcube
-+	chmod g+s $(PREFIX)/bin/wmcube
- 	@echo "wmCube installation finished..."
+ wmcube: $(OBJS)
+-	$(CC) -o wmcube $(OBJS) -lXext $(LIBDIR) $(LIBS)
++	$(CC) -o wmcube $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ all:: wmcube
+ 

@@ -1,10 +1,7 @@
+-------------------------------------------
 The extra 3d objects are located in:
-        /usr/X11R6/share/wmcube
+	%%PREFIX%%/share/wmcube
 
 To run wmcube type:
-        wmcube -o /usr/X11R6/share/wmcube &
-
-Do not forget to replace /usr/X11R6 with your appropriate installation
-prefix if you do not use the port's system default.
-
-(default: /usr/X11R6/)
+	wmcube -o %%PREFIX%%/share/wmcube &
+-------------------------------------------

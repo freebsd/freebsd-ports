@@ -1,4 +1,7 @@
 bin/wmcube
+%%PORTDOCS%%share/doc/wmcube/CHANGES
+%%PORTDOCS%%share/doc/wmcube/README
+%%PORTDOCS%%share/doc/wmcube/TODO
 share/wmcube/2planes-solid.wmc
 share/wmcube/4d.wmc
 share/wmcube/8star-small.wmc
@@ -33,9 +36,5 @@ share/wmcube/spiral.wmc
 share/wmcube/star.wmc
 share/wmcube/starcube.wmc
 share/wmcube/wmlogo.wmc
-%%PORTDOCS%%share/doc/wmcube/CHANGES
-%%PORTDOCS%%share/doc/wmcube/COPYING
-%%PORTDOCS%%share/doc/wmcube/README
-%%PORTDOCS%%share/doc/wmcube/TODO
 @dirrm share/wmcube
 %%PORTDOCS%%@dirrm share/doc/wmcube
