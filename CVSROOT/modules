@@ -1447,6 +1447,7 @@ eclipse-gef	ports/java/eclipse-gef
 eclipse-gef-examples	ports/java/eclipse-gef-examples
 eclipse-langpack	ports/java/eclipse-langpack
 ecore		ports/x11/ecore
+ecos-tools	ports/devel/ecos-tools
 ecu		ports/comms/ecu
 edb		ports/databases/edb
 edith		ports/editors/edith

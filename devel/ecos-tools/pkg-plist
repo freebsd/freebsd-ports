@@ -1,0 +1,17 @@
+bin/configtool
+bin/ecosconfig
+include/cdl.hxx
+include/cdlcore.hxx
+include/cyg/hal/basetype.h
+include/cyg/infra/cyg_ass.h
+include/cyg/infra/cyg_trac.h
+include/cyg/infra/cyg_type.h
+include/cyg/infra/testcase.h
+include/pkgconf/hostinfra.h
+include/pkgconf/infra.h
+lib/libcdl.a
+lib/libcyginfra.a
+@dirrm include/pkgconf
+@dirrm include/cyg/infra
+@dirrm include/cyg/hal
+@dirrm include/cyg
