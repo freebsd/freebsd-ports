@@ -1,0 +1,3 @@
+bin/alignmargins
+%%DATADIR%%/align.ps
+@dirrm %%DATADIR%%

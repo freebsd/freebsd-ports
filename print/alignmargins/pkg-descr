@@ -1,0 +1,5 @@
+Utility script which allows you to interactively adjust the default printer
+margin settings with the help of a special test page and saves them into a PPD
+for CUPS.
+
+WWW:	http://www.linuxprinting.org
