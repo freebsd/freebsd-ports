@@ -9,7 +9,7 @@ PORTNAME=	gperiodic
 PORTVERSION=	2.0.7
 PORTREVISION=	3
 CATEGORIES=	biology
-MASTER_SITES=	http://www.acclab.helsinki.fi/~frantz/software/
+MASTER_SITES=	http://koti.welho.com/jfrantz/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a periodic table of the elements
