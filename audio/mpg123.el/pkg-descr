@@ -1,4 +1,4 @@
-The mpg123.el Emacs-Lisp program is a front-end to mpg123 audio player.
+The mpg123.el Emacs-Lisp program is a front-end to mpg123/ogg123 audio player.
 You can select and play an mp3 files from the list in your Emacs's buffer with
 familiar interface. 
 
