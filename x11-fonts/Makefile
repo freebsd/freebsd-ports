@@ -7,6 +7,7 @@
     SUBDIR += freefonts
     SUBDIR += getbdf
     SUBDIR += intlfonts
+    SUBDIR += mozilla-fonts
     SUBDIR += nexfontsel
     SUBDIR += p5-type1inst
     SUBDIR += sharefonts

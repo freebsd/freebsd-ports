@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Mar 10 12:03:05 2000
++++ Makefile	Fri Mar 10 12:04:56 2000
+@@ -1,7 +1,7 @@
+ # Mozilla fonts makefile
+ 
+ 
+-DESTDIR	= /usr/local/lib/fonts/Mozilla
++DESTDIR	= $(PREFIX)/lib/X11/fonts/mozilla
+ 
+ 
+ # -------- No user-serviceable parts below --------
+@@ -40,9 +40,9 @@
+ install: pcf
+ 	mkdir -p $(DESTDIR)
+ 	for font in $(PCF_FILES) ; do \
+-		$(INSTALL) -m 644 $$font $(DESTDIR)/$$font ; \
++		$(BSD_INSTALL_DATA) $$font $(DESTDIR)/$$font ; \
+ 	done
+-	$(INSTALL) -m 644 fonts.alias $(DESTDIR)/fonts.alias
++	$(BSD_INSTALL_DATA) fonts.alias $(DESTDIR)/fonts.alias
+ 	mkfontdir $(DESTDIR)
+ 
+ clean:
