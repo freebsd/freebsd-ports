@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dante
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		http://www.freenix.no/~anders/ \
@@ -27,7 +27,6 @@ post-install:
 	${INSTALL} -d -m 555 ${PREFIX}/share/doc/dante
 	@${INSTALL_DATA} ${WRKSRC}/doc/README* ${PREFIX}/share/doc/dante
 	@${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${PREFIX}/share/doc/dante
-	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/dante
 	@${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4.protocol ${PREFIX}/share/doc/dante
 
 .include <bsd.port.mk>
