@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.6.2";
+my $VERSION	= "2.6.3";
 my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
@@ -476,7 +476,7 @@ sub find_master($) {
     while (<FILE>) {
 	if (/^(?:MAIN|MASTER)DIR\s*=\s*(\S+)\s*$/) {
 	    $master = $1;
-	} elsif (/^\.?include \"([^\"]+)\/Makefile\"\s*$/) {
+	} elsif (/^\.?include \"([^\"]+)\/Makefile(?:[^\/\"]*)\"\s*$/) {
 	    $master = $1;
 	}
 	if (defined($master)) {
