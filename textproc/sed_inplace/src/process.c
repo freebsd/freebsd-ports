@@ -36,6 +36,7 @@
  */
 
 #include <sys/cdefs.h>
+__FBSDID("$FreeBSD: /tmp/pcvs/ports/textproc/sed_inplace/src/Attic/process.c,v 1.4 2002-10-19 10:32:36 sobomax Exp $");
 
 #ifndef lint
 static const char sccsid[] = "@(#)process.c	8.6 (Berkeley) 4/20/94";
@@ -67,10 +68,10 @@ static SPACE HS, PS, SS;
 #define	hs		HS.space
 #define	hsl		HS.len
 
-static inline int	 applies(struct s_command *);
+static __inline int	 applies(struct s_command *);
 static void		 flush_appends(void);
 static void		 lputs(char *);
-static inline int	 regexec_e(regex_t *, const char *, int, int, size_t);
+static __inline int	 regexec_e(regex_t *, const char *, int, int, size_t);
 static void		 regsub(SPACE *, char *, char *);
 static int		 substitute(struct s_command *);
 
@@ -94,6 +95,8 @@ process()
 	SPACE tspace;
 	size_t len, oldpsl = 0;
 	char *p;
+
+	p = NULL;
 
 	for (linenum = 0; mf_fgets(&PS, REPLACE);) {
 		pd = 0;
@@ -136,7 +139,7 @@ redirect:
 				if (pd)
 					goto new;
 				if (psl == 0 ||
-				    (p = memchr(ps, '\n', psl - 1)) == NULL) {
+				    (p = memchr(ps, '\n', psl)) == NULL) {
 					pd = 1;
 					goto new;
 				} else {
@@ -175,11 +178,8 @@ redirect:
 			case 'N':
 				flush_appends();
 				cspace(&PS, "\n", 1, 0);
-				if (!mf_fgets(&PS, 0)) {
-					if (!nflag && !pd)
-						OUT(ps)
+				if (!mf_fgets(&PS, 0))
 					exit(0);
-				}
 				break;
 			case 'p':
 				if (pd)
@@ -190,7 +190,7 @@ redirect:
 				if (pd)
 					break;
 				if (psl != 0 &&
-				    (p = memchr(ps, '\n', psl - 1)) != NULL) {
+				    (p = memchr(ps, '\n', psl)) != NULL) {
 					oldpsl = psl;
 					psl = p - ps;
 				}
@@ -236,6 +236,8 @@ redirect:
 					err(1, "%s", cp->t);
 				break;
 			case 'x':
+				if (hs == NULL)
+					cspace(&HS, "", 0, REPLACE);
 				tspace = PS;
 				PS = HS;
 				HS = tspace;
@@ -267,13 +269,13 @@ new:		if (!nflag && !pd)
  */
 #define	MATCH(a)						\
 	(a)->type == AT_RE ? regexec_e((a)->u.r, ps, 0, 1, psl) :	\
-	    (a)->type == AT_LINE ? linenum == (a)->u.l : lastline
+	    (a)->type == AT_LINE ? linenum == (a)->u.l : lastline()
 
 /*
  * Return TRUE if the command applies to the current line.  Sets the inrange
  * flag to process ranges.  Interprets the non-select (``!'') flag.
  */
-static inline int
+static __inline int
 applies(cp)
 	struct s_command *cp;
 {
@@ -468,7 +470,8 @@ lputs(s)
 	char *s;
 {
 	int count;
-	char *escapes, *p;
+	const char *escapes;
+	char *p;
 	struct winsize win;
 	static int termwidth = -1;
 
@@ -512,7 +515,7 @@ lputs(s)
 		errx(1, "stdout: %s", strerror(errno ? errno : EIO));
 }
 
-static inline int
+static __inline int
 regexec_e(preg, string, eflags, nomatch, slen)
 	regex_t *preg;
 	const char *string;
@@ -598,7 +601,7 @@ regsub(sp, string, src)
 void
 cspace(sp, p, len, spflag)
 	SPACE *sp;
-	char *p;
+	const char *p;
 	size_t len;
 	enum e_spflag spflag;
 {
