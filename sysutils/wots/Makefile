@@ -7,6 +7,7 @@
 
 PORTNAME=	wots
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.hpcc.uh.edu/~tonyc/tools/
 
