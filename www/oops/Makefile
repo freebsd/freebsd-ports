@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${OOPSVERSION}-${OOPSDATE}.patch.gz
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER=	osa@FreeBSD.org.ru
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A caching web proxy server
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
