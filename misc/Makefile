@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.141 1998/04/29 23:52:55 mph Exp $
+# $Id: Makefile,v 1.142 1998/05/06 12:45:16 tg Exp $
 #
 
     SUBDIR += acron
@@ -44,6 +44,7 @@
     SUBDIR += plan
     SUBDIR += rpm
     SUBDIR += screen
+    SUBDIR += sma
     SUBDIR += splitvt
     SUBDIR += team
     SUBDIR += teapot
