@@ -6869,6 +6869,7 @@ p5-PGP-Sign	ports/security/p5-PGP-Sign
 p5-PHP-Session	ports/www/p5-PHP-Session
 p5-POE		ports/devel/p5-POE
 p5-POE-API-Peek	ports/devel/p5-POE-API-Peek
+p5-POE-Component-Child	ports/devel/p5-POE-Component-Child
 p5-POE-Component-Client-DNS	ports/dns/p5-POE-Component-Client-DNS
 p5-POE-Component-Client-FTP	ports/ftp/p5-POE-Component-Client-FTP
 p5-POE-Component-Client-HTTP	ports/devel/p5-POE-Component-Client-HTTP
