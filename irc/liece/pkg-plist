@@ -1,46 +1,47 @@
 %%PKGINFODIR%%/MANIFEST.liece
-%%ETCDIR%%/icons/back.xpm
-%%ETCDIR%%/icons/ball.blank.xpm
-%%ETCDIR%%/icons/ball.gray.xpm
-%%ETCDIR%%/icons/ball.red.xpm
-%%ETCDIR%%/icons/balloon.xpm
-%%ETCDIR%%/icons/crypt.xpm
-%%ETCDIR%%/icons/encrypt.xpm
-%%ETCDIR%%/icons/forward.xpm
-%%ETCDIR%%/icons/home.xpm
-%%ETCDIR%%/icons/icons.gif
-%%ETCDIR%%/icons/icons.xpm
-%%ETCDIR%%/icons/key.xpm
-%%ETCDIR%%/icons/liece-pointer.xbm
-%%ETCDIR%%/icons/liece-pointer.xpm
-%%ETCDIR%%/icons/location.xpm
-%%ETCDIR%%/icons/naruto.blank.xpm
-%%ETCDIR%%/icons/naruto.gray.xpm
-%%ETCDIR%%/icons/naruto.red.xpm
-%%ETCDIR%%/icons/pindown.xpm
-%%ETCDIR%%/icons/print.xpm
-%%ETCDIR%%/icons/reload.xpm
-%%ETCDIR%%/icons/search.xpm
-%%ETCDIR%%/icons/stop.xpm
-%%ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES/liece.mo
-%%ETCDIR%%/po/ja.po
-%%ETCDIR%%/po/ja
-%%ETCDIR%%/styles/bottom
-%%ETCDIR%%/styles/middle
-%%ETCDIR%%/styles/top
+%%LIECE_ETCDIR%%/icons/back.xpm
+%%LIECE_ETCDIR%%/icons/ball.blank.xpm
+%%LIECE_ETCDIR%%/icons/ball.gray.xpm
+%%LIECE_ETCDIR%%/icons/ball.red.xpm
+%%LIECE_ETCDIR%%/icons/balloon.xpm
+%%LIECE_ETCDIR%%/icons/crypt.xpm
+%%LIECE_ETCDIR%%/icons/encrypt.xpm
+%%LIECE_ETCDIR%%/icons/forward.xpm
+%%LIECE_ETCDIR%%/icons/home.xpm
+%%LIECE_ETCDIR%%/icons/icons.gif
+%%LIECE_ETCDIR%%/icons/icons.xpm
+%%LIECE_ETCDIR%%/icons/key.xpm
+%%LIECE_ETCDIR%%/icons/liece-pointer.xbm
+%%LIECE_ETCDIR%%/icons/liece-pointer.xpm
+%%LIECE_ETCDIR%%/icons/location.xpm
+%%LIECE_ETCDIR%%/icons/naruto.blank.xpm
+%%LIECE_ETCDIR%%/icons/naruto.gray.xpm
+%%LIECE_ETCDIR%%/icons/naruto.red.xpm
+%%LIECE_ETCDIR%%/icons/pindown.xpm
+%%LIECE_ETCDIR%%/icons/print.xpm
+%%LIECE_ETCDIR%%/icons/reload.xpm
+%%LIECE_ETCDIR%%/icons/search.xpm
+%%LIECE_ETCDIR%%/icons/stop.xpm
+%%LIECE_ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES/liece.mo
+@exec ln -sf ja_JP.EUC %D/%%LIECE_ETCDIR%%/po/ja
+%%LIECE_ETCDIR%%/po/ja.po
+%%LIECE_ETCDIR%%/styles/bottom
+%%LIECE_ETCDIR%%/styles/middle
+%%LIECE_ETCDIR%%/styles/top
 %%PORTDOCS%%@unexec install-info --delete --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/%%EMACS_INFODIR%%/liece.info %D/%%EMACS_INFODIR%%/dir
 %%PORTDOCS%%%%EMACS_INFODIR%%/liece.info
 %%PORTDOCS%%@exec install-info --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/%%EMACS_INFODIR%%/liece.info %D/%%EMACS_INFODIR%%/dir
-%%PORTDOCS%%%%ETCDIR%%/doc/AUTHORS
-%%PORTDOCS%%%%ETCDIR%%/doc/ChangeLog
-%%PORTDOCS%%@dirrm %%ETCDIR%%/doc
-%%PORTDOCS%%%%ETCDIR%%/sample.dot.emacs
-@dirrm %%ETCDIR%%/icons
-@dirrm %%ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES
-@dirrm %%ETCDIR%%/po/ja_JP.EUC
-@dirrm %%ETCDIR%%/po
-@dirrm %%ETCDIR%%/styles
-@dirrm %%ETCDIR%%
+%%PORTDOCS%%%%LIECE_ETCDIR%%/doc/AUTHORS
+%%PORTDOCS%%%%LIECE_ETCDIR%%/doc/ChangeLog
+%%PORTDOCS%%@dirrm %%LIECE_ETCDIR%%/doc
+%%PORTDOCS%%%%LIECE_ETCDIR%%/sample.dot.emacs
+@dirrm %%LIECE_ETCDIR%%/icons
+@dirrm %%LIECE_ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES
+@dirrm %%LIECE_ETCDIR%%/po/ja_JP.EUC
+@unexec test -h %D/%%LIECE_ETCDIR%%/po/ja && rm -f %D/%%LIECE_ETCDIR%%/po/ja
+@dirrm %%LIECE_ETCDIR%%/po
+@dirrm %%LIECE_ETCDIR%%/styles
+@dirrm %%LIECE_ETCDIR%%
 %%XEMACS_ONLY%%%%LISPDIR%%/auto-autoloads.el
 %%XEMACS_ONLY%%%%LISPDIR%%/auto-autoloads.elc
 %%XEMACS_ONLY%%%%LISPDIR%%/custom-load.el

@@ -20,6 +20,7 @@
     SUBDIR += iroffer
     SUBDIR += irssi
     SUBDIR += kvirc
+    SUBDIR += liece
     SUBDIR += liece-dcc
     SUBDIR += liece-emacs20
     SUBDIR += liece-xemacs21-mule
