@@ -1,0 +1,10 @@
+--- Make-config.orig	Fri Nov 21 20:05:40 1997
++++ Make-config	Fri Nov 21 20:06:25 1997
+@@ -1,6 +1,6 @@
+ # Make-config
+ 
+-MAJOR=2
++MAJOR=13
+ MINOR=5
+ VERSION=$MAJOR.$MINOR
+ 
