@@ -8,37 +8,39 @@
 
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/:tarball \
 		http://www.daemon.li/downloads/:pixmap
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${EXTRACT_ONLY}:tarball \
-		daemon.xpm:pixmap
+		daemon.png:pixmap
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	j.el-rayes@daemon.li
 COMMENT=	A dockapp which provides a drawer to launch applications
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk20 gdkpixbuf
+USE_GNOME=	gtk12 gdkpixbuf
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include `gdk-pixbuf-config --cflags`
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt `gdk-pixbuf-config --libs` -lgdk_pixbuf_xlib" DOCSDIR=${DOCSDIR}
+CONFIGURE_ENV+=	DOCSDIR=${DOCSDIR}
+MAKE_ENV+=	${CONFIGURE_ENV}
 
 MANCOMPRESSED=	yes
 MAN1=	wmdrawer.1x
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/X11R6,${X11BASE},g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s,$$[(]DESTDIR[)]/usr/local,${PREFIX},g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/wmdrawerrc.example
+	@${REINPLACE_CMD} -e "s,CFLAGS = -O3,CFLAGS +=,g; \
+		s,LDFLAGS =,LDFLAGS+=,g; s,PREFIX =,#PREFIX =,g; \
+		s,$$[(]DESTDIR[)]/usr/local,${PREFIX},g; \
+		s,CC =,#CC =,g; \
+		s,/usr/X11R6,${X11BASE},g" ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/daemon.xpm ${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/daemon.png ${DATADIR}
 
 .include <bsd.port.mk>
