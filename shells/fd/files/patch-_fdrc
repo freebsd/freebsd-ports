@@ -1,5 +1,5 @@
---- _fdrc.orig	Wed Feb  6 00:00:00 2002
-+++ _fdrc	Mon Feb 11 01:28:06 2002
+--- _fdrc.orig	Wed Mar 27 00:00:00 2002
++++ _fdrc	Thu Apr 11 22:06:39 2002
 @@ -13,2 +13,3 @@
  #SORTTYPE=0
 +FD_SORTTYPE=101
@@ -12,19 +12,23 @@
  #ADJTTY=0
 +FD_ADJTTY=1
  
-@@ -104,2 +107,3 @@
+@@ -62,2 +65,3 @@
+ #COLUMNS=2
++FD_COLUMNS=1
+ 
+@@ -104,2 +108,3 @@
  #ANSICOLOR=0
 +FD_ANSICOLOR=1
  
-@@ -144,2 +148,3 @@
+@@ -144,2 +149,3 @@
  #LANGUAGE=$LANG
 +FD_LANGUAGE=$LANG
  
-@@ -215,2 +220,3 @@
+@@ -215,2 +221,3 @@
  #PAGER=more%K
-+FD_PAGER=${PAGER:-more}%K
++FD_PAGER=${PAGER:-/usr/bin/more}%K
  #EDITOR=vi
-@@ -222,2 +228,35 @@
+@@ -222,2 +229,42 @@
  # launcher definition
 +tar="tar"
 +
@@ -59,8 +63,15 @@
 +
 +launch ".bz2"		"bzip2 -cd %C | $PAGER"
 +
++# RCS/CVS files
++launch ",v"		"rlog %C | $PAGER"
++
++# distribution files
++launch	".aa"	"cat %X.?? | $tar tvfz -"	"$tar_format"
++arch	".aa"	"echo ERROR"			"cat %X.?? | $tar zxf - %TA"
++
  #(Default)
-@@ -325,2 +364,33 @@
+@@ -325,2 +372,33 @@
  # archiver definition
 +
 +arch	".tar"	"$tar cf %C %T"			"$tar xf %C %TA"
