@@ -15,14 +15,6 @@ MAINTAINER=	fjoe@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/huskybse-${PORTVERSION}
 NO_BUILD=	yes
-USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's^CFGDIR=/etc/fido^CFGDIR=$$(PREFIX)/etc/fido^' \
-		-e 's^# INFODIR=/usr/local^INFODIR=$$(PREFIX)^' \
-		-e 's^#HTMLDIR=$$(PREFIX)/lib/husky^HTMLDIR=$$(PREFIX)/share/doc/husky^' \
-			${WRKSRC}/huskymak.cfg
 
 pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
