@@ -148,6 +148,7 @@
     SUBDIR += ruby-narray
     SUBDIR += ruby-netcdf
     SUBDIR += sc
+    SUBDIR += scalapack
     SUBDIR += scigraphica
     SUBDIR += scilab
     SUBDIR += siag
