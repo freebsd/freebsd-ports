@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sredird
 # Date created:		19 Dec 1999
-# Whom:			Maxim Sobolev <sobomax@altavista.net>
+# Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.1.7
 CATEGORIES=	comms
 MASTER_SITES=	http://metalab.unc.edu/pub/Linux/system/serial/
 
-MAINTAINER=	sobomax@altavista.net
+MAINTAINER=	sobomax@FreeBSD.org
 
 do-build:
 	${CC} ${CFLAGS} -g -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c

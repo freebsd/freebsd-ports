@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xlHtml
 # Date created:				27 March 2000
-# Whom:					Maxim Sobolev <sobomax@altavista.net>
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.gate.net/~ddata/xlHtml/
 DISTNAME=	xlHtml-${PORTVERSION}
 
-MAINTAINER=	sobomax@altavista.net
+MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole
 
