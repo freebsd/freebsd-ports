@@ -32,9 +32,9 @@ MAN3=		App::Packer::PAR.3 PAR.3 PAR::Heavy.3 PAR::Intro.3
 
 pre-everything::
 .if ${PERL_LEVEL} < 500601
-BROKEN=        p5-PAR only supports the ports versions of Perl.
-BROKEN+=If you have installed a Perl port, and are getting this message,
-BROKEN+=please make sure you have given the command \'use.perl port\'
+IGNORE=		p5-PAR only supports the ports versions of Perl.
+IGNORE+=If you have installed a Perl port, and are getting this message,
+IGNORE+=please make sure you have given the command \'use.perl port\'
 .endif # ${PERL_LEVEL} < 500601
 
 .include <bsd.port.post.mk>
