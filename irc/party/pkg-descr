@@ -1,0 +1,11 @@
+Party is a real-time chat program for Unix systems. It simulates a party
+line, where any number of users can talk at the same time - if you type a
+line of text, everyone else sees it immediately. 
+
+Chat programs are pretty common these days. Party wasn't the first, but it
+was an early one. It's antiquity is reflected in the fact that it doesn't
+support networked systems especially well, nor have a web 
+interface.  However, its maturity is reflected in the fact that it has a
+clean and simple interface, and a good set of well-integrated features
+that make it easy for first-timers to get into. It remains very popular to
+this day on several systems. 
