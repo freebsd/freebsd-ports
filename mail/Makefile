@@ -5,6 +5,7 @@
 
     SUBDIR += abook
     SUBDIR += adcomplain
+    SUBDIR += addresses
     SUBDIR += aileron
     SUBDIR += akpop3d
     SUBDIR += althea
