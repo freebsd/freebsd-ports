@@ -25,7 +25,11 @@ USE_GMAKE=	yes
 USE_GNOME=	lthack gtk20
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss/nss"
-CONFIGURE_ARGS=	--with-gaim=${WRKDIRPREFIX}${.CURDIR}/../../net/gaim/work/gaim*
+CONFIGURE_ARGS=	--with-gaim=${WRKDIRPREFIX}${.CURDIR}/../../net/gaim/work/gaim* \
+		--with-nspr-includes=${LOCALBASE}/include/nspr \
+		--with-nspr-libs=${LOCALBASE}/lib \
+		--with-nss-includes=${LOCALBASE}/include/nss/nss \
+		--with-nss-libs=${LOCALBASE}/lib
 
 pre-everything::
 	@${ECHO_MSG} ""
