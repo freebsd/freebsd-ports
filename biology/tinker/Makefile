@@ -23,7 +23,6 @@ ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 USE_REINPLACE=	yes
 RESTRICTED=	author requests no distribution except from his FTP site
-BROKEN=		"fails to compile the interface between TINKER Fortran code and FFE Java objects"
 
 pre-fetch:
 	@${ECHO_MSG} ""
@@ -38,11 +37,12 @@ BUILD_DEPENDS+= imake:${PORTSDIR}/devel/imake
 .elif ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+= imake:${PORTSDIR}/devel/imake-4
 .endif
-PLIST=          ${PKGDIR}/pkg-plist.viewer
 USE_XLIB=       yes
+PLIST_SUB+=	WITH_VIEWER=""
 post-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 .else
+PLIST_SUB+=	WITH_VIEWER="@comment "
 pre-extract:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} If you would like to also build
@@ -82,11 +82,7 @@ ${PREFIX}/share/tinker/params
 	@${MKDIR} ${PREFIX}/share/tinker/test
 	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/README \
 ${PREFIX}/share/doc/tinker
-	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.gz \
-${PREFIX}/share/doc/tinker
 	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.pdf \
-${PREFIX}/share/doc/tinker
-	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.ps \
 ${PREFIX}/share/doc/tinker
 	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.txt \
 ${PREFIX}/share/doc/tinker
