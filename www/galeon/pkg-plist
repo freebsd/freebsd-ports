@@ -21,6 +21,8 @@ share/gnome/galeon/dir.xpm
 share/gnome/galeon/dir_open.xpm
 share/gnome/galeon/drag-url-icon.png
 share/gnome/galeon/galeon.glade
+share/gnome/galeon/galeon.png
+share/gnome/galeon/i-bookmark.xpm
 share/gnome/galeon/link.xpm
 share/gnome/galeon/logo.png
 share/gnome/galeon/myportal.css
@@ -28,6 +30,7 @@ share/gnome/galeon/new_folder.xpm
 share/gnome/galeon/new_item.xpm
 share/gnome/galeon/new_separator.xpm
 share/gnome/pixmaps/galeon.png
+share/locale/cs/LC_MESSAGES/galeon.mo
 share/locale/da/LC_MESSAGES/galeon.mo
 share/locale/de/LC_MESSAGES/galeon.mo
 share/locale/es/LC_MESSAGES/galeon.mo
