@@ -18,6 +18,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/sbin"
 MAN8=		fping.8
 
+post-patch:
+	${PERL} -pi.fbsd -e 's/fping@/${MAINTAINER:S/@/\\@/g} or fping@/g' \
+	    ${WRKSRC}/fping.c
+
 post-install:
 	@strip ${PREFIX}/sbin/fping
 	@${CHMOD} 4555 ${PREFIX}/sbin/fping
