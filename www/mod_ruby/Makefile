@@ -11,6 +11,10 @@ CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
+PATCH_SITES=	http://www.ruby-lang.org/~knu/
+PATCHFILES=	${DISTNAME}-2001.05.24.patch.gz
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
@@ -30,12 +34,13 @@ DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} Makefile.RB ${CONFIGURE_ARGS}
+	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
 
 do-install:
 	${APXS} -i -n ruby ${WRKSRC}/mod_ruby.so
 	${INSTALL_DATA} ${FILESDIR}/httpd.conf.${PORTNAME} ${PREFIX}/etc/apache/
-	${CP} -R ${WRKSRC}/ruby/* ${RUBY_SITELIBDIR}/
+	${MKDIR} ${RUBY_SITELIBDIR}/apache
+	${INSTALL_DATA} ${WRKSRC}/ruby/apache/*.rb ${RUBY_SITELIBDIR}/apache/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
