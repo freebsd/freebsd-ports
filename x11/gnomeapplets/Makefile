@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		another_clock_applet.1 asclock_applet.1 battery_applet.1 \
+MAN1=		another_clock_applet.1 asclock_applet.1 \
 		cdplayer_applet.1 charpick_applet.1 clockmail_applet.1 \
 		cpumemusage_applet.1 diskusage_applet.1 drivemount_applet.1 \
 		esdpvd.1 fifteen_applet.1 geyes_applet.1 gkb_applet.1 \
@@ -41,6 +41,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
 PLIST_SUB=	BATTERY="@comment "
 .else
 PLIST_SUB=	BATTERY=""
+MAN1+=	battery_applet.1
 .endif
 
 pre-patch:

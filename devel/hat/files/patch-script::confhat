@@ -1,9 +1,0 @@
---- script/confhat.orig	Wed Mar 20 12:03:42 2002
-+++ script/confhat	Wed Mar 20 12:35:43 2002
-@@ -14,5 +14,5 @@
- 
- cp -p lib/$MACHINE/libHShat.a $GHCLIBDIR
- cp -p lib/hat/*.hi lib/hat/*.hx $GHCINCDIR/hat
--ghc-pkg --remove-package=hat || /bin/true
-+ghc-pkg --remove-package=hat || /usr/bin/true
- ghc-pkg --add-package <lib/hat/hat-package.conf

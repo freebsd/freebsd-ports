@@ -1,7 +1,0 @@
---- capplets/Makefile.in.orig	Sun Feb 10 15:41:49 2002
-+++ capplets/Makefile.in	Wed Feb 13 09:34:28 2002
-@@ -154,3 +154,3 @@
- always_built_SUBDIRS = desktop-links mouse-properties \
--	screensaver-properties background-properties \
-+	background-properties \
-         theme-switcher sound-properties \

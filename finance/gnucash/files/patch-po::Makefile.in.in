@@ -1,7 +1,0 @@
---- po/Makefile.in.in.orig	Fri Apr 27 01:23:42 2001
-+++ po/Makefile.in.in	Tue May 22 18:25:29 2001
-@@ -22,3 +22,3 @@
- datadir = @datadir@
--localedir = $(datadir)/locale
-+localedir = $(prefix)/share/locale
- gettextsrcdir = $(datadir)/gettext/po

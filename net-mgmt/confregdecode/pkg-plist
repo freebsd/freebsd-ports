@@ -1,6 +1,0 @@
-bin/confregdecode
-share/java/confregdecode.jar
-share/doc/confregdecode/README.txt
-share/doc/confregdecode/ConfregDecode.html
-@dirrm share/doc/confregdecode
-@unexec rmdir %D/share/java || true

@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
@@ -26,6 +26,9 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
+.for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c
+EXTRA_PATCHES+=		${.CURDIR}/files/${pf}
+.endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			HasXdmAuth=${HasXdmAuth} \
 			HasSecureRPC=${HasSecureRPC} \

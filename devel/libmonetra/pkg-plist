@@ -1,4 +1,0 @@
-include/mcve.h
-lib/libmcve.la
-lib/libmcve.so
-lib/libmcve.so.0

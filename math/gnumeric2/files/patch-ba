@@ -1,7 +1,0 @@
---- Makefile.in.orig	Mon Nov 13 19:56:19 2000
-+++ Makefile.in	Tue Nov 14 15:34:05 2000
-@@ -164,3 +164,3 @@
- 
--confexecdir = $(libdir)
-+confexecdir = $(sysconfdir)
- confexec_DATA = gnumericConf.sh

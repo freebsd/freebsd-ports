@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-deinstall,v 1.2 2001-12-09 00:39:30 sumikawa Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-deinstall,v 1.3 2002-06-21 12:06:04 sumikawa Exp $
 #
 
 if [ "$2" != "POST-DEINSTALL" ]; then
