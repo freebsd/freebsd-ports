@@ -1372,3 +1372,4 @@ emulators/linux-zsnes||2004-12-30|feature-complete native version available
 net/tor|security/tor|2005-01-08|duplicate ports
 palm/repip|palm/synce-kde|2005-01-08|renamed
 benchmarks/bytebench|benchmarks/unixbench|2005-01-08|revived under new name
+audio/trm|audio/libtunepimp|2005-01-09|trm is now part of libtunepimp
