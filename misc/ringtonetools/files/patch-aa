@@ -1,0 +1,44 @@
+--- src/Makefile.orig	Sun Oct 27 18:42:09 2002
++++ src/Makefile	Sun Oct 27 18:42:54 2002
+@@ -1,24 +1,24 @@
+ 
+ #FLAGS = -DDEBUG
+-CC=gcc
++CC?=cc
+ 
+ default:
+-	$(CC) -c bmp_parse.c $(FLAGS)
+-	$(CC) -c fileoutput.c $(FLAGS)
+-	$(CC) -c general.c $(FLAGS)
+-	$(CC) -c kyocera.c $(FLAGS)
+-	$(CC) -c motorola.c -Wall $(FLAGS)
+-	$(CC) -c nokia.c -Wall $(FLAGS)
+-	$(CC) -c parse_imelody.c -Wall $(FLAGS)
+-	$(CC) -c parse_kws.c -Wall $(FLAGS)
+-	$(CC) -c parse_logo.c -Wall $(FLAGS)
+-	$(CC) -c parse_midi.c -Wall $(FLAGS)
+-	$(CC) -c parse_rtttl.c -Wall $(FLAGS)
+-	$(CC) -c rtttl.c -Wall $(FLAGS)
+-	$(CC) -c samsung.c -Wall $(FLAGS)
+-	$(CC) -c wav.c -Wall $(FLAGS)
+-	$(CC) -c wav2pdb.c -Wall $(FLAGS)
+-	$(CC) -o ringtonetools ringtonetools.c bmp_parse.o fileoutput.o \
++	$(CC) $(CFLAGS) -c bmp_parse.c $(FLAGS)
++	$(CC) $(CFLAGS) -c fileoutput.c $(FLAGS)
++	$(CC) $(CFLAGS) -c general.c $(FLAGS)
++	$(CC) $(CFLAGS) -c kyocera.c $(FLAGS)
++	$(CC) $(CFLAGS) -c motorola.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c nokia.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c parse_imelody.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c parse_kws.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c parse_logo.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c parse_midi.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c parse_rtttl.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c rtttl.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c samsung.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c wav.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -c wav2pdb.c -Wall $(FLAGS)
++	$(CC) $(CFLAGS) -o ringtonetools ringtonetools.c bmp_parse.o fileoutput.o \
+ 	         general.o kyocera.o motorola.o nokia.o parse_imelody.o \
+ 	         parse_kws.o parse_logo.o  parse_midi.o parse_rtttl.o \
+ 	         rtttl.o samsung.o wav.o wav2pdb.o -Wall $(FLAGS)
