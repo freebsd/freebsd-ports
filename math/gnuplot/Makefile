@@ -3,7 +3,7 @@
 # Date created:         11 January 1997
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.11 1997/07/19 01:21:09 chuckr Exp $
+# $Id: Makefile,v 1.12 1997/07/22 02:22:31 asami Exp $
 #
 
 DISTNAME=	gnuplot-beta336
@@ -17,7 +17,10 @@ LIB_DEPENDS=	png\\.0\\.[7-9]:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/gnuplot
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --with-x --without-linux-vga --with-gnu-readline --with-lasergnu --with-png --includedir=${PREFIX}/include
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
+		--includedir=${PREFIX}/include --libdir=${PREFIX}/lib \
+		--with-x --without-linux-vga \
+		--with-gnu-readline --with-lasergnu --with-png 
 
 MAN1=		gnuplot.1 lasergnu.1
 
