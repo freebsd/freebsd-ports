@@ -10083,6 +10083,7 @@ speak_freely	ports/mbone/speak_freely
 speedbar	ports/editors/speedbar
 speedbar-emacs20	ports/editors/speedbar-emacs20
 speex		ports/audio/speex
+speex-devel	ports/audio/speex-devel
 spegla		ports/ftp/spegla
 spell		ports/textproc/spell
 spellcast	ports/games/spellcast
