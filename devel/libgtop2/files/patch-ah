@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procmap.c.orig	Fri Sep 24 18:49:06 2004
-+++ sysdeps/freebsd/procmap.c	Thu Oct 28 15:42:58 2004
+--- sysdeps/freebsd/procmap.c.orig	Sat Sep 25 07:49:06 2004
++++ sysdeps/freebsd/procmap.c	Fri Nov 19 11:26:15 2004
 @@ -47,7 +47,13 @@
  #endif
  #endif
@@ -35,7 +35,18 @@
  
  	/* Now we get the memory maps. */
  
-@@ -278,13 +286,9 @@
+@@ -264,8 +272,10 @@
+ #if defined(__FreeBSD__) && (__FreeBSD_version >= 500039)
+                switch (vnode.v_type) {
+                    case VREG:
++#if __FreeBSD_version < 600006
+                        maps [i-1].inode = vnode.v_cachedid;
+                        maps [i-1].device = vnode.v_cachedfs;
++#endif
+                    default:
+                    continue;
+                }
+@@ -278,13 +288,9 @@
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
  
