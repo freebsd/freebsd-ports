@@ -32,6 +32,12 @@ PORTDOCS=	ChangeLog \
 		README
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"pvm port needs to provide shared libraries"
+.endif
+
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${EXAMPLEFILES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
@@ -40,4 +46,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
