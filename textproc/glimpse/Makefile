@@ -3,7 +3,7 @@
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.14 1998/10/13 23:37:06 jseger Exp $
+# $Id: Makefile,v 1.16 1998/11/02 11:10:08 ache Exp $
 #
 
 DISTNAME=       glimpse-4.1.src
@@ -22,7 +22,7 @@ CONFIGURE_ENV=  CFLAGS="${CFLAGS} -DISO_CHAR_SET=1"
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 
 pre-configure:
-	chmod ugo+x ${WRKSRC}/configure
+	${CHMOD} ugo+x ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/glimpse

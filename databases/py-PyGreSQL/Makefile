@@ -3,7 +3,7 @@
 # Date created:				2/22/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.15 1999/04/14 00:03:12 scrappy Exp $
+# $Id: Makefile,v 1.16 1999/05/28 20:56:27 nectar Exp $
 #
 
 DISTNAME=		PyGreSQL-2.4
@@ -21,9 +21,6 @@ LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql
 
 MAKE_ENV=		PYTHON=${PREFIX}/bin/python \
 			LN="${LN}" SETENV="${SETENV}" MKDIR="${MKDIR}"
-
-CHOWN?=			chown
-CHMOD?=			chmod
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile

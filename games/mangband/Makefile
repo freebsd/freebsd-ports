@@ -3,7 +3,7 @@
 # Version required:    0.5.4
 # Date created:        30 Dec 1998
 #
-# $Id: Makefile,v 1.7 1998/08/05 09:30:52 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1999/01/01 03:14:08 ache Exp $
 #
 
 DISTNAME=       mangband-054
@@ -25,8 +25,8 @@ do-install:
 	cd ${WRKSRC}/../lib; cp -R -p * ${MALIB}; \
 	   cd ${MALIB}; \
 	   touch file/wizards.txt; \
-	   chmod 750 *; chown -R games.games *; \
-	   chmod 755 user;
+	   ${CHMOD} 750 *; ${CHOWN} -R games.games *; \
+	   ${CHMOD} 755 user;
 	cd ${WRKSRC}; \
 	   ${INSTALL_PROGRAM} -o games -g games -m 4550 \
 		mangband ${PREFIX}/bin; \

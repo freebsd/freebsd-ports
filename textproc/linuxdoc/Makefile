@@ -3,7 +3,7 @@
 # Date created:		July 8, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.5 1998/06/27 05:19:44 asami Exp $
+# $Id: Makefile,v 1.6 1999/02/11 16:01:16 jfieber Exp $
 #
 
 DISTNAME=	linuxdoc-1.1
@@ -27,7 +27,7 @@ pre-install:
 
 do-install:
 	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)
-	@chmod ${SHAREMODE} ${INSTDIR}/*
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHMOD} ${SHAREMODE} ${INSTDIR}/*
+	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

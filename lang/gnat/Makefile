@@ -5,7 +5,7 @@
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.18 1999/06/24 11:10:37 sheldonh Exp $
+# $Id: Makefile,v 1.19 1999/07/01 14:42:41 sheldonh Exp $
 #
 # Note:
 # - FreeBSD tasking libraries created by Dan Eischen have been incorporated
@@ -186,7 +186,7 @@ post-install:
 		strip $$prog ; \
 	    fi \
 	done)
-	@(chown -R bin:bin ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION})
+	@(${CHOWN} -R bin:bin ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION})
 	@(${ECHO} "-----------------------------------------------------------" )
 	@(${ECHO} "" )
 	@(${ECHO} "For information about using the tasking library please read" )

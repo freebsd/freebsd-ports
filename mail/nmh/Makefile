@@ -3,7 +3,7 @@
 # Date created:		07 Feb 1999
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #
-# $Id: Makefile,v 1.13 1999/02/23 03:17:04 jkoshy Exp $
+# $Id: Makefile,v 1.14 1999/05/10 17:47:01 flathill Exp $
 #
 # Makefile variables of interest:
 #
@@ -70,6 +70,6 @@ post-patch:
 post-install:
 	@PKG_PREFIX='${PREFIX}' sh ${PKGDIR}/INSTALL
 	chgrp mail ${PREFIX}/bin/inc
-	chmod g+s ${PREFIX}/bin/inc
+	${CHMOD} g+s ${PREFIX}/bin/inc
 
 .include <bsd.port.mk>

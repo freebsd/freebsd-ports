@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.11 1999/03/26 14:07:16 asami Exp $
+# $Id: Makefile,v 1.12 1999/05/03 01:50:50 steve Exp $
 #
 
 DISTNAME=       apache_${AP_VERS}
@@ -128,7 +128,7 @@ post-install:
 	@${CAT} ${FILESDIR}/apache.sh.tmpl | \
 		${SED} -e 's;PREFIX;${PREFIX};' -e 's;PERL5;${PERL};' \
 		> ${PREFIX}/etc/rc.d/apache.sh
-	@chmod 751 ${PREFIX}/etc/rc.d/apache.sh
+	@${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh
 	@${CAT} ${WRKSRC}/${FPINSTALL} | \
 		${SED} -e 's;PREFIX;${PREFIX};' > ${WRKDIR}/tmp.fpinstall
 	@${SH} ${WRKDIR}/tmp.fpinstall

@@ -3,7 +3,7 @@
 # Date created:			10 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/11 12:53:10 jseger Exp $
+# $Id: Makefile,v 1.2 1999/08/14 09:11:54 jim Exp $
 #
 
 DISTNAME=	wmbutton-0.4
@@ -25,11 +25,11 @@ do-install:
 post-install:
 	@${ECHO} "===>   Installing .wmbutton as ${PREFIX}/share/examples/wmbutton/wmbutton"
 	@${ECHO} "===>   Modify if you wish and copy to ~/.wmbutton"
-	@${MKDIR} ${PREFIX}/share/examples/wmbutton && chmod a+rx ${PREFIX}/share/examples/wmbutton
+	@${MKDIR} ${PREFIX}/share/examples/wmbutton && ${CHMOD} a+rx ${PREFIX}/share/examples/wmbutton
 	#${INSTALL_DATA} ${WRKSRC}/.wmbutton ${PREFIX}/share/examples/wmbutton/wmbutton
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmbutton"
 	@${ECHO} "===>   Please read it for usage instructions"
-	@${MKDIR} ${PREFIX}/share/doc/wmbutton && chmod a+rx ${PREFIX}/share/doc/wmbutton
+	@${MKDIR} ${PREFIX}/share/doc/wmbutton && ${CHMOD} a+rx ${PREFIX}/share/doc/wmbutton
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmbutton
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:			15 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/19 12:02:25 flathill Exp $
+# $Id: Makefile,v 1.2 1999/08/14 08:37:18 jim Exp $
 #
 
 DISTNAME=	pclock-0.12a
@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/pclock ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/pclock/pixmaps && chmod a+rx ${PREFIX}/share/pclock/pixmaps
+	@${MKDIR} ${PREFIX}/share/pclock/pixmaps && ${CHMOD} a+rx ${PREFIX}/share/pclock/pixmaps
 	@${ECHO} "===>  Installing sample pixmaps in ${PREFIX}/share/pclock/pixmaps"
 	@${INSTALL_DATA} ${WRKSRC}/XPM/*.xpm ${PREFIX}/share/pclock/pixmaps
 

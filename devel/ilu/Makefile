@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.17 1998/12/02 23:37:41 cracauer Exp $
+# $Id: Makefile,v 1.18 1998/12/22 07:58:33 asami Exp $
 #
 
 DISTNAME=	ilu-2.0alpha13
@@ -55,7 +55,7 @@ startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.ilu.sh
 
 post-extract:
-	chmod -R u+w ${WRKDIR}
+	${CHMOD} -R u+w ${WRKDIR}
 
 post-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${SHLIBPATCH}
@@ -65,7 +65,7 @@ do-install:
 	# Empty dir, but we really need it
 	${ECHO} @exec ${MKDIR} %D/ilu/lib/binding > ${PLIST}
 	${ECHO} @unexec ${RM} -r %D/ilu/lib/binding >> ${PLIST}
-	${ECHO} @exec chmod 777 %D/ilu/lib/binding >> ${PLIST}
+	${ECHO} @exec ${CHMOD} 777 %D/ilu/lib/binding >> ${PLIST}
 	${ECHO} @exec ${LDCONFIG} -m %D/ilu/lib >> ${PLIST}
 	# Empty dirs we don't need
 	${RMDIR} ${PREFIX}/ilu/man/man[358]
@@ -88,7 +88,7 @@ do-install:
 	${ECHO} "#!/bin/sh" > ${startup_script}
 	${ECHO} "${ECHO} -n ' ILU-shlibs'" >> ${startup_script}
 	${ECHO} "${LDCONFIG} -m ${PREFIX}/ilu/lib" >> ${startup_script}
-	chmod 755 ${startup_script};
+	${CHMOD} 755 ${startup_script};
 	${startup_script}
 
 .include <bsd.port.post.mk>

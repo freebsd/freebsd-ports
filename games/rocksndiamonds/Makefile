@@ -3,7 +3,7 @@
 # Date created:		27 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/27 13:53:02 tg Exp $
+# $Id: Makefile,v 1.2 1999/06/22 17:58:10 steve Exp $
 #
 
 DISTNAME=	rocksndiamonds-1.2.0
@@ -28,7 +28,7 @@ do-install:
 	@${MKDIR} ${GAME_DIR}
 	@cd ${WRKSRC}; tar cpf - graphics levels scores sounds | \
 		(cd ${GAME_DIR}; tar xpf -)
-	@chmod 777 ${GAME_DIR}/scores
+	@${CHMOD} 777 ${GAME_DIR}/scores
 .if !defined(NOPPORTDOCS)
 	@${MKDIR} ${DOC_DIR}
 .for docfile in CHANGES CREDITS HARDWARE README TODO

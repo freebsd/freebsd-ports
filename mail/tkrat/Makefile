@@ -3,7 +3,7 @@
 # Date created:		24 October 1997
 # Whom:			Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.15 1999/03/15 01:29:18 nectar Exp $
+# $Id: Makefile,v 1.16 1999/04/27 20:15:37 mharo Exp $
 #
 
 DISTNAME=	tkrat-1.2
@@ -38,6 +38,6 @@ post-install:
 .endif
 	@${MKDIR} ${PREFIX}/lib/ratatosk
 	${INSTALL_DATA} ${FILESDIR}/ratatoskrc ${PREFIX}/lib/ratatosk
-	#/bin/chmod ugo+wt /var/mail
+	#${CHMOD} ugo+wt /var/mail
 
 .include <bsd.port.mk>

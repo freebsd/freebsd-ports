@@ -3,7 +3,7 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1997/06/27 02:26:43 jfitz Exp $
+# $Id: Makefile,v 1.10 1999/01/04 04:56:44 steve Exp $
 #
 
 #DISTNAME=	radius-980618
@@ -48,13 +48,13 @@ do-install:
 		${INSTALL_DATA} ${DISTDIR}/980618.pdf ${PREFIX}/share/doc/ascend-radius
 .endif
 		@ ${MKDIR} ${PREFIX}/etc/raddb
-		@ chown root.wheel ${PREFIX}/etc/raddb
-		@ chmod 700 ${PREFIX}/etc/raddb
+		@ ${CHOWN} root.wheel ${PREFIX}/etc/raddb
+		@ ${CHMOD} 700 ${PREFIX}/etc/raddb
 		for file in clients.example dictionary users.example; do \
 			${INSTALL} -c -o root -g wheel -m 0400 ${WRKDIR}/${WRKPREFIX}/raddb/$$file ${PREFIX}/etc/raddb; \
 		done
 		@ ${MKDIR} /var/log/radacct
-		@ chown root.wheel /var/log/radacct
-		@ chmod 700 /var/log/radacct
+		@ ${CHOWN} root.wheel /var/log/radacct
+		@ ${CHMOD} 700 /var/log/radacct
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		13 June 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.9 1998/10/12 16:38:04 jseger Exp $
+# $Id: Makefile,v 1.10 1998/10/13 01:17:27 jseger Exp $
 #
 
 DISTNAME=	virtualpaper-1.4
@@ -50,7 +50,7 @@ do-install:
 		${PREFIX}/lib/m3/www; \
 	    if [ ! -d ${PREFIX}/share/virtualpaper ]; then \
 		${MKDIR} ${PREFIX}/share/virtualpaper; \
-		chmod 755 ${PREFIX}/share/virtualpaper; \
+		${CHMOD} 755 ${PREFIX}/share/virtualpaper; \
 	    fi; \
 	    ${INSTALL_DATA} COPYRIGHT ${PREFIX}/share/virtualpaper
 	@echo "Stripping programs"

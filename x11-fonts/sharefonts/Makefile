@@ -3,7 +3,7 @@
 # Date created:         Thu Mar 26 04:50:00 PST 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:48 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:43:09 asami Exp $
 #
 
 DISTNAME=	sharefonts-0.10
@@ -23,8 +23,8 @@ USE_X_PREFIX=	yes
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/sharefont
 	${CP} ${WRKDIR}/sharefont/* ${PREFIX}/lib/X11/fonts/sharefont
-	chmod 755 ${PREFIX}/lib/X11/fonts/sharefont
-	chmod 644 ${PREFIX}/lib/X11/fonts/sharefont/*
+	${CHMOD} 755 ${PREFIX}/lib/X11/fonts/sharefont
+	${CHMOD} 644 ${PREFIX}/lib/X11/fonts/sharefont/*
 
 post-install:
 	@cat ${PKGDIR}/DESCR

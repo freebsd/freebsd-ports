@@ -3,7 +3,7 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.14 1997/11/29 14:15:01 jraynard Exp $
+# $Id: Makefile,v 1.15 1999/01/27 07:41:22 fenner Exp $
 #
 
 DISTNAME=	smalltalk-1.1.5
@@ -29,7 +29,7 @@ do-install:
 	@echo "Installing method definitions..."
 	@ if [ ! -d ${PREFIX}/lib/smalltalk ]; then ${MKDIR} ${PREFIX}/lib/smalltalk; fi
 	@(cd ${WRKSRC}; ${CP} *.st ${PREFIX}/lib/smalltalk)
-	@(cd ${PREFIX}/lib/smalltalk ; chmod +r *.st)
+	@(cd ${PREFIX}/lib/smalltalk ; ${CHMOD} +r *.st)
 	@echo
 	@echo "To complete the installation of GNU Smalltalk, do"
 	@echo "	cd ${WRKSRC};"

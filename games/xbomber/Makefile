@@ -3,7 +3,7 @@
 # Date created:        28 June 1998
 # Whom:                marcus
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/08 18:00:18 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/20 20:26:15 mharo Exp $
 #
 
 DISTNAME=       xbomber.0.8
@@ -46,6 +46,6 @@ do-install:
 	${ECHO} "#!/bin/sh" > ${PREFIX}/bin/xbomber; \
 	${ECHO} "cd ${PREFIX}/lib/xbomber" >> ${PREFIX}/bin/xbomber; \
 	${CAT} ${SCRIPTDIR}/xbomber.sh >> ${PREFIX}/bin/xbomber; \
-	chmod 0755 ${PREFIX}/bin/xbomber
+	${CHMOD} 0755 ${PREFIX}/bin/xbomber
 
 .include <bsd.port.mk>

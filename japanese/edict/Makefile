@@ -3,7 +3,7 @@
 # Date created:		18 August 1997
 # Whom:			Jonathan Hanna
 #
-# $Id: Makefile,v 1.4 1999/02/22 03:15:56 steve Exp $
+# $Id: Makefile,v 1.5 1999/07/17 17:13:46 cpiazza Exp $
 #
 
 DISTNAME=	edict-19990714
@@ -110,8 +110,8 @@ do-install:
 			cd ${DATADIR} ; \
 			${ECHO} ${PREFIX}/bin/xjdxgen $$instfile ; \
 			${PREFIX}/bin/xjdxgen $$instfile ; \
-			chown ${SHAREOWN}.${SHAREGRP} $$instfile $$instfile.xjdx; \
-			chmod ${SHAREMODE} $$instfile $$instfile.xjdx ; \
+			${CHOWN} ${SHAREOWN}.${SHAREGRP} $$instfile $$instfile.xjdx; \
+			${CHMOD} ${SHAREMODE} $$instfile $$instfile.xjdx ; \
 		) ; \
 	done
 	${RM} -f ${PREFIX}/bin/xjdic
@@ -141,8 +141,8 @@ do-install:
 	@${ECHO} dicfile 4jwords >> ${DATADIR}/.xjdicrc
 	# @${ECHO} dicfile concrete.doc >> ${DATADIR}/.xjdicrc
 	# @${ECHO} dicfile lingdic >> ${DATADIR}/.xjdicrc
-	@chown ${SHAREOWN}.${SHAREGRP} ${DATADIR}/.xjdicrc
-	@chmod ${SHAREMODE} ${DATADIR}/.xjdicrc
+	@${CHOWN} ${SHAREOWN}.${SHAREGRP} ${DATADIR}/.xjdicrc
+	@${CHMOD} ${SHAREMODE} ${DATADIR}/.xjdicrc
 	${INSTALL_MAN} ${WRKSRC}/xjdic.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@if [ ! -d ${DOCDIR} ] ; \

@@ -3,7 +3,7 @@
 # Date created:				29 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/10/03 13:39:45 jseger Exp $
+# $Id: Makefile,v 1.4 1999/06/22 17:36:15 steve Exp $
 #
 
 DISTNAME=		xdigger-1.0.9
@@ -31,7 +31,7 @@ do-install:
 .for file in diamond.au step.au stone.au
 	@ ${INSTALL_DATA} ${WRKSRC}/audio/${file} ${PREFIX}/share/xdigger
 .endfor
-	@ chmod a+rw ${PREFIX}/share/xdigger/xdigger.hiscore
+	@ ${CHMOD} a+rw ${PREFIX}/share/xdigger/xdigger.hiscore
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/xdigger
 .for file in COPYING ChangeLog README

@@ -3,7 +3,7 @@
 # Date created:         Thur Sept 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.7 1998/12/10 00:40:24 steve Exp $
+# $Id: Makefile,v 1.8 1999/03/30 01:55:28 obrien Exp $
 #
 
 DISTNAME=	nlxb318e
@@ -40,9 +40,9 @@ do-install:
 	(cd ${WRKSRC}; ./install-vscan)
 
 post-install:
-	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/uvscan
-	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${LIBDIR}
-	@/usr/sbin/chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man1/uvscan.1
+	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/uvscan
+	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${LIBDIR}
+	@${CHOWN} ${MANOWN}.${MANGRP} ${PREFIX}/man/man1/uvscan.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/vscan
 	${INSTALL_DATA} ${WRKSRC}/Whatsnew.txt ${PREFIX}/share/doc/vscan

@@ -3,7 +3,7 @@
 # Date created:		Mon Mar  8 10:10:42 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.6 1999/06/28 02:22:02 billf Exp $
+# $Id: Makefile,v 1.7 1999/08/02 22:45:41 cpiazza Exp $
 #
 
 DISTNAME=	jdk118-doc
@@ -38,7 +38,7 @@ do-fetch:
 
 pre-install:
 	@if [ !`id -u` ]; then \
-	/usr/sbin/chown -R root:wheel ${WRKDIR}/*; \
+	${CHOWN} -R root:wheel ${WRKDIR}/*; \
 	fi
 
 do-install:

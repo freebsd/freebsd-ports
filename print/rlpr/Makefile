@@ -3,7 +3,7 @@
 # Date created:		11 April 1999
 # Whom:			Mikhail Teterin
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/11 01:59:51 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/12 21:31:19 asami Exp $
 
 DISTNAME=	rlpr-2.00
 CATEGORIES=	print net
@@ -33,7 +33,7 @@ post-patch:
 post-install:
 	@echo "Making the installed binaries suid,\
 		for the remote lpds to talk to them"
-	chmod u+s ${PREFIX}/bin/rlpq ${PREFIX}/bin/rlpr ${PREFIX}/bin/rlprm
+	${CHMOD} u+s ${PREFIX}/bin/rlpq ${PREFIX}/bin/rlpr ${PREFIX}/bin/rlprm
 
 MAN1=	rlpr.1 rlpq.1 rlprm.1
 MAN5=	rlprrc.5

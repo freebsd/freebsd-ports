@@ -3,7 +3,7 @@
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.10 1998/09/17 00:32:39 asami Exp $
+# $Id: Makefile,v 1.11 1999/01/12 16:51:26 vanilla Exp $
 #
 
 DISTNAME=	xshisen-1.36
@@ -25,7 +25,7 @@ INSTALL_TARGET=	install install.man
 
 post-install:
 	@ strip ${PREFIX}/bin/xshisen
-	@ /bin/chmod 755 ${PREFIX}/bin/xshisen
-	@ /usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xshisen
+	@ ${CHMOD} 755 ${PREFIX}/bin/xshisen
+	@ ${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/xshisen
 
 .include <bsd.port.mk>

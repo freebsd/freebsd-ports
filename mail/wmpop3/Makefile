@@ -3,7 +3,7 @@
 # Date created:			28 Mar 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/07/17 04:04:32 cpiazza Exp $
+# $Id: Makefile,v 1.4 1999/08/14 07:49:11 jim Exp $
 #
 
 DISTNAME=	WMPop3-0.5.6a
@@ -27,11 +27,11 @@ pre-build:
 post-install:
 	@${ECHO} "===>   Installing wmpop3rc in ${PREFIX}/share/examples/wmpop3"
 	@${ECHO} "===>   Modify to your config and copy to ~/.wmpop3rc"
-	@${MKDIR} ${PREFIX}/share/examples/wmpop3 && chmod a+rx ${PREFIX}/share/examples/wmpop3
+	@${MKDIR} ${PREFIX}/share/examples/wmpop3 && ${CHMOD} a+rx ${PREFIX}/share/examples/wmpop3
 	@${INSTALL_DATA} ${WRKSRC}/wmpop3rc ${PREFIX}/share/examples/wmpop3
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmpop3"
 	@${ECHO} "===>   Please read it for usage instructions"
-	@${MKDIR} ${PREFIX}/share/doc/wmpop3 && chmod a+rx ${PREFIX}/share/doc/wmpop3
+	@${MKDIR} ${PREFIX}/share/doc/wmpop3 && ${CHMOD} a+rx ${PREFIX}/share/doc/wmpop3
 	@${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
 
 .include <bsd.port.mk>

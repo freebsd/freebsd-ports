@@ -3,7 +3,7 @@
 # Date created:         20 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/02/20 09:49:29 tg Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:30:58 asami Exp $
 #
 
 DISTNAME=       xbomb-2.1
@@ -21,6 +21,6 @@ post-install:
 	@touch ${PREFIX}/lib/X11/xbomb/xbomb3.hi
 	@touch ${PREFIX}/lib/X11/xbomb/xbomb4.hi
 	@touch ${PREFIX}/lib/X11/xbomb/xbomb6.hi
-	@chmod 666 ${PREFIX}/lib/X11/xbomb/xbomb?.hi
+	@${CHMOD} 666 ${PREFIX}/lib/X11/xbomb/xbomb?.hi
 
 .include <bsd.port.mk>

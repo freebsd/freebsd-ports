@@ -3,7 +3,7 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.21 1999/08/10 20:41:58 andreas Exp $
+# $Id: Makefile,v 1.22 1999/08/19 00:01:32 andreas Exp $
 #
 
 DISTNAME=	zebra-0.77
@@ -22,7 +22,7 @@ post-install:
 	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
 		< ${FILESDIR}/zebra.sh  \
 		> ${PREFIX}/etc/rc.d/zebra.sh 
-	@chmod 555 ${PREFIX}/etc/rc.d/zebra.sh
+	@${CHMOD} 555 ${PREFIX}/etc/rc.d/zebra.sh
 	@${ECHO} "===>     done."
 
 .include <bsd.port.mk>

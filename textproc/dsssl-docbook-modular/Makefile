@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.18 1999/07/07 10:26:40 kuriyama Exp $
+# $Id: Makefile,v 1.19 1999/08/20 15:50:38 kuriyama Exp $
 #
 
 DISTNAME=	db143
@@ -36,7 +36,7 @@ pre-install:
 
 do-install:
 	@${CP} -Rp ${WRKDIR}/docbook/* ${INSTDIR}
-	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 
 post-install:
 	@${CAT} ${FILESDIR}/install-note

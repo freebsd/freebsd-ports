@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.39 1999/06/05 22:29:14 mharo Exp $
+# $Id: Makefile,v 1.40 1999/07/04 03:28:44 cpiazza Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -40,7 +40,7 @@ post-install:
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor
 # install emacs.sh into ${PREFIX}/etc/rc.d
-	chmod 1777 /var/run/emacs/lock
+	${CHMOD} 1777 /var/run/emacs/lock
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/emacs.sh ${PREFIX}/etc/rc.d
 

@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/05/02 21:10:44 mph Exp $
+# $Id: Makefile,v 1.7 1999/05/23 20:43:27 mph Exp $
 #
 
 DISTNAME=	inform-6.21
@@ -49,18 +49,18 @@ post-install:
 .for file in English Grammar Parser Verblib infix linklpa linklv parserm \
 		verblibm
 	@${MV} ${PREFIX}/share/inform/${file} ${PREFIX}/share/inform/${file}.h
-	@ chmod ${SHAREMODE} ${PREFIX}/share/inform/${file}.h
-	@ chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/${file}.h
+	@ ${CHMOD} ${SHAREMODE} ${PREFIX}/share/inform/${file}.h
+	@ ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/${file}.h
 .endfor
 	@${LN} -fs Verblib.h ${PREFIX}/share/inform/VerbLib.h
-	@ chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/VerbLib.h
+	@ ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/VerbLib.h
 .if !defined(NOPORTDOCS)
 	@ (umask 222 && unzip -qq -o -d ${PREFIX}/share/doc \
 		${DISTDIR}/${DIST_SUBDIR}/designers_manual_html.zip)
 	@${MKDIR} ${PREFIX}/share/doc/inform
 	@${MV} ${PREFIX}/share/doc/dman/* ${PREFIX}/share/doc/inform
 	@${RMDIR} ${PREFIX}/share/doc/dman
-	@ chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/inform
+	@ ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/inform
 .endif
 
 .include <bsd.port.mk>

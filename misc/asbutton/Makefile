@@ -3,7 +3,7 @@
 # Date created:			10 May 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/08/01 01:59:40 cpiazza Exp $
+# $Id: Makefile,v 1.3 1999/08/14 10:39:58 jim Exp $
 #
 
 DISTNAME=	asbutton-0.3
@@ -23,14 +23,14 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/asbutton ${PREFIX}/bin
 	@${ECHO} "===>   Installing icons in ${PREFIX}/share/asbutton"
-	@${MKDIR} ${PREFIX}/share/asbutton && chmod a+rx ${PREFIX}/share/asbutton
+	@${MKDIR} ${PREFIX}/share/asbutton && ${CHMOD} a+rx ${PREFIX}/share/asbutton
 	@${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/share/asbutton
 
 post-install:
 	@${ECHO} "===>   Installing sample asbuttonrc in ${PREFIX}/share/examples/asbutton"
 	@${ECHO} "===>   Copy to ~/.asbuttonrc and modify to desired config."
-	@${MKDIR} ${PREFIX}/share/examples/asbutton && chmod a+rx ${PREFIX}/share/examples/asbutton
-	@${INSTALL_DATA} ${WRKSRC}/.asbuttonrc ${PREFIX}/share/examples/asbutton/asbuttonrc && chmod u+rw ${PREFIX}/share/examples/asbutton/asbuttonrc
+	@${MKDIR} ${PREFIX}/share/examples/asbutton && ${CHMOD} a+rx ${PREFIX}/share/examples/asbutton
+	@${INSTALL_DATA} ${WRKSRC}/.asbuttonrc ${PREFIX}/share/examples/asbutton/asbuttonrc && ${CHMOD} u+rw ${PREFIX}/share/examples/asbutton/asbuttonrc
 	@${ECHO} "===>   Use 'asbutton -h' for help."
 
 .include <bsd.port.mk>

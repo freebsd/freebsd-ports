@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1999
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.2 1999/05/02 20:26:38 torstenb Exp $
+# $Id: Makefile,v 1.3 1999/08/04 13:52:58 billf Exp $
 #
 
 DISTNAME=	postfix-19990601
@@ -34,7 +34,7 @@ SHAREMODE=	0644
 
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/etc/postfix
-	@/usr/sbin/chown root:wheel ${PREFIX}/etc/postfix
+	@${CHOWN} root:wheel ${PREFIX}/etc/postfix
 	@${INSTALL} -C -o root -g wheel -m 0644 ${WRKSRC}/conf/LICENSE \
 		${PREFIX}/etc/postfix/LICENSE
 	@for f in access main.cf master.cf ; do \
@@ -97,7 +97,7 @@ replace:
 	@${ECHO_MSG} "===> Replacing sendmail"
 	@if [ -e /usr/sbin/sendmail ]; then \
 		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.OFF; \
-		chmod 0 /usr/sbin/sendmail.OFF; \
+		${CHMOD} 0 /usr/sbin/sendmail.OFF; \
 	fi
 	@if [ -e ${PREFIX}/sbin/sendmail ]; then \
 		${LN} -s ${PREFIX}/sbin/sendmail /usr/sbin/sendmail; \
@@ -105,7 +105,7 @@ replace:
 	@${ECHO_MSG} "===> Replacing mailq"
 	@if [ -e /usr/bin/mailq ]; then \
 		${MV} -f /usr/bin/mailq /usr/bin/mailq.OFF; \
-		chmod 0 /usr/bin/mailq.OFF; \
+		${CHMOD} 0 /usr/bin/mailq.OFF; \
 	fi
 	@if [ -e ${PREFIX}/sbin/sendmail ]; then \
 		${LN} -s ${PREFIX}/sbin/sendmail /usr/bin/mailq; \
@@ -113,7 +113,7 @@ replace:
 	@${ECHO_MSG} "===> Replacing newaliases"
 	@if [ -e /usr/bin/newaliases ]; then \
 		${MV} -f /usr/bin/newaliases /usr/bin/newaliases.OFF; \
-		chmod 0 /usr/bin/newaliases.OFF; \
+		${CHMOD} 0 /usr/bin/newaliases.OFF; \
 	fi
 	@if [ -e ${PREFIX}/sbin/sendmail ]; then \
 		${LN} -s ${PREFIX}/sbin/sendmail /usr/bin/newaliases; \

@@ -3,7 +3,7 @@
 # Date created:        11 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/15 16:25:36 erich Exp $
+# $Id: Makefile,v 1.2 1999/01/12 16:51:24 vanilla Exp $
 #
 
 DISTNAME=	xmold
@@ -18,7 +18,7 @@ USE_IMAKE=	yes
 do-install:
 	@mkdir -p ${PREFIX}/bin
 	@install -c -s ${WRKSRC}/xmold ${PREFIX}/bin
-	@chmod 755 ${PREFIX}/bin/xmold
-	@chown bin.bin ${PREFIX}/bin/xmold
+	@${CHMOD} 755 ${PREFIX}/bin/xmold
+	@${CHOWN} bin.bin ${PREFIX}/bin/xmold
 
 .include <bsd.port.mk>

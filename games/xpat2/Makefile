@@ -3,7 +3,7 @@
 # Date created:		5 March 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.7 1999/06/07 20:18:24 mph Exp $
+# $Id: Makefile,v 1.8 1999/06/07 20:23:31 mph Exp $
 #
 
 DISTNAME=	xpat2-1.06
@@ -20,8 +20,8 @@ MAN6=		xpat2.6
 
 post-install:
 	${TOUCH} $(PREFIX)/lib/X11/xpat/xpat.log
-	chown root.games $(PREFIX)/lib/X11/xpat/xpat.log $(PREFIX)/bin/xpat2
-	chmod 2555 $(PREFIX)/bin/xpat2
-	chmod 664 $(PREFIX)/lib/X11/xpat/xpat.log
+	${CHOWN} root.games $(PREFIX)/lib/X11/xpat/xpat.log $(PREFIX)/bin/xpat2
+	${CHMOD} 2555 $(PREFIX)/bin/xpat2
+	${CHMOD} 664 $(PREFIX)/lib/X11/xpat/xpat.log
 
 .include <bsd.port.mk>

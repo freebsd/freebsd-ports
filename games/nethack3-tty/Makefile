@@ -3,7 +3,7 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.18 1998/12/10 17:24:31 vanilla Exp $
+# $Id: Makefile,v 1.19 1999/01/27 07:41:13 fenner Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -23,7 +23,7 @@ pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
 post-install:
-	@cd ${WRKSRC}/doc; chmod 644 *.6
+	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
 	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/nethack

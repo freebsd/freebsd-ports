@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.5 1999/01/18 03:05:30 steve Exp $
+# $Id: Makefile,v 1.6 1999/01/23 07:05:33 vanilla Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -90,7 +90,7 @@ pre-install:
 post-install:
 # install xemacs-mule.sh into ${PREFIX}/etc/rc.d
 	@${MKDIR} /var/run/emacs/lock
-	chmod 1777 /var/run/emacs/lock
+	${CHMOD} 1777 /var/run/emacs/lock
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/xemacs-mule.sh ${PREFIX}/etc/rc.d
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}

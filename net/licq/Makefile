@@ -3,7 +3,7 @@
 # Date created:                         2 July 1998
 # Whom:                                 Brian Feldman
 #
-# $Id: Makefile,v 1.6 1999/05/02 20:21:28 mharo Exp $
+# $Id: Makefile,v 1.7 1999/05/03 01:56:26 steve Exp $
 #
 
 DISTNAME=	licq-0.61
@@ -27,7 +27,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/licq
 	@${CP} ${WRKSRC}/contrib/licq.* ${WRKSRC}/contrib/viewurl* \
 	 ${PREFIX}/share/licq
-	@chmod 555 ${PREFIX}/share/licq/*
-	@chown bin.bin ${PREFIX}/share/licq/*
+	@${CHMOD} 555 ${PREFIX}/share/licq/*
+	@${CHOWN} bin.bin ${PREFIX}/share/licq/*
 
 .include <bsd.port.mk>

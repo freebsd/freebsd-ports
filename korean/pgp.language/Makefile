@@ -3,7 +3,7 @@
 # Date created:         22 Jul 1998
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.4 1999/05/01 12:34:32 jseger Exp $
+# $Id: Makefile,v 1.5 1999/07/22 04:39:57 cpiazza Exp $
 #
 # This is based on ja-pgp.
 #
@@ -35,8 +35,8 @@ OBJS=		language.txt ${PGP_LANG}.hlp README.${PGP_LANG} \
 do-install:
 	-[ -d ${PGPLIB} ] || { \
 		${MKDIR} ${PGPLIB} ; \
-		chown bin.bin ${PGPLIB} ; \
-		chmod 555 ${PGPLIB} ; }
+		${CHOWN} bin.bin ${PGPLIB} ; \
+		${CHMOD} 555 ${PGPLIB} ; }
 	-[ -f ${PGPLIB}/language.txt ] && \
 		${MV} ${PGPLIB}/language.txt ${PGPLIB}/language.txt.bak
 	@cd ${WRKDIR}; \

@@ -3,7 +3,7 @@
 # Date created:		12 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.5 1999/06/05 22:30:19 mharo Exp $
+# $Id: Makefile,v 1.6 1999/06/22 16:46:14 steve Exp $
 #
 
 DISTNAME=	hanemacs-19.34b-1
@@ -43,7 +43,7 @@ post-install:
 .endfor
 # install emacs.sh into ${PREFIX}/etc/rc.d
 	${MKDIR} /var/run/emacs/lock
-	chmod 1777 /var/run/emacs/lock
+	${CHMOD} 1777 /var/run/emacs/lock
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/emacs.sh ${PREFIX}/etc/rc.d
 

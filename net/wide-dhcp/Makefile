@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.15 1999/02/07 19:46:12 obrien Exp $
+# $Id: Makefile,v 1.16 1999/07/10 20:08:06 sada Exp $
 #
 
 DISTNAME=       dhcp-1.4.0p5
@@ -58,8 +58,8 @@ post-install:
 		${ECHO} "	${ECHO} -n ' dhcps'"				\
 			>> ${STARTUP_SCRIPT};				\
 		${ECHO} 'fi' >> ${STARTUP_SCRIPT};				\
-		chmod 755 ${STARTUP_SCRIPT};				\
-		chown bin.bin ${STARTUP_SCRIPT};                        \
+		${CHMOD} 755 ${STARTUP_SCRIPT};				\
+		${CHOWN} bin.bin ${STARTUP_SCRIPT};                        \
 	fi
 	@if [ ! -c /dev/bpf1 ]; then \
 	    ${ECHO} "**********************************************************";\

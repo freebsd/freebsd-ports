@@ -3,7 +3,7 @@
 # Date created:				11 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1999/05/01 02:19:07 steve Exp $
+# $Id: Makefile,v 1.4 1999/05/29 03:55:39 steve Exp $
 #
 
 DISTNAME=		gtkballs-1.04
@@ -25,7 +25,7 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/gtkballs
 	@ ${INSTALL_DATA} ${WRKSRC}/gtkballs-data/*.xpm ${PREFIX}/share/gtkballs
 	@ ${INSTALL_DATA} ${WRKSRC}/score ${PREFIX}/share/gtkballs/score
-	@ chmod a+rw ${PREFIX}/share/gtkballs/score
+	@ ${CHMOD} a+rw ${PREFIX}/share/gtkballs/score
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/gtkballs
 .for file in COPYING README README.russian TODO

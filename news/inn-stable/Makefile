@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.39 1999/07/25 10:20:18 andreas Exp $
+# $Id: Makefile,v 1.40 1999/08/21 17:13:39 andreas Exp $
 #
 
 DISTNAME=	inn-STABLE_2_2-1999-07-24_03-02
@@ -114,8 +114,8 @@ post-install:
 	${MKDIR} -m 0775 ${NEWSSPOOL}/uniover
 	chown news.news ${NEWSSPOOL}/uniover
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
-		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
+		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	# make rnews work when getting news via uucp !
-	chmod 4555 ${NEWSLIB}/bin/rnews
+	${CHMOD} 4555 ${NEWSLIB}/bin/rnews
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		02 Oct 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.5 1998/11/28 09:33:21 asami Exp $
+# $Id: Makefile,v 1.6 1999/02/11 09:05:38 jkoshy Exp $
 #
 
 DISTNAME=		tet3.2e-unsup
@@ -46,7 +46,7 @@ pre-clean:
 
 # move the work directory to $TET_ROOT after extraction
 post-extract:
-	chmod +x ${WRKDIR}/configure
+	${CHMOD} +x ${WRKDIR}/configure
 	${MKDIR} ${TET_ROOT}
 	cd ${WRKDIR} && tar cf - . | (cd ${TET_ROOT} && tar xf -)
 	${RM} -rf ${WRKDIR} && ${LN} -s ${TET_ROOT} ${WRKDIR}

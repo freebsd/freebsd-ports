@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1997/09/14 04:00:20 jfitz Exp $
+# $Id: Makefile,v 1.15 1998/12/01 08:53:53 asami Exp $
 #
 
 PKGNAME=	quakeserver-1.0
@@ -48,8 +48,8 @@ do-install:
 		@ ${RM} -f ${PREFIX}/quakeserver/quakeserver.in
 		/usr/bin/mkfifo ${PREFIX}/quakeserver/quakeserver.in
 		/usr/bin/touch ${PREFIX}/quakeserver/quakeserver.log
-		@ /bin/chmod 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
-		@ /usr/sbin/chown -R nobody.nobody ${PREFIX}/quakeserver
+		@ ${CHMOD} 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
+		@ ${CHOWN} -R nobody.nobody ${PREFIX}/quakeserver
 		@ echo "Installing ${PREFIX}/etc/rc.d/quakeserver.sh startup script"
 		@ echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/quakeserver.sh
 		@ echo "#" >> ${PREFIX}/etc/rc.d/quakeserver.sh
@@ -58,7 +58,7 @@ do-install:
 		@ echo "then" >> ${PREFIX}/etc/rc.d/quakeserver.sh
 		@ echo "	su nobody -c ${PREFIX}/quakeserver/qserver.sh && echo -n ' quakeserver'" >> ${PREFIX}/etc/rc.d/quakeserver.sh
 		@ echo "fi" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ /bin/chmod 750 ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ ${CHMOD} 750 ${PREFIX}/etc/rc.d/quakeserver.sh
 .if !defined(BATCH)
 		@ /usr/bin/more -e ${PREFIX}/quakeserver/readme.port
 .endif

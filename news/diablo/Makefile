@@ -3,7 +3,7 @@
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
-# $Id: Makefile,v 1.4 1998/04/18 12:32:30 itojun Exp $
+# $Id: Makefile,v 1.5 1999/07/04 20:54:41 steve Exp $
 #
 
 DISTNAME=	diablo-1.15-rel
@@ -40,7 +40,7 @@ pre-install:
 		${PREFIX}/news/spool/news ${PREFIX}/share/doc/diablo
 	${RM} -f /news
 	${LN} -sf ${PREFIX}/news /news
-	/usr/sbin/chown -R news.news ${PREFIX}/news
+	${CHOWN} -R news.news ${PREFIX}/news
 
 do-install:
 	cd ${WRKSRC} && ${PREFIX}/bin/xmake install
@@ -70,7 +70,7 @@ post-install:
 	@ ${ECHO} "	echo -n ' diablo(disabled)'" >> \
 		${PREFIX}/etc/rc.d/diablo.sh
 	@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/diablo.sh
-	/bin/chmod 0750 ${PREFIX}/etc/rc.d/diablo.sh
+	${CHMOD} 0750 ${PREFIX}/etc/rc.d/diablo.sh
 .if !defined(BATCH)
 	@ /usr/bin/more -e ${PREFIX}/share/doc/diablo/post-install-notes
 .endif

@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.13 1998/10/13 01:17:27 jseger Exp $
+# $Id: Makefile,v 1.14 1999/01/28 05:39:19 jdp Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -90,7 +90,7 @@ post-extract:
 	    ${have_gcc} ${WRKSRC}
 .endif
 	@cd ${WRKSRC}/m3cc/gcc; \
-	    chmod +x config.sub configure move-if-change
+	    ${CHMOD} +x config.sub configure move-if-change
 
 do-build:
 	@test -d ${temp_prefix}/bin || ${MKDIR} ${temp_prefix}/bin
@@ -139,13 +139,13 @@ do-install:
 	    grep '^lib/m3/' ${PLIST}.real | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${PREFIX}; \
-	    grep '^lib/m3/' ${PLIST}.real | xargs chmod go=u-w; \
-	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
-	    find -X lib/m3 -type d | xargs chmod 755
+	    grep '^lib/m3/' ${PLIST}.real | xargs ${CHMOD} go=u-w; \
+	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
+	    find -X lib/m3 -type d | xargs ${CHMOD} 755
 	@echo "Installing copyright notice"
 	@if [ ! -d ${PREFIX}/share/modula-3-lib ]; then \
 	    ${MKDIR} ${PREFIX}/share/modula-3-lib; \
-	    chmod 755 ${PREFIX}/share/modula-3-lib; \
+	    ${CHMOD} 755 ${PREFIX}/share/modula-3-lib; \
 	fi
 	@${INSTALL_DATA} ${WRKSRC}/m3/src/COPYRIGHT \
 	    ${PREFIX}/share/modula-3-lib
@@ -156,7 +156,7 @@ do-install:
 	    echo "echo -n ' Modula-3'" >> ${startup_script}; \
 	    echo "/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2" \
 		>> ${startup_script}; \
-	    chmod 755 ${startup_script}; \
+	    ${CHMOD} 755 ${startup_script}; \
 	fi
 	@echo "Running ldconfig"
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2

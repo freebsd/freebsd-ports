@@ -3,7 +3,7 @@
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.14 1999/06/28 02:21:39 billf Exp $
+# $Id: Makefile,v 1.15 1999/08/17 19:36:56 cpiazza Exp $
 #
 
 DISTNAME=	guavac-1.2
@@ -26,7 +26,7 @@ MAN1=		guavac.1
 STRIP=
 
 pre-install:
-	@chmod +x ${WRKSRC}/mkinstalldirs
+	@${CHMOD} +x ${WRKSRC}/mkinstalldirs
 
 post-install:
 	@strip ${PREFIX}/bin/guavac ${PREFIX}/bin/guavad

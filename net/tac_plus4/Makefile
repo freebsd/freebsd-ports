@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1997
 # Whom:			Igor Vinokurov <igor@zynaps.ru>
 #
-# $Id: Makefile,v 1.3 1998/01/16 04:06:17 jseger Exp $
+# $Id: Makefile,v 1.4 1999/02/03 11:11:56 asami Exp $
 #
 
 DISTNAME=	tac_plus.2.1
@@ -36,7 +36,7 @@ do-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/tac_plus.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/tac_plus.sh; \
 		echo "[ -x ${PREFIX}/sbin/tac_plus -a -f ${PREFIX}/etc/tac_plus.conf ] && ${PREFIX}/sbin/tac_plus -C ${PREFIX}/etc/tac_plus.conf && echo -n ' tac_plus'" >> ${PREFIX}/etc/rc.d/tac_plus.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/tac_plus.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/tac_plus.sh; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tac_plus

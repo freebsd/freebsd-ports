@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.10 1998/09/25 10:05:11 asami Exp $
+#   $Id: Makefile,v 1.11 1999/03/30 00:20:39 fenner Exp $
 #
 
 DISTNAME=	sdr-2.4a7n
@@ -28,6 +28,6 @@ post-extract:
 	@${RM} -f ${WRKSRC}/src/libs.tcl
 	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
 	@${CP} ${FILESDIR}/configure ${WRKSRC}
-	@chmod 755 ${WRKSRC}/configure
+	@${CHMOD} 755 ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:        16 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/09/28 02:25:27 steve Exp $
+# $Id: Makefile,v 1.7 1999/01/12 16:51:30 vanilla Exp $
 #
 
 DISTNAME=	xsokoban-3.3c
@@ -24,8 +24,8 @@ post-install:
 		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults \
 		${PREFIX}/lib/X11/xsokoban/saves \
 		${PREFIX}/lib/X11/xsokoban/screens
-	@chmod 777 ${PREFIX}/lib/X11/xsokoban/scores
-	@chmod 775 ${PREFIX}/lib/X11/xsokoban/saves
+	@${CHMOD} 777 ${PREFIX}/lib/X11/xsokoban/scores
+	@${CHMOD} 775 ${PREFIX}/lib/X11/xsokoban/saves
 	@${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/lib/X11/xsokoban/screens
 	@${INSTALL_DATA} ${WRKSRC}/bitmaps/defaults/* \
 		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults

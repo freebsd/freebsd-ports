@@ -3,7 +3,7 @@
 # Date created:				1/11/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1999/04/07 16:38:22 nectar Exp $
+# $Id: Makefile,v 1.8 1999/05/28 20:52:25 nectar Exp $
 #
 
 DISTNAME=		grail-06
@@ -25,8 +25,6 @@ GRAILDIR=		${PREFIX}/${GRAILSUBDIR}
 DIRS_CMD=		${CAT} ${PLIST} | ${GREP} '^@dirrm' | ${SED} 's,@dirrm ,,'
 FILES_CMD=		${CAT} ${PLIST} | ${GREP} -v '^@' | ${SED} 's,${GRAILSUBDIR}/,,'
 
-CHOWN?=chown
-CHMOD?=chmod
 FIND?=find
 PYTHON?=python
 

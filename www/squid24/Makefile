@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.57 1999/06/05 19:58:02 mharo Exp $
+# $Id: Makefile,v 1.58 1999/08/08 13:53:34 peter Exp $
 #
 
 DISTNAME=	squid-2.2.STABLE4
@@ -99,7 +99,7 @@ post-install:
 		echo "if [ -x ${PREFIX}/sbin/RunCache -a -f ${PREFIX}/etc/squid/squid.conf ]; then" >> ${PREFIX}/etc/rc.d/squid.sh; \
 		echo "	(cd /tmp; ${PREFIX}/sbin/RunCache >/dev/null 2>&1 &) ; echo -n ' squid'" >> ${PREFIX}/etc/rc.d/squid.sh; \
 		echo "fi" >> ${PREFIX}/etc/rc.d/squid.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/squid.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/squid.sh; \
 	fi
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1999/06/20 01:14:06 cpiazza Exp $
+# $Id: Makefile,v 1.15 1999/06/22 16:29:28 steve Exp $
 #
 
 DISTNAME=	doomsrc
@@ -48,7 +48,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/sndserv/linux/sndserver ${PREFIX}/libexec/doom/sndserver
 	@(${ECHO} "#!/bin/sh"; ${ECHO} "cd ${PREFIX}/libexec/doom"; \
 	  ${ECHO} 'export PATH=.:$$PATH';${ECHO} "export DOOMWADDIR=${PREFIX}/share/doom"; ${ECHO} "./xdoom $$*") > ${PREFIX}/bin/doom
-	@/bin/chmod ugo+x ${PREFIX}/bin/doom
+	@${CHMOD} ugo+x ${PREFIX}/bin/doom
 	@${GZCAT} ${DISTDIR}/${DISTFILES2} > ${PREFIX}/share/doom/doom1.wad
 
 .include <bsd.port.mk>

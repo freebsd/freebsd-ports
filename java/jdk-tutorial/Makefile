@@ -3,7 +3,7 @@
 # Date created:		Tue Mar 23 10:18:20 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.5 1999/06/28 02:22:07 billf Exp $
+# $Id: Makefile,v 1.6 1999/06/28 23:25:49 cpiazza Exp $
 #
 
 DISTNAME=	tutorial
@@ -23,7 +23,7 @@ PKGMESSAGE= ${WRKDIR}/MESSAGE
 .include <bsd.port.pre.mk>
 
 post-extract:
-	(cd ${WRKSRC} && chown -R root.wheel *)
+	(cd ${WRKSRC} && ${CHOWN} -R root.wheel *)
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${VERSION}/docs/books/tutorial

@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1998
 # Whom:			Robert Nordier <rnordier@iafrica.com>
 #
-# $Id: Makefile,v 1.7 1999/07/07 08:10:31 hoek Exp $
+# $Id: Makefile,v 1.8 1999/07/07 22:42:54 hoek Exp $
 #
 
 DISTNAME=	TenDRA-4.1.2
@@ -29,8 +29,8 @@ pre-configure:
 		-e 's:^\(MAN_DIR=\).*:\1$${BASE_DIR}/man:' \
 		-e 's:completed:to build directory completed:' \
 		INSTALL >INSTALL.build && \
-	chmod a+x INSTALL.build && \
-	chmod a-x INSTALL)
+	${CHMOD} a+x INSTALL.build && \
+	${CHMOD} a-x INSTALL)
 
 do-build:
 	@(PATH=${WRKSRC}/bin:$$PATH && \
@@ -49,7 +49,7 @@ pre-install:
 		-e 's:^\(INSTALL_DIR=\).*:\1${PREFIX}/lib/TenDRA:' \
 		-e 's:^\(MAN_DIR=\).*:\1${PREFIX}/man:' \
 		INSTALL >INSTALL.install && \
-	chmod a+x INSTALL.install)
+	${CHMOD} a+x INSTALL.install)
 
 do-install:
 
@@ -59,18 +59,18 @@ post-install:
 	cd ${WRKSRC} && \
 	./INSTALL.install -tcc -strip)
 	@(cd ${PREFIX}/bin && \
-	chown ${BINOWN}:${BINGRP} tcc tchk tspec && \
-	chmod ${BINMODE} tcc tchk tspec)
+	${CHOWN} ${BINOWN}:${BINGRP} tcc tchk tspec && \
+	${CHMOD} ${BINMODE} tcc tchk tspec)
 	@(cd ${PREFIX} && \
-	chown -R ${BINOWN}:${BINGRP} lib/TenDRA && \
-	find -X lib/TenDRA -type d | xargs chmod 755 && \
-	${GREP} '^lib/' ${TMPPLIST} | xargs chmod ${SHAREMODE} && \
-	${GREP} '/bin/' ${TMPPLIST} | xargs chmod ${BINMODE})
+	${CHOWN} -R ${BINOWN}:${BINGRP} lib/TenDRA && \
+	find -X lib/TenDRA -type d | xargs ${CHMOD} 755 && \
+	${GREP} '^lib/' ${TMPPLIST} | xargs ${CHMOD} ${SHAREMODE} && \
+	${GREP} '/bin/' ${TMPPLIST} | xargs ${CHMOD} ${BINMODE})
 	@(cd ${PREFIX}/man/man1 && \
-	chown ${MANOWN}:${MANGRP} ${MAN1} && \
-	chmod ${MANMODE} ${MAN1})
+	${CHOWN} ${MANOWN}:${MANGRP} ${MAN1} && \
+	${CHMOD} ${MANMODE} ${MAN1})
 	@(cd ${PREFIX}/man/man5 && \
-	chown ${MANOWN}:${MANGRP} ${MAN5} && \
-	chmod ${MANMODE} ${MAN5})
+	${CHOWN} ${MANOWN}:${MANGRP} ${MAN5} && \
+	${CHMOD} ${MANMODE} ${MAN5})
 
 .include <bsd.port.mk>

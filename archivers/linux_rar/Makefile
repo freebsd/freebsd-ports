@@ -4,7 +4,7 @@
 # Date created:		30 April 1999
 # Whom:			FUJISHIMA Satsuki <k5@respo.or.jp>
 #
-# $Id: Makefile,v 1.3 1999/05/05 14:27:56 flathill Exp $
+# $Id: Makefile,v 1.4 1999/07/21 14:55:25 marcel Exp $
 #
 
 DISTNAME=       rarlnx25
@@ -28,7 +28,7 @@ EXTRACT_AFTER_ARGS=	# empty
 STRIP=			# empty: do not touch linux binary!
 
 post-fetch:
-	@chmod a+x ${DISTDIR}/${DISTFILES}
+	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
 
 do-build:
 do-install:

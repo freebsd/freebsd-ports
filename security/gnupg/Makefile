@@ -3,7 +3,7 @@
 # Date created:		Sep 30, 1998
 # Whom:			kuriyama@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.13 1999/07/26 15:59:32 kuriyama Exp $
+# $Id: Makefile,v 1.14 1999/08/12 15:10:08 kuriyama Exp $
 #
 
 DISTNAME=	gnupg-0.9.10
@@ -38,7 +38,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/gnupg
 .endfor
 .endif
-#	chmod u+s ${PREFIX}/bin/gpg
+#	${CHMOD} u+s ${PREFIX}/bin/gpg
 
 check:
 	(cd ${WRKSRC}; ${MAKE} check)

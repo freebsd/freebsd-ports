@@ -3,7 +3,7 @@
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.22 1999/03/11 21:47:09 scrappy Exp $
+# $Id: Makefile,v 1.23 1999/06/05 22:28:58 mharo Exp $
 #
 
 DISTNAME=       make-3.77
@@ -23,7 +23,7 @@ MAN1=		gmake.1
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
 
 post-install:
-	chmod g-s ${PREFIX}/bin/gmake
+	${CHMOD} g-s ${PREFIX}/bin/gmake
 	chgrp ${BINGRP} ${PREFIX}/bin/gmake
 
 .include <bsd.port.mk>

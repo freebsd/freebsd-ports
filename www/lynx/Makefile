@@ -3,7 +3,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.84 1999/06/18 21:18:27 mph Exp $
+# $Id: Makefile,v 1.85 1999/06/20 21:33:39 jseger Exp $
 #
 
 DISTNAME=       lynx2.8.2rel.1
@@ -27,7 +27,7 @@ L_LIB=          ${PREFIX}/etc
 L_HELP=         ${PREFIX}/share/lynx_help
 
 post-install:
-	chown -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
-	chown ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
+	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
 
 .include <bsd.port.mk>

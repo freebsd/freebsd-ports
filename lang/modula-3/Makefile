@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.28 1999/01/28 05:39:18 jdp Exp $
+# $Id: Makefile,v 1.29 1999/07/15 20:42:03 asami Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -88,7 +88,7 @@ do-install:
 	@echo "Installing copyright notice"
 	@if [ ! -d ${PREFIX}/share/modula-3 ]; then \
 	    ${MKDIR} ${PREFIX}/share/modula-3; \
-	    chmod 755 ${PREFIX}/share/modula-3; \
+	    ${CHMOD} 755 ${PREFIX}/share/modula-3; \
 	fi
 	@${INSTALL_DATA} ${WRKSRC}/m3/src/COPYRIGHT ${PREFIX}/share/modula-3
 	@echo "Stripping executables"
@@ -101,11 +101,11 @@ do-install:
 	@echo "Fixing file permissions"
 	@cd ${PREFIX}; \
 	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
-		xargs chown ${BINOWN}.${BINGRP}; \
+		xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
 	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
-		xargs chmod go=u-w; \
-	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
-	    find -X lib/m3 -type d | xargs chmod 755
+		xargs ${CHMOD} go=u-w; \
+	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
+	    find -X lib/m3 -type d | xargs ${CHMOD} 755
 	@echo "Running ldconfig"
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 

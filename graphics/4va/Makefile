@@ -3,7 +3,7 @@
 # Date created:		26 July 1998
 # Whom:			Malte Lance <malte.lance@gmx.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/19 22:48:18 steve Exp $
+# $Id: Makefile,v 1.2 1998/11/29 03:17:22 asami Exp $
 #
 
 DISTNAME=		4va-1.21
@@ -22,7 +22,7 @@ MAN1=		4va.1
 			ctor2.4vd hcube.4vd hsph.4vd sin.4vd tripris.4vd
 
 post-extract:
-	@chmod -R go-x ${WRKSRC}/
+	@${CHMOD} -R go-x ${WRKSRC}/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/4va ${PREFIX}/bin

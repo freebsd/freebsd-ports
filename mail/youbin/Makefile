@@ -4,7 +4,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.16 1998/12/10 03:09:13 steve Exp $
+# $Id: Makefile,v 1.17 1999/03/29 07:50:14 asami Exp $
 #
 
 DISTNAME=	youbin-2.13
@@ -37,7 +37,7 @@ post-install:
 		echo "    ${PREFIX}/sbin/youbind ; echo -n ' youbind'"	\
 			>> ${STARTUP_SCRIPT} ;				\
 		echo "fi" >> ${STARTUP_SCRIPT} ;			\
-		chmod 755 ${STARTUP_SCRIPT} ;				\
+		${CHMOD} 755 ${STARTUP_SCRIPT} ;				\
 	fi
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 

@@ -6,7 +6,7 @@
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $Id: Makefile,v 1.6 1998/09/15 11:13:39 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/17 00:33:01 asami Exp $
 #
 
 DISTNAME=       xfedor
@@ -27,8 +27,8 @@ do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_PROGRAM} xfedor ${PREFIX}/bin
 	-mkdir -p ${XFHELP}
-	chown ${SHAREOWN}.${SHAREGRP} ${XFHELP}
-	chmod 755 ${XFHELP}
+	${CHOWN} ${SHAREOWN}.${SHAREGRP} ${XFHELP}
+	${CHMOD} 755 ${XFHELP}
 	cd ${WRKSRC}/help; \
 	${INSTALL_DATA} * ${XFHELP}
 	${INSTALL_DATA} ${FILESDIR}/default.sos ${XFHELP}

@@ -3,7 +3,7 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.23 1999/04/22 15:58:54 taoka Exp $
+# $Id: Makefile,v 1.24 1999/05/01 04:00:17 taoka Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -158,7 +158,7 @@ post-install:
 	${MKDIR} ${PORT_DOCDIR}
 	@(cd ${DOC_FROM}; tar cvf - manual manual.en | \
 		(cd ${PORT_DOCDIR}; tar xf -))
-	@chown -R bin.bin ${PORT_DOCDIR}
+	@${CHOWN} -R bin.bin ${PORT_DOCDIR}
 .endif
 .endif
 ### for the shared libray

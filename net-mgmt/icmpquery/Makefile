@@ -3,7 +3,7 @@
 # Date created:				Jan 7 1999
 # Whom:					dom@myrddin.demon.co.uk
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/30 17:26:38 taoka Exp $
 #
 
 DISTNAME=	icmpquery
@@ -24,6 +24,6 @@ do-extract:
 
 do-install:
 		@${INSTALL_PROGRAM} ${WRKDIR}/icmpquery ${PREFIX}/bin
-		@chmod u+s ${PREFIX}/bin/icmpquery
+		@${CHMOD} u+s ${PREFIX}/bin/icmpquery
 
 .include <bsd.port.mk>

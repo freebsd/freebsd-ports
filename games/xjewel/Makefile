@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1998/05/13 21:26:01 jmz Exp $
+# $Id: Makefile,v 1.13 1998/09/28 02:20:01 steve Exp $
 #
 
 DISTNAME=	xjewel-1.6
@@ -28,6 +28,6 @@ post-install:
 	$(ECHO) "#!/bin/sh" >${PREFIX}/bin/xjewel; \
 	$(ECHO) "xset +fp ${PREFIX}/lib/X11/xjewel" >>${PREFIX}/bin/xjewel; \
 	$(ECHO) "${PREFIX}/bin/xjewel_" >>${PREFIX}/bin/xjewel; \
-	chmod ugo+x ${PREFIX}/bin/xjewel)
+	${CHMOD} ugo+x ${PREFIX}/bin/xjewel)
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1997
 # Whom:			Joe Greco <jgreco@ns.sol.net>
 #
-# $Id: Makefile,v 1.3 1998/04/07 17:42:21 jgreco Exp $
+# $Id: Makefile,v 1.4 1998/12/01 08:33:29 asami Exp $
 #
 
 DISTNAME=       tripwire-1.2
@@ -41,7 +41,7 @@ post-install:
 		> /mnt/tw.db_`hostname`.gz
 	@ ${CP} -p ${FILESDIR}/twcheck /mnt/twcheck
 	@ ${GZIP_CMD} < /usr/bin/gunzip > /mnt/gunzip
-	@ chmod 555 /mnt/tripwire /mnt/gunzip /mnt/twcheck
+	@ ${CHMOD} 555 /mnt/tripwire /mnt/gunzip /mnt/twcheck
 	@ umount /mnt
 	@ ${ECHO} Do not forget to remove and write-protect the floppy.
 .endif

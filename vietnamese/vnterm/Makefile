@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.10 1998/10/16 00:39:44 jseger Exp $
+# $Id: Makefile,v 1.11 1998/11/07 04:26:03 obrien Exp $
 #
 
 DISTNAME=	vnterm3.3
@@ -35,7 +35,7 @@ post-install:
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/vnterm \
-		&& chmod a+rx ${PREFIX}/share/doc/vnterm
+		&& ${CHMOD} a+rx ${PREFIX}/share/doc/vnterm
 	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/vnterm
 .endif
 

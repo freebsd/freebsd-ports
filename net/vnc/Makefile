@@ -3,7 +3,7 @@
 # Date created:		24 February 1998
 # Whom:			msmith
 #
-# $Id: Makefile,v 1.9 1999/01/07 06:35:14 steve Exp $
+# $Id: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
 #
 
 DISTNAME=       	vnc-3.3.2r3_unixsrc
@@ -41,7 +41,7 @@ post-install:
 # The documentation comes with bogus ownerships; this is a little leaky security-wise
 	${MKDIR} ${PREFIX}/share/doc/vnc
 	tar -C ${PREFIX}/share/doc/vnc -xzf ${DISTDIR}/vnc-3.3.2_doc.tgz
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
 # Go install Java classes
 	${MKDIR} ${PREFIX}/share/vnc
 	${CP} -R ${WRKSRC}/classes ${PREFIX}/share/vnc

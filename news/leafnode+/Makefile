@@ -3,7 +3,7 @@
 # Date created:		19 November 1998
 # Whom:			Tom Hukins <tom@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1999/07/04 19:40:32 sada Exp $
+# $Id: Makefile,v 1.8 1999/07/05 18:59:56 sada Exp $
 #
 
 DISTNAME=	leafnode+-2.6
@@ -31,7 +31,7 @@ post-patch:
 	@${REWRITE} ${WRKSRC}/${file}.bak > ${WRKSRC}/${file}
 .endfor
 	@${REWRITE} ${FILESDIR}/INSTALL.in > ${PKGINSTALL}
-	@chmod 755 ${PKGINSTALL}
+	@${CHMOD} 755 ${PKGINSTALL}
 
 do-install:
 .for file in leafnode fetchnews texpire checkgroups leaftool

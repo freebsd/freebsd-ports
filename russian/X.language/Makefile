@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.20 1998/08/03 08:49:00 ache Exp $
+# $Id: Makefile,v 1.21 1998/08/05 09:31:37 asami Exp $
 #
 
 DISTNAME=       ru-X11-3.3
@@ -47,8 +47,8 @@ do-install:
 #       ${INSTALL_DATA} ${FILESDIR}/xmodmap ${XLIB}/xinit/.Xmodmap
 	if [ ! -d ${XLIB}/nls ] ; then \
 		mkdir ${XLIB}/nls; \
-		chown ${BINOWN}.${BINGRP} ${XLIB}/nls; \
-		chmod 755 ${XLIB}/nls; \
+		${CHOWN} ${BINOWN}.${BINGRP} ${XLIB}/nls; \
+		${CHMOD} 755 ${XLIB}/nls; \
 	fi
 	if [ ! -f ${XLIB}/nls/ru_SU.KOI8-R ] ; then \
 		${INSTALL_DATA} ${FILESDIR}/nls_koi8-r ${XLIB}/nls/ru_SU.KOI8-R; \

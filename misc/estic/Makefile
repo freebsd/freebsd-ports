@@ -3,7 +3,7 @@
 # Date created:				21 Sep 1996
 # Whom:					Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1999/02/03 11:11:54 asami Exp $
+# $Id: Makefile,v 1.5 1999/05/01 12:34:35 jseger Exp $
 #
 
 DISTNAME=		estic-1.40-sources
@@ -58,8 +58,8 @@ do-install:
 	${INSTALL_DATA} ${ESTIC}/alias.dat ${PBX_ETC}/aliases.example
 	@# create config & debug so we can change mode to private
 	@touch ${PBX_ETC}/config ${PBX_VAR}/debug
-	chmod 600 ${PBX_VAR}/debug ${PBX_ETC}/config
-	chmod 700 ${PBX_VAR} # estic will create ./1996.11 etc
+	${CHMOD} 600 ${PBX_VAR}/debug ${PBX_ETC}/config
+	${CHMOD} 700 ${PBX_VAR} # estic will create ./1996.11 etc
 
 post-install:
 	@echo ""
@@ -71,7 +71,7 @@ demo:
 	@echo " ${SETENV} SPUNK_XFONT 8x13"
 	@echo " cd ${PBX_ETC}"
 	@echo " vi estic.ini"
-	@echo " chmod 666 /dev/cuaaX, or su"
+	@echo " ${CHMOD} 666 /dev/cuaaX, or su"
 	@echo " ${ESTIC}/xestic -display :0"
 	@echo " (If you have no Istec 100[38] connected, append -n )"
 	@echo " A BUGS & PROBLEMS section exists in ${FILESDIR}/README == man estic_freebsd"

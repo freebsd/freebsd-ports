@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.8 1998/09/30 14:13:22 jfieber Exp $
+# $Id: Makefile,v 1.9 1999/02/11 16:01:16 jfieber Exp $
 #
 
 DISTNAME=	isoENTS
@@ -29,7 +29,7 @@ pre-install:
 do-install:
 	@unzip -a -q -o ${DISTDIR}/${DISTFILES} -d ${INSTDIR}
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
-	@chmod ${SHAREMODE} ${INSTDIR}/*
-	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHMOD} ${SHAREMODE} ${INSTDIR}/*
+	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

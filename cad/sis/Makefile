@@ -3,7 +3,7 @@
 # Date created:         10 October 1997
 # Whom:                 volf@oasis.IAEhv.nl
 #
-# $Id: Makefile,v 1.5 1998/10/20 01:27:48 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/28 00:44:32 asami Exp $
 #
 
 DISTNAME=		sis-1.2
@@ -57,7 +57,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/SIS_paper.ps ${PREFIX}/lib/sis
 	${INSTALL_DATA} ${WRKSRC}/RELEASE-NOTES-1.2 ${PREFIX}/lib/sis
 	${GZIP_CMD} ${PREFIX}/lib/sis/SIS_paper.ps
-	chown -R bin:bin ${PREFIX}/lib/sis
+	${CHOWN} -R bin:bin ${PREFIX}/lib/sis
 .endif
 
 .include <bsd.port.mk>
