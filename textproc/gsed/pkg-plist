@@ -1,0 +1,5 @@
+bin/gsed
+share/examples/gsed/dc.sed
+@unexec install-info --delete %D/info/sed.info %D/info/dir
+info/sed.info
+@exec install-info %D/info/sed.info %D/info/dir
