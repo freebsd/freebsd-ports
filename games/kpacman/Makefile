@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	kpacman
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	games kde
-MASTER_SITES=	http://www.mat.univie.ac.at/~martin/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-kde3
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	kpacman
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Pacman Clone for KDE
