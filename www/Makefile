@@ -445,6 +445,7 @@
     SUBDIR += pear-HTTP
     SUBDIR += pear-HTTP_Header
     SUBDIR += pear-HTTP_Session
+    SUBDIR += pear-HTTP_Upload
     SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery
