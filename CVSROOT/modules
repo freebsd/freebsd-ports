@@ -7754,6 +7754,7 @@ php5-cgi	ports/www/php5-cgi
 php5-cli	ports/lang/php5-cli
 php5-gd		ports/graphics/php5-gd
 php5-iconv	ports/converters/php5-iconv
+php5-mbstring	ports/converters/php5-mbstring
 php5-pcre	ports/devel/php5-pcre
 php5-pear	ports/devel/php5-pear
 php5-xml	ports/textproc/php5-xml
