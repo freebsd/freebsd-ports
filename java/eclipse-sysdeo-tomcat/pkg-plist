@@ -1,0 +1,31 @@
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/DevLoader.zip
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/icons/newjprj_wiz.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/icons/newjprj_wiz2.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/icons/newwar_wiz.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/icons/restart.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/icons/start.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/icons/stop.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/img/bleu.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/img/jaune.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/img/jaune_transparent.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/img/logoSysdeo137_53.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/img/rouge.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/img/vert.gif
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/license.txt
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/plugin.properties
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/plugin.xml
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/plugin_bg.properties
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/plugin_de.properties
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/plugin_fr.properties
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/plugin_it.properties
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/plugin_ja.properties
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/readme.html
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/readmeDevLoader.html
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/releaseNotesV3.txt
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/tomcat.jar
+eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/tomcatsrc.zip
+@dirrm eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/img
+@dirrm eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0/icons
+@dirrm eclipse/plugins/com.sysdeo.eclipse.tomcat_3.0.0
+@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
+@unexec rmdir %D/eclipse 2>/dev/null || true
