@@ -29,6 +29,14 @@ lib/X11/wdm/wdm-config.dist
 @exec [ -f %D/lib/X11/wdm/wdm-config ] || (cp %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config)
 lib/X11/wdm/wdm-config.in
 lib/X11/wdm/wdmReconfig
+share/locale/cs/LC_MESSAGES/wdm.mo
+share/locale/cy/LC_MESSAGES/wdm.mo
+share/locale/de/LC_MESSAGES/wdm.mo
+share/locale/en/LC_MESSAGES/wdm.mo
+share/locale/es/LC_MESSAGES/wdm.mo
+share/locale/fr_FR/LC_MESSAGES/wdm.mo
+share/locale/ja/LC_MESSAGES/wdm.mo
+share/locale/ru/LC_MESSAGES/wdm.mo
 @unexec rmdir %D/lib/X11/wdm/pixmaps 2>/dev/null || true
 @exec mkdir -p %D/lib/X11/wdm/authdir
 @unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
