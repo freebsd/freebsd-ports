@@ -1,0 +1,12 @@
+--- config.h.in.dist	Mon Dec 20 17:44:59 2004
++++ config.h.in	Mon Dec 20 17:44:36 2004
+@@ -157,6 +157,9 @@
+ /* Define to 1 if you have the <syslog.h> header file. */
+ #undef HAVE_SYSLOG_H
+ 
++/* Define to 1 if you have the <sys/param.h> header file. */
++#undef HAVE_SYS_PARAM_H
++
+ /* Define to 1 if you have the <sys/conf.h> header file. */
+ #undef HAVE_SYS_CONF_H
+ 

@@ -1,7 +1,11 @@
---- configure.in.orig	Fri Mar 19 00:41:20 2004
-+++ configure.in	Fri Mar 19 00:41:36 2004
-@@ -204,7 +204,7 @@
- AC_CHECK_HEADERS(sys/filio.h sys/conf.h paths.h stropts.h)
+--- configure.in	Tue Mar 30 12:31:31 2004
++++ configure.in	Mon Dec 20 17:35:02 2004
+@@ -201,10 +201,10 @@
+ AC_HEADER_TIME
+ AC_CHECK_HEADERS(sys/time.h sys/select.h fcntl.h sys/fcntl.h)
+ 
+-AC_CHECK_HEADERS(sys/filio.h sys/conf.h paths.h stropts.h)
++AC_CHECK_HEADERS(sys/filio.h sys/param.h sys/conf.h paths.h stropts.h)
  AC_CHECK_HEADERS(sys/sockio.h)
  
 -AC_CHECK_HEADERS(net/if.h net/pfvar.h netinet/in_systm.h)
