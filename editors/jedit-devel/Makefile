@@ -6,40 +6,39 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	4.2.0pre15
+PORTVERSION=	4.3.p1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-_DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}install
-DISTNAME=	${_DISTNAME:S/0pre/pre/}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g:S/p/pre/}install
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Powerful programmer's text editor written in Java
+COMMENT=	Powerful programmer\'s text editor written in Java
 
-IGNORE=		marked as IGNORE: editors/jedit is the latest version
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	"${IGNORE}"
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 
-LATEST_LINK=	jedit-devel
+CONFLICTS=	jedit-4.2*
+
 USE_XLIB=	yes
 NO_BUILD=	yes
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+SUB_FILES=	jedit.sh
 
 MAN1=		jedit.1
 # The complete PLIST is generated in post-install
 PLIST_FILES=	bin/jedit
 
-do-configure:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${FILESDIR}/jedit.sh > ${WRKDIR}/jedit.sh
-
 do-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}| ; s|%%WRKDIR%%|${WRKDIR}|" ${FILESDIR}/instscript | \
+	@${SED} "s|%%PREFIX%%|${PREFIX}| ; s|%%DATADIR%%|${DATADIR}| ; s|%%WRKDIR%%|${WRKDIR}|" ${FILESDIR}/instscript | \
 		${SETENV} CLASSPATH=${DISTDIR}/${DISTNAME}.jar \
-		${LOCALBASE}/bin/javavm installer.Install text
+		${JAVA} installer.Install text
 	@${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${PREFIX}/bin/jedit
 
 .if defined(PARALLEL_PACKAGE_BUILD)
@@ -47,16 +46,9 @@ IGNORE=	hang
 .endif
 
 post-install:
-	@${FIND} ${JAVASHAREDIR} ! -type d | \
+	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${JAVASHAREDIR} -type d | ${SORT} -r | \
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "******************************************************"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "In order to use the optional SFTP plug-in for jEdit,"
-	@${ECHO_CMD} "you will need to have Java JDK version 1.4 or newer"
-	@${ECHO_CMD} "installed."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "******************************************************"
 
 .include <bsd.port.mk>
