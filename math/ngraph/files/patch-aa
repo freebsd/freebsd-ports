@@ -1,9 +1,9 @@
 --- Makefile.orig	Sun Oct 22 02:34:42 2000
-+++ Makefile	Wed Oct 25 13:09:52 2000
++++ Makefile	Sat Apr 28 21:42:17 2001
 @@ -1,26 +1,26 @@
  #
  MAINVERSION = '"6.03"'
- GUIVERSION = '".11"'
+ GUIVERSION = '".13"'
 -LIBDIR = '"/usr/local/lib/Ngraph"'
 -INSTALLDIR = /usr/local/lib/Ngraph
 -BINDIR = /usr/local/bin
