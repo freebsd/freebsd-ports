@@ -51,7 +51,7 @@ ${_PATCH_COOKIE}: ${PATCHLIST}
 		cd ${DISTDIR}/${DISTNAME}; \
 		gzcat `cat ${PATCHLIST}` | patch -d ${WRKDIR} --quiet -E -p0; \
 	fi
-	@touch -f ${_PATCH_COOKIE}
+	@touch -f ${_PATCH_COOKIE};
 
 install: all
 	@chown -R mud.mud ${WRKDIR}/dgd
