@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tidy
-PORTVERSION= 	20000430
+PORTVERSION= 	20000804
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
-DISTNAME=	tidy30apr00
+DISTNAME=	tidy4aug00
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saken@hotel.rmta.org
