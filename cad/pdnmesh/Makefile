@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdnmesh
-PORTVERSION=	0.1.9
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
 		${MASTER_SITE_SUNSITE:S/$/:sun/}
@@ -27,13 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 USE_AUTOCONF_VER=259
-USE_REINPLACE=	yes
 
 MAN1=	pdnmesh.1
 MAN5=	pdnmesh_input.5
 
-post-patch:
-.for FILE in ${DISTNAME}/configure.in
-	@${REINPLACE_CMD} -e "s/\$$FLIBS//g" ${WRKSRC}/${FILE}
-.endfor
 .include <bsd.port.mk>

@@ -24,6 +24,18 @@ bin/pdnmesh
 %%DATADIR%%/examples/heart
 %%DATADIR%%/examples/switch
 %%DATADIR%%/examples/trans
+%%DATADIR%%/pixmaps/open.xpm
+%%DATADIR%%/pixmaps/save.xpm
+%%DATADIR%%/pixmaps/help_about.xpm
+%%DATADIR%%/pixmaps/next_eigenmode.xpm
+%%DATADIR%%/pixmaps/plot_cont.xpm
+%%DATADIR%%/pixmaps/plot_fill.xpm
+%%DATADIR%%/pixmaps/plot_grad.xpm
+%%DATADIR%%/pixmaps/plot_mesh.xpm
+%%DATADIR%%/pixmaps/zoom_all.xpm
+%%DATADIR%%/pixmaps/zoom_back.xpm
+%%DATADIR%%/pixmaps/zoom_window.xpm
 @dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/tutorial
 @dirrm %%DATADIR%%
