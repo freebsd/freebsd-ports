@@ -261,6 +261,7 @@
     SUBDIR += p5-Lingua-Preferred
     SUBDIR += p5-Lingua-Stem
     SUBDIR += p5-Lingua-Stem-It
+    SUBDIR += p5-Lingua-Stem-Ru
     SUBDIR += p5-Lingua-Stem-Snowball-Da
     SUBDIR += p5-Lingua-Stem-Snowball-No
     SUBDIR += p5-Lingua-Stem-Snowball-Se
