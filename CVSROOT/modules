@@ -392,6 +392,7 @@ asmodem		ports/comms/asmodem
 asmon		ports/sysutils/asmon
 asmutils	ports/devel/asmutils
 asp2php		ports/www/asp2php
+aspathtree	ports/net/aspathtree
 aspell		ports/textproc/aspell
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
@@ -537,10 +538,10 @@ biggles		ports/math/biggles
 bigloo		ports/lang/bigloo
 bigyear		ports/deskutils/bigyear
 bin86		ports/devel/bin86
+bincimap	ports/mail/bincimap
 bind8		ports/net/bind8
 bind9		ports/net/bind9
 bind9-dlz	ports/net/bind9-dlz
-bincimap	ports/mail/bincimap
 binder		ports/x11-fm/binder
 bing		ports/net/bing
 binkd		ports/net/binkd
@@ -1284,8 +1285,8 @@ e2fsprogs	ports/sysutils/e2fsprogs
 e3		ports/editors/e3
 e4graph		ports/devel/e4graph
 e93		ports/editors/e93
-easydiff	ports/textproc/easydiff
 earthview	ports/misc/earthview
+easydiff	ports/textproc/easydiff
 easygtk		ports/x11-toolkits/easygtk
 easysoap	ports/net/easysoap
 easytag		ports/audio/easytag
@@ -2287,6 +2288,7 @@ gtkhtml		ports/www/gtkhtml
 gtkhx		ports/net/gtkhx
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
+gtkpod		ports/audio/gtkpod
 gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
@@ -3509,6 +3511,7 @@ lfhex		ports/editors/lfhex
 lfm		ports/sysutils/lfm
 lfpfonts-fix	ports/x11-fonts/lfpfonts-fix
 lfpfonts-var	ports/x11-fonts/lfpfonts-var
+lft		ports/net/lft
 lftp		ports/ftp/lftp
 lfview		ports/graphics/lfview
 lgeneral	ports/games/lgeneral
@@ -6080,8 +6083,6 @@ ppunpack	ports/archivers/ppunpack
 ppxp		ports/net/ppxp
 prboom		ports/games/prboom
 prc-tools	ports/palm/prc-tools
-prc-tools-binutils	ports/palm/prc-tools-binutils
-prc-tools-gcc	ports/palm/prc-tools-gcc
 prcs		ports/devel/prcs
 preferences.app	ports/deskutils/preferences.app
 premail		ports/mail/premail
@@ -6107,6 +6108,7 @@ prototype	ports/devel/prototype
 proxy-suite	ports/net/proxy-suite
 proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
+prozilla	ports/ftp/prozilla
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 psgml		ports/editors/psgml
@@ -6403,6 +6405,7 @@ qlogtools	ports/sysutils/qlogtools
 qlwm		ports/x11-wm/qlwm
 qmHandle	ports/mail/qmHandle
 qmail		ports/mail/qmail
+qmail-conf	ports/mail/qmail-conf
 qmail-contrib	ports/mail/qmail-contrib
 qmail-ldap	ports/mail/qmail-ldap
 qmail-mysql	ports/mail/qmail-mysql
@@ -6922,9 +6925,9 @@ sattrack	ports/astro/sattrack
 sawfish		ports/x11-wm/sawfish
 sawfish2	ports/x11-wm/sawfish2
 saxon		ports/textproc/saxon
+sb16config	ports/sysutils/sb16config
 sbagen		ports/audio/sbagen
 sbcl		ports/lang/sbcl
-sb16config	ports/sysutils/sb16config
 sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
 scandoc		ports/devel/scandoc
@@ -7152,6 +7155,7 @@ smtpd		ports/mail/smtpd
 smtpfeed	ports/mail/smtpfeed
 smtpproxy	ports/mail/smtpproxy
 smtprc		ports/mail/smtprc
+smtpscan	ports/security/smtpscan
 smunge		ports/mail/smunge
 smurflog	ports/security/smurflog
 snack		ports/audio/snack
@@ -8181,10 +8185,10 @@ xdvik		ports/print/xdvik
 xearth		ports/astro/xearth
 xed		ports/editors/xed
 xeji		ports/games/xeji
+xemacs		ports/editors/xemacs
 xemacs-additional-packages	ports/editors/xemacs-additional-packages
 xemacs-basic-mule-packages	ports/editors/xemacs-basic-mule-packages
 xemacs-comm-packages	ports/editors/xemacs-comm-packages
-xemacs		ports/editors/xemacs
 xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
 xemacs-games-packages	ports/editors/xemacs-games-packages
@@ -8654,8 +8658,8 @@ zh-chinput3	ports/chinese/chinput3
 zh-chitex	ports/chinese/chitex
 zh-cle_base	ports/chinese/cle_base
 zh-cless	ports/chinese/cless
-zh-cnprint	ports/chinese/cnprint
 zh-cmexfonts	ports/chinese/cmexfonts
+zh-cnprint	ports/chinese/cnprint
 zh-cwtex	ports/chinese/cwtex
 zh-cwtexttf	ports/chinese/cwtexttf
 zh-cxterm	ports/chinese/cxterm
@@ -8773,9 +8777,3 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
-lft		ports/net/lft
-qmail-conf	ports/mail/qmail-conf
-prozilla	ports/ftp/prozilla
-smtpscan	ports/security/smtpscan
-gtkpod		ports/audio/gtkpod
-aspathtree	ports/net/aspathtree
