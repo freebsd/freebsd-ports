@@ -1,0 +1,10 @@
+include/fc++/config.h
+include/fc++/curry.h
+include/fc++/function.h
+include/fc++/list.h
+include/fc++/operator.h
+include/fc++/prelude.h
+include/fc++/ref_count.h
+include/fc++/reuse.h
+include/fc++/signature.h
+@dirrm include/fc++
