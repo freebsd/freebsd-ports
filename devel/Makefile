@@ -446,6 +446,7 @@
     SUBDIR += p5-DateConvert
     SUBDIR += p5-Devel-Constants
     SUBDIR += p5-Devel-DProf
+    SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-Profiler
