@@ -190,6 +190,7 @@
     SUBDIR += ishido
     SUBDIR += jetpack
     SUBDIR += jfk
+    SUBDIR += jools
     SUBDIR += jtans
     SUBDIR += jumpnbump
     SUBDIR += jzip
