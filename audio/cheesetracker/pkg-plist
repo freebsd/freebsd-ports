@@ -3,3 +3,4 @@ bin/cheesetracker
 %%PORTDOCS%%%%EXAMPLESDIR%%/ll-globule.it
 %%PORTDOCS%%%%EXAMPLESDIR%%/reduz-maschizo.it
 %%PORTDOCS%%%%EXAMPLESDIR%%/xerxes-mfc.xm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -10,3 +10,4 @@ lib/libcputil.so.0
 sbin/cpu
 %%DATADIR%%/cpu.conf.doc
 %%DATADIR%%/test.ldif
+@dirrm %%DATADIR%%
