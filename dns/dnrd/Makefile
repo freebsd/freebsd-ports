@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		dnrd
-PORTVERSION=		2.14.1
+PORTVERSION=		2.15
 CATEGORIES=		dns
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dnrd
@@ -22,6 +22,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN8=			dnrd.8
+
+.if defined(WITH_TCP)
+CONFIGURE_ARGS+=        --enable-tcp
+.endif
+
+.if defined(WITHOUT_MASTER)
+CONFIGURE_ARGS+=	--disable-master
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/dnrd|${PREFIX}/etc/dnrd|g' ${WRKSRC}/doc/dnrd.8 \
