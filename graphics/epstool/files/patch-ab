@@ -1,5 +1,5 @@
---- epstool.c.orig	Tue Feb 15 08:52:06 2000
-+++ epstool.c	Fri Feb 25 04:09:56 2000
+--- epstool.cpp.orig	Fri Jun 30 08:39:14 2000
++++ epstool.cpp	Mon Jul 10 23:08:53 2000
 @@ -25,7 +25,7 @@
  char upname[MAXSTR];
  char gsname[MAXSTR] = GSCOMMAND;
@@ -9,9 +9,9 @@
  char szScratch[] = "ep";
  char szAppName[] = "epstool";
  int resolution = 72;
-@@ -90,9 +90,9 @@
- main(int argc, char *argv[])
- {
+@@ -132,9 +132,9 @@
+ 	find_gs(gsname, sizeof(gsname)-1, 550, FALSE);
+ #endif
  #ifdef UNIX
 -	strcpy(devname, "pbmraw");
 +	strcpy(gsdevname, "pbmraw");
@@ -21,10 +21,10 @@
  #endif
  	if (scan_args(argc, argv))
  	   return 1;
-@@ -260,10 +260,10 @@
+@@ -375,10 +375,10 @@
  	fclose(tempfile);
  #ifdef UNIX
- 	sprintf(gscommand, "%s -dNOPAUSE -dQUIET -sDEVICE=%s -sOutputFile=\042%s\042 -r%d -g%dx%d %s",
+ 	sprintf(gscommand, "\042%s\042 -dNOPAUSE -dQUIET -sDEVICE=%s -sOutputFile=\042%s\042 -r%d -g%dx%d %s",
 -	   gsname, devname, bmpname, resolution, width, height, tempname);
 +	   gsname, gsdevname, bmpname, resolution, width, height, tempname);
  #else
@@ -34,7 +34,7 @@
  	if (!quiet) {
  	    fputs(gscommand, stderr);
  	    fputs("\n", stderr);
-@@ -429,7 +429,7 @@
+@@ -548,7 +548,7 @@
  		  break;
  		case 'z':
  		  if (argp[2])
@@ -43,12 +43,3 @@
  		  break;
  		case 'c':
  		  if (got_op) {
-@@ -566,7 +566,7 @@
- 
- 	strcat(fname, prefix);
- 	strcat(fname, "XXXXXX");
--	mktemp(fname);
-+	mkstemp(fname);
- 	return fopen(fname, mode);
- }
- 

@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	1.08
+PORTVERSION=	1.40
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/ghostgum/ \
 		ftp://ftp.fh-koblenz.de/pub/Ghostscript/ghostgum/
-DISTNAME=	${PORTNAME}-108
+DISTNAME=	${PORTNAME}-140
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile.unx
-WRKSRC=		${WRKDIR}/epstool
 
 post-install:
 .if !defined(NOPORTDOCS)
