@@ -13,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/daemontools/ \
 
 MAINTAINER=	nbm@FreeBSD.org
 
-NO_PACKAGE=	Unsure of djb\'s license
+NO_PACKAGE=	"Unsure of djb\'s license"
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
