@@ -1,0 +1,12 @@
+bin/dvdnav-config
+include/dvdnav/decoder.h
+include/dvdnav/dvd_types.h
+include/dvdnav/dvdnav.h
+include/dvdnav/dvdnav_events.h
+include/dvdnav/dvdnav_internal.h
+include/dvdnav/read_cache.h
+include/dvdnav/vm.h
+include/dvdnav/vmcmd.h
+lib/libdvdnav.so.0
+lib/libdvdnav.so
+@dirrm include/dvdnav

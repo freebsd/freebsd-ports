@@ -158,6 +158,7 @@
     SUBDIR += libdjvu++
     SUBDIR += libdv
     SUBDIR += libdvdcss
+    SUBDIR += libdvdnav
     SUBDIR += libdvdread
     SUBDIR += libexif
     SUBDIR += libfame
