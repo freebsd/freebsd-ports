@@ -25,6 +25,8 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 virtual framebuffer server
 
+CONFLICTS=	xorg-vfbserver-*
+
 RUN_DEPENDS=	${FONT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 
 FONT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
