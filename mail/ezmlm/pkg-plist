@@ -8,3 +8,9 @@ bin/ezmlm-sub
 bin/ezmlm-unsub
 bin/ezmlm-warn
 bin/ezmlm-weed
+%%PORTDOCS%%%%DOCSDIR%%/BLURB
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
