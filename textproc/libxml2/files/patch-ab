@@ -1,0 +1,13 @@
+--- configure	2000/11/15 09:47:14	1.1
++++ configure	2000/11/15 09:51:34
+@@ -3419,8 +3419,8 @@
+ 
+ 
+ XML_LIBDIR='-L${libdir}'
+-XML_INCLUDEDIR='-I${includedir}/libxml -I${includedir}'
+-XML_LIBS="-lxml $Z_LIBS $M_LIBS $LIBS"
++XML_INCLUDEDIR='-I${includedir}/libxml2 -I${includedir}'
++XML_LIBS="-lxml2 $Z_LIBS $M_LIBS $LIBS"
+ 
+ XML_CFLAGS=""
+ 

@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	Mon Nov 13 20:28:44 2000
++++ doc/Makefile.in	Wed Nov 15 12:50:29 2000
+@@ -112,7 +112,7 @@
+ Z_CFLAGS = @Z_CFLAGS@
+ Z_LIBS = @Z_LIBS@
+ 
+-DOC_MODULE = gnome-xml
++DOC_MODULE = gnome-xml2
+ 
+ # The top-level SGML file.
+ DOC_MAIN_SGML_FILE = gnome-xml.sgml
+@@ -120,7 +120,7 @@
+ # The directory containing the source code (if it contains documentation).
+ DOC_SOURCE_DIR = ..
+ 
+-HTML_DIR = $(datadir)/gnome-xml/html
++HTML_DIR = $(datadir)
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
