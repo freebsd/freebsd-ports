@@ -1,22 +1,28 @@
 # New ports collection makefile for:	dgd-net
-# Version required:	1.0.56
+# Version required:	1.0.61
 # Date created:		17 June 1996
 # Whom:			adam
 #
 # $Id: Makefile,v 1.1.1.1 1996/06/18 11:15:43 adam Exp $
 #
 
-DISTNAME=	dgd-net-1.0.56
+DISTNAME=	dgd-net-1.0.61
 DISTFILES=	dgd-1.0.37.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
 
 PATCH_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/patches/ \
-		ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/pkg/
+		ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/pkg/ \
+		ftp.veda.is:/pub/mud/dgd/patches/
 PATCHFILES=	1.0.37-1.0.39.gz \
 		1.0.39-1.0.40.gz \
 		1.0.40-1.0.56.gz \
-		net-10.dgd-56.gz
+		1.0.56-1.0.57.gz \
+		1.0.57-1.0.58.gz \
+		1.0.58-1.0.59.gz \
+		1.0.59-1.0.60.gz \
+		1.0.60-1.0.61.gz \
+		net-10.dgd-61.gz
 
 MAINTAINER=	adam@veda.is
 
