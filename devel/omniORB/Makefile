@@ -41,6 +41,12 @@ PLIST_SUB+=	STATIC=""
 
 MAN1=		catior.1 genior.1 nameclt.1 omniNames.1 omniidl.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not compile on FreeBSD >= 6.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
 		${WRKSRC}/mk/beforeauto.mk.in
@@ -59,4 +65,4 @@ post-install:
 	@ ${TAR} cCf ${WRKSRC}/doc - . | ${TAR} xUCf ${DOCSDIR} -
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
