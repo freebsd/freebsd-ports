@@ -7,6 +7,7 @@
 
 PORTNAME=	mirror
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	ftp
 
 MASTER_SITES=	ftp://sunsite.org.uk/packages/mirror/ \
