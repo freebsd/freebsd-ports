@@ -1,38 +1,40 @@
 # New ports collection makefile for:	gicq
-# Version required:		0.22
+# Version required:		0.33
 # Date Created:			31 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.3 1998/11/25 22:31:28 sada Exp $
+# $Id: Makefile,v 1.4 1998/12/11 02:30:33 flathill Exp $
 #
 
-DISTNAME=	gicq-0.22
-PKGNAME=	ja-gicq-0.22
+DISTNAME=	gicq-0.33
+PKGNAME=	ja-gicq-0.33
 CATEGORIES=	japanese net
-MASTER_SITES=	http://www.montana.com/gabriel/gicq/files/
+MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
-PATCH_SITES=	http://flos.kuee.kyoto-u.ac.jp/soft/
-PATCHFILES=	gicq-0.22ja.patch
-PATCH_DIST_STRIP= -p1
+PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
+		http://www-nagao.kuee.kyoto-u.ac.jp/member/taku/soft/
+PATCHFILES=	gicq-0.33ja.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-LIB_DEPENDS=	gtkjp.1:${PORTSDIR}/japanese/gtk \
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12	\
 		icq.0:${PORTSDIR}/japanese/libicq
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome --disable-nls
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" LIBS=-lxpg4
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+		LIBS="-lxpg4"
 
-post-configure:
-	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${FILESDIR}/wrapper \
-	 > ${WRKDIR}/wrapper
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/gicq ${PREFIX}/bin
 
 post-install:
-	@${MV} ${PREFIX}/bin/gicq ${PREFIX}/bin/gicq.bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper ${PREFIX}/bin/gicq
-	@${INSTALL_DATA} \
-		${FILESDIR}/menu.gicq ${PREFIX}/share/ja-gtk/menu/menu.gicq.bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/gicq
+	${INSTALL_DATA} ${WRKSRC}/doc/index.html ${PREFIX}/share/doc/gicq
+.endif
 
 .include <bsd.port.mk>
