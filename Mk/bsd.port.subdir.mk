@@ -207,12 +207,14 @@ README.html:
 	@echo "===>  Creating README.html"
 	@> $@.tmp
 .for entry in ${SUBDIR}
+.if exists(${entry})
 .if defined(PORTSTOP)
 	@echo -n '<a href="'${entry}/README.html'">'"`echo ${entry} | ${HTMLIFY}`"'</a>: ' >> $@.tmp
 .else
 	@echo -n '<a href="'${entry}/README.html'">'"`cd ${entry}; make package-name | ${HTMLIFY}`</a>: " >> $@.tmp
 .endif
 	@cat `cd ${entry}; make -V COMMENT` | ${HTMLIFY} >> $@.tmp
+.endif
 .endfor
 	@sort -t '>' +1 -2 $@.tmp > $@.tmp2
 .if exists(${DESCR})
