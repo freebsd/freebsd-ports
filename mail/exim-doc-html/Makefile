@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.30
+PORTVERSION=	4.40
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
@@ -18,15 +18,25 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USE_BZIP2=	yes
-PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 
 DOCFORMAT?=	html
 DISTDOCFORMAT?=	${DOCFORMAT}
-.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf" && ${DOCFORMAT} != "postscript" && ${DOCFORMAT} != "info"
-.BEGIN:
+
+.if !defined(NOPORTDOCS)
+.if ${DOCFORMAT} == "html"
+PORTDOCS=	html
+.elif ${DOCFORMAT} == "pdf"
+PORTDOCS=	*.pdf
+.elif ${DOCFORMAT} == "postscript"
+PORTDOCS=	*.ps
+.elif ${DOCFORMAT} == "info"
+PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
+.else
+pre-everything::
 	@ ${ECHO} 'ERROR: invalid value for DOCFORMAT: "${DOCFORMAT}"'
 	@ ${ECHO} 'Possible values are "html", "pdf", "postscript" and "info".'
 	@ ${FALSE}
+.endif
 .endif
 
 do-build:
@@ -58,6 +68,8 @@ do-install:
 	@ install-info --section="Exim" \
 		--entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
 		${PREFIX}/info/exim_filter.info ${PREFIX}/info/dir
+.else
+	@${FALSE}
 .endif
 .endif
 
