@@ -16,6 +16,7 @@ BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		cscc.1 csdoc.1 csdoc2html.1 csdoc2texi.1 ilasm.1 \
 		ildasm.1 ildiff.1 ilfind.1 ilnative.1 ilsize.1 \
