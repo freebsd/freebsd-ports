@@ -298,6 +298,7 @@
     SUBDIR += pathalias
     SUBDIR += pear-Mail
     SUBDIR += pear-Mail_Mime
+    SUBDIR += pear-Mail_Queue
     SUBDIR += pear-Net_Cyrus
     SUBDIR += pear-Net_IMAP
     SUBDIR += pecl-mailparse
