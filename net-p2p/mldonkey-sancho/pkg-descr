@@ -1,0 +1,18 @@
+[ excerpt taken from developer's web site ]
+
+sancho is a gui that connects to a p2p core application. Power users
+that use p2p applications usually choose one that has core/gui
+separation. sancho provides an easy to use, powerful, and configurable
+gui, currently supporting the gui protocol of the popular mldonkey
+core.
+
+The sancho project is written for fun, but also to test some new
+and exciting technologies. It is written in Java using the SWT
+widget toolkit and can be compiled on multiple platforms with the
+gcj compiler to native machine code (java=slow and bulky? not
+anymore! no external java runtime required!). Windows, Linux, OSX
+and other popular operating systems are supported.
+
+WWW: http://sancho-gui.sourceforge.net/
+
+-- lioux@FreeBSD.org
