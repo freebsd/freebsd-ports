@@ -1,18 +1,21 @@
---- libguile/gc_os_dep.c.orig	Sat May  3 23:15:57 2003
-+++ libguile/gc_os_dep.c	Sat May  3 23:26:25 2003
-@@ -93,6 +93,11 @@
+--- libguile/gc_os_dep.c.orig	Wed Apr 16 13:16:21 2003
++++ libguile/gc_os_dep.c	Thu May 22 20:41:37 2003
+@@ -93,6 +93,14 @@
  #    define OPENBSD
  #    define mach_type_known
  # endif
 +# if defined(__FreeBSD__) && defined(__sparc__)
-+#    define SPARC
 +#    define FREEBSD
++#    include <machine/frame.h>
++#    define ALIGNMENT 8
++#    define CPP_WORDSZ 64
++#    define ALIGN_DOUBLE
 +#    define mach_type_known
 +# endif
  # if defined(__NetBSD__) && defined(__powerpc__)
  #    define POWERPC
  #    define NETBSD
-@@ -225,7 +230,11 @@
+@@ -225,7 +233,11 @@
  #    define ARM32
  #    define mach_type_known
  # endif
@@ -25,7 +28,7 @@
  #   define ALPHA
  #   if !defined(LINUX)
  #     define OSF1	/* a.k.a Digital Unix */
-@@ -1468,7 +1477,7 @@
+@@ -1468,7 +1480,7 @@
  #   include <setjmp.h>
  #endif
  
