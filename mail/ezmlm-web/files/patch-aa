@@ -1,0 +1,35 @@
+--- ezmlm-web.cgi.orig	Sat Jan 29 13:36:02 2000
++++ ezmlm-web.cgi	Thu May 18 13:43:27 2000
+@@ -1,4 +1,10 @@
+ #!/usr/bin/perl -wT
++
++#
++# MODIFIED FOR FREEBSD PORTS
++# Guy Antony Halse <guy@rucus.ru.ac.za>
++#
++
+ #===========================================================================
+ # ezmlm-web.cgi - version 2.0 - 29/01/2000
+ # $Id: ezmlm-web.cgi,v 1.1 2000/01/29 11:35:40 guy Exp $
+@@ -76,8 +82,8 @@
+    require "$opt_C"; # Command Line
+ } elsif(-e "$HOME_DIR/.ezmlmwebrc") {
+    require "$HOME_DIR/.ezmlmwebrc"; # User
+-} elsif(-e "/etc/ezmlm/ezmlmwebrc") {
+-   require "/etc/ezmlm/ezmlmwebrc"; # System
++} elsif(-e "/usr/local/etc/ezmlm/ezmlmwebrc") {
++   require "/usr/local/etc/ezmlm/ezmlmwebrc"; # System
+ } elsif(-e "./ezmlmwebrc") {
+    require "./ezmlmwebrc"; # Install
+ } else {
+@@ -604,8 +610,8 @@
+    my ($qmail, $listname, $options, $i);
+    
+    # Some taint checking ...
+-   $qmail = $1 if $q->param('inlocal') =~ /-?([\w.+:]+)$/;
+-   $listname = $q->param('list'); $listname =~ s/ /_/; # In case some git tries to put a space in the file name
++   $qmail = $1 if $q->param('inlocal') =~ /(?:$USER-)?([^\<\>\\\/\s]+)$/;
++   $listname = $q->param('list'); $listname =~ s/ /_/g; # In case some git tries to put a space in the file name
+ 
+    # Sanity Checks ...
+    return 1 if ($listname eq '' || $qmail eq '');
