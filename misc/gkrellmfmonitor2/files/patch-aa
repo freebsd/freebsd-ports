@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun Nov 24 01:53:03 2002
++++ Makefile	Sun Nov 24 02:13:16 2002
+@@ -8,12 +8,14 @@
+ OBJS = fmonitor.o
+ SOBJ = fmonitor.so
+ 
++all: ${SOBJ}
+ 
+ $(SOBJ): $(OBJS)
+ 	$(CC) -shared `pkg-config gtk+-2.0 --libs` $(OBJS) -o $(SOBJ)
+ 
+ install:
+-	cp $(SOBJ) /usr/local/lib/gkrellm2/plugins
++	${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
++	${INSTALL_DATA} ${SOBJ} ${PREFIX}/libexec/gkrellm2/plugins
+ 
+ clean:
+ 	rm -f *.o core *.so* *.bak *~
