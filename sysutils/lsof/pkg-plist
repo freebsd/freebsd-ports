@@ -1,2 +1,4 @@
 sbin/lsof
 man/man1/lsof.1.gz
+@unexec /bin/rm -rf %D/share/lsof
+share/lsof
