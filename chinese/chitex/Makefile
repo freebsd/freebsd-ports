@@ -27,6 +27,7 @@ DIST_SUBDIR=	chitex
 WRKSRC=		${WRKDIR}/chitex612
 NO_BUILD=	YES
 NO_CDROM=	'Do not sell for profit.'
+FORBIDDEN=	'Installs setuid root binaries that use system() unsafely'
 
 MAN1=		awka.1
 
