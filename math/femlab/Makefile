@@ -16,12 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 FEMLAB_HOME=	${PREFIX}/lib/X11/femlab
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 	${WRKSRC}/source/graph.c ${WRKSRC}/source/y.tab.c \
 	${WRKSRC}/source/newdata.c ${WRKSRC}/source/post.c \
 	${WRKSRC}/source/kraftwerk.c ${WRKSRC}/source/list.c \

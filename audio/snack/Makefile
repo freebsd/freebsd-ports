@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.3 \
 		--with-tk=${LOCALBASE}/lib/tk8.3 \
@@ -43,7 +44,7 @@ pre-everything:
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:

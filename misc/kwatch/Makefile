@@ -17,10 +17,11 @@ MAINTAINER=	kde@freebsd.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 USE_KDELIBS_VER=	2
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|-O2 ||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2 ||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

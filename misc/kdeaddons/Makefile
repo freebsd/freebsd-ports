@@ -19,6 +19,7 @@ BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia2 \
 		SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
+USE_REINPLACE=	yes
 WITH_SDL=	yes
 USE_KDEBASE_VER=2
 USE_BZIP2=	yes
@@ -45,7 +46,7 @@ pre-configure:
 .endfor
 	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
-	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		"s@sdl-config@${LOCALBASE}/bin/sdl11-config@g"
 
 .include <bsd.port.post.mk>

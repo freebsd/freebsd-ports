@@ -18,6 +18,7 @@ LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
 RESTRICTED=	"yes - cryptography"
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -31,8 +32,8 @@ post-extract:
 	${FIND} ${WRKSRC} -name configure -exec ${RM} -f \{\} \;
 
 pre-patch:
-	@${FIND} ${WRKSRC}/modules -name '*.[ch]' | ${XARGS} ${PERL} -pi -e \
-		's|#ifdef USE_LTDL|#if defined\(USE_LTDL\) && !defined\(__FreeBSD__\)|g'
+	@${FIND} ${WRKSRC}/modules -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|#ifdef USE_LTDL|#if defined(USE_LTDL) && !defined(__FreeBSD__)|g'
 
 post-patch:
 	@cd ${WRKSRC}/libltdl && ${LOCALBASE}/bin/autoconf

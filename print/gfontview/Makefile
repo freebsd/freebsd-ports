@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
@@ -29,13 +30,13 @@ CONFIGURE_ARGS=	--with-fontdir="${LOCALBASE}/share/ghostscript/fonts" \
 		--with-libungif
 
 post-patch:
-	@${PERL} -pi -e 's|CXXFLAGS="-O2"|CXXFLAGS="\$$CXXFLAGS"|g ; \
+	@${REINPLACE_CMD} -e 's|CXXFLAGS="-O2"|CXXFLAGS="$$CXXFLAGS"|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' \
+		 s|\$$(top_builddir)/intl/libintl.a|-lintl|g' \
 			${WRKSRC}/configure
-	@${PERL} -pi -e 's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g ; \
+	@${REINPLACE_CMD} -e 's|\$$(datadir)/gnome/|$$(datadir)/|g ; \
+		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g ; \
 		 s|-I/usr/include/freetype||g' \
 			${WRKSRC}/Makefile.in
 

@@ -21,11 +21,12 @@ NO_PACKAGE=	${NO_CDROM}
 USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/Mosaic-src
 ALL_TARGET=	bsdi
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 	${WRKSRC}/libXmx/Xmx.h ${WRKSRC}/libdtm/dtm.c \
 	${WRKSRC}/libdtm/dtm.c ${WRKSRC}/libdtm/dtm.c \
 	${WRKSRC}/libdtm/dtm.c ${WRKSRC}/libdtm/dtminit.c \

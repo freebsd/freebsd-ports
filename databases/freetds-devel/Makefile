@@ -18,6 +18,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-tdsver=4.2
@@ -42,10 +43,10 @@ PLIST_SUB+=	ODBC="@comment "
 .endif
 
 post-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/freetds.conf|/freetds.conf.dist|g ; \
-		 s|glib-config|\$$\(GLIB_CONFIG\)|g ; \
-		 s|-lglib|`\$$\(GLIB_CONFIG\) --libs glib`|g ; \
+		 s|glib-config|$$(GLIB_CONFIG)|g ; \
+		 s|-lglib|`$$(GLIB_CONFIG) --libs glib`|g ; \
 		 s| common.h||g'
 
 post-install:

@@ -18,9 +18,10 @@ LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAN1=			dbview.1
 
+USE_REINPLACE=		yes
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/db_dump.c
 
 do-install:

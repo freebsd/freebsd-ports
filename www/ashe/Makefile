@@ -18,13 +18,14 @@ NO_WRKSUBDIR=	yes
 CONFIGURE_WRKSRC=	${WRKDIR}/src
 INSTALL_WRKSRC=		${WRKDIR}/src
 
+USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		xhtml.1
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/XHTML.ad
-	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" \
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/XHTML.ad
+	@${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g" \
 		${WRKSRC}/libhtmlw-2.7b3/HTML-PSformat.c
 
 do-build:

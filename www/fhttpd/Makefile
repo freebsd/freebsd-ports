@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.fhttpd.org/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 LOGFILE=	share/fhttpd/fhttpd.log
 PLIST_SUB+=	LOGFILE=${LOGFILE}
 
@@ -24,9 +26,9 @@ pre-patch:
 
 pre-install:
 	${RM} -rf ${WRKSRC}/http-root/pub/dummy_directory
-	${PERL} -pi -e "s:%%LOGFILE%%:${PREFIX}/${LOGFILE}:g" \
+	${REINPLACE_CMD} -e "s:%%LOGFILE%%:${PREFIX}/${LOGFILE}:g" \
 		${WRKSRC}/fhttpd.sh ${WRKSRC}/http-root/root-fhttpd.conf
-	${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/http-root/root-fhttpd.conf
+	${REINPLACE_CMD} -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/http-root/root-fhttpd.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/fhttpd.sh ${PREFIX}/etc/rc.d

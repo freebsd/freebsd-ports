@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 .if defined(WITH_GUILE)
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
@@ -28,7 +29,7 @@ CONFIGURE_ARGS+=	--enable-telnetserver
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s,%%GUILE_CONFIG%%,${GUILE_CONFIG},g ; \
+	@${REINPLACE_CMD} -e "s,%%GUILE_CONFIG%%,${GUILE_CONFIG},g ; \
 		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; \
 		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 

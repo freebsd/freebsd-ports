@@ -24,6 +24,7 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${SDL_CONFIG}"
@@ -32,7 +33,7 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext ${PTHREAD_LIBS}
 
 post-patch:
-	${PERL} -pi -e "s+#include <SDL\/+#include <+g" ${WRKSRC}/*.[ch]
+	${REINPLACE_CMD} -e "s+#include <SDL/+#include <+g" ${WRKSRC}/*.[ch]
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gltron ${PREFIX}/bin

@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolki
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_PYTHON=	yes
-USE_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
@@ -35,9 +34,9 @@ pre-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|glib-config|glib12-config|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/gnome/|$$(datadir)/|g ; \
+		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \

@@ -18,10 +18,11 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 
 USE_QT_VER=	2
 USE_KDEBASE_VER=	2
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/showimg/Makefile.in
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/showimg/Makefile.in
 
 .include <bsd.port.mk>

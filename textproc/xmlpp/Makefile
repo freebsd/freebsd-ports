@@ -13,12 +13,13 @@ MASTER_SITES=	http://www.root.at/download/gpl/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|/usr/local/share|\$$\(datadir\)|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/usr/local/share|$$(datadir)|g'
 
 .include <bsd.port.mk>

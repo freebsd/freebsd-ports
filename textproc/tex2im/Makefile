@@ -17,10 +17,12 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		latex:${PORTSDIR}/print/teTeX \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
+USE_REINPLACE=	yes
+
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" ${WRKSRC}/tex2im
+	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" ${WRKSRC}/tex2im
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tex2im ${PREFIX}/bin

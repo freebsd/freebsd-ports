@@ -19,12 +19,13 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	# empty
 
 post-patch:
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g ; \
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g ; \
 		s,%%LOCALBASE%%,${LOCALBASE},g ; \
 		s,%%PREFIX%%,${PREFIX},g ; \
 		s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile

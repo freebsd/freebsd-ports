@@ -15,12 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 
 post-build:
 	${RM} -f ${WRKSRC}/xbackdrop/backdrops/index~ ;\
-	${PERL} -pi -e 's,/usr/lib,${PREFIX}/lib,' \
+	${REINPLACE_CMD} -e 's,/usr/lib,${PREFIX}/lib,' \
 		${WRKSRC}/xbackdrop/backdrops/index
 
 .include <bsd.port.mk>

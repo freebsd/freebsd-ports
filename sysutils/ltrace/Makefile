@@ -14,12 +14,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		ltrace.1
 
 post-patch:
-	${PERL} -pi.bak \
+	${REINPLACE_CMD} \
 		-e 's|"/etc/ltrace.conf"|"${PREFIX}/etc/ltrace.conf"|g' \
 		${WRKSRC}/ltrace.c
 

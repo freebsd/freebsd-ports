@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	default
@@ -30,9 +31,9 @@ MLINKS=	mpgtx.1 mpgcat.1 \
 	mpgtx.1 mpgsplit.1
 
 pre-patch:
-	@${PERL} -pi -e 's|CFLAGS=|CFLAGS\+=|g ; \
-		 s|\$$cflags \$$optimization_cflags|\$$cflags|g ; \
-		 s|g\+\+|${CXX}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS\+=|g ; \
+		 s|\$$cflags \$$optimization_cflags|$$cflags|g ; \
+		 s|g++|${CXX}|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpgtx ${PREFIX}/bin

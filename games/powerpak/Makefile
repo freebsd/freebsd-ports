@@ -21,13 +21,14 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
 USE_FREETYPE=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 MAKEFILE=	Makefile.UNIX
 
 post-extract:
-	@ /usr/bin/find ${WRKSRC} -type f | xargs ${PERL} -pi -e 's/\r//g ; \
-		s|"SDL/|"|g ; s|<SDL/|<|g'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s/`/usr/bin/printf '\r'`//g ; \
+		s|\"SDL/|\"|g ; s|<SDL/|<|g"
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/libPP.a ${PREFIX}/lib

@@ -14,12 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	ALL
 
 post-patch:
-	@${PERL} -pi -e "s,^PREFIX,#PREFIX,g ; \
+	@${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX,g ; \
 		s,gcc,${CC} ${CFLAGS},g" ${WRKSRC}/${MAKEFILE}
 
 do-install:

@@ -13,6 +13,7 @@ CATEGORIES=	databases
 MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB= YES
+USE_PERL5=	YES
 
 # Not free for commercial use.
 NO_PACKAGE=	YES

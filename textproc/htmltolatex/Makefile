@@ -16,13 +16,14 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
 
+USE_REINPLACE=	yes
 USE_BISON=	yes
 MAKEFILE=	GNUmakefile
 CXXFLAGS+=	-I${LOCALBASE}/include -DUNIX
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^CXXFLAGS,#CXXFLAGS,g ; \
+	@${REINPLACE_CMD} -e "s,^CXXFLAGS,#CXXFLAGS,g ; \
 		s,^CXX,#CXX,g" ${WRKSRC}/${MAKEFILE}
 
 do-install:

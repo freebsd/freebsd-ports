@@ -15,11 +15,12 @@ MASTER_SITE_SUBDIR=	ods
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|-pedantic -W|-pedantic|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's| -g| \@CFLAGS\@|g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-pedantic -W|-pedantic|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| -g| @CFLAGS@|g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

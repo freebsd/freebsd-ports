@@ -14,8 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
 		s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:

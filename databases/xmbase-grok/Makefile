@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 MAKE_ENV=	MYCC="${CC}" DEBUG="${CFLAGS}" YO="" INCDIR="" \
@@ -26,7 +27,7 @@ MAN1=		grok.1
 DATADIR=	${PREFIX}/lib/X11/xmbase-grok
 
 pre-patch:
-	@${PERL} -pi -e 's|^GBIN =|#GBIN =|g ; \
+	@${REINPLACE_CMD} -e 's|^GBIN =|#GBIN =|g ; \
 		 s|^GLIB =|#GLIB =|g ; \
 		 s|^DEBUG =|#DEBUG =|g' ${BUILD_WRKSRC}/Makefile
 

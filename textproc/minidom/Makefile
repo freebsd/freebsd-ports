@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_LIBTOOL=	yes
@@ -26,7 +27,7 @@ CONFIGURE_ARGS=	--with-libxml2=yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|-lglib|-lglib12|g ; \
+	@${REINPLACE_CMD} -e 's|-lglib|-lglib12|g ; \
 		 s|glib-config|${GLIB_CONFIG}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

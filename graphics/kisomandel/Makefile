@@ -16,15 +16,16 @@ MAINTAINER=	kde@freebsd.org
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-lqt,-lqt2,g" ${WRKSRC}/configure
-	@find ${WRKSRC} -name Makefile.in | xargs \
-		${PERL} -pi -e "s,-lqt,-lqt2,g"
-	@${PERL} -pi -e "s,malloc.h,stdlib.h,g" ${WRKSRC}/kisomandel/fractal.cpp
+	@${REINPLACE_CMD} -e "s,-lqt,-lqt2,g" ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
+		${REINPLACE_CMD} -e "s,-lqt,-lqt2,g"
+	@${REINPLACE_CMD} -e "s,malloc.h,stdlib.h,g" ${WRKSRC}/kisomandel/fractal.cpp
 
 .include <bsd.port.mk>

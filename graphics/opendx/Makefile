@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 AUTOMAKE_ARGS=	-a -i
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH="" \
@@ -41,13 +42,13 @@ post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
 
 post-configure:
-	${PERL} -pi -e "s;flex ;flex -l ;g" ${WRKSRC}/src/uipp/dxuilib/Makefile
+	${REINPLACE_CMD} -e "s;flex ;flex -l ;g" ${WRKSRC}/src/uipp/dxuilib/Makefile
 
 post-install:
 	@${ECHO_MSG} "===>   Fixing path in the docs (/usr/lpp -> ${PREFIX})"
 .for dir in doc help html man
-	@find ${PREFIX}/dx/${dir} -type f | \
-	  xargs ${PERL} -pi -e "s;/usr/lpp;${PREFIX};g"
+	@${FIND} ${PREFIX}/dx/${dir} -type f | \
+	  ${XARGS} ${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"
 .endfor
 
 .include <bsd.port.mk>

@@ -20,10 +20,11 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 do-install:
 	@(cd ${WRKSRC} ; ${INSTALL_PROGRAM} xmlppm xmlunppm ${PREFIX}/bin)

@@ -20,13 +20,14 @@ LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 INSTALL_CMD=	/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\@INSTALL\@|${INSTALL_CMD}|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|@INSTALL@|${INSTALL_CMD}|g'
 
 .include <bsd.port.mk>

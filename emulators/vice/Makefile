@@ -15,6 +15,7 @@ RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
+USE_REINPLACE=	yes
 USE_XPM=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -44,7 +45,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/vice.info*
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/vice.1
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/vice.1
 
 post-install:
 	@${LN} -sf vice_toc.html ${DOCSDIR}/index.html
