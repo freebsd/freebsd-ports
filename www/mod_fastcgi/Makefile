@@ -14,9 +14,15 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 MAINTAINER=	hollywar@mail.holywar.net
 COMMENT=	A fast-cgi module for Apache
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-
 CONFLICTS=	apache-contrib-1.*
+
+USE_APACHE=	yes
+
+.if exists(/usr/local/include/apache2/httpd.h)
+WITH_APACHE2=	yes
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHE2)
 MAKEFILE=	Makefile.AP2
@@ -65,4 +71,4 @@ post-install:
 	@${ECHO_MSG} "*                                                          *"
 	@${ECHO_MSG} "************************************************************"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

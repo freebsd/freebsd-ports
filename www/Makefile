@@ -660,6 +660,7 @@
     SUBDIR += zope-formulator
     SUBDIR += zope-groupuserfolder
     SUBDIR += zope-guf
+    SUBDIR += zope-mindmapbbs
     SUBDIR += zope-parsedxml
     SUBDIR += zope-placelesstranslationservice
     SUBDIR += zope-proxyindex
