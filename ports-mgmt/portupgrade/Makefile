@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20010831
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -55,6 +56,7 @@ post-patch:
 .for f in pkgdb.rb pkgtools.rb
 	${RUBY} -i~ -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/${f}
 .endfor
+	${RUBY} -i~ -pe 'sub!(/(make_cmdline\(portdir, .-V PKGNAME 2>\&1.)\}/, "\\1)}")' ${WRKSRC}/portupgrade
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
