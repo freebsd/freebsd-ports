@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+cat >> Makefile << END || exit 1;
+
+BINDIR = $PREFIX/bin
+HFSBIN = \$(BINDIR)/hfs
+WISH   = \$(BINDIR)/wish
+END
+
+exit 0;
