@@ -251,7 +251,9 @@ share/irc/help/on/flood
 share/irc/help/on/help
 share/irc/help/on/hook
 share/irc/help/on/icb_error
+share/irc/help/on/icb_motd
 share/irc/help/on/icb_status
+share/irc/help/on/icb_who
 share/irc/help/on/idle
 share/irc/help/on/input
 share/irc/help/on/invite
