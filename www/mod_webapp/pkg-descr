@@ -1,0 +1,5 @@
+Mod_webapp is an Apache module that allows Tomcat applications to be
+mounted into an Apache server.  Tomcat is a Java servlet and JSP engine.
+Apache is the popular webserver.
+
+WWW: http://jakarta.apache.org/tomcat/
