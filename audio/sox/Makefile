@@ -3,12 +3,12 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.5 1995/05/05 20:43:47 torstenb Exp $
+# $Id: Makefile,v 1.6 1995/05/05 20:54:27 torstenb Exp $
 #
 
 DISTNAME=	sox10p11
 PKGNAME=	sox-10.11
-CATEGORIES+=	audio
+CATEGORIES=	audio
 MASTER_SITES=	ftp://nic.switch.ch/software/sources/audio/
 EXTRACT_SUFX=	.tar.Z
 

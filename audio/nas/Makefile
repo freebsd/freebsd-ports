@@ -3,13 +3,15 @@
 # Date created:		03 Nov 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1995/10/04 10:31:58 asami Exp $
+# $Id: Makefile,v 1.5 1996/10/03 13:42:48 adam Exp $
 #
 
 DISTNAME=	nas-1.2p5
 PKGNAME=	nas-1.2.5
-CATEGORIES+=	audio
+CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.x.org/contrib/audio/nas/
+
+MAINTAINER=	jkh@FreeBSD.org
 
 USE_IMAKE=	yes
 ALL_TARGET=	World
