@@ -30,6 +30,8 @@ NOMAN=		YES
 KMOD=		rtc
 .if ${OSVERSION} < 500002
 KMODDEPS=	linux
+.else
+MODULE_DEPEND=	linux
 .endif
 CDEV_MAJOR?=	202
 DEVNAME= 	${KMOD}
