@@ -1,0 +1,25 @@
+lib/libapreq.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include/apache_request.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include/apache_cookie.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include/multipart_buffer.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/libapreq.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/libapreq.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Request/Request.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Request/Request.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Cookie/Cookie.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Cookie/Cookie.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/libapreq.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/libapreq.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Request.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Cookie.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/.packlist
+@exec ldconfig -m lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq
+@exec ldconfig -m lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Request
+@exec ldconfig -m lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Cookie
+@unexec /sbin/ldconfig -R
+@unexec /sbin/ldconfig -R
+@unexec /sbin/ldconfig -R
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Request
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Cookie
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq
