@@ -1,12 +1,12 @@
-# New ports collection makefile for: jp-jlatex209
+# New ports collection makefile for: ja-jlatex209
 # Version required:	a1.7-n1.52
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1997/07/13 18:49:17 max Exp $
+# $Id: Makefile,v 1.4 1997/08/22 11:36:26 asami Exp $
 #
 
-DISTNAME?=	jp-jlatex209-a17-n152
+DISTNAME?=	ja-jlatex209-a17-n152
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/TeX/NTT-JTeX/:old/ \
