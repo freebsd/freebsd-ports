@@ -1,0 +1,7 @@
+sudosh is a sudo shell. Sudosh provides a logged root shell that can
+be used for auditing. It works just like a VCR, records the root shell
+session and offers real-time playback. Sudosh is designed to be used
+with sudo in an enterprise environment.
+
+WWW: http://sourceforge.net/projects/sudosh/
+     http://freshmeat.net/projects/sudosh/

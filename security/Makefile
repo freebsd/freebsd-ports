@@ -435,6 +435,7 @@
     SUBDIR += subweb
     SUBDIR += sudo
     SUBDIR += sudoscript
+    SUBDIR += sudosh
     SUBDIR += super
     SUBDIR += swatch
     SUBDIR += tea-total
