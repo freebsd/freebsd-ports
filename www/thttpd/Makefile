@@ -29,9 +29,9 @@ MAN8=		thttpd.8 redirect.8 ssi.8 syslogtocern.8
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/thttpd ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/thttpd.8 ${PREFIX}/man/man8
-	@${INSTALL} -d -o root -g wheel -m 0775 ${PREFIX}/www
-	@${INSTALL} -d -o root -g wheel -m 0775 ${PREFIX}/www/data
-	@${INSTALL} -d -o root -g wheel -m 0775 ${PREFIX}/www/logs
+	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/www
+	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/www/data
+	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/www/logs
 	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/www/cgi-bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/redirect ${PREFIX}/www/cgi-bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/ssi ${PREFIX}/www/cgi-bin/
