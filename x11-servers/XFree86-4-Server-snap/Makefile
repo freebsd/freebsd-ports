@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.1.0
@@ -82,28 +82,18 @@ HasXdmAuth?=		DEFAULT
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 ExtendedInputDevices?=	DEFAULT
-.if !defined(I_WANT_TO_FIX_BUILDING_DRI_MODULES)
-BuildXF86DRI=		NO
-BuildXF86DRM=		NO
-PLIST_SUB+=		DRI="@comment "
-.else
-.if ${OSVERSION} < 500013 && ${MACHINE} != alpha
 .if (exists(/sys) || exists(/usr/src/sys))
 BuildXF86DRI=		YES
-BuildXF86DRM=		YES
 PLIST_SUB+=		DRI=""
 .else
-_pre-fetch::
+pre-fetch::
 	@${ECHO_MSG} "DRI would not build: kernel source required in /sys."
-.endif	# have /sys
-.else
 BuildXF86DRI=		NO
-BuildXF86DRM=		NO
 PLIST_SUB+=		DRI="@comment "
-_pre-fetch::
-	@${ECHO_MSG} "DRI would not build: incompatible with SMPng and alpha"
-.endif	# PRE_SMPNG && !alpha
-.endif	# DRI is totally broken
+.endif	# have /sys
+# DRM and DRI kernel modules bundled with 4.1.0 are broken
+BuildXF86DRM=		NO
+PLIST_SUB+=		DRI_KMOD="@comment "
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386:=""
@@ -139,27 +129,30 @@ MAN4+=		citron.4 \
 PLIST_SUB+=	XIE:="@comment "
 .endif
 
-.if !defined(INCOMPATIBLE_WITH_4_1_0)
+.if ${BuildXF86DRI} == YES
 .if !defined(WITH_MATROX_GXX_DRIVER)
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
-_pre-fetch::
+pre-fetch::
 	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official Matrox drivers for"
-	@${ECHO_MSG} "the G200, G400 and G450 graphic adapters."
+	@${ECHO_MSG} "the G200, G400, G450 and G550 graphic adapters."
 .else
+NO_PACKAGE=	"Matrox drivers may not be distributed."
 HaveMatroxHal=		YES
-MGA_DRIVER_VERSION=	1_2_0beta
-MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION:S/beta//}/
-DISTFILES+=		mga-${MGA_DRIVER_VERSION}.tgz
-EXTRACT_ONLY=		X410src-1.tgz
+MGA_DRIVER_VERSION=	133_143
+MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION}/
+DISTFILES+=		mga-${MGA_DRIVER_VERSION}-source.tgz
 PLIST_SUB+=		MATROX=""
 post-patch::
-	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga \
-		${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga.old
-	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/mga-${MGA_DRIVER_VERSION}.tgz \
-		-C ${WRKSRC}/programs/Xserver/hw/xfree86/drivers
+	@(cd ${WRKSRC}; \
+	  ${MV} programs/Xserver/hw/xfree86/drivers/mga \
+		programs/Xserver/hw/xfree86/drivers/mga.old; \
+	  ${MV} ../mgasource/mga-1.4.3/mga programs/Xserver/hw/xfree86/drivers)
+post-install::
+	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README ${PREFIX}/lib/X11/doc/README.mga
+	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README_HALLIB ${PREFIX}/lib/X11/doc/README.mga_HALLIB
 .endif	# !WITH_MATROX_GXX_DRIVER
-.endif	# INCOMPATIBLE_WITH_4_1_0
+.endif
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
@@ -176,7 +169,7 @@ post-build:
 .endif
 	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
 
-post-install:
+post-install::
 	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
 	strip ${PREFIX}/bin/XFree86
 

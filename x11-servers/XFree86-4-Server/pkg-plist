@@ -30,6 +30,8 @@ lib/X11/doc/README.dps
 lib/X11/doc/README.fonts
 %%I386:%%lib/X11/doc/README.i740
 %%I386:%%lib/X11/doc/README.i810
+%%MATROX%%lib/X11/doc/README.mga
+%%MATROX%%lib/X11/doc/README.mga_HALLIB
 lib/X11/doc/README.mouse
 %%I386:%%lib/X11/doc/README.newport
 %%I386:%%lib/X11/doc/README.r128
@@ -44,11 +46,11 @@ lib/X11/etc/Xinstall.sh
 lib/X11/etc/sun.termcap
 lib/X11/etc/sun.terminfo
 lib/X11/etc/xmodmap.std
-%%DRI%%lib/X11/kernel/drm.ko
-%%DRI%%lib/X11/kernel/gamma.ko
-%%DRI%%lib/X11/kernel/mga.ko
-%%DRI%%lib/X11/kernel/tdfx.ko
-%%DRI%%@dirrm lib/X11/kernel
+%%DRI_KMOD%%lib/X11/kernel/drm.ko
+%%DRI_KMOD%%lib/X11/kernel/gamma.ko
+%%DRI_KMOD%%lib/X11/kernel/mga.ko
+%%DRI_KMOD%%lib/X11/kernel/tdfx.ko
+%%DRI_KMOD%%@dirrm lib/X11/kernel
 lib/X11/xserver/SecurityPolicy
 lib/modules/codeconv/libARABIC.a
 lib/modules/codeconv/libARMSCII8.a
@@ -83,6 +85,7 @@ lib/modules/codeconv/libVISCII.a
 %%DRI%%lib/modules/dri/gamma_dri.so
 %%I386:%%%%DRI%%lib/modules/dri/i810_dri.so
 %%DRI%%lib/modules/dri/mga_dri.so
+%%DRI%%lib/modules/dri/radeon_dri.so
 %%I386:%%%%DRI%%lib/modules/dri/r128_dri.so
 %%I386:%%%%DRI%%lib/modules/dri/sis_dri.so
 %%I386:%%lib/modules/drivers/apm_drv.o
