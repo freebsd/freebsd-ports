@@ -291,7 +291,6 @@
     SUBDIR += libgtop
     SUBDIR += libgtop2
     SUBDIR += libhash
-    SUBDIR += libmalloc
     SUBDIR += libmba
     SUBDIR += libmcve
     SUBDIR += libol
