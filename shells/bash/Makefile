@@ -38,7 +38,7 @@ post-install:
 	${INSTALL_MAN}  \
 		${WRKDIR}/doc/article.txt  \
 		${DOCSDIR}
-	${BZIP2_CMD} ${DOCSDIR}/*.ps
+	${BZIP2_CMD} -f ${DOCSDIR}/*.ps
 .endif
 
 .include <bsd.port.post.mk>
