@@ -2210,6 +2210,7 @@ freetds-msdblib	ports/databases/freetds-msdblib
 freetxl		ports/lang/freetxl
 freetype	ports/print/freetype
 freetype2	ports/print/freetype2
+freevo		ports/multimedia/freevo
 freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
