@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.108 1998/05/22 02:08:40 mph Exp $
+# $Id: Makefile,v 1.109 1998/05/25 03:06:59 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -48,6 +48,7 @@
     SUBDIR += mprof
     SUBDIR += nana
     SUBDIR += nasm
+    SUBDIR += ncurses
     SUBDIR += noweb
     SUBDIR += omniBroker
     SUBDIR += omniORB
