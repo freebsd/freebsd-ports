@@ -6,4 +6,8 @@ Edit
   %%PREFIX%%/etc/openldap/ldap.conf
 to change the system-wide client defaults.
 
+Try `man ldap.conf' and visit the OpenLDAP FAQ-O-Matic at
+  http://www.OpenLDAP.org/faq/index.cgi?file=3
+for more information.
+
 ************************************************************

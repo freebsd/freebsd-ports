@@ -1,0 +1,220 @@
+--- tests/scripts/test020-syncreplication-cascading	Mon Oct  6 16:57:32 2003
++++ tests/scripts/test020-syncreplication-cascading	Sun Oct 19 15:33:58 2003
+@@ -39,13 +39,14 @@
+ mkdir $P3REPLDIR
+ 
+ SAVE=$BACKEND
+-if test $BACKEND = ldbm; then
+-	if test $SYNCREPL = no; then
++if test $SYNCREPL = no; then
++	if test $BACKEND = ldbm; then
+ 		echo "Sync replication requires back-bdb or back-hdb"
+ 		exit 0
+ 	fi
+-	BACKEND=$SYNCREPL
++	SYNCREPL=$BACKEND
+ fi
++BACKEND=$SYNCREPL
+ echo "Starting master slapd on TCP/IP port $PORT..."
+ . $CONFFILTER $BACKEND $MONITORDB < $SRMASTERCONF > $DBCONF
+ $SLAPD -f $DBCONF -h $MASTERURI -d $LVL $TIMING > $MASTERLOG 2>&1 &
+@@ -54,12 +55,8 @@
+     echo PID $PID
+     read foo
+ fi
+-BACKEND=$SAVE
+-
+-echo "Waiting 5 seconds to wait for master to start..."
+-sleep 5
+ 
+-echo "Using ldapsearch to check that master slapd is running..."
++echo "Using ldapsearch to check that master slapd PID $PID is running..."
+ for i in 0 1 2 3 4 5; do
+ 	$LDAPSEARCH -s base -b "$MONITOR" -h $LOCALHOST -p $PORT \
+ 		'objectclass=*' > /dev/null 2>&1
+@@ -71,6 +68,12 @@
+ 	sleep 5
+ done
+ 
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID
++	exit $RC
++fi
++
+ echo "Using ldapadd to create the context prefix entry in the master..."
+ $LDAPADD -D "$MANAGERDN" -h $LOCALHOST -p $PORT -w $PASSWD < \
+ 	$LDIFORDEREDCP > /dev/null 2>&1
+@@ -81,14 +84,6 @@
+ 	exit $RC
+ fi
+ 
+-SAVE=$BACKEND
+-if test $BACKEND = ldbm; then
+-	if test $SYNCREPL = no; then
+-		echo "Sync replication requires back-bdb or back-hdb"
+-		exit 0
+-	fi
+-	BACKEND=$SYNCREPL
+-fi
+ echo "Starting R1 slave slapd on TCP/IP port $R1SLAVEPORT..."
+ . $CONFFILTER $BACKEND $MONITORDB < $R1SRSLAVECONF > $R1REPLCONF
+ $SLAPD -f $R1REPLCONF -h $R1SLAVEURI -d $LVL $TIMING > $R1SLAVELOG 2>&1 &
+@@ -97,9 +92,8 @@
+     echo SLAVE R1 PID $R1SLAVEPID
+     read foo
+ fi
+-BACKEND=$SAVE
+ 
+-echo "Using ldapsearch to check that R1 slave slapd is running..."
++echo "Using ldapsearch to check that R1 slave slapd PID $R1SLAVEPID is running..."
+ for i in 0 1 2 3 4 5; do
+ 	$LDAPSEARCH -s base -b "$MONITOR" -h $LOCALHOST -p $R1SLAVEPORT \
+ 		'objectclass=*' > /dev/null 2>&1
+@@ -111,9 +105,13 @@
+ 	sleep 5
+ done
+ 
+-echo "Waiting for the R1 slave to replicate..."
+-sleep 10
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID $R1SLAVEPID
++	exit $RC
++fi
+ 
++BACKEND=$SAVE
+ echo "Starting R2 slave slapd on TCP/IP port $R2SLAVEPORT..."
+ . $CONFFILTER $BACKEND $MONITORDB < $R2SRSLAVECONF > $R2REPLCONF
+ $SLAPD -f $R2REPLCONF -h $R2SLAVEURI -d $LVL $TIMING > $R2SLAVELOG 2>&1 &
+@@ -123,7 +121,7 @@
+     read foo
+ fi
+ 
+-echo "Using ldapsearch to check that the R2 slave slapd is running..."
++echo "Using ldapsearch to check that the R2 slave slapd PID $R2SLAVEPID is running..."
+ for i in 0 1 2 3 4 5; do
+ 	$LDAPSEARCH -s base -b "$MONITOR" -h $LOCALHOST -p $R2SLAVEPORT \
+ 		'objectclass=*' > /dev/null 2>&1
+@@ -135,17 +133,13 @@
+ 	sleep 5
+ done
+ 
+-echo "Waiting for the R2 slave to replicate..."
+-sleep 10
+-
+-SAVE=$BACKEND
+-if test $BACKEND = ldbm; then
+-	if test $SYNCREPL = no; then
+-		echo "Sync replication requires back-bdb or back-hdb"
+-		exit 0
+-	fi
+-	BACKEND=$SYNCREPL
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID $R1SLAVEPID $R2SLAVEPID
++	exit $RC
+ fi
++
++BACKEND=$SYNCREPL
+ echo "Starting P1 slave slapd on TCP/IP port $P1SLAVEPORT..."
+ . $CONFFILTER $BACKEND $MONITORDB < $P1SRSLAVECONF > $P1REPLCONF
+ $SLAPD -f $P1REPLCONF -h $P1SLAVEURI -d $LVL $TIMING > $P1SLAVELOG 2>&1 &
+@@ -154,9 +148,8 @@
+     echo SLAVE P1 PID $P1SLAVEPID
+     read foo
+ fi
+-BACKEND=$SAVE
+ 
+-echo "Using ldapsearch to check that the P1 slave slapd is running..."
++echo "Using ldapsearch to check that the P1 slave slapd PID $P1SLAVEPID is running..."
+ for i in 0 1 2 3 4 5; do
+ 	$LDAPSEARCH -s base -b "$MONITOR" -h $LOCALHOST -p $P1SLAVEPORT \
+ 		'objectclass=*' > /dev/null 2>&1
+@@ -168,9 +161,13 @@
+ 	sleep 5
+ done
+ 
+-echo "Waiting for the P1 slave to replicate..."
+-sleep 10
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID $R1SLAVEPID $R2SLAVEPID $P1SLAVEPID
++	exit $RC
++fi
+ 
++BACKEND=$SAVE
+ echo "Starting P2 slave slapd on TCP/IP port $P2SLAVEPORT..."
+ . $CONFFILTER $BACKEND $MONITORDB < $P2SRSLAVECONF > $P2REPLCONF
+ $SLAPD -f $P2REPLCONF -h $P2SLAVEURI -d $LVL $TIMING > $P2SLAVELOG 2>&1 &
+@@ -180,7 +177,7 @@
+     read foo
+ fi
+ 
+-echo "Using ldapsearch to check that the P2 slave slapd is running..."
++echo "Using ldapsearch to check that the P2 slave slapd PID $P2SLAVEPID is running..."
+ for i in 0 1 2 3 4 5; do
+ 	$LDAPSEARCH -s base -b "$MONITOR" -h $LOCALHOST -p $P2SLAVEPORT \
+ 		'objectclass=*' > /dev/null 2>&1
+@@ -192,6 +189,12 @@
+ 	sleep 5
+ done
+ 
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID $R1SLAVEPID $R2SLAVEPID $P1SLAVEPID $P2SLAVEPID
++	exit $RC
++fi
++
+ echo "Starting P3 slave slapd on TCP/IP port $P3SLAVEPORT..."
+ . $CONFFILTER $BACKEND $MONITORDB < $P3SRSLAVECONF > $P3REPLCONF
+ $SLAPD -f $P3REPLCONF -h $P3SLAVEURI -d $LVL $TIMING > $P3SLAVELOG 2>&1 &
+@@ -201,7 +204,7 @@
+     read foo
+ fi
+ 
+-echo "Using ldapsearch to check that the P3 slave slapd is running..."
++echo "Using ldapsearch to check that the P3 slave slapd PID $P3SLAVEPID is running..."
+ for i in 0 1 2 3 4 5; do
+ 	$LDAPSEARCH -s base -b "$MONITOR" -h $LOCALHOST -p $P3SLAVEPORT \
+ 		'objectclass=*' > /dev/null 2>&1
+@@ -213,6 +216,12 @@
+ 	sleep 5
+ done
+ 
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID $R1SLAVEPID $R2SLAVEPID $P1SLAVEPID $P2SLAVEPID $P3SLAVEPID
++	exit $RC
++fi
++
+ echo "Using ldapadd to populate the master directory..."
+ $LDAPADD -D "$MANAGERDN" -h $LOCALHOST -p $PORT -w $PASSWD < \
+ 	$LDIFORDEREDNOCP > /dev/null 2>&1
+@@ -347,7 +356,7 @@
+ RC=$?
+ 
+ if test $RC != 0 ; then
+-	echo "ldapsearch failed at R1 slave ($RC)!"
++	echo "ldapsearch failed at P1 slave ($RC)!"
+ 	kill -HUP $PID $R1SLAVEPID $R2SLAVEPID $P1SLAVEPID $P2SLAVEPID $P3SLAVEPID
+ 	exit $RC
+ fi
+@@ -358,7 +367,7 @@
+ RC=$?
+ 
+ if test $RC != 0 ; then
+-	echo "ldapsearch failed at R2 slave ($RC)!"
++	echo "ldapsearch failed at P2 slave ($RC)!"
+ 	kill -HUP $PID $R1SLAVEPID $R2SLAVEPID $P1SLAVEPID $P2SLAVEPID $P3SLAVEPID
+ 	exit $RC
+ fi
+@@ -369,7 +378,7 @@
+ RC=$?
+ 
+ if test $RC != 0 ; then
+-	echo "ldapsearch failed at R2 slave ($RC)!"
++	echo "ldapsearch failed at P3 slave ($RC)!"
+ 	kill -HUP $PID $R1SLAVEPID $R2SLAVEPID $P1SLAVEPID $P2SLAVEPID $P3SLAVEPID
+ 	exit $RC
+ fi

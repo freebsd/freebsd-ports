@@ -1,38 +1,9 @@
 @comment $FreeBSD$
-@unexec %%RC_DIR%%/slapd%%RC_SUFX%% stop 2>/dev/null || true
-@unexec %%RC_DIR%%/slurpd%%RC_SUFX%% stop 2>/dev/null || true
-@unexec if cmp -s %D/etc/openldap/schema/corba.schema %D/etc/openldap/schema/corba.schema.default; then rm -f %D/etc/openldap/schema/corba.schema; fi
-etc/openldap/schema/corba.schema.default
-@exec [ -f %B/corba.schema ] || cp %B/%f %B/corba.schema
-@unexec if cmp -s %D/etc/openldap/schema/core.schema %D/etc/openldap/schema/core.schema.default; then rm -f %D/etc/openldap/schema/core.schema; fi
-etc/openldap/schema/core.schema.default
-@exec [ -f %B/core.schema ] || cp %B/%f %B/core.schema
-@unexec if cmp -s %D/etc/openldap/schema/cosine.schema %D/etc/openldap/schema/cosine.schema.default; then rm -f %D/etc/openldap/schema/cosine.schema; fi
-etc/openldap/schema/cosine.schema.default
-@exec [ -f %B/cosine.schema ] || cp %B/%f %B/cosine.schema
-@unexec if cmp -s %D/etc/openldap/schema/inetorgperson.schema %D/etc/openldap/schema/inetorgperson.schema.default; then rm -f %D/etc/openldap/schema/inetorgperson.schema; fi
-etc/openldap/schema/inetorgperson.schema.default
-@exec [ -f %B/inetorgperson.schema ] || cp %B/%f %B/inetorgperson.schema
-@unexec if cmp -s %D/etc/openldap/schema/java.schema %D/etc/openldap/schema/java.schema.default; then rm -f %D/etc/openldap/schema/java.schema; fi
-etc/openldap/schema/java.schema.default
-@exec [ -f %B/java.schema ] || cp %B/%f %B/java.schema
-@unexec if cmp -s %D/etc/openldap/schema/krb5-kdc.schema %D/etc/openldap/schema/krb5-kdc.schema.default; then rm -f %D/etc/openldap/schema/krb5-kdc.schema; fi
-etc/openldap/schema/krb5-kdc.schema.default
-@exec [ -f %B/krb5-kdc.schema ] || cp %B/%f %B/krb5-kdc.schema
-@unexec if cmp -s %D/etc/openldap/schema/misc.schema %D/etc/openldap/schema/misc.schema.default; then rm -f %D/etc/openldap/schema/misc.schema; fi
-etc/openldap/schema/misc.schema.default
-@exec [ -f %B/misc.schema ] || cp %B/%f %B/misc.schema
-@unexec if cmp -s %D/etc/openldap/schema/nis.schema %D/etc/openldap/schema/nis.schema.default; then rm -f %D/etc/openldap/schema/nis.schema; fi
-etc/openldap/schema/nis.schema.default
-@exec [ -f %B/nis.schema ] || cp %B/%f %B/nis.schema
-@unexec if cmp -s %D/etc/openldap/schema/openldap.schema %D/etc/openldap/schema/openldap.schema.default; then rm -f %D/etc/openldap/schema/openldap.schema; fi
-etc/openldap/schema/openldap.schema.default
-@exec [ -f %B/openldap.schema ] || cp %B/%f %B/openldap.schema
+@unexec %%RC_DIR%%/slapd%%RC_SUFX%% stop 2>&1 >/dev/null || true
+@unexec %%RC_DIR%%/slurpd%%RC_SUFX%% stop 2>&1 >/dev/null || true
 @unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
 etc/openldap/slapd.conf.default
 @exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
-@unexec rmdir %D/etc/openldap/schema 2>/dev/null || true
-@unexec rmdir %D/etc/openldap 2>/dev/null || true
 libexec/slapd
 libexec/slurpd
 sbin/slapadd
@@ -42,9 +13,6 @@ sbin/slappasswd
 @exec mkdir -p %%LDAP_RUN_DIR%%
 @exec mkdir -p %%DATABASEDIR%%
 @exec mkdir -p %%SLURPDIR%%
-@unexec rmdir %%LDAP_RUN_DIR%%
+@unexec rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true
 @unexec rmdir %%DATABASEDIR%% 2>/dev/null || true
 @unexec rmdir %%SLURPDIR%% 2>/dev/null || true
-@cwd %%RC_DIR%%
-slapd%%RC_SUFX%%
-slurpd%%RC_SUFX%%

@@ -14,7 +14,7 @@ Then start the server with
 or reboot.
 
 Try `man slapd' and the online manual at
-  http://www.OpenLDAP.org/doc/admin20/
+  http://www.OpenLDAP.org/doc/admin21/
 for more information.
   
 NOTE: Some variable names have been changed to conform with rc.subr(8)
