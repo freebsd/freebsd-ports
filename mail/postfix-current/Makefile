@@ -32,7 +32,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A secure alternative to widely-used Sendmail
 
-PORTVERSIONRAW=	2.3-20050304
+PORTVERSIONRAW=	2.3-20050308
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 NO_LATEST_LINK=	yes
