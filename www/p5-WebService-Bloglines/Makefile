@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	WebService-Bloglines
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WebService
@@ -17,11 +17,19 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy-to-use Interface for Bloglines Web Services
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
+		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
+		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	WebService::Bloglines.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# XML::RSS -> XML::Parser -> Test::Manifest which needs 5.6
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
