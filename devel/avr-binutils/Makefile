@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.10.1
+PORTVERSION=	2.11
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/binutils/releases/ \
-		ftp://sourceware.cygnus.com/pub/binutils/releases/
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	avr-
-DISTNAME=	binutils-${PORTVERSION}
 
 MAINTAINER=	joerg@freebsd.org
 
