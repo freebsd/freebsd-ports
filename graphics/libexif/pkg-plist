@@ -1,0 +1,13 @@
+lib/libexif.so.5
+lib/libexif.so
+lib/libexif.la
+lib/libexif.a
+include/libexif/exif-byte-order.h
+include/libexif/exif-content.h
+include/libexif/exif-data.h
+include/libexif/exif-entry.h
+include/libexif/exif-format.h
+include/libexif/exif-result.h
+include/libexif/exif-tag.h
+include/libexif/exif-utils.h
+@dirrm include/libexif 
