@@ -12,6 +12,7 @@
     SUBDIR += libsvm
     SUBDIR += mayavi
     SUBDIR += mmtk
+    SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
     SUBDIR += oases
