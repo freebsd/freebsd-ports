@@ -1,0 +1,22 @@
+bin/ml-burg
+bin/ml-lex
+bin/ml-yacc
+bin/sml
+bin/sml-cm
+lib/sml-nj/bin/.heap/sml.x86-bsd
+lib/sml-nj/bin/.heap/sml-cm.x86-bsd
+lib/sml-nj/bin/.heap/ml-yacc.x86-bsd
+lib/sml-nj/bin/.heap/ml-lex.x86-bsd
+lib/sml-nj/bin/.heap/ml-burg.x86-bsd
+lib/sml-nj/bin/.run/run.x86-freebsd
+lib/sml-nj/bin/.arch-n-opsys
+lib/sml-nj/bin/.run-sml
+lib/sml-nj/bin/sml
+lib/sml-nj/bin/sml-cm
+lib/sml-nj/bin/ml-yacc
+lib/sml-nj/bin/ml-lex
+lib/sml-nj/bin/ml-burg
+@dirrm lib/sml-nj/bin/.run
+@dirrm lib/sml-nj/bin/.heap
+@dirrm lib/sml-nj/bin
+@dirrm lib/sml-nj

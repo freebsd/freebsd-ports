@@ -1,0 +1,7 @@
+A Standard ML implementation from Bell-Labs.  Implements the SML '97 definition
+including the new Basis library with a few minor omissions and discrepancies.
+
+See also:    http://cm.bell-labs.com/cm/cs/what/smlnj/index.html
+
+- Joseph Koshy
+  <jkoshy@freebsd.org>
