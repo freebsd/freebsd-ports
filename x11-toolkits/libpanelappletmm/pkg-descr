@@ -1,5 +1,3 @@
-libpanelappletmm provides a C++ binding for the panel applet API.
-This API is simpler and more object oriented than
-the underlying C API.
+This is a set of thin C++ wrappers for libpanelapplet (part of gnomepanel).
 
 WWW: http://www.gtkmm.org/
