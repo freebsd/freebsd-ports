@@ -1,0 +1,11 @@
+--- System/Common/Makefile.orig	Fri Oct 22 00:26:32 1999
++++ System/Common/Makefile	Sat May 29 23:37:05 2004
+@@ -33,7 +33,7 @@
+ 	@echo "-- in the top level Makefile. Please do not edit it" >> $(TMPFILE)
+ 	@echo "#define CONFIG_DEFAULT_PLATFORM \"$(DEFAULT_PLATFORM)\"" >> $(TMPFILE)
+ 	@echo -n "#define CONFIG_PLATFORMS \"" >> $(TMPFILE)
+-	@echo -n                           $(PLATFORMS) | sed "s/ //;s/,/\",\"/" >> $(TMPFILE)
++	@echo -n                           $(PLATFORMS:S/ //g:S/,/","/g) >> $(TMPFILE)
+ 	@echo                                                                    "\"" >> $(TMPFILE)
+ 	@echo "#include \"CONFIG.proto\"" >> $(TMPFILE)
+ 	@$(CPP) -undef $(TMPFILE) > CONFIG
