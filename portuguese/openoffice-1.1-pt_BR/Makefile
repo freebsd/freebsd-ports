@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice for Portuguese (Brazil) language
+# New ports collection makefile for:	OpenOffice.org for Portuguese (Brazil) language
 # Date created:		Tue Jun 11 16:47:21 UTC 2003
 # Whom:		Martin Blapp <mbr@FreeBSD.org>, Mario Ferreira <lioux@FreeBSD.org> and NAKATA Maho <maho@FreeBSD.org>
 #

@@ -1,5 +1,5 @@
 # New ports collection makefile for:
-# OpenOffice Spell Checking Dictionary
+# OpenOffice.org Spell Checking Dictionary
 # for Russian (Russia) language
 # Date created:		Tue Aug 10 24:00:00 UTC 2002
 # Whom:			Anton Yudin <toha@toha.org.ua>

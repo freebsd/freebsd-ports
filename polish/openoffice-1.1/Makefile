@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice for Polish language
+# New ports collection makefile for:	OpenOffice.org for Polish language
 # Date created:		Sun Nov 9 09:17:32 JST 2003
 # Whom:		Martin Blapp <mbr@FreeBSD.org>, Mario Ferreira <lioux@FreeBSD.org> and NAKATA Maho <maho@FreeBSD.org>
 #

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice for Finnish language
+# New ports collection makefile for:	OpenOffice.org for Finnish language
 # Date created:		Sun Nov  9 09:33:23 JST 2003
 # Whom:			NAKATA Maho <maho@FreeBSD.org>
 #

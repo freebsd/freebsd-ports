@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice for Arabic language
+# New ports collection makefile for:	OpenOffice.org for Arabic language
 # Date created:		Nov 9 08:20:00 JST 2003
 # Whom:		Martin Blapp <mbr@FreeBSD.org>, Mario Ferreira <lioux@FreeBSD.org>, and NAKATA Maho <maho@FreeBSD.org>
 #

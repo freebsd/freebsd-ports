@@ -1,4 +1,4 @@
-# New ports collection makefile for: OpenOffice(developer version) for Japanese language
+# New ports collection makefile for: OpenOffice.org for Japanese language
 # Date created:		Wed Apr 9 12:32:47 JST 2003
 # Whom:		Maho Nakata <maho@FreeBSD.org>
 #
