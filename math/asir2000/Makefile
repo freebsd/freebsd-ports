@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20020108
+PORTVERSION=	20020328
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.asir.org/pub/asir/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ASIR_DOC}
@@ -14,49 +14,55 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	saito@asir.org
 
-.if defined(USE_LAPACK)
-LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack
-.endif
-.if defined(USE_OLDPARI)
-LIB_DEPENDS+=	pari.1:${PORTSDIR}/math/pari
-.else
-LIB_DEPENDS+=	pari-2.2.0:${PORTSDIR}/math/pari-devel
-.endif
-
-.if defined(USE_LAPACK)
-LAPACK=	-lapack
-.else
-LAPACK=
-.endif
-.if defined(USE_OLDPARI)
-PARI=	-oldpari
-.else
-PARI=	-pari
-.endif
 WRKSRC=		${WRKDIR}/asir2000
 PREFIX?=	${LOCALBASE}
 USE_IMAKE=	YES
 HAS_CONFIGURE=	YES
+CONFIGURE_ENV=	OLD_PARI_VERSION=${OLD_PARI_VERSION} \
+		PARI_VERSION=${PARI_VERSION} \
+		LAPACK_VERSION=${LAPACK_VERSION}
 CONFIGURE_ARGS= -oxhome ${PREFIX} -plot ${PARI} -fep -interval ${LAPACK}
-ASIR_DOC=	asirdoc-${PORTVERSION}.tar.gz
+ASIR_DOC_VERSION=	20010313
+ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
 
 LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul fctrdata fctrtest \
 		fff gr ifplot katsura launch mat nf num primdec \
 		ratint robot solve sp sturm xm
+LIB_DEPENDS=	# dummy
 
-pre-everything::
-	@${ECHO_MSG} ""
-.if !defined(USE_OLDPARI)
-	@${ECHO_MSG} "If you build with the older pari 2.1.1 library,"
-	@${ECHO_MSG} "    make USE_OLDPARI=yes"
-	@${ECHO_MSG} "otherwise it will link the newer pari 2.2.0 library."
+OLD_PARI_DIR=	${PORTSDIR}/math/pari
+OLD_PARI_VERSION=	`${GREP} PORTVERSION ${OLD_PARI_DIR}/Makefile | cut -f 2`
+PARI_DIR=	${PORTSDIR}/math/pari-devel
+PARI_VERSION=	`${GREP} PORTVERSION ${PARI_DIR}/Makefile | cut -f 2`
+
+.if defined(USE_OLDPARI)
+LIB_DEPENDS+=	pari.1:${OLD_PARI_DIR}
+PARI=	-oldpari
+.else
+LIB_DEPENDS+=	pari-2.2.0:${PARI_DIR}
+PARI=	-pari
 .endif
-	@${ECHO_MSG} ""
+
+LAPACK_DIR=	${PORTSDIR}/math/lapack
+LAPACK_VERSION=	`${GREP} PORTVERSION ${LAPACK_DIR}/Makefile | cut -f 2`
+
+.if defined(USE_LAPACK)
+LIB_DEPENDS+=	lapack.3:${LAPACK_DIR}
+LAPACK=	-lapack
+.else
+LAPACK=
+.endif
+
+pre-extract:
+.if !defined(USE_OLDPARI)
+	@${ECHO_MSG} "If you build the pari ${OLD_PARI_VERSION} library,"
+	@${ECHO_MSG} "    make USE_OLDPARI=yes"
+	@${ECHO_MSG} "otherwise link pari ${PARI_VERSION}"
+.endif
 .if !defined(USE_LAPACK)
-	@${ECHO_MSG} "To build with the \"LAPACK\" library,"
+	@${ECHO_MSG} "To build include \"LAPACK\" library,"
 	@${ECHO_MSG} "    make USE_LAPACK=yes"
 .endif
-	@${ECHO_MSG} ""
 
 pre-install:
 	@${MKDIR} ${DATADIR}
