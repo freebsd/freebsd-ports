@@ -16,3 +16,5 @@ lib/libtgraph.so.0.0.0
 lib/libtxml.so
 lib/libtxml.so.0
 lib/libtxml.so.0.0.0
+lib/tcl8.3/tgraph1.0/pkgIndex.tcl
+@dirrm lib/tcl8.3/tgraph1.0
