@@ -51,10 +51,12 @@
   43.71    10.40 "luigi"                        # Pisa, Italy
 
   36.45   139.37 "dcs"				# ???
+
 # grog is in exile in Massachusetts
-# -34.14   138.77 "grog"                        # Echunga, SA Australia
+# -34.14   138.77 "grog"                         # Echunga, SA Australia
+# -34.53   138.35 "    ,newton,kris"             # Adelaide, SA Australia
   42.33   -71.08 "grog"				# Waltham MA
- -34.53   138.35 "    ,newton,kris"             # Adelaide, SA Australia
+ -34.53   138.35 "newton,kris"                  # Adelaide, SA Australia
  -37.7     144.9 "jb,danny,thepish"             # Melbourne, Vic Australia
 
   12.58    77.35 "jkoshy"                       # Bangalore, India
@@ -64,5 +66,5 @@
  -34       18    "     ,sheldonh"		# Cape Town, South Africa
   29.834  -95.00 "chris"                        # Houston, TX
   25.45   122.2 "vanilla"                       # Taipei, Taiwan
-  22.5    120.2 "foxfair"                       # ????, Taiwan
+  22.5    120.2 "       ,foxfair"               # ????, Taiwan
 
