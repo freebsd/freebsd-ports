@@ -5915,6 +5915,7 @@ scsi_pci	-d sys/pci src/sys/pci ncr.c ncrreg.h bt9xx.c aic7870.c
 scsi_system	-a scsi_base scsi_isa scsi_eisa scsi_pci scsi_i386 scsi_dev
 scsiformat	src/sbin/scsiformat
 scspd		src/usr.sbin/atm/scspd
+scud		ports/comms/scud
 scwm		ports/x11-wm/scwm
 scwm-icons	ports/graphics/scwm-icons
 sdcc		ports/devel/sdcc
