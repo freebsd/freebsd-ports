@@ -76,6 +76,7 @@
     SUBDIR += rcalc
     SUBDIR += ruby-bigfloat
     SUBDIR += ruby-bitvector
+    SUBDIR += ruby-gnuplot
     SUBDIR += ruby-narray
     SUBDIR += sc
     SUBDIR += scigraphica
