@@ -3,13 +3,13 @@
 # Whom:			ejc@bazzle.com
 # Version required:	1.0
 #
-# $Id: Makefile,v 1.2 1997/06/04 04:37:12 asami Exp $
+# $Id: Makefile,v 1.3 1997/06/29 11:39:45 obrien Exp $
 #
 
 DISTNAME=	OB-1.0
 PKGNAME=	omniBroker-1.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ooc.com/pub/OmniBroker/
+MASTER_SITES=	ftp://ftp.ooc.com/pub/OmniBroker/1.0/
 
 MAINTAINER=	ejc@bazzle.com
 
