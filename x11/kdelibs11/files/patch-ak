@@ -1,0 +1,14 @@
+--- kfmlib/kfm.cpp.orig	Wed Jun  2 10:07:42 1999
++++ kfmlib/kfm.cpp	Tue Jan 25 22:00:23 2000
+@@ -44,9 +44,9 @@
+   if (i==0)
+     {
+       // we are running local, so add the hostname
+-      char name[25];
++      char name[256];
+ 
+-      if (gethostname(name, 25) == 0)
++      if (gethostname(name, sizeof(name)) == 0)
+ 	d = name + d;
+     }
+ 
