@@ -13,7 +13,7 @@ lib/pluginwrapper/realplayer.so
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/flashplayer.xpt
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/libflashplayer.so
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/nphelix.so
-@unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/nphelix.so.xpt
+@unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/nphelix.xpt
 @unexec /bin/rmdir    %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
 @exec   /bin/mkdir -p %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
 @exec	/bin/ln -sf %%LOCALBASE%%/Acrobat5/Browsers/intellinux/nppdf.so     %%X11BASE%%/lib/browser_plugins/
