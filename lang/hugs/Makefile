@@ -15,7 +15,7 @@ MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
-BROKEN=	"Does not build on ${MACHINE_ARCH}"
+IGNORE=	"Does not build on ${MACHINE_ARCH}"
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
