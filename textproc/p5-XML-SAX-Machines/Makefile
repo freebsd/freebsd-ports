@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-SAX-Machines
-PORTVERSION=	0.4
+PORTVERSION=	0.41
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -26,7 +26,6 @@ MAN3=		XML::Filter::Distributor.3 XML::Filter::DocSplitter.3 \
 		XML::SAX::ByRecord.3 XML::SAX::EventMethodMaker.3 \
 		XML::SAX::Machine.3 XML::SAX::Machines.3 \
 		XML::SAX::Manifold.3 XML::SAX::Pipeline.3 XML::SAX::Tap.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
 .ifndef(NOPORTDOCS)
