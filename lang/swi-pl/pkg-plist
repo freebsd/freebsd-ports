@@ -2,11 +2,11 @@ bin/pl
 bin/plld
 bin/plrc
 include/SWI-Prolog.h
-lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/pl
-lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/plld
-lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/plrc
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/pl
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plld
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plrc
 lib/%%DISTNAME%%/bin/swipl
-lib/%%DISTNAME%%/boot.prc
+lib/%%DISTNAME%%/boot32.prc
 lib/%%DISTNAME%%/boot/apply.pl
 lib/%%DISTNAME%%/boot/autoload.pl
 lib/%%DISTNAME%%/boot/bags.pl
@@ -61,16 +61,16 @@ lib/%%DISTNAME%%/library/url.pl
 lib/%%DISTNAME%%/man/pl.1
 lib/%%DISTNAME%%/man/plld.1
 lib/%%DISTNAME%%/man/plrc.1
-lib/%%DISTNAME%%/runtime/%%PERL_ARCH%%/libpl.a
+lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%/libpl.a
 lib/%%DISTNAME%%/swipl
-@dirrm lib/%%DISTNAME%%/bin/%%PERL_ARCH%%
+@dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/bin
 @dirrm lib/%%DISTNAME%%/boot
 @dirrm lib/%%DISTNAME%%/include
-@dirrm lib/%%DISTNAME%%/lib/%%PERL_ARCH%%
+@dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/lib
 @dirrm lib/%%DISTNAME%%/library
 @dirrm lib/%%DISTNAME%%/man
-@dirrm lib/%%DISTNAME%%/runtime/%%PERL_ARCH%%
+@dirrm lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/runtime
 @dirrm lib/%%DISTNAME%%
