@@ -90,6 +90,7 @@
     SUBDIR += libXfixes
     SUBDIR += libXfont
     SUBDIR += libXi
+    SUBDIR += libXpm
     SUBDIR += libXrandr
     SUBDIR += libXrender
     SUBDIR += libXres
