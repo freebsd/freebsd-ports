@@ -8,7 +8,9 @@
 PORTNAME=	pantomime
 PORTVERSION=	1.0.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Development/
+MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Development/ \
+		http://extrovert.screwdriver.net/~extra/ \
+		ftp://ftp.tuwien.ac.at/z6/publishing/gnustep/libs/
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
