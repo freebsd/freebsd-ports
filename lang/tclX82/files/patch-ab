@@ -1,5 +1,5 @@
---- ../tcl/unix/Makefile.in.orig	Sat Nov 29 17:19:02 1997
-+++ ../tcl/unix/Makefile.in	Mon Sep 28 14:13:29 1998
+--- ../tcl/unix/Makefile.in.orig	Sun Dec  6 21:47:24 1998
++++ ../tcl/unix/Makefile.in	Fri Aug 27 10:34:27 1999
 @@ -124,7 +124,7 @@
  # If a link fails, purge the executable, as some systems leave invalid
  # executables around.
@@ -22,11 +22,11 @@
  #
  RUNTIME: tcl.tlib tcl.tndx tclx.tcl buildidx.tcl autoload.tcl help.tmp \
 -         dltest.tmp checkup
-+         checkup
-  
++	 checkup
+ 
  tcl.tlib: ${TLIB_SRCS} autoload.tcl
  	-rm -f tcl.tlib tcl.tndx
-@@ -316,9 +317,11 @@
+@@ -318,9 +319,11 @@
  	    ${INSTCOPY} ${TCLX_STLIB_NAME} ${INSTALL_ROOT}${TCLX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TCLX_INST_LIB}/${TCLX_STLIB_NAME}; \
  	fi

@@ -2,294 +2,294 @@ bin/tcl
 bin/tclhelp
 bin/wishx
 include/tclExtend.h
-lib/libtclx802.a
-lib/libtclx802.so.1.2
-lib/libtclx802.so
-lib/libtkx802.a
-lib/libtkx802.so.1.2
-lib/libtkx802.so
+lib/libtclx%%TCLX_SHORT_VER%%.a
+lib/libtclx%%TCLX_SHORT_VER%%.so.1
+lib/libtclx%%TCLX_SHORT_VER%%.so
+lib/libtkx%%TCLX_SHORT_VER%%.a
+lib/libtkx%%TCLX_SHORT_VER%%.so.1
+lib/libtkx%%TCLX_SHORT_VER%%.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-lib/tclX8.0.2/tclx.tcl
-lib/tclX8.0.2/tcl.tlib
-lib/tclX8.0.2/tcl.tndx
-lib/tclX8.0.2/buildidx.tcl
-lib/tclX8.0.2/autoload.tcl
-lib/tclX8.0.2/tclxConfig.sh
-lib/tclX8.0.2/pkgIndex.tcl
-lib/tclX8.0.2/tclXAppInit.c
-lib/tclX8.0.2/help/Tcl.brf
-lib/tclX8.0.2/help/TclX.brf
-lib/tclX8.0.2/help/help
-lib/tclX8.0.2/help/tcl/control/break
-lib/tclX8.0.2/help/tcl/control/case
-lib/tclX8.0.2/help/tcl/control/catch
-lib/tclX8.0.2/help/tcl/control/commandloop
-lib/tclX8.0.2/help/tcl/control/continue
-lib/tclX8.0.2/help/tcl/control/error
-lib/tclX8.0.2/help/tcl/control/eval
-lib/tclX8.0.2/help/tcl/control/exit
-lib/tclX8.0.2/help/tcl/control/for
-lib/tclX8.0.2/help/tcl/control/foreach
-lib/tclX8.0.2/help/tcl/control/if
-lib/tclX8.0.2/help/tcl/control/interp
-lib/tclX8.0.2/help/tcl/control/loop
-lib/tclX8.0.2/help/tcl/control/proc
-lib/tclX8.0.2/help/tcl/control/rename
-lib/tclX8.0.2/help/tcl/control/return
-lib/tclX8.0.2/help/tcl/control/safe
-lib/tclX8.0.2/help/tcl/control/source
-lib/tclX8.0.2/help/tcl/control/switch
-lib/tclX8.0.2/help/tcl/control/tclx_errorHandler
-lib/tclX8.0.2/help/tcl/control/try_eval
-lib/tclX8.0.2/help/tcl/control/uplevel
-lib/tclX8.0.2/help/tcl/control/while
-lib/tclX8.0.2/help/tcl/debug/cmdtrace
-lib/tclX8.0.2/help/tcl/debug/edprocs
-lib/tclX8.0.2/help/tcl/debug/profile
-lib/tclX8.0.2/help/tcl/debug/profrep
-lib/tclX8.0.2/help/tcl/debug/saveprocs
-lib/tclX8.0.2/help/tcl/events/after
-lib/tclX8.0.2/help/tcl/events/background-error
-lib/tclX8.0.2/help/tcl/events/fileevent
-lib/tclX8.0.2/help/tcl/events/mainloop
-lib/tclX8.0.2/help/tcl/events/update
-lib/tclX8.0.2/help/tcl/events/vwait
-lib/tclX8.0.2/help/tcl/files/bsearch
-lib/tclX8.0.2/help/tcl/files/chgrp
-lib/tclX8.0.2/help/tcl/files/chmod
-lib/tclX8.0.2/help/tcl/files/chown
-lib/tclX8.0.2/help/tcl/files/chroot
-lib/tclX8.0.2/help/tcl/files/close
-lib/tclX8.0.2/help/tcl/files/dup
-lib/tclX8.0.2/help/tcl/files/echo
-lib/tclX8.0.2/help/tcl/files/eof
-lib/tclX8.0.2/help/tcl/files/fblocked
-lib/tclX8.0.2/help/tcl/files/fcntl
-lib/tclX8.0.2/help/tcl/files/fconfigure
-lib/tclX8.0.2/help/tcl/files/fcopy
-lib/tclX8.0.2/help/tcl/files/file
-lib/tclX8.0.2/help/tcl/files/filename
-lib/tclX8.0.2/help/tcl/files/flock
-lib/tclX8.0.2/help/tcl/files/flush
-lib/tclX8.0.2/help/tcl/files/for_file
-lib/tclX8.0.2/help/tcl/files/for_recursive_glob
-lib/tclX8.0.2/help/tcl/files/fstat
-lib/tclX8.0.2/help/tcl/files/ftruncate
-lib/tclX8.0.2/help/tcl/files/funlock
-lib/tclX8.0.2/help/tcl/files/gets
-lib/tclX8.0.2/help/tcl/files/glob
-lib/tclX8.0.2/help/tcl/files/lgets
-lib/tclX8.0.2/help/tcl/files/link
-lib/tclX8.0.2/help/tcl/files/open
-lib/tclX8.0.2/help/tcl/files/pipe
-lib/tclX8.0.2/help/tcl/files/puts
-lib/tclX8.0.2/help/tcl/files/read
-lib/tclX8.0.2/help/tcl/files/read_file
-lib/tclX8.0.2/help/tcl/files/readdir
-lib/tclX8.0.2/help/tcl/files/recursive_glob
-lib/tclX8.0.2/help/tcl/files/seek
-lib/tclX8.0.2/help/tcl/files/select
-lib/tclX8.0.2/help/tcl/files/sync
-lib/tclX8.0.2/help/tcl/files/tell
-lib/tclX8.0.2/help/tcl/files/write_file
-lib/tclX8.0.2/help/tcl/filescan/scancontext
-lib/tclX8.0.2/help/tcl/filescan/scanfile
-lib/tclX8.0.2/help/tcl/filescan/scanmatch
-lib/tclX8.0.2/help/tcl/internation/catclose
-lib/tclX8.0.2/help/tcl/internation/catgets
-lib/tclX8.0.2/help/tcl/internation/catopen
-lib/tclX8.0.2/help/tcl/intro/keyedlists
-lib/tclX8.0.2/help/tcl/intro/syntax
-lib/tclX8.0.2/help/tcl/intro/tclsh
-lib/tclX8.0.2/help/tcl/keyedlists/keyldel
-lib/tclX8.0.2/help/tcl/keyedlists/keylget
-lib/tclX8.0.2/help/tcl/keyedlists/keylkeys
-lib/tclX8.0.2/help/tcl/keyedlists/keylset
-lib/tclX8.0.2/help/tcl/libraries/auto_commands
-lib/tclX8.0.2/help/tcl/libraries/auto_load_file
-lib/tclX8.0.2/help/tcl/libraries/auto_packages
-lib/tclX8.0.2/help/tcl/libraries/buildpackageindex
-lib/tclX8.0.2/help/tcl/libraries/convert_lib
-lib/tclX8.0.2/help/tcl/libraries/library
-lib/tclX8.0.2/help/tcl/libraries/load
-lib/tclX8.0.2/help/tcl/libraries/loadlibindex
-lib/tclX8.0.2/help/tcl/libraries/package
-lib/tclX8.0.2/help/tcl/libraries/packagelib
-lib/tclX8.0.2/help/tcl/libraries/pkgMkIndex
-lib/tclX8.0.2/help/tcl/libraries/searchpath
-lib/tclX8.0.2/help/tcl/libraries/unknown
-lib/tclX8.0.2/help/tcl/lists/concat
-lib/tclX8.0.2/help/tcl/lists/intersect
-lib/tclX8.0.2/help/tcl/lists/intersect3
-lib/tclX8.0.2/help/tcl/lists/join
-lib/tclX8.0.2/help/tcl/lists/lappend
-lib/tclX8.0.2/help/tcl/lists/lassign
-lib/tclX8.0.2/help/tcl/lists/lcontain
-lib/tclX8.0.2/help/tcl/lists/lempty
-lib/tclX8.0.2/help/tcl/lists/lindex
-lib/tclX8.0.2/help/tcl/lists/linsert
-lib/tclX8.0.2/help/tcl/lists/list
-lib/tclX8.0.2/help/tcl/lists/llength
-lib/tclX8.0.2/help/tcl/lists/lmatch
-lib/tclX8.0.2/help/tcl/lists/lrange
-lib/tclX8.0.2/help/tcl/lists/lreplace
-lib/tclX8.0.2/help/tcl/lists/lrmdups
-lib/tclX8.0.2/help/tcl/lists/lsearch
-lib/tclX8.0.2/help/tcl/lists/lsort
-lib/tclX8.0.2/help/tcl/lists/lvarcat
-lib/tclX8.0.2/help/tcl/lists/lvarpop
-lib/tclX8.0.2/help/tcl/lists/lvarpush
-lib/tclX8.0.2/help/tcl/lists/split
-lib/tclX8.0.2/help/tcl/lists/union
-lib/tclX8.0.2/help/tcl/math/expr
-lib/tclX8.0.2/help/tcl/math/fmathcmds
-lib/tclX8.0.2/help/tcl/math/incr
-lib/tclX8.0.2/help/tcl/math/max
-lib/tclX8.0.2/help/tcl/math/min
-lib/tclX8.0.2/help/tcl/math/random
-lib/tclX8.0.2/help/tcl/processes/exec
-lib/tclX8.0.2/help/tcl/processes/execl
-lib/tclX8.0.2/help/tcl/processes/fork
-lib/tclX8.0.2/help/tcl/processes/kill
-lib/tclX8.0.2/help/tcl/processes/nice
-lib/tclX8.0.2/help/tcl/processes/pid
-lib/tclX8.0.2/help/tcl/processes/system
-lib/tclX8.0.2/help/tcl/processes/wait
-lib/tclX8.0.2/help/tcl/signals/signal
-lib/tclX8.0.2/help/tcl/sockets/host_info
-lib/tclX8.0.2/help/tcl/sockets/http
-lib/tclX8.0.2/help/tcl/sockets/socket
-lib/tclX8.0.2/help/tcl/status/cd
-lib/tclX8.0.2/help/tcl/status/dirs
-lib/tclX8.0.2/help/tcl/status/history
-lib/tclX8.0.2/help/tcl/status/id
-lib/tclX8.0.2/help/tcl/status/info
-lib/tclX8.0.2/help/tcl/status/infox
-lib/tclX8.0.2/help/tcl/status/popd
-lib/tclX8.0.2/help/tcl/status/pushd
-lib/tclX8.0.2/help/tcl/status/pwd
-lib/tclX8.0.2/help/tcl/status/showproc
-lib/tclX8.0.2/help/tcl/status/umask
-lib/tclX8.0.2/help/tcl/strings/append
-lib/tclX8.0.2/help/tcl/strings/binary
-lib/tclX8.0.2/help/tcl/strings/ccollate
-lib/tclX8.0.2/help/tcl/strings/cconcat
-lib/tclX8.0.2/help/tcl/strings/cequal
-lib/tclX8.0.2/help/tcl/strings/cindex
-lib/tclX8.0.2/help/tcl/strings/clength
-lib/tclX8.0.2/help/tcl/strings/crange
-lib/tclX8.0.2/help/tcl/strings/csubstr
-lib/tclX8.0.2/help/tcl/strings/ctoken
-lib/tclX8.0.2/help/tcl/strings/ctype
-lib/tclX8.0.2/help/tcl/strings/format
-lib/tclX8.0.2/help/tcl/strings/regexp
-lib/tclX8.0.2/help/tcl/strings/regsub
-lib/tclX8.0.2/help/tcl/strings/replicate
-lib/tclX8.0.2/help/tcl/strings/scan
-lib/tclX8.0.2/help/tcl/strings/string
-lib/tclX8.0.2/help/tcl/strings/subst
-lib/tclX8.0.2/help/tcl/strings/translit
-lib/tclX8.0.2/help/tcl/tclshell/intro
-lib/tclX8.0.2/help/tcl/tclshell/variables
-lib/tclX8.0.2/help/tcl/time/alarm
-lib/tclX8.0.2/help/tcl/time/clock
-lib/tclX8.0.2/help/tcl/time/sleep
-lib/tclX8.0.2/help/tcl/time/time
-lib/tclX8.0.2/help/tcl/time/times
-lib/tclX8.0.2/help/tcl/variables/array
-lib/tclX8.0.2/help/tcl/variables/for_array_keys
-lib/tclX8.0.2/help/tcl/variables/global
-lib/tclX8.0.2/help/tcl/variables/namespace
-lib/tclX8.0.2/help/tcl/variables/set
-lib/tclX8.0.2/help/tcl/variables/stdvars
-lib/tclX8.0.2/help/tcl/variables/trace
-lib/tclX8.0.2/help/tcl/variables/unset
-lib/tclX8.0.2/help/tcl/variables/upvar
-lib/tclX8.0.2/help/tcl/variables/variable
-lib/tkX8.0.2/tkxConfig.sh
-lib/tkX8.0.2/pkgIndex.tcl
-lib/tkX8.0.2/tkx.tcl
-lib/tkX8.0.2/tkXAppInit.c
-lib/tkX8.0.2/help/Tk.brf
-lib/tkX8.0.2/help/tk/control/bell
-lib/tkX8.0.2/help/tk/control/bind
-lib/tkX8.0.2/help/tk/control/bindtags
-lib/tkX8.0.2/help/tk/control/clipboard
-lib/tkX8.0.2/help/tk/control/destroy
-lib/tkX8.0.2/help/tk/control/event
-lib/tkX8.0.2/help/tk/control/focus
-lib/tkX8.0.2/help/tk/control/font
-lib/tkX8.0.2/help/tk/control/grab
-lib/tkX8.0.2/help/tk/control/grid
-lib/tkX8.0.2/help/tk/control/lower
-lib/tkX8.0.2/help/tk/control/option
-lib/tkX8.0.2/help/tk/control/pack
-lib/tkX8.0.2/help/tk/control/pack-old
-lib/tkX8.0.2/help/tk/control/place
-lib/tkX8.0.2/help/tk/control/raise
-lib/tkX8.0.2/help/tk/control/selection
-lib/tkX8.0.2/help/tk/control/send
-lib/tkX8.0.2/help/tk/control/tk
-lib/tkX8.0.2/help/tk/control/tk_bisque
-lib/tkX8.0.2/help/tk/control/tk_focusNext
-lib/tkX8.0.2/help/tk/control/tk_setPalette
-lib/tkX8.0.2/help/tk/control/tkerror
-lib/tkX8.0.2/help/tk/control/tkvars
-lib/tkX8.0.2/help/tk/control/tkwait
-lib/tkX8.0.2/help/tk/control/winfo
-lib/tkX8.0.2/help/tk/control/wm
-lib/tkX8.0.2/help/tk/images/bitmap
-lib/tkX8.0.2/help/tk/images/image
-lib/tkX8.0.2/help/tk/images/photo
-lib/tkX8.0.2/help/tk/widgets/button
-lib/tkX8.0.2/help/tk/widgets/canvas
-lib/tkX8.0.2/help/tk/widgets/checkbutton
-lib/tkX8.0.2/help/tk/widgets/entry
-lib/tkX8.0.2/help/tk/widgets/frame
-lib/tkX8.0.2/help/tk/widgets/label
-lib/tkX8.0.2/help/tk/widgets/listbox
-lib/tkX8.0.2/help/tk/widgets/menu
-lib/tkX8.0.2/help/tk/widgets/menubutton
-lib/tkX8.0.2/help/tk/widgets/message
-lib/tkX8.0.2/help/tk/widgets/options
-lib/tkX8.0.2/help/tk/widgets/radiobutton
-lib/tkX8.0.2/help/tk/widgets/scale
-lib/tkX8.0.2/help/tk/widgets/scrollbar
-lib/tkX8.0.2/help/tk/widgets/text
-lib/tkX8.0.2/help/tk/widgets/tk_chooseColor
-lib/tkX8.0.2/help/tk/widgets/tk_dialog
-lib/tkX8.0.2/help/tk/widgets/tk_getOpenFile
-lib/tkX8.0.2/help/tk/widgets/tk_menuBar
-lib/tkX8.0.2/help/tk/widgets/tk_messageBox
-lib/tkX8.0.2/help/tk/widgets/tk_optionMenu
-lib/tkX8.0.2/help/tk/widgets/tk_popup
-lib/tkX8.0.2/help/tk/widgets/toplevel
-@dirrm lib/tclX8.0.2/help/tcl/variables
-@dirrm lib/tclX8.0.2/help/tcl/time
-@dirrm lib/tclX8.0.2/help/tcl/tclshell
-@dirrm lib/tclX8.0.2/help/tcl/strings
-@dirrm lib/tclX8.0.2/help/tcl/status
-@dirrm lib/tclX8.0.2/help/tcl/sockets
-@dirrm lib/tclX8.0.2/help/tcl/signals
-@dirrm lib/tclX8.0.2/help/tcl/processes
-@dirrm lib/tclX8.0.2/help/tcl/math
-@dirrm lib/tclX8.0.2/help/tcl/lists
-@dirrm lib/tclX8.0.2/help/tcl/libraries
-@dirrm lib/tclX8.0.2/help/tcl/keyedlists
-@dirrm lib/tclX8.0.2/help/tcl/intro
-@dirrm lib/tclX8.0.2/help/tcl/internation
-@dirrm lib/tclX8.0.2/help/tcl/filescan
-@dirrm lib/tclX8.0.2/help/tcl/files
-@dirrm lib/tclX8.0.2/help/tcl/events
-@dirrm lib/tclX8.0.2/help/tcl/debug
-@dirrm lib/tclX8.0.2/help/tcl/control
-@dirrm lib/tclX8.0.2/help/tcl
-@dirrm lib/tclX8.0.2/help
-@dirrm lib/tclX8.0.2
-@dirrm lib/tkX8.0.2/help/tk/widgets
-@dirrm lib/tkX8.0.2/help/tk/images
-@dirrm lib/tkX8.0.2/help/tk/control
-@dirrm lib/tkX8.0.2/help/tk
-@dirrm lib/tkX8.0.2/help
-@dirrm lib/tkX8.0.2
+lib/tclX%%TCLX_LONG_VER%%/autoload.tcl
+lib/tclX%%TCLX_LONG_VER%%/buildidx.tcl
+lib/tclX%%TCLX_LONG_VER%%/help/Tcl.brf
+lib/tclX%%TCLX_LONG_VER%%/help/TclX.brf
+lib/tclX%%TCLX_LONG_VER%%/help/help
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/break
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/case
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/catch
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/commandloop
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/continue
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/error
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/eval
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/exit
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/for
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/foreach
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/if
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/interp
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/loop
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/proc
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/rename
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/return
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/safe
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/source
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/switch
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/tclx_errorHandler
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/try_eval
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/uplevel
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/while
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/debug/cmdtrace
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/debug/edprocs
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/debug/profile
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/debug/profrep
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/debug/saveprocs
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/events/after
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/events/background-error
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/events/fileevent
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/events/mainloop
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/events/update
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/events/vwait
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/bsearch
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/chgrp
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/chmod
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/chown
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/chroot
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/close
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/dup
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/echo
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/eof
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/fblocked
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/fcntl
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/fconfigure
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/fcopy
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/file
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/filename
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/flock
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/flush
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/for_file
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/for_recursive_glob
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/fstat
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/ftruncate
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/funlock
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/gets
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/glob
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/lgets
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/link
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/open
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/pipe
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/puts
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/read
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/read_file
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/readdir
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/recursive_glob
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/seek
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/select
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/sync
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/tell
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/write_file
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan/scancontext
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan/scanfile
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan/scanmatch
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation/catclose
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation/catgets
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation/catopen
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro/keyedlists
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro/syntax
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro/tclsh
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/keyedlists/keyldel
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/keyedlists/keylget
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/keyedlists/keylkeys
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/keyedlists/keylset
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/auto_commands
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/auto_load_file
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/auto_packages
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/buildpackageindex
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/convert_lib
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/library
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/load
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/loadlibindex
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/package
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/packagelib
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/pkgMkIndex
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/searchpath
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries/unknown
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/concat
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/intersect
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/intersect3
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/join
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lappend
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lassign
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lcontain
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lempty
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lindex
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/linsert
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/list
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/llength
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lmatch
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lrange
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lreplace
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lrmdups
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lsearch
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lsort
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lvarcat
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lvarpop
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/lvarpush
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/split
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists/union
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/math/expr
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/math/fmathcmds
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/math/incr
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/math/max
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/math/min
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/math/random
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/exec
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/execl
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/fork
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/kill
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/nice
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/pid
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/system
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes/wait
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/signals/signal
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/sockets/host_info
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/sockets/http
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/sockets/socket
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/cd
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/dirs
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/history
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/id
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/info
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/infox
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/popd
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/pushd
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/pwd
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/showproc
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/status/umask
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/append
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/binary
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/ccollate
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/cconcat
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/cequal
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/cindex
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/clength
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/crange
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/csubstr
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/ctoken
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/ctype
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/format
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/regexp
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/regsub
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/replicate
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/scan
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/string
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/subst
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings/translit
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/tclshell/intro
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/tclshell/variables
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/time/alarm
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/time/clock
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/time/sleep
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/time/time
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/time/times
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/array
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/for_array_keys
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/global
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/namespace
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/set
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/stdvars
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/trace
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/unset
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/upvar
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables/variable
+lib/tclX%%TCLX_LONG_VER%%/pkgIndex.tcl
+lib/tclX%%TCLX_LONG_VER%%/tcl.tlib
+lib/tclX%%TCLX_LONG_VER%%/tcl.tndx
+lib/tclX%%TCLX_LONG_VER%%/tclXAppInit.c
+lib/tclX%%TCLX_LONG_VER%%/tclx.tcl
+lib/tclX%%TCLX_LONG_VER%%/tclxConfig.sh
+lib/tkX%%TCLX_LONG_VER%%/help/Tk.brf
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bell
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bind
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/bindtags
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/clipboard
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/destroy
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/event
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/focus
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/font
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grab
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grid
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/lower
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/option
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/pack
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/pack-old
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/place
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/raise
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/selection
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/send
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_bisque
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_focusNext
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tk_setPalette
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkerror
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkvars
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/tkwait
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/winfo
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/wm
+lib/tkX%%TCLX_LONG_VER%%/help/tk/images/bitmap
+lib/tkX%%TCLX_LONG_VER%%/help/tk/images/image
+lib/tkX%%TCLX_LONG_VER%%/help/tk/images/photo
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/button
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/canvas
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/checkbutton
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/entry
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/frame
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/label
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/listbox
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/menu
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/menubutton
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/message
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/options
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/radiobutton
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/scale
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/scrollbar
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/text
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_chooseColor
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_dialog
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_getOpenFile
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_menuBar
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_messageBox
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_optionMenu
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/tk_popup
+lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets/toplevel
+lib/tkX%%TCLX_LONG_VER%%/pkgIndex.tcl
+lib/tkX%%TCLX_LONG_VER%%/tkXAppInit.c
+lib/tkX%%TCLX_LONG_VER%%/tkx.tcl
+lib/tkX%%TCLX_LONG_VER%%/tkxConfig.sh
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/control
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/debug
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/events
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/files
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/keyedlists
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/lists
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/math
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/processes
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/signals
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/sockets
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/status
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/strings
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/tclshell
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/time
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/variables
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help
+@dirrm lib/tclX%%TCLX_LONG_VER%%
+@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/control
+@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/images
+@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk/widgets
+@dirrm lib/tkX%%TCLX_LONG_VER%%/help/tk
+@dirrm lib/tkX%%TCLX_LONG_VER%%/help
+@dirrm lib/tkX%%TCLX_LONG_VER%%

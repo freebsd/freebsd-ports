@@ -1,11 +1,20 @@
---- Common.mk.in	Tue May  5 20:38:21 1998
-+++ Common.mk.in.ORIG	Tue May  5 20:38:02 1998
-@@ -102,7 +102,7 @@
- TCL_DL_LIBS          = @TCL_DL_LIBS@
+--- Common.mk.in.orig	Sun Dec  6 21:47:30 1998
++++ Common.mk.in	Fri Aug 27 09:29:10 1999
+@@ -97,7 +97,7 @@
  TCL_SHLIB_LD         = @TCL_SHLIB_LD@
  TCL_SHLIB_LD_LIBS    = @TCL_SHLIB_LD_LIBS@
+ TCL_DBGX             = @TCL_DBGX@
 -TCL_BUILD_LIB_SPEC   = @TCL_BUILD_LIB_SPEC@
 +TCL_BUILD_LIB_SPEC   = @TCL_LIB_SPEC@
  TCL_LIB_SPEC         = @TCL_LIB_SPEC@
  TCL_LD_SEARCH_FLAGS  = @TCL_LD_SEARCH_FLAGS@
+ 
+@@ -107,7 +107,7 @@
+ TK_XINCLUDES         = @TK_XINCLUDES@
+ TK_XLIBSW            = @TK_XLIBSW@
+ TK_DBGX              = @TK_DBGX@
+-TK_BUILD_LIB_SPEC    = @TK_BUILD_LIB_SPEC@
++TK_BUILD_LIB_SPEC    = @TK_LIB_SPEC@
+ TK_LIB_SPEC          = @TK_LIB_SPEC@
+ TK_LD_SEARCH_FLAGS   = @TK_LD_SEARCH_FLAGS@
  

@@ -1,5 +1,5 @@
---- ../tk/unix/Makefile.in.orig	Sat Nov 29 17:19:07 1997
-+++ ../tk/unix/Makefile.in	Mon Sep 28 14:14:16 1998
+--- ../tk/unix/Makefile.in.orig	Sun Dec  6 21:47:30 1998
++++ ../tk/unix/Makefile.in	Fri Aug 27 10:37:45 1999
 @@ -85,7 +85,7 @@
  # If a link fails, purge the executable, as some systems leave invalid
  # executables around.
