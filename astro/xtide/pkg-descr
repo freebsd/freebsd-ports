@@ -1,4 +1,4 @@
-xtide is a program which predicts and displays tides.  It is capable of
+The xtide program predicts and displays tides.  It is capable of
 producing output in a variety of dynamic and static formats, and has
 extensions for X, plain ASCII, and HTML.
 
@@ -9,8 +9,7 @@ also have to specify your location either by setting the LOCATION
 environment variable, by using the -location script, or by creating
 an appropriate ~/.xtiderc. 
 
-http://www.universe.digex.net/~dave/xtide/xtide.html has complete
-documentation, or just read the man page.
+WWW: http://www.universe.digex.net/~dave/xtide/xtide.html
 
 - Brion Moss
 brion@queeg.com

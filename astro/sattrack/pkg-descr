@@ -2,32 +2,23 @@ This is a port of SatTrack version 3.1, which is
 Copyright (c) 1992-1997 Bester Tracking Systems. All Rights Reserved.
 
 SatTrack is a real-time satellite tracking and orbit propagation
-program with an X11 color world map tracking chart. It provides
+program with an X11 color world map tracking chart.  It provides
 two different live displays, for single or multiple satellites,
-and two different orbit prediction modes.  Cursor controls used in
-the numerical live displays are compatible with the VT100 standard,
-which allows the program to be run basically from any terminal
-without the graphics display. If the program is run from an X Window
-terminal, the realtime graphics display can be started up. It will
-show the location of any number of specified satellites like the
-Space Shuttle or the Russian Space Station Mir, featuring the circle
-of visibility for any selected spacecraft and for the primary and
-a number of secondary ground stations.  Also shown are the ground
-track for the next three orbits, the black-out zones for communication
-through the TDRSS network, Mission Elapsed Time (MET), the terminator,
-spacecraft lighting conditions and other details. The world maps
-are provided in two different styles with four different sizes
-each.  Program SatTrack is particularly interesting for the upcoming
-Shuttle - Mir rendezvous missions.
-
-Current on-line information on SatTrack can be found on the World
-Wide Web page with the following URL:
-
-	http://www.bester.com
+and two different orbit prediction modes.  The program can be run
+from almost any VT100 compatible terminal.  If the program is run
+from an X Window terminal, the realtime graphics display can be
+started up.  It will show the location of any number of specified
+satellites like the Space Shuttle or the Russian Space Station Mir,
+featuring the circle of visibility for any selected spacecraft and
+for the primary and a number of secondary ground stations.  Also
+shown are the ground track for the next three orbits, the black-out
+zones for communication through the TDRSS network, Mission Elapsed
+Time (MET), the terminator, spacecraft lighting conditions and
+other details.  The world maps are provided in two different styles
+with four different sizes each.  Program SatTrack is particularly
+interesting for the upcoming Shuttle - Mir rendezvous missions.
 
 The much advanced commercial off-the-shelf version of SatTrack
 (V4.0) can be obtained from Bester Tracking Systems.
 
-Port to FreeBSD 2.2 by
-Brent J. Nordquist <bjn@visi.com>
-Sun Mar  2 1997
+WWW: http://www.bester.com
