@@ -15,37 +15,32 @@ sbin/checkgroups
 sbin/applyfilter
 sbin/setup-daemontools.sh
 sbin/quickmkdir
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/ChangeLog.old
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/CREDITS
-%%DOCSDIR%%/FAQ.txt
-%%DOCSDIR%%/FAQ.html
-%%DOCSDIR%%/FAQ.pdf
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/KNOWNBUGS
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README-FQDN
-%%DOCSDIR%%/README-FQDN.html
-%%DOCSDIR%%/README-daemontools
-%%DOCSDIR%%/README.FIRST
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/leafnode-SA-2002-01
-%%DOCSDIR%%/leafnode-SA-2003-01
-%%DOCSDIR%%/leafnode.cron.daily
-%%DOCSDIR%%/doc_german/INSTALL_de
-%%DOCSDIR%%/doc_german/LIESMICH-daemontools
-%%DOCSDIR%%/doc_german/README
-%%DOCSDIR%%/doc_german/README_de
-%%DOCSDIR%%/doc_german/newsq.1
-%%DOCSDIR%%/doc_german/applyfilter.8
-%%DOCSDIR%%/doc_german/checkgroups.8
-%%DOCSDIR%%/doc_german/fetchnews.8
-%%DOCSDIR%%/doc_german/leafnode.8
-%%DOCSDIR%%/doc_german/texpire.8
-@dirrm %%DOCSDIR%%/doc_german
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ADD-ONS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.old
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.pdf
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-FQDN
+%%PORTDOCS%%%%DOCSDIR%%/README-FQDN.html
+%%PORTDOCS%%%%DOCSDIR%%/README-daemontools
+%%PORTDOCS%%%%DOCSDIR%%/README.FIRST
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/leafnode-SA-2002-01
+%%PORTDOCS%%%%DOCSDIR%%/leafnode-SA-2003-01
+%%PORTDOCS%%%%DOCSDIR%%/leafnode.cron.daily
+%%PORTDOCS%%%%DOCSDIR%%/german/INSTALL_de
+%%PORTDOCS%%%%DOCSDIR%%/german/LIESMICH-daemontools
+%%PORTDOCS%%%%DOCSDIR%%/german/README
+%%PORTDOCS%%%%DOCSDIR%%/german/README_de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/german
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @comment only remove these when empty:
 @comment we don't want to kill the news spool across updates
 @unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file
