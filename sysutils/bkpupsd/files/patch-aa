@@ -1,0 +1,37 @@
+--- Makefile.orig	Sun Aug  3 10:02:37 1997
++++ Makefile	Tue Jan 27 19:44:58 1998
+@@ -5,24 +5,22 @@
+ # ver 1.0 A
+ #
+ 
+-CC=		/usr/bin/cc
+-SBINDIR=	/usr/local/sbin
+-MANDIR=		/usr/local/man
+-SCRIPTDIR=	/usr/local/libexec
++#CC=		/usr/bin/cc
++SBINDIR=	${PREFIX}/sbin
++MANDIR=		${PREFIX}/man/man8
++SCRIPTDIR=	${PREFIX}/libexec/bkpupsd
+ 
+ all: ./src/bkpupsd.c
+ 	${CC} -o ./bin/bkpupsd ./src/bkpupsd.c
+ 
+ install:
+-	chown root.wheel ./bin/bkpupsd
+-	chmod 700 ./bin/bkpupsd
+-	cp ./bin/bkpupsd ${SBINDIR}/bkpupsd
+-	cp ./doc/bkpupsd.8 ${MANDIR}/man8/bkpupsd.8
+-	chown root.wheel ./scripts/*
+-	cp -fR ./scripts ${SCRIPTDIR}/bkpupsd
++	${BSD_INSTALL_PROGRAM} ./bin/bkpupsd ${SBINDIR}
++	${BSD_INSTALL_MAN} ./doc/bkpupsd.8 ${MANDIR}
++	mkdir -p ${SCRIPTDIR}
++	(cd scripts; for i in *; do ${BSD_INSTALL_SCRIPT} $$i ${SCRIPTDIR}; done)
+ 
+ clean:
+ 	rm -f ./bin/bkpupsd
+ 	rm -f ${SBINDIR}/bkpupsd
+-	rm -f ${MANDIR}/man8/bkpupsd.8
+-	rm -rf ${SCRIPTDIR}/bkpupsd
++	rm -f ${MANDIR}/bkpupsd.8
++	rm -rf ${SCRIPTDIR}

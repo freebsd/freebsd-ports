@@ -1,0 +1,11 @@
+bkpupsd - Back-UPS Pro. UPS daemon
+----------------------------------
+
+    This is a simple uninterruptible power source (UPS) daemon which 
+supports APC Back-UPS Pro(TM) series.  The UPSd works as UPS driver, 
+sensing line-failures, shutting down the system cleanly, and finally 
+shutting down the UPS itself.  This UPSd provides only the "dumb mode",
+and the advanced features are not supported.
+
+ - Yoshifumi Watanabe
+mwatts@edu1.tokyo-med.ac.jp
