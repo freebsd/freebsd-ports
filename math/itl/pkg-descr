@@ -1,0 +1,15 @@
+              The Iterative Template Library Alpha Release
+
+The Iterative Template Library (ITL) has two parts, iterative solvers
+and preconditioners. ITL provides a collection of sophisticated Krylov
+subspace iterative solvers that use basic linear algebra packages such
+as the Matrix Template Library or Blitz++ for its basic linear algebra
+operations. The ITL has extended many of the ideas of the Iterative
+Methods Library (IML++), to make the library more flexible.  The
+"interface" is to specify basic linear algebra operations. See next
+bullet for details. On the other hand, ITL also provides a set of
+preconditioners which are designed for Matrix Template Library.
+
+The latest documentation for ITL can be found on our website:
+
+WWW: http://www.osl.iu.edu/research/itl

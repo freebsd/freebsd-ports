@@ -1,0 +1,11 @@
+--- test/mmio.c.orig	Mon Aug 18 22:04:50 2003
++++ test/mmio.c	Mon Aug 18 22:05:10 2003
+@@ -9,7 +9,7 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ 
+ #include "mmio.h"
