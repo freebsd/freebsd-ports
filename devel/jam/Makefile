@@ -6,15 +6,21 @@
 #
 
 PORTNAME=	jam
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp1.perforce.com/pub/jam/
 
 MAINTAINER=	ports@FreeBSD.org
 
-NO_WRKSUBDIR=	yes
+ONLY_FOR_ARCHS=	alpha i386
+
 USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-q -aa
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
+		 s|^CFLAGS|#CFLAGS|g ; \
+		 s|\tjam|\t\$$\{.CURDIR\}/jam|g' ${WRKSRC}/Makefile
 
 do-install:
 .if ${MACHINE_ARCH} == "alpha"
@@ -23,8 +29,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin.freebsd/jam ${PREFIX}/bin
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/jam
-	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/jam
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
