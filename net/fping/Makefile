@@ -17,7 +17,7 @@ COMMENT=	Quickly ping N hosts w/o flooding the network
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --bindir="${PREFIX}/sbin"
+CONFIGURE_ARGS=	--bindir="${PREFIX}/sbin"
 MAN8=		fping.8
 
 .if defined(WITH_IPV6)
@@ -27,7 +27,7 @@ CFLAGS+=	-DIPV6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/fping@/${MAINTAINER:S/@/\\@/g} or fping@/g' \
-	    ${WRKSRC}/fping.c
+		${WRKSRC}/fping.c
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/sbin/fping
