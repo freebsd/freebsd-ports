@@ -3,7 +3,7 @@ include/dotconf.h
 include/libpool.h
 lib/libdotconf.a
 lib/libdotconf.so
-lib/libdotconf.so.0
+lib/libdotconf.so.10
 lib/libpool.a
 share/aclocal/dotconf.m4
 %%PORTDOCS%%share/doc/dotconf/dotconf-api.txt
@@ -17,26 +17,40 @@ share/aclocal/dotconf.m4
 %%PORTDOCS%%share/examples/dotconf/context/context.c
 %%PORTDOCS%%share/examples/dotconf/context/context.conf
 %%PORTDOCS%%share/examples/dotconf/context/example_context.dsp
+%%PORTDOCS%%share/examples/dotconf/duplicates/Makefile
+%%PORTDOCS%%share/examples/dotconf/duplicates/duplicate.c
+%%PORTDOCS%%share/examples/dotconf/duplicates/first_module.c
+%%PORTDOCS%%share/examples/dotconf/duplicates/sample.conf
+%%PORTDOCS%%share/examples/dotconf/duplicates/second_module.c
 %%PORTDOCS%%share/examples/dotconf/errorhandler/Makefile
 %%PORTDOCS%%share/examples/dotconf/errorhandler/errorhandler.c
 %%PORTDOCS%%share/examples/dotconf/errorhandler/errorhandler.conf
 %%PORTDOCS%%share/examples/dotconf/errorhandler/example_errorhandler.dsp
+%%PORTDOCS%%share/examples/dotconf/fallback/Makefile
+%%PORTDOCS%%share/examples/dotconf/fallback/fallback.conf
+%%PORTDOCS%%share/examples/dotconf/fallback/fallback.c
 %%PORTDOCS%%share/examples/dotconf/modules/Makefile
 %%PORTDOCS%%share/examples/dotconf/modules/example_modules.dsp
 %%PORTDOCS%%share/examples/dotconf/modules/include.conf
 %%PORTDOCS%%share/examples/dotconf/modules/module.c
 %%PORTDOCS%%share/examples/dotconf/modules/my_module.c
 %%PORTDOCS%%share/examples/dotconf/modules/sample.conf
+%%PORTDOCS%%share/examples/dotconf/noinline/Makefile
+%%PORTDOCS%%share/examples/dotconf/noinline/noinline.conf
+%%PORTDOCS%%share/examples/dotconf/noinline/noinline.c
 %%PORTDOCS%%share/examples/dotconf/simple/Makefile
 %%PORTDOCS%%share/examples/dotconf/simple/example_simple.dsp
 %%PORTDOCS%%share/examples/dotconf/simple/included.conf
 %%PORTDOCS%%share/examples/dotconf/simple/linecat.conf
 %%PORTDOCS%%share/examples/dotconf/simple/simple.c
 %%PORTDOCS%%share/examples/dotconf/simple/simple.conf
-@dirrm share/examples/dotconf/simple
-@dirrm share/examples/dotconf/modules
-@dirrm share/examples/dotconf/errorhandler
-@dirrm share/examples/dotconf/context
-@dirrm share/examples/dotconf/caseinsensitive
-@dirrm share/examples/dotconf
-@dirrm share/doc/dotconf
+%%PORTDOCS%%@dirrm share/doc/dotconf
+%%PORTDOCS%%@dirrm share/examples/dotconf/caseinsensitive
+%%PORTDOCS%%@dirrm share/examples/dotconf/context
+%%PORTDOCS%%@dirrm share/examples/dotconf/duplicates
+%%PORTDOCS%%@dirrm share/examples/dotconf/errorhandler
+%%PORTDOCS%%@dirrm share/examples/dotconf/fallback
+%%PORTDOCS%%@dirrm share/examples/dotconf/modules
+%%PORTDOCS%%@dirrm share/examples/dotconf/noinline
+%%PORTDOCS%%@dirrm share/examples/dotconf/simple
+%%PORTDOCS%%@dirrm share/examples/dotconf
