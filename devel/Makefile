@@ -812,6 +812,7 @@
     SUBDIR += p5-Tie-DB_File-SplitHash
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Tie-File
+    SUBDIR += p5-Tie-FileLRUCache
     SUBDIR += p5-Tie-IxHash
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-HiRes
