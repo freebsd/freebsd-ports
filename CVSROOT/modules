@@ -12258,3 +12258,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 fswiki		ports/www/fswiki
+ja-samba3	ports/japanese/samba3
