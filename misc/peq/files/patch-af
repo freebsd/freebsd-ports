@@ -1,0 +1,13 @@
+--- show.cpp.orig	Fri Mar 26 01:47:31 1999
++++ show.cpp	Sat Feb 12 11:13:09 2000
+@@ -3,8 +3,8 @@
+ 
+ extern int wrdnum;
+ extern char tot[300][100];
+-extern author_wrd;
+-extern contrib_wrd;
++extern int author_wrd;
++extern int contrib_wrd;
+ 
+ // This is the worst piece of shit (erm... code) you will ever see. It
+ // practically duplicates the same stuff FOUR TIMES!

@@ -1,0 +1,13 @@
+--- ./xpeq.cpp.orig	Thu Mar 25 08:47:31 1999
++++ ./xpeq.cpp	Fri May 24 04:35:40 2002
+@@ -1,8 +1,8 @@
+ 
+ #include "xconfig.h"
+ #include "lib_path.h"
+-#include <qmenubar.h>
+-#include <qpopupmenu.h>
++#include <X11/qt1/qmenubar.h>
++#include <X11/qt1/qpopupmenu.h>
+ 
+ int cho;
+ int wrd;

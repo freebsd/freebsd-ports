@@ -221,6 +221,7 @@
     SUBDIR += pbs
     SUBDIR += pdfmap
     SUBDIR += pdmenu
+    SUBDIR += peq
     SUBDIR += pg
     SUBDIR += pinfo
     SUBDIR += pl-sms
