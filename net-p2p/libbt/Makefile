@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbt
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,15 +23,11 @@ USE_REINPLACE=	yes
 USE_GCC=	3.3
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
-.endif
+PORTDOCS=	protocol-ext.txt protocol.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@ |' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@ \@CPPFLAGS\@ |' ${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libbt.a ${PREFIX}/lib
@@ -46,7 +42,9 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/protocol.txt ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,6 +15,4 @@ include/libbt/stream.h
 include/libbt/types.h
 include/libbt/util.h
 lib/libbt.a
-%%PORTDOCS%%%%DOCSDIR%%/protocol.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libbt
