@@ -1,16 +1,21 @@
+bin/convertstyle
+bin/geticonset
+bin/getstyle
+bin/mkmenu
+bin/savews
+bin/seticons
+bin/setstyle
+bin/wdwrite
+bin/wmaker
+bin/wmaker.inst
+bin/wxcopy
+bin/wxpaste
 lib/libwraster.a
 @exec ranlib %D/%F
 lib/libWMaker.a
 @exec ranlib %D/%F
 include/wraster.h
 include/WMaker.h
-bin/wdwrite
-bin/getstyle
-bin/setstyle
-bin/seticons
-bin/geticonset
-bin/convertstyle
-bin/mkmenu
 share/WindowMaker/Defaults/WMRootMenu
 share/WindowMaker/Defaults/WMWindowAttributes
 share/WindowMaker/Defaults/WindowMaker
