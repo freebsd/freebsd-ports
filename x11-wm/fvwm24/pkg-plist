@@ -29,7 +29,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmDebug
 libexec/fvwm/%%FVWM_VERSION%%/FvwmDragWell
 libexec/fvwm/%%FVWM_VERSION%%/FvwmEvent
 libexec/fvwm/%%FVWM_VERSION%%/FvwmForm
-libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
+%%GNOME:%%libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconBox
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconMan
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIdent
