@@ -24,6 +24,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
@@ -53,14 +54,16 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-USE_GCC=	3.1
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -Wno-non-template-friend -ftemplate-depth-30"
 .if defined(WITH_QT)
-BROKEN=		Does not build
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
+		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -Wno-non-template-friend -ftemplate-depth-30"
 .endif
 .endif
 
 pre-everything::
-.if ( ${OSVERSION} >= 500035 ) && !defined(WITH_QT)
+.if !defined(WITH_QT)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you want to build with the Qt3 frontend,"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_QT=yes\""
@@ -80,5 +83,10 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ISPELL=yes\""
 	@${ECHO_MSG}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -E -e \
+		's|CFLAGS=$$|#CFLAGS=|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>
