@@ -41,14 +41,13 @@ file format drivers. The gs4 default drivers and some drivers for Japanese \n\
 printers are preselected. \n\
 Have fun with this new configuration style !     -andreas \n\n\
   Please choose options by pressing SPACE to TOGGLE an option ON/OFF ?" -1 -1 9\
-   "x11"      "X Windows version 11, release >=4" ON \
-   "x11alpha" "X Windows masquer. as device with alpha capability" ON \
-   "x11cmyk"  "X Windows masquer. as 1-bit-per-plane CMYK device" ON \
-   "x11mono"  "X Windows masquer. as black-and-white device" ON \
+   "x11"      "X version 11, release >=4" ON \
+   "x11alpha" "X masquer. as device with alpha capability" ON \
+   "x11cmyk"  "X masquer. as 1-bit-per-plane CMYK device" ON \
+   "x11mono"  "X masquer. as black-and-white device" ON \
    "sxlcrt"   "CRT sixels, e.g. for VT240-like terminals" OFF \
    "ap3250"   "Epson AP3250" OFF \
    "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
-   "bitps"    "Bitmapped PostScript" ON \
    "bj10e"    "Canon BubbleJet BJ10e" ON \
    "bj200"    "Canon BubbleJet BJ200" ON \
    "bjc600"   "Canon Color BubbleJet BJC-600/4000/70" ON \
@@ -109,6 +108,10 @@ Have fun with this new configuration style !     -andreas \n\n\
    "pjxl"     "HP PaintJet XL color printer" ON \
    "pjxl300"  "HP PaintJet XL300 color printer (also for 1200C)" ON \
    "r4081"    "Ricoh 4081 laser printer" OFF \
+   "rpdlA3"  "Ricoh Printer Description Language (RPDL) A3 600 dpi" ON \
+   "rpdlA4"  "Ricoh Printer Description Language (RPDL) A4 600 dpi" ON \
+   "rpdlB4"  "Ricoh Printer Description Language (RPDL) B4 600 dpi" ON \
+   "rpdlB5"  "Ricoh Printer Description Language (RPDL) B5 600 dpi" ON \
    "sj48"     "StarJet 48 inkjet printer" OFF \
    "st800"    "Epson Stylus 800 printer" OFF \
    "stcolor"  "Epson Stylus Color" OFF \
