@@ -7,6 +7,7 @@ bin/try-from
 lib/libwrap.a
 @exec ranlib %D/%F
 lib/libwrap.so.7
+lib/libwrap.so
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 etc/inetd.conf.wrapped.sample
