@@ -1,2 +1,4 @@
 MD5 (wu-ftpd-2.6.2.tar.gz) = b3c271f02aadf663b8811d1bff9da3f6
-MD5 (wu-ftpd-262-v6-20030926.diff.gz) = 2fb60cce72544e4062d6998be719b3b2
+SIZE (wu-ftpd-2.6.2.tar.gz) = 354784
+MD5 (wu-ftpd-262-v6-20040130.diff.gz) = eefe15eb2a68352f06cc9c6ed9262a1f
+SIZE (wu-ftpd-262-v6-20040130.diff.gz) = 60745

@@ -9,13 +9,13 @@
 
 PORTNAME=	wu-ftpd+ipv6
 PORTVERSION=    2.6.2
-PORTREVISION=   4
+PORTREVISION=   5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 DISTNAME=	wu-ftpd-${PORTVERSION}
 
 PATCH_SITES=    ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=     wu-ftpd-262-v6-20030926.diff.gz
+PATCHFILES=     wu-ftpd-262-v6-20040130.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
