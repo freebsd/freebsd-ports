@@ -1632,6 +1632,7 @@ fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 frabs		ports/games/frabs
 fractorama	ports/graphics/fractorama
+fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
 freeamp		ports/audio/freeamp
 freebirth	ports/audio/freebirth
