@@ -98,13 +98,11 @@ PLIST_SUB+=	RC_DIR=${RC_DIR} \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MILTER)
-.if exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
+.if !exists(/usr/lib/libmilter.a)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+.endif
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
-.else
-BROKEN=		requires Sendmail 8.12
-PLIST_SUB+=	CLAMAV-MILTER="@comment "
-.endif
 .else
 PLIST_SUB+=	CLAMAV-MILTER="@comment "
 .endif
