@@ -1,6 +1,6 @@
---- Imakefile	Tue Aug  3 05:22:37 1999
-+++ Imakefile	Wed Oct 27 02:02:13 1999
-@@ -148,13 +148,13 @@
+--- Imakefile.orig	Sun Jan  9 02:23:15 2000
++++ Imakefile	Wed Nov  1 12:13:37 2000
+@@ -160,13 +160,13 @@
  /*
   * include / library / definition
   */
@@ -16,3 +16,9 @@
  EXTRA_DEFINES   = $(OSDEPDEF)
  
  /*
+@@ -196,4 +196,4 @@
+ /*
+  * install program
+  */
+-ComplexProgramTarget(xsystem35)
++ComplexProgramTargetNoMan(xsystem35)
