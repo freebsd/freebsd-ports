@@ -18,12 +18,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-fast-handles
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
+post-patch:
+	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure
 
 do-install:
 	@(cd ${WRKSRC} ; \
