@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20040623
+PORTVERSION=		20040629
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	eik
@@ -21,6 +21,10 @@ MANCOMPRESSED=		yes
 
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_version.1
+
+PKGREQ=			${WRKDIR}/pkg-req
+
+SED_SCRIPT=		-e "s|%%PORTVERSION%%|${PORTVERSION}|g"
 
 .if defined(PREFIX)
 .if ${PREFIX} == "/usr"
@@ -77,13 +81,21 @@ post-patch:
 		| ${XARGS} ${PERL} -pi.orig -e 's/__FBSDID\(("[^"]*")\)/static const char rcsid[] = $$1/'
 .endif
 
-test: build
-	@(cd ${BUILD_WRKSRC}/version && ${SH} test-pkg_version.sh)
+post-build:
+	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-req >${WRKDIR}/pkg-req
+
+.if !defined(PACKAGE_BUILDING)
+pre-install:
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGREQ} ${PKGNAME} INSTALL
+.endif
 
 # Call pkg-install in `do-install:' instead of `pre-install:' because it might
 # deinstall pkg_info, which is fatal during `check-already-installed:'.
 do-install:
 	${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+
+test: build
+	@(cd ${BUILD_WRKSRC}/version && ${SH} test-pkg_version.sh)
 
 .include <bsd.port.post.mk>
