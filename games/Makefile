@@ -189,6 +189,7 @@
     SUBDIR += xnibbles
     SUBDIR += xoct
     SUBDIR += xoids
+    SUBDIR += xoj
     SUBDIR += xonix
     SUBDIR += xosmulti
     SUBDIR += xothello
