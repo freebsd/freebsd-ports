@@ -1,0 +1,15 @@
+share/doc/HTML/en/kmamerun/index.nif
+share/doc/HTML/en/kmamerun/index.html
+share/doc/HTML/en/kmamerun/index-1.html
+share/doc/HTML/en/kmamerun/index-2.html
+share/doc/HTML/en/kmamerun/index-3.html
+share/doc/HTML/en/kmamerun/index-4.html
+share/doc/HTML/en/kmamerun/index-5.html
+share/doc/HTML/en/kmamerun/index.sgml
+share/doc/HTML/en/kmamerun/logotp3.gif
+share/applnk/Utilities
+share/icons/kmamerun.xpm
+share/locale/de/LC_MESSAGES/kmamerun.mo
+share/locale/it/LC_MESSAGES/kmamerun.mo
+bin/kmamerun
+@dirrm share/doc/HTML/en/kmamerun
