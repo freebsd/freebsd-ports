@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-latest
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ponomarew@oberon.net
-COMMENT=	Packit is a network auditing tool
+COMMENT=	Network auditing tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
