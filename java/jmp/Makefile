@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmp
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
@@ -15,6 +15,8 @@ COMMENT=	Java Memory Profiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
+
+CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include"
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--enable-noui
@@ -29,8 +31,7 @@ CFLAGS+=	-DJMPDEBUG -g
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-#USE_JAVA=	1.2+
-USE_JAVA=	1.3
+USE_JAVA=	1.2+
 NEED_JAVAC=	yes
 
 MAKE_FLAGS=	JAVAC=${JAVAC} JAVAH=${JAVAH}
