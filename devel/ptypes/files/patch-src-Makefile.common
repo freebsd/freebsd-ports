@@ -1,42 +1,27 @@
---- src/Makefile.common.orig	Wed Jan  8 03:12:14 2003
-+++ src/Makefile.common	Wed Jan  8 03:13:59 2003
-@@ -20,17 +20,17 @@
+--- src/Makefile.common.orig	Tue Jun 24 13:49:22 2003
++++ src/Makefile.common	Wed Jun 25 03:56:22 2003
+@@ -19,12 +19,12 @@
+ AR              = ar
+ RANLIB          = ranlib
  
- RANLIB		= ranlib
+-DDEBUG          = -DDEBUG
++DDEBUG          =
+ INCDIR          = ../include
+-CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall -O2
++CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall $(CFLAGS)
+ LDLIBS          = $(OS_LDLIBS)
  
--CXXDEFS         = -DDEBUG
-+CXXDEFS         =
+-CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall -O2
++CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS)
+ LDLIBS_ST       = $(OS_LDLIBS_ST)
  
- INCDIR		= ../include
+ LIBNAME         = libptypes.a
+@@ -32,7 +32,7 @@
+ LIBDEST         = ../lib
  
--CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -fPIC -Wall -O2
-+CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -fPIC -Wall $(CFLAGS)
+ SONAME          = libptypes.$(SOEXT)
+-SOVER           = 1
++SOVER           = $(SHLIB_VER)
+ SOREALNAME      = $(SONAME).$(SOVER)
+ SODEST          = ../so
  
- LIBNAME		= libptypes.a
- LIBDEST		= ../lib
- 
- SONAME		= libptypes.$(SOEXT)
--SOVER		= 1
-+SOVER		= $(SHLIB_VER)
- SOREALNAME	= $(SONAME).$(SOVER)
- SODEST		= ../so
- 
-@@ -74,7 +74,7 @@
- 	cp $@ $(LIBDEST)/
- 
- $(SOREALNAME): $(LIBOBJS)
--	$(LIBTOOL) $(LIBOBJS) $(LDLIBS) -o $@
-+	$(LIBTOOL) $(LIBOBJS) $(LDLIBS) -o $@ ${PTHREAD_LIBS} -lc_r
- 	rm -f $(SONAME) ; ln -s $@ $(SONAME)
- 	cp $@ $(SODEST)/
- 	cd $(SODEST) ; rm -f $(SONAME) ; ln -s $@ $(SONAME) ; $(SOSTRIP) $@
-@@ -190,7 +190,8 @@
- ptypes_test.o: ptypes_test.cxx $(HALL)
- 
- ptypes_test: ptypes_test.o $(LIBNAME)
--	$(CXX) $(CXXFLAGS) $@.o -L./ $(LDLIBS) libptypes.a -o $@
-+	$(CXX) $(CXXFLAGS) $@.o -L./ $(LDLIBS) libptypes.a -o $@ \
-+		$(PTHREAD_LIBS) -lc_r
- 
- clean: clean-src
- 	rm -f $(LIBDEST)/$(LIBNAME)
