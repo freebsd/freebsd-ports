@@ -11,6 +11,8 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
 
+MAINTAINER=	ports@FreeBSD.org
+
 MAN1=		mpage.1
 ALL_TARGET=	default
 
