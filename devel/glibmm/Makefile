@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glibmm
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -21,9 +21,9 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
-USE_GNOME=	gnomehack gnometarget lthack glib20
+USE_GNOME=	gnomehack gnometarget glib20
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
@@ -39,5 +39,14 @@ post-patch:
 post-configure:
 	@${TOUCH} ${WRKSRC}/docs/reference/html/index.html
 .endif
+
+patch-autotools:
+	@(cd ${PATCH_WRKSRC}; \
+	for file in ${LIBTOOLFILES}; do \
+		${CP} $$file $$file.tmp; \
+		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
+			$$file.tmp > $$file; \
+		${RM} $$file.tmp; \
+	done);
 
 .include <bsd.port.mk>

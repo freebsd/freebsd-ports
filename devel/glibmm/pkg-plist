@@ -422,6 +422,9 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_vars.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_defs.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_enum.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_eval.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_func.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_type.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/graph_legend.dot
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/graph_legend.html
