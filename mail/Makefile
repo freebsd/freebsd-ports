@@ -326,6 +326,7 @@
     SUBDIR += stuphead
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
+    SUBDIR += sylpheed-gtk2
     SUBDIR += teapop
     SUBDIR += tkrat2
     SUBDIR += tlb
