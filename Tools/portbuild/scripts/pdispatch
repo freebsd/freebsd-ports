@@ -5,8 +5,11 @@
 # Choose a random machine from ${buildroot}/ulist and dispatch the
 # job to it via the ptimeout script.
 
-# wait 12 hours maximum
-timeout=43200
+pb=/var/portbuild
+. ${pb}/portbuild.conf
+
+# wait 4 hours maximum
+timeout=14400
 
 branch=$1
 command=$2
@@ -35,11 +38,12 @@ fi
 if [ "x$NO_RESTRICTED" != "x" ]; then
   flags="${flags} -norestr"
 fi
-if [ "x$NOPLISTCHECK" != "x" ]; then
-  flags="${flags} -noplistcheck"
+if [ "x$PLISTCHECK" != "x" ]; then
+  flags="${flags} -plistcheck"
 fi
 if [ "x$NODUMMY" != "x" ]; then
   flags="${flags} -nodummy"
 fi
+
 echo "dispatching: ssh -a -t -n $1 ${command} ${branch} $flags $args at $(date)"
 ${buildroot}/scripts/ptimeout $timeout ssh -a -t -n $1 ${command} ${branch} ${flags} $args
