@@ -15,21 +15,17 @@
 #   using symbolic links.
 
 DISTNAME=       gcc-2.8.1
-PKGNAME=        gnat-3.11p
+PKGNAME=        gnat-3.12p
 CATEGORIES=	lang
 MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/ \
 		${MASTER_SITE_GNU}
-DISTFILES=      gnat-3.11p-src.tar.gz gcc-2.8.1.tar.gz
+DISTFILES=      gnat-3.12p-src.tar.gz gcc-2.8.1.tar.gz
 
 MAINTAINER=	eischen@vigrid.com
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "elf"
-GNUHOST=	${ARCH}-unknown-freebsdelf${OSREL}
-.else
 GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
-.endif
 GCC_VERSION=	2.8.1
 
 PLIST_SUB=	GNUHOST=${GNUHOST} GCC_VERSION=${GCC_VERSION}
@@ -42,7 +38,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		adagcc.1 cccp.1
 
-# You need a compiler who calls an existing GNAT compiler (3.10 or greater).
+# You need a compiler who calls an existing GNAT compiler (3.11 or greater).
 # If you have one, point CC at it.  By default, we'll look for one in the
 # obvious places.  If we can't find one, we'll fetch a distfile containing
 # a minimum (still pretty large) compiler toolset and use that to build.
@@ -66,13 +62,10 @@ have_boot!=	if [ -x /usr/local/bin/adagcc -a -x /usr/local/bin/gnatbind ]; then 
 .endif
 
 #
-# Check for attempts to cross-compile the GNAT compiler.  We only supply
-# an ELF bootstrap compiler.  If the gnat-3.10 package is still around,
-# you could possible install that and build gnat-3.11p as aout.  This
-# is not supported, though.
+# Check for attempts to cross-compile or build an aout GNAT compiler.
 .if empty(have_boot)
 have_boot!=	if [ ${PORTOBJFORMAT} = "aout" ]; then \
-			${ECHO} "borken for cross"; \
+			${ECHO} "borken for aout"; \
 		else \
 			${ECHO} ""; \
 		fi
@@ -81,19 +74,15 @@ have_boot!=	if [ `file ${have_boot}/adagcc | awk ' { print $$2 }'` = "ELF" ]; th
 			if [ ${PORTOBJFORMAT} = "elf" ]; then \
 				${ECHO} ${have_boot}; \
 			else \
-				${ECHO} "borken for cross"; \
+				${ECHO} "borken for aout"; \
 			fi \
 		else \
-			if [ ${PORTOBJFORMAT} = "elf" ]; then \
-				${ECHO} ""; \
-			else \
-				${ECHO} ${have_boot}; \
-			fi \
+			${ECHO} "borken for aout"; \
 		fi
 .endif
 
-.if ${have_boot} == "borken for cross"
-BROKEN=	"Cannot build an aout compiler with an ELF compiler."
+.if ${have_boot} == "borken for aout"
+BROKEN=	"Cannot build with or for an aout compiler."
 .endif
 
 .if empty(have_boot)
@@ -109,13 +98,26 @@ have_boot=	${WRKDIR}/adaboot
 CC = adagcc
 CONFIGURE_ENV=	${COMPILE_DATA} PATH=${have_boot}/bin:$$PATH
 
+# Account for signal set changes
+.if ${OSVERSION} > 400010
+SIGSET_WORDS=	4
+SIGACTION=	new_struct_sigaction
+.else
+SIGSET_WORDS=	1
+SIGACTION=	old_struct_sigaction
+.endif
+
 pre-patch:
+	@${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h
+	@${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h
 	@${ECHO} "===>  Applying FreeBSD patches to gcc for ${DISTNAME}"
 	-( ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/freebsdgcc28-patches )
 	@${ECHO} "===>  Patching gcc for ${DISTNAME}"
-	-( ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/gnat-3.11p-src/src/gcc-281.dif )
+	-( ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/gnat-3.12p-src/src/gcc-281.dif )
 	@${ECHO} "===>  Copying GNAT compiler sources into GCC tree."
-	-( ${MV} ${WRKDIR}/gnat-3.11p-src/src/ada ${WRKDIR}/gcc-2.8.1 )
+	-( ${MV} ${WRKDIR}/gnat-3.12p-src/src/ada ${WRKDIR}/gcc-2.8.1 )
+	@${ECHO} "===>  Making way for FreeBSD GNAT support files"
+	-( ${RM} -f ${WRKSRC}/ada/[45]f* )
 
 # Copy any additional files required into the correct locations.
 post-patch:
@@ -125,14 +127,17 @@ post-patch:
 	    done )
 
 pre-configure:
-	@(cd ${WRKDIR}/gcc-2.8.1/config/${ARCH}/ ; \
+	@(cd ${WRKSRC}/config/${ARCH}/ ; \
 	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${MV} freebsd.h freebsd.h.in ; \
 	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd.h.in \
-		>freebsd.h ; \
-	${MV} freebsd-elf.h freebsd-elf.h.in ; \
-	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd-elf.h.in \
-		>freebsd-elf.h)
+		>freebsd.h)
+	@(cd ${WRKSRC}/ada/ ; \
+	${MV} 5fosinte.ads 5fosinte.ads.in ; \
+	${SED} -e "s:__FreeBSD__sigset_words:${SIGSET_WORDS}:" \
+		-e "s:__FreeBSD__sigaction:${SIGACTION}:" 5fosinte.ads.in \
+		> 5fosinte.ads)
+	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/cstamp-h.in
 	@(cd ${WRKSRC}/ada; \
 	   ${TOUCH} treeprs.ads a-[es]info.h nmake.ad[bs])
 
@@ -144,15 +149,15 @@ do-configure:
 
 #
 # We intentionally override CFLAGS because the build procedure is explicitly
-# spelled out in gnat-3.11p-src/src/README.BUILD.  Remove CFLAGS from the
+# spelled out in gnat-3.12p-src/src/README.BUILD.  Remove CFLAGS from the
 # do-build target at your own risk.
 #
 do-build:
 	(cd ${WRKSRC}; \
 	    PATH=${have_boot}/bin:$$PATH \
-	    ${COMPILEDATA} ${GMAKE} CC="${CC}" OLDCC="adagcc" CFLAGS="-O2" LANGUAGES="c ada" )
+	    ${COMPILEDATA} ${GMAKE} CC="${CC}" OLDCC="adagcc" CFLAGS="-O2" LANGUAGES="c ada gcov" )
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="-O2" LANGUAGES="c ada" bootstrap )
+	    ${GMAKE} CFLAGS="-O2" LANGUAGES="c ada gcov" bootstrap )
 	(cd ${WRKSRC}; \
 	    ${GMAKE} CFLAGS="-O2" gnattools )
 	(cd ${WRKSRC}; \
@@ -160,10 +165,11 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CC="${CC}" LANGUAGES="c ada" ${INSTALL_TARGET} )
+	    ${GMAKE} CC="${CC}" LANGUAGES="c ada gcov" ${INSTALL_TARGET} )
 
 post-install:
 	@(for prog in ${PREFIX}/bin/adagcc \
+	    ${PREFIX}/bin/adagcov \
 	    ${PREFIX}/bin/gnat \
 	    ${PREFIX}/bin/gnatbind \
 	    ${PREFIX}/bin/gnatbl \
@@ -186,6 +192,7 @@ post-install:
 		strip $$prog ; \
 	    fi \
 	done)
+	@(${TOUCH} ${TOUCH_FLAGS} ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/include/float.h)
 	@(${CHOWN} -R bin:bin ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION})
 	@(${ECHO} "-----------------------------------------------------------" )
 	@(${ECHO} "" )

@@ -73,10 +73,16 @@ package body System.Interrupt_Management is
    Exception_Interrupts : constant Interrupt_List :=
      (SIGFPE, SIGILL, SIGSEGV, SIGBUS);
 
+   Unreserve_All_Interrupts : Interfaces.C.int;
+   pragma Import
+     (C, Unreserve_All_Interrupts, "__gl_unreserve_all_interrupts");
 
    ----------------------
    -- Notify_Exception --
    ----------------------
+
+   Signal_Mask : aliased sigset_t;
+   --  The set of signals handled by Notify_Exception
 
    --  This function identifies the Ada exception to be raised using
    --  the information when the system received a synchronous signal.
@@ -107,22 +113,6 @@ package body System.Interrupt_Management is
       --  is consistent with treatment of the abort signal in
       --  System.Task_Primitives.Operations.
 
-      --  ?????
-      --  The code below is first approximation.
-      --  It would be nice to figure out more
-      --  precisely what exception has occurred.
-      --  One also should arrange to use an alternate stack for
-      --  recovery from stack overflow.
-      --  I don't understand the Linux kernel code well
-      --  enough to figure out how to do this yet.
-      --  I hope someone will look at this.  --Ted Baker
-
-      --  How can SIGSEGV be split into constraint and storage errors ?
-      --  What should SIGILL really raise ? Some implemenations have
-      --  codes for different types of SIGILL and some raise Storage_Error.
-      --  What causes SIGBUS and should it be caught ?
-      --  Peter Burwood
-
       case signo is
          when SIGFPE =>
             raise Constraint_Error;
@@ -138,19 +128,22 @@ package body System.Interrupt_Management is
       end case;
    end Notify_Exception;
 
-   ----------------
-   -- Initialize --
-   ----------------
+   ---------------------------
+   -- Initialize_Interrupts --
+   ---------------------------
 
-   procedure Initialize is
+   --  Nothing needs to be done on this platform.
+
+   procedure Initialize_Interrupts is
+   begin
+      null;
+   end Initialize_Interrupts;
+
+begin
+   declare
       act     : aliased struct_sigaction;
       old_act : aliased struct_sigaction;
-      mask    : aliased sigset_t;
       Result  : Interfaces.C.int;
-
-      Unreserve_All_Interrupts : Interfaces.C.int;
-      pragma Import
-        (C, Unreserve_All_Interrupts, "__gl_unreserve_all_interrupts");
 
    begin
 
@@ -167,22 +160,19 @@ package body System.Interrupt_Management is
       --  not restored after the exception (longjmp) from the handler.
       --  The right fix should be made in sigsetjmp so that we save
       --  the Signal_Set and restore it after a longjmp.
-      --  In that case, this field should be changed back to 0. ??? (Dong-Ik)
+      --  In that case, this field should be changed back to 0. ???
 
-      Result := sigemptyset (mask'Access);
+      Result := sigemptyset (Signal_Mask'Access);
       pragma Assert (Result = 0);
 
-      --  ??? For the same reason explained above, we can't mask these
-      --  signals because otherwise we won't be able to catch more than
-      --  one signal.
+      for I in Exception_Interrupts'Range loop
+         Result :=
+           sigaddset
+             (Signal_Mask'Access, Signal (Exception_Interrupts (I)));
+         pragma Assert (Result = 0);
+      end loop;
 
-      --  for I in Exception_Interrupts'Range loop
-      --     Result :=
-      --       sigaddset (mask'Access, Signal (Exception_Interrupts (I)));
-      --     pragma Assert (Result = 0);
-      --  end loop;
-
-      act.sa_mask := mask;
+      act.sa_mask := Signal_Mask;
 
       for I in Exception_Interrupts'Range loop
          Keep_Unmasked (Exception_Interrupts (I)) := True;
@@ -213,13 +203,12 @@ package body System.Interrupt_Management is
       --  the user really wants to attach his own handler, let him.
 
       --  FreeBSD pthreads uses setitimer/getitimer for thread scheduling.
-      --  It's not clear, but it looks as if it only needs SIGVTALRM
-      --  in order to handle the setitimer/getitimer operations.  We
-      --  could probably allow SIGALARM, but we'll leave it as unmasked
-      --  for now.  FreeBSD pthreads also needs SIGCHLD.
+      --  Specifically, it uses timer ITIMER_PROF which generates SIGPROF.
+      --  FreeBSD pthreads also needs SIGCHLD.  The FreeBSD threads library
+      --  also uses SIGINFO for debugging, but it's not required so we'll
+      --  let an Ada application use it.
       Keep_Unmasked (SIGCHLD) := True;
-      Keep_Unmasked (SIGALRM) := True;
-      Keep_Unmasked (SIGVTALRM) := True;
+      Keep_Unmasked (SIGPROF) := True;
 
       Reserve := Reserve or Keep_Unmasked or Keep_Masked;
 
@@ -228,9 +217,5 @@ package body System.Interrupt_Management is
       --  to identify non-existent signals (see s-intnam.ads). Therefore,
       --  Signal 0 should not be used in all signal related operations hence
       --  mark it as reserved.
-
-   end Initialize;
-
-begin
-   Initialize;
+   end;
 end System.Interrupt_Management;

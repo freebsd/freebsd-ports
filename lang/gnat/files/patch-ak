@@ -1,0 +1,30 @@
+*** ada/i-cstrea.ads	Fri Sep 24 08:42:41 1999
+--- ada/i-cstrea.ads	Sat Nov  6 10:20:43 1999
+***************
+*** 184,190 ****
+        size   : size_t)
+        return   int;
+  
+!    procedure tmpnam (string : chars);
+     --  The parameter must be a pointer to a string buffer of at least L_tmpnam
+     --  bytes (the call with a null parameter is not supported). The returned
+     --  value, which is just a copy of the input argument, is discarded.
+--- 184,190 ----
+        size   : size_t)
+        return   int;
+  
+!    procedure tmpnam (tname : chars);
+     --  The parameter must be a pointer to a string buffer of at least L_tmpnam
+     --  bytes (the call with a null parameter is not supported). The returned
+     --  value, which is just a copy of the input argument, is discarded.
+***************
+*** 265,272 ****
+     pragma Import (C, isatty);
+     pragma Import (C, mktemp);
+     pragma Import (C, rewind);
+-    pragma Import (C, tmpnam);
+-    pragma Import (C, tmpfile);
+     pragma Import (C, ungetc);
+     pragma Import (C, unlink);
+  
+--- 265,270 ----

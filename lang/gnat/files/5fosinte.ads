@@ -225,12 +225,21 @@ package System.OS_Interface is
    --  sigcontext is architecture dependent, so define it private
    type struct_sigcontext is private;
 
-   type struct_sigaction is record
+   type old_struct_sigaction is record
       sa_handler   : System.Address;
       sa_mask      : sigset_t;
       sa_flags     : int;
    end record;
-   pragma Convention (C, struct_sigaction);
+   pragma Convention (C, old_struct_sigaction);
+
+   type new_struct_sigaction is record
+      sa_handler   : System.Address;
+      sa_flags     : int;
+      sa_mask      : sigset_t;
+   end record;
+   pragma Convention (C, new_struct_sigaction);
+
+   subtype struct_sigaction is __FreeBSD__sigaction;
    type struct_sigaction_ptr is access all struct_sigaction;
 
 
@@ -346,6 +355,8 @@ package System.OS_Interface is
 
 
    type pthread_t           is private;
+   subtype Thread_Id        is pthread_t;
+
    type pthread_mutex_t     is limited private;
    type pthread_cond_t      is limited private;
    type pthread_attr_t      is limited private;
@@ -403,8 +414,6 @@ package System.OS_Interface is
    --  POSIX.1c  Section 3  --
    ---------------------------
 
-   type sigset_t_ptr is access all sigset_t;
-
    function sigwait
      (set : access sigset_t;
       sig : access Signal)
@@ -417,31 +426,14 @@ package System.OS_Interface is
      return   int;
    pragma Import (C, pthread_kill, "pthread_kill");
 
+   type sigset_t_ptr is access all sigset_t;
+
    function pthread_sigmask
      (how  : int;
       set  : sigset_t_ptr;
       oset : sigset_t_ptr)
      return int;
    pragma Import (C, pthread_sigmask, "pthread_sigmask");
-
-   --  We declare two wrappers for pthread_sigmask, since null may need
-   --  to be passed for either set or oset and this is not allowed
-   --  in Ada for access mode parameters (the error was not catched by
-   --  GNAT until recently, and a flag, -gnatdj, was added to allow it
-   --  to compile).
-
-   function pthread_sigmask_set
-     (how  : int;
-      set  : access sigset_t)
-     return int;
-   --  Identical to pthread_sigmask (how, set, null).
-
-   function pthread_sigmask_oset
-     (how  : int;
-      oset : access sigset_t)
-     return int;
-   --  Identical to pthread_sigmask (how, null, oset).
-
 
    ----------------------------
    --  POSIX.1c  Section 11  --
@@ -521,45 +513,58 @@ package System.OS_Interface is
    --  POSIX.1c  Section 13  --
    ----------------------------
 
-   --  FreeBSD pthreads does not support these yet.
-   --
-   --  PTHREAD_PRIO_NONE    : constant := 0;
-   --  PTHREAD_PRIO_PROTECT : constant := 2;
-   --  PTHREAD_PRIO_INHERIT : constant := 1;
+   PTHREAD_PRIO_NONE    : constant := 0;
+   PTHREAD_PRIO_PROTECT : constant := 2;
+   PTHREAD_PRIO_INHERIT : constant := 1;
 
-   --  FreeBSD doesn't have pthread_getschedparam or pthread_setschedparam
-   --  yet, but we provide the compliant interface and implement them with
-   --  pthread_getprio and pthread_setprio instead.
+   function pthread_mutexattr_setprotocol
+     (attr     : access pthread_mutexattr_t;
+      protocol : int)
+     return int;
+   pragma Import
+      (C, pthread_mutexattr_setprotocol, "pthread_mutexattr_setprotocol");
+
+   function pthread_mutexattr_getprotocol
+     (attr     : access pthread_mutexattr_t;
+      protocol : access int)
+     return int;
+   pragma Import
+     (C, pthread_mutexattr_getprotocol, "pthread_mutexattr_getprotocol");
+
+   function pthread_mutexattr_setprioceiling
+     (attr     : access pthread_mutexattr_t;
+      prioceiling : int)
+     return int;
+   pragma Import
+     (C, pthread_mutexattr_setprioceiling,
+      "pthread_mutexattr_setprioceiling");
+
+   function pthread_mutexattr_getprioceiling
+     (attr     : access pthread_mutexattr_t;
+      prioceiling : access int)
+     return int;
+   pragma Import
+     (C, pthread_mutexattr_getprioceiling,
+      "pthread_mutexattr_getprioceiling");
 
    type struct_sched_param is record
       sched_priority : int;
    end record;
    pragma Convention (C, struct_sched_param);
 
-   function sched_getparam
-     (pid    : pid_t;
-      param  : access struct_sched_param)
-     return int;
-   pragma Import (C, sched_getparam, "sched_getparam");
-
-   function sched_setscheduler
-     (pid    : pid_t;
-      policy : int;
-      param  : access struct_sched_param)
-     return int;
-   pragma Import (C, sched_setscheduler, "sched_setscheduler");
-
    function pthread_getschedparam
      (thread : pthread_t;
       policy : access int;
       param  : access struct_sched_param)
      return int;
+   pragma Import (C, pthread_getschedparam, "pthread_getschedparam");
 
    function pthread_setschedparam
      (thread : pthread_t;
       policy : int;
       param  : access struct_sched_param)
      return int;
+   pragma Import (C, pthread_setschedparam, "pthread_setschedparam");
 
    function pthread_attr_setscope
      (attr            : access pthread_attr_t;
@@ -591,29 +596,27 @@ package System.OS_Interface is
      (attr   : access pthread_attr_t;
       policy : int)
      return int;
---   pragma Import
---    (C, pthread_attr_setschedpolicy,
---     "pthread_attr_setschedpolicy");
+   pragma Import (C, pthread_attr_setschedpolicy,
+     "pthread_attr_setschedpolicy");
 
    function pthread_attr_getschedpolicy
      (attr   : access pthread_attr_t;
       policy : access int)
      return int;
---   pragma Import (C, pthread_attr_getschedpolicy,
---     "pthread_attr_getschedpolicy");
+   pragma Import (C, pthread_attr_getschedpolicy,
+     "pthread_attr_getschedpolicy");
 
-   --  FreeBSD doesn't have pthread_attr_setschedparm and
-   --  pthread_attr_getschedparm yet.
+   function pthread_attr_setschedparam
+     (attr        : access pthread_attr_t;
+      sched_param : int)
+     return int;
+   pragma Import (C, pthread_attr_setschedparam, "pthread_attr_setschedparam");
 
---   function pthread_attr_setschedparam
---     (attr  : access pthread_attr_t;
---      param : access struct_sched_param)
---     return int;
---
---   function pthread_attr_getschedparam
---     (attr  : access pthread_attr_t;
---      param : access struct_sched_param)
---     return int;
+   function pthread_attr_getschedparam
+     (attr        : access pthread_attr_t;
+      sched_param : access int)
+     return int;
+   pragma Import (C, pthread_attr_getschedparam, "pthread_attr_getschedparam");
 
    function sched_yield return int;
    pragma Import (C, sched_yield, "pthread_yield");
@@ -718,7 +721,12 @@ package System.OS_Interface is
 
 private
 
-   type sigset_t is new unsigned_long;
+   type sigset_t is array (1 .. __FreeBSD__sigset_words) of unsigned;
+
+   --  In FreeBSD the component sa_handler turns out to
+   --  be one a union type, and the selector is a macro:
+   --  #define sa_handler __sigaction_u._handler
+   --  #define sa_sigaction __sigaction_u._sigaction
 
    --  Should we add a signal_context type here ?
    --  How could it be done independent of the CPU architecture ?
@@ -727,11 +735,6 @@ private
    --  since the contents are not used anywhere.
    type struct_sigcontext is null record;
    pragma Convention (C, struct_sigcontext);
-
-   --  In Solaris 2.4 the component sa_handler turns out to
-   --  be one a union type, and the selector is a macro:
-   --  #define sa_handler __funcptr._handler
-   --  #define sa_sigaction __funcptr._sigaction
 
    type pid_t is new int;
    Self_PID : constant pid_t := 0;

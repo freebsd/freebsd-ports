@@ -1,0 +1,19 @@
+*** ./ada/a-cstrea.c.orig	Fri Sep 24 08:42:07 1999
+--- ./ada/a-cstrea.c	Sat Nov  6 16:06:52 1999
+***************
+*** 198,204 ****
+     _fixpath (nam, buffer);
+  
+  #else
+! #if defined (sgi) || defined (sun) || defined (linux)
+  
+     /* Use realpath function which resolves links and references to .. and ..
+        on those Unix systems that support it. */
+--- 198,204 ----
+     _fixpath (nam, buffer);
+  
+  #else
+! #if defined (sgi) || defined (sun) || defined (linux) || defined (__FreeBSD__)
+  
+     /* Use realpath function which resolves links and references to .. and ..
+        on those Unix systems that support it. */

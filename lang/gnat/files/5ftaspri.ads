@@ -37,6 +37,10 @@
 --  This is the FreeBSD PTHREADS version of this package.  Contributed
 --  by Daniel M. Eischen (eischen@vigrid.com).
 
+pragma Polling (Off);
+--  Turn off polling, we do not want ATC polling to take place during
+--  tasking operations. It causes infinite loops and other problems.
+
 with Interfaces.C;
 --  used for int
 --           size_t
@@ -72,7 +76,7 @@ private
    type RTS_Lock is new System.OS_Interface.pthread_mutex_t;
 
    type Private_Data is record
-      Thread      : aliased System.OS_Interface.pthread_t;
+      Thread : aliased System.OS_Interface.pthread_t;
       pragma Atomic (Thread);
       --  Thread field may be updated by two different threads of control.
       --  (See, Enter_Task and Create_Task in s-taprop.adb).
@@ -80,10 +84,16 @@ private
       --  use lock on those operations and the only thing we have to
       --  make sure is that they are updated in atomic fashion.
 
+      LWP : aliased System.Address;
+      --  This field is not relevant on all targets. Currently only SGI and
+      --  AiX updates it. The purpose of this field is to provide a better
+      --  tasking support on gdb. The order of the two first fields (Thread
+      --  and LWP) is important.
+
       CV : aliased System.OS_Interface.pthread_cond_t;
 
       L  : aliased RTS_Lock;
-      --  protection for all components is lock L
+      --  Protection for all components is lock L
 
       Current_Priority : Interfaces.C.int := 0;
       --  Active priority, except that the effects of protected object
