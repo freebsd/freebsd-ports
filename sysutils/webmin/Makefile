@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.050
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,18 +25,18 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	apache-1.050-3.wbm.gz \
-		bind8-1.050-7.wbm.gz \
+		bind8-1.050-9.wbm.gz \
 		custom-1.050-3.wbm.gz \
 		file-1.050-7.wbm.gz \
 		fsdump-1.050-4.wbm.gz \
 		mysql-1.050-8.wbm.gz \
 		net-1.050-8.wbm.gz \
-		postgresql-1.050-6.wbm.gz \
+		postgresql-1.050-8.wbm.gz \
 		proc-1.050-7.wbm.gz \
 		quota-1.050-1.wbm.gz \
 		squid-1.050-7.wbm.gz \
 		sshd-1.050-3.wbm.gz \
-		status-1.050-4.wbm.gz
+		status-1.050-9.wbm.gz
 
 WEBMIN_THEMES=
 
