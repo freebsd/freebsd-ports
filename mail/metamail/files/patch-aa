@@ -1,5 +1,5 @@
 *** Makefile.orig	Wed Jan 26 18:32:33 1994
---- Makefile	Mon Oct 17 21:38:58 1994
+--- Makefile	Sat May  6 12:53:48 1995
 ***************
 *** 38,44 ****
   
@@ -82,3 +82,30 @@
   	(cd metamail ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"  LDLIBS="${LDLIBS}")
   	-${RM} bin/metamail
   	(cd bin; ${LN} ../metamail/metamail metamail)
+***************
+*** 117,123 ****
+  	(cd bin; ${LN} ../richmail/richtext richtext)
+  	-${RM} bin/richtoatk
+  	(cd bin; ${LN} ../richmail/richtoatk richtoatk)
+! 	(cd fonts ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}")
+  	-${RM} bin/shownonascii
+  	(cd bin; ${LN} ../fonts/shownonascii shownonascii)
+  	-${RM} bin/mailto-hebrew
+--- 117,123 ----
+  	(cd bin; ${LN} ../richmail/richtext richtext)
+  	-${RM} bin/richtoatk
+  	(cd bin; ${LN} ../richmail/richtoatk richtoatk)
+! 	(cd fonts ; $(MAKE) PREFIX=${PREFIX} CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}")
+  	-${RM} bin/shownonascii
+  	(cd bin; ${LN} ../fonts/shownonascii shownonascii)
+  	-${RM} bin/mailto-hebrew
+***************
+*** 149,154 ****
+--- 149,155 ----
+  	-mv $(MAILCAPDIR)/mailcap $(MAILCAPDIR)/mailcap.old
+  	@echo "installing file $(MAILCAPDIR)/mailcap"
+  	${CP} mailcap $(MAILCAPDIR)
++ 	(cd fonts ; $(MAKE) PREFIX=${PREFIX} CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}" install)
+  
+  uninstall-all:
+  	@(cd bin; 				\
