@@ -3,7 +3,7 @@
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.10 1997/02/19 09:36:01 tg Exp $
+# $Id: Makefile,v 1.11 1997/04/27 00:11:47 asami Exp $
 #
 
 DISTNAME=       glimpse-4.0.src
@@ -25,5 +25,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/glimpse
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/glimpse
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/glimpse
+	${INSTALL_PROGRAM} ${WRKSRC}/index/wgconvert ${PREFIX}/bin
 
 .include <bsd.port.mk>
