@@ -5295,6 +5295,7 @@ poster		ports/print/poster
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
 postgresql-jdbc	ports/databases/postgresql-jdbc
+postgresql-odbc	ports/databases/postgresql-odbc
 postgresql-plruby	ports/databases/postgresql-plruby
 postgresql7	ports/databases/postgresql7
 postilion	ports/mail/postilion
