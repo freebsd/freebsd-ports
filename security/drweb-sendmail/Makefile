@@ -8,7 +8,8 @@
 PORTNAME=	drweb-sendmail
 PORTVERSION=	4.32.1
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/Clients/
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/FreeBSD/49/ \
+		ftp://ftp.drweb.ru/pub/unix/FreeBSD/53/
 
 MAINTAINER=     support@spectrum.ru
 COMMENT=        Sendmail message filter for virus processing through DrWeb daemon
