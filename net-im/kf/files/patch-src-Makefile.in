@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Mon Dec 20 13:36:48 2004
++++ src/Makefile.in	Mon Dec 20 13:37:29 2004
+@@ -90,8 +90,8 @@
+ 
+ 
+ #kf_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+-CFLAGS = -Wall -Wmissing-declarations
+-LDFLAGS = -g
++CFLAGS = @CFLAGS@ -Wall -Wmissing-declarations
++LDFLAGS = @LDFLAGS@ -g
+ kf_LDADD = @PACKAGE_LIBS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
