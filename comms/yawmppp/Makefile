@@ -16,7 +16,8 @@ MAINTAINER=	pat@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_XPM=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS} -I${X11BASE}/include"
 CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
@@ -36,7 +37,7 @@ pre-patch:
 
 do-install:
 .for file in dockapp/yagetmodemspeed dockapp/${PORTNAME} gtklog/${PORTNAME}.log \
-	gtksetup/${PORTNAME}.pref thinppp/${PORTNAME}.thin 
+	gtksetup/${PORTNAME}.pref thinppp/${PORTNAME}.thin
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.1x ${PREFIX}/man/man1
