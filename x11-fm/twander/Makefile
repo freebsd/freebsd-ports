@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	twander
-PORTVERSION=	3.0
+PORTVERSION=	3.135
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.tundraware.com/Software/twander/
 
 MAINTAINER=	twander@tundraware.com
-COMMENT=	A better filesystem browser
+COMMENT=	A Better Filesystem Browser
 
 BUILD_DEPENDS=${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS=${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
@@ -24,9 +24,10 @@ MAN1=		twander.1
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in .twander twander-license.txt
+.for f in READ-1ST.txt WHATSNEW.txt .twander twander-license.txt twander.html twander.pdf twander.ps twander.txt
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+
 
 .include <bsd.port.mk>
