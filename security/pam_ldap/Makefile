@@ -10,7 +10,7 @@ PORTVERSION=	1.1.8
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
-DISTNAME=      	pam_ldap-${PORTVERSION:S/.//g}
+DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 
 MAINTAINER=	marcus@marcuscom.com
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap \
 .endif
 
 USE_AUTOCONF=	yes
+USE_AUTOMAKE=	yes
 CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-dir=${LOCALBASE}
 
