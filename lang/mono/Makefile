@@ -18,6 +18,7 @@ LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
