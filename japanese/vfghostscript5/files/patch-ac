@@ -1,0 +1,14 @@
+--- gdevlj56.c.orig	Fri Dec 18 09:56:18 1998
++++ gdevlj56.c	Fri Jun 11 18:30:44 1999
+@@ -185,7 +185,11 @@
+ 	/* Write the page header. */
+ 	{ static const byte page_header[] = {
+ 	    dub(ePortraitOrientation), da(pxaOrientation),
++#ifdef A4
++	    dub(eA4Paper), da(pxaMediaSize),
++#else
+ 	    dub(eLetterPaper), da(pxaMediaSize),
++#endif
+ 	    dub(eAutoSelect), da(pxaMediaSource),
+ 	    pxtBeginPage,
+ 	    dusp(0, 0), da(pxaPoint),
