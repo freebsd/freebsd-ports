@@ -15,7 +15,7 @@
 # In addition to the knobs listed below you can enable other configuration
 # options of mutt by adding them to the MUTT_CONFIGURE_ARGS variable. For
 # example you could say "MUTT_CONFIGURE_ARGS=--with-homespool=MyMail" to
-# configure a different directory for mutt's homespool.
+# configure a different file for mutt's homespool.
 #
 # The two most important knobs are:
 #
@@ -52,11 +52,11 @@
 #  WITH_MUTT_RU_PATCH
 #
 # If you want to enable the pgp_outlook_compat function for use with pgp define:
-#  MUTT_WITH_PGP_OUTLOOK_PATCH
+#  WITH_MUTT_PGP_OUTLOOK_PATCH
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.27
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -77,7 +77,7 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
 		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
-		--with-libiconv-prefix=${PREFIX}
+		--with-libiconv-prefix=${PREFIX} --enable-pop --enable-imap
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
@@ -158,14 +158,13 @@ pre-configure::
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if exists(${LOCALBASE}/bin/pgp)
-MUTT_WITH_PGP_OUTLOOK_PATCH=	yes
+WITH_MUTT_PGP_OUTLOOK_PATCH=	yes
 .endif
-.if defined(MUTT_WITH_PGP_OUTLOOK_PATCH)
+.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-outlook
 .endif
 
-CONFIGURE_ARGS+=	--enable-pop --enable-imap
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
@@ -424,7 +423,7 @@ PLIST_SUB+=	SUB_PGP_A="@comment "
 post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
-.if defined(MUTT_WITH_PGP_OUTLOOK_PATCH)
+.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
 PLIST_SUB+=	SUB_PGP=""
 .else
 PLIST_SUB+=	SUB_PGP="@comment "
