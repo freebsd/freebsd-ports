@@ -1,0 +1,11 @@
+--- htdocs/manual/mod/index.html.orig	Mon Mar 22 18:17:36 1999
++++ htdocs/manual/mod/index.html	Fri Jun 11 22:12:43 1999
+@@ -74,6 +74,8 @@
+ <DD>Demonstrates Apache API
+ <DT><A HREF="mod_expires.html">mod_expires</A> Apache 1.2 and up
+ <DD>Apply Expires: headers to resources
++<DT><A HREF="mod_frontpage/index.html">mod_frontpage</A> Apache 1.2 and up
++<DD>Apache mod_frontpage interface for FrontPage 2000
+ <DT><A HREF="mod_headers.html">mod_headers</A> Apache 1.2 and up
+ <DD>Add arbitrary HTTP headers to resources
+ <DT><A HREF="mod_imap.html">mod_imap</A>

@@ -1,5 +1,5 @@
---- src/support/log_server_status.orig	Fri Jun  4 19:54:19 1999
-+++ src/support/log_server_status	Fri Sep  3 15:53:16 1999
+--- src/support/log_server_status.orig	Fri Jun  4 10:54:19 1999
++++ src/support/log_server_status	Sat Nov 13 19:42:02 1999
 @@ -67,10 +67,10 @@
  #
  require 'sys/socket.ph';
@@ -13,7 +13,16 @@
  
  sub tcp_connect
  {
-@@ -100,7 +100,7 @@
+@@ -93,14 +93,14 @@
+ ### Main
+ 
+ {
+-        $year=`date +%y`;
++        $year=`LC_TIME=C date +%y`;
+ 	chomp($year);
+ 	$year += ($year < 70) ? 2000 : 1900;
+-	$date = $year . `date +%m%d:%H%M%S`;
++	$date = $year . `LC_TIME=C date +%m%d:%H%M%S`;
  	chomp($date);
  	($day,$time)=split(/:/,$date);
  	$res=&tcp_connect($server,$port);

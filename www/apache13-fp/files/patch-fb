@@ -1,25 +1,25 @@
---- frontpage/version3.0/fp_install.sh.orig	Thu Mar  5 06:00:21 1998
-+++ frontpage/version3.0/fp_install.sh	Fri Jan 22 22:58:40 1999
-@@ -50,7 +50,7 @@
+--- frontpage/version4.0/fp_install.sh.orig	Mon May 24 12:45:14 1999
++++ frontpage/version4.0/fp_install.sh	Sat Jun 12 13:56:45 1999
+@@ -48,7 +48,7 @@
  {
-   VERSION="3.0"
+   VERSION="4.0"
    PATH=".:/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb:/etc:/usr/bsd"
 -  INSTALLDIRDEFAULT="/usr/local/frontpage"
 +  INSTALLDIRDEFAULT="PREFIX/frontpage"
  
  case "`echo 'x\c'`" in
     'x\c')   echo="echo -n"    nnl= ;;      #BSD
-@@ -69,6 +69,9 @@
-      IRIX*)           machine="sgi" ;;
-      SunOS*5.*sun4*)  machine="solaris" ;;
-      SunOS*4.*sun4*)  machine="sunos";;
-+     FreeBSD* | \
-+     NetBSD* | \
-+     OpenBSD* | \
-      *BSD/OS?3.0*)    machine="bsdi3" ;;
-      BSD/OS*)         machine="bsdi" ;;
-      SCO_SV*)         machine="sco5" ;;
-@@ -325,7 +328,7 @@
+@@ -68,6 +68,9 @@
+     IRIX*)              machine="sgi" ;;
+     SunOS*5.*sun4*)     machine="solaris" ;;
+     SunOS*5.*i386*)     machine="solarisx86" ;;
++    FreeBSD* | \
++    NetBSD* | \
++    OpenBSD* | \
+     BSD/OS*)            machine="bsdi" ;;
+     SCO_SV*)            machine="sco5" ;;
+     UnixWare\ *\ *\ 7*\ i*)   machine="uware7" ;;
+@@ -327,7 +330,7 @@
   echo "link will be created from /usr/local/frontpage/ to the location that" 
   echo "is chosen." 
   echo 
@@ -28,8 +28,8 @@
   read installdir
   
   if [ "$installdir" = "" ]
-@@ -412,7 +415,7 @@
-  vtfile="fp30.$machine.tar"
+@@ -414,7 +417,7 @@
+  vtfile="fp40.$machine.tar"
   echo "Platform is $machine." 
   
 - vtfilelocation="`pwd`/"
@@ -37,30 +37,35 @@
  
   getextfilename $vtfilelocation $vtfile || return 1
  
-@@ -651,10 +654,19 @@
+@@ -538,7 +541,7 @@
+         upgrade="no"
+         echo "For details on how to upgrade servers manually, please see" 
+         echo "the Server Extension Resource Kit (SERK), located in"
+-        echo "/usr/local/frontpage/version${VERSION}/serk"
++        echo "MOD_FPDOCDIR/serk"
+         echo
+         return $retval
+     else
+@@ -655,10 +658,15 @@
        *pache*) getHttpDirective $configfile AccessConfig $port
                 if [ "$param" != "" ]
                 then
 -                   file=`basename $param`
 -                   accessconffile="${configfiledir}${file}"
-+                   if [ "$param" != "/dev/null" ]
++                   if [ "${param}" = "/dev/null" ]
 +                   then
++                       accessconffile="${configfile}"
++                   else
 +                       file=`basename $param`
 +                       accessconffile="${configfiledir}${file}"
-+                   else
-+                       configError
 +                   fi
                 else
 -                   accessconffile="${configfiledir}access.conf"
 +                   accessconffile="${configfiledir}conf/access.conf"
-+                   if [ ! -f "$accessconffile" ]
-+                   then
-+                       configError2
-+                   fi
                 fi
  
                 if [ ! -f "$accessconffile" ]
-@@ -1101,18 +1113,29 @@
+@@ -1105,18 +1113,29 @@
  
   webname="/"
  
@@ -93,49 +98,47 @@
   done
  
   getparam Port $configfile
-@@ -1124,12 +1147,37 @@
-     read port
-  done
+@@ -1131,6 +1150,39 @@
+  getparam User $configfile
+  defwebowner=$param
  
-- getparam User $configfile
-- webowner=$param
--
-  weconfigfile="${installdir}/we${port}.cnf"
-+ getHttpDirective ${configfile} ResourceConfig ${port}
-+ if [ "$param" = "/dev/null" ]
-+ then
-+     configError
-+ fi
-+ configfiledir=`dirname $configfile`"/"
-+ if [ "$param" != "" ]
-+ then
-+     file=`basename $param`
-+     resconffile="${configfiledir}${file}"
-+ else
-+     resconffile="${configfiledir}conf/srm.conf"
-+     if [ ! -f "$resconffile" ]
-+     then
-+         configError2
-+     fi
-+ fi
- 
-- defwebowner=`$lsg ${docroot}${service} | $awk ' { print $3}'`
-+ getparam DocumentRoot $resconffile
-+ docroot=$param
-+
-+ getparam User $configfile
-+ defwebowner=$param
-+
 + if [ "$defwebowner" = "" ]
 + then
++     getHttpDirective $configfile ResourceConfig $port
++     if [ "$param" != "" ]
++     then
++         if [ "${param}" = "/dev/null" ]
++         then
++             resconffile="${configfile}"
++         else
++             file=`basename $param`
++             resconffile="${configfiledir}${file}"
++         fi
++     else
++         resconffile="${configfiledir}srm.conf"
++     fi
++
++     if [ ! -f "$resconffile" ]
++     then
++         echo "ERROR: $resconffile does not exist!"
++         return 1
++     fi
++
 +     getparam DocumentRoot $resconffile
 +     docroot=$param
++     if [ ! -d "$docroot" ]
++     then
++         echo "ERROR: $docroot does not exist!"
++         return 1
++     fi
++
 +     defwebowner=`$lsg ${docroot}${service} | $awk ' { print $3}'`
 + fi
++
+  weconfigfile="${installdir}/we${port}.cnf"
  
   webowner=""
-  until [ "$webowner" != "" ]
-@@ -1144,6 +1192,12 @@
+@@ -1146,6 +1198,12 @@
  
   getparam Group $configfile
   defgroup=$param
@@ -148,7 +151,7 @@
   webgroup=""
   until [ "$webgroup" != "" ]
   do
-@@ -1155,6 +1209,8 @@
+@@ -1157,6 +1215,8 @@
          webgroup=$defgroup
       fi
   done
@@ -157,10 +160,10 @@
   
   until [ "$servertype" != "" ]
   do
-@@ -1168,9 +1224,13 @@
-      echo "    7.  netscape-commerce" 
-      echo "    8.  netscape-fasttrack" 
-      echo "    9.  netscape-enterprise" 
+@@ -1167,9 +1227,13 @@
+      echo "    4.  netscape-fasttrack" 
+      echo "    5.  netscape-enterprise"
+      echo "    6.  stronghold"
 -     $echo "What type of Server is this:  ${nnl}" 
 +     $echo "What type of Server is this: [$defservertypenum] ${nnl}" 
       read servertypenum
@@ -172,17 +175,7 @@
  
       case $servertypenum in
            "1") servertype="ncsa" ;;
-@@ -1185,7 +1245,8 @@
-           "7") servertype="netscape-commerce" ;;
-           "8") servertype="netscape-fasttrack" ;;
-           "9") servertype="netscape-enterprise" ;;
--            *) echo "Invalid option!  Please try again."   ;;
-+            *) servertypenum=""
-+               echo "Invalid option!  Please try again."   ;;
-      esac 
-  done
- 
-@@ -1510,6 +1571,8 @@
+@@ -1545,6 +1609,8 @@
          read admin
      done
  
@@ -191,10 +184,10 @@
      until [ "$servertype" != "" ]
      do
       echo 
-@@ -1522,9 +1585,13 @@
-      echo "    7.  netscape-commerce" 
-      echo "    8.  netscape-fasttrack" 
-      echo "    9.  netscape-enterprise" 
+@@ -1554,9 +1620,13 @@
+      echo "    4.  netscape-fasttrack" 
+      echo "    5.  netscape-enterprise" 
+      echo "    6.  stronghold"
 -     $echo "What type of Server is this:  ${nnl}" 
 +     $echo "What type of Server is this: [$defservertypenum] ${nnl}" 
       read servertypenum
@@ -206,40 +199,7 @@
  
       case $servertypenum in
            "1") servertype="ncsa" ;;
-@@ -1539,7 +1606,8 @@
-           "7") servertype="netscape-commerce" ;;
-           "8") servertype="netscape-fasttrack" ;;
-           "9") servertype="netscape-enterprise" ;;
--            *) echo "Invalid option!  Please try again."   ;;
-+            *) servertypenum=""
-+               echo "Invalid option!  Please try again."   ;;
-        esac 
-     done
- 
-@@ -1825,10 +1893,19 @@
-                         *) getHttpDirective $configfile ResourceConfig $port
-                            if [ "$param" != "" ]
-                            then
--                               file=`basename $param`
--                               resconffile="${configfiledir}${file}"
-+                               if [ "$param" != "/dev/null" ]
-+                               then
-+                                   file=`basename $param`
-+                                   resconffile="${configfiledir}${file}"
-+                               else
-+                                   configError
-+                               fi
-                            else
--                               resconffile="${configfiledir}srm.conf"
-+                               resconffile="${configfiledir}conf/srm.conf"
-+                               if [ ! -f "$resconffile" ]
-+                               then
-+                                   configError2
-+                               fi
-                            fi
- 
-                            if [ ! -f "$resconffile" ]
-@@ -1964,7 +2041,6 @@
+@@ -2023,7 +2093,6 @@
   then
      getHttpRootDirective $configfile $directive
   fi 
@@ -247,90 +207,3 @@
  }
  
  getnetscapedocroot()
-@@ -2080,10 +2156,19 @@
-                     getHttpDirective $configfile ResourceConfig $port
-                     if [ "$param" != "" ]
-                     then
--                        file=`basename $param`
--                        resconffile="${configfiledir}${file}"
-+                        if [ "$param" != "/dev/null" ]
-+                        then
-+                            file=`basename $param`
-+                            resconffile="${configfiledir}${file}"
-+                        else
-+                            configError
-+                        fi
-                     else
--                        resconffile="${configfiledir}srm.conf"
-+                        resconffile="${configfiledir}conf/srm.conf"
-+                        if [ ! -f $resconffile ]
-+                        then
-+                            configError2
-+                        fi
-                     fi
-                     echo "Getting DocumentRoot from $resconffile."
-                     getparam DocumentRoot $resconffile
-@@ -2099,10 +2184,19 @@
-                     getHttpDirective $configfile ResourceConfig $port
-                     if [ "$param" != "" ]
-                     then
--                        file=`basename $param`
--                        resconffile="${configfiledir}${file}"
-+                        if [ "$param" != "/dev/null" ]
-+                        then
-+                            file=`basename $param`
-+                            resconffile="${configfiledir}${file}"
-+                        else
-+                            configError
-+                        fi
-                     else
--                        resconffile="${configfiledir}srm.conf"
-+                        resconffile="${configfiledir}conf/srm.conf"
-+                        if [ ! -f "$resconffile" ]
-+                        then
-+                            configError2
-+                        fi
-                     fi
-                     echo "Getting UserDir from $resconffile."
-                     getparam UserDir $resconffile
-@@ -2111,6 +2205,40 @@
-                 ;; 
-  esac
-  
-+}
-+
-+configError()
-+{
-+     echo
-+     echo "ERROR: ${configfile} invalid"
-+     echo
-+     echo "Change ${configfile} as follows:"
-+     echo
-+     echo "    ResourceConfig ${configfile}"
-+     echo "    AccessConfig ${configfile}"
-+     echo
-+     $echo "hit enter to continue${nnl}"
-+     read continue
-+     echo "Ouch!!!!!!!!!!!!!"
-+     echo
-+     exit 1
-+}
-+
-+configError2()
-+{
-+     echo
-+     echo "ERROR: ${configfile} invalid"
-+     echo
-+     echo "Change ${configfile} as follows:"
-+     echo
-+     echo "    ResourceConfig ${configfiledir}srm.conf"
-+     echo "    AccessConfig ${configfiledir}access.conf"
-+     echo
-+     $echo "hit enter to continue${nnl}"
-+     read continue
-+     echo "Ouch!!!!!!!!!!!!!"
-+     echo
-+     exit 1
- }
- 
- error()

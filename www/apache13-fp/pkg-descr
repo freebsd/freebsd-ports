@@ -11,12 +11,12 @@ Allows it to be extended to meet users' needs more easily.
 
 Microsoft Frontpage Extentions allows web administrators and authors to
 remotely manage, create, modify, or delete web pages on the Apache server
-using Microsoft FrontPage 98.
+using Microsoft FrontPage 2000.
 
 Documentation
 -------------
 
 All the documentation is on-line on the WWW, via the URL's:
 
-   Apache    - http://www.apache.org
-   FrontPage - http://www.microsoft.com/frontpage/wpp/SERK
+   Apache    - http://www.apache.org/httpd.html
+   FrontPage - http://officeupdate.microsoft.com/frontpage/wpp/serk/

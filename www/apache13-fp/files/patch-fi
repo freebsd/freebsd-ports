@@ -1,5 +1,5 @@
 --- src/main/http_request.c.orig	Fri May 21 07:16:21 1999
-+++ src/main/http_request.c	Mon Sep  6 13:12:55 1999
++++ src/main/http_request.c	Sat Oct 16 18:47:04 1999
 @@ -187,6 +187,8 @@
  	return OK;
      }
@@ -17,3 +17,11 @@
              if (res)
                  return res;
  
+@@ -521,6 +524,7 @@
+ 		r->per_dir_config = per_dir_defaults;
+ 	    }
+         }
++	if (r->execfilename) r->filename = r->execfilename;
+     }
+ 
+     /*

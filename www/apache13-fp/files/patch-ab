@@ -1,5 +1,5 @@
 --- Makefile.tmpl.orig	Fri Aug 13 01:58:18 1999
-+++ Makefile.tmpl	Mon Sep  6 12:58:17 1999
++++ Makefile.tmpl	Sat Nov 13 19:33:44 1999
 @@ -120,6 +120,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
@@ -68,7 +68,7 @@
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
  	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
-@@ -441,25 +458,33 @@
+@@ -441,25 +458,36 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -85,17 +85,20 @@
 -		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
 -		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
 +		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
++		cat $(TOP)/htdocs/index.html | \
++		sed -e 's;@@HOSTNAME@@;$(conf_servername);' \
++		    > $(root)$(doc_prefix)/index.html ; \
++		$(LN) -f $(root)$(doc_prefix)/apache_pb.gif $(root)$(doc_prefix)/manual/images; \
 +		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
 +		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
 +#	fi
 +	if [ ! -d $(root)$(htdocsdir) ]; then \
-+		$(CP) -rp $(root)$(doc_prefix) $(root)$(htdocsdir); \
++		$(MKDIR) $(root)$(htdocsdir); \
++		$(CP) -rp $(root)$(doc_prefix)/index.html $(root)$(htdocsdir); \
  	fi
 -	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 -		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 -	else \
-+	$(RM) $(root)$(htdocsdir).default
-+	$(LN) -s $(root)$(doc_prefix) $(root)$(htdocsdir).default
 +#	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 +#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 +#	else \
@@ -114,12 +117,12 @@
  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
-@@ -493,15 +517,17 @@
+@@ -493,20 +521,24 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
-+			-e 's;@@ServerRoot@@/srm.conf;$(sysconfdir)/$(TARGET).conf;' \
-+			-e 's;@@ServerRoot@@/access.conf;$(sysconfdir)/$(TARGET).conf;' \
++			-e 's;@@ServerRoot@@/srm.conf;/dev/null;' \
++			-e 's;@@ServerRoot@@/access.conf;/dev/null;' \
  			-e 's;@@ServerRoot@@;$(prefix);g' \
  			-e 's;httpd\.conf;$(TARGET).conf;' \
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
@@ -136,3 +139,10 @@
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
  			-e 's;User nobody;User $(conf_user);' \
+ 			-e 's;Group #-1;Group $(conf_group);' \
+ 			-e 's;Port 80;Port $(conf_port);' \
++			-e 's;@@MANUAL@@;$(doc_prefix);' \
++			-e 's;@@HOSTNAME@@;$(conf_servername);' \
+ 			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
+ 			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
+ 			> $(TOP)/$(SRC)/.apaci.install.tmp && \

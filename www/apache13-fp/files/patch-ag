@@ -1,28 +1,26 @@
 --- conf/httpd.conf-dist.orig	Wed May  5 15:17:59 1999
-+++ conf/httpd.conf-dist	Mon Sep  6 13:01:08 1999
-@@ -97,6 +97,13 @@
++++ conf/httpd.conf-dist	Wed Oct 27 21:37:07 1999
+@@ -97,6 +97,9 @@
  #ResourceConfig conf/srm.conf
  #AccessConfig conf/access.conf
  
-+<IfDefine FRONTPAGE>
-+### FrontPage needs these two directives defined, otherwise	###
-+### the fpadmsrv.exe program will cause errors.		###
 +ResourceConfig @@ServerRoot@@/srm.conf
 +AccessConfig @@ServerRoot@@/access.conf
-+</IfDefine>
 +
  #
  # Timeout: The number of seconds before receives and sends time out.
  #
-@@ -246,7 +253,7 @@
- #  don't use Group #-1 on these systems!
- #
- User nobody
--Group #-1
-+Group nogroup
+@@ -176,6 +179,10 @@
+ #Listen 3000
+ #Listen 12.34.56.78:80
  
++Listen 80
++# We need to Listen to port 8080, as that is were the Apache Docs can be accessed from.
++Listen 8080
++
  #
- # ServerAdmin: Your address, where problems with the server should be
+ # BindAddress: You can support virtual hosts with this option. This directive
+ # is used to tell the server which IP address to listen to. It can either
 @@ -274,7 +281,7 @@
  # documents. By default, all requests are taken from this directory, but
  # symbolic links and aliases may be used to point to other locations.
@@ -36,6 +34,7 @@
  # override. Can also be "All", or any combination of "Options", "FileInfo", 
  # "AuthConfig", and "Limit"
  #
+-    AllowOverride None
 +<IfDefine FRONTPAGE>
 +### These are the Minimum options need by the FrontPage Module.
 +### With out these options set the FrontPage Client will not be
@@ -44,7 +43,7 @@
 +</IfDefine>
 +
 +<IfDefine !FRONTPAGE>
-     AllowOverride None
++#    AllowOverride None
 +</IfDefine>
  
  #
@@ -83,3 +82,52 @@
  
  #
  # Optionally add a line containing the server version and virtual host
+@@ -852,3 +877,48 @@
+ 
+ #<VirtualHost _default_:*>
+ #</VirtualHost>
++
++# This virtual Host allows access to the Apache & Frontpage Docs on port 8080
++<VirtualHost _default_:8080>
++    ServerAdmin webmaster@@@HOSTNAME@@
++    DocumentRoot @@MANUAL@@
++    ServerName @@HOSTNAME@@
++
++    <Directory "@@MANUAL@@">
++
++	#
++	# This may also be "None", "All", or any combination of "Indexes",
++	# "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
++	#
++	# Note that "MultiViews" must be named *explicitly* --- "Options All"
++	# doesn't give it to you.
++	#
++	Options Indexes FollowSymLinks
++
++	#
++	# This controls which options the .htaccess files in directories can
++	# override. Can also be "All", or any combination of "Options", "FileInfo",
++	# "AuthConfig", and "Limit"
++	#
++	AllowOverride None
++
++	#
++	# Controls who can get stuff from this server.
++	#
++	Order allow,deny
++	Allow from all
++    </Directory>
++
++</VirtualHost>
++
++# This Virtual Host makes it so FrontPage will display pages from the
++# root web.  Without this virtual host, Frontpage accesses the pages
++# on the default virtual host (port 8080) instead.
++#
++#NOTE: This Virtual Host Entry must be kept as the last _default_
++#      virtual host entry.
++<VirtualHost _default_:80>
++    ServerAdmin webmaster@@@HOSTNAME@@
++    ServerName @@HOSTNAME@@
++</VirtualHost>
++

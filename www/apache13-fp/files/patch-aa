@@ -1,6 +1,6 @@
 --- configure.orig	Sat Aug 14 03:29:05 1999
-+++ configure	Mon Sep  6 12:36:24 1999
-@@ -1084,7 +1084,7 @@
++++ configure	Sat Oct 16 20:49:14 1999
+@@ -1084,10 +1084,10 @@
  ##  UID/GID as production oriented as a web server in NIS anyway.
  ##
  conf_user="nobody"
@@ -8,17 +8,23 @@
 +conf_group="nogroup"
  conf_port="80"
  conf_serveradmin="you@your.address"
- conf_servername="new.host.name"
-@@ -1109,6 +1109,9 @@
+-conf_servername="new.host.name"
++conf_servername="`$aux/buildinfo.sh -n %h%d`"
+ if [ "x$confadjust" = "x1" ]; then
+     if [ -f /etc/passwd ]; then
+         for uid in nobody www daemon demon http httpd; do 
+@@ -1107,7 +1107,10 @@
+         conf_port="8080"
+     fi
      conf_serveradmin="`$aux/buildinfo.sh -n %u@%h%d`"
-     conf_servername="`$aux/buildinfo.sh -n %h%d`"
- fi
+-    conf_servername="`$aux/buildinfo.sh -n %h%d`"
++#    conf_servername="`$aux/buildinfo.sh -n %h%d`"
++fi
 +if [ ".$suexec" = .1 ]; then
 +    conf_user="$suexec_caller"
-+fi
+ fi
   
  ##
- ##  determine prefix-relative paths for directories
 @@ -1153,8 +1156,8 @@
      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}${thetarget}.pid"
      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}${thetarget}.scoreboard"

@@ -97,10 +97,11 @@ sbin/logresolve
 sbin/rotatelogs
 sbin/suexec
 share/doc/apache/apache_pb.gif
-@exec mkdir -p %D/www
-@exec ln -fs %B %D/www/data.default
-@unexec rm -f %D/www/data.default
+@exec if [ ! -d %D/www/data/images ] ; then mkdir -p %D/www/data/images ; fi
 share/doc/apache/index.html
+@exec if [ ! -f %D/www/data/%f ]; then cp %D/%F %D/www/data/%f; fi
+@exec if [ ! -h %B/images ]; then (cd %B ; ln -s manual/images images); fi
+@unexec if [ -h %B/images ]; then rm -f %B/images; fi
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
 share/doc/apache/manual/cgi_path.html
@@ -113,13 +114,19 @@ share/doc/apache/manual/env.html
 share/doc/apache/manual/footer.html
 share/doc/apache/manual/handler.html
 share/doc/apache/manual/header.html
+share/doc/apache/manual/images/apache_pb.gif
+@exec if [ ! -f %D/www/data/images/%f ]; then cp %D/%F %D/www/data/images/%f; fi
 share/doc/apache/manual/images/custom_errordocs.gif
+share/doc/apache/manual/images/fplogo.gif
+@exec if [ ! -f %D/www/data/images/%f ]; then cp %D/%F %D/www/data/images/%f; fi
 share/doc/apache/manual/images/home.gif
 share/doc/apache/manual/images/index.gif
 share/doc/apache/manual/images/mod_rewrite_fig1.fig
 share/doc/apache/manual/images/mod_rewrite_fig1.gif
 share/doc/apache/manual/images/mod_rewrite_fig2.fig
 share/doc/apache/manual/images/mod_rewrite_fig2.gif
+share/doc/apache/manual/images/powerlogo.gif
+@exec if [ ! -f %D/www/data/images/%f ]; then cp %D/%F %D/www/data/images/%f; fi
 share/doc/apache/manual/images/sub.gif
 share/doc/apache/manual/index.html
 share/doc/apache/manual/install-tpf.html
@@ -177,6 +184,9 @@ share/doc/apache/manual/mod/mod_dll.html
 share/doc/apache/manual/mod/mod_env.html
 share/doc/apache/manual/mod/mod_example.html
 share/doc/apache/manual/mod/mod_expires.html
+share/doc/apache/manual/mod/mod_frontpage/index.html
+@exec if [ -h %B/serk ] ; then rm -f %B/serk ; fi ; ln -fs %D/frontpage/%%FP_REV%%/serk %B/serk
+@unexec rm -f %B/serk
 share/doc/apache/manual/mod/mod_headers.html
 share/doc/apache/manual/mod/mod_imap.html
 share/doc/apache/manual/mod/mod_include.html
@@ -229,8 +239,11 @@ share/doc/apache/manual/vhosts/name-based.html
 share/doc/apache/manual/vhosts/vhosts-in-depth.html
 share/doc/apache/manual/vhosts/virtual-host.html
 share/doc/apache/manual/windows.html
+@exec if [ ! -d %D/www/cgi-bin ]; then mkdir -p %D/www/cgi-bin; fi
 www/cgi-bin.default/printenv
+@exec if [ ! -f %D/www/cgi-bin/%f ]; then cp %D/%F %D/www/cgi-bin/%f; fi
 www/cgi-bin.default/test-cgi
+@exec if [ ! -f %D/www/cgi-bin/%f ]; then cp %D/%F %D/www/cgi-bin/%f; fi
 www/icons/README
 www/icons/a.gif
 www/icons/alert.black.gif
@@ -348,6 +361,7 @@ www/icons/world2.gif
 @dirrm libexec/apache
 @dirrm share/doc/apache/manual/images
 @dirrm share/doc/apache/manual/misc
+@dirrm share/doc/apache/manual/mod/mod_frontpage
 @dirrm share/doc/apache/manual/mod
 @dirrm share/doc/apache/manual/search
 @dirrm share/doc/apache/manual/vhosts
@@ -357,129 +371,192 @@ www/icons/world2.gif
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www
-frontpage/version3.0/LICENSE.TXT
-frontpage/version3.0/change_server.sh
-frontpage/version3.0/fp_install.sh
-frontpage/version3.0/frontpage.cnf
-frontpage/version3.0/frontpage.cnf.orig
-frontpage/version3.0/readme.htm
-frontpage/version3.0/set_default_perms.sh
-frontpage/version3.0/_vti_bin/_vti_adm/admin.exe
-frontpage/version3.0/_vti_bin/_vti_aut/author.exe
-frontpage/version3.0/_vti_bin/fpcount.exe
-frontpage/version3.0/_vti_bin/shtml.exe
-frontpage/version3.0/admin/check.htm
-frontpage/version3.0/admin/contents.htm
-frontpage/version3.0/admin/deletesubweb.htm
-frontpage/version3.0/admin/disable.htm
-frontpage/version3.0/admin/enable.htm
-frontpage/version3.0/admin/footer.htm
-frontpage/version3.0/admin/fpadmin.htm
-frontpage/version3.0/admin/fpbanner.htm
-frontpage/version3.0/admin/fpcreated.gif
-frontpage/version3.0/admin/ipaddress.htm
-frontpage/version3.0/admin/newserver.htm
-frontpage/version3.0/admin/newsubweb.htm
-frontpage/version3.0/admin/perms.htm
-frontpage/version3.0/admin/recalc.htm
-frontpage/version3.0/admin/renamesubweb.htm
-frontpage/version3.0/admin/scripts/fpadmcgi.exe
-frontpage/version3.0/admin/setdirexec.htm
-frontpage/version3.0/admin/setdirnoexec.htm
-frontpage/version3.0/admin/topleft.gif
-frontpage/version3.0/admin/topright.gif
-frontpage/version3.0/admin/uninstall.htm
-frontpage/version3.0/apache-fp/_vti_bin/fpexe
-frontpage/version3.0/apache-fp/fp-patch-apache_1.2.5
-frontpage/version3.0/apache-fp/fpexe.c
-frontpage/version3.0/apache-fp/httpd
-@unexec rm %D/frontpage/version3.0/apache-fp/suidkey*
-frontpage/version3.0/bin/_vti_inf.html
-frontpage/version3.0/bin/fpextde.msg
-frontpage/version3.0/bin/fpextes.msg
-frontpage/version3.0/bin/fpextfr.msg
-frontpage/version3.0/bin/fpextit.msg
-frontpage/version3.0/bin/fpextja.msg
-frontpage/version3.0/bin/fpsrvadm.exe
-frontpage/version3.0/bin/postinfo.html
-frontpage/version3.0/exes/_vti_bin/_vti_adm/admin.exe
-frontpage/version3.0/exes/_vti_bin/_vti_aut/author.exe
-frontpage/version3.0/exes/_vti_bin/fpcount.exe
-frontpage/version3.0/exes/_vti_bin/shtml.exe
-frontpage/version3.0/nls/cp_1250.nls
-frontpage/version3.0/nls/cp_1251.nls
-frontpage/version3.0/nls/cp_1252.nls
-frontpage/version3.0/nls/cp_1253.nls
-frontpage/version3.0/nls/cp_1254.nls
-frontpage/version3.0/nls/cp_1255.nls
-frontpage/version3.0/nls/cp_1256.nls
-frontpage/version3.0/nls/cp_1257.nls
-frontpage/version3.0/nls/cp_1258.nls
-frontpage/version3.0/nls/cp_28592.nls
-frontpage/version3.0/nls/cp_28605.nls
-frontpage/version3.0/nls/cp_437.nls
-frontpage/version3.0/nls/cp_850.nls
-frontpage/version3.0/nls/cp_874.nls
-frontpage/version3.0/nls/cp_932.nls
-frontpage/version3.0/nls/cp_936.nls
-frontpage/version3.0/nls/cp_949.nls
-frontpage/version3.0/nls/cp_950.nls
-frontpage/version3.0/serk/images/admin.gif
-frontpage/version3.0/serk/images/appendix.gif
-frontpage/version3.0/serk/images/architec.gif
-frontpage/version3.0/serk/images/editor.gif
-frontpage/version3.0/serk/images/explorer.gif
-frontpage/version3.0/serk/images/filler25.gif
-frontpage/version3.0/serk/images/home.gif
-frontpage/version3.0/serk/images/i_conten.gif
-frontpage/version3.0/serk/images/i_fpacls.gif
-frontpage/version3.0/serk/images/install.gif
-frontpage/version3.0/serk/images/intro.gif
-frontpage/version3.0/serk/images/mslogo.gif
-frontpage/version3.0/serk/images/publish1.gif
-frontpage/version3.0/serk/images/publish2.gif
-frontpage/version3.0/serk/images/security.gif
-frontpage/version3.0/serk/images/serkl.gif
-frontpage/version3.0/serk/images/serkr.gif
-frontpage/version3.0/serk/images/trouble.gif
-frontpage/version3.0/serk/images/u_conten.gif
-frontpage/version3.0/serk/images/u_fpaccs.gif
-frontpage/version3.0/serk/a_bots.htm
-frontpage/version3.0/serk/a_fpexe.htm
-frontpage/version3.0/serk/a_fpini.htm
-frontpage/version3.0/serk/a_iisprm.htm
-frontpage/version3.0/serk/a_modfp.htm
-frontpage/version3.0/serk/a_source.htm
-frontpage/version3.0/serk/a_spfile.htm
-frontpage/version3.0/serk/a_uncnf.htm
-frontpage/version3.0/serk/a_unperm.htm
-frontpage/version3.0/serk/a_vers.htm
-frontpage/version3.0/serk/admin.htm
-frontpage/version3.0/serk/appendix.htm
-frontpage/version3.0/serk/banner.htm
-frontpage/version3.0/serk/default.htm
-frontpage/version3.0/serk/home.htm
-frontpage/version3.0/serk/install.htm
-frontpage/version3.0/serk/intro.htm
-frontpage/version3.0/serk/nav.htm
-frontpage/version3.0/serk/security.htm
-frontpage/version3.0/serk/trouble.htm
-frontpage/version3.0/srcs/fp.suid.c
-@dirrm frontpage/version3.0/_vti_bin/_vti_adm
-@dirrm frontpage/version3.0/_vti_bin/_vti_aut
-@dirrm frontpage/version3.0/_vti_bin
-@dirrm frontpage/version3.0/admin/scripts
-@dirrm frontpage/version3.0/admin
-@dirrm frontpage/version3.0/apache-fp/_vti_bin
-@dirrm frontpage/version3.0/apache-fp
-@dirrm frontpage/version3.0/bin
-@dirrm frontpage/version3.0/exes/_vti_bin/_vti_adm
-@dirrm frontpage/version3.0/exes/_vti_bin/_vti_aut
-@dirrm frontpage/version3.0/exes/_vti_bin
-@dirrm frontpage/version3.0/exes
-@dirrm frontpage/version3.0/nls
-@dirrm frontpage/version3.0/serk/images
-@dirrm frontpage/version3.0/serk
-@dirrm frontpage/version3.0/srcs
-@dirrm frontpage/version3.0
-@unexec rm %D/frontpage/currentversion
+frontpage/%%FP_REV%%/LICENSE.TXT
+frontpage/%%FP_REV%%/change_server.sh
+frontpage/%%FP_REV%%/fp_install.sh
+frontpage/%%FP_REV%%/frontpage.cnf
+@unexec if [ -f %B/%f.orig ] ; then rm -f %B/%f.orig ; fi
+frontpage/%%FP_REV%%/set_default_perms.sh
+frontpage/%%FP_REV%%/readme.htm
+@unexec if [ -f %B/upgrade_results.txt ] ; then rm -f %B/upgrade_results.txt ; fi
+frontpage/%%FP_REV%%/_vti_bin/_vti_adm/admin.exe
+frontpage/%%FP_REV%%/_vti_bin/_vti_aut/author.exe
+frontpage/%%FP_REV%%/_vti_bin/fpcount.exe
+frontpage/%%FP_REV%%/_vti_bin/shtml.exe
+frontpage/%%FP_REV%%/admin/check.htm
+frontpage/%%FP_REV%%/admin/contents.htm
+frontpage/%%FP_REV%%/admin/delsbweb.htm
+frontpage/%%FP_REV%%/admin/direxe.htm
+frontpage/%%FP_REV%%/admin/dirnoexe.htm
+frontpage/%%FP_REV%%/admin/disable.htm
+frontpage/%%FP_REV%%/admin/enable.htm
+frontpage/%%FP_REV%%/admin/footer.htm
+frontpage/%%FP_REV%%/admin/fpadmin.htm
+frontpage/%%FP_REV%%/admin/fpbanner.htm
+frontpage/%%FP_REV%%/admin/fpcreate.gif
+frontpage/%%FP_REV%%/admin/ipaddr.htm
+frontpage/%%FP_REV%%/admin/newsbweb.htm
+frontpage/%%FP_REV%%/admin/newsrvr.htm
+frontpage/%%FP_REV%%/admin/perms.htm
+frontpage/%%FP_REV%%/admin/recalc.htm
+frontpage/%%FP_REV%%/admin/rensbweb.htm
+frontpage/%%FP_REV%%/admin/scripts/fpadmcgi.exe
+frontpage/%%FP_REV%%/admin/topleft.gif
+frontpage/%%FP_REV%%/admin/topright.gif
+frontpage/%%FP_REV%%/admin/uninstal.htm
+frontpage/%%FP_REV%%/apache-fp/_vti_bin/fpexe
+frontpage/%%FP_REV%%/apache-fp/fp-patch-apache_1.3.3
+frontpage/%%FP_REV%%/apache-fp/fpexe.c
+frontpage/%%FP_REV%%/apache-fp/httpd
+frontpage/%%FP_REV%%/apache-fp/httpd.Compat
+@unexec rm %D/frontpage/%%FP_REV%%/apache-fp/suidkey*
+frontpage/%%FP_REV%%/bin/_vti_inf.htm
+frontpage/%%FP_REV%%/bin/fpsrvadm.exe
+frontpage/%%FP_REV%%/bin/postinfo.htm
+frontpage/%%FP_REV%%/exes/_vti_bin/_vti_adm/admin.exe
+frontpage/%%FP_REV%%/exes/_vti_bin/_vti_aut/author.exe
+frontpage/%%FP_REV%%/exes/_vti_bin/fpcount.exe
+frontpage/%%FP_REV%%/exes/_vti_bin/shtml.exe
+frontpage/%%FP_REV%%/nls/cp_1250.nls
+frontpage/%%FP_REV%%/nls/cp_1251.nls
+frontpage/%%FP_REV%%/nls/cp_1252.nls
+frontpage/%%FP_REV%%/nls/cp_1253.nls
+frontpage/%%FP_REV%%/nls/cp_1254.nls
+frontpage/%%FP_REV%%/nls/cp_1255.nls
+frontpage/%%FP_REV%%/nls/cp_1256.nls
+frontpage/%%FP_REV%%/nls/cp_1257.nls
+frontpage/%%FP_REV%%/nls/cp_1258.nls
+frontpage/%%FP_REV%%/nls/cp_28592.nls
+frontpage/%%FP_REV%%/nls/cp_28605.nls
+frontpage/%%FP_REV%%/nls/cp_437.nls
+frontpage/%%FP_REV%%/nls/cp_850.nls
+frontpage/%%FP_REV%%/nls/cp_874.nls
+frontpage/%%FP_REV%%/nls/cp_932.nls
+frontpage/%%FP_REV%%/nls/cp_936.nls
+frontpage/%%FP_REV%%/nls/cp_949.nls
+frontpage/%%FP_REV%%/nls/cp_950.nls
+frontpage/%%FP_REV%%/serk/001.gif
+frontpage/%%FP_REV%%/serk/1ptrans.gif
+frontpage/%%FP_REV%%/serk/SERK.css
+frontpage/%%FP_REV%%/serk/adadv.htm
+frontpage/%%FP_REV%%/serk/adadv_1.htm
+frontpage/%%FP_REV%%/serk/adadv_2.htm
+frontpage/%%FP_REV%%/serk/adadv_3.htm
+frontpage/%%FP_REV%%/serk/adadv_4.htm
+frontpage/%%FP_REV%%/serk/adadv_5.htm
+frontpage/%%FP_REV%%/serk/adadv_6.htm
+frontpage/%%FP_REV%%/serk/adadv_7.htm
+frontpage/%%FP_REV%%/serk/adadv_8.htm
+frontpage/%%FP_REV%%/serk/adadv_9.htm
+frontpage/%%FP_REV%%/serk/adfpre.htm
+frontpage/%%FP_REV%%/serk/adfpre01.gif
+frontpage/%%FP_REV%%/serk/adfpre02.gif
+frontpage/%%FP_REV%%/serk/adfpre_1.htm
+frontpage/%%FP_REV%%/serk/adfpre_2.htm
+frontpage/%%FP_REV%%/serk/adfpre_3.htm
+frontpage/%%FP_REV%%/serk/adfpre_4.htm
+frontpage/%%FP_REV%%/serk/adfpre_5.htm
+frontpage/%%FP_REV%%/serk/adfpre_6.htm
+frontpage/%%FP_REV%%/serk/adfpre_7.htm
+frontpage/%%FP_REV%%/serk/adfpsr.htm
+frontpage/%%FP_REV%%/serk/adfpsr_1.htm
+frontpage/%%FP_REV%%/serk/adfpsr_2.htm
+frontpage/%%FP_REV%%/serk/adfpsr_3.htm
+frontpage/%%FP_REV%%/serk/adhtm.htm
+frontpage/%%FP_REV%%/serk/adhtm_1.htm
+frontpage/%%FP_REV%%/serk/adhtm_2.htm
+frontpage/%%FP_REV%%/serk/admart.gif
+frontpage/%%FP_REV%%/serk/admmc.htm
+frontpage/%%FP_REV%%/serk/admmc_1.htm
+frontpage/%%FP_REV%%/serk/admmc_2.htm
+frontpage/%%FP_REV%%/serk/admmc_3.htm
+frontpage/%%FP_REV%%/serk/admmc_4.htm
+frontpage/%%FP_REV%%/serk/admmc_5.htm
+frontpage/%%FP_REV%%/serk/admmc_6.htm
+frontpage/%%FP_REV%%/serk/adoview.htm
+frontpage/%%FP_REV%%/serk/apndx00.htm
+frontpage/%%FP_REV%%/serk/apndx01.htm
+frontpage/%%FP_REV%%/serk/apndx02.htm
+frontpage/%%FP_REV%%/serk/apndx03.htm
+frontpage/%%FP_REV%%/serk/apndx04.htm
+frontpage/%%FP_REV%%/serk/apndx05.htm
+frontpage/%%FP_REV%%/serk/apndxtoc.htm
+frontpage/%%FP_REV%%/serk/axrpc.htm
+frontpage/%%FP_REV%%/serk/back.gif
+frontpage/%%FP_REV%%/serk/bullet.gif
+frontpage/%%FP_REV%%/serk/cnrat_1.gif
+frontpage/%%FP_REV%%/serk/cnrat_2.gif
+frontpage/%%FP_REV%%/serk/cpyright.htm
+frontpage/%%FP_REV%%/serk/default.htm
+frontpage/%%FP_REV%%/serk/dwnarrow.gif
+frontpage/%%FP_REV%%/serk/home.gif
+frontpage/%%FP_REV%%/serk/incompat.htm
+frontpage/%%FP_REV%%/serk/inintro.htm
+frontpage/%%FP_REV%%/serk/inunix.htm
+frontpage/%%FP_REV%%/serk/inwindow.htm
+frontpage/%%FP_REV%%/serk/msft.gif
+frontpage/%%FP_REV%%/serk/next.gif
+frontpage/%%FP_REV%%/serk/noterule.gif
+frontpage/%%FP_REV%%/serk/ovarchit.htm
+frontpage/%%FP_REV%%/serk/ovart.gif
+frontpage/%%FP_REV%%/serk/ovfeat01.gif
+frontpage/%%FP_REV%%/serk/ovfeat02.gif
+frontpage/%%FP_REV%%/serk/ovfeat03.gif
+frontpage/%%FP_REV%%/serk/ovfeatur.htm
+frontpage/%%FP_REV%%/serk/ovpublis.htm
+frontpage/%%FP_REV%%/serk/ovscenar.htm
+frontpage/%%FP_REV%%/serk/ovwhatar.htm
+frontpage/%%FP_REV%%/serk/ovwhatis.htm
+frontpage/%%FP_REV%%/serk/previous.gif
+frontpage/%%FP_REV%%/serk/r_ydot.gif
+frontpage/%%FP_REV%%/serk/scintro.htm
+frontpage/%%FP_REV%%/serk/scuni.htm
+frontpage/%%FP_REV%%/serk/scuni_1.htm
+frontpage/%%FP_REV%%/serk/scuni_10.htm
+frontpage/%%FP_REV%%/serk/scuni_2.htm
+frontpage/%%FP_REV%%/serk/scuni_3.htm
+frontpage/%%FP_REV%%/serk/scuni_4.htm
+frontpage/%%FP_REV%%/serk/scuni_5.htm
+frontpage/%%FP_REV%%/serk/scuni_6.htm
+frontpage/%%FP_REV%%/serk/scuni_7.htm
+frontpage/%%FP_REV%%/serk/scuni_8.htm
+frontpage/%%FP_REV%%/serk/scuni_9.htm
+frontpage/%%FP_REV%%/serk/scunix01.gif
+frontpage/%%FP_REV%%/serk/scwin.htm
+frontpage/%%FP_REV%%/serk/scwin_1.htm
+frontpage/%%FP_REV%%/serk/scwin_2.htm
+frontpage/%%FP_REV%%/serk/scwin_3.htm
+frontpage/%%FP_REV%%/serk/scwin_4.htm
+frontpage/%%FP_REV%%/serk/scwin_5.htm
+frontpage/%%FP_REV%%/serk/scwin_6.htm
+frontpage/%%FP_REV%%/serk/scwin_7.htm
+frontpage/%%FP_REV%%/serk/scwin_8.htm
+frontpage/%%FP_REV%%/serk/scwin_9.htm
+frontpage/%%FP_REV%%/serk/secart.gif
+frontpage/%%FP_REV%%/serk/serkindx.htm
+frontpage/%%FP_REV%%/serk/serktop.gif
+frontpage/%%FP_REV%%/serk/serktop.htm
+frontpage/%%FP_REV%%/serk/serkxtra.gif
+frontpage/%%FP_REV%%/serk/serkxtra.htm
+frontpage/%%FP_REV%%/serk/setart.gif
+frontpage/%%FP_REV%%/serk/splash.gif
+frontpage/%%FP_REV%%/serk/termofus.gif
+frontpage/%%FP_REV%%/serk/top.gif
+frontpage/%%FP_REV%%/srcs/fp.suid.c
+@dirrm frontpage/%%FP_REV%%/_vti_bin/_vti_adm
+@dirrm frontpage/%%FP_REV%%/_vti_bin/_vti_aut
+@dirrm frontpage/%%FP_REV%%/_vti_bin
+@dirrm frontpage/%%FP_REV%%/admin/scripts
+@dirrm frontpage/%%FP_REV%%/admin
+@dirrm frontpage/%%FP_REV%%/apache-fp/_vti_bin
+@dirrm frontpage/%%FP_REV%%/apache-fp
+@dirrm frontpage/%%FP_REV%%/bin
+@dirrm frontpage/%%FP_REV%%/exes/_vti_bin/_vti_adm
+@dirrm frontpage/%%FP_REV%%/exes/_vti_bin/_vti_aut
+@dirrm frontpage/%%FP_REV%%/exes/_vti_bin
+@dirrm frontpage/%%FP_REV%%/exes
+@dirrm frontpage/%%FP_REV%%/nls
+@dirrm frontpage/%%FP_REV%%/serk
+@dirrm frontpage/%%FP_REV%%/srcs
+@dirrm frontpage/%%FP_REV%%
+@dirrm frontpage
