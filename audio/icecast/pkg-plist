@@ -7,8 +7,8 @@ share/doc/icecast/AUTHORS
 share/doc/icecast/BUGS
 share/doc/icecast/BUGS.iceplay
 share/doc/icecast/CHANGES
-share/doc/icecast/CREDITS.shout
 share/doc/icecast/COPYING
+share/doc/icecast/CREDITS.shout
 share/doc/icecast/FAQ
 share/doc/icecast/INSTALL
 share/doc/icecast/README
@@ -17,10 +17,6 @@ share/doc/icecast/README.iceplay
 share/doc/icecast/README.shout
 share/doc/icecast/TESTED
 share/doc/icecast/TODO.shout
-share/examples/icecast/liveice.cfg
-share/examples/icecast/playlist.example
-share/examples/icecast/radio.tcl.example
-share/examples/icecast/shoutrc.example
 share/examples/icecast/icedir/addsrv
 share/examples/icecast/icedir/example.phtml
 share/examples/icecast/icedir/functions.phps
@@ -29,6 +25,10 @@ share/examples/icecast/icedir/icedir_cleanup.pl
 share/examples/icecast/icedir/remsrv
 share/examples/icecast/icedir/server_tbl.sql
 share/examples/icecast/icedir/tchsrv
+share/examples/icecast/liveice.cfg
+share/examples/icecast/playlist.example
+share/examples/icecast/radio.tcl.example
+share/examples/icecast/shoutrc.example
 @dirrm share/doc/icecast
 @dirrm share/examples/icecast/icedir
 @dirrm share/examples/icecast
