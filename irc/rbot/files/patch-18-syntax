@@ -1,0 +1,123 @@
+--- rbot/ircbot.rb.orig	Thu Mar 25 17:25:59 2004
++++ rbot/ircbot.rb	Thu Mar 25 17:26:12 2004
+@@ -604,7 +604,7 @@
+         when (/^(version)|(introduce yourself)$/)
+           say m.replyto, "I'm a v. #{$version} rubybot, (c) Tom Gilbert - http://linuxbrit.co.uk/rbot/"
+         when (/^help(?:\s+(.*))?$/)
+-          say m.replyto, help $1
++          say m.replyto, help($1)
+         when (/^(botsnack|ciggie)$/)
+           say m.replyto, @lang.get("thanks_X") % m.sourcenick if(m.public?)
+           say m.replyto, @lang.get("thanks") if(m.private?)
+--- rbot/dbhash.rb.orig	Thu Mar 25 18:00:33 2004
++++ rbot/dbhash.rb	Thu Mar 25 18:03:58 2004
+@@ -63,17 +63,17 @@
+ 
+     def DBHash.create_db(name)
+       debug "DBHash: creating empty db #{name}"
+-      return BDB::Hash.open name, nil, 
++      return BDB::Hash.open(name, nil, 
+                              BDB::CREATE | BDB::EXCL | BDB::TRUNCATE,
+                              0600, "set_pagesize" => 1024,
+-                             "set_cachesize" => [0, 32 * 1024, 0]
++                             "set_cachesize" => [0, 32 * 1024, 0])
+     end
+ 
+     def DBHash.open_db(name)
+       debug "DBHash: opening existing db #{name}"
+-      return BDB::Hash.open name, nil, 
++      return BDB::Hash.open(name, nil, 
+                              "r+", 0600, "set_pagesize" => 1024,
+-                             "set_cachesize" => [0, 32 * 1024, 0]
++                             "set_cachesize" => [0, 32 * 1024, 0])
+     end
+     
+   end
+@@ -108,17 +108,17 @@
+ 
+     def DBTree.create_db(name)
+       debug "DBTree: creating empty db #{name}"
+-      return BDB::CIBtree.open name, nil, 
++      return BDB::CIBtree.open(name, nil, 
+                              BDB::CREATE | BDB::EXCL | BDB::TRUNCATE,
+                              0600, "set_pagesize" => 1024,
+-                             "set_cachesize" => [0, 32 * 1024, 0]
++                             "set_cachesize" => [0, 32 * 1024, 0])
+     end
+ 
+     def DBTree.open_db(name)
+       debug "DBTree: opening existing db #{name}"
+-      return BDB::CIBtree.open name, nil, 
++      return BDB::CIBtree.open(name, nil, 
+                              "r+", 0600, "set_pagesize" => 1024,
+-                             "set_cachesize" => [0, 32 * 1024, 0]
++                             "set_cachesize" => [0, 32 * 1024, 0])
+     end
+     
+   end
+--- rbot/keywords.rb.orig	Thu Mar 25 17:56:45 2004
++++ rbot/keywords.rb	Thu Mar 25 17:59:31 2004
+@@ -22,7 +22,7 @@
+     # pick a random value for this keyword and return it
+     def to_s
+       if(@values.length > 1)
+-        Keyword.unescape @values[rand @values.length]
++        Keyword.unescape @values[rand(@values.length)]
+       else
+         Keyword.unescape @values[0]
+       end
+--- rbot/language.rb.orig	Thu Mar 25 17:59:39 2004
++++ rbot/language.rb	Thu Mar 25 18:00:05 2004
+@@ -34,7 +34,7 @@
+ 
+     def get(key)
+       if(@strings.has_key?(key))
+-        return @strings[key][rand @strings[key].length]
++        return @strings[key][rand(@strings[key].length)]
+       else
+         raise "undefined language key"
+       end
+--- rbot/plugins.rb.orig	Thu Mar 25 18:07:07 2004
++++ rbot/plugins.rb	Thu Mar 25 18:08:05 2004
+@@ -48,7 +48,7 @@
+     def initialize
+       @bot = Plugins.bot
+       @names = Array.new
+-      @registry = BotRegistryAccessor.new(@bot, self.type.to_s.gsub(/^.*::/, ""))
++      @registry = BotRegistryAccessor.new(@bot, self.class.to_s.gsub(/^.*::/, ""))
+     end
+ 
+     # return an identifier for this plugin, defaults to a list of the message
+--- rbot/registry.rb.orig	Thu Mar 25 18:04:02 2004
++++ rbot/registry.rb	Thu Mar 25 18:04:16 2004
+@@ -149,7 +149,7 @@
+       if @registry.has_key?(@prefix + key)
+         return restore(@registry[@prefix + key])
+       elsif @default != nil
+-        return restore @default
++        return restore(@default)
+       else
+         return nil
+       end
+--- rbot/utils.rb.orig	Fri Mar 26 17:30:31 2004
++++ rbot/utils.rb	Fri Mar 26 17:31:09 2004
+@@ -168,7 +168,7 @@
+ 
+       http.start {|http|
+         begin
+-          resp , = http.get(query)
++          resp = http.get(query)
+           if resp.code == "200"
+             return resp.body
+           end
+--- rbot/plugins/google.rb.orig	Fri Mar 26 17:31:42 2004
++++ rbot/plugins/google.rb	Fri Mar 26 17:31:53 2004
+@@ -32,7 +32,7 @@
+ 
+     http.start {|http|
+       begin
+-        resp , = http.get(query)
++        resp = http.get(query)
+         if resp.code == "302"
+           result = resp['location']
+         end

@@ -1,0 +1,18 @@
+--- rbot/plugins/lart.rb.orig	Thu Mar 25 17:33:36 2004
++++ rbot/plugins/lart.rb	Wed Aug  7 12:59:24 2002
+@@ -21,6 +21,7 @@
+ 	# Keep a 1:1 relation between commands and handlers
+ 	@@handlers = {
+ 		"lart" => "handle_lart",
++		"suth" => "handle_lart",
+ 		"praise" => "handle_praise",
+ 		"addlart" => "handle_addlart",
+ 		"rmlart" => "handle_rmlart",
+@@ -152,6 +153,7 @@
+ end
+ plugin = LartPlugin.new
+ plugin.register("lart")
++plugin.register("suth")
+ plugin.register("praise")
+ 
+ plugin.register("addlart")

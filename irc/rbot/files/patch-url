@@ -1,0 +1,11 @@
+--- rbot/plugins/url.rb.orig	Thu Mar 25 17:33:36 2004
++++ rbot/plugins/url.rb	Wed Aug 21 11:58:41 2002
+@@ -42,7 +42,7 @@
+       else
+         m.reply "in a private message, you need to specify a channel name for urls"
+       end
+-    when (/^(#.*?)\s+\d+$/)
++    when (/^(#.*?)\s+(\d+)$/)
+       channel = $1
+       max = $2.to_i
+       urls m, channel, max

@@ -1,0 +1,14 @@
+--- rbot/plugins/karma.rb.orig	Thu Mar 25 18:09:37 2004
++++ rbot/plugins/karma.rb	Thu Mar 25 18:11:01 2004
+@@ -34,9 +34,9 @@
+     if(m.kind_of?(PrivMessage) && m.public?)
+       # in channel message, the kind we are interested in
+       if(m.message =~ /(\+\+|--)/)
+-        string = m.message.sub(/\W(--|\+\+)(\(.*?\)|[^(++)(--)\s]+)/, "\2\1")
++        string = m.message.sub(/\W(--|\+\+)(\(.*?\)|[^-+\s]+)/, "\2\1")
+         seen = Hash.new
+-        while(string.sub!(/(\(.*?\)|[^(++)(--)\s]+)(\+\+|--)/, ""))
++        while(string.sub!(/(\(.*?\)|[^-+\s]+)(\+\+|--)/, ""))
+           key = $1
+           change = $2
+           next if seen[key]

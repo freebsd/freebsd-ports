@@ -1,0 +1,28 @@
+--- rbot/plugins/math.rb.orig	Thu Mar 25 17:33:36 2004
++++ rbot/plugins/math.rb	Mon Jan 27 11:52:37 2003
+@@ -77,13 +77,13 @@
+     expr.gsub!(/\bover /, "/ ")
+     expr.gsub!(/\bsquared/, "**2 ")
+     expr.gsub!(/\bcubed/, "**3 ")
+-    expr.gsub!(/\bto\s+(\d+)(r?st|nd|rd|th)?( power)?/, "**#$1 ")
++    expr.gsub!(/\bto\s+(\d+)(r?st|nd|rd|th)?( power)?/, '**\1 ')
+     expr.gsub!(/\bpercent of/, "*0.01*")
+     expr.gsub!(/\bpercent/, "*0.01")
+     expr.gsub!(/\% of\b/, "*0.01*")
+     expr.gsub!(/\%/, "*0.01")
+-    expr.gsub!(/\bsquare root of (\d+)/, "#$1 ** 0.5 ")
+-    expr.gsub!(/\bcubed? root of (\d+)/, "#$1 **(1.0/3.0) ")
++    expr.gsub!(/\bsquare root of (\d+)/, '\1 ** 0.5 ')
++    expr.gsub!(/\bcubed? root of (\d+)/, '\1 **(1.0/3.0) ')
+     expr.gsub!(/ of /, " * ")
+     expr.gsub!(/(bit(-| )?)?xor(\'?e?d( with))?/, "^")
+     expr.gsub!(/(bit(-| )?)?or(\'?e?d( with))?/, "|")
+@@ -101,7 +101,7 @@
+          if answer =~ /^[-+\de\.]+$/
+            answer = sprintf("%1.12f", answer)
+            answer.gsub!(/\.?0+$/, "")
+-           answer.gsub!(/(\.\d+)000\d+/, $1)
++           answer.gsub!(/(\.\d+)000\d+/, '\1')
+            if (answer.length > 30)
+              answer = "a number with >30 digits..."
+            end
