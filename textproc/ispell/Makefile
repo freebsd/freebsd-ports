@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.05
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.05		# needed for slave ports / options
@@ -31,7 +31,7 @@ UNSQ?=		${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==}/bin/unsq.pl
 MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF))
+.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI))
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
@@ -41,6 +41,8 @@ pre-everything::
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
 	@${ECHO_MSG} '*  - Danish                    ISPELL_DA=yes            *'
+	@${ECHO_MSG} '*  - Finnish                   ISPELL_FI=yes            *'
+	@${ECHO_MSG} '*    (or ISPELL_FI=[small|large] (medium is default)    *'
 	@${ECHO_MSG} '*  - French                    ISPELL_FR=yes            *'
 	@${ECHO_MSG} '*  - Brasilian                 ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - German (old spelling)     ISPELL_DEALT=yes         *'
@@ -116,6 +118,16 @@ MASTER_SITE_SUBDIR=	asmodai
 EXTRA_DICT+=	${AFDISTFILE}
 EXTRACT_ONLY+=	${AFDISTFILE}
 .endif
+.if defined(ISPELL_FI)
+MASTER_SITES+=	http://ispell-fi.sourceforge.net/
+FIDICTFILE=	finnish.dict.bz2
+.if ${ISPELL_FI:L} != yes
+FIAFFIXFILE=	finnish.${ISPELL_FI:L}.aff.bz2
+.else
+FIAFFIXFILE=	finnish.medium.aff.bz2
+.endif
+EXTRA_DICT+=	${FIDICTFILE} ${FIAFFIXFILE}
+.endif
 
 DISTFILES+=	${EXTRA_DICT}
 .endif
@@ -131,6 +143,13 @@ post-extract:
 .endif
 .if defined(ISPELL_DENEU)
 	@${TAR} -C ${WRKDIR}/ -yxf ${DISTDIR}/${DENEUDISTFILE}
+.endif
+.if defined(ISPELL_FI)
+	${MKDIR} ${WRKDIR}/finnish
+.for file in ${FIDICTFILE} ${FIAFFIXFILE}
+	${BZIP2_CMD} -dc ${DISTDIR}/${file} \
+		> ${WRKDIR}/finnish/${file:S/.bz2$//}
+.endfor
 .endif
 
 post-patch:
@@ -158,7 +177,6 @@ post-patch:
 .if defined(ISPELL_AF)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/AF.patch 2>/dev/null
 .endif
-
 
 post-configure:
 	@${ECHO_CMD} "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
@@ -212,6 +230,11 @@ post-build:
 	@cd ${WRKDIR}/${AFDISTFILE:S=.tar.gz==} && \
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
 .endif
+.if defined(ISPELL_FI)
+	@cd ${WRKDIR}/finnish && \
+		${BUILDHASH} ${FIDICTFILE:S/.bz2//} ${FIAFFIXFILE:S/.bz2//} \
+		finnish.hash && ${MV} ${FIAFFIXFILE:S/.bz2//} finnish.aff
+.endif
 
 pre-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
@@ -256,6 +279,9 @@ post-install:
 	@${CAT} ${MASTERDIR}/pkg-plist.british >> ${TMPPLIST}
 .else
 	@${CAT} ${MASTERDIR}/pkg-plist.am >> ${TMPPLIST}
+.endif
+.if defined(ISPELL_FI)
+	@${CAT} ${MASTERDIR}/pkg-plist.fi >> ${TMPPLIST}
 .endif
 	@${ECHO_CMD} "@dirrm share/ispell" >> ${TMPPLIST}
 
