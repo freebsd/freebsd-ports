@@ -8,7 +8,7 @@
 PORTNAME=	xw
 PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.spot.org/pub/xw/
+MASTER_SITES=	http://www.mavetju.org/download/adopted/
 
 MAINTAINER=	ports@FreeBSD.Org
 COMMENT=	X app to list current users logged into the system
