@@ -1,6 +1,6 @@
---- biewlib/sysdep/generic/unix/keyboard.c.orig	Mon Apr 29 15:26:59 2002
-+++ biewlib/sysdep/generic/unix/keyboard.c	Mon Apr 29 15:28:12 2002
-@@ -41,7 +41,11 @@
+--- biewlib/sysdep/generic/unix/keyboard.c.orig	Wed Mar 31 16:16:47 2004
++++ biewlib/sysdep/generic/unix/keyboard.c	Wed Mar 31 16:16:58 2004
+@@ -44,7 +44,11 @@
  #endif
  
  #ifdef	_CURSES_
@@ -9,6 +9,6 @@
 +#else
  #include <curses.h>
 +#endif
- #if defined(NCURSES_MOUSE_VERSION) && !defined(HAVE_MOUSE)
- #define	HAVE_MOUSE
- #endif
+ char *rawkb_name="Curses";
+ unsigned rawkb_size=sizeof(int); /* size of rawkb_buf elements 1,2 or 4*/
+ int rawkb_method=0;
