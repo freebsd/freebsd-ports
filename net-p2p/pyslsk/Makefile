@@ -19,5 +19,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/encode_bitmaps/d' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
