@@ -7,4 +7,4 @@
 LANG=C
 PATH=/bin:$PATH
 
-@@PREFIX@@/lib/vmware/bin/vmware
+@@PREFIX@@/lib/vmware/bin/vmware "$@"
