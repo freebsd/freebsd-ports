@@ -41,8 +41,11 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 .include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
+TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
+
 post-extract:
-	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" ${FILESDIR}/GNUstep.sh \
+	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" \
+		-e "s=%%TARGLIB%%=${TARGLIB}=" ${FILESDIR}/GNUstep.sh \
 		> ${WRKSRC}/GNUstep.sh
 
 post-install:
