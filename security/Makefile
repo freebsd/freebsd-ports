@@ -62,6 +62,7 @@
     SUBDIR += keynote
     SUBDIR += keyprint
     SUBDIR += kmap
+    SUBDIR += knocker
     SUBDIR += krb5
     SUBDIR += kssh
     SUBDIR += l0pht-watch
