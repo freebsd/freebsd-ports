@@ -1,23 +1,20 @@
-
-$FreeBSD$
-
---- configure	2002/04/29 19:09:14	1.1
-+++ configure	2002/04/29 19:08:47
-@@ -4607,7 +4607,7 @@
+--- configure.orig	Tue Nov 12 16:10:53 2002
++++ configure	Tue Nov 12 16:12:11 2002
+@@ -2688,7 +2688,7 @@
+   (error
+     (throw 'quit 1)))
+ EOF
+-if REP_GTK_DONT_INITIALIZE=1 rep ./conftest 2>&5; then
++if REP_GTK_DONT_INITIALIZE=1 rep --batch -l gui/gtk-2/gtk -l gui/gtk-2/libglade 2>&5; then
+   echo "$ac_t""yes" 1>&6
+ else
+   echo "$ac_t""no" 1>&6
+@@ -3387,7 +3387,7 @@
  if test "$enable_themer" = yes; then
-     echo "$as_me:4608: checking for rep-gtk libglade wrapper" >&5
- echo $ECHO_N "checking for rep-gtk libglade wrapper... $ECHO_C" >&6
--  if REP_GTK_DONT_INITIALIZE=1 rep --batch -l libglade 2>&5; then
-+  if REP_GTK_DONT_INITIALIZE=1 rep --batch -l gui/gtk-2/gtk -l gui/gtk-2/libglade 2>&5; then
-     echo "$as_me:4611: result: yes" >&5
- echo "${ECHO_T}yes" >&6
+     echo $ac_n "checking for rep-gtk libglade wrapper""... $ac_c" 1>&6
+ echo "configure:3390: checking for rep-gtk libglade wrapper" >&5
+-  if REP_GTK_DONT_INITIALIZE=1 rep --batch -l gui.gtk.libglade 2>&5; then 
++   if REP_GTK_DONT_INITIALIZE=1 rep --batch -l gui/gtk-2/gnome-ui -l gui/gtk-2/gnome-canvas 2>&5; then
+     echo "$ac_t""yes" 1>&6
      add_subdir "themer"
-@@ -4630,7 +4630,7 @@
- if test "$enable_gnome_widgets" != "no"; then
-   echo "$as_me:4631: checking for rep-gtk GNOME wrappers" >&5
- echo $ECHO_N "checking for rep-gtk GNOME wrappers... $ECHO_C" >&6
--  if REP_GTK_DONT_INITIALIZE=1 rep --batch -l gnomeui -l gdk-pixbuf -l gnome-canvas-pixbuf 2>&5; then
-+  if REP_GTK_DONT_INITIALIZE=1 rep --batch -l gui/gtk-2/gnome-ui -l gui/gtk-2/gnome-canvas 2>&5; then
-     echo "$as_me:4634: result: yes" >&5
- echo "${ECHO_T}yes" >&6
-     REP_GTK_GNOME=yes
+   else 
