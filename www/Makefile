@@ -119,6 +119,7 @@
     SUBDIR += kwebwatch
     SUBDIR += larbin
     SUBDIR += libghttp
+    SUBDIR += libgtkhtml
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
     SUBDIR += linbot
