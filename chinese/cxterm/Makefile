@@ -19,7 +19,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	cxterm-5.0.p3-color.patch.gz	# cxterm-5.0-hz-patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
