@@ -17,6 +17,7 @@
     SUBDIR += autoconf
     SUBDIR += automake
     SUBDIR += avltree
+    SUBDIR += avr-binutils
     SUBDIR += bcc
     SUBDIR += bin86
     SUBDIR += binutils-m68k
