@@ -1670,6 +1670,7 @@ share/doc/qt2/html/xml-sax.html
 share/doc/qt2/html/xml.html
 share/doc/qt2/html/xt.html
 share/doc/qt2/html/y2k.html
+@dirrm share/doc/qt2/html/designer/stylesheet-images
 @dirrm share/doc/qt2/html/designer/figures
 @dirrm share/doc/qt2/html/designer
 @dirrm share/doc/qt2/html
