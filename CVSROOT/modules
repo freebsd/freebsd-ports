@@ -575,6 +575,7 @@ blas		ports/math/blas
 blast		ports/x11/blast
 blender		ports/graphics/blender
 blimitd		ports/sysutils/blimitd
+blitz++		ports/math/blitz++
 block		ports/games/block
 blockade	ports/games/blockade
 blop		ports/audio/blop
