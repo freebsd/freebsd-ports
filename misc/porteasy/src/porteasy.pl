@@ -42,6 +42,8 @@ sub REQ_EXPLICIT	{ 1 }
 sub REQ_IMPLICIT	{ 2 }
 sub REQ_MASTER		{ 4 }
 
+sub CVS_PASSFILE	{ "%%PREFIX%%/share/porteasy/cvspass" }
+
 sub PATH_CVS		{ "/usr/bin/cvs" }
 sub PATH_LDCONFIG	{ "/sbin/ldconfig" }
 sub PATH_MAKE		{ "/usr/bin/make" }
@@ -68,6 +70,7 @@ my $plist     = 0;		# Print packing list
 my $build     = 0;		# Build ports
 my $update    = 0;		# Update ports tree from CVS
 my $verbose   = 0;		# Verbose mode
+my $website   = 0;		# Show website URL
 
 # Global variables
 my %ports;			# Maps ports to their directory.
@@ -605,6 +608,24 @@ sub update_ports_tree(@) {
 }
 
 #
+# Find a specific file belonging to a specific port
+#
+sub find_port_file($$) {
+    my $port = shift;		# Port
+    my $file = shift;		# File to look for
+
+    my $master;			# Master port
+    
+    $master = $port;
+    while (!-f "$portsdir/$master/$file") {
+	if (!($master = $masterport{$master})) {
+	    bsd:errx(1, "$port has no $file");
+	}
+    }
+    return "$portsdir/$master/$file";
+}
+
+#
 # Show port info
 #
 sub show_port_info($) {
@@ -613,11 +634,35 @@ sub show_port_info($) {
     local *FILE;		# File handle
     my $info;			# Port info
 
-    sysopen(FILE, "$portsdir/$port/pkg-descr", O_RDONLY)
+    sysopen(FILE, find_port_file($port, "pkg-descr"), O_RDONLY)
 	or bsd::err(1, "can't read description for $port");
     $info = join("| ", <FILE>);
     close(FILE);
     print("+--- Description for $port ($pkgname{$port}):\n| ${info}+---\n");
+}
+
+#
+# Show port's website URL
+#
+sub show_port_website($) {
+    my $port = shift;		# Port to show info for
+
+    local *FILE;		# File handle
+    my $website;		# Port's website
+
+    sysopen(FILE, find_port_file($port, "pkg-descr"), O_RDONLY)
+	or bsd::err(1, "can't read description for $port");
+    while (<FILE>) {
+	if (m/^WWW:\s*(\S+)\s*$/) {
+	    $website = $1;
+	}
+    }
+    close(FILE);
+    if (!defined($website)) {
+        bsd::warnx("No website for $port");
+    } else {
+	print("$website\n");
+    }
 }
 
 #
@@ -634,13 +679,7 @@ sub show_port_plist($) {
 
     $prefix = suppress(\&make, ($port, "-VPREFIX"));
     chomp($prefix);
-    $master = $port;
-    while (!-f "$portsdir/$master/pkg-plist") {
-	if (!($master = $masterport{$master})) {
-	    bsd:errx(1, "$port has no packing list");
-	}
-    }
-    sysopen(FILE, "$portsdir/$master/pkg-plist", O_RDONLY)
+    sysopen(FILE, find_port_file($port, "pkg-plist"), O_RDONLY)
 	or bsd::err(1, "can't read packing list for $port");
     while (<FILE>) {
 	chomp();
@@ -851,15 +890,13 @@ MAIN:{
 	       "u|update"		=> \$update,
 	       "V|version"		=> \&version,
 	       "v|verbose"		=> \$verbose,
+	       "w|website"		=> \$website,
 	       "x|ecks"			=> \&ecks,
 	       )
 	or usage();
 
-    if (!($clean || $fetch || $info || $list || $packages || $plist)) {
-	$build = 1;
-    }
-    
-    if (!@ARGV && ($build || $fetch || $list || $packages || $plist)) {
+    if (!@ARGV &&
+	($build || $fetch || $list || $packages || $plist || $website)) {
 	usage();
     }
         
@@ -882,6 +919,9 @@ MAIN:{
     # Set and check CVS root
     if ($anoncvs && !$cvsroot) {
 	$cvsroot = &ANONCVS_ROOT;
+	if (-f &CVS_PASSFILE) {
+	    $ENV{'CVS_PASSFILE'} = &CVS_PASSFILE;
+	}
     }
     if (!$cvsroot) {
 	$cvsroot = $ENV{'CVSROOT'};
@@ -901,8 +941,8 @@ MAIN:{
     }
     
     # Step 1: read the ports index
+    update_index();
     if ($need_index) {
-	update_index();
 	read_index();
     }
 
@@ -915,9 +955,6 @@ MAIN:{
     }
 
     # Step 3: update port directories and discover dependencies
-    if (!($build || $fetch || ($info && @ARGV) || $list)) {
-	$update = 0;
-    }
     update_ports_tree(keys(%reqd));
 
     # Step 4: deselect ports which are already installed
@@ -961,8 +998,17 @@ MAIN:{
 	    }
 	}
     }
+
+    # Step 8: show website URL
+    if ($website) {
+	foreach $port (keys(%reqd)) {
+	    if ($reqd{$port} & &REQ_EXPLICIT) {
+		show_port_website($port);
+	    }
+	}
+    }
     
-    # Step 8: clean the ports directories (or the entire tree)
+    # Step 9: clean the ports directories (or the entire tree)
     if ($clean) {
 	if (!@ARGV) {
 	    clean_tree();
@@ -975,7 +1021,7 @@ MAIN:{
 	}
     }
     
-    # Step 9: fetch distfiles
+    # Step A: fetch distfiles
     if ($fetch) {
 	foreach $port (keys(%reqd)) {
 	    if ($reqd{$port} != &REQ_MASTER) {
@@ -984,7 +1030,7 @@ MAIN:{
 	}
     }
 
-    # Step A: build ports - only the explicitly required ones, since
+    # Step B: build ports - only the explicitly required ones, since
     # some dependencies (most commonly XFree86) may be bogus.
     if ($build || $packages) {
 	foreach $port (keys(%reqd)) {

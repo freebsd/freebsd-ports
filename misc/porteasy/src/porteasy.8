@@ -35,7 +35,7 @@
 .Nd fetch and build ports
 .Sh SYNOPSIS
 .Nm porteasy
-.Op Fl abCceFfhikLluVv
+.Op Fl abCceFfhikLluVvw
 .Op Fl D Ar date
 .Op Fl d Ar dir
 .Op Fl p Ar dir
@@ -99,10 +99,10 @@ Show the
 version number and exit.
 .It Fl v
 Verbose mode: show more information about what is being done.
+.It Fl w
+Show the URL of the port's web site if there is one listed in the port
+description.
 .El
-.Pp
-If no options are specified, the default is to build the specified
-ports.
 .Ss Port names
 The port names listed on the command line may be either unqualified or
 fully qualified.
@@ -179,6 +179,13 @@ If no ports were specified,
 instead prints a list of all installed ports, with unknown ports (i.e.
 ports that are not in the index file, or are out of date) indicated
 with a question mark.
+.It Show the URLs of the selected ports' web sites
+If the
+.Fl w
+option was specified,
+.Nm
+prints the URL of the web site of each port that was specified on the
+command line, if a URL is listed in that port's description.
 .It Clean the tree
 If the
 .Fl c

@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	porteasy
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -26,8 +26,12 @@ MAN8=		porteasy.8
 do-fetch:
 	@${DO_NADA}
 
+do-configure:
+	@${SED} "s,%%PREFIX%%,${PREFIX}," ${SRC}/porteasy.pl >${WRKDIR}/porteasy
 do-install:
-	@${INSTALL_SCRIPT} ${SRC}/porteasy.pl ${PREFIX}/bin/porteasy
+	@${INSTALL_SCRIPT} ${WRKDIR}/porteasy ${PREFIX}/bin/porteasy
 	@${INSTALL_MAN} ${SRC}/porteasy.8 ${PREFIX}/man/man8
+	@${MKDIR} ${PREFIX}/share/porteasy
+	@${INSTALL_DATA} ${SRC}/cvspass ${PREFIX}/share/porteasy/cvspass
 
 .include <bsd.port.mk>
