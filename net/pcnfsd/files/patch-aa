@@ -1,0 +1,100 @@
+*** common.h	Sat Feb 27 08:48:17 1993
+--- common.h	Thu Oct  6 14:35:00 1994
+***************
+*** 60,65 ****
+--- 60,69 ----
+  **=====================================================================
+  */
+  
++ #ifdef	HAVE_PARAM_H
++ #include <sys/param.h>
++ #endif
++ 
+  /*
+  **---------------------------------------------------------------------
+  ** Define the following symbol to enable the use of a 
+***************
+*** 268,281 ****
+  #define SUNOS_403C
+  #endif
+  
+! #ifdef OSVER_BSD386
+  #define BSD_STYLE_PRINT
+  #define BSD_STYLE_PR_LIST
+  #define BSD_STYLE_QUEUE
+  #define BSD_STYLE_CANCEL
+  #define BSD_STYLE_STATUS
+  #define BSD_STYLE_MONITOR
+! #define BSD386
+  #endif
+  
+  #ifdef OSVER_ULTRIX
+--- 272,285 ----
+  #define SUNOS_403C
+  #endif
+  
+! #if (defined(BSD) && (BSD >= 199103))
+  #define BSD_STYLE_PRINT
+  #define BSD_STYLE_PR_LIST
+  #define BSD_STYLE_QUEUE
+  #define BSD_STYLE_CANCEL
+  #define BSD_STYLE_STATUS
+  #define BSD_STYLE_MONITOR
+! #define GETUSERSHELL
+  #endif
+  
+  #ifdef OSVER_ULTRIX
+*** pcnfsd_misc.c	Sat Feb 27 08:48:14 1993
+--- pcnfsd_misc.c	Thu Oct  6 14:32:17 1994
+***************
+*** 480,486 ****
+  #else SVR4
+  
+  #include <utmp.h>
+! #define WTMP_PATH "/usr/adm/wtmp"
+  
+  void
+  wlogin(name)
+--- 480,488 ----
+  #else SVR4
+  
+  #include <utmp.h>
+! #ifndef	_PATH_WTMP
+! #define	_PATH_WTMP	"/usr/adm/wtmp"
+! #endif
+  
+  void
+  wlogin(name)
+***************
+*** 499,505 ****
+          (void) strncpy(ut.ut_name,name,sizeof ut.ut_name);
+          ut.ut_time = time( (time_t *) 0);
+          (void) strncpy(ut.ut_host, getcallername(), sizeof ut.ut_host);
+!         if ((fd = open(WTMP_PATH, O_WRONLY|O_APPEND, 0)) >= 0) {
+                  (void)write(fd, (char *)&ut, sizeof(ut));
+                  (void)close(fd);
+          }
+--- 501,507 ----
+          (void) strncpy(ut.ut_name,name,sizeof ut.ut_name);
+          ut.ut_time = time( (time_t *) 0);
+          (void) strncpy(ut.ut_host, getcallername(), sizeof ut.ut_host);
+!         if ((fd = open(_PATH_WTMP, O_WRONLY|O_APPEND, 0)) >= 0) {
+                  (void)write(fd, (char *)&ut, sizeof(ut));
+                  (void)close(fd);
+          }
+*** pcnfsd_print.c	Sat Feb 27 08:48:13 1993
+--- pcnfsd_print.c	Thu Oct  6 14:37:50 1994
+***************
+*** 975,981 ****
+--- 975,985 ----
+  	if(pn == NULL || suspicious(pn) || !valid_pr(pn))
+  		return(PI_RES_NO_SUCH_PRINTER);
+  
++ #if (defined(BSD) && (BSD >= 199103))
++ 	sprintf(buff, "/usr/bin/lpq -P%s", pn);
++ #else
+  	sprintf(buff, "/usr/ucb/lpq -P%s", pn);
++ #endif
+  
+  	p = su_popen(user, buff, MAXTIME_FOR_QUEUE);
+  	if(p == NULL) {

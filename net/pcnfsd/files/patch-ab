@@ -1,0 +1,25 @@
+*** /dev/null	Thu Oct  6 16:22:04 1994
+--- Makefile.44bsd	Thu Oct  6 17:18:19 1994
+***************
+*** 0 ****
+--- 1,20 ----
++ #
++ # @(#)Makefile
++ # Makefile for rpc.pcnfsd for BSD/386 or similar
++ # $Id$
++ #
++ 
++ PROG=	rpc.pcnfsd
++ SRCS=	pcnfsd_svc.c pcnfsd_xdr.c pcnfsd_v1.c pcnfsd_v2.c pcnfsd_misc.c \
++ 	pcnfsd_cache.c pcnfsd_print.c
++ MAN8=	pcnfsd.8
++ 
++ CFLAGS+=-DHAVE_PARAM_H
++ 
++ DPADD+=	${LIBCRYPT}
++ LDADD+=	-lcrypt
++ 
++ beforeinstall:
++ 	-mkdir ${PRDIR}
++ 
++ .include <bsd.prog.mk>

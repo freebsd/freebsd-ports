@@ -1,0 +1,103 @@
+*** pcnfsd.8c	Sat Feb 27 08:48:29 1993
+--- pcnfsd.8c	Thu Oct  6 16:04:23 1994
+***************
+*** 1,5 ****
+! .\" @(#) @(#)pcnfsd.8c	1.3 11/3/92;
+! .TH PCNFSD 8C "25 April 1991"
+  .SH NAME
+  pcnfsd \- (PC)NFS authentication and print request server
+  .SH SYNOPSIS
+--- 1,5 ----
+! .\" @(#) @(#)pcnfsd.8	1.3 11/3/92;
+! .TH PCNFSD 8 "25 April 1991"
+  .SH NAME
+  pcnfsd \- (PC)NFS authentication and print request server
+  .SH SYNOPSIS
+***************
+*** 48,58 ****
+  .B PCNFSD2_AUTH
+  request\**, it will "log in" the user by validating the username and
+  password and returning the corresponding uid, gids, home directory,
+! and umask. If 
+! .B pcnfsd
+! was built with the
+! .B WTMP
+! compile-time option, it will also append a record to the
+  .BR wtmp (5)
+  data base. If you do not wish to record PC "logins" in this way,
+  you should add a line of the form
+--- 48,54 ----
+  .B PCNFSD2_AUTH
+  request\**, it will "log in" the user by validating the username and
+  password and returning the corresponding uid, gids, home directory,
+! and umask, it will also append a record to the
+  .BR wtmp (5)
+  data base. If you do not wish to record PC "logins" in this way,
+  you should add a line of the form
+***************
+*** 105,111 ****
+  .B pcnfsd
+  creates a subdirectory for each of its clients: the parent
+  directory is normally
+! .B /usr/spool/pcnfs
+  and the subdirectory is the hostname of the client system.
+  If you wish to use a different parent directory, you should add a
+  line of the form
+--- 101,107 ----
+  .B pcnfsd
+  creates a subdirectory for each of its clients: the parent
+  directory is normally
+! .B /var/spool/pcnfs
+  and the subdirectory is the hostname of the client system.
+  If you wish to use a different parent directory, you should add a
+  line of the form
+***************
+*** 134,140 ****
+  must be run as root.
+  .LP
+  Every print request from the client includes the name of the printer
+! which is to be used. In SunOS, this name corresponds to a printer
+  definition in the
+  .BR /etc/printcap (5)
+  database. If you wish to define a non-standard way of processing
+--- 130,136 ----
+  must be run as root.
+  .LP
+  Every print request from the client includes the name of the printer
+! which is to be used. This name corresponds to a printer
+  definition in the
+  .BR /etc/printcap (5)
+  database. If you wish to define a non-standard way of processing
+***************
+*** 230,238 ****
+  its list of valid printers. To do this, it checks the modification
+  time of
+  .B /etc/printcap
+! for BSD-style systems or
+! .B /etc/lp/printers
+! for SVR4-based systems. However, it does not monitor the file
+  .B /etc/pcnfsd.conf
+  for updates; if you change this file, it is still necessary to
+  kill and restart
+--- 226,232 ----
+  its list of valid printers. To do this, it checks the modification
+  time of
+  .B /etc/printcap
+! However, it does not monitor the file
+  .B /etc/pcnfsd.conf
+  for updates; if you change this file, it is still necessary to
+  kill and restart
+***************
+*** 244,249 ****
+  .B /etc/pcnfsd.conf
+  .PD
+  .SH "SEE ALSO"
+! .BR lp (1)
+! .BR lpstat (1)
+  .BR lpq (1)
+--- 238,242 ----
+  .B /etc/pcnfsd.conf
+  .PD
+  .SH "SEE ALSO"
+! .BR lpr (1)
+  .BR lpq (1)
