@@ -47,7 +47,7 @@ STRIP?=	-s
 
 .if !defined(NOPRECIOUSMAKEVARS)
 .if !defined(ARCH)
-ARCH!=	/usr/bin/uname -m
+ARCH!=	/usr/bin/uname -p
 .endif
 .if !defined(OSREL)
 OSREL!=	/usr/bin/uname -r | sed -e 's/[-(].*//'
@@ -118,8 +118,8 @@ _SUBDIRUSE: .USE
 			${ECHO_MSG} "===> ${DIRPRFX}$$sub skipped"; \
 		fi; \
 	done; \
-	if test -d ${.CURDIR}/${.TARGET:R}.${MACHINE}; then \
-		edir=$${sub}.${MACHINE}; \
+	if test -d ${.CURDIR}/${.TARGET:R}.${MACHINE_ARCH}; then \
+		edir=$${sub}.${MACHINE_ARCH}; \
 	elif test -d ${.CURDIR}/$${sub}; then \
 		edir=$${sub}; \
 	else \
@@ -203,7 +203,7 @@ README=	${TEMPLATES}/README.top
 .else
 README=	${TEMPLATES}/README.category
 .endif
-COMMENT?=	${.CURDIR}/pkg/COMMENT
+COMMENTFILE?=	${.CURDIR}/pkg/COMMENT
 DESCR?=		${.CURDIR}/pkg/DESCR
 .if ${OSVERSION} >= 500036
 INDEXFILE?=	INDEX-5
@@ -226,7 +226,7 @@ README.html:
 .else
 	@echo -n '<a href="'${entry}/README.html'">'"`cd ${entry}; make package-name | ${HTMLIFY}`</a>: " >> $@.tmp
 .endif
-	@cat `cd ${entry}; make -V COMMENT` | ${HTMLIFY} >> $@.tmp
+	@echo `cd ${entry}; make -V COMMENT` | ${HTMLIFY} >> $@.tmp
 .endif
 .endfor
 	@sort -t '>' +1 -2 $@.tmp > $@.tmp2
@@ -235,10 +235,14 @@ README.html:
 .else
 	@> $@.tmp3
 .endif
-.if exists(${COMMENT})
-	@${HTMLIFY} ${COMMENT} > $@.tmp4
+.if defined(COMMENT)
+	@echo "${COMMENT:Q}" | ${HTMLIFY} > $@.tmp4
+.else
+.if exists(${COMMENTFILE})
+	@${HTMLIFY} ${COMMENTFILE} > $@.tmp4
 .else
 	@> $@.tmp4
+.endif
 .endif
 	@cat ${README} | \
 		sed -e 's/%%CATEGORY%%/'"`basename ${.CURDIR}`"'/g' \

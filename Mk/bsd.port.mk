@@ -32,7 +32,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # These are meta-variables that are automatically set to the system
 # you are running on.
 # 
-# ARCH			- The architecture, as returned by "uname -m".
+# ARCH			- The architecture, as returned by "uname -p".
 # OPSYS			- Portability clause.  This is the operating system the
 #				  makefile is being used on.  Automatically set to
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
@@ -628,6 +628,7 @@ TRUE?=		true				# Shell builtin
 UNAME?=		/usr/bin/uname
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
+YACC?=		/usr/bin/yacc
 
 # ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
 # or "true" if the make flag -s is given.  Use ECHO_CMD where you mean
@@ -639,7 +640,7 @@ ECHO_MSG?=		${ECHO_CMD}
 
 # Get the architecture
 .if !defined(ARCH)
-ARCH!=	${UNAME} -m
+ARCH!=	${UNAME} -p
 .endif
 
 # Kludge for pre-3.0 systems
@@ -864,6 +865,9 @@ XFREE86_VERSION?=	4
 .else
 XFREE86_VERSION?=	3
 .endif
+
+# Location of mounted CDROM(s) to search for files
+CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 
 .endif
 # End of pre-makefile section.
@@ -1104,11 +1108,16 @@ CXX=			g++295
 BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/gcc295
 MAKE_ENV+=		CC=${CC} CXX=${CXX}
 .endif
-.if defined(USE_GCC) && ${USE_GCC} == 3.1 && ${OSVERSION} < 500035
+.if defined(USE_GCC) && ${USE_GCC} == 3.1 && ( ${OSVERSION} < 500035 || ${OSVERSION} > 500038 )
 CC=				gcc31
 CXX=			g++31
 BUILD_DEPENDS+=	gcc31:${PORTSDIR}/lang/gcc31
 MAKE_ENV+=		CC=${CC} CXX=${CXX}
+.endif
+.if defined(USE_GCC) && ${USE_GCC} == 3.2 && ${OSVERSION} < 500039
+CC=				gcc32
+CXX=			g++32
+BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 .endif
 
 .if defined(USE_LINUX)
@@ -1272,7 +1281,7 @@ NONEXISTENT?=	/nonexistent
 GMAKE?=			gmake
 LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
-MKHTMLINDEX?=		mkhtmlindex
+MKHTMLINDEX?=		${X11BASE}/bin/mkhtmlindex
 .if exists(/sbin/md5)
 MD5?=			/sbin/md5
 .elif exists(/bin/md5)
@@ -1286,7 +1295,7 @@ MD5_FILE?=		${MASTERDIR}/distinfo
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
-MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
 
 .if ${OSVERSION} < 500016
 PTHREAD_CFLAGS=	-D_THREAD_SAFE
@@ -1413,7 +1422,7 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 .undef NO_PACKAGE
 .endif
 
-COMMENT?=		${PKGDIR}/pkg-comment
+COMMENTFILE?=		${PKGDIR}/pkg-comment
 DESCR?=			${PKGDIR}/pkg-descr
 PLIST?=			${PKGDIR}/pkg-plist
 PKGINSTALL?=	${PKGDIR}/pkg-install
@@ -1436,11 +1445,7 @@ PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
 .if !defined(PKG_ARGS)
-.if exists(${COMMENT})
-PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
-.else
-PKG_ARGS=		-v -c -"${PORTCOMMENT}" -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
-.endif
+PKG_ARGS=		-v -c ${COMMENTFILE} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
 .if exists(${PKGINSTALL})
 PKG_ARGS+=		-i ${PKGINSTALL}
 .endif
@@ -1476,6 +1481,30 @@ MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
+
+# This is a mid-term solution patch while pkg-comment files are
+# phased out.
+# The final simpler patch will come afterwards
+.if defined(COMMENT)
+COMMENTFILE=	${WRKDIR}/.comment.${PKGNAME}
+COMMENTFILE_DEFAULT_CMD=	${RM} -Rf ${COMMENTFILE} && ${MKDIR} ${WRKDIR} && ${ECHO_CMD} ${COMMENT:Q} > ${COMMENTFILE}
+.else
+.if !exists(${COMMENTFILE})
+.BEGIN:
+		@${ECHO_CMD} 'There is no COMMENT variable defined'
+		@${ECHO_CMD} 'for this port, please rectify this.'
+		@${FALSE}
+.else
+
+COMMENT!=	${CAT} ${COMMENTFILE}
+COMMENTFILE_DEFAULT_CMD=	${DO_NADA}
+.endif
+.endif
+
+.if !target(generate-commentfile)
+generate-commentfile:
+	@${COMMENTFILE_DEFAULT_CMD}
+.endif
 
 # Popular master sites
 .include "bsd.sites.mk"
@@ -1692,7 +1721,6 @@ _MASTER_SITE_BACKUP=	${MASTER_SITE_BACKUP}
 
 # Search CDROM first if mounted, symlink instead of copy if
 # FETCH_SYMLINK_DISTFILES is set
-CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 .for MOUNTPT in ${CD_MOUNTPTS}
 .if exists(${MOUNTPT}/ports/distfiles)
 _MASTER_SITE_OVERRIDE:=	file:${MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${_MASTER_SITE_OVERRIDE}
@@ -1997,6 +2025,15 @@ _MLINKS+=	${___pmlinks:S// /g}
 .endfor
 .endfor
 .endif
+_COUNT=0
+.for ___tpmlinks in ${_MLINKS}
+.if ${_COUNT} == "1"
+_TMLINKS+=	${___tpmlinks}
+_COUNT=0
+.else
+_COUNT=1
+.endif
+.endfor
 
 .for lang in ${MANLANG}
 
@@ -2016,9 +2053,7 @@ _MANPAGES+=	${MANN:S%^%${MANNPREFIX}/man/${lang}/mann/%}
 
 .endfor
 
-.if defined(_MLINKS)
-_TMLINKS!=	${ECHO_CMD} ${_MLINKS} | ${AWK} '{for (i=2; i<=NF; i+=2) print $$i}'
-.else
+.if !defined(_MLINKS)
 _TMLINKS=
 .endif
 
@@ -2594,7 +2629,7 @@ do-install:
 # Package
 
 .if !target(do-package)
-do-package: ${TMPPLIST}
+do-package: ${TMPPLIST} generate-commentfile
 	@if [ -d ${PACKAGES} ]; then \
 		if [ ! -d ${PKGREPOSITORY} ]; then \
 			if ! ${MKDIR} ${PKGREPOSITORY}; then \
@@ -2977,6 +3012,16 @@ patch-libtool:
 .endif
 .endif
 
+.if !target(pretty-print-www-site)
+pretty-print-www-site:
+	@www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
+	if [ -n "$${www_site}" ]; then \
+		${ECHO} -n " and/or visit the "; \
+		${ECHO} -n "<a href=\"$${www_site}\">web site</a>"; \
+		${ECHO} " for futher informations"; \
+	fi
+.endif
+
 ################################################################
 # Some more targets supplied for users' convenience
 ################################################################
@@ -3324,20 +3369,25 @@ ${deptype:L}-depends:
 .endfor
 
 lib-depends:
-.if defined(LIB_DEPENDS)
-.if !defined(NO_DEPENDS)
+.if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@for i in ${LIB_DEPENDS}; do \
-		lib=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
-		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
-		else \
+		lib=$${i%%:*}; \
+		case $$lib in \
+			*.*.*)	pattern=$$lib ;;\
+			*.*)	pattern="$${lib%%.*}\.$${lib#*.}" ;;\
+			*)		pattern=$$lib ;;\
+		esac; \
+		dir=$${i#*:}; \
+		target=$${i##*:}; \
+		if ${TEST} $$dir = $$target; then \
 			target="${DEPENDS_TARGET}"; \
 			depends_args="${DEPENDS_ARGS}"; \
+		else \
+			dir=$${dir%%:*}; \
 		fi; \
-		if ${LDCONFIG} -r | ${GREP} -qwF -e "-l$$lib"; then \
-			${ECHO_MSG} "===>   ${PKGNAME} depends on shared library: $$lib - found"; \
+		${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
+		if ${LDCONFIG} -r | ${GREP} -qwE -e "-l$$pattern"; then \
+			${ECHO_MSG} " - found"; \
 			if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 				${ECHO_MSG} "       (but building it anyway)"; \
 				notfound=1; \
@@ -3345,7 +3395,7 @@ lib-depends:
 				notfound=0; \
 			fi; \
 		else \
-			${ECHO_MSG} "===>   ${PKGNAME} depends on shared library: $$lib - not found"; \
+			${ECHO_MSG} " - not found"; \
 			notfound=1; \
 		fi; \
 		if [ $$notfound != 0 ]; then \
@@ -3355,18 +3405,13 @@ lib-depends:
 			else \
 				(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
-				if ${LDCONFIG} -r | ${GREP} -qwF -e "-l$$lib"; then \
-					${TRUE}; \
-				else \
+				if ! ${LDCONFIG} -r | ${GREP} -qwE -e "-l$$pattern"; then \
 					${ECHO_MSG} "Error: shared library \"$$lib\" does not exist"; \
 					${FALSE}; \
 				fi; \
 			fi; \
 		fi; \
 	done
-.endif
-.else
-	@${DO_NADA}
 .endif
 
 misc-depends:
@@ -3539,15 +3584,13 @@ package-depends:
 #  description-file|maintainer|categories|build deps|run deps|www site
 
 .if !target(describe)
-describe:
+describe: generate-commentfile
 	@${ECHO_CMD} "`perl -e ' \
 		print q{${PKGNAME}|${.CURDIR}|${PREFIX}|}; \
-		if (open(COMMENT, q{${COMMENT}})) { \
+		if (open(COMMENT, q{${COMMENTFILE}})) { \
 			$$_ = <COMMENT>; \
 			chomp; \
 			print; \
-		} elsif (not // =~ q{${PORTCOMMENT}}) { \
-			print q{${PORTCOMMENT}}; \
 		} else { \
 			print q{** No Description}; \
 		} \
@@ -3610,18 +3653,27 @@ readme:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.CURDIR}/README.html
 .endif
 
-${.CURDIR}/README.html:
+${.CURDIR}/README.html:	generate-commentfile
 	@${ECHO_MSG} "===>   Creating README.html for ${PKGNAME}"
-	@${CAT} ${TEMPLATES}/README.port | \
-		${SED} -e 's%%PORT%%'`${ECHO_CMD} ${.CURDIR} | ${SED} -e 's.*/\([^/]*/[^/]*\)$$\1'`'g' \
-			-e 's%%PKG%%${PKGNAME}g' \
-			-e '/%%COMMENT%%/r${COMMENT}' \
+	@${SED} -e 's|%%PORT%%|'$$(${ECHO_CMD} ${.CURDIR} | \
+							  ${SED} -e 's|.*/\([^/]*/[^/]*\)$$|\1|')'|g' \
+			-e 's|%%PKG%%|${PKGNAME}|g' \
+			-e '/%%COMMENT%%/r${COMMENTFILE}' \
 			-e '/%%COMMENT%%/d' \
-			-e 's%%DESCR%%'"`${ECHO_CMD} ${DESCR} | ${SED} -e 's${.CURDIR}/'`"'' \
-			-e 's%%BUILD_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-build-depends-list`"'' \
-			-e 's%%RUN_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-run-depends-list`"'' \
-			-e 's%%TOP%%'"`${ECHO_CMD} ${CATEGORIES} | ${SED} -e 'sa .*aa' -e 'sa[^/]*a..ag'`"'/..' \
-		>> $@
+			-e 's|%%DESCR%%|'"$$(${ECHO_CMD} ${DESCR} | \
+								 ${SED} -e 's|${.CURDIR}/||')"'|' \
+			-e 's|%%EMAIL%%|'"$$(${ECHO_CMD} "${MAINTAINER}" | \
+								 ${SED} -e 's/([^)]*)//;s/.*<//;s/>.*//')"'|g' \
+			-e 's|%%MAINTAINER%%|${MAINTAINER}|g' \
+			-e 's|%%WEBSITE%%|'"$$(cd ${.CURDIR} && ${MAKE} \
+					${__softMAKEFLAGS} pretty-print-www-site)"'|' \
+			-e 's|%%BUILD_DEPENDS%%|'"$$(cd ${.CURDIR} && ${MAKE} \
+					${__softMAKEFLAGS} pretty-print-build-depends-list)"'|' \
+			-e 's|%%RUN_DEPENDS%%|'"$$(cd ${.CURDIR} && ${MAKE} \
+					${__softMAKEFLAGS} pretty-print-run-depends-list)"'|' \
+			-e 's|%%TOP%%|'"$$(${ECHO_CMD} ${CATEGORIES} | \
+							   ${SED} -e 's| .*||' -e 's|[^/]*|..|g')"'/..|' \
+		${TEMPLATES}/README.port >> $@
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
 
@@ -3737,7 +3789,7 @@ compress-man:
 # accordance to the @pkgdep directive in the packing lists
 
 .if !target(fake-pkg)
-fake-pkg:
+fake-pkg: generate-commentfile
 .if !defined(NO_PKG_REGISTER)
 	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
 	@${RM} -f /tmp/${PKGNAME}-required-by
@@ -3752,11 +3804,7 @@ fake-pkg:
 		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
 		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
-		if [ -f ${COMMENT} ]; then \
-			${CP} ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
-		else \
-			${ECHO_CMD} ${PORTCOMMENT} > ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
-		fi; \
+		${CP} ${COMMENTFILE} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
 		if [ -f ${PKGINSTALL} ]; then \
 			${CP} ${PKGINSTALL} ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
 		fi; \
