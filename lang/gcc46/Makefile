@@ -16,10 +16,14 @@ MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-09-14/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BROKEN=		package
-
 EGCS_REV=	egcs-2.92.07
 LIBSTDCPP_REV=	2.9.0
+ARE_WE_ELF!=	test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+.if ${ARE_WE_ELF} == "elf"
+GNUHOST=	i386-unknown-freebsdelf
+.else
+GNUHOST=	i386-unknown-freebsd
+.endif
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -69,9 +73,3 @@ post-install:
 .endfor
 
 .include <bsd.port.mk>
-
-.if (${PORTOBJFORMAT} == "elf")
-GNUHOST=	i386-unknown-freebsdelf
-.else
-GNUHOST=	i386-unknown-freebsd
-.endif
