@@ -8,7 +8,8 @@
 PORTNAME=	gnubg
 PORTVERSION=	0.13.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
+		http://triaez.kaisei.org/~kaoru/misc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}.tar.gz	\
 		gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz	\
@@ -18,8 +19,6 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	GNU Backgammon
-
-BROKEN=		Does not fetch, will be removed after Feb 2
 
 MAN6=	gnubg.6
 
@@ -41,6 +40,8 @@ CONFIGURE_ARGS += --enable-nas
 .if defined(WITH_GUILE)
 CONFIGURE_ARGS += --with-guile
 .endif
+
+INFO=	gnubg
 
 GNUBG_WEIGHTS_VERSION=0.13b
 

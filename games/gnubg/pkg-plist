@@ -1,7 +1,9 @@
 bin/gnubg
 bin/makebearoff
+share/gnubg/annealing.png
 share/gnubg/gnubg.gtkrc
 share/gnubg/gnubg.wd
+share/gnubg/gnubg.xml
 share/gnubg/gnubg_os0.bd
 share/gnubg/gnubg_ts0.bd
 share/gnubg/boards.xml
@@ -12,6 +14,11 @@ share/gnubg/met/met.xsl
 share/gnubg/met/snowie.xml
 share/gnubg/met/woolsey.xml
 share/gnubg/met/zadeh.xml
+share/gnubg/rulfig1.png
+share/gnubg/rulfig2.png
+share/gnubg/rulfig3.png
+share/gnubg/rulfig4.png
+share/gnubg/rulfig5.png
 share/gnubg/sounds/chequer.wav
 share/gnubg/sounds/dance.wav
 share/gnubg/sounds/double.wav
@@ -24,6 +31,7 @@ share/gnubg/sounds/move.wav
 share/gnubg/sounds/resign.wav
 share/gnubg/sounds/roll.wav
 share/gnubg/sounds/take.wav
+share/gnubg/texinfo.dtd
 @dirrm share/gnubg/met
 @dirrm share/gnubg/sounds
 @dirrm share/gnubg
