@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2e25d38b-54d1-11d9-b612-000c6e8f12ef">
+    <topic>jabberd -- denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>jabber</name>
+	<range><lt>1.4.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Caused by corrupt parsing code in the expat library
+	  part of jabberd it is possible for an attacker to
+	  crash the daemon if it is not using UTF-8.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://mail.jabber.org/pipermail/jabberd/2004-September/002004.html</url>
+    </references>
+    <dates>
+      <discovery>2004-09-19</discovery>
+      <entry>2004-12-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a30e5e44-5440-11d9-9e1e-c296ac722cb3">
     <topic>squid -- confusing results on empty acl declarations</topic>
     <affects>
