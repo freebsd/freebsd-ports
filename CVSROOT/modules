@@ -5609,6 +5609,7 @@ p5-File-Sync	ports/devel/p5-File-Sync
 p5-File-Tail	ports/devel/p5-File-Tail
 p5-File-Temp	ports/devel/p5-File-Temp
 p5-File-Which	ports/sysutils/p5-File-Which
+p5-FileHandle-Unget	ports/devel/p5-FileHandle-Unget
 p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
 p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filter	ports/devel/p5-Filter
@@ -5808,6 +5809,7 @@ p5-Mail-GnuPG		ports/mail/p5-Mail-GnuPG
 p5-Mail-IMAPClient	ports/mail/p5-Mail-IMAPClient
 p5-Mail-ListDetector	ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats	ports/mail/p5-Mail-MailStats
+p5-Mail-MessageParser	ports/mail/p5-Mail-MessageParser
 p5-Mail-POP3Client	ports/mail/p5-Mail-POP3Client
 p5-Mail-Procmail	ports/mail/p5-Mail-Procmail
 p5-Mail-Procmailrc	ports/mail/p5-Mail-Procmailrc
@@ -5882,6 +5884,7 @@ p5-Net-ICQ2000	ports/net/p5-Net-ICQ2000
 p5-Net-IP	ports/net/p5-Net-IP
 p5-Net-IPv4Addr	ports/net/p5-Net-IPv4Addr
 p5-Net-IPv6Addr	ports/net/p5-Net-IPv6Addr
+p5-Net-Ident	ports/net/p5-Net-Ident
 p5-Net-Jabber	ports/net/p5-Net-Jabber
 p5-Net-MovableType	ports/net/p5-Net-MovableType
 p5-Net-Netmask	ports/net/p5-Net-Netmask
