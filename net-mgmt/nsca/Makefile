@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	nagios
 MAINTAINER=	paul@nerdlabs.com
 COMMENT=	Nagios Service Check Acceptor
 
-BUILD_DEPENDS=	${NAGIOS_DIR}:${PORTSDIR}/net-mgmt/nagios
-RUN_DEPENDS=	${NAGIOS_DIR}:${PORTSDIR}/net-mgmt/nagios
+RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 
 GNU_CONFIGURE=	yes
