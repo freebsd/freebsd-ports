@@ -1,38 +1,22 @@
---- Makefile.in.orig	Mon Mar  3 21:30:58 2003
-+++ Makefile.in	Sun Mar  9 13:04:43 2003
-@@ -56,7 +56,9 @@
- SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TCL_LIBRARY)
- 
- # Directory in which to install the include file tcl.h:
--INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
-+INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
+--- Makefile.in.orig	Mon Jul 26 14:40:46 2004
++++ Makefile.in	Thu Oct 28 10:51:40 2004
+@@ -59,2 +59,4 @@
+ INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
 +GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
 +UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
  
- # Top-level directory in which to install manual entries:
- MAN_INSTALL_DIR		= $(INSTALL_ROOT)$(mandir)
-@@ -90,7 +92,7 @@
- #CFLAGS			= $(CFLAGS_DEBUG)
- #CFLAGS			= $(CFLAGS_OPTIMIZE)
+@@ -92,3 +94,3 @@
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
--CFLAGS			= @CFLAGS@ @CFLAGS_DEFAULT@ -DTCL_DBGX=$(TCL_DBGX)
-+CFLAGS			+= @CFLAGS@ @CFLAGS_DEFAULT@ -DTCL_DBGX=$(TCL_DBGX)
+-CFLAGS			= @CFLAGS_DEFAULT@ @CFLAGS@ -DTCL_DBGX=$(TCL_DBGX)
++CFLAGS			+= @CFLAGS_DEFAULT@ @CFLAGS@ -DTCL_DBGX=$(TCL_DBGX)
  
- # Flags to pass to the linker
- LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -445,7 +447,8 @@
- 
- all: binaries libraries doc
+@@ -447,3 +449,4 @@
  
 -binaries: ${LIB_FILE} $(STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) tclsh
 +binaries: ${LIB_FILE} $(STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) \
 +	libtcl${SHORT_TCL_VER}.a tclsh
  
- libraries:
- 
-@@ -456,6 +459,15 @@
- ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
- 	rm -f $@
+@@ -458,2 +461,11 @@
  	@MAKE_LIB@
 +	@ln -sf $(LIB_FILE) ./libtcl${SHORT_TCL_VER}.so
 +	if test "x@DL_OBJS@" = "xtclLoadAout.o"; then \
@@ -44,11 +28,7 @@
 +	ar cr libtcl${SHORT_TCL_VER}.a ${OBJS}
 +	$(RANLIB) libtcl${SHORT_TCL_VER}.a
  
- ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
- 	rm -f $@
-@@ -602,6 +614,12 @@
- 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
- 	@@INSTALL_LIB@
+@@ -604,2 +616,8 @@
  	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
 +	@ln -sf $(LIB_FILE) $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.so
 +	@echo "Installing libtcl${SHORT_TCL_VER}.a"
@@ -57,11 +37,7 @@
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl${SHORT_TCL_VER}.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
- 	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -609,15 +627,17 @@
- 	    fi
- 	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
+@@ -611,4 +629,5 @@
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
 -	@echo "Installing tclConfig.sh to $(LIB_INSTALL_DIR)/"
 -	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
@@ -69,20 +45,13 @@
 +	@mkdir -p $(SCRIPT_INSTALL_DIR)
 +	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
- 	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    @INSTALL_STUB_LIB@ ; \
- 	fi
- 
+@@ -619,3 +638,4 @@
  install-libraries: libraries
 -	@for i in $(INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
 +	@for i in $(GENERIC_INCLUDE_INSTALL_DIR) $(UNIX_INCLUDE_INSTALL_DIR) \
 +		  $(SCRIPT_INSTALL_DIR); \
  	    do \
- 	    if [ ! -d $$i ] ; then \
- 		echo "Making directory $$i"; \
-@@ -639,11 +659,17 @@
- 	    chmod +x $(SRC_DIR)/install-sh; \
- 	    fi
+@@ -641,7 +661,13 @@
  	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
 -		$(GENERIC_DIR)/tclPlatDecls.h ; \
@@ -99,27 +68,15 @@
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclPlatDecls.h $(INCLUDE_INSTALL_DIR)/tclPlatDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
- 	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
- 	    do \
-@@ -701,7 +727,6 @@
- 	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
- 	    done;
+@@ -703,3 +729,2 @@
  	@echo "Cross-linking top-level (.1) docs";
 -	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN1_INSTALL_DIR)
  	@echo "Installing C API (.3) docs";
- 	@cd $(TOP_DIR)/doc; for i in *.3; \
- 	    do \
-@@ -711,7 +736,6 @@
- 	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
- 	    done;
+@@ -713,3 +738,2 @@
  	@echo "Cross-linking C API (.3) docs";
 -	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN3_INSTALL_DIR)
  	@echo "Installing command (.n) docs";
- 	@cd $(TOP_DIR)/doc; for i in *.n; \
- 	    do \
-@@ -721,7 +745,14 @@
- 	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
- 	    done;
+@@ -723,3 +747,10 @@
  	@echo "Cross-linking command (.n) docs";
 -	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MANN_INSTALL_DIR)
 +	@echo "**********"
@@ -131,5 +88,3 @@
 +	@echo "There are NOT default place, but good place to avoid"
 +	@echo "conflicting with another version of Tcl/Tks."
  
- Makefile: $(UNIX_DIR)/Makefile.in $(DLTEST_DIR)/Makefile.in
- 	$(SHELL) config.status

@@ -1,33 +1,22 @@
---- configure.orig	Sat Aug 17 21:04:03 2002
-+++ configure	Mon Sep  9 12:59:14 2002
-@@ -5482,7 +5482,7 @@
-     EXTRA_CFLAGS=""
-     TCL_EXPORT_FILE_SUFFIX=""
+--- configure.orig	Mon Jul 26 14:40:46 2004
++++ configure	Thu Oct 28 10:54:24 2004
+@@ -2081,3 +2081,3 @@
      UNSHARED_LIB_SUFFIX=""
 -    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
 +    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
      ECHO_VERSION='`echo ${VERSION}`'
-     TCL_LIB_VERSIONS_OK=ok
-     CFLAGS_DEBUG=-g
-@@ -6143,12 +6143,13 @@
- 	FreeBSD-*)
- 	    # FreeBSD 3.* and greater have ELF.
+@@ -2878,3 +2878,4 @@
  	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
 +	    SHLIB_LD="ld -shared -x"
 +	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
  	    SHLIB_LD_LIBS='${LIBS}'
- 	    SHLIB_SUFFIX=".so"
- 	    DL_OBJS="tclLoadDl.o"
+@@ -2883,3 +2884,3 @@
  	    DL_LIBS=""
--	    LDFLAGS="-export-dynamic"
+-	    LDFLAGS="$LDFLAGS -export-dynamic"
 +	    LDFLAGS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 	    LD_SEARCH_FLAGS='-rpath ${LIB_RUNTIME_DIR}'
- 	    if test "${TCL_THREADS}" = "1" ; then
-@@ -6156,10 +6157,10 @@
- 	    	LDFLAGS="$LDFLAGS -pthread"
- 	    fi
+@@ -2893,6 +2894,6 @@
  	    case $system in
 -	    FreeBSD-3.*)
 +	    FreeBSD-*)
@@ -36,5 +25,3 @@
 -	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
 +	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
  	    	TCL_LIB_VERSIONS_OK=nodots
- 		;;
- 	    esac

@@ -1,24 +1,17 @@
---- configure.orig	Tue Sep 10 21:13:52 2002
-+++ configure	Mon Sep 30 20:45:39 2002
-@@ -2669,12 +2669,13 @@
- 	FreeBSD-*)
- 	    # FreeBSD 3.* and greater have ELF.
+--- configure.orig	Thu Jul 29 14:57:48 2004
++++ configure	Thu Oct 28 11:16:40 2004
+@@ -2590,3 +2590,4 @@
  	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
 +	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
 +	    SHLIB_LD="ld -shared -x"
  	    SHLIB_LD_LIBS='${LIBS}'
- 	    SHLIB_SUFFIX=".so"
- 	    DL_OBJS="tclLoadDl.o"
+@@ -2595,3 +2596,3 @@
  	    DL_LIBS=""
--	    LDFLAGS="-export-dynamic"
+-	    LDFLAGS="$LDFLAGS -export-dynamic"
 +	    LDFLAGS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 	    LD_SEARCH_FLAGS='-rpath ${LIB_RUNTIME_DIR}'
- 	    if test "${TCL_THREADS}" = "1" ; then
-@@ -2684,10 +2685,10 @@
- 	    	LDFLAGS="$LDFLAGS -pthread"
- 	    fi
+@@ -2605,6 +2606,6 @@
  	    case $system in
 -	    FreeBSD-3.*)
 +	    FreeBSD-*)
@@ -27,13 +20,7 @@
 -	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}${DBGX}.so.1'
  	    	TCL_LIB_VERSIONS_OK=nodots
- 		;;
- 	    esac
-@@ -2913,6 +2914,7 @@
- #define _POSIX_PTHREAD_SEMANTICS 1
- EOF
+@@ -2841,2 +2842,3 @@
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCLVERSION}
  
- 	    SHLIB_CFLAGS="-KPIC"
- 	    LDFLAGS=""
