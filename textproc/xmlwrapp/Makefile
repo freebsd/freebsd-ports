@@ -21,6 +21,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 INSTALLS_SHLIB=	yes
+CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
 

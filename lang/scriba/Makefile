@@ -26,6 +26,7 @@ PRFXFILES=	variations/standard/basiccmd.c \
 
 WRKSRC=		${WRKDIR}
 USE_PERL5=	yes
+CFLAGS+=	-fPIC
 
 post-patch:
 .for P in ${PRFXFILES}
