@@ -1,0 +1,10 @@
+MapServer is a system for developing web-based GIS applications. 
+The basic system consists of a CGI program that can be configured to 
+respond to a variety of spatial requests like making maps, scalebars, 
+and point, area and feature queries. Virtually all aspects of an 
+application, from web interface to map appearance can be developed 
+without any programming. For the more ambitious user, MapServer 
+applications can be enhanced using Java, JavaScript or many other web 
+technologies.
+
+WWW: http://mapserver.gis.umn.edu/
