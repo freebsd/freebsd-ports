@@ -1,0 +1,52 @@
+%%EMACS_LIBDIR%%/site-lisp/flim/eword-decode.el
+%%EMACS_LIBDIR%%/site-lisp/flim/eword-decode.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/eword-encode.el
+%%EMACS_LIBDIR%%/site-lisp/flim/eword-encode.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mailcap.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mailcap.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-b-ccl.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-b-ccl.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-b-el.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-b-el.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-g.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-g.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-q.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-q.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-q-ccl.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-q-ccl.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-u.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mel-u.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mel.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mel.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mime-def.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mime-def.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mime-parse.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mime-parse.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mime.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mime.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mmbuffer.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mmbuffer.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mmcooked.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mmcooked.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mmgeneric.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mmgeneric.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/std11.el
+%%EMACS_LIBDIR%%/site-lisp/flim/std11.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/smtp.el
+%%EMACS_LIBDIR%%/site-lisp/flim/smtp.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/smtpmail.el
+%%EMACS_LIBDIR%%/site-lisp/flim/smtpmail.elc
+@dirrm %%EMACS_LIBDIR%%/site-lisp/flim
+%%FLIMDOCDIR%%/ChangeLog
+%%FLIMDOCDIR%%/NEWS
+%%FLIMDOCDIR%%/README.en
+%%FLIMDOCDIR%%/README.ja
+%%FLIMDOCDIR%%/VERSION
+@dirrm %%FLIMDOCDIR%%
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@unexec install-info --delete %D/info/mime-en.info %D/info/dir
+info/mime-en.info
+@exec install-info %D/info/mime-en.info %D/info/dir
+@unexec install-info --delete %D/info/mime-ja.info %D/info/dir
+info/mime-ja.info
+@exec install-info %D/info/mime-ja.info %D/info/dir
