@@ -1,34 +1,35 @@
 bin/aft
-share/aft/AFT.pm
-share/aft/aft-dbarticle.pm
-share/aft/aft-fhtml.pm
-share/aft/aft-html.pm
-share/aft/aft-htmlc.pm
-share/aft/aft-lout.pm
-share/aft/aft-rtf.pm
-share/aft/aft-tex.pm
-share/aft/aft-xhtml.pm
-share/aft/aft.pl
-share/aft/compile.pl
-share/aft/postrtf.pl
-%%DOCSDIR%%/ChangeLog.aft
-%%DOCSDIR%%/aft.eps
-%%DOCSDIR%%/aft.gif
-%%DOCSDIR%%/aft.jpg
-%%DOCSDIR%%/aft-refman.html
-%%DOCSDIR%%/aft2rtf-doc.rtf
-%%DOCSDIR%%/backends/aft-dbarticle.dat
-%%DOCSDIR%%/backends/aft-fhtml.dat
-%%DOCSDIR%%/backends/aft-html.dat
-%%DOCSDIR%%/backends/aft-htmlc.dat
-%%DOCSDIR%%/backends/aft-lout.dat
-%%DOCSDIR%%/backends/aft-rtf.dat
-%%DOCSDIR%%/backends/aft-tex.dat
-%%DOCSDIR%%/backends/aft-xhtml.dat
-%%DOCSDIR%%/examples/aft.aft
-%%DOCSDIR%%/examples/aft-refman.aft
-%%DOCSDIR%%/examples/aft2rtf-doc.aft
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%/backends
-@dirrm %%DOCSDIR%%
-@dirrm share/aft
+%%DATADIR%%/AFT.pm
+%%DATADIR%%/aft-dbarticle.pm
+%%DATADIR%%/aft-fhtml.pm
+%%DATADIR%%/aft-html.pm
+%%DATADIR%%/aft-htmlc.pm
+%%DATADIR%%/aft-lout.pm
+%%DATADIR%%/aft-rtf.pm
+%%DATADIR%%/aft-tex.pm
+%%DATADIR%%/aft-xhtml.pm
+%%DATADIR%%/aft.pl
+%%DATADIR%%/compile.pl
+%%DATADIR%%/launch_ie.pl
+%%DATADIR%%/postrtf.pl
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.aft
+%%PORTDOCS%%%%DOCSDIR%%/aft-refman.html
+%%PORTDOCS%%%%DOCSDIR%%/aft.eps
+%%PORTDOCS%%%%DOCSDIR%%/aft.gif
+%%PORTDOCS%%%%DOCSDIR%%/aft.jpg
+%%PORTDOCS%%%%DOCSDIR%%/aft2rtf-doc.rtf
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-dbarticle.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-fhtml.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-html.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-htmlc.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-lout.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-rtf.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-tex.dat
+%%PORTDOCS%%%%DOCSDIR%%/backends/aft-xhtml.dat
+%%PORTDOCS%%%%DOCSDIR%%/examples/aft-refman.aft
+%%PORTDOCS%%%%DOCSDIR%%/examples/aft.aft
+%%PORTDOCS%%%%DOCSDIR%%/examples/aft2rtf-doc.aft
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/backends
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
