@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	unison
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.20
 CATEGORIES=	net
-MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/stable/unison-${PORTVERSION}/
+MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/beta-test/unison-${PORTVERSION}/
 DISTNAME=	src
 DIST_SUBDIR=	unison-${PORTVERSION}
-
-FORBIDDEN=	"Can result in serious data loss"
 
 MAINTAINER=	daniel+unison@pelleg.org
 
