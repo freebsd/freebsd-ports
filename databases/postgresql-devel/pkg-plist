@@ -311,6 +311,8 @@ include/postgresql/server/utils/fmgrtab.h
 include/postgresql/server/utils/formatting.h
 include/postgresql/server/utils/geo_decls.h
 include/postgresql/server/utils/guc.h
+include/postgresql/server/utils/guc_tables.h
+include/postgresql/server/utils/help_config.h
 include/postgresql/server/utils/hsearch.h
 include/postgresql/server/utils/inet.h
 include/postgresql/server/utils/int8.h
