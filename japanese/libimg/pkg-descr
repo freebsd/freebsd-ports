@@ -4,8 +4,7 @@ postscript. This version only works with Tcl/Tk 8.0 or higher
 (tested up to Tk8.1b2). If you are using Tk4.2 or lower,
 stick with Img1.1.4 (which is still available).
 
-The most recent info is always available at:
-	http://home.wxs.nl/~nijtmans/img.html
+WWW: http://home.wxs.nl/~nijtmans/img.html
 
 Note that both graphics/img and japanese/img are mutually exclusive and 
 SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
