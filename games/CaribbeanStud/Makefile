@@ -1,16 +1,16 @@
 # New ports collection makefile for:	CaribbeanStud
-# Version required:			1.0
 # Date created:				4 July 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		CS
-PKGNAME=		CaribbeanStud-1.0
+PORTNAME=		CaribbeanStud
+PORTVERSION=		1.0
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
+DISTNAME=		CS
 
 MAINTAINER=		ports@FreeBSD.org
 

@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xgammon-0.98
+PORTNAME=	xgammon
+PORTVERSION=	0.98
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/SRPMS/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/linux/mirror/ftp.redhat.com/redhat/current/SRPMS/SRPMS/ \

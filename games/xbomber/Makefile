@@ -1,15 +1,15 @@
 # New ports collection makefile for:   xbomber
-# Version required:    0.8
 # Date created:        28 June 1998
 # Whom:                marcus
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xbomber.0.8
-PKGNAME=	xbomber-0.8
+PORTNAME=	xbomber
+PORTVERSION=	0.8
 CATEGORIES=     games
 MASTER_SITES=   ftp://ftp.sonic.net/pub/users/nbs/unix/x/xbomber/
+DISTNAME=       ${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=     jclarke@cisco.com
 

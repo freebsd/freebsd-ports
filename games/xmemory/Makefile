@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmemory
-# Version required:	3.7
 # Date Created:		Sat Feb  7 21:37:09 EST 1998
 # Whom:			Dave Chapeskie <dchapes@ddm.on.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmemory-3.7
+PORTNAME=	xmemory
+PORTVERSION=	3.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer

@@ -1,15 +1,15 @@
 # New ports collection makefile for:   xgolgo
-# Version required:    1.0
 # Date created:        1 July 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xeyes-g
-PKGNAME=	xgolgo-1.0
+PORTNAME=	xgolgo
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nemoto.ecei.tohoku.ac.jp/pub/X11/misc/
+DISTNAME=	xeyes-g
 
 MAINTAINER=	nakai@FreeBSD.org
 

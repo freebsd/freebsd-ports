@@ -1,16 +1,16 @@
 # New ports collection makefile for:   xshogi 
-# Version required:    1.2p03
 # Date created:        20 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xshogi-1.2p03
-PKGNAME=	xshogi-1.2.3
+PORTNAME=	xshogi
+PORTVERSION=	1.2.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xshogi
+DISTNAME=	xshogi-1.2p03
 
 MAINTAINER=	nakai@FreeBSD.org
 

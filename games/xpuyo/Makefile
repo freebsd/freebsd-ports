@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xpuyo
-# Version required:	0.1
 # Date created:		12 October 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xpuyo-0.1
+PORTNAME=	xpuyo
+PORTVERSION=	0.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.meme.hokudai.ac.jp/pub/games/
 

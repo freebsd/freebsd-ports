@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xworm
-# Version required:			1.02
 # Date created:				18 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xworm102
-PKGNAME=	xworm-1.02
+PORTNAME=	xworm
+PORTVERSION=	1.02
 CATEGORIES=	games
 MASTER_SITES=	http://www.ekran.no/archive/x/
+DISTNAME=	xworm102
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pp
-# Version required:			0.01
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pp-0.01
+PORTNAME=	pp
+PORTVERSION=	0.01
 CATEGORIES=	games
 MASTER_SITES=	ftp://www.mps.de/pub/unix/ \
 		http://www.nectar.com/distfiles/

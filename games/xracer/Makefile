@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xracer
-# Version required:		 	0.94
 # Date created:				Nov 6th 1999
 # Whom:					troll
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xracer-0.94
+PORTNAME=		xracer
+PORTVERSION=		0.94
 CATEGORIES=		games
 MASTER_SITES=		http://xracer.annexia.org/
 DISTFILES=		xracer-0.94.tar.gz xracer-data.tar.gz

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    xrobots
-# Version required:	1.0
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xrobots-1.0-ss-10.20
-PKGNAME=        xrobots-1.0
+PORTNAME=       xrobots
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/Games/Arcade/xrobots-1.0/
+DISTNAME=       ${PKGNAME}-ss-10.20
 
 MAINTAINER=	jseger@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rocksndiamonds
-# Version required:	1.4.0
 # Date created:		27 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rocksndiamonds-1.4.0
+PORTNAME=	rocksndiamonds
+PORTVERSION=	1.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/rocksndiamonds/RELEASES/ \
 		${MASTER_SITE_XCONTRIB}

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	sokoban
-# Version required:			1.0 
 # Date created:				2 July 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		sokoban-src
-PKGNAME=		sokoban-1.0
+PORTNAME=		sokoban
+PORTVERSION=		1.0
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
+DISTFILES=		${PORTNAME}-src${EXTRACT_SUFX}
 
 MAINTAINER=		ports@FreeBSD.org
 

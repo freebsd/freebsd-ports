@@ -1,18 +1,20 @@
 # New ports collection makefile for:   tetrinet-x-1.13.16
-# Version required:    1.13.16
 # Date created:        11 Apr 1999
 # Whom:                gmarco@giovannelli.it
 #
 # $FreeBSD$
 #
 
-DISTNAME= tetrinet-x.1.13.16
-CATEGORIES= games
-MASTER_SITES= http://www.giovannelli.it/~gmarco/files/ \
-	      ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
-EXTRACT_SUFX= .tgz
+PORTNAME=	tetrinet-x
+PORTVERSION=	1.13.16
+CATEGORIES=	games
+MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/ \
+	     	ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
+DISTFILES=	${PORTNAME}.${PORTVERSION}.tgz
 
 MAINTAINER= gmarco@giovannelli.it
+
+WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 
 INSTALLDIR= ${PREFIX}/tetrinet-x
 

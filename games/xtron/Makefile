@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xtron
-# Version required:			1.1a
 # Date created:				29 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xtron-1.1a
+PORTNAME=	xtron
+PORTVERSION=	1.1a
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade

@@ -1,12 +1,12 @@
 # New ports collection makefile for: TinyMUX
-# Version required:	1.4p13
 # Date created:		1998/05/28
 # Whom:			cjohnson
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tinymux-1.6p0
+PORTNAME=	tinymux
+PORTVERSION=	1.6p0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.digex.net/pub/mud/tinymux/
 

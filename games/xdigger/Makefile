@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xdigger
-# Version required:			1.0.10
 # Date created:				29 June 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdigger-1.0.10
+PORTNAME=	xdigger
+PORTVERSION=	1.0.10
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade

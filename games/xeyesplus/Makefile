@@ -1,15 +1,15 @@
 # New ports collection makefile for:    xeyes+
-# Version required:     2.01
 # Date created:         20 Oct 1996
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xeyes+2.01
-PKGNAME=	xeyes+-2.01
+PORTNAME=	xeyes+
+PORTVERSION=	2.01
 CATEGORIES=	games
 MASTER_SITES=	http://yindy1.aist-nara.ac.jp/~tetu-s/sofken/software/
+DISTNAME=	xeyes+${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org

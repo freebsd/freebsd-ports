@@ -1,15 +1,15 @@
 # New ports collection makefile for:    wolfpack
-# Version required:                     4.2.6
 # Date created:                         26 October 1999
 # Whom:                                 Daniel O'Connor <darius@dons.net.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	empire4.2.6
-PKGNAME=	wolfpack-4.2.6
+PORTNAME=	wolfpack
+PORTVERSION=	4.2.6
 CATEGORIES=	games
 MASTER_SITES=	ftp://empire.idlpaper.com/pub/empire/server/
+DISTNAME=	empire${PORTVERSION}
 
 MAINTAINER=	darius@dons.net.au
 

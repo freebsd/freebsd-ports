@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xskewb
-# Version required:			5.5.2
 # Date created:				25 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xskewb-5.5.2
+PORTNAME=	xskewb
+PORTVERSION=	5.5.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles

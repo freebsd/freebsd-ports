@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xscavenger
-# Version required:	1.3
 # Date created:		19 Feb 1998
 # Whom:			eivind
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xscavenger-135
-PKGNAME=	xscavenger-1.3.5
+PORTNAME=	xscavenger
+PORTVERSION=	1.3.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.xdr.com/dash/
+DISTNAME=	xscavenger-135
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eivind@FreeBSD.org

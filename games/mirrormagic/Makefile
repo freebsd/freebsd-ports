@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mirrormagic
-# Version required:			1.3
 # Date created:				1 April 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mirrormagic-1.3
+PORTNAME=	mirrormagic
+PORTVERSION=	1.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games

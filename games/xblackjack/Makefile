@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xblackjack
-# Version required:     2.2
 # Date created:         8/16/1996
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xblackjack-2.2
+PORTNAME=	xblackjack
+PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games

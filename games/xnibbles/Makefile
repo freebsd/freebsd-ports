@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xnibbles
-# Version required:			1.0b3
 # Date created:				2 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xnibbles-1.0BETA3
-PKGNAME=	xnibbles-1.0b3
+PORTNAME=	xnibbles
+PORTVERSION=	1.0.b3
 CATEGORIES=	games
 MASTER_SITES=	http://www.tjhsst.edu/xnibbles/
+DISTNAME=	xnibbles-1.0BETA3
 
 MAINTAINER=	will@FreeBSD.org
 

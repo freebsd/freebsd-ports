@@ -1,12 +1,12 @@
 # New ports collection makefile for:    sxsame
-# Version required:     3.02
 # Date created:         11 December 1999
 # Whom:                 Yuichi Narahara
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sxsame-3.02
+PORTNAME=	sxsame
+PORTVERSION=	3.02
 CATEGORIES=	games
 MASTER_SITES=	ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/\
 		ftp://jg.cc.hit-u.ac.jp/pub/JG/JG-0.9.1/sources/\

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xjig
-# Version required:	2.4
 # Date Created:		17 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xjig-2.4
+PORTNAME=	xjig
+PORTVERSION=	2.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games

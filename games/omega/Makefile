@@ -1,15 +1,15 @@
 # New ports collection makefile for:	omega
-# Version required:			0.90.4
 # Date created:				14 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	omega-0.90-pa4
-PKGNAME=	omega-0.90.4
+PORTNAME=	omega
+PORTVERSION=	0.90.4
 CATEGORIES=	games
 MASTER_SITES=	http://dolphin.openprojects.net/Omega/Downloads/Prealphas/
+DISTNAME=	omega-0.90-pa4
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rubix
-# Version required:	1.0.1
 # Date created:		19 Nov 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rubix-1.0.1
+PORTNAME=	rubix
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmball
-# Version required:			5.5.2
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmball-5.5.2
+PORTNAME=	xmball
+PORTVERSION=	5.5.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles

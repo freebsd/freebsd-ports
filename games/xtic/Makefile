@@ -1,16 +1,16 @@
 # New ports collection makefile for:    xtic
-# Version required:     1.12
 # Date created:         22 June 1995
 # Whom:                 asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xtic1.12
-PKGNAME=	xtic-1.12
+PORTNAME=	xtic
+PORTVERSION=	1.12
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

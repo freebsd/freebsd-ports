@@ -1,16 +1,15 @@
 # New ports collection makefile for:	xchadance
-# Version required:	1.0
 # Date created:		21 August 1998
 # Whom:			issei <issei@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xchada01
-PKGNAME=	xchadance-1.0
+PORTNAME=	xchadance
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://home.jp.FreeBSD.org/~issei/LOCAL_PORTS/
-EXTRACT_SUFX=	.lzh
+DISTFILES=	xchada01.lzh
 
 MAINTAINER=	issei@jp.FreeBSD.org
 

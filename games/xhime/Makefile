@@ -1,16 +1,15 @@
 # ports collection makefile for:   xhime
-# Version required:    1.51
 # Date created:        25 August 1998
 # Whom:                Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xhime151
-PKGNAME=	xhime-1.51
+PORTNAME=	xhime
+PORTVERSION=	1.51
 CATEGORIES=	games
 MASTER_SITES=	http://www.tcp-ip.or.jp/~shochan/linux/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	xhime151.tgz
 
 MAINTAINER=	flathill@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xlife
-# Version required:	3.0
 # Date created:		15 March 1995
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xlife
-PKGNAME=	xlife-3.0
+PORTNAME=	xlife
+PORTVERSION=	3.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+DISTNAME=	xlife
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
