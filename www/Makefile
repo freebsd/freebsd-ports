@@ -33,6 +33,7 @@
     SUBDIR += chimera2
     SUBDIR += comline
     SUBDIR += css-mode.el
+    SUBDIR += decss
     SUBDIR += demoroniser
     SUBDIR += erwn
     SUBDIR += evg
