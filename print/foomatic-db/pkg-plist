@@ -82,6 +82,7 @@ share/foomatic/db/source/driver/fmlbp.xml
 share/foomatic/db/source/driver/fmpr.xml
 share/foomatic/db/source/driver/foo2zjs.xml
 share/foomatic/db/source/driver/gdi.xml
+share/foomatic/db/source/driver/gimp-print.xml
 share/foomatic/db/source/driver/hl1250.xml
 share/foomatic/db/source/driver/hl7x0.xml
 share/foomatic/db/source/driver/hpdj.xml
@@ -808,6 +809,8 @@ share/foomatic/db/source/printer/DEC-LN03.xml
 share/foomatic/db/source/printer/DEC-LN07.xml
 share/foomatic/db/source/printer/DEC-LN17.xml
 share/foomatic/db/source/printer/DEC-1800.xml
+share/foomatic/db/source/printer/Dell-M5200.xml
+share/foomatic/db/source/printer/Dell-S2500.xml
 share/foomatic/db/source/printer/Dymo-CoStar-ASCIIplus.xml
 share/foomatic/db/source/printer/Dymo-CoStar-ASCII_250.xml
 share/foomatic/db/source/printer/Dymo-CoStar-EL40.xml
@@ -1523,6 +1526,7 @@ share/foomatic/db/source/printer/Lexmark-7200.xml
 share/foomatic/db/source/printer/Minolta-Color_PageWorks_Pro_L.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2200_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2300_DL.xml
+share/foomatic/db/source/printer/Minolta-magicolor_3100.xml
 share/foomatic/db/source/printer/Minolta-PagePro_1100L.xml
 share/foomatic/db/source/printer/Minolta-PagePro_1100.xml
 share/foomatic/db/source/printer/Minolta-PagePro_6ex.xml
