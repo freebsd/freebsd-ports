@@ -8,7 +8,16 @@
  ifconfig=/sbin/ifconfig
  route=/sbin/route
  rtadvd=/usr/sbin/rtadvd
-@@ -104,7 +103,7 @@
+@@ -89,7 +88,7 @@
+ fi
+
+ #change to upper case
+-TSP_HOST_TYPE=`echo $TSP_HOST_TYPE | tr a-z A-Z`
++TSP_HOST_TYPE=`echo $TSP_HOST_TYPE | tr [:lower:] [:upper:]`
+
+ if [ X"${TSP_HOST_TYPE}" = X"HOST" ] || [ X"${TSP_HOST_TYPE}" = X"ROUTER" ]; then
+    #
+@@ -103,7 +102,7 @@
        Exec $ifconfig $TSP_TUNNEL_INTERFACE destroy
     fi
     Exec $ifconfig $TSP_TUNNEL_INTERFACE create
@@ -17,7 +26,7 @@
  
     #
     # Configured tunnel config (IPv6) 
-@@ -118,6 +117,9 @@
+@@ -117,6 +116,9 @@
     # Delete any default IPv6 route first
     ExecNoCheck $route delete -inet6 default
     Exec $route add -inet6 default $TSP_SERVER_ADDRESS_IPV6
