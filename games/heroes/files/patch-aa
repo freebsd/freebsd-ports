@@ -1,0 +1,11 @@
+--- configure	2000/08/15 10:44:11	1.1
++++ configure	2000/08/15 10:44:29
+@@ -2323,7 +2323,7 @@
+ 
+ 
+ 
+-if test ${musicdir}x = x; then
++if test "${musicdir}"x = x; then
+   NOSOUND_TRUE=
+   NOSOUND_FALSE='#'
+ else

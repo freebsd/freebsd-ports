@@ -81,6 +81,7 @@
     SUBDIR += gtkballs
     SUBDIR += halflifeserver
     SUBDIR += heretic
+    SUBDIR += heroes
     SUBDIR += hex
     SUBDIR += icbm3d
     SUBDIR += ifm
