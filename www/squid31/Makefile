@@ -25,7 +25,7 @@ PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch \
 		squid-2.3.stable4-html_quoting.patch \
 		squid-2.3.stable4-carp-assertion.patch
 
-MAINTAINER=	peter@freebsd.org
+MAINTAINER=	adrian@freebsd.org
 
 DIST_SUBDIR=	squid2.3
 PATCH_DIST_STRIP= -p0

@@ -16,7 +16,7 @@ MASTER_SITES=  \
 DISTNAME=	squid-2.2.STABLE5
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	peter@freebsd.org
+MAINTAINER=	adrian@freebsd.org
 
 DIST_SUBDIR=	squid2.2
 PATCH_DIST_STRIP= -p0
