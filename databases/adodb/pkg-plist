@@ -3,6 +3,7 @@ share/doc/apache/php/adodb/adodb-ado.inc.php
 share/doc/apache/php/adodb/adodb-ado_access.inc.php
 share/doc/apache/php/adodb/adodb-ado_mssql.inc.php
 share/doc/apache/php/adodb/adodb-csv.inc.php
+share/doc/apache/php/adodb/adodb-d.apj
 share/doc/apache/php/adodb/adodb-db2.inc.php
 share/doc/apache/php/adodb/adodb-fbsql.inc.php
 share/doc/apache/php/adodb/adodb-ibase.inc.php
@@ -28,6 +29,7 @@ share/doc/apache/php/adodb/server.php
 share/doc/apache/php/adodb/test.php
 share/doc/apache/php/adodb/test2.php
 share/doc/apache/php/adodb/test3.php
+share/doc/apache/php/adodb/testcache.php
 share/doc/apache/php/adodb/testdatabases.inc.php
 share/doc/apache/php/adodb/tohtml.inc.php
 share/doc/apache/php/adodb/tute.htm
