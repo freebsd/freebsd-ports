@@ -4830,6 +4830,7 @@ lincvs		ports/devel/lincvs
 lindele		ports/audio/lindele
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
+link-monitor-applet	ports/net/link-monitor-applet
 linkcheck	ports/www/linkcheck
 linkchecker	ports/www/linkchecker
 links		ports/www/links
