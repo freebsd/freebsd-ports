@@ -1,4 +1,5 @@
 bin/xsystem35
+bin/instgame
 share/doc/ja/xsystem35/BUGS
 share/doc/ja/xsystem35/ChangeLog
 share/doc/ja/xsystem35/FAQ
@@ -8,13 +9,13 @@ share/doc/ja/xsystem35/README
 share/doc/ja/xsystem35/README.midi
 share/doc/ja/xsystem35/README.miko
 share/doc/ja/xsystem35/THANKS
+share/doc/ja/xsystem35/TODO
 share/examples/xsystem35/xsys35rc.sample
 share/examples/xsystem35/README.TXT
 share/examples/xsystem35/atlach.inf
 share/examples/xsystem35/dalk.inf
 share/examples/xsystem35/diabo.inf
 share/examples/xsystem35/drstop.inf
-share/examples/xsystem35/instgame
 share/examples/xsystem35/katsumi.inf
 share/examples/xsystem35/kichiku.inf
 share/examples/xsystem35/miko.inf

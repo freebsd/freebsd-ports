@@ -1,0 +1,14 @@
+--- Imakefile.orig	Sat Jan 16 05:16:18 1999
++++ Imakefile	Sat Jan 23 01:21:39 1999
+@@ -114,9 +114,9 @@
+ /*
+  * include / library / definition
+  */
+-SYS_LIBRARIES   = -lm `gtk-config --libs`
++SYS_LIBRARIES   = -lm `gtk11-config --libs`
+ EXTRA_LIBRARIES = $(OSDEPLIB)
+-EXTRA_INCLUDES  = `gtk-config --cflags` $(OSDEPINC)
++EXTRA_INCLUDES  = `gtk11-config --cflags` $(OSDEPINC)
+ EXTRA_DEFINES   = $(OSDEPDEF)
+ 
+ /*
