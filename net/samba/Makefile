@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.4
-PORTREVISION=   1
+PORTVERSION=	2.2.5.p1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
-		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
-		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
-		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old-versions old
+MASTER_SITES=	ftp://ftp.samba.org/pub/samba/pre/ \
+		ftp://samba.anu.edu.au/pub/samba/pre/ \
+		ftp://de.samba.org/pub/mirror/samba/pre/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
@@ -152,7 +149,7 @@ PLIST_SUB=      AUDIT=${AUDIT} \
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 post-build:
 	cd ${WRKDIR}/${DISTNAME}/examples/VFS; \
-		${GMAKE}
+		${RM} config.cache;./configure;${GMAKE}
 .endif
 
 post-install:
