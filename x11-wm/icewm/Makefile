@@ -3,7 +3,7 @@
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.9 1998/06/04 04:28:05 vanilla Exp $
+# $Id: Makefile,v 1.10 1998/06/28 23:27:33 steve Exp $
 #
 
 DISTNAME=	icewm-0.9.8
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
+BROKEN=		master site not responding
 
 USE_X11=	yes
 
