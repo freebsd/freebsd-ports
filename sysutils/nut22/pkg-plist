@@ -16,6 +16,7 @@ libexec/nut/bestfortress
 libexec/nut/bestuferrups
 libexec/nut/bestups
 libexec/nut/cyberpower
+libexec/nut/esupssmart
 libexec/nut/etapro
 libexec/nut/everups
 libexec/nut/fentonups
@@ -24,7 +25,7 @@ libexec/nut/hp
 libexec/nut/isbmex
 libexec/nut/liebert
 libexec/nut/masterguard
-libexec/nut/mge-ellipse
+libexec/nut/mge-shut
 libexec/nut/mge-utalk
 libexec/nut/microdowell
 libexec/nut/newapc
@@ -33,48 +34,59 @@ libexec/nut/powercom
 libexec/nut/sec
 libexec/nut/sms
 libexec/nut/tripplite
+libexec/nut/tripplitesu
 libexec/nut/upsdrvctl
 libexec/nut/victronups
 sbin/upsd
 sbin/upsmon
 sbin/upssched
-%%PORTDOCS%%share/doc/nut/CHANGES
-%%PORTDOCS%%share/doc/nut/CREDITS
-%%PORTDOCS%%share/doc/nut/FAQ
-%%PORTDOCS%%share/doc/nut/INSTALL
-%%PORTDOCS%%share/doc/nut/NEWS
-%%PORTDOCS%%share/doc/nut/README
-%%PORTDOCS%%share/doc/nut/UPGRADING
-%%PORTDOCS%%share/doc/nut/big-servers.txt
-%%PORTDOCS%%share/doc/nut/cables/apc.txt
-%%PORTDOCS%%share/doc/nut/cables/ge-imv-victron.txt
-%%PORTDOCS%%share/doc/nut/cables/imv.txt
-%%PORTDOCS%%share/doc/nut/cables/mgeups.txt
-%%PORTDOCS%%share/doc/nut/cables/powerware.txt
-%%PORTDOCS%%share/doc/nut/cables/repotec.txt
-%%PORTDOCS%%share/doc/nut/cables/sms.txt
-%%PORTDOCS%%share/doc/nut/chroot.txt
-%%PORTDOCS%%share/doc/nut/commands.txt
-%%PORTDOCS%%share/doc/nut/config-files.txt
-%%PORTDOCS%%share/doc/nut/configure.txt
-%%PORTDOCS%%share/doc/nut/data-room.txt
-%%PORTDOCS%%share/doc/nut/design.txt
-%%PORTDOCS%%share/doc/nut/developers.txt
-%%PORTDOCS%%share/doc/nut/driver.list
-%%PORTDOCS%%share/doc/nut/drivers/README
-%%PORTDOCS%%share/doc/nut/drivers/generic-ups.txt
-%%PORTDOCS%%share/doc/nut/drivers/mge-ellipse.txt
-%%PORTDOCS%%share/doc/nut/drivers/mge-utalk.txt
-%%PORTDOCS%%share/doc/nut/drivers/snmp-ups.txt
-%%PORTDOCS%%share/doc/nut/new-drivers.txt
-%%PORTDOCS%%share/doc/nut/pager.txt
-%%PORTDOCS%%share/doc/nut/protocol.txt
-%%PORTDOCS%%share/doc/nut/shutdown.txt
-%%PORTDOCS%%share/doc/nut/ssl.txt
-%%PORTDOCS%%share/doc/nut/todo.txt
-%%PORTDOCS%%share/doc/nut/upssched.txt
-%%PORTDOCS%%@dirrm share/doc/nut/cables
-%%PORTDOCS%%@dirrm share/doc/nut/drivers
-%%PORTDOCS%%@dirrm share/doc/nut
-@dirrm etc/nut
+share/cmdvartab
+%%CGIFILES%%upsimage.cgi
+%%CGIFILES%%upsset.cgi
+%%CGIFILES%%upsstats.cgi
+%%CGIETC%%hosts.conf.sample
+%%CGIETC%%upsset.conf.sample
+%%CGIETC%%upsstats.html.sample
+%%CGIETC%%upsstats-single.html.sample
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/big-servers.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/apc.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/ge-imv-victron.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/imv.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/mgeups.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/powerware.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/repotec.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/sms.txt
+%%PORTDOCS%%%%DOCSDIR%%/chroot.txt
+%%PORTDOCS%%%%DOCSDIR%%/commands.txt
+%%PORTDOCS%%%%DOCSDIR%%/config-files.txt
+%%PORTDOCS%%%%DOCSDIR%%/configure.txt
+%%PORTDOCS%%%%DOCSDIR%%/contact-closure.txt
+%%PORTDOCS%%%%DOCSDIR%%/data-room.txt
+%%PORTDOCS%%%%DOCSDIR%%/design.txt
+%%PORTDOCS%%%%DOCSDIR%%/developers.txt
+%%PORTDOCS%%%%DOCSDIR%%/driver.list
+%%PORTDOCS%%%%DOCSDIR%%/new-drivers.txt
+%%PORTDOCS%%%%DOCSDIR%%/new-names.txt
+%%PORTDOCS%%%%DOCSDIR%%/osd-notify.txt
+%%PORTDOCS%%%%DOCSDIR%%/pager.txt
+%%PORTDOCS%%%%DOCSDIR%%/powersaving.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/shutdown.txt
+%%PORTDOCS%%%%DOCSDIR%%/snmp.txt
+%%PORTDOCS%%%%DOCSDIR%%/sock-protocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/ssl.txt
+%%PORTDOCS%%%%DOCSDIR%%/todo.txt
+%%PORTDOCS%%%%DOCSDIR%%/upssched.txt
+@dirrm %%DOCSDIR%%/cables
+@dirrm %%DOCSDIR%%/drivers
+@dirrm %%DOCSDIR%%
 @dirrm libexec/nut
+%%CGIDIRRM%%
+@unexec rmdir %D/etc/nut 2>/dev/null || true
