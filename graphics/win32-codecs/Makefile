@@ -8,18 +8,17 @@
 PORTNAME=	win32-codecs
 PORTVERSION=	${CODEC_VERSION}.0.${CODEC_MPLAYER_VERSION}
 CATEGORIES=	graphics audio
-MASTER_SITES=	http://avifile.sourceforge.net/ \
-		http://www.toon.eu.org/divx/ \
+MASTER_SITES=	http://avifile.sourceforge.net/:binaries \
 		http://ernie.eit.uni-kl.de/avifile/ \
-		http://mplayerhq.hu/MPlayer/releases/ \
-		ftp://mplayerhq.hu/MPlayer/releases/ \
-		http://www2.mplayerhq.hu/MPlayer/releases/ \
-		http://ftp.mplayerhq.hu/MPlayer/releases/ \
-		http://ftp2.mplayerhq.hu/MPlayer/releases/
-DISTFILES=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2 \
-		binaries-${CODEC_VERSION}.tgz \
+		http://mplayerhq.hu/MPlayer/releases/:w32codec \
+		ftp://mplayerhq.hu/MPlayer/releases/:w32codec \
+		http://www2.mplayerhq.hu/MPlayer/releases/:w32codec \
+		http://ftp.mplayerhq.hu/MPlayer/releases/:w32codec \
+		http://ftp2.mplayerhq.hu/MPlayer/releases/:w32codec
+DISTFILES=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2:w32codec \
+		binaries-${CODEC_VERSION}.tgz:binaries \
 		wmvds32.ax.gz
-EXTRACT_ONLY=	${DISTFILES:S/wmvds32.ax.gz//:S/binaries-${CODEC_VERSION}.tgz//}
+EXTRACT_ONLY=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2
 
 MAINTAINER=	holger@eit.uni-kl.de
 
@@ -28,12 +27,12 @@ RESTRICTED=	Unsure of codec\'s license
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/w32codec-${CODEC_MPLAYER_VERSION}
+WRKSRC=		${WRKDIR}/w32codec-${CODEC_MPLAYER_VERSION:S/pre7//}
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 
 CODEC_VERSION=	011002
-CODEC_MPLAYER_VERSION=	0.60
+CODEC_MPLAYER_VERSION=	0.90pre7
 # Used by other ports to detect if this is installed
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
