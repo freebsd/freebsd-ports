@@ -1,0 +1,16 @@
+The Python Module Distribution Utilities, or Distutils for short, are a
+collection of modules that aid in the development, distribution, and
+installation of Python modules.
+
+The Distutils will be a standard part of Python 1.6.  This release is
+intended to provide a wider audience an early opportunity to try out the
+system, improve its portability, shake out the bugs, make suggestions,
+and so forth.  Do not expect perfection: if you're trying out this
+release, it should be because you want to help debug and develop, not
+because you need a stable, working system immediately.
+
+Any feedback, comments, bug reports, success reports, etc. should be
+reported to the Distutils SIG at <distutils-sig@python.org>
+
+If you're not yet a member of this mailing list, you can join at
+<URL:http://www.python.org/mailman/listinfo/distutils-sig>.
