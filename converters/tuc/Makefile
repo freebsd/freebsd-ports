@@ -8,9 +8,9 @@
 PORTNAME=	tuc
 PORTVERSION=	1.10
 CATEGORIES=	converters
-MASTER_SITES=	http://www.whizkidtech.net/fports/
+MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	Text to Unix Conversion
 
 MAN1=		tuc.1
