@@ -1,9 +1,9 @@
-# New ports collection makefile for:    spidel
+# New ports collection makefile for:    spider
 # Version required:     1.1
 # Date created:         2 Oct 1995
-# Whom:                 ?
+# Whom:                 se
 #
-# $Id: Makefile,v 1.1.1.1 1995/07/19 00:31:03 jkh Exp $
+# $Id: Makefile,v 1.1.1.1 1995/10/03 11:32:53 asami Exp $
 #
 
 DISTNAME=	spider
