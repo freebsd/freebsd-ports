@@ -17,6 +17,8 @@ PATCHFILES=	j${PORTNAME}-${PORTVERSION}.gz
 
 MAINTAINER=	max@FreeBSD.org
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4

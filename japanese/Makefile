@@ -259,7 +259,7 @@
     SUBDIR += navi2ch-xemacs21-mule
     SUBDIR += ndtpd
     SUBDIR += ne
-    SUBDIR += nethack
+    SUBDIR += nethack32
     SUBDIR += netscape-fonts
     SUBDIR += netscape3.language
     SUBDIR += netscape4-communicator
