@@ -1,0 +1,10 @@
+reed is a text pager for reading large files, such as full books
+(usually etexts from Project Gutenberg).  It has the features one
+would expect for a pager (multiple buffers, searching, file
+information, subshells, etc) and more: persistent bookmarks, auto
+scrolling, and support for many different types of files.
+
+WWW: http://www.sacredchao.net/software/reed/
+
+- Pete
+petef@databits.net
