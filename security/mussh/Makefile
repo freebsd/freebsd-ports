@@ -29,8 +29,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in BUGS CHANGES EXAMPLES README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in BUGS CHANGES EXAMPLES README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
