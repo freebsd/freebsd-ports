@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.136 1998/05/15 12:34:47 tg Exp $
+# $Id: Makefile,v 1.137 1998/05/17 05:43:44 mph Exp $
 #
 
     SUBDIR += 3dc
@@ -22,6 +22,7 @@
     SUBDIR += empire
     SUBDIR += flying
     SUBDIR += freeciv
+    SUBDIR += frotz
     SUBDIR += galaxis
     SUBDIR += gemdropx
     SUBDIR += gnuchess
