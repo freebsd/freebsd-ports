@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jan  6 19:00:05 2004
-+++ Makefile.in	Tue Jan  6 19:00:12 2004
+--- Makefile.in.orig	Mon Feb  2 09:59:04 2004
++++ Makefile.in	Mon Feb  2 09:59:15 2004
 @@ -136,7 +136,7 @@
  
  SUBDIRS = include src data
