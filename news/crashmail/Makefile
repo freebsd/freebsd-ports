@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	crashmail
-PORTVERSION=	0.62
+PORTVERSION=	0.70
 CATEGORIES=	news mail
 MASTER_SITES=	http://www.df.lth.se/~billing/crashmail/
-DISTNAME=	cm062linux
+DISTNAME=	cm07linux
 
 MAINTAINER=	vk@vk.pp.ru
 COMMENT=	CrashMail II FTN mail tosser
