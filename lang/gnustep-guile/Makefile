@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-guile
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -34,6 +34,7 @@ USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 NO_MTREE=	yes
+USE_GCC=	3.2
 
 MAN1=	greg.1
 

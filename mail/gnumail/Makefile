@@ -7,7 +7,7 @@
 
 PORTNAME=	gnumail
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/ \
 		ftp://ftp.gnustep.org/pub/gnustep/usr-apps/
@@ -29,6 +29,7 @@ MAKEFILE=
 MAKE_FLAGS+=	GUI_BACKEND_LIB=back
 ALL_TARGET=
 NO_MTREE=	yes
+USE_GCC=	3.2
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 LOCALLIBDIR=	${PREFIX}/Local/Libraries/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu

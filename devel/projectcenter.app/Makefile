@@ -7,6 +7,7 @@
 
 PORTNAME=	projectcenter.app
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/dev-apps/
 DISTNAME=	ProjectCenter-${PORTVERSION}
@@ -26,6 +27,7 @@ MAKE_ENV=	ADDITIONAL_INCLUDE_DIRS="-I${WRKSRC}" \
 		ADDITIONAL_LIB_DIRS="-L${WRKSRC}/PCLib/shared_obj/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu"
 ALL_TARGET=
 NO_MTREE=	yes
+USE_GCC=	3.2
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gtoolkit
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 
@@ -22,6 +23,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
+USE_GCC=	3.2
 
 MAKE_ARGS=	GNUSTEP_SYSTEM_ROOT=${PREFIX}/System
 CONFIGURE_ARGS+=	--with-gnustep

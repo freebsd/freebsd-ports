@@ -7,6 +7,7 @@
 
 PORTNAME=	gomoku.app
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/
 DISTNAME=	Gomoku-${PORTVERSION}
@@ -23,6 +24,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
 NO_MTREE=	yes
+USE_GCC=	3.2
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 

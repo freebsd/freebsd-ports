@@ -7,6 +7,7 @@
 
 PORTNAME=	preferences.app
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	prefsapp
@@ -26,6 +27,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
 NO_MTREE=	yes
+USE_GCC=	3.2
 MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
 		Modules/Keyboard/GNUmakefile.preamble \
 		Modules/PrefsApp/GNUmakefile.preamble

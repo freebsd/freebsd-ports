@@ -7,6 +7,7 @@
 
 PORTNAME=	gshisen
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/
 
@@ -24,6 +25,7 @@ MAKEFILE=
 MAKE_FLAGS=	GUI_BACKEND_LIB=back
 ALL_TARGET=
 NO_MTREE=	yes
+USE_GCC=	3.2
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
