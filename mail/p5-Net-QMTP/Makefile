@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-QMTP
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	james@now.ie
 COMMENT=	Perl module to provide a Quick Mail Transfer Protocol (QMTP) client
 
+BUILD_DEPENDS=	${SITE_PERL}/Text/Netstring.pm:${PORTSDIR}/textproc/p5-Text-Netstring
 RUN_DEPENDS=	${SITE_PERL}/Text/Netstring.pm:${PORTSDIR}/textproc/p5-Text-Netstring
 
 PERL_CONFIGURE=	yes
