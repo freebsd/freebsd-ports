@@ -1,0 +1,90 @@
+*** Makefile.orig	Mon Feb 19 09:45:47 1996
+--- Makefile	Fri Nov 15 14:19:11 1996
+***************
+*** 13,19 ****
+  #  The above doesn't work with gas, which doesn't run cpp.
+  #  Define AS as `gcc -c -x assembler-with-cpp' instead.
+  
+! CFLAGS= -O -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DSILENT
+  
+  # Setjmp_test may yield overly optimistic results when compiled
+  # without optimization.
+--- 13,45 ----
+  #  The above doesn't work with gas, which doesn't run cpp.
+  #  Define AS as `gcc -c -x assembler-with-cpp' instead.
+  
+! # We want this to be a drop-in linkable library, hence the -DREDIRECT.
+! # The new c++-t and c++-nt (test and notest) are because we don't want
+! # to fill anyone's log with leak messages! - MMCG
+! 
+! CFLAGS= -O -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DSILENT \
+!     	-DREDIRECT_MALLOC=GC_malloc
+! 
+! LEAKFLAGS=$(CFLAGS) -DFIND_LEAK
+! 
+! all: gc.a gctest
+! 
+! FreeBSD-pkg-all: fbsd-libgc.a fbsd-libleak.a
+! 
+! fbsd-libgc.a:
+! 	make CFLAGS="$(CFLAGS)" clean c++-t
+! 	mv gc.a fbsd-libgc.a
+! 
+! fbsd-libleak.a:
+! 	make CFLAGS="$(LEAKFLAGS)" clean c++-nt
+! 	mv gc.a fbsd-libleak.a
+! 
+! FreeBSD-pkg-install: FreeBSD-pkg-all
+! 	${CP} fbsd-libgc.a libgc.a
+! 	${CP} fbsd-libleak.a libleak.a
+! 	${INSTALL_DATA} libleak.a libgc.a ${PREFIX}/lib
+! 	${INSTALL_DATA} gc.h gc_cpp.h ${PREFIX}/include
+! 	${INSTALL_MAN} gc.man ${PREFIX}/man/man3/gc.3
+  
+  # Setjmp_test may yield overly optimistic results when compiled
+  # without optimization.
+***************
+*** 124,131 ****
+  # not time-critical anyway.
+  # Set SPECIALCFLAGS to -q nodirect_code on Encore.
+  
+- all: gc.a gctest
+- 
+  pcr: PCR-Makefile gc_private.h gc_hdrs.h gc.h config.h mach_dep.o $(SRCS)
+  	make -f PCR-Makefile depend
+  	make -f PCR-Makefile
+--- 150,155 ----
+***************
+*** 170,182 ****
+  	./if_mach SPARC SUNOS5 $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a -lthread -ldl
+  	./if_not_there test_cpp $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a
+  
+  c++: gc_cpp.o $(srcdir)/gc_cpp.h test_cpp
+  	rm -f on_sparc_sunos5
+  	./if_mach SPARC SUNOS5 touch on_sparc_sunos5
+  	./if_mach SPARC SUNOS5 $(AR) rus gc.a gc_cpp.o
+  	./if_not_there on_sparc_sunos5 $(AR) ru gc.a gc_cpp.o
+  	./if_not_there on_sparc_sunos5 $(RANLIB) gc.a || cat /dev/null
+- 	./test_cpp 1
+  
+  dyn_load_sunos53.o: dyn_load.c
+  	$(CC) $(CFLAGS) -DSUNOS53_SHARED_LIB -c $(srcdir)/dyn_load.c -o $@
+--- 194,211 ----
+  	./if_mach SPARC SUNOS5 $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a -lthread -ldl
+  	./if_not_there test_cpp $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a
+  
++ c++-t: c++
++ 	./test_cpp 1
++ 
++ c++-nt: c++
++ 	@echo "Use ./test_cpp 1 to test the leak library"
++ 
+  c++: gc_cpp.o $(srcdir)/gc_cpp.h test_cpp
+  	rm -f on_sparc_sunos5
+  	./if_mach SPARC SUNOS5 touch on_sparc_sunos5
+  	./if_mach SPARC SUNOS5 $(AR) rus gc.a gc_cpp.o
+  	./if_not_there on_sparc_sunos5 $(AR) ru gc.a gc_cpp.o
+  	./if_not_there on_sparc_sunos5 $(RANLIB) gc.a || cat /dev/null
+  
+  dyn_load_sunos53.o: dyn_load.c
+  	$(CC) $(CFLAGS) -DSUNOS53_SHARED_LIB -c $(srcdir)/dyn_load.c -o $@
