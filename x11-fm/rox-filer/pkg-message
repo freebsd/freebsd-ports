@@ -1,0 +1,11 @@
+======================================================================
+Please note: if you get the following error while running ROX-Filer,
+you may be browsing a directory containing filenames that do not
+comply with UTF-8.
+
+  (ROX-Filer:97970): GLib-CRITICAL **: file gconvert.c: line 498
+  (g_convert): assertion `str != NULL' failed
+
+To fix that, just set your CHARSET variable to any preferred fallback
+encoding (like CHARSET=iso-8859-1).
+======================================================================
