@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepops
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	Extensible webmail to pop3 interface
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \

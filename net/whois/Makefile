@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	Marco d'Itri whois client
 
 MAN1=	whois.1

@@ -10,7 +10,7 @@ PORTVERSION=	0.4.9
 CATEGORIES=	misc xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	XFce 4 weather module for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel

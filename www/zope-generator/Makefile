@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-8
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	Generator product for Zope
 
 USE_PYTHON=	yes

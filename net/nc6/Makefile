@@ -12,7 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/nc6/ \
 		http://ftp.deepspace6.net/pub/ds6/sources/nc6/
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	Netcat clone with IPv6 support
 
 MAN1=	nc6.1

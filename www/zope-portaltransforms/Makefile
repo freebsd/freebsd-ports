@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	PortalTransforms-${PORTVERSION}-4
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	PortalTransforms product for Zope/CMF
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \

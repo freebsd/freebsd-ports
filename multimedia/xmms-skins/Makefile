@@ -93,7 +93,7 @@ DISTFILES=	AbsoluteE_Xmms.zip \
 		xmms-256.zip
 EXTRACT_ONLY=
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	Skins for X Multimedia System (XMMS)
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
