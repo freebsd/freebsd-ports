@@ -1,33 +1,19 @@
-*** Imakefile.orig	Thu Oct 13 15:50:29 1994
---- Imakefile	Sun Dec 11 15:04:20 1994
-***************
-*** 12,25 ****
-  CCOPTIONS = -Ae -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\"
-  #else
-  # SunOS
-! CCOPTIONS=-DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -O -DNEW_CTIME
-  # Solaris
-  #CCOPTIONS=-DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -O
-  #endif
-  
-  SRCS=sunclock.c bitmaps.c astro.c tildepath.c
-  OBJS=sunclock.o bitmaps.o astro.o tildepath.o
-! LOCAL_LIBRARIES=$(XLIB) -lm
-  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
-  
-  ComplexProgramTarget(sunclock)
---- 12,25 ----
-  CCOPTIONS = -Ae -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\"
-  #else
-  # SunOS
-! CCOPTIONS=-DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -DNEW_CTIME
-  # Solaris
-  #CCOPTIONS=-DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -O
-  #endif
-  
-  SRCS=sunclock.c bitmaps.c astro.c tildepath.c
-  OBJS=sunclock.o bitmaps.o astro.o tildepath.o
-! LOCAL_LIBRARIES=$(XLIB) -lm -lcompat
-  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
-  
-  ComplexProgramTarget(sunclock)
+--- Imakefile.orig      Wed Jul  8 08:16:59 1998
++++ Imakefile   Wed Jul  8 08:17:11 1998
+@@ -11,14 +11,14 @@
+ CCOPTIONS = -Ae -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\"
+ #else
+ # gcc
+-CCOPTIONS = -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -Wall
++CCOPTIONS = -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -Wall -DNEW_CTIME
+ #endif
+ 
+ SRCS=sunclock.c bitmaps.c astro.c tildepath.c
+ OBJS=sunclock.o bitmaps.o astro.o tildepath.o
+ 
+ # may have to replace XONLYLIB with XLIB for old imake
+-LOCAL_LIBRARIES=$(XONLYLIB) -lm
++LOCAL_LIBRARIES=$(XONLYLIB) -lm -lcompat
+ 
+ #DEPLIBS=              # I don't know what I'm doing, and I hate imake!
+ 
