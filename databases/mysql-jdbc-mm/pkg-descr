@@ -1,0 +1,6 @@
+This is a port of the mm JDBC driver which is used to access MySQL
+databases using a database-independant API in Java.
+
+WWW: http://www.worldserver.com/mm.mysql/
+
+dglo@ssec.wisc.edu
