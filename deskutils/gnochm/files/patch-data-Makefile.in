@@ -1,0 +1,20 @@
+--- data/Makefile.in.orig	Thu Dec  2 01:00:48 2004
++++ data/Makefile.in	Thu Dec  2 01:02:50 2004
+@@ -199,7 +199,7 @@
+ mime_DATA = gnochm.mime
+ 
+ # Should I use XDG_DATA_DIRS/mime/packages ????
+-sharedmimedir = $(datadir)/mime/packages
++sharedmimedir = $(prefix)/share/mime/packages
+ sharedmime_in_files = gnochm.xml.in
+ sharedmime_DATA = $(sharedmime_in_files:.xml.in=.xml)
+ man_MANS = gnochm.1
+@@ -543,7 +543,7 @@
+ 
+ install-data-hook:
+ 	if test "$(SHAREDMIME_TOOL)" != "no"; then \
+-		$(SHAREDMIME_TOOL) $(datadir)/mime; \
++		$(SHAREDMIME_TOOL) $(prefix)/share/mime; \
+ 	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,27 @@
+bin/gnochm
+share/gnome/application-registry/gnochm.applications
+share/gnome/applications/gnochm.desktop
+share/gnome/gnochm/glade/gnochm.glade
+share/gnome/gnochm/glade/prefdialog.glade
+share/gnome/help/gnochm/C/gnochm.xml
+share/gnome/help/gnochm/C/legal.xml
+share/gnome/mime-info/gnochm.keys
+share/gnome/mime-info/gnochm.mime
+share/gnome/omf/gnochm/gnochm-C.omf
+share/gnome/pixmaps/chmfile.png
+share/gnome/pixmaps/gnochm.png
+share/gnome/pixmaps/gnochm_logo.png
+share/locale/de_DE/LC_MESSAGES/gnochm.mo
+share/locale/it/LC_MESSAGES/gnochm.mo
+share/locale/pt_BR/LC_MESSAGES/gnochm.mo
+share/locale/tr_TR/LC_MESSAGES/gnochm.mo
+share/locale/zh_CN/LC_MESSAGES/gnochm.mo
+share/mime/application/x-chm.xml
+share/mime/packages/gnochm.xml
+@dirrm share/gnome/omf/gnochm
+@dirrm share/gnome/help/gnochm/C
+@dirrm share/gnome/help/gnochm
+@dirrm share/gnome/gnochm/glade
+@dirrm share/gnome/gnochm
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
