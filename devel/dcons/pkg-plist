@@ -1,7 +1,11 @@
-bin/fwchat
+sbin/fwchat
+@unexec [ -f %%MAKEDEV%% ] && /bin/rm -f %%DCONS_DEV%% %%DCONSCTL_DEV%% || true
 @unexec /bin/rm -f %D/lib/dcons/linker.hints
 lib/dcons/dcons.ko
+lib/dcons/dcons_crom.ko
 @exec type kldxref > /dev/null 2>&1 && kldxref %D/lib/dcons
+@exec [ -f %%MAKEDEV%% ] && /bin/rm -f %%DCONS_DEV%%;    %%MKNOD%% %%DCONS_DEV%%    c %%DCONS_MAJOR%%    %%DCONS_MINOR%%;    /bin/chmod %%DCONS_MODE%%    || true
+@exec [ -f %%MAKEDEV%% ] && /bin/rm -f %%DCONSCTL_DEV%%; %%MKNOD%% %%DCONSCTL_DEV%% c %%DCONSCTL_MAJOR%% %%DCONSCTL_MINOR%%; /bin/chmod %%DCONSCTL_MODE%% || true
 etc/rc.d/dcons.sh
 %%DOCSDIR%%/gdb-usage
 %%DOCSDIR%%/README.dcons
