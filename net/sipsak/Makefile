@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sipsak
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.11
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/sipsak/
 
