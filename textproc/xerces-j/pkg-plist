@@ -178,6 +178,7 @@ share/doc/xerces-j/javadocs/other/deprecated-list.html
 share/doc/xerces-j/javadocs/other/stylesheet.css
 share/doc/xerces-j/javadocs/other/help-doc.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/EntityReferenceImpl.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/PSVIAttrNSImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DocumentFragmentImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DOMImplementationImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/events/EventImpl.html
@@ -185,6 +186,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/events/package-tree.ht
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/events/package-frame.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/events/MutationEventImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/events/package-summary.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DOMMessageFormatter.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/TreeWalkerImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DeferredDocumentImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DOMNormalizer.html
@@ -220,11 +222,14 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/EntityImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/AttrImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DeferredNode.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/ParentNode.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/PSVIDOMImplementationImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/NodeIteratorImpl.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/PSVIDocumentImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/package-frame.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/RangeImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DeferredTextImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DeferredNotationImpl.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/PSVIElementNSImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/TextImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DeferredAttrNSImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DeferredEntityReferenceImpl.html
@@ -240,6 +245,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/ElementDefinitionImpl.
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/dom/DOMLocatorImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/ErrorHandlerWrapper.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/SymbolTable.Entry.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/XMLSymbols.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/SymbolHash.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/XMLGrammarPoolImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/ParserConfigurationSettings.html
@@ -252,9 +258,9 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/MessageFormatter.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/SymbolTable.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/package-summary.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/package-frame.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/ObjectFactory.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/XMLResourceIdentifierImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/URI.MalformedURIException.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/ObjectFactory.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/ObjectFactory.ConfigurationError.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/SynchronizedSymbolTable.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/DOMErrorHandlerWrapper.html
@@ -267,8 +273,8 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/XMLGrammarPoolImpl.En
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/ShadowedSymbolTable.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/EntityResolverWrapper.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/URI.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/DOMEntityResolverWrapper.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/AugmentationsImpl.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/util/DOMEntityResolverWrapper.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/util/XSObjectListImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/util/XIntPool.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/util/XInt.html
@@ -303,6 +309,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSObjectList.
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSWildcard.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/package-summary.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSModelGroupDefinition.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/PSVIProvider.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSSimpleTypeDefinition.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSIDConstraintDefinition.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSNotationDeclaration.html
@@ -334,6 +341,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/identity/IDValue.h
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/identity/package-summary.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/package-frame.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/package-summary.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XMLSchemaValidator.ValueStoreBase.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/models/XSCMLeaf.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/models/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/models/XSCMValidator.html
@@ -345,9 +353,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/models/XSCMBinOp.h
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/models/XSEmptyCM.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/models/package-frame.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/models/CMBuilder.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XMLSchemaValidator.ValueStoreBase.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XMLSchemaValidator.KeyValueStore.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/SchemaSymbols.SchemaSymbolTable.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XMLSchemaValidator.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSConstraints.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSModelGroupImpl.html
@@ -373,9 +379,11 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/SchemaGrammar.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XMLSchemaValidator.XPathMatcherStack.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSAttributeGroupDecl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSDeclarationPool.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/SchemaGrammar.BuiltinSchemaGrammar.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSGrammarBucket.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSElementDecl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSNotationDecl.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XMLSchemaValidator.LocalIDKey.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XMLSchemaValidator.UniqueValueStore.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xs/XSComplexTypeDecl.html
@@ -402,6 +410,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/TimeDV.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/AnySimpleDV.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/DoubleDV.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/package-tree.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/BaseDVFactory.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/StringDV.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/MonthDayDV.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/UnionDV.html
@@ -410,6 +419,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/YearMonthDV.htm
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/IDDV.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/package-summary.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/DateDV.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/FullDVFactory.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/SchemaDateTimeException.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/AnyURIDV.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/xs/EntityDV.html
@@ -439,6 +449,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/DatatypeException.
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/package-frame.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/package-summary.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/DatatypeValidator.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/ValidationContext.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/InvalidDatatypeFacetException.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv/InvalidDatatypeValueException.html
@@ -475,14 +486,6 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dtd/DTDGrammar.QNameH
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dtd/XMLDTDValidator.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dtd/XMLSimpleType.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentFragmentScannerImpl.FragmentContentDispatcher.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/ImplementationMessages.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/ExceptionMessages.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/DatatypeMessages.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/ExceptionMessagesLocalizer.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/package-summary.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/package-frame.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/XMLMessageFormatter.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.EntityScanner.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentScannerImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/BMPattern.html
@@ -509,34 +512,41 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.Inte
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentScannerImpl.TrailingMiscDispatcher.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation/ValidationManager.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation/ValidationContext.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation/ValidationState.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation/EntityState.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation/package-summary.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation/package-frame.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/package-frame.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentFragmentScannerImpl.ElementStack.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XML11DocumentScannerImpl.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLNamespaceBinder.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.ScannedEntity.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/io/package-frame.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/io/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/io/ASCIIReader.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/io/package-summary.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/io/UTF8Reader.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/io/UCSReader.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentFragmentScannerImpl.ElementStack.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/package-frame.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLNamespaceBinder.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.ScannedEntity.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XML11DTDScannerImpl.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentScannerImpl.ContentDispatcher.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.Entity.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDTDScannerImpl.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/package-summary.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/package-frame.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/XMLMessageFormatter.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg/package-tree.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityHandler.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/RevalidationHandler.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.RewindableInputStream.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLScanner.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.ExternalEntity.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityScanner.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentFragmentScannerImpl.Dispatcher.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityScanner.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XML11EntityManager.XML11EntityScanner.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentScannerImpl.PrologDispatcher.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/package-summary.html
-share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLScanner.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XML11EntityManager.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/Version.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLDocumentScannerImpl.XMLDeclDispatcher.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/XMLEntityManager.html
@@ -563,6 +573,7 @@ share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/AbstractSAXParser.
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/XMLGrammarCachingConfiguration.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/XMLDocumentParser.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/StandardParserConfiguration.html
+share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/XML11Configuration.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/DTDParser.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/package-frame.html
 share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers/CachingParserPool.html
@@ -609,6 +620,15 @@ share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/as/ASNotationDeclara
 share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/as/DOMASWriter.html
 share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/as/DocumentAS.html
 share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/as/ASNamedObjectMap.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/DOMImplementationSource.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/DOMErrorHandler.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/DOMLocator.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/package-summary.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/package-tree.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/DOMImplementationRegistry.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/package-frame.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/UserDataHandler.html
+share/doc/xerces-j/javadocs/dom3-api/org/apache/xerces/dom3/DOMError.html
 share/doc/xerces-j/javadocs/dom3-api/overview-tree.html
 share/doc/xerces-j/javadocs/dom3-api/index-all.html
 share/doc/xerces-j/javadocs/dom3-api/index.html
@@ -616,7 +636,9 @@ share/doc/xerces-j/javadocs/dom3-api/package-list
 share/doc/xerces-j/javadocs/dom3-api/help-doc.html
 share/doc/xerces-j/javadocs/dom3-api/serialized-form.html
 share/doc/xerces-j/javadocs/dom3-api/deprecated-list.html
+share/doc/xerces-j/javadocs/dom3-api/overview-summary.html
 share/doc/xerces-j/javadocs/dom3-api/packages.html
+share/doc/xerces-j/javadocs/dom3-api/overview-frame.html
 share/doc/xerces-j/javadocs/dom3-api/stylesheet.css
 share/doc/xerces-j/javadocs/api/org/w3c/dom/html/HTMLLIElement.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/html/HTMLOptionElement.html
@@ -691,7 +713,6 @@ share/doc/xerces-j/javadocs/api/org/w3c/dom/ls/DOMEntityResolver.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/ls/DOMWriterFilter.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/ls/DOMWriter.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/ls/ParseErrorEvent.html
-share/doc/xerces-j/javadocs/api/org/w3c/dom/DOMErrorHandler.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/Document.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/traversal/DocumentTraversal.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/traversal/package-summary.html
@@ -704,9 +725,7 @@ share/doc/xerces-j/javadocs/api/org/w3c/dom/DOMImplementation.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/EntityReference.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/package-tree.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/package-summary.html
-share/doc/xerces-j/javadocs/api/org/w3c/dom/DOMError.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/Node.html
-share/doc/xerces-j/javadocs/api/org/w3c/dom/DOMLocator.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/events/EventListener.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/events/Event.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/events/EventTarget.html
@@ -728,13 +747,10 @@ share/doc/xerces-j/javadocs/api/org/w3c/dom/ranges/Range.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/ranges/package-tree.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/NamedNodeMap.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/Comment.html
-share/doc/xerces-j/javadocs/api/org/w3c/dom/DOMImplementationRegistry.html
-share/doc/xerces-j/javadocs/api/org/w3c/dom/UserDataHandler.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/Notation.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/DocumentFragment.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/DOMException.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/CharacterData.html
-share/doc/xerces-j/javadocs/api/org/w3c/dom/DOMImplementationSource.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/Text.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/Entity.html
 share/doc/xerces-j/javadocs/api/org/w3c/dom/package-frame.html
@@ -799,7 +815,14 @@ share/doc/xerces-j/javadocs/api/overview-frame.html
 share/doc/xerces-j/javadocs/api/packages.html
 share/doc/xerces-j/javadocs/api/index-all.html
 share/doc/xerces-j/javadocs/api/allclasses-frame.html
-share/doc/xerces-j/javadocs/xni/index.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/XSGrammar.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/XMLGrammarPool.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/package-summary.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/XMLGrammarLoader.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/package-tree.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/XMLGrammarDescription.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/Grammar.html
+share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/package-frame.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/parser/XMLComponent.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/parser/XMLDTDSource.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/parser/XMLEntityResolver.html
@@ -822,13 +845,6 @@ share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/parser/XMLDTDFilter.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/parser/XMLParseException.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/QName.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/XMLDTDContentModelHandler.html
-share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/XMLGrammarPool.html
-share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/package-summary.html
-share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/XMLGrammarLoader.html
-share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/package-tree.html
-share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/XMLGrammarDescription.html
-share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/Grammar.html
-share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars/package-frame.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/XMLDTDHandler.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/Augmentations.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/psvi/AttributePSVI.html
@@ -848,6 +864,7 @@ share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/package-frame.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/XNIException.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/XMLDocumentHandler.html
 share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/XMLString.html
+share/doc/xerces-j/javadocs/xni/index.html
 share/doc/xerces-j/javadocs/xni/serialized-form.html
 share/doc/xerces-j/javadocs/xni/overview-tree.html
 share/doc/xerces-j/javadocs/xni/deprecated-list.html
@@ -874,19 +891,23 @@ share/doc/xerces-j/graphics/faq-general-header.jpg
 share/doc/xerces-j/graphics/xni-label-3.jpg
 share/doc/xerces-j/graphics/ext-2-label-1.jpg
 share/doc/xerces-j/graphics/samples-label-3.jpg
-share/doc/xerces-j/graphics/faq-performance-header.jpg
-share/doc/xerces-j/graphics/ext-60-label-2.jpg
-share/doc/xerces-j/graphics/api-label-1.jpg
+share/doc/xerces-j/graphics/faq-dom-header.jpg
+share/doc/xerces-j/graphics/faq-xs-header.jpg
 share/doc/xerces-j/graphics/releases-label-3.jpg
+share/doc/xerces-j/graphics/faq-performance-header.jpg
 share/doc/xerces-j/graphics/faq-write-header.jpg
 share/doc/xerces-j/graphics/faq-common-header.jpg
+share/doc/xerces-j/graphics/dom-label-1.jpg
 share/doc/xerces-j/graphics/samples-socket-header.jpg
 share/doc/xerces-j/graphics/ext-12-label-1.jpg
 share/doc/xerces-j/graphics/properties-label-1.jpg
+share/doc/xerces-j/graphics/xml-schema-label-2.jpg
 share/doc/xerces-j/graphics/faq-contributing-header.jpg
 share/doc/xerces-j/graphics/install-label-2.jpg
+share/doc/xerces-j/graphics/ext-64-label-2.jpg
 share/doc/xerces-j/graphics/samples-ui-header.jpg
 share/doc/xerces-j/graphics/properties-header.jpg
+share/doc/xerces-j/graphics/api-label-1.jpg
 share/doc/xerces-j/graphics/faq-build-header.jpg
 share/doc/xerces-j/graphics/ext-10-label-1.jpg
 share/doc/xerces-j/graphics/limitations-header.jpg
@@ -901,13 +922,16 @@ share/doc/xerces-j/graphics/releases-label-1.jpg
 share/doc/xerces-j/graphics/samples-dom-header.jpg
 share/doc/xerces-j/graphics/ext-2-label-2.jpg
 share/doc/xerces-j/graphics/xni-design-header.jpg
+share/doc/xerces-j/graphics/dom-header.jpg
 share/doc/xerces-j/graphics/faq-xni-header.jpg
 share/doc/xerces-j/graphics/xml-schema-header.jpg
-share/doc/xerces-j/graphics/ext-60-label-3.jpg
 share/doc/xerces-j/graphics/samples-sax-header.jpg
+share/doc/xerces-j/graphics/dom-label-2.jpg
 share/doc/xerces-j/graphics/ext-12-label-2.jpg
 share/doc/xerces-j/graphics/properties-label-2.jpg
+share/doc/xerces-j/graphics/xml-schema-label-3.jpg
 share/doc/xerces-j/graphics/install-label-3.jpg
+share/doc/xerces-j/graphics/ext-64-label-3.jpg
 share/doc/xerces-j/graphics/samples-header.jpg
 share/doc/xerces-j/graphics/dom3-header.jpg
 share/doc/xerces-j/graphics/faq-pcfp-header.jpg
@@ -924,13 +948,15 @@ share/doc/xerces-j/graphics/features-header.jpg
 share/doc/xerces-j/graphics/xni-config-header.jpg
 share/doc/xerces-j/graphics/install-header.jpg
 share/doc/xerces-j/graphics/samples-label-2.jpg
-share/doc/xerces-j/graphics/ext-60-label-1.jpg
 share/doc/xerces-j/graphics/releases-label-2.jpg
 share/doc/xerces-j/graphics/index-header.jpg
 share/doc/xerces-j/graphics/ext-2-label-3.jpg
+share/doc/xerces-j/graphics/xml-schema-label-1.jpg
 share/doc/xerces-j/graphics/install-label-1.jpg
+share/doc/xerces-j/graphics/ext-64-label-1.jpg
 share/doc/xerces-j/graphics/releases-header.jpg
 share/doc/xerces-j/graphics/faq-grammars-header.jpg
+share/doc/xerces-j/graphics/dom-label-3.jpg
 share/doc/xerces-j/graphics/xni-core-header.jpg
 share/doc/xerces-j/api.html
 share/doc/xerces-j/resources/line.gif
@@ -964,18 +990,20 @@ share/doc/xerces-j/faq-xni.html
 share/doc/xerces-j/xni-core.html
 share/doc/xerces-j/faq-write.html
 share/doc/xerces-j/releases.html
+share/doc/xerces-j/faq-dom.html
 share/doc/xerces-j/properties.html
 share/doc/xerces-j/limitations.html
+share/doc/xerces-j/faq-xs.html
 share/doc/xerces-j/faq-grammars.html
 share/doc/xerces-j/samples-ui.html
 share/doc/xerces-j/samples-xni.html
 share/doc/xerces-j/xml-schema.html
 share/doc/xerces-j/faq-common.html
+share/doc/xerces-j/index.html
 share/doc/xerces-j/xni-design.html
 share/doc/xerces-j/install.html
 share/doc/xerces-j/samples.html
 share/doc/xerces-j/faq-contributing.html
-share/doc/xerces-j/index.html
 share/doc/xerces-j/samples-dom.html
 share/doc/xerces-j/dom3.html
 share/doc/xerces-j/faqs.html
@@ -987,6 +1015,7 @@ share/doc/xerces-j/features.html
 share/doc/xerces-j/samples-sax.html
 share/doc/xerces-j/xni-config.html
 share/doc/xerces-j/faq-performance.html
+share/doc/xerces-j/dom.html
 share/java/classes/xercesImpl.jar
 share/java/classes/xmlParserAPIs.jar
 @dirrm share/doc/xerces-j/javadocs/other/org/apache/xml/serialize
@@ -1014,11 +1043,11 @@ share/java/classes/xmlParserAPIs.jar
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dv
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dtd/models
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/dtd
-@dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xpath/regex
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/xpath
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/validation
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/io
+@dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl/msg
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/impl
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/jaxp
 @dirrm share/doc/xerces-j/javadocs/xerces2/org/apache/xerces/parsers
@@ -1048,8 +1077,8 @@ share/java/classes/xmlParserAPIs.jar
 @dirrm share/doc/xerces-j/javadocs/api/javax/xml
 @dirrm share/doc/xerces-j/javadocs/api/javax
 @dirrm share/doc/xerces-j/javadocs/api
-@dirrm share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/parser
 @dirrm share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/grammars
+@dirrm share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/parser
 @dirrm share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni/psvi
 @dirrm share/doc/xerces-j/javadocs/xni/org/apache/xerces/xni
 @dirrm share/doc/xerces-j/javadocs/xni/org/apache/xerces
