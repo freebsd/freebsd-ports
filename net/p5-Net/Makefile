@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	p5-Net
-PORTVERSION=	1.12
+PORTVERSION=	1.16
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 DISTNAME=	libnet-${PORTVERSION}
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl5 modules to access and use network protocols
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS= INSTALLDIRS=site < /dev/null
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Cmd.3 \
+		Net::Config.3 \
 		Net::Domain.3 \
 		Net::FTP.3 \
 		Net::NNTP.3 \
