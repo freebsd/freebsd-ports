@@ -1,0 +1,4 @@
+Net::Gopher is the Perl Gopher/Gopher+ API. This library will enable you to
+communicate with Gopher and Gopher+ servers using Perl.
+
+    WWW: http://search.cpan.org/dist/Net-Gopher/

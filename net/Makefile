@@ -418,6 +418,7 @@
     SUBDIR += p5-Net-Divert
     SUBDIR += p5-Net-Finger
     SUBDIR += p5-Net-Google
+    SUBDIR += p5-Net-Gopher
     SUBDIR += p5-Net-ICQ2000
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Jabber
