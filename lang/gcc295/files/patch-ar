@@ -1,0 +1,15 @@
+--- gcc/cp/decl.c.orig	Sat Jun 10 02:06:42 2000
++++ gcc/cp/decl.c	Sun Dec 22 19:37:47 2002
+@@ -7119,10 +7119,12 @@
+   if (found_type > 1)
+     error ("multiple types in one declaration");
+ 
++#if 0
+   /* Inside a class, we might be in a friend or access declaration.
+      Until we have a good way of detecting the latter, don't warn.  */
+   if (t == NULL_TREE && ! current_class_type)
+     pedwarn ("declaration does not declare anything");
++#endif
+ 
+   /* Check for an anonymous union.  We're careful
+      accessing TYPE_IDENTIFIER because some built-in types, like
