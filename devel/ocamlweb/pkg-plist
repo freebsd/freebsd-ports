@@ -1,0 +1,4 @@
+bin/ocamlweb
+share/texmf/tex/latex/misc/ocamlweb.sty
+share/doc/ocamlweb/ocamlweb-man.ps.gz
+@dirrm share/doc/ocamlweb
