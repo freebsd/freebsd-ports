@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.18
+PORTVERSION=		2.2.19
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -188,7 +188,13 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 
 WITH_BDB_VER?=		42
 
-.if ${WITH_BDB_VER} == 42
+.if ${WITH_BDB_VER} == 43
+CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
+			--enable-hdb=${BACKEND_ENABLE}
+PLIST_SUB+=		BACK_BDB=${BACKEND_PLIST} \
+			BACK_HDB=${BACKEND_PLIST}
+BDBLIB=			db-4.3.0
+.elif ${WITH_BDB_VER} == 42
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
 			--enable-hdb=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_BDB=${BACKEND_PLIST} \

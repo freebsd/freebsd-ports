@@ -1,6 +1,6 @@
 --- configure.orig	Tue Jul 27 18:33:12 2004
 +++ configure	Sat Aug 14 17:05:23 2004
-@@ -19497,7 +19497,7 @@
+@@ -20145,7 +20145,7 @@
  
  
  	if test $ol_cv_bdb_compat = yes ; then
@@ -9,21 +9,21 @@
  	elif test $ol_enable_bdb = yes ; then
  		{ echo "configure: error: BDB: BerkeleyDB version incompatible" 1>&2; exit 1; }
  	else
-@@ -20349,7 +20349,7 @@
+@@ -20997,7 +20997,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liodbc  $LIBS"
 +LIBS="-liodbc  $LIBS  $LTHREAD_LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 20355 "configure"
+ #line 21003 "configure"
  #include "confdefs.h"
-@@ -20393,7 +20393,7 @@
+@@ -21041,7 +21041,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lodbc  $LIBS"
 +LIBS="-lodbc  $LIBS  $LTHREAD_LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 20399 "configure"
+ #line 21047 "configure"
  #include "confdefs.h"
