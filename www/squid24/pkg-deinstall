@@ -1,10 +1,9 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/squid24/Attic/pkg-deinstall,v 1.1 2004-03-23 17:12:47 sada Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/squid24/Attic/pkg-deinstall,v 1.2 2004-05-02 22:38:35 pav Exp $
 #
 
 PATH=/bin:/usr/bin:/usr/sbin
-pkgname=$1
 
 case $2 in
 DEINSTALL)
@@ -16,10 +15,11 @@ DEINSTALL)
 POST-DEINSTALL)
 	rmdir ${PKG_PREFIX}/etc/squid 2>/dev/null
 	rmdir ${PKG_PREFIX}/squid/cache 2>/dev/null
-	rmdir -p ${PKG_PREFIX}/squid/logs 2>/dev/null
-	echo "===> post-deinstallation information for ${pkgname}"
+	rmdir ${PKG_PREFIX}/squid/logs 2>/dev/null
+	rmdir ${PKG_PREFIX}/squid 2>/dev/null
+	echo "===> post-deinstallation information for $1"
 	echo ""
-	echo "     Please note that ${pkgname} was not completely removed"
+	echo "     Please note that $1 was not completely removed"
 	echo "     from this system."
 	echo ""
 	echo "     The cache and log directories, squid's user account,"

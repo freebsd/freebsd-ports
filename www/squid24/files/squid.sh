@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/squid24/files/Attic/squid.sh,v 1.5 2004-03-23 17:12:47 sada Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/squid24/files/Attic/squid.sh,v 1.6 2004-05-02 22:38:36 pav Exp $
 #
 # PROVIDE: squid
 # REQUIRE: NETWORKING SERVERS
@@ -61,7 +61,7 @@ else
 		fi
 		;;
 		*)
-		echo "usage: `basename $0` {start|stop}" >&2
+		echo "usage: ${0##*/} {start|stop}" >&2
 		exit 64
 		;;
 	esac
