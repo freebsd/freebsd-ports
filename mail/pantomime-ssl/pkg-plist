@@ -1,9 +1,9 @@
 Local/Library/Pantomime/TCPSSLConnection.bundle/Resources/Info-gnustep.plist
-Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/TCPSSLConnection
+Local/Library/Pantomime/TCPSSLConnection.bundle/%%NOFLAT%%TCPSSLConnection
 Local/Library/Pantomime/TCPSSLConnection.bundle/stamp.make
-@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/Resources
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle
 @dirrm Local/Library/Pantomime

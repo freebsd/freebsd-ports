@@ -1,11 +1,11 @@
-%%USEX11%%System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/guile-gui
-%%USEX11%%System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%USEX11%%%%GNUSTEP_STABLE%%System/Applications/guile-gui.app/%%NOFLAT%%guile-gui
+%%USEX11%%System/Applications/guile-gui.app/%%NOFLAT%%library_paths.openapp
 %%USEX11%%System/Applications/guile-gui.app/Resources/Info-gnustep.plist
 %%USEX11%%System/Applications/guile-gui.app/Resources/guile-gui.desktop
 %%USEX11%%System/Applications/guile-gui.app/guile-gui
 %%USEX11%%System/Applications/guile-gui.app/stamp.make
-%%USEX11%%System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gui
-%%USEX11%%System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%USEX11%%%%GNUSTEP_STABLE%%System/Applications/gui.app/%%NOFLAT%%gui
+%%USEX11%%System/Applications/gui.app/%%NOFLAT%%library_paths.openapp
 %%USEX11%%System/Applications/gui.app/Resources/Info-gnustep.plist
 %%USEX11%%System/Applications/gui.app/Resources/gui.desktop
 %%USEX11%%System/Applications/gui.app/gui
@@ -22,21 +22,21 @@
 %%SYSTEMLIBRARY%%/Headers/gnustep/guile/gstep_guile.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/guile/gg_Object.h
 %%SYSTEMLIBRARY%%/Libraries/Guile/languages/gstep-guile.scm
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so.1
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so.1.0.0
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.%%VERSION%%
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.1
-%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so
-%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so.%%VERSION%%
-%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so.1
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.%%VERSION%%
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.1
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libScriptKit.so
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libScriptKit.so.1
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libScriptKit.so.1.0.0
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgg_base.so
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgg_base.so.%%VERSION%%
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgg_base.so.1
+%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgg_gui.so
+%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgg_gui.so.%%VERSION%%
+%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgg_gui.so.1
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgstep_guile.so
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgstep_guile.so.%%VERSION%%
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgstep_guile.so.1
 System/Makefiles/Additional/guile.make
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/go
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/guile-base
+System/Tools/%%NOFLAT%%go
+System/Tools/%%NOFLAT%%guile-base
 bin/greg
 info/dir
 @comment @unexec install-info --delete %D/info/greg.info %D/info/dir
@@ -46,14 +46,14 @@ lib/libgreg.a
 lib/libgreg.la
 lib/libgreg.so
 lib/libgreg.so.1
-%%USEX11%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%USEX11%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%
-%%USEX11%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%
+%%USEX11%%%%GNUSTEP_STABLE%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%USEX11%%%%GNUSTEP_STABLE%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%
+%%USEX11%%%%GNUSTEP_STABLE%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%
 %%USEX11%%@dirrm System/Applications/guile-gui.app/Resources
 %%USEX11%%@dirrm System/Applications/guile-gui.app
-%%USEX11%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%USEX11%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%
-%%USEX11%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%
+%%USEX11%%%%GNUSTEP_STABLE%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%USEX11%%%%GNUSTEP_STABLE%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%
+%%USEX11%%%%GNUSTEP_STABLE%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%
 %%USEX11%%@dirrm System/Applications/gui.app/Resources
 %%USEX11%%@dirrm System/Applications/gui.app
 @dirrm %%SYSTEMLIBRARY%%/Libraries/Guile/languages/gstep-guile

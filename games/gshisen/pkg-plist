@@ -76,11 +76,11 @@ System/Applications/GShisen.app/Resources/GShisen.tiff
 System/Applications/GShisen.app/Resources/Info-gnustep.plist
 System/Applications/GShisen.app/Resources/green.tiff
 System/Applications/GShisen.app/Resources/x.tiff
-System/Applications/GShisen.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GShisen
-System/Applications/GShisen.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%System/Applications/GShisen.app/%%NOFLAT%%GShisen
+System/Applications/GShisen.app/%%NOFLAT%%library_paths.openapp
 System/Applications/GShisen.app/stamp.make
-@dirrm System/Applications/GShisen.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GShisen.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GShisen.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GShisen.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GShisen.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GShisen.app/%%GNU_ARCH%%
 @dirrm System/Applications/GShisen.app/Resources
 @dirrm System/Applications/GShisen.app

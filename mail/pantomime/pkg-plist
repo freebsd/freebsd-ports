@@ -59,12 +59,12 @@
 %%LOCALLIBRARY%%/Headers/Pantomime/elm_defs.h
 %%LOCALLIBRARY%%/Headers/Pantomime/elm_lib.h
 %%LOCALLIBRARY%%/Headers/Pantomime/parseaddrs.h
-%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPantomime.so
-%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPantomime.so.1
-%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPantomime.so.1.0.0
-@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.1
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.1.0.0
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%
 @dirrm %%LOCALLIBRARY%%/Libraries
 @dirrm %%LOCALLIBRARY%%/Headers/Pantomime
 @dirrm %%LOCALLIBRARY%%/Headers

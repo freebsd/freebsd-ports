@@ -100,13 +100,13 @@
 %%LOCALLIBRARY%%/Headers/GToolKit/GTKWidget.h
 %%LOCALLIBRARY%%/Headers/GToolKit/GTKWindow.h
 %%LOCALLIBRARY%%/Headers/GToolKit/GToolKit.h
-%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGToolKit.so
-%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGToolKit.so.%%MAJORVERSION%%
-%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGToolKit.so.%%VERSION%%
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGToolKit.so
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGToolKit.so.%%MAJORVERSION%%
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGToolKit.so.%%VERSION%%
 System/Makefiles/gtk-tool.make
-@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%
 @dirrm %%LOCALLIBRARY%%/Libraries
 @dirrm %%LOCALLIBRARY%%/Headers/GToolKit
 @dirrm %%LOCALLIBRARY%%/Headers
