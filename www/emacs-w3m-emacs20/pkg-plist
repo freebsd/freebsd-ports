@@ -7,26 +7,6 @@
 @unexec install-info --delete %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
 %%INFODIR%%/emacs-w3m.info
 @exec install-info %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
-%%INFODIR%%/emacs-w3m.info-1
-%%INFODIR%%/emacs-w3m.info-2
-%%INFODIR%%/emacs-w3m.info-3
-%%INFODIR%%/emacs-w3m.info-4
-%%ICONDIR%%/antenna-up.xpm
-%%ICONDIR%%/back-disabled.xpm
-%%ICONDIR%%/back-up.xpm
-%%ICONDIR%%/copy-up.xpm
-%%ICONDIR%%/db-history-up.xpm
-%%ICONDIR%%/forward-disabled.xpm
-%%ICONDIR%%/forward-up.xpm
-%%ICONDIR%%/history-up.xpm
-%%ICONDIR%%/home-up.xpm
-%%ICONDIR%%/image-up.xpm
-%%ICONDIR%%/open-up.xpm
-%%ICONDIR%%/parent-disabled.xpm
-%%ICONDIR%%/parent-up.xpm
-%%ICONDIR%%/reload-up.xpm
-%%ICONDIR%%/search-up.xpm
-%%ICONDIR%%/weather-up.xpm
 %%SHIMBUN%%%%LISPDIR%%/mew-shimbun.el
 %%SHIMBUN%%@unexec rm -f %D/%%LISPDIR%%/mew-shimbun.elc
 %%LISPDIR%%/mew-w3m.el
@@ -198,7 +178,6 @@
 %%SHIMBUN%%%%LISPDIR%%/shimbun.el
 %%SHIMBUN%%%%LISPDIR%%/shimbun.elc
 %%LISPDIR%%/nnshimbun.el
-%%LISPDIR%%/nnshimbun.elc
 %%LISPDIR%%/w3m-antenna.el
 %%LISPDIR%%/w3m-antenna.elc
 %%LISPDIR%%/w3m-bitmap.el
@@ -212,8 +191,8 @@
 %%LISPDIR%%/w3m-dtree.elc
 %%LISPDIR%%/w3m-e19.el
 %%LISPDIR%%/w3m-e20.el
+%%LISPDIR%%/w3m-e20.elc
 %%LISPDIR%%/w3m-e21.el
-%%LISPDIR%%/w3m-e21.elc
 %%LISPDIR%%/w3m-fsf.el
 %%LISPDIR%%/w3m-fsf.elc
 %%LISPDIR%%/w3m-form.el
@@ -243,10 +222,8 @@
 %%LISPDIR%%/w3m.elc
 %%LISPDIR%%/w3mhack.el
 %%LISPDIR%%/w3m.el
+@dirrm %%LISPDIR%%
 %%PORTDOCS%%share/doc/ja/emacs-w3m/README.ja
 %%PORTDOCS%%share/doc/emacs-w3m/README
 %%PORTDOCS%%@dirrm share/doc/ja/emacs-w3m
 %%PORTDOCS%%@dirrm share/doc/emacs-w3m
-@dirrm %%LISPDIR%%
-@dirrm %%ICONDIR%%
-@dirrm %%ETCDIR%%

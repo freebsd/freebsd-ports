@@ -7,8 +7,6 @@
 
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
-PORTCLASS=	slave
-
 EMACS_PORT_NAME=	xemacs21-mule
 COMMENT=	Simple front-end to w3m for xemacs21-mule
 
@@ -17,8 +15,12 @@ CONFIGURE_ARGS=		--with-xemacs=${EMACS_CMD} \
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 LISPDIR=		${EMACS_PACKAGESDIR}/lisp/w3m
 ICONDIR=		${EMACS_PACKAGESDIR}/etc/w3m
+INFODIR=		${EMACS_PACKAGESDIR}/info
 PKGINFODIR=		${EMACS_PACKAGESDIR}/pkginfo
 INSTALL_TARGET=		install-package
+
+PLIST=			${.CURDIR}/pkg-plist
+PLIST_SUB+=		PKGINFODIR=${PKGINFODIR}
 
 WITHOUT_OCTET_VIEWER=	yes
 

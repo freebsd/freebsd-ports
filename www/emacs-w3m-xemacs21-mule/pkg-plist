@@ -11,6 +11,7 @@
 %%INFODIR%%/emacs-w3m.info-2
 %%INFODIR%%/emacs-w3m.info-3
 %%INFODIR%%/emacs-w3m.info-4
+%%PKGINFODIR%%/MANIFEST.w3m
 %%ICONDIR%%/antenna-up.xpm
 %%ICONDIR%%/back-disabled.xpm
 %%ICONDIR%%/back-up.xpm
@@ -27,6 +28,13 @@
 %%ICONDIR%%/reload-up.xpm
 %%ICONDIR%%/search-up.xpm
 %%ICONDIR%%/weather-up.xpm
+%%LISPDIR%%/_pkg.el
+%%LISPDIR%%/_pkg.elc
+%%LISPDIR%%/auto-autoloads.el
+%%LISPDIR%%/auto-autoloads.elc
+%%LISPDIR%%/custom-load.el
+%%LISPDIR%%/custom-load.elc
+%%LISPDIR%%/w3m-xmas.elc
 %%SHIMBUN%%%%LISPDIR%%/mew-shimbun.el
 %%SHIMBUN%%@unexec rm -f %D/%%LISPDIR%%/mew-shimbun.elc
 %%LISPDIR%%/mew-w3m.el
@@ -213,9 +221,7 @@
 %%LISPDIR%%/w3m-e19.el
 %%LISPDIR%%/w3m-e20.el
 %%LISPDIR%%/w3m-e21.el
-%%LISPDIR%%/w3m-e21.elc
 %%LISPDIR%%/w3m-fsf.el
-%%LISPDIR%%/w3m-fsf.elc
 %%LISPDIR%%/w3m-form.el
 %%LISPDIR%%/w3m-form.elc
 %%LISPDIR%%/w3m-hist.el
@@ -247,6 +253,5 @@
 %%PORTDOCS%%share/doc/emacs-w3m/README
 %%PORTDOCS%%@dirrm share/doc/ja/emacs-w3m
 %%PORTDOCS%%@dirrm share/doc/emacs-w3m
-@dirrm %%LISPDIR%%
 @dirrm %%ICONDIR%%
-@dirrm %%ETCDIR%%
+@dirrm %%LISPDIR%%
