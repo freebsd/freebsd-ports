@@ -18,6 +18,9 @@ LIB_DEPENDS=	openobex-1.0.1:${PORTSDIR}/comms/openobex
 USE_GNOME=	glib12
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+# libbluetooth is only installed on i386
+ONLY_FOR_ARCHS=	i386
+
 MAN1=		obexapp.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/obexapp
