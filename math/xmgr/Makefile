@@ -3,7 +3,7 @@
 # Date created:		So   2 Mär 1997 12:11:43 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.12 1998/10/28 17:04:20 fenner Exp $
+# $Id: Makefile,v 1.13 1998/12/12 22:27:21 jseger Exp $
 #
 
 DISTNAME=	xmgr-4.1.1
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
 LIB_DEPENDS=	Xbae.6:${PORTSDIR}/x11-toolkits/xbae
 
 USE_X_PREFIX=	YES
-REQUIRE_MOTIF=	YES
+REQUIRES_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
 	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
