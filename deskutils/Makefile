@@ -6,6 +6,7 @@
     SUBDIR += cbb
     SUBDIR += gaddr
     SUBDIR += genius
+    SUBDIR += gnofin
     SUBDIR += gnomepim
     SUBDIR += gnucash
     SUBDIR += gtimer
