@@ -1,5 +1,5 @@
 --- pgm/Makefile.orig	Thu Jan 18 12:39:28 2001
-+++ pgm/Makefile	Sat Feb 24 00:00:00 2001
++++ pgm/Makefile	Tue Mar 27 00:00:00 2001
 @@ -15,18 +15,27 @@
  NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM)
@@ -27,7 +27,7 @@
  
  LIBOBJECTS = libpgm1.o libpgm2.o
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
-+LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
++LIBSHHOPT = $(BUILDDIR)/shhopt/libshhopt.a
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm

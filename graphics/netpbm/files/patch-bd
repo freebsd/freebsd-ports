@@ -1,5 +1,5 @@
---- pbm/Makefile.orig	Wed Feb 21 13:05:01 2001
-+++ pbm/Makefile	Sat Feb 24 00:00:00 2001
+--- pbm/Makefile.orig	Sun Mar 25 18:24:46 2001
++++ pbm/Makefile	Tue Mar 27 00:00:00 2001
 @@ -17,10 +17,12 @@
  LIBLIBS = 
  NETPBMLIBS = $(LIBPBM)
@@ -14,18 +14,17 @@
  		pbmto10x pbmto4425 pbmtoascii pbmtoatk \
  		pbmtobbnbg pbmtocmuwm \
  		pbmtoepsi pbmtoepson \
-@@ -29,21 +31,26 @@
- 		pbmtopi3 pbmtoplot pbmtoptx pbmtowbmp \
+@@ -30,20 +32,25 @@
  		pbmtox10bm pbmtoxbm pbmtoybm pbmtozinc \
  		pbmupc pi3topbm pktopbm wbmptopbm xbmtopbm ybmtopbm
+ MATHBINARIES =	pbmpage pbmtopk
+-BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
 +SHHOPTBINARIES =	pbmtext
 +
 +NOMERGEBINARIES =	$(SHHOPTBINARIES)
 +
 +MERGEBINARIES =	$(PORTBINARIES) $(MATHBINARIES)
 +
- MATHBINARIES =	pbmpage pbmtopk
--BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
 +BINARIES =	$(MERGEBINARIES) $(NOMERGEBINARIES)
  
  OBJECTS = $(patsubst %, %.o, $(BINARIES))
@@ -36,7 +35,7 @@
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
-+LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
++LIBSHHOPT = $(BUILDDIR)/shhopt/libshhopt.a
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
@@ -45,12 +44,12 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpbm
-@@ -55,26 +62,24 @@
+@@ -55,26 +62,25 @@
  
  .PHONY: all
- all:		$(BINARIES)
+ all:	$(BINARIES)
 -	$(MAKE) -C pbmtoppa all
--
+ 
  .PHONY: merge
 -merge: $(MERGENAME)
 -	$(MAKE) -C pbmtoppa all
@@ -77,7 +76,7 @@
  
  HEADERLINKS = pbmplus.h version.h compile.h
  
-@@ -88,13 +93,10 @@
+@@ -88,13 +94,10 @@
  compile.h:
  	$(SRCDIR)/stamp-date
  

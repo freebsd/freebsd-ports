@@ -1,3 +1,4 @@
+MAN1+=	411toppm.1
 MAN1+=	anytopnm.1
 MAN1+=	asciitopgm.1
 MAN1+=	atktopbm.1

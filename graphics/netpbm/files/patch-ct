@@ -1,14 +1,17 @@
---- ppm/ppmchange.c.orig	Tue Mar 20 12:28:14 2001
-+++ ppm/ppmchange.c	Tue Mar 27 00:00:00 2001
-@@ -14,6 +14,7 @@
- */
+--- ppm/411toppm.c.orig	Sun Mar  4 08:23:20 2001
++++ ppm/411toppm.c	Tue Mar 27 00:00:00 2001
+@@ -57,9 +57,9 @@
+  *==============*/
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <malloc.h>
  
  #include "ppm.h"
 +#include "shhopt.h"
- #define TCOLS 256
- #define SQRT3 1.73205080756887729352
-     /* The square root of 3 */
-@@ -50,10 +51,20 @@
+ 
+ typedef unsigned char uint8;
+ 
+@@ -91,9 +91,19 @@
  
      unsigned int option_def_index;
  
@@ -22,19 +25,18 @@
 +      option_def_index++; \
 +      }
      option_def_index = 0;   /* incremented by OPTENTRY */
-     OPTENTRY(0,   "closeness",     OPT_INT,    &cmdlineP->closeness,     0);
-     OPTENTRY(0,   "remainder",     OPT_STRING, 
-              &cmdlineP->remainder_colorname,         0);
+     OPTENTRY(0,   "width",      OPT_INT,    &cmdline_p->width,          0);
+     OPTENTRY(0,   "height",     OPT_INT,    &cmdline_p->height,         0);
 +    option_def[option_def_index].type = OPT_END;
  
      /* Set the defaults */
-     cmdlineP->closeness = 0;
-@@ -63,7 +74,7 @@
+     cmdline_p->width = 64;
+@@ -103,7 +113,7 @@
      opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
-     opt.allowNegNum = FALSE;  /* We may have parms that are negative numbers */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
  
 -    pm_optParseOptions2(&argc, argv, opt, 0);
 +    optParseOptions2(&argc, argv, opt, 0);
-         /* Uses and sets argc, argv, and some of *cmdlineP and others. */
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
  
-     if ((argc-1) % 2 == 0) 
+     if (cmdline_p->width <= 0)
