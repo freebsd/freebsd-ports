@@ -1,0 +1,24 @@
+--- src/log.c.orig	Sun Sep 19 17:44:02 1999
++++ src/log.c	Sun Sep 19 18:07:49 1999
+@@ -271,7 +271,21 @@
+   va_start(args, fmt);
+   LogTimeStamp(logprintf);
+   vlogprintf(fmt, args);
++#if defined(__FreeBSD__) && defined(__alpha__)
++  /*
++   * This is an ugly hack!  On FreeBSD/Alpha va_list is a non-scalar
++   * type so to accommodate logging a simple string we steal a few
++   * lines from vlogprintf below.  Ick!
++   */
++#ifdef SYSLOG_FACILITY
++  syslog(SYSLOG_FACILITY|LOG_INFO, "\n\n");
++#else
++  fprintf(logfp, "\n\n");
++  fflush(logfp);
++#endif
++#else
+   vlogprintf("\n", NULL);
++#endif
+   if (gLogOptions & LG_CONSOLE)
+   {
+     vfprintf(stdout, fmt, args);
