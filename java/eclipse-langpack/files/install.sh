@@ -1,19 +1,13 @@
 #!/bin/sh
 
-wrksrc=$1; prefix=$2
-owner=$3; group=$4; dperm=$5; fperm=$6
-plist=$7
+WRKDIR=$1; PREFIX=$2
+OWNER=$3; GROUP=$4; DPERM=$5; FPERM=$6
 
-for subr in ${PLIST_SUB}; do
-	plist_sub="${plist_sub} `echo $subr|sed 's/^\([^=][^=]*\)=\(.*\)$/-e s|%%\1%%|\2|g/'`"
+cd ${WRKDIR}
+for dir  in `find eclipse -type d | sort`; do
+	install -d -o ${OWNER} -g ${GROUP} -m ${DPERM}         ${PREFIX}/${dir}
 done
 
-sed $plist_sub ${plist} > ${wrksrc}/plist.tmp
-
-for dir in `sed -n "s|^@dirrm ||p" ${wrksrc}/plist.tmp | sort`; do
-	install -d -o ${owner} -g ${group} -m ${dperm} ${prefix}/$dir
-done
-
-for file in `sed "/^@dirrm /d; s|^eclipse/||" ${wrksrc}/plist.tmp`; do
-	install -c -o ${owner} -g ${group} -m ${fperm} ${wrksrc}/${file} ${prefix}/eclipse/${file}
+for file in `find eclipse -type f | sort`; do
+	install -c -o ${OWNER} -g ${GROUP} -m ${FPERM} ${file} ${PREFIX}/${file}
 done
