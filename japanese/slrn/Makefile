@@ -3,31 +3,28 @@
 # Date created:		26 Jun 1998
 # Whom:			Takashi Mega <mega@minz.org>
 #
-# $Id: Makefile,v 1.3 1998/10/16 05:06:45 jseger Exp $
+# $Id: Makefile,v 1.4 1998/12/03 07:18:19 obrien Exp $
 
-DISTNAME=	slrn0.9.5.2
-PKGNAME=	ja-slrn-0.9.5.2
+DISTNAME=	slrn0.9.5.4
+PKGNAME=	ja-slrn-0.9.5.4
 CATEGORIES=	japanese news
-MASTER_SITES=	http://master.debian.or.jp/~kikutani/slang/
-DISTFILES= 	slrn0.9.5.2.tar.gz  slrn-doc-j0.9.5.2-0.tar.gz
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
+		http://home.sprintmail.com/~kikutani/slang/
+DISTFILES= 	slrn0.9.5.4.tar.gz  slrn-doc-j0.9.5.3-0.tar.gz
 
-PATCH_SITES=	http://master.debian.or.jp/~kikutani/slang/
-PATCHFILES= 	slrn0.9.5.2jp0.pat.gz
+PATCH_SITES=	http://home.sprintmail.com/~kikutani/slang/
+PATCHFILES= 	slrn0.9.5.4jp0.pat.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mega@minz.org
 
-BROKEN= 'fetch -- this needs more than one MASTER_STIE'
-
-BROKEN_ELF=	yes
-
 LIB_DEPENDS=	slang.1:${PORTSDIR}/japanese/libslang
 
 WRKSRC=         ${WRKDIR}/slrn
-JDOCSRC=	${WRKDIR}/slrn-doc-j0.9.5.2-0
+JDOCSRC=	${WRKDIR}/slrn-doc-j0.9.5.3-0
 HAS_CONFIGURE=	yes
 ALL_TARGET=     all slrnpull
-MANLANG=	ja
+MANLANG=	ja ''
 MAN1=		slrn.1
 
 do-build:
@@ -42,7 +39,6 @@ do-install:
 	${CP} -r ${WRKSRC}/doc ${PREFIX}/share/doc/slrn
 	${CP} -r ${WRKSRC}/slrnpull ${PREFIX}/share/doc/slrnpull
 	${INSTALL_MAN} ${WRKSRC}/doc/slrn.1 ${PREFIX}/man/man1
-	${GZIP_CMD} ${PREFIX}/man/man1/slrn.1
 	${INSTALL_MAN} ${JDOCSRC}/slrn.1 ${PREFIX}/man/ja/man1
 	${CP} -r ${JDOCSRC} ${PREFIX}/share/doc/slrn/ja
 
