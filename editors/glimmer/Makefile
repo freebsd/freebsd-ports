@@ -20,10 +20,14 @@ USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+PYTHON_LIBS=	-lutil -lreadline -lcrypt -lpython
+.if exists(/usr/lib/libcrypto.a)
+PYTHON_LIBS+=	-lcrypto
+.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
-		s|-lpython|-lreadline -lcrypt -lpython|g ; \
+		s|-lpython|${PYTHON_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
