@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0.rc1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -28,6 +28,8 @@ LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS=	| tar -xf - -X ${FILESDIR}/tar-exclude
