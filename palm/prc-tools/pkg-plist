@@ -288,3 +288,4 @@ pilot/share/prc-tools/include/string.h
 @dirrm pilot/share/prc-tools/include
 @dirrm pilot/share/prc-tools
 @dirrm pilot/share
+@dirrm pilot

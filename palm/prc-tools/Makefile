@@ -65,6 +65,10 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
+.endif
+
 CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
 
 post-extract:
