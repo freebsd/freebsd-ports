@@ -144,6 +144,7 @@
     SUBDIR += props
     SUBDIR += qrash
     SUBDIR += randrext
+    SUBDIR += rendercheck
     SUBDIR += renderext
     SUBDIR += resourceext
     SUBDIR += rox-wallpaper
