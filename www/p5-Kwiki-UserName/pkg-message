@@ -1,0 +1,9 @@
+/* ================================================================= */
+Note: 
+	Kwiki-UserName plugin installed! Now you should add
+	to your kwiki in kwiki installation directory:
+
+$ cd cgi-bin/my-kwiki
+$ kwiki -add Kwiki::UserName
+
+/* ================================================================= */
