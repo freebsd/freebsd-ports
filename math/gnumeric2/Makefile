@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumeric2
 PORTVERSION=	1.1.16
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.1
@@ -17,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
 LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
-		gal-2.0.0:${PORTSDIR}/x11-toolkits/gal2 \
+		gal-2.0.1:${PORTSDIR}/x11-toolkits/gal2 \
 		gda-2.1:${PORTSDIR}/databases/libgda2 \
 		gsf-1.8:${PORTSDIR}/devel/libgsf
 
