@@ -1,0 +1,11 @@
+--- configure.orig	Wed Jan 26 11:32:32 2000
++++ configure	Sat Feb 19 22:02:00 2000
+@@ -3585,7 +3585,7 @@
+ echo "configure:3586: checking for Gnome compile flags" >&5
+   GNOME_CFLAGS=`$gnomepath gnomeui --cflags 2>/dev/null`
+   GNOME_VER=`$gnomepath --version |$sedpath 's/gnome-libs //'`
+-  GNOME_MAJOR=`echo $GNOME_VER |$sedpath 's/\([0-9]**\).\([0-9]**\).\([0-9]**\)/\1/'`
++  GNOME_MAJOR=`echo $GNOME_VER |$sedpath 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
+   if test "_$GNOME_MAJOR" = "_0"; then
+     gnome=no
+     echo "$ac_t""old Gnome found, building without it." 1>&6
