@@ -1,5 +1,5 @@
 # New ports collection makefile for:	elsa
-# Version required:			1.0
+# Version required:			1.0b-017
 # Date created:				06 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	elsa-freebsd_x86
-PKGNAME=	elsa-1.0b
+PKGNAME=	elsa-1.0b-017
 CATEGORIES=	net
 MASTER_SITES=	""
 
@@ -16,8 +16,9 @@ MAINTAINER=	jedgar@fxp.org
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"LIC: redistribution not allowed"
 
-WRKSRC=		${WRKDIR}/ELSA-1_0b-016-freebsd_x86
+WRKSRC=		${WRKDIR}/ELSA-1_0b-017-freebsd_x86
 NO_BUILD=	yes
+LOG_DIR?=	/var/log/elsa
 
 .include <bsd.port.pre.mk>
 
@@ -25,14 +26,27 @@ NO_BUILD=	yes
 IGNORE='The source to this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the source manually after registering at: http://streaming.entera.com/orderform.shtml  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build.'
 .endif
 
+pre-fetch:
+	@for library in libc_r.so.3 libstdc++.so.2 libg++.so.4; do \
+		if [ -z "`ldconfig -r -elf | ${GREP} $$library`" ]; then \
+			${ECHO}; \
+			${ECHO} "This port requires the following FreeBSD 3.x compatibility"; \
+			${ECHO} "libraries: libc_r.so.3, libstdc++.so.2, and libg++.so.4."; \
+			${ECHO} "Please ensure they are installed and properly registered"; \
+			${ECHO} "with the system (see ldconfig(8)).  These libraries may be"; \
+			${ECHO} "obtained from compat3x and/or a recent FreeBSD 3.x system."; \
+			${ECHO}; \
+			exit 1; \
+		fi \
+	done
+
 do-configure:
-	@${MV} ${WRKSRC}/elsa.cfg ${WRKSRC}/elsa.cfg.orig
-	@${SED} -e 's|CHANGE_ME|${PREFIX}/share/elsa|' \
-		< ${WRKSRC}/elsa.cfg.orig > ${WRKSRC}/elsa.cfg
+	@${PERL} -pi.orig -e 's|__PREFIX__|${PREFIX}|' ${WRKSRC}/elsa.cfg
+	@${PERL} -pi.orig -e 's|__LOG_DIR__|${LOG_DIR}|' ${WRKSRC}/elsa.cfg
 
 do-install:
 	${MKDIR} ${PREFIX}/share/elsa/content
-	${MKDIR} /var/log/elsa
+	${MKDIR} ${LOG_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/elsa ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/elsa.cfg ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/elsa
