@@ -1,14 +1,19 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/squid24/Attic/pkg-install,v 1.9 2004-03-23 17:12:47 sada Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/squid24/Attic/pkg-install,v 1.10 2004-05-02 22:38:35 pav Exp $
 #
 
 PATH=/bin:/usr/bin:/usr/sbin
 pkgname=$1
 squid_base=${PKG_PREFIX:-/usr/local}/squid
 squid_confdir=${PKG_PREFIX:-/usr/local}/etc/squid
-squid_user=${SQUID_USER:=squid}
-squid_group=${SQUID_GROUP:=squid}
+if [ -x /usr/sbin/nologin ]; then
+	nologin=/usr/sbin/nologin
+else
+	nologin=/sbin/nologin
+fi
+: ${squid_user:=squid}
+: ${squid_group:=squid}
 squid_gid=100
 squid_uid=100
 # Try to catch the case where the $squid_user might have been created with an
@@ -42,9 +47,11 @@ PRE-INSTALL)
 
 	if ! pw usershow ${squid_user} -q >/dev/null ; then
 		echo "There is no account '${squid_user}' on this system, so I will try to create it:"
-		if ! pw useradd ${squid_user} -u ${squid_uid} -q \
-	  	    -c "squid caching-proxy pseudo user" -g ${squid_group} \
-		    -d "${squid_base}" -s "/sbin/nologin" -h - ; then
+		if ! pw useradd -q -n ${squid_user} \
+		    -u ${squid_uid} -g ${squid_group} \
+	  	    -c "squid caching-proxy pseudo user" \
+		    -d "${squid_base}" -s "${nologin}" \
+		    -h - ; then
 			echo "Failed to create user '${squid_user}'!" >&2
 			echo "Please create it manually." >&2
 			exit 1
@@ -148,6 +155,15 @@ POST-INSTALL)
 	echo "     Please check your squid.conf and update it if necessary."
 	tput me
 	echo ""
+	if [ -f /etc/rc.subr ]; then
+		echo "     Please note that ${PKG_PREFIX}/etc/rc.d/squid.sh"
+		echo "     will not start squid automatically on this system."
+		echo "     You need to set squid_enable=yes in either"
+		echo "     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid"
+		echo "     See ${PKG_PREFIX}/etc/rc.d/squid.sh for more"
+		echo "     configuration options."
+		echo ""
+	fi
 	;;
 *)
 	exit 64
