@@ -1,5 +1,5 @@
---- pine/mailindx.c.orig	Fri Oct  1 03:44:27 1999
-+++ pine/mailindx.c	Thu Oct 14 12:26:44 1999
+--- pine/mailindx.c.orig	Tue Nov  9 08:20:33 1999
++++ pine/mailindx.c	Fri Nov 19 16:18:24 1999
 @@ -55,10 +55,10 @@
  /*
   * Some common Command Bindings
@@ -294,7 +294,7 @@
  				  sort_name(new_sort));
  	    }
  
-@@ -6127,7 +6127,7 @@
+@@ -6135,7 +6135,7 @@
  	      icache.name = temp_nam(NULL, "pi");
  
  	    if((icache.cache = (void *)fopen(icache.name,"w+b")) == NULL){
@@ -303,7 +303,7 @@
  		fatal(tmp_20k_buf);
  	    }
  
-@@ -6523,10 +6523,10 @@
+@@ -6531,10 +6531,10 @@
  	   && format_message(mn_m2raw(ps_global->msgmap,
  				      mn_get_cur(ps_global->msgmap)),
  			     env, body, FM_NEW_MESS, pc)){

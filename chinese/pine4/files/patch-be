@@ -1,6 +1,6 @@
---- pine/newmail.c.orig	Sat Oct  9 00:46:59 1999
-+++ pine/newmail.c	Thu Oct 14 12:19:31 1999
-@@ -314,24 +314,15 @@
+--- pine/newmail.c.orig	Tue Nov  2 08:13:10 1999
++++ pine/newmail.c	Fri Nov 19 16:18:24 1999
+@@ -318,24 +318,15 @@
      ENVELOPE	*e;
      char	 subject[200], from[2*MAX_SCREEN_COLS],
  		 intro[MAX_SCREEN_COLS+1];
@@ -29,7 +29,7 @@
  	if(e->from->personal)
  	  istrncpy(from + ((number > 1L) ? 18 : 6),
  		   (char *) rfc1522_decode((unsigned char *) tmp_20k_buf,
-@@ -348,13 +339,13 @@
+@@ -352,13 +343,13 @@
  
      if(number <= 1L) {
          if(e && e->subject){
@@ -45,7 +45,7 @@
  
          if(!from[0])
            subject[1] = toupper((unsigned char)subject[1]);
-@@ -364,29 +355,29 @@
+@@ -368,29 +359,29 @@
  
      if(!folder) {
          if(number > 1)

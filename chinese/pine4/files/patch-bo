@@ -1,5 +1,5 @@
---- build.orig	Sat Feb 20 07:30:54 1999
-+++ build	Thu Oct 14 11:31:12 1999
+--- build.orig	Tue Nov 16 06:16:25 1999
++++ build	Fri Nov 19 16:18:24 1999
 @@ -80,8 +80,8 @@
   pine   The Pine mailer. Once compiled this should work just fine on
          your system with no other files than this binary, and no
@@ -11,7 +11,7 @@
   
   pico   The standalone editor similar to the Pine message composer.
          This is a very simple straight forward text editor.
-@@ -278,11 +278,11 @@
+@@ -279,11 +279,11 @@
  
          if [ -s c-client ] ; then rm -f c-client ; fi
          ln -s imap/c-client c-client
@@ -28,7 +28,7 @@
          eval echo make "$makeargs" "$K1" "$K2" $ccltarg
          cd $PHOME/imap
          eval make "$makeargs" "$K1" "$K2" $ccltarg
-@@ -303,17 +303,17 @@
+@@ -304,17 +304,17 @@
          cd $PHOME/bin
          rm -f pine mtest imapd pico pilot
          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -50,7 +50,7 @@
  	esac
          echo "Done"
          ;;
-@@ -325,10 +325,10 @@
+@@ -326,10 +326,10 @@
  	make clean
          echo "Cleaning Pine"
          cd $PHOME/pine

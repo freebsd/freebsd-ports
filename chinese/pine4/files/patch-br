@@ -1,6 +1,6 @@
---- pine/pine.hlp.orig	Tue Oct  5 02:51:50 1999
-+++ pine/pine.hlp	Thu Oct 14 10:53:45 1999
-@@ -489,9 +489,9 @@
+--- pine/pine.hlp.orig	Thu Nov 18 02:05:25 1999
++++ pine/pine.hlp	Fri Nov 19 16:18:25 1999
+@@ -492,9 +492,9 @@
  
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
@@ -13,7 +13,7 @@
  
   interrupted    ~/.pine-interrupted-mail
   debug          ~/.pine-debugN
-@@ -504,7 +504,7 @@
+@@ -507,7 +507,7 @@
   sentmail#      ~/mail/sent-mail
   mailcap#       ~/.mailcap + /etc/mailcap
                             + /usr/etc/mailcap + /usr/local/etc/mailcap
@@ -22,7 +22,7 @@
  
   news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
-@@ -929,9 +929,9 @@
+@@ -932,9 +932,9 @@
  this link now to send a message to it:<BR>
  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
  <!--chtml endif-->
@@ -34,7 +34,7 @@
  <HR WIDTH="75%">
  <!--chtml endif-->
  <P> 
-@@ -1019,7 +1019,7 @@
+@@ -1022,7 +1022,7 @@
  <OL>
    <LI> <A HREF="#intro">Introduction</A>
    <LI> <A HREF="#pine_help">Pine Help</A>
@@ -43,7 +43,7 @@
    <LI> <A HREF="#local_support">Local Support Contacts</A>
  <!--chtml endif-->
    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
-@@ -1132,9 +1132,9 @@
+@@ -1135,9 +1135,9 @@
  at your site.)
  
  

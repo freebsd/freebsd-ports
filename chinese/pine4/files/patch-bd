@@ -1,6 +1,6 @@
---- pine/mailview.c.orig	Tue Oct 12 09:19:53 1999
-+++ pine/mailview.c	Thu Oct 14 12:25:15 1999
-@@ -159,8 +159,8 @@
+--- pine/mailview.c.orig	Tue Nov 16 03:03:45 1999
++++ pine/mailview.c	Fri Nov 19 16:18:24 1999
+@@ -162,8 +162,8 @@
  static struct key view_keys[] = 
         {HELP_MENU,
  	OTHER_MENU,
@@ -11,7 +11,7 @@
  	PREVMSG_MENU,
  	NEXTMSG_MENU,
  	PREVPAGE_MENU,
-@@ -185,11 +185,11 @@
+@@ -188,11 +188,11 @@
  
  	HELP_MENU,
  	OTHER_MENU,
@@ -27,7 +27,7 @@
  	JUMP_MENU,
  	TAB_MENU,
  	HDRMODE_MENU,
-@@ -219,7 +219,7 @@
+@@ -222,7 +222,7 @@
  #define FLAG_KEY		34
  #define VIEW_PIPE_KEY		35
  
@@ -36,7 +36,7 @@
         {HELP_MENU,
  	WHEREIS_MENU,
  	QUIT_MENU,
-@@ -243,7 +243,7 @@
+@@ -246,7 +246,7 @@
  	NEXTMSG_MENU,
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
@@ -45,7 +45,7 @@
  	JUMP_MENU,
  	PRYNTTXT_MENU,
  	SAVE_MENU,
-@@ -265,7 +265,7 @@
+@@ -268,7 +268,7 @@
  static struct key simple_text_keys[] =
         {HELP_MENU,
  	NULL_MENU,
@@ -54,7 +54,7 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -274,7 +274,7 @@
+@@ -277,7 +277,7 @@
  	PRYNTTXT_MENU,
  	WHEREIS_MENU,
  	FWDEMAIL_MENU,
@@ -63,7 +63,7 @@
  INST_KEY_MENU(simple_text_keymenu, simple_text_keys);
  
  
-@@ -430,7 +430,7 @@
+@@ -437,7 +437,7 @@
  	 * we were viewing.  If so, make sure we don't just come back.
  	 */
  	if(mn_get_total(ps->msgmap) <= 0L || !ps->mail_stream){
@@ -72,7 +72,7 @@
  	    ps->next_screen = mail_index_screen;
  	    break;
  	}
-@@ -444,7 +444,7 @@
+@@ -452,7 +452,7 @@
  	body      = NULL;
  	if(!(env = mail_fetchstructure(ps->mail_stream, raw_msgno, &body))
  	   || !(mc = mail_elt(ps->mail_stream, raw_msgno))){
@@ -81,7 +81,7 @@
  			      comatose(mn_get_cur(ps->msgmap)));
  	    dprint(1, (debugfile, "!!!! ERROR fetching %s of msg %ld\n",
  		       env ? "elt" : "env", mn_get_cur(ps->msgmap)));
-@@ -502,7 +502,7 @@
+@@ -510,7 +510,7 @@
  	memset(&scrollargs, 0, sizeof(SCROLL_S));
  	scrollargs.text.text	= so_text(store);
  	scrollargs.text.src	= src;
@@ -90,7 +90,7 @@
  
  	/*
  	 * make first selectable handle the default
-@@ -528,11 +528,11 @@
+@@ -536,11 +536,11 @@
  	    offset = 0L;
  	}
  	  
@@ -104,7 +104,7 @@
  	scrollargs.keys.menu	= &view_keymenu;
  	scrollargs.keys.what    = save_what;
  	setbitmap(scrollargs.keys.bitmap);
-@@ -1319,7 +1319,7 @@
+@@ -1327,7 +1327,7 @@
      /*---- format and copy envelope ----*/
      if(ps_global->full_header)
        q_status_message(SM_INFO, 0, 3,
@@ -113,7 +113,7 @@
  
      HD_INIT(&h, ps_global->VAR_VIEW_HEADERS, ps_global->view_all_except,
  	    FE_DEFAULT);
-@@ -1358,7 +1358,7 @@
+@@ -1366,7 +1366,7 @@
  	    if(append_file_name)
  	      fs_give((void **)&append_file_name);
  
@@ -122,7 +122,7 @@
  			      error_description(errno));
  	    return(0);
  	}
-@@ -1665,7 +1665,7 @@
+@@ -1675,7 +1675,7 @@
    write_error:
  
      if(!(flgs & FM_DISPLAY))
@@ -131,7 +131,7 @@
  			decode_err ? decode_err : error_description(errno));
  
      return(0);
-@@ -2137,12 +2137,12 @@
+@@ -2237,12 +2237,12 @@
      char prompt[256], tmp[MAILTMPLEN];
      int  rc, flags, local_h;
      static ESCKEY_S launch_opts[] = {
@@ -148,7 +148,7 @@
  	{-1, 0, NULL, NULL}};
  
      if(handle->type == URL){
-@@ -2168,11 +2168,11 @@
+@@ -2268,11 +2268,11 @@
  	    if(!local_h){
  	      if(ps_global->vars[V_BROWSER].is_fixed){
  		  q_status_message(SM_ORDER, 3, 4,
@@ -162,7 +162,7 @@
  			   'y', 0, NO_HELP, WT_SEQ_SENSITIVE) == 'y'){
  		    /* Prompt for the displayer? */
  		    tmp[0] = '\0';
-@@ -2216,7 +2216,7 @@
+@@ -2316,7 +2316,7 @@
  				}
  				else{
  				    q_status_message1(SM_ORDER | SM_DING, 2, 2,
@@ -171,7 +171,7 @@
  						     error_description(errno));
  				    continue;
  				}
-@@ -2260,8 +2260,8 @@
+@@ -2360,8 +2360,8 @@
  		  max(0,sc - 25), handle->h.url.path+7,
  		  (strlen(handle->h.url.path+7) > max(0,sc-25)) ? "..." : "");
  	else
@@ -182,7 +182,7 @@
  		  (handle->type == URL) ? "\"" : "",
  		  max(0,sc-27),
  		  (handle->type == URL) ? handle->h.url.path : "",
-@@ -2320,10 +2320,10 @@
+@@ -2420,10 +2420,10 @@
  			OE_KEEP_TRAILING_SPACE |
  			OE_DISALLOW_HELP;
  
@@ -195,7 +195,7 @@
  				      NULL, NO_HELP, &flags);
  		if(rc == 0){
  		    if(flags & OE_USER_MODIFIED){
-@@ -3639,11 +3639,11 @@
+@@ -3763,11 +3763,11 @@
  	mode = PIPE_RESET | PIPE_USER ;
  	if(syspipe = open_system_pipe(cmd, NULL, NULL, mode, 0)){
  	    close_system_pipe(&syspipe);
@@ -209,7 +209,7 @@
      }
      else if(f = url_local_handler(handle->h.url.path)){
  	if((*f)(handle->h.url.path) > 1)
-@@ -3651,7 +3651,7 @@
+@@ -3775,7 +3775,7 @@
      }
      else
        q_status_message1(SM_ORDER, 2, 2,
@@ -218,7 +218,7 @@
  			handle->h.url.path);
      
      return(rv);
-@@ -3663,7 +3663,7 @@
+@@ -3787,7 +3787,7 @@
      int return_value;
  {
      q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -227,7 +227,7 @@
      return(return_value);
  }
  
-@@ -4008,7 +4008,7 @@
+@@ -4132,7 +4132,7 @@
      }
      else
        q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -236,7 +236,7 @@
  
  outta_here:
      if(outgoing)
-@@ -4079,7 +4079,7 @@
+@@ -4203,7 +4203,7 @@
  	else if(errstr)
  	  q_status_message(SM_ORDER|SM_DING, 3, 3, errstr);
  	else
@@ -245,7 +245,7 @@
  
  	break;
  
-@@ -4102,7 +4102,7 @@
+@@ -4226,7 +4226,7 @@
  	    if(uid_val != ps_global->mail_stream->uid_validity){
  		/* Complain! */
  		q_status_message(SM_ORDER|SM_DING, 3, 3,
@@ -254,7 +254,7 @@
  	    }
  
  	    if(uid){
-@@ -4118,7 +4118,7 @@
+@@ -4242,7 +4242,7 @@
  
  		if(i > mn_get_total(ps_global->msgmap))
  		  q_status_message(SM_ORDER, 2, 3,
@@ -263,7 +263,7 @@
  	    }
  	    else if(search){
  		/*
-@@ -4139,9 +4139,9 @@
+@@ -4263,9 +4263,9 @@
  		if(i = any_lflagged(ps_global->msgmap, MN_SLCT)){
  		    extern long zoom_index();
  
@@ -276,7 +276,7 @@
  		    /* Zoom the index! */
  		    zoom_index(ps_global, ps_global->msgmap);
  		}
-@@ -4289,7 +4289,7 @@
+@@ -4413,7 +4413,7 @@
  
  	if(auth && *auth != '*')
  	  q_status_message(SM_ORDER, 3, 3,
@@ -285,7 +285,7 @@
  
  	/*
  	 * At this point our structure should contain the
-@@ -4373,7 +4373,7 @@
+@@ -4497,7 +4497,7 @@
  
  		if(i > mn_get_total(ps_global->msgmap))
  		  q_status_message(SM_ORDER, 2, 3,
@@ -294,7 +294,7 @@
  	    }
  
  	    break;
-@@ -4490,7 +4490,7 @@
+@@ -4614,7 +4614,7 @@
      }
      else
        q_status_message1(SM_ORDER | SM_DING, 0, 3,
@@ -303,7 +303,7 @@
  
      return(1);
  }
-@@ -4517,7 +4517,7 @@
+@@ -4641,7 +4641,7 @@
      dprint(2, (debugfile, "-- bogus url \"%s\": %s\n",
  	       url ? url : "<NULL URL>", reason));
      if(url)
@@ -312,7 +312,7 @@
  			(void *) (strchr(url, ':') - url), url, reason);
  
      return(0);
-@@ -4678,7 +4678,7 @@
+@@ -4800,7 +4800,7 @@
  
    write_error:
      if(style == QStatus)
@@ -321,7 +321,7 @@
  			error_description(errno));
  
      return(1);
-@@ -4931,7 +4931,7 @@
+@@ -5053,7 +5053,7 @@
  		gf_set_so_readc(&tmp_gc, df_store);
  		if(errstr = dfilter(display_filter, tmp_store, tmp_pc, NULL)){
  		    q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -330,7 +330,7 @@
  		    rv = FHT_WRTERR;
  		}
  		else
-@@ -4941,7 +4941,7 @@
+@@ -5063,7 +5063,7 @@
  	    }
  	    else{
  		q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -339,7 +339,7 @@
  		rv = FHT_WRTERR;
  	    }
  	}
-@@ -4983,7 +4983,7 @@
+@@ -5105,7 +5105,7 @@
  	    if(errstr = gf_pipe(tmp_gc, final_pc)){
  		rv = FHT_WRTERR;
  		q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -348,7 +348,7 @@
  	    }
  	}
  
-@@ -5121,7 +5121,7 @@
+@@ -5243,7 +5243,7 @@
  	format_newsgroup_string("Newsgroups: ", e->newsgroups, flags, pc);
  	if(e->ngbogus)
  	  q_status_message(SM_ORDER, 0, 3,
@@ -357,7 +357,7 @@
      }
  
      if((which & FE_FOLLOWUPTO) && e->followup_to)
-@@ -5880,7 +5880,7 @@
+@@ -6002,7 +6002,7 @@
      }
  
      if(!sparms->bar.title)
@@ -366,7 +366,7 @@
  
      if(sparms->bar.style == TitleBarNone)
        sparms->bar.style = MsgTextPercent;
-@@ -6053,7 +6053,7 @@
+@@ -6175,7 +6175,7 @@
  	}
  
  	if(first_view && num_display_lines >= scroll_text_lines())
@@ -375,7 +375,7 @@
  			    
  
  	force      = 0;		/* may not need to next time around */
-@@ -6191,7 +6191,7 @@
+@@ -6313,7 +6313,7 @@
  	    whereis_pos.row = 0;
              if(sparms->help.text == NO_HELP || ps_global->nr_mode){
                  q_status_message(SM_ORDER, 0, 5,
@@ -384,7 +384,7 @@
                  break;
              }
  
-@@ -6230,7 +6230,7 @@
+@@ -6352,7 +6352,7 @@
  		cur_top_line -= scroll_lines;
  		if(cur_top_line <= 0){
  		    cur_top_line = 0;
@@ -393,7 +393,7 @@
  				      STYLE_NAME(sparms));
  		}
  	    }
-@@ -6246,7 +6246,7 @@
+@@ -6368,7 +6368,7 @@
  		}
  
  		if(!next_handle)
@@ -402,7 +402,7 @@
  				    STYLE_NAME(sparms));
  
  	    }
-@@ -6264,12 +6264,12 @@
+@@ -6386,12 +6386,12 @@
  		cur_top_line += scroll_lines;
  
  		if(cur_top_line + num_display_lines >= scroll_text_lines())
@@ -417,7 +417,7 @@
  				  STYLE_NAME(sparms));
  		/* hilite last available handle */
  		if(sparms->text.handles){
-@@ -6339,11 +6339,11 @@
+@@ -6461,11 +6461,11 @@
  		    whereis_pos.row = 0;
  		    cur_top_line++;
  		    if(cur_top_line + num_display_lines >= scroll_text_lines())
@@ -431,7 +431,7 @@
  				    STYLE_NAME(sparms));
  	    }
  
-@@ -6406,11 +6406,11 @@
+@@ -6528,11 +6528,11 @@
  		if(cur_top_line){
  		    cur_top_line--;
  		    if(cur_top_line == 0)
@@ -445,7 +445,7 @@
  				    STYLE_NAME(sparms));
  	    }
  
-@@ -6444,7 +6444,7 @@
+@@ -6566,7 +6566,7 @@
  		}
  
  		q_status_message1(SM_ORDER, 0, 1,
@@ -454,7 +454,7 @@
  				  STYLE_NAME(sparms));
  	    }
  
-@@ -6478,7 +6478,7 @@
+@@ -6600,7 +6600,7 @@
  		}
  
  		q_status_message1(SM_ORDER, 0, 1,
@@ -463,7 +463,7 @@
  				  STYLE_NAME(sparms));
  	    }
  
-@@ -6611,8 +6611,8 @@
+@@ -6751,8 +6751,8 @@
  		  q_status_message(SM_ORDER, 0, 3, tmp_20k_buf);
  		else
  		  q_status_message2(SM_ORDER, 0, 3,
@@ -474,19 +474,19 @@
  				    int2string(whereis_pos.row));
  
  		if(key){
-@@ -6629,9 +6629,9 @@
+@@ -6769,9 +6769,9 @@
  		}
              }
  	    else if(found_on == -1)
 -	      cmd_cancelled("Search");
 +	      cmd_cancelled("搜尋");
              else
--	      q_status_message(SM_ORDER | SM_DING, 0, 3, "Word not found");
-+	      q_status_message(SM_ORDER | SM_DING, 0, 3, "找不到該字");
+-	      q_status_message(SM_ORDER, 0, 3, "Word not found");
++	      q_status_message(SM_ORDER, 0, 3, "找不到該字");
  	    }
  
              break; 
-@@ -7002,13 +7002,13 @@
+@@ -7144,13 +7144,13 @@
      int         rc, flags;
      static char search_string[MAX_SEARCH+1] = { '\0' };
      static ESCKEY_S word_search_key[] = { { 0, 0, "", "" },
@@ -503,23 +503,21 @@
      help = NO_HELP;
      nsearch_string[0] = '\0';
  
-@@ -7023,13 +7023,13 @@
+@@ -7165,11 +7165,11 @@
              continue;
          }
  	else if(rc == 10){
 -	    strcpy(report, "Searched to First Line.");
 +	    strcpy(report, "搜尋至第一行。");
- 	    cursor_pos->row = 0;
- 	    cursor_pos->col = 0;
- 	    return(0);
+ 	    return(-4);
  	}
  	else if(rc == 11){
 -	    strcpy(report, "Searched to Last Line."); 
 +	    strcpy(report, "搜尋至最後一行。"); 
- 	    cursor_pos->row = max(scroll_text_lines() - 1, 0);
- 	    cursor_pos->col = 0;
- 	    return(cursor_pos->row);
-@@ -8165,12 +8165,12 @@
+ 	    return(-5);
+ 	}
+ 
+@@ -8308,12 +8308,12 @@
  		if(*msg_p[0])
  		  for(i = 0; i < msg_q; i++)
  		    q_status_message2(SM_ORDER, 3, 4,
@@ -534,7 +532,7 @@
  
  		fclose(f);
  		f = NULL;
-@@ -8183,7 +8183,7 @@
+@@ -8326,7 +8326,7 @@
  		q_status_message2(SM_ORDER, 0, 4, "%s%s", title,
  				  alt_msg
  				    ? alt_msg
@@ -543,7 +541,7 @@
  		fclose(f);
  		f = NULL;
  	    }
-@@ -8198,7 +8198,7 @@
+@@ -8341,7 +8341,7 @@
  	    memset(&sargs, 0, sizeof(SCROLL_S));
  	    sargs.text.text  = f;
  	    sargs.text.src   = FileStar;
@@ -552,7 +550,7 @@
  	    sargs.bar.title  = title;
  	    sargs.bar.style  = TextPercent;
  	    sargs.help.text  = h_simple_text_view;
-@@ -8399,7 +8399,7 @@
+@@ -8542,7 +8542,7 @@
        break;
        
      case -1 :
