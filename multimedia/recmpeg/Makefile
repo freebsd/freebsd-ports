@@ -8,6 +8,7 @@
 
 PORTNAME=	recmpeg
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fame
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	fame
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple video encoder
 
-LIB_DEPENDS=	fame-0.9.0:${PORTSDIR}/multimedia/libfame
+LIB_DEPENDS=	fame-0.9.1:${PORTSDIR}/multimedia/libfame
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
