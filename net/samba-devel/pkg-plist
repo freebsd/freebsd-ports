@@ -256,7 +256,7 @@ share/swat/include/header.html
 @dirrm share/swat/images
 @dirrm share/swat/include
 @dirrm share/swat
-@exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | %D/bin/mksmbpasswd.sh > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
+@exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | %D/bin/make_smbpasswd > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
 @exec mkdir -p /var/spool/samba ; chmod 1777 /var/spool/samba
 @exec cat %D/share/doc/samba/README.FreeBSD
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually."
