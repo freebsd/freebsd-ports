@@ -9,16 +9,18 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
 		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
+		http://mutt-j.sourceforge.jp/ \
 		ftp://ftp.mutt.org/mutt/devel/
 DISTNAME=	mutt-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
-		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX}
+		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX} \
+		manual.ja-${MANJADATE}${EXTRACT_SUFX}
 DIST_SUBDIR=	mutt
 
 MAINTAINER=	st@be.to
@@ -33,12 +35,24 @@ USE_GETTEXT=	yes
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
+.if defined(WITH_MUTT_IDN)
+LIB_DEPENDS+=	idn.15:${PORTSDIR}/devel/libidn
+.endif
+
+.if defined(WITH_MUTT_HEADER_CACHE)
+PATCH_SITES+=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/:hcache
+PATCHFILES+=	patch-${VERSION}.tg.hcache.3:hcache
+PATCH_DIST_STRIP+=	-p1
+
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+.endif
 
 CONFLICTS=	mutt-* ja-mutt-1.[024]*
 
 VERSION=	1.5.6
 JP_VERSION=	1
 MANUALVERSION=	1.4
+MANJADATE=	20040808
 
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
@@ -51,7 +65,7 @@ USE_AUTOCONF_VER=	213
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" \
+CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-libiconv-prefix=${LOCALBASE} \
@@ -62,6 +76,9 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-docdir=${DOCSDIR} \
 		--enable-pop --enable-imap \
 		--enable-default-japanese
+.if defined(MUTT_CONFIGURE_ARGS)
+CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
+.endif
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
@@ -70,6 +87,14 @@ PLIST_SUB+=	NLS=""
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+.endif
+.if defined(WITH_MUTT_HEADER_CACHE)
+CONFIGURE_ARGS+=	--enable-hcache
+.endif
+.if defined(WITH_MUTT_IDN)
+CONFIGURE_ARGS+=	--with-idn=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-idn
 .endif
 
 NOMANCOMPRESS=	yes
@@ -87,7 +112,7 @@ pre-configure:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extrapatch-nodoc-aa
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extrapatch-nodoc-ab
 .endif
-	(cd ${WRKSRC}; ${ACLOCAL} -I m4)
+	(cd ${WRKSRC}; ${ACLOCAL} -I m4; ${AUTOHEADER})
 
 post-configure:
 	@${REINPLACE_CMD} -E "\
@@ -121,6 +146,9 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.sgml ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
