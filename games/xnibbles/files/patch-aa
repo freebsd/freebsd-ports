@@ -1,0 +1,39 @@
+--- Makefile	Thu Feb 26 00:14:35 1998
++++ /home/andy/tmp/wrk/Makefile	Tue Mar  3 00:00:39 1998
+@@ -23,12 +23,14 @@
+   # Compiler to use (C++ compiler _please_)
+   CC = g++
+ 
+-  # Directory for XNibbles specific data
+-  # This must be set correctly at compile time
+-  DATADIR = /usr/local/games/xnibbles
+-
+   # Prefix to find bin and man directories for installation
++ifndef PREFIX
+   PREFIX  = /usr/local
++endif
++
++  # Directory for XNibbles specific data
++  # This must be set correctly at compile time
++  DATADIR = $(PREFIX)/share/xnibbles
+ 
+   # Install program
+   INSTALL = /usr/bin/install
+@@ -40,7 +42,7 @@
+ ### LINUX ONLY OPTIONS ###
+ 
+   # Requires kernel sound support, change from 0 to 1 if you want it
+-  SOUND = 0
++  SOUND = 1
+   SOUNDDEV = /dev/dsp
+ 
+   # Requires kernel joystick support, change from 0 to 1 if you want it
+@@ -77,7 +79,7 @@
+ linux:
+ 	$(MAKE) OBJECTS=$(OBJECTS) \
+ 	CC=$(CC) LDFLAGS='-L/usr/X11R6/lib' \
+-	CFLAGS='-Wall -O2 $(SDEV) \
++	CFLAGS+='-Wall $(SDEV) \
+ 	-I/usr/X11R6/include -fwritable-strings \
+ 	$(JDEV) -DDATADIR=\"$(DATADIR)\"' \
+ 	xnibbles

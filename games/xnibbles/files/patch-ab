@@ -1,0 +1,14 @@
+--- sound.c	Sun Feb 22 22:52:08 1998
++++ /home/andy/tmp/wrk/sound.c	Mon Mar  2 23:25:48 1998
+@@ -24,7 +24,11 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#ifdef __FreeBSD__
++#include <machine/soundcard.h>
++#else
+ #include <linux/soundcard.h>
++#endif
+ #include <sys/ioctl.h>
+ #include <sys/wait.h>
+ 
