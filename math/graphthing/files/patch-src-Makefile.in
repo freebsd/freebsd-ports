@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed May  1 14:13:07 2002
++++ src/Makefile.in	Wed May  1 14:13:17 2002
+@@ -7,7 +7,7 @@
+ 
+ DISTFILES = Makefile.in config.h.in depend.1 *.cc *.h *.y *.l *.gt
+ 
+-INTL_INCLUDES = -I../intl -DLOCALEDIR=\"$(localedir)\"
++INTL_INCLUDES = -DLOCALEDIR=\"$(localedir)\"
+ 
+ CFLAGS = @CFLAGS@ @EXTRA_CFLAGS@ $(INTL_INCLUDES)
+ CXXFLAGS = @CXXFLAGS@ @EXTRA_CFLAGS@ \

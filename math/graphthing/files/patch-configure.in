@@ -1,0 +1,10 @@
+--- configure.in.orig	Wed May  1 14:03:01 2002
++++ configure.in	Wed May  1 14:03:13 2002
+@@ -63,7 +63,6 @@
+ # Write stuff to Makefiles
+ AC_OUTPUT(Makefile
+ 	src/Makefile
+-	intl/Makefile
+ 	po/Makefile.in)
+ 
+ # If they've turned on Developer Flags, give a warning
