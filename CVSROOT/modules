@@ -8958,6 +8958,7 @@ wxgtk		ports/x11-toolkits/wxgtk
 wxgtk-devel	ports/x11-toolkits/wxgtk-devel
 wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
+wzip		ports/archivers/wzip
 x-files		ports/x11-fm/x-files
 x11_twin	ports/x11/twin
 x11amp		ports/audio/x11amp
