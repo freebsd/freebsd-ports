@@ -21,10 +21,6 @@ USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501103
-BROKEN+=		"and does not build with latest gcc"
-.endif
-
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
 .endif
