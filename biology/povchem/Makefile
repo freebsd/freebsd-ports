@@ -25,6 +25,7 @@ DIST_SUBDIR=	povchem
 
 DEFS=		-DDATADIR=\"${PREFIX}/share/povchem\" \
 		-DSYSCONFDIR=\"${PREFIX}/etc\"
+PATCH_ARGS=	-l -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
