@@ -11,7 +11,7 @@ PORTVERSION=	1.2.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/c2lib/
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
