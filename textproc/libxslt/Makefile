@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -27,6 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 MAN3=		libexslt.3 libxslt.3
 MAN1=		xsltproc.1
 
+OPTIONS=	MEM_DEBUG "Enable memory debugging" off
+
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON:=""
@@ -37,16 +39,17 @@ PLIST_SUB+=	PYTHON:="@comment "
 PKGNAMESUFFIX=	-nopython
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MEM_DEBUG)
 CONFIGURE_ARGS+=	--with-mem-debug
 .endif
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "libxslt has several tunables:"
+	@${ECHO_MSG} "Libxslt has the following additional tunables:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_PYTHON=yes		Turns off python support"
-	@${ECHO_MSG} "	WITH_MEM_DEBUG=yes		Turns on memory debugging"
 	@${ECHO_MSG} ""
 
 post-patch:
@@ -60,4 +63,4 @@ post-install:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
