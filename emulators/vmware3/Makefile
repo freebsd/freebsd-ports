@@ -98,6 +98,10 @@ post-patch:
 		${WRKSRC}/vmmon-only/freebsd/*.c
 .endif
 	cd ${WRKSRC}/vmmon-only/freebsd && ${TOUCH} bus_if.h device_if.h
+.if ${OSVERSION} >= 500018
+	${PERL} -i -pe 's,<sys/lock\.h>,<sys/mutex.h>,' \
+		${WRKSRC}/vmmon-only/freebsd/*.c
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
