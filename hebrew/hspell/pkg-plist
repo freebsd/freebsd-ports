@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/hspell
+bin/hspell-i
+share/hspell/likelyerrors
+share/hspell/spellinghints
+share/hspell/biza-nouns
+share/hspell/biza-verbs
+share/hspell/extrawords
+share/hspell/milot
+share/hspell/out.nouns
+share/hspell/out.nouns-shemp
+share/hspell/out.verbs
+@dirrm share/hspell
