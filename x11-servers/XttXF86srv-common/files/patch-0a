@@ -1,0 +1,112 @@
+diff -ur /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common_hw/xf86_PCI.c programs/Xserver/hw/xfree86/common_hw/xf86_PCI.c
+--- /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common_hw/xf86_PCI.c	Fri Nov 13 14:15:23 1998
++++ programs/Xserver/hw/xfree86/common_hw/xf86_PCI.c	Tue Dec  8 10:05:56 1998
+@@ -490,7 +490,7 @@
+ static int pciConfigType = 0;
+ static int pciMaxDevice = 0;
+ 
+-#if defined(__alpha__)
++#if defined(__alpha__) && defined(linux)
+ #include <asm/unistd.h>
+ #define BUS(tag) (((tag)>>16)&0xff)
+ #define DFN(tag) (((tag)>>8)&0xff)
+@@ -512,7 +512,69 @@
+ {
+   return syscall(__NR_pciconfig_write, bus, dfn, off, len, buf);
+ }
+-#endif /* __alpha__ */
++#endif /* __alpha__ && linux */
++#if defined(__alpha__) && defined(__FreeBSD__)
++
++#include <sys/pciio.h>
++
++#define BUS(tag) (((tag)>>16)&0xff)
++#define DFN(tag) (((tag)>>8)&0xff)
++
++static int pciFd = -1;
++
++void pciconfig_enable(void)
++{
++    pciFd = open("/dev/pci", O_RDWR);
++}
++
++void pciconfig_disable(void)
++{
++#if 0
++    /* MGA server calls pciWriteLong after pciDisableIO */
++    close(pciFd);
++    pciFd = -1;
++#endif
++}
++
++int pciconfig_read(
++          unsigned char bus,
++          unsigned char dfn,
++          unsigned char off,
++          unsigned char len,
++          void * buf)
++{
++  struct pci_io io;
++  int error;
++  io.pi_sel.pc_bus = bus;
++  io.pi_sel.pc_dev = dfn >> 3;
++  io.pi_sel.pc_func = dfn & 7;
++  io.pi_reg = off;
++  io.pi_width = len;
++  error = ioctl(pciFd, PCIOCREAD, &io);
++  if (error)
++    return error;
++  memcpy(buf, &io.pi_data, len);
++  return 0;
++}
++
++int pciconfig_write(
++          unsigned char bus,
++          unsigned char dfn,
++          unsigned char off,
++          unsigned char len,
++          void * buf)
++{
++  struct pci_io io;
++  io.pi_sel.pc_bus = bus;
++  io.pi_sel.pc_dev = dfn >> 3;
++  io.pi_sel.pc_func = dfn & 7;
++  io.pi_reg = off;
++  io.pi_width = len;
++  memcpy(&io.pi_data, buf, len);
++  return ioctl(pciFd, PCIOCWRITE, &io);
++}
++
++#endif /* __alpha__ && __FreeBSD__ */
+ 
+ static Bool
+ pcibusCheck()
+@@ -1052,6 +1114,9 @@
+ static void
+ pciEnableIO(int scrnIndex)
+ {
++#if defined(__alpha__) && defined(__FreeBSD__)
++    pciconfig_enable();
++#else
+     /* This is enough to ensure that full I/O is enabled */
+     unsigned pciIOPorts[] = { PCI_MODE1_ADDRESS_REG };
+     int numPciIOPorts = sizeof(pciIOPorts) / sizeof(pciIOPorts[0]);
+@@ -1059,13 +1124,18 @@
+     xf86ClearIOPortList(scrnIndex);
+     xf86AddIOPorts(scrnIndex, numPciIOPorts, pciIOPorts);
+     xf86EnableIOPorts(scrnIndex);
++#endif
+ }
+ 
+ static void
+ pciDisableIO(int scrnIndex)
+ {
++#if defined(__alpha__) && defined(__FreeBSD__)
++    pciconfig_disable();
++#else
+     xf86DisableIOPorts(scrnIndex);
+     xf86ClearIOPortList(scrnIndex);
++#endif
+ }
+ 
+ static Bool

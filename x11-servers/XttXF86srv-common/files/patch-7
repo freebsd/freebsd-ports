@@ -1,0 +1,20 @@
+--- lib/Xxf86dga/XF86DGA.c.orig	Sun Sep  5 10:53:57 1999
++++ lib/Xxf86dga/XF86DGA.c	Sun Sep  5 10:56:20 1999
+@@ -30,7 +30,7 @@
+ 
+ /* Alpha Patch by Georg Acher, acher@in.tum.de
+    modified by Ivan Kokshaysky <ink@rc.ru> */
+-#ifdef	__alpha__
++#if defined(__alpha__) && !defined(__FreeBSD__)
+ extern unsigned long _bus_base(void);
+ #endif
+ 
+@@ -571,7 +571,7 @@
+    HFILE hfd;
+ #endif
+ 
+-#ifdef	__alpha__
++#if defined(__alpha__) && !defined(__FreeBSD__)
+    off_t bus_base_addr = _bus_base();
+ 
+    /* DGA would be broken on Jensen anyway due to the lack of

@@ -1,0 +1,12 @@
+diff -ur /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/os-support/Imakefile programs/Xserver/hw/xfree86/os-support/Imakefile
+--- /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/os-support/Imakefile	Sun May 11 06:04:24 1997
++++ programs/Xserver/hw/xfree86/os-support/Imakefile	Tue Dec  8 10:05:56 1998
+@@ -38,7 +38,7 @@
+ OS_SUBDIR = lynxos
+ #endif
+ 
+-#if defined(i386BsdArchitecture)
++#if defined(i386BsdArchitecture) || defined(AlphaBsdArchitecture)
+ # if defined(BSD386Architecture)
+ OS_SUBDIR = bsdi
+ # else

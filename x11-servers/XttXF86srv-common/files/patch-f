@@ -1,0 +1,11 @@
+--- nls/locale.alias.orig	Thu Feb 17 16:04:55 2000
++++ nls/locale.alias	Thu Feb 17 16:04:29 2000
+@@ -27,6 +27,7 @@
+ cs_CS.ISO8859-2					cs_CZ.ISO8859-2
+ cs_CZ						cs_CZ.ISO8859-2
+ cs_CZ.iso88592					cs_CZ.ISO8859-2
++cs_CZ.ISO_8859-2				cs_CZ.ISO8859-2
+ cz						cz_CZ.ISO8859-2
+ cz_CZ						cz_CZ.ISO8859-2
+ da						da_DK.ISO8859-1
+

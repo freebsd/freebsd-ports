@@ -1,0 +1,21 @@
+diff -ur /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common_hw/Imakefile programs/Xserver/hw/xfree86/common_hw/Imakefile
+--- /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common_hw/Imakefile	Tue Feb 24 21:01:21 1998
++++ programs/Xserver/hw/xfree86/common_hw/Imakefile	Tue Dec  8 10:05:56 1998
+@@ -15,7 +15,7 @@
+ XSRCS = BUSmemcpy.c IODelay.c SlowBcopy.c $(IOSRC)
+ XOBJS = BUSmemcpy.o IODelay.o SlowBcopy.o $(IOOBJ)
+ #else
+-#if defined(ArcArchitecture)
++#if defined(ArcArchitecture) || defined(AlphaArchitecture)
+ XSRCS = BUSmemcpy.c IODelay.c SlowBcopy.c $(IOSRC)
+ XOBJS = BUSmemcpy.o IODelay.o SlowBcopy.o $(IOOBJ)
+ #else
+@@ -42,7 +42,7 @@
+ 
+ NormalLibraryTarget(xf86_hw,$(OBJS))
+ 
+-#if !(defined(LinuxArchitecture) && defined(AlphaArchitecture)) && !defined(ArcArchitecture)
++#if !defined(AlphaArchitecture) && !defined(ArcArchitecture)
+ ObjectFromAsmSource(BUSmemcpy,NullParameter)
+ ObjectFromAsmSource(IODelay,NullParameter)
+ ObjectFromAsmSource(SlowBcopy,NullParameter)
