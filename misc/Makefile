@@ -59,6 +59,7 @@
     SUBDIR += dnetc
     SUBDIR += dog
     SUBDIR += dotfile
+    SUBDIR += edonkey-tool-hash
     SUBDIR += emma
     SUBDIR += estic
     SUBDIR += ewipe
