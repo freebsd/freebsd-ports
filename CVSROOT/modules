@@ -2846,6 +2846,7 @@ infobot		ports/irc/infobot
 infobus		ports/java/infobus
 inform		ports/games/inform
 inilib		ports/devel/inilib
+inkscape	ports/graphics/inkscape
 inn		ports/news/inn
 inn-stable	ports/news/inn-stable
 installwatch	ports/sysutils/installwatch
