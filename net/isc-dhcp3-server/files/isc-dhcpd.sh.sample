@@ -18,23 +18,23 @@ paranoia=%%PARANOIA%%				# compiled in paranoia?
 jail=%%JAIL%%				# compiled in jail?
 
 # override these variables in /etc/rc.conf
-dhcpd_enable=NO
-dhcpd_flags= # -q -early_chroot		# command option(s)
-dhcpd_conf=%%PREFIX%%/etc/${name}.conf	# configuration file
-dhcpd_ifaces=				# ethernet interface(s)
-dhcpd_withumask=022			# file creation mask
+dhcpd_enable=${dhcpd_enable:-"NO"}
+dhcpd_flags=${dhcpd_flags:-} # -q -early_chroot		# command option(s)
+dhcpd_conf=${dhcpd_conf:-%%PREFIX%%/etc/${name}.conf}	# configuration file
+dhcpd_ifaces=${dhcpd_ifaces:-}				# ethernet interface(s)
+dhcpd_withumask=${dhcpd_withumask:-022}			# file creation mask
 
-dhcpd_chuser_enable=YES			# runs w/o privileges?
-dhcpd_withuser=${name}			# user name to run as
-dhcpd_withgroup=${name}			# group name to run as
+dhcpd_chuser_enable=${dhcpd_chuser_enable:-"YES"}	# runs w/o privileges?
+dhcpd_withuser=${dhcpd_withuser:-${name}}		# user name to run as
+dhcpd_withgroup=${dhcpd_withgroup:-${name}}		# group name to run as
 
-dhcpd_chroot_enable=NO			# runs chrooted?
-dhcpd_rootdir=/var/db/${name}		# directory to run in
+dhcpd_chroot_enable=${dhcpd_chroot_enable:-"NO"}	# runs chrooted?
+dhcpd_rootdir=${dhcpd_rootdir:-/var/db/${name}}		# directory to run in
 
 # untested
-dhcpd_jail_enable=NO			# runs imprisoned?
-dhcpd_hostname=				# jail hostname
-dhcpd_ipaddress=			# jail ip address
+dhcpd_jail_enable=${dhcpd_jail_enable:-"NO"}		# runs imprisoned?
+dhcpd_hostname=${dhcpd_hostname:-}			# jail hostname
+dhcpd_ipaddress=${dhcpd_ipaddress:-}			# jail ip address
 
 safe_run ()	# rc command [args...]
 {
