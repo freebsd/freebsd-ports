@@ -1,0 +1,6 @@
+Sipp is a performance test tool / traffic generator for the SIP protocol. 
+
+It comes with a few basic SipStone user-agents scenarios (UAC & UAS), i
+establishing and releasing multiple calls with the INVITE and BYE methods. 
+
+WWW: http://sipp.sourceforge.net/
