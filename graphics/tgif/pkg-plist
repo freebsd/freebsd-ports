@@ -1,0 +1,11 @@
+bin/tgif
+bin/prtgif
+man/man1/tgif.1.gz
+man/man1/prtgif.1.gz
+lib/X11/tgif/tgif.Xdefaults
+lib/X11/tgif/tgificon.eps
+lib/X11/tgif/tgificon.obj
+lib/X11/tgif/tgificon.xbm
+lib/X11/tgif/tgificon.xpm
+lib/X11/tgif/tangram.sym
+lib/X11/tgif/keys.obj

@@ -1,0 +1,6 @@
+Tgif is an X-based interactive drawing tool that allows the user to draw
+and manipulate objects.  The drawings can be converted to a variety of
+formats, including GIF, encapsulated PostScript and XBM.  Tgif depends on
+the `netpbm' package, available from the `ports' collection.
+
+Tgif was written by William Chia-Wei Cheng (william@cs.ucla.edu)
