@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Mar 29 14:15:55 2003
-+++ Makefile.in	Sat Mar 29 15:30:59 2003
+--- Makefile.in.orig	Sun Mar 30 20:47:49 2003
++++ Makefile.in	Sun Mar 30 20:48:01 2003
 @@ -70,8 +70,10 @@
  BUILD_INCLUDED_LIBINTL = @BUILD_INCLUDED_LIBINTL@
  CATOBJEXT = @CATOBJEXT@

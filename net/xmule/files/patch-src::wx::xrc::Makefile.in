@@ -1,5 +1,5 @@
---- src/wx/xrc/Makefile.in.orig	Sat Mar 29 17:01:36 2003
-+++ src/wx/xrc/Makefile.in	Sat Mar 29 17:02:07 2003
+--- src/wx/xrc/Makefile.in.orig	Sun Mar 30 20:48:55 2003
++++ src/wx/xrc/Makefile.in	Sun Mar 30 20:49:06 2003
 @@ -70,8 +70,10 @@
  BUILD_INCLUDED_LIBINTL = @BUILD_INCLUDED_LIBINTL@
  CATOBJEXT = @CATOBJEXT@
@@ -11,29 +11,3 @@
  DATADIRNAME = @DATADIRNAME@
  DEPDIR = @DEPDIR@
  DISABLE_PROGRESS = @DISABLE_PROGRESS@
-@@ -285,7 +287,7 @@
- 
- 
- .cpp.o :
--	$(CXX) -I../.. -c `wx-config --cxxflags` $<
-+	$(CXX) $(CXXFLAGS) -I../.. -c `wx-config --cxxflags` $<
- 
- all:    $(LIBRARY)
- 
-@@ -297,13 +299,13 @@
- 	rm -f *.o *.a
- 
- xmlrole.o:
--	$(CC) -c expat/xmltok/xmlrole.c
-+	$(CC) $(CFLAGS) -c expat/xmltok/xmlrole.c
- 
- xmltok.o:
--	$(CC) -c expat/xmltok/xmltok.c
-+	$(CC) $(CFLAGS) -c expat/xmltok/xmltok.c
- 
- xmlparse.o: xmlrole.o xmltok.o
--	$(CC) -Iexpat/xmltok -c expat/xmlparse/xmlparse.c
-+	$(CC) $(CFLAGS) -Iexpat/xmltok -c expat/xmlparse/xmlparse.c
- 
- xml.o:
- 	$(CXX) -I../.. -Iexpat/xmlparse $(INCLUDES) -c `wx-config --cxxflags` xml.cpp
