@@ -231,6 +231,7 @@
     SUBDIR += epm
     SUBDIR += epydoc
     SUBDIR += eric
+    SUBDIR += eris
     SUBDIR += erlslang
     SUBDIR += error
     SUBDIR += esdl
