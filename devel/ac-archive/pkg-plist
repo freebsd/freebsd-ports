@@ -35,6 +35,8 @@ share/doc/ac-archive/C++_Support/ac_cxx_have_complex_math2.html
 share/doc/ac-archive/C++_Support/ac_cxx_have_complex_math2.m4
 share/doc/ac-archive/C++_Support/ac_cxx_have_empty_iostream.html
 share/doc/ac-archive/C++_Support/ac_cxx_have_empty_iostream.m4
+share/doc/ac-archive/C++_Support/ac_cxx_have_ext_hash_map.html
+share/doc/ac-archive/C++_Support/ac_cxx_have_ext_hash_map.m4
 share/doc/ac-archive/C++_Support/ac_cxx_have_ext_hash_set.html
 share/doc/ac-archive/C++_Support/ac_cxx_have_ext_hash_set.m4
 share/doc/ac-archive/C++_Support/ac_cxx_have_ext_slist.html
@@ -115,6 +117,8 @@ share/doc/ac-archive/C_Support/ac_c_var_func.html
 share/doc/ac-archive/C_Support/ac_c_var_func.m4
 share/doc/ac-archive/C_Support/ac_check_cc_opt.html
 share/doc/ac-archive/C_Support/ac_check_cc_opt.m4
+share/doc/ac-archive/C_Support/ac_func_memmove.html
+share/doc/ac-archive/C_Support/ac_func_memmove.m4
 share/doc/ac-archive/C_Support/ac_func_mkdir.html
 share/doc/ac-archive/C_Support/ac_func_mkdir.m4
 share/doc/ac-archive/C_Support/ac_func_snprintf.html
@@ -197,6 +201,10 @@ share/doc/ac-archive/Installed_Packages/ac_prog_mysqlimport.html
 share/doc/ac-archive/Installed_Packages/ac_prog_mysqlimport.m4
 share/doc/ac-archive/Installed_Packages/ac_prog_mysqlshow.html
 share/doc/ac-archive/Installed_Packages/ac_prog_mysqlshow.m4
+share/doc/ac-archive/Installed_Packages/ac_prog_perl_modules.html
+share/doc/ac-archive/Installed_Packages/ac_prog_perl_modules.m4
+share/doc/ac-archive/Installed_Packages/ac_prog_perl_version.html
+share/doc/ac-archive/Installed_Packages/ac_prog_perl_version.m4
 share/doc/ac-archive/Installed_Packages/ac_prog_scp.html
 share/doc/ac-archive/Installed_Packages/ac_prog_scp.m4
 share/doc/ac-archive/Installed_Packages/ac_prog_ssh.html
@@ -205,6 +213,8 @@ share/doc/ac-archive/Installed_Packages/acx_blas.html
 share/doc/ac-archive/Installed_Packages/acx_blas.m4
 share/doc/ac-archive/Installed_Packages/acx_lapack.html
 share/doc/ac-archive/Installed_Packages/acx_lapack.m4
+share/doc/ac-archive/Installed_Packages/acx_mpi.html
+share/doc/ac-archive/Installed_Packages/acx_mpi.m4
 share/doc/ac-archive/Installed_Packages/acx_pthread.html
 share/doc/ac-archive/Installed_Packages/acx_pthread.m4
 share/doc/ac-archive/Installed_Packages/adl_func_getopt_long.html
@@ -225,6 +235,12 @@ share/doc/ac-archive/Installed_Packages/mdl_have_opengl.html
 share/doc/ac-archive/Installed_Packages/mdl_have_opengl.m4
 share/doc/ac-archive/Installed_Packages/mp_with_curses.html
 share/doc/ac-archive/Installed_Packages/mp_with_curses.m4
+share/doc/ac-archive/Installed_Packages/ms_check_pgsql_db.html
+share/doc/ac-archive/Installed_Packages/ms_check_pgsql_db.m4
+share/doc/ac-archive/Installed_Packages/ms_pgsql_priv_root.html
+share/doc/ac-archive/Installed_Packages/ms_pgsql_priv_root.m4
+share/doc/ac-archive/Installed_Packages/ms_prog_pgclient.html
+share/doc/ac-archive/Installed_Packages/ms_prog_pgclient.m4
 share/doc/ac-archive/Installed_Packages/patch_libtool_on_darwin_zsh_overquoting.html
 share/doc/ac-archive/Installed_Packages/patch_libtool_on_darwin_zsh_overquoting.m4
 share/doc/ac-archive/Installed_Packages/patch_libtool_sys_lib_search_path_spec.html
@@ -388,6 +404,10 @@ share/doc/ac-archive/bkorb/ag_check_sys_siglist.html
 share/doc/ac-archive/bkorb/ag_check_sys_siglist.m4
 share/doc/ac-archive/bkorb/ag_check_uname_syscall.html
 share/doc/ac-archive/bkorb/ag_check_uname_syscall.m4
+share/doc/ac-archive/braden/ax_check_gl.html
+share/doc/ac-archive/braden/ax_check_gl.m4
+share/doc/ac-archive/braden/ax_check_glut.html
+share/doc/ac-archive/braden/ax_check_glut.m4
 share/doc/ac-archive/gnu-head-sm.jpg
 share/doc/ac-archive/guidod/ac_arg_with_path_style.html
 share/doc/ac-archive/guidod/ac_arg_with_path_style.m4
@@ -399,6 +419,8 @@ share/doc/ac-archive/guidod/ac_c_bigendian_cross.html
 share/doc/ac-archive/guidod/ac_c_bigendian_cross.m4
 share/doc/ac-archive/guidod/ac_c_long_long_.html
 share/doc/ac-archive/guidod/ac_c_long_long_.m4
+share/doc/ac-archive/guidod/ac_cflags_check.html
+share/doc/ac-archive/guidod/ac_cflags_check.m4
 share/doc/ac-archive/guidod/ac_check_cc_opt.html
 share/doc/ac-archive/guidod/ac_check_cc_opt.m4
 share/doc/ac-archive/guidod/ac_check_func_in.html
@@ -415,8 +437,6 @@ share/doc/ac-archive/guidod/ac_create_generic_config.html
 share/doc/ac-archive/guidod/ac_create_generic_config.m4
 share/doc/ac-archive/guidod/ac_create_prefix_config_h.html
 share/doc/ac-archive/guidod/ac_create_prefix_config_h.m4
-share/doc/ac-archive/guidod/ac_create_prefix_config_h_.html
-share/doc/ac-archive/guidod/ac_create_prefix_config_h_.m4
 share/doc/ac-archive/guidod/ac_create_stdint_h.html
 share/doc/ac-archive/guidod/ac_create_stdint_h.m4
 share/doc/ac-archive/guidod/ac_create_target_h.html
@@ -465,8 +485,22 @@ share/doc/ac-archive/guidod/ac_subdir_files.html
 share/doc/ac-archive/guidod/ac_subdir_files.m4
 share/doc/ac-archive/guidod/ac_subst_prefix_subpaths.html
 share/doc/ac-archive/guidod/ac_subst_prefix_subpaths.m4
+share/doc/ac-archive/guidod/ac_sys_largefile_sensitive.html
+share/doc/ac-archive/guidod/ac_sys_largefile_sensitive.m4
 share/doc/ac-archive/guidod/ac_withnone.html
 share/doc/ac-archive/guidod/ac_withnone.m4
+share/doc/ac-archive/guidod/ax_builddir_default.html
+share/doc/ac-archive/guidod/ax_builddir_default.m4
+share/doc/ac-archive/guidod/ax_cflags_no_writable_strings.html
+share/doc/ac-archive/guidod/ax_cflags_no_writable_strings.m4
+share/doc/ac-archive/guidod/ax_cflags_strict_prototypes.html
+share/doc/ac-archive/guidod/ax_cflags_strict_prototypes.m4
+share/doc/ac-archive/guidod/ax_cflags_warn_all.html
+share/doc/ac-archive/guidod/ax_cflags_warn_all.m4
+share/doc/ac-archive/guidod/ax_cflags_warn_all_ansi.html
+share/doc/ac-archive/guidod/ax_cflags_warn_all_ansi.m4
+share/doc/ac-archive/guidod/ax_prefix_config_h.html
+share/doc/ac-archive/guidod/ax_prefix_config_h.m4
 share/doc/ac-archive/guidod/patch_libtool_on_darwin_zsh_overquoting.html
 share/doc/ac-archive/guidod/patch_libtool_on_darwin_zsh_overquoting.m4
 share/doc/ac-archive/guidod/patch_libtool_sys_lib_search_path_spec.html
@@ -480,9 +514,12 @@ share/doc/ac-archive/rleigh/ac_config_pkgconfig_in.html
 share/doc/ac-archive/rleigh/ac_config_pkgconfig_in.m4
 share/doc/ac-archive/rleigh/ac_path_lib.html
 share/doc/ac-archive/rleigh/ac_path_lib.m4
-@comment directories
+share/omf/ac-archive/ac-archive-doc.omf
+@dirrm share/omf/ac-archive
+@dirrm share/omf
 @dirrm share/doc/ac-archive/rleigh
 @dirrm share/doc/ac-archive/guidod
+@dirrm share/doc/ac-archive/braden
 @dirrm share/doc/ac-archive/bkorb
 @dirrm share/doc/ac-archive/adl
 @dirrm share/doc/ac-archive/Miscellaneous
@@ -492,3 +529,4 @@ share/doc/ac-archive/rleigh/ac_path_lib.m4
 @dirrm share/doc/ac-archive/C_Support
 @dirrm share/doc/ac-archive/C++_Support
 @dirrm share/doc/ac-archive
+@dirrm share/doc
