@@ -1,0 +1,10 @@
+--- camserv/video_fbsd_bttv.c.orig	Mon May 12 23:13:31 2003
++++ camserv/video_fbsd_bttv.c	Mon May 12 23:13:00 2003
+@@ -27,6 +27,7 @@
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <sys/mman.h>
++#include <sys/types.h>
+ #include <machine/ioctl_bt848.h>
+ #include <machine/ioctl_meteor.h>
+ #include <signal.h>
