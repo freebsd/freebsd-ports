@@ -8,10 +8,10 @@ bin/razor-revoke
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Core.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Engine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Engine/VR8.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Errorhandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Logger.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/Manager.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/VR1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deBase64.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTMLxs.pm
@@ -19,6 +19,7 @@ bin/razor-revoke
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deQP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/enBase64.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Signature/Ephemeral.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Signature/Whiplash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Syslog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
@@ -29,6 +30,7 @@ bin/razor-revoke
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Signature
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Engine
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc
