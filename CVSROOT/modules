@@ -832,7 +832,6 @@ chexedit	ports/editors/chexedit
 chgrep		ports/sysutils/chgrep
 chicken		ports/lang/chicken
 chimera		ports/www/chimera
-chimera2	ports/www/chimera2
 chipmunk	ports/cad/chipmunk
 chipvault	ports/cad/chipvault
 chk4mail	ports/mail/chk4mail
