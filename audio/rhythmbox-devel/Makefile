@@ -30,7 +30,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
 		LOCALBASE="${LOCALBASE}"
 
 .ifdef (WITH_XINE)
-LIB_DEPENDS+=		xine.7:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=		xine.8:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
 .else
 #USE_GNOME+=		gstreamerplugins
