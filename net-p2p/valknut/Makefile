@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dcgui
-PORTVERSION=	0.2.20
-PORTREVISION=	1
+PORTVERSION=	0.2.21
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 DISTNAME=	dcgui-qt-${PORTVERSION}
