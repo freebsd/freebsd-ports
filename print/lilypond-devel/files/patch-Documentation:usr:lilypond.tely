@@ -1,0 +1,23 @@
+--- Documentation/user/lilypond.tely.orig	Sun Apr 11 09:44:32 2004
++++ Documentation/user/lilypond.tely	Sun Apr 11 09:45:09 2004
+@@ -17,14 +17,14 @@
+ @c  prepend GNU for dir, must be unique
+ @c  do not list the `lilypond' node at toplevel, so that `info lilypond'
+ @c  goes to Top.
+-@c  * lilypond: (lilypond/lilypond)Invoking LilyPond.      Titling LilyPond scores.
+-* GNU LilyPond: (lilypond/lilypond).           The GNU music typesetter.
+-* convert-ly: (lilypond/lilypond)Invoking convert-ly.  Older LilyPond versions.
+-* midi2ly: (lilypond/lilypond)Invoking midi2ly.        Importing MIDI.
+-* etf2ly: (lilypond/lilypond)Invoking etf2ly.          Importing Finale.
+-* abc2ly: (lilypond/lilypond)Invoking abc2ly.          Importing ABC.          
+-* musedata2ly: (lilypond/lilypond)Invoking musedata2ly.        Importing MuseData.
+-* mup2ly: (lilypond/lilypond)Invoking mup2ly.          Importing Mup. 
++@c  * lilypond: (lilypond)Invoking LilyPond.      Titling LilyPond scores.
++* GNU LilyPond: (lilypond).           The GNU music typesetter.
++* convert-ly: (lilypond)Invoking convert-ly.  Older LilyPond versions.
++* midi2ly: (lilypond)Invoking midi2ly.        Importing MIDI.
++* etf2ly: (lilypond)Invoking etf2ly.          Importing Finale.
++* abc2ly: (lilypond)Invoking abc2ly.          Importing ABC.          
++* musedata2ly: (lilypond)Invoking musedata2ly.        Importing MuseData.
++* mup2ly: (lilypond)Invoking mup2ly.          Importing Mup. 
+ @end direntry

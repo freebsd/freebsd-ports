@@ -1,5 +1,3 @@
-This port installs the UNSTABLE development version of LilyPond.
-
 LilyPond is a music typesetter.  It produces sheet music using a
 high-level description file, which is plain text, as input.  You
 can use your favorite text editor to enter the description files.
