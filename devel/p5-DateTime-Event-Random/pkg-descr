@@ -1,0 +1,4 @@
+This module provides convenience methods that let you easily create
+DateTime::Set, DateTime, or DateTime::Duration objects with random values.
+
+WWW: http://datetime.perl.org/
