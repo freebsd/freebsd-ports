@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	openam
-PORTVERSION=	1.0b2
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	openam_1.0beta2
+DISTNAME=	openam_1.0.4
 
 MAINTAINER=	roger@FreeBSD.org
 
