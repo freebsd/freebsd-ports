@@ -1,0 +1,18 @@
+--- disdvi.c.orig	Fri Mar 12 01:05:11 1993
++++ disdvi.c	Mon May  6 04:47:36 1996
+@@ -348,13 +348,14 @@
+     }
+     else
+         free(fnt->name);    /* free old name */
+-    if ((name = (char *) malloc(namelen * sizeof(char))) == NULL) {
++    if ((name = (char *) malloc((namelen + 1) * sizeof(char))) == NULL) {
+         perror("fontdef");
+         exit(1);
+     }
+     
+     for (i = 0; i < namelen; i++)
+         name[i] = get1();
++    name[namelen] = '\0';
+     fnt->name = name;
+     if (new) {
+         fnt->next = fonts;
