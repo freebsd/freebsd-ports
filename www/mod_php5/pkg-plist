@@ -274,6 +274,7 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
+@exec mkdir -p %D/www/proxy
 @dirrm etc/apache
 @dirrm include/apache
 @dirrm libexec/apache

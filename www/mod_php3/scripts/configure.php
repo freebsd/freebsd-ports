@@ -1,12 +1,12 @@
 #!/bin/sh
 
-if [ -f ${CURDIR}/Makefile.inc ]; then
+if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
 fi
 
 /usr/bin/dialog --title "configuration options" --clear \
 	--checklist "\n\
-Please select desired options:" -1 -1 9 \
+Please select desired options:" -1 -1 10 \
 tuning		"Apache: performance tuning" OFF \
 modssl		"Apache: SSL support" OFF \
 GD		"PHP3:   GD library support" ON \
@@ -15,7 +15,9 @@ zlib		"PHP3:   zlib library support" ON \
 MySQL		"PHP3:   MySQL database support" ON \
 PostgreSQL	"PHP3:   PostgreSQL database support" OFF \
 mSQL		"PHP3:   mSQL database support" OFF \
-dBase		"PHP3:   dBase database support" OFF 2> /tmp/checklist.tmp.$$
+dBase		"PHP3:   dBase database support" OFF \
+OpenLDAP	"PHP3:   OpenLDAP support" OFF \
+2> /tmp/checklist.tmp.$$
 
 retval=$?
 
@@ -34,49 +36,61 @@ case $retval in
 		;;
 esac
 
-> ${CURDIR}/Makefile.inc
+mkdir -p ${WRKDIRPREFIX}${CURDIR}
+> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
 		\"tuning\")
-			echo "APACHE_PERF_TUNING=	YES" >> ${CURDIR}/Makefile.inc
+			echo "APACHE_PERF_TUNING=	YES" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"GD\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd" >> ${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-gd" >> ${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-gd" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			GD=1
 			;;
 		\"FreeType\")
-			echo "LIB_DEPENDS+=		ttf.3:\${PORTSDIR}/print/freetype" >> ${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		ttf.3:\${PORTSDIR}/print/freetype" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			if [ -z "$GD" ]; then
 				set $* \"GD\"
 			fi
 			;;
 		\"zlib\")
-			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"MySQL\")
-			echo "BUILD_DEPENDS+=		mysql:\${PORTSDIR}/databases/mysql321" >> ${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}" >> ${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		mysql:\${PORTSDIR}/databases/mysql321" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"PostgreSQL\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql" >> ${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-pgsql=\${PREFIX}/pgsql" >> ${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-pgsql=\${PREFIX}/pgsql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"mSQL\")
-			echo "BUILD_DEPENDS+=		msql:\${PORTSDIR}/databases/msql" >> ${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-msql=\${PREFIX}" >> ${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		msql:\${PORTSDIR}/databases/msql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-msql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"dBase\")
-			echo "PHP3_CONF_ARGS+=	--with-dbase" >> ${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-dbase" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			;;
+		\"OpenLDAP\")
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libldap.a:\${PORTSDIR}/net/openldap" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/liblber.a:\${PORTSDIR}/net/openldap" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-ldap=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"modssl\")
-			cat << EOF >> ${CURDIR}/Makefile.inc
+			cat << EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 PKGNAME=	apache-php\${VERSION_PHP3}-\${VERSION_APACHE}+mod_ssl-\${VERSION_MODSSL}
 MASTER_SITES+=	http://www.engelschall.com/sw/mod_ssl/distrib/ \\
 		ftp://ftp.engelschall.com/sw/mod_ssl/ \\
+		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \\
 		ftp://ftp.ulpgc.es/pub/mod_ssl/ \\
-		ftp://glock.missouri.edu/pub/mod_ssl/
+		ftp://glock.missouri.edu/pub/mod_ssl/ \\
+		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/mod_ssl/ \\
+		ftp://ftp.uni-trier.de/pub/unix/security/mod_ssl/ \\
+		ftp://ftp.blatzheim.com/pub/mod_ssl/ \\
+		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \\
+		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
 DISTFILES+=	mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE}\${EXTRACT_SUFX}
 
 BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/SSLeay \\
@@ -84,7 +98,7 @@ BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/SSLeay \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/SSLeay
 RUN_DEPENDS+=	ssleay:\${PORTSDIR}/security/SSLeay
 
-VERSION_MODSSL=	2.0.14
+VERSION_MODSSL=	2.1.3
 
 RESTRICTED=	"Contains cryptography"
 
@@ -98,7 +112,7 @@ SSL=		ssl
 pre-patch:
 	@cd \${WRKDIR}/mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE} \\
 	&& \${ECHO_MSG} "===>  Applying mod_ssl-\${VERSION_MODSSL} extension" \\
-	&& ./configure --with-apache=../\${DISTNAME}
+	&& ./configure --with-apache=../\${DISTNAME} --expert
 
 post-patch:
 	@cd \${WRKSRC} \\
@@ -106,12 +120,15 @@ post-patch:
 
 post-build:
 	@cd \${WRKSRC} \\
+	&& \${ECHO_MSG} "===>  Creating Dummy Certificate for Server (SnakeOil)" \\
+	&& \${ECHO_MSG} "      [use 'make certificate' to create a real one]" \\
 	&& \${MAKE} certificate TYPE=dummy >/dev/null 2>&1
 
 certificate:
 	@cd \${WRKSRC} \\
 	&& \${ECHO_MSG} "===>  Creating Test Certificate for Server" \\
 	&& \${MAKE} certificate TYPE=\$(TYPE) CRT=\$(CRT) KEY=\$(KEY)
+
 EOF
 			;;
 	esac
