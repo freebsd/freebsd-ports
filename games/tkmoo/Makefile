@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tkmoo
-PORTVERSION=	0.3.31
+PORTVERSION=	0.3.32
 CATEGORIES=	games tk83
 MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 DISTNAME=	tkMOO-light-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adam-ports@blacktabby.org
 
 RUN_DEPENDS=	${WISH83}:${PORTSDIR}/x11-toolkits/tk83
 
