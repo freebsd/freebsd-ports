@@ -1,0 +1,20 @@
+--- templates/autoformat/Makefile.in.orig	Mon Nov  1 23:52:27 2004
++++ templates/autoformat/Makefile.in	Mon Nov  1 23:53:49 2004
+@@ -464,13 +464,15 @@
+ 		    < $(srcdir)/$$cat.category.in			\
+ 		    > $$dir/.category 	;				\
+ 		for f in $(srcdir)/autoformat.$$cat.*.xml.in ; do	\
+-			echo "	$${f/.*autoformat.$$cat./}" ;		\
++			f1=`echo $${f} | sed -e 's/.*autoformat.$$cat.//'`; \
++			f2=`echo $${f} | sed -e 's/.xml.in/.xml/'`;	\
++			echo "	$${f1}" ;				\
+ 			sed 						\
+ 				-e 's/ _author *=/ author=/'		\
+ 				-e 's/ _name *=/ name=/' 		\
+ 				-e 's/ _description *=/ description=/'	\
+ 			    < $$f 					\
+-			    > $$dir/`basename $${f/.xml.in/.xml}` ;	\
++			    > $$dir/`basename $${f2}` ;			\
+ 		done							\
+ 	done
+ 
