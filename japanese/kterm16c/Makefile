@@ -35,7 +35,8 @@ USE_IMAKE=	yes
 DOCDIR=		${PREFIX}/share/doc/kterm16c
 
 post-extract:
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/pcemu1.01alpha.tar.gz \
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DIST_SUBDIR}/pcemu1.01alpha.tar.gz \
 		${EXTRACT_AFTER_ARGS} -C ${WRKDIR} pcemu1.01alpha/vga.bdf
 	@cd ${WRKDIR}/pcemu1.01alpha; \
 		bdftopcf vga.bdf > vga.pcf; \
