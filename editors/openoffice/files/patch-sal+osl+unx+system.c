@@ -1,6 +1,16 @@
---- ../sal/osl/unx/system.c.orig	Sun Mar 17 12:34:13 2002
-+++ ../sal/osl/unx/system.c	Wed Apr  3 01:03:36 2002
-@@ -195,6 +195,73 @@
+--- ../sal/osl/unx/system.c.orig	Tue Aug 20 08:49:46 2002
++++ ../sal/osl/unx/system.c	Sat Apr 19 22:15:25 2003
+@@ -74,7 +74,8 @@
+ static pthread_mutex_t getrtl_mutex = PTHREAD_MUTEX_INITIALIZER;
+ 
+ /* struct passwd differs on some platforms */
+-#if defined NETBSD || defined MACOSX || defined FREEBSD
++#if defined NETBSD || defined MACOSX || \
++	(defined FREEBSD && (__FreeBSD_version < 500112))
+ #include <pwd.h>
+ #include <sys/types.h>
+ 
+@@ -203,6 +204,73 @@
  }
  #endif
  
@@ -74,7 +84,7 @@
  struct tm *localtime_r(const time_t *timep, struct tm *buffer)
  {
  	struct tm* res;
-@@ -518,3 +585,50 @@
+@@ -712,3 +780,50 @@
  }
  #endif
  
