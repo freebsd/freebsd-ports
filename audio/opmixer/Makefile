@@ -32,11 +32,6 @@ pre-install:
 	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
-do-patch:
-.if exists(/usr/include/machine/soundcard.h)
-	${PERL} -pi -e "s=sys/soundca=machine/soundca=g" ${WRKSRC}/ossmixer.hh
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/opmixer ${WRKSRC}/opmixer-load \
 		${WRKSRC}/volset ${PREFIX}/bin
