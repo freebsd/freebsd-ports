@@ -92,9 +92,12 @@ share/doc/apache/index.html.en
 share/doc/apache/index.html.es
 share/doc/apache/index.html.fr
 share/doc/apache/index.html.it
+share/doc/apache/index.html.ja.jis
 share/doc/apache/index.html.lu
 share/doc/apache/index.html.nl
+share/doc/apache/index.html.po.iso-pl
 share/doc/apache/index.html.pt
+share/doc/apache/index.html.pt-br
 share/doc/apache/index.html.se
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
