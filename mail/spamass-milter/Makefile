@@ -41,13 +41,7 @@ WITH_SENDMAIL_BASE=yes
 .if exists(/usr/lib/libmilter.a)
 MILTERBASE=	/usr
 .else
-.BEGIN:
-	@${ECHO_CMD} "This port requires Sendmail 8.12"
-	@${ECHO_CMD} "You requested to build with sendmail from the base system"
-	@${ECHO_CMD} "sendmail in base system is too old or was not installed"
-	@${ECHO_CMD} "Upgrade/reinstall base system or build with"
-	@${ECHO_CMD} "sendmail from ports"
-	@${FALSE}
+BROKEN=	"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes"
 .endif
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
