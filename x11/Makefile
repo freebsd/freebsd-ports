@@ -244,6 +244,7 @@
     SUBDIR += xstroke
     SUBDIR += xtacy
     SUBDIR += xtattr
+    SUBDIR += xterm
     SUBDIR += xtermset
     SUBDIR += xtestpicture
     SUBDIR += xtoolwait
