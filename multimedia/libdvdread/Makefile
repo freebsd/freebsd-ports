@@ -7,17 +7,24 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
 MAINTAINER=	3d@FreeBSD.org
+
+LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/graphics/libdvdcss
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 DOC_FILES=	AUTHORS NEWS README TODO
+
+# ugly hack to have libdvdread directly depend on libdvdcss since
+# it already does for practical reasons even though not for compile
+# time ones
+DVDCSS_LIBVERSION=	2
 
 # optional CFLAGS safeness
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -36,7 +43,7 @@ post-patch:
 		s|cd \$$\(srcdir\) && \$$\(ACLOCAL\)|\#|' ${WRKSRC}/${p}
 .endfor
 # update this in sync with libdvdcss shared library version
-	@${PERL} -pi -e 's|(libdvdcss.so).0|\1|' \
+	@${PERL} -pi -e 's|(libdvdcss.so).0|\1.${DVDCSS_LIBVERSION}|' \
 		${WRKSRC}/dvdread/dvd_reader.c
 
 post-configure:
