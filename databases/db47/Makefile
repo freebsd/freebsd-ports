@@ -1,14 +1,12 @@
 # ports collection makefile for:	Berkeley DB v4
-# Date created:				16 August 2000
-# Whom:					Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
+# Date created:				2003-01-04
+# Whom:					Matthias Andree <matthias.andree@web.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	db4
-PORTVERSION=	4.0.14
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTNAME=	db41
+PORTVERSION=	4.1.25
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
@@ -27,7 +25,7 @@ CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--enable-cxx --enable-dynamic \
-		--includedir=${PREFIX}/include/db4
+		--includedir=${PREFIX}/include/db41
 INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)
