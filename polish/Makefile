@@ -17,6 +17,7 @@
     SUBDIR += openoffice-1.1
     SUBDIR += php_doc
     SUBDIR += sms
+    SUBDIR += sms2
     SUBDIR += tleenx2
     SUBDIR += trf
     SUBDIR += webalizer2
