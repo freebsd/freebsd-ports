@@ -7,8 +7,8 @@
  
      EXTRA_INCLS = $(XPMINCLUDE) 
  
---- ./Imakefile.org	Tue May 16 13:28:35 1995
-+++ ./Imakefile	Wed May 24 03:01:51 1995
+--- Imakefile.orig	Sat Nov 30 01:02:20 1996
++++ Imakefile	Sat Nov 30 01:04:33 1996
 @@ -9,7 +9,7 @@
  XCOMM your system.  If not doing "make install", set this to where the
  XCOMM files are now.
@@ -18,7 +18,7 @@
  
      SCOREFILE    	= $(XGALAGADIR)/.xgalscores
      SOUNDDIR		= $(XGALAGADIR)/sounds
-@@ -32,8 +32,8 @@
+@@ -18,8 +18,8 @@
  XCOMM with the standard X libs, you shouldn't need to change this.
  XCOMM otherwise make these point at wherever you put it.
  
@@ -29,3 +29,15 @@
  
      XSPRITELIB          = -L./libsprite -lXsprite
  
+@@ -141,9 +141,9 @@
+ #endif
+ 
+ #ifdef PCSP_ONLY
+-	PCSPDEF = -DPCSP_ONLY=1
++    PCSPDEF = -DPCSP_ONLY=1
+ #else
+-	PCSPDEF = -DPCSP_ONLY=0
++    PCSPDEF = -DPCSP_ONLY=0
+ #endif
+ 
+ #ifndef SOUND
