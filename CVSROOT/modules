@@ -4494,6 +4494,7 @@ konq-plugins	ports/misc/konq-plugins
 konqueror-nsplugins	ports/www/konqueror-nsplugins
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
+konverter	ports/multimedia/konverter
 konwert		ports/converters/konwert
 kooka		ports/graphics/kooka
 korelib		ports/devel/korelib
