@@ -1,0 +1,20 @@
+--- acroread.orig	Fri Nov 20 17:44:30 1998
++++ acroread	Fri Nov 20 17:45:11 1998
+@@ -205,7 +205,7 @@
+     ACRO_CONFIG=intelbsdi
+     export ACRO_CONFIG
+     ;;
+-  Linux)
++  FreeBSD|Linux)
+     ACRO_CONFIG=intellinux
+     export ACRO_CONFIG
+     ;;
+@@ -309,6 +309,8 @@
+   intellinux)
+     LD_LIBRARY_PATH="`prepend "$ACRO_INSTALL_DIR/$ACRO_CONFIG/lib:$ACRO_INSTALL_DIR/$ACRO_CONFIG/lib" "$LD_LIBRARY_PATH"`"
+     export LD_LIBRARY_PATH
++    LC_CTYPE="C"
++    export LC_CTYPE
+     ;;
+   intelbsdi)
+     ;;
