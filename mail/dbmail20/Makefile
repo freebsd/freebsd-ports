@@ -7,7 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -23,6 +23,12 @@ USE_GMAKE=	YES
 USE_OPENSSL=	YES
 
 CFLAGS += -fPIC
+
+SED_SCRIPT+=    -e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+		-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
+		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
+
 .if defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=	--with-pgsql
 LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
@@ -63,8 +69,16 @@ post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
 				${WRKSRC}/dbmail.h
 
+post-build:
+.for f in imap lmtp pop3
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/dbmail-${f}d.sh > ${WRKDIR}/dbmail-${f}d.sh
+.endfor
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
+.for f in imap lmtp pop3
+	@${INSTALL_SCRIPT} ${WRKDIR}/dbmail-${f}d.sh ${DESTDIR}${PREFIX}/etc/rc.d/dbmail-${f}d.sh
+.endfor
 	@${MKDIR} ${DATADIR}/sql
 	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
 	@cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
@@ -80,5 +94,10 @@ post-install:
 	@${ECHO} "	*) Many programs have been renamed and their arguments changed."
 	@${ECHO} "	*) Read the upgrading notes."
 	@${ECHO} "	*) Don't be careless with this upgrade or mail will be lost!"
+	@${ECHO} "	*) dbmail can be controled by setting dbmail_imapd_enable,"
+	@${ECHO} "	   dbmail_lmtpd_enable, and/or dbmail_pop3d_enable in"
+	@${ECHO} "	   /etc/rc.conf."
+	@${ECHO} ""
+
 
 .include <bsd.port.mk>

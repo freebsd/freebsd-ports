@@ -1,4 +1,7 @@
 etc/dbmail.conf-dist
+etc/rc.d/dbmail-imapd.sh
+etc/rc.d/dbmail-lmtpd.sh
+etc/rc.d/dbmail-pop3d.sh
 lib/dbmail/libauthdbmail.0
 lib/dbmail/libauthdbmail.a
 lib/dbmail/libauthdbmail.la
