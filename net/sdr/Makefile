@@ -3,13 +3,13 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.9 1998/08/07 23:56:36 asami Exp $
+#   $Id: Makefile,v 1.10 1998/09/25 10:05:11 asami Exp $
 #
 
-DISTNAME=	sdr.V2.4a7n
+DISTNAME=	sdr-2.4a7n
 PKGNAME=	sdr-2.4a7
 CATEGORIES=	mbone tk80
-MASTER_SITES=	http://north.east.isi.edu/sdr/
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/sdr/2.4a7n/
 
 MAINTAINER=	fenner@FreeBSD.org
 
