@@ -9,42 +9,48 @@ bin/nm_rc
 bin/nm_rr
 bin/nm_st
 bin/srl
-share/NeTraMet/examples/rules/rules.broadcast
-share/NeTraMet/examples/rules/rules.default
-share/NeTraMet/examples/rules/rules.gateway
-share/NeTraMet/examples/rules/rules.ipport
-share/NeTraMet/examples/rules/rules.lan
-share/NeTraMet/examples/rules/rules.manage
-share/NeTraMet/examples/rules/rules.nifty
-share/NeTraMet/examples/rules/rules.other
-share/NeTraMet/examples/rules/rules.rc.ip
-share/NeTraMet/examples/rules/rules.rc.ip.new
-share/NeTraMet/examples/rules/rules.rc.ipx
-share/NeTraMet/examples/rules/rules.rc.ports
-share/NeTraMet/examples/rules/rules.rc.ports.new
-share/NeTraMet/examples/rules/rules.sample
-share/NeTraMet/examples/rules/rules.two-adj-routers
-share/NeTraMet/examples/rules/rules.two-ip-groups
-share/NeTraMet/examples/rules/rules.x_ip
-share/NeTraMet/examples/srl/2ip8.srl
-share/NeTraMet/examples/srl/broadcast.srl
-share/NeTraMet/examples/srl/cs2.srl
-share/NeTraMet/examples/srl/icmp.srl
-share/NeTraMet/examples/srl/k1.srl
-share/NeTraMet/examples/srl/k8.srl
-share/NeTraMet/examples/srl/n-ports.srl
-share/NeTraMet/examples/srl/nifty.srl
-share/NeTraMet/examples/srl/other.srl
-share/NeTraMet/examples/srl/pr+bc.srl
-share/NeTraMet/mibs/meter-mib-31.txt
-share/NeTraMet/mibs/meter-mib-32.txt
-share/NeTraMet/mibs/mib-1.txt
-share/NeTraMet/mibs/mib-41.txt
-share/NeTraMet/mibs/mib.auckland
-share/NeTraMet/mibs/mib.txt
-share/NeTraMet/mibs/rtm-text.txt
-@dirrm share/NeTraMet/examples/srl
-@dirrm share/NeTraMet/examples/rules
-@dirrm share/NeTraMet/mibs
-@dirrm share/NeTraMet/examples
-@dirrm share/NeTraMet
+%%DATADIR%%/examples/2ip8.srl
+%%DATADIR%%/examples/broadcast.srl
+%%DATADIR%%/examples/cs2.srl
+%%DATADIR%%/examples/icmp.srl
+%%DATADIR%%/examples/k1.srl
+%%DATADIR%%/examples/k8.srl
+%%DATADIR%%/examples/n-ports.srl
+%%DATADIR%%/examples/nifty.srl
+%%DATADIR%%/examples/non-srl/rules.broadcast
+%%DATADIR%%/examples/non-srl/rules.default
+%%DATADIR%%/examples/non-srl/rules.gateway
+%%DATADIR%%/examples/non-srl/rules.ipport
+%%DATADIR%%/examples/non-srl/rules.lan
+%%DATADIR%%/examples/non-srl/rules.manage
+%%DATADIR%%/examples/non-srl/rules.nifty
+%%DATADIR%%/examples/non-srl/rules.other
+%%DATADIR%%/examples/non-srl/rules.rc.ip
+%%DATADIR%%/examples/non-srl/rules.rc.ip.new
+%%DATADIR%%/examples/non-srl/rules.rc.ipx
+%%DATADIR%%/examples/non-srl/rules.rc.ports
+%%DATADIR%%/examples/non-srl/rules.rc.ports.new
+%%DATADIR%%/examples/non-srl/rules.sample
+%%DATADIR%%/examples/non-srl/rules.two-adj-routers
+%%DATADIR%%/examples/non-srl/rules.two-ip-groups
+%%DATADIR%%/examples/non-srl/rules.x_ip
+%%DATADIR%%/examples/other.srl
+%%DATADIR%%/examples/pr+bc.srl
+%%DATADIR%%/mibs/meter-mib-31.txt
+%%DATADIR%%/mibs/meter-mib-32.txt
+%%DATADIR%%/mibs/mib-1.txt
+%%DATADIR%%/mibs/mib-41.txt
+%%DATADIR%%/mibs/mib.auckland
+%%DATADIR%%/mibs/mib.txt
+%%DATADIR%%/mibs/rtm-text.txt
+%%DOCSDIR%%/fdutil.pdf
+%%DOCSDIR%%/nifty.pdf
+%%DOCSDIR%%/nm_rc.pdf
+%%DOCSDIR%%/ntmref.pdf
+%%DOCSDIR%%/srlguide.pdf
+%%DOCSDIR%%/usguide.pdf
+@dirrm %%DATADIR%%/mibs
+@dirrm %%DATADIR%%/examples/non-srl
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
