@@ -3,12 +3,12 @@
 # Date created:		27 July 1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/02 03:32:21 cpiazza Exp $
 #
 
 DISTNAME=	bgrab
 PKGNAME=	bgrab-1.1
-CATEGORIES=	news foo bar
+CATEGORIES=	news
 MASTER_SITES=	http://awwm.linuxberg.com/files/console/network/ \
 		http://powerlinux.linuxberg.com/files/console/network/
 
