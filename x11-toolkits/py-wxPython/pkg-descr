@@ -5,6 +5,6 @@ From the home page:
  the same level as Win32 and GTK, it should be fairly trivial to enable
  wxPython to be used with the new GUI.
 
-WWW:http://alldunn.com/wxPython/
+WWW: http://alldunn.com/wxPython/
 
 Jacques Vidrine <nectar@FreeBSD.ORG>

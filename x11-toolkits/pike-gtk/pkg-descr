@@ -2,7 +2,7 @@ PiGTK is a pike interface for GTK+ 1.1 (currently).
 
 Gtk is available at <ftp://ftp.gimp.org/pub/gtk/>.
 
-WWW : http://pike-community.org/sites/pigtk/
+WWW: http://pike-community.org/sites/pigtk/
 
 - Ying-Chieh Liao
   ijliao@csie.nctu.edu.tw
