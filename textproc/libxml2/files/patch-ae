@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- include/libxml/encoding.h	2001/02/09 21:35:22	1.1
++++ include/libxml/encoding.h	2001/02/09 21:35:37
+@@ -23,7 +23,7 @@
+ 
+ #include <libxml/xmlversion.h>
+ #ifdef LIBXML_ICONV_ENABLED
+-#include <iconv.h>
++#include <giconv.h>
+ #endif
+ #include <libxml/tree.h>
+ 
