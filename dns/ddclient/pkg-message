@@ -1,0 +1,19 @@
+
+***********************************************************
+Copy
+
+	/usr/local/etc/ddclient.conf.sample
+to
+	/usr/local/etc/ddclient.conf
+
+and edit it to fit your needs.
+
+If you would like to run ddclient as a daemon consider
+copying
+
+	/usr/local/etc/rc.d/ddclient.sh.sample
+to
+	/usr/local/etc/rc.d/ddclient.sh
+
+***********************************************************
+
