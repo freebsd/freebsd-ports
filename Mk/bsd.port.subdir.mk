@@ -252,7 +252,7 @@ search: ${PORTSDIR}/INDEX
 	cd ${PORTSDIR}; \
 	top=`pwd`; \
 	there=`echo "$$here/" | sed s%$$top%${PORTSDIR}%`; \
-	if [ $$key ]; then \
+	if [ -n "$$key" ]; then \
 	  grep $$there ${PORTSDIR}/INDEX | grep -i "${key}" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'; \
 	elif [ $$name ]; then \
 	  grep $$there ${PORTSDIR}/INDEX | grep -i "^[^|]*${name}[^|]*|" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'; \
