@@ -213,11 +213,22 @@ enable-qmail: install disable-sendmail
 		${ECHO_MSG} "===> or, do \¨make force_enable_qmail\¨ if you are sure" ; \
 		${ECHO_MSG} "===> you want this port replacing some binaries" ; \
 		${ECHO_MSG} "===> IF THIS FEELS UNEASY, read ${PREFIX}/${DOCDIR}/REMOVE.sendmail and do it manually" ; \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "=======> VERY IMPORTANT <=======" ; \
+		${ECHO_MSG} "===> One side issue is that if you do replace them," ; \
+		${ECHO_MSG} "===> you really should consider ADDING \"NO_SENDMAIL=true\"" ; \
+		${ECHO_MSG} "===> to your /etc/make.conf if you do \"make world\"." ; \
+		${ECHO_MSG} "===> Otherwise, \"make world\" will \"fix\" your sendmail" ; \
+		${ECHO_MSG} "===> installation breaking your qmail one." ; \
+		${ECHO_MSG} "===> Read the FreeBSD Handbook section on \"make world\"" ; \
+		${ECHO_MSG} "===> if you do not know what I am talking about." ; \
+		${ECHO_MSG} "===> Check http://www.freebsd.org/ for the most" ; \
+		${ECHO_MSG} "===> updated copy of the Handbook." ; \
 	fi
-	@${ECHO} "===> Do not forget to choose an appropriate qmail startup"
-	@${ECHO} "===> script. Go through ${PREFIX}/boot, choose one"
-	@${ECHO} "===> and copy the chosen script as ${PREFIX}/rc"
-	@${ECHO} "===> For example, \¨cp ${PREFIX}/boot/proc+df ${PREFIX}/rc\¨"
+	@${ECHO_MSG} "===> Do not forget to choose an appropriate qmail startup"
+	@${ECHO_MSG} "===> script. Go through ${PREFIX}/boot, choose one"
+	@${ECHO_MSG} "===> and copy the chosen script as ${PREFIX}/rc"
+	@${ECHO_MSG} "===> For example, \¨cp ${PREFIX}/boot/proc+df ${PREFIX}/rc\¨"
 
 # taken from mail/postfix idea
 force-enable-qmail: install disable-sendmail
