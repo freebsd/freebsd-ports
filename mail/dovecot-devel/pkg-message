@@ -13,10 +13,11 @@
  
  Further information on configuration can be found in:
 
-  %%PREFIX%%/share/doc/dovecot/
+  %%DOCSDIR%%
 
  FreeBSD specific information is covered in the following file:
 
-  %%PREFIX%%/share/doc/dovecot/README.FreeBSD
+  %%DOCSDIR%%/README.FreeBSD
 
 ---------------------------------------------------------------------
+

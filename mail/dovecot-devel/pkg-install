@@ -3,21 +3,17 @@
 #	$FreeBSD$
 #
 
-PKG_PREFIX=${PKG_PREFIX:=/usr/local}
-BATCH=${BATCH:=no}
+base=/var/dovecot
 
 ask() {
     local question default answer
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
-        read -p "${question} [${default}]? " answer
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+	read -p "${question} [${default}]? " answer
     fi
-    if [ x${answer} = x ]; then
-        answer=${default}
-    fi
-    echo ${answer}
+    echo ${answer:-${default}}
 }
 
 yesno() {
@@ -26,75 +22,73 @@ yesno() {
     question=$1
     default=$2
     while :; do
-        answer=$(ask "${question}" "${default}")
-        case "${answer}" in
-        [Yy]*)	return 0;;
-        [Nn]*)	return 1;;
-        esac
-        echo "Please answer yes or no."
+	answer=$(ask "${question}" "${default}")
+	case "${answer}" in
+	[Yy]*)	return 0;;
+	[Nn]*)	return 1;;
+	esac
+	echo "Please answer yes or no."
     done
 }
 
-if [ x"$2" = xPRE-INSTALL ]; then
-    USER=dovecot
-    GROUP=dovecot
+make_account() {
+    local u g gcos
 
-    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
-        echo "You already have a group \"${GROUP}\", so I will use it."
+    u=$1
+    g=$2
+    gcos=$3
+
+    if pw group show "${g}" >/dev/null 2>&1; then
+	echo "You already have a group \"${g}\", so I will use it."
     else
-        if /usr/sbin/pw groupadd ${GROUP} -h -
+	echo "You need a group \"${g}\"."
+	if which -s pw && yesno "Would you like me to create it" y
 	then
-	    echo "Added group \"${GROUP}\"."
+	    pw groupadd ${g} || exit
+	    echo "Done."
 	else
-	    echo "Adding group \"${GROUP}\" failed..."
-            echo "Please create it, and try again."
-            exit 1
-        fi
-    fi
-
-    if /usr/sbin/pw usershow "${USER}" 2>/dev/null; then
-        echo "You already have a user \"${USER}\", so I will use it."
-    else
-        if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
-           -s /sbin/nologin \
-           -c "Dovecot"
-	then
-	    echo "Added user \"${USER}\"."
-	else
-	    echo "Adding user \"${USER}\" failed..."
-            echo "Please create it, and try again."
-            exit 1
-        fi
-    fi
-
-    USER=dovecot-auth
-    GROUP=dovecot-auth
-
-    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
-	echo "You already have a group \"${GROUP}\", so I will use it."
-    else
-	if /usr/sbin/pw groupadd ${GROUP} -h -
-	then
-	    echo "Added group \"${GROUP}\"."
-	else
-	    echo "Adding group \"${GROUP}\" failed..."
 	    echo "Please create it, and try again."
 	    exit 1
-        fi
+	fi
     fi
-
-    if /usr/sbin/pw usershow "${USER}" 2>/dev/null; then
-	echo "You already have a user \"${USER}\", so I will use it."
+    
+    if pw user show "${u}" >/dev/null 2>&1; then
+	echo "You already have a user \"${u}\", so I will use it."
     else
-	if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
-	   -s /sbin/nologin \
-	   -c "Dovecot Auth"
-        then
-	    echo "Added user \"${USER}\"."
+	echo "You need a user \"${u}\"."
+	if which -s pw && yesno "Would you like me to create it" y
+	then
+	    pw useradd ${u} -g ${g} -h - -s /sbin/nologin -c "${gcos}" || exit
+	    echo "Done."
 	else
-	    echo "Adding user \"${USER}\" failed..."
 	    echo "Please create it, and try again."
 	    exit 1
-        fi
+	fi
     fi
-fi
+}
+
+case $2 in
+
+PRE-INSTALL)
+    make_account dovecot dovecot "Dovecot"
+    make_account dovecot-auth dovecot-auth "Dovecot Auth"
+    ;;
+
+POST-INSTALL)
+    DIRLIST="${base} ${base}/auth ${base}/ssl ${base}/ssl/certs \
+	${base}/ssl/private ${base}/login /var/run/dovecot"
+    echo "Fixing ownerships and modes in \"${base}\"."
+    for directory in ${DIRLIST}; do
+	if [ ! -d "${directory}" ]; then
+	    mkdir -p ${directory}
+	    echo "Created directory: ${directory}"
+	fi
+    done
+    chown -R root:wheel      ${base}
+    chown -R dovecot:dovecot ${base}/auth ${base}/ssl
+    chown    root:dovecot    ${base}/login /var/run/dovecot
+    chmod 0750 ${base}/login
+    chmod 0700 /var/run/dovecot
+    ;;
+
+esac
