@@ -164,6 +164,7 @@
     SUBDIR += jailer
     SUBDIR += jailutils
     SUBDIR += jdiskreport
+    SUBDIR += jkill
     SUBDIR += jps
     SUBDIR += jtop
     SUBDIR += k3b
