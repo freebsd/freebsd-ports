@@ -1,5 +1,5 @@
---- tmake/lib/freebsd-g++/tmake.conf.orig	Thu Jul 29 00:21:38 1999
-+++ tmake/lib/freebsd-g++/tmake.conf	Tue Sep 25 23:14:36 2001
+--- tmake/lib/freebsd-g++/tmake.conf.orig	Wed Jul 28 11:21:38 1999
++++ tmake/lib/freebsd-g++/tmake.conf	Sun Jun  2 09:46:54 2002
 @@ -8,16 +8,16 @@
  CONFIG			= qt warn_on release
  
@@ -40,14 +40,17 @@
  
  TMAKE_LINK		= g++
  TMAKE_LINK_SHLIB	= g++
-@@ -46,11 +46,11 @@
+@@ -44,13 +44,13 @@
+ # soname does not work on fbsd 2.x
+ #TMAKE_LFLAGS_SONAME	= -Wl,-soname
  
- TMAKE_LIBS		=
+-TMAKE_LIBS		=
++TMAKE_LIBS		= %%THREADLIBS%%
  TMAKE_LIBS_X11		= -lXext -lX11 -lm
 -TMAKE_LIBS_QT		= -lqt
 -TMAKE_LIBS_QT_OPENGL	= -lqgl
 +TMAKE_LIBS_QT          = %%LIBQT%%
-+TMAKE_LIBS_QT_OPENGL   = -lqtgl
++TMAKE_LIBS_QT_OPENGL   = %%QT_OPENGL%%
  TMAKE_LIBS_OPENGL	= -lMesaGL -lMesaGLU -lXmu
  
 -TMAKE_MOC		= moc

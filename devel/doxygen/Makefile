@@ -21,7 +21,20 @@ BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
 .endif
 .endif
 
+.if defined(WITH_QT2)
 USE_QT_VER=	2
+QT_INC=		${X11BASE}/include/qt2
+QT_OPENGL=	-lqtgl
+THREADLIBS=
+.else
+USE_QT_VER=	3
+QT_INC=		${X11BASE}/include
+QTNAME=		qt-mt
+QT_OPENGL=
+THREADLIBS=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
+#CXXFLAGS+=	${PTHREAD_CFLAGS}
+.endif
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -59,8 +72,10 @@ pre-configure:
 	@${PERL} -pi -e "s:gcc:${CC}:g ; s:g\+\+:${CXX}:g ; \
 		s:%%LIBQT%%:-l${QTNAME}:g ; \
 		s:%%MOC%%:${MOC}:g ; \
-		s:%%QT_INC%%:${X11BASE}/include/qt2:g ; \
+		s:%%QT_INC%%:${QT_INC}:g ; \
 		s:%%QT_LIB%%:${X11BASE}/lib:g ; \
+		s:%%QT_OPENGL%%:${QT_OPENGL}:g ; \
+		s:%%THREADLIBS%%:${THREADLIBS}:g ; \
 		s:%%CFLAGS%%:${CFLAGS}:g ; \
 		s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
 
