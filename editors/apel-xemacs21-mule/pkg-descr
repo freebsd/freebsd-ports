@@ -26,6 +26,6 @@ APEL is programed by MORIOKA Tomohiko <tomo@m17n.org>.
      - static: utility for static evaluation
 
   APEL is installed the following directory tree:
-	${PREFIX}/lib/xemacs/site-packages/lisp/apel/	--- apel & emu
+	${LOCALBASE}/lib/xemacs/site-packages/lisp/apel/	--- apel & emu
 
 --- Porting by shige <shige@FreeBSD.ORG>.
