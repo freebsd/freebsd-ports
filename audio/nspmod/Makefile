@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/	\
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
-MAINTAINER=	jmg@FreeBSD.org
-
 MAN1=		nspmod.1
 
 do-install:
