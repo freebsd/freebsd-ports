@@ -14,13 +14,12 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	SGML/XML application programming tool
 
 LIB_DEPENDS=		tcl82.1:${PORTSDIR}/lang/tcl82
-BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/lang/tcl82:patch
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=		YES
-CONFIGURE_ARGS+=	--with-tcl=${PREFIX}/lib/tcl8.2 \
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.2 \
 			--with-docdir=${PREFIX}/share/doc/cost --with-charmaps
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" TCL_INCLUDE_SPEC="${LOCALBASE}/include/tcl8.2"
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/cost2.2
@@ -32,9 +31,10 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Cost documentation"
-	@${MKDIR} ${PREFIX}/share/doc/cost && ${CHMOD} a+rx ${PREFIX}/share/doc/cost
-	@cd ${WRKDIR}/${DISTNAME}/doc && ${INSTALL_MAN} manual.html manual.ps rtflib.html simple.html \
-		${PREFIX}/share/doc/cost
+	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
+	@cd ${WRKDIR}/${DISTNAME}/doc && \
+		${INSTALL_MAN} manual.html manual.ps rtflib.html simple.html \
+		${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

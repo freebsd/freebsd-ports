@@ -13,9 +13,9 @@ lib/cost2.2/textutil.tcl
 lib/cost2.2/winhelp-stylesheet.tcl
 lib/cost2.2/RTF.spec
 lib/cost2.2/EventHandler.itcl
-share/doc/cost/manual.html
-share/doc/cost/manual.ps
-share/doc/cost/rtflib.html
-share/doc/cost/simple.html
-@dirrm share/doc/cost
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps
+%%PORTDOCS%%%%DOCSDIR%%/rtflib.html
+%%PORTDOCS%%%%DOCSDIR%%/simple.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cost2.2
