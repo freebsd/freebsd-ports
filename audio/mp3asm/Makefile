@@ -17,4 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+post-patch:
+	@${PERL} -pi -e "s,getprogname,_getprogname,g" ${WRKSRC}/src/mp3asm.c
+
 .include <bsd.port.mk>
