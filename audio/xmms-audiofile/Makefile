@@ -1,0 +1,35 @@
+# New ports collection makefile for:	xmms-audiofile
+# Date created:				4 Feb 2003
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmms-audiofile
+PORTVERSION=	0.1
+CATEGORIES=	audio
+MASTER_SITES=	http://www.68k.org/~michael/xmms/
+
+MAINTAINER=	dyeske@yahoo.com
+
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}" \
+		LIBS="${LIBS} ${PTHREAD_LIBS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS =|CFLAGS = @CFLAGS@|; \
+		s|LIBS = @AUDIOFILE_LIBS@|LIBS = @AUDIOFILE_LIBS@ @LIBS@|' \
+		${WRKSRC}/Makefile.in
+
+.include <bsd.port.mk>
