@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#export LD_LIBRARY_PATH
+
+if [ -z "${LD_LIBRARY_PATH}" ]
+then
+LD_LIBRARY_PATH="%libdir%"
+else
+LD_LIBRARY_PATH="%libdir%:${LD_LIBRARY_PATH}"
+fi
+
+env "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}" "%makemake%" "${@}"
