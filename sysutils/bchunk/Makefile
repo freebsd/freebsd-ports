@@ -3,14 +3,14 @@
 # Date created:                	9 Jan 1999
 # Whom:                        	bsdx
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1999/01/13 23:08:52 billf Exp $
 #
 
 DISTNAME=	bchunk-1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hes.iki.fi/bchunk/ \
 		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= utils/disk-management/
+MASTER_SITE_SUBDIR= utils/disk-management
 
 MAINTAINER=	ports@FreeBSD.ORG
 
