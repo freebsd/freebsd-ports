@@ -1751,6 +1751,7 @@ eclipse-quantum	ports/java/eclipse-quantum
 eclipse-sqlexplorer	ports/java/eclipse-sqlexplorer
 eclipse-sysdeo-tomcat	ports/java/eclipse-sysdeo-tomcat
 eclipse-uml	ports/java/eclipse-uml
+eclipse-v4all	ports/java/eclipse-v4all
 eclipse-vep	ports/java/eclipse-vep
 eclipse-vep-examples	ports/java/eclipse-vep-examples
 eclipseme	ports/java/eclipseme
