@@ -7,8 +7,9 @@
 
 PORTNAME=	plone
 PORTVERSION=	1.0.r1
-CATEGORIES=	www
-MASTER_SITES= 	http://unc.dl.sourceforge.net/sourceforge/plone/
+CATEGORIES=	www zope
+MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	plone
 DISTNAME=	CMFPlone1.0RC1
 DIST_SUBDIR=	zope
 
