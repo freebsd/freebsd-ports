@@ -8952,6 +8952,7 @@ rtcw-paks	ports/games/rtcw-paks
 rtf2latex	ports/print/rtf2latex
 rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader
+rtfx		ports/textproc/rtfx
 rtg		ports/net/rtg
 rtplib		ports/devel/rtplib
 rtpmon		ports/mbone/rtpmon
