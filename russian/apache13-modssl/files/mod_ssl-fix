@@ -1,0 +1,13 @@
+--- pkg.sslsup/sslsup.patch.orig	Thu Oct  9 15:08:28 2003
++++ pkg.sslsup/sslsup.patch	Thu Oct  9 15:08:56 2003
+@@ -480,6 +480,10 @@
+  {
+      /* variable name starts with */
+      "HTTP_",
++#ifdef RUSSIAN_APACHE
++    "CHARSET",
++    "CHARSET_",
++#endif
+ +#ifdef MOD_SSL
+ +    "HTTPS_",
+ +    "SSL_",
