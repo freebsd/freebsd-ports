@@ -3,12 +3,12 @@
 # Date created:		22 August 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.7 1995/04/15 05:41:58 asami Exp $
+# $Id: Makefile,v 1.8 1995/05/03 02:22:26 asami Exp $
 #
 
 DISTNAME=	tcpblast
 PKGNAME=	tcpblast-1.0
-CATEGORIES=	networking
+CATEGORIES=	networking benchmarking
 
 NO_EXTRACT=	yes
 NO_WRKDIR=	yes
