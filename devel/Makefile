@@ -566,7 +566,6 @@
     SUBDIR += ruby-locale
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
-    SUBDIR += ruby-mo
     SUBDIR += ruby-mock
     SUBDIR += ruby-optparse
     SUBDIR += ruby-pcsc-lite
