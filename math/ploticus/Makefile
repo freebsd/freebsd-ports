@@ -13,8 +13,8 @@ CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	plsrc${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Generates plots and graphs from data
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	Generates plots and graphs from data
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -38,7 +38,7 @@ MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}" \
 		GDFREETYPE="-DGDFREETYPE" PREFABS_DIR="${DATADIR}"
 ALL_TARGET=	plgd18
 
-.ifdef WITHOUT_X11
+.ifdef (WITHOUT_X11)
 MAKE_ARGS+=	NOXFLAG=-DNOX11 XLIBS= XOBJ=
 PKGNAMESUFFIX=	-nox11
 .else
