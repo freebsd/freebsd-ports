@@ -1,24 +1,24 @@
-*** configure.orig	Sat Jun 12 08:17:32 1999
---- configure	Sat Jun 12 08:18:28 1999
+*** configure.orig	Tue Sep 14 00:22:05 1999
+--- configure	Sat Sep 18 16:02:24 1999
 ***************
-*** 4906,4912 ****
+*** 4970,4976 ****
     echo $ac_n "(cached) $ac_c" 1>&6
   else
     ac_save_LIBS="$LIBS"
 ! LIBS="-lopie  $LIBS"
   cat > conftest.$ac_ext <<EOF
-  #line 4912 "configure"
+  #line 4976 "configure"
   #include "confdefs.h"
---- 4906,4912 ----
+--- 4970,4976 ----
     echo $ac_n "(cached) $ac_c" 1>&6
   else
     ac_save_LIBS="$LIBS"
 ! LIBS="-lopie -lmd $LIBS"
   cat > conftest.$ac_ext <<EOF
-  #line 4912 "configure"
+  #line 4976 "configure"
   #include "confdefs.h"
 ***************
-*** 4940,4946 ****
+*** 5004,5010 ****
   #define $ac_tr_lib 1
   EOF
   
@@ -26,7 +26,7 @@
   
   else
     echo "$ac_t""no" 1>&6
---- 4940,4946 ----
+--- 5004,5010 ----
   #define $ac_tr_lib 1
   EOF
   
