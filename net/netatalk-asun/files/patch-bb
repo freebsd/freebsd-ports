@@ -1,5 +1,5 @@
 --- man/man8/atalkd.8.orig	Thu Feb  4 08:28:28 1999
-+++ man/man8/atalkd.8	Mon Mar 22 22:48:22 1999
++++ man/man8/atalkd.8	Mon May 10 03:03:42 1999
 @@ -19,7 +19,7 @@
  .BR ping (8)).
  .B atalkd
@@ -9,7 +9,62 @@
  It first reads from its configuration file,
  .BR :ETCDIR:/atalkd.conf .
  If there is no configuration file,
-@@ -121,3 +121,6 @@
+@@ -35,6 +35,8 @@
+ [
+ .B -seed
+ ] [
++.B -router
++] [
+ .B -phase
+ .I number
+ ] [
+@@ -53,6 +55,8 @@
+ .I interface
+ are optional.  The loopback interface is configured automatically.  If
+ .B -seed
++or
++.B -router
+ is specified, all other fields must be present.  Also,
+ .B atalkd
+ will exit during bootstrapping, if a router disagrees with its seed
+@@ -97,10 +101,17 @@
+ .IR net-range ,
+ i.e. if you have three machines on an Ethernet, don't chose a
+ .I net-range
+-of 1000-2000.  Each
++of 1000-2000.  Each network number can accomodate 253 devices. A
+ .I net-range
+ may have an arbitrary list of zones associated with it.
+-.SH EXAMPLE
++.B -router
++can be used instead of
++.B -seed
++to define zones even if there is no AppleTalk router on the
++network, and
++.B atalkd
++only serves a single interface.
++.SH EXAMPLES
+ Below is an example configuration file for a sun4/40.  The machine has
+ two interfaces, ``le0'' and ``le1''.  The ``le0'' interface is
+ configured automatically from other routers on the network.  The
+@@ -115,9 +126,23 @@
+ .sp
+ .B atalkd
+ automatically acts as a router if there is more than one interface.
++.LP
++To configure
++.B atalkd
++to provide zones even when there is no router on the network, and it is
++serving only a single interface, use
++.sp
++.RS
++.nf
++le0 -router -net 1-1 -zone "My Zone" -zone "My other Zone"
++.fi
++.RE
+ .SH FILES
+ .TP 30
+ .B :ETCDIR:/atalkd.conf
  configuration file
  .SH BUGS
  On some systems, atalkd can not be restarted.
