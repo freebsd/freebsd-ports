@@ -7,7 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		nspr4.1:${PORTSDIR}/devel/nspr
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
@@ -30,6 +29,7 @@ CONFIGURE_ENV=	WITH_GTK2=yes
 USE_X_PREFIX=	yes
 
 ALL_TARGET=	default
+USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libidl
 USE_PERL5=	yes
@@ -108,17 +108,19 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
+	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
+		${WRKSRC}/modules/libpref/src/init/all.js \
+		${WRKSRC}/browser/app/profile/all.js \
+		${WRKSRC}/calendar/sunbird/app/profile/all.js
 
 pre-install:
 	${RM} -fr ${LOCAL_PREFIX}
 	-${MKDIR} ${PLUGINSDIR}
 
-install-extra:
+post-install:
 .for i in ${EXTRA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
 .endfor # i in ${EXTRA_SCRIPTS}
-
-link-bins:
 	${RM} -f ${PREFIX}/bin/firebird
 	${LN} -s ${LOCAL_PREFIX}/bin/MozillaFirebird \
 		${PREFIX}/bin/firebird
@@ -128,14 +130,10 @@ link-bins:
 	${RM} -f ${PREFIX}/bin/firebird-config
 	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/firebird-config
-
-link-java:
 	-${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
 	-${LN} -sf \
-	  ${JREDIR}/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
-	  ${PLUGINSDIR}/libjavaplugin_oji.so
-
-cleanup-install:
+		${JREDIR}/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
+		${PLUGINSDIR}/libjavaplugin_oji.so
 	${RM} -fr ${LOCAL_PREFIX}/share/idl
 	${RM} -fr ${LOCAL_PREFIX}/include
 
@@ -159,16 +157,4 @@ cons-plist:
 	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
 		| ${SED} -e "s:^:@dirrm :" >> ${PLIST}
 
-.PHONY: install-extra link-bins link-java cleanup-install cons-plist
-
 .include <bsd.port.post.mk>
-
-# <alane>
-# Under normal circumstances, you should not put anything after
-# the above line. However, this is the only way I can state the
-# dependency without trashing the actual code of the generate-plist
-# target. This is a limitation of the make(1) program itself.
-# </alane>
-generate-plist: install-extra link-bins link-java cleanup-install
-
-#EOF

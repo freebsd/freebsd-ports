@@ -1,21 +1,13 @@
 ======================================================================
-Mozilla Firebird will work with either of the port versions of perl, 
-provided you do "use.perl port". It will NOT work with the -STABLE 
-base-system versions of Perl.
-
-If you use the lang/perl5.8 port, please remove the File::Spec package with
-the command "pkg_deinstall -f p5-File-Spec". If you are updating to the 5.8
-version of perl, please do this *first*.
-
 Any bug reports should be addressed to the maintainers at:
 	gnome@FreeBSD.org
 You may also Cc: freebsd-ports@freebsd.org. Please do not send
-bug reports to any other addresses. 
+bug reports to any other addresses.
 
 Please include the following information with any bug report:
 * Output from 'uname -a'.
 * Date/time stamp from www/mozilla-firebird/Makefile.
-* Perl version used (/usr/bin/perl --version or 
+* Perl version used (/usr/bin/perl --version or
 	/usr/local/bin/perl --version for -current).
 * Where/when did the problem occur: configuring, building, or
 	running mozilla-firebird?
@@ -24,50 +16,4 @@ Please include the following information with any bug report:
 Thank you for your help in testing and reporting bugs, and we hope you
 enjoy using Firebird.
 The Maintainers (gnome@)
-
-Additional notes:
-
-0.6:
-Update to 0.6 version, rename from phoenix to Mozilla Firebird, all
-internal names updated accordingly.
-
-0.4_8:
-Add patch to fix network ops on -CURRENT.
-
-0.4_9:
-Install link to java plugin.
-Build plist after install using find/sed.
-
-0.4_10:
-Backdown after failed 0.5 from nonofficial tree. Makefile modifications
-to generate plist done right this time.
-
-0.5_1
-Official 0.5 release port.
-
-****WARNING! DANGER, WILL ROBINSON!**** You must delete your old .phoenix
-dir! Save your bookmarks.html somewhere and then let it create a new
-directory. You can import your old bookmark file. Bug reports from people
-who did not do this are going to be taken at extremely low priority.
-
-Also, please see the nifty new phoenix themes and extensions at the new
-website http://texturizer.net/phoenix/index.html.
-
-Finally make portlint STFU about the Makefile.
-
-The distfile is on my distfiles dir this time, so I have mirrored it on my
-html page until the distfiles dir gets mirrored in 24-48 hours.
-
-I had to disable Xinerama since it was breaking the build.
-
-0.5_4
-Patch to hopefully fix crash when formatting time string at end of download.
-Thanks to Greg Rumple and Joe Marcus Clarke for the fantastic work debugging
-this one.
-
-Added /usr/X11R6/bin/firebird.rb. If you have ruby installed, you can run
-this instead of 'firebird' and it takes care of the 'profile in use' errors
-by automatically using an existing phoenix if one is running. I didn't put
-a dependency because I don't want to require ruby + ruby-shim to run the
-browser.
 ======================================================================
