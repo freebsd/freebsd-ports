@@ -1027,6 +1027,7 @@
     SUBDIR += pear-HTML_BBCodeParser
     SUBDIR += pear-HTML_Common
     SUBDIR += pear-HTML_QuickForm
+    SUBDIR += pear-HTML_Select
     SUBDIR += pear-HTML_Select_Common
     SUBDIR += pear-HTML_Table
     SUBDIR += pear-HTML_Template_IT
