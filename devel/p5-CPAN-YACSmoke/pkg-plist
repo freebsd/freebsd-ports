@@ -1,0 +1,9 @@
+%%SITE_PERL%%/CPAN/YACSmoke.pm
+%%SITE_PERL%%/CPAN/YACSmoke/Plugin/Recent.pm
+%%SITE_PERL%%/CPAN/YACSmoke/Plugin/SmokeDB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/YACSmoke/.packlist
+@dirrm %%SITE_PERL%%/CPAN/YACSmoke/Plugin
+@dirrm %%SITE_PERL%%/CPAN/YACSmoke
+@unexec rmdir %D/%%SITE_PERL%%/CPAN 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/YACSmoke
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN 2>/dev/null || true
