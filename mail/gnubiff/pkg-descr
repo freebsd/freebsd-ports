@@ -1,0 +1,13 @@
+gnubiff is a mail notification program that checks for mail, displays
+headers when new mail has arrived and allow to read first lines of
+new mails.
+
+It relies on the GNOME and GTK libraries but can be compiled and
+used with or without GNOME support. Supported protocols are pop3,
+apop, imap4, mh, qmail and mailfile.
+
+Furthermore, gnubiff is fully configurable with a lot of options
+like polltime, poptime, sounds, mail reader, mailbox names, etc.
+and can also filter spam.
+
+WWW: http://gnubiff.sourceforge.net/

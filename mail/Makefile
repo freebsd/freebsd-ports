@@ -101,6 +101,7 @@
     SUBDIR += gmime
     SUBDIR += gmime2
     SUBDIR += gnarwl
+    SUBDIR += gnubiff
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
