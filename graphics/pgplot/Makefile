@@ -3,7 +3,7 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.7 1998/11/11 05:37:21 asami Exp $
+# $Id: Makefile,v 1.8 1998/12/05 02:25:45 jmz Exp $
 #
 
 DISTNAME=       pgplot5.2
@@ -13,6 +13,7 @@ MASTER_SITES=   ftp://astro.caltech.edu/pub/pgplot/
 
 MAINTAINER=	jmz@FreeBSD.org
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/pgplot
 
 .include <bsd.port.pre.mk>

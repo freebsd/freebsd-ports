@@ -3,7 +3,7 @@
 # Date created:		23rd June, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.2 1997/06/30 14:35:04 max Exp $
+# $Id: Makefile,v 1.3 1998/09/28 02:12:05 steve Exp $
 #
 
 DISTNAME=	oonsoo-1.1
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.z
 MAINTAINER=	sutton@aardvark.apana.org.au
 
 BROKEN_ELF=	build
+
+USE_XLIB=	yes
 
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
