@@ -17,7 +17,8 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		glib-2.0.0:${PORTSDIR}/devel/glib20 \
-		xslt.1:${PORTSDIR}/textproc/libxslt
+		xslt.1:${PORTSDIR}/textproc/libxslt \
+		popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
