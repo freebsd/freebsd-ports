@@ -1,5 +1,5 @@
 --- set_soenv.in.orig	Thu Feb 27 14:12:36 2003
-+++ set_soenv.in	Thu Mar 27 21:49:39 2003
++++ set_soenv.in	Fri Mar 28 07:16:24 2003
 @@ -52,7 +52,7 @@
  #-------------------------------------------------
  #
@@ -28,7 +28,16 @@
  $WRAPCMD	= "";				# Wrapper (only for winnt)
  
  #
-@@ -1265,7 +1266,13 @@
+@@ -982,6 +983,8 @@
+ {  $SOLAREXTRALIB     = $L.$LIB.
+                         $L.$USR.$LIB;
+ }
++if ($platform eq "$FreeBSD")
++{  $SOLAREXTRALIB     = $L.$JAVA_HOME/jre/lib/i386;
+ 
+ # Compiler include search directory paths.
+ if (($platform eq "$Solaris") || ($platform eq "$Linux") || ($platform eq "$FreeBSD") ||
+@@ -1265,7 +1268,13 @@
  {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
  }
  elsif ($platform eq "$FreeBSD")
