@@ -37,6 +37,12 @@ MAKE_ARGS=	GTK1=yes
 
 MAN1=		scite.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "SciTE has the following tunable option(s):"
@@ -61,4 +67,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
