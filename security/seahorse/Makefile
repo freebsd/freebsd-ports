@@ -7,12 +7,13 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	asa@agava.com
 COMMENT=	A front end for GnuPG
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
