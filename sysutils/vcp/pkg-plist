@@ -1,0 +1,3 @@
+bin/vcp
+%%PORTDOCS%%share/doc/vcp/README
+%%PORTDOCS%%@dirrm /share/doc/vcp
