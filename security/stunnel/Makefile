@@ -19,6 +19,8 @@ MAINTAINER=	martti.kuparinen@ericsson.com
 USE_OPENSSL=	RSA
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var/run
+
 MAN8=		stunnel.8
 
 cert:
