@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sed
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.7
 PKGNAMEPREFIX=	g
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -35,6 +35,9 @@ PATCH_SUBDIRS=	. doc lib sed
 SAMP_FILES=	dc.sed
 SAMP_DIR=	${PREFIX}/share/examples/${PKGBASE}
 
+DOC_FILES=	AUTHORS BUGS COPYING COPYING.DOC NEWS README THANKS
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+
 # Post-configure
 #
 
@@ -48,13 +51,21 @@ patch-makefiles:
 # Post-install
 #
 
-post-install: install-sample-files
+post-install: install-sample-files install-doc-files
 
 install-sample-files:
 	@${MKDIR} ${SAMP_DIR}
 .for file in ${SAMP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/testsuite/${file} ${SAMP_DIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/testsuite/${file} ${SAMP_DIR}
 .endfor
+
+install-doc-files:
+.if !defined(NOPORTSDOC)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 # Maintainer only
 #
