@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://rubyforge.org/download.php/242/
+MASTER_SITES=	http://rubyforge.org/download.php/352/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -22,6 +22,7 @@ COMMENT=	A Ruby binding for ImageMagick
 
 LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 
+USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
