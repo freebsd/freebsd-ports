@@ -1,0 +1,14 @@
+--- programs/xfs/Imakefile.orig	Tue Jan 18 22:28:55 2005
++++ programs/xfs/Imakefile	Tue Jan 18 22:30:24 2005
+@@ -37,7 +37,11 @@
+ FSLIBDIR = $(LIBDIR)/fs
+ FSERRORS = $(LOGDIRECTORY)/xfs.log
+ DEFAULTFONTPATH = DefaultFSFontPath
++#if defined(BuildFontCacheLib) && BuildFontCacheLib
++SITE_CONFIG = -DDEFAULTFONTPATH=$(DEFAULTFONTPATH) -DFSERRORS=$(FSERRORS) -DFONTCACHE
++#else
+ SITE_CONFIG = -DDEFAULTFONTPATH=$(DEFAULTFONTPATH) -DFSERRORS=$(FSERRORS)
++#endif
+ 
+ $(OSLIB):	$(OSDIR)
+ 

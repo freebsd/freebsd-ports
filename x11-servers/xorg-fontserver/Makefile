@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-fontserver
 PORTVERSION=	6.8.1
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/tars
@@ -28,7 +29,13 @@ XBUILD_DIRS=	programs/xfs
 XINCLUDE_DIRS=	lib/xtrans
 XMAN_DIRS=	programs/xfs
 
+post-build:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+		${FILESDIR}/xfs.sh >${WRKDIR}/xfs.sh
+
 post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/xfs.sh ${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKSRC}/programs/xfs/config \
 		${PREFIX}/lib/X11/fs/config.default
 
