@@ -1,2 +1,2 @@
-lib/plugins/sqldrivers/libqsqlibase.so
+lib/plugins/sqldrivers/libqsql%%DB%%.so
 @dirrm lib/plugins/sqldrivers
