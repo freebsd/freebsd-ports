@@ -43,6 +43,7 @@ share/doc/HTML/ru/common/artistic-license.html
 share/doc/HTML/ru/common/bottom1.png
 share/doc/HTML/ru/common/bottom2.png
 share/doc/HTML/ru/common/bsd-license.html
+share/doc/HTML/ru/common/common
 share/doc/HTML/ru/common/docheadergears.png
 share/doc/HTML/ru/common/doctop1.png
 share/doc/HTML/ru/common/doctop1a.png
@@ -418,7 +419,9 @@ share/locale/ru/LC_MESSAGES/kabcformat_binary.mo
 share/locale/ru/LC_MESSAGES/kaboodle.mo
 share/locale/ru/LC_MESSAGES/kaccess.mo
 share/locale/ru/LC_MESSAGES/kaddressbook.mo
+share/locale/ru/LC_MESSAGES/kalarm.mo
 share/locale/ru/LC_MESSAGES/kalarmdgui.mo
+share/locale/ru/LC_MESSAGES/kalzium.mo
 share/locale/ru/LC_MESSAGES/kandy.mo
 share/locale/ru/LC_MESSAGES/kaphorism.mo
 share/locale/ru/LC_MESSAGES/kappfinder.mo
@@ -621,6 +624,7 @@ share/locale/ru/LC_MESSAGES/kmoon.mo
 share/locale/ru/LC_MESSAGES/kmrml.mo
 share/locale/ru/LC_MESSAGES/knewsticker.mo
 share/locale/ru/LC_MESSAGES/knode.mo
+share/locale/ru/LC_MESSAGES/knorskverbs.mo
 share/locale/ru/LC_MESSAGES/knotes.mo
 share/locale/ru/LC_MESSAGES/knotify.mo
 share/locale/ru/LC_MESSAGES/kodo.mo
