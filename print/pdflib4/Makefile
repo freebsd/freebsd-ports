@@ -8,7 +8,10 @@
 PORTNAME=	pdflib
 PORTVERSION=	4.0.1
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflib.com/pdflib/download/
+MASTER_SITES=	http://www.pdflib.com/pdflib/download/ \
+		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
+		http://grendel.firewall.com/caudium-pkg/ \
+		http://ftp.oav.net/pkg_freebsd/distfiles/
 
 MAINTAINER=	sysadmin@alexdupre.com
 
