@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	filtermail
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://home.in.tum.de/baueran/%SUBDIR%/
@@ -41,12 +41,12 @@ MAN5=		filtermailex.5 filtermailrc.5
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-extract:
