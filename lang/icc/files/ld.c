@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2002 Marius Strobl
+ * Copyright (c) 2002-2003 Marius Strobl
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -185,6 +185,11 @@ main(int argc, char *argv[], char *envp[])
 			continue;
 		}
 
+	 	if (ARGCMP("-MT")) {
+			threaded++;
+			continue;
+	    	}
+
 	 	if (ARGCMP("-PIC")) {
 			pic++;
 			continue;
@@ -212,19 +217,8 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
-		 * ICC links the thread safe libircmt instead of libirc when
-		 * told to generate threaded code by any of the compiler flags
-		 * "-mt", "-openmp" or "-parallel". We use this as an indicator
-		 * to link against libc_r.
-		 */
-		if (ARGCMP("-lircmt")) {
-			threaded++;
-			continue;
-		}
-
-		/*
-		 * Link against libc_p when "-pg" was given, "/usr/lib/gcrt1.o"
-		 * indicates this.
+		 * Link against libc_p when "-qp" or "-p" were given,
+		 * "/usr/lib/gcrt1.o" indicates this.
 		 */
 		if (ARGCMP("/usr/lib/gcrt1.o")) {
 			gprof++;
@@ -266,7 +260,7 @@ main(int argc, char *argv[], char *envp[])
 
 	for (i = 0; i < argc; i++) {
 	 	if (ARGCMP("-CPLUSPLUS") || ARGCMP("-BOOTSTRAPSTLPORT") ||
-		    ARGCMP("-PIC"))
+		    ARGCMP("-MT") || ARGCMP("-PIC"))
 			continue;
 
 		/* prepend "-melf_i386" to the commandline */
@@ -279,15 +273,6 @@ main(int argc, char *argv[], char *envp[])
 #endif
 			continue;
 		}
-
-		/*
-		 * "-u ___pseudo_link" triggers linking of additional objects
-		 * from libcxa which seem to bloat the binaries, i.e. they
-		 * perfectly work without it. Intel Support promised to look
-		 * up what this servers for...
-		 */
-	 	if (ARGCMP("-u") || ARGCMP("___pseudo_link"))
-			continue;
 
 		/* Don't add obsolete flag "-Qy". */
 		if (ARGCMP("-Qy"))
@@ -358,16 +343,6 @@ main(int argc, char *argv[], char *envp[])
 			free(temp);
 			continue;
 		}
-
-		/*
-		 * Link and map files for C++ exception handling.
-		 */
-		if (!cpp &&
-		    (ARGCMP("--version-script") ||
-		    ARGCMPB(prefix, "/intel/compiler60/ia32/lib/icrt.link") ||
-		    ARGCMPB(prefix,
-			"/intel/compiler60/ia32/lib/icrt.internal.map")))
-			continue;
 
 		/*
 		 * Force libcxa and libunwind to static linkage, since the
