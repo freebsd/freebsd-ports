@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0.rc1
+PORTVERSION=	1.0.rc2
 #PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	http://prdownloads.sourceforge.net/jlpmoz/ \
-		http://www.ash.ne.jp/~mal/mozilla/ \
+MASTER_SITES=	http://www.ash.ne.jp/~mal/mozilla/ \
 		http://dev.jp/ \
 		http://www.mozilla.gr.jp/jlp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}1.0rc1-jajppack-v0.1
+DISTNAME=	${PORTNAME}1.0rc2-jajppack-v1.0
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
