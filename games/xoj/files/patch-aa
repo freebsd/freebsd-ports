@@ -1,0 +1,28 @@
+--- xoj.c.orig	Tue Jul 26 09:10:19 1994
++++ xoj.c	Sun Dec 19 22:32:12 1999
+@@ -106,7 +106,9 @@
+ void UpdateCop();
+ void DrawCop();
+ void EraseCop();
++#ifndef __FreeBSD__
+ void usleep();
++#endif
+ Pixel AllocNamedColor();
+ 
+ void
+@@ -584,6 +586,7 @@
+ /*
+  * sleep for a number of micro-seconds
+  */
++#ifndef __FreeBSD__
+ void usleep(usec) 
+ unsigned long usec;
+ {
+@@ -596,6 +599,7 @@
+     select(0, (void *)0, (void *)0, (void *)0, &t);
+ #endif
+ }
++#endif
+ 
+ 
+ 
