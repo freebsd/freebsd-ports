@@ -1,0 +1,14 @@
+--- tfio.c.old	Fri Mar 22 17:40:03 1996
++++ src/tfio.c	Fri Mar 22 17:27:44 1996
+@@ -19,9 +19,9 @@
+ #include "config.h"
+ #include <errno.h>
+ #include <ctype.h>
+-#ifdef SYS_SELECT_H
++/*#ifdef SYS_SELECT_H
+ # include <sys/select.h>
+-#endif
++#endif*/
+ #include <sys/types.h>
+ #include <sys/time.h>   /* for struct timeval, in select() */
+ #define SYS_TIME_H      /* to prevent <time.h> in "port.h" */
