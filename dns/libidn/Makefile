@@ -18,7 +18,6 @@ COMMENT=	Internationalized Domain Names command line tool
 BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 
 USE_GETOPT_LONG=	yes
-USE_GETTEXT=	yes
 USE_GNOME=		gnomehack
 USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
@@ -38,6 +37,14 @@ PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
 PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
 .else
 PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
