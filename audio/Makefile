@@ -83,6 +83,7 @@
     SUBDIR += kmp3
     SUBDIR += kmpg
     SUBDIR += knapster
+    SUBDIR += koog
     SUBDIR += krio
     SUBDIR += lame
     SUBDIR += libao
