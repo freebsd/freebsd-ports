@@ -23,6 +23,7 @@ COMMENT=		An open source, completely automatic on-line backup system for UNIX
 
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	openssl:${OPENSSLBASE}
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 USE_PERL5=		yes
@@ -82,6 +83,10 @@ post-patch:
 		${WRKSRC}/bbstored.sh
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' <${FILESDIR}/bbackupd.sh >\
 		${WRKSRC}/bbackupd.sh
+	@${FIND} ${WRKSRC} -name "*.pl" -exec \
+		${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' {} \;
+	@${REINPLACE_CMD} -e 's, perl , ${PERL} ,' \
+		${WRKSRC}/infrastructure/makebuildenv.pl
 .if defined(CLIENT_ONLY) || !defined(SERVER_ONLY)
 	@${CAT} ${FILESDIR}/pkg-message.client >> ${PKGMESSAGE}
 .endif
