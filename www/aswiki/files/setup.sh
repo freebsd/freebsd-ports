@@ -33,7 +33,7 @@ ask_copy()
 		ans=YES
 	fi
 	if [ $ans = "YES" ]; then
-		cp __DATADIR__/$file .
+		install -m 644 __DATADIR__/$file .
 	else
 		echo "$file is untouched; you may update with __DATADIR__/$file."
 	fi
@@ -48,6 +48,7 @@ if ask_noyes "Are you ready?"; then
 	echo -n "Copying files..."
 	ask_copy aswiki.conf
 	ask_copy aswiki.cgi
+	ask_copy default.css
 	echo "done."
 else
 	echo "Stopped."
