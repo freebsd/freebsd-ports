@@ -1,4 +1,5 @@
 bin/%%PYTHON_VERSION%%
+bin/pydoc
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h
 include/%%PYTHON_VERSION%%/bitset.h
