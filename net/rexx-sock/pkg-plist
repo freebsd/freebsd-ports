@@ -1,0 +1,7 @@
+bin/rxsock
+lib/librxsock.a
+lib/librxsock.so
+%%DATADIR%%/davesim.txt
+%%DATADIR%%/tcps.txt
+%%DATADIR%%/udps.txt
+@dirrm %%DATADIR%%

@@ -589,6 +589,7 @@
     SUBDIR += redir
     SUBDIR += relay
     SUBDIR += remarp
+    SUBDIR += rexx-sock
     SUBDIR += rfbproxy
     SUBDIR += rinetd
     SUBDIR += ripetools
