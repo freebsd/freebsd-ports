@@ -1,5 +1,7 @@
-This is release 2.1.1 of the GNU plotutils (plotting utilities) package,
-including release 1.1 of GNU libplot: a function library for
-two-dimensional device-independent vector graphics.  
+The GNU plotutils package contains plotting software for both
+programmers and technical users. Its centerpiece is libplot, a powerful
+C/C++ function library for exporting 2-D vector graphics in many file
+formats, both vector and raster. It can also do vector graphics
+animations.
 
 WWW: http://www.gnu.org/software/plotutils/plotutils.html
