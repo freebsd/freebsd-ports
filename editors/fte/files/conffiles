@@ -1,0 +1,64 @@
+CONFFILES= 	\
+		ab_c.fte \
+		ab_c_os2.fte \
+		color.fte \
+		global.fte \
+		k_brief.fte \
+		m_ada.fte \
+		m_asm.fte \
+		m_asm370.fte \
+		m_bin.fte \
+		m_c.fte \
+		m_clario.fte \
+		m_diff.fte \
+		m_ebnf.fte \
+		m_fort90.fte \
+		m_fte.fte \
+		m_html.fte \
+		m_ipf.fte \
+		m_java.fte \
+		m_ldsgml.fte \
+		m_make.fte \
+		m_msg.fte \
+		m_mvsasm.fte \
+		m_pascal.fte \
+		m_perl.fte \
+		m_plain.fte \
+		m_resdlg.fte \
+		m_rexx.fte \
+		m_sh.fte \
+		m_tcl.fte \
+		m_tex.fte \
+		m_texi.fte \
+		m_text.fte \
+		m_vi.fte \
+		m_xp.fte \
+		main.fte \
+		pal_blk.fte \
+		pal_blue.fte \
+		pal_wht.fte \
+		ui_brief.fte \
+		ui_fte.fte \
+		ui_fte2.fte \
+		ui_k_fte.fte \
+		ui_k_fte2.fte \
+		ui_k_ne.fte \
+		ui_k_ws.fte \
+		ui_m_fte.fte \
+		ui_m_fte2.fte \
+		ui_m_ne.fte \
+		ui_m_ws.fte \
+		ui_mew.fte \
+		ui_ne.fte \
+		ui_vi.fte \
+		ui_ws.fte \
+		m_siod.fte \
+		uicstyle.fte
+
+KBDFILES=	\
+		k_c.fte \
+		k_fte.fte \
+		k_html.fte \
+		k_java.fte \
+		k_perl.fte \
+		k_rexx.fte

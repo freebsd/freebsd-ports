@@ -1,0 +1,11 @@
+A port of an extremely powerful FTE editor that was
+originally developed for OS/2 and ported by its author, 
+Marko Macek, to X11/UNIX.
+
+Among other features it supports syntax highlighting, 
+compiler invocation and error parsing and folds.
+
+WWW: http://fte.sourceforge.net/
+
+Alexander Gelfenbain
+mail@gelf.com

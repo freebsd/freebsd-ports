@@ -1,0 +1,58 @@
+--- src/con_x11.cpp.orig	Mon May  8 18:28:23 2000
++++ src/con_x11.cpp	Mon May  8 05:52:27 2000
+@@ -109,6 +109,7 @@
+     int r, g, b;
+ } dcolors[] =
+ {
++#if 0
+     {   0,   0,   0 },  //     black
+     {   0,   0, 128 },  // darkBlue
+     {   0, 128,   0 },  // darkGreen
+@@ -125,6 +126,24 @@
+     { 255,   0, 255 },  //     magenta
+     { 255, 255,   0 },  //     yellow
+     { 255, 255, 255 },  //     white
++#else
++    {   0,   0,   0 },  //     black
++    {   0,   0, 191 },  // darkBlue
++    {   0, 191,   0 },  // darkGreen
++    {   0, 191, 191 },  // darkCyan
++    { 238,   0,   0 },  // darkRed
++    { 205,   0, 205 },  // darkMagenta
++    { 165,  42,  42 },  // darkYellow
++    { 192, 192, 192 },  // paleGray
++    { 128, 128, 128 },  // darkGray
++    {   0,   0, 255 },  //     blue
++    {   0, 255,   0 },  //     green
++    {   0, 255, 255 },  //     cyan
++    { 255,   0,  64 },  //     red
++    { 255,   0, 255 },  //     magenta
++    { 255, 255,  64 },  //     yellow
++    { 255, 255, 255 },  //     white
++#endif
+ };
+ 
+ static void SetColor(int i) {
+--- src/o_directory.cpp.orig	Mon May  8 18:28:41 2000
++++ src/o_directory.cpp	Mon May  8 05:54:15 2000
+@@ -63,7 +63,7 @@
+                 " %04d/%02d/%02d %02d:%02d:%02d %8ld %.500s%c",
+ #endif
+                 Year, Mon, Day, Hour, Min, Sec,
+-                Files[Line]->Size(),
++                (long int) Files[Line]->Size(),
+                 Files[Line]->Name(),
+                 // (Files[Line]->Type() == fiDIRECTORY)? '\\' : ' ');
+                 (Files[Line]->Type() == fiDIRECTORY)? SLASH : ' ');
+--- src/sysdep.h.orig	Mon May  8 18:28:48 2000
++++ src/sysdep.h	Mon May  8 05:18:58 2000
+@@ -33,7 +33,8 @@
+     !defined(HPUX) && \
+     !defined(AIX) && \
+     !defined(IRIX) && \
+-    !defined(SUNOS)
++    !defined(SUNOS) && \
++    !defined(FREEBSD)
+ #    error Target not supported.
+ #endif
+ 

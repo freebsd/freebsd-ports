@@ -1,0 +1,63 @@
+--- src/fte-unix.mak	Sun Feb  1 12:29:36 1998
++++ src/fte-unix.mak.new	Thu Jun  8 21:59:24 2000
+@@ -5,17 +5,24 @@
+ 
+ #  vfte - for Linux console directly (with limitations, see con_linux.cpp)
+ 
+-#TARGETS = xfte
+-TARGETS = xfte vfte
++TARGETS = xfte
++#TARGETS = xfte vfte
+ 
+ PRIMARY = xfte
+ 
+ # choose your os here
+ 
++###
++#   FreeBSD
++X11BASE?=/usr/X11R6
++UOS	= -DFREEBSD
++XINCDIR = -I${X11BASE}/include
++XLIBDIR = -L${X11BASE}/lib
++
+ #######################################################################
+ # Linux
+-UOS      = -DLINUX
+-XLIBDIR  = -L/usr/X11R6/lib
++#UOS      = -DLINUX
++#XLIBDIR  = -L/usr/X11R6/lib
+ 
+ #######################################################################
+ # HP/UX
+@@ -51,8 +58,8 @@
+ MOC      = moc
+ 
+ # for GCC
+-CC       = g++
+-LD       = gcc
++CC       ?= g++
++LD       = ${CC}
+ COPTIONS = -xc++ -Wall
+ # for IRIX CC
+ #CC       = CC
+@@ -64,9 +71,9 @@
+ 
+ #OPTIMIZE = -g
+ #OPTIMIZE = -O -g
+-OPTIMIZE = -O -s
++#OPTIMIZE = -O -s
+ 
+-CCFLAGS  = $(OPTIMIZE) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR)
++CCFLAGS  = $(CFLAGS) $(OPTIMIZE) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR)
+ LDFLAGS  = $(OPTIMIZE) $(LIBDIR) $(XLIBDIR) $(QLIBDIR) $(MLIBDIR)
+ 
+ OEXT     = o
+@@ -77,7 +84,7 @@
+ 
+ XLIBS    = -lX11
+ QLIBS    = -lqt
+-VLIBS    = -lgpm -ltermcap
++#VLIBS    = -lgpm -ltermcap
+ MLIBS    = -lXm -lXt
+ 
+ .cpp.o:

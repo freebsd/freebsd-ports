@@ -1,0 +1,275 @@
+--- config/m_plain.fte-	Mon May  8 18:51:19 2000
++++ config/m_plain.fte	Mon May  8 05:32:25 2000
+@@ -47,10 +47,10 @@
+     MultiLineHilit      = 0;
+     WordChars           = 'A-Za-z0-9_';
+     Abbreviations       = 1;
+-    PersistentBlocks    = 1;         # 1 = persistent blocks, 0 = transient
+-    BackSpKillBlock     = 0;         # to delete block if marked
+-    DeleteKillBlock     = 0;         #  ""
+-    InsertKillBlock     = 0;         # inserting char kills selected block
++    PersistentBlocks    = 0;         # 1 = persistent blocks, 0 = transient
++    BackSpKillBlock     = 1;         # to delete block if marked
++    DeleteKillBlock     = 1;         #  ""
++    InsertKillBlock     = 1;         # inserting char kills selected block
+ }
+ 
+ # for viewing nnrrooffff output (do NOT use for editing).
+--- config/main.fte-	Mon May  8 18:51:27 2000
++++ config/main.fte	Mon May  8 05:50:09 2000
+@@ -13,7 +13,8 @@
+ # experimental
+ 
+ #%define(COLORS_WHITE_BG)
+-%define(COLORS_BLACK_BG)
++#%define(COLORS_BLACK_BG)
++%define(COLORS_BLUE_BG)
+ 
+ %if(OS_OS2)
+ %define(GUI_PM)
+@@ -59,6 +60,10 @@
+ include 'pal_wht.fte';
+ %endif
+ 
++%if(COLORS_BLUE_BG)
++include 'pal_blue.fte';
++%endif
++
+ object GLOBAL {
+ # fonts for GUI version
+ 
+@@ -87,8 +92,8 @@
+ #    WindowFont = "6x8";
+ #    WindowFont = "7x13";
+ #    WindowFont = "8x13";
+-    WindowFont = "9x15";
+-#    WindowFont = "10x20";
++#    WindowFont = "9x15";
++    WindowFont = "10x20";
+ %endif
+ }
+ 
+@@ -160,8 +165,8 @@
+ # ui*.fte -files define all keyboard bindings and menus.
+ # pick only one file.
+ %if(UI_FTE)
+-include 'ui_fte.fte'; # fte CUA style bindings
+-##include 'ui_fte2.fte'; # fte CUA style bindings with conditional cascade menus
++##include 'ui_fte.fte'; # fte CUA style bindings
++include 'ui_fte2.fte'; # fte CUA style bindings with conditional cascade menus
+ %endif
+ %if(UI_WS)
+ include 'ui_ws.fte';  # wordstar like
+@@ -184,6 +189,9 @@
+ include 'ab_c_os2.fte';
+ %endif
+ 
++
++
++
+ # some customizations
+ 
+ object GLOBAL {
+@@ -198,6 +206,15 @@
+ #eventmap C { key [S+G-Ins] { BlockPasteStream; BlockReIndent } }
+ 
+ eventmap PLAIN {
++
++    key [S+F4] { PopGlobalBookmark }
++    key [C+F4] { PopGlobalBookmark; PushGlobalBookmark }
++    key [F4] { PushGlobalBookmark }
++    key [C+Up] {WinPrev }
++    key [C+Down] {WinNext}
++    key [A+S+/] {BlockSelectWord}
++    key [C+W] {BlockSelectWord}
++
+     key [A+S+-] { # select block between {}()[]<>
+         BlockUnmark; BlockMarkStream; MatchBracket; BlockMarkStream;
+         SavePos; MoveBlockEnd;
+@@ -244,8 +261,8 @@
+         MoveLineStart; ?FindReplace /^(\s*)/ /\1\/\// "xnc"; MoveDown
+     }
+     key [G-Home] { MoveBeginOrNonWhite }
+-    key [C+G-Up] { PopGlobalBookmark }
+-    key [C+G-Down] { PushGlobalBookmark }
++#    key [C+G-Up] { PopGlobalBookmark }
++#    key [C+G-Down] { PushGlobalBookmark }
+ }
+ 
+ object GLOBAL {
+--- config/ui_k_fte2.fte-	Mon May  8 18:51:35 2000
++++ config/ui_k_fte2.fte	Mon May  8 05:41:05 2000
+@@ -160,8 +160,8 @@
+     key   [C+G-PgUp]    { MoveFileStart }
+     key     [G-PgDn]    { MovePageDown }
+     key   [C+G-PgDn]    { MoveFileEnd }
+-#    key   [A+G-Up]      { ScrollUp }
+-#    key   [A+G-Down]    { ScrollDown }
++    key   [A+Down]      { ScrollUp }
++    key   [A+Up]    	{ ScrollDown }
+ #    key   [A+G-Left]    { ScrollLeft }
+ #    key   [A+G-Right]   { ScrollRight }
+     
+@@ -188,7 +188,7 @@
+     key [A+G-C+Left]    { MovePrevTab }
+     key [A+G-C+Right]   { MoveNextTab }
+     key   [C+G-Ins]     { BlockCopy }
+-    key   [C+G-Del]     { BlockKill }
++#    key   [C+G-Del]     { BlockKill }
+     key   [S+G-Ins]     { BlockPasteStream }
+     key   [S+G-Del]     { BlockCut }
+     key   [A+G-Ins]     { BlockPasteColumn }
+@@ -207,6 +207,7 @@
+     key   [G-S+Enter]   { LineInsert }
+     key   [A+G-Enter]   { LineAdd }
+     key   [A+G-Del]     { KillWord }
++    key   [C+G-Del]     { KillWord }
+     key   [A+G-End]	{ KillToLineEnd }
+     key     [A+BackSp]  { Undo }
+     key   [A+S+BackSp]  { Redo }
+@@ -245,6 +246,7 @@
+     key     [C+G]       { FindRepeat }
+     key     [C+I]       { ListRoutines }
+     key     [C+J]       { LineJoin }
++    key     [C+K]       { KillToLineEnd }
+     key     [C+H]       { FindRepeatReverse }
+     key     [C+M]       { DirOpen }
+     key     [C+Q]       { InsertChar }
+--- /dev/null	Mon May  8 18:50:40 2000
++++ config/pal_blue.fte	Mon May  8 05:41:33 2000
+@@ -0,0 +1,135 @@
++# color palette (blue background)
++
++# the color palette is the definition of the symbolic colors
++# that are used everywhere else in the configuration files
++
++# syntax of the color specification is:
++#
++#   fore back
++# or 
++#   symbolic_fore:symbolic_back
++# or
++#   symbolic
++
++color_palette {
++    # map system colors to symbolic
++    
++    { 'black',                        '0 0' },
++    { 'darkBlue',                     '1 1' },
++    { 'darkGreen',                    '2 2' },
++    { 'darkCyan',                     '3 3' },
++    { 'darkRed',                      '4 4' },
++    { 'darkMagenta',                  '5 5' },
++    { 'brown',                        '6 6' },
++    { 'gray',                         '7 7' },
++    { 'darkGray',                     '8 8' },
++    { 'blue',                         '9 9' },
++    { 'green',                        'A A' },
++    { 'cyan',                         'B B' },
++    { 'red',                          'C C' },
++    { 'magenta',                      'D D' },
++    { 'yellow',                       'E E' },
++    { 'white',                        'F F' },
++        
++    { 'ScrollBar_Arrows',             'black:gray' },
++    { 'ScrollBar_Background',         'gray:black' },
++    { 'ScrollBar_Slider',             'black:gray' },
++
++    { 'Status_Normal',                'black:darkCyan' },
++    { 'Status_Active',                'black:gray' },
++
++    { 'Message_Normal',               'cyan:darkBlue' },
++    { 'Message_Error',                'white:darkBlue' },
++    { 'Message_Bold',                 'white:darkRed' },
++
++    { 'EntryField_Field',             'cyan:darkBlue' },
++    { 'EntryField_Prompt',            'white:darkBlue' },
++    { 'EntryField_Selection',         'black:darkGreen' },
++
++    { 'List_Status',                  'black:gray' },
++    { 'List_Normal',                  'yellow:darkBlue' },
++    { 'List_Selected',                'black:gray' },
++
++    { 'ASCII_Chars',                  'gray:black' },
++
++    { 'Menu_Background',              'black:gray' },
++    { 'Menu_ActiveItem',              'white:darkBlue' },
++    { 'Menu_ActiveChar',              'red:darkBlue' },
++    { 'Menu_NormalItem',              'black:gray' },
++    { 'Menu_NormalChar',              'red:gray' },
++
++    { "Choice_Title",                 'white:darkBlue' },
++    { "Choice_Param",                 'cyan:darkBlue' },
++    { "Choice_Background",            'gray:darkBlue' },
++    { "Choice_ActiveItem",            'black:darkGreen' },
++    { "Choice_ActiveChar",            'white:darkGreen' },
++    { "Choice_NormalItem",            'white:darkBlue' },
++    { "Choice_NormalChar",            'yellow:darkBlue' },
++
++    { "bg",                           'darkBlue:darkBlue' }, # background
++    { "fg",                           'yellow:yellow' }, # foreground
++    
++    { 'Editor_Selected',              'black:gray' },
++    { 'Editor_Markers',               'darkCyan:bg' },
++    { 'Editor_FoundText',             'white:darkRed' },
++    { 'Editor_Folds',                 'green:bg' },
++    { 'Editor_HilitWord',             'red:bg' },
++
++    { 'Editor_Default',               'fg:bg' },
++    { 'Editor_Bold',                  'cyan:bg' },
++    { 'Editor_Keywords',              'white:bg' },
++    { 'Editor_Keywords2',             'cyan:bg' },
++    { 'Editor_Keywords3',             'green:bg' },
++    { 'Editor_Keywords4',             'yellow:bg' },
++    { 'Editor_Keywords5',             'blue:bg' },
++
++    { 'Msg_Header',                   'darkCyan:bg' },
++    { 'Msg_Quotes',                   'green:bg' },
++    { 'Msg_Tag',                      'white:bg' },
++    { 'Msg_Signature',                'darkCyan:bg' },
++
++    { 'Comment',                      'white:bg' },
++    { 'String',                       'white:bg' },
++
++    { 'Lang_Default',                 'Editor_Default' },
++    { 'Lang_Number',                  'yellow:bg' },
++    { 'Lang_DecimalNumber',           'Lang_Number' },
++    { 'Lang_HexNumber',               'yellow:bg' },
++    { 'Lang_OctalNumber',             'yellow:bg' },
++    { 'Lang_BinaryNumber',            'yellow:bg' },
++    { 'Lang_Punctuation',             'yellow:bg' },
++    { 'Lang_String',                  'String' },
++    { 'Lang_Comment',                 'Comment' },
++    { 'Lang_Preprocessor',            'green:bg' },
++    { 'Lang_Function',                'cyan:bg' },
++    { 'Lang_Label',                   'yellow:bg' },
++    { 'Lang_Command',                 'cyan:bg' },
++    { 'Lang_Regexp',                  'magenta:bg' },
++    { 'Lang_Variable',                'gray:bg' },
++    { 'Lang_Control',                 'darkCyan:bg' },
++    { 'Lang_Assembler',               'blue:bg' }, # embedded assembler (Pascal)
++
++    { 'Markup_Default',               'gray:bg' },
++    { 'Markup_Punctuation',           'darkCyan:bg' },
++    { 'Markup_String',                'String' },
++    { 'Markup_Symbol',                'green:bg' },
++    { 'Markup_Tag',                   'cyan:bg' },
++    { 'Markup_Comment',               'Comment' },
++    { 'Markup_Special',               'red:bg' },
++    { 'Markup_Control',               'magenta:bg' },
++    { 'Markup_Quotes',                'yellow:bg' },
++    { 'Markup_Math',                  'red:bg' },
++
++    # diff/diff3
++    { 'DIFF_Default',                 'Editor_Default' },
++    { 'DIFF_Old',                     'gray:bg' },
++    { 'DIFF_New',                     'white:bg' },
++    { 'DIFF_Changed',                 'darkCyan:bg' },
++
++    # rcsmerge
++    { 'MERGE_Default',                'Editor_Default' },
++    { 'MERGE_Changed',                'white:bg' },
++    { 'MERGE_Old',                    'gray:bg' },
++    { 'MERGE_New',                    'red:bg' },
++    { 'MERGE_Control',                'yellow:bg' },
++}
