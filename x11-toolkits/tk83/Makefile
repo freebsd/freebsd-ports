@@ -7,6 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.3.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/${TCL83_PORT}
 
 LATEST_LINK=	tk83
 USE_XLIB=	yes
@@ -31,6 +32,8 @@ PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
+TCL83_PORT?=	lang/tcl83
+USE_REINPLACE=	YES
 
 MANCOMPRESSED=	no
 
@@ -315,6 +318,10 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	palette.n tk_setPalette.n \
 	palette.n tk_bisque.n \
 	popup.n tk_popup.n
+
+post-configure:
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+		${WRKSRC}/tkConfig.sh
 
 .include <bsd.port.pre.mk>
 
