@@ -6,10 +6,10 @@
 #
 
 PORTNAME=       milter-sender
-PORTVERSION=    0.49
+PORTVERSION=    0.50
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
-DISTFILES=      libsnert-1.29.tgz milter-sender-${PORTVERSION}.tgz
+DISTFILES=      libsnert-1.31.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=     ache@FreeBSD.org
 COMMENT=        Real-time sender address verification, based on Milter API
@@ -27,18 +27,19 @@ MAKEFILE=       makefile
 IGNORE=         requires Sendmail 8.12
 .endif
 .if exists(${LOCALBASE}/lib/libmilter.a)
-CFLAGS+=       -I${LOCALBASE}/include
+CPPFLAGS+=     -I${LOCALBASE}/include
 LDFLAGS+=      -L${LOCALBASE}/lib
 .endif
+CPPFLAGS+=      ${PTHREAD_CFLAGS}
+LDFLAGS+=       ${PTHREAD_LIBS}
 
 DOCS= CHANGES.TXT index.shtml style.css mailto.js \
       license-body.html LICENSE.TXT milter-sender.mc
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CFLAGS+= ${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=  LDFLAGS="${LDFLAGS}" LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+= --with-db --localstatedir=/var
-MAKE_ENV+=       PREFIX="${PREFIX}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+= --with-db --localstatedir=/var \
+		 --enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
 
 pre-configure:
 	@cd ${WRKSRC}/../lib && \
@@ -60,17 +61,9 @@ post-install:
 	@cd ${WRKSRC}/Img && \
 	${INSTALL_DATA} *.gif *.png ${DOCSDIR}/Img
 .endif
-	@if [ ! -f ${PREFIX}/etc/rc.d/milter-sender.sh ] ; then \
-	${CP} ${PREFIX}/etc/rc.d/milter-sender.sh-dist ${PREFIX}/etc/rc.d/milter-sender.sh; \
-	${CHMOD} ug+x ${PREFIX}/etc/rc.d/milter-sender.sh; \
-	fi
 	@${CAT} ${PKGMESSAGE}
 
 post-deinstall:
-	@if [ -f ${PREFIX}/etc/rc.d/milter-sender.sh ] && \
-	cmp -s ${PREFIX}/etc/rc.d/milter-sender.sh ${PREFIX}/etc/rc.d/milter-sender.sh-dist; then \
-	${RM} -f ${PREFIX}/etc/rc.d/milter-sender.sh; \
-	fi
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Do not forget to delete the filter description from /etc/mail/YOUR-CONF.mc"
 	@${ECHO_MSG} "and rebuild sendmail.cf file!"
