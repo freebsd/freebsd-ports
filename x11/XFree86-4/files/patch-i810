@@ -1,6 +1,22 @@
---- programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c.orig	Fri Jan 18 22:58:50 2002
-+++ programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c	Fri Jan 18 23:10:36 2002
-@@ -2098,9 +2098,10 @@
+--- programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c.orig	Wed May 30 06:51:29 2001
++++ programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c	Thu Jan  3 11:11:42 2002
+@@ -1019,10 +1019,15 @@
+ {
+    vgaHWPtr hwp;
+    I810Ptr pI810;
++   unsigned temp;
+ 
+    hwp = VGAHWPTR(pScrn);
+    pI810 = I810PTR(pScrn);
+    DoSave(pScrn, &hwp->SavedReg, &pI810->SavedReg, TRUE);
++
++   temp = INREG(MEMMODE);
++   temp |= 4;
++   OUTREG(MEMMODE, temp);
+ }
+ 
+ 
+@@ -2006,9 +2011,10 @@
     if (I810_DEBUG & DEBUG_VERBOSE_DRI)
        ErrorF("\n\nENTER VT\n");
  
@@ -12,7 +28,7 @@
  #ifdef XF86DRI
     if (pI810->directRenderingEnabled) {
        if (I810_DEBUG & DEBUG_VERBOSE_DRI)
-@@ -2139,9 +2140,10 @@
+@@ -2047,9 +2053,10 @@
     }
     I810Restore(pScrn);
  

@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	XFree86
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.1.0
+PORTREVISION=	12
+PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.2.0
-DISTFILES=	X420src-1.tgz X420src-2.tgz
-EXTRACT_ONLY=	X420src-1.tgz X420src-2.tgz
+MASTER_SITE_SUBDIR=	4.1.0
+DISTFILES=	X410src-1.tgz X410src-2.tgz
+EXTRACT_ONLY=	X410src-1.tgz X410src-2.tgz
 MAINTAINER=	jmz@FreeBSD.org
 
 LATEST_LINK=	XFree86-4
 
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
-PLIST=		${WRKDIR}/pkg-plist
-
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86
 .endif
@@ -27,7 +26,7 @@ ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
-SCRIPTS_ENV=	OSVERSION=${OSVERSION} PKGDIR=${PKGDIR}
+SCRIPTS_ENV=	OSVERSION=${OSVERSION}
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 MAKE_ARGS=	WORLDOPTS=
 .ifdef DISTRIB
@@ -47,9 +46,11 @@ IS_INTERACTIVE=	yes	# configure script asks questions
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .if (${MACHINE} == "pc98")
 SCRIPTS_ENV+=	MACHINE=pc98
+PLIST=		${PKGDIR}/pkg-plist.pc98
 .endif
 .if (${MACHINE} == "alpha")
 SCRIPTS_ENV+=	MACHINE=alpha
+PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
 pre-configure:
