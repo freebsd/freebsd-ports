@@ -24,5 +24,6 @@ USE_GMAKE=	yes
 pre-configure:
 	${PERL} -pi -e "s:-lpthread:${PTHREAD_LIBS}:g" ${WRKSRC}/knode/Makefile.in
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
+	${PERL} -pi -e "s@^AC_CHECK_UTMP_FILE@# AC_CHECK_UTMP_FILE@g" ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
