@@ -3,7 +3,7 @@
 # Date created:		7 February 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1997/07/13 18:49:19 max Exp $
+# $Id: Makefile,v 1.9 1997/09/14 21:35:36 max Exp $
 #
 
 DISTNAME=	okphone-1.2
@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	okphone-1.2.FreeBSD-patch.rev2.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 post-install:
 	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL

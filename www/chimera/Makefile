@@ -3,14 +3,14 @@
 # Date created:		26 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1995/11/27 04:10:19 asami Exp $
+# $Id: Makefile,v 1.11 1996/11/18 11:40:48 asami Exp $
 #
 
 DISTNAME=	chimera-1.65
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 

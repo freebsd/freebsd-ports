@@ -3,7 +3,7 @@
 # Date created:		1 May 1995
 # Whom:			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.3 1996/11/11 10:12:02 max Exp $
+# $Id: Makefile,v 1.4 1997/09/14 21:34:44 max Exp $
 #
 
 DISTNAME=	kinput2-v2-fix1
@@ -11,7 +11,7 @@ PKGNAME=	ja-ckinput2-2.0.1
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	canna16\\.1\\.:${PORTSDIR}/japanese/Canna
 

@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.13 1997/06/12 01:36:35 asami Exp $
+# $Id: Makefile,v 1.14 1997/06/19 09:33:26 asami Exp $
 #
 
 DISTNAME=	Xaw3d-1.3
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	widgets/Xaw3d/R6.1
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes

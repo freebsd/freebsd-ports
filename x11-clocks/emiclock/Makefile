@@ -3,7 +3,7 @@
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:42:56 asami Exp $
+# $Id: Makefile,v 1.7 1997/05/28 22:41:27 fenner Exp $
 #
 
 DISTNAME=	EmiClock-1.0.2
@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub1/X/contrib/applications/ \
 		ftp://sunsite.unc.edu/pub/X11/contrib/applications/
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 

@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1996/10/09 03:14:34 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:32:18 asami Exp $
 #
 
 DISTNAME=	hexcalc
@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
 EXTRACT_SUFX=	..tar.Z
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 

@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.6 1996/11/18 10:23:51 asami Exp $
+# $Id: Makefile,v 1.7 1997/09/14 21:34:40 max Exp $
 #
 
 DISTNAME=	groff-1.09
@@ -11,7 +11,7 @@ PKGNAME=	ja-gxditview-0.98
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 PATCH_SITES=	ftp://ftp.iij.ad.jp/pub/NetNews/fj.sources/volume95/Apr/
 PATCHFILES=	jgroff-0.98.diff.gz
