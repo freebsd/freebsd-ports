@@ -226,6 +226,7 @@
     SUBDIR += php5-mysql
     SUBDIR += php5-mysqli
     SUBDIR += php5-odbc
+    SUBDIR += php5-oracle
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
