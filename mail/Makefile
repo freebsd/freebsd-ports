@@ -42,6 +42,7 @@
     SUBDIR += dovecot
     SUBDIR += drac
     SUBDIR += drbl
+    SUBDIR += dsbl-testers
     SUBDIR += ecartis
     SUBDIR += elm
     SUBDIR += elm+ME
