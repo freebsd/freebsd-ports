@@ -1,31 +1,34 @@
---- configure.in.orig	Wed May 30 02:08:44 2001
-+++ configure.in	Sun Jun  3 19:50:11 2001
-@@ -57,7 +57,7 @@
- AC_DEFINE_UNQUOTED(MSYSLOG_VERSION_STR, "$MSYSLOG_VERSION")dnl
+--- configure.in.orig	Wed Nov 21 07:49:36 2001
++++ configure.in	Sat Mar 23 18:20:54 2002
+@@ -33,7 +33,7 @@
+ AC_STRUCT_TM
+ 
+ dnl Checks for library functions.
+-AC_CHECK_LIB(dl, dlopen, SYSLOGD_LIBS="$SYSLOGD_LIBS -ldl")
++AC_CHECK_LIB(c, dlopen)dnl
+ AC_CHECK_LIB(socket, connect, SYSLOGD_LIBS="$SYSLOGD_LIBS -lsocket")
+ AC_CHECK_LIB(nsl, gethostbyname, SYSLOGD_LIBS="$SYSLOGD_LIBS -lnsl")
+ AC_DEFINE(SYSLOGD_LIBS, $SYSLOGD_LIBS)
+@@ -65,7 +65,7 @@
+ AC_DEFINE_UNQUOTED(MSYSLOG_VERSION_STR, "$MSYSLOG_VERSION")
  echo msyslog version... $MSYSLOG_VERSION
  
 -MLIBNAME="libmsyslog.so.$MSYSLOG_VERSION" ;
-+MLIBNAME="libmsyslog.so.4" ;
- AC_DEFINE_UNQUOTED(MLIBNAME_STR, "$MLIBNAME")dnl
++MLIBNAME="libmsyslog.so.1" ;
+ AC_DEFINE_UNQUOTED(MLIBNAME_STR, "$MLIBNAME")
  
  MANPAGES="syslog.conf.5 syslogd.8"
-@@ -66,12 +66,12 @@
+@@ -74,7 +74,7 @@
  then
  	prefix=$ac_default_prefix
  fi
 -AC_DEFINE_UNQUOTED(INSTALL_LIBDIR, "$prefix/lib/alat")
 +AC_DEFINE_UNQUOTED(INSTALL_LIBDIR, "$prefix/lib")
  
- dnl
- dnl Check needed libs for daemon
- dnl
--AC_CHECK_LIB(dl, dlopen, SYSLOGD_LIBS="$SYSLOGD_LIBS -ldl")dnl
-+AC_CHECK_LIB(c, dlopen)dnl
- AC_CHECK_LIB(socket, connect, SYSLOGD_LIBS="$SYSLOGD_LIBS -lsocket")dnl
- AC_CHECK_LIB(nsl, gethostbyname, SYSLOGD_LIBS="$SYSLOGD_LIBS -lnsl")dnl
- AC_DEFINE(SYSLOGD_LIBS, $SYSLOGD_LIBS)dnl
-@@ -153,6 +153,12 @@
- 	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "_")dnl
+ AC_MSG_CHECKING(wheter optreset is needed)
+ AC_TRY_LINK([#include <unistd.h>],
+@@ -150,6 +150,12 @@
+ 	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "_")
  	SHARED_PARAMS="-Bshareable"
  	DCCFLAGS="-fPIC"
 +elif test "$UNAME" = "FreeBSD" ; then
@@ -35,5 +38,5 @@
 +	DCCFLAGS="-fPIC"
 +	SYSLOGD_LIBS="$SYSLOGD_LIBS -Wl,-E"
  elif test "$UNAME" = "Linux" ; then
- 	AC_DEFINE(DLOPEN_FLAGS, RTLD_LAZY | RTLD_GLOBAL)dnl
- 	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "")dnl
+ 	AC_DEFINE(DLOPEN_FLAGS, RTLD_LAZY | RTLD_GLOBAL)
+ 	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "")
