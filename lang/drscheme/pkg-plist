@@ -2261,6 +2261,7 @@ drscheme/collects/doc/advanced/boolean.html
 drscheme/collects/doc/advanced/variable.html
 drscheme/collects/doc/advanced/keywords
 drscheme/teachpack/turtle.ss
+drscheme/teachpack/htdp/convert-new.ss
 drscheme/teachpack/htdp/arrow-gui.ss
 drscheme/teachpack/htdp/arrow.ss
 drscheme/teachpack/htdp/dir.ss

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	103
+PORTVERSION=	103p1
 CATEGORIES=	lang
-MASTER_SITES= http://www.cs.rice.edu/CS/PLT/packages/download/103/plt/ \
-	ftp://ftp.pasteur.fr/pub/computing/Scheme/DrScheme/103/plt/ \
-	ftp://archive.informatik.uni-tuebingen.de/unix/language/plt/103/plt/
+MASTER_SITES= http://www.cs.rice.edu/CS/PLT/packages/download/103p1/plt/ \
+	ftp://ftp.pasteur.fr/pub/computing/Scheme/DrScheme/103p1/plt/ \
+	ftp://archive.informatik.uni-tuebingen.de/unix/language/plt/103p1/plt/
 DISTNAME=	plt.src.x
 
 MAINTAINER=	jkoshy@freebsd.org
