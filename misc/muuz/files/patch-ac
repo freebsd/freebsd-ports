@@ -1,0 +1,10 @@
+--- Imakefile.orig	Sat May 20 10:55:46 2000
++++ Imakefile	Sun May 21 19:01:32 2000
+@@ -53,6 +53,7 @@
+ 	@grep -v "^#"  helpOverview.h > ./helpOverview.text
+ 	@grep -v "^#"  acknowledgement.h > ./acknowledgement.text
+ 	@grep -v "^#"  aboutMuuz.h > ./aboutMuuz.text
++	@mkdir $(PROJECTROOT)/share/muuz
+ 	@cp -pf helpUserPrep.text   $(PROJECTROOT)/share/muuz/helpUserPrep.text
+ 	@cp -pf helpPrep.text       $(PROJECTROOT)/share/muuz/helpPrep.text
+ 	@cp -pf helpOverview.text   $(PROJECTROOT)/share/muuz/helpOverview.text
