@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pam_alreadyloggedin
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_LOCAL}					\
-		http://green.bikeshed.org/~green/
+		http://green.homeunix.org/~green/
 MASTER_SITE_SUBDIR=	green
 
 MAINTAINER=	green@FreeBSD.org
@@ -18,14 +18,6 @@ COMMENT=	PAM module based on whether a user is already logged in
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	"only works on systems with OpenPAM (5.0-CURRENT)"
-.endif
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
 
 .if defined(NOPROFILE)
 PLIST_SUB+=	PROFILE="@comment "
