@@ -1,0 +1,48 @@
+---- From 00readme (slightly modified) ----
+
+<What's Donkey?>
+
+Donkey is an alternative for S/KEY's "key" command. The new feature that
+the original key doesn't have is print an entry for skeykeys as
+follows;
+
+	kazu 0099 al02004          115d83956f1089b6  Apr 26,1995 22:13:27
+
+This means that donkey is also an alternative for "keyinit". Since the
+entry is printed to stdout (not to /etc/skeykeys), you can easily send
+it to remote operator by e-mail (with PGP signature or something). So,
+it is possible to initiate S/KEY without logging in from the console of the
+host.
+
+The name "Donkey" is an acronym of "Don't Key".
+
+
+<How to use Donkey>
+
+(1) Calculate a One-Time-Password.
+
+Execute Donkey with sequence and seed, then input your passphrase.
+
+The -f option allows you to choose hash function from MD2, MD4, and MD5.
+
+The default hash function is MD4 due to the historical reason.
+
+(2) Calculate multiple One-Time-Passwords at once.
+
+Use -n option.
+
+Note that although "Enter passphrase" is printed out to stderr,
+One-Time-Passwords go to stdout. So, you can redirect the output
+safely.
+
+(3) Print skeykeys entry.
+
+Use -i option without argments. Then, enter login name, sequence and
+seed. If you like default value, just type RET. Input your passphrase
+twice to get the entry.
+
+<Copyright>
+
+Donkey conforms GNU GENERAL PUBLIC LICENSE Version 2 and is
+	Copyright (C) 1995 Kazuhiko Yamamoto 
+	  <kazu@is.aist-nara.ac.jp>
