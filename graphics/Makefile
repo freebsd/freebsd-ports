@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.97 1998/11/16 21:04:07 billf Exp $
+# $Id: Makefile,v 1.98 1998/11/18 10:07:49 flathill Exp $
 #
 
     SUBDIR += 4va
@@ -31,6 +31,7 @@
     SUBDIR += gqview
     SUBDIR += graphviz
     SUBDIR += gtkdps
+    SUBDIR += gtkfig
     SUBDIR += gyvefigs
     SUBDIR += gyvegui
     SUBDIR += gyvekernel
