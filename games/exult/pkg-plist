@@ -5,6 +5,7 @@ bin/splitshp
 bin/textpack
 bin/ucc
 bin/ucxt
+@exec /bin/mkdir -p %D/share/exult/estudio/new
 %%DATADIR%%/exult.flx
 %%DATADIR%%/exult_bg.flx
 %%DATADIR%%/exult_si.flx
