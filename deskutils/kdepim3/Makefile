@@ -17,12 +17,15 @@ MAINTAINER=	kde@FreeBSD.org
 LIB_DEPENDS=	pisock:${PORTSDIR}/palm/pilot-link
 
 USE_KDELIBS_VER=3
-USE_BISON=	yes
+PREFIX=		${KDE_PREFIX}
+
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_BISON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>

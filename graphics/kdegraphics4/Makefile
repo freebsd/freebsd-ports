@@ -1,3 +1,4 @@
+# -*-mode: makefile-*-
 # New ports collection makefile for:	KDE3 Graphics
 # Date created:				Saturday 2 September 2000
 # Whom:					Will Andrews <will@FreeBSD.org>
@@ -15,37 +16,39 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 
 USE_KDELIBS_VER=3
+PREFIX=		${KDE_PREFIX}
+KDE_BUILD_PLIST=yes
+
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .if defined(WITH_IMLIB) || defined(KDE_WITH_IMLIB)
 USE_GNOMENG=	yes
 USE_GNOME=	imlib
-PLIST_SUB+=	IMLIB=""
-CONFIGURE_ARGS+=	--with-imlib-config=${X11BASE}/bin
+PLIST_APPEND+=	plist.imlib
+CONFIGURE_ARGS+=--with-imlib-config=${X11BASE}/bin
 .else
 WITHOUT_IMLIB=	yes
-PLIST_SUB+=	IMLIB="@comment "
-CONFIGURE_ARGS+=	--without-imlib-config
-.endif
+CONFIGURE_ARGS+=--without-imlib-config
+.endif # defined(WITH_IMLIB) || defined(KDE_WITH_IMLIB)
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
 .include <bsd.port.pre.mk>
 
 GPHOTO2_CONFIG=	${LOCALBASE}/bin/gphoto2-config
 
 .if exists(${GPHOTO2_CONFIG})
 WITH_GPHOTO2?=	yes
-.endif
+.endif # exists(${GPHOTO2_CONFIG})
 
-.if defined(WITH_GPHOTO2) && ${WITH_GPHOTO2} == yes
+.if defined(WITH_GPHOTO2)
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/gphoto2
-PLIST_SUB+=	KAMERA=""
+PLIST_APPEND+=	plist.gphoto2
 .else
-PLIST_SUB+=	KAMERA="@comment "
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "======================================================="
@@ -53,19 +56,18 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_GPHOTO2=yes\""
 	@${ECHO_MSG} "======================================================="
 	@${ECHO_MSG}
-.endif
+.endif # defined(WITH_GPHOTO2)
 
 SANE_CONFIG=	${LOCALBASE}/bin/sane-config
 
 .if exists(${SANE_CONFIG})
 WITH_SANE?=	yes
-.endif
+.endif # exists(${SANE_CONFIG})
 
-.if defined(WITH_SANE) && ${WITH_SANE} == yes
+.if defined(WITH_SANE)
 LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
-PLIST_SUB+=	SANE=""
+PLIST_APPEND+=	plist.sane
 .else
-PLIST_SUB+=	SANE="@comment "
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "======================================================="
@@ -73,6 +75,6 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_SANE=yes\""
 	@${ECHO_MSG} "======================================================="
 	@${ECHO_MSG}
-.endif
+.endif # defined(WITH_SANE)
 
 .include <bsd.port.post.mk>

@@ -1,46 +1,46 @@
+# -*-mode: makefile-*-
 # New ports collection makefile for:	kdenetwork2
-# Date created:				Sun May 14 00:55:45
-# Whom:					Will Andrews <will@FreeBSD.org>
+# Date created:				2 November 2001
+# Whom:					will@cvs.kde.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	kdenetwork
-PORTVERSION=	3.0.5
+PORTVERSION=	${KDE_VERSION}
 CATEGORIES?=	net news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-USE_KDEBASE_VER=3
+LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib
+
+USE_KDELIBS_VER=3
+PREFIX=		${KDE_PREFIX}
+KDE_BUILD_PLIST=yes
+
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	${CONFIGURE_ENV}
 
-.if ${MACHINE_ARCH} == "alpha"
-_NO_KDE_FINAL= yes
-.endif
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 UTMP?=	/var/run/utmp
 .if exists(${UTMP})
-PLIST_SUB+=	KTALKD=""
+PLIST_APPEND+=	plist.ktalkd
 .else
-PLIST_SUB+=	KTALKD="@comment "
+DO_NOT_COMPILE+=	ktalkd
 pre-configure:
-	@${ECHO_MSG} '===>  NOTE: The file ${UTMP} was not found.'
-	@${ECHO_MSG} '===>  NOTE: ktalkd and kotalkd, which require ${UTMP}, will not be built.'
-.endif
+	@${ECHO_MSG} "===> Shit! \"${UTMP}\" was not found."
+	@${ECHO_MSG} "===> The talk daemon (ktalkd) will not be built."
+.endif # exists(${UTMP})
 
-post-patch:
-# XXX - remove at next port update
-	@${REINPLACE_CMD} -e 's|\$$KDEDIR|${PREFIX}|' \
-		${WRKSRC}/knewsticker/knewsticker-standalone.desktop
+.if defined(DO_NOT_COMPILE)
+CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+.endif # defined(DO_NOT_COMPILE)
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>

@@ -18,14 +18,18 @@ LIB_DEPENDS+=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3 \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 WITH_SDL=	yes
-USE_KDEBASE_VER=3
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-PLIST_SUB+=	RM=${RM}
 SDL_CONFIG=	sdl11-config
 CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/${SDL_CONFIG}"
+
+USE_KDEBASE_VER=3
+PREFIX=		${KDE_PREFIX}
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 

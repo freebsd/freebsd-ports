@@ -1,3 +1,5 @@
-KDE provides an integrated X11 based environment, much like CDE.
-This port provides the basic utility programs, such as the Konqueror
-browser, the desktop and panel.
+This package provides the basic applications for the KDE system.
+
+WWW: http://www.kde.org/
+
+--AlanE <kde@freebsd.org>

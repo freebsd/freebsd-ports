@@ -17,6 +17,7 @@ _NO_KDE_FINAL=	yes
 _NO_KDE_NDEBUG=	yes
 DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMEPREFIX:S/-$//}
+DIST_SUBDIR=	KDE/kde-i18n
 
 # nasty hack to force newer timestamps on cache
 # required to enable correct building
@@ -24,11 +25,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMEPREFIX:S/-$//}
 post-extract:
 	@${FIND} ${WRKDIR} -type f -name index.cache.bz2 \
 		| ${XARGS} -n 10 -x ${TOUCH}
-.endif
-.endif
+.endif # !target(post-extract)
+.endif # defined(KDE_I18N)
 
-# KDE_DIST_VERSION (PORTVERSION)
-KDE_DIST_VERSION?=	${KDE_VERSION}
+.if defined(PREV_I18N_VER)
+PORTVERSION=	3.0.4
+.endif
 
 # Unfortunately, this feature doesn't work right now due to binary files.
 _NO_KDE_PATCHUP=yes
@@ -66,13 +68,13 @@ CONFIGURE_ARGS+=--enable-final
 .endif
 
 .if !defined(_NO_KDE_NDEBUG)
-.if defined(PARALLEL_PACKAGE_BUILD) || !defined(WANT_KDE_DEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.else
+#.if defined(PARALLEL_PACKAGE_BUILD) || !defined(WANT_KDE_DEBUG)
+#CONFIGURE_ARGS+=--disable-debug
+#.else
 CONFIGURE_ARGS+=--enable-debug
 STRIP=''
-.endif
-.endif
+#.endif # defined(PARALLEL_PACKAGE_BUILD) || !defined(WANT_KDE_DEBUG)
+.endif # !defined(_NO_KDE_NDEBUG)
 
 .if !defined(_NO_KDE_NON_I386_OPTS)
 .if ${MACHINE_ARCH} == "alpha"

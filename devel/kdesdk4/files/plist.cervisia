@@ -1,0 +1,9 @@
+bin/cervisia
+lib/libcervisia.la
+lib/libcervisia.so
+lib/libcervisia.so.1
+share/applnk/Development/cervisia.desktop
+share/apps/cervisia/cervisiashellui.rc
+share/apps/cervisiapart/cervisiaui.rc
+share/icons/crystalsvg/16x16/apps/cervisia.png
+share/icons/crystalsvg/32x32/apps/cervisia.png

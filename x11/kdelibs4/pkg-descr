@@ -1,3 +1,5 @@
-Base libraries for KDE programs.
+This is the base set of libraries needed by KDE programs.
 
 WWW: http://www.kde.org/
+
+--AlanE <kde@freebsd.org>

@@ -7,7 +7,7 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -16,30 +16,37 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 
 USE_KDELIBS_VER=3
-USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-MAN1=		efax.1 efix.1 fax.1
+PREFIX=		${KDE_PREFIX}
+KDE_BUILD_PLIST=yes
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 #klaptop doesn't like alpha because alpha doesn't support apm
 .if ${MACHINE_ARCH} == "alpha"
+WITHOUT_KLAPTOP	=yes
+.endif # ${MACHINE_ARCH} == "alpha"
+
+.if defined(WITHOUT_KLAPTOP)
 DO_NOT_COMPILE+=klaptopdaemon
-PLIST_SUB+=	ALPHA_NA="@comment "
 .else
-PLIST_SUB+=	ALPHA_NA=""
-.endif
+PLIST_APPEND+=	plist.klaptop
+.endif # defined(WITHOUT_KLAPTOP)
+
 # kfloppy is a mostly broken, non-standard, linux-centric pain...
 .if !defined(WITH_KFLOPPY)
 DO_NOT_COMPILE+=kfloppy
-PLIST_SUB+=	KFLOPPY="@comment "
 .else
-PLIST_SUB+=	KFLOPPY=""
-.endif
+PLIST_APPEND+=	plist.kfloppy
+.endif # !defined(WITH_KFLOPPY)
+
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif
+.endif # defined(DO_NOT_COMPILE)
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>
