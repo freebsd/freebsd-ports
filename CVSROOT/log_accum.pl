@@ -39,6 +39,35 @@ $rcsidinfo = 2;
 
 # Debug level, 0 = off
 $debug = 0;
+
+# The command used to mail the log messages.  Usually something
+# like '/usr/sbin/sendmail'.  
+$MAILCMD = "/usr/local/bin/mailsend -H";
+
+
+# Email addresses of recipients of commit mail.
+$MAILADDRS = 'cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
+
+
+#-------------------------------------------------------
+# FreeBSD site localisation
+# Remember to comment out if using for other purposes.
+#-------------------------------------------------------
+if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
+    $freebsd = 1;
+    if ($1 =~ /freefall/i) {
+	$crypto = '';
+	$meister = 'peter@FreeBSD.org';
+    } else {
+	$crypto = 1;
+	$meister = 'markm@FreeBSD.org';
+    }
+}
+if ($debug && $freebsd) {
+    $MAILADDRS = $meister;
+}
+
+
 ############################################################
 #
 # Constants
@@ -345,12 +374,7 @@ sub mail_notification {
     print "Mailing the commit message...\n";
 
     @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
-
-    if ($debug or !$freebsd) {
-	open(MAIL, "| /usr/local/bin/mailsend -H $owner$dom");
-    } else {
-	open(MAIL, "| /usr/local/bin/mailsend -H cvs-committers$dom cvs-all$dom");
-    }
+    open MAIL, "| $MAILCMD $MAILADDRS" or die 'Please check $MAILCMD.';
 
 
 # This is turned off since the To: lines go overboard.
@@ -454,22 +478,6 @@ sub format_summaries {
 # Setup environment
 #
 umask (002);
-$host = hostname();
-if ($host =~ /^(freefall|internat)\.freebsd\.org$/i) {
-    $freebsd = 1;
-    $dom = '@FreeBSD.org';
-    if ($1 =~ /freefall/i) {
-	$crypto = '';
-	$owner = 'peter';
-    } else {
-	$crypto = 1;
-	$owner = 'markm';
-    }
-} else {
-    $freebsd = $crypto = '';
-    $owner = 'postmaster';  # Change this!!!
-    $dom = ''; # Change this!!
-}
 
 #
 # Initialize basic variables
