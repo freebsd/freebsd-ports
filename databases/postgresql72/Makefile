@@ -17,6 +17,9 @@ DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER?=	girgen@pingpong.net
 COMMENT?=	The most advanced open-source database available anywhere
 
+DEPRECATED=	Switch to postgresql 7.3.x/7.4.x, doing a full db dump/restore
+EXPIRATION_DATE=1st January 2005
+
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
