@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.22
+PORTVERSION=	0.34
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tmda
@@ -14,7 +14,15 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jason@mastaler.com
 
+RUN_DEPENDS=    ${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+
 USE_PYTHON=	yes
+
+.if exists(${PREFIX}/qmail/bin/qmail-send)
+QMAIL_DIR?=     ${PREFIX}/qmail
+.else
+QMAIL_DIR?=     /var/qmail
+.endif
 
 do-build:
 	(cd ${WRKSRC}; ${PYTHON_CMD} ./setup)
