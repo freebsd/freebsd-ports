@@ -29,6 +29,8 @@ XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
 gettext		"gettext library support" OFF \
 jstring		"jstring module" OFF \
+YP		"YP/NIS support" OFF \
+BCMath		"BCMath support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -171,6 +173,12 @@ post-extract:
 	 \${RM} configure; \\
 	 ./buildconf)
 EOF
+			;;
+		\"YP\")
+			echo "CONFIGURE_ARGS+=--enable-yp"
+			;;
+		\"BCMath\")
+			echo "CONFIGURE_ARGS+=--enable-bcmath"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
