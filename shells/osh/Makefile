@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osh
-PORTVERSION=	001127
+PORTVERSION=	020214
 CATEGORIES=	shells
 MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
 
