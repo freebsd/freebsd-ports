@@ -8,33 +8,35 @@ libexec/w3m/w3mhelp.cgi
 libexec/w3m/w3mmail.cgi
 libexec/w3m/w3mman2html.cgi
 libexec/w3m/w3mhelperpanel
-%%INLINE_IMAGE_ONLY%%libexec/w3m/w3mimgdisplay
-%%INLINE_IMAGE_ONLY%%libexec/w3m/w3mimgsize
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/FAQ.html
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/HISTORY
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/MANUAL.html
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.SSL
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.cookie
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.dict
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.func
-%%PORTDOCS%%%%JAPANESE_ONLY%%%%INLINE_IMAGE_ONLY%%share/doc/ja/w3m/README.img
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.keymap
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.mailcap
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.menu
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/STORY.html
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/keymap.default
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/keymap.lynx
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/menu.default
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/menu.submenu
+libexec/w3m/xface2xpm
+%%INLINE_IMAGE%%libexec/w3m/w3mimgdisplay
+%%INLINE_IMAGE%%libexec/w3m/w3mimgsize
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/FAQ.html
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/HISTORY
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/MANUAL.html
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.SSL
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.cookie
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.dict
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.func
+%%PORTDOCS%%%%JAPANESE%%%%INLINE_IMAGE%%share/doc/ja/w3m/README.img
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.keymap
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.mailcap
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.menu
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.migemo
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/STORY.html
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/keymap.default
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/keymap.lynx
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/menu.default
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/menu.submenu
 %%PORTDOCS%%share/doc/w3m/FAQ.html
 %%PORTDOCS%%share/doc/w3m/HISTORY
 %%PORTDOCS%%share/doc/w3m/MANUAL.html
 %%PORTDOCS%%share/doc/w3m/README
 %%PORTDOCS%%share/doc/w3m/README.dict
 %%PORTDOCS%%share/doc/w3m/README.func
-%%PORTDOCS%%%%INLINE_IMAGE_ONLY%%share/doc/w3m/README.img
-%%PORTDOCS%%%%M17N_ONLY%%share/doc/w3m/README.m17n
+%%PORTDOCS%%%%INLINE_IMAGE%%share/doc/w3m/README.img
+%%PORTDOCS%%%%M17N%%share/doc/w3m/README.m17n
 %%PORTDOCS%%share/doc/w3m/STORY.html
 %%PORTDOCS%%share/doc/w3m/keymap.default
 %%PORTDOCS%%share/doc/w3m/keymap.lynx
@@ -46,4 +48,4 @@ share/doc/w3m/w3mhelp-funcdesc.ja.pl
 share/doc/w3m/w3mhelp-funcname.pl
 @dirrm libexec/w3m
 @dirrm share/doc/w3m
-%%PORTDOCS%%%%JAPANESE_ONLY%%@dirrm share/doc/ja/w3m
+%%PORTDOCS%%%%JAPANESE%%@dirrm share/doc/ja/w3m

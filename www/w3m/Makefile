@@ -16,15 +16,15 @@ MAINTAINER?=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-W3M_VERSION=			0.3
-M17N_VERSION=			20020311
-M17N_BASE_W3M_VERSION=		0.3
+W3M_VERSION=			0.3.1
+M17N_VERSION=			20020717
+M17N_BASE_W3M_VERSION=		0.3.1
 
 HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	-nonstop --prefix=${PREFIX} \
 			--libdir=${PREFIX}/libexec/w3m \
 			--helpdir=${PREFIX}/share/doc/w3m \
-			--helpdir-ja=${PREFIX}/share/doc/ja/w3m \
 			--gc-includedir=${LOCALBASE}/include \
 			--gc-libdir=${LOCALBASE}/lib \
 			-cflags="${CFLAGS}"
@@ -35,16 +35,12 @@ SCRIPTS_ENV=	HOSTNAME=${HOSTNAME} WRKSRC=${WRKSRC} PREFIX=${PREFIX} \
 		SSL_LIBS="${SSL_LIBS}" EXTRA_SSL_LIBS="${EXTRA_SSL_LIBS}" \
 		INLINE_IMAGE=${INLINE_IMAGE} M17N=${M17N}
 
-MAN1=		w3m.1
-MANLANG=	""
-CFLAGS+=	-pipe
+MAN1=		w3m.1 w3mman.1
+MANLANG=	"" ja
 
-CONFIG_H=	${WRKSRC}/config.h
 DOCS=		FAQ.html HISTORY MANUAL.html README \
 		README.dict README.func STORY.html keymap.default \
 		keymap.lynx menu.default menu.submenu
-SED_CMD=	-e "s,%%PREFIX%%,${PREFIX},g" \
-		-e "s,%%LOCALBASE%%,${LOCALBASE},g"
 
 .if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
 USE_OPENSSL=	yes
@@ -58,24 +54,20 @@ MASTER_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 DISTNAME=	${PORTNAME}-${M17N_BASE_W3M_VERSION}-m17n-${M17N_VERSION}
 CONFIGURE_ARGS+=	--suffix=""
 
-PLIST_SUB+=	M17N_ONLY="" NO_M17N="@comment "
+PLIST_SUB+=	M17N="" NO_M17N="@comment "
 .else
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure-no-m17n \
-		${PATCHDIR}/extra-patch-etc.c-no-m17n
-PLIST_SUB+=	M17N_ONLY="@comment " NO_M17N=""
+PLIST_SUB+=	M17N="@comment " NO_M17N=""
 .endif
 
 .if defined(JAPANESE)
 RUN_DEPENDS=	migemo:${PORTSDIR}/japanese/migemo
 
-MANLANG+=	ja
-DOCS_JP=	${DOCS} README.SSL README.cookie \
-		README.keymap README.mailcap README.menu
+DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
+		README.menu README.migemo
 
-PLIST_SUB+=	JAPANESE_ONLY=""
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-search.c-japanese
+PLIST_SUB+=	JAPANESE=""
 .else
-PLIST_SUB+=	JAPANESE_ONLY="@comment "
+PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
 .if defined(USE_OPENSSL)
@@ -93,13 +85,11 @@ USE_IMLIB=	yes
 
 DOCS+=		README.img
 DOCS_JP+=	README.img
-PLIST_SUB+=	INLINE_IMAGE_ONLY=""
-
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-image.c-img
+PLIST_SUB+=	INLINE_IMAGE=""
 
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 .else
-PLIST_SUB+=	INLINE_IMAGE_ONLY="@comment "
+PLIST_SUB+=	INLINE_IMAGE="@comment "
 
 # Don't use pkg-message
 PKGMESSAGE=	${NONEXISTENT}
@@ -122,6 +112,11 @@ pre-extract:
 	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|\`\(expr\) \(.*\) : \(.*\)`|`\1 \\( \2 : \3 \\)`|' \
+		${WRKSRC}/configure
+
 post-install:
 .if !defined(NOPORTDOCS)
 .if defined(JAPANESE)
@@ -140,10 +135,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/README.m17n ${PREFIX}/share/doc/w3m
 .endif
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/doc/w3m.1 ${PREFIX}/man/man1
-.if defined(JAPANESE)
-	@${INSTALL_MAN} ${WRKSRC}/doc-jp/w3m.1 ${PREFIX}/man/ja/man1
-.endif
+	@${INSTALL_MAN} ${WRKSRC}/scripts/w3mman/w3mman.1 ${PREFIX}/man/ja/man1
 .if defined(INLINE_IMAGE)
 	@${CAT} ${PKGMESSAGE}
 .endif
