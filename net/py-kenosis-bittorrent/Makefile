@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -17,8 +17,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
-
-BROKEN=		Does not work with python 2.4
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -45,6 +43,10 @@ pre-everything::
 .ifndef(WITHOUT_GUI)
 	@${ECHO_MSG} '===> Define WITHOUT_GUI to disable GUI installation'
 .endif
+
+post-extract:
+# patch to work with python 2.4
+	@${CP} ${FILESDIR}/zurllib.py ${WRKSRC}/BitTorrent
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | \
