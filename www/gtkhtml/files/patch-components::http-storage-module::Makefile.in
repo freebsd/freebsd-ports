@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- components/http-storage-module/Makefile.in	2002/01/22 14:05:48	1.1
++++ components/http-storage-module/Makefile.in	2002/01/22 14:06:05
+@@ -154,7 +154,7 @@
+ INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I$(top_builddir)					-DPLUGIN_DIR=\""$(PLUGIN_DIR)"\"		        -I$(includedir)                                 	$(EXTRA_GNOME_CFLAGS)
+ 
+ 
+-common_ldflags = -avoid-version
++common_ldflags = -avoid-version -module
+ 
+ bonobo_plugindir = $(PLUGIN_DIR)
+ bonobo_plugin_LTLIBRARIES = libstorage_http.la
