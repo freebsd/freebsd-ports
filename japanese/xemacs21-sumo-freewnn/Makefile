@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	japanese
+
 XEMACS_MAJOR_VER=	21
 PKGNAMESUFFIX=		-wnn4
 
