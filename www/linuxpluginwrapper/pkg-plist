@@ -1,5 +1,6 @@
 lib/pluginwrapper/flash6.so
 lib/pluginwrapper/acrobat.so
+lib/pluginwrapper/jai.so
 lib/pluginwrapper/java3d.so
 lib/pluginwrapper/java3d_snd.so
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/nppdf.so
