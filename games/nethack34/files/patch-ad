@@ -1,0 +1,12 @@
+diff -ruN ./include/system.h ../nethack-3.2.2/include/system.h
+--- ./include/system.h	Mon Nov  4 23:01:25 1996
++++ ../nethack-3.2.2/include/system.h	Sun Mar 21 17:25:02 1999
+@@ -80,7 +80,7 @@
+ # if !defined(SUNOS4) || defined(RANDOM)
+ E void FDECL(srandom, (unsigned int));
+ # else
+-#  ifndef bsdi
++#  if !defined(bsdi) && !defined(__FreeBSD__)
+ E int FDECL(srandom, (unsigned int));
+ #  endif
+ # endif

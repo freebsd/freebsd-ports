@@ -1,0 +1,12 @@
+diff -ruN ./sys/unix/Makefile.doc ../nethack-3.2.2/sys/unix/Makefile.doc
+--- ./sys/unix/Makefile.doc	Wed Dec 11 05:20:08 1996
++++ ../nethack-3.2.2/sys/unix/Makefile.doc	Sun Mar 21 17:25:02 1999
+@@ -31,7 +31,7 @@
+ 
+ 
+ GAME	= nethack
+-MANDIR	= /usr/man/man6
++MANDIR	= ${PREFIX}/man/man6
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
