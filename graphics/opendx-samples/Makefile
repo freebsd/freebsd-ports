@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendx-samples
-PORTVERSION=	4.0.7
+PORTVERSION=	4.0.8
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dxsamples-${PORTVERSION}
