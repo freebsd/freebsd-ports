@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.193 1999/04/01 08:13:35 taoka Exp $
+# $Id: Makefile,v 1.194 1999/04/02 04:05:03 steve Exp $
 #
 
     SUBDIR += 221upgrade
@@ -91,6 +91,7 @@
     SUBDIR += xless
     SUBDIR += xpns
     SUBDIR += xquote
+    SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += ytree
 
