@@ -26,7 +26,8 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.is.co.za/x/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/
+	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/X/opengroup/contrib/%SUBDIR%/,}
 
 MASTER_SITE_XFREE+= \
 	ftp://ftp.xfree86.org/pub/XFree86/%SUBDIR%/source/ \
@@ -34,7 +35,9 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-%SUBDIR%/source/ \
 	ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/%SUBDIR%/source/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/XFree86/%SUBDIR%/source/ \
-	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/%SUBDIR%/source/
+	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/%SUBDIR%/source/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/XFree86/%SUBDIR%/source/,}
+
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
@@ -47,7 +50,8 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/
+	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/GNU/%SUBDIR%/,}
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -68,7 +72,8 @@ MASTER_SITE_PERL_CPAN+=	\
 	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/
+	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/lang/perl/CPAN/modules/by-module/%SUBDIR%/,}
 
 MASTER_SITE_TEX_CTAN+=  \
 	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/  \
@@ -82,7 +87,8 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://sunsite.auc.dk/pub/tex/ctan/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/ \
-	ftp://ftp.dante.de/tex-archive/%SUBDIR%/
+	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/text/CTAN/%SUBDIR%/,}
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
@@ -98,6 +104,30 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://uiarchive.cso.uiuc.edu/pub/systems/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/
 
+MASTER_SITE_RINGSERVER+=	\
+	ftp://core.ring.gr.jp/pub/%SUBDIR%/ \
+	ftp://ring.etl.go.jp/pub/%SUBDIR%/ \
+	ftp://ring.asahi-net.or.jp/pub/%SUBDIR%/ \
+	ftp://ring.crl.go.jp/pub/%SUBDIR%/ \
+	ftp://ring.astem.or.jp/pub/%SUBDIR%/ \
+	ftp://ring.jah.ne.jp/pub/%SUBDIR%/ \
+	ftp://ring.exp.fujixerox.co.jp/pub/%SUBDIR%/ \
+	ftp://ring.so-net.ne.jp/pub/%SUBDIR%/ \
+	ftp://ring.ip-kyoto.ad.jp/pub/%SUBDIR%/ \
+	ftp://ring.iwate-pu.ac.jp/pub/%SUBDIR%/ \
+	ftp://ring.shibaura-it.ac.jp/pub/%SUBDIR%/ \
+	ftp://ring.ocn.ad.jp/pub/%SUBDIR%/ \
+	ftp://ring.htcn.ne.jp/pub/%SUBDIR%/ \
+	ftp://ring.omp.ad.jp/pub/%SUBDIR%/ \
+	ftp://ring.jec.ad.jp/pub/%SUBDIR%/ \
+	ftp://ring.tains.tohoku.ac.jp/pub/%SUBDIR%/ \
+	ftp://ring.toyama-ix.net/pub/%SUBDIR%/ \
+	ftp://ring.toyama-u.ac.jp/pub/%SUBDIR%/ \
+	ftp://ring.edogawa-u.ac.jp/pub/%SUBDIR%/ \
+	ftp://ring.data-hotel.net/pub/%SUBDIR%/ \
+	ftp://ring.yamanashi.ac.jp/pub/%SUBDIR%/ \
+	ftp://ring.nihon-u.ac.jp/pub/%SUBDIR%/
+
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/sourceforge/kde/%SUBDIR%/ \
@@ -111,7 +141,8 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://ftp.twoguys.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/
+	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/X/kde/%SUBDIR%/,}
 
 MASTER_SITE_COMP_SOURCES+=	\
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
