@@ -20,6 +20,7 @@
     SUBDIR += cccc
     SUBDIR += cdecl
     SUBDIR += cdk
+    SUBDIR += cervisia
     SUBDIR += cflow
     SUBDIR += clig
     SUBDIR += codecrusader
@@ -73,6 +74,7 @@
     SUBDIR += kdbg-i18n
     SUBDIR += kdelibdocs
     SUBDIR += kdelibdocs-i18n
+    SUBDIR += kdevelop
     SUBDIR += kdevelop-i18n
     SUBDIR += ktranslator
     SUBDIR += lclint
