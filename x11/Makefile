@@ -95,6 +95,7 @@
     SUBDIR += xfishtank
     SUBDIR += xgrab
     SUBDIR += xkbctrl
+    SUBDIR += xkbset
     SUBDIR += xkeycaps
     SUBDIR += xkeywrap
     SUBDIR += xloadimage
