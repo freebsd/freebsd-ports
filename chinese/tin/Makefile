@@ -8,11 +8,7 @@
 
 CATEGORIES=	chinese
 
-MASTERDIR=	${.CURDIR}/../../news/tin
-
-MAINTAINER=	yssu@CCCA.NCTU.edu.tw
-
-BROKEN=		Fails to patch
+MAINTAINER=	leeym@FreeBSD.org
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 		${.CURDIR}/files/patch-cook.c \
@@ -20,7 +16,10 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 		${.CURDIR}/files/patch-init.c \
 		${.CURDIR}/files/patch-tin_defaults
 
+MASTERDIR=	${.CURDIR}/../../news/tin
+
+CONFIGURE_ARGS=	--disable-locale
+
 .include "${MASTERDIR}/Makefile"
 
-CONFIGURE_ARGS+=	--disable-locale --with-screen=termcap \
-			--with-mime-default-charset=Big5
+CONFIGURE_ARGS+=--with-screen=termcap --with-mime-default-charset=Big5
