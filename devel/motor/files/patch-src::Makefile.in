@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/02/20 22:38:22	1.1
++++ src/Makefile.in	2001/02/20 22:38:53
+@@ -51,7 +51,7 @@
+ 	$(CXX) @CPPFLAGS@ $*.cc -c $(INCLUDE) "-DVERSION=\"$(VERSION)\"" "-DSHAREDIR=\"@CONFIG_MOTOR_SHAREDIR@\"" "-DMAKECMD=\"$(MAKE)\"" -o $*.o
+ 
+ install:
+-	install -Ds motor $(bindir)/$(PROG)
++	install -c -Ds motor $(bindir)/$(PROG)
+ 	mkdir -p $(datadir)/$(PROG)/
+ 	cp -R ../share/* ../COPYING $(datadir)/$(PROG)
+ 
