@@ -10,8 +10,8 @@ PORTVERSION=	${XEMACS_VER}
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
-DISTNAME=	xemacs-${XEMACS_VER}
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
+DISTNAME=	xemacs-${XEMACS_REL}
+DISTFILES=	${DISTNAME}.11${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	gj@FreeBSD.org
@@ -27,9 +27,11 @@ USE_XLIB=	yes
 USE_XPM=	yes
 .endif
 
-XEMACS_REL=	21.4
-XEMACS_VER=	21.4.12
+XEMACS_REL=	21.5
+BETA_VER=	-b11
+XEMACS_VER=	${XEMACS_REL}${BETA_VER}
 XEMACS_ARCH=	${CONFIGURE_TARGET}
+WRKSRC=		${WRKDIR}/${DISTNAME}.11
 
 STRIP=
 USE_AUTOCONF_VER=213
@@ -51,10 +53,10 @@ ALL_TARGET=	all dist
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 pre-fetch:
-.if !defined(WANT_GTK)
-	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
-	@${ECHO_MSG} "and recompile."
-.endif
+#.if !defined(WANT_GTK)
+#	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
+#	@${ECHO_MSG} "and recompile."
+#.endif
 .if defined(HAVE_MOTIF)
 .if !defined(MOTIF_STATIC)
 	@${ECHO_MSG} ""
@@ -82,12 +84,13 @@ WITH_DIALOGS=	--with-dialogs=athena
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
-.if defined(WANT_GTK)
-WITH_GTK=	--with-gtk=yes \
-		--with-xpm=no
-USE_GNOME=	gtk12
-USE_XPM=	no
-.endif
+#.if defined(WANT_GTK)
+#WITH_GTK=	--with-gtk=yes \
+#		--with-xpm=no
+# doesn't work with gtk12?
+#USE_GNOME=	gtk20
+#USE_XPM=	no
+#.endif
 
 # Drop faces (libcompface) and offix (libDnd) if building package,
 # autodetect otherwise
@@ -105,19 +108,15 @@ pre-configure::
 .endfor
 
 post-install::
-.for file in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
+.for file in b2m ctags ellcc etags gnuclient ootags xemacs-${XEMACS_REL}-b11
 	strip ${PREFIX}/bin/${file}
 .endfor
-# For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
-# Do what PLIST does for pkg_add.
-	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
-	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
-.if defined(WANT_GTK)
-	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
-	@${ECHO_MSG} "the maintainer."
-	@${ECHO_MSG} "Please also be aware that the package's name was automagically changed"
-	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
-.endif
+#.if defined(WANT_GTK)
+#	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
+#	@${ECHO_MSG} "the maintainer."
+#	@${ECHO_MSG} "Please also be aware that the package's name was automagically changed"
+#	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
+#.endif
 
 .include <bsd.port.mk>
