@@ -13,8 +13,6 @@ DISTNAME=	${PKGNAME}
 DISTFILES=	kaist-newmj18.bdf.gz ks_philgi16.bdf.gz \
 		kaist-newmj16.bdf.gz ks_iyagi16.bdf.gz
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes

@@ -12,8 +12,6 @@ MASTER_SITES=   ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
 DISTNAME=       hanyang-font-pcf
 
-MAINTAINER=     junker@jazz.snu.ac.kr
-
 USE_X_PREFIX=        yes
 NO_WRKSUBDIR=   yes
 

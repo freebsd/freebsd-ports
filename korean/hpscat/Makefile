@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/print/hpscat/ \
 DISTNAME=	hpscat-jshin
 DISTFILES=	hpscat-jshin.tar.gz ked.tar.gz
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 RUN_DEPENDS=    hcode:${PORTSDIR}/korean/hcode
 
 pre-configure:

@@ -10,8 +10,6 @@ PORTVERSION=	2.3.1
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nh2ps/
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 RUN_DEPENDS=    ${PREFIX}/share/ghostscript/5.10ft/hangul:${PORTSDIR}/korean/ftghostscript5
 
 MAN1=		nh2ps.1

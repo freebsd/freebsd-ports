@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/editor/HElvis/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/editor/HElvis/
 DISTNAME=	helvis-1.8h2-
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 MAN1=		ctags.1 elvis.1 elvprsv.1 elvrec.1 fmt.1 ref.1
 
 pre-build:
