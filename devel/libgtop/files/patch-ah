@@ -16,7 +16,7 @@
  	glibtop_map_entry *maps;
  #if defined __FreeBSD__
  	struct vnode vnode;
-+#if __FreeBSD_version < 50039
++#if __FreeBSD_version < 500039
  	struct inode inode;
 -	struct mount mount;
 +#endif
