@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	linux-netscape
-PORTVERSION=	6.01
+PORTVERSION=	6.1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.the.net/dev/local1/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.cica.es/pub6/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ciril.fr/pub2/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/www/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.cuhk.edu.hk/.3/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.darenet.dk/mirrors/ftp2.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.dei.uc.pt/.disk3/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.dei.uc.pt/.raid0/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.fh-brandenburg.de/pub/Infosystems/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.fh-giessen.de/pub/networking/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.fu-berlin.de/unix/network/www/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
@@ -25,13 +24,11 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/l
 		ftp://ftp.jaist.ac.jp/net/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.kmitl.ac.th/pub/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.loxinfo.co.th/netscape/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.nluug.nl/vol/1/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.nsysu.edu.tw/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ntnu.no/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ruhr-uni-bochum.de/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.spin.ad.jp/pub/WWW/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.sunet.se/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.task.gda.pl/vol/d31/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.uit.no/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.uni-bielefeld.de/pub/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.uni-c.dk/mirrors/ftp2.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
@@ -73,6 +70,7 @@ RUN_DEPENDS=	${LINUX_BASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUX_BASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
+BROKEN=		"menus do not display correctly"
 LINUX_BASE=	/compat/linux
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
@@ -88,7 +86,6 @@ do-extract:
 .for i in ${DISTFILES}
 	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
 .endfor
-	${MV} ${WRKSRC}/psm ${WRKSRC}/bin
 #	${MV} ${WRKSRC}/jre-image-i386 ${WRKSRC}/bin/plugins/java2
 #	cd ${WRKSRC}/bin/plugins && ${LN} -s java2/plugin/i386/ns600/libjavaplugin_oji.so;
 
