@@ -9,7 +9,7 @@
 PORTNAME=	net-http
 PORTVERSION=	0.3.1
 CATEGORIES=	net
-MASTER_SITES= 	http://evan.prodromou.san-francisco.ca.us/software/net-http/
+MASTER_SITES=	http://evan.prodromou.san-francisco.ca.us/software/net-http/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for doing HTTP client-side programming in Guile
@@ -24,6 +24,7 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
+PLIST_SUB=	GUILE_VER="${GUILE_VER}"
 
 do-install:
 	${CP} -R ${WRKSRC}/net/ ${LOCALBASE}/share/guile/${GUILE_VER}/net/
