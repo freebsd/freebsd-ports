@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/ \
 		http://hp.vector.co.jp/authors/VA013133/archives/ \
 		http://www.demonews.com/hosted/masa/archives/
 
-MAINTAINER=	aa8vb@ipass.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Spinning pocketwatch demo and benchmark utility
 
 USE_X_PREFIX=	yes
