@@ -1,0 +1,23 @@
+--- configure.orig	Thu Jul 22 18:15:58 2004
++++ configure	Thu Jul 22 18:16:36 2004
+@@ -25858,16 +25858,16 @@
+   fi
+   have_cmov=false
+   case $arch in
+-  i786) ARCHFLAGS="-mcpu=i786 -march=$arch"
++  i786) ARCHFLAGS=""
+   have_cmov=true
+   ;;
+-  i686) ARCHFLAGS="-mcpu=i686 -march=$arch"
++  i686) ARCHFLAGS=""
+   have_cmov=true
+   ;;
+-  i586) ARCHFLAGS="-mcpu=i586 -march=$arch"
++  i586) ARCHFLAGS=""
+   have_cmov=false
+   ;;
+-  *) ARCHFLAGS="-mcpu=i686 -march=$arch"
++  *) ARCHFLAGS=""
+   have_cmov=true
+   ;;
+   esac

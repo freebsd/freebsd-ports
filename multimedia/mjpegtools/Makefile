@@ -7,7 +7,7 @@
 
 PORTNAME=	mjpegtools
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -19,18 +19,18 @@ LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
-USE_GNOME=	glib12 lthack
+USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --program-transform-name=""
+CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 WANT_GNOME=	yes
 WANT_SDL=	yes
+INSTALLS_SHLIB=	yes
 
 INFO=	mjpeg-howto
 MAN1=	jpeg2yuv.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
@@ -76,7 +76,7 @@ WITH_LIBGNUGETOPT=	yes
 WITH_LIBMOVTAR=	yes
 .endif
 # QUICKTIME
-.if exists(${LOCALBASE}/lib/libopenquicktime.so.0)
+.if exists(${LOCALBASE}/lib/libquicktime.so.0)
 WITH_QUICKTIME=	yes
 .endif
 # SDL
@@ -120,9 +120,9 @@ CONFIGURE_ARGS+=	--with-sdl
 .endif
 #
 .ifdef(WITH_QUICKTIME)
-LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
+LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
-CONFIGURE_ARGS+=	--with-quicktime=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-quicktime
 .endif
 
 pre-everything::
@@ -155,7 +155,8 @@ post-patch:
 		s,-ldl([[:space:]]|"),\1,; \
 		s|-L/lib||g; \
 		s|(-L\$$with_dv)(\$$with_dv_l)|\1/lib|; \
-		s|(-ldv)|-L${LOCALBASE}/lib \1 ${PTHREAD_LIBS:S/"//g}|' \
+		s|(-ldv)|-L${LOCALBASE}/lib \1 ${PTHREAD_LIBS:S/"//g}|; \
+		s|-pthread||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
 		${WRKSRC}/lavtools/liblavplay.c \
