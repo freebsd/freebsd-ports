@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=	5.24
-PORTREVISION=	1
+PORTVERSION=	5.32
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
-		http://www.monash.edu.au/mirror/analog/ \
+		http://analog.planetmirror.com/ \
 		http://analog.gsp.com/ \
-		http://analog.barringtons.com/ \
-		http://www.pomfret.net/mirror/analog/ \
+		http://isr.ath.cx/analog/ \
+		http://analog.mirrors.ecodigit.com.br/ \
 		http://analog.org/loganalysis/ \
-		http://www.skreamsoft.com/analogmirror/ \
-		http://sunsite.org.uk/packages/analog/ \
+		http://analog.techsell.ru/ \
+		http://sunsite.sut.ac.jp/pub/archives/WWW/analog/ \
+		ftp://ftp.polytechnic.edu.na/pub/analog/ \
+		http://analog.netsoc.ucd.ie/ \
 		http://analog.tzone.it/
 
 MAINTAINER=	mharo@FreeBSD.org

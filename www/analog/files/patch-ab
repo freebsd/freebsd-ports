@@ -1,7 +1,7 @@
---- src/tree.c.orig	Wed Jan  9 21:20:12 2002
-+++ src/tree.c	Wed Jan  9 21:20:24 2002
-@@ -886,8 +886,16 @@
-     }
+--- src/tree.c.orig	Sun Mar 23 13:57:02 2003
++++ src/tree.c	Sun May 11 10:25:45 2003
+@@ -895,8 +895,16 @@
+ 	*name = "Macintosh";
      else if (strstr(whole, "Linux") != NULL || strstr(whole, "linux") != NULL)
        *name = "Unix:Linux";
 -    else if (strstr(whole, "BSD") != NULL)

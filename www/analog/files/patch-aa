@@ -1,8 +1,9 @@
---- src/Makefile.orig	Wed Jan  9 21:16:22 2002
-+++ src/Makefile	Wed Jan  9 21:18:38 2002
-@@ -1,14 +1,20 @@
- # Makefile for analog 5.1
+--- src/Makefile.orig	Sun Mar 23 13:57:02 2003
++++ src/Makefile	Sun May 11 09:24:47 2003
+@@ -2,15 +2,21 @@
  # Please read docs/Readme.html, or http://www.analog.cx/
+ # This is a general Unix-like Makefile: Makefiles for other OS's can be found
+ #   in the "build" directory.
 -CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
 +CC ?= gcc           # which compiler to use: eg cc, acc, gcc. NB Different
  #                    compilers need different CFLAGS, e.g., -O instead of -O2.
@@ -22,9 +23,9 @@
 +       -DCONFIGDIR=\"$(PREFIX)/share/analog/\"
 +#DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
  #                 ... -DNOOPEN -DNOFOLLOW -DNOALARM -DNOGRAPHICS -DNOGMTIME ...
- #                 ... -DEBCDIC -DUSE_PLAIN_SETJMP -DHAVE_GD -DHAVE_PCRE ...
- #                 ... -DNEED_STRCMP -DNEED_MEMMOVE -DNEED_STRTOUL ...
-@@ -25,6 +31,12 @@
+ #                 ... -DEBCDIC -DUSE_PLAIN_SETJMP ...
+ #                 ... -DHAVE_GD -DHAVE_ZLIB -DHAVE_PCRE ...
+@@ -30,6 +36,12 @@
  OS = UNIX         # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS
  #                   RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400, OS390
  LIBS = -lm  # extra libraries needed; most platforms (but not OS X or BeOS)
@@ -36,4 +37,4 @@
 +
  #               need -lm LAST
  #             if you defined HAVE_GD above you also need -lgd -lpng -ljpeg -lz
- #             if you defined HAVE_PCRE above you also need -lpcre
+ #             if you defined HAVE_ZLIB above you also need -lz
