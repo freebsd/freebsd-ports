@@ -1,0 +1,29 @@
+--- Makefile.in	Mon Feb  4 21:19:21 2002
++++ Makefile.in	Tue Feb  5 18:19:23 2002
+@@ -16,7 +16,7 @@
+ DEF=	-DFPEXEC_BIN=\"$(fpexec_bin)\" \
+ 	-DFPSTATIC_BIN=\"$(fpstatic_bin)\"
+ 
+-DEF2=	-DFP_HTTPD_USER=\"$(fpexec_caller)\" \
++DEF2=	-DFP_HTTPD_USER=\"$(fpexec_uidcaller)\" \
+ 	-DFP_UID_MIN=$(fpexec_uidmin) \
+ 	-DFP_GID_MIN=$(fpexec_gidmin) \
+ 	-DFP_LOG_EXEC=\"$(fpexec_logexec)\" \
+@@ -49,14 +49,10 @@
+ #   and activate it in the Apache configuration
+ install: all
+ 	$(APXS) -i -a -n 'frontpage' mod_frontpage.so
+-	$(install) fpexec $(sbindir)/fpexec
+-	chown root.root $(sbindir)/fpexec
+-	chmod 4711 $(sbindir)/fpexec
+-	$(install) fpstatic $(sbindir)/fpstatic
+-	chown root.root $(sbindir)/fpstatic
+-	chmod 755 $(sbindir)/fpstatic
++	$(install) -m 4550 -o root -g $(fpexec_gidcaller) fpexec $(sbindir)/fpexec
++	$(install) -m 0555 -o root -g $(fpexec_gidcaller) fpstatic $(sbindir)/fpstatic
+ 	touch $(fpexec_logexec)
+-	chown $(fpexec_caller) $(fpexec_logexec)
++	chown $(fpexec_uidcaller) $(fpexec_logexec)
+ 
+ #   cleanup
+ clean:
