@@ -24,10 +24,7 @@ CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc \
 		--with-ignore-dot \
 		--with-tty-tickets \
 		--with-env-editor \
-		--with-insults \
-		--with-all-insults \
 		--with-logincap \
-		--disable-root-sudo \
 		--with-long-otp-prompt \
 		--with-pam
 
