@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += uniksc
     SUBDIR += texinfo
 
     SUBDIR += FreeWnn-lib

@@ -1,0 +1,3 @@
+bin/uniksc
+include/uniksc.h        
+lib/libuniksc.so.0

@@ -1,0 +1,46 @@
+--- Makefile.orig	Mon Oct  9 07:38:51 2000
++++ Makefile	Sun Oct 15 01:21:27 2000
+@@ -1,8 +1,8 @@
+-CC = gcc
++#CC = gcc
+ 
+-CFLAGS = -fPIC -Wall -O2 -fomit-frame-pointer -I.
++FLAGS = ${CFLAGS} -I.
+ 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ 
+ SRCS = ksc5601_utf16.c \
+ 	ksc5601_utf16_table.c \
+@@ -15,24 +15,24 @@
+ 	$(CC) -c $(FLAGS) -o $*.o $<
+ 
+ all: $(OBJS)
+-	$(CC) -shared -Wl,-soname -Wl,libuniksc.so.0 -o libuniksc.so.0.9 $(OBJS)
+-	ln -sf libuniksc.so.0.9 libuniksc.so.0
+-	$(CC) $(CFLAGS) -o uniksc uniksc.c libuniksc.so.0
++	$(CC) -shared -Wl,-soname -Wl,libuniksc.so.0 -o libuniksc.so.0 $(OBJS)
++	#ln -sf libuniksc.so.0.9 libuniksc.so.0
++	$(CC) $(FLAGS) -o uniksc uniksc.c libuniksc.so.0
+ 		
+ clean:
+-	rm -f $(OBJS) uniksc libuniksc.so.0 libuniksc.so.0.9 *~
++	rm -f $(OBJS) uniksc libuniksc.so.0 *~
+ 
+ install:
+ 	if ( test ! -d $(PREFIX)/bin ) ; then mkdir $(PREFIX)/bin ; fi
+ 	if ( test ! -d $(PREFIX)/lib ) ; then mkdir $(PREFIX)/lib ; fi
+ 	if ( test ! -d $(PREFIX)/include ) ; then mkdir $(PREFIX)/include ; fi
+ 	cp -f uniksc $(PREFIX)/bin/uniksc
+-	cp -f libuniksc.so.0.9 $(PREFIX)/lib/libuniksc.so.0.9
+-	ln -sf libuniksc.so.0.9 $(PREFIX)/lib/libuniksc.so.0
++	cp -f libuniksc.so.0 $(PREFIX)/lib/libuniksc.so.0
++	#ln -sf libuniksc.so.0.9 $(PREFIX)/lib/libuniksc.so.0
+ 	cp -f uniksc.h $(PREFIX)/include/uniksc.h
+ 
+ uninstall:
+ 	rm -f $(PREFIX)/bin/uniksc
+ 	rm -f $(PREFIX)/lib/libuniksc.so.0
+-	rm -f $(PREFIX)/lib/libuniksc.so.0.9
++#	rm -f $(PREFIX)/lib/libuniksc.so.0.9
+ 	rm -f $(PREFIX)/include/uniksc.h	
