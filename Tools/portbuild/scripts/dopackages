@@ -271,10 +271,6 @@ fi
 # Set up our environment variables
 buildenv ${pb} ${arch} ${branch}
 
-if [ "$norestr" = 1 ]; then
-  export NO_RESTRICTED=1
-fi
-
 if [ "$dodistfiles" = 1 ]; then
   export WANT_DISTFILES=1
 fi
@@ -368,7 +364,9 @@ if [ "$nobuild" = 0 -a "$finish" = 0 ]; then
 fi
 
 if [ "$skipstart" = 0 ]; then
-  restrictedlist ${pb} ${arch} ${scripts} ${branch} &
+  if [ "$norestr" = 0 ]; then
+    restrictedlist ${pb} ${arch} ${scripts} ${branch} &
+  fi
   
   if [ "$cdrom" = 1 ]; then
     cdromlist ${pb} ${arch} ${scripts} ${branch} &
@@ -388,81 +386,78 @@ if [ "$skipstart" = 0 ]; then
   fi
   
   cd ${pb}/${arch}
-  if [ "$nobuild" = 0 ]; then
-    mkdir -p ${pb}/${arch}/${branch}/bak
-    cd ${pb}/${arch}/${branch}/bak
-    rm -rf errors logs packages old-errors
-    cd ${pb}/${arch}/${branch}
-    mv make.* tarballs/ports.tar.gz bak
+  mkdir -p ${pb}/${arch}/${branch}/bak
+  cd ${pb}/${arch}/${branch}/bak
+  rm -rf errors logs packages old-errors
+  cd ${pb}/${arch}/${branch}
+  mv make.* tarballs/ports.tar.gz bak
+
+  cd ${pb}/${arch}/${branch}
+  cp -rp errors logs old-errors bak
+
+  shortdate=$(echo ${date} | sed -e 's/..$//')
+
+  if [ "$incremental" = 1 ]; then
+    # need to preserve symlinks for packages
+    tar cf - packages | tar xfC - bak
+
+    cd ${PORTSDIR}
+
+    # Identify the ports that have changed and need to be removed before rebuilding
+    cut -f 1,2,3,8,9 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
+    cut -f 1,2,3,8,9 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
+    comm -2 -3 ${INDEXFILE}.old1 ${INDEXFILE}.1 | cut -f 1 -d \| > ${pb}/${arch}/${branch}/.oldports
+
+    echo "Removing $(wc -l ${pb}/${arch}/${branch}/.oldports) packages in preparation for incremental build"
+    rm ${INDEXFILE}.old1 ${INDEXFILE}.1
+  
+    cd ${PACKAGES}/All
+    sed "s,$,${PKGSUFFIX}," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
+    ${scripts}/prunepkgs ${PORTSDIR}/${INDEXFILE} ${PACKAGES}
+
+    cd ${pb}/${arch}/${branch}/errors/
+    sed "s,\$,.log," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
+    find . -name \*.log.bz2 -delete
+
+    cd ${pb}/${arch}/${branch}/logs/
+    sed 's,$,.log,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
+    sed 's,$,.log.bz2,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
+  else
+    # need to preserve symlinks for packages
+    mv -f packages bak
+
+    # Already copied the logs above
+    rm -rf errors logs old-errors
 
     cd ${pb}/${arch}/${branch}
-    cp -rp errors logs old-errors bak
+    mkdir -p packages/All
 
-    shortdate=$(echo ${date} | sed -e 's/..$//')
+    mkdir -p ${pb}/${arch}/archive/errorlogs
+    rm -rf ${pb}/${arch}/archive/errorlogs/e.${branch}.${date} ${pb}/${arch}/archive/errorlogs/e.${branch}.${shortdate}
+    mkdir -p ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}
+    ln -sf ${pb}/${arch}/archive/errorlogs/e.${branch}.${date} ${pb}/${arch}/${branch}/errors
+    ln -sf e.${branch}.${date} ${pb}/${arch}/archive/errorlogs/e.${branch}.${shortdate}
+    mkdir -p ${pb}/${arch}/${branch}/errors/old-errors
+    rm -rf ${pb}/${arch}/archive/errorlogs/a.${branch}.${date} ${pb}/${arch}/archive/errorlogs/a.${branch}.${shortdate}
+    mkdir -p ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}
+    ln -sf ${pb}/${arch}/archive/errorlogs/a.${branch}.${date} ${pb}/${arch}/${branch}/logs
+    ln -sf a.${branch}.${date} ${pb}/${arch}/archive/errorlogs/a.${branch}.${shortdate}
 
-    if [ "$incremental" = 1 ]; then
-      # need to preserve symlinks for packages
-      tar cf - packages | tar xfC - bak
+    echo "error logs in ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}"
+    cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/cvsdone
+    cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/cvsdone
+    cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/INDEX
+    cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/INDEX
 
-      cd ${PORTSDIR}
-
-      # Identify the ports that have changed and need to be removed before rebuilding
-      cut -f 1,2,3,8,9 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
-      cut -f 1,2,3,8,9 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
-      comm -2 -3 ${INDEXFILE}.old1 ${INDEXFILE}.1 | cut -f 1 -d \| > ${pb}/${arch}/${branch}/.oldports
-
-      echo "Removing $(wc -l ${pb}/${arch}/${branch}/.oldports) packages in preparation for incremental build"
-      rm ${INDEXFILE}.old1 ${INDEXFILE}.1
-    
-      cd ${PACKAGES}/All
-      sed "s,$,${PKGSUFFIX}," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-      ${scripts}/prunepkgs ${PORTSDIR}/${INDEXFILE} ${PACKAGES}
-
-      cd ${pb}/${arch}/${branch}/errors/
-      sed "s,\$,.log," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-      find . -name \*.log.bz2 -delete
-
-      cd ${pb}/${arch}/${branch}/logs/
-      sed 's,$,.log,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-      sed 's,$,.log.bz2,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-    else
-      # need to preserve symlinks for packages
-      mv -f packages bak
-
-      # Already copied the logs above
-      rm -rf errors logs old-errors
-
-      cd ${pb}/${arch}/${branch}
-      mkdir -p packages/All
-
-      mkdir -p ${pb}/${arch}/archive/errorlogs
-      rm -rf ${pb}/${arch}/archive/errorlogs/e.${branch}.${date} ${pb}/${arch}/archive/errorlogs/e.${branch}.${shortdate}
-      mkdir -p ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}
-      ln -sf ${pb}/${arch}/archive/errorlogs/e.${branch}.${date} ${pb}/${arch}/${branch}/errors
-      ln -sf e.${branch}.${date} ${pb}/${arch}/archive/errorlogs/e.${branch}.${shortdate}
-      mkdir -p ${pb}/${arch}/${branch}/errors/old-errors
-      rm -rf ${pb}/${arch}/archive/errorlogs/a.${branch}.${date} ${pb}/${arch}/archive/errorlogs/a.${branch}.${shortdate}
-      mkdir -p ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}
-      ln -sf ${pb}/${arch}/archive/errorlogs/a.${branch}.${date} ${pb}/${arch}/${branch}/logs
-      ln -sf a.${branch}.${date} ${pb}/${arch}/archive/errorlogs/a.${branch}.${shortdate}
-
-      echo "error logs in ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}"
-      cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/cvsdone
-      cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/cvsdone
-      cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/INDEX
-      cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/INDEX
-
-      if [ "$nodummy" = 0 ]; then
-        for dir in ${dummyports}; do
-          pkgname=$(cd ${pb}/${arch}/${branch}/ports/$dir; make package-name)${PKGSUFFIX}
-          if [ -f ${pb}/${arch}/${branch}/tarballs/${pkgname} ]; then
-            cp -p ${pb}/${arch}/${branch}/tarballs/${pkgname} packages/All
-          else
-            echo "Dummy package ${pkgname} does not exist!"
-          fi
-        done
-      fi
-
+    if [ "$nodummy" = 0 ]; then
+      for dir in ${dummyports}; do
+        pkgname=$(cd ${pb}/${arch}/${branch}/ports/$dir; make package-name)${PKGSUFFIX}
+        if [ -f ${pb}/${arch}/${branch}/tarballs/${pkgname} ]; then
+          cp -p ${pb}/${arch}/${branch}/tarballs/${pkgname} packages/All
+        else
+          echo "Dummy package ${pkgname} does not exist!"
+        fi
+      done
     fi
   fi
 fi
