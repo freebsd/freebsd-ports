@@ -15,7 +15,7 @@ MAINTAINER=		kosmos@blarg.net
 COMMENT=	SGML/XML application programming tool
 
 LIB_DEPENDS=		tcl82.1:${PORTSDIR}/lang/tcl82
-BUILD_DEPENDS=		${WRKDIRPREFIXPORTSDIR}/lang/tcl82/work/tcl-8.2.3/src:${PORTSDIR}/lang/tcl82:patch
+BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/lang/tcl82:patch
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 HAS_CONFIGURE=		YES
