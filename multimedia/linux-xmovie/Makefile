@@ -18,7 +18,7 @@ EXTRACT_SUFX=
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A movie player for AVI, MPEG-2/4 and MOV movies
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
+EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
