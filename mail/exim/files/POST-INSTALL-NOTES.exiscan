@@ -1,4 +1,6 @@
 This installation of Exim includes Exiscan content scanning support,
 from http://duncanthrax.net/exiscan/, which is documented in
-${PREFIX}/share/doc/exim/exiscan-readme.txt.
+${PREFIX}/share/doc/exim/exiscan-readme.txt.  The ports tree
+includes various content scanners that might be useful, e.g.
+mail/p5-Mail-SpamAssassin and security/vscan.
 
