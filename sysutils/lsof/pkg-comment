@@ -1,1 +1,1 @@
-Lists information about open files.
+Lists information about open files.  (simular to fstat(1))
