@@ -25,11 +25,6 @@ LDADD+=		-ldb2
 
 #LDFLAGS=	${LDADD}
 
-NOPROFILE=	True	# to avoid building profiled library
-INTERNALLIB=	True	# to avoid building a static version
-
 NOMAN=	True	# don't bother with the man-page here, let the port handle it
-
-all:	${SHLIB_NAME}
 
 .include <bsd.lib.mk>

@@ -11,22 +11,15 @@ CC!=		${PREFIX}/sbin/apxs -q CC
 CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
 CFLAGS+=	${INCLUDES} -DDTCL_VERSION="\"${DTCL_VERSION}\""
 
-LIB=	mod_dtcl
-SHLIB_MAJOR=1
-SHLIB_MINOR=0
+SHLIB_NAME=	libmod_dtcl.so.1
 
 LDADD=	-L${PREFIX}/lib -ltcl${TCL_NDVER} -lm
 LDFLAGS=${LDADD}
-
-NOPROFILE=	True	# to avoid building profiled library
-INTERNALLIB=	True	# to avoid building a static version
 
 SRCS=	mod_dtcl.c
 SRCS+=	apache_cookie.c apache_multipart_buffer.c apache_request.c \
 	channel.c parser.c tcl_commands.c
 
 NOMAN=	True	# don't bother with the man-page here, let the port handle it
-
-all:	${SHLIB_NAME}
 
 .include <bsd.lib.mk>
