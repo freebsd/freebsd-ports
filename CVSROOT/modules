@@ -9125,6 +9125,7 @@ webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
 weedns_sc	ports/dns/weedns_sc
 weewm		ports/x11-wm/weewm
+wesnoth		ports/games/wesnoth
 wfb2sql		ports/databases/wfb2sql
 wget		ports/ftp/wget
 wget+ipv6	ports/ftp/wget+ipv6
