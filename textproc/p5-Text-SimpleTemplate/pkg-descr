@@ -1,0 +1,19 @@
+This is yet another library for template-based text generation.
+
+Template-based text generation is a way to separate program code and
+data, so non-programmer can control final result (like HTML) as desired
+without tweaking the program code itself. By doing so, jobs like website
+maintenance is much easier because you can leave program code unchanged
+even if page redesign was needed.
+
+The idea is simple. Whenever a block of text surrounded by '<%' and '%>'
+(or any pair of delimiters you specify) is found, it will be taken as
+Perl expression, and will be replaced by its evaluated result.
+
+Major goal of this library is simplicity and speed. While there're many
+modules for template processing, this module has near raw Perl-code
+(i.e., "s|xxx|xxx|ge") speed, while providing simple-to-use objective
+interface.
+
+- Anton
+<tobez@tobez.org>
