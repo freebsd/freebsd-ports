@@ -9,7 +9,8 @@ PORTNAME=	cdrtools
 PORTVERSION=	2.01a38
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
+		ftp://ftp.zeist.de/pub/distfiles/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
