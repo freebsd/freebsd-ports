@@ -149,7 +149,6 @@
     SUBDIR += lynx-current
     SUBDIR += lynx-ssl
     SUBDIR += mapedit
-    SUBDIR += marc-search
     SUBDIR += mathopd
     SUBDIR += mdw
     SUBDIR += mergelog
