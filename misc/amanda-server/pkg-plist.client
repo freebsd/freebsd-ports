@@ -1,0 +1,46 @@
+libexec/amanda/amandad
+libexec/amanda/amidxtaped
+libexec/amanda/calcsize
+libexec/amanda/killpgrp
+libexec/amanda/patch-system
+libexec/amanda/rundump
+libexec/amanda/runtar
+libexec/amanda/selfcheck
+libexec/amanda/sendbackup
+libexec/amanda/sendsize
+libexec/amanda/versionsuffix
+sbin/amrecover
+sbin/amrestore
+share/amanda/COPYRIGHT
+share/amanda/COPYRIGHT-APACHE
+share/amanda/COPYRIGHT-REGEX
+share/amanda/DUMPER-API
+share/amanda/EXCLUDE
+share/amanda/FAQ
+share/amanda/INDEXING
+share/amanda/INSTALL
+share/amanda/INTERNALS
+share/amanda/KERBEROS
+share/amanda/LABEL.PRINTING
+share/amanda/MULTITAPE
+share/amanda/RAIT
+share/amanda/PORT.USAGE
+share/amanda/RESTORE
+share/amanda/SAMBA
+share/amanda/SECURITY
+share/amanda/SYSTEM.NOTES
+share/amanda/TAPE.CHANGERS
+share/amanda/TAPETYPES
+share/amanda/UPGRADE
+share/amanda/VTAPE-API
+share/amanda/WHATS.NEW
+share/amanda/WISHLIST
+share/amanda/YEAR2000
+share/amanda/ZFTAPE
+share/examples/amanda/amanda.conf
+share/examples/amanda/chg-multi.conf
+share/examples/amanda/chg-scsi.conf
+share/examples/amanda/disklist
+@dirrm share/examples/amanda
+@dirrm share/amanda
+@dirrm libexec/amanda

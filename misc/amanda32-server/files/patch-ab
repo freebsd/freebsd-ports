@@ -1,0 +1,12 @@
+--- common-src/Makefile.in	Fri Nov 30 11:33:48 2001
++++ common-src/Makefile.in.new	Fri Nov 30 18:03:29 2001
+@@ -611,7 +611,8 @@
+ 
+ install-data-am:
+ 
+-install-exec-am: install-libLTLIBRARIES
++@WANT_CLIENT_TRUE@install-exec-am: @WANT_CLIENT_TRUE@install-libLTLIBRARIES
++@WANT_SERVER_TRUE@install-exec-am:
+ 
+ install-info:
+ 

@@ -1,0 +1,35 @@
+--- tape-src/Makefile.in.orig	Fri Nov 30 14:33:56 2001
++++ tape-src/Makefile.in	Tue Dec  4 08:04:12 2001
+@@ -162,7 +162,8 @@
+ @WANT_LIBTOOL_FALSE@LIB_EXTENSION = a
+ @WANT_LIBTOOL_FALSE@noinst_LIBRARIES = libamtape.a
+ 
+-sbin_PROGRAMS = ammt amdd
++@WANT_SERVER_TRUE@sbin_PROGRAMS = ammt amdd
++@WANT_CLIENT_TRUE@sbin_PROGRAMS = 
+ 
+ libamtape_la_SOURCES = output-file.c \
+ 			output-null.c \
+@@ -241,7 +242,8 @@
+ output-tape.lo tapeio.lo
+ libamtape_la_OBJECTS = $(am_libamtape_la_OBJECTS)
+ EXTRA_PROGRAMS = tapetype$(EXEEXT) amtapeio$(EXEEXT)
+-sbin_PROGRAMS = ammt$(EXEEXT) amdd$(EXEEXT)
++@WANT_SERVER_TRUE@sbin_PROGRAMS = ammt$(EXEEXT) amdd$(EXEEXT)
++@WANT_CLIENT_TRUE@sbin_PROGRAMS = 
+ PROGRAMS = $(sbin_PROGRAMS)
+ 
+ amdd_SOURCES = amdd.c
+@@ -524,7 +526,11 @@
+ 
+ install-data-am:
+ 
+-install-exec-am: install-libLTLIBRARIES install-sbinPROGRAMS
++@WANT_CLIENT_TRUE@install-exec-am: @WANT_CLIENT_TRUE@install-libLTLIBRARIES \
++	install-sbinPROGRAMS
++	@$(NORMAL_INSTALL)
++	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
++@WANT_SERVER_TRUE@install-exec-am: install-sbinPROGRAMS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
