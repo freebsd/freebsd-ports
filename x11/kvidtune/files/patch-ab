@@ -1,0 +1,13 @@
+--- kvidtune/dlgadvancedxstartup.h.orig	Fri Jan 21 19:40:59 2000
++++ kvidtune/dlgadvancedxstartup.h	Fri Jan 21 19:45:44 2000
+@@ -23,8 +23,8 @@
+     Q_OBJECT
+ 
+ private:
+-    const  stepX = 8;
+-    const  stepY = 2;
++    static const int stepX = 8;
++    static const int stepY = 2;
+ 
+     KVidData           *vidData;
+     XF86DisplaySection *currentDispSect;

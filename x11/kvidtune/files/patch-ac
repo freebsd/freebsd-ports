@@ -1,0 +1,13 @@
+--- kvidtune/toplevel.h.orig	Fri Jan 21 19:43:18 2000
++++ kvidtune/toplevel.h	Fri Jan 21 19:43:31 2000
+@@ -112,8 +112,8 @@
+ 
+   int   menu_item_save;
+ 
+-  const int ID_STATUS_GENERAL = 1;
+-  const int ID_TOOLBAR_SAVE   = 2;
++  static const int ID_STATUS_GENERAL = 1;
++  static const int ID_TOOLBAR_SAVE   = 2;
+ 
+ public slots:
+ 
