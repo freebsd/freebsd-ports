@@ -1,5 +1,5 @@
---- unix/unix.cpp.orig	Wed Feb 28 16:12:23 2001
-+++ unix/unix.cpp	Fri Sep 20 14:58:01 2002
+--- unix/unix.cpp.orig	Wed Feb 28 13:12:23 2001
++++ unix/unix.cpp	Sat Sep 28 20:16:36 2002
 @@ -51,9 +51,11 @@
  #include <ctype.h>
  
@@ -63,7 +63,7 @@
 +#include <dev/usb/usbhid.h>
 +#undef class
 +
-+#include <libusb.h>
++#include <libusbhid.h>
 +}
 +
 +#define	JOYSTICK_MAX_BUTTONS	16
