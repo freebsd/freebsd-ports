@@ -17,7 +17,8 @@ MAINTAINER=	tiamat@comset.net
 COMMENT=	3D modeling environment for the RenderMan interface
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82
+		tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GL=		yes
 USE_XLIB=	yes
