@@ -2194,6 +2194,7 @@ freefonts	ports/x11-fonts/freefonts
 freeglut	ports/x11-toolkits/freeglut
 freegrep	ports/textproc/freegrep
 freelibiberty	ports/devel/freelibiberty
+freemind	ports/deskutils/freemind
 freenet		ports/net/freenet
 freenet6	ports/net/freenet6
 freeradius	ports/net/freeradius
