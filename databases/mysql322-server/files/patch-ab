@@ -1,43 +1,29 @@
---- scripts/mysql_install_db.sh.orig	Wed Nov  4 21:25:07 1998
-+++ scripts/mysql_install_db.sh	Tue Nov 10 16:54:46 1998
-@@ -11,7 +11,7 @@
+--- scripts/mysql_install_db.sh.orig	Sun Nov 22 04:57:20 1998
++++ scripts/mysql_install_db.sh	Sun Dec  6 23:58:49 1998
+@@ -10,8 +10,8 @@
+ 
  mdata=@localstatedir@/mysql
  
- # Are we are doing a rpm install?
+-# Are we are doing a rpm install?
 -if test "$1" = "-IN-RPM"; then IN_RPM=1; shift; fi
-+if test "$1" = "-IN-RPM"; then shift; fi
++# pretend we're doing an RPM install
++IN_RPM=1
  
  if test ! -x @libexecdir@/mysqld
  then
-@@ -26,8 +26,6 @@
-   fi
- fi
- 
--# On IRIX hostname is in /usr/bsd so add this to the path
--PATH=$PATH:/usr/bsd
+@@ -31,12 +31,9 @@
  hostname=`hostname`		# Install this too in the user table
  
  # Create database directories mysql & test
-@@ -149,22 +147,9 @@
- END_OF_DATA
- then
-   echo ""
--  if test -z "$IN_RPM"
--  then
--    echo "To start mysqld at boot time you have to copy support-files/mysql.server"
--    echo "to the right place for your system"
--    echo
--  fi
-   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
-   echo "See the manual for instructions."
-   echo
--  if test -z "$IN_RPM"
--  then
--    echo "You can test the MySQL demon with the benchmarks in the 'bench'"
--    echo "directory:"
--    echo "cd bench ; run-all-tests"
--    echo
--  fi
-   echo "Please report any problems with the @scriptdir@/mysqlbug script!"
-   echo
-   echo "The latest information about MySQL is available on the web at http://www.tcx.se"
+-if test -z "$IN_RPM"
+-then
+-  if test ! -d @localstatedir@; then mkdir @localstatedir@; fi
+-  if test ! -d @localstatedir@/mysql; then mkdir @localstatedir@/mysql; fi
+-  if test ! -d @localstatedir@/test; then mkdir @localstatedir@/test; fi
+-fi
++if test ! -d @localstatedir@; then mkdir @localstatedir@; fi
++if test ! -d @localstatedir@/mysql; then mkdir @localstatedir@/mysql; fi
++if test ! -d @localstatedir@/test; then mkdir @localstatedir@/test; fi
+ 
+ # Initialize variables
+ c_d="" i_d=""
