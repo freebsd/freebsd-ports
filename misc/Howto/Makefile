@@ -7,7 +7,7 @@
 
 PORTNAME=	Howto
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/sgml/ \
 		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/ \
@@ -19,8 +19,6 @@ DISTFILES=	Linux+FreeBSD.sgml.gz  \
 		Security-HOWTO.sgml.gz
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"Checksum fails"
 
 BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
