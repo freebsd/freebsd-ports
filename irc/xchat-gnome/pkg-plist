@@ -1,3 +1,4 @@
+
 bin/xchat
 bin/xchat-text
 lib/xchat/plugins/perl.so
@@ -35,3 +36,5 @@ share/locale/tr/LC_MESSAGES/xchat.mo
 share/locale/uk/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xchat.mo
+@dirrm lib/xchat/plugins
+@dirrm lib/xchat
