@@ -9,19 +9,17 @@
  
  install-command:
  	rm -f ${PREFIX_DIR}/bin/gcl
-@@ -141,21 +141,15 @@
+@@ -141,21 +141,13 @@
  	-if [ -d "${PREFIX_DIR}/lib" ] ;then true; else mkdir ${PREFIX_DIR}/lib ; fi
  	-if [ -d "${PREFIX_DIR}/bin" ] ;then true; else mkdir ${PREFIX_DIR}/bin ; fi
  	-if [ -d "${INSTALL_LIB_DIR}" ] ; then true; else mkdir ${INSTALL_LIB_DIR} ;fi
 +	-if [ -d "${PREFIX_DIR}/info" ] ; then true; else mkdir ${PREFIX_DIR}/info; fi
-+	-if [ -d "${PREFIX_DIR}/info/gcl-2.2.2" ] ; then true; else mkdir ${PREFIX_DIR}/info/gcl-2.2.2; fi
  	make install-command "INSTALL_LIB_DIR=${INSTALL_LIB_DIR}" "PREFIX_DIR=${PREFIX_DIR}"
  	rm -f ${PREFIX_DIR}/bin/gcl.exe
 -	tar cvf - unixport/saved_gcl info/*info* doc/*.el ${LISP_LIB} \
 -	gcl-tk/gcl.tcl gcl-tk/gcltkaux  |  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
 +	tar cvf - unixport/saved_gcl ${LISP_LIB} \
 +	  |  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
-+	(cd info; tar cvf - *si.info* | (cd ${PREFIX_DIR}/info/gcl-2.2.2 ; tar xvf -))
  	ln ${SYMB} ${INSTALL_LIB_DIR}/unixport/saved_gcl \
  	 ${PREFIX_DIR}/bin/gcl.exe
 -	-cat gcl-tk/gcltksrv | \

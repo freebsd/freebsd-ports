@@ -1,12 +1,9 @@
 bin/gcl
 bin/gcl.exe
-info/gcl-2.2.2/gcl-si.info
-info/gcl-2.2.2/gcl-si.info-1
-info/gcl-2.2.2/gcl-si.info-2
-info/gcl-2.2.2/gcl-si.info-3
-info/gcl-2.2.2/gcl-si.info-4
-info/gcl-2.2.2/gcl-si.info-5
-info/gcl-2.2.2/gcl-si.info-6
+@unexec install-info --delete %D/info/gcl-si.info %D/info/dir
+info/gcl-si.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gcl-si.info %D/info/dir
 lib/gcl-2.2.2/cmpnew/collectfn.o
 lib/gcl-2.2.2/lsp/gprof.lsp
 lib/gcl-2.2.2/lsp/info.o
@@ -16,4 +13,3 @@ lib/gcl-2.2.2/unixport/saved_gcl
 @dirrm lib/gcl-2.2.2/lsp
 @dirrm lib/gcl-2.2.2/cmpnew
 @dirrm lib/gcl-2.2.2
-@dirrm info/gcl-2.2.2
