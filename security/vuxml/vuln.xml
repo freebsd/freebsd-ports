@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="28e93883-539f-11d9-a9e7-0001020eed82">
+    <topic>acroread5 -- mailListIsPdf() buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>acroread</name>
+	<name>acroread4</name>
+	<name>acroread5</name>
+	<range><lt>5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=161&amp;type=vulnerabilities">
+	  <p>Remote exploitation of a buffer overflow in version 5.09
+	    of Adobe Acrobat Reader for Unix could allow for execution
+	    of arbitrary code.</p>
+	  <p>The vulnerability specifically exists in a the function
+	    mailListIsPdf().  This function checks if the input file
+	    is an email message containing a PDF. It unsafely copies
+	    user supplied data using strcat into a fixed sized
+	    buffer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1152</cvename>
+      <url>http://www.adobe.com/support/techdocs/331153.html</url>
+      <url>http://www.idefense.com/application/poi/display?id=161&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-10-14</discovery>
+      <entry>2004-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be543d74-539a-11d9-a9e7-0001020eed82">
     <topic>ecartis -- unauthorised access to admin interface</topic>
     <affects>
