@@ -41,5 +41,6 @@ post-install:
 .endif
 	${RM} -rf ${PREFIX}/include/Xbae
 	${LN} -sf Xbae-4.8 ${PREFIX}/include/Xbae
+	${INSTALL_DATA} ${WRKSRC}/include/Xbae/patchlevel.h ${PREFIX}/include/Xbae
 
 .include <bsd.port.post.mk>
