@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dgd-net
-PORTVERSION=	1.1.p6
+PORTVERSION=	1.1.6
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
