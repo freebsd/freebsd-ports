@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Fri Dec  8 08:49:16 2000
-+++ src/Makefile.in	Thu Feb  8 22:58:33 2001
-@@ -40,8 +40,8 @@
+--- src/Makefile.in	Mon Jun 25 17:58:00 2001
++++ src/Makefile.in	Thu Aug 23 10:16:07 2001
+@@ -41,8 +41,8 @@
  
 -iconv : $(srcdir)/iconv.c ../lib/libiconv.la
--	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -I../lib $(srcdir)/iconv.c ../lib/libiconv.la -o $@
+-	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(INCLUDES) -I../lib $(CFLAGS) $(CPPFLAGS) $(srcdir)/iconv.c ../lib/libiconv.la -o $@
 +iconv : $(srcdir)/iconv.c ../lib/libgiconv.la
-+	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -I../lib $(srcdir)/iconv.c ../lib/libgiconv.la -o $@
++	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(INCLUDES) -I../lib $(CFLAGS) $(CPPFLAGS) $(srcdir)/iconv.c ../lib/libgiconv.la -o $@
  
  # The following rule is necessary to avoid a toplevel "make -n check" failure.
 -../lib/libiconv.la :

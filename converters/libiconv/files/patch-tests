@@ -1,0 +1,27 @@
+--- tests/Makefile.in	Mon Jun 25 18:03:32 2001
++++ tests/Makefile.in	Thu Aug 23 10:41:17 2001
+@@ -28,5 +28,3 @@
+ 
+-all :
+-
+-check : all table-from table-to ../src/iconv
++check all: table-from table-to
+ 	$(srcdir)/check-stateless $(srcdir) ASCII
+@@ -138,11 +136,11 @@
+ 
+-table-from : $(srcdir)/table-from.c ../lib/libiconv.la
+-	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(srcdir)/table-from.c ../lib/libiconv.la -o $@
++table-from : $(srcdir)/table-from.c ../lib/libgiconv.la
++	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(srcdir)/table-from.c ../lib/libgiconv.la -o $@
+ 
+-table-to : $(srcdir)/table-to.c ../lib/libiconv.la
+-	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(srcdir)/table-to.c ../lib/libiconv.la -o $@
++table-to : $(srcdir)/table-to.c ../lib/libgiconv.la
++	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(srcdir)/table-to.c ../lib/libgiconv.la -o $@
+ 
+ # The following rule is necessary to avoid a toplevel "make -n check" failure.
+-../lib/libiconv.la :
+-	cd ../lib && $(MAKE) libiconv.la
++../lib/libgiconv.la :
++	cd ../lib && $(MAKE) libgiconv.la
+ 
