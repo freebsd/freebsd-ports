@@ -1,15 +1,11 @@
---- Makefile.orig	Sat Jan  6 16:14:07 1996
-+++ Makefile	Mon Jun 23 21:43:36 1997
-@@ -12,10 +12,10 @@
+--- Makefile.orig	Thu Feb 24 03:02:50 2000
++++ Makefile	Thu Feb 24 03:03:06 2000
+@@ -12,7 +12,7 @@
  CPPFLAGS=-O -ansi
  
  ## System Includes
 -SYS_INCLUDES =
-+SYS_INCLUDE= -I/usr/X11R6/include
++SYS_INCLUDE = -I/usr/X11R6/include
  
  ## System Libraries
--SYS_LIBS = -L/usr/X11/lib -lX11
-+SYS_LIBS = -L/usr/X11R6/lib -lX11
- 
- ## Archiver
- AR=ar
+ SYS_LIBS = -L/usr/X11R6/lib -lX11
