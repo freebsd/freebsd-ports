@@ -1,4 +1,4 @@
-Bitmap font, 8 dots x 16 dots bitmap font.
+Bitmap font, (6x12, 7x14, 8x16, 12x24) dots bitmap font.
 
   Bitmap font is used on Mule with bitmap-mule or Emacs20 with bitmap-emacs20.
 
