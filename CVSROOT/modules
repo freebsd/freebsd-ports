@@ -7159,7 +7159,6 @@ ruby-openssl	ports/security/ruby-openssl
 ruby-p4		ports/devel/ruby-p4
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
-ruby-panel-applet	ports/x11/ruby-panel-applet
 ruby-pango	ports/x11-toolkits/ruby-pango
 ruby-password	ports/security/ruby-password
 ruby-pcap	ports/net/ruby-pcap
