@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Dec  8 17:10:35 2004
++++ Makefile.in	Wed Dec  8 17:10:51 2004
+@@ -85,7 +85,7 @@
+ 
+ 
+ home_finger: home_finger.c libhome.la compat
+-	${LINK} -o home_finger -Icompat home_finger.c libhome.la
++	${LINK} -o home_finger -Icompat -lcrypt home_finger.c libhome.la
+ 
+ home_su: home_su.c libhome.la compat
+ 	${LINK} -o home_su -Icompat home_su.c libhome.la
