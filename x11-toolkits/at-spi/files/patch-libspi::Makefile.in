@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libspi/Makefile.in	2002/04/12 11:14:12	1.1
++++ libspi/Makefile.in	2002/04/12 11:14:54
+@@ -160,7 +160,7 @@
+ orbittypelibdir = $(libdir)/orbit-2.0
+ orbittypelib_LTLIBRARIES = Accessibility_module.la
+ 
+-Accessibility_module_la_LDFLAGS =  	-export-dynamic -module
++Accessibility_module_la_LDFLAGS =  	-export-dynamic -module -avoid-version
+ 
+ Accessibility_module_la_SOURCES =  	Accessibility-imodule.c
+ 
