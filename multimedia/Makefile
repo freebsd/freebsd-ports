@@ -7,6 +7,7 @@
     SUBDIR += gstreamer-plugins
     SUBDIR += gsubedit
     SUBDIR += gtksubtitler
+    SUBDIR += kdemultimedia3
     SUBDIR += ksubeditor
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
