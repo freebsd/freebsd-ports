@@ -1,0 +1,46 @@
+--- ../domtools.orig/Makefile	Thu Mar 18 11:48:08 1999
++++ Makefile	Sat Jun 12 22:31:17 1999
+@@ -35,12 +35,12 @@
+ # This directory is created, below, if it doesn't exist.
+ #	"bin" will put it in $LDEST/bin.
+ #	"bin/domtools" (my favorite) puts it in $LDEST/bin/domtools.
+-DOMBIN=bin/domtools
++DOMBIN=domtools/bin
+ #DOMBIN=bin
+ 
+ # Library sub-directory under $LDEST where other files such as awk scripts should go.
+ # This directory is created, below, if it doesn't exist.
+-DOMLIB=lib/domtools
++DOMLIB=domtools/lib
+ 
+ # Do you want a world-writable Zone Cache directory, or not?
+ # Good points: speeds up the axfr tool substantially.
+@@ -103,7 +103,7 @@
+ #OWNER= pab
+ 
+ # Group for installing Domtools directories and files.
+-GROUP= bin
++GROUP= wheel
+ #GROUP= staff
+ #GROUP= oper
+ #GROUP= user
+@@ -118,7 +118,7 @@
+ # BSD-style installation command that creates missing parent dirs with "-d dir".
+ # You specify use Gnu Install here if you have it.
+ # First line is for BSD or SunOS; second is for SysV like Solaris 2.
+-INSTALL=install
++INSTALL=/usr/bin/install
+ #INSTALL=/usr/ucb/install
+ #INSTALL=/usr/local/gnu/bin/install
+ #INSTALL=/stor/gnu/aix/bin/install
+@@ -148,8 +148,8 @@
+ # Regardless of the name, it _must_ be a gnu-based awk.
+ # If you don't have gawk, get it and install it; or hosttbl,networktbl,netmasktbl
+ # tools won't work right.  Gawk is much better than awk or nawk anyway.
+-GAWKPROG=gawk			# many systems
+-#GAWKPROG=awk			# BSDI, Linux
++#GAWKPROG=gawk			# many systems
++GAWKPROG=/usr/bin/awk			# BSDI, Linux
+ #GAWKPROG=/usr/local/bin/awk
+ 
+ #---------------------------------------------------------------------------------------
