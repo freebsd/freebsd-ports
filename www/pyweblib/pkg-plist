@@ -1,19 +1,36 @@
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/forms.py
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/forms.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/forms.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/helper.py
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/helper.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/helper.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/httphelper.py
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/httphelper.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/httphelper.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/session.py
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/session.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/session.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/sslenv.py
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/sslenv.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyweblib/sslenv.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pyweblib
+%%PYTHON_SITELIBDIR%%/pyweblib/__init__.py
+%%PYTHON_SITELIBDIR%%/pyweblib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyweblib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyweblib/forms.py
+%%PYTHON_SITELIBDIR%%/pyweblib/forms.pyc
+%%PYTHON_SITELIBDIR%%/pyweblib/forms.pyo
+%%PYTHON_SITELIBDIR%%/pyweblib/helper.py
+%%PYTHON_SITELIBDIR%%/pyweblib/helper.pyc
+%%PYTHON_SITELIBDIR%%/pyweblib/helper.pyo
+%%PYTHON_SITELIBDIR%%/pyweblib/httphelper.py
+%%PYTHON_SITELIBDIR%%/pyweblib/httphelper.pyc
+%%PYTHON_SITELIBDIR%%/pyweblib/httphelper.pyo
+%%PYTHON_SITELIBDIR%%/pyweblib/session.py
+%%PYTHON_SITELIBDIR%%/pyweblib/session.pyc
+%%PYTHON_SITELIBDIR%%/pyweblib/session.pyo
+%%PYTHON_SITELIBDIR%%/pyweblib/sslenv.py
+%%PYTHON_SITELIBDIR%%/pyweblib/sslenv.pyc
+%%PYTHON_SITELIBDIR%%/pyweblib/sslenv.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyweblib
+@comment -
+@comment --- HTML documentation ---
+%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.forms.html
+%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.helper.html
+%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.html
+%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.httphelper.html
+%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.session.html
+%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.sslenv.html
+%%PORTDOCS%%%%DOCSDIR%%/PyWebLib.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pydoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@comment -
+@comment --- some examples here ---
+%%EXAMPLESDIR%%/cgi-bin/test-forms.py
+%%EXAMPLESDIR%%/cgi-bin/test-session.py
+@dirrm %%EXAMPLESDIR%%/cgi-bin
+@dirrm %%EXAMPLESDIR%%
