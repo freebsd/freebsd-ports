@@ -57,6 +57,7 @@ share/locale/pl/LC_MESSAGES/glabels.mo
 share/locale/pt_BR/LC_MESSAGES/glabels.mo
 share/locale/ru/LC_MESSAGES/glabels.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/glabels.mo
+share/mime/application/x-glabels.xml
 share/mime/packages/glabels.xml
 @dirrm share/gnome/pixmaps/glabels
 @dirrm share/gnome/omf/glabels
