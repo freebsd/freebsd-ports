@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby API for automated unit testing of web sites
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/test/unit/testcase.rb:${PORTSDIR}/devel/ruby-testunit \
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/test/unit/testcase.rb:${PORTSDIR}/lang/ruby16-shim-ruby18 \
 		${RUBY_SITELIBDIR}/html-parser.rb:${PORTSDIR}/textproc/ruby-html-parser \
 		${RUBY_SITELIBDIR}/htmlrepair.rb:${PORTSDIR}/textproc/ruby-htmlrepair \
 		${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit \
