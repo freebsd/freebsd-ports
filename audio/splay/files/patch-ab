@@ -1,0 +1,11 @@
+--- src/cmd/cmd.cc.orig	Sat Aug  9 16:31:03 1997
++++ src/cmd/cmd.cc	Sat Aug  9 16:31:15 1997
+@@ -15,7 +15,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ 
+ #include <mpegsound.h>
+ 
