@@ -26,6 +26,12 @@ WRKSRC=		${WRKDIR}/decore/src
 
 LIB_VERSION=	1
 
+.ifndef(NOPROFILE)
+PLIST_SUB=	NOPROFILE=''
+.else
+PLIST_SUB=	NOPROFILE='@comment '
+.endif
+
 post-extract:
 .for ext in c h
 	@${MV} ${WRKSRC}/transferidct.${ext} \
