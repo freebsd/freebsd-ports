@@ -91,7 +91,7 @@ diff -u -r1.1.1.1 -r1.12
 -		splice(@addr, 0, 4);
 +	# check server name and try to parse port number
 +	my @infos = getaddrinfo($host, $port, AF_UNSPEC, SOCK_STREAM);
-+	if ($#infos < 0) {
++	if ($#infos < 1) {
 +		carp("$self: getaddrinfo($host, $port) - $?");
 +		my $e = $?.'';
 +		$self->error($e, &FATAL);
@@ -103,7 +103,7 @@ diff -u -r1.1.1.1 -r1.12
  	# connect (connect returns "Invalid Argument"). So we
  	# create/close a socket in each iteration.
 -	for my $i (@addr) {
-+	while ($#infos >= 0) {
++	while ($#infos >= 1) {
 +		my ($family, $socktype, $proto, $peer, $canonname)
 +		    = splice(@infos, 0, 5);
  
