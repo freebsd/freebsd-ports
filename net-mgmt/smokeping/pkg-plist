@@ -34,6 +34,8 @@ share/doc/smokeping/EchoPingSmtp.pm.html
 share/doc/smokeping/EchoPingSmtp.pm.txt
 share/doc/smokeping/FPing.pm.html
 share/doc/smokeping/FPing.pm.txt
+share/doc/smokeping/FPing6.pm.html
+share/doc/smokeping/FPing6.pm.txt
 share/doc/smokeping/ParseConfig.pm.html
 share/doc/smokeping/ParseConfig.pm.txt
 share/doc/smokeping/Smokeping.pm.html
@@ -55,6 +57,7 @@ share/doc/smokeping/smokeping_install.txt
 smokeping/htdocs/smokeping.cgi
 smokeping/lib/Smokeping.pm
 smokeping/lib/probes/FPing.pm
+smokeping/lib/probes/FPing6.pm
 smokeping/lib/probes/base.pm
 smokeping/lib/probes/EchoPing.pm
 smokeping/lib/probes/EchoPingChargen.pm
