@@ -26,6 +26,10 @@ share/lopster/pixmaps/project.xpm
 share/lopster/pixmaps/search.xpm
 share/lopster/pixmaps/server.xpm
 share/lopster/pixmaps/server_con.xpm
+share/lopster/pixmaps/server_deact.xpm
+share/lopster/pixmaps/server_napi.xpm
+share/lopster/pixmaps/server_nnapi.xpm
+share/lopster/pixmaps/server_perm.xpm
 share/lopster/pixmaps/share_all.xpm
 share/lopster/pixmaps/share_none.xpm
 share/lopster/pixmaps/share_part.xpm
