@@ -4,9 +4,13 @@ share/apsfilter/bin/setup_dvips.sh
 share/apsfilter/setup/README
 share/apsfilter/setup/devices-5.50
 share/apsfilter/setup/devices-6.01
-share/apsfilter/setup/filtersetup
+share/apsfilter/setup/devices-6.50
 share/apsfilter/setup/printer-5.50
 share/apsfilter/setup/printer-6.01
+share/apsfilter/setup/printer-6.50
+share/apsfilter/setup/printer-addon
+share/apsfilter/setup/printer-ppa
+share/apsfilter/setup/printer-ps
 share/apsfilter/setup/test.ps
 share/apsfilter/template/README
 share/apsfilter/template/apsfilterrc
@@ -16,9 +20,6 @@ share/doc/apsfilter/HOWTO-BUGREPORTS
 share/doc/apsfilter/LICENSE
 share/doc/apsfilter/README.TeX
 share/doc/apsfilter/TROUBLESHOOTING
-share/doc/apsfilter/WHAT_AM_I
-share/doc/apsfilter/features
-share/doc/apsfilter/methods
 share/doc/apsfilter/paper
 @dirrm share/apsfilter/bin
 @dirrm share/apsfilter/setup
