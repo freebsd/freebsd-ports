@@ -3,7 +3,7 @@
 # Date created:		02 Oct 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.2 1998/10/25 00:58:16 jkoshy Exp $
+# $Id: Makefile,v 1.3 1998/10/26 03:10:58 jkoshy Exp $
 #
 
 DISTNAME=		tet3.2c-unsup
@@ -39,10 +39,9 @@ pre-extract:
 # remove the TET_ROOT directory if it exists
 pre-clean:
 .if defined(TET_ROOT)
-	if [ -d ${TET_ROOT} ]; then ${RM} -rf ${TET_ROOT}; fi
-.else
-	@true
+	${RM} -rf ${TET_ROOT}
 .endif
+	${RM} -rf ${WRKDIR}
 
 # move the work directory to $TET_ROOT after extraction
 post-extract:
@@ -53,8 +52,5 @@ post-extract:
 
 do-install:
 	cd ${WRKDIR}/src && ${MAKE} ${INSTALL_TARGET}
-
-post-clean:
-	${RM} -rf ${TET_ROOT}
 
 .include	<bsd.port.mk>
