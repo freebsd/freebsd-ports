@@ -3,13 +3,14 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.7 1997/11/10 11:23:34 asami Exp $
+# $Id: Makefile,v 1.8 1998/02/07 16:33:22 max Exp $
 #
 
 DISTNAME=	pkfonts
 PKGNAME=	pkfonts${RESOLUTION}-1.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
+MASTER_SITES=	ftp://ftp.univ-evry.fr/.04/system/OpenBSD/distfiles/pkfonts/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
 		ftp://ftp.wg.omron.co.jp/pub/tex/
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
