@@ -482,6 +482,7 @@
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit
+    SUBDIR += py-pqueue
     SUBDIR += py-twisted
     SUBDIR += py-unit
     SUBDIR += py-xoltar-toolkit
