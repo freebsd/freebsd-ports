@@ -1,0 +1,15 @@
+Petri nets are a popular graphical way of modeling concurrent systems such as
+communications protocols, multiprocessor computers etc. With Petri nets it is
+possible to assess the correctness of systems for example by verifying that
+the system cannot deadlock, that there cannot be any buffer overflows etc.
+
+PIPEs main aim is to improve on existing tools available for modeling Petri
+Nets. A key design feature is the modular approach adopted for analysis,
+enabling new modules to written easily and powerfully, using built-in data
+layer methods for standard calculations. Six analysis modules have been
+written (so far) including Invariant Analysis, State-Space Analysis (deadlock,
+etc), Simulation Analysis & Classification. PIPE adheres to the latest XML
+Petri net standard (PNML). File format for saving and loading Petri-Nets is
+also extensible through the use of XSLT, the default being PNML.
+
+WWW: http://petri-net.sourceforge.net/
