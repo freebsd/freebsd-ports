@@ -1,27 +1,10 @@
-
-$FreeBSD$
-
---- configure.orig	Tue Nov 13 12:46:59 2001
-+++ configure	Tue Nov 13 12:50:04 2001
-@@ -4834,8 +4834,10 @@
- fi
- GNOME_VFS_LIBS=
- if $have_gnome_vfs; then
--	CFLAGS="$CFLAGS `$GNOME_CONFIG vfs vfscorba vfspthread --cflags`"
--	GNOME_VFS_LIBS=`$GNOME_CONFIG vfs vfscorba vfspthread --libs`
-+	CFLAGS="$CFLAGS `$GNOME_CONFIG vfs --cflags`"
-+	CPPFLAGS="$CPPFLAGS `$GNOME_CONFIG gtkhtml print --cflags`"
-+	GNOME_VFS_LIBS=`$GNOME_CONFIG vfs --libs`
-+	LDFLAGS="$LDFLAGS `$GNOME_CONFIG gtkhtml print --libs`"
- fi
+--- configure.orig	Thu Nov 14 22:42:00 2002
++++ configure	Thu Nov 14 22:42:26 2002
+@@ -7251,6 +7251,7 @@
  
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
-@@ -5029,7 +5031,7 @@
-   HAVE_PTHREADS_FALSE=
- fi
- 
--GTHREAD_LIBS=`glib-config gthread --libs`
-+GTHREAD_LIBS=`${GLIB_CONFIG} gthread --libs`
- 
- 
- 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'

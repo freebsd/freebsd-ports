@@ -1,28 +1,29 @@
 bin/screem
+etc/gconf/gconf.xml.defaults/apps/screem/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/screem/editor/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/screem/editor/print/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/screem/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/screem/hint/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/screem/linkview/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/screem/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/screem/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/screem/hint/%gconf.xml
+etc/gconf/schemas/screem.schemas
 lib/screem/plugins/colourWizard.so
 lib/screem/plugins/cssWizard.so
 lib/screem/plugins/entityWizard.so
 lib/screem/plugins/formWizard.so
-lib/screem/plugins/frameWizard.so
-lib/screem/plugins/galleryWizard.so
 lib/screem/plugins/imageWizard.so
 lib/screem/plugins/linkWizard.so
-lib/screem/plugins/mailWizard.so
-lib/screem/plugins/script.scm
 lib/screem/plugins/ssiWizard.so
 lib/screem/plugins/tableWizard.so
 lib/screem/plugins/uploadWizard.so
-share/gnome/apps/Development/screem.desktop
-share/gnome/help/screem/C/authors.html
+share/gnome/application-registry/screem.applications
+share/gnome/applications/screem.desktop
 share/gnome/help/screem/C/authors.sgml
-share/gnome/help/screem/C/bugs.html
 share/gnome/help/screem/C/bugs.sgml
-share/gnome/help/screem/C/cvs.html
-share/gnome/help/screem/C/dnd.html
-share/gnome/help/screem/C/documentstructure.html
-share/gnome/help/screem/C/dtd.html
-share/gnome/help/screem/C/externalbrowsers.html
-share/gnome/help/screem/C/features.html
 share/gnome/help/screem/C/features.sgml
 share/gnome/help/screem/C/figs/color.png
 share/gnome/help/screem/C/figs/copybutton.png
@@ -56,88 +57,23 @@ share/gnome/help/screem/C/figs/tagbutton.png
 share/gnome/help/screem/C/figs/todo.png
 share/gnome/help/screem/C/figs/upload.png
 share/gnome/help/screem/C/figs/wizardbutton.png
-share/gnome/help/screem/C/guilescripting.html
-share/gnome/help/screem/C/highlighting.html
-share/gnome/help/screem/C/index.html
-share/gnome/help/screem/C/inlinetagginginfo.html
-share/gnome/help/screem/C/install-install.html
-share/gnome/help/screem/C/install-uninstall.html
-share/gnome/help/screem/C/install-what.html
-share/gnome/help/screem/C/install.html
 share/gnome/help/screem/C/install.sgml
-share/gnome/help/screem/C/intelliclose.html
-share/gnome/help/screem/C/intellientity.html
-share/gnome/help/screem/C/internationalisation.html
-share/gnome/help/screem/C/intro.html
 share/gnome/help/screem/C/intro.sgml
-share/gnome/help/screem/C/keymacros.html
-share/gnome/help/screem/C/libraryrequirements.html
-share/gnome/help/screem/C/linkfix.html
-share/gnome/help/screem/C/linkview.html
-share/gnome/help/screem/C/multiprojects.html
-share/gnome/help/screem/C/plugins.html
-share/gnome/help/screem/C/previewwindow.html
-share/gnome/help/screem/C/printing.html
-share/gnome/help/screem/C/requirements.html
 share/gnome/help/screem/C/requirements.sgml
 share/gnome/help/screem/C/screem.sgml
 share/gnome/help/screem/C/screemDev.sgml
 share/gnome/help/screem/C/screemGuiRef.sgml
-share/gnome/help/screem/C/searchreplace.html
-share/gnome/help/screem/C/setup-helpers.html
-share/gnome/help/screem/C/setup-import.html
-share/gnome/help/screem/C/setup.html
 share/gnome/help/screem/C/setup.sgml
-share/gnome/help/screem/C/sitewidetemplates.html
-share/gnome/help/screem/C/spellchecking.html
-share/gnome/help/screem/C/started-editing.html
-share/gnome/help/screem/C/started-previewing.html
-share/gnome/help/screem/C/started-uploading.html
-share/gnome/help/screem/C/started.html
 share/gnome/help/screem/C/started.sgml
-share/gnome/help/screem/C/taghelp.html
-share/gnome/help/screem/C/taglist.html
-share/gnome/help/screem/C/tagproperties.html
-share/gnome/help/screem/C/todolist.html
-share/gnome/help/screem/C/tooltips.html
 share/gnome/help/screem/C/topic.dat
 share/gnome/mc/templates/screem.desktop
 share/gnome/mime-info/screem.keys
 share/gnome/mime-info/screem.mime
 share/gnome/pixmaps/screem.png
-share/gnome/pixmaps/screem/broken.xpm
-share/gnome/pixmaps/screem/browser.xpm
-share/gnome/pixmaps/screem/button.xpm
-share/gnome/pixmaps/screem/caption.xpm
-share/gnome/pixmaps/screem/checkbutton.xpm
-share/gnome/pixmaps/screem/dir-close.xpm
-share/gnome/pixmaps/screem/dir-open.xpm
-share/gnome/pixmaps/screem/entry.xpm
-share/gnome/pixmaps/screem/fixed.xpm
-share/gnome/pixmaps/screem/gallery.xpm
-share/gnome/pixmaps/screem/gnome-fileentry.xpm
-share/gnome/pixmaps/screem/image.xpm
-share/gnome/pixmaps/screem/link.xpm
-share/gnome/pixmaps/screem/noicon.xpm
-share/gnome/pixmaps/screem/optionmenu.xpm
-share/gnome/pixmaps/screem/p.xpm
-share/gnome/pixmaps/screem/pre.xpm
-share/gnome/pixmaps/screem/preview.xpm
-share/gnome/pixmaps/screem/radiobutton.xpm
-share/gnome/pixmaps/screem/splash/1.png
-share/gnome/pixmaps/screem/splash/2.png
-share/gnome/pixmaps/screem/splash/3.png
-share/gnome/pixmaps/screem/splash/4.png
-share/gnome/pixmaps/screem/sub.xpm
-share/gnome/pixmaps/screem/sup.xpm
-share/gnome/pixmaps/screem/table.xpm
-share/gnome/pixmaps/screem/td.xpm
-share/gnome/pixmaps/screem/text.xpm
-share/gnome/pixmaps/screem/th.xpm
-share/gnome/pixmaps/screem/tr.xpm
+share/gnome/pixmaps/screem/splash/splash.png
 share/gnome/screem/dtd/HTMLlat1.ent
 share/gnome/screem/dtd/HTMLspecial.ent
-share/gnome/screem/dtd/HTMLsymbol.ent
+share/gnome/screem/dtd/HTMLsymbols.ent
 share/gnome/screem/dtd/catalog
 share/gnome/screem/dtd/frameset.dtd
 share/gnome/screem/dtd/loose.dtd
@@ -148,13 +84,9 @@ share/gnome/screem/dtd/xhtml-symbol.ent
 share/gnome/screem/dtd/xhtml1-frameset.dtd
 share/gnome/screem/dtd/xhtml1-strict.dtd
 share/gnome/screem/dtd/xhtml1-transitional.dtd
-share/gnome/screem/frames/style1.html
 share/gnome/screem/glade/css.glade
 share/gnome/screem/glade/entityWizard.glade
-share/gnome/screem/glade/formWizard.glade
-share/gnome/screem/glade/frameWizard.glade
 share/gnome/screem/glade/imageWizard.glade
-share/gnome/screem/glade/linkWizard.glade
 share/gnome/screem/glade/screem.glade
 share/gnome/screem/glade/tablewizard.glade
 share/gnome/screem/glade/uploadwizard.glade
@@ -162,133 +94,16 @@ share/gnome/screem/hints/screem_hints.txt
 share/gnome/screem/hints/screem_hints_fr.txt
 share/gnome/screem/hints/screem_hints_pt_BR.txt
 share/gnome/screem/hints/screem_hints_sv.txt
-share/gnome/screem/htmlhelp/alist.html
-share/gnome/screem/htmlhelp/attrs.html
-share/gnome/screem/htmlhelp/aural.css
-share/gnome/screem/htmlhelp/block.html
-share/gnome/screem/htmlhelp/block/address.html
-share/gnome/screem/htmlhelp/block/blockquote.html
-share/gnome/screem/htmlhelp/block/center.html
-share/gnome/screem/htmlhelp/block/div.html
-share/gnome/screem/htmlhelp/block/h1.html
-share/gnome/screem/htmlhelp/block/h2.html
-share/gnome/screem/htmlhelp/block/h3.html
-share/gnome/screem/htmlhelp/block/h4.html
-share/gnome/screem/htmlhelp/block/h5.html
-share/gnome/screem/htmlhelp/block/h6.html
-share/gnome/screem/htmlhelp/block/hr.html
-share/gnome/screem/htmlhelp/block/index.html
-share/gnome/screem/htmlhelp/block/isindex.html
-share/gnome/screem/htmlhelp/block/noscript.html
-share/gnome/screem/htmlhelp/block/p.html
-share/gnome/screem/htmlhelp/block/pre.html
-share/gnome/screem/htmlhelp/deprecated.html
-share/gnome/screem/htmlhelp/entities/index.html
-share/gnome/screem/htmlhelp/entities/latin1.html
-share/gnome/screem/htmlhelp/entities/special.html
-share/gnome/screem/htmlhelp/entities/symbols.html
-share/gnome/screem/htmlhelp/fontstyle/b.html
-share/gnome/screem/htmlhelp/fontstyle/big.html
-share/gnome/screem/htmlhelp/fontstyle/i.html
-share/gnome/screem/htmlhelp/fontstyle/index.html
-share/gnome/screem/htmlhelp/fontstyle/s.html
-share/gnome/screem/htmlhelp/fontstyle/small.html
-share/gnome/screem/htmlhelp/fontstyle/strike.html
-share/gnome/screem/htmlhelp/fontstyle/tt.html
-share/gnome/screem/htmlhelp/fontstyle/u.html
-share/gnome/screem/htmlhelp/forms/button.html
-share/gnome/screem/htmlhelp/forms/fieldset.html
-share/gnome/screem/htmlhelp/forms/form.html
-share/gnome/screem/htmlhelp/forms/index.html
-share/gnome/screem/htmlhelp/forms/input.html
-share/gnome/screem/htmlhelp/forms/label.html
-share/gnome/screem/htmlhelp/forms/legend.html
-share/gnome/screem/htmlhelp/forms/optgroup.html
-share/gnome/screem/htmlhelp/forms/option.html
-share/gnome/screem/htmlhelp/forms/select.html
-share/gnome/screem/htmlhelp/forms/textarea.html
-share/gnome/screem/htmlhelp/frames/frame.html
-share/gnome/screem/htmlhelp/frames/frameset.html
-share/gnome/screem/htmlhelp/frames/index.html
-share/gnome/screem/htmlhelp/frames/noframes.html
-share/gnome/screem/htmlhelp/head/base.html
-share/gnome/screem/htmlhelp/head/head.html
-share/gnome/screem/htmlhelp/head/index.html
-share/gnome/screem/htmlhelp/head/link.html
-share/gnome/screem/htmlhelp/head/meta.html
-share/gnome/screem/htmlhelp/head/style.html
-share/gnome/screem/htmlhelp/head/title.html
-share/gnome/screem/htmlhelp/html/body.html
-share/gnome/screem/htmlhelp/html/doctype.html
-share/gnome/screem/htmlhelp/html/html.html
-share/gnome/screem/htmlhelp/html/index.html
-share/gnome/screem/htmlhelp/index.html
-share/gnome/screem/htmlhelp/inline.html
-share/gnome/screem/htmlhelp/lists/dd.html
-share/gnome/screem/htmlhelp/lists/dir.html
-share/gnome/screem/htmlhelp/lists/dl.html
-share/gnome/screem/htmlhelp/lists/dt.html
-share/gnome/screem/htmlhelp/lists/index.html
-share/gnome/screem/htmlhelp/lists/li.html
-share/gnome/screem/htmlhelp/lists/menu.html
-share/gnome/screem/htmlhelp/lists/ol.html
-share/gnome/screem/htmlhelp/lists/ul.html
-share/gnome/screem/htmlhelp/new.html
-share/gnome/screem/htmlhelp/olist.html
-share/gnome/screem/htmlhelp/phrase/abbr.html
-share/gnome/screem/htmlhelp/phrase/acronym.html
-share/gnome/screem/htmlhelp/phrase/cite.html
-share/gnome/screem/htmlhelp/phrase/code.html
-share/gnome/screem/htmlhelp/phrase/del.html
-share/gnome/screem/htmlhelp/phrase/dfn.html
-share/gnome/screem/htmlhelp/phrase/em.html
-share/gnome/screem/htmlhelp/phrase/index.html
-share/gnome/screem/htmlhelp/phrase/ins.html
-share/gnome/screem/htmlhelp/phrase/kbd.html
-share/gnome/screem/htmlhelp/phrase/samp.html
-share/gnome/screem/htmlhelp/phrase/strong.html
-share/gnome/screem/htmlhelp/phrase/var.html
-share/gnome/screem/htmlhelp/special/a.html
-share/gnome/screem/htmlhelp/special/applet.html
-share/gnome/screem/htmlhelp/special/area.html
-share/gnome/screem/htmlhelp/special/basefont.html
-share/gnome/screem/htmlhelp/special/bdo.html
-share/gnome/screem/htmlhelp/special/br.html
-share/gnome/screem/htmlhelp/special/font.html
-share/gnome/screem/htmlhelp/special/iframe.html
-share/gnome/screem/htmlhelp/special/img.html
-share/gnome/screem/htmlhelp/special/index.html
-share/gnome/screem/htmlhelp/special/map.html
-share/gnome/screem/htmlhelp/special/object.html
-share/gnome/screem/htmlhelp/special/param.html
-share/gnome/screem/htmlhelp/special/q.html
-share/gnome/screem/htmlhelp/special/script.html
-share/gnome/screem/htmlhelp/special/span.html
-share/gnome/screem/htmlhelp/special/sub.html
-share/gnome/screem/htmlhelp/special/sup.html
-share/gnome/screem/htmlhelp/structure.html
-share/gnome/screem/htmlhelp/style.css
-share/gnome/screem/htmlhelp/tables/caption.html
-share/gnome/screem/htmlhelp/tables/col.html
-share/gnome/screem/htmlhelp/tables/colgroup.html
-share/gnome/screem/htmlhelp/tables/index.html
-share/gnome/screem/htmlhelp/tables/table.html
-share/gnome/screem/htmlhelp/tables/tbody.html
-share/gnome/screem/htmlhelp/tables/td.html
-share/gnome/screem/htmlhelp/tables/tfoot.html
-share/gnome/screem/htmlhelp/tables/th.html
-share/gnome/screem/htmlhelp/tables/thead.html
-share/gnome/screem/htmlhelp/tables/tr.html
-share/gnome/screem/htmlhelp/values.html
-share/gnome/screem/htmlhelp/wdglogo-small.gif
-share/gnome/screem/htmlhelp/wdglogo1.gif
+share/gnome/screem/php/php3_functions
+share/gnome/screem/php/php4_functions
 share/gnome/screem/resources/Images/made.jpg
 share/gnome/screem/resources/Templates/template.html
 share/gnome/screem/screem.tagtree
 share/gnome/screem/syntax/html.screem.syntax
 share/gnome/screem/syntax/perl.screem.syntax
-share/gnome/screem/syntax/php3_functions
 share/gnome/screem/syntax/screemsyntax.screem.syntax
+share/gnome/screem/ui/screem-css-window-ui.xml
+share/gnome/screem/ui/screem-window-ui.xml
 share/locale/az/LC_MESSAGES/screem.mo
 share/locale/da/LC_MESSAGES/screem.mo
 share/locale/de/LC_MESSAGES/screem.mo
@@ -303,35 +118,83 @@ share/locale/ru/LC_MESSAGES/screem.mo
 share/locale/sv/LC_MESSAGES/screem.mo
 share/locale/tr/LC_MESSAGES/screem.mo
 share/locale/uk/LC_MESSAGES/screem.mo
-@dirrm lib/screem/plugins
-@dirrm lib/screem
+share/screem/pixmaps/bookmarks-open.png
+share/screem/pixmaps/bookmarks-preferences.png
+share/screem/pixmaps/browser.xpm
+share/screem/pixmaps/button.xpm
+share/screem/pixmaps/caption.xpm
+share/screem/pixmaps/checkbutton.xpm
+share/screem/pixmaps/cvs-add-16.png
+share/screem/pixmaps/cvs-add-24.png
+share/screem/pixmaps/cvs-add.png
+share/screem/pixmaps/cvs-checkout-16.png
+share/screem/pixmaps/cvs-checkout-24.png
+share/screem/pixmaps/cvs-checkout.png
+share/screem/pixmaps/cvs-commit-16.png
+share/screem/pixmaps/cvs-commit-24.png
+share/screem/pixmaps/cvs-remove-16.png
+share/screem/pixmaps/cvs-remove-24.png
+share/screem/pixmaps/cvs-remove.png
+share/screem/pixmaps/cvs-update-16.png
+share/screem/pixmaps/cvs-update-24.png
+share/screem/pixmaps/cvs-update.png
+share/screem/pixmaps/entry.xpm
+share/screem/pixmaps/fixed.xpm
+share/screem/pixmaps/gallery.xpm
+share/screem/pixmaps/gnome-fileentry.xpm
+share/screem/pixmaps/insert-symbol-16.png
+share/screem/pixmaps/insert-symbol-24.png
+share/screem/pixmaps/link.xpm
+share/screem/pixmaps/optionmenu.xpm
+share/screem/pixmaps/p.xpm
+share/screem/pixmaps/pre.xpm
+share/screem/pixmaps/radiobutton.xpm
+share/screem/pixmaps/screem_site.png
+share/screem/pixmaps/site_preview.png
+share/screem/pixmaps/site_structure_48.png
+share/screem/pixmaps/stock_connect.png
+share/screem/pixmaps/stock_disconnect.png
+share/screem/pixmaps/stock_insert_image-16.png
+share/screem/pixmaps/stock_insert_image.png
+share/screem/pixmaps/sub.xpm
+share/screem/pixmaps/sup.xpm
+share/screem/pixmaps/table.xpm
+share/screem/pixmaps/td.xpm
+share/screem/pixmaps/text.xpm
+share/screem/pixmaps/th.xpm
+share/screem/pixmaps/todo.png
+share/screem/pixmaps/tr.xpm
+@dirrm share/screem/pixmaps
+@dirrm share/screem
+@dirrm share/gnome/screem/ui
+@dirrm share/gnome/screem/syntax
+@dirrm share/gnome/screem/resources/Templates
+@dirrm share/gnome/screem/resources/PHP3
+@dirrm share/gnome/screem/resources/Javascript
+@dirrm share/gnome/screem/resources/Images
+@dirrm share/gnome/screem/resources/HTML
+@dirrm share/gnome/screem/resources/Applets
+@dirrm share/gnome/screem/resources
+@dirrm share/gnome/screem/php
+@dirrm share/gnome/screem/hints
+@dirrm share/gnome/screem/glade
+@dirrm share/gnome/screem/dtd
+@dirrm share/gnome/screem
+@dirrm share/gnome/pixmaps/screem/splash
+@dirrm share/gnome/pixmaps/screem
 @dirrm share/gnome/help/screem/C/figs
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
-@dirrm share/gnome/pixmaps/screem/splash
-@dirrm share/gnome/pixmaps/screem
-@dirrm share/gnome/screem/dtd
-@dirrm share/gnome/screem/frames
-@dirrm share/gnome/screem/glade
-@dirrm share/gnome/screem/hints
-@dirrm share/gnome/screem/htmlhelp/block
-@dirrm share/gnome/screem/htmlhelp/entities
-@dirrm share/gnome/screem/htmlhelp/fontstyle
-@dirrm share/gnome/screem/htmlhelp/forms
-@dirrm share/gnome/screem/htmlhelp/frames
-@dirrm share/gnome/screem/htmlhelp/head
-@dirrm share/gnome/screem/htmlhelp/html
-@dirrm share/gnome/screem/htmlhelp/lists
-@dirrm share/gnome/screem/htmlhelp/phrase
-@dirrm share/gnome/screem/htmlhelp/special
-@dirrm share/gnome/screem/htmlhelp/tables
-@dirrm share/gnome/screem/htmlhelp
-@dirrm share/gnome/screem/resources/Applets
-@dirrm share/gnome/screem/resources/HTML
-@dirrm share/gnome/screem/resources/Images
-@dirrm share/gnome/screem/resources/Javascript
-@dirrm share/gnome/screem/resources/PHP3
-@dirrm share/gnome/screem/resources/Templates
-@dirrm share/gnome/screem/resources
-@dirrm share/gnome/screem/syntax
-@dirrm share/gnome/screem
+@dirrm lib/screem/plugins
+@dirrm lib/screem
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/hint
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem
+@dirrm etc/gconf/gconf.xml.defaults/apps/screem/linkview
+@dirrm etc/gconf/gconf.xml.defaults/apps/screem/hint
+@dirrm etc/gconf/gconf.xml.defaults/apps/screem/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor/print
+@dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor
+@dirrm etc/gconf/gconf.xml.defaults/apps/screem
