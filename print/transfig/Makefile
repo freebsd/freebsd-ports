@@ -3,7 +3,7 @@
 # Date created:		9 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.14 1997/08/28 04:21:13 chuckr Exp $
+# $Id: Makefile,v 1.15 1998/02/18 04:52:41 asami Exp $
 #
 
 DISTNAME=	transfig.3.2
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/transfig
 MAINTAINER=	chuckr@freebsd.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
+		jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
