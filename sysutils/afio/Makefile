@@ -1,12 +1,12 @@
 # New ports collection makefile for:    afio
-# Version required:     2.4.5
+# Version required:     2.4.6
 # Date created:         4 October 1995
 # Whom:                 Juergen Lock <nox@jelal.hb.north.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       afio-2.4.5
+DISTNAME=       afio-2.4.6
 CATEGORIES=     sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
@@ -14,7 +14,7 @@ EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	nox@jelal.hb.north.de
 
-WRKSRC=		${WRKDIR}/afio.2.4.5
+WRKSRC=		${WRKDIR}/afio.2.4.6
 ALL_TARGET=	afio
 MAN1=		afio.1
 

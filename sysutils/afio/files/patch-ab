@@ -1,11 +1,11 @@
---- afio.c.orig	Tue Sep 29 04:05:54 1998
-+++ afio.c	Wed Dec  9 01:38:58 1998
-@@ -427,7 +427,7 @@
-   if (aruntil && (aruntil < arbsize))
-     {
-       fprintf (stderr, "Media size %ld is less than buffer size %d\n",
+--- afio.c.orig	Fri Nov 26 01:24:39 1999
++++ afio.c	Thu Jan 27 14:23:28 2000
+@@ -609,7 +609,7 @@
+                aruntil, arbsize);    
+ #else
+       fprintf (stderr, "Media size %ld is less than block size %d\n",
 -	       (ulong) aruntil, arbsize);
 +	       (u_long) aruntil, arbsize);
-       usage ();
+ #endif
+    usage ();
      }
-   if (arpad == 0)

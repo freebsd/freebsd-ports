@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Sep 29 04:13:19 1998
-+++ Makefile	Wed Dec  9 01:30:18 1998
-@@ -26,7 +26,7 @@
+--- Makefile.orig	Thu Nov 25 22:42:26 1999
++++ Makefile	Thu Jan 27 15:03:54 2000
+@@ -26,14 +26,14 @@
  c	= -DHAVEMEMCMP
  ##  Define DEFFMTCMD to being how to format the media you use the most
  ##		This is the DEFault FoRMat CoManD. 
@@ -9,6 +9,14 @@
  ##  Define LONGZFILE if you want .Z to be tagged on the end of a 14 char
  ##	file name (or longer for BSD) in the archive when the file is compressed
  #e	= -DLONGZFILE
+ 
+ ##  Define PRG_COMPRESS to get something other than `gzip'.
+ # you need to edit compfile.c (-G option) if you change this line.
+-f	= -DPRG_COMPRESS='"gzip"'
++f	= -DPRG_COMPRESS='"/usr/bin/gzip"'
+ 
+ ## Define HAVEFNMATCH if you want to use the gnu fnmatch() routine for
+ # -y -Y -w -W matching.
 @@ -43,6 +43,11 @@
  
  g	= -DHAVEFNMATCH
@@ -21,22 +29,22 @@
  # fnmatch() is in the gnu C library, so it is directly available on
  # Linux.  If your system (e.g. SCO) does not have the gnu C library,
  # unpack the archive gnu.fnmatch.tar.gz and uncomment the following
-@@ -55,14 +60,15 @@
- # redistribute afio executables with this library linked in.
+@@ -56,13 +61,14 @@
  
  #CFLAGS1 = -ggdb
--CFLAGS1 = -Wformat -g -O2 -fomit-frame-pointer
-+#FLAGS1 = -Wformat -g -O2 -fomit-frame-pointer
- #CFLAGS1 = -Wformat -g -fomit-frame-pointer
+ #CFLAGS1 = -Wall -s -g -O2 -fomit-frame-pointer
+-CFLAGS1 = -Wall -O2 -fomit-frame-pointer
++#CFLAGS1 = -Wall -O2 -fomit-frame-pointer
 +CFLAGS1 = -fomit-frame-pointer -fno-strength-reduce
  
  
- CC=gcc
+-CC=gcc
++#CC=gcc
  
  
 -CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $I
 +CFLAGS += ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $h $I
- LDFLAGS = -s
+ LDFLAGS =
  
  afio : afio.o compfile.o exten.o match.o $M
 @@ -72,8 +78,8 @@
