@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomeutils2
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 PORTEPOCH=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -16,7 +15,7 @@ DISTNAME=	gnome-utils-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 2.0 support utilities
+COMMENT=	GNOME 2 support utilities
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
