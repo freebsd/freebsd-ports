@@ -1,0 +1,39 @@
+diff -urN enca/Makefile enca-devel/Makefile
+--- enca/Makefile	Sat Sep 21 16:18:52 2002
++++ enca-devel/Makefile	Wed Oct  2 16:54:57 2002
+@@ -6,25 +6,20 @@
+ #
+ 
+ PORTNAME=	enca
+-PORTVERSION=	0.10.2
++PORTVERSION=	0.10.3
+ CATEGORIES=	textproc converters
+-MASTER_SITES=	http://www.physics.muni.cz/~yeti/download/
++MASTER_SITES=	http://trific.ath.cx/Ftp/enca/
+ 
+-MAINTAINER=	ports@FreeBSD.org
++MAINTAINER=	never@nevermind.kiev.ua
+ 
+-.if exists(${PREFIX}/lib/libiconv.so)
+ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+-CONFIGURE_ARGS+=	--with-libiconv=${PREFIX}
+-.endif
+ 
+ USE_BZIP2=	yes
+ GNU_CONFIGURE=	yes
+ USE_GMAKE=	yes
+ 
+ CONFIGURE_ARGS+= --with-html-dir=${PREFIX}/share/doc/enca \
+-		--without-librecode
+-
+-CONFIGURE_ENV+= LDFLAGS="-L${PREFIX}/lib" CPPFLAGS="-I${PREFIX}/include"
++		--without-librecode --with-libiconv=${PREFIX}
+ 
+ MAN1=	enca.1
+ MLINKS=	enca.1 enconv.1
+diff -urN enca/distinfo enca-devel/distinfo
+--- enca/distinfo	Fri Sep 20 13:58:59 2002
++++ enca-devel/distinfo	Wed Oct  2 16:45:47 2002
+@@ -1 +1 @@
+-MD5 (enca-0.10.2.tar.bz2) = ed2494af922397aa62c7e4c61aa3d7f3
++MD5 (enca-0.10.3.tar.bz2) = 69dee21115a9538f7116961bfe8976c9
