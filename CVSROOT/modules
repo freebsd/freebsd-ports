@@ -5543,6 +5543,7 @@ mime		ports/devel/mime
 mime-support	ports/misc/mime-support
 mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
+minder		ports/net/minder
 mindfocus	ports/games/mindfocus
 mindguard	ports/games/mindguard
 mindterm-binary	ports/security/mindterm-binary
