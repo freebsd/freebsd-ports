@@ -1,6 +1,6 @@
 # New ports collection makefile for:	moonshine
-# Date created:		26 April 2000
-# Whom:			Maxim Sobolev <sobomax@altavista.net>
+# Date created:				26 April 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

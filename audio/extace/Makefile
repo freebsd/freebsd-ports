@@ -1,6 +1,6 @@
 # New ports collection makefile for:	extace
 # Date created:				8 April 2000
-# Whom:					Maxim Sobolev
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

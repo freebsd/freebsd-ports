@@ -1,6 +1,6 @@
 # New ports collection makefile for:	gmanedit
-# Date created:		12 July 2000
-# Whom:			Maxim Sobolev
+# Date created:				12 July 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

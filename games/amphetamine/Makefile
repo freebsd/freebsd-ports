@@ -1,6 +1,6 @@
 # New ports collection makefile for:	amphetamine
-# Date created:		6 March 2000
-# Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
+# Date created:				6 March 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

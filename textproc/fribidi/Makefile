@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fribidi
 # Date created:				17 July 2000
-# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

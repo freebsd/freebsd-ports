@@ -1,6 +1,6 @@
-# New ports collection makefile for:   gtk-engines-collection
-# Date created:        13 June 2000
-# Whom:                Maxim Sobolev <sobomax@FreeBSD.org>
+# New ports collection makefile for:	gtk-engines-collection
+# Date created:				13 June 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

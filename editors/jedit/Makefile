@@ -1,6 +1,6 @@
 # New ports collection makefile for:    jedit
-# Date created:		22 June 2000
-# Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
+# Date created:				22 June 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

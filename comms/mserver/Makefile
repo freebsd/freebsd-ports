@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mserver
-# Date created:		21 May 1999
-# Whom:		Maxim Sobolev <sobomax@FreeBSD.org>
+# Date created:				21 May 1999
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

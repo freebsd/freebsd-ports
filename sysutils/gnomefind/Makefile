@@ -1,6 +1,6 @@
 # New ports collection makefile for:	gnomefind
-# Date created:		26 May 2000
-# Whom:			Maxim Sobolev
+# Date created:				26 May 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	gtkdiff
-# Date created:		17 November 1999
-# Whom:			Maxim Sobolev
+# Date created:				17 November 1999
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

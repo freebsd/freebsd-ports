@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sdl_mixer
-# Date created:		24 April 2000
-# Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
+# Date created:				24 April 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
