@@ -1008,7 +1008,6 @@
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ucpp
-    SUBDIR += uds
     SUBDIR += uisp
     SUBDIR += umbrello
     SUBDIR += upnp
