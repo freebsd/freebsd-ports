@@ -1,5 +1,5 @@
 --- agent/mibgroup/host/hr_storage.c.orig	Thu Jan 29 22:53:59 2004
-+++ agent/mibgroup/host/hr_storage.c	Tue May  4 17:06:38 2004
++++ agent/mibgroup/host/hr_storage.c	Wed May  5 16:08:06 2004
 @@ -148,7 +148,7 @@
  #define HRFS_mount	mnt_mountp
  #define HRFS_statfs	statvfs
@@ -14,13 +14,31 @@
  #endif
  
 +#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
-+void		collect_mbuf(long *long_mbuf, long *long_mbuf_max);
++void		collect_mbuf(long *long_mbuf, long *long_mbufc);
 +#endif
 +
  #define	HRSTORE_MEMSIZE		1
  #define	HRSTORE_INDEX		2
  #define	HRSTORE_TYPE		3
-@@ -567,7 +571,7 @@
+@@ -431,7 +435,8 @@
+     NULL,
+     "Memory Buffers",           /* HRS_TYPE_MBUF */
+     "Real Memory",              /* HRS_TYPE_MEM */
+-    "Swap Space"                /* HRS_TYPE_SWAP */
++    "Swap Space",               /* HRS_TYPE_SWAP */
++    "Memory Buffer Clusters"    /* HRS_TYPE_MBUFCLUSTER */
+ };
+ 
+ 
+@@ -546,6 +551,7 @@
+                 storage_type_id[storage_type_len - 1] = 3;      /* Virtual Mem */
+                 break;
+             case HRS_TYPE_MBUF:
++            case HRS_TYPE_MBUFCLUSTER:
+                 storage_type_id[storage_type_len - 1] = 1;      /* Other */
+                 break;
+             default:
+@@ -567,7 +573,7 @@
          }
      case HRSTORE_UNITS:
          if (store_idx > HRS_TYPE_FIXED_MAX)
@@ -29,7 +47,7 @@
              long_return = stat_buf.f_frsize;
  #else
              long_return = stat_buf.f_bsize;
-@@ -631,7 +635,7 @@
+@@ -631,7 +637,7 @@
              case HRS_TYPE_SWAP:
                  long_return = memory_totals.t_vm;
                  break;
@@ -38,7 +56,7 @@
              case HRS_TYPE_MEM:
                  long_return = physmem;
                  break;
-@@ -641,6 +645,8 @@
+@@ -641,6 +647,8 @@
  #endif
                  long_return = 0;
                  break;
@@ -47,26 +65,53 @@
              case HRS_TYPE_MBUF:
  #if HAVE_SYS_POOL_H
                  long_return = 0;
-@@ -650,7 +656,18 @@
+@@ -650,7 +658,26 @@
                       i++)
                      long_return += mbstat.m_mtypes[i];
  #elif defined(MBSTAT_SYMBOL)
 +#if !defined(__FreeBSD__) || __FreeBSD_version < 500021
                  long_return = mbstat.m_mbufs;
 +#elif defined(__FreeBSD__) && __FreeBSD_version < 500024
-+			/* mbuf stats disabled */
-+			return NULL;
++		/* mbuf stats disabled */
++		return NULL;
 +#elif defined(__FreeBSD__)
-+			collect_mbuf((long*)NULL, (long*)&long_return);
-+			break;
++		{
++		  size_t mlen = sizeof(int);
++		  int nmbufs;
++		  if (sysctlbyname("kern.ipc.nmbufs", &nmbufs, &mlen,
++				   NULL, 0) < 0) {
++		    return NULL;
++		  }
++		  long_return = nmbufs;
++		  break;
++		}
 +#else
-+			/* XXX TODO: implement new method */
-+			return NULL;
++		/* XXX TODO: implement new method */
++		return NULL;
 +#endif /* __FreeBSD__ */
  #elif defined(NO_DUMMY_VALUES)
                  goto try_next;
  #else
-@@ -708,7 +725,18 @@
+@@ -658,6 +685,18 @@
+ #endif
+                 break;
+ #endif              /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
++#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
++	    case HRS_TYPE_MBUFCLUSTER: {
++	      size_t mlen = sizeof(int);
++	      int nmbclusters;
++	      if (sysctlbyname("kern.ipc.nmbclusters", &nmbclusters, &mlen,
++			       NULL, 0) < 0) {
++		return NULL;
++	      }
++	      long_return = nmbclusters;
++	      break;
++	    }
++#endif
+             default:
+ #if NO_DUMMY_VALUES
+                 goto try_next;
+@@ -708,7 +747,18 @@
                      * mbpool.pr_size + (mclpool.pr_nget - mclpool.pr_nput)
                      * mclpool.pr_size;
  #elif defined(MBSTAT_SYMBOL)
@@ -85,25 +130,33 @@
  #elif defined(NO_DUMMY_VALUES)
                  goto try_next;
  #else
-@@ -853,3 +881,132 @@
+@@ -716,6 +766,11 @@
+ #endif
+                 break;
+ #endif                      /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
++#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
++	    case HRS_TYPE_MBUFCLUSTER:
++	      collect_mbuf(NULL, &long_return);
++	      break;
++#endif
+             default:
+ #if NO_DUMMY_VALUES
+                 goto try_next;
+@@ -853,3 +908,78 @@
      *usedP = ainfo.ani_resv;
  }
  #endif                          /* solaris2 */
 +
 +#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
 +void
-+collect_mbuf(long *long_mbuf, long *long_mbuf_max)
++collect_mbuf(long *long_mbuf, long *long_mbufc)
 +{
-+  int i, j, nmbufs, nmbclusters, page_size, num_objs;
-+  short nmbtypes;
++  int i, j, num_objs;
 +  size_t mlen;
-+  long *mbtypes = NULL;
-+  u_int mbuf_hiwm, clust_hiwm, mbuf_lowm, clust_lowm;
-+  u_long totspace[2], totused[2];
++  u_long totused[2];
 +  u_long totnum, totfree;
 +  struct mbstat mbstat;
 +  struct mbpstat **mbpstat = NULL;
-+  int *seen = NULL;
 +
 +  if (sysctlbyname("kern.ipc.mb_statpcpu", NULL, &mlen, NULL, 0) < 0) {
 +    warn("sysctl: retrieving mb_statpcpu len");
@@ -128,89 +181,39 @@
 +    warn("sysctl: retrieving mbstat");
 +    goto err;
 +  }
-+  mlen = sizeof(int);
-+  if (sysctlbyname("kern.ipc.nmbclusters", &nmbclusters, &mlen, NULL, 0) < 0) {
-+    warn("sysctl: retrieving nmbclusters");
-+    goto err;
-+  }
-+  mlen = sizeof(int);
-+  if (sysctlbyname("kern.ipc.nmbufs", &nmbufs, &mlen, NULL, 0) < 0) {
-+    warn("sysctl: retrieving nmbufs");
-+    goto err;
-+  }
-+  mlen = sizeof(u_int);
-+  if (sysctlbyname("kern.ipc.mbuf_hiwm", &mbuf_hiwm, &mlen, NULL, 0) < 0) {
-+    warn("sysctl: retrieving mbuf_hiwm");
-+    goto err;
-+  }
-+  mlen = sizeof(u_int);
-+  if (sysctlbyname("kern.ipc.clust_hiwm", &clust_hiwm, &mlen, NULL, 0) < 0) {
-+    warn("sysctl: retrieving clust_hiwm");
-+    goto err;
-+  }
-+  mlen = sizeof(u_int);
-+  if (sysctlbyname("kern.ipc.mbuf_lowm", &mbuf_lowm, &mlen, NULL, 0) < 0) {
-+    warn("sysctl: retrieving mbuf_lowm");
-+    goto err;
-+  }
-+  mlen = sizeof(u_int);
-+  if (sysctlbyname("kern.ipc.clust_lowm", &clust_lowm, &mlen, NULL, 0) < 0) {
-+    warn("sysctl: retrieving clust_lowm");
-+    goto err;
-+  }
-+  mlen = sizeof(int);
-+  if (sysctlbyname("hw.pagesize", &page_size, &mlen, NULL, 0) < 0) {
-+    warn("sysctl: retrieving hw.pagesize");
-+    goto err;
-+  }
-+
-+  nmbtypes = mbstat.m_numtypes;
-+  if ((seen = calloc(nmbtypes, sizeof(*seen))) == NULL) {
-+    warn("calloc: cannot allocate memory for mbtypes seen flag");
-+    goto err;
-+  }
-+  if ((mbtypes = calloc(nmbtypes, sizeof(long *))) == NULL) { 
-+    warn("calloc: cannot allocate memory for mbtypes");
-+    goto err;
-+  }
 +
 +  for (i = 0; i < num_objs; i++)
 +    mbpstat[i] = mbpstat[0] + i;
 +
-+#undef MSIZE
-+#define MSIZE		(mbstat.m_msize)
-+#undef MCLBYTES
-+#define	MCLBYTES	(mbstat.m_mclbytes)
 +#define	GENLST		(num_objs - 1)
 +
 +  totnum = mbpstat[GENLST]->mb_mbbucks * mbstat.m_mbperbuck;
 +  totfree = mbpstat[GENLST]->mb_mbfree;
-+  for (j = 1; j < nmbtypes; j++)
-+    mbtypes[j] += mbpstat[GENLST]->mb_mbtypes[j];
-+  totspace[0] = mbpstat[GENLST]->mb_mbbucks * mbstat.m_mbperbuck * MSIZE;
 +  for (i = 0; i < (num_objs - 1); i++) {
 +    if (mbpstat[i]->mb_active == 0)
 +      continue;
-+    totspace[0] += mbpstat[i]->mb_mbbucks*mbstat.m_mbperbuck*MSIZE;
 +    totnum += mbpstat[i]->mb_mbbucks * mbstat.m_mbperbuck;
 +    totfree += mbpstat[i]->mb_mbfree;
-+    for (j = 1; j < nmbtypes; j++)
-+      mbtypes[j] += mbpstat[i]->mb_mbtypes[j]; 
 +  }
 +  totused[0] = totnum - totfree;
++  totnum = mbpstat[GENLST]->mb_clbucks * mbstat.m_clperbuck;
++  totfree = mbpstat[GENLST]->mb_clfree;
++  for (i = 0; i < (num_objs - 1); i++) {
++    if (mbpstat[i]->mb_active == 0)
++      continue;
++    totnum += mbpstat[i]->mb_clbucks * mbstat.m_clperbuck;
++    totfree += mbpstat[i]->mb_clfree;
++  }
++  totused[1] = totnum - totfree;
 +
 +  if (long_mbuf) {
 +    *long_mbuf = totused[0];
 +  }
-+  if (long_mbuf_max) {
-+    *long_mbuf_max = nmbufs;
++  if (long_mbufc) {
++    *long_mbufc = totused[1];
 +  }
 +
 + err:
-+  if (mbtypes != NULL)
-+    free(mbtypes);
-+  if (seen != NULL)
-+    free(seen);
 +  if (mbpstat != NULL) {
 +    if (mbpstat[0] != NULL)
 +      free(mbpstat[0]);
