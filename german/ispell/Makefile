@@ -10,8 +10,8 @@ MAINTAINER=	alex@FreeBSD.org
 ISPELL_DEALT=	yes
 ISPELL_DENEU=	yes
 PORTNAME=	ispell
-PORTVERSION= 	20001109
+PORTVERSION=	20001109
 CATEGORIES=	german
-MASTERDIR=      ${.CURDIR}/../../textproc/ispell
+MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .include        "${MASTERDIR}/Makefile"

@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-MAINTAINER=     alex@FreeBSD.org
+MAINTAINER=	alex@FreeBSD.org
 
 ISPELL_DEALT=	yes
 PORTNAME=	ispell
-PORTVERSION= 	19991219
+PORTVERSION=	19991219
 CATEGORIES=	german
 PKGNAMESUFFIX=	-alt
-MASTERDIR=      ${.CURDIR}/../../textproc/ispell
+MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .include        "${MASTERDIR}/Makefile"
 

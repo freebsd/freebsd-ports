@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 DISTNAME=	avon-1996
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=     wosch@FreeBSD.org
+MAINTAINER=	wosch@FreeBSD.org
 
 NO_WRKSUBDIR=	YES
 EXTRACT_CMD=	${GZCAT}
