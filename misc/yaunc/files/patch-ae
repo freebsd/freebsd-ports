@@ -1,5 +1,17 @@
---- Makefile.in.orig	Sat Apr 14 19:35:14 2001
-+++ Makefile.in	Sat Apr 14 19:35:43 2001
+
+$FreeBSD$
+
+--- Makefile.in.orig	Sun Dec 24 02:37:08 2000
++++ Makefile.in	Sun Dec 22 16:34:26 2002
+@@ -71,7 +71,7 @@
+ 
+ bin_PROGRAMS = yaunc
+ 
+-yaunc_SOURCES = daemon_init.c form_data.c inlines.c main.c misc.c 	read_conf.c resolv.c send_data.c sigfuncs.c unp_error.c unp_inet_ntop.c 	unp_inet_pton.c unp_sock_wrappers.c unp_wraplib.c usage.c os_specific.c 	my_hdrs.h yaunc.h
++yaunc_SOURCES = daemon_init.c form_data.c inlines.c main.c misc.c 	read_conf.c resolv.c send_data.c sigfuncs.c unp_error.c unp_sock_wrappers.c unp_wraplib.c usage.c os_specific.c 	my_hdrs.h yaunc.h
+ 
+ 
+ EXTRA_yaunc_SOURCES = get_ut_bsd.c get_ut_sun.c get_ut_linux.c
 @@ -83,8 +83,8 @@
  # To tell automake that these should go in the tar
  EXTRA_DIST = $(man_MANS) $(sysconf_DATA) TO-DO
@@ -11,3 +23,14 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
+@@ -96,8 +96,8 @@
+ CPPFLAGS = @CPPFLAGS@
+ LIBS = @LIBS@
+ yaunc_OBJECTS =  daemon_init.o form_data.o inlines.o main.o misc.o \
+-read_conf.o resolv.o send_data.o sigfuncs.o unp_error.o unp_inet_ntop.o \
+-unp_inet_pton.o unp_sock_wrappers.o unp_wraplib.o usage.o os_specific.o
++read_conf.o resolv.o send_data.o sigfuncs.o unp_error.o \
++unp_sock_wrappers.o unp_wraplib.o usage.o os_specific.o
+ yaunc_LDADD = $(LDADD)
+ yaunc_DEPENDENCIES = 
+ yaunc_LDFLAGS = 
