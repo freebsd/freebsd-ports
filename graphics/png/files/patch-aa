@@ -31,7 +31,7 @@
   pngtest: pngtest.o libpng.a
   	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
   
---- 5,47 ----
+--- 5,55 ----
   # Where the zlib library and include files are located
   #ZLIBLIB=/usr/local/lib
   #ZLIBINC=/usr/local/include
@@ -45,11 +45,15 @@
   #RANLIB=echo
   RANLIB=ranlib
   
-+ # Set major and minor numbers that are ELF-compliant.
-+ # The minor must _always_ be 0
-+ PNGMAJ = 3
-+ PNGMIN = 0
++ # read libpng.txt or png.h to see why PNGMAJ is 2.  You should not
++ # have to change it.
++ PNGMAJ = 2
++ .if (${PORTOBJFORMAT} == "elf")
++ PNGVER = $(PNGMAJ)
++ .else
++ PNGMIN = 1
 + PNGVER = $(PNGMAJ).$(PNGMIN)
++ .endif
 + 
   # where make install puts libpng.a and png.h
 ! prefix=${PREFIX}
@@ -70,7 +74,11 @@
   	$(RANLIB) $@
   
 + libpng.so.${PNGVER}: $(OBJS:S/o$/so/g)
++ .if (${PORTOBJFORMAT} == "elf")
++ 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/o$/so/g) -lz -lm
++ .else
 + 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz -lm
++ .endif
 + 
   pngtest: pngtest.o libpng.a
   	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
@@ -89,12 +97,13 @@
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png
---- 51,61 ----
+--- 59,70 ----
   install: libpng.a
   	-@mkdir $(prefix)/include
   	-@mkdir $(prefix)/lib
 ! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
 ! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${PNGVER} $(prefix)/lib
+! 	ln -sf libpng.so.${PNGVER} $(prefix)/lib/libpng.so
 ! 	ranlib $(prefix)/lib/libpng.a
 ! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} libpng.3 libpngpf.3 $(prefix)/man/man3
 ! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} png.5 $(prefix)/man/man5
