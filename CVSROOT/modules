@@ -5069,6 +5069,7 @@ mird		ports/databases/mird
 mirror		ports/ftp/mirror
 mirrormagic	ports/games/mirrormagic
 miscom		ports/games/miscom
+missey		ports/mail/missey
 misterproper	ports/misc/misterproper
 mit-scheme	ports/lang/mit-scheme
 mixal		ports/lang/mixal
