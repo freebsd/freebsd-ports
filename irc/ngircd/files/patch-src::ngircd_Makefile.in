@@ -1,10 +1,10 @@
---- src/ngircd/Makefile.in.orig	Fri May  2 00:51:33 2003
-+++ src/ngircd/Makefile.in	Fri May  2 00:51:41 2003
-@@ -64,7 +64,6 @@
+--- src/ngircd/Makefile.in.orig	Sun Jul 20 10:42:38 2003
++++ src/ngircd/Makefile.in	Sun Jul 20 10:42:45 2003
+@@ -41,7 +41,6 @@
  install_sh_PROGRAM = $(install_sh) -c
- INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ install_sh_SCRIPT = $(install_sh) -c
  INSTALL_HEADER = $(INSTALL_DATA)
--transform = @program_transform_name@
+-transform = $(program_transform_name)
  NORMAL_INSTALL = :
  PRE_INSTALL = :
  POST_INSTALL = :

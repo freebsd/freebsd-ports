@@ -1,16 +1,8 @@
---- doc/Makefile.in.orig	Thu May  1 18:16:09 2003
-+++ doc/Makefile.in	Sun May  4 05:30:12 2003
-@@ -65,7 +65,6 @@
- install_sh_PROGRAM = $(install_sh) -c
- INSTALL_SCRIPT = @INSTALL_SCRIPT@
- INSTALL_HEADER = $(INSTALL_DATA)
--transform = @program_transform_name@
- NORMAL_INSTALL = :
- PRE_INSTALL = :
- POST_INSTALL = :
-@@ -92,14 +91,11 @@
- am__quote = @am__quote@
- install_sh = @install_sh@
+--- doc/Makefile.in.orig	Sun Jul 20 10:36:24 2003
++++ doc/Makefile.in	Sun Jul 20 10:38:28 2003
+@@ -135,14 +135,11 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
  
 -EXTRA_DIST = CVS.txt FAQ.txt Protocol.txt Platforms.txt \
 -	README-AUX.txt README-BeOS.txt RFC.txt sample-ngircd.conf
@@ -24,12 +16,14 @@
 +documents = $(EXTRA_DIST)
  
  subdir = doc
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -232,7 +228,7 @@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -291,8 +288,8 @@
+ 
  install-data-hook:
  	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
- 	if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf ]; then \
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf ]; then \
 -	  $(INSTALL) -m 600 -c $(srcdir)/sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf; \
++	if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf.sample ]; then \
 +	  $(INSTALL) -m 600 -c $(srcdir)/sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf.sample; \
  	 fi
  	$(mkinstalldirs) $(DESTDIR)$(docdir)

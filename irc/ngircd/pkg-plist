@@ -1,9 +1,9 @@
 etc/ngircd.conf.sample
 sbin/ngircd
-%%PORTDOCS%%share/doc/ngircd/AUTHORS
-%%PORTDOCS%%share/doc/ngircd/COPYING
-%%PORTDOCS%%share/doc/ngircd/ChangeLog
-%%PORTDOCS%%share/doc/ngircd/INSTALL
-%%PORTDOCS%%share/doc/ngircd/NEWS
-%%PORTDOCS%%share/doc/ngircd/README
-@dirrm share/doc/ngircd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
