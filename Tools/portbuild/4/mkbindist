@@ -8,12 +8,14 @@ if [ "${ftp}" != 0 ]; then
   cd bindist/ftp
   /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/bin/bin.??'
   /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/dict/dict.??'
+  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/des/des.??'
   #ssh -n ftp.freebsd.org cat 'w/3.0-RELEASE/bin/bin.??' | tar -xzpf -
   cd ${here}
 fi
 cd ${tmpdir}
-cat ${here}/bindist/ftp/bin.?? | tar -xzpf -
-cat ${here}/bindist/ftp/dict.?? | tar -xzpf -
+cat ${here}/bindist/ftp/bin.?? | tar --unlink -xzpf -
+cat ${here}/bindist/ftp/dict.?? | tar --unlink -xzpf -
+cat ${here}/bindist/ftp/des.?? | tar --unlink -xzpf -
 rm -rf $(cat ${here}/bindist/delete)
 mkdir -p $(cat ${here}/bindist/dirlist)
 tar -C ${here}/bindist/files -cf - . | tar -xpf -
