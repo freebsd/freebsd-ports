@@ -1,16 +1,14 @@
-       Libwww-perl is a collection of Perl modules which provides
-       a simple and consistent programming interface (API) to the
-       World-Wide Web.  The main focus of the library is to
-       provide classes and functions that allow you to write WWW
-       clients, thus libwww-perl said to be a WWW client library.
-       The library also contain modules that are of more general
-       use.
+Libwww-perl is a collection of Perl modules which provides a simple and
+consistent programming interface (API) to the World-Wide Web.  The main
+focus of the library is to provide classes and functions that allow you
+to write WWW clients, thus libwww-perl said to be a WWW client library.
+The library also contain modules that are of more general use.
 
-       The main architecture of the library is object oriented.
-       The user agent, requests sent and responses received from
-       the WWW server are all represented by objects.  This makes
-       a simple and powerful interface to these services.  The
-       interface should be easy to extend and customize for your
-       needs.
+The main architecture of the library is object oriented.  The user
+agent, requests sent and responses received from the WWW server are all
+represented by objects.  This makes a simple and powerful interface to
+these services.  The interface should be easy to extend and customize
+for your needs.
 
+WWW: http://search.cpan.org/dist/p5-libwww/
 WWW: http://www.linpro.no/lwp/
