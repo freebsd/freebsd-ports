@@ -9,21 +9,17 @@ PORTNAME=	staroffice
 PORTVERSION=	5.2
 CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.hu-berlin.de/pub/linux/staroffice/german/ \
-		ftp://ftp.software-engineering.org/pub/mirrors/staroffice/5.2/ \
-		ftp://ftp.uni-linz.ac.at/pub/staroffice_5.2/ \
-		ftp://sunsite.anu.edu.au/mnt/disk3/sun-info/sun-patches/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/deutsch/ \
-		ftp://ftp.schwabmuenchen.de/pub/Linux/Office/Star_Office/ \
-		ftp://ftp.mayn.de/pub/unix/office/staroffice/ \
 		ftp://ftp.isst.fhg.de/ISST/Sun/Staroffice/5.2/ \
-		ftp://ftp.cityline.net/mirrors2/sun-patches-all/ \
-		ftp://ftp.gtn.com/os/Sun/patches/ \
-		ftp://ftp.jaist.ac.jp/.arc07/sun-info/sun-patches/ \
 		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
+		ftp://ftp.sunsite.auc.dk/disk2/sun-patches/ \
 		ftp://sunsite.uio.no/pub/sun/sun-patches/ \
 		ftp://ftp.sunet.se/pub7/security/vendor/sun/patches/
 DISTNAME=	so-5_2-ga-bin-linux-de.bin
-DISTFILES=	soa-5_2-ga-bin-linux-de.bin so-5_2-ga-bin-linux-de.bin 109939-02.tar.Z
+DISTFILES=	so-5_2-ga-bin-linux-de.bin 109939-02.tar.Z
+.if defined(WITH_ADABAS)
+DISTFILES+=	soa-5_2-ga-bin-linux-de.bin
+.endif
 EXTRACT_ONLY=	109939-02.tar.Z
 
 MAINTAINER=	mb@imp.ch
@@ -40,6 +36,8 @@ TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
 SUNSOLVE=	${WRKDIR}/109939-02
+ADABAS_DIST=	soa-5_2-ga-bin-linux-de.bin
+SIZE!=		/bin/df -k . | /usr/bin/tail -n 1 | /usr/bin/awk '{print $$4}'
 
 .include <bsd.port.pre.mk>
 
@@ -48,11 +46,26 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} OS-VERSION ${OSVERSION}
 	@${ECHO}
-	@${ECHO} Staroffice benötigt einen System-Patch der erst
-	@${ECHO} seit FreeBSD 4.1 verfügbar ist. Bitte bringen Sie ihr
+	@${ECHO} Staroffice benoetigt einen System-Patch der erst
+	@${ECHO} seit FreeBSD 4.1 verfuegbar ist. Bitte bringen Sie ihr
 	@${ECHO} System auf den neuesten Stand.
 	@${ECHO}
 	@${FALSE}
+.endif
+.if ${SIZE} < 250000
+	@${ECHO}
+	@${ECHO} In Ihrem Ports-Verzeichnis ist zuwenig Platz
+	@${ECHO} enthalten. Staroffice benoetigt zum Entpacken
+	@${ECHO} mindestens 250MB an freiem Speicherplatz.
+	@${ECHO}
+	@${FALSE}
+.endif
+.if !defined(WITH_ADABAS)
+	@ ${ECHO}
+	@ ${ECHO} Falls Sie Staroffice mit ADABAS Datenbank-Support installieren
+	@ ${ECHO} moechten, brechen Sie die Installation ab und rufen Sie make
+	@ ${ECHO} mit WITH_ADABAS=YES auf.
+	@ ${ECHO}
 .endif
 .if defined(WITH_CDROM)
 .if !exists(${CD_MOUNTPT}/linux/office52/setup)
@@ -83,11 +96,14 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${MKDIR} ${TMPDIR}
 	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
-	@${CP} ${_DISTDIR}/soa-5_2-ga-bin-linux-de.bin ${WRKSRC}
 	@${CHMOD} 755 ${WRKSRC}/${DISTNAME}
-	@${CHMOD} 755 ${WRKSRC}/soa-5_2-ga-bin-linux-de.bin
+.if defined(WITH_ADABAS)
+	@${CP} ${_DISTDIR}/${ADABAS_DIST} ${WRKSRC}
+	@${CHMOD} 755 ${WRKSRC}/${ADABAS_DIST}
+.endif
 	@cd ${WRKSRC}
 	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
+	@${RM} ${WRKSRC}/${DISTNAME}
 	@cd ../../
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -122,7 +138,7 @@ do-install:
 		${ECHO} ; \
 	else \
 		${ECHO} ; \
-		${ECHO} Während Ihrer StarOffice5.2 Installation ist ein Fehler aufgetreten. ; \
+		${ECHO} Waehrend Ihrer StarOffice5.2 Installation ist ein Fehler aufgetreten. ; \
 		${ECHO} Bitte schicken Sie ein Mail mit dem Fehlerbeschrieb an mb@imp.ch. Danke ; \
 		${ECHO} ; \
 		${FALSE} ; \
@@ -139,7 +155,7 @@ post-install:
 	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
 	@${PATCH} -s ${PREFIX}/office52/program/soffice ${FILESDIR}/soffice.patch
 	@${CP} ${INSTDB.INS} ${INSTDB.INS}.orig
-	@${SED} -e 's%DefaultDestPath = "/usr/local/office52%DefaultDestPath = "office52%' \
+	@${SED} -e 's%DefaultDestPath = "${PREFIX}/office52%DefaultDestPath = "office52%' \
 	    < ${INSTDB.INS}.orig > ${INSTDB.INS}
 
 install-user:
