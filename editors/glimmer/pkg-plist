@@ -19,6 +19,7 @@ share/gnome/latte/docs/PROPS
 share/gnome/latte/docs/README
 share/gnome/latte/docs/TODO
 share/gnome/latte/languages/bash.lang
+share/gnome/latte/languages/c.lang
 share/gnome/latte/languages/cpp.lang
 share/gnome/latte/languages/html.lang
 share/gnome/latte/languages/java.lang
@@ -40,6 +41,7 @@ share/gnome/latte/scripts/ISO2HTML.py
 share/gnome/latte/scripts/Replace_Spaces.py
 share/gnome/latte/scripts/Replace_Tabs.py
 share/gnome/latte/scripts/To_Upper.py
+share/gnome/latte/scripts/autoexec.py
 share/gnome/pixmaps/latte-icon.png
 share/gnome/pixmaps/latte-title.png
 @dirrm share/gnome/latte/scripts
