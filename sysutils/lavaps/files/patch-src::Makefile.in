@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Sat Dec 25 11:42:03 2004
++++ src/Makefile.in	Sat Feb  5 13:51:37 2005
+@@ -318,8 +318,8 @@
+ 
+ 
+ # according to http://www.gnome.org/projects/gconf/
+-schemadir = @GCONF_SCHEMA_FILE_DIR@
+-schema_DATA = lavaps.schemas
++#schemadir = @GCONF_SCHEMA_FILE_DIR@
++#schema_DATA = lavaps.schemas
+ EXTRA_DIST = \
+ 	$(schema_DATA) \
+ 	linux/proc/Makefile \
