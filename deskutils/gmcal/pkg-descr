@@ -1,0 +1,8 @@
+This is a very early release of a GTK+ app that can display your
+calendar and appointment either via mstore or ICAP protocol drivers.
+You may create these calendars with mcal (see deskutils/mcal).
+
+The use of this should only be considered for testing and development.
+It still has much work left before it is a stable production application.
+
+WWW: http://mcal.chek.com/

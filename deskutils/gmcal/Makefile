@@ -1,0 +1,41 @@
+# New ports collection makefile for:	gmcal
+# Date created:		Mon Oct 15 09:09:46 GMT 2001
+# Whom:			thierry@pompo.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gmcal
+PORTVERSION=	0.0.1
+CATEGORIES=	deskutils
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	libmcal
+
+MAINTAINER=	thierry@pompo.net
+
+LIB_DEPENDS=	mcal.0:${PORTSDIR}/misc/libmcal
+RUN_DEPENDS=	${LOCALBASE}/mcal/mcal:${PORTSDIR}/deskutils/mcal
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_GTK=	yes
+
+STRIP=		/usr/bin/strip
+
+post-extract:
+	${CHMOD} a-x ${WRKSRC}/*
+
+post-build:
+	${STRIP} ${WRKSRC}/gmcal
+
+do-install:
+	${CP} ${WRKSRC}/gmcal ${PREFIX}/gmcal
+
+post-install:
+	@${ECHO} "*****************************************************************************"
+	@${ECHO} ""
+	@${ECHO} " gmcal has been installed in ${PREFIX}/gmcal."
+	@${ECHO} ""
+	@${ECHO} "*****************************************************************************"
+
+.include <bsd.port.mk>

@@ -1,0 +1,36 @@
+--- gmcal.c.orig	Fri Dec 17 17:59:16 1999
++++ gmcal.c	Mon Oct 15 23:56:27 2001
+@@ -8,9 +8,15 @@
+ 
+ #include <string.h>
+ #include <pwd.h>
++#if HAVE_GETOPT_H
+ #include <getopt.h>
++#else
++extern	int	getopt();
++extern	char	*optarg;
++extern	int	optind;
++#endif
++
+ 
+-#include <malloc.h>
+ #include <gtk/gtk.h>
+ #include <gtk/gtkcalendar.h>
+ #include <mcal.h>
+@@ -177,15 +183,8 @@
+     while (1)
+ 	    {
+ 	      int option_index = 0;
+-	      static struct option long_options[] =
+-	      {
+-			{"version", 0, 0, 'v'},
+-			{"help", 0, 0, 'h'},
+-			{0, 0, 0, 0}
+-      	  };
+ 
+-        c = getopt_long (argc, argv, ":hv",
+-  		       long_options, &option_index);
++        c = getopt (argc, argv, ":hv");
+         if (c == -1)
+   	break;
+ 
