@@ -17,6 +17,7 @@ DISTNAME=	Eterm-${PORTVERSION}
 MAINTAINER=	nobutaka@nobutaka.com
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
+BUILD_DEPENDS=  man2html:${PORTSDIR}/textproc/man2html
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -32,6 +33,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.1.html ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
