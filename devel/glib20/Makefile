@@ -26,7 +26,7 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 NO_LATEST_LINK=	"Unstable, development version."
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu

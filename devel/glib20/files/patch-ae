@@ -1,9 +1,17 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Mar  8 17:54:21 2002
-+++ configure	Mon Mar 11 10:21:32 2002
-@@ -16768,8 +16768,8 @@
+--- configure.orig	Fri Mar 29 01:26:14 2002
++++ configure	Fri Apr 26 09:01:50 2002
+@@ -10597,6 +10597,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -17619,8 +17620,8 @@
  rm -f conftest.$ac_objext conftest.$ac_ext
  		fi
  		;;
@@ -14,7 +22,7 @@ $FreeBSD$
  
  		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
  		# -mthreads flag.
-@@ -16849,7 +16849,7 @@
+@@ -17702,7 +17703,7 @@
  	     *-*-openbsd* | *-*-freebsd*)
  	        # FreeBSD and OpenBSD want us to use the -pthread flag
                  # instead of linking to -lc_r and libtool enforces that.
