@@ -7,6 +7,7 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/portinfo.rb
 %%RUBY_SITELIBDIR%%/ports.rb
 %%RUBY_SITELIBDIR%%/portsdb.rb
+%%RUBY_SITELIBDIR%%/tsort.rb
 share/zsh/site-functions/_portupgrade
 share/zsh/site-functions/_portversion
 @unexec rmdir %D/share/zsh/site-functions 2>/dev/null || true
