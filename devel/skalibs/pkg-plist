@@ -38,6 +38,7 @@ include/skalibs/md5.h
 include/skalibs/netstring.h
 include/skalibs/random.h
 include/skalibs/rc4.h
+include/skalibs/rrandom.h
 include/skalibs/select.h
 include/skalibs/selfpipe.h
 include/skalibs/sgetopt.h
@@ -52,6 +53,7 @@ include/skalibs/stddjb.h
 include/skalibs/stralloc.h
 include/skalibs/strerr.h
 include/skalibs/strerr2.h
+include/skalibs/surf.h
 include/skalibs/syssocket.h
 include/skalibs/tai.h
 include/skalibs/ttymodes.h
@@ -64,6 +66,7 @@ include/skalibs/uint64.h
 include/skalibs/uint64alloc.h
 include/skalibs/uintalloc.h
 include/skalibs/uintbunch.h
+include/skalibs/unirandom.h
 include/skalibs/webipc.h
 lib/skalibs/libbiguint.a
 lib/skalibs/libdatastruct.a
