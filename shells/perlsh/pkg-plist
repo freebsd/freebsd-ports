@@ -61,3 +61,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/psh/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/OS
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh
+@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man1
