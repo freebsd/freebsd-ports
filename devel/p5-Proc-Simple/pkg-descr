@@ -15,3 +15,4 @@
 
           $myproc->start(sub { sleep(10); });
 
+WWW: http://search.cpan.org/dist/Proc-Simple/
