@@ -3557,6 +3557,7 @@ ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
 ksubeditor	ports/multimedia/ksubeditor
 ktextdecode	ports/converters/ktextdecode
+ktnef		ports/converters/ktnef
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwin_flatcurve	ports/x11-wm/kwin_flatcurve
