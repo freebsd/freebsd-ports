@@ -1441,6 +1441,7 @@ evolution-devel	ports/mail/evolution-devel
 evolvotron	ports/graphics/evolvotron
 eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
+exact		ports/mail/exact
 exctags		ports/devel/ctags
 exiftags	ports/graphics/exiftags
 exim		ports/mail/exim
