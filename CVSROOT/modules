@@ -229,6 +229,7 @@ adcomplain	ports/mail/adcomplain
 add		ports/math/add
 adgali		ports/games/adgali
 admesh		ports/cad/admesh
+admuser		ports/www/admuser
 adns		ports/dns/adns
 adobe-cmaps	ports/print/adobe-cmaps
 adodb		ports/databases/adodb
