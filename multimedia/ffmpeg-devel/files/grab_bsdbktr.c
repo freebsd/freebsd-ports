@@ -38,7 +38,8 @@ typedef struct {
 	int frame_format; /* see VIDEO_PALETTE_xxx */
 	int width, height;
 	int frame_rate;
-	int frame_size;
+	INT64 per_frame;
+	INT64 last_frame_time;
 } VideoData;
 
 const char *video_device = "/dev/bktr0";
@@ -59,14 +60,10 @@ const char *video_device = "/dev/bktr0";
 #endif
 
 static UINT8 *video_buf;
-
-static int signal_expected = 0;
-static int unexpected_signals = 0;
-
+static int nsignals = 0;
 static void catchsignal(int signal)
 {
-	if (!signal_expected) unexpected_signals++;
-	signal_expected = 0;
+	nsignals++;
 	return;
 }
 
@@ -88,6 +85,7 @@ static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 
 	width = s->width;
 	height = s->height;
+	s->last_frame_time = 0;
 
 	s->tuner_fd = open ("/dev/tuner0", O_RDWR);
 	if (s->tuner_fd < 0) {
@@ -103,7 +101,7 @@ static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 	geo.rows = height;
 	geo.columns = width;
 	geo.frames = 1;
-	geo.oformat = METEOR_GEO_YUV_PACKED;
+	geo.oformat = METEOR_GEO_YUV_422 | METEOR_GEO_YUV_12;
 
 	if ((format == PAL) && (height <= (PAL_HEIGHT/2)))
 		geo.oformat |= METEOR_GEO_EVEN_ONLY;
@@ -131,7 +129,7 @@ static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 		perror ("METEORSINPUT");
 		return -EIO;
 	}
-	video_buf = mmap((caddr_t)0, width*height*2, PROT_READ, MAP_SHARED,
+	video_buf = mmap((caddr_t)0, width*height*3, PROT_READ, MAP_SHARED,
 	                 video_fd, (off_t) 0);
 	if (video_buf == MAP_FAILED) {
 		perror ("mmap");
@@ -140,34 +138,8 @@ static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 	c = METEOR_CAP_CONTINOUS;
 	ioctl(s->fd, METEORCAPTUR, &c);
 	c = SIGUSR1;
-	signal_expected = 1;
 	ioctl (s->fd, METEORSSIGNAL, &c);
 	return 0;
-}
-
-static void bf_yuv422_to_yuv420p(UINT8 *lum, UINT8 *cb, UINT8 *cr,
-                                 UINT8 *src, int width, int height)
-{
-	int x, y;
-	UINT8 *p = src;
-	for(y=0;y<height;y+=2) {
-		for(x=0;x<width;x+=2) {
-			lum[0] = p[1];
-			cb[0] = p[0];
-			lum[1] = p[3];
-			cr[0] = p[2];
-			p += 4;
-			lum += 2;
-			cb++;
-			cr++;
-		}
-		for(x=0;x<width;x+=2) {
-			lum[0] = p[1];
-			lum[1] = p[3];
-			p += 4;
-			lum += 2;
-		}
-	}
 }
 
 /* note: we support only one picture read at a time */
@@ -176,30 +148,35 @@ static int grab_read_packet(AVFormatContext *s1, AVPacket *pkt)
 	VideoData *s = s1->priv_data;
 	int size, halfsize;
 	sigset_t msig;
-	UINT8 *lum, *cb, *cr;
+	UINT64 curtime;
 
 	size = s->width * s->height;
 	halfsize = size << 1;
 	if (av_new_packet(pkt, size + halfsize) < 0)
 		return -EIO;
 
-	if (unexpected_signals > 0) {
-		unexpected_signals--;
-	} else {
-		signal_expected = 1;
-		sigemptyset (&msig);
-		sigsuspend (&msig);
+	curtime = av_gettime();
+	if (!s->last_frame_time
+	    || ((s->last_frame_time + s->per_frame) > curtime)) {
+		if (!usleep (s->last_frame_time + s->per_frame + s->per_frame/8 - curtime)) {
+			if (!nsignals)
+				printf ("\nSLEPT NO signals - %d microseconds late\n",
+				        av_gettime() - s->last_frame_time - s->per_frame);
+		}
+	} else if ((s->last_frame_time + s->per_frame*5 < curtime)) {
+		bzero (pkt->data, size + halfsize);
+		printf ("\nBlank %d signals - %d microseconds\n",
+		        nsignals, curtime - s->last_frame_time - s->per_frame);
+		s->last_frame_time += s->per_frame;
+		return size + halfsize;
 	}
+	nsignals = 0;
 
-	if (unexpected_signals & 1) {
-		bzero (pkt->data,  size + halfsize);
-	} else {
-		lum = pkt->data;
-		cb = lum + size;
-		cr = cb + size/4;
+	s->last_frame_time = s->last_frame_time
+		? s->last_frame_time + s->per_frame
+		: av_gettime();
 
-		bf_yuv422_to_yuv420p (lum, cb, cr, video_buf, s->width, s->height);
-	}
+	memcpy (pkt->data, video_buf, size + halfsize);
 	return size + halfsize;
 }
 
@@ -226,7 +203,7 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	s->width = width;
 	s->height = height;
 	s->frame_rate = frame_rate;
-	s->frame_size = width*height*2;
+	s->per_frame = (INT64_C(1000000) * FRAME_RATE_BASE) / s->frame_rate;
 	st->codec.pix_fmt = PIX_FMT_YUV420P;
 	st->codec.codec_id = CODEC_ID_RAWVIDEO;
 	st->codec.width = width;
