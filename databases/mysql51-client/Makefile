@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-client
 
 MASTERDIR=	${.CURDIR}/../mysql40-server
