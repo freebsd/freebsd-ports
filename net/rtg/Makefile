@@ -16,7 +16,7 @@ COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
 BUILD_DEPENDS=	\
 	${LOCALBASE}/lib/mysql/libmysqlclient_r.a:${PORTSDIR}/databases/mysql41-client \
-	${LOCALBASE}/sbin/snmpd:${PORTSDIR}/net/net-snmp
+	${LOCALBASE}/sbin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
 
 MAN1=	rtgplot.1 rtgpoll.1
 

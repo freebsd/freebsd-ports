@@ -8,7 +8,7 @@
 PORTNAME=	flow-tools
 PORTVERSION=	0.66
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
 MAINTAINER=	billf@FreeBSD.org

@@ -6,7 +6,7 @@
 
 PORTNAME=	bpft
 PORTVERSION=	4.20031028
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=bpft4

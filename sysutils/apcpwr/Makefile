@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	jwd
 MAINTAINER=	jwd@FreeBSD.org
 COMMENT=	Control APC 9211 MasterSwitchs via snmp
 
-RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net/net-snmp
+RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp
 
 MAN8=		apcpwr.8
 

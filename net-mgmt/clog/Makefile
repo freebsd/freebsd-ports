@@ -8,7 +8,7 @@
 
 PORTNAME=	clog
 PORTVERSION=	1.6
-CATEGORIES=	net security
+CATEGORIES=	net-mgmt security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
 

@@ -8,7 +8,7 @@
 PORTNAME=	ipcad
 PORTVERSION=	2.8.2
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
 MAINTAINER=	vlm@spelio.net.ru

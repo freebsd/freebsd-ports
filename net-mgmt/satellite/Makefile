@@ -7,7 +7,7 @@
 
 PORTNAME=       satellite
 PORTVERSION=    1.0.2
-CATEGORIES=     net
+CATEGORIES=     net-mgmt
 MASTER_SITES=   ${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/network
 

@@ -23,7 +23,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
+	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \

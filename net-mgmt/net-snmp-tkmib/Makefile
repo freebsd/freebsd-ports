@@ -7,7 +7,7 @@
 
 PORTNAME=	ucd-snmp-tkmib
 PORTVERSION=	4.2.3
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
@@ -19,7 +19,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation (tkmib part)
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
-		${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net/p5-SNMP
+		${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/p5-SNMP
 
 WRKSRC=		${WRKDIR}/ucd-snmp-${PORTVERSION}
 NO_BUILD=	yes

@@ -9,7 +9,7 @@ PORTNAME=	cflowd
 PORTVERSION=	2.1.b1
 PORTREVISION=	8
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
@@ -21,7 +21,7 @@ PATCHFILES=	cflowd-2-1-b1-djp.patch
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net/arts++
+BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net-mgmt/arts++
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	ciscoconf
 PORTVERSION=	1.1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.isc.org/isc/ciscoconf/ \
 		http://software.automagic.org/ciscoconf/
 

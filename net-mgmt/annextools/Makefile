@@ -8,7 +8,7 @@
 PORTNAME=       annextools
 PORTVERSION=	10.0
 PORTREVISION=	0
-CATEGORIES=     net
+CATEGORIES=     net-mgmt
 MASTER_SITES=   ftp://ftp-support.baynetworks.com/pub/swcode/remacc/microannex_xl/
 DISTNAME=	R10.0B-R2.3
 EXTRACT_SUFX=	.tar.Z

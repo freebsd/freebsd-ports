@@ -8,7 +8,7 @@
 PORTNAME=		JUNOScript
 PORTVERSION=		5.3R2.4
 PORTREVISION=		2
-CATEGORIES=		net perl5
+CATEGORIES=		net-mgmt perl5
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://e.wheel.dk/~jesper/
 MASTER_SITE_SUBDIR=	jesper

@@ -1,4 +1,4 @@
-# New ports collection makefile for:   net/iog
+# New ports collection makefile for:   net-mgmt/iog
 # Date created:        4 May 2003
 # Whom:                Larry Rosenman <ler@lerctr.org>
 #
@@ -8,7 +8,7 @@
 PORTNAME=	iog
 PORTVERSION=	1.03
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.dynw.com/iog/
 DISTNAME=	iog-${PORTVERSION}
 EXTRACT_SUFX=	.tgz

@@ -8,7 +8,7 @@
 
 PORTNAME=	cdpr
 PORTVERSION=	2.1.0
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.monkeymental.com/mmfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 

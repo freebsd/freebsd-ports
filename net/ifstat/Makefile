@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network interface statistics monitoring tool
 
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_SIZE=	yes
 GNU_CONFIGURE=	yes

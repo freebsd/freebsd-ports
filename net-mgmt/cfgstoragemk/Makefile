@@ -9,7 +9,7 @@
 PORTNAME=	cfgstoragemk
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://savannah.gnu.org/download/cfgstoragemk/
 DISTNAME=	cfgstoragemaker-${PORTVERSION}
 

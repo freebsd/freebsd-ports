@@ -6,7 +6,7 @@
 
 PORTNAME=	aspathtree
 PORTVERSION=	4.2
-CATEGORIES=	net ipv6
+CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	#http://carmen.ipv6.cselt.it/ipv6/tools/ASpath-tree/index.html
 DISTNAME=	ASpath-tree-v${PORTVERSION}
 

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	net/p5-NetAddr-IP-Count
+# New ports collection makefile for:	net-mgmt/p5-NetAddr-IP-Count
 # Date created:				29 March 2001
 # Whom:					Anton Berezin <tobez@tobez.org>
 #
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	NetAddr::IP::Count - Count hosts in named subnets
 
-BUILD_DEPENDS=	${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net/p5-NetAddr-IP
+BUILD_DEPENDS=	${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

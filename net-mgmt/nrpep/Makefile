@@ -6,7 +6,7 @@
 
 PORTNAME=	nrpep
 PORTVERSION=	0.2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netsaint.org/download/contrib/addons/
 
 MAINTAINER=	jon@netcraft.com

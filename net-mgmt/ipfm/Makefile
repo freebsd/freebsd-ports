@@ -7,8 +7,8 @@
 
 PORTNAME=	ipfm
 PORTVERSION=	0.11.5
-CATEGORIES=	net
-MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
+CATEGORIES=	net-mgmt
+MASTER_SITES=	http://robert.cheramy.net-mgmt/ipfm/archive/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com

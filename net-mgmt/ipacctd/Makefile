@@ -7,7 +7,7 @@
 
 PORTNAME=	ipacctd
 PORTVERSION=	1.46
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 

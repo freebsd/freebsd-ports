@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
 .else
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 .endif
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes

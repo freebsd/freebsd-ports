@@ -16,7 +16,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	toshiya@saitoh.nu
 COMMENT=	An Apache2 module to monitor bandwidth usage, for use with MRTG etc
 
-RUN_DEPENDS=	mrtg:${PORTSDIR}/net/mrtg
+RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 NO_PACKAGE=	"Binary package distribution is prohibited by license"
 NO_CDROM=	"Commercial distfile distribution is prohibited by license"

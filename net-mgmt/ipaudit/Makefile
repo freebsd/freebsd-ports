@@ -7,7 +7,7 @@
 
 PORTNAME=	ipaudit
 PORTVERSION=	0.95
-CATEGORIES=	net sysutils
+CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://ipaudit.sourceforge.net/download/
 EXTRACT_SUFX=	.tgz
 

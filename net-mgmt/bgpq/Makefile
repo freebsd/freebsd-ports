@@ -7,7 +7,7 @@
 PORTNAME=	bgpq
 PORTVERSION=	1.0.7.6
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
 MAINTAINER=	snar@paranoia.ru

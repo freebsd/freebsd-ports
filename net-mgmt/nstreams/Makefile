@@ -7,7 +7,7 @@
 
 PORTNAME=	nstreams
 PORTVERSION=	1.0.4
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nstreams/
 
 MAINTAINER=	ecu@ipv42.net

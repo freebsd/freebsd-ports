@@ -7,7 +7,7 @@
 
 PORTNAME=	icmpquery
 PORTVERSION=	1.0.3
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.angio.net/security/
 DISTNAME=	icmpquery
 EXTRACT_SUFX=	.c

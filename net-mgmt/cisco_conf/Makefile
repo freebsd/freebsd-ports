@@ -7,7 +7,7 @@
 
 PORTNAME=	cisco_conf
 PORTVERSION=	1.1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 DISTNAME=	ciscoconf-${PORTVERSION}
 DIST_SUBDIR=	cisco_conf

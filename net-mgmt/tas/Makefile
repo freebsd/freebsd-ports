@@ -7,7 +7,7 @@
 
 PORTNAME=	tas
 PORTVERSION=	1.2.1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/tas/
 DISTNAME=	tas-${PORTVERSION}
 

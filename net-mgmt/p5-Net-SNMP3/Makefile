@@ -7,7 +7,7 @@
 
 PORTNAME=	Net-SNMP
 PORTVERSION=	3.65
-CATEGORIES=	net perl5
+CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	krion
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,7 @@ MAN3=		Net::SNMP.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 500600
-IGNORE=	This port is only for pre-5.6 perl. Install net/p5-Net-SNMP instead.
+IGNORE=	This port is only for pre-5.6 perl. Install net-mgmt/p5-Net-SNMP instead.
 .endif
 
 .include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	flow-extract
 PORTVERSION=	2.4
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://security.uchicago.edu/tools/net-forensics/files/
 DISTNAME=	flowextract-${PORTVERSION}
 EXTRACT_SUFX=	.cpio.gz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.cpio.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco NetFlow awk-like extracting tool
 
-BUILD_DEPENDS=	flow-cat:${PORTSDIR}/net/flow-tools
+BUILD_DEPENDS=	flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 
 USE_REINPLACE=	yes
 EXTRACT_AFTER_ARGS=	| ${CPIO} -idmu

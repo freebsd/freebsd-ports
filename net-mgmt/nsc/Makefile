@@ -7,7 +7,7 @@
 
 PORTNAME=	nsc
 PORTVERSION=	0.52
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://dev.null.dk/~goth/nsc/ \
 		http://meridian-enviro.com/rand/
 

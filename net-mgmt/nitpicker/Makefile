@@ -8,7 +8,7 @@
 PORTNAME=	nitpicker
 PORTVERSION=	1.2.1
 PORTEPOCH=1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nitpicker.de/
 
 MAINTAINER=	mr@freebsd.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	SNMP_Session
 PORTVERSION=	1.00
-CATEGORIES=	net perl5
+CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 PKGNAMEPREFIX=	p5-

@@ -20,7 +20,7 @@ MAINTAINER=	billf@FreeBSD.org
 COMMENT=	An X11/GTK network analyzer/capture tool
 
 .if !defined(WITHOUT_SNMP)
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 USE_BZIP2=	yes

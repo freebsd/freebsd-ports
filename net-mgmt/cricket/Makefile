@@ -7,7 +7,7 @@
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.4
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance, extremely flexible monitoring system
 
-RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
+RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL_ARCH}/RRDs.pm:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \

@@ -18,7 +18,7 @@ MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	"HP OfficeJet Linux driver; printing, scanning, and photo-card access"
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \
-		snmp.4:${PORTSDIR}/net/net-snmp4 \
+		snmp.4:${PORTSDIR}/net-mgmt/net-snmp4 \
 		usb:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	netspoc
 PORTVERSION=	1.7
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.berlios.de/netspoc/
 
 MAINTAINER=	ports@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	netsaint
 PORTVERSION=	0.0.7
 PORTREVISION=	4
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dwcjr
@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins
+RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net-mgmt/netsaint-plugins
 
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes

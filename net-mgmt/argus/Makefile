@@ -8,7 +8,7 @@
 PORTNAME=	argus
 PORTVERSION=	2.0.5
 PORTREVISION=	1
-CATEGORIES=	net security
+CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 

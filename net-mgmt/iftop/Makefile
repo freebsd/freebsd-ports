@@ -7,7 +7,7 @@
 
 PORTNAME=	iftop
 PORTVERSION=	0.15
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ex-parrot.com/~pdw/iftop/download/
 
 MAINTAINER=	krion@FreeBSD.org

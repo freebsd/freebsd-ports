@@ -1,9 +1,0 @@
-bin/pmacct
-%%WITH_MYSQL%%bin/pmmyplay
-%%WITH_PGSQL%%bin/pmpgplay
-sbin/pmacctd
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
-%%PORTDOCS%%%%DOCSDIR%%/INTERNALS
-%%PORTDOCS%%%%DOCSDIR%%/PLUGINS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -12,6 +12,6 @@ MAINTAINER=	asa@gascom.ru
 COMMENT=	Very advanced network monitoring system (agent only)
 
 ZABBIX_AGENT_ONLY=yes
-MASTERDIR=	${.CURDIR}/../zabbix
+MASTERDIR=	${.CURDIR}/../../net-mgmt/zabbix
 
 .include "${MASTERDIR}/Makefile"

@@ -7,7 +7,7 @@
 
 PORTNAME=	sting
 PORTVERSION=	0.7
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cs.washington.edu/homes/savage/sting/
 DISTNAME=	sting
 

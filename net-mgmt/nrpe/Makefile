@@ -8,14 +8,14 @@
 PORTNAME=	nrpe
 PORTVERSION=	1.9
 PORTREVISION=	0
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
 
 MAINTAINER=	paul@nerdlabs.com
 COMMENT=	Nagios Remote Plugin Executor
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 GNU_CONFIGURE=	yes
 
