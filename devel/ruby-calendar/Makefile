@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calendar
-PORTVERSION=	1.10.3r
+PORTVERSION=	1.11r
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
