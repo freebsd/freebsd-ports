@@ -1,7 +1,14 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/Killall.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/Killfam.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/example.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable/Process.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable/Process.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/example.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/Process/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/ProcessTable.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/ProcessTable.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/Process
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc 2>/dev/null || true
