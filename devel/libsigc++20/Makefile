@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libsigc++/${PORTVERSION:R}
@@ -23,7 +23,12 @@ LATEST_LINK=	libsigc++20
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 
 PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"
+
+post-patch:
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|tests||; \
+		/^SUBDIRS =/s|examples||" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
