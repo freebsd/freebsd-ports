@@ -25,4 +25,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_MTREE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not compile on FreeBSD >= 6.x"
+.endif
+
+.include <bsd.port.post.mk>
