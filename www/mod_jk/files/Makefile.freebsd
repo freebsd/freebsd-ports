@@ -23,10 +23,9 @@ JAVA_INCL=-I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OS}
 JAVA_LIB=-L${JAVA_HOME}/jre/lib/${ARCH} -L${JAVA_HOME}/lib/${ARCH}/native_threads
 
 # Some more C compiler flags
-XCFLAGS=${CFLAGS}
-CFLAGS=-DHAVE_CONFIG_H -fpic -DSHARED_MODULE -DFREEBSD -Wall
+CFLAGS=-DHAVE_CONFIG_H -g -fpic -DSHARED_MODULE -O2 -D_REENTRANT -pthread -DLINUX -Wall
 
-JK=../jk/
+JK=../common/
 SRCS=jk_ajp12_worker.c jk_connect.c jk_msg_buff.c jk_util.c jk_ajp13.c \
      jk_jni_worker.c jk_pool.c jk_worker.c jk_ajp13_worker.c jk_lb_worker.c \
      jk_sockbuf.c  jk_map.c jk_uri_worker_map.c          
@@ -35,7 +34,7 @@ SRCS=jk_ajp12_worker.c jk_connect.c jk_msg_buff.c jk_util.c jk_ajp13.c \
 OBJS=${patsubst %.c,%.o,${SRCS}}
 
 %.o: ${JK}/%.c 
-	${CC} -c ${XCFLAGS} ${CFLAGS} ${JAVA_INCL} ${A13_FLAGS} $< -o $@ 
+	${CC} -c ${CFLAGS} ${JAVA_INCL} ${A13_FLAGS} $< -o $@ 
 
 .c.o:
 	${APXS} -c ${JAVA_INCL} -DFREEBSD ${A13_FLAGS} -I${JK} $<
