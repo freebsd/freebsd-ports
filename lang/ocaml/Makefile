@@ -7,6 +7,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.08.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:S/.1$//}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:S/.1$//}/ \
@@ -88,6 +89,7 @@ PLIST_SUB+=	PROF=""
 .endif
 
 post-install:
+	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
 .if !defined(WITHOUT_TK)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/labltk

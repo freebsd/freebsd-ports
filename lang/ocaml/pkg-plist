@@ -479,6 +479,7 @@ lib/ocaml/camlp4/token.mli
 %%TK%%lib/ocaml/labltk/wm.cmi
 %%TK%%lib/ocaml/labltk/wm.cmx
 %%TK%%lib/ocaml/labltk/wm.mli
+lib/ocaml/ocamldoc/custom/.keep
 lib/ocaml/ocamldoc/ocamldoc.hva
 lib/ocaml/ocamldoc/odoc.cmi
 lib/ocaml/ocamldoc/odoc_analyse.cmi
