@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Mar  4 13:35:07 1994
++++ src/Makefile.in	Fri Jan  3 02:18:38 1997
+@@ -15,7 +15,7 @@
+ STD_INCLUDES = -I. -I$(srcdir) -I$(srcdir)/../V/lib
+       TOPDIR = ..
+  CLEAN_THESE = flight-state black_box_input black_box_output bitmap.h
+-      manext = 1
++      manext = 6
+   MAKEDEPEND = makedepend
+ 
+ 

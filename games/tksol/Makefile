@@ -3,7 +3,7 @@
 # Date created:         26 June 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.4 1996/10/09 06:19:14 tg Exp $
+# $Id: Makefile,v 1.5 1996/11/18 11:25:09 asami Exp $
 #
 
 DISTNAME=       tksol-1.0
@@ -17,6 +17,6 @@ RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/release
-MAN1=		tksol.1
+MAN6=		tksol.6
 
 .include <bsd.port.mk>

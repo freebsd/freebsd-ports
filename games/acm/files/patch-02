@@ -1,0 +1,8 @@
+--- src/acm.man.orig	Fri Apr 15 13:12:10 1994
++++ src/acm.man	Fri Jan  3 02:19:19 1997
+@@ -1,4 +1,4 @@
+-.TH ACM l "March 14, 1991"
++.TH ACM 6 "March 14, 1991"
+ .SH NAME
+ acm \- an aerial combat simulator for X
+ .SH SYNOPSIS

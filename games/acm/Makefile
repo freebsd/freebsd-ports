@@ -3,7 +3,7 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.8 1996/11/18 11:24:18 asami Exp $
+# $Id: Makefile,v 1.9 1996/11/18 13:58:36 asami Exp $
 #
 
 DISTNAME=	acm-4.7
@@ -15,7 +15,7 @@ MAINTAINER=	joerg@FreeBSD.org
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX}
 STRIP=
-MAN1=		acm.1
+MAN6=		acm.6
 
 .include <bsd.port.mk>
 

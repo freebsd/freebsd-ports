@@ -3,7 +3,7 @@
 # Date created:        9 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/17 11:44:57 asami Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
@@ -15,7 +15,11 @@ MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 DOCFILES= BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 	README-FIRST listserv.ref shogi.rules tutorial1.gam tutorial2.gam
-MAN1=		gnushogi.1
+MAN6=		gnushogi.6
+
+post-configure:
+	echo "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}
+	echo "prefix=${PREFIX}" >> ${WRKSRC}/src/${MAKEFILE}
 
 do-build:
 	(cd ${WRKSRC}/src; \
@@ -30,7 +34,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogir ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogix ${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/src/gnushogi.bbk ${PREFIX}/share/gnushogi
-	${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.1 ${PREFIX}/man/man6/gnushogi.6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gnushogi
 .for doc in ${DOCFILES}

@@ -1,0 +1,9 @@
+--- tksol.man.orig	Mon Feb 14 13:23:15 1994
++++ tksol.man	Fri Jan  3 03:20:10 1997
+@@ -1,5 +1,5 @@
+ .\" Copyright (c) 1993 by Bao Trinh
+-.TH TKSOL 1 "January 5, 1994"
++.TH TKSOL 6 "January 5, 1994"
+ .SH NAME
+ tksol \- Tcl/Tk based solitaire card game
+ .PP
