@@ -1,0 +1,11 @@
+--- torrentsniff.orig	Fri Nov 14 18:17:20 2003
++++ torrentsniff	Fri Nov 14 18:27:24 2003
+@@ -115,7 +115,7 @@
+ 	my($file, $report_file_info, $report_tracker_info) = @_;
+ 	print "$file\n";
+ 	local *TOR;
+-	if( not open(TOR, "<", $file) ) {
++	if( not open(TOR, "< $file") ) {
+ 		print STDERR "Unable to read $file because of $!\n";
+ 		return 0;
+ 	}

@@ -1,0 +1,8 @@
+TorrentSniff is a command line Perl program that reads a BitTorrent .torrent
+file from the local file system or from a URL and reports on the status of the
+torrent.
+
+TorrentSniff is based on an early version of TorrentSpy. Reporting seed and
+leech numbers works only with some tracker implementations.
+
+WWW: http://www.highprogrammer.com/alan/perl/torrentsniff.html

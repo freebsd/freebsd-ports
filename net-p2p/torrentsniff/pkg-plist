@@ -1,0 +1,3 @@
+bin/torrentsniff
+%%SITE_PERL%%/BitTorrent/BDecode.pm
+@dirrm %%SITE_PERL%%/BitTorrent

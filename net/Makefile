@@ -686,6 +686,7 @@
     SUBDIR += tkabber
     SUBDIR += tn3270
     SUBDIR += tn5250
+    SUBDIR += torrentsniff
     SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += trafd
