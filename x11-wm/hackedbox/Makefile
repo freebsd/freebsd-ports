@@ -29,7 +29,8 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 do-patch:
-	${PERL} -pi -e "s:bsetbg:osetbg:g; s:bsetroot:osetroot:g" \
+	${PERL} -pi -e \
+	"s:bsetbg:osetbg:g; s:bsetroot:osetroot:g; s:Bsetroot:Osetroot:g" \
 		${WRKSRC}/data/styles/* ${WRKSRC}/doc/*.1
 
 pre-install:
