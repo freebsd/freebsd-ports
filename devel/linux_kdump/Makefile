@@ -16,6 +16,7 @@ MAINTAINER=	marcel@FreeBSD.org
 BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
 
 ONLY_FOR_ARCHS=	i386
+MAN1=		linux_kdump.1
 
 .include <bsd.port.pre.mk>
 
