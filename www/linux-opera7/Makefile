@@ -1,19 +1,18 @@
 # New ports collection makefile for:		linux-opera7
 # Date created:					17 February 2003
-# Whom:						Mezz <reigncracks@hotmail.com>
+# Whom:						Mezz <mezz7@cox.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.11.20030429
-PORTREVISION=	1
+PORTVERSION=	7.11.20030515
 CATEGORIES=	www linux
-MASTER_SITES=	http://snapshot.opera.com/unix/intel-linux/395-20030429-7.11-TP5/
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2/-2/}.1-static-qt.i386
 
-MAINTAINER=	reigncracks@hotmail.com
+MAINTAINER=	mezz7@cox.net
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \

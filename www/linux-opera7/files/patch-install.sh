@@ -1,6 +1,6 @@
---- install.sh.orig	Tue May  6 18:02:23 2003
-+++ install.sh	Tue May  6 18:11:33 2003
-@@ -714,27 +714,17 @@
+--- install.sh.orig	Mon May 19 17:50:30 2003
++++ install.sh	Mon May 19 19:00:08 2003
+@@ -712,27 +712,17 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
      ${plugin_dir} \\
@@ -34,7 +34,7 @@
  	    wrapper_sunjava_machine="i386"
  	;;
  
-@@ -781,15 +771,9 @@
+@@ -779,15 +769,9 @@
  	;;
      esac
      wrapper_netscape_plugin_paths="
@@ -52,7 +52,7 @@
  
      wrapper_file="${wrapper_dir}/opera"
      
-@@ -841,26 +825,11 @@
+@@ -839,28 +823,11 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -71,6 +71,8 @@
 -	j2sdk1.4.0_01/jre \\
 -	j2re1.4.0 \\
 -	jre1.4.0 \\
+-	j2se/1.4/jre \\
+-	j2se/1.3/jre \\
 -	j2se/jre \\
 -	jre1.3.1_02 \\
 -	jre1.3.1_01 \\
@@ -82,7 +84,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -905,11 +874,7 @@
+@@ -905,11 +872,7 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -95,16 +97,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1106,7 +1071,7 @@
- 	mkdir $mkdirv $mkdirp $share_dir/java/
- 	chmod $chmodv 755 $share_dir/java
- 	
--	cp $cpv $cpf $cpp java/lc.jar java/opera.jar $share_dir/java/
-+	cp $cpv $cpf $cpp java/opera.jar $share_dir/java/
- 	generate_opera_policy
- 	
-      # Plug-in files
-@@ -1119,8 +1084,9 @@
+@@ -1106,8 +1069,9 @@
          chmod $chmodv 755 $plugin_dir/operamotifwrapper $plugin_dir/operaplugincleaner $plugin_dir/libnpp.so
  
       # System wide configuration files
@@ -115,7 +108,7 @@
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1147,6 +1113,7 @@
+@@ -1134,6 +1098,7 @@
  			;;
  		esac
  	    done
@@ -123,7 +116,7 @@
  	else
  	    echo
  	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
-@@ -1230,22 +1197,22 @@
+@@ -1238,22 +1203,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -131,34 +124,34 @@
 -      if test -w /usr/share; then
 -        mkdir $mkdirv $mkdirp /usr/share/icons/
 -	chmod $chmodv 755 /usr/share/icons
--	cp $cpv $cpp $share_dir/images/opera.xpm /usr/share/icons/opera.xpm
+-	cp $cpv $share_dir/images/opera.xpm /usr/share/icons/opera.xpm
 +    if test ! -d %%X11PREFIX%%/share/icons; then
 +      if test -w %%X11PREFIX%%/share; then
 +        mkdir $mkdirv $mkdirp %%X11PREFIX%%/share/icons/
 +	chmod $chmodv 755 %%X11PREFIX%%/share/icons
-+	cp $cpv $cpp $share_dir/images/opera.xpm %%X11PREFIX%%/share/icons/opera.xpm
++	cp $cpv $share_dir/images/opera.xpm %%X11PREFIX%%/share/icons/opera.xpm
        fi
--    elif test -w /usr/share/icons; then cp $cpv $cpp $share_dir/images/opera.xpm /usr/share/icons/opera.xpm
-+    elif test -w %%X11PREFIX%%/share/icons; then cp $cpv $cpp $share_dir/images/opera.xpm %%X11PREFIX%%/share/icons/opera.xpm
+-    elif test -w /usr/share/icons; then cp $cpv $share_dir/images/opera.xpm /usr/share/icons/opera.xpm
++    elif test -w %%X11PREFIX%%/share/icons; then cp $cpv $share_dir/images/opera.xpm %%X11PREFIX%%/share/icons/opera.xpm
      fi
    
 -    if test ! -d /usr/share/pixmaps; then
 -      if test -w /usr/share; then
 -	mkdir $mkdirv $mkdirp /usr/share/pixmaps/
 -	chmod $chmodv 755 /usr/share/pixmaps
--	cp $cpv $cpp $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
+-	cp $cpv $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
 +    if test ! -d %%X11PREFIX%%/share/pixmaps; then
 +      if test -w %%X11PREFIX%%/share; then
 +	mkdir $mkdirv $mkdirp %%X11PREFIX%%/share/pixmaps/
 +	chmod $chmodv 755 %%X11PREFIX%%/share/pixmaps
-+	cp $cpv $cpp $share_dir/images/opera.xpm %%X11PREFIX%%/share/pixmaps/opera.xpm
++	cp $cpv $share_dir/images/opera.xpm %%X11PREFIX%%/share/pixmaps/opera.xpm
        fi
--    elif test -w /usr/share/pixmaps/; then cp $cpv $cpp $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
-+    elif test -w %%X11PREFIX%%/share/pixmaps/; then cp $cpv $cpp $share_dir/images/opera.xpm %%X11PREFIX%%/share/pixmaps/opera.xpm
+-    elif test -w /usr/share/pixmaps/; then cp $cpv $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
++    elif test -w %%X11PREFIX%%/share/pixmaps/; then cp $cpv $share_dir/images/opera.xpm %%X11PREFIX%%/share/pixmaps/opera.xpm
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1311,36 +1278,36 @@
+@@ -1319,36 +1284,36 @@
        fi
        # end /opt/gnome share
  
@@ -170,16 +163,16 @@
 -	  if test -w /usr/share/gnome; then
 -	    mkdir $mkdirv $mkdirp /usr/share/gnome/pixmaps/
 -	    chmod $chmodv 755 /usr/share/gnome/pixmaps
--	    cp $cpv $cpp $share_dir/images/opera.xpm /usr/share/gnome/pixmaps/opera.xpm
+-	    cp $cpv $share_dir/images/opera.xpm /usr/share/gnome/pixmaps/opera.xpm
 +        # %%X11PREFIX%%/share/gnome icon
 +        if test ! -d %%X11PREFIX%%/share/gnome/pixmaps/; then
 +	  if test -w %%X11PREFIX%%/share/gnome; then
 +	    mkdir $mkdirv $mkdirp %%X11PREFIX%%/share/gnome/pixmaps/
 +	    chmod $chmodv 755 %%X11PREFIX%%/share/gnome/pixmaps
-+	    cp $cpv $cpp $share_dir/images/opera.xpm %%X11PREFIX%%/share/gnome/pixmaps/opera.xpm
++	    cp $cpv $share_dir/images/opera.xpm %%X11PREFIX%%/share/gnome/pixmaps/opera.xpm
  	  fi
--	elif test -w /usr/share/gnome/pixmaps; then cp $cpv $cpp $share_dir/images/opera.xpm /usr/share/gnome/pixmaps/opera.xpm
-+	elif test -w %%X11PREFIX%%/share/gnome/pixmaps; then cp $cpv $cpp $share_dir/images/opera.xpm %%X11PREFIX%%/share/gnome/pixmaps/opera.xpm
+-	elif test -w /usr/share/gnome/pixmaps; then cp $cpv $share_dir/images/opera.xpm /usr/share/gnome/pixmaps/opera.xpm
++	elif test -w %%X11PREFIX%%/share/gnome/pixmaps; then cp $cpv $share_dir/images/opera.xpm %%X11PREFIX%%/share/gnome/pixmaps/opera.xpm
  	fi
 -	# end /usr/share/gnome icon
 +	# end %%X11PREFIX%%/share/gnome icon
@@ -217,7 +210,7 @@
     fi
     # Add ximian here
  }
-@@ -1377,12 +1344,12 @@
+@@ -1385,12 +1350,12 @@
  
      fi  
      
@@ -230,12 +223,12 @@
 +	    mkdir $mkdirv $mkdirp %%X11PREFIX%%/share/applnk/Networking/WWW/
 +	    chmod $chmodv 755 %%X11PREFIX%%/share/applnk/Networking/WWW
        fi
--      if test -w /usr/share/applnk/Networking/WWW; then generate_desktop /usr/share/applnk/Networking/WWW; fi
-+      if test -w %%X11PREFIX%%/share/applnk/Networking/WWW; then generate_desktop %%X11PREFIX%%/share/applnk/Networking/WWW; fi
+-      if test -w /usr/share/applnk/Networking/WWW; then generate_desktop /usr/share/applnk/Networking/WWW ${1}; fi
++      if test -w %%X11PREFIX%%/share/applnk/Networking/WWW; then generate_desktop %%X11PREFIX%%/share/applnk/Networking/WWW ${1}; fi
      fi
  }
  
-@@ -1406,8 +1373,8 @@
+@@ -1414,8 +1379,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  
