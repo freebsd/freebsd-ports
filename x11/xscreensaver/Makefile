@@ -13,13 +13,16 @@ MASTER_SITES=	http://www.jwz.org/xscreensaver/
 MAINTAINER?=	DougB@FreeBSD.org
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
-		xml.5:${PORTSDIR}/textproc/libxml
+		xml.5:${PORTSDIR}/textproc/libxml \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
 USE_GTK=	yes
+.if defined(WITH_GNOME)
 WANT_GNOME=	yes
+.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
