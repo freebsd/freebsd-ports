@@ -24,7 +24,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2 \
-		perl5.8.0:${PORTSDIR}/lang/perl5.7
+		perl5.8.0:${PORTSDIR}/lang/perl5.8
 
 PREFIX=		${X11BASE}/lib/${PORTNAME}
 
