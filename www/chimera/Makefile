@@ -9,7 +9,7 @@ PORTNAME=	chimera
 PORTVERSION=	1.70p0
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
+MASTER_SITES=	http://www.rocklinux.org/people/ripclaw/projects/software/chimera/devel/
 
 MAINTAINER=	ports@FreeBSD.org
 
