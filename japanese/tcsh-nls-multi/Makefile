@@ -8,6 +8,7 @@
 CATALOGNAME=	multi
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese NLS catalog for TCSH ("Multi" taste)
 
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}

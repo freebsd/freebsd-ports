@@ -8,6 +8,7 @@
 CATALOGNAME=	ayanami
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese NLS catalog for TCSH ("Ayanami" taste)
 
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}

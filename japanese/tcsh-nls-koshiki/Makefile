@@ -8,6 +8,7 @@
 CATALOGNAME=	koshiki
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese NLS catalog for TCSH ("Koshiki" taste)
 
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}

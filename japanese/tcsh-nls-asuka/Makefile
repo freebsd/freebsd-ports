@@ -8,6 +8,7 @@
 CATALOGNAME=	asuka
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese NLS catalog for TCSH ("Asuka" taste)
 
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}
