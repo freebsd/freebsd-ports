@@ -7,6 +7,7 @@
     SUBDIR += adzap
     SUBDIR += adzapper
     SUBDIR += amaya
+    SUBDIR += amyc
     SUBDIR += analog
     SUBDIR += aolserver
     SUBDIR += apache13
