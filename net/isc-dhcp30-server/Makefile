@@ -41,7 +41,8 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
 # Based on patch from Brian Masney :
-PATCH_SITES=	http://www.newwave.net/~masneyb/
+PATCH_SITES=	http://www.newwave.net/~masneyb/ \
+		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/
 PATCHFILES=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-ldap-patch
 PATCH_DIST_STRIP=	-p1
 
