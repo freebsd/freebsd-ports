@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pavuk
-PORTVERSION=	0.9.27
+PORTVERSION=	0.9.28
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.idata.sk/~ondrej/sw/
 MASTER_SITE_SUBDIR=	apps/www/mirroring
-DISTNAME=	${PORTNAME}-0.9pl27
+DISTNAME=	${PORTNAME}-0.9pl28
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,8 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 WANT_GTK=	yes
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS=	--include-deps
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= --with-locale-dir=${LOCALBASE}/share/locale \
@@ -37,22 +37,20 @@ CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG}"
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
-.if defined(WITH_SSL)
-USE_OPENSSL=	yes
-.else
-CONFIGURE_ARGS+=	--disable-ssl
-.endif
-
-pre-configure:
-	@cd ${WRKSRC} && aclocal
+pre-patch:
+	@${PERL} -pi -e 's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
+		 s|-pthread|${PTHREAD_LIBS}|g ; \
+		 s|-lpthreads|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@find  ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/icons|\$$\(pkgdatadir\)/icons|g'
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/pavuk
+	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS BUGS CREDITS ChangeLog FAQ MAILINGLIST NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/pavuk
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
