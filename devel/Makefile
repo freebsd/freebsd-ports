@@ -42,7 +42,6 @@
     SUBDIR += doc++
     SUBDIR += doxygen
     SUBDIR += elftoaout
-    SUBDIR += epplets
     SUBDIR += f77flow
     SUBDIR += fastcrc
     SUBDIR += flick
