@@ -1,0 +1,31 @@
+--- libnautilus-private/filesystem-attributes.xml.orig	Sat Sep 14 16:56:38 2002
++++ libnautilus-private/filesystem-attributes.xml	Sat Sep 14 17:01:31 2002
+@@ -3,10 +3,12 @@
+     <filesystem name="affs"     _default_volume_name="AFFS Volume"/>
+     <filesystem name="afs"      _default_volume_name="AFS Network Volume"/>
+     <filesystem name="auto"     _default_volume_name="Auto-detected Volume"/>
++    <filesystem name="cd9660"  _default_volume_name="CDROM Volume"/>
+     <filesystem name="cdda"     _default_volume_name="CD Digital Audio"/>
+     <filesystem name="cdrom"    _default_volume_name="CD-ROM Drive"/>
+     <filesystem name="devfs"    _default_volume_name="Hardware Device Volume"/>
+     <filesystem name="ext2"     _default_volume_name="Ext2 Linux Volume" trash="yes"/>
++    <filesystem name="ext2fs"     _default_volume_name="Ext2 Linux Volume" trash="yes"/>
+     <filesystem name="ext3"     _default_volume_name="Ext3 Linux Volume" trash="yes"/>
+     <filesystem name="fat"      _default_volume_name="MSDOS Volume" trash="yes"/>
+     <filesystem name="hfs"	_default_volume_name="MacOS Volume" trash="yes"/>
+@@ -15,10 +17,15 @@
+     <filesystem name="hsfs"     _default_volume_name="Hsfs CDROM Volume"/>
+     <filesystem name="jfs"      _default_volume_name="JFS Volume" trash="yes"/>
+     <filesystem name="hpfs"     _default_volume_name="Windows NT Volume"/>
++    <filesystem name="linprocfs"     _default_volume_name="System Volume"/>
++    <filesystem name="mfs"	_default_volume_name="Memory Volume" trash="yes"/>
+     <filesystem name="minix"    _default_volume_name="Minix Volume"/>
+     <filesystem name="msdos"    _default_volume_name="MSDOS Volume"/>
+     <filesystem name="nfs"      _default_volume_name="NFS Network Volume" trash="yes"/>
++    <filesystem name="ntfs"     _default_volume_name="Windows NT Volume"/>
++    <filesystem name="nwfs"     _default_volume_name="Netware Volume"/>
+     <filesystem name="proc"     _default_volume_name="System Volume"/>
++    <filesystem name="procfs"     _default_volume_name="System Volume"/>
+     <filesystem name="reiserfs" _default_volume_name="ReiserFS Linux Volume" trash="yes"/>
+     <filesystem name="smbfs"    _default_volume_name="Windows Shared Volume" trash="yes"/>
+     <filesystem name="supermount"      _default_volume_name="SuperMount Volume" />
