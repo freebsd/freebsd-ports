@@ -24,6 +24,7 @@ gprolog-%%GPROLOG_VER%%/lib/libengine_pl.a
 gprolog-%%GPROLOG_VER%%/lib/libbips_pl.a
 gprolog-%%GPROLOG_VER%%/lib/libengine_fd.a
 gprolog-%%GPROLOG_VER%%/lib/libbips_fd.a
+gprolog-%%GPROLOG_VER%%/lib/liblinedit.a
 gprolog-%%GPROLOG_VER%%/COPYING
 gprolog-%%GPROLOG_VER%%/VERSION
 gprolog-%%GPROLOG_VER%%/NEWS
