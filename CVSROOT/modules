@@ -11649,6 +11649,7 @@ zope-silva	ports/www/zope-silva
 zope-silvaviews	ports/www/zope-silvaviews
 zope-soapmethod	ports/www/zope-soapmethod
 zope-ttwtype	ports/www/zope-ttwtype
+zope-xmlmethods	ports/www/zope-xmlmethods
 zope-xmlwidgets	ports/www/zope-xmlwidgets
 zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
