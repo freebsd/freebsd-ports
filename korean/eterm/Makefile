@@ -9,20 +9,20 @@ PORTNAME=	eterm
 PORTVERSION=	0.8.9
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
-		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/ \
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	hollywar@mail.holywar.net
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports korean
 
-RUN_DEPENDS=    ${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
+RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  LIBS="-L${LOCALBASE}/lib -lxpg4" LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lxpg4" LOCALBASE="${LOCALBASE}"
 MAN1=		Eterm.1
 
 pre-patch:
