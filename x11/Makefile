@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.265 1999/06/28 23:05:59 cpiazza Exp $
+# $Id: Makefile,v 1.266 1999/08/18 08:24:15 jim Exp $
 #
 
     SUBDIR += 9term
@@ -73,6 +73,7 @@
     SUBDIR += xstarroll
     SUBDIR += xtacy
     SUBDIR += xtattr
+    SUBDIR += xtermset
     SUBDIR += xtestpicture
     SUBDIR += xtoolwait
     SUBDIR += xwit
