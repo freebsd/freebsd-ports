@@ -1,6 +1,11 @@
---- xinetd/xconv.pl	Mon Oct 18 01:27:18 1999
-+++ xinetd/xconv.pl	Fri Feb 25 16:30:16 2000
-@@ -43 +43 @@
+--- xinetd/xconv.pl.orig	Wed Aug 16 01:32:49 2000
++++ xinetd/xconv.pl	Sat Nov 11 14:46:21 2000
+@@ -40,7 +40,7 @@
+ 	} else {
+ 		print "\twait        = yes\n";
+ 	}
 -	@user = split /\./, $command[4];
 +	@user = split /[:\.]/, $command[4];
-
+ 	print "\tuser        = $user[0]\n";
+ 	if( defined $user[1] ) {
+ 		print "\tgroup       = $user[1]\n";
