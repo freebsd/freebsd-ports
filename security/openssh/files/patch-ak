@@ -1,5 +1,5 @@
---- ssh.c.orig	Sat Feb 19 02:39:02 2000
-+++ ssh.c	Sat Feb 19 23:47:33 2000
+--- ssh.c.orig	Sat Feb 19 23:57:54 2000
++++ ssh.c	Mon Feb 28 04:49:22 2000
 @@ -131,6 +131,9 @@
  	log("Using rsh.  WARNING: Connection will not be encrypted.");
  	/* Build argument list for rsh. */
@@ -10,12 +10,12 @@
  	args[i++] = _PATH_RSH;
  	/* host may have to come after user on some systems */
  	args[i++] = host;
-@@ -490,7 +493,7 @@
+@@ -489,7 +492,7 @@
+ 		struct addrinfo *ai = NULL;
  		int errgai;
  		memset(&hints, 0, sizeof(hints));
- 		hints.ai_family = AF_UNSPEC;
--		hints.ai_flags = AI_CANONNAME;
-+		hints.ai_flags = IPv4or6;
+-		hints.ai_family = AF_UNSPEC;
++		hints.ai_family = IPv4or6;
+ 		hints.ai_flags = AI_CANONNAME;
  		hints.ai_socktype = SOCK_STREAM;
  		errgai = getaddrinfo(host, NULL, &hints, &ai);
- 		if (errgai == 0) {
