@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 MAKE_ENV+=	MANPREFIX="${MANPREFIX}"
 
 MAN8=		ipfw-al.8 ipfw-graph.8
