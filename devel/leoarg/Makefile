@@ -9,7 +9,7 @@
 PORTNAME=	leoarg
 PORTVERSION=	2.2.3
 CATEGORIES=	devel
-MASTER_SITES=	http://home.pages.at/kingleo/development/
+MASTER_SITES=	http://kingleo.home.pages.at/development/cpp/
 DISTNAME=	LeoArg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ COMMENT=	A class for parsing command lines
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 MAN3=	LeoArg.3 LeoArg__InvalidOption.3 LeoArg__InvalidSetting.3 \
