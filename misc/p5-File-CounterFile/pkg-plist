@@ -1,6 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/File/CounterFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/File/Listing.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/CounterFile/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/CounterFile
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/File
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
