@@ -1,0 +1,11 @@
+--- configure.orig	Sat May 26 11:34:45 2001
++++ configure	Sat May 26 11:34:50 2001
+@@ -785,8 +785,6 @@
+ 
+ 
+ 
+-CXXFLAGS="-O4"
+-CFLAGS="-O4"
+ 
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2

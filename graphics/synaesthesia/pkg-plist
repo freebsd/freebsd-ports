@@ -1,0 +1,3 @@
+bin/synaesthesia
+%%PORTDOCS%%share/doc/synaesthesia/README
+%%PORTDOCS%%@dirrm share/doc/synaesthesia
