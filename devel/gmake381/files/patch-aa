@@ -9,31 +9,3 @@
  PACKAGE = @PACKAGE@
  REMOTE = @REMOTE@
  VERSION = @VERSION@
-@@ -259,12 +259,12 @@
- 	  done; \
- 	done
- 	@$(POST_INSTALL)
--	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
--	  for file in $(INFO_DEPS); do \
--	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file";\
--	    install-info --info-dir=$(infodir) $(infodir)/$$file || :;\
--	  done; \
--	else : ; fi
-+#	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
-+#	  for file in $(INFO_DEPS); do \
-+#	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file";\
-+#	    install-info --info-dir=$(infodir) $(infodir)/$$file || :;\
-+#	  done; \
-+#	else : ; fi
- 
- uninstall-info:
- 	$(PRE_UNINSTALL)
-@@ -476,7 +476,7 @@
- 
- uninstall: uninstall-recursive uninstall-am
- 
--all: all-recursive-am all-am
-+all: all-recursive-am all-am info
- 
- install-strip:
- 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
