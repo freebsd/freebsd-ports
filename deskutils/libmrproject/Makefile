@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	libmrproject
-PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library backend for MrProject project management application
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget libgsf
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
-USE_LIBTOOL_VER=	14
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-static

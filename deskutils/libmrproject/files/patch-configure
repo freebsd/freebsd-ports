@@ -1,11 +1,14 @@
---- configure.orig	Tue Aug 19 12:23:20 2003
-+++ configure	Tue Aug 19 12:23:44 2003
-@@ -5171,7 +5171,7 @@
- # All known linkers require a `.a' archive for static linking (except M$VC,
- # which needs '.lib').
- libext=a
--ltmain="$ac_aux_dir/ltmain.sh"
-+ltmain="/usr/local/share/libtool14/ltmain.sh"
- ofile="$default_ofile"
- with_gnu_ld="$lt_cv_prog_gnu_ld"
- need_locks="$enable_libtool_lock"
+--- configure.orig	Sun Sep 21 19:59:12 2003
++++ configure	Sun Sep 21 19:59:48 2003
+@@ -21815,9 +21815,9 @@
+ 
+ 
+ 
+-  PYTHON_PREFIX='${prefix}'
++  PYTHON_PREFIX='${LOCALBASE}'
+ 
+-  PYTHON_EXEC_PREFIX='${exec_prefix}'
++  PYTHON_EXEC_PREFIX='${LOCALBASE}'
+ 
+ 
+ 
