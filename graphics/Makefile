@@ -433,6 +433,7 @@
     SUBDIR += xpdf
     SUBDIR += xpm
     SUBDIR += xpx
+    SUBDIR += xrml
     SUBDIR += xsane
     SUBDIR += xtheater
     SUBDIR += xv

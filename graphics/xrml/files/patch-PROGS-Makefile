@@ -1,0 +1,11 @@
+--- PROGS/Makefile~	Thu Feb 22 23:55:52 2001
++++ PROGS/Makefile	Tue Jul 23 18:37:32 2002
+@@ -15,7 +15,7 @@
+ # the toy subdirectory contains a sample program using the toy
+ # import and export filter.
+ 
+-SUBDIRS = vrmlint vrmlconv vrmlview
++SUBDIRS = vrmldump vrmlint vrmlconv vrmlview
+ 
+ #default target: compile
+ all: progs
