@@ -162,9 +162,10 @@ do-install:
 	for f in `${FIND} . -maxdepth 1 -name "lib*.so.${ACE_VERSION}" -o \
 		-name "lib*.so.${TAO_VERSION}" -not -name "*Test*"`; do \
 			${INSTALL_DATA} $${f} ${PREFIX}/lib; \
-			${LN} -fs ${PREFIX}/lib/$${f} \
-				`${ECHO_CMD} ${PREFIX}/lib/$${f} | \
-				 ${SED} -e 's/.${ACE_VERSION}//;s/.${TAO_VERSION}//'`; \
+			lib=`${ECHO} $${f} | ${SED} -e s#.*/##`; \
+			(cd ${PREFIX}/lib; \
+			${LN} -fs $${lib} `${ECHO} $${lib} | ${SED} -e \
+				's/.${ACE_VERSION}//;s/.${TAO_VERSION}//'`); \
 	done
 
 	@${ECHO_MSG} "Installing executables into ${PREFIX}/bin"; \
