@@ -15,7 +15,10 @@ MAINTAINER=	fenner@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/common
 GNU_CONFIGURE=	yes
-.if ${OSVERSION} > 400015
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -32,4 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/uclmmbase
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
