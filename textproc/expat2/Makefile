@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	expat
-PORTVERSION=	1.95.6
-PORTREVISION=	1
+PORTVERSION=	1.95.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	expat
@@ -21,10 +20,16 @@ ALL_TARGET=	default
 INSTALLS_SHLIB=	yes
 MAN1=		xmlwf.1
 
-SHLIB_MAJOR=	4
+SHLIB_MAJOR=	5
 
 MAKE_ENV=	LIBCURRENT="${SHLIB_MAJOR}" \
 		SHELL="/bin/sh"
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+
+list-depend-ports:
+	cd ${PORTSDIR}; \
+	find . -mindepth 3 -maxdepth 3 -name Makefile -execdir sh -c \
+		'find . -type f | grep -v CVS | xargs grep -q expat.5' \; \
+		-print
 
 .include <bsd.port.mk>
