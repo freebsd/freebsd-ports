@@ -21,11 +21,16 @@ COMMENT=	Java Development Kit 1.4.2
 EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${LOCALBASE}/include/nspr/prtypes.h:${PORTSDIR}/devel/nspr
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 .if !defined(MINIMAL)
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
+.endif
+
+.if defined(WITH_OPENMOTIF_JDK)
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/open-motif-jdk:extract
+.else
+BUILD_DEPENDS+=	${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .endif
 
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -52,6 +57,12 @@ LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_03 \
 			${LOCALBASE}/linux-sun-jdk1.4.1
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENMOTIF_JDK)
+OPENMOTIF_DIR=	${WRKDIR}/jdkmotif
+.else
+OPENMOTIF_DIR=	${X11BASE}
+.endif
 
 # do we have valid native jdk installed?
 .if !defined(WITH_LINUX_BOOTSTRAP)
@@ -89,7 +100,7 @@ USE_REINPLACE=	YES
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
-		ALT_MOTIF_DIR="${X11BASE}" \
+		ALT_MOTIF_DIR="${OPENMOTIF_DIR}" \
 		SYS_CFLAGS="${CFLAGS}" \
 		DEV_ONLY="YES" \
 		LANG="C" \
@@ -229,8 +240,8 @@ post-patch:
 			${WRKSRC}/$${file}; \
 	done
 
+pre-build-linuxcheck:
 .if defined(WITH_LINUX_BOOTSTRAP)
-pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
 	     x`${LS} -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
@@ -264,6 +275,14 @@ pre-build:
 		${ECHO_MSG} "" ; \
 		exit 1 ; \
 	fi
+.endif
+
+pre-build:	pre-build-linuxcheck
+.if defined(WITH_OPENMOTIF_JDK)
+	cd ${PORTSDIR}/x11-toolkits/open-motif-jdk && \
+		${MAKE} WITH_JDK_PATCH=${WRKDIR}/patch-java-dnd-fix \
+		PREFIX=${OPENMOTIF_DIR} \
+		NO_PKG_REGISTER=YES install
 .endif
 
 do-build:
