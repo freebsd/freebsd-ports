@@ -1,0 +1,25 @@
+*** platforms/Makefile.in.orig	Sat Nov  1 13:40:40 2003
+--- platforms/Makefile.in	Sat Nov  1 13:41:12 2003
+***************
+*** 32,41 ****
+  	   echo " Found old apccontrol moving it to $(DESTDIR)$(sysconfdir)/apccontrol.orig"; \
+  	fi 
+  	@if test -f ./$(DISTNAME)/apccontrol; then \
+! 	     $(INSTALL_PROGRAM) -m 744 ./$(DISTNAME)/apccontrol \
+  		$(DESTDIR)$(sysconfdir)/apccontrol; \
+  	else \
+! 	     $(INSTALL_PROGRAM) -m 744 ./apccontrol \
+  		$(DESTDIR)$(sysconfdir)/apccontrol; \
+  	fi
+  	(cd etc/; $(MAKE) DESTDIR=$(DESTDIR) install)
+--- 32,41 ----
+  	   echo " Found old apccontrol moving it to $(DESTDIR)$(sysconfdir)/apccontrol.orig"; \
+  	fi
+  	@if test -f ./$(DISTNAME)/apccontrol; then \
+! 	     $(INSTALL_SCRIPT) -m 744 ./$(DISTNAME)/apccontrol \
+  		$(DESTDIR)$(sysconfdir)/apccontrol; \
+  	else \
+! 	     $(INSTALL_SCRIPT) -m 744 ./apccontrol \
+  		$(DESTDIR)$(sysconfdir)/apccontrol; \
+  	fi
+  	(cd etc/; $(MAKE) DESTDIR=$(DESTDIR) install)

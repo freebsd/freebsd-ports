@@ -1,0 +1,196 @@
+*** doc/apcupsd.man.orig	Sun Nov  2 11:39:52 2003
+--- doc/apcupsd.man	Sun Nov  2 11:45:58 2003
+***************
+*** 8,22 ****
+  .SH NAME
+  apcupsd \- daemon for most APC's UPS for Linux
+  .SH SYNOPSIS
+! .B /sbin/apcupsd 
+  .br
+! .B /etc/apcupsd/apccontrol
+  .br
+! .B /etc/apcupsd/apcupsd.conf
+  .br
+! .B /sbin/apcaccess
+  .br
+! .B /sbin/apcnetd
+  .br
+  .SH DESCRIPTION
+  .LP
+--- 8,22 ----
+  .SH NAME
+  apcupsd \- daemon for most APC's UPS for Linux
+  .SH SYNOPSIS
+! .B %PREFIX%/sbin/apcupsd
+  .br
+! .B %PREFIX%/etc/apcupsd/apccontrol
+  .br
+! .B %PREFIX%/etc/apcupsd/apcupsd.conf
+  .br
+! .B %PREFIX%/sbin/apcaccess
+  .br
+! .B %PREFIX%/sbin/apcnetd
+  .br
+  .SH DESCRIPTION
+  .LP
+***************
+*** 29,35 ****
+  above shutdown conditions is met, "apcupsd" will inform users about this
+  fact.
+  
+! The shutdown is made by script calls to "/etc/apcupsd/apccontrol", which
+  is called by "apcupsd". Consequently, no changes to /etc/inittab are necessary.
+  There is no communication between "apcupsd" and init(1) process.
+  Apcupsd modifies the halt script so that at the end of the shutdown
+--- 29,35 ----
+  above shutdown conditions is met, "apcupsd" will inform users about this
+  fact.
+  
+! The shutdown is made by script calls to "%PREFIX%/etc/apcupsd/apccontrol", which
+  is called by "apcupsd". Consequently, no changes to /etc/inittab are necessary.
+  There is no communication between "apcupsd" and init(1) process.
+  Apcupsd modifies the halt script so that at the end of the shutdown
+***************
+*** 58,71 ****
+  .TP
+  .B \-c --configure
+  Attempts to configure the UPS EPROM to the values specified in the
+! configuration file "/etc/apcupsd/apcupsd.conf".
+  .TP
+  .B \-d --debug <level>
+  Turns on debugging output for a NETSLAVE or a NETMASTER.
+  .TP
+  .B \-f --config-file <file>
+  Specifies the location of the configuration file.  The default
+! is: /etc/apcupsd/apcupsd.conf
+  .TP
+  .B \-k --killpower
+  Attempt to turn the UPS off. This option is normally only
+--- 58,71 ----
+  .TP
+  .B \-c --configure
+  Attempts to configure the UPS EPROM to the values specified in the
+! configuration file "%PREFIX%/etc/apcupsd/apcupsd.conf".
+  .TP
+  .B \-d --debug <level>
+  Turns on debugging output for a NETSLAVE or a NETMASTER.
+  .TP
+  .B \-f --config-file <file>
+  Specifies the location of the configuration file.  The default
+! is: %PREFIX%/etc/apcupsd/apcupsd.conf
+  .TP
+  .B \-k --killpower
+  Attempt to turn the UPS off. This option is normally only
+***************
+*** 74,80 ****
+  .TP
+  .B \-n --rename-ups
+  Attempts to change the UPS name stored in the UPS EPROM
+! to that specified in your "/etc/apcupsd/apcupsd.conf" file.
+  .TP
+  .B \-u --update-battery-date
+  Attempts to update the battery date stored in the UPS EPROM. Normally
+--- 74,80 ----
+  .TP
+  .B \-n --rename-ups
+  Attempts to change the UPS name stored in the UPS EPROM
+! to that specified in your "%PREFIX%/etc/apcupsd/apcupsd.conf" file.
+  .TP
+  .B \-u --update-battery-date
+  Attempts to update the battery date stored in the UPS EPROM. Normally
+***************
+*** 88,99 ****
+  
+  .SH CONFIGURATION
+  It may be necessary to change the configuration information in the file
+! "/etc/apcupsd/apcupsd.conf" to meet your needs and to correspond to your
+  configuration.  This file is a plain ASCII file and you can use your
+  favorite editor to change it. 
+  .LP 
+  Configuration commands in 
+! .B /etc/apcupsd/apcupsd.conf
+  are:
+  
+  .LP
+--- 88,99 ----
+  
+  .SH CONFIGURATION
+  It may be necessary to change the configuration information in the file
+! "%PREFIX%/etc/apcupsd/apcupsd.conf" to meet your needs and to correspond to your
+  configuration.  This file is a plain ASCII file and you can use your
+  favorite editor to change it.
+  .LP
+  Configuration commands in
+! .B %PREFIX%/etc/apcupsd/apcupsd.conf
+  are:
+  
+  .LP
+***************
+*** 163,169 ****
+  If you want the apcupsd network information server to provide
+  the last 10 events via the network, you must specify a
+  file where apcupsd will save these events. The default is:
+! /etc/apcupsd/apcupsd.events. Currently, apcupsd will save
+  at most the last 50 events. When more than 50 events are
+  recorded and a network request for the events arrives,
+  the network server will truncate the file to
+--- 163,169 ----
+  If you want the apcupsd network information server to provide
+  the last 10 events via the network, you must specify a
+  file where apcupsd will save these events. The default is:
+! /var/log/apcupsd.events. Currently, apcupsd will save
+  at most the last 50 events. When more than 50 events are
+  recorded and a network request for the events arrives,
+  the network server will truncate the file to
+***************
+*** 524,536 ****
+  are disabled or set to default values. Currently, there is not a known
+  way for early signals to be sent to BASIC Ports. MINUTES are set to 0.
+  .SH FILES
+! .B /etc/apcupsd/apcupsd.conf
+  - configuration file.
+  .br
+! .B /etc/apcupsd/apcupsd.status
+  - STATUS file
+  .br
+! .B /etc/apcupsd/apcupsd.events
+  - where up to the last 50 events are stored
+  for the network information server.
+  .SH EVENTS
+--- 524,536 ----
+  are disabled or set to default values. Currently, there is not a known
+  way for early signals to be sent to BASIC Ports. MINUTES are set to 0.
+  .SH FILES
+! .B %PREFIX%/etc/apcupsd/apcupsd.conf
+  - configuration file.
+  .br
+! .B /var/log/apcupsd.status
+  - STATUS file
+  .br
+! .B /var/log/apcupsd.events
+  - where up to the last 50 events are stored
+  for the network information server.
+  .SH EVENTS
+***************
+*** 539,548 ****
+  ...
+  
+  These events are sent to the system log, optionally sent
+! to the temporary events file (/etc/apcupsd/apcupsd.events),
+! and they also generate a call to /etc/apcupsd/apccontrol
+  which in turn will call any scripts you have placed in the
+! /etc/apcupsd directory.
+  
+  .SH DATA format
+  If the DATATIME configuration command is set nonzero, 
+--- 539,548 ----
+  ...
+  
+  These events are sent to the system log, optionally sent
+! to the temporary events file (/var/log/apcupsd.events),
+! and they also generate a call to %PREFIX%/etc/apcupsd/apccontrol
+  which in turn will call any scripts you have placed in the
+! %PREFIX%/etc/apcupsd directory.
+  
+  .SH DATA format
+  If the DATATIME configuration command is set nonzero,

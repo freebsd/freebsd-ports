@@ -1,0 +1,127 @@
+
+This patch fixes a segfault during startup of apcupsd when
+running with the USB driver.  To apply it:
+
+  cd <apcupsd-source>
+  patch -p0 <3.10.6-1-usb-segfault.patch
+  make
+  ...
+
+
+
+? find.syslog
+? src/drivers/snmp/drv_powernet.c.new
+? src/drivers/snmp/powernet-mib-mgr.c.new
+? src/drivers/snmp/powernet-mib.h.new
+? src/lib/stfSJuzf
+Index: ChangeLog
+===================================================================
+RCS file: /cvsroot/apcupsd/apcupsd/ChangeLog,v
+retrieving revision 1.36
+diff -u -b -r1.36 ChangeLog
+--- ChangeLog	11 Oct 2003 09:45:20 -0000	1.36
++++ ChangeLog	27 Oct 2003 19:49:44 -0000
+@@ -5,6 +5,10 @@
+ /*               http://sourceforge.net/projects/apcupsd                   */
+ /***************************************************************************/
+ 
++28Oct03
++- Bob Kuo found a bug that caused a seg fault, which was due
++  to my code that walked off the end of a table in linux-usb.c
++
+ ----> Release apcupsd-3.10.6 (10 October 2003)
+ 11Oct03
+ - Release 3.10.6 10Oct03 as offical stable version.
+Index: doc/home-page/support.html
+===================================================================
+RCS file: /cvsroot/apcupsd/apcupsd/doc/home-page/support.html,v
+retrieving revision 1.6
+diff -u -b -r1.6 support.html
+--- doc/home-page/support.html	18 Oct 2003 11:32:49 -0000	1.6
++++ doc/home-page/support.html	27 Oct 2003 19:49:47 -0000
+@@ -52,6 +52,11 @@
+ you must replace the <b>at</b> with an @ symbol.
+ Please see <b>Information Needed</b> below for what to
+ include in your support request.
++p>I get a number of &quot;off-list&quot; emails sent
++directly to me. Please always copy the appropriate list, if you
++do not copy the list, I may not answer you, or I will answer by copying
++the list. If you <em>really</em> have something confidential,
++please clearly indicate it.
+ <p>The second way is to use the support tracking tool on SourceForge at
+ <a href="http://sourceforge.net/tracker/?group_id=54413&func=browse">
+ http://sourceforge.net/tracker/?group_id=54413&func=browse</a>.<br>This
+Index: doc/home-page/support.wml
+===================================================================
+RCS file: /cvsroot/apcupsd/apcupsd/doc/home-page/support.wml,v
+retrieving revision 1.2
+diff -u -b -r1.2 support.wml
+--- doc/home-page/support.wml	22 Jun 2003 15:57:37 -0000	1.2
++++ doc/home-page/support.wml	27 Oct 2003 19:49:47 -0000
+@@ -15,6 +15,11 @@
+ you must replace the <b>at</b> with an @ symbol. 
+ Please see <b>Information Needed</b> below for what to
+ include in your support request.
++p>I get a number of &quot;off-list&quot; emails sent
++directly to me. Please always copy the appropriate list, if you
++do not copy the list, I may not answer you, or I will answer by copying
++the list. If you <em>really</em> have something confidential,
++please clearly indicate it.
+ 
+ <p>The second way is to use the support tracking tool on SourceForge at
+ <a href="http://sourceforge.net/tracker/?group_id=54413&func=browse">
+Index: doc/techlogs/kes-3.10.6
+===================================================================
+RCS file: /cvsroot/apcupsd/apcupsd/doc/techlogs/kes-3.10.6,v
+retrieving revision 1.33
+diff -u -b -r1.33 kes-3.10.6
+--- doc/techlogs/kes-3.10.6	3 Oct 2003 19:22:29 -0000	1.33
++++ doc/techlogs/kes-3.10.6	27 Oct 2003 19:49:48 -0000
+@@ -1,11 +1,14 @@
+              Technical notes on version 3.10.6
+-                        04 October 2003
++                        28 October 2003
+                         Kern Sibbald
+ 
+ General:
+ 
+ Changes submitted this submission:
+-03Oct03
++28Oct03
++- Bob Kuo found a bug that caused a seg fault, which was due
++  to my code that walked off the end of a table in linux-usb.c
++03Oct03 Released here
+ - Move the old manual to old_documents and commit the
+   new docbook manual to the CVS. Don't include the web
+   html directory.
+Index: include/version.h
+===================================================================
+RCS file: /cvsroot/apcupsd/apcupsd/include/version.h,v
+retrieving revision 1.49
+diff -u -b -r1.49 version.h
+--- include/version.h	11 Oct 2003 09:45:20 -0000	1.49
++++ include/version.h	27 Oct 2003 19:49:48 -0000
+@@ -2,5 +2,5 @@
+ #define AVERSION 3
+ #define VERSION "3.10.6"
+ #define VSTRING "3106"
+-#define ADATE   "10 October 2003"
+-#define LSMDATE "10Oct03"
++#define ADATE   "28 October 2003"
++#define LSMDATE "28Oct03"
+Index: src/drivers/usb/linux-usb.c
+===================================================================
+RCS file: /cvsroot/apcupsd/apcupsd/src/drivers/usb/linux-usb.c,v
+retrieving revision 1.19
+diff -u -b -r1.19 linux-usb.c
+--- src/drivers/usb/linux-usb.c	29 Sep 2003 13:37:40 -0000	1.19
++++ src/drivers/usb/linux-usb.c	27 Oct 2003 19:49:50 -0000
+@@ -731,7 +731,7 @@
+ 		     * know_info table and see if we have a match.
+ 		     * If so, allocate a new entry for it.
+ 		     */
+-		    for (k=0; k <= (int)KNOWN_INFO_SZ; k++) {
++		    for (k=0; k < (int)KNOWN_INFO_SZ; k++) {
+ 			USB_INFO *info;
+ 			int ci = known_info[k].ci;
+ 

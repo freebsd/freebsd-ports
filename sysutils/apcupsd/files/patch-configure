@@ -1,0 +1,36 @@
+*** configure.orig	Fri Oct  3 21:22:27 2003
+--- configure	Sat Nov  1 13:36:46 2003
+***************
+*** 8530,8536 ****
+        LDFLAGS="${LDFLAGS} -L$withval/lib"
+      fi
+  
+!     LIBS="${LIBS} -lwrap -lnsl"
+  
+      if test "${ac_cv_header_tcpd_h+set}" = set; then
+    echo "$as_me:$LINENO: checking for tcpd.h" >&5
+--- 8530,8536 ----
+        LDFLAGS="${LDFLAGS} -L$withval/lib"
+      fi
+  
+!     LIBS="${LIBS} -lwrap"
+  
+      if test "${ac_cv_header_tcpd_h+set}" = set; then
+    echo "$as_me:$LINENO: checking for tcpd.h" >&5
+***************
+*** 9035,9041 ****
+  	 LDFLAGS=${_ldflags}
+  	 GDINCLUDE='-I$(topdir)/src/gd1.2'
+  	 LIBGD=gd1.2
+! 	 LIBGDOBJ='$(topdir)/src/gd1.2/libgd.a'
+  	 cat >>confdefs.h <<\_ACEOF
+  #define IMGFMT_GIF 1
+  _ACEOF
+--- 9035,9041 ----
+  	 LDFLAGS=${_ldflags}
+  	 GDINCLUDE='-I$(topdir)/src/gd1.2'
+  	 LIBGD=gd1.2
+! 	 LIBGDOBJ='$(topdir)/src/gd1.2/libgd.a -lm'
+  	 cat >>confdefs.h <<\_ACEOF
+  #define IMGFMT_GIF 1
+  _ACEOF
