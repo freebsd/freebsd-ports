@@ -18,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
 		convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		netcdf.1:${PORTSDIR}/math/netcdf
+		netcdf.1:${PORTSDIR}/math/netcdf \
+		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_BISON=	yes
