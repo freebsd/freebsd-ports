@@ -1,0 +1,42 @@
+bin/scons
+lib/scons/SCons/Builder.py
+lib/scons/SCons/Builder.pyc
+lib/scons/SCons/Defaults.py
+lib/scons/SCons/Defaults.pyc
+lib/scons/SCons/Environment.py
+lib/scons/SCons/Environment.pyc
+lib/scons/SCons/Errors.py
+lib/scons/SCons/Errors.pyc
+lib/scons/SCons/Job.py
+lib/scons/SCons/Job.pyc
+lib/scons/SCons/Node/FS.py
+lib/scons/SCons/Node/FS.pyc
+lib/scons/SCons/Node/__init__.py
+lib/scons/SCons/Node/__init__.pyc
+lib/scons/SCons/Scanner/C.py
+lib/scons/SCons/Scanner/C.pyc
+lib/scons/SCons/Scanner/Prog.py
+lib/scons/SCons/Scanner/Prog.pyc
+lib/scons/SCons/Scanner/__init__.py
+lib/scons/SCons/Scanner/__init__.pyc
+lib/scons/SCons/Script.py
+lib/scons/SCons/Script.pyc
+lib/scons/SCons/Sig/MD5.py
+lib/scons/SCons/Sig/MD5.pyc
+lib/scons/SCons/Sig/TimeStamp.py
+lib/scons/SCons/Sig/TimeStamp.pyc
+lib/scons/SCons/Sig/__init__.py
+lib/scons/SCons/Sig/__init__.pyc
+lib/scons/SCons/Taskmaster.py
+lib/scons/SCons/Taskmaster.pyc
+lib/scons/SCons/Util.py
+lib/scons/SCons/Util.pyc
+lib/scons/SCons/__init__.py
+lib/scons/SCons/__init__.pyc
+lib/scons/SCons/exitfuncs.py
+lib/scons/SCons/exitfuncs.pyc
+@dirrm lib/scons/SCons/Sig
+@dirrm lib/scons/SCons/Scanner
+@dirrm lib/scons/SCons/Node
+@dirrm lib/scons/SCons
+@dirrm lib/scons
