@@ -15,6 +15,9 @@
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/NOTES.GRUF
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/README
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/UPGRADE
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/NOTES.PLONE
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/plone/PLONE-GRUF.patch
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/plone/logout.py
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/a_ChangeOther.dtml
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/a_ChangePassword.dtml
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/a_CreateUser.dtml
@@ -45,6 +48,7 @@
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/vdb.pyc
 %%ZOPEPRODUCTDIR%%/mysqlUserFolder/version.txt
 @dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/API
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/plone
 @dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs
 @dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml
 @dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user

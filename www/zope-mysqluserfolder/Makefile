@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mysqluserfolder
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/vladap/${ZOPEPRODUCTNAME}/release-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	filippo@widestore.net
 COMMENT=	A Zope user folder which uses MySQL database to store user information
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 CPIO_FLAGS=	--quiet -pdum -R
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
