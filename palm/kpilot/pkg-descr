@@ -10,7 +10,7 @@ release is conduit support.  There are currently two included
 conduits, a KOrganizer conduit (vcal syncing) and a PopMail conduit
 (this fixes the email bug with KPilot 2.1).  Also fixed in this
 release is the Address/Memo "off by one" bug.  This release _REQUIRES_ 
-KDE Beta 4 or better.  Please see:
-http://www.slac.com/pilone/kpilot_home/moreinfo.html 
-for more information on the conduits and requirements.
+KDE Beta 4 or better.  Please see web for more information on the 
+conduits and requirements.
 
+WWW: http://www.slac.com/pilone/kpilot_home/moreinfo.html 
