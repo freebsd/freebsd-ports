@@ -1,5 +1,6 @@
 etc/rc.d/ssltunnel.sh.sample
-@unexec if cmp -s %D/etc/ssltunnel/client.conf %D/etc/ssltunnel/client.conf.sample; then rm -f %D/etc/ssltunnel/client.conf; fi
+@unexec if cmp -s %D/etc/ssltunnel/tunnel.conf %D/etc/ssltunnel/tunnel.conf.default; then rm -f %D/etc/ssltunnel/tunnel.conf; fi
+@unexec if cmp -s %D/etc/ssltunnel/users %D/etc/ssltunnel/users.sample; then rm -f %D/etc/ssltunnel/users; fi
 etc/ssltunnel/tunnel.conf.default
 etc/ssltunnel/users.sample
 libexec/pppserver
