@@ -14,3 +14,7 @@ bin/tcprules
 bin/tcprulescheck
 bin/tcpserver
 bin/who@
+share/doc/ucspi-tcp/BLURB
+share/doc/ucspi-tcp/TCP
+share/doc/ucspi-tcp/UCSPI
+@dirrm share/doc/ucspi-tcp
