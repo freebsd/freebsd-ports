@@ -13,11 +13,8 @@ dcc/libexec/wlist
 dcc/libexec/cron-dccd
 dcc/libexec/hackmc
 dcc/libexec/logger
-dcc/libexec/na-spam
-dcc/libexec/ng-spam
 dcc/libexec/newwebuser
 dcc/libexec/rcDCC
-dcc/libexec/refeed
 dcc/libexec/start-dccd
 dcc/libexec/start-grey
 dcc/libexec/start-dccifd

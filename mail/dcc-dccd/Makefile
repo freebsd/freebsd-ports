@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.2.28
-PORTREVISION=	1
+PORTVERSION=	1.2.39
 CATEGORIES=	mail
-MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
-		http://www.wa.apana.org.au/~dean/sources/ \
-		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
+MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/old/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dean@odyssey.apana.org.au
@@ -19,7 +16,7 @@ COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}/dcc
+CONFIGURE_ARGS=	--homedir=${PREFIX}/dcc
 MANCOMPRESSED=	yes
 MAN8=		cdcc.8		dcc.8		dccd.8 \
 		dccm.8		dccproc.8	dccsight.8 \
@@ -34,14 +31,11 @@ PLIST_SUB+=	WITH_SENDMAIL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Links against conflicting thread libraries"
-.endif
-
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' {} \;
-	${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,PTHREAD_LDFLAGS="$$PTHREAD_LDFLAGS -pthread,PTHREAD_LDFLAGS="$$PTHREAD_LDFLAGS,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,FreeBSD)\n\tPTHREAD_LDFLAGS,FreeBSD)\n\tDCC_CFLAGS="${PTHREAD_CFLAGS} $$DCC_CFLAGS"\n\tPTHREAD_LDFLAGS,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,PTHREAD_LIBS="$$PTHREAD_LIBS -lc_r,PTHREAD_LIBS=" ${PTHREAD_LIBS},g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
