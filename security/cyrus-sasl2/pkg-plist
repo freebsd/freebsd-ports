@@ -24,9 +24,9 @@ lib/sasl2/libanonymous.so.2
 %%EBONES%%lib/sasl2/libkerberos4.a
 %%EBONES%%lib/sasl2/libkerberos4.so
 %%EBONES%%lib/sasl2/libkerberos4.so.2
-lib/sasl2/liblogin.a
-lib/sasl2/liblogin.so
-lib/sasl2/liblogin.so.2
+%%LOGIN%%lib/sasl2/liblogin.a
+%%LOGIN%%lib/sasl2/liblogin.so
+%%LOGIN%%lib/sasl2/liblogin.so.2
 %%SQL%%lib/sasl2/libsql.a
 %%SQL%%lib/sasl2/libsql.so
 %%SQL%%lib/sasl2/libsql.so.2
@@ -36,9 +36,9 @@ lib/sasl2/liblogin.so.2
 %%OTP%%lib/sasl2/libotp.a
 %%OTP%%lib/sasl2/libotp.so
 %%OTP%%lib/sasl2/libotp.so.2
-lib/sasl2/libplain.a
-lib/sasl2/libplain.so
-lib/sasl2/libplain.so.2
+%%PLAIN%%lib/sasl2/libplain.a
+%%PLAIN%%lib/sasl2/libplain.so
+%%PLAIN%%lib/sasl2/libplain.so.2
 lib/sasl2/libsasldb.a
 lib/sasl2/libsasldb.so
 lib/sasl2/libsasldb.so.2
