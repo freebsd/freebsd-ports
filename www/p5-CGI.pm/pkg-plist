@@ -8,5 +8,27 @@
 %%SITE_PERL%%/CGI/Switch.pm
 %%SITE_PERL%%/CGI/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/caution.xbm
+%%PORTDOCS%%%%EXAMPLESDIR%%/clickable_image.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/cookie.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/crash.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/customize.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/diff_upload.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/dna.small.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/file_upload.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/frameset.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/index.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/internal_links.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/javascript.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/make_links.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/monty.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/multiple_forms.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/nph-clock.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/nph-multipart.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/popup.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/save_state.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/tryit.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/wilogo.gif
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true

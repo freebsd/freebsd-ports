@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI.pm
 PORTVERSION=	3.05
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -22,6 +23,24 @@ CONFIGURE_ARGS=	INSTALLDIRS=site
 MAN3=		CGI.3 CGI::Apache.3 CGI::Carp.3 CGI::Cookie.3 \
 		CGI::Fast.3 CGI::Pretty.3 CGI::Push.3 CGI::Switch.3 \
 		CGI::Util.3
+
+.if !defined(NOPORTDOCS)
+EXAMPLES=	examples/caution.xbm examples/clickable_image.cgi \
+		examples/cookie.cgi examples/crash.cgi examples/customize.cgi \
+		examples/diff_upload.cgi examples/dna.small.gif \
+		examples/file_upload.cgi examples/frameset.cgi \
+		examples/index.html examples/internal_links.cgi \
+		examples/javascript.cgi examples/make_links.pl \
+		examples/monty.cgi examples/multiple_forms.cgi \
+		examples/nph-clock.cgi examples/nph-multipart.cgi \
+		examples/popup.cgi examples/save_state.cgi \
+		examples/tryit.cgi examples/wilogo.gif
+
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
