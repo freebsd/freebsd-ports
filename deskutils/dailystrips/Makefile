@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dailystrips
-PORTVERSION=	1.0.24
+PORTVERSION=	1.0.25
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,9 +18,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${POR
 
 NO_BUILD=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|^#!/usr/bin/perl|#!${PERL}|; \
+	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \
 		s!/usr/share/dailystrips/strips.def!${DATADIR}/strips.def!' \
 		${WRKSRC}/dailystrips
 
