@@ -18,7 +18,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 MAN1=		synce.1
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 

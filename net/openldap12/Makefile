@@ -33,7 +33,7 @@ FORBIDDEN=		ancient, unsupported, potential security issues
 DEPRECATED=		${FORBIDDEN}
 EXPIRATION_DATE=	2004-04-18
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 CONFIGURE_ARGS=	--localstatedir=/var/db \
 		--enable-shared \

@@ -18,7 +18,7 @@ COMMENT=	A library to make access to GnuPG easier
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

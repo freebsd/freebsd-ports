@@ -17,7 +17,7 @@ COMMENT=	Multilingual X11 terminal emulator
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf1 --enable-utmp
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://ieee.uow.edu.au/documents/contrib/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ implementation of the classic 3-layer perceptron in library form
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

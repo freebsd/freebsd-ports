@@ -19,7 +19,7 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget gtk20
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no

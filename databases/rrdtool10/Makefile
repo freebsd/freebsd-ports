@@ -16,7 +16,7 @@ COMMENT=	Round Robin Database Tools
 USE_PERL5=	yes
 MAKE_ENV+=	PERL=${PERL}
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
 CONFIGURE_ENV=	PERL=${PERL}

@@ -19,7 +19,7 @@ COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	257
 USE_GCC=	3.3

@@ -25,7 +25,7 @@ LIB_DEPENDS=	nasl.2:${PORTSDIR}/security/nessus-libnasl
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>

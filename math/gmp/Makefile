@@ -19,7 +19,7 @@ COMMENT=	A free library for arbitrary precision arithmetic
 
 CONFLICTS=	libgmp-2*
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-cxx --enable-mpfr
 INSTALLS_SHLIB=	yes

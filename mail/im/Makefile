@@ -15,7 +15,7 @@ MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libdir=${PREFIX}/etc
 # If you use RPOP instead of APOP, comment out following line.

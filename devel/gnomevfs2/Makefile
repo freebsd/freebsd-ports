@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier gnomemimedata gconf2 libbonobo
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" \

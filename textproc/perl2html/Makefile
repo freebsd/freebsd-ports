@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	apps/www/converters
 MAINTAINER=		mkamm@gmx.net
 COMMENT=	Perl sources to HTML converter
 
-USE_AUTOCONF=		yes
+USE_AUTOCONF_VER=	213
 
 MAN1=			perl2html.1
 

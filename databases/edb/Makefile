@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enlightenment Database Library
 
 BROKEN=		checksum mismatch
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack libglade2 libartlgpl2
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

@@ -15,7 +15,7 @@ COMMENT=	Utility for capturing audio streams from programs with OSS output
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 .include <bsd.port.pre.mk>
 

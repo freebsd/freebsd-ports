@@ -18,7 +18,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/src
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

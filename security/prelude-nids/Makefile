@@ -16,7 +16,7 @@ COMMENT=	Prelude Network Intrusion Detection System sensor
 LIB_DEPENDS=	prelude.1:${PORTSDIR}/security/libprelude
 
 USE_GMAKE=		yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--program-prefix=""

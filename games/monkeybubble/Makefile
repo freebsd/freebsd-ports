@@ -18,7 +18,7 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix librsvg2 libgnomeui \
 		gstreamerplugins intlhack lthack

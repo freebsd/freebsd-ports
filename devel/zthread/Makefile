@@ -19,7 +19,7 @@ COMMENT=	A platform-independent object-oriented C++ threading library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 

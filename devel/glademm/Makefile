@@ -19,7 +19,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GETOPT_LONG=	yes
 
 .include <bsd.port.pre.mk>

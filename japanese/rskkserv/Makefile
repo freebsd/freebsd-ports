@@ -19,8 +19,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap
 		${SKKJISYO_BASE}/${SKKJISYO}:${SKK_MASTERDIR}
 
 USE_RUBY=	yes
-
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--with-ruby="${RUBY}" \

@@ -16,7 +16,7 @@ COMMENT=	Multi-threaded Routing Toolkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 MAN8=		mrtd.8
 

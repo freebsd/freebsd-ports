@@ -20,7 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_GETTEXT=	yes
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade

@@ -18,7 +18,7 @@ COMMENT=	GTK+ bindings for Evas canvas library
 LIB_DEPENDS=	evas.6:${PORTSDIR}/graphics/evas
 
 USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 post-install:

@@ -22,7 +22,6 @@ SLAVEDIRS=	misc/amanda-client
 MASTERPORTNAME=	amanda-server
 
 NO_LATEST_LINK=	yes
-USE_AUTOCONF=	yes
 USE_AUTOCONF_VER=	253
 USE_GMAKE=	yes
 PATCH_STRIP=

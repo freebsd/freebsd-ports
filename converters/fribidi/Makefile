@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=	gnomehack pkgconfig
 INSTALLS_SHLIB=	yes
 

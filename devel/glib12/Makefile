@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (previous stable version)
 
 USE_GNOME=	pkgconfig
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib12

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.openexr.com/downloads/
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	OpenEXR, a high dynamic-range (HDR) image file format developed by ILM
 
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 

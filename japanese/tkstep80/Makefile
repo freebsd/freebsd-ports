@@ -23,7 +23,7 @@ LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
 USE_XLIB=	yes
 USE_XPM=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gcc --enable-shared --enable-step \
 		--with-tcl=${PREFIX}/lib/tcl${TCLVERSION}jp \

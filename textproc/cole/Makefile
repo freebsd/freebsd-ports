@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sobomax
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free C OLE library
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ MAINTAINER=	vince@blue-box.net
 COMMENT=	Library needed by syslog-ng
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

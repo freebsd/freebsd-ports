@@ -17,7 +17,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Launch applications by clicking on an icon bar
 
 CONFIGURE_ENV=	GTKCONFIG=${GTK_CONFIG}
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes

@@ -19,7 +19,7 @@ COMMENT=	Modular Calendar Access Library
 LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 HAS_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mstore --with-icap \

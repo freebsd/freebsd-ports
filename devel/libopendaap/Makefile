@@ -16,7 +16,7 @@ COMMENT=	C lib used to connect to iTunes(R) music shares
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack pkgconfig lthack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GCC=	3.3
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"

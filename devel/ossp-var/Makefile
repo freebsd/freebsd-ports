@@ -20,7 +20,7 @@ COMMENT=	A flexible, full-featured and fast variable expansion library
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB= yes
 
 .include <bsd.port.pre.mk>

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gtlib.cc.gatech.edu/pub/fink/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for the SIMULA programming language
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 MAN1=		cim.1
 

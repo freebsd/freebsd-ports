@@ -18,7 +18,7 @@ LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=    yes
+USE_LIBTOOL_VER=13
 USE_GNOME=      gnomehack gnomeprefix gnomevfs2
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

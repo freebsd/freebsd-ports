@@ -20,7 +20,7 @@ COMMENT=	SDL graphics drawing primitives and other support functions
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/SDL11 \
 		--disable-mmx
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

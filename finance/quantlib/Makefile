@@ -19,7 +19,7 @@ COMMENT=	A comprehensive software framework for quantitative finance
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 

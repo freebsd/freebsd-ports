@@ -15,7 +15,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"Library provides an easy way to access strong hashes such as MD5 and SHA1"
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-LDFLAGS="${PTHREAD_LIBS}" --enable-static \
 			--with-gnu-ld

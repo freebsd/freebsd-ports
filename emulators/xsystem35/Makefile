@@ -15,7 +15,7 @@ MAINTAINER=	sf@FreeBSD.org
 COMMENT=	AliceSoft System 3.5 on X Window System
 
 USE_REINPLACE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

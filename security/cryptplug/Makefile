@@ -18,7 +18,7 @@ COMMENT=	A collection of plug-ins to cryptographic engines
 BUILD_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme \
 		gpg-agent:${PORTSDIR}/security/newpg
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

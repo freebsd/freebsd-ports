@@ -21,7 +21,7 @@ PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	gnomehack pkgconfig
 
 INSTALLS_SHLIB=	yes

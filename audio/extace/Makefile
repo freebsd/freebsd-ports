@@ -19,7 +19,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_X_PREFIX=	yes
 USE_GNOME=	esound imlib gnomehack gnomeprefix
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-alsa

@@ -17,7 +17,7 @@ COMMENT=	Tools and library routines for working with GIF images
 
 INSTALLS_SHLIB=	yes
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 .ifdef (WITHOUT_X11)
 PLIST_SUB+=	X11='@comment '

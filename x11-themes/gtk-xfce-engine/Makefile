@@ -20,7 +20,7 @@ COMMENT=	An XFCE engine for GTK 2.0
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

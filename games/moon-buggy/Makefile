@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/data/ \
 MAINTAINER=	ralf@akk.org
 COMMENT=	Drive a buggy across the moons surface
 
-USE_AUTOCONF=	YES
+USE_AUTOCONF_VER=	213
 USE_CONFIGURE=	YES
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 		--sharedstatedir=/var/games \

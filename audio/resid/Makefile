@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cycle-based SID emulator engine
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes

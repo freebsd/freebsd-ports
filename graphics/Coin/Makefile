@@ -21,7 +21,7 @@ LIB_DEPENDS=	simage.22:${PORTSDIR}/graphics/simage \
 USE_REINPLACE=	yes
 USE_GL=		yes
 USE_XLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/" --with-pthread=yes --enable-threadsafe \
 		--enable-3ds-import --enable-sound --enable-html
 INSTALLS_SHLIB=	yes

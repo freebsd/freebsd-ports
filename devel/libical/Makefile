@@ -15,7 +15,7 @@ MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/freeassociation/
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes

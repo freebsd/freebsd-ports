@@ -19,7 +19,7 @@ COMMENT=	Bluecurve unified-look theme for QT3 from RedHat 8.0
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC= 	${WRKDIR}/redhat-artwork-${PORTVERSION}
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 #LIBTOOLFILES=	# none
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

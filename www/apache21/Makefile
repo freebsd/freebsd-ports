@@ -84,7 +84,7 @@ WITH_MPM?=	prefork # or worker, perchild
 HTTP_PORT?=	80
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \

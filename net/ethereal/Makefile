@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtktest
 .endif
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 LIBTOOLFILES=	configure epan/configure wiretap/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

@@ -32,7 +32,7 @@ LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 CFLAGS+=	-DJMPDEBUG -g
 .endif
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_JAVA=	1.2+
 NEED_JAVAC=	yes

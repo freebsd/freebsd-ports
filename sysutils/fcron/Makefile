@@ -19,7 +19,7 @@ COMMENT=	Fcron is a periodical command scheduler
 
 NO_PACKAGE=	"Runaway package build"
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \

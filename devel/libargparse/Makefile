@@ -15,6 +15,6 @@ MASTER_SITE_SUBDIR=	aqsis
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line argument parser library
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 .include <bsd.port.mk>

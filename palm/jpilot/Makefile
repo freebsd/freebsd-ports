@@ -25,7 +25,7 @@ CONFIGURE_ARGS+=	--enable-gtk2=yes
 USE_GNOME=	gtk12
 .endif
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
 CFLAGS+=	-I${PREFIX}/include

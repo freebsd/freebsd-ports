@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 OPTIONS=	SDL_MIXER "music and sound support" off
 
 USE_FREETYPE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

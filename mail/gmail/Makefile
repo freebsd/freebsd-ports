@@ -20,7 +20,7 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 #USE_GNOME=	YES
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 
 BROKEN=		project is dead and port unmaintained
 DEPRECATED=	${BROKEN}

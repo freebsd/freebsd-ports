@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Libmad library (part of MAD project)
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-debugging \
 		--enable-sso \

@@ -16,7 +16,7 @@ COMMENT=	Robot programming game for UNIX
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--enable-debug
 
 .include <bsd.port.pre.mk>

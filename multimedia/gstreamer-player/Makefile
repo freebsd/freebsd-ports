@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix \
 		gnomedesktop
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_SIZE=	yes
 GNOME_DESKTOP_VERSION=2
 WANT_GNOME=	yes

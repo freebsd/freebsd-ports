@@ -27,7 +27,7 @@ RUN_DEPENDS=		kpsewhich:${PORTSDIR}/japanese/ptex-base \
 MAN1=			dvipdfm.1
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
-USE_AUTOCONF=		yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ENV+=		CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
 			CFLAGS="${CFLAGS} -I${PREFIX}/include" \
 			LDFLAGS=-L${PREFIX}/lib

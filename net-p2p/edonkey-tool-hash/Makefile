@@ -18,7 +18,7 @@ COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 
 PLIST_FILES=	bin/edonkey-tool-hash
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 

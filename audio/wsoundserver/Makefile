@@ -24,7 +24,7 @@ RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/WINGs"
 
 MAN1=		get-wsound-flags.1x getsoundset.1x setsoundset.1x \

@@ -16,7 +16,7 @@ MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Very popular card game with variable skill levels
 
 PLIST_FILES=	bin/euchre
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

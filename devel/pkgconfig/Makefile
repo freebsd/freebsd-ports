@@ -18,7 +18,7 @@ COMMENT=	A utility used to retrieve information about installed libraries
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	glib-1.2.8/configure
 LIBTOOLFLAGS=	--disable-ltlibs \
 		--disable-shared

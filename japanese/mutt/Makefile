@@ -46,7 +46,7 @@ FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib

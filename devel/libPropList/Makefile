@@ -15,8 +15,8 @@ DISTNAME=	libPropList-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Property library for gnome and Window Maker
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	fame
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A video encoding library
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_SSE)

@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Scientific Library - mathematical libs
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'

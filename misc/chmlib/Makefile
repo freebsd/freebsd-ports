@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 LIBTOOLFILES=	#
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

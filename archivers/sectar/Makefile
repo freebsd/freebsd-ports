@@ -16,6 +16,6 @@ COMMENT=		A program to create encrypted tar archives
 
 PLIST_FILES=	bin/sectar
 USE_GETOPT_LONG=	yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 
 .include <bsd.port.mk>

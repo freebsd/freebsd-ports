@@ -26,7 +26,7 @@ CONFIG=		icons key menu start style window workspace
 DOCS=		AUTHORS BUGS COPYING ChangeLog EPIwm-0.5.6.lsm INSTALL NEWS \
 		README TODO
 PLIST=		${WRKDIR}/pkg-plist
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 USE_X_PREFIX=	yes
 
 post-extract:

@@ -20,7 +20,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 post-install:
 		gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules

@@ -14,7 +14,7 @@ MASTER_SITES=	http://gtkgep.republika.pl/
 MAINTAINER=	linimon@lonesome.com
 COMMENT=	A guitar effects processor for GTK
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"

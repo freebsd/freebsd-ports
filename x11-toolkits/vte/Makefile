@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	gnomeprefix gnomehack gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \

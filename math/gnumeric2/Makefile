@@ -27,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui libgnomedb \
 		libgsf
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--without-guile --with-bonobo --with-gnome-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \

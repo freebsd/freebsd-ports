@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library that implement Microsoft's NTLM authentication
 
 USE_GNOME=	gnomehack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

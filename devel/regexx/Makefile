@@ -21,7 +21,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	14
 USE_AUTOCONF_VER=	213
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

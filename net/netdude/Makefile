@@ -22,7 +22,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12 gtk12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lltdl"
 USE_GMAKE=	yes

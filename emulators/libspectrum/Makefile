@@ -16,7 +16,7 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 USE_PERL5_BUILD=	yes
 USE_GNOME=	glib12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_GLIB)

@@ -15,7 +15,7 @@ MAINTAINER=	ebrandi@fugspbr.org
 COMMENT=	DAR is a full featured command-line backup tool, aimed for disks
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 MAN1=		dar.1 dar_cp.1 dar_manager.1 dar_slave.1 dar_xform.1
 
 .include <bsd.port.mk>

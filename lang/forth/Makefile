@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--disable-float
 
 MAN1=		pfe.1

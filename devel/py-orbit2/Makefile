@@ -23,6 +23,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack orbit2
 USE_PYTHON=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 .include <bsd.port.mk>

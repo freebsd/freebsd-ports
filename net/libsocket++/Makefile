@@ -18,7 +18,7 @@ COMMENT=	A C++ wrapper library to the sockets
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOMAKE_VER=	15
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 INFO=	socket++
 

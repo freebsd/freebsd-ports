@@ -21,7 +21,7 @@ USE_GETOPT_LONG=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnometarget gnomehack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 CONFLICTS=	py*-ro-*
 

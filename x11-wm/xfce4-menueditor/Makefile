@@ -20,7 +20,7 @@ PLIST_FILES=	bin/xfce4-menueditor
 USE_GNOME=	gtk20 libxml2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ARGS=		--disable-cvs

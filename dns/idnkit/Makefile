@@ -17,7 +17,7 @@ COMMENT=	A library to handle internationalized domain names
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
 		--enable-runidn \

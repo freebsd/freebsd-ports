@@ -23,7 +23,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget glib20
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
 

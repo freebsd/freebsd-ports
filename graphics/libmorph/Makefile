@@ -15,7 +15,7 @@ COMMENT=	A library for loading (and saving) 3d models (3d modeller object files)
 
 CONFLICTS=	xmorph*
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

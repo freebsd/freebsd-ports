@@ -18,7 +18,7 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT=	Fast C routines to compute the Discrete Fourier Transform
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-shared

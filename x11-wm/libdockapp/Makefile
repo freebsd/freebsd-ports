@@ -17,7 +17,7 @@ COMMENT=	Standard library for Window Maker dock apps
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

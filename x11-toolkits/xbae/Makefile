@@ -17,7 +17,7 @@ DISTNAME=	Xbae-${PORTVERSION}
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 COMMENT=	A Motif-based widget which displays a grid of cells as a spreadsheet
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 USE_MOTIF=	yes

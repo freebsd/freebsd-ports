@@ -19,7 +19,7 @@ COMMENT=	A library for manipulating Unicode characters and strings
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome

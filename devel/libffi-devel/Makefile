@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://sources.redhat.com/pub/libffi/
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 COMMENT=	Foreign Function Interface
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	# empty
 

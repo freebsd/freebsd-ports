@@ -25,7 +25,7 @@ GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 

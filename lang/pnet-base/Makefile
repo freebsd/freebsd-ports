@@ -22,7 +22,7 @@ LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi
 USE_XLIB=	yes
 .endif
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

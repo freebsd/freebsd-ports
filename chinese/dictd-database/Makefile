@@ -17,7 +17,7 @@ COMMENT=	A Chinese <-> English dictd words database
 
 BUILD_DEPENDS=  ${LOCALBASE}/bin/dictzip:${PORTSDIR}/chinese/dictd
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 

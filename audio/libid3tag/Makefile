@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	asa@gascom.ru
 COMMENT=	ID3 tags library (part of MAD project)
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

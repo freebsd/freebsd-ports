@@ -17,7 +17,7 @@ COMMENT=	Theme engine for gtk+ toolkits
 
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 THEMES=		metal notif pixmap raleigh redmond95
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://unixcode.org/downloads/libcapsinetwork/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Network library aimed at easy development of C++ server daemons
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

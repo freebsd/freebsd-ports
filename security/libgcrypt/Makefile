@@ -18,7 +18,7 @@ COMMENT=	"General purpose crypto library based on code used in GnuPG"
 CONFLICTS=	libgcrypt-1.1.9*
 USE_REINPLACE=	yes
 USE_PERL5=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

@@ -23,7 +23,7 @@ LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	gnomeprefix gnomehack gnomepanel
 GNU_CONFIGURE=	yes
 

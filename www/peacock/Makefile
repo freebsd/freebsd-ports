@@ -20,6 +20,6 @@ LIB_DEPENDS=	gtkhtml-3.0.3:${PORTSDIR}/www/gtkhtml3
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui gtksourceview
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 .include <bsd.port.mk>

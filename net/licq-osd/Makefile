@@ -26,6 +26,6 @@ RUN_DEPENDS=${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net/licq-qt-gui
 GNU_CONFIGURE=yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv"
-USE_LIBTOOL=yes
+USE_LIBTOOL_VER=13
 
 .include <bsd.port.mk>

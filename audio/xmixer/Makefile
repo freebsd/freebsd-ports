@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes
 USE_GNOME=	gtk12
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 MAN1=		xmixer.1
 MLINKS=		xmixer.1 xgmixer.1

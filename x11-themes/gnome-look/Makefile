@@ -17,7 +17,7 @@ COMMENT=	A GTK theme engine designed to look nice with the GNOME desktop environ
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

@@ -23,7 +23,7 @@ COMMENT=	Secure shell client, server and remote copy (for picobsd)
 NO_CDROM=	"Picobsd only"
 NO_PACKAGE=	"This is only useful to build picobsd images"
 
-USE_AUTOCONF=	YES
+USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	YES
 USE_PERL5=	YES
 CONFIGURE_ENV+= PERL=${PERL5}

@@ -20,12 +20,8 @@ CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ARGS+=	--program-transform-name="s/$$//"
 
 USE_SDL=	image sdl
-USE_AUTOMAKE=	yes
-USE_AUTOCONF=	yes
 USE_AUTOCONF_VER=	253
 USE_AUTOMAKE_VER=	15
-AUTOCONF=	autoconf
-ACLOCAL=	aclocal
 
 .include <bsd.port.pre.mk>
 

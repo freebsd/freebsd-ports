@@ -15,7 +15,7 @@ MAINTAINER=	reed@pugetsoundtechnology.com
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	libgsf
 INSTALLS_SHLIB=	yes
 

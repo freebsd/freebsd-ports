@@ -20,7 +20,7 @@ COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.10:${PORTSDIR}/security/libgcrypt-devel
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}

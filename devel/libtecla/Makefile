@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive command line editing facilities
 
 USE_SUBMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \

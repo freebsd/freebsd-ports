@@ -19,7 +19,7 @@ BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 RUN_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib

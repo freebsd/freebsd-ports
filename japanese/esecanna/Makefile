@@ -19,7 +19,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Pseudo cannaserver which wraps some other input engines
 
 USE_REINPLACE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-piddir="${PIDDIR}"
 

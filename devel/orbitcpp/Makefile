@@ -17,7 +17,7 @@ COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack orbit2
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

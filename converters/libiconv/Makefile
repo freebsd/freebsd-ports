@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A character set conversion library
 
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=	gnometarget
 LIBTOOLFILES=	configure libcharset/configure
 CONFIGURE_ARGS=	--enable-static \

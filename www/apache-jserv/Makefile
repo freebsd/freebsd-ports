@@ -26,7 +26,7 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper\
 
 USE_GMAKE=	yes
 GMAKE=		${LOCALBASE}/bin/gmake # Must have the full path.
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_PERL5=	yes
 JAVAVM?=	${LOCALBASE}/bin/javavm
 CONFIGURE_ENV=	PERL=${PERL}

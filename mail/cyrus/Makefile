@@ -23,7 +23,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
 USE_REINPLACE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=cyrus \
 		--with-sasldir=${LOCALBASE} \

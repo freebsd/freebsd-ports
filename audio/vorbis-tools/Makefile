@@ -22,7 +22,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GETTEXT=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \

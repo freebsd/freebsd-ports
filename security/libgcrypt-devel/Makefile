@@ -22,7 +22,7 @@ CONFLICTS=	libgcrypt-1.1*
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_GNOME=	lthack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include/pth" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/pth"

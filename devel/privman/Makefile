@@ -14,7 +14,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Library that makes it easy for programs to use privilege separation
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes

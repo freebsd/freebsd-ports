@@ -17,7 +17,7 @@ LIB_DEPENDS+=	prelude.1:${PORTSDIR}/security/libprelude \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=		yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
 			--program-prefix=""
 

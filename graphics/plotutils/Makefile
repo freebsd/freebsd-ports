@@ -17,7 +17,7 @@ COMMENT=	A plotting library and toolkit
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_MOTIF=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MOTIFLIB="${MOTIFLIB}" \

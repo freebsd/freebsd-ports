@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Based Hashtables
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 

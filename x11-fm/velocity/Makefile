@@ -16,7 +16,7 @@ MAINTAINER=	ryan@transaeris.com
 COMMENT=	GNOME file and desktop manager
 
 WRKSRC=		${WRKDIR}/velocity-0.1.0
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui gnomedesktop librsvg2

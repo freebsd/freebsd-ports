@@ -17,7 +17,7 @@ COMMENT=	A very simple GUI framework for use with SDL
 
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 

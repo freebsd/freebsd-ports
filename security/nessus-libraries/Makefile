@@ -27,7 +27,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
 
 USE_BISON=	YES
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--enable-cipher --sharedstatedir=${PREFIX}/etc/nessus/com \
 		--localstatedir=${PREFIX}/etc/nessus/var
 .if defined(WITH_NESSUS_BPF_SHARE)

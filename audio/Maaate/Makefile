@@ -17,7 +17,7 @@ COMMENT=	MPEG audio analysis toolkit
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 post-patch:

@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	mono:${PORTSDIR}/lang/mono \
 		gst-launch:${PORTSDIR}/multimedia/gstreamer
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes

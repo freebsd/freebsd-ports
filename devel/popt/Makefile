@@ -16,7 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 USE_GETTEXT=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 INSTALLS_SHLIB=	yes

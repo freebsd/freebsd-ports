@@ -19,7 +19,7 @@ COMMENT=	A port of the Flat GTK+ engine to GTK+ 2.0
 WRKSRC=		${WRKDIR}/gtk-flat-theme-2.0
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
 

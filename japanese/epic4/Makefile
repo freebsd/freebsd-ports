@@ -27,7 +27,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient with Japanese support
 
 USE_BZIP2=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 DISTFILE_HELP=	${PORTNAME}pre2-help.tar.gz
 

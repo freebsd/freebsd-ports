@@ -18,7 +18,7 @@ COMMENT=	An abstraction library for the Unix socket API
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 MAN3+=		sa.3
 

@@ -17,7 +17,7 @@ COMMENT=	An OpenGL widget for the GTK+ GUI toolkit
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-lib-GL
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -lstdc++"

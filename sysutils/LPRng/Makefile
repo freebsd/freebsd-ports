@@ -22,7 +22,7 @@ COMMENT=	An Enhanced Printer Spooler
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	\

@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include -fPIC"
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>

@@ -22,7 +22,7 @@ PATCH_DIST_STRIP=	-p1
 BUILD_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
 
 GNU_CONFIGURE=	YES
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/chasenrc \

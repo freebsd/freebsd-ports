@@ -18,7 +18,7 @@ COMMENT=	gEDA tools base utility library
 LIB_DEPENDS=	gdgeda.6:${PORTSDIR}/graphics/libgdgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gnomehack
 INSTALLS_SHLIB=	yes

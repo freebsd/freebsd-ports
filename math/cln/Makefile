@@ -22,7 +22,7 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
