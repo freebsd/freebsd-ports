@@ -8,7 +8,9 @@
 PORTNAME=	gnustep-guile
 PORTVERSION=	1.0.3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/ \
+		http://archive.progeny.com/gnustep/ \
+		ftp://ftp.easynet.nl/mirror/GNUstep/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
