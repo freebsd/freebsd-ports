@@ -355,7 +355,6 @@ lib/php/tests/XML_Parser/tests/test3.xml
 @dirrm lib/php/Archive
 @dirrm lib/php/Console
 @dirrm lib/php/DB
-@dirrm lib/php/Image
 @dirrm lib/php/Mail
 @dirrm lib/php/Net
 @dirrm lib/php/OS
@@ -372,7 +371,7 @@ lib/php/tests/XML_Parser/tests/test3.xml
 @dirrm lib/php/docs/DB/DB
 @dirrm lib/php/docs/DB
 @dirrm lib/php/docs
-@dirrm lib/php/extensions/no-debug-%%NON%%zts-20020429
+@dirrm lib/php/extensions/no-debug-non-zts-20020429
 @dirrm lib/php/extensions
 @dirrm lib/php/tests/DB/tests/driver
 @dirrm lib/php/tests/DB/tests/ibase
@@ -386,5 +385,4 @@ lib/php/tests/XML_Parser/tests/test3.xml
 @dirrm lib/php/tests/XML_Parser
 @dirrm lib/php/tests
 @dirrm lib/php
-@exec mkdir -p %D/lib/php/extensions/no-debug-%%NON%%zts-20020429
-@exec mkdir -p %D/lib/php/Image
+@exec mkdir -p %D/lib/php/extensions/no-debug-non-zts-20020429

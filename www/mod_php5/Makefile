@@ -47,12 +47,10 @@ IS_INTERACTIVE=	yes
 .if defined(WITH_APACHE2)
 CONFIGURE_ARGS=	--with-apxs2=${PREFIX}/sbin/apxs \
 		--with-tsrm-pth
-PLIST_SUB=	MOD_DIR=libexec/apache2 \
-		NON=
+PLIST_SUB=	MOD_DIR=libexec/apache2
 .else
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs
-PLIST_SUB=	MOD_DIR=libexec/apache \
-		NON=non-
+PLIST_SUB=	MOD_DIR=libexec/apache
 .endif
 CONFIGURE_ARGS+=--with-config-file-path=${PREFIX}/etc \
 		--enable-versioning \
