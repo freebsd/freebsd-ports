@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-music-quiz
 PORTVERSION=	0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games audio
 MASTER_SITES=	http://ishamael.tunkeymicket.com/tarballs/
 DISTNAME=	mq-${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix libgnomeui
-USE_GSTREAMER=	yes
+USE_GSTREAMER=	gconf
 USE_LIBTOOL_VER=	15
 
 pre-configure:

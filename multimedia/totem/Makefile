@@ -7,7 +7,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -42,7 +42,7 @@ CONFLICTS=	totem-gstreamer-[0-9]*
 
 .if defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=--enable-gstreamer
-USE_GSTREAMER+=	gnomevfs core
+USE_GSTREAMER+=	gnomevfs core gconf
 WITHOUT_DVDNAV=	yes
 PLIST_SUB=	GSTREAMER=""
 .else

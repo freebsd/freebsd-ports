@@ -7,7 +7,7 @@
 
 PORTNAME=	goobox
 PORTVERSION=	0.9.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libglade2 libbonobo
-USE_GSTREAMER=	cdparanoia
+USE_GSTREAMER=	cdparanoia gconf
 USE_LIBTOOL_VER=15
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
