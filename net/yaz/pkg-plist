@@ -1,9 +1,11 @@
 bin/yaz-asncomp
 bin/yaz-client
+bin/yaz-client-ssl
 bin/yaz-config
 bin/yaz-iconv
 bin/yaz-marcdump
 bin/yaz-ztest
+bin/yaz-ztest-ssl
 bin/zoomsh
 include/yaz/backend.h
 include/yaz/ccl.h
@@ -75,6 +77,10 @@ lib/libyaz.a
 lib/libyaz.la
 lib/libyaz.so
 lib/libyaz.so.2
+lib/libyazssl.a
+lib/libyazssl.la
+lib/libyazssl.so
+lib/libyazssl.so.2
 lib/libyazthread.a
 lib/libyazthread.la
 lib/libyazthread.so
