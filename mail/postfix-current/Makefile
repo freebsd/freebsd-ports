@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSION=	2.0.14.20030812
+PORTVERSION=	2.0.16.20031113
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION:S/.200/-200/}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	khera@kciLink.com
+MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
@@ -42,7 +42,7 @@ MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 MAN5=	access.5 aliases.5 canonical.5 cidr_table.5 pcre_table.5 regexp_table.5 \
 	relocated.5 tcp_table.5 transport.5 virtual.5
 
-MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
+MAN8=	anvil.8 bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
 	master.8 nqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 showq.8 \
 	smtp.8 smtpd.8 spawn.8 trace.8 trivial-rewrite.8 verify.8 virtual.8
 
