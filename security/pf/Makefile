@@ -51,7 +51,7 @@ IGNORE=		"Only for 5.0 and above"
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile) && \
-    (defined(WITH_ALTQ) && !exists(${SYS_ALTQ}/Makefile)
+    (defined(WITH_ALTQ) && !exists(${SYS_ALTQ}/Makefile))
 IGNORE=		"Kernel source files required"
 .endif
 
