@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	balsa2
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.0.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -50,7 +49,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' \
 			${WRKSRC}/configure ${WRKSRC}/libmutt/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
 		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
 		 s|[(]datadir[)]/locale|(prefix)/share/locale|g ; \
 		 s|[(]gnomedatadir[)]/gnome|(gnomedatadir)|g'
