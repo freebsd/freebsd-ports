@@ -5446,7 +5446,6 @@ migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
 milter-greylist	ports/mail/milter-greylist
 milter-regex	ports/mail/milter-regex
-milter-sender	ports/mail/milter-sender
 milter-skem	ports/mail/milter-skem
 milter-spamc	ports/mail/milter-spamc
 mime		ports/devel/mime
