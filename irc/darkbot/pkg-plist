@@ -1,0 +1,9 @@
+bin/darkbot
+etc/darkbot/dat/info2.db
+etc/darkbot/dat/deop.ini
+etc/darkbot/dat/perform.ini
+etc/darkbot/dat/permbans.db
+etc/darkbot/dat/random.ini
+etc/darkbot/dat/randomstuff.ini
+etc/darkbot/dat/seen.db
+@unexec rm -rf /usr/local/etc/darkbot/ /usr/local/bin/darkbot*

@@ -5,6 +5,7 @@
     SUBDIR += blackened
     SUBDIR += bnc
     SUBDIR += bobot++
+    SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy
     SUBDIR += epic4
