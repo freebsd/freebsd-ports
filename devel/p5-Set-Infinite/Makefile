@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Set-Infinite
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
@@ -22,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Set::Infinite.3 Set::Infinite::Basic.3 Set::Infinite::Date.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE="Need at least perl 5.6.1 to build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
