@@ -12,7 +12,8 @@ MASTER_SITES=	http://gnutella.wego.com/file_depot/0-10000000/110000-120000/11670
 
 MAINTAINER=	klaus.herrmann@gmx.net
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
