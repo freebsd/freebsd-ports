@@ -1,0 +1,37 @@
+@unexec install-info --delete %D/info/speedbar.info %D/info/dir
+info/speedbar.info
+@exec install-info %D/info/speedbar.info %D/info/dir
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/bigclock.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/dframe.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/dframe.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/gud.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/gud.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/info.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/info.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/rmail.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/rmail.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/rpm.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-dir-minus.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-dir-plus.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-dir.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-gud.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-image.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-info.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-mail.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-pg-minus.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-pg-plus.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-pg.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-rmail.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-tag-gt.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-tag-minus.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-tag-plus.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-tag-type.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-tag-v.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-tag.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-texinfo.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/sb-w3.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/speedbar.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/speedbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/vhdl-mode.el
+%%EMACS_VERSION_SITE_LISPDIR%%/speedbar/vhdl-mode.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/speedbar
