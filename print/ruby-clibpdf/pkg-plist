@@ -3,6 +3,8 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/ChangeLog.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/TODO.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/ref_ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/ref_ja.rd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/clibpdf/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/clibpdf
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/Arcs.rb
@@ -16,6 +18,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/filltest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/fontlist.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/helloworld.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/landscape.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/landscape2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/linkpdfpage.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/outline.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/textalign.rb
