@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moleskine
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.5
 CATEGORIES=	editors python gnome
 MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
@@ -38,5 +38,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dialogs/*.glade ${INST_DIR}/dialogs
 	${INSTALL_DATA} ${WRKSRC}/images/*.jpeg ${INST_DIR}/images
 	${INSTALL_DATA} ${WRKSRC}/images/*.png ${INST_DIR}/images
+	${INSTALL_DATA} ${WRKSRC}/moleskine.desktop ${PREFIX}/share/gnome/apps/Development
+	${INSTALL_DATA} ${WRKSRC}/images/moleskine.png ${PREFIX}/share/gnome/pixmaps
 
 .include <bsd.port.mk>
