@@ -4264,7 +4264,6 @@ libgringotts	ports/security/libgringotts
 libgsf		ports/devel/libgsf
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
-libgtop		ports/devel/libgtop
 libgtop2	ports/devel/libgtop2
 libh		ports/misc/libh
 libhash		ports/devel/libhash
@@ -6108,7 +6107,6 @@ p5-GD1		ports/graphics/p5-GD1
 p5-GDBM		ports/databases/p5-GDBM
 p5-GIFgraph	ports/graphics/GIFgraph
 p5-GPS		ports/astro/p5-GPS
-p5-GTop		ports/devel/p5-GTop
 p5-Games-Bingo	ports/games/p5-Games-Bingo
 p5-Games-Bingo-Bot	ports/games/p5-Games-Bingo-Bot
 p5-Games-Bingo-Print	ports/games/p5-Games-Bingo-Print
@@ -8172,7 +8170,6 @@ ruby-libart2	ports/graphics/ruby-libart2
 ruby-libexif	ports/graphics/ruby-libexif
 ruby-libglade	ports/devel/ruby-libglade
 ruby-libglade2	ports/devel/ruby-libglade2
-ruby-libgtop	ports/devel/ruby-libgtop
 ruby-libpng	ports/graphics/ruby-libpng
 ruby-libxml	ports/textproc/ruby-libxml
 ruby-libxslt	ports/textproc/ruby-libxslt
