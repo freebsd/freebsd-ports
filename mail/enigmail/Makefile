@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	0.86.1
-PORTREVISION?=	1
+PORTVERSION?=	0.89.0
+PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	\
 		http://mozdev.secsup.org/enigmail/src/ \
@@ -27,7 +27,7 @@ RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
 
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 
-IPCVERSION?=	1.0.5
+IPCVERSION?=	1.1.1
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
