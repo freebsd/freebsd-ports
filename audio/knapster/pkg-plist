@@ -1,5 +1,5 @@
 bin/knapster
-share/doc/HTML/en/knapster/index.html
+share/applnk/Applications/knapster.kdelnk
 share/doc/HTML/en/knapster/index-1.html
 share/doc/HTML/en/knapster/index-2.html
 share/doc/HTML/en/knapster/index-3.html
@@ -9,13 +9,16 @@ share/doc/HTML/en/knapster/index-6.html
 share/doc/HTML/en/knapster/index-7.html
 share/doc/HTML/en/knapster/index-8.html
 share/doc/HTML/en/knapster/index-9.html
+share/doc/HTML/en/knapster/index.html
 share/doc/HTML/en/knapster/logotp3.png
+@dirrm share/doc/HTML/en/knapster
+share/icons/knapster.xpm
+share/icons/mini/knapster.xpm
 share/locale/de/LC_MESSAGES/knapster.mo
 share/locale/fr/LC_MESSAGES/knapster.mo
-share/locale/sv/LC_MESSAGES/knapster.mo
-share/locale/pt_BR/LC_MESSAGES/knapster.mo
 share/locale/ja/LC_MESSAGES/knapster.mo
-share/icons/mini/knapster.xpm
-share/icons/knapster.xpm
-share/applnk/Applications/knapster.kdelnk
-@dirrm share/doc/HTML/en/knapster
+share/locale/pt_BR/LC_MESSAGES/knapster.mo
+share/locale/sv/LC_MESSAGES/knapster.mo
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
