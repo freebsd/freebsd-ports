@@ -83,6 +83,8 @@ post-extract:
 	${CP} ${WRKDIR}/NETBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip
 	${CP} ${WRKDIR}/NETBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip
 	${CP} ${WRKDIR}/NETBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip
+
+post-patch:
 	@${FIND} ${WRKSRC}/.. | ${EGREP} "\.(cxx|h|c)$$" | ${XARGS} \
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
