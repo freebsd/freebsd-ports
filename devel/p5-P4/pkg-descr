@@ -1,0 +1,8 @@
+This module provides an easy to use and very powerful interface to the
+Perforce SCM system. It's based on the P4::Client module which binds the
+Perforce C++ API into Perl space, but is still very close to the C++
+API. P4 is much more perl like.
+
+WWW: http://public.perforce.com//guest/tony_smith/perforce/API/Perl/index.html
+
+\Anton
