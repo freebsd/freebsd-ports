@@ -26,6 +26,7 @@ bin/y2racc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/debug.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/grammar.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/notes.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/parser.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/usage.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/changes.html
@@ -33,6 +34,7 @@ bin/y2racc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/debug.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/grammar.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/notes.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/parser.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/usage.html
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/racc

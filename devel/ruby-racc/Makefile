@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
