@@ -8,8 +8,8 @@
 PORTNAME=	pidentd
 PORTVERSION=	3.0.16
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
-		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/ \
