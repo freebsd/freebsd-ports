@@ -21,6 +21,7 @@
     SUBDIR += cxterm
     SUBDIR += gb2ps
     SUBDIR += gbscript
+    SUBDIR += ghostscript6
     SUBDIR += hc
     SUBDIR += hztty
     SUBDIR += joe
