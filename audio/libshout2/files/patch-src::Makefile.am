@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	Fri Aug 16 23:22:16 2002
++++ src/Makefile.am	Sun Jan 26 07:23:34 2003
+@@ -12,6 +12,8 @@
+ libshout_la_LIBADD = net/libicenet.la timing/libicetiming.la avl/libiceavl.la\
+ 		httpp/libicehttpp.la thread/libicethread.la
+ 
++libshout_la_LDFLAGS = -version-info 3:0:1
++
+ INCLUDES = -I$(top_srcdir)/include/shout -I$(srcdir)/net -I$(srcdir)/timing -I$(srcdir)/avl -I$(srcdir)/thread -I$(srcdir)/httpp
+ 
+ debug:
