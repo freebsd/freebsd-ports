@@ -9,6 +9,8 @@ CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../graphics/dia
 
+BROKEN=		"Distinfo is incorrect"
+
 PATCH_SITES=	http://www.sinica.edu.tw/~jihuang/
 PATCHFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-big5.diff.gz
 

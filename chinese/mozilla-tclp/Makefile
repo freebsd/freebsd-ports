@@ -36,6 +36,8 @@ EXTRACT_SUFX=	.xpi
 MAINTAINER=	piaip@csie.ntu.edu.tw
 COMMENT=	Mozilla Traditional Chinese Language Pack (TCLP)
 
+BROKEN=		"Distinfo is incorrect"
+
 FETCH_DEPENDS=	${PREFIX}/lib/mozilla/mozilla:${PORTSDIR}/www/mozilla
 BUILD_DEPENDS=	${PREFIX}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
