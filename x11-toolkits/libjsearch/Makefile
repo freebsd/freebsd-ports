@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	JSearch_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An additional library for the JX widget library
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure

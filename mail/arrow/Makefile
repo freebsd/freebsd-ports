@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	Arrow_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail Reader for X: view, compose and organize; e.g, PGP, GnuPG, POP & APOP
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure

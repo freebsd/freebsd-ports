@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	J2DPlot_source-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D plotting library for the JX toolkit
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
