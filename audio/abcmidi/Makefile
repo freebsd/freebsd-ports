@@ -8,14 +8,16 @@
 PORTNAME=	abcmidi
 PORTVERSION=	36
 CATEGORIES=	audio
-MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	abc
 DISTNAME=	abcMIDI
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	unix.mak
 
@@ -26,8 +28,9 @@ pre-patch:
 	@(cd ${WRKSRC} ; ${MV} -f ${file} ${file}.orig ; \
 		${TR} -d '\r' < ${file}.orig > ${file})
 .endfor
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g" -e "s,^CFLAGS=,CFLAGS+=,g" \
-		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|^CC=|CC?=|g ; \
+		 s|^CFLAGS=|CFLAGS+=|g ; \
+		 s|^LNK=gcc|LNK=$$(CC)|g' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 .for file in abc2abc abc2midi mftext midi2abc yaps
