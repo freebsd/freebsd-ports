@@ -96,6 +96,8 @@ MAN8=		au.8 \
 		volutil.8 \
 		vutil.8
 
+NO_LATEST_LINK=	yes
+
 do-build:
 	@${ECHO} "At present, Coda documentation is distributed in html, man, ps, and ppt forms"
 	@${ECHO} "but documentation source is not available.  It should appear in a release"

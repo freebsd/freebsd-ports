@@ -24,4 +24,6 @@ INSTALL_TARGET=	server-install
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.mk>
