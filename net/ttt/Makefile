@@ -22,4 +22,10 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 INSTALL_TARGET=	install install-man
 MAN1=		ttt.1 tttprobe.1 tttview.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 502111
+BROKEN=		"Does not compile on 5.x"
+.endif
+
+.include <bsd.port.post.mk>
