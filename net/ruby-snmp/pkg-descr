@@ -1,0 +1,6 @@
+Ruby SNMP is UCD-SNMP library interface for the Ruby.
+
+The current version only supports SNMPv1 GET and GETNEXT requests.
+
+Author:	Nobuhiko Tsuruoka <tsuruoka@postman.riken.go.jp>
+WWW:	http://w3cic.riken.go.jp/~tsuruoka/

@@ -1,0 +1,8 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/snmp.so
+share/doc/ruby/snmp/mib_view.html
+share/doc/ruby/snmp/rubysnmp.html
+share/doc/ruby/snmp/sampleout.html
+share/doc/ruby/snmp/snmp_module.html
+share/doc/ruby/snmp/snmp_session.html
+share/doc/ruby/snmp/snmp_var.html
+@dirrm share/doc/ruby/snmp
