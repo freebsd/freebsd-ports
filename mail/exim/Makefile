@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exim
-PORTVERSION?=	${EXIM_VERSION}+${EXISCAN_VERSION}
+PORTVERSION?=	${EXIM_VERSION}
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
@@ -21,14 +21,6 @@ COMMENT?=	High performance MTA for Unix systems on the Internet
 
 .include "options"
 
-.if !defined(WITHOUT_EXISCAN)
-PATCH_SITES=	http://duncanthrax.net/%SUBDIR%/
-PATCH_SITE_SUBDIR=	exiscan-acl
-PATCHFILES=	exiscan-acl-${EXIM_VERSION}-${EXISCAN_VERSION}.patch.bz2
-PATCH_DIST_STRIP=	-p1
-EXTRA_PATCHES+=	${PATCHDIR}/xpatch-exiscan2
-.endif
-
 .if defined(WITH_SA_EXIM)
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sa_exim/}
@@ -36,9 +28,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.44
-EXISCAN_VERSION=28
-SA_EXIM_VERSION=4.2
+EXIM_VERSION=	4.50
 
 IGNOREFILES=	FAQ.txt.bz2
 
@@ -74,7 +64,8 @@ NO_INSTALL_MANPAGES=	yes
 PORTDOC_BASE=	ACKNOWLEDGMENTS FAQ NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
-		filter.txt pcrepattern.txt pcretest.txt spec.txt
+		experimental-spec.txt filter.txt pcrepattern.txt \
+		pcretest.txt spec.txt
 
 PORT_EXAMPLES=	convert4r3 convert4r4 pcretest transport-filter.pl
 
@@ -113,14 +104,18 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 		EXIM_GROUP=${EXIM_GROUP} \
 		LOGDIR="${LOGDIR}"
 
+# Define it to enabale malware and spam scanning in the DATA ACL,
+# and the MIME ACL.
+#WITH_CONTENT_SCAN=	yes
+
+# Enable old, deprecated "demime" ACL condition, in addition
+# to all the other content-scanning features.
+#WITHOUT_OLD_DEMIME=	yes
+
 # If WITH_EXIMON is defined, the eximon monitor, which requires X,
 # will be made a dependency.  Note that using WITH_EXIMON will cause
 # XFree86 to be installed if it is not present.
 #WITH_EXIMON=	yes
-
-# If WITHOUT_EXISCAN is defined, exim will be built without exiscan
-# email content scanner support.
-#WITHOUT_EXISCAN=	yes
 
 # If WITH_SA_EXIM is defined, exim will be built with the SA-Exim
 # local_scan function (<http://marc.merlins.org/linux/exim/sa.html>)
@@ -248,13 +243,6 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
 .if defined(WITH_WISHLIST)
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
-.endif
-
-.if !defined(WITHOUT_EXISCAN)
-PORTDOC_FILES+=	exiscan-acl-examples.txt exiscan-acl-spec.txt
-PLIST_SUB+=	EXISCAN_ACL=""
-.else
-PLIST_SUB+=	EXISCAN_ACL="@comment "
 .endif
 
 SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS},' \
@@ -483,7 +471,7 @@ SEDLIST+=	-e 's,^\# (TRANSPORT_LMTP=),\1,'
 SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 .endif
 
-.if defined(WITH_SPF) && !defined(WITHOUT_EXISCAN)
+.if defined(WITH_SPF)
 LIB_DEPENDS+=	spf2.1:${PORTSDIR}/mail/libspf2
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
 		-e 's,XX_SPF_LIBS_XX,-lspf2,'
@@ -492,7 +480,7 @@ SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 		-e 's,XX_SPF_LIBS_XX,,'
 .endif
 
-.if defined(WITH_SRS) && !defined(WITHOUT_EXISCAN)
+.if defined(WITH_SRS)
 LIB_DEPENDS+=	srs2.0:${PORTSDIR}/mail/libsrs2
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSRS,' \
 		-e 's,XX_SRS_LIBS_XX,-lsrs2,'
@@ -510,6 +498,14 @@ PLIST_SUB+=	SA_EXIM="@comment "
 
 .if defined(WITH_READLINE)
 SEDLIST+=	-e 's,^\# (USE_READLINE=),\1,'
+.endif
+
+.if defined(WITH_CONTENT_SCAN)
+SEDLIST+=	-e 's,^\# (WITH_CONTENT_SCAN=),\1,'
+.endif
+
+.if !defined(WITHOUT_OLD_DEMIME)
+SEDLIST+=	-e 's,^\# (WITH_OLD_DEMIME=),\1,'
 .endif
 
 .include <bsd.port.pre.mk>
@@ -596,13 +592,10 @@ post-build:
 .for script in exim ${DAILY_SCRIPTS}
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script}.sh > ${WRKDIR}/${script}.sh
 .endfor
-.if !defined(WITHOUT_EXISCAN)
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan-acl \
-	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES > \
+		${WRKDIR}/POST-INSTALL-NOTES
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES.clamd > ${WRKDIR}/POST-INSTALL-NOTES.clamd
-.else
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
-.endif
 	@[ ! -f ${PKGDIR}/pkg-message ] || ${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-message > ${WRKDIR}/pkg-message
 
 .if !defined(EXIMON_ONLY)
@@ -627,9 +620,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DESTDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DESTDIR}${DOCSDIR}
-.if !defined(WITHOUT_EXISCAN)
 	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DESTDIR}${DOCSDIR}
-.endif
 .for docfile in ${PORTDOC_BASE}
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DESTDIR}${DOCSDIR}
 .endfor

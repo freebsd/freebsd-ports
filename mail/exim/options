@@ -3,12 +3,16 @@
 # Configurable options for mail/exim. Note that the options listed
 # here are the defaults, so if you want to change them you have to
 # specify the opposite version in the command line, e.g.
-#  `make WITHOUT_EXISCAN=yes WITH_SASLAUTHD=yes install'
+# `make WITH_CONTENT_SCAN=yes WITH_SASLAUTHD=yes install'
 #
-# `make WITH_EXISCAN=no WITHOUT_SASLAUTHD=no' will not give the expected results.
+# `make WITHOUT_CONTENT_SCAN=yes WITHOUT_SASLAUTHD=no' will not give the expected results.
 
-#WITH_EXISCAN
-# Exim will be built with exiscan email content scanner support.
+#WITHOUT_CONTENT_SCAN
+# Exim will be built without exiscan email content scanner support.
+
+#WITH_OLD_DEMIME
+# Enable old, deprecated "demime" ACL condition, in addition
+# to all the other content-scanning features.
 
 #WITHOUT_SA_EXIM
 # SA-Exim support (<http://marc.merlins.org/linux/exim/sa.html>)
@@ -159,8 +163,11 @@
 # use `make makeconfig' to edit the defaults (MAINTAINER only)
 
 _OPTIONSNG_READ?=default
-.ifndef WITHOUT_EXISCAN
-WITH_EXISCAN?=yes
+.ifndef WITH_CONTENT_SCAN
+WITHOUT_CONTENT_SCAN?=yes
+.endif
+.ifndef WITHOUT_OLD_DEMIME
+WITH_OLD_DEMIME?=yes
 .endif
 .ifndef WITH_SA_EXIM
 WITHOUT_SA_EXIM?=yes
