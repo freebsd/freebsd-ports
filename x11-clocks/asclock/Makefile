@@ -1,16 +1,16 @@
 # New ports collection makefile for:   asclock
-# Version required:    1.0
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	asclock
-PKGNAME=	asclock-1.0
+PORTNAME=	asclock
+PORTVERSION= 	1.0
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=		applications
+DISTNAMe=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org

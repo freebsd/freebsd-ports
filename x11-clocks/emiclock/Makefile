@@ -1,12 +1,12 @@
 # New ports collection makefile for:	EmiClock
-# Version required:	2.0.2
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
 # $FreeBSD$
 #
 
-DISTNAME=	emiclock-2.0.2
+PORTNAME=	emiclock
+PORTVERSION= 	2.0.2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 

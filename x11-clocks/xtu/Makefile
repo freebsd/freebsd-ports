@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xtu
-# Version required:	1.0
 # Date created:		17 Apr 1999
 # Whom:			runge@rostock.zgdv.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xtu-1.0
+PORTNAME=	xtu
+PORTVERSION= 	1.0
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.rostock.zgdv.de/~runge/xtu/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmdate
-# Version required:	0.7
 # Date created:		1 February 1999
 # Whom:			Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmdate-0.7
+PORTNAME=	wmdate
+PORTVERSION= 	0.7
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://wit401310.student.utwente.nl/apps/apps/ \
 		http://people.FreeBSD.org/~jim/distfiles/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	glclock
-# Version required:	5.0
 # Date created:		20 September 1999
 # Whom:			Randall Hopper <aa8vb@ipass.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	glclock-5.0
+PORTNAME=	glclock
+PORTVERSION= 	5.0
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/ \
 		http://hp.vector.co.jp/authors/VA013133/archives/ \

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	kdetoys-i18n
-# Version required:	1.1.2
 # Date created:		18 may 1999
 # Whom:			imura@cs.titech.ac.jp
 #

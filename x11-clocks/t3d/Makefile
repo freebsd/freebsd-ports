@@ -1,15 +1,15 @@
 # New ports collection makefile for:	t3d
-# Version required:	1.1
 # Date created:		20 Apr 1998
 # Whom:			J Han <hjh@best.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	t3d
-PKGNAME=	t3d-1.1
+PORTNAME=	t3d
+PORTVERSION= 	1.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwdt.com/~paysan/
+DISTNAME=	t3d
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
