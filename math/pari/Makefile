@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	pari
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.1.6
 CATEGORIES=	math
-MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.1/ \
-		http://www.gn-50uma.de/ftp/pari-2.1/
+MASTER_SITES= http://pari.math.u-bordeaux.fr/pub/pari/unix/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 COMMENT=	Mathmatics library and advanced calculator package
 
+EXTRACT_SUFX=   .tgz
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
@@ -38,7 +37,7 @@ PLIST=		${PKGDIR}/pkg-plist.emacs
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-EXTRA_PATCHES=	${FILESDIR}/hack-src:headers::paricom.h
+USE_GCC=    3.2
 .endif
 
 .if ${ARCH} == "amd64"

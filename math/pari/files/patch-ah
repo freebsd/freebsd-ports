@@ -1,0 +1,20 @@
+diff -urN files_orig/patch-has_exp2.c files/patch-has_exp2.c
+--- files_orig/patch-has_exp2.c	Wed Dec 31 18:00:00 1969
++++ files/patch-has_exp2.c	Thu Sep 16 14:30:23 2004
+@@ -0,0 +1,6 @@
++--- config/has_exp2.c_orig	Thu Sep 16 08:46:59 1999
+++++ config/has_exp2.c	Thu Sep 16 14:27:18 2004
++@@ -1,2 +1,2 @@
++ #include &lt;math.h&gt;
++-main(){double x=exp2(1.0);}
+++main(){double x=exp2(0.666);}
+diff -urN files_orig/patch-has_log2.c files/patch-has_log2.c
+--- files_orig/patch-has_log2.c	Wed Dec 31 18:00:00 1969
++++ files/patch-has_log2.c	Thu Sep 16 14:30:50 2004
+@@ -0,0 +1,6 @@
++--- config/has_log2.c_orig	Wed Jan  8 18:16:55 2003
+++++ config/has_log2.c	Thu Sep 16 14:27:07 2004
++@@ -1,2 +1,2 @@
++ #include &lt;math.h&gt;
++-main(){double x=log2(1.0);}
+++main(){double x=log2(0.666);}
