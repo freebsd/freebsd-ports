@@ -46,6 +46,10 @@ DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+BROKEN=		"Broken pkg-plist on FreeBSD >= 6.x"
+.endif
+
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
