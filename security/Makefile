@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1998/03/02 10:36:22 obrien Exp $
+# $Id: Makefile,v 1.28 1998/03/21 13:54:13 asami Exp $
 #
 
     SUBDIR += SSLeay
@@ -16,6 +16,7 @@
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-MD5
     SUBDIR += p5-PGP
+    SUBDIR += p5-PGP-Sign
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pidentd
