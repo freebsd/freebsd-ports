@@ -3,7 +3,7 @@
 # Date created:		Mon Oct  3 22:06:21 EDT 1994
 # Whom:			rww
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1994/10/06 01:29:34 jkh Exp $
 #
 
 DISTNAME=	itcl-1.5
@@ -11,6 +11,5 @@ HAS_CONFIGURE=	yes
 MASTER_SITES=	ftp://ftp.aud.alcatel.com/tcl/extensions/
 PATCH_STRIP=	-p1
 DEPENDS=	${PORTSDIR}/lang/tcl ${PORTSDIR}/x11/tk
-DISTFILES=	itcl_1.5.tar.gz
 
 .include <bsd.port.mk>
