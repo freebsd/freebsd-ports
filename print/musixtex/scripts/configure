@@ -17,7 +17,7 @@ all:
 install:
 	install -c -s -o bin -g bin musixflx $PREFIX/bin/
 	(cd $PREFIX/bin; ln -sf virtex musixtex)
-	install -c -o bin -g bin mf/*.mf $PREFIX/share/texmf/mf/
+	install -c -o bin -g bin mf/*.mf $PREFIX/share/texmf/metafont/
 	install -c -o bin -g bin tfm/*.tfm $PREFIX/share/texmf/fonts/tfm/
 	install -c -o bin -g bin tex/musixtex.fmt $PREFIX/share/texmf/web2c/
 	install -c -o bin -g bin tex/*.tex tex/*.sty $PREFIX/share/texmf/tex/
