@@ -21,6 +21,8 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		xmms.4:${PORTSDIR}/multimedia/xmms \
 		faad.0:${PORTSDIR}/audio/faad
 
+BROKEN=		"Does not work with faad 2.0"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
