@@ -7,6 +7,7 @@
 
 PORTNAME=	cgiwrap
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,7 +52,11 @@ pre-install:
 	@${MKDIR} ${MAINCGIDIR}
 
 post-install:
-	strip ${MAINCGIDIR}/cgiwrap
+	${STRIP_CMD} ${MAINCGIDIR}/cgiwrap
+	${RM} ${MAINCGIDIR}/cgiwrapd ${MAINCGIDIR}/nph-cgiwrapd
+	${CP} ${MAINCGIDIR}/cgiwrap ${MAINCGIDIR}/cgiwrapd
+	${LN} ${MAINCGIDIR}/cgiwrapd ${MAINCGIDIR}/nph-cgiwrapd
+	${CHMOD} 644 ${MAINCGIDIR}/cgiwrapd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in accesscontrol.html afs.html changes.html comments.html \
