@@ -16,7 +16,7 @@ MAINTAINER=	erwin@lansing.dk
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
