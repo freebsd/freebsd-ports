@@ -30,6 +30,7 @@ lib/libxslt.so.1
 lib/libxsltbreakpoint.a
 lib/libxsltbreakpoint.so
 lib/libxsltbreakpoint.so.1
+libdata/pkgconfig/libxslt.pc
 share/doc/libxslt/html/book1.html
 share/doc/libxslt/html/libxslt-attributes.html
 share/doc/libxslt/html/libxslt-functions.html

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Mon Nov 26 14:20:21 2001
-+++ Makefile.in	Thu Dec  6 10:27:59 2001
-@@ -108,16 +108,14 @@
+--- Makefile.in.orig	Mon Jan 14 20:19:35 2002
++++ Makefile.in	Tue Jan 29 11:49:57 2002
+@@ -115,16 +115,14 @@
  @WITH_DEBUGGER_TRUE@  	libxslt \
  @WITH_DEBUGGER_TRUE@  	libexslt \
  @WITH_DEBUGGER_TRUE@  	xsltproc \
@@ -21,3 +21,12 @@ $FreeBSD$
  confexec_DATA = xsltConf.sh
  
  bin_SCRIPTS = xslt-config
+@@ -135,7 +133,7 @@
+ 	     win32/libxslt/libxslt_so.dsp win32/libxslt/xsltproc.dsp
+ 
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libxslt.pc
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
