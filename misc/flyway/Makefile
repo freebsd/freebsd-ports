@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	flyway
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	misc python
-MASTER_SITES=	http://www.bellz.org/flyway/
+MASTER_SITES=	http://www.bellz.org/flyway/ \
+		http://vtel.rgv.net/~ahze/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VFR/IFR Route Planner for Pilots
 
+BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_X_PREFIX=	yes
