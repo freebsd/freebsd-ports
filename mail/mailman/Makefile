@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.0.12
+PORTVERSION=	2.0.13
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -59,8 +59,7 @@ PLIST_SUB=	MMDIR=${MM_DIR} MMGRP=${MM_GROUPNAME} IMGDIR=${IMGDIR}
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
-	@ ${PERL} -ne '/^#/ || /^\s/ && print || \
-	  print sprintf "* %s [%s]\n  %s", split(/\|/)' ${PKGOPTS}
+	@ ${CAT} ${PKGOPTS}
 
 post-extract:
 .if !defined(BATCH)
@@ -71,12 +70,13 @@ post-extract:
 .endif
 
 pre-configure:
+# Mailman's configure script needs the "mailman" user/group to exist, so
+# $PKGINSTALL has to be patched before the do-configure target executes.
 	@ ${SED} \
 	  -e 's#%%USER%%#${MM_USERNAME}#g' -e 's#%%UID%%#${MM_USERID}#g' \
 	  -e 's#%%GROUP%%#${MM_GROUPNAME}#g' -e 's#%%GID%%#${MM_GROUPID}#g' \
 	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-install > \
 	  ${PKGINSTALL}
-# Mailman's configure script needs the "mailman" user/group to exist.
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-configure:
