@@ -39,6 +39,8 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -46,22 +48,28 @@ PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -I${MPEG_WRKSRC}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-MPEG_DISTFILE=	${DISTDIR}/mpeg_lib-1.3.1.tar.gz
-MPEG_WRKSRC=	${WRKDIR}/mpeg_lib-1.3.1
-MPEG_CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
-MPEG_CONFIGURE_ARGS=	--prefix=${PREFIX} \
-			--target=${ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		gimp-1.3.1 gimptool-1.3.1 gimp-remote-1.3.1
 MAN5=		gimprc-1.3.5
 
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2
+CONFIGURE_ARGS+=	--enable-python
+PLIST_SUB+=	PYTHON:=""
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=	PYTHON:="@comment "
+.endif
+
 .if exists(${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)
 RUN_DEPENDS+=	gnome-panel:${PORTSDIR}/x11/gnomepanel
-CONFIGURE_ARGS+=	--with-gnome-desktop=${X11BASE}/share/gnome/applications
+CONFIGURE_ARGS+=	--with-gnome-datadir=${X11BASE}/share/gnome
 PLIST_SUB+=	GNOME:=""
 .else
 PLIST_SUB+=	GNOME:="@comment "
@@ -71,28 +79,11 @@ PLIST_SUB+=	GNOME:="@comment "
 #LIB_DEPENDS+=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
 #.endif
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR} && ${BZIP2_CMD} -dc ${GIMP_DISTFILE} | ${TAR} -xf -)
-	@(cd ${WRKDIR} && ${GZIP_CMD} -dc ${MPEG_DISTFILE} | ${TAR} -xf -)
-	@(${FIND} ${MPEG_WRKSRC} -type f | ${XARGS} ${CHMOD} u+w)
-
-pre-configure:
-	@(cd ${MPEG_WRKSRC} && \
-		${SETENV} CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		${MPEG_CONFIGURE_ENV} ./configure ${MPEG_CONFIGURE_ARGS})
-	@(cd ${MPEG_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lmpeg|${MPEG_WRKSRC}/libmpeg.a|g' \
-		${WRKSRC}/configure
-	@(cd ${MPEG_WRKSRC} ; \
-		${GREP} -r -l "<malloc.h>" * | \
-		${XARGS} ${REINPLACE_CMD} -e "s/<malloc.h>/<stdlib.h>/")
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "gimp-devel has the following tunable option(s):"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "		WITH_PYTHON=yes	Turns on Python-Fu support"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
