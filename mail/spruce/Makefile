@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	erich@tacni.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple GTK based email client
 
 USE_X_PREFIX=	yes
