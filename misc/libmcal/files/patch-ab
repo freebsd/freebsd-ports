@@ -1,0 +1,32 @@
+--- icap/Makefile.orig	Sat Feb  5 06:50:57 2000
++++ icap/Makefile	Tue Oct 16 22:54:11 2001
+@@ -1,10 +1,9 @@
+ #$Id: Makefile.FreeBSD,v 1.1 2000/02/05 05:50:57 mayo Exp $
+ 
+-CC=gcc
+-FLEX=flex
++FLEX=/usr/bin/flex
+ INCLUDE=-I..
+-CFLAGS=-O0 -Wall -g $(INCLUDE)
+-ALLOBJS=icap.o icaproutines.o lex.ical_yy.o lex.icap_yy.o
++CFLAGS+=-Wall $(INCLUDE)
++ALLOBJS=icap.o icaproutines.o lex.icap_yy.o
+ TARGET=icap_driver.o
+ 
+ all: $(TARGET)
+@@ -14,14 +13,11 @@
+ 	ld -r -o $(TARGET) $(ALLOBJS)
+ 	touch bootstrap.in
+ 
+-lex.ical_yy.c: icalscanner.lex
+-	$(FLEX) icalscanner.lex
+-
+ lex.icap_yy.c: icapscanner.lex
+ 	$(FLEX) icapscanner.lex
+ 
+ clean:
+-	rm -f $(ALLOBJS) $(TARGET) lex.ical_yy.c lex.icap_yy.c bootstrap.in
++	rm -f $(ALLOBJS) $(TARGET) lex.icap_yy.c bootstrap.in
+ 
+ dep: depend
+ 

@@ -1,0 +1,83 @@
+--- Makefile.in.orig	Tue Jan 25 04:08:10 2000
++++ Makefile.in	Sun Oct 21 23:22:16 2001
+@@ -1,45 +1,63 @@
+-# 	$Id: Makefile.in,v 1.2 2000/01/25 03:08:10 markie Exp $
+-
+-CC=gcc
+-FLEX=flex
++# 	$Id: Makefile.in,v 1.5 2001/07/03 16:03:19 rufustfirefly Exp $
+ 
++FLEX=/usr/bin/flex
+ 
+ @BOOTSTRAP@
+ 
+ INCLUDE=@DRIVER_INCDIR@  ${OTHERINCDIR} -I.
+ 
+-CFLAGS=-O0 -Wall -g ${INCLUDE}
++CFLAGS+=-Wall ${INCLUDE} ${OTHER_CFLAGS} -D_REENTRANT
+ 
+ LIBOBJS=mcal.o datetime.o lex.ical_yy.o icalroutines.o cal_misc.o $(DRIVER_LIBS)
+ ALLOBJS=${LIBOBJS} tester.o
+ OTHERLIBS=${OTHERLIBS}
+ OTHERLIBDIR=${OTHERLIBDIR}
+ 
++SHLIBLDFLAGS=-shared
++REV=0.6
++
+ LIBCAL=libmcal.a
++LIBCAL_SO=libmcal.so
+ 
+-all: libmcal.a
++all: $(LIBCAL) $(LIBCAL_SO).$(REV)
+ 
+-install: libmcal.a
+-	mkdir /usr/local/mcal
+-	mkdir /usr/local/mcal/lib
+-	mkdir /usr/local/mcal/include
+-	cp libmcal.a /usr/local/mcal/lib
+-	cp mcal.h bool.h datetime.h drivers.h /usr/local/mcal/include
+-libmcal.a: $(LIBOBJS)
++install: all
++	mkdir -p ${DESTDIR}@prefix@/lib/
++	mkdir -p ${DESTDIR}@prefix@/include/mcal/
++	rm -f ${DESTDIR}@prefix@/lib/$(LIBCAL_SO)
++	install -m 755 -o 0 -g 0 $(LIBCAL) $(LIBCAL_SO).0 ${DESTDIR}@prefix@/lib
++	ln -s ${DESTDIR}@prefix@/lib/$(LIBCAL_SO).0 ${DESTDIR}@prefix@/lib/$(LIBCAL_SO)
++	install -m 644 -o 0 -g 0 \
++	  mcal.h bool.h datetime.h drivers.h cal_misc.h icalroutines.h \
++	  ${DESTDIR}@prefix@/include/mcal/
++	touch installed
++
++install-strip: installed
++	strip ${DESTDIR}@prefix@/lib/$(LIBCAL_SO).$(REV)
++	strip ${DESTDIR}@prefix@/lib/$(LIBCAL)
++
++$(LIBCAL): $(LIBOBJS)
+ 	rm -f $(LIBCAL)
+ 	ar r $(LIBCAL) $(LIBOBJS)
+ 
++$(LIBCAL_SO).$(REV): $(LIBOBJS)
++	rm -f $@
++	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(LIBOBJS)
++	strip --strip-unneeded $@
++	rm -f $(LIBCAL_SO).0
++	ln -s $@ $(LIBCAL_SO).0
++
+ lex.ical_yy.c: icalscanner.lex
+ 	$(FLEX) $<
+ 
+-tester: tester.o libmcal.a
+-	gcc -Wall -g -o tester tester.o $(LIBCAL) -lcrypt
++tester: tester.o $(LIBCAL)
++	$(CC) $(CFLAGS) -Wall -g -o tester tester.o $(LIBCAL) -lcrypt
+ 
+ clean:
+-	rm -f *.o $(LIBCAL) tester  
++	rm -f *.o *~ core $(LIBCAL) $(LIBCAL_SO) tester installed 
+ 
+ distclean: clean
+-	rm -f  config.cache  config.status config.log Makefile drivers.c drivers.h bootstrap.in
++	rm -f config.cache config.status config.log Makefile drivers.c drivers.h bootstrap.in
+ 
+ 
+ dep: depend

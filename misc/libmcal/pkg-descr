@@ -1,0 +1,9 @@
+Mcal stands for Modular Calendar Access Library. libmcal is a C library
+for accessing calendars.
+
+It's written to be very modular, with pluggable drivers.
+One of the main drivers it handles is ICAP.
+
+You may configure mod_php to use it.
+
+WWW: http://mcal.chek.com/
