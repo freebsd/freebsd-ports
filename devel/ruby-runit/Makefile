@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage1.nifty.com/markey/ruby/rubyunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,8 +20,11 @@ USE_RUBY=	yes
 USE_RUBY_RD=	yes
 .endif
 
-BINS=		c2t	runtest
-DOCS=		HISTORY	README	ToDo
+RUBY_SHEBANG_FILES=	${WRKSRC}/bin/c2t.rb	\
+			${WRKSRC}/bin/runtest.rb
+
+BINS=		c2t		runtest
+DOCS=		ChangeLog	README		ToDo
 
 do-build:
 .if !defined(NOPORTDOCS)
