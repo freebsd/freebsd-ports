@@ -1,5 +1,5 @@
---- backend/Makefile.in.orig	Fri Dec  1 04:05:49 2000
-+++ backend/Makefile.in	Tue Mar 27 07:00:10 2001
+--- backend/Makefile.in.orig	Thu Nov 30 20:05:49 2000
++++ backend/Makefile.in	Mon Apr  2 09:15:36 2001
 @@ -69,7 +69,7 @@
  LIBOBJS = $(addprefix ../lib/,$(addsuffix .lo,$(LIBLIB_FUNCS)))
  
@@ -9,7 +9,20 @@
  	$(LDFLAGS) $(BACKENDLIBS) $^ -rpath $(libsanedir) \
  	-version-info $(V_MAJOR):$(V_REV):$(V_MINOR)
  
-@@ -109,10 +109,10 @@
+@@ -99,9 +99,10 @@
+ 	@$(LIBTOOL) $(MINST) --finish $(libsanedir)
+ 	@# Assume the dll name without any versions is last
+ 	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
+-	list="$(ALL_BACKENDS)"; cd $(libsanedir) && for be in $$list; do \
++	list="$(ALL_BACKENDS)"; origdir=`pwd`; \
++	cd $(libsanedir) && for be in $$list; do \
+ 	  file=libsane-$${be}.$$dllend.$(V_MAJOR); \
+-	  lib=`grep dlname= libsane-$${be}.la | cut -f2 -d"'"`; \
++	  lib=`grep dlname= "$$origdir"/libsane-$${be}.la | cut -f2 -d"'"`; \
+ 	  if test ! -f $${file} -a -n "$${lib}"; then \
+ 	    $(LN_S) $${lib} $${file}; \
+ 	  fi; \
+@@ -109,10 +110,10 @@
  	@# Assume the dll name without any versions is last
  	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
  	rm -f $(libdir)/libsane.a $(libdir)/libsane.$$dllend \
