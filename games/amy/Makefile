@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	amy
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	games
 MASTER_SITES=	http://tgreiner.net/
 DISTFILES=	amy-${PORTVERSION}.tar.gz ClassicGames.pgn.bz2
 EXTRACT_ONLY=	amy-${PORTVERSION}.tar.gz
 
-MAINTAINER=	thorsten.greiner@web.de
+MAINTAINER=	thorsten@tgreiner.net
 COMMENT=	A chess program for playing and analyzing games
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2:install
