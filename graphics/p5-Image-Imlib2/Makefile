@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 MAN3=		Image::Imlib2.3
 
 .include "../../devel/p5-Module-Build/inc.build.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		'Does not compile'
+.endif
+
+.include <bsd.port.post.mk>

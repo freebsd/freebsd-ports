@@ -30,10 +30,16 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		CFLAGS=-DBROKEN_VIRTUAL_DEFAULT_ARGUMENTS=1 \
 		LIBS="${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	${MKDIR} ${PREFIX}/share/pose
 	${INSTALL_DATA} "${WRKSRC}/../ROMTransfer/Source/ROM_Transfer.prc" ${PREFIX}/share/pose
 	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
 	${CP} -Rp ${WRKDIR}/Skins_v1.9 ${PREFIX}/share/pose/skins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
