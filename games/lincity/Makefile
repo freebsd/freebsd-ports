@@ -10,7 +10,7 @@ DISTNAME=       lincity-1.11
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/linux/games/
 
-MAINTAINER=	proff@iq.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 ALL_TARGET=	freebsd
