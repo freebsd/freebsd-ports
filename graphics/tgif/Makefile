@@ -1,16 +1,16 @@
 # New ports collection makefile for:    tgif
-# Version required:     3.0-p13
+# Version required:     3.0-p17
 # Date created:         10 Oct 1996
 # Whom:                 bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.3 1996/11/18 09:53:40 asami Exp $
+# $Id: Makefile,v 1.4 1997/08/11 08:40:54 tg Exp $
 #
 
-DISTNAME=       tgif-3.0-p13
-PKGNAME=	tgif-3.0p13
+DISTNAME=	tgif-3.0-p17
+PKGNAME=	tgif-3.0p17
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://bourbon.cs.columbia.edu/pub/tgif/ \
-	ftp://ftp.crl.research.digital.com/pub/X11/contrib/applications/tgif/
+MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
+		ftp://ftp.cs.ucla.edu/pub/tgif/
 
 MAINTAINER=	bmc@WillsCreek.COM
 
