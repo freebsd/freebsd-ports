@@ -1,0 +1,21 @@
+************************************************************************
+Turba has been installed in %%TURBADIR%% with your blank
+configuration files.
+
+Horde must be configured; if not, see `pkg_info -D -x horde'.
+
+Then, you might have to tune the configuration files located in
+%%CONFDIR%%/, specially the file sources.php.
+
+Then, you must login to Horde as a Horde Administrator to finish the
+configuration.
+
+You have to create a table in your database; please see
+%%TURBADIR%%/scripts/.
+You might create a LDAP schema: please see the doc LDAP.
+
+WARNING! if you are upgrading from Turba v. 1.2.x, you have to alter your
+******** schemas. Please read the doc UPGRADING.
+
+To protect your configuration files, you have to restart Apache.
+************************************************************************

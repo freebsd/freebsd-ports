@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	1.2.2
+PORTVERSION=	2.0
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.planetmirror.com/pub/horde/turba/		\
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/turba/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/turba/	\
 		http://ftp.horde.org/pub/turba/
+DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The Horde contact management application
@@ -28,48 +29,37 @@ COMMENT=	The Horde contact management application
 #
 #-----------------------------------------------------------------------
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
+RUN_DEPENDS+=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
 
 .if !defined(WITHOUT_LDAP)
-USE_OPENLDAP=	yes
+USE_PHP=	ldap
 .endif
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-REINPLACE_ARGS=	-i.beforeTurba
+REINPLACE_ARGS=	-i ""
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/INSTALL docs/LDAP docs/RELEASE_NOTES docs/UPDATE	\
-		docs/turba.dia docs/turba.pdf
-CONFFILE=	attributes.php conf.php html.php menu.php prefs.php	\
-		sources.php
-SUB_DIRS=	config graphics lib locale scripts templates po
+		docs/LDAP docs/RELEASE_NOTES docs/TODO docs/UPGRADING
+CONFFILE=	attributes.php menu.php prefs.php sources.php
+SUB_DIRS=	config lib locale po scripts templates themes
 
 LHORDEDIR?=	www/horde
 LTURBADIR?=	${LHORDEDIR}/turba
 
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} TURBADIR=${LTURBADIR}
+PLIST_SUB=	TURBADIR=${LTURBADIR}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
-HORDEDIR=	${PREFIX}/${LHORDEDIR}
 TURBADIR=	${PREFIX}/${LTURBADIR}
 CONFDIR=	${TURBADIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
 
-post-patch:
-	@${RM} ${WRKSRC}/config/conf.php.dist.orig	\
-		${WRKSRC}/config/prefs.php.dist.orig	\
-		${WRKSRC}/config/sources.php.dist.orig
-
-pre-install:
-.if !defined(WITHOUT_LDAP)
-	@if ! php -m | ${GREP} -q -e "ldap"; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
-.endif
+pre-configure:
+	@${SED} -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
+		${FILESDIR}/httpd.conf.turba > ${WRKDIR}/httpd.conf.turba
+	@${REINPLACE_CMD} -e "s:/usr/bin/ldapadd:${LOCALBASE}/bin/ldapadd:"	\
+		${WRKSRC}/scripts/ldap/addou.pl
 
 do-install:
 	@${MKDIR}  ${TURBADIR}
@@ -82,16 +72,9 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	@${CHOWN} -R www:www ${TURBADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TURBADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${CP} -p ${FILESDIR}/httpd.conf.turba ${HORDE_INC}
-	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
-		${HORDE_INC}/httpd.conf.turba
-	@${RM} ${HORDE_INC}/httpd.conf.turba.beforeTurba
-	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTTURBA::"			\
-		${HORDEDIR}/config/registry.php
-	@${CP} -p ${HORDEDIR}/config/registry.php				\
-		${HORDEDIR}/config/registry.php.afterTurba
+	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.turba ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -101,9 +84,10 @@ do-install:
 .endif
 
 post-install:
+	@${SED} -e "s:%%TURBADIR%%:${TURBADIR}:;s:%%CONFDIR%%:${CONFDIR}:"	\
+		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
-	@${SED} -e "s:%%TURBADIR%%:${TURBADIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
-		-e "s:%%CONFDIR%%:${CONFDIR}:g" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
