@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	playmidi
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	audio
-MASTER_SITES=	http://people.nl.linux.org/~diz/playmidi/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI player
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.4
 
 .include <bsd.port.pre.mk>
 
