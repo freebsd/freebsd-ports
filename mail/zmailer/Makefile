@@ -13,7 +13,17 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 MAINTAINER=	veers@disturbed.net
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX}/ \
+
+.if defined(USE_SSL)
+USE_OPENSSL=	RSA
+CONFIGURE_ARGS= --with-openssl
+.else
+CONFIGURE_ARGS= --without-openssl
+.endif
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+= --prefix=${PREFIX}/ \
 		--with-bundled-libresolv \
 		--with-mailbin=${PREFIX}/sbin \
 		--with-mailbox=/var/mail \
@@ -108,4 +118,4 @@ replace:
 		${LN} -s ${PREFIX}/sbin/rmail /bin/rmail; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
