@@ -1,5 +1,5 @@
---- src/mysqlnavigator/Makefile.orig	Fri Mar 23 03:50:33 2001
-+++ src/mysqlnavigator/Makefile	Fri Mar 30 14:13:30 2001
+--- src/mysql/Makefile.orig	Fri Mar 23 03:50:33 2001
++++ src/mysql/Makefile	Fri Mar 30 14:13:30 2001
 @@ -7,17 +7,17 @@
  
  ####### Compiler, tools and options
