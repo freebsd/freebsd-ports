@@ -7,14 +7,15 @@
 # "?=" and "+=" are for localized (i.e. Japanese) version
 
 PORTNAME=	magicpoint
-PORTVERSION=	1.09a
+PORTVERSION=	1.10a
 CATEGORIES+=	misc
-MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
+MASTER_SITES=	ftp://ftp.mew.org/pub/mgp/
 
 MAINTAINER?=	mita@FreeBSD.org
 COMMENT?=	An X11-based presentation tool
 
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
+		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
