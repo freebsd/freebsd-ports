@@ -1,0 +1,9 @@
+#!/bin/sh
+
+pb=/a/asami/portbuild
+${pb}/scripts/dopackages 4 2>&1 \
+	| tee /a/asami/portbuild/4/build.log \
+	| sendmail asami@freebsd.org
+${pb}/scripts/dopackages -nocvsup 3 2>&1 \
+	| tee /a/asami/portbuild/3/build.log \
+	| sendmail asami@freebsd.org
