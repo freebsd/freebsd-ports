@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	5.6
+PORTVERSION=	5.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,6 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/bin/awstats_logresolvemerge.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/bin/awstats_maillogconvert.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/bin/awstats_urlaliasbuilder.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/* ${PREFIX}/www/cgi-bin/lang
@@ -45,7 +46,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoip.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoipfree.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hashfiles.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA}	${WRKSRC}/wwwroot/cgi-bin/plugins/hostinfo.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/ipv6.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA}	${WRKSRC}/wwwroot/cgi-bin/plugins/rawlog.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timehires.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timezone.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/tooltips.pm ${PREFIX}/www/cgi-bin/plugins
