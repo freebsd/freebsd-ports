@@ -420,3 +420,5 @@ japanese/acroread-jpnfont|japanese/acroread5-jpnfont|2003-07-24|security vulnera
 korean/acroread-korfont|korean/acroread5-korfont|2003-07-24|security vulnerability
 chinese/acroread-chsfont|chinese/acroread5-chsfont|2003-07-24|security vulnerability
 chinese/acroread-chtfont|chinese/acroread5-chtfont|2003-07-24|security vulnerability
+x11-wm/xfwm4|x11-wm/xfce4-wm|2003-07-27|rename it to be consistent with other xfce4 ports
+
