@@ -24,6 +24,10 @@ share/doc/rrdtool/rrdtune.html
 share/doc/rrdtool/rrdtutorial.html
 share/doc/rrdtool/rrdupdate.html
 lib/perl5/site_perl/%%PERL_VER%%/RRDp.pm
-lib/perl5/site_perl/%%PERL_VER%%/RRDs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDp/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/RRDs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 @dirrm share/examples/rrdtool
 @dirrm share/doc/rrdtool
