@@ -2,9 +2,6 @@ bin/gmixvm
 bin/mixasm
 bin/mixguile
 bin/mixvm
-@unexec install-info --delete %D/info/mdk.info %D/info/dir
-info/mdk.info
-@exec install-info %D/info/mdk.info %D/info/dir
 share/gnome/mdk/clear.xpm
 share/gnome/mdk/colors.xpm
 share/gnome/mdk/compile.xpm
