@@ -27,8 +27,8 @@ post-install:
 	@ ${ECHO} "===>   Installing Tracks and Sound"
 	@ ${CP} -R ${WRKSRC}/../xracer-data \
 	   ${PREFIX}/lib/xracer
-	@ chmod -R 744 ${PREFIX}/lib/xracer
-	@ chmod -R a+X ${PREFIX}/lib/xracer
+	@ ${CHMOD} -R 744 ${PREFIX}/lib/xracer
+	@ ${CHMOD} -R a+X ${PREFIX}/lib/xracer
 	@ ${ECHO} "===>   Installing Documentation"
 	@ ${MKDIR} ${PREFIX}/share/doc/xracer
 	@${INSTALL_DATA} ${WRKSRC}/README \
