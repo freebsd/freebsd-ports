@@ -9174,6 +9174,7 @@ sipsak		ports/net/sipsak
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
 sisc		ports/lang/sisc
+sitebar		ports/www/sitebar
 sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
 six		ports/games/six
