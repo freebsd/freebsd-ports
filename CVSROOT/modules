@@ -7721,6 +7721,7 @@ sylpheed-claws	ports/mail/sylpheed-claws
 symlinks	ports/sysutils/symlinks
 synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
+synce-libsynce	ports/palm/synce-libsynce
 syncmal		ports/palm/syncmal
 synergy 	ports/sysutils/synergy
 syntax_tools	ports/devel/syntax_tools
