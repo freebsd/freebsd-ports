@@ -4,6 +4,7 @@ bin/sqlt-diff
 bin/sqlt-dumper
 bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator.pm
+%%SITE_PERL%%/SQL/Translator/Manual.pod
 %%SITE_PERL%%/SQL/Translator/Parser.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/MySQL.pm
@@ -24,6 +25,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Producer.pm
 %%SITE_PERL%%/SQL/Translator/Producer/ClassDBI.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Diagram.pm
+%%SITE_PERL%%/SQL/Translator/Producer/Dumper.pm
 %%SITE_PERL%%/SQL/Translator/Producer/GraphViz.pm
 %%SITE_PERL%%/SQL/Translator/Producer/HTML.pm
 %%SITE_PERL%%/SQL/Translator/Producer/MySQL.pm
@@ -33,6 +35,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Producer/SQLite.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Storable.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Sybase.pm
+%%SITE_PERL%%/SQL/Translator/Producer/TT/Table.pm
 %%SITE_PERL%%/SQL/Translator/Producer/TTSchema.pm
 %%SITE_PERL%%/SQL/Translator/Producer/XML.pm
 %%SITE_PERL%%/SQL/Translator/Producer/XML/SQLFairy.pm
@@ -47,11 +50,12 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Schema/Trigger.pm
 %%SITE_PERL%%/SQL/Translator/Schema/View.pm
 %%SITE_PERL%%/SQL/Translator/Utils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL 2>/dev/null || true
+%%SITE_PERL%%/Test/SQL/Translator.pm
+@dirrm %%SITE_PERL%%/Test/SQL
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
 @dirrm %%SITE_PERL%%/SQL/Translator/Schema
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer/XML
+@dirrm %%SITE_PERL%%/SQL/Translator/Producer/TT
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/XML
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/DBI

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.06
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
@@ -31,7 +30,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Base.pm:${PORTSDIR}/devel/p5-Class-Base \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN1=		sqlt-diagram.1 \
 		sqlt-diff.1 \
@@ -39,6 +38,7 @@ MAN1=		sqlt-diagram.1 \
 		sqlt-graph.1 \
 		sqlt.1
 MAN3=		SQL::Translator.3 \
+		SQL::Translator::Manual.3 \
 		SQL::Translator::Parser.3 \
 		SQL::Translator::Parser::DBI.3 \
 		SQL::Translator::Parser::DBI::MySQL.3 \
@@ -59,6 +59,7 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Producer.3 \
 		SQL::Translator::Producer::ClassDBI.3 \
 		SQL::Translator::Producer::Diagram.3 \
+		SQL::Translator::Producer::Dumper.3 \
 		SQL::Translator::Producer::GraphViz.3 \
 		SQL::Translator::Producer::HTML.3 \
 		SQL::Translator::Producer::MySQL.3 \
@@ -68,6 +69,7 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Producer::SQLite.3 \
 		SQL::Translator::Producer::Storable.3 \
 		SQL::Translator::Producer::Sybase.3 \
+		SQL::Translator::Producer::TT::Table.3 \
 		SQL::Translator::Producer::TTSchema.3 \
 		SQL::Translator::Producer::XML.3 \
 		SQL::Translator::Producer::XML::SQLFairy.3 \
@@ -81,7 +83,8 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Schema::Table.3 \
 		SQL::Translator::Schema::Trigger.3 \
 		SQL::Translator::Schema::View.3 \
-		SQL::Translator::Utils.3
+		SQL::Translator::Utils.3 \
+		Test::SQL::Translator.3
 
 .include <bsd.port.pre.mk>
 
