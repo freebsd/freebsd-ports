@@ -35,12 +35,7 @@ if [ -f $WRKDIR/.cdrom ]; then
     pl=01
   fi
   echo "==> building the tree (please wait)"
-  if [ -f ${WRKDIR}/.cd_OR ] ; then
-    (cd $WRKDIR; cp $X11R6/xc/config/util/lndir.c .; cc -o lndir lndir.c; mkdir ./xc; ./lndir $X11R6/xc ./xc)
-  fi
-  if [ -f ${WRKDIR}/.cd_X ] ; then
-    (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
-  fi
+  (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
 else
   X11FIXES=`cat $WRKDIR/.ftp`
   pl=12

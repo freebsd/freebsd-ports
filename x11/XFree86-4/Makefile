@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/04/26 14:45:15 jmz Exp $
+# $Id: Makefile,v 1.9 1995/05/13 05:42:15 asami Exp $
 #
 
 #######################################################################
@@ -12,10 +12,9 @@
 #                                                                     #
 #######################################################################
 #
-# uncomment one of the 3 lines below!
+# uncomment one of the 2 lines below!
 #(X-Consortium CDROM, O'Reilly 'X-Companion' CDROM, or X by FTP (_*BIG*_)
-#X11_ON_X_CDROM	=	yes
-#X11_ON_OR_CDROM	=	yes
+#X11_ON_CDROM	=	yes
 #X11_VIA_FTP	=	yes
 
 #if you are compiling from a cdrom, set the directory where the
@@ -34,10 +33,6 @@ PKGNAME		= 	XFree86-3.1.1
 IS_INTERACTIVE=		yes
 
 MAINTAINER=		jmz@FreeBSD.ORG
-
-.if defined(X11_ON_X_CDROM) || defined(X11_ON_OR_CDROM)
-X11_ON_CDROM	=	yes
-.endif
 
 .if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
 
@@ -70,18 +65,12 @@ do-extract:
 	@mkdir -p ${WRKDIR}
 	@echo ${X11FIXES} > ${WRKDIR}/.cdrom
 	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
-.if defined(X11_ON_X_CDROM)
-	${TOUCH} ${TOUCH_FLAGS} ${WRKDIR}/.cd_X
-.endif
-.if defined(X11_ON_OR_CDROM)
-	${TOUCH} ${TOUCH_FLAGS} ${WRKDIR}/.cd_OR
-.endif
 
 .elif defined(X11_VIA_FTP)
 .include "Makefile.ftp"
 .else
 do-fetch:
-	@echo Please set one of the 3 variables X11_ON_X_CDROM, X11_ON_OR_CDROM, or X11_VIA_FTP 
+	@echo Please set one of the 2 variables X11_ON_CDROM or X11_VIA_FTP 
 	@echo before building ${PKGNAME}
 	@false
 do-extract:
@@ -89,7 +78,7 @@ do-extract:
 do-configure:
 	@echo -n
 do-build:
-	@echo Please set one of the 3 variables X11_ON_X_CDROM, X11_ON_OR_CDROM, or X11_VIA_FTP 
+	@echo Please set one of the 2 variables X11_ON_X_CDROM or X11_VIA_FTP 
 	@echo before building ${PKGNAME}
 	@false
 do-install:
