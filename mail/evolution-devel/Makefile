@@ -22,7 +22,7 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
 		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
 		unicode.0:${PORTSDIR}/devel/libunicode \
-		gtkhtml.3:${PORTSDIR}/www/gtkhtml \
+		gtkhtml.4:${PORTSDIR}/www/gtkhtml \
 		ldap.1:${PORTSDIR}/net/openldap \
 		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		gpilotd.0:${PORTSDIR}/palm/gnomepilot
