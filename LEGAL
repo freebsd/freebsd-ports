@@ -443,6 +443,7 @@ pim6dd-*.tar.gz		net/pim6dd		Cannot be sold for profit
 platon*			ports/biology/platon	US$ 5000 for commercial users,
 						(free for academic)
 pmake-*.tar.Z		ports/devel/pmake	Non-commercial use only
+polygraph-*-src.tgz	ports/benchmarks/polygraph	Redistribution is not permitted by licence
 poseidonCE-*		ports/java/poseidon	Redistribution is not permitted
 ppsmall-*		ports/archivers/ppunpack	No commercial redistribution
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A benchmarking tool for Web proxies
 
+RESTRICTED= 	Redistribution forbidden by license
 IS_INTERACTIVE=	yes
 
 GNU_CONFIGURE=	YES
