@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mt-daapd
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mt-daapd
@@ -14,11 +14,8 @@ MASTER_SITE_SUBDIR=	mt-daapd
 MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag
-
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}" \
-		LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 CC="${CC} -pthread"
@@ -27,12 +24,19 @@ CONFIGURE_ARGS=	--with-id3tag=${PREFIX}
 USE_AUTOHEADER_VER=	259
 WANT_AUTOCONF_VER=	259
 
-DAAPD_USER=	daapd
-DAAPD_GROUP=	daapd
+DAAPD_USER?=	daapd
+DAAPD_GROUP?=	daapd
+
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 FILES_SUB=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} \
 		PREFIX=${PREFIX} LOGDIR=${LOGDIR} DOCSDIR=${DOCSDIR} \
 		LOCALBASE=${LOCALBASE}
+pre-install:
+	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${PKGDIR}/pkg-install > ${PKGINSTALL}
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -48,5 +52,14 @@ post-install:
 	${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/mt-daapd.conf > ${WRKDIR}/mt-daapd.conf
 	${INSTALL_DATA} ${WRKDIR}/mt-daapd.conf ${PREFIX}/etc/mt-daapd.conf.sample
+	${MKDIR} ${PREFIX}/var/mt-daapd/db
+	${MKDIR} ${PREFIX}/share/mt-daapd/mp3
+	${CHMOD} 0755 ${PREFIX}/var/mt-daapd/db
+	${CHMOD} 0755 ${PREFIX}/share/mt-daapd/mp3
+	${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${PREFIX}/var/mt-daapd/db
+	${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${PREFIX}/share/mt-daapd/mp3
+	${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
