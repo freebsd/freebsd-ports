@@ -1,0 +1,24 @@
+ORTEP-III, the Oak Ridge Thermal Ellipsoid Plot Program for Crystal
+Structure Illustrations is this one.
+
+(1) The program, examples, and online documentation are 
+  available on the WWW site at
+
+    http://www.ornl.gov/ortep/ortep.html
+
+(2) If you can use `pgplot' as screen drawing routine, type 
+
+    % make USEPGPLOT=yes
+
+(3) If you are not familier to `pgplot', note the followings:
+
+  Before you use ortep3 with pgplot library, 
+  run pgdisp server and setenv PGPLOT_DEV as
+
+    % pgdisp &
+    % setenv PGPLOT_DEV /xdisp
+
+  then you can see the ortep-drawing on a pgplot window.
+
+--
+rmiya
