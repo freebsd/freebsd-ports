@@ -3,7 +3,7 @@
 # Date created:         20 Sept 1998
 # Whom:                 brett@peloton.physics.montana.edu
 #
-# $Id$
+# $Id: Makefile,v 1.27 1998/11/18 23:14:01 billf Exp $
 #
 
 DISTNAME=       netscape-navigator-4.5b2
@@ -13,6 +13,7 @@ DISTFILES=      navigator-v45b2-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ports@FreeBSD.ORG
 
+BROKEN=		needs upgrade.
 NO_LATEST_LINK=	yes
 WRKSRC=         ${WRKDIR}/navigator-v45b2.x86-unknown-freebsd
 NO_BUILD=       Yes
