@@ -1,1 +1,7 @@
 @cwd /usr/local
+libexec/nntpd
+man/man8/nntpd.8c
+man/man8/mkgrdates.8c
+man/man1/nntpxmit.1
+bin/nntpxmit
+bin/shlock	#just in case anyone wants it
