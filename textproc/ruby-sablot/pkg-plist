@@ -3,6 +3,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample.xsl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample3.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/sablot.html
