@@ -1,5 +1,5 @@
---- scripts/safe_mysqld.sh.orig	Mon Jun  3 12:39:02 2002
-+++ scripts/safe_mysqld.sh	Mon Jun 17 19:07:26 2002
+--- scripts/safe_mysqld.sh.orig	Thu Oct 10 12:17:29 2002
++++ scripts/safe_mysqld.sh	Sun Nov 10 21:27:46 2002
 @@ -68,30 +68,9 @@
    done
  }
@@ -34,7 +34,15 @@
  
  MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
  MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
-@@ -239,34 +218,6 @@
+@@ -106,7 +85,6 @@
+ fi
+ 
+ # these rely on $DATADIR by default, so we'll set them later on
+-pid_file=
+ err_log=
+ SET_USER=0
+ 
+@@ -239,34 +217,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break
@@ -68,4 +76,4 @@
 -    done
    fi
  
-   echo "`date +'%y%m%d %H:%M:%S  mysqld restarted'`" | tee -a $err_log
+   echo "`date +'%y%m%d %H:%M:%S'`  mysqld restarted" | tee -a $err_log
