@@ -23,7 +23,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		ofx.0:${PORTSDIR}/finance/libofx \
 		db4.0:${PORTSDIR}/databases/db4 \
 		gw-standard.0:${PORTSDIR}/devel/g-wrap
-RUN_DEPENDS=	${LOCALBASE}/share/guile/slib/slibcat:${PORTSDIR}/devel/slib-guile \
+RUN_DEPENDS=	${LOCALBASE}/share/guile/slib/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
