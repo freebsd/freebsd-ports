@@ -22,7 +22,7 @@
 %%SITE_PERL%%/auto/Heap/Fibonacci/autosplit.ix
 %%SITE_PERL%%/auto/Heap/autosplit.ix
 @dirrm %%SITE_PERL%%/Heap/Elem
-@dirrm %%SITE_PERL%%/Heap
+@unexec rmdir %D/%%SITE_PERL%%/Heap 2>/dev/null || true
 @dirrm %%SITE_PERL%%/auto/Heap/Binary
 @dirrm %%SITE_PERL%%/auto/Heap/Binomial
 @dirrm %%SITE_PERL%%/auto/Heap/Fibonacci
@@ -32,6 +32,6 @@
 @dirrm %%SITE_PERL%%/auto/Heap/Elem/RefRev
 @dirrm %%SITE_PERL%%/auto/Heap/Elem/Str
 @dirrm %%SITE_PERL%%/auto/Heap/Elem/StrRev
-@dirrm %%SITE_PERL%%/auto/Heap/Elem
-@dirrm %%SITE_PERL%%/auto/Heap
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap
+@unexec rmdir %D/%%SITE_PERL%%/auto/Heap/Elem 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Heap 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap 2>/dev/null || true
