@@ -1,5 +1,5 @@
 #!/bin/sh
-CONFIG=%%PREFIX%%/pglogd.conf
+CONFIG=%%PREFIX%%/etc/pglogd.conf
 PID=/var/run/pglogd.pid
 
 case "$1" in

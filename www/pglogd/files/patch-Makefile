@@ -1,6 +1,6 @@
---- Makefile	Sat Jan 19 11:05:45 2002
-+++ Makefile.new	Wed Apr 23 17:28:05 2003
-@@ -31,7 +31,7 @@
+--- Makefile.orig	Wed Nov  5 18:41:01 2003
++++ Makefile	Sun Feb 22 21:15:50 2004
+@@ -31,16 +31,15 @@
  #
  
  # Change this to your PostgreSQL install directroy.
@@ -9,17 +9,36 @@
  
  
  ### NO NEED TO EDIT BELOW THIS LINE ###
-@@ -56,3 +56,13 @@
  
- pglog_dump : ${SRCS_DUMP} ${HDRS_DUMP}
- 	${CC} ${COPTS} -o $@ ${CFLAGS} ${LDFLAGS} ${LIBS} ${SRCS_DUMP}
+ CC = gcc
+-COPTS = -O -Wall
+ LIBS = -lpq
+-CFLAGS = -I${PGDIR}/include
+-LDFLAGS = -L${PGDIR}/lib
++CFLAGS+= -I${PGDIR}/include
++LDFLAGS+= -L${PGDIR}/lib
+ 
+ 
+ SRCS_LOG = pglogd.c
+@@ -51,7 +50,19 @@
+ all : pglogd pglogctl
+ 
+ pglogd : ${SRCS_LOG} ${HDRS_LOG}
+-	${CC} ${COPTS} -o $@ ${CFLAGS} ${LDFLAGS} ${LIBS} ${SRCS_LOG}
++	${CC} -o $@ ${CFLAGS} ${LDFLAGS} ${LIBS} ${SRCS_LOG}
+ 
+ pglogctl : ${SRCS_LOGCTL}
+-	${CC} ${COPTS} -o $@ ${CFLAGS} ${LDFLAGS} ${LIBS} ${SRCS_LOGCTL}
++	${CC} -o $@ ${CFLAGS} ${LDFLAGS} ${LIBS} ${SRCS_LOGCTL}
 +
++PGLOGD_SHARE=	${PREFIX}/share/pglogd
 +install :
-+	install -m 750 -s -c pglogd ${PREFIX}/bin/
-+	install -m 755 -d ${PREFIX}/share/pglogd/
-+	install -m 644 -c pglogd_tables.sql ${PREFIX}/share/pglogd/pglogd_tables.sql
-+	install -m 644 -c README ${PREFIX}/share/pglogd/README
-+	install -m 644 -c CHANGELOG ${PREFIX}/share/pglogd/CHANGELOG
-+	install -m 644 -c weblog_daily.sql ${PREFIX}/share/pglogd/weblog_daily.sql
-+	install -m 644 -c queries.txt ${PREFIX}/share/pglogd/queries.txt
-+	install -m 644 -c pglogd.conf ${PREFIX}/etc/pglogd.conf.sample
++	install -m 750 -s -c pglogd ${PREFIX}/bin
++	install -m 750 -s -c pglogctl ${PREFIX}/bin
++	install -m 755 -d ${PREFIX}/share/pglogd
++	install -m 644 -c pglogd_tables.sql ${PGLOGD_SHARE}
++	install -m 644 -c README ${PGLOGD_SHARE}
++	install -m 644 -c CHANGELOG ${PGLOGD_SHARE}
++	install -m 644 -c weblog_daily.sql ${PGLOGD_SHARE}
++	install -m 644 -c queries.txt ${PGLOGD_SHARE}
++	install -m 644 -c pglogd.conf ${PGLOGD_SHARE}
