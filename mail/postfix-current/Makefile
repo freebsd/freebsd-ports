@@ -15,7 +15,6 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSIONRAW=	2.2-20050227
 PORTVERSION=	${PORTVERSIONRAW:S/-/./}
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
@@ -32,6 +31,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A secure alternative to widely-used Sendmail
+
+PORTVERSIONRAW=	2.3-20050304
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 NO_LATEST_LINK=	yes
