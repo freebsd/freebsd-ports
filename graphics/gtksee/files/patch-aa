@@ -1,0 +1,10 @@
+--- src/im_xcf.c.orig	Tue Oct 20 14:45:12 1998
++++ src/im_xcf.c	Sun Nov 22 10:36:32 1998
+@@ -21,6 +21,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <netinet/in.h>
+ 
+ #include <gtk/gtk.h>
