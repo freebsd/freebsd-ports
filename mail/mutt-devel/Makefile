@@ -81,7 +81,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -121,8 +121,8 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
 USE_REINPLACE=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
+USE_AUTOMAKE_VER=	18
+USE_AUTOCONF_VER=	259
 USE_OPENSSL=	yes
 
 PLIST=		${WRKDIR}/PLIST
@@ -169,13 +169,13 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 WITH_MUTT_NCURSES=	yes
 .endif
 .if defined(WITH_MUTT_NCURSES)
-USE_NCURSES=	yes
+MUTT_USES_NCURSES=	yes
 .endif
-.if defined(WITH_MUTT_SLANG) && !defined(USE_NCURSES)
-USE_SLANG=	yes
+.if defined(WITH_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
+MUTT_USES_SLANG=	yes
 .endif
-.if !defined(USE_NCURSES) && !defined(WITHOUT_MUTT_NCURSES) && !defined(USE_SLANG)
-USE_NCURSES=	yes
+.if !defined(MUTT_USES_NCURSES) && !defined(WITHOUT_MUTT_NCURSES) && !defined(MUTT_USES_SLANG)
+MUTT_USES_NCURSES=	yes
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
 SGML_USED=	no
@@ -194,10 +194,10 @@ USE_ICONV=	yes
 .if defined(NOPORTDOCS)
 SGML_USED=	no
 .endif
-.if defined(USE_NCURSES) && ${OSVERSION} < 400000
+.if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
-.elif defined(USE_SLANG)
+.elif defined(MUTT_USES_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
@@ -205,7 +205,8 @@ BROKEN=		"mutt-devel's SASL code appears to be broken"
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
+CFLAGS+=	-I${PREFIX}/include/db42
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
@@ -234,9 +235,9 @@ pre-configure::
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
-.if defined(USE_NCURSES) && ${OSVERSION} < 400000
+.if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
-.elif defined(USE_SLANG)
+.elif defined(MUTT_USES_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.slang.gz:vvv
 .endif
@@ -246,7 +247,7 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 .endif
-.if defined(WITHOUT_MUTT_ICONV) 
+.if defined(WITHOUT_MUTT_ICONV)
 CONFIGURE_ARGS+=	--disable-iconv
 .else
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
@@ -386,7 +387,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 .endif
 .endif
-.if defined(USE_SLANG)
+.if defined(MUTT_USES_SLANG)
 	@${ECHO} "====================================================" >> ${PKGMESSAGE}
 	@${ECHO} "You have installed ${PORTNAME} with SLANG support." >> ${PKGMESSAGE}
 	@${ECHO} "This may work for a color terminal only when defining" >> ${PKGMESSAGE}
