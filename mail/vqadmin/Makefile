@@ -12,6 +12,11 @@ MASTER_SITES= 	http://www.vpopmail.cx/
 
 MAINTAINER=	nbm@FreeBSD.org
 
+BUILD_DEPENDS= \
+        ${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+RUN_DEPENDS= \
+        ${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/www/cgi-bin.default/
 
