@@ -1,0 +1,11 @@
+--- configure.orig	Sun May 18 13:52:38 2003
++++ configure	Sun May 18 13:53:02 2003
+@@ -7319,6 +7319,8 @@
+ echo "${ECHO_T}Found GNOME - installing terminatorX.desktop." >&6
+ 		OPTION_GNOME="yes"
+     	else
++	    	GNOMEpresent_TRUE='#'
++		GNOMEpresent_FALSE=
+    		echo "$as_me:$LINENO: result: GNOME not found." >&5
+ echo "${ECHO_T}GNOME not found." >&6
+     	fi
