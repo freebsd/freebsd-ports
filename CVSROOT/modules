@@ -1999,6 +1999,7 @@ flowdesigner	ports/devel/flowdesigner
 flowscan	ports/net-mgmt/flowscan
 flphoto		ports/graphics/flphoto
 fltk		ports/x11-toolkits/fltk
+flu		ports/x11-toolkits/flu
 fluctuate	ports/biology/fluctuate
 fluidsynth	ports/audio/fluidsynth
 flux-art	ports/x11-themes/flux-art
