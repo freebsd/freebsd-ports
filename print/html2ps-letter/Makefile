@@ -3,7 +3,7 @@
 # Date created:		Sat Nov 22 12:54:50 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.3 1998/09/15 21:31:51 asami Exp $
+# $Id: Makefile,v 1.4 1998/10/20 01:45:48 steve Exp $
 #
 
 DISTNAME=	html2ps-1.0b1
@@ -28,6 +28,7 @@ IS_INTERACTIVE=	YES
 
 MAN1=		html2ps.1
 MAN5=		html2psrc.5
+SCRIPTS_ENV+=	PERL5=${PERL5}
 
 do-install:
 	@cd ${WRKSRC}; ${PERL5} install
