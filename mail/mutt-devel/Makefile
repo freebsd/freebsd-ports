@@ -118,6 +118,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		muttrc.5 mbox.5
 
+post-patch:
+	 @${PERL} -pi.fbsd -e 's,/usr/bin/gpg,${PREFIX}/bin/gpg,g' \
+		${WRKSRC}/contrib/gpg.rc
+
 pre-configure:
 	(cd ${WRKSRC}; aclocal -I m4)
 
