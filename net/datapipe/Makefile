@@ -16,7 +16,7 @@ DISTFILE=	datapipe-1.0.tar.gz
 MAINTAINER=	dbaker@FreeBSD.org
 
 do-build:
-	${CC} -o ${WRKDIR}/${DISTNAME}/datapipe ${WRKDIR}/${DISTNAME}/datapipe.c
+	${CC} ${CFLAGS} -o ${WRKDIR}/${DISTNAME}/datapipe ${WRKDIR}/${DISTNAME}/datapipe.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/datapipe ${PREFIX}/bin
