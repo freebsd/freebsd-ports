@@ -6,33 +6,13 @@
 #
 
 PORTNAME=	hat
-PORTVERSION=	2.00
+PORTVERSION=	2.02
 CATEGORIES=	devel haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A source-level tracer for Haskell 98
-
-.if defined(WITHOUT_NHC98)
-BROKEN=	does not build with ghc-5.04 for the time being
-.endif
-
-.if defined(WITH_GHC)
-.undef WITH_GHC
-.endif
-
-.if !defined(WITHOUT_NHC98)
-BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
-RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
-.else
-WITH_GHC=	yes
-BUILD_DEPENDS+=	hmake:${PORTSDIR}/devel/hs-hmake
-.endif
-.if defined(WITH_GHC)
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-.endif
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -42,64 +22,74 @@ USE_GNOME=	glib12
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-BROKEN=	does not build with gcc3x
+.if defined(WITH_NHC98) && ${OSVERSION} >= 500000
+BROKEN=	"does not build with nhc98 on this platform"
 .endif
 
-.if !defined(WITH_GHC) || defined(WITHOUT_NHC98)
-ALL_TARGET=	hat
+.if defined(WITH_NHC98)
+BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
+RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
+.else
+BUILD_DEPENDS=	hmake:${PORTSDIR}/devel/hs-hmake \
+		ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 .endif
-.if !defined(WITHOUT_NHC98)
+
+ALL_TARGET=	hat
+.if defined(WITH_NHC98)
+ALL_TARGET+=	hat-lib-nhc
+.else
+ALL_TARGET+=	hat-lib-ghc
+.endif
+
+.if defined(WITH_NHC98)
 PLIST_SUB+=	NHC98=""
+PLIST_SUB+=	GHC="@comment "
 .else
 PLIST_SUB+=	NHC98="@comment "
-.endif
-.if defined(WITH_GHC)
+GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
+			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
 PLIST_SUB+=	GHC=""
-.else
-PLIST_SUB+=	GHC="@comment "
+PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 .endif
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} --libdir=${PREFIX}/lib
-.if !defined(WITHOUT_NHC98)
+.if defined(WITH_NHC98)
 CONFIGURE_ARGS+=	--buildwith=nhc98
 .else
 CONFIGURE_ARGS+=	--buildwith=ghc
 .endif
+
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc +docs
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/hat +docs
 .endif
 
 MAN1=		hat-detect.1 hat-observe.1 hat-stack.1 hat-trail.1
 
 pre-everything::
 	@${ECHO_CMD} ""
-.if defined(WITH_GHC) && !defined(WITHOUT_NHC98)
-	@${ECHO_CMD} " HAT will be built and installed for both nhc98 and ghc."
-.elif defined(WITHOUT_NHC98)
-	@${ECHO_CMD} " HAT will be built and installed for ghc only."
+.if !defined(WITH_NHC98)
+	@${ECHO_CMD} " HAT will be built and installed with ghc."
+	@${ECHO_CMD} " Define WITH_NHC98 to install with nhc98."
 .else
-	@${ECHO_CMD} " HAT will be built and installed for nhc98 only."
-#	@${ECHO_CMD} " Define WITH_GHC      to install for ghc, too."
-#	@${ECHO_CMD} " Define WITHOUT_NHC98 to install for ghc only."
-	@${ECHO_CMD} " HAT does not build with ghc-5.04 for the time being."
+	@${ECHO_CMD} " HAT will be built and installed with nhc98."
 .endif
 	@${ECHO_CMD} ""
 
 post-patch:
+.if defined(WITH_NHC98)
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-configure
+.endif
 	@${REINPLACE_CMD} -e "s|glib-config|${GLIB_CONFIG}|" \
-		${WRKSRC}/configure ${WRKSRC}/src/hat/tools/Makefile \
-		${WRKSRC}/src/hat/oldtools/Makefile
+		${WRKSRC}/configure ${WRKSRC}/src/hattools/Makefile
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${RM} -r ${PREFIX}/share/doc/hat/CVS
-.for ending in aux log
-	@${RM} ${PREFIX}/share/doc/hat/tutorial1.${ending}
-.endfor
-.for ending in aux log out toc
-	@${RM} ${PREFIX}/share/doc/hat/hatuser.${ending}
-.endfor
+.if !defined(WITH_NHC98)
+	@${INSTALL_DATA} ${WRKSRC}/lib/ix86-FreeBSD/hatlib/ghc/hat-package.conf \
+		${PREFIX}/lib/ix86-FreeBSD
+.endif
+.if !defined(NOPORTDOCS)
+	@rm -rf ${PREFIX}/share/doc/hat/CVS
 .endif
 
 .include <bsd.port.post.mk>
