@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-#	$FreeBSD$
-#
-
-PW="/usr/sbin/pw"
-
-${PW} usermod www -d /nonexistent -s /sbin/nologin
-

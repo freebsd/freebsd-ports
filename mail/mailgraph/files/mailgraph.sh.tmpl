@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: mailgraph
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable mailgraph:
+#
+# mailgraph_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=mailgraph
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/mailgraph.pl > /dev/null 2>&1
+command_interpreter=perl
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+    rm -f $pidfile
+}
+
+mailgraph_enable=${mailgraph_enable:-"NO"}
+mailgraph_pidfile=${mailgraph_pidfile:-"%%DATADIR%%/mailgraph.pid"}
+mailgraph_flags=${mailgraph_flags:-"--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --ignore-localhost --daemon --daemon-pid=${mailgraph_pidfile}"}
+mailgraph_user=${mailgraph_user:-"www"}
+mailgraph_chdir=${mailgraph_chdir:-"%%DATADIR%%"}
+
+load_rc_config $name
+
+pidfile=${mailgraph_pidfile}
+
+run_rc_command "$1"
