@@ -19,7 +19,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql=yes \
 			--with-mysqlinclude=${LOCALBASE}/include/mysql \
 			--with-mysqllib=${LOCALBASE}/lib/mysql

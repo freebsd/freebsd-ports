@@ -16,8 +16,9 @@ DISTNAME=	Rogue_714
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=    ${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
+
+USE_MYSQL=	YES
 
 NO_BUILD=	yes
 WRKSRC=         ${WRKDIR}/pn_714

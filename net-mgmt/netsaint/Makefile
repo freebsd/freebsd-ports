@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--with-command-user=netsaint \
 INSTALL_TARGET=	all install config install-config install-daemoninit install-commandmode
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	YES
 CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-inc=${LOCALBASE}/include/mysql \
 		--with-mysql-xdata
