@@ -1,0 +1,7 @@
+bin/formmailtest
+bin/httptest
+bin/relaytest
+bin/socks4test
+bin/socks5test
+bin/spamtrap
+etc/dsbl.conf
