@@ -8,8 +8,8 @@
 PORTNAME=	wml
 PORTVERSION=	2.0.8
 CATEGORIES=	www lang
-MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
-		ftp://ftp.engelschall.com/sw/wml/
+MASTER_SITES=	http://thewml.org/distrib/ \
+		ftp://thewml.org/distrib/
 
 MAINTAINER=	rse@engelschall.com
 
