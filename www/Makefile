@@ -251,7 +251,6 @@
     SUBDIR += openvrml
     SUBDIR += opera
     SUBDIR += orion
-    SUBDIR += orion-devel
     SUBDIR += p5-Apache-ASP
     SUBDIR += p5-Apache-AddHostPath
     SUBDIR += p5-Apache-Admin-Config
