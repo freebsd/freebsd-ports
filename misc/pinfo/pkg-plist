@@ -1,5 +1,8 @@
 bin/pinfo
 etc/pinforc
+@unexec install-info --delete --info-dir=%D/info %D/info/pinfo.info
+info/pinfo.info
+@exec install-info --info-dir=%D/info %D/info/pinfo.info
 share/locale/cs/LC_MESSAGES/pinfo.mo
 share/locale/de/LC_MESSAGES/pinfo.mo
 share/locale/pl/LC_MESSAGES/pinfo.mo
