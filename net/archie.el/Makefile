@@ -28,7 +28,7 @@ XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 PLIST_FILES=	share/emacs/site-lisp/archie.el \
 		lib/xemacs/site-lisp/archie.el
-PLIST_DIRS=	share/emacs/site-lisp lib/xemacs/site-lisp
+PLIST_DIRS=	lib/xemacs/site-lisp
 
 do-extract:
 	${MKDIR} ${WRKDIR}
