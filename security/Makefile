@@ -65,6 +65,7 @@
     SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gpgme
+    SUBDIR += gringotts
     SUBDIR += gtk-knocker
     SUBDIR += gtkportscan
     SUBDIR += hashish

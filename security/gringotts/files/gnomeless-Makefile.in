@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jul  6 16:04:36 2002
++++ Makefile.in	Sat Jul  6 16:05:17 2002
+@@ -366,7 +366,7 @@
+ install-data: install-data-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ install: install-recursive
+ uninstall-am: uninstall-DsktpDATA uninstall-local
+ uninstall: uninstall-recursive
