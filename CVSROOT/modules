@@ -2050,6 +2050,7 @@ gicq		ports/net/gicq
 gif2png		ports/graphics/gif2png
 gifmerge	ports/graphics/gifmerge
 gifsicle	ports/graphics/gifsicle
+gift	ports/net/gift
 giftool		ports/graphics/giftool
 giftrans	ports/graphics/giftrans
 gigabase	ports/databases/gigabase
