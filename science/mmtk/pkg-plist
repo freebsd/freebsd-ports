@@ -1,4 +1,10 @@
 bin/tviewer
+%%PYTHON_INCLUDEDIR%%/MMTK/core.h
+%%PYTHON_INCLUDEDIR%%/MMTK/forcefield.h
+%%PYTHON_INCLUDEDIR%%/MMTK/forcefield_private.h
+%%PYTHON_INCLUDEDIR%%/MMTK/readdcd.h
+%%PYTHON_INCLUDEDIR%%/MMTK/trajectory.h
+%%PYTHON_INCLUDEDIR%%/MMTK/universe.h
 %%PYTHON_SITELIBDIR%%/MMTK/AtomEnvironment.py
 %%PYTHON_SITELIBDIR%%/MMTK/AtomEnvironment.pyc
 %%PYTHON_SITELIBDIR%%/MMTK/AtomEnvironment.pyo
@@ -955,6 +961,7 @@ bin/tviewer
 %%PORTDOCS%%share/examples/mmtk/Examples/Trajectories/trajectory_extraction.py
 %%PORTDOCS%%share/examples/mmtk/Examples/Trajectories/view_trajectory.py
 %%PORTDOCS%%share/examples/mmtk/Examples/Visualization/additional_objects.py
+@dirrm %%PYTHON_INCLUDEDIR%%/MMTK
 @dirrm %%PYTHON_SITELIBDIR%%/MMTK/Database/Atoms
 @dirrm %%PYTHON_SITELIBDIR%%/MMTK/Database/Complexes
 @dirrm %%PYTHON_SITELIBDIR%%/MMTK/Database/Groups
