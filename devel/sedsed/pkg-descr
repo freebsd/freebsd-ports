@@ -1,0 +1,4 @@
+SEDSED is a python script that introduces debug commands on a sed script. The
+debug commands are in sed and they show the pattern and hold space contents.
+Your own version of sed is used to run it. It's also a sed tokenizer and
+indenter.
