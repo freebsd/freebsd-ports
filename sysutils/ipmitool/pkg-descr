@@ -1,0 +1,11 @@
+Quoting IPMITool homepage:
+
+"IPMItool is a simple command-line interface to systems that support the
+Intelligent Platform Management Interface (IPMI) v1.5 specification. It
+provides the ability to read the SDR and print sensor values, display
+the contents of the SEL, print FRU information, read and set LAN
+configuration parameters, and perform chassis power control."
+
+Currently only LAN and LANPlus interfaces are supported on FreeBSD.
+
+WWW: http://ipmitool.sourceforge.net/
