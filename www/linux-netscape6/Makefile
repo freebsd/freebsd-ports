@@ -67,7 +67,7 @@ USE_XLIB=	yes
 WRKSRC=	${WRKDIR}/netscape-installer/xpi
 INSTALL_DIR=	${PREFIX}/lib/linux-netscape6
 PLIST=		${WRKDIR}/pkg-plist
-STARTUP_CMD=	netscape6
+STARTUP_CMD=	${WRKDIR}/netscape6
 
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
@@ -146,11 +146,13 @@ do-configure:
 #	- kldload linux
 #	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/netscape file:///dev/null
 #	@${ECHO} \"Factory not found\" and \"cannot open display\" errors here are normal.
-	${SED} -e "s;%%INSTALL_DIR%%;${INSTALL_DIR};g" \
-	${FILESDIR}/start.sh >${WRKDIR}/${STARTUP_CMD}
+	${ECHO_CMD}	"#!/bin/sh"		>  ${STARTUP_CMD}
+	${ECHO_CMD} -n	"cd "			>> ${STARTUP_CMD}
+	${ECHO_CMD}	${INSTALL_DIR}		>> ${STARTUP_CMD}
+	${ECHO_CMD}	"exec ./netscape"	>> ${STARTUP_CMD}
 
 pre-install:
-	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
+	${ECHO_CMD} bin/netscape6 > ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
 		${ECHO_CMD} lib/linux-netscape6/$${i} >> ${PLIST}; \
 	done
@@ -171,7 +173,7 @@ pre-package:
 do-install:
 	${MKDIR} ${INSTALL_DIR}
 	${CP} -Rp ${WRKSRC}/bin/* ${WRKSRC}/plugins ${INSTALL_DIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${STARTUP_CMD} ${PREFIX}/bin
 
 post-install:
 	${CAT} ${PKGMESSAGE}
