@@ -10,7 +10,8 @@
 #     Moved to:	Where the port was moved to, or which port users
 #		can and should migrate to (category/portname).
 #		Blank indicates that the port was deleted.
-#     Date:	When the moving or the removal was done (YYYY-MM-DD).
+#     Date:	When the moving or the removal was done (YYYY-MM-DD,
+#		in PST/PDT).
 #     Why:	The reason why the port was moved or removed.
 #
 # Keep this list sorted in the chronological order.  New entries must
@@ -52,4 +53,4 @@ japanese/mhonarc|www/mhonarc|2002-11-17|current www/mhonarc could use Japanese
 graphics/linux_mesa||2002-11-17|Port was broken and out of date
 audio/cdrdao|sysutils/cdrdao|2002-11-18|misfiled, burns data CDs too
 sysutils/pkgview|sysutils/gnome-pkgview|2002-11-20|author has changed the binary and package name
-japanese/tvi||2002-11-22|development discontinued and distfile unavailable
+japanese/tvi||2002-11-21|development discontinued and distfile unavailable
