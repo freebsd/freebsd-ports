@@ -1,0 +1,11 @@
+--- uwm/Makefile.in.orig	Tue Feb 12 07:17:11 2002
++++ uwm/Makefile.in	Tue Jul  2 21:47:02 2002
+@@ -90,7 +90,7 @@
+ bin_PROGRAMS = uwm
+ # When the library be ready
+ # uwm_LDADD= ../lib/libude.la
+-uwm_LDFLAGS = ${X_LIBS} ${X_EXTRA_LIBS} ${X_PRE_LIBS}
++uwm_LDFLAGS = ${X_LIBS} ${X_EXTRA_LIBS} ${X_PRE_LIBS} ${INTLLIBS}
+ # I think this should be diferent from the ude version.
+ INCLUDES = ${X_CFLAGS} -I../lib -DUWMVERSION=\"@VERSION@\" 	-DLOCALEDIR=\"${datadir}/locale\" -DUDE_DIR=\"${pkgdatadir}\"
+ 
