@@ -1,0 +1,13 @@
+Cooledit is a suite of programs consisting of the following:
+   - cooledit - a GUI based editor which allows you to call external programs
+	(for instance LaTeX on a LaTeX file)
+   - smalledit - a stripped down version of cooledit 
+   - coolman - a man page browser
+   - coolbrowse - a file system browser
+   - coolmessage - an interface to write that brings up a cool-styled window
+	with your message
+   - coolicon - a utility to place icons directly on your desktop which runs
+	under any window manager
+
+- Brett Taylor	
+brett@peloton.physics.montana.edu
