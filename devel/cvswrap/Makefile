@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       cvswrap
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=     devel
 MASTER_SITES=   http://people.freebsd.org/~alfred/sources/cvswrap/
 
