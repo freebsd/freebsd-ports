@@ -28,6 +28,8 @@ USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 
+LATEST_LINK=	openldap2
+
 CONFIGURE_ARGS=	--localstatedir=/var/db \
 		--with-threads \
 		--enable-shared \
