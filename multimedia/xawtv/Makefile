@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -49,6 +49,19 @@ ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS=	alpha i386 ia64
 .endif
 
+.if defined(WITH_LIBZVBI)
+LIB_DEPENDS+=	zvbi.2:${PORTSDIR}/devel/libzvbi
+CONFIGURE_ARGS+=--enable-zvbi
+.if ${OSVERSION} > 500000
+PLIST_SUB+=	ZVBI="" ZVBI5=""
+.else
+PLIST_SUB+=	ZVBI="" ZVBI5="@comment "
+.endif
+.else
+CONFIGURE_ARGS+=--enable-zvbi=no
+PLIST_SUB+=	ZVBI="@comment " ZVBI5="@comment "
+.endif
+
 .if defined(WITH_LIBDV)
 LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--enable-dv
@@ -80,6 +93,8 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "	WITH_LIBDV=yes    Enable reading/writing raw dv files"
 	@${ECHO} "	WITH_LIBQTIME=yes Enable quicktime support"
+	@${ECHO} "	WITH_LIBZVBI=yes  Enable libzvbi support"
+	@${ECHO} "	                  (scantv compiles, but doesn't work for me)"
 	@${ECHO} "	WITH_MMX=yes      Enable mmx support"
 	@${ECHO} ""
 
@@ -91,5 +106,10 @@ post-patch:
 .for i in ${FILES_LIBJPEG}
 	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
 .endfor
+
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e "s|FOUND_ZVBI|NOT_WORKING_&|g" \
+		${WRKSRC}/vbistuff/Subdir.mk
+.endif
 
 .include <bsd.port.post.mk>
