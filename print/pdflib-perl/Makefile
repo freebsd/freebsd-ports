@@ -5,14 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pdflib
-PORTREVISION=	1
-PORTEPOCH=	0
-CATEGORIES=	print
+CATEGORIES=	print perl
+
+MAINTAINER=	ale@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../pdflib
 
 WITH_PERL=	yes
-LATEST_LINK=	${PORTNAME}-perl
 
 .include "${MASTERDIR}/Makefile"
