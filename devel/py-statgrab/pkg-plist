@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/_statgrab.so
+%%PYTHON_SITELIBDIR%%/statgrab.py
+%%PYTHON_SITELIBDIR%%/statgrab.pyc
+%%PYTHON_SITELIBDIR%%/statgrab.pyo
