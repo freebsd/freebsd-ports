@@ -7,6 +7,14 @@
 # be edited and then saved to a file called Local/Makefile before first running
 # the make command.
 
+# Blank lines and lines starting with # are ignored. It is also permitted to
+# use the # character to add a comment to a setting, for example
+#
+# EXIM_GID=42   # the "mail" group
+#
+# Consequently, it is not possible to have the # character present in any
+# setting, but I can't think of any cases where this would be wanted.
+
 # Things that depend on the operating system have default settings in files
 # called OS/Makefile-<osname>. These can be overridden by creating files
 # called Local/Makefile-<osname>. In particular, the location of the X11
@@ -16,9 +24,22 @@
 # and XLFLAGS (linking flags). There are defaults in OS/Makefile-Default which
 # are overridden for some operating systems in the OS/Makefile-<osname> file.
 # If these are not right for you, put appropriate settings into a file called
-# Local/Makefile-<osname>. [In all cases "<osname>" stands for the name of
+# Local/Makefile-<osname>. In all cases "<osname>" stands for the name of
 # your operating system - look at the names in the OS directory to see which
-# names are recognized.]
+# names are recognized.
+
+# Another area of variability between systems is the type and location of the
+# dbm library package. Exim has support for ndbm, gdbm, and Berkeley db. By
+# default it assumes ndbm; this often works with gdbm or db, provided they
+# are correctly installed, via their compatibility interfaces. However, Exim
+# can also be configured to use the native calls for Berkeley db 1.85, and
+# there are some locking actions that can be varied by changing the
+# configuration. The defaults are set in OS/Makefile-Default, and can be
+# changed by putting things into an OS-specific Makefile, or indeed into the
+# main Local/Makefile if Exim is being compiled for a single OS only.
+
+# See also the file doc/dbm.discuss.txt for discussion about different dbm
+# libraries.
 ###############################################################################
 
 
@@ -36,6 +57,16 @@ BIN_DIRECTORY=/usr/local/sbin
 # installed by "make install" or "exim_intall".
 
 INFO_DIRECTORY=/usr/local/info
+
+
+# The following commands live in different places in some OS. The OS-specific
+# files should normally point to the right place, but they can be overridden
+# here if necessary.
+
+# CHOWN_COMMAND=/usr/bin/chown
+# CHGRP_COMMAND=/usr/bin/chgrp
+# MV_COMMAND=/bin/mv
+# RM_COMMAND=/bin/rm
 
 
 # The compress command is used by the exicyclog script to compress old log
@@ -108,14 +139,6 @@ DIRECTOR_SMARTUSER=yes
 # DB_DIRECTORY_MODE=0750
 
 
-# Database locking: When trying to obtain a lock on one of its database files,
-# there is a limit to the number of retries (default 10) and a time between
-# retries (default 5 seconds). These can be altered here.
-
-# DB_LOCK_RETRIES=10
-# DB_LOCK_SLEEP=5
-
-
 # Database file mode: The mode of files created in the "db" directory defaults
 # to 0640 in the source, and can be changed here.
 
@@ -130,9 +153,9 @@ EXICYCLOG_MAX=10
 
 # Running Exim not as root: A uid and gid for Exim can be specified here. These
 # are compiled into the binary, but can be changed by settings in the runtime
-# configuration file. The default in the code is -1, which means "unset" -
-# i.e. run as root unless specified otherwise at run time. Specifying 0 at
-# run time has the effect of unsetting any configured values.
+# configuration file. If EXIM_UID is not defined, the default in the code is to
+# run as root unless specified otherwise at run time. Specifying 0 at
+# run time has the effect of unsetting the values build into the binary.
 
 # The settings here must be numeric; the run time file allows names to
 # be used. When this uid and gid are set, the Exim binary still has to be
@@ -140,10 +163,10 @@ EXICYCLOG_MAX=10
 # 25 is to be run, but it gives up its privilege when possible. There is a
 # trade-off between security and efficiency, controlled by the runtime
 # "security" setting, which controls how privilege is released (setuid vs
-# seteuid). The default value of -1 here means "unset".
+# seteuid).
 
-# EXIM_GID=-1
-# EXIM_UID=-1
+# EXIM_UID=
+# EXIM_GID=
 
 
 # Compiling the Exim monitor: If you want to compile the Exim monitor,
@@ -188,11 +211,17 @@ LOG_FILE_PATH=/var/log/exim_%slog
 # EXIM_GID above, then that uid and gid must be able to create files in the
 # directory you have specified.
 
+# You do not have to define the log file path here; an option in the runtime
+# configuration file can also set it, and that overrides any setting here.
+# However, it is recommended that you set it here if it is a fixed path, so
+# that it is available right from the start of Exim's execution. Otherwise,
+# errors detected early on, for example errors in the configuration file,
+# cannot be logged.
 
-# If you do not set LOG_FILE_PATH, then Exim creates a directory called
-# "log" inside its spool directory (see SPOOL_DIRECTORY below) and uses that
-# with filenames "mainlog", "paniclog", etc. Its mode defaults to 0750 but
-# that can be changed here.
+# If you do not set LOG_FILE_PATH here or in the runtime configuration, Exim
+# creates a directory called "log" inside its spool directory (see
+# SPOOL_DIRECTORY below) and uses that with filenames "mainlog", "paniclog",
+# etc. Its mode defaults to 0750 but that can be changed here.
 
 # LOG_DIRECTORY_MODE=0750
 
@@ -238,6 +267,10 @@ PID_FILE_PATH=/var/run/exim%s.pid
 # create and write to the files. If the attempt to open the file fails, Exim
 # just refrains from trying to write the data.
 
+# The pid file path does not have to be set here; it can be also be set by an
+# option in the runtime configuration file, which takes precedence over any
+# setting here.
+
 
 # Included routers: These variables determine which individual router drivers
 # are included in the Exim binary. There are no defaults; those that are
@@ -260,17 +293,25 @@ ROUTER_QUERYPROGRAM=yes
 
 # The spool directory: This directory is where all the data for messages in
 # transit is kept. There is no default in the source, so its location must be
-# defined in a local configuration file. Exim creates it if it does not exist,
-# using the mode required for the sub-directory that it is trying to create at
-# the time. If a non-root uid and gid have been defined for Exim (either in
-# this configuration file, or by the runtime configuration options), then this
-# directory and all sub-directories and their files will be created with their
-# owners and groups set to Exim's uid and gid.
+# defined in a local configuration file, or in the runtime configuration. It
+# is recommended that you define it here if it is a fixed path, especially if
+# you have not defined LOG_FILE_PATH. Log files are then written in a sub-
+# directory of the spool directory, and it is helpful to have this defined
+# right from the start of execution so that, for example, errors in reading
+# the runtime configuration file can be logged.
 
-# Many installations will want something like this
+# Exim creates the spool directory if it does not exist, using the mode
+# required for the sub-directory that it is trying to create at the time. If a
+# non-root uid and gid have been defined for Exim (either in this configuration
+# file, or by the runtime configuration options), then this directory and all
+# sub-directories and their files will be created with their owners and groups
+# set to Exim's uid and gid.
+
+# Many installations will want something like this:
 # SPOOL_DIRECTORY=/var/spool/exim
 
-# Others may prefer to keep all Exim things under one directory
+# Others may prefer to keep all Exim things under one directory:
+# SPOOL_DIRECTORY=/usr/exim/spool
 
 SPOOL_DIRECTORY=/var/spool/exim
 

@@ -1,2 +1,3 @@
-MD5 (exim-1.60.tar.gz) = 407d501c807e88e2ee4ddb6cf50c4c8a
-MD5 (exim-texinfo-1.60.tar.gz) = 46c7261ef8332700c8dfa062eaf0f552
+MD5 (exim-1.70.tar.gz) = f2c71bb01595c3d0bcd060e5b0e8910e
+MD5 (exim-texinfo-1.70.tar.gz) = 47c705fa36cf7a179131c009f4ff2bd9
+MD5 (exim-1.70.patches) = b5f298db52e25b7248594e7ecf4f98be
