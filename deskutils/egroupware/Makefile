@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupWare
-PORTVERSION=	1.0.00.004
+PORTVERSION=	1.0.00.005
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	egroupware
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A web based GroupWare system
@@ -42,13 +42,16 @@ do-install:
 	${CHMOD} g+w ${DEST}/phpgwapi/images ${DEST}/fudforum
 	${CHGRP} ${WWWGRP} ${DEST}/phpgwapi/images ${DEST}/fudforum
 
-# postgresql.conf
+# --- postgresql.conf
 # tcpip_socket = true
 # ports = 5432
 #
-# pg_hba.conf
-# local egroupware trust
-# host egroupwaredbname all 127.0.0.1 255.255.255 md5
+# --- pg_hba.conf
+# local $dbname trust
+# host  $dbname all   127.0.0.1 255.255.255.255 md5
+#
+# --- php.ini
+# memory_limit = 16M (or above)
 #
 # createuser $dbuser -P -A -d
 # createdb -U $dbuser $dbname
