@@ -1,0 +1,23 @@
+--- Request/Makefile.PL.orig	Sat May  1 14:44:28 1999
++++ Request/Makefile.PL	Sun Apr 23 21:43:43 2000
+@@ -15,8 +15,8 @@
+     xsubpp("Request");
+ }
+ else {
+-    require Apache::src;
+-    my $src = Apache::src->new;
++    my $inc1 = `apxs -q INCLUDEDIR`;
++    my $inc2 = $inc1 ."/modules/perl";
+     use File::Path 'mkpath';
+     my $root = "../blib/arch/auto/libapreq";
+     mkpath $root, 1, 0755 unless -d $root;
+@@ -25,8 +25,7 @@
+     system "touch $root/libapreq.a";
+     WriteMakefile(
+ 	  @mm_args,
+-	  'INC'	=> "-I../c ". $src->inc,
+-	  'TYPEMAPS'  => $src->typemaps,
++	  'INC'	=> "-I../c -I$inc1 -I$inc2",
+           'LIBS' => "-L$root -lapreq",
+     );
+     unlink "$root/libapreq.a";
