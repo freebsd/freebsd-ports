@@ -1,0 +1,5 @@
+LibTomCrypt is a portable ANSI C cryptographic library that supports symmetric
+ciphers, one-way hashes, pseudo-random number generators, public key
+cryptography (via RSA,DH or ECC/DH) and a plethora of support routines.
+
+WWW: http://www.libtomcrypt.org
