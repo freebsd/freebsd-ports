@@ -175,15 +175,22 @@ lib/libnetsnmphelpers.so.%%shlib%%
 lib/libnetsnmpmibs.a
 lib/libnetsnmpmibs.so
 lib/libnetsnmpmibs.so.%%shlib%%
+lib/libnetsnmptrapd.a
+lib/libnetsnmptrapd.so
+lib/libnetsnmptrapd.so.%%shlib%%
 sbin/snmpd
 sbin/snmptrapd
+share/snmp/mib2c.access_functions.conf
 share/snmp/mib2c.array-user.conf
+share/snmp/mib2c.check_values.conf
+share/snmp/mib2c.check_values_local.conf
 share/snmp/mib2c.column_defines.conf
 share/snmp/mib2c.column_enums.conf
 share/snmp/mib2c.conf
 share/snmp/mib2c.create-dataset.conf
 share/snmp/mib2c.int_watch.conf
 share/snmp/mib2c.iterate.conf
+share/snmp/mib2c.iterate_access.conf
 share/snmp/mib2c.old-api.conf
 share/snmp/mib2c.scalar.conf
 share/snmp/mibs/AGENTX-MIB.txt
@@ -298,4 +305,5 @@ share/snmp/snmpconf-data/snmptrapd-data/traphandle
 %%WITHPERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
 %%WITHPERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
 %%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent
+%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP
 %%WITHPERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP 2>/dev/null || true

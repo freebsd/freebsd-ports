@@ -1,4 +1,4 @@
-This is UCD SNMP, a derivative of CMU's SNMP package.
+This is Net-SNMP (previously known as "ucd-snmp").
 
 Various tools relating to the Simple Network Management Protocol including: 
 

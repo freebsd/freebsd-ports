@@ -51,7 +51,7 @@ MAN1=		mib2c.1 \
 		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 \
 		snmpdelta.1 snmpdf.1 snmpget.1 snmpgetnext.1 snmpinform.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
-		snmptranslate.1 snmptrap.1 snmpusm.1 snmpwalk.1
+		snmptranslate.1 snmptrap.1 snmpusm.1 snmpvacm.1 snmpwalk.1
 MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		get_module_node.3 init_mib.3 init_mib_internals.3 mib_api.3 \
 		netsnmp_agent.3 netsnmp_bulk_to_next.3 netsnmp_debug.3 \
@@ -76,7 +76,14 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_sess_read.3 snmp_sess_select_info.3 \
 		snmp_sess_send.3 snmp_sess_session.3 snmp_sess_timeout.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
-		snmp_timeout.3 snmp_trap_api.3
+		snmp_timeout.3 snmp_trap_api.3 \
+		netsnmp_Container_iterator.3 netsnmp_baby_steps.3 \
+		netsnmp_cache_handler.3 netsnmp_container.3 \
+		netsnmp_deprecated.3 netsnmp_iterator_info_s.3 \
+		netsnmp_leaf.3 netsnmp_mfd_pdu_context_s.3 \
+		netsnmp_row_merge.3 netsnmp_scalar_group_group.3 \
+		netsnmp_stash_cache.3 netsnmp_utilities.3
+
 .if !defined(WITHOUT_PERL)
 MAN3PERL=	NetSNMP::default_store.3 NetSNMP::ASN.3 NetSNMP::OID.3 \
 		NetSNMP::agent::default_store.3 \
@@ -119,7 +126,7 @@ post-build:
 
 pre-install:
 	-@[ -f ${STARTUP_FILE} ] && \
-	 (echo "Remove old ${STARTUP_FILE} before install." && exit 1)
+	 (${ECHO} "Remove old ${STARTUP_FILE} before install." && exit 1)
 
 post-install:
 	@( cd ${PREFIX}/bin && ${STRIP_CMD} ${BIN} )
@@ -132,7 +139,8 @@ post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+# Maintainer's note:
+#   Don't forget to bump library version in these ports.
+#   lang/php4,lang/php5,net/braa,net/docsis,net/ethereal,net/mbrowse,net/quagga,net/tethereal,net/zabbix,security/libfwbuilder
 
-# Dependency:
-# lang/php4,net/braa,net/docsis,net/ethereal,net/mbrowse,net/tethereal,net/zabbix,security/libfwbuilder
+.include <bsd.port.post.mk>
