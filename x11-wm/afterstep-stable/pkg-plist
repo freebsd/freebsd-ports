@@ -7,8 +7,8 @@ bin/Wharf
 bin/WinList
 bin/WinTabs
 bin/afterstep
+bin/afterstep-config
 bin/afterstepdoc
-bin/ascolor
 bin/ascommand.pl
 bin/importasmenu
 bin/installastheme.pl
@@ -39,6 +39,8 @@ include/libAfterStep/screen.h
 include/libAfterStep/session.h
 include/libAfterStep/shape.h
 include/libAfterStep/wmprops.h
+lib/libAfterConf.a
+lib/libAfterStep.a
 share/afterstep/animate
 share/afterstep/autoexec
 share/afterstep/backgrounds/.Cell
@@ -823,6 +825,7 @@ share/afterstep/doc/html/Base.html
 share/afterstep/doc/html/Bevel.html
 share/afterstep/doc/html/ColorScheme.html
 share/afterstep/doc/html/Feel.html
+share/afterstep/doc/html/FeelWindowBox.html
 share/afterstep/doc/html/Functions.html
 share/afterstep/doc/html/Glossary.html
 share/afterstep/doc/html/Gravity.html
@@ -832,6 +835,7 @@ share/afterstep/doc/html/MyFrame.html
 share/afterstep/doc/html/MyStyle.html
 share/afterstep/doc/html/Pager.html
 share/afterstep/doc/html/PagerDecorations.html
+share/afterstep/doc/html/Placement.html
 share/afterstep/doc/html/SupportedHints.html
 share/afterstep/doc/html/TbarLayout.html
 share/afterstep/doc/html/Wharf.html
@@ -1620,8 +1624,8 @@ share/afterstep/doc/html/data/desktop/icons/mini-recycler.xpm.html
 share/afterstep/doc/html/data/desktop/icons/mini-recycler.xpm.png
 share/afterstep/doc/html/data/desktop/icons/monalisa.xpm.html
 share/afterstep/doc/html/data/desktop/icons/monalisa.xpm.png
-share/afterstep/doc/html/data/desktop/icons/monitor-bsd.xpm.png
 share/afterstep/doc/html/data/desktop/icons/monitor-bsd.xpm.html
+share/afterstep/doc/html/data/desktop/icons/monitor-bsd.xpm.png
 share/afterstep/doc/html/data/desktop/icons/netscape.xpm.html
 share/afterstep/doc/html/data/desktop/icons/netscape.xpm.png
 share/afterstep/doc/html/data/desktop/icons/normal/AquaFolder.html
