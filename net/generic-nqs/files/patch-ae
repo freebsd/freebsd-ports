@@ -1,0 +1,19 @@
+--- SETUP.orig	Sun Nov 14 21:18:57 1999
++++ SETUP	Sun Nov 14 21:19:31 1999
+@@ -1,16 +1,6 @@
+ #!/bin/sh
+ 
+-our_path="`echo $PATH | tr ':' ' '`"
+ our_shell="/bin/sh"
+-
+-for x in ksh bash ; do
+-  for y in $our_path ; do
+-    if [ -f "$y/$x" ]; then
+-      our_shell="$y/$x"
+-    fi
+-  done
+-done
+-
+ export our_shell
+ SETUP_CC="$CC"
+ export SETUP_CC

@@ -26,8 +26,15 @@ sbin/nqsmkdirs
 sbin/nqsmktrans
 sbin/pipeclient
 sbin/shlexefai
+sbin/OLDloaddaemon
+sbin/OLDnetdaemon
+sbin/OLDnetserver
+sbin/OLDnqsdaemon
+sbin/OLDnqsmkdirs
+sbin/OLDnqsmktrans
 lib/nqs/GNQS.VERSION
 lib/nqs/General.conf.def
 lib/nqs/qmgr.hlp
 lib/nqs/nmap/machines
 @unexec rm -rf %D/lib/nqs
+@unexec rm -rf XXXX
