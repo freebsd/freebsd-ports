@@ -388,6 +388,7 @@
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += textmaze
+    SUBDIR += thudboard
     SUBDIR += tictactoe3d
     SUBDIR += tileworld
     SUBDIR += tinymux
