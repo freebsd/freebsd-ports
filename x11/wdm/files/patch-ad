@@ -1,11 +1,11 @@
 --- doc/wdmLogin.man.orig	Fri May 21 20:49:56 1999
-+++ doc/wdmLogin.man	Fri May 21 20:50:09 1999
++++ doc/wdmLogin.man	Sat Jan  8 03:33:27 2000
 @@ -49,7 +49,7 @@
  to an image file (tiff, png, jpeg and xpm allowed) and it will be
  scaled to use the full screen.
  .SH FILES
 -\fBwdmLogin\fP can be customized by modifying \fI/etc/X11/wdm/wdm-config\fP.
-+\fBwdmLogin\fP can be customized by modifying \fI%%X11BASE%%/lib/X11/wdm/wdm-config\fP.
++\fBwdmLogin\fP can be customized by modifying \fI%%PREFIX%%/lib/X11/wdm/wdm-config\fP.
  .SH SEE ALSO
  .BR wdm (1x)
  .SH AUTHOR

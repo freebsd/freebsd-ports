@@ -13,13 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPIC}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		gif.5:${PORTSDIR}/graphics/giflib \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		wraster.3:${PORTSDIR}/x11-wm/windowmaker \
-		PropList.2:${PORTSDIR}/devel/libPropList
+LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -42,7 +36,7 @@ MAN1=	wdm.1 wdmLogin.1
 DAEMONPIC=	daemon1-HQ-1280x960.jpg
 
 post-patch:
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/doc/*.man
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/doc/*.man
 
 pre-configure:
 	@(cd ${WRKSRC}; automake -a --include-deps)
