@@ -20,13 +20,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-SDK//}
-PLIST_SUB+=	TARGET_PREFIX=${TARGET_PREFIX:S/^${PREFIX}\///}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
 ONLY_FOR_ARCHS=	i386
-TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LINUX_SH?=	${LINUXBASE}/bin/sh
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
@@ -62,13 +62,13 @@ post-patch:
 	done
 
 do-install:
-	${MKDIR} ${TARGET_PREFIX}
-	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${TARGET_PREFIX} -xpf-
-	${LOCALBASE}/bin/registervm "${TARGET_PREFIX}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
+	${MKDIR} ${APP_HOME}
+	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${APP_HOME} -xpf-
+	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
 
 post-install:
 .if defined(WITH_JAPANESE_FONTS)
-	${LN} -sf ${X11BASE}/lib/X11/fonts/TrueType/wa*ttf ${TARGET_PREFIX}/jre/lib/fonts/
+	${LN} -sf ${X11BASE}/lib/X11/fonts/TrueType/wa*ttf ${APP_HOME}/jre/lib/fonts/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
