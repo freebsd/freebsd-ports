@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.28
+PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
@@ -35,7 +36,7 @@ WITH_DRWEBSMF_HOSTNAME!=hostname
 .if defined(BATCH)
 RANDOM_NUMBER=!!!___EDIT_THIS___!!!
 .else
-RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | md5
+RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | /sbin/md5
 .endif
 
 LANGS=en ru
