@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.51 1995/08/21 09:41:42 asami Exp $
+# $Id: Makefile,v 1.52 1995/08/26 07:49:59 asami Exp $
 #
 
+    SUBDIR += apache
     SUBDIR += archie
     SUBDIR += cern_httpd
     SUBDIR += cern_linemode
