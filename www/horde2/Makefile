@@ -1,4 +1,4 @@
-# Ports collection makefile for:  horde-devel
+# Ports collection makefile for:  horde2
 # Date created:			  Sun Oct 07, 2001
 # Whom:				  Thierry Thomas (<thierry@thomas.as>)
 #
@@ -10,7 +10,6 @@ PORTVERSION=	2.0
 PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	thierry@pompo.net
 

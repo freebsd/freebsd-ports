@@ -35,7 +35,7 @@ LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2 \
 .endif
 .endif
 
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde-devel
+RUN_DEPENDS+=  ${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 
 NO_BUILD=	yes
 DOCS=		COPYING README docs/CHANGES docs/CREDITS \

@@ -121,7 +121,7 @@ pre-install:
 # N.B.: database dependencies are binded with mod_php#, neither by Horde nor IMP.
 	@if [ -f ${IMPDIR}/index.php ]; then \
 	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please deinstall the port mail/imp-devel." ; \
+	    ${ECHO_MSG} "Please deinstall the port mail/imp3." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
