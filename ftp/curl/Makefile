@@ -18,9 +18,9 @@ MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 MAINTAINER=	kris@FreeBSD.org
 
 .if defined(WITH_SSL)
-USE_OPENSSL=   RSA
+USE_OPENSSL=	RSA
 .endif
- 
+
 .include <bsd.port.pre.mk>
 
 .if defined(USE_OPENSSL)
@@ -29,7 +29,7 @@ CONFIGURE_ENV+=	CPPFLAGS='-I${OPENSSLINC} -I${OPENSSLINC}/openssl' \
 .endif
 
 .if defined(OPENSSL_RSAREF)
-CONFIGURE_ENV+= LIBS="-L${OPENSSLLIB} -lcrypto -lRSAglue -L${LOCALBASE}/lib -lrsaref"
+CONFIGURE_ENV+=	LIBS="-L${OPENSSLLIB} -lcrypto -lRSAglue -L${LOCALBASE}/lib -lrsaref"
 .endif
 
 GNU_CONFIGURE=	yes

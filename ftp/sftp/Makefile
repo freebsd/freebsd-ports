@@ -16,7 +16,7 @@ RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 
 RESTRICTED=	"Calls external cryptographic routines."
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--enable-remotepath=${PREFIX}/libexec

@@ -15,7 +15,7 @@ MAINTAINER=	jmrobins@jmirror.ruin.org
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	YES
-NO_BUILD=       YES
+NO_BUILD=	YES
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/jmirror
