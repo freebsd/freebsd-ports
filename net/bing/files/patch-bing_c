@@ -1,14 +1,50 @@
 $OpenBSD: patch-bing_c,v 1.1 2002/09/17 09:06:23 pvalchev Exp $
---- bing.c.orig	Thu Jul 20 17:45:32 1995
-+++ bing.c	Tue Sep 17 02:56:49 2002
-@@ -1228,17 +1228,30 @@ int main(argc, argv)
+--- bing.c.orig	Fri Jan 19 19:28:53 2001
++++ bing.c	Sun Aug 15 18:51:05 2004
+@@ -158,7 +158,7 @@
+ #include <sys/socket.h>
+ #include <sys/file.h>
+ #include <sys/time.h>
+-#include <sys/signal.h>
++#include <signal.h>
+ 
+ #include <netinet/in_systm.h>
+ #include <netinet/in.h>
+@@ -167,6 +167,7 @@
+ #ifndef linux
+ #include <netinet/ip_var.h>
+ #endif /* linux */
++#include <arpa/inet.h>
+ #include <netdb.h>
+ #include <unistd.h>
+ #include <stdio.h>
+@@ -174,6 +175,8 @@
+ #include <errno.h>
+ #include <string.h>
+ #include <limits.h>
++#include <stdlib.h>
++#include <err.h>
+ 
+ #include "sysdep.h"
+ 
+@@ -647,7 +650,7 @@
+ #ifdef linux
+ 		(void)printf("(New addr: 0x%08lx)\n", icp->icmp_gwaddr);
+ #else
+-		(void)printf("(New addr: 0x%08lx)\n", icp->icmp_gwaddr.s_addr);
++		(void)printf("(New addr: %s)\n", inet_ntoa(icp->icmp_gwaddr));
+ #endif /* linux */
+ 		pr_retip((struct ip *)ICMP_TO_DATA(icp));
+ 		break;
+@@ -1231,17 +1234,30 @@
  	struct hoststats *hs1, *hs2;
  	int ntrans, nloops, bits;
  	int i;
 -	int ch, hold, recv_packlen, preload;
 +	int ch, hold = 1, recv_packlen, preload;
  	u_char *datap, *recv_packet;
- 	char *target1, *target2, *malloc();
+-	char *target1, *target2, *malloc();
++	char *target1, *target2;
  	u_char ttl, loop;
  #ifdef IP_OPTIONS
  	char rspace[3 + 4 * NROUTES + 1];	/* record route space */
@@ -34,7 +70,7 @@ $OpenBSD: patch-bing_c,v 1.1 2002/09/17 09:06:23 pvalchev Exp $
  	preload = 0;
  	datap = &outpack[8 + sizeof(struct timeval)];
  	while ((ch = getopt(argc, argv, "I:LRc:dDe:fh:i:l:nPp:rS:s:t:vVwz")) != EOF)
-@@ -1395,15 +1408,6 @@ int main(argc, argv)
+@@ -1398,15 +1414,6 @@
  
  	ident = getpid() & 0xFFFF;
  
