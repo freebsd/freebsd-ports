@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.10
+PORTVERSION=	5.11
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
@@ -23,7 +23,7 @@ CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 		--without-nas --without-gtk --without-esound
 .if defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS+= --enable-kerberos4
-KRB4LIB=	-lcom_err
+KRB4LIB=	-lcom_err -lcrypto
 .endif
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+= --enable-kerberos5
