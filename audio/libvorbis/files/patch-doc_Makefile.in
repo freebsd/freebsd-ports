@@ -1,12 +1,14 @@
+
 $FreeBSD$
---- doc/Makefile.in.orig	Wed Mar 21 15:53:20 2001
-+++ doc/Makefile.in	Wed Mar 21 15:53:49 2001
-@@ -89,7 +89,7 @@ AUTOMAKE_OPTIONS = foreign
- 
+
+--- doc/Makefile.in.orig	Fri Sep 24 02:11:04 2004
++++ doc/Makefile.in	Fri Sep 24 02:11:14 2004
+@@ -184,7 +184,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
  SUBDIRS = vorbisfile vorbisenc
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
  
- doc_DATA = v-comment.html vorbisword2.png white-ogg.png programming.html 	vorbis.html wait.png white-xifish.png vorbis-clip.txt 	vorbis-errors.txt
- 
+ ### all of the static docs, commited to SVN and included as is
+ static_docs = \
