@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Mar 19 02:31:59 2002
-+++ Makefile.in	Sun May  5 01:17:55 2002
-@@ -1,23 +1,25 @@
+--- Makefile.in.orig	Fri Aug 16 05:18:11 2002
++++ Makefile.in	Sun Oct 13 15:04:07 2002
+@@ -1,28 +1,31 @@
 -LIBS = -lslang -lm #-lefence
 -SHLIBS = -lslang -lm -lc
 +LIBS = -lslang -lm -lpopt -lncurses #-lefence
@@ -8,18 +8,19 @@
  
  GPM_SUPPORT=@gpm_support@
  
--CFLAGS = $(RPM_OPT_FLAGS) -Wall -I/usr/include/slang
+-CFLAGS = $(RPM_OPT_FLAGS) -Wall -I/usr/include/slang -D_GNU_SOURCE
 -ifeq ($(RPM_OPT_FLAGS),)
--CFLAGS += -g # -O2 -I/usr/include/slang
+-CFLAGS += -g 
 -endif
 +CFLAGS += -I${LOCALBASE}/include -I${PREFIX}/include
 +LDFLAGS += -L${LOCALBASE}/lib -L${PREFIX}/lib
  
--VERSION = @VERSION@
+ VERSION = @VERSION@
  CVSTAG = r$(subst .,-,$(VERSION))
  SONAME = @SONAME@
  
- PYTHONVERS = $(shell ls -d /usr/include/python* | sed "s|/usr/include/||g")
+-PYTHONVERS = $(shell ls -d /usr/include/python* | sed "s|/usr/include/||g")
++#PYTHONVERS = $(shell ls -d /usr/include/python* | sed "s|/usr/include/||g")
  
 -WHIPTCLSO=
 -#WHIPTCLSO=whiptcl.so
@@ -36,7 +37,13 @@
  TESTOBJS = test.o
  NDIALOGOBJS = whiptail.o dialogboxes.o
  WHIPTCLOBJS = whiptcl.o dialogboxes.o
-@@ -30,7 +32,7 @@
+ LIBNEWT = libnewt.a
+-LIBNEWTSH = libnewt.so.$(VERSION)
++LIBNEWTSH = libnewt.so.$(SONAME)
+ LIBNEWTSONAME = libnewt.so.$(SONAME)
+ LIBOBJS = newt.o button.o form.o checkbox.o entry.o label.o listbox.o \
+           scrollbar.o textbox.o scale.o grid.o windows.o buttonbar.o \
+@@ -30,7 +33,7 @@
  
  SHCFLAGS = -fPIC
  
@@ -45,7 +52,7 @@
  includedir = $(prefix)/include
  libdir = $(prefix)/lib
  bindir = $(prefix)/bin
-@@ -41,41 +43,37 @@
+@@ -41,41 +44,37 @@
  SOURCES = $(subst .o,.c,$(TESTOBJS) $(NDIALOGOBJS) $(LIBOBJS))
  
  SHAREDDIR = shared
@@ -99,7 +106,7 @@
  
  newt.o: newt.c Makefile
  	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
-@@ -96,7 +94,7 @@
+@@ -96,7 +95,7 @@
  sharedlib: $(LIBNEWTSH)
  
  $(LIBNEWTSH): $(SHAREDDIR) $(SHAREDOBJS)
@@ -108,7 +115,7 @@
  
  $(SHAREDDIR)/%.o : %.c
  	$(CC) $(SHCFLAGS) -c $(CFLAGS) -o $@ $<
-@@ -113,16 +111,11 @@
+@@ -113,16 +112,11 @@
  	install -m 644 $(LIBNEWT) $(instroot)/$(libdir)
  	install -s -m 755 whiptail $(instroot)/$(bindir)
  
@@ -126,7 +133,7 @@
  
  configure:  configure.in
  	autoconf
-@@ -140,7 +133,3 @@
+@@ -140,7 +134,3 @@
  	@rm -f /tmp/newt-$(VERSION).tar.gz
  	@echo " "
  	@echo "The final archive is ./newt-$(VERSION).tar.gz."

@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	newt
-PORTVERSION=	0.50.39
+PORTVERSION=	0.51.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		# ftp://ftp.redhat.com/pub/redhat/linux/rawhide/SRPMS/SRPMS/
 MASTER_SITE_SUBDIR=	perky
-PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
+PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}${I18NSUFFIX}
 
 MAINTAINER=	perky@FreeBSD.org
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		popt.0:${PORTSDIR}/devel/popt
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-VERSION=	50
+SOVERSION=	51
 TCL_VERSION?=	tcl8.3
 TCL_NODOT=	${TCL_VERSION:S/.//}
-MAKE_ENV+=	VERSION=${VERSION} CC=${CC} PCFLAGS="${CFLAGS}" TCLVERSION="${TCL_VERSION}"
-PLIST_SUB+=	VERSION=${VERSION} EXAMPLESDIR="${EXAMPLESDIR:S,${PREFIX}/,,}"
-CPIO?=		/usr/bin/cpio
+MAKE_ENV+=	CC=${CC} PCFLAGS="${CFLAGS}" TCLVERSION="${TCL_VERSION}"
+PLIST_SUB+=	SOVERSION=${SOVERSION} \
+		EXAMPLESDIR="${EXAMPLESDIR:S,${PREFIX}/,,}"
 
 .if !defined(WITHOUT_PYTHON)
 PYTHONSUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
@@ -46,15 +47,32 @@ PLIST_SUB+=	TCLOPT=""
 PLIST_SUB+=	TCLOPT="@comment "
 .endif
 
+_HAVE_WCHAR_LIB!=	grep wcwidth ${DESTDIR}/usr/lib/libc.so 2>/dev/null \
+			|| true
+.if empty(_HAVE_WCHAR_LIB)
+PATCH_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~perky/distfiles/
+PATCH_SITE_SUBDIR=	perky
+PATCHFILES=	newt-${PORTVERSION}-dei18n.diff.gz
+PATCH_DIST_STRIP=	-p1
+I18NSUFFIX=	-noi18n
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,^\(SONAME=\).*,\1${SOVERSION},g' \
+		${WRKSRC}/configure
+
 .if !defined(WITHOUT_PYTHON)
 post-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py build
 
 post-install:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py install --prefix=${PREFIX}
+	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py \
+		install --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/peanuts.py ${WRKSRC}/popcorn.py ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/peanuts.py ${WRKSRC}/popcorn.py \
+		${EXAMPLESDIR}
 .endif
 .endif
 

@@ -5,7 +5,7 @@ bin/whiptail
 %%TCLOPT%%lib/whiptcl.so
 lib/libnewt.a
 lib/libnewt.so
-lib/libnewt.so.%%VERSION%%
+lib/libnewt.so.%%SOVERSION%%
 include/newt.h
 %%PORTDOCS%%%%PYTHONOPT%%%%EXAMPLESDIR%%/peanuts.py
 %%PORTDOCS%%%%PYTHONOPT%%%%EXAMPLESDIR%%/popcorn.py
