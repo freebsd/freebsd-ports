@@ -1,19 +1,11 @@
-*** xkey.c.orig	Thu Sep 18 23:23:06 1997
---- xkey.c	Thu Sep 18 23:23:45 1997
-*************** if (cdtedrc && (fp=fopen(ftedrc,"r"))) {
-*** 563,569 ****
-  if (fp=fopen(
-  	strcat(strcat(strcpy(tt,(char *)getenv("HOME")),"/.Ted/"),ftedrc), "r"
-  )) 	return fp;
-! if (fp=fopen(strcat(strcpy(uu,"/usr/local/lib/Ted/"),ftedrc),"r"))
-  	return fp;
-  if (!depth) {
-  	if (cdtedrc)
---- 563,569 ----
-  if (fp=fopen(
-  	strcat(strcat(strcpy(tt,(char *)getenv("HOME")),"/.Ted/"),ftedrc), "r"
-  )) 	return fp;
-! if (fp=fopen(strcat(strcpy(uu,"/usr/X11R6/lib/X11/ted/"),ftedrc),"r"))
-  	return fp;
-  if (!depth) {
-  	if (cdtedrc)
+--- xkey.c.orig	Mon Nov  3 16:52:47 1997
++++ xkey.c	Mon Nov 10 09:34:52 1997
+@@ -602,7 +602,7 @@
+ if (fp=fopen(
+ 	strcat(strcat(strcpy(tt,(char *)getenv("HOME")),"/.Ted/"),ftedrc), "r"
+ )) 	return fp;
+-if (fp=fopen(strcat(strcat(strcpy(uu, TEDDIR),"/"),ftedrc),"r"))
++if (fp=fopen(strcat(strcat(strcpy(uu, "/usr/X11R6/lib/X11/ted/"),"/"),ftedrc),"r"))
+ 	return fp;
+ if (!depth) {
+ 	if (cdtedrc)

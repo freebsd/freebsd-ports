@@ -1,4 +1,6 @@
 bin/ted
 lib/X11/ted/ted.help
 lib/X11/ted/tedrc
+lib/X11/ted/tedrc.vi
+lib/X11/ted/tedrc.grep
 @dirrm lib/X11/ted

@@ -1,74 +1,47 @@
-*** Makefile.b5.orig	Fri Sep 19 01:15:03 1997
---- Makefile.b5	Fri Sep 19 01:18:22 1997
-***************
-*** 1,5 ****
-  CHINESE=1
-! TEDDIR=/usr/local/lib/Ted
-  ########## GCC/Linux ......  ############
-  CC=gcc
-  CComp=GCC
---- 1,5 ----
-  CHINESE=1
-! TEDDIR=/usr/X11R6/lib/X11/ted
-  ########## GCC/Linux ......  ############
-  CC=gcc
-  CComp=GCC
-*************** LDFLAGS= -L/usr/X11R6/lib
-*** 27,41 ****
-  #SUNKBD=-DSUNKBD
-  ###########################
-  
-! CFLAGS = -O -DCHINESE=$(CHINESE) -I$(XINC) -DCComp=$(CComp) $(SUNKBD)
-  #CFLAGS = -g -DCHINESE=$(CHINESE) -I$(XINC) -DCComp=$(CComp) -DDEBUG $(SUNKBD)
-  
-  OBJS =	e.o x.o m.o f.o b.o edln.o xcp.o s.o u.o misc.o twin.o dir.o xkey.o \
-  	cwin.o filebrowse.o cli_xcin.o kwcomp.o
-  
-! all:	ted ref ctags
-  ted:	$(OBJS)
-! 	$(CC) -g $(OBJS) -o $@ $(LDFLAGS) -lX11
-  #	strip $@
-  	echo '*** Finish ***'
-  ref:
---- 27,41 ----
-  #SUNKBD=-DSUNKBD
-  ###########################
-  
-! CFLAGS += -DCHINESE=$(CHINESE) -I$(XINC) -DCComp=$(CComp) $(SUNKBD)
-  #CFLAGS = -g -DCHINESE=$(CHINESE) -I$(XINC) -DCComp=$(CComp) -DDEBUG $(SUNKBD)
-  
-  OBJS =	e.o x.o m.o f.o b.o edln.o xcp.o s.o u.o misc.o twin.o dir.o xkey.o \
-  	cwin.o filebrowse.o cli_xcin.o kwcomp.o
-  
-! all:	ted #ref ctags
-  ted:	$(OBJS)
-! 	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11
-  #	strip $@
-  	echo '*** Finish ***'
-  ref:
-*************** ctags:
-*** 45,55 ****
-  	$(CC) $(CFLAGS) ctags.c -o $@
-  	strip $@
-  install:
-! 	cp ted ref ctags /usr/local/bin
-  	if [ ! -d $(TEDDIR) ]; then mkdir $(TEDDIR); fi
-! 	cp tedrc ted.help $(TEDDIR)
-! cli_xcin.o:
-! 	ln -s ../big5-pack/xcin/cli_xcin.o .
-  clean:
-  	rm -f $(OBJS) ted core *~ *_
-  clb5:
---- 45,56 ----
-  	$(CC) $(CFLAGS) ctags.c -o $@
-  	strip $@
-  install:
-! 	install -c -s -o bin -g bin -m 0755 ted /usr/X11R6/bin
-  	if [ ! -d $(TEDDIR) ]; then mkdir $(TEDDIR); fi
-! 	install -c -o bin -g bin -m 0555 tedrc $(TEDDIR)
-! 	install -c -o bin -g bin -m 0555 ted.help $(TEDDIR)
-! #cli_xcin.o:
-! #	ln -s ../big5-pack/xcin/cli_xcin.o .
-  clean:
-  	rm -f $(OBJS) ted core *~ *_
-  clb5:
+--- Makefile.orig	Mon Nov  3 18:48:59 1997
++++ Makefile	Mon Nov 10 09:36:00 1997
+@@ -1,5 +1,5 @@
+-CHINESE=0
+-TEDDIR=/usr/local/lib/Ted
++CHINESE=1
++TEDDIR=/usr/X11R6/lib/X11/ted
+ ########## GCC/Linux ......  ############
+ CC=gcc
+ XINC=-I/usr/X11R6/include
+@@ -34,14 +34,14 @@
+ #SUNKBD=-DSUNKBD
+ ###########################
+ 
+-CFLAGS = -O -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
++CFLAGS += -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
+ #CFLAGS = -g -DCHINESE=$(CHINESE) $(XINC) -DDEBUG $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
+ #CFLAGS = -g -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
+ 
+ OBJS =	e.o x.o m.o f.o b.o edln.o xcp.o s.o u.o misc.o twin.o dir.o xkey.o \
+-	cwin.o filebrowse.o kwcomp.o
++	cwin.o filebrowse.o kwcomp.o cli_xcin.o
+ 
+-all:	ted ref ctags tedrc
++all:	ted tedrc #ref ctags tedrc
+ ted:	$(OBJS)
+ 	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11
+ #	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11 -lefence
+@@ -56,11 +56,14 @@
+ 	$(CC) $(CFLAGS) ctags.c -o $@
+ 	strip $@
+ install:
+-	cp ted ref ctags /usr/local/bin
++	install -c -s -o bin -g bin -m 0755 ted /usr/X11R6/bin
+ 	if [ ! -d $(TEDDIR) ]; then mkdir $(TEDDIR); fi
+-	cp tedrc tedrc.vi tedrc.grep ted.help $(TEDDIR)
+-cli_xcin.o:
+-	ln -s ../big5-pack/xcin/cli_xcin.o .
++	install -c -o bin -g bin -m 0444 tedrc $(TEDDIR)
++	install -c -o bin -g bin -m 0444 tedrc.vi $(TEDDIR)
++	install -c -o bin -g bin -m 0444 tedrc.grep $(TEDDIR)
++	install -c -o bin -g bin -m 0444 ted.help $(TEDDIR)
++#cli_xcin.o:
++#	ln -s ../big5-pack/xcin/cli_xcin.o .
+ clean:
+ 	rm -f $(OBJS) ted core *~ *_
+ clb5:

@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ted
-# Version required:	3.6a
+# Version required:	4.0f
 # Date Created:		18 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/01 09:34:48 max Exp $
 #
 
-DISTNAME=	ted3.6a
-PKGNAME=		zh-ted-3.6a
+DISTNAME=		ted4.0f
+PKGNAME=		zh-ted-4.0f
 CATEGORIES=		chinese editors
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors/
@@ -17,6 +17,5 @@ MAINTAINER=	vanilla@MinJe.com.TW
 
 USE_X11=	yes
 WRKSRC=		${WRKDIR}/ted
-MAKEFILE=	Makefile.b5
 
 .include <bsd.port.mk>
