@@ -62,5 +62,4 @@ ripmime<1.3.2.3|http://www.osvdb.org/8287 http://secunia.com/advisories/12201|ri
 squid<2.5.5_11|http://www.osvdb.org/6791|Squid NTLM authentication helper overflow|f72ccf7c-e607-11d8-9b0a-000347a4fa7d
 acroread<5.09|http://www.osvdb.org/7429 http://freshmeat.net/projects/acrobatreader/?branch_id=92&release_id=164883|Acrobat Reader handling of malformed uuencoded pdf files|ab166a60-e60a-11d8-9b0a-000347a4fa7d
 {linux-,}opera<7.54|http://www.opera.com/freebsd/changelogs/754/ http://www.greymagic.com/security/advisories/gm008-op/ http://secunia.com/advisories/12233 http://www.osvdb.org/8331|Opera "location" object write access vulnerability|0deed2ce-e6f5-11d8-9a79-000347dd607f
-ja-samba>=2.2.0<2.2.10|http://www.osvdb.org/8191 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0686|Buffer overflow|7eded4b8-e6fe-11d8-b12f-0a001f31891a
 putty<0.55|http://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html http://www.coresecurity.com/common/showdoc.php?idx=417&idxseccion=10|modified server can execute commands on the client|4424f4db-e697-11d8-bf04-000c763e9a47

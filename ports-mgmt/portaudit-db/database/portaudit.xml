@@ -101,4 +101,8 @@ This file is in the public domain.
       <entry>2004-06-30</entry>
     </dates>
   </vuln>
+
+  <vuln vid="7eded4b8-e6fe-11d8-b12f-0a001f31891a">
+    <cancelled superseded="2de14f7a-dad9-11d8-b59a-00061bc2ad93"/>
+  </vuln>
 </vuxml>
