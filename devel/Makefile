@@ -455,6 +455,7 @@
     SUBDIR += p5-String-Similarity
     SUBDIR += p5-System2
     SUBDIR += p5-Term-ANSIColor
+    SUBDIR += p5-Term-ProgressBar
     SUBDIR += p5-Term-Prompt
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
