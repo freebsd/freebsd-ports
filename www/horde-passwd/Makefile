@@ -20,7 +20,7 @@ DIST_SUBDIR=	horde
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A password changing module for Horde
 
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
+RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
