@@ -3,6 +3,7 @@
 
     SUBDIR += SSLtelnet
     SUBDIR += adns
+    SUBDIR += amcl
     SUBDIR += archie
     SUBDIR += archie.el
     SUBDIR += argus

@@ -1,0 +1,9 @@
+AMCL is short for Another MUD CLient. It is based
+on GTK, and offers many features, such as full support
+for ANSI colors, aliases, command history, triggers,
+automapping, multiple connections, and so forth.
+
+WWW: http://www.localhost.nu/apps/amcl/
+Author: Robin Ericsson  <lobbin@localhost.nu>
+
+- Will <andrews@technologist.com>
