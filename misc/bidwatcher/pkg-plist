@@ -1,5 +1,21 @@
 bin/bidwatcher
-share/bidwatcher/CHANGES
-share/bidwatcher/INSTALL
-share/bidwatcher/README
-@dirrm share/bidwatcher
+share/doc/bidwatcher/CHANGES
+share/doc/bidwatcher/INSTALL
+share/doc/bidwatcher/README
+share/doc/bidwatcher/about_icon.png
+share/doc/bidwatcher/add_icon.png
+share/doc/bidwatcher/add_window.png
+share/doc/bidwatcher/auction_details.png
+share/doc/bidwatcher/bid_log.png
+share/doc/bidwatcher/bid_window.png
+share/doc/bidwatcher/exit_icon.png
+share/doc/bidwatcher/main_window.png
+share/doc/bidwatcher/popup_menu.png
+share/doc/bidwatcher/preferences.png
+share/doc/bidwatcher/prefs_icon.png
+share/doc/bidwatcher/quick_start.html
+share/doc/bidwatcher/screen_shots.html
+share/doc/bidwatcher/stop_icon.png
+share/doc/bidwatcher/sync_icon.png
+share/doc/bidwatcher/update_icon.png
+@dirrm share/doc/bidwatcher
