@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mod_vhs
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.oav.net/projects/mod_vhs/
-DIST_SUBDIR=	apache
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Allows mass virtual hosting using libhome system with Apache 2.0.x
@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 AP_INC+=	${LOCALBASE}/include/home
 AP_LIB+=	${LOCALBASE}/lib -lhome
 
-PORTDOCS=	AUTHORS README TODO
+PORTDOCS=	AUTHORS README
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
