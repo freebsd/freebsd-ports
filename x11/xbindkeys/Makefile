@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-binPROGRAMS
 
 MAN1=	xbindkeys.1
