@@ -57,7 +57,7 @@ do-configure:
 .endif
 	@(cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} PREFIX=${PREFIX} \
-	qmake -spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ mango.pro)
+	qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ mango.pro)
 
 pre-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mango ${PREFIX}/bin
