@@ -1,7 +1,7 @@
---- Makefile.in.orig	Fri Sep 15 00:41:26 2000
-+++ Makefile.in	Fri Sep 15 13:45:39 2000
-@@ -116,3 +116,3 @@
+--- Makefile.in.orig	Fri Oct 20 10:39:45 2000
++++ Makefile.in	Fri Oct 20 12:29:06 2000
+@@ -114,3 +114,3 @@
  
--SUBDIRS = macros po uulib libcamel pan docs
-+SUBDIRS = macros po libcamel pan docs
+-SUBDIRS = macros po uulib pan docs
++SUBDIRS = macros po pan docs
  
