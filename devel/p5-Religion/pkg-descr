@@ -1,0 +1,18 @@
+This is a second go at a module to simplify installing die() and warn()
+handlers, and to make such handlers easier to write and control.
+
+For most people, this just means that if use use Religion; then you'll get
+noticably better error reporting from warn() and die(). This is especially
+useful if you are using eval().
+
+Religion provides four classes, WarnHandler, DieHandler, WarnPreHandler, and
+DiePreHandler, that when you construct them return closures that can be
+stored in variables that in turn get invoked by $SIG{__DIE__} and
+$SIG{__WARN__}.  Note that if Religion is in use, you should not modify
+$SIG{__DIE__} or $SIG{__WARN__}, unless you are careful about invoking
+chaining to the old handler.
+
+Religion also provides a TraceBack function, which is used by a DieHandler
+after you die() to give a better handle on the current scope of your
+situation, and provide information about where you were, which might
+influence where you want to go next, either returning back to where
