@@ -7,7 +7,7 @@
 
 PORTNAME=	mrproject
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
@@ -21,11 +21,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
-post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mrproject.sh > ${PREFIX}/etc/rc.d/000.mrproject.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.mrproject.sh
 
 .include <bsd.port.mk>

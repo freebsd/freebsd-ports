@@ -7,7 +7,7 @@
 
 PORTNAME=	libmrproject
 PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
@@ -20,11 +20,9 @@ USE_GNOME=	gnomeprefix gnomehack gnometarget libgsf
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
-post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/libmrproject.sh > ${PREFIX}/etc/rc.d/000.libmrproject.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.libmrproject.sh
+CONFIGURE_ARGS=	--enable-static
 
 .include <bsd.port.mk>
