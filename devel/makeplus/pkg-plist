@@ -1,0 +1,25 @@
+bin/make+
+bin/make+-skeleton
+etc/make+.conf
+share/makeplus/c.mk
+share/makeplus/check_funcs.sh
+share/makeplus/check_headers.sh
+share/makeplus/check_lib.sh
+share/makeplus/configure.mk
+share/makeplus/configure_end.sh
+share/makeplus/configure_start.sh
+share/makeplus/default_goal.mk
+share/makeplus/dist.mk
+share/makeplus/install_dynamic_lib.sh
+share/makeplus/install_static_lib.sh
+share/makeplus/link_dynamic.sh
+share/makeplus/link_static.sh
+share/makeplus/main.mk
+share/makeplus/make+
+share/makeplus/make_rpm_spec.sh
+share/makeplus/make_website.sh
+share/makeplus/rpm.mk
+share/makeplus/run_tests.sh
+share/makeplus/test.mk
+share/makeplus/website.mk
+@dirrm share/makeplus
