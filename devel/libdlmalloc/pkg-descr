@@ -5,4 +5,3 @@
 
   Based loosely on libg++-1.2X malloc. (It retains some of the overall 
   structure of old version,  but most details differ.)
-
