@@ -4,60 +4,54 @@
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.3 1997/03/10 17:39:35 obrien Exp $
+# $Id: Makefile,v 1.4 1997/11/26 01:40:34 obrien Exp $
 #
 
-DISTNAME=	ucfjohn3
-PKGNAME=	john-1.4.2
+DISTNAME=	john-1.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.false.com/security/john/
-EXTRACT_SUFX=	.zip
+MASTER_SITES=	http://www.false.com/security/john/ \
+		ftp://ftp.false.com/pub/security/john/
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch142.diff
-
-MAINTAINER=     obrien@NUXI.com
-
-BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
+MAINTAINER=     obrien@FreeBSD.org
 
 RESTRICTED=	"contains crypto (crypt())"
 
-EXTRACT_CMD=    unzip
-EXTRACT_ARGS=   -oqL
-NO_WRKSUBDIR=   yes
-ALL_TARGET=	freebsd
-
-.if exists(/bin/tar)
-TAR_CMD?=	/bin/tar
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+.if defined(HAVE_K6)
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-k6
 .else
-TAR_CMD?=	/usr/bin/tar
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-any
 .endif
 
-post-extract:
-	@(cd ${WRKSRC} ; ${TAR_CMD} -xzf sources.tgz)
-	@(cd ${WRKSRC} ; ${EXTRACT_CMD} ${EXTRACT_ARGS} common.zip)
-	@(cd ${WRKSRC} ; ${EXTRACT_CMD} ${EXTRACT_ARGS} doc.zip)
-
 do-configure:
-	/bin/mv ${WRKSRC}/john.ini ${WRKSRC}/john.ini.in
-	sed -e "s:all.chr:${PREFIX}/share/john/all.chr:" \
-	    -e "s:alpha.chr:${PREFIX}/share/john/alpha.chr:" \
-	    -e "s:digits.chr:${PREFIX}/share/john/digits.chr:" \
-	    ${WRKSRC}/john.ini.in > ${WRKSRC}/john.ini
+	${MV} ${WRKDIR}/${DISTNAME}/run/john.ini ${WRKDIR}/${DISTNAME}/run/john.ini.in
+	${SED} -e "s:~/all.chr:${PREFIX}/share/john/all.chr:" \
+	    -e "s:~/alpha.chr:${PREFIX}/share/john/alpha.chr:" \
+	    -e "s:~/digits.chr:${PREFIX}/share/john/digits.chr:" \
+	    ${WRKDIR}/${DISTNAME}/run/john.ini.in > ${WRKDIR}/${DISTNAME}/run/john.ini
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/john
-	@${INSTALL_PROGRAM} ${WRKSRC}/john ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
 	@(cd ${PREFIX}/bin ; /bin/ln -sf john xtract)
 	@(cd ${PREFIX}/bin ; /bin/ln -sf john unshadow)
-	@${INSTALL_DATA} ${WRKSRC}/all.chr ${PREFIX}/share/john
-	@${INSTALL_DATA} ${WRKSRC}/alpha.chr ${PREFIX}/share/john
-	@${INSTALL_DATA} ${WRKSRC}/digits.chr ${PREFIX}/share/john
-	@${INSTALL_DATA} ${WRKSRC}/john.ini ${PREFIX}/share/john
-	@${INSTALL_DATA} ${WRKSRC}/password.lst ${PREFIX}/share/john
+	@${INSTALL_DATA} \
+		${WRKDIR}/${DISTNAME}/run/all.chr \
+		${WRKDIR}/${DISTNAME}/run/alpha.chr \
+		${WRKDIR}/${DISTNAME}/run/digits.chr \
+		${WRKDIR}/${DISTNAME}/run/password.lst \
+		${WRKDIR}/${DISTNAME}/run/john.ini \
+		${PREFIX}/share/john
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/john
-	@${INSTALL_DATA} ${WRKSRC}/john.doc ${PREFIX}/share/doc/john
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/john
 .endif
 
 .include <bsd.port.mk>
+
+OSNAME!=	/usr/bin/uname -s | ${TR} [A-Z] [a-z]
+.if (${ARCH} == "i386")
+ARCHNAME=	x86
+.else
+ARCHNAME=	${ARCH}
+.endif
