@@ -6,16 +6,16 @@
 # $FreeBSD$
 #
 
-RUN_DEPENDS=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape47-${BROWSER}
+DISTNAME=	communicator-ja-euc-v472-export.generic-generic-generic
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-FILESDIR=	${.CURDIR}/../netscape47-communicator/files
-PATCHDIR=	${.CURDIR}/../netscape47-communicator/patches
-PKGDIR=		${.CURDIR}/../netscape47-communicator/pkg
+SUBMASTERDIR=	${.CURDIR}/../netscape${BROWSER_VER}-communicator
+FILESDIR=	${SUBMASTERDIR}/files
+PATCHDIR=	${SUBMASTERDIR}/patches
+PKGDIR=		${SUBMASTERDIR}/pkg
 
-BROWSER_CMD=	ja-${BROWSER}-47
+BROWSER_VER=	47
 BROWSER_VERSION=	4.72
-JAPANIZE_KIT=	communicator-ja-euc-v472-export.generic-generic-generic.tar.gz
 NETHELP=	nethelp-v47
 
 .include "${MASTERDIR}/Makefile"

@@ -8,8 +8,6 @@
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 
-MAINTAINER=	sada@FreeBSD.org
-
 BROWSER=	navigator
 
 .include	"${MASTERDIR}/Makefile"

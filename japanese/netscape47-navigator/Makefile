@@ -6,9 +6,6 @@
 # $FreeBSD$
 #
 
-FILESDIR=	${BASEDIR}/files
-
-BASEDIR=	${.CURDIR}/../netscape47-communicator
 BROWSER=	navigator
 
-.include	"${BASEDIR}/Makefile"
+.include	"${.CURDIR}/../netscape47-communicator/Makefile"
