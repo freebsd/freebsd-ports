@@ -5,13 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	QtPixmap
-PORTVERSION=	0.27
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.kde-look.org/content/files/
-DISTNAME=	7043-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.cpdrummond.freeuk.com/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
 
 USE_GNOME=	gtk20
