@@ -3,7 +3,7 @@
 # Date created:         19 April 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.11 1998/02/24 21:42:56 jseger Exp $
+# $Id: Makefile,v 1.12 1998/06/25 06:43:28 tg Exp $
 #
 
 DISTNAME=	swig1.1p4
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/ \
 
 MAINTAINER=	erich@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/bin/python:${PORTSDIR}/lang/python/ \
+BUILD_DEPENDS=	${PREFIX}/bin/python:${PORTSDIR}/lang/python \
 		${PREFIX}/bin/tclsh8.1:${PORTSDIR}/lang/tcl81
 
 USE_PERL5=	YES

@@ -3,7 +3,7 @@
 # Date created:			22 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:36:39 asami Exp $
+# $Id: Makefile,v 1.5 1997/04/30 03:18:07 asami Exp $
 #
 
 DISTNAME=	telnetx+transit.src.940401
@@ -16,7 +16,7 @@ MAINTAINER=	max@FreeBSD.ORG
 
 RUN_DEPENDS=	rz:${PORTSDIR}/comms/rzsz
 RUN_DEPENDS+=	bp:${PORTSDIR}/comms/bpl+
-RUN_DEPENDS+=	kermit:${PORTSDIR}/comms/kermit/
+RUN_DEPENDS+=	kermit:${PORTSDIR}/comms/kermit
 
 WRKSRC=		${WRKDIR}/telnetx
 MAN1=		telnetx.1
