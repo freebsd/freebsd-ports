@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	lopster
-PORTVERSION=	0.9.7.2
+PORTVERSION=	0.9.9
 CATEGORIES=	audio
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roman@xpert.com
 
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
-
-post-extract:
-.for i in aclocal.m4 stamp-h.in Makefile.in configure src/Makefile.in
-	${TOUCH} ${WRKSRC}/${i}
-.endfor
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
