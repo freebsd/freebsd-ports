@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ahze@ahze.net
 COMMENT=	A portable BEEP protocol implementation
 
-USE_GNOME=	glib20 libxml2 pkgconfig lthack
-USE_LIBTOOL_VER=13
+USE_GNOME=	glib20 libxml2 pkgconfig
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_GMAKE=	yes
