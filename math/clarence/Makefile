@@ -7,18 +7,17 @@
 #
 
 PORTNAME=	clarence
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	math python
 MASTER_SITES=	http://clay.ll.pl/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmer's calculator
 
-BROKEN=		"Unfetchable"
-
 USE_GNOME=	pygtk2
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
+PYTHON_VERSION=	python2.3
 NO_BUILD=	yes
 MAN1=		clarence.1
 PLIST_FILES=	bin/clarence
