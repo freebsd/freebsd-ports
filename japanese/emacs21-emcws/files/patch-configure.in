@@ -1,5 +1,5 @@
---- configure.in.orig	Wed Apr 10 16:53:13 2002
-+++ configure.in	Wed Apr 10 16:54:43 2002
+--- configure.in.orig	Fri Mar 19 11:20:26 2004
++++ configure.in	Fri Mar 19 11:22:24 2004
 @@ -36,18 +36,26 @@
  dnl A case that the LEIM package does not exist.
  dnl
@@ -31,7 +31,7 @@
  docdir='${datadir}/emacs/${version}$(EMACS_POSTFIX)/etc'
  
  AC_ARG_WITH(gcc,
-@@ -224,6 +232,15 @@
+@@ -224,6 +232,18 @@
  machine='' opsys='' unported=no
  case "${canonical}" in
  
@@ -40,14 +40,17 @@
 +    opsys=freebsd
 +    case "${canonical}" in
 +      alpha*-*-freebsd*)       machine=alpha ;;
++      amd64-*-freebsd*)        machine=amd64 ;;
++      ia64-*-freebsd*)         machine=ia64 ;;
 +      i[3456]86-*-freebsd*)    machine=intel386 ;;
++      sparc64-*-freebsd*)      machine=sparc ;;
 +    esac
 +  ;;
 +
    ## NetBSD ports
    *-*-netbsd* )
      opsys=netbsd
-@@ -1069,7 +1086,6 @@
+@@ -1077,7 +1097,6 @@
  				;;
        *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
        *-386bsd* )	        opsys=386bsd ;;
@@ -55,7 +58,7 @@
        *-nextstep* )             opsys=nextstep ;;
        ## Otherwise, we'll fall through to the generic opsys code at the bottom.
      esac
-@@ -2095,6 +2111,7 @@
+@@ -2131,6 +2150,7 @@
  # Solaris requires -lintl if you want strerror (which calls dgettext)
  # to return localized messages.
  AC_CHECK_LIB(intl, dgettext)
