@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/04/11 10:02:49 obrien Exp $
 #
 
 DISTNAME=	bibcard.6.4
@@ -21,11 +21,11 @@ NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
 pre-configure:
-	${ECHO} "OPENWINHOME=${PREFIX}"  \
+	@${ECHO} "OPENWINHOME=${PREFIX}"  \
 		>> ${WRKSRC}/Imakefile
-	${ECHO} "EXTRA_DEFINES= -DHAVE_STRCASECMP -DHAVE_STRSTR"  \
+	@${ECHO} "EXTRA_DEFINES= -DHAVE_STRCASECMP -DHAVE_STRSTR"  \
 		>> ${WRKSRC}/Imakefile
-	/bin/ln -f ${WRKSRC}/bibcard.1 ${WRKSRC}/bibcard.man
+	@/bin/ln -f ${WRKSRC}/bibcard.1 ${WRKSRC}/bibcard.man
 
 .include <bsd.port.mk>
 
