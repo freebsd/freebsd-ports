@@ -73,24 +73,26 @@ if [ "x$1" = "x-nodummy" ]; then
   shift
 fi
 
+# these should not be necessary because OSREL is
+# set in bsd.port.mk from uname's output
 case ${branch} in
   5*)
-    export OSREL=5.0
+#    export OSREL=5.0
     export OSVERSION=500011
     # export PORTOBJFORMAT=elf
     ;;
   4*)
-    # export OSREL=4.0
-    # export OSVERSION=400018
+    # export OSREL=4.1
+    # export OSVERSION=410002
     # export PORTOBJFORMAT=elf
     ;;
   3*)
-    export OSREL=3.5
+#    export OSREL=3.5
     export OSVERSION=350001
     # export PORTOBJFORMAT=elf
     ;;
   *)
-    export OSREL=2.2.8
+#    export OSREL=2.2.8
     export OSVERSION=228001
     export PORTOBJFORMAT=aout
     ;;
