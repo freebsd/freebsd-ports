@@ -81,6 +81,7 @@
     SUBDIR += wdm
     SUBDIR += wmbutton
     SUBDIR += wmcliphist
+    SUBDIR += wmfstatus
     SUBDIR += wmmatrix
     SUBDIR += wmmenu
     SUBDIR += wrapper
