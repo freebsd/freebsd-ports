@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Reading and Writing a variety of graph file formats
 
-BUILD_DEPENDS=	${SITE_PERL}/Graph/Base.pm:${PORTSDIR}/math/p5-Graph \
+BUILD_DEPENDS=	${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer
 RUN_DEPENDS=	${BUILD_DEPENDS}
