@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/musicbrainz/__init__.py
+%%PYTHON_SITELIBDIR%%/musicbrainz/__init__.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz/__init__.pyo
+%%PYTHON_SITELIBDIR%%/musicbrainz/_musicbrainz.so
+%%PYTHON_SITELIBDIR%%/musicbrainz/queries.py
+%%PYTHON_SITELIBDIR%%/musicbrainz/queries.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz/queries.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/musicbrainz
