@@ -3,6 +3,7 @@ bin/nsgmls
 bin/sgmlnorm
 bin/spam
 bin/spent
+bin/sx
 include/sp/Allocator.h
 include/sp/ArcEngine.h
 include/sp/Attribute.h
@@ -134,6 +135,7 @@ include/sp/WinInetStorage.h
 include/sp/WinApp.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
+include/sp/XMLCodingSystem.h
 include/sp/config.h
 include/sp/constant.h
 include/sp/macros.h
@@ -149,6 +151,7 @@ share/doc/jade/build.htm
 share/doc/jade/catalog.htm
 share/doc/jade/charset.htm
 share/doc/jade/copying.txt
+share/doc/jade/dsssl2.htm
 share/doc/jade/features.htm
 share/doc/jade/generic.htm
 share/doc/jade/ideas.htm
@@ -161,14 +164,14 @@ share/doc/jade/sgmlnorm.htm
 share/doc/jade/sgmlsout.htm
 share/doc/jade/spam.htm
 share/doc/jade/spent.htm
+share/doc/jade/sx.htm
 share/doc/jade/sysdecl.htm
 share/doc/jade/sysid.htm
 share/doc/jade/transform.htm
-share/sgml/jade/FOT.tex
+share/doc/jade/xml.htm
 share/sgml/jade/catalog
 share/sgml/jade/demo.dsl
 share/sgml/jade/demo.sgm
-share/sgml/jade/demoMaster.tex
 share/sgml/jade/dsssl.dtd
 share/sgml/jade/fot.dtd
 share/sgml/jade/style-sheet.dtd
