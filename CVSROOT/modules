@@ -1947,6 +1947,7 @@ gnome-commander	ports/x11-fm/gnome-commander
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-vnc	ports/net/gnome-vnc
+gnome2-devel	ports/devel/gnome2-devel
 gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets	ports/x11/gnomeapplets
 gnomeapplets2	ports/x11/gnomeapplets2
