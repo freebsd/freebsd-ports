@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	xstroke
 # Date created:			May 14, 2002
 # Whom:				ijliao
@@ -15,22 +14,20 @@ MASTER_SITES=	ftp://ftp.handhelds.org/pub/projects/xstroke/release-${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
 
-BROKEN=		Needs updates for Xft and XFree86 4.3
-
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_IMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnugetopt
+CFLAGS+=	${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt ${PTHREAD_LIBS}
+MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	xstroke.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g ; \
-		s,%%CFLAGS%%,${CFLAGS},g ; \
-		s,%%LDFLAGS%%,${LDFLAGS},g" ${WRKSRC}/Imakefile
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/etc/Imakefile
 	@${REINPLACE_CMD} -e "s,etc/,${PREFIX}/etc/,g" ${WRKSRC}/args.h
 

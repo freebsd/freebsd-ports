@@ -1,13 +1,13 @@
---- Imakefile.orig	Tue Dec 11 06:17:11 2001
-+++ Imakefile	Tue May 14 16:06:49 2002
+--- Imakefile.orig	Mon Dec 10 14:17:11 2001
++++ Imakefile	Mon May 12 14:55:25 2003
 @@ -1,9 +1,10 @@
  #define IHaveSubdirs
  SUBDIRS=etc
 -CDEBUGFLAGS=-g -ansi -ansi-error -Wall -pedantic
-+CDEBUGFLAGS=%%CFLAGS%%
++EXTRA_DEFINES=$(CPPFLAGS) $(XFTINCLUDES)
  YFLAGS=-d
 -LOCAL_LIBRARIES=$(XTESTLIB) $(XLIB) $(XRENDERLIB) $(XFTLIB) -lm -ldl -lpthread
-+LOCAL_LIBRARIES=$(XTESTLIB) $(XLIB) $(XRENDERLIB) $(XFTLIB) -lm -lpthread %%LDFLAGS%%
++LOCAL_LIBRARIES=$(XTESTLIB) $(XLIB) $(XRENDERLIB) $(XFTLIB) -lm $(LDFLAGS)
  FLEX=flex
 +YACC=bison -y
  OBJS=xstroke.o args.o backing.o bresenham.o brush.o control_win.o stroke.o matrix.o \
