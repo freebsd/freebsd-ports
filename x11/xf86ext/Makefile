@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	XF86Ext
+PORTNAME=	xf86ext
 PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
