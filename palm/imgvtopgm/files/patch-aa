@@ -1,0 +1,15 @@
+--- configure-	Tue May  9 00:19:53 2000
++++ configure	Tue May  9 00:21:16 2000
+@@ -2330,11 +2330,10 @@
+ 		X_CFLAGS="-I$pnm_includes $X_CFLAGS"
+ 	fi
+ 
+-	PNM_LIBS=""
+ 	if test "$pnm_libraries" != "" \
+ 	&& test "$pnm_libraries" != "$x_libraries" \
+ 	&& test "$pnm_libraries" != "no"; then
+-		PNM_LIBS="-L$pnm_libraries"
++		X_LIBS="-L$pnm_libraries"
+ 	fi
+ 
+ 	pnm_libraries_result="$pnm_libraries"
