@@ -21,17 +21,15 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	imura@FreeBSD.org
 
-BUILD_DEPENDS=	${LINUX_BASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools
-RUN_DEPENDS=	${LINUX_BASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools
 
-LINUX_BASE=	/compat/linux
-PREFIX=		${LINUX_BASE}${X11BASE}
-NO_MTREE=	yes
+USE_LINUX_PREFIX=	yes
+PREFIX=		${LINUXBASE}${X11BASE}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--host=${MACHINE_ARCH}--linux-gnu --enable-shared --enable-production \
 		--disable-build-20 --disable-debug --no-recursion \
 		--without-motif --disable-build-Xlt --disable-build-Xbae
-GMAKE=		${LINUX_BASE}/usr/bin/make
+GMAKE=		${LINUXBASE}/usr/bin/make
 
 do-build:
 	cd ${WRKSRC}/lib/Xm && ${GMAKE}
@@ -41,8 +39,8 @@ do-install:
 					${PREFIX}/lib/libXm-ns.so.1.0.2
 	${LN} -sf libXm-ns.so.1.0.2 ${PREFIX}/lib/libXm.so.1
 	${LN} -sf libXm.so.1 ${PREFIX}/lib/libXm.so
-	${LINUX_BASE}/sbin/ldconfig
+	${LINUXBASE}/sbin/ldconfig
 
 .include <bsd.port.mk>
 
-CONFIGURE_ENV+=	${LINUX_BASE}/bin/bash
+CONFIGURE_ENV+=	${LINUXBASE}/bin/bash
