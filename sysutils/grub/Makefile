@@ -20,6 +20,20 @@ CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd-freebsd${OSREL}
 MAN1=		mbchk.1
 MAN8=		grub.8 grub-install.8 grub-md5-crypt.8
 
+.if defined(WITH_SPLASHIMAGE)
+PATCH_SITES=	http://people.redhat.com/~katzj/grub/patches/
+PATCHFILES=	${DISTNAME}-vga16.patch ${DISTNAME}-splashimagehelp.patch
+PATCH_DIST_STRIP= -p1
+USE_AUTOCONF=	yes
+.else
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may build grub with splash image support by"
+	@${ECHO_MSG} "defining WITH_SPLASHIMAGE."
+	@${ECHO_MSG}
+	@sleep 2
+.endif
+
 pre-build:
 	@${RM} ${WRKSRC}/docs/grub.info*
 
