@@ -15,7 +15,7 @@ DISTFILES=	${EXTRACT_ONLY}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DOCFILE}
 .endif
-EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz \
+EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz \
 		libuninameslist_src-${LIBUNINAMESLIST_VER}.tgz
 
 MAINTAINER=	kanou@khdd.net
@@ -39,24 +39,8 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	030929
+DIST_VER=	031012
 LIBUNINAMESLIST_VER=	030713
-
-.if !defined(NOPORTDOCS)
-DOC_VER=	${DIST_VER}
-DOCFILE=	${PORTNAME}_htdocs-${DOC_VER}.tgz
-.endif
-
-.if !defined(NOPORTDOCS)
-post-extract:
-	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
-	${TAR} -xzC ${WRKDIR}/html -f ${DISTDIR}/${DOCFILE}
-	${RM} ${WRKDIR}/html/cidmaps.tgz
-	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
-.else
-	${MKDIR} ${WRKSRC}/cidmap
-	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
-.endif
 
 post-configure:
 	(cd ${WRKDIR}/libuninameslist ; ./configure ${CONFIGURE_ARGS} )
@@ -68,7 +52,8 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKDIR}/html/* ${DOCSDIR}
+	${RM} -rf ${WRKSRC}/htdocs/*/ ${WRKSRC}/htdocs/cidmaps.tgz
+	${INSTALL_DATA} ${WRKSRC}/htdocs/* ${DOCSDIR}
 	(cd ${WRKDIR}/libuninameslist ; ${GMAKE} install )
 .endif
 
