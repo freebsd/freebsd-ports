@@ -96,9 +96,10 @@ post-patch:
 
 certificate:
 	@if [ -f ${OPENSSLDIR}/openssl.cnf ]; then \
-		cd ${WRKSRC}; ${MAKE} ${MAKE_ENV} $@; \
+		cd ${WRKSRC}/src; ${MAKE} ${MAKE_ENV} $@; \
 		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem ${PREFIX}/certs/cert.pem; \
 	else \
 		${ECHO} "You must create the file ${OPENSSLDIR}/openssl.cnf first."; \
+	fi
 
 .include <bsd.port.post.mk>
