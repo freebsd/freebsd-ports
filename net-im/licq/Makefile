@@ -12,7 +12,7 @@ CATEGORIES=	net
 PKGNAMESUFFIX=	-socks
 .endif
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
