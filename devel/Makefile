@@ -300,6 +300,7 @@
     SUBDIR += newt
     SUBDIR += ngpt
     SUBDIR += noweb
+    SUBDIR += nspr
     SUBDIR += oaf
     SUBDIR += objprelink
     SUBDIR += ocamlweb

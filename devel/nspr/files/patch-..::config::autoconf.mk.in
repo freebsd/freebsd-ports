@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ../config/autoconf.mk.in.orig	Thu Feb 24 01:37:44 2000
++++ ../config/autoconf.mk.in	Tue Dec 18 11:24:06 2001
+@@ -1,7 +1,7 @@
+ 
+ USE_AUTOCONF	= 1
+ MOZILLA_CLIENT	= @MOZILLA_CLIENT@
+-DIST		= @prefix@
++DIST		?= @prefix@
+ OBJDIR_NAME	= .
+ OBJDIR		= .
+ OBJ_SUFFIX	= @OBJ_SUFFIX@

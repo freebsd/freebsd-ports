@@ -1,0 +1,43 @@
+
+$FreeBSD$
+
+--- ../configure.orig	Sat Jul  8 14:25:25 2000
++++ ../configure	Tue Dec 18 11:54:54 2001
+@@ -2547,15 +2547,16 @@
+ #define HAVE_BSD_FLOCK 1
+ EOF
+ 
+-    CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall -pipe"
++    CFLAGS="$CFLAGS $DSO_CFLAGS -ansi -Wall -pipe -DXP_UNIX"
+     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+     if test "$MOZ_OBJFORMAT" = "elf"; then
+-        DLL_SUFFIX=so
++        DLL_SUFFIX=so.1
+     else
+         DLL_SUFFIX=so.1.0
+     fi
++    MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
+     DSO_CFLAGS=-fPIC
+-    DSO_LDOPTS=-Bshareable
++    DSO_LDOPTS="-shared $BSD_PTHREAD_LIBS"
+     MDCPUCFG_H=_freebsd.cfg
+     PR_MD_CSRCS=freebsd.c
+     ;;
+@@ -3516,8 +3517,6 @@
+    if test $? -eq 0; then
+ 	if test -z "`egrep -i '(unrecognize|unknown)' conftest.out | grep pthread`" && test -z "`egrep -i '(error|incorrect)' conftest.out`" ; then
+ 	    ac_cv_have_dash_pthread=yes
+-	    CFLAGS="$CFLAGS -pthread"
+-	    CXXFLAGS="$CXXFLAGS -pthread"
+ 	fi
+     fi
+     rm -f conftest*
+@@ -3542,7 +3541,7 @@
+ EOF
+ 
+ 	    	    if test "$ac_cv_have_dash_pthread" = "yes"; then
+-	        PTHREAD_LDFLAGS=
++	        PTHREAD_LDFLAGS="-pthread"
+ 	    fi
+ 	    ;;
+     *-hpuxB.10.10*)
