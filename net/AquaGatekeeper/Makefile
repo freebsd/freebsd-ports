@@ -27,14 +27,6 @@ NO_CDROM=	"No commercial redistribution"
 IS_INTERACTIVE=	yes
 .endif
 
-.if !defined(HAS_CRYPTO3)
-HAS_CRYPTO3!=	ldconfig -r | fgrep -q -- -lcrypto.3 && echo yes || echo no
-.endif
-
-.if ${HAS_CRYPTO3} != "yes"
-IGNORE=		This port requires libcrypto.3, upgrade base system or define HAS_CRYPTO3=yes to skip this test
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/AquaGatekeeper ${PREFIX}/sbin/
 	@${INSTALL_SCRIPT} ${FILESDIR}/agk.sh.sample ${PREFIX}/etc/rc.d/
