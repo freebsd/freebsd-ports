@@ -137,7 +137,6 @@
     SUBDIR += linux-flashplugin
     SUBDIR += linux-lesstif-ns
     SUBDIR += linux-mozilla
-    SUBDIR += linux-netscape4
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux-opera
@@ -227,7 +226,6 @@
     SUBDIR += netscape3
     SUBDIR += netscape3-gold
     SUBDIR += netscape4-communicator
-    SUBDIR += netscape4-communicator.us
     SUBDIR += netscape4-navigator
     SUBDIR += netscape47-communicator
     SUBDIR += netscape47-navigator
