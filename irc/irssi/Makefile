@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.7.28-3
+PORTVERSION=	0.7.28.3
 CATEGORIES=	irc ipv6 gnome
 MASTER_SITES=	http://xlife.dhs.org/irssi/files/
+DISTNAME=	irssi-0.7.28-3
 
 MAINTAINER=	jim@FreeBSD.org
 
