@@ -16,6 +16,7 @@ bin/tcmplex
 bin/tcprobe
 bin/tcscan
 bin/tcxmlcheck
+bin/tcxpm2rgb
 bin/transcode
 %%WITH_LIBA52%%lib/transcode/a52_decore.so
 lib/transcode/af6_decore.so
@@ -52,8 +53,6 @@ lib/transcode/export_xvid.so
 lib/transcode/export_xvid2.so
 lib/transcode/export_xvid3.so
 lib/transcode/export_xvid4.so
-%%WITH_XVID%%lib/transcode/export_xvidcvs.so
-%%WITH_XVID%%lib/transcode/export_xvidraw.so
 %%WITH_MJPEG%%lib/transcode/export_yuv4mpeg.so
 lib/transcode/filter_29to23.so
 lib/transcode/filter_32detect.so
@@ -61,6 +60,7 @@ lib/transcode/filter_32drop.so
 lib/transcode/filter_aclip.so
 lib/transcode/filter_astat.so
 lib/transcode/filter_clone.so
+%%WITH_IMAGEMAGICK%%lib/transcode/filter_compare.so
 lib/transcode/filter_cpaudio.so
 lib/transcode/filter_cshift.so
 lib/transcode/filter_cut.so
@@ -130,26 +130,31 @@ lib/transcode/import_ogg.so
 lib/transcode/import_raw.so
 lib/transcode/import_rawlist.so
 lib/transcode/import_vdrac3.so
+lib/transcode/import_vnc.so
 lib/transcode/import_vob.so
 %%WITH_LIBXML2%%lib/transcode/import_xml.so
 lib/transcode/import_xvid.so
 lib/transcode/import_yuv.so
 lib/transcode/import_yuv4mpeg.so
 %%WITH_XVID%%lib/transcode/libxvidcore.so
+%%WITH_XVID%%lib/transcode/libxvidcore.so.2
 lib/transcode/xvid2.cfg
 lib/transcode/xvid3.cfg
 lib/transcode/xvid4.cfg
 %%PORTDOCS%%%%DOCSDIR%%/README.Inverse.Telecine.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.cluster
+%%PORTDOCS%%%%DOCSDIR%%/README.filter.modfps
 %%PORTDOCS%%%%DOCSDIR%%/README.rip
 %%PORTDOCS%%%%DOCSDIR%%/README.sync
 %%PORTDOCS%%%%DOCSDIR%%/README.vcd
+%%PORTDOCS%%%%DOCSDIR%%/README.xvid-credits
 %%PORTDOCS%%%%DOCSDIR%%/OPTIMIZERS
 %%PORTDOCS%%%%DOCSDIR%%/architecture.txt
 %%PORTDOCS%%%%DOCSDIR%%/avi_comments.txt
 %%PORTDOCS%%%%DOCSDIR%%/clone.txt
 %%PORTDOCS%%%%DOCSDIR%%/export_ffmpeg.txt
 %%PORTDOCS%%%%DOCSDIR%%/export_mpeg.txt
+%%PORTDOCS%%%%DOCSDIR%%/export_pvm.txt
 %%PORTDOCS%%%%DOCSDIR%%/export-API.txt
 %%PORTDOCS%%%%DOCSDIR%%/filter_dnr.txt
 %%PORTDOCS%%%%DOCSDIR%%/filter_logo.txt
@@ -218,6 +223,7 @@ lib/transcode/xvid4.cfg
 %%PORTDOCS%%%%DOCSDIR%%/import-API.txt
 %%PORTDOCS%%%%DOCSDIR%%/import-xml.txt
 %%PORTDOCS%%%%DOCSDIR%%/import_nvrec.txt
+%%PORTDOCS%%%%DOCSDIR%%/pvm.cfg
 %%PORTDOCS%%%%DOCSDIR%%/template.cfg.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
