@@ -1,0 +1,6 @@
+cmd5checkpw is a checkpassword compatible authentication program that uses 
+CRAM-MD5 authentication mode. It was designed primary to work with qmail 
+but it can be used by any other program that knows how to use checkpassword 
+compatible authentication. 
+
+WWW: http://members.elysium.pl/brush/cmd5checkpw/

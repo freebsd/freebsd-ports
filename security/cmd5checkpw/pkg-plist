@@ -1,0 +1,9 @@
+bin/cmd5checkpw
+etc/poppasswd.dist
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2104.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
