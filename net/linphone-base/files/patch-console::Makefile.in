@@ -1,13 +1,13 @@
 
 $FreeBSD$
 
---- console/Makefile.in	2002/12/30 09:08:53	1.1
-+++ console/Makefile.in	2002/12/30 09:10:07
-@@ -166,7 +166,8 @@
+--- console/Makefile.in.orig	Fri Feb 28 01:10:38 2003
++++ console/Makefile.in	Fri Feb 28 01:12:45 2003
+@@ -165,7 +165,8 @@
  				$(top_srcdir)/osipua/src/libosipua.la \
  				$(top_srcdir)/mediastreamer/audiostream.o \
  				$(top_srcdir)/mediastreamer/libmediastreamer.la \
--				$(top_srcdir)/mediastreamer/libmsspeex.la
+-				$(top_srcdir)/mediastreamer/libmsspeex.la 
 +				$(top_srcdir)/mediastreamer/.libs/libmsspeex.so \
 +				$(top_srcdir)/speex/libspeex/libspeex.la
  
