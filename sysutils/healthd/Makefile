@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		http://healthd1.thehousleys.net/
@@ -16,6 +16,7 @@ COMMENT=	A daemon to monitor vital motherboard parameters
 
 ONLY_FOR_ARCHS=	i386
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 #
@@ -35,14 +36,10 @@ HDDOCDIR=	${PREFIX}/share/doc/healthd
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	/etc/rc.subr
-EXTRA_PATCHES=	files/healthd.sh-500038
-.else
 USE_RC_SUBR=	yes
-.endif
 
 post-install:
+	@${REINPLACE_CMD} -e 's|/usr/local/etc/rc.subr|${RC_SUBR}|' ${WRKSRC}/healthd.sh
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh
 	@if [ ! -f ${PREFIX}/etc/healthd.conf ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/healthd.conf configuration file."; \
