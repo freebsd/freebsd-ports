@@ -23,6 +23,4 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-irssi.conf \
 		${.CURDIR}/files/patch-src::fe-text::utf8.c \
 		${.CURDIR}/files/patch-src::fe-text::utf8.h
 
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}tw-
-
 .include "${MASTERDIR}/Makefile"
