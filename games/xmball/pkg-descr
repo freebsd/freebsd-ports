@@ -4,3 +4,5 @@ with each sector divided into 4 segments (latitudinal cuts).
 
 By building from the source and editing its Imakefile before the
 ``build'' phase, you may be able to use Motif or LessTif with this port.
+
+WWW: http://www.tux.org/~bagleyd/puzzles.html
