@@ -19,6 +19,7 @@ BUILD_DEPENDS=  ${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_XPM=	yes
@@ -26,11 +27,11 @@ USE_XPM=	yes
 DOC_FILES=	AUTHORS README TODO
 
 post-patch:
-	@${PERL} -pi -e "s|gtk-config|${GTK_CONFIG}|; s|imlib-config|${IMLIB_CONFIG}|; \
-		s|DBGFLAGS= -O3||; s|gcc|${CC}|; s|(CFLAGS)=|\1+=|; \
-		s|(LDFLAGS)=|\1+=|; s|/usr/X11R6|${PREFIX}|" \
+	@${REINPLACE_CMD} -e "s|gtk-config|${GTK_CONFIG}|; s|imlib-config|${IMLIB_CONFIG}|; \
+		s|DBGFLAGS= -O3||; s|gcc|${CC}|; s|CFLAGS=|CFLAGS+=|; \
+		s|LDFLAGS=|LDFLAGS+=|; s|/usr/X11R6|${PREFIX}|" \
 		${WRKSRC}/Makefile
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/seti.c
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/seti.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/seti.so \
