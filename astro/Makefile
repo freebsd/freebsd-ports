@@ -11,6 +11,7 @@
     SUBDIR += ephem
     SUBDIR += fooseti
     SUBDIR += gdesklets-goodweather
+    SUBDIR += gdesklets-goodweather-psi
     SUBDIR += gdesklets-seti
     SUBDIR += gdesklets-weather
     SUBDIR += gkrellmearth
