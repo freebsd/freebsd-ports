@@ -1,0 +1,57 @@
+Crossgo32 is a cross-compiler built from "gcc 2.7.2.2" which uses the
+Cygnus embedded libraries to create smaller binaries. Unfortunately
+there is no networking support at the moment. Binaries are created in
+the COFF format and a utility is provided to convert these binaries
+into DJGPPv1 exe files.
+
+The package is composed of the following utilities:
+GNU`s misc. utilities		binutils-2.7
+The GNU's C Compiler		gcc-2.7.2.2  + crosspatch
+Cygnus's embedded libraries	newlib-1.7.1
+Cygnus's dos release utilities  dosrel-1.0
+
+Compiling your code
+===================
+
+Compiling your code is just as easy (or should that be difficult?) as
+gcc. All of the go32 compiler binaries have been installed with the
+i386-go32 prefix. So, if you wanted to compile a file called "hello.c"
+then you might use something like:
+
+	i386-go32-gcc -o hello hello.c
+
+This will produce a COFF binary called "hello". You will now need to
+convert that binary into a EXE file so that it can be run on a DOS
+machine. It's as easy as typing:
+
+	i386-go32-coff2exe hello
+
+This will produce "hello.exe". 
+
+To run your programs you need to have a DPMI server running and the
+go32.exe & emu387 files in your DOS path. Crossgo32 binaries will work
+with a range of DPMI servers - I have personally had success with
+Windows 95 - and there is a server available from the DJGPP web
+site. The DOS files mentioned above should be in
+/usr/local/share/crossgo32 (or similar on your system). Please check
+the DJGPP FAQ for more information on this topic.
+
+	http://www.delorie.com/djgpp/ (DPMI server, source, FAQs, etc)
+
+Related ports 
+============= 
+
+This cross-compiler port was originally created by Pedro Giffuni using
+the Cygnus cross-compiler FAQ and mailing list postings. You will find
+other ports in the collection which use the same distribution. The
+intention was to create a cross-compiler kit for all platforms
+emulated on FreeBSD.
+
+If you are interested in network support and DJGPP v2 exe files,
+amongst other DJGPP bits and pieces, check out the crossgo32-dgjpp2
+selection of ports. 
+
+Share and enjoy,
+
+- Joel
+sutton@aardvark.apana.org.au

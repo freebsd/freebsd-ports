@@ -1,43 +1,28 @@
-bin/i386-go32-size
-bin/i386-go32-objdump
-bin/i386-go32-nm
 bin/i386-go32-ar
+bin/i386-go32-as
+bin/i386-go32-c++
+bin/i386-go32-c++filt
+bin/i386-go32-coff2exe
+bin/i386-go32-g++
+bin/i386-go32-gasp
+bin/i386-go32-gcc
+bin/i386-go32-ld
+bin/i386-go32-nm
+bin/i386-go32-objcopy
+bin/i386-go32-objdump
+bin/i386-go32-ranlib
+bin/i386-go32-size
 bin/i386-go32-strings
 bin/i386-go32-strip
-bin/i386-go32-ranlib
-bin/i386-go32-c++filt
-bin/i386-go32-objcopy
-bin/i386-go32-as
-bin/i386-go32-gasp
-bin/i386-go32-ld
-bin/i386-go32-g++
-bin/i386-go32-c++
 bin/protoize
 bin/unprotoize
-bin/i386-go32-gcc
-bin/i386-go32-coff2exe
-i386-go32/bin/nm
-i386-go32/bin/strip
 i386-go32/bin/ar
-i386-go32/bin/ranlib
 i386-go32/bin/as
-i386-go32/bin/ld
 i386-go32/bin/gcc
-i386-go32/lib/ldscripts/i386go32.x
-i386-go32/lib/ldscripts/i386go32.xbn
-i386-go32/lib/ldscripts/i386go32.xn
-i386-go32/lib/ldscripts/i386go32.xr
-i386-go32/lib/ldscripts/i386go32.xu
-i386-go32/lib/libg.a
-i386-go32/lib/libc.a
-i386-go32/lib/libiberty.a
-i386-go32/lib/libm.a
-i386-go32/lib/crt0.o
-i386-go32/include/machine/fastmath.h
-i386-go32/include/machine/ieeefp.h
-i386-go32/include/machine/setjmp-dj.h
-i386-go32/include/machine/setjmp.h
-i386-go32/include/machine/types.h
+i386-go32/bin/ld
+i386-go32/bin/nm
+i386-go32/bin/ranlib
+i386-go32/bin/strip
 i386-go32/include/_ansi.h
 i386-go32/include/_syslist.h
 i386-go32/include/ar.h
@@ -50,6 +35,11 @@ i386-go32/include/fcntl.h
 i386-go32/include/grp.h
 i386-go32/include/ieeefp.h
 i386-go32/include/locale.h
+i386-go32/include/machine/fastmath.h
+i386-go32/include/machine/ieeefp.h
+i386-go32/include/machine/setjmp-dj.h
+i386-go32/include/machine/setjmp.h
+i386-go32/include/machine/types.h
 i386-go32/include/math.h
 i386-go32/include/paths.h
 i386-go32/include/process.h
@@ -61,40 +51,50 @@ i386-go32/include/signal.h
 i386-go32/include/stdio.h
 i386-go32/include/stdlib.h
 i386-go32/include/string.h
-i386-go32/include/termios.h
-i386-go32/include/time.h
-i386-go32/include/utime.h
-i386-go32/include/unctrl.h
-i386-go32/include/unistd.h
-i386-go32/include/utmp.h
 i386-go32/include/sys/_types.h
 i386-go32/include/sys/config.h
+i386-go32/include/sys/dir.h
 i386-go32/include/sys/dirent.h
+i386-go32/include/sys/dos.h
+i386-go32/include/sys/dpmi.h
 i386-go32/include/sys/errno.h
 i386-go32/include/sys/fcntl.h
+i386-go32/include/sys/file.h
+i386-go32/include/sys/go32.h
 i386-go32/include/sys/param.h
+i386-go32/include/sys/pc.h
 i386-go32/include/sys/reent.h
+i386-go32/include/sys/register.h
 i386-go32/include/sys/resource.h
+i386-go32/include/sys/setjmp.h
 i386-go32/include/sys/signal.h
 i386-go32/include/sys/stat-dj.h
 i386-go32/include/sys/stat.h
+i386-go32/include/sys/stdc.h
 i386-go32/include/sys/time.h
 i386-go32/include/sys/times.h
 i386-go32/include/sys/types.h
+i386-go32/include/sys/uio.h
 i386-go32/include/sys/unistd.h
 i386-go32/include/sys/wait.h
-i386-go32/include/sys/dir.h
-i386-go32/include/sys/dos.h
-i386-go32/include/sys/dpmi.h
-i386-go32/include/sys/file.h
-i386-go32/include/sys/go32.h
-i386-go32/include/sys/pc.h
-i386-go32/include/sys/register.h
-i386-go32/include/sys/setjmp.h
-i386-go32/include/sys/stdc.h
-i386-go32/include/sys/uio.h
-include/bfd.h
+i386-go32/include/termios.h
+i386-go32/include/time.h
+i386-go32/include/unctrl.h
+i386-go32/include/unistd.h
+i386-go32/include/utime.h
+i386-go32/include/utmp.h
+i386-go32/lib/crt0.o
+i386-go32/lib/ldscripts/i386go32.x
+i386-go32/lib/ldscripts/i386go32.xbn
+i386-go32/lib/ldscripts/i386go32.xn
+i386-go32/lib/ldscripts/i386go32.xr
+i386-go32/lib/ldscripts/i386go32.xu
+i386-go32/lib/libc.a
+i386-go32/lib/libg.a
+i386-go32/lib/libiberty.a
+i386-go32/lib/libm.a
 include/ansidecl.h
+include/bfd.h
 include/bfdlink.h
 include/obstack.h
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
@@ -131,62 +131,62 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-lib/libiberty.a
-lib/libi386-go32-bfd.a
-lib/gcc-lib/i386-go32/2.7.2.2/include/syslimits.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/objc/hash.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/objc/list.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/objc/sarray.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/objc/objc.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/objc/objc-api.h
+lib/gcc-lib/i386-go32/2.7.2.2/SYSCALLS.c.X
+lib/gcc-lib/i386-go32/2.7.2.2/cc1
+lib/gcc-lib/i386-go32/2.7.2.2/cc1obj
+lib/gcc-lib/i386-go32/2.7.2.2/cc1plus
+lib/gcc-lib/i386-go32/2.7.2.2/cpp
+lib/gcc-lib/i386-go32/2.7.2.2/include/README
+lib/gcc-lib/i386-go32/2.7.2.2/include/float.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/iso646.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/limits.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/objc/NXConstStr.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/objc/Object.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/objc/Protocol.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/objc/encoding.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/objc/hash.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/objc/list.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/objc/objc-api.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/objc/objc.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/objc/sarray.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/objc/typedstream.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/proto.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/stdarg.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/stddef.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/varargs.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/syslimits.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-alpha.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/va-clipper.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-h8300.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-i860.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-i960.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/va-mips.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-m88k.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/va-mips.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-pa.h
+lib/gcc-lib/i386-go32/2.7.2.2/include/va-ppc.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-pyr.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-sparc.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/va-clipper.h
 lib/gcc-lib/i386-go32/2.7.2.2/include/va-spur.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/iso646.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/va-ppc.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/proto.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/limits.h
-lib/gcc-lib/i386-go32/2.7.2.2/include/README
-lib/gcc-lib/i386-go32/2.7.2.2/include/float.h
-lib/gcc-lib/i386-go32/2.7.2.2/cc1
-lib/gcc-lib/i386-go32/2.7.2.2/cc1obj
-lib/gcc-lib/i386-go32/2.7.2.2/cc1plus
-lib/gcc-lib/i386-go32/2.7.2.2/specs
-lib/gcc-lib/i386-go32/2.7.2.2/SYSCALLS.c.X
-lib/gcc-lib/i386-go32/2.7.2.2/cpp
+lib/gcc-lib/i386-go32/2.7.2.2/include/varargs.h
 lib/gcc-lib/i386-go32/2.7.2.2/libgcc.a
+lib/gcc-lib/i386-go32/2.7.2.2/specs
+lib/libi386-go32-bfd.a
 lib/libi386-go32-opcodes.a
-share/doc/crossgo32/FAQ-0.8
-share/doc/crossgo32/Readme.FreeBSD
-share/crossgo32/go32.exe
+lib/libiberty.a
 share/crossgo32/emu387
+share/crossgo32/go32.exe
+share/doc/crossgo32/FAQ-0.8
+share/doc/crossgo32/README.FreeBSD
+@dirrm share/doc/crossgo32
+@dirrm share/crossgo32
+@dirrm lib/gcc-lib/i386-go32/2.7.2.2/include/objc
+@dirrm lib/gcc-lib/i386-go32/2.7.2.2/include
+@dirrm lib/gcc-lib/i386-go32/2.7.2.2
+@dirrm lib/gcc-lib/i386-go32
+@dirrm lib/gcc-lib
 @dirrm i386-go32/lib/ldscripts
 @dirrm i386-go32/lib
 @dirrm i386-go32/include/sys
 @dirrm i386-go32/include/machine
 @dirrm i386-go32/include
 @dirrm i386-go32/bin
-@dirrm i386-go32/
-@dirrm lib/gcc-lib/i386-go32/2.7.2.2/include/objc
-@dirrm lib/gcc-lib/i386-go32/2.7.2.2/include
-@dirrm lib/gcc-lib/i386-go32/2.7.2.2
-@dirrm lib/gcc-lib/i386-go32
-@dirrm lib/gcc-lib/
-@dirrm share/doc/crossgo32
-@dirrm share/crossgo32
+@dirrm i386-go32
