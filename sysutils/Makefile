@@ -56,6 +56,7 @@
     SUBDIR += fsck_ext2fs
     SUBDIR += ftrace
     SUBDIR += gcombust
+    SUBDIR += gkrellflynn
     SUBDIR += gkrellm
     SUBDIR += glload
     SUBDIR += gnomecontrolcenter

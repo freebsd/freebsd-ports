@@ -1,0 +1,23 @@
+--- Makefile.orig	Sun Jul  8 15:34:17 2001
++++ Makefile	Fri Aug 17 17:12:31 2001
+@@ -2,10 +2,8 @@
+ # Makefile for gkrellflynn
+ #
+ 
+-CC = gcc
+-CFLAGS = -c -O -Wall -fPIC `gtk-config --cflags` `imlib-config --cflags-gdk`
++CFLAGS += -Wall -fPIC `${GTK_CONFIG} --cflags` `${IMLIB_CONFIG} --cflags-gdk` -I${X11BASE}/include
+ 
+-LD = $(CC)
+ LDFLAGS = -shared -Wl -o
+ 
+ TARGET = gkrellflynn.so
+@@ -13,7 +11,7 @@
+ OBJS = gkrellflynn.o
+ 
+ ${TARGET}:	${OBJS}
+-		${LD} ${DEBUG} ${LDFLAGS} ${TARGET} ${OBJS}
++		${CC} ${DEBUG} ${LDFLAGS} ${TARGET} ${OBJS}
+ 
+ clean:
+ 	rm -f ${OBJS}
