@@ -4955,7 +4955,6 @@ linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-sun-jdk15	ports/java/linux-sun-jdk15
 linux-tiff	ports/graphics/linux-tiff
-linux-unace	ports/archivers/linux-unace
 linux-understand_ada	ports/devel/linux-understand_ada
 linux-understand_c	ports/devel/linux-understand_c
 linux-understand_java	ports/devel/linux-understand_java
