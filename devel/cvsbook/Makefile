@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsbook
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cvsbook.red-bean.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
@@ -15,39 +15,78 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tutorial and reference for CVS
 
-BROKEN=		"Size mismatch"
+OPTIONS=	CVSBOOK_INFO		"Install the info version" on \
+		CVSBOOK_SINGLE_HTML	"Install the single-html version" on \
+		CVSBOOK_SPLIT_HTML	"Install the split-html version" off \
+		CVSBOOK_POSTSCRIPT	"Install the postscript version" on \
+		CVSBOOK_PDF		"Install the PDF version" on
 
-ALL_TARGET=	version
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-INFO=		cvsbook
-PLIST_FILES+=	%%DOCSDIR%%/cvsbook.html \
-		%%DOCSDIR%%/cvsbook.pdf \
-		%%DOCSDIR%%/cvsbook.ps
 
-.if defined(WITH_SPLIT_HTML)
-ALL_TARGET+=	html-monolithic
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_CVSBOOK_SPLIT_HTML)
+ALL_TARGET=	html-distributed
+.else
+NO_BUILD=	yes
 .endif
 
-.if !defined(WITH_SPLIT_HTML)
-pre-everything::
-	@${ECHO_MSG} "You can install SPLIT-HTML format of cvsbook"
-	@${ECHO_MSG} "by defining WITH_SPLIT_HTML"
+.if defined(WITH_CVSBOOK_INFO)
+INFO=		cvsbook
+INFODIR=	${PREFIX}/${INFO_PATH}
+INSTALL_INFO?=	install-info
+.endif
+.if defined(WITH_CVSBOOK_SINGLE_HTML)
+PLIST_FILES+=	%%DOCSDIR%%/cvsbook.html
+WANT_DOCSDIR=	yes
+.endif
+.if defined(WITH_CVSBOOK_POSTSCRIPT)
+PLIST_FILES+=	%%DOCSDIR%%/cvsbook.ps
+WANT_DOCSDIR=	yes
+.endif
+.if defined(WITH_CVSBOOK_PDF)
+PLIST_FILES+=	%%DOCSDIR%%/cvsbook.pdf
+WANT_DOCSDIR=	yes
+.endif
+.if defined(WITH_CVSBOOK_SPLIT_HTML)
+PLIST_DIRS+=	%%DOCSDIR%%/cvsbook
+WANT_DOCSDIR=	yes
+.endif
+.if defined(WANT_DOCSDIR)
+PLIST_DIRS+=	%%DOCSDIR%%
+.endif
+
+.if defined(WITH_CVSBOOK_SPLIT_HTML)
+post-patch:
+	${REINPLACE} -e \
+	'/Non-monolithic HTML not supported/s|@.*|makeinfo --html main.texi|' \
+		${WRKSRC}/Makefile
 .endif
 
 do-install:
-	@${MKDIR} ${DOCSDIR}/cvsbook-shtml
-.if defined(WITH_SPLIT_HTML)
+.if defined(WANT_DOCSDIR)
+	@${MKDIR} ${DOCSDIR}
+.endif
+.if defined(WITH_CVSBOOK_SPLIT_HTML)
+	@${MKDIR} ${DOCSDIR}/cvsbook
 	@cd ${WRKSRC}/cvsbook && ${FIND} . -type f| ${CUT} -c2- \
 	| ${SED} 's|^|${DOCSDIR:S,${PREFIX}/,,}/cvsbook-shtml/|' \
 	| ${SORT} >> ${TMPPLIST}
-	@${INSTALL_DATA} ${WRKSRC}/cvsbook/* ${DOCSDIR}/cvsbook-shtml/
+	@cd ${WRKSRC}/cvsbook && ${INSTALL_DATA} *.html ${DOCSDIR}/cvsbook
 .endif
+.if defined(WITH_CVSBOOK_SINGLE_HTML)
 	@${INSTALL_DATA} ${WRKSRC}/cvsbook.html ${DOCSDIR}
+.endif
+.if defined(WITH_CVSBOOK_PDF)
 	@${INSTALL_DATA} ${WRKSRC}/cvsbook.pdf ${DOCSDIR}
+.endif
+.if defined(WITH_CVSBOOK_POSTSCRIPT)
 	@${INSTALL_DATA} ${WRKSRC}/cvsbook.ps ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/cvsbook.info* ${PREFIX}/info
-	@install-info ${PREFIX}/info/cvsbook.info ${PREFIX}/info/dir
-	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}/cvsbook-shtml" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+.endif
+.if defined(WITH_CVSBOOK_INFO)
+	@${INSTALL_DATA} ${WRKSRC}/cvsbook.info* ${INFODIR}
+	@${INSTALL_INFO} ${INFODIR}/cvsbook.info ${INFODIR}/dir
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
