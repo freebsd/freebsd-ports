@@ -8,11 +8,8 @@
 PORTNAME=	py-gnome
 PORTVERSION= 	1.0.53
 CATEGORIES=	x11-toolkits python gnome
-MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
-		ftp://ftp.gimp.org/pub/gtk/python/ \
-		ftp://infosoc.uni-koeln.de/pub/ftp.gimp.org/pub/gtk/python/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gtk/python/ \
-		ftp://stef.u-picardie.fr/mirror/ftp.gimp.org/gtk/python/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/gnome-python
 DISTNAME=	gnome-python-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.org
