@@ -1,0 +1,6 @@
+This library is intended to replace the standard Python libraries rfc822, 
+mimetools, multifile, MIMEWriter, etc. It intends to be the be-all end-all 
+package for parsing, manipulating, and generating MIME and rfc822 style 
+messages in Python.
+
+WWW: http://sourceforge.net/projects/mimelib/
