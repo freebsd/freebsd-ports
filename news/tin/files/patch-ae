@@ -1,0 +1,10 @@
+--- include/autoconf.hin.bak	Wed Jan 10 03:58:27 2001
++++ include/autoconf.hin	Sat Apr 14 02:02:10 2001
+@@ -49,7 +49,6 @@
+ 
+ /* compiler, compilerflags, ... */
+ #	undef TIN_CC
+-#	undef TIN_CFLAGS
+ #	undef TIN_CPP
+ #	undef TIN_CPPFLAGS
+ #	undef TIN_LD
