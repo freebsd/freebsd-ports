@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jun 13 08:04:45 2000
-+++ Makefile.in	Wed Jun 28 21:37:36 2000
+--- Makefile.in.orig	Tue Aug 22 07:52:56 2000
++++ Makefile.in	Sat Dec 30 04:02:02 2000
 @@ -27,12 +27,12 @@
  srcdir = @srcdir@
  VPATH = @srcdir@
@@ -27,7 +27,7 @@
  RANLIB = ranlib
  
  AR = ar
-@@ -274,10 +272,8 @@
+@@ -254,10 +252,8 @@
  install-dirs:
  	@for i in $(MAKEDIRS) ; do \
  		echo Making $$i... ; \
