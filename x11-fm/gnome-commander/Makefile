@@ -6,25 +6,36 @@
 #
 
 PORTNAME=	gnome-commander
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnome-commander
+MASTER_SITES=	http://freesoftware.fsf.org/download/gcmd/gcmd.pkg/0.9.7/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	edybsd@yahoo.com.ar
 
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .if defined(WITH_FAM)
-LIB_DEPENDS=	fam:${PORTSDIR}/devel/fam
+LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 .endif
+BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
+		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
+.for AM in config.sub config.guess install-sh missing mkinstalldirs
+	${LN} -fs ${LOCALBASE}/share/automake14/automake/${AM} ${WRKSRC}/${AM}
+.endfor
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|[%][%]X11BASE[%][%]|${X11BASE}|g' \
+		${WRKSRC}/src/gnome-cmd-data.c
 
 .include <bsd.port.mk>
