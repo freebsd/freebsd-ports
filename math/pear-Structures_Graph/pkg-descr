@@ -1,0 +1,6 @@
+PEAR::Structures_Graph is a package for creating and manipulating graph
+datastructures. It allows building of directed and undirected graphs, with
+data and metadata stored in nodes. The library provides functions for graph
+traversing as well as for characteristic extraction from the graph topology.
+
+WWW: http://pear.php.net/package/Structures_Graph/
