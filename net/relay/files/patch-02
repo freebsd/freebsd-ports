@@ -1,0 +1,26 @@
+--- relay.h.orig	Wed Oct 25 20:28:45 1995
++++ relay.h	Sat Dec 26 12:34:21 1998
+@@ -22,7 +22,7 @@
+    by the clients
+ */
+ 
+-#define FINGER "/usr/ucb/finger"
++#define FINGER "/usr/bin/finger"
+ /* change this to the name of the finger client on the relay, if it's
+    something else
+ */
+@@ -30,12 +30,12 @@
+ #define SERV_TCP_PORT 19023
+ /* change this if you don't like this number */
+ 
+-#define TELNET "/usr/ucb/telnet"
++#define TELNET "/usr/bin/telnet"
+ /* change this to the name of the telnet client on the client machine if it's
+    something else
+ */
+ 
+-#define FTP "/usr/local/bin/ftp"
++#define FTP "/usr/bin/ftp"
+ /* change this to the name of the ftp client on the client machine, if it's
+    something else
+ */

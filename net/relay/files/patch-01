@@ -1,0 +1,13 @@
+--- relay.c.orig	Fri Nov 10 21:18:37 1995
++++ relay.c	Sat Dec 26 12:29:01 1998
+@@ -51,8 +51,8 @@
+ char sbuf[16384], cbuf[16384];
+ struct hostent *myself;
+ char mynumber[100];
+-extern int errno;
+-extern char *sys_errlist[];
++/* extern int errno;
++extern char *sys_errlist[]; */
+ int debug=0;
+ 
+ void sigchld() {

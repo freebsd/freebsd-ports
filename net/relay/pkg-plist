@@ -1,0 +1,5 @@
+bin/rtelnet
+bin/rfinger
+bin/rftp
+libexec/relay
+share/doc/relay/README
