@@ -10,12 +10,6 @@ include/plot.h
 include/plotcompat.h
 include/plotter.h
 include/xmi.h
-@unexec install-info --delete %D/info/libxmi.info %D/info/dir
-info/libxmi.info
-@exec install-info %D/info/libxmi.info %D/info/dir
-@unexec install-info --delete %D/info/plotutils.info %D/info/dir
-info/plotutils.info
-@exec install-info %D/info/plotutils.info %D/info/dir
 lib/libplot.a
 lib/libplot.so
 lib/libplot.so.4

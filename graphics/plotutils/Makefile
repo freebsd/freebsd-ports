@@ -26,6 +26,8 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		ode.1 plot.1 plotfont.1 spline.1 tek2plot.1
 
+INFO=	libxmi plotutils
+
 pre-patch:
 	@${PERL} -pi -e 's|-lXm |\$$\{MOTIFLIB\} |g' ${WRKSRC}/configure
 
