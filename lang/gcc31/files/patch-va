@@ -1,12 +1,14 @@
---- gcc/Makefile.in.orig	Mon Aug 27 21:06:24 2001
-+++ gcc/Makefile.in	Fri Aug 31 08:45:23 2001
-@@ -895,3 +895,3 @@
- $(srcdir)/configure: @MAINT@ $(srcdir)/configure.in
+--- gcc/Makefile.in.orig	Thu May 23 10:57:21 2002
++++ gcc/Makefile.in	Mon Sep  9 01:03:47 2002
+@@ -157,4 +157 @@
+-USER_H = $(srcdir)/ginclude/stdarg.h $(srcdir)/ginclude/stddef.h \
+-    $(srcdir)/ginclude/varargs.h \
+-    $(srcdir)/ginclude/stdbool.h $(srcdir)/ginclude/iso646.h \
+-    $(EXTRA_HEADERS)
++USER_H = $(EXTRA_HEADERS)
+@@ -859 +856 @@
 -	(cd $(srcdir) && autoconf)
 +	(cd $(srcdir) && echo "wants to run autoconf, blah")
- 
-@@ -917,3 +917,3 @@
- @MAINT@ $(srcdir)/cstamp-h.in: $(srcdir)/configure.in $(srcdir)/acconfig.h
+@@ -881 +878 @@
 -@MAINT@	(cd $(srcdir) && autoheader)
 +@MAINT@	(cd $(srcdir) && echo "wants to run autoheader, blah")
- @MAINT@	@rm -f $(srcdir)/cstamp-h.in

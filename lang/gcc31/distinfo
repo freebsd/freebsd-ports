@@ -3,4 +3,4 @@ MD5 (gcc-g++-3.1.1.tar.bz2) = 67c87ca839aadb90648abb15c4639fdd
 MD5 (gcc-g77-3.1.1.tar.bz2) = 053563936e9fc4932aaad013da103086
 MD5 (gcc-java-3.1.1.tar.bz2) = 5a5cf5088095c5c4378e63c30f832be5
 MD5 (gcc-objc-3.1.1.tar.bz2) = f59f7471ed5f544791251fa57bcce85c
-MD5 (port_gcc31_2002-07-26.diff) = 0680f6395440c81352abf9617f384d14
+MD5 (port_gcc31_2002-09-09.diff) = 0680f6395440c81352abf9617f384d14
