@@ -71,8 +71,8 @@ BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan grepjar jar
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "ia64"
-BROKEN=		"Does not compile on !i386 and !ia64"
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 die to platform rename"
 .endif
 
 post-configure:
