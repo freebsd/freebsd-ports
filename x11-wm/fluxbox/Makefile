@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=	-p1
 PATCHFILES=	remember-0.1.14-7.gz
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A small and fast window manager based on BlackBox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
