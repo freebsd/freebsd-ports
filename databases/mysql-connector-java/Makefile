@@ -13,9 +13,11 @@ MASTER_SITE_SUBDIR=	mmmysql
 DISTNAME=	mm.mysql-${PORTVERSION}
 EXTRACT_SUFX=	-you-must-unjar-me.jar
 
-MAINTAINER=	dglo@SSEC.WISC.EDU
+MAINTAINER=	dglo@ssec.wisc.edu
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+
+USE_REINPLACE=	YES
 
 USE_JAVA=	1.2+
 NEED_JAVAC=	YES
@@ -23,50 +25,60 @@ NEED_JAVAC=	YES
 EXTRACT_CMD=	${JAR}
 EXTRACT_BEFORE_ARGS=	-xf
 
+PLIST= ${WRKDIR}/PLIST
+
+JAVALIBNAME=   ${PORTNAME}-${PORTVERSION}
+APIDOCSDIR=    ${DOCSDIR}/${JAVALIBNAME}
+
 post-patch:
-	@(cd ${WRKSRC}; ${MV} build.xml build.xml.patched; \
-	 ${SED} -e "s;%%WRKSRC%%;${WRKSRC};g" -e "s;%%PREFIX%%;${PREFIX};g" \
-		< build.xml.patched > build.xml)
-	@(cd ${WRKSRC}; ${MV} j1c j1c.patched; \
-	 ${SED} "s;%%PREFIX%%;${PREFIX};g" < j1c.patched > j1c; \
-	 ${CHMOD} 555 j1c)
+	@${REINPLACE_CMD} \
+		-e "s;%%WRKSRC%%;${WRKSRC};g" \
+		-e "s;%%PREFIX%%;${PREFIX};g" \
+			${WRKSRC}/build.xml
+	@${REINPLACE_CMD} "s;%%PREFIX%%;${PREFIX};g" ${WRKSRC}/j1c
+	@${CHMOD} 544 ${WRKSRC}/j1c
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} ant clean dist)
+	@cd ${WRKSRC} && \
+		${SETENV} JAVA_HOME=${JAVA_HOME} ant clean dist
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}; ${MKDIR} doc; \
+	@cd ${WRKSRC} && ${MKDIR} doc && \
 	 ${JAVADOC} -d doc -package \
 	     -classpath ${WRKSRC}:${WRKSRC}/lib/jdbc2_0-stdext.jar:${WRKSRC}/lib/jta-spec1_0_1.jar:${CLASSPATH} \
-	     org.gjt.mm.mysql org.gjt.mm.mysql.jdbc2)
+	     org.gjt.mm.mysql org.gjt.mm.mysql.jdbc2
 .endif
 
-do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes
-	@${INSTALL_DATA} ${WRKSRC}/build/mm.mysql-${PORTVERSION}/mm.mysql-${PORTVERSION}-bin.jar \
-		${PREFIX}/share/java/classes/mm.mysql-${PORTVERSION}.jar
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+
+do-install: do-install-jar do-install-apidocs
+
+do-install-jar:
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/build/mm.mysql-${PORTVERSION}/mm.mysql-${PORTVERSION}-bin.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${INSTALL_DATA} ${WRKSRC}/lib/jdbc2_0-stdext.jar \
-		${PREFIX}/share/java/classes/
+		${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/lib/jta-spec1_0_1.jar \
-		${PREFIX}/share/java/classes/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mysql-jdbc
-	@(cd ${WRKSRC}/doc && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/share/doc/mysql-jdbc && ${TAR} --unlink -x -f -)
-.endif
+		${JAVAJARDIR}
+	@${ECHO} ${JAVAJARDIR}/jta-spec1_0_1.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} ${JAVAJARDIR}/jdbc2_0-stdext.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} ${JAVAJARDIR}/${PORTNAME}.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} "@unexec ${RMDIR} ${JAVAJARDIR} 2>/dev/null || true" | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
 
-post-install:
-	@${ECHO} share/java/classes/mm.mysql-${PORTVERSION}.jar >> ${TMPPLIST}
-	@${ECHO} share/java/classes/jdbc2_0-stdext.jar >> ${TMPPLIST}
-	@${ECHO} share/java/classes/jta-spec1_0_1.jar >> ${TMPPLIST}
+do-install-apidocs:
 .if !defined(NOPORTDOCS)
-	@(cd ${PREFIX} \
-		&& find share/doc/mysql-jdbc -type f -print >> ${TMPPLIST})
-	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt/mm/mysql/jdbc2" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt/mm/mysql" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt/mm" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/mysql-jdbc/org" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/mysql-jdbc" >> ${TMPPLIST}
+	@${MKDIR} ${APIDOCSDIR}
+	@${CP} -r ${WRKSRC}/doc/* ${APIDOCSDIR}
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${APIDOCSDIR}
+	@${FIND} ${APIDOCSDIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${APIDOCSDIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 .endif
 
 .include <bsd.port.mk>
