@@ -7,7 +7,7 @@
 
 # This is the COMMON port of XEmacs Mule slave
 # ports(editors/xemacs${XEMACS_MAJOR_VER}-mule, japanese/xemacs${XEMACS_MAJOR_VER}-*)
-# and provides `Architecture Independent' parts of xemacs binary. 
+# and provides `Architecture Independent' parts of xemacs binary.
 #
 # Caracteristic variables of XEmacs Mule ports family:
 #	MULE_PORT         : Mule port if defined(means COMMN or SLAVE)

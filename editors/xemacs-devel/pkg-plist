@@ -1143,4 +1143,3 @@ lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-9
 @dirrm lib/xemacs-%%XEMACS_VER%%/info
 @dirrm lib/xemacs-%%XEMACS_VER%%
 @unexec rmdir %D/lib/xemacs 2>/dev/null || true
-

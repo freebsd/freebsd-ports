@@ -6,7 +6,7 @@
 #
 
 # This is the MASTER port of XEmacs Mule slave ports(japanese/xemacs${XEMACS_MAJOR_VER}-*)
-# and provides `Architecture Dependent' parts of xemacs binary. 
+# and provides `Architecture Dependent' parts of xemacs binary.
 #
 # Caracteristic variables of XEmacs Mule ports family:
 #	MULE_PORT         : Mule port if defined(means COMMN or SLAVE)
@@ -71,6 +71,8 @@ INSTALL_TARGET?=install-arch-dep
 FILESDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/files
 PATCHDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/patches
 PLIST?=		${PKGLDIR}/PLIST
+
+SLAVEDIRS=	editors/xemacs21-mule-common editors/xemacs21-mule-sumo
 
 XEMACS_MAJOR_VER?=	21
 MULE_PORT=		yes
@@ -145,4 +147,6 @@ post-package:
 #	${MKDIR} ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults
 #.endif
 
-.include "${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/Makefile"
+MASTERDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}
+
+.include "${MASTERDIR}/Makefile"

@@ -10,6 +10,7 @@ PORTVERSION=	${XEMACS_REL}
 CATEGORIES+=	editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
@@ -17,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${P
 		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-sumo-packages \
 		${RUN_DEP_LIST}
 
-EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
 
 XEMACS_MAJOR_VER=	21
