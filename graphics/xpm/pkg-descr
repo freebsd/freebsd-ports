@@ -1,6 +1,6 @@
-xpm-3.4e
+xpm-3.4f
 
-Here is an extract from the source distribution xpm-3.4e README file:
+Here is an extract from the source distribution xpm-3.4f README file:
 
  * Copyright (C) 1989-94 GROUPE BULL
 
@@ -17,5 +17,3 @@ XpmCreateDataFromPixmap, XpmReadFileToPixmap and XpmWriteFileFromPixmap for
 respectively including, storing, reading and writing this format, plus four
 other: XpmCreateImageFromData, XpmCreateDataFromImage, XpmReadFileToImage and
 XpmWriteFileFromImage for working with images instead of pixmaps.
-
-
