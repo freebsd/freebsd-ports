@@ -1,0 +1,32 @@
+--- Makefile.orig	Sun Nov 24 23:27:11 2002
++++ Makefile	Sun Nov 24 23:34:49 2002
+@@ -1,4 +1,4 @@
+-INSTALLDIR = /usr/local/lib/gkrellm2/plugins
++INSTALLDIR = ${PREFIX}/libexec/gkrellm2/plugins
+ VERSION = 2.0.1
+ PKGNAME = gkrellm-multiping
+ #OPT = -march=athlon -O2
+@@ -8,7 +8,7 @@
+ all: pinger multiping.so
+ 
+ pinger: pinger.c
+-	$(CC) `pkg-config glib-2.0 --cflags` $(OPT) -lpthread `pkg-config glib-2.0 --libs` -Wall -o pinger pinger.c
++	${CC} `pkg-config glib-2.0 --cflags` ${OPT} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} `pkg-config glib-2.0 --libs` -Wall -o pinger pinger.c
+ 
+ multiping.o: multiping.c decal_multiping_status.xpm
+ 	$(CC) -Wall -fPIC -Wall `pkg-config gtk+-2.0 --cflags` $(OPT) -DVERSION=\"$(VERSION)\" -c multiping.c
+@@ -20,10 +20,10 @@
+ 	rm -f *.o *.so core
+ 
+ install: pinger multiping.so
+-	install -d $(INSTALLDIR)
+-	install -c -s -m 644 multiping.so $(INSTALLDIR)
+-	install -c -s -m 4755 pinger $(INSTALLDIR)
+-	echo "pinger helper is installed suid root"
++	${MKDIR} ${INSTALLDIR}
++	${INSTALL_DATA} multiping.so ${INSTALLDIR}
++	${INSTALL_PROGRAM} pinger ${INSTALLDIR}
++	${CHMOD} 4755 ${INSTALLDIR}/pinger
+ 
+ dist:
+ 	rm -rf $(PKGNAME)-$(VERSION)
