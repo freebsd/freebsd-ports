@@ -42,10 +42,11 @@ CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
-		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1
+		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1 \
+		make_unicodemap.1
 MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
 MAN7=		samba.7
-MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 \
+MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 smbspool.8 \
 		smbmount.8 smbumount.8 smbmnt.8
 
 post-install:
@@ -77,6 +78,13 @@ post-install:
 	${CHMOD} 500 ${SAMBA_PRIVATE}
 	${CHOWN} root.wheel ${PREFIX}/bin/smbpasswd
 	${CHMOD} 111 ${PREFIX}/bin/smbpasswd
+.if defined(PACKAGE_BUILDING)
+	${ECHO} "private/smbpasswd" >> ${TMPPLIST}
+	${ECHO} "@dirrm private" >> ${TMPPLIST}
+.else
+	${ECHO} "@unexec echo \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
+.endif
+
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/samba
