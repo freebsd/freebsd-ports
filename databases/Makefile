@@ -65,6 +65,7 @@
     SUBDIR += p5-DBD-mysql
     SUBDIR += p5-DBD-ODBC
     SUBDIR += p5-DBD-Pg
+    SUBDIR += p5-DBD-SQLite
     SUBDIR += p5-DBD-Sybase
     SUBDIR += p5-DBD-XBase
     SUBDIR += p5-DBI
