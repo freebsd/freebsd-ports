@@ -14,6 +14,8 @@ MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/
 MAINTAINER=	ricci@cs.utah.edu
 COMMENT=	A window manager with a text-editorish, keyboard friendly interface
 
+CONFLICTS=	ion-2004*
+
 MAN1=		ion.1x
 
 USE_X_PREFIX=	yes
