@@ -29,7 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -214,13 +214,12 @@ CONFIGURE_ARGS+=	--enable-useragent-log
 CONFIGURE_ARGS+=	--enable-arp-acl
 .endif
 .if defined(WITH_SQUID_PF)
-.if ${OSVERSION} >= 502106
-# This will work only systems where PF is part of the base system for now.
-# If someone is eager to teach squid's configure script how to pick up the pf
-# port on 5.[0-2] systems instead, go on, I will integrate your patch.
 CONFIGURE_ARGS+=	--enable-pf-transparent
-.else
-IGNORE=	WITH_SQUID_PF only works on systems where pf is part of the base system.
+.if ${OSVERSION} < 502106
+pf_includedir=	${LOCALBASE}/include/pf
+BUILD_DEPENDS+=	${pf_includedir}/net/pfvar.h:${PORTSDIR}/security/pf
+CFLAGS+=	"-I${pf_includedir}"
+EXTRA_PATCHES+=	${WRKDIR}/pf_from_ports.patch
 .endif
 .endif
 .if defined(WITH_SQUID_FOLLOW_XFF)
@@ -282,6 +281,15 @@ CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
+
+pre-patch:
+# Check whether we need to create the extra patch that makes pf(4)
+# visible for squid's configure script:
+.if defined(pf_includedir)
+	@${SED} -e 's|%%PF_INCLUDEDIR%%|${pf_includedir}|g' \
+	    -e 's|%%PF_AC_INCLUDEPATH%%|${pf_includedir:S,/,_,g}|g' \
+	    ${FILESDIR}/pf_from_ports.patch.in >${WRKDIR}/pf_from_ports.patch
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
