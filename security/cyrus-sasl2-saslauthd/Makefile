@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-auth-sasldb \
 		--with-openssl=${OPENSSLBASE} \
 		--with-rc4=openssl \
-		--with-saslauthd
+		--with-saslauthd=${SASLAUTHD_RUNPATH}
 
 .if defined(WITH_BDB_VER)
 .if ${WITH_BDB_VER} == 3
@@ -111,15 +111,22 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 		OPENSSLLIB=${OPENSSLLIB} \
 		LDFLAGS=${LDFLAGS}
 
+SASLAUTHD_RUNPATH?=	/var/state/saslauthd
+.if ${SASLAUTHD_RUNPATH} != /var/state/saslauthd
+RUNPATH=	"@comment "
+.endif
+
 CYRUS_USER?=	cyrus
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL LDAP_SASLAUTHD NEWS README
 
 PLIST_SUB=	PREFIX=${PREFIX} \
-		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
+		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
+		RUNPATH=${RUNPATH}
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
+		RC_SUBR=${RC_SUBR} \
+		SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
 
 do-build:
 	@${RM} -f ${WRKSRC}/saslauthd/saslauthd.8
@@ -131,8 +138,15 @@ post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
-	${MKDIR} -m 770 /var/state/saslauthd
-	${CHOWN} ${CYRUS_USER}:mail /var/state/saslauthd
+.if ${SASLAUTHD_RUNPATH} != /var/state/saslauthd
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."
+	@${ECHO_MSG} "Make sure to have ${SASLAUTHD_RUNPATH} by yourself."
+	@${ECHO_MSG} ""
+.else
+	${MKDIR} -m 770 ${SASLAUTHD_RUNPATH}
+	${CHOWN} ${CYRUS_USER}:mail ${SASLAUTHD_RUNPATH}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/saslauthd
 .for file in ${DOCS}
