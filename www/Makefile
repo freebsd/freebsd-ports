@@ -187,6 +187,7 @@
     SUBDIR += mod_auth_any
     SUBDIR += mod_auth_cookie_mysql
     SUBDIR += mod_auth_external
+    SUBDIR += mod_auth_external2
     SUBDIR += mod_auth_kerb
     SUBDIR += mod_auth_mysql
     SUBDIR += mod_auth_mysql_another
