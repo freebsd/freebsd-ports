@@ -1,0 +1,10 @@
+--- fonts.conf.in.orig	Sun Oct  6 16:37:34 2002
++++ fonts.conf.in	Sun Oct  6 16:37:41 2002
+@@ -21,7 +21,6 @@
+ -->
+ 
+ 	<dir>/usr/X11R6/lib/X11/fonts</dir>
+- 	<dir>/usr/share/fonts</dir>
+ 	<dir>~/.fonts</dir>
+ 
+ <!-- FONTPATH_END -->

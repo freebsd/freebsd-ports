@@ -1,0 +1,13 @@
+bin/fc-cache
+bin/fc-list
+bin/fontconfig-config
+etc/fonts/fonts.conf
+etc/fonts/fonts.dtd
+include/fontconfig/fcfreetype.h
+include/fontconfig/fcprivate.h
+include/fontconfig/fontconfig.h
+lib/libfontconfig.so
+lib/libfontconfig.so.1
+libdata/pkgconfig/fontconfig.pc
+@dirrm include/fontconfig
+@dirrm etc/fonts
