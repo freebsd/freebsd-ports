@@ -74,7 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -95,7 +95,11 @@ PATCHFILES=	squid-2.5.STABLE7-half_closed_POST.patch \
 		squid-2.5.STABLE7-dothost.patch \
 		squid-2.5.STABLE7-httpd_accel_vport.patch \
 		squid-2.5.STABLE7-cachemgr_vmobjects.patch \
-		squid-2.5.STABLE7-empty_acls.patch
+		squid-2.5.STABLE7-empty_acls.patch \
+		squid-2.5.STABLE7-close_other.patch \
+		squid-2.5.STABLE7-fakeauth_auth.patch \
+		squid-2.5.STABLE7-gopher_html_parsing.patch \
+		squid-2.5.STABLE7-wccp_denial_of_service.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -169,7 +173,7 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 libexec=	cachemgr.cgi digest_pw_auth diskd dnsserver ip_user_check \
 		squid_ldap_auth squid_ldap_group msnt_auth ncsa_auth ntlm_auth \
 		pam_auth pinger smb_auth smb_auth.sh squid_unix_group \
-		unlinkd wb_auth wb_group wb_ntlmauth wbinfo_group.pl yp_auth
+		unlinkd wb_auth wb_group wb_ntlmauth wbinfo_group.pl
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--datadir=${PREFIX}/etc/squid \
@@ -181,7 +185,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 
 # Authentication methods and modules:
 
-basic_auth=	NCSA PAM YP MSNT SMB winbind
+basic_auth=	NCSA PAM MSNT SMB winbind
 external_acl=	ip_user unix_group wbinfo_group winbind_group
 MAN8+=		pam_auth.8 squid_unix_group.8
 .if defined(WITH_SQUID_LDAP_AUTH)
@@ -191,6 +195,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN8+=		squid_ldap_auth.8 squid_ldap_group.8
 basic_auth+=	LDAP
 external_acl+=	ldap_group
+.endif
+.if !defined(NO_NIS)
+basic_auth+=	YP
+libexec+=	yp_auth
 .endif
 CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-basic-auth-helpers="${basic_auth}" \
