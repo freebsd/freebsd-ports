@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xproto
-PORTVERSION=	6.6.p2
+PORTVERSION=	6.6.1
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 protocol headers
@@ -19,6 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-6.6
+USE_GNOME=	gnomehack
 
 .include <bsd.port.mk>
