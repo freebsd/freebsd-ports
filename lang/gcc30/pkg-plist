@@ -6,12 +6,12 @@ bin/ggcc
 bin/%%GNU_HOST%%-gcc
 bin/%%GNU_HOST%%-g++
 bin/gccbug-%%SNAPVER%%
-bin/gcj
-bin/gcjh
-bin/gcov
-bin/jv-scan
-bin/jcf-dump
-%%GNU_HOST%%/include/_G_config.h
+@comment not working on FreeBSD post-libstdc++-v3:	bin/gcj
+@comment not working on FreeBSD post-libstdc++-v3:	bin/gcjh
+@comment not working on FreeBSD post-libstdc++-v3:	bin/gcov
+@comment not working on FreeBSD post-libstdc++-v3:	bin/jv-scan
+@comment not working on FreeBSD post-libstdc++-v3:	bin/jcf-dump
+@comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 %%GNU_HOST%%/include/assert.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
@@ -83,19 +83,3 @@ info/gcc.info-9
 @exec install-info %D/info/gcc.info %D/info/dir
 @dirrm %%GNU_HOST%%/include
 @dirrm %%GNU_HOST%%
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/net
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netatm
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netipx
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netns
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/machine
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/security
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%
-@dirrm lib/gcc-lib/%%GNU_HOST%%
-@dirrm lib/gcc-lib

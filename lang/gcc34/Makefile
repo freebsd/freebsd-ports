@@ -122,14 +122,18 @@ post-install:
 	${MV} -f ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/gg++.1
 	${MV} -f ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/gg77.1
 	${MV} -f ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/gcpp.1
-.if defined(WANT_SHAREDLIBS)
-	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
-.endif
+#.if defined(WANT_SHAREDLIBS)
+#	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
+#.endif
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
-	    find ${TARGLIB} -type f -o -type l	>${WRKDIR}/PLIST.gcc-lib
+	    find ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
+	    	>${WRKDIR}/PLIST.gcc-lib
+	cd ${PREFIX} ;\
+	    find ${TARGLIB:S/^${PREFIX}\///} -type d \
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
 	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
 	${ECHO} "d"				>> ${WRKDIR}/ex.script
