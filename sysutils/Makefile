@@ -168,6 +168,7 @@
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xfsm
+    SUBDIR += xin
     SUBDIR += xloadface
     SUBDIR += xlogmaster
     SUBDIR += xosview
