@@ -19,9 +19,9 @@ BINGRP=		conquest
 SHAREGRP=	conquest
 
 post-patch:
-	${REINPLACE_CMD} -e "s|\@prefix\@/conquest|\@prefix\@|g; \
-		s|^.+\@chgrp .\(CONQGROUP\) conq.+||g; \
-		s|^.+\@chmod 2771 conq.+||g;" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e "s|@prefix@/conquest|@prefix@|g; \
+		s|^.*@chgrp .(CONQGROUP) conq.*||g; \
+		s|^.*@chmod 2771 conq.*||g;" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
 	${REINPLACE_CMD} -e "s/-O2 -fPIC//g" ${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s|/opt/conquest|${PREFIX}|g; \
