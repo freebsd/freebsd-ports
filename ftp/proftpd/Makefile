@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.0p10
+PORTVERSION=	1.2.0rc2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/ \
 		ftp://ftp.stikman.com/pub/proftpd/ \
 		ftp://ftp.linux.co.uk/pub/packages/proftpd/ \
 		ftp://ftp.drenik.net/linux/ftp/proftpd/
-DISTNAME=	${PORTNAME}-1.2.0pre10
+DISTNAME=	${PORTNAME}-1.2.0rc2
 
 MAINTAINER=	mharo@FreeBSD.org
-
-FORBIDDEN=	"Remote root hole, exploitable anonymously"
 
 MAN1=	ftpcount.1 ftpwho.1
 MAN5=	xferlog.5
