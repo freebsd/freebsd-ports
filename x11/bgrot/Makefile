@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bgrot
-PORTVERSION= 	1.30
+PORTVERSION=	1.30
 CATEGORIES=	x11
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
 		http://www.futuresouth.com/~fullermd/bgrot/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xbanner
-PORTVERSION= 	1.31
+PORTVERSION=	1.31
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.digital.com/pub/linux/XBanner/ \
 		${MASTER_SITE_SUNSITE}

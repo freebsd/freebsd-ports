@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xstarroll
-PORTVERSION= 	1.04
+PORTVERSION=	1.04
 CATEGORIES=	x11
 MASTER_SITES=	http://wwwmiya.ee.kagu.sut.ac.jp/~sakai/
 

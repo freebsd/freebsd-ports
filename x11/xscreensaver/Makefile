@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION= 	3.26
+PORTVERSION=	3.26
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmold
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 DISTNAME=	${PORTNAME}

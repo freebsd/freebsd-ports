@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfishtank
-PORTVERSION= 	2.2
+PORTVERSION=	2.2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 

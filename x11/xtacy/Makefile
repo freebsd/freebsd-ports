@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtacy
-PORTVERSION= 	1.14
+PORTVERSION=	1.14
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ultranet.com/~jjohnson/ \
 		${MASTER_SITE_SUNSITE}
