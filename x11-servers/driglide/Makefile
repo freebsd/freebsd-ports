@@ -22,6 +22,8 @@ USE_LIBTOOL=		yes
 USE_AUTOMAKE_VER=	14
 AUTOMAKE_ARGS=		-a
 USE_GMAKE=		yes
+# Not yet ported to Alpha.
+ONLY_FOR_ARCHS=		i386
 
 # Glide DOES NOT work with CFLAGS greater than -O2
 CFLAGS+= -O
