@@ -1,6 +1,12 @@
-Mozilla Firefox is the next-generation browser from the Mozilla project. See
-its home page for more details.
+Firefox is an award winning, free, open-source web browser for many platforms
+and is based on the Mozilla codebase. It is small, fast and easy to use, and
+offers many advanced features:
+ o Popup Blocking
+ o Tabbed Browsing
+ o Live Bookmarks (ie. RSS)
+ o Extensions
+ o Themes
+ o FastFind
+ o Improved Security
 
-WWW:  http://www.mozilla.org/products/firefox/
-
--- AlanE <alane@freebsd.org>
+WWW: http://www.mozilla.org/products/firefox/
