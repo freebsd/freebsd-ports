@@ -8,8 +8,7 @@
 PORTNAME=	orbit
 PORTVERSION=	0.3.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://orbit-python.sault.org/files/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	# no longer available from original mastersite since December 2002
 MASTER_SITE_SUBDIR=	orbit-python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	orbit-python-${PORTVERSION}
