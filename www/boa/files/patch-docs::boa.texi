@@ -1,0 +1,11 @@
+--- ../docs/boa.texi.orig	Mon Feb 25 12:39:56 2002
++++ ../docs/boa.texi	Mon Feb 25 12:40:28 2002
+@@ -31,7 +31,7 @@
+ @ifinfo
+ @dircategory Networking
+ @direntry
+-* Boa: (boa).           The Boa Webserver
++* Boa: (boa).			The Boa Webserver
+ @end direntry
+ @end ifinfo
+ 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boa
-PORTVERSION=	0.94.12.r2
+PORTVERSION=	0.94.12.r3
 CATEGORIES=	www
 MASTER_SITES=	http://www.boa.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
@@ -23,6 +23,9 @@ post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/defines.h \
 		${WRKSRC}/../boa.conf
 
+post-build:
+	@cd ${WRKSRC}/../docs && ${MAKE} boa.info boa.html boa.txt
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/boa ${PREFIX}/sbin
 	@${INSTALL_PROGRAM} ${WRKSRC}/boa_indexer ${PREFIX}/sbin
@@ -33,7 +36,11 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.texi ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../docs/boa_banner.png ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/boa.info ${PREFIX}/info/dir
 .endif
 
 post-install:
