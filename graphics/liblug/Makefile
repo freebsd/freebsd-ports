@@ -15,6 +15,8 @@ MAINTAINER=		greid@ukug.uk.freebsd.org
 
 LIB_DEPENDS=		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_XLIB=		yes
+
 WRKSRC=			${WRKDIR}/lug
 MAKEFILE=		Makefile.linux
 INSTALLS_SHLIB=		yes
