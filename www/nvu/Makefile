@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nvu
-PORTVERSION=	0.70
+PORTVERSION=	0.80
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://cvs.nvu.com/download/
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -36,7 +34,7 @@ OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
 		DEBUG "Enable debugging (i.e. gdb) support" off \
 		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
-NVU=		nvu-0.70
+NVU=		nvu-0.80
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
