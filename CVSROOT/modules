@@ -1860,6 +1860,7 @@ gcc32		ports/lang/gcc32
 gcc33		ports/lang/gcc33
 gchempaint	ports/science/gchempaint
 gchemutils	ports/science/gchemutils
+gcipher		ports/security/gcipher
 gcl		ports/lang/gcl
 gcolor		ports/graphics/gcolor
 gcombust	ports/sysutils/gcombust
