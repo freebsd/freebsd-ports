@@ -12,12 +12,3 @@ $FreeBSD$
  
  RDIR	      = ../releases/erlgtk-$(VSN)
  RFILES	      = \
-@@ -61,7 +61,7 @@
- 	@INSTALL_DIR@ $(IDIR)/ebin
- 	@INSTALL_DIR@ $(IDIR)/priv/bin
- 	@INSTALL_DATA@ $(OBJS) $(IDIR)/ebin
--	@INSTALL_PROGRAM@ ../priv/bin/glade2erl $(IDIR)/priv/bin
-+	@INSTALL_SCRIPT@ ../priv/bin/glade2erl $(IDIR)/priv/bin
- 
- release: all
- 	@INSTALL_DIR@ $(RDIR)/glade

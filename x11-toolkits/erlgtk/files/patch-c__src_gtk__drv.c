@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- c_src/gtk_drv.c.orig	Sat Aug 30 20:51:29 2003
-+++ c_src/gtk_drv.c	Sat Aug 30 20:51:59 2003
-@@ -80,6 +80,8 @@
+--- c_src/gtk_drv.c.orig	Tue Nov  4 13:41:13 2003
++++ c_src/gtk_drv.c	Tue Nov  4 13:42:12 2003
+@@ -2203,7 +2203,7 @@
+ 	return gdrv_encode_ulong(mpp, 0);
+     }
  
- #define MAX_ARG_STACK  0x8000  /* max # of long words (128K) */
- 
-+#define ERL_MAX_COUNT 0xffffff
-+
- #define ETERM_REF(e) do { \
-   if (ERL_COUNT(e) < ERL_MAX_COUNT) \
-       ERL_COUNT(e)++; \
+-    if (type == GDK_TYPE_EVENT) {
++    if (gtk_type_is_a(type, GDK_TYPE_EVENT)) {
+ 	return encode_gdk_event(mpp, (GdkEvent*) ptr);
+     }
+     else if ((type == GDK_TYPE_WINDOW)||(type == GDK_TYPE_PIXMAP) ||
