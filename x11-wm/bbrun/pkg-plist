@@ -1,0 +1,3 @@
+bin/bbrun
+%%PORTDOCS%%share/doc/bbrun/README
+%%PORTDOCS%%@dirrm share/doc/bbrun
