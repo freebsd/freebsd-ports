@@ -3,10 +3,10 @@
 # Date created:		So  14 Jun 1998 13:09:18 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.3 1998/08/12 06:29:30 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/25 10:04:57 asami Exp $
 #
 
-DISTNAME=	kbiff-0.7.3
+DISTNAME=	kbiff-0.8
 CATEGORIES=	mail kde
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Hills/2651/
 
