@@ -21,11 +21,12 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/lglade.so:${PORTSDIR}/devel/ruby-libglade
 RUN_DEPENDS+=	${RUBY_SITELIBDIR}/gdk_pixbuf.rb:${PORTSDIR}/graphics/ruby-gdk_pixbuf
 #RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gnome.so:${PORTSDIR}/x11/ruby-gnome
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/panel_applet.so:${PORTSDIR}/x11/ruby-panel-applet
+#RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/libart.so:${PORTSDIR}/graphics/ruby-libart
 
-# libglade	depends on gtk
+# libglade	depends on gtk, gnome
 # gdk_imlib	depends on gtk
 # gdk_pixbuf	depends on gtk
-# gnome		depends on gtk, gdk_imlib
+# gnome		depends on gtk, gdk_imlib, libart
 # panel-applet	depends on gtk, gnome
 
 USE_RUBY=	yes
