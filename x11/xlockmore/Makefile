@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.09
+PORTVERSION=	5.10
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
@@ -37,11 +37,20 @@ MAN1=		xlock.1
 WITH_MESAGL?=	yes
 .if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesa
-MESALIB=	${PTHREAD_LIBS}
-USE_MESA=	yes
+MESALIB=${PTHREAD_LIBS}
+USE_GL=	yes
 .else
 CONFIGURE_ARGS+=	--without-mesa --without-opengl
 .endif
+
+.if defined(WITH_MB)
+CONFIGURE_ARGS+= --enable-use_mb
+.endif
+
+.if defined(XLOCKMORE_LANG)
+CONFIGURE_ARGS+= --with-lang=${XLOCKMORE_LANG}
+.endif
+
 CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
 
 .include <bsd.port.pre.mk>
