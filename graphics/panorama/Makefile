@@ -8,8 +8,7 @@
 PORTNAME=	panorama
 PORTVERSION=	0.13.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
-		http://www.vnet.es/~ajimenez/
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/
 
 MAINTAINER=	avh4@usa.net
 
