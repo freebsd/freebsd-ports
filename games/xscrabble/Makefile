@@ -3,7 +3,7 @@
 # Date created:		27 July 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1998/09/17 00:32:39 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/28 02:29:43 steve Exp $
 #
 
 DISTNAME=	xscrabble
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.belgarath.demon.co.uk/programs/
 MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+BROKEN= "/usr/bin/tar: Unexpected EOF on archive file"
 
 USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes
