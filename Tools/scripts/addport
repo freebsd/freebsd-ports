@@ -44,8 +44,9 @@ use strict;
 
 my %opts;
 
-getopts('ad:fh:imns:tu:', \%opts);
+getopts('ad:fgh:imns:tu:', \%opts);
 
+my $nomodules = $opts{'g'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
 my $h = "freefall.FreeBSD.org";
@@ -235,7 +236,9 @@ foreach my $thisdir (@dirs) {
 	# commit the actual port.
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
 	system("$cvs $n ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
-	system("$ssh $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
+	if (!$nomodules) {
+		system("$ssh $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
+	}
 }
 
 print <<EOF;
