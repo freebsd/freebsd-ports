@@ -13,8 +13,8 @@ DISTNAME=	infinity-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms \
+		SDL-1.1.4:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
@@ -22,12 +22,13 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's|SDL/|SDL11/|g;' \
-		${WRKSRC}/*.[ch] ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' ${WRKSRC}/*.[ch] \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
