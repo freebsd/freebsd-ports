@@ -25,7 +25,6 @@ MAN1=		nntpxmit.1
 MAN8=		nntpd.8c acttimes.8c
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
-CFLAGS+=	-I${LOCALBASE}/include
 
 MODIFY=		conf.h Makefile
 DOCSFILES1=	AUTHORIZE CHANGES README README-conf.h SYSLOG doc/rfc977
