@@ -4,7 +4,7 @@
  #!/bin/sh
  # \
 -exec wish "$0" ${1+"$@"}
-+if [ X$WISH != X ]; then exec $WISH "$0" -- "$@"; else exec wish8.3 "$0" -- "$@"; fi;
++if [ X$WISH != X ]; then exec $WISH "$0" -- "$@"; else exec wish8.4 "$0" -- "$@"; fi;
  
  #
  ## tkcon.tcl
