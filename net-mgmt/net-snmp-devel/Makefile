@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	net-snmp
-PORTVERSION=	5.0.8
-PORTREVISION=	3
+PORTVERSION=	5.0.9
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= net-snmp
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
+
+.if !exists(/etc/rc.subr)
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
+RC_SUBR=	${LOCALBASE}/etc/rc.subr
+.else
+RC_SUBR=	/etc/rc.subr
+.endif
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes
@@ -99,6 +105,7 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 
 SHLIB_VERSION=	5
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -119,7 +126,9 @@ post-install:
 	@( cd ${PREFIX}/sbin && ${STRIP_CMD} ${SBIN} )
 	@${FIND} ${PREFIX}/include/net-snmp ${PREFIX}/share/snmp/mibs -type f \
 		| ${XARGS} ${CHMOD} 644
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${STARTUP_FILE}
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/snmpd.sh.sample > ${STARTUP_FILE}
+	@${CHMOD} 755 ${STARTUP_FILE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
