@@ -30,6 +30,7 @@ RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_GNOME=	gtk20 libidl
 
 WRKSRC=		${WRKDIR}/mozilla
 LOCAL_SRCDIR?=	www/mozilla
