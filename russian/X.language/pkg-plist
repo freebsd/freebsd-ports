@@ -1,0 +1,9 @@
+@cwd /usr/X11R6
+lib/X11/locale/locale.alias
+lib/X11/locale/locale.dir
+lib/X11/locale/koi8-r/XLC_LOCALE
+lib/X11/locale/tbl_data/tabkoi8-r
+lib/X11/nls/nls.alias
+lib/X11/nls/nls.dir
+lib/X11/nls/ru_SU.KOI8-R
+lib/X11/nls/C
