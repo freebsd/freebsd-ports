@@ -1,13 +1,13 @@
 # New ports collection makefile for:	xautolock
-# Version required:	1pl13
+# Version required:	1pl11
 # Date created:		20 Jul 1996
 # Whom:			Eric Blood <eblood@cs.unr.edu>
 #
-# $Id: Makefile,v 1.4 1998/08/18 03:11:35 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/08/19 00:50:53 asami Exp $
 #
 
-DISTNAME=	xautolock-pl13
-PKGNAME=	xautolock-1.13
+DISTNAME=	xautolock-pl11
+PKGNAME=	xautolock-1.11
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -15,9 +15,7 @@ EXTRACT_SUFX=	.tz
 
 MAINTAINER=	eblood@cs.unr.edu
 
-BROKEN=		fetch
-
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xautolock-pl13
+WRKSRC=		${WRKDIR}/xautolock-pl11
 
 .include <bsd.port.mk>
