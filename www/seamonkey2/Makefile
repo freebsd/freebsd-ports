@@ -116,7 +116,7 @@ BROKEN=		"Does not compile on ia64 or alpha"
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+USE_GCC=	3.4
 .endif
 
 .if defined(WITH_CAIRO_RENDER)
