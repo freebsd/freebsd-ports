@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 bin/podtohtml
-%%SITE_PERL%%/Pod/Find.pm
 %%SITE_PERL%%/Pod/HTML_Elements.pm
 %%SITE_PERL%%/Pod/Links.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PodToHTML/.packlist
