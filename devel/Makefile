@@ -555,6 +555,7 @@
     SUBDIR += py-spark
     SUBDIR += py-twisted
     SUBDIR += py-unit
+    SUBDIR += py-vmaps
     SUBDIR += py-xoltar-toolkit
     SUBDIR += pychecker
     SUBDIR += qt-designer

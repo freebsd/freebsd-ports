@@ -1,0 +1,7 @@
+This module provides Vmap objects, which are extremely fast on-disk arrays
+with facilities for shared access by multiple processes, independant of
+Python or operating system threads or SysV IPC limits. The included example
+program shows trivial examples of using Vmaps for interprocess communication
+and multiple simultaneous writers of a shared data set.
+
+WWW: http://snafu.freedom.org/Vmaps/
