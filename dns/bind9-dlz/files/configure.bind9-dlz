@@ -11,10 +11,12 @@ if [ "${BINDDLZ_OPTIONS}" ]; then
 else
 	dialog --title "configuration options" --clear \
 				--checklist "\n\
-Please select desired options:" -1 -1 5 \
+Please select desired options:" -1 -1 7 \
 OpenSSL		"OpenSSL support" ON \
 PostgreSQL	"PostgreSQL driver" ON \
-MySQL		"MySQL driver" OFF \
+MySQL323	"MySQL 3.23 driver" OFF \
+MySQL40	"MySQL 4.0 driver" OFF \
+MySQL41	"MySQL 4.1 driver" OFF \
 FileSystem	"Filesystem driver" ON \
 Stub		"Stub driver" OFF \
 2> /tmp/checklist.tmp.$$
@@ -47,8 +49,17 @@ while [ "$1" ]; do
 		\"PostgreSQL\")
 			echo WITH_POSTGRESQL_DRIVER=YES
 			;;
-		\"MySQL\")
+		\"MySQL323\")
 			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql323-client
+			;;
+		\"MySQL40\")
+			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql40-client
+			;;
+		\"MySQL41\")
+			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql41-client
 			;;
 		\"FileSystem\")
 			echo WITH_FILESYSTEM_DRIVER=YES
