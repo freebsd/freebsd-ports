@@ -46,12 +46,6 @@ MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 mrtg-unix-guide.1 \
 		mrtg-webserver.1 mrtg.1 mrtglib.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
-.endif
-
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 .if defined(WITH_GD1)
@@ -89,4 +83,4 @@ post-install:
 	@${ECHO} "############################################################################"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
