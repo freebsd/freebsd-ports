@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://freebsd.ntu.edu.tw/FreeBSD/distfiles/  \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=  yes
 

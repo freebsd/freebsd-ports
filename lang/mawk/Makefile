@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=

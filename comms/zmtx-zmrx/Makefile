@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=

@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.ohse.de/uwe/releases/  \
 		http://www.netsw.org/net/modem/protocols/zmodem/lrzsz/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all # vcheck

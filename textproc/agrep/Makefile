@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 #DISTFILES=	${DISTNAME}.${EXTRACT_SUFX} agrep.ps.1.Z  agrep.ps.2.Z
 
-MAINTAINER=	obrien@NUXI.com
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 MAN1=		agrep.1

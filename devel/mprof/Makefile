@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/misc/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.i386

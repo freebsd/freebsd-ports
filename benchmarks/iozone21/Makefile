@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/others/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LATEST_LINK=	iozone21
 

@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	bounce
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 

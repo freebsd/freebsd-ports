@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ccil.org/retro/  \
 		ftp://locke.ccil.org/pub/retro/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=

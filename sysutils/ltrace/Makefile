@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://utopia.knoware.nl/users/driehuis/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

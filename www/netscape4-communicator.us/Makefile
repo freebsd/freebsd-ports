@@ -11,7 +11,7 @@ PORTVERSION=	4.07.us
 CATEGORIES=	www linux
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_base
 

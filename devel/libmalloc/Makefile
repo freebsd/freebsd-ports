@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/
 DISTNAME=	malloc-${PORTVERSION}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"Installs malloc.h, masking system version"
 

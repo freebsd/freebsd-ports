@@ -15,7 +15,7 @@ MASTER_SITES=	\
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/status/xstatus
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
