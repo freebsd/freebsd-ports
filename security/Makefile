@@ -119,6 +119,7 @@
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += pscan
+    SUBDIR += py-m2crypto
     SUBDIR += racoon
     SUBDIR += radiusniff
     SUBDIR += rid

@@ -1,0 +1,8 @@
+M2Crypto is a Python wrapper for OpenSSL.
+It makes accessible to the Python programmer the following:
+
+    - DH, RSA, DSA, symmetric ciphers, message digests, HMACs.
+    - SSL functionality to implement clients and servers.
+    - S/MIME v2.
+
+WWW: http://www.post1.com/home/ngps/m2/
