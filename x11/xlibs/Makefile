@@ -42,7 +42,7 @@ LIB_DEPENDS=	Xp.6:${PORTSDIR}/x11/libXp \
 		xkbfile.1:${PORTSDIR}/x11/libxkbfile \
 		Xxf86vm.1:${PORTSDIR}/x11/libXxf86 \
 		GL.1:${PORTSDIR}/x11/libGL \
-		GLU.1:${PORTSDIR}/x11/libGLU
+		GLU.1:${PORTSDIR}/graphics/libGLU
 BUILD_DEPENDS=	${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
