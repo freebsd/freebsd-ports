@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	ruby-usersguide
-PORTVERSION=	${VERSION}
-CATEGORIES+=	lang ruby
-MASTER_SITES?=	http://www.cs.iastate.edu/~slagell/ruby/
-DISTNAME?=	${SHORTNAME}-${VERSION}
+PORTVERSION=	20010131
+CATEGORIES=	lang ruby
+MASTER_SITES=	http://www.cs.iastate.edu/~slagell/ruby/
+DISTNAME=	${SHORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
 SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
-VERSION?=	20010131
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
-WRKSRC?=	${WRKDIR}/rg
+WRKSRC=		${WRKDIR}/rg
 NO_BUILD=	yes
 PLIST_SUB=	LANGSUFFIX="${LANGSUFFIX}"
 
