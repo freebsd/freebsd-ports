@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdiff3
-PORTVERSION=	0.9.83
-PORTREVISION=	1
+PORTVERSION=	0.9.84
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A KDE3 graphical frontend for diff
 
-CONFIGURE_ARGS+=	--program-transform-name=s,^,,
-
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	13
+USE_REINPLACE=	yes
+
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
 MAN1=	kdiff3.1
 
@@ -28,6 +28,8 @@ pre-configure:
 	${TOUCH} ${WRKSRC}/${i}
 .endfor
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2 ||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.mk>
