@@ -7,6 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -85,10 +86,9 @@ pre-everything::
 	@${ECHO_MSG} "                 This file can be owned by and writable by the"
 	@${ECHO_MSG} "                 user. If improperly written, may cause a buffer"
 	@${ECHO_MSG} "                 overflow which may remove such user's mail box"
-
-
-
-
+	@${ECHO_MSG} "WITH_Y_OPTION=yes		enables daemon command line option"
+	@${ECHO_MSG} "			-y which allows the user to specify a different"
+	@${ECHO_MSG} "			logging facility"
 
 # If WITH_APOP_ONLY variable present in the environment, qpopper builds
 # with APOP authentication only.
@@ -136,6 +136,13 @@ EPOPPASSD=	"@comment "
 CONFIGURE_ARGS+=	--enable-standalone
 .endif
 
+# If WITH_Y_OPTION variable present, qoppper daemon will
+# accept -y command line option which allows the user to specify a
+# different logging facility
+.if defined(WITH_Y_OPTION)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-popper::pop_init.c
+.endif
+
 .if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
 CONFIGURE_ARGS+=	--with-openssl=/usr
 .elif exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
@@ -164,7 +171,7 @@ pre-configure:
 	@(cd ${WRKSRC}; ${CHMOD} u+w configure*)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/popper/popauth ${PREFIX}/bin/qpopauth
+	@${INSTALL_PROGRAM} ${WRKSRC}/popper/popauth ${PREFIX}/bin/qpopauth
 # If WITHOUT_QPOPAUTH_SETUID variable present in the environment,
 # qpopper does not install qpopauth setuid to pop user so that
 # anyone can access the pop.auth database.
@@ -172,12 +179,12 @@ do-install:
 	@${CHOWN} pop ${PREFIX}/bin/qpopauth
 	@${CHMOD} u+s ${PREFIX}/bin/qpopauth
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/popper/popper ${PREFIX}/libexec/qpopper
-	${INSTALL_MAN} ${WRKSRC}/man/popauth.8 ${MANPREFIX}/man/man8/qpopauth.8
-	${INSTALL_MAN} ${WRKSRC}/man/popper.8 ${MANPREFIX}/man/man8/qpopper.8
-	${LN} -sf ${PREFIX}/bin/qpopauth ${PREFIX}/bin/qapopauth
+	@${INSTALL_PROGRAM} ${WRKSRC}/popper/popper ${PREFIX}/libexec/qpopper
+	@${INSTALL_MAN} ${WRKSRC}/man/popauth.8 ${MANPREFIX}/man/man8/qpopauth.8
+	@${INSTALL_MAN} ${WRKSRC}/man/popper.8 ${MANPREFIX}/man/man8/qpopper.8
+	@${LN} -sf ${PREFIX}/bin/qpopauth ${PREFIX}/bin/qapopauth
 .if defined(WITH_POPPASSD)
-	${INSTALL_PROGRAM} ${WRKSRC}/password/poppassd ${PREFIX}/libexec/qpoppassd
+	@${INSTALL_PROGRAM} ${WRKSRC}/password/poppassd ${PREFIX}/libexec/qpoppassd
 .endif
 	@${INSTALL} -d -o ${POP_USER} -g ${POP_GROUP} -m ${POP_MODE_DIR} \
 		${PREFIX}/etc/${PORTNAME}
