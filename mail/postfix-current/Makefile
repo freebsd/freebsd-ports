@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	20011210
-PORTREVISION=	1
+PORTVERSION=	20020107
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -22,11 +21,11 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	dwcjr@FreeBSD.org
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
-	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postsuper.1 \
-	sendmail.1
+	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
+	postsuper.1 sendmail.1
 
-MAN5=	access.5 aliases.5 canonical.5 regexp_table.5 relocated.5 \
-	transport.5 virtual.5
+MAN5=	access.5 aliases.5 canonical.5 pcre_table.5 regexp_table.5 \
+	relocated.5 transport.5 virtual.5
 
 MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
 	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 qmqpd.8 showq.8 smtp.8 \
@@ -47,12 +46,14 @@ BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
 	pipe qmgr qmqpd showq smtp smtpd spawn trivial-rewrite virtual
 
 BIN2=	postalias postcat postconf postdrop postfix \
-	postkick postlock postlog postmap postsuper sendmail
+	postkick postlock postlog postmap postqueue postsuper sendmail
 
-DOC1=	0README COMPATIBILITY DB_README DEBUG_README ETRN_README \
-	FILTER_README HISTORY INSTALL LDAP_README LICENSE LINUX_README \
-	LMTP_README MACOSX_README MYSQL_README PCRE_README PORTING \
-	QMQP_README RELEASE_NOTES SASL_README TODO ULTRIX_README UUCP_README \
+DOC1=	0README COMPATIBILITY HISTORY INSTALL LICENSE \
+	PORTING RELEASE_NOTES TODO
+
+DOC2=	DB_README DEBUG_README ETRN_README FILTER_README LDAP_README \
+	LINUX_README LMTP_README MACOSX_README MYSQL_README NFS_README \
+	PCRE_README QMQP_README SASL_README ULTRIX_README UUCP_README \
 	VERP_README VIRTUAL_README
 
 NO_LATEST_LINK=	yes
@@ -111,8 +112,8 @@ do-install:
 .endfor
 
 	@${INSTALL_SCRIPT} \
-		${WRKSRC}/conf/postfix-script-sgid \
-		${PREFIX}/etc/postfix/postfix-script
+		${WRKSRC}/conf/postfix-script \
+		${PREFIX}/etc/postfix
 	@${INSTALL_SCRIPT} \
 		${WRKSRC}/auxiliary/rmail/rmail \
 		${PREFIX}/bin/rmail
@@ -160,6 +161,9 @@ do-install:
 	@cd ${WRKSRC} && for i in ${DOC1} ; do \
 		${INSTALL_DATA} $$i ${DOCSDIR} ; done && \
 		${ECHO_MSG} "Installed text documentation in ${DOCSDIR}"
+	@cd ${WRKSRC}/README_FILES && for i in ${DOC2} ; do \
+		${INSTALL_DATA} $$i ${DOCSDIR} ; done && \
+		${ECHO_MSG} "Installed readme in ${DOCSDIR}"
 .endif
 
 	@${ECHO_MSG} '--------------------------------------------------'

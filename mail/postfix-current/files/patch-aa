@@ -1,66 +1,158 @@
---- ./conf/main.cf.orig	Wed Nov 28 13:49:04 2001
-+++ ./conf/main.cf	Wed Nov 28 13:53:04 2001
-@@ -31,14 +31,14 @@
- # The command_directory parameter specifies the location of all
- # postXXX commands.  The default value is $program_directory.
- #
--command_directory = /usr/sbin
-+command_directory = !!PREFIX!!/sbin
- 
- # The daemon_directory parameter specifies the location of all Postfix
- # daemon programs (i.e. programs listed in the master.cf file). The
- # default value is $program_directory. This directory must be owned
- # by root.
- #
--daemon_directory = /usr/libexec/postfix
-+daemon_directory = !!PREFIX!!/libexec/postfix
- 
- # QUEUE AND PROCESS OWNERSHIP
- #
-@@ -56,7 +56,7 @@
- # These rights are used in the absence of a recipient user context.
- # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
- #
--#default_privs = nobody
-+default_privs = nobody
- 
- # INTERNET HOST AND DOMAIN NAMES
- # 
-@@ -306,7 +306,7 @@
- # tables that are not necessarily all under control by Postfix.
- #
- #alias_database = dbm:/etc/aliases
--#alias_database = dbm:/etc/mail/aliases
-+#alias_database = dbm:/etc/aliases
- #alias_database = hash:/etc/aliases
- #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
- 
-@@ -325,8 +325,8 @@
- #
- # The home_mailbox parameter specifies the optional pathname of a
- # mailbox file relative to a user's home directory. The default
--# mailbox file is /var/spool/mail/user or /var/mail/user.  Specify
--# "Maildir/" for qmail-style delivery (the / is required).
-+# mailbox file is /var/mail/user.  Specify "Maildir/" for
-+# qmail-style delivery (the / is required).
- #
- #home_mailbox = Mailbox
- #home_mailbox = Maildir/
-@@ -335,7 +335,7 @@
- # UNIX-style mailboxes are kept. The default setting depends on the
- # system type.
- #
--#mail_spool_directory = /var/mail
-+mail_spool_directory = /var/mail
- #mail_spool_directory = /var/spool/mail
- 
- # The mailbox_command parameter specifies the optional external
-@@ -424,7 +424,7 @@
- #
- # See also the body_checks example in the sample-filter.cf file.
- #
--#header_checks = regexp:/etc/postfix/header_checks
-+#header_checks = regexp:!!PREFIX!!/etc/postfix/header_checks
- 
- # FAST ETRN SERVICE
- #
+*** ./conf/main.cf.orig	Fri Jan  4 13:09:04 2002
+--- ./conf/main.cf	Tue Jan  8 22:41:50 2002
+***************
+*** 31,44 ****
+  # The command_directory parameter specifies the location of all
+  # postXXX commands.  The default value is $program_directory.
+  #
+! command_directory = /usr/sbin
+  
+  # The daemon_directory parameter specifies the location of all Postfix
+  # daemon programs (i.e. programs listed in the master.cf file). The
+  # default value is $program_directory. This directory must be owned
+  # by root.
+  #
+! daemon_directory = /usr/libexec/postfix
+  
+  # QUEUE AND PROCESS OWNERSHIP
+  #
+--- 31,44 ----
+  # The command_directory parameter specifies the location of all
+  # postXXX commands.  The default value is $program_directory.
+  #
+! command_directory = !!PREFIX!!/sbin
+  
+  # The daemon_directory parameter specifies the location of all Postfix
+  # daemon programs (i.e. programs listed in the master.cf file). The
+  # default value is $program_directory. This directory must be owned
+  # by root.
+  #
+! daemon_directory = !!PREFIX!!/libexec/postfix
+  
+  # QUEUE AND PROCESS OWNERSHIP
+  #
+***************
+*** 56,62 ****
+  # These rights are used in the absence of a recipient user context.
+  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
+  #
+! #default_privs = nobody
+  
+  # INTERNET HOST AND DOMAIN NAMES
+  # 
+--- 56,62 ----
+  # These rights are used in the absence of a recipient user context.
+  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
+  #
+! default_privs = nobody
+  
+  # INTERNET HOST AND DOMAIN NAMES
+  # 
+***************
+*** 306,312 ****
+  # tables that are not necessarily all under control by Postfix.
+  #
+  #alias_database = dbm:/etc/aliases
+! #alias_database = dbm:/etc/mail/aliases
+  #alias_database = hash:/etc/aliases
+  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
+  
+--- 306,312 ----
+  # tables that are not necessarily all under control by Postfix.
+  #
+  #alias_database = dbm:/etc/aliases
+! #alias_database = dbm:/etc/aliases
+  #alias_database = hash:/etc/aliases
+  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
+  
+***************
+*** 325,332 ****
+  #
+  # The home_mailbox parameter specifies the optional pathname of a
+  # mailbox file relative to a user's home directory. The default
+! # mailbox file is /var/spool/mail/user or /var/mail/user.  Specify
+! # "Maildir/" for qmail-style delivery (the / is required).
+  #
+  #home_mailbox = Mailbox
+  #home_mailbox = Maildir/
+--- 325,332 ----
+  #
+  # The home_mailbox parameter specifies the optional pathname of a
+  # mailbox file relative to a user's home directory. The default
+! # mailbox file is /var/mail/user.  Specify "Maildir/" for
+! # qmail-style delivery (the / is required).
+  #
+  #home_mailbox = Mailbox
+  #home_mailbox = Maildir/
+***************
+*** 335,341 ****
+  # UNIX-style mailboxes are kept. The default setting depends on the
+  # system type.
+  #
+! #mail_spool_directory = /var/mail
+  #mail_spool_directory = /var/spool/mail
+  
+  # The mailbox_command parameter specifies the optional external
+--- 335,341 ----
+  # UNIX-style mailboxes are kept. The default setting depends on the
+  # system type.
+  #
+! mail_spool_directory = /var/mail
+  #mail_spool_directory = /var/spool/mail
+  
+  # The mailbox_command parameter specifies the optional external
+***************
+*** 424,430 ****
+  #
+  # See also the body_checks example in the sample-filter.cf file.
+  #
+! #header_checks = regexp:/etc/postfix/header_checks
+  
+  # FAST ETRN SERVICE
+  #
+--- 424,430 ----
+  #
+  # See also the body_checks example in the sample-filter.cf file.
+  #
+! #header_checks = regexp:!!PREFIX!!/etc/postfix/header_checks
+  
+  # FAST ETRN SERVICE
+  #
+***************
+*** 498,506 ****
+  # the process marches on. If you use an X-based debugger, be sure to
+  # set up your XAUTHORITY environment variable before starting Postfix.
+  #
+! debugger_command =
+! 	 PATH=/usr/bin:/usr/X11R6/bin
+! 	 xxgdb $daemon_directory/$process_name $process_id & sleep 5
+  
+  # INSTALL-TIME CONFIGURATION INFORMATION
+  #
+--- 498,506 ----
+  # the process marches on. If you use an X-based debugger, be sure to
+  # set up your XAUTHORITY environment variable before starting Postfix.
+  #
+! #debugger_command =
+! #	 PATH=/usr/bin:/usr/X11R6/bin
+! #	 xxgdb $daemon_directory/$process_name $process_id & sleep 5
+  
+  # INSTALL-TIME CONFIGURATION INFORMATION
+  #
+***************
+*** 525,531 ****
+  # commands.  This must be a group name with a numerical group ID that
+  # is not shared with other accounts, not even with the Postfix account.
+  #
+! setgid_group =
+  
+  # manpage_path: The location of the Postfix on-line manual pages.
+  #
+--- 525,531 ----
+  # commands.  This must be a group name with a numerical group ID that
+  # is not shared with other accounts, not even with the Postfix account.
+  #
+! setgid_group = maildrop
+  
+  # manpage_path: The location of the Postfix on-line manual pages.
+  #
