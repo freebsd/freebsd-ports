@@ -27,6 +27,12 @@ CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 PORTDOCS=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
 		README.txt credits.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+WITHOUT_PSYCO=	yes
+.endif
+
 # required for GUI
 .ifndef(WITHOUT_GUI)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
@@ -94,4 +100,4 @@ post-install:
 	@${CHMOD} ${SHAREMODE} ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
 	@${CHMOD} a+x ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
