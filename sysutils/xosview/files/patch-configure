@@ -1,5 +1,11 @@
---- configure.orig	Tue Nov 16 23:16:57 1999
-+++ configure	Thu May 11 07:47:08 2000
-@@ -1736 +1736 @@
+--- configure.orig	Sat Jun  1 23:56:10 2002
++++ configure	Sat Jun  1 23:56:23 2002
+@@ -1851,7 +1851,7 @@
+ 
+ 			host_dir=bsd
+ 	host_os=freebsd ;;
 -freebsd[4]*) 
 +freebsd[45]*) 
+         EXTRALIBS="-lkvm $XPMLIB $DEVSTATLIB"
+         INSTALL_ARGS='-s -g kmem -m 02555'
+ 	NetMeter_Default_Setting=True
