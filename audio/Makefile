@@ -104,6 +104,7 @@
     SUBDIR += knapster
     SUBDIR += koog
     SUBDIR += ksmp3play
+    SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lame-devel
     SUBDIR += liba52

@@ -1,0 +1,10 @@
+bin/analyseplugin
+bin/applyplugin
+bin/listplugins
+include/ladspa.h
+lib/ladspa/amp.so
+lib/ladspa/delay.so
+lib/ladspa/filter.so
+lib/ladspa/noise.so
+lib/ladspa/sine.so
+@dirrm lib/ladspa
