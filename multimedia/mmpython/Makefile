@@ -23,6 +23,9 @@ USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc -ldvdread|gcc -L${LOCALBASE}/lib -ldvdread|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} \
+		-e 's,/usr/local/,${LOCALBASE}/,g' \
+		-e 's|gcc -ldvdread|gcc -L${LOCALBASE}/lib -ldvdread|' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
