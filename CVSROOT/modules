@@ -1109,6 +1109,7 @@ cost		ports/textproc/cost
 cotty		ports/sysutils/cotty
 courier		ports/mail/courier
 courier-imap	ports/mail/courier-imap
+coverhunter	ports/audio/coverhunter
 cowsay		ports/games/cowsay
 cp2fwb		ports/security/cp2fwb
 cpan-upload	ports/devel/cpan-upload
