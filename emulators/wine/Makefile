@@ -7,14 +7,11 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2002.08.04
+PORTVERSION=	2002.10.07
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTNAME=	Wine-${PORTVERSION:S/.//g}
-
-# This port has not been upgraded from 2002.08.04 to 2002.09.04 because the
-# latter does not work as well as the previous ones on some packages tested.
 
 MAINTAINER=	gerald@FreeBSD.org
 
@@ -53,7 +50,7 @@ pre-extract:
 .endif
 
 post-patch:
-.for D in ../library ../tsx11 ../unicode
+.for D in ../library ../unicode
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/dlls/${D}/Makefile.in
 .endfor
@@ -75,13 +72,13 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-.for i in README ANNOUNCE AUTHORS LICENSE documentation/psdrv.reg
+.for i in README ANNOUNCE AUTHORS LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/debugger/README \
-		${PREFIX}/share/doc/${PORTNAME}/README.debugger
 	${INSTALL_DATA} ${WRKSRC}/programs/regapi/README \
 		${PREFIX}/share/doc/${PORTNAME}/README.regapi
+	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README \
+		${PREFIX}/share/doc/${PORTNAME}/README.winedump
 .endif
 	-@${MKDIR} ${PREFIX}/lib/wine
 	-@${MKDIR} ${PREFIX}/lib/wine/reg
