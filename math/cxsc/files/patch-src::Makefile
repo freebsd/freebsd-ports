@@ -1,0 +1,19 @@
+--- src/Makefile.orig	Sat Aug 11 22:56:38 2001
++++ src/Makefile	Sat Aug 11 23:04:30 2001
+@@ -72,11 +72,11 @@
+ 	$(INSTALL) ./libcxsc_inl.a $(PREFIX)/lib/
+ #	$(STRIP) $(PREFIX)/lib/libcxsc_inl.a
+ # install header files
+-	$(INSTDIR) $(PREFIX)/include
+-	$(INSTALL) ./*.hpp ./*.inl ./*.h $(PREFIX)/include
+-	$(INSTALL) rts/*.h $(PREFIX)/include
+-	$(INSTALL) fi_lib/fi_lib.h $(PREFIX)/include
+-	$(INSTALL) ../cxscconf.h $(PREFIX)/include
++	$(INSTDIR) $(PREFIX)/include/cxsc
++	$(INSTALL) ./*.hpp ./*.inl ./*.h $(PREFIX)/include/cxsc
++	$(INSTALL) rts/*.h $(PREFIX)/include/cxsc
++	$(INSTALL) fi_lib/fi_lib.h $(PREFIX)/include/cxsc
++	$(INSTALL) ../cxscconf.h $(PREFIX)/include/cxsc
+ # and docs
+ 
+ uninstall:
