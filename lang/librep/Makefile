@@ -7,6 +7,7 @@
 
 PORTNAME=	librep
 PORTVERSION=	0.16.1
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	librep
@@ -26,7 +27,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl"
+		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
