@@ -392,7 +392,6 @@
     SUBDIR += vodmr
     SUBDIR += vpopmail
     SUBDIR += vpopmail-devel
-    SUBDIR += vpopmail-stable
     SUBDIR += vqadmin
     SUBDIR += vqregister
     SUBDIR += vrfy
