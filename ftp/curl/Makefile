@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.10.5
-PORTREVISION=	1
+PORTVERSION=	7.10.7
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -31,10 +30,12 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
 		curl_multi_add_handle.3 curl_multi_cleanup.3 \
 		curl_multi_fdset.3 curl_multi_info_read.3 curl_multi_init.3 \
 		curl_multi_perform.3 curl_multi_remove_handle.3 \
+		curl_share_cleanup.3 curl_share_init.3 curl_share_setopt.3 \
 		curl_slist_append.3 curl_slist_free_all.3 \
 		curl_strequal.3 curl_strnequal.3 \
 		curl_version.3 curl_version_info.3 \
-		libcurl.3 libcurl-multi.3 libcurl-errors.3
+		libcurl.3 libcurl-easy.3 libcurl-errors.3 libcurl-multi.3 \
+		libcurl-share.3
 
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	2
