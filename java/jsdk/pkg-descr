@@ -1,0 +1,22 @@
+The Java Servlet Development Kit (JSDK) can be used to develop and test
+server extensions based on the servlet API. Included is a standalone
+server (called servletrunner) that can be used to test servlets
+before running them in a servlet-enabled web server.
+
+The JSDK serves as the reference implementation for the Java Servlet API.
+This release will run on top of JDK 1.1.x. If you are interested in
+developing servlets with JDK 1.2, there is no need to use this JSDK
+as the servlet API is bundled with JDK1.2.
+
+Please note that the source code for the servlet API is released with this
+package. 
+
+Files included in the JSDK:
+
+README			this file
+bin/servletrunner.exe	ServletRunner (on Win32 systems only)
+bin/servletrunner	ServletRunner (on UNIX systems only)
+lib/jsdk.jar		javax.servlet and sun.servlet classes
+src			javax.servlet class sources
+doc			tutorial and api documentation
+examples		example servlets 
