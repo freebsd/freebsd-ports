@@ -22,7 +22,6 @@
 ^ports/.*(?<!/Makefile)$
 
 ^src/contrib/.*/FREEBSD-Xlist
-^src/contrib/gdb/
 ^src/contrib/nvi/catalog
 ^src/crypto/openssh/
 ^src/etc/minfree
