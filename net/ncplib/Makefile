@@ -3,7 +3,7 @@
 # Date created:		9 Dec 1999
 # Whom:			Boris Popov <bp@butya.kz>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ncplib-1.3.4
@@ -18,6 +18,7 @@ BROKEN=		requires kernel source
 .endif
 
 NO_PACKAGE=	is interactive
+IS_INTERACTIVE=	true
 
 MANCOMPRESSED=	yes
 
