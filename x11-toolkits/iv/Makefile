@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	tanimura@FreeBSD.org
 COMMENT=	InterViews: A toolkit from Stanford University and Silicon Graphics
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
 USE_XLIB=	yes
