@@ -1,0 +1,11 @@
+%%FONTSDIR%%/fonts.alias.cyberbit
+%%FONTSDIR%%/fonts.dir.cyberbit
+%%FONTSDIR%%/Cyberbit.ttf
+%%PORTDOCS%%%%DOCSDIR%%/97CyberBase.Doc
+%%PORTDOCS%%%%DOCSDIR%%/97CyberBit.Doc
+%%PORTDOCS%%%%DOCSDIR%%/97CyberCJK.Doc
+%%PORTDOCS%%%%DOCSDIR%%/CYBERBIT.DOC
+%%PORTDOCS%%%%DOCSDIR%%/CYBERCJK.DOC
+%%PORTDOCS%%%%DOCSDIR%%/READMEfirst.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe.htm
+@dirrm %%PORTDOCS%%%%DOCSDIR%%

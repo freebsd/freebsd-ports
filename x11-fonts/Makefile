@@ -19,6 +19,7 @@
     SUBDIR += bitmap-fonts
     SUBDIR += bitstream-vera
     SUBDIR += code2000
+    SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
     SUBDIR += etlfonts
