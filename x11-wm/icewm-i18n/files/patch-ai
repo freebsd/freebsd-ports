@@ -1,0 +1,26 @@
+--- src/wmtaskbar.cc.orig	Wed Dec  1 16:46:05 1999
++++ src/wmtaskbar.cc	Wed Dec  1 16:46:15 1999
+@@ -72,9 +72,9 @@
+ 
+ /** Use Linux 2.0 Penguin as start button */
+ #ifndef START_PIXMAP
+-#define START_PIXMAP "linux.xpm"
++//#define START_PIXMAP "linux.xpm"
+ //#define START_PIXMAP "debian.xpm"
+-//#define START_PIXMAP "bsd-daemon.xpm"
++#define START_PIXMAP "bsd-daemon.xpm"
+ //#define START_PIXMAP "start.xpm"
+ //#define START_PIXMAP "xfree86os2.xpm"
+ #endif
+@@ -253,7 +253,11 @@
+     } else
+         fClock = 0;
+ #ifdef CONFIG_APM
++#ifdef __FreeBSD__
++    if (taskBarShowApm && access("/dev/apm", 0) == 0) {
++#else
+     if (taskBarShowApm && access("/proc/apm", 0) == 0) {
++#endif
+ 	fApm = new YApm(this);
+ 	if (fApm->height() + ADD1 > ht) ht = fApm->height() + ADD1;
+     } else

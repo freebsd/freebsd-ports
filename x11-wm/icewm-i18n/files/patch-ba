@@ -1,0 +1,17 @@
+--- src/default.h.orig	Tue May  2 22:22:33 2000
++++ src/default.h	Tue May  2 22:23:43 2000
+@@ -5,10 +5,10 @@
+ #define TTFONT(pt) "-b&h-lucidatypewriter-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+ #define BOLDTTFONT(pt) "-b&h-lucidatypewriter-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+ #else
+-#define FONT(pt) "-adobe-helvetica-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDFONT(pt) "-adobe-helvetica-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define TTFONT(pt) "-adobe-courier-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
++#define FONT(pt) "-*-fixed-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
++#define BOLDFONT(pt) "-*-fixed-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
++#define TTFONT(pt) "-*-fixed-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
++#define BOLDTTFONT(pt) "-*-fixed-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+ #endif
+ 
+ #define CONFIG_DEFAULT_LOOK lookNice
