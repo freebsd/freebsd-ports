@@ -128,6 +128,7 @@
     SUBDIR += vera
     SUBDIR += videotext
     SUBDIR += viz
+    SUBDIR += whichman
     SUBDIR += wmcp
     SUBDIR += wmmand
     SUBDIR += wmstock
