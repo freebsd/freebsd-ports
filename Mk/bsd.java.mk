@@ -157,6 +157,15 @@ PLIST_SUB+=		JAVASHAREDIR="${JAVASHAREDIR:S,^${PREFIX}/,,}" \
 SUB_LIST+=		JAVASHAREDIR="${JAVASHAREDIR}" \
 				JAVAJARDIR="${JAVAJARDIR}" \
 				JAVALIBDIR="${JAVALIBDIR}"
+.		if defined(JAVA_VERSION)
+SUB_LIST+=		JAVA_VERSION="${JAVA_VERSION}"
+.		endif
+.		if defined(JAVA_VENDOR)
+SUB_LIST+=		JAVA_VENDOR="${JAVA_VENDOR}"
+.		endif
+.		if defined(JAVA_OS)
+SUB_LIST+=		JAVA_OS="${JAVA_OS}"
+.		endif
 
 # The complete list of Java versions, os and vendors supported.
 __JAVA_VERSION_LIST=	1.1 1.2 1.3 1.4 1.5
