@@ -1,0 +1,15 @@
+Exim is a mail transfer agent for Unix systems connected to the Internet.
+
+ .   Exim is intended for use as an Internet mailer, and therefore handles
+     addresses in RFC 822 domain format only.
+
+ .   The only external transport currently implemented is an SMTP transport
+     over a TCP/IP network (using sockets). A pipe transport is available,
+     and this could be used to send messages to some other transport mechanism.
+
+ .   Exim is very configurable, and its management is very powerful. It can
+     be configured to be "fussy" about certain hosts or domains, and
+     can easily serve multiple domains.
+
+ .   Its requeuing and retry algorithms are very powerful.
+

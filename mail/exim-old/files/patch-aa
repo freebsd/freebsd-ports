@@ -1,0 +1,43 @@
+diff -udr ../exim-0.52.ORG/scripts/exim_install ./scripts/exim_install
+--- ../exim-0.52.ORG/scripts/exim_install	Mon Jun 10 12:04:44 1996
++++ ./scripts/exim_install	Sun Jun 23 10:42:40 1996
+@@ -63,6 +63,20 @@
+   fi
+ fi              
+ 
++# If info directory doesn't exist, try to create it
++
++if [ ! -d ${INFO_DIRECTORY} ]; then
++  echo mkdir -p ${INFO_DIRECTORY}
++  ${real} mkdir -p ${INFO_DIRECTORY}
++  if [ $? -ne 0 ]; then
++    echo $com ""
++    echo $com "**** Exim installation ${ver}failed ****"
++    exit 1
++  else
++    echo $com ${INFO_DIRECTORY} created
++  fi
++fi              
++
+ # If no arguments, install everything
+ 
+ if [ $# -gt 0 ]; then
+@@ -127,6 +141,18 @@
+     echo $com ${name} is not newer than ${BIN_DIRECTORY}/${name}    
+   fi   
+ done
++
++echo $com ""
++echo $com Installation directory is ${INFO_DIRECTORY}
++echo $com ""
++
++if [ -f ../doc/exim-texinfo-0.52 ]; then
++    makeinfo --output ../doc/exim.info ../doc/exim-texinfo-0.52
++    for info in ../doc/exim.info*; do
++        echo ${CP} ${info} ${INFO_DIRECTORY}
++        ${real} ${CP} ${info} ${INFO_DIRECTORY} ; gzip -9n ${INFO_DIRECTORY}/${info}
++    done
++fi
+ 
+ # If there is no configuration file, install the default,
+ # building the lib directory if necessary.
