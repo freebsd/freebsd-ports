@@ -17,7 +17,7 @@ COMMENT=	A debugging library for OpenGL
 MAN1=		gldb.1
 MAN3=		bugle.3
 
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

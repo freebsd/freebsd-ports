@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 WANT_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
 WANT_AUTOCONF_VER=	259
-USE_GCC=	3.3
+USE_GCC=	3.4
 
 CONFLICTS=	firebird-1.*
 NO_PACKAGE=	pkg-install not finished

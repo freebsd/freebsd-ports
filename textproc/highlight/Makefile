@@ -17,7 +17,7 @@ COMMENT=	Customizable syntax highlighter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

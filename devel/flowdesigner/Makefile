@@ -18,7 +18,7 @@ COMMENT=	A free (GPL) "data flow oriented" development environment
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget libgnomeui libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

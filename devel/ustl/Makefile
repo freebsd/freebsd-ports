@@ -18,7 +18,7 @@ COMMENT=	Codespace-frugal STL implementation
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

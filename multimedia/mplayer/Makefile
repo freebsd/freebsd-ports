@@ -410,7 +410,7 @@ PLIST_SUB+=	GMPLAYER="@comment "
 
 .if defined(WITH_GTK2) && !defined(WITH_GTK1) && !defined(WITHOUT_GUI)
 .if ( ${OSVERSION} < 500000 )
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 USE_GNOME+=	gtk20
 PATCHFILES+=	mplayer1.0pre5-gtk2-20040730.patch.bz2

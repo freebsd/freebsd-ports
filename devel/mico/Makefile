@@ -46,7 +46,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 # ================
 
 .if !defined(WITH_SYSTEM_GCC)
-USE_GCC=		3.3
+USE_GCC=		3.4
 .endif
 
 CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads

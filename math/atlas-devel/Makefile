@@ -28,7 +28,7 @@ NO_PACKAGE=	runtime performance heavily depends on building environment
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 501000 && ${ARCH} == "alpha"
-USE_GCC=3.3
+USE_GCC=3.4
 .endif
 
 # only affects for lapack sub project

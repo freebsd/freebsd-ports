@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget lthack glib20
 USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=13

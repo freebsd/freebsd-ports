@@ -31,7 +31,7 @@ USE_MESA=	yes	# wine/dlls/glut32/ depends on the presence of libglut.
 USE_XPM=	yes
 # GCC 3.2 also seems fine, but the ports collection requires specifying
 # a concrete version.
-USE_GCC=	3.3
+USE_GCC=	3.4
 
 .include <bsd.port.pre.mk>
 

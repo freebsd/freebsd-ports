@@ -17,7 +17,7 @@ COMMENT=	A program calculating Feynman diagrams
 
 LIB_DEPENDS=	ginac-1.2.3:${PORTSDIR}/math/GiNaC
 
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=	13

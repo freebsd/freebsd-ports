@@ -28,7 +28,7 @@ PLUGINS=	cdburner.so clone.so copy_to_clipboard.so cpbar.so du.so for_each.so \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 
 .if defined(NOPORTDOCS)

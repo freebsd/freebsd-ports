@@ -49,7 +49,7 @@ RESTRICTED=	${NO_PACKAGE}
 # On FreeBSD 4.x, user can choose which GCC version to use
 .if ${OSVERSION} > 500000 || defined(WITH_DG_GCC3)
 CONFIGURE_ARGS+=	--gccver=3
-USE_GCC=		3.3
+USE_GCC=		3.4
 .else
 CONFIGURE_ARGS+=	--gccver=2
 .endif

@@ -46,7 +46,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502010
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 
 .if ${OSVERSION} >= 502126

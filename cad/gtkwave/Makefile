@@ -31,7 +31,7 @@ LDCONFIG_DIRS=	${PREFIX}/lib/gtkwave
 .include <bsd.port.pre.mk>
 
 .if ( ${OSVERSION} < 500000 )
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 
 DOCS=		doc/*.html doc/*.png doc/*.ps

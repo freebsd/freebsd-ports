@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ARPACK++:${PORTSDIR}/math/arpack++
 RESTRICTED=	No resale or commercial use
 
 USE_GL=			yes
-USE_GCC=		3.3
+USE_GCC=		3.4
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes

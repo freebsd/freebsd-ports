@@ -33,7 +33,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 
 .if ${PERL_LEVEL} < 500800
