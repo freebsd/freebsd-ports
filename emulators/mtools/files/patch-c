@@ -1,0 +1,15 @@
+*** sysincludes.h~	Tue Feb 11 18:19:17 1997
+--- sysincludes.h	Fri Feb 28 15:50:01 1997
+***************
+*** 108,117 ****
+  
+  #include <errno.h>
+  extern int errno;
+- #ifndef netbsd
+- /* NetBSD seems to choke on this, due to a slightly non-standard definition */
+- extern char *sys_errlist[];
+- #endif
+  #include <pwd.h>
+  
+  /* On AIX, we have to prefer strings.h, as string.h lacks a prototype 
+--- 108,113 ----
