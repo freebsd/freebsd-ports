@@ -5,7 +5,7 @@
  X_BASE_LIBS = @X_BASE_LIBS@
  
 -htmldir = $(prefix)/@PACKAGE@/html
-+htmldir = $(datadir)/@PACKAGE@/html
++htmldir = $(datadir)/doc/@PACKAGE@/html
  
  # Source code documentation tool
  PERCEPS = perceps
