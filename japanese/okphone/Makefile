@@ -3,7 +3,7 @@
 # Date created:		7 February 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1996/02/20 18:06:57 ats Exp $
+# $Id: Makefile,v 1.3 1996/02/21 00:40:31 ats Exp $
 #
 
 DISTNAME=	okphone-1.2
@@ -12,7 +12,7 @@ CATEGORIES+=	japanese net
 MASTER_SITES=	http://www.iijnet.or.jp/IIJ-MC/odajima/okphone/src/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	okphone-1.2.FreeBSD-patch.gz
+PATCHFILES=	okphone-1.2.FreeBSD-patch.rev2.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	asami@FreeBSD.ORG
