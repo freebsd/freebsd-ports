@@ -3,6 +3,7 @@
 
     SUBDIR += 9term
     SUBDIR += XFree86
+    SUBDIR += XFree86-4
     SUBDIR += XFree86-aoutlibs
     SUBDIR += XFree86-contrib
     SUBDIR += aterm
