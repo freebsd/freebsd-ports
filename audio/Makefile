@@ -256,6 +256,7 @@
     SUBDIR += py-cddb
     SUBDIR += py-eyed3
     SUBDIR += py-id3
+    SUBDIR += py-libmpdclient
     SUBDIR += py-mad
     SUBDIR += py-musicbrainz
     SUBDIR += py-ogg
