@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	aggregate
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.mfnx.net/public/
 
 MAINTAINER=	jabley@automagic.org
 
-MAN1=          aggregate.1 aggregate-ios.1
+GNU_CONFIGURE=	yes
+
+MAN1=	aggregate.1 aggregate-ios.1
 
 .include <bsd.port.mk>
