@@ -1,0 +1,11 @@
+--- Plugins/RTClassParser/parser/entry.h.orig	Tue Mar  6 16:43:16 2001
++++ Plugins/RTClassParser/parser/entry.h	Tue Mar  6 16:43:38 2001
+@@ -1,6 +1,8 @@
+ #ifndef _ENTRY_H
+ #define _ENTRY_H
+ 
++#include <sys/types.h>
++
+ #include <stdio.h>
+ 
+ #include "ctags.h"

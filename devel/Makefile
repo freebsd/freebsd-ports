@@ -144,6 +144,7 @@
     SUBDIR += kdbg
     SUBDIR += kdelibdocs
     SUBDIR += kdesdk
+    SUBDIR += kdestudio
     SUBDIR += kdevelop
     SUBDIR += kelp
     SUBDIR += kpp
