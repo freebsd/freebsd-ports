@@ -14,9 +14,9 @@ DISTNAME=	gnome-python-1.4.2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+RUN_DEPENDS=	${PYNUMERIC}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 

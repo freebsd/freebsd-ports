@@ -17,9 +17,9 @@ DISTNAME=	fonttools-${PORTVERSION}
 MAINTAINER=	jkoshy@freebsd.org
 
 BUILD_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
-		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+		${PYNUMERIC}
 RUN_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
-		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+		${PYNUMERIC}
 
 WRKSRC=		${WRKDIR}/fonttools
 

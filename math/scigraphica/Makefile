@@ -29,14 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VERSION} == "python2.0" || ${PYTHON_VERSION} == "python2.1"
-PYNUMERIC=      ${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/py-numeric
-.else
-PYNUMERIC=      ${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/py-numeric17
-.endif
-
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -48,4 +40,4 @@ post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/scigraphica
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/scigraphica
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
