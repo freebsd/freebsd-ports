@@ -33,7 +33,7 @@ post-patch:
 		${WRKSRC}/configurator.c
 
 	@${REINPLACE_CMD} -e \
-		's|^CC.+$$|CC=${CXX}|; \
+		's|g++|${CXX}|; \
 		s|-Wall||g; \
 		s|-L/usr/X11/lib|-lXext|; \
 		s|-L/usr/lib/X11R6||; \
