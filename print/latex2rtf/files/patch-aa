@@ -1,0 +1,67 @@
+--- Makefile.orig	Thu Nov 12 19:22:58 1998
++++ Makefile	Tue Dec 14 13:12:15 1999
+@@ -73,8 +73,6 @@
+ # The Debian-specific parts of this Makefile are created by 
+ # Erick Branderhorst. Parts are written by Ian Jackson and Ian Murdock.
+ # TODO: add target "changes". 
+-CC=gcc    # C-Compiler 
+-CFLAGS=-g $(XCFLAGS) # Use -O here if you want it optimized
+ COPY=cp
+ INSTALL=install
+ DIR_MODE=755
+@@ -83,13 +81,13 @@
+ DIR_USER=root
+ BIN_USER=root
+ DAT_USER=root
+-DIR_GROUP=root
+-BIN_GROUP=root
+-DAT_GROUP=root
++DIR_GROUP=wheel
++BIN_GROUP=wheel
++DAT_GROUP=wheel
+ # If you have the program install, use the following definitions
+-INST_DIR=$(INSTALL) -g $(DIR_GROUP) -o $(DIR_USER) -d -m $(BIN_MODE)
+-INST_BIN=$(INSTALL) -g $(BIN_GROUP) -o $(BIN_USER) -m $(DIR_MODE)
+-INST_DAT=$(INSTALL) -g $(DAT_GROUP) -o $(DAT_USER) -m $(DAT_MODE)
++INST_DIR=$(INSTALL) -c -g $(DIR_GROUP) -o $(DIR_USER) -d -m $(BIN_MODE)
++INST_BIN=$(INSTALL) -c -g $(BIN_GROUP) -o $(BIN_USER) -m $(DIR_MODE)
++INST_DAT=$(INSTALL) -c -g $(DAT_GROUP) -o $(DAT_USER) -m $(DAT_MODE)
+ CHOWN_DIR=true
+ CHOWN_BIN=true
+ CHOWN_DAT=true
+@@ -115,8 +113,9 @@
+ #
+ # Where support files are searched for by the executable
+ # prefix defaults to /usr/local, but may be set on the command line
+-prefix=/usr/local
+-LIBDIR=$(prefix)/lib/latex2rtf
++PREFIX?=/usr/local
++prefix=${PREFIX}
++LIBDIR=$(prefix)/share/latex2rtf
+ # You can give several Directories separated by ':' for the following
+ # install targets
+ #
+@@ -160,12 +159,11 @@
+ # Nothing to change below this line
+ SOURCES=commands.c commands.h direct.c direct.h encode.c encode.h fonts.c \
+     fonts.h funct1.c funct1.h funct2.c funct2.h ignore.c ignore.h main.c \
+-    main.h stack.c stack.h version.h cfg.c cfg.h Makefile README README.DOS\
++    main.h stack.c stack.h version.h cfg.c cfg.h Makefile README \
+     Copyright mygetopt.c optind.c version debian.README \
+     debian.control debian.rules util.c util.h  ChangeLog parser.c parser.h
+ SUPPORT=cfg/direct.cfg cfg/fonts.cfg cfg/ignore.cfg \
+-    cfg/english.cfg cfg/german.cfg cfg/spanish.cfg \
+-    l2r.bat l2r.exe
++    cfg/english.cfg cfg/german.cfg cfg/spanish.cfg
+ MANUALS=latex2rtf.1
+ MSDOS=l2r.bat l2r.exe
+ DOCS=doc/latex2rtf.info doc/l2r.html doc/l2r.pdf doc/l2r.txt\
+@@ -304,7 +302,7 @@
+ 	$(CHMOD_BIN) $(BININSTALL)/latex2rtf
+ 	$(INST_DAT) $(MANUALS) $(MANINSTALL)
+ 
+-install: complex_install
++install: complex_install install_and_delete_old_cfg
+ 
+ .PHONY: install complex_install simple_install simple_cfg_install \
+ 	install.man complex_install install_and_delete_old_cfg dist \

@@ -1,0 +1,9 @@
+latex2rtf is a translator program that translates LaTeX text into the
+RTF format used by several textprocessors, including Microsoft Word
+and Word for Windows.  It was written by Fernando Dorner and Andreas
+Granzer in a one-semester course in our department.  It was later
+updated in another one-semester course by Friedrich Polzer and Gerhard
+Trisko.  Ralf Schlatterbeck <ralf@zoo.priv.at> maintained and extended
+it until 1998.  The current maintainer is Georg Lehner
+<glehner@unanleon.edu.ni>.  For the Copyright of the Program see the
+file Copyright.

@@ -1,0 +1,7 @@
+bin/latex2rtf
+share/latex2rtf/direct.cfg
+share/latex2rtf/english.cfg
+share/latex2rtf/fonts.cfg
+share/latex2rtf/german.cfg
+share/latex2rtf/ignore.cfg
+share/latex2rtf/spanish.cfg
