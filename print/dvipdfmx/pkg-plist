@@ -1,12 +1,15 @@
+@comment $FreeBSD$
 bin/dvipdfmx
-%%TEXMFLOCAL%%/dvipdfm/CMap/Adobe-Identity-UCS2
-%%TEXMFLOCAL%%/dvipdfm/CMap/EUC-UCS2
-%%TEXMFLOCAL%%/dvipdfm/CMap/UniKSCms-UCS2-H
-%%TEXMFLOCAL%%/dvipdfm/CMap/UniKSCms-UCS2-V
-%%TEXMFLOCAL%%/dvipdfm/config/cid-x.map
-%%TEXMFLOCAL%%/dvipdfm/config/dvipdfmx.cfg
-@exec ln -s -f %%ADOBECMAPDIR%% %%DVIPDFMCMAPDIR%%/adobe-cmaps
-@unexec rm -f %%DVIPDFMCMAPDIR%%/adobe-cmaps
-@dirrm %%TEXMFLOCAL%%/dvipdfm/CMap
+%%FONTCMAPDIR%%/CMap/Adobe-Identity-UCS2
+%%FONTCMAPDIR%%/CMap/EUC-UCS2
+%%FONTCMAPDIR%%/CMap/UniKSCms-UCS2-H
+%%FONTCMAPDIR%%/CMap/UniKSCms-UCS2-V
+%%FONTMAPDIR%%/cid-x.map
+%%DVIPDFMDIR%%/config/dvipdfmx.cfg
+%%DVIPDFMDIR%%/config/glyphlist.txt
+@exec ln -s -f %%ADOBECMAPDIR%% %D/%%FONTCMAPDIR%%/adobe-cmaps
+@unexec rm -f %D/%%FONTCMAPDIR%%/adobe-cmaps
+@dirrm %%FONTCMAPDIR%%/CMap
+@dirrm %%FONTCMAPDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%

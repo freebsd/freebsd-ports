@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20040411
-PORTREVISION=	1
+PORTVERSION=	20050201
+PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/current/
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
@@ -17,24 +17,36 @@ COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		paper:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	${LOCALBASE}/${TEXMFLOCAL}/ls-R:${PORTSDIR}/print/tex-texmflocal \
+RUN_DEPENDS=	${LOCALBASE}/${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		kpsepath:${PORTSDIR}/print/teTeX-base
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${LOCALBASE}/${TEXMFLOCAL}
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} \
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/${TEXMFLOCALDIR}
+PLIST_SUB=	DVIPDFMDIR=${DVIPDFMDIR} \
+		FONTMAPDIR=${FONTMAPDIR} \
+		FONTCMAPDIR=${FONTCMAPDIR} \
 		MKTEXLSR=${MKTEXLSR} \
-		ADOBECMAPDIR=${ADOBECMAPDIR} \
-		DVIPDFMCMAPDIR=${DVIPDFMCMAPDIR}
+		ADOBECMAPDIR=${ADOBECMAPDIR}
 
-TEXMFLOCAL=	share/texmf-local
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-DVIPDFMCMAPDIR=	${LOCALBASE}/${TEXMFLOCAL}/dvipdfm/CMap
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFLOCAL_LSR=	${TEXMFLOCALDIR}/ls-R
+DVIPDFMDIR=	${TEXMFLOCALDIR}/dvipdfm
+FONTMAPDIR=	${TEXMFLOCALDIR}/fonts/map/dvipdfm
+FONTCMAPDIR=	${TEXMFLOCALDIR}/fonts/cmap/dvipdfm
 ADOBECMAPDIR=	${LOCALBASE}/share/ghostscript/Resource
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 post-install:
-	${LN} -s -f ${ADOBECMAPDIR} ${DVIPDFMCMAPDIR}/adobe-cmaps
+	${MKDIR} ${LOCALBASE}/${FONTCMAPDIR}
+	${MV} ${LOCALBASE}/${DVIPDFMDIR}/config/cid-x.map \
+		${LOCALBASE}/${FONTMAPDIR}/cid-x.map
+	${MV} ${LOCALBASE}/${DVIPDFMDIR}/CMap/glyphlist.txt \
+		${LOCALBASE}/${DVIPDFMDIR}/config/glyphlist.txt
+	${MV} ${LOCALBASE}/${DVIPDFMDIR}/CMap \
+		${LOCALBASE}/${FONTCMAPDIR}/CMap
+	${LN} -s -f ${ADOBECMAPDIR} \
+		${LOCALBASE}/${FONTCMAPDIR}/adobe-cmaps
 	${MKTEXLSR}
 
 .include <bsd.port.mk>
