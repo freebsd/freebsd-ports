@@ -4,9 +4,6 @@ bin/autoreconf%%BUILD_VERSION%%
 bin/autoscan%%BUILD_VERSION%%
 bin/autoupdate%%BUILD_VERSION%%
 bin/ifnames%%BUILD_VERSION%%
-@unexec install-info --delete %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
-info/autoconf%%BUILD_VERSION%%.info
-@exec install-info %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
 libexec/autoconf%%BUILD_VERSION%%/autoconf
 libexec/autoconf%%BUILD_VERSION%%/autoheader
 libexec/autoconf%%BUILD_VERSION%%/autoreconf

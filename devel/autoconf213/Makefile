@@ -31,6 +31,7 @@ CONFIGURE_ENV=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/autoconf
+INFO=		autoconf${BUILD_VERSION}
 
 post-patch:
 	@${RM} ${WRKSRC}/*.info* >/dev/null 2>&1 || true
@@ -40,12 +41,12 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
 		${PREFIX}/share/autoconf${BUILD_VERSION}
 	@-${RM} -fr ${PREFIX}/libexec/autoconf${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}
 .for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
-	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
 		${PREFIX}/libexec/autoconf${BUILD_VERSION}/${i}
 .endfor
-	install-info ${PREFIX}/info/autoconf${BUILD_VERSION}.info \
+	@install-info ${PREFIX}/info/autoconf${BUILD_VERSION}.info \
 		${PREFIX}/info/dir
 
 .include <bsd.port.mk>

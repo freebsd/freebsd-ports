@@ -1,5 +1,5 @@
---- doc/autoconf.texi.orig	Fri Mar  8 04:57:41 2002
-+++ doc/autoconf.texi	Wed Feb 11 00:10:07 2004
+--- doc/autoconf.texi.orig	Fri Mar  8 12:57:41 2002
++++ doc/autoconf.texi	Thu Oct 14 20:14:14 2004
 @@ -2,4 +2,4 @@
  @c %**start of header
 -@setfilename autoconf.info
@@ -7,8 +7,26 @@
 +@setfilename autoconf253.info
 +@settitle Autoconf253
  
-@@ -36,3 +36,3 @@
+@@ -36,21 +36,3 @@
  @direntry
 -* Autoconf: (autoconf).         Create source code configuration scripts
+-@end direntry
+-
+-@dircategory Individual utilities
+-@direntry
+-* autoscan: (autoconf)autoscan Invocation.
+-                                Semi-automatic @file{configure.ac} writing
+-* ifnames: (autoconf)ifnames Invocation.
+-                                Listing the conditionals in source code
+-* autoconf: (autoconf)autoconf Invocation.
+-                                How to create configuration scripts
+-* autoreconf: (autoconf)autoreconf Invocation.
+-                                Remaking multiple @command{configure} scripts
+-* configure: (autoconf)configure Invocation.
+-                                Configuring a package
+-* config.status: (autoconf)config.status Invocation.
+-                                Recreating a configuration
+-* testsuite: (autoconf)testsuite Invocation.
+-                                Running an Autotest test suite
 +* Autoconf253: (autoconf253).         Create source code configuration scripts
  @end direntry

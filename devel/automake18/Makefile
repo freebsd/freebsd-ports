@@ -16,6 +16,8 @@ DISTNAME=	automake-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (version 1.8)
 
+DEPRECATED=	Please use devel/automake19 instead
+
 WANT_AUTOCONF_VER=259
 WANT_AUTOCONF_RUN=yes
 BUILD_VERSION=	18
@@ -28,6 +30,7 @@ CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
+INFO=		automake${BUILD_VERSION}
 
 post-patch:
 	@(cd ${WRKSRC}/doc && \
@@ -39,14 +42,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%X11BASE%%,${X11BASE},g' ${WRKSRC}/aclocal.in
 
 pre-install:
-	${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/share/automake${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/share/aclocal${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/libexec/automake${BUILD_VERSION}
+	@${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/share/automake${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/share/aclocal${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/libexec/automake${BUILD_VERSION}
 
 post-install:
 .for i in aclocal automake
-	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
 		${PREFIX}/libexec/automake${BUILD_VERSION}/${i}
 .endfor
 

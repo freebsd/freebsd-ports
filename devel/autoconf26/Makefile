@@ -27,6 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
+INFO=		autoconf${BUILD_VERSION} standards${BUILD_VERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
@@ -57,12 +58,12 @@ post-patch:
 
 post-install:
 .for FILE in ${GENERIC_TOOLS}
-	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf${BUILD_VERSION}
+	@${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf${BUILD_VERSION}
 .endfor
 	@-${RM} -fr ${PREFIX}/libexec/autoconf${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}
 .for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
-	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
 		${PREFIX}/libexec/autoconf${BUILD_VERSION}/${i}
 .endfor
 

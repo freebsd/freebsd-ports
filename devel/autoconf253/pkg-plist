@@ -11,12 +11,6 @@ libexec/autoconf%%BUILD_VERSION%%/autoreconf
 libexec/autoconf%%BUILD_VERSION%%/autoscan
 libexec/autoconf%%BUILD_VERSION%%/autoupdate
 libexec/autoconf%%BUILD_VERSION%%/ifnames
-@unexec install-info --delete %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
-@unexec install-info --delete %D/info/standards%%BUILD_VERSION%%.info %D/info/dir
-info/autoconf%%BUILD_VERSION%%.info
-info/standards%%BUILD_VERSION%%.info
-@exec install-info %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
-@exec install-info %D/info/standards%%BUILD_VERSION%%.info %D/info/dir
 share/autoconf%%BUILD_VERSION%%/Autom4te/General.pm
 share/autoconf%%BUILD_VERSION%%/Autom4te/Struct.pm
 share/autoconf%%BUILD_VERSION%%/Autom4te/XFile.pm

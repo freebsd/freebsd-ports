@@ -1,5 +1,5 @@
---- doc/automake.texi.orig	Sun Feb 15 10:01:40 2004
-+++ doc/automake.texi	Sun Mar 14 17:13:45 2004
+--- doc/automake.texi.orig	Thu May 13 20:41:35 2004
++++ doc/automake.texi	Thu Oct 14 20:32:26 2004
 @@ -2,4 +2,4 @@
  @c %**start of header
 -@setfilename automake.info
@@ -7,13 +7,13 @@
 +@setfilename automake18.info
 +@settitle automake18
  @setchapternewpage off
-@@ -36,3 +36,3 @@
+@@ -36,8 +36,3 @@
  @direntry
 -* automake: (automake).		Making Makefile.in's.
-+* automake18: (automake18).		Making Makefile.in's.
- @end direntry
-@@ -41,3 +41,3 @@
- @direntry
+-@end direntry
+-
+-@dircategory Individual utilities
+-@direntry
 -* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
-+* aclocal18: (automake18)Invoking aclocal.          Generating aclocal.m4.
++* automake18: (automake18).		Making Makefile.in's.
  @end direntry
