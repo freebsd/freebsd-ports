@@ -53,8 +53,8 @@ lib/gmimeConf.sh
 lib/libgmime-2.0.a
 lib/libgmime-2.0.so
 lib/libgmime-2.0.so.3
-lib/pkgconfig/gmime-2.0.pc
-share/gtk-doc/html/gmime-2.1/c2399.html
+libdata/pkgconfig/gmime-2.0.pc
+share/gtk-doc/html/gmime-2.1/c2426.html
 share/gtk-doc/html/gmime-2.1/ciphercontexts.html
 share/gtk-doc/html/gmime-2.1/classes.html
 share/gtk-doc/html/gmime-2.1/core.html
@@ -128,8 +128,8 @@ share/gtk-doc/html/gmime-2.1/right.png
 share/gtk-doc/html/gmime-2.1/sessions.html
 share/gtk-doc/html/gmime-2.1/streams.html
 share/gtk-doc/html/gmime-2.1/up.png
-@dirrm include/gmime-2.0/gmime
-@dirrm include/gmime-2.0
 @dirrm share/gtk-doc/html/gmime-2.1
 @unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
 @unexec rmdir %D/share/gtk-doc 2>/dev/null || true
+@dirrm include/gmime-2.0/gmime
+@dirrm include/gmime-2.0
