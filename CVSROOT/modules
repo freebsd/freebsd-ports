@@ -1611,7 +1611,6 @@ gated		ports/net/gated
 gatekeeper	ports/net/gatekeeper
 gaussian98	ports/biology/gaussian98
 gawk		ports/lang/gawk
-gb2jis		ports/converters/gb2jis
 gbackground	ports/x11/gbackground
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
