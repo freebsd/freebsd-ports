@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.b11
+PORTVERSION=	1.0.b12
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-beta11
+DISTNAME=	${PORTNAME}-lib-1-beta12
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -69,8 +69,8 @@ PLIST_SUB+=	HAVE_ESOUND=""
 PLIST_SUB+=	HAVE_ESOUND="@comment "
 .endif
 
-.if exists(${X11BASE}/libdata/pkgconfig/gnome-vfs-2.0.pc)
-LIB_DEPENDS+=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
+.if ${HAVE_GNOME:Mgnomevfs2} != ""
+USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	HAVE_GNOMEVFS2=""
 .else
 PLIST_SUB+=	HAVE_GNOMEVFS2="@comment "

@@ -31,7 +31,7 @@ include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.so
-lib/libxine.so.6
+lib/libxine.so.7
 lib/xine/plugins/1.0.0/post/xineplug_post_goom.so
 lib/xine/plugins/1.0.0/post/xineplug_post_invert.so
 lib/xine/plugins/1.0.0/post/xineplug_post_mosaico.so
@@ -40,6 +40,7 @@ lib/xine/plugins/1.0.0/post/xineplug_post_visualizations.so
 %%HAVE_ARTS%%lib/xine/plugins/1.0.0/xineplug_ao_out_arts.so
 %%HAVE_ESOUND%%lib/xine/plugins/1.0.0/xineplug_ao_out_esd.so
 lib/xine/plugins/1.0.0/xineplug_ao_out_oss.so
+lib/xine/plugins/1.0.0/xineplug_decode_28k8.so
 lib/xine/plugins/1.0.0/xineplug_decode_a52.so
 lib/xine/plugins/1.0.0/xineplug_decode_adpcm.so
 lib/xine/plugins/1.0.0/xineplug_decode_cinepak.so
@@ -126,6 +127,7 @@ share/doc/xine/README.dxr3_pl
 share/doc/xine/README.freebsd
 share/doc/xine/README.irix
 share/doc/xine/README.mrl
+share/doc/xine/README.network_dvd
 share/doc/xine/README.opengl
 share/doc/xine/README.plugins
 share/doc/xine/README.solaris
@@ -171,8 +173,8 @@ share/xine/libxine1/fonts/serif-20.xinefont.gz
 share/xine/libxine1/fonts/serif-24.xinefont.gz
 share/xine/libxine1/fonts/serif-32.xinefont.gz
 @dirrm include/xine
-@dirrm lib/xine/plugins/1.0.0/post
 @dirrm lib/xine/plugins/1.0.0/vidix
+@dirrm lib/xine/plugins/1.0.0/post
 @dirrm lib/xine/plugins/1.0.0
 @dirrm lib/xine/plugins
 @dirrm lib/xine
