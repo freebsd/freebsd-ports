@@ -15,13 +15,14 @@ MASTER_SITE_SUBDIR=	alpha/aegypten
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		common.tar.gz:lofi
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	A client for managing and downloading certificate revocation lists
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		ksba.7:${PORTSDIR}/security/libksba
 
+USE_OPENLDAP=	yes
 USE_GETOPT_LONG=yes
 USE_AUTOMAKE_VER=	15
 USE_LIBTOOL=	yes
@@ -33,17 +34,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=--with-included-gettext=no
+INFO=		dirmngr
 
 .include <bsd.port.pre.mk>
-
-# We need OpenLDAP. Default on openldap20 but let people build with
-# OpenLDAP 2.1.* if they want.
-
-.if defined(WITH_LDAP21)
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21-client
-.else
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
-.endif
 
 post-extract:
 	${MV} ${WRKDIR}/common ${WRKSRC}
