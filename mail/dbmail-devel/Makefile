@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	1.2.8b
+PORTVERSION=	1.2.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/
 PKGNAMESUFFIX=	-${DATABASE}
