@@ -13,6 +13,7 @@ bin/url-properties
 bin/wm-properties-capplet
 etc/CORBA/servers/gnomecc.gnorba
 etc/cappletConf.sh
+include/capplet-widget.h
 lib/libcapplet.a
 lib/libcapplet.la
 lib/libcapplet.so
@@ -42,6 +43,7 @@ share/gnome/apps/Settings/gnome-edit-properties.desktop
 share/gnome/apps/Settings/gnomecc.desktop
 share/gnome/apps/Settings/session-properties.desktop
 share/gnome/apps/Settings/url-properties.desktop
+share/gnome/control-center/.data/3d.desktop
 share/gnome/control-center/.data/Ant.desktop
 share/gnome/control-center/.data/Attraction.desktop
 share/gnome/control-center/.data/Blitspin.desktop
@@ -50,10 +52,10 @@ share/gnome/control-center/.data/Braid.desktop
 share/gnome/control-center/.data/Bsod.desktop
 share/gnome/control-center/.data/Bubbles.desktop
 share/gnome/control-center/.data/Coral.desktop
-share/gnome/control-center/.data/Crystal.desktop
 share/gnome/control-center/.data/Cynosure.desktop
 share/gnome/control-center/.data/Decayscreen.desktop
 share/gnome/control-center/.data/Deco.desktop
+share/gnome/control-center/.data/Demon.desktop
 share/gnome/control-center/.data/Discrete.desktop
 share/gnome/control-center/.data/Distort.desktop
 share/gnome/control-center/.data/Drift.desktop
@@ -83,6 +85,7 @@ share/gnome/control-center/.data/Lightning.desktop
 share/gnome/control-center/.data/Lisa.desktop
 share/gnome/control-center/.data/Lissie.desktop
 share/gnome/control-center/.data/Lmorph.desktop
+share/gnome/control-center/.data/Loop.desktop
 share/gnome/control-center/.data/Maze.desktop
 share/gnome/control-center/.data/Moire.desktop
 share/gnome/control-center/.data/Moire2.desktop
@@ -100,6 +103,7 @@ share/gnome/control-center/.data/Rotor.desktop
 share/gnome/control-center/.data/Sierpinski.desktop
 share/gnome/control-center/.data/Slidescreen.desktop
 share/gnome/control-center/.data/Slip.desktop
+share/gnome/control-center/.data/Sonar.desktop
 share/gnome/control-center/.data/Sphere.desktop
 share/gnome/control-center/.data/Spiral.desktop
 share/gnome/control-center/.data/Starfish.desktop
@@ -120,7 +124,6 @@ share/gnome/control-center/.data/braid.png
 share/gnome/control-center/.data/bsod.png
 share/gnome/control-center/.data/bubbles.png
 share/gnome/control-center/.data/coral.png
-share/gnome/control-center/.data/crystal.png
 share/gnome/control-center/.data/cynosure.png
 share/gnome/control-center/.data/decayscreen.png
 share/gnome/control-center/.data/deco.png
@@ -143,6 +146,7 @@ share/gnome/control-center/.data/kaleidescope.png
 share/gnome/control-center/.data/laser.png
 share/gnome/control-center/.data/lightning.png
 share/gnome/control-center/.data/lisa.png
+share/gnome/control-center/.data/maze.png
 share/gnome/control-center/.data/qix.png
 share/gnome/control-center/.data/starfish.png
 @dirrm share/gnome/control-center/.data
