@@ -226,6 +226,7 @@
     SUBDIR += upsmon
     SUBDIR += uptimed
     SUBDIR += userlist
+    SUBDIR += usermin
     SUBDIR += uwatch
     SUBDIR += videogen
     SUBDIR += vobcopy

@@ -1,0 +1,9 @@
+
+$FreeBSD$
+
+--- htaccess/config.orig	Sun Nov 10 15:20:17 2002
++++ htaccess/config	Sun Nov 10 15:20:29 2002
+@@ -1,2 +1,2 @@
+ htaccess=.htaccess
+-webmin_apache=/etc/webmin/apache
++webmin_apache=/usr/local/etc/webmin/apache
