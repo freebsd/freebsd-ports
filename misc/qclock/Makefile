@@ -3,13 +3,13 @@
 # Date created:		12 August 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.2 1998/08/17 11:18:17 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/30 15:40:18 steve Exp $
 #
 
 DISTNAME=	qclock
 PKGNAME=	qclock-1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://snowball.cypcopic.com.au/qclock/
+MASTER_SITES=	ftp://peloton.physics.montana.edu/pub/distfiles/
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
