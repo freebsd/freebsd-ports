@@ -33,37 +33,54 @@ ncpu=$(sysctl -n hw.ncpu)
 
 case "${PKG_ACTION}" in
 POST-INSTALL)
-
+	if [ -f ${seti_wrkdir}/user_info.sah ]; then
+echo "****  SETI@home already has a working directory for temporary files and"
+echo "      you seem to be already registered with SETI@home."
+echo
+echo -n "      Would you like repeat the registration with SETI@home? [y/N] "
+		read ans
+echo
+		if [ "X${ans}" = "XY" -o "X${ans}" = "Xy" ]; then
+			register=yes
+		else
+			register=no
+		fi
+	else
 echo "****  SETI@home requires a working directory for temporary files and a"
 echo "      brief registration process."
 echo
 echo "      Would you like to set up a working directory in ${seti_wrkdir},"
-	if [ ${seti_maxprocs} -gt 1 ]; then
+		if [ ${seti_maxprocs} -gt 1 ]; then
 echo "      register with SETI@home, and let me arrange for ${ncpu} setiathome"
-		if [ ${ncpu} -eq ${seti_maxprocs} ]; then
+			if [ ${ncpu} -eq ${seti_maxprocs} ]; then
 echo "      processes (one for each of your ${ncpu} CPUs) to be started"
 echo -n "      automatically as user \`${seti_user}'? [Y/n] "
-		else
+			else
 echo "      processes (as configured) to be started automatically as user"
 echo -n "      \`${seti_user}'? [Y/n] "
-		fi
-	else
+			fi
+		else
 echo "      register with SETI@home, and let me arrange for setiathome to be"
 echo -n "      started automatically as user \`${seti_user}'? [Y/n] "
-	fi
-	read a
+		fi
+		read ans
 echo
-	if [ "X$a" = "XN" -o "X$a" = "Xn" ]; then
+		if [ "X${ans}" = "XN" -o "X${ans}" = "Xn" ]; then
 echo "****  Please set up the working directory yourself.  You may use"
 echo "            ${rc_path} register"
 echo "      to do so. See setiathome(1) for details."
-		exit 0
+			exit 0
+		else
+			register=yes
+		fi
 	fi
-	${rc_path} register
-	if [ ! -f ${seti_wrkdir}/user_info.sah ]; then
+	if [ "${register}" = "yes" ]; then
+		${rc_path} register
+		if [ ! -f ${seti_wrkdir}/user_info.sah ]; then
 echo "unable to start setiathome: it seems registration or login failed."
 echo "See setiathome(1) for details."
-		exit 0
+			exit 0
+		fi
 	fi
 	${rc_path} start > /dev/null
 echo
