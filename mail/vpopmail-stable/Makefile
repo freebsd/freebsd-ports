@@ -9,6 +9,7 @@ PORTNAME=	vpopmail
 PORTVERSION=	5.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
+PKGNAMESUFFIX=	-stable
 
 MAINTAINER=	roam@FreeBSD.org
 

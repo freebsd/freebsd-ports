@@ -11,6 +11,7 @@ vpopmail/bin/vdeloldusers
 vpopmail/bin/vdeluser
 vpopmail/bin/vdominfo
 vpopmail/bin/vipmap
+vpopmail/bin/vkill
 vpopmail/bin/vmkpasswd
 vpopmail/bin/vmoduser
 vpopmail/bin/vpasswd
