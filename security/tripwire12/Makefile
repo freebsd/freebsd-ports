@@ -8,8 +8,8 @@
 PORTNAME=	tripwire
 PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/security/tripwire/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/security/tripwire/old/
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	jgreco@ns.sol.net
 
