@@ -3,7 +3,7 @@
 # Date created:				September 10th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/05/14 08:15:36 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/08/12 09:57:52 asami Exp $
 #
 
 DISTNAME=	FreezeThaw-0.3
@@ -20,6 +20,6 @@ MAN3=		FreezeThaw.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

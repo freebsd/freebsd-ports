@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/05/24 13:17:07 jfitz Exp $
+#   $Id: Makefile,v 1.7 1997/06/24 18:43:22 jfitz Exp $
 #
 
 DISTNAME=	Ioctl-0_7
@@ -17,6 +17,6 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 USE_PERL5=	YES
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

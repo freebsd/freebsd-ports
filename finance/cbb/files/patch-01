@@ -5,7 +5,7 @@
  CBB_ROOT = cbb-0.73
  TAR = tar
 -PERL = perl
-+PERL = ${PREFIX}/bin/perl
++PERL = ${PERL5}
  
  
  all:
@@ -14,7 +14,7 @@
  install:
 -	$(PERL) install.pl
 +	$(PERL) install.pl --prefix ${PREFIX} --libdir ${PREFIX}/share/cbb  \
-+		--perlpath ${PREFIX}/bin/perl --wishpath ${PREFIX}/bin/wish4.2
++		--perlpath ${PERL5} --wishpath ${PREFIX}/bin/wish4.2
  
  docs/cbb-man.dvi: docs/cbb-man.tex
  	(cd docs; \

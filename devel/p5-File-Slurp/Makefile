@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1998/08/12 09:57:50 asami Exp $
+#   $Id: Makefile,v 1.8 1998/08/31 14:10:57 vanilla Exp $
 #
 
 DISTNAME=	File-Slurp-98.071901
@@ -20,6 +20,6 @@ MAN3=		File::Slurp.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

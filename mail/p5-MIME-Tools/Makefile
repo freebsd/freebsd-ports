@@ -3,7 +3,7 @@
 # Date created:				April 27th 1998
 # Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/06/24 15:59:07 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/08/23 02:57:11 jseger Exp $
 #
 
 DISTNAME=	MIME-tools-4.121
@@ -34,6 +34,6 @@ MAN3=	MIME::IO.3			MIME::Entity.3 \
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1998/08/06 15:03:14 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/08/12 09:57:49 asami Exp $
 #
 
 DISTNAME=	Devel-Symdump-2.00
@@ -20,6 +20,6 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::Symdump.3
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

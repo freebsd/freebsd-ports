@@ -3,7 +3,7 @@
 # Date created:		03-Sep-1997
 # Whom:	      		Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.15 1998/08/02 14:55:26 rse Exp $
+# $Id: Makefile,v 1.16 1998/08/22 19:55:01 jseger Exp $
 #
 
 DISTNAME=	eperl-2.2.14
@@ -23,6 +23,6 @@ MAN3=		Parse::ePerl.3 Apache::ePerl.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

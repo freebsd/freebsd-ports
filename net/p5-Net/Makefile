@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.18 1998/08/06 15:14:53 vanilla Exp $
+# $Id: Makefile,v 1.19 1998/08/19 13:05:56 vanilla Exp $
 #
 
 DISTNAME=       libnet-1.0605
@@ -31,6 +31,6 @@ MAN3=		FAQ.3 \
 		Net::Time.3
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

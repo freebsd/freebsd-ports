@@ -3,7 +3,7 @@
 # Date Created:				Aug 18 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1998/08/18 02:39:39 vanilla Exp $
 #
 
 DISTNAME=	pRPC-modules-0.1005
@@ -24,6 +24,6 @@ MAN3=		Bundle::pRPC-modules.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

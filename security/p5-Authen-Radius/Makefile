@@ -3,7 +3,7 @@
 # Date created:				September 11th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/09/13 17:48:49 jfitz Exp $
+#   $Id: Makefile,v 1.2 1998/08/23 15:06:57 jseger Exp $
 #
 
 DISTNAME=	RadiusPerl-0.05
@@ -24,6 +24,6 @@ pre-configure:
 		@${CP} ${WRKSRC}/Authen/Radius.pm ${WRKSRC}
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				May 28th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/06/24 18:43:29 jfitz Exp $
+#   $Id: Makefile,v 1.3 1998/08/12 09:57:54 asami Exp $
 #
 
 DISTNAME=	Penguin-Easy-1.1
@@ -22,7 +22,7 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Penguin::Easy.3
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 post-install:
 		${MKDIR} ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/bin ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/doc

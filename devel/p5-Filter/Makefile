@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/02/18 18:21:36 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/08/12 09:57:51 asami Exp $
 #
 
 DISTNAME=	Filter-1.14
@@ -21,6 +21,6 @@ MAN3=		Filter::Util::Call.3 Filter::Util::Exec.3 Filter::cpp.3 \
 		Filter::decrypt.3 Filter::exec.3 Filter::sh.3 Filter::tee.3
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

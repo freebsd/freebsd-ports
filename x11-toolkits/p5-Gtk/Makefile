@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.12 1998/08/07 23:56:50 asami Exp $
+# $Id: Makefile,v 1.13 1998/08/19 14:30:39 vanilla Exp $
 #
 
 DISTNAME=	Gtk-0.3
@@ -22,6 +22,6 @@ MAN3=		GtkColorSelectButton.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1998/02/18 18:24:01 vanilla Exp $
+# $Id: Makefile,v 1.10 1998/08/23 13:56:19 jseger Exp $
 #
 
 DISTNAME=	HTML-Stream-1.44
@@ -20,6 +20,6 @@ MAN3=		HTML::Stream.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

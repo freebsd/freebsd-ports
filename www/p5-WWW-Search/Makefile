@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/08/19 13:13:11 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/09/08 15:32:21 vanilla Exp $
 #
 
 DISTNAME=	WWW-Search-1.021
@@ -47,6 +47,6 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::Simple.3
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

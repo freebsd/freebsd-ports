@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.11 1997/09/14 03:59:53 jfitz Exp $
+#   $Id: Makefile,v 1.12 1998/08/23 14:21:41 jseger Exp $
 #
 
 DISTNAME=	pgsql_perl5-1.6.1
@@ -22,6 +22,6 @@ MAN3=		Pg.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

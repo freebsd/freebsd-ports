@@ -3,7 +3,7 @@
 # Date Created:		8 April 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/08/06 15:18:27 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/08/19 12:38:40 vanilla Exp $
 #
 
 DISTNAME=	chart-0.94
@@ -24,6 +24,6 @@ MAN3=		Chart.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

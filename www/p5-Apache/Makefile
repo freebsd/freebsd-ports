@@ -3,7 +3,7 @@
 # Date created:				April 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.9 1998/06/27 01:30:25 steve Exp $
+#   $Id: Makefile,v 1.10 1998/09/03 13:45:47 asami Exp $
 #
 
 DISTNAME=	mod_perl-1.07
@@ -29,7 +29,7 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::Options.3 \
 MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 post-install:
 		${MKDIR} ${PREFIX}/share/doc/mod_perl

@@ -3,7 +3,7 @@
 # Date created:				19 February 1998
 # Whom:	      				Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.4 1998/06/15 04:48:36 mph Exp $
+# $Id: Makefile,v 1.5 1998/08/12 09:57:55 asami Exp $
 #
 
 DISTNAME=	Term-ReadLine-Gnu-1.01
@@ -23,6 +23,6 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 # automatically.  There is sometimes an old libreadline in /usr/local/lib
 # and this module won't work with it.
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL LDDLFLAGS=-Bshareable LDFLAGS=-L/usr/lib
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL LDDLFLAGS=-Bshareable LDFLAGS=-L/usr/lib
 
 .include <bsd.port.mk>

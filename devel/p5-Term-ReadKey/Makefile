@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/03/11 03:02:53 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/08/12 09:57:57 asami Exp $
 #
 
 DISTNAME=	TermReadKey-2.12
@@ -20,6 +20,6 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::ReadKey.3
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

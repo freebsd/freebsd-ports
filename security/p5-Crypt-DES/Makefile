@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/06/24 18:43:08 jfitz Exp $
+#   $Id: Makefile,v 1.8 1998/09/03 13:45:44 asami Exp $
 #
 
 DISTNAME=	Crypt-DES-1.0
@@ -22,6 +22,6 @@ MAN3=		Crypt::DES.3
 MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.13 1998/08/06 14:57:13 vanilla Exp $
+# $Id: Makefile,v 1.14 1998/08/18 02:51:15 vanilla Exp $
 #
 
 DISTNAME=	DBI-1.00
@@ -30,6 +30,6 @@ MAN3=		DBD::Proxy.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>
