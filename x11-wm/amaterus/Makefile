@@ -12,7 +12,8 @@ MASTER_SITES=	http://www.taiyaki.org/src/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
