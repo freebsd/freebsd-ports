@@ -1,0 +1,12 @@
+--- config.h.in.orig	Sat Sep 13 09:37:53 2003
++++ config.h.in	Sun Sep 14 18:13:35 2003
+@@ -38,9 +38,6 @@
+ /* Define if you have libxml2 */
+ #undef HAVE_LIBXML2
+ 
+-/* Define to 1 if you have the <malloc.h> header file. */
+-#undef HAVE_MALLOC_H
+-
+ /* Define to 1 if you have the `memcpy' function. */
+ #undef HAVE_MEMCPY
+ 

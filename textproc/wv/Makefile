@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wv
-PORTVERSION=	0.7.6
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -18,13 +18,11 @@ LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
+USE_GNOME=	gnometarget pkgconfig
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-exporter --without-glib
+CONFIGURE_ARGS=	--with-exporter --without-glib --with-libwmf=${LOCALBASE}
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
 
@@ -34,8 +32,5 @@ MLINKS=	wvWare.1 wvConvert.1
 
 CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e '/HAVE_MALLOC_H/d' ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>

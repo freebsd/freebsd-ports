@@ -1,4 +1,3 @@
-bin/libwv-config
 bin/wvAbw
 bin/wvCleanLatex
 bin/wvConvert
@@ -15,11 +14,14 @@ bin/wvText
 bin/wvVersion
 bin/wvWare
 bin/wvWml
-include/wv.h
-include/wvexporter.h
+include/wv/libole2/ms-ole-summary.h
+include/wv/libole2/ms-ole.h
+include/wv/wv.h
+include/wv/wvexporter.h
 lib/libwv.a
 lib/libwv.so
-lib/libwv.so.6
+lib/libwv-1.0.so.0
+libdata/pkgconfig/wv-1.0.pc
 share/wv/patterns/100.gif
 share/wv/patterns/101.gif
 share/wv/patterns/102.gif
@@ -471,3 +473,5 @@ share/wv/wvXml.xml
 @dirrm share/wv/wingdingfont
 @dirrm share/wv/patterns
 @dirrm share/wv
+@dirrm include/wv/libole2
+@dirrm include/wv
