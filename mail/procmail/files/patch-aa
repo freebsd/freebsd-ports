@@ -1,0 +1,31 @@
+*** Makefile.1.old	Thu Sep  8 20:11:33 1994
+--- Makefile.1	Fri Oct  7 04:15:50 1994
+***************
+*** 93,105 ****
+  	@for a in $(MANS1S); \
+  	  do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
+  	     if test "X$(MANCOMPRESS)" != "X"; \
+! 	     then $(MANCOMPRESS) <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
+  	     else :; fi; \
+  	  done
+  	@for a in $(MANS5S); \
+  	  do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
+  	     if test "X$(MANCOMPRESS)" != "X"; \
+! 	     then $(MANCOMPRESS) <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
+  	     else :; fi; \
+  	  done
+  	echo Housekeeping file >install.man
+--- 93,105 ----
+  	@for a in $(MANS1S); \
+  	  do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
+  	     if test "X$(MANCOMPRESS)" != "X"; \
+! 	     then "$(MANCOMPRESS)" <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX)$(COMPSUFFIX); \
+  	     else :; fi; \
+  	  done
+  	@for a in $(MANS5S); \
+  	  do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
+  	     if test "X$(MANCOMPRESS)" != "X"; \
+! 	     then "$(MANCOMPRESS)" <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX)$(COMPSUFFIX); \
+  	     else :; fi; \
+  	  done
+  	echo Housekeeping file >install.man
