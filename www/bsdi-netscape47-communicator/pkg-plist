@@ -3,194 +3,197 @@ bin/communicator-4.5
 @comment	@exec ln -sf communicator-4 %B/netscape
 @comment	@unexec rm -f %B/netscape
 @comment	@unexec rm -f %B/communicator-4
-lib/netscape/README
-lib/netscape/LICENSE
-lib/netscape/Netscape.ad
-lib/netscape/XKeysymDB
-lib/netscape/movemail
-lib/netscape/plugins/libnullplugin.so
-lib/netscape/libjsd.so.1.0
-lib/netscape/bookmark.htm
-lib/netscape/vreg
-lib/netscape/communicator-4.5.bin
-lib/netscape/mailcap
-lib/netscape/java/classes/ifc11.jar
-lib/netscape/java/classes/iiop10.jar
-lib/netscape/java/classes/jae40.jar
-lib/netscape/java/classes/java40.jar
-lib/netscape/java/classes/jio40.jar
-lib/netscape/java/classes/jsd10.jar
-lib/netscape/java/classes/ldap10.jar
-lib/netscape/java/classes/scd10.jar
-lib/netscape/java/classes/awt.properties
-lib/netscape/java/classes/font.properties
-lib/netscape/java/classes/font.properties.cs
-lib/netscape/java/classes/font.properties.el
-lib/netscape/java/classes/font.properties.hu
-lib/netscape/java/classes/font.properties.ja
-lib/netscape/java/classes/font.properties.ko
-lib/netscape/java/classes/font.properties.lt
-lib/netscape/java/classes/font.properties.lv
-lib/netscape/java/classes/font.properties.pl
-lib/netscape/java/classes/font.properties.ru
-lib/netscape/java/classes/font.properties.tr
-lib/netscape/java/classes/font.properties.zh
-lib/netscape/java/classes/font.properties.zh_GB2312
-lib/netscape/java/classes/font.properties.zh_TW
-lib/netscape/java/classes/font.properties.zh_TW_Big5
-lib/netscape/java/classes/font.properties.zh_TW_CNS11643
-lib/netscape/java/classes/aix/font.properties
-lib/netscape/java/classes/aix/font.properties.cs
-lib/netscape/java/classes/aix/font.properties.hu
-lib/netscape/java/classes/aix/font.properties.ja
-lib/netscape/java/classes/aix/font.properties.ko
-lib/netscape/java/classes/aix/font.properties.pl
-lib/netscape/java/classes/aix/font.properties.ru
-lib/netscape/java/classes/aix/font.properties.zh
-lib/netscape/java/classes/aix/font.properties.zh_TW
-lib/netscape/java/classes/hpux/font.properties
-lib/netscape/java/classes/hpux/font.properties.bg
-lib/netscape/java/classes/hpux/font.properties.cs
-lib/netscape/java/classes/hpux/font.properties.el
-lib/netscape/java/classes/hpux/font.properties.hr
-lib/netscape/java/classes/hpux/font.properties.hu
-lib/netscape/java/classes/hpux/font.properties.ja
-lib/netscape/java/classes/hpux/font.properties.ko
-lib/netscape/java/classes/hpux/font.properties.pl
-lib/netscape/java/classes/hpux/font.properties.ro
-lib/netscape/java/classes/hpux/font.properties.ru
-lib/netscape/java/classes/hpux/font.properties.sk
-lib/netscape/java/classes/hpux/font.properties.sl
-lib/netscape/java/classes/hpux/font.properties.tr
-lib/netscape/java/classes/hpux/font.properties.zh_GB2312
-lib/netscape/java/classes/hpux/font.properties.zh_TW_Big5
-lib/netscape/java/classes/hpux/font.properties.zh_TW_CNS11643
-lib/netscape/java/classes/irix/font.properties
-lib/netscape/java/classes/irix/font.properties.cs
-lib/netscape/java/classes/irix/font.properties.el
-lib/netscape/java/classes/irix/font.properties.hu
-lib/netscape/java/classes/irix/font.properties.ja
-lib/netscape/java/classes/irix/font.properties.ko
-lib/netscape/java/classes/irix/font.properties.zh_GB2312
-lib/netscape/java/classes/irix/font.properties.zh_TW_Big5
-lib/netscape/java/classes/irix/font.properties.zh_TW_CNS11643
-lib/netscape/nethelp/Back_dep.gif
-lib/netscape/nethelp/Topic.js
-lib/netscape/nethelp/System.js
-lib/netscape/nethelp/Stack.js
-lib/netscape/nethelp/Local-1.js
-lib/netscape/nethelp/IdxData.js
-lib/netscape/nethelp/Header.js
-lib/netscape/nethelp/CntTool.js
-lib/netscape/nethelp/CntData.js
-lib/netscape/nethelp/Button.js
-lib/netscape/nethelp/ToolUI.htm
-lib/netscape/nethelp/System.htm
-lib/netscape/nethelp/Status.htm
-lib/netscape/nethelp/NoJSerr.htm
-lib/netscape/nethelp/NavUI.htm
-lib/netscape/nethelp/NSHIfrm.htm
-lib/netscape/nethelp/IdxTopic.htm
-lib/netscape/nethelp/IdxTool.htm
-lib/netscape/nethelp/IdxKey.htm
-lib/netscape/nethelp/IdxFill.htm
-lib/netscape/nethelp/CntTool.htm
-lib/netscape/nethelp/Blank.htm
-lib/netscape/nethelp/Wait.gif
-lib/netscape/nethelp/Tool_up.gif
-lib/netscape/nethelp/Tool_sel.gif
-lib/netscape/nethelp/Tool_dep.gif
-lib/netscape/nethelp/Prnt_up.gif
-lib/netscape/nethelp/Prnt_sel.gif
-lib/netscape/nethelp/Prnt_dep.gif
-lib/netscape/nethelp/Forw_up.gif
-lib/netscape/nethelp/Forw_sel.gif
-lib/netscape/nethelp/Forw_dis.gif
-lib/netscape/nethelp/Forw_dep.gif
-lib/netscape/nethelp/Exit_up.gif
-lib/netscape/nethelp/Exit_sel.gif
-lib/netscape/nethelp/Exit_dep.gif
-lib/netscape/nethelp/Back_up.gif
-lib/netscape/nethelp/Back_sel.gif
-lib/netscape/nethelp/Back_dis.gif
-lib/netscape/nethelp/Utility.js
-lib/netscape/nethelp/netscape/collabra/collabra.gif
-lib/netscape/nethelp/netscape/collabra/discgrps.gif
-lib/netscape/nethelp/netscape/collabra/coll.htm
-lib/netscape/nethelp/netscape/collabra/collHdr.htm
-lib/netscape/nethelp/netscape/collabra/help.hpf
-lib/netscape/nethelp/netscape/composer/composer.gif
-lib/netscape/nethelp/netscape/composer/comtlbr2.gif
-lib/netscape/nethelp/netscape/composer/fmtlbr3.gif
-lib/netscape/nethelp/netscape/composer/tagicon2.gif
-lib/netscape/nethelp/netscape/composer/comp.htm
-lib/netscape/nethelp/netscape/composer/compHdr.htm
-lib/netscape/nethelp/netscape/composer/help.hpf
-lib/netscape/nethelp/netscape/confernc/brws2.gif
-lib/netscape/nethelp/netscape/confernc/chat2.gif
-lib/netscape/nethelp/netscape/confernc/circle2.gif
-lib/netscape/nethelp/netscape/confernc/confernc.gif
-lib/netscape/nethelp/netscape/confernc/eraser2.gif
-lib/netscape/nethelp/netscape/confernc/fhndtl2.gif
-lib/netscape/nethelp/netscape/confernc/filex2.gif
-lib/netscape/nethelp/netscape/confernc/horline2.gif
-lib/netscape/nethelp/netscape/confernc/line2.gif
-lib/netscape/nethelp/netscape/confernc/pointer2.gif
-lib/netscape/nethelp/netscape/confernc/rect2.gif
-lib/netscape/nethelp/netscape/confernc/txttool2.gif
-lib/netscape/nethelp/netscape/confernc/whtbd2.gif
-lib/netscape/nethelp/netscape/confernc/conf.htm
-lib/netscape/nethelp/netscape/confernc/confHdr.htm
-lib/netscape/nethelp/netscape/confernc/help.hpf
-lib/netscape/nethelp/netscape/home/home.gif
-lib/netscape/nethelp/netscape/home/home.htm
-lib/netscape/nethelp/netscape/home/homeHdr.htm
-lib/netscape/nethelp/netscape/home/help.hpf
-lib/netscape/nethelp/netscape/messengr/mailbox.gif
-lib/netscape/nethelp/netscape/messengr/messengr.gif
-lib/netscape/nethelp/netscape/messengr/mpctrl.gif
-lib/netscape/nethelp/netscape/messengr/mess.htm
-lib/netscape/nethelp/netscape/messengr/messHdr.htm
-lib/netscape/nethelp/netscape/messengr/help.hpf
-lib/netscape/nethelp/netscape/navigatr/navigatr.gif
-lib/netscape/nethelp/netscape/navigatr/nav.htm
-lib/netscape/nethelp/netscape/navigatr/navHdr.htm
-lib/netscape/nethelp/netscape/navigatr/help.hpf
-lib/netscape/nethelp/netscape/netcastr/netcastr.gif
-lib/netscape/nethelp/netscape/netcastr/net.htm
-lib/netscape/nethelp/netscape/netcastr/netHdr.htm
-lib/netscape/nethelp/netscape/netcastr/help.hpf
-lib/netscape/nethelp/netscape/shared/admnIcon.gif
-lib/netscape/nethelp/netscape/shared/calIcon.gif
-lib/netscape/nethelp/netscape/shared/collIcon.gif
-lib/netscape/nethelp/netscape/shared/commIcon.gif
-lib/netscape/nethelp/netscape/shared/compIcon.gif
-lib/netscape/nethelp/netscape/shared/confIcon.gif
-lib/netscape/nethelp/netscape/shared/ibmIcon.gif
-lib/netscape/nethelp/netscape/shared/messIcon.gif
-lib/netscape/nethelp/netscape/shared/navIcon.gif
-lib/netscape/nethelp/netscape/shared/netIcon.gif
-lib/netscape/nethelp/netscape/shared/Contents.htm
-lib/netscape/nethelp/netscape/shared/NetHelp1.css
-lib/netscape/nethelp/netscape/nscal/index.html
-lib/netscape/spell/pen4s324.dat
-lib/netscape/spell/netscape.dic
-@dirrm lib/netscape/spell
-@dirrm lib/netscape/plugins
-@dirrm lib/netscape/nethelp/netscape/shared
-@dirrm lib/netscape/nethelp/netscape/nscal
-@dirrm lib/netscape/nethelp/netscape/netcastr
-@dirrm lib/netscape/nethelp/netscape/navigatr
-@dirrm lib/netscape/nethelp/netscape/messengr
-@dirrm lib/netscape/nethelp/netscape/home
-@dirrm lib/netscape/nethelp/netscape/confernc
-@dirrm lib/netscape/nethelp/netscape/composer
-@dirrm lib/netscape/nethelp/netscape/collabra
-@dirrm lib/netscape/nethelp/netscape
-@dirrm lib/netscape/nethelp
-@dirrm lib/netscape/java/classes/irix
-@dirrm lib/netscape/java/classes/hpux
-@dirrm lib/netscape/java/classes/aix
-@dirrm lib/netscape/java/classes
-@dirrm lib/netscape/java
-@dirrm lib/netscape
+lib/netscape.45/LICENSE
+lib/netscape.45/Netscape.ad
+lib/netscape.45/README
+lib/netscape.45/XKeysymDB
+lib/netscape.45/bookmark.htm
+lib/netscape.45/communicator-4.5.bin
+lib/netscape.45/java/classes/aix/font.properties
+lib/netscape.45/java/classes/aix/font.properties.cs
+lib/netscape.45/java/classes/aix/font.properties.hu
+lib/netscape.45/java/classes/aix/font.properties.ja
+lib/netscape.45/java/classes/aix/font.properties.ko
+lib/netscape.45/java/classes/aix/font.properties.pl
+lib/netscape.45/java/classes/aix/font.properties.ru
+lib/netscape.45/java/classes/aix/font.properties.zh
+lib/netscape.45/java/classes/aix/font.properties.zh_TW
+lib/netscape.45/java/classes/awt.properties
+lib/netscape.45/java/classes/font.properties
+lib/netscape.45/java/classes/font.properties.cs
+lib/netscape.45/java/classes/font.properties.el
+lib/netscape.45/java/classes/font.properties.hu
+lib/netscape.45/java/classes/font.properties.ja
+lib/netscape.45/java/classes/font.properties.ko
+lib/netscape.45/java/classes/font.properties.lt
+lib/netscape.45/java/classes/font.properties.lv
+lib/netscape.45/java/classes/font.properties.pl
+lib/netscape.45/java/classes/font.properties.ru
+lib/netscape.45/java/classes/font.properties.tr
+lib/netscape.45/java/classes/font.properties.zh
+lib/netscape.45/java/classes/font.properties.zh_GB2312
+lib/netscape.45/java/classes/font.properties.zh_TW
+lib/netscape.45/java/classes/font.properties.zh_TW_Big5
+lib/netscape.45/java/classes/font.properties.zh_TW_CNS11643
+lib/netscape.45/java/classes/hpux/font.properties
+lib/netscape.45/java/classes/hpux/font.properties.bg
+lib/netscape.45/java/classes/hpux/font.properties.cs
+lib/netscape.45/java/classes/hpux/font.properties.el
+lib/netscape.45/java/classes/hpux/font.properties.hr
+lib/netscape.45/java/classes/hpux/font.properties.hu
+lib/netscape.45/java/classes/hpux/font.properties.ja
+lib/netscape.45/java/classes/hpux/font.properties.ko
+lib/netscape.45/java/classes/hpux/font.properties.pl
+lib/netscape.45/java/classes/hpux/font.properties.ro
+lib/netscape.45/java/classes/hpux/font.properties.ru
+lib/netscape.45/java/classes/hpux/font.properties.sk
+lib/netscape.45/java/classes/hpux/font.properties.sl
+lib/netscape.45/java/classes/hpux/font.properties.tr
+lib/netscape.45/java/classes/hpux/font.properties.zh_GB2312
+lib/netscape.45/java/classes/hpux/font.properties.zh_TW_Big5
+lib/netscape.45/java/classes/hpux/font.properties.zh_TW_CNS11643
+lib/netscape.45/java/classes/ifc11.jar
+lib/netscape.45/java/classes/iiop10.jar
+lib/netscape.45/java/classes/irix/font.properties
+lib/netscape.45/java/classes/irix/font.properties.cs
+lib/netscape.45/java/classes/irix/font.properties.el
+lib/netscape.45/java/classes/irix/font.properties.hu
+lib/netscape.45/java/classes/irix/font.properties.ja
+lib/netscape.45/java/classes/irix/font.properties.ko
+lib/netscape.45/java/classes/irix/font.properties.zh_GB2312
+lib/netscape.45/java/classes/irix/font.properties.zh_TW_Big5
+lib/netscape.45/java/classes/irix/font.properties.zh_TW_CNS11643
+lib/netscape.45/java/classes/jae40.jar
+lib/netscape.45/java/classes/java40.jar
+lib/netscape.45/java/classes/jio40.jar
+lib/netscape.45/java/classes/jsd10.jar
+lib/netscape.45/java/classes/ldap10.jar
+lib/netscape.45/java/classes/resource.jar
+lib/netscape.45/java/classes/scd10.jar
+lib/netscape.45/libAutoAdmin.so
+lib/netscape.45/libjsd.so.1.0
+lib/netscape.45/mailcap
+lib/netscape.45/movemail
+lib/netscape.45/nethelp/Back_dep.gif
+lib/netscape.45/nethelp/Back_dis.gif
+lib/netscape.45/nethelp/Back_sel.gif
+lib/netscape.45/nethelp/Back_up.gif
+lib/netscape.45/nethelp/Blank.htm
+lib/netscape.45/nethelp/Button.js
+lib/netscape.45/nethelp/CntData.js
+lib/netscape.45/nethelp/CntTool.htm
+lib/netscape.45/nethelp/CntTool.js
+lib/netscape.45/nethelp/Exit_dep.gif
+lib/netscape.45/nethelp/Exit_sel.gif
+lib/netscape.45/nethelp/Exit_up.gif
+lib/netscape.45/nethelp/Forw_dep.gif
+lib/netscape.45/nethelp/Forw_dis.gif
+lib/netscape.45/nethelp/Forw_sel.gif
+lib/netscape.45/nethelp/Forw_up.gif
+lib/netscape.45/nethelp/Header.js
+lib/netscape.45/nethelp/IdxData.js
+lib/netscape.45/nethelp/IdxFill.htm
+lib/netscape.45/nethelp/IdxKey.htm
+lib/netscape.45/nethelp/IdxTool.htm
+lib/netscape.45/nethelp/IdxTopic.htm
+lib/netscape.45/nethelp/Local-1.js
+lib/netscape.45/nethelp/NSHIfrm.htm
+lib/netscape.45/nethelp/NavUI.htm
+lib/netscape.45/nethelp/NoJSerr.htm
+lib/netscape.45/nethelp/Prnt_dep.gif
+lib/netscape.45/nethelp/Prnt_sel.gif
+lib/netscape.45/nethelp/Prnt_up.gif
+lib/netscape.45/nethelp/Stack.js
+lib/netscape.45/nethelp/Status.htm
+lib/netscape.45/nethelp/System.htm
+lib/netscape.45/nethelp/System.js
+lib/netscape.45/nethelp/ToolUI.htm
+lib/netscape.45/nethelp/Tool_dep.gif
+lib/netscape.45/nethelp/Tool_sel.gif
+lib/netscape.45/nethelp/Tool_up.gif
+lib/netscape.45/nethelp/Topic.js
+lib/netscape.45/nethelp/Utility.js
+lib/netscape.45/nethelp/Wait.gif
+lib/netscape.45/nethelp/netscape/collabra/coll.htm
+lib/netscape.45/nethelp/netscape/collabra/collHdr.htm
+lib/netscape.45/nethelp/netscape/collabra/collabra.gif
+lib/netscape.45/nethelp/netscape/collabra/discgrps.gif
+lib/netscape.45/nethelp/netscape/collabra/help.hpf
+lib/netscape.45/nethelp/netscape/composer/comp.htm
+lib/netscape.45/nethelp/netscape/composer/compHdr.htm
+lib/netscape.45/nethelp/netscape/composer/composer.gif
+lib/netscape.45/nethelp/netscape/composer/comtlbr2.gif
+lib/netscape.45/nethelp/netscape/composer/fmtlbr3.gif
+lib/netscape.45/nethelp/netscape/composer/help.hpf
+lib/netscape.45/nethelp/netscape/composer/tagicon2.gif
+lib/netscape.45/nethelp/netscape/confernc/brws2.gif
+lib/netscape.45/nethelp/netscape/confernc/chat2.gif
+lib/netscape.45/nethelp/netscape/confernc/circle2.gif
+lib/netscape.45/nethelp/netscape/confernc/conf.htm
+lib/netscape.45/nethelp/netscape/confernc/confHdr.htm
+lib/netscape.45/nethelp/netscape/confernc/confernc.gif
+lib/netscape.45/nethelp/netscape/confernc/eraser2.gif
+lib/netscape.45/nethelp/netscape/confernc/fhndtl2.gif
+lib/netscape.45/nethelp/netscape/confernc/filex2.gif
+lib/netscape.45/nethelp/netscape/confernc/help.hpf
+lib/netscape.45/nethelp/netscape/confernc/horline2.gif
+lib/netscape.45/nethelp/netscape/confernc/line2.gif
+lib/netscape.45/nethelp/netscape/confernc/pointer2.gif
+lib/netscape.45/nethelp/netscape/confernc/rect2.gif
+lib/netscape.45/nethelp/netscape/confernc/txttool2.gif
+lib/netscape.45/nethelp/netscape/confernc/whtbd2.gif
+lib/netscape.45/nethelp/netscape/home/help.hpf
+lib/netscape.45/nethelp/netscape/home/home.gif
+lib/netscape.45/nethelp/netscape/home/home.htm
+lib/netscape.45/nethelp/netscape/home/homeHdr.htm
+lib/netscape.45/nethelp/netscape/messengr/help.hpf
+lib/netscape.45/nethelp/netscape/messengr/mailbox.gif
+lib/netscape.45/nethelp/netscape/messengr/mess.htm
+lib/netscape.45/nethelp/netscape/messengr/messHdr.htm
+lib/netscape.45/nethelp/netscape/messengr/messengr.gif
+lib/netscape.45/nethelp/netscape/messengr/mpctrl.gif
+lib/netscape.45/nethelp/netscape/navigatr/help.hpf
+lib/netscape.45/nethelp/netscape/navigatr/nav.htm
+lib/netscape.45/nethelp/netscape/navigatr/navHdr.htm
+lib/netscape.45/nethelp/netscape/navigatr/navigatr.gif
+lib/netscape.45/nethelp/netscape/netcastr/help.hpf
+lib/netscape.45/nethelp/netscape/netcastr/net.htm
+lib/netscape.45/nethelp/netscape/netcastr/netHdr.htm
+lib/netscape.45/nethelp/netscape/netcastr/netcastr.gif
+lib/netscape.45/nethelp/netscape/nscal/index.html
+lib/netscape.45/nethelp/netscape/shared/Contents.htm
+lib/netscape.45/nethelp/netscape/shared/NetHelp1.css
+lib/netscape.45/nethelp/netscape/shared/admnIcon.gif
+lib/netscape.45/nethelp/netscape/shared/calIcon.gif
+lib/netscape.45/nethelp/netscape/shared/collIcon.gif
+lib/netscape.45/nethelp/netscape/shared/commIcon.gif
+lib/netscape.45/nethelp/netscape/shared/compIcon.gif
+lib/netscape.45/nethelp/netscape/shared/confIcon.gif
+lib/netscape.45/nethelp/netscape/shared/ibmIcon.gif
+lib/netscape.45/nethelp/netscape/shared/messIcon.gif
+lib/netscape.45/nethelp/netscape/shared/navIcon.gif
+lib/netscape.45/nethelp/netscape/shared/netIcon.gif
+lib/netscape.45/plugins/libnullplugin.so
+lib/netscape.45/registry
+lib/netscape.45/spell/netscape.dic
+lib/netscape.45/spell/pen4s324.dat
+lib/netscape.45/vreg
+@dirrm lib/netscape.45/spell
+@dirrm lib/netscape.45/plugins
+@dirrm lib/netscape.45/nethelp/netscape/shared
+@dirrm lib/netscape.45/nethelp/netscape/nscal
+@dirrm lib/netscape.45/nethelp/netscape/netcastr
+@dirrm lib/netscape.45/nethelp/netscape/navigatr
+@dirrm lib/netscape.45/nethelp/netscape/messengr
+@dirrm lib/netscape.45/nethelp/netscape/home
+@dirrm lib/netscape.45/nethelp/netscape/confernc
+@dirrm lib/netscape.45/nethelp/netscape/composer
+@dirrm lib/netscape.45/nethelp/netscape/collabra
+@dirrm lib/netscape.45/nethelp/netscape
+@dirrm lib/netscape.45/nethelp
+@dirrm lib/netscape.45/java/classes/irix
+@dirrm lib/netscape.45/java/classes/hpux
+@dirrm lib/netscape.45/java/classes/aix
+@dirrm lib/netscape.45/java/classes
+@dirrm lib/netscape.45/java
+@dirrm lib/netscape.45
