@@ -323,6 +323,7 @@
     SUBDIR += ruby-graph
     SUBDIR += ruby-image_size
     SUBDIR += ruby-imlib2
+    SUBDIR += ruby-libart
     SUBDIR += ruby-libpng
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
