@@ -7,15 +7,15 @@
 
 PORTNAME=	linbot
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/misc
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mwm@mired.org
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python15
+USE_PYTHON=	YES
 
 do-install:
 	${MKDIR} ${PREFIX}/share/linbot

@@ -1,0 +1,90 @@
+diff -ru /tmp/lb/linbot-1.0/myUrlLib.py ./myUrlLib.py
+--- myUrlLib.py	Sun Mar 14 13:24:20 1999
++++ myUrlLib.py	Wed Jul 18 20:42:57 2001
+@@ -37,6 +37,7 @@
+ import htmlparse
+ import debugio
+ import sys
++import socket
+ 
+ 
+ def get_robots(location):
+@@ -105,7 +106,10 @@
+ 	
+ 	if (parent is None):
+ 	    Link.baseurl=self.URL
+-	    Link.base=self.URL[:string.rfind(self.URL,'/')+1]
++	    if hasattr(self.URL, 'rfind'):
++		Link.base=self.URL[:self.URL.rfind('/')+1]
++	    else:
++		Link.base=self.URL[:string.rfind(self.URL,'/')+1]
+ 	    if Link.base[-2:] == '//': Link.base = self.URL
+ 	    debugio.write('\tbase: %s' % Link.base)
+ 	    if self.scheme == 'http':
+--- robotparser.py	Sat Jan  9 19:01:45 1999
++++ robotparser.py	Wed Jul 18 20:29:13 2001
+@@ -37,7 +37,7 @@
+ 	self.parse(urlopener.open(self.url).readlines())
+ 
+     def parse(self, lines):
+-	import regsub, string, regex
++	import re, string
+ 	active = []
+ 	for line in lines:
+ 	    if self.debug: print '>', line,
+@@ -49,7 +49,7 @@
+ 	    line = string.strip(line[:string.find(line, '#')])
+ 	    if not line:
+ 		continue
+-	    line = regsub.split(line, ' *: *')
++	    line = re.split(' *: *', line)
+ 	    if len(line) == 2:
+ 		line[0] = string.lower(line[0])
+ 		if line[0] == 'user-agent':
+@@ -62,7 +62,7 @@
+ 		    if line[1]:
+ 			if self.debug: print '>> disallow:', line[1]
+ 			for agent in active:
+-			    self.rules[agent].append(regex.compile(line[1]))
++			    self.rules[agent].append(re.compile(line[1]))
+ 		    else:
+ 			pass
+ 			for agent in active:
+@@ -83,7 +83,7 @@
+ 	    return 1
+ 	path = urlparse.urlparse(url)[2]
+ 	for rule in self.rules[ag]:
+-	    if rule.match(path) != -1:
++	    if rule.match(path):
+ 		if self.debug: print '>> disallowing', url, 'fetch by', agent
+ 		return 0
+ 	if self.debug: print '>> allowing', url, 'fetch by', agent
+--- schemes/filelink.py	Thu Mar 11 22:56:07 1999
++++ schemes/filelink.py	Wed Jul 18 20:19:26 2001
+@@ -42,7 +42,7 @@
+ import time
+ import mimetypes
+ import myUrlLib
+-import regsub
++import re
+ 
+ mimetypes.types_map['.shtml']='text/html'
+ 
+@@ -51,7 +51,7 @@
+     parsed = urlparse.urlparse(self.URL,'file',0)
+     filename = parsed[2]
+     if os.name != 'posix':
+-	filename = regsub.sub("^/\(//\)?\([a-zA-Z]\)[|:]","\\2:",filename)
++	filename = re.sub("^/\(//\)?\([a-zA-Z]\)[|:]","\\2:",filename)
+     try:
+ 	stats = os.stat(filename)
+     except os.error:
+@@ -70,7 +70,7 @@
+     parsed = urlparse.urlparse(url,'file',0)
+     filename = parsed[2]
+     if os.name != 'posix':
+-	filename = regsub.sub("^/\(//\)?\([a-zA-Z]\)[|:]","\\2:",filename)
++	filename = re.sub("^/\(//\)?\([a-zA-Z]\)[|:]","\\2:",filename)
+     
+     return open(filename,'r').read()
+     
