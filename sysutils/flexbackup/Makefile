@@ -1,15 +1,15 @@
 # New ports collection makefile for:    flexbackup
-# Version required:     0.9.7
-# Date created:         Tue Oct 19 22:46:36 MST 1999
+# Version required:     0.9.8
+# Date created:         Wed Nov  3 17:58:26 MST 1999
 # Whom:                 John Reynolds <jreynold@primenet.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       flexbackup-0.9.7
+DISTNAME=       flexbackup-0.9.8
 CATEGORIES=     sysutils
 MASTER_SITES=   http://www.bluecherry.net/~edwinh/flexbackup/tarball/ \
-		http://members.home.com/edwinh/flexbackup/tarball/ \
+		http://members.home.com/flexbackup/tarball/ \
 		http://metalab.unc.edu/pub/linux/system/backup/
 
 MAINTAINER=     jreynold@primenet.com
