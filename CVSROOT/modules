@@ -5503,6 +5503,7 @@ mdnsd		ports/dns/mdnsd
 mdw		ports/www/mdw
 meanwhile	ports/net/meanwhile
 meanwhile-gaim	ports/net/meanwhile-gaim
+mediawiki	ports/www/mediawiki
 megapov		ports/graphics/megapov
 meld		ports/textproc/meld
 memcached	ports/databases/memcached
