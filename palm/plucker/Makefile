@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	plucker
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	palm www
-MASTER_SITES=	http://downloads.plkr.org/1.2/
-DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
+MASTER_SITES=	http://downloads.plkr.org/${PORTVERSION}/ \
+		http://downloads.hideho.org/${PORTNAME}/${PORTVERSION}/
+DISTFILES=	${PORTNAME}_viewer-${PORTVERSION}.tar.bz2 \
+		${PORTNAME}_parser-${PORTVERSION}.tar.bz2 \
+		${PORTNAME}_docs-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	An offline HTML viewer for PalmOS devices
@@ -24,44 +26,29 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_AUTOCONF=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-INSTALL_TARGET=	install-prc-files install-data install-pyplucker
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--with-docdir=${DOCSDIR} \
-		--disable-desktopbuild \
-		--disable-unpluck \
-		--disable-explode \
-		--disable-palmosbuild \
-		--disable-docbuild
-MAN1=		pluck-comics.1 plucker-build.1 plucker-decode.1 \
-		plucker-dump.1 plucker-setup.1
+MAN1=		plucker-build.1 plucker-decode.1 plucker-dump.1
 FIND?=		find
+NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
 post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		${WRKSRC}/parser/python/PyPlucker
+		${WRKSRC}/parser/PyPlucker
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		${WRKSRC}/parser/python/PyPlucker
+		${WRKSRC}/parser/PyPlucker
 
 do-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/PyPlucker/helper
-	cd ${WRKSRC}/parser/python ; ${FIND} PyPlucker \
+	cd ${WRKSRC}/parser; ${FIND} PyPlucker \
 		\( -name "*.py" -or -name "*.py?" \) \
 		-exec ${INSTALL_DATA} {} ${PYTHON_SITELIBDIR}/{} \;
 .for F in Spider.py PluckerDocs.py Decode.py
-	${INSTALL_SCRIPT} ${WRKSRC}/parser/python/PyPlucker/${F} \
+	${INSTALL_SCRIPT} ${WRKSRC}/parser/PyPlucker/${F} \
 		${PYTHON_SITELIBDIR}/PyPlucker
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/unix/setup.py ${PREFIX}/bin/plucker-setup
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/pluck-comics/pluck-comics.py \
-		${PREFIX}/bin/pluck-comics
 	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/Spider.py \
 		${PREFIX}/bin/plucker-build
 	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/PluckerDocs.py \
@@ -69,22 +56,22 @@ do-install:
 	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/Decode.py \
 		${PREFIX}/bin/plucker-dump
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/PluckerUserGuide.pdb \
-		${WRKSRC}/viewer/*.prc ${WRKSRC}/viewer/ZLib/*.prc ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/viewer/PluckerUserGuide.pdb \
+		${WRKSRC}/viewer/*.prc ${DATADIR}
 	${MKDIR} ${PREFIX}/etc/plucker
-	${INSTALL_DATA} ${WRKSRC}/parser/defaults/exclusionlist.txt \
+	${INSTALL_DATA} ${WRKSRC}/parser/exclusionlist.txt \
 		${PREFIX}/etc/plucker/exclusionlist.txt.sample
-	${INSTALL_DATA} ${WRKSRC}/parser/defaults/home.html \
+	${INSTALL_DATA} ${WRKSRC}/parser/home.html \
 		${PREFIX}/etc/plucker/home.html.sample
-	${INSTALL_DATA} ${WRKSRC}/parser/defaults/pluckerrc.sample \
+	${INSTALL_DATA} ${WRKSRC}/parser/pluckerrc.sample \
 		${PREFIX}/etc/plucker
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/manual
 .for F in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/docs/${F} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/parser/${F} ${MAN1PREFIX}/man/man1
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Plucker_Doc/* ${DOCSDIR}/manual
+	${INSTALL_DATA} ${WRKSRC}/[A-Z]* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/manual
 .endif
 
 .include <bsd.port.post.mk>
