@@ -1,9 +1,9 @@
 # New ports collection makefile for:	gawk+mb
 # Version required:	2.15.4+mb1.03
 # Date created:		5 April 1995
-# Whom:			Nobuhiro Yasutomi
+# Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1995/04/05 08:53:43 asami Exp $
 #
 
 DISTNAME=	gawk-2.15.4
