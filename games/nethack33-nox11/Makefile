@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nethack
-PKGNAMESUFFIX=	-tty
+PKGNAMESUFFIX=	-nox11
 PORTVERSION=	3.3.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/
