@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Builder-Tester
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -18,7 +18,6 @@ COMMENT=	Test testsuites that have been built with Test::Builder
 PERL_MODBUILD=	yes
 
 MAN3=		Test::Builder::Tester.3 Test::Builder::Tester::Color.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
