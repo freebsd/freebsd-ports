@@ -1,0 +1,38 @@
+$FreeBSD$
+
+--- Makefile.orig	Thu May 16 12:16:40 2002
++++ Makefile	Thu May 16 12:17:17 2002
+@@ -1,21 +1,20 @@
+-INCDIR	=	-I/usr/X11R6/include
+-LIBDIR	=	-L/usr/X11R6/lib
+-LIBS	=	-lXpm -lXext -lX11 -lm
+-OBJS	=	wmjulia.o ../wmgeneral/wmgeneral.o 
++CC ?= gcc
++CFLAGS += -c -Wall
++INCDIR = -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
++LIBS   = -lXpm -lXext -lX11 -lm
++OBJS =  wmjulia.o ../wmgeneral/wmgeneral.o
+ 
+ .c.o:
+-	cc -c -g -O2 -Wall -D$(shell echo `uname -s`) $< -o $*.o $(INCDIR)
+-
+-all: wmjulia
++	${CC} ${CFLAGS} ${INCDIR} -D${shell echo `uname -s`} $< -o $*.o
+ 
+ wmjulia: $(OBJS)
+-	cc -o wmjulia $^ $(LIBDIR) $(LIBS)
++	${CC} -o wmjulia $^ ${LIBDIR} ${LIBS}
++
++all: wmjulia
+ 
+ clean:
+-	for i in $(OBJS) ; do \
++	for i in ${OBJS}; do \
+ 		rm -f $$i; \
+ 	done
+-	rm -f wmjulia
+-
+-install:
+-	mv wmjulia /usr/local/bin
++	rm -f wmjulia core
