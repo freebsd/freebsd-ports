@@ -7,3 +7,5 @@ versions have added functionality that is sometimes useful.
 Note that this port will install these utilities with a `g' prefix,
 eg., glocate, gfind, gxargs, but the texinfo documentation will refer to
 these utilities without the `g' prefix.
+
+WWW: http://www.gnu.org/software/findutils/findutils.html
