@@ -1,0 +1,22 @@
+A program that looks superficially like the minesweeper program that
+comes supplied with MS Windows (and is also available in other
+versions). Runs under X Windows on the UNIX operating system.
+
+Features
+--------
+There are a number of features that make this version different from
+the others available (that I have seen).
+
+3 Grid Tile options
+        Hexagonal      - Easy (the endgame can be difficult).
+        Square         - Traditional.
+        Triangular     - Difficult.
+
+3 Grid sizes
+        Small          - 8x8 with 10 bombs
+        Medium         - 16x16 with 40 bombs
+        Large          - 30x16 with 99 bombs
+
+Highscore table
+        10 entries for the fastest times for each of the 3 levels of
+        each of the 3 grid shapes.
