@@ -106,6 +106,7 @@
     SUBDIR += mpegaudio
     SUBDIR += mpg123
     SUBDIR += mpg123.el
+    SUBDIR += mpg321
     SUBDIR += mpmf20
     SUBDIR += mq3
     SUBDIR += musicbox
