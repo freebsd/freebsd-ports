@@ -118,7 +118,7 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC} \
-	&& ./configure > /dev/null \
+	&&  CC="${CC}" CFLAGS="${CFLAGS}" ./configure > /dev/null \
 	&& cd ${WRKDIR}/php-${VERSION_PHP} \
 	&& ${ECHO_MSG} "===>  Configuring for PHP-${VERSION_PHP}" \
 	&& CC="${CC}" \
