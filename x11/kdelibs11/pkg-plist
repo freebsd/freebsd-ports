@@ -10,6 +10,7 @@ lib/libkfm.so.0.1
 lib/libkfm.la
 lib/libmediatool.so.0.6
 lib/libmediatool.la
+@exec /sbin/ldconfig -m %B
 include/kconfig.h
 include/kconfigdata.h
 include/ksimpleconfig.h
@@ -105,4 +106,3 @@ share/locale/pl/LC_MESSAGES/kde.mo
 share/locale/el/LC_MESSAGES/kde.mo
 share/locale/fi/LC_MESSAGES/kde.mo
 share/doc/HTML/en/kdelibs/kdebug.html
-@exec /sbin/ldconfig -m %B
