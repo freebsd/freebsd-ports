@@ -90,6 +90,23 @@ sendmail_conf() {
 	fi
 }
 
+create_rc_conf_d() {
+	PWCHECK_CONF=${PKG_PREFIX}/etc/rc.conf.d/cyrus_pwcheck
+	SASLAUTHD_CONF=${PKG_PREFIX}/etc/rc.conf.d/saslauthd1
+
+	if [ ! -d ${PKG_PREFIX}/etc/rc.conf.d ]; then
+		mkdir ${PKG_PREFIX}/etc/rc.conf.d
+	fi
+	if [ ! -f ${SASLAUTHD_CONF} ]; then
+		echo "saslauthd1_enable=%%ENABLE_SASLAUTHD%%" > ${SASLAUTHD_CONF}
+		echo "saslauthd1_flags=\"-a pam\"" >> ${SASLAUTHD_CONF}
+	fi
+	if [ ! -f ${PWCHECK_CONF} ]; then
+		echo "cyrus_pwcheck_enable=%%ENABLE_PWCHECK%%" > ${PWCHECK_CONF}
+		echo "cyrus_pwcheck_program=${PKG_PREFIX}/sbin/%%PWCHECK%%" >> ${PWCHECK_CONF}
+	fi
+}
+
 case $2 in
 	PRE-INSTALL)
 		create_user
@@ -97,6 +114,7 @@ case $2 in
 	POST-INSTALL)
 		if [ "${PKG_BATCH}" = "NO" ]; then
 			create_sasldb
+			create_rc_conf_d
 			sendmail_conf
 		fi
 		;;

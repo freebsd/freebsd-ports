@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	1.5.27
-PORTREVISION=	7
+PORTVERSION=	1.5.28
+PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
-		http://www.surf.org.uk/downloads/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
-MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl cyrus-utils
+		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
+		http://www.surf.org.uk/downloads/:ldap_mysql \
+		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/:ldap_mysql \
+		${MASTER_SITE_SOURCEFORGE:S/$/:ldap_mysql/} \
+
+MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl cyrus-utils:ldap_mysql
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		sasl-${PORTVERSION}-ldap-ssl-filter-mysql-patch4.tgz
+		sasl-${PORTVERSION}-ldap-ssl-filter-mysql-patch.tgz:ldap_mysql
 
-PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/ \
+PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/:apop \
 		http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	sasl_apop_patch.gz \
+PATCHFILES=	sasl_apop_patch.gz:apop \
 		${DISTNAME}-ipv6-${IPV6_VER}.diff.gz
 
 MAINTAINER=	hetzels@westbend.net
@@ -131,10 +133,16 @@ pre-patch:
 # Fix pkg-{install/deinstall/messages}
 post-patch:
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+		-e "s;%%PWCHECK%%;${PWCHECK};g" \
+		-e "s;%%ENABLE_PWCHECK%%;${ENABLE_PWCHECK};g" \
 		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
+		-e "s;%%ENABLE_SASLAUTHD%%;${ENABLE_SASLAUTHD};g" \
 		${.CURDIR}/pkg-install > ${PKGINSTALL}
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+		-e "s;%%PWCHECK%%;${PWCHECK};g" \
+		-e "s;%%ENABLE_PWCHECK%%;${ENABLE_PWCHECK};g" \
 		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
+		-e "s;%%ENABLE_SASLAUTHD%%;${ENABLE_SASLAUTHD};g" \
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%PREFIX%%;${PREFIX};g" \
@@ -162,16 +170,19 @@ pre-install:
 	fi
 
 post-install:
-	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
-		${FILESDIR}/pwcheck.sh > ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${MKDIR} ${EXAMPLESDIR}
 	@${SED} -e 's;%%PREFIX%%;${PREFIX};g' \
 		${FILESDIR}/cyrus.pam > ${EXAMPLESDIR}/cyrus.pam
-	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
-	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
-	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${SASLAUTHD_SUB} \
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/pwcheck.sh > ${PREFIX}/etc/rc.d/cyrus_pwcheck.sh
+	@${CHMOD} 755 ${PREFIX}/etc/rc.d/cyrus_pwcheck.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd1.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd1.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/cyrus_sasl1 > ${PREFIX}/etc/rc.d/cyrus_sasl1
+	@${CHMOD} 755 ${PREFIX}/etc/rc.d/cyrus_sasl1
+	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/state/saslauthd1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -12,6 +12,32 @@ PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
 
+remove_file()
+{
+	file=$1
+
+	if cmp -s ${file} ${file}.tmp; then
+		rm -f ${file}
+	fi
+	rm -f ${file}.tmp
+}
+
+delete_rc_conf_d() {
+	PWCHECK_CONF=${PKG_PREFIX}/etc/rc.conf.d/cyrus_pwcheck
+	SASLAUTHD_CONF=${PKG_PREFIX}/etc/rc.conf.d/saslauthd1   
+
+	if [ -f ${SASLAUTHD_CONF} ]; then
+		echo "saslauthd1_enable=%%ENABLE_SASLAUTHD%%" >> ${SASLAUTHD_CONF}.tmp
+		echo "saslauthd1_flags=\"-a pam\"" >> ${SASLAUTHD_CONF}.tmp
+		remove_file ${SASLAUTHD_CONF}
+	fi
+	if [ -f ${PWCHECK_CONF} ]; then
+		echo "cyrus_pwcheck_enable=%%ENABLE_PWCHECK%%" > ${PWCHECK_CONF}.tmp
+		echo "cyrus_pwcheck_program=${PKG_PREFIX}/sbin/%%PWCHECK%%" >> ${PWCHECK_CONF}.tmp
+		remove_file ${PWCHECK_CONF}
+	fi
+}
+
 # delete sasldb database
 
 delete_sasldb() {
@@ -39,16 +65,14 @@ delete_user() {
 sendmail_conf() {
 	if [ -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf ]; then
 		echo "pwcheck_method: %%PWCHECK_METHOD%%" > ${PKG_PREFIX}/lib/sasl/Sendmail.conf.tmp
-		if cmp -s ${PKG_PREFIX}/lib/sasl/Sendmail.conf ${PKG_PREFIX}/lib/sasl/Sendmail.conf.tmp; then
-			rm -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf
-		fi
-		rm -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf.tmp
+		remove_file ${PKG_PREFIX}/lib/sasl/Sendmail.conf
 	fi
 }
 
 case $2 in
 	DEINSTALL)
 		delete_sasldb
+		delete_rc_conf_d
 		sendmail_conf
 		;;
 	POST-DEINSTALL)

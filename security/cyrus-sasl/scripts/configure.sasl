@@ -93,7 +93,7 @@ fi
 ${MKDIR} ${WRKDIRPREFIX}${REALCURDIR}
 exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 
-echo "PREFIX=	${PREFIX}"
+echo "PREFIX=			${PREFIX}"
 
 while [ "$1" ]; do
 	case $1 in
@@ -133,6 +133,7 @@ while [ "$1" ]; do
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
 			echo "CONFIGURE_ARGS+=	--with-mysql=\${PREFIX}"
+			MYSQL_REQ=mysql
 			MSG=1
 			;;
 		\"OpenLDAP1\")
@@ -144,7 +145,9 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap12"
 			echo "LIB_DEPENDS+=	lber.1:\${PORTSDIR}/net/openldap12"
 			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
+			LDAP_REQ=ldap
 			OPENLDAP=1
+			MSG=1
 			;;
 		\"OpenLDAP2\")
 			if [ "$OPENLDAP" ]; then
@@ -155,22 +158,22 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap20"
 			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap20"
 			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
+			LDAP_REQ=ldap
 			OPENLDAP=1
+			MSG=1
 			;;
 		\"PWCHECK\")
 			if [ "$PWCHECK" ]; then
 				echo "PWCHECK or PAMPWCHECK must be choosen seperately: Defaulting to PAMPWCHECK" > /dev/stderr
 			else
-				echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck;g\""
-				PWCHECK=1
+				PWCHECK=pwcheck
 			fi
 			;;
 		\"PAMPWCHECK\")
 			if [ "$PWCHECK" ]; then
 				echo "PWCHECK or PAMPWCHECK must be choosen seperately: Defaulting to PWCHECK" > /dev/stderr
 			else
-				echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck_pam;g\""
-				PWCHECK=1
+				PWCHECK=pwcheck_pam
 			fi
 			;;
 		\"SASLAUTHD\")
@@ -188,23 +191,34 @@ while [ "$1" ]; do
 	shift
 done
 
-if [ ! "${PWCHECK}" ]; then
-	echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck;g\""
+if [ "${SASLAUTHD}" ]; then
+	ENABLE_PWCHECK=no
+	PWCHECK_METHOD=saslauthd
+	ENABLE_SASLAUTHD=yes
+	if [ -z "${PWCHECK}" ]; then
+		PWCHECK=pwcheck
+	fi
+else
+	if [ "${PWCHECK}" ]; then
+		ENABLE_PWCHECK=yes
+	else
+		ENABLE_PWCHECK=no
+		PWCHECK=pwcheck
+	fi
+	PWCHECK_METHOD=pwcheck
+	ENABLE_SASLAUTHD=no
 fi
 
-if [ "$SASLAUTHD" ]; then
-	echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;no;g\""
-	echo "PWCHECK_METHOD=	saslauthd"
-	echo "SASLAUTHD_SUB+=	-e \"s;%%ENABLESASLAUTHD%%;yes;g\""
-else
-	if [ "$PWCHECK" ]; then
-		echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;yes;g\""
-	else
-		echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;no;g\""
-	fi
-	echo "PWCHECK_METHOD+=	pwcheck"
-	echo "SASLAUTHD_SUB+=	-e \"s;%%ENABLESASLAUTHD%%;no;g\""
-fi
+echo "PWCHECK=		${PWCHECK}"
+echo "PWCHECK_METHOD=		${PWCHECK_METHOD}"
+echo "ENABLE_PWCHECK=		${ENABLE_PWCHECK}"
+echo "ENABLE_SASLAUTHD=	${ENABLE_SASLAUTHD}"
+
+echo "RC_SCRIPTS_SUB+=	PREFIX=\${PREFIX} \\"
+echo "			PWCHECK=\${PWCHECK} \\"
+echo "			ENABLE_PWCHECK=\${ENABLE_PWCHECK} \\"
+echo "			ENABLE_SASLAUTHD=\${ENABLE_SASLAUTHD} \\"
+echo "			MYSQL_REQ=${MYSQL_REQ}"
 
 if [ ! "${DEFJAVA}" ]; then
 	echo "PLIST_SUB+=	JAVASASL=\"@comment \""
@@ -214,6 +228,16 @@ if [ ! "${DBLIB}" ]; then
 	echo "SASLDB_NAME=	sasldb.db"
 fi
 
-if [ "$OPENLDAP" ]; then
-	echo "LDAP_MYSQL_MSG=	\"See sysadmin.html in the Cyrus-SASL docs directory for informaion on using LDAP or MySQL for authentication.\""
+if [ "${MSG}" ]; then
+	if [ -n "${LDAP_REQ}" ]; then
+		METHOD="LDAP"
+
+		if [ -n "${MYSQL_REQ}" ]; then
+			METHOD="LDAP or MySQL"
+		fi
+	elif [ -n "${MYSQL_REQ}" ]; then
+		METHOD="MySQL"
+	fi
+
+	echo "LDAP_MYSQL_MSG=	\"See sysadmin.html in the Cyrus-SASL docs directory for informaion on using ${METHOD} for authentication.\""
 fi
