@@ -1,0 +1,38 @@
+bin/build-prc
+bin/m68k-palmos-addr2line
+bin/m68k-palmos-ar
+bin/m68k-palmos-as
+bin/m68k-palmos-gasp
+bin/m68k-palmos-ld
+bin/m68k-palmos-nm
+bin/m68k-palmos-obj-res
+bin/m68k-palmos-objcopy
+bin/m68k-palmos-objdump
+bin/m68k-palmos-ranlib
+bin/m68k-palmos-size
+bin/m68k-palmos-strings
+bin/m68k-palmos-strip
+bin/multigen
+bin/obj-res
+include/ansidecl.h
+include/bfd.h
+include/bfdlink.h
+lib/libbfd.a
+lib/libbfd.la
+lib/libopcodes.a
+lib/libopcodes.la
+m68k-palmos/bin/ar
+m68k-palmos/bin/as
+m68k-palmos/bin/ld
+m68k-palmos/bin/nm
+m68k-palmos/bin/ranlib
+m68k-palmos/bin/strip
+m68k-palmos/lib/ldscripts/m68kcoff.x
+m68k-palmos/lib/ldscripts/m68kcoff.xbn
+m68k-palmos/lib/ldscripts/m68kcoff.xn
+m68k-palmos/lib/ldscripts/m68kcoff.xr
+m68k-palmos/lib/ldscripts/m68kcoff.xu
+@dirrm m68k-palmos/lib/ldscripts
+@dirrm m68k-palmos/lib
+@dirrm m68k-palmos/bin
+@dirrm m68k-palmos
