@@ -1,0 +1,18 @@
+--- configure.in.orig	Tue Jul  2 20:06:03 2002
++++ configure.in	Tue Sep 17 18:02:35 2002
+@@ -736,7 +736,6 @@
+ netinet/in_systm.h \
+ netinet/tcp.h \
+ png.h \
+-poll.h \
+ pwd.h \
+ sigcontext.h \
+ signal.h \
+@@ -745,7 +744,6 @@
+ sys/filio.h \
+ sys/ioctl.h \
+ sys/param.h \
+-sys/poll.h \
+ sys/select.h \
+ sys/socket.h \
+ sys/stat.h \
