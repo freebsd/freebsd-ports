@@ -1,0 +1,7 @@
+elvis is a text editor. It is intended to be a modern replacement
+for the classic ex/vi editor of UNIX fame. elvis supports many new
+features, including multiple edit buffers, multiple windows, multiple
+user interfaces, and a variety of display modes including plain
+text, syntax highlighting, hex dump, HTML and man page formatter.
+
+WWW: http://www.fh-wedel.de/elvis/
