@@ -1,15 +1,15 @@
---- config.c.orig	Sun May  4 06:09:23 2003
-+++ config.c	Wed Jun 11 12:01:08 2003
-@@ -697,7 +697,7 @@
-          else if (mach == IA64Itan || MachIsUS(mach) ||
-                   mach == Dec21164 || mach == Dec21264)
-          {
--            if (major == 3)
-+            if ((major == 2 && minor < 96) || (major == 3)) /* Nasty hack for FreeBSD/Alpha STABLE */
+--- config.c.orig	Mon Jun 23 00:58:35 2003
++++ config.c	Sat Jun 28 16:44:25 2003
+@@ -708,7 +708,7 @@
+             else if (mach == IA64Itan || MachIsUS(mach) ||
+                      mach == Dec21164 || mach == Dec21264)
              {
-                strcpy(goodgcc, files[i]);
-                return(0);
-@@ -1102,7 +1102,9 @@
+-               if (major == 3)
++               if ((major == 2 && minor < 96) || (major == 3)) /* Nasty hack for FreeBSD/Alpha STABLE */
+                {
+                   strcpy(goodgcc, files[i]);
+                   return(0);
+@@ -1114,7 +1114,9 @@
     switch(OS)
     {
     case OSOSX:  /* don't know answer */
@@ -20,7 +20,7 @@
     case OSLinux:
        break;
     case OSSunOS:
-@@ -1240,6 +1242,11 @@
+@@ -1252,6 +1254,11 @@
                 "-mcpu=ultrasparc -mtune=ultrasparc -fomit-frame-pointer -O3");
        }
        if (OS == OSFreeBSD && F77) strcpy(F77, "f77");
@@ -32,7 +32,7 @@
        break;
     case OSSunOS:
        np = 3;
-@@ -2104,7 +2111,10 @@
+@@ -2116,7 +2123,10 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "433au")) mach = Dec21164;
@@ -43,7 +43,7 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2113,14 +2123,22 @@
+@@ -2125,14 +2135,22 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
@@ -66,7 +66,7 @@
           }
           break;
        default:;
-@@ -3124,6 +3142,9 @@
+@@ -3136,6 +3154,9 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  

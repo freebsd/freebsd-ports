@@ -9,8 +9,7 @@
 #       Program and compiler flags are finetuned to gcc 2.95/3.1.
 
 PORTNAME=	atlas
-PORTVERSION=	3.5.2
-PORTREVISION=   1
+PORTVERSION=	3.5.5
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -32,11 +31,11 @@ USE_GCC=	3.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+ ${PTHREAD_CFLAGS}+' \
-      	${WRKSRC}/config.c
+		${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+ ${PTHREAD_LIBS}+' \
-       	${WRKSRC}/config.c
+		${WRKSRC}/config.c
 .if !defined(USE_THREADS)
-	@${ECHO_MSG} "make USE_THREADS=yes for threaded version"
+	@${ECHO_MSG} "make USE_THREADS=yes for force to make threaded version"
 .else
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch)
 .endif
