@@ -1,0 +1,5 @@
+---------------------------------------------------------------
+There are two things that you sdould take care:
+1.configure proftpd with 'WITH_MYSQL'.
+2.read 'INSTALL' for installation instructions.
+---------------------------------------------------------------
