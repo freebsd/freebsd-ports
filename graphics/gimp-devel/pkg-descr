@@ -1,5 +1,3 @@
-This is the developer's pre-release of the GIMP.
-
 The GIMP is designed to provide an intuitive graphical interface to a
 variety of image editing operations. Here is a list of the GIMP's 
 major features:
@@ -19,3 +17,5 @@ major features:
    *  Multiple undo/redo.
 
 To enable I18N extensions, execute "gimp.setfont" before you use GIMP.
+
+WWW: www.gimp.org
