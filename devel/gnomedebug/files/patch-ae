@@ -1,11 +1,7 @@
---- src/event-service/Makefile.in.orig	Wed Jun 21 20:09:03 2000
-+++ src/event-service/Makefile.in	Wed Jun 28 11:27:18 2000
-@@ -123,7 +123,7 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
+--- src/event-service/Makefile.in.orig	Sun Jul  2 16:45:01 2000
++++ src/event-service/Makefile.in	Wed Jul  5 14:19:34 2000
+@@ -122,3 +122,3 @@
  
--INCLUDES =  	-DGNOMELOCALEDIR=\""$(datatdir)/locals"\" 	-I$(top_srcdir)/src/lib -I$(includedir) $(GNOME_INCLUDEDIR) 	$(OAF_CFLAGS)
-+INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(top_srcdir)/src/lib -I$(includedir) $(GNOME_INCLUDEDIR) 	$(OAF_CFLAGS)
+-INCLUDES =  	-DGNOMELOCALEDIR=\""$(datatdir)/locals"\" 	-I$(top_srcdir)/src/lib -I$(includedir) $(GNOME_INCLUDEDIR) 	$(OAF_CFLAGS) $(BONOBO_CFLAGS)
++INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(top_srcdir)/src/lib -I$(includedir) $(GNOME_INCLUDEDIR) 	$(OAF_CFLAGS) $(BONOBO_CFLAGS)
  
- 
- bin_PROGRAMS =  	gdf-event-server

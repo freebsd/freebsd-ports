@@ -1,11 +1,7 @@
---- src/lib/Makefile.in.orig	Wed Jun 21 20:08:50 2000
-+++ src/lib/Makefile.in	Wed Jun 28 11:24:49 2000
-@@ -123,7 +123,7 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
+--- src/lib/Makefile.in.orig	Sun Jul  2 16:44:58 2000
++++ src/lib/Makefile.in	Wed Jul  5 14:17:25 2000
+@@ -122,3 +122,3 @@
  
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datatdir)/locals"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datatdir)/locals"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS) $(BONOBO_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS) $(BONOBO_CFLAGS)
  
- 
- CORBA_GENERATED_HEADER_FILES = gnome-debug.h
