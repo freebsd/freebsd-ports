@@ -1,0 +1,11 @@
+--- authlib/Makefile.in.orig	Sun Jul 20 12:01:18 2003
++++ authlib/Makefile.in	Sun Jul 20 12:56:12 2003
+@@ -1341,7 +1341,7 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(man7dir) ; \
+ 	for f in $(man_MANS) "" ; do \
+ 		test "$$f" = "" && continue ; \
+-		$(INSTALL_DATA) $$f $(DESTDIR)$(man7dir) ; done ; \
++		%%INSTALL_MAN%% $$f $(DESTDIR)$(man7dir) ; done ; \
+ 	cd $(DESTDIR)$(man7dir) || exit 1 ; \
+ 		for f in $(man_LINKS) "" ; do \
+ 			test "$$f" = "" && continue ; \
