@@ -145,6 +145,7 @@
     SUBDIR += seizedesktop
     SUBDIR += sh-utils
     SUBDIR += shc
+    SUBDIR += shuffle
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend

@@ -1,0 +1,24 @@
+Index: shuffle.c
+===================================================================
+RCS file: /stl/src/NetBSD/basesrc/usr.bin/shuffle/shuffle.c,v
+retrieving revision 1.9
+diff -u -r1.9 shuffle.c
+--- shuffle.c	2001/03/16 08:02:32	1.9
++++ shuffle.c	2001/06/03 22:21:49
+@@ -37,6 +37,7 @@
+ #endif /* not lint */
+ 
+ #include <err.h>
++#include <limits.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -255,7 +256,7 @@
+ 		nlines = pick;
+ 	}
+ 
+-	for (i = 0; i < nlines; i++) {
++	for (i = 0; (unsigned)i < nlines; i++) {
+ 		if (nflag)
+ 			printf("%ld\n", (long)shuffle[i]);
+ 		else
