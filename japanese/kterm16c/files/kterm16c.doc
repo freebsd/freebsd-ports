@@ -1,0 +1,195 @@
+Subject: [FreeBSD-users-jp 36743] Re: Console dump?
+From: Toshihiro Kanda <candy@kgc.co.jp>
+To: FreeBSD-users-jp@jp.freebsd.org
+Date: Thu, 24 Dec 1998 11:56:05 +0900 (JST)
+Reply-To: FreeBSD-users-jp@jp.freebsd.org
+
+>   /stand/sysinstall の 16色カラー表示をビットマップにするのが目
+> 的であれば、以前神田さんが users-jp で kterm-6.1.0 で 16色表示す
+> るためのパッチを公開されているので、それがが使えます(kterm 上で
+> 動かして、普通に grab する)。
+> # 手元では kterm-6.2.0 に無理矢理手でパッチあてて使っています。
+
+こんな古いものを覚えていらっしゃる方がいるとはびっくりです。無理矢理手
+パッチさせてしまっては恐縮なので、kterm-6.2.0 用のパッチを作りました。
+
+神田敏広 <candy@kgc.co.jp>
+
+------------------------------------------------------------
+kterm-6.2.0 用 16 色パッチ & コンソール(sc)互換 termcap エントリ
+
+このパッチは無保証です。
+
+●パッチの使い方
+kterm-6.2.0/ のあるディレクトリで以下を実行してください。16 色対応 
+kterm をインストールします。
+
+	# patch -p < this-patch
+	# cd kterm-6.2.0
+	# xmkmf -a
+	# make all install
+
+●termcap エントリの追加
+次のようなエントリを $HOME/.termcap に追加してください。16 色対応 
+kterm を起動したら、環境変数 TERM を ktermc に設定してください。
+
+--------8<-------- $HOME/.termcap --------8<--------
+ktermc|kanji terminal with 16 colors:\
+	:op=:pa#64:Co#8:Sf=\E[3%dm:Sb=\E[4%dm:\
+	:mb=\E[5m:md=\E[1m:mr=\E[7m:mh=\E[2m:me=\E[m:\
+	:tc=kterm:
+--------8<--------8<--------8<--------8<--------8<--------
+
+●VGA font の作り方
+VGA フォントはpackages/emulators/pcemu-1.01a の vga.pcf.Z を利用すると
+それらしく見えます。
+
+	$ su
+	# cp vga.pcf.Z /usr/X11R6/lib/X11/fonts/misc
+	# cd /usr/X11R6/lib/X11/fonts/misc
+	# mkfontdir
+	# exit
+	$ xset fp rehash
+
+kterm の起動(例)
+	$ kterm -fn vga -fk kanji16 -rv &
+
+●kterm-6.2.0 用 16 色パッチ
+--------8<--------8<--------8<--------8<--------8<--------
+diff --exclude=Makefile -ur kterm-6.2.0.orig/KTerm.ad kterm-6.2.0/KTerm.ad
+--- kterm-6.2.0.orig/KTerm.ad	Sun Jun 23 17:00:22 1996
++++ kterm-6.2.0/KTerm.ad	Thu Dec 24 11:47:10 1998
+@@ -97,14 +97,22 @@
+ !*VT100*kanjiMode:		jis
+ !*VT100*lineSpace:		0
+ 
+-!*VT100*textColor0:		Black
+-!*VT100*textColor1:		Red
+-!*VT100*textColor2:		Green
+-!*VT100*textColor3:		Yellow
+-!*VT100*textColor4:		Blue
+-!*VT100*textColor5:		Magenta
+-!*VT100*textColor6:		Cyan
+-!*VT100*textColor7:		White
++*VT100*textColor0:		#505050
++*VT100*textColor1:		Red
++*VT100*textColor2:		Green
++*VT100*textColor3:		Yellow
++*VT100*textColor4:		Blue
++*VT100*textColor5:		Magenta
++*VT100*textColor6:		Cyan
++*VT100*textColor7:		White
++*VT100*textColor8:		Black
++*VT100*textColor9:		#c00000
++*VT100*textColor10:		#00c000
++*VT100*textColor11:		#c0c000
++*VT100*textColor12:		#0000c0
++*VT100*textColor13:		#c000c0
++*VT100*textColor14:		#00c0c0
++*VT100*textColor15:		#c0c0c0
+ 
+ *tekMenu.Label:  Tek Options
+ *tekMenu*tektextlarge*Label:  Large Characters
+diff --exclude=Makefile -ur kterm-6.2.0.orig/charproc.c kterm-6.2.0/charproc.c
+--- kterm-6.2.0.orig/charproc.c	Fri Jul 12 14:01:36 1996
++++ kterm-6.2.0/charproc.c	Thu Dec 24 11:46:28 1998
+@@ -143,6 +143,16 @@
+ #define XtNtextColor5 "textColor5"
+ #define XtNtextColor6 "textColor6"
+ #define XtNtextColor7 "textColor7"
++#ifdef COLOR_16
++#define XtNtextColor8 "textColor8"
++#define XtNtextColor9 "textColor9"
++#define XtNtextColor10 "textColor10"
++#define XtNtextColor11 "textColor11"
++#define XtNtextColor12 "textColor12"
++#define XtNtextColor13 "textColor13"
++#define XtNtextColor14 "textColor14"
++#define XtNtextColor15 "textColor15"
++#endif
+ #endif /* KTERM_COLOR */
+ #define XtNcutNewline "cutNewline"
+ #define XtNcutToBeginningOfLine "cutToBeginningOfLine"
+@@ -576,6 +586,32 @@
+ {XtNtextColor7, XtCForeground, XtRPixel, sizeof(Pixel),
+ 	XtOffsetOf(XtermWidgetRec, screen.textcolor[7]),
+ 	XtRString, "White"},
++#ifdef COLOR_16 /* [ */
++{XtNtextColor8, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[8]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor9, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[9]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor10, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[10]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor11, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[11]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor12, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[12]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor13, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[13]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor14, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[14]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor15, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[15]),
++	XtRString, "XtDefaultForeground"},
++#endif /* ] */
+ #endif /* KTERM_COLOR */
+ {XtNeightBitInput, XtCEightBitInput, XtRBoolean, sizeof(Boolean),
+ 	XtOffsetOf(XtermWidgetRec, screen.input_eight_bits), 
+@@ -4979,6 +5015,9 @@
+     screen->fnt_norm = nfs;
+     screen->fnt_bold = bfs;
+     screen->enbolden = (nfs == bfs);
++#ifdef COLOR_16
++    screen->enbolden = 0;
++#endif
+     set_menu_font (False);
+     screen->menu_font_number = fontnum;
+     set_menu_font (True);
+diff --exclude=Makefile -ur kterm-6.2.0.orig/kterm.h kterm-6.2.0/kterm.h
+--- kterm-6.2.0.orig/kterm.h	Fri Jul 12 14:01:37 1996
++++ kterm-6.2.0/kterm.h	Thu Dec 24 11:46:28 1998
+@@ -37,5 +37,6 @@
+ #define KTERM_COLOR	/* color sequence */
+ #define KTERM_NOTEK	/* disables Tektronix emulation */
+ #undef  KTERM_XAW3D	/* Xaw3d -DARROW_SCROLLBAR support */
++#define COLOR_16	/* 16 palets, BOLD means hilight */
+ 
+ #endif /* !_KTERM_H_ */
+diff --exclude=Makefile -ur kterm-6.2.0.orig/ptyx.h kterm-6.2.0/ptyx.h
+--- kterm-6.2.0.orig/ptyx.h	Tue Jul  2 14:01:53 1996
++++ kterm-6.2.0/ptyx.h	Thu Dec 24 11:46:28 1998
+@@ -300,7 +300,11 @@
+ 	Pixel		mousecolor;	/* Mouse color			*/
+ 	Pixel		mousecolorback;	/* Mouse color background	*/
+ #ifdef KTERM_COLOR
++#ifndef COLOR_16
+ 	Pixel		textcolor[8];	/* text colors			*/
++#else
++	Pixel		textcolor[16];	/* text colors			*/
++#endif
+ #endif /* KTERM_COLOR */
+ 	int		border;		/* inner border			*/
+ 	Cursor		arrow;		/* arrow cursor			*/
+@@ -656,6 +660,12 @@
+ #define BACKCOLORMASK	0x7000
+ #define BACKCOLOR(c)	((c) << 12)
+ #define BACKCOLORNUM(f)	(((f) & BACKCOLORMASK) >> 12)
++#ifdef COLOR_16
++#undef FORECOLORNUM
++#undef BACKCOLORNUM
++#define FORECOLORNUM(f)	((((f) & FORECOLORMASK) >> 8) + (((f) & BOLD)?0:8))
++#define BACKCOLORNUM(f)	((((f) & BACKCOLORMASK) >> 12) + (((f) & BOLD)?8:8))
++#endif
+ #endif /* KTERM_COLOR */
+ /* global flags */
+ #ifdef KTERM
+--------8<--------8<--------8<--------8<--------8<--------
+

@@ -1,0 +1,4 @@
+ktermc|kanji terminal with 16 colors:\
+	:op=:pa#64:Co#8:Sf=\E[3%dm:Sb=\E[4%dm:\
+	:mb=\E[5m:md=\E[1m:mr=\E[7m:mh=\E[2m:me=\E[m:\
+	:tc=kterm:

@@ -1,0 +1,28 @@
+diff --exclude=Makefile -ur kterm-6.2.0.orig/ptyx.hptyx.h
+--- kterm-6.2.0.orig/ptyx.h	Tue Jul  2 14:01:53 1996
++++ ptyx.h	Thu Dec 24 11:46:28 1998
+@@ -300,7 +300,11 @@
+ 	Pixel		mousecolor;	/* Mouse color			*/
+ 	Pixel		mousecolorback;	/* Mouse color background	*/
+ #ifdef KTERM_COLOR
++#ifndef COLOR_16
+ 	Pixel		textcolor[8];	/* text colors			*/
++#else
++	Pixel		textcolor[16];	/* text colors			*/
++#endif
+ #endif /* KTERM_COLOR */
+ 	int		border;		/* inner border			*/
+ 	Cursor		arrow;		/* arrow cursor			*/
+@@ -656,6 +660,12 @@
+ #define BACKCOLORMASK	0x7000
+ #define BACKCOLOR(c)	((c) << 12)
+ #define BACKCOLORNUM(f)	(((f) & BACKCOLORMASK) >> 12)
++#ifdef COLOR_16
++#undef FORECOLORNUM
++#undef BACKCOLORNUM
++#define FORECOLORNUM(f)	((((f) & FORECOLORMASK) >> 8) + (((f) & BOLD)?0:8))
++#define BACKCOLORNUM(f)	((((f) & BACKCOLORMASK) >> 12) + (((f) & BOLD)?8:8))
++#endif
+ #endif /* KTERM_COLOR */
+ /* global flags */
+ #ifdef KTERM

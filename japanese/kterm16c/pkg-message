@@ -1,0 +1,10 @@
+***********************************************************************
+* You must reset X, copy .termcap to your home directory and set TERM *
+* ktermc:                                                             *
+*       % xset fp rehash                                              *
+*       % xrdb -m /usr/X11R6/lib/X11/app-defaults/KTerm.16-colors     *
+*       % cp /usr/X11R6/share/doc/kterm16c/dot.termcap $HOME/.termcap *
+*       % kterm16c -fn vga -rv &                   (for VGA terminal) *
+*       % kterm16c  -fn kanji14 -fk kanji14 -rv &  (for kon on VGA)   *
+*       % setenv TERM ktermc                                          *
+***********************************************************************

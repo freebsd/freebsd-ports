@@ -1,11 +1,12 @@
 kterm is a xterm replacement with Japanese (Kanji) support.  It also
-understands ANSI color sequences.  This version is 6.1.0, available
-from the X11R6 contrib tape.
+understands ANSI color sequences.  This version is 6.2.0.
+
+kterm16c is for console hardcopy on a VGA terminal. It enables to get
+bitmaps of VGA terminal mode. Conversion for 16 color kterm was made by
+KANDA Toshihiro<candy@kgc.co.jp>.
 
 Also included is support for Xaw3d arrow-style scrollbars.  You can
-now hold down the arrow buttons to scroll continuously.  I made this
-patch (patch-ae) by modifying the source while looking at the xterm
-patch available with Xaw3d for R5.
+now hold down the arrow buttons to scroll continuously.
 
-Satoshi Asami
-asami@cs.berkeley.edu
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>

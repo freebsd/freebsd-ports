@@ -1,0 +1,34 @@
+diff --exclude=Makefile -ur kterm-6.2.0.orig/KTerm.adKTerm.ad
+--- kterm-6.2.0.orig/KTerm.ad	Sun Jun 23 17:00:22 1996
++++ KTerm.ad	Thu Dec 24 11:47:10 1998
+@@ -97,14 +97,22 @@
+ !*VT100*kanjiMode:		jis
+ !*VT100*lineSpace:		0
+ 
+-!*VT100*textColor0:		Black
+-!*VT100*textColor1:		Red
+-!*VT100*textColor2:		Green
+-!*VT100*textColor3:		Yellow
+-!*VT100*textColor4:		Blue
+-!*VT100*textColor5:		Magenta
+-!*VT100*textColor6:		Cyan
+-!*VT100*textColor7:		White
++*VT100*textColor0:		#505050
++*VT100*textColor1:		Red
++*VT100*textColor2:		Green
++*VT100*textColor3:		Yellow
++*VT100*textColor4:		Blue
++*VT100*textColor5:		Magenta
++*VT100*textColor6:		Cyan
++*VT100*textColor7:		White
++*VT100*textColor8:		Black
++*VT100*textColor9:		#c00000
++*VT100*textColor10:		#00c000
++*VT100*textColor11:		#c0c000
++*VT100*textColor12:		#0000c0
++*VT100*textColor13:		#c000c0
++*VT100*textColor14:		#00c0c0
++*VT100*textColor15:		#c0c0c0
+ 
+ *tekMenu.Label:  Tek Options
+ *tekMenu*tektextlarge*Label:  Large Characters

@@ -1,0 +1,63 @@
+diff --exclude=Makefile -ur kterm-6.2.0.orig/charproc.ccharproc.c
+--- kterm-6.2.0.orig/charproc.c	Fri Jul 12 14:01:36 1996
++++ charproc.c	Thu Dec 24 11:46:28 1998
+@@ -143,6 +143,16 @@
+ #define XtNtextColor5 "textColor5"
+ #define XtNtextColor6 "textColor6"
+ #define XtNtextColor7 "textColor7"
++#ifdef COLOR_16
++#define XtNtextColor8 "textColor8"
++#define XtNtextColor9 "textColor9"
++#define XtNtextColor10 "textColor10"
++#define XtNtextColor11 "textColor11"
++#define XtNtextColor12 "textColor12"
++#define XtNtextColor13 "textColor13"
++#define XtNtextColor14 "textColor14"
++#define XtNtextColor15 "textColor15"
++#endif
+ #endif /* KTERM_COLOR */
+ #define XtNcutNewline "cutNewline"
+ #define XtNcutToBeginningOfLine "cutToBeginningOfLine"
+@@ -576,6 +586,32 @@
+ {XtNtextColor7, XtCForeground, XtRPixel, sizeof(Pixel),
+ 	XtOffsetOf(XtermWidgetRec, screen.textcolor[7]),
+ 	XtRString, "White"},
++#ifdef COLOR_16 /* [ */
++{XtNtextColor8, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[8]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor9, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[9]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor10, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[10]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor11, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[11]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor12, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[12]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor13, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[13]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor14, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[14]),
++	XtRString, "XtDefaultForeground"},
++{XtNtextColor15, XtCForeground, XtRPixel, sizeof(Pixel),
++	XtOffsetOf(XtermWidgetRec, screen.textcolor[15]),
++	XtRString, "XtDefaultForeground"},
++#endif /* ] */
+ #endif /* KTERM_COLOR */
+ {XtNeightBitInput, XtCEightBitInput, XtRBoolean, sizeof(Boolean),
+ 	XtOffsetOf(XtermWidgetRec, screen.input_eight_bits), 
+@@ -4979,6 +5015,9 @@
+     screen->fnt_norm = nfs;
+     screen->fnt_bold = bfs;
+     screen->enbolden = (nfs == bfs);
++#ifdef COLOR_16
++    screen->enbolden = 0;
++#endif
+     set_menu_font (False);
+     screen->menu_font_number = fontnum;
+     set_menu_font (True);
