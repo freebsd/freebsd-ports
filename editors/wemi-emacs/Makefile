@@ -105,6 +105,11 @@ post-build:
 	@${MAKE} info-build
 .endif
 
+pre-install:
+.if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
+	@${MAKE} mkdir-site-packages
+.endif
+
 post-install:
 	@${MKDIR} -p ${PREFIX}/share/semi
 	@${TOUCH} ${PREFIX}/share/semi/${SEMI_COOKIE}
@@ -154,6 +159,11 @@ info-build-by-emacs:
 		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
 	done)
 .endif
+
+mkdir-site-packages:
+	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
+		${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/$${i} ; \
+	done)
 
 doc-install:
 	@${MKDIR} ${PREFIX}/${WEMIDOCDIR}
