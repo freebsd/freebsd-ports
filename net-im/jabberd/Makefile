@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
 DISTNAME=	${PORTNAME}-2.0s2
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 GNU_CONFIGURE=	yes
