@@ -1,0 +1,33 @@
+This patches remove some of the warnings produced by the compiler.
+
+--- src/siggen.c	Mon Jul 25 11:24:12 1994
++++ src/siggen.c	Wed May 17 19:15:29 2000
+@@ -15,2 +15,3 @@
+ #include "../include/config.h"
++#include <unistd.h>
+ #include <stdio.h>
+@@ -104,4 +104,6 @@
++
++/* forward declaration, to avoid compiler warnings */
++int siggen(int);
+ 
+ int
+ main(argc, argv)
+--- aux/byteorder.c	Fri Jul 15 07:02:36 1994
++++ aux/byteorder.c	Wed May 17 19:12:42 2000
+@@ -22,3 +22,3 @@
+ 
+-void
++int
+ main()
+@@ -34,2 +34,3 @@
+ 
++#warning "the shift-width warning below can be ignored"
+     if (sizeof(int32) > 4)
+--- aux/types.c	Sun Dec 12 23:02:27 1993
++++ aux/types.c	Wed May 17 19:23:21 2000
+@@ -24,3 +24,3 @@
+ 
+-void
++int
+ main(argc, argv)
