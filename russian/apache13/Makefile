@@ -8,7 +8,7 @@
 PORTNAME=	apache
 PORTVERSION=	${APACHE_VERSION}.${RA_VERSION}
 CATEGORIES=	russian www
-MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
+MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
 		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
@@ -31,11 +31,8 @@ PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 
 MAINTAINER=	lev@serebryakov.spb.ru
 
-FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
-		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
-
-RA_VERSION=	30.12
-APACHE_VERSION=	1.3.24
+RA_VERSION=	30.13
+APACHE_VERSION=	1.3.26
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 
 #
