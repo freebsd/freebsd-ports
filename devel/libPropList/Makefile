@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	libPropList-${PORTVERSION}
 
-MAINTAINER=    gljohns@bellsouth.net
+MAINTAINER=	sobomax@FreeBSD.org
 
 USE_LIBTOOL=	yes
 
