@@ -469,6 +469,7 @@ tigcc/doc/html/comopts_history.html
 tigcc/doc/html/compat.html
 tigcc/doc/html/compat_AMS_1xx.html
 tigcc/doc/html/compat_AMS_2xx.html
+tigcc/doc/html/compat_AMS_3xx.html
 tigcc/doc/html/compat_CALCULATOR.html
 tigcc/doc/html/compat_HW_VERSION.html
 tigcc/doc/html/compat_KEY_DIAMOND.html
@@ -572,6 +573,8 @@ tigcc/doc/html/compat_RR_X.html
 tigcc/doc/html/compat_RR_Y.html
 tigcc/doc/html/compat_RR_Z.html
 tigcc/doc/html/compat_TI89.html
+tigcc/doc/html/compat_TI89_CLASSIC.html
+tigcc/doc/html/compat_TI89_TITANIUM.html
 tigcc/doc/html/compat_TI92PLUS.html
 tigcc/doc/html/compat_TIOS_entries.html
 tigcc/doc/html/compat_V200.html
@@ -3231,12 +3234,15 @@ tigcc/include/c/vat.h
 tigcc/include/c/version.h
 tigcc/include/c/wingraph.h
 tigcc/include/s/os.h
+tigcc/lib/pstarter-titanium.o
 tigcc/lib/pstarter.o
 tigcc/lib/tigcc.a
 @dirrm tigcc/projects
+@dirrm tigcc/lib
 @dirrm tigcc/include/s
 @dirrm tigcc/include/c
 @dirrm tigcc/include/asm
+@dirrm tigcc/include
 @dirrm tigcc/examples
 @dirrm tigcc/doc/tprbuilder
 @dirrm tigcc/doc/tools
@@ -3247,6 +3253,4 @@ tigcc/lib/tigcc.a
 @dirrm tigcc/doc/a68k
 @dirrm tigcc/doc
 @dirrm tigcc/bin
-@dirrm tigcc/lib
-@dirrm tigcc/include
 @dirrm tigcc

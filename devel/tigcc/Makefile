@@ -7,12 +7,12 @@
 
 PORTNAME=	tigcc
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://tigcc.ticalc.org/sources/\
-		http://tigcc.ticalc.org/gcc33/\
 		http://tigcc.ticalc.org/linux/
 DISTNAME=	tigcc_src
-DISTFILES=	tigcc_src.tar.bz2 gcc-3.3.1-20030623.tar.bz2 gas-2.14.tar.bz2
+DISTFILES=	tigcc_src.tar.bz2 gcc-3.3.3.tar.bz2 gas-2.14.tar.bz2
 
 MAINTAINER=	tuximus@tuximus.mine.nu
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
@@ -31,10 +31,10 @@ post-patch:
 do-build:
 	(cd ${WRKSRC}/; \
 	${MKDIR} download; \
-	${CP} ${DISTDIR}/gcc-3.3.1-20030623.tar.bz2 ${DISTDIR}/gas-2.14.tar.bz2 download; \
+	${CP} ${DISTDIR}/gcc-3.3.3.tar.bz2 ${DISTDIR}/gas-2.14.tar.bz2 download; \
 	cd download; \
 	${TAR} yxf gas-2.14.tar.bz2; \
-	${TAR} yxf gcc-3.3.1-20030623.tar.bz2; \
+	${TAR} yxf gcc-3.3.3.tar.bz2; \
 	${LN} -s binutils-2.14 binutils.ti)
 
 do-install:
