@@ -6146,7 +6146,6 @@ pt-ooodict-PT	ports/editors/ooodict-pt_PT
 pt-openoffice	ports/editors/openoffice-pt
 pt-staroffice52	ports/editors/staroffice52-pt
 pth		ports/devel/pth
-pth-devel	ports/devel/pth-devel
 ptkei		ports/games/ptkei
 ptl		ports/devel/ptl
 ptoc		ports/lang/ptoc

@@ -615,7 +615,6 @@
     SUBDIR += projectcenter.app
     SUBDIR += prototype
     SUBDIR += pth
-    SUBDIR += pth-devel
     SUBDIR += ptl
     SUBDIR += ptypes
     SUBDIR += py-ansistyle
