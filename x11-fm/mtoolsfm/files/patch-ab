@@ -1,0 +1,12 @@
+--- po/fr.po.orig	Tue Aug 21 16:31:41 2001
++++ po/fr.po	Mon Apr 22 20:41:07 2002
+@@ -778,9 +778,6 @@
+ msgid "/Options/Text mode for copying"
+ msgstr "/Options/Utiliser le mode texte pour la copie"
+ 
+-msgid "/Options/Text mode for copying"
+-msgstr "/Options/Separator"
+-
+ #: src/mtoolsfm.c:2817 src/mtoolsfm.c:2833
+ msgid "/Options/Configure MToolsFM ..."
+ msgstr "/Options/Configurer MToolsFM ..."
