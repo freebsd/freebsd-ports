@@ -67,8 +67,3 @@ share/enscript/ps.enc
 share/enscript/pslatin1.enc
 share/enscript/simple.hdr
 share/enscript/vms.enc
-share/locale/de/LC_MESSAGES/enscript.mo
-share/locale/fi/LC_MESSAGES/enscript.mo
-share/locale/fr/LC_MESSAGES/enscript.mo
-share/locale/nl/LC_MESSAGES/enscript.mo
-share/locale/sl/LC_MESSAGES/enscript.mo
