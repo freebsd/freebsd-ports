@@ -11,3 +11,16 @@
  extern fd_set Select_mask;
  extern fd_set X_mask;
  extern fd_set pty_mask;
+@@ -1837,6 +1837,12 @@
+ 			parsestate = groundtable;
+ 			break;
+ 
++                 case CASE_ECH:
++                        /* ECH */
++                        ClearRightN(screen, param[0] < 1 ? 1 : param[0]);
++                        parsestate = groundtable;
++                        break;
++
+ 		 case CASE_IL:
+ 			/* IL */
+ 			if((row = param[0]) < 1)
