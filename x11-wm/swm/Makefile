@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swm
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	-src.tgz
@@ -16,15 +16,15 @@ MAINTAINER=	trevor@FreeBSD.org
 BINS=		swm swmbg swmpanel swmswitch
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		AUTHORS COMPILE_PARAMS COPYING ChangeLog LIESMICH README \
-		README.iPaq swm.lsm KNOWN-BUGS swm-de.1x
-EXAMPLES=	startswm.default startswm.gnome startswm.kde startswm.kde1
+		README.iPaq swm.lsm
+EXAMPLES=	startswm.kde1 startswm.kde2
 MAN1=		swm.1 swmbg.1
 PLIST=		${WRKDIR}/pkg-plist
-SCRIPTS=	startswm.default
+SCRIPTS=	startswm
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 
 pre-install:
 	${RM} -f ${PLIST}
@@ -57,14 +57,14 @@ do-install:
 #		${PREFIX}/man/de_DE.ISO_8859-1/man1/swm.1x
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
-	cd ${WRKSRC} && \
+	cd ${WRKSRC}/../ && \
 		${CHMOD} -R 755 examples && \
 		pax -r -w examples ${PREFIX}/${DOCDIR}
 .for i in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}/examples/
 .endfor
 	for i in ${DOCS}; \
-		do ${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${DOCDIR}; \
+		do ${INSTALL_DATA} ${WRKSRC}/../$${i} ${PREFIX}/${DOCDIR}; \
 	done
 .endif
 
