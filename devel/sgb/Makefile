@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sgb
-PORTVERSION=	20020425
+PORTVERSION=	20030623
 CATEGORIES=	devel
 MASTER_SITES=	ftp://labrea.stanford.edu/pub/sgb/
 DISTNAME=	sgb
