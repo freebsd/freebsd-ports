@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cidr
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://home.netcom.com/~naym/cidr/
 DISTNAME=	cidr-current
