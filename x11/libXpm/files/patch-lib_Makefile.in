@@ -1,0 +1,29 @@
+--- lib/Makefile.in.orig	Fri Apr 16 02:42:59 2004
++++ lib/Makefile.in	Fri Apr 16 02:45:43 2004
+@@ -149,7 +149,7 @@
+ 	    $(XTHREADS_CFLAGS)
+ 
+ 
+-libXpm_la_LDFLAGS = -version-number 3:5:0 -no-undefined
++libXpm_la_LDFLAGS = -version-number 4:5:0 -no-undefined
+ 
+ libXpm_la_SOURCES = \
+ 	Attrib.c \
+@@ -173,7 +173,16 @@
+ 	WrFFrDat.c \
+ 	WrFFrI.c \
+ 	WrFFrP.c \
+-	XpmI.h
++	XpmI.h \
++	create.c \
++	data.c \
++	hashtab.c \
++	misc.c \
++	parse.c \
++	rgb.c \
++	rgbtab.h \
++	scan.c \
++	simx.h
+ 
+ 
+ libXpmincludedir = $(includedir)/X11
