@@ -1,0 +1,10 @@
+--- configure.orig	Thu Jan 13 20:21:49 2005
++++ configure	Thu Jan 13 20:21:57 2005
+@@ -20272,6 +20272,7 @@
+ fi
+ 
+ # Find the Java Access Bridge
++JAB="no"
+ 
+ 
+ # Check whether --with-jab_dir or --without-jab_dir was given.
