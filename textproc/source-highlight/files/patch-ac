@@ -1,0 +1,18 @@
+--- tests/Makefile.in.orig	Sun Aug 31 22:57:10 2003
++++ tests/Makefile.in	Fri Oct  3 22:20:56 2003
+@@ -218,6 +218,7 @@
+ uninstall-info-am:
+ source_highlightdocDATA_INSTALL = $(INSTALL_DATA)
+ install-source_highlightdocDATA: $(source_highlightdoc_DATA)
++.if !defined(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(source_highlightdocdir)
+ 	@list='$(source_highlightdoc_DATA)'; for p in $$list; do \
+@@ -226,6 +227,7 @@
+ 	  echo " $(source_highlightdocDATA_INSTALL) $$d$$p $(DESTDIR)$(source_highlightdocdir)/$$f"; \
+ 	  $(source_highlightdocDATA_INSTALL) $$d$$p $(DESTDIR)$(source_highlightdocdir)/$$f; \
+ 	done
++.endif
+ 
+ uninstall-source_highlightdocDATA:
+ 	@$(NORMAL_UNINSTALL)
