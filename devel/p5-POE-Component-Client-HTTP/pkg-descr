@@ -6,6 +6,3 @@ transactions are being processed, and it lets several HTTP transactions
 be processed in parallel.
 
 WWW: http://search.cpan.org/dist/POE-Component-Client-HTTP/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
