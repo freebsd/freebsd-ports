@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.8.1
+PORTVERSION=	0.99.9.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://dovecot.procontrol.fi/
 
@@ -18,11 +18,30 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-shadow --enable-ipv6 \
-		--localstatedir=/var/dovecot --with-ssl=openssl \
+		--localstatedir=/var --with-ssl=openssl \
 		--with-ssldir=/var/dovecot/ssl --with-pop3d \
-		--with-ldap --with-pam
+		--with-pam
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 	LDFLAGS=-L${LOCALBASE}/lib
+
+#
+# Feature Autodetection
+#
+.if exists(${LOCALBASE}/lib/libsasl.so.2)
+WITH_SASL2=	yes
+.endif
+
+.if exists(${LOCALBASE}/vpopmail/bin/vckpw)
+WITH_VPOPMAIL=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libldap.so.2)
+WITH_LDAP2=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libpq.so.3)
+WITH_PGSQL=	yes
+.endif
 
 #
 # SASL2 support
@@ -49,40 +68,76 @@ BUILD_DEPENDS+=	${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=	--with-vpopmail
 .endif
 
-post-patch:
+#
+# OpenLDAP Support
+#
+# LDAP is the light-weight directory access
+# protocol and can be used by Dovecot for its
+# user database.
+#
+.if WITH_LDAP2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+CONFIGURE_ARGS+=	--with-ldap
+.endif
+
+#
+# PostgreSQL Support
+#
+# PostgreSQL is a powerful SQL database which
+# can be used to store user tables.
+#
+.if WITH_PGSQL
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql
+CONFIGURE_ARGS+=	--with-pgsql
+.endif
+
+pre-everything:
+	@${ECHO_MSG} "==>  Dovecot Options"
+	@${ECHO_MSG} "==>   See the Makefile for descriptions."
+	@${ECHO_MSG} "==> ------------------------------------------"
+	@${ECHO_MSG} "==>  o SASL2 Support         + WITH_SASL2"
+	@${ECHO_MSG} "==>  o VPoPMail Support      + WITH_VPOPMAIL"
+	@${ECHO_MSG} "==>  o OpenLDAP2 Support     + WITH_LDAP2"
+	@${ECHO_MSG} "==>  o PostgreSQL Support    + WITH_PGSQL"
+	@${ECHO_MSG} "==> ------------------------------------------"
+
+pre-build:
+	@${REINPLACE_CMD} -e 's,%%SSLDIR%%,/var/dovecot/ssl,' \
+		${WRKSRC}/doc/mkcert.sh \
+		${WRKSRC}/dovecot-example.conf
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/dovecot-example.conf
-	@${REINPLACE_CMD} -e 's,^LIBS.*,& -liconv,' \
-		${WRKSRC}/src/imap/Makefile.in \
-		${WRKSRC}/src/pop3/Makefile.in
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/dovecot
+	@${MKDIR} ${PREFIX}/libexec/dovecot
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/src/imap/imap \
 		${WRKSRC}/src/pop3/pop3 \
 		${WRKSRC}/src/auth/dovecot-auth \
 		${WRKSRC}/src/imap-login/imap-login \
 		${WRKSRC}/src/pop3-login/pop3-login \
-			${PREFIX}/lib/dovecot/
+			${PREFIX}/libexec/dovecot/
 	${INSTALL_DATA} ${WRKSRC}/dovecot-example.conf ${PREFIX}/etc/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/master/dovecot ${PREFIX}/sbin/
 
 post-install:
 	@${MKDIR} /var/dovecot
 	@${MKDIR} /var/dovecot/ssl
+	@${MKDIR} /var/dovecot/ssl/certs
+	@${MKDIR} /var/dovecot/ssl/private
 	@${MKDIR} /var/dovecot/auth
+	@${CHOWN} -R dovecot:dovecot /var/dovecot
 	@${MKDIR} /var/dovecot/login
-	@${CHOWN} -R imapd:imapd /var/dovecot
-	@if [ ! -f ${PREFIX}/etc/rc.d/dovecot-imapd.sh ]; then \
-		${ECHO} "Installing dovecot-imapd.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot-imapd.sh \
-			${PREFIX}/etc/rc.d/dovecot-imapd.sh; \
-	fi
+	@${CHOWN} root:dovecot /var/dovecot/login
+	@${MKDIR} /var/run/dovecot
+	@${CHMOD} 0700 /var/run/dovecot
+	@${CHOWN} root:dovecot /var/run/dovecot
+	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot.sh.sample \
+		${PREFIX}/etc/rc.d/dovecot.sh.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/dovecot
 	@${INSTALL_DATA} \
@@ -94,9 +149,15 @@ post-install:
 		${WRKSRC}/doc/configuration.txt \
 		${WRKSRC}/doc/mail-storages.txt \
 		${WRKSRC}/doc/dovecot-ldap.conf \
+		${WRKSRC}/doc/dovecot-pgsql.conf \
 		${WRKSRC}/doc/dovecot-openssl.cnf \
 		${WRKSRC}/doc/mkcert.sh \
+		${FILESDIR}/README.FreeBSD \
 			${PREFIX}/share/doc/dovecot
 .endif
+	@${CP} ${PKGMESSAGE} ${WRKDIR}/pkg-message
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKDIR}/pkg-message
+	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>

@@ -1,0 +1,22 @@
+---------------------------------------------------------------------
+ 
+ You can get default configured IMAP and POP3 services running by
+ copying the following sample files to the given locations. In this
+ simple configuration Dovecot will authenticate users against the
+ systems passwd file and use the default /var/mail/$USER mbox files.
+
+  %%PREFIX%%/etc/dovecot-example.conf
+   -> %%PREFIX%%/etc/dovecot.conf
+  
+  %%PREFIX%%/etc/rc.d/dovecot.sh.sample
+   -> %%PREFIX%%/etc/rc.d/dovecot.sh
+ 
+ Further information on configuration can be found in:
+
+  %%PREFIX%%/share/doc/dovecot/
+
+ FreeBSD specific information is covered in the following file:
+
+  %%PREFIX%%/share/doc/dovecot/README.FreeBSD
+
+---------------------------------------------------------------------
