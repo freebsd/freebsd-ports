@@ -8,6 +8,7 @@
 CATEGORIES=	japanese
 
 MAINTAINER=	ichiro@ichiro.org
+COMMENT=	A graphics library for fast image creation with Japanese support
 
 MASTERDIR=	${.CURDIR}/../../graphics/gd
 

@@ -12,6 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A highly configurable IRC Proxy
 
 GNU_CONFIGURE= 	yes
 

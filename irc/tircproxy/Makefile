@@ -12,6 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://bre.klaki.net/programs/tircproxy/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	IRC proxy server
 
 WRKSRC=		${WRKDIR}/tircproxy-0.4
 GNU_CONFIGURE=	YES
