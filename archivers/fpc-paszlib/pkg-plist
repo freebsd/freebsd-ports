@@ -1,0 +1,38 @@
+%%INSTDIR%%/Package.fpc
+%%INSTDIR%%/adler.o
+%%INSTDIR%%/adler.ppu
+%%INSTDIR%%/gzcrc.o
+%%INSTDIR%%/gzcrc.ppu
+%%INSTDIR%%/gzio.o
+%%INSTDIR%%/gzio.ppu
+%%INSTDIR%%/infblock.o
+%%INSTDIR%%/infblock.ppu
+%%INSTDIR%%/infcodes.o
+%%INSTDIR%%/infcodes.ppu
+%%INSTDIR%%/inffast.o
+%%INSTDIR%%/inffast.ppu
+%%INSTDIR%%/inftrees.o
+%%INSTDIR%%/inftrees.ppu
+%%INSTDIR%%/infutil.o
+%%INSTDIR%%/infutil.ppu
+%%INSTDIR%%/paszlib.o
+%%INSTDIR%%/paszlib.ppu
+%%INSTDIR%%/trees.o
+%%INSTDIR%%/trees.ppu
+%%INSTDIR%%/zbase.o
+%%INSTDIR%%/zbase.ppu
+%%INSTDIR%%/zcompres.o
+%%INSTDIR%%/zcompres.ppu
+%%INSTDIR%%/zdeflate.o
+%%INSTDIR%%/zdeflate.ppu
+%%INSTDIR%%/zinflate.o
+%%INSTDIR%%/zinflate.ppu
+%%INSTDIR%%/zuncompr.o
+%%INSTDIR%%/zuncompr.ppu
+%%INSTDIR%%/zutil.o
+%%INSTDIR%%/zutil.ppu
+@dirrm %%INSTDIR%%
+@unexec rmdir %D/lib/fpc/%%PORTVERSION%%/units/freebsd 2>/dev/null || true
+@unexec rmdir %D/lib/fpc/%%PORTVERSION%%/units 2>/dev/null || true
+@unexec rmdir %D/lib/fpc/%%PORTVERSION%% 2>/dev/null || true
+@unexec rmdir %D/lib/fpc 2>/dev/null || true
