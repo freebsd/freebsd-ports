@@ -1,0 +1,13 @@
+%%FONTSDIR%%/mplus_j12b_iso8859.pcf.gz
+%%FONTSDIR%%/mplus_j12b_jisx0201.pcf.gz
+%%FONTSDIR%%/mplus_j12b.pcf.gz
+%%FONTSDIR%%/mplus_j12r_iso8859.pcf.gz
+%%FONTSDIR%%/mplus_j12r_jisx0201.pcf.gz
+%%FONTSDIR%%/mplus_j12r.pcf.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README_J
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
+@unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi

@@ -1,0 +1,13 @@
+M+ bitmap fonts is a bitmap font set aimed for simple and high readable design.
+
+- mplus_j12r.bdf:		12x13 dots Kanji (jisx0208)
+- mplus_j12b.bdf:		12x13 dots bold Kanji (jisx0208)
+- mplus_j12r_jisx0201.bdf:	6x13 dots ASCII + Half-wide Kana (jisx0201)
+- mplus_j12b_jisx0201.bdf:	6x13 dots bold ASCII + Half-wide Kana (jisx0201)
+- mplus_j12r_iso8859.bdf:	6x13 dots ASCII + European char (iso8859-1)
+- mplus_j12b_iso8859.bdf:	6x13 dots bold ASCII + European char (iso8859-1)
+
+WWW: http://mplus-fonts.sourceforge.jp/
+
+-- H.Miyamoto
+<Ys@PixyGarden.net>
