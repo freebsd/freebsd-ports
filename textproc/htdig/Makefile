@@ -6,48 +6,49 @@
 #
 
 PORTNAME=	htdig
-PORTVERSION=	3.1.6
+PORTVERSION=	3.2.0.b5
 CATEGORIES=	textproc www
-MASTER_SITES=	http://www.htdig.org/files/ \
+MASTER_SITES=	http://htdig.sourceforge.net/files/ \
+		http://www.htdig.org/files/ \
+		http://www.opdenbrouw.nl/htdig/files/ \
 		ftp://ftp.ntua.gr/pub/www/htdig/
+DISTNAME=	htdig-3.2.0b5
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	A www indexing and searching system
 
-RUN_DEPENDS=	${LOCALBASE}/share/doc/apache:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
+
+USE_LIBTOOL=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cgi-bin-dir=${PREFIX}/share/apache/cgi-bin \
-		--with-image-dir=${PREFIX}/share/apache/icons/htdig \
-		--with-search-dir=${PREFIX}/share/apache/htdocs \
+CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
+		--with-default-config-file=${PREFIX}/etc/htdig/htdig.conf \
 		--with-common-dir=${PREFIX}/share/htdig/common \
 		--with-database-dir=${PREFIX}/share/htdig/database \
-		--with-config-dir=${PREFIX}/etc/htdig \
-		--with-default-config-file=${PREFIX}/etc/htdig/htdig.conf
+		--with-cgi-bin-dir=${PREFIX}/www/cgi-bin \
+		--with-search-dir=${PREFIX}/www/data \
+		--with-image-dir=${PREFIX}/www/icons/htdig \
+		--with-image-url-prefix=/icons/htdig \
+		--with-ssl \
+		--with-apache=${LOCALBASE}/sbin
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500037
-CONFIGURE_ENV+=	CXXFLAGS=-Wno-deprecated CPPFLAGS=-Wno-deprecated
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES+=	${PATCHDIR}/RELENG_4-patch-htnet_SSLConnection.cc
 .endif
 
-BUILD_TARGET=	depends all
-
-post-patch:
-.for file in CONFIG CONFIG.in
-	@ ${CP} ${WRKSRC}/${file} ${WRKSRC}/${file}.Dist
-	@ ${SED} -e 's#/conf#/etc#' \
-		-e 's#/common#/share/htdig#' \
-		-e 's#/db#/share/htdig#' \
-	${WRKSRC}/${file}.Dist > ${WRKSRC}/${file}
-.endfor
-.for file in dist/configure dist/configure.in docs/ref/program/thread.html
-	@ ${CP} ${WRKSRC}/db/${file} ${WRKSRC}/db/${file}.Dist
-	@ ${SED} -e 's#-lc_r#${PTHREAD_LIBS:S/"//g}#g' \
-		${WRKSRC}/db/${file}.Dist > ${WRKSRC}/db/${file}
-.endfor
-
 post-install:
-	@ ${MV} ${PREFIX}/etc/htdig/htdig.conf ${PREFIX}/etc/htdig/htdig.conf.sample
+	@${MV} ${PREFIX}/etc/htdig/htdig.conf ${PREFIX}/etc/htdig/htdig.conf.sample
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+.for f in ChangeLog ChangeLog.0 README STATUS
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.for f in *.html *.gif
+	@${INSTALL_DATA} ${WRKSRC}/htdoc/${f} ${DOCSDIR}/html
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
