@@ -1,0 +1,145 @@
+*** aclocal.m4.bak	Mon Aug 25 12:04:06 1997
+--- aclocal.m4	Thu Aug 28 15:10:03 1997
+***************
+*** 667,673 ****
+  		fi
+  	done
+  	AC_TRY_LINK([#include <$cf_cv_ncurses_header>],
+! 		[initscr()],
+  		[AC_MSG_RESULT(yes)],
+  		[AC_MSG_RESULT(no)
+  		 LIBS="$cf_ncurses_SAVE"])
+--- 667,673 ----
+  		fi
+  	done
+  	AC_TRY_LINK([#include <$cf_cv_ncurses_header>],
+! 		[initscr(); tgoto((char *)0, 0, 0);],
+  		[AC_MSG_RESULT(yes)],
+  		[AC_MSG_RESULT(no)
+  		 LIBS="$cf_ncurses_SAVE"])
+*** configure.bak	Mon Aug 25 12:08:13 1997
+--- configure	Thu Aug 28 15:10:03 1997
+***************
+*** 2822,2828 ****
+  #include "confdefs.h"
+  #include <$cf_cv_ncurses_header>
+  int main() {
+! initscr()
+  ; return 0; }
+  EOF
+  if { (eval echo configure:2829: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+--- 2822,2828 ----
+  #include "confdefs.h"
+  #include <$cf_cv_ncurses_header>
+  int main() {
+! initscr(); tgoto((char *)0, 0, 0);
+  ; return 0; }
+  EOF
+  if { (eval echo configure:2829: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+*** ./include/autoconf.hin.orig	Mon Aug 25 14:34:35 1997
+--- ./include/autoconf.hin	Thu Aug 28 14:59:58 1997
+***************
+*** 269,274 ****
+--- 269,275 ----
+   * Define a symbol to control whether we use curses, or the termcap/terminfo
+   * interface
+   */
++ #undef  NCURSESHEADER
+  #undef	USE_CURSES
+  #undef	USE_TRACE
+  
+*** ./include/tcurses.h.orig	Mon Aug 25 14:34:35 1997
+--- ./include/tcurses.h	Thu Aug 28 14:59:59 1997
+***************
+*** 18,24 ****
+--- 18,28 ----
+  
+  #if USE_CURSES
+  
++ #ifdef NCURSESHEADER
++ #include <ncurses.h>
++ #else
+  #include <curses.h>
++ #endif
+  
+  #if USE_TRACE
+  #if HAVE_NOMACROS_H
+*** ./src/tcurses.c.orig	Mon Aug 25 14:34:35 1997
+--- ./src/tcurses.c	Thu Aug 28 14:59:59 1997
+***************
+*** 64,70 ****
+  	if (has_colors()) {
+  		start_color();
+  	}
+! #ifdef NCURSES_VERSION
+  	(void) mousemask(
+  		(BUTTON1_CLICKED|BUTTON2_CLICKED|BUTTON3_CLICKED),
+  		(mmask_t *)0);
+--- 64,70 ----
+  	if (has_colors()) {
+  		start_color();
+  	}
+! #ifdef NCURSES_MOUSE_VERSION
+  	(void) mousemask(
+  		(BUTTON1_CLICKED|BUTTON2_CLICKED|BUTTON3_CLICKED),
+  		(mmask_t *)0);
+***************
+*** 79,84 ****
+--- 79,85 ----
+  {
+  	TRACE(("InitWin"))
+  	Raw(TRUE);		/* FIXME */
++ 	cmd_line = FALSE;
+  }
+  
+  /*
+***************
+*** 198,204 ****
+  		ch = cmdReadCh();
+  	else {
+  		ch = getch();
+! 		if (ch == ESC || ch >= KEY_MIN) {
+  			ungetch(ch);
+  			ch = ESC;
+  		}
+--- 199,207 ----
+  		ch = cmdReadCh();
+  	else {
+  		ch = getch();
+! 		if (ch == KEY_BACKSPACE)
+! 			ch = '\010';    /* fix for Ctrl-H - show headers */
+! 		else if (ch == ESC || ch >= KEY_MIN) {
+  			ungetch(ch);
+  			ch = ESC;
+  		}
+***************
+*** 239,245 ****
+  	if (cmd_line)
+  		fputc (ch, fp);
+  	else
+! 		addch (ch);
+  }
+  
+  void
+--- 242,248 ----
+  	if (cmd_line)
+  		fputc (ch, fp);
+  	else
+! 		addch ((unsigned char) ch);
+  }
+  
+  void
+*** ./src/misc.c.orig	Mon Aug 25 14:34:36 1997
+--- ./src/misc.c	Thu Aug 28 15:00:01 1997
+***************
+*** 1342,1350 ****
+  	int code = KEYMAP_UNKNOWN;
+  
+  	switch (ch) {
+- 		case KEY_BACKSPACE:
+- 			code = '\b';
+- 			break;
+  		case KEY_DC:
+  			code = KEYMAP_DEL;
+  			break;
+--- 1342,1347 ----
