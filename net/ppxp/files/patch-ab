@@ -1,0 +1,15 @@
+--- doc/ja_JP/Report.txt	Sat Jun 26 17:38:01 1999
++++ doc/ja_JP/Report.txt	Sat Dec 25 00:14:06 1999
+@@ -57,10 +57,12 @@
+   [ ] アナログ電話(モデム)
+   [ ] デジタル電話(ISDN)
+   [ ] NTT ドコモ(ポケット) PHS(PIAFS)
++  [ ] NTT ドコモ(ポケット) PHS(PIAFS2.0)
+   [ ] NTT ドコモ(ポケット) PHS(変換局経由)
+   [ ] アステル PHS(PIAFS)
+   [ ] アステル PHS(変換局経由)
+   [ ] DDI ポケット PHS(PIAFS)
++  [ ] DDI ポケット PHS(PIAFS2.1)
+   [ ] DDI ポケット PHS(ISDN)
+   [ ] DDI ポケット PHS(アナログ)
+   その他{                                     }
