@@ -19,7 +19,7 @@ LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
 CFLAGS+=	-pthread
-GNU_CONFIGURE=yes
+USE_AUTOCONF=yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 .include <bsd.port.mk>
