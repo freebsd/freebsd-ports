@@ -1,0 +1,39 @@
+--- igerman98-19991219/Makefile.orig	Sun Dec 19 10:46:45 1999
++++ igerman98-19991219/Makefile	Fri Dec 31 11:31:02 1999
+@@ -36,16 +38,16 @@
+ ## Ispell and Aspell stuff:
+ ###
+ 
+-german.hash: all.words copyright
+-	buildhash all.words german.aff $@
++german.hash: all.words 
++	${BUILDHASH} all.words german.aff $@
+ 
+-all.words: $(WORTE)
+-	sed s/qq//g $+ | sort -u > $@
++all.words: ${WORTE}
++	sed s/qq//g ${WORTE} | sort -u > $@
+ 
+ swiss: all.words copyright
+ 	cat german.aff |sed /swiss-del/d |sed /swiss-convert/s/sS/SS/g |sed '/stringchar/!s/sS//g' > swiss.aff
+ 	cat all.words helvetismen.txt |sed s/sS/ss/g |sort -u > all.words.swiss
+-	buildhash all.words.swiss swiss.aff swiss.hash
++	${BUILDHASH} all.words.swiss swiss.aff swiss.hash
+ 
+ install: german.hash
+ 	cp german.aff german.hash `ispell -vv|grep LIBDIR|sed "s/.*\=//" |tr -d \"`
+@@ -68,11 +70,11 @@
+ liglist.aff:
+ 	sed '/\#qqq/s/^\#//g;/\#nnn/d' german.aff > liglist.aff
+ 
+-all.words.liglist: $(WORTE)
+-	sort -u $+ > $@
++all.words.liglist: ${WORTE}
++	sort -u ${WORTE} > $@
+ 
+ liglist.hash: liglist.aff all.words.liglist
+-	buildhash all.words.liglist liglist.aff $@
++	${BUILDHASH} all.words.liglist liglist.aff $@
+ 
+ liglist: liglist.hash copyright
+ 	cat oldspell.liglist all.words.liglist             \
