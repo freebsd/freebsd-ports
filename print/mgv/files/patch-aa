@@ -1,0 +1,33 @@
+--- make/sys.freebsd3.mk.orig	Tue Feb 17 22:31:33 1998
++++ make/sys.freebsd3.mk	Tue Mar  3 21:11:17 1998
+@@ -32,12 +32,12 @@
+ mk-libhelp = no
+ 
+ cc      = gcc 
+-perl    = /usr/local/bin/perl
++perl    = /usr/bin/perl
+ warn    = -ansi -pedantic -Wall -Werror -Wmissing-prototypes
+ defs    = -D$(sys)
+ opt     = -O2
+-incl    = -I. -I/usr/local/include -I/usr/X11/include
+-ldflags = -s -L/usr/local/lib -L/usr/X11/lib $(opt)
++incl    = -I. -I/usr/local/include -I/usr/X11R6/include
++ldflags = -s -L/usr/local/lib -L/usr/X11R6/lib $(opt)
+ xlibs   = -lXm -lXpm -lXmu -lXt -lXext -lX11 -lm -lcompat
+ hlibs   = -lhlpclient
+ ar      = ar
+@@ -50,11 +50,11 @@
+ 
+ mkdir    = mkdirhier
+ install  = install -c
+-bindir   = /usr/local/bin
++bindir   = ${PREFIX}/bin
+ binflags = -o root -g bin -m 755
+-mandir   = /usr/local/man/man1
++mandir   = ${PREFIX}/man/man1
+ manflags = -o root -g bin -m 644
+-docdir   = /usr/local/lib/$(projname)
++docdir   = ${PREFIX}/share/$(projname)
+ docflags = $(manflags)
+ addir    = $(docdir)
+ adflags  = $(docflags)
