@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	waccess
-PORTVERSION=	1.1
+PORTVERSION=	1.61
 CATEGORIES=	www textproc
 MASTER_SITES=	http://www.tundraware.com/Software/waccess/
 
