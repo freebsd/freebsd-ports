@@ -7129,6 +7129,7 @@ p5-File-Modified	ports/devel/p5-File-Modified
 p5-File-NCopy	ports/devel/p5-File-NCopy
 p5-File-NFSLock	ports/devel/p5-File-NFSLock
 p5-File-Path-Expand	ports/devel/p5-File-Path-Expand
+p5-File-PathConvert	ports/devel/p5-File-PathConvert
 p5-File-ReadBackwards	ports/devel/p5-File-ReadBackwards
 p5-File-Remove	ports/devel/p5-File-Remove
 p5-File-Rsync	ports/net/p5-File-Rsync
