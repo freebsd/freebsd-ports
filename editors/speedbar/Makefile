@@ -30,7 +30,7 @@ MUST_BE_RECOMPILED=	gud.el info.el rmail.el vhdl-mode.el
 
 EMACS_ARGS=	 -batch -l speedbar-compile-script -f batch-byte-compile
 
-post-patch:
+pre-build:
 .for i in ${MUST_BE_RECOMPILED}
 	${CP} `${FIND} ${PREFIX}/${EMACS_LIBDIR_WITH_VER}/lisp -name ${i}` \
 		${WRKSRC}
