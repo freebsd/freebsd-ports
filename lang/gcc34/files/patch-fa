@@ -1,0 +1,232 @@
+--- gcc/c-common.c.orig	Mon Feb 15 16:40:05 1999
++++ gcc/c-common.c	Tue Mar 30 03:35:22 1999
+@@ -61,7 +61,7 @@
+ 					       int, int, int));
+ static void init_attributes		PROTO((void));
+ static void record_function_format	PROTO((tree, tree, enum format_type,
+-					       int, int));
++					       int, int, int));
+ static void record_international_format	PROTO((tree, tree, int));
+ 
+ /* Keep a stack of if statements.  We record the number of compound
+@@ -669,6 +669,7 @@
+ 	      = TREE_VALUE (TREE_CHAIN (TREE_CHAIN (args)));
+ 	    int format_num;
+ 	    int first_arg_num;
++	    int null_format_ok;
+ 	    enum format_type format_type;
+ 	    tree argument;
+ 	    int arg_num;
+@@ -682,7 +683,7 @@
+ 	
+ 	    if (TREE_CODE (format_type_id) != IDENTIFIER_NODE)
+ 	      {
+-		error ("unrecognized format specifier");
++		error_with_decl (decl, "unrecognized format specifier");
+ 		continue;
+ 	      }
+ 	    else
+@@ -690,12 +691,26 @@
+ 		char *p = IDENTIFIER_POINTER (format_type_id);
+ 		
+ 		if (!strcmp (p, "printf") || !strcmp (p, "__printf__"))
++		  {
++		  format_type = printf_format_type;
++		  null_format_ok = 0;
++		  }
++		else if (!strcmp (p, "printf0") || !strcmp (p, "__printf0__"))
++		  {
+ 		  format_type = printf_format_type;
++		  null_format_ok = 1;
++		  }
+ 		else if (!strcmp (p, "scanf") || !strcmp (p, "__scanf__"))
++		  {
+ 		  format_type = scanf_format_type;
++		  null_format_ok = 0;
++		  }
+ 		else if (!strcmp (p, "strftime")
+ 			 || !strcmp (p, "__strftime__"))
++		  {
+ 		  format_type = strftime_format_type;
++		  null_format_ok = 0;
++		  }
+ 		else
+ 		  {
+ 		    error ("`%s' is an unrecognized format function type", p);
+@@ -766,7 +781,8 @@
+ 
+ 	    record_function_format (DECL_NAME (decl),
+ 				    DECL_ASSEMBLER_NAME (decl),
+-				    format_type, format_num, first_arg_num);
++				    format_type,  null_format_ok, format_num,
++				    first_arg_num);
+ 	    break;
+ 	  }
+ 
+@@ -1010,6 +1026,11 @@
+ } format_char_info;
+ 
+ static format_char_info print_char_table[] = {
++/* FreeBSD kernel extensions.  */
++  { "D",	1,	T_C,	T_C,	NULL,	NULL,	NULL,	NULL,	NULL,	"-wp"		},
++  { "b",	1,	T_C,	T_C,	NULL,	NULL,	NULL,	NULL,	NULL,	"-wp"		},
++  { "rz",	0,	NULL,	T_I,	T_I,	T_L,	NULL,	NULL,	NULL,	"-wp0 +#"	},
++#define unextended_print_char_table	(print_char_table + 3)
+   { "di",	0,	T_I,	T_I,	T_I,	T_L,	T_LL,	T_LL,	T_ST,	"-wp0 +"	},
+   { "oxX",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	"-wp0#"		},
+   { "u",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	"-wp0"		},
+@@ -1070,6 +1091,7 @@
+   tree name;			/* identifier such as "printf" */
+   tree assembler_name;		/* optional mangled identifier (for C++) */
+   enum format_type format_type;	/* type of format (printf, scanf, etc.) */
++  int null_format_ok;		/* TRUE if the format string may be NULL */
+   int format_num;		/* number of format argument */
+   int first_arg_num;		/* number of first arg (zero for varargs) */
+ } function_format_info;
+@@ -1102,25 +1124,25 @@
+ init_function_format_info ()
+ {
+   record_function_format (get_identifier ("printf"), NULL_TREE,
+-			  printf_format_type, 1, 2);
++			  printf_format_type, 0, 1, 2);
+   record_function_format (get_identifier ("fprintf"), NULL_TREE,
+-			  printf_format_type, 2, 3);
++			  printf_format_type, 0, 2, 3);
+   record_function_format (get_identifier ("sprintf"), NULL_TREE,
+-			  printf_format_type, 2, 3);
++			  printf_format_type, 0, 2, 3);
+   record_function_format (get_identifier ("scanf"), NULL_TREE,
+-			  scanf_format_type, 1, 2);
++			  scanf_format_type, 0, 1, 2);
+   record_function_format (get_identifier ("fscanf"), NULL_TREE,
+-			  scanf_format_type, 2, 3);
++			  scanf_format_type, 0, 2, 3);
+   record_function_format (get_identifier ("sscanf"), NULL_TREE,
+-			  scanf_format_type, 2, 3);
++			  scanf_format_type, 0, 2, 3);
+   record_function_format (get_identifier ("vprintf"), NULL_TREE,
+-			  printf_format_type, 1, 0);
++			  printf_format_type, 0, 1, 0);
+   record_function_format (get_identifier ("vfprintf"), NULL_TREE,
+-			  printf_format_type, 2, 0);
++			  printf_format_type, 0, 2, 0);
+   record_function_format (get_identifier ("vsprintf"), NULL_TREE,
+-			  printf_format_type, 2, 0);
++			  printf_format_type, 0, 2, 0);
+   record_function_format (get_identifier ("strftime"), NULL_TREE,
+-			  strftime_format_type, 3, 0);
++			  strftime_format_type, 0, 3, 0);
+ 
+   record_international_format (get_identifier ("gettext"), NULL_TREE, 1);
+   record_international_format (get_identifier ("dgettext"), NULL_TREE, 2);
+@@ -1137,11 +1159,12 @@
+    (e.g. for varargs such as vfprintf).  */
+ 
+ static void
+-record_function_format (name, assembler_name, format_type,
++record_function_format (name, assembler_name, format_type, null_format_ok,
+ 			format_num, first_arg_num)
+       tree name;
+       tree assembler_name;
+       enum format_type format_type;
++      int null_format_ok;
+       int format_num;
+       int first_arg_num;
+ {
+@@ -1165,6 +1188,7 @@
+     }
+ 
+   info->format_type = format_type;
++  info->null_format_ok = null_format_ok;
+   info->format_num = format_num;
+   info->first_arg_num = first_arg_num;
+ }
+@@ -1314,7 +1338,8 @@
+ 
+   if (integer_zerop (format_tree))
+     {
+-      warning ("null format string");
++      if (!info->null_format_ok)
++	warning ("null format string");
+       return;
+     }
+   if (TREE_CODE (format_tree) != ADDR_EXPR)
+@@ -1485,12 +1510,13 @@
+ 		     It will work on most machines, because size_t and int
+ 		     have the same mode.  But might as well warn anyway,
+ 		     since it will fail on other machines.  */
++		  /* XXX should we allow unsigned ints here?  */
+ 		  if ((TYPE_MAIN_VARIANT (TREE_TYPE (cur_param))
+ 		       != integer_type_node)
+ 		      &&
+ 		      (TYPE_MAIN_VARIANT (TREE_TYPE (cur_param))
+ 		       != unsigned_type_node))
+-		    warning ("field width is not type int (arg %d)", arg_num);
++		    warning ("precision is not type int (arg %d)", arg_num);
+ 		}
+ 	    }
+ 	  else
+@@ -1535,6 +1561,53 @@
+ 		}
+ 	    }
+ 	}
++      if (*format_chars == 'b')
++	{
++	  /* There should be an int arg to control the string arg.  */
++	  if (params == 0)
++	    {
++	      warning (tfaff);
++	      return;
++	    }
++	    if (info->first_arg_num != 0)
++	    {
++	      cur_param = TREE_VALUE (params);
++	      params = TREE_CHAIN (params);
++	      ++arg_num;
++	      if ((TYPE_MAIN_VARIANT (TREE_TYPE (cur_param))
++		   != integer_type_node)
++		  &&
++		  (TYPE_MAIN_VARIANT (TREE_TYPE (cur_param))
++		   != unsigned_type_node))
++		{
++		  warning ("bitmap is not type int (arg %d)", arg_num);
++		}
++	    }
++	}
++      if (*format_chars == 'D')
++	{
++	  /* There should be an unsigned char * arg before the string arg.  */
++	  if (params == 0)
++	    {
++	      warning (tfaff);
++	      return;
++	    }
++	    if (info->first_arg_num != 0)
++	    {
++	      cur_param = TREE_VALUE (params);
++	      params = TREE_CHAIN (params);
++	      ++arg_num;
++	      cur_type = TREE_TYPE (cur_param);
++	      if (TREE_CODE (cur_type) != POINTER_TYPE
++		  || TYPE_MAIN_VARIANT (TREE_TYPE (cur_type))
++		     != unsigned_char_type_node)
++		{
++		  warning ("ethernet address is not type unsigned char *"
++			   " (arg %d)",
++			   arg_num);
++		}
++	    }
++	}
+ 
+       aflag = 0;
+ 
+@@ -1604,7 +1677,8 @@
+       switch (info->format_type)
+ 	{
+ 	case printf_format_type:
+-	  fci = print_char_table;
++	  fci = flag_format_extensions ? print_char_table
++	  	: unextended_print_char_table;
+ 	  break;
+ 	case scanf_format_type:
+ 	  fci = scan_char_table;

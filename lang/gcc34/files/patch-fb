@@ -1,0 +1,13 @@
+--- gcc/flags.h.orig	Sun Jan 31 09:46:18 1999
++++ gcc/flags.h	Tue Mar 30 13:17:11 1999
+@@ -137,6 +137,10 @@
+ 
+ extern int warn_aggregate_return;
+ 
++/* Nonzero means that -Wformat accepts certain non-ANSI formats.  */
++
++extern int flag_format_extensions;
++
+ /* Nonzero if generating code to do profiling.  */
+ 
+ extern int profile_flag;

@@ -1,17 +1,19 @@
-@comment $Id: PLIST,v 1.20 1998/12/02 09:41:28 obrien Exp $
-bin/g++filt
-bin/g++
+@comment $Id: PLIST,v 1.19 1998/09/26 18:17:13 obrien Exp $
+bin/chill
+bin/eg++filt
 bin/eg++
-bin/g77
-bin/gcc
+bin/eg77
 bin/egcc
-bin/gcov
 bin/%%GNU_HOST%%-gcc
+bin/gcj
+bin/gcjh
+bin/gcov
+bin/jv-scan
+bin/jcf-dump
 bin/protoize
 bin/unprotoize
 %%GNU_HOST%%/include/_G_config.h
 %%GNU_HOST%%/include/assert.h
-%%GNU_HOST%%/lib/libiberty.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/PlotFile.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/SFile.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/algo.h
@@ -152,6 +154,8 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/vector.h
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
 @unexec install-info --delete %D/info/g77.info %D/info/dir
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
+@unexec install-info --delete %D/info/chill.info %D/info/dir
+info/chill.info
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -200,6 +204,7 @@ info/gcc.info-26
 info/gcc.info-27
 info/gcc.info-28
 info/gcc.info-29
+info/gcc.info-30
 info/gcc.info-3
 info/gcc.info-4
 info/gcc.info-5
@@ -208,13 +213,16 @@ info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/chill.info %D/info/dir
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/SYSCALLS.c.X
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1chill
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1obj
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1plus
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/chillrt0.o
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cpp
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/collect2
 @comment ELF-only:lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/crtbegin.o
@@ -244,6 +252,9 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/thr.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/typedstream.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/syslimits.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/typeinfo
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/jc1
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/jvgenmain
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libchill.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libgcc.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libobjc.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/specs
@@ -253,7 +264,6 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libg2c.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libiberty.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libstdc++.a
 @dirrm %%GNU_HOST%%/include
-@dirrm %%GNU_HOST%%/lib
 @dirrm %%GNU_HOST%%
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std
