@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPICS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	wdm
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WINGs Display Manager; an xdm replacement
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
@@ -53,6 +53,10 @@ WDMDIR=		${PREFIX}/lib/X11/wdm
 DAEMONPICS=	beastie.xpm daemon1-HQ-1280x960.jpg
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+IGNORE=		"Does not work on sparc64"
+.endif
 
 .if ( ${OSVERSION} >= 500028 ) && !defined(WITHOUT_PAM)
 WITH_PAM=	yes
