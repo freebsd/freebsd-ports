@@ -1,29 +1,28 @@
---- configs/freebsd-g++-shared.orig	Thu Feb 17 01:55:56 2000
-+++ configs/freebsd-g++-shared	Sat Feb 26 20:25:51 2000
-@@ -16,7 +16,7 @@
+--- configs/freebsd-g++-shared	Tue Aug 22 03:11:09 2000
++++ configs/freebsd-g++-shared.new	Sat Aug 26 09:50:52 2000
+@@ -21,7 +21,7 @@
  SYSCONF_LIBS_X11	= -lXext -lX11 -lm
  # Qt, Qt+OpenGL
  SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
--SYSCONF_LIBS_QT		= -lqt
-+SYSCONF_LIBS_QT		= -lqt2
- SYSCONF_LIBS_QT_OPENGL	= -lqgl
+-SYSCONF_LIBS_QT		= -lqt$(QT_THREAD_SUFFIX)
++SYSCONF_LIBS_QT		= -lqt2$(QT_THREAD_SUFFIX)
+ SYSCONF_LIBS_QT_OPENGL	= 
  # OpenGL
  SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
-@@ -27,7 +27,7 @@
- # Linking applications
- SYSCONF_LINK		= g++
- SYSCONF_LFLAGS		= 
--SYSCONF_LIBS		= 
-+SYSCONF_LIBS		= -lxpg4
+@@ -44,7 +44,7 @@
+ SYSCONF_LIBS_THREAD	= 
  
- # Link flags shared objects
- SYSCONF_LFLAGS_SHOBJ	= -shared
-@@ -41,16 +41,26 @@
+ # Meta-object compiler
+-SYSCONF_MOC		= $(QTDIR)/bin/moc
++SYSCONF_MOC		= $(QTDIR)/bin/moc2
+ 
+ # UI compiler
+ SYSCONF_UIC		= $(QTDIR)/bin/uic
+@@ -55,16 +55,15 @@
  #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
  #
  SYSCONF_LINK_SHLIB	= g++
 -SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN).$(VER_PATCH)
-+ifeq ($(PORTOBJFORMAT),elf)
 +SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ)
  SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared  \
  				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
@@ -37,16 +36,6 @@
 -				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
 +				 rm -f lib$(TARGET).so; \
 +				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so
-+else
-+SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)$(VER_PATCH)
-+SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared  \
-+				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
-+				     $(OBJECTS) $(OBJMOC) $(LIBS) && \
-+				 mv $(SYSCONF_LINK_TARGET_SHARED) $(DESTDIR); \
-+				 cd $(DESTDIR) && \
-+				 rm -f lib$(TARGET).so; \
-+				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so
-+endif
  
  # Linking static libraries
  #   - Build the $(TARGET) library, eg. lib$(TARGET).a

@@ -18,8 +18,11 @@ bin/kdesu_stub
 bin/kio_http_cache_cleaner
 bin/kio_uiserver
 bin/klauncher
+bin/kmailservice
 bin/knotify
+bin/lnusertemp
 bin/mcopidl
+bin/mkusertemp
 bin/settheme
 include/addressbook.h
 include/arts/anyref.h
@@ -109,7 +112,6 @@ include/kabapi.h
 include/kaboutapplication.h
 include/kaboutdata.h
 include/kaboutdialog.h
-include/kaboutdialog_private.h
 include/kaboutkde.h
 include/kaccel.h
 include/kaccelmenu.h
@@ -130,6 +132,7 @@ include/kcmodule.h
 include/kcolorbtn.h
 include/kcolorbutton.h
 include/kcolorcombo.h
+include/kcolordialog.h
 include/kcolordlg.h
 include/kcolordrag.h
 include/kcombiview.h
@@ -156,8 +159,8 @@ include/kdestyle.h
 include/kdesu/client.h
 include/kdesu/defaults.h
 include/kdesu/kcookie.h
+include/kdesu/kdesu_pty.h
 include/kdesu/process.h
-include/kdesu/pty.h
 include/kdesu/ssh.h
 include/kdesu/stub.h
 include/kdesu/su.h
@@ -210,6 +213,7 @@ include/kio/global.h
 include/kio/job.h
 include/kio/jobclasses.h
 include/kio/netaccess.h
+include/kio/observer.h
 include/kio/passdlg.h
 include/kio/paste.h
 include/kio/progressbase.h
@@ -481,6 +485,11 @@ lib/libsoundserver_idl.la
 lib/libsoundserver_idl.so.0
 lib/libx11globalcomm.la
 lib/libx11globalcomm.so.0
+share/apps/LICENSES/ARTISTIC
+share/apps/LICENSES/BSD
+share/apps/LICENSES/GPL_V2
+share/apps/LICENSES/LGPL_V2
+share/apps/LICENSES/QPL_V1.0
 share/apps/kab/template.config
 share/apps/kab/template.kab
 share/apps/kdeui/pics/aboutkde.png
@@ -498,11 +507,19 @@ share/apps/ksgmltools/dtd/kde-prologue.entities
 share/apps/ksgmltools/dtd/kde-rdbhier2.elements
 share/apps/ksgmltools/dtd/kde-rdbpool.elements
 share/apps/ksgmltools/dtd/kde.dtd
+share/apps/ksgmltools/entities/artistic-license.docbook
+share/apps/ksgmltools/entities/artisticlicense-links.docbook
+share/apps/ksgmltools/entities/bsd-license.docbook
+share/apps/ksgmltools/entities/bsdlicense-links.docbook
 share/apps/ksgmltools/entities/fdl-notice.docbook
 share/apps/ksgmltools/entities/gpl-notice.docbook
 share/apps/ksgmltools/entities/help-menu.docbook
 share/apps/ksgmltools/entities/lgpl-notice.docbook
 share/apps/ksgmltools/entities/license-links.docbook
+share/apps/ksgmltools/entities/qpl-license.docbook
+share/apps/ksgmltools/entities/qpllicense-links.docbook
+share/apps/ksgmltools/entities/x11-license.docbook
+share/apps/ksgmltools/entities/x11license-links.docbook
 share/apps/ksgmltools/kde.dcl
 share/apps/ksgmltools/stylesheets/kde-anchor.dsl
 share/apps/ksgmltools/stylesheets/kde-faq.dsl
@@ -628,7 +645,9 @@ share/apps/kstyle/themes/kstep.themerc
 share/apps/kstyle/themes/marble.themerc
 share/apps/kstyle/themes/qtcde.themerc
 share/apps/kstyle/themes/qtmotif.themerc
+share/apps/kstyle/themes/qtmotifplus.themerc
 share/apps/kstyle/themes/qtplatinum.themerc
+share/apps/kstyle/themes/qtsgi.themerc
 share/apps/kstyle/themes/qtwindows.themerc
 share/apps/kstyle/themes/system.themerc
 share/apps/kstyle/themes/systemalt.themerc
@@ -642,6 +661,8 @@ share/config/kde-config
 share/config/kdebug.areas
 share/config/kdebugrc
 share/config/ui/ui_standards.rc
+share/doc/HTML/en/common/artistic-licence.html
+share/doc/HTML/en/common/bsd-licence.html
 share/doc/HTML/en/common/caution.png
 share/doc/HTML/en/common/fdl-licence
 share/doc/HTML/en/common/fdl-licence.html
@@ -656,18 +677,27 @@ share/doc/HTML/en/common/kde-default.css
 share/doc/HTML/en/common/lgpl-licence
 share/doc/HTML/en/common/lgpl-licence.html
 share/doc/HTML/en/common/lgpl-notice
+share/doc/HTML/en/common/logotp3-small.png
+share/doc/HTML/en/common/logotp3.png
 share/doc/HTML/en/common/mieterra-artistic-license
 share/doc/HTML/en/common/next.png
 share/doc/HTML/en/common/note.png
 share/doc/HTML/en/common/prev.png
+share/doc/HTML/en/common/qpl-licence.html
 share/doc/HTML/en/common/tip.png
 share/doc/HTML/en/common/toc-blank.png
 share/doc/HTML/en/common/toc-minus.png
 share/doc/HTML/en/common/toc-plus.png
 share/doc/HTML/en/common/up.png
 share/doc/HTML/en/common/warning.png
+share/doc/HTML/en/common/x11-licence.html
 share/doc/HTML/en/common/xml.dcl
-share/doc/HTML/en/kdelibs/kdebug/index.html
+share/doc/HTML/en/kdebug/.anchors
+share/doc/HTML/en/kdebug/how-to-use.html
+share/doc/HTML/en/kdebug/index.docbook
+share/doc/HTML/en/kdebug/index.html
+share/doc/HTML/en/kdebug/using-areas.html
+share/doc/HTML/en/kdebug/what-is-kdebug.html
 share/doc/HTML/en/kspell/.anchors
 share/doc/HTML/en/kspell/configuration-dialog-.html
 share/doc/HTML/en/kspell/contact-information.html
@@ -685,6 +715,7 @@ share/icons/hicolor/22x22/actions/2leftarrow.png
 share/icons/hicolor/22x22/actions/2rightarrow.png
 share/icons/hicolor/22x22/actions/add_point.png
 share/icons/hicolor/22x22/actions/airbrush.png
+share/icons/hicolor/22x22/actions/attach.png
 share/icons/hicolor/22x22/actions/back.png
 share/icons/hicolor/22x22/actions/blend.png
 share/icons/hicolor/22x22/actions/bottom.png
@@ -694,12 +725,14 @@ share/icons/hicolor/22x22/actions/configure.png
 share/icons/hicolor/22x22/actions/connect_creating.png
 share/icons/hicolor/22x22/actions/connect_established.png
 share/icons/hicolor/22x22/actions/connect_no.png
+share/icons/hicolor/22x22/actions/contents.png
 share/icons/hicolor/22x22/actions/contexthelp.png
 share/icons/hicolor/22x22/actions/contiguous.png
 share/icons/hicolor/22x22/actions/crop.png
 share/icons/hicolor/22x22/actions/down.png
 share/icons/hicolor/22x22/actions/editcopy.png
 share/icons/hicolor/22x22/actions/editcut.png
+share/icons/hicolor/22x22/actions/editdelete.png
 share/icons/hicolor/22x22/actions/editpaste.png
 share/icons/hicolor/22x22/actions/edittrash.png
 share/icons/hicolor/22x22/actions/elliptical.png
@@ -710,11 +743,14 @@ share/icons/hicolor/22x22/actions/fileopen.png
 share/icons/hicolor/22x22/actions/fileprint.png
 share/icons/hicolor/22x22/actions/filesave.png
 share/icons/hicolor/22x22/actions/fill.png
+share/icons/hicolor/22x22/actions/filter.png
 share/icons/hicolor/22x22/actions/find.png
 share/icons/hicolor/22x22/actions/finish.png
+share/icons/hicolor/22x22/actions/folder_new.png
 share/icons/hicolor/22x22/actions/forward.png
 share/icons/hicolor/22x22/actions/gohome.png
 share/icons/hicolor/22x22/actions/handdrawn.png
+share/icons/hicolor/22x22/actions/help.png
 share/icons/hicolor/22x22/actions/kde/0001.png
 share/icons/hicolor/22x22/actions/kde/0002.png
 share/icons/hicolor/22x22/actions/kde/0003.png
@@ -767,17 +803,29 @@ share/icons/hicolor/22x22/actions/kde/0049.png
 share/icons/hicolor/22x22/actions/kde/0050.png
 share/icons/hicolor/22x22/actions/lasso.png
 share/icons/hicolor/22x22/actions/leftjust.png
+share/icons/hicolor/22x22/actions/mail_forward.png
+share/icons/hicolor/22x22/actions/mail_get.png
+share/icons/hicolor/22x22/actions/mail_reply.png
+share/icons/hicolor/22x22/actions/mail_replyall.png
+share/icons/hicolor/22x22/actions/mail_send.png
 share/icons/hicolor/22x22/actions/move.png
 share/icons/hicolor/22x22/actions/next.png
 share/icons/hicolor/22x22/actions/openterm.png
 share/icons/hicolor/22x22/actions/paintbrush.png
 share/icons/hicolor/22x22/actions/pencil.png
+share/icons/hicolor/22x22/actions/player_eject.png
+share/icons/hicolor/22x22/actions/player_end.png
+share/icons/hicolor/22x22/actions/player_pause.png
+share/icons/hicolor/22x22/actions/player_start.png
+share/icons/hicolor/22x22/actions/player_stop.png
 share/icons/hicolor/22x22/actions/previous.png
+share/icons/hicolor/22x22/actions/queue.png
 share/icons/hicolor/22x22/actions/rectangular.png
 share/icons/hicolor/22x22/actions/redo.png
 share/icons/hicolor/22x22/actions/reload.png
 share/icons/hicolor/22x22/actions/rightjust.png
 share/icons/hicolor/22x22/actions/run.png
+share/icons/hicolor/22x22/actions/showmenu.png
 share/icons/hicolor/22x22/actions/smart_select.png
 share/icons/hicolor/22x22/actions/spellcheck.png
 share/icons/hicolor/22x22/actions/start.png
@@ -797,11 +845,18 @@ share/icons/hicolor/22x22/actions/viewmag+.png
 share/icons/hicolor/22x22/actions/viewmag-.png
 share/icons/hicolor/22x22/actions/viewmag.png
 share/icons/hicolor/22x22/actions/window_nofullscreen.png
+share/icons/hicolor/22x22/actions/wizard.png
+share/icons/hicolor/32x32/actions/1leftarrow.png
+share/icons/hicolor/32x32/actions/1rightarrow.png
+share/icons/hicolor/32x32/actions/2leftarrow.png
+share/icons/hicolor/32x32/actions/2rightarrow.png
+share/icons/hicolor/32x32/actions/attach.png
 share/icons/hicolor/32x32/actions/back.png
 share/icons/hicolor/32x32/actions/blend.png
 share/icons/hicolor/32x32/actions/bottom.png
 share/icons/hicolor/32x32/actions/centrejust.png
 share/icons/hicolor/32x32/actions/colors.png
+share/icons/hicolor/32x32/actions/configure.png
 share/icons/hicolor/32x32/actions/contents.png
 share/icons/hicolor/32x32/actions/contexthelp.png
 share/icons/hicolor/32x32/actions/down.png
@@ -817,8 +872,10 @@ share/icons/hicolor/32x32/actions/files.png
 share/icons/hicolor/32x32/actions/filesave.png
 share/icons/hicolor/32x32/actions/find.png
 share/icons/hicolor/32x32/actions/finish.png
+share/icons/hicolor/32x32/actions/folder_new.png
 share/icons/hicolor/32x32/actions/fonts.png
 share/icons/hicolor/32x32/actions/forward.png
+share/icons/hicolor/32x32/actions/gear.png
 share/icons/hicolor/32x32/actions/gohome.png
 share/icons/hicolor/32x32/actions/goto.png
 share/icons/hicolor/32x32/actions/help.png
@@ -873,11 +930,22 @@ share/icons/hicolor/32x32/actions/kde/0048.png
 share/icons/hicolor/32x32/actions/kde/0049.png
 share/icons/hicolor/32x32/actions/kde/0050.png
 share/icons/hicolor/32x32/actions/leftjust.png
+share/icons/hicolor/32x32/actions/mail_forward.png
+share/icons/hicolor/32x32/actions/mail_get.png
+share/icons/hicolor/32x32/actions/mail_reply.png
+share/icons/hicolor/32x32/actions/mail_replyall.png
+share/icons/hicolor/32x32/actions/mail_send.png
 share/icons/hicolor/32x32/actions/misc.png
 share/icons/hicolor/32x32/actions/mouse.png
 share/icons/hicolor/32x32/actions/next.png
 share/icons/hicolor/32x32/actions/openterm.png
+share/icons/hicolor/32x32/actions/player_eject.png
+share/icons/hicolor/32x32/actions/player_end.png
+share/icons/hicolor/32x32/actions/player_pause.png
+share/icons/hicolor/32x32/actions/player_start.png
+share/icons/hicolor/32x32/actions/player_stop.png
 share/icons/hicolor/32x32/actions/previous.png
+share/icons/hicolor/32x32/actions/queue.png
 share/icons/hicolor/32x32/actions/redo.png
 share/icons/hicolor/32x32/actions/reload.png
 share/icons/hicolor/32x32/actions/rightjust.png
@@ -900,6 +968,7 @@ share/icons/hicolor/32x32/actions/viewmag+.png
 share/icons/hicolor/32x32/actions/viewmag-.png
 share/icons/hicolor/32x32/actions/viewmag.png
 share/icons/hicolor/32x32/actions/window_nofullscreen.png
+share/icons/hicolor/32x32/actions/wizard.png
 share/icons/hicolor/32x32/filesystems/desktop.png
 share/icons/hicolor/32x32/filesystems/exec.png
 share/icons/hicolor/32x32/filesystems/file_locked.png
@@ -930,10 +999,13 @@ share/icons/hicolor/32x32/mimetypes/c_src.png
 share/icons/hicolor/32x32/mimetypes/chardevice.png
 share/icons/hicolor/32x32/mimetypes/core.png
 share/icons/hicolor/32x32/mimetypes/cpp_src.png
+share/icons/hicolor/32x32/mimetypes/deb.png
 share/icons/hicolor/32x32/mimetypes/document.png
 share/icons/hicolor/32x32/mimetypes/dvi.png
 share/icons/hicolor/32x32/mimetypes/f_src.png
-share/icons/hicolor/32x32/mimetypes/font.png
+share/icons/hicolor/32x32/mimetypes/font_bitmap.png
+share/icons/hicolor/32x32/mimetypes/font_truetype.png
+share/icons/hicolor/32x32/mimetypes/font_type1.png
 share/icons/hicolor/32x32/mimetypes/gf.png
 share/icons/hicolor/32x32/mimetypes/h_src.png
 share/icons/hicolor/32x32/mimetypes/html.png
@@ -950,6 +1022,7 @@ share/icons/hicolor/32x32/mimetypes/midi.png
 share/icons/hicolor/32x32/mimetypes/mime_empty.png
 share/icons/hicolor/32x32/mimetypes/misc.png
 share/icons/hicolor/32x32/mimetypes/moc_src.png
+share/icons/hicolor/32x32/mimetypes/netscape_doc.png
 share/icons/hicolor/32x32/mimetypes/o_src.png
 share/icons/hicolor/32x32/mimetypes/p_src.png
 share/icons/hicolor/32x32/mimetypes/pdf.png
@@ -961,6 +1034,7 @@ share/icons/hicolor/32x32/mimetypes/resource.png
 share/icons/hicolor/32x32/mimetypes/rpm.png
 share/icons/hicolor/32x32/mimetypes/s_src.png
 share/icons/hicolor/32x32/mimetypes/sound.png
+share/icons/hicolor/32x32/mimetypes/tar.png
 share/icons/hicolor/32x32/mimetypes/tex.png
 share/icons/hicolor/32x32/mimetypes/tgz.png
 share/icons/hicolor/32x32/mimetypes/txt.png
@@ -969,6 +1043,7 @@ share/icons/hicolor/32x32/mimetypes/vcalendar.png
 share/icons/hicolor/32x32/mimetypes/vcard.png
 share/icons/hicolor/32x32/mimetypes/video.png
 share/icons/hicolor/32x32/mimetypes/y_src.png
+share/icons/hicolor/48x48/actions/gear.png
 share/icons/hicolor/48x48/actions/kde/0001.png
 share/icons/hicolor/48x48/actions/kde/0002.png
 share/icons/hicolor/48x48/actions/kde/0003.png
@@ -1048,10 +1123,13 @@ share/icons/hicolor/48x48/mimetypes/c_src.png
 share/icons/hicolor/48x48/mimetypes/chardevice.png
 share/icons/hicolor/48x48/mimetypes/core.png
 share/icons/hicolor/48x48/mimetypes/cpp_src.png
+share/icons/hicolor/48x48/mimetypes/deb.png
 share/icons/hicolor/48x48/mimetypes/document.png
 share/icons/hicolor/48x48/mimetypes/dvi.png
 share/icons/hicolor/48x48/mimetypes/f_src.png
-share/icons/hicolor/48x48/mimetypes/font.png
+share/icons/hicolor/48x48/mimetypes/font_bitmap.png
+share/icons/hicolor/48x48/mimetypes/font_truetype.png
+share/icons/hicolor/48x48/mimetypes/font_type1.png
 share/icons/hicolor/48x48/mimetypes/gf.png
 share/icons/hicolor/48x48/mimetypes/h_src.png
 share/icons/hicolor/48x48/mimetypes/html.png
@@ -1068,6 +1146,7 @@ share/icons/hicolor/48x48/mimetypes/midi.png
 share/icons/hicolor/48x48/mimetypes/mime_empty.png
 share/icons/hicolor/48x48/mimetypes/misc.png
 share/icons/hicolor/48x48/mimetypes/moc_src.png
+share/icons/hicolor/48x48/mimetypes/netscape_doc.png
 share/icons/hicolor/48x48/mimetypes/o_src.png
 share/icons/hicolor/48x48/mimetypes/p_src.png
 share/icons/hicolor/48x48/mimetypes/pdf.png
@@ -1096,10 +1175,12 @@ share/icons/locolor/16x16/actions/2leftarrow.png
 share/icons/locolor/16x16/actions/2rightarrow.png
 share/icons/locolor/16x16/actions/add_point.png
 share/icons/locolor/16x16/actions/airbrush.png
+share/icons/locolor/16x16/actions/attach.png
 share/icons/locolor/16x16/actions/back.png
 share/icons/locolor/16x16/actions/blend.png
 share/icons/locolor/16x16/actions/bookmark.png
 share/icons/locolor/16x16/actions/bookmark_add.png
+share/icons/locolor/16x16/actions/bookmark_toolbar.png
 share/icons/locolor/16x16/actions/bottom.png
 share/icons/locolor/16x16/actions/circle_select.png
 share/icons/locolor/16x16/actions/colorpicker.png
@@ -1116,6 +1197,7 @@ share/icons/locolor/16x16/actions/editpaste.png
 share/icons/locolor/16x16/actions/editshred.png
 share/icons/locolor/16x16/actions/edittrash.png
 share/icons/locolor/16x16/actions/elliptical.png
+share/icons/locolor/16x16/actions/encrypt.png
 share/icons/locolor/16x16/actions/eraser.png
 share/icons/locolor/16x16/actions/exec.png
 share/icons/locolor/16x16/actions/exit.png
@@ -1130,7 +1212,9 @@ share/icons/locolor/16x16/actions/fill.png
 share/icons/locolor/16x16/actions/find.png
 share/icons/locolor/16x16/actions/finish.png
 share/icons/locolor/16x16/actions/flag.png
+share/icons/locolor/16x16/actions/folder_new.png
 share/icons/locolor/16x16/actions/forward.png
+share/icons/locolor/16x16/actions/gear.png
 share/icons/locolor/16x16/actions/gohome.png
 share/icons/locolor/16x16/actions/goto.png
 share/icons/locolor/16x16/actions/handdrawn.png
@@ -1139,13 +1223,24 @@ share/icons/locolor/16x16/actions/idea.png
 share/icons/locolor/16x16/actions/key.png
 share/icons/locolor/16x16/actions/lasso.png
 share/icons/locolor/16x16/actions/lock.png
+share/icons/locolor/16x16/actions/mail_forward.png
+share/icons/locolor/16x16/actions/mail_get.png
+share/icons/locolor/16x16/actions/mail_reply.png
+share/icons/locolor/16x16/actions/mail_replyall.png
+share/icons/locolor/16x16/actions/mail_send.png
 share/icons/locolor/16x16/actions/misc.png
 share/icons/locolor/16x16/actions/move.png
 share/icons/locolor/16x16/actions/next.png
 share/icons/locolor/16x16/actions/openterm.png
 share/icons/locolor/16x16/actions/paintbrush.png
 share/icons/locolor/16x16/actions/pencil.png
+share/icons/locolor/16x16/actions/player_eject.png
+share/icons/locolor/16x16/actions/player_end.png
+share/icons/locolor/16x16/actions/player_pause.png
+share/icons/locolor/16x16/actions/player_start.png
+share/icons/locolor/16x16/actions/player_stop.png
 share/icons/locolor/16x16/actions/previous.png
+share/icons/locolor/16x16/actions/queue.png
 share/icons/locolor/16x16/actions/quickprint.png
 share/icons/locolor/16x16/actions/rectangular.png
 share/icons/locolor/16x16/actions/redo.png
@@ -1177,6 +1272,7 @@ share/icons/locolor/16x16/actions/viewmag.png
 share/icons/locolor/16x16/actions/window_fullscreen.png
 share/icons/locolor/16x16/actions/window_new.png
 share/icons/locolor/16x16/actions/window_nofullscreen.png
+share/icons/locolor/16x16/actions/wizard.png
 share/icons/locolor/16x16/filesystems/desktop.png
 share/icons/locolor/16x16/filesystems/exec.png
 share/icons/locolor/16x16/filesystems/file_locked.png
@@ -1241,6 +1337,7 @@ share/icons/locolor/16x16/mimetypes/txt.png
 share/icons/locolor/16x16/mimetypes/unknown.png
 share/icons/locolor/16x16/mimetypes/video.png
 share/icons/locolor/16x16/mimetypes/y_src.png
+share/icons/locolor/32x32/actions/gear.png
 share/icons/locolor/32x32/actions/key.png
 share/icons/locolor/32x32/actions/misc.png
 share/icons/locolor/32x32/filesystems/desktop.png
@@ -1269,6 +1366,7 @@ share/icons/locolor/32x32/mimetypes/blockdevice.png
 share/icons/locolor/32x32/mimetypes/c_src.png
 share/icons/locolor/32x32/mimetypes/chardevice.png
 share/icons/locolor/32x32/mimetypes/core.png
+share/icons/locolor/32x32/mimetypes/cpp_src.png
 share/icons/locolor/32x32/mimetypes/document.png
 share/icons/locolor/32x32/mimetypes/dvi.png
 share/icons/locolor/32x32/mimetypes/f_src.png
@@ -1295,10 +1393,13 @@ share/icons/locolor/32x32/mimetypes/postscript.png
 share/icons/locolor/32x32/mimetypes/readme.png
 share/icons/locolor/32x32/mimetypes/recycled.png
 share/icons/locolor/32x32/mimetypes/resource.png
+share/icons/locolor/32x32/mimetypes/rpm.png
 share/icons/locolor/32x32/mimetypes/s_src.png
 share/icons/locolor/32x32/mimetypes/sound.png
+share/icons/locolor/32x32/mimetypes/tar.png
 share/icons/locolor/32x32/mimetypes/tex.png
 share/icons/locolor/32x32/mimetypes/tgz.png
+share/icons/locolor/32x32/mimetypes/txt.png
 share/icons/locolor/32x32/mimetypes/unknown.png
 share/icons/locolor/32x32/mimetypes/video.png
 share/icons/locolor/32x32/mimetypes/y_src.png
@@ -1423,6 +1524,7 @@ share/services/jpeg.kimgio
 share/services/kcookiejar.desktop
 share/services/khtml.desktop
 share/services/kio_uiserver.desktop
+share/services/kmailservice.protocol
 share/services/knotify.desktop
 share/services/krl.kimgio
 share/services/png.kimgio
@@ -1440,14 +1542,9 @@ share/servicetypes/krwp.desktop
 share/servicetypes/ktexteditor.desktop
 share/servicetypes/kurifilterplugin.desktop
 @dirrm share/doc/HTML/en/kspell
-@dirrm share/doc/HTML/en/kdelibs/kdebug
-@dirrm share/doc/HTML/en/kdelibs
-@dirrm share/doc/HTML/en/common
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
+@dirrm share/doc/HTML/en/kdebug
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kstyle/pixmaps
-@dirrm share/apps/kstyle
 @dirrm share/apps/ksgmltools/stylesheets
 @dirrm share/apps/ksgmltools/entities
 @dirrm share/apps/ksgmltools/dtd
@@ -1456,9 +1553,9 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/khtml/css
 @dirrm share/apps/khtml
 @dirrm share/apps/kdeui/pics
-@dirrm share/apps/kdeui
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
+@dirrm share/apps/LICENSES
 @dirrm lib/Arts
 @dirrm include/libkmid
 @dirrm include/kparts

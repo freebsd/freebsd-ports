@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	20000724A
+PORTVERSION=	20000829A
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -14,8 +14,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2 \
-		ksearch.3:${PORTSDIR}/net/kdenetwork2
+LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 RUN_DEPENDS=	konqueror:${PORTSDIR}/x11/kdebase2 \
 		kjumpingcube:${PORTSDIR}/games/kdegames2
 

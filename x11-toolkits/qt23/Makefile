@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	20000724A
+PORTVERSION=	20000829A
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	will
+MASTER_SITES=	http://www.physics.purdue.edu/~will/
 
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-copy
 USE_MESA=	yes
 USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
@@ -27,7 +25,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
-MAKE_ENV=	QTDIR=${WRKSRC}
+MAKE_ENV=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 
 CONFIG=		${WRKSRC}/configs/freebsd-g++-shared
 
@@ -46,17 +44,20 @@ pre-fetch:
 	@${ECHO} "that installation, deinstall it and then install this port."
 	@${ECHO} "Note that this port contains beta-quality source code and"
 	@${ECHO} "must be used only wherever absolutely needed, such as for"
-	@${ECHO} "KDE2 snapshot 20000724A and later."
+	@${ECHO} "KDE2 snapshot 20000829A and later."
 	@${FALSE}
 .endif
 
 pre-configure:
-	${PERL} -pi -e "s,gcc,${CC},g" ${CONFIG}
-	${PERL} -pi -e "s,g\+\+,${CXX},g" ${CONFIG}
-	${PERL} -pi -e "s,/usr/X11R6,${X11BASE},g" ${CONFIG}
-	${PERL} -pi -e "s,-pipe -O2,${CXXFLAGS},g" ${CONFIG}
+	@${CP} ${CONFIG} ${CONFIG}.new
+	${SED} -e "s,gcc,${CC},g" ${CONFIG}.new | ${SED} -e "s,g\+\+,${CXX},g" | \
+		${SED} -e "s,/usr/X11R6,${X11BASE},g" | ${SED} -e "s,-pipe -O2,${CXXFLAGS},g" > ${CONFIG}
 	${PERL} -pi -e "s@VER_MAJ = 2@VER_MAJ = 4@g" ${WRKSRC}/src/Makefile.in
 	${PERL} -pi -e "s@TARGET	= qt@TARGET = qt2@g" ${WRKSRC}/src/Makefile.in
+	${PERL} -pi -e "s@TARGET  = moc@TARGET = moc2@g" ${WRKSRC}/src/moc/Makefile.in
+	${PERL} -pi -e "s@cp src/moc/moc bin/moc@cp src/moc/moc  bin/moc2@g" ${WRKSRC}/Makefile
+	${PERL} -pi -e "s@symlinks  moc src-mt src tools tutorial examples@symlinks moc src-mt src tools@g" ${WRKSRC}/Makefile
+	${PERL} -pi -e "s@-L../lib@-L${WRKSRC}/lib@g" ${WRKSRC}/tools/designer/uic/Makefile.in
 
 post-configure:
 	@(cd ${WRKSRC} ; ${GMAKE} symlinks)
@@ -66,21 +67,19 @@ pre-install:
 
 do-install:
 	${MKDIR} ${PREFIX}/include/qt2
-	(cd ${WRKSRC} ; \
-	${INSTALL_PROGRAM} bin/mergetr ${PREFIX}/bin ; \
-	${INSTALL_PROGRAM} bin/moc ${PREFIX}/bin/moc2 ; \
-	${INSTALL_PROGRAM} bin/msg2qm ${PREFIX}/bin ; \
-	${INSTALL_SCRIPT} bin/findtr ${PREFIX}/bin ; \
-	${INSTALL_SCRIPT} bin/qt20fix ${PREFIX}/bin ; \
-	${INSTALL_SCRIPT} bin/qtrename140 ${PREFIX}/bin ; \
-	${INSTALL_DATA} include/*.h ${PREFIX}/include/qt2 ; \
-	${INSTALL_DATA} lib/libqgl.a ${PREFIX}/lib ; \
-	${INSTALL_DATA} lib/libqxt.a ${PREFIX}/lib ; \
-	${INSTALL_DATA} lib/libqt2.so.4 ${PREFIX}/lib )
-	${LN} -sf libqt2.so.4 ${PREFIX}/lib/libqt2.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.for BIN in designer moc2 uic
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${BIN} ${PREFIX}/bin
+.endfor
+.for SCRIPT in findtr qt20fix qtrename140
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${SCRIPT} ${PREFIX}/bin
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qt2
+.for LIB in qt2 qutil
+	${INSTALL_DATA} ${WRKSRC}/lib/lib${LIB}* ${PREFIX}/lib
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/qt2/html
+	${MKDIR} ${PREFIX}/share/doc/qt2/html/designer/figures
+	${MKDIR} ${PREFIX}/share/doc/qt2/html/designer/stylesheet-images
 	(cd ${WRKSRC} ; \
 	${INSTALL_DATA} ANNOUNCE ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} FAQ ${PREFIX}/share/doc/qt2 ; \
@@ -88,7 +87,10 @@ do-install:
 	${INSTALL_DATA} PORTING ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README.QT ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} doc/html/* ${PREFIX}/share/doc/qt2/html ; \
+	${INSTALL_DATA} doc/html/*.html doc/html/*.png doc/html/*.jpg ${PREFIX}/share/doc/qt2/html ; \
+	${INSTALL_DATA} doc/html/designer/*.html ${PREFIX}/share/doc/qt2/html/designer ; \
+	${INSTALL_DATA} doc/html/designer/stylesheet-images/* ${PREFIX}/share/doc/qt2/html/designer/stylesheet-images ; \
+	${INSTALL_DATA} doc/html/designer/figures/* ${PREFIX}/share/doc/qt2/html/designer/figures ; \
 	${INSTALL_MAN} doc/man/man3/q* ${PREFIX}/man/man3 )
 .endif
 

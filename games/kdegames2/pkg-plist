@@ -155,6 +155,7 @@ share/apps/kmahjongg/pics/stax.layout
 share/apps/kmahjongg/pics/test.layout
 share/apps/kmahjongg/pics/test2.layout
 share/apps/kmahjongg/pics/tower.layout
+share/apps/kmahjongg/pics/traditional.tileset
 share/apps/kmahjongg/pics/triangle.layout
 share/apps/kmahjongg/pics/wood.bgnd
 share/apps/kmahjongg/toolbar/newnum.xpm
@@ -172,7 +173,6 @@ share/apps/konquest/pics/planet7.xpm
 share/apps/konquest/pics/planet8.xpm
 share/apps/konquest/pics/planet9.xpm
 share/apps/konquest/pics/ruler.xpm
-share/apps/kpat/kpatui.rc
 share/apps/kpat/pics/1.png
 share/apps/kpat/pics/10.png
 share/apps/kpat/pics/11.png
@@ -412,6 +412,15 @@ share/apps/ksnake/pics/samy.png
 share/apps/ksnake/pics/snake1.png
 share/apps/ksnake/pics/snake2.png
 share/apps/ksnake/pics/up.png
+share/apps/kspaceduel/icons/hicolor/22x22/actions/spnewgame.png
+share/apps/kspaceduel/icons/hicolor/22x22/actions/spnewround.png
+share/apps/kspaceduel/icons/hicolor/22x22/actions/sppausegame.png
+share/apps/kspaceduel/icons/hicolor/32x32/actions/spnewgame.png
+share/apps/kspaceduel/icons/hicolor/32x32/actions/spnewround.png
+share/apps/kspaceduel/icons/hicolor/32x32/actions/sppausegame.png
+share/apps/kspaceduel/icons/locolor/16x16/actions/spnewgame.png
+share/apps/kspaceduel/icons/locolor/16x16/actions/spnewround.png
+share/apps/kspaceduel/icons/locolor/16x16/actions/sppausegame.png
 share/apps/kspaceduel/kspaceduelui.rc
 share/apps/kspaceduel/sprites/backgr.png
 share/apps/kspaceduel/sprites/explosion/explos00.pbm
@@ -955,13 +964,21 @@ share/doc/HTML/en/kmahjongg/index.docbook
 share/doc/HTML/en/kmahjongg/index.html
 share/doc/HTML/en/kmahjongg/introduction.html
 share/doc/HTML/en/kmines/.anchors
-share/doc/HTML/en/kmines/authors.html
-share/doc/HTML/en/kmines/epilogue.html
+share/doc/HTML/en/kmines/command.html
+share/doc/HTML/en/kmines/compilation.html
+share/doc/HTML/en/kmines/credits.html
+share/doc/HTML/en/kmines/help-menu.html
 share/doc/HTML/en/kmines/howtoplay.html
 share/doc/HTML/en/kmines/index.cvlog
 share/doc/HTML/en/kmines/index.docbook
 share/doc/HTML/en/kmines/index.html
+share/doc/HTML/en/kmines/installation.html
 share/doc/HTML/en/kmines/introduction.html
+share/doc/HTML/en/kmines/keys.html
+share/doc/HTML/en/kmines/kmines1.png
+share/doc/HTML/en/kmines/kmines2.png
+share/doc/HTML/en/kmines/prefs.html
+share/doc/HTML/en/kmines/settings-menu.html
 share/doc/HTML/en/konquest/.anchors
 share/doc/HTML/en/konquest/epilogue.html
 share/doc/HTML/en/konquest/index.cvlog
@@ -970,38 +987,46 @@ share/doc/HTML/en/konquest/index.html
 share/doc/HTML/en/konquest/notes.html
 share/doc/HTML/en/konquest/playingthegame.html
 share/doc/HTML/en/kpat/.anchors
-share/doc/HTML/en/kpat/authors.html
 share/doc/HTML/en/kpat/calculation.html
-share/doc/HTML/en/kpat/copyright.html
-share/doc/HTML/en/kpat/epilogue.html
+share/doc/HTML/en/kpat/compilation.html
+share/doc/HTML/en/kpat/credits.html
+share/doc/HTML/en/kpat/edit-menu.html
 share/doc/HTML/en/kpat/freecell.html
 share/doc/HTML/en/kpat/grandfather.html
+share/doc/HTML/en/kpat/help.html
 share/doc/HTML/en/kpat/index.cvlog
 share/doc/HTML/en/kpat/index.docbook
 share/doc/HTML/en/kpat/index.html
+share/doc/HTML/en/kpat/installation.html
+share/doc/HTML/en/kpat/introduction.html
+share/doc/HTML/en/kpat/menus.html
 share/doc/HTML/en/kpat/microsolitaire.html
 share/doc/HTML/en/kpat/mod3.html
 share/doc/HTML/en/kpat/napoleon-s-tomb.html
-share/doc/HTML/en/kpat/rulesofthegame.html
+share/doc/HTML/en/kpat/rules-of-the-game.html
 share/doc/HTML/en/kpat/ten.html
 share/doc/HTML/en/kpat/the-idiot.html
+share/doc/HTML/en/kpat/using-kpat.html
 share/doc/HTML/en/kpoker/.anchors
-share/doc/HTML/en/kpoker/bet.html
-share/doc/HTML/en/kpoker/copyright.html
-share/doc/HTML/en/kpoker/epilogue.html
-share/doc/HTML/en/kpoker/exchange.html
-share/doc/HTML/en/kpoker/general-options.html
+share/doc/HTML/en/kpoker/command.html
+share/doc/HTML/en/kpoker/compilation.html
+share/doc/HTML/en/kpoker/credits.html
 share/doc/HTML/en/kpoker/hands.html
+share/doc/HTML/en/kpoker/help-menu.html
 share/doc/HTML/en/kpoker/index.cvlog
 share/doc/HTML/en/kpoker/index.docbook
 share/doc/HTML/en/kpoker/index.html
+share/doc/HTML/en/kpoker/installation.html
 share/doc/HTML/en/kpoker/introduction.html
+share/doc/HTML/en/kpoker/keys.html
+share/doc/HTML/en/kpoker/kpoker1.png
+share/doc/HTML/en/kpoker/kpoker2.png
+share/doc/HTML/en/kpoker/new-game.html
 share/doc/HTML/en/kpoker/one-player-game.html
-share/doc/HTML/en/kpoker/options.html
-share/doc/HTML/en/kpoker/raise.html
+share/doc/HTML/en/kpoker/options-menu.html
 share/doc/HTML/en/kpoker/scoring.html
-share/doc/HTML/en/kpoker/see.html
 share/doc/HTML/en/kpoker/two-player-game.html
+share/doc/HTML/en/kpoker/two-player-play.html
 share/doc/HTML/en/kpoker/where-do-i-get-the-latest-version-of-kpoker.html
 share/doc/HTML/en/kreversi/.anchors
 share/doc/HTML/en/kreversi/a-minute-to-learn.html
@@ -1069,23 +1094,29 @@ share/doc/HTML/en/ksnake/introduction.html
 share/doc/HTML/en/ksnake/rulesofthegame.html
 share/doc/HTML/en/ksnake/scoring.html
 share/doc/HTML/en/ksokoban/.anchors
-share/doc/HTML/en/ksokoban/epilogue.html
+share/doc/HTML/en/ksokoban/credits.html
 share/doc/HTML/en/ksokoban/howtoplay.html
-share/doc/HTML/en/ksokoban/index.cvlog
 share/doc/HTML/en/ksokoban/index.docbook
 share/doc/HTML/en/ksokoban/index.html
 share/doc/HTML/en/ksokoban/introduction.html
-share/doc/HTML/en/ksokoban/level-authors.html
-share/doc/HTML/en/ksokoban/levels.html
-share/doc/HTML/en/ksokoban/license.html
+share/doc/HTML/en/ksokoban/loadingexternallevels.html
 share/doc/HTML/en/kspaceduel/.anchors
 share/doc/HTML/en/kspaceduel/ai.html
+share/doc/HTML/en/kspaceduel/command.html
+share/doc/HTML/en/kspaceduel/compilation.html
 share/doc/HTML/en/kspaceduel/credits.html
+share/doc/HTML/en/kspaceduel/help-menu.html
 share/doc/HTML/en/kspaceduel/index.cvlog
 share/doc/HTML/en/kspaceduel/index.docbook
 share/doc/HTML/en/kspaceduel/index.html
+share/doc/HTML/en/kspaceduel/installation.html
 share/doc/HTML/en/kspaceduel/introduction.html
+share/doc/HTML/en/kspaceduel/keys.html
+share/doc/HTML/en/kspaceduel/kspaceduel1.png
+share/doc/HTML/en/kspaceduel/kspaceduel2.png
+share/doc/HTML/en/kspaceduel/kspaceduel3.png
 share/doc/HTML/en/kspaceduel/options.html
+share/doc/HTML/en/kspaceduel/settings-menu.html
 share/doc/HTML/en/kspaceduel/thegame.html
 share/doc/HTML/en/ktron/.anchors
 share/doc/HTML/en/ktron/compilation.html
@@ -1119,19 +1150,19 @@ share/doc/HTML/en/ktuberling/technical-reference.html
 share/doc/HTML/en/ktuberling/the-menu-items.html
 share/doc/HTML/en/ktuberling/the-tool-bar.html
 share/doc/HTML/en/lskat/.anchors
+share/doc/HTML/en/lskat/compilation.html
 share/doc/HTML/en/lskat/credits.html
+share/doc/HTML/en/lskat/help.html
 share/doc/HTML/en/lskat/index.docbook
 share/doc/HTML/en/lskat/index.html
+share/doc/HTML/en/lskat/installation.html
 share/doc/HTML/en/lskat/menus.html
+share/doc/HTML/en/lskat/option-menu.html
 share/doc/HTML/en/lskat/overview.html
 share/doc/HTML/en/lskat/remote-connections.html
+share/doc/HTML/en/lskat/requirements.html
 share/doc/HTML/en/lskat/rules.html
-share/icons/hicolor/22x22/actions/spnewgame.png
-share/icons/hicolor/22x22/actions/spnewround.png
-share/icons/hicolor/22x22/actions/sppausegame.png
-share/icons/hicolor/32x32/actions/spnewgame.png
-share/icons/hicolor/32x32/actions/spnewround.png
-share/icons/hicolor/32x32/actions/sppausegame.png
+share/doc/HTML/en/lskat/view-menu.html
 share/icons/hicolor/32x32/apps/kabalone.png
 share/icons/hicolor/32x32/apps/kblackbox.png
 share/icons/hicolor/32x32/apps/kmahjongg.png
@@ -1162,9 +1193,6 @@ share/icons/hicolor/48x48/apps/ksmiletris.png
 share/icons/hicolor/48x48/apps/ksnake.png
 share/icons/hicolor/48x48/apps/ksokoban.png
 share/icons/hicolor/48x48/apps/lskat.png
-share/icons/locolor/16x16/actions/spnewgame.png
-share/icons/locolor/16x16/actions/spnewround.png
-share/icons/locolor/16x16/actions/sppausegame.png
 share/icons/locolor/16x16/apps/kabalone.png
 share/icons/locolor/16x16/apps/kblackbox.png
 share/icons/locolor/16x16/apps/kjumpingcube.png
@@ -1224,12 +1252,9 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/kabalone
 @dirrm share/apps/lskat/grafix
-@dirrm share/apps/lskat
 @dirrm share/apps/ktuberling/sounds/en
-@dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling/pics
 @dirrm share/apps/ktuberling/museum
-@dirrm share/apps/ktuberling
 @dirrm share/apps/ktron
 @dirrm share/apps/kspaceduel/sprites/sun
 @dirrm share/apps/kspaceduel/sprites/ship2
@@ -1238,6 +1263,15 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/kspaceduel/sprites/playerinfo
 @dirrm share/apps/kspaceduel/sprites/explosion
 @dirrm share/apps/kspaceduel/sprites
+@dirrm share/apps/kspaceduel/icons/locolor/16x16/actions
+@dirrm share/apps/kspaceduel/icons/locolor/16x16
+@dirrm share/apps/kspaceduel/icons/locolor
+@dirrm share/apps/kspaceduel/icons/hicolor/32x32/actions
+@dirrm share/apps/kspaceduel/icons/hicolor/32x32
+@dirrm share/apps/kspaceduel/icons/hicolor/22x22/actions
+@dirrm share/apps/kspaceduel/icons/hicolor/22x22
+@dirrm share/apps/kspaceduel/icons/hicolor
+@dirrm share/apps/kspaceduel/icons
 @dirrm share/apps/kspaceduel
 @dirrm share/apps/ksnake/pics
 @dirrm share/apps/ksnake/levels
@@ -1245,28 +1279,21 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/ksnake
 @dirrm share/apps/ksmiletris/sounds
 @dirrm share/apps/ksmiletris/data
-@dirrm share/apps/ksmiletris
 @dirrm share/apps/ksirtet
 @dirrm share/apps/kshisen
 @dirrm share/apps/ksame
 @dirrm share/apps/kreversi/sounds
 @dirrm share/apps/kreversi/pics/background
 @dirrm share/apps/kreversi/pics
-@dirrm share/apps/kreversi
 @dirrm share/apps/kpoker/sounds
 @dirrm share/apps/kpoker/pics
-@dirrm share/apps/kpoker
 @dirrm share/apps/kpat/pics
-@dirrm share/apps/kpat
 @dirrm share/apps/konquest/pics
-@dirrm share/apps/konquest
 @dirrm share/apps/kmines
 @dirrm share/apps/kmahjongg/toolbar
 @dirrm share/apps/kmahjongg/pics
-@dirrm share/apps/kmahjongg
 @dirrm share/apps/kfouleggs
 @dirrm share/apps/kblackbox/pics
-@dirrm share/apps/kblackbox
 @dirrm share/apps/katomic/pics
 @dirrm share/apps/katomic/levels
 @dirrm share/apps/katomic

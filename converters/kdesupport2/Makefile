@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	kdesupport
-PORTVERSION=	20000724A
+PORTVERSION=	20000829A
 CATEGORIES=	converters kde
-MASTER_SITES=	$(MASTER_SITE_LOCAL)
-MASTER_SITE_SUBDIR=	will
+MASTER_SITES=	http://www.physics.purdue.edu/~will/
 
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
 
-WRKSRC=		${WRKDIR}/kdesupport
 MOC=		${X11BASE}/bin/moc2
 SOMAJOR=	8
 SOMINOR=	0
@@ -37,7 +35,6 @@ USE_GMAKE=	yes
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 
 pre-configure:
-	${PERL} -pi -e "s@version-info 2:0:0@version-info ${SOMAJOR}:${SOMINOR}@g" ${WRKSRC}/QwSpriteField/Makefile.in
 	${PERL} -pi -e "s@TOPSUBDIRS libaps@TOPSUBDIRS@g" ${WRKSRC}/configure
 	${PERL} -pi -e "s@odbc libaps@odbc@g" ${WRKSRC}/configure
 

@@ -18,6 +18,7 @@ LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
 		kdecore.4:${PORTSDIR}/x11/kdelibs2 \
 		QwSpriteField.8:${PORTSDIR}/converters/kdesupport2
 
+BROKEN=		"Does not use current snapshot"
 WRKSRC=		${WRKDIR}/kdenetwork
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes

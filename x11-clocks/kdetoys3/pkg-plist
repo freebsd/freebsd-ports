@@ -173,7 +173,174 @@ share/apps/amor/ghost/ghost_z3.xpm
 share/apps/amor/ghost/ghost_z4.xpm
 share/apps/amor/ghost/ghost_z5.xpm
 share/apps/amor/ghostrc
+share/apps/amor/neko/claw1.xpm
+share/apps/amor/neko/claw2.xpm
+share/apps/amor/neko/jump1.xpm
+share/apps/amor/neko/jump2.xpm
+share/apps/amor/neko/jump3.xpm
+share/apps/amor/neko/jump4.xpm
+share/apps/amor/neko/jumpl1.xpm
+share/apps/amor/neko/jumpl2.xpm
+share/apps/amor/neko/jumpl3.xpm
+share/apps/amor/neko/jumpl4.xpm
+share/apps/amor/neko/lick.xpm
+share/apps/amor/neko/lick2.xpm
+share/apps/amor/neko/run1.xpm
+share/apps/amor/neko/run2.xpm
+share/apps/amor/neko/run3.xpm
+share/apps/amor/neko/run4.xpm
+share/apps/amor/neko/scratch1.xpm
+share/apps/amor/neko/scratch2.xpm
+share/apps/amor/neko/scratch3.xpm
+share/apps/amor/neko/scratch4.xpm
+share/apps/amor/neko/sit.xpm
+share/apps/amor/neko/sitleft.xpm
+share/apps/amor/neko/sleep1.xpm
+share/apps/amor/neko/sleep2.xpm
+share/apps/amor/neko/surprise.xpm
+share/apps/amor/neko/tail.xpm
+share/apps/amor/neko/yawn.xpm
+share/apps/amor/nekorc
+share/apps/amor/pingu/bash_l1.xpm
+share/apps/amor/pingu/bash_l10.xpm
+share/apps/amor/pingu/bash_l11.xpm
+share/apps/amor/pingu/bash_l12.xpm
+share/apps/amor/pingu/bash_l2.xpm
+share/apps/amor/pingu/bash_l3.xpm
+share/apps/amor/pingu/bash_l4.xpm
+share/apps/amor/pingu/bash_l5.xpm
+share/apps/amor/pingu/bash_l6.xpm
+share/apps/amor/pingu/bash_l7.xpm
+share/apps/amor/pingu/bash_l8.xpm
+share/apps/amor/pingu/bash_l9.xpm
+share/apps/amor/pingu/bash_r1.xpm
+share/apps/amor/pingu/bash_r10.xpm
+share/apps/amor/pingu/bash_r11.xpm
+share/apps/amor/pingu/bash_r12.xpm
+share/apps/amor/pingu/bash_r2.xpm
+share/apps/amor/pingu/bash_r3.xpm
+share/apps/amor/pingu/bash_r4.xpm
+share/apps/amor/pingu/bash_r5.xpm
+share/apps/amor/pingu/bash_r6.xpm
+share/apps/amor/pingu/bash_r7.xpm
+share/apps/amor/pingu/bash_r8.xpm
+share/apps/amor/pingu/bash_r9.xpm
+share/apps/amor/pingu/blocker1.xpm
+share/apps/amor/pingu/blocker2.xpm
+share/apps/amor/pingu/blocker3.xpm
+share/apps/amor/pingu/blocker4.xpm
+share/apps/amor/pingu/blocker5.xpm
+share/apps/amor/pingu/blocker6.xpm
+share/apps/amor/pingu/bomber1.xpm
+share/apps/amor/pingu/bomber10.xpm
+share/apps/amor/pingu/bomber11.xpm
+share/apps/amor/pingu/bomber12.xpm
+share/apps/amor/pingu/bomber13.xpm
+share/apps/amor/pingu/bomber14.xpm
+share/apps/amor/pingu/bomber15.xpm
+share/apps/amor/pingu/bomber16.xpm
+share/apps/amor/pingu/bomber2.xpm
+share/apps/amor/pingu/bomber3.xpm
+share/apps/amor/pingu/bomber4.xpm
+share/apps/amor/pingu/bomber5.xpm
+share/apps/amor/pingu/bomber6.xpm
+share/apps/amor/pingu/bomber7.xpm
+share/apps/amor/pingu/bomber8.xpm
+share/apps/amor/pingu/bomber9.xpm
+share/apps/amor/pingu/digger1.xpm
+share/apps/amor/pingu/digger10.xpm
+share/apps/amor/pingu/digger11.xpm
+share/apps/amor/pingu/digger12.xpm
+share/apps/amor/pingu/digger13.xpm
+share/apps/amor/pingu/digger14.xpm
+share/apps/amor/pingu/digger2.xpm
+share/apps/amor/pingu/digger3.xpm
+share/apps/amor/pingu/digger4.xpm
+share/apps/amor/pingu/digger5.xpm
+share/apps/amor/pingu/digger6.xpm
+share/apps/amor/pingu/digger7.xpm
+share/apps/amor/pingu/digger8.xpm
+share/apps/amor/pingu/digger9.xpm
+share/apps/amor/pingu/faller1.xpm
+share/apps/amor/pingu/faller2.xpm
+share/apps/amor/pingu/faller3.xpm
+share/apps/amor/pingu/faller4.xpm
+share/apps/amor/pingu/faller5.xpm
+share/apps/amor/pingu/faller6.xpm
+share/apps/amor/pingu/faller7.xpm
+share/apps/amor/pingu/faller8.xpm
+share/apps/amor/pingu/floater1.xpm
+share/apps/amor/pingu/floater2.xpm
+share/apps/amor/pingu/floater3.xpm
+share/apps/amor/pingu/floater4.xpm
+share/apps/amor/pingu/floater5.xpm
+share/apps/amor/pingu/floater6.xpm
+share/apps/amor/pingu/floater7.xpm
+share/apps/amor/pingu/floater8.xpm
+share/apps/amor/pingu/pinguin.xpm
+share/apps/amor/pingu/tumble1.xpm
+share/apps/amor/pingu/tumble2.xpm
+share/apps/amor/pingu/tumble3.xpm
+share/apps/amor/pingu/tumble4.xpm
+share/apps/amor/pingu/tumble5.xpm
+share/apps/amor/pingu/tumble6.xpm
+share/apps/amor/pingu/tumble7.xpm
+share/apps/amor/pingu/tumble8.xpm
+share/apps/amor/pingu/walk_l1.xpm
+share/apps/amor/pingu/walk_l2.xpm
+share/apps/amor/pingu/walk_l3.xpm
+share/apps/amor/pingu/walk_l4.xpm
+share/apps/amor/pingu/walk_l5.xpm
+share/apps/amor/pingu/walk_l6.xpm
+share/apps/amor/pingu/walk_l7.xpm
+share/apps/amor/pingu/walk_l8.xpm
+share/apps/amor/pingu/walk_r1.xpm
+share/apps/amor/pingu/walk_r2.xpm
+share/apps/amor/pingu/walk_r3.xpm
+share/apps/amor/pingu/walk_r4.xpm
+share/apps/amor/pingu/walk_r5.xpm
+share/apps/amor/pingu/walk_r6.xpm
+share/apps/amor/pingu/walk_r7.xpm
+share/apps/amor/pingu/walk_r8.xpm
+share/apps/amor/pingurc
 share/apps/amor/tips-en
+share/apps/amor/worm/w-a1.xpm
+share/apps/amor/worm/w-a2.xpm
+share/apps/amor/worm/w-b1.xpm
+share/apps/amor/worm/w-b2.xpm
+share/apps/amor/worm/w-be1.xpm
+share/apps/amor/worm/w-be2.xpm
+share/apps/amor/worm/w-be3.xpm
+share/apps/amor/worm/w-be4.xpm
+share/apps/amor/worm/w-d1.xpm
+share/apps/amor/worm/w-d2.xpm
+share/apps/amor/worm/w-d3.xpm
+share/apps/amor/worm/w-d4.xpm
+share/apps/amor/worm/w-d5.xpm
+share/apps/amor/worm/w-dr1.xpm
+share/apps/amor/worm/w-e1.xpm
+share/apps/amor/worm/w-l1.xpm
+share/apps/amor/worm/w-l2.xpm
+share/apps/amor/worm/w-l3.xpm
+share/apps/amor/worm/w-ml0.xpm
+share/apps/amor/worm/w-ml1.xpm
+share/apps/amor/worm/w-ml2.xpm
+share/apps/amor/worm/w-ml3.xpm
+share/apps/amor/worm/w-mr0.xpm
+share/apps/amor/worm/w-mr1.xpm
+share/apps/amor/worm/w-mr2.xpm
+share/apps/amor/worm/w-mr3.xpm
+share/apps/amor/worm/w-s1.xpm
+share/apps/amor/worm/w-s2.xpm
+share/apps/amor/worm/w-s3.xpm
+share/apps/amor/worm/w-u1.xpm
+share/apps/amor/worm/w-u2.xpm
+share/apps/amor/worm/w-u3.xpm
+share/apps/amor/worm/w-wl1.xpm
+share/apps/amor/worm/w-wl2.xpm
+share/apps/amor/worm/w-wr1.xpm
+share/apps/amor/worm/w-wr2.xpm
+share/apps/amor/wormrc
 share/apps/kdesktop/programs/kdeworld.desktop
 share/apps/kicker/applets/eyesapplet.desktop
 share/apps/kmoon/pics/moon1.png
@@ -234,6 +401,10 @@ share/icons/locolor/16x16/apps/kteatime.png
 share/icons/locolor/16x16/apps/kworldwatch.png
 share/icons/locolor/32x32/apps/kmoon.png
 share/icons/locolor/32x32/apps/kworldwatch.png
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/32x32/apps
 @dirrm share/doc/HTML/en/mouse
 @dirrm share/apps/kworldwatch/pics
 @dirrm share/apps/kworldwatch
@@ -241,6 +412,9 @@ share/icons/locolor/32x32/apps/kworldwatch.png
 @dirrm share/apps/kmoon
 @dirrm share/apps/kicker/applets
 @dirrm share/apps/kdesktop/programs
+@dirrm share/apps/amor/worm
+@dirrm share/apps/amor/pingu
+@dirrm share/apps/amor/neko
 @dirrm share/apps/amor/ghost
 @dirrm share/apps/amor/eyes
 @dirrm share/apps/amor/blob
