@@ -1,0 +1,11 @@
+--- ./src/s/freebsd.h.org	Sun Jun  9 13:14:32 1996
++++ ./src/s/freebsd.h	Thu Apr  3 04:15:46 1997
+@@ -80,6 +80,8 @@
+ #define BSD 199103
+ #elif __FreeBSD__ == 2
+ #define BSD 199306
++#elif __FreeBSD__ == 3
++#define BSD 199506
+ #endif
+ 
+ #define WAITTYPE int
