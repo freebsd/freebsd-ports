@@ -239,7 +239,6 @@ post-install:
 	@ ${ECHO_MSG} "---------------------------------------------------------"
 	@ ${ECHO_MSG} "Putting jdbc examples into ${PREFIX}/share/examples/pgsql"
 	@ ${ECHO_MSG} "---------------------------------------------------------"
-	@ ${CAT} ${PKGDIR}/pkg-plist.doc >> ${TMPPLIST}
 .endif
 .endif
 .if !defined(NOPORTDOCS)
@@ -249,6 +248,7 @@ post-install:
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/README* ${PREFIX}/share/doc/pgsql
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/TODO ${PREFIX}/share/doc/pgsql
 #	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps ${PREFIX}/share/doc/pgsql
+	@ ${CAT} ${PKGDIR}/pkg-plist.doc >> ${TMPPLIST}
 .endif
 .if !defined(BATCH)
 	@ more -e ${FILESDIR}/post-install-notes
