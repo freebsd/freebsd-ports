@@ -1,0 +1,149 @@
+--- basics/b_string.cpp	Sat Dec 23 14:37:48 2000
++++ basics/b_string.cpp	Thu Nov  7 06:07:53 2002
+@@ -345,10 +345,10 @@
+     
+     // Copy unmodified start of string *this
+-    nbUnchangedStartingChars = foundStr - Texte();
++    nbUnchangedStartingChars = foundStr - (const char*)Texte();
+     strncpy(modifiedStr, (const char*)Texte(), nbUnchangedStartingChars);
+     modifiedStr[nbUnchangedStartingChars] = '\0';
+     
+     // Replace "^i" by replaceStr
+-    strcat(modifiedStr, replaceStr.Texte());
++    strcat(modifiedStr, (const char*)replaceStr.Texte());
+     
+     // Copy unmodified end of string *this
+--- basics/mac_comp.h	Sat Dec 23 14:37:48 2000
++++ basics/mac_comp.h	Thu Nov  7 06:21:10 2002
+@@ -29,4 +29,5 @@
+ #endif
+ 
++  #include <sys/types.h>
+   #include <memory.h>
+   #include <string.h>
+@@ -67,5 +68,5 @@
+      ConstStr27Param,ConstStr15Param;
+ 
+-    typedef unsigned32 OSType;
++    typedef intptr_t OSType;
+     typedef OSType *OSTypePtr;
+ 
+--- fpx/buffdesc.cpp	Sat Dec 23 14:37:48 2000
++++ fpx/buffdesc.cpp	Thu Nov  7 06:25:35 2002
+@@ -1381,5 +1381,5 @@
+             CLIPDATA * clipData)
+ {
+-  char* buffer;
++  Ptr buffer;
+   long  thumbnailSize;
+   ptr_Compresseur monCompresseur;
+--- ri_image/priimage.h	Sat Dec 23 14:37:49 2000
++++ ri_image/priimage.h	Thu Nov  7 06:31:12 2002
+@@ -15,4 +15,5 @@
+   #ifndef PRIImage_h
+   #define PRIImage_h
++  #include <sys/types.h>
+   #ifndef Commun_h
+     #include  "common.h"
+@@ -163,9 +164,9 @@
+             
+             void  ResetMagicNumber()        { magicNumber = 0; }
+-            void  SetMagicNumber()        { magicNumber = (int32)(this); }
+-            Boolean ChallengeMagicNumber()      { return (magicNumber == (int32)(this)); }
+-            void  SetMagicNumber(int32 id)    { magicNumber = id; }
+-            Boolean ChallengeMagicNumber(int32 id)  { return (magicNumber == id); }
+-            int32 GetMagicNumber()        { return magicNumber; }
++            void  SetMagicNumber()        { magicNumber = (intptr_t)(this); }
++            Boolean ChallengeMagicNumber()      { return (magicNumber == (intptr_t)(this)); }
++            void  SetMagicNumber(intptr_t id)    { magicNumber = id; }
++            Boolean ChallengeMagicNumber(intptr_t id)  { return (magicNumber == id); }
++            intptr_t GetMagicNumber()        { return magicNumber; }
+   protected:
+         // Protected interface: Methods used by the derived classes to customize the behavior of a RI Image:
+@@ -215,5 +216,5 @@
+ 
+         // Reference management
+-        int32     magicNumber;      // Used to reference a PRIImage object used by several composition objects
++        intptr_t     magicNumber;      // Used to reference a PRIImage object used by several composition objects
+         long      nbRefs;         // Number of existing references to this PRIImage object
+ 
+--- ri_image/ptile.h	Sat Aug 11 20:04:06 2001
++++ ri_image/ptile.h	Thu Nov  7 06:42:20 2002
+@@ -212,5 +212,5 @@
+   static    long      indexLocked;
+ 
+-  static    char*     decompressBuffer;   // Global buffer for decompression
++  static    Ptr       decompressBuffer;   // Global buffer for decompression
+   static    long      decompressSize;     // Size of the decompression buffer
+   static    Boolean     decompressLock;     // true if buffer in use
+--- fpx/ptil_fpx.cpp	Sat Dec 23 14:37:48 2000
++++ fpx/ptil_fpx.cpp	Thu Nov  7 06:47:35 2002
+@@ -301,5 +301,5 @@
+   ptr_Compresseur monCompresseur; 
+ 
+-  char      *buffer = NULL;
++  Ptr        buffer = NULL;
+   Pixel     *entireTile;
+   Boolean     wasLocked;
+@@ -422,5 +422,5 @@
+ 
+       // Set the output buffer to write
+-      buffer = (char *)(entireTile);
++      buffer = (Ptr)entireTile;
+       break; 
+     
+@@ -478,5 +478,5 @@
+         memcpy(decompressBuffer, buffer, tileSize);
+       } else
+-        decompressBuffer = (char *)entireTile;
++        decompressBuffer = (Ptr)entireTile;
+       
+       // Get the jpeg compressor
+@@ -1703,7 +1703,6 @@
+ 
+   // Get jpeg table index and make sure it is in 0 - 255 range
+-  unsigned char JPEGtableSelector = ((PResolutionFlashPix*)fatherSubImage)->compressTableGroup;
+-  JPEGtableSelector = (JPEGtableSelector < 0) ? 0 : JPEGtableSelector; 
+-  JPEGtableSelector = (JPEGtableSelector >255) ? 255 : JPEGtableSelector; 
++  unsigned char JPEGtableSelector =
++    (((PResolutionFlashPix*)fatherSubImage)->compressTableGroup >255) ? 255 : JPEGtableSelector; 
+   
+ 
+--- ri_image/corr_lut.cpp	Sat Dec 23 14:37:49 2000
++++ ri_image/corr_lut.cpp	Thu Nov  7 07:00:54 2002
+@@ -175,5 +175,4 @@
+   RGBColor  colorTarget={0,0,0};
+   Boolean   valide=FALSE;
+-  long    influence=0;
+   int     i;
+ 
+@@ -190,5 +189,5 @@
+     for (i=0; i<lut_NbContraintes; i++)
+       file.Ecriture(valide);
+-    file.Ecriture(influence);
++    file.Ecriture((short)0);
+   }
+ }
+@@ -199,5 +198,5 @@
+   RGBColor  colorTarget={0,0,0};
+   Boolean   valide=FALSE;
+-  long    influence=0;
++  short int influence=0;
+   int     i;
+ 
+--- ri_image/ptile.cpp	Sat Dec 23 14:37:49 2000
++++ ri_image/ptile.cpp	Thu Nov  7 07:05:05 2002
+@@ -84,5 +84,5 @@
+   long      PTile::allocTiles = 0;      // Debug use
+ 
+-  char*     PTile::decompressBuffer = NULL;
++  Ptr       PTile::decompressBuffer = NULL;
+   long      PTile::decompressSize = 0;
+   Boolean     PTile::decompressLock = false;
+@@ -1456,5 +1456,5 @@
+     FastDeleteArray(decompressBuffer, char);
+     
+-    FastAllocArray(decompressBuffer, char, size);
++    FastAllocArray(decompressBuffer, int8, size);
+     if (decompressBuffer)
+       decompressSize = size;
