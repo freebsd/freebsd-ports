@@ -1,27 +1,45 @@
 bin/totem
 bin/totem-video-thumbnailer
 etc/gconf/gconf.xml.defaults/apps/totem/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@ogg/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@vnd.rn-realmedia/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-matroska/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-ogg/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-shockwave-flash/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/audio@x-pn-realaudio/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/misc@ultravox/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@dv/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@msvideo/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@quicktime/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-anim/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-flc/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-asf/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-wmv/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-nsv/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/totem/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@ogg/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@vnd.rn-realmedia/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-matroska/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-ogg/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-shockwave-flash/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/audio@x-pn-realaudio/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/misc@ultravox/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@dv/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@msvideo/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@quicktime/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-anim/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-flc/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-asf/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-nsv/%gconf.xml
 etc/gconf/schemas/totem.schemas
 etc/gconf/schemas/totem-video-thumbnail.schemas
 libdata/bonobo/servers/Totem_properties.server
@@ -108,26 +126,44 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/help/totem
 @dirrm share/gnome/omf/totem
 @dirrm share/gnome/totem
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-nsv
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-asf
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-flc
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-anim
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@quicktime
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@msvideo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@dv
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/misc@ultravox
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/audio@x-pn-realaudio
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-shockwave-flash
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-ogg
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-matroska
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@vnd.rn-realmedia
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@ogg
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/totem
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-nsv
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-msvideo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-wmv
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-asf
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-flc
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-anim
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@quicktime
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@msvideo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@dv
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/misc@ultravox
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/audio@x-pn-realaudio
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-shockwave-flash
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-ogg
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-matroska
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@vnd.rn-realmedia
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@ogg
 @dirrm etc/gconf/gconf.xml.defaults/apps/totem
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/totem/totem-C.omf 2>/dev/null || /usr/bin/true
