@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vorbis
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +22,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/ogg/vorbis.so
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+USE_GCC=	3.4
 
 do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py
