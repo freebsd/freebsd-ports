@@ -1,4 +1,4 @@
-bin/ja-%%BROWSER%%
+bin/ja-communicator-45
 @exec ln -sf %f %B/netscape
 %%NSUBDIR%%/%%LANG%%/Netscape
 %%NSUBDIR%%/%%LANG%%/about
