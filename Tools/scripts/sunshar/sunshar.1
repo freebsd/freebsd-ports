@@ -1,0 +1,56 @@
+.\" $FreeBSD$
+.\" $Idaemons: /home/cvs/sunshar/sunshar.1,v 1.2 2004/02/28 14:14:53 knu Exp $
+.\"
+.Dd September 9, 2001
+.Dt SUNSHAR 1
+.Os FreeBSD
+.Sh NAME
+.Nm sunshar
+.Nd a secure unshar
+.Sh SYNOPSIS
+.Nm
+.Op Fl hfnq
+.Op Fl p Ar number
+.Op Ar file ...
+.Sh DESCRIPTION
+The
+.Nm
+command extracts files from the given shell archive(s).  If no file
+name is given, it reads from the standard input.
+.Pp
+It brings you security because it never executes dangerous commands
+possibly contained in a shell archive.  Also, it does not overwrite
+existing files unless the
+.Fl f
+option is specified.
+.Sh OPTIONS
+The following command line arguments are supported:
+.Pp
+.Bl -tag -width "-p number" -compact
+.It Fl h
+Show help and exit.
+.Pp
+.It Fl f
+Allow overwriting existing files, and ignore errors and continue.
+.Pp
+.It Fl p Ar number
+Strip
+.Ar number
+levels of path components from path names. (cf.
+.Xr patch 1 's
+.Fl p
+option)
+.Pp
+.It Fl n
+Do not extract anything but just show what would have been extracted.
+.Pp
+.It Fl q
+Be quiet.
+.El
+.Sh SEE ALSO
+.Xr shar 1
+.Sh AUTHORS
+.An Akinori MUSHA Aq knu@iDaemons.org
+.Sh BUGS
+.Nm
+only supports shell archives made with BSD shar.
