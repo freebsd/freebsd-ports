@@ -1,0 +1,16 @@
+realtime sky drawer for X root window
+
+options:
+	-refresh <seconds>
+	-verbose
+	-locate [NS]<degrees>/[EW]<degrees>
+	-width <degrees>
+	-center <degrees>
+	-horizon <dots>
+	-vcell <dots>
+	-hcell <dots>
+	-lesscolor
+	-cloudy
+
+For example:
+	xskyroot -width 36 -center 270
