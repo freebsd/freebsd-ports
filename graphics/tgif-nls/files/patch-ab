@@ -1,6 +1,16 @@
---- Tgif.tmpl.orig	Thu Jan 20 12:56:09 2000
-+++ Tgif.tmpl	Thu Jan 20 12:59:33 2000
-@@ -48,7 +48,7 @@
+--- Tgif.tmpl.orig	Sat Jun 17 03:43:39 2000
++++ Tgif.tmpl	Sat Jun 17 03:44:15 2000
+@@ -41,6 +41,9 @@
+ XIMPDEFINES      =
+ #endif
+ 
++#define IHaveSubdirs
++SUBDIRS = po
++
+ PROGRAMS	= tgif XCOMM prtgif frontend11.o testdrive
+ TGIFDIR		= $(LIBDIR)/tgif
+ XCOMM CDEBUGFLAGS= -g -Wall
+@@ -48,7 +51,7 @@
  XCOMM BINDIR	= /u/halfmoon/bin
  XCOMM MANPATH	= /u/halfmoon/man
  XCOMM TGIFDIR	= /u/halfmoon/lib/X11/tgif
@@ -9,12 +19,12 @@
  DIRDEFINES	= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
                    -DLOCALEDIR=\"$(LOCALEDIR)\" \@@\
                    -DTELEPORT_ATTR=\"warp_to=\" -DTMP_DIR=\"/tmp/\" \@@\
-@@ -59,14 +59,16 @@
+@@ -59,14 +62,16 @@
                    -DTEXT_FILE_EXT=\"txt\" -DPIN_FILE_EXT=\"pin\"
  MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT \@@\
                    -D_USE_PS_ADOBE_STRING=\"3.0/3.0\"
 -MOREDEFINES	=
-+MOREDEFINES	= -DUSE_XT_INITIALIZE -D_ENABLE_NLS
++MOREDEFINES	= -DUSE_XT_INITIALIZE -D_ENABLE_NLS -DA4PAPER
  
  XCOMM ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  XCOMM Please see Imakefile for more defines to be added to MOREDEFINES above
@@ -28,3 +38,13 @@
  SYS_LIBRARIES	= -lm
 +EXTRA_INCLUDES	+= -I$(LOCALBASE)/include
 +EXTRA_LIBRARIES	+= -L$(LOCALBASE)/lib -lintl
+
+--- po/Po.tmpl.orig	Sat Jun 17 02:35:00 2000
++++ po/Po.tmpl	Sat Jun 17 02:35:26 2000
+@@ -8,5 +8,5 @@
+ MKINSTALLDIRS	= install -d
+ 
+ DESTDIR		=
+-SYSNLSDIR	= /usr/share/locale
++SYSNLSDIR	= $(PREFIX)/share/locale
+ NLSDIR		= $(DESTDIR)$(SYSNLSDIR)

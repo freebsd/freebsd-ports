@@ -21,6 +21,9 @@ share/examples/tgif/keys.obj
 share/examples/tgif/launch-demo.obj
 share/examples/tgif/launch-demo-1.obj
 share/examples/tgif/slide-demo.obj
+share/locale/fr/LC_MESSAGES/tgif.mo
+share/locale/ja/LC_MESSAGES/tgif.mo
+share/locale/ru/LC_MESSAGES/tgif.mo
 @dirrm share/doc/tgif
 @dirrm share/examples/tgif
 @dirrm lib/X11/tgif
