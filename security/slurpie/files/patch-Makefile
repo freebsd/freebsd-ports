@@ -1,0 +1,12 @@
+--- Makefile.orig	Sat Jan 30 13:14:03 1999
++++ Makefile	Sun Feb 13 19:11:27 2000
+@@ -1,7 +1,6 @@
+-CC = gcc
+ all: slurpie slurp
+ slurpie: src/slurpie.c src/shared.c src/master.c src/shared.h src/mn.h
+-	$(CC) -O3 src/slurpie.c src/shared.c src/master.c -o slurpie
++	$(CC) ${CFLAGS} src/slurpie.c src/shared.c src/master.c -o slurpie
+ slurp: src/slurp.c src/shared.c src/node.c src/shared.h src/mn.h
+-	$(CC) -O3 -lcrypt src/slurp.c src/shared.c src/node.c -o slurp
++	$(CC) ${CFLAGS} -lcrypt src/slurp.c src/shared.c src/node.c -o slurp
+ 

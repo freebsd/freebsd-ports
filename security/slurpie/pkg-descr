@@ -1,0 +1,5 @@
+Slurpie is a passwd file cracker similar to CrackerJack and John the Ripper
+except that it can be run in a distributed environment (multiple computers
+aka nodes).
+
+WWW:	http://www.jps.net/coati/archives/slurpie.html
