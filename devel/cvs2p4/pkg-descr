@@ -5,5 +5,4 @@ and generates a Perforce depot using Perforce client commands. The
 converter handles Attic/ and .cvsignore, and has flexible support for
 branching.
 
-WWW:	http://www.perforce.com/perforce/loadsupp.html
 Author:	Richard Geiger <rmg@perforce.com>
