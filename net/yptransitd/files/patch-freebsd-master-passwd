@@ -1,0 +1,227 @@
+diff -rc /services/build/usr/ports/net/yptransitd/work/yptransitd-0.5/src/modules/ldap/cache.c ./src/modules/ldap/cache.c
+*** /services/build/usr/ports/net/yptransitd/work/yptransitd-0.5/src/modules/ldap/cache.c	Tue Oct  9 10:34:51 2001
+--- ./src/modules/ldap/cache.c	Wed May  5 01:51:16 2004
+***************
+*** 278,285 ****
+  			} else
+  			if(!strcasecmp(attr, "userpassword"))
+  			{
+! 				pwinfo->userpassword = fix_password(values);
+! 				pwinfo->size += strlen(pwinfo->userpassword);
+  			} else
+  			if(!strcasecmp(attr, "uidnumber"))
+  			{
+--- 278,285 ----
+  			} else
+  			if(!strcasecmp(attr, "userpassword"))
+  			{
+! 				pwinfo->userpassword = safe_strdup("*");
+! 				pwinfo->size += strlen("*");
+  			} else
+  			if(!strcasecmp(attr, "uidnumber"))
+  			{
+***************
+*** 322,327 ****
+--- 322,394 ----
+  	return (rval);
+  }
+  
++ int assemble_master_passwd(valdat *val, LDAPMessage *user, struct pwinfo *pwinfo)
++ {
++ 	ypstat rval;
++ 	char *attr;
++ 	BerElement *ber = NULL;
++ 
++ 	rval = YP_YPERR;
++ 	fill_pwinfo(pwinfo);
++ 	
++ 	for (attr = ldap_first_attribute (ldaprefs.ldap, user, &ber); attr; attr = ldap_next_attribute (ldaprefs.ldap, user, ber))
++ 	{
++ 		char **values;
++ 
++ 		values = ldap_get_values (ldaprefs.ldap, user, attr);
++ 		if (values)
++ 		{
++ 			if(!strcasecmp(attr, "uid"))
++ 			{
++ 				pwinfo->uid = safe_strdup(values[0]);
++ 				pwinfo->size += strlen(values[0]);
++ 			} else
++ 			if(!strcasecmp(attr, "userpassword"))
++ 			{
++ 				pwinfo->userpassword = fix_password(values);
++ 				pwinfo->size += strlen(pwinfo->userpassword);
++ 			} else
++ 			if(!strcasecmp(attr, "uidnumber"))
++ 			{
++ 				pwinfo->uidnumber = safe_strdup(values[0]);
++ 				pwinfo->size += strlen(values[0]);
++ 			} else
++ 			if(!strcasecmp(attr, "gidnumber"))
++ 			{
++ 				pwinfo->gidnumber = safe_strdup(values[0]);
++ 				pwinfo->size += strlen(values[0]);
++ 			} else
++ 			if(!strcasecmp(attr, "gecos"))
++ 			{
++ 				pwinfo->gecos = safe_strdup(values[0]);
++ 				pwinfo->size += strlen(values[0]);
++ 			} else
++ 			if(!strcasecmp(attr, "homedirectory"))
++ 			{
++ 				pwinfo->homedirectory = safe_strdup(values[0]);
++ 				pwinfo->size += strlen(values[0]);
++ 			} else
++ 			if(!strcasecmp(attr, "loginshell"))
++ 			{
++ 				pwinfo->loginshell = safe_strdup(values[0]);
++ 				pwinfo->size += strlen(values[0]);
++ 			}
++ 			ldap_value_free(values);
++ 		}
++ 	}
++ 	if (check_pwinfo(pwinfo) == YP_TRUE)
++ 	{
++ 		val->valdat_len = pwinfo->size + MPWLINE_SIZE;
++ 		val->valdat_val = safe_malloc(val->valdat_len + 1);
++ 		sprintf(val->valdat_val, MPWLINE, pwinfo->uid, pwinfo->userpassword, pwinfo->uidnumber, pwinfo->gidnumber, pwinfo->gecos, pwinfo->homedirectory, pwinfo->loginshell);
++ 		rval = YP_TRUE;
++ 	} else {
++ 		rval = YP_NOKEY;
++ 	}
++ 
++ 	return (rval);
++ }
++ 
+  int assemble_group(valdat *val, LDAPMessage *group, struct gwinfo *gwinfo)
+  {
+  	ypstat rval;
+***************
+*** 538,548 ****
+  			free(filter);
+  			free(base);
+  		}
+  		else if (!strcmp((char *) mapcache_current->map, "group.byname"))
+  		{
+  			/* XXX Add preferences for filter and basedn */
+			base = safe_malloc(strlen(ldaprefs.basedn) + strlen("ou=Group,") + 1);
+			sprintf(base, "%s%s", "ou=Group,", ldaprefs.basedn);
+  			filter = safe_strdup("(objectClass=posixGroup)");
+  
+  			if(ldap_search_s(ldaprefs.ldap,
+--- 605,689 ----
+  			free(filter);
+  			free(base);
+  		}
++ 		else if (!strcmp((char *) mapcache_current->map, "master.passwd.byname"))
++ 		{
++ 			/* XXX Add preferences for filter and basedn */
++ 			base = safe_malloc(strlen(ldaprefs.basedn) + strlen("ou=Staffs,") + 1);
++ 			sprintf(base, "%s%s", "ou=Staffs,", ldaprefs.basedn);
++ 			filter = safe_strdup("(objectClass=posixAccount)");
++ 
++ 			if(ldap_search_s(ldaprefs.ldap,
++ 						base,
++ 						LDAP_SCOPE_ONELEVEL,
++ 						filter,
++ 						user_attributes,
++ 						0,
++ 						&ldapreturn) != -1)
++ 			{
++ 				for (record = ldap_first_entry(ldaprefs.ldap, ldapreturn); record; record = ldap_next_entry(ldaprefs.ldap, record))
++ 				{
++ 					pwinfo = safe_malloc(sizeof(struct pwinfo));
++ 					rval = assemble_master_passwd(val, record, pwinfo);
++ 					if(rval == YP_TRUE);
++ 					{
++ 						if(check_unique(mapcache_current, pwinfo->uid) == YP_NOKEY)
++ 						{
++ 							mapentry_current = safe_malloc(sizeof(struct mapentry));
++ 							mapentry_current->key = safe_strdup(pwinfo->uid);
++ 							mapentry_current->val = val->valdat_val;
++ 							mapentry_current->next = mapcache_current->mapentry;
++ 							mapcache_current->mapentry = mapentry_current;
++ 						}
++ 					}
++ 					clean_pwinfo(pwinfo);
++ 				}
++ 			}
++ 			ldap_msgfree(ldapreturn);
++ 			free(filter);
++ 			free(base);
++ 		}
++ 		else if (!strcmp((char *) mapcache_current->map, "master.passwd.byuid"))
++ 		{
++ 			/* XXX Add preferences for filter and basedn */
++ 			base = safe_malloc(strlen(ldaprefs.basedn) + strlen("ou=Staffs,") + 1);
++ 			sprintf(base, "%s%s", "ou=Staffs,", ldaprefs.basedn);
++ 			filter = safe_strdup("(objectClass=posixAccount)");
++ 
++ 			if(ldap_search_s(ldaprefs.ldap,
++ 						base,
++ 						LDAP_SCOPE_ONELEVEL,
++ 						filter,
++ 						user_attributes,
++ 						0,
++ 						&ldapreturn) != -1)
++ 			{
++ 				for (record = ldap_first_entry(ldaprefs.ldap, ldapreturn); record; record = ldap_next_entry(ldaprefs.ldap, record))
++ 				{
++ 					pwinfo = safe_malloc(sizeof(struct pwinfo));
++ 					rval = assemble_master_passwd(val, record, pwinfo);
++ 					if(rval == YP_TRUE);
++ 					{
++ 						if(check_unique(mapcache_current, pwinfo->uidnumber) == YP_NOKEY)
++ 						{
++ 							mapentry_current = safe_malloc(sizeof(struct mapentry));
++ 							mapentry_current->key = safe_strdup(pwinfo->uidnumber);
++ 							mapentry_current->val = val->valdat_val;
++ 							mapentry_current->next = mapcache_current->mapentry;
++ 							mapcache_current->mapentry = mapentry_current;
++ 						}
++ 					}
++ 					clean_pwinfo(pwinfo);
++ 				}
++ 			}
++ 			ldap_msgfree(ldapreturn);
++ 			free(filter);
++ 			free(base);
++ 		}
+  		else if (!strcmp((char *) mapcache_current->map, "group.byname"))
+  		{
+  			/* XXX Add preferences for filter and basedn */
+			base = safe_malloc(strlen(ldaprefs.basedn) + strlen("ou=Group,") + 1);
+			sprintf(base, "%s%s", "ou=Group,", ldaprefs.basedn);
+  			filter = safe_strdup("(objectClass=posixGroup)");
+  
+  			if(ldap_search_s(ldaprefs.ldap,
+diff -rc /services/build/usr/ports/net/yptransitd/work/yptransitd-0.5/src/modules/ldap/ldap.c ./src/modules/ldap/ldap.c
+*** /services/build/usr/ports/net/yptransitd/work/yptransitd-0.5/src/modules/ldap/ldap.c	Wed Oct  3 09:45:29 2001
+--- ./src/modules/ldap/ldap.c	Wed May  5 01:39:20 2004
+***************
+*** 60,66 ****
+--- 60,69 ----
+  #include "cache.h"
+  
+  #define CONFIG_FILE CONFDIR "/ldap.conf"
++ /*
+  #define MAPS "auto.home auto_home amd.home passwd.byname passwd.byuid group.byname group.bygid"
++ */
++ #define MAPS "auto.home auto_home amd.home master.passwd.byname master.passwd.byuid passwd.byname passwd.byuid group.byname group.bygid"
+  
+  struct ldaprefs ldaprefs;
+  
+diff -rc /services/build/usr/ports/net/yptransitd/work/yptransitd-0.5/src/modules/ldap/ldap.h ./src/modules/ldap/ldap.h
+*** /services/build/usr/ports/net/yptransitd/work/yptransitd-0.5/src/modules/ldap/ldap.h	Wed Oct  3 08:59:53 2001
+--- ./src/modules/ldap/ldap.h	Wed May  5 01:49:57 2004
+***************
+*** 42,47 ****
+--- 42,50 ----
+  #define PWLINE "%s:%s:%s:%s:%s:%s:%s"
+  #define PWLINE_SIZE 6
+  
++ #define MPWLINE "%s:%s:%s:%s::0:0:%s:%s:%s"
++ #define MPWLINE_SIZE 11
++ 
+  #define GWLINE "%s:%s:%s:%s"
+  #define GWLINE_SIZE 3
