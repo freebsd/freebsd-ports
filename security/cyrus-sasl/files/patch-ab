@@ -6,7 +6,7 @@
  dnl let's just link against local.  otherwise we never find anything useful.
 -CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
 -CMU_ADD_LIBPATH("/usr/local/lib")
-+CPPFLAGS="-I${OPENSSLINC} ${CPPFLAGS}"
++CPPFLAGS="-I${OPENSSLINC} -I${OPENSSLINC}/openssl ${CPPFLAGS}"
 +CMU_ADD_LIBPATH("${LOCALBASE}/lib")
 +CMU_ADD_LIBPATH("${OPENSSLLIB}")
  
