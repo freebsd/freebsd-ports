@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	roget-fpw
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/roget/
 DISTNAME=	${PORTNAME}${PORTVERSION}
