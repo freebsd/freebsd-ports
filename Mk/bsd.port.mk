@@ -429,7 +429,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (default: "Makefile.PL" if PERL_CONFIGURE is set,
 #				  "configure" otherwise).
 # CONFIGURE_TARGET - The name of target to call when GNU_CONFIGURE is
-#				  defined (default: ${MACHINE_ARCH}--freebsd${OSREL}).
+#				  defined (default: ${MACHINE_ARCH}-portbld-freebsd${OSREL}).
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set
 #				  (default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
@@ -1625,7 +1625,7 @@ USE_PERL5=			yes
 .endif
 
 CONFIGURE_SCRIPT?=	configure
-CONFIGURE_TARGET?=	${MACHINE_ARCH}--freebsd${OSREL}
+CONFIGURE_TARGET?=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_LOG?=		config.log
 
 .if defined(GNU_CONFIGURE)
