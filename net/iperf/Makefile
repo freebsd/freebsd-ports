@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION= 	1.2
+PORTVERSION= 	1.6.3
+DISTNAME=	iperf-1.6.3-source
 CATEGORIES=	net
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
 
