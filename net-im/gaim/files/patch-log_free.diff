@@ -1,0 +1,51 @@
+Index: plugins/history.c
+===================================================================
+RCS file: /cvsroot/gaim/gaim/plugins/history.c,v
+retrieving revision 1.29
+diff -u -r1.29 history.c
+--- plugins/history.c	30 Nov 2003 04:33:15 -0000	1.29
++++ plugins/history.c	1 Dec 2003 23:09:47 -0000
+@@ -44,8 +44,7 @@
+ 	while (logs) {
+ 		GaimLog *log = logs->data;
+ 		GList *logs2;
+-		g_free(log->name);
+-		g_free(log);
++	    gaim_log_free(log);
+ 		logs2 = logs->next;
+ 		g_list_free_1(logs);
+ 		logs = logs2;
+Index: src/gtklog.c
+===================================================================
+RCS file: /cvsroot/gaim/gaim/src/gtklog.c,v
+retrieving revision 1.9
+diff -u -r1.9 gtklog.c
+--- src/gtklog.c	1 Dec 2003 00:09:48 -0000	1.9
++++ src/gtklog.c	1 Dec 2003 23:09:47 -0000
+@@ -119,8 +119,7 @@
+ 	while (lv->logs) {
+ 		GaimLog *log = lv->logs->data;
+ 		GList *logs2;
+-		g_free(log->name);
+-		g_free(log);
++		gaim_log_free(log);
+ 		logs2 = lv->logs->next;
+ 		g_list_free_1(lv->logs);
+ 		lv->logs = logs2;
+Index: src/log.c
+===================================================================
+RCS file: /cvsroot/gaim/gaim/src/log.c,v
+retrieving revision 1.69
+diff -u -r1.69 log.c
+--- src/log.c	1 Dec 2003 00:09:48 -0000	1.69
++++ src/log.c	1 Dec 2003 23:09:47 -0000
+@@ -100,8 +100,7 @@
+ 		GList *logs2 = logs->next;
+ 		GaimLog *log = (GaimLog*)(logs->data);
+ 		size += gaim_log_get_size(log);
+-		g_free(log->name);
+-		g_free(log);
++		gaim_log_free(log);
+ 		g_list_free_1(logs);
+ 		logs = logs2;
+ 	}
