@@ -4,10 +4,13 @@ include/gigabase/blob.h
 include/gigabase/btree.h
 include/gigabase/class.h
 include/gigabase/cli.h
+include/gigabase/confdefs.h
+include/gigabase/config.h
 include/gigabase/container.h
 include/gigabase/cursor.h
 include/gigabase/database.h
 include/gigabase/datetime.h
+include/gigabase/exception.h
 include/gigabase/file.h
 include/gigabase/gigabase.h
 include/gigabase/hashtab.h
@@ -18,6 +21,7 @@ include/gigabase/reference.h
 include/gigabase/selection.h
 include/gigabase/stdtp.h
 include/gigabase/sync.h
+include/gigabase/timeseries.h
 include/gigabase/wwwapi.h
 lib/libcligb_r.a
 lib/libcligb_r.so
