@@ -14,7 +14,7 @@ MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/developer/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,developer/%SUBDIR%,misc/openoffice/&,} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
+		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES+=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2 \
