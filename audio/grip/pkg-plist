@@ -79,12 +79,10 @@ share/locale/zh_CN/LC_MESSAGES/grip.mo
 share/locale/zh_HK/LC_MESSAGES/grip.mo
 share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/gripicon.png
-@comment empty dirs
-%%PORTDOCS%%@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images
-@comment directories
-%%PORTDOCS%%@dirrm share/gnome/help/grip/C/images
-%%PORTDOCS%%@dirrm share/gnome/help/grip/C
-%%PORTDOCS%%@dirrm share/gnome/help/grip
-%%PORTDOCS%%@dirrm share/gnome/help
+%%PORTDOCS%%@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images || true
+%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help/grip/C/images || true
+%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help/grip/C || true
+%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help/grip || true
+%%PORTDOCS%%@unexec /bin/rmdir share/gnome/help || true
 @dirrm share/gnome/apps/Multimedia
 @dirrm share/gnome/apps

@@ -1,9 +1,0 @@
---- src/Makefile.am~	Wed Feb 27 12:00:42 2002
-+++ src/Makefile.am	Wed Jul 24 20:27:20 2002
-@@ -37,5 +37,5 @@
- 	gain_analysis.c \
- 	gain_analysis.h
- 
--grip_LDADD = $(GNOMEUI_LIBS) $(GNOME_LIBDIR) $(INTLLIBS) $(PTHREAD_LIB) \
-+grip_LDADD = $(GNOMEUI_LIBS) $(GNOME_LIBDIR) $(INTLLIBS) \
- 	$(GHTTP_LIB) $(CDPAR_LIBS) $(ID3_LIBS)
