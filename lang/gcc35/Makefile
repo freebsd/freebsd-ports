@@ -1,5 +1,5 @@
-# ex:ts=8 
-# Ports collection makefile for:	egcs 
+# ex:ts=8
+# Ports collection makefile for:	egcs
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
@@ -65,18 +65,17 @@ CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 #CONFIGURE_ARGS+=	--program-suffix=33
 #	Java
 CONFIGURE_ARGS+=	--with-system-zlib #--includedir=${TARGLIB}/include/Java -libdir=${TARGLIB}
-#CONFIGURE_ARGS+=	--disable-libgcj	# does not bootstrap now
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+= --enable-shared
+CONFIGURE_ARGS+=	--enable-shared
 .else
-CONFIGURE_ARGS+= --disable-shared
+CONFIGURE_ARGS+=	--disable-shared
 .endif
 .if defined(WANT_THREADS_SUPPORT)
-CONFIGURE_ARGS+= --enable-threads
+CONFIGURE_ARGS+=	--enable-threads
 #	?is this an ObjC only thing?
-CONFIGURE_ARGS+= --enable-threads=posix
+CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
@@ -109,9 +108,6 @@ do-fetch:
 		${ECHO_MSG} ">> Please try again later."; \
 		exit 1; \
 	fi
-	@${TEST} -e ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
-	    || fetch -o ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
-		${PATCH_SITES}${PATCHFILES}
 
 do-extract:
 	${MKDIR} ${SRCDIR}
@@ -220,8 +216,8 @@ post-install:
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/	
-	@-ncftpls ${SITE} | grep LATEST
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
+	@-ncftpls ${SITE} | ${GREP} LATEST
 .endfor
 
 .include <bsd.port.post.mk>
