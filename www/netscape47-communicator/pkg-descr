@@ -1,8 +1,40 @@
-This is the netscape web-surfboard.  Please read the file
-"/usr/local/lib/netscape/LICENSE" for the licensing terms.
+This is the netscape communicator pre-release for those who do not mind
+updating when their software expires in order to get to try out the latest
+features.
+
+Communicator V4.5 beta 1 has a coded expiry of
+
+	Thursday, Oct 15 23:59:59 PDT 1998
+
+It integrates:
+	WWW browser (includes ldap, ftp, html etc)
+	Mail client
+	Usenet client
+	fairly crude www editor
+
+New features in 4.5 since 4.0x:
+
+Smart Browsing 
+3-Pane Integrated Mail / News Interface 
+Pinpoint Addressing and Scalable Address Book 
+Greatly improved IMAP mail performance, network efficiency & interoperability. 
+Palm Pilot address book, calendar and mail synchronization 
+New Calendar with simplified user interface
+Mail and address import from text, Outlook Express and Eudora 
+SmartUpdate uninstall 
+Netscape Quality Feedback System for bug reporting 
+
+In addition it appears to be more stable than 4.0x
+
+
+See "/usr/local/lib/netscape/LICENSE" for the licensing terms.
 
 Note: If Java applets fail to display.  Type this as root:
 		cd /usr/X11R6/lib/X11/fonts/misc
 		/usr/X11R6/bin/mkfontdir
 		chmod 444 fonts.dir
       And then exit and restart your X server.
+
+Peter Hawkins <thepish@FreeBSD.org>
+
+Thanks to: ache@freebsd.org (for original port)

@@ -1,4 +1,4 @@
-bin/communicator-4.06
+bin/communicator-4.5
 @exec ln -sf %f %B/communicator-4
 @exec ln -sf communicator-4 %B/netscape
 @unexec rm -f %B/netscape
@@ -8,26 +8,37 @@ lib/netscape/LICENSE
 lib/netscape/Netscape.ad
 lib/netscape/XKeysymDB
 lib/netscape/movemail
-lib/netscape/libAutoAdmin.so
 lib/netscape/plugins/libnullplugin.so
 lib/netscape/libjsd.so.1.0
 lib/netscape/bookmark.htm
+lib/netscape/vreg
+lib/netscape/communicator-4.5.bin
+lib/netscape/mailcap
+lib/netscape/java/classes/ifc11.jar
+lib/netscape/java/classes/iiop10.jar
+lib/netscape/java/classes/jae40.jar
+lib/netscape/java/classes/java40.jar
+lib/netscape/java/classes/jio40.jar
+lib/netscape/java/classes/jsd10.jar
+lib/netscape/java/classes/ldap10.jar
+lib/netscape/java/classes/scd10.jar
 lib/netscape/java/classes/awt.properties
 lib/netscape/java/classes/font.properties
-lib/netscape/java/classes/font.properties.zh_TW_Big5
-lib/netscape/java/classes/font.properties.zh_TW
-lib/netscape/java/classes/font.properties.zh_GB2312
-lib/netscape/java/classes/font.properties.zh
-lib/netscape/java/classes/font.properties.tr
-lib/netscape/java/classes/font.properties.ru
-lib/netscape/java/classes/font.properties.pl
-lib/netscape/java/classes/font.properties.lv
-lib/netscape/java/classes/font.properties.lt
-lib/netscape/java/classes/font.properties.ko
-lib/netscape/java/classes/font.properties.ja
-lib/netscape/java/classes/font.properties.hu
-lib/netscape/java/classes/font.properties.el
 lib/netscape/java/classes/font.properties.cs
+lib/netscape/java/classes/font.properties.el
+lib/netscape/java/classes/font.properties.hu
+lib/netscape/java/classes/font.properties.ja
+lib/netscape/java/classes/font.properties.ko
+lib/netscape/java/classes/font.properties.lt
+lib/netscape/java/classes/font.properties.lv
+lib/netscape/java/classes/font.properties.pl
+lib/netscape/java/classes/font.properties.ru
+lib/netscape/java/classes/font.properties.tr
+lib/netscape/java/classes/font.properties.zh
+lib/netscape/java/classes/font.properties.zh_GB2312
+lib/netscape/java/classes/font.properties.zh_TW
+lib/netscape/java/classes/font.properties.zh_TW_Big5
+lib/netscape/java/classes/font.properties.zh_TW_CNS11643
 lib/netscape/java/classes/aix/font.properties
 lib/netscape/java/classes/aix/font.properties.cs
 lib/netscape/java/classes/aix/font.properties.hu
@@ -54,7 +65,6 @@ lib/netscape/java/classes/hpux/font.properties.tr
 lib/netscape/java/classes/hpux/font.properties.zh_GB2312
 lib/netscape/java/classes/hpux/font.properties.zh_TW_Big5
 lib/netscape/java/classes/hpux/font.properties.zh_TW_CNS11643
-lib/netscape/java/classes/font.properties.zh_TW_CNS11643
 lib/netscape/java/classes/irix/font.properties
 lib/netscape/java/classes/irix/font.properties.cs
 lib/netscape/java/classes/irix/font.properties.el
@@ -64,14 +74,6 @@ lib/netscape/java/classes/irix/font.properties.ko
 lib/netscape/java/classes/irix/font.properties.zh_GB2312
 lib/netscape/java/classes/irix/font.properties.zh_TW_Big5
 lib/netscape/java/classes/irix/font.properties.zh_TW_CNS11643
-lib/netscape/java/classes/ifc11.jar
-lib/netscape/java/classes/iiop10.jar
-lib/netscape/java/classes/jae40.jar
-lib/netscape/java/classes/java40.jar
-lib/netscape/java/classes/jio40.jar
-lib/netscape/java/classes/jsd10.jar
-lib/netscape/java/classes/ldap10.jar
-lib/netscape/java/classes/scd10.jar
 lib/netscape/nethelp/Back_dep.gif
 lib/netscape/nethelp/Topic.js
 lib/netscape/nethelp/System.js
@@ -82,8 +84,6 @@ lib/netscape/nethelp/Header.js
 lib/netscape/nethelp/CntTool.js
 lib/netscape/nethelp/CntData.js
 lib/netscape/nethelp/Button.js
-lib/netscape/nethelp/picsfail.jar
-lib/netscape/nethelp/picsfail.htm
 lib/netscape/nethelp/ToolUI.htm
 lib/netscape/nethelp/System.htm
 lib/netscape/nethelp/Status.htm
@@ -96,7 +96,6 @@ lib/netscape/nethelp/IdxKey.htm
 lib/netscape/nethelp/IdxFill.htm
 lib/netscape/nethelp/CntTool.htm
 lib/netscape/nethelp/Blank.htm
-lib/netscape/nethelp/netwatch.gif
 lib/netscape/nethelp/Wait.gif
 lib/netscape/nethelp/Tool_up.gif
 lib/netscape/nethelp/Tool_sel.gif
@@ -176,10 +175,6 @@ lib/netscape/nethelp/netscape/shared/NetHelp1.css
 lib/netscape/nethelp/netscape/nscal/index.html
 lib/netscape/spell/pen4s324.dat
 lib/netscape/spell/netscape.dic
-lib/netscape/vreg
-lib/netscape/registry
-lib/netscape/communicator-4.06.bin
-lib/netscape/mailcap
 @dirrm lib/netscape/spell
 @dirrm lib/netscape/plugins
 @dirrm lib/netscape/nethelp/netscape/shared
@@ -193,9 +188,9 @@ lib/netscape/mailcap
 @dirrm lib/netscape/nethelp/netscape/collabra
 @dirrm lib/netscape/nethelp/netscape
 @dirrm lib/netscape/nethelp
-@dirrm lib/netscape/java/classes/aix
-@dirrm lib/netscape/java/classes/hpux
 @dirrm lib/netscape/java/classes/irix
+@dirrm lib/netscape/java/classes/hpux
+@dirrm lib/netscape/java/classes/aix
 @dirrm lib/netscape/java/classes
 @dirrm lib/netscape/java
 @dirrm lib/netscape

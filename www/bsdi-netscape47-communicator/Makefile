@@ -1,22 +1,19 @@
-# New ports collection makefile for:	netscape (full communicator version)
-# Version required:     4.*
+# New ports collection makefile for:	netscape (full communicator beta)
+# Version required:     4.5
 # Date created:         24 Feb 1997
-# Whom:                 ache
+# Whom:                 thepish
 #
-# $Id: Makefile,v 1.20 1998/08/18 01:42:41 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1998/08/18 15:17:21 thepish Exp $
 #
 
-DISTNAME=       netscape-communicator-4.06
+DISTNAME=       netscape-communicator-4.5
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.06/development/english/unix/freebsd/professional_edition/
-DISTFILES=      communicator-pro-v406-export.x86-unknown-freebsd.tar.gz
-AUTOADMIN=      autoadmin-v406.x86-unknown-freebsd.tar.gz
+MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.5/4.5_PR1/english/unix/freebsd2/
+DISTFILES=      communicator-v45b1-export.x86-unknown-freebsd.tar.gz
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     thepish@FreeBSD.ORG
 
-BROKEN=		awaiting upgrade to 4.5
-
-WRKSRC=         ${WRKDIR}/communicator-v406.x86-unknown-freebsd
+WRKSRC=         ${WRKDIR}/communicator-v45b1.x86-unknown-freebsd
 NO_BUILD=       Yes
 
 NDIR=           ${PREFIX}/lib/netscape
@@ -38,18 +35,17 @@ pre-extract:
 do-install:
 	cd ${WRKSRC} && yes "" | \
 	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.06.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.06
-	ln -sf communicator-4.06 ${BINDIR}/communicator-4
+	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.5.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.5
+	ln -sf communicator-4.5 ${BINDIR}/communicator-4
 	ln -sf communicator-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
 	rm -rf ${NDIR}/movemail-src
-	tar zxvf ${WRKDIR}/${AUTOADMIN} -C ${NDIR}
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 	cd ${WRKDIR}/Fortify-1.2.2-unix && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.06.bin
+		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.5.bin
 .endif
 	chown -R bin.bin ${NDIR}
 
