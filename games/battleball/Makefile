@@ -8,9 +8,7 @@
 PORTNAME=	battleball
 PORTVERSION=	2.1
 CATEGORIES=	games
-MASTER_SITES=	http://tzo.linux.tucows.com/files/x11/entertain/ \
-		http://fundy.linux.tucows.com/files/x11/entertain/ \
-		http://207.211.212.35/pah/
+MASTER_SITES=	http://home.austin.rr.com/pah/
 
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 
