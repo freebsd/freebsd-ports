@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.2 1994/10/25 02:28:10 jkh Exp $
+# $Id: Makefile,v 1.3 1994/11/20 00:33:29 ats Exp $
 #
-SUBDIR=	gmake m4 mprof
+SUBDIR=	gmake m4
 
 .include <bsd.port.subdir.mk>
