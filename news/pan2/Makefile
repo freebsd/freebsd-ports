@@ -22,7 +22,7 @@ LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget libxml2
+USE_GNOME=	gnomeprefix gnomehack gnometarget libxml2 gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex -lcompat"
