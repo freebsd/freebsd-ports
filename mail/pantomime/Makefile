@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pantomime
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/mirror/ \
 		http://extrovert.screwdriver.net/~extra/ \
