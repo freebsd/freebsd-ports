@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/rblcheck/scripts/Attic/configure.rbl,v 1.1 2001-08-18 06:04:35 ijliao Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/rblcheck/scripts/Attic/configure.rbl,v 1.2 2001-08-19 14:50:01 ijliao Exp $
 
 if [ -f ${WRKSRC}/rblsites.h ]; then
 	exit
@@ -90,7 +90,7 @@ while [ "$1" ]; do
 			echo "SITE(\"manual.orbz.gst-group.co.uk\")"
 			;;
 		\"ORDB\")
-			echo "SITE(\"relays.ordb.org\")
+			echo "SITE(\"relays.ordb.org\")"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
