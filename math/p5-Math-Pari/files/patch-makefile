@@ -3,7 +3,8 @@
 @@ -137,11 +137,13 @@
    $mycflags .= " -DASMINLINE";
  }
- $mycflags .= ' -DGCC_INLINE' if $Config{gccversion};
+-$mycflags .= ' -DGCC_INLINE' if $Config{gccversion};
++$mycflags .= ' -O -DGCC_INLINE' if $Config{gccversion};
 +$mycflags .= " $ENV{CFLAGS} " if $ENV{CFLAGS};
  
  @obj_files = map { "$_\$(OBJ_EXT)" } keys(%cfiles), qw(kernel mp mpinl);
