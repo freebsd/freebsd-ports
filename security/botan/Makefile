@@ -30,6 +30,13 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -38,4 +45,4 @@ post-patch:
 post-install:
 	@${RM} -f ${PREFIX}/include/botan/botan
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
