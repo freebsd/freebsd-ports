@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.12 1999/03/29 02:40:20 ache Exp $
+# $Id: Makefile,v 1.13 1999/04/08 19:05:42 billf Exp $
 #
 
 DISTNAME=       db-2.7.3
@@ -13,7 +13,6 @@ MASTER_SITES=   ftp://ftp.terra.net/pub/sleepycat/
 MAINTAINER=	josh@ican.net
 
 Y2K=		http://www.sleepycat.com/faq.html#A8
-WWW_SITE=	http://www.sleepycat.com/
 
 MANUAL_PACKAGE_BUILD= incompatible with libc internal db calls
 WRKSRC=         ${WRKDIR}/${DISTNAME}/build_unix

@@ -3,7 +3,7 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.19 1999/03/12 15:16:59 scrappy Exp $
+# $Id: Makefile,v 1.20 1999/04/09 05:42:36 pst Exp $
 #
 
 DISTNAME=	gnats-3.110
@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gnats/snapshots/
 MAINTAINER=	pst@FreeBSD.org
 
 Y2K=		http://sourceware.cygnus.com/gnats/
-WWW_SITE=	http://sourceware.cygnus.com/gnats/
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.46 1999/03/22 23:43:41 dirk Exp $
+# $Id: Makefile,v 1.47 1999/04/06 22:28:43 dirk Exp $
 #
 
 DISTNAME=	mysql-3.22.21
@@ -17,7 +17,6 @@ MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/My
 MAINTAINER=	dirk@FreeBSD.ORG
 
 Y2K=            http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
-WWW_SITE=       http://www.tcx.se/
 
 MAN1=		mysql.1
 
