@@ -145,12 +145,12 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 pre-everything::
 .if !defined(WITH_BDB_VER)
 	@if ${LDCONFIG} -r | ${GREP} -qwE -e "-ldb(41|4)"; then \
-		${ECHO} ""; \
-		${ECHO} "It seems you have installed newer db than db3.  If"; \
-		${ECHO} "you are using newer db for cyrus-sasl2, you should"; \
-		${ECHO} "specify same version by WITH_BDB_VER.  For"; \
-		${ECHO} "exapmle, WITH_BDB_VER=4 for db4."; \
-		${ECHO} ""; \
+		${ECHO_MSG} ""; \
+		${ECHO_MSG} "It seems you have installed newer db than db3.  If"; \
+		${ECHO_MSG} "you are using newer db for cyrus-sasl2, you should"; \
+		${ECHO_MSG} "specify same version by WITH_BDB_VER.  For"; \
+		${ECHO_MSG} "exapmle, WITH_BDB_VER=4 for db4."; \
+		${ECHO_MSG} ""; \
 	fi
 .endif
 
@@ -179,28 +179,28 @@ post-install:
 		${MKDIR} ${DOCSDIR}/text
 .for file in ${DOCS}
 		${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
-		@${ECHO} share/doc/cyrus-imapd22/${file}.html >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus-imapd22/${file}.html >>${TMPPLIST}
 .endfor
 .for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
 		ofile=`echo ${file} | ${SED} s/cyrquota/quota/`; \
 		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
 			${DOCSDIR}/man/$${ofile}.html; \
-		${ECHO} share/doc/cyrus-imapd22/man/$${ofile}.html \
+		${ECHO_CMD} share/doc/cyrus-imapd22/man/$${ofile}.html \
 			>>${TMPPLIST}; \
 		fi
 .endfor
 .for file in cyrusv2.mc murder.png netnews.png
 		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-		@${ECHO} share/doc/cyrus-imapd22/${file} >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus-imapd22/${file} >>${TMPPLIST}
 .endfor
 .for file in ${DOCS}
 		${INSTALL_DATA} ${WRKSRC}/doc/text/${file} ${DOCSDIR}/text
-		@${ECHO} share/doc/cyrus-imapd22/text/${file} >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus-imapd22/text/${file} >>${TMPPLIST}
 .endfor
-		@${ECHO} "@dirrm share/doc/cyrus-imapd22/text" >>${TMPPLIST}
-		@${ECHO} "@dirrm share/doc/cyrus-imapd22/man" >>${TMPPLIST}
-		@${ECHO} "@dirrm share/doc/cyrus-imapd22" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus-imapd22/text" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus-imapd22/man" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus-imapd22" >>${TMPPLIST}
 .endif
 		@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 			${FILESDIR}/imapd.sh > ${PREFIX}/etc/rc.d/imapd.sh
