@@ -6,15 +6,26 @@
 #
 
 PORTNAME=	whichman
-PORTVERSION=	2.0
+PORTVERSION=	2.4
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.linuxfocus.org/~guido.socher/
-MASTER_SITE_SUBDIR=	apps/doctools
+MASTER_SITES=	http://main.linuxfocus.org/~guido.socher/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Approximate matching utilities to search for manpages and files
 
-MAN1=		whichman.1 ftff.1 ftwhich.1
+USE_REINPLACE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+MAN1=		ftff.1 ftwhich.1 whichman.1
+PLIST_FILES=	bin/ftff bin/ftwhich bin/whichman
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/man:||g' ${WRKSRC}/whichman.c
+
+do-install:
+.for name in ftff ftwhich whichman
+	${INSTALL_PROGRAM} ${WRKSRC}/${name} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man1/${name}.1 ${MANPREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>
