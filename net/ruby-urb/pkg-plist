@@ -7,6 +7,7 @@
 %%RUBY_SITELIBDIR%%/urb/ldap.rb
 %%RUBY_SITELIBDIR%%/urb/mailto.rb
 @dirrm %%RUBY_SITELIBDIR%%/urb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/urb/http.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/urb/ldap.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/urb/mailto.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/urb/testsuite.rb
