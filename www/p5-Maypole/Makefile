@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Maypole
-PORTVERSION=	1.4
+PORTVERSION=	1.7
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SI/SIMON/
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-D
 		${SITE_PERL}/UNIVERSAL/moniker.pm:${PORTSDIR}/devel/p5-UNIVERSAL-moniker \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-exports \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+		${SITE_PERL}/Template/Plugin/Class.pm:${PORTSDIR}/www/p5-Template-Plugin-Class
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGMSG_SUB=	DOCSDIR=${DOCSDIR} \
@@ -40,6 +40,7 @@ MAN3=		Apache::MVC.3 \
 		Maypole::CLI.3 \
 		Maypole::Model::Base.3 \
 		Maypole::Model::CDBI.3 \
+		Maypole::Model::CDBI::Plain.3 \
 		Maypole::View::Mason.3 \
 		Maypole::View::TT.3 \
 		Maypole::Workflow.3
@@ -56,18 +57,20 @@ DOCS=		About.pod \
 		View.pod \
 		makedoc.pl
 EXAMPLES=	BeerDB.pm
-TMPL_BEER=	addnew
-TMPL_CUSTOM=	frontpage \
-		header
-TMPL_FACTORY=	addnew \
-		edit \
-		header \
-		list \
-		macros \
-		navbar \
-		pager \
-		search_form \
-		view
+TEMPLATES=	beerdb.css \
+		beer/addnew \
+		custom/frontpage \
+		custom/header \
+		factory/addnew \
+		factory/edit \
+		factory/footer \
+		factory/header \
+		factory/list \
+		factory/macros \
+		factory/navbar \
+		factory/pager \
+		factory/search_form \
+		factory/view
 
 pre-patch:
 	@ ${SED} ${PKGMSG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -87,14 +90,8 @@ post-install:
 	@ ${MKDIR} ${DATADIR}/templates/beer
 	@ ${MKDIR} ${DATADIR}/templates/custom
 	@ ${MKDIR} ${DATADIR}/templates/factory
-.for FILE in ${TMPL_BEER}
-	@ ${INSTALL_DATA} ${WRKSRC}/templates/beer/${FILE} ${DATADIR}/templates/beer/
-.endfor
-.for FILE in ${TMPL_CUSTOM}
-	@ ${INSTALL_DATA} ${WRKSRC}/templates/custom/${FILE} ${DATADIR}/templates/custom/
-.endfor
-.for FILE in ${TMPL_FACTORY}
-	@ ${INSTALL_DATA} ${WRKSRC}/templates/factory/${FILE} ${DATADIR}/templates/factory/
+.for FILE in ${TEMPLATES}
+	@ ${INSTALL_DATA} ${WRKSRC}/templates/${FILE} ${DATADIR}/templates/${FILE}
 .endfor
 	@ ${CAT} ${PKGMESSAGE}
 

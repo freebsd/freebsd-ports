@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Maypole/Constants.pm
 %%SITE_PERL%%/Maypole/Model/Base.pm
 %%SITE_PERL%%/Maypole/Model/CDBI.pm
+%%SITE_PERL%%/Maypole/Model/CDBI/Plain.pm
 %%SITE_PERL%%/Maypole/View/Base.pm
 %%SITE_PERL%%/Maypole/View/Mason.pm
 %%SITE_PERL%%/Maypole/View/TT.pm
@@ -22,11 +23,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/View.pod
 %%PORTDOCS%%%%DOCSDIR%%/makedoc.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/BeerDB.pm
+%%DATADIR%%/templates/beerdb.css
 %%DATADIR%%/templates/beer/addnew
 %%DATADIR%%/templates/custom/frontpage
 %%DATADIR%%/templates/custom/header
 %%DATADIR%%/templates/factory/addnew
 %%DATADIR%%/templates/factory/edit
+%%DATADIR%%/templates/factory/footer
 %%DATADIR%%/templates/factory/header
 %%DATADIR%%/templates/factory/list
 %%DATADIR%%/templates/factory/macros
@@ -42,6 +45,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole
+@unexec rmdir %D/%%SITE_PERL%%/Maypole/Model/CDBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Maypole/Model 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Maypole/View 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Maypole 2>/dev/null || true
