@@ -1,0 +1,65 @@
+*** Makefile.0	Fri Oct 28 12:41:26 1994
+--- Makefile	Mon Oct 31 04:00:03 1994
+***************
+*** 23,37 ****
+  #
+  # Don't forget to edit (or at least inspect) the file System/CONFIG.proto.
+  
+! CPP= /lib/cpp -C -P
+  RANLIB= ranlib
+! CC= gcc
+! CFLAGS= -O
+  GC_CC= ${CC}
+  MV= mv
+  CMP= cmp
+  CS= cs
+! SHOME= /u/davids/Sather
+  AR= ar
+  RM= rm -f
+  
+--- 23,37 ----
+  #
+  # Don't forget to edit (or at least inspect) the file System/CONFIG.proto.
+  
+! CPP= /usr/bin/cpp -C -P
+  RANLIB= ranlib
+! CC= cc
+! CFLAGS= -O2
+  GC_CC= ${CC}
+  MV= mv
+  CMP= cmp
+  CS= cs
+! SHOME= ..
+  AR= ar
+  RM= rm -f
+  
+***************
+*** 39,44 ****
+--- 39,46 ----
+  SYSTEM= System/GC/gc.a System/base.a System/MACROS System/CONFIG System/ITERS
+  BOOTCS= ${SHOME}/Boot/${CS}
+  BOOTHOME= ${SHOME}
++ 
++ all: testall
+  
+  # Make the boot compiler and give it a workout on itself and some test cases
+  testall: bootstrap test
+*** System/CONFIG.proto.0	Mon Oct 31 03:55:23 1994
+--- System/CONFIG.proto	Mon Oct 31 03:57:59 1994
+***************
+*** 13,19 ****
+  "#/System/base.a #/System/GC/gc.a -lm"
+  
+  -- extra args to pass to C compile if optimization turned on
+! "-O"
+  
+  -- extra args to pass to C compile if debugging turned on
+  "-g"
+--- 13,19 ----
+  "#/System/base.a #/System/GC/gc.a -lm"
+  
+  -- extra args to pass to C compile if optimization turned on
+! "-O2"
+  
+  -- extra args to pass to C compile if debugging turned on
+  "-g"
