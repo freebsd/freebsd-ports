@@ -7508,6 +7508,7 @@ vterrain-sdk	ports/graphics/vterrain-sdk
 vtk		ports/math/vtk
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
+vx68k		ports/emulators/vx68k
 vxtools		ports/emulators/vxtools
 w		src/usr.bin/w
 w3		ports/www/w3
