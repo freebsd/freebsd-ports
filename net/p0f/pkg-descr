@@ -19,3 +19,5 @@ http://www.infoworld.com/articles/op/xml/00/05/29/000529opswatch.xml
 if you do not understand how this can be harmful.  Running p0f with
 no options will cause it to analyse packets intended for other
 hosts.
+
+WWW:  http://www.stearns.org/p0f/
