@@ -1,6 +1,6 @@
---- util/Makefile.in.orig	Mon Nov 17 01:40:36 2003
-+++ util/Makefile.in	Mon Nov 17 01:41:48 2003
-@@ -100,7 +100,7 @@
+--- util/Makefile.in.orig	Mon Jan  5 15:00:04 2004
++++ util/Makefile.in	Mon Jan  5 15:00:31 2004
+@@ -95,7 +95,7 @@
  SUBDIRS = fbrun
  INCLUDES = -I../src/FbTk/
  bin_SCRIPTS = fbsetbg fluxbox-generate_menu startfluxbox
@@ -9,7 +9,7 @@
  bsetroot_SOURCES = bsetroot.cc bsetroot.hh
  bsetroot_LDADD = ../src/FbRootWindow.o ../src/I18n.o \
  			../src/FbAtoms.o ../src/FbTk/libFbTk.a
-@@ -114,7 +114,7 @@
+@@ -109,7 +109,7 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =

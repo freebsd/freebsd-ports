@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -20,6 +20,7 @@ RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
 		xterm:${PORTSDIR}/x11/XFree86-4-clients
 BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
@@ -38,7 +39,7 @@ CONFIGURE_ARGS+=	--enable-xinerama
 
 MAN1=		fluxbox-devel.1
 
-.if ${HAVE_GNOME:Mgnomelibs}!="" || defined(PACKAGE_BUILDING)
+.if ${HAVE_GNOME:Mlibgnome}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
 .else
 CONFIGURE_ARGS+=	--disable-gnome
@@ -46,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-gnome
 
 NLSMAKEFILES=	nls nls/C nls/da_DK nls/es_ES nls/et_EE nls/fr_FR nls/pt_BR \
 				nls/ru_RU nls/sv_SE nls/tr_TR nls/pt_PT nls/bg_BG nls/ja_JP \
-				nls/lv_LV nls/it_IT nls/de_DE
+				nls/lv_LV nls/it_IT nls/de_DE nls/nl_NL
 
 pre-everything::
 	@${ECHO_CMD} ""
@@ -63,7 +64,7 @@ post-patch::
 	@${REINPLACE_CMD} -e 's|PACKAGE=fluxbox|PACKAGE=fluxbox-devel|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/data/startup.in
+		${WRKSRC}/util/startfluxbox.in
 	@${REINPLACE_CMD} -e 's|fluxbox-generate_menu|fluxbox-generate_menu-devel|g; \
 		s|fbrun|fbrun-devel|g; s|%%LOCALBASE%%|${LOCALBASE}|g; s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/util/fluxbox-generate_menu.in
