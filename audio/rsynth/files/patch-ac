@@ -1,0 +1,11 @@
+--- ./Makefile.in.org	Tue Nov  8 05:30:52 1994
++++ ./Makefile.in	Mon Jul  3 21:29:28 1995
+@@ -67,7 +67,7 @@
+ 	for f in $(PROGS); do \
+ 	$(INSTALL_PROG) $$f $(BIN_DIR); \
+ 	done
+-	$(INSTALL) -d $(LIB_DIR)
++	if [ ! -d $(LIB_DIR) ]; then mkdir -p $(LIB_DIR); fi
+ 	for f in $(DICTS); do \
+ 	$(INSTALL_DATA) $$f $(LIB_DIR); \
+ 	done
