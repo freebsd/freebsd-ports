@@ -3,14 +3,14 @@
 # Date created:		5 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1995/04/20 18:05:40 asami Exp $
+# $Id: Makefile,v 1.7 1996/08/28 08:51:50 asami Exp $
 #
 
 DISTNAME=	nkf-1.6
 CATEGORIES+=	japanese
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	max@sfc.wide.ad.jp
 
 pre-patch:
 	@echo "===>  Installing custom Makefile for ${DISTNAME}"
