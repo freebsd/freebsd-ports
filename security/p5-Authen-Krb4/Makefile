@@ -16,6 +16,8 @@ DISTNAME=	Krb4-1.1
 MAINTAINER=	ajk@iu.edu
 COMMENT=	Perl extension for Kerberos 4
 
+BROKEN=		"Does not compile"
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Authen::Krb4.3

@@ -18,6 +18,8 @@ DISTFILES+=	${MOZART_DOCS}
 MAINTAINER=	mathiasp@virtual-earth.de
 COMMENT=	A distributed language with constraint-based inference
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83

@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	Proxy for H323 Videoconferencing app (OhPhone,GnomeMeeting,NetMeeting)
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

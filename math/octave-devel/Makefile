@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/bleeding-edge/ \
 MAINTAINER=	chuckr@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
 
+BROKEN=		"Does not compile"
+
 USE_BZIP2=	yes
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot

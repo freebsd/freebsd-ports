@@ -14,6 +14,8 @@ DISTNAME=	metaserver2open
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Bungie.net MythII Metaserver Open Source
 
+BROKEN=		"Does not compile"
+
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

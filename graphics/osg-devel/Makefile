@@ -14,6 +14,8 @@ DISTNAME=	OpenSceneGraph-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
