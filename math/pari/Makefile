@@ -9,7 +9,7 @@
 DISTNAME=	pari-2.0.18.beta
 PKGNAME=	pari-2.0.18b
 CATEGORIES=	math
-MASTER_SITES=	ftp://hasse.mathematik.tu-muenchen.de/pub/pari/
+MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.0/
 
 MAINTAINER=     yoshiaki@kt.rim.or.jp
 
