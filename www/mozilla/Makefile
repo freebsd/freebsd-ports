@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		http://people.FreeBSD.org/~sobomax/:local
+		http://people.FreeBSD.org/~marcus/:local
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
-		sobomax/:local
+		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
 		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:local
 
@@ -28,9 +27,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
+#WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
 
-USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS=	| tar -xf - -X ${FILESDIR}/tar-exclude
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -114,9 +112,8 @@ post-build:
 		${FILESDIR}/mozilla.sh >${WRKSRC}/mozilla
 	(cd ${WRKSRC}/dist/bin; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-	  ${ECHO_CMD} skin,install,select,classic/1.0 >> chrome/installed-chrome.txt; \
-	  ${ECHO_CMD} locale,install,select,en-US >> chrome/installed-chrome.txt; \
-	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
+	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome; \
+	  ${TOUCH} ./chrome/user-skins.rdf ./chrome/user-locales.rdf)
 	${FIND} ${WRKSRC}/dist/bin -type d | /usr/bin/sort -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
