@@ -1,0 +1,6 @@
+acron provides a database of acronyms and abbreviations.
+
+Use `whats' or `acron' to look up acronyms. You can set the enviroment
+variable $ACRON to a personal database file.
+
+Updates and corrections should be sent to Dave Sill (de5@ornl.gov).

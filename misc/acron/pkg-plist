@@ -1,0 +1,4 @@
+bin/whats
+@exec ln -sf %D/%F %B/acron
+@unexec rm %B/acron
+share/misc/acron
