@@ -27,6 +27,10 @@ USE_GNOME=	gnomehier
 MAKEFILE=	makefile
 MAKE_ENV=	CC="${CXX}"
 
+OPTIONS=	GTK2 "Turns on GTK-2.x support (Default is GTK-1)" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX=	-gtk2
@@ -36,16 +40,6 @@ MAKE_ARGS=	GTK1=yes
 .endif
 
 MAN1=		scite.1
-
-.if !defined(WITH_GTK2)
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "SciTE has the following tunable option(s):"
-	@${ECHO_MSG} "	WITH_GTK2=yes		Turns on GTK-2.x support"
-	@${ECHO_MSG} "	(unavailable if x11-toolkits/scintilla has been"
-	@${ECHO_MSG} "	 built with GTK-1.x support)"
-	@${ECHO_MSG} ""
-.endif
 
 post-patch:
 	@cd ${WRKSRC} && ${MV} SciTE.desktop SciTE.desktop.pre_tr \
@@ -63,4 +57,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
