@@ -41,7 +41,7 @@ PATCH_DIST_STRIP=	-p1
 .if defined(WITH_IPV6)
 BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict.
 .endif
-PATCH_SITES+=	http://mapage.noos.fr/efge/djbdns/
+PATCH_SITES+=	http://efge.free.fr/djbdns/
 PATCHFILES+=	patch-dnscache-dumpcache-v4.txt
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DDUMPCACHE
@@ -73,7 +73,7 @@ pre-fetch:
 	@${ECHO} "- WITH_IPV6               - build with IPv6 support"
 	@${ECHO} "                            http://www.fefe.de/dns/"
 	@${ECHO} "- WITH_DNSCACHE_DUMPCACHE - build with the persistent cache patch for dnscache"
-	@${ECHO} "                            http://mapage.noos.fr/efge/djbdns/"
+	@${ECHO} "                            http://efge.free.fr/djbdns/"
 	@${ECHO} "- WITHOUT_MAN             - do NOT install Gerritt Pape's manual pages"
 	@${ECHO} "                            http://smarden.org/pape/djb/manpages/"
 
