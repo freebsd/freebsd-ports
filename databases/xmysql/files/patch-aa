@@ -1,51 +1,45 @@
---- Makefile.orig	Mon May 12 20:19:36 1997
-+++ Makefile	Tue Sep  2 16:26:44 1997
-@@ -1,5 +1,5 @@
- #
--# Makefile for XmySQL on Linux
-+# Makefile for XmySQL on FreeBSD
- #
- 
- ########################################################
+--- Makefile.orig	Sun Nov 16 03:23:08 1997
++++ Makefile	Thu Jan 29 13:23:58 1998
 @@ -36,24 +36,24 @@
  PROGRAM = 	xmysql
  
  # PROGRAM install path
--INSTALLPATH = /xmysql-1.4
-+INSTALLPATH = $(X11BASE)/bin
+-INSTALLPATH = /xmysql-1.7
++INSTALLPATH = ${PREFIX}/bin
  
  # pixmap location
--XPM_PATH = /xmysql-1.4
-+XPM_PATH = $(X11BASE)/include/X11/pixmaps
+-XMYSQL_XPMPATH = /xmysql-1.7
++XMYSQL_XPMPATH = ${X11BASE}/include/X11/pixmaps
  
  # help path
--HELP_PATH = /xmysql-1.4
-+HELP_PATH = $(X11BASE)/lib/X11/xmysql-1.5
+-XMYSQL_HELPPATH = /xmysql-1.7
++XMYSQL_HELPPATH = ${X11BASE}/lib/X11/xmysql
  
  # Compilation Details
 -CC = gcc
--STDCFLAGS = -g -c -O2 -Wall -DXPMPATH=\"$(XPM_PATH)\" -DHELPPATH=\"$(HELP_PATH)\"
-+# CC = gcc
-+STDCFLAGS = $(CFLAGS) -c -DXPMPATH=\"$(XPM_PATH)\" -DHELPPATH=\"$(HELP_PATH)\"
+-STDCFLAGS = -g -c -O2 -Wall -DXMYSQL_XPMPATH=\"$(XMYSQL_XPMPATH)\" -DXMYSQL_HELPPATH=\"$(XMYSQL_HELPPATH)\"
++#CC = gcc
++STDCFLAGS = $(CFLAGS) -DXMYSQL_XPMPATH=\"$(XMYSQL_XPMPATH)\" -DXMYSQL_HELPPATH=\"$(XMYSQL_HELPPATH)\"
  STDLFLAGS = 
  MYSQLINC = -I/usr/local/include/mysql
  MYSQLLOAD = -L/usr/local/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
 -XFORMLIBDIR = -L/usr/lib
 -XFORMINCDIR = -I/usr/include
-+XFORMLIBDIR = -L$(X11BASE)/lib
-+XFORMINCDIR = -I$(X11BASE)/include
++XFORMLIBDIR = -L${X11BASE}/lib
++XFORMINCDIR = -I${X11BASE}/include
  XINC = 
 -XLOAD = -L/usr/X11R6/lib  -lX11
-+XLOAD = -L$(X11BASE)/lib  -lX11
++XLOAD = -L${X11BASE}/lib  -lX11
  
  # objects needed for the program
  OBJS =  Xmysql.o \
-@@ -62,10 +62,12 @@
+@@ -61,20 +61,22 @@
+ 	Xmysql_cb.o \
  	XmysqlDB.o \
  	XmysqlErr.o
-  
-+all: ${PROGRAM}
 +
++all: ${PROGRAM}
+  
  ${PROGRAM}: $(OBJS)
  	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
@@ -53,16 +47,18 @@
 +	$(XLOAD) $(XFORMLIBDIR) -lxforms -lXpm -lm
  
  .c.o:
- 	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(XINC)
-@@ -74,7 +76,7 @@
+-	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(XINC)
++	$(CC) -c $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(XINC)
+ 
+ clean:
  	rm -f ${PROGRAM} $(OBJS) 
  
  install:
 -	install --mode=711 $(PROGRAM) $(INSTALLPATH)
--	install --mode=744 mysql.xpm $(XPM_PATH)
--	install --mode=744 sqlhelp.txt $(HELP_PATH) 
+-	install --mode=744 mysql.xpm $(XPMPATH)
+-	install --mode=744 sqlhelp.txt $(HELPPATH) 
 -
 +	install -s -m 511 $(PROGRAM) $(INSTALLPATH)
-+	install -m 444 mysql.xpm $(XPM_PATH)
-+	install -d -m 755 $(HELP_PATH) 
-+	install -m 444 sqlhelp.txt $(HELP_PATH) 
++	install -m 444 mysql.xpm $(XMYSQL_XPMPATH)
++	install -d -m 755 $(XMYSQL_HELPPATH)
++	install -m 444 sqlhelp.txt $(XMYSQL_HELPPATH)
