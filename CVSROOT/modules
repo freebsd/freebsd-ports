@@ -7360,6 +7360,7 @@ resin3		ports/www/resin3
 resume		ports/textproc/resume
 retawq		ports/www/retawq
 rexima		ports/audio/rexima
+rexx-curl	ports/ftp/rexx-curl
 rexx-imc	ports/lang/rexx-imc
 rexx-regina	ports/lang/rexx-regina
 rexx-sock	ports/net/rexx-sock
