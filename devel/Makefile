@@ -425,6 +425,7 @@
     SUBDIR += make++
     SUBDIR += makedepend
     SUBDIR += makeplus
+    SUBDIR += maketool
     SUBDIR += memcheck
     SUBDIR += meta-cvs
     SUBDIR += mico
