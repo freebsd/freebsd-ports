@@ -18,7 +18,7 @@ MAINTAINER=	shige@FreeBSD.org
 BITMAP_VER=	8.3
 BITMAPDOCDIR=	share/doc/bitmap
 BITMAP_SETUPEL=	bitmap-setupel.el
-BITMAP_FONT=	${X11BASE}/lib/X11/fonts/local/etl8x16-bitmap.pcf.gz
+BITMAP_FONT=	${X11BASE}/lib/X11/fonts/local/bitmap16.pcf.gz
 
 # mule-19.34
 EMACS_PORT_NAME=	mule
