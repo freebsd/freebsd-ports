@@ -1,0 +1,14 @@
+--- gst/level/filter.func.orig	Mon Oct 13 22:32:12 2003
++++ gst/level/filter.func	Mon Oct 13 22:32:21 2003
+@@ -10,9 +10,9 @@
+   register double square = 0.0;		/* Square */
+   register double PSS = 0.0;		/* Peak Square Sample */
+ 
+-  *CS = 0.0;      /* Cumulative Square for this block */
+-
+   gdouble normalizer = (double) (1 << resolution);
++
++  *CS = 0.0;      /* Cumulative Square for this block */
+ 
+   /*
+    * process data here  
