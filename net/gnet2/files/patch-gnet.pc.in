@@ -1,0 +1,10 @@
+--- gnet.pc.in.orig	Sun Feb 16 15:17:15 2003
++++ gnet.pc.in	Sun Feb 16 15:17:39 2003
+@@ -6,5 +6,5 @@
+ Name: Gnet
+ Description: A network compatibility layer library
+ Version: @VERSION@
+-Libs: -L${libdir} -lgnet @GLIB_LIBS@ @GTHREAD_LIBS@
+-Cflags: -I${includedir}/gnet -I${libdir}/gnet/include/ @GLIB_CFLAGS@ @GTHREAD_CFLAGS@
++Libs: -L${libdir} -lgnet-glib2 @GLIB_LIBS@ @GTHREAD_LIBS@
++Cflags: -I${includedir}/gnet-glib2 -I${libdir}/gnet-glib2/include/ @GLIB_CFLAGS@ @GTHREAD_CFLAGS@
