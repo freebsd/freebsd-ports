@@ -21,7 +21,7 @@ CFLAGS+=	-DNEED_STRCASESTR
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s|^(DEFS =.*)|\1 ${CFLAGS}|" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -Ee "s|^(DEFS =.*)|\1 ${CFLAGS}|" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autorespond ${PREFIX}/bin/
