@@ -1,0 +1,16 @@
+include/check.h
+lib/libcheck.a
+share/aclocal/check.m4
+share/doc/check-0.8.4/COPYING
+share/doc/check-0.8.4/ChangeLog
+share/doc/check-0.8.4/ChangeLogOld
+share/doc/check-0.8.4/NEWS
+share/doc/check-0.8.4/README
+share/doc/check-0.8.4/examples/Makefile.am.money
+share/doc/check-0.8.4/examples/check_money.c
+share/doc/check-0.8.4/examples/configure.in.money
+share/doc/check-0.8.4/examples/money.c
+share/doc/check-0.8.4/examples/money.h
+share/doc/check-0.8.4/tutorial.lyx
+@dirrm share/doc/check-0.8.4/examples
+@dirrm share/doc/check-0.8.4

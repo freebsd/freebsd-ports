@@ -1,0 +1,24 @@
+Check is a unit test framework for C. It features a simple interface
+for defining unit tests, putting little in the way of the
+developer. Tests are run in a separate address space, so Check can
+catch both assertion failures and code errors that cause segmentation
+faults or other signals. The output from unit tests can be used within
+source code editors and IDEs.
+
+Check was inspired by similar frameworks that currently exist for most
+programming languages; the most famous example being JUnit for Java
+(www.junit.org). There is a list of unit test frameworks for multiple
+languages at www.xprogramming.com/software.htm . Unit testing has a
+long history as part of formal quality assurance methodologies, but
+has recently been associated with the lightweight methodology called
+Extreme Programming. In that methodology, the characteristic practice
+involves interspersing unit test writing with coding (" test a little,
+code a little"). While the incremental unit test/code approach is
+indispensable to Extreme Programming, it is also applicable, and
+perhaps indispensable, outside of that methodology.
+
+
+WWW: http://check.sourceforge.net
+
+- Mike
+mikeh@FreeBSD.org

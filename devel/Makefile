@@ -329,6 +329,7 @@
     SUBDIR += libbonobomm
     SUBDIR += libcache
     SUBDIR += libcapsinetwork
+    SUBDIR += libcheck
     SUBDIR += libchipcard
     SUBDIR += libchipcard-kde
     SUBDIR += libcii
