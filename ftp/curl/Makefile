@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.8
+PORTVERSION=	7.8.1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
@@ -26,8 +26,8 @@ MAN3=		curl_easy_cleanup.3 curl_easy_getinfo.3 curl_easy_init.3 \
 		curl_mprintf.3 \
 		curl_slist_append.3 curl_slist_free_all.3 \
 		curl_strequal.3 curl_strnequal.3 \
-		curl_version.3
-MAN5=		libcurl.5
+		curl_version.3 \
+		libcurl.3
 
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	2
@@ -35,8 +35,11 @@ SHLIB_VER=	2
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-.if defined(WITH_SSL)
+.if !defined(WITHOUT_SSL)
 USE_OPENSSL=	YES
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
+.else
+CONFIGURE_ARGS=	--without-ssl
 .endif
 
 .if exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
