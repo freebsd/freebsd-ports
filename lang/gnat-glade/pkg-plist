@@ -101,9 +101,13 @@ lib/garlic/s-garfil.ali
 lib/garlic/s-gargro.ali
 lib/garlic/s-garhea.ali
 lib/garlic/s-garlic.ali
+lib/garlic/s-gaprma.adb
+lib/garlic/s-gaprma.ads
+lib/garlic/s-gaprma.ali
 lib/garlic/s-gaprre.ali
 lib/garlic/s-garopt.ali
 lib/garlic/s-garpar.ali
+lib/garlic/s-garpri.adb
 lib/garlic/s-garpri.ali
 lib/garlic/s-garpro.ali
 lib/garlic/s-garrem.ali
