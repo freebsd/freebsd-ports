@@ -4,11 +4,11 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.62 1998/12/08 20:25:18 obrien Exp $
+# $Id: Makefile,v 1.63 1999/02/18 09:26:52 obrien Exp $
 #
 
-DISTNAME=	ncftp-3.0beta17-src
-PKGNAME=	ncftp-3.0b17
+DISTNAME=	ncftp-3.0beta18-src
+PKGNAME=	ncftp-3.0b18
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/3.0BETA/
 
