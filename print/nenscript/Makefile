@@ -8,7 +8,8 @@
 PORTNAME=	nenscript
 PORTVERSION=	1.13.3
 CATEGORIES=	print
-MASTER_SITES=	http://www.im.lcs.mit.edu/~magnus/nenscript/
+MASTER_SITES=	http://risacher.posixnap.net/nenscript/ \
+		ftp://netsw.org/system/tools/print/
 
 MAINTAINER=	ports@FreeBSD.Org
 
