@@ -1,4 +1,2 @@
-lib/libgail-gnome.a
-lib/libgail-gnome.so
-lib/libgail-gnome.so.0
+lib/gtk-2.0/modules/libgail-gnome.so
 libdata/pkgconfig/libgail-gnome.pc
