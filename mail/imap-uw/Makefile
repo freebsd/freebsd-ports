@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.5 1997/06/03 06:27:06 pst Exp $
+# $Id: Makefile,v 1.6 1997/06/03 06:44:48 asami Exp $
 #
 
 DISTNAME=	imap-4.1.BETA
@@ -22,7 +22,7 @@ pre-build:
 	@chmod 755 ${WRKSRC}/src/osdep/unix/drivers ${WRKSRC}/src/osdep/unix/mkauths
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/c-client/libc-client.so.2.0 ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/c-client/libc-client.so.2.1 ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a ${PREFIX}/lib/libc-client.a
 	${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
