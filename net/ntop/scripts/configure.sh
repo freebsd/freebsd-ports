@@ -14,7 +14,7 @@ if [ "${BATCH}" ]; then
 		set \"tcpwrap\" \"pcap\" \"zlib\"
 	fi
 else
-	/usr/bin/dialog --title "configuration options" --clear \
+	/usr/bin/dialog --title "ntop configuration options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 tcpwrap		"TCP Wrapper support" ON \
