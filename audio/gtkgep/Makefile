@@ -11,8 +11,11 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	#
 
-MAINTAINER=	linimon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A guitar effects processor for GTK
+
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=	2005-03-22
 
 USE_INC_LIBTOOL_VER=	13
 USE_GMAKE=	yes
