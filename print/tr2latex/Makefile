@@ -6,7 +6,7 @@
 
 DISTNAME=	tr2latex-2.2
 CATEGORIES=	print
-MASTER_SITES=	ftp://sol.cs.ruu.nl/pub/TEX/TOOLS/
+MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/TEX/TOOLS/
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
