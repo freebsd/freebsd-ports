@@ -1,0 +1,10 @@
+--- config.h.old	Mon Apr 19 10:54:11 2004
++++ config.h	Mon Apr 19 10:54:17 2004
+@@ -24,7 +24,6 @@
+ /* which versions? */
+ # define HAVE_GETOPT_LONG
+ # define HAVE_GETADDRINFO
+-# define ENABLE_NLS
+ # define LOCALEDIR "/usr/local/share/locale"
+ #endif
+ 

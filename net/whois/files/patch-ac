@@ -1,0 +1,30 @@
+*** work/whois-4.6.13/po/Makefile	Thu Apr 15 15:58:17 2004
+--- po/Makefile	Thu Apr 15 15:58:47 2004
+***************
+*** 7,12 ****
+--- 7,14 ----
+  
+  POTFILES=../whois.c ../mkpasswd.c
+  
++ .SUFFIXES:      .po .mo
++ 
+  all: $(PACKAGE).pot $(CATALOGS)
+  
+  $(PACKAGE).pot: $(POTFILES)
+***************
+*** 31,37 ****
+  	  fi; \
+  	done
+  
+! %.mo: %.po
+  	msgfmt --statistics --check --verbose --output-file=$@ $<
+  
+  clean:
+--- 33,39 ----
+  	  fi; \
+  	done
+  
+! .po.mo:
+  	msgfmt --statistics --check --verbose --output-file=$@ $<
+  
+  clean:
