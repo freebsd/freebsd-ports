@@ -9,15 +9,15 @@ PORTNAME=	heretic
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/ \
-		http://heretic.linuxgames.com/wad/
+MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/:source \
+		http://heretic.linuxgames.com/wad/:wad
 DISTNAME=	gl${PORTNAME}-${PORTVERSION}
 .if !defined(WITHOUT_WAD)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} heretic_share.wad.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source heretic_share.wad.gz:wad
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	oliver@freebsd.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Unix source-port of the famous Heretic game by id Software
 
 USE_X_PREFIX=	yes
