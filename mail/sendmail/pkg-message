@@ -13,7 +13,7 @@ To active the delivery from the local submission queue see:
 To deliver all local mail to your mailhub, edit the last line of submit.mc:
 FEATURE(`msp','mailhub.do.main`)dnl
 
-and set your falgs in /etc/rc.conf:
+and set your flags in /etc/rc.conf:
 sendmail_flags="-L sm-msp-queue -Ac -q1m"
 
 You can delete /etc/mail/sendmail.cf when you don't need a daemon listen.
