@@ -1,6 +1,6 @@
 bin/ytree
 etc/ytree.conf.sample
-share/doc/ytree/CHANGES
-share/doc/ytree/README
-share/doc/ytree/THANKS
-@dirrm share/doc/ytree
+%%PORTDOCS%%share/doc/ytree/CHANGES
+%%PORTDOCS%%share/doc/ytree/README
+%%PORTDOCS%%share/doc/ytree/THANKS
+%%PORTDOCS%%@dirrm share/doc/ytree
