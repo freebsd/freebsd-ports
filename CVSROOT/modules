@@ -2575,6 +2575,7 @@ httpgrabber	ports/www/httpgrabber
 httplog		ports/sysutils/httplog
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
+hu-ispell	ports/hungarian/ispell
 hu-ooodict-HU	ports/editors/ooodict-hu_HU
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
@@ -6144,6 +6145,7 @@ ports_gperf	ports/devel/gperf
 ports_graphics	ports/graphics
 ports_gzip	ports/archivers/gzip
 ports_hebrew	ports/hebrew
+ports_hungarian	ports/hungarian
 ports_irc	ports/irc
 ports_japanese	ports/japanese
 ports_java	ports/java
