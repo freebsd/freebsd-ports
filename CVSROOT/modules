@@ -8347,6 +8347,7 @@ transcode	ports/multimedia/transcode
 transfig	ports/print/transfig
 translate	ports/misc/translate
 transproxy	ports/www/transproxy
+traymp		ports/audio/traymp
 tree		ports/sysutils/tree
 treecc		ports/lang/treecc
 treepuzzle	ports/biology/treepuzzle
