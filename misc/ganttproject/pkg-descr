@@ -1,5 +1,0 @@
-Ganttproject lets you plan projects using a Gantt chart. GanttProject use a XML
-file format. It can export the project in HTML Web pages or PDF document (using
-XSLT) or image files.
-
-WWW: http://ganttproject.sourceforge.net/
