@@ -7,7 +7,7 @@
 
 PORTNAME=	man-doc
 PORTVERSION=	4.3
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	japanese
 DISTFILES=	# none
 
@@ -19,7 +19,7 @@ NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/man
 PLIST=		${WRKDIR}/PLIST
 
-MANSECS=	1 2 5 6 7 8
+MANSECS=	1 2 5 6 7 8 9
 JAMANDIR?=	/usr/opt/doc/ja_JP.eucJP/man
 
 do-extract:
