@@ -7,10 +7,11 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://savannah.nongnu.org/download/gcmd/gcmd.pkg/${PORTVERSION}/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	rehsack@liwing.de
 COMMENT=	File manager for Gnome
 
 .if defined(WITH_FAM)

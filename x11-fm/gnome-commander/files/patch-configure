@@ -1,0 +1,18 @@
+--- configure.orig	Fri Oct 24 00:59:12 2003
++++ configure	Fri Oct 24 00:59:25 2003
+@@ -9397,13 +9397,13 @@
+ if test "x${prefix}" = "xNONE"; then
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PIXMAPS_DIR "${ac_default_prefix}/share/pixmaps/${PACKAGE}"
++#define PIXMAPS_DIR "${ac_default_prefix}/share/gnome/pixmaps/${PACKAGE}"
+ _ACEOF
+ 
+ else
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PIXMAPS_DIR "${prefix}/share/pixmaps/${PACKAGE}"
++#define PIXMAPS_DIR "${prefix}/share/gnome/pixmaps/${PACKAGE}"
+ _ACEOF
+ 
+ fi
