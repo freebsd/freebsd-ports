@@ -31,17 +31,18 @@ MAN1=		rpc.dracd.1
 MAKE_ARGS+=	-DWITH_TI_RPC
 .endif
 
-pre-everything:
-	@${ECHO} "================================================================================"
+pre-everything::
+	@${ECHO} "============================================================="
 	@${ECHO} "For databases compatible with other MTAs than sendmail, use:"
 	@${ECHO}
 	@${ECHO} "WITH_POSTFIX=yes	(Postfix)"
 	@${ECHO} "WITH_POSTFIX_DB3=yes	(Postfix with DB3 database maps)"
 	@${ECHO} "WITH_EXIM=yes		(Exim)"
 	@${ECHO}
-	@${ECHO} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in foreground instead"
-	@${ECHO} "of detaching itself. This breaks the startup script."
-	@${ECHO} "================================================================================"
+	@${ECHO} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in"
+	@${ECHO} "foreground instead of detaching itself. This breaks the"
+	@${ECHO} "startup script."
+	@${ECHO} "============================================================="
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m
