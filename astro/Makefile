@@ -6,6 +6,7 @@
     SUBDIR += glunarclock
     SUBDIR += luna
     SUBDIR += openuniverse
+    SUBDIR += p5-GPS
     SUBDIR += pyweather
     SUBDIR += rmap
     SUBDIR += saoimage
