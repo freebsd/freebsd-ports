@@ -20,6 +20,7 @@
     SUBDIR += copytape
     SUBDIR += cpbk
     SUBDIR += cpdup
+    SUBDIR += cronolog
     SUBDIR += daemontools
     SUBDIR += detach
     SUBDIR += diskusage
