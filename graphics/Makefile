@@ -291,6 +291,7 @@
     SUBDIR += stamp
     SUBDIR += svg2swf
     SUBDIR += svgalib
+    SUBDIR += swftools
     SUBDIR += synaesthesia
     SUBDIR += tcm
     SUBDIR += tgif
