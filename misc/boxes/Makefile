@@ -17,9 +17,7 @@ MAINTAINER=	patseal@hyperhost.net
 
 MAN1=		boxes.1
 USE_GMAKE=	yes
-
-do-build:
-	cd $(WRKSRC); $(GMAKE)
+ALL_TARGET=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/boxes ${PREFIX}/bin
