@@ -1,0 +1,53 @@
+bin/comp_err
+bin/isamchk
+bin/isamlog
+bin/msql2mysql
+bin/mysql
+bin/mysql.server
+bin/mysql_install_db
+bin/mysqlaccess
+bin/mysqladmin
+bin/mysqlbug
+bin/mysqldump
+bin/mysqlshow
+bin/perror
+bin/replace
+bin/safe_mysqld
+bin/which1
+bin/zap
+etc/rc.d/mysql.sh
+include/mysql/m_ctype.h.in
+include/mysql/m_string.h
+include/mysql/my_sys.h
+include/mysql/mysql.h
+include/mysql/mysql_com.h
+include/mysql/dbug.h
+lib/mysql/libheap.a
+lib/mysql/libmerge.a
+lib/mysql/libmysqlclient.a
+lib/mysql/libmystrings.a
+lib/mysql/libmysys.a
+lib/mysql/libnisam.a
+lib/mysql/libdbug.a
+libexec/mysqld
+share/doc/mysql/mysql-faq.html
+share/doc/mysql/mysql-faq.ps
+share/doc/mysql/mysql-faq.texi
+share/doc/mysql/mysql-faq.txt
+share/doc/mysql/mysql-faq_toc.html
+share/mysql/english/errmsg.sys
+share/mysql/english/errmsg.txt
+share/mysql/french/errmsg.sys
+share/mysql/french/errmsg.txt
+share/mysql/germany/errmsg.sys
+share/mysql/germany/errmsg.txt
+share/mysql/swedish/errmsg.sys
+share/mysql/swedish/errmsg.txt
+@dirrm include/mysql
+@dirrm lib/mysql
+@dirrm share/doc/mysql
+@dirrm share/mysql/english
+@dirrm share/mysql/french
+@dirrm share/mysql/germany
+@dirrm share/mysql/swedish
+@dirrm share/mysql
