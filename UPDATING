@@ -26,7 +26,7 @@ upgrades.
 
   In Mailman 2.1.5, some significant changes have been made to the
   file formats for qfiles and the pendings database.  See
-  $PREFIX/share/docs/mailman/UPGRADING for details (if you define
+  $PREFIX/share/doc/mailman/UPGRADING for details (if you define
   NOPORTDOCS, refer relevant file in an archive).
 
 20040527:
