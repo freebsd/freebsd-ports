@@ -1,0 +1,14 @@
+Cascade is a program for analyzing the noise and distortion performance
+of a cascade of elements in an electronic system. A typical application
+of cascade is the analysis of a receiver. A text description of the
+receiver block diagram consisting of things like amplifiers, mixers,
+and filters is entered into cascade. Each element is characterized
+by its gain and optionally noise figure, and third order intercept
+point. The program then analyzes the system and produces a report
+detailing the performance at each stage.
+
+A summary is produced which shows the relative contributions to the
+total system performance of each block. This allows easy identification
+of what limits system performance.
+
+WWW: http://rfcascade.sourceforge.net/

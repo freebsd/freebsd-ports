@@ -1,0 +1,10 @@
+bin/cascade
+%%PORTDOCS%%share/doc/cascade/ex1.gif
+%%PORTDOCS%%share/doc/cascade/index.html
+share/emacs/site-lisp/cascade-mode.el
+share/examples/cascade/README.examples
+share/examples/cascade/ex1.cas
+share/examples/cascade/ex1.gif
+share/examples/cascade/ex1.out
+@dirrm share/examples/cascade
+%%PORTDOCS%%@dirrm share/doc/cascade
