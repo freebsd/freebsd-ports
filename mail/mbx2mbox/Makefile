@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mbx2mbox
-PORTVERSION= 	0.32
+PORTVERSION= 	0.33
 CATEGORIES=	mail
-MASTER_SITES=	http://www.cs.virginia.edu/~dwc3q/code/
+MASTER_SITES=	http://download.sourceforge.net/mbx2mbox/
 
 MAINTAINER=	ports@FreeBSD.org
 
