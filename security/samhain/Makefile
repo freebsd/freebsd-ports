@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	security
-MASTER_SITES=	http://la-samhna.de/samhain/
+MASTER_SITES=	http://la-samhna.de/samhain/ \
+		http://samhain.securecirt.org/
 DISTFILES=	samhain_signed-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Samhain Intrusion Detection System
 
 .if defined(WITH_GPG)
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 .endif
 
 GNU_CONFIGURE= yes
@@ -75,9 +76,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-1_7.ps ${PREFIX}/share/doc/samhain
 	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-1_7.html.tar ${PREFIX}/share/doc/samhain
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-client+server.html ${PREFIX}/share/doc/samhain
-.if defined(WITH_GPG)
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-samhain+GnuPG.html ${PREFIX}/share/doc/samhain
-.endif
 .endif
 
 install-user:
