@@ -19,7 +19,6 @@ bin/includemocs
 bin/kapptemplate
 bin/kbabel
 bin/kbabeldict
-bin/kbugbuster
 bin/kde-build
 bin/kdedoc
 bin/kdekillall
@@ -84,7 +83,6 @@ share/applnk/Development/catalogmanager.desktop
 %%CERVISIA%%share/applnk/Development/cervisia.desktop
 share/applnk/Development/kbabel.desktop
 share/applnk/Development/kbabeldict.desktop
-share/applnk/Development/kbugbuster.desktop
 share/applnk/Development/kompare.desktop
 share/apps/catalogmanager/catalogmanagerui.rc
 share/apps/catalogmanager/icons/hicolor/16x16/actions/statistics.png
@@ -305,10 +303,6 @@ share/apps/kbabel/pics/splash.png
 share/apps/kbabeldict/modules/dbsearchengine.rc
 share/apps/kbabeldict/modules/poauxiliary.rc
 share/apps/kbabeldict/modules/pocompendium.rc
-share/apps/kbugbuster/kbugbusterui.rc
-share/apps/kbugbuster/pics/bars.png
-share/apps/kbugbuster/pics/logo.png
-share/apps/kbugbuster/pics/tools.png
 share/apps/kompare/icons/hicolor/16x16/apps/kompare.png
 share/apps/kompare/icons/locolor/16x16/apps/kompare.png
 share/apps/kompare/icons/locolor/32x32/apps/kompare.png
@@ -380,20 +374,35 @@ share/icons/hicolor/48x48/mimetypes/gettext.png
 share/icons/locolor/16x16/apps/catalogmanager.png
 share/icons/locolor/16x16/apps/kbabel.png
 share/icons/locolor/16x16/apps/kbabeldict.png
-share/icons/locolor/16x16/apps/kbugbuster.png
 share/icons/locolor/16x16/apps/kompare.png
 share/icons/locolor/16x16/mimetypes/gettext.png
 share/icons/locolor/32x32/apps/catalogmanager.png
 share/icons/locolor/32x32/apps/kbabel.png
 share/icons/locolor/32x32/apps/kbabeldict.png
-share/icons/locolor/32x32/apps/kbugbuster.png
 share/icons/locolor/32x32/apps/kompare.png
 share/icons/locolor/32x32/mimetypes/gettext.png
 share/mimelnk/application/x-gettext.desktop
 share/services/kompare_part.desktop
 share/services/pothumbnail.desktop
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/mimetypes
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/mimetypes
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/mimetypes
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
 @dirrm share/doc/HTML/en/kbabel
 %%CERVISIA%%@dirrm share/doc/HTML/en/cervisia
 @dirrm share/apps/komparepart
@@ -407,8 +416,6 @@ share/services/pothumbnail.desktop
 @dirrm share/apps/kompare/icons/hicolor
 @dirrm share/apps/kompare/icons
 @dirrm share/apps/kompare
-@dirrm share/apps/kbugbuster/pics
-@dirrm share/apps/kbugbuster
 @dirrm share/apps/kbabeldict/modules
 @dirrm share/apps/kbabeldict
 @dirrm share/apps/kbabel/pics
@@ -457,4 +464,5 @@ share/services/pothumbnail.desktop
 @dirrm share/apps/catalogmanager/icons/hicolor
 @dirrm share/apps/catalogmanager/icons
 @dirrm share/apps/catalogmanager
+@dirrm share/applnk/Development
 @dirrm include/kbabel
