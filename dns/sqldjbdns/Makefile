@@ -35,6 +35,7 @@ post-install:
 		${MKDIR} ${EXAMPLESDIR}
 		${INSTALL_DATA}  ${WRKSRC}/create.sql ${EXAMPLESDIR}
 .ifndef NOPORTDOCS
+		${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
