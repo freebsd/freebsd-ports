@@ -1,0 +1,26 @@
+bin/killustrator
+share/apps/killustrator/pics/abottom.xpm
+share/apps/killustrator/pics/ahcenter.xpm
+share/apps/killustrator/pics/aleft.xpm
+share/apps/killustrator/pics/aright.xpm
+share/apps/killustrator/pics/atop.xpm
+share/apps/killustrator/pics/avcenter.xpm
+share/apps/killustrator/pics/beziertool.xpm
+share/apps/killustrator/pics/dbottom.xpm
+share/apps/killustrator/pics/dhcenter.xpm
+share/apps/killustrator/pics/dhdist.xpm
+share/apps/killustrator/pics/dleft.xpm
+share/apps/killustrator/pics/dright.xpm
+share/apps/killustrator/pics/dtop.xpm
+share/apps/killustrator/pics/dvcenter.xpm
+share/apps/killustrator/pics/dvdist.xpm
+share/apps/killustrator/pics/ellipsetool.xpm
+share/apps/killustrator/pics/linetool.xpm
+share/apps/killustrator/pics/pointtool.xpm
+share/apps/killustrator/pics/polygontool.xpm
+share/apps/killustrator/pics/recttool.xpm
+share/apps/killustrator/pics/selecttool.xpm
+share/apps/killustrator/pics/texttool.xpm
+share/locale/de/LC_MESSAGES/killustrator.mo
+@dirrm share/apps/killustrator/pics
+@dirrm share/apps/killustrator
