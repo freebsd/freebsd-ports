@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 LATEST_LINK=	rpm4
-CONFLICTS=	beecrypt-* rpm-3.* rpm2cpio-*
+CONFLICTS=	beecrypt-* rpm-3.*
 
 .if defined(WITH_PYTHON)
 CONFIGURE_ARGS+=--with-python=auto
