@@ -1,1 +1,4 @@
 bin/qstat
+share/doc/qstat/qstat.txt
+share/doc/qstat/qstatdoc.html
+@dirrm share/doc/qstat
