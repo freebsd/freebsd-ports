@@ -7,7 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -27,7 +27,8 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
-		--with-gpgsm=${LOCALBASE}/bin/gpgsm
+		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
+		--includedir=${PREFIX}/include/gpgme
 
 INFO=		gpgme
 
