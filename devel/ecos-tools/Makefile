@@ -15,7 +15,7 @@ DISTNAME=	ecos-tools.${SNAPDATE}
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Configuration tools for the eCos embedded OS
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
 USE_BZIP2=	yes
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-tcl=${PREFIX} --with-tcl-version=8.4
 CONFIGURE_ENV=	TCL_INC_DIR=${PREFIX}/include/tcl8.4
 USE_GMAKE=	yes
 
-SNAPDATE=	20031109
+SNAPDATE=	20040125
 
 ECOSSRCDIR=	${WRKDIR}/ecos/host
 CFGTOOL_WRKSRC=	${WRKDIR}/configtool-build
