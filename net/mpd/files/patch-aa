@@ -1,19 +1,19 @@
-*** Makefile	Mon Aug 18 02:12:35 1997
---- /home/andy/tmp/wrk/Makefile	Wed Sep 10 13:06:30 1997
-***************
-*** 15,21 ****
-  
-  # Default configuration directory
-  
-! MPD_CONF_DIR?=	${PREFIX}/etc/ppp
-  
-  # Define supported physical layer types
-  
---- 15,21 ----
-  
-  # Default configuration directory
-  
-! MPD_CONF_DIR?=	${PREFIX}/etc/mpd
-  
-  # Define supported physical layer types
-  
+--- Makefile	Wed Sep  9 07:12:26 1998
++++ /home/andy/tmp/wrk/Makefile	Wed Sep 16 17:26:34 1998
+@@ -15,7 +15,7 @@
+ 
+ # Default configuration directory
+ 
+-MPD_CONF_DIR?=	${PREFIX}/etc/ppp
++MPD_CONF_DIR?=	${PREFIX}/etc/mpd
+ 
+ # Define supported physical layer types
+ 
+@@ -42,7 +42,6 @@
+ LDADD+=		-lmd
+ DPADD+=		${LIBMD}
+ 
+-COPTS+=		-O2
+ COPTS+=		-Wall -Wmissing-prototypes -Wnested-externs
+ COPTS+=		-DPATH_CONF_DIR=\"${MPD_CONF_DIR}\"
+ 

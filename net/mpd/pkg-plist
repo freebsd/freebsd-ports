@@ -1,11 +1,15 @@
-sbin/mpd
 etc/mpd/mpd.conf.sample
 etc/mpd/mpd.links.sample
 etc/mpd/mpd.script.sample
 etc/mpd/mpd.secret.sample
+sbin/mpd
 share/doc/mpd/README
 share/doc/mpd/CHANGES
+share/doc/mpd/EQL.patch
 share/doc/mpd/PROTOS
 share/doc/mpd/README.code
 share/doc/mpd/README.commands
 share/doc/mpd/README.scripts
+share/doc/mpd/README.server
+@dirrm etc/mpd
+@dirrm share/doc/mpd
