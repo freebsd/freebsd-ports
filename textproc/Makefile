@@ -367,6 +367,7 @@
     SUBDIR += tei-guidelines-p3
     SUBDIR += tei-guidelines-p4
     SUBDIR += tei-lite
+    SUBDIR += tei-p3
     SUBDIR += tei-xlite
     SUBDIR += tex2im
     SUBDIR += texi2db
