@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	resin
-PORTVERSION=	2.1.12
+PORTVERSION=	2.1.14
 CATEGORIES=	www java
 MASTER_SITES=	http://www.caucho.com/download/
 
@@ -122,7 +122,10 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	    in the Apache configuration file, where you should also \
 	    add a line to specify the location of the Resin configuration \
 	    file, for example: | fmt -w 80 >> ${PKGMESSAGE}
-	@${ECHO_CMD} CauchoConfigFile ${PREFIX}/etc/${APP_NAME}.xml >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
+	@${ECHO_CMD} "<IfModule mod_caucho.c>" >> ${PKGMESSAGE}
+	@${ECHO_CMD} "    CauchoConfigFile ${PREFIX}/etc/${APP_NAME}.xml" >> ${PKGMESSAGE}
+	@${ECHO_CMD} "</IfModule>" >> ${PKGMESSAGE}
 .endif
 	@${MV} ${WRKDIR}/wrapper.pl.in ${WRKSRC}/bin/wrapper.pl.in
 
