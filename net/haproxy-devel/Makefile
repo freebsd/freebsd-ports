@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.25
+PORTVERSION=	1.1.26
 CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 		http://w.ods.org/tools/haproxy/src/old/
@@ -16,7 +16,7 @@ COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
 
 USE_REINPLACE=	yes
 
-STATS_INTERVAL?= 0
+STATS_INTERVAL?=	0
 CFLAGS+=	-DSTATTIME=${STATS_INTERVAL}
 
 .if defined(WITH_TPROXY)
@@ -44,7 +44,6 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC} ;\
-	echo "Compiling haproxy:" ; \
 	echo "${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME}" ;\
 	${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME} )
 
