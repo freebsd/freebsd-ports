@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Apache-NNTPGateway
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	www news perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A NNTP interface for mod_perl enabled Apache web server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
