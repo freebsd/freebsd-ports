@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.80
+PORTVERSION=	0.83
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.us.tmda.net/releases/%SUBDIR%/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mwm@mired.org
+MAINTAINER=	sergei@kolobov.com
 COMMENT=	Python-based SPAM reduction system
 
 USE_PYTHON=	yes

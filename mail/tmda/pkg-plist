@@ -1,6 +1,4 @@
 @comment $FreeBSD$
-bin/tmda-gui
-bin/tmda-manager
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -95,6 +93,7 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/challengeresponse.html
 %%PORTDOCS%%%%DOCSDIR%%/config-client.html
 %%PORTDOCS%%%%DOCSDIR%%/config-filter.html
 %%PORTDOCS%%%%DOCSDIR%%/config-pre.html
@@ -119,6 +118,7 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/tmda-ofmipd.html
 %%PORTDOCS%%%%DOCSDIR%%/tmda-vdomains.html
 %%PORTDOCS%%%%DOCSDIR%%/trouble.html
+%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/collectaddys
 %%EXAMPLESDIR%%/def2html
