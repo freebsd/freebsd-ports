@@ -1,14 +1,5 @@
 --- configure.orig	Thu Nov 16 13:40:48 2000
 +++ configure	Wed Oct 31 03:46:15 2001
-@@ -4295,7 +4295,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
 @@ -4569,7 +4569,7 @@
         fi
         for lang in $LINGUAS; do
@@ -18,12 +9,3 @@
           esac
         done
         LINGUAS=$NEW_LINGUAS
-@@ -4668,7 +4668,7 @@
- 	< $srcdir/po/POTFILES.in > po/POTFILES
-   
- 
--localedir=$datadir/locale
-+localedir=$prefix/share/locale
- 
- 
- gnomelocaledir='${prefix}/${DATADIRNAME}/locale'
