@@ -195,13 +195,13 @@
     SUBDIR += links
     SUBDIR += links1
     SUBDIR += linux-beonex
+    SUBDIR += linux-firefox
     SUBDIR += linux-flashplugin
     SUBDIR += linux-flashplugin6
     SUBDIR += linux-flashplugin7
     SUBDIR += linux-lesstif-ns
     SUBDIR += linux-mozilla
     SUBDIR += linux-mozilla-devel
-    SUBDIR += linux-mozillafirebird
     SUBDIR += linux-mozillafirebird-el
     SUBDIR += linux-nvu
     SUBDIR += linux-opera
