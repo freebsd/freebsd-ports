@@ -24,6 +24,8 @@ PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION}
 NO_BUILD=	yes
 
+CPIO?=		/usr/bin/cpio
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
@@ -36,8 +38,8 @@ DISTFILES=	jdk${JDK_VERSION}_ELF.V1999-11-9.tar.gz
 do-install:
 	@${RM} -f ${WRKSRC}/include/freebsd/typedefs_md.h.orig
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
-	(cd ${WRKSRC} && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${TAR} --unlink -x -f -)
+	cd ${WRKSRC} && ${FIND} . \
+	   | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 	${MKDIR} ${PREFIX}/share/java/classes
 	${MKDIR} ${PREFIX}/share/doc/java
 
