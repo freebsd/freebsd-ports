@@ -15,9 +15,11 @@ COMMENT=	A simple netgraph module for multihop ad hoc networks
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/src/sys/netgraph/netgraph.h)
-IGNORE=		"Requires kernel source /usr/src/sys to build"
+SYSDIR?=	${SRC_BASE}/sys
+.if !exists(${SYSDIR}/netgraph/netgraph.h)
+IGNORE=		"Requires kernel source (/usr/src/sys) to build"
 .endif
+MAKE_ENV+=	WERROR=
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Requires new netgraph architecture ng_item to build"
