@@ -1,5 +1,5 @@
---- premail.orig	Thu Oct 31 06:25:10 1996
-+++ premail	Tue Oct  6 15:58:32 1998
+--- premail.orig	Sat Oct 25 02:19:07 1997
++++ premail	Tue Oct  6 18:59:57 1998
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!%PERL5% -w
@@ -10,10 +10,10 @@
  
  $config{'rlist-valid'} = 300;
  
--$config{'rlist-url'} = 'http://kiwi.cs.berkeley.edu/rlist';
--$config{'pubring-url'} = 'http://kiwi.cs.berkeley.edu/pubring.pgp';
-+#$config{'rlist-url'} = 'http://www.cs.berkeley.edu/rlist';
-+#$config{'pubring-url'} = 'http://www.cs.berkeley.edu/pubring.pgp';
+-$config{'rlist-url'} = 'http://www.publius.net/rlist';
+-$config{'pubring-url'} = 'http://www.publius.net/pubring.pgp';
++#$config{'rlist-url'} = 'http://www.publius.net/rlist';
++#$config{'pubring-url'} = 'http://www.publius.net/pubring.pgp';
 +
 +$config{'rlist-url'} = 'finger:rlist@anon.lcs.mit.edu';
 +$config{'pubring-url'} = 'finger:pubring@anon.lcs.mit.edu';
@@ -517,7 +517,7 @@
 -    my ($fqdn, $aliases, $type, $len, $thataddr);
 +    my ($fqdn, $aliases, $type, $len);
      my ($name, $proto);
-     my ($that, $thataddr);
+     my ($that);
      my ($savesel, $gotsep);
 @@ -6330,7 +6375,7 @@
  	$host = $1;
@@ -537,15 +537,6 @@
  #	    bind(WWW, $this) || &die_disarm ("bind: $!\n");
  #	    &pdv ("bound the socket...\n");
  	    connect(WWW, $that) || &die_disarm ("connect: $!\n");
-@@ -6356,7 +6401,7 @@
- 	        ."User-Agent: premail/$version (perl; unix)\n"
- 		."\n";
- 	    $response = <WWW>;
--	    if ($response !~ /^HTTP\/1\.0 200/) {
-+	    if ($response !~ /^HTTP\/1\.[01] 200/) {
- 		&die_disarm ("Remote server error: $response");
- 	    }
- 	    $gotsep = 0;
 @@ -6368,6 +6413,21 @@
  	};
  	if ($@) { return &pdv ($@); }
