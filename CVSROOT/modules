@@ -10937,6 +10937,7 @@ xprompt		ports/x11/xprompt
 xproto		ports/x11/xproto
 xpuyopuyo	ports/games/xpuyopuyo
 xpuzzletama	ports/games/xpuzzletama
+xpvm		ports/net/xpvm
 xpx		ports/graphics/xpx
 xpyraminx	ports/games/xpyraminx
 xqf		ports/games/xqf
