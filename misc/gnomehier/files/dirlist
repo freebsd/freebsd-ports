@@ -88,6 +88,7 @@ share/gnome/control-center/Desktop
 share/gnome/control-center/Documents
 share/gnome/control-center/Peripherals
 share/gnome/control-center/Session
+share/gnome/control-center/capplets
 share/gnome/fonts
 share/gnome/games
 share/gnome/gdm
