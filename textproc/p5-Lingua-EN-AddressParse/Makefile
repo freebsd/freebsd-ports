@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-EN-AddressParse
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 MAN3=	Lingua::EN::AddressGrammar.3 \
 	Lingua::EN::AddressParse.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
