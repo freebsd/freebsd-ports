@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.8
+PORTVERSION=	0.99.8.1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://dovecot.procontrol.fi/test/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-test5
+MASTER_SITES=	http://dovecot.procontrol.fi/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
-COMMENT=	Secure and compact IMAP server
+COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -87,6 +86,9 @@ post-install:
 		${WRKSRC}/doc/nfs.txt \
 		${WRKSRC}/doc/configuration.txt \
 		${WRKSRC}/doc/mail-storages.txt \
+		${WRKSRC}/doc/dovecot-ldap.conf \
+		${WRKSRC}/doc/dovecot-openssl.cnf \
+		${WRKSRC}/doc/mkcert.sh \
 			${PREFIX}/share/doc/dovecot
 .endif
 
