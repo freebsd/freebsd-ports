@@ -31,7 +31,7 @@
 +  shlibpath_var=LD_LIBRARY_PATH
 +  ;;
 +
-+freebsd3*)
++freebsd3* | freebsd4*)
 +  version_type=freebsd
 +  library_names_spec='${libname}${release}.so.$versuffix $libname.so'
 +  if [ $PORTOBJFORMAT = elf ]; then

@@ -18,7 +18,7 @@
 -
 -		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
 -		# -mthreads flag.
-+	*-*-freebsd2.2* | *-*-freebsd3*)
++	*-*-freebsd2.2* | *-*-freebsd3* | *-*-freebsd4*)
 +		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
 +			G_THREAD_LIBS=""
