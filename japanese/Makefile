@@ -371,7 +371,6 @@
     SUBDIR += tkstep80
     SUBDIR += today
     SUBDIR += truetypefonts
-    SUBDIR += tvi
     SUBDIR += typist
     SUBDIR += vera-fpw
     SUBDIR += vfghostscript
