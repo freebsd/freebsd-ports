@@ -10541,7 +10541,6 @@ zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
-zh-stardict	ports/chinese/stardict
 zh-tcl		ports/chinese/tcl83
 zh-tcl83	ports/chinese/tcl83
 zh-telnet	ports/chinese/telnet
