@@ -1,10 +1,6 @@
-bin/rapper
-bin/raptor-config
 bin/redland-config
 bin/redland-db-upgrade
 include/librdf.h
-include/ntriples.h
-include/raptor.h
 include/rdf_concepts.h
 include/rdf_digest.h
 include/rdf_files.h
@@ -16,6 +12,7 @@ include/rdf_init.h
 include/rdf_iterator.h
 include/rdf_list.h
 include/rdf_model.h
+include/rdf_model_storage.h
 include/rdf_node.h
 include/rdf_parser.h
 include/rdf_query.h
@@ -30,9 +27,6 @@ include/rdf_types.h
 include/rdf_uri.h
 include/rdf_utf8.h
 include/redland.h
-lib/libraptor.a
-lib/libraptor.so
-lib/libraptor.so.0
 lib/librdf.a
 lib/librdf.so
 lib/librdf.so.0
