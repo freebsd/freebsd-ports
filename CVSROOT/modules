@@ -491,14 +491,12 @@ authpf		ports/security/authpf
 autobench	ports/benchmarks/autobench
 autobook	ports/devel/autobook
 autocd		ports/audio/autocd
-autoconf	ports/devel/autoconf
 autoconf213	ports/devel/autoconf213
 autoconf253	ports/devel/autoconf253
 autoconf259	ports/devel/autoconf259
 autocutsel	ports/deskutils/autocutsel
 autodia		ports/devel/autodia
 autogen		ports/devel/autogen
-automake	ports/devel/automake
 automake14	ports/devel/automake14
 automake15	ports/devel/automake15
 automake18	ports/devel/automake18
