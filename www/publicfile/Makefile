@@ -1,4 +1,4 @@
-# New ports collection makefile for: publicfile-0.52
+# New ports collection makefile for: publicfile
 # Date created:		24 Jan 2000
 # Whom:			Neil Blakey-Milner
 #
@@ -18,11 +18,8 @@ ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
 post-patch:
-	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@echo "${CC} -s" > ${WRKSRC}/conf-ld
-	@echo "${PREFIX}" > ${WRKSRC}/conf-home
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO} "${CC} -s" > ${WRKSRC}/conf-ld
+	@${ECHO} "${PREFIX}" > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>
