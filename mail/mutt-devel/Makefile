@@ -81,7 +81,7 @@ MAN5=		muttrc.5
 pre-patch:
 	(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/charmaps-0.0.tar.gz)
 
-post-patch:
+pre-configure:
 	cd ${WRKSRC}/charmaps/maps; ${LN} CP1251 WINDOWS-1251
 	cd ${WRKSRC}/charmaps/maps; ${RM} -f *.orig
 
