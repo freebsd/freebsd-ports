@@ -4179,7 +4179,6 @@ linux_glide	ports/graphics/linux_glide
 linux_glx	ports/graphics/linux_glx
 linux_kdump	ports/devel/linux_kdump
 linux_mesa3	ports/graphics/linux_mesa3
-linux_rar	ports/archivers/linux_rar
 linuxdoc	ports/textproc/linuxdoc
 linuxigd	ports/net/linuxigd
 linuxthreads	ports/devel/linuxthreads
