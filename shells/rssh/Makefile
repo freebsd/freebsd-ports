@@ -18,4 +18,8 @@ GNU_CONFIGURE=	yes
 MAN1=		rssh.1
 PLIST_FILES=	bin/rssh etc/rssh.conf.dist libexec/rssh_chroot_helper
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500000
+IGNORE=		wordexp() is not supported on 4.x
+.endif
+.include <bsd.port.post.mk>
