@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Template
-PORTVERSION=	1.31
+PORTVERSION=	1.42
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.plover.com/~mjd/perl/Template/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -18,6 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Text::Template.3
+MAN3=		Text::Template.3 Text::Template::Preprocess.3
 
 .include <bsd.port.mk>
