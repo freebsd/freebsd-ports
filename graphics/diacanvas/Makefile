@@ -8,7 +8,8 @@
 PORTNAME=	diacanvas
 PORTVERSION=	0.40.1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www.linuxstart.com/~arjan/diacanvas/download/
+# mastersite disappeared in December 2000
+MASTER_SITES=	# http://www.linuxstart.com/~arjan/diacanvas/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor
