@@ -1,6 +1,12 @@
-bin/access2drbl
-bin/build_drbl
-share/drbl/README
-share/drbl/header
-share/drbl/zones
-@dirrm share/drbl
+bin/create_drbl.sh
+bin/do_drbl.pl
+bin/do_info.pl
+bin/do_vote.pl
+@unexec if cmp -s %D/etc/drblnode.conf %D/etc/drblnode.conf.sample; then rm -f %D/etc/drblnode.conf; fi
+etc/drblnode.conf.sample
+%%DATADIR%%/config.pl
+%%DATADIR%%/drbllib.pl
+%%DATADIR%%/header
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
