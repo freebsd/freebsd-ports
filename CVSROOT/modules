@@ -7168,6 +7168,7 @@ pathological	ports/games/pathological
 pavuk		ports/ftp/pavuk
 pawm		ports/x11-wm/pawm
 pbasic		ports/lang/pbasic
+pbnc		ports/net/pbnc
 pbs		ports/misc/pbs
 pcal		ports/print/pcal
 pcb		ports/cad/pcb
