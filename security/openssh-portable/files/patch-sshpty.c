@@ -4,7 +4,7 @@
  #ifdef HAVE_PTY_H
  # include <pty.h>
  #endif
-+#ifdef __FreeBSD__
++#ifdef HAVE_LIBUTIL_H
 +#include <libutil.h>
 +#endif
  #if defined(HAVE_DEV_PTMX) && defined(HAVE_SYS_STROPTS_H)

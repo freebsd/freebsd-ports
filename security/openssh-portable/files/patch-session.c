@@ -1,20 +1,18 @@
 --- session.c.orig	Thu Sep 26 02:38:50 2002
-+++ session.c	Thu Oct 17 06:31:34 2002
-@@ -64,6 +64,13 @@
++++ session.c	Mon Oct 21 06:49:56 2002
+@@ -64,6 +64,11 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
  
 +#ifdef __FreeBSD__
-+#include <libutil.h>
 +#include <syslog.h>
-+#include <time.h>
 +#define _PATH_CHPASS "/usr/bin/passwd"
 +#endif /* __FreeBSD__ */
 +
  /* func */
  
  Session *session_new(void);
-@@ -469,6 +476,13 @@
+@@ -469,6 +474,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -28,7 +26,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -574,6 +588,9 @@
+@@ -574,6 +586,9 @@
  {
  	int fdout, ptyfd, ttyfd, ptymaster;
  	pid_t pid;
@@ -38,7 +36,7 @@
  
  	if (s == NULL)
  		fatal("do_exec_pty: no session");
-@@ -581,7 +598,16 @@
+@@ -581,7 +596,16 @@
  	ttyfd = s->ttyfd;
  
  #if defined(USE_PAM)
@@ -56,7 +54,7 @@
  	do_pam_setcred(1);
  #endif
  
-@@ -591,6 +617,14 @@
+@@ -591,6 +615,14 @@
  
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
@@ -71,7 +69,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -724,6 +758,18 @@
+@@ -724,6 +756,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -90,7 +88,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -757,6 +803,72 @@
+@@ -757,6 +801,72 @@
  	}
  #endif
  
@@ -163,7 +161,7 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -770,7 +882,17 @@
+@@ -770,7 +880,17 @@
  #endif /* WITH_AIXAUTHENTICATE */
  
  #ifndef NO_SSH_LASTLOG
@@ -182,7 +180,7 @@
  		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -782,7 +904,30 @@
+@@ -782,7 +902,30 @@
  	}
  #endif /* NO_SSH_LASTLOG */
  
@@ -214,7 +212,7 @@
  }
  
  /*
-@@ -798,9 +943,9 @@
+@@ -798,9 +941,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -226,7 +224,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -827,10 +972,10 @@
+@@ -827,10 +970,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -239,7 +237,7 @@
  	return 0;
  }
  
-@@ -950,6 +1095,10 @@
+@@ -950,6 +1093,10 @@
  	char buf[256];
  	u_int i, envsize;
  	char **env;
@@ -250,7 +248,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -957,6 +1106,9 @@
+@@ -957,6 +1104,9 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
@@ -260,7 +258,7 @@
  #ifdef HAVE_CYGWIN
  	/*
  	 * The Windows environment contains some setting which are
-@@ -998,9 +1150,21 @@
+@@ -998,9 +1148,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -284,7 +282,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1208,7 +1372,7 @@
+@@ -1208,7 +1370,7 @@
  		setpgid(0, 0);
  # endif
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -293,7 +291,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1362,7 +1526,7 @@
+@@ -1362,7 +1524,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -302,7 +300,7 @@
  		close(i);
  
  	/*
-@@ -1392,6 +1556,31 @@
+@@ -1392,6 +1554,31 @@
  			exit(1);
  #endif
  	}
