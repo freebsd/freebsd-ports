@@ -50,11 +50,11 @@ CPIOARGS=	--quiet -pdum -R
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	SLIMDIR=${SLIMDIR}
 
-SED_SCRIPT+=	-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%PGREPBASE%%,${PGREPBASE},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%SLIMDIR%%,${SLIMDIR},g'
+SUB_FILES=	slimserver.sh \
+		softsqueeze.sh
+SUB_LIST=	PGREPBASE=${PGREPBASE} \
+		RC_SUBR=${RC_SUBR} \
+		SLIMDIR=${SLIMDIR}
 
 pre-fetch:
 .if !defined(SLIMDIR)
@@ -62,10 +62,6 @@ pre-fetch:
 	@${ECHO_MSG} "Define SLIMDIR to override default of 'slimserver'."
 	@${ECHO_MSG} ""
 .endif
-
-post-patch:
-	@${SED} ${SED_SCRIPT} <${FILESDIR}/slimserver.sh >${WRKDIR}/slimserver.sh
-	@${SED} ${SED_SCRIPT} <${FILESDIR}/softsqueeze.sh >${WRKDIR}/softsqueeze.sh
 
 SLIMDIR?=	slimserver
 
