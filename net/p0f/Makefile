@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=		p0f
-PORTVERSION=		2.0.2
-CATEGORIES=		net
-MASTER_SITES=		http://lcamtuf.coredump.cx/p0f/
-EXTRACT_SUFX=		.tgz
+PORTNAME=	p0f
+PORTVERSION=	2.0.2
+CATEGORIES=	net
+MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		trevor@FreeBSD.org
-COMMENT=		Passive OS fingerprinting tool
+MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Passive OS fingerprinting tool
 
 DOCFILES=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
 MAN1=		p0f.1
-PLIST=			${WRKDIR}/pkg-plist
-WRKSRC=			${WRKDIR}/p0f
+PLIST=		${WRKDIR}/pkg-plist
+WRKSRC=		${WRKDIR}/p0f
 
 post-patch:
 .for ii in config.h doc/README
