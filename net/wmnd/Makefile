@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.hydra.ubiest.com/wmnd/releases/
 
