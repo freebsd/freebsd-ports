@@ -127,8 +127,8 @@ share/doc/ppxp/ja/guide-9.html
 share/doc/ppxp/ja/guide.html
 share/doc/tkppxp/README
 share/doc/xppxp/README
-share/nls/ja_JP.EUC/ppxp.cat
-share/nls/ja_JP.EUC/ppxpd.cat
+share/nls/ja_JP/ppxp.cat
+share/nls/ja_JP/ppxpd.cat
 share/ppxp/html/basic.html
 share/ppxp/html/help.html
 share/ppxp/html/index.html

@@ -9,6 +9,7 @@
 
 PORTNAME=	ppxp
 PORTVERSION=	2001080415
+PORTREVISION=	1
 .if defined(WITH_TCLJP)
 CATEGORIES+=	net tk80
 .else
@@ -37,7 +38,7 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 
 USE_XPM=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 .if defined(WITH_TCLJP)
 CONFIGURE_ARGS+= --with-tclsh=${PREFIX}/bin/tclsh8.0jp \
 		--with-wish=${PREFIX}/bin/wish8.0jp \
