@@ -280,6 +280,7 @@
     SUBDIR += usogres
     SUBDIR += wfb2sql
     SUBDIR += xbase
+    SUBDIR += xbsql
     SUBDIR += xmbase-grok
     SUBDIR += xmysqladmin
     SUBDIR += zodb

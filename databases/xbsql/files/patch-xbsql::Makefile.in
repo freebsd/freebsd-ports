@@ -1,0 +1,37 @@
+--- xbsql/Makefile.in.orig	Fri Mar 28 21:03:25 2003
++++ xbsql/Makefile.in	Sun Nov 23 01:16:18 2003
+@@ -89,9 +89,9 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-DEBUG = -g
+-CFLAGS = -UNO_READLINE -I/usr/local/include $(DEBUG)
+-CXXFLAGS = -UNO_READLINE -I/usr/local/include $(DEBUG)
++DEBUG =
++CFLAGS = @CFLAGS@ -UNO_READLINE -I/usr/local/include $(DEBUG)
++CXXFLAGS = @CXXFLAGS@ -UNO_READLINE -I/usr/local/include $(DEBUG)
+ LDFLAGS = $(DEBUG)
+ INCLUDE = -I/usr/local/include
+ 
+@@ -108,10 +108,10 @@
+ 			  xbsql.tab.c xb_datetime.cpp
+ 
+ 
+-libxbsql_la_LDFLAGS = -lxbase $(DEBUG)
++libxbsql_la_LDFLAGS = `xbase-config --libs` $(DEBUG)
+ 
+ xql_SOURCES = xql.cpp
+-xql_LDADD = -lxbase -lreadline -l$(CURSES) ./libxbsql.la
++xql_LDADD = `xbase-config --libs` -lreadline -l$(CURSES) ./libxbsql.la
+ 
+ 
+ #install-data-hook:
+@@ -228,7 +228,7 @@
+ 	  if test -f $$p \
+ 	     || test -f $$p1 \
+ 	  ; then \
+-	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
++	    f=`echo "$$p1" | sed 's,^.*/,,;s/$$/$(EXEEXT)/'`; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f"; \
+ 	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f; \
+ 	  else :; fi; \

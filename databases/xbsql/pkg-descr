@@ -1,0 +1,5 @@
+Xbase SQL is a C++ library which supports access to Xbase type datafiles
+and indexes (ie., .dbf and related files). It provides access at the record
+level to these files.
+
+WWW: http://www.rekallrevealed.org/
