@@ -2107,6 +2107,7 @@ gmanedit	ports/editors/gmanedit
 gmat		ports/textproc/gmat
 gmcal		ports/deskutils/gmcal
 gmessage	ports/x11/gmessage
+gmetadom	ports/textproc/gmetadom
 gmime		ports/mail/gmime
 gmixer		ports/audio/gmixer
 gmrun		ports/x11/gmrun
