@@ -11,7 +11,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	http://members.telecom.at/~johsixt/ \
 		ftp://eudaptics.co.at/pub/people/jsixt/
 
-MAINTAINER=	jedgar2fxp.org
+MAINTAINER=	jedgar@fxp.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
