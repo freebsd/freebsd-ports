@@ -18,17 +18,6 @@ diff -ru Imakefile.orig Imakefile
  
  
  # If you have flex, use it instead of lex.  If you use flex, define this
-@@ -164,8 +164,8 @@
- NormalProgramTarget(cl-spim_sub,$(CLOBJS),,,)
- NormalProgramTarget(cl-xspim_sub,$(XCLOBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
- 
--InstallProgram(spim,$(BIN_DIR))
--InstallProgram(xspim,$(BIN_DIR))
-+InstallProgram(cl-spim,$(BIN_DIR))
-+InstallProgram(cl-xspim,$(BIN_DIR))
- InstallManPage(spim,$(MAN_DIR))
- InstallManPage(xspim,$(MAN_DIR))
- InstallNonExec(trap.handler,$(TRAP_DIR))
 @@ -291,7 +291,7 @@
  	mv -f lex.yy.c.xx lex.yy.c
  
