@@ -1,0 +1,63 @@
+--- kxicq/engine/kxengine.cpp.orig	Sat Mar  3 22:27:29 2001
++++ kxicq/engine/kxengine.cpp	Wed Mar 28 11:19:25 2001
+@@ -6,6 +6,7 @@
+ #include "kxcontact.h"
+ #include <kxudp.h>
+ #include <kxtcp.h>
++#include "cyrrilic.h"
+ 
+ kxEngine *kxEngine::ptr=0L;
+ 
+@@ -194,6 +195,23 @@
+ 
+ void kxEngine::SlotNewMessage(UIN _uin, kxMessageStruct _msg)
+ {
++  // HACK - recode Cyrrilic chars
++  const char *tt = new char[_msg.message.length()+1];
++  strcpy((char *)tt,(char *)_msg.message.data());
++
++  unsigned char *c = (unsigned char*)tt;
++  unsigned char *d = (unsigned char*)tt;
++  while (*c) {
++    if (*c>=0xA0) *d = trnTablWIN2KOI[*c];
++    else *d = *c;
++    c++;d++;
++  }
++  *d=0x0;
++  
++  _msg.message = QString::fromLocal8Bit(tt);
++  debug("RECODED FOR RECEIVE: [%s]",_msg.message.data());
++  delete tt;
++  // END OF HACK  
+   emit SignalNewMessage(_uin, _msg);
+   emit SignalUpdateDock();
+ }
+@@ -237,8 +255,28 @@
+ }
+ kxSend *kxEngine::sendMessage(UIN _uin, QString _msg, bool _server)
+ {
+   sendSeq++;  
+   kxSend *send;
++
++  // HACK - recode Cyrrilic chars
++  _msg = _msg.local8Bit().data();
++  const char *tt = new char[_msg.length()+1];
++  strcpy((char *)tt,(char *)_msg.data());
++
++  unsigned char *c = (unsigned char*)tt;
++  unsigned char *d = (unsigned char*)tt;
++  while (*c) {
++    if (*c>=0xA0) *d = trnTablKOI2WIN[*c];
++    else *d = *c;
++    c++;d++;
++  }
++  *d=0x0;
++  
++  _msg = QString(tt);
++  delete tt;
++  // END OF HACK
++
++  debug("RECODED FOR SENDING: [%s]",_msg.data());
+   send=new kxSend(MESSAGE_TYPE, sendSeq, _uin, _msg,"",_server);
+   return send;
+ }

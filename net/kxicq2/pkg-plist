@@ -1,0 +1,19 @@
+bin/kxicq
+share/apps/kxicq2/pics/available.xpm
+share/apps/kxicq2/pics/away.xpm
+share/apps/kxicq2/pics/dnd.xpm
+share/apps/kxicq2/pics/exit.xpm
+share/apps/kxicq2/pics/ffc.xpm
+share/apps/kxicq2/pics/history.xpm
+share/apps/kxicq2/pics/invisible.xpm
+share/apps/kxicq2/pics/na.xpm
+share/apps/kxicq2/pics/newmsg.xpm
+share/apps/kxicq2/pics/occupied.xpm
+share/apps/kxicq2/pics/offline.xpm
+share/apps/kxicq2/pics/online.xpm
+share/apps/kxicq2/pics/selectcolor.xpm
+share/apps/kxicq2/pics/selecttext.xpm
+share/apps/kxicq2/pics/send.xpm
+share/applnk/Internet/kxicq2.desktop
+@dirrm share/apps/kxicq2/pics
+@dirrm share/apps/kxicq2
