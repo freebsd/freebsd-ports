@@ -6,6 +6,8 @@ bin/ssh-keygen2
 bin/ssh-add2
 bin/ssh-signer2
 bin/ssh-probe2
+bin/ssh-askpass2
+bin/ssh-pam-client
 bin/sftp-server2
 bin/ssh-dummy-shell
 bin/ssh-pubkeymgr
@@ -21,17 +23,26 @@ bin/sftp-server
 bin/ssh-signer
 bin/ssh-probe
 etc/rc.d/sshd.sh
+etc/ssh2/hostkey
+etc/ssh2/hostkey.pub
 etc/ssh2/sshd2_config
 etc/ssh2/ssh2_config
 etc/ssh2/ssh_dummy_shell.out
 sbin/sshd2
+sbin/sshd-check-conf
 sbin/sshd
-share/doc/ssh2/BUG.REPORT
-share/doc/ssh2/CHANGES
-share/doc/ssh2/FAQ
-share/doc/ssh2/INSTALL
-share/doc/ssh2/LICENSE
-share/doc/ssh2/README
-share/doc/ssh2/SSH2.QUICKSTART
-@dirrm share/doc/ssh2
+@dirrm etc/ssh2/knownhosts
+@dirrm etc/ssh2/hostkeys
+@dirrm etc/ssh2
 @exec if [ ! -f %D/etc/ssh2/hostkey ]; then umask 022; echo "Generating 1024 bit host key."; %D/bin/ssh-keygen2 -P -b 1024 -t dsa -c "1024-bit dsa hostkey" -o %D/etc/ssh2/hostkey;  fi
+%%PORTDOCS%%share/doc/ssh2/BUG.REPORT
+%%PORTDOCS%%share/doc/ssh2/CHANGES
+%%PORTDOCS%%share/doc/ssh2/FAQ
+%%PORTDOCS%%share/doc/ssh2/INSTALL
+%%PORTDOCS%%share/doc/ssh2/LICENSE
+%%PORTDOCS%%share/doc/ssh2/MANIFEST
+%%PORTDOCS%%share/doc/ssh2/NEWS
+%%PORTDOCS%%share/doc/ssh2/README
+%%PORTDOCS%%share/doc/ssh2/REGEX-SYNTAX
+%%PORTDOCS%%share/doc/ssh2/SSH2.QUICKSTART
+%%PORTDOCS%%@dirrm share/doc/ssh2
