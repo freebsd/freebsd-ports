@@ -336,8 +336,6 @@
     SUBDIR += linuxigd
     SUBDIR += liveMedia
     SUBDIR += lla
-    SUBDIR += lmd
-    SUBDIR += loadd
     SUBDIR += loudmouth
     SUBDIR += luasocket
     SUBDIR += lyntin

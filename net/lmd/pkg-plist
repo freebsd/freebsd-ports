@@ -1,8 +1,0 @@
-sbin/lmd
-etc/rc.d/lmd.sh
-etc/lmd.conf.sample
-lib/ldd_http_module.so
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
