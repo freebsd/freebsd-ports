@@ -1,20 +1,20 @@
 # New ports collection makefile for:	suck
-# Version required:	3.6.0
+# Version required:	3.7.0
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id: Makefile,v 1.5 1997/10/05 05:06:19 max Exp $
+# $Id: Makefile,v 1.6 1997/10/13 09:14:53 tg Exp $
 #
 
-DISTNAME=	suck-3.6.0
+DISTNAME=	suck-3.7.0
 CATEGORIES=	news
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/system/news/transport/
+MASTER_SITES=	http://www.pixi.com/~boby/
 
 MAINTAINER=	jseger@freebsd.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAN1=		suck.1 rpost.1 testhost.1 lmove.1 lpost.1
+MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/suck

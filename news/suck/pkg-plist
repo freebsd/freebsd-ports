@@ -3,7 +3,6 @@ bin/rpost
 bin/suck
 bin/testhost
 man/man1/lmove.1.gz
-man/man1/lpost.1.gz
 man/man1/rpost.1.gz
 man/man1/suck.1.gz
 man/man1/testhost.1.gz
