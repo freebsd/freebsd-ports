@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.3 2003-04-13 11:47:23 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.4 2003-04-16 14:49:26 dinoex Exp $
 #
 # this substitutes USE_OPENSSL=yes
 # just include this makefile after bsd.ports.pre.mk
@@ -12,6 +12,11 @@
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
 # WITH_OPENSSL_PORT=yes	- Use the port, even if base if up to date
 # WITH_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
+#
+# Overrideable defaults:
+#
+# OPENSSL_SHLIBVER=	3
+# OPENSSL_PORT=		security/openssl
 #
 # The makefile sets this variables:
 # OPENSSLBASE		- "/usr" or ${LOCALBASE}
@@ -37,12 +42,10 @@ WITH_OPENSSL_PORT=yes
 	!defined(WITH_OPENSSL_PORT) && \
 	!exists(${LOCALBASE}/lib/libcrypto.so)
 #	Security: version in base must be 0.9.7a
-.if exists(/usr/lib/libcrypto.so.3)
 OPENSSLVER!=	${AWK} '/OPENSSL_VERSION_NUMBER/ { print $$3 }' \
 		/usr/include/openssl/opensslv.h
-.if ${OPENSSLVER} == 0x0090702fL
+.if ${OPENSSLVER} == 0x0090701fL || ${OPENSSLVER} == 0x0090702fL
 WITH_OPENSSL_BASE=yes
-.endif
 .endif
 .endif
 
@@ -86,23 +89,23 @@ OPENSSL_CFLAGS+=	-DNO_IDEA
 .endif
 MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 .endif
+CFLAGS+=		-Wl,-rpath,/usr/lib:${LOCALBASE}/lib
+OPENSSL_LDFLAGS+=	-rpath=/usr/lib:${LOCALBASE}/lib
 
 .else
-
-.if exists(/usr/lib/libcrypto.so.2) && !exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	3
-.else
-SHLIBVER=	4
-.endif
 
 OPENSSLBASE=		${LOCALBASE}
 .if defined(WITH_OPENSSL_BETA)
-OPENSSLDIR=		${OPENSSLBASE}/openssl
-LIB_DEPENDS+=		crypto.${SHLIBVER}:${PORTSDIR}/security/openssl-beta
+OPENSSL_SHLIBVER?=	4
+OPENSSL_PORT?=		security/openssl-beta
 .else
-OPENSSLDIR=		${OPENSSLBASE}/openssl
-LIB_DEPENDS+=		crypto.${SHLIBVER}:${PORTSDIR}/security/openssl
+OPENSSL_SHLIBVER?=	3
+OPENSSL_PORT?=		security/openssl
 .endif
+OPENSSLDIR=		${OPENSSLBASE}/openssl
+LIB_DEPENDS+=		crypto.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
+CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
+OPENSSL_LDFLAGS+=	-rpath=${LOCALBASE}/lib
 
 .endif
 
@@ -110,6 +113,12 @@ OPENSSLLIB=		${OPENSSLBASE}/lib
 OPENSSLINC=		${OPENSSLBASE}/include
 MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 			OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
+
+.if defined(LDFLAGS) && !empty(LDFLAGS)
+LDFLAGS+=${OPENSSL_LDFLAGS}
+.else
+LDFLAGS=${OPENSSL_LDFLAGS}
+.endif
 
 ### crypto
 #RESTRICTED=		"Contains cryptography."
