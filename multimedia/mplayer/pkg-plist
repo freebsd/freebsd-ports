@@ -22,10 +22,20 @@ lib/mplayer/vidix/mga_vid.so
 lib/mplayer/vidix/pm3_vid.so
 lib/mplayer/vidix/radeon_vid.so
 lib/mplayer/vidix/rage128_vid.so
+share/mplayer/tools/calcbpp.pl
+share/mplayer/tools/countquant.pl
+share/mplayer/tools/dvd2divxscript.pl
+share/mplayer/tools/menc2pass
+share/mplayer/tools/mencvcd
+share/mplayer/tools/mp.pl
+share/mplayer/tools/sws-test
+share/mplayer/tools/w32codec_dl.pl
+share/mplayer/tools/x2mpsub.sh
 share/mplayer/codecs.conf
 share/mplayer/example.conf
 share/mplayer/input.conf
 share/mplayer/menu.conf
+@dirrm share/mplayer/tools
 @unexec rmdir %D/share/mplayer 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/mplayer
 @dirrm lib/mplayer/vidix
