@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040706:
+  AFFECTS: users of Python bindings for textproc/lib{xml2,xslt} libraries
+  AUTHOR: gnome@FreeBSD.org
+
+  Python bindings for libxml2 and libxslt libraries were moved out into
+  separate slave ports. Please install textproc/py-libxml2 and
+  textproc/py-libxslt to get bindings back to your system.
+
 20040703:
   AFFECTS: users of net/netatalk-devel
   AUTHOR: marcus@FreeBSD.org
