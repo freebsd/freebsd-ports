@@ -8,7 +8,9 @@
 PORTNAME=	gtl
 PORTVERSION=	0.3.3
 CATEGORIES=	misc
-MASTER_SITES=	http://infosun.fmi.uni-passau.de/GTL/archive/
+# The original distribution files are not available
+# anymore from the master_sites (http://infosun.fmi.uni-passau.de/GTL/)
+MASTER_SITES=	#
 DISTNAME=	GTL-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
