@@ -1,0 +1,15 @@
+From the web site:
+
+* wm-oldmenu2new is a script to convert from old-style Window Maker menu
+  file to the new PropertyList style of the WMRootMenu for use with WPrefs.
+
+  Thanks to Luke Kendall and Toby J Sargeant.
+
+Note that this script has to be run from within your home directory.
+Once you've done this, you should be able to click 'Yes, Discard and Update'
+within WMPrefs' Menu page to switch to the new PropList menu format.
+
+WWW: http://largo.windowmaker.org/files.php#wm-oldmenu2new
+
+Bruce
+bms@spc.org
