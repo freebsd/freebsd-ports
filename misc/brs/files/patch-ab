@@ -1,0 +1,39 @@
+*** bible.1.orig        Mon Dec 12 13:05:28 1994
+--- bible.1     Mon Jul 10 13:34:08 2000
+***************
+*** 314,330 ****
+  Miscellaneous program control commands:
+  
+  .TP 15 "\w'\-t\ prefix\ \ 'u"
+! .B \?, ?h, ?help
+  Prints help text.
+  .TP
+! .B \?f
+  Toggles output formatting modes.
+  .TP
+! .BI \?w file
+  Begin writing program output to a file.  If file exists, output is
+  appended to what's there already.
+  .TP
+! .B \?w
+  Stop writing to a file.
+  .TP
+  .B \>, \<
+--- 314,330 ----
+  Miscellaneous program control commands:
+  
+  .TP 15 "\w'\-t\ prefix\ \ 'u"
+! .B ?, ?h, ?help
+  Prints help text.
+  .TP
+! .B ?f
+  Toggles output formatting modes.
+  .TP
+! .BI ?w file
+  Begin writing program output to a file.  If file exists, output is
+  appended to what's there already.
+  .TP
+! .B ?w
+  Stop writing to a file.
+  .TP
+  .B \>, \<

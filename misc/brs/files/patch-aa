@@ -1,0 +1,38 @@
+--- Makefile.orig	Wed Jul 12 23:30:36 2000
++++ Makefile	Wed Jul 12 23:32:29 2000
+@@ -46,7 +46,7 @@
+ NINSTPKG      = $(PROGRAM).pkg
+ 
+ # where to install this stuff
+-DEST	      = /usr
++DEST	      = $(PREFIX)
+ #DEST	      = $(HOME)/local
+ DESTBIN	      = $(DEST)/bin
+ DESTLIB       = $(DEST)/lib
+@@ -405,23 +405,20 @@
+ 		@if [ $(DESTBIN) != . ]; then \
+ 		((cd $(DESTBIN);rm -f $(PROGRAM)); \
+ 		cp $(PROGRAM) $(DESTBIN)); \
+-		chown bin $(DESTBIN)/$(PROGRAM); \
+-		chgrp bin $(DESTBIN)/$(PROGRAM); \
++		chown root:wheel $(DESTBIN)/$(PROGRAM); \
+ 		chmod 755 $(DESTBIN)/$(PROGRAM); fi
+ 		@echo Installing $(DATA) and $(DATA).conc in $(DESTLIB)
+ 		@if [ ! -r $(DESTLIB) ]; then mkdir $(DESTLIB); fi
+ 		@if [ $(DESTLIB) != . ]; then \
+ 		cp $(DATA) $(DATA).conc $(DESTLIB); \
+-		chown bin $(DESTLIB)/$(DATA) $(DESTLIB)/$(DATA).conc; \
+-		chgrp bin $(DESTLIB)/$(DATA) $(DESTLIB)/$(DATA).conc; \
++                chown root:wheel $(DESTLIB)/$(DATA) $(DESTLIB)/$(DATA).conc; \
+ 		chmod 644 $(DESTLIB)/$(DATA) $(DESTLIB)/$(DATA).conc; fi
+ 		@if [ ! -r $(DESTMAN) ]; then mkdir $(DESTMAN); fi
+ 		@echo Installing $(MAN) in $(DESTMAN1)
+ 		@if [ ! -r $(DESTMAN1) ]; then mkdir $(DESTMAN1); fi
+ 		@if [ $(DESTMAN1) != . ]; then \
+ 		cp $(MAN) $(DESTMAN1)/$(MAN); \
+-		chown bin $(DESTMAN1)/$(MAN); \
+-		chgrp bin $(DESTMAN1)/$(MAN); \
++                chown root:wheel $(DESTMAN1)/$(MAN); \
+ 		chmod 644 $(DESTMAN1)/$(MAN); fi
+ 
+ uninstall:;	@echo Un-installing $(PROGRAM), $(DATA) and $(MAN)
