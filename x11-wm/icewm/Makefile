@@ -8,7 +8,8 @@
 
 DISTNAME=	icewm-1.0.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://download.sourceforge.net/icewm/
+MASTER_SITES=	http://download.sourceforge.net/icewm/ \
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nakai@FreeBSD.org
