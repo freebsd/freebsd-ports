@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmclockmon
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -19,17 +18,18 @@ USE_XPM=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=""
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/wmclockmon
+MAN1=		wmclockmon.1 wmclockmon-config.1 wmclockmon-cal.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' \
 		${WRKSRC}/wmclockmon-config/Makefile.in
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmclockmon ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/doc/wmclockmon.1 ${PREFIX}/man/man1
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+.for i in 1 2
+	@${INSTALL_DATA} ${WRKSRC}/doc/sample${i}.wmclockmonrc ${EXAMPLESDIR}
+.endfor
 
 .include <bsd.port.mk>
