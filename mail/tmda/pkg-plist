@@ -4,6 +4,7 @@ bin/tmda-dated-address
 bin/tmda-filter
 bin/tmda-inject
 bin/tmda-keygen
+bin/tmda-keyword-address
 bin/tmda-sender-address
 bin/tmda-sendmail
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
@@ -12,16 +13,15 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
-share/tmda/confirm_accept.txt
-share/tmda/confirm_request.txt
 %%PORTDOCS%%share/doc/tmda/COPYRIGHT
 %%PORTDOCS%%share/doc/tmda/CRYPTO
 %%PORTDOCS%%share/doc/tmda/ChangeLog
-%%PORTDOCS%%share/doc/tmda/FAQ
 %%PORTDOCS%%share/doc/tmda/INSTALL
 %%PORTDOCS%%share/doc/tmda/README
 %%PORTDOCS%%share/doc/tmda/README.RELAY
@@ -31,7 +31,25 @@ share/tmda/confirm_request.txt
 %%PORTDOCS%%share/doc/tmda/qmail-smtpd_auth.patch
 %%PORTDOCS%%share/doc/tmda/sample.tmdarc
 %%PORTDOCS%%share/doc/tmda/tmda.spec
-%%PORTDOCS%%share/doc/tmda/tmda.html
+%%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
+%%PORTDOCS%%share/doc/tmda/htdocs/config-client.html
+%%PORTDOCS%%share/doc/tmda/htdocs/config-pre.html
+%%PORTDOCS%%share/doc/tmda/htdocs/config-server.html
+%%PORTDOCS%%share/doc/tmda/htdocs/config.html
+%%PORTDOCS%%share/doc/tmda/htdocs/download.html
+%%PORTDOCS%%share/doc/tmda/htdocs/faq.html
+%%PORTDOCS%%share/doc/tmda/htdocs/features.html
+%%PORTDOCS%%share/doc/tmda/htdocs/history.html
+%%PORTDOCS%%share/doc/tmda/htdocs/index.html
+%%PORTDOCS%%share/doc/tmda/htdocs/install.html
+%%PORTDOCS%%share/doc/tmda/htdocs/inuse.html
+%%PORTDOCS%%share/doc/tmda/htdocs/lists.html
+%%PORTDOCS%%share/doc/tmda/htdocs/requirements.html
+%%PORTDOCS%%share/doc/tmda/htdocs/resources.html
+%%PORTDOCS%%share/doc/tmda/htdocs/results.html
+share/tmda/confirm_accept.txt
+share/tmda/confirm_request.txt
 @dirrm share/tmda
+%%PORTDOCS%%@dirrm share/doc/tmda/htdocs
 %%PORTDOCS%%@dirrm share/doc/tmda
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/TMDA

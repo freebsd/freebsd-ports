@@ -1,10 +1,9 @@
 Tagged Message Delivery Agent (TMDA).
 
-TMDA is an OSI certified Python application for qmail systems
-designed to significantly reduce the amount of SPAM/UCE you receive.
-A "whitelist" filter allows known contacts immediately into your
-mailbox, and all others must reply to a simple confirmation to
-validate their message.  Once they respond to the confirmation,
-their original message is delivered to you.
+TMDA is an OSI certified software application designed to
+significantly reduce the amount of SPAM/UCE (junk-mail) you receive.
+TMDA combines a "whitelist" (for known/trusted senders), a "blacklist"
+(for undesired senders), and a cryptographically enhanced confirmation
+system (for unknown, but legitimate senders).
 
 WWW: http://tmda.sourceforge.net/
