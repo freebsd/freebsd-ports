@@ -7,7 +7,7 @@
 
 PORTNAME=	linux_locale
 PORTVERSION=	${VERSION}.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese emulators linux
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/woody/main/source/admin/
 DISTNAME=	locale-ja_${VERSION}
