@@ -4194,7 +4194,6 @@ metacity-setup	ports/x11-wm/metacity-setup
 metakit		ports/databases/metakit
 metamail	ports/mail/metamail
 metapixel	ports/graphics/metapixel
-metatheme	ports/misc/metatheme
 metatheme2	ports/misc/metatheme2
 metis		ports/math/metis
 mew		ports/mail/mew
