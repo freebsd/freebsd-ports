@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.4 1998/08/01 19:47:54 dima Exp $
+# $Id: Makefile,v 1.5 1998/09/14 19:23:42 markm Exp $
 #
 
 DISTNAME=		krb5-1.0.5
@@ -39,7 +39,7 @@ AWK_SCRIPT=		''
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS?=	--enable-shared
+CONFIGURE_ARGS?=	--enable-shared --with-ccopts="${CFLAGS}"
 KRB5_KRB4_COMPAT?=	YES
 
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
