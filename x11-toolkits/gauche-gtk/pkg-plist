@@ -5,39 +5,42 @@ share/gauche/%%VERSION%%/lib/gtk/gdkkeysyms.scm
 share/gauche/%%VERSION%%/lib/gtk/gtkaux.scm
 share/gauche/%%VERSION%%/lib/gtk/listener.scm
 @dirrm share/gauche/%%VERSION%%/lib/gtk
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/COPYING
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/README
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/arrow.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/aspectframe.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/base.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/buttonbox.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/buttons.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/entry.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/eventbox.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/filesel.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/fixed.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/frame.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/helloworld.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/helloworld2.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/info.xpm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/label.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/list.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/menu.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/notebook.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/packbox.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/paned.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/pixmap.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/progressbar.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/radiobuttons.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/rangewidgets.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/scrolledwin.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/spinbutton.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/statusbar.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/table.scm
-%%PORTDOCS%%share/examples/gauche/gtk/gtk-tutorial/wheelbarrow.scm
-%%PORTDOCS%%@dirrm share/examples/gauche/gtk/gtk-tutorial
-%%PORTDOCS%%@dirrm share/examples/gauche/gtk
+%%PORTDOCS%%%%EXAMPLESDIR%%/error-dialog.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gdk-animation.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/COPYING
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/arrow.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/aspectframe.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/base.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/buttonbox.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/buttons.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/entry.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/eventbox.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/filesel.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/fixed.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/frame.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/helloworld.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/helloworld2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/info.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/label.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/list.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/menu.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/notebook.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/packbox.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/paned.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/pixmap.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/progressbar.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/radiobuttons.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/rangewidgets.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/scrolledwin.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/spinbutton.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/statusbar.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/table.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/wheelbarrow.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/listener.scm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gtk-tutorial
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@unexec rmdir %D/share/examples/gauche 2>/dev/null || true
-%%PORTDOCS%%share/doc/gauche/gtk/README
-%%PORTDOCS%%@dirrm share/doc/gauche/gtk
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@unexec rmdir %D/share/doc/gauche 2>/dev/null || true
