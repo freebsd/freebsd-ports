@@ -99,6 +99,7 @@
     SUBDIR += rocksndiamonds
     SUBDIR += seabattle
     SUBDIR += seahaven
+    SUBDIR += sl
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += spellcast
