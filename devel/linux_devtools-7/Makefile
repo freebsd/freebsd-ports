@@ -3,7 +3,7 @@
 # Date created:         Jul 9, 1999
 # Whom:                 marcel@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.10 1999/07/21 11:16:09 marcel Exp $
 #
 
 DISTNAME=		linux_devtools
@@ -59,7 +59,7 @@ RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 REMOVE_DIRS=		/dev /tmp /var/tmp
 REMOVE_FILES=		/usr/X11R6/include/X11/X11
 
-.if ${OSVERSION} < 320001
+.if ${OSVERSION} <= 320001
 #
 # Hack to let the rpm installer run.  The actual kernel change occurred after
 # 400008 on 4.0-current and well after 320001, but we'll assume people running
