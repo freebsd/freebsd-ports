@@ -1,0 +1,11 @@
+--- src/authinfo_pam.ext.orig	Sun Jun 11 22:01:43 2000
++++ src/authinfo_pam.ext	Fri Sep 14 10:55:25 2001
+@@ -19,6 +19,8 @@
+ #else
+ #  define EXP_(x)
+ #endif
++extern authenticator pam_authenticator;
++extern int pam_got_pass(char *pass);
+ #ifdef __cplusplus
+ }
+ #endif
