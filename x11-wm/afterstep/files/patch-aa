@@ -1,5 +1,5 @@
-*** configure.h.orig	Mon Aug 26 15:09:46 1996
---- configure.h	Mon Aug 26 16:32:09 1996
+*** configure.h.orig	Tue Sep  3 12:32:22 1996
+--- configure.h	Tue Sep  3 12:38:20 1996
 ***************
 *** 1,6 ****
 ! #define AFTERDIR     "/usr/lib/X11/afterstep"

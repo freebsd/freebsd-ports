@@ -1,13 +1,13 @@
 # New ports collection makefile for:	afterstep
-# Version required:	0.98b30
+# Version required:	0.98b32
 # Date created:		17 July 96
 # Whom:			james@bdd.net
 #
-# $Id: Makefile,v 1.7 1996/08/24 15:19:15 jfitz Exp $
+# $Id: Makefile,v 1.8 1996/08/27 17:48:59 jfitz Exp $
 #
 
-DISTNAME=	as-b30
-PKGNAME=	afterstep-0.98b30
+DISTNAME=	as-b32
+PKGNAME=	afterstep-0.98b32
 CATEGORIES+=	x11
 MASTER_SITES=	ftp://oak.sfasu.edu/pub/AfterStep/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	fvwm:${PORTSDIR}/x11/fvwm
 
 USE_X11=	yes
-WRKSRC=		${WRKDIR}/AfterStep-0.98aBETA30
+WRKSRC=		${WRKDIR}/AfterStep-0.98aBETA32
 
 pre-build:
 		@cd ${WRKSRC}; sh MakeMakefiles
