@@ -42,6 +42,7 @@
     SUBDIR += fspanel
     SUBDIR += gdkxft
     SUBDIR += gdm2
+    SUBDIR += ggiterm
     SUBDIR += gmessage
     SUBDIR += gmrun
     SUBDIR += gnome-swallow

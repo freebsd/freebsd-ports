@@ -1,0 +1,16 @@
+GGIterm is an ANSI-compatible terminal emulator (like xterm, rxvt,
+gnome-terminal, konsole, etc.), but directed at LibGGI rather than
+X11. This means that, unlike most terminal emulators, it can run on a
+KGGI, SVGAlib, or other non-X target just as well as under X11.
+
+GGIterm uses freetype (by default) to render fonts, which means that
+you can use TT, Type 1, etc. fonts on your terminal.
+
+At present, it's not complete--you probably don't want to replace
+gnome-terminal or konsole yet under X, and it's only barely been
+tested on other targets. But it works.
+
+WWW: http://ggiterm.sourceforge.net/
+
+--
+andi_payn@speedymail.org
