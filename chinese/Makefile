@@ -72,6 +72,7 @@
     SUBDIR += mule-freewnn
     SUBDIR += muni
     SUBDIR += mutt
+    SUBDIR += ntuttf
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw

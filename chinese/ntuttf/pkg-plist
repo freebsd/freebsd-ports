@@ -1,0 +1,9 @@
+share/fonts/TrueType/NTU_FS_M.TTF
+share/fonts/TrueType/NTU_KAI.TTF
+share/fonts/TrueType/NTU_LI_M.TTF
+share/fonts/TrueType/NTU_MB.TTF
+share/fonts/TrueType/NTU_MM.TTF
+share/fonts/TrueType/NTU_MR.TTF
+share/fonts/TrueType/NTU_TW.TTF
+@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
+@unexec rmdir %D/share/fonts 2>/dev/null || true
