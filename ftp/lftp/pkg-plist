@@ -11,5 +11,6 @@ share/doc/lftp/THANKS
 share/doc/lftp/TODO
 share/locale/es/LC_MESSAGES/lftp.mo
 share/locale/it/LC_MESSAGES/lftp.mo
+share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
 @dirrm share/doc/lftp
