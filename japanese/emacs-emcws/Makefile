@@ -146,6 +146,12 @@ CONFIGURE_ARGS+=	--with-xpg4
 .endif
 .endif
 
+.if exists(${PREFIX}/bin/emacs-${EMACS_VER})
+EMACS_BASE=${PREFIX}
+.else
+EMACS_BASE=${LOCALBASE}
+.endif
+
 pre-fetch:
 	@${CAT} ${FILESDIR}/emcws-message
 
@@ -153,7 +159,7 @@ pre-build:
 	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
 	@(cd ${WRKSRC}/src/../lisp; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${LOCALBASE}/bin/emacs-${EMACS_VER})
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${EMACS_BASE}/bin/emacs-${EMACS_VER})
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
 	@(cd ${WRKSRC}/src/../lisp; \
 	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
