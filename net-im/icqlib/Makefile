@@ -8,7 +8,7 @@
 
 DISTNAME=	icqlib-0.1.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.cn.ua/~denis/kde/
+MASTER_SITES=	http://download.sourceforge.net/icqlib/
 
 MAINTAINER=	paxvel@iname.com
 
