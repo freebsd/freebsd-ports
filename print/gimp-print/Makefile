@@ -6,6 +6,7 @@
 
 PORTNAME=	gimp-print
 PORTVERSION=	4.2.7
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -59,7 +60,7 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "	WITHOUT_CUPS=yes	build without CUPS driver"
+	@${ECHO_MSG} "	WITH_CUPS=yes		build with CUPS driver"
 	@${ECHO_MSG} "	WITHOUT_IJS=yes 	build without IJS-based Ghostscript driver"
 	@${ECHO_MSG}
 
