@@ -1,5 +1,5 @@
---- tcpshow.c.orig	Tue Nov 30 01:49:43 1999
-+++ tcpshow.c	Tue Nov 30 01:56:10 1999
+--- tcpshow.c.orig	Tue Mar 21 17:25:25 2000
++++ tcpshow.c	Tue Mar 21 17:28:04 2000
 @@ -367,7 +367,7 @@
  #endif
  
@@ -87,7 +87,48 @@
  
     return getPkt();
  
-@@ -1826,7 +1831,7 @@
+@@ -1778,7 +1783,7 @@
+ static void showPkt (reg char *p) {
+ 
+    char *warnMsg = "<*** No decode support for encapsulated protocol ***>";
+-
++   char *warnMsg2 = "<*** No decode support for encap protocol in IPIP packet ***>";
+ 
+    prSep();
+    printf("Packet %d\n", ++nPktsShown);
+@@ -1807,6 +1812,31 @@
+ 	 p = showIcmp(p);
+ 	 p = showData(p);
+ 	 break;
++	 
++	 // IPIP decode support by M. Nowlin (mike@argos.org) 20000321
++       case IPIP:
++	  p = showIp(p);
++	  switch(proto) {
++	   case TCP:
++	     p = showTcp(p);
++	     p = showData(p);
++	     break;
++	   case UDP:
++	     p = showUdp(p);
++	     p = showData(p);
++	     break;
++	   case ICMP:
++	     p = showIcmp(p);
++	     p = showData(p);
++	     break;
++	   default:
++	     printf("\t%s\n", warnMsg2);
++	     nextPkt();
++	     break;
++	 }
++	 
++	 break;
++	  
+        default:
+ 	 printf("\t%s\n", warnMsg);
+ 	 nextPkt();                    /* Doesn't return                    */
+@@ -1826,7 +1856,7 @@
     }
     /* Note that if getPkt() returns here, then the line read isn't the      */
     /* start of a new packet, i.e. there's spurious data.                    */
@@ -96,7 +137,7 @@
        if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
        nextPkt();
     }
-@@ -1996,10 +2001,10 @@
+@@ -1996,10 +2026,10 @@
  
     if (terseFlag) {
        printf(
@@ -110,7 +151,7 @@
        printf(
           "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
           hLen, dataLen,
-@@ -2016,9 +2021,9 @@
+@@ -2016,9 +2046,9 @@
        if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
        printf("\n\tDestination Port:\t\t%d", dPort);
        if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
