@@ -1,6 +1,6 @@
 # New ports collection makefile for:  bugsx
 # Date created:  7 December 1997
-# Whom:  Don Croyle <croyle@gelemna.ft-wayne.in.us>
+# Whom:  Don Croyle <croyle@gelemna.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	bugsx108
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	croyle@gelemna.ft-wayne.in.us
+MAINTAINER=	croyle@gelemna.org
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/bugsx
