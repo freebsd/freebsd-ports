@@ -22,6 +22,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+IGNORE=		"crashes on startup"
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/../share/docs/LICENSE~
 
@@ -32,4 +38,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
