@@ -46,21 +46,13 @@ etc/gnump3d/split/plugin.html
 etc/gnump3d/split/results.html
 etc/gnump3d/split/search.html
 etc/gnump3d/split/stats.html
-lib/gnump3d/bug.la
 lib/gnump3d/bug.so
-lib/gnump3d/last20.la
 lib/gnump3d/last20.so
-lib/gnump3d/now.la
 lib/gnump3d/now.so
-lib/gnump3d/playlist.la
 lib/gnump3d/playlist.so
-lib/gnump3d/search.la
 lib/gnump3d/search.so
-lib/gnump3d/stats.la
 lib/gnump3d/stats.so
-lib/gnump3d/theme.la
 lib/gnump3d/theme.so
-lib/gnump3d/version.la
 lib/gnump3d/version.so
 @dirrm lib/gnump3d
 @exec mkdir -p /var/log/gnump3d
