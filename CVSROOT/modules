@@ -3523,6 +3523,7 @@ ja-esecanna	ports/japanese/esecanna
 ja-esecanna-module-vje25	ports/japanese/esecanna-module-vje25
 ja-esecanna-module-vje30	ports/japanese/esecanna-module-vje30
 ja-esecanna-module-wnn6	ports/japanese/esecanna-module-wnn6
+ja-estraier	ports/japanese/estraier
 ja-eterm	ports/japanese/eterm
 ja-ewipe	ports/japanese/ewipe
 ja-exmh2	ports/japanese/exmh2
