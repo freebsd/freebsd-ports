@@ -3,13 +3,13 @@
 # Date created:		
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.2 1997/03/11 11:02:39 asami Exp $
+# $Id: Makefile,v 1.3 1997/09/14 21:36:08 max Exp $
 #
 
 DISTNAME=	tk4.2p2
 PKGNAME=	ja-tk-4.2
 CATEGORIES=	japanese x11
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/ 
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl7_6/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	tk4.2jp-patch.gz

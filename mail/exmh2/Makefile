@@ -3,12 +3,12 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.26 1998/03/14 13:43:36 peter Exp $
+# $Id: Makefile,v 1.27 1998/03/20 09:28:05 markm Exp $
 #
 
 DISTNAME=	exmh-2.0.2
 CATEGORIES=	mail tk80
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	http://sunscript.sun.com/exmh/patches/2.0.1/

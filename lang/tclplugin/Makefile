@@ -3,13 +3,13 @@
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.10 1998/02/02 17:51:33 asami Exp $
+# $Id: Makefile,v 1.11 1998/02/18 06:45:54 asami Exp $
 #
 
 DISTNAME=	tclplug20-src
 PKGNAME=	tclplugin-2.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/plugin/
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/plugin/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 

@@ -3,13 +3,13 @@
 # Date created:		Fri Oct  3 18:50:53 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1998/02/21 22:37:47 fenner Exp $
+# $Id: Makefile,v 1.5 1998/03/20 14:35:10 tg Exp $
 #
 
 DISTNAME=	SpecTcl1.1
 PKGNAME=	SpecTcl-1.1
 CATEGORIES=	devel tk80
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/SpecTcl/
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/guitools/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
