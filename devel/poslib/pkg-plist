@@ -1,0 +1,50 @@
+@comment $FreeBSD$
+bin/poslib-config
+include/poslib-1.0/poslib/bits.h
+include/poslib-1.0/poslib/dnsdefs.h
+include/poslib-1.0/poslib/dnsmessage.h
+include/poslib-1.0/poslib/domainfn.h
+include/poslib-1.0/poslib/exception.h
+include/poslib-1.0/poslib/lexfn.h
+include/poslib-1.0/poslib/masterfile.h
+include/poslib-1.0/poslib/poslib.h
+include/poslib-1.0/poslib/postime.h
+include/poslib-1.0/poslib/random.h
+include/poslib-1.0/poslib/resolver.h
+include/poslib-1.0/poslib/rr.h
+include/poslib-1.0/poslib/server/configuration.h
+include/poslib-1.0/poslib/server/handlequery.h
+include/poslib-1.0/poslib/server/log.h
+include/poslib-1.0/poslib/server/pending.h
+include/poslib-1.0/poslib/server/posthreads.h
+include/poslib-1.0/poslib/server/requestid.h
+include/poslib-1.0/poslib/server/server.h
+include/poslib-1.0/poslib/server/serverthread.h
+include/poslib-1.0/poslib/server/srvresolver.h
+@dirrm include/poslib-1.0/poslib/server
+include/poslib-1.0/poslib/socket.h
+include/poslib-1.0/poslib/syssocket.h
+include/poslib-1.0/poslib/sysstl.h
+include/poslib-1.0/poslib/sysstring.h
+include/poslib-1.0/poslib/types.h
+include/poslib-1.0/poslib/vsnprintf.h
+include/poslib-1.0/poslib/w32poll.h
+@dirrm include/poslib-1.0/poslib
+@dirrm include/poslib-1.0
+lib/libposlib.a
+lib/libposlib.la
+lib/libposlib.so
+lib/libposlib.so.0
+lib/libposserver.a
+lib/libposserver.la
+lib/libposserver.so
+lib/libposserver.so.0
+lib/poslib-1.0/include/poslib-config.h
+@dirrm lib/poslib-1.0/include
+@dirrm lib/poslib-1.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
