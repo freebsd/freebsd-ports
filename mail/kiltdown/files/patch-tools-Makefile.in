@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	Mon May 14 05:25:23 2001
++++ tools/Makefile.in	Wed Dec 25 11:31:57 2002
+@@ -10,7 +10,7 @@
+ 	$(CC) -o rescomp rescomp.c
+ 
+ dlgstrip: dlgstrip.cc
+-	$(CC) -o dlgstrip dlgstrip.cc
++	$(CXX) -o dlgstrip dlgstrip.cc
+ 
+ clean:
+ 	$(RM) -f rescomp core dlgstrip
