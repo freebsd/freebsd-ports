@@ -6,7 +6,7 @@ export GTK_IM_MODULE=xim
 # change locale to UTF-8, for example en_US.UTF-8
 export LANG=en_US.UTF-8 
 # preload xvnkb core module 
-export LD_PRELOAD=/usr/local/lib/xvnkb.so.0.2.8
+export LD_PRELOAD=%%PREFIX%%/lib/xvnkb.so.%%PORTVERSION%%
 
 -- Nguyen Tam Chinh
 chinhngt@sectorb.msk.ru
