@@ -14,6 +14,7 @@
     SUBDIR += audacity
     SUBDIR += aumix
     SUBDIR += aureal-kmod
+    SUBDIR += autools
     SUBDIR += autozen
     SUBDIR += baudline
     SUBDIR += bladeenc

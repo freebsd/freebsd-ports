@@ -1,0 +1,29 @@
+--- Makefile.orig	Thu Jul  4 13:49:11 2002
++++ Makefile	Thu Jul  4 13:52:33 2002
+@@ -78,7 +78,7 @@
+ 
+ 
+ # directory for binaries used by "make install"
+-INSTALL_DIR = /usr/local/bin
++INSTALL_DIR = ${PREFIX}/bin
+ 
+ 
+ ifeq "$(MAKELEVEL)" "0"
+@@ -91,6 +91,8 @@
+ 
+ # paths for AFsp's libtsp can be set by the environment variables
+ # AFSP_INCLUDE_PATH and AFSP_LIBRARY_PATH
++AFSP_INCLUDE_PATH = ${LOCALBASE}/include
++AFSP_LIBRARY_PATH = ${LOCALBASE}/lib
+ 
+ # disable AFsp by "make USE_AFSP=0"
+ ifndef USE_AFSP
+@@ -110,7 +112,7 @@
+ CFLAGS = -g -fbounds-checking -Wall
+ LDFLAGS = -g -fbounds-checking
+ else
+-CFLAGS = -O3 -Wall -Wno-uninitialized -Wno-unused
++#CFLAGS = -O3 -Wall -Wno-uninitialized -Wno-unused
+ endif
+ endif
+ 

@@ -1,0 +1,5 @@
+autools is a collection of several C programs to play, record, generate,
+modify, and analyse audio files. It includes native support for 16 bit .au
+and raw files.
+
+WWW: http://www.tnt.uni-hannover.de/~purnhage/software/autools/
