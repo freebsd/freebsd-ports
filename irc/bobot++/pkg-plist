@@ -1,0 +1,19 @@
+bin/bobot++
+%%PORTDOCS%%share/doc/bobot++/index.html
+%%PORTDOCS%%share/bobot++/examples/bot.log
+%%PORTDOCS%%share/bobot++/examples/bot.help
+%%PORTDOCS%%share/bobot++/examples/bot.init
+%%PORTDOCS%%share/bobot++/examples/bot.conf
+%%PORTDOCS%%share/bobot++/examples/bot.shit
+%%PORTDOCS%%share/bobot++/examples/bot.users
+%%PORTDOCS%%share/bobot++/examples/bot.autoexec
+%%PORTDOCS%%share/bobot++/scripts/country
+%%PORTDOCS%%share/bobot++/scripts/hello
+%%PORTDOCS%%share/bobot++/scripts/tamere
+%%PORTDOCS%%share/bobot++/scripts/uname
+%%PORTDOCS%%share/bobot++/scripts/uptime
+%%PORTDOCS%%share/bobot++/scripts/boulet
+%%PORTDOCS%%@dirrm share/doc/bobot++
+%%PORTDOCS%%@dirrm share/bobot++/examples
+%%PORTDOCS%%@dirrm share/bobot++/scripts
+%%PORTDOCS%%@dirrm share/bobot++
