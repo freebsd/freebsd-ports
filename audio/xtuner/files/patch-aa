@@ -1,12 +1,16 @@
---- xtuner.h.orig	Thu Dec 19 14:33:57 1996
-+++ xtuner.h	Thu Jul  4 05:52:14 2002
-@@ -9,15 +9,14 @@
+--- xtuner.h.orig	Thu Dec 19 11:33:57 1996
++++ xtuner.h	Sun Sep  8 03:33:58 2002
+@@ -9,15 +9,18 @@
  #if (defined(BSD) && (BSD >= 199306))
  #  include <osreldate.h>
  #  include <stdlib.h>
 -#  include "/usr/X11/include/X11/forms.h"
  #  include <machine/cpufunc.h>
++#ifdef __FreeBSD__
++#  include <sys/soundcard.h>
++#else
  #  include <machine/soundcard.h>
++#endif
  #else
  #  include <asm/io.h>
 -#  include "forms.h"
@@ -17,7 +21,7 @@
  #include <X11/xpm.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
-@@ -46,6 +45,13 @@
+@@ -46,6 +49,13 @@
  
  #if (defined(BSD) && (BSD >= 199306))
    int fpiopl;
