@@ -313,6 +313,7 @@
     SUBDIR += pear-Cache_Lite
     SUBDIR += pear-File
     SUBDIR += pear-File_Find
+    SUBDIR += pear-File_Gettext
     SUBDIR += pear-Log
     SUBDIR += pecl-fileinfo
     SUBDIR += penv
