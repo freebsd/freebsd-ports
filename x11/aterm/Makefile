@@ -8,7 +8,7 @@
 PORTNAME=	aterm
 PORTVERSION=	0.4.0
 PORTREVISION=	1
-CATEGORIES=	x11
+CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	http://download.sourceforge.net/aterm/
 
 MAINTAINER=	jim@FreeBSD.org
@@ -19,7 +19,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-transparency --enable-background-image \
+# `+=' is for slave ports
+CONFIGURE_ARGS+= \
+		--enable-transparency --enable-background-image \
 		--disable-delete-key --disable-backspace-key \
 		--enable-fading --enable-utmp --enable-wtmp
 
