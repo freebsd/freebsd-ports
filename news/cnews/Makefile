@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.14 1996/11/18 14:10:12 asami Exp $
+# $Id: Makefile,v 1.15 1996/11/21 12:10:16 asami Exp $
 #
 
 DISTNAME=	cnews
@@ -23,8 +23,8 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		rnews.8cn
 
 NEWSSPOOL=	${PREFIX}/newsspool
-NEWSBIN=	${PREFIX}/libexec/news
-NEWSLIB=	${PREFIX}/lib/news
+NEWSBIN=	${PREFIX}/news/cnewsbin
+NEWSLIB=	${PREFIX}/news/lib
 MANDIR=		${PREFIX}/man
 
 do-install:
