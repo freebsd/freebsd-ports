@@ -21,7 +21,6 @@ USE_JAVA=	1.1+
 NEED_JAVAC=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-extract:
