@@ -1,0 +1,11 @@
+--- ./src/xrdb.c.org	Sat Apr  8 21:54:08 1995
++++ ./src/xrdb.c	Mon Sep 11 21:53:29 1995
+@@ -361,7 +361,7 @@
+ 
+ /* Producing databases for individual sources.  */
+ 
+-#define X_DEFAULT_SEARCH_PATH "/usr/lib/X11/%L/%T/%N%C%S:/usr/lib/X11/%l/%T/%N%C%S:/usr/lib/X11/%T/%N%C%S:/usr/lib/X11/%L/%T/%N%S:/usr/lib/X11/%l/%T/%N%S:/usr/lib/X11/%T/%N%S"
++#define X_DEFAULT_SEARCH_PATH "/usr/X11R6/lib/X11/%L/%T/%N%C%S:/usr/X11R6/lib/X11/%l/%T/%N%C%S:/usr/X11R6/lib/X11/%T/%N%C%S:/usr/X11R6/lib/X11/%L/%T/%N%S:/usr/X11R6/lib/X11/%l/%T/%N%S:/usr/X11R6/lib/X11/%T/%N%S"
+ 
+ static XrmDatabase
+ get_system_app (class)
