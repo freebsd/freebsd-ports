@@ -32,8 +32,9 @@ DISTFILES=	rsa.c idea.c
 CONTRIB=	rsa idea
 #EXTRACT_ONLY=
 .else
+do-fetch:
 	@${ECHO_MSG}
-	@${ECHO_MSG} rsaref not jet supported
+	@${ECHO_MSG} rsaref not yet supported
 	@${FALSE}
 .endif
 
