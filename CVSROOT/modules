@@ -4466,6 +4466,7 @@ msend		ports/net/msend
 mserver		ports/comms/mserver
 msgconvert	ports/mail/msgconvert
 mshell		ports/misc/mshell
+msmtp		ports/mail/msmtp
 msntp		ports/net/msntp
 msp430-binutils		ports/devel/msp430-binutils
 msp430-gcc		ports/devel/msp430-gcc
