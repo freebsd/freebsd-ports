@@ -23,7 +23,7 @@ USE_GMAKE=		yes
 USE_GCC=		3.3
 USE_REINPLACE=		yes
 USE_GNOME=		gnomehack gnomeprefix intlhack libgnomecanvas
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

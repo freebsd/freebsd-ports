@@ -266,6 +266,9 @@ LIB_DEPENDS+=	ltdl.4:${PORTSDIR}/devel/libltdl15
 .if defined(USE_LIBTOOL_VER)
 GNU_CONFIGURE?=		yes
 WANT_LIBTOOL_VER?=	${USE_LIBTOOL_VER}
+.elif defined(USE_INC_LIBTOOL_VER)
+GNU_CONFIGURE?=		yes
+WANT_LIBTOOL_VER?=	${USE_INC_LIBTOOL_VER}
 .endif
 
 # Note that there aren't any non-versioned libtools, so we can skip
@@ -384,12 +387,22 @@ run-autotools:
 #
 .if !target(patch-autotools)
 patch-autotools:
-. if defined(USE_LIBTOOL_VER)
+. if defined(USE_INC_LIBTOOL_VER)
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
 		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
 			   -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+			$$file.tmp > $$file; \
+		${RM} $$file.tmp; \
+	done);
+. elif defined(USE_LIBTOOL_VER)
+	@(cd ${PATCH_WRKSRC}; \
+	for file in ${LIBTOOLFILES}; do \
+		${CP} $$file $$file.tmp; \
+		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
+			     -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+			     -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
 			$$file.tmp > $$file; \
 		${RM} $$file.tmp; \
 	done);

@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME?=	gnomehack glib20 libxml2
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ARGS?=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc --without-gnome --with-bz2
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -16,7 +16,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A library to handle internationalized domain names
 
 USE_ICONV=	yes
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
 		--enable-runidn \

@@ -19,7 +19,7 @@ OPTIONS+=	WNN	"Use FreeWnn" on
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_GNOME=	gnomeprefix gnomehack gnomepanel
 GNU_CONFIGURE=	yes
 

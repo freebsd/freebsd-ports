@@ -21,6 +21,6 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack lthack gtk20
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack lthack libxslt gnomevfs2 gail
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -20,7 +20,7 @@ LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
 		gpg-error.1:${PORTSDIR}/security/libgpg-error
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

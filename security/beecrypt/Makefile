@@ -17,7 +17,7 @@ COMMENT=	BeeCrypt is an open source cryptography library
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 post-patch:

@@ -18,6 +18,6 @@ COMMENT=	Open Source implementation of the Lotus Sametime protocol
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack lthack glib20
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ MAINTAINER=	eik@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 USE_GETTEXT=	yes
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \

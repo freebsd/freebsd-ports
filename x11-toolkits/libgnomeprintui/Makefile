@@ -26,7 +26,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeprint libgnomecanvas lthack \
 		intlhack
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

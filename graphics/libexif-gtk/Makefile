@@ -18,7 +18,7 @@ COMMENT=	GTK+ widgets to display/edit EXIF tags
 LIB_DEPENDS=	exif.10:${PORTSDIR}/graphics/libexif
 
 USE_GNOME=	gnomehack lthack gtk20
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes

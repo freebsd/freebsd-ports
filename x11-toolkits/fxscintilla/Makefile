@@ -16,7 +16,7 @@ COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
 LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox
 
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 

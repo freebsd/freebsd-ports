@@ -18,7 +18,7 @@ COMMENT=	Trivial Database
 
 USE_AUTOMAKE_VER=	14
 USE_AUTOCONF_VER=	213
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=		yes
 
 MAN3=	tdb.3 tdb_chainlock.3 tdb_close.3 tdb_delete.3 tdb_error.3 \

@@ -15,7 +15,7 @@ MAINTAINER=	yb@sainte-barbe.org
 COMMENT=	A libpcap wrapper library
 
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

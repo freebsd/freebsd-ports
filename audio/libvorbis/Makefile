@@ -18,7 +18,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 CONFLICTS=	libvorbis-aotuv-[0-9]*
 
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 INSTALLS_SHLIB=	yes

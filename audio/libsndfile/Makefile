@@ -16,8 +16,8 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 USE_GCC=	3.3
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
+USE_INC_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
 INSTALLS_SHLIB=	yes
 

@@ -19,7 +19,7 @@ MAINTAINER=	ahze@ahze.net
 COMMENT=	Fast C routines to compute the Discrete Fourier Transform
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_GNOME=	gnomehack gnomeprefix gnometarget lthack pkgconfig
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes

@@ -18,7 +18,7 @@ COMMENT=	An ODBC 3.x driver manager, for universal data source access
 
 CONFLICTS=	unixODBC-*
 
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 INIDIR=		${PREFIX}/etc/${PORTNAME}

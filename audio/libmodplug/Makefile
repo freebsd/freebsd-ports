@@ -17,7 +17,7 @@ COMMENT=	ModPlug mod-like music shared libraries
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
 USE_REINPLACE=	yes
 
 post-patch:

@@ -21,7 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack lthack glib20
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--with-gnutls-includes=${FALSE} \
