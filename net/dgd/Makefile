@@ -37,6 +37,7 @@ post-patch:
 
 post-build:
 	@cd ${WRKSRC}; ${MAKE} install
+	@sed '/^@srcdir/s|\.|${WRKDIR}/\.|' <${PKGDIR}/PLIST >${WRKDIR}/PLIST
 
 do-install:
 	@chown -R ${DGD_USER}.${DGD_GROUP} ${WRKDIR}/dgd
@@ -45,7 +46,6 @@ do-install:
 
 .if !defined(DO_PACKAGE)
 package:
-	@sed '/^@srcdir/s|\.|${WRKDIR}/\.|' <${PKGDIR}/PLIST >${WRKDIR}/PLIST
 #	@${MAKE} ${.MAKEFLAGS} 'PKG_CMD= cd ${WRKDIR}; ${PKG_CMD}' \
 	@${MAKE} ${.MAKEFLAGS} 'PKG_ARGS= ${PKG_ARGS} -f ${WRKDIR}/PLIST' \
 	    NO_INSTALL= DO_PACKAGE= package
