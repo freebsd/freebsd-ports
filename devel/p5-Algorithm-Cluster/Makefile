@@ -30,4 +30,8 @@ post-patch:
 IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (needs to build shared libraries with -fPIC)"
+.endif
+
 .include <bsd.port.post.mk>
