@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.in	2001/05/21 11:59:08	1.1
-+++ Makefile.in	2001/05/21 12:16:32
+--- Makefile.in.orig	Fri Jul 27 17:45:27 2001
++++ Makefile.in	Fri Jul 27 18:18:46 2001
 @@ -188,11 +188,11 @@
  appdir = $(datadir)/apps/Applications
  app_DATA = guppi.desktop
@@ -17,3 +17,16 @@ $FreeBSD$
  aclocal_DATA = libguppi.m4
  
  EXTRA_DIST =  	ChangeLog README AUTHORS NEWS BIBLIOGRAPHY 	Guppi.spec Guppi.spec.in libguppiConf.sh.in guppi.desktop libguppi.m4 	xml-i18n-extract.in xml-i18n-merge.in xml-i18n-update.in
+@@ -548,10 +548,10 @@
+ 
+ 
+ libguppiConf.sh: libguppiConf.sh.in Makefile
+-	sed -e 's?\@LIBGUPPI_LIBDIR\@?$(LIBGUPPI_LIBDIR)?g' \
++	sed -e 's?\@LIBGUPPI_LIBDIR\@?$(LIBGUPPI_LIBDIR) $(PY_LIB_LOC)?g' \
+ 	-e 's?\@LIBGUPPI_INCLUDEDIR\@?$(LIBGUPPI_INCLUDEDIR)?g' \
+ 	-e 's?\@VERSION\@?$(VERSION)?g' \
+-	-e 's?\@LIBGUPPI_LIBS\@?$(LIBGUPPI_LIBS)?g' \
++	-e 's?\@LIBGUPPI_LIBS\@?$(LIBGUPPI_LIBS) $(PY_LIBS) $(PTHREAD_LIB)?g' \
+ 	< $(srcdir)/libguppiConf.sh.in > libguppiConf.tmp \
+ 	&& mv libguppiConf.tmp libguppiConf.sh
+ 
