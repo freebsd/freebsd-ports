@@ -3,12 +3,13 @@
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.8 1997/11/09 14:13:05 jseger Exp $
 #
 
 DISTNAME=	guile-1.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
+
 MAINTAINER=	jseger@FreeBSD.org
 
 GNU_CONFIGURE=	YES
