@@ -21,6 +21,12 @@ USE_GMAKE=	yes
 MAN1=		netqc.1
 DOCFILES=	COPYING README
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile due to varargs.h being deprecated"
+.endif
+
 post-install:
 		${INSTALL_DATA} ${WRKSRC}/conf ${PREFIX}/etc/netqc.conf.sample
 .for file in ${MAN1}
@@ -31,4 +37,4 @@ post-install:
 		${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
