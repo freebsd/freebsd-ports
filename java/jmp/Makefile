@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmp
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
@@ -19,7 +19,8 @@ OPTIONS=	X11 "Enable X11 support" on
 OPTIONS+=	DEBUG "Enable extra debug output" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Compile with -O3" off
 
-CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include" \
+		--with-libintl-prefix="${LOCALBASE}"
 
 USE_GETTEXT=	yes
 .if defined(WITHOUT_X11)
@@ -54,6 +55,7 @@ CONFIGURE_ENV=	JAVA_HOME="${JAVA_HOME}"
 INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	lib/libjmp.so lib/libjmp.so.0 \
-		share/locale/de/LC_MESSAGES/jmp.mo share/locale/sv/LC_MESSAGES/jmp.mo
+		share/locale/de/LC_MESSAGES/jmp.mo \
+		share/locale/sv/LC_MESSAGES/jmp.mo
 
 .include <bsd.port.mk>
