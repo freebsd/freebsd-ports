@@ -6153,6 +6153,7 @@ pdss		ports/lang/pdss
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pear		ports/devel/pear
+pear-Archive_Tar	ports/archivers/pear-Archive_Tar
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
