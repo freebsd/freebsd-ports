@@ -25,7 +25,13 @@ USE_XLIB=	yes
 PERL_CONFIGURE=	yes
 MAN3=	X11::GUITest.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/X11R6,${X11BASE},g" ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
