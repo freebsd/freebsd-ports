@@ -263,5 +263,6 @@ post-install:
 	done
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${DOCSDIR}/README.swat
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- source/configure.in.orig	Thu Nov  7 17:52:42 2002
++++ source/configure.in	Thu Nov  7 17:53:09 2002
+@@ -168,7 +168,7 @@
+ AC_SUBST(LIBSMBCLIENT)
+ 
+ # compile with optimization and without debugging by default
+-CFLAGS="-O ${CFLAGS}"
++CFLAGS="${CFLAGS}"
+ 
+ AC_ARG_ENABLE(debug, 
+ [  --enable-debug          Turn on compiler debugging information (default=no)],

@@ -1,0 +1,9 @@
+=======================================================================
+
+WARNING: In FreeBSD, it's known that compiling samba with any kind of
+optimization flags might cause problems under certain circumstance.
+
+If you caught any show stopper, please try taking optimization flag(s)
+out of your CFLAGS and recompile/reinstall samba.
+
+=======================================================================
