@@ -1,0 +1,12 @@
+--- src/rlpq.c.orig	Sun Dec 13 19:21:22 1998
++++ src/rlpq.c	Sat Apr 10 18:39:54 1999
+@@ -19,2 +19,3 @@
+ #include <pwd.h>
++#include <stdio.h>
+ #include <stdlib.h>
+--- src/rlprm.c.orig	Sun Dec 13 19:21:30 1998
++++ src/rlprm.c	Sat Apr 10 18:41:11 1999
+@@ -19,2 +19,3 @@
+ #include <pwd.h>
++#include <stdio.h>
+ #include <stdlib.h>

@@ -1,0 +1,18 @@
+Send print jobs to lpd servers anywhere on a network. Does not require
+lpd server to be listed in client's /etc/printcap, and is therefore
+useful for printing from machines one does not have root access on.
+
+This version has been completely redesigned and rewritten from the
+ground up. the source code is oh-so-much-better than before. there are
+also a number of user-visible changes:
+
+        . addition of new rlprm command 
+        . new hooks for internationalization support 
+        . build procedure now uses automake in addition to autoconf 
+        . new --timeout option in case remote end dies 
+        . new --send-data-first option to improve support for buggy lpd's 
+        . now works with hp jetdirect printers 
+	. shiny-new rlpr progress meter, useful for printing over slow links
+        . all printing commands default to `lp' printer now, like bsd 
+
+Will use the installed gettext (see devel/gettext port) or its own.
