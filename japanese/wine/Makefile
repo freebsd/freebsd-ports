@@ -13,8 +13,6 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTFILES=	Wine-990131.tar.gz Wine990131-ja.tar.gz
 
-MAINTAINER=	j1594016@ed.kagu.sut.ac.jp
-
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/wine-990131
