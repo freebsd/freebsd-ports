@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Oct 23 06:46:33 2001
-+++ Makefile	Fri Dec  7 00:37:08 2001
-@@ -253,7 +253,7 @@
+--- Makefile.orig	Mon Nov  4 16:19:13 2002
++++ Makefile	Tue Nov 26 01:18:50 2002
+@@ -256,7 +256,7 @@
  
  # Make the IMAP Toolkit
  
@@ -9,8 +9,8 @@
  
  c-client:
  	@echo Not processed yet.  In a first-time build, you must specify
-@@ -374,7 +374,7 @@
- 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+@@ -434,7 +434,7 @@
+ 	$(TOOLS)/$@ "$(LN)" src/tmail tmail
  	$(LN) $(TOOLS)/$@ .
  
 -build:	OSTYPE rebuild rebuildclean bundled
@@ -18,7 +18,7 @@
  
  OSTYPE:
  	@echo Building c-client for $(BUILDTYPE)...
-@@ -393,8 +393,7 @@
+@@ -453,8 +453,7 @@
  	@$(SH) -c '(test $(BUILDTYPE) = rebuild -o $(BUILDTYPE) = `$(CAT) OSTYPE`) || (echo Already built for `$(CAT) OSTYPE` -- you must do \"make clean\" first && exit 1)'
  	@echo Rebuilding c-client for `$(CAT) OSTYPE`...
  	@$(TOUCH) SPECIALS
