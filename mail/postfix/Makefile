@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION= 	19991231.06
+PORTVERSION= 	19991231.07
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.snoopy.net/pub/mirrors/postfix/official/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/official/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/postfix/official/ \
 		ftp://ftp.postfix.oaktree.co.uk/pub/postfix/official/
-DISTNAME=	${PORTNAME}-19991231-pl06
+DISTNAME=	${PORTNAME}-19991231-pl07
 
 MAINTAINER=	torstenb@FreeBSD.org
 
