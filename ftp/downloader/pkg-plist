@@ -1,5 +1,6 @@
 bin/nt
 share/locale/bg/LC_MESSAGES/nt.mo
+share/locale/cs/LC_MESSAGES/nt.mo
 share/locale/de/LC_MESSAGES/nt.mo
 share/locale/es/LC_MESSAGES/nt.mo
 share/locale/fr/LC_MESSAGES/nt.mo
@@ -9,4 +10,29 @@ share/locale/ja/LC_MESSAGES/nt.mo
 share/locale/nl/LC_MESSAGES/nt.mo
 share/locale/pt_BR/LC_MESSAGES/nt.mo
 share/locale/ru/LC_MESSAGES/nt.mo
-share/locale/zh_CN.EUC/LC_MESSAGES/nt.mo
+share/locale/zh_CN.GBK/LC_MESSAGES/nt.mo
+@unexec rmdir %D/share/locale/zh_CN.GBK/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN.GBK 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/id/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/id 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
