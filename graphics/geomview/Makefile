@@ -3,7 +3,7 @@
 # Date created:				5 November 1996
 # Whom:					fenner
 #
-# $Id: Makefile,v 1.7 1998/08/07 23:56:25 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/26 23:11:00 steve Exp $
 
 DISTNAME=	geomview-1.6.1
 CATEGORIES=	graphics tk42
@@ -13,7 +13,9 @@ DISTFILES=	geomview-1.6.1-src.tar.gz
 
 MAINTAINER=	fenner@freebsd.org
 
-LIB_DEPENDS=	xforms\\.0:${PORTSDIR}/x11-toolkits/xforms \
+BROKEN_ELF=	xforms is a.out only
+
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		MesaGL\\.13:${PORTSDIR}/graphics/Mesa2 \
 		tk42.1:${PORTSDIR}/x11-toolkits/tk42
 

@@ -3,7 +3,7 @@
 # Date created:         Dec 5 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.7 1998/08/20 17:41:16 jseger Exp $
+# $Id: Makefile,v 1.8 1998/08/21 03:09:08 jseger Exp $
 #
 
 DISTNAME=       seaview
@@ -14,7 +14,9 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
 
-LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms
+BROKEN_ELF=	xforms is a.out only
+
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	YES
 NO_WRKSUBDIR=	YES

@@ -3,7 +3,7 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1998/09/15 11:13:30 asami Exp $
+# $Id: Makefile,v 1.21 1998/09/17 00:32:47 asami Exp $
 #
 
 DISTNAME=	lyx-0.12.1pre6
@@ -13,12 +13,14 @@ MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/ \
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
+BROKEN_ELF=	xforms is a.out only
+
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 .if defined(WITH_ISPELL)
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
-LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
