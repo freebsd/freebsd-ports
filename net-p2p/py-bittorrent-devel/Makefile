@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.4
 CATEGORIES?=	net python
-MASTER_SITES=	http://bitconjurer.org/BitTorrent/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
@@ -20,8 +20,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
+USE_ZIP=	yes
 
-CONFLICTS=	py??-*bittorrent*
+CONFLICTS=	py??-*[Bb]it[Tt]orrent*
 
 DOC_FILES=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
 		README.txt credits.txt
