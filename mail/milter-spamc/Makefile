@@ -9,6 +9,7 @@ PORTNAME=	milter-spamc
 PORTVERSION=	0.25
 CATEGORIES=	mail
 MASTER_SITES=	http://www.snert.com/Software/download/
+PKGNAMESUFFIX?=	${BERKELEYDB_SUFFIX}
 DISTFILES=	libsnert-1.40.tgz milter-spamc-${PORTVERSION}.tgz
 
 MAINTAINER=	mike@tric.tomsk.gov.ru
@@ -21,6 +22,14 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/com/snert/src/milter-spamc
 MAKEFILE=	makefile
+
+# Options to define Features:
+# WITH_DEBUG=yes
+# SENDMAIL_WITH_BERKELEYDB_VER=2
+# SENDMAIL_WITH_BERKELEYDB_VER=3
+# SENDMAIL_WITH_BERKELEYDB_VER=4
+# SENDMAIL_WITH_BERKELEYDB_VER=41
+# SENDMAIL_WITH_BERKELEYDB_VER=42
 
 .include <bsd.port.pre.mk>
 
@@ -43,9 +52,47 @@ DOCS=		CHANGES.TXT index.shtml style.css mailto.js \
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--with-db --localstatedir=/var/spool
+CONFIGURE_ARGS+=--localstatedir=/var/spool
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--disable-debug
+.endif
+
+.if defined(SENDMAIL_WITH_BERKELEYDB_VER)
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "2"
+BERKELEYDB_SUFFIX=	+db2
+BERKELEYDB_PORT?=	databases/db2
+BERKELEYDB_LIB?=	db2
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db2
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "3"
+BERKELEYDB_SUFFIX=	+db3
+BERKELEYDB_PORT?=	databases/db3
+BERKELEYDB_LIB?=	db3
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db3
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "4"
+BERKELEYDB_SUFFIX=	+db4
+BERKELEYDB_PORT?=	databases/db4
+BERKELEYDB_LIB?=	db4
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db4
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "41"
+BERKELEYDB_SUFFIX=	+db41
+BERKELEYDB_PORT?=	databases/db41
+BERKELEYDB_LIB?=	db41
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db41
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "42"
+BERKELEYDB_SUFFIX=	+db42
+BERKELEYDB_PORT?=	databases/db42
+BERKELEYDB_LIB?=	db-4.2
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db42
+.endif
+LIB_DEPENDS+=		${BERKELEYDB_LIB}:${PORTSDIR}/${BERKLEYDB_PORT}
+RUN_DEPENDS+=		${LOCALBASE}/sbin/makemap:${PORTSDIR}/mail/sendmail
+CONFIGURE_ARGS+=	--with-db=${BERKELEYDB_INCLUDE}
+.else
+CONFIGURE_ARGS+=	--with-db
 .endif
 
 USE_RC_SUBR=	yes
