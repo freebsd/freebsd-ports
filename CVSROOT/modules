@@ -8493,6 +8493,7 @@ yank		ports/deskutils/yank
 yap		ports/lang/yap
 yape		ports/emulators/yape
 yaps		ports/comms/yaps
+yasm		ports/devel/yasm
 yatex		ports/print/yatex
 yatex-mule	ports/print/yatex-mule
 yatex-xemacs	ports/print/yatex-xemacs
