@@ -8,7 +8,9 @@
 PORTNAME=	rudiments
 PORTVERSION=	0.24
 CATEGORIES=	devel
-MASTER_SITES=	http://www.firstworks.com/downloads/rudiments/
+MASTER_SITES=	http://www.firstworks.com/downloads/rudiments/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
 
