@@ -7,6 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
+BROKEN=		"pkg-plist is incorrect"
+
 PORTCLASS=	slave
 
 EMACS_PORT_NAME=	emacs20
