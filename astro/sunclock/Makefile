@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	sunclock-1.4
+DISTNAME=	sunclock-1.5
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
