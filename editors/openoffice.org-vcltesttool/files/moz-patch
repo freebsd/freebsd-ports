@@ -1,3 +1,9 @@
+#iZ 28398
+#iZ 11424
+
+http://qa.openoffice.org/issues/show_bug.cgi?id=28398
+http://qa.openoffice.org/issues/show_bug.cgi?id=11424
+
 diff -u moz/mozilla-source-1.7b.patch moz.new/mozilla-source-1.7b.patch
 --- moz/mozilla-source-1.7b.patch	Wed Jul 14 13:22:36 2004
 +++ moz.new/mozilla-source-1.7b.patch	Fri Oct 22 22:44:42 2004
