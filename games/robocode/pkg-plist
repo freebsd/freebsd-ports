@@ -1,4 +1,5 @@
 bin/robocode
+share/java/robocode/battles/intro.battle
 share/java/robocode/battles/sample.battle
 share/java/robocode/javadoc/allclasses-frame.html
 share/java/robocode/javadoc/allclasses-noframe.html
@@ -19,6 +20,7 @@ share/java/robocode/javadoc/robocode/BulletMissedEvent.html
 share/java/robocode/javadoc/robocode/Condition.html
 share/java/robocode/javadoc/robocode/CustomEvent.html
 share/java/robocode/javadoc/robocode/DeathEvent.html
+share/java/robocode/javadoc/robocode/Droid.html
 share/java/robocode/javadoc/robocode/Event.html
 share/java/robocode/javadoc/robocode/GunTurnCompleteCondition.html
 share/java/robocode/javadoc/robocode/HitByBulletEvent.html
@@ -82,10 +84,20 @@ share/java/robocode/robots/sample/Tracker.properties
 share/java/robocode/robots/sample/Walls.class
 share/java/robocode/robots/sample/Walls.java
 share/java/robocode/robots/sample/Walls.properties
+share/java/robocode/robots/sampleteam/MyFirstDroid.class
+share/java/robocode/robots/sampleteam/MyFirstDroid.java
+share/java/robocode/robots/sampleteam/MyFirstLeader.class
+share/java/robocode/robots/sampleteam/MyFirstLeader.java
+share/java/robocode/robots/sampleteam/MyFirstTeam.team
+share/java/robocode/robots/sampleteam/Point.class
+share/java/robocode/robots/sampleteam/Point.java
+share/java/robocode/robots/sampleteam/RobotColors.class
+share/java/robocode/robots/sampleteam/RobotColors.java
 share/java/robocode/templates/newjavafile.tpt
 share/java/robocode/templates/newrobot.tpt
 share/java/robocode/versions.txt
 @dirrm share/java/robocode/templates
+@dirrm share/java/robocode/robots/sampleteam
 @dirrm share/java/robocode/robots/sample
 @dirrm share/java/robocode/robots
 @dirrm share/java/robocode/javadoc/robocode

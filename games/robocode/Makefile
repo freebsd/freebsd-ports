@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	0.98.3
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	games java
 MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/
-DISTNAME=	robocode-setup
+DISTNAME=	robocode-setup-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	sobomax@FreeBSD.org
