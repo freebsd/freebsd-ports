@@ -1,6 +1,8 @@
+@comment $FreeBSD$
 lib/libXaw3d.a
 lib/libXaw3d.so
 lib/libXaw3d.so.%%XAWVER%%
+%%XAWLINK%%lib/libXaw3d.so.6
 include/X11/Xaw3d/AllWidgets.h
 include/X11/Xaw3d/AsciiSink.h
 include/X11/Xaw3d/AsciiSinkP.h
