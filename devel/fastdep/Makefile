@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fastdep
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
