@@ -19,14 +19,20 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/WebSVN
 
 WEBSVNDIR?=	www/data/WebSVN
+PLIST=		${WRKDIR}/pkg-plist
 
-PLIST_SUB+=	WEBSVNDIR=${WEBSVNDIR}
+pre-install:
+	@${CP} ${WRKSRC}/include/distconfig.inc ${WRKSRC}/include/config.in
+	cd ${WRKSRC} && ${FIND} -s * -type f | \
+		${SED} -e 's|^|${WEBSVNDIR}/|' > ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm ${WEBSVNDIR}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${WEBSVNDIR} >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/${WEBSVNDIR}
 	${CP} -R ${WRKSRC}/* ${PREFIX}/${WEBSVNDIR}
 	${CHOWN} -R www:www ${PREFIX}/${WEBSVNDIR}
-	${CP} ${PREFIX}/${WEBSVNDIR}/include/distconfig.inc ${PREFIX}/${WEBSVNDIR}/include/config.inc
 	${FIND} ${PREFIX}/${WEBSVNDIR} -type f | ${XARGS} ${CHMOD} 644
 
 post-install:
