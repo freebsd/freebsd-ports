@@ -1,0 +1,26 @@
+--- src/api/c++/src/Makefile.orig	Sat Apr 13 16:37:18 2002
++++ src/api/c++/src/Makefile	Wed Dec 18 21:53:01 2002
+@@ -11,7 +11,6 @@
+ 
+ all: 
+ 	$(MAKE) ../lib/libsqlrclient.a; \
+-	$(MAKE) ../lib/libsqlrclient_p.a; \
+ 	if ( test "$(MINGW32)" != "yes" -a "$(CYGWIN)" != "yes" -a "$(UWIN)" != "yes" ); then \
+ 		$(MAKE) ../lib/libsqlrclient.so.$(SQLR_VERSION); \
+ 	else \
+@@ -54,7 +53,6 @@
+ install:
+ 	$(top_srcdir)/mkinstalldirs $(libdir)
+ 	$(INSTALL) -m 644 ../lib/libsqlrclient.a $(libdir); \
+-	$(INSTALL) -m 644 ../lib/libsqlrclient_p.a $(libdir); \
+ 	if ( test "$(MINGW32)" != "yes" -a "$(CYGWIN)" != "yes" -a "$(UWIN)" != "yes" ); then \
+ 		$(RM) $(libdir)/libsqlrclient.so*; \
+ 		$(INSTALL) ../lib/libsqlrclient.so.$(SQLR_VERSION) $(libdir); \
+@@ -70,7 +68,6 @@
+ uninstall:
+ 	$(RM) $(libdir)/libsqlrclient.so*
+ 	$(RM) $(libdir)/libsqlrclient.a
+-	$(RM) $(libdir)/libsqlrclient_p.a
+ 	$(RM) $(libdir)/libsqlrclient.dll
+ 	$(RM) $(libdir)/libsqlrclient.lib
+ 	$(RMTREE) $(cachedir)
