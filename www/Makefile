@@ -59,6 +59,7 @@
     SUBDIR += mapedit
     SUBDIR += marc-search
     SUBDIR += mhonarc
+    SUBDIR += mod_perl
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += netscape-remote
