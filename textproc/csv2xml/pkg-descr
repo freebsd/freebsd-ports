@@ -1,0 +1,10 @@
+csv2xml - A csv to xml converter
+
+As the name suggest, csv2xml is a simple csv to xml converter. It
+reads csv files from standard input, and output a valid xml file
+on standard output.  csv2xml is great if your client asks you to
+resend a data file as xml, no need to modify your scripts, or for
+when you have a large csv file and you would like to be able to
+view/edit it with your favourite xml utility.
+
+WWW: http://csv2xml.sourceforge.net
