@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
-DISTNAME=	${PORTNAME}110
+DISTNAME=	${PORTNAME}112
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	abgoeree@uwnet.nl
