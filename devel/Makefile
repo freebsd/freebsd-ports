@@ -88,6 +88,7 @@
     SUBDIR += cvs2html
     SUBDIR += cvsgraph
     SUBDIR += cvsmapfs
+    SUBDIR += cvspadm
     SUBDIR += cvsutils
     SUBDIR += cvsweb
     SUBDIR += cweb
