@@ -7,6 +7,7 @@
 
 PORTNAME=	trm
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.nl.musicbrainz.org/ \
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TRM generator to generate acoustic fingerprints
 
 BUILD_DEPENDS=	madplay:${PORTSDIR}/audio/mad
-LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/libmusicbrainz \
+LIB_DEPENDS=	musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
 		ogg:${PORTSDIR}/audio/libogg \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		vorbisfile:${PORTSDIR}/audio/libvorbis
