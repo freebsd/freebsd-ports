@@ -175,7 +175,6 @@
     SUBDIR += i960-rtems-gdb
     SUBDIR += icu
     SUBDIR += id-utils
-    SUBDIR += idle
     SUBDIR += idlefork
     SUBDIR += ilu
     SUBDIR += imake
