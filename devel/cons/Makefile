@@ -1,13 +1,12 @@
 # New ports collection makefile for:	cons
-# Version required:     1.6a1
+# Version required:     1.6a3
 # Date created:		11 December 1998
 # Whom:			rv@fore.com
 #
-# $Id: Makefile,v 1.2 1998/12/25 17:47:31 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/01 03:17:15 steve Exp $
 #
 
-DISTNAME=	cons-1.6a1
-PKGNAME=	cons-1.6
+DISTNAME=	cons-1.6a3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/ \
 		http://www.telerama.com/~bgarcia/cons/
@@ -19,11 +18,10 @@ RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/MD5.pm:${PORTSDIR}/securi
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-PLIST_SUB=	CONS_VER=1.6
+PLIST_SUB=	CONS_VER=1.6a3
 
 MAN1=		cons.1
-DOCS=		CHANGES COPYRIGHT INSTALL MANIFEST README RELEASE cons.html \
-		cons.pod
+DOCS=		CHANGES COPYRIGHT INSTALL MANIFEST README RELEASE cons.html
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons

@@ -6,5 +6,4 @@ share/doc/cons-%%CONS_VER%%/MANIFEST
 share/doc/cons-%%CONS_VER%%/README
 share/doc/cons-%%CONS_VER%%/RELEASE
 share/doc/cons-%%CONS_VER%%/cons.html
-share/doc/cons-%%CONS_VER%%/cons.pod
 @dirrm share/doc/cons-%%CONS_VER%%
