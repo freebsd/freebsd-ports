@@ -13,6 +13,7 @@
     SUBDIR += netpipe
     SUBDIR += polygraph
     SUBDIR += postmark
+    SUBDIR += pybench
     SUBDIR += rawio
     SUBDIR += tcpblast
     SUBDIR += tmetric
