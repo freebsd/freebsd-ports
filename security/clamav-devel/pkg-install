@@ -38,7 +38,6 @@ fi
 
 echo "===> Setting permissions..."
 mkdir -p "${CLAMRUN}"
-chmod 750 "${CLAMRUN}"
 chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMRUN}"
 
 mkdir -p "${CLAMLOG}"
