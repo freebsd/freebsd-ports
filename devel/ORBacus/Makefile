@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.12 1998/09/19 02:14:55 hoek Exp $
+# $Id: Makefile,v 1.13 1998/10/12 15:05:33 jseger Exp $
 #
 
 DISTNAME=	OB-3.0
@@ -19,6 +19,7 @@ BUILD_DEPENDS=  gcc28:${PORTSDIR}/lang/gcc28 \
 
 BROKEN_ELF=	depends on gcc28 and glibstdc++28
 
+USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXX=g++28 CXXFLAGS="-O -pipe"
 MAN1=		idl.1
