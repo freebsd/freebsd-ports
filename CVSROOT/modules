@@ -273,6 +273,7 @@ amiwm		ports/x11-wm/amiwm
 amldb		src/usr.sbin/acpi/amldb
 amp		ports/audio/amp
 amphetamine	ports/games/amphetamine
+ample		ports/audio/ample
 amspsfnt	ports/print/amspsfnt
 amulet		ports/devel/amulet
 amyc		ports/www/amyc
