@@ -4,6 +4,7 @@ share/q3ademo/icon.bmp
 share/q3ademo/icon.xpm
 share/q3ademo/q3ded
 share/q3ademo/q3demo
+share/q3ademo/libGL.so
 share/q3ademo/demoq3/pak0.pk3
 share/q3ademo/Help/BotCommands.html
 share/q3ademo/Help/DedicatedServer.html
