@@ -12,8 +12,7 @@ MASTER_SITES=	http://rfk.masslinux.com/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	qt2.2:${PORTSDIR}/x11-toolkits/qt201
-
+USE_QT2=	yes
 USE_NEWGCC=	yes
 USE_X_PREFIX=	yes
 
