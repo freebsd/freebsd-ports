@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grepmail
-PORTVERSION=	4.70
+PORTVERSION=	4.72
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,11 +17,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORT
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 
 PERL_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		grepmail.1
 
 post-patch:
-	@${PERL} -pi -e 's!<STDIN>!"n"!' ${WRKSRC}/Makefile.PL
-	@${PERL} -pi -e 's|_PERL_|${PERL}|' ${WRKSRC}/grepmail
+	@${REINPLACE_CMD} -e 's!<STDIN>!"n"!' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|_PERL_|${PERL}|' ${WRKSRC}/grepmail
 
 .include <bsd.port.mk>

@@ -1,8 +1,11 @@
---- grepmail	Tue May  2 18:23:15 2000
-+++ grepmail	Tue May  2 21:52:00 2000
-@@ -1,4 +1,4 @@
--#!/users/dwc3q/bin/perl -w
-+#!_PERL_
+--- grepmail.orig	Mon Sep  2 15:41:00 2002
++++ grepmail	Tue Oct  8 16:28:44 2002
+@@ -1,6 +1,6 @@
+-#!/usr/bin/perl -w
++#!_PERL_ -w
+ 
+-eval 'exec /usr/bin/perl -w -S $0 ${1+"$@"}'
++eval 'exec _PERL -w -S $0 ${1+"$@"}'
+     if 0; # not running under some shell
  
  # grepmail
- 
