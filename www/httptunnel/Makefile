@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httptunnel
-PORTVERSION= 	3.0
+PORTVERSION= 	3.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 		ftp://ftp.nocrew.org/pub/nocrew/unix/ \
