@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyfind
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://homepage.ntlworld.com/kinematics/downloads/
 DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}
