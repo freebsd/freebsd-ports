@@ -1,0 +1,20 @@
+--- configure.in.orig	Tue Sep 21 23:16:21 1999
++++ configure.in	Mon Nov  1 05:26:32 1999
+@@ -183,7 +183,7 @@
+ 
+ XLFLAGS="$X_LIBS"
+ 
+-XLIBS="$X_EXTRA_LIBS -lXext -lXt -lX11 -lm"
++XLIBS="$X_PRE_LIBS $X_EXTRA_LIBS -lXext -lXt -lX11 -lm"
+ 
+ XDM_EXTRA_LIBS="-lXmu -lXau -lXdmcp"
+ 
+@@ -504,7 +504,7 @@
+ AC_DEFINE_UNQUOTED(WDMDIR,"$DMDIR")
+ AC_DEFINE_UNQUOTED(DEF_XDM_CONFIG,"$DMDIR/wdm-config")
+ AC_DEFINE_UNQUOTED(DEF_CHOOSER,"$DMDIR/chooser")
+-AC_DEFINE_UNQUOTED(DEF_AUTH_DIR,"$DMDIR/authdir")
++AC_DEFINE_UNQUOTED(DEF_AUTH_DIR,"$DMDIR")
+ 
+ AC_SUBST(DMDIR)
+ 

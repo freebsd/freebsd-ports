@@ -1,0 +1,20 @@
+--- src/Greet.c.orig	Tue Sep 21 23:16:21 1999
++++ src/Greet.c	Wed Nov  3 08:03:00 1999
+@@ -260,7 +260,7 @@
+         }
+         
+         execle(wdmLogin, tmp, DisplayName, 
+-			 Wm, Logo, HelpFile, DefaultUser, Bg, Animate,
++			 Wm, Logo, Bg, Animate, HelpFile, DefaultUser,
+                          NULL, env);
+         
+         LogError ("Greet cannot exec %s\n", wdmLogin);
+@@ -405,7 +405,7 @@
+                                 "%s exit(%s) by %s\n", 
+                                 PACKAGE, exitArg, name);
+ #endif
+-#if 0
++#if 1
+                         SessionExit (d, UNMANAGE_DISPLAY, FALSE);
+ #else
+                         Debug ("Killing parent process %d\n", getppid());

@@ -1,0 +1,207 @@
+--- patches/xdm-3.3.2-session.patch.orig	Wed Sep  8 23:20:47 1999
++++ patches/xdm-3.3.2-session.patch	Wed Nov  3 10:16:13 1999
+@@ -1,6 +1,158 @@
+---- xdm/session.c	Mon Mar  2 12:56:36 1998
+-+++ src/session.c	Sun Sep  5 10:06:22 1999
+-@@ -500,6 +500,8 @@
++--- xdm/session.c	Mon Mar  2 20:56:36 1998
+++++ src/session.c	Wed Nov  3 10:13:16 1999
++@@ -487,6 +487,151 @@
++     exit (status);
++ }
++ 
+++#ifdef HAS_SETUSERCONTEXT
+++#if defined (__FreeBSD__)
+++/*
+++ * copied from FreeBSD CVS Tree:
+++ * src/lib/libutil/login_class.c,v 1.10.2.2 1999/08/29 14:57:53
+++ */
+++
+++#undef UNKNOWN
+++#define	UNKNOWN "su"
+++
+++static struct login_vars {
+++    const char *tag;
+++    const char *var;
+++    const char *def;
+++} pathvars[] = {
+++    { "path",		"PATH",	      NULL    },
+++    { "cdpath",		"CDPATH",     NULL    },
+++    { "manpath",	"MANPATH",    NULL    },
+++    { NULL,		NULL,	      NULL    }
+++}, envars[] = {
+++    { "lang",		"LANG",	      NULL    },
+++    { "charset",	"MM_CHARSET", NULL    },
+++    { "timezone",	"TZ",	      NULL    },
+++    { "term",		"TERM",	      UNKNOWN },
+++    { NULL,		NULL,	      NULL    }
+++};
+++
+++static char *
+++substvar(char * var, const struct passwd * pwd, int hlen, int pch, int nlen)
+++{
+++    char    *np = NULL;  
+++  
+++    if (var != NULL) { 
+++
+++	int	tildes = 0;     
+++	int	dollas = 0;
+++	char	*p;      
+++
+++	if (pwd != NULL) {
+++	    /* Count the number of ~'s in var to substitute */
+++	    p = var;          
+++	    for (p = var; (p = strchr(p, '~')) != NULL; p++)
+++		++tildes;            
+++	    /* Count the number of $'s in var to substitute */
+++	    p = var;          
+++	    for (p = var; (p = strchr(p, '$')) != NULL; p++)
+++		++dollas;            
+++	}        
+++
+++	np = malloc(strlen(var) + (dollas * nlen)
+++		    - dollas + (tildes * (pch+hlen))
+++		    - tildes + 1);   
+++                   
+++	if (np != NULL) {
+++	    p = strcpy(np, var);
+++                       
+++	    if (pwd != NULL) {
+++		/*                  
+++		 * This loop does user username and homedir substitutions
+++		 * for unescaped $ (username) and ~ (homedir)
+++		 */                  
+++		while (*(p += strcspn(p, "~$")) != '\0') {
+++		    int	l = strlen(p);
+++
+++		    if (p > np && *(p-1) == '\\')  /* Escaped: */
+++			memmove(p - 1, p, l + 1); /* Slide-out the backslash */
+++		    else if (*p == '~') {
+++			int	v = pch && *(p+1) != '/'; /* Avoid double // */
+++			memmove(p + hlen + v, p + 1, l);  /* Subst homedir */
+++			memmove(p, pwd->pw_dir, hlen);
+++			if (v)
+++			    p[hlen] = '/';
+++			p += hlen + v;
+++		    }
+++		    else /* if (*p == '$') */ {
+++			memmove(p + nlen, p + 1, l);	/* Subst username */
+++			memmove(p, pwd->pw_name, nlen);
+++			p += nlen;
+++		    }
+++		}
+++	    }
+++	}
+++    }
+++
+++    return np;
+++
+++}
+++
+++
+++void
+++setclassEnvironment(login_cap_t *lc, const struct passwd * pwd, int paths,
+++		    struct verify_info *verify)
+++{     
+++    char *getEnv ();
+++    struct login_vars	*vars = paths ? pathvars : envars;
+++    int			hlen = pwd ? strlen(pwd->pw_dir) : 0;
+++    int			nlen = pwd ? strlen(pwd->pw_name) : 0;
+++    char pch = 0;
+++      
+++    if (hlen && pwd->pw_dir[hlen-1] != '/')
+++	++pch;
+++
+++    while (vars->tag != NULL) {
+++	char * var = paths ? login_getpath(lc, vars->tag, NULL)
+++	    		   : login_getcapstr(lc, vars->tag, NULL, NULL);
+++      
+++	char * np  = substvar(var, pwd, hlen, pch, nlen);
+++      
+++	if (np != NULL) {
+++	    setenv(vars->var, np, 1);
+++	    free(np);
+++	} else if (vars->def != NULL) {
+++	    setenv(vars->var, vars->def, 0);
+++	}
+++	++vars;
+++    }
+++
+++    /*
+++     * If we're not processing paths, then see if there is a setenv list by
+++     * which the admin and/or user may set an arbitrary set of env vars.
+++     */
+++    if (!paths) {
+++	char	**set_env = login_getcaplist(lc, "setenv", ",");
+++      
+++	if (set_env != NULL) {
+++	    while (*set_env != NULL) {
+++		char	*p = strchr(*set_env, '=');
+++      
+++		if (p != NULL) {  /* Discard invalid entries */
+++		    char	*np;
+++      
+++		    *p++ = '\0';
+++		    if ((np = substvar(p, pwd, hlen, pch, nlen)) != NULL) {
+++			setenv(*set_env, np, 1);
+++			free(np);
+++		    }
+++		}
+++		++set_env;
+++	    }
+++	}
+++    }
+++}
+++#endif
+++#endif
+++
++ static Bool
++ StartClient (verify, d, pidp, name, passwd)
++     struct verify_info	*verify;
++@@ -500,6 +645,8 @@
+      int	pid;
+  #ifdef HAS_SETUSERCONTEXT
+      struct passwd* pwd;
+@@ -9,7 +161,7 @@
+  #endif
+  
+      if (verify->argv) {
+-@@ -556,6 +558,8 @@
++@@ -556,15 +703,39 @@
+  	 * Set the user's credentials: uid, gid, groups,
+  	 * environment variables, resource limits, and umask.
+  	 */
+@@ -18,9 +170,32 @@
+  	pwd = getpwnam(name);
+  	if (pwd)
+  	{
+-@@ -565,6 +569,7 @@
+++#if defined (__FreeBSD__)
+++    	    login_cap_t *lc;
+++
+++	    lc = login_getpwclass(pwd);
+++	    if (setusercontext(lc, pwd, pwd->pw_uid,
+++		LOGIN_SETALL & ~(LOGIN_SETPATH | LOGIN_SETENV)) < 0) {
+++		    LogError("setusercontext for \"%s\" failed, errno=%d\n",
+++			     name, errno);
+++		    login_close(lc);
+++		    return(0);
+++	    }
+++	    setclassEnvironment(lc, pwd, 1, verify);
+++	    setclassEnvironment(lc, pwd, 0, verify);
+++	    login_close(lc);
+++
+++	    if ((lc = login_getuserclass(pwd)) != NULL) {
+++	        setclassEnvironment(lc, pwd, 1, verify);
+++	        setclassEnvironment(lc, pwd, 0, verify);
+++	        login_close(lc);
+++#else
++ 	    if (setusercontext(NULL, pwd, pwd->pw_uid, LOGIN_SETALL) < 0)
++ 	    {
++ 		LogError("setusercontext for \"%s\" failed, errno=%d\n", name,
+  			 errno);
+  		return(0);
+++#endif
+  	    }
+ +            verify->userEnviron = environ;    
+  	    endpwent();
