@@ -1,8 +1,8 @@
---- ../MailScanner-install-4.34.8.orig/docs/man/MailScanner.conf.5	Fri Oct 15 16:50:11 2004
-+++ docs/man/MailScanner.conf.5	Fri Oct 15 16:50:30 2004
+--- ../MailScanner-install-4.35.9.orig/docs/man/MailScanner.conf.5	Mon Nov  1 18:03:10 2004
++++ docs/man/MailScanner.conf.5	Mon Nov  1 18:03:31 2004
 @@ -1,4 +1,4 @@
--.TH "MailScanner.conf" "5" "4.32.4" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.34.8" "Julian Field" "Mail"
+-.TH "MailScanner.conf" "5" "4.34.8" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.35.9" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
@@ -15,38 +15,7 @@
  .br 
  
  .br 
-@@ -584,6 +584,14 @@
- Setting this option to yes is \fBvery dangerous\fR as it can let viruses in from remote "message body servers". 
- 
- .TP 
-+\fBFind Phishing Fraud\fR
-+Default: no
-+.br 
-+
-+.br 
-+Do you want to check for "Phishing" attacks? These are attacks that look like a genuine email message from your bank, which contain a link to click on to take you to the web site where you will be asked to type in personal information such as your account number or credit card details. Except it is not the real bank's web site at all, it is a very good copy of it run by thieves who want to steal your personal information or credit card details. These can be spotted because the real address of the link in the message is not the same as the text that appears to be the link. Note: This does cause significant extra load, particularly on systems       receiving lots of spam such as secondary MX hosts. This *cannot* be the filename of a ruleset, it must be 'yes' or 'no'.
-+
-+.TP 
- \fBAllow IFrame Tags\fR
- Default: no
- .br 
-@@ -1083,6 +1091,15 @@
- This supplies the text that is placed in the "Mail Header" of messages that have not been scanned, if the option "Mark Unscanned Messages" is set. It is a useful place to advertise your MailScanner service to new customers/clients. 
- 
- .TP 
-+\fBRemove These Headers\fR
-+Default: 
-+.br 
-+
-+.br 
-+If any of these headers are included in a a message, they will be deleted. This is very useful for removing return\-receipt requests and any headers which mean special things to your email client application, such as # X\-Mozilla\-Status. Each header should end in a ":", but MailScanner will add it if you forget. Headers should be separated by commas or spaces. This can also be the filename of a ruleset.
-+
-+
-+.TP 
- \fBDeliver Cleaned Messages\fR
- Default: yes
- .br 
-@@ -1249,12 +1266,11 @@
+@@ -1266,12 +1266,11 @@
  
  .TP 
  \fBAttachment Encoding Charset\fR
@@ -61,16 +30,25 @@
  .SH "Mail archiving and monitoring"
  .TP 
  \fBArchive Mail\fR
-@@ -1709,7 +1725,7 @@
+@@ -1725,8 +1724,16 @@
+ 
  .br 
  Log all the filenames that are allowed by the Filetype Rules, or just the filetypes that are denied? This can also be the filename of a ruleset.
++
++.TP 
++\fBLog Silent Viruses\fR
++Default: no
++.br 
++
++.br 
++Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.
  .SH "Advanced SpamAssassin Settings"
 -If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location.
 +If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location. 
  
  .TP 
  \fBSpamAssassin User State Dir\fR
-@@ -1717,7 +1733,7 @@
+@@ -1734,7 +1741,7 @@
  .br 
  
  .br 

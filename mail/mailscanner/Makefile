@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.34.8
-PORTREVISION=	2
+PORTVERSION=	4.35.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -35,7 +34,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	4
+PATCHLEVEL=	1
 
 USE_PERL5=	yes
 
@@ -71,7 +70,7 @@ USRLOCAL_FILES_LIB=	\
 		rav-wrapper sophos-autoupdate
 
 post-extract:
-	cd ${WRKSRC} && tar xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
+	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
 
 do-build:
 	${PERL} -pi -e \

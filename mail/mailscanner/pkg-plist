@@ -522,6 +522,9 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/poetry.shtml
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.google.gif
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif
+%%PORTDOCS%%%%DOCSDIR%%/phishing.html
+%%PORTDOCS%%%%DOCSDIR%%/phishing.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pressreleases.html
 %%PORTDOCS%%%%DOCSDIR%%/presentations.html
 %%PORTDOCS%%%%DOCSDIR%%/press.html
 %%PORTDOCS%%%%DOCSDIR%%/qmail/qmail-queue.zip
