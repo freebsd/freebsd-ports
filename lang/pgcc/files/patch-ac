@@ -1,0 +1,19 @@
+*** toplev.c.orig       Mon Dec  2 16:30:20 1996
+--- toplev.c    Mon Dec  2 16:30:37 1996
+***************
+*** 3387,3393 ****
+           });
+  
+   /* intel1 */
+!   if(optimize > 0 && flag_reg_reg_copy_opt)
+      {
+          reg_to_reg_copy_opt(insns, global_reg_dump_file);
+      }  
+--- 3387,3393 ----
+           });
+  
+   /* intel1 */
+!   if(optimize > 0 && flag_reg_reg_copy_opt && global_reg_dump)
+      {
+          reg_to_reg_copy_opt(insns, global_reg_dump_file);
+      }
