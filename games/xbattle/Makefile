@@ -10,7 +10,7 @@ PORTVERSION=	5.4.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xbattle.1

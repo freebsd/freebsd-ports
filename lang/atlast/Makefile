@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.fourmilab.ch/atlast/ \
 		http://www.fourmilab.to/atlast/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/atlast $(PREFIX)/bin

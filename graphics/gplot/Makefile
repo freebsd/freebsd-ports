@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.psc.edu/pub/gplot/
 DISTFILES=	gplot.tar.Z
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	drawcgm gtex gplot

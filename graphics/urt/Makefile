@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ptolemy.berkeley.edu/pub/misc/urt/
 PATCHFILES=	urt-3.1b-3.1b1.patch
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
