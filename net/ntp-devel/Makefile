@@ -18,6 +18,7 @@ IGNORE=		4.2.0 just released, no development version available.
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
+NO_LATEST_LINK=	yes
 # ntp's configure script created by autoconf 2.14.1 doesn't work
 # if GNU_CONFIGURE is defined
 HAS_CONFIGURE=	yes
