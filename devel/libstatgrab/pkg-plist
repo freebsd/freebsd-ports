@@ -5,6 +5,6 @@
 include/statgrab.h
 lib/libstatgrab.a
 lib/libstatgrab.so
-lib/libstatgrab.so.1
+lib/libstatgrab.so.2
 libdata/pkgconfig/libstatgrab.pc
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
