@@ -3,7 +3,7 @@
 # Date created:        7 November 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/15 21:25:16 nectar Exp $
 #
 
 DISTNAME=	pathchar-a1-freebsd-3.0
@@ -17,7 +17,6 @@ MAINTAINER=	josh@quick.net
 .if ${PORTOBJFORMAT} == "aout"
 DISTNAME=	pathchar-a0-freebsd-2.2
 PKGNAME=	pathchar-a0
-MD5_FILE=	${FILESDIR}/md5.aout
 .endif
 
 NO_BUILD=	yes
