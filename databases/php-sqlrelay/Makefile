@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	php-
 DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	PHP modules to access to SQL Relay
 
 BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch \
 		php-config:${PORTSDIR}/www/mod_php4

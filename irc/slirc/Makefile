@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.megsinet.com/~stabro/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A SLang-based IRC client
 
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}
 

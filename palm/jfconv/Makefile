@@ -15,6 +15,7 @@ DISTNAME=	jconv
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Converts JFile database to CSV, and vice versa
 
 ALL_TARGET=	# none
 

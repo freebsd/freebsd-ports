@@ -11,6 +11,7 @@ CATEGORIES=	converters x11
 MASTER_SITES=	http://www.ab.wakwak.com/~tino/jatk/
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A library for making toolkits support Unicode
 
 USE_X_PREFIX=	yes
 

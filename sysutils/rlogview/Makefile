@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby/GTK graphical log viewer for log4r
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/log4r.rb:${PORTSDIR}/sysutils/ruby-log4r \
 		${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \

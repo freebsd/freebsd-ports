@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	p4el
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Perforce-Emacs Integration
 
 RUN_DEPENDS=	p4:${.CURDIR}/../perforce
 

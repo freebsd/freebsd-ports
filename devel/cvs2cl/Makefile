@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
 USE_PERL5=	YES
 NO_BUILD=	YES

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fastio.com/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A library for creating PDF (Acrobat) files directly via C language programs
 
 WRKSRC=		${WRKDIR}/ClibPDF/source
 

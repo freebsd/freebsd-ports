@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mydata.se/ftp/P4DB/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Web/Perforce Browser
 
 RUN_DEPENDS=	p4:${.CURDIR}/../perforce
 

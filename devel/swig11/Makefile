@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Simplified Wrapper and Interface Generator
 
 BUILD_DEPENDS=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
 		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83

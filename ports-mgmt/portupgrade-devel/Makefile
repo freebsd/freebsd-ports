@@ -24,6 +24,7 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 # For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}

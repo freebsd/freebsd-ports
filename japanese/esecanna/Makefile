@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Pseudo cannaserver which wraps some other input engines
 
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes

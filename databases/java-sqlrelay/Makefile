@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	java-
 DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Java classes to access to SQL Relay
 
 BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch \
 		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
