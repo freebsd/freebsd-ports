@@ -42,6 +42,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/transistor.pdf ${PREFIX}/share/texmf/doc/dvipdfm
 	( cd ${PREFIX}/share/texmf/doc/dvipdfm ; tex dvipdfm ; ${PREFIX}/bin/dvipdfm dvipdfm ; ${RM} dvipdfm.log dvipdfm.dvi )
 .endif
-	${CAT} ${MASTERDIR}/pkg/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
