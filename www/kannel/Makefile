@@ -26,6 +26,12 @@ CONFIGURE_ARGS=	--with-malloc=native --enable-start-stop-daemon=no
 MAN1=		seewbmp.1 wmlsc.1 wmlsdasm.1
 MAN8=		kannel.8 run_kannel_box.8
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lc_r|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
@@ -41,4 +47,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/sbin/${file}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
