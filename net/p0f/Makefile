@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
+ALL_TARGET=	all p0fq tools
 DOCFILES=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
 MAN1=		p0f.1
 PLIST=		${WRKDIR}/pkg-plist
@@ -27,7 +28,9 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/p0f ${PREFIX}/bin
+.for ii in p0f test/p0fq test/sendack test/sendack2 test/sendsyn
+	${INSTALL_PROGRAM} ${WRKSRC}/${ii} ${PREFIX}/bin
+.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/p0frep ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/etc/p0f
 	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${PREFIX}/etc/p0f
@@ -40,8 +43,10 @@ do-install:
 .endif
 
 pre-install:
-	${ECHO_CMD} bin/p0f	> ${PLIST}
-	${ECHO_CMD} bin/p0frep	>> ${PLIST}
+	@>${PLIST}
+.for ii in p0f p0frep p0fq sendack sendack2 sendsyn
+	${ECHO_CMD} bin/${ii} >> ${PLIST}
+.endfor
 	${ECHO_CMD} etc/p0f/p0f.fp	>> ${PLIST}
 	${ECHO_CMD} "@dirrm etc/p0f" >> ${PLIST}
 .if !defined(NOPORTDOCS)
