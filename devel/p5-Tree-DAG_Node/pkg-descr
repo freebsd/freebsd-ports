@@ -1,0 +1,11 @@
+Encapsulates/makes/manipulates objects that represent nodes
+in a tree structure.  The tree structure is not an object itself, but
+is emergent from the linkages you create between nodes.  This class
+provides the methods for making linkages that can be used to build up
+a tree, while preventing you from ever making any kinds of linkages
+which are not allowed in a tree (such as having a node be its own
+mother or ancestor, or having a node have two mothers).
+
+WWW: http://search.cpan.org/search?dist=Tree-DAG_Node
+
+Seamus Venasse <svenasse@polaris.ca>

@@ -483,6 +483,7 @@
     SUBDIR += p5-Time-Period
     SUBDIR += p5-TimeDate
     SUBDIR += p5-TraceFuncs
+    SUBDIR += p5-Tree-DAG_Node
     SUBDIR += p5-VCS-CVS
     SUBDIR += p65
     SUBDIR += patch
