@@ -8,10 +8,9 @@
 PORTNAME=	NetCDF
 PORTVERSION=	1.2.2
 CATEGORIES=	math perl5
-MASTER_SITES=	http://www.unidata.ucar.edu/packages/netcdf-perl/
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf-perl/
 PKGNAMEPREFIX=	p5-
-# No version number in distribution file, sigh.
-DISTFILES=	netcdf-perl.tar.Z
+DISTFILES=	netcdf-perl-${PORTVERSION}.tar.Z
 
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Perl5 module to read and write netCDF files
