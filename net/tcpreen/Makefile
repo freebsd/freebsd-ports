@@ -16,11 +16,18 @@ COMMENT=	A simple TCP session re-engineering tool
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 MAN1=		tcpreen.1
 
 DOC_FILES=	AUTHORS NEWS README THANKS TODO
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
