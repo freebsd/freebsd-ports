@@ -11,6 +11,8 @@ info/sawfish.info-3
 info/sawfish.info-4
 info/sawfish.info-5
 @exec install-info --section="X11 window manager" --entry="* sawfish: (sawfish).
+libexec/rep/%%GNUHOST%%/sawfish/client.so
+libexec/rep/%%GNUHOST%%/sawfish/client.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/DOC
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.so
@@ -85,6 +87,7 @@ share/locale/ko/LC_MESSAGES/sawfish.mo
 share/locale/nl/LC_MESSAGES/sawfish.mo
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/locale/pl/LC_MESSAGES/sawfish.mo
+share/locale/pt_BR/LC_MESSAGES/sawfish.mo
 share/locale/pt_PT/LC_MESSAGES/sawfish.mo
 share/locale/ru/LC_MESSAGES/sawfish.mo
 share/locale/sl/LC_MESSAGES/sawfish.mo
