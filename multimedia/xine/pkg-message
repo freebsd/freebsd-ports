@@ -1,4 +1,12 @@
-Make sure you've enough shared memory, the xine FAQ
-advises to have the following sysctl settings:
-kern.ipc.shmmax=67108864
-kern.ipc.shmall=32768
+********************************************************
+* Make sure you've enough shared memory, the xine FAQ  *
+* advises to have the following sysctl settings:       *
+*                                                      *
+* kern.ipc.shmmax=67108864                             *
+* kern.ipc.shmall=32768                                *
+*                                                      *
+* To suppress many xitk warnings, please put following *
+* setting to ~/.xitkrc.                                *
+*                                                      *
+* feature.shm = 0                                      *
+********************************************************
