@@ -1,4 +1,0 @@
-%%PEARDIR%%/HTML/Common.php
-%%PKGREGDIR%%/package.xml
-@dirrm %%PEARDIR%%/HTML
-@dirrm %%PKGREGDIR%%
