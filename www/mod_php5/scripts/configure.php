@@ -18,7 +18,7 @@ FreeType	"TrueType font rendering (implies GD)" OFF \
 zlib		"zlib library support" ON \
 mcrypt		"Encryption support" OFF \
 mhash		"Crypto-hashing support" OFF \
-pdflib		"pdflib support (implies zlib)" OFF \
+pdflib		"pdflib support" OFF \
 IMAP		"IMAP support" OFF \
 MySQL		"MySQL database support" ON \
 PostgreSQL	"PostgreSQL database support" OFF \
@@ -92,16 +92,15 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-mhash=\${PREFIX}"
 			;;
 		\"pdflib\")
-			echo "pdflib is DISABLED for now. Ignoring." > /dev/stderr
-			;;
-		\"nothing\")
-			echo "LIB_DEPENDS+=	pdf.2:\${PORTSDIR}/print/pdflib"
+			echo "LIB_DEPENDS+=	pdf.3:\${PORTSDIR}/print/pdflib3"
+			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
+			echo "LIB_DEPENDS+=	png.4:\${PORTSDIR}/graphics/png"
+			echo "LIB_DEPENDS+=	tiff.4:\${PORTSDIR}/graphics/tiff"
 			echo "CONFIGURE_ARGS+=--with-pdflib=\${PREFIX} \\"
+			echo "		--with-zlib-dir=/usr \\"
 			echo "		--with-jpeg-dir=\${PREFIX} \\"
+			echo "		--with-png-dir=\${PREFIX} \\"
 			echo "		--with-tiff-dir=\${PREFIX}"
-			if [ -z "$ZLIB" ]; then
-				set $* \"zlib\"
-			fi
 			;;
 		\"IMAP\")
 			echo "LIB_DEPENDS+=	c-client4.8:\${PORTSDIR}/mail/cclient"
