@@ -1,0 +1,43 @@
+               HPTOOLS DISTRIBUTION LICENSE
+               ---------------------------
+
+HPTOOLS (c) 1998-2002 by Hewlett-Packard and Jean-Yves Avenard
+
+This license applies to all files of the HPTOOLS distribution except the files
+listed below as Exception files, in all formats including but not limited
+to source code distribution and documentation distribution. All the files
+of the HPTOOLS distribution except the files listed below as Exception files
+will be referred to as "HPTOOLS" in the following.
+
+Permission to make and distribute verbatim copies of HPTOOLS
+is granted provided that:
+1/ the copies are not made or distributed for resale 
+2/ you conspicuously and appropriately include on each copy the Copyright
+Notice and Disclaimer of Warranty as well as this License.
+
+You may modify your copy or copies of HPTOOLS or any portion
+thereof for your personal use, but publishing or distributing any modified
+version of HPTOOLS in any format (including but not limited to source files,
+object files or printed files) without the written permission of the
+copyright holders is prohibited.
+
+Commercial use of HPTOOLS is prohibited without the written permission
+of the copyright holders.
+
+By copying, modifying or distributing HPTOOLS, you indicate your acceptance
+of this license. All these actions are prohibited by law if you do not accept
+this license agreement.  
+
+
+Disclaimer of Warranty
+----------------------
+
+HPTOOLS source files, binaries and documentation are distributed in the hope
+that they will be useful, but the
+COPYRIGHT HOLDERS PROVIDES THE PROGRAM AND DOCUMENTATION "AS THEY ARE"
+WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE. IN NO EVENT WILL THE COPYRIGHT HOLDERS BE LIABLE TO YOU
+FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL
+DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM OR
+DOCUMENTATION OF HPTOOLS.
