@@ -57,6 +57,7 @@
     SUBDIR += libxode
     SUBDIR += linuxdoc
     SUBDIR += lotusxsl
+    SUBDIR += ltxml
     SUBDIR += man2html
     SUBDIR += mgdiff
     SUBDIR += mkcatalog

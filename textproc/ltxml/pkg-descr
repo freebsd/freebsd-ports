@@ -1,0 +1,23 @@
+LT XML is an integrated set of XML tools and a developers' tool-kit, including
+a C-based API.
+
+The LT XML tool-kit includes stand-alone tools for a wide range of processing
+of well-formed XML documents, including searching and extracting,
+down-translation (e.g. report generation, formatting), tokenising and sorting. 
+
+Sequences of tool applications can be pipelined together to achieve complex
+results. 
+
+For special purposes beyond what the pre-constructed tools can achieve,
+extending their functionality and/or creating new tools is easy using the
+LT XML API. Minimal applications require less than one-half page of C code
+to express. 
+
+LT XML provides two views of an XML file; one as a flat stream of markup
+elements and text; a second as a sequence of tree-structured XML elements.
+The two views can be mixed, allowing great flexibility in the manipulation
+of XML documents. It also includes a powerful, yet simple, querying language,
+which allows the user to quickly and easily select those parts of an XML
+document which are of interest. 
+
+WWW: http://www.ltg.ed.ac.uk/software/xml/
