@@ -1,0 +1,34 @@
+--- Imakefile.orig	Thu Mar  4 09:47:14 2004
++++ Imakefile	Sat May  8 14:39:42 2004
+@@ -5,24 +5,19 @@
+ 
+ XCOMM $XFree86: xc/lib/xkbfile/Imakefile,v 3.5 2003/10/15 21:23:38 herrb Exp $
+ 
+-#define DoNormalLib	NormalLibxkbfile
+-#define DoSharedLib	SharedLibxkbfile
+-#define DoExtraLib	SharedLibxkbfile
+-#define DoDebugLib	DebugLibxkbfile
+-#define DoProfileLib	ProfileLibxkbfile
++#define DoNormalLib	YES
++#define DoSharedLib	YES
++#define DoExtraLib	YES
++#define DoDebugLib	NO
++#define DoProfileLib	NO
+ #define HasSharedData	NO
+ #define LibName		xkbfile
+ #define SoRev		SOXKBFILEREV
++SOXKBFILEREV = 		1.0
+ #define IncSubdir	X11
+ #define	IncSubSubdir	extensions
+ 
+-#ifdef SharedxkbfileReqs
+-REQUIREDLIBS = SharedxkbfileReqs
+-#endif
+-
+-#if !BuildXKBfilelib
+-#define LibBuild	NO
+-#endif
++REQUIREDLIBS = $(LDPRELIB) $(XONLYLIB)
+ 
+             SRCS = xkbtext.c xkbdraw.c xkbmisc.c xkbatom.c xkberrs.c \
+ 		   cout.c xkbout.c xkmout.c \
