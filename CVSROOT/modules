@@ -1776,6 +1776,7 @@ gbe		ports/emulators/gbe
 gbiff		ports/mail/gbiff
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
+gcalctool	ports/math/gcalctool
 gcc-6811	ports/devel/gcc-6811
 gcc27		ports/lang/gcc27
 gcc28		ports/lang/gcc28
