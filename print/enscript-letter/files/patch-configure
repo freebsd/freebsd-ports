@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -1793,7 +1793,6 @@
+ 
+ fi;
+ 
+-if test "X$CC" = "X"; then
+   ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -2816,7 +2815,6 @@
+ fi
+ 
+ 
+-fi
+ 
+ 
+ 
