@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.6 1996/09/17 15:07:47 max Exp $
+# $Id: Makefile,v 1.7 1996/09/21 07:50:17 max Exp $
 #
 
 DISTNAME=	platex2e
@@ -68,30 +68,34 @@ post-extract:
 do-build:
 	@(cd ${WRKDIR}/base ; yes | initex unpack.ins ; initex latex.ltx)
 	@(cd ${WRKSRC} ; TEXINPUTS=".:${WRKDIR}/base" ; export TEXINPUTS ; \
-	yes | iniptex plcore.ins ; iniptex platex.ltx) 
+	  yes | iniptex plcore.ins ; iniptex platex.ltx) 
 
 do-install:
 	@rm -rf ${PREFIX}/lib/texmf/tex/latex2e/base/*
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e ]; then \
-	mkdir ${PREFIX}/lib/texmf/tex/latex2e ;\
-	fi)
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e/base ]; then \
-	mkdir ${PREFIX}/lib/texmf/tex/latex2e/base; \
-	fi)
-	@(cd ${WRKDIR}/base ; cp -f *.cls *.clo *.sty *.fd *.def *.ltx \
-	${PREFIX}/lib/texmf/tex/latex2e/base ; \
-	cp latex.fmt ${PREFIX}/lib/texmf/ini)
-	@rm -f  ${PREFIX}/bin/latex
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e ]; then 		\
+	    mkdir ${PREFIX}/lib/texmf/tex/latex2e ;			\
+	  fi)
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e/base ]; then 	\
+	    mkdir ${PREFIX}/lib/texmf/tex/latex2e/base; 		\
+	  fi)
+	(cd ${WRKDIR}/base ; 						\
+	 for f in *.cls *.clo *.sty *.fd *.def *.ltx ; do 		\
+	   ${INSTALL_DATA} $$f ${PREFIX}/lib/texmf/tex/latex2e/base ; 	\
+	 done ;								\
+	 ${INSTALL_DATA} latex.fmt ${PREFIX}/lib/texmf/ini)
+	@rm -f ${PREFIX}/bin/latex
 	@ln -s ${PREFIX}/bin/virtex ${PREFIX}/bin/latex
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e ] ; then \
-	mkdir ${PREFIX}/lib/texmf/tex/platex2e ;\
-	fi)
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e/base ]; then \
-	mkdir ${PREFIX}/lib/texmf/tex/platex2e/base ;\
-	fi)
-	@(cd ${WRKSRC} ; cp -f *.cls *.clo *.sty *.fd *.def *.ltx *.cfg \
-	${PREFIX}/lib/texmf/tex/platex2e/base ; \
-	cp -f platex.fmt ${PREFIX}/lib/texmf/ini)
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e ] ; then 		\
+	    mkdir ${PREFIX}/lib/texmf/tex/platex2e ;			\
+	  fi)
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e/base ]; then 	\
+	    mkdir ${PREFIX}/lib/texmf/tex/platex2e/base ;		\
+	  fi)
+	(cd ${WRKSRC} ; 						\
+	 for f in *.cls *.clo *.sty *.fd *.def *.ltx *.cfg ; do 	\
+	   ${INSTALL_DATA} $$f ${PREFIX}/lib/texmf/tex/platex2e/base ; 	\
+	 done ;								\
+	 ${INSTALL_DATA} platex.fmt ${PREFIX}/lib/texmf/ini)
 	@rm -f ${PREFIX}/bin/platex
 	@ln -s ${PREFIX}/bin/virptex ${PREFIX}/bin/platex
 
