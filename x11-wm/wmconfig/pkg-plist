@@ -315,5 +315,4 @@ etc/wmconfig/xzoom
 etc/wmconfig/xzx
 etc/wmconfig/yelp
 etc/wmconfig/zclock
-man/man1/wmconfig.1x
 @dirrm etc/wmconfig
