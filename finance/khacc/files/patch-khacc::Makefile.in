@@ -1,0 +1,11 @@
+--- khacc/Makefile.in.orig	Sun Aug  3 04:49:06 2003
++++ khacc/Makefile.in	Tue Aug 12 03:01:54 2003
+@@ -828,8 +828,6 @@
+ 	fi
+ 
+ install-data-local:
+-		mkdir -p $(QHACCLIBDIR)/../bin
+-		mv $(kde_bindir)/$(bin_PROGRAMS) $(QHACCLIBDIR)/../bin
+ 		$(INSTALL_PROGRAM) khacc.orig $(kde_bindir)/khacc
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
