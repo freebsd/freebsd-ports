@@ -14,6 +14,7 @@ DISTNAME=	Xclasses-public-${PORTVERSION}.src
 MAINTAINER=	trevor@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
+PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -30,6 +31,29 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && ${SH} build all
+
+pre-install:
+	${ECHO_CMD} bin/setenvxc > ${PLIST}
+.for ii in \
+Ddraw XCprogram Xclasses Xclasses_class Xcolors Xdisplay Xshadow Xwindows anim \
+appwindow autotextbox bordergroup button callable card checkbox choice \
+colornamegroup config creater dirview dlist easy_dialog fbutton file_dialog \
+fileinput fontgroup gadget gfx_arrow gfx_autotext gfx_checkbox gfx_command \
+gfx_dir gfx_file gfx_knob gfx_locked gfx_object gfx_text gfx_xpm go_button \
+go_selbutton gpopup graphic group html_gadget htmltextbox image indicator \
+input keyclass lefttext listgroup listview menu message message_tools \
+multilistview mxbutton mxgadget mxknob output popbutton popup rubbergroup \
+ruler scroller selbutton selgadget selknob slider spacegroup text textbox \
+tools treeview types visible xclock
+	${ECHO_CMD} include/Xclasses/${ii}.h >> ${PLIST}
+.endfor
+.for ii in .a .so .so.1 .so.%%VERSION%%
+	${ECHO_CMD} lib/libXclasses${ii} >> ${PLIST}
+.endfor
+	${ECHO_CMD} share/Xclasses/Xclasses >> ${PLIST}
+.for ii in share include
+	${ECHO_CMD} @dirrm ${ii}/Xclasses >> ${PLIST}
+.endfor
 
 do-install:
 	@cd ${WRKSRC} && ${SH} build install
