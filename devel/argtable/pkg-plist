@@ -1,17 +1,19 @@
 include/argtable2.h
 lib/libargtable2.a
-%%DOCSDIR%%/argtable2-intro.html
-%%DOCSDIR%%/argtable2-intro.pdf
-%%DOCSDIR%%/argtable2-intro.ps
-%%DOCSDIR%%/argtable2.html
-%%DOCSDIR%%/argtable2.pdf
-%%DOCSDIR%%/argtable2.ps
-@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/echo.c
-%%EXAMPLESDIR%%/ls.c
-%%EXAMPLESDIR%%/mv.c
-%%EXAMPLESDIR%%/myprog.c
-%%EXAMPLESDIR%%/rm.c
-%%EXAMPLESDIR%%/uname.c
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/argtable2-intro.html
+%%PORTDOCS%%%%DOCSDIR%%/argtable2-intro.pdf
+%%PORTDOCS%%%%DOCSDIR%%/argtable2-intro.ps
+%%PORTDOCS%%%%DOCSDIR%%/argtable2.html
+%%PORTDOCS%%%%DOCSDIR%%/argtable2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/argtable2.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/README.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/echo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ls.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/mv.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/myprog.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/myprog_C89.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/rm.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/uname.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
