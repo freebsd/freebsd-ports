@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlindent
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.12
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.helsinki.fi/u/penberg/xmlindent/src/
 
