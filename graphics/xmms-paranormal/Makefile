@@ -29,8 +29,10 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
-pre-build:
-	@${PERL} -pi -e 's|SDL/|SDL11/|g;' ${WRKSRC}/xmms.c
+post-patch:
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' \
+		${BUILD_WRKSRC}/xmms.c
 
 .include <bsd.port.mk>
