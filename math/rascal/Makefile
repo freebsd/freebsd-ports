@@ -8,12 +8,12 @@
 
 PORTNAME=	rascal
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	The Advanced Scientific CALculator
 
 WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}
@@ -32,8 +32,8 @@ MAN1=	rascal.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502000
-BUILD_DEPENDS=	${LOCALBASE}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
-RUN_DEPENDS=	${LOCALBASE}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
+BUILD_DEPENDS=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+RUN_DEPENDS=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
