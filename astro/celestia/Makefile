@@ -8,8 +8,7 @@
 PORTNAME=		celestia
 PORTVERSION=		1.3.1
 CATEGORIES=		astro
-MASTER_SITES=		http://fresh.t-systems-sfr.com/unix/src/misc/
-# ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	celestia
 
 MAINTAINER=	trevor@FreeBSD.org
@@ -26,7 +25,7 @@ OPTIONS+=	LUA "Lua support" off
 PLIST=		${WRKDIR}/pkg-plist
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_X_PREFIX=	yes
 
 # GTK+ support is deprecated and broken
