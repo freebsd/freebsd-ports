@@ -3,12 +3,13 @@
 # Date created:			21 Sept 1996
 # Whom:				Pedro
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/04 08:01:30 obrien Exp $
 #
 
 DISTNAME=	cim-1.84
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ifi.uio.no/pub/cim/
+MASTER_SITES=	ftp://ifi.uio.no/pub/cim/  \
+		ftp://ftp.fenk.wau.nl/pub/lang/simula/compilers/cim/
 
 MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
 
