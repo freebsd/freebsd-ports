@@ -21,11 +21,11 @@ prefix=%%PREFIX%%
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-[ -z "$dtcpclient_enable" ] && dtcpclient_enable="NO"	# Enable dtcpclient
+dtcpclient_enable=${dtcpclient_enable:-"NO"}	# Enable dtcpclient
 #dtcpclient_program="${prefix}/sbin/dtcpclient"	# Location of dtcpclient
-[ -z "$dtcpclient_server" ] && dtcpclient_server=""	# DTCP server name
-[ -z "$dtcpclient_username" ] && dtcpclient_username=""	# DTCP user name
-[ -z "$dtcpclient_flags" ] && dtcpclient_flags="-t network -Dl"	# Flags to dtcpclient program
+dtcpclient_server=${dtcpclient_server:-""}	# DTCP server name
+dtcpclient_username=${dtcpclient_username:-""}	# DTCP user name
+dtcpclient_flags=${dtcpclient_flags:-"-t network -Dl"}	# Flags to dtcpclient program
 
 . %%RC_SUBR%%
 

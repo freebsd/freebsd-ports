@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dtcpclient
-PORTVERSION=	20030324
-PORTREVISION=	2
+PORTVERSION=	20040410
+#PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/
