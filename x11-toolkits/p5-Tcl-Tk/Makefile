@@ -1,15 +1,16 @@
 # New ports collection makefile for:	p5-Tcl-Tk
-# Version required:			b1
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	TclTk-b2
-PKGNAME=	p5-Tcl-Tk-b2
+PORTNAME=	p5-Tcl-Tk
+PORTVERSION=	b2
 CATEGORIES=	x11-toolkits lang perl5 tk82
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tcl
+DISTNAME=	TclTk-b2
 
 MAINTAINER=	jfitz@FreeBSD.org
 

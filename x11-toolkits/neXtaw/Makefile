@@ -1,12 +1,12 @@
 # New ports collection makefile for:	neXtaw
-# Version required:	0.8
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	neXtaw-0.8
+PORTNAME=	neXtaw
+PORTVERSION= 	0.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.inf.ufrgs.br/~casantos/neXtaw/
 

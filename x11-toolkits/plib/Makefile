@@ -1,12 +1,12 @@
 # New ports collection makefile for:	plib
-# Version required:	1.0.12a
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		plib-1.0.12a
+PORTNAME=		plib
+PORTVERSION= 		1.0.12a
 CATEGORIES=		x11-toolkits
 MASTER_SITES=		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 			http://math.missouri.edu/~stephen/software/flightgear/

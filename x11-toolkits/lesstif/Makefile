@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.89.9
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lesstif-0.89.9
+PORTNAME=	lesstif
+PORTVERSION= 	0.89.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \

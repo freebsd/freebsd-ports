@@ -1,15 +1,15 @@
 # New ports collection makefile for:	pike-gtk
-# Version required:	1.1.3
 # Date created:		June 29, 1999
 # Whom:	      		Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pigtk_1.1.3
-PKGNAME=	pike-gtk-1.1.3
+PORTNAME=	pike-gtk
+PORTVERSION= 	1.1.3
 CATEGORIES=	x11-toolkits lang
 MASTER_SITES=	http://pike-community.org/sites/pigtk/download/
+DISTNAME=	pigtk_${PORTVERSION}
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   vdkbuilder
-# Version required:    1.0.6
 # Date created:        29 January 2000
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vdkbuilder-1.0.6
+PORTNAME=	vdkbuilder
+PORTVERSION= 	1.0.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.programmers.net/artic/Motta/vdk/
 

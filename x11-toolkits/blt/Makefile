@@ -1,16 +1,16 @@
 # New ports collection makefile for:	blt
-# Version required:	2.4m
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	BLT2.4m
-PKGNAME=	blt-2.4m
+PORTNAME=	blt
+PORTVERSION= 	2.4m
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/ \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
+DISTNAME=	BLT${PORTVERSION}
 
 MAINTAINER=	kjc@csl.sony.co.jp
 

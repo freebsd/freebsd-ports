@@ -1,17 +1,17 @@
 # New ports collection makefile for:   gtk12
-# Version required:		1.2.7
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtk+-1.2.7
-PKGNAME=	gtk-1.2.7
+PORTNAME=	gtk
+PORTVERSION=	1.2.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
+DISTNAME=	gtk+-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 

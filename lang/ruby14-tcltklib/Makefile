@@ -1,13 +1,12 @@
 # New ports collection makefile for:    rubytk
-# Version required:     1.4.3
 # Date created:         15 March 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ruby-${VERSION}
-PKGNAME?=	rubytk-${VERSION}
+PORTNAME?=	rubytk
+PORTVERSION?=	1.4.3
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
@@ -15,6 +14,7 @@ MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.krnet.ne.jp/pub/ruby/${BRANCH_NAME}/ \
 		ftp://mirror.nucba.ac.jp/mirror/ruby/${BRANCH_NAME}/
+DISTNAME=	ruby-${PORTVERSION}
 
 MAINTAINER?=	yasuf@big.or.jp
 

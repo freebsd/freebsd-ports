@@ -1,15 +1,15 @@
 # New ports collection makefile for:	tk
-# Version required:	8.3.b1
 # Date created:		19 August 1997
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tk8.3b1
-PKGNAME=	tk-8.3.b1
+PORTNAME=	tk
+PORTVERSION= 	8.3.b1
 CATEGORIES=	x11-toolkits #tk83
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_3/
+DISTNAME=	${PORTNAME}8.3b1
 
 MAINTAINER=	jseger@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    wxGTK
-# Version required:     		2.1.0b9
 # Date created:         		September 18, 1999
 # Whom:					nectar@FreeBSD.ORG
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wxGTK-2.1.11
-PKGNAME=	wxgtk-2.1.11
+PORTNAME=	wxgtk
+PORTVERSION= 	2.1.11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
 		http://www.nectar.com/distfiles/
+DISTNAME=	wxGTK-${PORTVERSION}
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	nectar@FreeBSD.ORG
