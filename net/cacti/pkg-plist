@@ -4,49 +4,11 @@
 %%CACTIDIR%%/auth_changepassword.php
 %%CACTIDIR%%/auth_login.php
 %%CACTIDIR%%/cacti.sql
-%%CACTIDIR%%/cactid/AUTHORS
-%%CACTIDIR%%/cactid/COPYING
-%%CACTIDIR%%/cactid/ChangeLog
-%%CACTIDIR%%/cactid/INSTALL
-%%CACTIDIR%%/cactid/Makefile.am
-%%CACTIDIR%%/cactid/Makefile.in
-%%CACTIDIR%%/cactid/NEWS
-%%CACTIDIR%%/cactid/README
-%%CACTIDIR%%/cactid/README-WINDOWS
-%%CACTIDIR%%/cactid/aclocal.m4
-%%CACTIDIR%%/cactid/cactid.c
-%%CACTIDIR%%/cactid/cactid.conf
-%%CACTIDIR%%/cactid/cactid.h
-%%CACTIDIR%%/cactid/common.h
-%%CACTIDIR%%/cactid/config/config.guess
-%%CACTIDIR%%/cactid/config/config.h.in
-%%CACTIDIR%%/cactid/config/config.h.in~
-%%CACTIDIR%%/cactid/config/config.sub
-%%CACTIDIR%%/cactid/config/depcomp
-%%CACTIDIR%%/cactid/config/install-sh
-%%CACTIDIR%%/cactid/config/missing
-%%CACTIDIR%%/cactid/config/mkinstalldirs
-%%CACTIDIR%%/cactid/config/stamp-h
-%%CACTIDIR%%/cactid/config/stamp-h.in
-%%CACTIDIR%%/cactid/config/stamp-h1
-%%CACTIDIR%%/cactid/configure
-%%CACTIDIR%%/cactid/configure.ac
-%%CACTIDIR%%/cactid/locks.c
-%%CACTIDIR%%/cactid/locks.h
-%%CACTIDIR%%/cactid/poller.c
-%%CACTIDIR%%/cactid/poller.h
-%%CACTIDIR%%/cactid/rrd.c
-%%CACTIDIR%%/cactid/rrd.h
-%%CACTIDIR%%/cactid/snmp.c
-%%CACTIDIR%%/cactid/snmp.h
-%%CACTIDIR%%/cactid/sql.c
-%%CACTIDIR%%/cactid/sql.h
-%%CACTIDIR%%/cactid/util.c
-%%CACTIDIR%%/cactid/util.h
 %%CACTIDIR%%/cdef.php
 %%CACTIDIR%%/cmd.php
 %%CACTIDIR%%/color.php
 %%CACTIDIR%%/data_input.php
+%%CACTIDIR%%/data_queries.php
 %%CACTIDIR%%/data_sources.php
 %%CACTIDIR%%/data_templates.php
 %%CACTIDIR%%/docs/CHANGELOG
@@ -84,7 +46,9 @@
 %%CACTIDIR%%/docs/html/installation.html
 %%CACTIDIR%%/docs/html/making_scripts_work_with_cacti.html
 %%CACTIDIR%%/docs/html/manual.css
+%%CACTIDIR%%/docs/html/migration_php_scripts_to_script_server.html
 %%CACTIDIR%%/docs/html/new_graphs.html
+%%CACTIDIR%%/docs/html/php_script_server.html
 %%CACTIDIR%%/docs/html/realm_permissions.html
 %%CACTIDIR%%/docs/html/reference.html
 %%CACTIDIR%%/docs/html/requirements.html
@@ -93,7 +57,9 @@
 %%CACTIDIR%%/docs/html/script_to_graph.html
 %%CACTIDIR%%/docs/html/snmp_query_xml.html
 %%CACTIDIR%%/docs/html/templates.html
+%%CACTIDIR%%/docs/html/testing_script_in_script_server.html
 %%CACTIDIR%%/docs/html/upgrade.html
+%%CACTIDIR%%/docs/html/upgrade_using_hostmib_data_queries.html
 %%CACTIDIR%%/docs/html/user_management.html
 %%CACTIDIR%%/docs/html/using_cacti.html
 %%CACTIDIR%%/docs/html/variables.html
@@ -118,19 +84,24 @@
 %%CACTIDIR%%/images/button_add.gif
 %%CACTIDIR%%/images/button_cancel.gif
 %%CACTIDIR%%/images/button_cancel2.gif
+%%CACTIDIR%%/images/button_clear.gif
 %%CACTIDIR%%/images/button_create.gif
+%%CACTIDIR%%/images/button_default.gif
 %%CACTIDIR%%/images/button_delete.gif
 %%CACTIDIR%%/images/button_go.gif
 %%CACTIDIR%%/images/button_no.gif
+%%CACTIDIR%%/images/button_refresh.gif
 %%CACTIDIR%%/images/button_save.gif
 %%CACTIDIR%%/images/button_view.gif
 %%CACTIDIR%%/images/button_yes.gif
 %%CACTIDIR%%/images/cacti_backdrop.gif
 %%CACTIDIR%%/images/cacti_backdrop2.gif
 %%CACTIDIR%%/images/cacti_logo.gif
+%%CACTIDIR%%/images/calendar.gif
 %%CACTIDIR%%/images/delete_icon.gif
 %%CACTIDIR%%/images/delete_icon_large.gif
-%%CACTIDIR%%/images/gray_line.gif
+%%CACTIDIR%%/images/graph_properties.gif
+%%CACTIDIR%%/images/graph_zoom.gif
 %%CACTIDIR%%/images/hide.gif
 %%CACTIDIR%%/images/left_border.gif
 %%CACTIDIR%%/images/menu_line.gif
@@ -157,8 +128,51 @@
 %%CACTIDIR%%/include/bottom_footer.php
 %%CACTIDIR%%/include/config.php
 %%CACTIDIR%%/include/config_arrays.php
+%%CACTIDIR%%/include/config_constants.php
 %%CACTIDIR%%/include/config_form.php
 %%CACTIDIR%%/include/config_settings.php
+%%CACTIDIR%%/include/html/inc_data_source_filter_table.php
+%%CACTIDIR%%/include/html/inc_device_filter_table.php
+%%CACTIDIR%%/include/html/inc_graph_filter_table.php
+%%CACTIDIR%%/include/html/inc_graph_view_filter_table.php
+%%CACTIDIR%%/include/html/inc_timespan_selector.php
+%%CACTIDIR%%/include/html/inc_timespan_settings.php
+%%CACTIDIR%%/include/jscalendar/calendar-setup.js
+%%CACTIDIR%%/include/jscalendar/calendar.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-af.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-br.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-ca.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-cs-win.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-da.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-de.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-du.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-el.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-en.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-es.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-fi.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-fr.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-hr-utf8.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-hr.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-hu.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-it.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-jp.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-ko-utf8.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-ko.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-lt-utf8.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-lt.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-nl.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-no.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-pl-utf8.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-pl.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-pt.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-ro.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-ru.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-si.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-sk.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-sp.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-sv.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-tr.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-zh.js
 %%CACTIDIR%%/include/layout.js
 %%CACTIDIR%%/include/main.css
 %%CACTIDIR%%/include/top_graph_header.php
@@ -173,12 +187,15 @@
 %%CACTIDIR%%/include/treeview/ftv2pnode.gif
 %%CACTIDIR%%/include/treeview/ftv2vertline.gif
 %%CACTIDIR%%/include/treeview/ua.js
+%%CACTIDIR%%/include/zoom.js
 %%CACTIDIR%%/index.php
 %%CACTIDIR%%/install/0_8_1_to_0_8_2.php
 %%CACTIDIR%%/install/0_8_2_to_0_8_2a.php
 %%CACTIDIR%%/install/0_8_2a_to_0_8_3.php
 %%CACTIDIR%%/install/0_8_3_to_0_8_4.php
 %%CACTIDIR%%/install/0_8_4_to_0_8_5.php
+%%CACTIDIR%%/install/0_8_5a_to_0_8_6.php
+%%CACTIDIR%%/install/0_8_6_to_0_8_6a.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -200,6 +217,7 @@
 %%CACTIDIR%%/lib/adodb/adodb.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-access.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-db2.inc.php
+%%CACTIDIR%%/lib/adodb/datadict/datadict-firebird.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-generic.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-ibase.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-informix.inc.php
@@ -220,17 +238,21 @@
 %%CACTIDIR%%/lib/adodb/drivers/adodb-ibase.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-informix.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-informix72.inc.php
+%%CACTIDIR%%/lib/adodb/drivers/adodb-ldap.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-mssql.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-mssqlpo.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-mysql.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-mysqli.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-mysqlt.inc.php
+%%CACTIDIR%%/lib/adodb/drivers/adodb-netezza.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-oci8.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-oci805.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-oci8po.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-odbc.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-odbc_mssql.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-odbc_oracle.inc.php
+%%CACTIDIR%%/lib/adodb/drivers/adodb-odbtp.inc.php
+%%CACTIDIR%%/lib/adodb/drivers/adodb-odbtp_unicode.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-oracle.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-postgres.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-postgres64.inc.php
@@ -241,13 +263,20 @@
 %%CACTIDIR%%/lib/adodb/drivers/adodb-sqlite.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-sybase.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-vfp.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-bg.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-bgutf8.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-ca.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-cn.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-cz.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-de.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-en.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-es.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-fr.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-it.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-nl.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-pl.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-pt-br.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-ro.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-ru1251.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-sv.inc.php
 %%CACTIDIR%%/lib/adodb/license.txt
@@ -256,29 +285,43 @@
 %%CACTIDIR%%/lib/adodb/server.php
 %%CACTIDIR%%/lib/adodb/toexport.inc.php
 %%CACTIDIR%%/lib/adodb/tohtml.inc.php
+%%CACTIDIR%%/lib/api_data_source.php
+%%CACTIDIR%%/lib/api_device.php
+%%CACTIDIR%%/lib/api_graph.php
+%%CACTIDIR%%/lib/api_poller.php
+%%CACTIDIR%%/lib/api_tree.php
 %%CACTIDIR%%/lib/auth.php
 %%CACTIDIR%%/lib/cdef.php
 %%CACTIDIR%%/lib/data_query.php
 %%CACTIDIR%%/lib/database.php
 %%CACTIDIR%%/lib/export.php
-%%CACTIDIR%%/lib/form.php
 %%CACTIDIR%%/lib/functions.php
 %%CACTIDIR%%/lib/graph_export.php
 %%CACTIDIR%%/lib/graph_variables.php
+%%CACTIDIR%%/lib/html.php
+%%CACTIDIR%%/lib/html_form.php
+%%CACTIDIR%%/lib/html_form_template.php
+%%CACTIDIR%%/lib/html_tree.php
+%%CACTIDIR%%/lib/html_utility.php
 %%CACTIDIR%%/lib/import.php
+%%CACTIDIR%%/lib/ping.php
+%%CACTIDIR%%/lib/poller.php
 %%CACTIDIR%%/lib/rrd.php
 %%CACTIDIR%%/lib/snmp.php
+%%CACTIDIR%%/lib/sort.php
 %%CACTIDIR%%/lib/template.php
 %%CACTIDIR%%/lib/tree.php
-%%CACTIDIR%%/lib/tree_view.php
 %%CACTIDIR%%/lib/utility.php
 %%CACTIDIR%%/lib/variables.php
 %%CACTIDIR%%/lib/xml.php
-%%CACTIDIR%%/log/rrd.log
+%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
+%%CACTIDIR%%/poller.php
 %%CACTIDIR%%/resource/script_queries/host_cpu.xml
 %%CACTIDIR%%/resource/script_queries/host_disk.xml
 %%CACTIDIR%%/resource/script_queries/unix_disk.xml
+%%CACTIDIR%%/resource/script_server/host_cpu.xml
+%%CACTIDIR%%/resource/script_server/host_disk.xml
 %%CACTIDIR%%/resource/snmp_queries/host_disk.xml
 %%CACTIDIR%%/resource/snmp_queries/interface.xml
 %%CACTIDIR%%/resource/snmp_queries/kbridge.xml
@@ -287,6 +330,8 @@
 %%CACTIDIR%%/resource/snmp_queries/netware_disk.xml
 %%CACTIDIR%%/rra.php
 %%CACTIDIR%%/rra/.placeholder
+%%CACTIDIR%%/script_server.php
+%%CACTIDIR%%/script_server.pl
 %%CACTIDIR%%/scripts/3com_cable_modem.pl
 %%CACTIDIR%%/scripts/diskfree.pl
 %%CACTIDIR%%/scripts/diskfree.sh
@@ -298,13 +343,15 @@
 %%CACTIDIR%%/scripts/query_host_partitions.php
 %%CACTIDIR%%/scripts/query_unix_partitions.pl
 %%CACTIDIR%%/scripts/sql.php
+%%CACTIDIR%%/scripts/ss_host_cpu.php
+%%CACTIDIR%%/scripts/ss_host_disk.php
+%%CACTIDIR%%/scripts/ss_sql.php
 %%CACTIDIR%%/scripts/unix_processes.pl
 %%CACTIDIR%%/scripts/unix_tcp_connections.pl
 %%CACTIDIR%%/scripts/unix_users.pl
 %%CACTIDIR%%/scripts/weatherbug.pl
 %%CACTIDIR%%/scripts/webhits.pl
 %%CACTIDIR%%/settings.php
-%%CACTIDIR%%/snmp.php
 %%CACTIDIR%%/templates_export.php
 %%CACTIDIR%%/templates_import.php
 %%CACTIDIR%%/tree.php
@@ -313,6 +360,7 @@
 @dirrm %%CACTIDIR%%/scripts
 @dirrm %%CACTIDIR%%/rra
 @dirrm %%CACTIDIR%%/resource/snmp_queries
+@dirrm %%CACTIDIR%%/resource/script_server
 @dirrm %%CACTIDIR%%/resource/script_queries
 @dirrm %%CACTIDIR%%/resource
 @dirrm %%CACTIDIR%%/log
@@ -323,6 +371,9 @@
 @dirrm %%CACTIDIR%%/lib
 @dirrm %%CACTIDIR%%/install
 @dirrm %%CACTIDIR%%/include/treeview
+@dirrm %%CACTIDIR%%/include/jscalendar/lang
+@dirrm %%CACTIDIR%%/include/jscalendar
+@dirrm %%CACTIDIR%%/include/html
 @dirrm %%CACTIDIR%%/include
 @dirrm %%CACTIDIR%%/images
 @dirrm %%CACTIDIR%%/docs/text
@@ -330,6 +381,4 @@
 @dirrm %%CACTIDIR%%/docs/html/images
 @dirrm %%CACTIDIR%%/docs/html
 @dirrm %%CACTIDIR%%/docs
-@dirrm %%CACTIDIR%%/cactid/config
-@dirrm %%CACTIDIR%%/cactid
 @dirrm %%CACTIDIR%%

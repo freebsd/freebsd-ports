@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.5a
+PORTVERSION=	0.8.6b
 CATEGORIES=	net
-MASTER_SITES=	http://www.raxnet.net/downloads/cacti/
+MASTER_SITES=	http://www.cacti.net/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	so14k@so14k.com
 COMMENT=	Web-driven graphing interface for RRDTool
 
-RUN_DEPENDS=	php:${PORTSDIR}/lang/php4 \
-		rrdtool:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		net-snmp-config:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_MYSQL=	yes
+USE_PHP=	mysql pcre session xml
+WANT_PHP_WEB=	yes
+WANT_PHP_CLI=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -31,6 +33,7 @@ post-extract:
 
 post-patch:
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
+		s|%%LOCALBASE%%|${LOCALBASE}| ; \
 		s|%%CACTIDIR%%|${CACTIDIR}| ; \
 		s|%%CACTIUSER%%|${CACTIUSER}|' > ${PKGMESSAGE}
 
