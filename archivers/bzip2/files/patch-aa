@@ -1,13 +1,29 @@
---- Makefile.orig	Tue Jul  6 15:38:07 1999
-+++ Makefile	Sat Jul 31 19:48:44 1999
-@@ -1,7 +1,8 @@
+--- Makefile.orig	Fri Oct 23 04:57:22 1998
++++ Makefile	Wed Mar 24 00:19:11 1999
+@@ -1,6 +1,7 @@
  
- SHELL=/bin/sh
 -CC=gcc
--CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce
+-CFLAGS=-Wall -O2 -fomit-frame-pointer -fno-strength-reduce
 +CC?=gcc
 +CFLAGS?=-O2
 +CFLAGS+=-Wall -fomit-frame-pointer -fno-strength-reduce
  
  OBJS= blocksort.o  \
        huffman.o    \
+@@ -20,6 +21,7 @@
+ lib: $(OBJS)
+ 	rm -f libbz2.a
+ 	ar clq libbz2.a $(OBJS)
++	ranlib libbz2.a
+ 
+ test: bzip2
+ 	@cat words1
+@@ -38,7 +40,7 @@
+ clean: 
+ 	rm -f *.o libbz2.a bzip2 bzip2recover sample1.rb2 sample2.rb2 sample1.tst sample2.tst
+ 
+-.c.o: $*.o bzlib.h bzlib_private.h
++.c.o: bzlib.h bzlib_private.h
+ 	$(CC) $(CFLAGS) -c $*.c -o $*.o
+ 
+ tarfile:
