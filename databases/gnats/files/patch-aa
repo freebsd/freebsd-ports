@@ -3,6 +3,15 @@ processing config.c.in.
 
 --- Makefile.in	Mon Dec  2 14:45:56 1996
 +++ Makefile.in	Sun Feb 16 19:33:40 1997
+@@ -65,7 +65,7 @@
+ 
+ # We don't specify -g -O because many compilers don't support -g -O,
+ # and/or -O is broken in and of itself.
+-CFLAGS = -g
++CFLAGS += -g
+ LIBCFLAGS = $(CFLAGS)
+ CFLAGS_FOR_TARGET = $(CFLAGS)
+ LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)
 @@ -104,7 +104,7 @@
  
  M4 = `if [ -f $$r/m4/m4 ] ; \
