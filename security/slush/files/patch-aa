@@ -14,7 +14,7 @@
   
   CC=@CC@
   INSTALL=@INSTALL@
-! CFLAGS=@CFLAGS@ -Wall -DVERSION=\"$(VERSION)\" -I/usr/local/include
+! CFLAGS=@CFLAGS@ -Wall -DVERSION=\"$(VERSION)\" -I/usr/local/include -I/usr/local/include/openssl
 ! LIBS=@LIBS@ -L/usr/local/lib -lssl -lcrypto $(EXTRA_SSL_LIBS) -lutil
   
   all: slush slushd
