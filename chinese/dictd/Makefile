@@ -19,6 +19,8 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-index.c \
 #	${ECHO_CMD} "bin/dictfmt" > ${PLIST}
 #	${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
 
+BROKEN=		"Does not patch"
+
 .include "${MASTERDIR}/Makefile"
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}tw-
