@@ -1,8 +1,18 @@
+share/gnome/locale/cs.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/es.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/fr.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/gl.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/it.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/ja.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/no.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/pt_BR.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/ru.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/sv.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/wa.mo/LC_MESSAGES/GnomeMeeting.mo
+share/gnome/locale/zh_TW.mo/LC_MESSAGES/GnomeMeeting.mo
 bin/gnomemeeting
+share/gnome/pixmaps/gnomemeeting-logo-icon.png
+share/gnome/pixmaps/gnomemeeting-logo.png
 share/gnome/sounds/gnomemeeting/gnomemeeting.wav
-share/gnome/apps/Internet/gnomemeeting.desktop
-lib/locale/fr/LC_MESSAGES/gnomemeeting.mo
-pixmaps/gnomemeeting-logo-icon.png
-pixmaps/gnomemeeting-logo.png
-#humm, what do with /etc/sound/events/GnomeMeeting.soundlist
-
+etc/sound/events/GnomeMeeting.soundlist
+share/gnome/gnome/apps/Internet/gnomemeeting.desktop
