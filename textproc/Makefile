@@ -190,6 +190,7 @@
     SUBDIR += py-HyperText
     SUBDIR += py-asv
     SUBDIR += py-csv
+    SUBDIR += py-dsv
     SUBDIR += py-expat
     SUBDIR += py-martel
     SUBDIR += py-sgrep
