@@ -1,0 +1,11 @@
+This program supports both color and B&W parallel-port Connectix QuickCam
+for PC All modes are supported except color QuickCam "thousands colors" 
+compressed download and 640x480 "billions colors" mode. "Thousands" is 
+unsupported because of the lack of information and will be added if 
+Connectix will give the documentation on it to developers in the same or 
+similar way, the documentation on other modes was given that made this 
+program possible. "Billions colors" will be supported in later releases. 
+
+http://www.illtel.com/pub/qcread/README.html
+
+Bill Fumerola <billf@chc-chimes.com>
