@@ -18,6 +18,7 @@ COMMENT=	An automotive simulation framework
 BUILD_DEPENDS=	${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
+		sigc.1:${PORTSDIR}/devel/libsigc++ \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_MESA=	yes
