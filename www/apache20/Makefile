@@ -100,10 +100,15 @@ CFLAGS+=	-DSSL_EXPERIMENTAL_ENGINE
 .endif
 
 # debug overrides CFLAGS
-.if defined(WITH_DEBUG) || defined (DEBUG_FLAGS)
+.if defined(WITH_DEBUG)
 DEBUG_FLAGS?=	-O0 -g -ggdb3
 CFLAGS=		${DEBUG_FLAGS}
 CONFIGURE_ARGS+=	--enable-maintainer-mode
+WITH_EXCEPTION_HOOK=	YES
+.endif
+
+.if defined(WITH_EXCEPTION_HOOK)
+CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
 # for slave ports
