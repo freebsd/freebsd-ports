@@ -1,12 +1,12 @@
---- configure.orig	Thu Dec 31 01:51:28 1998
-+++ configure	Mon Jan  4 10:02:57 1999
+--- configure.orig	Tue Jan  5 08:52:35 1999
++++ configure	Wed Jan  6 21:16:02 1999
 @@ -1,4 +1,4 @@
 -#! /bin/sh
 +#!/bin/sh
  
  # Guess values for system-dependent variables and create Makefiles.
  # Generated automatically using autoconf version 2.12 
-@@ -4119,7 +4119,9 @@
+@@ -4237,7 +4237,9 @@
  if eval "test \"`echo '$''{'ac_cv_func_$ac_func'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -14,10 +14,21 @@
 +  ac_save_LIBS="$LIBS"
 +LIBS="-lintl $LIBS"
 +cat > conftest.$ac_ext <<EOF
- #line 4124 "configure"
+ #line 4242 "configure"
  #include "confdefs.h"
  /* System header to define __stub macros and hopefully few prototypes,
-@@ -5297,7 +5299,9 @@
+@@ -4350,8 +4352,8 @@
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+-
+-		cat > conftest.$ac_ext <<EOF
++LIBS="-lintl $LIBS"
++cat > conftest.$ac_ext <<EOF
+ #line 4356 "configure"
+ #include "confdefs.h"
+ 
+@@ -5415,7 +5417,9 @@
  if eval "test \"`echo '$''{'ac_cv_func_$ac_func'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -25,10 +36,10 @@
 +  ac_save_LIBS="$LIBS"
 +LIBS="-lutil $LIBS"
 +cat > conftest.$ac_ext <<EOF
- #line 5302 "configure"
+ #line 5420 "configure"
  #include "confdefs.h"
  /* System header to define __stub macros and hopefully few prototypes,
-@@ -5352,8 +5356,8 @@
+@@ -5470,8 +5474,8 @@
  #include "confdefs.h"
  
  #include <stdio.h>
@@ -38,58 +49,58 @@
  
  int main() {
  
-@@ -5799,7 +5803,7 @@
+@@ -5917,7 +5921,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltiff -lm $LIBS"
 +LIBS="-ltiff -ljpeg -lz -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 5805 "configure"
+ #line 5923 "configure"
  #include "confdefs.h"
-@@ -6053,16 +6057,16 @@
+@@ -6171,16 +6175,16 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:6059: checking for gif_lib.h" >&5
+-echo "configure:6177: checking for gif_lib.h" >&5
 +  ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:6059: checking for giflib/gif_lib.h" >&5
++echo "configure:6177: checking for giflib/gif_lib.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 6064 "configure"
+ #line 6182 "configure"
  #include "confdefs.h"
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:6069: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -6129,16 +6133,16 @@
+ { (eval echo configure:6187: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -6247,16 +6251,16 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:6135: checking for gif_lib.h" >&5
+-echo "configure:6253: checking for gif_lib.h" >&5
 +  ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:6135: checking for giflib/gif_lib.h" >&5
++echo "configure:6253: checking for giflib/gif_lib.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 6140 "configure"
+ #line 6258 "configure"
  #include "confdefs.h"
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:6145: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -8845,7 +8849,7 @@
+ { (eval echo configure:6263: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -8963,7 +8967,7 @@
  ZVT_LIBS="-lzvt $GTK_LIBS"
  
  GNOME_LIBDIR='-L${libdir}'

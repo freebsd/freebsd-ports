@@ -86,6 +86,7 @@ include/libgnomeui/gnome-appbar.h
 include/libgnomeui/gnome-calculator.h
 include/libgnomeui/gnome-canvas-image.h
 include/libgnomeui/gnome-canvas-line.h
+include/libgnomeui/gnome-canvas-load.h
 include/libgnomeui/gnome-canvas-polygon.h
 include/libgnomeui/gnome-canvas-rect-ellipse.h
 include/libgnomeui/gnome-canvas-text.h
@@ -157,31 +158,31 @@ include/zvt/zvtterm.h
 lib/libart_lgpl.a
 lib/libart_lgpl.la
 lib/libart_lgpl.so
-lib/libart_lgpl.so.0.99
+lib/libart_lgpl.so.1
 lib/libgnome.a
 lib/libgnome.la
 lib/libgnome.so
-lib/libgnome.so.0.99
+lib/libgnome.so.1
 lib/libgnomesupport.a
 lib/libgnomesupport.la
 lib/libgnomesupport.so
-lib/libgnomesupport.so.0.99
+lib/libgnomesupport.so.1
 lib/libgnomeui.a
 lib/libgnomeui.la
 lib/libgnomeui.so
-lib/libgnomeui.so.0.99
+lib/libgnomeui.so.1
 lib/libgnorba.a
 lib/libgnorba.la
 lib/libgnorba.so
-lib/libgnorba.so.0.99
+lib/libgnorba.so.1
 lib/libgtkxmhtml.a
 lib/libgtkxmhtml.la
 lib/libgtkxmhtml.so
-lib/libgtkxmhtml.so.0.99
+lib/libgtkxmhtml.so.1
 lib/libzvt.a
 lib/libzvt.la
 lib/libzvt.so
-lib/libzvt.so.0.99
+lib/libzvt.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/gnomeConf.sh
@@ -206,9 +207,11 @@ share/locale/hu/LC_MESSAGES/gnome-libs.mo
 share/locale/it/LC_MESSAGES/gnome-libs.mo
 share/locale/ja/LC_MESSAGES/gnome-libs.mo
 share/locale/ko/LC_MESSAGES/gnome-libs.mo
+share/locale/nl/LC_MESSAGES/gnome-libs.mo
 share/locale/no/LC_MESSAGES/gnome-libs.mo
 share/locale/pl/LC_MESSAGES/gnome-libs.mo
 share/locale/pt/LC_MESSAGES/gnome-libs.mo
+share/locale/ru/LC_MESSAGES/gnome-libs.mo
 share/locale/sv/LC_MESSAGES/gnome-libs.mo
 @dirrm etc/sound/events
 @dirrm etc/sound
