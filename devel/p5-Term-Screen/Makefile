@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Term
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Screen-${PORTVERSION}
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 USE_PERL5=	YES
 

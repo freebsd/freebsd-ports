@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits lang
 MASTER_SITES=	http://pike-community.org/sites/pigtk/download/
 DISTNAME=	pigtk_${PORTVERSION}
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike
 

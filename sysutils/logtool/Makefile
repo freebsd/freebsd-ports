@@ -11,7 +11,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://users.digitex.net/~max/
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
