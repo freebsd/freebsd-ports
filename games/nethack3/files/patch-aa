@@ -29,7 +29,7 @@
  /* An example of one alternative you might want to use: */
 -/* #define COMPRESS "/usr/local/bin/gzip" */	/* FSF gzip compression */
 -/* #define COMPRESS_EXTENSION ".gz" */		/* normal gzip extension */
-+#define COMPRESS "/usr/local/bin/gzip" 	/* FSF gzip compression */
++#define COMPRESS "/usr/bin/gzip"	 	/* FSF gzip compression */
 +#define COMPRESS_EXTENSION ".gz" 		/* normal gzip extension */
  #endif
  
