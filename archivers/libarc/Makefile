@@ -8,7 +8,7 @@
 PORTNAME=	libarc
 PORTVERSION=	2.0.2
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://raiden.goice.co.jp/member/mo/release/
+MASTER_SITES=	http://www.onicos.com/staff/iz/release/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
