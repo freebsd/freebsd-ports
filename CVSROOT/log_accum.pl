@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-# $Id$
+# $Id: log_accum.pl,v 1.7 1995/07/15 12:59:04 rgrimes Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -333,7 +333,12 @@ while (<STDIN>) {
     push (@changed_files, split) if ($state == $STATE_CHANGED);
     push (@added_files,   split) if ($state == $STATE_ADDED);
     push (@removed_files, split) if ($state == $STATE_REMOVED);
-    push (@log_lines,     $_)    if ($state == $STATE_LOG);
+    if ($state == $STATE_LOG) {
+        if (/^Reviewed by:$/) { next; }
+        if (/^Submitted by:$/) { next; }
+        if (/^Obtained from:$/) { next; }
+        push (@log_lines,     $_);
+    }
 }
 
 #
