@@ -28,6 +28,7 @@
     SUBDIR += gsystem
     SUBDIR += hdf
     SUBDIR += hdf5
+    SUBDIR += isaac-cfd
     SUBDIR += kmovisto
     SUBDIR += kst
     SUBDIR += libctl

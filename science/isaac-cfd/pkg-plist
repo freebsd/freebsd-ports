@@ -1,0 +1,69 @@
+bin/isaac
+%%PORTDOCS%%%%DOCSDIR%%/man.4_2.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Experimental_Data/klebanoff.data
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Experimental_Data/klebanoff.wall
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Experimental_Data/klebwall.f
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Grid/flatplate.f
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Grid/flatplate.grd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/asm.dat
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/asm.dat2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/asm.dat3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/asm.out1
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/asm.out2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/asm.out3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/flatplate.grd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/ke.dat
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/ke.dat2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/ke.dat3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/ke.out1
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/ke.out2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/ke.out3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/kw.dat
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/kw.dat2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/kw.dat3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/kw.out1
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/kw.out2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/kw.out3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/rs.dat
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/rs.dat2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/rs.dat3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/rs.out1
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/rs.out2
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Klebanoff/Results/rs.out3
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Grid/cnvrtgrd.f
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Grid/gr224n20
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/n12_225_33.grd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012.g.fmt
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012.q.fmt
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012.rst1
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_mg.cl
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_mg.dat
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_mg.out1
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_mg.resid
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_nomg.cl
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_nomg.dat
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_nomg.out1
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/NACA0012/Results/naca0012_nomg.resid
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Case_9/Data/rae2822_case9.cf
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Case_9/Data/rae2822_case9.up
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Case_9/Results/saa.profs
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Case_9/Results/saa.surf
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Case_9/Results/saa.vel
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Grid/cbin2fmt.f
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Grid/rae2822_grd.ps
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Grid/rae9_257.grd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/RAE2822/Grid/rae_257x97.fmt
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Klebanoff/Experimental_Data
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Klebanoff/Grid
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Klebanoff/Results
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Klebanoff
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/NACA0012/Grid
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/NACA0012/Results
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/NACA0012
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/RAE2822/Case_9/Data
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/RAE2822/Case_9/Results
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/RAE2822/Case_9
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/RAE2822/Grid
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/RAE2822
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,13 @@
+ISAAC (Integrated Solution Algorithm for Arbitrary Configurations) is a 
+compressible Euler/Navier-Stokes computational fluid dynamics code. ISAAC 
+includes the capability of calculating the Euler equations for inviscid 
+flow or the Navier-Stokes equations for viscous flows. ISAAC uses a domain 
+decomposition structure to accomodate complex physical configurations. 
+ISAAC can calculate either steady-state or time dependent flow.
+
+ISAAC was designed to test turbulence models. Various two equation 
+turbulence models, explicit algebraic Reynolds stress models, and full 
+differential Reynolds stress models are implemented in ISAAC. Several test 
+cases are documented in the User's Guide.
+
+WWW:	http://isaac-cfd.sourceforge.net/

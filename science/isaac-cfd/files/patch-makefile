@@ -1,0 +1,23 @@
+--- makefile.orig	Mon Jun 18 02:54:29 2001
++++ makefile	Tue Dec 28 16:14:53 2004
+@@ -1,7 +1,6 @@
+-MAKE=make
+-
+-FC = f77
++MAKE?=gmake
+ 
++F77 =	%%FC%%
+ #SRC=  $(HOME)/CFD/ISAAC/src
+ SRC=  $(CURDIR)
+ SRCTARFILE= isaacsrc.tar
+@@ -20,8 +19,8 @@
+ #####FFLAGS= -mips2 -O2 -Olimit 3000 -noisam
+ 
+ #g77 flags
+-FFLAGS= -O2
+-CPPFLAGS = -DCPU_TIME
++FFLAGS = %%FFLAGS%%
++CPPFLAGS += -DCPU_TIME
+ 
+ OBJ= main.o \
+ 	bc.o \
