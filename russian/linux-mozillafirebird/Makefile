@@ -26,4 +26,5 @@ BROKEN=		"Inconsistent dependencies (linux_base 7.x and 8.x)"
 
 USE_BZIP2=	yes
 
-.include "../../www/linux-mozillafirebird/Makefile"
+MASTERDIR=	${.CURDIR}/../../www/linux-mozillafirebird
+.include "${MASTERDIR}/Makefile"

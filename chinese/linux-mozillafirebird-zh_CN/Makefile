@@ -11,4 +11,5 @@ PKGNAMEPREFIX=		zhCN-linux-
 DISTNAME=		MozillaFirebird-${PORTVERSION}-i686-pc-linux-gnu-zhCN
 COMMENT=		Firebird browser in Simplified Chinese for Linux/i386
 
-.include "../../www/linux-mozillafirebird/Makefile"
+MASTERDIR=		${.CURDIR}/../../www/linux-mozillafirebird
+.include "${MASTERDIR}/Makefile"

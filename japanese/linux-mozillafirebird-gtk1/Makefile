@@ -12,8 +12,5 @@ PKGNAMESUFFIX=		-gtk1
 DISTNAME=		MozillaFirebird-${PORTVERSION}-i686-pc-linux-gnu-jaJP
 COMMENT=		Firebird Web browser:  Japanese, Linux, GTK 1.X version
 
-BROKEN=			"Checksum mismatch"
-EXPIRATION_DATE=	2004-08-20
-DEPRECATED=		${BROKEN}
-
-.include "../../www/linux-mozillafirebird/Makefile"
+MASTERDIR=		${.CURDIR}/../../www/linux-mozillafirebird
+.include "${MASTERDIR}/Makefile"

@@ -25,4 +25,5 @@ ${LINUXBASE}/usr/share/fonts/ja/TrueType:${PORTSDIR}/japanese/linux-ttfonts
 
 BROKEN=		"Inconsistent dependencies (linux_base 7.x and 8.x)"
 
-.include "../../www/linux-mozillafirebird/Makefile"
+MASTERDIR=	${.CURDIR}/../../www/linux-mozillafirebird
+.include "${MASTERDIR}/Makefile"
