@@ -8,7 +8,8 @@
 PORTNAME=	docbook-xml
 PORTVERSION=	4.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/
+MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/ \
+		http://www.oasis-open.org/committees/docbook/xml/${PORTVERSION}/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
