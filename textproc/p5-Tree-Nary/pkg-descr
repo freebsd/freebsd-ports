@@ -1,0 +1,9 @@
+The Tree::Nary class implements N-ary trees (trees of data with any
+number of branches), providing the organizational structure for a
+tree (collection) of any number of nodes, but knowing nothing about
+the specific type of node used.  It can be used to display
+hierarchical database entries in an internal application (the NIS
+netgroup file is an example of such a database). It offers the
+capability to select nodes on the tree, and attachment points for
+nodes on the tree. Each attachment point can support multiple
+child nodes.
