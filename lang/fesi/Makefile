@@ -12,7 +12,7 @@ MASTER_SITES=	http://home.worldcom.ch/jmlugrin/fesi/
 DISTNAME=	fesikit
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	leo@florida.sarang.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free EcmaScript Interpreter written in Java
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac:${PORTSDIR}/java/jdk11
@@ -35,6 +35,6 @@ do-install:
 	 ${CP} -R doc/html/* ${PREFIX}/share/java/fesi/docs; \
 	 ${CP} -R examples/* ${PREFIX}/share/java/fesi/examples; \
 	)
-	@rmdir ${PREFIX}/share/java/fesi/examples/Fesi*/classes
+	@${RMDIR} ${PREFIX}/share/java/fesi/examples/Fesi*/classes
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=B
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leo@florida.sarang.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Compiler backend to diagram OP trees
 
 PERL_CONFIGURE=	yes

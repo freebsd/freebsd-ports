@@ -11,7 +11,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	http://developer.icecast.org/libshout/releases/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leo@florida.sarang.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl glue for libshout MP3 streaming source library
 
 LIB_DEPENDS=	shout.2:${PORTSDIR}/audio/libshout
