@@ -9,13 +9,13 @@ man/man8/dhcpm.8.gz
 man/man5/dhcpdb.server.5.gz
 man/man5/dhcpdb.pool.5.gz
 man/man5/dhcpdb.relay.5.gz
-share/dhcp/README
-share/dhcp/README.jis
-share/dhcp/intro.dhcp
-share/dhcp/intro.dhcp.jis
-share/dhcp/dhcpdb.pool.sample
-share/dhcp/dhcpdb.relay.sample
-share/dhcp/dhcpdb.server.sample
+share/doc/dhcp/README
+share/doc/dhcp/README.jis
+share/doc/dhcp/intro.dhcp
+share/doc/dhcp/intro.dhcp.jis
+share/examples/dhcp/dhcpdb.pool.sample
+share/examples/dhcp/dhcpdb.relay.sample
+share/examples/dhcp/dhcpdb.server.sample
 etc/rc.d/wide-dhcps.sh.sample
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ; echo "dhcps		67/udp    # dhcp server") > /etc/services
 @unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ) > /etc/services

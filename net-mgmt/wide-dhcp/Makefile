@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.8 1997/04/04 02:19:46 brian Exp $
+# $Id: Makefile,v 1.9 1997/05/30 18:38:11 max Exp $
 #
 
 DISTNAME=       dhcp-1.3beta
@@ -19,24 +19,32 @@ EXTRACT_ONLY=	dhcp-1.3beta.tar.gz
 IGNOREFILES=	tzfile.h
 MAKE_ENV=	OSTYPE=`uname`
 
+MAN5=	dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
+MAN8=	dhcpc.8 dhcps.8 relay.8 dhcpm.8
+
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/wide-dhcps.sh.sample
 
 post-patch:
-	if [ ! -f ${WRKSRC}/server/tzfile.h ]; then \
+	@if [ ! -f ${WRKSRC}/server/tzfile.h ]; then \
 		${CP} ${DISTDIR}/tzfile.h ${WRKSRC}/server/; \
 	fi
 
 post-install:
-	@if [ ! -d ${PREFIX}/share/dhcp ]; then \
-		${MKDIR} ${PREFIX}/share/dhcp; \
+.if !defined(NOPORTDOCS)
+	@if [ ! -d ${PREFIX}/share/doc/dhcp ]; then \
+		${MKDIR} ${PREFIX}/share/doc/dhcp; \
 	fi
-	@${CP} ${WRKSRC}/README ${PREFIX}/share/dhcp/
-	@${CP} ${WRKSRC}/README.jis ${PREFIX}/share/dhcp/
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.pool ${PREFIX}/share/dhcp/dhcpdb.pool.sample
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.relay ${PREFIX}/share/dhcp/dhcpdb.relay.sample
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.server ${PREFIX}/share/dhcp/dhcpdb.server.sample
-	@${CP} ${WRKSRC}/db_sample/intro.dhcp ${PREFIX}/share/dhcp/
-	@${CP} ${WRKSRC}/db_sample/intro.dhcp.jis ${PREFIX}/share/dhcp/
+	@if [ ! -d ${PREFIX}/share/examples/dhcp ]; then \
+		${MKDIR} ${PREFIX}/share/examples/dhcp; \
+	fi
+	@${CP} ${WRKSRC}/README ${PREFIX}/share/doc/dhcp/
+	@${CP} ${WRKSRC}/README.jis ${PREFIX}/share/doc/dhcp/
+	@${CP} ${WRKSRC}/db_sample/dhcpdb.pool ${PREFIX}/share/examples/dhcp/dhcpdb.pool.sample
+	@${CP} ${WRKSRC}/db_sample/dhcpdb.relay ${PREFIX}/share/examples/dhcp/dhcpdb.relay.sample
+	@${CP} ${WRKSRC}/db_sample/dhcpdb.server ${PREFIX}/share/examples/dhcp/dhcpdb.server.sample
+	@${CP} ${WRKSRC}/db_sample/intro.dhcp ${PREFIX}/share/doc/dhcp/
+	@${CP} ${WRKSRC}/db_sample/intro.dhcp.jis ${PREFIX}/share/doc/dhcp/
+.endif
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		echo "Installing ${STARTUP_SCRIPT} startup file.";	\
 		echo '#!/bin/sh' > ${STARTUP_SCRIPT};			\

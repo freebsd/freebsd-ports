@@ -1,6 +1,6 @@
 --- server/Makefile.FreeBSD.orig	Mon Nov  6 16:18:41 1995
-+++ server/Makefile.FreeBSD	Fri Mar 28 17:26:44 1997
-@@ -1,13 +1,25 @@
++++ server/Makefile.FreeBSD	Fri May 30 22:47:17 1997
+@@ -1,16 +1,27 @@
  OBJ = dhcps.o database.o hash.o ctime.o getmac.o common_subr.o \
        interface.o delarp.o
 -LDFLAGS =
@@ -15,18 +15,21 @@
 +SBIN=		${PREFIX}/sbin
 +LIBEXEC=	${PREFIX}/libexec
 +MAN=		${PREFIX}/man
++CP=		/bin/cp
++RM=		/bin/rm
  
  dhcps: ${OBJ}
  	${CC} ${CFLAGS} -o dhcps ${OBJ} ${LDFLAGS}
-+
+ 
 +install: dhcps
 +	${INSTALL} -c -m 755 -s dhcps ${SBIN}/dhcps
-+	cp dhcpdb.pool.5 ${MAN}/man5/dhcpdb.pool.5
-+	gzip -9nf ${MAN}/man5/dhcpdb.pool.5
-+	cp dhcpdb.relay.5 ${MAN}/man5/dhcpdb.relay.5
-+	gzip -9nf ${MAN}/man5/dhcpdb.relay.5
-+	cp dhcps.8 ${MAN}/man8/dhcps.8
-+	gzip -9nf ${MAN}/man8/dhcps.8
- 
++	${CP} dhcpdb.pool.5 ${MAN}/man5/dhcpdb.pool.5
++	${CP} dhcpdb.relay.5 ${MAN}/man5/dhcpdb.relay.5
++	${CP} dhcps.8 ${MAN}/man8/dhcps.8
++
  clean:
- 	rm -f *~ *.o *core* dhcps
+-	rm -f *~ *.o *core* dhcps
++	${RM} -f *~ *.o *core* dhcps
+ 
+ dhcps.o:	dhcps.c dhcp.h common.h common_subr.h hash.h dhcps.h
+ database.o:	database.c dhcp.h common.h hash.h database.h
