@@ -358,6 +358,7 @@ share/groff/site-tmac/mdoc.local
 %%PORTDOCS%%share/doc/jgroff/meref.me
 %%PORTDOCS%%share/doc/jgroff/pic.ms
 %%PORTDOCS%%@dirrm share/doc/jgroff
+@exec mkdir -p %D/lib/groff/site-tmac
 @dirrm lib/groff/site-tmac
 @dirrm lib/groff
 @dirrm share/groff/%%GROFF_VERSION%%/font/devX100
