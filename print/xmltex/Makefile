@@ -6,22 +6,11 @@
 #
 
 PORTNAME=		xmltex
-PORTVERSION=		0.8
+PORTVERSION=		1.9
 CATEGORIES=		print
-MASTER_SITES=		${MASTER_SITE_TEX_CTAN} \
-			http://www.tei-c.org.uk/Software/passivetex/:xmltex
-MASTER_SITE_SUBDIR=	macros/xmltex/base
-DISTFILES=		englishutf16.xml englishutf8.xml iso-8859-1.xmt \
-			iso-8859-2.xmt koi8-r.xmt langtest.tex langtest.xml \
-			langtest.xmt manual.html manual.tex manual.xml \
-			manual.xsl mathml2.xmt pdfxmltex.ini \
-			portugeselatin1.xml readme.txt russiankoi8.xml \
-			russianutf8.xml sec.xmt tei.xmt testascii.cfg \
-			testascii.tex testascii.xml testsec.tex testsec.xml \
-			utf-16.xmt windows-1250.xmt xmltex.cfg xmltex.ini \
-			xmltex.tex:xmltex
-DIST_SUBDIR=		xmltex
-EXTRACT_ONLY=
+MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	macros/xmltex/
+DISTFILES=		base.zip
 
 MAINTAINER=		nik@FreeBSD.org
 
@@ -32,10 +21,6 @@ RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 WRKSRC=			${WRKDIR}/base
 USE_ZIP=		yes
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
-
-post-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/* ${WRKSRC}
 
 post-patch: patch-message copy-makefile
 
