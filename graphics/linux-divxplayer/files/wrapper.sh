@@ -11,4 +11,4 @@ then
 	rm -f ~/.divxPlayer/DivXPlayer.dbf
 fi
 
-exec ${PROGRAM}.bin ${*}
+exec ${PROGRAM}.bin "${@}"
