@@ -4331,6 +4331,7 @@ libGLU		ports/graphics/libGLU
 libICE		ports/x11/libICE
 libIDL		ports/devel/libIDL
 libPropList	ports/devel/libPropList
+libRmath	ports/math/libRmath
 libSM		ports/x11/libSM
 libU77		ports/devel/libU77
 libX11		ports/x11/libX11
