@@ -20,8 +20,15 @@ LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-USE_GETTEXT=	yes
 USE_REINPLACE=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 MAN1=	dirtree.1
 
