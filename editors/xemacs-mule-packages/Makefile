@@ -49,11 +49,11 @@ post-install:
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
-	@${ECHO_MSG} "    This is the set of the packages for xemacs with the mule-packages category."
-	@${ECHO_MSG} "You can get all packages altogether with installing xemacs-packages and work"
-	@${ECHO_MSG} "fine at XEmacs."
-	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
-	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
-	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
+	@${ECHO_MSG} "    This port installs packages for XEmacs with mule. These packages should be"
+	@${ECHO_MSG} "installed altogether with xemacs-packages."
+	@${ECHO_MSG} "    You can also install these packages by running XEmacs as root and using the"
+	@${ECHO_MSG} "'Manage Packages' menu within the 'Options' menu of the menubar."
+	@${ECHO_MSG} "However,installing the packages using this method defeats the purpose of"
+	@${ECHO_MSG} "installing this port."
 
 .include <bsd.port.mk>
