@@ -3,15 +3,15 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.49 1998/04/22 12:39:33 asami Exp $
+# $Id: Makefile,v 1.50 1998/04/22 16:28:43 ache Exp $
 #
 
-DISTNAME=       apache_1.3b6
-PKGNAME=        apache-1.3b6
+DISTNAME=       apache_1.3b7
+PKGNAME=        apache-1.3b7
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
-#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3b6/
+#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3b7/
 
 MAINTAINER=     ache@freebsd.org
 
@@ -19,8 +19,10 @@ NO_LATEST_LINK=	yes
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= \
-	         --localstatedir=/var \
+		 --logfiledir=/var/log \
+		 --runtimedir=/var/run \
 		 --datadir=${PREFIX}/www \
+		 --proxycachedir=${PREFIX}/www/proxy \
 		 --libexecdir=${PREFIX}/libexec/apache \
 		 --enable-shared=remain \
 		 --enable-module=most \
