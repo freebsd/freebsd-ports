@@ -848,9 +848,12 @@ PLIST_SUB+=	        PORTDOCS="@comment "
 PLIST_SUB+=	        PORTDOCS=""
 .endif
 
-CONFIGURE_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
+CONFIGURE_SHELL?=	${SH}
+MAKE_SHELL?=	${SH}
+
+CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
 SCRIPTS_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
-MAKE_ENV+=		PORTOBJFORMAT=${PORTOBJFORMAT}
+MAKE_ENV+=		SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
 PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
 
 .if defined(MANCOMPRESSED)
@@ -1823,7 +1826,7 @@ VERSIONFILE=	${PKG_DBDIR}/.mkversion
 .endif
 .if exists(${VERSIONFILE})
 .if !defined(SYSTEMVERSION)
-SYSTEMVERSION!=	cat ${VERSIONFILE}
+SYSTEMVERSION!=	${CAT} ${VERSIONFILE}
 .endif
 .else
 SYSTEMVERSION=	0
@@ -2162,7 +2165,13 @@ do-fetch:
 
 .if !target(do-extract)
 do-extract:
+.if !defined(CHKDPCHN_CACHE)
 	@${RM} -rf ${WRKDIR}
+.else
+	@for file in `${LS} -A ${WRKDIR} | ${GREP} -v ${CHKDPCHN_CACHE}`; do \
+		${RM} -rf ${WRKDIR}/$$file; \
+	done
+.endif
 	@${MKDIR} ${WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
@@ -2459,6 +2468,7 @@ run-ldconfig:
 
 .if !target(security-check)
 security-check:
+.if !defined(PKG_NO_SECURITY_CHECK)
 # Scan PLIST for setugid files and startup scripts
 	-@for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
 		${FIND} ${PREFIX}/$$i -prune -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) -ls 2>/dev/null; \
@@ -2489,6 +2499,9 @@ security-check:
 			${MAKE} www-site; \
 		fi; \
 	fi
+.else
+	@${DO_NADA}
+.endif
 .endif
 
 ################################################################
@@ -3159,9 +3172,20 @@ RUN-DEPENDS-LIST= \
 package-depends-list:
 	@${PACKAGE-DEPENDS-LIST}
 
-PACKAGE-DEPENDS-LIST= \
+PACKAGE-DEPENDS-LIST?= \
 	if [ "${CHILD_DEPENDS}" ]; then \
-		${ECHO_CMD} "${PKGNAME}	${.CURDIR}"; \
+		for origin in ${PKGORIGIN} ${ALT_ORIGINS}; do \
+			installed=$$(${PKG_INFO} -qO $$origin); \
+			if [ "$$installed" ]; then \
+				break; \
+			fi; \
+		done; \
+		if [ -z "$$installed" ]; then \
+			installed="${PKGNAME}"; \
+		fi; \
+		for pkgname in $$installed; do \
+			${ECHO_CMD} "$$pkgname ${.CURDIR} ${PKGORIGIN}"; \
+		done; \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
 	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
@@ -3169,12 +3193,11 @@ PACKAGE-DEPENDS-LIST= \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
 				set -- $$childout; \
-				childname=""; childdir=""; \
+				childdir=""; \
 				while [ $$\# != 0 ]; do \
-					childname="$$childname $$1"; \
 					childdir="$$childdir $$2"; \
-					${ECHO_CMD} "$$1	$$2"; \
-					shift 2; \
+					${ECHO_CMD} "$$1 $$2 $$3"; \
+					shift 3; \
 				done; \
 				checked="$$dir $$childdir $$checked"; \
 			fi; \
@@ -3186,7 +3209,7 @@ PACKAGE-DEPENDS-LIST= \
 # Print out package names.
 
 package-depends:
-	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1}'
+	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1":"$$3}'
 
 ################################################################
 # Everything after here are internal targets and really
@@ -3421,8 +3444,11 @@ fake-pkg:
 		if [ -f ${PKGMESSAGE} ]; then \
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=${TRUE} | sort -u`; do \
-			if [ -d ${PKG_DBDIR}/$$dep -a -z `echo $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
+		if [ -f ${MTREE_FILE} ]; then \
+			${CP} ${MTREE_FILE} ${PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
+		fi; \
+		for dep in `${PKG_INFO} -qf ${PKGNAME} | ${GREP} -w ^@pkgdep | ${AWK} '{print $$2}' | sort -u`; do \
+			if [ -d ${PKG_DBDIR}/$$dep -a -z `${ECHO_CMD} $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
 					${ECHO_CMD} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
