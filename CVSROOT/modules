@@ -5563,6 +5563,7 @@ msp430-gcc		ports/devel/msp430-gcc
 msp430-gdb		ports/devel/msp430-gdb
 msp430-libc		ports/devel/msp430-libc
 msql		ports/databases/msql
+msql3		ports/databases/msql3
 msrc0		ports/devel/msrc0
 msyslog		ports/sysutils/msyslog
 mt-aspell	ports/textproc/mt-aspell
