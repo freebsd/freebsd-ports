@@ -1,0 +1,14 @@
+This is a server daemon for FSP, the File Service Protocol.  With
+it, you can offer files to "anonymous" visitors.  Bandwidth can
+easily be limited.
+ 
+Since a service contact port (well-known port) for FSP has not been
+assigned by IANA (per RFC 1700), you must choose one yourself when
+configuring fspd.  Edit the example.conf file and place it in
+${LOCALBASE}/etc/fspd.conf (typically LOCALBASE is set to /usr/local).
+You can run fspd from inetd or stand-alone.
+
+WWW:  http://www.xmission.com/help/faqs/fsp_faq.htm
+
+Trevor Johnson
+trevor@FreeBSD.org
