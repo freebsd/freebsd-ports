@@ -1,0 +1,595 @@
+bbs/.BOARDS
+bbs/.hushlogin
+bbs/0Announce/bms/deleted/.cvsignore
+bbs/0Announce/bms/deleted/.Names
+bbs/0Announce/bms/.cvsignore
+bbs/0Announce/bms/.Names
+bbs/0Announce/sysops/groups/junk/.cvsignore
+bbs/0Announce/sysops/groups/junk/.Names
+bbs/0Announce/sysops/groups/syssecurity/.cvsignore
+bbs/0Announce/sysops/groups/syssecurity/.Names
+bbs/0Announce/sysops/groups/.cvsignore
+bbs/0Announce/sysops/groups/.Names
+bbs/0Announce/sysops/.cvsignore
+bbs/0Announce/sysops/.Names
+bbs/0Announce/sysops/Firebird-30
+bbs/0Announce/sysops/admin-manual
+bbs/0Announce/bbslist/yesterday
+bbs/0Announce/bbslist/.Names
+bbs/0Announce/bbslist/countusr
+bbs/0Announce/bbslist/board1
+bbs/0Announce/bbslist/board2
+bbs/0Announce/bbslist/countusr.last
+bbs/0Announce/bbslist/newacct.last
+bbs/0Announce/bbslist/newacct.today
+bbs/0Announce/bbslist/today
+bbs/0Announce/bbslist/topall
+bbs/0Announce/bbslist/toplogin
+bbs/0Announce/bbslist/toppost
+bbs/0Announce/bbslist/topstay
+bbs/0Announce/bbslist/.cvsignore
+bbs/0Announce/groups/GROUP_0/bbslists/.cvsignore
+bbs/0Announce/groups/GROUP_0/bbslists/.Names
+bbs/0Announce/groups/GROUP_0/newcomers/.cvsignore
+bbs/0Announce/groups/GROUP_0/newcomers/.Names
+bbs/0Announce/groups/GROUP_0/sysop/.cvsignore
+bbs/0Announce/groups/GROUP_0/sysop/.Names
+bbs/0Announce/groups/GROUP_0/vote/.cvsignore
+bbs/0Announce/groups/GROUP_0/vote/.Names
+bbs/0Announce/groups/GROUP_0/.cvsignore
+bbs/0Announce/groups/GROUP_0/.Names
+bbs/0Announce/groups/GROUP_7/notepad/.Names
+bbs/0Announce/groups/GROUP_7/.Names
+bbs/0Announce/groups/.cvsignore
+bbs/0Announce/groups/.Names
+bbs/0Announce/usermanual/value
+bbs/0Announce/usermanual/.Names
+bbs/0Announce/usermanual/Goodbye
+bbs/0Announce/usermanual/Boards
+bbs/0Announce/usermanual/Config
+bbs/0Announce/usermanual/Digest
+bbs/0Announce/usermanual/EGroup
+bbs/0Announce/usermanual/InfoEdit
+bbs/0Announce/usermanual/Help
+bbs/0Announce/usermanual/Service
+bbs/0Announce/usermanual/Mail
+bbs/0Announce/usermanual/boardmenu
+bbs/0Announce/usermanual/Talk
+bbs/0Announce/usermanual/advice
+bbs/0Announce/usermanual/enterbbs
+bbs/0Announce/usermanual/register
+bbs/0Announce/usermanual/telix
+bbs/0Announce/usermanual/.cvsignore
+bbs/0Announce/.cvsignore
+bbs/0Announce/.Names
+bbs/0Announce/.Search
+bbs/bbssrc/src/SO/thread.so
+bbs/bbssrc/src/SO/paging.c
+bbs/bbssrc/src/SO/socket.c
+bbs/bbssrc/src/SO/thread.c
+bbs/bbssrc/src/SO/paging.so
+bbs/bbssrc/src/SO/Makefile
+bbs/bbssrc/src/Install.sh.in
+bbs/bbssrc/src/Makefile
+bbs/bbssrc/src/admintool.c
+bbs/bbssrc/src/announce.c
+bbs/bbssrc/src/bbs.c
+bbs/bbssrc/src/bbsd.c
+bbs/bbssrc/src/bbsgopher.c
+bbs/bbssrc/src/bbsrf.c
+bbs/bbssrc/src/bcache.c
+bbs/bbssrc/src/bm.c
+bbs/bbssrc/src/boards.c
+bbs/bbssrc/src/chat.c
+bbs/bbssrc/src/comm_lists.c
+bbs/bbssrc/src/delete.c
+bbs/bbssrc/src/edit.c
+bbs/bbssrc/src/expire.c
+bbs/bbssrc/src/fileshm.c
+bbs/bbssrc/src/goodbye.c
+bbs/bbssrc/src/help.c
+bbs/bbssrc/src/io.c
+bbs/bbssrc/src/list.c
+bbs/bbssrc/src/mail.c
+bbs/bbssrc/src/main.c
+bbs/bbssrc/src/maintain.c
+bbs/bbssrc/src/modetype.c
+bbs/bbssrc/src/more.c
+bbs/bbssrc/src/namecomplete.c
+bbs/bbssrc/src/pass.c
+bbs/bbssrc/src/postheader.c
+bbs/bbssrc/src/read.c
+bbs/bbssrc/src/record.c
+bbs/bbssrc/src/register.c
+bbs/bbssrc/src/screen.c
+bbs/bbssrc/src/sendmsg.c
+bbs/bbssrc/src/station.c
+bbs/bbssrc/src/stuff.c
+bbs/bbssrc/src/talk.c
+bbs/bbssrc/src/term.c
+bbs/bbssrc/src/userinfo.c
+bbs/bbssrc/src/ver.sh
+bbs/bbssrc/src/vote.c
+bbs/bbssrc/src/xyz.c
+bbs/bbssrc/src/Install.sh.in.orig
+bbs/bbssrc/src/Install.sh
+bbs/bbssrc/src/bbsd
+bbs/bbssrc/src/chatd
+bbs/bbssrc/src/expire
+bbs/bbssrc/util/innbbsd/doc/release.0.44
+bbs/bbssrc/util/innbbsd/doc/bbnnrp-generic-gateway
+bbs/bbssrc/util/innbbsd/doc/bbslink.8
+bbs/bbssrc/util/innbbsd/doc/bbslink.patch
+bbs/bbssrc/util/innbbsd/doc/bbsnnrp.8
+bbs/bbssrc/util/innbbsd/doc/ctlinnbbsd.8
+bbs/bbssrc/util/innbbsd/doc/filter.doc
+bbs/bbssrc/util/innbbsd/doc/gateway.doc
+bbs/bbssrc/util/innbbsd/doc/gateway2.doc
+bbs/bbssrc/util/innbbsd/doc/history-corrupt
+bbs/bbssrc/util/innbbsd/doc/innbbsd.8
+bbs/bbssrc/util/innbbsd/doc/mailing-list-reply
+bbs/bbssrc/util/innbbsd/doc/makedbz.8
+bbs/bbssrc/util/innbbsd/doc/mkhistory.8
+bbs/bbssrc/util/innbbsd/doc/multiple-feeds
+bbs/bbssrc/util/innbbsd/doc/newsfeeds.bbs.5
+bbs/bbssrc/util/innbbsd/doc/nodelist.bbs.5
+bbs/bbssrc/util/innbbsd/doc/relaese.0.50beta-5F
+bbs/bbssrc/util/innbbsd/doc/alt-gateways
+bbs/bbssrc/util/innbbsd/innd/timefmt.y
+bbs/bbssrc/util/innbbsd/innd/README
+bbs/bbssrc/util/innbbsd/innd/bbslib.pl.in
+bbs/bbssrc/util/innbbsd/innd/bbspost.c
+bbs/bbssrc/util/innbbsd/innd/bmpost
+bbs/bbssrc/util/innbbsd/innd/bntplink.in
+bbs/bbssrc/util/innbbsd/innd/in.bntpd.in
+bbs/bbssrc/util/innbbsd/innd/innbbslib.pl.in
+bbs/bbssrc/util/innbbsd/innd/inntobbs.in
+bbs/bbssrc/util/innbbsd/innd/mailpost.in
+bbs/bbssrc/util/innbbsd/innd/modify.doc
+bbs/bbssrc/util/innbbsd/innd/parsedate.c
+bbs/bbssrc/util/innbbsd/innd/rfc931.pl.in
+bbs/bbssrc/util/innbbsd/innd/tcp.pl.in
+bbs/bbssrc/util/innbbsd/innd/Makefile
+bbs/bbssrc/util/innbbsd/convert/hztty/tables/Makefile
+bbs/bbssrc/util/innbbsd/convert/hztty/tables/README
+bbs/bbssrc/util/innbbsd/convert/hztty/tables/gen_b2g.sh
+bbs/bbssrc/util/innbbsd/convert/hztty/tables/gen_ctab.c
+bbs/bbssrc/util/innbbsd/convert/hztty/HZ.spec
+bbs/bbssrc/util/innbbsd/convert/hztty/Makefile
+bbs/bbssrc/util/innbbsd/convert/hztty/README
+bbs/bbssrc/util/innbbsd/convert/hztty/b2g.c
+bbs/bbssrc/util/innbbsd/convert/hztty/b2g_tables.c
+bbs/bbssrc/util/innbbsd/convert/hztty/config.h
+bbs/bbssrc/util/innbbsd/convert/hztty/dummy_main.c
+bbs/bbssrc/util/innbbsd/convert/hztty/hz2gb.c
+bbs/bbssrc/util/innbbsd/convert/hztty/hztty.1
+bbs/bbssrc/util/innbbsd/convert/hztty/io.c
+bbs/bbssrc/util/innbbsd/convert/hztty/io.h
+bbs/bbssrc/util/innbbsd/convert/hztty/log.c
+bbs/bbssrc/util/innbbsd/convert/hztty/main.c
+bbs/bbssrc/util/innbbsd/convert/hztty/tty.c
+bbs/bbssrc/util/innbbsd/convert/jis/sinocojg.cod
+bbs/bbssrc/util/innbbsd/convert/jis/ChangeLog
+bbs/bbssrc/util/innbbsd/convert/jis/Makefile
+bbs/bbssrc/util/innbbsd/convert/jis/README
+bbs/bbssrc/util/innbbsd/convert/jis/b2j
+bbs/bbssrc/util/innbbsd/convert/jis/j2b
+bbs/bbssrc/util/innbbsd/convert/jis/jis.c
+bbs/bbssrc/util/innbbsd/convert/jis/patch.c
+bbs/bbssrc/util/innbbsd/convert/jis/sinocobg.cod
+bbs/bbssrc/util/innbbsd/convert/jis/sinocobj.cod
+bbs/bbssrc/util/innbbsd/convert/jis/sinocode.c
+bbs/bbssrc/util/innbbsd/convert/jis/sinocode.man
+bbs/bbssrc/util/innbbsd/convert/jis/sinocogb.cod
+bbs/bbssrc/util/innbbsd/convert/jis/sinocogj.cod
+bbs/bbssrc/util/innbbsd/convert/jis/sinocojb.cod
+bbs/bbssrc/util/innbbsd/convert/jis/COPYING
+bbs/bbssrc/util/innbbsd/convert/util/b2g
+bbs/bbssrc/util/innbbsd/convert/util/b2j
+bbs/bbssrc/util/innbbsd/convert/util/g2b
+bbs/bbssrc/util/innbbsd/convert/util/j2b
+bbs/bbssrc/util/innbbsd/COPYRIGHT.nocem
+bbs/bbssrc/util/innbbsd/FEATURES
+bbs/bbssrc/util/innbbsd/INSTALL.nocem
+bbs/bbssrc/util/innbbsd/Makefile.in
+bbs/bbssrc/util/innbbsd/NOCEM.1
+bbs/bbssrc/util/innbbsd/NOCEM.2
+bbs/bbssrc/util/innbbsd/NOCEM.3
+bbs/bbssrc/util/innbbsd/README
+bbs/bbssrc/util/innbbsd/README.-0.50beta-5F
+bbs/bbssrc/util/innbbsd/README.PalmBBS
+bbs/bbssrc/util/innbbsd/README.PowerBBS
+bbs/bbssrc/util/innbbsd/README.antispam
+bbs/bbssrc/util/innbbsd/README.nocem
+bbs/bbssrc/util/innbbsd/TODO
+bbs/bbssrc/util/innbbsd/TODO.nocem
+bbs/bbssrc/util/innbbsd/bbslib.c
+bbs/bbssrc/util/innbbsd/bbslib.h
+bbs/bbssrc/util/innbbsd/bbslink.c
+bbs/bbssrc/util/innbbsd/bbsnnrp.c
+bbs/bbssrc/util/innbbsd/clibrary.h
+bbs/bbssrc/util/innbbsd/daemon.c
+bbs/bbssrc/util/innbbsd/closeonexec.c
+bbs/bbssrc/util/innbbsd/connectsock.c
+bbs/bbssrc/util/innbbsd/ctlinnbbsd.c
+bbs/bbssrc/util/innbbsd/daemon.h
+bbs/bbssrc/util/innbbsd/dbz.c
+bbs/bbssrc/util/innbbsd/dbz.h
+bbs/bbssrc/util/innbbsd/dbz_query_sample.c
+bbs/bbssrc/util/innbbsd/dbzinnbbsd.c
+bbs/bbssrc/util/innbbsd/dbzserver.c
+bbs/bbssrc/util/innbbsd/dbztool.c
+bbs/bbssrc/util/innbbsd/echobbslib.c
+bbs/bbssrc/util/innbbsd/externs.h
+bbs/bbssrc/util/innbbsd/file.c
+bbs/bbssrc/util/innbbsd/filter.c
+bbs/bbssrc/util/innbbsd/his.c
+bbs/bbssrc/util/innbbsd/his.h
+bbs/bbssrc/util/innbbsd/hisconvert.in
+bbs/bbssrc/util/innbbsd/innbbsconf.h
+bbs/bbssrc/util/innbbsd/innbbsd.c
+bbs/bbssrc/util/innbbsd/innbbsd.h
+bbs/bbssrc/util/innbbsd/inndchannel.c
+bbs/bbssrc/util/innbbsd/inntobbs.c
+bbs/bbssrc/util/innbbsd/inntobbs.h
+bbs/bbssrc/util/innbbsd/killspam.c
+bbs/bbssrc/util/innbbsd/lang.c
+bbs/bbssrc/util/innbbsd/lang.h
+bbs/bbssrc/util/innbbsd/makedbz.c
+bbs/bbssrc/util/innbbsd/mkhistory.c
+bbs/bbssrc/util/innbbsd/ncmperm.bbs
+bbs/bbssrc/util/innbbsd/newsfeeds.bbs
+bbs/bbssrc/util/innbbsd/nntp.h
+bbs/bbssrc/util/innbbsd/nocem.c
+bbs/bbssrc/util/innbbsd/nocem.h
+bbs/bbssrc/util/innbbsd/nodelist.bbs
+bbs/bbssrc/util/innbbsd/parsdate.y
+bbs/bbssrc/util/innbbsd/pmain.c
+bbs/bbssrc/util/innbbsd/port.c
+bbs/bbssrc/util/innbbsd/qp_conv.c
+bbs/bbssrc/util/innbbsd/r_port.c
+bbs/bbssrc/util/innbbsd/receive_article.c
+bbs/bbssrc/util/innbbsd/rfc931.c
+bbs/bbssrc/util/innbbsd/version.h
+bbs/bbssrc/util/innbbsd/wildmat.c
+bbs/bbssrc/util/innbbsd/Makefile
+bbs/bbssrc/util/innbbsd/CHANGES
+bbs/bbssrc/util/innbbsd/CHANGES.nocem
+bbs/bbssrc/util/fingerd/00README
+bbs/bbssrc/util/fingerd/Makefile
+bbs/bbssrc/util/fingerd/fingerd.c
+bbs/bbssrc/util/fingerd/pathnames.h
+bbs/bbssrc/util/gopherd/00README
+bbs/bbssrc/util/gopherd/Makefile
+bbs/bbssrc/util/gopherd/gopherd.c
+bbs/bbssrc/util/in.zbbsd/00README
+bbs/bbssrc/util/deljunk/Makefile
+bbs/bbssrc/util/deljunk/deljunk.c
+bbs/bbssrc/util/local_utl/Makefile
+bbs/bbssrc/util/local_utl/account.c
+bbs/bbssrc/util/local_utl/averun.c
+bbs/bbssrc/util/local_utl/bbslocalmail.c
+bbs/bbssrc/util/local_utl/bbspop3d.c
+bbs/bbssrc/util/local_utl/bbstop.c
+bbs/bbssrc/util/local_utl/bfinger.c
+bbs/bbssrc/util/local_utl/birthday.c
+bbs/bbssrc/util/local_utl/chboard.c
+bbs/bbssrc/util/local_utl/dumpboardrc.c
+bbs/bbssrc/util/local_utl/horoscope.c
+bbs/bbssrc/util/local_utl/http-finger.c
+bbs/bbssrc/util/local_utl/loadrecord.c
+bbs/bbssrc/util/local_utl/mailreport.c
+bbs/bbssrc/util/local_utl/newacct.c
+bbs/bbssrc/util/local_utl/poststat.c
+bbs/bbssrc/util/local_utl/refriend.c
+bbs/bbssrc/util/local_utl/refriend2.c
+bbs/bbssrc/util/local_utl/rehome.c
+bbs/bbssrc/util/local_utl/remail.c
+bbs/bbssrc/util/local_utl/remake.c
+bbs/bbssrc/util/local_utl/renotepad.c
+bbs/bbssrc/util/local_utl/repass.c
+bbs/bbssrc/util/local_utl/resize.c
+bbs/bbssrc/util/local_utl/restruct.c
+bbs/bbssrc/util/local_utl/showuser.c
+bbs/bbssrc/util/local_utl/usage.c
+bbs/bbssrc/util/local_utl/Makefile.in
+bbs/bbssrc/util/mail2bbs/Makefile
+bbs/bbssrc/util/mail2bbs/bbsmail.in
+bbs/bbssrc/util/mail2bbs/mail-list.c
+bbs/bbssrc/util/mail2bbs/mail2bbs.c
+bbs/bbssrc/util/mail2bbs/mail2bbs.h
+bbs/bbssrc/util/mail2bbs/mailgate.pl.in
+bbs/bbssrc/util/mail2bbs/qp_conv.c
+bbs/bbssrc/util/mail2bbs/rfc931.pl
+bbs/bbssrc/util/mail2bbs/tcp.pl
+bbs/bbssrc/util/mail2bbs/Makefile.in
+bbs/bbssrc/util/telnetd/00README
+bbs/bbssrc/util/upgrade/include/new_struct.h
+bbs/bbssrc/util/upgrade/include/struct.2.5.h
+bbs/bbssrc/util/upgrade/include/struct.2.62M.h
+bbs/bbssrc/util/upgrade/include/struct.2.66M.h
+bbs/bbssrc/util/upgrade/include/struct.M2.h
+bbs/bbssrc/util/upgrade/00README
+bbs/bbssrc/util/upgrade/Makefile
+bbs/bbssrc/util/upgrade/refriend.c
+bbs/bbssrc/util/upgrade/rehome.c
+bbs/bbssrc/util/upgrade/repass.c
+bbs/bbssrc/util/upgrade/chboard.c
+bbs/bbssrc/lib/libBBS/dlm.o
+bbs/bbssrc/lib/libBBS/dlm.c
+bbs/bbssrc/lib/libBBS/fileio.c
+bbs/bbssrc/lib/libBBS/html.c
+bbs/bbssrc/lib/libBBS/mmdecode.c
+bbs/bbssrc/lib/libBBS/string.c
+bbs/bbssrc/lib/libBBS/string.o
+bbs/bbssrc/lib/libBBS/html.o
+bbs/bbssrc/lib/libBBS/mmdecode.o
+bbs/bbssrc/lib/libBBS/fileio.o
+bbs/bbssrc/lib/libBBS/Makefile
+bbs/bbssrc/lib/Makefile
+bbs/bbssrc/lib/libBBS.a
+bbs/bbssrc/include/os_dep.h
+bbs/bbssrc/include/bbs.h
+bbs/bbssrc/include/chat.h.in
+bbs/bbssrc/include/config.h.in
+bbs/bbssrc/include/edit.h
+bbs/bbssrc/include/functions.h
+bbs/bbssrc/include/modes.h
+bbs/bbssrc/include/os_dep.h.in
+bbs/bbssrc/include/permissions.h
+bbs/bbssrc/include/screen.h
+bbs/bbssrc/include/site_conf.h.in
+bbs/bbssrc/include/structs.h
+bbs/bbssrc/include/vote.h
+bbs/bbssrc/include/config.h
+bbs/bbssrc/include/chat.h
+bbs/bbssrc/include/bbsgopher.h
+bbs/bbssrc/doc/example/startbbs.sh
+bbs/bbssrc/doc/example/cron.bbs
+bbs/bbssrc/doc/example/ctm.sh
+bbs/bbssrc/doc/example/expire.ctl
+bbs/bbssrc/doc/example/sendmail-8.10.1-FreeBSD.cf
+bbs/bbssrc/doc/example/sendmail-8.10.1-Linux.cf
+bbs/bbssrc/doc/example/sendmail-8.11.1-FreeBSD.cf
+bbs/bbssrc/doc/example/sendmail-8.9.3-FreeBSD.cf
+bbs/bbssrc/doc/example/00README
+bbs/bbssrc/doc/00README
+bbs/bbssrc/doc/Admin_Manual
+bbs/bbssrc/doc/BBCall
+bbs/bbssrc/doc/Core_Team
+bbs/bbssrc/doc/FAQ
+bbs/bbssrc/doc/Firebird-30
+bbs/bbssrc/doc/NoCem
+bbs/bbssrc/doc/Quick_Install
+bbs/bbssrc/doc/TW_NewsGroup_List
+bbs/bbssrc/doc/Upgrading
+bbs/bbssrc/TODO_List
+bbs/bbssrc/config.guess
+bbs/bbssrc/config.sub
+bbs/bbssrc/configure
+bbs/bbssrc/configure.in
+bbs/bbssrc/install.sh
+bbs/bbssrc/configure.orig
+bbs/bbssrc/configure.inf
+bbs/bbssrc/Makefile
+bbs/bbssrc/.reldate
+bbs/bbssrc/BUG_REPORT
+bbs/bbssrc/ChangeLog
+bbs/bbssrc/Makefile.in
+bbs/bin/www.sh
+bbs/bin/bbsnet.sh
+bbs/bin/bbstop.sh
+bbs/bin/cdict.sh
+bbs/bin/daily.sh
+bbs/bin/edict.sh
+bbs/bin/game.sh
+bbs/bin/gopher.sh
+bbs/bin/irc.sh
+bbs/bin/mvlogs.sh
+bbs/bin/showuser.sh
+bbs/bin/sysinfo.sh
+bbs/bin/archie.sh
+bbs/bin/bbsd
+bbs/bin/chatd
+bbs/bin/expire
+bbs/bin/paging.so
+bbs/bin/thread.so
+bbs/etc/posts/day
+bbs/etc/posts/month
+bbs/etc/posts/week
+bbs/etc/posts/year
+bbs/etc/autopost
+bbs/etc/bad_email
+bbs/etc/bad_id
+bbs/etc/boardref
+bbs/etc/chatstation
+bbs/etc/checknotepad
+bbs/etc/expire.ctl
+bbs/etc/expired
+bbs/etc/f_fill
+bbs/etc/firstlogin
+bbs/etc/fmail
+bbs/etc/goodbye
+bbs/etc/issue
+bbs/etc/loginfull
+bbs/etc/logout
+bbs/etc/mailcheck
+bbs/etc/mentor
+bbs/etc/menu.ini
+bbs/etc/newregister
+bbs/etc/regexpire
+bbs/etc/register
+bbs/etc/s_fill
+bbs/etc/showuser.msg
+bbs/etc/smail
+bbs/etc/sysops
+bbs/etc/user_full
+bbs/etc/whatdate
+bbs/etc/wmail
+bbs/etc/sysconf.ini
+bbs/help/votehelp
+bbs/help/boardreadhelp
+bbs/help/chathelp
+bbs/help/chatophelp
+bbs/help/edithelp
+bbs/help/friendshelp
+bbs/help/mailerror-explain
+bbs/help/mailreadhelp
+bbs/help/mainreadhelp
+bbs/help/morehelp
+bbs/help/msghelp
+bbs/help/rejectshelp
+bbs/help/userlisthelp
+bbs/help/usershelp
+bbs/help/announcereadhelp
+bbs/innd/black.list.general
+bbs/innd/newsfeeds.bbs
+bbs/innd/nodelist.bbs
+bbs/table/big5.0
+bbs/table/big5.1
+bbs/table/big5.2
+bbs/table/big5.3
+bbs/table/big5.4
+bbs/table/big5.5
+bbs/table/big5.6
+bbs/table/big5.7
+bbs/CONTRIB
+bbs/COPYING
+bbs/Version.Info
+bbs/Welcome
+bbs/Welcome2
+bbs/boards/notepad/.DIR
+bbs/boards/notepad/.DIGEST
+bbs/boards/notepad/G.960994645.A
+bbs/boards/notepad/M.960994645.A
+bbs/boards/notepad/G.960994659.A
+bbs/boards/notepad/M.960994659.A
+bbs/boards/notepad/G.960994672.A
+bbs/boards/notepad/M.960994672.A
+@dirrm bbs/vote/vote
+@dirrm bbs/vote/syssecurity
+@dirrm bbs/vote/sysop
+@dirrm bbs/vote/notepad
+@dirrm bbs/vote/newcomers
+@dirrm bbs/vote/junk
+@dirrm bbs/vote/deleted
+@dirrm bbs/vote/bbslists
+@dirrm bbs/vote
+@dirrm bbs/tmp
+@dirrm bbs/table
+@dirrm bbs/mail/Z
+@dirrm bbs/mail/Y
+@dirrm bbs/mail/X
+@dirrm bbs/mail/W
+@dirrm bbs/mail/V
+@dirrm bbs/mail/U
+@dirrm bbs/mail/T
+@dirrm bbs/mail/S
+@dirrm bbs/mail/R
+@dirrm bbs/mail/Q
+@dirrm bbs/mail/P
+@dirrm bbs/mail/O
+@dirrm bbs/mail/N
+@dirrm bbs/mail/M
+@dirrm bbs/mail/L
+@dirrm bbs/mail/K
+@dirrm bbs/mail/J
+@dirrm bbs/mail/I
+@dirrm bbs/mail/H
+@dirrm bbs/mail/G
+@dirrm bbs/mail/F
+@dirrm bbs/mail/E
+@dirrm bbs/mail/D
+@dirrm bbs/mail/C
+@dirrm bbs/mail/B
+@dirrm bbs/mail/A
+@dirrm bbs/mail
+@dirrm bbs/log
+@dirrm bbs/innd
+@dirrm bbs/home/Z
+@dirrm bbs/home/Y
+@dirrm bbs/home/X
+@dirrm bbs/home/W
+@dirrm bbs/home/V
+@dirrm bbs/home/U
+@dirrm bbs/home/T
+@dirrm bbs/home/S
+@dirrm bbs/home/R
+@dirrm bbs/home/Q
+@dirrm bbs/home/P
+@dirrm bbs/home/O
+@dirrm bbs/home/N
+@dirrm bbs/home/M
+@dirrm bbs/home/L
+@dirrm bbs/home/K
+@dirrm bbs/home/J
+@dirrm bbs/home/I
+@dirrm bbs/home/H
+@dirrm bbs/home/G
+@dirrm bbs/home/F
+@dirrm bbs/home/E
+@dirrm bbs/home/D
+@dirrm bbs/home/C
+@dirrm bbs/home/B
+@dirrm bbs/home/A
+@dirrm bbs/home
+@dirrm bbs/help
+@dirrm bbs/etc/posts
+@dirrm bbs/etc
+@dirrm bbs/boards/vote
+@dirrm bbs/boards/syssecurity
+@dirrm bbs/boards/sysop
+@dirrm bbs/boards/notepad
+@dirrm bbs/boards/newcomers
+@dirrm bbs/boards/junk
+@dirrm bbs/boards/deleted
+@dirrm bbs/boards/bbslists
+@dirrm bbs/boards
+@dirrm bbs/bm
+@dirrm bbs/bin
+@dirrm bbs/bbssrc/util/upgrade/include
+@dirrm bbs/bbssrc/util/upgrade
+@dirrm bbs/bbssrc/util/telnetd
+@dirrm bbs/bbssrc/util/mail2bbs
+@dirrm bbs/bbssrc/util/local_utl
+@dirrm bbs/bbssrc/util/innbbsd/innd
+@dirrm bbs/bbssrc/util/innbbsd/doc
+@dirrm bbs/bbssrc/util/innbbsd/convert/util
+@dirrm bbs/bbssrc/util/innbbsd/convert/jis
+@dirrm bbs/bbssrc/util/innbbsd/convert/hztty/tables
+@dirrm bbs/bbssrc/util/innbbsd/convert/hztty
+@dirrm bbs/bbssrc/util/innbbsd/convert
+@dirrm bbs/bbssrc/util/innbbsd
+@dirrm bbs/bbssrc/util/in.zbbsd
+@dirrm bbs/bbssrc/util/gopherd
+@dirrm bbs/bbssrc/util/fingerd
+@dirrm bbs/bbssrc/util/express
+@dirrm bbs/bbssrc/util/deljunk
+@dirrm bbs/bbssrc/util
+@dirrm bbs/bbssrc/src/SO
+@dirrm bbs/bbssrc/src
+@dirrm bbs/bbssrc/lib/libBBS
+@dirrm bbs/bbssrc/lib
+@dirrm bbs/bbssrc/include
+@dirrm bbs/bbssrc/doc/example
+@dirrm bbs/bbssrc/doc
+@dirrm bbs/bbssrc
+@dirrm bbs/0Announce/usermanual
+@dirrm bbs/0Announce/sysops/groups/syssecurity
+@dirrm bbs/0Announce/sysops/groups/junk
+@dirrm bbs/0Announce/sysops/groups
+@dirrm bbs/0Announce/sysops
+@dirrm bbs/0Announce/groups/GROUP_7/notepad
+@dirrm bbs/0Announce/groups/GROUP_7
+@dirrm bbs/0Announce/groups/GROUP_0/vote
+@dirrm bbs/0Announce/groups/GROUP_0/sysop
+@dirrm bbs/0Announce/groups/GROUP_0/newcomers
+@dirrm bbs/0Announce/groups/GROUP_0/bbslists
+@dirrm bbs/0Announce/groups/GROUP_0
+@dirrm bbs/0Announce/groups
+@dirrm bbs/0Announce/bms/deleted
+@dirrm bbs/0Announce/bms
+@dirrm bbs/0Announce/bbslist
+@dirrm bbs/0Announce
+@unexec rmdir %D/bbs/log 2>/dev/null || true
+@dirrm bbs

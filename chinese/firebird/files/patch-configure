@@ -1,0 +1,71 @@
+--- configure.orig	Fri Feb  2 23:15:28 2001
++++ configure	Fri Feb 16 21:20:29 2001
+@@ -1540,40 +1540,43 @@
+ echo "${color_f}Please fill data for your BBS${color_r}"
+ echo " "
+ 
+-bbshome=`cd .. ; pwd`
+-echo -n "Home directory of BBS --> [$bbshome] "
+-read BBS_HOME
++if test -z $prefix; then
++	bbshome="/usr/local/bbs"
++else
++	if test $prefix = "NONE"; then
++		bbshome="/usr/local/bbs"
++	else
++		bbshome="${prefix}/bbs"
++	fi
++fi
++
++echo "Home directory of BBS --> [$bbshome] "
+ BBS_HOME=${BBS_HOME:-$bbshome}
+ 
+ bbssrc=`pwd`
+-echo -n "BBS Source Code directory --> [$bbssrc] "
+-read BBSSRC
++echo "BBS Source Code directory --> [$bbssrc] "
+ BBSSRC=${BBSSRC:-$bbssrc}
+ 
+-echo -n "UID of BBS --> [9999] " 
+-read BBS_UID
++echo "UID of BBS --> [9999] " 
+ BBS_UID=${BBS_UID:-9999}
+ 
+-echo -n "GID of BBS --> [99] " 
+-read BBS_GID
++echo "GID of BBS --> [99] " 
+ BBS_GID=${BBS_GID:-99}
+ 
+-#echo -n "UID of BBS admin --> [9990] " 
+-#read BBS_ADM
+-#BBS_ADM=${BBS_ADM:-9990}
+-
+-echo -n "The ID of your site --> [NoName] "
++hname=`hostname -s`
++echo -n "The ID of your site --> [${hname}] "
+ read BBS_ID
+-BBS_ID=${BBS_ID:-NoName}
++BBS_ID=${BBS_ID:-"${hname}"}
+ 
+ echo -n "The name of your site --> [火鳥系統 3.0] "
+ read BBS_CNAME
+ 
+ BBS_CNAME=${BBS_CNAME:-"火鳥系統 3.0"}
+ 
+-echo -n "The domain name of your site --> [some.where.on.earth] "
++hostname=`hostname`
++echo -n "The domain name of your site --> [${hostname}] "
+ read DOMAIN
+-DOMAIN=${DOMAIN:-"some.where.on.earth"}
++DOMAIN=${DOMAIN:-"${hostname}"}
+ 
+ echo -n "The ip address of your site --> [127.0.0.1] "
+ read BBS_IP
+@@ -1957,6 +1960,7 @@
+ ######################################################
+ This file is generate by configure \$Revision: 1.12 $
+ ######################################################
++BUILDER=_FreeBSD_ports_
+ PERL=$perl
+ BBS_ID=$BBS_ID
+ DOMAIN=$DOMAIN

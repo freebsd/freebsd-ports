@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+#	bbs.sh
+#
+#	$Id$
+
+bbsd_port=23
+
+case "$1" in
+    start)
+		if [ -x /usr/local/bbs/bin/bbsd ]; then
+			/usr/local/bbs/bin/bbsd $bbsd_port && echo -n ' bbsd'
+		fi
+		if [ -x /usr/local/bbs/innd/innbbsd ]; then
+			su bbs -c '/usr/local/bbs/innd/innbbsd' && echo -n ' bbs.innbbsd'
+		fi
+		if [ -f /usr/local/bbs/etc/cron.bbs ]; then
+			su bbs -c 'crontab /usr/local/bbs/etc/cron.bbs' && echo -n ' bbs.cron'
+		fi
+		;;
+	stop)
+		if [ -f /usr/local/bbs/log/bbsd.pid ]; then
+			/bin/kill `cat /usr/local/bbs/log/bbsd.pid`
+			/usr/bin/killall bbsd 2> /dev/null
+			rm -fr /usr/local/bbs/log/bbsd.pid
+			echo -n " -bbsd"
+		else
+			echo "bbsd does not start yet. (pid file not found.)"
+		fi
+		;;
+	*)
+		echo ""
+		echo "usage:  `basename $0` { start | stop }"
+		echo ""
+		exit 64
+		;;
+esac
