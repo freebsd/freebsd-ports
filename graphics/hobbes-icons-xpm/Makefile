@@ -3,11 +3,11 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/02/16 01:55:07 obrien Exp $
 #
 
-DISTNAME=	hobbes-icons-xpm
-PKGNAME=	hobbes-icons-xpm-1.0
+DISTNAME=	hobbes-icons-xpm3
+PKGNAME=	hobbes-icons-xpm3-1.0
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.x.org/R5contrib/  \
 		ftp://ftp.duke.edu/pub/X11/R5contrib/  \
@@ -25,12 +25,10 @@ LIBDIR=         ${PREFIX}/lib/X11/xpm3
 
 do-install:
 # Very dirty, but it works...
-	rm ${WRKSRC)/Makefile
-	rm ${WRKSRC)/README
-	rm ${WRKSRC)/readem.shar
+	-${RM} ${WRKSRC}/README
+	-${RM} ${WRKSRC}/readem.shar
 	${MKDIR} ${PREFIX}/lib/X11/xpm3
 	${CP} -R ${WRKSRC}/* ${LIBDIR}
-	chown -R ${BINOWN}.${BINGRP}
-
+	chown -R ${BINOWN}.${BINGRP} ${LIBDIR}
 
 .include <bsd.port.mk>
