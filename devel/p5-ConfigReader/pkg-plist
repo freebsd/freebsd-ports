@@ -1,5 +1,5 @@
-lib/perl5/site_perl/ConfigReader/DirectiveStyle.pm
-lib/perl5/site_perl/ConfigReader/Spec.pm
-lib/perl5/site_perl/ConfigReader/Values.pm
-lib/perl5/site_perl/ConfigReader.pod
-@dirrm lib/perl5/site_perl/ConfigReader
+lib/perl5/site_perl/%%PERL_VER%%/ConfigReader/DirectiveStyle.pm
+lib/perl5/site_perl/%%PERL_VER%%/ConfigReader/Spec.pm
+lib/perl5/site_perl/%%PERL_VER%%/ConfigReader/Values.pm
+lib/perl5/site_perl/%%PERL_VER%%/ConfigReader.pod
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ConfigReader
