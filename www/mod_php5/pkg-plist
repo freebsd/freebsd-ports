@@ -7,6 +7,7 @@ etc/apache/magic
 etc/apache/magic.default
 etc/apache/mime.types
 etc/apache/mime.types.default
+etc/php3.ini-dist
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -40,7 +41,6 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
-lib/php3.ini-dist
 libexec/apache/libproxy.so
 libexec/apache/mod_access.so
 libexec/apache/mod_actions.so
