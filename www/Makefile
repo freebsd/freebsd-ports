@@ -94,7 +94,6 @@
     SUBDIR += emp
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
-    SUBDIR += erwin
     SUBDIR += erwn
     SUBDIR += evg
     SUBDIR += fcgi
