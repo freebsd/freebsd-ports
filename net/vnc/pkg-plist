@@ -2,6 +2,7 @@ bin/Xvnc
 bin/vncviewer
 bin/vncpasswd
 bin/vncserver
+bin/vncconnect
 share/vnc/classes/DesCipher.class
 share/vnc/classes/animatedMemoryImageSource.class
 share/vnc/classes/authenticationPanel.class
