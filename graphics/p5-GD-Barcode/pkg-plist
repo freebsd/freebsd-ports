@@ -1,17 +1,17 @@
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/COOP2of5.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/Code39.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/EAN13.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/EAN8.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/IATA2of5.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/ITF.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/Industrial2of5.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/Matrix2of5.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/NW7.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/UPCA.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/UPCE.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Barcode/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Barcode
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD 2>/dev/null || true
+%%SITE_PERL%%/GD/Barcode.pm
+%%SITE_PERL%%/GD/Barcode/COOP2of5.pm
+%%SITE_PERL%%/GD/Barcode/Code39.pm
+%%SITE_PERL%%/GD/Barcode/EAN13.pm
+%%SITE_PERL%%/GD/Barcode/EAN8.pm
+%%SITE_PERL%%/GD/Barcode/IATA2of5.pm
+%%SITE_PERL%%/GD/Barcode/ITF.pm
+%%SITE_PERL%%/GD/Barcode/Industrial2of5.pm
+%%SITE_PERL%%/GD/Barcode/Matrix2of5.pm
+%%SITE_PERL%%/GD/Barcode/NW7.pm
+%%SITE_PERL%%/GD/Barcode/UPCA.pm
+%%SITE_PERL%%/GD/Barcode/UPCE.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Barcode/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Barcode
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD 2>/dev/null || true
+@dirrm %%SITE_PERL%%/GD/Barcode
+@unexec rmdir %D/%%SITE_PERL%%/GD 2>/dev/null || true
