@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- src/mozilla/TOCProtocolHandler.cpp	2001/10/16 07:21:34	1.1
-+++ src/mozilla/TOCProtocolHandler.cpp	2001/10/16 07:21:49
+--- src/mozilla/TOCProtocolHandler.cpp.orig	Sat Oct 13 14:52:00 2001
++++ src/mozilla/TOCProtocolHandler.cpp	Mon Oct 22 14:36:19 2001
 @@ -21,13 +21,7 @@
  #include "outputbuffer.h"
  
@@ -12,8 +12,9 @@ $FreeBSD$
 -#elif (GCC_VERSION < VERSION2(3,0)) && (GCC_VERSION > VERSION2(2,90))
 -#include <g++-2/string>
 -#else
- #include <string>
+-#include <string>
 -#endif
++#include <g++/string>
  #include <list>
  #include <dirent.h>
  #include <sys/stat.h>
