@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,16 +22,16 @@ OPTIONS=	PGSQL "Use a PostgreSQL backend" off \
 		FPING "Use fping for pinging hosts" on
 .endif
 
-.include <bsd.port.pre.mk>
-
 .ifdef(ZABBIX_AGENT_ONLY)
 PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 PKGMESSAGE=	nonexistent
 .else # ZABBIX_AGENT_ONLY
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms
+USE_PHP=	gd snmp sockets
 .endif # ZABBIX_AGENT_ONLY
+
+.include <bsd.port.pre.mk>
 
 .ifndef(WITHOUT_FPING)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
