@@ -4358,6 +4358,7 @@ keynote		ports/security/keynote
 keyprint	ports/security/keyprint
 kf		ports/net/kf
 kfile-plugins	ports/misc/kfile-plugins
+kfile_torrent	ports/misc/kfile_torrent
 kfreerings	ports/games/kfreerings
 kftpgrabber	ports/ftp/kftpgrabber
 kgeography	ports/games/kgeography
