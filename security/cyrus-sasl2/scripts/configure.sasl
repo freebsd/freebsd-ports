@@ -56,7 +56,7 @@ else
 	else
 		SET_MYSQL="OFF"
 	fi
-	if [ "${WITH_LDAP}" -o -f ${PREFIX}/lib/libldap.so.2 -a -f ${PREFIX}/lib/liblber.so.2 \
+	if [ "${WITH_LDAP21}" -o -f ${PREFIX}/lib/libldap.so.2 -a -f ${PREFIX}/lib/liblber.so.2 \
 		-a -f ${PREFIX}/bin/ldapwhoami ] ; then
 		SET_LDAP21="ON"
 		SET_LDAP="OFF"
