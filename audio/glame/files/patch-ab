@@ -1,0 +1,7 @@
+--- config.h.in	2000/09/26 17:02:50	1.1
++++ config.h.in	2000/09/26 17:03:16
+@@ -127,3 +127,4 @@
+ /* Version number of package */
+ #undef VERSION
+ 
++#define ulong unsigned long

@@ -47,6 +47,7 @@
     SUBDIR += gdcd
     SUBDIR += gkrellmms
     SUBDIR += gkrellmvolume
+    SUBDIR += glame
     SUBDIR += gmixer
     SUBDIR += gnapster
     SUBDIR += gnomeaudio

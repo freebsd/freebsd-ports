@@ -1,0 +1,52 @@
+bin/cglame
+bin/glame
+bin/gmkswap
+@unexec install-info --delete %D/info/glame.info %D/info/dir
+info/glame.info
+info/glame.info-1
+info/glame.info-2
+info/glame.info-3
+@exec install-info --section="Audio Processing" --entry="* glame: (glame).           audio processing tool for GNOME" %D/info/glame.info %D/info/dir
+lib/glame/debug.a
+lib/glame/debug.so
+lib/glame/debug.so.0
+lib/glame/echo.a
+lib/glame/echo.so
+lib/glame/echo.so.0
+lib/glame/garrison.a
+lib/glame/garrison.so
+lib/glame/garrison.so.0
+lib/glame/iir.a
+lib/glame/iir.so
+lib/glame/iir.so.0
+lib/glame/maggy.a
+lib/glame/maggy.so
+lib/glame/maggy.so.0
+lib/glame/noisegate.a
+lib/glame/noisegate.so
+lib/glame/noisegate.so.0
+lib/glame/nold.a
+lib/glame/nold.so
+lib/glame/nold.so.0
+lib/glame/pan.a
+lib/glame/pan.so
+lib/glame/pan.so.0
+lib/glame/pipe.a
+lib/glame/pipe.so
+lib/glame/pipe.so.0
+lib/glame/tutorial.a
+lib/glame/tutorial.so
+lib/glame/tutorial.so.0
+lib/libglame.a
+lib/libglame.so
+lib/libglame.so.0
+lib/libglamebuiltins.a
+lib/libglamebuiltins.so
+lib/libglamebuiltins.so.0
+share/gnome/glame/default.png
+share/gnome/glame/glame-logo.jpg
+share/gnome/glame/glame.scm
+share/gnome/glame/mix1.png
+share/gnome/glame/mix2.png
+@dirrm share/gnome/glame
+@dirrm lib/glame
