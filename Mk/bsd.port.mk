@@ -1360,22 +1360,22 @@ _PATCH_SITE_SUBDIR_DEFAULT+=	${_S:C@^(.*)/:[^/:]+$@\1@}
 # XXX simpler/faster solution but not the best space wise, suggestions please
 .for _S in ${MASTER_SITES}
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
-MASTER_SITES_TMP=
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
 .			if defined(_MASTER_SITE_SUBDIR_${_group})
+MASTER_SITES_TMP=
 .				for dir in ${_MASTER_SITE_SUBDIR_${_group}}
 MASTER_SITES_TMP+=	${_MASTER_SITES_${_group}:S^%SUBDIR%^${dir}^}
 .				endfor
 .			else
-MASTER_SITES_TMP+=	${_MASTER_SITES_${_group}:S^%SUBDIR%/^^}
+MASTER_SITES_TMP=	${_MASTER_SITES_${_group}:S^%SUBDIR%/^^}
 .			endif
 _MASTER_SITES_${_group}:=	${MASTER_SITES_TMP}
 .		endfor
 .	endif
 .endfor
-MASTER_SITES_TMP=
 .if defined(_MASTER_SITE_SUBDIR_DEFAULT)
+MASTER_SITES_TMP=
 .	for dir in ${_MASTER_SITE_SUBDIR_DEFAULT}
 MASTER_SITES_TMP+=	${_MASTER_SITES_DEFAULT:S^%SUBDIR%^${dir}^}
 .	endfor
@@ -1386,22 +1386,22 @@ _MASTER_SITES_DEFAULT:=	${MASTER_SITES_TMP}
 MASTER_SITES_TMP=
 .for _S in ${PATCH_SITES}
 _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
-PATCH_SITES_TMP=
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
 .			if defined(_PATCH_SITE_SUBDIR_${_group})
+PATCH_SITES_TMP=
 .				for dir in ${_PATCH_SITE_SUBDIR_${_group}}
 PATCH_SITES_TMP+=	${_PATCH_SITES_${_group}:S^%SUBDIR%^${dir}^}
 .				endfor
 .			else
-PATCH_SITES_TMP+=	${_PATCH_SITES_${_group}:S^%SUBDIR%/^^}
+PATCH_SITES_TMP=	${_PATCH_SITES_${_group}:S^%SUBDIR%/^^}
 .			endif
 _PATCH_SITES_${_group}:=	${PATCH_SITES_TMP}
 .		endfor
 .	endif
 .endfor
-PATCH_SITES_TMP=
 .if defined(_PATCH_SITE_SUBDIR_DEFAULT)
+PATCH_SITES_TMP=
 .	for dir in ${_PATCH_SITE_SUBDIR_DEFAULT}
 PATCH_SITES_TMP+=	${_PATCH_SITES_DEFAULT:S^%SUBDIR%^${dir}^}
 .	endfor
