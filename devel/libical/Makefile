@@ -10,7 +10,8 @@ PORTVERSION=	0.24
 PORTREVISION=	2
 DISTFILES=	${DISTNAME}.RC4${EXTRACT_SUFX}
 CATEGORIES=	devel
-MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/freeassociation/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	freeassociation
 
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
