@@ -1,15 +1,9 @@
 bin/gsk-config
+bin/gsk-generate-marshals
 bin/gsk-make-iface-macros
 bin/gsk-make-memchunk
 bin/gsk-skeleton
 bin/gsk-skeleton-data-scan
-include/gsk/lisp/gsklispinput.h
-include/gsk/lisp/gsklispmarshals.h
-include/gsk/lisp/gsklispnamespace.h
-include/gsk/lisp/gsklispnamespaceglobal.h
-include/gsk/lisp/gsklispnode.h
-include/gsk/lisp/gsklispoutput.h
-include/gsk/lisp/gsklispparser.h
 include/gsk/gskactor.h
 include/gsk/gskactorbuffered.h
 include/gsk/gskactorcli.h
@@ -29,6 +23,7 @@ include/gsk/gskdaemonsettings.h
 include/gsk/gskdatagramsocket.h
 include/gsk/gskdebug.h
 include/gsk/gskdebugoptions.h
+include/gsk/gskgenericmarshal.h
 include/gsk/gskghelpers.h
 include/gsk/gskgtk.h
 include/gsk/gskinterface.h
@@ -61,6 +56,13 @@ include/gsk/gtk/gtktypebuiltins.h
 include/gsk/gtk/gtktypeutils.h
 include/gsk/gtk/makeenums.h
 include/gsk/gtkreflection.h
+include/gsk/lisp/gsklispinput.h
+include/gsk/lisp/gsklispmarshals.h
+include/gsk/lisp/gsklispnamespace.h
+include/gsk/lisp/gsklispnamespaceglobal.h
+include/gsk/lisp/gsklispnode.h
+include/gsk/lisp/gsklispoutput.h
+include/gsk/lisp/gsklispparser.h
 include/gsk/protocols/gskbase64.h
 include/gsk/protocols/gskdate.h
 include/gsk/protocols/gskdns.h
@@ -86,35 +88,29 @@ include/gsk/xml/gskxmlprocessor.h
 include/gsk/xml/gskxmlserialize.h
 include/gsk/xml/gskxmlservlet.h
 include/gsk/xml/gskxmltoken.h
-@dirrm include/gsk/gtk
-@dirrm include/gsk/lisp
-@dirrm include/gsk/protocols
-@dirrm include/gsk/xml
-@dirrm include/gsk
 lib/libgsk-lisp.a
-lib/libgsk-lisp.la
 lib/libgsk-lisp.so
 lib/libgsk-lisp.so.0
 lib/libgsk-minigtk.a
-lib/libgsk-minigtk.la
 lib/libgsk-minigtk.so
 lib/libgsk-minigtk.so.0
 lib/libgsk-protocol.a
-lib/libgsk-protocol.la
 lib/libgsk-protocol.so
 lib/libgsk-protocol.so.0
 lib/libgsk-server.a
-lib/libgsk-server.la
 lib/libgsk-server.so
 lib/libgsk-server.so.0
 lib/libgsk-xml.a
-lib/libgsk-xml.la
 lib/libgsk-xml.so
 lib/libgsk-xml.so.0
 lib/libgsk.a
-lib/libgsk.la
 lib/libgsk.so
 lib/libgsk.so.0
 share/aclocal/gsk.m4
 share/gsk-skeleton/gsk.skeleton-data
 @dirrm share/gsk-skeleton
+@dirrm include/gsk/xml
+@dirrm include/gsk/protocols
+@dirrm include/gsk/lisp
+@dirrm include/gsk/gtk
+@dirrm include/gsk
