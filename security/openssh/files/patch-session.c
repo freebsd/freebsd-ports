@@ -1,5 +1,5 @@
---- session.c.orig	Fri Jun 21 22:54:44 2002
-+++ session.c	Fri Jun 21 22:56:28 2002
+--- session.c.orig	Wed Jun 26 14:23:47 2002
++++ session.c	Wed Jun 26 14:24:03 2002
 @@ -58,6 +58,13 @@
  #include "session.h"
  #include "monitor_wrap.h"
@@ -239,7 +239,18 @@
  	return 0;
  }
  
-@@ -820,6 +973,10 @@
+@@ -812,6 +965,10 @@
+ 	char buf[256];
+ 	u_int i, envsize;
+ 	char **env;
++#ifdef HAVE_LOGIN_CAP
++	extern char **environ;
++	char **senv;
++#endif
+ 	struct passwd *pw = s->pw;
+ 
+ 	/* Initialize the environment. */
+@@ -820,16 +977,33 @@
  	env[0] = NULL;
  
  	if (!options.use_login) {
@@ -250,9 +261,17 @@
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
-@@ -827,9 +984,15 @@
+ 		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
  #ifdef HAVE_LOGIN_CAP
- 		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
+-		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
++		senv = environ;
++		environ = xmalloc(sizeof(char *));
++		*environ = NULL;
++		(void) setusercontext(lc, pw, pw->pw_uid,
++		    LOGIN_SETENV|LOGIN_SETPATH);
++		copy_environment(environ, &env, &envsize);
++		xfree(environ);
++		environ = senv;
  		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
 -#else
 +		var= login_getcapstr(lc, "lang", NULL, NULL);
@@ -268,7 +287,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -882,6 +1045,10 @@
+@@ -882,6 +1056,10 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -279,7 +298,16 @@
  	if (auth_sock_name != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_sock_name);
-@@ -1038,6 +1205,36 @@
+@@ -998,7 +1176,7 @@
+ 	if (getuid() == 0 || geteuid() == 0) {
+ #ifdef HAVE_LOGIN_CAP
+ 		if (setusercontext(lc, pw, pw->pw_uid,
+-		    (LOGIN_SETALL & ~LOGIN_SETPATH)) < 0) {
++		    (LOGIN_SETALL & ~(LOGIN_SETENV|LOGIN_SETPATH))) < 0) {
+ 			perror("unable to set user context");
+ 			exit(1);
+ 		}
+@@ -1038,6 +1216,36 @@
  	exit(1);
  }
  
@@ -316,7 +344,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1116,7 +1313,7 @@
+@@ -1116,7 +1324,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -325,7 +353,7 @@
  		close(i);
  
  	/*
-@@ -1146,6 +1343,31 @@
+@@ -1146,6 +1354,31 @@
  			exit(1);
  #endif
  	}
