@@ -59,16 +59,16 @@ post-install:
 	@${MV} ${PREFIX}/lib/oz/mozart/doc ${PREFIX}/lib/oz
 	@${RM} -rf ${PREFIX}/lib/oz/mozart
 .endif
-	@cd ${PREFIX} ; find lib/oz -type f -o -type l | sort \
+	@cd ${PREFIX} ; ${FIND} lib/oz -type f -o -type l | sort \
 		> ${WRKDIR}/PLIST.lib-oz
-	@cd ${PREFIX} ; find lib/oz -type d | sort -r \
+	@cd ${PREFIX} ; ${FIND} lib/oz -type d | sort -r \
 	    	| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-oz
-	@${ECHO} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	@${ECHO} "/Insert PLIST.lib-oz"		>> ${WRKDIR}/ex.script
-	@${ECHO} "d"				>> ${WRKDIR}/ex.script
-	@${ECHO} "r ${WRKDIR}/PLIST.lib-oz"	>> ${WRKDIR}/ex.script
-	@${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "/Insert PLIST.lib-oz"	>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "d"			>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "r ${WRKDIR}/PLIST.lib-oz"	>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-oz
 	@cd ${WRKDIR} ; ex < ex.script
 	@${CAT} ${PKGMESSAGE}

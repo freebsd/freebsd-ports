@@ -34,8 +34,8 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 # Make sure we can set the symbolic link SmallEiffel
 # to the actual release directory.
 do-install:
-	@(if test -e ${ALIASDIR} ; then \
-	    if ! test -L ${ALIASDIR} ; then \
+	@(if ${TEST} -e ${ALIASDIR} ; then \
+	    if ! ${TEST} -L ${ALIASDIR} ; then \
 		${ECHO} "Make sure ${ALIASDIR} is a symbolic link"; \
 		${ECHO} "or does not exist. This directory will point to "; \
 		${ECHO} "the actual SmallEiffel installation directory."; \
@@ -44,16 +44,16 @@ do-install:
 	    ${RM} ${ALIASDIR}; \
 	fi; \
 	${LN} -fs ${SEDIR} ${ALIASDIR})
-	@(if test -e ${SEDIR} ; then ${RM} -rf ${SEDIR}; fi; \
+	@(if ${TEST} -e ${SEDIR} ; then ${RM} -rf ${SEDIR}; fi; \
 	    ${MKDIR} ${SEDIR}; \
 	    ${CP} -pR ${WRKSRC}/* ${SEDIR}; \
-	    ${ECHO} ./ > ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO} ${SEDIR}/lib_std/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO} ${SEDIR}/lib_iterator/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO} ${SEDIR}/lib_random/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO} ${SEDIR}/lib_number/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO} ${SEDIR}/lib_show/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO} ${SEDIR}/lib_se/ >> ${SEDIR}/sys/loadpath.UNIX)
+	    ${ECHO_CMD} ./ > ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO_CMD} ${SEDIR}/lib_std/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO_CMD} ${SEDIR}/lib_iterator/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO_CMD} ${SEDIR}/lib_random/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO_CMD} ${SEDIR}/lib_number/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO_CMD} ${SEDIR}/lib_show/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO_CMD} ${SEDIR}/lib_se/ >> ${SEDIR}/sys/loadpath.UNIX)
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-message \
 		> ${PKGMESSAGE}
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-install \

@@ -33,8 +33,8 @@ post-extract:
 
 do-build:
 	( \
-	${ECHO} '#!/bin/sh'; \
-	${ECHO} 'exec ${JAVA} -jar ${PREFIX}/share/java/classes/jruby.jar "$$@"'; \
+	${ECHO_CMD} '#!/bin/sh'; \
+	${ECHO_CMD} 'exec ${JAVA} -jar ${PREFIX}/share/java/classes/jruby.jar "$$@"'; \
 	) > ${WRKSRC}/jruby
 
 do-install:
@@ -50,8 +50,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}; find ${FILES} -type f | sort | ${SED} 's,^,share/java/${PORTNAME}/,' >> ${TMPPLIST}
 	cd ${WRKSRC}; find ${FILES} -type d | sort -r | ${SED} 's,^,@dirrm share/java/${PORTNAME}/,' >> ${TMPPLIST}
-	${ECHO} '@dirrm share/java/${PORTNAME}' >> ${TMPPLIST}
+	${ECHO_CMD} '@dirrm share/java/${PORTNAME}' >> ${TMPPLIST}
 .endif
-	${ECHO} '@unexec ${RMDIR} %D/share/java 2> /dev/null || true' >> ${TMPPLIST}
+	${ECHO_CMD} '@unexec ${RMDIR} %D/share/java 2> /dev/null || true' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -66,8 +66,8 @@ pre-fetch:
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
-	@touch ${SRCDIR}/gcc/configure
-	@touch ${SRCDIR}/gcc/cstamp-h.in
+	@${TOUCH} ${SRCDIR}/gcc/configure
+	@${TOUCH} ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 
@@ -94,7 +94,7 @@ post-install:
 	done )
 .for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}30
-	-( test -e ${PREFIX}/man/man1/${file}.1 \
+	-( ${TEST} -e ${PREFIX}/man/man1/${file}.1 \
 		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
 		${PREFIX}/man/man1/${file}30.1 )
 .endfor
@@ -115,17 +115,17 @@ post-install:
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
-	    find ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
+	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.gcc-lib
 	cd ${PREFIX} ;\
-	    find ${TARGLIB:S/^${PREFIX}\///} -type d \
+	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
-	(${ECHO} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
-	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
-	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
-	${ECHO} "d"				>> ${WRKDIR}/ex.script
-	${ECHO} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
-	${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
+	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
+	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
 

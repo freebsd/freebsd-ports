@@ -81,8 +81,8 @@ SCRIPT_ENV+=    PATH=${PATH}:${JAVABINDIR}
 # If X11 is not used, skip gs and etk applications.
 pre-build:
 .if defined(WITHOUT_X11)
-	${ECHO} "WITHOUT_X11 defined" > ${WRKSRC}/lib/gs/SKIP
-	${ECHO} "WITHOUT_X11 defined" > ${WRKSRC}/lib/etk/SKIP
+	${ECHO_CMD} "WITHOUT_X11 defined" > ${WRKSRC}/lib/gs/SKIP
+	${ECHO_CMD} "WITHOUT_X11 defined" > ${WRKSRC}/lib/etk/SKIP
 .endif
 
 # Check if javac is really in ${JAVABINDIR}.
@@ -139,20 +139,20 @@ post-install:
 .endif
 	sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
-	@cd ${PREFIX} ; find lib/erlang/* -type f -o -type l \
+	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type f -o -type l \
 		| ${GREP} -v "^lib/erlang/man" \
 		| sort \
 		> ${WRKDIR}/PLIST.lib-erlang
-	@cd ${PREFIX} ; find lib/erlang/* -type d | sort -r \
+	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d | sort -r \
 		| ${GREP} -v "^lib/erlang/man" \
 	    	| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-erlang
 
-	@${ECHO} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	@${ECHO} "/Insert PLIST.lib-erlang"	>> ${WRKDIR}/ex.script
-	@${ECHO} "d"				>> ${WRKDIR}/ex.script
-	@${ECHO} "r ${WRKDIR}/PLIST.lib-erlang"	>> ${WRKDIR}/ex.script
-	@${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "/Insert PLIST.lib-erlang"		>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "r ${WRKDIR}/PLIST.lib-erlang"	>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-erlang
 	@cd ${WRKDIR} ; ex < ex.script
 

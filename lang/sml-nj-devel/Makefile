@@ -111,9 +111,9 @@ post-extract:
 do-configure:
 	test -f "${WRKDIR}/config/targets.orig" || \
 	${MV} "${WRKDIR}/config/targets" "${WRKDIR}/config/targets.orig"
-	${ECHO} -n > ${WRKDIR}/.tmp.sed
+	${ECHO_CMD} -n > ${WRKDIR}/.tmp.sed
 .for t in ${MLTARGETS}
-	${ECHO} '/^#TARGETS="\$$TARGETS[ 	]+${t}"$$/s/#//' >> ${WRKDIR}/.tmp.sed
+	${ECHO_CMD} '/^#TARGETS="\$$TARGETS[ 	]+${t}"$$/s/#//' >> ${WRKDIR}/.tmp.sed
 .endfor
 	${SED} -E -f ${WRKDIR}/.tmp.sed "${WRKDIR}/config/targets.orig" \
 	> "${WRKDIR}/config/targets"
@@ -139,8 +139,8 @@ do-build:
 .endif
 .if defined(WITH_RECOMPILE) || defined(WITH_FLINT)
 	cd ${WRKDIR}/src/system && ( \
-	${ECHO} 'CM.autoload "$$smlnj/cmb.cm";' ; \
-	${ECHO} 'CMB.make ();' ) | \
+	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
+	${ECHO_CMD} 'CMB.make ();' ) | \
 	../../bin/sml && \
 	./makeml && \
 	./installml &&

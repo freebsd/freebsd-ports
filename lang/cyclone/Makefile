@@ -39,7 +39,7 @@ post-patch:
 .endif
 
 do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${ECHO} y | ./configure ${CONFIGURE_ARGS}
+	@cd ${CONFIGURE_WRKSRC} && ${ECHO_CMD} y | ./configure ${CONFIGURE_ARGS}
 
 post-build:
 .for target in cyclone_src update build test
