@@ -17,6 +17,7 @@ COMMENT=	A file transfer tool using ethernet's multicast
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 RELEASE_DATE=	20040531
@@ -42,7 +43,6 @@ do-configure:
 		-e 's|^(LDFLAGS[[:space:]]*=.+)$$|\1 ${LDFLAGS}|' \
 		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${BUILD_WRKSRC}/${MAKEFILE}
-
 
 do-install:
 .ifndef(NOPORTDOCS)
