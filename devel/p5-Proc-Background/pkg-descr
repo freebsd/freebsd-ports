@@ -1,0 +1,10 @@
+This is the Proc::Generic package.  It provides a generic interface to
+running background processes.  Through this interface, users can run
+background processes on different operating systems without concerning
+themselves about the specifics of doing this.  Users of this package
+create new Proc::Generic objects that provide an object oriented
+interface to process management.
+
+Author: Blair Zajac <blair@akamai.com>
+
+--will

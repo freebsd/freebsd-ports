@@ -1,0 +1,7 @@
+bin/timed-process
+lib/perl5/site_perl/%%PERL_VER%%/Proc/Background.pm
+lib/perl5/site_perl/%%PERL_VER%%/Proc/Background/Unix.pm
+lib/perl5/site_perl/%%PERL_VER%%/Proc/Background/Win32.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Background/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Background
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Proc/Background
