@@ -93,7 +93,6 @@
     SUBDIR += doc++
     SUBDIR += dotconf
     SUBDIR += doxygen
-    SUBDIR += dryad
     SUBDIR += ecgi
     SUBDIR += elftoaout
     SUBDIR += elib-emacs
@@ -135,7 +134,6 @@
     SUBDIR += global
     SUBDIR += gmake
     SUBDIR += gnomecrash
-    SUBDIR += gnomedebug
     SUBDIR += gnomevfs
     SUBDIR += gnustep
     SUBDIR += gpasm

@@ -1,7 +1,0 @@
---- src/event-service/Makefile.in.orig	Sun Jul  2 16:45:01 2000
-+++ src/event-service/Makefile.in	Wed Jul  5 14:19:34 2000
-@@ -122,3 +122,3 @@
- 
--INCLUDES =  	-DGNOMELOCALEDIR=\""$(datatdir)/locals"\" 	-I$(top_srcdir)/src/lib -I$(includedir) $(GNOME_INCLUDEDIR) 	$(OAF_CFLAGS) $(BONOBO_CFLAGS)
-+INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(top_srcdir)/src/lib -I$(includedir) $(GNOME_INCLUDEDIR) 	$(OAF_CFLAGS) $(BONOBO_CFLAGS)
- 
