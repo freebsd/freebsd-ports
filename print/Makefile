@@ -55,6 +55,7 @@
     SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
     SUBDIR += envelope
+    SUBDIR += font2svg
     SUBDIR += freetype
     SUBDIR += freetype2
     SUBDIR += ft2demos
