@@ -1,0 +1,21 @@
+--- util/lgf-tools/Makefile.orig	Tue Dec  9 18:20:07 2003
++++ util/lgf-tools/Makefile	Tue Dec  9 18:27:39 2003
+@@ -1,6 +1,6 @@
+ ## Makefile for lgf-tools
+ 
+-BINDIR=	../../bin
++BINDIR=	${PREFIX}/bin
+ 
+ SCRIPTS = logar lgfextract lgftodef lgftontk makeinstcopy
+ 
+@@ -9,7 +9,9 @@
+ 
+ install:
+ 	chmod +x $(SCRIPTS)
+-	cp -a $(SCRIPTS) $(BINDIR)
++	for i in $(SCRIPTS) ; do \
++		${BSD_INSTALL_SCRIPT} $$i $(BINDIR) ; \
++	done
+ 
+ clean:
+ 	rm -f *.bak *.old

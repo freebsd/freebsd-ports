@@ -1,7 +1,7 @@
---- wol/Makefile.orig	Sat May 18 12:02:28 2002
-+++ wol/Makefile	Sat May 18 13:01:59 2002
-@@ -39,7 +39,7 @@
- ## or some other directory, depending on your installation.
+--- wol/Makefile.orig	Wed Nov  5 20:24:18 2003
++++ wol/Makefile	Tue Dec  9 17:49:36 2003
+@@ -40,7 +40,7 @@
+ ## first one for OS X.
  ##
  
 -XINCLUDEDIR = .
@@ -9,8 +9,8 @@
  
  ##
  ## If X isn't in the library path (the case for many MachTen and Linux 
-@@ -54,7 +54,7 @@
- ## depending on your installation. 
+@@ -55,7 +55,7 @@
+ ## depending on your installation. Use the second one for OS X.
  ##
  
 -LIBX11 = -lX11
@@ -18,7 +18,7 @@
  
  
  
-@@ -66,7 +66,7 @@
+@@ -67,7 +67,7 @@
  ##
  ## on some systems, -ldl must be added to the following line
  
@@ -42,7 +42,7 @@
  
  
  ##
-@@ -157,7 +157,7 @@
+@@ -158,7 +158,7 @@
  
  CHIPMUNKFLAGS =
  
@@ -51,12 +51,14 @@
  
  LDFLAGS= $(LIBP2C)  $(LIBX11) $(OTHERLIBS)
  
-@@ -200,7 +200,7 @@
+@@ -201,8 +201,8 @@
    
  
  install: wol 
 -	cp wol $(BINDIR)
+-	cp fixcify $(BINDIR)
 +	${BSD_INSTALL_PROGRAM} wol $(BINDIR)
++	${BSD_INSTALL_SCRIPT} fixcify $(BINDIR)
  
  clean:
  	-rm -f *.o wol
