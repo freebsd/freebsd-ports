@@ -1,0 +1,10 @@
+--- TIMING/EIG/ztimee.f.orig	Wed Dec 22 13:50:25 1999
++++ TIMING/EIG/ztimee.f	Wed Dec 22 13:51:03 1999
+@@ -327,6 +327,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = DSECND( )
+       FATAL = .FALSE.
+       NEP = .FALSE.
