@@ -8,7 +8,7 @@
 PORTNAME=	korelib
 PORTVERSION=	0.0.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.thekompany.com/Korelib/releases/
+MASTER_SITES=	ftp://ftp.rygannon.com/pub/Korelib/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 
