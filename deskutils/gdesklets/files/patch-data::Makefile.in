@@ -1,6 +1,6 @@
---- data/Makefile.in.orig	Wed Sep 17 18:19:06 2003
-+++ data/Makefile.in	Wed Sep 17 18:20:02 2003
-@@ -190,7 +190,7 @@
+--- data/Makefile.in.orig	Fri Oct 17 22:44:59 2003
++++ data/Makefile.in	Fri Oct 17 22:45:03 2003
+@@ -195,7 +195,7 @@
  @USERINST_TRUE@mimedir = ~/.gnome/mime-info
  mime_in_files = gdesklets.keys.in
  mime_DATA = $(mime_in_files:.keys.in=.keys) gdesklets.mime

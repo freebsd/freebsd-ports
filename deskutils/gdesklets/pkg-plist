@@ -1,12 +1,20 @@
 bin/gdesklets
+bin/gdesklets-display-thumbnailer
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gdesklets-display/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gdesklets-display/%gconf.xml
+etc/gconf/schemas/gdesklets-display-thumbnail.schemas
 libdata/pkgconfig/gdesklets-core.pc
 share/gnome/application-registry/gdesklets.applications
 share/gnome/applications/gdesklets.desktop
 share/gnome/gdesklets/Sensors/External/__init__.py
 share/gnome/gdesklets/Sensors/FontSelector/__init__.py
 share/gnome/gdesklets/config/ConfigManager.py
+share/gnome/gdesklets/config/DummyBackend.py
 share/gnome/gdesklets/config/GConfBackend.py
 share/gnome/gdesklets/config/__init__.py
+share/gnome/gdesklets/config/settings.py
 share/gnome/gdesklets/data/gdesklets.png
 share/gnome/gdesklets/desktop/BGWatcher.py
 share/gnome/gdesklets/desktop/GlassWindow.py
@@ -45,9 +53,11 @@ share/gnome/gdesklets/libdesklets/__init__.py
 share/gnome/gdesklets/libdesklets/polling.py
 share/gnome/gdesklets/locale/ar/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/de/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/el/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/es/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/fr/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/he/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/ko/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/nl/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/pl/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/pt/LC_MESSAGES/gdesklets.mo
@@ -73,11 +83,13 @@ share/gnome/gdesklets/utils/TargetSettings.py
 share/gnome/gdesklets/utils/TypeConverter.py
 share/gnome/gdesklets/utils/__init__.py
 share/gnome/gdesklets/utils/_ewmhmodule.so
+share/gnome/gdesklets/utils/actionparser.py
 share/gnome/gdesklets/utils/datatypes.py
 share/gnome/gdesklets/utils/dialog.py
 share/gnome/gdesklets/utils/i18n.py
 share/gnome/gdesklets/utils/pwstore.py
 share/gnome/gdesklets/utils/singleton.py
+share/gnome/gdesklets/utils/vfs.py
 share/gnome/mime-info/gdesklets.keys
 share/gnome/mime-info/gdesklets.mime
 share/gnome/pixmaps/gdesklets.png
@@ -101,12 +113,16 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/locale/pl
 @dirrm share/gnome/gdesklets/locale/nl/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/nl
+@dirrm share/gnome/gdesklets/locale/ko/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/ko
 @dirrm share/gnome/gdesklets/locale/he/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/he
 @dirrm share/gnome/gdesklets/locale/fr/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/fr
 @dirrm share/gnome/gdesklets/locale/es/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/es
+@dirrm share/gnome/gdesklets/locale/el/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/el
 @dirrm share/gnome/gdesklets/locale/de/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/de
 @dirrm share/gnome/gdesklets/locale/ar/LC_MESSAGES
@@ -123,3 +139,7 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/Sensors
 @dirrm share/gnome/gdesklets/Displays
 @dirrm share/gnome/gdesklets
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gdesklets-display
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gdesklets-display
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers

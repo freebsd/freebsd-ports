@@ -1,8 +1,8 @@
 # Many thanks to Alexander Leidinger <netchild@FreeBSD.org> for
 # help and create those patches.
 
---- libdesklets/Network.py.orig	Mon Sep 22 12:51:42 2003
-+++ libdesklets/Network.py	Mon Sep 22 13:04:06 2003
+--- libdesklets/Network.py.orig	Fri Oct 17 23:02:41 2003
++++ libdesklets/Network.py	Fri Oct 17 23:24:47 2003
 @@ -1,7 +1,9 @@
  import polling
  
@@ -13,10 +13,10 @@
  
  class Network:
  
-@@ -25,22 +27,42 @@
+@@ -26,21 +28,42 @@
  
      def __poll_devices(self):
-         
+ 
 -        fd = open("/proc/net/dev", "r")
 +        platform = lib.sys.get_os()
 +
@@ -28,7 +28,7 @@
 +            return []
          data = fd.readlines()
          fd.close()
-         
+ 
          devices = []
 -        for lines in data[2:]:
 -            l = lines.strip()
@@ -37,10 +37,9 @@
  
 -            if (fields[0] == "lo"):
 -                continue
--            else: # (fields[0].startswith("eth")):
+-            else:
 -                device = fields[0]
 -                devices.append(device)
--        #end for
 +        if ("FreeBSD" == platform):
 +            for lines in data:
 +                fields = lines.strip().strip(":")
@@ -67,7 +66,7 @@
  
          return devices
  
-@@ -48,13 +70,15 @@
+@@ -48,14 +71,15 @@
  
      def __poll_ipaddr(self, dev):
  
@@ -81,13 +80,13 @@
              l = l.strip()
              fields = l.split()
  
--            if (fields[0] == "inet"): return fields[1].split(":")[1]
-+            if (fields[0] == "inet"):
+             if (fields[0] == "inet"):
+-                return fields[1].split(":")[1]
 +                return fields[1]
-         #end for
  
-         #fd = open("/proc/net/rt_cache", "r")
-@@ -78,6 +102,8 @@
+         return ("xxx.xxx.xxx.xxx")
+ 
+@@ -63,6 +87,8 @@
  
      def __poll_in_out(self, dev):
  
@@ -96,7 +95,7 @@
          t = time.time()
          interval = t - self.__time
          self.__time = t
-@@ -88,24 +114,40 @@
+@@ -73,24 +99,40 @@
          speed_in = 0
          speed_out = 0
  
