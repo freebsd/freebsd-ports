@@ -109,6 +109,7 @@
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
+    SUBDIR += lwp
     SUBDIR += m4
     SUBDIR += m68kbinutils
     SUBDIR += m68kgcc
@@ -198,6 +199,8 @@
     SUBDIR += re2c
     SUBDIR += rinfo
     SUBDIR += robodoc
+    SUBDIR += rpc2
+    SUBDIR += rvm
     SUBDIR += scogdb
     SUBDIR += sdcc
     SUBDIR += sdl
