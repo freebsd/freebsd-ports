@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	2.3.11
+PORTVERSION=	2.4.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/network/file-transfer
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	carl_johan@gmx.net
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
@@ -31,7 +31,7 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
 # remove some empty directories
-	${RMDIR} ${PREFIX}/lib/lftp/2.3.11
+	${RMDIR} ${PREFIX}/lib/lftp/2.4.0
 	${RMDIR} ${PREFIX}/lib/lftp
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/lftp
