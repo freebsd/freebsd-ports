@@ -23,9 +23,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Only supported on FreeBSD/i386
-.endif
+ONLY_FOR_ARCHS=	"i386"
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/jad ${PREFIX}/bin/
