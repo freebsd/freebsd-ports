@@ -6,7 +6,9 @@
 #
 
 PORTNAME=	Prima
-PORTVERSION=	1.07
+PORTVERSION=	1.14
+PORTREVISION=	1
+PORTREPOCH=	1
 CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	http://www.prima.eu.org/download/
 PKGNAMEPREFIX=	p5-
@@ -16,12 +18,15 @@ COMMENT=	An extensible Perl toolkit for multi-platform GUI development
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALL_MAN3="${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3" \
 			INSTALL_MAN1="${PREFIX}/man/man1"
 CONFIGURE_SCRIPT=       Makefile.PL
+USE_XPM=		1
+USE_XLIB=		1
 USE_PERL5=		yes
 
 post-configure:
@@ -31,6 +36,17 @@ test: build
 	cd ${WRKSRC} && make test
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Prima/Prima.so
+	${STRIP_CMD} ${SITE_PERL}/${PERL_ARCH}/auto/Prima/Prima.so
 
 .include <bsd.port.mk>
+
+.if defined (WITHOUT_XFT)
+CONFIGURE_ARGS+=	WITH_XFT=0
+.else
+LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/Xft
+.if defined (WITHOUT_ICONV)
+CONFIGURE_ARGS+=	WITH_ICONV=0
+.else
+LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
+.endif
+.endif
