@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	libao
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/rc2/unix/
+MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
+		http://www.vorbis.com/files/rc2/unix/ \
+		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
 
 WANT_ESOUND=	yes
 
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)

@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	libvorbis
-PORTVERSION=	1.0.r2
+PORTVERSION=	1.0.r3
 PORTEPOCH=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/rc2/unix/
+MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
+		http://www.vorbis.com/files/rc2/unix/ \
+		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	naddy@FreeBSD.org
 
-LIB_DEPENDS=	ogg.2:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.3:${PORTSDIR}/audio/libogg
 
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""

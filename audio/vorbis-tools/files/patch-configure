@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Jan  2 01:35:43 2002
++++ configure	Wed Jan  2 01:35:59 2002
+@@ -5342,7 +5342,7 @@
+                 ;;
+         *)
+                 DEBUG="-g"
+-                CFLAGS="-O"
++                CFLAGS=""
+                 PROFILE="-g -p"
+                 ;;
+         esac
+@@ -5365,8 +5365,8 @@
+                 ;;
+         *)
+                 DEBUG="-g -Wall -fsigned-char"
+-                CFLAGS="-O20 -fsigned-char"
+-                PROFILE="-O20 -g -pg -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char"
+                 ;;
+         esac
+ fi
