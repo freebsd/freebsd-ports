@@ -34,10 +34,4 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
-post-install:
-	@if [ -L ${PREFIX}/include/bonobo ]; then \
-		${RM} -f ${PREFIX}/include/bonobo; \
-	fi
-	@${LN} -sf ${PREFIX}/include/gnome-1.0/bonobo ${PREFIX}/include/bonobo
-
 .include <bsd.port.mk>

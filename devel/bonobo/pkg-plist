@@ -19,7 +19,6 @@ bin/sample-control-container
 etc/bonoboConf.sh
 etc/bonoboxConf.sh
 etc/bonobox_printConf.sh
-include/bonobo
 include/bonobo.h
 include/efs.h
 include/efs_error.h
@@ -196,4 +195,3 @@ share/locale/zh_TW/LC_MESSAGES/bonobo.mo
 @dirrm lib/bonobo/monikers
 @dirrm lib/bonobo
 @dirrm include/gnome-1.0/bonobo
-@dirrm include/gnome-1.0
