@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	print editors
 MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/
 DIST_SUBDIR=	${PORTNAME}
