@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.9 1997/06/13 16:57:37 max Exp $
+# $Id: Makefile,v 1.11 1997/08/24 10:54:23 max Exp $
 #
 
 DISTNAME=	jp-man-1.1c
@@ -63,5 +63,6 @@ post-install:
 
 pre-clean:
 	@${RM} -f ${PATCHDIR}/patch-aa ${FILESDIR}/patch-xpg4
+	-@${RMDIR} ${PATCHDIR}
 
 .include <bsd.port.mk>
