@@ -22,7 +22,7 @@ DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Nag is a simple, multiuser task list manager
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes

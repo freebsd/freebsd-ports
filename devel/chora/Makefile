@@ -34,7 +34,7 @@ COMMENT=	The Horde CVS web-viewer
 #
 #-----------------------------------------------------------------------
 
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 .if !defined(WITHOUT_SVN)
 RUN_DEPENDS+=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion

@@ -30,7 +30,7 @@ COMMENT=	Kronolith is the Horde calendar application
 #
 #----------------------------------------------------------------------------
 
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_PHP=	yes	# modules set by Horde, but needed to get PHP_VER

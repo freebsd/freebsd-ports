@@ -71,17 +71,17 @@ USE_PHP=	imap
 . if !defined(WITHOUT_LDAP)
 USE_PHP+=	ldap
 . endif
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 .else
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/turba/minisearch.php:${PORTSDIR}/mail/turba
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/turba/minisearch.php:${PORTSDIR}/mail/turba
 .endif
 
 .if !defined(WITHOUT_INGO)
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/ingo/filters.php:${PORTSDIR}/mail/ingo
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ingo/filters.php:${PORTSDIR}/mail/ingo
 .endif
 
 .if !defined(WITHOUT_NAG)
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/nag/data.php:${PORTSDIR}/deskutils/nag
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nag/data.php:${PORTSDIR}/deskutils/nag
 .endif
 
 .if !defined(WITHOUT_SMIME)
