@@ -21,7 +21,6 @@ NO_WRKSUBDIR=	yes
 MAN1=		44bsd-more.1
 
 RELDATE=	20000521
-EXAMPDIR=	${PREFIX}/share/examples/44bsd-more
 
 post-extract:
 	-cd ${WRKSRC} && co -d${RELDATE} RCS/*,v
@@ -33,11 +32,11 @@ post-patch:
 	${CP} ${FILESDIR}/queue.h ${WRKSRC}
 
 do-install:
-	${MKDIR} ${EXAMPDIR}
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/more.1 ${PREFIX}/man/man1/44bsd-more.1
-	${INSTALL_DATA} ${WRKSRC}/default.morerc ${EXAMPDIR}
-	${INSTALL_DATA} ${WRKSRC}/less.morerc ${EXAMPDIR}
-	${INSTALL_DATA} ${WRKSRC}/most.morerc ${EXAMPDIR}
+.for f in default.morerc less.morerc most.morerc
+	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/more.help ${PREFIX}/share/misc/44bsd-more.help
 	${INSTALL_PROGRAM} ${WRKSRC}/more ${PREFIX}/bin/44bsd-more
 
