@@ -1182,7 +1182,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/arabic.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/auto-autoloads.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/auto-autoloads.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.el
-lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/custom-load.el
