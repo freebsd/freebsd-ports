@@ -49,3 +49,4 @@ www/netscape47-communicator||2002-11-17|security vulnerability
 www/netscape47-navigator||2002-11-17|security vulnerability
 japanese/mhonarc||2002-11-17|current www/mhonarc could use Japanese
 graphics/linux_mesa||2002-11-17|Port was broken and out of date
+audio/cdrdao|sysutils/cdrdao|2002-11-18|misfiled, burns data CDs too
