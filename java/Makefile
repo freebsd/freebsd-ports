@@ -72,6 +72,7 @@
     SUBDIR += jdk14-doc
     SUBDIR += jdom
     SUBDIR += jfc
+    SUBDIR += jflex
     SUBDIR += jfreechart
     SUBDIR += jikes
     SUBDIR += jlex
