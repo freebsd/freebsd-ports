@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		miau
-PORTVERSION=		0.5.2
-PORTREVISION=		1
+PORTVERSION=		0.5.3
 CATEGORIES=		irc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	miau
@@ -38,6 +37,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			LIBS="${LIBS}"
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,\$$datadir/doc/miau/examples,${EXAMPLESDIR},g' \
