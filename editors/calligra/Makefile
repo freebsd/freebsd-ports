@@ -7,11 +7,12 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2 \
 		iconv.2:${PORTSDIR}/converters/iconv
