@@ -16,6 +16,7 @@
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
     SUBDIR += dc3play
+    SUBDIR += dia
     SUBDIR += dore
     SUBDIR += electriceyes
     SUBDIR += enfle
