@@ -12,7 +12,7 @@ MASTER_SITES=	http://wfmh.org.pl/~carlos/files/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
