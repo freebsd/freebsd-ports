@@ -9,7 +9,7 @@
 -   int argc, char *argv[]) {
 +   int argc, Tcl_Obj *objv[]) {
     unsigned int bitfield;
--   char bitfieldstr[32];
+-   static char bitfieldstr[32];
     char *morph;
 @@ -43,9 +41,10 @@
     if (argc != 3) {
@@ -37,7 +37,7 @@
  int wn_bit (ClientData clientData, Tcl_Interp *interp,
 -   int argc, char *argv[]) {
 -   unsigned int bitfield;
--   char bitfieldstr[32];
+-   static char bitfieldstr[32];
 +   int argc, Tcl_Obj *objv[]) {
     int whichbit;
     if (argc != 2) {
@@ -64,5 +64,5 @@
 @@ -295,3 +290,3 @@
        (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
 -   return TCL_OK;
-+   return Tcl_PkgProvide(interp, "Wordnet", "1.6");
++   return Tcl_PkgProvide(interp, "Wordnet", "1.7");
  }
