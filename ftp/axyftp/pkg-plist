@@ -1,19 +1,19 @@
-bin/wxftp
-share/wxftp/help/artistic.txt
-share/wxftp/help/doc.gif
-share/wxftp/help/folder.gif
-share/wxftp/help/glossary.html
-share/wxftp/help/help.html
-share/wxftp/help/index.html
-share/wxftp/help/intro.html
-share/wxftp/help/lgpl.txt
-share/wxftp/help/link.gif
-share/wxftp/help/main.html
-share/wxftp/help/options.html
-share/wxftp/help/panels.html
-share/wxftp/help/problems.html
-share/wxftp/help/session.html
-share/wxftp/help/up.gif
-share/wxftp/help/wxftp.html
-@dirrm share/wxftp/help
-@dirrm share/wxftp
+bin/axyftp
+share/axyftp/help/artistic.txt
+share/axyftp/help/axyftp.html
+share/axyftp/help/doc.gif
+share/axyftp/help/folder.gif
+share/axyftp/help/glossary.html
+share/axyftp/help/help.html
+share/axyftp/help/intro.html
+share/axyftp/help/lgpl.txt
+share/axyftp/help/link.gif
+share/axyftp/help/main.html
+share/axyftp/help/options.html
+share/axyftp/help/panels.html
+share/axyftp/help/problems.html
+share/axyftp/help/session.html
+share/axyftp/help/up.gif
+share/axyftp/help/up.gif
+@dirrm share/axyftp/help
+@dirrm share/axyftp
