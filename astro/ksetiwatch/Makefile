@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ksetiwatch
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	astro kde
 MASTER_SITES=	http://download.sourceforge.net/ksetiwatch/
 
