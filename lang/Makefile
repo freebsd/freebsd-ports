@@ -64,6 +64,7 @@
     SUBDIR += itcl
     SUBDIR += jgnat
     SUBDIR += jython
+    SUBDIR += klone
     SUBDIR += lcc
     SUBDIR += libobjects
     SUBDIR += librep

@@ -1,0 +1,7 @@
+KLONE is a small and fast fully interpreted language intended to be
+embedded into C applications to provide them with a powerful, yet fast
+and small extension language. Its syntax is very inspired from Lisp (its
+external syntax has been kept as close as possible to Common Lisp as
+possible), but its implementation is original and efficient, to give full
+extensibility, intimate interfacing to C, incremental garbage collection,
+and full portability on either K&R or ANSI C.
