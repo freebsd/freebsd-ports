@@ -1043,6 +1043,7 @@
     SUBDIR += php4-sysvsem
     SUBDIR += php4-sysvshm
     SUBDIR += php4-tokenizer
+    SUBDIR += php5-dio
     SUBDIR += php5-pcre
     SUBDIR += php5-pear
     SUBDIR += phptags
