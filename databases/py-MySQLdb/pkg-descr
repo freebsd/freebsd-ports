@@ -1,0 +1,15 @@
+You can easily access a MySQL database through the Python MySQL module.
+
+This module should be mostly compatible with an older interface written by
+Joe Skinner and others. However, the older version is 
+
+ a) not thread-friendly (database operations could cause all other threads to
+    block),
+ b) written for MySQL 3.21 (does not compile against newer versions without
+    patches),
+ c) apparently not actively maintained.
+
+MySQLdb is a completely new module, distributed free of charge under a license
+derived from the Python license. 
+
+WWW: http://dustman.net/andy/python/

@@ -1,0 +1,22 @@
+lib/python1.5/site-packages/MySQLdb.pyc
+lib/python1.5/site-packages/_mysqlmodule.so
+share/doc/py-MySQLdb/MySQLdb-1.html
+share/doc/py-MySQLdb/MySQLdb-2.html
+share/doc/py-MySQLdb/MySQLdb-3.html
+share/doc/py-MySQLdb/MySQLdb-4.html
+share/doc/py-MySQLdb/MySQLdb-FAQ-1.html
+share/doc/py-MySQLdb/MySQLdb-FAQ-2.html
+share/doc/py-MySQLdb/MySQLdb-FAQ-3.html
+share/doc/py-MySQLdb/MySQLdb-FAQ.html
+share/doc/py-MySQLdb/MySQLdb-FAQ.sgml
+share/doc/py-MySQLdb/MySQLdb.html
+share/doc/py-MySQLdb/MySQLdb.sgml
+share/doc/py-MySQLdb/examples/README
+share/doc/py-MySQLdb/examples/dbtrainer0
+share/doc/py-MySQLdb/examples/dbtrainer1
+share/doc/py-MySQLdb/examples/dbtrainer2
+share/doc/py-MySQLdb/examples/dbtrainer3
+share/doc/py-MySQLdb/examples/dbtrainer4
+share/doc/py-MySQLdb/examples/test.sql
+@dirrm share/doc/py-MySQLdb/examples
+@dirrm share/doc/py-MySQLdb
