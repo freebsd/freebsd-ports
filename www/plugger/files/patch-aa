@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jan  6 21:43:26 1999
-+++ Makefile	Fri Jun 25 15:29:30 1999
+--- Makefile~	Wed Nov 10 02:09:52 1999
++++ Makefile	Sun May 21 23:52:36 2000
 @@ -1,12 +1,12 @@
  # Where is your Plugin Source Development Kit from Netscape?
 -SDK=/home/hubbe/src/PluginSDK30b5
@@ -9,44 +9,11 @@
 -X11=/usr/X11/
 +X11=${X11BASE}
  
- # Linux
--CC=gcc -fpic
--LD=gcc -shared 
-+#CC=gcc -fpic
-+#LD=gcc -shared 
+ # Choose compiler
+-CC=gcc
+-LD=gcc
++#CC=gcc
++#LD=gcc
+ BINFORMAT=bin
  
- # Solaris
- #CC=gcc -fpic
-@@ -18,8 +18,8 @@
- #LD=ld -shared
- 
- # FreeBSD (a.out netscape)
--#CC=gcc -fpic -aout
--#LD=gcc -shared  -aout
-+CC=gcc -fpic -aout
-+LD=gcc -shared  -aout
- 
- # For other systems, look at the example makefiles in the
- # PluginSDK30b5/examples/UnixTemplate/Unix directory
-@@ -41,6 +41,8 @@
- DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\"  # -DDEBUG # -DPLUGIN_TRACE
- CFLAGS=-O -I$(SDK)/include -I$(X11)/include -DXP_UNIX $(DEFINES) 
- 
-+all: $(BIN_FILES)
-+
- plugger.so: plugger.o common.o
- 	$(LD) -o plugger.so plugger.o common.o
- 
-@@ -61,9 +63,9 @@
- 	if [ ! -f $$HOME/.netscape/pluggerrc ]; then cp pluggerrc $$HOME/.netscape ; fi
- 
- install: plugger.so
--	cp plugger.so /usr/local/lib/netscape/plugins/
--	if [ ! -f /etc/pluggerrc ]; then cp pluggerrc /etc/ ; fi
--	cp plugger.7 /usr/local/man/man7/
-+	cp plugger.so ${PREFIX}/lib/netscape/plugins/
-+	if [ ! -f ${PREFIX}/etc/pluggerrc.sample ]; then cp pluggerrc ${PREFIX}/etc/pluggerrc.sample ; fi
-+	cp plugger.7 ${PREFIX}/man/man7/
- 
- plugger-$(VERSION).tar.gz: $(BASE_FILES) $(SOURCE_FILES)
- 	( DIR=`pwd`;\
+ any:
