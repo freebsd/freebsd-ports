@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1998/04/29 10:59:21 tg Exp $
+# $Id: Makefile,v 1.21 1998/05/05 00:59:46 mph Exp $
 #
 
     SUBDIR += agrep
@@ -28,5 +28,6 @@
     SUBDIR += unroff
     SUBDIR += urlview
     SUBDIR += wdiff
+    SUBDIR += word2x
 
 .include <bsd.port.subdir.mk>
