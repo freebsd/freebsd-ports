@@ -114,11 +114,16 @@ foreach $name (keys %index) {
 # With all that done we're finally ready to write out the new
 # INDEX file one port at a time.
 foreach $name (@names) {
-    my $pkg = $index{$name};
-    recurse($pkg);
-    print "$pkg->{text}|";
-    print join(' ', sort(@{$pkg->{bdep}})) if @{$pkg->{bdep}};
-    print "|";
-    print join(' ', sort(@{$pkg->{rdep}})) if @{$pkg->{rdep}};
-    print "|$pkg->{rest}\n";
+    my $pkg = $index{$name}; 
+    if (exists $pkg->{'PRINTED'}) {
+        print STDERR "Warning: Duplicate INDEX entry: $name\n";
+    } else {
+	recurse($pkg);
+	print "$pkg->{text}|";
+	print join(' ', sort(@{$pkg->{bdep}})) if @{$pkg->{bdep}};
+	print "|";
+	print join(' ', sort(@{$pkg->{rdep}})) if @{$pkg->{rdep}};
+	print "|$pkg->{rest}\n";
+	++$pkg->{'PRINTED'};
+    }
 }
