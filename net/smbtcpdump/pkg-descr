@@ -4,10 +4,12 @@ of detail.
 
 To capture all SMB packets going to or from host "fred" try this:
 
-	tcpdump -i eth0 -s 1500 port 139 host fred
+	tcpdump -s 1500 'port 139 and host fred'
 
 If you want name resolution or browse packets then try ports 137 and
-138 respectively.
+138 respectively:
+
+	tcpdump -s 1500 '(port 139 or 138 or 137) and host fred'
 
 Example Output:
 
