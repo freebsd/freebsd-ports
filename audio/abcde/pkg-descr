@@ -1,0 +1,15 @@
+abcde (A Better CD Encoder) is a frontend sh script to rip tracks from
+a CD, encode them in ogg vorbis or mp3 format, and tag them. 
+
+Rippers supported: cdparanoia (not on FreeBSD), cdda2wav
+Encoders supported: oggenc, vorbize, lame, gogo, bladeenc,
+                    mp3enc, xingmp3enc, l3enc
+ID3 taggers supported: id3, id3v2
+Other: vorbiscomment, distmp3
+
+Many other useful features are supported.
+
+WWW: http://lly.org/~rcw/abcde/page
+
+- Munish Chopra
+<mchopra@engmail.uwaterloo.ca>

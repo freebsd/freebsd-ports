@@ -2,6 +2,7 @@
 #
 
     SUBDIR += Maaate
+    SUBDIR += abcde
     SUBDIR += ac3dec
     SUBDIR += adpcm
     SUBDIR += afsp

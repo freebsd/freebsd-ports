@@ -1,0 +1,51 @@
+--- abcde.conf.orig	Mon Aug  5 16:38:21 2002
++++ abcde.conf	Mon Aug  5 16:44:55 2002
+@@ -27,7 +27,7 @@
+ 
+ # CD reader program to use - currently recognized options are 'cdparanoia'
+ # and 'cdda2wav'.
+-#CDROMREADERSYNTAX=cdparanoia
++CDROMREADERSYNTAX=dagrab
+ 
+ # Specify 'nice'ness of the encoder and of the CD reader.
+ # This is a relative 'nice'ness (that is, if the parent process is at a
+@@ -51,7 +51,7 @@
+ #ID3V2=id3v2
+ #CDPARANOIA=cdparanoia
+ #CDDA2WAV=cdda2wav
+-#WGET=wget
++#FETCH=fetch
+ #CDDISCID=cd-discid
+ #CDDBTOOL=cddb-tool
+ #EJECT=eject
+@@ -71,7 +71,7 @@
+ #ID3V2OPTS=
+ #CDPARANOIAOPTS=
+ #CDDA2WAVOPTS=
+-#WGETOPTS=
++#FETCHOPTS=
+ #CDDBTOOLOPTS=
+ #EJECTOPTS=
+ #DISTMP3OPTS=
+@@ -96,7 +96,7 @@
+ #NOCDDBQUERY=n
+ 
+ # CD device you want to read from
+-#CDROM=/dev/cdrom
++#CDROM=/dev/acd0c
+ 
+ # If you'd like to make a default location that overrides the current
+ # directory for putting mp3's, uncomment this.
+@@ -115,10 +115,10 @@
+ # OUTPUTTYPE, ALBUMFILE, ARTISTFILE, TRACKFILE, and TRACKNUM.
+ # Make sure to single-quote this variable. abcde will automatically create
+ # the directory portion of this filename.
+-#OUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.${OUTPUTTYPE}'
++OUTPUTFORMAT='${ARTISTFILE}-${ALBUMFILE}/${ARTISTFILE}-${TRACKNUM}-${TRACKFILE}.${OUTPUTTYPE}'
+ 
+ # Like OUTPUTFORMAT but for Various Artists discs.
+-#VAOUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.${OUTPUTTYPE}'
++#VAOUTPUTFORMAT='${ARTISTFILE}-${ALBUMFILE}/${ARTISTFILE}-${TRACKNUM}-${TRACKFILE}.${OUTPUTTYPE}'
+ 
+ # Define how many encoders to run at once. This makes for huge speedups
+ # on SMP systems. Defaults to 1. Equivalent to -j.
