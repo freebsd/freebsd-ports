@@ -1,5 +1,21 @@
-lib/Img1.2/pkgIndex.tcl
-lib/Img1.2/libimg82.so.1
-lib/libimg.so.1
-lib/libimg.so
-@dirrm lib/Img1.2
+%%DIR%%/pkgIndex.tcl
+%%DIR%%/demo.tcl
+%%DIR%%/tkv.tcl
+%%DIR%%/imgmsg.tcl
+%%DIR%%/%%SHLIB_NAME%%
+%%DIR%%/%%SHLIB_LINK%%
+%%DIR%%/msgs/de.msg
+%%DIR%%/msgs/el.msg
+%%DIR%%/msgs/en.msg
+%%DIR%%/msgs/es.msg
+%%DIR%%/msgs/fr.msg
+%%DIR%%/msgs/ja.msg
+%%DIR%%/msgs/nl.msg
+@dirrm %%DIR%%/msgs
+@dirrm %%DIR%%
+%%PORTDOCS%%share/doc/Img1.2/default.css
+%%PORTDOCS%%share/doc/Img1.2/formats.htm
+%%PORTDOCS%%share/doc/Img1.2/index.htm
+%%PORTDOCS%%share/doc/Img1.2/install.htm
+%%PORTDOCS%%share/doc/Img1.2/library.htm
+%%PORTDOCS%%@dirrm share/doc/Img1.2
