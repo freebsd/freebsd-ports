@@ -1,0 +1,32 @@
+diff -u --recursive src/conf.h.orig src/conf.h
+--- src/conf.h.orig	Wed Sep 17 06:48:11 1997
++++ src/conf.h	Fri Apr 10 23:02:03 1998
+@@ -1,6 +1,6 @@
+ /* Default Database File Names */
+ 
+-#define RADIUS_DIR		"/etc/raddb"
++#define RADIUS_DIR		PREFIX "/etc/raddb"
+ #define RADACCT_DIR		"/var/log/radacct"
+ #define RADLOG_DIR		"/var/log"
+ 
+@@ -13,7 +13,7 @@
+ #define RADIUS_HINTS		"hints"
+ #define RADIUS_HUNTGROUPS	"huntgroups"
+ 
+-#define RADUTMP			"/var/log/radutmp"
++#define RADUTMP			"/var/run/radutmp"
+ #define RADWTMP			"/var/log/radwtmp"
+ 
+ #define RADIUS_PID		"/var/run/radiusd.pid"
+diff -u --recursive src/radutmp.h.orig src/radutmp.h
+--- src/radutmp.h.orig	Tue Dec 23 08:30:31 1997
++++ src/radutmp.h	Fri Apr 10 23:02:47 1998
+@@ -7,7 +7,7 @@
+ #ifndef _RADUTMP_H
+ #define _RADUTMP_H
+ 
+-#define RADUTMP "/var/log/radutmp"
++#define RADUTMP "/var/run/radutmp"
+ #define RADWTMP "/var/log/radwtmp"
+ 
+ /*

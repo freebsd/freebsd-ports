@@ -1,0 +1,29 @@
+bin/radlast
+bin/raduse
+bin/radwho
+bin/radzap
+sbin/checkrad
+sbin/radiusd
+man/man5/clients.5rad.gz
+man/man5/naslist.5rad.gz
+man/man8/radiusd.8.gz
+etc/raddb/clients
+etc/raddb/dictionary
+etc/raddb/dictionary.ascend
+etc/raddb/dictionary.compat
+etc/raddb/dictionary.merit
+etc/raddb/hints
+etc/raddb/huntgroups
+etc/raddb/naslist
+etc/raddb/users
+share/doc/radiusd-cistron/COPYRIGHT
+share/doc/radiusd-cistron/ChangeLog
+share/doc/radiusd-cistron/INSTALL.OLD
+share/doc/radiusd-cistron/README
+share/doc/radiusd-cistron/README.pam
+share/doc/radiusd-cistron/README.simul
+etc/rc.d/radiusd.sh
+@dirrm etc/raddb
+@dirrm share/doc/radiusd-cistron
+@unexec rm -rf /var/log/radacct
+@unexec rm -f /var/log/radius.log
