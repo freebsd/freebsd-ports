@@ -1,12 +1,28 @@
 bin/afterstep
 bin/asclock
+include/X11/pixmaps/3dpaint.xpm
+include/X11/pixmaps/AFstep.xpm
+include/X11/pixmaps/AfterStep.xpm
+include/X11/pixmaps/FileFolders.xpm
+include/X11/pixmaps/KeysOnChain.xpm
+include/X11/pixmaps/OldFashionedRadio.xpm
+include/X11/pixmaps/YellowBlueRedGeometry.xpm
+include/X11/pixmaps/interface.xpm
+include/X11/pixmaps/monalisa.xpm
+include/X11/pixmaps/monitor.xpm
+include/X11/pixmaps/monitor_bsd.xpm
+include/X11/pixmaps/netscape3.xpm
+include/X11/pixmaps/penguin.xpm
+include/X11/pixmaps/recycler.xpm
+include/X11/pixmaps/shutdown.xpm
+include/X11/pixmaps/text.xpm
+include/X11/pixmaps/writeletter.xpm
 lib/X11/afterstep/Animate
 lib/X11/afterstep/Audio
 lib/X11/afterstep/Auto
 lib/X11/afterstep/Banner
 lib/X11/afterstep/Pager
 lib/X11/afterstep/Wharf
-lib/X11/afterstep/system.steprc
 lib/X11/afterstep/backgrounds/bark.jpg
 lib/X11/afterstep/backgrounds/brick.jpg
 lib/X11/afterstep/backgrounds/carpet.green.jpg
@@ -24,10 +40,10 @@ lib/X11/afterstep/backgrounds/volcanic.jpg
 lib/X11/afterstep/backgrounds/wood.jpg
 lib/X11/afterstep/doc/CHANGES
 lib/X11/afterstep/doc/CREDITS
-lib/X11/afterstep/doc/README
-lib/X11/afterstep/doc/README.8bit
 lib/X11/afterstep/doc/FAQ
 lib/X11/afterstep/doc/INSTALL
+lib/X11/afterstep/doc/README
+lib/X11/afterstep/doc/README.8bit
 lib/X11/afterstep/doc/module-interface.txt
 lib/X11/afterstep/sounds/bong.au
 lib/X11/afterstep/sounds/clink.au
@@ -38,24 +54,16 @@ lib/X11/afterstep/sounds/gong.au
 lib/X11/afterstep/sounds/meepmeep.au
 lib/X11/afterstep/sounds/small-step.au
 lib/X11/afterstep/sounds/train.au
-include/X11/pixmaps/monitor_bsd.xpm
-include/X11/pixmaps/3dpaint.xpm
-include/X11/pixmaps/AFstep.xpm
-include/X11/pixmaps/AfterStep.xpm
-include/X11/pixmaps/FileFolders.xpm
-include/X11/pixmaps/KeysOnChain.xpm
-include/X11/pixmaps/OldFashionedRadio.xpm
-include/X11/pixmaps/YellowBlueRedGeometry.xpm
-include/X11/pixmaps/interface.xpm
-include/X11/pixmaps/monalisa.xpm
-include/X11/pixmaps/monitor.xpm
-include/X11/pixmaps/netscape3.xpm
-include/X11/pixmaps/penguin.xpm
-include/X11/pixmaps/recycler.xpm
-include/X11/pixmaps/shutdown.xpm
-include/X11/pixmaps/text.xpm
-include/X11/pixmaps/writeletter.xpm
-@dirrm lib/X11/afterstep/doc
+lib/X11/afterstep/system.steprc
+lib/X11/doc/html/Animate.1.html
+lib/X11/doc/html/Audio.1.html
+lib/X11/doc/html/Auto.1.html
+lib/X11/doc/html/Banner.1.html
+lib/X11/doc/html/Pager.1.html
+lib/X11/doc/html/Wharf.1.html
+lib/X11/doc/html/afterstep.1.html
+lib/X11/doc/html/asclock.1.html
 @dirrm lib/X11/afterstep/backgrounds
+@dirrm lib/X11/afterstep/doc
 @dirrm lib/X11/afterstep/sounds
 @dirrm lib/X11/afterstep
