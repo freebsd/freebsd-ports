@@ -37,7 +37,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	# empty
 MPQC_COMMAND=	${PREFIX}/bin/mpqc
 
-.include "${.CURDIR}/files/manpages"
+.include "${MASTERDIR}/files/manpages"
 
 pre-configure:
 	@${ECHO} "You can override and CFLAGS on the command line."
