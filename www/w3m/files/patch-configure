@@ -1,5 +1,5 @@
---- configure.orig	Tue Feb 12 17:52:58 2002
-+++ configure	Fri Mar 29 19:27:19 2002
+--- configure.orig	Sun Mar 31 22:17:49 2002
++++ configure	Sun Mar 31 22:16:46 2002
 @@ -53,19 +53,22 @@
      shift
      ;;
