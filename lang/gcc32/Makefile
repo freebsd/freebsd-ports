@@ -20,7 +20,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.2.3
 
 LATEST_LINK?=	gcc32${PKGNAMESUFFIX}
@@ -33,7 +33,7 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 USE_GCC=	X
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 .include <bsd.port.pre.mk>
 
