@@ -781,6 +781,7 @@
     SUBDIR += sdl_ldbad
     SUBDIR += sdlmm
     SUBDIR += sdts++
+    SUBDIR += sedsed
     SUBDIR += semantic
     SUBDIR += semantic-emacs20
     SUBDIR += sfio
