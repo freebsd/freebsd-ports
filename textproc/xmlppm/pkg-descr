@@ -1,0 +1,8 @@
+XMLPPM is a data compression program that compresses XML files from 5 to
+30% better than any existing text or XML-specific compressors. It is a
+combination of the well-known Prediction by Partial Match (PPM) algorithm
+for text compression, first described by Cleary and Witten in 1984, and an
+approach to modeling tree-structured data called Multiplexed Hierarchical
+Modeling (MHM) that I have developed.
+
+WWW: http://xmlppm.sourceforge.net/
