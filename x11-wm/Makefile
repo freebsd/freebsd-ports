@@ -32,6 +32,7 @@
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += kappdock
+    SUBDIR += kdeartwork
     SUBDIR += kwix
     SUBDIR += larswm
     SUBDIR += libdockapp
