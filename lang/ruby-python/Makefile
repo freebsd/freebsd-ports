@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION= 	0.3.2
-CATEGORIES=	lang	# ruby
+CATEGORIES=	lang python	# ruby
 MASTER_SITES=	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
