@@ -3636,6 +3636,7 @@ libsidplay	ports/audio/libsidplay
 libsidplay2	ports/audio/libsidplay2
 libsigc++	ports/devel/libsigc++
 libsigc++12	ports/devel/libsigc++12
+libsigcx	ports/devel/libsigcx
 libslang	ports/devel/libslang
 libsmi		ports/net/libsmi
 libsndfile	ports/audio/libsndfile
