@@ -1,4 +1,7 @@
+bin/mp2bug
+bin/mp2doc
 include/apache2/modules/perl/mod_perl.h
+include/apache2/modules/perl/modperl_apache_compat.h
 include/apache2/modules/perl/modperl_apache_includes.h
 include/apache2/modules/perl/modperl_bucket.h
 include/apache2/modules/perl/modperl_callback.h
@@ -35,13 +38,6 @@ include/apache2/modules/perl/modperl_tipool.h
 include/apache2/modules/perl/modperl_trace.h
 include/apache2/modules/perl/modperl_types.h
 include/apache2/modules/perl/modperl_util.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/APR/PerlIO.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/APR/Table.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Log.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Reload.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/RequestRec.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/ServerUtil.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/SubProcess.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Test.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Test5005compat.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestBuild.pm
@@ -68,7 +64,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestSmokePerl.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestSort.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestTrace.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestUtil.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/compat.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Base64.pm
@@ -112,12 +107,14 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Response.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Server.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/ServerUtil.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/SourceTables.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Status.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/SubProcess.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/SubRequest.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/URI.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Util.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/XSLoader.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/compat.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/BuildMM.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/BuildOptions.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Code.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Config.pm
@@ -127,6 +124,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Global.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/MM.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Manifest.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/MapUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/MethodLookup.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/ParseSource.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/PerlRun.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Registry.pm
@@ -217,6 +215,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/URI/URI.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/URI/URI.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Util/Util.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Util/Util.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/typemap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Const/Const.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Const/Const.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global/Global.bs
@@ -224,10 +223,11 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global/Globa
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/mod_perl.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/Apache2.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/mod_perl/.packlist
 libexec/apache2/mod_perl.so
+@dirrm libexec/apache2
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/mod_perl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global
@@ -280,5 +280,4 @@ libexec/apache2/mod_perl.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/APR
 @dirrm include/apache2/modules/perl
