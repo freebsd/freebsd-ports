@@ -1,11 +1,20 @@
---- gui/nsdejavu/Makefile.in.old	Thu Jan 10 13:40:56 2002
-+++ gui/nsdejavu/Makefile.in	Fri Sep 20 14:57:15 2002
+--- gui/nsdejavu/Makefile.in.orig	Thu Jan 10 13:40:56 2002
++++ gui/nsdejavu/Makefile.in	Sun Nov 17 00:33:16 2002
 @@ -25,7 +25,7 @@
  datadir = @datadir@
  libdir = @libdir@
  mandir = @mandir@
 -plugindir = ${libdir}/netscape/plugins
-+plugindir = ${libdir}/mozilla/plugins
++plugindir = ${libdir}/browser_plugins
  
  CC = @CC@
  CXX = @CXX@
+@@ -40,7 +40,7 @@
+ OPTS = @OPTS@
+ NSDEJAVU = @NSDEJAVU@
+ NSDEJAVU_FLAGS = @NSDEJAVU_FLAGS@
+-NSDEJAVU_LIBS = @NSDEJAVU_LIBS@
++NSDEJAVU_LIBS = @NSDEJAVU_LIBS@ -lXt
+ NSDEJAVU_LINK = @NSDEJAVU_LINK@
+ 
+ INCS = \

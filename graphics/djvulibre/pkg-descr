@@ -12,6 +12,7 @@ DjVu. It is compatible with version  3.5 of the LizardTech DjVu software
 suite.  DjVulibre-3.5 contains:
 	- a standalone DjVu viewer based on the Qt library. 
 	- A browser plugin that works with most Unix browsers.
+	  (such as Mozilla and Opera)
 	- A full-fledged wavelet-based compressor for pictures. 
 	- A simple compressor for bitonal (black and white) scanned pages. 
 	- A compressor for palettized images (a la GIF/PNG). 
