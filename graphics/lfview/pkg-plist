@@ -1,0 +1,7 @@
+bin/lfview
+share/doc/ja/lfview/README
+@dirrm share/doc/ja/lfview
+lib/liblfv_leaf.so.1
+lib/liblfv_leaf.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
