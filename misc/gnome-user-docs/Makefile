@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeuserdocs2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome2-user-docs/2.0
@@ -26,7 +26,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
