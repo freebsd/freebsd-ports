@@ -530,6 +530,7 @@
     SUBDIR += tkdiff
     SUBDIR += tn-aspell
     SUBDIR += tnef2txt
+    SUBDIR += tr-aspell
     SUBDIR += trang
     SUBDIR += tth
     SUBDIR += txt2html
