@@ -3498,6 +3498,7 @@ ja-ebw3		ports/japanese/ebw3
 ja-edict	ports/japanese/edict
 ja-edict-fpw	ports/japanese/edict-fpw
 ja-edict-sdic	ports/japanese/edict-sdic
+ja-edict-utf-8	ports/japanese/edict-utf-8
 ja-eijiro-fpw	ports/japanese/eijiro-fpw
 ja-elisa10x8	ports/japanese/elisa10x8
 ja-elisa8x8	ports/japanese/elisa8x8
