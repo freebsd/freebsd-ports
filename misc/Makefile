@@ -128,7 +128,6 @@
     SUBDIR += gpt31
     SUBDIR += granulate
     SUBDIR += grc
-    SUBDIR += grdb
     SUBDIR += gregexp
     SUBDIR += gretl
     SUBDIR += grun
