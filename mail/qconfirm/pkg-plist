@@ -2,6 +2,8 @@ bin/qconfirm
 bin/qconfirm-accept
 bin/qconfirm-check
 bin/qconfirm-conf
+bin/qconfirm-return
+%%PORTDOCS%%share/doc/qconfirm/bounces.html
 %%PORTDOCS%%share/doc/qconfirm/configuration.html
 %%PORTDOCS%%share/doc/qconfirm/faq.html
 %%PORTDOCS%%share/doc/qconfirm/index.html
@@ -10,6 +12,7 @@ bin/qconfirm-conf
 %%PORTDOCS%%share/doc/qconfirm/qconfirm-accept.1.html
 %%PORTDOCS%%share/doc/qconfirm/qconfirm-check.1.html
 %%PORTDOCS%%share/doc/qconfirm/qconfirm-conf.1.html
+%%PORTDOCS%%share/doc/qconfirm/qconfirm-return.1.html
 %%PORTDOCS%%share/doc/qconfirm/technical.html
 %%PORTDOCS%%share/doc/qconfirm/upgrade.html
 %%PORTDOCS%%@dirrm share/doc/qconfirm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qconfirm
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
@@ -15,8 +15,10 @@ MAINTAINER=	sergei@kolobov.com
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}/src
 ALL_TARGET=	default
 
-PROGS=		qconfirm qconfirm-accept qconfirm-check qconfirm-conf
-MAN1=		qconfirm.1 qconfirm-accept.1 qconfirm-check.1 qconfirm-conf.1
+PROGS=		qconfirm qconfirm-accept qconfirm-check qconfirm-conf \
+		qconfirm-return
+MAN1=		qconfirm.1 qconfirm-accept.1 qconfirm-check.1 qconfirm-conf.1 \
+		qconfirm-return.1
 
 do-install:
 .for file in ${PROGS}
