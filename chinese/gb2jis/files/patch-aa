@@ -1,12 +1,45 @@
-*** Makefile.orig	Sat Sep 16 14:28:25 2000
---- Makefile	Sat Sep 16 14:28:48 2000
-***************
-*** 24,29 ****
---- 24,30 ----
-  install: gb2jis gb2jis.1
-  	cp gb2jis /usr/local/bin/gb2jis
-  	cp gb2jis.1 /usr/local/man/man1/gb2jis.1
-+ 	cp gb2jis.el /usr/local/share/emacs/site-lisp/gb2jis.el
-  #	nroff -man gb2jis.1 > /usr/local/catman/C/u_man/cat1/gb2jis.1
-  
-  clean:
+--- Makefile.orig	Wed Feb  8 20:29:35 1995
++++ Makefile	Sun Oct 19 01:23:52 2003
+@@ -1,6 +1,8 @@
+ SHELL = /bin/sh
+ 
+-CFLAGS = -O -DUNDEFCHAR=0xa2a2
++CC ?= cc
++CFLAGS ?= -O -pipe
++CFLAGS += -DUNDEFCHAR=0xa2a2
+ 
+ TABLEC = GB2312JX0208.c GB2312JX0212.c GB2312UZPJ.c
+ TABLEO = GB2312JX0208.o GB2312JX0212.o GB2312UZPJ.o
+@@ -11,19 +13,20 @@
+ 	./t2c $< $@
+ 
+ .c.o:
+-	cc $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ .t.o:
+ 	./t2c $< $*.c
+-	cc $(CFLAGS) -c $*.c
++	$(CC) $(CFLAGS) -c $*.c
+ 
+ gb2jis: $(TABLEO) gb2jis.o
+-	cc gb2jis.o $(TABLEO) -o gb2jis
++	$(CC) gb2jis.o $(TABLEO) -o gb2jis
+ 	strip gb2jis
+ 
+ install: gb2jis gb2jis.1
+ 	cp gb2jis /usr/local/bin/gb2jis
+ 	cp gb2jis.1 /usr/local/man/man1/gb2jis.1
++	cp gb2jis.el /usr/local/share/emacs/site-lisp/gb2jis.el
+ #	nroff -man gb2jis.1 > /usr/local/catman/C/u_man/cat1/gb2jis.1
+ 
+ clean:
+@@ -34,7 +37,7 @@
+ 	-egrep '0x([2-9].[8-f]|[8-f].[2-9])' GB2312UZPJ.c
+ 
+ t2c: t2c.c
+-	cc $(CFLAGS) t2c.c -o t2c
++	$(CC) $(CFLAGS) t2c.c -o t2c
+ 	strip t2c
+ 
+ $(TABLEC): t2c
