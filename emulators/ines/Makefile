@@ -3,7 +3,7 @@
 # Date created:		02 November 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/01/26 09:43:36 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:30:49 asami Exp $
 #
 
 DISTNAME=	iNES07-FreeBSD-80x86-bin
@@ -13,6 +13,8 @@ MASTER_SITES=   http://www.komkon.org/fms/iNES/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+
+BROKEN_ELF=	yes
 
 WRKSRC=		${WRKDIR}/NES
 USE_X_PREFIX=	yes
