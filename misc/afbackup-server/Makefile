@@ -12,4 +12,3 @@ WITHOUT_CLIENT=		yes
 MASTERDIR=		${.CURDIR}/../afbackup
 
 .include "${MASTERDIR}/Makefile"
-

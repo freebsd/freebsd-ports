@@ -12,4 +12,3 @@ WITHOUT_SERVER=		yes
 MASTERDIR=		${.CURDIR}/../afbackup
 
 .include "${MASTERDIR}/Makefile"
-
