@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.78
+PORTVERSION=	0.80
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.us.tmda.net/releases/%SUBDIR%/ \
@@ -23,9 +23,12 @@ USE_PYTHON=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-DOCS=		CODENAMES CRYPTO THANKS UPGRADE htdocs/*.html
-CONTRIB=	collectaddys def2html printcdb printdbm \
-		sendit.sh tmda.el vadduser-tmda
+DOCS=		CODENAMES CRYPTO README THANKS UPGRADE htdocs/*.html
+SAMPLES=	sample.config tmda.el tofmipd.sysconfig vtmdarc
+SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
+	 	smtp-check-sender tofmipd.init tofmipd.sysconfig \
+		update-internaldomains vadduser-tmda vmailmgr-vdir.sh \
+		vpopmail-vdir.sh wrapfd3.sh
 
 .include <bsd.port.pre.mk>
 
@@ -44,10 +47,9 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}/contrib
-	cd ${WRKSRC}/contrib && \
-		${INSTALL_DATA} sample.config ${EXAMPLESDIR} && \
-		${INSTALL_DATA} ${CONTRIB} ${EXAMPLESDIR}/contrib
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${SAMPLES} ${EXAMPLESDIR}
+	cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
