@@ -22,6 +22,8 @@ RUBY_SETUP=	install.rb
 
 NO_BUILD=	yes
 
+BROKEN=		Incorrect pkg-plist
+
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}
 
