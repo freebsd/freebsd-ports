@@ -26,7 +26,7 @@ BROKEN=		Does not patch
 
 LIB_DEPENDS=	sqlplus.1:${PORTSDIR}/databases/mysql++ \
  		intl.5:${PORTSDIR}/devel/gettext \
- 		glut.3:${PORTSDIR}/graphics/Mesa3 \
+ 		glut.3:${PORTSDIR}/graphics/libglut \
  		jpeg.9:${PORTSDIR}/graphics/jpeg \
  		fleditor.1:${PORTSDIR}/x11-toolkits/fl_editor \
 		flvw.1:${PORTSDIR}/x11-toolkits/flvw
