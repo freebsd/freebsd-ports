@@ -157,6 +157,9 @@ share/smalltalk/kernel/FileDescr.st
 share/smalltalk/kernel/FileSegment.st
 share/smalltalk/kernel/FileStream.st
 share/smalltalk/kernel/Float.st
+share/smalltalk/kernel/FloatD.st
+share/smalltalk/kernel/FloatE.st
+share/smalltalk/kernel/FloatQ.st
 share/smalltalk/kernel/Fraction.st
 share/smalltalk/kernel/HashedColl.st
 share/smalltalk/kernel/IdentDict.st
@@ -273,6 +276,8 @@ share/smalltalk/vfs/utar
 share/smalltalk/vfs/uzip
 share/smalltalk/vfs/uzoo
 share/smalltalk/xml/XML.st
+share/smalltalk/xml/XPath.st
+share/smalltalk/xml/XSL.st
 @dirrm share/smalltalk/xml
 @dirrm share/smalltalk/vfs
 @dirrm share/smalltalk/tcp
