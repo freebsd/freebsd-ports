@@ -1,0 +1,10 @@
+diff -u -N ./screen.h ../bgrab/screen.h
+--- ./screen.h	Sun Jan 24 03:24:50 1999
++++ ../bgrab/screen.h	Tue Jul 27 10:38:40 1999
+@@ -1,5 +1,5 @@
+ extern "C" {
+-#include <curses.h>
++#include <ncurses.h>
+ #include <stdio.h>
+ }
+ 
