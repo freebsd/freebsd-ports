@@ -9,7 +9,7 @@ PORTNAME=	Net_NNTP
 PORTVERSION=	0.10.1
 CATEGORIES=	net news www pear
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the NNTP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
