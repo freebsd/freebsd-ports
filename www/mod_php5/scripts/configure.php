@@ -140,7 +140,7 @@ while [ "$1" ]; do
 			echo "SNMP is DISABLED for now. Ignoring." > /dev/stderr
 			;;
 		\"nothing\")
-			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/ucd-snmp"
+			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/net-snmp"
 			echo "CONFIGURE_ARGS+=--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
