@@ -34,13 +34,15 @@ CONFLICTS=	py*-gtk-0*
 # Use the same way as the Python port to determine if we want
 # threading support.
 #
-LIBC_R!=	/sbin/ldconfig -r | grep "c_r\|pthread" || true
-.if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
+.if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-thread
 CFLAGS+=		${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-thread
+.if defined(LDFLAGS)
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
+.endif
 .endif
 
 .if !defined(NOPORTDOCS)
