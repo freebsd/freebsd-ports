@@ -4,5 +4,5 @@ After copying %%PREFIX%%/etc/pam_smb.conf.sample to
 add something like this to your /etc/pam.conf file to use
 this module:
 
-login    auth    sufficient    %%PREFIX%%/lib/pam_ldap.so
+login    auth    sufficient    %%PREFIX%%/lib/pam_smb_auth.so
 
