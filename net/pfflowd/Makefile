@@ -13,9 +13,6 @@ MASTER_SITES=	http://www.mindrot.org/files/pfflowd/
 MAINTAINER=	andy@fud.org.nz
 COMMENT=	Convert pfsync states to NetFlow datagrams
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
-RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
-
 MAN8=		pfflowd.8
 
 PLIST_FILES=	sbin/pfflowd \
@@ -29,6 +26,11 @@ IGNORE=		"Only for 5.0 and above"
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.endif
+
+.if ${OSVERSION} < 502106
+BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
+RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
 .endif
 
 post-patch:
