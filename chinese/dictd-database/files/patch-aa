@@ -9,12 +9,3 @@
  
  db :: rawdata $(DATABASES)
  
-@@ -110,6 +110,8 @@
- 	./dictfmt -p -u http://www.mandarintools.com/cedict.html \
-                 -s "Chinese to English dictionary" \
-                 cedict < data/cedict.txt ; \
-+	env LANG=C sort cedict.index > cedict.index.tmp ; \
-+	mv cedict.index.tmp cedict.index; \
-         if [ "$(DICTZIP)" != "cat" ]; then \
-                 dictzip cedict.dict; \
-         fi
