@@ -6850,6 +6850,7 @@ qmail-notify	ports/mail/qmail-notify
 qmail-tls	ports/mail/qmail-tls
 qmailadmin	ports/mail/qmailadmin
 qmailanalog	ports/mail/qmailanalog
+qmake		ports/devel/qmake
 qmc		ports/misc/qmc
 qmls		ports/cad/qmls
 qnxstyle	ports/x11-wm/qnxstyle
