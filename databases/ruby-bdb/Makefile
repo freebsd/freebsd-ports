@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -56,6 +56,8 @@ post-build:
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
@@ -64,6 +66,9 @@ post-install:
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
+.if ${RUBY_VER} >= 1.8
+	cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ri-site
+.endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
