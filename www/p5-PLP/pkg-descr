@@ -1,0 +1,12 @@
+PLP is yet another Perl embedder, primarily for HTML documents. Unlike with
+other Perl embedders, there is no need to learn a meta-syntax or object
+model: one can just use the normal Perl constructs. PLP runs under mod_perl
+for speeds comparable to those of PHP, but can also be run as a CGI script.
+
+Note that while unofficial, experimental, and not supported, I (PLP's
+maintainer) have been using the patch for mod_perl 2 functionality for about a
+year's time on servers which are always online. I have yet to encounter any
+problems. If you do encounter any, please send a report to me first and I'll do
+what I can to see if it's a bug in PLP or a bug in the mod_perl 2 patch.
+
+WWW: http://plp.juerd.nl/
