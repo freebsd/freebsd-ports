@@ -1,0 +1,78 @@
+--- mDNSPosix/Makefile.old	Wed Mar  3 01:39:05 2004
++++ mDNSPosix/Makefile	Wed Mar  3 01:54:39 2004
+@@ -137,6 +137,7 @@
+ STRIP = strip -S 
+ endif
+ 
++INSTBASE=/usr
+ # Configure per-OS peculiarities
+ ifeq ($(os),solaris)
+ CFLAGS_OS = -DNOT_HAVE_DAEMON -DNOT_HAVE_SA_LEN -D_XPG4_2 -D__EXTENSIONS__ -DHAVE_BROKEN_RECVIF_NAME -lsocket -lnsl
+@@ -149,6 +150,11 @@
+ LDCONFIG = ldconfig
+ else
+ ifeq ($(os),freebsd)
++ifndef LOCALBASE
++LOCALBASE=/usr/local
++endif
++INSTSCRIPT=mdns.sh
++INSTBASE=$(LOCALBASE)
+ CFLAGS_OS =
+ LDCONFIG = ldconfig
+ else
+@@ -177,6 +183,7 @@
+ endif
+ endif
+ endif
++INSTSCRIPT?=mdns
+ 
+ ifeq ($(HAVE_IPV6),1)
+ CFLAGS_OS += -DHAVE_IPV6=1
+@@ -197,7 +204,7 @@
+ RUNLEVELSCRIPTSDIR = /etc
+ else
+ # else install into /etc/rc.d/ (*BSD)
+-STARTUPSCRIPTDIR = /etc/rc.d
++STARTUPSCRIPTDIR = $(INSTBASE)/etc/rc.d
+ endif
+ endif
+ 
+@@ -246,30 +253,30 @@
+ #############################################################################
+ 
+ # The Install targets place built stuff in their proper places
+-InstalledDaemon: /usr/sbin/mdnsd
++InstalledDaemon: $(INSTBASE)/sbin/mdnsd
+ 	@echo $< " installed"
+ 
+-InstalledLib: /usr/lib/libmdns.$(LDSUFFIX).$(LIBVERS) /usr/include/dns_sd.h
++InstalledLib: $(INSTBASE)/lib/libmdns.$(LDSUFFIX).$(LIBVERS) $(INSTBASE)/include/dns_sd.h
+ 	@echo $< " installed"
+ 
+-InstalledStartup: $(STARTUPSCRIPTDIR)/mdns
++InstalledStartup: $(STARTUPSCRIPTDIR)/$(INSTSCRIPT)
+ 	@echo $< " installed"
+ 
+-/usr/sbin/mdnsd: $(BUILDDIR)/mdnsd
++$(INSTBASE)/sbin/mdnsd: $(BUILDDIR)/mdnsd
+ 	$(CP) $< $@
+ 
+-/usr/lib/libmdns.$(LDSUFFIX).$(LIBVERS): $(BUILDDIR)/libmdns.$(LDSUFFIX)
++$(INSTBASE)/lib/libmdns.$(LDSUFFIX).$(LIBVERS): $(BUILDDIR)/libmdns.$(LDSUFFIX)
+ 	$(CP) $< $@
+-	$(LN) $@ /usr/lib/libmdns.$(LDSUFFIX)
++	$(LN) $@ $(INSTBASE)/lib/libmdns.$(LDSUFFIX)
+ ifdef LDCONFIG
+     # -m means 'merge into existing database', -R means 'rescan directories'
+ 	$(LDCONFIG) -mR
+ endif
+ 
+-/usr/include/dns_sd.h: $(SHAREDDIR)/dns_sd.h
++$(INSTBASE)/include/dns_sd.h: $(SHAREDDIR)/dns_sd.h
+ 	$(CP) $< $@
+ 
+-$(STARTUPSCRIPTDIR)/mdns: mdnsd.sh $(STARTUPSCRIPTDIR)
++$(STARTUPSCRIPTDIR)/$(INSTSCRIPT): mdnsd.sh $(STARTUPSCRIPTDIR)
+ 	$(CP) $< $@
+ 	chmod ugo+x $@
+ ifdef RUNLEVELSCRIPTSDIR
