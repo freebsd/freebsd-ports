@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libthinice.so
+share/themes/ThinIce/ICON.png
+share/themes/ThinIce/README.html
+share/themes/ThinIce/gtk/gtkrc
+@dirrm share/themes/ThinIce/gtk
+@dirrm share/themes/ThinIce
