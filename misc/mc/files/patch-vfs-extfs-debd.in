@@ -1,0 +1,148 @@
+--- vfs/extfs/debd.in.orig	Thu Dec 12 22:15:30 2002
++++ vfs/extfs/debd.in	Fri Sep 10 16:09:30 2004
+@@ -6,6 +6,12 @@
+ #
+ # debd
+ 
++sub quote {
++    $_ = shift(@_);
++    s/([^\w\/.+-])/\\$1/g;
++    return($_);
++}
++
+ sub bt
+ {
+     my ($dt) = @_;
+@@ -102,8 +108,9 @@
+ sub list
+ {
+        my($archive)=@_;
++       my $qarchive = quote($archive);
+        chop($date=`LC_ALL=C date "+%b %d %Y %H:%M"`);
+-       chop($info_size=`dpkg -s $archive | wc -c`);
++       chop($info_size=`dpkg -s $qarchive | wc -c`);
+        $repack_size=length($pressrepack);
+        $reinstall_size=length($pressreinstall);
+        $remove_size=length($pressremove);
+@@ -118,7 +125,7 @@
+        print "-r--r--r--   1 root     root     $info_size $date INFO\n";
+        print "-r-xr--r--   1 root     root     $purge_size $date DPKG-PURGE\n";
+ 
+-       chop($status = `dpkg -s $archive | grep ^Status`);
++       chop($status = `dpkg -s $qarchive | grep ^Status`);
+        if( $status =~ /deinstall/ ) {
+            print "-r-xr--r--   1 root     root     $select_size $date DPKG-SELECT\n";
+        } elsif( $status =~ /install/ ) {
+@@ -141,7 +148,7 @@
+ 
+ 
+ 
+-       if ( open(PIPEIN, "LANG=C ls -l /var/lib/dpkg/info/$archive.* |") ) {
++       if ( open(PIPEIN, "LANG=C ls -l /var/lib/dpkg/info/$qarchive.* |") ) {
+            while(<PIPEIN>) {
+                chop;
+                next if /\.list$/;
+@@ -163,35 +170,38 @@
+ sub copyout
+ {
+        my($archive,$filename,$destfile)=@_;
++       my $qarchive = quote($archive);
++       my $qfilename = quote($filename);
++       my $qdestfile = quote($destfile);
+ 
+        if($filename eq "INFO") {
+-           system("dpkg -s $archive > $destfile");
++           system("dpkg -s $qarchive > $qdestfile");
+         } elsif($filename eq "DPKG-REPACK") {
+            if ( open(FILEOUT,">$destfile") ) {
+                print FILEOUT $pressrepack;
+                close FILEOUT;
+-               system("chmod a+x $destfile");
++               system("chmod a+x $qdestfile");
+            }
+         } elsif($filename =~ /^DEBIAN/) {
+             $filename=~s!^DEBIAN/!!;
+-            system("cat /var/lib/dpkg/info/$archive.$filename > $destfile");
++            system("cat /var/lib/dpkg/info/$qarchive.$qfilename > $qdestfile");
+        } elsif($filename eq "DPKG-REMOVE" || $filename eq "APT-REMOVE") {
+            if ( open(FILEOUT,">$destfile") ) {
+                print FILEOUT $pressremove;
+                close FILEOUT;
+-               system("chmod a+x $destfile");
++               system("chmod a+x $qdestfile");
+            }
+        } elsif($filename eq "DPKG-PURGE" || $filename eq "APT-PURGE") {
+            if ( open(FILEOUT,">$destfile") ) {
+                print FILEOUT $presspurge;
+                close FILEOUT;
+-               system("chmod a+x $destfile");
++               system("chmod a+x $qdestfile");
+            }
+        } elsif($filename eq "DPKG-RECONFIGURE") {
+            if ( open(FILEOUT,">$destfile") ) {
+                print FILEOUT $pressreconfigure;
+                close FILEOUT;
+-               system("chmod a+x $destfile");
++               system("chmod a+x $qdestfile");
+            }
+        } elsif($filename eq "APT-REINSTALL") {
+            if ( open(FILEOUT,">$destfile") ) {
+@@ -209,41 +219,43 @@
+            if ( open(FILEOUT,">$destfile") ) {
+                print FILEOUT $pressunselect;
+                close FILEOUT;
+-               system("chmod a+x $destfile");
++               system("chmod a+x $qdestfile");
+            }
+        } else {
+-           $filename=~s!^CONTENTS!!;
+-           system("cat $filename > $destfile");
++           $qfilename=~s!^CONTENTS!!;
++           system("cat $qfilename > $qdestfile");
+        }
+ }
+ 
+ sub run
+ {
+        my($archive,$filename)=@_;
++       my $qarchive = quote($archive);
++       my $qfilename = quote($filename);
+        if($filename eq "DPKG-REMOVE") {
+-           system("dpkg --remove $archive");
++           system("dpkg --remove $qarchive");
+        } elsif($filename eq "APT-REMOVE") {
+-           system("apt-get remove $archive");
++           system("apt-get remove $qarchive");
+        } elsif($filename eq "DPKG-PURGE") {
+-           system("dpkg --purge $archive");
++           system("dpkg --purge $qarchive");
+        } elsif($filename eq "APT-PURGE") {
+-           system("apt-get --purge remove $archive");
++           system("apt-get --purge remove $qarchive");
+        } elsif($filename eq "DPKG-REPACK") {
+-           system("dpkg-repack $archive");
++           system("dpkg-repack $qarchive");
+        } elsif($filename eq "DPKG-SELECT") {
+-           system("echo $archive install | dpkg --set-selections");
++           system("echo $aqrchive install | dpkg --set-selections");
+        } elsif($filename eq "DPKG-UNSELECT") {
+-           system("echo $archive deinstall | dpkg --set-selections");
++           system("echo $qarchive deinstall | dpkg --set-selections");
+        } elsif($filename eq "APT-REINSTALL") {
+-           system("apt-get -u --reinstall install $archive");
++           system("apt-get -u --reinstall install $qarchive");
+        } elsif($filename eq "DPKG-RECONFIGURE") {
+-           system("dpkg-reconfigure $archive");
++           system("dpkg-reconfigure $qarchive");
+        } elsif($filename=~/^DEBIAN/) {
+            $filename=~s!^DEBIAN!!;
+-           system("/var/lib/dpkg/info/$archive.$filename");
++           system("/var/lib/dpkg/info/$qarchive.$qfilename");
+        } else {
+-           $filename=~s!^CONTENTS!!;
+-           system($filename);
++           $qfilename=~s!^CONTENTS!!;
++           system($qfilename);
+        }
+ }
+ 

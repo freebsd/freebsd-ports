@@ -1,0 +1,102 @@
+--- vfs/extfs/apt.in.orig	Tue Dec 24 12:33:46 2002
++++ vfs/extfs/apt.in	Fri Sep 10 16:09:30 2004
+@@ -6,6 +6,12 @@
+ #
+ # apt
+ 
++sub quote {
++    $_ = shift(@_);
++    s/([^\w\/.+-])/\\$1/g;
++    return($_);
++}
++
+ sub bt
+ {
+     my ($dt) = @_;
+@@ -229,14 +235,16 @@
+ sub copyout
+ {
+     my($archive,$filename) = @_;
++    my $qarchive = quote($archive);
++    my $qfilename = quote($filename);
+     if( $archive eq 'CHECK' ) {
+-       system("apt-get -q check > $filename");
++       system("apt-get -q check > $qfilename");
+     } elsif( $archive eq 'AVAILABLE' ) {
+-       system("apt-cache dumpavail > $filename");
++       system("apt-cache dumpavail > $qfilename");
+     } elsif( $archive eq 'STATS' ) {
+-       system("apt-cache stats > $filename");
++       system("apt-cache stats > $qfilename");
+     } elsif( $archive eq 'CONFIG' ) {
+-       system("(apt-config dump 2>&1) > $filename");
++       system("(apt-config dump 2>&1) > $qfilename");
+     } elsif( $archive eq 'UPDATE' ) {
+        open O, ">$filename";
+        print O $pressupdate;
+@@ -246,12 +254,12 @@
+        print O $pressupgrade;
+        close O;
+     } elsif( $archive eq 'apt.conf' ) {
+-       system("cp /etc/apt/apt.conf $filename");
++       system("cp /etc/apt/apt.conf $qfilename");
+     } elsif( $archive eq 'sources.list' ) {
+-       system("cp /etc/apt/sources.list $filename");
++       system("cp /etc/apt/sources.list $qfilename");
+     } elsif( $archive =~ /^CACHE\// ) {
+        $archive =~ s%^CACHE/%/var/cache/apt/archives/%;
+-       system("cp $archive $filename");
++       system("cp $qarchive $qfilename");
+     } else {
+        open O, ">$filename";
+        print O $archive, "\n";
+@@ -262,15 +270,17 @@
+ sub copyin
+ {
+     my($archive,$filename) = @_;
++    my $qarchive = quote($archive);
++    my $qfilename = quote($filename);
+     if( $archive =~ /\.deb$/ ) {
+-       system("dpkg -i $filename>/dev/null");
++       system("dpkg -i $qfilename>/dev/null");
+     } elsif( $archive eq 'apt.conf' ) {
+-       system("cp $filename /etc/apt/apt.conf");
++       system("cp $qfilename /etc/apt/apt.conf");
+     } elsif( $archive eq 'sources.list' ) {
+-       system("cp $filename /etc/apt/sources.list");
++       system("cp $qfilename /etc/apt/sources.list");
+     } elsif( $archive =~ /^CACHE\// ) {
+-       $archive =~ s%^CACHE/%/var/cache/apt/archives/%;
+-       system("cp $filename $archive");
++       $qarchive =~ s%^CACHE/%/var/cache/apt/archives/%;
++       system("cp $qfilename $qarchive");
+     } else {
+        die "extfs: cannot create regular file \`$archive\': Permission denied\n";
+     }
+@@ -293,19 +303,20 @@
+ sub rm
+ {
+     my($archive) = @_;
++    my $qarchive = quote($archive);
+     if( $archive =~ /^CACHE\// ) {
+-       $archive =~ s%^CACHE/%/var/cache/apt/archives/%;
+-       system("rm -f $archive");
++       $qarchive =~ s%^CACHE/%/var/cache/apt/archives/%;
++       system("rm -f $qarchive");
+     } elsif( $archive eq 'apt.conf' ) {
+        system("rm -f /etc/apt/apt.conf");
+     } elsif( $archive eq 'sources.list' ) {
+        system("rm -f /etc/apt/sources.list");
+     } elsif( $archive =~ /\.debd?$/ ) {
+        # uncommented and changed to use dpkg - alpha
+-       my $name = $archive;
+-       $name =~ s%.*/%%g;
+-       $name =~ s%_.*%%g;
+-       system("dpkg --remove $name >/dev/null");
++       my $qname = $qarchive;
++       $qname =~ s%.*/%%g;
++       $qname =~ s%_.*%%g;
++       system("dpkg --remove $qname >/dev/null");
+        die("extfs: $archive: Operation not permitted\n") if $? != 0;
+     } else {
+        die "extfs: $archive: Operation not permitted\n";
