@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -19,7 +18,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
-THEMEVERSION=	20031130
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
+THEMEVERSION=	20040206
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
@@ -27,7 +28,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnomehack pkgconfig gtk12
 USE_REINPLACE=	yes
 
 MAN1=		sylpheed-claws.1
@@ -56,9 +57,12 @@ CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
+.else
+CONFIGURE_ARGS+=	--disable-gpgme
 .endif
 .if defined(WITH_COMPFACE) || defined(WITH_ALL)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
+CONFIGURE_ARGS+=	--enable-compface
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
@@ -75,11 +79,12 @@ CONFIGURE_ARGS+=	--enable-aspell
 LIB_DEPENDS+=		pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=	--enable-jpilot
+.else
+CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 .if defined(WITH_LDAP) || defined(WITH_ALL)
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
-CONFIGURE_ENV+=		PTHREAD_LIBS=${PTHREAD_LIBS:S/"//g}
 .endif
 .if defined(WITH_SA_PLUG) || defined(WITH_ALL)
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
@@ -127,12 +132,14 @@ post-extract:
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e "s|po intl src|po src|" ${WRKSRC}/Makefile.in
 	@for f in ${WRKSRC}/tools/*; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
-	#@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
+#	@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
