@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libc
-PORTVERSION=	0.1.20021110
+PORTVERSION=	1.0.20030207
 CATEGORIES=	devel
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/msp430/
 PKGNAMEPREFIX=	msp430-

@@ -16,6 +16,7 @@
 %%LIBC_TARG%%/include/msp430/eprom.h
 %%LIBC_TARG%%/include/msp430/flash.h
 %%LIBC_TARG%%/include/msp430/gpio.h
+%%LIBC_TARG%%/include/msp430/iostructures.h
 %%LIBC_TARG%%/include/msp430/lcd.h
 %%LIBC_TARG%%/include/msp430/mpy.h
 %%LIBC_TARG%%/include/msp430/slopeadc.h
@@ -28,6 +29,7 @@
 %%LIBC_TARG%%/include/msp430/usart.h
 %%LIBC_TARG%%/include/msp430x11x.h
 %%LIBC_TARG%%/include/msp430x11x1.h
+%%LIBC_TARG%%/include/msp430x11x2.h
 %%LIBC_TARG%%/include/msp430x12x.h
 %%LIBC_TARG%%/include/msp430x12x2.h
 %%LIBC_TARG%%/include/msp430x13x.h
@@ -54,6 +56,7 @@
 %%LIBC_TARG%%/include/sys/inttypes.h
 %%LIBC_TARG%%/include/sys/reent.h
 %%LIBC_TARG%%/include/sys/types.h
+%%LIBC_TARG%%/include/sys/unistd.h
 %%LIBC_TARG%%/lib/crt430x110.o
 %%LIBC_TARG%%/lib/crt430x1101.o
 %%LIBC_TARG%%/lib/crt430x1111.o
@@ -96,8 +99,10 @@
 %%LIBC_TARG%%/lib/libc.a
 %%LIBC_TARG%%/lib/libm.a
 %%LIBC_TARG%%/lib/msp1/libc.a
+%%LIBC_TARG%%/lib/msp1/libfp.a
 %%LIBC_TARG%%/lib/msp1/libm.a
 %%LIBC_TARG%%/lib/msp2/libc.a
+%%LIBC_TARG%%/lib/msp2/libfp.a
 %%LIBC_TARG%%/lib/msp2/libm.a
 %%LIBC_TARG%%/share/mspgcc/doc/FAQ
 %%LIBC_TARG%%/share/mspgcc/doc/devheaders.txt
