@@ -486,7 +486,6 @@ share/octave/doc/refcard-letter.ps
 @dirrm share/octave/site
 @dirrm share/octave/doc
 @dirrm share/octave
-man/man1/octave.1.gz
 @unexec install-info --delete --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
 @unexec install-info --delete --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
 info/octave.info
