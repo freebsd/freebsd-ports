@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Sat Oct 23 12:04:02 2004
++++ lib/Makefile.in	Mon Feb 14 13:12:45 2005
+@@ -543,7 +543,7 @@
+ 	       if ($$4 == "mm") factor = 72.0 / 25.4; \
+ 	       if ($$4 == "in") factor = 72.0; \
+ 	       printf("    { \"%s\", %5f, %5f },\n", \
+-		      $$1, $$2 * factor, $$3 * factor); }' < $< >> $@
++		      $$1, $$2 * factor, $$3 * factor); }' < paperspecs >> $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
