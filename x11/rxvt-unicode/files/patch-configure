@@ -1,5 +1,5 @@
---- configure.orig	Sun Aug 22 03:37:34 2004
-+++ configure	Sat Aug 28 18:08:08 2004
+--- configure.orig	Mon Dec 20 17:44:51 2004
++++ configure	Wed Dec 29 22:01:55 2004
 @@ -3216,13 +3216,13 @@
  LINKER="$CXX"
  if test x$GCC = xyes && test x$GXX = xyes; then
