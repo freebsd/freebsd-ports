@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pxe
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.kano.org.uk/projects/pxe/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
