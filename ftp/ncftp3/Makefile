@@ -8,13 +8,13 @@
 
 PORTNAME=	ncftp
 PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-315-v6-20030112.diff.gz
+PATCHFILES=	ncftp-315-v6-20030207.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
