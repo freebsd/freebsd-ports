@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-cleanice-engine
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	elysium-project
