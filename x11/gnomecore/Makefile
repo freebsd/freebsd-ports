@@ -24,7 +24,8 @@ USE_GNOMECTRL=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
-		--with-gtkhtml=${X11BASE}
+		--with-gtkhtml=${X11BASE} \
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
