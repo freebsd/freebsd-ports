@@ -685,6 +685,7 @@ intel/compiler60/ia32/bin/INTEL
 intel/compiler60/ia32/bin/icc
 intel/compiler60/ia32/bin/icc.cfg
 intel/compiler60/ia32/bin/iccbin
+intel/compiler60/ia32/bin/iccbin.cfg
 intel/compiler60/ia32/bin/iccfilt
 intel/compiler60/ia32/bin/iccvars.csh
 intel/compiler60/ia32/bin/iccvars.sh
@@ -692,6 +693,7 @@ intel/compiler60/ia32/bin/icid
 intel/compiler60/ia32/bin/icpc
 intel/compiler60/ia32/bin/icpc.cfg
 intel/compiler60/ia32/bin/icpcbin
+intel/compiler60/ia32/bin/icpcbin.cfg
 intel/compiler60/ia32/bin/icpi
 intel/compiler60/ia32/bin/ld
 intel/compiler60/ia32/bin/lmgrd.intel

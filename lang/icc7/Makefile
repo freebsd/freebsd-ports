@@ -7,6 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	6.0.159
+PORTREVISION=	1
 CATEGORIES=	lang linux
 MASTER_SITES=
 DISTNAME=	l_cc_pu_6.0.159
@@ -45,7 +46,7 @@ post-extract:
 #	intel-ecc6-6.0-159.ia64.rpm \
 #	intel-eldb6-6.0-228.ia64.rpm \
 #	intel-esubh6-6.0-159.ia64.rpm
-	@cd ${WRKSRC};  rpm2cpio ${i} | cpio -idu --quiet
+	@cd ${WRKSRC};  rpm2cpio 2>/dev/null ${i} | cpio -idu --quiet
 .endfor
 
 pre-patch:
@@ -67,7 +68,7 @@ post-patch:
 # Correct some paths and patch some files
 .for i in ia32/bin/icc ia32/bin/icc.cfg ia32/bin/iccvars.csh \
 	ia32/bin/iccvars.sh ia32/bin/icpc ia32/bin/icpc.cfg docs/csupport
-	@${SED} 's@export -n IA32ROOT; unset IA32ROOT;@@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icc" @@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icpc" @@g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:Intel(R) C++ Compiler for Linux:g' \
+	@${SED} 's@export -n IA32ROOT; unset IA32ROOT;@@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icc" @@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icpc" @@g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
 		${WRKSRC}/opt/intel/compiler60/${i} \
 		>${WRKSRC}/opt/intel/compiler60/${i}.seded
 	@${MV} -f ${WRKSRC}/opt/intel/compiler60/${i}.seded \
@@ -80,7 +81,11 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/docs
 .endif
 # Provide a more FreeBSD'ish compile environment
-	@${ECHO} -e "\n-Ulinux\n-U__linux__\n-U__linux\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/compiler60/ia32/bin/icc.cfg
+.for i in icc.cfg icpc.cfg
+	@${ECHO} -e "\n-Ulinux\n-U__linux__\n-U__linux\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/compiler60/ia32/bin/${i}
+	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/compiler60/ia32/bin/${i}
+.endfor
+	@cd ${WRKSRC}/opt/intel/compiler60/ia32/bin/ && ${LN} -s icc.cfg iccbin.cfg && ${LN} -s icpc.cfg icpcbin.cfg
 # \n-Qlocation,ld,/usr/bin\n\n-sox-\n
 # Some magic to be able to link
 	@${SED} 's:@@PREFIX@@:${PREFIX}:g' ${FILESDIR}/ld >${WRKSRC}/opt/intel/compiler60/ia32/bin/ld
