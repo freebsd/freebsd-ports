@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	netscape-${BROWSER_ARC}
-PORTVERSION?=	${BROWSER_VER}
+PORTVERSION?=	4.76
 
 .if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>
@@ -40,10 +40,10 @@ MASTER_SITES+=	ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST
 		ftp://ftp.nsu.ru/pub/mirrors/ftp-de.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.curtin.edu.au/pub/internet/netscape/${NETSCAPE_DIST_SUBDIR}/
 .endif
-DISTFILES=	${BROWSER}-v475-us.${NETSCAPE_DIST_TAG}.tar.gz
+DISTFILES=	${BROWSER}-v${BROWSER_V}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-WRKSRC=		${WRKDIR}/${BROWSER}-v475.${NETSCAPE_DIST_TAG}
+WRKSRC=		${WRKDIR}/${BROWSER}-v${BROWSER_V}.${NETSCAPE_DIST_TAG}
 ONLY_FOR_ARCHS?=	i386 alpha
 
 .if ${ARCH} == "alpha" && !defined(BROWSER)
@@ -64,8 +64,9 @@ NETSCAPE_DIST_GRADE?=	complete_install # | navigator_standalone
 NETSCAPE_DIST_SUBDIR?=	communicator/english/${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
 NETSCAPE_DIST_TAG?=	x86-unknown-freebsd # | x86-unknown-linux2.2 | x86-bsdi-bsd2 | alpha-dec-osf4.0
 
-BROWSER_VER=	4.75
-INFILE_HEAD?=	'Communicator,4.75.0.20000814'
+BROWSER_VER=	${PORTVERSION}
+BROWSER_V!=	${ECHO} ${BROWSER_VER} | sed -e 's/\.//'
+INFILE_HEAD?=	'Communicator,4.76.0.20001006'
 NO_AUTOADMIN=	'Not available'
 NO_FORTIFY=	'No need for this version'
 
