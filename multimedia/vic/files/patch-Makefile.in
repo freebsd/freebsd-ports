@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Thu Feb 17 21:59:08 2000
++++ Makefile.in	Tue May  8 09:06:28 2001
+@@ -85,7 +85,7 @@
+ OBJ_XIL = @V_OBJ_XIL@
+ OBJ_CRYPT = @V_OBJ_CRYPT@
+ LIB = $(LIB_GRABBER) @V_LIB_TK@ @V_LIB_TCL@ @V_LIB_X11@ @V_LIB@ \
+-	codec/tmndec/libh263.a codec/tmn-x/libh263coder.a ../common/libuclmmbase.a -lm
++	codec/tmndec/libh263.a codec/tmn-x/libh263coder.a /usr/local/lib/libuclmmbase.a -lm
+ INCLUDE = $(INCLUDE_MISC) $(INCLUDE_GRABBER) $(INCLUDE_TK) $(INCLUDE_TCL) \
+ 	$(INCLUDE_X11) $(MD_INC) -Icodec/jpeg -Icodec/p64 -I.
+ DEFINE = @V_DEFINE@ -DED_YBITS=$(ED_YBITS) -DSIGRET=@V_SIGRET@ -DNLAYER=8
+@@ -329,7 +329,7 @@
+ 	 chown bin @prefix@/bin/vic
+ 	 chgrp bin @prefix@/bin/vic
+ 	 chmod 555 @prefix@/bin/vic
+-	 cp vic.1 @prefix@/man/vic.1
++	 cp vic.1 @prefix@/man/man1/vic.1
+ 	 cp histtolut @prefix@/bin/histtolut
+ 	 chown bin @prefix@/bin/histtolut
+ 	 chgrp bin @prefix@/bin/histtolut

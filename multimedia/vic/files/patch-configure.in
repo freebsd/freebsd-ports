@@ -1,0 +1,12 @@
+--- configure.in.org	Mon May  7 15:30:01 2001
++++ configure.in	Mon May  7 15:31:32 2001
+@@ -72,8 +72,7 @@
+ if test -r /usr/include/linux/videodev.h ; then
+ 	V_OBJ_GRABBER="video/grabber-video4linux.o $V_OBJ_GRABBER"
+ fi
+-#if test -r /usr/local/lib/libspigot.a -a ${PORTOBJFORMAT} != elf; then
+-if test -r /usr/local/lib/libspigot.a ; then
++if test -r /usr/local/lib/libspigot.a -a ${PORTOBJFORMAT} != elf; then
+ 	V_OBJ_GRABBER="video/grabber-spigot.o $V_OBJ_GRABBER"
+ 	V_LIB_GRABBER="$V_LIB_GRABBER -lspigot"
+ 	V_INCLUDE_GRABBER="$V_INCLUDE_GRABBER -I/usr/local/include"

@@ -6,17 +6,26 @@
 #
 
 PORTNAME=	vic
-PORTVERSION=	2.8
-CATEGORIES=	mbone tk82
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
-DISTFILES=	vicsrc-2.8.tar.gz
+PORTVERSION=	2.8.1.1.3
+CATEGORIES=	mbone tk83
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl-1.1.3/
+DISTNAME=	${PORTNAME}-2.8ucl-1.1.3
 
 MAINTAINER=	fenner@FreeBSD.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+BUILD_DEPENDS=  ${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase
+
+WRKSRC=		${WRKDIR}/vic-2.8ucl-1.1.3/vic
 
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
+CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
+		-x-includes=${PREFIX}/include \
+		-without-ucltcl \
+		-with-tcl=${LOCALBASE} \
+		-without-ucltk \
+		-with-tk=${LOCALBASE}
 MAN1=		vic.1
 
 post-install:
