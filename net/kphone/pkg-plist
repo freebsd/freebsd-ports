@@ -9,5 +9,9 @@ bin/kphone
 %%DATADIR%%/icons/online.png
 %%DATADIR%%/icons/phonebook.png
 %%DATADIR%%/icons/videocall.png
+%%DATADIR%%/translations/kphone_de.qm
+%%DATADIR%%/translations/kphone_fi.qm
+%%DATADIR%%/translations/kphone_pt_BR.qm
+@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
