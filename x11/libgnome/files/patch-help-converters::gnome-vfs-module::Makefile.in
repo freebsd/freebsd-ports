@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- help-converters/gnome-vfs-module/Makefile.in.orig	Wed Feb 27 15:17:54 2002
++++ help-converters/gnome-vfs-module/Makefile.in	Wed Feb 27 15:34:24 2002
+@@ -134,12 +134,12 @@
+ cxxflags_set = @cxxflags_set@
+ gnomelocaledir = @gnomelocaledir@
+ 
+-INCLUDES =  	-I$(top_srcdir)						$(HELP_VFS_MODULE_CFLAGS)				
++INCLUDES =  	-DPREFIX="\"$(PREFIX)\"" -DLOCALBASE="\"$(LOCALBASE)\"" -DX11BASE="\"$(X11BASE)\"" -I$(top_srcdir)						$(HELP_VFS_MODULE_CFLAGS)				
+ 
+ 
+ modules_LTLIBRARIES = libvfs-help.la
+ 
+-module_flags = -export_dynamic -avoid-version
++module_flags = -export_dynamic -avoid-version -module
+ modulesdir = $(libdir)/gnome-vfs-2.0/modules
+ 
+ libvfs_help_la_SOURCES =  	help-method.c		help-method.h		
