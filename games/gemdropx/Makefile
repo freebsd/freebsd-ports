@@ -13,10 +13,7 @@ MASTER_SITES=	http://www.nbswebfx.com/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interesting one-player puzzle game for X
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 MAKE_ENV=	JOY=NO \

@@ -15,10 +15,7 @@ MASTER_SITE_SUBDIR=	cannonsmash
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D tabletennis game
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
-USE_SDL=	yes
+USE_SDL=	image mixer sdl
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk20
 USE_REINPLACE=	yes

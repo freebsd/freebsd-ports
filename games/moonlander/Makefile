@@ -14,9 +14,7 @@ DISTNAME=	moon-lander-1.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"land a spacecraft on the moon"
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
+USE_SDL=	mixer image sdl
 USE_X_PREFIX=	YES
 USE_REINPLACE=	YES
 

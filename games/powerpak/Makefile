@@ -14,19 +14,15 @@ DISTNAME=	PowerPak
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL-based Game Software Development Kit
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		glut.3:${PORTSDIR}/graphics/libglut \
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer sdl
 USE_FREETYPE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 MAKEFILE=	Makefile.UNIX
 
 post-extract:

@@ -15,9 +15,7 @@ MASTER_SITE_SUBDIR=	lgames
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An another tetris clone but a good one with bunch of cool features
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
-USE_SDL=	yes
+USE_SDL=	mixer sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

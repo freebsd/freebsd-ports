@@ -15,13 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game similar to Jezzball or Barrack
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer sdl
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		prefix="${PREFIX}" \
+MAKE_ENV=	prefix="${PREFIX}" \
 		highscoredir="${PREFIX}/share/icebreaker/scores" \
 		mandir="${PREFIX}/man" \
 		CHMOD="${CHMOD}" \

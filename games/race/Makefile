@@ -14,13 +14,10 @@ MASTER_SITES=	ftp://users.freebsd.org.uk/pub/foobar2k/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Racing Game
 
-LIB_DEPENDS=	SDL_mixer:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image:${PORTSDIR}/graphics/sdl_image
-
+USE_SDL=	mixer image sdl
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_MESA=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CFLAGS+=	"-I${X11BASE}/include"
 MAKE_ENV=	CC="${CC} ${CFLAGS}" LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
 
