@@ -7,7 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -20,13 +20,15 @@ MAINTAINER=	gnome@FreeBSD.org
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
+		ofx.0:${PORTSDIR}/finance/libofx \
 		db4.0:${PORTSDIR}/databases/db4 \
 		gw-standard.0:${PORTSDIR}/devel/g-wrap
 RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
 		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${site_perl}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${site_perl}/Finance/Quote.pm:${PORTSDIR}/misc/p5-Finance-Quote
+		${site_perl}/Finance/Quote.pm:${PORTSDIR}/misc/p5-Finance-Quote \
+		${site_perl}/Finance/QuoteHist.pm:${PORTSDIR}/misc/p5-Finance-QuoteHist
 
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
@@ -40,6 +42,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG} \
+		--enable-ofx \
 		--disable-error-on-warning
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl"
