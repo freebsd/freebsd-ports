@@ -1,0 +1,28 @@
+--- Makefile.orig	Sun Oct 19 03:12:14 2003
++++ Makefile	Sun Oct 19 03:12:40 2003
+@@ -1,13 +1,13 @@
+ # Makefile for Netscape Hangul PS file filter
+ # Lee yongjae, setup@shiva.snu.ac.kr, 1997.1.22.
+ 
+-CC=cc
+-CFLAG=-O
++CC?=cc
++CFLAGS?=-O -pipe
+ 
+ ALL = nhpf wrapstr
+ 
+ .c.o:
+-	$(CC) $(CFLAG) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ all: $(ALL)
+ clean:
+@@ -18,7 +18,7 @@
+ 	rm -f wrapstr
+ 
+ wrapstr: wrapstr.c
+-	$(CC) $(CFLAG) -o wrapstr wrapstr.c
++	$(CC) $(CFLAGS) -o wrapstr wrapstr.c
+ 
+ nhpf.o: ncode.h fontdef.str n3f-5.str n3f-5b.str 
+ 
