@@ -4,9 +4,9 @@
  SHOME  =../..
 -CFLAGS = -I.  -O2  -I../System/Common
 -CC     =gcc 
-+CFLAGS += -I. -I../System/Common -I${LOCALBASE}/include
-+CC     ?=gcc 
++CFLAGS = -I.  %%CFLAGS%%   -I../System/Common -I%%LOCALBASE%%/include
++CC     =%%CC%%
  HDR    =sather.h tags.h
 -LIBS   = -lgc -lm
-+LIBS   = -lgc -lm -L${LOCALBASE}/lib
++LIBS   = -lgc -lm -L%%LOCALBASE%%/lib
  CS     =sacomp

@@ -1,0 +1,17 @@
+--- Emacs/sather-tutorial.texinfo.orig	Wed Nov  3 22:09:35 1999
++++ Emacs/sather-tutorial.texinfo	Thu May  2 22:01:24 2002
+@@ -7,6 +7,14 @@
+ @setchapternewpage odd
+ 
+ @ifinfo
++@format
++INFO-DIR-SECTION Sather
++START-INFO-DIR-ENTRY
++* sather-tutorial: (sather-tutorial).
++			The Sather Eclectic Tutorial.
++END-INFO-DIR-ENTRY
++@end format
++
+ Sather Eclectic Tutorial
+ 
+ Copyright (C) 1995 by International Computer Science Institute

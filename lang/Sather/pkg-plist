@@ -1,10 +1,483 @@
-@comment $FreeBSD$
+bin/sabrowse
 bin/sacomp
-share/doc/sather/Bugs
-share/doc/sather/Changes
-share/doc/sather/Contributing
-share/doc/sather/FAQ
-share/doc/sather/License
-share/doc/sather/README
-share/doc/sather/programmer-manual.ps
-@dirrm share/doc/sather
+@unexec install-info --delete %D/info/sather.info %D/info/dir
+info/sather.info
+@exec install-info %D/info/sather-mode.info %D/info/dir
+@unexec install-info --delete %D/info/sather-mode.info %D/info/dir
+info/sather-mode.info
+@exec install-info %D/info/sather.info %D/info/dir
+@unexec install-info --delete %D/info/sather-tutorial.info %D/info/dir
+info/sather-tutorial.info
+@exec install-info %D/info/sather-tutorial.info %D/info/dir
+lib/sather/Bin/PP
+lib/sather/Bin/bin-wrapper
+lib/sather/Bin/gen_html
+lib/sather/Bin/sabrowse
+lib/sather/Bin/sacomp
+lib/sather/Bin/saprep
+lib/sather/Browser/Help/Files
+lib/sather/Browser/Help/HTML
+lib/sather/Browser/Help/NewStuff
+lib/sather/Browser/Help/VersionHistory
+lib/sather/Browser/Help/acknowledgements
+lib/sather/Browser/Help/browser-tut.tex
+lib/sather/Browser/Help/bugs
+lib/sather/Browser/Help/buttons
+lib/sather/Browser/Help/classListPane
+lib/sather/Browser/Help/customization
+lib/sather/Browser/Help/emacs
+lib/sather/Browser/Help/featureListPane
+lib/sather/Browser/Help/graphPane
+lib/sather/Browser/Help/help
+lib/sather/Browser/Help/historyPane
+lib/sather/Browser/Help/implementation
+lib/sather/Browser/Help/menuPane
+lib/sather/Browser/Help/speed
+lib/sather/Browser/Help/tcl-sather-interface
+lib/sather/Browser/Help/textPane
+lib/sather/Browser/README
+lib/sather/Browser/Sather/abs_graph.sa
+lib/sather/Browser/Sather/browser.sa
+lib/sather/Browser/Sather/digraph.sa
+lib/sather/Browser/Sather/digraph_aux.sa
+lib/sather/Browser/Sather/dummy_compiler.sa
+lib/sather/Browser/Tcl/browser.tcl
+lib/sather/Browser/Tcl/browserClassList.tcl
+lib/sather/Browser/Tcl/browserConfig.tcl
+lib/sather/Browser/Tcl/browserDump.tcl
+lib/sather/Browser/Tcl/browserFeatureList.tcl
+lib/sather/Browser/Tcl/browserFontsNColors.tcl
+lib/sather/Browser/Tcl/browserGraph.tcl
+lib/sather/Browser/Tcl/browserHelp.tcl
+lib/sather/Browser/Tcl/browserHistory.tcl
+lib/sather/Browser/Tcl/browserMisc.tcl
+lib/sather/Browser/Tcl/browserPrompters.tcl
+lib/sather/Browser/Tcl/browserStartupWindow.tcl
+lib/sather/Browser/Tcl/browserText.tcl
+lib/sather/Browser/Tcl/campanile.gif
+lib/sather/Browser/Tcl/campanile_smaller.gif
+lib/sather/Browser/Tcl/dotty-header
+lib/sather/Browser/Tcl/sather.xbm
+lib/sather/Browser/Tcl/sathermask.xbm
+lib/sather/Browser/TkKit/TkKit.html
+lib/sather/Browser/TkKit/TkKit.module
+lib/sather/Browser/TkKit/entry_arr.sa
+lib/sather/Browser/TkKit/exceptions.sa
+lib/sather/Browser/TkKit/simpleTkApp.sa
+lib/sather/Browser/TkKit/temperature.sa
+lib/sather/Browser/TkKit/tkApp.sa
+lib/sather/Browser/TkKit/tkCallback.sa
+lib/sather/Browser/TkKit/tkMiscWidgets.sa
+lib/sather/Browser/TkKit/tkToplevel.sa
+lib/sather/Browser/TkKit/tkWidget.sa
+lib/sather/Browser/TkKit/tkWindow.sa
+lib/sather/Browser/Web/Bugs
+lib/sather/Browser/Web/README
+lib/sather/Browser/Web/common_funcs
+lib/sather/Browser/Web/convert-1.1
+lib/sather/Browser/Web/dotty-header
+lib/sather/Browser/Web/dump-pre-html-info
+lib/sather/Browser/Web/gen_html_class_index
+lib/sather/Browser/Web/gen_html_quick
+lib/sather/Browser/Web/gen_html_sa_files
+lib/sather/Browser/Web/gen_html_shortflat
+lib/sather/Browser/Web/gen_html_top_level
+lib/sather/Browser/Web/gen_mml_sa_files
+lib/sather/Browser/Web/gen_mml_shortflat
+lib/sather/Browser/Web/gif2jpg
+lib/sather/Browser/Web/gr2gif
+lib/sather/Browser/Web/gr2jpg
+lib/sather/Browser/Web/graph2dot
+lib/sather/Browser/Web/ps2gif
+lib/sather/Browser/all-classes.sa
+lib/sather/Browser/browser-debug.module
+lib/sather/Browser/browser.module
+lib/sather/Browser/gen_lib
+lib/sather/Browser/test.sa
+lib/sather/Library/Base/Base.module
+lib/sather/Library/Base/abstract.sa
+lib/sather/Library/Base/aref.sa
+lib/sather/Library/Base/aref_test.sa
+lib/sather/Library/Base/aval.sa
+lib/sather/Library/Base/bool.sa
+lib/sather/Library/Base/bool_test.sa
+lib/sather/Library/Base/char.sa
+lib/sather/Library/Base/char_test.sa
+lib/sather/Library/Base/compare.sa
+lib/sather/Library/Base/elt_alg.sa
+lib/sather/Library/Base/flt.sa
+lib/sather/Library/Base/flt_dummy.sa
+lib/sather/Library/Base/flt_other.sa
+lib/sather/Library/Base/fltd.sa
+lib/sather/Library/Base/fltd_test.sa
+lib/sather/Library/Base/int.sa
+lib/sather/Library/Base/int_test.sa
+lib/sather/Library/Base/math_test.sa
+lib/sather/Library/Base/misc.sa
+lib/sather/Library/Base/number.sa
+lib/sather/Library/Base/succ_stream.sa
+lib/sather/Library/Containers/Containers.module
+lib/sather/Library/Containers/ContainersArrays.module
+lib/sather/Library/Containers/ContainersBags.module
+lib/sather/Library/Containers/ContainersDispensers.module
+lib/sather/Library/Containers/ContainersF_classes.module
+lib/sather/Library/Containers/ContainersLists.module
+lib/sather/Library/Containers/ContainersMaps.module
+lib/sather/Library/Containers/ContainersSets.module
+lib/sather/Library/Containers/GeneratedContainers.module
+lib/sather/Library/Containers/a_list.sa
+lib/sather/Library/Containers/a_pq.sa
+lib/sather/Library/Containers/a_queue.sa
+lib/sather/Library/Containers/a_stack.sa
+lib/sather/Library/Containers/arr.sa
+lib/sather/Library/Containers/arr_alg.sa
+lib/sather/Library/Containers/arr_permute_alg.sa
+lib/sather/Library/Containers/arr_search_alg.sa
+lib/sather/Library/Containers/arr_select_alg.sa
+lib/sather/Library/Containers/arr_sort_alg.sa
+lib/sather/Library/Containers/array.sa
+lib/sather/Library/Containers/array2.sa
+lib/sather/Library/Containers/array2_test.sa
+lib/sather/Library/Containers/array3.sa
+lib/sather/Library/Containers/array3_test.sa
+lib/sather/Library/Containers/arrays_test.sa
+lib/sather/Library/Containers/bag.sa
+lib/sather/Library/Containers/bag_incl.sa
+lib/sather/Library/Containers/bag_test.sa
+lib/sather/Library/Containers/btree.sa
+lib/sather/Library/Containers/btree_test.sa
+lib/sather/Library/Containers/container.sa
+lib/sather/Library/Containers/container_alg.sa
+lib/sather/Library/Containers/dispenser.sa
+lib/sather/Library/Containers/fgap_list.sa
+lib/sather/Library/Containers/fgap_list_test.sa
+lib/sather/Library/Containers/flist.sa
+lib/sather/Library/Containers/flist_test.sa
+lib/sather/Library/Containers/fmap.sa
+lib/sather/Library/Containers/fmap_test.sa
+lib/sather/Library/Containers/fmultimap.sa
+lib/sather/Library/Containers/fmultimap_test.sa
+lib/sather/Library/Containers/fqset.sa
+lib/sather/Library/Containers/fset.sa
+lib/sather/Library/Containers/fset_test.sa
+lib/sather/Library/Containers/h_bag.sa
+lib/sather/Library/Containers/h_map.sa
+lib/sather/Library/Containers/h_multimap.sa
+lib/sather/Library/Containers/h_set.sa
+lib/sather/Library/Containers/hashtab.sa
+lib/sather/Library/Containers/list.sa
+lib/sather/Library/Containers/list_test.sa
+lib/sather/Library/Containers/llist.sa
+lib/sather/Library/Containers/llist_test.sa
+lib/sather/Library/Containers/map.sa
+lib/sather/Library/Containers/map_alg.sa
+lib/sather/Library/Containers/map_incl.sa
+lib/sather/Library/Containers/map_test.sa
+lib/sather/Library/Containers/multimap.sa
+lib/sather/Library/Containers/multimap_incl.sa
+lib/sather/Library/Containers/multimap_test.sa
+lib/sather/Library/Containers/next.sa
+lib/sather/Library/Containers/nr_a_stack.sa
+lib/sather/Library/Containers/nr_stack.sa
+lib/sather/Library/Containers/orig_fset.sa
+lib/sather/Library/Containers/pq.sa
+lib/sather/Library/Containers/pq_test.sa
+lib/sather/Library/Containers/queue.sa
+lib/sather/Library/Containers/queue_test.sa
+lib/sather/Library/Containers/set.sa
+lib/sather/Library/Containers/set_incl.sa
+lib/sather/Library/Containers/set_test.sa
+lib/sather/Library/Containers/set_views.sa
+lib/sather/Library/Containers/set_views_test.sa
+lib/sather/Library/Containers/stack.sa
+lib/sather/Library/Containers/stack_test.sa
+lib/sather/Library/Containers/tup.sa
+lib/sather/Library/Containers/tup_test.sa
+lib/sather/Library/Ext/External.module
+lib/sather/Library/Ext/bind_fortran.sa
+lib/sather/Library/Ext/c.sa
+lib/sather/Library/Ext/c_ptr.sa
+lib/sather/Library/Ext/fortran.sa
+lib/sather/Library/Ext/other_c_ptrs.sa
+lib/sather/Library/Graphs/Graphs.module
+lib/sather/Library/Graphs/abs_digraph.sa
+lib/sather/Library/Graphs/abs_graph.sa
+lib/sather/Library/Graphs/abs_ugraph.sa
+lib/sather/Library/Graphs/digraph.sa
+lib/sather/Library/Graphs/digraph_alg.sa
+lib/sather/Library/Graphs/digraph_incl.sa
+lib/sather/Library/Graphs/digraph_mat.sa
+lib/sather/Library/Graphs/digraph_test.sa
+lib/sather/Library/Graphs/digraph_views.sa
+lib/sather/Library/Graphs/digraph_views_test.sa
+lib/sather/Library/Graphs/edges.sa
+lib/sather/Library/Graphs/graph_exc.sa
+lib/sather/Library/Graphs/lbld_digraph.sa
+lib/sather/Library/Graphs/ugraph.sa
+lib/sather/Library/Graphs/ugraph_incl.sa
+lib/sather/Library/Graphs/ugraph_test.sa
+lib/sather/Library/Graphs/wtd_digraph.sa
+lib/sather/Library/Graphs/wtd_digraph_alg.sa
+lib/sather/Library/Graphs/wtd_digraph_test.sa
+lib/sather/Library/IO/IO.module
+lib/sather/Library/IO/err.sa
+lib/sather/Library/IO/file.sa
+lib/sather/Library/IO/in.sa
+lib/sather/Library/IO/out.sa
+lib/sather/Library/IO/str_stream.sa
+lib/sather/Library/IO/stream.sa
+lib/sather/Library/Library.module
+lib/sather/Library/Math/Math.module
+lib/sather/Library/Math/Matvec.module
+lib/sather/Library/Math/abs_mat.sa
+lib/sather/Library/Math/abs_vec.sa
+lib/sather/Library/Math/cpx.sa
+lib/sather/Library/Math/cpx_test.sa
+lib/sather/Library/Math/cpxd.sa
+lib/sather/Library/Math/fft.sa
+lib/sather/Library/Math/i_interval.sa
+lib/sather/Library/Math/inti.sa
+lib/sather/Library/Math/jacobi.sa
+lib/sather/Library/Math/mat.sa
+lib/sather/Library/Math/matcpx.sa
+lib/sather/Library/Math/matd.sa
+lib/sather/Library/Math/perm_random_gen.sa
+lib/sather/Library/Math/rat.sa
+lib/sather/Library/Math/rnd.sa
+lib/sather/Library/Math/rnd_test.sa
+lib/sather/Library/Math/svd.sa
+lib/sather/Library/Math/test_i_interval.sa
+lib/sather/Library/Math/test_matvec.sa
+lib/sather/Library/Math/vec.sa
+lib/sather/Library/Math/veccpx.sa
+lib/sather/Library/Math/vecd.sa
+lib/sather/Library/Strings/Strings.module
+lib/sather/Library/Strings/base_format.sa
+lib/sather/Library/Strings/format.sa
+lib/sather/Library/Strings/fstr.sa
+lib/sather/Library/Strings/fstr_test.sa
+lib/sather/Library/Strings/glob.sa
+lib/sather/Library/Strings/regex.c
+lib/sather/Library/Strings/regex.h
+lib/sather/Library/Strings/regexp.c
+lib/sather/Library/Strings/regexp.sa
+lib/sather/Library/Strings/str.sa
+lib/sather/Library/Strings/str_cursor.sa
+lib/sather/Library/Strings/str_cursor_test.sa
+lib/sather/Library/Strings/test_format.sa
+lib/sather/Library/System/DualGui/DualGuiAppToServer.module
+lib/sather/Library/System/DualGui/gui_app_end.sa
+lib/sather/Library/System/DualGui/gui_server_end.sa
+lib/sather/Library/System/DualGui/gui_util.sa
+lib/sather/Library/System/Gui/Demos/demo1.sa
+lib/sather/Library/System/Gui/Demos/demo2.sa
+lib/sather/Library/System/Gui/Demos/demo_listbox.sa
+lib/sather/Library/System/Gui/Demos/demo_menu.sa
+lib/sather/Library/System/Gui/Demos/demo_raster.sa
+lib/sather/Library/System/Gui/Demos/demo_text.sa
+lib/sather/Library/System/Gui/Demos/pizza.sa
+lib/sather/Library/System/Gui/GuiRaster.module
+lib/sather/Library/System/Gui/GuiTclTkInterface.module
+lib/sather/Library/System/Gui/GuiWidgets.module
+lib/sather/Library/System/Gui/anchor.sa
+lib/sather/Library/System/Gui/button.sa
+lib/sather/Library/System/Gui/canvas.sa
+lib/sather/Library/System/Gui/check.sa
+lib/sather/Library/System/Gui/color.sa
+lib/sather/Library/System/Gui/entry.sa
+lib/sather/Library/System/Gui/events.sa
+lib/sather/Library/System/Gui/frame.sa
+lib/sather/Library/System/Gui/gui.sa
+lib/sather/Library/System/Gui/gui_util.sa
+lib/sather/Library/System/Gui/init_gui.sa
+lib/sather/Library/System/Gui/label.sa
+lib/sather/Library/System/Gui/listbox.sa
+lib/sather/Library/System/Gui/menu.sa
+lib/sather/Library/System/Gui/menubutton.sa
+lib/sather/Library/System/Gui/misc.sa
+lib/sather/Library/System/Gui/pack.sa
+lib/sather/Library/System/Gui/radio.sa
+lib/sather/Library/System/Gui/raster.sa
+lib/sather/Library/System/Gui/root_window.sa
+lib/sather/Library/System/Gui/text.sa
+lib/sather/Library/System/Gui/tk.sa
+lib/sather/Library/System/Gui/toplevel.sa
+lib/sather/Library/System/Gui/widget.sa
+lib/sather/Library/System/Gui/widget_config.sa
+lib/sather/Library/System/Gui/wmgr.sa
+lib/sather/Library/System/Socket/Socket.module
+lib/sather/Library/System/Socket/experimental/README
+lib/sather/Library/System/Socket/experimental/Socket.module
+lib/sather/Library/System/Socket/experimental/socket.sa
+lib/sather/Library/System/Socket/experimental/socket_support.c
+lib/sather/Library/System/Socket/experimental/test/TODO
+lib/sather/Library/System/Socket/experimental/test/socket.sa
+lib/sather/Library/System/Socket/experimental/test/test.module
+lib/sather/Library/System/Socket/socket.sa
+lib/sather/Library/System/Socket/socket_support.c
+lib/sather/Library/System/Socket/socket_support_unix.c
+lib/sather/Library/System/Socket/socket_support_win32.c
+lib/sather/Library/System/Socket/socket_test.sa
+lib/sather/Library/System/System.module
+lib/sather/Library/System/TclTk/TclTk.module
+lib/sather/Library/System/TclTk/c_interface.c
+lib/sather/Library/System/TclTk/c_interface.sa
+lib/sather/Library/System/TclTk/c_raster.c
+lib/sather/Library/System/TclTk/tkRaster.c
+lib/sather/Library/System/TclTk/tkRaster.h
+lib/sather/Library/System/TclTk/tkRasterBuiltIn.c
+lib/sather/Library/System/TclTk/tkRasterBuiltIn.h
+lib/sather/Library/System/Zones/Zones.module
+lib/sather/Library/System/Zones/zone.sa
+lib/sather/Library/System/runtime.sa
+lib/sather/Library/System/sys.sa
+lib/sather/Library/System/test.sa
+lib/sather/Library/System/time.sa
+lib/sather/Library/System/unix.sa
+lib/sather/Library/pSather/pSather.module
+lib/sather/Library/pSather/psather.sa
+lib/sather/System/Common/CONFIG
+lib/sather/System/Common/Common.module
+lib/sather/System/Common/c.h
+lib/sather/System/Common/c_header.h
+lib/sather/System/Common/exception.h
+lib/sather/System/Common/floatmath.h
+lib/sather/System/Common/fortran.h
+lib/sather/System/Common/header.h
+lib/sather/System/Common/runtime.c
+lib/sather/System/Common/runtime.h
+lib/sather/System/Debug/PO.module
+lib/sather/System/Debug/POG.module
+lib/sather/System/Debug/debug.sa
+lib/sather/System/Debug/po.sa
+lib/sather/System/Debug/pog.sa
+lib/sather/System/Debug/pohelp.sa
+lib/sather/System/Debug/print.c
+lib/sather/System/FORBID
+lib/sather/System/Platforms/X/CONFIG
+lib/sather/System/Platforms/X/Platform.module
+lib/sather/System/Platforms/X/header.h
+lib/sather/System/Platforms/dualgui/CONFIG
+lib/sather/System/Platforms/dualgui/GuiServer.module
+lib/sather/System/Platforms/dualgui/Platform.module
+lib/sather/System/Platforms/dualgui/dual_gui_server
+lib/sather/System/Platforms/dualgui/header.h
+lib/sather/System/Platforms/f77/CONFIG
+lib/sather/System/Platforms/f77/Platform.module
+lib/sather/System/Platforms/f77/header.h
+lib/sather/System/Platforms/gui/CONFIG
+lib/sather/System/Platforms/gui/Platform.module
+lib/sather/System/Platforms/gui/TclCode/README
+lib/sather/System/Platforms/gui/TclCode/gui_post_socket_init.tcl
+lib/sather/System/Platforms/gui/TclCode/gui_setup.tcl
+lib/sather/System/Platforms/gui/TclCode/sather.xbm
+lib/sather/System/Platforms/gui/TclCode/sathermask.xbm
+lib/sather/System/Platforms/gui/TclCode/startup.tcl
+lib/sather/System/Platforms/gui/TclCode/tcl-system-init.tcl
+lib/sather/System/Platforms/gui/TclCode/tk-system-init.tcl
+lib/sather/System/Platforms/gui/gui_post_socket_init.tcl
+lib/sather/System/Platforms/gui/gui_setup.tcl
+lib/sather/System/Platforms/gui/header.h
+lib/sather/System/Platforms/freebsd/CONFIG
+lib/sather/System/Platforms/freebsd/Platform.module
+lib/sather/System/Platforms/freebsd/header.h
+lib/sather/System/Platforms/tcltk/CONFIG
+lib/sather/System/Platforms/tcltk/Make.target.inc
+lib/sather/System/Platforms/tcltk/Platform.module
+lib/sather/System/Platforms/tcltk/header.h
+lib/sather/System/Platforms/tcltk/init/button.tcl
+lib/sather/System/Platforms/tcltk/init/dialog.tcl
+lib/sather/System/Platforms/tcltk/init/entry.tcl
+lib/sather/System/Platforms/tcltk/init/focus.tcl
+lib/sather/System/Platforms/tcltk/init/listbox.tcl
+lib/sather/System/Platforms/tcltk/init/menu.tcl
+lib/sather/System/Platforms/tcltk/init/obsolete.tcl
+lib/sather/System/Platforms/tcltk/init/optionMenu.tcl
+lib/sather/System/Platforms/tcltk/init/palette.tcl
+lib/sather/System/Platforms/tcltk/init/scale.tcl
+lib/sather/System/Platforms/tcltk/init/scrollbar.tcl
+lib/sather/System/Platforms/tcltk/init/tcl-system-init.tcl
+lib/sather/System/Platforms/tcltk/init/tearoff.tcl
+lib/sather/System/Platforms/tcltk/init/text.tcl
+lib/sather/System/Platforms/tcltk/init/tk-system-init.tcl
+lib/sather/System/Platforms/tcltk/init/tk.tcl
+lib/sather/System/Platforms/tcltk/init/tkerror.tcl
+lib/sather/System/Platforms/tcltk/sather.xbm
+lib/sather/System/Platforms/tcltk/sathermask.xbm
+lib/sather/System/Platforms/tcltk/startup.tcl
+%%PORTDOCS%%share/doc/sather/BugReport
+%%PORTDOCS%%share/doc/sather/Bugs
+%%PORTDOCS%%share/doc/sather/Changes
+%%PORTDOCS%%share/doc/sather/Contributing
+%%PORTDOCS%%share/doc/sather/Debugging.html
+%%PORTDOCS%%share/doc/sather/FAQ
+%%PORTDOCS%%share/doc/sather/GC-incremental
+%%PORTDOCS%%share/doc/sather/Gui/Doc.fmk.ps
+%%PORTDOCS%%share/doc/sather/Gui/index.html
+%%PORTDOCS%%share/doc/sather/Gui/install
+%%PORTDOCS%%share/doc/sather/Installation.html
+%%PORTDOCS%%share/doc/sather/License
+%%PORTDOCS%%share/doc/sather/PP.description
+%%PORTDOCS%%share/doc/sather/Sather-1.1.ps
+%%PORTDOCS%%share/doc/sather/ToDo
+%%PORTDOCS%%share/doc/sather/WebBrowser.html
+%%PORTDOCS%%share/doc/sather/compiler.ps
+%%PORTDOCS%%share/doc/sather/header/README
+%%PORTDOCS%%share/doc/sather/header/c
+%%PORTDOCS%%share/doc/sather/header/c-lgpl
+%%PORTDOCS%%share/doc/sather/header/h
+%%PORTDOCS%%share/doc/sather/header/h-lgpl
+%%PORTDOCS%%share/doc/sather/header/make
+%%PORTDOCS%%share/doc/sather/header/module
+%%PORTDOCS%%share/doc/sather/header/sa
+%%PORTDOCS%%share/doc/sather/header/sa-lgpl
+%%PORTDOCS%%share/doc/sather/index.html
+%%PORTDOCS%%share/doc/sather/iterators.ps
+%%PORTDOCS%%share/doc/sather/pSather-notes
+%%PORTDOCS%%share/doc/sather/programmer-manual.ps
+%%PORTDOCS%%share/doc/sather/runtime_spec
+share/emacs/site-lisp/hl319.el
+share/emacs/site-lisp/sather-lib.el
+share/emacs/site-lisp/sather-module.el
+share/emacs/site-lisp/sather.el
+%%PORTDOCS%%@dirrm share/doc/sather/header
+%%PORTDOCS%%@dirrm share/doc/sather/Gui
+%%PORTDOCS%%@dirrm share/doc/sather
+@dirrm lib/sather/System/Platforms/tcltk/init
+@dirrm lib/sather/System/Platforms/tcltk
+@dirrm lib/sather/System/Platforms/freebsd
+@dirrm lib/sather/System/Platforms/gui/TclCode
+@dirrm lib/sather/System/Platforms/gui
+@dirrm lib/sather/System/Platforms/f77
+@dirrm lib/sather/System/Platforms/dualgui
+@dirrm lib/sather/System/Platforms/X
+@dirrm lib/sather/System/Platforms
+@dirrm lib/sather/System/Debug
+@dirrm lib/sather/System/Common
+@dirrm lib/sather/System
+@dirrm lib/sather/Library/pSather
+@dirrm lib/sather/Library/System/Zones
+@dirrm lib/sather/Library/System/TclTk
+@dirrm lib/sather/Library/System/Socket/experimental/test
+@dirrm lib/sather/Library/System/Socket/experimental
+@dirrm lib/sather/Library/System/Socket
+@dirrm lib/sather/Library/System/Gui/Demos
+@dirrm lib/sather/Library/System/Gui
+@dirrm lib/sather/Library/System/DualGui
+@dirrm lib/sather/Library/System
+@dirrm lib/sather/Library/Strings
+@dirrm lib/sather/Library/Math
+@dirrm lib/sather/Library/IO
+@dirrm lib/sather/Library/Graphs
+@dirrm lib/sather/Library/Ext
+@dirrm lib/sather/Library/Containers
+@dirrm lib/sather/Library/Base
+@dirrm lib/sather/Library
+@dirrm lib/sather/Browser/Web
+@dirrm lib/sather/Browser/TkKit
+@dirrm lib/sather/Browser/Tcl
+@dirrm lib/sather/Browser/Sather
+@dirrm lib/sather/Browser/Help
+@dirrm lib/sather/Browser
+@dirrm lib/sather/Bin
+@dirrm lib/sather

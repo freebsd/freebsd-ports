@@ -1,0 +1,10 @@
+--- debian/bin-wrapper.orig	Thu May  2 19:23:45 2002
++++ debian/bin-wrapper	Thu May  2 19:24:10 2002
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-export SATHER_HOME=/usr/lib/sather
++export SATHER_HOME=%%PREFIX%%/lib/sather
+ 
+ BIN_NAME=`basename $0`
+ 

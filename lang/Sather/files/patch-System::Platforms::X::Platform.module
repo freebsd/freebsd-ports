@@ -1,0 +1,15 @@
+--- System/Platforms/X/Platform.module.orig	Thu May  2 17:18:27 2002
++++ System/Platforms/X/Platform.module	Thu May  2 17:19:33 2002
+@@ -16,10 +16,10 @@
+ -- Gui, DualGui and the Browser all rely on these paths
+ -not_a_real_platform
+ 
+--C_flag -I/usr/X11R6/include/X11/      	-- Expected to contain X11/ headers
++-C_flag -I%%X11BASE%%/include      	-- Expected to contain X11/ headers
+ -- -C_flag -lm
+ 
+--C_flag -L/usr/X11R6/lib/           -- Expected to contain libX11.a
++-C_flag -L%%X11BASE%%/lib           -- Expected to contain libX11.a
+ -C_flag -lX11 
+ 
+ 

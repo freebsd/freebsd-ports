@@ -1,0 +1,5 @@
+$(SATHER_HOME)/Library/System/Socket/Socket.module
+-external C_SOCKET "$(SATHER_HOME)/Library/System/Socket/socket_support.c "  -end
+-external BROWSER " " -end
+-external C_TCL_TK " " -end
+
