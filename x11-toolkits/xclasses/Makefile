@@ -25,6 +25,12 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xclasses
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 .for file in build System/ARules.FreeBSD
 	@${PERL} -pi \
@@ -63,4 +69,4 @@ do-install:
 	@cd ${WRKSRC} && ${SH} build install
 	@${INSTALL_SCRIPT} ${WRKSRC}/setenvxc ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

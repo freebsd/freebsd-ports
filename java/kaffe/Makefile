@@ -27,9 +27,15 @@ PLIST_SUB+=	PORTVER=${PORTVERSION} ARCH=${ARCH}
 
 MAN1=		kaffe.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/BUILD_ENVIRONMENT ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/license.terms ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
