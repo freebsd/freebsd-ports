@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://ieng9.ucsd.edu/~m1foley/
 DISTNAME=	washerDryer-${PORTVERSION}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/washerDryer
 USE_X_PREFIX=	yes

@@ -18,7 +18,7 @@ DISTFILES?=	${PORTNAME}${PORTVERSION:S/.//}cl_linuxmac.zip \
 		${PORTNAME}${PORTVERSION:S/.//}sv.zip
 .endif
 
-MAINTAINER?=	pat@databits.net
+MAINTAINER?=	pat@FreeBSD.org
 
 RUN_DEPENDS=	${LINUXBASE}/usr/games/quake3/q3ded:${Q3SERVER_PORT}
 
