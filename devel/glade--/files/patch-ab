@@ -1,17 +1,25 @@
---- src/glade--.cc.orig	Thu May  4 06:02:30 2000
-+++ src/glade--.cc	Tue Oct 10 12:36:14 2000
-@@ -89,3 +89,3 @@
+--- src/glade--.cc.orig	Wed Oct 11 15:43:35 2000
++++ src/glade--.cc	Sat Nov 11 16:42:44 2000
+@@ -86,7 +86,7 @@
+ 
+ static void call_gtkmm_config()
  {  char buf[80];
 -   FILE *f=popen("gtk-config --version","r");
-+   FILE *f=popen("%%GTK_CONFIG%% --version","r");
++   FILE *f=popen("/usr/X11R6/bin/gtk12-config --version","r");
     if (f)
-@@ -98,3 +98,3 @@
+    {  if (fgets(buf,sizeof(buf),f))
+       {  for (unsigned char *s=(unsigned char*)buf;*s;s++)
+@@ -95,11 +95,11 @@
+          Gtk_Version v;
+          if (parse_version(buf,v))
              Configuration.gtk_version=v;
 -         else cerr << "gtk-config --version: strange result '" << buf << "'\n";
-+         else cerr << "%%GTK_CONFIG%% --version: strange result '" << buf << "'\n";
++         else cerr << "/usr/X11R6/bin/gtk12-config --version: strange result '" << buf << "'\n";
        }
-@@ -102,3 +102,3 @@
+       pclose(f);
     }
 -   else perror("gtk-config");
-+   else perror("%%GTK_CONFIG%%");
++   else perror("/usr/X11R6/bin/gtk12-config");
     f=popen("gtkmm-config --version","r");
+    if (f)
+    {  if (fgets(buf,sizeof(buf),f))
