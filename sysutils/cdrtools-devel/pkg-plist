@@ -1,2 +1,3 @@
 bin/cdrecord
 bin/cdda2wav
+bin/list_audio_tracks
