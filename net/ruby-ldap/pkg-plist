@@ -5,6 +5,7 @@
 %%RUBY_EXAMPLESDIR%%/ldap/test4.rb
 %%RUBY_EXAMPLESDIR%%/ldap/test5.rb
 %%RUBY_EXAMPLESDIR%%/ldap/test6.rb
+%%RUBY_EXAMPLESDIR%%/ldap/test7.rb
 @dirrm %%RUBY_EXAMPLESDIR%%/ldap
 %%RUBY_DOCDIR%%/ldap/README
 %%RUBY_DOCDIR%%/ldap/README.html
