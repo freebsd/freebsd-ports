@@ -15,8 +15,6 @@ MAINTAINER=	stanaka@bb.mbn.or.jp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 
-INSTALLS_SHLIB=	yes
-
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/libjcode.a	${PREFIX}/lib/libjcode.a
 	${INSTALL_DATA}	${WRKSRC}/jlib.h	${PREFIX}/include/jlib.h
