@@ -6227,6 +6227,7 @@ quranref	ports/misc/quranref
 qvplay		ports/graphics/qvplay
 qvwm		ports/x11-wm/qvwm
 qwt		ports/x11-toolkits/qwt
+race		ports/games/race
 racoon		ports/security/racoon
 radio		ports/audio/radio
 radius		ports/net/radius
