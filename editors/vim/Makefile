@@ -9,7 +9,7 @@
 PORTNAME?=	vim
 PATCHLEVEL=	223
 PORTVERSION=	6.0.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
@@ -86,8 +86,8 @@ MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
 .endif
 
 .if defined(WITH_TCL)
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp"
 .endif
 
@@ -129,6 +129,7 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
+	@${PERL} -pi -e 's,8\.2,8.3,' ${WRKSRC}/auto/configure
 
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -sf vim gvim)
