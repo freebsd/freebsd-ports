@@ -35,10 +35,10 @@ use Sys::Hostname;	# get hostname() function
 # 1 = in mail only,
 # 2 = rcsids in both mail and logs.
 #
-$rcsidinfo = 2;
+$RCSIDINFO = 2;
 
 # Debug level, 0 = off
-$debug = 0;
+$DEBUG = 0;
 
 # The command used to mail the log messages.  Usually something
 # like '/usr/sbin/sendmail'.  
@@ -65,7 +65,7 @@ if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
 	$meister = 'markm@FreeBSD.org';
 	$MAILBANNER = "FreeBSD International Crypto Repository";
     }
-    $MAILADDRS = $meister if $debug;
+    $MAILADDRS = $meister if $DEBUG;
 }
 
 
@@ -174,7 +174,7 @@ sub format_names {
 
     $lines[0] = sprintf($format, $dir);
 
-    if ($debug) {
+    if ($DEBUG) {
 	print STDERR "format_names(): dir = ", $dir, "; tag = ", $tag, "; files = ", join(":", @files), ".\n";
     }
     foreach $file (@files) {
@@ -191,7 +191,7 @@ sub format_lists {
     local($header, @lines) = @_;
     local(@text, @files, $lastdir, $lastsep, $tag);
 
-    if ($debug) {
+    if ($DEBUG) {
 	print STDERR "format_lists(): ", join(":", @lines), "\n";
     }
     @text = ();
@@ -503,7 +503,7 @@ if ($#path == 0) {
 }
 $dir = $dir . "/";
 
-if ($debug) {
+if ($DEBUG) {
   print("ARGV  - ", join(":", @ARGV), "\n");
   print("files - ", join(":", @files), "\n");
   print("path  - ", join(":", @path), "\n");
@@ -637,7 +637,7 @@ foreach $tag ( keys %removed_files ) {
 }
 &write_logfile("$LOG_FILE.$i.$id", @log_lines);
 
-if ($rcsidinfo) {
+if ($RCSIDINFO) {
     foreach $tag ( keys %added_files ) {
 	&change_summary_added("$SUMMARY_FILE.$i.$id", $tag,
 	    @{ $added_files{$tag} });
@@ -695,7 +695,7 @@ for ($i = 0; ; $i++) {
         push(@text, "  Log:");
 	push(@text, @lines);
     }
-    if ($rcsidinfo == 2) {
+    if ($RCSIDINFO == 2) {
 	if (-e "$SUMMARY_FILE.$i.$id") {
 	    push(@text, "  ");
 	    push @text, map {"  $_"} format_summaries("$SUMMARY_FILE.$i.$id");
@@ -711,7 +711,7 @@ for ($i = 0; ; $i++) {
 #
 # Now generate the extra info for the mail message..
 #
-if ($rcsidinfo == 1) {
+if ($RCSIDINFO == 1) {
     my @summary_files;
     for ($i = 0; ; $i++) {
 	last unless -e "$LOG_FILE.$i.$id";
