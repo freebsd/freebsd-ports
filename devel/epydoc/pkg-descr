@@ -1,0 +1,11 @@
+Elib, the GNU Emacs Lisp Library, is a collection of useful routines
+for Emacs lisp programs which don't have to be reinvented each time
+a new program is written.
+
+Elib provides features of:
+   - container data structures (queues, stacks, AVL trees, etc)
+   - string handling functions missing in standard Emacs
+   - minibuffer handling functions missing in standard Emacs
+   - routines for handling lists of so-called cookies in a buffer.
+
+WWW: http://www.gnu.org/software/elib/elib.html
