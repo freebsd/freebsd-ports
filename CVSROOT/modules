@@ -446,12 +446,12 @@ astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
 aswedit		ports/www/aswedit
 aswiki		ports/www/aswiki
-at-spi		ports/x11-toolkits/at-spi
+at-spi		ports/accessibility/at-spi
 ataidle		ports/sysutils/ataidle
 atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
 atitd		ports/games/atitd
-atk		ports/devel/atk
+atk		ports/accessibility/atk
 atlas		ports/devel/atlas
 atlas-devel	ports/math/atlas-devel
 atlast		ports/lang/atlast
@@ -1194,7 +1194,7 @@ darkbot		ports/irc/darkbot
 darkice		ports/audio/darkice
 darkstat	ports/net/darkstat
 darts		ports/devel/darts
-dasher		ports/editors/dasher
+dasher		ports/accessibility/dasher
 datapipe	ports/net/datapipe
 dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
@@ -2049,7 +2049,7 @@ gabber		ports/net/gabber
 gaddr		ports/deskutils/gaddr
 gadfly		ports/databases/gadfly
 gag		ports/security/gag
-gail		ports/x11-toolkits/gail
+gail		ports/accessibility/gail
 gaim		ports/net/gaim
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
@@ -2427,7 +2427,7 @@ gnomeiconedit	ports/graphics/gnomeiconedit
 gnomeicu2	ports/net/gnomeicu2
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
-gnomemag	ports/x11/gnomemag
+gnomemag	ports/accessibility/gnomemag
 gnomemedia2	ports/audio/gnomemedia2
 gnomemeeting	ports/net/gnomemeeting
 gnomememoryblocks	ports/games/gnomememoryblocks
@@ -2444,7 +2444,7 @@ gnomepm		ports/misc/gnomepm
 gnomeprint	ports/print/gnomeprint
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
-gnomespeech	ports/audio/gnomespeech
+gnomespeech	ports/accessibility/gnomespeech
 gnomespell	ports/textproc/gnomespell
 gnomesword	ports/misc/gnomesword
 gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
@@ -2456,7 +2456,7 @@ gnomevfs	ports/devel/gnomevfs
 gnomevfs-extras	ports/devel/gnomevfs-extras
 gnomevfs2	ports/devel/gnomevfs2
 gnomoku		ports/games/gnomoku
-gnopernicus	ports/x11/gnopernicus
+gnopernicus	ports/accessibility/gnopernicus
 gnosamba	ports/net/gnosamba
 gnotepad+	ports/editors/gnotepad+
 gnotime		ports/deskutils/gnotime
@@ -2510,7 +2510,7 @@ gofish		ports/net/gofish
 goggles		ports/multimedia/goggles
 gogo		ports/audio/gogo
 gogo-petit	ports/audio/gogo-petit
-gok		ports/sysutils/gok
+gok		ports/accessibility/gok
 golddig		ports/games/golddig
 golded+		ports/news/golded+
 goldstr		ports/misc/goldstr
