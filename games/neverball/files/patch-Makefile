@@ -1,27 +1,30 @@
---- Makefile.orig	Mon Oct 27 21:35:19 2003
-+++ Makefile	Mon Oct 27 21:37:26 2003
-@@ -3,15 +3,15 @@
+--- Makefile.orig	Thu Oct 30 01:24:20 2003
++++ Makefile	Thu Oct 30 01:25:30 2003
+@@ -3,18 +3,18 @@
  
  # Maybe you need one of these.  Maybe you don't.
  
 -#X11_PATH= -L/usr/X11/lib
 -#X11_PATH= -L/usr/X11R6/lib
-+X11_PATHL= -L${X11BASE}/lib
++X11_PATH= -L${X11BASE}/lib
 +X11_PATHI= -I${X11BASE}/include
+ 
+ OGL_LIBS= -lGLU -lGL -lm
+ #OGL_LIBS= -lm                                                # Think Different
  
  #------------------------------------------------------------------------------
  
 -CFLAGS= -Wall -g -ansi $(shell sdl-config --cflags)
 +CFLAGS+= -Wall -g -ansi $(shell ${SDL_CONFIG} --cflags) ${X11_PATHI}
  
--X11_LIBS= $(X11_PATH) -lGLU -lGL -lm
 -SDL_LIBS= $(shell sdl-config --libs)
-+X11_LIBS= $(X11_PATHL) -lGLU -lGL -lm
+-FT2_LIBS= $(shell freetype-config --libs)
 +SDL_LIBS= $(shell ${SDL_CONFIG} --libs)
++FT2_LIBS= $(shell %%FREETYPE_CONFIG%% --libs)
  
  MAPC_TARG= mapc
  GAME_TARG= neverball
-@@ -39,8 +39,8 @@
+@@ -42,8 +42,8 @@
  	glext.o  \
  	main.o
  
@@ -30,5 +33,5 @@
 +MAPC_DEPS= $(GAME_SRCS:.c)
 +GAME_DEPS= $(GAME_OBJS:.o)
  
- MAPC_LIBS= $(SDL_LIBS) -lSDL_image $(X11_LIBS)
- GAME_LIBS= $(SDL_LIBS) -lSDL_image -lSDL_ttf -lSDL_mixer -lfreetype $(X11_LIBS)
+ MAPC_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image $(OGL_LIBS)
+ GAME_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image -lSDL_ttf -lSDL_mixer $(FT2_LIBS) $(OGL_LIBS)

@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	0.25.11
+PORTVERSION=	0.25.12
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/neverball/
 
 MAINTAINER=	mezz7@cox.net
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
+BUILD_DEPENDS=	${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
+
+FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_BZIP2=	yes
 USE_SDL=	yes
@@ -28,6 +31,8 @@ DIRS=		back bgm map mtrl png shot snd sol ttf
 post-patch:
 	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g' \
 		${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g' \
+		${WRKSRC}/Makefile
 
 do-install:
 .for ii in ${DIRS}
