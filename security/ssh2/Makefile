@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.30 1996/07/18 11:33:37 torstenb Exp $
+# $Id: Makefile,v 1.31 1996/07/22 23:06:08 pst Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -12,6 +12,7 @@
 DISTNAME=       ssh-1.2.14
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/
+LIB_DEPENDS=    z\\.1\\.:${PORTSDIR}/devel/libz
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
@@ -75,10 +76,18 @@ post-extract:
 .endif
 
 post-install:
+	@if [ ! -f ${PREFIX}/etc/ssh_host_key ]; then \
+		echo "Generating a secret host key..."; \
+		${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
+	fi
+.if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/scp.1 ${PREFIX}/man/man1/ssh-add.1 \
 		${PREFIX}/man/man1/ssh-agent.1 ${PREFIX}/man/man1/ssh-keygen.1 \
 		${PREFIX}/man/man1/ssh.1 ${PREFIX}/man/man8/sshd.8 \
 		${PREFIX}/man/man1/make-ssh-known-hosts.1
+	rm -f ${PREFIX}/man/man1/slogin.1
+	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
+.endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
@@ -91,10 +100,10 @@ post-install:
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
 
 .if defined(USE_PERL) && ${USE_PERL} == YES || \
-    exists(${PREFIX}/bin/perl5.002) && \
+    exists(${PREFIX}/bin/perl5.003) && \
     (!defined(USE_PERL) || ${USE_PERL} != NO)
-BUILD_DEPENDS+= perl5.002:${PORTSDIR}/lang/perl5
-CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.002
+BUILD_DEPENDS+= perl5.003:${PORTSDIR}/lang/perl5
+CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.003
 .else
 CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
 .endif
