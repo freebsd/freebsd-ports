@@ -8,7 +8,7 @@
 DISTNAME=	o2c-1.16
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.uni-kl.de/pub/informatik/software/ \
-		ftp://cognac.informatik.uni-kl.de/pub/ooc/misc/
+		ftp://ftp.archive.de.uu.net/pub/programming/languages/oberon/www.uni-kl.de/OOC/files/misc/
 
 MAINTAINER=	ob@seicom.NET
 
