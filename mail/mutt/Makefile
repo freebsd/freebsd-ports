@@ -94,8 +94,8 @@ post-build:
 .if defined(WITH_DOCS)
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
-	@${CAT} ${PKGDIR}/PLIST.htmlfiles >> ${PLIST}
-	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.htmlfiles >> ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
 .endif
 .endif
 
