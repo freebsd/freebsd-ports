@@ -1,6 +1,6 @@
---- configure.orig	Sun Feb 23 00:39:17 2003
-+++ configure	Sun Feb 23 00:39:38 2003
-@@ -13066,13 +13066,13 @@
+--- configure.orig	Mon Jun  9 11:55:15 2003
++++ configure	Fri Jun 20 00:05:06 2003
+@@ -13327,13 +13327,13 @@
  			savedldflags="$LDFLAGS"
  			CFLAGS="$CFLAGS -I$bdbdir"
  			LDFLAGS="-L$bdblibdir $LDFLAGS"
@@ -17,12 +17,12 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -13118,7 +13118,7 @@
- 
- 				bdbfound=yes
- 				BDB_CFLAGS="-I$bdbdir"
--				BDB_LIBS="-L$bdblibdir -ldb"
-+				BDB_LIBS="-L$bdblibdir -ldb3"
+@@ -13384,7 +13384,7 @@
+ 				if test "$bdblibdir" != "/usr/lib"; then
+ 				    BDB_LIBS="-L$bdblibdir"
+ 				fi
+-				BDB_LIBS="$BDB_LIBS -ldb"
++				BDB_LIBS="$BDB_LIBS -ldb3"
  				BDB_BIN=$bdbbindir
  				BDB_PATH="`echo $bdbdir | sed 's,include/db3$,,'`"
- 
+ 				BDB_PATH="`echo $BDB_PATH | sed 's,include$,,'`"
