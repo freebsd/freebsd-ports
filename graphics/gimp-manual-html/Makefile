@@ -8,7 +8,7 @@
 PORTNAME=	GimpUserManual
 PORTVERSION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://manual.gimp.org/pub/manual/ 
+MASTER_SITES=	ftp://manual.gimp.org/pub/manual/
 PKGNAMESUFFIX=	-${DOCFORMAT}
 
 MAINTAINER=	ports@freebsd.org
@@ -17,16 +17,12 @@ COMMENT=	The user manual for the GNU Image Manipulation Program (GIMP)
 .if !defined(DOCFORMAT)
 DOCFORMAT=HTML
 .else
-.if ${DOCFORMAT} != "HTML" && ${DOCFORMAT} != "PDF" && ${DOCFORMAT} != "PS"
+.if ${DOCFORMAT} != "HTML" && ${DOCFORMAT} != "PDF"
 .BEGIN:
 	@${ECHO} "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
 	@${ECHO} "Possible values are:  HTML, PDF."
 	@${FALSE}
 .endif
-.endif
-
-.if ${DOCFORMAT} == "PS"
-IGNORE=		"PostScript version not yet available"
 .endif
 
 PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
