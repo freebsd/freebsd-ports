@@ -74,6 +74,7 @@ lib/zircon/lib/On.tcl
 lib/zircon/lib/Protect.tcl
 lib/zircon/lib/Server.tcl
 lib/zircon/lib/Service.tcl
+lib/zircon/lib/SOCKS.tcl
 lib/zircon/lib/Sound.tcl
 lib/zircon/lib/Split.tcl
 lib/zircon/lib/Tags.tcl
