@@ -15,6 +15,8 @@ MAINTAINER=	ahze@ahze.net
 COMMENT=	A tool to minimize the compile time of C/C++ programs
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
 MAN1=		ccache.1
 PLIST_FILES=	bin/ccache
 
@@ -30,6 +32,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
 .endfor
 .endif
-	${STRIP_CMD} ${PREFIX}/bin/ccache
 
 .include <bsd.port.mk>
