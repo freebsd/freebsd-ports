@@ -222,6 +222,7 @@
     SUBDIR += g-wrap
     SUBDIR += g2c
     SUBDIR += gaa
+    SUBDIR += gaul
     SUBDIR += gccxml
     SUBDIR += gconf
     SUBDIR += gconf2
