@@ -1,5 +1,6 @@
 bin/gl-117
 share/gl-117/models/aster1.3ds
+share/gl-117/models/barrier.3ds
 share/gl-117/models/base1.3ds
 share/gl-117/models/cannon1.3ds
 share/gl-117/models/cannon2.3ds
@@ -72,6 +73,7 @@ share/gl-117/sounds/plane1.wav
 share/gl-117/sounds/thunder1.wav
 share/gl-117/textures/arrow.tga
 share/gl-117/textures/aster1_n.tga
+share/gl-117/textures/barrier_.tga
 share/gl-117/textures/base1_no.tga
 share/gl-117/textures/cactus1.tga
 share/gl-117/textures/cactusu1.tga
