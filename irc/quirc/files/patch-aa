@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Jul 12 23:55:43 1999
++++ Makefile.in	Mon Aug  2 04:57:54 1999
+@@ -73,7 +73,7 @@
+ SUBDIRS = data
+ 
+ # Main binary targets
+-bin_PROGRAMS = quirc quirc.inst
++bin_PROGRAMS = quirc
+ 
+ # Headers
+ quirc_SOURCES = arlib.c dcc.cc network.cc channel.cc echo.cc quirc.cc tcl.cc command.cc server.cc tcltk.cc complete.cc hash.cc support.cc window.cc tags.cc arlib.h complete.h hash.h messages.h query.h support.h arlibcc.h history.h mytcl.h quirc.h tags.h channel.h defines.h illist.h network.h serverdcc.h command.h echo.h llist.h nick.h window.h
+@@ -95,7 +95,7 @@
+ 
+ # Documentation
+ 
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = $(prefix)/share/doc/@PACKAGE@
+ doc_DATA = doc/rfc1459.txt doc/color.txt FAQ AUTHORS COPYING ChangeLog INSTALL NEWS README
+ 
+ # RPM and spec file generation
