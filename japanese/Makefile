@@ -233,6 +233,7 @@
     SUBDIR += recjis
     SUBDIR += rogue_s
     SUBDIR += rskkserv
+    SUBDIR += ruby-eb
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
     SUBDIR += ruby-slang
