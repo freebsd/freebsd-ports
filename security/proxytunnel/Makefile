@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
+DEPRECATED=	http://vuxml.FreeBSD.org/50744596-368f-11d9-a9e7-0001020eed82.html
+EXPIRATION_DATE=2005-02-13
+
 ALL_TARGET=	${PORTNAME}
 USE_GETOPT_LONG=yes
 NO_WRKSUBDIR=	yes
