@@ -17,11 +17,11 @@ LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes
 USE_FREETYPE=	yes
-USE_MESA=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--disable-gl
 
 post-install:
 	@strip ${PREFIX}/lib/libevas.so.0
