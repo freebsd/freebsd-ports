@@ -31,6 +31,12 @@ MAN3=		PerlPoint::Anchors.3 \
 		PerlPoint::Tags::CPPP.3 \
 		PerlPoint::Tags::SDF.3
 
+.if !defined(NOPORTDOCS)
+post-install:
+	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
+	@cd ${WRKSRC}; ${FIND} utilities | ${CPIO} -padm ${DOCSDIR}
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
