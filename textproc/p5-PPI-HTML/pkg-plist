@@ -1,0 +1,7 @@
+%%SITE_PERL%%/PPI/HTML.pm
+%%SITE_PERL%%/PPI/HTML/Fragment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/HTML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/HTML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/PPI/HTML
+@unexec rmdir %D/%%SITE_PERL%%/PPI 2>/dev/null || true
