@@ -16,6 +16,8 @@ DISTFILES=	netmaj-${PORTVERSION}.tar.gz \
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	A mahhjong game for X
 
+BROKEN=		"Does not install"
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	libs all
