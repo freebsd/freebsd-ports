@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	postgresql-6.5.2
+DISTNAME=	postgresql-6.5.3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
