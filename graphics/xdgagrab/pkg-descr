@@ -1,0 +1,17 @@
+xdgagrab is to capture an X server screen with a mouse pointer.  It
+uses the XFree86-DGA Extention. 
+
+Note that (1) xdgagrab should be run by Super User (2) X is run on
+16bpp, 24bpp and 32bpp (NOT 8bpp), and (3) you need add the next line
+into Section "Device" of XF86Config.
+
+Option "sw_cursor"
+
+Supported cards:
+	Millennium, MGA G200, #9 Motion 771, NeoMagic NM2160 
+	ATI 264VT3, ATI 3D Rage Pro AGP 2X/IIC VGA,
+	Canopus PowerWindow 864 S3 864, NeoMagic 2070, 
+	NeoMagic 2093
+
+Not supported cards:
+	STB nVidia Riva 128
