@@ -19,6 +19,7 @@
     SUBDIR += as80
     SUBDIR += asis
     SUBDIR += asl
+    SUBDIR += asmutils
     SUBDIR += astyle
     SUBDIR += autoconf
     SUBDIR += automake
