@@ -664,7 +664,6 @@ MASTER_SITE_REDHAT_LINUX+= \
 	http://www.gtlib.cc.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.rutgers.edu/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.uci.edu/mirrors/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.cso.uiuc.edu/mirrors/ftp/linux.aiss.uiuc.edu/pub/linux/redhat/linux/%SUBDIR%/ \
 	ftp://mirror.cs.wisc.edu/pub/mirrors/linux/redhat/%SUBDIR%/ \
 	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
      ftp://ftp.crc.ca/pub/systems/linux/redhat/ftp.redhat.com/linux/%SUBDIR%/ \
@@ -681,7 +680,6 @@ MASTER_SITE_REDHAT_LINUX+= \
 	ftp://ftp.riken.go.jp/pub/Linux/redhat/releases/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub2/redhat/%SUBDIR%/ \
-	ftp://ftp.monash.edu.au/pub/linux/redhat/linux/%SUBDIR%/ \
 	ftp://ftp2.compaq.com/pub/linux/RedHat/7.2-alpha/updates/rpms/alpha/ \
 	ftp://alpha.crl.dec.com/pub/linux/redhat/7.2-alpha/updates/rpms/alpha/ \
 	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.redhat.de/pub/redhat/updates/7.2/en/os/i386/
