@@ -14,10 +14,10 @@ upgrades.
     * first, upgrade your perl5.8 installation.
     * run "use.perl port", so that the system knows you have 5.8.4.
     * now, run some magic incantations to upgrade all ports depending on perl,
-      that is run something like : 
-      portupgrade -f $((pkg_info -R perl-5.8.2_2 |tail +4; \
+      that is run something like :
+      portupgrade -f `(pkg_info -R perl-5.8.4 |tail +4; \
         find /usr/local/lib/perl5/site_perl/5.8.2 -type f -print0 \
-        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u)
+        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterward.
 
