@@ -61,9 +61,9 @@
     SUBDIR += generic-nqs
     SUBDIR += ggsd
     SUBDIR += gicq
+    SUBDIR += gnomba
     SUBDIR += gnome-icu
     SUBDIR += gnome-vnc
-    SUBDIR += gnomba
     SUBDIR += gnomenetwork
     SUBDIR += gnu-finger
     SUBDIR += gopher
