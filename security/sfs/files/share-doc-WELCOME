@@ -1,7 +1,7 @@
 SFS is now installed. To test your installation, try this (as root):
 
 # /usr/local/sbin/sfscd
-# cat /sfs/sfs.fs.net:eu4cvv6wcnzscer98yn4qjpjnn9iv6pi/CONGRATULATIONS
+# cat /sfs/@sfs.fs.net,uzwadtctbjb3dg596waiyru8cx5kb4an/CONGRATULATIONS
 
 If it worked, you will see:
 
@@ -21,3 +21,7 @@ fully before proceeding. Start with the documentation link on
 There are sample startup files for sfscd and sfssd in /usr/local/etc/rc.d,
 under the name sfscd.sh.sample and sfssd.sh.sample respectively.
 These startup files are not enabled by default.
+
+NOTE TO USERS UPGRADING FROM SFS 0.6: You should read the file
+/usr/local/share/doc/sfs/README.0.7.upgrade for important information
+about converting your existing SFS configuration.

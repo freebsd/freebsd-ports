@@ -1,0 +1,15 @@
+--- README.0.7-upgrade.orig	Fri Dec  6 01:24:44 2002
++++ README.0.7-upgrade	Fri Dec  6 01:25:41 2002
+@@ -15,10 +15,10 @@
+ 	-------------------
+        	    Run:
+ 
+-		perl sfsauthd/upgradedb.pl
++		perl /usr/local/lib/sfs/upgradedb.pl
+ 
+ 	    By default, the script will operate on the sfs_users
+-	    file in /etc/sfs.  You can alternatively specify files
++	    file in /usr/local/etc/sfs. You can alternatively specify files
+ 	    to upgrade on the command line, or try the -a flag to
+ 	    upgrade all sfs_users files found with the locate utility.
+ 	    If you do not explicitly specify files to upgrade, the
