@@ -193,6 +193,7 @@
     SUBDIR += kisomandel
     SUBDIR += kix-kmod
     SUBDIR += kludge3d
+    SUBDIR += kolourpaint
     SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak
