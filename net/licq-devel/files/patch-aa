@@ -1,56 +1,11 @@
---- plugins/qt-gui/configure.orig	Tue Jul 11 18:54:28 2000
-+++ plugins/qt-gui/configure	Mon Jul 24 03:40:56 2000
-@@ -4138,7 +4138,7 @@
-       fi
+--- plugins/qt-gui/configure.in.orig	Wed Aug  9 14:07:59 2000
++++ plugins/qt-gui/configure.in	Wed Aug  9 14:15:46 2000
+@@ -51,8 +51,6 @@
+ LICQ_CHECK_X11HEADERS
  
-       for qt_dir in $qt_library_dirs; do
--        for qt_check_lib in $qt_dir/libqt.so.2; do
-+        for qt_check_lib in $qt_dir/libqt2.so.3; do
-           if test -r $qt_check_lib; then
-             ac_qt_libraries=$qt_dir
-             break 2
-@@ -4158,7 +4158,7 @@
-     have_qt_lib="no"
-   else
-     have_qt_lib="yes"
--        output=`eval "strings $ac_cv_lib_qtlib/libqt.so | grep -l QCString"`
-+        output=`eval "strings $ac_cv_lib_qtlib/libqt2.so | grep -l QCString"`
-     if test -z "$output"; then
-       { echo "configure: error: 
-           The Qt lib directory "$ac_cv_lib_qtlib"
-@@ -4172,7 +4172,7 @@
-           Please check your installation.
- 
-           Use the --with-qt-libraries option if we found the wrong Qt lib.
--      " 1>&2; exit 1; }
-+      " 1>&2; }
-     fi
-   fi
- 
-@@ -4226,7 +4226,7 @@
-         /usr/X11/include/qt \
-         /usr/X11/include/X11/qt \
-         /usr/X11R6/include \
--        /usr/X11R6/include/qt \
-+        /usr/X11R6/include/qt2 \
-         /usr/X11R6/include/X11/qt \
-         /usr/X11/lib/qt/include"
- 
-@@ -4318,7 +4318,7 @@
-     fi
- 
-     # Extract the first word of "moc", so it can be a program name with args.
--set dummy moc; ac_word=$2
-+set dummy moc2; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:4324: checking for $ac_word" >&5
- if eval "test \"`echo '$''{'ac_cv_path_MOC'+set}'`\" = set"; then
-@@ -4343,7 +4343,7 @@
-     fi
-   done
-   IFS="$ac_save_ifs"
--  test -z "$ac_cv_path_MOC" && ac_cv_path_MOC="$QTDIR/bin/moc"
-+  test -z "$ac_cv_path_MOC" && ac_cv_path_MOC="$QTDIR/bin/moc2"
-   ;;
- esac
- fi
+ XSS_LIBS="no"
+-AC_CHECK_X_LIB(Xext, XScreenSaverRegister,[XSS_LIBS=""],[], [-lX11 -lXext -lm])
+-AC_CHECK_X_LIB(Xss, XScreenSaverRegister,[XSS_LIBS="-lXss"],[],[-lX11 -lXext -lm])
+ if test \! "$XSS_LIBS" = "no"; then
+   AC_CHECK_X_HEADER(X11/extensions/scrnsaver.h,[AC_DEFINE(USE_SCRNSAVER)])
+ else
