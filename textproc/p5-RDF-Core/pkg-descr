@@ -1,0 +1,20 @@
+RDF::Core is a pure perl implementation of RDF storage, parser,
+serializer and query.
+
+The storage functionality is basic - store, delete, query statements,
+where query means ask about existence or count or retrieve statements
+conforming given mask of (subject, predicate, object).  Three storages
+are available - in memory, file (DB_File) and DBMS (PostgreSQL).
+
+The parser supports full RDF/XML syntax including aboutEach attribute
+(though it became obsolete).
+
+The serializer attempts to preserve anonymous nodes and to compact xml a
+bit grouping statements with common subject.
+
+The query language is rather focused on resources than on statements.
+
+WWW: http://search.cpan.org/search?dist=RDF-Core
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

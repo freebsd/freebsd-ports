@@ -1,0 +1,65 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RDF/Core/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Enumerator.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Enumerator/DB_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Enumerator/Memory.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Enumerator/Postgres.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Evaluator.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Function.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Literal.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Model.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Model/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Model/Serializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/ModelSet.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Node.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/NodeFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Query.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Resource.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Schema.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Serializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Statement.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Storage.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Storage/DB_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Storage/Memory.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Storage/Postgres.pm
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Enumerator/DB_File.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Enumerator/Memory.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Enumerator/Postgres.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Model/Parser.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Model/Serializer.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Storage/DB_File.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Storage/Memory.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Storage/Postgres.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Constants.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Enumerator.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Evaluator.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Function.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Literal.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Model.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/ModelSet.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Node.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/NodeFactory.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Parser.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Query.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Resource.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Schema.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Serializer.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Statement.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Storage.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF/Core.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/RDF-Core.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core/Enumerator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core/Model
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core/Storage
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Enumerator
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Model
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDF/Core/Storage
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDF/Core
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/RDF 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RDF/Core
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RDF 2>/dev/null || true
