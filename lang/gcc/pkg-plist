@@ -3,26 +3,32 @@ bin/gg++filt
 bin/gg++
 bin/gg77
 bin/ggcc
+bin/ggcov
 bin/%%GNU_HOST%%-gcc
 bin/%%GNU_HOST%%-g++
 bin/gccbug-%%SNAPVER%%
-@comment not working on FreeBSD post-libstdc++-v3:	bin/gcj
-@comment not working on FreeBSD post-libstdc++-v3:	bin/gcjh
-@comment not working on FreeBSD post-libstdc++-v3:	bin/gcov
-@comment not working on FreeBSD post-libstdc++-v3:	bin/jv-scan
-@comment not working on FreeBSD post-libstdc++-v3:	bin/jcf-dump
+bin/gcj
+bin/gcjh
+bin/jv-scan
+bin/jcf-dump
 @comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 %%GNU_HOST%%/include/assert.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
+@unexec install-info --delete %D/info/c-tree.info %D/info/dir
+@unexec install-info --delete %D/info/cppinternals.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
 @unexec install-info --delete %D/info/g77.info %D/info/dir
-@unexec install-info --delete %D/info/cpp.info %D/info/dir
+info/c-tree.info
+info/c-tree.info-1
+info/c-tree.info-2
+info/c-tree.info-3
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
 info/cpp.info-3
+info/cppinternals.info
 info/g77.info
 info/g77.info-1
 info/g77.info-10
@@ -71,6 +77,10 @@ info/gcc.info-29
 info/gcc.info-30
 info/gcc.info-31
 info/gcc.info-32
+info/gcc.info-33
+info/gcc.info-34
+info/gcc.info-35
+info/gcc.info-36
 info/gcc.info-3
 info/gcc.info-4
 info/gcc.info-5
@@ -78,8 +88,11 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
-@exec install-info %D/info/cpp.info %D/info/dir
+info/gcj.info
+@exec install-info %D/info/c-tree.info %D/info/dir
+@exec install-info %D/info/cppinternals.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
+@exec install-info %D/info/gcj.info %D/info/dir
 @dirrm %%GNU_HOST%%/include
 @dirrm %%GNU_HOST%%
