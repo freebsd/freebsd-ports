@@ -15,27 +15,28 @@ lib/libwraster.a
 lib/libWMaker.a
 @exec ranlib %D/%F
 include/wraster.h
+include/WINGs.h
 include/WMaker.h
-share/WindowMaker/Backgrounds/OpenStep
+share/WindowMaker/Backgrounds/BlueImage.jpeg
 share/WindowMaker/Copyright
 share/WindowMaker/Defaults/WMRootMenu
 share/WindowMaker/Defaults/WMState
 share/WindowMaker/Defaults/WMWindowAttributes
 share/WindowMaker/Defaults/WindowMaker
 share/WindowMaker/IconSets/Default
-share/WindowMaker/Pixmaps/GNUstep.tif
+share/WindowMaker/Pixmaps/GNUstep.tiff
 share/WindowMaker/Pixmaps/GNUstep.xpm
-share/WindowMaker/Pixmaps/GNUstep3D.tif
+share/WindowMaker/Pixmaps/GNUstep3D.tiff
 share/WindowMaker/Pixmaps/GNUstep3D.xpm
-share/WindowMaker/Pixmaps/GNUterm.tif
+share/WindowMaker/Pixmaps/GNUterm.tiff
 share/WindowMaker/Pixmaps/GNUterm.xpm
-share/WindowMaker/Pixmaps/Sound.tif
-share/WindowMaker/Pixmaps/Sound.xpm
-share/WindowMaker/Pixmaps/clip.tif
+share/WindowMaker/Pixmaps/clip.tiff
 share/WindowMaker/Pixmaps/clip.xpm
-share/WindowMaker/Pixmaps/defaultAppIcon.tif
+share/WindowMaker/Pixmaps/defaultAppIcon.tiff
 share/WindowMaker/Pixmaps/defaultAppIcon.xpm
 share/WindowMaker/README
+share/WindowMaker/Resources/Images.tiff
+share/WindowMaker/Resources/Images.xpm
 share/WindowMaker/Styles/Black
 share/WindowMaker/Styles/Blue
 share/WindowMaker/Styles/BlueAluminum
@@ -61,18 +62,22 @@ share/WindowMaker/autostart.sh
 share/WindowMaker/menu
 share/WindowMaker/menu.cz
 share/WindowMaker/menu.de
+share/WindowMaker/menu.es
 share/WindowMaker/menu.fr
 share/WindowMaker/menu.gl
+share/WindowMaker/menu.he
 share/WindowMaker/menu.it
 share/WindowMaker/menu.ja
 share/WindowMaker/menu.ko
 share/WindowMaker/menu.nl
 share/WindowMaker/menu.no
 share/WindowMaker/menu.pt
+share/WindowMaker/menu.ru
 share/WindowMaker/wmmacros
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
+@dirrm share/WindowMaker/Resources
 @dirrm share/WindowMaker/Pixmaps
 @dirrm share/WindowMaker/IconSets
 @dirrm share/WindowMaker/Defaults
