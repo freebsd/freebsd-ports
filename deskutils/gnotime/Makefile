@@ -14,11 +14,9 @@ MASTER_SITE_SUBDIR=	gttr
 MAINTAINER=	ports@freebsd.org
 COMMENT=	GnoTime is a time tracker for gnome2
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
-		guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix libgtkhtml libgnomeui
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
