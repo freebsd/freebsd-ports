@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ami
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
+#PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
 		http://master.debian-kr.org/~cwryu/archive/misc/
@@ -43,7 +43,7 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hanjadic/hanja-hwp2ami ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/doc/ami
-.for NAME in AUTHORS README NEWS ChangeLog
+.for NAME in AUTHORS README README.en NEWS ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${NAME} \
 		${PREFIX}/share/doc/ami
 .endfor
