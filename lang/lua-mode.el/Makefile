@@ -16,6 +16,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	jre@vineyard.net
 COMMENT=	Emacs/XEmacs major mode for editing Lua scripts
 
+BROKEN=		"Unfetchable (incorrect SIZE)"
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
