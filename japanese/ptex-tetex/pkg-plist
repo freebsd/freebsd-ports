@@ -7,16 +7,17 @@ bin/pltotf-ptex
 bin/ptex
 bin/tftopl-ptex
 bin/virptex
-%%TEXMFDIR%%/web2c/platex-euc.fmt
-%%TEXMFDIR%%/web2c/platex-jis.fmt
-%%TEXMFDIR%%/web2c/platex-sjis.fmt
-%%TEXMFDIR%%/web2c/platex.fmt
-%%TEXMFDIR%%/web2c/ptex-euc.fmt
-%%TEXMFDIR%%/web2c/ptex-jis.fmt
-%%TEXMFDIR%%/web2c/ptex-sjis.fmt
-%%TEXMFDIR%%/web2c/ptex.fmt
-%%TEXMFDIR%%/web2c/ptex.pool
-%%TEXMFDIR%%/web2c/texmf.cnf.ptex-tetex
+%%TEXMFDIR%%/web2c-ptex/platex-euc.fmt
+%%TEXMFDIR%%/web2c-ptex/platex-jis.fmt
+%%TEXMFDIR%%/web2c-ptex/platex-sjis.fmt
+%%TEXMFDIR%%/web2c-ptex/platex.fmt
+%%TEXMFDIR%%/web2c-ptex/ptex-euc.fmt
+%%TEXMFDIR%%/web2c-ptex/ptex-jis.fmt
+%%TEXMFDIR%%/web2c-ptex/ptex-sjis.fmt
+%%TEXMFDIR%%/web2c-ptex/ptex.fmt
+%%TEXMFDIR%%/web2c-ptex/ptex.pool
+%%TEXMFDIR%%/web2c-ptex/texmf.cnf
+@dirrm %%TEXMFDIR%%/web2c-ptex
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/Makefile
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/README
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/README.1st
@@ -126,6 +127,39 @@ bin/virptex
 %%TEXMFDIR%%/fonts/tfm/ptex/tmin7.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/tmin8.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/tmin9.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jis.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jisg.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jis-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jisg-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jisgn-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jisgn.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jisn-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jisn.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/futogo-b-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/futogo-b.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/futomin-b-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/futomin-b.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/gtbbb-m-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/gtbbb-m.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jun101-l-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/jun101-l.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/ryumin-l-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/ryumin-l.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/FutoGoB101-Bold-H.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/FutoMinA101-Bold-H.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/GothicBBB-Medium-H.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/Jun101-Light-H.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/Ryumin-Light-H.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/FutoGoB101-Bold-J.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/FutoMinA101-Bold-J.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/GothicBBB-Medium-J.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/Jun101-Light-J.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/Ryumin-Light-J.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/FutoGoB101-Bold-V.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/FutoMinA101-Bold-V.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/GothicBBB-Medium-V.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/Jun101-Light-V.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/Ryumin-Light-V.tfm
 @dirrm %%TEXMFDIR%%/fonts/tfm/ptex
 %%TEXMFDIR%%/fonts/vf/ptex/goth10.vf
 %%TEXMFDIR%%/fonts/vf/ptex/goth5.vf
@@ -163,6 +197,29 @@ bin/virptex
 %%TEXMFDIR%%/fonts/vf/ptex/tmin7.vf
 %%TEXMFDIR%%/fonts/vf/ptex/tmin8.vf
 %%TEXMFDIR%%/fonts/vf/ptex/tmin9.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jis.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jisg.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jis-v.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jisg-v.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jisgn-v.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jisgn.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jisn-v.vf
+%%TEXMFDIR%%/fonts/vf/ptex/jisn.vf
+%%TEXMFDIR%%/fonts/vf/ptex/FutoGoB101-Bold-H.vf
+%%TEXMFDIR%%/fonts/vf/ptex/FutoGoB101-Bold-J.vf
+%%TEXMFDIR%%/fonts/vf/ptex/FutoGoB101-Bold-V.vf
+%%TEXMFDIR%%/fonts/vf/ptex/FutoMinA101-Bold-H.vf
+%%TEXMFDIR%%/fonts/vf/ptex/FutoMinA101-Bold-J.vf
+%%TEXMFDIR%%/fonts/vf/ptex/FutoMinA101-Bold-V.vf
+%%TEXMFDIR%%/fonts/vf/ptex/GothicBBB-Medium-H.vf
+%%TEXMFDIR%%/fonts/vf/ptex/GothicBBB-Medium-J.vf
+%%TEXMFDIR%%/fonts/vf/ptex/GothicBBB-Medium-V.vf
+%%TEXMFDIR%%/fonts/vf/ptex/Jun101-Light-H.vf
+%%TEXMFDIR%%/fonts/vf/ptex/Jun101-Light-J.vf
+%%TEXMFDIR%%/fonts/vf/ptex/Jun101-Light-V.vf
+%%TEXMFDIR%%/fonts/vf/ptex/Ryumin-Light-H.vf
+%%TEXMFDIR%%/fonts/vf/ptex/Ryumin-Light-J.vf
+%%TEXMFDIR%%/fonts/vf/ptex/Ryumin-Light-V.vf
 @dirrm %%TEXMFDIR%%/fonts/vf/ptex
 %%TEXMFDIR%%/jbibtex/bib/jxampl.bib
 @dirrm %%TEXMFDIR%%/jbibtex/bib
@@ -261,5 +318,8 @@ bin/virptex
 @dirrm %%TEXMFDIR%%/ptex/platex/config
 @dirrm %%TEXMFDIR%%/ptex/platex
 @dirrm %%TEXMFDIR%%/ptex
+%%TEXMFDIR%%/dvips/ptex/jis.map
+%%TEXMFDIR%%/dvips/ptex/morisawa.map
+@unexec rmdir %D/%%TEXMFDIR%%/dvips/ptex > /dev/null 2>&1
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
