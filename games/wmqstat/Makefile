@@ -1,4 +1,4 @@
-# New ports collection makefile for:	wmqstat
+# New ports collection makefile for:	wmQStat
 # Date created:				25 Apr 2003
 # Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmqstat
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	games windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
