@@ -1,0 +1,20 @@
+--- jconv.c.orig	Tue Nov  2 23:03:59 1999
++++ jconv.c	Thu May  4 20:05:51 2000
+@@ -67,7 +67,7 @@
+ 	strcpy(infile, "");
+ 
+ 	delimChar = ',';	/* standard */
+-	m_CommaDelim = 1;	/* standard */
++	m_CommandLineComma = 1;	/* standard */
+ 	m_UseInfoFile = 0;
+ 
+ 	while((o = getopt(argc, argv, "edvht:i:s")) != EOF) {
+@@ -76,7 +76,7 @@
+ 				break;
+ 		case 'd':	encode = 'd';
+ 				break;
+-		case 's':	m_CommaDelim = 0;
++		case 's':	m_CommandLineComma = 0;
+ 				break;
+ 		case 't':	strncpy(title, optarg, 32);
+ 				title[31] = 0;
