@@ -1,0 +1,20 @@
+--- src/irc/core/irc.c.orig	Fri Oct 10 17:30:03 2003
++++ src/irc/core/irc.c	Sat Dec 27 22:20:56 2003
+@@ -108,9 +108,14 @@
+ 	int send_now;
+ 
+         g_get_current_time(&now);
+-	send_now = g_timeval_cmp(&now, &server->wait_cmd) >= 0 &&
+-		(server->cmdcount < server->max_cmds_at_once ||
+-		 server->cmd_queue_speed <= 0);
++
++	if (getenv("IRSSI_NOTHROTTLE")) {
++		send_now = TRUE;
++	} else {
++		send_now = g_timeval_cmp(&now, &server->wait_cmd) >= 0 &&
++			(server->cmdcount < server->max_cmds_at_once ||
++		 	server->cmd_queue_speed <= 0);
++	}
+ 
+         irc_send_cmd_full(server, cmd, send_now, FALSE, FALSE);
+ }
