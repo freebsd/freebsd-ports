@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
@@ -156,10 +156,11 @@ MAN3=		FcAtomicCreate.3  \
 MAN5=		fonts-conf.5
 
 .include <bsd.port.pre.mk>
+
 .if ${XFREE86_VERSION} == 3
-MTREE_FILE=     /etc/mtree/BSD.x11.dist
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
-MTREE_FILE=     /etc/mtree/BSD.x11-4.dist
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
 
 post-install:
