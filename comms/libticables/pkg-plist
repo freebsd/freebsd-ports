@@ -7,6 +7,7 @@ include/tilp/export.h
 include/tilp/intl.h
 include/tilp/ticables.h
 include/tilp/timeout.h
+lib/libticables.a
 lib/libticables.la
 lib/libticables.so
 lib/libticables.so.10
