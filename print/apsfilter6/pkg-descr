@@ -1,0 +1,24 @@
+Have fun using apsfilter by saying:
+
+	lpr ascii.Z test.gif picture.tiff TeX.dvi.gz
+
+That's what apsfilter is designed for ;-)
+
+apsfilter is a printfilter, that saves you the work to a) look for
+and b) use filter programs, that convert your file into something
+suitable for your printer.
+
+Everything will be translated into Postscript, first. So you need
+ghostscript, if you don't have a PS printer.
+
+Printer Setup is done with the SETUP program. It saves your current
+printcap entries and creates printcap entries for one or more of
+your local printers. Please note, that such a magic printcap filter
+only works on locally connected printers.
+
+apsfilter 4.9.2 is designed to work only on FreeBSD 2.X. Call it
+an interim Version for FreeBSD. It's functionally the same as
+Version 4.9.1.
+
+Have fun !			Andreas Klemm <andreas@knobel.gun.de>
+
