@@ -31,6 +31,8 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
 		${SITE_PERL}/Locale/TextDomain.pm:${PORTSDIR}/devel/p5-Locale-libintl
 
+BROKEN=		Unfetchable
+
 OPTIONS=	CHARTS "Have Charts output format" On \
 		HTML "Have HTML or DocBook output format" On \
 		PDF "Have PDF output format" Off \
