@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	milter_regex
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	milter-regex-${PORTVERSION}
