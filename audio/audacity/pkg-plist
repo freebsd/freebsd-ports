@@ -1,3 +1,5 @@
 bin/audacity
 %%PORTDOCS%%share/doc/audacity/audacity-help.htb
+%%PORTDOCS%%share/doc/audacity/README.txt
+%%PORTDOCS%%share/doc/audacity/LICENSE.txt
 %%PORTDOCS%%@dirrm share/doc/audacity
