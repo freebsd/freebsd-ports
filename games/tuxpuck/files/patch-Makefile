@@ -1,0 +1,36 @@
+--- Makefile.orig	Thu Apr 25 23:14:27 2002
++++ Makefile	Thu Apr 25 23:25:55 2002
+@@ -1,7 +1,7 @@
+ # Makefile for TuxPuck , Copyright Jacob Kroon 2001-2002
+ VERSION		= 0.7.109
+ CC		= gcc
+-CFLAGS		+= `sdl-config --cflags` -D_VERSION=\"$(VERSION)\" \
++CFLAGS		+= `$(SDL_CONFIG) --cflags` -D_VERSION=\"$(VERSION)\" \
+ 		   -g -Wall -Werror
+ CSOURCES	= tuxpuck.c video.c audio.c sprite.c font.c timer.c board.c \
+ 	   	  entity.c glass.c scoreboard.c player.c zoom.c png.c jpg.c \
+@@ -11,6 +11,7 @@
+ 
+ #############################################################
+ 
++
+ OBJS=$(CSOURCES:.c=.o)
+ 
+ %.o	: %.c
+@@ -18,7 +19,7 @@
+ 
+ tuxpuck : $(OBJS)
+ 	cd data; $(MAKE)
+-	$(CC) $(OBJS) data/libdata.a `sdl-config --libs` -lm -lpng -ljpeg \
++	$(CC) $(OBJS) data/libdata.a `$(SDL_CONFIG) --libs` -lm -lpng -ljpeg \
+ 	-lz -lvorbisfile -lvorbis -o tuxpuck
+ 
+ clean :
+@@ -55,3 +56,7 @@
+ 	install -d $(DESTDIR)/usr/man/man6
+ 	install -m755 tuxpuck $(DESTDIR)/usr/bin
+ 	install -m644 man/tuxpuck.6.gz $(DESTDIR)/usr/man/man6
++
++all : tuxpuck
++
++
