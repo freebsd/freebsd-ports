@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=      pyPgSQL
-PORTVERSION=   2.0
-CATEGORIES=    databases python
-MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= pypgsql
-PKGNAMEPREFIX=  py-
-DISTNAME=      pypgsql-${PORTVERSION}
+PORTNAME=	pyPgSQL
+PORTVERSION=	2.1
+CATEGORIES=	databases python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pypgsql
+PKGNAMEPREFIX=	py-
+DISTNAME=	pypgsql-${PORTVERSION}
 
-MAINTAINER=    gerhard@bigfoot.de
+MAINTAINER=	gerhard@bigfoot.de
 
-BUILD_DEPENDS= ${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-RUN_DEPENDS=   ${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=   pq.2:${PORTSDIR}/databases/postgresql7
+BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
+RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=		${WRKDIR}/pypgsql
 USE_PYTHON=	yes
@@ -32,7 +32,7 @@ DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
 
 post-patch:
-	perl -i -p \
+	${PERL} -i -p \
 		-e 's#^include_dirs  = \[ "/usr/local/pgsql/include" \]#include_dirs  = [ "${LOCALBASE}/include" ]# ;' \
 		-e 's#^library_dirs  = \[ "/usr/local/pgsql/lib" \]#library_dirs  = [ "${LOCALBASE}/lib" ]#' \
 		${WRKSRC}/setup.py
@@ -41,7 +41,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

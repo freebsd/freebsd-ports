@@ -11,5 +11,4 @@
 %%PORTDOCS%%share/doc/py-pyPgSQL/README
 @dirrm %%PYTHON_SITELIBDIR%%/pyPgSQL/libpq
 @dirrm %%PYTHON_SITELIBDIR%%/pyPgSQL
-@dirrm %%PORTDOCS%%share/doc/py-pyPgSQL
-
+%%PORTDOCS%%@dirrm share/doc/py-pyPgSQL
