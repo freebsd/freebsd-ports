@@ -72,8 +72,8 @@
 # details.)
 #
 
-database=file:///var/adm/aide/databases/aide.db
-database_out=file:///var/adm/aide/databases/aide.db.new
+database=file:///var/db/aide/databases/aide.db
+database_out=file:///var/db/aide/databases/aide.db.new
 
 
 #  First, root's traditional "home".  Note that FreeBSD's root's home (/root)
