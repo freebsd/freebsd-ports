@@ -1,41 +1,41 @@
-%%PORTDOCS%%share/doc/prosper/AUTHORS
-%%PORTDOCS%%share/doc/prosper/ChangeLog
-%%PORTDOCS%%share/doc/prosper/FAQ
-%%PORTDOCS%%share/doc/prosper/INSTALL
-%%PORTDOCS%%share/doc/prosper/NEWS
-%%PORTDOCS%%share/doc/prosper/README
-%%PORTDOCS%%share/doc/prosper/TODO
-%%PORTDOCS%%share/doc/prosper/TROUBLESHOOTINGS
-%%PORTDOCS%%share/doc/prosper/compilation.eps
-%%PORTDOCS%%share/doc/prosper/compilation.fig
-%%PORTDOCS%%share/doc/prosper/prosper-doc.pdf
-%%PORTDOCS%%share/doc/prosper/prosper-doc.tex
-%%PORTDOCS%%share/doc/prosper/prosper-structure.eps
-%%PORTDOCS%%share/doc/prosper/prosper-structure.fig
-%%PORTDOCS%%share/doc/prosper/prosper-tour.pdf
-%%PORTDOCS%%share/doc/prosper/prosper-tour.ps
-%%PORTDOCS%%share/doc/prosper/prosper-tour.tex
-%%PORTDOCS%%share/doc/prosper/rotation.ps
-%%PORTDOCS%%share/doc/prosper/rotation.tex
-%%PORTDOCS%%share/examples/prosper/Example.tex
-%%PORTDOCS%%share/examples/prosper/ExampleAlienglow.ps
-%%PORTDOCS%%share/examples/prosper/ExampleAlienglow.tex
-%%PORTDOCS%%share/examples/prosper/ExampleAutumn.ps
-%%PORTDOCS%%share/examples/prosper/ExampleAutumn.tex
-%%PORTDOCS%%share/examples/prosper/ExampleAzure.ps
-%%PORTDOCS%%share/examples/prosper/ExampleAzure.tex
-%%PORTDOCS%%share/examples/prosper/ExampleContemporain.ps
-%%PORTDOCS%%share/examples/prosper/ExampleContemporain.tex
-%%PORTDOCS%%share/examples/prosper/ExampleDarkblue.ps
-%%PORTDOCS%%share/examples/prosper/ExampleDarkblue.tex
-%%PORTDOCS%%share/examples/prosper/ExampleFrames.ps
-%%PORTDOCS%%share/examples/prosper/ExampleFrames.tex
-%%PORTDOCS%%share/examples/prosper/ExampleLignesbleues.ps
-%%PORTDOCS%%share/examples/prosper/ExampleLignesbleues.tex
-%%PORTDOCS%%share/examples/prosper/ExampleNuanceGris.ps
-%%PORTDOCS%%share/examples/prosper/ExampleNuanceGris.tex
-%%PORTDOCS%%share/examples/prosper/ExampleTroisPoints.ps
-%%PORTDOCS%%share/examples/prosper/ExampleTroisPoints.tex
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTINGS
+%%PORTDOCS%%%%DOCSDIR%%/compilation.eps
+%%PORTDOCS%%%%DOCSDIR%%/compilation.fig
+%%PORTDOCS%%%%DOCSDIR%%/prosper-doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/prosper-doc.tex
+%%PORTDOCS%%%%DOCSDIR%%/prosper-structure.eps
+%%PORTDOCS%%%%DOCSDIR%%/prosper-structure.fig
+%%PORTDOCS%%%%DOCSDIR%%/prosper-tour.pdf
+%%PORTDOCS%%%%DOCSDIR%%/prosper-tour.ps
+%%PORTDOCS%%%%DOCSDIR%%/prosper-tour.tex
+%%PORTDOCS%%%%DOCSDIR%%/rotation.ps
+%%PORTDOCS%%%%DOCSDIR%%/rotation.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/Example.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAlienglow.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAlienglow.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAutumn.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAutumn.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAzure.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAzure.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleContemporain.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleContemporain.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleDarkblue.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleDarkblue.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleFrames.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleFrames.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleLignesbleues.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleLignesbleues.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleNuanceGris.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleNuanceGris.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleTroisPoints.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleTroisPoints.tex
 %%PROSPERDIR%%/contrib/img/angleHG.ps
 %%PROSPERDIR%%/contrib/img/barre-rico.ps
 %%PROSPERDIR%%/contrib/img/rico_bullet1.ps
@@ -79,8 +79,8 @@
 %%PROSPERDIR%%/PPRnuancegris.sty
 %%PROSPERDIR%%/PPRtroispoints.sty
 %%PROSPERDIR%%/prosper.cls
-%%PORTDOCS%%@dirrm share/doc/prosper
-%%PORTDOCS%%@dirrm share/examples/prosper
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PROSPERDIR%%/contrib/img
 @dirrm %%PROSPERDIR%%/contrib
 @dirrm %%PROSPERDIR%%/designer
