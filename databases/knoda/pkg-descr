@@ -1,0 +1,17 @@
+knoda is a database frontend for KDE, based on hk_classes. 
+
+Knoda allows you to:
+
+- define and delete databases;
+- create, alter and delete tables and indices;
+- add, change and delete data in tables;
+- define, execute and store sql queries;
+- import and export CSV data;
+- define and use forms; and
+- define and print reports
+
+Its driver concept allows a uniform connection to different 
+database servers.
+
+Author: Horst Knorr <hk_classes@knorrnet.de>
+WWW:    http://www.knoda.org/
