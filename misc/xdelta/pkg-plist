@@ -2,6 +2,6 @@ bin/xdelta
 include/xdelta.h
 include/xdeltaconfig.h
 include/fakeglib.h
-lib/libxdelta.so.0.18.0
+lib/libxdelta.so.0.22.0
 lib/libxdelta.la
 lib/libxdelta.a
