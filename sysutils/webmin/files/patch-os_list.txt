@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- os_list.txt.orig	Fri Jul 25 22:19:51 2003
++++ os_list.txt	Fri Jul 25 22:19:54 2003
+@@ -164,6 +164,7 @@
+ FreeBSD				4.7	freebsd		4.7	$uname =~ /FreeBSD.*\s4\.7/i
+ FreeBSD				4.8	freebsd		4.8	$uname =~ /FreeBSD.*\s4\.8/i
+ FreeBSD				5.0	freebsd		5.0	$uname =~ /FreeBSD.*\s5\.0/i
++FreeBSD				5.1	freebsd		5.1	$uname =~ /FreeBSD.*\s5\.1/i
+ OpenBSD				2.5	openbsd		2.5	$uname =~ /OpenBSD.*\s2\.5/i
+ OpenBSD				2.6	openbsd		2.6	$uname =~ /OpenBSD.*\s2\.6/i
+ OpenBSD				2.7	openbsd		2.7	$uname =~ /OpenBSD.*\s2\.7/i
