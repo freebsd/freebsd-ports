@@ -1,47 +1,32 @@
 # New ports collection makefile for:	gawk+mb
-# Version required:	2.15.6+mb1.04
+# Version required:	3.0.4+mb1.12
 # Date created:		5 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gawk-2.15.6
-PKGNAME=	ja-gawk-2.15.6
+DISTNAME=	gawk-3.0.4
+PKGNAME=	ja-gawk-3.0.4
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
 
 MAINTAINER=	ports@FreeBSD.org
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	bsd44
-PATCH_STRIP=	-p1
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-prefix=g
 
-PATCH_SITES=	ftp://ftp.iij.ad.jp/pub/NetNews/fj.sources/volume95/May/
-PATCHFILES=	gawk-2.15.6-mb1.04.diff.gz
-DISTPATCHES=	950503.01.Z 950503.02.Z 950503.03.Z 950503.04.Z
-# Try this if you can't get into ftp.iij.ad.jp
-# PATCH_SITES=	ftp://isfs.kuis.kyoto-u.ac.jp/News.Archives/fj.sources/1995/
-# DISTPATCHES=	372.gz 373.gz 374.gz 375.gz
+PATCH_SITES=	http://member.nifty.ne.jp/wills/program/
+PATCHFILES=	gawkmb112.diff.gz
 PATCH_DIST_STRIP=	-p1
+FETCH_BEFORE_ARGS=	-b
 
-.if !defined(MASTER_SITE_OVERRIDE)
-pre-fetch: 
-	@(cd ${DISTDIR}; \
-	 if [ ! -f ${PATCHFILES} ]; then \
-	    ${ECHO_MSG} ">> ${PATCHFILES} doesn't seem to exist on this system."; \
-	    for file in ${DISTPATCHES} ; do \
-		for site in ${PATCH_SITES} ; do \
-		    if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
-			break; \
-		    fi \
-		done; \
-	    done; \
-	    for file in ${DISTPATCHES} ; do zcat $${file}; done | \
-		${SED} -e '1,/-----8</d' -e '/-----8</,/-----8</d' | uudecode; \
-	    ${RM} -f ${DISTPATCHES};\
-	 fi)
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/ja/awk
+	${INSTALL_DATA} ${WRKSRC}/OREADME.MB ${PREFIX}/share/doc/ja/awk
+	${INSTALL_DATA} ${WRKSRC}/README.MB ${PREFIX}/share/doc/ja/awk
 .endif
 
 .include <bsd.port.mk>

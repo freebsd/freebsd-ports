@@ -1,2 +1,23 @@
 bin/gawk
-man/man1/gawk.1.gz
+bin/igawk
+libexec/awk/grcat
+libexec/awk/pwcat
+share/awk/assert.awk
+share/awk/ctime.awk
+share/awk/ftrans.awk
+share/awk/getopt.awk
+share/awk/gettime.awk
+share/awk/group.awk
+share/awk/join.awk
+share/awk/mktime.awk
+share/awk/nextfile.awk
+share/awk/ord.awk
+share/awk/passwd.awk
+share/awk/round.awk
+share/doc/ja/awk/OREADME.MB
+share/doc/ja/awk/README.MB
+@unexec install-info --delete %D/info/gawk.info %D/info/dir
+info/gawk.info
+@dirrm libexec/awk
+@dirrm share/doc/ja/awk
+@dirrm share/awk

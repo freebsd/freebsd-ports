@@ -1,0 +1,11 @@
+--- awklib/Makefile.in.orig	Sat Sep  4 06:27:32 1999
++++ awklib/Makefile.in	Sat Sep  4 06:33:11 1999
+@@ -75,7 +75,7 @@
+ 	sed 's;/usr/local/libexec/awk;$(libexecdir);' < groupawk.in) > group.awk
+ 
+ install: igawk $(AUXPROGS) $(AUXAWK)
+-	$(INSTALL_PROGRAM) igawk $(bindir)/igawk
++	cp igawk $(bindir)/igawk
+ 	for i in $(AUXPROGS) ; do \
+ 		$(INSTALL_PROGRAM) $$i $(libexecdir)/$$i ; \
+ 	done
