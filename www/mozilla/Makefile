@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -113,7 +113,7 @@ post-patch:
 		${WRKSRC}/build/unix/run-mozilla.sh
 
 post-build:
-	${SED} -e "s;@PREFIX@;${PREFIX};g" \
+	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${FILESDIR}/mozilla.sh >${WRKSRC}/mozilla
 	(cd ${WRKSRC}/dist/bin; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \

@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.2b
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -174,7 +174,7 @@ post-patch:
 			${WRKSRC}/config/autoconf.mk.in
 
 post-build:
-	${SED} -e "s;@PREFIX@;${PREFIX};g" -e "s;%%MOZILLA%%;${MOZILLA};g" \
+	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
 		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}
 	(cd ${WRKSRC}/dist/bin; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \

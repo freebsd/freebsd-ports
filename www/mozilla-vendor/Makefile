@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~marcus/:local
@@ -114,7 +114,7 @@ post-patch:
 		${WRKSRC}/build/unix/run-mozilla.sh
 
 post-build:
-	${SED} -e "s;@PREFIX@;${PREFIX};g" \
+	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${FILESDIR}/mozilla.sh >${WRKSRC}/mozilla-vendor
 	(cd ${WRKSRC}/dist/bin; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
