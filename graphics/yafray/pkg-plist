@@ -1,6 +1,8 @@
 bin/yafray
 etc/gram.yafray
+lib/libyafraycore.la
 lib/libyafraycore.so
+lib/libyafrayplugin.la
 lib/libyafrayplugin.so
 lib/yafray/libpathlight.so
 lib/yafray/libsunlight.so
