@@ -1,0 +1,11 @@
+--- aalib.h.orig	Tue Nov 11 20:06:44 1997
++++ aalib.h	Thu Feb  1 15:21:47 2001
+@@ -183,7 +183,7 @@
+ typedef struct aa_linkedlist aa_linkedlist;
+ typedef struct aa_linkedlist aa_reclist;
+ typedef struct aa_renderparams aa_renderparams;
+-typedef struct aa_hardwareparams aa_hardware_params;
++typedef struct aa_hardware_params aa_hardware_params;
+ typedef struct aa_driver aa_driver;
+ typedef struct aa_font aa_font;
+ typedef struct aa_format aa_format;
