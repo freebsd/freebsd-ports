@@ -1,13 +1,15 @@
---- vbsfilter-1.9.c.orig	Mon Aug 13 21:11:36 2001
-+++ vbsfilter-1.9.c	Mon Aug 13 21:15:05 2001
-@@ -9,6 +9,10 @@
- #include <stdio.h>
- #include <string.h>
- #include <sysexits.h>
+--- vbsfilter-1.11.c.orig	Thu Jan 16 04:21:30 2003
++++ vbsfilter-1.11.c	Thu Jan 16 04:27:36 2003
+@@ -13,6 +13,12 @@
+ #include <termios.h>
+ #include <unistd.h>
+ #include <sys/ioctl.h>
++#ifdef __FreeBSD__
 +#include <ctype.h>
 +#include <stdlib.h>
 +#include <netdb.h>
 +#include <unistd.h>
++#endif
  #include "libmilter/mfapi.h"
  
  /*
