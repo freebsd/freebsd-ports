@@ -1,0 +1,5 @@
+bin/smtpmap
+share/smtpmap/fingerprints-conf
+share/smtpmap/fingerprints-return
+share/smtpmap/fingerprints-rfc
+@dirrm share/smtpmap
