@@ -142,6 +142,7 @@
     SUBDIR += librsvg
     SUBDIR += libungif
     SUBDIR += libwmf
+    SUBDIR += libxine
     SUBDIR += linplasma
     SUBDIR += linux-bmrt
     SUBDIR += linux-jpeg
