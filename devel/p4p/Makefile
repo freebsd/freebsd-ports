@@ -7,13 +7,13 @@
 
 PORTNAME=	perforce
 PORTVERSION=	${VERSION}
-PORTREVISION=	1
+PORTREVISION=	${REVISION}
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ \
-		ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/doc/man/
+		ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/doc/man/:man
 EXTRACT_SUFX=
-DISTFILES=	${BIN_FILES} ${SBIN_FILES} ${MAN1}
+DISTFILES=	${BIN_FILES} ${SBIN_FILES} ${MAN1:S/$/:man/}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
@@ -38,12 +38,14 @@ PERFORCE_LOGS?=		${PERFORCE_HOME}/logs
 PERFORCE_PORT?=		1666
 
 .if ${ARCH} == i386
-VERSION=	01.1
-PLATFORM=	freebsd
+VERSION=	02.1
+REVISION=	0
+PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd
 .elif ${ARCH} == alpha
 VERSION=	99.1
+REVISION=	1
 PLATFORM=	freebsdaxp
 BIN_FILES=	p4
 SBIN_FILES=	p4d
