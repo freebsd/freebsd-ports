@@ -50,6 +50,7 @@
     SUBDIR += tirc
     SUBDIR += tircproxy
     SUBDIR += tkirc
+    SUBDIR += tr-ircd
     SUBDIR += trickyirc
     SUBDIR += xaric
     SUBDIR += xchat

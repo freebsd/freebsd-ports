@@ -1,0 +1,11 @@
+--- configure.orig	Sun May 19 11:10:35 2002
++++ configure	Sun May 19 11:10:57 2002
+@@ -2457,7 +2457,7 @@
+   ;;
+ esac
+ fi
+-MD5SUMS=$ac_cv_path_MD5SUMS
++MD5SUMS=../md5/$ac_cv_path_MD5SUMS
+ 
+ if test -n "$MD5SUMS"; then
+   echo "$as_me:2463: result: $MD5SUMS" >&5
