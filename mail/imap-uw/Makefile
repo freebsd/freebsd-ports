@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/10 02:38:35 pst Exp $
 #
 
 DISTNAME=	imap-4.1.BETA
@@ -12,11 +12,10 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
 EXTRACT_SUFX=	.tar.Z
 
-MAN8=		ipopd.8 imapd.8
+MAINTAINER=	pst@freebsd.org
 
 ALL_TARGET=	fbd
-
-MAINTAINER=	pst@freebsd.org
+MAN8=		ipopd.8 imapd.8
 
 do-install:
 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
