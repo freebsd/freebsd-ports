@@ -1,0 +1,52 @@
+--- choparp.8.orig	Fri Feb 13 20:28:33 2004
++++ choparp.8	Fri Feb 13 20:30:23 2004
+@@ -34,7 +34,7 @@
+ .Nm choparp
+ .Nd cheap and omitted proxy ARP
+ .Sh SYNOPSIS
+-.Nm chpoarp
++.Nm choparp
+ .Ar if_name mac_addr
+ .Oo Fl Oc Ns Ar net_addr Ns
+ .Op / Ns Ar net_mask
+@@ -42,7 +42,7 @@
+ .Sh DESCRIPTION
+ .Pp
+ .Nm choparp 
+-is a easy-to-use proxy ARP daemon.
++is an easy-to-use proxy ARP daemon.
+ It watches ARP request packets visible on the interface specified by argument
+ .Ar if_name ,
+ and sends proxy ARP reply to the sender if the ARP request queries the
+@@ -52,7 +52,7 @@
+ .Ar net_addr Ns / Ar net_mask .
+ .Pp
+ .Ar mac_addr
+-is th MAC address to be published for the specified hosts.
++is the MAC address to be published for the specified hosts.
+ It is normally the address of
+ .Ar if_name .
+ The format of
+@@ -72,7 +72,7 @@
+ .Dq 0x
+ .Pq for example Ad 0x858a0186 .
+ .Ar net_mask
+-can likewise be speficied as a dotted quad or hexadecimal value,
++can likewise be specified as a dotted quad or hexadecimal value,
+ or alternatively as a mask length. The following address specifications
+ are therefore equivalent:
+ .Bl -item -offset indent
+@@ -89,6 +89,13 @@
+ .Em excluded
+ by preceding them with
+ .Fl
++.Pp
++.Nm choparp
++uses the Berkeley Packet Filter
++.Nm bpf(4)
++and so the kernel must be compiled with support for the
++.Nm bpf
++device.
+ .Sh EXAMPLES
+ If you have network interface
+ .Dq ne0
