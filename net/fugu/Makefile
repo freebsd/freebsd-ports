@@ -8,7 +8,7 @@
 PORTNAME=	fugu
 PORTVERSION=	1.1.8
 CATEGORIES=	net python
-MASTER_SITES=	http://fugu.gale.org/dist/
+MASTER_SITES=	http://fugu.gale.org/dist/old/
 
 MAINTAINER=	peterh@sapros.com
 COMMENT=	A graphical client for the Gale instant messaging system
