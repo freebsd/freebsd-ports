@@ -63,6 +63,7 @@
     SUBDIR += wdiff
     SUBDIR += word2x
     SUBDIR += xml4j
+    SUBDIR += xp
     SUBDIR += xt
     SUBDIR += yodl
 
