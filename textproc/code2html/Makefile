@@ -1,5 +1,5 @@
 # New ports collection makefile for:	code2html
-# Version required:			0.8.8a
+# Version required:			0.8.8b
 # Date created:				01 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	code2html
-PKGNAME=	code2html-0.8.8a
+PKGNAME=	code2html-0.8.8b
 CATEGORIES=	textproc
 MASTER_SITES=	http://ckb.dhs.org/projects/code2html/latest/ \
 		http://www.cosy.sbg.ac.at/~ppalfrad/code2html/all/latest/
