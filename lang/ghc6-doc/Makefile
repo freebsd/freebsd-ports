@@ -21,8 +21,6 @@ EXTRACT_ONLY=
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Documentation (HTML, PS) for the Glasgow Haskell Compiler
 
-BROKEN=		"Checksum mismatch"
-
 NO_BUILD=	yes
 
 do-install:
