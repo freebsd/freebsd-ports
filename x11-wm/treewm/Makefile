@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	freebsd-dr@durchnull.de
 COMMENT=	Window Manager that arranges the windows in a tree
 
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
