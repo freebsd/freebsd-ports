@@ -1,6 +1,7 @@
 bin/moonshine
 share/doc/moonshine/bugs.txt
 share/doc/moonshine/changeLog.txt
+share/doc/moonshine/doxyapi.cfg
 share/doc/moonshine/ideas.txt
 share/doc/moonshine/macroLanguageSpecs.txt
 share/doc/moonshine/module.html
