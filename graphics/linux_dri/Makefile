@@ -23,6 +23,8 @@ WRKSRC=		${WRKDIR}/lib
 NO_BUILD=	yes
 USE_LINUX_PREFIX=	yes
 
+ONLY_FOR_ARCHS=	i386
+
 MODULELIST=	gamma_dri.so i810_dri.so mga_dri.so r128_dri.so \
 		radeon_dri.so sis_dri.so tdfx_dri.so
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
