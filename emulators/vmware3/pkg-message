@@ -5,6 +5,9 @@ Get Linux procfs ready and initialize vmmon/vmnet as follows:
 
 then you'll be ready to start vmware.
 
+Don't forget to load the kernel module aio.ko, or
+options VFS_AIO in the kernel.  Otherwise expect problems.
+
 Don't miss the documents installed:
 
 	vmware(1) ${PREFIX}/share/doc/vmware/*
