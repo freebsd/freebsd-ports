@@ -3,7 +3,7 @@
 # Date created:         03 October 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/10 11:31:58 tg Exp $
+# $Id: Makefile,v 1.2 1999/07/18 06:27:18 cpiazza Exp $
 #
 
 DISTNAME=       gstep-core-0.5.5
@@ -26,6 +26,8 @@ BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
 RUN_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
 CC=		egcc
 .endif
+
+BROKEN=		"Hardcoded freebsd release numbers in PLIST"
 
 WRKSRC=		${WRKDIR}/gstep-0.5.5
 PREFIX=		${LOCALBASE}/GNUstep
