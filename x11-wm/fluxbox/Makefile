@@ -21,7 +21,7 @@ PATCHFILES=	remember-0.1.14-7.gz
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A small and fast window manager based on BlackBox
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
 		xterm:${PORTSDIR}/x11/XFree86-4-clients
 BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients

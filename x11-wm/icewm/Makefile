@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-icesound=oss
 .if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-corefonts --disable-xfreetype
 .else
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
 .if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XINERAMA)

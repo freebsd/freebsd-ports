@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An anti-aliased font support for gtk+
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		Xft.2:${PORTSDIR}/x11-fonts/Xft
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

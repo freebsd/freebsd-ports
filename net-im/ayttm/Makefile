@@ -60,7 +60,7 @@ PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
 .if ${XFREE86_VERSION} >= 4 && !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`

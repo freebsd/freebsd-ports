@@ -21,7 +21,7 @@ COMMENT=	GNUstep GUI backend
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_XLIB=		yes
 PREFIX=			${LOCALBASE}/GNUstep

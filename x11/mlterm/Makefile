@@ -36,7 +36,7 @@ MAN1=	mlterm.1 mlclient.1
 PKGNAMESUFFIX=	-noaa
 .else
 CONFIGURE_ARGS+=	--enable-anti-alias
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
 pre-everything::

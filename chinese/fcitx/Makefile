@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	A simple and fast GBK Chinese XIM server
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_BZIP2=	yes
 USE_XLIB=	yes

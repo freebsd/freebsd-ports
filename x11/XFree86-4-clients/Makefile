@@ -23,7 +23,7 @@ COMMENT=	XFree86-4 client programs and related files
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
 		png.5:${PORTSDIR}/graphics/png \
-		Xft.2:${PORTSDIR}/x11-fonts/Xft
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \

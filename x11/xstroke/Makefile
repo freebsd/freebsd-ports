@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.handhelds.org/pub/projects/xstroke/release-${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/libgnugetopt:extract
 
 USE_REINPLACE=	yes
