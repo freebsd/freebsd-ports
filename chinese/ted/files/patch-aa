@@ -1,5 +1,5 @@
---- Makefile.orig	Sun May 10 20:26:36 1998
-+++ Makefile	Thu May 28 03:08:38 1998
+--- Makefile.orig	Mon Jun 15 21:46:49 1998
++++ Makefile	Wed Jun 24 22:37:10 1998
 @@ -1,5 +1,5 @@
 -CHINESE=0
 -TEDDIR=/usr/local/lib/Ted
@@ -8,13 +8,15 @@
  ########## GCC/Linux ......  ############
  CC=gcc
  XINC=-I/usr/X11R6/include
-@@ -31,19 +31,19 @@
+@@ -30,20 +30,20 @@
+ #CC=cc
  #XINC=-I/usr/openwin/include
  #LDFLAGS= -L/usr/openwin/lib -lsocket
- #CC=gcc
+-CC=gcc
 -XINC=-I/usr/X11R6.3/include
 -LDFLAGS= -L/usr/X11R6.3/lib -lsocket
 -SUNKBD=-DSUNKBD
++#CC=gcc
 +#XINC=-I/usr/X11R6.3/include
 +#LDFLAGS= -L/usr/X11R6.3/lib -lsocket
 +#SUNKBD=-DSUNKBD
