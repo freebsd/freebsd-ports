@@ -45,12 +45,8 @@ MAN1=		vmware.1
 BROKEN=		"Systems prior to 400013 is out of support"
 .endif
 
-.if exists(/modules/linprocfs.ko) || exists(${PREFIX}/modules/linprocfs.ko)
-HAVE_LINPROCFS=	yes
-.endif
-
-.if !defined(HAVE_LINPROCFS)
-BROKEN=		"You need Linux procfs to run this software"
+.if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
+BROKEN=		"This software absolutely requires Linux procfs support"
 .endif
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)
