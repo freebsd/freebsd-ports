@@ -264,6 +264,7 @@
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
     SUBDIR += pd
+    SUBDIR += phatbeat
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi

@@ -1,0 +1,28 @@
+bin/phatbeat
+bin/phatx
+share/phatbeat/images/0.png
+share/phatbeat/images/1.png
+share/phatbeat/images/2.png
+share/phatbeat/images/3.png
+share/phatbeat/images/4.png
+share/phatbeat/images/5.png
+share/phatbeat/images/6.png
+share/phatbeat/images/7.png
+share/phatbeat/images/8.png
+share/phatbeat/images/9.png
+share/phatbeat/images/AC_dn.png
+share/phatbeat/images/AC_up.png
+share/phatbeat/images/bkgnd_test5.png
+share/phatbeat/images/blackgnd.png
+share/phatbeat/images/blnk.png
+share/phatbeat/images/dnarrow_dn.png
+share/phatbeat/images/dnarrow_up.png
+share/phatbeat/images/icon.png
+share/phatbeat/images/phaticon.ico
+share/phatbeat/images/point.png
+share/phatbeat/images/tap_dn.png
+share/phatbeat/images/tap_up.png
+share/phatbeat/images/uparrow_dn.png
+share/phatbeat/images/uparrow_up.png
+@dirrm share/phatbeat/images
+@dirrm share/phatbeat
