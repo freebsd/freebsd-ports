@@ -5,9 +5,9 @@ SHLIB_MAJOR=	1
 SHLIB_MINOR=	0
 
 SRCS	=	sql-mysql.cc sql.cc sql-manager.cc
-CXXFLAGS+=	-I${LOCALBASE}/include/${TCL_VERSION} -DUSE_TCL_STUBS
+CXXFLAGS+=	-I${LOCALBASE}/include/${TCL_VERSION}
 CXXFLAGS+=	-I${LOCALBASE}/include/mysql
-LDADD  +=	-L${LOCALBASE}/lib -l${TCL_NODOT:S/tcl/tclstub/}
+LDADD  +=	-L${LOCALBASE}/lib -l${TCL_NODOT}
 LDADD  +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 LDADD  +=	-lgcc
 INTERNALLIB=	yeah, don't make the useless static lib
