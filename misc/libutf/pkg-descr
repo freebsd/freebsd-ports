@@ -1,0 +1,7 @@
+This software is a library which implements UTF-8 support routines,
+and uses those routines and others to implement UTF-8aware regular
+expresions.  Language collation sequences are specified in a text
+file, ${PREFIX}/etc/langcoll.utf, and feedback as to their correctness
+is appreciated.
+
+Alistair G. Crooks
