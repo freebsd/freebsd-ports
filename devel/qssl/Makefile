@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	psi
 
 MAINTAINER=	dd@FreeBSD.org
 
-LIB_DEPENDS=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt30
-
 SHLIB_MAJOR=	0
 
 USE_OPENSSL=	yes
@@ -23,6 +21,7 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 MAKE_ARGS=	QTDIR=${X11BASE}
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+USE_QT_VER=	3
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ARGS} qmake \
