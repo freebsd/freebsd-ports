@@ -7,7 +7,7 @@ bin/tv_grab_es
 bin/tv_grab_es_digital
 bin/tv_grab_fi
 bin/tv_grab_fr
-bin/tv_grab_hu
+bin/tv_grab_huro
 bin/tv_grab_it
 bin/tv_grab_jp
 bin/tv_grab_na_dd
@@ -15,7 +15,6 @@ bin/tv_grab_na_icons
 bin/tv_grab_nl
 bin/tv_grab_nl_wolf
 bin/tv_grab_no
-bin/tv_grab_nz
 bin/tv_grab_pt
 bin/tv_grab_se
 bin/tv_grab_uk_rt
@@ -47,14 +46,12 @@ bin/tv_to_text
 %%SITE_PERL%%/XMLTV/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 %%DATADIR%%/tv_grab_de_tvtoday/channel_ids
-%%DATADIR%%/tv_grab_it/dud_channels
+%%DATADIR%%/tv_grab_it/channel_ids
 %%DATADIR%%/tv_grab_nl/channels
-%%DATADIR%%/tv_grab_nz/episode_names
 %%DATADIR%%/tv_grab_uk_rt/channel_ids
 %%CGIDIR%%/tv_pick.cgi
 @dirrm %%CGIDIR%%
 @dirrm %%DATADIR%%/tv_grab_uk_rt
-@dirrm %%DATADIR%%/tv_grab_nz
 @dirrm %%DATADIR%%/tv_grab_nl
 @dirrm %%DATADIR%%/tv_grab_it
 @dirrm %%DATADIR%%/tv_grab_de_tvtoday
