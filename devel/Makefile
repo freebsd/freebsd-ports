@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.130 1998/08/10 00:09:42 steve Exp $
+# $Id: Makefile,v 1.131 1998/08/13 02:18:00 asami Exp $
 #
 
     SUBDIR += ElectricFence
     SUBDIR += ORBacus
+    SUBDIR += ORBit
     SUBDIR += SWIG
     SUBDIR += SpecTcl
     SUBDIR += a2dev
