@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
@@ -16,12 +16,11 @@ DIST_SUBDIR=	amaya
 
 MAINTAINER=	adam-ports@blacktabby.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
-
 WRKSRC=		${WRKDIR}/Amaya/obj
 
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
@@ -55,7 +54,7 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-patch:
-	${PERL} -pi.dist -e 's|\"1.0\\.|\"1\\.|g ; \
+	${REINPLACE_CMD} -e 's|\"1.0\\.|\"1\\.|g ; \
 		 s|gtk-config --cflags|imlib-config --cflags-gdk|g ; \
 		 s|gtk-config --libs|imlib-config --libs-gdk|g ; \
 		 s| -lgdk_imlib||g' ${WRKSRC}/../configure
@@ -69,7 +68,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/*.dic ${PREFIX}/Amaya/dicopar
 	${MV} ${TMPPLIST} ${TMPPLIST}.new
 	cd ${WRKDIR} && ls -1 *.dic | \
-		${PERL} -pi -e 's|^|Amaya/dicopar/|' > ${TMPPLIST}
+		${SED} -e 's|^|Amaya/dicopar/|' > ${TMPPLIST}
 	${CAT} ${TMPPLIST}.new >> ${TMPPLIST}
 	${RM} ${TMPPLIST}.new
 .endif
