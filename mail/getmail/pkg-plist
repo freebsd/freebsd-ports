@@ -1,0 +1,6 @@
+bin/getmail
+share/getmail/ConfParser.py
+share/getmail/getmail.py
+share/getmail/getmailrc-example
+share/getmail/timeoutsocket.py
+@dirrm share/getmail

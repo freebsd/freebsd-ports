@@ -38,6 +38,7 @@
     SUBDIR += gbiff
     SUBDIR += gbuffy
     SUBDIR += gensig
+    SUBDIR += getmail
     SUBDIR += gkrellmmailwatch
     SUBDIR += glacier
     SUBDIR += glbiff
