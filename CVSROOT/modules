@@ -6166,6 +6166,7 @@ pstotext	ports/print/pstotext
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
+pt-aspell	ports/textproc/pt-aspell
 pt-ooodict-BR	ports/editors/ooodict-pt_BR
 pt-ooodict-PT	ports/editors/ooodict-pt_PT
 pt-openoffice	ports/editors/openoffice-pt
