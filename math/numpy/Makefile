@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	15.2
+PORTVERSION=	15.3
 CATEGORIES=	math python
 MASTER_SITES=	http://download.sourceforge.net/numpy/
 PKGNAMEPREFIX=	py-
 DISTNAME=	Numerical-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org
 
