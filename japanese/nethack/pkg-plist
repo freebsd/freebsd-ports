@@ -137,4 +137,5 @@ share/examples/ja/nethack/ibm.pcf.gz
 share/examples/ja/nethack/nethack.rc
 share/examples/ja/nethack/nh10.pcf.gz
 @dirrm share/examples/ja/nethack
+@unexec rmdir %D/share/examples/ja 2>/dev/null || true
 @dirrm share/doc/ja/nethack
