@@ -11,6 +11,10 @@ cleanup()
   pkgname=$5
 
   #umount ${chroot}/proc
+  
+  if [ ${arch} = "i386" ]; then
+    umount -f ${chroot}/compat/linux/proc
+  fi
     
   umount -f ${chroot}/a/ports
   umount -f ${chroot}/usr/opt/doc
@@ -222,9 +226,22 @@ else
     >/dev/null 2>&1
 fi
 
-chroot ${chroot} /sbin/ldconfig -m /usr/lib /usr/lib/compat
 if [ ${arch} = "i386" ]; then
-	chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout /usr/lib/compat/aout
+  # JDK ports need linprocfs :(
+  mkdir -p ${chroot}/compat/linux/proc
+  mount -t linprocfs linprocfs ${chroot}/compat/linux/proc
+fi
+
+_ldconfig_dirs="/lib /usr/lib /usr/lib/compat"
+ldconfig_dirs=""
+for i in ${_ldconfig_dirs}; do
+  if [ -d ${chroot}/${i} ]; then
+    ldconfig_dirs="${ldconfig_dirs} ${i}"
+  fi
+done
+chroot ${chroot} /sbin/ldconfig ${ldconfig_dirs}
+if [ ${arch} = "i386" ]; then
+	chroot ${chroot} /sbin/ldconfig -aout /usr/lib/aout /usr/lib/compat/aout
 fi
 
 while [ $# -gt 0 ]; do
@@ -280,6 +297,10 @@ if [ "${error}" = 0 ]; then
   fi
 
   if [ "${error}" = 0 ]; then
+    if [ "${branch}" = "4" ]; then
+      echo "Testing package integrity"
+      (gzip -t ${chroot}/tmp/packages/All/*.tgz && echo "Package ${pkgname} OK!") || echo "Package ${pkgname} corrupted!"
+    fi
     tar -C ${chroot}/tmp -cf - packages | \
       ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch} -xvf -
     ssh -a -x ${user}@$master [ -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} ] '&&' touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
