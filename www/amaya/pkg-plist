@@ -15,7 +15,7 @@ thot/amaya/HTMLT.TRA
 thot/amaya/HTMLTT.TRA
 thot/amaya/HTMLTX.TRA
 thot/applis/bin/amaya
-@exec ln -sf %D%F %D/bin/amaya
+@exec ln -sf %D/%F %D/bin/amaya
 @unexec rm -f %D/bin/amaya
 thot/applis/bin/print
 thot/config/XKeysymDB
