@@ -1,0 +1,11 @@
+--- plDlg.cpp	Wed Feb 11 07:01:12 1998
++++ plDlg.cpp	Wed Jul 29 23:59:01 1998
+@@ -87,6 +87,8 @@
+ void plDlg::id3_clicked()
+ {
+ 	strcpy(ime,listEditor->text(listEditor->currentItem()));
++	if(!ime[0]) //to prevent from seg-fault on id3 editor at empty playlist
++		return;
+ 	id3Dialog = new id3();
+ 	id3Dialog->show();
+ }

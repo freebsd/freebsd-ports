@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Tue Aug 18 22:28:09 1998
++++ Makefile.in	Tue Aug 18 22:31:13 1998
+@@ -14,7 +14,8 @@
+ DEFINES = -DOS_@OS_TYPE@ -DARCH_@ARCH_TYPE@
+ CFLAGS = @CFLAGS@ ${DEFINES} ${DEBUG} ${BACK}
+ LDFLAGS = @LDFLAGS@
+-INSTALL= @INSTALL@
++INSTALL= @INSTALL@ -s
++DESTDIR= ${PREFIX}/bin
+ 
+ #
+ # uncomment both of these if you want profiling support
