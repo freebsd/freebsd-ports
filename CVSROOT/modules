@@ -3230,6 +3230,7 @@ honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde		ports/www/horde
 horde-passwd	ports/www/horde-passwd
+horde-php5	ports/www/horde-php5
 hostapd		ports/security/hostapd
 hostsentry	ports/security/hostsentry
 hot-babe	ports/deskutils/hot-babe
