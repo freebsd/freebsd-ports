@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -114,7 +114,10 @@ do-install:
 	@# Install the man page
 .if !defined(NOPORTDOCS)
 	${CAT} ${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
+	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
 	| ${SED} "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
+	| ${SED} "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
+	| ${SED} "/%%STARTUP_ORDER%%/s//${STARTUP_ORDER}.sh/" \
 	> ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1
 	${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
 .endif
