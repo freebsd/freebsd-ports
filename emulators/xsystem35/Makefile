@@ -7,13 +7,16 @@
 #
 
 DISTNAME=	xsystem35-BETA-19981114
-PKGNAME=	xsystem-3.5-19981114
+PKGNAME=	xsystem-3.5-19981123
 CATEGORIES=	emulators
 MASTER_SITES=	http://ryo1207.aist-nara.ac.jp/unitbase/xsys35/down/
 
+PATCH_SITES=	http://ryo1207.aist-nara.ac.jp/unitbase/xsys35/down/
+PATCHFILES=	patch-19981123.diff.gz
+
 MAINTAINER=	flathill@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS+=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 
 USE_X_PREFIX=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
