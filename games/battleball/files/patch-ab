@@ -1,0 +1,22 @@
+--- bb/main.C	Thu Oct  9 16:03:25 1997
++++ /home/andy/tmp/wrk/bb/main.C	Wed Dec 16 23:34:59 1998
+@@ -16,6 +16,9 @@
+ #include <stdio.h>       // to get sprintf()
+ #include <string.h>      // to get strncpy()
+ #include <time.h>        // to get time(time_t *)
++#ifdef __FreeBSD__
++#include <floatingpoint.h>
++#endif
+ #include "bb.h"
+ #include "player.h"
+ 
+@@ -818,6 +821,9 @@
+ // A long and complicated main() function!
+ 
+ main (int argc, char *argv[]) {
++#ifdef __FreeBSD__
++  fpsetmask(0);
++#endif
+   battleBall bb(argc,argv);
+   bb.Play();
+ }
