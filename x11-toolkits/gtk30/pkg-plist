@@ -108,11 +108,12 @@ include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
 include/gtk/gtktypebuiltins.h
+@unexec install-info --delete %D/info/gdk.info %D/info/dir
+@unexec install-info --delete %D/info/gtk.info %D/info/dir
 info/gdk.info
 info/gtk.info
-info/gtk.info-1
-info/gtk.info-2
-info/gtk.info-3
-info/gtk.info-4
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gtk.info %D/info/dir
+@exec install-info %D/info/gdk.info %D/info/dir
 @dirrm include/gtk
 @dirrm include/gdk
