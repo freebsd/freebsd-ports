@@ -7,18 +7,32 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	0.1.13
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+.if defined(WITH_REMEMBER)
+PATCH_SITES=	http://www.raisdorf.net/files/FreeBSD/
+PATCHFILES=	remember-patch-0.1.13.gz
+PATCH_DIST_STRIP=	-p1
+.endif
+
 MAINTAINER=	hendrik@scholz.net
 
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools
+.if defined(WITH_REMEMBER)
+BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
+.endif
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+.if defined(WITH_REMEMBER)
+USE_GMAKE=	yes
+CONFIGURE_ENV=	AUTOMAKE="${AUTOMAKE}"
+.endif
 CONFIGURE_ARGS=	--disable-newwmspec
 .if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-kde
@@ -44,6 +58,9 @@ pre-everything::
 .endif
 .if !defined(WITH_KDE)
 	@${ECHO_CMD} "WITH_KDE	- Enable KDE slit support"
+.endif
+.if !defined(WITH_REMEMBER)
+	@${ECHO_CMD} "WITH_REMEMBER	- Enable the unofficial remember patch"
 .endif
 	@${ECHO_CMD} ""
 
