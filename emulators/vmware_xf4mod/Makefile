@@ -14,8 +14,7 @@ EXTRACT_SUFX=	# none
 
 MAINTAINER=	nsayer@freebsd.org
 
-RUN_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4 \
-		${PREFIX}/lib/vmware/bin/vmware:${PORTSDIR}/emulators/vmware2
+RUN_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4
 
 NO_WRKSUBDIR=	yes
 
