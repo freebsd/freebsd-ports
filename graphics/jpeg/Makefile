@@ -24,7 +24,7 @@ COMMENT=	IJG's jpeg compression utilities
 
 WRKSRC=		${WRKDIR}/jpeg-6b
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 
@@ -40,6 +40,7 @@ MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 post-extract:
 	@${CP} ${DISTDIR}/jpegexiforient.c ${WRKSRC}/
 	@${CP} ${DISTDIR}/exifautotran.txt ${WRKSRC}/exifautotran
+	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 post-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o jpegexiforient jpegexiforient.c
