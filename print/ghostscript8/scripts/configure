@@ -30,9 +30,9 @@ else
 		lj250 declj250 ap3250 epson eps9mid eps9high lp8000 \
 		epag \
 		escpage lp2000 \
-		alc8600 alc8500 alc2000 alc4000 \
+		alc8600 alc8500 alc2000 alc4000 alc1900 \
 		lp9500c lp8800c lp8300c lp8500c lp3000c lp8200c lp8000c \
-		epl5900 epl5800 epl2050 epl2050p epl2120 \
+		epl6100 epl5900 epl5800 epl2050 epl2050p epl2120 epl2750 \
 		lp7500 lp2400 lp2200 lp9400 lp8900 lp8700 lp8100 lp7700 \
 		lp8600f lp8400f lp8300f lp1900 lp9600s lp9300 lp9600 lp8600 \
 		lp1800 \
@@ -148,6 +148,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "alc8500"  "Epson AL-C8500 color laser printer [EPLASER]" "$status_alc8500" \
   "alc2000"  "Epson AL-C2000 color laser printer [EPLASER]" "$status_alc2000" \
   "alc4000"  "Epson AL-C4000 color laser printer [EPLASER]" "$status_alc4000" \
+  "alc1900"  "Epson AL-C1900 color laser printer [EPLASER]" "$status_alc1900" \
   "lp9500c"  "Epson LP-9500C color laser printer [EPLASER]" "$status_lp9500c" \
   "lp8800c"  "Epson LP-8800C color laser printer [EPLASER]" "$status_lp8800c" \
   "lp8300c"  "Epson LP-8300C color laser printer [EPLASER]" "$status_lp8300c" \
@@ -155,11 +156,13 @@ Have fun with this new configuration style !     -andreas \n\n\
   "lp3000c"  "Epson LP-3000C color laser printer [EPLASER]" "$status_lp3000c" \
   "lp8200c"  "Epson LP-8200C color laser printer [EPLASER]" "$status_lp8200c" \
   "lp8000c"  "Epson LP-8000C color laser printer [EPLASER]" "$status_lp8000c" \
+  "epl6100"  "Epson EPL-6100 laser printer [EPLASER]" "$status_epl6100" \
   "epl5900"  "Epson EPL-5900 laser printer [EPLASER]" "$status_epl5900" \
   "epl5800"  "Epson EPL-5800 laser printer [EPLASER]" "$status_epl5800" \
   "epl2050"  "Epson EPL-N2050 laser printer [EPLASER]" "$status_epl2050" \
   "epl2050p" "Epson EPL-N2050+ laser printer [EPLASER]" "$status_epl2050p" \
   "epl2120"  "Epson EPL-N2120 laser printer [EPLASER]" "$status_epl2120" \
+  "epl2750"  "Epson EPL-N2750 laser printer [EPLASER]" "$status_epl2750" \
   "lp7500"   "Epson LP-7500(R) laser printer [EPLASER]" "$status_lp7500" \
   "lp2400"   "Epson LP-2400 laser printer [EPLASER]" "$status_lp2400" \
   "lp2200"   "Epson LP-2200 laser printer [EPLASER]" "$status_lp2200" \
