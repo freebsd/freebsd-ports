@@ -3,7 +3,7 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1997/10/09 21:04:43 andreas Exp $
+# $Id: Makefile,v 1.11 1997/10/24 15:18:16 obrien Exp $
 #
 
 DISTNAME=	lyx-0.11.45
@@ -22,5 +22,8 @@ GNU_CONFIGURE=	yes
 STRIP=
 CONFIGURE_ARGS+=--with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
 MAN1=		lyx.1
+
+post-install:
+	@strip ${PREFIX}/bin/lyx
 
 .include <bsd.port.mk>
