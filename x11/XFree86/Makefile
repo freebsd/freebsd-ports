@@ -69,6 +69,8 @@ post-extract:
 .if defined(BUILD_XDIST)
 	@${CP} ${WRKSRC}/programs/Xserver/hw/xfree86/LinkKit/README \
 		${WRKSRC}/programs/Xserver/hw/xfree86/doc/sgml
+	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/doc/sgml/DGux.sgml \
+		${WRKSRC}/programs/Xserver/hw/xfree86/doc/sgml/DGUX.sgml
 .endif
 	@if [ -r ${FILESDIR}/config ]; then \
 		${ECHO} Using your existing ${FILESDIR}/config ; \
