@@ -1,0 +1,2 @@
+You have to delete/rebuild the shared Mozilla component database (compreg.dat)
+as root in order to use enigmail.
