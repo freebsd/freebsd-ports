@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.5 1995/03/30 21:05:04 wollman Exp $
+# $Id: LEGAL,v 1.6 1995/03/30 21:34:45 gpalmer Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -7,21 +7,19 @@ of FreeBSD on such mass media, you should be sure and NOT distribute
 the original source tarballs for such ports in your distfiles directory.
 To do so will invite needless problems from the various parties involved.
 
-Since those connected to the net will also be able to automatically fetch
-their own original sources and complete the puzzle, the hardship is not as
-severe as it might otherwise be.
+Since those connected to the net will also be able to use the ports framework
+to automatically fetch their own original sources and thus complete the puzzle,
+the hardship is not as severe as it might otherwise be.
 
 Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
-ivs3.4-src.tar.gz	ports/utils/ivs		Crypto; export-controrolled
+ivs3.4-src.tar.gz	ports/utils/ivs		Crypto; export-controlled
 maxima-5.0-beta		ports/math/maxima	License required
 pgp262s.zip		ports/utils/pgp*	Various locality restrictions
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 tkman-1.6.tar.Z		ports/x11/tkman		Restrictive copyright
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
 xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
-
-[please add more to this list]
