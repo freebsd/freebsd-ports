@@ -25,7 +25,7 @@ pre-build:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-BROKEN=	"Doesn't work on 5.x"
+IGNORE=	"Doesn't work on 5.x"
 .endif
 
 .include <bsd.port.post.mk>
