@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.5
-PORTREVISION=	3
+PORTVERSION=	1.2.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -23,17 +22,25 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	13
 WANT_GNOME=	yes
-CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
+		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
+		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-video-aalib \
-		--disable-nas
+		--target=
 
-CFLAGS+=	${PTHREAD_CFLAGS}
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
+
+OPTIONS=	NAS	"Include support for the Network Audio System" Off \
+		X11	"Include support for X11" On \
+		GL	"Include support for OpenGL" Off
+
+.include <bsd.port.pre.mk>
 
 .if exists(/usr/lib/libvgl.so.3)
 CONFIGURE_ARGS+=--enable-video-vgl
@@ -44,10 +51,16 @@ PKGMESSAGE=	/I/hate/ports/Mk/bsd.port.mk
 DISPLAY_MSG=	${DO_NADA}
 .endif
 
-.if !defined(WITHOUT_X11)
+.if defined(WITH_NAS)
+LIB_DEPENDS+=  audio.2:${PORTSDIR}/audio/nas
+.else
+CONFIGURE_ARGS+=--disable-nas
+.endif
+
+.if defined(WITH_X11)
 USE_XLIB=	yes
 .endif
-.if defined(WITHOUT_GL)
+.if !defined(WITH_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
 .else
 USE_GL=		yes
@@ -59,8 +72,6 @@ CFLAGS+=	-DHAVE_LIBUSBHID_H
 .else
 CONFIGURE_ENV+=	USB_LIBS=-lusb
 .endif
-
-.include <bsd.port.pre.mk>
 
 MAN3!=		${CAT} ${FILESDIR}/man3
 
@@ -86,6 +97,11 @@ CONFIGURE_ARGS+=--enable-arts
 CONFIGURE_ARGS+=--disable-arts
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's|sdl-config|sdl11-config|g'	\
+		${WRKSRC}/test/configure
+	@${RM} ${WRKSRC}/test/configure.bak
+
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${TOUCH}
 
@@ -99,11 +115,14 @@ post-configure:
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/test/configure ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/docs
-.for file in BUGS COPYING CREDITS README WhatsNew docs.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 	@cd ${WRKSRC}/docs; ${TAR} cf - `${ECHO_CMD} [^Mm]*` | \
 		(cd ${DOCSDIR}/docs; ${TAR} --unlink -xf - )
 .endif
