@@ -7,18 +7,18 @@
 
 PORTNAME=	scotty
 PORTVERSION=	2.1.10
-CATEGORIES=	net tk82
+CATEGORIES=	net tk83
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 
 MAINTAINER=	demon@FreeBSD.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 FORBIDDEN=	"Buffer overflow in ntping yielding setuid root"
 
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS=	--with-tcl-config=${LOCALBASE}/lib/tcl8.2 \
-		--with-tk-config=${LOCALBASE}/lib/tk8.2
+CONFIGURE_ARGS=	--with-tcl-config=${LOCALBASE}/lib/tcl8.3 \
+		--with-tk-config=${LOCALBASE}/lib/tk8.3
 
 WRKSRC=${WRKDIR}/${DISTNAME}/unix
 MAN1=		tkined.1 scotty.1
