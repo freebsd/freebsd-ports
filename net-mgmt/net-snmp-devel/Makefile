@@ -7,7 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.1
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -225,14 +225,14 @@ patch-startup-files:
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
-	 ${XARGS} ${PERL} -pi -e 's|$$| -m 755| if /^INSTALL\s+=/'
+	 ${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[    ]+=/s|$$| -m 755|'
 
 .if !defined(WITHOUT_PERL)
 post-build:
 	${FIND} ${WRKSRC}/perl -name Makefile | \
-	 ${XARGS} ${REINPLACE_CMD} -e '\
-		s!^(PREFIX) = .*!$$1 = ${PREFIX}!; \
-		s!^(INSTALLMAN3DIR) = /usr/local!$$1 = \$$\(PREFIX\)!; \
+	 ${XARGS} ${REINPLACE_CMD} -E -e '\
+		s!^(PREFIX) = .*!\1 = ${PREFIX}!; \
+		s!^(INSTALLMAN3DIR) = .*!\1 = ${MAN3PERLPREFIX}/man/man3!; \
 		s! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!; \
 		'
 .endif
