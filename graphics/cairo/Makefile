@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Cairo is a vector graphics library with cross-device output support
 
 LIB_DEPENDS=	pixman.1:${PORTSDIR}/graphics/libpixman \
-		glitz-glx.1:${PORTSDIR}/graphics/glitz \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png
 
@@ -26,12 +24,15 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CLFAGS}" \
 		LDFLAGS="${PTHREAD_LDFLAGS}"
 
-PLIST_FILES=	include/cairo-features.h \
-		include/cairo.h \
-		lib/libcairo.a \
-		lib/libcairo.so \
-		lib/libcairo.so.1 \
-		libdata/pkgconfig/cairo.pc
+OPTIONS+=	GLITZ "Enable Glitz OpenGL Support" Off
+
+.if defined(WITH_GLITZ)
+LIB_DEPENDS+=	glitz-glx.1:${PORTSDIR}/graphics/glitz
+.endif
+
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
