@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johnston@vectaport.com
 
-BUILD_DEPENDS=	imake:${PORTDIR}/devel/imake
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
