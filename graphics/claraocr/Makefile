@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	claraocr
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://carroll.cac.psu.edu/pub/linux/distributions/mandrake-devel/projects/claraocr/ \
 		ftp://ftp.wtfo.com/pub/linux/Mandrake-devel/projects/claraocr/ \
@@ -24,7 +24,8 @@ MAKE_ENV=	MKDIR="${MKDIR}"
 MAN1=	clara-adv.1 clara-dev.1 clara.1
 
 post-patch:
-	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},g' ${WRKSRC}/clara.pl \
-		${WRKSRC}/mkdoc.pl ${WRKSRC}/selthresh.pl
+.for file in clara.pl mkdoc.pl selthresh.pl
+	@${PERL} -pi -e 's|^#!/usr/bin/perl|#!${PERL}|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>

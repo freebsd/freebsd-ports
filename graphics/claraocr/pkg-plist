@@ -6,5 +6,6 @@ bin/selthresh.pl
 %%PORTDOCS%%share/doc/clara/clara-adv.html
 %%PORTDOCS%%share/doc/clara/clara-dev.html
 %%PORTDOCS%%share/doc/clara/clara-faq.html
+%%PORTDOCS%%share/doc/clara/clara-glo.html
 %%PORTDOCS%%share/doc/clara/clara-tut.html
 %%PORTDOCS%%@dirrm share/doc/clara
