@@ -100,12 +100,6 @@
 %%PYTHON_SITELIBDIR%%/kenosis/ds/ui.py
 %%PYTHON_SITELIBDIR%%/kenosis/ds/ui.pyc
 %%PYTHON_SITELIBDIR%%/kenosis/ds/ui.pyo
-%%PYTHON_SITELIBDIR%%/kenosis/ds/weakmethod.py
-%%PYTHON_SITELIBDIR%%/kenosis/ds/weakmethod.pyc
-%%PYTHON_SITELIBDIR%%/kenosis/ds/weakmethod.pyo
-%%PYTHON_SITELIBDIR%%/kenosis/kim.py
-%%PYTHON_SITELIBDIR%%/kenosis/kim.pyc
-%%PYTHON_SITELIBDIR%%/kenosis/kim.pyo
 %%PYTHON_SITELIBDIR%%/kenosis/node.py
 %%PYTHON_SITELIBDIR%%/kenosis/node.pyc
 %%PYTHON_SITELIBDIR%%/kenosis/node.pyo
@@ -118,6 +112,33 @@
 %%PYTHON_SITELIBDIR%%/kenosis/xmlrpclib_transport.py
 %%PYTHON_SITELIBDIR%%/kenosis/xmlrpclib_transport.pyc
 %%PYTHON_SITELIBDIR%%/kenosis/xmlrpclib_transport.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/BeautifulSoup.py
+%%PYTHON_SITELIBDIR%%/kenosis/BeautifulSoup.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/BeautifulSoup.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/Zeroconf.py
+%%PYTHON_SITELIBDIR%%/kenosis/Zeroconf.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/Zeroconf.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/ds/IPy.py
+%%PYTHON_SITELIBDIR%%/kenosis/ds/IPy.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/ds/IPy.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/kwebd.py
+%%PYTHON_SITELIBDIR%%/kenosis/kwebd.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/kwebd.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/soap.py
+%%PYTHON_SITELIBDIR%%/kenosis/soap.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/soap.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/upnp.py
+%%PYTHON_SITELIBDIR%%/kenosis/upnp.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/upnp.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/upnp_plugin.py
+%%PYTHON_SITELIBDIR%%/kenosis/upnp_plugin.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/upnp_plugin.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/upnptest.py
+%%PYTHON_SITELIBDIR%%/kenosis/upnptest.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/upnptest.pyo
+%%PYTHON_SITELIBDIR%%/kenosis/zeroconf_plugin.py
+%%PYTHON_SITELIBDIR%%/kenosis/zeroconf_plugin.pyc
+%%PYTHON_SITELIBDIR%%/kenosis/zeroconf_plugin.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/kenosis/ds
 @dirrm %%PYTHON_SITELIBDIR%%/kenosis/dns
 @dirrm %%PYTHON_SITELIBDIR%%/kenosis
