@@ -7908,6 +7908,7 @@ xmlink		ports/games/xmlink
 xmlpp		ports/textproc/xmlpp
 xmlppm		ports/textproc/xmlppm
 xmlrpc-c	ports/net/xmlrpc-c
+xmltex		ports/print/xmltex
 xmmix		ports/audio/xmmix
 xmms		ports/audio/xmms
 xmms-alarm	ports/x11-clocks/xmms-alarm
