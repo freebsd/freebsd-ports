@@ -130,8 +130,8 @@ lib/X11/mwm/system.mwmrc
 lib/config/Imake.tmpl
 lib/config/Motif.rules
 lib/config/Motif.tmpl
-lib/libMrm.so.0.0
-lib/libXm.so.0.0
+lib/libMrm.so.0.1
+lib/libXm.so.0.1
 lib/libltc.a
 @exec /sbin/ldconfig -m %D/lib
 @dirrm lib/X11/lesstif
