@@ -1,23 +1,23 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Thu Nov 30 06:50:20 2000
-+++ Makefile.in	Mon Jan 29 20:20:33 2001
-@@ -91,7 +91,7 @@
+--- Makefile.in.orig	Wed Dec 19 00:04:36 2001
++++ Makefile.in	Wed Dec 19 14:31:08 2001
+@@ -93,7 +93,7 @@
  SUBDIRS = @MUSIC_SUBDIRS@
- DIST_SUBIDRS = mikmod timidity
+ DIST_SUBDIRS = mikmod timidity native_midi
  
 -libSDL_mixerincludedir = $(includedir)/SDL
 +libSDL_mixerincludedir = $(includedir)/SDL11
  libSDL_mixerinclude_HEADERS =  	SDL_mixer.h
  
  
-@@ -105,7 +105,7 @@
- EXTRA_DIST =  	CHANGES				VisualC.zip			MPWmake.sea.hqx			CWprojects.sea.hqx		autogen.sh
+@@ -109,7 +109,7 @@
+ EXTRA_DIST =  	CHANGES				VisualC.zip			PBProjects.tar.gz		MPWmake.sea.bin			CWprojects.sea.hqx		SDL_mixer.spec			SDL_mixer.spec.in		autogen.sh
  
  
--libSDL_mixer_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libSDL_mixer_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+-libSDL_mixer_la_LDFLAGS =  	-release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libSDL_mixer_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
- libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB)
+ libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB) $(NATIVE_MIDI_LIB)
  
