@@ -1,0 +1,19 @@
+*** Makefile.orig	Sun Apr 16 23:46:57 1995
+--- Makefile	Sun Apr 16 23:47:16 1995
+***************
+*** 97,103 ****
+  
+  #mode 0666 is required for DriveA, alas
+  install: pcemu bootstrapper
+! 	-mkdir ${LOCALPREFIX}/lib/pcemu \
+  		${LOCALPREFIX}/lib/pcemu/doc \
+  		${LOCALPREFIX}/lib/pcemu/font \
+  		${LOCALPREFIX}/lib/pcemu/C \
+--- 97,103 ----
+  
+  #mode 0666 is required for DriveA, alas
+  install: pcemu bootstrapper
+! 	-mkdir -p ${LOCALPREFIX}/lib/pcemu \
+  		${LOCALPREFIX}/lib/pcemu/doc \
+  		${LOCALPREFIX}/lib/pcemu/font \
+  		${LOCALPREFIX}/lib/pcemu/C \

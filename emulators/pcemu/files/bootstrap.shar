@@ -53,7 +53,7 @@ X#
 Xtext.S: help.txt txt2asm.perl
 X	expand < help.txt |\
 X	tr '\344\366\374\304\326\334\337' '\204\224\201\216\231\232\341' |\
-X	./txt2asm.perl > $@
+X	perl txt2asm.perl > $@
 X
 X# maintain the README.FreeBSD from the help.txt
 X# looks magic, 'eh? :^)
@@ -490,7 +490,7 @@ X0. Table of contents
 X
 X	0. Table of contents
 X	1. How to get pcemu really running
-X	2. Informations about this FreeBSD port
+X	2. Information about this FreeBSD port
 X	3. David's original README
 X	4. Copyright notice
 X
@@ -601,7 +601,7 @@ X$HOME/.pcemurc file.  Refer to sections 2. and 3. below.
 X
 X
 X
-X2. Informations about this FreeBSD port
+X2. Information about this FreeBSD port
 X
 X
 XThis `port' of pcemu to FreeBSD has been prepared by Jörg Wunsch.
