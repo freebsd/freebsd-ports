@@ -264,90 +264,90 @@ CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 
 pre-everything::
 .if !defined(A4)
-	${ECHO_MSG} "Type \"make A4=yes\" if you want -DA4 for compilation."
+	@${ECHO_MSG} "Type \"make A4=yes\" if you want -DA4 for compilation."
 .else
-	${ECHO_MSG} "Using -DA4 for compilation."
+	@${ECHO_MSG} "Using -DA4 for compilation."
 .endif
 
 post-extract:
-	${ECHO_MSG} ">>> in post-extract ..."
+	@${ECHO_MSG} ">>> in post-extract ..."
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure and
 # configure.batch, which update unix-gcc.mak to build gs with these
 # new devices !
 #
 # for HP2200 driver
-	${ECHO_MSG} ">>>   extracting ${HP2200_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${HP2200_SRCS} ..."
 	${MKDIR} ${WRKSRC}/${HP2200}
 	${TAR} -C ${WRKSRC}/${HP2200} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP2200_SRCS}
 # for HPDJ driver
-	${ECHO_MSG} ">>>   extracting ${HPDJ_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${HPDJ_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRCS}
 	${TAR} -C ${WRKSRC}/src -xf ${WRKSRC}/${HPDJ_NAME}/${HPDJ}.tar
 # for PCL3 driver
-	${ECHO_MSG} ">>>   extracting ${PCL3_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${PCL3_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PCL3_SRCS}
 	${LN} -sf ${PCL3_NAME} ${WRKSRC}/${PCL3}
 	${TAR} -C ${WRKSRC}/${PCL3_NAME} -xf \
 		${WRKSRC}/${PCL3_NAME}/${PCL3}.tar
 # for DJ970 driver
-	${ECHO_MSG} ">>>   extracting ${DJ970_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${DJ970_SRCS} ..."
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DJ970_SRCS} ${WRKSRC}/src
 	${GUNZIP_CMD} ${WRKSRC}/src/${DJ970_SRCS}
 # for Gimp-Print driver
-	${ECHO_MSG} ">>>   extracting ${GPRINT_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${GPRINT_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRCS}
 # for MD2K driver
-	${ECHO_MSG} ">>>   extracting ${MD2K_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${MD2K_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MD2K_SRCS}
 	${LN} -sf ${MD2K_NAME} ${WRKSRC}/${MD2K}
 # for ALPS driver
-	${ECHO_MSG} ">>>   extracting ${ALPS_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${ALPS_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${ALPS_SRCS}
 	${LN} -sf ${ALPS_NAME} ${WRKSRC}/${ALPS}
 # for BJ10V driver
-	${ECHO_MSG} ">>>   extracting ${BJ10V_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${BJ10V_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${BJ10V_SRCS}
 # for BJC250 driver
-	${ECHO_MSG} ">>>   extracting ${BJC250_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${BJC250_SRCS} ..."
 	${MKDIR} ${WRKSRC}/${BJC250_NAME}/src
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${BJC250_SRCS} | \
 		${PATCH} -d ${WRKSRC}/${BJC250_NAME} -f -s -N -E -p1 \
 		2>/dev/null || ${TRUE}
 	${LN} -sf ${BJC250_NAME} ${WRKSRC}/${BJC250}
 # for CPCA driver
-	${ECHO_MSG} ">>>   extracting ${CPCA_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${CPCA_SRCS} ..."
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${CPCA_SRCS}
 # for LIPS driver
-	${ECHO_MSG} ">>>   extracting ${LIPS_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${LIPS_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LIPS_SRCS}
 	${LN} -sf ${LIPS_NAME} ${WRKSRC}/${LIPS}
 # for DMPRT driver
-	${ECHO_MSG} ">>>   extracting ${DMPRT_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${DMPRT_SRCS} ..."
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${DMPRT_SRCS}
 # for EPAG driver
-	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
 # for EPLASER driver
-	${ECHO_MSG} ">>>   extracting ${EPLASER_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${EPLASER_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPLASER_SRCS}
 	${LN} -sf ${EPLASER_NAME} ${WRKSRC}/${EPLASER}
 # for MJC driver
-	${ECHO_MSG} ">>>   extracting ${MJC_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${MJC_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MJC_SRCS}
 	${LN} -sf ${MJC_NAME} ${WRKSRC}/${MJC}
 # for GDI driver
-	${ECHO_MSG} ">>>   extracting ${GDI_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${GDI_SRCS} ..."
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${GDI_SRCS}
 # for LXM3200 driver
-	${ECHO_MSG} ">>>   extracting ${LXM3200_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${LXM3200_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LXM3200_SRCS}
 	${LN} -sf ${LXM3200_NAME} ${WRKSRC}/${LXM3200}
 # for LX5000 driver
-	${ECHO_MSG} ">>>   extracting ${LX5000_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${LX5000_SRCS} ..."
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${LX5000_SRCS} ${WRKSRC}/src
 # for LEX7000 driver
-	${ECHO_MSG} ">>>   extracting ${LEX7000_SRCS} ..."
+	@${ECHO_MSG} ">>>   extracting ${LEX7000_SRCS} ..."
 	${MKDIR} ${WRKSRC}/${LEX7000}
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${LEX7000_SRCS} | \
 		${PATCH} -d ${WRKSRC}/${LEX7000} -f -s -N -E -p1 \
@@ -368,86 +368,86 @@ post-patch:
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
 pre-configure:
-	${ECHO_MSG} ">>> in pre-configure ..."
+	@${ECHO_MSG} ">>> in pre-configure ..."
 # for HP2200 driver
-	${ECHO_MSG} ">>>   adding ${HP2200} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${HP2200} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/chp2200.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for HPDJ driver
-	${ECHO_MSG} ">>>   adding ${HPDJ} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${HPDJ} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/src/contrib.mak-5.94.add \
 		>> ${WRKSRC}/src/contrib.mak
 # for PCL3 driver
-	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-7.00.add \
 		>> ${WRKSRC}/src/contrib.mak
 # for Gimp-Print driver
-	${ECHO_MSG} ">>>   adding ${GPRINT} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${GPRINT} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/stp.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for MD2K driver
-	${ECHO_MSG} ">>>   adding ${MD2K} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${MD2K} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${MD2K_NAME}/gdevmd2k.mak-5.50 \
 		>> ${WRKSRC}/src/contrib.mak
 # for ALPS driver
-	${ECHO_MSG} ">>>   adding ${ALPS} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${ALPS} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${ALPS_NAME}/gdevalps.mak-5.50 \
 		>> ${WRKSRC}/src/contrib.mak
 # for BJ10V driver
-	${ECHO_MSG} ">>>   adding ${BJ10V} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${BJ10V} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${BJ10V_NAME}/gdev10v.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for BJC250 driver
-	${ECHO_MSG} ">>>   adding ${BJC250} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${BJC250} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/bjc250.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for CPCA driver
-	${ECHO_MSG} ">>>   adding ${CPCA} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${CPCA} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/src/cpca_gdev.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for LIPS driver
-	${ECHO_MSG} ">>>   adding ${LIPS} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${LIPS} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${LIPS_NAME}/gdevlips.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for DMPRT driver
-	${ECHO_MSG} ">>>   adding ${DMPRT} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${DMPRT} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/src/gdevdmpr.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for EPAG driver
-	${ECHO_MSG} ">>>   adding ${EPAG} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${EPAG} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/epag.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for EPLASER driver
-	${ECHO_MSG} ">>>   adding ${EPLASER} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${EPLASER} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevescv6.mak \
 		>> ${WRKSRC}/src/contrib.mak
 	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevesmv6.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for MJC driver
-	${ECHO_MSG} ">>>   adding ${MJC} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${MJC} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${MJC_NAME}/gdevmjc.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for GDI driver
-	${ECHO_MSG} ">>>   adding ${GDI} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${GDI} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/src/smartgdi-contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for LXM3200 driver
-	${ECHO_MSG} ">>>   adding ${LXM3200} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${LXM3200} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/lxm3200.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for LX5000 driver
-	${ECHO_MSG} ">>>   adding ${LX5000} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${LX5000} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/lx5000.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for LEX7000 driver
-	${ECHO_MSG} ">>>   adding ${LEX7000} driver to contrib.mak ..."
+	@${ECHO_MSG} ">>>   adding ${LEX7000} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/lex7000.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 
 post-configure:
-	${ECHO_MSG} ">>> in post-configure ..."
+	@${ECHO_MSG} ">>> in post-configure ..."
 # for Gimp-Print driver
-	${ECHO_MSG} ">>>   running configure script for ${GPRINT} library ..."
+	@${ECHO_MSG} ">>>   running configure script for ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${SH} ./configure \
 			--without-translated-ppds --with-ghost \
@@ -457,20 +457,20 @@ post-configure:
 			--prefix=${PREFIX}
 
 pre-build:
-	${ECHO_MSG} ">>> in pre-build ..."
-	${ECHO_MSG} ">>>   creating directories for compilation ..."
+	@${ECHO_MSG} ">>> in pre-build ..."
+	@${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
 # for HP2200 driver
-	${ECHO_MSG} ">>>   creating symlinks for ${HP2200} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${HP2200} ..."
 .for i in gdevcd8.c
 	${LN} -sf ${WRKSRC}/${HP2200}/${i} ${WRKSRC}/src
 .endfor
 # for Gimp-Print driver
-	${ECHO_MSG} ">>>   building ${GPRINT} library ..."
+	@${ECHO_MSG} ">>>   building ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
-	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${GPRINT} ..."
 	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/ghost/*.[ch] \
 		${WRKSRC}/src
 	${MKDIR} ${WRKSRC}/${GPRINT}
@@ -479,73 +479,73 @@ pre-build:
 	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/main/.libs/libgimpprint.a \
 		${WRKSRC}/${GPRINT}/libgimpprint.a
 # for MD2K driver
-	${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
 .for i in gdevmd2k.c
 	${LN} -sf ${WRKSRC}/${MD2K_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for ALPS driver
-	${ECHO_MSG} ">>>   creating symlinks for ${ALPS} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${ALPS} ..."
 .for i in gdevalps.c
 	${LN} -sf ${WRKSRC}/${ALPS_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for BJ10V driver
-	${ECHO_MSG} ">>>   creating symlinks for ${BJ10V} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${BJ10V} ..."
 .for i in gdev10v.c
 	${LN} -sf ${WRKSRC}/${BJ10V_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for BJC250 driver
-	${ECHO_MSG} ">>>   creating symlinks for ${BJC250} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${BJC250} ..."
 .for i in gdevbjc_.[ch] gdevbjca.c
 	${LN} -sf ${WRKSRC}/${BJC250_NAME}/src/${i} ${WRKSRC}/src
 .endfor
 # for LIPS driver
-	${ECHO_MSG} ">>>   creating symlinks for ${LIPS} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${LIPS} ..."
 .for i in gdevlips.[ch] gdevlprn.[ch] gdevl4r.c gdevl4v.c gdevespg.c \
 	gdevnpdl.c gdevrpdl.c
 	${LN} -sf ${WRKSRC}/${LIPS_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for EPAG driver
-	${ECHO_MSG} ">>>   building ${EPAG} utility ..."
+	@${ECHO_MSG} ">>>   building ${EPAG} utility ..."
 	cd ${WRKSRC}/${EPAG_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
-	${ECHO_MSG} ">>>   creating symlinks for ${EPAG} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${EPAG} ..."
 .for i in gdevepag.c
 	${LN} -sf ${WRKSRC}/${EPAG_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for EPLASER driver
-	${ECHO_MSG} ">>>   creating symlinks for ${EPLASER} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${EPLASER} ..."
 .for i in gdevescv.[ch] gdevesmv.c
 	${LN} -sf ${WRKSRC}/${EPLASER_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for MJC driver
-	${ECHO_MSG} ">>>   creating symlinks for ${MJC} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${MJC} ..."
 .for i in gdevmjc.c mjbarrie.c mjbksep.c mjespdtc.c mjespdtm.c mjespdty.c \
 	mjgrnsp.c mjgrnsp2.c mjhtocmy.c mjmtx2.c mjvtbl.c
 	${LN} -sf ${WRKSRC}/${MJC_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for LXM3200 driver
-	${ECHO_MSG} ">>>   creating symlinks for ${LXM3200} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${LXM3200} ..."
 .for i in gdevlx32.c
 	${LN} -sf ${WRKSRC}/${LXM3200_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for LEX7000 driver
-	${ECHO_MSG} ">>>   creating symlinks for ${LEX7000} ..."
+	@${ECHO_MSG} ">>>   creating symlinks for ${LEX7000} ..."
 .for i in gdevlx7.c
 	${LN} -sf ${WRKSRC}/${LEX7000}/src/${i} ${WRKSRC}/src
 .endfor
 
 pre-install:
-	${ECHO_MSG} ">>> in pre-install ..."
-	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
+	@${ECHO_MSG} ">>> in pre-install ..."
+	@${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
-	${ECHO_MSG} ">>>   extracting ghostscript fonts ..."
+	@${ECHO_MSG} ">>>   extracting ghostscript fonts ..."
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install:
-	${ECHO_MSG} ">>> in post-install ..."
-	${ECHO_MSG} ">>>   stripping gs ..."
+	@${ECHO_MSG} ">>> in post-install ..."
+	@${ECHO_MSG} ">>>   stripping gs ..."
 .if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
 	${LN} -sf gsc ${PREFIX}/bin/gs
@@ -553,29 +553,29 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gs
 .endif
 # for HPDJ driver
-	${ECHO_MSG} ">>>   installing ${HPDJ} manpages ..."
+	@${ECHO_MSG} ">>>   installing ${HPDJ} manpages ..."
 .for i in ${HPDJ_MAN1}
 	${INSTALL_MAN} ${WRKSRC}/src/${i} ${MANPREFIX}/man/man1
 .endfor
-	${ECHO_MSG} ">>>   creating ${HPDJ} destdir ..."
+	@${ECHO_MSG} ">>>   creating ${HPDJ} destdir ..."
 	${MKDIR} ${DATADIR}/${GS_VERSION}/${HPDJ}
-	${ECHO_MSG} ">>>   installing files in ${HPDJ} destdir ..."
+	@${ECHO_MSG} ">>>   installing files in ${HPDJ} destdir ..."
 .for i in README.hpdj example.mdf margins-A4.ps margins-A4Rotated.ps \
 	margins-Letter.ps margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
 		${DATADIR}/${GS_VERSION}/${HPDJ}
 .endfor
 # for PCL3 driver
-	${ECHO_MSG} ">>>   installing ${PCL3} utility in bindir ..."
+	@${ECHO_MSG} ">>>   installing ${PCL3} utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${PREFIX}/bin
-	${ECHO_MSG} ">>>   installing ${PCL3} manpages ..."
+	@${ECHO_MSG} ">>>   installing ${PCL3} manpages ..."
 .for i in ${PCL3_MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${PCL3_NAME}/doc/${i} ${MANPREFIX}/man/man1
 .endfor
 # other pcl3 stuff, which might be interesting for runtime
-	${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
+	@${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
 	${MKDIR} ${DATADIR}/${GS_VERSION}/${PCL3}
-	${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
+	@${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
 .for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
 	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
 	ps/margins-A4Rotated.ps ps/margins-Env10Rotated.ps \
@@ -585,16 +585,16 @@ post-install:
 		${DATADIR}/${GS_VERSION}/${PCL3}
 .endfor
 # for DMPRT driver
-	${ECHO_MSG} ">>>   installing ${DMPRT} resources ..."
+	@${ECHO_MSG} ">>>   installing ${DMPRT} resources ..."
 .for i in dmp_init.ps dmp_site.ps escp_24.src
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
 		${DATADIR}/${GS_VERSION}/lib
 .endfor
 # for EPAG driver
-	${ECHO_MSG} ">>>   installing ${EPAG} utility in bindir ..."
+	@${ECHO_MSG} ">>>   installing ${EPAG} utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
 # contributed UPP driver
-	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
+	@${ECHO_MSG} ">>> installing contributed UPP profiles ..."
 .for i in ${CONTRIB_UPP}
 	${INSTALL_DATA} ${FILESDIR}/${i} \
 		${DATADIR}/${GS_VERSION}/lib
@@ -603,59 +603,59 @@ post-install:
 # now NOPORTDOCS dependend stuff
 #
 .if !defined(NOPORTDOCS)
-	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
+	@${ECHO_MSG} ">>> installing PORTDOC stuff ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}
 # for HPDJ driver
-	${ECHO_MSG} ">>>   installing ${HPDJ} docs ..."
+	@${ECHO_MSG} ">>>   installing ${HPDJ} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${HPDJ}
 .for i in NEWS hpdj.html
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
 		${DOCSDIR}/${GS_VERSION}/${HPDJ}
 .endfor
 # for PCL3 driver
-	${ECHO_MSG} ">>>   installing ${PCL3} docs ..."
+	@${ECHO_MSG} ">>>   installing ${PCL3} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${PCL3}
 .for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${PCL3}
 .endfor
 # for MD2K driver
-	${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
+	@${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${MD2K}
 .for i in README.jis
 	${INSTALL_DATA} ${WRKSRC}/${MD2K_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${MD2K}
 .endfor
 # for ALPS driver
-	${ECHO_MSG} ">>>   installing ${ALPS} docs ..."
+	@${ECHO_MSG} ">>>   installing ${ALPS} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${ALPS}
 .for i in README.gdevalps
 	${INSTALL_DATA} ${WRKSRC}/${ALPS_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${ALPS}
 .endfor
 # for BJ10V driver
-	${ECHO_MSG} ">>>   installing ${BJ10V} docs ..."
+	@${ECHO_MSG} ">>>   installing ${BJ10V} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${BJ10V}
 .for i in gdev10v.jis
 	${INSTALL_DATA} ${WRKSRC}/${BJ10V_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${BJ10V}
 .endfor
 # for LIPS driver
-	${ECHO_MSG} ">>>   installing ${LIPS} docs ..."
+	@${ECHO_MSG} ">>>   installing ${LIPS} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${LIPS}
 .for i in Gdevlips.htm
 	${INSTALL_DATA} ${WRKSRC}/${LIPS_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${LIPS}
 .endfor
 # for DMPRT driver
-	${ECHO_MSG} ">>>   installing ${DMPRT} docs ..."
+	@${ECHO_MSG} ">>>   installing ${DMPRT} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${DMPRT}
 .for i in gdevdmpr.sj
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
 		${DOCSDIR}/${GS_VERSION}/${DMPRT}
 .endfor
 # for EPAG driver
-	${ECHO_MSG} ">>>   installing ${EPAG} docs ..."
+	@${ECHO_MSG} ">>>   installing ${EPAG} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPAG}
 .for i in ert.txt gdevepag.txt ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/${i} \
@@ -666,35 +666,35 @@ post-install:
 		${DOCSDIR}/${GS_VERSION}/${EPAG}
 .endfor
 # for EPLASER driver
-	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
+	@${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPLASER}
 .for i in readme-eplaser-652.euc readme-eplaser-652-jp.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${EPLASER}
 .endfor
 # for MJC driver
-	${ECHO_MSG} ">>>   installing ${MJC} docs ..."
+	@${ECHO_MSG} ">>>   installing ${MJC} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${MJC}
 .for i in MJ700V2C.FAQ README.mjc README.mje README.noz cpem.doc
 	${INSTALL_DATA} ${WRKSRC}/${MJC_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${MJC}
 .endfor
 # for GDI driver
-	${ECHO_MSG} ">>>   installing ${GDI} docs ..."
+	@${ECHO_MSG} ">>>   installing ${GDI} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${GDI}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
 		${DOCSDIR}/${GS_VERSION}/${GDI}
 .endfor
 # for LXM3200 driver
-	${ECHO_MSG} ">>>   installing ${LXM3200} docs ..."
+	@${ECHO_MSG} ">>>   installing ${LXM3200} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${LXM3200}
 .for i in README RELEASE_NOTES Z12-Z31-QuickSetup
 	${INSTALL_DATA} ${WRKSRC}/${LXM3200_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${LXM3200}
 .endfor
 .endif
-	${ECHO_MSG} "> post-installation tasks completed."
+	@${ECHO_MSG} "> post-installation tasks completed."
 
 .include "Makefile.inc"
 .include <bsd.port.post.mk>
