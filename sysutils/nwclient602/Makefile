@@ -54,7 +54,8 @@ MAN8=		ansrd.8 changers.8 dasadmin.8 EMASS_silo.8 emcdiscover.8 \
 		sapclone.8 save.8 savefs.8 savegrp.8 savepnpc.8 scanner.8 \
 		sjidopen.8 sjiielm.8 sjiinq.8 sjirdp.8 sjirdtag.8 sjirelem.8 \
 		sjirjc.8 ssi.8 stk_eject.8 STK_silo.8 stli.8 tapeexercise.8 \
-		tur.8 uasm.8 writebuf.8
+		tur.8 uasm.8 writebuf.8 \
+		lreset.8
 
 post-patch:
 	@${SED} -e "s,^ROOTDIR.*$$,ROOTDIR=${PREFIX}," ${WRKSRC}/networker.sh >\
