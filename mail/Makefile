@@ -8,6 +8,7 @@
     SUBDIR += addresses
     SUBDIR += aileron
     SUBDIR += akpop3d
+    SUBDIR += altermime
     SUBDIR += althea
     SUBDIR += annoyance-filter
     SUBDIR += anomy-sanitizer
