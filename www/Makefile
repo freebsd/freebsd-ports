@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.56 1997/07/26 17:20:07 ache Exp $
+# $Id: Makefile,v 1.57 1997/07/30 19:29:22 ache Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += analog
-    SUBDIR += apache-current
+    SUBDIR += apache
+    SUBDIR += apache-ssl
     SUBDIR += apache-stable
     SUBDIR += arena
     SUBDIR += ashe           # requires Motif
