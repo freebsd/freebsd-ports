@@ -1,0 +1,9 @@
+OglExt is a free OpenGL extension library, enabling the easy access of all
+functionality up to OpenGL version 1.4 as well as API functions of more than
+200 OpenGL extensions. With OglExt you don't need to use glXGetProcAddress[ARB]
+anymore. See README for more information.
+
+WWW:	http://www.julius.caesar.de/oglext/
+
+- Igor Pokrovsky
+tiamat@comset.net
