@@ -5043,6 +5043,7 @@ openssh-portable	ports/security/openssh-portable
 openssl-beta	ports/security/openssl-beta
 openuniverse	ports/astro/openuniverse
 openverse	ports/net/openverse
+openvmps	ports/net/openvmps
 openvpn		ports/security/openvpn
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
