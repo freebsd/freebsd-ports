@@ -1,0 +1,11 @@
+diff -ru src/main.c src/main.c
+--- src/main.c Thu Jun 22 16:18:03 2000
++++ src/main.c Tue Oct 24 10:47:08 2000
+@@ -1,6 +1,6 @@
+ #include <errno.h>
+ #include <fcntl.h>
+-#include <getopt.h>
++#include "../lib/getopt.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
