@@ -1,0 +1,19 @@
+--- TAO/orbsvcs/Concurrency_Service/Makefile.orig	Thu Nov 20 05:16:49 2003
++++ TAO/orbsvcs/Concurrency_Service/Makefile	Wed Dec 24 20:46:35 2003
+@@ -17,6 +17,8 @@
+ 
+ BIN2 = Concurrency_Service
+ 
++include $(ACE_ROOT)/include/makeinclude/wrapper_macros.GNU
++
+ #### If the TAO orbsvcs library wasn't built with sufficient components,
+ #### don't try to build here.
+ TAO_ORBSVCS := $(shell sh $(ACE_ROOT)/bin/ace_components --orbsvcs)
+@@ -30,7 +32,6 @@
+ #       Include macros and targets
+ #----------------------------------------------------------------------------
+ 
+-include $(ACE_ROOT)/include/makeinclude/wrapper_macros.GNU
+ include $(ACE_ROOT)/include/makeinclude/macros.GNU
+ include $(TAO_ROOT)/rules.tao.GNU
+ include $(ACE_ROOT)/include/makeinclude/rules.common.GNU

@@ -1,0 +1,182 @@
+# Ports collection makefile for:	ace+tao
+# Date created:				26 November 2003
+# Whom:					Sergey Matveychuk <sem@ciam.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ace+tao
+PORTVERSION=	${ACE_VERSION}+${TAO_VERSION}
+CATEGORIES=	devel
+# The distfile does not have version numbers, so try my mirror first
+MASTER_SITES=	http://deuce.doc.wustl.edu/ \
+		http://www.ciam.ru/~sem/FreeBSD/ \
+		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/
+DISTNAME=	${PORTNAME:U}
+
+MAINTAINER=	sem@ciam.ru
+COMMENT=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
+
+ACE_VERSION=	5.3.6
+TAO_VERSION=	1.3.6
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+
+TESTS=		"@comment "
+.if defined(WITH_TESTS)
+USE_PERL5=	yes
+ACE_TESTS_COOKIE=	${WRKDIR}/.ace_tests_done
+TAO_TESTS_COOKIE=	${WRKDIR}/.tao_tests_done
+TESTS=		""
+.endif
+
+WRKSRC=		${WRKDIR}/ACE_wrappers
+ACE_ROOT=	${WRKSRC}
+TAO_ROOT=	${ACE_ROOT}/TAO
+
+PLIST_SUB+=	TAO=${TAO} TESTS=${TESTS}
+
+.if defined(WITHOUT_TAO)
+TAO=	"@comment "
+PKGNAMESUFFIX=	-notao
+.endif
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${SED} -e "s#%%CFLAGS%%#${CFLAGS}#;s#%%PREFIX%%#${PREFIX}#; \
+	           s#%%PTHREAD_CFLAGS%%#${PTHREAD_CFLAGS}#; \
+		   s#%%PTHREAD_LIBS%%#${PTHREAD_LIBS}#" \
+	   ${FILESDIR}/platform_macros.GNU > \
+	   ${ACE_ROOT}/include/makeinclude/platform_macros.GNU; \
+	${CP} ${FILESDIR}/config.h ${ACE_ROOT}/ace; \
+	cd ${TAO_ROOT}/orbsvcs; \
+	${CHMOD} a-x default.bld; \
+	${CHMOD} a-x FTRT_Event_Service/Event_Service/*; \
+	${CHMOD} a-x FTRT_Event_Service/Factory_Service/*; \
+	${CHMOD} a-x FTRT_Event_Service/Gateway_Service/*; \
+	${CHMOD} a-x Logging_Service/Event_Logging_Service/*; \
+	${CHMOD} a-x Logging_Service/Notify_Logging_Service/*; \
+	${CHMOD} a-x Logging_Service/RTEvent_Logging_Service/*; \
+	${CHMOD} a-x orbsvcs/*.idl orbsvcs/*.mpc orbsvcs/*.mpb; \
+	${CHMOD} a-x orbsvcs/FaultTolerance/* orbsvcs/FtRtEvent/ClientORB/*; \
+	${CHMOD} a-x orbsvcs/FtRtEvent/EventChannel/*; \
+	${CHMOD} a-x orbsvcs/FtRtEvent/Utils/*
+.if !defined(WITH_TESTS)
+	@${REINPLACE_CMD} -e "21d" ${ACE_ROOT}/Makefile
+	@${REINPLACE_CMD} -e "24d" ${TAO_ROOT}/Makefile
+	@${REINPLACE_CMD} -e "48d" ${TAO_ROOT}/orbsvcs/Makefile
+.endif
+
+pre-build:
+	@${ECHO_MSG} "============================================================================"
+	@${ECHO_MSG} "Use WITHOUT_TAO=yes to build ACE only. It decreases build time for a few hours."
+	@${ECHO_MSG} "Use WITH_TESTS=yes to build ACE+TAO tests. (You need \`make clean' first)."
+	@${ECHO_MSG} "    You'll able \`make WITH_TESTS=yes test' then."
+	@${ECHO_MSG} "============================================================================"
+
+do-build:
+	@${ECHO_MSG} "===> Building ACE"; \
+	${GMAKE} -C ${ACE_ROOT} ACE_ROOT=${ACE_ROOT}
+.if defined(WITH_TESTS)
+	@${TOUCH} ${TOUCH_FLAGS} ${ACE_TESTS_COOKIE}
+.endif
+.if !defined(WITHOUT_TAO)
+	@${ECHO_MSG} "===> Building TAO"; \
+	${GMAKE} -C ${TAO_ROOT} ACE_ROOT=${ACE_ROOT} TAO_ROOT=${TAO_ROOT}
+.if defined(WITH_TESTS)
+	@${TOUCH} ${TOUCH_FLAGS} ${TAO_TESTS_COOKIE}
+.endif
+.endif
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "===> Build done."
+.if defined(WITH_TESTS)
+	@${ECHO_MSG} "     You can run tests now with \`make WITH_TESTS=yes test'"
+.endif
+	@${ECHO_MSG} ""
+
+test:
+.if defined(WITH_TESTS)
+.if ${OSVERSION} >= 500036
+	/sbin/kldload aio || ${TRUE}
+.endif
+	@if [ -f ${ACE_TESTS_COOKIE} ]; then \
+		${ECHO_MSG} "===> Running tests."; \
+		${ECHO_MSG} "===> ACE tests:"; \
+		cd ${ACE_ROOT}/tests; ./run_test.pl; \
+		if [ -f ${TAO_TESTS_COOKIE} ]; then \
+			${ECHO_MSG} "===> TAO tests:"; \
+			${ECHO_MSG} "    NOT IMPLEMENTED YET. Run them with:"; \
+			${ECHO_MSG} "cd ${TAO_ROOT}/tests"; \
+			${ECHO_MSG} "${FIND} . -name run_test.pl -execdir run_test.pl \;"; \
+			${ECHO_MSG} "===>TAO/orbsvcs tests:"; \
+			${ECHO_MSG} "    NOT IMPLEMENTED YET. Run them with:"; \
+			${ECHO_MSG} "cd ${TAO_ROOT}/orbsvcs/tests"; \
+			${ECHO_MSG} "${FIND} . -name run_test.pl -execdir run_test.pl \;"; \
+		fi; \
+		${ECHO_MSG} "===> Tests done."; \
+	else \
+		${ECHO_MSG} "===> Tests was not build"; \
+		${ECHO_MSG} "     To build tests use \`make WITH_TESTS=yes clean build'"; \
+		${ECHO_MSG} ""; \
+	fi
+.else
+	@${ECHO_MSG} ""; \
+	${ECHO_MSG} "Run tests with \`make WITH_TESTS=yes test'"; \
+	${ECHO_MSG} ""
+.endif
+
+do-install:
+	@${ECHO_MSG} "Installing ACE headers into ${PREFIX}/include/ace"; \
+	${MKDIR} ${PREFIX}/include/ace || ${TRUE}; cd ${ACE_ROOT}; \
+	${FIND} ace -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
+		-o -name "*.cpp" \) -not -name "config-*.h" -exec \
+		${INSTALL_DATA} \{\} ${PREFIX}/include/ace/ \;
+.if !defined(WITHOUT_TAO)
+	@${ECHO_MSG} "Installing TAO headers into ${PREFIX}/include/tao"; \
+	${MKDIR} ${PREFIX}/include/tao || ${TRUE}; cd ${TAO_ROOT}; \
+	${FIND} tao -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
+		-o -name "*.idl" -o -name "*.pidl" -o -name "*.cpp" \) -exec \
+		${INSTALL_DATA} \{\} ${PREFIX}/include/tao \;
+	@${MKDIR} ${PREFIX}/include/orbsvcs || ${TRUE}; \
+	cd ${TAO_ROOT}/orbsvcs; \
+	${FIND} orbsvcs -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
+		-o -name "*.idl" -o -name "*.pidl" -o -name "*.cpp" \) -exec \
+		${INSTALL_DATA} \{\} ${PREFIX}/include/orbsvcs \;
+.endif
+
+	@${ECHO_MSG} "Installing libraries into ${PREFIX}/lib"; \
+	cd ${ACE_ROOT}/ace; \
+	${FIND} . -maxdepth 1 -name "lib*.so" -not -name "*Test*" \
+		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
+
+	@${ECHO_MSG} "Installing executables into ${PREFIX}/bin"; \
+	${INSTALL_PROGRAM} ${ACE_ROOT}/bin/gperf ${PREFIX}/bin
+.if !defined(WITHOUT_TAO)
+	@cd ${TAO_ROOT}; \
+	for f in `${FIND} orbsvcs -type f -perm +a+x -not -name "lib*" | \
+			${GREP} -v test | ${GREP} -v FTRT_Event_Service`; do \
+		${INSTALL_PROGRAM} $${f} ${PREFIX}/bin; \
+	done; \
+	for f in `find utils  -type f -perm +a+x`; do \
+		${INSTALL_PROGRAM} $${f} ${PREFIX}/bin; \
+	done; \
+	for f in `${FIND} orbsvcs/FTRT_Event_Service -type f -perm +a+x`; do \
+		${INSTALL_SCRIPT} $${f} ${PREFIX}/bin; \
+	done; \
+	${INSTALL_PROGRAM} TAO_IDL/tao_idl ${PREFIX}/bin
+.endif
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "Installing documentation into ${DOCSDIR}"; \
+	${MKDIR} ${DOCSDIR}/ACE; \
+	cd ${ACE_ROOT}/docs; ${TAR} cf - . | ${TAR} xUCf ${DOCSDIR}/ACE -
+.if !defined(WITHOUT_TAO)
+	@${MKDIR} ${DOCSDIR}/TAO; \
+	cd ${TAO_ROOT}/docs; ${TAR} cf - . | ${TAR} xUCf ${DOCSDIR}/TAO -
+.endif
+.endif
+
+.include <bsd.port.post.mk>

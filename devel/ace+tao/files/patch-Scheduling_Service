@@ -1,0 +1,11 @@
+--- TAO/orbsvcs/Scheduling_Service/Makefile.orig	Wed Dec 24 18:22:37 2003
++++ TAO/orbsvcs/Scheduling_Service/Makefile	Wed Dec 24 18:23:02 2003
+@@ -15,7 +15,7 @@
+ #### If the TAO orbsvcs library wasn't built with sufficient components,
+ #### don't try to build here.
+ TAO_ORBSVCS := $(shell sh $(ACE_ROOT)/bin/ace_components --orbsvcs)
+-ifeq (RtSched,$(findstring RTSched,$(TAO_ORBSVCS)))
++ifeq (RTSched,$(findstring RTSched,$(TAO_ORBSVCS)))
+   BIN = $(BIN2)
+ endif # Sched
+ 
