@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30cf9485-1c2c-11d9-9ecb-000c6e8f12ef">
+    <topic>zinf -- potential buffer overflow playlist support</topic>
+    <affects>
+      <package>
+	<name>zinf</name>
+	<range><lt>2.2.5</lt></range>
+      </package>
+      <package>
+        <name>freeamp</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The audio player Zinf is vulnerable to a buffer-overflow
+	  bug in the management of the playlist files.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109608092609200</url>
+    </references>
+      <dates>
+	<discovery>2004-09-24</discovery>
+	<entry>2004-10-12</entry>
+      </dates>
+  </vuln>
+
   <vuln vid="f6680c03-0bd8-11d9-8a8a-000c41e2cdad">
     <topic>tiff --- RLE decoder heap overflows</topic>
     <affects>
