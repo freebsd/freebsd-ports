@@ -1,0 +1,6 @@
+This is a hacked/modifed version of the original GTK pixmap engine - 
+which has been modified to obtain widget colours and fonts from ~/.qt/qtrc. 
+This means that GTK apps should follow the KDE colour scheme.
+
+WWW:	http://www.kde-look.org/content/download.php?content=7043
+Author:	Craig Drummond <Craig.Drummond@lycos.co.uk>

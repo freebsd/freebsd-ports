@@ -155,6 +155,7 @@
     SUBDIR += qt2-static
     SUBDIR += qt23
     SUBDIR += qt31
+    SUBDIR += qtpixmap
     SUBDIR += qwt
     SUBDIR += render
     SUBDIR += rep-gtk
