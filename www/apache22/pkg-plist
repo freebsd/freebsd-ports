@@ -4,6 +4,7 @@ etc/apache/httpd.conf-dist
 etc/apache/srm.conf-dist
 etc/apache/access.conf-dist
 etc/apache/mime.types-dist
+etc/apache/magic-dist
 sbin/httpd
 www/icons/README
 www/icons/a.gif
