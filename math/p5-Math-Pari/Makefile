@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Pari
-PORTVERSION=	2.010201
+PORTVERSION=	2.010500
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -19,7 +19,18 @@ BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Math::Pari.3 Math::libPARI.3
+MAN3=		Math::Pari.3 Math::libPARI.3 \
+		Math::PariInit.3 Math::libPARI.dumb.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PARI_PORT?=	math/pari
+PARI_PORTDIR?=	${PORTSDIR}/${PARI_PORT}
+PARI_WRKSRC!=	cd ${PARI_PORTDIR} && ${MAKE} -V WRKSRC
+
+CONFIGURE_ARGS=	paridir=${PARI_WRKSRC}
+
+post-clean:
+	@cd ${PARI_PORTDIR} && ${MAKE} -DBATCH clean
+
+.include <bsd.port.post.mk>
