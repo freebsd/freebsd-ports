@@ -1589,6 +1589,7 @@ erlang_xmlrpc	ports/net/erlang_xmlrpc
 erlgtk		ports/x11-toolkits/erlgtk
 erlslang	ports/devel/erlslang
 ermixer		ports/audio/ermixer
+eroaster	ports/sysutils/eroaster
 error		ports/devel/error
 erserver	ports/databases/erserver
 eruby		ports/textproc/eruby
