@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	0.14b
+PORTVERSION=	0.15
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
 post-extract:
-	find ${WRKSRC}/examples '(' -name .cvsignore -o -name a.out ')' -delete
+	find ${WRKSRC}/examples -name .cvsignore -delete
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r"/usr/X11\b", "${X11BASE}"' ${WRKSRC}/lib/qt.rb
