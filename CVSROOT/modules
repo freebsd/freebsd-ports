@@ -10668,6 +10668,7 @@ sybase_ase	ports/databases/sybase_ase
 sybtcl		ports/databases/sybtcl
 syck		ports/textproc/syck
 sylpheed	ports/mail/sylpheed
+sylpheed2	ports/mail/sylpheed2
 sylpheed-claws	ports/mail/sylpheed-claws
 sylpheed-gtk2	ports/mail/sylpheed-gtk2
 symlinks	ports/sysutils/symlinks
