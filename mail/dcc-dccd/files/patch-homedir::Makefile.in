@@ -1,0 +1,15 @@
+--- homedir/Makefile.in	Tue May 25 20:37:04 2004
++++ homedir/Makefile.in	Tue May 25 20:38:04 2004
+@@ -28,11 +28,7 @@
+ install:
+ 	for nm in $(INST_HOMEDIR) $(INST_HOMEDIR)/log; do \
+ 	  $(HINSTALL) -m 755 -d $$nm; done
+-	if test -s $(INST_HOMEDIR)/dcc_conf; then \
+-	  sh make-dcc_conf -h $(INST_HOMEDIR); \
+-	else \
+-	  $(HINSTALL) -m 644 dcc_conf $(INST_HOMEDIR)/dcc_conf; \
+-	fi
++	$(HINSTALL) -m 644 dcc_conf $(INST_HOMEDIR)/dcc_conf.dist
+ 	for nm in flod grey_flod whitelist grey_whitelist \
+ 		whiteclnt whitecommon; do \
+ 	  if test ! -f $(INST_HOMEDIR)/$$nm; then \

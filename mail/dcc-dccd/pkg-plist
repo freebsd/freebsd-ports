@@ -8,13 +8,14 @@ dcc/cgi-bin/http2https
 dcc/cgi-bin/list-log
 dcc/cgi-bin/list-msg
 dcc/cgi-bin/webuser-notify
-dcc/dcc_conf
+@unexec if cmp -s %D/dcc/dcc_conf %D/dcc/dcc_conf.dist; then rm -f %D/dcc/dcc_conf; fi
+dcc/dcc_conf.dist
 dcc/flod
 dcc/grey_flod
 dcc/grey_whitelist
 dcc/ids
 dcc/libexec/cron-dccd
-%%WITH_SENDMAIL%%dcc/libexec/dccifd
+%%WITH_DCCIFD%%dcc/libexec/dccifd
 %%WITH_SENDMAIL%%dcc/libexec/dccm
 dcc/libexec/dbclean
 dcc/libexec/dblist

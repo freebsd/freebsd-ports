@@ -1,0 +1,13 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+DCCUSER=%%DCCUSER%%
+
+if pw usershow "${DCCUSER}" 2>/dev/null 1>&2; then
+	echo "To delete ${DCCUSER} user permanently, use 'pw userdel \"${DCCUSER}\"'"
+fi
+exit 0
