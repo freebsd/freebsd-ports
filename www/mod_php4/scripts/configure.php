@@ -10,24 +10,22 @@ if [ "${BATCH}" ]; then
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 		--checklist "\n\
-Please select desired options:" -1 -1 14 \
-tuning		"Apache: performance tuning" OFF \
-modssl		"Apache: SSL support" OFF \
-GD		"PHP:    GD library support" OFF \
-FreeType	"PHP:    TrueType font rendering (implies GD)" OFF \
-zlib		"PHP:    zlib library support" ON \
-mcrypt		"PHP:    Encryption support" OFF \
-mhash		"PHP:    Crypto-hashing support" OFF \
-pdflib		"PHP:    pdflib support (implies zlib)" OFF \
-IMAP		"PHP:    IMAP support" OFF \
-MySQL		"PHP:    MySQL database support" ON \
-PostgreSQL	"PHP:    PostgreSQL database support" OFF \
-mSQL		"PHP:    mSQL database support" OFF \
-dBase		"PHP:    dBase database support" OFF \
-OpenLDAP	"PHP:    OpenLDAP support" OFF \
-SNMP		"PHP:    SNMP support" OFF \
-XML		"PHP:    XML support" OFF \
-FTP		"PHP:    File Transfer Protocol support" OFF \
+Please select desired options:" -1 -1 16 \
+GD		"GD library support" OFF \
+FreeType	"TrueType font rendering (implies GD)" OFF \
+zlib		"zlib library support" ON \
+mcrypt		"Encryption support" OFF \
+mhash		"Crypto-hashing support" OFF \
+pdflib		"pdflib support (implies zlib)" OFF \
+IMAP		"IMAP support" OFF \
+MySQL		"MySQL database support" ON \
+PostgreSQL	"PostgreSQL database support" OFF \
+mSQL		"mSQL database support" OFF \
+dBase		"dBase database support" OFF \
+OpenLDAP	"OpenLDAP support" OFF \
+SNMP		"SNMP support" OFF \
+XML		"XML support" OFF \
+FTP		"File Transfer Protocol support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -53,44 +51,39 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
-		\"tuning\")
-			echo "CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer -fexpensive-optimizations -ffast-math"
-			echo "OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024"
-			echo "CONFIGURE_ENV+=	OPTIM='\${OPTIM}'"
-			;;
 		\"GD\")
 			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
-			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-gd=\${PREFIX}"
 			GD=1
 			;;
 		\"FreeType\")
 			echo "LIB_DEPENDS+=	ttf.4:\${PORTSDIR}/print/freetype"
-			echo "PHP_CONF_ARGS+=	--with-ttf=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-ttf=\${PREFIX}"
 			if [ -z "$GD" ]; then
 				set $* \"GD\"
 			fi
 			;;
 		\"zlib\")
-			echo "PHP_CONF_ARGS+=	--with-zlib"
+			echo "CONFIGURE_ARGS+=--with-zlib"
 			ZLIB=1
 			;;
 		\"mcrypt\")
 			echo "LIB_DEPENDS+=	mcrypt-2.2.2:\${PORTSDIR}/security/libmcrypt"
-			echo "PHP_CONF_ARGS+=	--with-mcrypt=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
 			;;
 		\"mhash\")
 			echo "mhash is DISABLED for now. Ignoring." > /dev/stderr
 			;;
 		\"nothing\")
 			echo "LIB_DEPENDS+=	mhash.1:\${PORTSDIR}/security/mhash"
-			echo "PHP_CONF_ARGS+=	--with-mhash=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-mhash=\${PREFIX}"
 			;;
 		\"pdflib\")
 			echo "pdflib is DISABLED for now. Ignoring." > /dev/stderr
 			;;
 		\"nothing\")
 			echo "LIB_DEPENDS+=	pdf.2:\${PORTSDIR}/print/pdflib"
-			echo "PHP_CONF_ARGS+=	--with-pdflib=\${PREFIX} \\"
+			echo "CONFIGURE_ARGS+=--with-pdflib=\${PREFIX} \\"
 			echo "		--with-jpeg-dir=\${PREFIX} \\"
 			echo "		--with-tiff-dir=\${PREFIX}"
 			if [ -z "$ZLIB" ]; then
@@ -98,97 +91,47 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"IMAP\")
-			echo "IMAP is DISABLED for now. Ignoring." > /dev/stderr
-			;;
-		\"nothing\")
-			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libc-client4.a:\${PORTSDIR}/mail/imap-uw"
-			echo "PHP_CONF_ARGS+=	--with-imap=\${PREFIX}"
+			echo "LIB_DEPENDS+=	c-client4.7:\${PORTSDIR}/mail/imap-uw"
+			echo "CONFIGURE_ARGS+=--with-imap=\${PREFIX}"
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.6:\${PORTSDIR}/databases/mysql322-client"
-			echo "PHP_CONF_ARGS+=	--with-mysql=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"
 			;;
 		\"PostgreSQL\")
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql"
-			echo "PHP_CONF_ARGS+=	--with-pgsql=\${PREFIX}/pgsql"
+			echo "CONFIGURE_ARGS+=--with-pgsql=\${PREFIX}/pgsql"
 			;;
 		\"mSQL\")
 			echo "BUILD_DEPENDS+=	msql:\${PORTSDIR}/databases/msql"
-			echo "PHP_CONF_ARGS+=	--with-msql=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-msql=\${PREFIX}"
 			;;
 		\"dBase\")
-			echo "PHP_CONF_ARGS+=	--with-dbase"
+			echo "CONFIGURE_ARGS+=--with-dbase"
 			;;
 		\"OpenLDAP\")
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
 			echo "LIB_DEPENDS+=	lber.1:\${PORTSDIR}/net/openldap"
-			echo "PHP_CONF_ARGS+=	--with-ldap=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-ldap=\${PREFIX}"
 			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a ]; then
 				echo "CONFIGURE_ENV+=	LIBS='-lkrb -ldes -L\${PREFIX}/lib'"
 			fi
 			;;
 		\"SNMP\")
+			echo "SNMP is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/ucd-snmp"
-			echo "PHP_CONF_ARGS+=	--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
+			echo "CONFIGURE_ARGS+=--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmlparse.h:\${PORTSDIR}/textproc/expat"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmltok.h:\${PORTSDIR}/textproc/expat"
-			echo "PHP_CONF_ARGS+=	--with-xml=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-xml=\${PREFIX}"
 			;;
 		\"FTP\")
-			echo "PHP_CONF_ARGS+=	--with-ftp"
-			;;
-		\"modssl\")
-			cat << EOF
-PORTNAME=	apache+php+mod_ssl
-PORTVERSION=	\${VERSION_APACHE}+\${VERSION_PHP}+\${VERSION_MODSSL}
-DISTFILES+=	mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE}\${EXTRACT_SUFX}
-
-USE_OPENSSL=	RSA
-
-.include <bsd.port.pre.mk>
-
-BUILD_DEPENDS+=	mm-config:\${PORTSDIR}/devel/mm \\
-		\${PREFIX}/lib/libmm.a:\${PORTSDIR}/devel/mm
-
-VERSION_MODSSL=	2.6.4
-
-CONFIGURE_ARGS+=--enable-module=ssl \\
-		--enable-module=define
-CONFIGURE_ENV+=	SSL_BASE='SYSTEM' EAPI_MM='SYSTEM' PATH="\${PREFIX}/bin:\${PATH}"
-
-EXTRA_PATCHES+=	\${PATCHDIR}/ssl_patch-aa
-
-PLIST=		\${PKGDIR}/PLIST.modssl
-SSL=		ssl
-
-TYPE=	test
-CRT=
-KEY=
-
-pre-patch:
-	@cd \${WRKDIR}/mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE} \\
-	&& \${ECHO_MSG} "===>  Applying mod_ssl-\${VERSION_MODSSL} extension" \\
-	&& ./configure --with-apache=../\${DISTNAME} --expert
-
-post-patch:
-	@cd \${WRKSRC} \\
-	&& find . -type f -name "*.orig" -print | xargs \${RM} -f
-
-post-build:
-	@cd \${WRKSRC} \\
-	&& \${ECHO_MSG} "===>  Creating Dummy Certificate for Server (SnakeOil)" \\
-	&& \${ECHO_MSG} "      [use 'make certificate' to create a real one]" \\
-	&& \${MAKE} certificate TYPE=dummy >/dev/null 2>&1
-
-certificate:
-	@cd \${WRKSRC} \\
-	&& \${ECHO_MSG} "===>  Creating Test Certificate for Server" \\
-	&& \${MAKE} certificate TYPE=\$(TYPE) CRT=\$(CRT) KEY=\$(KEY)
-
-EOF
+			echo "CONFIGURE_ARGS+=--enable-ftp"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
