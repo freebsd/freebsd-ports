@@ -9,7 +9,7 @@ uEmacs/PK 4.0 is an enhanced version of MicroEMACS 3.9e. Enhancements
 have been incorporated by Petri H. Kutvonen, University of Helsinki,
 Finland <kutvonen@cs.Helsinki.FI>.
 
-uEmacs/PK-TOY 4.0.16. Modified for FreeBSD Extend Version by Tadashi Yumoto
+uEmacs/PK-TOY 4.0.17. Modified for FreeBSD Extend Version by Tadashi Yumoto
 <yumoto@mail.forks.co.jp>
 Added automatic cmode select for suffix .c and .h file. (ala OS-9's umacs)
 Added execute option -t, change tabsize base value 8 to 4.

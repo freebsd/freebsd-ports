@@ -1,0 +1,11 @@
+--- estruct.h.orig	Sat Jan 27 05:09:43 2001
++++ estruct.h	Mon Dec 31 19:08:46 2001
+@@ -34,7 +34,7 @@
+ */
+ 
+ #define	PROGNAME	"uEmacs/PK-TOY"
+-#define	VERSION		"4.0.16"
++#define	VERSION		"4.0.17"
+ 
+ /*	Machine/OS definitions			*/
+ 

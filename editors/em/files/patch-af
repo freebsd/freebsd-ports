@@ -1,0 +1,13 @@
+--- input.c.orig	Sat May 21 19:41:02 1994
++++ input.c	Mon Dec 31 19:08:46 2001
+@@ -22,6 +22,10 @@
+ #define COMPLC	0
+ #endif
+ 
++#if	TOYCODE
++#define	mktemp(s)	mkstemp(s)
++#endif
++
+ /*
+  * Ask a yes or no question in the message line. Return either TRUE, FALSE, or
+  * ABORT. The ABORT status is returned if the user bumps out of the question

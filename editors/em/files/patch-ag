@@ -1,0 +1,118 @@
+--- main.c.orig	Sat Jan 27 05:31:22 2001
++++ main.c	Mon Dec 31 19:08:46 2001
+@@ -49,11 +49,17 @@
+  *
+  * 4.0	Petri Kutvonen, 1-Sep-91
+  *
+- * 4.0  convert from Linux source code to FreeBSD.
+- *      Added tabmask change option. (-T) tabsize 8 to 4.
+- *	Added automatic .c file setup cmode. like OS-9 uEMacs.
+- *      Tadashi Yumoto, 27-Jan-01
++ * 4.0      convert from Linux source code to FreeBSD.
++ *          Added tabmask change option. (-T) tabsize 8 to 4.
++ *          Added automatic .c file setup cmode. like OS-9 uEMacs.
++ *          Tadashi Yumoto, 27-Jan-01
++ * 4.0.17   added file access permission test in file.c.
++ *          Tadashi Yumoto, 14-Apr-01
+  *
++ *          modified -t option for -t4 or -t or -t8 supported.
++ *			fixed bug in eval.c not set "tabsize".
++ *			added help message.
++ *			Tadashi Yumoto 30-Dec-01
+  */
+ 
+ #include        <stdio.h>
+@@ -89,6 +95,10 @@
+ #include <signal.h>
+ #endif
+ 
++#if	defined(TOYCODE) && defined(BSD)
++#include	<sys/unistd.h>
++#include	<errno.h>
++#endif
+ #if	CALLED
+ emacs(argc, argv)
+ #else
+@@ -225,9 +235,21 @@
+ #if	TOYCODE
+ 				case 't':	/* -t for tabmask change */
+ 				case 'T':
+-					tabmask = 0x03;
+-					tabsize = 4;
+-					break;
++				case 'x':
++				case 'X':
++					if ( argv[carg][2] == '4' || argv[carg][2] == NULL ) {
++						tabsize = 4;
++						tabmask = 0x03;
++					} else if ( argv[carg][2] == '8' ) {
++						tabmask = 0x07;
++					}
++					break;
++				case 'h': case 'H': case '?':
++					TTclose();
++					TTkclose();
++					vttidy();
++					prtuse(argv[0]);
++					exit(0);
+ #endif
+ 				default:	/* unknown switch */
+ 					/* ignore this for now */
+@@ -273,7 +295,11 @@
+ 			sink = strlen(argv[carg]);
+ 			if (sink >= 2 && (argv[carg][sink-2] == '.' &&
+ 				 (argv[carg][sink-1] == 'c' || argv[carg][sink-1] == 'h')))
+-				bp->b_mode |= MDCMOD;
++				bp->b_mode |= gmode | MDCMOD;
++			/* for C++ */
++			if (sink >= 3 && (argv[carg][sink-3] == '.' &&
++				 (argv[carg][sink-2] == 'c' && argv[carg][sink-1] == 'c')))
++				bp->b_mode |= gmode | MDCMOD;
+ #endif
+ 		}
+ 	}
+@@ -913,5 +939,44 @@
+ #undef	exit
+ 	exit(status);
+ #endif
++}
++#endif
++
++#if TOYCODE
++static char	*helpmsg[] = {
++	"Description:\n",
++	"   Light-weight full screen editor.\n",
++#if PKCODE
++	"   use termcap but,\n",
++	"   em recognizes the size of the screen dynamically.\n",
++#endif
++	"\n",
++	"Options: upper/lower case handling same way.\n",
++	"   -a      ... process error file.\n",
++	"   -e      ... edit file.\n",
++	"   -g<n>   ... initial goto line <n>.\n",
++#if PKCODE
++	"   +g<n>   ... initial goto line <n>.\n",
++#endif
++#if CRYPT
++	"   -k<key> ... cryption.\n",
++#endif
++#if PKCODE
++	"   -n      ... accept null chars.\n",
++#endif
++    "   -r      ... restrictive use.\n",
++    "   -s<str> ... initial serarch string.\n",
++    "   -v      ... view file.\n",
++	"   -t<4/8> ... force tab width change to 4/8.\n",
++};
++
++static int prtuse(pname)
++char	*pname;
++{
++	char	**p = helpmsg,
++			**e = helpmsg + (sizeof (helpmsg) / (sizeof (char **)));
++
++	fprintf(stderr,"Syntax: %s {[<opt>] file ...}\n",pname);
++	while ( p < e ) fputs(*p++,stderr);
+ }
+ #endif

@@ -1,0 +1,66 @@
+--- file.c.orig	Sat May 21 19:41:02 1994
++++ file.c	Mon Dec 31 19:08:46 2001
+@@ -11,6 +11,11 @@
+ #include	"estruct.h"
+ #include        "edef.h"
+ 
++#if defined(TOYCODE) && defined(BSD)
++#include	<errno.h>
++#include	<sys/unistd.h>
++#endif
++
+ /*
+  * Read a file into the current
+  * buffer. This is really easy; all you do it
+@@ -71,7 +76,7 @@
+ 		return(resterr());
+         if ((s=mlreply("Find file: ", fname, NFILEN)) != TRUE)
+                 return(s);
+-	return(getfile(fname, TRUE));
++	return getfile(fname, TRUE);
+ }
+ 
+ viewfile(f, n)	/* visit a file in VIEW mode */
+@@ -185,6 +190,7 @@
+         curbp = bp;                             /* Switch to it.        */
+         curwp->w_bufp = bp;
+         curbp->b_nwnd++;
++
+ 	s = readin(fname, lockfl);              /* Read it in.          */
+ 	cknewwindow();
+ 	return s;
+@@ -240,6 +246,34 @@
+         bp->b_flag &= ~(BFINVS|BFCHG);
+         strcpy(bp->b_fname, fname);
+ 
++#if defined(TOYCODE) && defined(BSD)
++	{
++		int	sink = strlen(fname);
++		if ( sink >= 2 && (fname[sink-2] == '.') && (fname[sink-1] == 'c' || fname[sink-1] == 'h'))
++			curwp->w_bufp->b_mode |= MDCMOD;
++		if ( sink >= 3 && (fname[sink-3] == '.') && (fname[sink-2] == 'c' && fname[sink-1] == 'c'))
++			curwp->w_bufp->b_mode |= MDCMOD;
++
++		if ( access(fname,R_OK) != 0 ) {
++			if ( errno == EACCES ) {
++				mlwrite("Access denied");
++				s = FIOERR;		/* fake to open error */
++				goto out;
++			}
++		}
++
++#if 0
++		if ( lockfl == TRUE ) {
++			if ( access(fname,W_OK) != 0 ) {
++				if ( errno != ENOENT ) {
++					curwp->w_bufp->b_mode |= MDVIEW;
++					lockfl = FALSE;		/* force change file lock mode */
++				}
++			}
++		}
++#endif
++	}
++#endif
+ 	/* let a user macro get hold of things...if he wants */
+ 	execute(META|SPEC|'R', FALSE, 1);
+ 

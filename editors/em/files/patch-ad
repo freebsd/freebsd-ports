@@ -1,0 +1,12 @@
+--- eval.c.orig	Thu May  2 21:21:06 1996
++++ eval.c	Mon Dec 31 19:08:46 2001
+@@ -530,6 +530,9 @@
+ 		case EVTAB:	tabmask = atoi(value)-1;
+ 				if (tabmask != 0x07 && tabmask != 0x03)
+ 					tabmask = 0x07;
++				/* changed by Tadashi Yumoto */
++				if ( (tabmask+1) == 8 || (tabmask+1) == 4 )
++					tabsize = tabmask + 1;
+ 				curwp->w_flag |= WFHARD;
+ 				break;
+ 		case EVOVERLAP:	overlap = atoi(value);
