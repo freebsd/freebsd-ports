@@ -72,6 +72,7 @@
     SUBDIR += emacs20-dl-wnn6
     SUBDIR += emacs20-emcws
     SUBDIR += epic4
+    SUBDIR += epson-ttfonts
     SUBDIR += epwutil
     SUBDIR += escpf
     SUBDIR += esecanna
