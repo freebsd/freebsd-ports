@@ -1,7 +1,7 @@
-# $Id: Makefile,v 1.12 1994/12/07 20:05:18 gpalmer Exp $
+# $Id: Makefile,v 1.13 1995/01/05 00:19:03 swallace Exp $
 #
 # forth's master site is unavailable to sites outside Germany.
 
-SUBDIR=	STk Sather expect itcl logo p2c schemetoc scm tcl tclX
+SUBDIR=	STk Sather expect logo p2c schemetoc scm tcl tclX
 
 .include <bsd.port.subdir.mk>
