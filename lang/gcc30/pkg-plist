@@ -7,7 +7,7 @@ bin/gcc30
 bin/gcov30
 bin/%%GNU_HOST%%-gcc30
 bin/%%GNU_HOST%%-g++30
-bin/gccbug-%%SNAPVER%%
+bin/gccbug-%%GCC_REV%%
 bin/gcj
 bin/gcjh
 bin/jar
