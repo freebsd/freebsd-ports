@@ -75,3 +75,4 @@ share/themes/qnxtheme/gtk/vbuttonbar.png
 %%GTK2%%@dirrm share/themes/qnxtheme/gtk-2.0
 @dirrm share/themes/qnxtheme/gtk
 @dirrm share/themes/qnxtheme
+@unexec rmdir %D/share/themes 2>/dev/null || true
