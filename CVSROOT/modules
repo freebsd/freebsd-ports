@@ -8100,6 +8100,7 @@ qc--		ports/lang/qc--
 qca-tls		ports/security/qca-tls
 qcad		ports/cad/qcad
 qcad-partslib	ports/cad/qcad-partslib
+qcamview	ports/graphics/qcamview
 qcc		ports/games/qcc
 qcl		ports/emulators/qcl
 qconfirm	ports/mail/qconfirm
