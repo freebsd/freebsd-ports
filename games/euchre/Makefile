@@ -15,6 +15,6 @@ MAINTAINER=	laszlof@freebsdmatrix.net
 COMMENT=	Very popular card game with variable skill levels
 
 USE_AUTOMAKE=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

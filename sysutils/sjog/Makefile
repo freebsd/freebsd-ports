@@ -17,7 +17,7 @@ COMMENT=	Userland daemon for Sony Vaio Jog Dial
 ONLY_FOR_ARCHS=	i386
 USE_AUTOMAKE=	yes
 GNU_CONFIGURE=  yes
-USE_GTK=        yes
+USE_GNOME=	gtk12
 USE_GMAKE=      yes
 
 .include <bsd.port.mk>
