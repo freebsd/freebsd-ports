@@ -1,0 +1,35 @@
+*** kvg~	Tue May 30 21:54:12 1995
+--- kvg	Tue Mar 12 03:27:45 1996
+***************
+*** 7,21 ****
+  
+  if [ $# -ne 1 ] ; then
+  	echo "$0: kill mgetty/vgetty process on a given tty" >&2
+! 	echo "syntax: kvg [signal] tty<x>" >&2
+  	exit 1
+  fi
+  
+! if [ ! -f /etc/mg-pid.tty$1 ] ; then
+! 	echo "no mgetty/vgetty on tty /dev/tty$1" >&2
+  	exit 2;
+  fi
+  
+! pid=`cat /etc/mg-pid.tty$1`
+! echo "killing mgetty/vgetty on tty$1, pid $pid, with signal $SIG..."
+  kill $SIG $pid
+--- 7,21 ----
+  
+  if [ $# -ne 1 ] ; then
+  	echo "$0: kill mgetty/vgetty process on a given tty" >&2
+! 	echo "syntax: kvg [signal] cuaa<x>" >&2
+  	exit 1
+  fi
+  
+! if [ ! -f /var/run/mg-pid.cuaa$1 ] ; then
+! 	echo "no mgetty/vgetty on tty /dev/cuaa$1" >&2
+  	exit 2;
+  fi
+  
+! pid=`cat /var/run/mg-pid.cuaa$1`
+! echo "killing mgetty/vgetty on cuaa$1, pid $pid, with signal $SIG..."
+  kill $SIG $pid
