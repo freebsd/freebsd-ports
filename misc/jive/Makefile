@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 17, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/04/02 07:58:25 obrien Exp $
+# $Id: Makefile,v 1.3 1997/10/22 06:02:52 obrien Exp $
 #
 
 DISTNAME=	jive-1.1
@@ -21,6 +21,5 @@ MAN1=		jive.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jive ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-
 
 .include <bsd.port.mk>
