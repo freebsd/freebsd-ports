@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mod_php4
+PORTNAME?=	mod_php4
 PORTVERSION=	4.0.4pl1
-CATEGORIES=	www
+CATEGORIES?=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
 		http://www.php3.de/${PHP_DISTDIR}/ \
@@ -21,16 +21,26 @@ DISTNAME=	php-${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
 
+.if !defined(STANDALONE)
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+.endif
 
 PHP_DISTDIR=	distributions
 
+SLAVEDIRS=	lang/php4
+
 USE_LIBTOOL=	yes
+
+.if defined(STANDALONE)
+CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone
+.else
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
-		--enable-versioning \
+		--with-config-file-path=${PREFIX}/etc
+.endif
+
+CONFIGURE_ARGS+=--enable-versioning \
 		--with-system-regex \
-		--with-config-file-path=${PREFIX}/etc \
 		--disable-debug \
 		--enable-track-vars \
 		--without-gd \
@@ -40,7 +50,8 @@ CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
-		CAT="${CAT}"
+		CAT="${CAT}" \
+		REALCURDIR="${.CURDIR}"
 
 AP_LIBEXEC=	${PREFIX}/libexec/apache
 
@@ -52,9 +63,14 @@ pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
 post-install:
+.if !defined(STANDALONE)
 	@${ECHO} "Restarting Apache..."
 	@${PREFIX}/sbin/apachectl restart
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
+.else
+	@${MKDIR} ${PREFIX}/etc/php.standalone
+	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc/php.standalone/php.ini-dist
+.endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PHPDOCDIR}
@@ -62,6 +78,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PHPDOCDIR}
 .endfor
 .endif
+
+.if !defined(STANDALONE)
 	@${ECHO} "*****************************************************************************"
 	@${ECHO} "Make sure the mime.types are connected to the php module properly and"
 	@${ECHO} "index.php is part of your DirectoryIndex."
@@ -74,6 +92,7 @@ post-install:
 	@${ECHO} "AddType application/x-httpd-php-source .phps"
 	@${ECHO} "[...]"
 	@${ECHO} "*****************************************************************************"
+.endif
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
