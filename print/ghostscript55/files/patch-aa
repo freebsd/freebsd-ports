@@ -50,8 +50,9 @@
  
  #XLIBDIRS=-L/usr/local/X/lib
 -XLIBDIRS=-L/usr/X11/lib
+-XLIBDIR=
 +XLIBDIRS=-L/usr/X11R6/lib
- XLIBDIR=
++XLIBDIR=/usr/X11R6/lib
  XLIBS=Xt Xext X11
  
 @@ -287,22 +287,22 @@
