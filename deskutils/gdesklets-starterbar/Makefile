@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gdesklets-starterbar
-PORTVERSION=	0.20
+PORTNAME=	starterbar
+PKGNAMEPREFIX= gdesklets-
+PORTVERSION=	0.22.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 DISTNAME=	starterbar-desklet-${PORTVERSION}
@@ -18,7 +19,11 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutil
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+
 NAME=		StarterBar
+LANG=		de fr pt sq sr sr@Latn sv
+DATADIR=	${PREFIX}/share/gnome
 
 .include <bsd.port.pre.mk>
 
@@ -29,17 +34,29 @@ IGNORE=		"Requires FreeBSD 5.0 or later, because of uuidgen command first appear
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${PATCH} ${WRKSRC}/${NAME}/Icon.py < ${FILESDIR}/${NAME}::Icon.py
+	@${PATCH} ${WRKSRC}/${NAME}/IconTheme.py < ${FILESDIR}/${NAME}::IconTheme.py
 	@${PATCH} ${WRKSRC}/${NAME}/__init__.py < ${FILESDIR}/${NAME}::__init__.py
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/${NAME}/IconTheme.py
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}
-	@${CP} ${WRKSRC}/*.display ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${CP} -Rp ${WRKSRC}/gfx ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${CP} -Rp ${WRKSRC}/${NAME} ${PREFIX}/share/gnome/gdesklets/Sensors/
-	@${CP} ${WRKSRC}/README ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${LN} -s ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/README \
-		${PREFIX}/share/gnome/gdesklets/Sensors/${NAME}/README
+	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
+.for ii in ${LANG}
+	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
+		${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES/
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.desktop ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${CP} ${WRKSRC}/${NAME}/.order ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/ChangeLog ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
+	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${LN} -s ${DATADIR}/gdesklets/Displays/${NAME}/README \
+		${DATADIR}/gdesklets/Sensors/${NAME}/README
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
