@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	arla
-PORTVERSION=	0.34.2
-PORTREVISION=	1
+PORTVERSION=	0.34.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
 MAINTAINER=	assar@freebsd.org
+
+USE_XLIB=	yes
 
 .if !exists(/usr/lib/libkafs.a)
 BROKEN=		requires kerberos
