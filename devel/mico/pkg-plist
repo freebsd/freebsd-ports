@@ -327,945 +327,945 @@ lib/libmicoir2.3.10.so.1
 %%MICO_X11%%lib/libmicox2.3.10.so.1
 lib/mico-setup.csh
 lib/mico-setup.sh
-%%PORTDOCS%%share/doc/mico/html/WARNINGS
-%%PORTDOCS%%share/doc/mico/html/doc.css
-%%PORTDOCS%%share/doc/mico/html/doc.html
-%%PORTDOCS%%share/doc/mico/html/footnode.html
-%%PORTDOCS%%share/doc/mico/html/images.aux
-%%PORTDOCS%%share/doc/mico/html/images.bbl
-%%PORTDOCS%%share/doc/mico/html/images.log
-%%PORTDOCS%%share/doc/mico/html/images.pl
-%%PORTDOCS%%share/doc/mico/html/images.tex
-%%PORTDOCS%%share/doc/mico/html/img1.gif
-%%PORTDOCS%%share/doc/mico/html/img10.gif
-%%PORTDOCS%%share/doc/mico/html/img11.gif
-%%PORTDOCS%%share/doc/mico/html/img12.gif
-%%PORTDOCS%%share/doc/mico/html/img13.gif
-%%PORTDOCS%%share/doc/mico/html/img14.gif
-%%PORTDOCS%%share/doc/mico/html/img15.gif
-%%PORTDOCS%%share/doc/mico/html/img16.gif
-%%PORTDOCS%%share/doc/mico/html/img17.gif
-%%PORTDOCS%%share/doc/mico/html/img18.gif
-%%PORTDOCS%%share/doc/mico/html/img19.gif
-%%PORTDOCS%%share/doc/mico/html/img2.gif
-%%PORTDOCS%%share/doc/mico/html/img20.gif
-%%PORTDOCS%%share/doc/mico/html/img21.gif
-%%PORTDOCS%%share/doc/mico/html/img22.gif
-%%PORTDOCS%%share/doc/mico/html/img23.gif
-%%PORTDOCS%%share/doc/mico/html/img24.gif
-%%PORTDOCS%%share/doc/mico/html/img3.gif
-%%PORTDOCS%%share/doc/mico/html/img4.gif
-%%PORTDOCS%%share/doc/mico/html/img5.gif
-%%PORTDOCS%%share/doc/mico/html/img6.gif
-%%PORTDOCS%%share/doc/mico/html/img7.gif
-%%PORTDOCS%%share/doc/mico/html/img8.gif
-%%PORTDOCS%%share/doc/mico/html/img9.gif
-%%PORTDOCS%%share/doc/mico/html/index.html
-%%PORTDOCS%%share/doc/mico/html/internals.pl
-%%PORTDOCS%%share/doc/mico/html/labels.pl
-%%PORTDOCS%%share/doc/mico/html/node1.html
-%%PORTDOCS%%share/doc/mico/html/node10.html
-%%PORTDOCS%%share/doc/mico/html/node11.html
-%%PORTDOCS%%share/doc/mico/html/node12.html
-%%PORTDOCS%%share/doc/mico/html/node13.html
-%%PORTDOCS%%share/doc/mico/html/node14.html
-%%PORTDOCS%%share/doc/mico/html/node15.html
-%%PORTDOCS%%share/doc/mico/html/node16.html
-%%PORTDOCS%%share/doc/mico/html/node17.html
-%%PORTDOCS%%share/doc/mico/html/node18.html
-%%PORTDOCS%%share/doc/mico/html/node19.html
-%%PORTDOCS%%share/doc/mico/html/node2.html
-%%PORTDOCS%%share/doc/mico/html/node20.html
-%%PORTDOCS%%share/doc/mico/html/node21.html
-%%PORTDOCS%%share/doc/mico/html/node22.html
-%%PORTDOCS%%share/doc/mico/html/node23.html
-%%PORTDOCS%%share/doc/mico/html/node24.html
-%%PORTDOCS%%share/doc/mico/html/node25.html
-%%PORTDOCS%%share/doc/mico/html/node26.html
-%%PORTDOCS%%share/doc/mico/html/node27.html
-%%PORTDOCS%%share/doc/mico/html/node28.html
-%%PORTDOCS%%share/doc/mico/html/node29.html
-%%PORTDOCS%%share/doc/mico/html/node3.html
-%%PORTDOCS%%share/doc/mico/html/node30.html
-%%PORTDOCS%%share/doc/mico/html/node31.html
-%%PORTDOCS%%share/doc/mico/html/node32.html
-%%PORTDOCS%%share/doc/mico/html/node33.html
-%%PORTDOCS%%share/doc/mico/html/node34.html
-%%PORTDOCS%%share/doc/mico/html/node35.html
-%%PORTDOCS%%share/doc/mico/html/node36.html
-%%PORTDOCS%%share/doc/mico/html/node37.html
-%%PORTDOCS%%share/doc/mico/html/node38.html
-%%PORTDOCS%%share/doc/mico/html/node39.html
-%%PORTDOCS%%share/doc/mico/html/node4.html
-%%PORTDOCS%%share/doc/mico/html/node40.html
-%%PORTDOCS%%share/doc/mico/html/node41.html
-%%PORTDOCS%%share/doc/mico/html/node42.html
-%%PORTDOCS%%share/doc/mico/html/node43.html
-%%PORTDOCS%%share/doc/mico/html/node44.html
-%%PORTDOCS%%share/doc/mico/html/node5.html
-%%PORTDOCS%%share/doc/mico/html/node6.html
-%%PORTDOCS%%share/doc/mico/html/node7.html
-%%PORTDOCS%%share/doc/mico/html/node8.html
-%%PORTDOCS%%share/doc/mico/html/node9.html
-%%PORTDOCS%%share/doc/mico/manual.ps
-%%PORTDOCS%%share/examples/mico/MakeVars
-%%PORTDOCS%%share/examples/mico/README
-%%PORTDOCS%%share/examples/mico/bench/Makefile
-%%PORTDOCS%%share/examples/mico/bench/bench
-%%PORTDOCS%%share/examples/mico/bench/bench.idl
-%%PORTDOCS%%share/examples/mico/bench/bench_impl.h
-%%PORTDOCS%%share/examples/mico/bench/client.cc
-%%PORTDOCS%%share/examples/mico/bench/server.cc
-%%PORTDOCS%%share/examples/mico/boa/Makefile
-%%PORTDOCS%%share/examples/mico/boa/README
-%%PORTDOCS%%share/examples/mico/boa/account/Makefile
-%%PORTDOCS%%share/examples/mico/boa/account/account.idl
-%%PORTDOCS%%share/examples/mico/boa/account/main.cc
-%%PORTDOCS%%share/examples/mico/boa/account2/Makefile
-%%PORTDOCS%%share/examples/mico/boa/account2/account
-%%PORTDOCS%%share/examples/mico/boa/account2/account.idl
-%%PORTDOCS%%share/examples/mico/boa/account2/client.cc
-%%PORTDOCS%%share/examples/mico/boa/account2/server.cc
-%%PORTDOCS%%share/examples/mico/boa/account3/Makefile
-%%PORTDOCS%%share/examples/mico/boa/account3/account
-%%PORTDOCS%%share/examples/mico/boa/account3/account.idl
-%%PORTDOCS%%share/examples/mico/boa/account3/client.cc
-%%PORTDOCS%%share/examples/mico/boa/account3/server.cc
-%%PORTDOCS%%share/examples/mico/boa/account4/Makefile
-%%PORTDOCS%%share/examples/mico/boa/account4/account
-%%PORTDOCS%%share/examples/mico/boa/account4/account.idl
-%%PORTDOCS%%share/examples/mico/boa/account4/client.cc
-%%PORTDOCS%%share/examples/mico/boa/account4/server.cc
-%%PORTDOCS%%share/examples/mico/boa/activate/Makefile
-%%PORTDOCS%%share/examples/mico/boa/activate/client.cc
-%%PORTDOCS%%share/examples/mico/boa/activate/hello-permethod
-%%PORTDOCS%%share/examples/mico/boa/activate/hello-shared
-%%PORTDOCS%%share/examples/mico/boa/activate/hello-unshared
-%%PORTDOCS%%share/examples/mico/boa/activate/hello.idl
-%%PORTDOCS%%share/examples/mico/boa/activate/server.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/channel.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/channel_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/consumer.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/consumer_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/events
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/message.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/message_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/message_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/producer.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/producer_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/hello
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/hello.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/hello_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/hello
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/hello.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/hello_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/philo
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/philo.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/philo_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/tkobserver.cc
-%%PORTDOCS%%share/examples/mico/codesets/Makefile
-%%PORTDOCS%%share/examples/mico/codesets/client.cc
-%%PORTDOCS%%share/examples/mico/codesets/hello.idl
-%%PORTDOCS%%share/examples/mico/codesets/runit
-%%PORTDOCS%%share/examples/mico/codesets/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/hello-1/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/hello-1/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/hello-1/hello
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/hello-1/hello.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/hello-1/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/identity-1/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/identity-1/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/identity-1/hello
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/identity-1/hello.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/identity-1/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/InterOpTest.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/c_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/c_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/ca_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/client2.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/get_iors.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/iiop_csiv2_extedned_hello.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/iiop_csiv2_hello.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/iiop_hello.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/run.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/s_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/s_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/tls_csiv2_extedned_hello.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/tls_csiv2_hello.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/interop/adiron/tls_hello.sh
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/c_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/c_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/ca_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/hello
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/hello.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/s_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/s_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-1/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/c_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/c_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/ca_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/hello
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/hello.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/s_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/s_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-hello-2/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/c_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/c_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/ca_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/hello
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/hello.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/s_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/s_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/csiv2/tls-identity-1/server.cc
-%%PORTDOCS%%share/examples/mico/dispatcher/Makefile
-%%PORTDOCS%%share/examples/mico/dispatcher/README
-%%PORTDOCS%%%%MICO_GTK%%share/examples/mico/dispatcher/gtkmico/Makefile
-%%PORTDOCS%%%%MICO_GTK%%share/examples/mico/dispatcher/gtkmico/README
-%%PORTDOCS%%%%MICO_GTK%%share/examples/mico/dispatcher/gtkmico/client.cc
-%%PORTDOCS%%%%MICO_GTK%%share/examples/mico/dispatcher/gtkmico/gtkhello
-%%PORTDOCS%%%%MICO_GTK%%share/examples/mico/dispatcher/gtkmico/hello.idl
-%%PORTDOCS%%%%MICO_GTK%%share/examples/mico/dispatcher/gtkmico/server.cc
-%%PORTDOCS%%%%MICO_QT%%share/examples/mico/dispatcher/qtmico/Makefile
-%%PORTDOCS%%%%MICO_QT%%share/examples/mico/dispatcher/qtmico/README
-%%PORTDOCS%%%%MICO_QT%%share/examples/mico/dispatcher/qtmico/client.cc
-%%PORTDOCS%%%%MICO_QT%%share/examples/mico/dispatcher/qtmico/hello.idl
-%%PORTDOCS%%%%MICO_QT%%share/examples/mico/dispatcher/qtmico/qthello1
-%%PORTDOCS%%%%MICO_QT%%share/examples/mico/dispatcher/qtmico/qthello2
-%%PORTDOCS%%%%MICO_QT%%share/examples/mico/dispatcher/qtmico/server.cc
-%%PORTDOCS%%%%MICO_X11%%share/examples/mico/dispatcher/x11/Makefile
-%%PORTDOCS%%%%MICO_X11%%share/examples/mico/dispatcher/x11/client.cc
-%%PORTDOCS%%%%MICO_X11%%share/examples/mico/dispatcher/x11/hello.idl
-%%PORTDOCS%%%%MICO_X11%%share/examples/mico/dispatcher/x11/server.cc
-%%PORTDOCS%%%%MICO_X11%%share/examples/mico/dispatcher/x11/xhello
-%%PORTDOCS%%share/examples/mico/dynany/Makefile
-%%PORTDOCS%%share/examples/mico/dynany/dynany.cc
-%%PORTDOCS%%share/examples/mico/dynany/dynanytest.cc
-%%PORTDOCS%%share/examples/mico/dynany/test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/hello.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/runit
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/server.cc
-%%PORTDOCS%%share/examples/mico/generic/Makefile
-%%PORTDOCS%%share/examples/mico/generic/client.cc
-%%PORTDOCS%%share/examples/mico/generic/run_test
-%%PORTDOCS%%share/examples/mico/generic/server.cc
-%%PORTDOCS%%share/examples/mico/generic/test.idl
-%%PORTDOCS%%share/examples/mico/generic/test_cases
-%%PORTDOCS%%share/examples/mico/henning/README
-%%PORTDOCS%%share/examples/mico/henning/diffs
-%%PORTDOCS%%share/examples/mico/interceptor/Makefile
-%%PORTDOCS%%share/examples/mico/interceptor/client.cc
-%%PORTDOCS%%share/examples/mico/interceptor/hello.idl
-%%PORTDOCS%%share/examples/mico/interceptor/runit
-%%PORTDOCS%%share/examples/mico/interceptor/server.cc
-%%PORTDOCS%%share/examples/mico/interop/Makefile
-%%PORTDOCS%%share/examples/mico/interop/README
-%%PORTDOCS%%share/examples/mico/interop/jacorb/Account.idl
-%%PORTDOCS%%share/examples/mico/interop/jacorb/Client.java
-%%PORTDOCS%%share/examples/mico/interop/jacorb/ClientApplet.html.in
-%%PORTDOCS%%share/examples/mico/interop/jacorb/ClientApplet.java
-%%PORTDOCS%%share/examples/mico/interop/jacorb/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jacorb/README
-%%PORTDOCS%%share/examples/mico/interop/jacorb/Server.java
-%%PORTDOCS%%share/examples/mico/interop/jacorb/account
-%%PORTDOCS%%share/examples/mico/interop/jacorb/client.cc
-%%PORTDOCS%%share/examples/mico/interop/jacorb/run_applet
-%%PORTDOCS%%share/examples/mico/interop/jacorb/server.cc
-%%PORTDOCS%%share/examples/mico/interop/jboss/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/README
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/META-INF/ejb-jar.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/META-INF/jboss.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/client.cc
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/examples/BookException.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/examples/Cart.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/examples/CartBean.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/examples/CartHome.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/examples/IdVerifier.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/run-client
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/META-INF/ejb-jar.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/META-INF/jboss.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/client.cc
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/examples/Converter.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/examples/ConverterBean.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/examples/ConverterHome.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/run-client
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/META-INF/ejb-jar.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/META-INF/jboss.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/client.cc
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/CorbaFriendlySession.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/CorbaFriendlySessionBean.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/CorbaFriendlySessionHome.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/corba/DataObject.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/run-client
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.3.x/setenv.sh
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/META-INF/ejb-jar.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/META-INF/jboss.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/client.cc
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/examples/BookException.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/examples/Cart.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/examples/CartBean.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/examples/CartHome.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/examples/IdVerifier.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable/StackTraceElement.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable/Throwable.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable/seq1_StackTraceElement.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/run-client
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/META-INF/ejb-jar.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/META-INF/jboss.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/client.cc
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/examples/Converter.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/examples/ConverterBean.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/examples/ConverterHome.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable/StackTraceElement.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable/Throwable.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable/seq1_StackTraceElement.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/run-client
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/META-INF/ejb-jar.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/META-INF/jboss.xml
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/client.cc
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySession.cc.saved
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySession.h.saved
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySession.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySessionBean.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySessionHome.java
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/corba/DataObject.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable/StackTraceElement.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable/Throwable.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable/seq1_StackTraceElement.idl
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/run-client
-%%PORTDOCS%%share/examples/mico/interop/jboss/jdk1.4.x/setenv.sh
-%%PORTDOCS%%share/examples/mico/interop/jdk/Account.idl
-%%PORTDOCS%%share/examples/mico/interop/jdk/Client.java
-%%PORTDOCS%%share/examples/mico/interop/jdk/ClientApplet.html.in
-%%PORTDOCS%%share/examples/mico/interop/jdk/ClientApplet.java
-%%PORTDOCS%%share/examples/mico/interop/jdk/Makefile
-%%PORTDOCS%%share/examples/mico/interop/jdk/README
-%%PORTDOCS%%share/examples/mico/interop/jdk/account
-%%PORTDOCS%%share/examples/mico/interop/jdk/main.cc
-%%PORTDOCS%%share/examples/mico/interop/jdk/run_applet
-%%PORTDOCS%%share/examples/mico/interop/orbix/Makefile
-%%PORTDOCS%%share/examples/mico/interop/orbix/README
-%%PORTDOCS%%share/examples/mico/interop/orbix/grid.idl
-%%PORTDOCS%%share/examples/mico/interop/orbix/main.cc
-%%PORTDOCS%%share/examples/mico/interop/visibroker/Account.idl
-%%PORTDOCS%%share/examples/mico/interop/visibroker/Client.java
-%%PORTDOCS%%share/examples/mico/interop/visibroker/ClientApplet.html.in
-%%PORTDOCS%%share/examples/mico/interop/visibroker/ClientApplet.java
-%%PORTDOCS%%share/examples/mico/interop/visibroker/Makefile
-%%PORTDOCS%%share/examples/mico/interop/visibroker/README
-%%PORTDOCS%%share/examples/mico/interop/visibroker/account
-%%PORTDOCS%%share/examples/mico/interop/visibroker/main.cc
-%%PORTDOCS%%share/examples/mico/interop/visibroker/run_applet
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/hello.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/runit
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/server.cc
-%%PORTDOCS%%share/examples/mico/mcast/Makefile
-%%PORTDOCS%%share/examples/mico/mcast/client.cc
-%%PORTDOCS%%share/examples/mico/mcast/hello.idl
-%%PORTDOCS%%share/examples/mico/mcast/runit
-%%PORTDOCS%%share/examples/mico/mcast/server.cc
-%%PORTDOCS%%share/examples/mico/mt/Makefile
-%%PORTDOCS%%share/examples/mico/mt/README
-%%PORTDOCS%%share/examples/mico/mt/callback/Makefile
-%%PORTDOCS%%share/examples/mico/mt/callback/callback.idl
-%%PORTDOCS%%share/examples/mico/mt/callback/client.cc
-%%PORTDOCS%%share/examples/mico/mt/callback/run
-%%PORTDOCS%%share/examples/mico/mt/callback/server.cc
-%%PORTDOCS%%share/examples/mico/mt/prodcons-1/Makefile
-%%PORTDOCS%%share/examples/mico/mt/prodcons-1/prodcons.cc
-%%PORTDOCS%%share/examples/mico/obv/Makefile
-%%PORTDOCS%%share/examples/mico/obv/README
-%%PORTDOCS%%share/examples/mico/obv/abstract/Makefile
-%%PORTDOCS%%share/examples/mico/obv/abstract/README
-%%PORTDOCS%%share/examples/mico/obv/abstract/abstract
-%%PORTDOCS%%share/examples/mico/obv/abstract/abstract.idl
-%%PORTDOCS%%share/examples/mico/obv/abstract/abstract_impl.h
-%%PORTDOCS%%share/examples/mico/obv/abstract/client.cc
-%%PORTDOCS%%share/examples/mico/obv/abstract/server.cc
-%%PORTDOCS%%share/examples/mico/obv/custom/Makefile
-%%PORTDOCS%%share/examples/mico/obv/custom/README
-%%PORTDOCS%%share/examples/mico/obv/custom/custom
-%%PORTDOCS%%share/examples/mico/obv/custom/custom.idl
-%%PORTDOCS%%share/examples/mico/obv/custom/custom_impl.cc
-%%PORTDOCS%%share/examples/mico/obv/custom/custom_impl.h
-%%PORTDOCS%%share/examples/mico/obv/custom/test.cc
-%%PORTDOCS%%share/examples/mico/obv/date/Makefile
-%%PORTDOCS%%share/examples/mico/obv/date/calendar.idl
-%%PORTDOCS%%share/examples/mico/obv/date/client.cc
-%%PORTDOCS%%share/examples/mico/obv/date/date
-%%PORTDOCS%%share/examples/mico/obv/date/date.idl
-%%PORTDOCS%%share/examples/mico/obv/date/date_impl.cc
-%%PORTDOCS%%share/examples/mico/obv/date/date_impl.h
-%%PORTDOCS%%share/examples/mico/obv/date/server.cc
-%%PORTDOCS%%share/examples/mico/obv/tree/Makefile
-%%PORTDOCS%%share/examples/mico/obv/tree/client.cc
-%%PORTDOCS%%share/examples/mico/obv/tree/server.cc
-%%PORTDOCS%%share/examples/mico/obv/tree/tree
-%%PORTDOCS%%share/examples/mico/obv/tree/tree.idl
-%%PORTDOCS%%share/examples/mico/obv/tree/tree_impl.cc
-%%PORTDOCS%%share/examples/mico/obv/tree/tree_impl.h
-%%PORTDOCS%%share/examples/mico/obv/tricky/Makefile
-%%PORTDOCS%%share/examples/mico/obv/tricky/client.cc
-%%PORTDOCS%%share/examples/mico/obv/tricky/server.cc
-%%PORTDOCS%%share/examples/mico/obv/tricky/tricky
-%%PORTDOCS%%share/examples/mico/obv/tricky/tricky.idl
-%%PORTDOCS%%share/examples/mico/obv/tricky/tricky_impl.cc
-%%PORTDOCS%%share/examples/mico/obv/tricky/tricky_impl.h
-%%PORTDOCS%%share/examples/mico/pi/Makefile
-%%PORTDOCS%%share/examples/mico/pi/README
-%%PORTDOCS%%share/examples/mico/pi/current/Makefile
-%%PORTDOCS%%share/examples/mico/pi/current/client.cc
-%%PORTDOCS%%share/examples/mico/pi/current/hello
-%%PORTDOCS%%share/examples/mico/pi/current/hello.idl
-%%PORTDOCS%%share/examples/mico/pi/current/server.cc
-%%PORTDOCS%%share/examples/mico/pi/dii/Makefile
-%%PORTDOCS%%share/examples/mico/pi/dii/diiclient.cc
-%%PORTDOCS%%share/examples/mico/pi/dii/diiserver.cc
-%%PORTDOCS%%share/examples/mico/pi/dii/rundiic
-%%PORTDOCS%%share/examples/mico/pi/dii/rundiis
-%%PORTDOCS%%share/examples/mico/pi/dii/runit
-%%PORTDOCS%%share/examples/mico/pi/poa/Makefile
-%%PORTDOCS%%share/examples/mico/pi/poa/account
-%%PORTDOCS%%share/examples/mico/pi/poa/account.idl
-%%PORTDOCS%%share/examples/mico/pi/poa/client.cc
-%%PORTDOCS%%share/examples/mico/pi/poa/collocated.cc
-%%PORTDOCS%%share/examples/mico/pi/poa/server.cc
-%%PORTDOCS%%share/examples/mico/pi/poa2/Makefile
-%%PORTDOCS%%share/examples/mico/pi/poa2/account
-%%PORTDOCS%%share/examples/mico/pi/poa2/account.idl
-%%PORTDOCS%%share/examples/mico/pi/poa2/client.cc
-%%PORTDOCS%%share/examples/mico/pi/poa2/server.cc
-%%PORTDOCS%%share/examples/mico/poa/Makefile
-%%PORTDOCS%%share/examples/mico/poa/README
-%%PORTDOCS%%share/examples/mico/poa/account-1/Makefile
-%%PORTDOCS%%share/examples/mico/poa/account-1/account
-%%PORTDOCS%%share/examples/mico/poa/account-1/account.idl
-%%PORTDOCS%%share/examples/mico/poa/account-1/client.cc
-%%PORTDOCS%%share/examples/mico/poa/account-1/server.cc
-%%PORTDOCS%%share/examples/mico/poa/account-2/Makefile
-%%PORTDOCS%%share/examples/mico/poa/account-2/account
-%%PORTDOCS%%share/examples/mico/poa/account-2/account.idl
-%%PORTDOCS%%share/examples/mico/poa/account-2/client.cc
-%%PORTDOCS%%share/examples/mico/poa/account-2/server.cc
-%%PORTDOCS%%share/examples/mico/poa/account-3/Makefile
-%%PORTDOCS%%share/examples/mico/poa/account-3/account
-%%PORTDOCS%%share/examples/mico/poa/account-3/account.idl
-%%PORTDOCS%%share/examples/mico/poa/account-3/client.cc
-%%PORTDOCS%%share/examples/mico/poa/account-3/server.cc
-%%PORTDOCS%%share/examples/mico/poa/hello-1/Makefile
-%%PORTDOCS%%share/examples/mico/poa/hello-1/client.cc
-%%PORTDOCS%%share/examples/mico/poa/hello-1/hello
-%%PORTDOCS%%share/examples/mico/poa/hello-1/hello.idl
-%%PORTDOCS%%share/examples/mico/poa/hello-1/server.cc
-%%PORTDOCS%%share/examples/mico/poa/hello-2/Makefile
-%%PORTDOCS%%share/examples/mico/poa/hello-2/client.cc
-%%PORTDOCS%%share/examples/mico/poa/hello-2/hello
-%%PORTDOCS%%share/examples/mico/poa/hello-2/hello.idl
-%%PORTDOCS%%share/examples/mico/poa/hello-2/server.cc
-%%PORTDOCS%%share/examples/mico/poa/inherit/Makefile
-%%PORTDOCS%%share/examples/mico/poa/inherit/client.cc
-%%PORTDOCS%%share/examples/mico/poa/inherit/inherit
-%%PORTDOCS%%share/examples/mico/poa/inherit/inherit.idl
-%%PORTDOCS%%share/examples/mico/poa/inherit/server.cc
-%%PORTDOCS%%share/examples/mico/random/Makefile
-%%PORTDOCS%%share/examples/mico/random/client.cc
-%%PORTDOCS%%share/examples/mico/random/random.idl
-%%PORTDOCS%%share/examples/mico/redlich/Calc-1/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Calc-1/calc.idl
-%%PORTDOCS%%share/examples/mico/redlich/Calc-1/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Calc-1/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Calc-2/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Calc-2/calc.idl
-%%PORTDOCS%%share/examples/mico/redlich/Calc-2/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Calc-2/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Calc-3/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Calc-3/calc.idl
-%%PORTDOCS%%share/examples/mico/redlich/Calc-3/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Calc-3/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Calc-4/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Calc-4/calc.idl
-%%PORTDOCS%%share/examples/mico/redlich/Calc-4/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Calc-4/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-1/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Hello-1/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-1/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-1/tty.idl
-%%PORTDOCS%%share/examples/mico/redlich/Hello-2/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Hello-2/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-2/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-2/tty.idl
-%%PORTDOCS%%share/examples/mico/redlich/Hello-3/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Hello-3/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-3/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-3/tty.idl
-%%PORTDOCS%%share/examples/mico/redlich/Hello-3/ttyplus.idl
-%%PORTDOCS%%share/examples/mico/redlich/Hello-4/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/Hello-4/client.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-4/server.cc
-%%PORTDOCS%%share/examples/mico/redlich/Hello-4/tty.idl
-%%PORTDOCS%%share/examples/mico/redlich/Hello-4/ttyplus.idl
-%%PORTDOCS%%share/examples/mico/redlich/Makefile
-%%PORTDOCS%%share/examples/mico/redlich/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/audit.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/client2.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/config.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/manager.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/owner.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-aware/wife.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/ODM.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/access.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/audit.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/ca_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/client2.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/manager_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/manager_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/owner_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/owner_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/rights.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/s_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/s_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/wife_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/wife_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/wife_self_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware-ca-check/wife_self_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/ODM.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/access.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/audit.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/client2.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/manager.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/owner.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/rcs1
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/rcs2
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/rights.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/rss1
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/acl-unaware/wife.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/ODM.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/README.Audit
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/access.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/client2.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/config.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/manager.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/owner.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/rights.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/rsnd
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/rst
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-aware/wife.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/ClientCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/ClientKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/hello.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/runit
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-book/ssl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/ODM.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/README
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/access.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/audit.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/client2.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/manager.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/owner.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/rights.cnf
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/audit-unaware/wife.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/ClientCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/ClientKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l1/ssl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/ClientCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/ClientKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/list.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/l2/ssl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/ClientCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/ClientKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/ServerCert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/ServerKey.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/account.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/list.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/rcs
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/rss
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/run
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/ssl
-%%PORTDOCS%%share/examples/mico/services/Makefile
-%%PORTDOCS%%share/examples/mico/services/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client2.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/runit
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server2.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server3.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/DocumentsServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/TestServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Test_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Test_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/daemons-start
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/daemons-stop
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/rundemo
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/servers-start
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/simple-test.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/stop-servers
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/test
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/DocumentsServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/TestServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Test_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Test_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/daemons-start
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/daemons-stop
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/rundemo
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/servers-start
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/simple-test.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/stop-servers
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/test
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Printer.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Printer_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Printer_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Server.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/printer_test
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/account.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/account_test
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/server.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/bank.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/get_properties.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/set_properties.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/start_demo
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Documents.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/DocumentsServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Documents_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Documents_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/README
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/TestServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Test_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Test_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/daemons-start
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/daemons-stop
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/rundemo
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/servers-start
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/simple-test.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/stop-servers
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/test
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/bench
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/req.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/req_client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/req_server.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/stream_client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/stream_server.cc
-%%PORTDOCS%%share/examples/mico/services/stream-sound/Makefile
-%%PORTDOCS%%share/examples/mico/services/stream-sound/client.cc
-%%PORTDOCS%%share/examples/mico/services/stream-sound/server.cc
-%%PORTDOCS%%share/examples/mico/services/stream-sound/sound.h
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/demo.idl
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/main.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/run
-%%PORTDOCS%%share/examples/mico/shlib/Makefile
-%%PORTDOCS%%share/examples/mico/shlib/client.cc
-%%PORTDOCS%%share/examples/mico/shlib/hello
-%%PORTDOCS%%share/examples/mico/shlib/hello.idl
-%%PORTDOCS%%share/examples/mico/shlib/server.cc
-%%PORTDOCS%%share/examples/mico/siegel/Makefile
-%%PORTDOCS%%share/examples/mico/siegel/README
-%%PORTDOCS%%share/examples/mico/siegel/central/DepotData.cc
-%%PORTDOCS%%share/examples/mico/siegel/central/DepotData.h
-%%PORTDOCS%%share/examples/mico/siegel/central/DepotImpl.cc
-%%PORTDOCS%%share/examples/mico/siegel/central/DepotImpl.h
-%%PORTDOCS%%share/examples/mico/siegel/central/Makefile
-%%PORTDOCS%%share/examples/mico/siegel/central/TreeNode.h
-%%PORTDOCS%%share/examples/mico/siegel/central/depot.dat
-%%PORTDOCS%%share/examples/mico/siegel/central/depot_server.cc
-%%PORTDOCS%%share/examples/mico/siegel/idl/Central.idl
-%%PORTDOCS%%share/examples/mico/siegel/idl/Makefile
-%%PORTDOCS%%share/examples/mico/siegel/idl/POS.idl
-%%PORTDOCS%%share/examples/mico/siegel/idl/Store.idl
-%%PORTDOCS%%share/examples/mico/siegel/pos/InputMediaImpl.cc
-%%PORTDOCS%%share/examples/mico/siegel/pos/InputMediaImpl.h
-%%PORTDOCS%%share/examples/mico/siegel/pos/Makefile
-%%PORTDOCS%%share/examples/mico/siegel/pos/OutputMediaImpl.cc
-%%PORTDOCS%%share/examples/mico/siegel/pos/OutputMediaImpl.h
-%%PORTDOCS%%share/examples/mico/siegel/pos/POSTerminalImpl.cc
-%%PORTDOCS%%share/examples/mico/siegel/pos/POSTerminalImpl.h
-%%PORTDOCS%%share/examples/mico/siegel/pos/POS_Client.cc
-%%PORTDOCS%%share/examples/mico/siegel/pos/POS_Server.cc
-%%PORTDOCS%%share/examples/mico/siegel/primer_utils/Makefile
-%%PORTDOCS%%share/examples/mico/siegel/primer_utils/NsPublisher.cc
-%%PORTDOCS%%share/examples/mico/siegel/primer_utils/NsPublisher.h
-%%PORTDOCS%%share/examples/mico/siegel/store/Makefile
-%%PORTDOCS%%share/examples/mico/siegel/store/StoreAccessImpl.cc
-%%PORTDOCS%%share/examples/mico/siegel/store/StoreAccessImpl.h
-%%PORTDOCS%%share/examples/mico/siegel/store/StoreImpl.cc
-%%PORTDOCS%%share/examples/mico/siegel/store/StoreImpl.h
-%%PORTDOCS%%share/examples/mico/siegel/store/TaxImpl.cc
-%%PORTDOCS%%share/examples/mico/siegel/store/TaxImpl.h
-%%PORTDOCS%%share/examples/mico/siegel/store/store_server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/Makefile
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/c_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/c_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/client.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/hello.idl
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/s_cert.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/s_key.pem
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/server.cc
-%%PORTDOCS%%%%MICO_SSL%%share/examples/mico/ssl/ssl
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/ssl
-%%PORTDOCS%%@dirrm share/examples/mico/siegel/store
-%%PORTDOCS%%@dirrm share/examples/mico/siegel/primer_utils
-%%PORTDOCS%%@dirrm share/examples/mico/siegel/pos
-%%PORTDOCS%%@dirrm share/examples/mico/siegel/idl
-%%PORTDOCS%%@dirrm share/examples/mico/siegel/central
-%%PORTDOCS%%@dirrm share/examples/mico/siegel
-%%PORTDOCS%%@dirrm share/examples/mico/shlib
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/trader
-%%PORTDOCS%%@dirrm share/examples/mico/services/stream-sound
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/stream-bench
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/relship
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/property-daemon
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/naming-lb
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/naming
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/lifecycle
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/externalize
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/events
-%%PORTDOCS%%@dirrm share/examples/mico/services
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/tutorial
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/l2
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/l1
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/audit-unaware
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/audit-book
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/audit-aware
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/acl-unaware-ca-check
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/acl-unaware
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/acl-aware
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Hello-4
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Hello-3
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Hello-2
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Hello-1
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Calc-4
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Calc-3
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Calc-2
-%%PORTDOCS%%@dirrm share/examples/mico/redlich/Calc-1
-%%PORTDOCS%%@dirrm share/examples/mico/redlich
-%%PORTDOCS%%@dirrm share/examples/mico/random
-%%PORTDOCS%%@dirrm share/examples/mico/poa/inherit
-%%PORTDOCS%%@dirrm share/examples/mico/poa/hello-2
-%%PORTDOCS%%@dirrm share/examples/mico/poa/hello-1
-%%PORTDOCS%%@dirrm share/examples/mico/poa/account-3
-%%PORTDOCS%%@dirrm share/examples/mico/poa/account-2
-%%PORTDOCS%%@dirrm share/examples/mico/poa/account-1
-%%PORTDOCS%%@dirrm share/examples/mico/poa
-%%PORTDOCS%%@dirrm share/examples/mico/pi/poa2
-%%PORTDOCS%%@dirrm share/examples/mico/pi/poa
-%%PORTDOCS%%@dirrm share/examples/mico/pi/dii
-%%PORTDOCS%%@dirrm share/examples/mico/pi/current
-%%PORTDOCS%%@dirrm share/examples/mico/pi
-%%PORTDOCS%%@dirrm share/examples/mico/obv/tricky
-%%PORTDOCS%%@dirrm share/examples/mico/obv/tree
-%%PORTDOCS%%@dirrm share/examples/mico/obv/date
-%%PORTDOCS%%@dirrm share/examples/mico/obv/custom
-%%PORTDOCS%%@dirrm share/examples/mico/obv/abstract
-%%PORTDOCS%%@dirrm share/examples/mico/obv
-%%PORTDOCS%%@dirrm share/examples/mico/mt/prodcons-1
-%%PORTDOCS%%@dirrm share/examples/mico/mt/callback
-%%PORTDOCS%%@dirrm share/examples/mico/mt
-%%PORTDOCS%%@dirrm share/examples/mico/mcast
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/lifecycle
-%%PORTDOCS%%@dirrm share/examples/mico/interop/visibroker
-%%PORTDOCS%%@dirrm share/examples/mico/interop/orbix
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jdk
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/corba
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb/META-INF
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/corba-friendly-ejb
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/examples
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb/META-INF
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/converter-ejb
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/examples
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb/META-INF
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x/cart-ejb
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.4.x
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/corba
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb/META-INF
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/corba-friendly-ejb
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/examples
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb/META-INF
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/converter-ejb
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/examples
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb/META-INF
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x/cart-ejb
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss/jdk1.3.x
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jboss
-%%PORTDOCS%%@dirrm share/examples/mico/interop/jacorb
-%%PORTDOCS%%@dirrm share/examples/mico/interop
-%%PORTDOCS%%@dirrm share/examples/mico/interceptor
-%%PORTDOCS%%@dirrm share/examples/mico/henning
-%%PORTDOCS%%@dirrm share/examples/mico/generic
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/externalization
-%%PORTDOCS%%@dirrm share/examples/mico/dynany
-%%PORTDOCS%%%%MICO_X11%%@dirrm share/examples/mico/dispatcher/x11
-%%PORTDOCS%%%%MICO_QT%%@dirrm share/examples/mico/dispatcher/qtmico
-%%PORTDOCS%%%%MICO_GTK%%@dirrm share/examples/mico/dispatcher/gtkmico
-%%PORTDOCS%%@dirrm share/examples/mico/dispatcher
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/tls-identity-1
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/tls-hello-2
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/tls-hello-1
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/interop/adiron
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/interop
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/identity-1
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/hello-1
-%%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2
-%%PORTDOCS%%@dirrm share/examples/mico/codesets
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/philo
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/hello2
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/hello
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/events
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm
-%%PORTDOCS%%@dirrm share/examples/mico/boa/activate
-%%PORTDOCS%%@dirrm share/examples/mico/boa/account4
-%%PORTDOCS%%@dirrm share/examples/mico/boa/account3
-%%PORTDOCS%%@dirrm share/examples/mico/boa/account2
-%%PORTDOCS%%@dirrm share/examples/mico/boa/account
-%%PORTDOCS%%@dirrm share/examples/mico/boa
-%%PORTDOCS%%@dirrm share/examples/mico/bench
-%%PORTDOCS%%@dirrm share/examples/mico
-%%PORTDOCS%%@dirrm share/doc/mico/html
-%%PORTDOCS%%@dirrm share/doc/mico
+%%PORTDOCS%%%%DOCSDIR%%/html/WARNINGS
+%%PORTDOCS%%%%DOCSDIR%%/html/doc.css
+%%PORTDOCS%%%%DOCSDIR%%/html/doc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/footnode.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images.aux
+%%PORTDOCS%%%%DOCSDIR%%/html/images.bbl
+%%PORTDOCS%%%%DOCSDIR%%/html/images.log
+%%PORTDOCS%%%%DOCSDIR%%/html/images.pl
+%%PORTDOCS%%%%DOCSDIR%%/html/images.tex
+%%PORTDOCS%%%%DOCSDIR%%/html/img1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img10.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img11.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img12.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img13.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img14.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img15.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img16.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img17.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img18.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img19.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img20.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img21.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img22.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img23.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img24.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img4.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img5.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img6.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img7.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img8.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img9.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/internals.pl
+%%PORTDOCS%%%%DOCSDIR%%/html/labels.pl
+%%PORTDOCS%%%%DOCSDIR%%/html/node1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node12.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node13.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node14.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node15.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node16.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node17.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node18.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node19.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node20.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node21.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node22.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node23.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node24.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node25.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node26.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node27.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node28.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node29.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node30.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node31.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node32.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node33.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node34.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node35.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node36.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node37.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node38.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node39.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node40.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node41.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node42.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node43.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node44.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node9.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/MakeVars
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench/bench
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench/bench.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench/bench_impl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account/main.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello-permethod
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello-shared
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello-unshared
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/channel.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/channel_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/consumer.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/consumer_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/events
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/message.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/message_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/message_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/producer.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/producer_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello/hello
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello/hello_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello2/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello2/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello2/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello2/hello
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello2/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/hello2/hello_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/philo/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/philo/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/philo/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/philo/philo
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/philo/philo.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/philo/philo_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/philo/tkobserver.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/codesets/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/codesets/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/codesets/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/codesets/runit
+%%PORTDOCS%%%%EXAMPLESDIR%%/codesets/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/hello-1/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/hello-1/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/hello-1/hello
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/hello-1/hello.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/hello-1/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/identity-1/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/identity-1/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/identity-1/hello
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/identity-1/hello.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/identity-1/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/InterOpTest.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/c_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/c_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/ca_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/client2.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/get_iors.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/iiop_csiv2_extedned_hello.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/iiop_csiv2_hello.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/iiop_hello.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/run.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/s_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/s_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/tls_csiv2_extedned_hello.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/tls_csiv2_hello.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/interop/adiron/tls_hello.sh
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/c_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/c_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/ca_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/hello
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/hello.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/s_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/s_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-1/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/c_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/c_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/ca_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/hello
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/hello.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/s_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/s_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-hello-2/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/c_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/c_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/ca_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/hello
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/hello.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/s_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/s_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/csiv2/tls-identity-1/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dispatcher/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/dispatcher/README
+%%PORTDOCS%%%%MICO_GTK%%%%EXAMPLESDIR%%/dispatcher/gtkmico/Makefile
+%%PORTDOCS%%%%MICO_GTK%%%%EXAMPLESDIR%%/dispatcher/gtkmico/README
+%%PORTDOCS%%%%MICO_GTK%%%%EXAMPLESDIR%%/dispatcher/gtkmico/client.cc
+%%PORTDOCS%%%%MICO_GTK%%%%EXAMPLESDIR%%/dispatcher/gtkmico/gtkhello
+%%PORTDOCS%%%%MICO_GTK%%%%EXAMPLESDIR%%/dispatcher/gtkmico/hello.idl
+%%PORTDOCS%%%%MICO_GTK%%%%EXAMPLESDIR%%/dispatcher/gtkmico/server.cc
+%%PORTDOCS%%%%MICO_QT%%%%EXAMPLESDIR%%/dispatcher/qtmico/Makefile
+%%PORTDOCS%%%%MICO_QT%%%%EXAMPLESDIR%%/dispatcher/qtmico/README
+%%PORTDOCS%%%%MICO_QT%%%%EXAMPLESDIR%%/dispatcher/qtmico/client.cc
+%%PORTDOCS%%%%MICO_QT%%%%EXAMPLESDIR%%/dispatcher/qtmico/hello.idl
+%%PORTDOCS%%%%MICO_QT%%%%EXAMPLESDIR%%/dispatcher/qtmico/qthello1
+%%PORTDOCS%%%%MICO_QT%%%%EXAMPLESDIR%%/dispatcher/qtmico/qthello2
+%%PORTDOCS%%%%MICO_QT%%%%EXAMPLESDIR%%/dispatcher/qtmico/server.cc
+%%PORTDOCS%%%%MICO_X11%%%%EXAMPLESDIR%%/dispatcher/x11/Makefile
+%%PORTDOCS%%%%MICO_X11%%%%EXAMPLESDIR%%/dispatcher/x11/client.cc
+%%PORTDOCS%%%%MICO_X11%%%%EXAMPLESDIR%%/dispatcher/x11/hello.idl
+%%PORTDOCS%%%%MICO_X11%%%%EXAMPLESDIR%%/dispatcher/x11/server.cc
+%%PORTDOCS%%%%MICO_X11%%%%EXAMPLESDIR%%/dispatcher/x11/xhello
+%%PORTDOCS%%%%EXAMPLESDIR%%/dynany/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/dynany/dynany.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dynany/dynanytest.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dynany/test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/runit
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/generic/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/generic/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/generic/run_test
+%%PORTDOCS%%%%EXAMPLESDIR%%/generic/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/generic/test.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/generic/test_cases
+%%PORTDOCS%%%%EXAMPLESDIR%%/henning/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/henning/diffs
+%%PORTDOCS%%%%EXAMPLESDIR%%/interceptor/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interceptor/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interceptor/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interceptor/runit
+%%PORTDOCS%%%%EXAMPLESDIR%%/interceptor/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/Account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/Client.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/ClientApplet.html.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/ClientApplet.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/Server.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/run_applet
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jacorb/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/META-INF/ejb-jar.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/META-INF/jboss.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/examples/BookException.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/examples/Cart.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/examples/CartBean.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/examples/CartHome.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/examples/IdVerifier.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/run-client
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/META-INF/ejb-jar.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/META-INF/jboss.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/examples/Converter.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/examples/ConverterBean.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/examples/ConverterHome.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/run-client
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/META-INF/ejb-jar.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/META-INF/jboss.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/CorbaFriendlySession.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/CorbaFriendlySessionBean.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/CorbaFriendlySessionHome.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/corba/DataObject.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/run-client
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/setenv.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/META-INF/ejb-jar.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/META-INF/jboss.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/examples/BookException.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/examples/Cart.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/examples/CartBean.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/examples/CartHome.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/examples/IdVerifier.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable/StackTraceElement.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable/Throwable.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable/seq1_StackTraceElement.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/run-client
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/META-INF/ejb-jar.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/META-INF/jboss.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/examples/Converter.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/examples/ConverterBean.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/examples/ConverterHome.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable/StackTraceElement.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable/Throwable.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable/seq1_StackTraceElement.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/run-client
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/META-INF/ejb-jar.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/META-INF/jboss.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySession.cc.saved
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySession.h.saved
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySession.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySessionBean.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/CorbaFriendlySessionHome.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/corba/DataObject.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable/StackTraceElement.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable/Throwable.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable/seq1_StackTraceElement.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/run-client
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/setenv.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/Account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/Client.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/ClientApplet.html.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/ClientApplet.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/main.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/jdk/run_applet
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/orbix/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/orbix/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/orbix/grid.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/orbix/main.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/Account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/Client.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/ClientApplet.html.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/ClientApplet.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/main.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/run_applet
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/runit
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/mcast/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/mcast/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/mcast/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/mcast/runit
+%%PORTDOCS%%%%EXAMPLESDIR%%/mcast/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/callback/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/callback/callback.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/callback/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/callback/run
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/callback/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/prodcons-1/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/mt/prodcons-1/prodcons.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/abstract/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/abstract/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/abstract/abstract
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/abstract/abstract.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/abstract/abstract_impl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/abstract/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/abstract/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/custom/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/custom/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/custom/custom
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/custom/custom.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/custom/custom_impl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/custom/custom_impl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/custom/test.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/calendar.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/date
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/date.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/date_impl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/date_impl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/date/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tree/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tree/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tree/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tree/tree
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tree/tree.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tree/tree_impl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tree/tree_impl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tricky/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tricky/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tricky/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tricky/tricky
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tricky/tricky.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tricky/tricky_impl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/obv/tricky/tricky_impl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/current/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/current/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/current/hello
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/current/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/current/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/dii/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/dii/diiclient.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/dii/diiserver.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/dii/rundiic
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/dii/rundiis
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/dii/runit
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa/collocated.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa2/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa2/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa2/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa2/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi/poa2/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-1/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-1/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-1/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-1/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-1/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-2/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-2/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-2/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-2/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-2/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-3/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-3/account
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-3/account.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-3/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/account-3/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-1/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-1/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-1/hello
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-1/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-1/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-2/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-2/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-2/hello
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-2/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/hello-2/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/inherit/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/inherit/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/inherit/inherit
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/inherit/inherit.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/poa/inherit/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/random/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/random/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/random/random.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/calc.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/calc.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/calc.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/calc.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/tty.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/tty.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/tty.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/ttyplus.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/tty.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/ttyplus.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/audit.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/client2.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/config.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/manager.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/owner.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/wife.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/ODM.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/access.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/audit.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/ca_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/client2.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/manager_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/manager_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/owner_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/owner_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/rights.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/s_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/s_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/wife_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/wife_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/wife_self_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware-ca-check/wife_self_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/ODM.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/access.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/audit.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/client2.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/manager.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/owner.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/rcs1
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/rcs2
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/rights.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/rss1
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-unaware/wife.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/ODM.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/README.Audit
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/access.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/client2.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/config.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/manager.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/owner.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/rights.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/rsnd
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/rst
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-aware/wife.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/ClientCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/ClientKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/hello.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/runit
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-book/ssl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/ODM.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/README
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/access.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/audit.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/client2.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/manager.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/owner.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/rights.cnf
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/audit-unaware/wife.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/ClientCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/ClientKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l1/ssl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/ClientCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/ClientKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/list.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/l2/ssl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/ClientCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/ClientKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/ServerCert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/ServerKey.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/account.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/list.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/rcs
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/rss
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/run
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/tutorial/ssl
+%%PORTDOCS%%%%EXAMPLESDIR%%/services/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/services/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/client2.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/runit
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/server2.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/server3.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Documents.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/DocumentsServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Documents_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Documents_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/TestServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Test_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Test_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/daemons-start
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/daemons-stop
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/rundemo
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/servers-start
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/simple-test.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/stop-servers
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/test
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Documents.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/DocumentsServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Documents_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Documents_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/TestServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Test_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Test_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/daemons-start
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/daemons-stop
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/rundemo
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/servers-start
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/simple-test.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/stop-servers
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/test
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Printer.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Printer_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Printer_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/printer_test
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming/account.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming/account_test
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming/server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/bank.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/get_properties.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/set_properties.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/start_demo
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Documents.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/DocumentsServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Documents_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Documents_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/README
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/TestServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Test_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Test_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/daemons-start
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/daemons-stop
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/rundemo
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/servers-start
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/simple-test.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/stop-servers
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/test
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/bench
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/req.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/req_client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/req_server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/stream_client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/stream_server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/sound.h
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/demo.idl
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/main.cc
+%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/run
+%%PORTDOCS%%%%EXAMPLESDIR%%/shlib/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/shlib/client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/shlib/hello
+%%PORTDOCS%%%%EXAMPLESDIR%%/shlib/hello.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/shlib/server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotData.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotData.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotImpl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotImpl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/TreeNode.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/depot.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/depot_server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/Central.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/POS.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/Store.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/InputMediaImpl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/InputMediaImpl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/OutputMediaImpl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/OutputMediaImpl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POSTerminalImpl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POSTerminalImpl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POS_Client.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POS_Server.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/primer_utils/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/primer_utils/NsPublisher.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/primer_utils/NsPublisher.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreAccessImpl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreAccessImpl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreImpl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreImpl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/TaxImpl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/TaxImpl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/store_server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/Makefile
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/c_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/c_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/client.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/hello.idl
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/s_cert.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/s_key.pem
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/server.cc
+%%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/ssl
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/ssl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/store
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/primer_utils
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/pos
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/idl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/central
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/shlib
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/trader
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/services/stream-sound
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/stream-bench
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/relship
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/property-daemon
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/naming-lb
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/naming
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/lifecycle
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/externalize
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/events
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/services
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/tutorial
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/l2
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/l1
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/audit-unaware
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/audit-book
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/audit-aware
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/acl-unaware-ca-check
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/acl-unaware
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/acl-aware
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-4
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-3
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-1
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-4
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-3
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-1
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/random
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/inherit
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/hello-2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/hello-1
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/account-3
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/account-2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/account-1
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pi/poa2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pi/poa
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pi/dii
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pi/current
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pi
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/obv/tricky
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/obv/tree
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/obv/date
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/obv/custom
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/obv/abstract
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/obv
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mt/prodcons-1
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mt/callback
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mt
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mcast
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/lifecycle
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/visibroker
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/orbix
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jdk
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/jdk1.4-Throwable
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples/corba
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/examples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb/META-INF
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/corba-friendly-ejb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/examples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb/META-INF
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/converter-ejb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/jdk1.4-Throwable
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/examples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb/META-INF
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x/cart-ejb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.4.x
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples/corba
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/examples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb/META-INF
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/corba-friendly-ejb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/examples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb/META-INF
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/converter-ejb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/examples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb/META-INF
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x/cart-ejb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss/jdk1.3.x
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jboss
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jacorb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interceptor
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/henning
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/generic
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/externalization
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dynany
+%%PORTDOCS%%%%MICO_X11%%@dirrm %%EXAMPLESDIR%%/dispatcher/x11
+%%PORTDOCS%%%%MICO_QT%%@dirrm %%EXAMPLESDIR%%/dispatcher/qtmico
+%%PORTDOCS%%%%MICO_GTK%%@dirrm %%EXAMPLESDIR%%/dispatcher/gtkmico
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dispatcher
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2/tls-identity-1
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2/tls-hello-2
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2/tls-hello-1
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2/interop/adiron
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2/interop
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2/identity-1
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2/hello-1
+%%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/csiv2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/codesets
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm/philo
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm/hello2
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm/hello
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm/events
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/activate
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account4
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account3
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bench
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/mico/transport
 @dirrm include/mico/security
 @dirrm include/mico/os-thread

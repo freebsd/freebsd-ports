@@ -10,12 +10,11 @@ PORTVERSION=	2.3.10
 PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
-
-MAINTAINER=	sem@ciam.ru
-COMMENT=	Fully compliant implementation of CORBA2.3 with some CORBA3.0 features
-
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		doc-html.tar.gz
+
+MAINTAINER=	sem@ciam.ru
+COMMENT=	Fully compliant implementation of CORBA2 with some CORBA3 features
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=		yes
@@ -83,19 +82,18 @@ MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
-
 pre-fetch:
-	@${ECHO} "============================================================================"
+	@${ECHO_MSG} "============================================================================"
 .if ${OSVERSION} < 500035
-	@${ECHO} "Use WITH_SYSTEM_GCC=yes to build Mico with system gcc."
-	@${ECHO}
+	@${ECHO_MSG} "Use WITH_SYSTEM_GCC=yes to build Mico with system gcc."
+	@${ECHO_MSG} ""
 .endif
-	@${ECHO} "Following options are allowed:"
-	@${ECHO}
-	@${ECHO} "WITHOUT_SERVICES=yes  - build without services, only ORB"
-	@${ECHO} "WITHOUT_SSL=yes       - build without SSL and security services"
-	@${ECHO} "WITH_X11=yes, WITH_QT=yes, WITH_GTK=yes, WITH_TCL=yes"
-	@${ECHO} "============================================================================"
+	@${ECHO_MSG} "Following options are allowed:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WITHOUT_SERVICES=yes  - build without services, only ORB"
+	@${ECHO_MSG} "WITHOUT_SSL=yes       - build without SSL and security services"
+	@${ECHO_MSG} "WITH_X11=yes, WITH_QT=yes, WITH_GTK=yes, WITH_TCL=yes"
+	@${ECHO_MSG} "============================================================================"
 
 post-extract:
 	${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
@@ -108,8 +106,8 @@ post-patch:
 
 post-configure:
 	${FIND} ${WRKSRC}/demo -name Makefile | ${XARGS} \
-		${REINPLACE_CMD} -e "s#/doc/mico/examples#/share/examples/mico#"
-	${REINPLACE_CMD} -e "s#/doc/mico/examples#/share/examples/mico#" ${WRKSRC}/demo/MakeVars
+		${REINPLACE_CMD} -e "s#/doc/mico/examples#${EXAMPLESDIR:S#^${PREFIX}##}#"
+	${REINPLACE_CMD} -e "s#/doc/mico/examples#${EXAMPLESDIR:S#^${PREFIX}##}#" ${WRKSRC}/demo/MakeVars
 	${REINPLACE_CMD} -e "s#ministl##" ${WRKSRC}/include/Makefile
 	${RM} -f ${WRKSRC}/include/mico/*.orig ${WRKSRC}/include/coss/*.orig
 
@@ -122,8 +120,8 @@ post-install:
 	done
 .if !defined(NOPORTDOCS)
 	${GMAKE} -C ${WRKSRC} install-doc
-	${MKDIR} ${PREFIX}/share/doc/mico/html
-	${INSTALL_DATA} ${WRKDIR}/doc/doc/* ${PREFIX}/share/doc/mico/html
+	${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKDIR}/doc/doc/* ${DOCSDIR}/html
 .endif
 
 .include <bsd.port.post.mk>
