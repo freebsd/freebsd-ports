@@ -428,11 +428,11 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/autofs
 @dirrm share/examples/samba
-@dirrm share/doc/samba/yodldocs
-@dirrm share/doc/samba/textdocs
-@dirrm share/doc/samba/htmldocs
-@dirrm share/doc/samba/faq
-@dirrm share/doc/samba
+%%PORTDOCS%%@dirrm share/doc/samba/yodldocs
+%%PORTDOCS%%@dirrm share/doc/samba/textdocs
+%%PORTDOCS%%@dirrm share/doc/samba/htmldocs
+%%PORTDOCS%%@dirrm share/doc/samba/faq
+%%PORTDOCS%%@dirrm share/doc/samba
 @dirrm etc/codepages
 @exec cat %D/share/doc/samba/README.FreeBSD
 @exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | grep -v "^#" | %D/bin/make_smbpasswd > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
