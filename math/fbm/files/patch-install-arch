@@ -1,0 +1,10 @@
+--- install-arch.orig	Sun Jun 22 21:29:53 2003
++++ install-arch	Sun Jun 22 21:30:21 2003
+@@ -5,6 +5,6 @@
+ # the programs were last compiled for this architecture.  A program called
+ # "arch" that returns the name of the architecture is assumed to exist.
+ 
+-a=`arch`
++a=${ARCH}
+ mkdir -p bin.$a
+ cp bin/* bin.$a
