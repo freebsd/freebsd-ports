@@ -20,12 +20,12 @@ RUBY_VER=	1.4
 
 USE_RUBY=	yes
 
-NO_BUILD=	yes
+RUBY_SHEBANG_FILES=	${WRKSRC}/irb.rb
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_BUILD=	yes
 
 post-patch:
-	${PERL} -i -pe '$$. == 1 && s,^#!\s*\S+,#!${RUBY},' ${WRKSRC}/irb.rb
 	${RM} -f ${WRKSRC}/instirb.rb
 
 do-install:
