@@ -19,6 +19,8 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
 
+CONFLICTS=	mingw32-bin-msvcrt-*
+
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
