@@ -3,20 +3,17 @@
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1995/04/15 22:55:30 jmacd Exp $
+# $Id: Makefile,v 1.7 1995/05/16 05:02:02 asami Exp $
 #
 
-DISTNAME=	ucblogo
-PKGNAME=	ucblogo-3.1
+DISTNAME=	ucblogo-3.3
 CATEGORIES+=	languages
-MASTER_SITES=	ftp://anarres.cs.berkeley.edu/pub/ucblogo/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/
 
 MAINTAINER=	jmacd@FreeBSD.ORG
 
 MAKEFILE=	makefile
 MAKE_FLAGS+=	"LIBLOC = ${PREFIX}/lib/logo"
-WRKSRC=	${WRKDIR}
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.mk>
