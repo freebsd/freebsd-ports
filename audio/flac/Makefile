@@ -8,6 +8,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,9 +35,9 @@ post-install:
 .if !defined(NO_PORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/flac
 	${MKDIR} ${PREFIX}/share/doc/flac/images
-	${CP} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/flac
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/flac
 .for file in logo.jpg 1x1.gif
-	${CP} ${WRKSRC}/doc/images/${file} ${PREFIX}/share/doc/flac/images
+	${INSTALL_DATA} ${WRKSRC}/doc/images/${file} ${PREFIX}/share/doc/flac/images
 .endfor
 .endif
 
