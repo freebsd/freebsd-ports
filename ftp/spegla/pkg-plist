@@ -1,3 +1,5 @@
 bin/spegla
 share/examples/spegla/freebsd.org
+share/examples/spegla/spegla.conf
+share/examples/spegla/spegla.sh
 @dirrm share/examples/spegla
