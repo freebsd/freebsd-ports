@@ -1,10 +1,10 @@
---- src/ui/rules.cpp.orig	Tue Oct 15 17:35:07 2002
-+++ src/ui/rules.cpp	Tue Oct 15 17:22:11 2002
-@@ -366,7 +366,7 @@
+--- src/ui/rules.cpp.orig	Fri Jan 25 22:14:55 2002
++++ src/ui/rules.cpp	Wed Nov  6 00:32:49 2002
+@@ -362,7 +362,7 @@
  	r_modified = 0;
  	fl_delete_browser_line(rule_obj->Rule_List, k);
  	add_dead_rule(rules[i]);
--	rules.erase(&rules[i]);
+-	rules.erase((vector<struct _xf_rule *>::iterator) &rules[i]);
 +	rules.erase(rules.begin() + i);
  
  	changed = 1;

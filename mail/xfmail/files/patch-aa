@@ -1,9 +1,10 @@
---- src/ui/dialogs.auto.orig	Tue Jul  2 02:31:16 2002
-+++ src/ui/dialogs.auto	Tue Jul  2 02:31:29 2002
-@@ -1,6 +1,5 @@
- /* Form definition file generated with fdesign. */
+--- contrib/Makefile.am.orig	Wed Nov  6 10:04:08 2002
++++ contrib/Makefile.am	Wed Nov  6 10:04:18 2002
+@@ -4,6 +4,6 @@
+ 	xfmail-full.spec \
+ 	xfmail.spec
  
--#include "forms.h"
- #include <stdlib.h>
- #include "dialogs.h"
+-SUBDIRS = misc specfiles
++SUBDIRS = misc
  
+ DIST_SUBDIRS = $(SUBDIRS)
