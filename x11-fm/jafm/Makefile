@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jafm
-PORTVERSION= 	0.5
+PORTVERSION=	0.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www-personal.usyd.edu.au/~rlittlew/jafm/ \
 		${MASTER_SITE_SUNSITE}
