@@ -1,5 +1,5 @@
 @cwd /usr/X11R6
-@mode 755
+@mode 644
 lib/libXaw3d.a
 lib/libXaw3d.so.6.0
 include/X11/Xaw3d
