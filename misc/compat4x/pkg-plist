@@ -10,6 +10,7 @@ lib/compat/libfetch.so.2
 %%CURRENT_ONLY:%%lib/compat/libperl.so.3.compat4x
 %%CURRENT_ONLY:%%@exec ln -sf %f %B/libperl.so.3
 %%CURRENT_ONLY:%%lib/compat/libpam.so.1
+%%CURRENT_ONLY:%%%%I386_ONLY:%%lib/compat/libposix1e.so.2
 %%FORBIDDEN:%%lib/compat/libssl.so.1
 %%CURRENT_ONLY:%%lib/compat/libstdc++.so.3
 %%CURRENT_ONLY:%%lib/compat/libusb.so.0

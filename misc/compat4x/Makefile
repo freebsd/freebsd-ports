@@ -31,13 +31,8 @@ COMPAT4X_OSVERSION=	5.0
 COMPAT4X_OSBRANCH=	CURRENT
 COMPAT4X_MASTER_SITES=	ftp://current.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
 .if ${ARCH} == i386
-COMPAT4X_OSRELDATE=	20020917
-COMPAT4X_DISTFILES=	${PORTNAME}.aa \
-			${PORTNAME}.ab \
-			${PORTNAME}.ac \
-			${PORTNAME}.ad \
-			${PORTNAME}.ae \
-			${PORTNAME}.af
+COMPAT4X_OSRELDATE=	20021221
+COMPAT4X_DISTFILES=	${PORTNAME}.aa
 .elif ${ARCH} == alpha
 FORBIDDEN=		"FreeBSD-SA-02:28.resolv - buffer overflow in resolver in libc"
 
@@ -54,7 +49,7 @@ IGNORE=			unsupported architecture
 .endif
 CURRENT_ONLY=		""
 .else
-COMPAT4X_OSVERSION=	4.6.2
+COMPAT4X_OSVERSION=	4.7
 .if ${ARCH} == i386
 COMPAT4X_MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 COMPAT4X_DISTFILES=	${PORTNAME}.aa \
@@ -70,7 +65,14 @@ IGNORE=			unsupported architecture
 
 CURRENT_ONLY?=		"@comment "
 
-PLIST_SUB+=		CURRENT_ONLY:=${CURRENT_ONLY}
+.if ${ARCH} == i386
+I386_ONLY=		""
+.else
+I386_ONLY=		"@comment "
+.endif
+
+PLIST_SUB+=		CURRENT_ONLY:=${CURRENT_ONLY} \
+			I386_ONLY:=${I386_ONLY}
 
 OPENSSL_LIBS=		libcrypto.so.1 libssl.so.1
 .if defined(FORCE_VULNERABLE_OPENSSL)
