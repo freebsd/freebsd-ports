@@ -1,5 +1,5 @@
 # New ports collection makefile for:	rfc
-# Version required:			2.1
+# Version required:			2.2
 # Date created:				05 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	rfc
-PKGNAME=	rfc-2.1
+PKGNAME=	rfc-2.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 EXTRACT_SUFX=
