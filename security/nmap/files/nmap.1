@@ -1,0 +1,87 @@
+.\"
+.\" Copyright (c) 1998 David E. O'Brien
+.\"
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE DEVELOPERS ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE DEVELOPERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\" $Id$
+.\"
+.\" .TH NMAP 1L local
+.Dd August 4, 1998
+.Dt NMAP 1
+.Os BSD
+.Sh NAME
+.Nm nmap
+.Nd network port scanner
+.Sh SYNOPSIS
+.Nm nmap
+.Op Ar options
+.Ar hostname
+.Op Ar /mask
+.Sh DESCRIPTION
+.Nm
+is a utility for port scanning large networks, although it works fine for
+single hosts. The guiding philosophy for the creation of 
+.Nm
+was TMTOWTDI (There's More Than One Way To Do It). This is the Perl slogan, but
+it is equally applicable to scanners. Sometimes you need speed, other times you
+may need stealth. In some cases, bypassing firewalls may be required. Not to
+mention the fact that you may want to scan different protocols (UDP, TCP, ICMP,
+etc.). You just can't do all this with one scanning mode. And you don't want to
+have 10 different scanners around, all with different interfaces and
+capabilities. Thus
+.Nm 
+incorporats virtually every scanning technique known.
+Specifically, 
+.Nm 
+supports:
+
+      Vanilla TCP connect() scanning, 
+      TCP SYN (half open) scanning, 
+      TCP FIN (stealth) scanning, 
+      TCP ftp proxy (bounce attack) scanning 
+      SYN/FIN scanning using IP fragments (bypasses packet filters), 
+      UDP recvfrom() scanning, 
+      UDP raw ICMP port unreachable scanning, 
+      ICMP scanning (ping-sweep), and 
+      Reverse-ident scanning. 
+
+.Nm
+also supports a number of performance and reliability features such as dynamic
+delay time calculations, packet timeout and retransmission, parallel port
+scanning, detection of down hosts via parallel pings, and flexible target and
+port specification. 
+.Sh FILES
+none.
+.Sh SEE ALSO
+.Xr mscan 1L ,
+.Xr nc 1L ,
+.Xr scrobe 1L
+.Sh DIAGNOSTICS
+none.
+.Sh BUGS
+none known.
+.Sh AUTHORS
+This man page has been written by David O'Brien (obrien@cs.ucdavis.edu)
+.\" .Sh HISTORY
+.\" .Nm 
+.\" appeared in FreeBSD 3.0.
