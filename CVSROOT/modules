@@ -8041,6 +8041,7 @@ py-MySQL	ports/databases/py-MySQL
 py-MySQLdb	ports/databases/py-MySQLdb
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite	ports/databases/py-PySQLite
+py-PyX		ports/graphics/py-PyX
 py-SQLDict	ports/databases/py-SQLDict
 py-SciParam	ports/x11-toolkits/py-SciParam
 py-adns		ports/dns/py-adns
