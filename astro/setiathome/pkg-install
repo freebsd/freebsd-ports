@@ -1,0 +1,73 @@
+#!/bin/sh
+
+#
+# Set up the work area and run setiathome to login or register
+#
+
+DBDIR=/var/db/setiathome
+RCD=${PKG_PREFIX}/etc/rc.d/setiathome.sh
+USER=nobody
+
+case $2 in
+	POST-INSTALL)
+		rm -f ${RCD}
+		cat <<EOF >${RCD}
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX}
+DBDIR=${DBDIR}
+USER=${USER}
+
+case \$1 in
+	start)
+		if [ ! -d \${DBDIR} ]; then
+			logger -sp user.err -t setiathome "unable to start: \${DBDIR} is missing."
+			exit 72
+		fi
+		if [ ! -f \${DBDIR}/user_info.txt ]; then
+			logger -sp user.err -t setiathome "unable to start: please log in to SETI@home first."
+			exit 72
+		fi
+		su -m \${USER} -c \
+			"(cd \${DBDIR} && exec \${PREFIX}/bin/setiathome -email >/dev/null &)"
+		echo -n " SETI@home"
+		;;
+	stop)
+		killall setiathome
+esac
+EOF
+		chmod +x ${RCD}
+
+		echo "****  SETI@home requires a working directory for temporary files and"
+		echo "      a brief registration process."
+		echo "      Would you like to set up a working directory in ${DBDIR},"
+		echo "      register with SETI@home, and let me arrange for SETI@home to be"
+		echo -n "      started automatically [Y/n]? "
+		read a
+		echo ""
+		if [ "$a" = "N" -o "$a" = "n" ]; then
+			echo ""
+			echo "Please set up the working directory yourself.  See setiathome(1)"
+			echo "for details."
+			exit 0
+		fi
+
+		mkdir -p ${DBDIR}
+		chown ${USER} ${DBDIR}
+		chmod 755 ${DBDIR}
+
+		su -m nobody -c "cd ${DBDIR} && ${PKG_PREFIX}/bin/setiathome -login"
+
+		if [ ! -f ${DBDIR}/user_info.txt ]; then
+			echo "unable to start setiathome: it seems registration or login failed."
+			exit 72
+		fi
+		${RCD} start >/dev/null
+		echo
+		echo "****  Congratulations!  Your system now participates in the search for extra-"
+		echo "      terrestrial intelligence.  Be sure to visit the home page at"
+		echo "      http://setiathome.ssl.berkeley.edu/"
+		echo "      See setiathome(1) for further details."
+		;;
+
+esac

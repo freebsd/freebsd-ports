@@ -1,0 +1,79 @@
+.\" Copyright status unkown
+.Dd April 19, 1999
+.Dt setiathome 1 LOCAL
+.Os FreeBSD
+.Sh NAME
+.Nm setiathome
+.Nd the SETI@home client program
+.Sh SYNOPSIS
+.Nm
+.Op Ar options
+.Sh DESCRIPTION
+.Nm
+is the UNIX version of the SETI@home client. It downloads radio telescope
+data from a network server, analyzes the data looking for signals of
+extraterrestrial origin, and uploads results to the server, repeating this
+cycle indefinitely. See http://setiahome.ssl.berkeley.edu for more
+information.
+.Pp
+The first time you run
+.Nm
+it will interactively ask you for email address, name, country etc. This
+info is stored in a file and no interaction is needed when you run the
+program subsequently.
+.Pp
+After this you can run
+.Nm
+in the background, and direct its output to /dev/null if you like.
+.Pp
+.Nm
+can be freely aborted and restarted. It saves its state in files,
+and will pick up where it left off.
+.Pp
+If you wish
+.Nm
+to be started automatically, you may wish to setup a cron job.  The supplied
+script "set_cron_job" will create a script for running setiathome and add it
+to your crontab.  To use it, change to your
+.Nm
+directory and type "./set_cron_job" at the prompt.  For more information on
+cron jobs see the crontab(1) manual page.
+.Pp
+.Nm
+requires about 0.5\ MBytes of disk space in it's working directory, and about
+12\ MBytes of memory. If you have ample physical memory, it's work load
+should be almost undetectable.
+.Sh OPTIONS
+.Bl -tag -width indent
+.It Fl login
+Login or create new account.
+.It Fl countries
+Show list of country codes.
+.It Fl version
+Show software version
+.It Fl nice Ar N
+Set "nice" priority to 
+.Ar N
+(default 1);
+.It Fl email
+Send email (to login email address) on errors. Useful if you run in
+background directed to /dev/null.
+.El
+.Pp
+.Sh FILES
+The program generates several files with .txt extension
+in the directory from which it's run.
+These should not be modified.
+.Pp
+If you want to run multiple instances of setiathome
+(on a multiprocessor machine, or on multiple machines
+that share a filesystem) each one must be run
+in a different directory.
+.Pp
+setiathome uses a lock file (lock.txt) to prevent
+multiple instances from running in the same directory.
+.Sh AUTHORS
+SETI@home was developed by David Anderson, Jeff Cobb, Charlie
+Fenton, David Gedye, Kyle Granger, Eric Korpela, Matt Lebofsky,
+Peter Leiser, Brad Silen, Woody Sullivan, and Dan Werthimer.
+.Pp
