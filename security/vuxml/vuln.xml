@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="61480a9a-22b2-11d9-814e-0001020eed82">
+    <topic>cabextract -- insecure directory handling</topic>
+    <affects>
+      <package>
+	<name>cabextract</name>
+	<range><lt>1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cabextract has insufficient checks for file names that
+	  contain <q>../</q>.  This can cause files to be extracted to
+	  the parent directory.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.kyz.uklinux.net/cabextract.php#changes</url>
+    </references>
+    <dates>
+      <discovery>2004-10-18</discovery>
+      <entry>2004-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8091fcea-f35e-11d8-81b0-000347a4fa7d">
     <topic>a2ps -- insecure command line argument handling</topic>
     <affects>
