@@ -8,6 +8,7 @@
 
 PORTNAME=	g-wrap
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/ \
 		http://people.freebsd.org/~sobomax/
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_GNOMNG=	gtk12
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	GUILE_LOAD_PATH=${WRKSRC}
 
