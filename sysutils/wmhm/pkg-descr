@@ -1,0 +1,8 @@
+wmhm uses the SMBus Driver for PIIX4 provided by Takanori Watanabe to gather
+information from LM78/79 sensors to provide motherboard temperature, fan
+speeds and a voltmeter in a nice looking WindowMaker dock app.
+
+WWW: http://www.mongol.dhis.org/wmhm/
+
+- mikem
+mmuir@es.co.nz
