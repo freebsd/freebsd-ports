@@ -191,6 +191,7 @@
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
     SUBDIR += gtkballs
+    SUBDIR += gtklife
     SUBDIR += gtktetcolor
     SUBDIR += gturing
     SUBDIR += gtypist
