@@ -16,7 +16,6 @@ COMMENT=	${.CURDIR}/pkg-comment
 
 USE_RUBY=	yes
 
-USE_AUTOCONF=	yes
 MAKE_ARGS=	CONF_OPT_RUBY="--enable-rubyinterp" RUBY="${RUBY}"
 
 .include "${MASTERDIR}/Makefile"
