@@ -100,7 +100,6 @@ bin/doxywizard
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/doxygen.gif
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/files.html
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.dot
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.gif
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.html
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/hierarchy.html
@@ -290,9 +289,9 @@ bin/doxywizard
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/annotated.html
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test-members.html
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_4-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_4.gif
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_4.html
+%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_01_4-members.html
+%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_01_4.gif
+%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_01_4.html
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01void_01_5_00_01200_01_4-members.html
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01void_01_5_00_01200_01_4.gif
 %%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01void_01_5_00_01200_01_4.html
