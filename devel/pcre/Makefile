@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -20,9 +20,13 @@ COMMENT=	Perl Compatible Regular Expressions library
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	\
-		14	
+		14
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .if defined(WITH_UTF8)
 CONFIGURE_ARGS+=	\
@@ -43,19 +47,6 @@ MAN3=		pcre.3 pcre_compile.3 pcre_config.3 \
 		pcrepattern.3 pcreperform.3 pcreposix.3 \
 		pcresample.3
 
-TXTDOC=		Tech.Notes pcre.txt pcregrep.txt \
-		pcretest.txt perltest.txt
-HTMLDOC=	index pcre pcre_compile \
-		pcre_config pcre_copy_named_substring pcre_copy_substring \
-		pcre_exec pcre_free_substring pcre_free_substring_list \
-		pcre_fullinfo pcre_get_named_substring pcre_get_stringnumber \
-		pcre_get_substring pcre_get_substring_list pcre_info \
-		pcre_maketables pcre_study pcre_version \
-		pcreapi pcrebuild pcrecallout \
-		pcrecompat pcregrep pcrepattern \
-		pcreperform pcreposix pcresample \
-		pcretest
-
 pre-configure:
 	@${REINPLACE_CMD} -e '/^LIBTOOL=/s,\$$(top_builddir)/libtool,${LIBTOOL},g' \
 		${WRKSRC}/configure
@@ -64,14 +55,9 @@ post-install:
 	@${STRIP_CMD} ${STRIP} ${PREFIX}/bin/pcregrep
 	@${STRIP_CMD} ${STRIP} ${PREFIX}/bin/pcretest
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@for txt in ${TXTDOC}; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/$${txt} ${DOCSDIR}; \
-	done
-	@${MKDIR} ${DOCSDIR}/html
-	@for html in ${HTMLDOC}; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/html/$${html}.html ${DOCSDIR}/html; \
-	done
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/html
+	@cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog NEWS doc/Tech.Notes doc/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
 .endif
 
 .include <bsd.port.mk>
