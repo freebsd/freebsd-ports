@@ -50,7 +50,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${PREFIX}/lib/yaws/ebin
 	@${INSTALL_DATA} ${WRKSRC}/priv/* ${PREFIX}/lib/yaws/priv
 	@${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/lib/yaws/include
-	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -puv ${PREFIX}/www/yaws)
+	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${PREFIX}/www/yaws)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/www/yaws
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/man/*.5 ${MANPREFIX}/man/man5
