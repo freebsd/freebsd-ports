@@ -1,6 +1,5 @@
-diff -c -r src/ftpd.c.orig src/ftpd.c
 *** src/ftpd.c.orig	Wed Apr 13 23:17:18 1994
---- src/ftpd.c	Tue Oct 18 18:04:43 1994
+--- src/ftpd.c	Sat Dec 17 23:48:25 1994
 ***************
 *** 139,146 ****
    *freopen(const char *, const char *, FILE *);
@@ -24,27 +23,43 @@ diff -c -r src/ftpd.c.orig src/ftpd.c
   
 ***************
 *** 237,242 ****
---- 239,250 ----
+--- 239,254 ----
   
   #endif /* SETPROCTITLE */
   
 + #ifdef SKEY
++ #include <skey.h>
 + int	pwok = 0;
++ char	addr_string[20];
++ /*
 + char	*skey_challenge();
 + char	*skey_crypt();
++ */
 + #endif
 + 
   #ifdef KERBEROS
   void init_krb();
   void end_krb();
 ***************
+*** 279,284 ****
+--- 291,299 ----
+          exit(1);
+  #endif
+      }
++ #ifdef SKEY
++     strcpy(addr_string, inet_ntoa(his_addr.sin_addr));
++ #endif
+      addrlen = sizeof(ctrl_addr);
+      if (getsockname(0, (struct sockaddr *) &ctrl_addr, &addrlen) < 0) {
+          syslog(LOG_ERR, "getsockname (%s): %m", argv[0]);
+***************
 *** 878,884 ****
---- 886,897 ----
+--- 893,904 ----
       } else
           acl_setfunctions();
   
 + #ifdef SKEY
-+     pwok = skeyaccess(name, NULL, remotehost);
++     pwok = skeyaccess(name, NULL, remotehost, addr_string);
 +     reply(331, "%s", skey_challenge(name, pw, pwok));
 + #else
       reply(331, "Password required for %s.", name);
@@ -54,7 +69,7 @@ diff -c -r src/ftpd.c.orig src/ftpd.c
        * passwd-guessing programs. */
 ***************
 *** 1007,1013 ****
---- 1020,1031 ----
+--- 1027,1038 ----
   #ifdef KERBEROS
           xpasswd = crypt16(passwd, salt);
   #else
