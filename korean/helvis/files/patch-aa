@@ -1,0 +1,20 @@
+diff -c -r ../helvis-1.8h2-ori/config.h ./config.h
+*** ../helvis-1.8h2-ori/config.h	Wed Apr  5 18:21:19 1995
+--- ./config.h	Wed Apr  2 21:54:21 1997
+***************
+*** 417,423 ****
+  
+  /******************* Names of files and environment vars **********************/
+  
+! #ifdef __386BSD__
+  # define PRSVDIR	"/var/preserve"
+  # define PRSVINDEX	"/var/preserve/Index"
+  # define TMPDIR		"/var/tmp"
+--- 417,423 ----
+  
+  /******************* Names of files and environment vars **********************/
+  
+! #if defined(__386BSD__) || defined(__FreeBSD__)
+  # define PRSVDIR	"/var/preserve"
+  # define PRSVINDEX	"/var/preserve/Index"
+  # define TMPDIR		"/var/tmp"

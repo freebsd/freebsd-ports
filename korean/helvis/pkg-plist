@@ -1,0 +1,15 @@
+bin/helvis
+bin/hvi
+bin/hex
+bin/hview
+bin/hinput
+bin/ctags
+bin/ref
+bin/elvrec
+bin/elvprsv
+man/man1/ctags.1.gz
+man/man1/elvis.1.gz
+man/man1/elvprsv.1.gz
+man/man1/elvrec.1.gz
+man/man1/fmt.1.gz
+man/man1/ref.1.gz
