@@ -1,21 +1,21 @@
 %%UTDIR%%Patches/CSHP-4+-patch.tar.gz
-%%UTDIR%%Patches/asu-0.4-redirectfix-0.1-patch.tar.gz
-%%UTDIR%%Lib/umodpack-abf/Tie/IxHash.pm
-%%UTDIR%%Lib/umodpack-abf/umod
-%%UTDIR%%Lib/umodpack-abf/Umod.pm
-%%UTDIR%%Lib/umodpack-abf/IniFile.pm
-%%PORTDOCS%%%%UTDIR%%Lib/gpl.txt.gz
-%%PORTDOCS%%%%UTDIR%%Lib/help.txt.gz
-%%UTDIR%%Lib/legacy-asu-script-0.1.sh
-%%PORTDOCS%%%%UTDIR%%Lib/legal.txt.gz
-%%UTDIR%%Lib/umod.pl
-%%UTDIR%%Lib/settings.ini
-%%UTDIR%%Lib/UnrealTournament.ini.gz
-%%UTDIR%%Lib/User.ini.gz
-%%UTDIR%%Lib/ucc.init.gz
-%%UTDIR%%Lib/asu-main.sh
+%%UTDIR%%ASU/umodasu/IxHash.pm
+%%UTDIR%%ASU/umodasu/umodasu.pm
+%%UTDIR%%ASU/umodasu/Umod.pm
+%%UTDIR%%ASU/umodasu/Ini.pm
+%%UTDIR%%ASU/umodasu/rc.umod
+%%PORTDOCS%%%%UTDIR%%ASU/gpl.txt.gz
+%%PORTDOCS%%%%UTDIR%%ASU/help.txt.gz
+%%UTDIR%%ASU/legacy-asu-script-0.1.sh
+%%PORTDOCS%%%%UTDIR%%ASU/legal.txt.gz
+%%UTDIR%%ASU/umod.pl
+%%UTDIR%%ASU/settings.ini
+%%UTDIR%%ASU/UnrealTournament.ini.gz
+%%UTDIR%%ASU/User.ini.gz
+%%UTDIR%%ASU/ucc.init.gz
+%%UTDIR%%ASU/asu-main.sh
 %%UTDIR%%asu.sh
 @dirrm %%UTDIR%%Patches
-@dirrm %%UTDIR%%Lib/umodpack-abf/Tie
-@unexec rmdir %D/%%UTDIR%%Lib/umodpack-abf 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%UTDIR%%Lib/umodpack-abf`` to remove any configuration files and logs left." | fmt
-@unexec rmdir %D/%%UTDIR%%Lib 2>/dev/null || true
+@dirrm %%UTDIR%%ASU/umodasu
+@unexec rmdir %D/%%UTDIR%%ASU/umodasu 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%UTDIR%%ASU/umodasu`` to remove any configuration files and logs left." | fmt
+@unexec rmdir %D/%%UTDIR%%ASU 2>/dev/null || true

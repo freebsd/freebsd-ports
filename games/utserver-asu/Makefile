@@ -6,34 +6,27 @@
 #
 
 PORTNAME=	asu
-PORTVERSION=	0.4
-PORTREVISION=	2
-MASTER_SITES=	ftp://ftp.abfackeln.com/pub/linux/ut/
-DISTFILES=	asu-${PORTVERSION}.tar.gz \
-		asu-0.4-redirectfix-0.1-patch.tar.gz \
-		CSHP-4+-patch.tar.gz
-EXTRACT_ONLY=	asu-${PORTVERSION}.tar.gz
+PORTVERSION=	0.5
+MASTER_SITES=	ftp://ftp.abfackeln.com/pub/linux/ut/asu/
+DISTNAME=	asu-${PORTVERSION}
 
 MAINTAINER=	matuska@wu-wien.ac.at
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=		${WRKDIR}/Abfackeln.com
+NO_WRKSUBDIR=	yes
 DONT_USE_ZIP=	yes
 DO_USE_WRKSUBDIR=	yes
 EXECUTABLES=	pl
+GZIP=		9
 
 post-extract:
-	@${GZIP_CMD} -9c ${FILESDIR}/ucc.init > ${WRKSRC}/Lib/ucc.init.gz
-	@${RM} -f ${WRKSRC}/Patches/*
-.for files in ${DISTFILES:S/${EXTRACT_ONLY}//}
-	@${CP} -f ${DISTDIR}/${files} ${WRKSRC}/Patches
-.endfor
+	@${GZIP_CMD} -c ${FILESDIR}/ucc.init > ${WRKSRC}/ASU/ucc.init.gz
 
 post-patch:
 	@${SED} -e "s|%%LINUXBASE%%|${LINUXBASE}|" \
 		-e "s|%%UTDIR%%|${UTDIR}|" \
-		${FILESDIR}/template-settings.ini > ${WRKSRC}/Lib/settings.ini
+		${FILESDIR}/template-settings.ini > ${WRKSRC}/ASU/settings.ini
 
 UT_MASTER_PORT=	${.CURDIR}/../utserver-to
 
