@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.swampwolf.com/pub/
 MAINTAINER=	paul@aps.org
 COMMENT=	Zeroconf/Rendezvous implementation
 
+ONLY_FOR_ARCHS= i386
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
