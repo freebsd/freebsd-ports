@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wm-oldmenu2new
 # Date created:		6 September 2002
-# Whom:			Bruce M Simpson <bms@spc.org>
+# Whom:			Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://largo.windowmaker.org/files/
 DISTNAME=	wm-oldmenu2new
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Script to convert WindowMaker RootMenu menus to new PropList format
 
 USE_X_PREFIX=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    picasm
 # Date created:         25 October 2002
-# Whom:                 Bruce M Simpson <bms@spc.org>
+# Whom:                 Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.co.jyu.fi/~trossi/pic/ \
 		http://hyvatti.iki.fi/~jaakko/pic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Portable assembler for 16C84 series PICs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wmwave
 # Date created:		27 December 2001
-# Whom:			Bruce M Simpson <bms@spc.org>
+# Whom:			Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.schuermann.org/~dockapps/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Display 802.11 status in the WindowMaker Dock
 
 MAKEFILE=	${FILESDIR}/Makefile

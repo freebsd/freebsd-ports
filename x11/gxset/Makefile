@@ -1,6 +1,6 @@
 # New ports collection makefile for:	gxset
 # Date created:		27 December 2001
-# Whom:			Bruce M Simpson <bms@spc.org>
+# Whom:			Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	GTK frontend for xset(1)
 
 USE_GETOPT_LONG=yes
