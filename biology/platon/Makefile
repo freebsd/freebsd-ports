@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	platon
-PORTVERSION=	2001.03.09
-PORTREVISION=	1
+PORTVERSION=	2003.12.04
 CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon
@@ -19,8 +18,6 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 # the condition that it is not redistributed for a current & fresh copy.
 # There is a charge of US$ 5000 for commercial users.
 RESTRICTED=	"free for academic, US$ 5000 for commercial users"
-
-BROKEN=		"Broken pkg-plist, will be removed after Feb 2"
 
 USE_XLIB=	yes
 
