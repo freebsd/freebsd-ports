@@ -1,3 +1,4 @@
+www/data/WebSVN/blame.php
 www/data/WebSVN/cache/tmp
 www/data/WebSVN/changes.txt
 www/data/WebSVN/diff.php
@@ -17,12 +18,21 @@ www/data/WebSVN/install.txt
 www/data/WebSVN/languages/english.inc
 www/data/WebSVN/languages/french.inc
 www/data/WebSVN/languages/german.inc
+www/data/WebSVN/languages/japanese-euc.inc
+www/data/WebSVN/languages/japanese-jis.inc
+www/data/WebSVN/languages/japanese-sjis.inc
+www/data/WebSVN/languages/japanese-utf8.inc
+www/data/WebSVN/languages/korean-euc.inc
+www/data/WebSVN/languages/korean-utf8.inc
 www/data/WebSVN/languages/portuguese.inc
+www/data/WebSVN/languages/russian.inc
+www/data/WebSVN/languages/swedish.inc
 www/data/WebSVN/licence.txt
 www/data/WebSVN/listing.php
 www/data/WebSVN/log.php
 www/data/WebSVN/rss.php
 www/data/WebSVN/templates.txt
+www/data/WebSVN/templates/BlueGrey/blame.tmpl
 www/data/WebSVN/templates/BlueGrey/diff.tmpl
 www/data/WebSVN/templates/BlueGrey/directory.tmpl
 www/data/WebSVN/templates/BlueGrey/file.png
@@ -40,6 +50,7 @@ www/data/WebSVN/templates/BlueGrey/repo.png
 www/data/WebSVN/templates/BlueGrey/styles.css
 www/data/WebSVN/templates/BlueGrey/subversion.png
 www/data/WebSVN/templates/BlueGrey/xml.gif
+www/data/WebSVN/templates/Standard/blame.tmpl
 www/data/WebSVN/templates/Standard/diff.tmpl
 www/data/WebSVN/templates/Standard/directory.tmpl
 www/data/WebSVN/templates/Standard/file.tmpl

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	websvn
-PORTVERSION=	1.40
+PORTVERSION=	1.51
 CATEGORIES=	devel www
-MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/10659/
+MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/14334/
 DISTNAME=	WebSVN_${PORTVERSION:S/.//}
 
 MAINTAINER=	ychsiao@ychsiao.idv.tw
