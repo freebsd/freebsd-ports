@@ -412,7 +412,6 @@
     SUBDIR += xjman-3
     SUBDIR += xjtext
     SUBDIR += xmsgsaver
-    SUBDIR += xnetmaj
     SUBDIR += xpdf
     SUBDIR += xshodo
     SUBDIR += xshodou
