@@ -1,0 +1,11 @@
+--- stats.orig	Fri Nov 23 13:20:38 2001
++++ stats	Fri Nov 23 13:20:58 2001
+@@ -22,7 +22,7 @@
+ my $starttime 		= time();	# time when stats update started.
+ 
+ my $OS			= $^O;
+-my $os_slash		= ($OS eq 'linux') ? '/' : '\\';
++my $os_slash		= ($OS eq 'linux' or 'FreeBSD') ? '/' : '\\';
+ my $progpath		= &getprogdir();		# relative path the script is running in.
+ 
+ #push(@INC,$progpath);

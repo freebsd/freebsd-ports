@@ -130,6 +130,7 @@
     SUBDIR += hlserver-heroes
     SUBDIR += hlserver-opfor
     SUBDIR += hlserver-oz
+    SUBDIR += hlserver-psychostats
     SUBDIR += hlserver-pvk
     SUBDIR += hlserver-si
     SUBDIR += hlserver-snow
