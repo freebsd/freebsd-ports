@@ -6,7 +6,8 @@
 PORTNAME=	sdl
 PORTVERSION=	1.18.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.sdlperl.org/downloads/
+MASTER_SITES=	http://www.sdlperl.org/downloads/ \
+		ftp://sdlperl.org/SDL_perl/old/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	SDL_perl-${PORTVERSION}
 
