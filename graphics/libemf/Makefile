@@ -17,10 +17,6 @@ GNU_CONFIGURE=  yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on ia64 or amd64"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

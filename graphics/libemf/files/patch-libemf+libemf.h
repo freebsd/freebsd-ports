@@ -1,5 +1,28 @@
 --- libemf/libemf.h.orig	Wed Mar 17 20:00:10 2004
 +++ libemf/libemf.h	Wed Mar 17 20:00:10 2004
+@@ -21,16 +21,22 @@
+ #ifndef _LIBEMF_H
+ #define _LIBEMF_H 1
+ 
++#include <iostream>
+ #include <cmath>
+ #include <vector>
+ #include <map>
+ #include <functional>
++#if __GNUC__ > 2
++#include <backward/function.h>
++#endif
+ #include <algorithm>
+ 
+ #include <config.h>
+ #include <emf.h>
+ 
+ #include <wine/w16.h>
++
++using namespace std;
+ 
+ namespace EMF {
+   /*!
 @@ -338,7 +338,7 @@
  	fread( &dword, sizeof(DWORD), 1, fp_ );
        return *this;
