@@ -233,6 +233,7 @@
     SUBDIR += imcom
     SUBDIR += iog
     SUBDIR += ip6_int
+    SUBDIR += ipaudit
     SUBDIR += ipcad
     SUBDIR += ipcalc
     SUBDIR += ipcheck

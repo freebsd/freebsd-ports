@@ -1,0 +1,50 @@
+--- src/Makefile.orig	Mon Jan  8 05:56:59 2001
++++ src/Makefile	Tue Jul 15 18:19:58 2003
+@@ -1,36 +1,36 @@
+-CIDIR=-I/usr/include/pcap
++#CIDIR=-I/usr/include/pcap
+ 
+ #LIB=../../libpcap-0.5/libpcap.a
+ LIB=-lpcap
+ 
+-all: ipaudit total ipstrings beta-dir
++all: ipaudit total ipstrings
+ 
+ ipaudit: ipaudit.o hash.o
+-	$(CC) -o ipaudit ipaudit.o hash.o $(LIB)
++	$(CC) $(CFLAGS) -o ipaudit ipaudit.o hash.o $(LIB)
+ 
+ total: total.o hash.o
+-	$(CC) -o total total.o hash.o -lm
++	$(CC) $(CFLAGS) -o total total.o hash.o -lm
+ 
+ ipstrings: ipstrings.o
+-	$(CC) -o ipstrings ipstrings.o $(LIB)
++	$(CC) $(CFLAGS) -o ipstrings ipstrings.o $(LIB)
+ 
+ ipaudit.o: ipaudit.c hash.h
+-	$(CC) -c ipaudit.c $(CIDIR) $(DFLAGS)
++	$(CC) $(CFLAGS) -c ipaudit.c $(CIDIR) $(DFLAGS)
+ 
+ hash.o: hash.c hash.h
+-	$(CC) -c hash.c
++	$(CC) $(CFLAGS) -c hash.c
+ 
+ total.o: total.c hash.c hash.h
+-	$(CC) -c total.c
++	$(CC) $(CFLAGS) -c total.c
+ 
+ ipstrings.o: ipstrings.c
+-	$(CC) -c ipstrings.c $(CIDIR) $(DFLAGS)
++	$(CC) $(CFLAGS) -c ipstrings.c $(CIDIR) $(DFLAGS)
+ 
+ iprange: iprange.c
+ 	$(CC) -g -o iprange iprange.c
+ 
+-beta-dir:
+-	$(MAKE) -C beta
++#beta-dir:
++#	$(MAKE) -C beta
+ 
+ clean:
+ 	rm -f *.o

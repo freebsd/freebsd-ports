@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Oct 18 01:38:27 2000
++++ Makefile	Tue Jul 15 18:20:49 2003
+@@ -8,10 +8,10 @@
+ BIN=ipaudit ipstrings total pdate
+ 
+ MAKE=make
+-CIDIR=-I/usr/include/pcap
++#CIDIR=-I/usr/include/pcap
+ 
+ all:
+-	$(MAKE) -C src all
++	cd src && $(MAKE) all
+ 
+ clean:
+ 	$(MAKE) -C src clean

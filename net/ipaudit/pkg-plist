@@ -1,0 +1,6 @@
+bin/ipaudit
+bin/ipstrings
+bin/total
+etc/ipaudit.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,21 @@
+Would you like to summarize and/or log network activity down to the ip address
+and port level of detail, but not record every packet?
+
+Ipaudit provides that ability.
+
+Ipaudit listens to a network device in promiscuous mode, and records of every
+'connection', each conversation between two ip addresses. A unique connection
+is determined by the ip addresses of the two machines, the protocol used
+between them and the port numbers (if they are communicating via udp or tcp).
+
+It uses a hash table to keep track of the number of bytes and packets in both
+directions. When ipaudit receives a signal SIGTERM (kill) or SIGINT (kill -2,
+usually the same as a Control-C), it stops collecting data and writes the
+tabulated results.
+
+Ipaudit is built using the pcap packet capture library to read the network port
+from LBNL Network Research Group.
+
+WWW: http://ipaudit.sourceforge.net/
+
+Maintainer: "Ying-Chieh Chen" <yinjieh@csie.nctu.edu.tw>
