@@ -9178,3 +9178,4 @@ ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
 p5-Unicode-Lite	ports/converters/p5-Unicode-Lite
 p5-Test-MockObject	ports/devel/p5-Test-MockObject
+rc_subr		ports/sysutils/rc_subr
