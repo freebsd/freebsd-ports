@@ -1,0 +1,11 @@
+--- imap/deliver.c.orig	Tue Jan  4 17:49:02 2000
++++ imap/deliver.c	Tue Oct 31 22:49:37 2000
+@@ -821,7 +821,7 @@
+     }
+ }
+ 
+-#define SENDMAIL "/usr/lib/sendmail"
++#define SENDMAIL "/usr/sbin/sendmail"
+ #define POSTMASTER "postmaster"
+ 
+ static char *month[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun",

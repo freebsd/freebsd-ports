@@ -10,3 +10,10 @@ imap4	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/imapd	imapd
 # To be able to access the IMAP mailbox by POP-3, use this line.
 pop3	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/pop3d	pop3d
 #
+# Program to upload user sieve scripts to the IMAP server.
+#
+# NOTE: you will need to add "sieve" to /etc/services.
+#       timsieved uses port 2000.
+#
+sieve   strean  tcp     nowait  cyrus   /usr/local/cyrus/bin/timsieved  sieve
+
