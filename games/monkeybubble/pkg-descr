@@ -4,6 +4,8 @@ it has monkeys.
 
 Note that the game seems to want a couple hundred megs of
 memory to start, but once the UI comes up, it only consumes
-about 25MB. We're working on it, but the game plays fine.
+about 25MB. The game plays fine, but someone still needs to
+track down exactly why this memory appears on FreeBSD (and
+not on Linux).
 
 WWW: http://monkey-bubble.tuxfamily.org/
