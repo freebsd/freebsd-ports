@@ -1,0 +1,10 @@
+--- configure.orig	Wed Feb 20 12:39:08 2002
++++ configure	Wed Feb 20 12:39:39 2002
+@@ -1240,6 +1240,7 @@
+ # The aliases save the names the user supplied, while $host etc.
+ # will get canonicalized.
+ test -n "$target_alias" &&
++  test "$target_alias" != "$host_alias" &&
+   test "$program_prefix$program_suffix$program_transform_name" = \
+     NONENONEs,x,x, &&
+   program_prefix=${target_alias}-

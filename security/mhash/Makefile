@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhash
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.13
 CATEGORIES=	security
 MASTER_SITES=	http://mhash.sourceforge.net/dl/
 
@@ -17,5 +17,8 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--with-LDFLAGS="${PTHREAD_LIBS}"
 
 MAN3=		mhash.3
+
+post-extract:
+	${CP} ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 .include <bsd.port.mk>
