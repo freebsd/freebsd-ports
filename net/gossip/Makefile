@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gossip
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
@@ -18,7 +18,7 @@ LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
