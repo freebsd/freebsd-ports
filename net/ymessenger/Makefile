@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
+ONLY_FOR_ARCHS=	i386
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GTK=	yes
