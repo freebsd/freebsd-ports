@@ -1,0 +1,11 @@
+--- backend/Makefile.in.orig	Thu Mar 22 16:48:30 2001
++++ backend/Makefile.in	Thu Mar 22 16:50:53 2001
+@@ -69,7 +69,7 @@
+ LIBOBJS = $(addprefix ../lib/,$(addsuffix .lo,$(LIBLIB_FUNCS)))
+ 
+ libsane-%.la: %.lo %-s.lo $(EXTRA) $(LIBOBJS)
+-	@$(LIBTOOL) $(MLINK) $(CC) -export-dynamic -o $@ $($*_LIBS) \
++	@$(LIBTOOL) $(MLINK) $(CC) -avoid-version -module -o $@ $($*_LIBS) \
+ 	$(LDFLAGS) $(BACKENDLIBS) $^ -rpath $(libsanedir) \
+ 	-version-info $(V_MAJOR):$(V_REV):$(V_MINOR)
+ 
