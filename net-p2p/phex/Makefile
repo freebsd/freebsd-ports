@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phex
-PORTVERSION=	2.0.0.76
-PORTREVISION=	2
+PORTVERSION=	2.2.0.83
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,10 +26,12 @@ JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 
 DOC_FILES=	Phex_other.htm Phex_win.htm
-JAR_FILES=	crimson-rt.jar jaxb-api.jar jaxb-libs-rt.jar \
-		forms-1.0.4.jar \
-		looks-1.2.2.jar \
-		jaxb-ri-rt.jar jaxp.jar phex.jar
+JAR_FILES=	\
+		commons-logging.jar \
+		forms-1.0.5.jar \
+		jaxb.jar \
+		looks-1.3rc.jar \
+		phex.jar
 
 PORTDOCS=	${DOC_FILES}
 
