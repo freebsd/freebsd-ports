@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.130 1999/04/24 22:51:09 obrien Exp $
+# $Id: Makefile,v 1.131 1999/04/28 09:47:15 jkoshy Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -43,6 +43,7 @@
     SUBDIR += javac_netscape
     SUBDIR += jdk
     SUBDIR += jdk-doc
+    SUBDIR += jdk-tutorial
     SUBDIR += jikes
     SUBDIR += kaffe
     SUBDIR += lcc
@@ -61,6 +62,7 @@
     SUBDIR += o2c
     SUBDIR += objc
     SUBDIR += ocaml
+    SUBDIR += otcl
     SUBDIR += p2c
     SUBDIR += p5-Tcl
     SUBDIR += p5-ePerl
