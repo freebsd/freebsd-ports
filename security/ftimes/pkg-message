@@ -1,0 +1,19 @@
+
+----------------------------------------------------------------------
+  If necessary, check the value of ${PREFIX} and update your PATH
+  and MANPATH environment variables accordingly. By default, FTimes
+  is rooted in the following location: /usr/local/integrity.
+
+  For information on how to configure an Apache Web server to handle
+  FTimes requests and verify client-server connectivity, refer to
+  the INSTALL document located in the project's source tree.
+
+  "System Baselining -- A Forensic Perspective" provides additional
+  background information for those interested in the subject. This
+  paper, written in LaTeX, is called baselining.tex and is located
+  in the project's source tree. A PDF version of the same is
+  available at: http://ftimes.sourceforge.net/FTimes/Papers.shtml
+
+  Sample configuration files can be found in ${PREFIX}/etc.
+----------------------------------------------------------------------
+
