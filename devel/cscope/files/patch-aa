@@ -1,15 +1,6 @@
---- src/constants.h.orig	Fri Jun  1 08:43:24 2001
-+++ src/constants.h	Mon Aug  6 22:35:45 2001
-@@ -43,7 +43,7 @@
- 
- /* database output macros that update its offset */
- #define	dbputc(c)	(++dboffset, (void) putc(c, newrefs))
--#if Linux || BSD && !sun
-+#if Linux || __FreeBSD__ || BSD && !sun
- #define	dbfputs(s)	(dboffset += strlen(s), fputs(s, newrefs))
- #else
- #define	dbfputs(s)	(dboffset += fputs(s, newrefs))
-@@ -98,7 +98,7 @@
+--- src/constants.h.orig	Sun Jul 28 09:22:38 2002
++++ src/constants.h	Mon Aug  5 12:07:50 2002
+@@ -95,7 +95,7 @@
  #define INCLUDES	8
  #define	FIELDS		9
  
