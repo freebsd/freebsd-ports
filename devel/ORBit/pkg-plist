@@ -67,9 +67,6 @@ include/orbit-1.0/orb/poa.h
 include/orbit-1.0/orb/sequences.h
 include/orbit-1.0/orb/typecode.h
 include/orbit-1.0/orbit-idl2.h
-@unexec install-info --delete %D/info/libIDL.info %D/info/dir
-info/libIDL.info
-@exec install-info %D/info/libIDL.info %D/info/dir
 lib/libIDL.a
 lib/libIDL.so
 lib/libIDL.so.2

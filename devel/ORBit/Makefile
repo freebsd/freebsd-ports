@@ -19,14 +19,15 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib12
+USE_GNOME=	glib12 gnometarget
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure popt/configure libIDL/configure
 CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+INFO=		libIDL
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/configure
