@@ -31,6 +31,7 @@ CUT?=	/usr/bin/cut
 
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
 DIST_SUBDIR=		openoffice
+DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 #
 # configuration for language specific slave ports
 #
@@ -114,7 +115,7 @@ EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
 EXTRACT_CMD_L?=	unzip
 EXTRACT_BEFORE_ARGS_L?=	-q -o
-EXTRACT_AFTER_ARGS_L?=	-d ${WRKDIR}
+EXTRACT_AFTER_ARGS_L?=	-d ${DICT_DIR}
 EXTRACT_REST=	gpc231.tar.Z ${MOZILLADIST} oo_moz_1.0_includes.tgz
 
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
@@ -345,7 +346,7 @@ install-user:
 post-install:
 	@${ECHO_MSG} "===>  Add spelling dictionaries";
 	@for file in ${EXTRACT_LANGDIST}; do \
-		if ! (cd ${PREFIX}/${INSTALLATION_BASEDIR}/user/wordbook && ${EXTRACT_CMD_L} \
+		if ! (cd ${DICTDIR}/ && ${EXTRACT_CMD_L} \
 			${EXTRACT_BEFORE_ARGS_L} \
 			${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS_L}) ; \
 		then \
@@ -355,7 +356,7 @@ post-install:
 		COUNTRY=`${ECHO_CMD} $$ABRV | ${SED} -e 's|_.*||'`; \
 		LANGUAGE=`${ECHO_CMD} $$ABRV | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
 		${ECHO_CMD} "DICT $$COUNTRY $$LANGUAGE $$ABRV" >> \
-			${PREFIX}/${INSTALLATION_BASEDIR}/user/wordbook/dictionary.lst ; \
+			${DICT_DIR}/dictionary.lst ; \
 	done
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type f > ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
