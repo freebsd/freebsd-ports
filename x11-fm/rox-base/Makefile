@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox-base
-PORTVERSION=	0.1.29
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -14,10 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@uli.it
 
-WRKSRC=		${WRKDIR}/rox-base
-
-do-build:
-	@${ECHO} "Nothing to build"
+NO_BUILD= 	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/share/Choices
