@@ -821,6 +821,7 @@ c2man		ports/devel/c2man
 c2mdoc		ports/devel/c2mdoc
 c2ps-a4		ports/print/c2ps-a4
 c2ps-letter	ports/print/c2ps-letter
+c3270		ports/net/c3270
 c4		ports/devel/c4
 c_c++_reference	ports/devel/c_c++_reference
 c_parser	ports/devel/c_parser
