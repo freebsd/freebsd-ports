@@ -192,7 +192,7 @@ pre-everything::
 	@${ECHO_MSG}	""
 
 post-extract:
-	@${INSTALL_DATA} ${DISTDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
 
 post-patch:
 	@cd ${WRKSRC}/docs/docroot && \
