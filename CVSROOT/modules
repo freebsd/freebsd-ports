@@ -9140,6 +9140,7 @@ py-soappy	ports/net/py-soappy
 py-soapy	ports/net/py-soapy
 py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
+py-spf		ports/mail/py-spf
 py-spreadmodule	ports/net/py-spreadmodule
 py-sqlobject	ports/databases/py-sqlobject
 py-sqlrelay	ports/databases/py-sqlrelay
