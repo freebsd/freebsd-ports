@@ -24,21 +24,21 @@ lib/xsystem35/nDEMOE.so
 lib/xsystem35/oDEMO.so
 lib/xsystem35/oujimisc.so
 lib/xsystem35/tDemo.so
-%%PORTDOCS%%share/doc/ja/xsystem35/BUGS
-%%PORTDOCS%%share/doc/ja/xsystem35/ChangeLog
-%%PORTDOCS%%share/doc/ja/xsystem35/ChangeLog.1
-%%PORTDOCS%%share/doc/ja/xsystem35/FAQ
-%%PORTDOCS%%share/doc/ja/xsystem35/GAMES.TXT
-%%PORTDOCS%%share/doc/ja/xsystem35/GRFMT.TXT
-%%PORTDOCS%%share/doc/ja/xsystem35/INSTALL
-%%PORTDOCS%%share/doc/ja/xsystem35/MISCGAME.TXT
-%%PORTDOCS%%share/doc/ja/xsystem35/README
-%%PORTDOCS%%share/doc/ja/xsystem35/README.color
-%%PORTDOCS%%share/doc/ja/xsystem35/README.joystick
-%%PORTDOCS%%share/doc/ja/xsystem35/README.music
-%%PORTDOCS%%share/doc/ja/xsystem35/TECH.TXT
-%%PORTDOCS%%share/doc/ja/xsystem35/THANKS
-%%PORTDOCS%%share/doc/ja/xsystem35/TODO
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.1
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/GAMES.TXT
+%%PORTDOCS%%%%DOCSDIR%%/GRFMT.TXT
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/MISCGAME.TXT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.color
+%%PORTDOCS%%%%DOCSDIR%%/README.joystick
+%%PORTDOCS%%%%DOCSDIR%%/README.music
+%%PORTDOCS%%%%DOCSDIR%%/TECH.TXT
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%EXAMPLESDIR%%/20cDPS.inf
 %%EXAMPLESDIR%%/20cKaeru.inf
 %%EXAMPLESDIR%%/456atlach.inf
@@ -86,5 +86,5 @@ lib/xsystem35/tDemo.so
 %%EXAMPLESDIR%%/zero_new.inf
 share/locale/ja/LC_MESSAGES/xsystem35.mo
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm share/doc/ja/xsystem35
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/xsystem35
