@@ -43,7 +43,7 @@ while [ "$1" ]; do
 			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${CURDIR}/Makefile.inc
 			;;
 		\"MySQL\")
-			echo "BUILD_DEPENDS+=		mysql:\${PORTSDIR}/databases/mysql" >> ${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		mysql:\${PORTSDIR}/databases/mysql321" >> ${CURDIR}/Makefile.inc
 			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}" >> ${CURDIR}/Makefile.inc
 			;;
 		\"PostgresSQL\")
