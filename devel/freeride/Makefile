@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	freeride
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/2030/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/2185/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Ruby Integrated Developement Environment written in Ruby
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox.so:${PORTSDIR}/x11-toolkits/ruby-fox \
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox12.so:${PORTSDIR}/x11-toolkits/ruby-fox-devel \
 		${RUBY_SITELIBDIR}/freebase/freebase.rb:${PORTSDIR}/devel/freebase
 
 USE_RUBY=	yes
