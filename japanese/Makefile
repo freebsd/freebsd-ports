@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.193 1999/03/31 11:54:46 flathill Exp $
+# $Id: Makefile,v 1.194 1999/04/04 18:12:40 sada Exp $
 #
 
     SUBDIR += Canna
@@ -172,6 +172,7 @@
     SUBDIR += ptex-sjis
     SUBDIR += qkc
     SUBDIR += recjis
+    SUBDIR += rubytk
     SUBDIR += rxvt
     SUBDIR += sed
     SUBDIR += sj3
