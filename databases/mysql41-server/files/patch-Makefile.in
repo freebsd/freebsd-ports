@@ -1,16 +1,16 @@
---- Makefile.in.orig	Fri May 28 21:38:32 2004
-+++ Makefile.in	Mon May 31 15:10:44 2004
-@@ -282,12 +282,7 @@
+--- Makefile.in.orig	Thu Aug 26 23:47:06 2004
++++ Makefile.in	Thu Sep  2 12:49:11 2004
+@@ -297,12 +297,7 @@
  
  # These are built from source in the Docs directory
- EXTRA_DIST = INSTALL-SOURCE README COPYING zlib
--SUBDIRS = . include @docs_dirs@ \
+ EXTRA_DIST = INSTALL-SOURCE README COPYING EXCEPTIONS-CLIENT
+-SUBDIRS = . include @docs_dirs@ @zlib_dir@ \
 -			@readline_topdir@ sql-common \
 -			@thread_dirs@ pstack @sql_client_dirs@ \
--			@sql_server_dirs@ scripts man tests SSL\
--			BUILD netware os2 @libmysqld_dirs@ \
+-			@sql_server_dirs@ scripts man tests \
+-			netware @libmysqld_dirs@ \
 -			@bench_dirs@ support-files @fs_dirs@ @tools_dirs@
 +SUBDIRS =
  
  
- # Relink after clean
+ DIST_SUBDIRS = . include @docs_dirs@ zlib \
