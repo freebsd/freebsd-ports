@@ -90,6 +90,7 @@
     SUBDIR += mailcrypt
     SUBDIR += maildrop
     SUBDIR += mailfilter
+    SUBDIR += mailgraph
     SUBDIR += mailman
     SUBDIR += mailx
     SUBDIR += majorcool
