@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.84
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -23,7 +23,7 @@ NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 USE_PERL5=	yes
 
-WEBMIN_MODULES=	apache.wbm.gz mysql.wbm.gz status.wbm.gz
+WEBMIN_MODULES=	apache.wbm.gz mysql.wbm.gz status.wbm.gz file.wbm.gz
 
 post-extract:
 	@for webmin_module in ${WEBMIN_MODULES}; do \
