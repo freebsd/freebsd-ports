@@ -1,10 +1,13 @@
 bin/naim
 bin/nirc
+bin/sendim.sh
 lib/naim/libnsocket.so.0
 lib/naim/libnsocket.so
 lib/naim/libnsocket.la
+share/doc/naim/commands.txt
+share/doc/naim/keyboard.txt
+share/doc/naim/COLORS
+share/doc/naim/FAQ
 @dirrm lib/naim
 %%PORTDOCS%%share/doc/naim/naim.hlp
-%%PORTDOCS%%share/doc/naim/COLORS
-%%PORTDOCS%%share/doc/naim/FAQ
 %%PORTDOCS%%@dirrm share/doc/naim
