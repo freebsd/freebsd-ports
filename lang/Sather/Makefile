@@ -16,6 +16,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sather compiler
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
@@ -97,4 +103,4 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
