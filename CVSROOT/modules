@@ -5604,6 +5604,7 @@ o2c		ports/lang/o2c
 oaf		ports/devel/oaf
 oases		ports/science/oases
 obconf		ports/x11-wm/obconf
+obexapp		ports/comms/obexapp
 objc		ports/lang/objc
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
@@ -5698,6 +5699,7 @@ openldap22-client	ports/net/openldap22-client
 openldap22-server	ports/net/openldap22-server
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
+openobex	ports/comms/openobex
 openoffice-1.0	ports/editors/openoffice-1.0
 openoffice-1.0-ar	ports/editors/openoffice-1.0-ar
 openoffice-1.0-dk	ports/editors/openoffice-1.0-dk
