@@ -1,6 +1,5 @@
 bin/emx
 bin/xrmap
-share/editkit/MANUAL.emacs
 share/editkit/README
 share/editkit/emxrc
 share/editkit/rc.common
@@ -201,17 +200,14 @@ share/rmap/anthems/yu.ant
 share/rmap/anthems/za.ant
 share/rmap/anthems/zm.ant
 share/rmap/anthems/zw.ant
-share/rmap/doc/Asia.rc
 share/rmap/doc/CHANGES
 share/rmap/doc/EXAMPLE.rc
-share/rmap/doc/Europe.rc
 share/rmap/doc/INSTALL
 share/rmap/doc/LICENSE
 share/rmap/doc/MAPEDIT
 share/rmap/doc/README
 share/rmap/doc/README.midi
 share/rmap/doc/TODO
-share/rmap/doc/USA.rc
 share/rmap/doc/VECTORMAP
 share/rmap/doc/WARNING
 share/rmap/factbook/countrylisting.html
@@ -2584,22 +2580,32 @@ share/rmap/picons/unix.xpm
 share/rmap/picons/visacard.xpm
 share/rmap/picons/wheel.xpm
 share/rmap/picons/win.xpm
+share/rmap/pixmaps/buttons/b0.xpm.gz
+share/rmap/pixmaps/buttons/b1.xpm.gz
+share/rmap/pixmaps/buttons/b2.xpm.gz
+share/rmap/pixmaps/optional/clouds.xpm.gz
+share/rmap/pixmaps/optional/coffee.xpm.gz
+share/rmap/pixmaps/optional/landscape.xpm.gz
+share/rmap/pixmaps/optional/sea.xpm.gz
 share/rmap/postscript/macros.ps
 share/rmap/postscript/private.ps
-share/rmap/themes/buttons/b0.xpm.gz
-share/rmap/themes/buttons/b1.xpm.gz
-share/rmap/themes/buttons/b2.xpm.gz
+share/rmap/rc/Africa.rc
+share/rmap/rc/Asia.rc
+share/rmap/rc/Australia.rc
+share/rmap/rc/Europe.rc
+share/rmap/rc/NorthAmerica.rc
+share/rmap/rc/Russia.rc
+share/rmap/rc/SouthAmerica.rc
+share/rmap/rc/USA.rc
 share/rmap/themes/cloudy
 share/rmap/themes/coffee
 share/rmap/themes/default
-share/rmap/themes/optional/clouds.xpm.gz
-share/rmap/themes/optional/coffee.xpm.gz
-share/rmap/themes/optional/landscape.xpm.gz
-share/rmap/themes/optional/sea.xpm.gz
 share/rmap/themes/sea
-@dirrm share/rmap/themes/optional
-@dirrm share/rmap/themes/buttons
+@dirrm share/rmap/rc
 @dirrm share/rmap/themes
+@dirrm share/rmap/pixmaps/optional
+@dirrm share/rmap/pixmaps/buttons
+@dirrm share/rmap/pixmaps
 @dirrm share/rmap/postscript
 @dirrm share/rmap/picons
 @dirrm share/rmap/pdfmaps

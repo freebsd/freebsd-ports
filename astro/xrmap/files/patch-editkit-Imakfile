@@ -1,16 +1,45 @@
---- editkit/Makefile.orig	Wed Apr 30 09:24:13 2003
-+++ editkit/Makefile	Wed Apr 30 09:26:32 2003
-@@ -12,10 +12,11 @@
- # TWOBUTN paste with button3 click, set selection with button3 drag
- # MINIMAL to remove bak files, /usr/share/edmtx and e**rc
- # TLL for Terry Loveall personal settings
-+PREFIX=/usr/X11R6
+--- editkit/Imakefile.orig	Sun May 18 15:41:24 2003
++++ editkit/Imakefile	Tue May 20 12:44:02 2003
+@@ -1,14 +1,16 @@
+ XCOMM Should install to /usr or /usr/local ??
+-DESTDIR=/usr
++DESTDIR=
++PREFIX=	/usr/X11R6
++INCLUDES= $(PREFIX)/include
+ 
+ XCOMM Name of man subdirectory of DESTDIR:
+-MANDIR=/X11R6/man/man1
++MANDIR=$(PREFIX)/man/man1
+ 
+ XCOMM Name of bin subdirectory of DESTDIR: /X11R6/bin or maybe just  /bin
+-BINDIR=/X11R6/bin
++BINDIR=$(PREFIX)/bin
+ 
+ XCOMM Name of share subdirectory of DESTDIR:
+-SHARE_DIR=/share/editkit
 +SHARE_DIR=$(PREFIX)/share/editkit
-+INCLUDES=-I$(PREFIX)/include
  
--SHARE_DIR=/usr/share/editkit
--
--CFLAGS = -O2 -fomit-frame-pointer -pipe -Wall -DTHREED -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(SHARE_DIR)\""
-+CFLAGS = -O2 $(INCLUDES) -fomit-frame-pointer -pipe -Wall -DTHREED -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(SHARE_DIR)\""
+ XCOMM
+ XCOMM Normally -- except for new architectures -- you should be done there.
+@@ -17,7 +19,7 @@
+ XCOMM Compile options:
+ XCOMM
  
- #CFLAGS = -O2 -fomit-frame-pointer -pipe -Wall -DMINIMAL -DTWOBUTN -DVERTCURS -DTLL
+-CFLAGS = -O2 -fomit-frame-pointer -pipe -Wall -DTHREED -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(DESTDIR)$(SHARE_DIR)\""
++CFLAGS = -I$(INCLUDES) -O2 -fomit-frame-pointer -pipe -Wall -DTHREED -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(SHARE_DIR)\""
+ 
+ LOCAL_LIBRARIES=$(XLIB)
+ DEPLIBS=		# I don't know what I'm doing, and I hate imake!
+@@ -32,9 +34,9 @@
+ 
+ install::
+ 	mkdir -p $(DESTDIR)$(SHARE_DIR)
+-	cp -f rc.example $(DESTDIR)$(SHARE_DIR)/rc.common
+-	cd $(DESTDIR)$(SHARE_DIR); ln -sf rc.common emxrc
+-	cp -f README $(DESTDIR)$(SHARE_DIR)
++	cp -f rc.example $(SHARE_DIR)/rc.common
++	cd $(SHARE_DIR); ln -sf rc.common emxrc
++	cp -f README $(SHARE_DIR)
+ 
+ clean::
+ 	rm -f *~

@@ -1,5 +1,5 @@
---- Imakefile.orig	Sat May 10 09:02:50 2003
-+++ Imakefile	Sat May 10 22:00:54 2003
+--- Imakefile.orig	Tue May 20 09:15:57 2003
++++ Imakefile	Tue May 20 09:26:51 2003
 @@ -1,14 +1,15 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -42,7 +42,7 @@
  
  #endif
  
-@@ -62,28 +63,35 @@
+@@ -63,31 +64,37 @@
  ComplexProgramTarget(xrmap)
  
  install.man::
@@ -53,7 +53,7 @@
  
  all::
  	strip xrmap ; ls -al xrmap
- 	cd editkit ; make emx
+ 	cd editkit ; xmkmf ; make
  
  install:: install.man
 -	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)
@@ -67,6 +67,9 @@
  	cd themes ; rm -f *~
 -	cp -fR themes  $(DESTDIR)$(SHAREDIR)
 +	cp -fR themes  $(SHAREDIR)
+ 	cd pixmaps ;
+-	cp -fR pixmaps  $(DESTDIR)$(SHAREDIR)
++	cp -fR pixmaps  $(SHAREDIR)
  	if [ -d i18n ] ; then cd i18n ; rm -f *~ ; fi
 -	if [ -d i18n ] ; then cp -fR i18n $(DESTDIR)$(SHAREDIR) ; fi
 -	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/flags
@@ -80,12 +83,13 @@
 +	if [ -d picons ] ; then cp -fR picons $(SHAREDIR) ; fi
 +	if [ -d pdfmaps ] ; then cp -fR pdfmaps $(SHAREDIR) ; fi
 +	if [ -d factbook ] ; then cp -fR factbook $(SHAREDIR) ; fi
-+	if [ -d picons ] ; then cp -fR picons $(SHAREDIR) ; fi
 +	$(MKDIRHIER) $(SHAREDIR)/doc
  	cp -f CHANGES INSTALL LICENSE MAPEDIT README TODO VECTORMAP WARNING \
--		midi_cfg/README.midi $(DESTDIR)$(SHAREDIR)/doc
--	cd examples ; cp -f * $(DESTDIR)$(SHAREDIR)/doc
-+		midi_cfg/README.midi $(SHAREDIR)/doc
-+	cd examples ; cp -f * $(SHAREDIR)/doc
- 	cd editkit ; make install
+-	      EXAMPLE.rc midi_cfg/README.midi $(DESTDIR)$(SHAREDIR)/doc
++	      EXAMPLE.rc midi_cfg/README.midi $(SHAREDIR)/doc
+ 	cd rc ; rm -f *~
+-	cp -fR rc $(DESTDIR)$(SHAREDIR)
++	cp -fR rc $(SHAREDIR)
+ 	cd editkit ; xmkmf ; make install
  	cat WARNING
+ 
