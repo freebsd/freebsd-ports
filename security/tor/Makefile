@@ -8,7 +8,8 @@
 PORTNAME=	tor
 PORTVERSION=	0.0.7.2
 CATEGORIES=	security
-MASTER_SITES=	http://freehaven.net/tor/dist/
+MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
+		http://freehaven.net/tor/dist/
 
 MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	An anonymizing overlay network for TCP
