@@ -23,6 +23,8 @@ DISTNAME=	httpd-${PORTVERSION:S/./_/g}-beta
 
 MAINTAINER?=	perky@fallin.lv
 
+LATEST_LINK=	apache2
+
 WRKSRC=		${WRKDIR}/httpd-${PORTVERSION:S/./_/g}
 FIND?=		find
 XARGS?=		xargs
