@@ -1,13 +1,13 @@
 # New ports collection makefile for: analog
-# Version required:     2.90beta3
+# Version required:     2.90beta4
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
 # $Id: Makefile,v 1.9 1997/05/07 19:51:22 ache Exp $
 #
 
-DISTNAME=       analog2.90beta3
-PKGNAME=        analog-2.90b3
+DISTNAME=       analog2.90beta4
+PKGNAME=        analog-2.90b4
 CATEGORIES=	www
 MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.lightside.net/analog/ \
