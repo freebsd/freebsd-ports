@@ -17,7 +17,7 @@ COMMENT=	API compatible clone of the Motif toolkit
 
 CONFLICTS?=	open-motif-*
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
-WANT_AUTOMAKE_VER=	18
+WANT_AUTOMAKE_VER=	19
 USE_AUTOCONF_VER=	259
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes

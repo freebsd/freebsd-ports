@@ -15,7 +15,7 @@ MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Skeletal based 3d character animation library written in C++
 
 USE_BZIP2=		yes
-USE_AUTOMAKE_VER=	18
+USE_AUTOMAKE_VER=	19
 USE_AUTOHEADER_VER=	259
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes

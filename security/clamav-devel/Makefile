@@ -29,7 +29,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOCONF_VER=259
-USE_AUTOMAKE_VER=18
+USE_AUTOMAKE_VER=19
 USE_LIBTOOL_VER=15
 LIBTOOLFILES=	acinclude.m4
 INSTALLS_SHLIB=	yes
@@ -110,6 +110,7 @@ post-patch:
 		${WRKSRC}/clamav-milter/clamav-milter.c
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
+	@cd ${WRKSRC} && ${ACLOCAL}
 
 post-build:
 	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \
