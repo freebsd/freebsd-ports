@@ -16,6 +16,7 @@ COMMENT=	A data compression library with low memory usage during decompression
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	COPYING README
 
