@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		ezbounce.1
@@ -36,17 +37,18 @@ PLIST_SUB+=	SSL="@comment "
 .include <bsd.port.pre.mk>
 
 pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITH_SSL=yes      Enable SSL support"
-	@${ECHO} "	WITH_MDIDENTD=yes Install the mdidentd binary to"
-	@${ECHO} "                        modify ident replies"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITH_SSL=yes      Enable SSL support"
+	@${ECHO_MSG} "	WITH_MDIDENTD=yes Install the mdidentd binary to"
+	@${ECHO_MSG} "                        modify ident replies"
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${SED} -e "s:/path/to:${PREFIX}/sbin:" ${WRKSRC}/sample.conf > \
 		${WRKSRC}/ezb.conf.default
+	@${REINPLACE_CMD} -e 's|=-O2|="$$CXXFLAGS"|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezbounce ${PREFIX}/sbin
