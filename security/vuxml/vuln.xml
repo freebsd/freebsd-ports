@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="62239968-2f2a-11d9-a9e7-0001020eed82">
+    <topic>gd -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>gd</name>
+	<range><lt>2.0.29,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>infamous41md reports about the GD Graphics Library:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109882489302099">
+	  <p>There is an integer overflow when allocating memory in
+            the routine that handles loading PNG image files.  This
+            later leads to heap data structures being overwritten.  If
+            an attacker tricked a user into loading a malicious PNG
+            image, they could leverage this into executing arbitrary
+            code in the context of the user opening image.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11523</bid>
+      <cvename>CAN-2004-0990</cvename>
+      <mlist msgid="20041025204303.4341d907.infamous41md@hotpop.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109882489302099</mlist>
+      <url>http://www.boutell.com/gd/manual2.0.29.html#whatsnew2.0.29</url>
+    </references>
+    <dates>
+      <discovery>2004-10-26</discovery>
+      <entry>2004-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19518d22-2d05-11d9-8943-0050fc56d258">
     <topic>putty -- buffer overflow vulnerability in ssh2 support</topic>
     <affects>
