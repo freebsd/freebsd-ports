@@ -1,29 +1,26 @@
-# New ports collection makefile for:	CLE_base
+# New ports collection makefile for:	zh-cle_base
 # Date created:		Nov 17, 1999
-# Whom:			keith@freebsd.sinica.edu.tw
+# Whom:			keith@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=		linux_base
+PORTNAME=		cle_base
 PORTVERSION=		0.9p1
 CATEGORIES=		chinese emulators linux
 MASTER_SITES=		\
-	ftp://cle.linux.org.tw/pub/CLE/i386/RedHat/RPMS/ \
-	ftp://freebsd.sinica.edu.tw/pub/keith/zh-rpm/ \
-	ftp://ftp.nsysu.edu.tw/Linux/CLE/RedHat/i386/RedHat/RPMS/ \
-	ftp://freebsd.ntu.edu.tw/UNIX/Linux/CLE/RedHat/i386/RedHat/RPMS/ \
-	ftp://ftp.knb.com.hk/pub/CLE/RedHat/0.9/RedHat/RPMS/
+	ftp://cle.linux.org.tw/pub/CLE/stable/v0.9p1/i386/RedHat/RPMS/ \
+	ftp://freebsd.sinica.edu.tw/pub/keith/zh-rpm/
 DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_BASH2} ${RPM_SET2} \
 			${RPM_RPM} ${RPM_SET3} ${RPM_L10N}
 
-MAINTAINER=		keith@freebsd.sinica.edu.tw
+MAINTAINER=		keith@FreeBSD.org
 
 RUN_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
 ONLY_FOR_ARCHS=		i386
 DIST_SUBDIR=		zh-rpm
-#EXTRACT_ONLY=
+EXTRACT_ONLY=
 PREFIX=			/compat/linux
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
