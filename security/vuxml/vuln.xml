@@ -30,6 +30,59 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40fcf20f-8891-11d8-90d1-0020ed76ef5a">
+    <topic>racoon remote denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040407b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When racoon receives an IKE message with an incorrectly
+	  constructed Generic Payload Header, it may behave erratically,
+	  going into a tight loop and dropping connections.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://orange.kame.net/dev/query-pr.cgi?pr=555</url>
+    </references>
+    <dates>
+      <discovery>2003-12-03</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d8769838-8814-11d8-90d1-0020ed76ef5a">
+    <topic>racoon fails to verify signature during Phase 1</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040407b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ralf Spenneberg discovered a serious flaw in racoon.
+          When using Phase 1 main or aggressive mode, racoon does
+          not verify the client's RSA signature.  Any installations
+          using <em>X.509 authentication</em> are <strong>strongly
+	  urged</strong> to upgrade.</p>
+	<p>Installations using <em>pre-shared keys</em> are believed
+	  to be unaffected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0155</cvename>
+      <url>http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/crypto_openssl.c?rev=1.84&amp;content-type=text/x-cvsweb-markup</url>
+    </references>
+    <dates>
+      <discovery>2004-04-05</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="322d4ff6-85c3-11d8-a41f-0020ed76ef5a">
     <topic>Midnight Commander buffer overflow during symlink
       resolution</topic>
