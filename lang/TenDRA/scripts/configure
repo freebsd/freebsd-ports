@@ -23,6 +23,16 @@ fixlib()
 }
 
 #
+# Update tcc common environment.
+#
+
+# Create $WRKSRC/src/lib/env/freebsd/common/80x86/pthread
+cat >$WRKSRC/src/lib/env/freebsd/common/80x86/pthread <<EOF
+/* Build with pthreads library */
++SYS_LIBC	"-lc_r"
+EOF
+
+#
 # Create tcc aout environment.
 #
 
