@@ -1,6 +1,5 @@
 bin/totem
 bin/totem-video-thumbnailer
-bin/vanity
 etc/gconf/gconf.xml.defaults/apps/totem/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@vnd.rn-realmedia/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-ogg/%gconf.xml
@@ -73,6 +72,7 @@ share/locale/cs/LC_MESSAGES/totem.mo
 share/locale/cy/LC_MESSAGES/totem.mo
 share/locale/da/LC_MESSAGES/totem.mo
 share/locale/de/LC_MESSAGES/totem.mo
+share/locale/el/LC_MESSAGES/totem.mo
 share/locale/en_GB/LC_MESSAGES/totem.mo
 share/locale/es/LC_MESSAGES/totem.mo
 share/locale/et/LC_MESSAGES/totem.mo
@@ -80,6 +80,7 @@ share/locale/fi/LC_MESSAGES/totem.mo
 share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
+share/locale/hr/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
