@@ -282,6 +282,7 @@
     SUBDIR += postfix1
     SUBDIR += postfixadmin
     SUBDIR += postilion
+    SUBDIR += prayer
     SUBDIR += premail
     SUBDIR += procmail
     SUBDIR += prom-mew

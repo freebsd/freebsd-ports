@@ -1,0 +1,10 @@
+Prayer is yet another Webmail interface for IMAP servers on Unix systems.
+
+It exists because we weren't terribly happy about the characteristics of
+existing Webmail interfaces: in particular scalability problems with common
+open source Webmail packages and the lack of flexibility that commercial
+packages would give us. This doesn't mean that Prayer is trying to compete
+with existing Webmail packages. It just means that Prayer is better suited
+to our particular environment.
+
+WWW: http://www-uxsup.csx.cam.ac.uk/~dpc22/prayer/

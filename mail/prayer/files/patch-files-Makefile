@@ -1,0 +1,30 @@
+--- files/Makefile.orig	Sun May 11 16:59:12 2003
++++ files/Makefile	Tue Jan  6 10:33:33 2004
+@@ -57,12 +57,12 @@
+ 	fi
+ 
+ install-config: etc/prayer.cf
+-	$(INSTALL) -D -o $(RO_USER) -g $(RO_GROUP) -m $(PUBLIC_FILE) \
+-	etc/prayer.cf ${BROOT}${PRAYER_CONFIG_FILE}
++	$(INSTALL) -o $(RO_USER) -g $(RO_GROUP) -m $(PUBLIC_FILE) \
++	etc/prayer.cf ${BROOT}${PRAYER_CONFIG_FILE}-dist
+ 
+ install-aconfig:
+-	$(INSTALL) -D -o $(RO_USER) -g $(RO_GROUP) -m $(PUBLIC_FILE) \
+-	etc/prayer-accountd.cf ${BROOT}${ACCOUNTD_CONFIG_FILE}
++	$(INSTALL) -o $(RO_USER) -g $(RO_GROUP) -m $(PUBLIC_FILE) \
++	etc/prayer-accountd.cf ${BROOT}${ACCOUNTD_CONFIG_FILE}-dist
+ 
+ install-motd:
+ 	$(INSTALL) -o $(RO_USER) -g $(RO_GROUP) -m $(PUBLIC_FILE) \
+@@ -82,8 +82,8 @@
+ 	BIN_DIR=$(BIN_DIR) INSTALL=$(INSTALL) \
+ 	./install.sh
+ 	if [ ! -f $(BROOT)$(PREFIX)/certs/prayer.pem ]; then $(MAKE) install-cert; fi
+-	if [ ! -f $(BROOT)$(PRAYER_CONFIG_FILE) ]; then $(MAKE) install-config; fi
+-	if [ ! -f $(BROOT)$(ACCOUNTD_CONFIG_FILE) ]; then $(MAKE) install-aconfig; fi
++	if [ ! -f $(BROOT)$(PRAYER_CONFIG_FILE)-dist ]; then $(MAKE) install-config; fi
++	if [ ! -f $(BROOT)$(ACCOUNTD_CONFIG_FILE)-dist ]; then $(MAKE) install-aconfig; fi
+ 	if [ ! -f $(BROOT)$(PREFIX)/etc/motd.html ]; then $(MAKE) install-motd; fi
+ 	if [ ! -f $(BROOT)$(PREFIX)/etc/welcome.html ]; then $(MAKE) install-welcome; fi
+ 
