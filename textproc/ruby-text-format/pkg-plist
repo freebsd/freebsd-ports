@@ -1,5 +1,6 @@
 %%RUBY_SITELIBDIR%%/Text/Format.rb
 @dirrm %%RUBY_SITELIBDIR%%/Text
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changelog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000002.html
