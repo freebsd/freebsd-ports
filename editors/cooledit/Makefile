@@ -9,7 +9,8 @@ PORTNAME=	cooledit
 PORTVERSION=	3.17.5
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	http://cooledit.sourceforge.net/ \
+		${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
 MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
