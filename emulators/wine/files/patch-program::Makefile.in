@@ -17,10 +17,10 @@
  	winhelp \
  	winver
 @@ -106,7 +104,6 @@ SYMLINKS = \
- 	winemenubuilder.exe \
- 	winemine.exe \
- 	winepath.exe \
--	winetest.exe \
- 	winevdm.exe \
- 	winhelp.exe \
- 	winver.exe
+ 	winemenubuilder.exe$(DLLEXT) \
+ 	winemine.exe$(DLLEXT) \
+ 	winepath.exe$(DLLEXT) \
+-	winetest.exe$(DLLEXT) \
+ 	winevdm.exe$(DLLEXT) \
+ 	winhelp.exe$(DLLEXT) \
+ 	winver.exe$(DLLEXT)

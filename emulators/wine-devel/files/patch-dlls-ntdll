@@ -1,0 +1,29 @@
+Index: dlls/ntdll/virtual.c
+===================================================================
+RCS file: /home/wine/wine/dlls/ntdll/virtual.c,v
+retrieving revision 1.41
+diff -u -3 -p -r1.41 virtual.c
+--- dlls/ntdll/virtual.c	11 Oct 2004 20:59:06 -0000	1.41
++++ dlls/ntdll/virtual.c	3 Dec 2004 04:06:42 -0000
+@@ -119,6 +119,12 @@ static CRITICAL_SECTION csVirtual = { &c
+ /* Note: these are Windows limits, you cannot change them. */
+ # define ADDRESS_SPACE_LIMIT  ((void *)0xc0000000)  /* top of the total available address space */
+ # define USER_SPACE_LIMIT     ((void *)0x80000000)  /* top of the user address space */
++# ifdef __FreeBSD__
++#  define LOW_SPACE_LIMIT     ((void *)0x110000)   /* lower address space limit */
++# else
++#  define LOW_SPACE_LIMIT     NULL
++# endif
++
+ #else
+ static UINT page_shift;
+ static UINT page_mask;
+@@ -600,7 +606,7 @@ static NTSTATUS map_view( struct file_vi
+ 
+         for (;;)
+         {
+-            if ((ptr = wine_anon_mmap( NULL, view_size, VIRTUAL_GetUnixProt(vprot), 0 )) == (void *)-1)
++            if ((ptr = wine_anon_mmap( LOW_SPACE_LIMIT, view_size, VIRTUAL_GetUnixProt(vprot), 0 )) == (void *)-1)
+             {
+                 if (errno == ENOMEM) return STATUS_NO_MEMORY;
+                 return STATUS_INVALID_PARAMETER;
