@@ -3,7 +3,7 @@
 # Date created:		Sat Oct  4 20:03:46 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.13 1998/11/23 14:11:02 andreas Exp $
+# $Id: Makefile,v 1.14 1999/03/11 20:33:49 scrappy Exp $
 #
 
 DISTNAME=	pgaccess-0.91
@@ -14,7 +14,8 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 WWW_SITE=	http://www.flex.ro/pgaccess
 
-RUN_DEPENDS=	${PREFIX}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql
+RUN_DEPENDS=	${PREFIX}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql\
+		wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/pgaccess
 NO_BUILD=		yes
