@@ -7,6 +7,7 @@
 
 PORTNAME=	pfaedit
 PORTVERSION=	20${DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://pfaedit.sourceforge.net/
 DISTFILES=	${EXTRACT_ONLY}
