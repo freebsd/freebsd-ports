@@ -27,6 +27,7 @@
     SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += logjam
+    SUBDIR += logjam2
     SUBDIR += loserjabber
     SUBDIR += mcal
     SUBDIR += mencal
