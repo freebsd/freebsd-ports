@@ -1,5 +1,5 @@
---- configure.in.orig	Fri Apr 12 07:09:14 2002
-+++ configure.in	Thu Apr 18 00:58:35 2002
+--- configure.in.orig	Sat Jul  6 12:56:52 2002
++++ configure.in	Thu Jul 25 07:49:22 2002
 @@ -166,7 +166,9 @@
  
  # Some systems don't have Tcl.  Don't build
@@ -28,6 +28,6 @@
  # AC_HAVE_HEADERS(string.h)
 -AC_CHECK_HEADERS(malloc.h search.h getopt.h values.h termios.h \
 +AC_CHECK_HEADERS(search.h getopt.h values.h termios.h \
- 	errno.h sys/time.h unistd.h fpu_control.h sys/fpu.h strings.h)
+ 	errno.h sys/time.h unistd.h fenv.h fpu_control.h sys/fpu.h strings.h)
  AC_HEADER_TIME
  AC_HEADER_DIRENT
