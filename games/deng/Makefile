@@ -14,28 +14,25 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	An enhanced Doom, Heretic and Hexen source port
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity
-
-BROKEN=		Missing dependency
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -I${X11BASE}/include" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -I${X11BASE}/include"
 USE_SDL=	sdl mixer net
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
+NOT_FOR_ARCHS=	amd64
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libopenal.so.0)
+.if exists(${LOCALBASE}/lib/libopenal.so.0) || defined(WITH_OPENAL)
 WITH_OPENAL=	yes
-BUILD_DEPENDS=	${LOCALBASE}/lib/libopenal.so.0:${PORTSDIR}/audio/openal
-RUN_DEPENDS=	${LOCALBASE}/lib/libopenal.so.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
 .endif
 
 .if !defined(WITH_OPENAL)
@@ -69,4 +66,4 @@ post-install:
 	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%DOCSDIR%%|${DOCSDIR}|' \
 		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
