@@ -1,0 +1,6 @@
+MutexM is a Mutex mix-in with some enhanced features.
+
+You can do a synchronize during a synchronize, for example.
+
+Author:	Masatoshi SEKI <m_seki@mva.biglobe.ne.jp>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=MutexM
