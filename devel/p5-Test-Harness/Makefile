@@ -16,11 +16,10 @@ MAINTAINER=	shell@shellhung.org
 
 PERL_CONFIGURE=	yes
 
-MODULE_PREFIX=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-CONFIGURE_ARGS+= INSTALLPRIVLIB=${MODULE_PREFIX} \
-		 INSTALLARCHLIB=${MODULE_PREFIX}/${PERL_ARCH}
-
 MAN3=		Test::Harness.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+	${PERL} -pi -e 'm.INSTALLDIRS.&&s,.,,sg' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
