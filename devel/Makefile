@@ -966,6 +966,7 @@
     SUBDIR += py-rlcompleter2
     SUBDIR += py-ro
     SUBDIR += py-roxlib
+    SUBDIR += py-simpleparse
     SUBDIR += py-sip
     SUBDIR += py-spark
     SUBDIR += py-tables
