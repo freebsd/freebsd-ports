@@ -23,6 +23,10 @@ MAN1=		irssi.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 # Set option defaults.
 
 .if ! defined(WITH_GLIB)

@@ -58,6 +58,10 @@ DOC_FILES=	COPYING ChangeLog INSTALL README \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/lp_mutex.c ${WRKSRC}/src
 
