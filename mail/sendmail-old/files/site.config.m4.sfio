@@ -1,6 +1,0 @@
-define(`confSTDIO_TYPE', `portable')
-APPENDDEF(`confENVDEF', `-U_FFR_TLS_TOREK -DSFIO')
-APPENDDEF(`confINCDIRS', `-I%%LOCALBASE%%/include/sfio')
-APPENDDEF(`confINCDIRS', `-I%%LOCALBASE%%/include')
-APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
-APPENDDEF(`confLIBS', `-lsfio')

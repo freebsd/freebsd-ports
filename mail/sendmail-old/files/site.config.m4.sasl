@@ -1,5 +1,0 @@
-APPENDDEF(`conf_sendmail_ENVDEF', `-I%%LOCALBASE%%/include/sasl1')
-APPENDDEF(`conf_sendmail_ENVDEF', `-DSASL')
-APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_UNSAFE_SASL -D_FFR_SASL_OPTS')
-APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
-APPENDDEF(`conf_sendmail_LIBS', `-lsasl')
