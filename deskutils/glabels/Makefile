@@ -16,7 +16,7 @@ COMMENT=	A program to create labels and business cards
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui libgnomeprintui \
-		desktopfileutils
+		desktopfileutils intlhack
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_OMF=	yes
