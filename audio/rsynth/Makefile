@@ -3,7 +3,7 @@
 # Date created:		03 Jan 1995
 # Whom:			faulkner@mpd.tandem.com
 #
-# $Id: Makefile,v 1.8 1996/11/15 23:14:14 obrien Exp $
+# $Id: Makefile,v 1.9 1998/11/29 08:16:52 asami Exp $
 #
 
 DISTNAME=	rsynth-2.0
@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
 MAINTAINER=	faulkner@mpd.tandem.com
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm \
+		${PREFIX}/include/audio/audiolib.h:${PORTSDIR}/audio/nas
 RUN_DEPENDS=	auvoxware:${PORTSDIR}/audio/nas
 
 GNU_CONFIGURE=	YES
