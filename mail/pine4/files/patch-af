@@ -1,5 +1,5 @@
---- imap/src/osdep/unix/Makefile.orig	Thu Apr 29 19:10:25 2004
-+++ imap/src/osdep/unix/Makefile	Sat May 22 14:28:29 2004
+--- imap/src/osdep/unix/Makefile.orig	Tue Jun 22 13:56:05 2004
++++ imap/src/osdep/unix/Makefile	Sun Aug 22 15:51:12 2004
 @@ -99,7 +99,7 @@
  # Commands possibly overriden by the individual port
  
@@ -18,6 +18,15 @@
  
  CAT=cat
  MAKE=make
+@@ -131,7 +131,7 @@
+ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRACFLAGS)'\
+  EXTRALDFLAGS='$(EXTRALDFLAGS)'\
+  EXTRADRIVERS='$(EXTRADRIVERS)' EXTRAAUTHENTICATORS='$(EXTRAAUTHENTICATORS)'\
+- PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE)
++ PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE) IP=$(IP)
+ 
+ 
+ # Here if no make argument established
 @@ -219,8 +219,9 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
