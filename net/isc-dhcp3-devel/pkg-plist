@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+include/dhcpctl.h
+include/isc-dhcp/boolean.h
+include/isc-dhcp/dst.h
+include/isc-dhcp/int.h
+include/isc-dhcp/lang.h
+include/isc-dhcp/list.h
+include/isc-dhcp/result.h
+include/isc-dhcp/types.h
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+lib/libdhcpctl.a
+lib/libomapi.a
+%%PORTDOCS%%share/doc/isc-dhcp3-devel/ANONCVS
+%%PORTDOCS%%share/doc/isc-dhcp3-devel/CHANGES
+%%PORTDOCS%%share/doc/isc-dhcp3-devel/COPYRIGHT
+%%PORTDOCS%%share/doc/isc-dhcp3-devel/README
+%%PORTDOCS%%share/doc/isc-dhcp3-devel/RELNOTES
+%%PORTDOCS%%@dirrm share/doc/isc-dhcp3-devel
+@dirrm include/omapip
+@dirrm include/isc-dhcp
