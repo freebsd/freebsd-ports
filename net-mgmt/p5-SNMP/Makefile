@@ -3,11 +3,11 @@
 # Date created:				May 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1998/09/15 21:31:50 asami Exp $
+# $Id: Makefile,v 1.4 1998/10/21 10:07:50 markm Exp $
 #
 
-DISTNAME=	SNMP-1.8b3
-PKGNAME=	p5-SNMP-1.8b3
+DISTNAME=	SNMP-1.8b5
+PKGNAME=	p5-SNMP-1.8b5
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SNMP
