@@ -1,6 +1,7 @@
---- main.c.orig	Sun Jan 22 01:21:08 1995
-+++ main.c	Tue Dec  7 13:57:42 1999
-@@ -19,4 +19,8 @@
+--- main.c.orig	Sat Jan 21 19:21:08 1995
++++ main.c	Wed Feb 28 18:52:17 2001
+@@ -18,6 +18,10 @@
+ 
  #include <stdio.h>
  #include <fcntl.h>
 +#ifdef __FreeBSD__
@@ -9,7 +10,9 @@
 +#endif
  #include "config.h"
  #include "w.h"
-@@ -188,4 +192,18 @@
+ #include "tty.h"
+@@ -187,6 +191,20 @@
+  run=namprt(argv[0]);
  #endif 
  
 +#ifdef __FreeBSD__
@@ -28,10 +31,34 @@
 +
   if(s=getenv("LINES")) sscanf(s,"%d",&lines);
   if(s=getenv("COLUMNS")) sscanf(s,"%d",&columns);
-@@ -366,5 +384,5 @@
+  if(s=getenv("BAUD")) sscanf(s,"%u",&Baud);
+@@ -234,20 +252,6 @@
+ 
+ #else
+ 
+- s=vsncpy(NULL,0,sc("."));
+- s=vsncpy(sv(s),sv(run));
+- s=vsncpy(sv(s),sc("rc"));
+- c=procrc(cap,s);
+- if(c==0) goto donerc;
+- if(c==1)
+-  {
+-  char buf[8];
+-  fprintf(stderr,"There were errors in '%s'.  Use it anyway?",s);
+-  fflush(stderr);
+-  fgets(buf,8,stdin);
+-  if(buf[0]=='y' || buf[0]=='Y') goto donerc;
+-  }
+-
+  vsrm(s);
+  s=getenv("HOME");
+  if(s)
+@@ -365,7 +369,7 @@
+  maint->curwin=maint->topwin;
   if(help) helpon(maint);
   if(!nonotice)
 -  msgnw(lastw(maint)->object,"\\i** Joe's Own Editor v2.8 ** Copyright (C) 1995 Joseph H. Allen **\\i");
 +  msgnw(lastw(maint)->object,"\\i** Joe's Own Editor v2.8l ** Copyright (C) 1995 Joseph H. Allen **\\i");
   edloop(0);
   vclose(vmem);
+  nclose(n);
