@@ -13,15 +13,14 @@ etc/irssi/config.sample
 etc/irssi/default.theme
 etc/irssi/colorless.theme
 etc/irssi/config
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irssi.so
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irssi.bs
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/.packlist
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc/Irc.so
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc/Irc.bs
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc/.packlist
-lib/perl5/site_perl/5.005/i386-freebsd/Irssi.pm
-lib/perl5/site_perl/5.005/i386-freebsd/perllocal.pod
-lib/perl5/site_perl/5.005/i386-freebsd/Irssi/Irc.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/Irc.pm
 lib/irssi/modules/libfe_irc_dcc.a
 lib/irssi/modules/libfe_irc_dcc.la
 lib/irssi/modules/libfe_irc_dcc.so
@@ -165,9 +164,9 @@ share/irssi/help/wjoin
 share/irssi/help/wquery
 @dirrm share/doc/irssi
 @dirrm etc/irssi
-@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc
-@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi
-@dirrm lib/perl5/site_perl/5.005/i386-freebsd/Irssi
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi
 @dirrm lib/irssi/modules
 @dirrm lib/irssi
 @dirrm share/irssi/help

@@ -1,0 +1,11 @@
+--- src/perl/Makefile.in.orig	Thu Apr 26 10:31:06 2001
++++ src/perl/Makefile.in	Thu Apr 26 10:32:04 2001
+@@ -473,7 +473,7 @@
+ 	cat $(top_srcdir)/docs/signals.txt | $(perlpath) $(srcdir)/get-signals.pl > perl-signals-list.h
+ 
+ all-local:
+-	for dir in common irc; do cd $$dir && if [ ! -f Makefile ]; then if [ "x$(PERL_LIB_DIR)" = "x" ]; then $(perlpath) Makefile.PL; else $(perlpath) Makefile.PL LIB=$(PERL_LIB_DIR) PREFIX=$(PERL_LIB_DIR); fi; fi && ($(MAKE) || $(MAKE)) && cd ..; done
++	for dir in common irc; do cd $$dir && if [ ! -f Makefile ]; then if [ "x$(PERL_LIB_DIR)" = "x" ]; then $(perlpath) Makefile.PL; else $(perlpath) Makefile.PL ; fi; fi && ($(MAKE) || $(MAKE)) && cd ..; done
+ 
+ install-exec-local:
+ 	for dir in common irc; do cd $$dir && $(MAKE) install && cd ..; done
