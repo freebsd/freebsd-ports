@@ -1,0 +1,5 @@
+fastdep is a preprocessor which generates dependency information suitable for
+Makefile inclusion from C or C++ source files. Meant to run on slower hardware,
+it is several orders of magnitude faster than gcc.
+
+WWW: http://www.irule.be/bvh/c++/fastdep/
