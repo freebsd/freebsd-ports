@@ -15,6 +15,7 @@
     SUBDIR += fluctuate
     SUBDIR += gaussian98
     SUBDIR += genpak
+    SUBDIR += gff2ps
     SUBDIR += gperiodic
     SUBDIR += grappa
     SUBDIR += hmmer
