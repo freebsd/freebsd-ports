@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kbear
-# Date created:				Wed May 29 18:10:01 PDT 2002
-# Whom:					Tilman Linneweh <tilman@arved.de>
+# Date created:			Wed May 29 18:10:01 PDT 2002
+# Whom:				Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=		freebsdports@arved.de
+MAINTAINER=		arved@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/${DISTNAME:S/.src//}
 INSTALLS_SHLIB=		yes

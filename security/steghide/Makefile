@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://steghide.sourceforge.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash \

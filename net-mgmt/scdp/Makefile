@@ -1,6 +1,6 @@
 # New ports collection makefile for:   scdp
 # Date created:                14 September 2001
-# Whom:                        arved@arved.de
+# Whom:                        arved@FreeBSD.org
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scdp
 DISTNAME=	scdp-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
