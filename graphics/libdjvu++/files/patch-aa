@@ -1,0 +1,7 @@
+--- DjVuImage.cpp.orig Wed Mar 17 14:24:56 1999
++++ DjVuImage.cpp      Tue Jul 20 14:32:03 1999
+@@ -125,3 +125,3 @@
+   GCriticalSectionLock lock(&mutex);
+-  bs.writall((const void*)raw, raw.length());
++  bs.writall((const char*)raw, raw.length());
+ }

@@ -1,0 +1,7 @@
+--- GContainer.h.orig  Wed Mar 17 14:24:57 1999
++++ GContainer.h       Tue Jul 20 14:33:21 1999
+@@ -981,3 +981,3 @@
+       if (data && lobound<=hibound)
+-        for (int i=lobound; i<=hibound; i++)
++        for (i=lobound; i<=hibound; i++)
+           data[i-minlo].TYPE::~TYPE();
