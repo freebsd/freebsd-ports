@@ -1,0 +1,3 @@
+lib/libgen_ifd.so
+include/ifdhandler.h
+include/pcscdefines.h

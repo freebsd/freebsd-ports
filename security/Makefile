@@ -84,6 +84,7 @@
     SUBDIR += hping
     SUBDIR += ident2
     SUBDIR += identify
+    SUBDIR += ifd-devkit
     SUBDIR += inflex
     SUBDIR += integrit
     SUBDIR += ipfmeta

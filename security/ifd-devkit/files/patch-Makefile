@@ -1,0 +1,72 @@
+--- Makefile.orig	Tue Aug  1 20:36:42 2000
++++ Makefile	Wed Aug 28 14:53:02 2002
+@@ -1,31 +1,41 @@
+-# Muscle Smartcard Development
+-# Makefile
+-# David Corcoran
++#
++# BSD makefile for ifd-gen (in ifd-devkit)
++#
++
++PREFIX?=        /usr/local
++DESTDIR?=       ${PREFIX}
++
++#XXX
++#LIBDIR=         /pcsc
++LIBDIR=         /lib
++INCSDIR=        /include
++
++SHLIB_NAME=     libgen_ifd.so
++SHLIB_MAJOR=    1
++SHLIB_MINOR=    0
++
++NOMAN=		1
++NOPROFILE=	1
++
++.if !defined(NO_DEBUG)
++CFLAGS+=        -g -Wall
++.endif
++
++CFLAGS+=        -I.
++CFLAGS+=        -I${DESTDIR}${INCSDIR}
++
++LDFLAGS+=       -L${DESTDIR}/lib
++LDADD+=         -lpcsclite
++
++.if !defined(NO_PCSC_DEBUG)
++CFLAGS+=        -DPCSC_DEBUG=1
++.if defined(PCSC_ATR_DEBUG)
++CFLAGS+=        -DATR_DEBUG=1
++.endif
++.endif
+ 
+-CC       = cc
+-CFLAGS   = -g -fpic -w
+-LD       = ld
+-LEX      = flex
+-OBJ     := $(filter-out test.o, $(patsubst %.c,%.o,$(wildcard *.c)))
+-INCLUDE  = -I.
++SRCS=   ifdhandler.c
++INCS=   ifdhandler.h pcscdefines.h
+ 
+-MAKEXE   = make
+-LIBNAME  = libgen_ifd.dylib
+-PREFIX   = /usr/local/pcsc
+-
+-DEFS     = -DPCSC_DEBUG=1 #-DATR_DEBUG=1
+-
+-all: unix
+-
+-clean:
+-	rm -f *.o $(LIBNAME) core
+-
+-osx: $(OBJ)
+-	$(CC) -dynamiclib $(OBJ) -o $(LIBNAME)
+-
+-unix: $(OBJ)
+-	$(LD) -shared $(OBJ) -o $(LIBNAME)
+-
+-$(patsubst %.c,%.o,$(wildcard *.c)) : %.o : %.c
+-	$(CC) $(CFLAGS) -c $< $(INCLUDE) $(DEFS)
++.include <bsd.lib.mk>
+ 
