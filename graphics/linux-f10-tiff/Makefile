@@ -6,21 +6,46 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.5.5
-PORTREVISION=	2
+PORTVERSION=	3.6.1
 CATEGORIES=	graphics linux
+MASTER_SITES=	${MASTER_SITE_SUSE}
+MASTER_SITE_SUBDIR=	i386/9.2/suse/i586
+PKGNAMEPREFIX=	linux-
+DISTNAME=	libtiff-3.6.1-47.3.i586.rpm
+EXTRACT_ONLY=
+EXTRACT_SUFX=
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of tiff lib
+COMMENT=	TIFF library, Linux/i386 binary
 
-FORBIDDEN=	http://vuxml.FreeBSD.org/f6680c03-0bd8-11d9-8a8a-000c41e2cdad.html \
-		http://vuxml.FreeBSD.org/8f86d8b5-6025-11d9-a9e7-0001020eed82.html \
-		http://vuxml.FreeBSD.org/fc7e6a42-6012-11d9-a9e7-0001020eed82.html \
-		http://vuxml.FreeBSD.org/14e8f315-600e-11d9-a9e7-0001020eed82.html \
-		http://vuxml.FreeBSD.org/3897a2f8-1d57-11d9-bc4a-000c41e2cdad.html
-DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=2005-02-10
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-RPM_SET=	libtiff-${PORTVERSION}-10.${MACHINE_ARCH}.rpm
+DIST_SUBDIR=	rpm/i386/suse/9.2
+DOCDIRS=	usr/share/doc/libtiff-3.6.1
+NO_FILTER_SHLIBS=	yes
+ONLY_FOR_ARCHS=	amd64 i386
+PLIST=		${WRKDIR}/plist
+PLIST_DIRS=	usr/share/doc/packages/libtiff usr/share/doc/packages
+PLIST_FILES=	usr/lib/libtiff.so.3 usr/lib/libtiff.so.3.6.1 \
+		usr/share/doc/packages/libtiff/COPYRIGHT \
+		usr/share/doc/packages/libtiff/README
+PREFIX=		${LINUXBASE}
+USE_LINUX?=	yes
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+# dummy target so rpm can be in BUILD_DEPENDS
+do-build:
+	@${DO_NADA}
+
+do-install:
+	${MKDIR} ${WRKSRC}
+	@rpm -U --ignorearch --ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \
+		--nodeps --replacepkgs ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
+		|| ${TRUE}
+
+post-install:
+	@${RM} -f ${LINUXBASE}/etc/ld.so.cache
+	@${FIND} ${LINUXBASE} -name lib -type d | ${SED} 's:${LINUXBASE}::g' \
+		> ${LINUXBASE}/etc/ld.so.conf
+	@chroot ${LINUXBASE} sbin/ldconfig
+
+.include <bsd.port.mk>
