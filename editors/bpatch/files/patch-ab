@@ -1,5 +1,5 @@
---- bpatch.c.orig	Wed Jan 17 15:33:33 1990
-+++ bpatch.c	Mon Mar 18 19:23:16 1996
+--- bpatch.c.orig	Sat Jul  4 12:12:02 1998
++++ bpatch.c	Sat Jul  4 12:13:22 1998
 @@ -90,10 +90,15 @@
  /*E*/
  /*S includes, globals, and defines */
@@ -64,7 +64,21 @@
  
  	/* ------------------------------------------------------------ */
  	/* set up signal handling					 */
-@@ -339,13 +335,13 @@
+@@ -333,19 +329,27 @@
+ 		alphawin = subwin (stdscr, 16, 16, 4, 57);
+ 		keypad (alphawin, TRUE);
+ 		errwin = subwin (stdscr, 1, 80, 23, 0);
++		if (errwin == NULL)
++			errwin = stdscr;
++		if (hexwin == NULL || alphawin == NULL)
++		{
++			fprintf(stderr, "Can't create all necessary curses windows.\n");
++			reset (0);
++			exit (2);
++		}
+ 
+ #ifdef	MOD_HAX
+ 		/* This is not exactly what the original code does,
  		   but it's good enough.  -r$ */
  		raw();
  #else	/* use original code... */
@@ -80,7 +94,7 @@
  #endif	/* MOD_HAX */
  	}
  
-@@ -478,7 +474,9 @@
+@@ -478,7 +482,9 @@
  				}
  				pbrk = 0;
  				fprintf (stderr, "\007");
@@ -91,7 +105,7 @@
  
  				if (pbrk) status = EOF;
  			}
-@@ -832,7 +830,8 @@
+@@ -832,7 +838,8 @@
  				touchwin (alphawin);
  				wrefresh (alphawin);
  
@@ -101,7 +115,7 @@
  				{
  					if (!arrow (z, &r, &c))
  					{
-@@ -902,7 +901,8 @@
+@@ -902,7 +909,8 @@
  				touchwin (hexwin);
  				wrefresh (hexwin);
  
@@ -111,7 +125,7 @@
  				{
  					if (!arrow (z, &r, &c))
  					{
-@@ -1281,7 +1281,7 @@
+@@ -1281,7 +1289,7 @@
  /*S breakp - set pbrk on interrupt */
  /*H breakp */
  /*E*/
@@ -120,7 +134,7 @@
  int i;
  {
  	int s;
-@@ -1592,6 +1592,7 @@
+@@ -1592,6 +1600,7 @@
  /*S reset - reset terminal to original state */
  /*H reset */
  /*E*/
@@ -128,7 +142,7 @@
  reset (sig)
  int sig;
  {
-@@ -1600,7 +1601,7 @@
+@@ -1600,7 +1609,7 @@
  		move (23, 0);
  		refresh ();
  #ifndef MOD_HAX
@@ -137,7 +151,7 @@
  #endif
  		endwin ();
  	}
-@@ -1610,7 +1611,6 @@
+@@ -1610,7 +1619,6 @@
  		fprintf (stderr, "killed with signal %d\n", sig);
  		exit (sig);
  	}
@@ -145,3 +159,14 @@
  }
  /*S arrow - determine if current character is a cursor control key */
  /*H arrow */
+@@ -1924,8 +1932,8 @@
+ outstr (fmt)
+ char *fmt;
+ {
+-	if (dump) printf (fmt);
+-	else printw (fmt);
++	if (dump) printf ("%s", fmt);
++	else printw ("%s", fmt);
+ 
+ 	return;
+ }
