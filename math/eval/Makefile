@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.lha
 MAINTAINER=	eserte@cs.tu-berlin.de
 COMMENT=	A full featured floating point expression evaluator
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
 EXTRACT_CMD=		${CAT}
 EXTRACT_BEFORE_ARGS=	# empty
