@@ -32,7 +32,8 @@
 #	clean-for-cdrom-list, clean-restricted-list,
 #	configure, deinstall,
 #	depend, depends, describe, extract, fetch, fetch-list, ignorelist,
-#	install, makesum, package, readmes, realinstall, reinstall, tags
+#	install, maintainer, makesum, package, readmes, realinstall, reinstall,
+#	tags
 #
 #	search:
 #		Search for ports using either 'make search key=<keyword>'
@@ -89,6 +90,7 @@ TARGETS+=	fetch
 TARGETS+=	fetch-list
 TARGETS+=	ignorelist
 TARGETS+=	makesum
+TARGETS+=	maintainer
 TARGETS+=	package
 TARGETS+=	realinstall
 TARGETS+=	reinstall
@@ -133,7 +135,9 @@ _SUBDIRUSE: .USE
 			DIRPRFX=${DIRPRFX}$$edir/; \
 	fi
 
-${SUBDIR}:: ${SUBDIR:S/$/.all/}
+.for _subdir in ${SUBDIR}
+${_subdir}::   ${_subdir:S/$/.all/}
+.endfor
 
 .endif
 
