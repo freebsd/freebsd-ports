@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.60 1999/04/03 02:14:13 steve Exp $
+# $Id: Makefile,v 1.61 1999/06/01 13:17:49 tg Exp $
 #
 
     SUBDIR += PDL
@@ -22,6 +22,7 @@
     SUBDIR += geg
     SUBDIR += gnumeric
     SUBDIR += gnuplot
+    SUBDIR += gnuplot+
     SUBDIR += grace
     SUBDIR += hexcalc
     SUBDIR += lapack
@@ -34,6 +35,7 @@
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-Set-IntSpan
     SUBDIR += pari
+    SUBDIR += parmetis
     SUBDIR += plplot
     SUBDIR += pygist
     SUBDIR += rng
