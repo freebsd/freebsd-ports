@@ -1,28 +1,30 @@
 # New ports collection makefile for:	EDICT - JIS X 4081 format version
-# Version required:	1.1
 # Date created:        	00/01/14
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	edict-fpw1.1-src
-PKGNAME=	ja-edict-fpw-1.1
+PORTNAME=	edict-fpw
+PORTVERSION=	1.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/fpwbooks/edict/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 		ftp://ftp.cdrom.com/pub/japanese/monash/ \
 		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
-DISTFILES=	edict-fpw1.1-src.tar.gz edict.gz edict.doc
+DISTNAME=	${PORTNAME}${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		edict.gz \
+		edict.doc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=    	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 		catdump:${PORTSDIR}/japanese/epwutil
 
-WRKSRC=		${WRKDIR}/edict-fpw1.1
-EXTRACT_ONLY=	edict-fpw1.1-src.tar.gz
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 post-extract:
 	${MKDIR} ${WRKSRC}/source

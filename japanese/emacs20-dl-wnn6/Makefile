@@ -1,15 +1,15 @@
 # New ports collection makefile for:	emacs20-dl-wnn6
-# Version required:	0.3.6
 # Date created:		10 October 1998
 # Whom:			shige
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dl-wnn-0.3.6
-PKGNAME=	ja-emacs20-dl-wnn6-0.3.6
+PORTNAME=	emacs20-dl-wnn6
+PORTVERSION=	0.3.6
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tokuda-www.cs.titech.ac.jp/~katsuya/emacs/
+DISTNAME=	dl-wnn-${PORTVERSION}
 
 MAINTAINER=	shige@FreeBSD.org
 

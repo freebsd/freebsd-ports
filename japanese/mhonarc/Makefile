@@ -1,13 +1,12 @@
 # New ports collection makefile for:	MHonArc
-# Version required:		2.3.3
 # Date created:			17 March 1999
 # Whom:				Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MHonArc2.3.3
-PKGNAME=	ja-mhonarc-2.3.3
+PORTNAME=	mhonarc
+PORTVERSION=	2.3.3
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://hhobel.phl.univie.ac.at/MHonArc/ \
@@ -16,11 +15,13 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		http://www.perl.com/CPAN/authors/id/EHOOD/ \
 		http://www.shiratori.riec.tohoku.ac.jp/~p-katoh/Hack/Docs/mhonarc-jp/ \
 		http://people.FreeBSD.org/~flathill/distfiles/
-DISTFILES=	MHonArc2.3.3.tar.gz iso2022.pl
+DISTNAME=	MHonArc${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		iso2022.pl
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	flathill@FreeBSD.org
 
-EXTRACT_ONLY=	MHonArc2.3.3.tar.gz
 Y2K=		http://www.oac.uci.edu/indiv/ehood/MHonArc/doc/faq/general.html#y2k
 
 USE_PERL5=	Yes

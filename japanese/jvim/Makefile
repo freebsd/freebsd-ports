@@ -1,16 +1,16 @@
 # New ports collection makefile for:	jvim
-# Version required:	jvim2.0r+onew2.2.10
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jvim2.0r+onew2.2.10
-PKGNAME?=	ja-jvim-2.0r
+PORTNAME=	jvim
+PORTVERSION=	2.0r
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
+DISTNAME=	${PORTNAME}${PORTVERSION}+onew2.2.10
 
 MAINTAINER=	taoka@FreeBSD.org
 
@@ -19,7 +19,7 @@ FILESDIR=	${.CURDIR}/../jvim/files
 PLIST=		${.CURDIR}/../jvim/pkg/PLIST
 MANLANG=	ja
 MAN1=		jcat.1 jfold.1 jgrep.1 jvim.1
-WRKSRC=		${WRKDIR}/jvim2.0r
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 # Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
 # LIB_DEPENDS, etc.

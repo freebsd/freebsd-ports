@@ -1,19 +1,19 @@
 # New ports collection makefile for:	libjcode
-# Version required:	1.00
 # Date created:		8 MAY 1999
 # Whom:			Shuichi Tanaka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libjcode
-PKGNAME=	ja-libjcode-1.00
+PORTNAME=	libjcode
+PORTVERSION=	1.00
 CATEGORIES=	japanese net
 MASTER_SITES=	http://keemun.soraneko.com/gtkicq/archives/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	stanaka@bb.mbn.or.jp
 
-WRKSRC=		${WRKDIR}/${DISTNAME}-1.00
+WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/libjcode.a	${PREFIX}/lib/libjcode.a

@@ -1,16 +1,15 @@
 # New ports collection makefile for:	addttfont
-# Version required:	1.7
 # Date created:		99/06/15
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	addttfont-1.7
-PKGNAME=	ja-addttfont-1.7
+PORTNAME=	addttfont
+PORTVERSION=	1.7
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
-EXTRACT_SUFX=	''
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	taoka@FreeBSD.org
 

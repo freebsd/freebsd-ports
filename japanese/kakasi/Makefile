@@ -1,15 +1,14 @@
 # New ports collection makefile for:	kakasi
-# Version required:		2.3.1
 # Date created:			26 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kakasi-2.3.1
-PKGNAME=	ja-kakasi-2.3.1
+PORTNAME=	kakasi
+PORTVERSION=	2.3.1
 CATEGORIES=	japanese
-MASTER_SITES=  ftp://kakasi.namazu.org/pub/kakasi/
+MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/
 
 MAINTAINER=	max@FreeBSD.org
 

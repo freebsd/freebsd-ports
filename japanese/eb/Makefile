@@ -1,23 +1,24 @@
 # New ports collection makefile for:	eb
-# Version required:		2.3.7
 # Date created:			20 Jan 1999
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	eb-2.3.7
-PKGNAME=	ja-eb-2.3.7
+PORTNAME=	eb
+PORTVERSION=	2.3.7
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
-DISTFILES=	${EBFILES} ${APPENDIXFILES}
+DISTFILES=	${EBFILES} \
+		${APPENDIXFILES}
+EXTRACT_ONLY=	${EBFILES}
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	eb-2.3.7+.diff
+PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
-EBFILES=	${DISTNAME}.tar.gz
+EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/chujiten-2.3.tar.gz \
 		appendix/chujiten2-2.0.tar.gz \
@@ -43,8 +44,6 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/readers-2.2.tar.gz \
 		appendix/readers2-2.0.tar.gz
 LISTFILES=	LIST LIST-ja
-
-EXTRACT_ONLY=	${EBFILES}
 
 DIST_SUBDIR=	eb
 USE_LIBTOOL=	yes

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	img
-# Version required:	1.2b2
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	img1.2b2
-PKGNAME=	ja-libimg-1.2b2
+PORTNAME=	libimg
+PORTVERSION=	1.2b2
 CATEGORIES=	graphics tk80 japanese
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/graphics/Img/1.2/ \
 		http://www.aaa-int.or.jp/~jfactory/TkStep/dist/
+DISTNAME=	img${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 

@@ -1,22 +1,23 @@
 # New ports collection makefile for:	ja-mutt
-# Version required:	1.0i
 # Date created:		5 Sep 1999
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mutt-1.0.1i
-PKGNAME=	ja-mutt-1.0.1.j0
+PORTNAME=	mutt
+PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.gbnet.net/pub/mutt-international/ \
 		ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.guug.de/pub/mutt/historic/ \
 		http://www.hiei.kit.ac.jp/~hitomi/mutt/
-DISTFILES=	mutt-1.0.1i.tar.gz manual_ja-1.0i-2.tar.gz
+DISTNAME=	${PORTNAME}-${VERSION}i
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		manual_ja-${VERSION:R}i-2.tar.gz
 
 PATCH_SITES=	http://kondara.sdri.co.jp/~kikutani/slang/
-PATCHFILES=	mutt-1.0.1i-jp0.patch.gz
+PATCHFILES=	${DISTNAME}-jp${JP_VERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
@@ -27,10 +28,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext \
 		automake:${PORTSDIR}/devel/automake
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
+VERSION=	1.0.1
+JP_VERSION=	0
+
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/mutt-1.0.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix --with-included-gettext \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/share/mutt \

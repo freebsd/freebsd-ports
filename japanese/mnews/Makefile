@@ -1,19 +1,19 @@
 # New ports collection makefile for:	mnews
-# Version required:		1.22
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mnews122
-PKGNAME?=	ja-mnews-1.22
+PORTNAME=	mnews
+PORTVERSION=	1.22
 CATEGORIES=	japanese news ipv6
 MASTER_SITES=	ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/
+DISTNAME=	mnews${PORTVERSION:S/.//}
 
 MAINTAINER=	seiken@ARGV.AC
 
-WRKSRC=		${WRKDIR}/mnews-1.22/build
+WRKSRC=		${WRKDIR}/mnews-${PORTVERSION}/build
 MAN1=		mnews.1
 MANLANG=	ja
 

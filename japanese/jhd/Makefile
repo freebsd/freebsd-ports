@@ -1,13 +1,12 @@
 # New ports collection makefile for: jhd
-# Version required:	2.3
 # Date created:		Feb 5, 1998
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jhd-2.3
-PKGNAME=	ja-jhd-2.3
+PORTNAME=	jhd
+PORTVERSION=	2.3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.iamas.ac.jp/pub1/UNIX/File/
 

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	magicpoint (with vflib)
-# Version required:	1.05a
 # Date created:		25 Dec 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
@@ -11,7 +10,8 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
-PKGNAME=	ja-magicpoint-1.06a
+PORTNAME=	magicpoint
+PORTVERSION=	1.06a
 CATEGORIES=	japanese
 
 MAINTAINER=	itojun@itojun.org

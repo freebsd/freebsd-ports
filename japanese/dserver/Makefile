@@ -1,26 +1,29 @@
 # New ports collection makefile for:	dserver
-# Version required:	2.2betapl2
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dserver2.2betapl2
-PKGNAME=	ja-dserver-2.2.2
+PORTNAME=	dserver
+PORTVERSION=	2.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.pu-toyama.ac.jp/pub/misc/ \
 		ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
 		ftp://ftp.sra.co.jp/pub/net/ndtp/misc/
-DISTFILES=	dserver2.2betapl2.tar.gz dserver2.2betapl2.addtable.tar.gz \
-		kenjiro-ndtpd.diff kenjiro-dictlist.diff
+DISTNAME=	${PORTNAME}2.2betapl2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}.addtable.${EXTRACT_SUFX} \
+		kenjiro-ndtpd.diff \
+		kenjiro-dictlist.diff
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}.addtable.${EXTRACT_SUFX}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
-EXTRACT_ONLY=	dserver2.2betapl2.tar.gz dserver2.2betapl2.addtable.tar.gz
-WRKSRC=		${WRKDIR}/dserver
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 
 pre-patch:

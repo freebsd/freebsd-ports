@@ -1,20 +1,20 @@
 # New ports collection makefile for:	lyx
-# Version required:	1.0.3
 # Date created:		27 April 1999
 # Whom:			Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lyx-1.0.3
-PKGNAME=	ja-lyx-1.0.3
+PORTNAME=	lyx
+PORTVERSION=	1.0.3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://la1ad.uio.no/pub/lyx/ \
 		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
 		http://cgi.din.or.jp/~kawakami/product/LyX/
-DISTFILES=	lyx-1.0.3.tar.gz lyx-jp-kit0.10b4for1.0.3.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-jp-kit0.10b4for${PORTVERSION}.tar.gz
 
 MAINTAINER=	flathill@FreeBSD.ORG
 

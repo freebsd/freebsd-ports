@@ -1,14 +1,14 @@
 # New ports collection makefile for: ack
-# Version required:	1.39
 # Date created:		21 Jul 1998
 # Whom:			Masanori Kiriake <seiken@nbs.co.jp>
 #
 # $FreeBSD$
 
-DISTNAME=	ack139
-PKGNAME=	ja-ack-1.39
+PORTNAME=	ack
+PORTVERSION=	1.39
 CATEGORIES=	japanese converters
 MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/unix/ack/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	seiken@ARGV.AC
 

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	chasen
-# Version required:	2.02 + 2.1
 # Date created:		21 October 1998
 # Whom:			kuriyama
 #
@@ -7,11 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	chasen-sys2.02-ipadic2.1
-PKGNAME=	ja-chasen-2.02
+PORTNAME=	chasen
+PORTVERSION=	2.02
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/lab/nlp/tools/chasen/ \
 		http://cactus.aist-nara.ac.jp/~akira-k/cha/arc/
+DISTNAME=	${PORTNAME}-sys${PORTVERSION}-ipadic2.1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 

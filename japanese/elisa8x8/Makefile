@@ -1,15 +1,15 @@
 # New ports collection makefile for:	elisa8x8
-# Version required:	1.0
 # Date created:		17 Aug. 1998
 # Whom: Toshihiko SHIMOKAWA <toshi@tea.forus.or.jp> & ELISA Font Project
 #
 # $FreeBSD$
 #
 
-DISTNAME=	elisat10
-PKGNAME=	ja-elisa8x8-1.0
+PORTNAME=	elisa8x8
+PORTVERSION=	1.0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.tea.forus.or.jp/toshi/exhibition/
+DISTNAME=	elisat10
 
 MAINTAINER=	toshi@tea.forus.or.jp
 

@@ -1,21 +1,20 @@
 # New ports collection makefile for:    mtools + support 1232KB , Unicode LFN
-# Version required:     3.6
 # Date created:		6 October 1997
 # Whom:			WATANABE junya <junya-w@remus.dti.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mtools-3.6
-PKGNAME=	ja-mtools-3.6
+PORTNAME=	mtools
+PORTVERSION=	3.6
 CATEGORIES=	japanese emulators
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-DISTFILES=	mtools-3.6.tar.gz mtools-3.6.PC98.patch.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}.PC98.patch.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	junya-w@remus.dti.ne.jp
-
-EXTRACT_ONLY=	mtools-3.6.tar.gz
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS=	--enable-xdf

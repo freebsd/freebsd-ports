@@ -1,19 +1,19 @@
 # New ports collection makefile for:    elvis + japanese patch
-# Version required:     1.8 pl 4 + j 1.1
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       elvis-1.8
-PKGNAME=        ja-elvis-1.8.4
+PORTNAME=	elvis
+PORTVERSION=	1.8.4
 CATEGORIES=    japanese editors
 MASTER_SITES=   ftp://ftp.cs.pdx.edu/pub/elvis/
 EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-1.8
 
 PATCH_SITES=    ftp://ftp.foretune.co.jp/pub/tools/jelvis/
-PATCHFILES=     jelvis1.8p4-j1.1.tar.Z
+PATCHFILES=     j${PORTNAME}1.8p4-j1.1.tar.Z
 
 MAINTAINER=     sanpei@yy.cs.keio.ac.jp
 

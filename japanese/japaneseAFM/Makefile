@@ -1,15 +1,15 @@
 # New ports collection makefile for: japanese AFM files
-# Version required:	1.0
 # Date created:		11 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	japaneseAFM
-PKGNAME=	ja-japaneseAFM-1.0
+PORTNAME=	japaneseAFM
+PORTVERSION=	1.0
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 

@@ -1,18 +1,17 @@
 # New ports collection makefile for:	okphone
-# Version required:	1.2
 # Date created:		7 February 1996
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	okphone-1.2
-PKGNAME=	ja-okphone-1.2
+PORTNAME=	okphone
+PORTVERSION=	1.2
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.fit.ac.jp/pub/Net/okphone/
 
 PATCH_SITES=	ftp://ftp.fit.ac.jp/pub/Net/okphone/patch/
-PATCHFILES=	okphone-1.2.FreeBSD-patch.rev2.gz
+PATCHFILES=	${DISTNAME}.FreeBSD-patch.rev2.gz
 
 MAINTAINER=	max@FreeBSD.org
 

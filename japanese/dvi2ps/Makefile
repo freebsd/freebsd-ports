@@ -1,15 +1,15 @@
 # New ports collection makefile for: jp-dvi2ps
-# Version required:	2.0
 # Date created:		15 Sep 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dvi2ps-2.0j
-PKGNAME=	ja-dvi2ps-2.0
+PORTNAME=	dvi2ps
+PORTVERSION=	2.0
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
+DISTNAME=	${PORTNAME}-${PORTVERSION}j
 
 MAINTAINER=	mita@jp.FreeBSD.org
 

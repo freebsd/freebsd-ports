@@ -1,19 +1,19 @@
 # New ports collection makefile for:	kterm of 16 colors
-# Version required:	6.2
 # Date created:		18 November 1994
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kterm-6.2.0
-PKGNAME=	ja-kterm16c-6.2.0
+PORTNAME=	kterm16c
+PORTVERSION=	6.2.0
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.interface-business.de/pub/outgoing/ \
 		ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
-DISTFILES=	kterm-6.2.0.tar.gz pcemu1.01alpha.tar.gz
-EXTRACT_ONLY=	kterm-6.2.0.tar.gz
+DISTNAME=	kterm-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		pcemu1.01alpha.tar.gz
 
 MASTER_SITE_SUBDIR=	applications
 
@@ -22,10 +22,12 @@ MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	kterm
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
 		http://karin.ip.titech.ac.jp/~takagi/kterm/
-PATCHFILES=	kterm-6.2.0.NFS-xauth.patch \
-		kterm-6.2.0-wpr1.patch.gz
+PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
+		${DISTNAME}-wpr1.patch.gz
 PATCH_DIST_STRIP= -p1
 
 USE_IMAKE=	yes

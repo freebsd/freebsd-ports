@@ -1,20 +1,20 @@
 # New ports collection makefile for: lipsf
-# Version required:	1.14a
 # Date created:		6 Dec 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lpsf114a
-PKGNAME=	ja-lipsf-1.14a
+PORTNAME=	lipsf
+PORTVERSION=	1.14a
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/writing/print/
 EXTRACT_SUFX=	.tgz
+DISTNAME=	lpsf${PORTVERSION:S/.//}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-WRKSRC=		${WRKDIR}/lipsf-114a
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//}
 
 MANLANG=	ja
 MAN1=		lipsf.1 pols.1
