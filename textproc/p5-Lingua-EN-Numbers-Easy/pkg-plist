@@ -1,4 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/Numbers/Easy.pm
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Lingua/EN/Numbers/Easy/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Lingua/EN/Numbers/Easy
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Easy/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Easy
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/Numbers
