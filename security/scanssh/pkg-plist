@@ -1,0 +1,3 @@
+bin/scanssh
+share/scanssh/exclude.list
+@dirrm share/scanssh
