@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.202 1999/04/27 12:33:35 taoka Exp $
+# $Id: Makefile,v 1.203 1999/04/30 09:40:30 taoka Exp $
 #
 
     SUBDIR += 221upgrade
@@ -16,6 +16,7 @@
     SUBDIR += bbjd
     SUBDIR += buffer
     SUBDIR += chord
+    SUBDIR += cmatrix
     SUBDIR += colorls
     SUBDIR += colortail
     SUBDIR += crosspad
