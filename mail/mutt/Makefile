@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.14 1996/12/31 15:00:05 obrien Exp $
+# $Id: Makefile,v 1.15 1997/01/01 21:42:40 obrien Exp $
 
-DISTNAME=	${PKGNAME}-export
-PKGNAME=	mutt-0.55
+DISTNAME=	${PKGNAME}e
+PKGNAME=	mutt-0.57
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
@@ -20,20 +20,9 @@ PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/
-PATCHFILES=	02.externally.PATCH  \
-		03.ispell.PATCH  \
-		04.savename.PATCH  \
-		05.hdrloop.PATCH  \
-		07.mboxhook.PATCH  \
-		08.keypad.PATCH  \
-		09.quote_regexp.PATCH  \
-		10.mark-as-new.PATCH  \
-		11.postponed.PATCH  \
-		12.postponed.PATCH  \
-		13.wait.PATCH  \
-		14.addrfwd.PATCH  \
-		15.flagmessage.PATCH  \
-		06.buffy.PATCH	# other patches need to be before this one
+PATCHFILES=	02.statusontop.PATCH  \
+		03.consistency.PATCH  \
+		04.keypad.PATCH  \
 
 MAINTAINER=     obrien@FreeBSD.org
 
