@@ -1,0 +1,19 @@
+sbin/arirang
+share/arirang/against-snort.uxe
+share/arirang/all.uxe
+share/arirang/bof_dos.uxe
+share/arirang/cfusion.uxe
+share/arirang/idstest.uxe
+share/arirang/iis.uxe
+share/arirang/iiscgi.uxe
+share/arirang/inject.uxe
+share/arirang/nes.uxe
+share/arirang/nt.uxe
+share/arirang/nt_head.uxe
+share/arirang/rule.uxe
+share/arirang/server.uxe
+share/arirang/unix.uxe
+share/arirang/unix_bin.uxe
+share/arirang/unix_cgi.uxe
+share/arirang/unix_head.uxe
+@dirrm share/arirang
