@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/bleeding-edge/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
 
-BROKEN=		"Does not compile"
-
 USE_BZIP2=	yes
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
@@ -28,7 +26,7 @@ GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 .else
 GNU_HOST=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
-OCTAVE_VERSION=	2.1.30
+OCTAVE_VERSION=	${PORTVERSION}
 PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 
 USE_GMAKE=	yes
@@ -45,22 +43,20 @@ CONFIGURE_ARGS+=	--disable-readline
 
 MAN1=		octave.1 octave-bug.1
 
-LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/interpreter/octave.info*
+	@${RM} -f ${WRKSRC}/doc/liboctave/liboctave.info*
 
 post-install:
-.ifndef NOPORTDOCS
-	$(MKDIR) $(PREFIX)/share/octave/doc
-.for file in $(LIBOCTAVE-INFO)
-	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/$(file) $(PREFIX)/info
-.endfor
+	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/liboctave.info $(PREFIX)/info
 	install-info --entry='* Octave: (octave).	Interactive language for numerical computations.' $(PREFIX)/info/octave.info $(PREFIX)/info/dir
 	install-info --entry='* LibOctave: (liboctave).	C++ class library for Octave.' $(PREFIX)/info/liboctave.info $(PREFIX)/info/dir
-	$(INSTALL_DATA) $(WRKSRC)/doc/interpreter/octave.ps $(PREFIX)/share/octave/doc
-	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/liboctave.ps $(PREFIX)/share/octave/doc
-	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-letter.ps $(PREFIX)/share/octave/doc
-	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-legal.ps $(PREFIX)/share/octave/doc
-	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-a4.ps $(PREFIX)/share/octave/doc
-	$(INSTALL_DATA) $(WRKSRC)/doc/faq/Octave-FAQ.ps $(PREFIX)/share/octave/doc
+.ifndef NOPORTDOCS
+	@${MKDIR} ${DOCSDIR}
+.for file in faq/Octave-FAQ.ps interpreter/octave.ps liboctave/liboctave.ps \
+	refcard/refcard-a4.ps refcard/refcard-legal.ps refcard/refcard-letter.ps
+	$(INSTALL_DATA) ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
