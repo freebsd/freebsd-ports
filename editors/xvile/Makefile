@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 DISTNAME=	vile-9.2
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	${MASTER_SITES:S,vile/,vile/patches,g}
+PATCH_SITES=	${MASTER_SITES:S,vile/,vile/patches/,g}
 PATCHFILES=	vile-9.2a.patch.gz \
 		vile-9.2b.patch.gz \
 		vile-9.2c.patch.gz \
