@@ -14,6 +14,8 @@ MAINTAINER=	thierry@pompo.net
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 
+BROKEN=		"Doesn't run with Horde 2.1 or 2.2"
+
 NO_BUILD=	yes
 
 DOCS=		LICENSE docs/CHANGES
