@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	3.14
+PORTVERSION=	3.20
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	NetAddr
@@ -15,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for working with IP addresses and blocks thereof
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
@@ -25,14 +22,15 @@ MAN3=		NetAddr::IP.3
 
 post-patch:
 	${PERL} -pi -e 's/\r//;' \
-		-e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
+		-e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);\n$$1/;' \
 		-e '$$_="" if /require 5/;' \
 		-e '$$_="" if /use warnings/;' \
-		${WRKSRC}/IP.pm ${WRKSRC}/t/v4-badnm.t
+		${WRKSRC}/IP.pm ${WRKSRC}/t/v4-badnm.t ${WRKSRC}/t/v4-new.t \
+		${WRKSRC}/t/v6-base.t
 
 post-build:
 	@${PERL} -M5.6.0 -e '' >/dev/null 2>&1 || \
 	( ${ECHO_MSG} "===>	Please note that this module provides more functionality when" && \
-	${ECHO_MSG} "===>	used with perl 5.6.1 or perl 5.8.0 (both in the ports collection)." )
+	${ECHO_MSG} "===>	used with perl 5.6.1 or perl 5.8.1 (both in the ports collection)." )
 
 .include <bsd.port.mk>
