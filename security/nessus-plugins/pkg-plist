@@ -1165,5 +1165,3 @@ lib/nessus/plugins_factory/libtool
 lib/nessus/plugins_factory/nessus.tmpl
 sbin/nessus-update-plugins
 @unexec rmdir %D/lib/nessus/plugins_factory 2>/dev/null || true
-@unexec rmdir %D/lib/nessus/plugins 2>/dev/null || true
-@unexec rmdir %D/lib/nessus 2>/dev/null || true
