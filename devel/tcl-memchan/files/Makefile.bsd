@@ -3,10 +3,9 @@ SHLIB_NAME=	lib${LIBNAME}.so.2
 
 .PATH:	${.CURDIR}/generic
 
-.if exists(${.CURDIR}/Makefile.in)
-_SRCS!=		${MAKE} -f ${.CURDIR}/Makefile.in -V Memchan_SOURCES
-SRCS=		${_SRCS:S/@srcdir@\/generic\///}
-.endif
+SRCS=	memchan.c init.c counter.c fifo.c fifo2.c null.c buf.c	\
+	bufFix.c bufExt.c bufRange.c bufQueue.c bufStubInit.c	\
+	bufStubLib.c
 
 TCL_VER?=	8.3
 LOCALBASE?=	/usr/local
@@ -19,27 +18,27 @@ LDADD=		-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}
 all: pkgIndex.tcl test
 
 pkgIndex.tcl:
-	echo 'package ifneeded ${LIBNAME} ${SHLIB_MAJOR}.${SHLIB_MINOR} \
+	echo 'package ifneeded ${LIBNAME} 2.2 \
 		[list load [file join $$dir $(SHLIB_NAME)]]' > pkgIndex.tcl
 
-DIR             = lib/tcl${TCL_VER}/${LIBNAME}
-SHLIBDIR        = ${PREFIX}/${DIR}
-MANDIR          = ${PREFIX}/man/man
+DIR	= lib/tcl${TCL_VER}/${LIBNAME}
+LIBDIR	= ${PREFIX}/${DIR}
+MANDIR	= ${PREFIX}/man/man
 
-${SHLIBDIR}:
-	${MKDIR} ${SHLIBDIR}
+${LIBDIR}:
+	${MKDIR} ${LIBDIR}
 
 env:
 	@${ECHO} SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK} DIR=${DIR}
 
-beforeinstall: ${SHLIBDIR} pkgIndex.tcl
-	${INSTALL_DATA} pkgIndex.tcl ${SHLIBDIR}/pkgIndex.tcl
+beforeinstall: ${LIBDIR} pkgIndex.tcl
+	${INSTALL_DATA} pkgIndex.tcl ${LIBDIR}/pkgIndex.tcl
 
 .include <bsd.lib.mk>
 
 test:	${SHLIB_NAME} pkgIndex.tcl
 	echo '	set auto_path ${.OBJDIR}; cd ${.CURDIR}/tests; \
-		package require ${LIBNAME} ${SHLIB_MAJOR}.${SHLIB_MINOR}; \
+		package require ${LIBNAME}; \
 		if {[catch {source all} msg]} { \
 			puts stderr $msg; exit -1 \
 		}' | ${LOCALBASE}/bin/tclsh${TCL_VER}
