@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1998/12/19 16:54:12 jseger Exp $
+# $Id: Makefile,v 1.38 1998/12/24 20:49:42 jseger Exp $
 #
 
     SUBDIR += SSLeay
@@ -6,6 +6,7 @@
     SUBDIR += bro
     SUBDIR += bugs
     SUBDIR += cfs
+    SUBDIR += checkpassword
     SUBDIR += cops
     SUBDIR += crack
     SUBDIR += donkey
