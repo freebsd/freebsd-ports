@@ -10,7 +10,8 @@ PORTNAME=	nullmailer
 PORTVERSION=	1.00r5
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://untroubled.org/nullmailer/
+MASTER_SITES=	http://untroubled.org/nullmailer/ \
+		ftp://mirrors.dataloss.nl/mirrors/bgware/nullmailer/%SUBDIR%/
 # MASTER_SITE_SUBDIR=	${PORTVERSION}
 MASTER_SITE_SUBDIR=	1.00RC5
 DISTNAME=	${PORTNAME}-1.00RC5
