@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -25,5 +26,9 @@ CONFIGURE_ARGS=	--program-prefix=g --without-included-gettext
 MAKE_ARGS=	BERKELEY_DEFAULTS=1
 
 MAN1=		gindent.1
+
+post-patch:
+	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g"
 
 .include <bsd.port.mk>
