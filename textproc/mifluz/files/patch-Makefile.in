@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jun  7 11:23:57 2002
++++ Makefile.in	Fri Jun  7 11:24:43 2002
+@@ -469,7 +469,7 @@
+ 	mkdir -p ${DESTDIR}${localstatedir}/cache/mifluz
+ 	@if [ ! -d ${DESTDIR}${sysconfdir} ] ; then mkdir -p ${DESTDIR}${sysconfdir} ; fi
+ 	@if [ ! -f ${DESTDIR}${sysconfdir}/mifluz.conf ] ; \
+-	then a="cp ${srcdir}/mifluz.conf ${DESTDIR}${sysconfdir}/mifluz.conf" ; echo $$a ; $$a ; \
++	then a="cp ${srcdir}/mifluz.conf ${DESTDIR}${sysconfdir}/mifluz.conf.sample" ; echo $$a ; $$a ; \
+ 	else echo "${DESTDIR}${sysconfdir}/mifluz.conf exists, not overwritten" ; \
+ 	fi
+ 

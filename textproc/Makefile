@@ -110,6 +110,7 @@
     SUBDIR += manued.el
     SUBDIR += mgdiff
     SUBDIR += mguesser
+    SUBDIR += mifluz
     SUBDIR += minidom
     SUBDIR += mkcatalog
     SUBDIR += modlogan
