@@ -108,8 +108,8 @@ while [ "$1" ]; do
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.18-2.1.0-0.9.7d.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.18-2.1.0-0.9.7d/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.19-2.2-20040829-0.9.7d.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.19-2.2-20040829-0.9.7d/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -207,7 +207,7 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	ipv6-1.24-pf-2.2-20040504.patch.gz"
+			echo "PATCHFILES+=	ipv6-1.25-pf-2.2-20040616.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
@@ -225,7 +225,7 @@ while [ "$1" ]; do
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	tls+ipv6-1.24-pf-2.2-20040504.patch.gz"
+			echo "PATCHFILES+=	tls+ipv6-1.25-pf-2.2-20040616.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
