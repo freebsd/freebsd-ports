@@ -1,4 +1,4 @@
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/wnn.so
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/wnn.so
 share/emacs/site-lisp/egg/busyu.el
 share/emacs/site-lisp/egg/busyu.elc
 share/emacs/site-lisp/egg/egg.el
