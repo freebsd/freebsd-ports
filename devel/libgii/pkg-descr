@@ -1,10 +1,19 @@
-The goal of LibGII is to provide a single easy to use, but yet powerful, API
-for all possible input sources.  However we are not there yet.  The API is far
-from set in stone yet, and is likely to change.
+LibGII (General Input Interface) is intended to be to input what our LibGGI
+(General Graphics Interface) library is to graphics.
 
-The main purpose of this LibGII release is to accompany our LibGGI beta
-release, but you're still very welcome to use LibGII as a standalone library
-for your non-LibGGI applications.
+LibGII is based on the concept of input streams, which virtualize access
+to the underlying input drivers. Events from various input devices are
+abstracted into easy-to-use structures. LibGII also allows the application to
+join streams together, receiving input from an arbitrary combination of
+devices. LibGII is a separate component from LibGGI, although LibGGI
+depends on LibGII for input purposes.
+
+The main purpose of this LibGII release is to accompany our LibGGI
+release, but you're still very welcome to use LibGII as a standalone
+library for your non-LibGGI applications. Also you might be interrested in
+the mhub utility found in the demos directory. mhub is a mouse event repeater
+and converter. See mhub(1) and the libgii(7) and input-<target>(7) manual pages
+for more info.
 
 WWW: http://www.ggi-project.org/
 
