@@ -1,3 +1,4 @@
+include/Hermes/H_Blit.h
 include/Hermes/H_Clear.h
 include/Hermes/H_Config.h
 include/Hermes/H_Conv.h
@@ -12,7 +13,7 @@ lib/libHermes.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/Hermes/AUTHORS
-share/doc/Hermes/CHANGES
+share/doc/Hermes/ChangeLog
 share/doc/Hermes/COPYING
 share/doc/Hermes/FAQ
 share/doc/Hermes/README
