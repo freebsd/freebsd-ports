@@ -70,6 +70,7 @@ PKGNAMESUFFIX=	-gdbm
 APR_UTIL_CONF_ARGS+=	--without-berkeley-db
 .elif defined(APR_UTIL_WITH_BERKELEY_DB) || exists(${LOCALBASE}/lib/libdb4.so.0)
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+APR_UTIL_CONF_ARGS+=	--with-berkeley-db=${PREFIX}
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
 .else
