@@ -9,8 +9,11 @@
 	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/psgml"
     ) load-path)))
 
-(autoload 'sgml-mode "psgml" "Major mode to edit SGML files." t)
-(autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
+(defalias 'sgml-mode 'psgml-mode)
+(defalias 'xml-mode 'pxml-mode)
+
+(autoload 'psgml-mode "psgml" "Major mode to edit SGML files." t)
+(autoload 'pxml-mode "psgml" "Major mode to edit XML files." t)
 
 (setq auto-mode-alist
       (append '(
