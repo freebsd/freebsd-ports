@@ -1,16 +1,13 @@
---- Makefile.in.orig	Sun Aug 23 21:54:16 1998
-+++ Makefile.in	Sun Feb  6 22:12:03 2000
-@@ -29,10 +29,11 @@
+--- Makefile.in.orig	Mon Aug 24 13:54:16 1998
++++ Makefile.in	Tue May  2 00:51:47 2000
+@@ -28,8 +28,8 @@
+ 
  PROG = trafshow
  CC = @CC@
- CCOPT = @V_CCOPT@
+-CCOPT = @V_CCOPT@
 -INCLS = -I. @V_INCLS@
-+INCLS = -I. -I/usr/local/include @V_INCLS@
++CCOPT = @CFLAGS@
++INCLS = -I. @CPPFLAGS@
  DEFS = @DEFS@
  
--CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
-+CFLAGS ?= -O2
-+CFLAGS += $(DEFS) $(INCLS)
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
- 
+ CFLAGS = $(CCOPT) $(DEFS) $(INCLS)

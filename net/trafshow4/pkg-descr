@@ -11,5 +11,7 @@ pseudo-device   bpfilter        4       # Berkeley packet filter
 The number after bpfilter is the number of interfaces that can be
 examined simultaneously. See section 5.8.3 of Handbook for details.
 
+WWW: http://www.rinetsoft.nsk.su/trafshow/index_en.html
+
 - Igor
 igor@zynaps.ru

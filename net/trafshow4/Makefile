@@ -19,14 +19,18 @@ LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS=-L/usr/local/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 ALL_TARGET=	trafshow
 
 MAN1=		trafshow.1
 
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.c
+
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${PREFIX}/man/man1
-	@ ${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/etc/trafshow
+	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/etc/trafshow
 
 .include <bsd.port.post.mk>

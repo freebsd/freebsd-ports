@@ -5,7 +5,7 @@
  	(void) sprintf(buf, "%s/.%s", pw->pw_dir, program_name);
  	if ((fp = fopen(buf, "r")) == NULL) {
 -		(void) strcpy(buf, "/etc/");
-+		(void) strcpy(buf, "/usr/local/etc/");
++		(void) strcpy(buf, "%%PREFIX%%/etc/");
  		(void) strcat(buf, program_name);
  		if ((fp = fopen(buf, "r")) == NULL) return 0;
  	}
