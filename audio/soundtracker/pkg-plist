@@ -8,6 +8,7 @@ bin/soundtracker
 %%NLS%%share/locale/hr/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/it/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/soundtracker.mo
+%%NLS%%share/locale/no/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/soundtracker.mo
