@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2-hacker-tools
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
