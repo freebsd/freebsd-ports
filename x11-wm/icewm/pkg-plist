@@ -7,29 +7,30 @@ bin/icewm
 bin/icewmbg
 bin/icewmhint
 bin/icewmtray
-%%PORTDOCS%%share/doc/icewm/CHANGES
-%%PORTDOCS%%share/doc/icewm/INSTALL
-%%PORTDOCS%%share/doc/icewm/README
-%%PORTDOCS%%share/doc/icewm/TODO
-%%PORTDOCS%%share/doc/icewm/icewm-1.html
-%%PORTDOCS%%share/doc/icewm/icewm-10.html
-%%PORTDOCS%%share/doc/icewm/icewm-11.html
-%%PORTDOCS%%share/doc/icewm/icewm-12.html
-%%PORTDOCS%%share/doc/icewm/icewm-13.html
-%%PORTDOCS%%share/doc/icewm/icewm-14.html
-%%PORTDOCS%%share/doc/icewm/icewm-15.html
-%%PORTDOCS%%share/doc/icewm/icewm-16.html
-%%PORTDOCS%%share/doc/icewm/icewm-17.html
-%%PORTDOCS%%share/doc/icewm/icewm-18.html
-%%PORTDOCS%%share/doc/icewm/icewm-2.html
-%%PORTDOCS%%share/doc/icewm/icewm-3.html
-%%PORTDOCS%%share/doc/icewm/icewm-4.html
-%%PORTDOCS%%share/doc/icewm/icewm-5.html
-%%PORTDOCS%%share/doc/icewm/icewm-6.html
-%%PORTDOCS%%share/doc/icewm/icewm-7.html
-%%PORTDOCS%%share/doc/icewm/icewm-8.html
-%%PORTDOCS%%share/doc/icewm/icewm-9.html
-%%PORTDOCS%%share/doc/icewm/icewm.html
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/icewm-1.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-10.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-11.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-12.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-13.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-14.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-15.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-16.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-17.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-18.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-19.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-2.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-3.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-4.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-5.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-6.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-7.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-8.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-9.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm.html
 %%GNOMEDESKTOP%%share/gnome/wm-properties/IceWM.desktop
 share/icewm/icons/app_16x16.xpm
 share/icewm/icons/app_32x32.xpm
@@ -361,4 +362,4 @@ share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/ledclock
 @dirrm share/icewm/icons
 @dirrm share/icewm
-%%PORTDOCS%%@dirrm share/doc/icewm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

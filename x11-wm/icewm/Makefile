@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--disable-xfreetype \
+CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-cfgdir=${DATADIR} \
 		--with-libdir=${DATADIR} \
 		--with-kdedatadir=${LOCALBASE}/share \
@@ -34,8 +34,8 @@ CONFIGURE_ARGS=	--disable-xfreetype \
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomedesktop}!=""
-USE_GNOME+=	gnomedesktop
-CONFIGURE_ARGS+=	--with-imlib --without-xpm --enable-menus-gnome \
+USE_GNOME+=	gnomedesktop imlib
+CONFIGURE_ARGS+=	--with-imlib --without-xpm --enable-menus-gnome2 \
 			--enable-guievents --with-icesound=esound
 INSTALL_TARGET=		install install-gnome
 PLIST_SUB+=	ESOUND="" GNOMEDESKTOP=""
@@ -48,8 +48,12 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-guievents --with-icesound=esound
 PLIST_SUB+=	ESOUND="" GNOMEDESKTOP="@comment "
 .else
-PLIST_SUB+=	ESOUND="@comment " GNOMEDESKTOP="@comment " 
+PLIST_SUB+=	ESOUND="@comment " GNOMEDESKTOP="@comment "
 .endif
+.endif
+
+.if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
+CONFIGURE_ARGS+=	--enable-corefonts --disable-xfreetype
 .endif
 
 post-patch:
