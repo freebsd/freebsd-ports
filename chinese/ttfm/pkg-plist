@@ -1,0 +1,13 @@
+bin/ttfinfo
+bin/ttfm.sh
+share/doc/ttfm/README
+share/doc/ttfm/USAGE
+share/ttfm/chitex.ttfm.nop
+share/ttfm/ttf2pk.ttfm.nop
+share/ttfm/xttfm-tcl.ttfm.nop
+share/ttfm/xfreetype.ttfm
+share/ttfm/xttfm.ttfm
+@dirrm share/doc/ttfm
+@dirrm share/ttfm
+@unexec rmdir %D/share/fonts/ttf 2>/dev/null || true
+@unexec rmdir %D/share/fonts 2>/dev/null || true

@@ -1,0 +1,19 @@
+A True Type Font Manager that handles true type font
+installation, uninstallation, list, and default font
+setting.  It was originally in the CLE distribution.
+
+The manager doesn't deal with applications using TTF
+directly.  Instead, it calls modules to handle the
+details.  There are only several predefined behaviours
+of the modules, like add/remove/list.  There are four
+modules as of version 0.9:
+
+chitex: For ChiTeX, a Chinese TeX/LaTeX
+ttf2pk: Generate pk/tfm for CJK
+xfreetype: For Xfsft in XFree86 3.3.x and "freetype"
+           module in 4.x
+xttfm: For X-TT in XFree86 3.3.x and "xtt" module in
+       4.x, avaiable in both tcl and sh versions.
+
+Some modules are Big5/GB enhanced, for better font
+detection/generation.
