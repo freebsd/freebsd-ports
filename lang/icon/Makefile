@@ -3,7 +3,7 @@
 # Date created:         05 April 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1998/01/20 09:37:40 tg Exp $
+# $Id: Makefile,v 1.12 1998/02/20 12:19:36 tg Exp $
 #
 
 DISTNAME=       unix
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu/icon/packages/unix/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+ONLY_FOR_ARCHS=	i386
 
 DIST_SUBDIR=	icon
 NO_WRKSUBDIR=	true
