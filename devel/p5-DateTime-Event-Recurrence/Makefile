@@ -25,9 +25,10 @@ MAN3=		DateTime::Event::Recurrence.3
 
 .include <bsd.port.pre.mk>
 
-# Depends on devel/p5-DateTime-Set which requires perl >= 5.6
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+post-patch:
+	${PERL} -p -i.orig -e 's/(\$$\w+(?:-\>)?{\s*(?:\$$?\w+|\$$\w+->{\w+}\[\$$\w+\])\s*})\(/\&{$$1}(/g;' \
+		${WRKSRC}/lib/DateTime/Event/Recurrence.pm
 .endif
 
 .include <bsd.port.post.mk>
