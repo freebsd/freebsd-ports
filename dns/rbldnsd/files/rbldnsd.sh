@@ -36,7 +36,7 @@ stop_postcmd()
 
 rbldnsd_enable=${rbldnsd_enable:-"NO"}
 rbldnsd_flags=${rbldnsd_flags:-"-r /usr/local/etc/rbldnsd -b 127.0.0.1 bl.example.com:ip4set:example"}
-rbldnsd_flags="${rbldnsd_flags% *} -p $pidfile ${rbldnsd_flags##* }"
+rbldnsd_flags="-p $pidfile ${rbldnsd_flags}"
 
 run_rc_command "$1"
 

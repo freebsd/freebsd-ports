@@ -7,7 +7,7 @@
 
 PORTNAME=	rbldnsd
 PORTVERSION=	0.992
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/:0 \
 		http://www.it.ca/~paul/src/:0
