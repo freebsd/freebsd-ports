@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.7.97.2
+PORTVERSION=	0.7.98.2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://irssi.org/files/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-
-WRKSRC=		${WRKDIR}/irssi-0.7.97
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-socks --with-textui --with-bot \
-		--without-servertest \
+CONFIGURE_ARGS=	--without-socks --with-bot --without-servertest \
 		--enable-perl-path=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV= LIBS="-L${LOCALBASE}/lib -lintl"
 
 .include <bsd.port.pre.mk>
 
