@@ -6258,6 +6258,7 @@ rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader
 rtld-aout	src/libexec/rtld-aout
 rtld-elf	src/libexec/rtld-elf
+rtplib		ports/devel/rtplib
 rtpmon		ports/mbone/rtpmon
 rtprio		src/usr.sbin/rtprio
 rtptools	ports/mbone/rtptools
