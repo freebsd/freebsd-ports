@@ -14,4 +14,9 @@ MAINTAINER=     wosch@FreeBSD.org
 
 MAN1=		socket.1
 
+post-install:
+
+	@${MKDIR} ${PREFIX}/share/doc/socket
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/socket
+
 .include <bsd.port.mk>

@@ -1,1 +1,3 @@
 bin/socket
+share/doc/socket/README
+@dirrm share/doc/socket
