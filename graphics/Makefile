@@ -77,6 +77,7 @@
     SUBDIR += jgraph
     SUBDIR += jgv
     SUBDIR += jpeg
+    SUBDIR += juno-2
     SUBDIR += kdegraphics11
     SUBDIR += kdegraphics11-i18n
     SUBDIR += killustrator
