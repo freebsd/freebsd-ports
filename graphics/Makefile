@@ -175,6 +175,7 @@
     SUBDIR += kdegraphics3
     SUBDIR += kimagemapeditor
     SUBDIR += kisomandel
+    SUBDIR += kix-kmod
     SUBDIR += kludge3d
     SUBDIR += landscape
     SUBDIR += lcms
