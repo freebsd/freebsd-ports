@@ -1,0 +1,66 @@
+*** configure.in.orig	Sun Jun 17 22:17:49 2001
+--- configure.in	Thu Jul 26 11:36:11 2001
+*************** AC_ARG_PROGRAM
+*** 28,38 ****
+  
+  
+  H323_INCLUDES="-I$PWLIBDIR/include/ptlib/unix -I$PWLIBDIR/include  -I$OPENH323DIR/include"
+! H323_LIBS="-L$PWLIBDIR/lib -L$OPENH323DIR/lib -lh323_linux_x86_r -ldl -lpt_linux_x86_r -lpthread"
+  
+  
+  LDAP_INCLUDES="-I/usr/local/include"
+! LDAP_LIBS="-lldap -llber -lresolv"
+  
+  
+  
+--- 28,38 ----
+  
+  
+  H323_INCLUDES="-I$PWLIBDIR/include/ptlib/unix -I$PWLIBDIR/include  -I$OPENH323DIR/include"
+! H323_LIBS="-L$PWLIBDIR/lib -L$OPENH323DIR/lib -lh323_FreeBSD_x86_r -lpt_FreeBSD_x86_r -pthread"
+  
+  
+  LDAP_INCLUDES="-I/usr/local/include"
+! LDAP_LIBS="-L/usr/local/lib -lldap -llber"
+  
+  
+  
+*************** dnl ************************************
+*** 48,55 ****
+  if test "x${OSTYPE}" = "xlinux-gnu"; then
+    H323_CFLAGS="-D_REENTRANT -DP_HAS_SEMAPHORES -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -DHAS_OSS -DPTRACING -O2 -DLINUX"
+  else
+!   H323_CFLAGS="-DP_SOLARIS=8 -D_REENTRANT -D_DEBUG -DPMEMORY_CHECK=1 -DP_THREADS
+! -DPBYTE_ORDER=PLITTLE_ENDIAN -DPTRACING -02 -DSOLARIS"
+  fi
+  
+  dnl *********************************************************************
+--- 48,54 ----
+  if test "x${OSTYPE}" = "xlinux-gnu"; then
+    H323_CFLAGS="-D_REENTRANT -DP_HAS_SEMAPHORES -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -DHAS_OSS -DPTRACING -O2 -DLINUX"
+  else
+!   H323_CFLAGS="-DP_FREEBSD=400001 -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -DPTRACING -02 -DNDEBUG"
+  fi
+  
+  dnl *********************************************************************
+*************** AM_PROG_LIBTOOL
+*** 69,77 ****
+  dnl #########################################################################
+  dnl  Check for LDAP if available.
+  dnl ########################################################################
+! AC_CHECK_LIB(resolv, res_gethostbyaddr, [LIBS="-lresolv $LIBS"], AC_MSG_ERROR([*** libresolv not found.]), -lresolv)
+  
+! AC_CHECK_LIB(ldap, ldap_simple_bind, LIBS="-lldap -llber $LIBS", AC_MSG_ERROR([*** LDAP library is not found.]), -llber)
+  
+  
+  dnl #########################################################################
+--- 68,76 ----
+  dnl #########################################################################
+  dnl  Check for LDAP if available.
+  dnl ########################################################################
+! dnl AC_CHECK_LIB(resolv, res_gethostbyaddr, [LIBS="-lresolv $LIBS"], AC_MSG_ERROR([*** libresolv not found.]), -lresolv)
+  
+! AC_CHECK_LIB(ldap, ldap_simple_bind, LIBS=" -L/usr/local/lib -lldap -llber $LIBS", AC_MSG_ERROR([*** LDAP library is not found.]), -llber)
+  
+  
+  dnl #########################################################################

@@ -1,0 +1,19 @@
+*** src/endpoint.cpp.orig	Thu Jul 26 11:45:30 2001
+--- src/endpoint.cpp	Thu Jul 26 11:45:42 2001
+*************** BOOL GMH323EndPoint::OpenVideoDevice (H3
+*** 700,706 ****
+        codec.SetVideoDevice("/dev/video");
+        codec.SetVideoInput (0);
+        codec.SetTxQualityLevel (opts->tr_vq);
+!       codec.SetTxFPS (opts->tr_fps);
+        codec.SetBackgroundFill(opts->tr_ub);
+        codec.SetVideoFormat(opts->video_format);
+  
+--- 700,706 ----
+        codec.SetVideoDevice("/dev/video");
+        codec.SetVideoInput (0);
+        codec.SetTxQualityLevel (opts->tr_vq);
+! /*      codec.SetTxFPS (opts->tr_fps); */
+        codec.SetBackgroundFill(opts->tr_ub);
+        codec.SetVideoFormat(opts->video_format);
+  

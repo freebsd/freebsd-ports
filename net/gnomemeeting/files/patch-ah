@@ -1,0 +1,14 @@
+*** src/main.cpp.orig	Thu Jul 26 12:01:33 2001
+--- src/main.cpp	Thu Jul 26 12:01:50 2001
+*************** int main (int argc, char ** argv, char *
+*** 235,241 ****
+--- 235,243 ----
+    read_config (opts);
+  
+    // Init
++ #ifdef __linux__
+    g_thread_init(NULL);
++ #endif
+    textdomain (PACKAGE);
+    bindtextdomain (PACKAGE, GNOMELOCALEDIR);
+    gw->pixmap = NULL;

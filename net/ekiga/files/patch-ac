@@ -1,0 +1,14 @@
+*** src/ldap_h.h.orig	Thu Jul 26 11:40:56 2001
+--- src/ldap_h.h	Thu Jul 26 11:41:23 2001
+***************
+*** 21,26 ****
+--- 21,29 ----
+  #ifndef _LDAP_H_H_
+  #define _LDAP_H_H
+  
++ #ifdef __FreeBSD__
++ #include <lber.h>
++ #endif
+  #include <ldap.h>
+  #include <iostream.h>
+  #include <string.h>

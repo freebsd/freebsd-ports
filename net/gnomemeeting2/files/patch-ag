@@ -1,0 +1,148 @@
+*** src/webcam.cpp.orig	Thu Jul 26 11:46:12 2001
+--- src/webcam.cpp	Thu Jul 26 11:50:00 2001
+*************** void * GM_cam_capture_thread (GM_window_
+*** 80,101 ****
+    int len;
+    void *pic;
+    GdkRectangle update_rec;
+    struct video_window vid_win;
+  
+    update_rec.x = 0;
+    update_rec.y = 0;
+    update_rec.width = 176;
+    update_rec.height = 144;
+  
+    vid_win.width = 176;
+    vid_win.height = 144;
+! 
+  
+    // if video device not opened
+    if (gw->dev == -1)
+      gw->dev = open("/dev/video", O_RDWR);
+  
+    ioctl (gw->dev, VIDIOCSWIN, &vid_win);
+  
+    pic = malloc (176* 144 * 3);  
+  
+--- 80,107 ----
+    int len;
+    void *pic;
+    GdkRectangle update_rec;
++ #ifdef __linux__
+    struct video_window vid_win;
++ #endif
+  
+    update_rec.x = 0;
+    update_rec.y = 0;
+    update_rec.width = 176;
+    update_rec.height = 144;
+  
++ #ifdef __linux__
+    vid_win.width = 176;
+    vid_win.height = 144;
+! #endif
+  
+    // if video device not opened
+    if (gw->dev == -1)
+      gw->dev = open("/dev/video", O_RDWR);
+  
++ 
++ #ifdef __linux__
+    ioctl (gw->dev, VIDIOCSWIN, &vid_win);
++ #endif
+  
+    pic = malloc (176* 144 * 3);  
+  
+*************** void * GM_cam_capture_thread (GM_window_
+*** 132,138 ****
+--- 138,146 ----
+  
+  int GM_cam_info (GM_window_widgets *gw, GtkWidget *text)
+  {
++ #ifdef __linux__
+    struct video_capability vid_cap;
++ #endif
+    char *maxh, *maxw, *minh, *minw;
+    int was_opened = 1;
+  
+*************** int GM_cam_info (GM_window_widgets *gw, 
+*** 148,153 ****
+--- 156,162 ----
+        was_opened = 0; // webcam was not opened, so we will close it
+      }
+  
++ #ifdef __linux__
+    ioctl (gw->dev, VIDIOCGCAP, &vid_cap);
+  
+    gtk_text_insert (GTK_TEXT (text), NULL, NULL, NULL, 
+*************** int GM_cam_info (GM_window_widgets *gw, 
+*** 176,181 ****
+--- 185,191 ----
+    else
+      gtk_text_insert (GTK_TEXT (text), NULL, NULL, NULL, 
+  		     "\n Can not capture  : ", -1);
++ #endif
+  
+    if (was_opened == 0)
+      {
+*************** void GM_cam_set_params (GM_window_widget
+*** 196,202 ****
+--- 206,214 ----
+  			int brightness, int colour, int contrast)
+  {
+    int was_opened = 1;
++ #ifdef __linux__
+    struct video_picture vid_pic;
++ #endif
+  
+    // If the webcam device is not opened, then open it
+    if (gw->dev == -1)
+*************** void GM_cam_set_params (GM_window_widget
+*** 206,211 ****
+--- 218,224 ----
+      }
+  
+    // Read the current values
++ #ifdef __linux__
+    ioctl (gw->dev, VIDIOCGPICT, &vid_pic);
+  
+    vid_pic.whiteness = (int) whiteness * 256;
+*************** void GM_cam_set_params (GM_window_widget
+*** 214,219 ****
+--- 227,233 ----
+    vid_pic.contrast = (int) contrast * 256;
+  
+    ioctl (gw->dev, VIDIOCSPICT, &vid_pic);
++ #endif
+  
+    if (was_opened == 0)
+      {
+*************** void GM_cam_get_params (GM_window_widget
+*** 227,233 ****
+--- 241,249 ----
+  			int *brightness, int *colour, int *contrast)
+  {
+    int was_opened = 1;
++ #ifdef __linux__
+    struct video_picture vid_pic;
++ #endif
+  
+    // If the webcam device is not opened, then open it
+    if (gw->dev == -1)
+*************** void GM_cam_get_params (GM_window_widget
+*** 237,248 ****
+--- 253,266 ----
+      }
+  
+    // Read the current values
++ #ifdef __linux__
+    ioctl (gw->dev, VIDIOCGPICT, &vid_pic);
+  
+    *whiteness = (int) vid_pic.whiteness / 256;
+    *brightness = (int) vid_pic.brightness / 256;
+    *colour = (int) vid_pic.colour / 256;
+    *contrast = (int) vid_pic.contrast / 256;
++ #endif
+  
+    if (was_opened == 0)
+      {
