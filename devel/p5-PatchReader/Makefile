@@ -12,7 +12,7 @@ MASTER_SITES=${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JK/JKEISER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Perl module with utilities to read and manipulate patches and CVS
 
 PERL_CONFIGURE=	yes
