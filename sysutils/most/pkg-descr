@@ -10,6 +10,6 @@ option, autosensing of binary files can be disabled (via the -k
 option), thereby allowing one to browse files encoded in a different
 language (Japanese, Korean, Chinese, etc).
 
-WWW: http://space.mit.edu/%7Edavis/most.html
-FTP: ftp://space.mit.edu/pub/davis/most
+WWW: http://space.mit.edu/~davis/jedsoft/most/
+FTP: ftp://ftp.jedsoft.org/pub/davis/most
 maintainer: Richard Hwang <rhwang@bigpanda.com>
