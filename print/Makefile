@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1999/03/20 02:00:59 asami Exp $
+# $Id: Makefile,v 1.85 1999/04/03 01:53:59 steve Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -7,6 +7,7 @@
     SUBDIR += a2ps43-a4
     SUBDIR += a2ps43-letter
     SUBDIR += acroread
+    SUBDIR += acroread4
     SUBDIR += afm
     SUBDIR += apsfilter
     SUBDIR += asprint
