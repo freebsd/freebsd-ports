@@ -1,6 +1,6 @@
---- configure.orig	Wed Dec  9 22:36:50 1998
-+++ configure	Wed Dec  9 22:37:30 1998
-@@ -2738,7 +2738,7 @@
+--- configure.orig	Fri Jul 16 01:47:10 1999
++++ configure	Sun Jul 18 20:33:05 1999
+@@ -3149,7 +3149,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -9,3 +9,12 @@
  else
    echo "$ac_t""no" 1>&6
  fi
+@@ -6237,7 +6237,7 @@
+ if eval "test \"`echo '$''{'ac_cv_gtk_version_string'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+-  ac_cv_gtk_version_string=`$glib_config --version`
++  ac_cv_gtk_version_string=`$gtk_config --version`
+ fi
+ 
+ echo "$ac_t""$ac_cv_gtk_version_string" 1>&6

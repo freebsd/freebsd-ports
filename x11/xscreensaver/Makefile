@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xscreensaver
-# Version required:     3.16
+# Version required:     3.17
 # Date created:         10 July 1995
 # Whom:                 dom@myrddin.demon.co.uk
 #
-# $Id: Makefile,v 1.20 1999/05/31 16:57:49 jseger Exp $
+# $Id: Makefile,v 1.21 1999/06/27 14:15:14 jseger Exp $
 #
 
-DISTNAME=	xscreensaver-3.16
+DISTNAME=	xscreensaver-3.17
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
