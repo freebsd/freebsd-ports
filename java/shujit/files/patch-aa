@@ -1,14 +1,5 @@
 --- compiler.h.orig	Mon Dec 27 23:24:53 1999
 +++ compiler.h	Sat Jan  8 08:07:30 2000
-@@ -171,7 +171,7 @@
- #  define LIBS_ADDDLSEG	NULL
- #elif defined(__FreeBSD__)
- #  undef  SEARCH_SIGCONTEXT
--#  define LIBS_ADDDLSEG	"/usr/lib/libc.so.3|/usr/lib/libc.so.3.1|/usr/lib/libc.so.3.0,/usr/lib/libm.so.2|/usr/lib/libm.so.2.0"
-+#  define LIBS_ADDDLSEG	"/usr/lib/libc.so.3|/usr/lib/libc.so.3.1|/usr/lib/libc.so.3.0|/usr/lib/libc.so.4,/usr/lib/libm.so.2|/usr/lib/libm.so.2.0"
- #else
- #  undef  SEARCH_SIGCONTEXT
- #  define LIBS_ADDDLSEG	NULL
 @@ -203,7 +203,7 @@
  #    define SC_TRAPNO	trapno
  #    define SC_ERR	err
