@@ -25,8 +25,7 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-debug \
-			--disable-garmin
+CONFIGURE_ARGS=	--disable-garmin
 INSTALLS_SHLIB=	yes
 
 MAN1=		gpsdrive.1
