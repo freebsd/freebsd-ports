@@ -143,4 +143,12 @@ LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
 CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .endif
 
+# Include extra files if X11 is installed
+.if exists(${X11BASE}/lib/libX11.a)
+PLIST:=         ${WRKDIR}/PLIST
+pre-install:
+	@${CAT} ${PKGDIR}/PLIST.X11 > ${PLIST}
+	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+.endif
+
 .include <bsd.port.post.mk>
