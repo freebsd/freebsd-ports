@@ -425,6 +425,7 @@
     SUBDIR += ossp-val
     SUBDIR += ossp-var
     SUBDIR += p4.el
+    SUBDIR += p4api
     SUBDIR += p4db
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Diff
