@@ -10,9 +10,8 @@
 PORTNAME=	queso
 PORTVERSION=	980922
 CATEGORIES=	net security
-MASTER_SITES=	ftp://freebsd.ntu.edu.tw/FreeBSD/distfiles/  \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	obrien
+MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/queso/ \
+		http://www.mirrors.wiretapped.net/security/network-mapping/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the remote OS using simple tcp packets
