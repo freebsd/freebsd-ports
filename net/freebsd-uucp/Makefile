@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freebsd-uucp
-PORTVERSION=	1.06.1.3
+PORTVERSION=	1.06.1.4
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
@@ -29,6 +29,10 @@ post-install:
 	@${ECHO} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
+.if defined(WITH_PAM)
+	@${ECHO} "Add this lines to your pam.conf:"
+	@${CAT} ${FILESDIR}/uucp-pam.conf
+.endif
 
 upgrade:
 	@${ECHO} "Copying old configuration files from /etc/uucp to ${PREFIX}/etc/uucp"
