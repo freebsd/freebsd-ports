@@ -3,16 +3,16 @@
 # Date created:         Thu May  8 00:14:31 PDT 1997
 # Whom:                 Steven Wallace <swallace@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1998/01/08 18:51:54 fenner Exp $
+# $Id: Makefile,v 1.3 1998/01/23 00:43:33 jseger Exp $
 #
 
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://apple2.caltech.edu/%2FZocalo/pub/apple2/ARCHIVERS/
+MASTER_SITES=	http://www.freebsd.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     swallace@freebsd.org
+MAINTAINER=     jseger@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/nulib
 MAN1=		nulib.1
