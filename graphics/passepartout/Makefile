@@ -7,6 +7,7 @@
 
 PORTNAME=	passepartout
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 
@@ -20,6 +21,7 @@ COMMENT=	DTP application for X
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 		xml\\+\\+-0.1:${PORTSDIR}/textproc/libxml++
+RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
