@@ -22,6 +22,7 @@ include/bind/isc/memcluster.h
 include/bind/isc/misc.h
 include/bind/isc/tree.h
 include/bind/netdb.h
+include/bind/res_update.h
 include/bind/resolv.h
 include/bind/res_update.h
 include/bind/sys/bitypes.h
