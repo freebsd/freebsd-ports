@@ -1,29 +1,26 @@
 # New ports collection makefile for:    python
-# Version required:     1.4
+# Version required:     1.5
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.17 1997/08/29 07:04:17 tg Exp $
+# $Id: Makefile,v 1.18 1997/11/24 15:12:43 tg Exp $
 #
 
-DISTNAME=       python1.4
-PKGNAME=        python-1.4
+DISTNAME=       python1.5
+PKGNAME=        python-1.5
 CATEGORIES=	lang tk80
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
-		ftp://ftp.cwi.nl/pub/python/src/ \
-		ftp://www.python.org/pub/python/contrib/Graphics/Tkinter/ \
-		ftp://ftp.cwi.nl/pub/python/contrib/Graphics/Tkinter/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${TKINTER}
+		ftp://ftp.cwi.nl/pub/python/src/
 
 MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/Python-1.4
+WRKSRC=		${WRKDIR}/Python-1.5
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-readline
-MAKE_FLAGS+=	'OPT=${CFLAGS}'
+CONFIGURE_ARGS=	--with-fpectl
+MAKE_FLAGS=	'OPT=${CFLAGS}'
 INSTALL_TARGET=	install
 MAN1=		python.1
 
@@ -38,8 +35,7 @@ SETUP_FILE=	Setup
 WITH_TK?=	yes
 .if defined(WITH_TK) && $(WITH_TK) == yes
 TK_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
-TKINTER=	_tkinter1.4.c
-SETUP_LOCAL+=	Setup.tk
+SETUP_LOCAL=	Setup.tk
 .endif
 
 #
@@ -47,15 +43,19 @@ SETUP_LOCAL+=	Setup.tk
 # to 'yes', and you must have the FreeBSD threading c library (libc_r)
 # installed. See 'man 3 pthread' for details on libc_r.
 #
-WITH_THREADS?=	yes
+# This is now turned off by default because it doesn't work
+# with our libc_r.
+#
+WITH_THREADS?=	no
 .if exists(/usr/lib/libc_r.a) && defined(WITH_THREADS) && ${WITH_THREADS} == yes
 CONFIGURE_ARGS+=	--with-thread
-SETUP_LOCAL+=	Setup.thread
 .endif
 
-post-extract:
-.if defined(WITH_TK) && $(WITH_TK) == yes
-	${CP} ${DISTDIR}/_tkinter1.4.c ${WRKSRC}/Modules/_tkinter.c
+#
+# The mpz module is built on machines with a full source tree
+#
+.if exists(/usr/src/contrib/libgmp/gmp-impl.h)
+SETUP_LOCAL+=	Setup.gmp
 .endif
 
 post-configure:

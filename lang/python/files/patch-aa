@@ -1,19 +1,13 @@
---- Makefile.in.orig	Fri Oct 25 16:37:32 1996
-+++ Makefile.in	Mon May 12 21:04:38 1997
-@@ -98,7 +98,7 @@
- LIBDIR=		$(exec_prefix)/lib
- MANDIR=		$(prefix)/man
- INCLUDEDIR=	$(prefix)/include
--SCRIPTDIR=	$(prefix)/lib
-+SCRIPTDIR=	$(prefix)/share
+--- Makefile.in.orig	Tue Dec  9 16:18:33 1997
++++ Makefile.in	Sat Dec 13 11:19:12 1997
+@@ -131,8 +131,8 @@
  
- # Detailed destination directories
- BINLIBDEST=	$(LIBDIR)/python$(VERSION)
-@@ -288,6 +288,7 @@
- 			echo $(INSTALL_DATA) $$i $(INCLUDEPY); \
- 			$(INSTALL_DATA) $$i $(INCLUDEPY); \
- 		done
-+		$(INSTALL_DATA) config.h $(INCLUDEPY)
+ # Portable install script (configure doesn't always guess right)
+ INSTALL=	@srcdir@/install-sh -c
+-INSTALL_PROGRAM=${INSTALL} -m $(EXEMODE)
+-INSTALL_DATA=	${INSTALL} -m $(FILEMODE)
++INSTALL_PROGRAM=${BSD_INSTALL_SCRIPT}
++INSTALL_DATA=	${BSD_INSTALL_DATA}
  
- # Install the lib*.a files and miscellaneous stuff needed by extensions
- # This goes into $(exec_prefix)
+ # --with-PACKAGE options for configure script
+ # e.g. --with-readline --with-svr5 --with-solaris --with-thread
