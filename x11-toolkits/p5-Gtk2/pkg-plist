@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/AboutDialog.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/AccelGroup.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/AccelLabel.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/AccelMap.pod
@@ -17,9 +18,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellEditable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellLayout.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRenderer.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererCombo.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererPixbuf.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererProgress.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererText.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererToggle.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellView.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CheckButton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CheckMenuItem.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Clipboard.pod
@@ -41,6 +45,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/EventBox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Expander.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/FileChooser.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/FileChooserButton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/FileChooserDialog.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/FileChooserWidget.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/FileFilter.pod
@@ -50,6 +55,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/FontSelection.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/FontSelectionDialog.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Frame.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GC.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GammaCurve.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Atom.pod
@@ -57,6 +63,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Color.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Colormap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Cursor.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Device.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Display.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/DisplayManager.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/DragContext.pod
@@ -72,6 +79,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Key.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Motion.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/NoExpose.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/OwnerChange.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Property.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Proximity.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Scroll.pod
@@ -81,6 +89,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/WindowState.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/GC.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Geometry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Input.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Keymap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Keysyms.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf.pod
@@ -94,6 +103,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Screen.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Selection.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Threads.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Visual.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Window.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HBox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HButtonBox.pod
@@ -110,6 +120,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/IconSize.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/IconSource.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/IconTheme.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/IconView.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Image.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageMenuItem.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/InputDialog.pod
@@ -121,6 +132,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl-versions.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/pango.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Invisible.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Item.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ItemFactory.pod
@@ -133,6 +145,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/MenuBar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/MenuItem.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/MenuShell.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/MenuToolButton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/MessageDialog.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Misc.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Notebook.pod
@@ -140,12 +153,22 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/OptionMenu.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Paned.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/AttrList.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Context.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Font.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/FontDescription.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/FontFace.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/FontFamily.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/FontMap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/FontMetrics.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Fontset.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Language.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Layout.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/LayoutIter.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Matrix.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Script.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/ScriptIter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/TabArray.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Plug.pod
@@ -197,6 +220,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Tooltips.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeDragDest.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeDragSource.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeIter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeModel.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeModelFilter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeModelSort.pod
