@@ -686,6 +686,7 @@
     SUBDIR += xmlpp
     SUBDIR += xmlppm
     SUBDIR += xmlpull
+    SUBDIR += xmlroff
     SUBDIR += xmlstarlet
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
