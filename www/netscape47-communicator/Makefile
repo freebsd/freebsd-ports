@@ -29,14 +29,14 @@ NETSCAPE_DIST_ARCH=	supported/dec_unix40
 NETSCAPE_DIST_TAG=	alpha-dec-osf4.0
 .endif
 
+.if defined(BROWSER) && ${BROWSER} == 'navigator'
+NETSCAPE_DIST_GRADE=	navigator_standalone
+.endif
+
 NETSCAPE_DIST_ARCH?=	unsupported/freebsd # | supported/dec_unix40 | supported/linux22 | unsupported/bsdi21
 NETSCAPE_DIST_GRADE?=	complete_install # | navigator_standalone
 NETSCAPE_DIST_SUBDIR?=	${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
 NETSCAPE_DIST_TAG?=	x86-unknown-freebsd # | x86-unknown-linux2.2 | x86-bsdi-bsd2 | alpha-dec-osf4.0
-
-.if defined(BROWSER) && ${BROWSER} == 'navigator'
-NETSCAPE_DIST_GRADE=	navigator_standalone
-.endif
 
 BROWSER_VER=	4.74
 INFILE_HEAD?=	'Communicator,4.74.0.20000707'
