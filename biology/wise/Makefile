@@ -8,7 +8,7 @@
 PORTNAME=	wise
 PORTVERSION=	2.2.0
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub/birney/wise2/
+MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/unix/wise2/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tonym@biolateral.com.au
