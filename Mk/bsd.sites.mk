@@ -116,6 +116,7 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.sunet.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://gort.ludd.luth.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sunsite.org.uk/Mirrors/ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.uk.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,NetBSD/packages/distfiles/&,} \
 	ftp://ftp.dti.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.jaist.ac.jp/.arc07/NetBSD/packages/distfiles/%SUBDIR%/ \
