@@ -1,11 +1,11 @@
 bin/inisqueak
 bin/squeak
-share/doc/squeak/COPYING.gz
-share/doc/squeak/COPYRIGHT.gz
-share/doc/squeak/LICENSE.gz
-share/doc/squeak/README.Contributing.gz
-share/doc/squeak/README.Keyboard.gz
-share/doc/squeak/README.Sound.gz
+%%DOCSDIR%%/COPYING.gz
+%%DOCSDIR%%/COPYRIGHT.gz
+%%DOCSDIR%%/LICENSE.gz
+%%DOCSDIR%%/README.Contributing.gz
+%%DOCSDIR%%/README.Keyboard.gz
+%%DOCSDIR%%/README.Sound.gz
 share/nls/POSIX
 share/nls/en_US.US-ASCII
 %%PLIST_X%%share/squeak/%%VMVERSION%%/B3DAcceleratorPlugin
@@ -27,4 +27,4 @@ share/squeak/SqueakV3.sources
 %%PLIST_NPSQUEAK%%share/squeak/npsqueakregister
 @dirrm share/squeak/%%VMVERSION%%
 @dirrm share/squeak
-@dirrm share/doc/squeak
+@dirrm %%DOCSDIR%%
