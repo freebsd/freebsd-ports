@@ -8,8 +8,8 @@
 PORTNAME=	heretic
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.raven-games.com/linuxheretic/heretic/src/ \
-		http://www.raven-games.com/linuxheretic/wad/
+MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/ \
+	http://heretic.linuxgames.com/wad/
 DISTNAME=	glheretic-1.0
 .if !defined(NO_WAD)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} heretic_share.wad.gz
@@ -18,7 +18,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-FETCH_BEFORE_ARGS+=	-b
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	WANT_OGL="no" WANT_OGL_FULLSCREEN="no" WANT_NICE_OGL="no"
