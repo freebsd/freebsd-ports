@@ -13,7 +13,7 @@
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
++LIBS="${PTHREAD_LIBS} $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
