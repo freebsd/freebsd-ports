@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.students.tut.fi/~tuomov/dl/
 
 MAINTAINER=	nbm@FreeBSD.org
 
+USE_XLIB=	YES
 USE_GMAKE=	YES
 
 MAN1=		pwm.1x
