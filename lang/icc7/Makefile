@@ -7,6 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	lang linux
 MASTER_SITES=	http://www.intel.com/software/products/compilers/c50/linux/
 DISTNAME=	cc010911rh71
@@ -31,6 +32,8 @@ NO_CDROM=		yes
 
 .include <bsd.port.pre.mk>
 
+ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
+
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	"Please manually download the version for RedHat 7.1 from ${MASTER_SITES}, put it into ${DISTDIR} and run make again"
 .endif
@@ -51,15 +54,6 @@ pre-patch:
 		xargs -0 ${CHMOD} a-x,g-w
 .endfor
 	@${FIND} ${WRKSRC}/opt -type d -print0 | xargs -0 ${CHMOD} go-w
-.for i in ia32/bin/iccvars.csh ia32/bin/iccvars.sh ia32/bin/icc.cfg \
-	ia32/bin/icpc.cfg docs/iccsupport
-	@${SED} 's@\<INSTALLDIR\>@${PREFIX}/intel@g' \
-		${WRKSRC}/opt/intel/compiler50/${i} \
-		>${WRKSRC}/opt/intel/compiler50/${i}.seded
-	@${MV} -f ${WRKSRC}/opt/intel/compiler50/${i}.seded \
-		${WRKSRC}/opt/intel/compiler50/${i}
-	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler50/${i}
-.endfor
 .for i in icc iccfilt icid icpc icpi mcpcom profmerge proforder
 	@brandelf -t Linux ${WRKSRC}/opt/intel/compiler50/ia32/bin/${i}
 .endfor
@@ -68,10 +62,20 @@ pre-patch:
 .endfor
 
 post-patch:
+.for i in ia32/bin/iccvars.csh ia32/bin/iccvars.sh ia32/bin/icc.cfg \
+	ia32/bin/icpc.cfg docs/iccsupport
+	@${SED} 's@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@' \
+		${WRKSRC}/opt/intel/compiler50/${i} \
+		>${WRKSRC}/opt/intel/compiler50/${i}.seded
+	@${MV} -f ${WRKSRC}/opt/intel/compiler50/${i}.seded \
+		${WRKSRC}/opt/intel/compiler50/${i}
+	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler50/${i}
+.endfor
 	@${RM} ${WRKSRC}/opt/intel/compiler50/ia32/include/yvals.h.orig
 .if defined(NOPORTDOCS)
 	@${RM} -rf ${WRKSRC}/opt/intel/compiler50/docs
 .endif
+	@${ECHO} -e "\n-Ulinux\n-U__linux__\n-U__linux\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/compiler50/ia32/bin/icc.cfg
 
 do-install:
 	@cd ${WRKSRC}/opt && ${TAR} -chf - . | \
