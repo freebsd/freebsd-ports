@@ -1,6 +1,6 @@
---- Imakefile.orig	Fri Nov 22 09:28:46 1996
-+++ Imakefile	Thu Jul 16 11:08:58 1998
-@@ -24,23 +24,23 @@
+--- Imakefile.orig	Thu Nov 21 19:28:46 1996
++++ Imakefile	Sun Jun 20 18:39:19 1999
+@@ -24,23 +24,28 @@
  XCOMM This is the directory where the highscore, level & sound data will be 
  XCOMM placed. Default will be the current directory.
  
@@ -19,10 +19,13 @@
      SOUNDS_DIR 			= $(XBOING_DIR)/sounds
      BACKUP_DIR 			= $(XBOING_DIR)/../backups
      HIGH_SCORE_FILE 	= $(XBOING_DIR)/.xboing.scr
--    AUDIO_AVAILABLE 	= False
--    AUDIO_SRC 			= audio/NOaudio.c
++#ifdef AlphaArchitecture
+     AUDIO_AVAILABLE 	= False
+     AUDIO_SRC 			= audio/NOaudio.c
++#else
 +    AUDIO_AVAILABLE 	= True
 +    AUDIO_SRC 			= audio/LINUXaudio.c
++#endif 
      AUDIO_INCLUDE 		=
      AUDIO_LIB 			=
 -	CDEBUGFLAGS         = -g
@@ -30,7 +33,7 @@
  
  XCOMM Uncomment this if you want to use ANY of the AUDIO sound systems
  #define COMPILE_IN_AUDIO    
-@@ -132,8 +132,8 @@
+@@ -132,8 +137,8 @@
          -DLEVEL_INSTALL_DIR=\"$(LEVEL_INSTALL_DIR)\" \
          -DAUDIO_AVAILABLE=\"$(AUDIO_AVAILABLE)\" \
          -DSOUNDS_DIR=\"$(SOUNDS_DIR)\" \
