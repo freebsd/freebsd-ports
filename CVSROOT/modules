@@ -3811,6 +3811,7 @@ kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
 kaffe-devel	ports/java/kaffe-devel
 kaffeine	ports/multimedia/kaffeine
+kahakai		ports/x11-wm/kahakai
 kalbum		ports/graphics/kalbum
 kallers		ports/comms/kallers
 kallery		ports/graphics/kallery
