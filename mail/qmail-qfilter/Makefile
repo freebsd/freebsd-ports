@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	qmail-qfilter
-PORTVERSION=	1.5
+PORTVERSION=	2.0
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Front-end for qmail-queue to run messages through filters
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbg.a:${PORTSDIR}/devel/bglibs
+
+USE_GPG=	yes
+SIG_SUFFIX=	.sig
 LDFLAGS?=	-s
 
 MAN1=		qmail-qfilter.1
@@ -23,6 +27,8 @@ do-configure:
 	${ECHO_CMD} "${MANPREFIX}/man"	> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${LOCALBASE}/lib"	> ${WRKSRC}/conf-bglibs
+	${ECHO_CMD} "${LOCALBASE}/include/bglibs" > ${WRKSRC}/conf-bgincs
 
 do-install:
 	cd ${WRKSRC} && ./installer
