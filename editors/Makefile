@@ -75,6 +75,7 @@
     SUBDIR += psgml-mule
     SUBDIR += psgml-xemacs21-mule
     SUBDIR += sam
+    SUBDIR += scite
     SUBDIR += semi-emacs
     SUBDIR += semi-emacs-current
     SUBDIR += semi-emacs20
