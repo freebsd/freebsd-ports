@@ -84,6 +84,7 @@
     SUBDIR += offix-execute
     SUBDIR += oooqs
     SUBDIR += p5-X11-Protocol
+    SUBDIR += peeper
     SUBDIR += portoseguro
     SUBDIR += powershell
     SUBDIR += props
