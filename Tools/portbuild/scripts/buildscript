@@ -59,10 +59,10 @@ else
     mtreefile=$(make -V MTREE_FILE)
     echo "================================================================"
     echo "checking installed files"
-    find ${prefix} -perm -2000 -o -perm -4000 -o -perm -0002 -ls | sort > /tmp/list1
+    find ${prefix} \( \( -perm -4000 -o -perm -2000 -a \! -type d \) -o \( -perm -0002 -o -perm -0020 \) \) -a \! -type l -ls | sort > /tmp/list1
     echo "pkg_delete ${pkgname}"
     pkg_delete ${pkgname}
-    find ${prefix} -perm -2000 -o -perm -4000 -o -perm -0002 -ls | sort > /tmp/list2
+    find ${prefix} \( \( -perm -4000 -o -perm -2000 -a \! -type d \) -o \( -perm -0002 -o -perm -0020 \) \) -a \! -type l -ls | sort > /tmp/list2
     if ! diff -qb /tmp/list1 /tmp/list2 2>/dev/null; then
       echo "================================================================"
       echo "found set[ug]id or world-writable files and directories"
