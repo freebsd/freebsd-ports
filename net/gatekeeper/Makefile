@@ -8,7 +8,7 @@
 PORTNAME=	gatekeeper
 PORTVERSION=	0.17
 CATEGORIES=	net
-MASTER_SITES=	http://www.willamowius.de/download/
+MASTER_SITES=	http://www.willamowius.de/download/gatekeeper/
 DISTNAME=	gk017
 EXTRACT_SUFX=	.tgz
 
