@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.46 2004/05/01 02:22:20 marcus Exp $
+# $Id: portlint.pl,v 1.47 2004/05/30 19:54:47 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -61,6 +61,7 @@ my $manstrict = 0;
 my $newxdef = 1;
 my $automan = 1;
 my $autoinfo = 1;
+my $use_no_size = 0;
 my $manchapters = '123456789ln';
 my $localbase = '/usr/local';
 
@@ -173,7 +174,8 @@ my @varlist =  qw(
 	PKGNAMESUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
 	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
-	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB
+	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL
+	USE_LIBTOOL_VER INDEXFILE PKGORIGIN
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -504,7 +506,7 @@ sub checkdistinfo {
 						$sizefound = 1;
 				}
 		}
-		if (!$sizefound) {
+		if (!$sizefound && !$use_no_size) {
 				&perror("WARN: $file: does not contain SIZE.");
 		}
 		close(IN);
@@ -604,7 +606,7 @@ sub checkplist {
 			&perror("WARN: $file [$.]: use \%\%SITE_PERL\%\% ".
 					"instead of lib/perl5/site_perl/\%\%PERL_VER\%\%.");
 		}
-		$seen_dirrm_docsdir++ if /^(\%\%PORTDOCS\%\%)?\@dirrm\s+\%\%DOCSDIR\%\%/;
+		$seen_dirrm_docsdir++ if /^(\%\%PORTDOCS\%\%)?\@dirrm\s+\%\%DOCSDIR\%\%/ || /^(\%\%PORTDOCS\%\%)?\@unexec\s+(\/bin\/)?rmdir\s+\%D\/\%\%DOCSDIR\%\%\s+2\>\s*\/dev\/null\s+\|\|\s+(\/usr\/bin\/)?true/;
 		if ($_ =~ /^\@/) {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
 				$curdir = $2;
@@ -678,9 +680,12 @@ sub checkplist {
 				"disallowed.");
 		}
 
-		if ($_ =~ /\.la$/) {
+		if ($_ =~ /\.la$/ && $makevar{USE_LIBTOOL} eq '' &&
+				$makevar{USE_LIBTOOL_VER} eq '') {
 			&perror("WARN: $file [$.]: installing libtool archives, ".
-				"please use USE_LIBTOOL in Makefile if possible");
+				"please use USE_LIBTOOL_VER in Makefile if possible.  ".
+				"See http://www.FreeBSD.org/gnome/docs/portlint.html ".
+				"for a way to completely eliminate .la files.");
 		}
 
 		if ($_ =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| &&
@@ -769,7 +774,7 @@ sub checkplist {
 	}
 
 	if ($sharedocused && !$seen_dirrm_docsdir) {
-		&perror("WARN: $file: \%\%PORTDOCS\%\%\@dirrm \%\%DOCSDIR\%\% is missing");
+		&perror("WARN: $file: Both ``\%\%PORTDOCS\%\%\@dirrm \%\%DOCSDIR\%\%'' and ``\%\%PORTDOCS\%\%\@unexec \%D/\%\%DOCSDIR\%\% 2>/dev/null || true'' are missing.  At least one should be used.");
 	}
 
 	# Check that each OMF file has an install and deinstall line.
@@ -950,6 +955,8 @@ sub checkmakefile {
 	my $use_gnome_hack = 0;
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
+	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
+	my $useindex = 0;
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1325,6 +1332,13 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	}
 
 	#
+	# whole file: check for NO_SIZE
+	#
+	if ($whole =~ /^NO_SIZE[?:]?=/m) {
+		$use_no_size = 1;
+	}
+
+	#
 	# whole file: check for deprecated USE_MESA
 	#
 	if ($whole =~ /^USE_MESA[?:]?=/m) {
@@ -1626,9 +1640,15 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 			" set by PKGNAMEPREFIX.".
 			" you must remove it from PORTNAME.");
 	}
-	if ($portname =~ /\$[\{\(].+[\}\)]/) {
+	if ($portname =~ /([|<>=! ])/) {
+		&perror("FATAL: $file: PORTNAME contains the illegal character \"$1\".".
+			" You should modify \"$portname\".");
+	} elsif ($portname =~ /\$[\{\(].+[\}\)]/) {
 		&perror("WARN: $file: using variable in PORTNAME.".
 			" consider using PKGNAMEPREFIX and/or PKGNAMESUFFIX.");
+	} elsif ($portname =~ /([^\w._@+-])/) {
+		&perror("WARN: $file: using \"$1\" in PORTNAME.".
+			" You should modify \"$portname\".");
 	} elsif ($portname =~ /-/ && $distname ne '') {
 		&perror("WARN: $file: using hyphen in PORTNAME.".
 			" consider using PKGNAMEPREFIX and/or PKGNAMESUFFIX.");
@@ -1642,13 +1662,61 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	} elsif ($portversion =~ /^[^\-]*\$[{\(].+[\)}][^\-]*$/) {
 		&perror("WARN: $file: using variable, \"$portversion\", as version ".
 			"number");
-	} elsif ($portversion =~ /-/) {
-		&perror("FATAL: $file: PORTVERSION should not contain a hyphen.".
+	} elsif ($portversion =~ /([-,_<>=! #*])/) {
+		&perror("FATAL: $file: PORTVERSION must not contain \"$1\". ".
 			"You should modify \"$portversion\".");
 	} else {
 		&perror("FATAL: $file: PORTVERSION looks illegal. ".
 			"You should modify \"$portversion\".");
 
+	}
+
+	$pkg_version =
+	    -x '/usr/local/sbin/pkg_version'
+		?  '/usr/local/sbin/pkg_version'
+		:  '/usr/sbin/pkg_version';
+
+	$versiondir = $ENV{VERSIONDIR} ? $ENV{VERSIONDIR} : '/var/db/chkversion';
+
+	$versionfile = "$versiondir/VERSIONS";
+	$useindex = !-r "$versionfile";
+
+	$versionfile = "$portsdir/$makevar{INDEXFILE}"
+		if $useindex;
+
+	if (-r "$versionfile") {
+		print "OK: checking if PORTVERSION is going backwards.\n" if ($verbose);
+		open VERSIONS, "<$versionfile";
+
+		while (<VERSIONS>) {
+			my($origin, $version) = ('', '');
+			chomp;
+			next if /^(#|$)/;
+			if ($useindex) {
+				($version, $origin) = split /\|/;
+				$origin =~ s,^.*/([^/]+/[^/]+)/?$,$1,;
+			} else {
+				($origin, $version) = split;
+			}
+			if ($origin eq $makevar{PKGORIGIN}) {
+				my $newversion = $makevar{PKGNAME};
+				my $oldversion = $version;
+				my $result = '';
+
+				$newversion =~ s/^.*-//;
+				$oldversion =~ s/^.*-//;
+
+				$result = `$pkg_version -t '$newversion' '$oldversion'`;
+				chomp $result;
+				if ($result eq '<') {
+					&perror("FATAL: $file: $makevar{PKGNAME} < $version. ".
+						"Choose another PORTVERSION or bump PORTEPOCH.");
+				#	$backwards{$origin} = "$pkgname{$origin} < $version";
+				}
+				last;
+			}
+		}
+		close VERSIONS;
 	}
 
 	# if DISTFILES have only single item, it is better to avoid DISTFILES
