@@ -3,7 +3,7 @@
 # Date created:		19 Sep 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.2 1997/09/19 02:20:20 itojun Exp $
+# $Id: Makefile,v 1.3 1997/09/26 10:11:03 asami Exp $
 #
 
 DISTNAME=	mei-1.53
@@ -26,7 +26,7 @@ INSTALL_TARGET=	install install.man
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} -p ${PREFIX}/share/doc/mei
+	${MKDIR} ${PREFIX}/share/doc/mei
 	${INSTALL_DATA} ${WRKSRC}/*txt ${PREFIX}/share/doc/mei
 .endif
 
