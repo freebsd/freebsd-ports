@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.3
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
@@ -116,7 +116,7 @@ SBINS=		makeuserdb pw2userdb userdb userdbpw vchkpw2userdb
 
 post-install:
 .for a in ${SBINS}
-	@${LN} -s ${PREFIX}/share/sqwebmail/sbin/$a ${PREFIX}/sbin/sqwebmail.$a
+	@${LN} -sf ${PREFIX}/share/sqwebmail/sbin/$a ${PREFIX}/sbin/sqwebmail.$a
 .endfor
 
 .include <bsd.port.mk>
