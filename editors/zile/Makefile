@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://prdownloads.sourceforge.net/zile/
