@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gmetadom
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,13 +15,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A Collection of DOM Implementations
 
-BUILD_DEPENDS=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-		pkg-config:${PORTSDIR}/devel/pkgconfig \
-		ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	gdome.7:${PORTSDIR}/textproc/gdome2
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_GNOME=	glib12 gnomehack libxslt
+.if defined(WITH_OCAML)
+BUILD_DEPENDS+=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
+		ocamlc:${PORTSDIR}/lang/ocaml
+PLIST_SUB+=	WITH_OCAML=""
+.else
+PLIST_SUB+=	WITH_OCAML="@comment "
+.endif
+
+USE_GNOME=	glib20 gnomehack libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
