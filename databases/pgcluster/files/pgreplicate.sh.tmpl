@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pgreplicate
+# REQUIRE: DAEMON
+# BEFORE:  pglb
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable pgreplicate:
+#
+# pgreplicate_enable="YES"
+#
+
+pgreplicate_enable="NO"
+pgreplicate_data="%%PREFIX%%/pgsql/data"
+pgreplicate_flags=""
+
+. %%RC_SUBR%%
+
+load_rc_config pgreplicate
+
+name=pgreplicate
+command=%%PREFIX%%/bin/pgreplicate
+pgreplicate_user=pgsql
+stop_cmd="pgreplicate_stop"
+
+pgreplicate_flags="${pgreplicate_flags} -D ${pgreplicate_data}"
+pidfile="${pgreplicate_data}/pgreplicate.pid"
+
+pgreplicate_stop()
+{
+    su -m ${pgreplicate_user} -c "exec ${command} -D ${pgreplicate_data} stop"
+}
+
+load_rc_config $name
+run_rc_command "$1"
