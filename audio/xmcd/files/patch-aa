@@ -44,11 +44,28 @@
   
   /*
    * C Source files
-*** cda_d/Imakefile.orig	Mon Jan 20 10:13:51 1997
---- cda_d/Imakefile	Sat Apr 26 07:12:09 1997
+*** cda_d/Imakefile.orig	Tue Aug 12 19:13:31 1997
+--- cda_d/Imakefile	Sun Sep  7 15:34:34 1997
 ***************
-*** 102,107 ****
---- 102,108 ----
+*** 95,101 ****
+  #if defined(__QNX__)
+  LOCAL_LIBRARIES=-lncurses
+  #else
+! LOCAL_LIBRARIES=-lcurses
+  #endif	/* __QNX__ */
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+--- 95,101 ----
+  #if defined(__QNX__)
+  LOCAL_LIBRARIES=-lncurses
+  #else
+! LOCAL_LIBRARIES=-lcurses -lmytinfo
+  #endif	/* __QNX__ */
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+***************
+*** 104,109 ****
+--- 104,110 ----
   #endif	/* LinuxArchitecture */
   #endif	/* SunArchitecture */
   

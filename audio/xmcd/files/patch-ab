@@ -1,8 +1,8 @@
-*** install.sh.orig	Mon Jan 20 10:12:42 1997
---- install.sh	Sat Apr 26 07:15:36 1997
+*** install.sh.orig	Tue Aug 12 19:12:27 1997
+--- install.sh	Sun Sep  7 16:23:43 1997
 ***************
-*** 47,52 ****
---- 47,55 ----
+*** 48,53 ****
+--- 48,56 ----
   ERRFILE=/tmp/xmcd.err
   TMPFILE=/tmp/xmcdinst.$$
   
@@ -13,7 +13,7 @@
   # Utility functions
   #
 ***************
-*** 550,556 ****
+*** 586,592 ****
   
   while :
   do
@@ -21,7 +21,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 553,563 ----
+--- 589,599 ----
   
   while :
   do
@@ -34,7 +34,7 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 602,608 ****
+*** 634,640 ****
   
   while :
   do
@@ -42,7 +42,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 609,619 ----
+--- 641,651 ----
   
   while :
   do
@@ -55,7 +55,7 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 621,627 ****
+*** 657,663 ****
   APPDEFAULTSDIR=$LIBDIR/app-defaults
   while :
   do
@@ -63,7 +63,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 632,642 ----
+--- 668,678 ----
   APPDEFAULTSDIR=$LIBDIR/app-defaults
   while :
   do
@@ -76,62 +76,63 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 656,662 ****
-  	MANFILE=`echo $MANFILE | sed 's/\/\//\//g'`
-  fi
+*** 680,686 ****
+  XMCDLIB=$LIBDIR/xmcd
+  while :
+  do
+! 	if getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 695,705 ----
+  XMCDLIB=$LIBDIR/xmcd
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "xmcd library directory - using ${XMCDLIB}"
+! 		break
+! 	elif getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 733,739 ****
+  $ECHO "\n\nThe on-line manual directory is where the man pages in"
+  $ECHO "in the xmcd package will be installed."
   
-! if getstr "\nEnter xmcd on-line manual file path\n[${MANFILE}]:"
+! if getstr "\nEnter on-line manual directory\n[${MANDIR}]:"
   then
-  	MANFILE=$ANS
+  	MANDIR=$ANS
   fi
---- 671,680 ----
-  	MANFILE=`echo $MANFILE | sed 's/\/\//\//g'`
-  fi
+--- 752,761 ----
+  $ECHO "\n\nThe on-line manual directory is where the man pages in"
+  $ECHO "in the xmcd package will be installed."
   
 ! if [ -n "$NO_PROMPT" ]
 ! then
-! 	$ECHO "xmcd on-line manual file path - using ${MANFILE}"
-! elif getstr "\nEnter xmcd on-line manual file path\n[${MANFILE}]:"
+! 	$ECHO "xmcd on-line manual directory - using ${MANDIR}"
+! elif getstr "\nEnter on-line manual directory\n[${MANDIR}]:"
   then
-  	MANFILE=$ANS
+  	MANDIR=$ANS
   fi
 ***************
-*** 678,684 ****
-  # Determine CMANFILE
+*** 758,764 ****
+  		MANSUFFIX=1
+  	fi
   
-  CMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/cda/'`"
-! if getstr "\nEnter cda on-line manual file path\n[${CMANFILE}]:"
-  then
-  	CMANFILE=$ANS
-  fi
---- 696,705 ----
-  # Determine CMANFILE
+! 	if getstr "\nEnter on-line manual file name suffix\n[${MANSUFFIX}]:"
+  	then
+  		MANSUFFIX=$ANS
+  	fi
+--- 780,789 ----
+  		MANSUFFIX=1
+  	fi
   
-  CMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/cda/'`"
-! if [ -n "$NO_PROMPT" ]
-! then
-! 	$ECHO "cda on-line manual file path - using ${CMANFILE}"
-! elif getstr "\nEnter cda on-line manual file path\n[${CMANFILE}]:"
-  then
-  	CMANFILE=$ANS
-  fi
-***************
-*** 700,706 ****
-  # Determine WMANFILE
-  
-  WMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/wm2xmcd/'`"
-! if getstr "\nEnter wm2xmcd on-line manual file path\n[${WMANFILE}]:"
-  then
-  	WMANFILE=$ANS
-  fi
---- 721,730 ----
-  # Determine WMANFILE
-  
-  WMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/wm2xmcd/'`"
-! if [ -n "$NO_PROMPT" ]
-! then
-! 	$ECHO "wm2xmcd on-line manual file path - using ${WMANFILE}"
-! elif getstr "\nEnter wm2xmcd on-line manual file path\n[${WMANFILE}]:"
-  then
-  	WMANFILE=$ANS
-  fi
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "xmcd on-line manual file name suffix - using ${MANSUFFIX}"
+! 	elif getstr "\nEnter on-line manual file name suffix\n[${MANSUFFIX}]:"
+  	then
+  		MANSUFFIX=$ANS
+  	fi
