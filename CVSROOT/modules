@@ -7580,6 +7580,7 @@ p5-version	ports/devel/p5-version
 p5-vpopmail	ports/mail/p5-vpopmail
 p5-xmltv	ports/textproc/p5-xmltv
 p65		ports/devel/p65
+p7zip		ports/archivers/p7zip
 packit		ports/net-mgmt/packit
 pad		ports/security/pad
 pager		ports/x11-wm/pager
