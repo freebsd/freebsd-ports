@@ -12,5 +12,6 @@ MASTER_SITES=	ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/s
 DIST_SUBDIR=	gold
 COMMENT=	${.CURDIR}/pkg/COMMENT
 MASTERDIR=	${.CURDIR}/../netscape3
+NO_LATEST_LINK=	yes
 
 .include "${MASTERDIR}/Makefile"

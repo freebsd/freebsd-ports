@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/${BROWSER_VER}/english/uni
 DISTFILES=	navigator-v408-export.x86-unknown-freebsd.tar.gz
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
+NO_LATEST_LINK=	yes
 
 BROWSER=	navigator
 INFILE_HEAD=	'Navigator,4.08.0.98306'

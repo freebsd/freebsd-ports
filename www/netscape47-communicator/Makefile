@@ -21,7 +21,6 @@ DISTFILES?=	communicator-v47-export.alpha-dec-osf4.0.tar.gz
 ONLY_FOR_ARCHS=	i386 alpha
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-NO_LATEST_LINK=	yes
 .if ${ARCH} == "i386"
 WRKSRC?=	${WRKDIR}/${BROWSER}-v47.x86-unknown-freebsd
 .elif ${ARCH} == "alpha"
