@@ -4328,6 +4328,7 @@ net-http	ports/net/net-http
 net-snmp	ports/net/net-snmp
 net-snmp-tkmib	ports/net/net-snmp-tkmib
 net-snmp4	ports/net/net-snmp4
+netams		ports/net/netams
 netatalk	ports/net/netatalk
 netcat		ports/net/netcat
 netcdf		ports/math/netcdf
