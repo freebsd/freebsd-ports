@@ -12,7 +12,7 @@ MASTER_SITES=	http://users.skynet.be/sky37432/
 DISTNAME=	suni24d7
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	i.vaudrey@cableinet.co.uk
+MAINTAINER=	bdluevel@heitec.net
 
 NO_WRKSUBDIR=	yes
 

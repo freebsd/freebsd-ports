@@ -13,3 +13,5 @@ configuration and management. It does not support secure sockets.
 Xitami is available for multiple platforms (UNIX, OpenVMS, Win 3.x, Win 95, 
 Win NT, OS/2) and is free software. Please read the Xitami license agreement 
 for details.
+
+WWW: http://www.xitami.com/
