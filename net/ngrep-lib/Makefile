@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ngrep-lib
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -16,5 +16,7 @@ MAN3=		ngrep-lib.3
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--prefix=${PREFIX}
+
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
