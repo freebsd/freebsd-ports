@@ -1,6 +1,6 @@
---- session.c.orig	Mon Feb 25 16:48:03 2002
-+++ session.c	Mon Mar 25 06:19:09 2002
-@@ -63,6 +63,13 @@
+--- session.c.orig	Mon May 13 02:48:58 2002
++++ session.c	Thu May 23 14:10:44 2002
+@@ -64,6 +64,13 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
  
@@ -11,10 +11,10 @@
 +#define _PATH_CHPASS "/usr/bin/passwd"
 +#endif /* __FreeBSD__ */
 +
- /* types */
+ /* func */
  
- #define TTYSZ 64
-@@ -423,6 +430,13 @@
+ Session *session_new(void);
+@@ -383,6 +390,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -28,7 +28,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -537,6 +551,14 @@
+@@ -497,6 +511,14 @@
  
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
@@ -43,15 +43,8 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -659,12 +681,24 @@
- do_login(Session *s, const char *command)
- {
- 	char *time_string;
-+	char *newcommand;
- 	char hostname[MAXHOSTNAMELEN];
- 	socklen_t fromlen;
+@@ -623,6 +645,18 @@
  	struct sockaddr_storage from;
- 	time_t last_login_time;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
 +#ifdef HAVE_LOGIN_CAP
@@ -62,13 +55,14 @@
 +#endif /* HAVE_LOGIN_CAP */
 +#ifdef __FreeBSD__
 +#define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
++	char *newcommand;
 +	struct timeval tv;
 +	time_t warntime = DEFAULT_WARN;
 +#endif /* __FreeBSD__ */
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -703,6 +737,72 @@
+@@ -656,6 +690,72 @@
  	}
  #endif
  
@@ -141,11 +135,11 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -715,7 +815,17 @@
+@@ -668,7 +768,17 @@
  		printf("%s\n", aixloginmsg);
  #endif /* WITH_AIXAUTHENTICATE */
  
--	if (options.print_lastlog && last_login_time != 0) {
+-	if (options.print_lastlog && s->last_login_time != 0) {
 +	/*
 +	 * If the user has logged in before, display the time of last
 +	 * login. However, don't display anything extra if a command
@@ -155,13 +149,13 @@
 +	 * us as well, so check if login(1) is used
 +	 */
 +	if (command == NULL && options.print_lastlog &&
-+	    last_login_time != 0 &&
++	    s->last_login_time != 0 &&
 +	    !options.use_login) {
- 		time_string = ctime(&last_login_time);
+ 		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -725,7 +835,30 @@
- 			printf("Last login: %s from %s\r\n", time_string, hostname);
+@@ -679,7 +789,30 @@
+ 			    s->hostname);
  	}
  
 -	do_motd();
@@ -192,7 +186,7 @@
  }
  
  /*
-@@ -741,9 +874,9 @@
+@@ -695,9 +828,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -204,7 +198,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -770,10 +903,10 @@
+@@ -724,10 +857,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -217,7 +211,7 @@
  	return 0;
  }
  
-@@ -902,6 +1035,10 @@
+@@ -856,6 +989,10 @@
  #endif
  
  	if (!options.use_login) {
@@ -228,7 +222,7 @@
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
-@@ -909,6 +1046,12 @@
+@@ -863,6 +1000,12 @@
  #ifdef HAVE_LOGIN_CAP
  		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
  		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
@@ -241,7 +235,7 @@
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
  		/*
-@@ -1241,7 +1384,7 @@
+@@ -1221,7 +1364,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -250,7 +244,7 @@
  		close(i);
  
  	/*
-@@ -1271,6 +1414,31 @@
+@@ -1251,6 +1394,31 @@
  			exit(1);
  #endif
  	}

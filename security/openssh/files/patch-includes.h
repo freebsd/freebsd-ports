@@ -1,5 +1,5 @@
 --- includes.h.orig	Sat Jan 26 17:44:22 2002
-+++ includes.h	Fri Mar  8 20:59:17 2002
++++ includes.h	Fri May 24 08:21:58 2002
 @@ -24,12 +24,12 @@
  #include <sys/select.h>
  #include <sys/param.h>
@@ -22,7 +22,7 @@
  #include <stdio.h>
  #include <ctype.h>
  #include <errno.h>
-@@ -62,5 +61,46 @@
+@@ -62,5 +61,64 @@
   * client program.  Socketpairs do not seem to work on all systems.
   */
  #define USE_PIPES 1
@@ -64,6 +64,24 @@
 +
 +#ifndef INET_ADDRSTRLEN
 +#define	INET_ADDRSTRLEN	46
++#endif
++
++#ifndef OSSH_ALIGNBYTES
++#define OSSH_ALIGNBYTES (sizeof(int) - 1)
++#endif
++
++#ifndef __CMSG_ALIGN
++#define __CMSG_ALIGN(p) (((u_int)(p) + OSSH_ALIGNBYTES) &~ OSSH_ALIGNBYTES)
++#endif
++
++/* Length of the contents of a control message of length len */
++#ifndef CMSG_LEN
++#define CMSG_LEN(len)   (__CMSG_ALIGN(sizeof(struct cmsghdr)) + (len))
++#endif
++
++/* Length of the space taken up by a padded control message of length len */
++#ifndef CMSG_SPACE
++#define CMSG_SPACE(len) (__CMSG_ALIGN(sizeof(struct cmsghdr)) + __CMSG_ALIGN(len))
 +#endif
 +
 +#endif

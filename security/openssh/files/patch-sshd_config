@@ -1,5 +1,5 @@
---- sshd_config.orig	Fri Mar  8 06:01:02 2002
-+++ sshd_config	Fri Mar  8 06:03:06 2002
+--- sshd_config.orig	Thu May 23 13:37:04 2002
++++ sshd_config	Thu May 23 13:38:05 2002
 @@ -30,8 +30,10 @@
  
  # Authentication:
@@ -13,11 +13,11 @@
  #StrictModes yes
  
  #RSAAuthentication yes
-@@ -76,6 +78,7 @@
+@@ -74,6 +76,7 @@
  #PrintLastLog yes
  #KeepAlive yes
  #UseLogin no
 +UseLogin yes
+ #UsePrivilegeSeparation no
  
  #MaxStartups 10
- # no default banner path

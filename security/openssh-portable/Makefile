@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	3.1p1
-PORTREVISION=	4
+PORTVERSION=	3.2.3p1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
 PKGNAMESUFFIX=	-portable
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	openssh-3.1p1-adv.token.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -26,7 +22,7 @@ MAN8=	sftp-server.8 sshd.8
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS?=	--prefix=${PREFIX} --with-md5-passwords
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
 CLEAN=		etc/ssh_config etc/sshd_config etc/moduli \
 		etc/ssh_host_key etc/ssh_host_key.pub \
 		etc/ssh_host_dsa_key etc/ssh_host_dsa_key.pub \
@@ -53,12 +49,11 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
+GSSAPI_PATCH=	${PORTNAME}-${PORTVERSION}-gssapi-20020527.diff
 GSSAPI_SITE=	http://www.sxw.org.uk/computing/patches/
 MASTER_SITES+=	${GSSAPI_SITE}
-DISTFILES=	${EXTRACT_ONLY} ${PORTNAME}-${PORTVERSION}-gssapi-20020321.diff
+DISTFILES=	${EXTRACT_ONLY} ${GSSAPI_PATCH}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-PATCH_SITES+=	${GSSAPI_SITE}
-PATCHFILES+=	${PORTNAME}-mit-krb5-20020319.diff
 EXTRA_PATCHES+=		${FILESDIR}/servconf.c.patch
 BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken
@@ -69,7 +64,7 @@ AUTOHEADER=	autoheader
 post-patch:
 	@${ECHO_MSG} Applying extra patch for GSS-API key-exchange...
 	@${PATCH} ${PATCH_DIST_ARGS:S/-p0/-p1/} \
-		< ${DISTDIR}/${PORTNAME}-${PORTVERSION}-gssapi-20020321.diff
+		< ${DISTDIR}/${GSSAPI_PATCH}
 
 pre-configure:
 	@${ECHO_MSG} !!!! Warning this option uses autoconf/autoheader !!!
@@ -91,6 +86,8 @@ OPENSSLLIB=	${OPENSSLBASE}/lib
 OPENSSLINC=	${OPENSSLBASE}/include
 MAKE_ENV+=	OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 		OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
+
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
---- auth2.c.orig	Sun Feb 24 20:14:59 2002
-+++ auth2.c	Sun Mar 17 20:15:23 2002
-@@ -166,6 +166,15 @@
+--- auth2.c.orig	Mon May 13 04:37:39 2002
++++ auth2.c	Thu May 23 13:11:43 2002
+@@ -168,6 +168,15 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -17,7 +17,7 @@
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
 @@ -187,6 +196,11 @@
- 			authctxt->pw = pwcopy(pw);
+ 		if (authctxt->pw && strcmp(service, "ssh-connection")==0) {
  			authctxt->valid = 1;
  			debug2("input_userauth_request: setting up authctxt for %s", user);
 +
@@ -28,7 +28,7 @@
  		} else {
  			log("input_userauth_request: illegal user %s", user);
  		}
-@@ -200,6 +214,41 @@
+@@ -203,6 +217,41 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
@@ -70,7 +70,7 @@
  	/* reset state */
  	auth2_challenge_stop(authctxt);
  	authctxt->postponed = 0;
-@@ -210,6 +259,12 @@
+@@ -213,6 +262,12 @@
  		debug2("input_userauth_request: try method %s", method);
  		authenticated =	m->userauth(authctxt);
  	}
@@ -83,16 +83,15 @@
  	userauth_finish(authctxt, authenticated, method);
  
  	xfree(service);
-@@ -299,7 +354,12 @@
+@@ -321,7 +376,11 @@
  		m->enabled = NULL;
  	packet_check_eom();
  	userauth_banner();
-+
 +#ifdef USE_PAM
-+	return authctxt->valid ? auth_pam_password(authctxt, "") : 0;
-+#else /* !USE_PAM */
- 	return authctxt->valid ? auth_password(authctxt, "") : 0;
-+#endif /* USE_PAM */
++	return (authctxt->valid ? PRIVSEP(auth_pam_password(authctxt, "")) : 0);
++#else
+ 	return (authctxt->valid ? PRIVSEP(auth_password(authctxt, "")) : 0);
++#endif
  }
  
  static int

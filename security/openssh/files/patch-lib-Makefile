@@ -1,19 +1,18 @@
---- lib/Makefile.orig	Tue Jun 26 19:52:41 2001
-+++ lib/Makefile	Thu Nov 15 06:10:43 2001
-@@ -9,7 +9,11 @@
- 	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
- 	key.c dispatch.c kex.c mac.c uuencode.c misc.c \
+--- lib/Makefile.orig	Thu May 23 13:12:23 2002
++++ lib/Makefile	Thu May 23 13:14:17 2002
+@@ -11,6 +11,11 @@
  	rijndael.c ssh-dss.c ssh-rsa.c dh.c kexdh.c kexgex.c \
--	scard.c
-+	scard.c strlcpy.c strlcat.c
-+
+ 	scard.c monitor_wrap.c monitor_fdpass.c
+ 
++SRCS+=	strlcpy.c strlcat.c
 +.if defined(COMPAT_GETADDRINFO)
 +SRCS+=	getaddrinfo.c getnameinfo.c name6.c rcmd.c bindresvport.c
 +.endif
++
+ SRCS+=	readpassphrase.c
  
- NOPROFILE= yes
- NOPIC=	yes
-@@ -18,6 +22,8 @@
+ DEBUGLIBS= no
+@@ -21,6 +26,8 @@
  	@echo -n
  
  .include <bsd.own.mk>

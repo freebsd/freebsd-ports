@@ -1,5 +1,5 @@
---- auth1.c.orig	Sun Feb  3 18:53:25 2002
-+++ auth1.c	Sun Mar 17 20:14:40 2002
+--- auth1.c.orig	Wed Apr 10 10:21:47 2002
++++ auth1.c	Thu May 23 13:07:12 2002
 @@ -75,6 +75,18 @@
  	u_int ulen;
  	int type = 0;
@@ -23,10 +23,11 @@
  #if defined(KRB4) || defined(KRB5)
  	    (!options.kerberos_authentication || options.kerberos_or_local_passwd) &&
  #endif
+-	    PRIVSEP(auth_password(authctxt, ""))) {
 +#ifdef USE_PAM
-+	    auth_pam_password(authctxt, "")
++	   PRIVSEP(auth_pam_password(authctxt, ""))) {
 +#else
- 	    auth_password(authctxt, "")) {
++	   PRIVSEP(auth_password(authctxt, ""))) {
 +#endif
  		auth_log(authctxt, 1, "without authentication", "");
  		return;
@@ -92,14 +93,14 @@
  			return;
  
 @@ -354,6 +409,11 @@
- 		pw = NULL;
- 	}
- 	authctxt->pw = pw;
+ 		authctxt->valid = 1;
+ 	else
+ 		debug("do_authentication: illegal user %s", user);
 +
 +#ifdef USE_PAM
 +	if (pw != NULL)
 +		start_pam(pw);
 +#endif
  
- 	setproctitle("%s", pw ? user : "unknown");
- 
+ 	setproctitle("%s%s", authctxt->pw ? user : "unknown",
+ 	    use_privsep ? " [net]" : "");
