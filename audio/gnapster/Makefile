@@ -15,26 +15,25 @@ MAINTAINER=	cpiazza@FreeBSD.org
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	imlib
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mimlib}!=""
-USE_GNOME=	imlib
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME+=	gnomehack gnomelibs
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
-PKGNAMESUFFIX=	-imlib
+PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=--disable-gnome --disable-gdk-pixbuf
 .endif
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.post.mk>
