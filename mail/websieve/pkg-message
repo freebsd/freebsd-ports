@@ -1,0 +1,6 @@
+Websieve has been installed at <http://localhost/cgi-bin/websieve.pl>
+
+However, before you can use the program, you should copy the file
+"websieve.conf.sample" in %%PREFIX%%/etc/websieve to "websieve.conf"
+edit it to suit your needs. Use "openssl rand -base64 39" to create
+a new secret key.
