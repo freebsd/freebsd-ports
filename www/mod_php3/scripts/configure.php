@@ -53,7 +53,9 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 while [ "$1" ]; do
 	case $1 in
 		\"tuning\")
-			echo "APACHE_PERF_TUNING=	YES"
+			echo "CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer -fexpensive-optimizations -ffast-math"
+			echo "OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024"
+			echo "CONFIGURE_ENV+=	OPTIM='\${OPTIM}'"
 			;;
 		\"GD\")
 			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
