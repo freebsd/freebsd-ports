@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 PORTREVISION=	2
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
-		ftp://ftp.de.flightgear.org/pub/simgear/
+		ftp://ftp.de.flightgear.org/pub/simgear/Source/
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	A toolkit for 3D games and simulations
