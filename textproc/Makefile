@@ -103,6 +103,7 @@
     SUBDIR += p5-String-Strip
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Bind
+    SUBDIR += p5-Text-CSV
     SUBDIR += p5-Text-CSV_XS
     SUBDIR += p5-Text-DoubleMetaphone
     SUBDIR += p5-Text-FillIn
