@@ -3,23 +3,23 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1997/10/01 12:19:40 tg Exp $
+# $Id: Makefile,v 1.13 1997/12/02 10:55:42 tg Exp $
 #
 
 DISTNAME=	Tix4.1.0.006
 PKGNAME=	tix-4.1.0.006
-CATEGORIES=	x11 tk80
+CATEGORIES=	x11 tk81
 MASTER_SITES=	ftp://ftp.xpi.com/pub/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk81\\.1\\.:${PORTSDIR}/x11/tk81
 
 WRKSRC=		${WRKDIR}/Tix4.1.0/unix/tk8.0
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tcl="${PREFIX}/include/tcl8.0" \
-		--with-tk="${PREFIX}/include/tk8.0"
+		--with-tcl="${PREFIX}/include/tcl8.1" \
+		--with-tk="${PREFIX}/include/tk8.1"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1 

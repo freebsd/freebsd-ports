@@ -13,7 +13,7 @@
  echo "$ac_t""$TCL_SRC_DIR" 1>&6
  
 -TCL_BIN_DIR=$TCL_SRC_DIR/unix
-+TCL_BIN_DIR=$TCL_SRC_DIR/../../lib/tcl8.0
++TCL_BIN_DIR=$TCL_SRC_DIR/../../lib/tcl8.1
  
  #--------------------------------------------------------------------
  #	See if there was a command-line option for where Tk is;  if
@@ -30,7 +30,7 @@
  echo "$ac_t""$TK_SRC_DIR" 1>&6
  
 -TK_BIN_DIR=$TK_SRC_DIR/unix
-+TK_BIN_DIR=$TK_SRC_DIR/../../lib/tk8.0
++TK_BIN_DIR=$TK_SRC_DIR/../../lib/tk8.1
  
  #--------------------------------------------------------------------
  #	Find out the top level source directory of the Tix package.

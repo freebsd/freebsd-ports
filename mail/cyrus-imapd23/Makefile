@@ -3,17 +3,17 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1998/02/15 12:14:12 jkh Exp $
+# $Id: Makefile,v 1.5 1998/02/22 08:34:53 fenner Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.2
 PKGNAME=	cyrus-1.5.2
-CATEGORIES=	mail tcl80
+CATEGORIES=	mail tcl81
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl81\\.1\\.:${PORTSDIR}/lang/tcl81
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 HAS_CONFIGURE=	YES

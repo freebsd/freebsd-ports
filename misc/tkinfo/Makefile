@@ -3,16 +3,16 @@
 # Date created:         16 Jan 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1997/12/16 09:26:12 tg Exp $
+# $Id: Makefile,v 1.16 1998/01/29 07:49:36 tg Exp $
 #
 
 DISTNAME=	tkinfo-2.4
-CATEGORIES=	misc tk80
+CATEGORIES=	misc tk81
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
 MAINTAINER=	tg@FreeBSD.ORG
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.1:${PORTSDIR}/x11/tk81
 
 NO_BUILD=	yes
 MAN1=		tkinfo.1
