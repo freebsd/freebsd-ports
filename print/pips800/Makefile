@@ -32,11 +32,9 @@ RUN_DEPENDS+=	/compat/linux/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
 .if defined(INTERNATIONAL_PRODUCTS)
 LIB_FILE=	lib${PRTYPE:S/^-//}.so
 LIB_README=	share/doc/${BASE_NAME}/lib${PRTYPE:S/^-//}.readme
-PLIST=		${PKGDIR}/pkg-plist.ip
+PLIST=		${MASTERDIR}/pkg-plist.ip
 RUN_DEPENDS+=	/compat/linux/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale \
 		/compat/linux/usr/share/locale/ko/LC_COLLATE:${PORTSDIR}/korean/linux_locale
-#PKGINSTALL=	${PKGDIR}/pkg-install.ip
-#PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.ip
 .else
 LIB_FILE=	libpm${PRTYPE}c.so
 LIB_README=	share/doc/${BASE_NAME}/libpm${PRTYPE}c.readme
