@@ -2,6 +2,7 @@ bin/spamc
 bin/spamd
 bin/spamassassin
 etc/rc.d/spamd.sh-dist
+etc/mail/spamassassin/local.cf
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Conf.pm
@@ -60,6 +61,8 @@ share/spamassassin/languages
 share/spamassassin/60_whitelist.cf
 share/spamassassin/user_prefs.template
 share/spamassassin/triplets.txt
+@dirrm etc/mail/spamassassin
+@dirrm etc/mail
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin
 @dirrm %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin
