@@ -19,10 +19,6 @@ COMMENT=	Japanese specific files for ASCII Japanese pTeX
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
 
-BROKEN=		"Broken dependency"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${KANJICODE}
