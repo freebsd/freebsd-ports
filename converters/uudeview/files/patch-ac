@@ -1,0 +1,12 @@
+--- ./man/uudeview.1	Sun Jul 21 05:54:38 1996
++++ /usr/devel/ports/uudeview/src/man/uudeview.1	Thu Aug  1 18:03:36 1996
+@@ -319,6 +319,8 @@
+ .BR uuenview (1),
+ .BR uudecode (1),
+ .BR uuencode (1),
++.BR munpack (1),
++.BR metamail (1),
+ .PD 0
+ .PP
+ The
+diff -ud --recursive ./man/uuenview.1 /usr/devel/ports/uudeview/src/man/uuenview.1

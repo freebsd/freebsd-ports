@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/29 23:55:55 obrien Exp $
+# $Id: Makefile,v 1.2 1997/03/30 18:44:25 obrien Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -16,8 +16,7 @@ MASTER_SITES=	ftp://ftp.uni-frankfurt.de/pub/dist/frank/ \
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
 LIB_DEPENDS=    tk41\\.1\\.:${PORTSDIR}/x11/tk41
-BUILD_DEPENDS=	${LOCALBASE}/lib/libuu.a:${PORTSDIR}/devel/uulib
-#LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/devel/uulib
+LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/devel/uulib
 
 FILESDIR=	${.CURDIR}/../../devel/uulib/files
 USE_X11=	yes
@@ -28,11 +27,6 @@ MAN1=		xdeview.1
 
 PORTDOCDIR?=	share/doc/xdeview
 DOCFILES+=	${FILESDIR}/porting.notes ${WRKSRC}/HOWTO
-
-#pre-build:
-#	@${CP} ${LOCALBASE}/lib/libuu.so.1.0 ${WRKSRC}/uulib
-#	@${TOUCH} ${WRKSRC}/libuu.a
-#	@${TOUCH} ${WRKSRC}/uulib/libuu.a
 
 post-install:
 	strip ${PREFIX}/bin/uuwish
