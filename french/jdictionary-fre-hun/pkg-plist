@@ -1,2 +1,0 @@
-share/java/classes/jdictionary/Plugins/Smart_French_Hungarian-1_0.jar
-@unexec rmdir %D/share/java/classes/jdictionary/Plugins || true
