@@ -12288,6 +12288,7 @@ yape		ports/emulators/yape
 yaph		ports/net/yaph
 yaps		ports/comms/yaps
 yasm		ports/devel/yasm
+yasql		ports/databases/yasql
 yatex		ports/print/yatex
 yatex-mule	ports/print/yatex-mule
 yatex-xemacs	ports/print/yatex-xemacs
