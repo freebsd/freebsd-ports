@@ -29,5 +29,10 @@ share/anthy/pred.depword
 share/anthy/subj.depword
 share/anthy/typetab
 share/anthy/v.depword
+%%ELISPDIR%%/anthy-conf.el
+%%ELISPDIR%%/anthy-dic.el
+%%ELISPDIR%%/anthy-isearch.el
+%%ELISPDIR%%/anthy.el
+%%ELISPDIR%%/leim-list.el
 @dirrm share/anthy
 @dirrm include/anthy
