@@ -1,0 +1,9 @@
+WMApp is a C++ based library for writing WindowMaker-style dockapps. To write
+a dockapp, it is generally necessary to perform some magic Xlib incantations,
+supply a clipping mask, and set up X event checking. Like larger graphics
+libraries such as GTK+ and Qt, WMApp automates this process by providing the
+classes and functions necessary for widget creation and callbacks. The library
+provides numerous widgets, all with the traditional dockapp appearance. Many
+common dockapps could already be rewritten to use this library.
+
+WWW: http://www.princeton.edu/~kmccarty/wmapp.html
