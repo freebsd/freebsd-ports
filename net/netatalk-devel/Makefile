@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.5r1
+PORTVERSION=	1.5.0
+PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
-DISTNAME=	netatalk-1.5rc1
 
 MAINTAINER=	marcus@marcuscom.com
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
+USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
 #			--disable-ddp
@@ -65,7 +66,8 @@ MAN1=		achfile.1 aecho.1 afile.1 afppasswd.1 getzones.1 \
 		megatron.1 nbp.1 pap.1 psorder.1 hqx2bin.1 macbinary.1 \
 		nbplkup.1 nbprgstr.1 nbpunrgstr.1 papstatus.1 \
 		single2bin.1 unbin.1 unhex.1 unsingle.1 acleandir.1 \
-		netatalk-config.1 timeout.1
+		netatalk-config.1 timeout.1 apple_cp.1 apple_mv.1 \
+		apple_rm.1
 MAN3=		atalk_aton.3 nbp_name.3
 MAN4=		atalk.4
 MAN5=		AppleVolumes.default.5 afpd.conf.5 atalkd.conf.5 \
