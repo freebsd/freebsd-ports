@@ -53,5 +53,6 @@ CONFIGURE_ARGS+=	--enable-snmp=no --without-ucdsnmp --without-net-snmp
 .endif
 
 MAN1+=		editcap.1 idl2eth.1 mergecap.1 tethereal.1 text2pcap.1
+MAN4+=		ethereal-filter.4
 
 .include <bsd.port.mk>
