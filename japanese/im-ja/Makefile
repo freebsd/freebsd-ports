@@ -7,6 +7,7 @@
 
 PORTNAME=	im-ja
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
@@ -23,7 +24,7 @@ LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20 gconf2
+USE_GNOME=	gnomeprefix gnomehack gnomepanel
 GNU_CONFIGURE=	yes
 
 .if defined(WITHOUT_CANNA)
