@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.10.3p3
+PORTVERSION=	2.10.3p5
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/ \
-		ftp://ftp.irc.org/irc/server/ \
-		ftp://tau.ac.il/pub/unix/irc/server/ \
-		ftp://ftp.ut.ee/pub/unix/irc/server/ \
-		ftp://ftp.ntua.gr/pub/net/irc/server/
+MASTER_SITES=	ftp://ftp.irc.org/irc/server/ \
+		ftp://ftp2.nchu.edu.tw/UNIX/IRC/server/ \
+		ftp://ftp.plig.net/pub/irc/ftp.irc.org/server/ \
+		ftp://ftp.archive.de.uu.net/pub/mirrors/ftp.irc.org/server/ \
+		ftp://ftp.iway.fr/pub/mirrors/ftp.irc.org/server/ \
+		ftp://ftp.nl.uu.net/pub/mirrors/ftp.irc.org/server/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
