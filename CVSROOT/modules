@@ -8131,6 +8131,7 @@ xmms-audiofile	ports/audio/xmms-audiofile
 xmms-avi	ports/multimedia/xmms-avi
 xmms-blursk	ports/graphics/xmms-blursk
 xmms-bonk	ports/audio/xmms-bonk
+xmms-cdread	ports/audio/xmms-cdread
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
 xmms-faad	ports/audio/xmms-faad
