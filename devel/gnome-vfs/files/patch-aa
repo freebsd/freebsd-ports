@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 31 06:11:24 2003
-+++ configure	Mon Mar 31 18:06:17 2003
-@@ -8344,6 +8344,7 @@
+--- configure.orig	Tue Mar  9 14:55:35 2004
++++ configure	Tue Mar  9 16:41:53 2004
+@@ -19711,6 +19711,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,55 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -13091,8 +13092,8 @@
+@@ -24792,6 +24793,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #ifdef HAVE_SYS_VFS_H
+ #include <sys/vfs.h>
+ #endif
+@@ -24844,6 +24846,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #ifdef HAVE_SYS_VFS_H
+ #include <sys/vfs.h>
+ #endif
+@@ -24918,6 +24921,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #ifdef HAVE_SYS_VFS_H
+ #include <sys/vfs.h>
+ #endif
+@@ -24970,6 +24974,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #ifdef HAVE_SYS_VFS_H
+ #include <sys/vfs.h>
+ #endif
+@@ -25044,6 +25049,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #include <unistd.h>
+ #ifdef HAVE_SYS_VFS_H
+ #include <sys/vfs.h>
+@@ -25104,6 +25110,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <unistd.h>
++#include <sys/param.h>
+ #ifdef HAVE_SYS_VFS_H
+ #include <sys/vfs.h>
+ #endif
+@@ -26099,8 +26106,8 @@
    done
  fi
  
@@ -19,7 +67,7 @@
  if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -13112,11 +13113,11 @@
+@@ -26119,11 +26126,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -33,16 +81,16 @@
    ;
    return 0;
  }
-@@ -13858,7 +13859,7 @@
+@@ -26917,7 +26924,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo -ldl"
  		cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -13914,9 +13915,9 @@
+ _ACEOF
+@@ -26982,9 +26989,9 @@
  
  		msg_openssl="yes"
                  if test x$with_openssl_libs != x/usr/lib; then
@@ -54,7 +102,7 @@
                  fi
  
  
-@@ -15904,6 +15905,7 @@
+@@ -29285,6 +29292,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
