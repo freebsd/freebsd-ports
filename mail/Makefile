@@ -235,6 +235,7 @@
     SUBDIR += poppy
     SUBDIR += postfix
     SUBDIR += postfix-current
+    SUBDIR += postfix1
     SUBDIR += postilion
     SUBDIR += premail
     SUBDIR += procmail
