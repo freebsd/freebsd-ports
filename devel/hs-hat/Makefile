@@ -67,7 +67,7 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${PERL} -pi.orig -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
+	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
 
 pre-install:
 .if exists(${PREFIX}/bin/hmake) && !defined(OVERRIDE_HMAKE)

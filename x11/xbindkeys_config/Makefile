@@ -17,7 +17,7 @@ USE_GTK=	yes
 MAKE_ENV=	CC="${CC} ${CFLAGS}"
 
 post-patch:
-	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g ; \
+	@${REINPLACE_CMD} -e "s,gtk-config,${GTK_CONFIG},g ; \
 		s,^CC,#CC,g" ${WRKSRC}/Makefile
 
 do-install:

@@ -22,7 +22,7 @@ PORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
 		README.gtkrc TODO
 
 post-patch:
-	@${PERL} -pi -e 's|icons|${DATADIR}/icons|g' ${WRKSRC}/gentoorc.in
+	@${REINPLACE_CMD} -e 's|icons|${DATADIR}/icons|g' ${WRKSRC}/gentoorc.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
