@@ -15,7 +15,6 @@ bin/makepqg
 bin/mangle
 bin/modutil
 bin/newuser
-bin/nsinstall
 bin/ocspclnt
 bin/oidcalc
 bin/p7content
@@ -35,6 +34,7 @@ bin/ssltap
 bin/strsclnt
 bin/symkeyutil
 bin/tstclnt
+bin/vfychain
 bin/vfyserv
 include/nss/dbm/cdefs.h
 include/nss/dbm/mcom_db.h
