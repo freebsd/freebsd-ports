@@ -25,4 +25,10 @@ MAN3=		Tk::TableMatrix.3 \
 		Tk::TableMatrix::Spreadsheet.3 \
 		Tk::TableMatrix::SpreadsheetHideRows.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

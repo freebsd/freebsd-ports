@@ -31,7 +31,13 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU \
 		${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,Bison ,Bison,g" ${WRKSRC}/vx68k-gtk/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

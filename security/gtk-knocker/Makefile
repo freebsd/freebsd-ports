@@ -24,7 +24,13 @@ USE_GNOME=	gtk12
 
 MAN1=		gtk-knocker.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/docs/gtk-knocker.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
