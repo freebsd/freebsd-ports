@@ -328,6 +328,7 @@
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
     SUBDIR += py-fcgi
+    SUBDIR += py-scgi
     SUBDIR += py-websvcs
     SUBDIR += pyweblib
     SUBDIR += qdecoder
