@@ -241,24 +241,8 @@ EOF
 			echo "CONFIGURE_ARGS+=--with-hyperwave=yes"
 			;;
 		\"ming\")
-			${CAT} << EOF
-CONFIGURE_ARGS+=--with-ming=\${PREFIX}
-BUILD_DEPENDS+=	/nonexistent:\${PORTSDIR}/graphics/ming:extract
-BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
-BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
-LIB_DEPENDS+=	ming.2:\${PORTSDIR}/graphics/ming
-POSTEXTRACT+=	post-extract-ming
-
-post-extract-ming:
-	[ -d \`cd \${PORTSDIR}/graphics/ming && \${MAKE} -V WRKSRC\`/../php_ext ] && \\
-	(cd \${WRKSRC}; \\
-	 \${MKDIR} \${WRKSRC}/ext/ming; \\
-	 \${CP} \`cd \${PORTSDIR}/graphics/ming && \${MAKE} -V WRKSRC\`/../php_ext/* \${WRKSRC}/ext/ming; \\
-	 \${CP} \${FILESDIR}/ming-config-m4 \${WRKSRC}/ext/ming/config.m4; \\
-	 \${RM} configure; \\
-	 ./buildconf)
-
-EOF
+			echo "LIB_DEPENDS+=	ming.2:\${PORTSDIR}/graphics/ming"
+			echo "CONFIGURE_ARGS+=--with-ming=\${PREFIX}"
 			;;
 		\"sockets\")
 			echo "CONFIGURE_ARGS+=--enable-sockets"
