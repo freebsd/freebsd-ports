@@ -305,6 +305,7 @@
     SUBDIR += ruboard
     SUBDIR += ruby-http-access
     SUBDIR += ruby-tmpl
+    SUBDIR += ruby-webrick
     SUBDIR += ruby-webunit
     SUBDIR += screem
     SUBDIR += sidplug
