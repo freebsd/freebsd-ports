@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gshisen
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	games
-# not up to date:	http://www.gnustep.it/enrico/gshisen/
-MASTER_SITES=	http://www.imago.ro/gshisen/ \
+MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 
@@ -19,7 +17,6 @@ COMMENT=	Mahjongg-kind of game that uses the GNUstep toolkit
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/GShisen
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
