@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.305 1999/02/14 06:49:55 asami Exp $
+#	$Id: bsd.port.mk,v 1.306 1999/03/08 07:23:10 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -653,7 +653,11 @@ MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}" LIBDIR="${LIBDIR}"
 
 .if exists(/usr/bin/fetch)
+.if ${OSVERSION} < 300000
+FETCH_CMD?=		/usr/bin/fetch
+.else
 FETCH_CMD?=		/usr/bin/fetch -A
+.endif
 #FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
 .else
 FETCH_CMD?=		/usr/bin/ftp
