@@ -7,10 +7,10 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/thttpd_wrapper ] && ${PREFIX}/sbin/thttpd_wrapper && echo -n ' thttpd'
+	[ -x ${PREFIX}/sbin/thttpd_wrapper ] && ${PREFIX}/sbin/thttpd_wrapper & && echo -n ' thttpd'
 	;;
 stop)
-	killall thttpd_wrapper && killall thttpd && echo -n ' thttpd'
+	kill `cat /var/run/thttpd_wrapper.pid` && killall thttpd && echo -n ' thttpd'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
