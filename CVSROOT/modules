@@ -3813,6 +3813,7 @@ karamba		ports/deskutils/karamba
 kaskade		ports/math/kaskade
 kaspaliste	ports/print/kaspaliste
 katalog		ports/misc/katalog
+kate-plugins	ports/editors/kate-plugins
 katoob		ports/arabic/katoob
 kavmilter	ports/mail/kavmilter
 kawa		ports/lang/kawa
