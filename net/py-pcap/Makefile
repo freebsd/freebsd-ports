@@ -19,6 +19,8 @@ COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig11
 
+BROKEN=		Runtime failure after python 2.4 update
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
