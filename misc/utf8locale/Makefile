@@ -19,7 +19,10 @@ BASELOCALEDIR=	${DESTDIR}/usr/share/locale
 PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 		LANGS="${LANGS}"
 
-_HAVE_SWIDTH!=	grep _CTYPE_SW ${DESTDIR}/usr/include/ctype.h || true
+.include <bsd.port.pre.mk>
+
+_HAVE_SWIDTH!=	${GREP} _CTYPE_SW ${DESTDIR}/usr/include/ctype.h 2>/dev/null \
+		|| ${TRUE}
 .if empty(_HAVE_SWIDTH)
 PKGNAMESUFFIX=	-without-swidth
 .endif
@@ -30,4 +33,4 @@ post-install:
 		${BASELOCALEDIR}/${lang}.UTF-8
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
