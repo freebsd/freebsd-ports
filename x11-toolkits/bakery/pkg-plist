@@ -1,32 +1,41 @@
-include/bakery-2.0/bakery/App/App.h
-include/bakery-2.0/bakery/App/AppInstanceManager.h
-include/bakery-2.0/bakery/App/App_Gtk.h
-include/bakery-2.0/bakery/App/App_WithDoc.h
-include/bakery-2.0/bakery/App/App_WithDoc_Gtk.h
-include/bakery-2.0/bakery/App/Dialog_OfferSave.h
-include/bakery-2.0/bakery/App/Dialog_OverwriteFile.h
-include/bakery-2.0/bakery/App/GtkDialogs.h
-include/bakery-2.0/bakery/Configuration/Association.h
-include/bakery-2.0/bakery/Configuration/AssociationBase.h
-include/bakery-2.0/bakery/Configuration/Client.h
-include/bakery-2.0/bakery/Configuration/Dialog_Preferences.h
-include/bakery-2.0/bakery/Document/Document.h
-include/bakery-2.0/bakery/Document/Document_XML.h
-include/bakery-2.0/bakery/Utilities/BusyCursor.h
-include/bakery-2.0/bakery/View/View.h
-include/bakery-2.0/bakery/View/ViewBase.h
-include/bakery-2.0/bakery/View/View_Composite.h
-include/bakery-2.0/bakery/bakery.h
-include/bakery-2.0/bakery/init.h
-lib/libbakery-2.0.a
-lib/libbakery-2.0.so
-lib/libbakery-2.0.so.1
-libdata/pkgconfig/bakery-2.0.pc
+include/bakery-%%API_VERSION%%/bakery/App/App.h
+include/bakery-%%API_VERSION%%/bakery/App/AppInstanceManager.h
+include/bakery-%%API_VERSION%%/bakery/App/App_Gtk.h
+include/bakery-%%API_VERSION%%/bakery/App/App_WithDoc.h
+include/bakery-%%API_VERSION%%/bakery/App/App_WithDoc_Gtk.h
+include/bakery-%%API_VERSION%%/bakery/App/Dialog_OfferSave.h
+include/bakery-%%API_VERSION%%/bakery/App/Dialog_OverwriteFile.h
+include/bakery-%%API_VERSION%%/bakery/App/GtkDialogs.h
+include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-item.h
+include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-model.h
+include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-util.h
+include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-view-gtk.h
+include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-view.h
+include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent.h
+include/bakery-%%API_VERSION%%/bakery/Configuration/Association.h
+include/bakery-%%API_VERSION%%/bakery/Configuration/AssociationBase.h
+include/bakery-%%API_VERSION%%/bakery/Configuration/Client.h
+include/bakery-%%API_VERSION%%/bakery/Configuration/Dialog_Preferences.h
+include/bakery-%%API_VERSION%%/bakery/Document/Document.h
+include/bakery-%%API_VERSION%%/bakery/Document/Document_XML.h
+include/bakery-%%API_VERSION%%/bakery/Utilities/BusyCursor.h
+include/bakery-%%API_VERSION%%/bakery/Utilities/sharedptr.h
+include/bakery-%%API_VERSION%%/bakery/View/View.h
+include/bakery-%%API_VERSION%%/bakery/View/ViewBase.h
+include/bakery-%%API_VERSION%%/bakery/View/View_Composite.h
+include/bakery-%%API_VERSION%%/bakery/bakery.h
+include/bakery-%%API_VERSION%%/bakery/init.h
+lib/libbakery-%%VERSION%%.a
+lib/libbakery-%%VERSION%%.so
+lib/libbakery-%%VERSION%%.so.11
+libdata/pkgconfig/bakery-%%API_VERSION%%.pc
 share/locale/de/LC_MESSAGES/bakery.mo
-@dirrm include/bakery-2.0/bakery/View
-@dirrm include/bakery-2.0/bakery/Utilities
-@dirrm include/bakery-2.0/bakery/Document
-@dirrm include/bakery-2.0/bakery/Configuration
-@dirrm include/bakery-2.0/bakery/App
-@dirrm include/bakery-2.0/bakery
-@dirrm include/bakery-2.0
+@dirrm include/bakery-%%API_VERSION%%/bakery/View
+@dirrm include/bakery-%%API_VERSION%%/bakery/Utilities
+@dirrm include/bakery-%%API_VERSION%%/bakery/Document
+@dirrm include/bakery-%%API_VERSION%%/bakery/Configuration
+@dirrm include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files
+@dirrm include/bakery-%%API_VERSION%%/bakery/App/libegg
+@dirrm include/bakery-%%API_VERSION%%/bakery/App
+@dirrm include/bakery-%%API_VERSION%%/bakery
+@dirrm include/bakery-%%API_VERSION%%
