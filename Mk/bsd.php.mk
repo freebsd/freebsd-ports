@@ -130,19 +130,17 @@ check-makevars::
 		@${ECHO_CMD} "installed a conflicting PHP port without the Apache Module."
 		@${FALSE}
 .	endif
-.else
+.endif
+
+.endif
+
+.endif
+
+.endif
+
+.endif
 
 PHP_PORT?=	${PORTSDIR}/lang/php${PHP_VER}
-
-.endif
-
-.endif
-
-.endif
-
-.endif
-
-.endif
 
 .if defined(WANT_PHP_PEAR)
 .	if defined(USE_PHP_BUILD)
