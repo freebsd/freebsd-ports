@@ -1,0 +1,98 @@
+*** mmv.c.old	Wed Mar  1 05:23:56 1995
+--- mmv.c	Thu Mar  2 05:43:37 1995
+***************
+*** 88,94 ****
+  #endif
+  
+  #include <stdio.h>
+- #include <ctype.h>
+  
+  #ifdef MSDOS
+  /* for MS-DOS (under Turbo C 1.5)*/
+--- 88,93 ----
+***************
+*** 126,132 ****
+  #include <sys/file.h>
+  
+  extern char *getenv();
+- extern long lseek();
+  extern char *malloc();
+  
+  #ifdef DIRENT
+--- 125,130 ----
+***************
+*** 176,182 ****
+  
+  #else
+  /* for System V and BSD */
+- #include <string.h>
+  #include <sys/signal.h>
+  #include <fcntl.h>
+  #endif
+--- 174,179 ----
+***************
+*** 370,376 ****
+  static int snap(/* REP *first, REP *p */);
+  static void showdone(/* REP *fin */);
+  static void breakout(/*  */);
+! static int breakrep(/* */);
+  static void breakstat(/* */);
+  static void quit(/*  */);
+  static int copymove(/* REP *p */);
+--- 367,373 ----
+  static int snap(/* REP *first, REP *p */);
+  static void showdone(/* REP *fin */);
+  static void breakout(/*  */);
+! static void breakrep(/* */);
+  static void breakstat(/* */);
+  static void quit(/*  */);
+  static int copymove(/* REP *p */);
+***************
+*** 389,395 ****
+  static int getstat(/* char *full, FILEINFO *f */);
+  static int dwritable(/* HANDLE *h */);
+  static int fwritable(/* char *hname, FILEINFO *f */);
+- static void memmove(/* void *to, void *from, int k */);
+  #endif
+  #ifndef RENAME
+  static int rename(/* char *from, char *to */);
+--- 386,391 ----
+***************
+*** 2550,2559 ****
+  }
+  
+  
+! static int breakrep()
+  {
+  	gotsig = 1;
+- 	return(1);
+  }
+  
+  
+--- 2546,2554 ----
+  }
+  
+  
+! static void breakrep()
+  {
+  	gotsig = 1;
+  }
+  
+  
+***************
+*** 2832,2838 ****
+  }
+  
+  
+! #ifndef MSDOS
+  static void memmove(to, from, k)
+  	char *to, *from;
+  	unsigned k;
+--- 2827,2833 ----
+  }
+  
+  
+! #if 0
+  static void memmove(to, from, k)
+  	char *to, *from;
+  	unsigned k;
