@@ -1,0 +1,14 @@
+--- Makefile.orig	Mon Apr 27 22:06:20 1998
++++ Makefile	Mon Apr 27 22:07:26 1998
+@@ -0,0 +1,11 @@
++all: emacs-lisp-intro.info
++
++emacs-lisp-intro.info:
++	makeinfo emacs-lisp-intro.texi
++
++install: all
++	${BSD_INSTALL_DATA} emacs-lisp-intro.info \
++		emacs-lisp-intro.info-* ${PREFIX}/info/
++
++clean:
++	rm -f emacs-lisp-intro.info emacs-lisp-intro.info-*
