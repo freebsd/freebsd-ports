@@ -20,6 +20,8 @@ PATCHFILES=	${PORTNAME:S/G/g/}-2001-01-06.diff
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 WRKSRC=		${WRKDIR}/Glide3
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
