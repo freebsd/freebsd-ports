@@ -10,3 +10,5 @@ share/examples/xplot/demo.4
 share/examples/xplot/demo.5
 share/examples/xplot/demo.6
 share/examples/xplot/demo.7
+@dirrm share/doc/xplot
+@dirrm share/examples/xplot
