@@ -1,32 +1,32 @@
---- pixmaps/Makefile.in.orig	Tue Mar  5 21:04:40 2002
-+++ pixmaps/Makefile.in	Tue Mar  5 21:06:51 2002
-@@ -260,22 +260,15 @@
+--- pixmaps/Makefile.in.orig	Wed Aug 28 00:18:58 2002
++++ pixmaps/Makefile.in	Wed Aug 28 00:20:28 2002
+@@ -276,22 +276,16 @@
  		yell.xpm			
  
  
--@DISTRIB_TRUE@gaimdistpixdir = @DISTRIB_TRUE@$(datadir)/pixmaps/gaim
--@DISTRIB_TRUE@gaimdistpix_DATA = @DISTRIB_TRUE@away.png connect.png msgpend.png offline.png online.png
+-@DISTRIB_TRUE@gaimdistpixdir = $(datadir)/pixmaps/gaim
+-@DISTRIB_TRUE@gaimdistpix_DATA = away.png connect.png msgpend.png offline.png online.png
 +@GNOMEAPPLET_TRUE@gnomedata = `@GNOME_CONFIG@ --datadir`
 +@GNOMEAPPLET_TRUE@gaimdistpmdir = $(gnomedata)/pixmaps/gaim
 +@GNOMEAPPLET_TRUE@gaimdistpm_DATA = away.png connect.png msgpend.png offline.png online.png
 +@GNOMEAPPLET_TRUE@gaimpixmapdir = $(gnomedata)/pixmaps
 +@GNOMEAPPLET_TRUE@gaimpixmap_DATA = gaim.xpm
  
--@DISTRIB_TRUE@distpixmapdir = @DISTRIB_TRUE@$(datadir)/pixmaps
--@DISTRIB_TRUE@distpixmap_DATA = @DISTRIB_TRUE@gaim.xpm
+-@DISTRIB_TRUE@distpixmapdir = $(datadir)/pixmaps
+-@DISTRIB_TRUE@distpixmap_DATA = gaim.png
 +pixmapdir = $(datadir)/pixmaps
 +pixmap_DATA = gaim.xpm
  
--@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gnomedata = @DISTRIB_FALSE@@GNOMEAPPLET_TRUE@`@GNOME_CONFIG@ --datadir`
+-@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gnomedata = `@GNOME_CONFIG@ --datadir`
+ 
+-@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimdistpmdir = $(gnomedata)/pixmaps/gaim
+-@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimdistpm_DATA = away.png connect.png msgpend.png offline.png online.png
 -
--@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimdistpmdir = @DISTRIB_FALSE@@GNOMEAPPLET_TRUE@$(gnomedata)/pixmaps/gaim
--@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimdistpm_DATA = @DISTRIB_FALSE@@GNOMEAPPLET_TRUE@away.png connect.png msgpend.png offline.png online.png
+-@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimpixmapdir = $(gnomedata)/pixmaps
+-@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimpixmap_DATA = gaim.png
 -
--@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimpixmapdir = @DISTRIB_FALSE@@GNOMEAPPLET_TRUE@$(gnomedata)/pixmaps
--@DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimpixmap_DATA = @DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaim.xpm
--
--@DISTRIB_FALSE@@GNOMEAPPLET_FALSE@pixmapdir = @DISTRIB_FALSE@@GNOMEAPPLET_FALSE@$(datadir)/pixmaps
--@DISTRIB_FALSE@@GNOMEAPPLET_FALSE@pixmap_DATA = @DISTRIB_FALSE@@GNOMEAPPLET_FALSE@gaim.xpm
+-@DISTRIB_FALSE@@GNOMEAPPLET_FALSE@pixmapdir = $(datadir)/pixmaps
+-@DISTRIB_FALSE@@GNOMEAPPLET_FALSE@pixmap_DATA = gaim.png
+ subdir = pixmaps
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
+ CONFIG_HEADER = $(top_builddir)/config.h
