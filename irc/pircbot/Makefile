@@ -16,7 +16,7 @@ MAINTAINER=	tim@bishnet.net
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.1+
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pircbot.jar ${PREFIX}/share/java/classes
