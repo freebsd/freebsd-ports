@@ -1,0 +1,25 @@
+bin/gnucash
+bin/gnucash.bin
+bin/xacc
+bin/xacc.bin
+share/xacc/Docs/contract.gif
+share/xacc/Docs/expand.gif
+share/xacc/Docs/foliowin.gif
+share/xacc/Docs/newaccwin.gif
+share/xacc/Docs/pix.xpm
+share/xacc/Docs/projects.html
+share/xacc/Docs/recnwin.gif
+share/xacc/Docs/regwin.gif
+share/xacc/Docs/xacc-about.html
+share/xacc/Docs/xacc-accwin.html
+share/xacc/Docs/xacc-adjbwin.html
+share/xacc/Docs/xacc-double.html
+share/xacc/Docs/xacc-expense.html
+share/xacc/Docs/xacc-gpl.html
+share/xacc/Docs/xacc-main.html
+share/xacc/Docs/xacc-mainwin.html
+share/xacc/Docs/xacc-quicken.html
+share/xacc/Docs/xacc-recnwin.html
+share/xacc/Docs/xacc-regwin.html
+@dirrm share/xacc/Docs
+@dirrm share/xacc
