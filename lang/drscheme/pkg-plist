@@ -9,7 +9,6 @@ drscheme/bin/setup-plt
 drscheme/bin/tex2page
 @exec ln -s %D/drscheme/bin/tex2page %D/bin/tex2page
 @unexec rm %D/bin/tex2page
-drscheme/bin/background-help-desk
 drscheme/bin/mzscheme
 @exec ln -s %D/drscheme/bin/mzscheme %D/bin/mzscheme
 @unexec rm %D/bin/mzscheme
@@ -43,11 +42,14 @@ drscheme/collects/browser/compiled/browser-unit.dep
 drscheme/collects/browser/compiled/browser-unit.zo
 drscheme/collects/browser/compiled/browser.dep
 drscheme/collects/browser/compiled/browser.zo
+drscheme/collects/browser/compiled/external.dep
+drscheme/collects/browser/compiled/external.zo
 drscheme/collects/browser/compiled/htmltext.dep
 drscheme/collects/browser/compiled/htmltext.zo
 drscheme/collects/browser/compiled/info.dep
 drscheme/collects/browser/compiled/info.zo
 drscheme/collects/browser/doc.txt
+drscheme/collects/browser/external.ss
 drscheme/collects/browser/htmltext.ss
 drscheme/collects/browser/info.ss
 drscheme/collects/browser/private/btree.ss
@@ -330,6 +332,7 @@ drscheme/collects/doc/advanced/memv.html
 drscheme/collects/doc/advanced/min.html
 drscheme/collects/doc/advanced/modulo.html
 drscheme/collects/doc/advanced/name-choice.html
+drscheme/collects/doc/advanced/negative63.html
 drscheme/collects/doc/advanced/newline.html
 drscheme/collects/doc/advanced/not.html
 drscheme/collects/doc/advanced/null.html
@@ -344,6 +347,7 @@ drscheme/collects/doc/advanced/or.html
 drscheme/collects/doc/advanced/ormap.html
 drscheme/collects/doc/advanced/pair63.html
 drscheme/collects/doc/advanced/pi.html
+drscheme/collects/doc/advanced/positive63.html
 drscheme/collects/doc/advanced/posn-x.html
 drscheme/collects/doc/advanced/posn-y.html
 drscheme/collects/doc/advanced/posn63.html
@@ -560,6 +564,7 @@ drscheme/collects/doc/beginning-abbr/memq.html
 drscheme/collects/doc/beginning-abbr/memv.html
 drscheme/collects/doc/beginning-abbr/min.html
 drscheme/collects/doc/beginning-abbr/modulo.html
+drscheme/collects/doc/beginning-abbr/negative63.html
 drscheme/collects/doc/beginning-abbr/not.html
 drscheme/collects/doc/beginning-abbr/null.html
 drscheme/collects/doc/beginning-abbr/null63.html
@@ -571,6 +576,7 @@ drscheme/collects/doc/beginning-abbr/odd63.html
 drscheme/collects/doc/beginning-abbr/or.html
 drscheme/collects/doc/beginning-abbr/pair63.html
 drscheme/collects/doc/beginning-abbr/pi.html
+drscheme/collects/doc/beginning-abbr/positive63.html
 drscheme/collects/doc/beginning-abbr/posn-x.html
 drscheme/collects/doc/beginning-abbr/posn-y.html
 drscheme/collects/doc/beginning-abbr/posn63.html
@@ -759,6 +765,7 @@ drscheme/collects/doc/beginning/memq.html
 drscheme/collects/doc/beginning/memv.html
 drscheme/collects/doc/beginning/min.html
 drscheme/collects/doc/beginning/modulo.html
+drscheme/collects/doc/beginning/negative63.html
 drscheme/collects/doc/beginning/not.html
 drscheme/collects/doc/beginning/null.html
 drscheme/collects/doc/beginning/null63.html
@@ -770,6 +777,7 @@ drscheme/collects/doc/beginning/odd63.html
 drscheme/collects/doc/beginning/or.html
 drscheme/collects/doc/beginning/pair63.html
 drscheme/collects/doc/beginning/pi.html
+drscheme/collects/doc/beginning/positive63.html
 drscheme/collects/doc/beginning/posn-x.html
 drscheme/collects/doc/beginning/posn-y.html
 drscheme/collects/doc/beginning/posn63.html
@@ -824,6 +832,7 @@ drscheme/collects/doc/beginning/zero63.html
 drscheme/collects/doc/drscheme/drscheme--h.aux
 drscheme/collects/doc/drscheme/drscheme--h.idx
 drscheme/collects/doc/drscheme/drscheme--h.ilg
+drscheme/collects/doc/drscheme/drscheme--h.ind
 drscheme/collects/doc/drscheme/drscheme-Z-A.scm
 drscheme/collects/doc/drscheme/drscheme-Z-G-1.gif
 drscheme/collects/doc/drscheme/drscheme-Z-G-2.gif
@@ -1001,6 +1010,7 @@ drscheme/collects/doc/intermediate-lambda/memq.html
 drscheme/collects/doc/intermediate-lambda/memv.html
 drscheme/collects/doc/intermediate-lambda/min.html
 drscheme/collects/doc/intermediate-lambda/modulo.html
+drscheme/collects/doc/intermediate-lambda/negative63.html
 drscheme/collects/doc/intermediate-lambda/not.html
 drscheme/collects/doc/intermediate-lambda/null.html
 drscheme/collects/doc/intermediate-lambda/null63.html
@@ -1013,6 +1023,7 @@ drscheme/collects/doc/intermediate-lambda/or.html
 drscheme/collects/doc/intermediate-lambda/ormap.html
 drscheme/collects/doc/intermediate-lambda/pair63.html
 drscheme/collects/doc/intermediate-lambda/pi.html
+drscheme/collects/doc/intermediate-lambda/positive63.html
 drscheme/collects/doc/intermediate-lambda/posn-x.html
 drscheme/collects/doc/intermediate-lambda/posn-y.html
 drscheme/collects/doc/intermediate-lambda/posn63.html
@@ -1223,6 +1234,7 @@ drscheme/collects/doc/intermediate/memq.html
 drscheme/collects/doc/intermediate/memv.html
 drscheme/collects/doc/intermediate/min.html
 drscheme/collects/doc/intermediate/modulo.html
+drscheme/collects/doc/intermediate/negative63.html
 drscheme/collects/doc/intermediate/not.html
 drscheme/collects/doc/intermediate/null.html
 drscheme/collects/doc/intermediate/null63.html
@@ -1235,6 +1247,7 @@ drscheme/collects/doc/intermediate/or.html
 drscheme/collects/doc/intermediate/ormap.html
 drscheme/collects/doc/intermediate/pair63.html
 drscheme/collects/doc/intermediate/pi.html
+drscheme/collects/doc/intermediate/positive63.html
 drscheme/collects/doc/intermediate/posn-x.html
 drscheme/collects/doc/intermediate/posn-y.html
 drscheme/collects/doc/intermediate/posn63.html
@@ -1314,8 +1327,11 @@ drscheme/collects/doc/misclib/index.html
 drscheme/collects/doc/misclib/keywords
 drscheme/collects/doc/misclib/keywords.scm
 drscheme/collects/doc/misclib/misclib--h.aux
+drscheme/collects/doc/misclib/misclib--h.bbl
+drscheme/collects/doc/misclib/misclib--h.blg
 drscheme/collects/doc/misclib/misclib--h.idx
 drscheme/collects/doc/misclib/misclib--h.ilg
+drscheme/collects/doc/misclib/misclib--h.ind
 drscheme/collects/doc/misclib/misclib-Z-A.scm
 drscheme/collects/doc/misclib/misclib-Z-C.css
 drscheme/collects/doc/misclib/misclib-Z-G-1.gif
@@ -1335,8 +1351,11 @@ drscheme/collects/doc/mzc/index.html
 drscheme/collects/doc/mzc/keywords
 drscheme/collects/doc/mzc/keywords.scm
 drscheme/collects/doc/mzc/mzc--h.aux
+drscheme/collects/doc/mzc/mzc--h.bbl
+drscheme/collects/doc/mzc/mzc--h.blg
 drscheme/collects/doc/mzc/mzc--h.idx
 drscheme/collects/doc/mzc/mzc--h.ilg
+drscheme/collects/doc/mzc/mzc--h.ind
 drscheme/collects/doc/mzc/mzc-Z-A.scm
 drscheme/collects/doc/mzc/mzc-Z-H-1.html
 drscheme/collects/doc/mzc/mzc-Z-H-2.html
@@ -1356,11 +1375,13 @@ drscheme/collects/doc/mzlib/index.html
 drscheme/collects/doc/mzlib/keywords
 drscheme/collects/doc/mzlib/keywords.scm
 drscheme/collects/doc/mzlib/mzlib--h.aux
+drscheme/collects/doc/mzlib/mzlib--h.bbl
+drscheme/collects/doc/mzlib/mzlib--h.blg
 drscheme/collects/doc/mzlib/mzlib--h.idx
 drscheme/collects/doc/mzlib/mzlib--h.ilg
+drscheme/collects/doc/mzlib/mzlib--h.ind
 drscheme/collects/doc/mzlib/mzlib-Z-A.scm
 drscheme/collects/doc/mzlib/mzlib-Z-C.css
-drscheme/collects/doc/mzlib/mzlib-Z-G-1.gif
 drscheme/collects/doc/mzlib/mzlib-Z-G-2.gif
 drscheme/collects/doc/mzlib/mzlib-Z-H-1.html
 drscheme/collects/doc/mzlib/mzlib-Z-H-10.html
@@ -1392,6 +1413,9 @@ drscheme/collects/doc/mzlib/mzlib-Z-H-33.html
 drscheme/collects/doc/mzlib/mzlib-Z-H-34.html
 drscheme/collects/doc/mzlib/mzlib-Z-H-35.html
 drscheme/collects/doc/mzlib/mzlib-Z-H-36.html
+drscheme/collects/doc/mzlib/mzlib-Z-H-37.html
+drscheme/collects/doc/mzlib/mzlib-Z-H-38.html
+drscheme/collects/doc/mzlib/mzlib-Z-H-39.html
 drscheme/collects/doc/mzlib/mzlib-Z-H-4.html
 drscheme/collects/doc/mzlib/mzlib-Z-H-5.html
 drscheme/collects/doc/mzlib/mzlib-Z-H-6.html
@@ -1408,8 +1432,11 @@ drscheme/collects/doc/mzscheme/index.html
 drscheme/collects/doc/mzscheme/keywords
 drscheme/collects/doc/mzscheme/keywords.scm
 drscheme/collects/doc/mzscheme/mzscheme--h.aux
+drscheme/collects/doc/mzscheme/mzscheme--h.bbl
+drscheme/collects/doc/mzscheme/mzscheme--h.blg
 drscheme/collects/doc/mzscheme/mzscheme--h.idx
 drscheme/collects/doc/mzscheme/mzscheme--h.ilg
+drscheme/collects/doc/mzscheme/mzscheme--h.ind
 drscheme/collects/doc/mzscheme/mzscheme-Z-A.scm
 drscheme/collects/doc/mzscheme/mzscheme-Z-C.css
 drscheme/collects/doc/mzscheme/mzscheme-Z-H-1.html
@@ -1547,32 +1574,15 @@ drscheme/collects/doc/t-y-scheme/t-y-scheme--h.ilg
 drscheme/collects/doc/t-y-scheme/t-y-scheme--h.ind
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-A.scm
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-1.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-1.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-1.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-2.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-2.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-2.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-3.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-3.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-3.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-4.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-4.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-4.tex
+drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-5.gif
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-1.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-1.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-1.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-2.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-2.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-2.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-3.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-3.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-3.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-4.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-4.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-4.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-5.gif
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-5.ps
-drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-G-D-5.tex
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-H-1.html
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-H-10.html
 drscheme/collects/doc/t-y-scheme/t-y-scheme-Z-H-11.html
@@ -1636,6 +1646,7 @@ drscheme/collects/doc/tour/images/imgs-in-progs.gif
 drscheme/collects/doc/tour/images/languages-example-2.gif
 drscheme/collects/doc/tour/images/languages-example.gif
 drscheme/collects/doc/tour/images/languages-menu.gif
+drscheme/collects/doc/tour/images/numbers.gif
 drscheme/collects/doc/tour/images/profile-cumu-time.gif
 drscheme/collects/doc/tour/images/profile-num-calls.gif
 drscheme/collects/doc/tour/images/qquote-notn.gif
@@ -1657,9 +1668,6 @@ drscheme/collects/doc/tour/tour-Z-H-13.html
 drscheme/collects/doc/tour/tour-Z-H-14.html
 drscheme/collects/doc/tour/tour-Z-H-15.html
 drscheme/collects/doc/tour/tour-Z-H-16.html
-drscheme/collects/doc/tour/tour-Z-H-17.html
-drscheme/collects/doc/tour/tour-Z-H-18.html
-drscheme/collects/doc/tour/tour-Z-H-19.html
 drscheme/collects/doc/tour/tour-Z-H-2.html
 drscheme/collects/doc/tour/tour-Z-H-3.html
 drscheme/collects/doc/tour/tour-Z-H-4.html
@@ -1668,6 +1676,7 @@ drscheme/collects/doc/tour/tour-Z-H-6.html
 drscheme/collects/doc/tour/tour-Z-H-7.html
 drscheme/collects/doc/tour/tour-Z-H-8.html
 drscheme/collects/doc/tour/tour-Z-H-9.html
+drscheme/collects/doc/tour/tour-Z-S.css
 drscheme/collects/doc/tour/tour.hlog
 drscheme/collects/doc/tour/tour.html
 drscheme/collects/drscheme/acks.ss
@@ -1682,6 +1691,8 @@ drscheme/collects/drscheme/compiled/drscheme.dep
 drscheme/collects/drscheme/compiled/drscheme.zo
 drscheme/collects/drscheme/compiled/info.dep
 drscheme/collects/drscheme/compiled/info.zo
+drscheme/collects/drscheme/compiled/installer.dep
+drscheme/collects/drscheme/compiled/installer.zo
 drscheme/collects/drscheme/compiled/syncheck.dep
 drscheme/collects/drscheme/compiled/syncheck.zo
 drscheme/collects/drscheme/compiled/tool.dep
@@ -1692,11 +1703,19 @@ drscheme/collects/drscheme/drscheme.creator
 drscheme/collects/drscheme/drscheme.filetypes
 drscheme/collects/drscheme/drscheme.ss
 drscheme/collects/drscheme/info.ss
+drscheme/collects/drscheme/installer.ss
 drscheme/collects/drscheme/private/app.ss
+drscheme/collects/drscheme/private/bindings-browser.ss
 drscheme/collects/drscheme/private/compiled/app.dep
 drscheme/collects/drscheme/private/compiled/app.zo
+drscheme/collects/drscheme/private/compiled/bindings-browser.dep
+drscheme/collects/drscheme/private/compiled/bindings-browser.zo
 drscheme/collects/drscheme/private/compiled/debug.dep
 drscheme/collects/drscheme/private/compiled/debug.zo
+drscheme/collects/drscheme/private/compiled/drscheme-debug.dep
+drscheme/collects/drscheme/private/compiled/drscheme-debug.zo
+drscheme/collects/drscheme/private/compiled/drscheme-normal.dep
+drscheme/collects/drscheme/private/compiled/drscheme-normal.zo
 drscheme/collects/drscheme/private/compiled/drsig.dep
 drscheme/collects/drscheme/private/compiled/drsig.zo
 drscheme/collects/drscheme/private/compiled/eval.dep
@@ -1713,6 +1732,8 @@ drscheme/collects/drscheme/private/compiled/info.dep
 drscheme/collects/drscheme/private/compiled/info.zo
 drscheme/collects/drscheme/private/compiled/init.dep
 drscheme/collects/drscheme/private/compiled/init.zo
+drscheme/collects/drscheme/private/compiled/label-frame-mred.dep
+drscheme/collects/drscheme/private/compiled/label-frame-mred.zo
 drscheme/collects/drscheme/private/compiled/language-configuration.dep
 drscheme/collects/drscheme/private/compiled/language-configuration.zo
 drscheme/collects/drscheme/private/compiled/language.dep
@@ -1733,6 +1754,8 @@ drscheme/collects/drscheme/private/compiled/number-snip.dep
 drscheme/collects/drscheme/private/compiled/number-snip.zo
 drscheme/collects/drscheme/private/compiled/rep.dep
 drscheme/collects/drscheme/private/compiled/rep.zo
+drscheme/collects/drscheme/private/compiled/replacement-mred.dep
+drscheme/collects/drscheme/private/compiled/replacement-mred.zo
 drscheme/collects/drscheme/private/compiled/start.dep
 drscheme/collects/drscheme/private/compiled/start.zo
 drscheme/collects/drscheme/private/compiled/syncheck-debug.dep
@@ -1752,6 +1775,8 @@ drscheme/collects/drscheme/private/compiled/tools.zo
 drscheme/collects/drscheme/private/compiled/unit.dep
 drscheme/collects/drscheme/private/compiled/unit.zo
 drscheme/collects/drscheme/private/debug.ss
+drscheme/collects/drscheme/private/drscheme-debug.ss
+drscheme/collects/drscheme/private/drscheme-normal.ss
 drscheme/collects/drscheme/private/drsig.ss
 drscheme/collects/drscheme/private/eval.ss
 drscheme/collects/drscheme/private/font.ss
@@ -1760,6 +1785,7 @@ drscheme/collects/drscheme/private/get-extend.ss
 drscheme/collects/drscheme/private/help-desk.ss
 drscheme/collects/drscheme/private/info.ss
 drscheme/collects/drscheme/private/init.ss
+drscheme/collects/drscheme/private/label-frame-mred.ss
 drscheme/collects/drscheme/private/language-configuration.ss
 drscheme/collects/drscheme/private/language.ss
 drscheme/collects/drscheme/private/launcher-bootstrap.ss
@@ -1770,6 +1796,7 @@ drscheme/collects/drscheme/private/module-overview.ss
 drscheme/collects/drscheme/private/multi-file-search.ss
 drscheme/collects/drscheme/private/number-snip.ss
 drscheme/collects/drscheme/private/rep.ss
+drscheme/collects/drscheme/private/replacement-mred.ss
 drscheme/collects/drscheme/private/start.ss
 drscheme/collects/drscheme/private/syncheck-debug.ss
 drscheme/collects/drscheme/private/syntax-browser.ss
@@ -1857,6 +1884,10 @@ drscheme/collects/eopl/private/sllboth.ss
 drscheme/collects/eopl/private/slldef.ss
 drscheme/collects/eopl/private/sllgen.ss
 drscheme/collects/eopl/private/utils.ss
+drscheme/collects/errortrace/compiled/errortrace-breakpoint.dep
+drscheme/collects/errortrace/compiled/errortrace-breakpoint.zo
+drscheme/collects/errortrace/compiled/errortrace-lib.dep
+drscheme/collects/errortrace/compiled/errortrace-lib.zo
 drscheme/collects/errortrace/compiled/errortrace.dep
 drscheme/collects/errortrace/compiled/errortrace.zo
 drscheme/collects/errortrace/compiled/info.dep
@@ -1864,6 +1895,8 @@ drscheme/collects/errortrace/compiled/info.zo
 drscheme/collects/errortrace/compiled/stacktrace.dep
 drscheme/collects/errortrace/compiled/stacktrace.zo
 drscheme/collects/errortrace/doc.txt
+drscheme/collects/errortrace/errortrace-breakpoint.ss
+drscheme/collects/errortrace/errortrace-lib.ss
 drscheme/collects/errortrace/errortrace.ss
 drscheme/collects/errortrace/info.ss
 drscheme/collects/errortrace/stacktrace.ss
@@ -1887,8 +1920,6 @@ drscheme/collects/framework/compiled/info.dep
 drscheme/collects/framework/compiled/info.zo
 drscheme/collects/framework/compiled/macro.dep
 drscheme/collects/framework/compiled/macro.zo
-drscheme/collects/framework/compiled/specs.dep
-drscheme/collects/framework/compiled/specs.zo
 drscheme/collects/framework/compiled/splash.dep
 drscheme/collects/framework/compiled/splash.zo
 drscheme/collects/framework/compiled/test.dep
@@ -1998,7 +2029,6 @@ drscheme/collects/framework/private/standard-menus-items.ss
 drscheme/collects/framework/private/standard-menus.ss
 drscheme/collects/framework/private/text.ss
 drscheme/collects/framework/private/version.ss
-drscheme/collects/framework/specs.ss
 drscheme/collects/framework/splash.ss
 drscheme/collects/framework/test.ss
 drscheme/collects/games/aces/aces.scm
@@ -2284,10 +2314,9 @@ drscheme/collects/graphics/turtles.ss
 drscheme/collects/graphics/value-turtles-examples.ss
 drscheme/collects/graphics/value-turtles-test.ss
 drscheme/collects/graphics/value-turtles.ss
-drscheme/collects/help/compiled/help-bg.dep
-drscheme/collects/help/compiled/help-bg.zo
-drscheme/collects/help/compiled/help-desk-mz.dep
-drscheme/collects/help/compiled/help-desk-mz.zo
+drscheme/collects/help/bug-report.ss
+drscheme/collects/help/compiled/bug-report.dep
+drscheme/collects/help/compiled/bug-report.zo
 drscheme/collects/help/compiled/help-desk.dep
 drscheme/collects/help/compiled/help-desk.zo
 drscheme/collects/help/compiled/help.dep
@@ -2296,171 +2325,212 @@ drscheme/collects/help/compiled/info.dep
 drscheme/collects/help/compiled/info.zo
 drscheme/collects/help/compiled/installer.dep
 drscheme/collects/help/compiled/installer.zo
-drscheme/collects/help/compiled/mkindex.dep
-drscheme/collects/help/compiled/mkindex.zo
+drscheme/collects/help/compiled/refresh-manuals.dep
+drscheme/collects/help/compiled/refresh-manuals.zo
 drscheme/collects/help/doc.txt
-drscheme/collects/help/help-bg.ss
-drscheme/collects/help/help-desk-mz.ss
 drscheme/collects/help/help-desk.ss
 drscheme/collects/help/help.creator
+drscheme/collects/help/help.icns
 drscheme/collects/help/help.ico
 drscheme/collects/help/help.ss
 drscheme/collects/help/info.ss
 drscheme/collects/help/installer.ss
-drscheme/collects/help/mkindex.ss
-drscheme/collects/help/private/browser.ss
+drscheme/collects/help/private/browser-extensions.ss
+drscheme/collects/help/private/buginfo.ss
 drscheme/collects/help/private/colldocs.ss
-drscheme/collects/help/private/compiled/browser.dep
-drscheme/collects/help/private/compiled/browser.zo
+drscheme/collects/help/private/compiled/browser-extensions.dep
+drscheme/collects/help/private/compiled/browser-extensions.zo
+drscheme/collects/help/private/compiled/buginfo.dep
+drscheme/collects/help/private/compiled/buginfo.zo
 drscheme/collects/help/private/compiled/colldocs.dep
 drscheme/collects/help/private/compiled/colldocs.zo
+drscheme/collects/help/private/compiled/cookie.dep
+drscheme/collects/help/private/compiled/cookie.zo
 drscheme/collects/help/private/compiled/docpos.dep
 drscheme/collects/help/private/compiled/docpos.zo
-drscheme/collects/help/private/compiled/external-search.dep
-drscheme/collects/help/private/compiled/external-search.zo
-drscheme/collects/help/private/compiled/external-server.dep
-drscheme/collects/help/private/compiled/external-server.zo
 drscheme/collects/help/private/compiled/finddoc.dep
 drscheme/collects/help/private/compiled/finddoc.zo
+drscheme/collects/help/private/compiled/help-app-main.dep
+drscheme/collects/help/private/compiled/help-app-main.zo
 drscheme/collects/help/private/compiled/info.dep
 drscheme/collects/help/private/compiled/info.zo
 drscheme/collects/help/private/compiled/installed-components.dep
 drscheme/collects/help/private/compiled/installed-components.zo
-drscheme/collects/help/private/compiled/internal-server.dep
-drscheme/collects/help/private/compiled/internal-server.zo
 drscheme/collects/help/private/compiled/manuals.dep
 drscheme/collects/help/private/compiled/manuals.zo
 drscheme/collects/help/private/compiled/path.dep
 drscheme/collects/help/private/compiled/path.zo
-drscheme/collects/help/private/compiled/plt-browser.dep
-drscheme/collects/help/private/compiled/plt-browser.zo
 drscheme/collects/help/private/compiled/search.dep
 drscheme/collects/help/private/compiled/search.zo
-drscheme/collects/help/private/compiled/server-config.dep
-drscheme/collects/help/private/compiled/server-config.zo
 drscheme/collects/help/private/compiled/server.dep
 drscheme/collects/help/private/compiled/server.zo
 drscheme/collects/help/private/compiled/standard-urls.dep
 drscheme/collects/help/private/compiled/standard-urls.zo
-drscheme/collects/help/private/compiled/start.dep
-drscheme/collects/help/private/compiled/start.zo
+drscheme/collects/help/private/cookie.ss
 drscheme/collects/help/private/docpos.ss
-drscheme/collects/help/private/external-search.ss
-drscheme/collects/help/private/external-server.ss
 drscheme/collects/help/private/finddoc.ss
+drscheme/collects/help/private/help-app-main.ss
 drscheme/collects/help/private/info.ss
 drscheme/collects/help/private/installed-components.ss
-drscheme/collects/help/private/internal-server.ss
 drscheme/collects/help/private/manuals.ss
 drscheme/collects/help/private/path.ss
-drscheme/collects/help/private/plt-browser.ss
 drscheme/collects/help/private/search.ss
-drscheme/collects/help/private/server-config.ss
 drscheme/collects/help/private/server.ss
 drscheme/collects/help/private/standard-urls.ss
-drscheme/collects/help/private/start.ss
+drscheme/collects/help/refresh-manuals.ss
 drscheme/collects/help/server-configuration
 drscheme/collects/help/servlets/README
 drscheme/collects/help/servlets/acknowledge.ss
-drscheme/collects/help/servlets/bug-report.ss
-drscheme/collects/help/servlets/confirm-bug.ss
+drscheme/collects/help/servlets/compiled/acknowledge.dep
+drscheme/collects/help/servlets/compiled/acknowledge.zo
+drscheme/collects/help/servlets/compiled/doc-anchor.dep
+drscheme/collects/help/servlets/compiled/doc-anchor.zo
+drscheme/collects/help/servlets/compiled/doc-content.dep
+drscheme/collects/help/servlets/compiled/doc-content.zo
+drscheme/collects/help/servlets/compiled/doc-message.dep
+drscheme/collects/help/servlets/compiled/doc-message.zo
+drscheme/collects/help/servlets/compiled/home.dep
+drscheme/collects/help/servlets/compiled/home.zo
+drscheme/collects/help/servlets/compiled/howtodrscheme.dep
+drscheme/collects/help/servlets/compiled/howtodrscheme.zo
+drscheme/collects/help/servlets/compiled/howtoprogram.dep
+drscheme/collects/help/servlets/compiled/howtoprogram.zo
+drscheme/collects/help/servlets/compiled/howtoscheme.dep
+drscheme/collects/help/servlets/compiled/howtoscheme.zo
+drscheme/collects/help/servlets/compiled/howtouse.dep
+drscheme/collects/help/servlets/compiled/howtouse.zo
+drscheme/collects/help/servlets/compiled/info.dep
+drscheme/collects/help/servlets/compiled/info.zo
+drscheme/collects/help/servlets/compiled/manual-section.dep
+drscheme/collects/help/servlets/compiled/manual-section.zo
+drscheme/collects/help/servlets/compiled/manuals.dep
+drscheme/collects/help/servlets/compiled/manuals.zo
+drscheme/collects/help/servlets/compiled/missing-manual.dep
+drscheme/collects/help/servlets/compiled/missing-manual.zo
+drscheme/collects/help/servlets/compiled/releaseinfo.dep
+drscheme/collects/help/servlets/compiled/releaseinfo.zo
+drscheme/collects/help/servlets/compiled/resources.dep
+drscheme/collects/help/servlets/compiled/resources.zo
+drscheme/collects/help/servlets/compiled/results.dep
+drscheme/collects/help/servlets/compiled/results.zo
 drscheme/collects/help/servlets/doc-anchor.ss
 drscheme/collects/help/servlets/doc-content.ss
 drscheme/collects/help/servlets/doc-message.ss
-drscheme/collects/help/servlets/download-manual.ss
-drscheme/collects/help/servlets/external-search.ss
-drscheme/collects/help/servlets/hd-config.ss
-drscheme/collects/help/servlets/hd-trouble.ss
 drscheme/collects/help/servlets/home.ss
 drscheme/collects/help/servlets/howtodrscheme.ss
 drscheme/collects/help/servlets/howtoprogram.ss
 drscheme/collects/help/servlets/howtoscheme.ss
 drscheme/collects/help/servlets/howtouse.ss
-drscheme/collects/help/servlets/index.ss
-drscheme/collects/help/servlets/main.ss
+drscheme/collects/help/servlets/info.ss
 drscheme/collects/help/servlets/manual-section.ss
 drscheme/collects/help/servlets/manuals.ss
 drscheme/collects/help/servlets/missing-manual.ss
 drscheme/collects/help/servlets/plticon.ico
-drscheme/collects/help/servlets/private/buginfo.ss
-drscheme/collects/help/servlets/private/compiled/buginfo.dep
-drscheme/collects/help/servlets/private/compiled/buginfo.zo
 drscheme/collects/help/servlets/private/compiled/exit.dep
 drscheme/collects/help/servlets/private/compiled/exit.zo
 drscheme/collects/help/servlets/private/compiled/external.dep
 drscheme/collects/help/servlets/private/compiled/external.zo
-drscheme/collects/help/servlets/private/compiled/frames.dep
-drscheme/collects/help/servlets/private/compiled/frames.zo
 drscheme/collects/help/servlets/private/compiled/headelts.dep
 drscheme/collects/help/servlets/private/compiled/headelts.zo
 drscheme/collects/help/servlets/private/compiled/info.dep
 drscheme/collects/help/servlets/private/compiled/info.zo
-drscheme/collects/help/servlets/private/compiled/main-pane.dep
-drscheme/collects/help/servlets/private/compiled/main-pane.zo
-drscheme/collects/help/servlets/private/compiled/no-frames.dep
-drscheme/collects/help/servlets/private/compiled/no-frames.zo
 drscheme/collects/help/servlets/private/compiled/read-doc.dep
 drscheme/collects/help/servlets/private/compiled/read-doc.zo
 drscheme/collects/help/servlets/private/compiled/read-lines.dep
 drscheme/collects/help/servlets/private/compiled/read-lines.zo
-drscheme/collects/help/servlets/private/compiled/refresh-util.dep
-drscheme/collects/help/servlets/private/compiled/refresh-util.zo
-drscheme/collects/help/servlets/private/compiled/remote.dep
-drscheme/collects/help/servlets/private/compiled/remote.zo
-drscheme/collects/help/servlets/private/compiled/search-pane.dep
-drscheme/collects/help/servlets/private/compiled/search-pane.zo
 drscheme/collects/help/servlets/private/compiled/search-util.dep
 drscheme/collects/help/servlets/private/compiled/search-util.zo
-drscheme/collects/help/servlets/private/compiled/synthesize.dep
-drscheme/collects/help/servlets/private/compiled/synthesize.zo
 drscheme/collects/help/servlets/private/compiled/util.dep
 drscheme/collects/help/servlets/private/compiled/util.zo
 drscheme/collects/help/servlets/private/exit.ss
 drscheme/collects/help/servlets/private/external.ss
-drscheme/collects/help/servlets/private/frames.ss
 drscheme/collects/help/servlets/private/headelts.ss
 drscheme/collects/help/servlets/private/info.ss
-drscheme/collects/help/servlets/private/main-pane.ss
-drscheme/collects/help/servlets/private/no-frames.ss
 drscheme/collects/help/servlets/private/read-doc.ss
 drscheme/collects/help/servlets/private/read-lines.ss
-drscheme/collects/help/servlets/private/refresh-util.ss
-drscheme/collects/help/servlets/private/remote.ss
-drscheme/collects/help/servlets/private/search-pane.ss
 drscheme/collects/help/servlets/private/search-util.ss
-drscheme/collects/help/servlets/private/synthesize.ss
 drscheme/collects/help/servlets/private/util.ss
-drscheme/collects/help/servlets/progress.ss
-drscheme/collects/help/servlets/refresh-manuals.ss
 drscheme/collects/help/servlets/release/bugs.ss
+drscheme/collects/help/servlets/release/compiled/bugs.dep
+drscheme/collects/help/servlets/release/compiled/bugs.zo
+drscheme/collects/help/servlets/release/compiled/info.dep
+drscheme/collects/help/servlets/release/compiled/info.zo
+drscheme/collects/help/servlets/release/compiled/license.dep
+drscheme/collects/help/servlets/release/compiled/license.zo
+drscheme/collects/help/servlets/release/compiled/notes.dep
+drscheme/collects/help/servlets/release/compiled/notes.zo
+drscheme/collects/help/servlets/release/compiled/patches.dep
+drscheme/collects/help/servlets/release/compiled/patches.zo
+drscheme/collects/help/servlets/release/info.ss
 drscheme/collects/help/servlets/release/license.ss
 drscheme/collects/help/servlets/release/notes.ss
 drscheme/collects/help/servlets/release/patches.ss
 drscheme/collects/help/servlets/releaseinfo.ss
+drscheme/collects/help/servlets/research/compiled/info.dep
+drscheme/collects/help/servlets/research/compiled/info.zo
+drscheme/collects/help/servlets/research/compiled/why.dep
+drscheme/collects/help/servlets/research/compiled/why.zo
+drscheme/collects/help/servlets/research/info.ss
 drscheme/collects/help/servlets/research/why.ss
 drscheme/collects/help/servlets/resources.ss
+drscheme/collects/help/servlets/resources/compiled/info.dep
+drscheme/collects/help/servlets/resources/compiled/info.zo
+drscheme/collects/help/servlets/resources/compiled/libext.dep
+drscheme/collects/help/servlets/resources/compiled/libext.zo
+drscheme/collects/help/servlets/resources/compiled/maillist.dep
+drscheme/collects/help/servlets/resources/compiled/maillist.zo
+drscheme/collects/help/servlets/resources/compiled/teachscheme.dep
+drscheme/collects/help/servlets/resources/compiled/teachscheme.zo
+drscheme/collects/help/servlets/resources/info.ss
 drscheme/collects/help/servlets/resources/libext.ss
 drscheme/collects/help/servlets/resources/maillist.ss
 drscheme/collects/help/servlets/resources/teachscheme.ss
 drscheme/collects/help/servlets/results.ss
+drscheme/collects/help/servlets/scheme/compiled/doc.dep
+drscheme/collects/help/servlets/scheme/compiled/doc.zo
+drscheme/collects/help/servlets/scheme/compiled/how.dep
+drscheme/collects/help/servlets/scheme/compiled/how.zo
+drscheme/collects/help/servlets/scheme/compiled/info.dep
+drscheme/collects/help/servlets/scheme/compiled/info.zo
+drscheme/collects/help/servlets/scheme/compiled/langlevels.dep
+drscheme/collects/help/servlets/scheme/compiled/langlevels.zo
+drscheme/collects/help/servlets/scheme/compiled/misc.dep
+drscheme/collects/help/servlets/scheme/compiled/misc.zo
+drscheme/collects/help/servlets/scheme/compiled/what.dep
+drscheme/collects/help/servlets/scheme/compiled/what.zo
 drscheme/collects/help/servlets/scheme/doc.ss
 drscheme/collects/help/servlets/scheme/how.ss
+drscheme/collects/help/servlets/scheme/info.ss
 drscheme/collects/help/servlets/scheme/langlevels.ss
 drscheme/collects/help/servlets/scheme/misc.ss
 drscheme/collects/help/servlets/scheme/misc/activex.ss
 drscheme/collects/help/servlets/scheme/misc/batch.ss
 drscheme/collects/help/servlets/scheme/misc/cgi.ss
+drscheme/collects/help/servlets/scheme/misc/compiled/activex.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/activex.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/batch.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/batch.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/cgi.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/cgi.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/database.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/database.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/graphics.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/graphics.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/info.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/info.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/script.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/script.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/standalone.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/standalone.zo
+drscheme/collects/help/servlets/scheme/misc/compiled/system.dep
+drscheme/collects/help/servlets/scheme/misc/compiled/system.zo
 drscheme/collects/help/servlets/scheme/misc/database.ss
 drscheme/collects/help/servlets/scheme/misc/graphics.ss
+drscheme/collects/help/servlets/scheme/misc/info.ss
 drscheme/collects/help/servlets/scheme/misc/script.ss
 drscheme/collects/help/servlets/scheme/misc/standalone.ss
 drscheme/collects/help/servlets/scheme/misc/system.ss
 drscheme/collects/help/servlets/scheme/what.ss
-drscheme/collects/help/servlets/search.ss
-drscheme/collects/help/servlets/start.ss
-drscheme/collects/help/servlets/stop-refresh.ss
-drscheme/collects/help/servlets/toggle-frames.ss
-drscheme/collects/help/servlets/update-config.ss
 drscheme/collects/help/txt/patches.txt
 drscheme/collects/help/txt/scripts.txt
 drscheme/collects/help/web-root/conf/forbidden.html
@@ -2532,18 +2602,6 @@ drscheme/collects/htdp/compiled/master-play.dep
 drscheme/collects/htdp/compiled/master-play.zo
 drscheme/collects/htdp/compiled/master.dep
 drscheme/collects/htdp/compiled/master.zo
-drscheme/collects/htdp/compiled/ping-play-unit.dep
-drscheme/collects/htdp/compiled/ping-play-unit.zo
-drscheme/collects/htdp/compiled/pingp-play.dep
-drscheme/collects/htdp/compiled/pingp-play.zo
-drscheme/collects/htdp/compiled/pingp-sig.dep
-drscheme/collects/htdp/compiled/pingp-sig.zo
-drscheme/collects/htdp/compiled/pingp.dep
-drscheme/collects/htdp/compiled/pingp.zo
-drscheme/collects/htdp/compiled/protect-play-unit.dep
-drscheme/collects/htdp/compiled/protect-play-unit.zo
-drscheme/collects/htdp/compiled/protect-play.dep
-drscheme/collects/htdp/compiled/protect-play.zo
 drscheme/collects/htdp/compiled/rectangle.dep
 drscheme/collects/htdp/compiled/rectangle.zo
 drscheme/collects/htdp/compiled/servlet.dep
@@ -2569,12 +2627,6 @@ drscheme/collects/htdp/info.ss
 drscheme/collects/htdp/lkup-gui.ss
 drscheme/collects/htdp/master-play.ss
 drscheme/collects/htdp/master.ss
-drscheme/collects/htdp/ping-play-unit.ss
-drscheme/collects/htdp/pingp-play.ss
-drscheme/collects/htdp/pingp-sig.ss
-drscheme/collects/htdp/pingp.ss
-drscheme/collects/htdp/protect-play-unit.ss
-drscheme/collects/htdp/protect-play.ss
 drscheme/collects/htdp/rectangle.ss
 drscheme/collects/htdp/servlet.ss
 drscheme/collects/htdp/servlet2-unit.ss
@@ -2608,6 +2660,8 @@ drscheme/collects/html/info.ss
 drscheme/collects/html/sgml-reader-sig.ss
 drscheme/collects/html/sgml-reader-unit.ss
 drscheme/collects/html/sgml.ss
+drscheme/collects/icons/PLTnolarval.jpg
+drscheme/collects/icons/PLTylarval.jpg
 drscheme/collects/icons/anchor.gif
 drscheme/collects/icons/animate1.gif
 drscheme/collects/icons/animate2.gif
@@ -2669,6 +2723,7 @@ drscheme/collects/icons/scheme-box.jpg
 drscheme/collects/icons/scheme-splice-box.jpg
 drscheme/collects/icons/schemedoc.ico
 drscheme/collects/icons/semicolon.gif
+drscheme/collects/icons/sk.jpg
 drscheme/collects/icons/syncheck.bmp
 drscheme/collects/icons/syncheck.gif
 drscheme/collects/icons/texas-plt-bw.gif
@@ -2764,6 +2819,8 @@ drscheme/collects/launcher/info.ss
 drscheme/collects/launcher/launcher-sig.ss
 drscheme/collects/launcher/launcher-unit.ss
 drscheme/collects/launcher/launcher.ss
+drscheme/collects/launcher/mrstart.exe
+drscheme/collects/launcher/mzstart.exe
 drscheme/collects/launcher/sh
 drscheme/collects/launcher/starter-setup.c
 drscheme/collects/make/collection-sig.ss
@@ -2783,11 +2840,14 @@ drscheme/collects/make/compiled/make-unit.dep
 drscheme/collects/make/compiled/make-unit.zo
 drscheme/collects/make/compiled/make.dep
 drscheme/collects/make/compiled/make.zo
+drscheme/collects/make/compiled/setup-extension.dep
+drscheme/collects/make/compiled/setup-extension.zo
 drscheme/collects/make/doc.txt
 drscheme/collects/make/info.ss
 drscheme/collects/make/make-sig.ss
 drscheme/collects/make/make-unit.ss
 drscheme/collects/make/make.ss
+drscheme/collects/make/setup-extension.ss
 drscheme/collects/mred/compiled/edit-main.dep
 drscheme/collects/mred/compiled/edit-main.zo
 drscheme/collects/mred/compiled/edit.dep
@@ -2811,15 +2871,30 @@ drscheme/collects/mred/private/compiled/kernel.zo
 drscheme/collects/mred/private/info.ss
 drscheme/collects/mred/private/kernel.ss
 drscheme/collects/mrlib/aligned-pasteboard.ss
+drscheme/collects/mrlib/bitmap-constant.ss
 drscheme/collects/mrlib/click-forwarding-editor.ss
 drscheme/collects/mrlib/compiled/aligned-pasteboard.dep
 drscheme/collects/mrlib/compiled/aligned-pasteboard.zo
+drscheme/collects/mrlib/compiled/bitmap-constant.dep
+drscheme/collects/mrlib/compiled/bitmap-constant.zo
 drscheme/collects/mrlib/compiled/click-forwarding-editor.dep
 drscheme/collects/mrlib/compiled/click-forwarding-editor.zo
+drscheme/collects/mrlib/compiled/graph.dep
+drscheme/collects/mrlib/compiled/graph.zo
+drscheme/collects/mrlib/compiled/include-bitmap.dep
+drscheme/collects/mrlib/compiled/include-bitmap.zo
+drscheme/collects/mrlib/compiled/info.dep
+drscheme/collects/mrlib/compiled/info.zo
 drscheme/collects/mrlib/compiled/name-message.dep
 drscheme/collects/mrlib/compiled/name-message.zo
+drscheme/collects/mrlib/compiled/plot.dep
+drscheme/collects/mrlib/compiled/plot.zo
+drscheme/collects/mrlib/compiled/text-string-style-desc.dep
+drscheme/collects/mrlib/compiled/text-string-style-desc.zo
 drscheme/collects/mrlib/doc.txt
 drscheme/collects/mrlib/graph.ss
+drscheme/collects/mrlib/include-bitmap.ss
+drscheme/collects/mrlib/info.ss
 drscheme/collects/mrlib/name-message.ss
 drscheme/collects/mrlib/plot.ss
 drscheme/collects/mrlib/private/aligned-pasteboard/aligned-editor-container.ss
@@ -2852,14 +2927,22 @@ drscheme/collects/mrlib/private/aligned-pasteboard/interface.ss
 drscheme/collects/mrlib/private/aligned-pasteboard/locked-pasteboard.ss
 drscheme/collects/mrlib/private/aligned-pasteboard/pasteboard-lib.ss
 drscheme/collects/mrlib/private/aligned-pasteboard/snip-lib.ss
+drscheme/collects/mrlib/private/compiled/info.dep
+drscheme/collects/mrlib/private/compiled/info.zo
+drscheme/collects/mrlib/private/info.ss
+drscheme/collects/mrlib/text-string-style-desc.ss
+drscheme/collects/mzlib/async-channel.ss
 drscheme/collects/mzlib/awk.ss
 drscheme/collects/mzlib/class-old.ss
 drscheme/collects/mzlib/class.ss
 drscheme/collects/mzlib/class100.ss
 drscheme/collects/mzlib/cm.ss
 drscheme/collects/mzlib/cmdline.ss
+drscheme/collects/mzlib/cml.ss
 drscheme/collects/mzlib/compat.ss
 drscheme/collects/mzlib/compile.ss
+drscheme/collects/mzlib/compiled/async-channel.dep
+drscheme/collects/mzlib/compiled/async-channel.zo
 drscheme/collects/mzlib/compiled/awk.dep
 drscheme/collects/mzlib/compiled/awk.zo
 drscheme/collects/mzlib/compiled/class-old.dep
@@ -2872,10 +2955,14 @@ drscheme/collects/mzlib/compiled/cm.dep
 drscheme/collects/mzlib/compiled/cm.zo
 drscheme/collects/mzlib/compiled/cmdline.dep
 drscheme/collects/mzlib/compiled/cmdline.zo
+drscheme/collects/mzlib/compiled/cml.dep
+drscheme/collects/mzlib/compiled/cml.zo
 drscheme/collects/mzlib/compiled/compat.dep
 drscheme/collects/mzlib/compiled/compat.zo
 drscheme/collects/mzlib/compiled/compile.dep
 drscheme/collects/mzlib/compiled/compile.zo
+drscheme/collects/mzlib/compiled/contract.dep
+drscheme/collects/mzlib/compiled/contract.zo
 drscheme/collects/mzlib/compiled/contracts.dep
 drscheme/collects/mzlib/compiled/contracts.zo
 drscheme/collects/mzlib/compiled/date.dep
@@ -2918,6 +3005,8 @@ drscheme/collects/mzlib/compiled/spidey.dep
 drscheme/collects/mzlib/compiled/spidey.zo
 drscheme/collects/mzlib/compiled/string.dep
 drscheme/collects/mzlib/compiled/string.zo
+drscheme/collects/mzlib/compiled/structure.dep
+drscheme/collects/mzlib/compiled/structure.zo
 drscheme/collects/mzlib/compiled/thread.dep
 drscheme/collects/mzlib/compiled/thread.zo
 drscheme/collects/mzlib/compiled/trace.dep
@@ -2930,6 +3019,7 @@ drscheme/collects/mzlib/compiled/unit.dep
 drscheme/collects/mzlib/compiled/unit.zo
 drscheme/collects/mzlib/compiled/unitsig.dep
 drscheme/collects/mzlib/compiled/unitsig.zo
+drscheme/collects/mzlib/contract.ss
 drscheme/collects/mzlib/contracts.ss
 drscheme/collects/mzlib/date.ss
 drscheme/collects/mzlib/deflate.ss
@@ -2945,7 +3035,10 @@ drscheme/collects/mzlib/math.ss
 drscheme/collects/mzlib/pconvert.ss
 drscheme/collects/mzlib/pregexp.ss
 drscheme/collects/mzlib/pretty.ss
+drscheme/collects/mzlib/private/class-sneaky.ss
 drscheme/collects/mzlib/private/classidmap.ss
+drscheme/collects/mzlib/private/compiled/class-sneaky.dep
+drscheme/collects/mzlib/private/compiled/class-sneaky.zo
 drscheme/collects/mzlib/private/compiled/classidmap.dep
 drscheme/collects/mzlib/private/compiled/classidmap.zo
 drscheme/collects/mzlib/private/compiled/contract-helpers.dep
@@ -2962,6 +3055,8 @@ drscheme/collects/mzlib/private/compiled/sigmatch.dep
 drscheme/collects/mzlib/private/compiled/sigmatch.zo
 drscheme/collects/mzlib/private/compiled/sigutil.dep
 drscheme/collects/mzlib/private/compiled/sigutil.zo
+drscheme/collects/mzlib/private/compiled/structure-helper.dep
+drscheme/collects/mzlib/private/compiled/structure-helper.zo
 drscheme/collects/mzlib/private/compiled/stxset.dep
 drscheme/collects/mzlib/private/compiled/stxset.zo
 drscheme/collects/mzlib/private/compiled/unitidmap.dep
@@ -2974,6 +3069,7 @@ drscheme/collects/mzlib/private/mkmatch.ss
 drscheme/collects/mzlib/private/shared-body.ss
 drscheme/collects/mzlib/private/sigmatch.ss
 drscheme/collects/mzlib/private/sigutil.ss
+drscheme/collects/mzlib/private/structure-helper.ss
 drscheme/collects/mzlib/private/stxset.ss
 drscheme/collects/mzlib/private/unitidmap.ss
 drscheme/collects/mzlib/process.ss
@@ -2982,6 +3078,7 @@ drscheme/collects/mzlib/sendevent.ss
 drscheme/collects/mzlib/shared.ss
 drscheme/collects/mzlib/spidey.ss
 drscheme/collects/mzlib/string.ss
+drscheme/collects/mzlib/structure.ss
 drscheme/collects/mzlib/thread.ss
 drscheme/collects/mzlib/trace.ss
 drscheme/collects/mzlib/traceld.ss
@@ -3010,7 +3107,6 @@ drscheme/collects/mzscheme/lib/mzdyn.c
 drscheme/collects/net/base64-sig.ss
 drscheme/collects/net/base64-unit.ss
 drscheme/collects/net/base64.ss
-drscheme/collects/net/browser.ss
 drscheme/collects/net/cgi-sig.ss
 drscheme/collects/net/cgi-unit.ss
 drscheme/collects/net/cgi.ss
@@ -3020,14 +3116,18 @@ drscheme/collects/net/compiled/base64-unit.dep
 drscheme/collects/net/compiled/base64-unit.zo
 drscheme/collects/net/compiled/base64.dep
 drscheme/collects/net/compiled/base64.zo
-drscheme/collects/net/compiled/browser.dep
-drscheme/collects/net/compiled/browser.zo
 drscheme/collects/net/compiled/cgi-sig.dep
 drscheme/collects/net/compiled/cgi-sig.zo
 drscheme/collects/net/compiled/cgi-unit.dep
 drscheme/collects/net/compiled/cgi-unit.zo
 drscheme/collects/net/compiled/cgi.dep
 drscheme/collects/net/compiled/cgi.zo
+drscheme/collects/net/compiled/cookie-sig.dep
+drscheme/collects/net/compiled/cookie-sig.zo
+drscheme/collects/net/compiled/cookie-unit.dep
+drscheme/collects/net/compiled/cookie-unit.zo
+drscheme/collects/net/compiled/cookie.dep
+drscheme/collects/net/compiled/cookie.zo
 drscheme/collects/net/compiled/dns-sig.dep
 drscheme/collects/net/compiled/dns-sig.zo
 drscheme/collects/net/compiled/dns-unit.dep
@@ -3100,12 +3200,21 @@ drscheme/collects/net/compiled/tcp-sig.dep
 drscheme/collects/net/compiled/tcp-sig.zo
 drscheme/collects/net/compiled/tcp-unit.dep
 drscheme/collects/net/compiled/tcp-unit.zo
+drscheme/collects/net/compiled/uri-codec-sig.dep
+drscheme/collects/net/compiled/uri-codec-sig.zo
+drscheme/collects/net/compiled/uri-codec-unit.dep
+drscheme/collects/net/compiled/uri-codec-unit.zo
+drscheme/collects/net/compiled/uri-codec.dep
+drscheme/collects/net/compiled/uri-codec.zo
 drscheme/collects/net/compiled/url-sig.dep
 drscheme/collects/net/compiled/url-sig.zo
 drscheme/collects/net/compiled/url-unit.dep
 drscheme/collects/net/compiled/url-unit.zo
 drscheme/collects/net/compiled/url.dep
 drscheme/collects/net/compiled/url.zo
+drscheme/collects/net/cookie-sig.ss
+drscheme/collects/net/cookie-unit.ss
+drscheme/collects/net/cookie.ss
 drscheme/collects/net/dns-sig.ss
 drscheme/collects/net/dns-unit.ss
 drscheme/collects/net/dns.ss
@@ -3144,6 +3253,9 @@ drscheme/collects/net/smtp.ss
 drscheme/collects/net/tcp-redirect.ss
 drscheme/collects/net/tcp-sig.ss
 drscheme/collects/net/tcp-unit.ss
+drscheme/collects/net/uri-codec-sig.ss
+drscheme/collects/net/uri-codec-unit.ss
+drscheme/collects/net/uri-codec.ss
 drscheme/collects/net/url-sig.ss
 drscheme/collects/net/url-unit.ss
 drscheme/collects/net/url.ss
@@ -3254,7 +3366,6 @@ drscheme/collects/setup/pack.ss
 drscheme/collects/setup/plt-installer-sig.ss
 drscheme/collects/setup/plt-installer-unit.ss
 drscheme/collects/setup/plt-installer.ss
-drscheme/collects/setup/plt-installers.ss
 drscheme/collects/setup/plt-single-installer.ss
 drscheme/collects/setup/setup-go.ss
 drscheme/collects/setup/setup-unit.ss
@@ -3266,6 +3377,218 @@ drscheme/collects/setup/winvers.ss
 drscheme/collects/slibinit/doc.txt
 drscheme/collects/slibinit/init.ss
 drscheme/collects/slibinit/load.ss
+drscheme/collects/srfi/1.ss
+drscheme/collects/srfi/1/alist.ss
+drscheme/collects/srfi/1/compiled/alist.dep
+drscheme/collects/srfi/1/compiled/alist.zo
+drscheme/collects/srfi/1/compiled/cons.dep
+drscheme/collects/srfi/1/compiled/cons.zo
+drscheme/collects/srfi/1/compiled/delete.dep
+drscheme/collects/srfi/1/compiled/delete.zo
+drscheme/collects/srfi/1/compiled/filter.dep
+drscheme/collects/srfi/1/compiled/filter.zo
+drscheme/collects/srfi/1/compiled/fold.dep
+drscheme/collects/srfi/1/compiled/fold.zo
+drscheme/collects/srfi/1/compiled/info.dep
+drscheme/collects/srfi/1/compiled/info.zo
+drscheme/collects/srfi/1/compiled/list.dep
+drscheme/collects/srfi/1/compiled/list.zo
+drscheme/collects/srfi/1/compiled/lset.dep
+drscheme/collects/srfi/1/compiled/lset.zo
+drscheme/collects/srfi/1/compiled/misc.dep
+drscheme/collects/srfi/1/compiled/misc.zo
+drscheme/collects/srfi/1/compiled/predicate.dep
+drscheme/collects/srfi/1/compiled/predicate.zo
+drscheme/collects/srfi/1/compiled/search.dep
+drscheme/collects/srfi/1/compiled/search.zo
+drscheme/collects/srfi/1/compiled/selector.dep
+drscheme/collects/srfi/1/compiled/selector.zo
+drscheme/collects/srfi/1/compiled/util.dep
+drscheme/collects/srfi/1/compiled/util.zo
+drscheme/collects/srfi/1/cons.ss
+drscheme/collects/srfi/1/delete.ss
+drscheme/collects/srfi/1/filter.ss
+drscheme/collects/srfi/1/fold.ss
+drscheme/collects/srfi/1/info.ss
+drscheme/collects/srfi/1/list.ss
+drscheme/collects/srfi/1/lset.ss
+drscheme/collects/srfi/1/misc.ss
+drscheme/collects/srfi/1/predicate.ss
+drscheme/collects/srfi/1/search.ss
+drscheme/collects/srfi/1/selector.ss
+drscheme/collects/srfi/1/util.ss
+drscheme/collects/srfi/11.ss
+drscheme/collects/srfi/13.ss
+drscheme/collects/srfi/13/compiled/string.dep
+drscheme/collects/srfi/13/compiled/string.zo
+drscheme/collects/srfi/13/string.ss
+drscheme/collects/srfi/14.ss
+drscheme/collects/srfi/14/char-set.ss
+drscheme/collects/srfi/14/compiled/char-set.dep
+drscheme/collects/srfi/14/compiled/char-set.zo
+drscheme/collects/srfi/16.ss
+drscheme/collects/srfi/17.ss
+drscheme/collects/srfi/17/compiled/set.dep
+drscheme/collects/srfi/17/compiled/set.zo
+drscheme/collects/srfi/17/set.ss
+drscheme/collects/srfi/18.ss
+drscheme/collects/srfi/19/m.ss
+drscheme/collects/srfi/19/time.ss
+drscheme/collects/srfi/2.ss
+drscheme/collects/srfi/2/and-let.ss
+drscheme/collects/srfi/2/compiled/and-let.dep
+drscheme/collects/srfi/2/compiled/and-let.zo
+drscheme/collects/srfi/23.ss
+drscheme/collects/srfi/25.ss
+drscheme/collects/srfi/25/arlib.scm
+drscheme/collects/srfi/25/array.ss
+drscheme/collects/srfi/25/compiled/array.dep
+drscheme/collects/srfi/25/compiled/array.zo
+drscheme/collects/srfi/25/ix-ctor.scm
+drscheme/collects/srfi/25/op-ctor.scm
+drscheme/collects/srfi/26.ss
+drscheme/collects/srfi/26/compiled/cut.dep
+drscheme/collects/srfi/26/compiled/cut.zo
+drscheme/collects/srfi/26/cut.ss
+drscheme/collects/srfi/28.ss
+drscheme/collects/srfi/29.ss
+drscheme/collects/srfi/29/.cvsignore
+drscheme/collects/srfi/29/bundles/es/srfi-19
+drscheme/collects/srfi/29/bundles/srfi-19
+drscheme/collects/srfi/29/compiled/localization.dep
+drscheme/collects/srfi/29/compiled/localization.zo
+drscheme/collects/srfi/29/localization.ss
+drscheme/collects/srfi/30.ss
+drscheme/collects/srfi/31.ss
+drscheme/collects/srfi/31/compiled/rec.dep
+drscheme/collects/srfi/31/compiled/rec.zo
+drscheme/collects/srfi/31/rec.ss
+drscheme/collects/srfi/4.ss
+drscheme/collects/srfi/4/.cvsignore
+drscheme/collects/srfi/4/TODO
+drscheme/collects/srfi/4/c-generation/homo-all-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-all-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-f32-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-f32-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-f32-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-f64-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-f64-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-f64-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-s16-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-s16-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-s16-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-s32-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-s32-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-s32-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-s8-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-s8-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-s8-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-u16-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-u16-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-u16-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-u32-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-u32-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-u32-vector-prims.h
+drscheme/collects/srfi/4/c-generation/homo-u8-vector-glue.c
+drscheme/collects/srfi/4/c-generation/homo-u8-vector-prims.c
+drscheme/collects/srfi/4/c-generation/homo-u8-vector-prims.h
+drscheme/collects/srfi/4/compiled/homo-vectors.dep
+drscheme/collects/srfi/4/compiled/homo-vectors.zo
+drscheme/collects/srfi/4/compiled/info.dep
+drscheme/collects/srfi/4/compiled/info.zo
+drscheme/collects/srfi/4/compiled/installer.dep
+drscheme/collects/srfi/4/compiled/installer.zo
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-f32-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-f32-vector-prims.so
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-f64-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-f64-vector-prims.so
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-s16-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-s16-vector-prims.so
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-s32-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-s32-vector-prims.so
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-s8-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-s8-vector-prims.so
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-u16-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-u16-vector-prims.so
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-u32-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-u32-vector-prims.so
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-u8-vector-prims.o
+drscheme/collects/srfi/4/compiled/native/i386-freebsd/homo-u8-vector-prims.so
+drscheme/collects/srfi/4/compiled/run-tests.dep
+drscheme/collects/srfi/4/compiled/run-tests.zo
+drscheme/collects/srfi/4/compiled/tests.dep
+drscheme/collects/srfi/4/compiled/tests.zo
+drscheme/collects/srfi/4/doc.txt
+drscheme/collects/srfi/4/homo-vector-glue.c
+drscheme/collects/srfi/4/homo-vector-prims.c
+drscheme/collects/srfi/4/homo-vector-prims.h
+drscheme/collects/srfi/4/homo-vectors.ss
+drscheme/collects/srfi/4/info.ss
+drscheme/collects/srfi/4/installer.ss
+drscheme/collects/srfi/4/run-tests.ss
+drscheme/collects/srfi/4/test-linking-mechanism.c
+drscheme/collects/srfi/4/tests.ss
+drscheme/collects/srfi/5.ss
+drscheme/collects/srfi/5/compiled/let.dep
+drscheme/collects/srfi/5/compiled/let.zo
+drscheme/collects/srfi/5/let.ss
+drscheme/collects/srfi/6.ss
+drscheme/collects/srfi/7/program.ss
+drscheme/collects/srfi/8.ss
+drscheme/collects/srfi/8/compiled/receive.dep
+drscheme/collects/srfi/8/compiled/receive.zo
+drscheme/collects/srfi/8/receive.ss
+drscheme/collects/srfi/9.ss
+drscheme/collects/srfi/9/compiled/record.dep
+drscheme/collects/srfi/9/compiled/record.zo
+drscheme/collects/srfi/9/record.ss
+drscheme/collects/srfi/compiled/1.dep
+drscheme/collects/srfi/compiled/1.zo
+drscheme/collects/srfi/compiled/11.dep
+drscheme/collects/srfi/compiled/11.zo
+drscheme/collects/srfi/compiled/13.dep
+drscheme/collects/srfi/compiled/13.zo
+drscheme/collects/srfi/compiled/14.dep
+drscheme/collects/srfi/compiled/14.zo
+drscheme/collects/srfi/compiled/16.dep
+drscheme/collects/srfi/compiled/16.zo
+drscheme/collects/srfi/compiled/17.dep
+drscheme/collects/srfi/compiled/17.zo
+drscheme/collects/srfi/compiled/18.dep
+drscheme/collects/srfi/compiled/18.zo
+drscheme/collects/srfi/compiled/2.dep
+drscheme/collects/srfi/compiled/2.zo
+drscheme/collects/srfi/compiled/23.dep
+drscheme/collects/srfi/compiled/23.zo
+drscheme/collects/srfi/compiled/25.dep
+drscheme/collects/srfi/compiled/25.zo
+drscheme/collects/srfi/compiled/26.dep
+drscheme/collects/srfi/compiled/26.zo
+drscheme/collects/srfi/compiled/28.dep
+drscheme/collects/srfi/compiled/28.zo
+drscheme/collects/srfi/compiled/29.dep
+drscheme/collects/srfi/compiled/29.zo
+drscheme/collects/srfi/compiled/30.dep
+drscheme/collects/srfi/compiled/30.zo
+drscheme/collects/srfi/compiled/31.dep
+drscheme/collects/srfi/compiled/31.zo
+drscheme/collects/srfi/compiled/4.dep
+drscheme/collects/srfi/compiled/4.zo
+drscheme/collects/srfi/compiled/5.dep
+drscheme/collects/srfi/compiled/5.zo
+drscheme/collects/srfi/compiled/6.dep
+drscheme/collects/srfi/compiled/6.zo
+drscheme/collects/srfi/compiled/8.dep
+drscheme/collects/srfi/compiled/8.zo
+drscheme/collects/srfi/compiled/9.dep
+drscheme/collects/srfi/compiled/9.zo
+drscheme/collects/srfi/compiled/info.dep
+drscheme/collects/srfi/compiled/info.zo
+drscheme/collects/srfi/compiled/optional.dep
+drscheme/collects/srfi/compiled/optional.zo
+drscheme/collects/srfi/doc.txt
+drscheme/collects/srfi/info.ss
+drscheme/collects/srfi/optional.ss
 drscheme/collects/stepper/break.ss
 drscheme/collects/stepper/compiled/break.dep
 drscheme/collects/stepper/compiled/break.zo
@@ -3285,13 +3608,10 @@ drscheme/collects/stepper/info.ss
 drscheme/collects/stepper/internal-docs.txt
 drscheme/collects/stepper/private/annotate.ss
 drscheme/collects/stepper/private/beginner-defined.ss
-drscheme/collects/stepper/private/breakpoint-token.ss
 drscheme/collects/stepper/private/compiled/annotate.dep
 drscheme/collects/stepper/private/compiled/annotate.zo
 drscheme/collects/stepper/private/compiled/beginner-defined.dep
 drscheme/collects/stepper/private/compiled/beginner-defined.zo
-drscheme/collects/stepper/private/compiled/breakpoint-token.dep
-drscheme/collects/stepper/private/compiled/breakpoint-token.zo
 drscheme/collects/stepper/private/compiled/debugger-annotate.dep
 drscheme/collects/stepper/private/compiled/debugger-annotate.zo
 drscheme/collects/stepper/private/compiled/debugger-bindings.dep
@@ -3300,6 +3620,8 @@ drscheme/collects/stepper/private/compiled/debugger-model.dep
 drscheme/collects/stepper/private/compiled/debugger-model.zo
 drscheme/collects/stepper/private/compiled/debugger-vc.dep
 drscheme/collects/stepper/private/compiled/debugger-vc.zo
+drscheme/collects/stepper/private/compiled/display-exp-interface.dep
+drscheme/collects/stepper/private/compiled/display-exp-interface.zo
 drscheme/collects/stepper/private/compiled/highlight-placeholder.dep
 drscheme/collects/stepper/private/compiled/highlight-placeholder.zo
 drscheme/collects/stepper/private/compiled/info.dep
@@ -3324,6 +3646,7 @@ drscheme/collects/stepper/private/debugger-annotate.ss
 drscheme/collects/stepper/private/debugger-bindings.ss
 drscheme/collects/stepper/private/debugger-model.ss
 drscheme/collects/stepper/private/debugger-vc.ss
+drscheme/collects/stepper/private/display-exp-interface.ss
 drscheme/collects/stepper/private/highlight-placeholder.ss
 drscheme/collects/stepper/private/info.ss
 drscheme/collects/stepper/private/lifting.ss
@@ -3360,6 +3683,9 @@ drscheme/collects/string-constants/english-string-constants.ss
 drscheme/collects/string-constants/french-string-constants.ss
 drscheme/collects/string-constants/german-string-constants.ss
 drscheme/collects/string-constants/info.ss
+drscheme/collects/string-constants/private/compiled/only-once.dep
+drscheme/collects/string-constants/private/compiled/only-once.zo
+drscheme/collects/string-constants/private/only-once.ss
 drscheme/collects/string-constants/spanish-string-constants.ss
 drscheme/collects/string-constants/string-constant-lang.ss
 drscheme/collects/string-constants/string-constant.ss
@@ -3373,6 +3699,8 @@ drscheme/collects/syntax/compiled/moddep.dep
 drscheme/collects/syntax/compiled/moddep.zo
 drscheme/collects/syntax/compiled/name.dep
 drscheme/collects/syntax/compiled/name.zo
+drscheme/collects/syntax/compiled/path-spec.dep
+drscheme/collects/syntax/compiled/path-spec.zo
 drscheme/collects/syntax/compiled/primitives.dep
 drscheme/collects/syntax/compiled/primitives.zo
 drscheme/collects/syntax/compiled/readerr.dep
@@ -3395,6 +3723,7 @@ drscheme/collects/syntax/info.ss
 drscheme/collects/syntax/kerncase.ss
 drscheme/collects/syntax/moddep.ss
 drscheme/collects/syntax/name.ss
+drscheme/collects/syntax/path-spec.ss
 drscheme/collects/syntax/primitives.ss
 drscheme/collects/syntax/private/compiled/doctable.dep
 drscheme/collects/syntax/private/compiled/doctable.zo
@@ -3424,6 +3753,8 @@ drscheme/collects/test-suite/private/compiled/def.dep
 drscheme/collects/test-suite/private/compiled/def.zo
 drscheme/collects/test-suite/private/compiled/expand-program.dep
 drscheme/collects/test-suite/private/compiled/expand-program.zo
+drscheme/collects/test-suite/private/compiled/info.dep
+drscheme/collects/test-suite/private/compiled/info.zo
 drscheme/collects/test-suite/private/compiled/interfaces.dep
 drscheme/collects/test-suite/private/compiled/interfaces.zo
 drscheme/collects/test-suite/private/compiled/model.dep
@@ -3441,12 +3772,14 @@ drscheme/collects/test-suite/private/compiled/window-menus.zo
 drscheme/collects/test-suite/private/compiled/window.dep
 drscheme/collects/test-suite/private/compiled/window.zo
 drscheme/collects/test-suite/private/def.ss
+drscheme/collects/test-suite/private/doc/ChangeLog
 drscheme/collects/test-suite/private/doc/TODO
 drscheme/collects/test-suite/private/expand-program.ss
 drscheme/collects/test-suite/private/icons/check-mark.jpeg
 drscheme/collects/test-suite/private/icons/cross.jpeg
 drscheme/collects/test-suite/private/icons/empty.jpeg
 drscheme/collects/test-suite/private/icons/question-mark.jpeg
+drscheme/collects/test-suite/private/info.ss
 drscheme/collects/test-suite/private/interfaces.ss
 drscheme/collects/test-suite/private/model.ss
 drscheme/collects/test-suite/private/signatures.ss
@@ -3460,10 +3793,13 @@ drscheme/collects/tex2page/compiled/info.dep
 drscheme/collects/tex2page/compiled/info.zo
 drscheme/collects/tex2page/compiled/start.dep
 drscheme/collects/tex2page/compiled/start.zo
+drscheme/collects/tex2page/compiled/tex2page-aux.dep
+drscheme/collects/tex2page/compiled/tex2page-aux.zo
 drscheme/collects/tex2page/compiled/tex2page.dep
 drscheme/collects/tex2page/compiled/tex2page.zo
 drscheme/collects/tex2page/info.ss
 drscheme/collects/tex2page/start.ss
+drscheme/collects/tex2page/tex2page-aux.ss
 drscheme/collects/tex2page/tex2page.ss
 drscheme/collects/version/check-gui.ss
 drscheme/collects/version/check-text.ss
@@ -3508,6 +3844,8 @@ drscheme/collects/web-server/compiled/info.dep
 drscheme/collects/web-server/compiled/info.zo
 drscheme/collects/web-server/compiled/internal-server.dep
 drscheme/collects/web-server/compiled/internal-server.zo
+drscheme/collects/web-server/compiled/internal-structs.dep
+drscheme/collects/web-server/compiled/internal-structs.zo
 drscheme/collects/web-server/compiled/launch.dep
 drscheme/collects/web-server/compiled/launch.zo
 drscheme/collects/web-server/compiled/monitor-launch.dep
@@ -3526,6 +3864,12 @@ drscheme/collects/web-server/compiled/servlet-primitives.dep
 drscheme/collects/web-server/compiled/servlet-primitives.zo
 drscheme/collects/web-server/compiled/servlet-sig.dep
 drscheme/collects/web-server/compiled/servlet-sig.zo
+drscheme/collects/web-server/compiled/servlet-tables.dep
+drscheme/collects/web-server/compiled/servlet-tables.zo
+drscheme/collects/web-server/compiled/servlet.dep
+drscheme/collects/web-server/compiled/servlet.zo
+drscheme/collects/web-server/compiled/sig.dep
+drscheme/collects/web-server/compiled/sig.zo
 drscheme/collects/web-server/compiled/timer.dep
 drscheme/collects/web-server/compiled/timer.zo
 drscheme/collects/web-server/compiled/util.dep
@@ -3593,18 +3937,25 @@ drscheme/collects/web-server/default-web-root/servlets/examples/compound/multipl
 drscheme/collects/web-server/default-web-root/servlets/examples/count.ss
 drscheme/collects/web-server/default-web-root/servlets/examples/hello.ss
 drscheme/collects/web-server/default-web-root/servlets/index.ss
+drscheme/collects/web-server/default-web-root/servlets/tests/a-module.ss
+drscheme/collects/web-server/default-web-root/servlets/tests/b-module.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/bad-require.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/bad-return.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/broken.ss
+drscheme/collects/web-server/default-web-root/servlets/tests/cut-module.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/incremental.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/mime.ss
+drscheme/collects/web-server/default-web-root/servlets/tests/module-suspended-init.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/non-unit.ss
+drscheme/collects/web-server/default-web-root/servlets/tests/response.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/size.ss
+drscheme/collects/web-server/default-web-root/servlets/tests/suspended-module.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/test.ss
 drscheme/collects/web-server/default-web-root/servlets/tests/url.ss
 drscheme/collects/web-server/doc.txt
 drscheme/collects/web-server/info.ss
 drscheme/collects/web-server/internal-server.ss
+drscheme/collects/web-server/internal-structs.ss
 drscheme/collects/web-server/launch.ss
 drscheme/collects/web-server/monitor-launch.ss
 drscheme/collects/web-server/monitor-server.ss
@@ -3614,6 +3965,9 @@ drscheme/collects/web-server/servlet-helpers.ss
 drscheme/collects/web-server/servlet-language.ss
 drscheme/collects/web-server/servlet-primitives.ss
 drscheme/collects/web-server/servlet-sig.ss
+drscheme/collects/web-server/servlet-tables.ss
+drscheme/collects/web-server/servlet.ss
+drscheme/collects/web-server/sig.ss
 drscheme/collects/web-server/timer.ss
 drscheme/collects/web-server/util.ss
 drscheme/collects/web-server/web-server-unit.ss
@@ -3713,150 +4067,32 @@ drscheme/teachpack/htdp/servlet.ss
 drscheme/teachpack/htdp/servlet2.ss
 drscheme/teachpack/turtles.ss
 drscheme/teachpack/value-turtles.ss
-@dirrm drscheme/bin
-@dirrm drscheme/collects/browser/private/compiled
-@dirrm drscheme/collects/browser/private
-@dirrm drscheme/collects/browser/compiled
-@dirrm drscheme/collects/browser
-@dirrm drscheme/collects/compiler/private/compiled
-@dirrm drscheme/collects/compiler/private
-@dirrm drscheme/collects/compiler/compiled
-@dirrm drscheme/collects/compiler
-@dirrm drscheme/collects/defaults
-@dirrm drscheme/collects/drscheme/private/compiled
-@dirrm drscheme/collects/drscheme/private
-@dirrm drscheme/collects/drscheme/compiled
-@dirrm drscheme/collects/drscheme
-@dirrm drscheme/collects/dynext/private/compiled
-@dirrm drscheme/collects/dynext/private
-@dirrm drscheme/collects/dynext/compiled
-@dirrm drscheme/collects/dynext
-@dirrm drscheme/collects/errortrace/compiled
-@dirrm drscheme/collects/errortrace
-@dirrm drscheme/collects/framework/private/compiled
-@dirrm drscheme/collects/framework/private
-@dirrm drscheme/collects/framework/compiled
-@dirrm drscheme/collects/framework
-@dirrm drscheme/collects/games/blackjack/compiled
-@dirrm drscheme/collects/games/blackjack
-@dirrm drscheme/collects/games/cards/compiled
-@dirrm drscheme/collects/games/cards
-@dirrm drscheme/collects/games/ginrummy/compiled
-@dirrm drscheme/collects/games/ginrummy
-@dirrm drscheme/collects/games/gofish/compiled
-@dirrm drscheme/collects/games/gofish
-@dirrm drscheme/collects/games/mines/compiled
-@dirrm drscheme/collects/games/mines
-@dirrm drscheme/collects/games/same/compiled
-@dirrm drscheme/collects/games/same
-@dirrm drscheme/collects/games/aces/compiled
-@dirrm drscheme/collects/games/aces
-@dirrm drscheme/collects/games/lights-out/compiled
-@dirrm drscheme/collects/games/lights-out
-@dirrm drscheme/collects/games/paint-by-numbers/problems
-@dirrm drscheme/collects/games/paint-by-numbers/raw-problems
-@dirrm drscheme/collects/games/paint-by-numbers/compiled
-@dirrm drscheme/collects/games/paint-by-numbers
-@dirrm drscheme/collects/games/slidey/compiled
-@dirrm drscheme/collects/games/slidey
-@dirrm drscheme/collects/games/pousse/compiled
-@dirrm drscheme/collects/games/pousse
-@dirrm drscheme/collects/games/compiled
-@dirrm drscheme/collects/games
-@dirrm drscheme/collects/graphics/compiled
-@dirrm drscheme/collects/graphics
-@dirrm drscheme/collects/help/servlets/private/compiled
-@dirrm drscheme/collects/help/servlets/private
-@dirrm drscheme/collects/help/servlets/release
-@dirrm drscheme/collects/help/servlets/research
-@dirrm drscheme/collects/help/servlets/resources
-@dirrm drscheme/collects/help/servlets/scheme/misc
-@dirrm drscheme/collects/help/servlets/scheme
-@dirrm drscheme/collects/help/servlets
-@dirrm drscheme/collects/help/web-root/conf
-@dirrm drscheme/collects/help/web-root
-@dirrm drscheme/collects/help/private/compiled
-@dirrm drscheme/collects/help/private
-@dirrm drscheme/collects/help/txt
-@dirrm drscheme/collects/help/compiled
-@dirrm drscheme/collects/help
-@dirrm drscheme/collects/hierlist/compiled
-@dirrm drscheme/collects/hierlist
-@dirrm drscheme/collects/htdp/HtDPv0
-@dirrm drscheme/collects/htdp/compiled
-@dirrm drscheme/collects/htdp
-@dirrm drscheme/collects/html/compiled
-@dirrm drscheme/collects/html
-@dirrm drscheme/collects/icons
-@dirrm drscheme/collects/lang/private/compiled
-@dirrm drscheme/collects/lang/private
-@dirrm drscheme/collects/lang/compiled
-@dirrm drscheme/collects/lang
-@dirrm drscheme/collects/launcher/compiled
-@dirrm drscheme/collects/launcher
-@dirrm drscheme/collects/make/compiled
-@dirrm drscheme/collects/make
-@dirrm drscheme/collects/mred/private/compiled
-@dirrm drscheme/collects/mred/private
-@dirrm drscheme/collects/mred/compiled
-@dirrm drscheme/collects/mred
-@dirrm drscheme/collects/mzlib/private/compiled
-@dirrm drscheme/collects/mzlib/private
-@dirrm drscheme/collects/mzlib/compiled
-@dirrm drscheme/collects/mzlib
-@dirrm drscheme/collects/mzscheme/examples
-@dirrm drscheme/collects/mzscheme/lib
-@dirrm drscheme/collects/mzscheme/compiled
-@dirrm drscheme/collects/mzscheme
-@dirrm drscheme/collects/net/compiled
-@dirrm drscheme/collects/net
-@dirrm drscheme/collects/setup/compiled
-@dirrm drscheme/collects/setup
-@dirrm drscheme/collects/stepper/private/compiled
-@dirrm drscheme/collects/stepper/private
-@dirrm drscheme/collects/stepper/compiled
-@dirrm drscheme/collects/stepper
-@dirrm drscheme/collects/string-constants/compiled
-@dirrm drscheme/collects/string-constants
-@dirrm drscheme/collects/syntax/private/compiled
-@dirrm drscheme/collects/syntax/private
-@dirrm drscheme/collects/syntax/compiled
-@dirrm drscheme/collects/syntax
-@dirrm drscheme/collects/parser-tools/private-lex/compiled
-@dirrm drscheme/collects/parser-tools/private-lex
-@dirrm drscheme/collects/parser-tools/private-yacc/compiled
-@dirrm drscheme/collects/parser-tools/private-yacc
-@dirrm drscheme/collects/parser-tools/examples
-@dirrm drscheme/collects/parser-tools/compiled
-@dirrm drscheme/collects/parser-tools
+@dirrm drscheme/teachpack/htdp
+@dirrm drscheme/teachpack
+@dirrm drscheme/lib
+@dirrm drscheme/include
 @dirrm drscheme/collects/xml/private/compiled
 @dirrm drscheme/collects/xml/private
 @dirrm drscheme/collects/xml/compiled
 @dirrm drscheme/collects/xml
-@dirrm drscheme/collects/slibinit
-@dirrm drscheme/collects/afm
+@dirrm drscheme/collects/web-server/default-web-root/servlets/tests
+@dirrm drscheme/collects/web-server/default-web-root/servlets/examples/compound
+@dirrm drscheme/collects/web-server/default-web-root/servlets/examples
+@dirrm drscheme/collects/web-server/default-web-root/servlets
+@dirrm drscheme/collects/web-server/default-web-root/htdocs/secret
+@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults/documentation/terms
+@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults/documentation/examples
+@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults/documentation
+@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults
+@dirrm drscheme/collects/web-server/default-web-root/htdocs
+@dirrm drscheme/collects/web-server/default-web-root/conf
+@dirrm drscheme/collects/web-server/default-web-root
+@dirrm drscheme/collects/web-server/compiled
+@dirrm drscheme/collects/web-server
 @dirrm drscheme/collects/version/private/compiled
 @dirrm drscheme/collects/version/private
 @dirrm drscheme/collects/version/compiled
 @dirrm drscheme/collects/version
-@dirrm drscheme/collects/eopl/private/compiled
-@dirrm drscheme/collects/eopl/private
-@dirrm drscheme/collects/eopl/compiled
-@dirrm drscheme/collects/eopl
-@dirrm drscheme/collects/web-server/compiled
-@dirrm drscheme/collects/web-server/default-web-root/conf
-@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults/documentation/examples
-@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults/documentation/terms
-@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults/documentation
-@dirrm drscheme/collects/web-server/default-web-root/htdocs/Defaults
-@dirrm drscheme/collects/web-server/default-web-root/htdocs/secret
-@dirrm drscheme/collects/web-server/default-web-root/htdocs
-@dirrm drscheme/collects/web-server/default-web-root/servlets/examples/compound
-@dirrm drscheme/collects/web-server/default-web-root/servlets/examples
-@dirrm drscheme/collects/web-server/default-web-root/servlets/tests
-@dirrm drscheme/collects/web-server/default-web-root/servlets
-@dirrm drscheme/collects/web-server/default-web-root
-@dirrm drscheme/collects/web-server
 @dirrm drscheme/collects/tex2page/compiled
 @dirrm drscheme/collects/tex2page
 @dirrm drscheme/collects/test-suite/private/icons
@@ -3865,37 +4101,199 @@ drscheme/teachpack/value-turtles.ss
 @dirrm drscheme/collects/test-suite/private
 @dirrm drscheme/collects/test-suite/compiled
 @dirrm drscheme/collects/test-suite
+@dirrm drscheme/collects/syntax/private/compiled
+@dirrm drscheme/collects/syntax/private
+@dirrm drscheme/collects/syntax/compiled
+@dirrm drscheme/collects/syntax
+@dirrm drscheme/collects/string-constants/private/compiled
+@dirrm drscheme/collects/string-constants/private
+@dirrm drscheme/collects/string-constants/compiled
+@dirrm drscheme/collects/string-constants
+@dirrm drscheme/collects/stepper/private/compiled
+@dirrm drscheme/collects/stepper/private
+@dirrm drscheme/collects/stepper/compiled
+@dirrm drscheme/collects/stepper
+@dirrm drscheme/collects/srfi/compiled
+@dirrm drscheme/collects/srfi/9/compiled
+@dirrm drscheme/collects/srfi/9
+@dirrm drscheme/collects/srfi/8/compiled
+@dirrm drscheme/collects/srfi/8
+@dirrm drscheme/collects/srfi/7
+@dirrm drscheme/collects/srfi/5/compiled
+@dirrm drscheme/collects/srfi/5
+@dirrm drscheme/collects/srfi/4/compiled/native/i386-freebsd
+@dirrm drscheme/collects/srfi/4/compiled/native
+@dirrm drscheme/collects/srfi/4/compiled
+@dirrm drscheme/collects/srfi/4/c-generation
+@dirrm drscheme/collects/srfi/4
+@dirrm drscheme/collects/srfi/31/compiled
+@dirrm drscheme/collects/srfi/31
+@dirrm drscheme/collects/srfi/29/compiled
+@dirrm drscheme/collects/srfi/29/bundles/es
+@dirrm drscheme/collects/srfi/29/bundles
+@dirrm drscheme/collects/srfi/29
+@dirrm drscheme/collects/srfi/26/compiled
+@dirrm drscheme/collects/srfi/26
+@dirrm drscheme/collects/srfi/25/compiled
+@dirrm drscheme/collects/srfi/25
+@dirrm drscheme/collects/srfi/2/compiled
+@dirrm drscheme/collects/srfi/2
+@dirrm drscheme/collects/srfi/19
+@dirrm drscheme/collects/srfi/17/compiled
+@dirrm drscheme/collects/srfi/17
+@dirrm drscheme/collects/srfi/14/compiled
+@dirrm drscheme/collects/srfi/14
+@dirrm drscheme/collects/srfi/13/compiled
+@dirrm drscheme/collects/srfi/13
+@dirrm drscheme/collects/srfi/1/compiled
+@dirrm drscheme/collects/srfi/1
+@dirrm drscheme/collects/srfi
+@dirrm drscheme/collects/slibinit
+@dirrm drscheme/collects/setup/compiled
+@dirrm drscheme/collects/setup
+@dirrm drscheme/collects/parser-tools/private-yacc/compiled
+@dirrm drscheme/collects/parser-tools/private-yacc
+@dirrm drscheme/collects/parser-tools/private-lex/compiled
+@dirrm drscheme/collects/parser-tools/private-lex
+@dirrm drscheme/collects/parser-tools/examples
+@dirrm drscheme/collects/parser-tools/compiled
+@dirrm drscheme/collects/parser-tools
+@dirrm drscheme/collects/net/compiled
+@dirrm drscheme/collects/net
+@dirrm drscheme/collects/mzscheme/lib
+@dirrm drscheme/collects/mzscheme/examples
+@dirrm drscheme/collects/mzscheme/compiled
+@dirrm drscheme/collects/mzscheme
+@dirrm drscheme/collects/mzlib/private/compiled
+@dirrm drscheme/collects/mzlib/private
+@dirrm drscheme/collects/mzlib/compiled
+@dirrm drscheme/collects/mzlib
+@dirrm drscheme/collects/mrlib/private/compiled
 @dirrm drscheme/collects/mrlib/private/aligned-pasteboard/compiled
 @dirrm drscheme/collects/mrlib/private/aligned-pasteboard
 @dirrm drscheme/collects/mrlib/private
 @dirrm drscheme/collects/mrlib/compiled
 @dirrm drscheme/collects/mrlib
-@dirrm drscheme/collects/doc/help/CVS
-@dirrm drscheme/collects/doc/help
+@dirrm drscheme/collects/mred/private/compiled
+@dirrm drscheme/collects/mred/private
+@dirrm drscheme/collects/mred/compiled
+@dirrm drscheme/collects/mred
+@dirrm drscheme/collects/make/compiled
+@dirrm drscheme/collects/make
+@dirrm drscheme/collects/launcher/compiled
+@dirrm drscheme/collects/launcher
+@dirrm drscheme/collects/lang/private/compiled
+@dirrm drscheme/collects/lang/private
+@dirrm drscheme/collects/lang/compiled
+@dirrm drscheme/collects/lang
+@dirrm drscheme/collects/icons
+@dirrm drscheme/collects/html/compiled
+@dirrm drscheme/collects/html
+@dirrm drscheme/collects/htdp/compiled
+@dirrm drscheme/collects/htdp/HtDPv0
+@dirrm drscheme/collects/htdp
+@dirrm drscheme/collects/hierlist/compiled
+@dirrm drscheme/collects/hierlist
+@dirrm drscheme/collects/help/web-root/conf
+@dirrm drscheme/collects/help/web-root
+@dirrm drscheme/collects/help/txt
+@dirrm drscheme/collects/help/servlets/scheme/misc/compiled
+@dirrm drscheme/collects/help/servlets/scheme/misc
+@dirrm drscheme/collects/help/servlets/scheme/compiled
+@dirrm drscheme/collects/help/servlets/scheme
+@dirrm drscheme/collects/help/servlets/resources/compiled
+@dirrm drscheme/collects/help/servlets/resources
+@dirrm drscheme/collects/help/servlets/research/compiled
+@dirrm drscheme/collects/help/servlets/research
+@dirrm drscheme/collects/help/servlets/release/compiled
+@dirrm drscheme/collects/help/servlets/release
+@dirrm drscheme/collects/help/servlets/private/compiled
+@dirrm drscheme/collects/help/servlets/private
+@dirrm drscheme/collects/help/servlets/compiled
+@dirrm drscheme/collects/help/servlets
+@dirrm drscheme/collects/help/private/compiled
+@dirrm drscheme/collects/help/private
+@dirrm drscheme/collects/help/compiled
+@dirrm drscheme/collects/help
+@dirrm drscheme/collects/graphics/compiled
+@dirrm drscheme/collects/graphics
+@dirrm drscheme/collects/games/slidey/compiled
+@dirrm drscheme/collects/games/slidey
+@dirrm drscheme/collects/games/same/compiled
+@dirrm drscheme/collects/games/same
+@dirrm drscheme/collects/games/pousse/compiled
+@dirrm drscheme/collects/games/pousse
+@dirrm drscheme/collects/games/paint-by-numbers/raw-problems
+@dirrm drscheme/collects/games/paint-by-numbers/problems
+@dirrm drscheme/collects/games/paint-by-numbers/compiled
+@dirrm drscheme/collects/games/paint-by-numbers
+@dirrm drscheme/collects/games/mines/compiled
+@dirrm drscheme/collects/games/mines
+@dirrm drscheme/collects/games/lights-out/compiled
+@dirrm drscheme/collects/games/lights-out
+@dirrm drscheme/collects/games/gofish/compiled
+@dirrm drscheme/collects/games/gofish
+@dirrm drscheme/collects/games/ginrummy/compiled
+@dirrm drscheme/collects/games/ginrummy
+@dirrm drscheme/collects/games/compiled
+@dirrm drscheme/collects/games/cards/compiled
+@dirrm drscheme/collects/games/cards
+@dirrm drscheme/collects/games/blackjack/compiled
+@dirrm drscheme/collects/games/blackjack
+@dirrm drscheme/collects/games/aces/compiled
+@dirrm drscheme/collects/games/aces
+@dirrm drscheme/collects/games
+@dirrm drscheme/collects/framework/private/compiled
+@dirrm drscheme/collects/framework/private
+@dirrm drscheme/collects/framework/compiled
+@dirrm drscheme/collects/framework
+@dirrm drscheme/collects/errortrace/compiled
+@dirrm drscheme/collects/errortrace
+@dirrm drscheme/collects/eopl/private/compiled
+@dirrm drscheme/collects/eopl/private
+@dirrm drscheme/collects/eopl/compiled
+@dirrm drscheme/collects/eopl
+@dirrm drscheme/collects/dynext/private/compiled
+@dirrm drscheme/collects/dynext/private
+@dirrm drscheme/collects/dynext/compiled
+@dirrm drscheme/collects/dynext
+@dirrm drscheme/collects/drscheme/private/compiled
+@dirrm drscheme/collects/drscheme/private
+@dirrm drscheme/collects/drscheme/compiled
+@dirrm drscheme/collects/drscheme
+@dirrm drscheme/collects/doc/tour/images
+@dirrm drscheme/collects/doc/tour
+@dirrm drscheme/collects/doc/tools
+@dirrm drscheme/collects/doc/tex2page
+@dirrm drscheme/collects/doc/teachpack
+@dirrm drscheme/collects/doc/t-y-scheme
+@dirrm drscheme/collects/doc/r5rs
 @dirrm drscheme/collects/doc/mzscheme
 @dirrm drscheme/collects/doc/mzlib
 @dirrm drscheme/collects/doc/mzc
-@dirrm drscheme/collects/doc/r5rs
-@dirrm drscheme/collects/doc/icons
-@dirrm drscheme/collects/doc/drscheme
-@dirrm drscheme/collects/doc/teachpack
-@dirrm drscheme/collects/doc/misclib
-@dirrm drscheme/collects/doc/framework
 @dirrm drscheme/collects/doc/mred
-@dirrm drscheme/collects/doc/beginning
-@dirrm drscheme/collects/doc/beginning-abbr
-@dirrm drscheme/collects/doc/intermediate
+@dirrm drscheme/collects/doc/misclib
 @dirrm drscheme/collects/doc/intermediate-lambda
+@dirrm drscheme/collects/doc/intermediate
+@dirrm drscheme/collects/doc/icons
+@dirrm drscheme/collects/doc/help/CVS
+@dirrm drscheme/collects/doc/help
+@dirrm drscheme/collects/doc/framework
+@dirrm drscheme/collects/doc/drscheme
+@dirrm drscheme/collects/doc/beginning-abbr
+@dirrm drscheme/collects/doc/beginning
 @dirrm drscheme/collects/doc/advanced
-@dirrm drscheme/collects/doc/tex2page
-@dirrm drscheme/collects/doc/tools
-@dirrm drscheme/collects/doc/tour/images
-@dirrm drscheme/collects/doc/tour
-@dirrm drscheme/collects/doc/t-y-scheme
 @dirrm drscheme/collects/doc
+@dirrm drscheme/collects/defaults
+@dirrm drscheme/collects/compiler/private/compiled
+@dirrm drscheme/collects/compiler/private
+@dirrm drscheme/collects/compiler/compiled
+@dirrm drscheme/collects/compiler
+@dirrm drscheme/collects/browser/private/compiled
+@dirrm drscheme/collects/browser/private
+@dirrm drscheme/collects/browser/compiled
+@dirrm drscheme/collects/browser
+@dirrm drscheme/collects/afm
 @dirrm drscheme/collects
-@dirrm drscheme/include
-@dirrm drscheme/lib
-@dirrm drscheme/teachpack/htdp
-@dirrm drscheme/teachpack
+@dirrm drscheme/bin
 @dirrm drscheme

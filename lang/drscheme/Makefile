@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	203
+PORTVERSION=	204
 CATEGORIES=	lang
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -31,7 +31,7 @@ MAN1=		drscheme.1 mred.1 mzscheme.1
 
 do-install:
 	${MKDIR} ${PLTHOME}
-	cd ${WRKDIR}/plt && ${TAR} -cf - ${DRS_D} | tar -C ${PLTHOME} -xf -
+	cd ${WRKDIR}/plt && ${TAR} -cf - --exclude '/CVS/*' ${DRS_D} | tar -C ${PLTHOME} -xf -
 	cd ${PLTHOME} && ${PLTHOME}/install
 .for f in ${DRS_B}
 	${LN} -s ${PLTHOME}/bin/$f ${PREFIX}/bin/$f
