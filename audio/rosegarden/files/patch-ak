@@ -1,12 +1,15 @@
---- mapper/src/Mapper_OSS.c.orig	Sat Sep 18 16:18:42 1999
-+++ mapper/src/Mapper_OSS.c	Sat Sep 18 16:19:17 1999
-@@ -13,6 +13,9 @@
- #include <sys/stat.h>
- #include <unistd.h>
- #include <fcntl.h>
-+#ifdef __FreeBSD__
-+#include <errno.h>
-+#endif
+Index: mapper/src/Mapper_OSS.c
+@@ -964,6 +964,13 @@
  
- #include <MidiFile.h>
- #include <MidiErrorHandler.h>
+ BEGIN("Mapper_ReadEvent");
+ 
++#ifdef __FreeBSD__
++    /* on FreeBSD the read() will block when there is no data available... */
++    out = 0;
++    ioctl(seqfd, SNDCTL_SEQ_GETINCOUNT, &out);
++    if (!out)
++        RETURN_BOOL(False);
++#endif
+     if ( ( out = read(seqfd, &InBytes, sizeof(InBytes)) ) <= 0 )
+         RETURN_BOOL(False);
+ 

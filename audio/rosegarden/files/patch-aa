@@ -38,14 +38,12 @@
  		if test -n "$TCL_MIDI_CHECK"
  		then
  			Petal=""
-@@ -152,9 +160,9 @@
- 
+@@ -153,8 +161,8 @@
  	*freebsd*)
  	defines="-DNO_SYS_ERRLIST"
--	AC_CHECK_HEADER(sys/soundcard.h, sound_system="-DSYSTEM_FREEBSD")
+ 	AC_CHECK_HEADER(machine/soundcard.h, sound_system="-DSYSTEM_OSS")
 -	extra_libs="-lmalloc"
 -	# LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
-+	AC_CHECK_HEADER(sys/soundcard.h, sound_system="-DSYSTEM_OSS")
 +	# extra_libs="-lmalloc"
 +	LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
  

@@ -1,18 +1,14 @@
 # New ports collection makefile for:	rosegarden
-# Version required:	2.1
+# Version required:	2.1pl2
 # Date created:		04 Aug 1996
 # Whom:			shanee@augusta.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rosegarden-2.1
+DISTNAME=	rosegarden-2.1pl2
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.maths.bath.ac.uk/pub/dream/ROSE/ \
-		ftp://ftp.unina.it/pub/Unix/pkgs/audio/rosegarden/ \
-		ftp://sunsite.auc.dk//disk6/linuxberg.com/files/x11/media/ \
-		ftp://ftp.flashnet.it//mirror/8/linuxberg/files/x11/media/
-EXTRACT_SUFX=	-sources.tar.gz
+MASTER_SITES=	http://www.all-day-breakfast.com/rosegarden/patches/
 
 MAINTAINER=	shanee@augusta.de
 
@@ -30,5 +26,10 @@ do-install:
 	@( \
 	 cd ${WRKSRC} ; ${SETENV} PREFIX="${PREFIX}" ./do-install \
 	)
+
+post-install:
+	${MV} -i ${PREFIX}/bin/rosegarden ${PREFIX}/bin/rosegarden-bin
+	${SED} s-%%PREFIX%%-${PREFIX}-g ${FILESDIR}/rosegarden >${WRKDIR}/rosegarden
+	${INSTALL_SCRIPT} ${WRKDIR}/rosegarden ${PREFIX}/bin
 
 .include <bsd.port.mk>

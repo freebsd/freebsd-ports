@@ -1,0 +1,2 @@
+#! /bin/sh
+TCLLIBPATH="$TCLLIBPATH %%PREFIX%%/lib/rosegarden/petal" %%PREFIX%%/bin/rosegarden-bin
