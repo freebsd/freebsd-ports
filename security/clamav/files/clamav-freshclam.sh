@@ -9,7 +9,7 @@
 # KEYWORD: FreeBSD shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable freshclam daemon:
+# Add the following lines to /etc/rc.conf to enable the freshclam daemon:
 #
 #clamav_freshclam_enable="YES"
 #
@@ -22,16 +22,14 @@ name=clamav_freshclam
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/freshclam
+pidfile=/var/run/clamav/freshclam.pid
+command_args="--daemon"
 required_dirs=%%DATADIR%%
 required_files=%%PREFIX%%/etc/freshclam.conf
 
-# set defaults
+# read settings, set default values
+load_rc_config "$name"
+: ${clamav_freshclam_enable="NO"}
+: ${clamav_freshclam_flags=""}
 
-clamav_freshclam_enable=${clamav_freshclam_enable:-"NO"}
-clamav_freshclam_flags=${clamav_freshclam_flags:-"--pid=/var/run/clamav/freshclam.pid --daemon-notify=%%PREFIX%%/etc/clamav.conf"}
-
-load_rc_config $name
-
-# add --daemon to any given arguments
-clamav_freshclam_flags="${clamav_freshclam_flags} --daemon"
 run_rc_command "$1"

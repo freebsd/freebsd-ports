@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
+DESTDIR=${PKG_DESTDIR:-}
 
 CLAMAVUSER=%%CLAMAVUSER%%
 CLAMAVGROUP=%%CLAMAVGROUP%%
 UID=106
 GID=$UID
 
-CLAMRUN=/var/run/clamav
-CLAMLOG=/var/log/clamav
-DATADIR=%%DATADIR%%
+CLAMRUN=$DESTDIR/var/run/clamav
+CLAMLOG=$DESTDIR/var/log/clamav
+DATADIR=$DESTDIR%%DATADIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
@@ -48,9 +49,21 @@ elif [ "$2" = "POST-INSTALL" ]; then
 		chown "$CLAMAVUSER:$CLAMAVGROUP" "$CLAMLOG" || exit 1
 	fi
 
-	if [ ! -d "${DATADIR}" ]; then
+	if [ ! -d "$DATADIR" ]; then
 		mkdir -p "$DATADIR" || exit 1
 		chown "$CLAMAVUSER:$CLAMAVGROUP" "$DATADIR" || exit 1
+	fi
+
+	if [ -f "$DESTDIR$PREFIX/etc/clamav.conf" ]; then
+		echo
+		echo "**************** WARNING ****************"
+		echo "*                                       *"
+		echo "*  The configuration file has changed:  *"
+		echo "* Please edit $PREFIX/etc/clamd.conf *"
+		echo "* and remove $PREFIX/etc/clamav.conf *"
+		echo "*                                       *"
+		echo "**************** WARNING ****************"
+		echo
 	fi
 
 fi

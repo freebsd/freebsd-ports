@@ -1,13 +1,15 @@
 --- etc/Makefile.in.orig	Thu Feb 19 14:17:02 2004
 +++ etc/Makefile.in	Thu Feb 19 14:17:36 2004
-@@ -248,8 +248,8 @@
+@@ -333,10 +333,8 @@
  
  install:
  	$(mkinstalldirs) $(DESTDIR)$(CFGINST)
--@INSTALL_CLAMAV_CONF_TRUE@	@$(INSTALL_DATA) $(srcdir)/clamav.conf $(DESTDIR)$(CFGINST)
--@INSTALL_FRESHCLAM_CONF_TRUE@	@$(INSTALL_DATA) $(srcdir)/freshclam.conf $(DESTDIR)$(CFGINST)
-+@INSTALL_CLAMAV_CONF_TRUE@	@$(INSTALL_DATA) $(srcdir)/clamav.conf $(DESTDIR)$(CFGINST)/clamav.conf.default
-+@INSTALL_FRESHCLAM_CONF_TRUE@	@$(INSTALL_DATA) $(srcdir)/freshclam.conf $(DESTDIR)$(CFGINST)/freshclam.conf.default
+-	@test -f $(DESTDIR)$(CFGINST)/clamd.conf || \
+-	$(INSTALL_DATA) $(srcdir)/clamd.conf $(DESTDIR)$(CFGINST)
+-	@test -f $(DESTDIR)$(CFGINST)/freshclam.conf || \
+-	$(INSTALL_DATA) $(srcdir)/freshclam.conf $(DESTDIR)$(CFGINST)
++	$(INSTALL_DATA) $(srcdir)/clamd.conf $(DESTDIR)$(CFGINST)/clamd.conf.default
++	$(INSTALL_DATA) $(srcdir)/freshclam.conf $(DESTDIR)$(CFGINST)/freshclam.conf.default
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:

@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041014:
+  AFFECTS: users of security/clamav
+  AUTHOR: eik@FreeBSD.org
+
+  The configruration file for the clamd daemon has changed from
+  /usr/local/etc/clamav.conf to /usr/local/etc/clamd.conf.
+
 20041012:
   AFFECTS: users of devel/perforce
   AUTHOR: marshall@chezmarshall.com
