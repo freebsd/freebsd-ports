@@ -28,16 +28,16 @@ libdata/bonobo/servers/GNOME_Epiphany_Automation.server
 libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
 %%DOCSDIR%%/EphyCommandManager.html
 %%DOCSDIR%%/EphyEmbed.html
+%%DOCSDIR%%/EphyEmbedPersist.html
+%%DOCSDIR%%/EphyEmbedSingle.html
 %%DOCSDIR%%/EphyNodeDb.html
+%%DOCSDIR%%/EphyPermissionManager.html
 %%DOCSDIR%%/EphyTab.html
 %%DOCSDIR%%/EphyWindow.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/epiphany-EphyEmbedFactory.html
-%%DOCSDIR%%/epiphany-EphyEmbedPersist.html
-%%DOCSDIR%%/epiphany-EphyEmbedSingle.html
 %%DOCSDIR%%/epiphany-EphyGlade.html
-%%DOCSDIR%%/epiphany-EphyPermissionManager.html
 %%DOCSDIR%%/epiphany-ephy-cookie-manager.html
 %%DOCSDIR%%/epiphany-ephy-password-manager.html
 %%DOCSDIR%%/epiphany-ephy-session.html
@@ -48,7 +48,6 @@ libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 share/gnome/application-registry/epiphany.applications
 share/gnome/applications/bme.desktop
