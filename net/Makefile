@@ -168,6 +168,7 @@
     SUBDIR += mpich
     SUBDIR += mrt
     SUBDIR += mrtg
+    SUBDIR += msn-transport
     SUBDIR += mtr
     SUBDIR += mudix
     SUBDIR += naim

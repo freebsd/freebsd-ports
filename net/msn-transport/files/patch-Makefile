@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Feb 14 13:26:36 2001
++++ Makefile	Wed Feb 14 13:26:47 2001
+@@ -1,9 +1,9 @@
+-include ../platform-settings
++include $(JABBER_WRKSRC)/platform-settings
+ 
+ CC=gcc
+-CFLAGS:=$(CFLAGS) $(DEFINES) -I../jabberd/ -Wall -g -O2
++CFLAGS:=$(CFLAGS) $(DEFINES) -I$(JABBER_WRKSRC)/jabberd/ -Wall -g -O2
+ 
+-msntrans_HEADERS=msntrans.h ../jabberd/jabberd.h
++msntrans_HEADERS=msntrans.h $(JABBER_WRKSRC)/jabberd/jabberd.h
+ 
+ msntrans_OBJECTS = \
+ 	cmd.o \
