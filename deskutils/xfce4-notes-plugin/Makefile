@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	http://www.lysator.liu.se/~b0kaj/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	thorsten.greiner@web.de
