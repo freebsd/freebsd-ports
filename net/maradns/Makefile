@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.8.16
+PORTVERSION=	0.8.35
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -14,49 +14,57 @@ MASTER_SITES=	http://www.maradns.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
+MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 MAN1=	askmara.1 getzone.1
 MAN8=	maradns.8 zoneserver.8
 
-DDOCS=	RFC1035.compliance cache.poison.protection csv1.format \
-	draft-skwan-utf8-dns-05.txt example_full_mararc faq.html \
-	firewall.configuration handling.compression mararc.format \
+DOCS=	../TODO.done ../TODO.first ../TODO.problem.hostnames ../TODO.second \
+	../changelog.html ../old.changelog 00Quickstart.es example_csv1 \
+	example_mararc faq.txt
+DDOCS=	0QuickStart RFC1035.compliance cache.poison.protection csv1.format \
+	example_full_mararc faq.html firewall.configuration \
+	handling.compression how.to.support.sql mararc.format \
 	multiple.qdcount recursive-case-insensitive recursive.algorithm \
-	resolution.algorithm rfc2044.txt rtest.output www.monty.de
-DOCS=	example_csv1 example_mararc faq.txt ../0QuickStart ../CHANGELOG.html \
-	../TODO.done ../TODO.first ../TODO.second ../changelog.html ../CREDITS
-
-FIXPREFIX=	00QuickStart CHANGELOG.html doc/man/maradns.8 doc/faq.txt \
-		doc/man/zoneserver.8 parse/ParseMaraRc.c doc/example_mararc
+	resolution.algorithm rtest.output www.monty.de
 
 post-patch:
-.for f in ${FIXPREFIX}
-	${PERL} -pi -e "s@/etc/maradns@${PREFIX}/etc/maradns@g; \
-		s@/etc/mararc@${PREFIX}/etc/mararc@g" ${WRKSRC}/${f}
-.endfor
+	@find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
+		's|/etc/mara|${PREFIX}/etc/mara|g'
+	@find ${WRKSRC} -name '*Makefile*' | xargs ${PERL} -pi -e \
+		's|make|\$$\{MAKE\}|g ; \
+		 s|^FLAGS =|#FLAGS =|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/server/maradns ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tuzona/zoneserver ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tuzona/getzone ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/askmara ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/askmara ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/server/maradns ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/tuzona/getzone ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/tuzona/zoneserver ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/doc/example_mararc ${PREFIX}/etc/mararc.sample
-	${INSTALL_MAN} ${WRKSRC}/doc/man/maradns.8 ${PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/zoneserver.8 ${PREFIX}/man/man8/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/askmara.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/getzone.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/maradns.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/man/zoneserver.8 ${PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 \
-		${PREFIX}/share/doc/maradns/detailed/spammers
-	${INSTALL_DATA} ${WRKSRC}/doc/detailed/spammers/azmalink.net \
-		${PREFIX}/share/doc/maradns/detailed/spammers
-.for f in ${DDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/detailed/${f} \
-		${PREFIX}/share/doc/maradns/detailed
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/share/doc/maradns
+	@${MKDIR} ${DOCSDIR}/detailed
+.for file in ${DDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/detailed/${file} ${DOCSDIR}/detailed
 .endfor
+	@${MKDIR} ${DOCSDIR}/detailed/spammers
+	${INSTALL_DATA} ${WRKSRC}/doc/detailed/spammers/*.* \
+		${DOCSDIR}/detailed/spammers
+	@${MKDIR} ${DOCSDIR}/detailed/spammers/hiddenonline
+	${INSTALL_DATA} ${WRKSRC}/doc/detailed/spammers/hiddenonline/*.* \
+		${DOCSDIR}/detailed/spammers/hiddenonline
+	@${MKDIR} ${DOCSDIR}/examples
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.* ${DOCSDIR}/examples
+	@${MKDIR} ${DOCSDIR}/tutorial
+	${INSTALL_DATA} ${WRKSRC}/doc/tutorial/*.* ${DOCSDIR}/tutorial
 .endif
 
 .include <bsd.port.mk>
