@@ -21,7 +21,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 
-CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado*
+CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
 PORTDOCS=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
 		README.txt credits.txt
