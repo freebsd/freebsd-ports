@@ -19,7 +19,9 @@ PATCHFILES=	modtmpl.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP gateway to LDAP-based directories
 
-BROKEN=		"Depends on net/openldap12, which is no more"
+FORBIDDEN=		"Depends on net/openldap12, which is no more"
+DEPRECATED=		${FORBIDDEN}
+EXPIRATION_DATE=	2004-04-18
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap12
 

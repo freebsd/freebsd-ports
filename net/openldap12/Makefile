@@ -29,7 +29,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lodea@vet.com.au
 COMMENT=	Open source LDAP client and server software
 
-BROKEN=		ancient, unsupported, potential security issues
+FORBIDDEN=		ancient, unsupported, potential security issues
+DEPRECATED=		${FORBIDDEN}
+EXPIRATION_DATE=	2004-04-18
 
 USE_LIBTOOL=	yes
 
