@@ -32,4 +32,3 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5
 .endif
 
 .include <bsd.port.post.mk>
-
