@@ -174,6 +174,7 @@
     SUBDIR += hs-HOpenGL
     SUBDIR += hs-hgl
     SUBDIR += hsetroot
+    SUBDIR += hugin
     SUBDIR += icoconvert
     SUBDIR += icod
     SUBDIR += icontact
