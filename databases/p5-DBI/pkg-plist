@@ -20,6 +20,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileDumper/Apache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProxyServer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/PurePerl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/SQL/Nano.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/W32ODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Win32/DBIODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/.packlist
@@ -33,6 +34,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbipport.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbivport.h
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBI/SQL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileDumper
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Const/GetInfo
