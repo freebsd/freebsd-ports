@@ -17,6 +17,7 @@ pre-build:
 	@echo "===>  Building for ${DISTNAME}"
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
 build: configure pre-build depends ${BUILD_COOKIE}
+	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
 
 # This package uses imake's "install.man" target to install man pages but
 #  I can't define USE_IMAKE because it doesn't involve xmkmf
