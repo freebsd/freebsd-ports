@@ -12,7 +12,6 @@ MASTER_SITES=	http://www.lanois.com/ubh/download/
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-#RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/NNTP.pm:${PORTSDIR}/news/p5-Net-NNTP \
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Newsrc.pm:${PORTSDIR}/news/p5-News-Newsrc
 
 NO_BUILD=	YES
