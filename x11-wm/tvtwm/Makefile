@@ -3,7 +3,7 @@
 # Date created:		5th December 1994
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.6 1995/04/01 12:51:14 jkh Exp $
+# $Id: Makefile,v 1.7 1995/04/12 20:31:45 asami Exp $
 #
 
 DISTNAME=	tvtwm
@@ -17,4 +17,5 @@ MAINTAINER=	gpalmer@FreeBSD.ORG
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
+
 .include <bsd.port.mk>
