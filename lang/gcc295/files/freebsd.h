@@ -1,4 +1,4 @@
-/* $Id: freebsd.h,v 1.8 1999/07/25 03:34:38 obrien Exp $ */
+/* $Id: freebsd.h,v 1.4 1999/08/05 16:05:58 obrien Exp $ */
 /* Base configuration file for all FreeBSD targets.
    Copyright (C) 1999 Free Software Foundation, Inc.
 
@@ -55,7 +55,7 @@ Boston, MA 02111-1307, USA.  */
 
 /* Place spaces around this string.  We depend on string splicing to produce
    the final CPP_PREDEFINES value.  */
-#define CPP_FBSD_PREDEFINES " -Dunix -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) "
+#define CPP_FBSD_PREDEFINES " -Dunix -D__FreeBSD__=4 -Asystem(unix) -Asystem(FreeBSD) "
 
 /* Provide a LIB_SPEC appropriate for FreeBSD.  Just select the appropriate
    libc, depending on whether we're doing profiling or need threads support.
@@ -70,10 +70,12 @@ Boston, MA 02111-1307, USA.  */
      %{kthread:-lpthread_p -lc_p}} \
      %{pthread:-lc_r_p}}}"
 
+#ifdef COMMENT_OUT	/* only redefine LIBGCC_SPEC for our native GCC */
 /* Tell gcc to locate libgcc.a for us according to the -m rules.  */
 #undef LIBGCC_SPEC
 #define LIBGCC_SPEC \
  "%{!shared:%{!pthread:%{!kthread:libgcc.a%s}}%{pthread|kthread:libgcc_r.a%s}}"
+#endif
 
 
 /* Code generation parameters.  */
