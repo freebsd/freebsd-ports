@@ -245,3 +245,5 @@ lib/libtkobjc.so.4
 @dirrm include/space
 @dirrm include/tclobjc
 @dirrm include/tkobjc
+@exec mkdir %D/share/swarm
+@dirrm share/swarm
