@@ -1,20 +1,20 @@
---- liboctave/lo-ieee.cc.orig	Sun Jun 20 23:29:47 1999
-+++ liboctave/lo-ieee.cc	Sun Jun 20 23:30:30 1999
-@@ -70,7 +70,7 @@
+--- liboctave/lo-ieee.cc.orig	Tue Dec 28 22:05:23 1999
++++ liboctave/lo-ieee.cc	Tue Dec 28 22:06:07 1999
+@@ -68,7 +68,7 @@
+ #if defined (SCO)
+   double tmp = 1.0;
    octave_Inf = 1.0 / (tmp - tmp);
- #elif defined (linux)
-   octave_Inf = HUGE_VAL;
--#elif defined (__alpha__)
-+#elif defined (__alpha__) && !defined(__FreeBSD__)
+-#elif defined (__alpha__) && ! defined (linux)
++#elif defined (__alpha__) && ! defined (linux) && ! defined (__FreeBSD__)
    extern unsigned int DINFINITY[2];
    octave_Inf =  (*((double *) (DINFINITY)));
  #elif defined (HAVE_INFINITY)
-@@ -93,7 +93,7 @@
+@@ -89,7 +89,7 @@
  
- #if defined (linux)
-   octave_NaN = NAN;
--#elif defined (__alpha__)
-+#elif defined (__alpha__) && !defined(__FreeBSD__)
+ #if defined (HAVE_ISNAN)
+ 
+-#if defined (__alpha__) && ! defined (linux)
++#if defined (__alpha__) && ! defined (linux) && ! defined (__FreeBSD__)
    extern unsigned int DQNAN[2];
    octave_NaN = (*((double *) (DQNAN)));
  #elif defined (HAVE_QUIET_NAN)
