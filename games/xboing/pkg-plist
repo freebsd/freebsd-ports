@@ -1,0 +1,67 @@
+@cd /usr/X11R6
+@owner games
+@mode 555
+bin/xboing
+@mode 666
+lib/X11/xboing/xboing.scr
+@mode 444
+lib/X11/xboing/problems.doc
+lib/X11/xboing/levels/demo.data
+lib/X11/xboing/levels/editor.data
+lib/X11/xboing/levels/level01.data
+lib/X11/xboing/levels/level02.data
+lib/X11/xboing/levels/level03.data
+lib/X11/xboing/levels/level04.data
+lib/X11/xboing/levels/level05.data
+lib/X11/xboing/levels/level06.data
+lib/X11/xboing/levels/level07.data
+lib/X11/xboing/levels/level08.data
+lib/X11/xboing/levels/level09.data
+lib/X11/xboing/levels/level10.data
+lib/X11/xboing/levels/level11.data
+lib/X11/xboing/levels/level12.data
+lib/X11/xboing/levels/level13.data
+lib/X11/xboing/levels/level14.data
+lib/X11/xboing/levels/level15.data
+lib/X11/xboing/levels/level16.data
+lib/X11/xboing/levels/level17.data
+lib/X11/xboing/levels/level18.data
+lib/X11/xboing/levels/level19.data
+lib/X11/xboing/levels/level20.data
+lib/X11/xboing/levels/level21.data
+lib/X11/xboing/levels/level22.data
+lib/X11/xboing/levels/level23.data
+lib/X11/xboing/levels/level24.data
+lib/X11/xboing/levels/level25.data
+lib/X11/xboing/levels/level26.data
+lib/X11/xboing/levels/level27.data
+lib/X11/xboing/levels/level28.data
+lib/X11/xboing/levels/level29.data
+lib/X11/xboing/levels/level30.data
+lib/X11/xboing/levels/level31.data
+lib/X11/xboing/levels/level32.data
+lib/X11/xboing/levels/level33.data
+lib/X11/xboing/levels/level34.data
+lib/X11/xboing/levels/level35.data
+lib/X11/xboing/levels/level36.data
+lib/X11/xboing/levels/level37.data
+lib/X11/xboing/levels/level38.data
+lib/X11/xboing/levels/level39.data
+lib/X11/xboing/levels/level40.data
+lib/X11/xboing/levels/level41.data
+lib/X11/xboing/levels/level42.data
+lib/X11/xboing/levels/level43.data
+lib/X11/xboing/levels/level44.data
+lib/X11/xboing/levels/level45.data
+lib/X11/xboing/levels/level46.data
+lib/X11/xboing/levels/level47.data
+lib/X11/xboing/levels/level48.data
+lib/X11/xboing/levels/level49.data
+lib/X11/xboing/levels/level50.data
+lib/X11/xboing/levels/level51.data
+lib/X11/xboing/levels/level52.data
+lib/X11/xboing/levels/level53.data
+lib/X11/xboing/levels/level54.data
+lib/X11/xboing/levels/level55.data
+lib/X11/xboing/levels/new.data
+man/man1/xboing.1.gz

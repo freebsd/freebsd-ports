@@ -1,0 +1,126 @@
+diff -rc ../xboing2.2.orig/Imakefile ./Imakefile
+*** ../xboing2.2.orig/Imakefile	Thu Jun  2 02:11:10 1994
+--- ./Imakefile	Wed Feb  1 00:26:57 1995
+***************
+*** 5,17 ****
+  XCOMM This is the directory where the highscore, level & sound data will be 
+  XCOMM placed. Default will be the current directory.
+  
+!     XBOING_DIR = .
+  
+  XCOMM These are some defines that must be set. Some may be overwritten in the
+  XCOMM machine arch section.
+  
+!     XPMLIB 				= -L../xpm3.4/lib -lXpm
+!     XPMINCLUDE 			= -I../xpm3.4/lib
+      XBOINGINCLUDE 		= -I./include
+      LEVEL_INSTALL_DIR 	= $(XBOING_DIR)/levels
+      SOUNDS_DIR 			= $(XBOING_DIR)/sounds
+--- 5,17 ----
+  XCOMM This is the directory where the highscore, level & sound data will be 
+  XCOMM placed. Default will be the current directory.
+  
+!     XBOING_DIR = /usr/X11R6/lib/X11/xboing
+  
+  XCOMM These are some defines that must be set. Some may be overwritten in the
+  XCOMM machine arch section.
+  
+!     XPMLIB 				= -lXpm
+!     XPMINCLUDE 			= -I/usr/X11R6/include/X11
+      XBOINGINCLUDE 		= -I./include
+      LEVEL_INSTALL_DIR 	= $(XBOING_DIR)/levels
+      SOUNDS_DIR 			= $(XBOING_DIR)/sounds
+***************
+*** 98,105 ****
+          -DLEVEL_INSTALL_DIR=\"$(LEVEL_INSTALL_DIR)\" \
+          -DAUDIO_AVAILABLE=\"$(AUDIO_AVAILABLE)\" \
+          -DSOUNDS_DIR=\"$(SOUNDS_DIR)\" \
+!         -DREADMEP_FILE=\"$(XBOING_DIR)/docs/problems.doc\"
+! XCOMM   -DUSE_FLOCK=\"True\" \
+  XCOMM   -DNO_LOCKING=\"True\" 
+  
+      LOCAL_LIBRARIES = $(AUDIO_LIB) $(XPMLIB) $(XLIB) -lm
+--- 98,105 ----
+          -DLEVEL_INSTALL_DIR=\"$(LEVEL_INSTALL_DIR)\" \
+          -DAUDIO_AVAILABLE=\"$(AUDIO_AVAILABLE)\" \
+          -DSOUNDS_DIR=\"$(SOUNDS_DIR)\" \
+!         -DREADMEP_FILE=\"$(XBOING_DIR)/docs/problems.doc\" \
+!         -DUSE_FLOCK=\"True\"
+  XCOMM   -DNO_LOCKING=\"True\" 
+  
+      LOCAL_LIBRARIES = $(AUDIO_LIB) $(XPMLIB) $(XLIB) -lm
+diff -rc ../xboing2.2.orig/include/misc.h ./include/misc.h
+*** ../xboing2.2.orig/include/misc.h	Wed May 25 01:32:15 1994
+--- ./include/misc.h	Wed Feb  1 00:37:19 1995
+***************
+*** 68,81 ****
+  int ObtainWindowWidthHeight(Display *display, Window window,
+  	int *width, int *height);
+  void sleepSync(Display *display, unsigned long ms);
+! int usleep(unsigned long usec);
+  int ObtainMousePosition(Display *display, Window window, int *x, int *y);
+  int YesNoDialogue(Display *display, char *message);
+  #else
+  int YesNoDialogue();
+  int ObtainMousePosition();
+  void sleepSync();
+! int usleep();
+  int ObtainWindowWidthHeight();
+  int ResizeMainWindow();
+  char *GetHomeDir();
+--- 68,81 ----
+  int ObtainWindowWidthHeight(Display *display, Window window,
+  	int *width, int *height);
+  void sleepSync(Display *display, unsigned long ms);
+! int Usleep(unsigned long usec);
+  int ObtainMousePosition(Display *display, Window window, int *x, int *y);
+  int YesNoDialogue(Display *display, char *message);
+  #else
+  int YesNoDialogue();
+  int ObtainMousePosition();
+  void sleepSync();
+! int Usleep();
+  int ObtainWindowWidthHeight();
+  int ResizeMainWindow();
+  char *GetHomeDir();
+diff -rc ../xboing2.2.orig/misc.c ./misc.c
+*** ../xboing2.2.orig/misc.c	Mon May 30 05:59:39 1994
+--- ./misc.c	Wed Feb  1 00:37:54 1995
+***************
+*** 65,73 ****
+   */
+  
+  #if NeedFunctionPrototypes
+! int usleep(unsigned long usec)
+  #else
+! int usleep(usec)
+          unsigned long usec;
+  #endif
+  {
+--- 65,73 ----
+   */
+  
+  #if NeedFunctionPrototypes
+! int Usleep(unsigned long usec)
+  #else
+! int Usleep(usec)
+          unsigned long usec;
+  #endif
+  {
+***************
+*** 108,114 ****
+                 ((et.tv_usec - st.tv_usec) / 1000) );
+  
+      if ((ms) > ((1000 / 60) + SyncTime))
+!         usleep(ms - SyncTime);
+  }
+  
+  #if NeedFunctionPrototypes
+--- 108,114 ----
+                 ((et.tv_usec - st.tv_usec) / 1000) );
+  
+      if ((ms) > ((1000 / 60) + SyncTime))
+!         Usleep(ms - SyncTime);
+  }
+  
+  #if NeedFunctionPrototypes
