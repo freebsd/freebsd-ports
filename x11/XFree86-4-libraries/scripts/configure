@@ -252,7 +252,7 @@ zcat $X11FIXES/3.1.2-3.1.2-S.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
 if [ $k4patch = YES ] ; then
     echo
     echo "==> applying Kerberos-V4 support patch"
-    zcat $FILESDIR/kerberos4.diffs.gz | \
+    cat $FILESDIR/kerberos4.diffs | \
 	patch -d $WRKSRC --forward --quiet -E -p1
 fi
 
