@@ -1,0 +1,13 @@
+--- page.c.orig	Wed Nov 12 21:57:13 1997
++++ page.c	Wed Nov 12 23:19:57 1997
+@@ -30,8 +30,10 @@
+ static caddr_t	startAddr = (caddr_t) 0;
+ 
+ #if ( !defined(sgi) && !defined(_AIX) )
++#if ( !defined(BSD) || (BSD < 199103) )
+ extern int	sys_nerr;
+ extern char *	sys_errlist[];
++#endif
+ #endif
+ 
+ static const char *
