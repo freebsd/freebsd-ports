@@ -87,7 +87,7 @@ pre-fetch:
 	@${ECHO} "You need an uncommitted kernel patch to run this port:"
 	@${ECHO} "You can get it at: http://people.freebsd.org/~fjoe/shm-freebsd4-20031105.diff"
 	@${ECHO}
-.elif ${OSVERSION} < 500113
+.elif ${OSVERSION} < 500113 && ${OSVERSION} > 500000
 	@${ECHO}
 	@${ECHO} "You need an uncommitted kernel patch to run this port:"
 	@${ECHO} "You can get it at: http://people.freebsd.org/~mbr/patches/"
