@@ -359,6 +359,7 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms-a52dec
+    SUBDIR += xmms-arts
     SUBDIR += xmms-audiofile
     SUBDIR += xmms-bonk
     SUBDIR += xmms-cdparanoia
