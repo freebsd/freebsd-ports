@@ -5,18 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.4.a0.20030801
-PORTREVISION=	1
+PORTVERSION=	2.4.a0.20031022
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	perky
-DISTNAME=	Python-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${PYTHON_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
+DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
+WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
@@ -24,6 +23,7 @@ INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
@@ -35,6 +35,11 @@ LATEST_LINK=	${PYTHON_VERSION:S/.//}
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
+.if !defined(WANT_HUGE_STACK_SIZE)
+CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
+.else
+CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
+.endif # !defined(WANT_HUGE_STACK_SIZE)
 CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=	--without-threads
@@ -47,6 +52,10 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
+.if defined(WITHOUT_PYMALLOC)
+CONFIGURE_ARGS+=        --without-pymalloc
+.endif
+
 .if defined(BUILD_SHARED)
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=		yes
@@ -57,7 +66,6 @@ PLIST_SUB+=		SHARED_ONLY="@comment "
 
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
-CFLAGS+=	-D__BSD_VISIBLE # see python/configure.in rev 1.409
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +73,14 @@ CFLAGS+=	-D__BSD_VISIBLE # see python/configure.in rev 1.409
 PLIST_SUB+=	X86_ONLY=""
 .else
 PLIST_SUB+=	X86_ONLY="@comment "
+.endif
+.if ${ARCH} == amd64
+CFLAGS+=        -fPIC
+.endif
+.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == alpha
+PLIST_SUB+=     32BIT_ONLY="@comment "
+.else
+PLIST_SUB+=     32BIT_ONLY=""
 .endif
 
 .if ${OSVERSION} < 400000
@@ -101,6 +117,10 @@ post-extract:
 		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.4
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.4
+
+post-patch:
+	${REINPLACE_CMD} -e 's,\(PY_VERSION.*\)2\.4a0,\1${PORTVERSION},g' \
+		${WRKSRC}/Include/patchlevel.h
 
 pre-install:
 .for platform in ${PLATFORMS}
