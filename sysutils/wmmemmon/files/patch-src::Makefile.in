@@ -5,7 +5,7 @@
  
  
 -CFLAGS = @DFLAGS@ @CFLAGS@ -I../libdockapp/
-+CFLAGS = -I../libdockapp/ @DFLAGS@ @CFLAGS@
++CFLAGS += -I../libdockapp/ @DFLAGS@ @CFLAGS@
  
  wmmemmon_LDADD =  	dockapp.o 	@LIBRARY_SEARCH_PATH@ 	@XLIBS@
  
