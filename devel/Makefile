@@ -628,6 +628,7 @@
     SUBDIR += p5-DateTime-Format-Builder
     SUBDIR += p5-DateTime-Format-DBI
     SUBDIR += p5-DateTime-Format-DateManip
+    SUBDIR += p5-DateTime-Format-Duration
     SUBDIR += p5-DateTime-Format-Epoch
     SUBDIR += p5-DateTime-Format-Excel
     SUBDIR += p5-DateTime-Format-HTTP

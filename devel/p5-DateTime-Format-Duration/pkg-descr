@@ -1,0 +1,4 @@
+This module formats and parses DateTime::Duration objects as well as other
+durations representations.
+
+WWW: http://datetime.perl.org/
