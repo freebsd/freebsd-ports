@@ -18,6 +18,17 @@ COMMENT=	A video encoding library
 USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN3=	fame_close.3 fame_encode_frame.3 fame_get_object.3 fame_init.3 \
+	fame_open.3 fame_register.3 fame_unregister.3 fame_encode_slice.3 \
+	fame_start_frame.3 fame_end_frame.3
+
+OPTIONS=	SSE "SSE optimized routines" off \
+		MMX "MMX optimized routines" on
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SSE)
 CONFIGURE_ARGS+=	--enable-sse
 .endif
@@ -26,21 +37,4 @@ CONFIGURE_ARGS+=	--enable-sse
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-MAN3=	fame_close.3 fame_encode_frame.3 fame_get_object.3 fame_init.3 \
-	fame_open.3 fame_register.3 fame_unregister.3 fame_encode_slice.3 \
-	fame_start_frame.3 fame_end_frame.3
-
-pre-everything::
-.if !defined(WITH_SSE)
-	@${ECHO_MSG} " You can enable SSE optimized routines by defining WITH_SSE."
-	@${ECHO_MSG} ""
-.endif
-
-.if !defined(WITHOUT_MMX)
-	@${ECHO_MSG} " You can disable MMX optimized routines by defining WITHOUT_MMX."
-	@${ECHO_MSG} ""
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
