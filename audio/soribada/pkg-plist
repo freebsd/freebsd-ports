@@ -1,2 +1,10 @@
 bin/soribada
 share/locale/ko/LC_MESSAGES/soribada.mo
+share/soribada/README
+share/soribada/soribada32.png
+share/soribada/soribada48.png
+share/soribada/soribada64.png
+share/soribada/down.wav
+share/soribada/message.wav
+share/soribada/search.wav
+@dirrm share/soribada
