@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.psionic.com/tools/
 
-MAINTAINER=	ports@freebsddiary.org
+MAINTAINER=	ports@FreeBSD.org
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
