@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Autoformat/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Text/Autoformat.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/demo.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Autoformat
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
