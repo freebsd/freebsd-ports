@@ -37,8 +37,8 @@ portaudit_confs()
 	portaudit_filename=${portaudit_filename:-"auditfile.tbz"}
 
 	FETCH_ENV=${FETCH_ENV:-}
-	FETCH_CMD=${FETCH_CMD:-"/usr/bin/fetch -1am"}
-	FETCH_BEFORE_ARGS=${FETCH_BEFORE_ARGS:-}
+	FETCH_CMD=${FETCH_CMD:-"/usr/bin/fetch -1m"}
+	FETCH_BEFORE_ARGS=${FETCH_BEFORE_ARGS:-"-p"}
 	FETCH_AFTER_ARGS=${FETCH_AFTER_ARGS:-}
 
 	MASTER_SITES=${MASTER_SITES:-"
@@ -82,12 +82,18 @@ checksum_auditfile()
 getcreated_auditfile()
 {
 	extract_auditfile |
+		/usr/bin/sed -nEe '1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}) *([0-9]{2}):?([0-9]{2}):?([0-9]{2}).*$/\1-\2-\3 \4:\5:\6/p'
+}
+
+gettimestamp_auditfile()
+{
+	extract_auditfile |
 		/usr/bin/sed -nEe '1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$/\1\2\3/p'
 }
 
 checkexpiry_auditfile()
 {
-	created=`getcreated_auditfile`
+	created=`gettimestamp_auditfile`
 	expiry=`/bin/date -u -v-$1d '+%Y%m%d'`
 	[ "${created}" -ge "${expiry}" ];
 }
@@ -95,12 +101,14 @@ checkexpiry_auditfile()
 portaudit_prerequisites()
 {
 	if [ -z "${PKG_INFO}" ]; then
-		if [ -x %%LOCALBASE%%/sbin/pkg_info ]; then
-			PKG_INFO=%%LOCALBASE%%/sbin/pkg_info
+		if [ -x "%%LOCALBASE%%/sbin/pkg_info" ]; then
+			PKG_INFO="%%LOCALBASE%%/sbin/pkg_info"
 		else
-			PKG_INFO=/usr/sbin/pkg_info
+			PKG_INFO="/usr/sbin/pkg_info"
 		fi
 	fi
+
+	PKG_VERSION="${PKG_INFO%/*}/pkg_version"
 
 	if [ ! -x "${PKG_INFO}" ]; then
 		echo "${PKG_INFO} missing, please install port sysutils/pkg_install-devel"
@@ -155,6 +163,36 @@ audit_installed()
 	"
 }
 
+audit_cwd()
+{
+	if [ ! -r "Makefile" ]; then
+		return 1
+	fi
+
+	PKGSTATE=`/usr/bin/make -VPKGNAME -VFORBIDDEN -VPKGORIGIN 2>/dev/null || true"`
+	PKGNAME=`echo "${PKGSTATE}" | /usr/bin/sed -ne '1p'`
+	FORBIDDEN=`echo "${PKGSTATE}" | /usr/bin/sed -ne '2p'`
+	PKGORIGIN=`echo "${PKGSTATE}" | /usr/bin/sed -ne '3p'`
+
+	VLIST=`extract_auditfile | /usr/bin/awk -F\| " \
+		/^[^#]/ { \
+		if (!system(\"${PKG_VERSION} -T '${PKGNAME}' '\" \\$1 \"'\")) \
+			print \"- <\" \\$2 \">\" \
+		} \
+	"`
+
+	if [ -n "${VLIST}" -a -z "${FORBIDDEN}" ]; then
+		echo
+		echo "Port ${PKGNAME} (${PKGORIGIN}) should be marked FORBIDDEN:"
+		echo "${VLIST}"
+		VULCNT=$((${VULCNT}+1))
+	elif $opt_verbose && [ -n "${VLIST}" ]; then
+		echo
+		echo "Good: port ${PKGNAME} (${PKGORIGIN}) is marked FORBIDDEN: ${FORBIDDEN}"
+		echo "${VLIST}"
+	fi
+}
+
 fetch_locations()
 {
 	# site sort order is not overly smart
@@ -204,7 +242,6 @@ fetch_auditfile()
 			echo "fetched database corrupt."
 		elif ! checkexpiry_auditfile 7; then
 			echo "fetched database too old."
-			rc=0
 		else
 			echo "new database installed."
 			rc=0

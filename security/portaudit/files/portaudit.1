@@ -43,6 +43,8 @@
 .
 .Nm
 .Op Fl a
+.Op Fl A
+.Op Fl C
 .Op Fl V
 .Op Fl d
 .Op Fl F
@@ -74,6 +76,11 @@ The following options are supported:
 .Bl -tag -width ".Fl X"
 .It Fl a
 Print a vulnerability report for all installed packages
+.It Fl A
+Print a vulnerability report for all ports in PORTSDIR (slow).
+.It Fl C
+Print a vulnerability report for the port in the current working directory.
+Mostly useful for committers.
 .It Fl F
 Fetch the current database from the
 .Fx servers
@@ -118,7 +125,7 @@ Print a vulnerability report for all installed packages:
 .Sh CAVEATS
 .
 The format of
-.Pa %%DATABASEDIR%%/auditfile.tbz
+.Pa %%PREFIX%%/etc/portaudit.conf
 might change.
 .
 .
