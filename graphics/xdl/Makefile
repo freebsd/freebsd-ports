@@ -3,13 +3,12 @@
 # Date created:         17 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.4 1995/05/04 02:08:19 smace Exp $
+# $Id: Makefile,v 1.1.1.1 1995/07/18 00:32:33 asami Exp $
 #
 
 DISTNAME=	xdl-2.1
 CATEGORIES+=	graphics x11
-# supposed to be ftp.uoknor.edu, but the new machine doesn't have it
-MASTER_SITES=	ftp://romulus.ucs.uoknor.edu/src/X11R5/
+MASTER_SITES=	ftp://ftp.uoknor.edu/src/X11R5/
 
 MAINTAINER=	asami@FreeBSD.ORG
 
