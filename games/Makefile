@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.44 1996/11/09 00:02:53 obrien Exp $
+# $Id: Makefile,v 1.45 1996/11/16 12:50:42 asami Exp $
 #
 
     SUBDIR += acm
     SUBDIR += crossfire
     SUBDIR += gnuchess
+    SUBDIR += gnushogi
     SUBDIR += golddig
     SUBDIR += jetpack
     SUBDIR += nethack
@@ -18,6 +19,7 @@
     SUBDIR += xboard
     SUBDIR += xboing
     SUBDIR += xchomp
+    SUBDIR += xcubes
     SUBDIR += xdino
     SUBDIR += xemeraldia
     SUBDIR += xevil
@@ -44,6 +46,7 @@
     SUBDIR += xrobots
     SUBDIR += xrubik
     SUBDIR += xshisen
+    SUBDIR += xshogi
     SUBDIR += xskat
     SUBDIR += xsol
     SUBDIR += xtetris
