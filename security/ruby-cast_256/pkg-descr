@@ -1,0 +1,5 @@
+This is an implementation of the CAST-256 encryption algorithm for
+Ruby.
+
+Author:	Michael Neumann <neumann@s-direktnet.de>
+WWW:	http://www.s-direktnet.de/homepages/neumann/crypt/en/
