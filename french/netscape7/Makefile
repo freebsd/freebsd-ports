@@ -23,6 +23,8 @@ DISTFILES=	AIM.xpi \
 		talkback.xpi \
 		xpcom.xpi
 
+FORBIDDEN="http://vuxml.freebsd.org/c1d97a8b-05ed-11d9-b45d-000c41e2cdad.html"
+
 NETSCAPE_LANG=	french
 
 .include "../../www/netscape7/Makefile"

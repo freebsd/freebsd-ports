@@ -15,16 +15,16 @@ if [ -z "${BATCH}" ]; then
 	--checklist "\n\
 Choose components of Netscape 7 to download and install. \n\
 Press the space bar to toggle selections." -1 -1 12 \
-"browser"	"Web browser (10016 kB)"			ON \
-"deflenus"	"American English profile defaults (26 kB)"	ON \
-"flash"		"Flash plugin (576 kB)"				ON \
-"langenus"	"American English language pack (864 kB)"	ON \
-"mail"		"e-mail and news--requires browser (2064 kB)"	ON \
-"regca"		"regional settings for Canada (58 kB)"		ON \
-"regus"		"regional settings for the USA (60 kB)"		ON \
+"browser"	"Web browser (10288 kB)"			ON \
+"AIM"		"AOL instant messenger (1504 kB)"		ON \
+"chatzilla"	"Chatzilla IRC client (160 kB)"			ON \
+"deflenus"	"American English profile defaults (28 kB)"	ON \
+"flash"		"Flash plugin (784 kB)"				ON \
+"langenus"	"American English language pack (736 kB)"	ON \
+"mail"		"e-mail and news--requires browser (2288 kB)"	ON \
+"regus"		"regional settings for the USA (30 kB)"		ON \
 "spellchecker"	"spell-checker (544 kB)"			ON \
-"talkback"	"sends bug reports to Netscape staff (832 kB)"	ON \
-"inspector"	"DOM inspector (154 kB)"			ON \
+"inspector"	"DOM inspector (124 kB)"			ON \
 "venkman"	"JavaScript debugger (224 kB)"			ON \
 2> /tmp/checklist.tmp.$$
 
