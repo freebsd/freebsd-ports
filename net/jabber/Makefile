@@ -12,9 +12,7 @@ MASTER_SITES=	http://download.jabber.org/dists/1.4/final/
 
 MAINTAINER=	joe@FreeBSD.org
 
-BUILD_DEPENDS=	pth:${PORTSDIR}/devel/pth \
-		libxode-config:${PORTSDIR}/textproc/libxode \
-		jabber-config:${PORTSDIR}/net/libjabber
+BUILD_DEPENDS=	pth-config:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
