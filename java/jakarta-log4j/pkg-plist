@@ -48,4 +48,3 @@
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/lf5
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/subclass
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%JAVAJARDIR%%/log4j.jar

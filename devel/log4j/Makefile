@@ -7,23 +7,17 @@
 
 PORTNAME=	jakarta-log4j
 PORTVERSION=	1.2.8
-CATEGORIES=	java
+CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	log4j/source
+MASTER_SITE_SUBDIR=	log4j/binaries
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
-COMMENT=	Log4J, a fast and flexible logging library for Java
+MAINTAINER=	hq@FreeBSD.org
+COMMENT=	A fast and flexible logging library for Java
 
-USE_JAVA=	1.1+
+USE_JAVA=	YES
 NO_BUILD=	YES
 
-PORT_JARFILE=		log4j-${PORTVERSION}.jar
-DEST_JARFILE=		log4j.jar
-JAVA_WRKJARDIR=		${WRKSRC}/dist/lib
-JAVA_WRKDOCSDIR=	${WRKSRC}/docs
-JAVA_WRKEXAMPLESDIR=	${WRKSRC}/examples
-
-PLIST_SUB+=		JAVAJARDIR=${JAVAJARDIR:S/^${PREFIX}\///}
+PLIST_FILES=	%%JAVAJARDIR%%/log4j.jar
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	FAQ.html HISTORY TODO TROUBLESHOOT.html api contactUs.html \
@@ -34,23 +28,22 @@ PORTDOCS=	FAQ.html HISTORY TODO TROUBLESHOOT.html api contactUs.html \
 .endif
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR file..."
+	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/log4j.jar..."
 	@${MKDIR} ${JAVAJARDIR}
-	@cd ${JAVA_WRKJARDIR} && ${INSTALL_DATA} ${PORT_JARFILE} ${JAVAJARDIR}/${DEST_JARFILE}
-	@${ECHO_CMD} " [DONE]"
+	@${INSTALL_DATA} ${WRKSRC}/dist/lib/log4j-${PORTVERSION}.jar ${JAVAJARDIR}/log4j.jar
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation..."
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type f -exec ${INSTALL_MAN} ${JAVA_WRKDOCSDIR}/{} ${DOCSDIR}/{} ";"
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing documentation..."
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Installing examples..."
-	@cd ${JAVA_WRKEXAMPLESDIR} && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} ";"
-	@cd ${JAVA_WRKEXAMPLESDIR} && ${FIND} . -type f -exec ${INSTALL_DATA} ${JAVA_WRKEXAMPLESDIR}/{} ${EXAMPLESDIR}/{} ";"
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing examples..."
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
+	@${ECHO_MSG} " [ DONE ]"
 .endif
-
-post-install:
-	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVAJARDIR}/${DEST_JARFILE}"
 
 .include <bsd.port.mk>
