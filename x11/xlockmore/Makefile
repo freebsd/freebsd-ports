@@ -1,14 +1,15 @@
 # New ports collection makefile for:	xlockmore
-# Version required:     4.09
+# Version required:     4.10
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.31 1998/03/20 14:50:09 markm Exp $
+# $Id: Makefile,v 1.32 1998/03/25 12:30:37 tg Exp $
 #
 
-DISTNAME=       xlockmore-4.09
+DISTNAME=       xlockmore-4.10
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
+		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	tg@FreeBSD.ORG
@@ -25,7 +26,12 @@ CONFIGURE_ARGS+= --enable-kerberos4
 USE_X11=	yes
 MAN1=		xlock.1
 
-.if exists(${X11BASE}/lib/libMesaGL.a) || defined(PACKAGE_BUILDING)
+#
+# MesaGL has a security hole. Don't use it in setuid binaries.
+# Override this with WITH_MESAGL=yes in your environment.
+#
+WITH_MESAGL?=	no
+.if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesagl
 LIB_DEPENDS+=		GL\\.13:${PORTSDIR}/graphics/Mesa
 .else
