@@ -1,0 +1,15 @@
+DRBL stands for Distributed Realtime Black List. There was a MAPS RBL service
+in the Net, that perfectly worked for a long time. Unfortunately, MAPS LLC
+stops their public services by July 31, 2001, which in fact means the most
+effective anti-spam engine in the Net is dead. 
+
+DRBL differs from MAPS RBL in it's distributed nature. Instead of a
+proprietary database controlled by certain people, DRBL offers every
+network to establish its own database and share it with colleagues.
+DRBL method of operation is similar to "old" RBL, but the main difference is
+(1) using many "local" databases instead of one centralized and
+(2) sharing information among them, so many other networks can make decisions
+whether some server is a junk generator and has to be banned, and ever do that
+automatically by getting and analyzing such information from different sources.
+
+WWW: http://www.drbl.ofisp.org/eng/
