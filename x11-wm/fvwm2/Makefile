@@ -52,13 +52,10 @@ USE_GNOME=	imlib
 PKGNAMESUFFIX=	-imlib
 CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
 			--enable-gtktest --enable-imlibtest
-PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
-PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
 PLIST_SUB+=	GTK=""
 .else
 CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
 			--disable-gtktest --disable-imlibtest
-PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
 PLIST_SUB+=	GTK="@comment not installed: "
 .endif
 
