@@ -11505,6 +11505,7 @@ zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps
 zh-gbfs		ports/chinese/gbfs
 zh-gbscript	ports/chinese/gbscript
+zh-gcin		ports/chinese/gcin
 zh-gnumeric	ports/chinese/gnumeric
 zh-gugod-clean	ports/chinese/gugod-clean
 zh-hanzim	ports/chinese/hanzim
