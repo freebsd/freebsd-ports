@@ -1,0 +1,59 @@
+--- icqlib/Makefile.in.orig	Sat Jan  6 00:53:19 2001
++++ icqlib/Makefile.in	Sat Jan  6 00:59:12 2001
+@@ -68,11 +68,11 @@
+ PACKAGE = @PACKAGE@
+ RANLIB = @RANLIB@
+ 
+-lib_LTLIBRARIES = libicq.la
++lib_LTLIBRARIES = libicq0.la
+ 
+-libicq_la_SOURCES = icqlib.c
++libicq0_la_SOURCES = icqlib.c
+ 
+-libicq_la_LDFLAGS = -version-info 1:3:1
++libicq0_la_LDFLAGS = -version-info 1:3:1
+ include_HEADERS = icq.h
+ noinst_HEADERS = icqlib.h
+ 
+@@ -88,8 +88,8 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libicq_la_LIBADD = 
+-libicq_la_OBJECTS =  icqlib.lo
++libicq0_la_LIBADD = 
++libicq0_la_OBJECTS =  icqlib.lo
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+@@ -103,8 +103,8 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libicq_la_SOURCES)
+-OBJECTS = $(libicq_la_OBJECTS)
++SOURCES = $(libicq0_la_SOURCES)
++OBJECTS = $(libicq0_la_OBJECTS)
+ 
+ all: Makefile $(LTLIBRARIES) $(HEADERS)
+ 
+@@ -181,8 +181,8 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libicq.la: $(libicq_la_OBJECTS) $(libicq_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libicq_la_LDFLAGS) $(libicq_la_OBJECTS) $(libicq_la_LIBADD) $(LIBS)
++libicq0.la: $(libicq0_la_OBJECTS) $(libicq0_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libicq0_la_LDFLAGS) $(libicq0_la_OBJECTS) $(libicq0_la_LIBADD) $(LIBS)
+ 
+ install-includeHEADERS: $(include_HEADERS)
+ 	@$(NORMAL_INSTALL)
+@@ -245,7 +245,7 @@
+ install-exec: install-libLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+ 
+-install-data: install-includeHEADERS
++install-data: 
+ 	@$(NORMAL_INSTALL)
+ 
+ install: install-exec install-data all
