@@ -1,5 +1,5 @@
 # New ports collection makefile for:	emacs20-dl-canna
-# Version required:	1.2
+# Version required:	1.4
 # Date created:		10 October 1998
 # Whom:			shige
 #
@@ -9,7 +9,7 @@
 DISTNAME=	emacs-canna-${DLCANNA_VER}
 PKGNAME=	ja-emacs20-dl-canna-${DLCANNA_VER}
 CATEGORIES=	japanese editors
-MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/ \
+MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/emacs-canna/ \
 		${MASTER_SITE_PORTS_JP} 
 
 MAINTAINER=	shige@FreeBSD.org
@@ -37,7 +37,7 @@ EMACSDL_SRCDIR=	${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}/src
 APEL_DEPENDS=	${PREFIX}/share/emacs/${EMACS_VER}/site-lisp/emu/emu.el
 LISPDIR=	share/emacs/site-lisp
 DOCDIR=		share/doc/emacs20-dl-canna
-DLCANNA_VER=	1.2
+DLCANNA_VER=	1.4
 # hack to allow parallel build to work
 .if defined(PARALLEL_PACKAGE_BUILD)
 BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
