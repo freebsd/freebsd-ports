@@ -1,27 +1,27 @@
 # New ports collection makefile for:	tix
-# Version required:	4.1.0.006
+# Version required:	4.1.0.007
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Tix4.1.0.006
-PKGNAME=	tix-4.1.0.006
-CATEGORIES=	x11-toolkits tk80
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/devel/ \
-		ftp://ftp.gwdg.de/pub/x11/tcl/ftp.xpi.com/ \
-		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/sorted/packages-7.6/devel/
+DISTNAME=	Tix4.1.0.007
+PKGNAME=	tix-4.1.0.007
+CATEGORIES=	x11-toolkits tk82
+MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/%SUBDIR%/ \
+		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/%SUBDIR%/
+MASTER_SITE_SUBDIR= sorted/packages-8.0/x11/Tix/4.1.0.007
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-WRKSRC=		${WRKDIR}/Tix4.1.0/unix/tk8.0
+WRKSRC=		${WRKDIR}/Tix4.1.0.007/unix/tk8.0
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tcl="${PREFIX}/include/tcl8.0" \
-		--with-tk="${PREFIX}/include/tk8.0"
+		--with-tcl="${PREFIX}/include/tcl8.2" \
+		--with-tk="${PREFIX}/include/tk8.2"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1
@@ -39,13 +39,8 @@ TIXSAM_LIB=	libtixsam4180.so
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "elf"
 TIX_LIB_FILE=	${TIX_LIB}.1
 TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
-.else
-TIX_LIB_FILE=	${TIX_LIB}.1.2
-TIXSAM_LIB_FILE=${TIXSAM_LIB}.1.2
-.endif
 
 pre-configure:
 	@(cd ${WRKSRC}/.. && \
@@ -57,8 +52,6 @@ pre-configure:
 post-install:
 	@(cd ${WRKSRC}/.. && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	@${MKDIR} ${PREFIX}/man/man1
-	@${CP} ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
 	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.0 ${PREFIX}/bin/tixwish
 	${LN} -fs ${TIX_LIB_FILE} ${PREFIX}/lib/${TIX_LIB}
 	${LN} -fs ${TIXSAM_LIB_FILE} ${PREFIX}/lib/${TIXSAM_LIB}
