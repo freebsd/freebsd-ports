@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix/scripts/Attic/configure.postfix,v 1.60 2005-03-19 23:17:54 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix/scripts/Attic/configure.postfix,v 1.61 2005-04-05 22:03:14 pav Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -211,7 +211,7 @@ while [ "$1" ]; do
 			;;
 		VDA)
 			/bin/echo "PATCH_SITES+=	http://web.onda.com.br/nadal/postfix/VDA/"
-			/bin/echo "PATCHFILES+=		postfix-2.2.0-vda.patch.gz"
+			/bin/echo "PATCHFILES+=		postfix-2.2.2-vda.patch.gz"
 			/bin/echo "PATCH_DIST_STRIP=	-p1"
 			;;
 		Test)
