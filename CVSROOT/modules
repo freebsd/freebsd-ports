@@ -5341,6 +5341,7 @@ mbx2mbox	ports/mail/mbx2mbox
 mc		ports/misc/mc
 mc-light	ports/misc/mc-light
 mcal		ports/deskutils/mcal
+mcatalog	ports/deskutils/mcatalog
 mcl		ports/mbone/mcl
 mcron		ports/sysutils/mcron
 mcrypt		ports/security/mcrypt
