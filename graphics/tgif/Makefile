@@ -3,11 +3,11 @@
 # Date created:         30 Jan 1999
 # Whom:                 bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.9 1999/01/31 20:29:37 obrien Exp $
+# $Id: Makefile,v 1.10 1999/03/08 21:56:47 steve Exp $
 #
 
 DISTNAME=	tgif-4.0.18
-CATEGORIES=	graphics x11
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
 
