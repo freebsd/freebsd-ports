@@ -1,0 +1,11 @@
+--- ./install.sh.org	Fri Feb  4 23:26:20 2000
++++ ./install.sh	Sun Aug 13 00:00:45 2000
+@@ -1065,7 +1065,7 @@
+ 	$ECHO "\t$XMCDLIB/discog"
+ fi
+ 
+-if [ -n "$MANDIR" ]
++if [ -n "$MANDIR"  -a ! -d "$MANDIR" ]
+ then
+ 	make_dir $MANDIR $DIRPERM $OWNER $GROUP
+ fi
