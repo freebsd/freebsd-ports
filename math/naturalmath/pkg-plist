@@ -1,0 +1,8 @@
+bin/naturalmath
+%%PORTDOCS%%share/doc/naturalmath/install.html
+%%PORTDOCS%%share/doc/naturalmath/naturalmath.cgi
+%%PORTDOCS%%share/doc/naturalmath/tutor.dvi
+%%PORTDOCS%%share/doc/naturalmath/tutor.nat
+%%PORTDOCS%%share/doc/naturalmath/tutor.ps
+%%PORTDOCS%%share/doc/naturalmath/tutor.tex
+%%PORTDOCS%%@dirrm share/doc/naturalmath
