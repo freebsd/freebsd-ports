@@ -2636,6 +2636,7 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/actions/kde
 @dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/mimetypes
 @dirrm share/icons/hicolor/16x16/filesystems
 @dirrm share/icons/hicolor/16x16/devices
@@ -2643,8 +2644,10 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/icons/hicolor/16x16/actions
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/en/common
 @dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/config/ui
 @dirrm share/config/colors
 @dirrm share/config
@@ -2759,6 +2762,7 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/kdeprint/filters
 @dirrm share/apps/kdeprint
 @dirrm share/apps/kconf_update
+@dirrm share/apps/kab/pics
 @dirrm share/apps/kab
 @dirrm share/apps/LICENSES
 @dirrm share/apps
