@@ -1,17 +1,9 @@
---- configure.orig	Sun Jun 17 18:30:26 2001
-+++ configure	Thu Aug 16 04:34:42 2001
-@@ -1557,8 +1557,8 @@
- if test "`uname -s`" = "FreeBSD" ; then
-   echo "FreeBSD detected."
-   FREEBSD=1
--  LDFLAGS="-L/usr/local/lib $LDFLAGS"
--  CPPFLAGS="-I/usr/local/include $CPPFLAGS"
-+  LDFLAGS="-L${libdir} $LDFLAGS"
-+  CPPFLAGS="-I${includedir} $CPPFLAGS"
-   cat >> confdefs.h <<\EOF
- #define AUDIO_NONBLOCKING 1
- EOF
-@@ -2289,7 +2289,7 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Mar 16 21:00:46 2002
++++ configure	Sun Jul 21 17:31:27 2002
+@@ -2652,7 +2652,7 @@
  fi
  done
  

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.0p8
+PORTVERSION=	3.1.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://mud.stack.nl/pub/mp3blaster/ \
-		http://mp3blaster.linuxave.net/src/
+MASTER_SITES=	ftp://mud.stack.nl/pub/mp3blaster/
 
 MAINTAINER=	greid@FreeBSD.org
 
@@ -20,8 +19,24 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	"--with-cxxflags=${CXXFLAGS}"
+CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}" \
+		--without-sidplay
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbisfile.3:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+= --without-oggvorbis
+.endif
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
+
+.if !defined(WITHOUT_VORBIS)
+pre-everything:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can disable support for Ogg Vorbis by defining WITHOUT_VORBIS."
+	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.post.mk>
