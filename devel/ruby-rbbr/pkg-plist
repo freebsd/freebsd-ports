@@ -10,6 +10,8 @@ bin/rbbr
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/aboutdialog.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/browselist.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/browser.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/confmanager.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/constlist.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/docviewer.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/libselectiondialog.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/methodlist.rb
@@ -22,7 +24,7 @@ bin/rbbr
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/ui
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/doc
 @dirrm %%RUBY_SITELIBDIR%%/rbbr
-share/rbbr/icon.xpm
+share/rbbr/icon.png
 share/rbbr/rd/README
 @dirrm share/rbbr/rd
 @dirrm share/rbbr
