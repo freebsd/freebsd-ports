@@ -1,6 +1,35 @@
---- muttprint.orig	Sat Apr 26 19:18:18 2003
-+++ muttprint	Sat Apr 26 23:36:53 2003
-@@ -189,8 +189,8 @@
+
+$FreeBSD$
+
+--- muttprint.orig	Tue May 27 14:11:31 2003
++++ muttprint	Wed Aug  6 12:28:31 2003
+@@ -79,13 +79,13 @@
+ ######## 'private' Variablen für den Rest
+ %Config = (
+ 	PRINTER			=> 	'',
+-	PRINT_COMMAND	=>	'lpr -P$PRINTER',
++	PRINT_COMMAND	=>	'%%PRINT_COMMAND%%',
+ 	PENGUIN			=>	'on',
+ 	DUPLEX			=>	'off',
+ 	SPEED			=>	'30',
+ 	PAPERSAVE		=>	'off',
+ 	FONT			=>	'Latex',
+-	PAPER			=>	'A4',
++	PAPER			=>	'%%PAPERSIZE%%',
+ 	DEBUG			=>	'1',
+ 	REM_SIG			=>	'off',
+ 	REM_QUOTE		=>	'off',
+@@ -182,16 +182,16 @@
+ 	}
+ }
+ 
+-$Config{PAPER} = getPaperConfig ();
+-readConfig ("/etc/Muttprintrc", "$ENV{HOME}/.muttprintrc");
++#$Config{PAPER} = getPaperConfig ();
++readConfig ("%%PREFIX%%/etc/Muttprintrc", "$ENV{HOME}/.muttprintrc");
+ 
+ 
+ @print = readOpts ();
  
  if ($Config{'PENGUIN'} eq "on") {
  	my $sharedir = findCommonDir("share");
@@ -11,3 +40,12 @@
  			: "off";
  }
  
+@@ -1671,7 +1671,7 @@
+ Options:
+ 
+ PLEASE NOTICE: These options override the corresponding settings in 
+-~/.muttprintrc and /etc/Muttprintrc.
++~/.muttprintrc and %%PREFIX%%/etc/Muttprintrc.
+ 
+ -h, --help
+        This help.

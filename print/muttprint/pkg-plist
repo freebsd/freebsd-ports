@@ -1,48 +1,48 @@
 bin/muttprint
-%%PORTDOCS%%share/doc/muttprint/CHANGES
-%%PORTDOCS%%share/doc/muttprint/COPYING
-%%PORTDOCS%%share/doc/muttprint/INSTALL
-%%PORTDOCS%%share/doc/muttprint/README
-%%PORTDOCS%%share/doc/muttprint/README.es
-%%PORTDOCS%%share/doc/muttprint/README.Gnus
-%%PORTDOCS%%share/doc/muttprint/README.Latex
-%%PORTDOCS%%share/doc/muttprint/README.translations
-%%PORTDOCS%%share/doc/muttprint/manual-de/muttprint.html
-%%PORTDOCS%%share/doc/muttprint/manual-de/x15.html
-%%PORTDOCS%%share/doc/muttprint/manual-de/x23.html
-%%PORTDOCS%%share/doc/muttprint/manual-de/x196.html
-%%PORTDOCS%%share/doc/muttprint/manual-de/x703.html
-%%PORTDOCS%%share/doc/muttprint/manual-de.pdf
-%%PORTDOCS%%share/doc/muttprint/manual-en/muttprint.html
-%%PORTDOCS%%share/doc/muttprint/manual-en/x15.html
-%%PORTDOCS%%share/doc/muttprint/manual-en/x23.html
-%%PORTDOCS%%share/doc/muttprint/manual-en/x195.html
-%%PORTDOCS%%share/doc/muttprint/manual-en/x706.html
-%%PORTDOCS%%share/doc/muttprint/manual-en.pdf
-%%PORTDOCS%%share/doc/muttprint/manual-es/muttprint.html
-%%PORTDOCS%%share/doc/muttprint/manual-es/x15.html
-%%PORTDOCS%%share/doc/muttprint/manual-es/x23.html
-%%PORTDOCS%%share/doc/muttprint/manual-es/x191.html
-%%PORTDOCS%%share/doc/muttprint/manual-es/x650.html
-%%PORTDOCS%%share/doc/muttprint/manual-es.pdf
-%%PORTDOCS%%share/doc/muttprint/manual-it/muttprint.html
-%%PORTDOCS%%share/doc/muttprint/manual-it/x15.html
-%%PORTDOCS%%share/doc/muttprint/manual-it/x23.html
-%%PORTDOCS%%share/doc/muttprint/manual-it/x194.html
-%%PORTDOCS%%share/doc/muttprint/manual-it/x683.html
-%%PORTDOCS%%share/doc/muttprint/manual-it.pdf
-%%PORTDOCS%%share/doc/muttprint/manual-sl/muttprint.html
-%%PORTDOCS%%share/doc/muttprint/manual-sl/x15.html
-%%PORTDOCS%%share/doc/muttprint/manual-sl/x195.html
-%%PORTDOCS%%share/doc/muttprint/manual-sl/x23.html
-%%PORTDOCS%%share/doc/muttprint/manual-sl/x700.html
-%%PORTDOCS%%share/doc/muttprint/manual-sl.pdf
-%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-de
-%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-en
-%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-es
-%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-fr
-%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-it
-%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-si
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.es
+%%PORTDOCS%%%%DOCSDIR%%/README.Gnus
+%%PORTDOCS%%%%DOCSDIR%%/README.Latex
+%%PORTDOCS%%%%DOCSDIR%%/README.translations
+%%PORTDOCS%%%%DOCSDIR%%/manual-de/muttprint.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-de/x15.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-de/x23.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-de/x196.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-de/x703.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-de.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual-en/muttprint.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-en/x15.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-en/x23.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-en/x195.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-en/x706.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-en.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual-es/muttprint.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-es/x15.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-es/x23.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-es/x191.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-es/x650.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-es.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual-it/muttprint.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-it/x15.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-it/x23.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-it/x194.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-it/x683.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-it.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual-sl/muttprint.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-sl/x15.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-sl/x195.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-sl/x23.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-sl/x700.html
+%%PORTDOCS%%%%DOCSDIR%%/manual-sl.pdf
+%%PORTDOCS%%%%DOCSDIR%%/sample-muttprintrc-de
+%%PORTDOCS%%%%DOCSDIR%%/sample-muttprintrc-en
+%%PORTDOCS%%%%DOCSDIR%%/sample-muttprintrc-es
+%%PORTDOCS%%%%DOCSDIR%%/sample-muttprintrc-fr
+%%PORTDOCS%%%%DOCSDIR%%/sample-muttprintrc-it
+%%PORTDOCS%%%%DOCSDIR%%/sample-muttprintrc-si
 share/muttprint/BabyTuX.eps
 share/muttprint/BabyTuX_color.eps
 share/muttprint/Beastie.eps
@@ -64,9 +64,9 @@ share/muttprint/translations/translation-sl.pl
 share/muttprint/translations/translation-sv.pl
 @dirrm share/muttprint/translations
 @dirrm share/muttprint
-%%PORTDOCS%%@dirrm share/doc/muttprint/manual-de
-%%PORTDOCS%%@dirrm share/doc/muttprint/manual-en
-%%PORTDOCS%%@dirrm share/doc/muttprint/manual-es
-%%PORTDOCS%%@dirrm share/doc/muttprint/manual-it
-%%PORTDOCS%%@dirrm share/doc/muttprint/manual-sl
-%%PORTDOCS%%@dirrm share/doc/muttprint
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-es
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-it
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-sl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
