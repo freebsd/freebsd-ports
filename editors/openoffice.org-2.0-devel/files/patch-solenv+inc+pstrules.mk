@@ -1,5 +1,5 @@
---- ../solenv/inc/pstrules.mk.orig	Thu Mar 14 17:40:59 2002
-+++ ../solenv/inc/pstrules.mk	Thu Mar 14 17:41:44 2002
+--- ../solenv/inc/pstrules.mk.orig	Thu Aug 29 17:01:48 2002
++++ ../solenv/inc/pstrules.mk	Sat Oct 19 10:49:28 2002
 @@ -80,15 +80,15 @@
  .ENDIF
  .IF "$(GUI)"=="UNX"
@@ -38,7 +38,7 @@
  .ENDIF
  .ENDIF
  
-@@ -142,15 +142,15 @@
+@@ -142,11 +142,11 @@
  .ENDIF
  .IF "$(GUI)"=="UNX"
  	@$(RM) $@ $(@:s/.obj/.o/)
@@ -46,18 +46,13 @@
 +	$(CXX) $(CFLAGS) $(CFLAGSCXX) $(CFLAGSCXXOBJ) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ) $(OBJ)$/$(SECOND_BUILD)_$*.o $(CFLAGSINCXX)$(PWD)$/$*.cxx
  	+if ( -e $(@:s/.obj/.o/)) $(TOUCH) $@
  .ELSE
- .IF "$(COM)"=="BLC"
- 	@+if exist $@ $(RM) /q $@ >& nul
--	$(CC) @$(mktmp $(CFLAGS) $(CFLAGSCXX) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx)
-+	$(CXX) @$(mktmp $(CFLAGS) $(CFLAGSCXX) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx)
- .ELSE
- 	@+if exist $@ $(RM) /q $@ >& nul
+ 	@+-$(RM) $@ >& $(NULLDEV) 
 -	$(CC) $(CFLAGS) $(CFLAGSCXX) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx
 +	$(CXX) $(CFLAGS) $(CFLAGSCXX) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx
  .ENDIF
- .ENDIF
  
-@@ -159,23 +159,23 @@
+ $(OBJ)$/$(SECOND_BUILD)_%.obj : %.c
+@@ -154,23 +154,23 @@
  	@echo Making: $@
  .IF "$(GUI)"=="UNX"
  .IF "$(TEST)"!=""
@@ -77,7 +72,7 @@
  .ELSE
 -	@+$(TYPE) $(mktmp $(CC) $(CFLAGS:s/stl//) $(CFLAGSCC) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)\$(SECOND_BUILD)_$*.obj $*.c )
 +	@+$(TYPE) $(mktmp $(CXX) $(CFLAGS:s/stl//) $(CFLAGSCC) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)\$(SECOND_BUILD)_$*.obj $*.c )
- 	@+echo.
+ 	@+$(ECHONL)
  .IF "$(COM)"=="GCC"
 -	$(CC) $(CFLAGS:s/stl//) $(CFLAGSCC) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)\$(SECOND_BUILD)_$*.obj $*.c
 +	$(CXX) $(CFLAGS:s/stl//) $(CFLAGSCC) $(CFLAGSOBJ) $(PCHOBJFLAGSU) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSOBJ) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(OBJ)\$(SECOND_BUILD)_$*.obj $*.c
@@ -87,7 +82,7 @@
  .ENDIF
  	$(SEMADEBUG)
  .ENDIF
-@@ -195,15 +195,15 @@
+@@ -190,11 +190,11 @@
  .ENDIF
  .IF "$(GUI)"=="UNX"
  	@$(RM) $@ $(@:s/.obj/.o/)
@@ -95,18 +90,13 @@
 +	$(CXX) $(CFLAGS) $(CFLAGSCXX) $(CFLAGSCXXSLO) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(PCHSLOFLAGSU) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ) $(SLO)$/$(SECOND_BUILD)_$*.o $(CFLAGSINCXX)$(PWD)$/$*.cxx
  	+if ( -e $(@:s/.obj/.o/)) $(TOUCH) $@
  .ELSE
- .IF "$(COM)"=="BLC"
- 	@+if exist $@ $(RM) /q $@ >& nul
--	$(CC) @$(mktmp $(CFLAGS) $(CFLAGSCXX) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(PCHSLOFLAGSU) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(SLO)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx)
-+	$(CXX) @$(mktmp $(CFLAGS) $(CFLAGSCXX) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(PCHSLOFLAGSU) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(SLO)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx)
- .ELSE
- 	@+if exist $@ $(RM) /q $@ >& nul
+ 	@+-$(RM) $@ >& $(NULLDEV) 
 -	$(CC) $(CFLAGS) $(CFLAGSCXX) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(PCHSLOFLAGSU) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(SLO)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx
 +	$(CXX) $(CFLAGS) $(CFLAGSCXX) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(PCHSLOFLAGSU) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(SLO)$/$(SECOND_BUILD)_$*.obj $(CFLAGSINCXX)$(PWD)$/$*.cxx
  .ENDIF
- .ENDIF
  
-@@ -212,19 +212,19 @@
+ $(SLO)$/$(SECOND_BUILD)_%.obj :  %.c
+@@ -202,19 +202,19 @@
  	@echo Making: $@
  .IF "$(GUI)"=="UNX"
  	@$(RM) $@ $(@:s/.obj/.o/)
@@ -119,7 +109,7 @@
 -	$(cc) $(CFLAGS:s/stl//) $(CFLAGSCC) $(PCHSLOFLAGSU) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ) $(shell $(UNIX2MACPATH) $@ $*.c)
 +	$(CC) $(CFLAGS:s/stl//) $(CFLAGSCC) $(PCHSLOFLAGSU) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ) $(shell $(UNIX2MACPATH) $@ $*.c)
  .ELSE
- 	@+if exist $@ $(RM) /q $@ >& nul
+ 	@+-$(RM) $@ >& $(NULLDEV) 
  .IF "$(COM)"=="GCC"
 -	   $(CC) $(CFLAGS:s/stl//) $(CFLAGSCC) $(PCHSLOFLAGSU) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(SLO)$/$(SECOND_BUILD)_$*.obj $*.c 
 +	   $(CXX) $(CFLAGS:s/stl//) $(CFLAGSCC) $(PCHSLOFLAGSU) $(CFLAGSSLO) $(CDEFS) $($(SECOND_BUILD)CDEFS) $(CDEFSSLO) $(CDEFSMT) $(CFLAGSAPPEND) $(CFLAGSOUTOBJ)$(SLO)$/$(SECOND_BUILD)_$*.obj $*.c 
@@ -130,7 +120,7 @@
  .ENDIF
  .ENDIF
  .ENDIF
-@@ -246,7 +246,7 @@
+@@ -236,7 +236,7 @@
  	@echo Making: $@
  	@+-$(MKDIR) $(MISC)$/{$(subst,$(@:d:d:d), $(@:d:d))} >& $(NULLDEV)
  .IF "$(GUI)"=="OS2"
