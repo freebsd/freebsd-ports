@@ -27,8 +27,6 @@ GNU_CONFIGURE=	yes
 LDCONFIG_DIRS=	${LOCALLIBDIR}
 INSTALLS_SHLIB=	yes
 
-BROKEN=		gtksignal.h is missing
-
 MAKE_ARGS+=	GNUSTEP_SYSTEM_ROOT=${PREFIX}/System
 CONFIGURE_ARGS+=	--with-gnustep
 WRKSRC=		${WRKDIR}/${DISTNAME}/GToolKit
@@ -41,4 +39,10 @@ post-patch:
 		> ${CONFIGURE_WRKSRC}/configure
 	${CHMOD} +x ${CONFIGURE_WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		gtksignal.h is missing from gtk
+.endif
+
+.include <bsd.port.post.mk>
