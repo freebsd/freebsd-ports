@@ -1,14 +1,17 @@
 include/AL/al.h
 include/AL/alc.h
-include/AL/alu.h
-include/AL/alut.h
-include/AL/altypes.h
 include/AL/alctypes.h
-include/AL/alutypes.h
-include/AL/aluttypes.h
 include/AL/alkludge.h
 include/AL/alkludgetypes.h
+include/AL/altypes.h
+include/AL/alu.h
+include/AL/alut.h
+include/AL/aluttypes.h
+include/AL/alutypes.h
+@unexec install-info --delete %D/info/openal.info %D/info/dir
+info/openal.info
+@exec install-info %D/info/openal.info %D/info/dir
+lib/libopenal.a
 lib/libopenal.so
 lib/libopenal.so.0
-lib/libopenal.so.0.0.4
 @dirrm include/AL

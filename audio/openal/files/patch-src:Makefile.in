@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	Sat Sep  9 07:15:48 2000
++++ src/Makefile.in	Fri Oct 13 05:51:52 2000
+@@ -81,7 +81,6 @@
+ 	rm -f $(EXT_OBJS)
+ 	rm -f $(EXT_DLL_OBJS)
+ 	rm -f libopenal.a
+-	rm -f libopenal.$(SO_EXT).$(VERSION)
+ 	rm -f libopenal.$(SO_EXT).$(MAJOR_VERSION)
+ 	rm -f libopenal.$(SO_EXT)
+ 	rm -f core
+@@ -103,8 +102,8 @@
+ libopenal.so: $(AL_OBJS) $(ALC_OBJS) $(AC_OBJS) $(ALUT_OBJS) extensions
+ 	$(CC) -shared \
+ 		-Wl,-soname \
+-		-Wl,libopenal-$(MAJOR_VERSION).$(MINOR_VERSION).so \
+-		-o libopenal.so.$(VERSION) \
++		-Wl,libopenal.so.$(MAJOR_VERSION) \
++		-o libopenal.so.$(MAJOR_VERSION) \
+ 		$(AL_OBJS)     \
+ 		$(ALC_OBJS)    \
+ 		$(AC_OBJS)     \
