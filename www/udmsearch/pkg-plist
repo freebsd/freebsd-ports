@@ -1,0 +1,30 @@
+bin/udmsearch/search.cgi
+bin/udmsearch/search.phtml
+bin/udmsearch/search.php3
+bin/udmsearch/morph.php3
+bin/udmsearch/udmsearch.gif
+etc/udmsearch/indexer.conf-dist
+etc/udmsearch/search.htm-dist
+etc/udmsearch/create/msql/create.txt
+etc/udmsearch/create/mysql/alter19-20.txt
+etc/udmsearch/create/mysql/alter20-21.txt
+etc/udmsearch/create/mysql/create.txt
+etc/udmsearch/create/pgsql/create.txt
+etc/udmsearch/create/stopwords/stop.de.txt
+etc/udmsearch/create/stopwords/stop.en.txt
+etc/udmsearch/create/stopwords/stop.es.txt
+etc/udmsearch/create/stopwords/stop.fr.txt
+etc/udmsearch/create/stopwords/stop.nl.txt
+etc/udmsearch/create/stopwords/stop.no.txt
+etc/udmsearch/create/stopwords/stop.pt.txt
+etc/udmsearch/create/stopwords/stop.ru.txt
+etc/udmsearch/create/stopwords/stop.ua.txt
+doc/UdmSearch.sgml
+sbin/indexer
+@dirrm bin/udmsearch
+@dirrm etc/udmsearch/create/msql
+@dirrm etc/udmsearch/create/mysql
+@dirrm etc/udmsearch/create/pgsql
+@dirrm etc/udmsearch/create/stopwords
+@dirrm etc/udmsearch/create
+@dirrm etc/udmsearch
