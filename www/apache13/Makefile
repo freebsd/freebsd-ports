@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.27
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -95,8 +95,8 @@ CONFIGURE_ARGS+=	\
 		${SUEXEC_CONF} \
 		${EXPAT_CONF}
 
-CFLAGS+=-DDOCUMENT_LOCATION='\"${DOCUMENT_ROOT}\"' \
-	-DDEFAULT_PATH='\"${DEFAULT_PATH}\"'
+CFLAGS+=-DDOCUMENT_LOCATION=\\\\\"${DOCUMENT_ROOT}\\\\\" \
+	-DDEFAULT_PATH=\\\\\"${DEFAULT_PATH}\\\\\"
 
 #
 # Set APACHE_HARD_SERVER_LIMIT env. variable to desired value
