@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.24
 CATEGORIES=	mail www
-MASTER_SITES=	http://www.inter7.com/devel/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"CGI program for administering Qmail with vchkpw/vpopmail"
+COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
 BUILD_DEPENDS= \
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
@@ -34,26 +35,28 @@ USE_GMAKE=	YES
 # CGIBINSUBDIR  - subdirectory to place cgi scripts in
 # CGIBINURL     - location of your cgi directory in a URL
 # WEBDATADIR    - location of your html files
-# WEBDATASUBDIR - subdirectory to place html files in (not working yet)
+# WEBDATASUBDIR - subdirectory to place html files in
+# WEBDATAURL    - location of your html files in a URL
 #
 # WITHOUT_IPAUTH	- disable the IP address check after login
 # WITHOUT_USER_INDEX	- disable the user index display, which might
 #			  confuse earlier versions of Internet Explorer
+# WITH_MODIFY_QUOTA	- enable domain admin to modify user quotas
+# WITH_DOMAIN_AUTOFILL	- autofill the domain on login page based on the
+#			  hostname
 #
 
 CGIBINDIR?=	www/cgi-bin.default
 CGIBINSUBDIR?=	qmailadmin
-CGIBINURL?=	cgi-bin
+CGIBINURL?=	/cgi-bin
 WEBDATADIR?=	www/data.default
-WEBDATASUBDIR?=
-
-# I'm working on this..
-.if ${WEBDATASUBDIR} != ""
-BROKEN=	do not set WEBDATASUBDIR: qmailadmin is a bit buggy in that respect
-.endif
+WEBDATASUBDIR?= qmailadmin
+WEBDATAURL?=
 
 PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
 		WEBDATADIR="${WEBDATADIR}" WEBDATASUBDIR="${WEBDATASUBDIR}"
+
+.include <bsd.port.pre.mk>
 
 #
 # QMAIL_DIR     - location of qmail directory
@@ -69,11 +72,14 @@ QMAIL_DIR?=	/var/qmail
 
 CONFIGURE_ARGS+=	\
 	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
-	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
-	--with-htmllibdir=${PREFIX}/share/qmailadmin \
-	--enable-cgipath=/${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
-	--enable-ezmlmidx=y
+	--enable-imageurl=${WEBDATAURL}/${WEBDATASUBDIR}/images \
+	--with-htmllibdir=${DATADIR} \
+	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
+	--enable-cgipath=${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
+	--enable-vpopmaildir=${LOCALBASE}/vpopmail \
+	--enable-autoresponder-bin=${LOCALBASE}/bin \
+	--enable-ezmlmdir=${LOCALBASE}/bin
 
 .if defined(WITHOUT_IPAUTH)
 CONFIGURE_ARGS+=	--enable-ipauth=n
@@ -83,7 +89,12 @@ CONFIGURE_ARGS+=	--enable-ipauth=n
 CONFIGURE_ARGS+=	--enable-user-index=n
 .endif
 
-pre-install:
-	@${MKDIR} ${PREFIX}/share/qmailadmin/html
+.if defined(WITH_MODIFY_QUOTA)
+CONFIGURE_ARGS+=	--enable-modify-quota=y
+.endif
 
-.include <bsd.port.mk>
+.if defined(WITH_DOMAIN_AUTOFILL)
+CONFIGURE_ARGS+=	--enable-domain-autofill=y
+.endif
+
+.include <bsd.port.post.mk>
