@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	binkd
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
-DISTNAME=	binkd093
+DISTNAME=	binkd094
 
 MAINTAINER=	dsh@vlink.ru
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 
@@ -22,7 +22,6 @@ MAN8=		binkd.8
 .if defined(WITH_AMIGA4D)
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	binkdaso.diff
-PATCH_DIST_STRIP=	-l
 DEFINES+=	-DAMIGADOS_4D_OUTBOUND
 MAKE_ENV+=	DEFINES="${DEFINES}"
 .endif
