@@ -7,6 +7,7 @@
 
 PORTNAME=	php-gtk
 PORTVERSION=	0.5.2
+PORTREVISION= 	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -20,8 +21,8 @@ BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		automake14:${PORTSDIR}/devel/automake14 \
 		autoconf:${PORTSDIR}/devel/autoconf \
 		autoconf213:${PORTSDIR}/devel/autoconf213 \
-		phpize:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	php:${PORTSDIR}/www/mod_php4
+		phpize:${PORTSDIR}/lang/php4-cli
+RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-cli
 
 # Don't call autoconf directly, ./buildconf does this
 GNU_CONFIGURE=	yes
@@ -36,6 +37,7 @@ ENVSCE=		-DHAVE_PHP_GTK=1 -DCOMPILE_DL_PHP_GTK=1	\
 		-DHAVE_SPANED=1		\
 		-DHAVE_SQPANE=1		\
 		-DHAVE_COMBOBUTTON=1
+
 .if !defined(WITHOUT_LIBGLADE)
 USE_GNOME+=	libglade
 ENVSCE+=	-DHAVE_LIBGLADE
@@ -46,11 +48,17 @@ CONFIGURE_ARGS+=	--disable-libglade
 USE_GNOME+=	gdkpixbuf
 CONFIGURE_ARGS+=	--enable-gdkpixbuf=shared
 ENVSCE+=	-DHAVE_GDKPIXBUF=1 -DPHP_GTK_COMPILE_DL_GDKPIXBUF=1
+PLIST_SUB+=	GDKPIXBUF=""
+.else
+PLIST_SUB+=	GDKPIXBUF="@comment "
 .endif
 .if !defined(WITHOUT_GTKHTML)
 USE_GNOME+=	gtkhtml
 CONFIGURE_ARGS+=	--enable-gtkhtml=shared
 ENVSCE+=	-DHAVE_HTML=1 -DPHP_GTK_COMPILE_DL_GTKHTML=1 -DGTKHTML_HAVE_GCONF=1 -I${X11BASE}/include/gal-1.0
+PLIST_SUB+=     GTKHTML=""
+.else
+PLIST_SUB+=	GTKHTML="@comment "
 .endif
 CONFIGURE_ENV=  CPPFLAGS="${ENVSCE}"
 
@@ -75,18 +83,12 @@ pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 
 pre-configure:
+	@php ${SCRIPTDIR}/memlim.php
 	@${ECHO_MSG} "===>  Building configuration files for ${PKGNAME}"
 	@(cd ${WRKSRC} && ./buildconf)
 .for FILE in ${PIC2FIX}
 	@${REINPLACE_CMD} -e "s|-prefer-pic|${CFLAGS}|g" ${WRKSRC}/${FILE}
 .endfor
-
-do-install:
-	@$(MKDIR) -p ${PREFIX}/lib/php/extensions/
-	@${INSTALL_PROGRAM} ${WRKSRC}/modules/php_gtk.so ${PREFIX}/lib/php/extensions/php_gtk.so
-# TODO: php_gtk_gdkpixbuf.so and php_gtk_gtkhtml.so are not installed
-	@${MKDIR} ${PREFIX}/etc/php.gtk
-	@${INSTALL_DATA} ${FILESDIR}/php.ini-dist ${PREFIX}/etc/php.gtk
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -96,6 +98,8 @@ post-install:
 .endfor
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
+	@${MKDIR} ${PREFIX}/etc/php.gtk
+	@${INSTALL_DATA} ${FILESDIR}/php.ini-dist ${PREFIX}/etc/php.gtk
 	@${ECHO} ""
 	@${CAT} ${MASTERDIR}/pkg-message
 	@${ECHO} ""
