@@ -1,4 +1,9 @@
 bin/lv
 bin/lgrep
 lib/lv/lv.hlp
+%%PORTDOCS%%%%DOCSDIR%%/hello.sample
+%%PORTDOCS%%%%DOCSDIR%%/hello.sample.gif
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/relnote.html
 @dirrm lib/lv
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
