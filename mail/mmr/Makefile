@@ -14,9 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	# empty
 
-post-extract:
-	@${RM} -f ${WRKSRC}/*.o
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmr ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/examples/mmr
