@@ -28,6 +28,7 @@ include/ming/blocks/input.h
 include/ming/blocks/libswf.h
 include/ming/blocks/matrix.h
 include/ming/blocks/method.h
+include/ming/blocks/mpeg.h
 include/ming/blocks/output.h
 include/ming/blocks/outputblock.h
 include/ming/blocks/placeobject.h
@@ -35,6 +36,7 @@ include/ming/blocks/rect.h
 include/ming/blocks/sound.h
 include/ming/blocks/sprite.h
 include/ming/blocks/swf.h
+include/ming/blocks/utf8.h
 include/ming/mingpp.h
 @dirrm include/ming/blocks
 @dirrm include/ming
