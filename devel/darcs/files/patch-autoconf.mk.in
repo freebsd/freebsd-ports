@@ -1,0 +1,16 @@
+--- autoconf.mk.in.orig	Thu Aug  5 16:59:14 2004
++++ autoconf.mk.in	Thu Aug  5 17:00:04 2004
+@@ -49,11 +49,11 @@
+ 
+ % : %.lhs
+ 	rm -f Main.hi Main.o
+-	$(GHC) $(GHCFLAGS) $(LDFLAGS) $(OPTLCURLFLAGS) $(ZFLAGS) -o $@ $^
++	$(GHC) $(GHCFLAGS) $(patsubst -pthread,-optl-pthread,$(LDFLAGS)) $(OPTLCURLFLAGS) $(ZFLAGS) -o $@ $^
+ 
+ % : %.hs
+ 	rm -f Main.hi Main.o
+-	$(GHC) $(GHCFLAGS) $(LDFLAGS) $(OPTLCURLFLAGS) $(ZFLAGS) -o $@ $^
++	$(GHC) $(GHCFLAGS) $(patsubst -pthread,-optl-pthread,$(LDFLAGS)) $(OPTLCURLFLAGS) $(ZFLAGS) -o $@ $^
+ 
+ %.hi : %.o
+ 	@:

@@ -1,0 +1,11 @@
+--- GNUmakefile.orig	Thu Aug  5 17:01:57 2004
++++ GNUmakefile	Thu Aug  5 17:02:16 2004
+@@ -144,7 +144,7 @@
+ darcs:		$(DARCS_OBJS) darcs.lhs $(C_OBJS) rts.o
+ 	@echo Linking $@ ...
+ 	@rm -f Main.o Main.hi
+-	@$(GHC) $(GHCFLAGS) $(LDFLAGS) -o $@ $(OPTLCURLFLAGS) $(ZFLAGS) $^
++	@$(GHC) $(GHCFLAGS) $(patsubst -pthread,-optl-pthread,$(LDFLAGS)) -o $@ $(OPTLCURLFLAGS) $(ZFLAGS) $^
+ 
+ External.o:		GHCFLAGS += -fffi
+ Lock.o:			GHCFLAGS += -fffi
