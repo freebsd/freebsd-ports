@@ -1,5 +1,6 @@
---- erl_error.c.orig	Thu Feb  7 21:29:56 2002
-+++ erl_error.c	Thu Feb  7 21:32:55 2002
+--- lib/erl_interface/src/erl_error.c.orig    Thu Feb  7 21:29:56 2002
++++ lib/erl_interface/src/erl_error.c Thu Feb  7 21:32:55 2002
+
 @@ -177,6 +177,7 @@
  }
  #endif /* !HAVE_STRERROR */
