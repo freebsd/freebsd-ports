@@ -7,7 +7,7 @@
 
 PORTNAME=	guile-gnome
 PORTVERSION=	0.20
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-guile/0.20
@@ -17,6 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
+USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix bonobo gtkhtml libglade
