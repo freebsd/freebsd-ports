@@ -22,7 +22,7 @@ MAN3=			Net::vFile.3 Net::vCard.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-#IGNORE="Need at least perl 5.8 to build"
+IGNORE="Need at least perl 5.8 to build"
 .endif
 
 .include <bsd.port.post.mk>
