@@ -1,15 +1,16 @@
---- src/s_freebsd.c.orig	Fri May 24 23:12:24 2002
-+++ src/s_freebsd.c	Fri May 24 23:12:23 2002
-@@ -32,7 +32,7 @@
+--- src/s_freebsd.c.orig	Sun Oct 20 02:49:11 2002
++++ src/s_freebsd.c	Sun Oct 20 02:53:24 2002
+@@ -32,7 +32,8 @@
   * 1311:forum::für::umläute:2001
   */
  
 -#include <linux/soundcard.h>
 +#include <sys/soundcard.h>
++#include <sys/mman.h>
  
  #if (defined(ALSA01) || defined(ALSA99))
  #define ALSA
-@@ -865,7 +865,8 @@
+@@ -865,7 +866,8 @@
      }
      else
      {
@@ -19,7 +20,7 @@
  	dev->d_bytespersamp = 2;
      }
      param = wantformat;
-@@ -2747,7 +2748,7 @@
+@@ -2747,7 +2749,7 @@
  
    /* use ctrlpanel to change, experiment, channels 1 */
  
