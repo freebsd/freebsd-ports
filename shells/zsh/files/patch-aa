@@ -1,0 +1,19 @@
+*** Src/Makefile.in.orig	Tue Jul  9 11:00:39 1996
+--- Src/Makefile.in	Tue Jul  9 11:00:46 1996
+***************
+*** 138,144 ****
+  # install binary, creating install directory if necessary
+  install.bin: zsh
+  	$(top_srcdir)/mkinstalldirs $(bindir)
+! 	-if [ -f $(bindir)/zsh ]; then mv $(bindir)/zsh $(bindir)/zsh.old; fi
+  	$(INSTALL_PROGRAM) zsh $(bindir)/zsh
+  	-if [ -f $(bindir)/zsh-$(VERSION) ]; then rm -f $(bindir)/zsh-$(VERSION); fi
+  	ln $(bindir)/zsh $(bindir)/zsh-$(VERSION)
+--- 138,144 ----
+  # install binary, creating install directory if necessary
+  install.bin: zsh
+  	$(top_srcdir)/mkinstalldirs $(bindir)
+! 	-if [ -f $(bindir)/zsh ]; then mv -f $(bindir)/zsh $(bindir)/zsh.old; fi
+  	$(INSTALL_PROGRAM) zsh $(bindir)/zsh
+  	-if [ -f $(bindir)/zsh-$(VERSION) ]; then rm -f $(bindir)/zsh-$(VERSION); fi
+  	ln $(bindir)/zsh $(bindir)/zsh-$(VERSION)
