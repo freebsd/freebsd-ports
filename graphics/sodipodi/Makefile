@@ -16,6 +16,7 @@ LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
 		glade.2:${PORTSDIR}/devel/libglade \
 		gnomeprint.5:${PORTSDIR}/print/gnomeprint \
 		gdk_pixbuf.1:${PORTSDIR}/graphics/gdk-pixbuf
+BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
 
 WRKSRC=		${WRKDIR}/sodipodi
 
