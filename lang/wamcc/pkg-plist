@@ -1,7 +1,7 @@
 bin/bmf_wamcc
 bin/hex2pl
 bin/pl2hex
-bin/w_gcc
+bin/w_%%CC%%
 bin/wamcc
 include/wamcc/archi.h
 include/wamcc/atom_pred.h
