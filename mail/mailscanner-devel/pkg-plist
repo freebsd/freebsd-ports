@@ -25,6 +25,8 @@ lib/MailScanner/MailScanner/Message.pm
 lib/MailScanner/MailScanner/MessageBatch.pm
 lib/MailScanner/MailScanner/PFDiskStore.pm
 lib/MailScanner/MailScanner/Postfix.pm
+lib/MailScanner/MailScanner/QMDiskStore.pm
+lib/MailScanner/MailScanner/Qmail.pm
 lib/MailScanner/MailScanner/Quarantine.pm
 lib/MailScanner/MailScanner/Queue.pm
 lib/MailScanner/MailScanner/RBLs.pm
@@ -75,6 +77,29 @@ libexec/MailScanner/sophos-wrapper.sample
 libexec/MailScanner/trend-autoupdate.sample
 libexec/MailScanner/trend-wrapper.sample
 libexec/MailScanner/update_virus_scanners
+%%DATADIR%%/reports/cat/deleted.filename.message.txt.sample
+%%DATADIR%%/reports/cat/deleted.virus.message.txt.sample
+%%DATADIR%%/reports/cat/disinfected.report.txt.sample
+%%DATADIR%%/reports/cat/inline.sig.html.sample
+%%DATADIR%%/reports/cat/inline.sig.txt.sample
+%%DATADIR%%/reports/cat/inline.spam.warning.txt.sample
+%%DATADIR%%/reports/cat/inline.warning.html.sample
+%%DATADIR%%/reports/cat/inline.warning.txt.sample
+%%DATADIR%%/reports/cat/languages.conf.sample
+%%DATADIR%%/reports/cat/recipient.mcp.report.txt.sample
+%%DATADIR%%/reports/cat/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/cat/sender.error.report.txt.sample
+%%DATADIR%%/reports/cat/sender.filename.report.txt.sample
+%%DATADIR%%/reports/cat/sender.spam.rbl.report.txt.sample
+%%DATADIR%%/reports/cat/sender.spam.report.txt.sample
+%%DATADIR%%/reports/cat/sender.spam.sa.report.txt.sample
+%%DATADIR%%/reports/cat/sender.virus.report.txt.sample
+%%DATADIR%%/reports/cat/stored.filename.message.txt.sample
+%%DATADIR%%/reports/cat/stored.virus.message.txt.sample
+%%DATADIR%%/reports/cat/deleted.content.message.txt.sample
+%%DATADIR%%/reports/cat/sender.content.report.txt.sample
+%%DATADIR%%/reports/cat/sender.mcp.report.txt.sample
+%%DATADIR%%/reports/cat/stored.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.virus.message.txt.sample
@@ -401,6 +426,7 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/sk/recipient.spam.report.txt.sample
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FreeBSD.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.OpenBSD
@@ -440,9 +466,11 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.60
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.61
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.61
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch2.txt
@@ -465,6 +493,7 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.8.html
 %%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.conf.5
 %%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.conf.5.html
+%%PORTDOCS%%%%DOCSDIR%%/qmail/qmail-queue.zip
 %%PORTDOCS%%%%DOCSDIR%%/mrtg.shtml
 %%PORTDOCS%%%%DOCSDIR%%/newinv4.shtml
 %%PORTDOCS%%%%DOCSDIR%%/nextversion.shtml
@@ -482,6 +511,7 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/support.html
 %%PORTDOCS%%%%DOCSDIR%%/transtec.logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/users.shtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/qmail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/install/tcp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/install/mcp
@@ -502,6 +532,7 @@ libexec/MailScanner/update_virus_scanners
 @dirrm %%DATADIR%%/reports/de
 @dirrm %%DATADIR%%/reports/cz
 @dirrm %%DATADIR%%/reports/cy+en
+@dirrm %%DATADIR%%/reports/cat
 @dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%
 @dirrm libexec/MailScanner
