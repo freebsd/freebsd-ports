@@ -513,6 +513,7 @@ share/apache2/build/special.mk
 %%ICONS%%www/icons-dist/world2.gif
 %%ICONS%%www/icons-dist/world2.png
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE
 %%PORTDOCS%%%%DOCSDIR%%/bind.html
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.en
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.ja.jis

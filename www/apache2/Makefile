@@ -184,6 +184,7 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
+	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
