@@ -1,10 +1,8 @@
-cocoon/tools/jetty/conf/admin.xml
-cocoon/tools/jetty/conf/main.xml
-cocoon/tools/jetty/conf/webdefaults.xml
-cocoon/tools/jetty/lib/jetty-4.2.19.jar
-cocoon/tools/jetty/lib/servlet-2.3.jar
-cocoon/tools/loader/Loader$RepositoryClassLoader.class
-cocoon/tools/loader/Loader.class
+cocoon/CREDITS.txt
+cocoon/INSTALL.txt
+cocoon/LICENSE.txt
+cocoon/NOTICE.txt
+cocoon/README.txt
 cocoon/legal/altrmi-client-impl-0.9.2.jar.license.txt
 cocoon/legal/altrmi-client-interfaces-0.9.2.jar.license.txt
 cocoon/legal/altrmi-common-0.9.2.jar.license.txt
@@ -118,11 +116,18 @@ cocoon/legal/xmldb-common-20030701.jar.license.txt
 cocoon/legal/xmldb-xupdate-20040205.jar.license.txt
 cocoon/legal/xmlunit0.8.jar.license.txt
 cocoon/legal/xreporter-expression-20030725.jar.license.txt
+cocoon/tools/jetty/conf/admin.xml
+cocoon/tools/jetty/conf/main.xml
+cocoon/tools/jetty/conf/webdefaults.xml
+cocoon/tools/jetty/lib/jetty-4.2.19.jar
+cocoon/tools/jetty/lib/servlet-2.3.jar
+cocoon/tools/loader/Loader$RepositoryClassLoader.class
+cocoon/tools/loader/Loader.class
+@dirrm cocoon/legal
 @dirrm cocoon/tools/jetty/conf
 @dirrm cocoon/tools/jetty/lib
 @dirrm cocoon/tools/jetty
 @dirrm cocoon/tools/loader
-@dirrm cocoon/legal
 @dirrm cocoon/tools
 sbin/cocoon.sh
 sbin/cocoonctl

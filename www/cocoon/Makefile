@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.5.1
 CATEGORIES=	textproc www java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,${PORTNAME},}
 DISTNAME=	${PDISTNAME}-src
@@ -32,7 +32,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 COCOON_LIB=	${JAVASHAREDIR}/${APP_NAME}
 PLIST_SUB+=	"COCOON_LIB=${COCOON_LIB}"
 
-COPYDIRS=	tools/jetty tools/loader legal
+COPYDIRS=	*.txt tools/jetty tools/loader legal
 
 PORT?=		8888
 PID_FILE?=	/var/run/${APP_NAME}.pid
