@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portindex
-PORTVERSION=	16
+PORTVERSION=	17
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.tecnik93.com/~radim/distfiles/
 DISTNAME=	bsdportsutils-${PORTVERSION}
@@ -23,7 +23,7 @@ PLIST_DIRS=	share/${PORTNAME}
 PLIST_FILES=	etc/portindex.conf.sample
 PORTINDEX=	bsdpkg freebsdports indexer updatereadmes config \
 		portindexdb
-MINORUPDATES=	minorupdates stealthupdates
+MINORUPDATES=	minorupdates stealthupdates pointupdates
 MISCTOOLS=	updateall
 PKGHISTORY=	loadindex query updinst
 
