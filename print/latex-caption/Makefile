@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	latex-caption
-PORTVERSION=	3.0.20040123
+PORTVERSION=	3.0.20040716
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/caption
-DISTFILES=	caption.dtx caption2.dtx caption.ins caption.xml
+DISTFILES=	caption.dtx caption2.dtx caption.ins ${DOC_FILES}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -34,7 +35,7 @@ CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	caption.dtx caption.sty caption.ins caption2.dtx caption2.sty
-DOC_FILES=	manual.tex caption.xml
+DOC_FILES=	anleitung.pdf anleitung.tex caption.pdf caption2.pdf caption.xml
 
 do-extract:
 	${MKDIR} ${WRKSRC}
