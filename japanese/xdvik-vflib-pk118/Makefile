@@ -1,36 +1,35 @@
 # New ports collection makefile for:   xdvik + jp-patch
-# Version required:    22.02
+# Version required:    22.05b
 # Date created:        15 Jun 1998
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #
-# $Id: Makefile,v 1.6 1999/06/11 19:03:24 steve Exp $
+# $Id: Makefile,v 1.7 1999/06/16 12:40:59 taoka Exp $
 #
 
-DISTNAME=	xdvik-22.02
-PKGNAME=	ja-vfxdvik-22.02
+DISTNAME=	xdvik-22.05b
+PKGNAME=	ja-vfxdvik-22.05b
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/xdvik/ \
-		ftp://ftp.iij.ad.jp/pub/TeX/CTAN/dviware/xdvik/ \
+MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/TeX/CTAN/dviware/xdvik/ \
 		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/ \
+		ftp://ftp.tex.ac.uk/tex-archive/dviware/xdvik/ \
 		${MASTER_SITE_LOCAL}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ptex/plib-1.4-euc.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ptex/plib-1.4-euc.tar.gz \
+	xdvik-22.02-j1.02.patch.gz
 
-PATCH_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
-		${MASTER_SITE_LOCAL}
-PATCHFILES=	xdvik-22.02-j1.02.patch.gz
+#PATCH_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
+#		${MASTER_SITE_LOCAL}
+#PATCHFILES=	xdvik-22.02-j1.02.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
 
-#RUN_DEPENDS=	mf:${PORTSDIR}/japanese/ptex-common
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 USE_GMAKE=YES
 GNU_CONFIGURE=YES
-#CONFIGURE_ARGS= --enable-shared=yes \
 CONFIGURE_ARGS= \
 		--enable-a4 --enable-bdpi=300 --enable-shrink=8 \
 		--enable-xdviprint=${PREFIX}/libexec/xdviprint
@@ -42,6 +41,7 @@ VFFONTS=	.:${PREFIX}/share/fonts/makejvf//
 TFMFONTS=	.:${PREFIX}/share/fonts/{makejvf:tfm/ptex}//
 PKFONTS=	.:${PREFIX}/lib/fonts/pk{118:240:300:360:400:600}//
 MAKE_ENV=	XDEFS="-DDEFAULT_VFFONTS='"\"\\\"${VFFONTS}\\\""\"' -DDEFAULT_TFMFONTS='"\"\\\"${TFMFONTS}\\\""\"' -DDEFAULT_PKFONTS='"\"\\\"${PKFONTS}\\\""\"'"
+PATCH_STRIP=	-p1
 MAN1=xdvi.1
 
 TEXMF=		${PREFIX}/share/texmf
@@ -58,7 +58,7 @@ PTEXTFM=goth10.tfm goth5.tfm goth6.tfm goth7.tfm goth8.tfm goth9.tfm \
 		tgoth10.tfm tgoth5.tfm tgoth6.tfm tgoth7.tfm tgoth8.tfm tgoth9.tfm \
 		tmin10.tfm tmin5.tfm tmin6.tfm tmin7.tfm tmin8.tfm tmin9.tfm
 
-DOCS=		FAQ \
+DOCS=	FAQ \
 		xdvi.icon \
 		README \
 		README.xdvik-22.x-jp \
@@ -116,8 +116,11 @@ post-extract:
 	@${TAR} -C ${WRKDIR}/ -zxf ${DISTDIR}/ptex/plib-1.4-euc.tar.gz \
 		texmf/fonts/tfm/ptex
 
+pre-patch:
+	@${GZCAT} ${DISTDIR}/xdvik-22.02-j1.02.patch.gz | ${PATCH} ${PATCH_ARGS} -d ${WRKSRC} 2> /dev/null || exit 0
+
 post-patch:
-	@${CAT} ${FILESDIR}/zeit.c.diff | ${PATCH} -p1 -s -d ${WRKSRC}
+	@${CAT} ${FILESDIR}/zeit.c.diff | ${PATCH} ${PATCH_ARGS} -d ${WRKSRC}
 
 pre-build:
 	@(cd ${WRKSRC} ; find . -name '*.orig' -exec ${RM} -f {} \;)
@@ -125,7 +128,7 @@ pre-build:
 pre-install:
 	@${MKDIR} ${PTEXTFMDIR}
 	@for i in ${PTEXTFM} ; do \
-	    ${INSTALL_DATA} ${WRKDIR}/texmf/fonts/tfm/ptex/$$i \
+		${INSTALL_DATA} ${WRKDIR}/texmf/fonts/tfm/ptex/$$i \
 			${PTEXTFMDIR} ; \
 	done
 
