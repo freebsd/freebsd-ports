@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       libpng-1.0.3
-PKGNAME=        png-1.0.3
+DISTNAME=       libpng-1.0.5
+PKGNAME=        png-1.0.5
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 
