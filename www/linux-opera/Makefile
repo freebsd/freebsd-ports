@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	linux-opera
-PORTVERSION=	5.0b7
+PORTVERSION=	5.0b8
 CATEGORIES=	www linux
 MASTER_SITES=	http://opera.online.no/linux/tgz/
-DISTNAME=	opera-5.0-b7-20010320.018-static.i386
-WRKSRC=		${WRKDIR}/${DISTNAME:S/018/020/}
+DISTNAME=	opera-5.0-b8-20010426.023-static.i386
 
 MAINTAINER=	des@FreeBSD.org
 
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 NO_BUILD=	yes
 
 do-install:
-	(cd ${WRKSRC} && ./install.sh \
+	(cd ${WRKSRC} && /bin/sh -x ./install.sh \
 	    --exec_prefix=${PREFIX}/bin \
 	    --docdir=${PREFIX}/share/doc/opera \
 	    --sharedir=${PREFIX}/share/opera )
