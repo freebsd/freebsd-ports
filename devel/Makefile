@@ -185,6 +185,7 @@
     SUBDIR += datadesigner
     SUBDIR += ddd
     SUBDIR += decompyle
+    SUBDIR += desktop-file-utils
     SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dia2code

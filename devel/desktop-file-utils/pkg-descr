@@ -1,0 +1,7 @@
+desktop-file-utils contains a couple of command line utilities for
+working with desktop entries, aswell as a menu module for GnomeVFS.
+
+WWW: http://www.freedesktop.org/Software/desktop-file-utils
+
+- Jean-Yves Lefort
+jylefort@brutele.be
