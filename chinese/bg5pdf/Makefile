@@ -15,7 +15,7 @@ MASTER_SITES=	http://students.washington.edu/cschin/bg5ps/bg5pdf/ \
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
-LIB_DEPENDS=    pdf.4:${PORTSDIR}/print/pdflib
+LIB_DEPENDS=    pdf.4:${PORTSDIR}/print/pdflib4
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
