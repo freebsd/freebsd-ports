@@ -1,0 +1,8 @@
+bin/noip
+etc/rc.d/noip.sh
+%%PORTDOCS%%share/doc/noip/README.FIRST
+%%PORTDOCS%%share/doc/noip/COPYING
+%%PORTDOCS%%share/examples/noip/no-ip.conf.sample
+%%PORTDOCS%%share/examples/noip/no-ip.sh
+%%PORTDOCS%%@dirrm share/doc/noip
+%%PORTDOCS%%@dirrm share/examples/noip

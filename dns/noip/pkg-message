@@ -1,0 +1,14 @@
+##################################################################
+You need to generate the noip config file 'no-ip.conf' in
+%%PREFIX%%/etc/no-ip.conf.  To do this automatically, run:
+
+	make conf
+
+To do it manually, copy
+%%PREFIX%%/share/examples/noip/no-ip.conf.sample to
+%%PREFIX%%/etc/no-ip.conf and edit it or use
+%%PREFIX%%/share/examples/noip/no-ip.sh to make no-ip.conf.  Then
+chown to noip:noip and chmod to 0600.
+
+You need to register with www.no-ip.com to use this port.
+##################################################################

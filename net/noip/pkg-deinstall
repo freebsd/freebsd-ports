@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+PW=/usr/sbin/pw
+ECHO=echo
+USER=noip
+GROUP=${USER}
+
+if [ -f ${PKG_PREFIX}/etc/no-ip.conf ]; then
+    ${ECHO} "To delete noip configuration permanently: rm ${PKG_PREFIX}/etc/no-ip.conf"
+fi
+if ${PW} usershow "${USER}" 2>/dev/null 1>&2; then
+    ${ECHO} "To delete noip user permanently: ${PW} userdel ${USER}"
+fi
+if ${PW} groupshow "${GROUP}" 2>/dev/null 1>&2; then
+    ${ECHO} "To delete noip group permanently: ${PW} groupdel ${GROUP}"
+fi
+exit 0
