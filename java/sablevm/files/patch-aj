@@ -1,0 +1,11 @@
+--- work.orig/sablevm-native-library-1.0.4/src/classpath/jcl.c	Tue Jan 22 16:16:06 2002
++++ work/sablevm-native-library-1.0.4/src/classpath/jcl.c	Fri Aug 30 10:21:41 2002
+@@ -37,7 +37,7 @@
+ 
+ #include <stdio.h>
+ #include <jcl.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ static char errstr[4098];	// this way the memory is pre-allocated, so that we do not have to worry if we are out of memory.
+ 
