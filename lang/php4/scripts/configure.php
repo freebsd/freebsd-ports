@@ -51,6 +51,7 @@ MHASH		"Crypto-hashing support" ${WITH_MHASH:-OFF} \
 MIME		"mime_magic support" ${WITH_MIME:-OFF} \
 MING		"ming shockwave flash support" ${WITH_MING:-OFF} \
 MNOGOSEARCH	"mnoGoSearch support" ${WITH_MNOGOSEARCH:-OFF} \
+MSSQL		"MS-SQL database support" ${WITH_MSSQL:-OFF} \
 MYSQL		"MySQL database support" ${WITH_MYSQL:-OFF} \
 NCURSES		"ncurses support (CLI only)" ${WITH_NCURSES:-OFF} \
 OPENLDAP	"OpenLDAP support" ${WITH_OPENLDAP:-OFF} \
@@ -69,8 +70,8 @@ SESSION		"session support" ${WITH_SESSION:-OFF} \
 SHMOP		"shmop support" ${WITH_SHMOP:-OFF} \
 SNMP		"SNMP support (implies OPENSSL)" ${WITH_SNMP:-OFF} \
 SOCKETS		"sockets support" ${WITH_SOCKETS:-OFF} \
-SYBASEDB	"Sybase/MS-SQL database support (DB-lib)" ${WITH_SYBASEDB:-OFF} \
-SYBASECT	"Sybase/MS-SQL database support (CT-lib)" ${WITH_SYBASECT:-OFF} \
+SYBASEDB	"Sybase database support (DB-lib)" ${WITH_SYBASEDB:-OFF} \
+SYBASECT	"Sybase database support (CT-lib)" ${WITH_SYBASECT:-OFF} \
 SYSVSEM		"System V semaphore support" ${WITH_SYSVSEM:-OFF} \
 SYSVSHM		"System V shared memory support" ${WITH_SYSVSHM:-OFF} \
 TOKENIZER	"tokenizer support" ${WITH_TOKENIZER:-OFF} \
