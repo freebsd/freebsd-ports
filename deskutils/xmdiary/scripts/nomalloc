@@ -1,0 +1,16 @@
+#!/bin/sh
+
+for f in `find $1 -type f -name \*.\[ch\] -print | xargs grep -l malloc.h`
+do
+
+patch -p << END_OF_PATCH
+--- $f.orig
++++ $f
+@@ -10,1 +10,1 @@
+-#include <malloc.h>
++#include <stdlib.h>
+
+END_OF_PATCH
+
+done
+
