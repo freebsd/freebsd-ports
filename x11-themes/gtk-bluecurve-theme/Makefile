@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtk-bluecurve-theme
-PORTVERSION=	0.49
+PORTVERSION=	0.73
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	rawhide/s390/SRPMS
+MASTER_SITE_SUBDIR=	9/en/os/i386/SRPMS
 DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 
 MAINTAINER=	rzheka@users.sourceforge.net
@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
 
-RH_SUBVERSION=	3
+RH_SUBVERSION=	1
 THEMES_SUBDIRS= ${WRKSRC}/art/gtk/Bluecurve1
 
 .if defined(WITH_GTK2)
