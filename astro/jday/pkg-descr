@@ -1,9 +1,6 @@
-The jday binary can be used to convert calendar dates to astronomical
-Julian dates.  This number is useful for a variety of purposes.
-Especially related to calculating elapsed time between instances
-over large or short periods of time.
-
-The associated j2d binary can convert Julian dates to calendar
-dates.
+jday and j2d are command line utilities to convert calendar dates
+to astronomical julian dates, and julian dates to calendar dates.
+There is a corresponding library libjday.a which can be used for
+the same functionality within applications.
 
 WWW: http://jday.sourceforge.net/
