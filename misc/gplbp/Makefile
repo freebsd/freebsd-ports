@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gplbp
-# Version required:			0.91
+# Version required:			0.92
 # Date created:				23 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gplbp-0.91
+DISTNAME=	gplbp-0.92
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.stampede.org/skibum/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
