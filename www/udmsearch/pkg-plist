@@ -1,5 +1,4 @@
 bin/udmsearch/search.cgi
-bin/udmsearch/search.phtml
 bin/udmsearch/search.php3
 bin/udmsearch/morph.php3
 bin/udmsearch/udmsearch.gif
@@ -14,6 +13,7 @@ etc/udmsearch/create/stopwords/stop.de.txt
 etc/udmsearch/create/stopwords/stop.en.txt
 etc/udmsearch/create/stopwords/stop.es.txt
 etc/udmsearch/create/stopwords/stop.fr.txt
+etc/udmsearch/create/stopwords/stop.it.txt
 etc/udmsearch/create/stopwords/stop.nl.txt
 etc/udmsearch/create/stopwords/stop.no.txt
 etc/udmsearch/create/stopwords/stop.pt.txt

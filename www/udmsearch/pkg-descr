@@ -1,8 +1,11 @@
-UdmSearch is a full featured MySQL-based search engine for intranet or small
+UdmSearch is a full featured SQL-based search engine for intranet or small
 domain Internet web servers. You can also use it to build specialized search
 engines such as cooking recipies or searching newspaper articles.
 
 Provides pre-built web search frontends in C (via CGI) and PHP.
+
+Currently, supports using mySQL, msql, or postgresql database backends, with
+mySQL being the default and best supported.
 
 WWW: http://mysearch.udm.net/
 
