@@ -1,36 +1,41 @@
 # New ports collection makefile for:	GNU emacs with dl
-# Version required:	20.3
+# Version required:	20.4
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.6 1999/03/01 09:17:43 shige Exp $
+# $Id: Makefile,v 1.7 1999/03/08 07:28:23 asami Exp $
 #
 
-DISTNAME=	emacs-20.3
-PKGNAME=	emacs-dl-20.3
+DISTNAME=	emacs-20.4
+PKGNAME=	emacs-dl-20.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
-PATCH_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/
-PATCHFILES=	emacs-20.3-dl.diff
+PATCH_SITES=	http://www.etl.go.jp/~tomo/comp/emacsen/
+PATCHFILES=	emacs-20.4-dl.diff.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	shige@FreeBSD.ORG
 
-RUN_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20
+RUN_DEPENDS=	emacs-20.4:${PORTSDIR}/editors/emacs20
 
 USE_AUTOCONF=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-EMACS_VER=	20.3
+EMACS_VER=	20.4
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
-CONFIGURE_ARGS=	${EMACS_ARCH} --with-x-toolkit --with-pop
+.if !defined(NO_X11)
+CONFIGURE_ARGS= --with-x-toolkit --with-pop
+USE_XLIB=       yes
+.else
+CONFIGURE_ARGS= --with-x=no --with-pop
+.endif
+
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
-.if defined(USE_XPGLIB)
-.if (${USE_XPGLIB} == "YES")
+.if defined(USE_XPG4)
+.if (${USE_XPG4} == "YES" || ${USE_XPG4} == "yes")
 CONFIGURE_ARGS+=	--with-xpg4
 .endif
 .endif

@@ -1,5 +1,5 @@
---- src/s/freebsd.h.orig	Wed Aug 19 16:25:36 1998
-+++ src/s/freebsd.h	Fri Feb 12 22:27:28 1999
+--- src/s/freebsd.h.orig	Tue Apr 13 03:22:12 1999
++++ src/s/freebsd.h	Sat Jul 24 01:30:10 1999
 @@ -45,6 +45,13 @@
  #define LIBS_SYSTEM -lutil
  #define LIBS_TERMCAP -ltermcap
@@ -32,12 +32,3 @@
  #undef LIB_GCC
  #define LIB_GCC
  
-@@ -109,6 +123,8 @@
- #define BSD_SYSTEM 199306
- #elif __FreeBSD__ == 3
- #define BSD_SYSTEM 199506
-+#elif __FreeBSD__ == 4
-+#define BSD_SYSTEM 199901
- #endif
- 
- #define WAITTYPE int

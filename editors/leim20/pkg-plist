@@ -55,6 +55,8 @@ share/emacs/%%EMACS_VER%%/leim/quail/hanja.el
 share/emacs/%%EMACS_VER%%/leim/quail/hanja.elc
 share/emacs/%%EMACS_VER%%/leim/quail/hanja3.el
 share/emacs/%%EMACS_VER%%/leim/quail/hanja3.elc
+share/emacs/%%EMACS_VER%%/leim/quail/hebrew.el
+share/emacs/%%EMACS_VER%%/leim/quail/hebrew.elc
 share/emacs/%%EMACS_VER%%/leim/quail/ipa.el
 share/emacs/%%EMACS_VER%%/leim/quail/ipa.elc
 share/emacs/%%EMACS_VER%%/leim/quail/japanese.el
