@@ -42,8 +42,8 @@ CONFIGURE_ARGS+=	--with-mysql
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=			"Does not compile on !i386"
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=			"Does not compile on !i386 and !amd64"
 .endif
 
 pre-configure:
