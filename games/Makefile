@@ -12,8 +12,6 @@
     SUBDIR += abuse
     SUBDIR += abuse_sdl
     SUBDIR += acm
-    SUBDIR += acorn
-    SUBDIR += acorn-media
     SUBDIR += actx
     SUBDIR += adgali
     SUBDIR += adom
@@ -286,7 +284,6 @@
     SUBDIR += tuxtype
     SUBDIR += tvp
     SUBDIR += twitch
-    SUBDIR += uclient
     SUBDIR += uox3
     SUBDIR += utserver
     SUBDIR += utserver-asu
