@@ -1,13 +1,13 @@
---- ../MailScanner-install-4.37.3.orig/docs/man/MailScanner.conf.5.html	Wed Dec 15 21:17:17 2004
-+++ docs/man/MailScanner.conf.5.html	Wed Dec 15 21:30:02 2004
+--- ../MailScanner-install-4.38.2.orig/docs/man/MailScanner.conf.5.html	Mon Jan 17 15:49:00 2005
++++ docs/man/MailScanner.conf.5.html	Mon Jan 17 15:54:10 2005
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Fri Oct 22 08:13:20 2004 -->
-+<!-- CreationDate: Wed Dec 15 21:29:27 2004 -->
++<!-- CreationDate: Mon Jan 17 15:53:41 2005 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
-@@ -397,4 +397,5767 @@
+@@ -397,4 +397,5813 @@
  <td width="3%"></td>
  <td width="72%">
  
@@ -1326,7 +1326,7 @@
 +<tr valign="top" align="left">
 +<td width="22%"></td>
 +<td width="78%">
-+<p>Default: no</p>
++<p>Default: yes</p>
 +<!-- INDENTATION -->
 +<p>Do you want to check for &quot;Phishing&quot; attacks?
 +These are attacks that look like a genuine email message
@@ -1343,6 +1343,32 @@
 +secondary MX hosts. This *cannot* be the filename of a
 +ruleset, it must be &rsquo;yes&rsquo; or
 +&rsquo;no&rsquo;.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Also Find Numeric Phishing</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>While detecting &quot;Phishing&quot; attacks, do you also
++want to point out links to numeric IP addresses. Genuine
++links to totally numeric IP addresses are very rare, so this
++option is set to &quot;yes&quot; by default. If a numeric IP
++address is found in a link, the same phishing warning
++message is used as in the Find Phishing Fraud option above.
++This value cannot be the name of a ruleset, only a simple
++yes or no.</p>
 +</td>
 +</table>
 +<!-- INDENTATION -->
@@ -3418,6 +3444,13 @@
 +beware of the legal implications as this could be deemed to
 +be illegal interception unless the police have asked you to
 +do this.</p>
++<!-- INDENTATION -->
++<p>Any of the items above can contain the magic string
++_DATE_ in them which will be replaced with the current date
++in yyyymmdd format. This will make archive&minus;rolling and
++maintenance much easier, as you can guarantee that
++yesterday&rsquo;s mail archive will not be in active use
++today.</p>
 +</td>
 +</table>
 +<a name="Notices to system administrators"></a>
@@ -4253,8 +4286,8 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;deliver&quot; &minus; the message is delivered to
-+the recipient as normal</p>
++<p>deliver &minus; the message is delivered to the
++recipient as normal</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4265,7 +4298,7 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;delete&quot; &minus; the message is deleted</p>
++<p>delete &minus; the message is deleted</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4276,7 +4309,7 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;store&quot; &minus; the message is stored in the
++<p>store &minus; the message is stored in the
 +quarantine</p>
 +</td>
 +<tr valign="top" align="left">
@@ -4288,8 +4321,8 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;forward&quot; &minus; an email address is
-+supplied, to which the message is forwarded</p>
++<p>forward &minus; an email address is supplied, to which
++the message is forwarded</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4300,10 +4333,10 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;notify&quot; &minus; Send the recipients a short
-+notification that spam addressed to them was not delivered.
-+They can then take action to request retrieval of the
-+orginal message if they think it was not spam.</p>
++<p>notify &minus; Send the recipients a short notification
++that spam addressed to them was not delivered. They can then
++take action to request retrieval of the orginal message if
++they think it was not spam.</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4314,12 +4347,12 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;striphtml&quot; &minus; convert all in&minus;line
-+HTML content in the message to be stripped to plain text,
-+which removes all images and scripts and so can be used to
-+protect your users from offensive spam. Note that using this
-+action on its own does not imply that the message will be
-+delivered, you will need to specify &quot;deliver&quot; or
++<p>striphtml &minus; convert all in&minus;line HTML content
++in the message to be stripped to plain text, which removes
++all images and scripts and so can be used to protect your
++users from offensive spam. Note that using this action on
++its own does not imply that the message will be delivered,
++you will need to specify &quot;deliver&quot; or
 +&quot;forward&quot; to actually deliver the message.</p>
 +</td>
 +<tr valign="top" align="left">
@@ -4331,10 +4364,10 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;attachment&quot; &minus; Convert the original
-+message into an attachment of the message. This means the
-+user has to take an extra step to open the spam, and stops
-+&quot;web bugs&quot; very effectively.</p>
++<p>attachment &minus; Convert the original message into an
++attachment of the message. This means the user has to take
++an extra step to open the spam, and stops &quot;web
++bugs&quot; very effectively.</p>
 +</td>
 +<tr valign="top" align="left">
 +<td width="22%"></td>
@@ -4345,9 +4378,22 @@
 +<td width="5%"></td>
 +<td width="72%">
 +
-+<p>&quot;bounce&quot; &minus; bounce the spam message. This
-+option should not be used and must be enabled with the
-+&quot;Enable Spam Bounce&quot; option first.</p>
++<p>bounce &minus; bounce the spam message. This option
++should not be used and must be enabled with the &quot;Enable
++Spam Bounce&quot; option first.</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>header &quot;name: value&quot; &minus; Add the header
++&quot;name: value&quot; to the message. name must not
++contain any spaces.</p>
 +</td>
 +</table>
 +<!-- INDENTATION -->
