@@ -1,0 +1,10 @@
+--- Makefile.orig	Fri Dec 27 16:48:44 1996
++++ Makefile	Fri Dec 27 16:49:36 1996
+@@ -1,6 +1,6 @@
+ # UNIX makefile for the MIX interpreter
+ 
+-CFLAGS = -g
++#CFLAGS = -g
+ 
+ CSRCS = asm.c cell.c charset.c driver.c io.c main.c parse.c run.c symbol.c
+ HSRCS = asm.h cell.h charset.h driver.h io.h mix.h parse.h run.h symbol.h
