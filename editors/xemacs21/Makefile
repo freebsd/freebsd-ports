@@ -23,7 +23,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 XEMACS_REL=	21.1
-XEMACS_VER=	21.1.11
+XEMACS_VER=	21.1.12
 DIST_SUBDIR=	xemacs
 
 SLAVEDIRS+=	editors/xemacs21-mule
@@ -39,8 +39,8 @@ CONFIGURE_ARGS?=${XEMACS_ARCH} --prefix=${PREFIX} \
 		--lockdir=/var/run/emacs/lock \
 		--with-sound=native \
 		--with-session=yes \
-		--site-includes=${PREFIX}/include \
-		--site-libraries=${PREFIX}/lib \
+		--site-includes=${LOCALBASE}/include \
+		--site-libraries=${LOCALBASE}/lib \
 		--with-png=yes \
 		--with-tiff=yes \
 		--with-site-lisp \
