@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- capplet/Makefile.in	2002/04/25 16:25:08	1.1
++++ capplet/Makefile.in	2002/04/25 16:25:15
+@@ -174,7 +174,7 @@
+ 	$(NULL)
+ 
+ 
+-CFLAGS = @CFLAGS@ -g
++CFLAGS = @CFLAGS@
+ 
+ gpilotd_control_applet_SOURCES = \
+ 	gpilotd-control-applet.c 	\

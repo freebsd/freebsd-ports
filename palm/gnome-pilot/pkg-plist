@@ -31,7 +31,6 @@ lib/libgpilotdcm.so.1
 lib/libgpilotdconduit.a
 lib/libgpilotdconduit.so
 lib/libgpilotdconduit.so.1
-man/man1/gpilot-install-file.1
 share/gnome/applets/Utility/gpilot-applet.desktop
 share/gnome/apps/Settings/Peripherals/gpilotd-conduits-capplet.desktop
 share/gnome/apps/Settings/Peripherals/gpilotd-control-applet.desktop
