@@ -9,7 +9,7 @@ PORTNAME=	pari
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.a
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://pari.math.u-bordeaux.fr/download/
+MASTER_SITES= http://pari.math.u-bordeaux.fr/pub/pari/unstable/
 DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.alpha
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
@@ -27,16 +27,12 @@ PLIST_SUB=	MAJOR_VERSION=${MAJOR_VERSION} MINOR_VERSION=${MINOR_VERSION} REV_VER
 
 MAJOR_VERSION=	2
 MINOR_VERSION=	2
-REV_VERSION=	7
+REV_VERSION=	9
 
 MAN1=		gp.1 gphelp.1 tex2mail.1
 MLINKS=		gp.1 pari.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 
 HAVE_EMACS!=	${WHICH} emacs || ${ECHO} nope
 .if ${HAVE_EMACS} != "nope"

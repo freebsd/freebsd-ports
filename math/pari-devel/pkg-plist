@@ -5,6 +5,10 @@ bin/gphelp
 include/pari/paricfg.h
 include/pari/pariinl.h
 include/pari/pari.h
+include/pari/parinf.h
+include/pari/pariold.h
+include/pari/paripriv.h
+include/pari/paritune.h
 include/pari/paritype.h
 include/pari/paricast.h
 include/pari/paricom.h
@@ -17,7 +21,7 @@ include/pari/paridecl.h
 include/pari/genpari.h
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%.0.0
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%
-lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so
+lib/libpari.so
 lib/pari/pari.cfg
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Announce.2.1
@@ -62,8 +66,8 @@ lib/pari/pari.cfg
 %%DOCSDIR%%/examples/cl.gp
 %%DOCSDIR%%/examples/classno.gp
 %%DOCSDIR%%/examples/contfrac.gp
+%%DOCSDIR%%/examples/extgcd.c
 %%DOCSDIR%%/examples/lucas.gp
-%%DOCSDIR%%/examples/matexp.c
 %%DOCSDIR%%/examples/rho.gp
 %%DOCSDIR%%/examples/squfof.gp
 %%DOCSDIR%%/examples/taylor.gp
