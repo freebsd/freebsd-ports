@@ -11,7 +11,7 @@ PKGNAME=	xmascot-2.5p2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
