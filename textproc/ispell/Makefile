@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -37,7 +37,7 @@ UNSQ?=		${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==}/bin/unsq.pl
 MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL))
+.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL)) && !defined(ISPELL_BG)
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
@@ -46,6 +46,7 @@ pre-everything::
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
 	@${ECHO_MSG} '*  - Brazilian Portuguese      ISPELL_BR=yes            *'
+	@${ECHO_MSG} '*  - Bulgarian                 ISPELL_BG=yes            *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
 	@${ECHO_MSG} '*  - Danish                    ISPELL_DA=yes            *'
 	@${ECHO_MSG} '*  - Finnish                   ISPELL_FI=yes            *'
@@ -149,9 +150,17 @@ EXTRA_DICT+=	${PLDISTFILE}
 EXTRACT_ONLY+=	${PLDISTFILE}
 BUILDHASH=	${WRKDIR}/${PLDISTFILE:S=.tar.gz==}/zbuduj.slownik.sh
 .endif
+.if defined(ISPELL_BG)
+MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	bgoffice
+BGDISTFILE=	ispell-bg-2.1.tar.gz
+MASKBITS?=	64
+EXTRA_DICT+=	${BGDISTFILE}
+EXTRACT_ONLY+=	${BGDISTFILE}
+.endif
+.endif
 
 DISTFILES+=	${EXTRA_DICT}
-.endif
 
 post-extract:
 .if defined(ISPELL_IT)
@@ -274,6 +283,12 @@ post-build:
 	@cd ${WRKDIR}/${PLDISTFILE:S=.tar.gz==} && \
 		${CAT} A B C imiona-A imiona-B fachowe/* > polish.dic && \
 		${BUILDHASH} polish.dic polish.aff polish.hash
+.endif
+.if defined(ISPELL_BG)
+	@cd ${WRKDIR}/${BGDISTFILE:S=.tar.gz==} && \
+		${BUILDHASH} data/bulgarian.dict data/bulgarian.aff data/bulgarian.hash && \
+		${CP} data/bulgarian.aff bulgarian.aff && \
+		${CP} data/bulgarian.hash bulgarian.hash
 .endif
 
 pre-install:
