@@ -169,6 +169,7 @@
     SUBDIR += xlbiff
     SUBDIR += xmail
     SUBDIR += xmailbox
+    SUBDIR += xmailwatcher
     SUBDIR += xpbiff
     SUBDIR += xpbiff-youbin
     SUBDIR += youbin
