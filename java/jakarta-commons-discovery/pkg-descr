@@ -1,0 +1,16 @@
+The Discovery Component is about discovering, or finding, implementations for
+pluggable interfaces. It provides facilities intantiating classes in general,
+and for lifecycle management of singleton (factory) classes.
+
+Fundamentally, Discovery locates classes that implement a given Java interface.
+The discovery pattern, though not necessarily this package, is used in many
+projects including JAXP (SaxParserFactory and others) and commons-logging
+(LogFactory). By extracting this pattern, other projects can (re)use it and
+take advantage of improvements to the pattern as Discovery evolves.
+
+Discovery improves over previous implementations by establishing facilities for
+working within managed environments. These allow configuration and property
+overrides without appealing to the global System properties (which are scoped
+across an entire JVM). 
+
+WWW:	http://jakarta.apache.org/commons/discovery/
