@@ -1,2 +1,4 @@
-MD5 (drweb-qmail-4.29.12-F-freebsd4.tar.gz) = d59d9e5f9c6773676676d4c357aaac3e
-MD5 (drweb-qmail-4.29.12-F-freebsd5.tar.gz) = bc5ea264ceda2a3133d3354817e564b5
+MD5 (drweb-qmail-4.32.1-freebsd49.tar.gz) = dfb82faa16016ade4faa52765f8edcdf
+SIZE (drweb-qmail-4.32.1-freebsd49.tar.gz) = 308066
+MD5 (drweb-qmail-4.32.1-freebsd53.tar.gz) = 382bb431a258a51172b12422a82f4f5c
+SIZE (drweb-qmail-4.32.1-freebsd53.tar.gz) = 393693

@@ -5,86 +5,85 @@
 # $FreeBSD$
 #
 
-PORTNAME=	drweb_qmail
-PORTVERSION=	4.29.12
-PORTREVISION=	2
+PORTNAME=	drweb-qmail
+PORTVERSION=	4.32.1
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/drweb/unix/archive/drweb-clients-${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/FreeBSD/49/ \
+		ftp://ftp.drweb.ru/pub/unix/FreeBSD/53/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	support@spectrum.ru
 COMMENT=	Qmail client for DrWeb antivirus suite
 
-RUN_DEPENDS=	${DRWEB_PREFIX}/drwebd:${PORTSDIR}/security/drweb \
-			${QMAIL_PREFIX}/bin/qmail-queue:${PORTSDIR}/mail/qmail
+RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
-ONLY_FOR_ARCHS=	i386
-NO_BUILD=	YES
-RESTRICTED=	"non-commercial or evaluation use"
-NO_CDROM=	${RESTRICTED}
-
-WRKSRC=		${WRKDIR}/drweb-qmail
-
-QMAIL_PREFIX?=	/var/qmail
-QMAIL_NOFILES?=	qnofiles
-
-DRWEB_WRKDIR=	/var/drweb
-DRWEB_PREFIX=	${PREFIX}/drweb
-
-PW_CMD?=	/usr/sbin/pw
+NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500000
-DISTNAME=	drweb-qmail-${PORTVERSION}-F-freebsd5
+
+.if ${OSVERSION} < 500000
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd49
 .else
-DISTNAME=	drweb-qmail-${PORTVERSION}-F-freebsd4
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd53
 .endif
 
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can use QMAIL_PREFIX (default value is /var/qmail) and QMAIL_NOFILES (default value is qnofiles) options."
-	@${ECHO_MSG} ""
+WRKSRC=		${WRKDIR}/${PORTNAME}
+INST_PREFIX=	${PREFIX}/${PORTNAME}
+DOC_DIR=	${PREFIX}/share/doc/${PORTNAME}
+CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
-BINOWN=		drweb
-BINGRP=		qmail
-BINMODE=	4711
+LANGS=		en en-ru en-pl en-jp
+CONFS=		drweb_qmail users viruses addresses
+TMPLS=		archive-admin archive-sender cured-admin cured-sender error-admin \
+		error-sender rule-admin skip-sender virus-admin virus-rcpts \
+		virus-sender license-admin
 
 do-install:
-	${PW_CMD} usermod drweb -G ${QMAIL_NOFILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/opt/drweb/qmail-queue \
-		${QMAIL_PREFIX}/bin/qmail-queue.drweb
-	${INSTALL_DATA} ${WRKSRC}/etc/drweb/addresses.conf \
-		${DRWEB_PREFIX}/addresses.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/etc/drweb/drweb_qmail.conf \
-		${DRWEB_PREFIX}/drweb_qmail.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/etc/drweb/users.conf \
-		${DRWEB_PREFIX}/users.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/etc/drweb/viruses.conf \
-		${DRWEB_PREFIX}/viruses.conf-dist
-	if [ ! -f ${DRWEB_PREFIX}/addresses.conf ] ; then \
-		${CP} ${DRWEB_PREFIX}/addresses.conf-dist \
-		      ${DRWEB_PREFIX}/addresses.conf; \
-	fi
-	if [ ! -f ${DRWEB_PREFIX}/drweb_qmail.conf ] ; then \
-		${CP} ${DRWEB_PREFIX}/drweb_qmail.conf-dist \
-		      ${DRWEB_PREFIX}/drweb_qmail.conf; \
-	fi
-	if [ ! -f ${DRWEB_PREFIX}/users.conf ] ; then \
-		${CP} ${DRWEB_PREFIX}/users.conf-dist \
-		      ${DRWEB_PREFIX}/users.conf; \
-	fi
-	if [ ! -f ${DRWEB_PREFIX}/viruses.conf ] ; then \
-		${CP} ${DRWEB_PREFIX}/viruses.conf-dist \
-		      ${DRWEB_PREFIX}/viruses.conf; \
-	fi
-	${MKDIR} -m 755 ${DRWEB_WRKDIR}
-	${MKDIR} -m 770 ${DRWEB_WRKDIR}/infected ${DRWEB_WRKDIR}/spool
-	${CHOWN} drweb:drweb ${DRWEB_WRKDIR}
-	${CHOWN} drweb:${QMAIL_NOFILES} ${DRWEB_WRKDIR}/infected \
-		${DRWEB_WRKDIR}/spool
-	${CP} -R ${WRKSRC}/etc/drweb/templates ${PREFIX}/drweb
-	${CP} -R ${WRKSRC}/opt/drweb/doc/qmail ${PREFIX}/drweb/doc
+	${MKDIR} ${INST_PREFIX}
+	${MKDIR} ${INST_PREFIX}/run
+	${CHOWN} drweb:drweb ${INST_PREFIX}/run
+	${MKDIR} ${CONFDIR}
+	${MKDIR} ${DOC_DIR}
+	${MKDIR} ${DOC_DIR}/qmail
+	${INSTALL_PROGRAM} ${WRKSRC}/usr/local/drweb/qmail-queue.static \
+	${INST_PREFIX}/qmail-queue.drweb
+	${SED} 's#%INSTALL%#${INST_PREFIX}#g' \
+		< ${FILESDIR}/01.drweb-qmail.sh \
+		> ${PREFIX}/etc/rc.d/01.drweb-qmail.sh-dist
+	${CHMOD} 750 ${PREFIX}/etc/rc.d/01.drweb-qmail.sh-dist
+.for LANG in ${LANGS}
+		${MKDIR} ${PREFIX}/etc/${PORTNAME}/templates/${LANG}/qmail
+.endfor
+.for CONF in ${CONFS}
+		${SED} 's#%CONFDIR%#${CONFDIR}#g' \
+			< ${WRKSRC}/usr/local/etc/drweb/${CONF}.conf \
+			> ${CONFDIR}/${CONF}.conf-dist
+		${CHMOD} 640 ${CONFDIR}/${CONF}.conf-dist
+.if !exists( ${PREFIX}/etc/${PORTNAME}/${CONF}.conf )
+			${CP} ${CONFDIR}/${CONF}.conf-dist ${CONFDIR}/${CONF}.conf
+			${CHMOD} 600 ${CONFDIR}/${CONF}.conf
+.endif
+.endfor
+.for LANG in ${LANGS}
+.for TMPL in ${TMPLS}
+			${INSTALL_DATA} ${WRKSRC}/usr/local/etc/drweb/templates/${LANG}/qmail/${TMPL}.msg \
+			${PREFIX}/etc/${PORTNAME}/templates/${LANG}/qmail/${TMPL}.msg-dist
+.if !exists( ${PREFIX}/etc/${PORTNAME}/templates/${LANG}/qmail/${TMPL}.msg )
+				${INSTALL_DATA} -o drweb -g drweb -m 640 ${WRKSRC}/usr/local/etc/drweb/templates/${LANG}/qmail/${TMPL}.msg \
+				${PREFIX}/etc/${PORTNAME}/templates/${LANG}/qmail/${TMPL}.msg
+.endif
+.endfor
+.endfor
+	${CP} ${WRKSRC}/usr/local/drweb/doc/qmail/*.txt \
+	${DOC_DIR}/qmail/
+	${CP} ${WRKSRC}/usr/local/drweb/doc/qmail/read* \
+	${DOC_DIR}/qmail/
 
 post-install:
+	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
+	@${ECHO} "Read documentation about additional QMail tuning needed"
+	@${ECHO} "in ${DOCSDIR}."
+	@${ECHO}
 
 .include <bsd.port.post.mk>
