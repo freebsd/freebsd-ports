@@ -336,6 +336,10 @@ share/doc/qt2/html/debug.html
 share/doc/qt2/html/design.html
 share/doc/qt2/html/designer.html
 share/doc/qt2/html/designer.png
+share/doc/qt2/html/designer/arrows/home.png
+share/doc/qt2/html/designer/arrows/left.png
+share/doc/qt2/html/designer/arrows/right.png
+share/doc/qt2/html/designer/arrows/up.png
 share/doc/qt2/html/designer/book1.html
 share/doc/qt2/html/designer/chap10_1.html
 share/doc/qt2/html/designer/chap1_1.html
@@ -510,6 +514,7 @@ share/doc/qt2/html/functions.html
 share/doc/qt2/html/geomanagement.html
 share/doc/qt2/html/geometry.html
 share/doc/qt2/html/geometry.png
+share/doc/qt2/html/graph.g1n
 share/doc/qt2/html/grapher-grapher-cpp.html
 share/doc/qt2/html/gridlayout.png
 share/doc/qt2/html/groupbox-m.png
@@ -526,6 +531,7 @@ share/doc/qt2/html/iconview-main-cpp.html
 share/doc/qt2/html/iconview.html
 share/doc/qt2/html/imageio.html
 share/doc/qt2/html/images.html
+share/doc/qt2/html/index
 share/doc/qt2/html/index.html
 share/doc/qt2/html/install-qws.html
 share/doc/qt2/html/install-win.html
@@ -576,6 +582,7 @@ share/doc/qt2/html/primes.html
 share/doc/qt2/html/progress-progress-cpp.html
 share/doc/qt2/html/progressbar-main-cpp.html
 share/doc/qt2/html/properties.html
+share/doc/qt2/html/propertyindex
 share/doc/qt2/html/qabstractlayout-h.html
 share/doc/qt2/html/qaccel-h.html
 share/doc/qt2/html/qaccel-members.html
@@ -1653,6 +1660,7 @@ share/doc/qt2/html/threads.html
 share/doc/qt2/html/tictac-main-cpp.html
 share/doc/qt2/html/time.html
 share/doc/qt2/html/timers.html
+share/doc/qt2/html/titleindex
 share/doc/qt2/html/tools.html
 share/doc/qt2/html/tooltip-main-cpp.html
 share/doc/qt2/html/topicals.html
@@ -1663,6 +1671,7 @@ share/doc/qt2/html/tutorial.png
 share/doc/qt2/html/unicode.html
 share/doc/qt2/html/unsmooth.png
 share/doc/qt2/html/validator-main-cpp.html
+share/doc/qt2/html/whatsthis
 share/doc/qt2/html/whatsthis.png
 share/doc/qt2/html/winsystem.html
 share/doc/qt2/html/wizard-main-cpp.html
@@ -1672,8 +1681,15 @@ share/doc/qt2/html/xml-sax.html
 share/doc/qt2/html/xml.html
 share/doc/qt2/html/xt.html
 share/doc/qt2/html/y2k.html
-@dirrm share/doc/qt2/html/designer/stylesheet-images
+share/qt2/designer/templates/Configuration_Dialog.ui
+share/qt2/designer/templates/Dialog_with_Buttons_(Bottom).ui
+share/qt2/designer/templates/Dialog_with_Buttons_(Right).ui
+share/qt2/designer/templates/Tab-Dialog.ui
+@dirrm share/qt2/designer/templates
+@dirrm share/qt2/designer
+@dirrm share/qt2
 @dirrm share/doc/qt2/html/designer/figures
+@dirrm share/doc/qt2/html/designer/arrows
 @dirrm share/doc/qt2/html/designer
 @dirrm share/doc/qt2/html
 @dirrm share/doc/qt2

@@ -1,0 +1,15 @@
+--- tools/designer/designer/newformimpl.cpp	2000/11/18 17:43:54	1.1
++++ tools/designer/designer/newformimpl.cpp	2000/11/18 17:48:49
+@@ -33,9 +33,9 @@
+ {
+     if ( QFileInfo( "../templates" ).exists() )
+ 	return "../templates";
+-    QString qtdir = getenv( "QTDIR" );
+-    if ( QFileInfo( qtdir + "/tools/designer/templates" ).exists() )
+-	return qtdir + "/tools/designer/templates";
++    QString qtdir = QT_PREFIX;
++    if ( QFileInfo( qtdir + "/share/qt2/designer/templates" ).exists() )
++	return qtdir + "/share/qt2/designer/templates";
+     return t;
+ }
+ 

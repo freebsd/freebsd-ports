@@ -7,6 +7,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
@@ -81,6 +82,7 @@ post-configure:
 
 do-install:
 	${MKDIR} ${PREFIX}/include/qt2
+	${MKDIR} ${PREFIX}/share/qt2/designer/templates
 .for BIN in designer moc2 uic
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${BIN} ${PREFIX}/bin
 .endfor
@@ -88,12 +90,19 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${SCRIPT} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qt2
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqt2.so.4 ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqutil.so.1 ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/libqt2.so.4 ${PREFIX}/lib/libqt2.so
+	${LN} -sf ${PREFIX}/lib/libqutil.so.1 ${PREFIX}/lib/libqutil.so
+.if defined(WANT_STATIC)
 .for LIB in qt2 qutil
-	${INSTALL_DATA} ${WRKSRC}/lib/lib${LIB}* ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/lib${LIB}.a ${PREFIX}/lib
 .endfor
+.endif
+	${INSTALL_DATA} ${WRKSRC}/tools/designer/templates/* \
+		${PREFIX}/share/qt2/designer/templates
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/qt2/html/designer/figures
-	${MKDIR} ${PREFIX}/share/doc/qt2/html/designer/stylesheet-images
+	${MKDIR} ${PREFIX}/share/doc/qt2
 	(cd ${WRKSRC} ; \
 	${INSTALL_DATA} ANNOUNCE ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} FAQ ${PREFIX}/share/doc/qt2 ; \
@@ -101,9 +110,8 @@ do-install:
 	${INSTALL_DATA} PORTING ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README.QT ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} doc/html/*.html doc/html/*.png ${PREFIX}/share/doc/qt2/html ; \
-	${INSTALL_DATA} doc/html/designer/*.html ${PREFIX}/share/doc/qt2/html/designer ; \
-	${INSTALL_DATA} doc/html/designer/figures/* ${PREFIX}/share/doc/qt2/html/designer/figures ; \
+	( cd ${WRKSRC}/doc &&  ${TAR} -chf - html | \
+		${TAR} --unlink -xf - -C ${PREFIX}/share/doc/qt2 ) ; \
 	${INSTALL_MAN} doc/man/man3/q* ${PREFIX}/man/man3 )
 .endif
 
