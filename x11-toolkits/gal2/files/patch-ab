@@ -1,9 +1,9 @@
---- Makefile.in.orig	Mon May 26 17:23:55 2003
-+++ Makefile.in	Mon May 26 17:24:39 2003
-@@ -175,7 +175,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- Makefile.in.orig	Wed Jun 11 00:44:55 2003
++++ Makefile.in	Wed Jun 11 00:45:19 2003
+@@ -138,7 +138,7 @@
+ cxxflags_set = @cxxflags_set@
+ gnomelocaledir = @gnomelocaledir@
+ install_sh = @install_sh@
 -SUBDIRS = po gal tests docs art
 +SUBDIRS = po gal docs art
  
