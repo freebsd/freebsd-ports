@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	sdl_mixer
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.devolution.com/~slouken/SDL/projects/SDL_mixer/src/
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/src/
 DISTNAME=	SDL_mixer-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=  	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \
-		mikmod.2:${PORTSDIR}/audio/libmikmod
+		vorbis.0:${PORTSDIR}/audio/libvorbis
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
@@ -24,5 +24,9 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="-I${X11BASE}/include"
+
+post-configure:
+	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+		${WRKSRC}/libtool
 
 .include <bsd.port.mk>
