@@ -1,0 +1,172 @@
+% File t1code.tex: 
+%  (0) sets \czech, \slovak to Cork encoded hyphen-pattern numbers,
+%  (1) sets \catcode, \l/uccode for characters (code by Cork),
+%  (2) defines \csaccents for new behavior of \v, \', etc (code by Cork),
+%  (3) defines some \sequences for special cs-fonts characters.
+%
+% Created by Petr Olsak <olsak@math.feld.cvut.cz>,       February 2000    
+% Inspired by Jan Kasprzak
+% February 2005: bug in \uccodes removed, thanks to Marek Pomp
+
+\message{Font encoding set to Cork.}
+
+%% (0) \czech, \slovak. You can use \chyph, \shyph after this file is loaded.
+\ifx\toneczech\undefined 
+  {\newlinechar=`^^J
+   \errhelp={The hyphen patterns are not loaded in Cork encoding in csplain.^^J
+            Hyphen patterns are supported only in ISO-8859-2.^^J
+            It means, you are using csplain pre Feb.2000 or^^J
+            you initialised csplain by \let\Cork=\relax.^^J
+            You can go on (press Return), but the czech/slovak^^J
+            hyphenations will be work incorectly.}
+  \errmessage
+  {The Cork encoding is not supported in this format} % Press h for more help.
+  } 
+\else
+  \czech=\toneczech  \slovak=\toneslovak
+\fi
+
+%% (1) \catcode, \lccode, \uccode.
+\catcode225=11 \lccode225=225 \uccode225=193  % a-acute       
+\catcode193=11 \lccode193=225 \uccode193=193  % A-acute       
+\catcode228=11 \lccode228=228 \uccode228=196  % a-diaeresis   
+\catcode196=11 \lccode196=228 \uccode196=196  % A-diaeresis   
+\catcode163=11 \lccode163=163 \uccode163=131  % c-caron       
+\catcode131=11 \lccode131=163 \uccode131=131  % C-caron       
+\catcode164=11 \lccode164=164 \uccode164=132 % d-caron       
+\catcode132=11 \lccode132=164 \uccode132=132  % D-caron       
+\catcode233=11 \lccode233=233 \uccode233=201  % e-acute       
+\catcode201=11 \lccode201=233 \uccode201=201  % E-acute       
+\catcode165=11 \lccode165=165 \uccode165=133  % e-caron       
+\catcode133=11 \lccode133=165 \uccode133=133  % E-caron       
+\catcode237=11 \lccode237=237 \uccode237=205  % i-acute       
+\catcode205=11 \lccode205=237 \uccode205=205  % I-acute       
+\catcode168=11 \lccode168=168 \uccode168=136  % l-acute       
+\catcode136=11 \lccode136=168 \uccode136=136  % L-acute       
+\catcode169=11 \lccode169=169 \uccode169=137  % l-caron       
+\catcode137=11 \lccode137=169 \uccode137=137  % L-caron       
+\catcode172=11 \lccode172=172 \uccode172=140  % n-caron       
+\catcode140=11 \lccode140=172 \uccode140=140  % N-caron       
+\catcode243=11 \lccode243=243 \uccode243=211  % o-acute       
+\catcode211=11 \lccode211=243 \uccode211=211  % O-acute       
+\catcode244=11 \lccode244=244 \uccode244=212  % o-circumflex  
+\catcode212=11 \lccode212=244 \uccode212=212  % O-circumflex  
+\catcode246=11 \lccode246=246 \uccode246=214  % o-diaeresis   
+\catcode214=11 \lccode214=246 \uccode214=214  % O-diaeresis   
+\catcode175=11 \lccode175=175 \uccode175=143  % r-acute       
+\catcode143=11 \lccode143=175 \uccode143=143  % R-acute       
+\catcode176=11 \lccode176=176 \uccode176=144  % r-caron       
+\catcode144=11 \lccode144=176 \uccode144=144  % R-caron       
+\catcode178=11 \lccode178=178 \uccode178=146  % s-caron       
+\catcode146=11 \lccode146=178 \uccode146=146  % S-caron       
+\catcode180=11 \lccode180=180 \uccode180=148  % t-caron       
+\catcode148=11 \lccode148=180 \uccode148=148  % T-caron       
+\catcode250=11 \lccode250=250 \uccode250=218  % u-acute       
+\catcode218=11 \lccode218=250 \uccode218=218  % U-acute       
+\catcode183=11 \lccode183=183 \uccode183=151  % u-ring        
+\catcode151=11 \lccode151=183 \uccode151=151  % U-ring        
+\catcode252=11 \lccode252=252 \uccode252=220  % u-diaeresis   
+\catcode220=11 \lccode220=252 \uccode220=220  % U-diaeresis   
+\catcode253=11 \lccode253=253 \uccode253=221  % y-acute       
+\catcode221=11 \lccode221=253 \uccode221=221  % Y-acute       
+\catcode186=11 \lccode186=186 \uccode186=154  % z-caron       
+\catcode154=11 \lccode154=186 \uccode154=154  % Z-caron       
+					                       
+%% (2) \csaccents, \cmaccents
+\def\accentscommands{\string\^, \string\`, \string\', \string\v,
+   \string\" and \string\r}
+\def\csaccentsmessage{%
+   \message{The \accentscommands\space expands to characters by Cork.}}
+\def\cmaccentsmessage{%
+   \message{The \accentscommands\space have original plainTeX meaning.}}
+\def\csaccents{\csaccentsmessage
+  \def\^##1{\ifx o##1^^f4\else
+            \ifx O##1^^d4\else
+                    {\accent94 ##1}\fi\fi}\let\^^D=\^%
+  \def\`##1{\ifx a##1^^b8\else
+            \ifx A##1^^98\else
+                    {\accent18 ##1}\fi\fi}%
+  \def\'##1{\ifx a##1^^e1\else
+            \ifx e##1^^e9\else
+            \ifx\i##1^^ed\else
+            \ifx i##1^^ed\else
+            \ifx o##1^^f3\else
+            \ifx u##1^^fa\else
+            \ifx y##1^^fd\else
+            \ifx r##1^^af\else
+            \ifx l##1^^a8\else
+            \ifx A##1^^c1\else
+            \ifx E##1^^c9\else
+            \ifx I##1^^cd\else
+            \ifx O##1^^d3\else
+            \ifx U##1^^da\else
+            \ifx Y##1^^dd\else
+            \ifx R##1^^8f\else
+            \ifx L##1^^88\else
+                    {\accent19 ##1}%
+            \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi}%
+  \def\v##1{\ifx e##1^^a5\else
+            \ifx s##1^^b2\else
+            \ifx c##1^^a3\else
+            \ifx r##1^^b0\else
+            \ifx z##1^^ba\else
+            \ifx d##1^^a4\else
+            \ifx t##1^^b4\else
+            \ifx l##1^^a9\else
+            \ifx n##1^^ac\else
+            \ifx E##1^^85\else
+            \ifx S##1^^92\else
+            \ifx C##1^^83\else
+            \ifx R##1^^90\else
+            \ifx Z##1^^9a\else
+            \ifx D##1^^84\else
+            \ifx T##1^^94\else
+            \ifx L##1^^89\else
+            \ifx N##1^^8c\else
+                    {\accent20 ##1}%
+            \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi}\let\^^_=\v%
+  \def\"##1{\ifx a##1^^e4\else
+            \ifx o##1^^f6\else
+            \ifx u##1^^fc\else
+            \ifx A##1^^c4\else
+            \ifx O##1^^d6\else
+            \ifx U##1^^dc\else
+                    {\accent"7F ##1}\fi\fi\fi\fi\fi\fi}%
+  \def\r##1{\ifx u##1^^b7\else
+            \ifx U##1^^97\else
+                    {\accent23 ##1}\fi\fi}%
+  %% for backward compatibility:
+  \def\softd{\v{d}}\def\softt{\v{t}}\def\ou{\r{u}}%
+  \def\softl{\v{l}}\def\softL{\v{L}}}
+\def\cmaccents{\cmaccentsmessage
+  \def\^##1{{\accent94 ##1}}\let\^^D=\^%
+  \def\`##1{{\accent18 ##1}}%
+  \def\'##1{{\accent19 ##1}}%
+  \def\v##1{{\accent20 ##1}}\let\^^_=\v%
+  \def\"##1{{\accent"7F ##1}}%
+  \let\r=\undefined\def\ou{{\accent6u}}}
+
+%% (3) special \sequences for T1 encoded fonts.
+       %% Czech left a right double qoutes
+\chardef\clqq=18   \sfcode18=0
+\chardef\crqq=16   \sfcode16=0
+       %% French double quotes
+\chardef\flqq=14   \sfcode14=0
+\chardef\frqq=13   \sfcode13=0
+       %% Other characters
+\def\ogonek #1{\setbox0\hbox{#1}\ifdim\ht0=1ex\accent12 #1%
+   \else{\ooalign{\unhbox0\crcr\hss\char12}}\fi}
+\def\promile{\char37 \char24 }
+       %% Alternative \hyphenchar ("je-li" is no "je\hyphenchar li").
+\let\extrahyphenchar=\undefined
+\let\extrahyphens=\undefined
+       %% The czech quotes:
+\def\uv{\bgroup\aftergroup\closequotes\leavevmode
+        \afterassignment\clqq\let\next=}
+\def\closequotes{\unskip\crqq\relax}
+
+\chardef\i=25
+
+\endinput
+
+

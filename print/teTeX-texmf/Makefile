@@ -6,7 +6,7 @@
 
 PORTNAME=	teTeX-texmf
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -93,6 +93,9 @@ do-install:
 	cd ${PREFIX}/${TEXMFDISTDIR} && \
 		${TAR} xzUf ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF_SRC} \
 			${EXCLUDE_LIST:S,^,--exclude ,g}
+	${INSTALL_DATA} ${FILESDIR}/cslatex.ini ${PREFIX}/${TEXMFDISTDIR}/tex/cslatex/cslatex.ini
+	${INSTALL_DATA} ${FILESDIR}/csplain.ini ${PREFIX}/${TEXMFDISTDIR}/tex/csplain/csplain.ini
+	${INSTALL_DATA} ${FILESDIR}/t1code.tex ${PREFIX}/${TEXMFDISTDIR}/tex/csplain/t1code.tex
 .for F in CM LATEX
 	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}/fonts/type1/bluesky/${F:L}
 	cd ${PREFIX}/${TEXMFDISTDIR}/fonts/type1/bluesky/${F:L} && \
