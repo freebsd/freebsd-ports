@@ -3,16 +3,17 @@
 # Date created:        15 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1999/03/14 12:33:56 kris Exp $
 #
 
 DISTNAME=	dejasearch11
 PKGNAME=	dejasearch-1.1
 CATEGORIES=	news
-MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
-		http://homemade.virtualave.net/dejasearch/
+MASTER_SITES=	http://homemade.hypermart.net/dejasearch/
 
 MAINTAINER=	kris@FreeBSD.ORG
+
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 WRKSRC=		${WRKDIR}/dejasearch/
 
