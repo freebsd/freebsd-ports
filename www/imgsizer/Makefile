@@ -6,12 +6,15 @@
 #
 
 PORTNAME=		imgsizer
-PORTVERSION=		2.6
+PORTVERSION=		2.7
 CATEGORIES=		www textproc
 MASTER_SITES=		http://www.catb.org/~esr/imgsizer/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A tool to autogenerate WIDTH and HEIGHT for IMG HTML tags
+
+RUN_DEPENDS=		rdjpgcom:${PORTSDIR}/graphics/jpeg \
+			identify:${PORTSDIR}/graphics/ImageMagick
 
 USE_PYTHON=		yes
 USE_REINPLACE=		yes
