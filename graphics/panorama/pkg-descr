@@ -1,0 +1,17 @@
+Panorama is a framework for 3D graphics production.
+This will include modeling, rendering, animating, 
+post-processing, etc. Currently, there is no 
+support for animation, but this will be added soon.
+
+Functionally, is a structured API, composed of two 
+dynamic libraries, and several plugins.  A simple 
+console-mode front-end is included, which can load
+scene descriptions and output a single image file.
+
+A graphic front-end is under development and can
+be found at the main web page.
+
+WWW: http://www.gnu.org/software/panorama/
+
+-Aaron VonderHaar
+ avh4@usa.net
