@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Nov 21 18:24:52 2000
++++ Makefile.in	Wed Dec  6 14:36:40 2000
+@@ -112,7 +112,7 @@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PY_EXTRAS = @PY_EXTRAS@
+-Python = @Python@
++python = @Python@
+ RANLIB = @RANLIB@
+ RECODEINC = @RECODEINC@
+ RECODELIB = @RECODELIB@
