@@ -65,6 +65,6 @@ do-install:
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
