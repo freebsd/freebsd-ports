@@ -1,11 +1,14 @@
+bin/adnmz
 bin/bnamazu
 bin/gcnmz
 bin/kwnmz
+bin/lnnmz
 bin/mailutime
 bin/mknmz
 bin/namazu
 bin/nmz-config
 bin/nmzgrep
+bin/nmzmerge
 bin/rfnmz
 bin/vfnmz
 etc/namazu/mknmzrc-sample
@@ -30,7 +33,7 @@ include/namazu/wakati.h
 lib/libnmz.a
 lib/libnmz.la
 lib/libnmz.so
-lib/libnmz.so.4
+lib/libnmz.so.5
 libexec/namazu.cgi
 share/locale/es/LC_MESSAGES/namazu.mo
 share/locale/fr/LC_MESSAGES/namazu.mo
@@ -48,20 +51,31 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%PORTDOCS%%@dirrm share/namazu/doc/ja
 %%PORTDOCS%%share/namazu/doc/namazu.css
 %%PORTDOCS%%@dirrm share/namazu/doc
+share/namazu/etc/AUTHORS
+share/namazu/etc/COPYING
 share/namazu/etc/CREDITS
+share/namazu/etc/ChangeLog
 share/namazu/etc/ChangeLog.1
+share/namazu/etc/HACKING
+share/namazu/etc/HACKING-ja
+share/namazu/etc/INSTALL
 share/namazu/etc/INSTALL-ja
+share/namazu/etc/NEWS
+share/namazu/etc/README
 share/namazu/etc/README-es
 share/namazu/etc/README-ja
+share/namazu/etc/THANKS
+share/namazu/etc/TODO
 share/namazu/etc/namazu.png
-share/namazu/etc/namazu.spec
-share/namazu/etc/namazu.spec.in
 @dirrm share/namazu/etc
 share/namazu/filter/bzip2.pl
 share/namazu/filter/compress.pl
+share/namazu/filter/deb.pl
+share/namazu/filter/dvi.pl
 share/namazu/filter/excel.pl
 share/namazu/filter/gfilter.pl
 share/namazu/filter/gzip.pl
+share/namazu/filter/hdml.pl
 share/namazu/filter/hnf.pl
 share/namazu/filter/html.pl
 share/namazu/filter/mailnews.pl
@@ -69,8 +83,10 @@ share/namazu/filter/man.pl
 share/namazu/filter/mhonarc.pl
 share/namazu/filter/msword.pl
 share/namazu/filter/pdf.pl
+share/namazu/filter/postscript.pl
 share/namazu/filter/powerpoint.pl
 share/namazu/filter/rfc.pl
+share/namazu/filter/rpm.pl
 share/namazu/filter/taro.pl
 share/namazu/filter/tex.pl
 @dirrm share/namazu/filter

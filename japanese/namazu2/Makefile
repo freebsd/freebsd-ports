@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	namazu2
-PORTVERSION=	2.0.5
-CATEGORIES=	japanese textproc
+PORTNAME=	namazu
+PORTVERSION=	2.0.6
+CATEGORIES=	japanese textproc databases
 MASTER_SITES=	http://www.namazu.org/stable/
-DISTNAME=	namazu-${PORTVERSION}
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	knu@FreeBSD.org
 
@@ -19,8 +19,9 @@ BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
 		${DEPEND_WAKATI}
 RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
 		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf \
-		${DEPEND_WAKATI} \
-		${DEPEND_MSOFFICE}
+		${DEPEND_WAKATI}
+#		xlHtml:${PORTSDIR}/textproc/xlhtml \
+#		wvHtml:${PORTSDIR}/textproc/wv
 
 PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
@@ -36,13 +37,7 @@ DEPEND_WAKATI=	${PM_BASE}/${PERL_ARCH}/Text/ChaSen.pm:${PORTSDIR}/japanese/p5-Te
 DEPEND_WAKATI=	${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
 .endif
 
-.if !defined(WITHOUT_MSOFFICE)
-DEPEND_MSOFFICE=	xlHtml:${PORTSDIR}/textproc/xlhtml \
-			wvHtml:${PORTSDIR}/textproc/wv
-.endif
-
 post-install:
-	${LN} -sf ${PREFIX}/lib/libnmz.so.4 ${PREFIX}/lib/libnmz.so
 .if defined(NOPORTDOCS)
 	${RM} -rf ${PREFIX}/share/namazu/doc
 .endif
