@@ -1,1 +1,6 @@
 MD5 (exmh-2.0z/exmh-2.0zeta.tar.Z) = 9a8c1026c57357ce3b4aa9ae6f612d3c
+MD5 (exmh-2.0z/ispell.patch) = ee3bdbdf2a1f3ef7fce911d5836bde27
+MD5 (exmh-2.0z/koir.patch) = faf27cf0a7e986631de58f872dd60f84
+MD5 (exmh-2.0z/mime.patch) = c4ca30bb6c553243a193850a192c8586
+MD5 (exmh-2.0z/seditMime.patch) = 74006191c5ed6fe50a0b38e90f9b1a56
+MD5 (exmh-2.0z/scan.patch) = 9f610082a0871fc35c6817b0f06ea234
