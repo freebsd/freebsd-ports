@@ -5,20 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	3.8
+PORTVERSION=	4.0.r1
 CATEGORIES=	devel python
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	eugos@gmx.net
-COMMENT=	Python convenience link to sip library
-
-LIB_DEPENDS=	sip.10:${PORTSDIR}/devel/sip
+COMMENT=	Python to C and C++ bindings generator
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
+USE_QT_VER=	3
 
-do-install:
-	${LN} -s ${LOCALBASE}/lib/libsip.so ${PYTHONPREFIX_SITELIBDIR}/libsip.so
+do-configure:
+	@(cd ${WRKSRC} && ${SETENV} QTDIR=${X11BASE} \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+		${PYTHON_CMD} configure.py -b ${PREFIX}/bin \
+		-d ${PYTHONPREFIX_SITELIBDIR} -v ${PREFIX}/share/sip)
 
 .include <bsd.port.mk>
