@@ -7,7 +7,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.timidity.jp/dist/	\
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/	\
@@ -23,7 +23,7 @@ MAINTAINER=	llwang@infor.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++	\
-		${X11BASE}/bin/mozilla:${PORTSDIR}/www/mozilla
+		${X11BASE}/lib/browser_plugins:${PORTSDIR}/www/mozilla
 
 BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2
 ZDIST=		unix-sdk-3.0b5.tar.Z ump_with_volume.tar.Z timdiffs.tar.Z
@@ -85,6 +85,6 @@ do-build:
 	@cd ${WRKSRC}/ump; ${GMAKE} ump
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ump/ump.so ${X11BASE}/lib/mozilla/plugins
+	@${INSTALL_PROGRAM} ${WRKSRC}/ump/ump.so ${X11BASE}/lib/browser_plugins
 
 .include <bsd.port.post.mk>

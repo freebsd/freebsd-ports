@@ -1,2 +1,2 @@
 @cwd %%X11BASE%%
-lib/mozilla/plugins/ump.so
+lib/browser_plugins/ump.so
