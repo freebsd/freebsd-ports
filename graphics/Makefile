@@ -11,6 +11,7 @@
     SUBDIR += aalib
     SUBDIR += aero
     SUBDIR += aview
+    SUBDIR += avifile
     SUBDIR += backfract
     SUBDIR += camediaplay
     SUBDIR += camserv

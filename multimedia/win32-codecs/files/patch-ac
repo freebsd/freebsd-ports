@@ -1,0 +1,11 @@
+--- xmps-avi-plugin/Makefile.in.orig	Sat Sep 16 14:13:04 2000
++++ xmps-avi-plugin/Makefile.in	Sat Sep 16 14:20:30 2000
+@@ -1,6 +1,6 @@
+-LIBS = -lstdc++ -L../lib -L@libdir@ -laviplay -lpthread @XMPS_LIBS@ 
++LIBS = -lstdc++ -L../lib -L@libdir@ -laviplay -pthread @XMPS_LIBS@ 
+ 
+-INCLUDES = -I. -I../include -I@includedir@/avifile @XMPS_CFLAGS@ 
++INCLUDES = -I. -I../include -I@includedir@/avifile @XMPS_CFLAGS@ @SDL_CFLAGS@
+ 
+ all: avi_configure.o avi_codec.o
+ 	 $(CC) -shared avi_configure.o avi_codec.o $(LIBS) -o libavi.so
