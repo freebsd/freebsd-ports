@@ -60,6 +60,24 @@ This patch is based on code marked:
  	if(ucode == NULL) {
  		fprintf(stderr, "Cannot malloc %d bytes for UCODE.\n",
  			ucheader.ucode_words << 2);
+@@ -236,7 +237,7 @@
+ 	/* MMAP the registers. */
+ 	uregs = mmap(0, 0x2000,
+ 		     PROT_READ | PROT_WRITE,
+-		     MAP_PRIVATE,
++		     MAP_SHARED,
+ 		     afb_fd,
+ 		     0x04000000);
+ 	if (uregs == (void *)-1L) {
+@@ -246,7 +247,7 @@
+ 
+ 	kregs = mmap(0, 0x2000,
+ 		     PROT_READ | PROT_WRITE,
+-		     MAP_PRIVATE,
++		     MAP_SHARED,
+ 		     afb_fd,
+ 		     0x0bc04000);
+ 	if (kregs == (void *)-1L) {
 @@ -254,14 +255,26 @@
  		exit(1);
  	}
