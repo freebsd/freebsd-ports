@@ -10,7 +10,7 @@ PORTVERSION=	2.1.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.his.com/pub/brad/dns/
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 AUX_DIR=	lib/doc
 AUX_FILES=	doc1.awk doc3.awk doc4.awk INFO RFC.XXXX

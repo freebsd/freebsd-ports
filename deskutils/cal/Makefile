@@ -11,7 +11,7 @@ CATEGORIES=		deskutils
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/shell
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/cal-3.5/source
 MAKEFILE=	makefile.unx

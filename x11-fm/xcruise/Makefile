@@ -11,7 +11,7 @@ PORTVERSION= 	0.24
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://tanaka-www.cs.titech.ac.jp/%7Eeuske/prog/
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 USE_IMAKE=	yes
 

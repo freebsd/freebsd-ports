@@ -17,7 +17,7 @@ PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 PATCHFILES=	${DISTNAME}j-gamma-fixcmpfont.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 USE_XLIB=	yes
 DIST_SUBDIR=	iv

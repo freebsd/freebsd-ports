@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		swisswatch.1
