@@ -1,23 +1,17 @@
---- libpconn/PConnection_net.c	Sun Apr 15 06:33:56 2001
-+++ libpconn/PConnection_net.c	Wed Dec 25 20:09:52 2002
-@@ -10,5 +10,7 @@
- #include <string.h>		/* For bzero() */
- #include <arpa/nameser.h>	/* Solaris's <resolv.h> requires this */
-+#ifndef __FreeBSD__	/* resolv.h without in6.h blows up on FreeBSD */
- #include <resolv.h>		/* For inet_ntop() under Solaris */
-+#endif
- 
- #if HAVE_LIBINTL_H
---- src/coldsync.c	Tue May 15 15:23:40 2001
-+++ src/coldsync.c	Wed Dec 25 20:12:40 2002
-@@ -25,5 +25,9 @@
- 
- #include <arpa/nameser.h>	/* Solaris's <resolv.h> requires this */
+--- libpconn/PConnection_net.c	Mon Nov 19 18:08:06 2001
++++ libpconn/PConnection_net.c	Thu Dec 26 08:02:24 2002
+@@ -11,5 +11,5 @@
+ #include <netdb.h>		/* For getservbyname() */
+ #include <string.h>		/* For memset() */
+-#if HAVE_INET_NTOP
++#if HAVE_INET_NTOP && !defined(__FreeBSD__)
+ #  include <arpa/nameser.h>	/* Solaris's <resolv.h> requires this */
+ #  include <resolv.h>		/* For inet_ntop() under Solaris */
+--- src/coldsync.c	Wed Nov 28 16:48:44 2001
++++ src/coldsync.c	Thu Dec 26 08:26:47 2002
+@@ -8,2 +8,5 @@
+  */
 +#ifdef __FreeBSD__
-+#define __KAME_NETINET_IN_H_INCLUDED_
-+#include <netinet6/in6.h>
-+#undef __KAME_NETINET_IN_H_INCLUDED_ /* XXX: you are welcome to fix this */
--#include <resolv.h>		/* For inet_ntop() under Solaris */
++#	define _POSIX_C_SOURCE 200112
 +#endif
- #include <unistd.h>		/* For sleep(), getopt() */
- #include <ctype.h>		/* For isalpha() and friends */
+ #include "config.h"

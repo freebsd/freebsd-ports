@@ -1,0 +1,29 @@
+--- Makefile	Mon Jun  4 06:18:28 2001
++++ Makefile	Fri Dec 27 09:31:00 2002
+@@ -16,3 +16,3 @@
+ # Note that $(PERLDIR) is expanded in Make.rules.
+-SUBDIRS =	include libpconn libpdb src $(PERLDIR) conduits doc i18n
++SUBDIRS =	include libpconn libpdb src $(PERLDIRS) doc i18n
+ 
+--- Make.rules.in	Mon Nov 19 12:05:33 2001
++++ Make.rules.in	Fri Dec 27 09:30:15 2002
+@@ -40,3 +40,3 @@
+ # Subdirectory containing the Perl modules. Used by "configure --without-perl"
+-PERLDIR =	@PERLDIR@
++PERLDIRS =	@PERLDIRS@
+ 
+--- configure	Fri Dec  7 10:24:39 2001
++++ configure	Fri Dec 27 09:29:28 2002
+@@ -3939,5 +3939,5 @@
+ 	# Name of Perl subdirectory
+-	PERLDIR=perl
++	PERLDIRS="perl conduits"
+ else
+-	PERLDIR=""
++	PERLDIRS=""
+ fi
+@@ -4303,3 +4303,3 @@
+ s%@LIBYACC@%$LIBYACC%g
+-s%@PERLDIR@%$PERLDIR%g
++s%@PERLDIRS@%$PERLDIRS%g
+ s%@CONDUITDIR@%$CONDUITDIR%g
