@@ -1,5 +1,5 @@
---- poppassd.c.orig	Mon Mar 31 16:00:34 1997
-+++ poppassd.c	Mon Mar 31 16:03:16 1997
+--- poppassd.c.orig	Mon Jun  7 19:34:23 1999
++++ poppassd.c	Mon Jun  7 19:40:00 1999
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -62,19 +62,29 @@
 -	  WriteToClient ("500 Can't open syslog.");
 -	       exit (1);
 -     }
-+     openlog("poppassd", LOG_PID, LOG_LOCAL2);
++     openlog ("poppassd", LOG_PID, LOG_LOCAL2);
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -218,6 +217,7 @@
+@@ -212,12 +211,16 @@
+      
+      if ((pw = getpwnam (user)) == NULL)
+      {
+-	  WriteToClient ("500 Unknown user, %s.", user);
++	  syslog (LOG_ERR, "Unkown user, %s", user);
++	  sleep (5);
++	  WriteToClient ("500 Old password is incorrect.");
+ 	  exit(1);
+      }
  
       if (chkPass (user, oldpass, pw) == FAILURE)
       {
-+	  syslog(LOG_ERR, "Incorrect password from %s", user);
++	  syslog (LOG_ERR, "Incorrect password from %s", user);
++	  sleep (5);
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -264,28 +264,28 @@
+@@ -264,28 +267,28 @@
  
  	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
  	  {
@@ -107,7 +117,7 @@
  	       WriteToClient ("500 Server error (abnormal exit), get help!");
  	       exit (1);
  	  }
-@@ -304,17 +304,19 @@
+@@ -304,17 +307,19 @@
       }
       else      /* Child */
       {
@@ -138,7 +148,7 @@
  	  setuid (pw->pw_uid);
  	  setgid (pw->pw_gid);
  	  dochild (master, slavedev, user);
-@@ -324,7 +326,7 @@
+@@ -324,7 +329,7 @@
  /*
   * dochild
   *
@@ -147,7 +157,7 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -338,13 +340,6 @@
+@@ -338,13 +343,6 @@
     int slave;
     struct termios stermios;
  
@@ -161,7 +171,7 @@
     /* Open slave pty and acquire as new controlling terminal. */
  
     if ((slave = open(slavedev, O_RDWR)) < 0) {
-@@ -387,10 +382,10 @@
+@@ -387,10 +385,10 @@
        return(0);
     }
  
@@ -175,7 +185,7 @@
        return(0);
     }
  }
-@@ -408,15 +403,20 @@
+@@ -408,15 +406,20 @@
   *
   * Modified by Norstad to remove assumptions about number of pty's allocated
   * on this UNIX box.
@@ -197,7 +207,7 @@
     dirp = opendir("/dev");
     while ((dp = readdir(dirp)) != NULL) {
        if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
-@@ -485,9 +485,11 @@
+@@ -485,9 +488,11 @@
       }
  
       writestring(master, pswd);
@@ -210,7 +220,7 @@
       return SUCCESS;
  }
  
-@@ -566,6 +568,7 @@
+@@ -566,6 +571,7 @@
  	}
  	n += m;
  	buf[n] = 0;
