@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_Beautifier
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -15,7 +15,7 @@ COMMENT=	PEAR beautifier for PHP
 BUILD_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=        yes
+USE_PHP=        tokenizer
 USE_REINPLACE=	yes
 DEFAULT_PHP_VER=5
 
