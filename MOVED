@@ -1440,3 +1440,4 @@ science/mxp|graphics/mxp|2005-03-25|fix category
 misc/kfile_torrent|net/kdenetwork3|2005-03-27|kfile_torrent included in kdenetwork package
 multimedia/linux-divxplayer||2005-04-02|developer's dropped the application
 audio/rebler||2005-04-07|Project dead and disappeared
+net/linux-edonkey-gui-gtk|net/edonkey-gui-gtk|2005-04-07|Dead port, native version available
