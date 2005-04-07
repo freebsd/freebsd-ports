@@ -7,7 +7,7 @@
 
 CATEGORIES=	chinese
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs text editor version 21, with XIM support and Big5 settings
 
 PLIST=		${.CURDIR}/pkg-plist
