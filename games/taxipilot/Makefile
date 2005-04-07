@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	taxipilot
-PORTVERSION=	0.9.01
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	taxipilot
@@ -21,9 +20,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+EXTRA_PATCHES= ${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}"
 
 .include <bsd.port.mk>
