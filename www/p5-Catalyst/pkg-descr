@@ -1,0 +1,12 @@
+Catalyst is an elegant web application framework, extremely flexible yet
+extremely simple. It's similar to Ruby on Rails, Spring (Java) and
+Maypole, upon which it was originally based.
+
+Catalyst follows the Model-View-Controller (MVC) design pattern, allowing
+you to easily separate concerns, like content, presentation and flow control,
+into separate modules. This separation allows you to modify code that handles
+one concern without affecting code that handles the others. Catalyst promotes
+re-use of existing Perl modules that already handle common web application
+concerns well.
+
+WWW: http://search.cpan.org/dist/Catalyst/
