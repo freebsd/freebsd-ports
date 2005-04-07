@@ -1,0 +1,29 @@
+bin/catalyst.pl
+%%SITE_PERL%%/Catalyst.pm
+%%SITE_PERL%%/Catalyst/Manual.pod
+%%SITE_PERL%%/Catalyst/Response.pm
+%%SITE_PERL%%/Catalyst/Helper.pm
+%%SITE_PERL%%/Catalyst/Request.pm
+%%SITE_PERL%%/Catalyst/Test.pm
+%%SITE_PERL%%/Catalyst/Log.pm
+%%SITE_PERL%%/Catalyst/Base.pm
+%%SITE_PERL%%/Catalyst/Engine.pm
+%%SITE_PERL%%/Catalyst/Engine/CGI.pm
+%%SITE_PERL%%/Catalyst/Engine/FCGI.pm
+%%SITE_PERL%%/Catalyst/Engine/Test.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache.pm
+%%SITE_PERL%%/Catalyst/Engine/Server.pm
+%%SITE_PERL%%/Catalyst/Engine/CGI/NPH.pm
+%%SITE_PERL%%/Catalyst/Manual/Intro.pod
+%%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
+%%SITE_PERL%%/Catalyst/Manual/Troubleshooting.pod
+%%SITE_PERL%%/Catalyst/Manual/SuccessStories.pod
+%%SITE_PERL%%/Catalyst/Manual/Internals.pod
+%%SITE_PERL%%/Catalyst/Manual/FAQ.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
+@dirrm %%SITE_PERL%%/Catalyst/Engine/CGI
+@dirrm %%SITE_PERL%%/Catalyst/Engine
+@dirrm %%SITE_PERL%%/Catalyst/Manual
+@dirrm %%SITE_PERL%%/Catalyst
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
