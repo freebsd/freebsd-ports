@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
-DEPRECATED=	"mastersite disappeared\; last distfile update was in 1994"
-
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		mkfontdir:${X_CLIENTS_PORT}
