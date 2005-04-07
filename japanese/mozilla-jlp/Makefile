@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.7.5
-PORTREVISION=	2
+PORTVERSION=	1.7.6
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla-japan/mozilla/releases/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/mozilla/&,}
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	mozilla-${PORTVERSION}-langjajp.fix
+DISTNAME=	mozilla-${PORTVERSION}-langjajp
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	fortune@n.jpn.ph
@@ -59,8 +59,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${MOZILLA} ${PREFIX}/bin
 	(cd ${WRKDIR}/sp; ${TAR} -cf - *) | \
 	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}/searchplugins
-	(cd ${WRKDIR}/sp_nomac; ${TAR} -cf - *) | \
-	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}/searchplugins
+#	(cd ${WRKDIR}/sp_nomac; ${TAR} -cf - *) | \
+#	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}/searchplugins
 	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults) | \
 	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}
 	(cd ${PREFIX}/lib/${MOZILLA}/chrome; \
