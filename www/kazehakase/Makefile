@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	 --with-gecko-engine=${MOZILLA:S/-devel//}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
+MAN1=		kazehakase.1
+
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
 .if defined(WITH_MIGEMO)
