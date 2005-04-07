@@ -950,6 +950,7 @@
     SUBDIR += p5-Module-Load
     SUBDIR += p5-Module-Load-Conditional
     SUBDIR += p5-Module-Pluggable
+    SUBDIR += p5-Module-Pluggable-Fast
     SUBDIR += p5-Module-Pluggable-Ordered
     SUBDIR += p5-Module-Refresh
     SUBDIR += p5-Module-Reload
