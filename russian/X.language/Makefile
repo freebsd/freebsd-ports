@@ -18,7 +18,7 @@ DISTFILES+=     Type1.koi8-r.tgz:kiae
 DISTFILES+=     Type1.koi8-r.free.tgz:kiae
 .endif
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Setup X locale/nls/keyboard/fonts for russian language (koi8-r)
 
 BROKEN=		Incorrect pkg-plist
