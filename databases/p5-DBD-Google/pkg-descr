@@ -1,0 +1,4 @@
+DBD::Google allows you to use Google as a datasource; Google can be queried
+using SQL SELECT statements, and iterated over using standard DBI conventions.
+
+WWW: http://search.cpan.org/dist/DBD-Google/
