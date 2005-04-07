@@ -14,3 +14,10 @@ jails/addons/usr/share/examples/cvsup/stable-supfile
 jails/addons/usr/share/examples/cvsup/standard-supfile
 jails/addons/usr/share/examples/cvsup/www-supfile
 sbin/jailctl
+@dirrm jails/addons/etc
+@dirrm jails/addons/usr/share/examples/cvsup
+@dirrm jails/addons/usr/share/examples
+@dirrm jails/addons/usr/share
+@dirrm jails/addons/usr
+@dirrm jails/addons
+@dirrm jails
