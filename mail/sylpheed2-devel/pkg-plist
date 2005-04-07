@@ -1,5 +1,4 @@
 bin/sylpheed
-etc/sylpheed-mime.types
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.ja
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
