@@ -1,0 +1,8 @@
+The Grid Analysis and Display System (GrADS) is an interactive
+desktop tool that is used for easy access, manipulation, and
+visualization of earth science data. The format of the data may be
+either binary, GRIB, NetCDF, or HDF-SDS (Scientific Data Sets).
+GrADS has been implemented worldwide on a variety of commonly used
+operating systems and is freely distributed over the Internet.
+
+WWW: http://grads.iges.org/grads/
