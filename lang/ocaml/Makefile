@@ -13,7 +13,7 @@ MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:R}/
 PKGNAMESUFFIX=	${SFX}
 
-MAINTAINER?=	eugos@gmx.net
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	The Objective Caml compiler and programming environment
 
 .if defined(WITHOUT_X11)

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	eugos@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt-based Jabber client
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
