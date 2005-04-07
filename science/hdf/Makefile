@@ -13,14 +13,8 @@ MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/src/:src \
 		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc_szip
 DISTNAME=	HDF${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
-		${SZIP_DOCFILE}:doc_szip
-DOCFILES=	HDF41r5_SpecDG.pdf \
-		HDF42r0_RefMan.pdf \
-		HDF42r0_UserGd.pdf
-SZIP_DOCFILE=	SZIP_HDF4_2r1.pdf
-.for file in $(DOCFILES)
-DISTFILES+=	${file}:doc
-.endfor
+		${SZIP_DOCFILE}:doc_szip \
+		${DOCFILES:C/$/:doc/g}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
@@ -36,6 +30,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"
 USE_REINPLACE=	yes
+DOCFILES=	HDF41r5_SpecDG.pdf \
+		HDF42r0_RefMan.pdf \
+		HDF42r0_UserGd.pdf
+SZIP_DOCFILE=	SZIP_HDF4_2r1.pdf
 
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
 MANCOMPRESSED=	no
