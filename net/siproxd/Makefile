@@ -17,6 +17,8 @@ COMMENT=	A proxy/masquerading daemon for the SIP protocol
 
 LIB_DEPENDS=	osip2.3:${PORTSDIR}/net/libosip2
 
+BROKEN=		does not compile with libosip2-2.2.0 or newer
+
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 USE_RC_SUBR=	yes
