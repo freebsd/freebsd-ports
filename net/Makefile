@@ -334,7 +334,6 @@
     SUBDIR += linpopup
     SUBDIR += linux-agsatellite
     SUBDIR += linux-edonkey-core
-    SUBDIR += linux-edonkey-gui-gtk
     SUBDIR += linux-edonkey-server
     SUBDIR += linux-jigdo
     SUBDIR += linux-nx-client
