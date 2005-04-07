@@ -44,6 +44,9 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%EXAMPLESDIR%%/tstmem.py
 %%EXAMPLESDIR%%/tstxpath.py
 %%EXAMPLESDIR%%/valid.xml
+%%EXAMPLESDIR%%/validDTD.py
+%%EXAMPLESDIR%%/validRNG.py
+%%EXAMPLESDIR%%/validSchemas.py
 %%EXAMPLESDIR%%/validate.py
 %%EXAMPLESDIR%%/walker.py
 %%EXAMPLESDIR%%/xpath.py
