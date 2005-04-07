@@ -1,0 +1,12 @@
+%%SITE_PERL%%/DBD/Google.pm
+%%SITE_PERL%%/DBD/Google/GetInfo.pm
+%%SITE_PERL%%/DBD/Google/db.pm
+%%SITE_PERL%%/DBD/Google/dr.pm
+%%SITE_PERL%%/DBD/Google/parser.pm
+%%SITE_PERL%%/DBD/Google/st.pm
+%%SITE_PERL%%/SQL/Dialects/Google.pm
+@dirrm %%SITE_PERL%%/DBD/Google
+@unexec rmdir %D/%%SITE_PERL%%/DBD 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Google/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Google
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
