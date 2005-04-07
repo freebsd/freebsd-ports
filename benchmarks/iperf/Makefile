@@ -8,7 +8,9 @@
 PORTNAME=	iperf
 PORTVERSION=	2.0.1
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf2.0/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://dast.nlanr.net/Projects/Iperf2.0/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
