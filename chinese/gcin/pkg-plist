@@ -29,6 +29,7 @@ lib/menu/gcin-setup
 %%DATADIR%%/table/jyutping.gtab
 %%DATADIR%%/table/phrase.table
 %%DATADIR%%/table/pho.tab
+%%DATADIR%%/table/pho-huge.tab
 %%DATADIR%%/table/pinyin.gtab
 %%DATADIR%%/table/symbol-table
 %%DATADIR%%/table/tsin
@@ -36,6 +37,7 @@ lib/menu/gcin-setup
 %%DATADIR%%/table/zo.kbm
 %%DATADIR%%/table/zo-asdf.kbm
 %%DOCSDIR%%/README
+%%DOCSDIR%%/Changelog
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
