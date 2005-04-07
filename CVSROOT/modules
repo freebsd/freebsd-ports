@@ -5328,7 +5328,6 @@ linux-divx4linux4	ports/multimedia/linux-divx4linux4
 linux-ePSXe	ports/emulators/linux-ePSXe
 linux-eagle	ports/cad/linux-eagle
 linux-edonkey-core	ports/net/linux-edonkey-core
-linux-edonkey-gui-gtk	ports/net/linux-edonkey-gui-gtk
 linux-edonkey-server	ports/net/linux-edonkey-server
 linux-edonkey-tool-list	ports/misc/linux-edonkey-tool-list
 linux-edonkey-tool-recovermet	ports/misc/linux-edonkey-tool-recovermet
