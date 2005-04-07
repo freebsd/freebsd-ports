@@ -5,42 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wget-devel
-PORTVERSION=	1.9.1
-PORTREVISION=	2
-CATEGORIES=	ftp www
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	wget
-DISTNAME=	wget-${PORTVERSION}
+PORTNAME=	wget
+DISTVERSION=	1.10-alpha1
+CATEGORIES=	ftp www ipv6
+#MASTER_SITES=	${MASTER_SITE_GNU}
+#MASTER_SITE_SUBDIR=	wget
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sf
+PKGNAMESUFFIX=	-devel
 
-#PATCH_SITES=	${MASTER_SITE_LOCAL}
-#PATCH_SITE_SUBDIR=	sf
-#PATCHFILES=	wget_${PORTVERSION}-12.diff.gz
-#PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sf@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .endif
 
-CONFLICTS=	wget-*
+CONFLICTS=	wget-1.8*
 
-USE_REINPLACE=	yes
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_BZIP2=		yes
+USE_REINPLACE=		yes
+USE_PERL5_BUILD=	yes
+GNU_CONFIGURE=		yes
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS=		--with-ssl=no
 .else
 USE_OPENSSL=	yes
 .endif
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
 PLIST_SUB=	NLS=""
-.if defined(WITHOUT_NLS)
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		"LDFLAGS=${LDFLAGS}"
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
@@ -50,8 +49,9 @@ INFO=		wget
 
 post-patch:
 	${RM} -f ${WRKSRC}/doc/wget.info*
-# we don't need to run autoconf.
-	${TOUCH} ${WRKSRC}/configure
+# eliminate gmakism
+	${REINPLACE_CMD} -e 's,$$<,$$(srcdir)/wget.texi,' \
+		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's,/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
 			 -e 's,@file{},@file{${PREFIX}},' \
 		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi
