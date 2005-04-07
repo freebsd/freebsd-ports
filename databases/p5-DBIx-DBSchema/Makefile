@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-DBSchema
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -31,12 +31,11 @@ MAN3=	DBIx::DBSchema.3 DBIx::DBSchema::ColGroup.3 \
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-.else
+.endif
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-.endif
 .endif
 
 .include <bsd.port.post.mk>
