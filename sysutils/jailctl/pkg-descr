@@ -1,11 +1,11 @@
 Jail management tool for FreeBSD 4.x and 5.x.
 
-Supports
- - starting/stopping
- - creating
- - upgrading
- - deleting
- - backing up and restoring
+Supports:
+  - starting/stopping
+  - creating
+  - upgrading
+  - deleting
+  - backing up and restoring
 of jails.
 
 Aims to be easy to configure, and to leave the system in a manageable state 
