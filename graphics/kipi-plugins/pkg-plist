@@ -695,6 +695,8 @@ share/locale/xx/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/xx/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/xx/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/xx/LC_MESSAGES/kipiplugins.mo
+@dirrm share/locale/xx/LC_MESSAGES
+@dirrm share/locale/xx
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_acquireimages.mo
 
 @dirrm share/doc/HTML/sv/kipi-plugins
