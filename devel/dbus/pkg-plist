@@ -8,6 +8,7 @@ bin/dbus-viewer
 etc/dbus-1/session.conf
 etc/dbus-1/system.conf
 etc/rc.d/dbus.sh
+%%QT%%include/dbus-%%VERSION%%/dbus/connection.h
 include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
 include/dbus-%%VERSION%%/dbus/dbus-connection.h
@@ -21,11 +22,14 @@ include/dbus-%%VERSION%%/dbus/dbus-memory.h
 include/dbus-%%VERSION%%/dbus/dbus-message.h
 include/dbus-%%VERSION%%/dbus/dbus-pending-call.h
 include/dbus-%%VERSION%%/dbus/dbus-protocol.h
+%%QT%%include/dbus-%%VERSION%%/dbus/dbus-qt.h
 include/dbus-%%VERSION%%/dbus/dbus-server.h
 include/dbus-%%VERSION%%/dbus/dbus-shared.h
 include/dbus-%%VERSION%%/dbus/dbus-threads.h
 include/dbus-%%VERSION%%/dbus/dbus-types.h
 include/dbus-%%VERSION%%/dbus/dbus.h
+%%QT%%include/dbus-%%VERSION%%/dbus/message.h
+%%QT%%include/dbus-%%VERSION%%/dbus/server.h
 include/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.so
