@@ -8,8 +8,7 @@
 PORTNAME=	finger_mysql
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.fsix.net/files/ \
-		http://www.zone-h.org/files/49/ \
+MASTER_SITES=	http://www.zone-h.org/files/49/ \
 		http://downloads.securityfocus.com/vulnerabilities/exploits/
 DISTNAME=	finger_mysql.c
 EXTRACT_SUFX=	#none
