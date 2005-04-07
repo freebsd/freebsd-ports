@@ -1,0 +1,22 @@
+$FreeBSD$
+
+--- configure.orig	Fri Mar 12 09:24:26 2004
++++ configure	Fri Mar 25 16:02:29 2005
+@@ -5123,7 +5123,7 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 5124 "configure"
+ #include "confdefs.h"
+-#include <freq.h>
++#include <X11/libsx/freq.h>
+ _ACEOF
+ if { (eval echo "$as_me:5128: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+@@ -7261,7 +7261,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmfhdf  $LIBS"
++LIBS="-lmfhdf -ldf $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 7266 "configure"
+ #include "confdefs.h"
