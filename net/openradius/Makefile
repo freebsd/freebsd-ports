@@ -20,13 +20,7 @@ CC?=		gcc
 CXX?=		g++
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken by make(1) changes on FreeBSD >= 5.x"
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

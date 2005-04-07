@@ -40,6 +40,7 @@ etc/openradius/subdicts/dict.ascend
 lib/openradius/ascfile
 lib/openradius/delay
 lib/openradius/radclient
+lib/openradius/radldap
 lib/openradius/radlogger
 lib/openradius/radsql
 lib/openradius/unixpasswd
