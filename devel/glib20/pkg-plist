@@ -122,6 +122,7 @@ share/locale/gu/LC_MESSAGES/glib20.mo
 share/locale/he/LC_MESSAGES/glib20.mo
 share/locale/hi/LC_MESSAGES/glib20.mo
 share/locale/hr/LC_MESSAGES/glib20.mo
+share/locale/hu/LC_MESSAGES/glib20.mo
 share/locale/id/LC_MESSAGES/glib20.mo
 share/locale/is/LC_MESSAGES/glib20.mo
 share/locale/it/LC_MESSAGES/glib20.mo
@@ -144,6 +145,7 @@ share/locale/pt/LC_MESSAGES/glib20.mo
 share/locale/pt_BR/LC_MESSAGES/glib20.mo
 share/locale/ro/LC_MESSAGES/glib20.mo
 share/locale/ru/LC_MESSAGES/glib20.mo
+share/locale/rw/LC_MESSAGES/glib20.mo
 share/locale/sk/LC_MESSAGES/glib20.mo
 share/locale/sl/LC_MESSAGES/glib20.mo
 share/locale/sq/LC_MESSAGES/glib20.mo
@@ -163,6 +165,8 @@ share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @unexec rmdir %D/share/locale/ne/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ne 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/sr@ije/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sr@ije 2> /dev/null || true
 @unexec rmdir %D/share/locale/tl/LC_MESSAGES 2> /dev/null || true
