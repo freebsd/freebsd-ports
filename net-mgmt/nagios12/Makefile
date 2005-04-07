@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=--with-file-perfdata
 .endif
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/pgsql \
 		--with-pgsql-inc=${LOCALBASE}/pgsql \
 		--with-pgsql-xdata
