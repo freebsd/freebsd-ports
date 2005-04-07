@@ -57,7 +57,7 @@ LL_RADLDAP	= -lldap -llber
 CMPLR		= ./build/ccd-gcc
 DEFHDR		= ./build/hdr
 INST		= ./build/install
-ARCH		= ar rc \$@ \$^
+AR		= ar rc \$@ \$^
 #
 COMP		= \$(CMPLR) \$(CF_ALL) \$(CF_TGT) -o \$@ -c \$<
 LINK		= \$(CMPLR) \$(LF_ALL) \$(LF_TGT) -o \$@ \$^ \$(LL_TGT) \$(LL_ALL)

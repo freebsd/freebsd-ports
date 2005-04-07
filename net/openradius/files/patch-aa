@@ -1,0 +1,22 @@
+--- language/Rules.mk.orig	Thu Jan  9 11:18:53 2003
++++ language/Rules.mk	Thu Apr  7 14:06:31 2005
+@@ -31,7 +31,7 @@
+ 		$(COMP)
+ 
+ $(d)/language.a: $(LIBOBJS_$(d))
+-		$(ARCH)
++		$(AR)
+ 
+ $(d)/langtest:	$(TSTOBJS_$(d)) common/common.a
+ 		$(LINK)
+--- common/Rules.mk.orig	Sun Feb 23 14:32:14 2003
++++ common/Rules.mk	Thu Apr  7 14:05:54 2005
+@@ -29,7 +29,7 @@
+ $(OBJS_$(d)):	$(d)/platform.h
+ 
+ $(d)/common.a:	$(OBJS_$(d))
+-		$(ARCH)
++		$(AR)
+ 
+ $(d)/platform.h: $(d)/Rules.mk
+ 		$(DEFHDR) $@ $(S_CF_U_INT32_T) $(S_CF_VSNPRINTF) $(S_CF_SYSLOG)
