@@ -9866,7 +9866,6 @@ re2c		ports/devel/re2c
 readline	ports/devel/readline
 readlink	ports/sysutils/readlink
 reallyslick	ports/graphics/reallyslick
-rebler		ports/audio/rebler
 recmpeg		ports/multimedia/recmpeg
 recode		ports/converters/recode
 recombine	ports/biology/recombine
