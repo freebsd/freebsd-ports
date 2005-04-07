@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	Net_FTP
-PORTVERSION=	1.3.0
-PORTREVISION=	3
-CATEGORIES=	ftp pear
+PORTVERSION=	1.3.1
+CATEGORIES=	ftp www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
