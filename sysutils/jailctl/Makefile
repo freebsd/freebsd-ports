@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jailctl
-# Date created:		04.04.2005
-# Whom:			ltning
+# Date created:				04.04.2005
+# Whom:					Eirik Oeverby <ltning@anduin.net>
 #
 # $FreeBSD$
 #
