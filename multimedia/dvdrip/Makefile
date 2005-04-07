@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
 .if !defined(WITHOUT_CLUSTER)
