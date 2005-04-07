@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
-USE_GNOME=	pygtk2
+USE_GNOME=	pygtk2 gnomehier
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
