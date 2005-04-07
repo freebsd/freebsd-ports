@@ -33,7 +33,10 @@ PORTDOCS=	javadoc license manual
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pipe.sh ${PREFIX}/bin/pipe
 	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/bin/ ${DATADIR}
+	cd ${WRKSRC}/bin && \
+		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
+	cd ${WRKSRC}/bin && \
+		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	${LN} -s ${DATADIR}/petri-nets ${DATADIR}/Example\ nets
 	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
