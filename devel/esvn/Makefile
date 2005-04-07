@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esvn
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.9
 CATEGORIES=	devel
 MASTER_SITES=	http://esvn.umputun.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -51,6 +51,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/esvn ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/esvn-diff-wrapper ${PREFIX}/bin
 .if exists(${LOCALBASE}/bin/kde-config)
+	${MKDIR} ${LOCALBASE}/share/applnk
+	${MKDIR} ${LOCALBASE}/share/icons/hicolor/48x48/apps
 	${INSTALL_DATA} ${WRKSRC}/eSvn.desktop ${LOCALBASE}/share/applnk
 	${INSTALL_DATA} ${WRKSRC}/images/esvn.png ${LOCALBASE}/share/icons/hicolor/48x48/apps
 .endif
