@@ -50,8 +50,9 @@ MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 .if !defined(DBUS_SLAVE)
 .if defined(WITH_QT) && !defined(WITHOUT_QT)
 CONFIGURE_ARGS+=--enable-qt
+CONFIGURE_ENV+=	QTDIR=${X11BASE}
+LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 PLIST_SUB+=	QT=""
-BROKEN=	configure fails when QT support is enabled
 .else
 CONFIGURE_ARGS+=--disable-qt
 PLIST_SUB+=	QT="@comment "
