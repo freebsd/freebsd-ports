@@ -17,6 +17,8 @@ name=dhcpd
 paranoia=%%PARANOIA%%				# compiled in paranoia?
 jail=%%JAIL%%				# compiled in jail?
 
+load_rc_config $name
+
 # override these variables in /etc/rc.conf
 dhcpd_enable=${dhcpd_enable:-"NO"}
 dhcpd_flags=${dhcpd_flags:-} # -q -early_chroot		# command option(s)
