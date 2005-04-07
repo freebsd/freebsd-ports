@@ -9,7 +9,7 @@ PORTNAME=	libshout2
 PORTVERSION=	2.1
 PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.icecast.org/files/libshout/
+MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 DISTNAME=	libshout-${PORTVERSION}
 
 MAINTAINER=	lofi@freebsd.org
