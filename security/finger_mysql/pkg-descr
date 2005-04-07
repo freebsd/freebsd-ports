@@ -1,5 +1,3 @@
 This is a threaded C class IP MySQL scanner that will attempt to login
 and extract the hashes from a vulnerable MySQL daemon. See 
 http://online.securityfocus.com/bid/5503 for all the details.
-
-WWW: http://www.fsix.net/index.php?nav=crew
