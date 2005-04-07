@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ktagebuch
-PORTVERSION=		0.73
+PORTVERSION=		0.74
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.theblessing.net/programming/${PORTNAME}/
 
