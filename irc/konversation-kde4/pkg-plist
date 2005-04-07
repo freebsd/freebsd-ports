@@ -23,8 +23,6 @@ share/apps/konversation/scripts/google
 share/apps/konversation/scripts/kdeversion
 share/apps/konversation/scripts/mail
 share/apps/konversation/scripts/media
-share/apps/konversation/scripts/sample.desktop
-share/apps/konversation/scripts/sample.sh
 share/apps/konversation/scripts/sayclip
 share/apps/konversation/scripts/sysinfo
 share/apps/konversation/scripts/uptime
@@ -172,6 +170,7 @@ share/icons/crystalsvg/16x16/actions/kimproxyaway.png
 share/icons/crystalsvg/16x16/actions/kimproxyoffline.png
 share/icons/crystalsvg/16x16/actions/kimproxyonline.png
 share/icons/crystalsvg/16x16/apps/konversation.png
+share/icons/crystalsvg/22x22/actions/char.png
 share/icons/crystalsvg/22x22/actions/kimproxyaway.png
 share/icons/crystalsvg/22x22/actions/kimproxyoffline.png
 share/icons/crystalsvg/22x22/actions/kimproxyonline.png
@@ -216,6 +215,7 @@ share/locale/ro/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
 share/locale/sl/LC_MESSAGES/konversation.mo
 share/locale/sr/LC_MESSAGES/konversation.mo
+share/locale/sr@Latn/LC_MESSAGES/konversation.mo
 share/locale/sv/LC_MESSAGES/konversation.mo
 share/locale/ta/LC_MESSAGES/konversation.mo
 share/locale/tr/LC_MESSAGES/konversation.mo
