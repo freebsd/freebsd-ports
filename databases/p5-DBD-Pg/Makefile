@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	1.40
-PORTREVISION=	1
+PORTVERSION=	1.41
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -24,6 +23,15 @@ USE_PGSQL=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		DBD::Pg.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
