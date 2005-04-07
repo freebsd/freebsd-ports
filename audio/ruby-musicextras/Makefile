@@ -22,5 +22,6 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 USE_RUBY_FEATURES=	iconv
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 
 .include <bsd.port.mk>
