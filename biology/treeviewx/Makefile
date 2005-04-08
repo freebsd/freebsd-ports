@@ -1,3 +1,4 @@
+# ex:ts=8
 # Ports collection makefile for:	treeviewx
 # Date created:				04 August 2001
 # Whom:					tonym
@@ -6,20 +7,21 @@
 #
 
 PORTNAME=	treeviewx
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.5
 CATEGORIES=	biology
-MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/
+MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/download/${PORTVERSION}/
 DISTNAME=	tv-${PORTVERSION}
 
-MAINTAINER=	tonym@biolateral.com.au
+MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A phylogenetic tree viewer
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
+		wx_gtk2_dcsvg-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-contrib
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.4-config"
+
 PLIST_FILES=	bin/tv
 
 .include <bsd.port.pre.mk>
