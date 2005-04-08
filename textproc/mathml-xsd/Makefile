@@ -8,6 +8,7 @@
 
 PORTNAME=	mathml-xsd
 PORTVERSION=	2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/Math/XMLSchema/
 DISTNAME=	mathml${PORTVERSION}
@@ -15,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MathML XML Schema
-
-BROKEN=		Size mismatch
 
 NO_BUILD=	yes
 
