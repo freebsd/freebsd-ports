@@ -294,7 +294,7 @@ post-build:
 		${CP} data/bulgarian.hash bulgarian.hash
 .endif
 
-pre-install:
+pre-su-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
 
 post-install:
