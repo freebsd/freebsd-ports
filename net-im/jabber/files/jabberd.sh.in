@@ -11,13 +11,13 @@
 #jabber_enable="YES"
 #
 
-. /usr/local/etc/rc.subr
+. %%RC_SUBR%%
 
 name=jabber
 rcvar=`set_rcvar`
 
-command=/usr/local/sbin/jabberd
-required_files=/usr/local/etc/${name}.xml
+command=%%PREFIX%%/sbin/jabberd
+required_files=%%PREFIX%%/etc/${name}.xml
 
 HOSTNAME=`/bin/hostname`
 
