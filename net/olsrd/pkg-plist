@@ -1,0 +1,2 @@
+sbin/olsrd
+etc/olsrd.conf.default
