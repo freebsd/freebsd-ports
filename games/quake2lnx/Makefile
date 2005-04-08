@@ -403,7 +403,10 @@ do-install:
 . endif
 .endif
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 post-install:
-	@${SED} -e 's|$${DATADIR}|${DATADIR}|g' ${PKGMESSAGE}
+	@${SED} -e 's|$${DATADIR}|${DATADIR}|g' ${.CURDIR}/pkg-message >${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
