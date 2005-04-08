@@ -11,10 +11,12 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	vance@aurema.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transaction-based software configuration management system
 
 BROKEN=		Changes ownership of installed locale files
+DEPRECATED=	"install problems\; upstream authors have not responded"
+EXPIRATION_DATE=	2005-06-06
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
