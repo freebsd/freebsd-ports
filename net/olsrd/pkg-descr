@@ -1,0 +1,11 @@
+From the website:
+
+The olsr.org OLSR daemon is an implementation of the Optimized Link
+State Routing protocol. OLSR is a routing protocol for mobile ad-hoc
+networks. The protocol is pro-active, table driven and utilizes a
+technique called multipoint relaying for message flooding.
+
+WWW: http://www.olsr.org/
+
+Dave
+dave@dogwood.com

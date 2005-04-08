@@ -1,0 +1,65 @@
+--- Makefile.orig	Thu Mar 31 20:39:24 2005
++++ Makefile	Sat Apr  9 00:09:42 2005
+@@ -47,7 +47,9 @@
+ CCWARNINGS = -Wall -Wmissing-prototypes -Wstrict-prototypes \
+              -Wmissing-declarations -Wsign-compare
+ 
+-INSTALL_PREFIX ?=
++PREFIX?=	/usr/local
++INSTALL_PREFIX?= ${PREFIX}
++CFGFILE?=	${INSTALL_PREFIX}/etc/olsrd.conf
+ 
+ INCLUDES =	-Isrc
+ 
+@@ -84,7 +86,7 @@
+ 
+ SRCS +=		$(wildcard src/bsd/*.c) $(wildcard src/unix/*.c)
+ HDRS +=		$(wildcard src/bsd/*.h) $(wildcard src/unix/*.h)
+-CFLAGS ?=	$(CCWARNINGS) -O2 -g
++CFLAGS +=	-DOLSRD_GLOBAL_CONF_FILE=\"${CFGFILE}\"
+ LIBS =		-lm
+ MAKEDEPEND = 	makedepend -f $(DEPFILE) -D__FreeBSD__ $(INCLUDES) $(SRCS)
+ 
+@@ -96,8 +98,8 @@
+ 
+ SRCS +=		$(wildcard src/bsd/*.c) $(wildcard src/unix/*.c)
+ HDRS +=		$(wildcard src/bsd/*.h) $(wildcard src/unix/*.h)
+-CFLAGS ?=	-Wall -Wmissing-prototypes -O2 -g -DSPOOF -I/usr/local/include
+-LIBS =		-lm -L/usr/local/lib -lnet
++CFLAGS +=	-DSPOOF -I${LOCALBASE}/include -DOLSRD_GLOBAL_CONF_FILE=\"${CFGFILE}\"
++LIBS =		-lm -L${LOCALBASE}/lib -lnet
+ MAKEDEPEND = 	makedepend -f $(DEPFILE) -D__FreeBSD__ $(INCLUDES) $(SRCS)
+ 
+ all:     cfgparser olsrd
+@@ -292,8 +294,8 @@
+ 
+ install_bin:
+ 		$(STRIP) olsrd
+-		mkdir -p $(INSTALL_PREFIX)/usr/sbin
+-		install -m 755 olsrd $(INSTALL_PREFIX)/usr/sbin
++		mkdir -p $(INSTALL_PREFIX)/sbin
++		install -m 755 olsrd $(INSTALL_PREFIX)/sbin
+ 
+ install_olsrd:	install_bin
+ 		@echo ========= C O N F I G U R A T I O N - F I L E ============
+@@ -303,15 +305,15 @@
+ 		@echo can be found at files/olsrd.conf.default.lq
+ 		@echo ==========================================================
+ 		mkdir -p $(INSTALL_PREFIX)/etc
+-		cp -i files/olsrd.conf.default.rfc $(INSTALL_PREFIX)/etc/olsrd.conf
++		cp files/olsrd.conf.default.rfc $(INSTALL_PREFIX)/etc/olsrd.conf.default
+ 		@echo -------------------------------------------
+ 		@echo Edit $(INSTALL_PREFIX)/etc/olsrd.conf before running olsrd!!
+ 		@echo -------------------------------------------
+ 		@echo Installing manpages olsrd\(8\) and olsrd.conf\(5\)
+-		mkdir -p $(INSTALL_PREFIX)/usr/share/man/man8/
+-		cp files/olsrd.8.gz $(INSTALL_PREFIX)/usr/share/man/man8/olsrd.8.gz
+-		mkdir -p $(INSTALL_PREFIX)/usr/share/man/man5/
+-		cp files/olsrd.conf.5.gz $(INSTALL_PREFIX)/usr/share/man/man5/olsrd.conf.5.gz
++		mkdir -p $(INSTALL_PREFIX)/man/man8/
++		cp files/olsrd.8.gz $(INSTALL_PREFIX)/man/man8/olsrd.8.gz
++		mkdir -p $(INSTALL_PREFIX)/man/man5/
++		cp files/olsrd.conf.5.gz $(INSTALL_PREFIX)/man/man5/olsrd.conf.5.gz
+ 
+ #
+ # PLUGINS

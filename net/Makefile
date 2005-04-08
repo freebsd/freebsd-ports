@@ -432,6 +432,7 @@
     SUBDIR += obnc
     SUBDIR += ocaml-jabbr
     SUBDIR += ohphone
+    SUBDIR += olsrd
     SUBDIR += onenetd
     SUBDIR += openam
     SUBDIR += opendchub
