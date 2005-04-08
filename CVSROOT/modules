@@ -7393,7 +7393,6 @@ p5-HTML-Format	ports/textproc/p5-HTML-Format
 p5-HTML-FromText	ports/www/p5-HTML-FromText
 p5-HTML-LinkExtractor	ports/www/p5-HTML-LinkExtractor
 p5-HTML-Mason	ports/www/p5-HTML-Mason
-p5-HTML-Navigation	ports/www/p5-HTML-Navigation
 p5-HTML-Pager	ports/www/p5-HTML-Pager
 p5-HTML-Parser	ports/www/p5-HTML-Parser
 p5-HTML-QuickCheck	ports/www/p5-HTML-QuickCheck
@@ -7637,7 +7636,6 @@ p5-Math-BaseCalc	ports/math/p5-Math-BaseCalc
 p5-Math-Bezier	ports/math/p5-Math-Bezier
 p5-Math-Bezier-Convert	ports/math/p5-Math-Bezier-Convert
 p5-Math-BigInt	ports/math/p5-Math-BigInt
-p5-Math-BigIntFast	ports/math/p5-Math-BigIntFast
 p5-Math-BigRat	ports/math/p5-Math-BigRat
 p5-Math-Calc-Units	ports/math/p5-Math-Calc-Units
 p5-Math-Currency	ports/math/p5-Math-Currency
@@ -7966,7 +7964,6 @@ p5-Search-InvertedIndex	ports/databases/p5-Search-InvertedIndex
 p5-Search-Namazu	ports/databases/p5-Search-Namazu
 p5-Search-Saryer	ports/textproc/p5-Search-Saryer
 p5-Sendmail-Milter	ports/mail/p5-Sendmail-Milter
-p5-Server-FastPL	ports/devel/p5-Server-FastPL
 p5-Set-Array	ports/devel/p5-Set-Array
 p5-Set-Crontab	ports/devel/p5-Set-Crontab
 p5-Set-Infinite	ports/devel/p5-Set-Infinite
@@ -7997,7 +7994,6 @@ p5-Sort-ArbBiLex	ports/textproc/p5-Sort-ArbBiLex
 p5-Sort-ArrayOfArrays	ports/devel/p5-Sort-ArrayOfArrays
 p5-Sort-Fields	ports/textproc/p5-Sort-Fields
 p5-Sort-Naturally	ports/textproc/p5-Sort-Naturally
-p5-Sort-PolySort	ports/textproc/p5-Sort-PolySort
 p5-Sort-Tree		ports/devel/p5-Sort-Tree
 p5-Sort-Versions	ports/devel/p5-Sort-Versions
 p5-Spiffy		ports/devel/p5-Spiffy
@@ -8018,7 +8014,6 @@ p5-Statistics-Distributions	ports/math/p5-Statistics-Distributions
 p5-Statistics-LTU	ports/math/p5-Statistics-LTU
 p5-Statistics-Lite	ports/math/p5-Statistics-Lite
 p5-Statistics-OLS	ports/math/p5-Statistics-OLS
-p5-Statistics-Table-F	ports/math/p5-Statistics-Table-F
 p5-Storable	ports/devel/p5-Storable
 p5-String-Approx	ports/devel/p5-String-Approx
 p5-String-CRC32	ports/devel/p5-String-CRC32
