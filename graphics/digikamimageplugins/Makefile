@@ -7,6 +7,7 @@
 
 PORTNAME=	digikamimageplugins
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
@@ -16,8 +17,6 @@ COMMENT=	Collection of image editor plugins for Digikam
 
 LIB_DEPENDS=	digikam.0:${PORTSDIR}/graphics/digikam
 
-BROKEN=		Incomplete pkg-plist
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -25,9 +24,7 @@ USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--program-prefix=''
 
-.include <bsd.port.pre.mk>
-
 pre-configure::
 	${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
