@@ -6548,6 +6548,7 @@ oinkmaster	ports/security/oinkmaster
 okle		ports/multimedia/okle
 oleo		ports/math/oleo
 olirc		ports/irc/olirc
+olsrd		ports/net/olsrd
 olvwm		ports/x11-wm/olvwm
 omega		ports/games/omega
 omi		ports/ftp/omi
