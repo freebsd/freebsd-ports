@@ -1,23 +1,48 @@
+bin/sbhttpd
 bin/scriba
+etc/rc.d/sbhttpd
 etc/scriba/basic.conf
-include/scriba/bdb.bas
+%%BDB%%include/scriba/bdb.bas
 include/scriba/cgi.bas
+%%CURL%%include/scriba/curl.bas
+include/scriba/curses.bas
+include/scriba/dbg.bas
 include/scriba/error.bas
-include/scriba/gd.bas
+%%GD%%include/scriba/gd.bas
 include/scriba/hash.bas
-include/scriba/heb.bas
-include/scriba/heber.bas
-include/scriba/md5.bas
-include/scriba/mysql.bas
+include/scriba/modinst.bas
+include/scriba/mt.bas
+%%MYSQL%%include/scriba/mysql.bas
+%%ODBC%%include/scriba/odbc.bas
+%%PGSQL%%include/scriba/psql.bas
 include/scriba/re.bas
-include/scriba/test.bas
 include/scriba/time.bas
+include/scriba/t.bas
 include/scriba/trial.bas
+include/scriba/ux.bas
+%%XML%%include/scriba/xml.bas
 include/scriba/zlib.bas
-lib/scriba/basicc.a
+lib/libscriba.a
+%%BDB%%lib/scriba/bdb.so
 lib/scriba/cgi.so
+%%CURL%%lib/scriba/curl.so
+lib/scriba/curses.so
+lib/scriba/dbg.so
+%%GD%%lib/scriba/gd.so
 lib/scriba/hash.so
+lib/scriba/mt.so
+%%MYSQL%%lib/scriba/mysql.so
+%%ODBC%%lib/scriba/odbc.so
+%%PGSQL%%lib/scriba/psql.so
 lib/scriba/re.so
+lib/scriba/t.so
+lib/scriba/trial.so
+lib/scriba/ux.so
+%%XML%%lib/scriba/xml.so
+lib/scriba/zlib.so
+%%DATADIR%%/source/heber.bas
 @dirrm etc/scriba
 @dirrm include/scriba
 @dirrm lib/scriba
+@dirrm share/scriba/source
+@dirrm share/scriba
