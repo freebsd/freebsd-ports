@@ -22,14 +22,9 @@ USE_BISON=	yes
 USE_FLEX=	yes
 USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=yes
+NOPRECIOUSMAKEVARS=yes
 
 HB_DIR=		${WRKDIR}/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken by make(1) changes on FreeBSD >= 5.x"
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/harbour ${PREFIX}/bin
@@ -68,4 +63,4 @@ post-install:
 	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
