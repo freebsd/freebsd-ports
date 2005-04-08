@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 DISTFILES=	${DICTFILES}
 EXTRACT_ONLY=	# intentionally left blank
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
