@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/3.2
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	purple@lewiz.net
+MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Information efficient text-entry interface
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
