@@ -24,7 +24,7 @@
  CONFIGCIN=	$(LIBPL)/config.c.in
 -SETUP=		$(LIBPL)/Setup.thread $(LIBPL)/Setup.local $(LIBPL)/Setup
 +SETUP=		$(LIBPL)/Setup.local $(LIBPL)/Setup
-+.if ${PYTHON_VERSION} < 2.0
++.if ${SHORT_PYTHON_VERSION} < 2.0
 +SETUP+=		${LIBPL}/Setup.thread
 +.endif
  
