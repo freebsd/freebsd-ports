@@ -15,20 +15,15 @@ DISTNAME=	p4html
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
-BROKEN=		Size mismatch
-
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/TEI_P4
 LATEST_LINK=	tei-guidelines-p4
-INSTDIR=	${PREFIX}/share/doc/tei/p4
+DOCSDIR=	${PREFIX}/share/doc/tei/p4
 
 do-install:
-	@${MKDIR} ${INSTDIR}
-	@${MKDIR} ${INSTDIR}/Figures
-	@${INSTALL_MAN} ${WRKSRC}/*.html ${INSTDIR}
-	@${INSTALL_MAN} ${WRKSRC}/*.css ${INSTDIR}
-	@${INSTALL_MAN} ${WRKSRC}/*.gif ${INSTDIR}
-	@${INSTALL_MAN} ${WRKSRC}/*.jpg ${INSTDIR}
-	@${INSTALL_MAN} ${WRKSRC}/Figures/* ${INSTDIR}/Figures
+	cd ${WRKSRC} && \
+		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	cd ${WRKSRC} && \
+		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 
 .include <bsd.port.mk>
