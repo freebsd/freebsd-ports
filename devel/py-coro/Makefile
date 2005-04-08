@@ -20,7 +20,7 @@ BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro
 USE_PYTHON=		yes
 USE_REINPLACE=		yes
 PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
-MAKE_ENV=		PYTHON_VERSION=${PYTHON_VERSION:S/python//} \
+MAKE_ENV=		SHORT_PYTHON_VERSION=${PYTHON_VERSION:S/python//} \
 			EXTRA_INCLUDE="-I${LOCALBASE}/include" \
 			EXTRA_LIB="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		installdir="${PREFIX}" \
@@ -34,10 +34,6 @@ CORO_EXAMPLES=		backdoor coro_fd coro_subproc coro_ehttpd \
 			corohttpd
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
 
 post-patch:
 .if ${PYTHON_REL} >= 230
