@@ -1441,3 +1441,4 @@ misc/kfile_torrent|net/kdenetwork3|2005-03-27|kfile_torrent included in kdenetwo
 multimedia/linux-divxplayer||2005-04-02|developer's dropped the application
 audio/rebler||2005-04-07|Project dead and disappeared
 net/linux-edonkey-gui-gtk|net/edonkey-gui-gtk|2005-04-07|Dead port, native version available
+misc/nwrite||2005-04-08|Project dead and disappeared
