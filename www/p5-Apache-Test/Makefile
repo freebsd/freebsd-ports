@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Test
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -49,6 +50,8 @@ post-patch:
 .if ${PERL_LEVEL} < 500600
 	@${PERL} -pi -e 's/\b(?:use|no) warnings[^;]*;//g' \
 	${WRKSRC}/lib/Apache/*.pm ${WRKSRC}/Makefile.PL ${WRKSRC}/install-pl
+	${PERL} -pi -e '$$_="" if $$. == 24' \
+		${WRKSRC}/lib/Apache/Test5005compat.pm
 .endif
 
 post-configure:
