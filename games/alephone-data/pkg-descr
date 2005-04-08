@@ -1,5 +1,7 @@
-This port contains the Marathon Infinity Demo files, converted to run on
+This port contains the Marathon Infinity data files, converted to run on
 Aleph One.  The Aleph One application itself is in the `alephone' port.
+
+WWW: http://source.bungie.org/
 
 Michael Alyn Miller
 malyn@strangeGizmo.com
