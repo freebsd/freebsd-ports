@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	planner.el
-PORTVERSION=	3.27
+PORTVERSION=	3.28
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://sacha.free.net.ph/notebook/emacs/planner/ \
 		http://bsdchat.com/dist/dryice/

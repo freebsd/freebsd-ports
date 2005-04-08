@@ -1,4 +1,5 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-accomplishments.el
+%%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-appt.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-authz.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-auto.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-bbdb.el
@@ -29,6 +30,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-timeclock-summary-proj.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-timeclock-summary.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-timeclock.el
+%%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-trunk.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-unix-mail.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-vm.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-w3m.el
