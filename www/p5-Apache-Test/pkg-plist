@@ -13,6 +13,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestHarness.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestHarnessPHP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestMB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestMM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestPerlDB.pm
