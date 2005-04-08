@@ -1032,7 +1032,6 @@
     SUBDIR += p5-SVN-Simple
     SUBDIR += p5-SVN-Web
     SUBDIR += p5-Search-Binary
-    SUBDIR += p5-Server-FastPL
     SUBDIR += p5-Set-Array
     SUBDIR += p5-Set-Crontab
     SUBDIR += p5-Set-Infinite

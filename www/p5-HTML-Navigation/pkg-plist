@@ -1,5 +1,0 @@
-%%SITE_PERL%%/HTML/Navigation.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Navigation/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Navigation
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
