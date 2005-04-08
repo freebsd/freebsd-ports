@@ -18,13 +18,11 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
-.include <bsd.port.pre.mk>
-
 #
 # This is a kludge.  I don't know a better way to set PORTVERSION and
 # PORTREVISION such that pkg_version figures out an update is needed
 #
-ARCH!=	${UNAME} -p
+ARCH!=	/usr/bin/uname -p
 ARCH?=	i386
 
 .if (${ARCH} == i386) || (${ARCH} == amd64)
@@ -59,6 +57,8 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 		${SBIN_FILES:S+^+sbin/+g}
+
+.include <bsd.port.pre.mk>
 
 # These variables are all configurable.
 PERFORCE_USER?=		p4admin
