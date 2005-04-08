@@ -1,0 +1,23 @@
+--- make_gcc.jim.orig	Tue Mar  1 22:15:45 2005
++++ make_gcc.jim	Tue Mar  1 22:18:31 2005
+@@ -15,7 +15,7 @@
+ -I where the include directories are
+ -L where the libraries are
+ }
+-{#define cc=gcc -w}
++{#define cc=cc -w %%CFLAGS%% -L%%LOCALBASE%%/lib -I%%LOCALBASE%%/include -L%%X11BASE%%/lib -I%%X11BASE%%/include -I%%LOCALBASE%%/include/libxml2 -L%%LOCALBASE%%/lib/mysql }
+ {#define CcOptOutput/X=-o X}
+ {#define CcOptInput/X=X}
+ {#define CcOptCompile=-c}
+@@ -26,9 +26,9 @@
+ {#define LibOptOutput/X=-r X}
+ {#define LibOptInput/X=X}
+ 
+-{#define ld=ld -shared -Bstatic}
++{#define ld=ld %%LDFLAGS%% -shared -Bstatic -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib -L%%LOCALBASE%%/lib/mysql }
+ {#define LdOptOutput/X=-o X}
+ {#define LdOptInput/X=X}
+ 
+ {@comment the standard libraries that we need}
+-{#define StandardLibraries=-lc -lm -ldl -lpthread}
++{#define StandardLibraries=-lc -lm %%PTHREAD_LIBS%%}

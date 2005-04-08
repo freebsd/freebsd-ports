@@ -6,50 +6,147 @@
 #
 
 PORTNAME=	scriba
-PORTVERSION=	10b21
-PORTREVISION=	1
+PORTVERSION=	20b0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.scriptbasic.com/download/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
-# the filename of the current version has been re-styled as follows;
-# however, as of November 2003, the patches do not apply cleanly, so
-# this port needs further work.
-#PORTVERSION=	1.0b30
-#DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
+DISTNAME=	${PORTNAME}-v2.0b0-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scripting implementation of the BASIC language
 
-PRFXFILES=	variations/standard/basiccmd.c \
-		variations/standalone/basicc.c \
-		configurer.c scriba.c scriba.conf.unix.lsp \
-		testconf.c
-
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
 CFLAGS+=	-fPIC
-MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+PORTDOCS=	*
+
+# Extensions that depend on external libs default to off
+
+OPTIONS=	BDB	"Berkeley DB extension"		off \
+		CURL	"CURL extension"		off \
+		GD	"gd extension"			off \
+		MYSQL	"MySQL extension (3.2.3 only)"	off \
+		ODBC	"ODBC extension"		off \
+		PGSQL	"PostgreSQL extension"		off \
+		XML	"libxml2 extension"		off
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		coredumps a lot
+.endif
+
+.if ${ARCH} == "amd64"
+IGNORE=		need base libraries built with -fPIC
+.endif
+
+# Dependencies for port options
+
+.if defined(WITH_BDB)
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+PLIST_SUB+=	BDB=""
+.else
+PLIST_SUB+=	BDB="@comment "
+.endif
+
+.if defined(WITH_CURL)
+LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+PLIST_SUB+=	CURL=""
+.else
+PLIST_SUB+=	CURL="@comment "
+.endif
+
+.if defined(WITH_GD)
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+PLIST_SUB+=	GD=""
+.else
+PLIST_SUB+=	GD="@comment "
+.endif
+
+.if defined(WITH_MYSQL)
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+.if defined(WITH_ODBC)
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+PLIST_SUB+=	ODBC=""
+.else
+PLIST_SUB+=	ODBC="@comment "
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+PLIST_SUB+=	PGSQL=""
+.else
+PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if defined(WITH_XML)
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+PLIST_SUB+=	XML=""
+.else
+PLIST_SUB+=	XML="@comment "
+.endif
 
 post-patch:
-.for P in ${PRFXFILES}
-	@(cd ${WRKSRC} && ${SED} -e 's,%%PREFIX%%,${PREFIX},g' $P > foo && \
-		${MV} foo $P)
-.endfor
+	# Put esd.pm in a directory where perl will find it
+	cd ${WRKSRC} && ${MKDIR} jamal && ${CP} esd.pm jamal
+	${GREP} -Rl '^#!.*bin/perl' ${WRKSRC} | \
+		${XARGS} ${REINPLACE_CMD} -e 's,^#!.*bin/perl,#!${PERL},'
+	${REINPLACE_CMD} \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		-e 's,%%X11BASE%%,${X11BASE},g' \
+		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+		-e 's,%%DATADIR%%,${DATADIR},g' \
+		-e 's,%%CC%%,${CC},g' \
+		-e 's,%%CFLAGS%%,${CFLAGS},g' \
+		-e 's,%%LDFLAGS%%,${LDFLAGS},g' \
+		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g' \
+		-e 's,root:root,root:wheel,g' \
+		${WRKSRC}/setup.pl ${WRKSRC}/scriba.c ${WRKSRC}/make_gcc.jim
+
+# Remove extensions not selected as options
+
+.if !defined(WITH_BDB)
+	@${RM} -rf ${WRKSRC}/extensions/bdb
+.endif
+
+.if !defined(WITH_CURL)
+	@${RM} -rf ${WRKSRC}/extensions/curl
+.endif
+
+.if !defined(WITH_GD)
+	@${RM} -rf ${WRKSRC}/extensions/gd
+.endif
+
+.if !defined(WITH_MYSQL)
+	@${RM} -rf ${WRKSRC}/extensions/mysql
+.endif
+
+.if !defined(WITH_ODBC)
+	@${RM} -rf ${WRKSRC}/extensions/odbc
+.endif
+
+.if !defined(WITH_PGSQL)
+	@${RM} -rf ${WRKSRC}/extensions/psql
+.endif
+
+.if !defined(WITH_XML)
+	@${RM} -rf ${WRKSRC}/extensions/xml
+.endif
+
+do-build:
+# -I allows script to include the Jamal preprocessor
+	cd ${WRKSRC} && export PERL5OPT='-I${WRKSRC}' && \
+	${PERL} setup.pl --unix
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/scriba
-	${MKDIR} ${PREFIX}/include/scriba
-	${MKDIR} ${PREFIX}/lib/scriba
-	${CHMOD} 1666 ${PREFIX}/lib/scriba
-	${INSTALL_PROGRAM} ${WRKSRC}/scriba ${PREFIX}/bin
-.for M in cgi hash re
-	${INSTALL_PROGRAM} ${WRKSRC}/$M.so ${PREFIX}/lib/scriba
-.endfor
-.for I in bdb cgi error gd hash heb md5 mysql re test time trial zlib ../heber
-	${INSTALL_DATA} ${WRKSRC}/include/$I.bas ${PREFIX}/include/scriba
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/basicc.a ${PREFIX}/lib/scriba
-	${WRKSRC}/cftc ${WRKSRC}/scriba.conf.unix.lsp \
-		${PREFIX}/etc/scriba/basic.conf
+	cd ${WRKSRC} && \
+	${PERL} setup.pl --unix --no-install-interactive --install && \
+	${SH} install.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
