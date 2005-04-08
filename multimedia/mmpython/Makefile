@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	purple@lewiz.net
+MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg and other formats
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread

@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freevo
 
-MAINTAINER=	purple@lewiz.net
+MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Open source digital jukebox
 
 NO_BUILD=	yes

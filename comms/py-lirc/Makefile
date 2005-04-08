@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pylirc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pylirc-${PORTVERSION}
 
-MAINTAINER=	purple@lewiz.net
+MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Lirc support library for Python
 
 LIB_DEPENDS=	lirc_client.0:${PORTSDIR}/comms/lirc

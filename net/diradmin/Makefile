@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://diradmin.open-it.org/
 DISTNAME=	directory_administrator-${PORTVERSION}
 
-MAINTAINER=	purple@lewiz.net
+MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	A smart LDAP directory management tool
 
 BROKEN=		Incomplete pkg-plist

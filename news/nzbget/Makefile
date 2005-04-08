@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nzbget
 
-MAINTAINER=	purple@lewiz.net
+MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	A binary newsreader supporting NZB files
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
