@@ -6481,7 +6481,6 @@ nwclient602	ports/sysutils/nwclient602
 nwndata		ports/games/nwndata
 nwnusers	ports/games/nwnusers
 nwreckdum	ports/archivers/nwreckdum
-nwrite		ports/misc/nwrite
 nxml-emacs21	ports/editors/nxml-emacs21
 nxtvepg		ports/multimedia/nxtvepg
 ny-aspell	ports/textproc/ny-aspell
