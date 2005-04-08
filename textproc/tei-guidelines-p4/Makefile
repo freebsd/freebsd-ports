@@ -7,6 +7,7 @@
 
 PORTNAME=	tei
 PORTVERSION=	p4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Guidelines2/
 PKGNAMESUFFIX=	-guidelines
