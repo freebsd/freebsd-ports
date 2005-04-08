@@ -17,12 +17,13 @@ CATEGORIES=	devel
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable Distributed Software Configuration Management System
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 RESTRICTED=	"Redistribution is not permitted"
+DEPRECATED=	"BitKeeper/Free will be discontinued on 2005-07-01"
 
 USE_XLIB=	yes
 
