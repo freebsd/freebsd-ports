@@ -167,6 +167,6 @@ do-install:
 
 post-install:
 	@${SED} -e 's|$${DATADIR}|${DATADIR}|g' ${.CURDIR}/pkg-message >${PKGMESSAGE}
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
