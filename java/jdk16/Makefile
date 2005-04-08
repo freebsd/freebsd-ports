@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
@@ -226,10 +227,10 @@ pre-build:
 	fi
 	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
 	then \
-		${ECHO_MSG} "ERROR: You have to have LINPROCFS mounted before" ; \
-		${ECHO_MSG} "starting to build of native JDK 1.4.2." ; \
+		${ECHO_MSG} "ERROR: You must have LINPROCFS mounted before" ; \
+		${ECHO_MSG} "starting to build the native JDK 1.5.0." ; \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "You may do it by following set of commands:" ; \
+		${ECHO_MSG} "You may do it with the following commands:" ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "# kldload linprocfs" ; \
 		${ECHO_MSG} "" ; \
