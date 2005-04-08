@@ -10,7 +10,7 @@ PORTVERSION=	${VERSION}
 PORTREVISION=	${REVISION}
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ 
+MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/
 EXTRACT_SUFX=
 DISTFILES=	${BIN_FILES} ${SBIN_FILES}
 EXTRACT_ONLY=	# none
@@ -18,17 +18,19 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
+.include <bsd.port.pre.mk>
+
 #
 # This is a kludge.  I don't know a better way to set PORTVERSION and
 # PORTREVISION such that pkg_version figures out an update is needed
 #
-ARCH!= /usr/bin/uname -p
-ARCH?= i386
+ARCH!=	${UNAME} -p
+ARCH?=	i386
 
 .if (${ARCH} == i386) || (${ARCH} == amd64)
 DIST_SUBDIR=	perforce/${VERSION}/i386
 VERSION=	04.2
-REVISION=	12
+REVISION=	13
 PLATFORM=	freebsd4
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
@@ -58,8 +60,6 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 		${SBIN_FILES:S+^+sbin/+g}
 
-.include <bsd.port.pre.mk>
-
 # These variables are all configurable.
 PERFORCE_USER?=		p4admin
 PERFORCE_UID?=		94
@@ -69,8 +69,8 @@ PERFORCE_HOME?=		${LOCALBASE}/perforce
 PERFORCE_ROOT?=		${PERFORCE_HOME}/root
 PERFORCE_LOGS?=		${PERFORCE_HOME}/logs
 PERFORCE_PORT?=		1666
-PERFORCE_CACHE?=      ${PERFORCE_HOME}/cache
-PERFORCE_TARGET?=     perforce:1666
+PERFORCE_CACHE?=	${PERFORCE_HOME}/cache
+PERFORCE_TARGET?=	perforce:1666
 
 pre-everything::
 	@${ECHO} "If the checksums fail, try doing 'make distclean'"
@@ -97,7 +97,7 @@ do-build:
 	${SED} -e "s,@PREFIX@,${PREFIX},g" \
 		< ${FILESDIR}/perforce.sh.in > ${WRKSRC}/perforce.sh
 
-pre-install:
+pre-su-install:
 	${SETENV} PKG_PREFIX=${PREFIX} \
 		PERFORCE_USER=${PERFORCE_USER} \
 		PERFORCE_UID=${PERFORCE_UID} \
