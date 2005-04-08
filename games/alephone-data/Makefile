@@ -7,11 +7,10 @@
 
 PORTNAME=	alephone-data
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	marathon
-DISTNAME=	AlephOne-minf-demo
+MASTER_SITES=	http://files3.bungie.org/trilogy/
+DISTNAME=	infinity
 
 MAINTAINER=	malyn@strangeGizmo.com
 COMMENT=	Data files for the alephone port
@@ -19,17 +18,17 @@ COMMENT=	Data files for the alephone port
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
 USE_X_PREFIX=	yes
+USE_ZIP=	yes
 NO_BUILD=	yes
 NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files.
 
+WRKSRC=		${WRKDIR}/Marathon\ Infinity
+DATADIR=	${PREFIX}/share/AlephOne
+DATA=		Images Map Map.resources Music Shapes Sounds
+PLIST_FILES=	${DATA:S+^+share/AlephOne/+}
+
 do-install:
-	@${MKDIR} ${PREFIX}/share/AlephOne
-	@${MKDIR} ${PREFIX}/share/AlephOne/MML
-	${INSTALL_DATA} ${WRKDIR}/Images ${PREFIX}/share/AlephOne/Images
-	${INSTALL_DATA} ${WRKDIR}/MML/Preferences.mml ${PREFIX}/share/AlephOne/MML/Preferences.mml
-	${INSTALL_DATA} ${WRKDIR}/Map ${PREFIX}/share/AlephOne/Map
-	${INSTALL_DATA} ${WRKDIR}/README ${PREFIX}/share/AlephOne/README
-	${INSTALL_DATA} ${WRKDIR}/Shapes ${PREFIX}/share/AlephOne/Shapes
-	${INSTALL_DATA} ${WRKDIR}/Sounds ${PREFIX}/share/AlephOne/Sounds
+	@${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DATA} ${DATADIR}
 
 .include <bsd.port.mk>
