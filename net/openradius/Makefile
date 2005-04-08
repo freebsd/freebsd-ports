@@ -7,6 +7,7 @@
 
 PORTNAME=	openradius
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~evbergen/openradius/download/ \
 		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/
@@ -20,7 +21,19 @@ CC?=		gcc
 CXX?=		g++
 USE_GMAKE=	yes
 
+OPTIONS=	LDAP	"With LDAP user database" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	YES
+PLIST_SUB+=	LDAP=""
+SCRIPTS_ENV+=	USE_LDAP=yes
+.else
+PLIST_SUB+=	LDAP="@comment "
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
