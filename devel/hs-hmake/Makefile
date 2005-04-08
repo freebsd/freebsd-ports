@@ -7,6 +7,7 @@
 
 PORTNAME=	hmake
 PORTVERSION=	3.10
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
@@ -15,8 +16,6 @@ PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Intelligent compilation management tool for Haskell programs
-
-BROKEN=		Size mismatch
 
 .include <bsd.port.pre.mk>
 
