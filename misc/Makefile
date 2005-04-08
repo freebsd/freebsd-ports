@@ -301,7 +301,6 @@
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
-    SUBDIR += nwrite
     SUBDIR += opencyc
     SUBDIR += orville-write
     SUBDIR += ossp-uuid
