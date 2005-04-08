@@ -1,5 +1,5 @@
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%DTDDIR%%/catalog.xml
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%SGMLDIR%%/%%DTDDIR%%/catalog
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%SGMLDIR%%/%%DTDDIR%%/catalog.xml
 share/sgml/tei/p4/dummy.dtd
 share/sgml/tei/p4/catalog.xml
 share/sgml/tei/p4/tei2.dtd
@@ -52,7 +52,6 @@ share/sgml/tei/p4/teixlite.dec
 share/sgml/tei/p4/teilitex.ent
 share/sgml/tei/p4/teilitex.dtd
 share/sgml/tei/p4/teilite.dec
-share/sgml/tei/p4/teilitex.dec
 share/sgml/tei/p4/catalog
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog
 @dirrm share/sgml/tei/p4/
