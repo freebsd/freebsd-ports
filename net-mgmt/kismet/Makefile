@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kismet
-PORTVERSION=	200501.r1
+PORTVERSION=	200504.r1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
-DISTNAME=	kismet-2005-01-R1
+DISTNAME=	kismet-2005-04-R1
 
 MAINTAINER=	eol1@yahoo.com
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
