@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.jsoftware.com/download/
 DISTNAME=	j${PORTVERSION}_linux
 DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	js@jeannot.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose programming language
 
 BROKEN=		Unfetchable
