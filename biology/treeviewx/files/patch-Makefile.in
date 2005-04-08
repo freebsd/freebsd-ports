@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Mar 24 19:41:44 2005
++++ Makefile.in	Thu Mar 24 19:42:32 2005
+@@ -91,7 +91,7 @@
+ NCLDIR = ncl-2.0/src
+ #LIBDIRS	= -L$(NCLDIR) 
+ #-L$(XMLPARSEDIR)
+-LIBS = @LIBS@ -lwx_gtk_dcsvg-2.4 -L$(NCLDIR) -lncl -L$(TREELIBDIR) -ltreelib
++LIBS = @LIBS@ -lwx_gtk2_dcsvg-2.4 -L$(NCLDIR) -lncl -L$(TREELIBDIR) -ltreelib
+ #-lexpat
+ INCLUDES = -I$(NCLDIR) -I$(TREELIBDIR) -I$(GPORTDIR) 
+ #-I$(EXPATPPDIR) -I$(XMLPARSEDIR) -I$(EXPATPPDIR)/xmltok
