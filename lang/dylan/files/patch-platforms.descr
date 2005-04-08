@@ -1,0 +1,15 @@
+--- d2c/compiler/platforms.descr	Sun Oct 17 21:17:02 2004
++++ d2c/compiler/platforms.descr	Sat Mar 19 05:32:42 2005
+@@ -622,7 +622,11 @@
+ // FreeBSD 3.x and above
+ platform-name:			x86-freebsd-elf-gcc
+ inherit-from:			gcc freebsd x86
+-link-shared-library-command:    $(LIBTOOL) --mode=link gcc -o %s %s -rpath %s
++link-shared-library-command:    $(LIBTOOL) --tag=CC --mode=link gcc -o %s %s -rpath %s
++link-executable-command: 	$(LIBTOOL) --tag=CC --mode=link gcc -o %s %s %s
++link-shared-executable-command: $(LIBTOOL) --tag=CC --mode=link gcc -o %s %s %s
++compile-c-for-shared-command:   $(LIBTOOL) --tag=CC --mode=compile gcc $(CCFLAGS) -c %s -o %s
++
+ 
+ platform-name:			x86-freebsd-elf-gcc32
+ inherit-from:			freebsd x86-gcc32
