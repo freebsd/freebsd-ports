@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	clearlooks-metacity
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.gnome-look.org/content/files/
+MASTER_SITES=	http://gnome-look.org/content/files/
 DISTNAME=	21237-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
 
-WRKSRC=		${WRKDIR}/Clearlooks
+WRKSRC=		${WRKDIR}/metacity-1/
 USE_GNOME=	metacity gnomeprefix
 USE_X_PREFIX=	yes
 DATADIR=	share/gnome/themes/Clearlooks/metacity-1
@@ -26,6 +26,6 @@ PLIST_DIRS=	%%DATADIR%% \
 
 do-install:
 	${MKDIR} ${PREFIX}/${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/metacity-1/metacity-theme-1.xml ${PREFIX}/${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/metacity-theme-1.xml ${PREFIX}/${DATADIR}
 
 .include <bsd.port.mk>
