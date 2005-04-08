@@ -69,7 +69,7 @@ upgrades.
 
   2.) Now update the remaining KDE ports.
 
-      	portupgrade -O arts\* \*kde\*
+      	portupgrade -O arts\* kde\* \*kde-i18n\*
 
       or, if you want to update KDE along with other updated ports:
 
