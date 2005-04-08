@@ -17,7 +17,7 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050310
+SNAPDATE=	20050406
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
@@ -47,7 +47,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		85
+MILESTONE=		91
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -76,7 +76,6 @@ CXX=	g++-ooo
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
-		epm:${PORTSDIR}/devel/epm \
 		gpatch:${PORTSDIR}/devel/patch \
 		xmkmf:${X_IMAKE_PORT} \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
@@ -104,7 +103,7 @@ UNZIP?=		${PREFIX}/bin/unzip
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	4
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-package-format=portable
 
 .include <${FILESDIR}/Makefile.knobs>
 
