@@ -1,0 +1,24 @@
+Index: portaudio/portaudio_v18_1.patch
+===================================================================
+RCS file: /cvs/external/portaudio/portaudio_v18_1.patch,v
+retrieving revision 1.1
+diff -u -r1.1 portaudio_v18_1.patch
+--- portaudio/portaudio_v18_1.patch	6 Oct 2004 11:48:04 -0000	1.1
++++ portaudio/portaudio_v18_1.patch	28 Mar 2005 06:55:37 -0000
+@@ -52,3 +52,16 @@
+   LIBINST = /usr/local/lib
+   
+   TESTS:= $(wildcard pa_tests/pa*.c pa_tests/debug*.c)
++*** misc/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	Tue Jul  1 00:05:50 2003
++--- misc/build/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	Mon Mar 28 15:45:37 2005
++***************
++*** 43,48 ****
++--- 43,50 ----
++  
++  #ifdef __linux__
++  #include <linux/soundcard.h>
+++ #elif defined (__FreeBSD__)
+++ #include <sys/soundcard.h>
++  #else
++  #include <machine/soundcard.h> /* JH20010905 */
++  #endif
