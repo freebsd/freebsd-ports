@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-smtp_auth+tls
 PATCH_SITES+=	http://students.imsa.edu/~ngroot/:smtp_auth_tls
 PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH SMTP_AUTH+TLS
 
 # not type-safe

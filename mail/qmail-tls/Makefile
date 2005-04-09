@@ -14,7 +14,7 @@ PATCH_SITES+=	http://www.esat.kuleuven.ac.be/~vermeule/qmail/:tls
 PATCHFILES+=	tls.patch:tls
 PATCH_DIST_STRIP+=	-p1
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
 
 USE_OPENSSL=	YES

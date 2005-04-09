@@ -17,7 +17,7 @@ PATCH_DIST_STRIP+=	-p1
 
 EXTRA_PATCHES+=	${QMAIL_PORT_PATCHDIR}/patch-ab ${QMAIL_PORT_PATCHDIR}/patch-ac
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 
 CONFLICTS=	nss-* emboss-* digest-*
