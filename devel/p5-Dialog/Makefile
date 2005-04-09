@@ -16,11 +16,12 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Perl interface to dialog(3)
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500007
+
+.if ${PERL_LEVEL} >= 500600
 EXTRA_PATCHES=	${FILESDIR}/extra-Dialog.xs
 .endif
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		Dialog.3
 
