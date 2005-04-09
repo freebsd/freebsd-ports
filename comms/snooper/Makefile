@@ -20,6 +20,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/build
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	OPTFLAG=""
 PLIST_FILES=	bin/snooper
+
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README
+.endif
+
+post-extract:
+	@${RM} -f ${WRKSRC}/.depend
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
