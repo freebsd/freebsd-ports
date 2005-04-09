@@ -39,6 +39,9 @@ pre-everything::
 	@${ECHO_MSG} " Default is ISO-8859-1."
 	@${ECHO_MSG} " "
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|#!/usr/bin/perl|#!/usr/bin/env perl|g' ${WRKSRC}/configure
+	
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/platform_settings
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
