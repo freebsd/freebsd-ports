@@ -7,7 +7,7 @@
 
 PORTNAME=	gauche
 PORTVERSION=	0.8.3	# Keep databases/gauche-gdbm in sync with this
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -55,9 +55,15 @@ post-build:
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gosh
 	${RM} -f ${PREFIX}/share/gauche/${PORTVERSION}/lib/slibcat
-	${TOUCH} ${PREFIX}/share/gauche/site/lib/.keepme
+	${MKDIR} ${PREFIX}/share/gauche/site/lib/.packages
+	${TOUCH} ${PREFIX}/share/gauche/site/lib/.packages/.keepme
 	${TOUCH} ${PREFIX}/lib/gauche/site/${PORTVERSION}/${CONFIGURE_TARGET}/.keepme
 	${MKDIR} ${PREFIX}/share/gauche/${PORTVERSION}/lib/.packages
+	${TOUCH} ${PREFIX}/share/gauche/${PORTVERSION}/lib/.packages/.keepme
+	${MKDIR} ${DOCSDIR}
+	${TOUCH} ${DOCSDIR}/.keepme
+	${MKDIR} ${EXAMPLESDIR}
+	${TOUCH} ${EXAMPLESDIR}/.keepme
 
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/

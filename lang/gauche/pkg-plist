@@ -209,7 +209,11 @@ share/gauche/%%VERSION%%/lib/util/toposort.scm
 share/gauche/%%VERSION%%/lib/util/tree.scm
 share/gauche/%%VERSION%%/lib/www/cgi-test.scm
 share/gauche/%%VERSION%%/lib/www/cgi.scm
-share/gauche/site/lib/.keepme
+share/gauche/%%VERSION%%/lib/.packages/.keepme
+share/gauche/site/lib/.packages/.keepme
+%%DOCSDIR%%/.keepme
+%%EXAMPLESDIR%%/.keepme
+@dirrm share/gauche/site/lib/.packages
 @dirrm share/gauche/site/lib
 @dirrm share/gauche/site
 @dirrm share/gauche/%%VERSION%%/lib/www
@@ -244,3 +248,5 @@ share/gauche/site/lib/.keepme
 @dirrm lib/gauche/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche/%%VERSION%%
 @dirrm lib/gauche
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
