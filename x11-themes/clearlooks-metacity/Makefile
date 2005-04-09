@@ -8,8 +8,8 @@
 PORTNAME=	clearlooks-metacity
 PORTVERSION=	0.5.2
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://gnome-look.org/content/files/
-DISTNAME=	21237-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	clearlooks
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
