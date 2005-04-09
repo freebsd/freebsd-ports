@@ -134,6 +134,7 @@
     SUBDIR += freebsd-uucp
     SUBDIR += freenet
     SUBDIR += freenet6
+    SUBDIR += freenx
     SUBDIR += freeradius
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf

@@ -1,0 +1,63 @@
+--- freenx-0.3.1/nxsetup.orig	Tue Feb 15 19:00:31 2005
++++ freenx-0.3.1/nxsetup	Mon Mar 28 15:53:10 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # Coypright (c) 2004-2005 by Fabian Franz <freenx@fabian-franz.de>.
+ #                    2005 by Jon Severinsson <jonno@users.berlios.de>.
+@@ -97,7 +97,9 @@
+ {
+ 	set -e
+ 	
+-	if [ "$(pidof sshd)" = "" ]
++	#if [ "$(pidof sshd)" = "" ]
++	MAYBE_PID=`cat /var/run/sshd.pid`
++	if test -z "$MAYBE_PID"
+ 	then 
+ 		echo -n "Starting ssh service ..."
+ 		# Generate Host keys if they are not available, yet
+@@ -129,10 +131,12 @@
+ 	chmod 600 "$NX_LOGFILE"
+ 	echo "done"
+ 	
+-	if ! { getent passwd | egrep -q "^nx:"; }
++	#if ! { getent passwd | egrep -q "^nx:"; }
++	if ! { cat /etc/passwd |egrep -q "^nx:"; }
+ 	then
+ 		echo -n "Setting up user nx ..."
+-		useradd_nx
++		#useradd_nx
++		pw useradd nx -d $NX_HOME_DIR -s $PATH_BIN/nxserver
+ 		echo "done"
+ 	fi
+ 	
+@@ -173,19 +177,22 @@
+ 	echo "done"
+ 	
+ 	echo -n "Setting up permissions ..."
+-	chown -R nx:root $NX_SESS_DIR
+-	chown -R nx:root $NX_ETC_DIR
+-	chown -R nx:root $NX_HOME_DIR
+-	chown nx:root "$NX_LOGFILE"
++	chown -R nx:nx $NX_SESS_DIR
++	chown -R nx:nx $NX_ETC_DIR
++	chown -R nx:nx $NX_HOME_DIR
++	chown nx:nx "$NX_LOGFILE"
++	chmod 0400 $NX_HOME_DIR/.ssh/$SSH_AUTHORIZED_KEYS
+ 	echo "done"
+ }
+ 
+ uninstall_nx() 
+ {
+-	if { getent passwd | egrep -q "^nx:"; }
++	#if { getent passwd | egrep -q "^nx:"; }
++	if { cat /etc/passwd | egrep -q "^nx:"; }
+ 	then
+ 		echo -n "Removing user nx ..."
+-		userdel nx
++		#userdel nx
++		pw userdel nx
+ 		echo "done"
+ 	fi
+ 	

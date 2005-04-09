@@ -1,0 +1,17 @@
+--- freenx-0.3.1/nxkeygen.orig	Sun Feb 13 20:52:08 2005
++++ freenx-0.3.1/nxkeygen	Mon Mar 28 15:26:50 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #
+ # /usr/NX/bin/nxkeygen
+ #		Create a new client/server key pair
+@@ -48,7 +48,7 @@
+ 
+ 	for x in ${NX_CLIENT_KEY} ${NX_SERVER_KEY} ; do
+ 		chmod 600 $x
+-		chown nx:root $x
++		chown nx:nx $x
+ 	done
+ 	
+ 	# copy the key to the authorized_keys2 file

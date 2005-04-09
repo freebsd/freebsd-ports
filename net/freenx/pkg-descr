@@ -1,0 +1,8 @@
+NoMachine NX is the next-generation X compression and roundtrip suppression 
+scheme. It can operate remote X11 sessions over 56k modem dialup links or 
+anything better. 
+
+This package contains a free (GPL) implementation of the nxserver component.
+
+WWW: http://www.nomachine.com/
+WWW: http://www.kalyxo.org/twiki/bin/view/Main/FreeNX
