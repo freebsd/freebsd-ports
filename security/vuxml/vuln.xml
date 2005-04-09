@@ -150,7 +150,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>clamav-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>20050408</lt></range>
       </package>
     </affects>
     <description>
