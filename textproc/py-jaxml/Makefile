@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jaxml
-PORTVERSION=	2.24
+PORTVERSION=	3.01
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.librelogiciel.com/software/jaxml/tarballs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
