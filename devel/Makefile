@@ -1189,6 +1189,7 @@
     SUBDIR += pear-XML_Util
     SUBDIR += pear-XML_XPath
     SUBDIR += pear-apd
+    SUBDIR += pecl-statgrab
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy
