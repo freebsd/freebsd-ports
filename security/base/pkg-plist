@@ -104,6 +104,7 @@ www/base/sql/create_base_tbls_pgsql.sql
 www/base/sql/create_base_tbls_pgsql_extra.sql
 www/base/sql/upgrade_0.9.x_to_1.0-mysql.sql
 www/base/styles/base_style.css
+www/base/styles/acid_style.css
 @dirrm www/base/styles
 @dirrm www/base/sql
 @dirrm www/base/setup
