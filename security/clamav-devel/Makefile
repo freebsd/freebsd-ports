@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20050110
-PORTREVISION=	1
+PORTVERSION=	20050408
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -23,8 +22,6 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		zoo:${PORTSDIR}/archivers/zoo \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
-
-BROKEN=		Unfetchable
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
