@@ -1,30 +1,32 @@
 lib/common-lisp/asdf/asdf.lisp
 lib/common-lisp/asdf/wild-modules.lisp
+@unexec if cmp -s %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp; then rm -f %D/etc/asdf-init.lisp; fi
 etc/asdf-init.lisp.default
+@exec [ -f %D/etc/asdf-init.lisp ] || cp %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp
 @dirrm lib/common-lisp/asdf
 @dirrm lib/common-lisp/system-registry
-%%PORTDOCS%%share/doc/cl-asdf/README
-%%PORTDOCS%%share/doc/cl-asdf/README.FreeBSD
-%%PORTDOCS%%share/doc/cl-asdf/LICENSE
-%%PORTDOCS%%share/examples/cl-asdf/file1.lisp
-%%PORTDOCS%%share/examples/cl-asdf/file2.lisp
-%%PORTDOCS%%share/examples/cl-asdf/file3.lisp
-%%PORTDOCS%%share/examples/cl-asdf/file4.lisp
-%%PORTDOCS%%share/examples/cl-asdf/run-tests.sh
-%%PORTDOCS%%share/examples/cl-asdf/test1.asd
-%%PORTDOCS%%share/examples/cl-asdf/test1.script
-%%PORTDOCS%%share/examples/cl-asdf/test2.asd
-%%PORTDOCS%%share/examples/cl-asdf/test2.script
-%%PORTDOCS%%share/examples/cl-asdf/test2a.asd
-%%PORTDOCS%%share/examples/cl-asdf/test2b1.asd
-%%PORTDOCS%%share/examples/cl-asdf/test2b2.asd
-%%PORTDOCS%%share/examples/cl-asdf/test2b3.asd
-%%PORTDOCS%%share/examples/cl-asdf/test3.asd
-%%PORTDOCS%%share/examples/cl-asdf/test3.script
-%%PORTDOCS%%share/examples/cl-asdf/test4.script
-%%PORTDOCS%%share/examples/cl-asdf/wild-module.asd
-%%PORTDOCS%%share/examples/cl-asdf/wild-module.script
-%%PORTDOCS%%@dirrm share/examples/cl-asdf
-%%PORTDOCS%%@dirrm share/doc/cl-asdf
-@exec [ -f %D/etc/asdf-init.lisp ] || cp %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp
+@dirrm lib/common-lisp
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%EXAMPLESDIR%%/file1.lisp
+%%PORTDOCS%%%%EXAMPLESDIR%%/file2.lisp
+%%PORTDOCS%%%%EXAMPLESDIR%%/file3.lisp
+%%PORTDOCS%%%%EXAMPLESDIR%%/file4.lisp
+%%PORTDOCS%%%%EXAMPLESDIR%%/run-tests.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/test1.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/test1.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2a.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2b1.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2b2.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2b3.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/test3.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/test3.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/test4.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/wild-module.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/wild-module.script
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/lib/common-lisp/system-registry

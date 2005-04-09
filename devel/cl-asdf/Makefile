@@ -6,19 +6,21 @@
 
 PORTNAME=		asdf
 PORTVERSION=		2003.05.16
+PORTREVISION=		1
 CATEGORIES=		devel
-MASTER_SITES=		http://www.henrik-motakef.de/freebsd-distfiles/asdf/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 PKGNAMEPREFIX=		cl-
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A system definition facility for Common Lisp
 
-BROKEN=			Incomplete pkg-plist
-
 WRKSRC=			${WRKDIR}/${PORTNAME}
 NO_BUILD=		yes # Sources only, see cl-asdf-[cmucl|sbcl|clisp]
 CL_LIBDIR=		${PREFIX}/lib/common-lisp
 ASDF_SYSTEM_REGISTRY=	${CL_LIBDIR}/system-registry
+DOCSDIR=		${PREFIX}/share/doc/${UNIQUENAME}
+EXAMPLESDIR=		${PREFIX}/share/examples/${UNIQUENAME}
 
 do-install:
 	${MKDIR} ${CL_LIBDIR}/asdf
@@ -35,10 +37,10 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cl-asdf/
 	${MKDIR} ${PREFIX}/share/examples/cl-asdf/
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cl-asdf/
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/cl-asdf/
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/cl-asdf/
-	${INSTALL_DATA} ${WRKSRC}/test/* ${PREFIX}/share/examples/cl-asdf/
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}/
 .endif
 
 post-install:
