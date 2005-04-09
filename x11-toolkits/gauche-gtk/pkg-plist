@@ -47,7 +47,5 @@ share/gauche/%%VERSION%%/lib/gtk/listener.scm
 %%PORTDOCS%%%%GTKGLEXT%%@dirrm %%EXAMPLESDIR%%/gtkglext
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gtk-tutorial
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@unexec rmdir %D/share/examples/gauche 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@unexec rmdir %D/share/doc/gauche 2>/dev/null || true

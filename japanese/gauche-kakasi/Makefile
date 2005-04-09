@@ -7,6 +7,7 @@
 
 PORTNAME=	kakasi
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	japanese textproc scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gauche
@@ -19,8 +20,6 @@ COMMENT=	KAKASI binding for Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
-
-BROKEN=		Incomplete pkg-plist
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

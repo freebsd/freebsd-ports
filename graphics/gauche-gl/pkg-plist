@@ -5,7 +5,7 @@ lib/gauche/%%VERSION%%/include/gauche/math3d.h
 share/gauche/%%VERSION%%/lib/gl.scm
 share/gauche/%%VERSION%%/lib/gl/glut.scm
 share/gauche/%%VERSION%%/lib/gl/math3d.scm
-@dirrm share/gauche/%%VERSION%%/lib/gl/
+@dirrm share/gauche/%%VERSION%%/lib/gl
 %%PORTDOCS%%@unexec install-info --delete %D/info/gauche-gl-refe.info %D/info/dir
 %%PORTDOCS%%@unexec install-info --delete %D/info/gauche-gl-refj.info %D/info/dir
 %%PORTDOCS%%info/gauche-gl-refe.info
@@ -56,7 +56,5 @@ share/gauche/%%VERSION%%/lib/gl/math3d.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.scm
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/glbook
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@unexec rmdir %D/share/examples/gauche 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@unexec rmdir %D/share/doc/gauche 2>/dev/null || true
