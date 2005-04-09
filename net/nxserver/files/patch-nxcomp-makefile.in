@@ -1,0 +1,21 @@
+--- nxcomp/Makefile.in.orig	Sun Nov  9 06:30:58 2003
++++ nxcomp/Makefile.in	Thu Sep  2 00:41:27 2004
+@@ -11,14 +11,14 @@
+ #
+ 
+ CXX         = @CXX@
+-CXXFLAGS    = @CXXFLAGS@ @X_CFLAGS@ @DEFS@ \
+-              -Wall -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes
+-CXXINCLUDES =
++CXXFLAGS    = @CXXFLAGS@ @X_CFLAGS@ @DEFS@ -fpermissive -fPIC
++#              -Wall -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes
++CXXINCLUDES = -I/usr/local/include
+ CXXDEFINES  =
+ 
+ CC          = @CC@
+ CCFLAGS     = $(CXXFLAGS)
+-CCINCLUDES  =
++CCINCLUDES  = -I/usr/local/include
+ CCDEFINES   =
+ 
+ LDFLAGS     = @LDFLAGS@

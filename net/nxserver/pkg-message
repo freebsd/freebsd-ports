@@ -1,0 +1,10 @@
+*******************************************************************************
+
+This port provides only the NX core binaries and libraries as were released
+by NoMachine as source code. To make them work and be used as an NX server,
+you will need to:
+* either install FreeNX (net/freenx) additionally,
+* or install the commercial NoMachine server product (currently not available
+  in native FreeBSD form)
+
+*******************************************************************************

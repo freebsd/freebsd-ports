@@ -1,0 +1,23 @@
+NX/lib/libXrender.so.1.2
+NX/lib/libXrender.so.1
+NX/lib/libXrender.so
+NX/lib/libXext.so.6.4
+NX/lib/libXext.so.6
+NX/lib/libXext.so
+NX/lib/libXcompext.so.1.4.0
+NX/lib/libXcompext.so.1
+NX/lib/libXcompext.so
+NX/lib/libXcomp.so.1.4.0
+NX/lib/libXcomp.so.1
+NX/lib/libXcomp.so
+NX/lib/libX11.so.6.2
+NX/lib/libX11.so.6
+NX/lib/libX11.so
+NX/bin/nxviewer
+NX/bin/nxproxy
+NX/bin/nxpasswd
+NX/bin/nxdesktop
+NX/bin/nxagent
+@dirrm NX/lib
+@dirrm NX/bin
+@dirrm NX

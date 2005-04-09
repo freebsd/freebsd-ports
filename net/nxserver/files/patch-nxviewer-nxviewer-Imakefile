@@ -1,0 +1,21 @@
+--- nxviewer/nxviewer/Imakefile.orig	Thu Jun 17 11:44:40 2004
++++ nxviewer/nxviewer/Imakefile	Mon Feb  7 02:22:45 2005
+@@ -37,7 +37,7 @@
+ #endif
+ 
+ 
+-INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/include/X11 $(NX_INC)
++INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/local/include -I/usr/X11R6/include/X11 $(NX_INC)
+ VNCAUTH_LIB = ./libvncauth.a
+ ZLIB_LIB = -L/usr/local/lib -lz
+ JPEG_LIB = -L/usr/local/lib -ljpeg
+@@ -50,6 +50,9 @@
+ #endif
+ 
+ DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB)
++XPLIBSRC = 
++XPLIB = 
++
+ 
+ LOCAL_LIBRARIES =  XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB) $(NX_LIB)
+ 

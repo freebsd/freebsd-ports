@@ -1,0 +1,11 @@
+--- nx-X11/programs/Xserver/hw/nxagent/Imakefile.orig	Sun Apr 18 11:57:27 2004
++++ nx-X11/programs/Xserver/hw/nxagent/Imakefile	Thu Sep  2 01:46:12 2004
+@@ -102,7 +102,7 @@
+ 	   -I. -I$(XBUILDINCDIR) -I$(FONTINCSRC) \
+ 	   -I../../mi -I../../include -I../../os \
+            -I$(EXTINCSRC) -I$(XINCLUDESRC) \
+-	   $(VFBINCLUDES) $(NXFONTINCLUDES)
++	   $(VFBINCLUDES) $(NXFONTINCLUDES) -I/usr/local/include
+ #ifdef SunArchitecture
+ INCLUDES = -I../../../../../nxcomp -I../../../../../nxcompext \
+ 	   -I. -I$(XBUILDINCDIR) -I$(FONTINCSRC) \

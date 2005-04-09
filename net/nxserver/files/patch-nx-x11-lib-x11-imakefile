@@ -1,0 +1,11 @@
+--- nx-X11/lib/X11/Imakefile.orig	Thu Sep  2 00:22:34 2004
++++ nx-X11/lib/X11/Imakefile	Thu Sep  2 00:22:46 2004
+@@ -22,7 +22,7 @@
+ #ifdef SunArchitecture
+ NX_INCLUDES = -I../../../nxcomp -I../../../nxcompext -I/usr/sfw/include
+ #else
+-NX_INCLUDES = -I../../../nxcomp -I../../../nxcompext
++NX_INCLUDES = -I../../../nxcomp -I../../../nxcompext -I/usr/local/include
+ #endif
+                                                                                                                                               
+ NX_DEFINES = -DNX_CLEAN_ALLOC     \
