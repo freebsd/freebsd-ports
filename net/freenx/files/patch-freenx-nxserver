@@ -1,0 +1,44 @@
+--- freenx-0.3.1/nxserver.orig	Sun Mar 13 19:56:34 2005
++++ freenx-0.3.1/nxserver	Mon Mar 28 16:49:04 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # Free implementation of nxserver components
+ #
+@@ -48,7 +48,7 @@
+ 
+ passdb_get_crypt_pass()
+ {
+-	echo "$@" | md5sum | cut -d" " -f1
++	echo "$@" | md5 | cut -d" " -f1
+ }
+ 
+ passdb_get_pass()
+@@ -697,7 +697,7 @@
+ 		
+ 		rm -f "$SESS_LOCKFILE"
+ 	
+-		uniqueid=$(echo $[$RANDOM*$RANDOM] | md5sum | cut -d" " -f1 | tr "[a-z]" "[A-Z]")
++		uniqueid=$(echo $[$RANDOM*$RANDOM] | md5 | cut -d" " -f1 | tr "[a-z]" "[A-Z]")
+ 		FULL_PARAMS="user=$USER&userip=$USERIP&uniqueid=$uniqueid&display=$SESS_DISPLAY&$PARAMS"
+ 		log "$FULL_PARAMS"
+ 
+@@ -755,7 +755,7 @@
+ 			if [ "$ENCRYPTION" = "1" ] 
+ 			then 
+ 				let PROXY_DISPLAY=$SESS_DISPLAY+4000
+-				netcat 127.0.0.1 $PROXY_DISPLAY
++				nc 127.0.0.1 $PROXY_DISPLAY
+ 				exit 0
+ 			else
+ 				echo_x "NX> 1001 Bye."
+@@ -953,7 +953,7 @@
+ 	
+ 	[ ${#CMD_CHUSER} -ge 32 ] && cmd_abort "Error: User $CMD_CHUSER must be shorter than 32 characters."
+ 	egrep -q "^$CMD_CHUSER:" $NX_ETC_DIR/passwords && cmd_abort "Error: User $CMD_CHUSER already in database."
+-	getent passwd | egrep -q "^$CMD_CHUSER:" || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
++	cat /etc/passwd | egrep -q "^$CMD_CHUSER:" || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
+ 	passdb_add_user "$CMD_CHUSER"
+ }
+ 

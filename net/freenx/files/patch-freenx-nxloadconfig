@@ -1,0 +1,19 @@
+--- freenx-0.3.1/nxloadconfig.orig	Thu Mar 10 19:11:15 2005
++++ freenx-0.3.1/nxloadconfig	Mon Mar 28 12:35:11 2005
+@@ -18,12 +18,12 @@
+ NX_LICENSE="OS (GPL)"
+ 
+ # Where can different nx components be found
+-NX_DIR=/usr
++NX_DIR=/usr/X11R6/NX/
+ PATH_BIN=$NX_DIR/bin # if you change that, be sure to also change the public keys
+ PATH_LIB=$NX_DIR/lib
+-NX_ETC_DIR=/etc/nxserver
+-NX_SESS_DIR=/var/lib/nxserver/db
+-NX_HOME_DIR=/var/lib/nxserver/home
++NX_ETC_DIR=/usr/X11R6/NX/etc/nxserver/
++NX_SESS_DIR=/var/lib/nxserver/
++NX_HOME_DIR=/home/nx/
+ 
+ # adds PATH_LIB to the startup of nxagents
+ # Should be set to 1 if PATH_LIB is not a system default library path

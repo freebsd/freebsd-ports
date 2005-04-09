@@ -1,0 +1,57 @@
+--- freenx-0.3.1/nxnode.orig	Sat Mar 12 12:57:35 2005
++++ freenx-0.3.1/nxnode	Mon Mar 28 12:10:41 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # Free implementation of nxserver components
+ #
+@@ -198,7 +198,7 @@
+ 		P=""
+ 		[ -n "$agent_user" ] && U="-u $agent_user"
+ 		[ -n "$agent_password" ] && P="-p -"
+-		echo "$agent_password" | $PATH_BIN/nxdesktop -name "NX - $user@$SERVER_NAME:$display - $session (GPL Edition)" $K $G $U $P $agent_server $AGENT_EXTRA_OPTIONS_RDP 2>>~/.nx/C-$sess_id/session &
++		echo "$agent_password" | LD_LIBRARY_PATH=$NX_DIR/lib $PATH_BIN/nxdesktop -name "NX - $user@$SERVER_NAME:$display - $session (GPL Edition)" $K $G $U $P $agent_server $AGENT_EXTRA_OPTIONS_RDP 2>>~/.nx/C-$sess_id/session &
+ 	else
+ 
+ 	# nxviewer session
+@@ -206,17 +206,17 @@
+ 	if [ "$type" = "vnc" ]
+ 	then
+ 		mkdir -p ~/.nx/C-$sess_id/scripts/
+-		echo "$agent_password" | $PATH_BIN/nxpasswd ~/.nx/C-$sess_id/scripts/.passwd doit
+-		$PATH_BIN/nxviewer -encodings tight hextile copyrect raw -passwd ~/.nx/C-$sess_id/scripts/.passwd -name "NX - $user@$SERVER_NAME:$display - $session (GPL Edition)"  $agent_server $AGENT_EXTRA_OPTIONS_RFB 2>>~/.nx/C-$sess_id/session &
++		echo "$agent_password" | LD_LIBRARY_PATH=$NX_DIR/lib $PATH_BIN/nxpasswd ~/.nx/C-$sess_id/scripts/.passwd doit
++		LD_LIBRARY_PATH=$NX_DIR/lib $PATH_BIN/nxviewer -encodings tight hextile copyrect raw -passwd ~/.nx/C-$sess_id/scripts/.passwd -name "NX - $user@$SERVER_NAME:$display - $session (GPL Edition)"  $agent_server $AGENT_EXTRA_OPTIONS_RFB 2>>~/.nx/C-$sess_id/session &
+ 	else
+ 		# "normal" nxagent session
+ 		if [ -n "$R" -a "$ENABLE_ROOTLESS_MODE" != "1" ]
+ 		then
+ 			# nxproxy single application mode session
+-			$PATH_BIN/nxproxy -C :$display $PROXY_EXTRA_OPTIONS 2>>~/.nx/C-$sess_id/session &
++			LD_LIBRARY_PATH=$NX_DIR/lib $PATH_BIN/nxproxy -C :$display $PROXY_EXTRA_OPTIONS 2>>~/.nx/C-$sess_id/session &
+ 		else
+ 			# nxagent session
+-			$PATH_BIN/nxagent -persistent $R -name "NX - $user@$SERVER_NAME:$display - $session (GPL Edition)" $K $G $B :$display $AGENT_EXTRA_OPTIONS_X 2>>~/.nx/C-$sess_id/session &
++			LD_LIBRARY_PATH=$NX_DIR/lib $PATH_BIN/nxagent -persistent $R -name "NX - $user@$SERVER_NAME:$display - $session (GPL Edition)" $K $G $B :$display $AGENT_EXTRA_OPTIONS_X 2>>~/.nx/C-$sess_id/session &
+ 		fi
+ 	fi
+ 	fi
+@@ -460,7 +460,7 @@
+ 	# TODO: imagecompressionmethod ...
+ 	[ "$imagecompressionmethod" = "0" ] && PACK="pack=nopack,"
+ 	
+-	proxy_cookie=$(echo $[$RANDOM*$RANDOM] | md5sum | cut -d" " -f1)
++	proxy_cookie=$(echo $[$RANDOM*$RANDOM] | md5 | cut -d" " -f1)
+ 
+ 	# write options file
+ 	[ -z "$samba" ] && samba=0
+@@ -573,7 +573,7 @@
+ 	$COMMAND_SMBMOUNT //$computername/$rdir $HOME/$dir -o username $username ip 127.0.0.1 port $port
+ 	if [ $? -eq 0 ]
+ 	then
+-		$PATH_BIN/nxclient -dialog ok -caption "NXServer Message" -message "Info: Share: '//$computername/$rdir' mounted on: '$HOME/$dir'" -noautokill -display :$display
++		LD_LIBRARY_PATH=$NX_DIR/lib $PATH_BIN/nxclient -dialog ok -caption "NXServer Message" -message "Info: Share: '//$computername/$rdir' mounted on: '$HOME/$dir'" -noautokill -display :$display
+ 	fi
+ }
+ 
