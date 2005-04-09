@@ -1,5 +1,5 @@
---- lineakd/lineakd_core_functions.cpp.orig	Wed Dec 29 11:49:55 2004
-+++ lineakd/lineakd_core_functions.cpp	Wed Dec 29 11:54:02 2004
+--- lineakd/lineakd_core_functions.cpp.orig	Wed Mar  2 13:15:38 2005
++++ lineakd/lineakd_core_functions.cpp	Sat Apr  2 18:13:06 2005
 @@ -46,6 +46,7 @@
  #include <sys/wait.h>
  }
@@ -17,8 +17,15 @@
     	/* Clean up X */
          if (X != 0) {
    		X->cleanup(myKbd);
-@@ -275,7 +276,7 @@
-               //msg("Unloading All Plugins DONE!");
+@@ -270,12 +271,12 @@
+         if (!plugincleanup) {
+            plugincleanup = true;
+            if ( plugins != NULL) {
+-              msg("Unloading All Plugins!");
++              lineak_core_functions::msg("Unloading All Plugins!");
+               plugins->unloadAllPlugins();
+-              msg("Unloading All Plugins DONE!");
++              lineak_core_functions::msg("Unloading All Plugins DONE!");
                delete(plugins);
                plugins = NULL;
 -              msg("Plugins all taken care of!");
@@ -42,7 +49,7 @@
          lockCtrl lock("lineakd");
          lock.unlock();
  //      exit(true);
-@@ -321,8 +322,8 @@
+@@ -321,16 +322,16 @@
    		sigprocmask(SIG_SETMASK, &mask_set, &old_set);
     		//bool verbose = cmdprefs.getVerbose();
  
@@ -52,8 +59,18 @@
 +                lineak_core_functions::msg("Unmapping keys");
                  X->cleanup(myKbd);
  
-                 //msg("Unloading all plugins");
-@@ -366,34 +367,34 @@
+-                msg("Unloading all plugins");
++                lineak_core_functions::msg("Unloading all plugins");
+                 plugins->unloadAllPlugins();
+ 
+                 /** Get a list of the potential plugins in the plugin directory */
+                 vector<string> pluginlist = plugins->scanForPlugins();
+-                msg("Scaning for and loading plugins");
++                lineak_core_functions::msg("Scaning for and loading plugins");
+                 /** Load the plugins */
+                 plugins->loadPlugins(pluginlist);
+                 /** Define the list of macros we support */
+@@ -370,34 +371,34 @@
                  cmdprefs.setDefaults(dnd);
  
    		/* reload .conf and .def file */

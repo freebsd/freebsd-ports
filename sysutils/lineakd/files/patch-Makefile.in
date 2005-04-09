@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Apr  2 18:31:49 2005
++++ Makefile.in	Sat Apr  2 18:32:05 2005
+@@ -267,7 +267,7 @@
+ COMPILE_LAST = lineakd
+ 
+ ####### kdevelop will overwrite this part!!! (begin)##########
+-SUBDIRS = lineak lineakd utils
++SUBDIRS = lineak lineakd
+ 
+ EXTRA_DIST = lineakd.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO lineakd.lsm lineakd.spec lineakd-noarch.spec README_LINEAK_LIBRARY DIRECTIVES 
+ 
