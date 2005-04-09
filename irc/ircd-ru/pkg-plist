@@ -7,28 +7,28 @@ etc/ircd-ru/kline.conf
 etc/ircd-ru/ru_RU.CP1251/ircd.motd-dist
 etc/ircd-ru/ru_RU.CP1251/ircd.smotd-dist
 etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
-share/doc/ircd-ru/README.Ilines
-share/doc/ircd-ru/opers.txt
-share/doc/ircd-ru/ru_RU.KOI8-R/FAQ
-share/doc/ircd-ru/ru_RU.KOI8-R/README
-share/ircd-ru/codepages/cp1251.cp
-share/ircd-ru/codepages/cp866.cp
-share/ircd-ru/codepages/iso8859-5.cp
-share/ircd-ru/codepages/koi8-f.cp
-share/ircd-ru/codepages/koi8-r.cp
-share/ircd-ru/codepages/translit.cp
+etc/rc.d/ircd.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/README.Ilines
+%%PORTDOCS%%%%DOCSDIR%%/opers.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/README
+%%DATADIR%%/codepages/cp1251.cp
+%%DATADIR%%/codepages/cp866.cp
+%%DATADIR%%/codepages/iso8859-5.cp
+%%DATADIR%%/codepages/koi8-f.cp
+%%DATADIR%%/codepages/koi8-r.cp
+%%DATADIR%%/codepages/translit.cp
 @dirrm etc/ircd-ru/ru_RU.CP1251
 @dirrm etc/ircd-ru/ru_RU.KOI8-R
-@dirrm share/ircd-ru/codepages
-@dirrm share/ircd-ru/modules
-@dirrm share/ircd-ru
-@dirrm share/doc/ircd-ru/ru_RU.KOI8-R
-@dirrm share/doc/ircd-ru
+@dirrm %%DATADIR%%/codepages
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru_RU.KOI8-R
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -m 755 %%VARDIR%%/log/ircd-ru
 @exec chown ircd:ircd %%VARDIR%%/log/ircd-ru
 @exec mkdir -m 755 %%VARDIR%%/run/ircd-ru
 @exec chown ircd:ircd %%VARDIR%%/run/ircd-ru
-@unexec rm -R %%VARDIR%%/run/ircd-ru > /dev/null
-@unexec rm -R %%VARDIR%%/log/ircd-ru > /dev/null
-@unexec rm /usr/local/etc/rc.d/ircd.sh.sample
+@unexec rm -R %%VARDIR%%/run/ircd-ru 2>&1 >/dev/null || true
+@unexec rm -R %%VARDIR%%/log/ircd-ru 2>&1 >/dev/null || true
 @unexec (rmdir %D/etc/ircd-ru && pw user del ircd) || echo 'To completely remove this port delete user ircd, group ircd and remove etc/ircd-ru'
