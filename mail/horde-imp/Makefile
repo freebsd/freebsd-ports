@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTVERSION=	4.0.3
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.planetmirror.com/pub/horde/imp/		\
@@ -118,8 +117,10 @@ LIMPDIR=	${LHORDEDIR}/imp
 PEARDIR?=	${LOCALBASE}/share/pear
 
 PLIST_SUB=	IMPDIR=${LIMPDIR}
+SUB_LIST=	IMPDIR=${IMPDIR} PORTSDIR=${PORTSDIR} CONFDIR=${CONFDIR}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 IMPDIR=		${PREFIX}/${LIMPDIR}
 CONFDIR=	${IMPDIR}/config
@@ -202,7 +203,7 @@ pre-configure:
 .for fc in ${PATCH2RM}
 	@${RM} ${WRKSRC}/config/${fc}
 .endfor
-	@${RM} ${WRKSRC}/lib/MIME/Headers.php.beforeIMP ${WRKSRC}/lib/IMP.php.orig
+	@${RM} ${WRKSRC}/lib/MIME/Headers.php.beforeIMP
 
 pre-install:
 .if !defined(BATCH) && !defined(WITHOUT_SSL)
@@ -238,9 +239,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%IMPDIR%%:${IMPDIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g;"	\
-		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%DOCSDIR%%:${DOCSDIR}:g"	\
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
