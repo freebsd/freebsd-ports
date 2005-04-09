@@ -2311,6 +2311,7 @@ freemat-mpi	ports/math/freemat-mpi
 freemind	ports/deskutils/freemind
 freenet		ports/net/freenet
 freenet6	ports/net/freenet6
+freenx		ports/net/freenx
 freepops	ports/mail/freepops
 freeradius	ports/net/freeradius
 freeride	ports/devel/freeride
@@ -6482,6 +6483,7 @@ nwndata		ports/games/nwndata
 nwnusers	ports/games/nwnusers
 nwreckdum	ports/archivers/nwreckdum
 nxml-emacs21	ports/editors/nxml-emacs21
+nxserver	ports/net/nxserver
 nxtvepg		ports/multimedia/nxtvepg
 ny-aspell	ports/textproc/ny-aspell
 nylon		ports/net/nylon
