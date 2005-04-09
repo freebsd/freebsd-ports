@@ -32,7 +32,6 @@ bin/bot-raw
 bin/bot_shell-vtk
 bin/bottest
 bin/brickwall
-bin/brlcad-check.sh
 bin/brlman
 bin/btclsh
 bin/buffer
@@ -94,7 +93,6 @@ bin/dconv
 bin/ddisp
 bin/decimate
 bin/dfft
-bin/display
 bin/dmod
 bin/double-asc
 bin/dpeak
@@ -147,6 +145,7 @@ bin/fence
 bin/fhor
 bin/files-tape
 bin/firpass
+bin/footer.sh
 bin/g-acad
 bin/g-dxf
 bin/g-euclid
@@ -173,6 +172,7 @@ bin/globe
 bin/graytorle
 bin/halftone
 bin/hd
+bin/header.sh
 bin/i-a
 bin/i-d
 bin/i-f
@@ -180,6 +180,7 @@ bin/iges-g
 bin/ihist
 bin/imgdims
 bin/imod
+bin/indent.sh
 bin/into
 bin/ir-X
 bin/ir-sgi
@@ -192,6 +193,14 @@ bin/lgt
 bin/loop
 bin/mac-pix
 bin/machinetype.sh
+bin/make_bz2.sh
+bin/make_deb.sh
+bin/make_dmg.sh
+bin/make_pkg.sh
+bin/make_rpm.sh
+bin/make_tar.sh
+bin/make_tgz.sh
+bin/make_zip.sh
 bin/mcut
 bin/mergechan
 bin/mged
@@ -303,7 +312,6 @@ bin/proe-g
 bin/pyramid
 bin/pyrmask
 bin/query
-bin/ranlib5.sh
 bin/rawbot
 bin/rawtorle
 bin/remapid
@@ -383,10 +391,9 @@ bin/secpass
 bin/sgi-pix
 bin/sgisnap.sh
 bin/shapefact
-bin/sharedliblink.sh
-bin/sharedlibvers.sh
 bin/show.sh
 bin/showshot
+bin/showtherm
 bin/sketch
 bin/smush
 bin/solshoot
@@ -785,6 +792,7 @@ include/brlcad/nmg.h
 include/brlcad/noalias-prag.h
 include/brlcad/noalias.h
 include/brlcad/nurb.h
+include/brlcad/optical.h
 include/brlcad/orle.h
 include/brlcad/photonmap.h
 include/brlcad/pkg.h
