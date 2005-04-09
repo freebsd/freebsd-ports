@@ -49,8 +49,6 @@ include/gtk-2.0/gdk/gdkvisual.h
 include/gtk-2.0/gdk/gdkwindow.h
 include/gtk-2.0/gdk/gdkx.h
 include/gtk-2.0/gdkconfig.h
-include/gtk-2.0/gtk/gtkcellview.h
-include/gtk-2.0/gtk/gtkiconview.h
 include/gtk-2.0/gtk/gtk.h
 include/gtk-2.0/gtk/gtkaboutdialog.h
 include/gtk-2.0/gtk/gtkaccelgroup.h
@@ -77,6 +75,7 @@ include/gtk-2.0/gtk/gtkcellrendererpixbuf.h
 include/gtk-2.0/gtk/gtkcellrendererprogress.h
 include/gtk-2.0/gtk/gtkcellrenderertext.h
 include/gtk-2.0/gtk/gtkcellrenderertoggle.h
+include/gtk-2.0/gtk/gtkcellview.h
 include/gtk-2.0/gtk/gtkcheckbutton.h
 include/gtk-2.0/gtk/gtkcheckmenuitem.h
 include/gtk-2.0/gtk/gtkclipboard.h
@@ -123,6 +122,7 @@ include/gtk-2.0/gtk/gtkhscrollbar.h
 include/gtk-2.0/gtk/gtkhseparator.h
 include/gtk-2.0/gtk/gtkiconfactory.h
 include/gtk-2.0/gtk/gtkicontheme.h
+include/gtk-2.0/gtk/gtkiconview.h
 include/gtk-2.0/gtk/gtkimage.h
 include/gtk-2.0/gtk/gtkimagemenuitem.h
 include/gtk-2.0/gtk/gtkimcontext.h
@@ -301,9 +301,9 @@ share/gtk-2.0/demo/list_store.c
 share/gtk-2.0/demo/menus.c
 share/gtk-2.0/demo/panes.c
 share/gtk-2.0/demo/pixbufs.c
+share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/sizegroup.c
 share/gtk-2.0/demo/stock_browser.c
-share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
