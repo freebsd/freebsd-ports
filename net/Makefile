@@ -428,6 +428,7 @@
     SUBDIR += ntp
     SUBDIR += ntraceroute
     SUBDIR += nvnet
+    SUBDIR += nxserver
     SUBDIR += nylon
     SUBDIR += obnc
     SUBDIR += ocaml-jabbr

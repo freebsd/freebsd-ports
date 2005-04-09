@@ -1,0 +1,10 @@
+--- nxdesktop/Makeconf.orig	Sat Sep 11 14:23:17 2004
++++ nxdesktop/Makeconf	Sat Sep 11 14:23:53 2004
+@@ -3,6 +3,6 @@
+ INSTALL     = install
+ CRYPTOBJ    =
+ SOUNDOBJ    = rdpsnd.o rdpsnd_oss.o
+-CFLAGS      = -DKEYMAP_PATH=\"$(KEYMAP_PATH)\" -Wall -O2 -I../nx-X11/exports/include -DWITH_OPENSSL -DWITH_RDPSND -DL_ENDIAN
++CFLAGS      = -DKEYMAP_PATH=\"$(KEYMAP_PATH)\" -O2 -I../nx-X11/exports/include -I/usr/local/include -DWITH_OPENSSL -DWITH_RDPSND -DL_ENDIAN
+ LDFLAGS     =  -L../nx-X11/exports/lib -lcrypto
+ TARGETS     =  nxdesktop
