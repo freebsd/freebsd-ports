@@ -229,7 +229,6 @@
     SUBDIR += icpld
     SUBDIR += icqlib
     SUBDIR += icqlib0
-    SUBDIR += icqnix
     SUBDIR += ifdepd
     SUBDIR += ifstat
     SUBDIR += ifstated
