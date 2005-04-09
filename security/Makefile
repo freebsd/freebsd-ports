@@ -334,6 +334,7 @@
     SUBDIR += pam_smb
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
+    SUBDIR += pear-Auth_PrefManager
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_CBC
     SUBDIR += pear-Crypt_CHAP
