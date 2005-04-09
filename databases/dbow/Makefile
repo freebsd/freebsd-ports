@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbow
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dbow
@@ -15,9 +15,7 @@ MAINTAINER=	dtynan@kalopa.com
 COMMENT=	DBOW is a database object generator for C, Perl, PHP, etc
 
 USE_MYSQL=	yes
-USE_REINPLACE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|example||' ${WRKSRC}/Makefile
+MAN1=		dbow.1
 
 .include <bsd.port.mk>
