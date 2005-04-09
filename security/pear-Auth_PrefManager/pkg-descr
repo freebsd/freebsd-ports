@@ -1,0 +1,9 @@
+Preference Manager is a class to handle user preferences in a web application,
+looking them up in a table using a combination of their userid, and the
+preference name to get a value, and (optionally) returning a default value for
+the preference if no value could be found for that user.
+
+It is designed to be used alongside the PEAR Auth class, but can be used with
+anything that allows you to obtain the user's id - including your own code.
+
+WWW: http://pear.php.net/package/Auth_PrefManager/
