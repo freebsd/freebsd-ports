@@ -31,4 +31,4 @@ share/ircd-ru/codepages/translit.cp
 @unexec rm -R %%VARDIR%%/run/ircd-ru > /dev/null
 @unexec rm -R %%VARDIR%%/log/ircd-ru > /dev/null
 @unexec rm /usr/local/etc/rc.d/ircd.sh.sample
-@unexec echo 'To completely remove this port delete user ircd, group ircd and remove etc/ircd-ru'
+@unexec (rmdir %D/etc/ircd-ru && pw user del ircd) || echo 'To completely remove this port delete user ircd, group ircd and remove etc/ircd-ru'
