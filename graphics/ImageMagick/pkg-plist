@@ -128,8 +128,6 @@ lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/cip.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/clip.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/clip.so
-%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/clipboard.la
-%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/clipboard.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/cut.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/cut.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/dcm.la
@@ -300,6 +298,8 @@ lib/ImageMagick/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/xpm.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/xwd.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/xwd.so
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/ycbcr.la
+%%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/ycbcr.so
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/yuv.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/coders/yuv.so
 lib/ImageMagick/modules-%%QBIT%%/filters/.keep

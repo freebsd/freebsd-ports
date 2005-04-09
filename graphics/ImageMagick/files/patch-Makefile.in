@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Dec 10 01:43:10 2004
-+++ Makefile.in	Fri Dec 10 21:19:20 2004
-@@ -1885,7 +1885,7 @@
+--- Makefile.in.orig	Sat Mar  5 01:08:24 2005
++++ Makefile.in	Thu Apr  7 23:38:41 2005
+@@ -1890,7 +1890,7 @@
  	$(UTILITIES_EXTRA_DIST) \
  	$(WAND_EXTRA_DIST)
  
@@ -9,7 +9,25 @@
  
  # Where architecture-independent configuration files get installed
  # (share/ImageMagick-version)
-@@ -9286,7 +9286,7 @@
+@@ -4443,6 +4443,8 @@
+ 	    f=$(am__strip_dir) \
+ 	    echo " $(LIBTOOL) --mode=install $(codersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(codersdir)/$$f'"; \
+ 	    $(LIBTOOL) --mode=install $(codersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(codersdir)/$$f"; \
++	    echo " $(codersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(codersdir)/$$f'"; \
++	    $(codersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(codersdir)/$$f"; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -4470,6 +4472,8 @@
+ 	    f=$(am__strip_dir) \
+ 	    echo " $(LIBTOOL) --mode=install $(filtersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(filtersdir)/$$f'"; \
+ 	    $(LIBTOOL) --mode=install $(filtersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(filtersdir)/$$f"; \
++	    echo " $(filtersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(filtersdir)/$$f'"; \
++	    $(filtersLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(filtersdir)/$$f"; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -9336,7 +9340,7 @@
  
  @WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@install-exec-perl: $(PERLMAKEFILE)
  @WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@	( cd $(PERLMAGICK) && $(MAKE) CC='@CC@' && \
