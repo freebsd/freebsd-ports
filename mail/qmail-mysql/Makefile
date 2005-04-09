@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-mysql
 PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH MySQL support
 
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
