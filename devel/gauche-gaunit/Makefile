@@ -5,15 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	gaunit
-PORTVERSION=	0.0.9
+PORTVERSION=	0.1.0
 CATEGORIES=	devel scheme
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 PKGNAMEPREFIX=	gauche-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An unit testing framework in Gauche
-
-BROKEN=		Incomplete pkg-plist
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}

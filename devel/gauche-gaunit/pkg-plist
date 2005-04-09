@@ -10,7 +10,6 @@ share/gauche/site/lib/test/unit/ui/text.scm
 @dirrm share/gauche/site/lib/test/unit/ui
 @dirrm share/gauche/site/lib/test/unit
 @unexec rmdir %D/share/gauche/site/lib/test 2>/dev/null || true
-@unexec rmdir %D/share/doc/gauche 2>/dev/null || true
 %%EXAMPLESDIR%%/site-lisp/run-test-setting.el
 %%EXAMPLESDIR%%/site-lisp/run-test.el
 %%EXAMPLESDIR%%/symdiff/lib/symdiff.scm
@@ -21,4 +20,3 @@ share/gauche/site/lib/test/unit/ui/text.scm
 @dirrm %%EXAMPLESDIR%%/symdiff
 @dirrm %%EXAMPLESDIR%%/site-lisp
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/share/examples/gauche 2>/dev/null || true
