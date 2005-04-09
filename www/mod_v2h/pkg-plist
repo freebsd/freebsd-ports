@@ -1,4 +1,6 @@
+@unexec %D/sbin/apxs -e -A -n layout %D/libexec/apache2/mod_v2h.so
 libexec/apache2/mod_v2h.so
-%%PORTDOCS%%share/doc/mod_v2h/AUTHORS
-%%PORTDOCS%%share/doc/mod_v2h/README
-%%PORTDOCS%%@dirrm share/doc/mod_v2h
+@exec %D/sbin/apxs -e -A -n layout %D/%f
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
