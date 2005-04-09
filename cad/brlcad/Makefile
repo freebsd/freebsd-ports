@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.0.4
+PORTVERSION=	7.2.2
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	brlcad
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GL=		yes
+USE_GMAKE=	yes
 
 PREFIX?=	${LOCALBASE}/${PORTNAME}
 USE_LIBTOOL_VER=	15
@@ -44,53 +45,53 @@ MAN1=	aliastorle.1 all_sf.1 alias-pix.1 anim_cascade.1 anim_fly.1 	\
 	bwstat.1 bwthresh.1 cad_boundp.1 cad_parea.1 cat-fb.1 cell-fb.1 \
 	chan_mult.1 chan_permute.1 cmap-fb.1 comgeom-g.1 conv-vg2g.1	\
 	crop.1 cubitorle.1 cy-g.1 cv.1 dbclean.1 dbcp.1 decimate.1	\
-	display.1 dpix-pix.1 dunncolor.1 dunnsnap.1 dvirle.1 dxf-g.1	\
-	enf-g.1 euclid-g.1 fant.1 fast4-g.1 fb-bw.1 fb-cmap.1 fb-fb.1	\
-	fb-orle.1 fb-pix.1 fb-png.1 fb-rle.1 fbanim.1 fbcbars.1 	\
-	fbclear.1 fbcmap.1 fbcmrot.1 fbcolor.1 fbed.1 fbfade.1		\
-	fbframe.1 fbfree.1 fbgamma.1 fbgrid.1 fbhelp.1 fblabel.1	\
-	fbline.1 fbpoint.1 fbscanplot.1	fbserv.1 fbstretch.1 fbzoom.1	\
-	firpass.1 g-acad.1 g-dxf.1 g-euclid.1 g-iges.1 g-nff.1 g-nmg.1	\
-	g-shell.rect.1 g-stl.1 g-tankill.1 g-vrml.1 g-wave.1 g-x3d.1	\
-	g2asc.1 g_diff.1 g_lint.1 gencolor.1 get4d.1 get_orion.1 	\
-	getami.1 getap.1 getbob.1 getcx3d.1 getfb.1 getgmr.1 getiris.1	\
-	getmac.1 getmex.1 getqcr.1 getren.1 getsun.1 gettaac.1 getx10.1 \
-	getx11.1 gif-fb.1 gif2fb.1 giftorle.1 graytorle.1 halftone.1	\
-	hd.1 iges-g.1 imgdims.1 into.1 ir-X.1 ir-sgi.1 irdisp.1 lgt.1	\
-	loop.1 mac-pix.1 mcut.1 mergechan.1 mged.1 mk_bolt.1 		\
-	mk_gastank.1 mk_handle.1 mk_window.1 mk_winfrm.1 mk_wire.1	\
-	morphedit.1 nastran-g.1 nirt.1 nmg-bot.1 nmg-rib.1 op-bw.1	\
-	orle-fb.1 orle-pix.1 painttorle.1 patch-g.1 pcd-pix.1		\
-	picket_fence.1 pix-alias.1 pix-bw.1 pix-bw3.1 pix-fb.1  	\
-	pix-orle.1 pix-png.1 pix-ps.1 pix-rle.1 pix-sun.1 pix2asc.1 	\
-	pixautosize.1 pixbackgnd.1 pixbgstrip.1 pixblend.1 pixborder.1	\
-	pixbustup.1 pixclump.1 pixcolors.1 pixcut.1 pixdiff.1		\
-	pixdsplit.1 pixfade.1 pixfilter.1 pixhalve.1 pixhist.1  	\
-	pixhist3d-pl.1 pixhist3d.1 pixinterp2x.1 pixmatte.1 pixmerge.1	\
-	pixmorph.1 pixrect.1 pixrot.1 pixsaturate.1 pixscale.1		\
-	pixshrink.1 pixstat.1 pixsubst.1 pixtile.1 pixuntile.1 pl-X.1	\
-	pl-X10.1 pl-asc.1 pl-fb.1 pl-hpgl.1 pl-pl.1 pl-ps.1 pl-sgi.1	\
-	pl-starbase.1 pl-tek.1 plcolor.1 pldebug.1 plgetframe.1 	\
-	plline2.1 plrot.1 ply-g.1 png-bw.1 png-pix.1 png_info.1 	\
-	png-fb.1 polar-fb.1 poly-bot.1 pp-fb.1 ppmtorle.1 proe-g.1	\
-	pyrmask.1 query.1 rastorle.1 rawtorle.1 read98721.1 remrt.1	\
-	repos.1  rlatorle.1 rle-fb.1 rleClock.1 rleaddcom.1 rleaddeof.1 \
-	rlebg.1 rlebox.1 rlecat.1 rleccube.1 rle-pix.1 rlecomp.1	\
-	rledither.1 rleflip.1 rlegrid.1 rlehdr.1 rlehisto.1 rleinterp.1 \
-	rleldmap.1 rlemandl.1 rlenoise.1 rlepatch.1 rleprint.1		\
-	rlequant.1 rlescale.1 rleselect.1 rlesetbg.1 rleskel.1		\
-	rlespiff.1 rlesplice.1 rlesplit.1 rlestereo.1 rleswap.1 	\
-	rletoabA60.1 rletoabA62.1 rletoalias.1 rletoascii.1 rletocgm.1	\
-	rletogif.1 rletogray.1 rletopaint.1 rletoppm.1 rletops.1	\
-	rletorast.1 rletoraw.1 rletorla.1 rletotarga.1 rletotiff.1	\
-	rlezoom.1 rpatch.1 rt.1 rt_bot_faces.1 rtcheck.1 rtedge.1	\
-	rtg3.1 	rthide.1 rtpp.1 rtrange.1 rtray.1 rtregis.1 rtscale.1	\
-	rtshot.1 rttherm.1 rtwalk.1 rtweight.1 rtxray.1	scriptsort.1	\
-	secpass.1 shapefact.1 show3.1 showshot.1 smush.1 ssamp-bw.1	\
-	stl-g.1 sun-pix.1 tabinterp.1 tabsub.1 tankill-g.1 targatorle.1 \
-	tclsh.1 template.1 terrain.1 tifftorle.1 to8.1 tobw.1 ug-g.1	\
-	unexp.1 unslice.1 urt.1 vas4.1 vdeck.1 viewpoint-g.1		\
-	wasatchrle.1 wavelet.1 wish.1
+	dpix-pix.1 dunncolor.1 dunnsnap.1 dvirle.1 dxf-g.1 enf-g.1	\
+	euclid-g.1 fant.1 fast4-g.1 fb-bw.1 fb-cmap.1 fb-fb.1 fb-orle.1	\
+	fb-pix.1 fb-png.1 fb-rle.1 fbanim.1 fbcbars.1 fbclear.1		\
+	fbcmap.1 fbcmrot.1 fbcolor.1 fbed.1 fbfade.1 fbframe.1 fbfree.1	\
+	fbgamma.1 fbgrid.1 fbhelp.1 fblabel.1 fbline.1 fbpoint.1	\
+	fbscanplot.1 fbserv.1 fbstretch.1 fbzoom.1 firpass.1 g-acad.1	\
+	g-dxf.1 g-euclid.1 g-iges.1 g-nff.1 g-nmg.1 g-shell.rect.1	\
+	g-stl.1 g-tankill.1 g-vrml.1 g-wave.1 g-x3d.1 g2asc.1 g_diff.1	\
+	g_lint.1 gencolor.1 get4d.1 get_orion.1 getami.1 getap.1	\
+	getbob.1 getcx3d.1 getfb.1 getgmr.1 getiris.1 getmac.1 getmex.1	\
+	getqcr.1 getren.1 getsun.1 gettaac.1 getx10.1 getx11.1 gif-fb.1	\
+	gif2fb.1 giftorle.1 graytorle.1 halftone.1 hd.1 iges-g.1	\
+	imgdims.1 into.1 ir-X.1 ir-sgi.1 irdisp.1 lgt.1 loop.1		\
+	mac-pix.1 mcut.1 mergechan.1 mged.1 mk_bolt.1 mk_gastank.1	\
+	mk_handle.1 mk_window.1 mk_winfrm.1 mk_wire.1 morphedit.1	\
+	nastran-g.1 nirt.1 nmg-bot.1 nmg-rib.1 op-bw.1 orle-fb.1	\
+	orle-pix.1 painttorle.1 patch-g.1 pcd-pix.1 picket_fence.1	\
+	pix-alias.1 pix-bw.1 pix-bw3.1 pix-fb.1 pix-orle.1 pix-png.1	\
+	pix-ps.1 pix-rle.1 pix-sun.1 pix2asc.1 pixautosize.1		\
+	pixbackgnd.1 pixbgstrip.1 pixblend.1 pixborder.1 pixbustup.1	\
+	pixclump.1 pixcolors.1 pixcut.1 pixdiff.1 pixdsplit.1 pixfade.1	\
+	pixfilter.1 pixhalve.1 pixhist.1 pixhist3d-pl.1 pixhist3d.1	\
+	pixinterp2x.1 pixmatte.1 pixmerge.1 pixmorph.1 pixrect.1	\
+	pixrot.1 pixsaturate.1 pixscale.1 pixshrink.1 pixstat.1		\
+	pixsubst.1 pixtile.1 pixuntile.1 pl-X.1 pl-X10.1 pl-asc.1	\
+	pl-fb.1 pl-hpgl.1 pl-pl.1 pl-ps.1 pl-sgi.1 pl-starbase.1	\
+	pl-tek.1 plcolor.1 pldebug.1 plgetframe.1 plline2.1 plrot.1	\
+	ply-g.1 png-bw.1 png-pix.1 png_info.1 png-fb.1 polar-fb.1	\
+	poly-bot.1 pp-fb.1 ppmtorle.1 proe-g.1 pyrmask.1 query.1	\
+	rastorle.1 rawtorle.1 read98721.1 remrt.1 repos.1 rlatorle.1	\
+	rle-fb.1 rleClock.1 rleaddcom.1 rleaddeof.1 rlebg.1 rlebox.1	\
+	rlecat.1 rleccube.1 rle-pix.1 rlecomp.1 rledither.1 rleflip.1	\
+	rlegrid.1 rlehdr.1 rlehisto.1 rleinterp.1 rleldmap.1 rlemandl.1	\
+	rlenoise.1 rlepatch.1 rleprint.1 rlequant.1 rlescale.1		\
+	rleselect.1 rlesetbg.1 rleskel.1 rlespiff.1 rlesplice.1		\
+	rlesplit.1 rlestereo.1 rleswap.1 rletoabA60.1 rletoabA62.1	\
+	rletoalias.1 rletoascii.1 rletocgm.1 rletogif.1 rletogray.1	\
+	rletopaint.1 rletoppm.1 rletops.1 rletorast.1 rletoraw.1	\
+	rletorla.1 rletotarga.1 rletotiff.1 rlezoom.1 rpatch.1 rt.1	\
+	rt_bot_faces.1 rtcheck.1 rtedge.1 rtg3.1 rthide.1 rtpp.1	\
+	rtrange.1 rtray.1 rtregis.1 rtscale.1 rtshot.1 rttherm.1	\
+	rtwalk.1 rtweight.1 rtxray.1 scriptsort.1 secpass.1 shapefact.1	\
+	show3.1 showshot.1 showtherm.1 smush.1 ssamp-bw.1 stl-g.1	\
+	sun-pix.1 tabinterp.1 tabsub.1 tankill-g.1 targatorle.1 tclsh.1	\
+	template.1 terrain.1 tifftorle.1 to8.1 tobw.1 ug-g.1 unexp.1	\
+	unslice.1 urt.1 vas4.1 vdeck.1 viewpoint-g.1 wasatchrle.1	\
+	wavelet.1 wish.1
 
 MAN3 =	3DBorder.3 Access.3 AddErrInfo.3 AddOption.3 Alloc.3 AllowExc.3	\
 	AppInit.3 AssocData.3 Async.3 BackgdErr.3 Backslash.3 		\
