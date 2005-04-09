@@ -17,8 +17,22 @@ COMMENT=	An irc daemon with translation schemes and other useful features
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+PKGMESSAGE=	${WRKSRC}/pkg-message
 
-PLIST_SUB=	VARDIR=/var
+VARDIR=		/var
+PLIST_SUB=	VARDIR=${VARDIR}
+
+OPTIONS=	WENET "irc.wenet.ru specific options" off \
+		HUB "hub support" off \
+		ENCRYPTION "enable RC4 crypt (server to server connection)" off \
+		SYSLOGFILE "log to file instead of syslog" off \
+		DRONEMODULE "enable dronemodule support" off \
+		AUTHMODULE "enable authmodule support" off \
+		DNSBL "enable DNSBL support" off \
+		SELECT "enable select I/O" off
+
+.include <bsd.port.pre.mk>
 
 # irc.wenet.ru specific options
 .if defined(WITH_WENET)
@@ -33,7 +47,7 @@ CONFIGURE_ARGS+=--enable-hub
 # enable RC4 crypt (server to server connection)
 .if defined(WITH_ENCRYPTION)
 CONFIGURE_ARGS+=--enable-encryption
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
 # log to file instead of syslog
@@ -61,10 +75,13 @@ CONFIGURE_ARGS+=--enable-dnsbl
 CONFIGURE_ARGS+=--enable-select
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == "amd64"
 BROKEN=		"Does not compile on amd64"
+.endif
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -Ee '/(dir_HPATH)|opers.txt/d' ${WRKSRC}/tools/install_ircd.in
 .endif
 
 pre-build:
@@ -77,12 +94,12 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd.sh.sample ${LOCALBASE}/etc/rc.d
-	@${CHOWN} -R ircd:ircd ${LOCALBASE}/etc/ircd-ru
-	@${CHOWN} -R ircd:ircd ${LOCALBASE}/share/ircd-ru
-	@${CHOWN} -R ircd:ircd ${LOCALBASE}/share/doc/ircd-ru
-	@${CHOWN} -R ircd:ircd /var/log/ircd-ru
-	@${CHOWN} -R ircd:ircd /var/run/ircd-ru
-	@cat ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd.sh.sample ${PREFIX}/etc/rc.d
+	@${CHOWN} -R ircd:ircd ${PREFIX}/etc/ircd-ru ${DATADIR} ${VARDIR}/log/ircd-ru ${VARDIR}/run/ircd-ru
+.if !defined(NOPORTDOCS)
+	@${CHOWN} -R ircd:ircd ${DOCSDIR}
+.endif
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' pkg-message > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
