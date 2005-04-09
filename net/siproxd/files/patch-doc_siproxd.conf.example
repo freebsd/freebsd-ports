@@ -1,5 +1,5 @@
---- doc/siproxd.conf.example.orig	Sun May  9 14:53:06 2004
-+++ doc/siproxd.conf.example	Mon Oct 11 21:25:41 2004
+--- doc/siproxd.conf.example.orig	Thu Dec 30 12:26:17 2004
++++ doc/siproxd.conf.example	Fri Apr  8 21:02:45 2005
 @@ -9,8 +9,8 @@
  ######################################################################
  # The interface names of INBOUND and OUTBOUND interface.
