@@ -11,26 +11,22 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fractal.net/files/
 DISTNAME=	mod_v2h
 
-MAINTAINER=     apache@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A mass virtual hosting module for Apache with support
 
-BUILD_DEPENDS=  ${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2 \
+BUILD_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2 \
 		${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=    ${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2 \
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2 \
 		${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
 
-WRKSRC=		${WRKDIR}/$(DISTNAME)-2
+WRKSRC=		${WRKDIR}/${DISTNAME}-2
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+CFLAGS=		-fPIC
 .endif
 
 post-patch:
