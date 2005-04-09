@@ -17,6 +17,7 @@ share/gnome/doc/aMule-1.2.8/amulesig.txt
 share/gnome/doc/aMule-1.2.8/eMule-Imports-Status
 share/gnome/doc/aMule-1.2.8/license.txt
 @dirrm share/gnome/doc/aMule-1.2.8
+@unexec rmdir %D/share/gnome/doc 2>/dev/null || true
 share/locale/en/LC_MESSAGES/amule.mo
 share/locale/es/LC_MESSAGES/amule.mo
 share/locale/de/LC_MESSAGES/amule.mo
@@ -25,6 +26,8 @@ share/locale/it/LC_MESSAGES/amule.mo
 share/locale/ko/LC_MESSAGES/amule.mo
 share/locale/pl/LC_MESSAGES/amule.mo
 share/locale/ee/LC_MESSAGES/amule.mo
+@unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ee 2>/dev/null || true
 share/locale/ru/LC_MESSAGES/amule.mo
 share/locale/bg/LC_MESSAGES/amule.mo
 share/locale/es_MX/LC_MESSAGES/amule.mo
