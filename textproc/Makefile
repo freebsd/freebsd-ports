@@ -577,6 +577,7 @@
     SUBDIR += ruby-htmlcompact
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
+    SUBDIR += ruby-htmltools
     SUBDIR += ruby-htree
     SUBDIR += ruby-libxml
     SUBDIR += ruby-libxslt

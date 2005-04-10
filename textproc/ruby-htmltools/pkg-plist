@@ -1,0 +1,9 @@
+%%RUBY_SITELIBDIR%%/html/element.rb
+%%RUBY_SITELIBDIR%%/html/rexml-nodepath.rb
+%%RUBY_SITELIBDIR%%/html/sgml-parser.rb
+%%RUBY_SITELIBDIR%%/html/stparser.rb
+%%RUBY_SITELIBDIR%%/html/tags.rb
+%%RUBY_SITELIBDIR%%/html/tree.rb
+%%RUBY_SITELIBDIR%%/html/xmltree.rb
+%%RUBY_SITELIBDIR%%/html/xpath.rb
+@dirrm %%RUBY_SITELIBDIR%%/html
