@@ -1,6 +1,5 @@
 bin/gchempaint
 libdata/bonobo/servers/gchempaint.server
-share/gnome/application-registry/gchempaint.applications
 share/gnome/applications/gchempaint.desktop
 share/gnome/gchempaint/glade/arrow1.xpm
 share/gnome/gchempaint/glade/arrow2.xpm
@@ -30,6 +29,7 @@ share/gnome/gchempaint/glade/text.xpm
 share/gnome/gchempaint/glade/tools.glade
 share/gnome/gchempaint/glade/upbond.xpm
 share/gnome/gchempaint/glade/xbond.xpm
+share/gnome/gchempaint/pixmaps/gchempaint_logo.png
 share/gnome/gnome-2.0/ui/gchempaint.xml
 share/gnome/help/gchempaint/C/gchempaint.xml
 share/gnome/help/gchempaint/C/legal.xml
@@ -51,11 +51,15 @@ share/gnome/help/gchempaint/C/figures/stereobonds.png
 share/gnome/help/gchempaint/C/figures/text.png
 share/gnome/help/gchempaint/C/figures/texttools-bar.png
 share/gnome/help/gchempaint/C/figures/tools-window.png
-share/gnome/mime-info/gchempaint.keys
-share/gnome/mime-info/gchempaint.mime
 share/gnome/omf/gchempaint/gchempaint-C.omf
-share/gnome/pixmaps/gchempaint.png
-share/gnome/pixmaps/gchempaint_logo.png
+share/icons/hicolor/32x32/apps/gchempaint.png
+share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gchempaint.png
+share/icons/hicolor/48x48/apps/gchempaint.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-gchempaint.png
+share/icons/hicolor/72x72/apps/gchempaint.png
+share/icons/hicolor/72x72/mimetypes/gnome-mime-application-x-gchempaint.png
+share/icons/hicolor/128x128/apps/gchempaint.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-gchempaint.png
 share/locale/de/LC_MESSAGES/gchempaint.mo
 share/locale/fr/LC_MESSAGES/gchempaint.mo
 share/locale/it/LC_MESSAGES/gchempaint.mo
@@ -63,6 +67,7 @@ share/locale/pl/LC_MESSAGES/gchempaint.mo
 share/locale/zh_CN/LC_MESSAGES/gchempaint.mo
 share/mime/application/x-gchempaint.xml
 share/mime/packages/gchempaint.xml
+@dirrm share/gnome/gchempaint/pixmaps
 @dirrm share/gnome/gchempaint/glade
 @dirrm share/gnome/gchempaint
 @dirrm share/gnome/help/gchempaint/C/figures
