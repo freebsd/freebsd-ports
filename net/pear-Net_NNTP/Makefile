@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Net_NNTP
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
-CATEGORIES=	net news www pear
+CATEGORIES=	net news pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR implementation of the NNTP protocol
