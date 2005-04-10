@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supports reading/writing of MJPEG video in YUV 4:2:2 JPEG
 
 USE_SDL=	sdl
-USE_GNOME=	gtk12
+USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
