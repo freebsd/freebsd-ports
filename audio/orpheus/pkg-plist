@@ -1,0 +1,3 @@
+bin/orpheus
+%%NLS%%share/locale/ru/LC_MESSAGES/orpheus.mo
+%%NLS%%@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true

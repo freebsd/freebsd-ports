@@ -321,6 +321,7 @@
     SUBDIR += openal
     SUBDIR += opennap
     SUBDIR += opmixer
+    SUBDIR += orpheus
     SUBDIR += osalp
     SUBDIR += p5-Audio
     SUBDIR += p5-Audio-CD
