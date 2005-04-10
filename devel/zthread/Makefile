@@ -26,10 +26,6 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != i386
-BROKEN=		"Does not compile on ${ARCH}; mixes pointers and ints"
-.endif
-
 .if ${OSVERSION} < 500000
 USE_GCC=	3.3
 .endif
