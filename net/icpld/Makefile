@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icpld
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 		http://voodoo.oberon.net/download/
