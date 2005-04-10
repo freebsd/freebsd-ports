@@ -16,6 +16,12 @@ COMMENT=	A dd tool suitable for rescuing data from a medium with errors
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dd_rescue ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -23,4 +29,4 @@ do-install:
 	${INSTALL_DATA}	${WRKSRC}/README.dd_rescue ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

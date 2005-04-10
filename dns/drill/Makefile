@@ -27,4 +27,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 PLIST_FILES=	bin/drill
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>

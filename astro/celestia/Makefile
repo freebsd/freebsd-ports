@@ -41,6 +41,10 @@ OPTIONS=		LUA "Lua support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=			"Does not compile on FreeBSD 4.x"
+.endif
+
 .if defined(WITH_LUA)
 LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua
 CONFIGURE_ARGS+=	--with-lua
