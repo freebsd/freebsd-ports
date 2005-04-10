@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	tentakel
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://unc.dl.sourceforge.net/sourceforge/tentakel/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for executing commands on many hosts in parallel
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/py
+
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 MAN1=		tentakel.1
 
