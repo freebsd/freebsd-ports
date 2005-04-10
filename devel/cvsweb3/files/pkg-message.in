@@ -1,6 +1,6 @@
 ************************************************************
 Quickstart:
-	cd ${PREFIX}/etc/cvsweb
+	cd %%PREFIX%%/etc/cvsweb
 	cp cvsweb.conf.dist cvsweb.conf
 
 and you can browse your CVS repository via web if you set up
@@ -11,5 +11,5 @@ will be like `http://localhost/cgi-bin/cvsweb.cgi/'.
 browse, edit cvsweb.conf* as you like.
 
   For further information, please look into the directory
-`${PREFIX}/share/doc/cvsweb/'.
+`%%DOCSDIR%%'.
 ************************************************************

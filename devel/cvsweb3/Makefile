@@ -7,6 +7,7 @@
 
 PORTNAME=	cvsweb
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~scop/cvsweb/
@@ -24,10 +25,15 @@ RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
 # best with them.
 RUN_DEPENDS+=	${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
 		${SITE_PERL}/${PERL_ARCH}/String/Ediff.pm:${PORTSDIR}/devel/p5-String-Ediff \
-		enscript:${PORTSDIR}/print/enscript-a4 \
 		cvsgraph:${PORTSDIR}/devel/cvsgraph
 
+# Use PAPERSIZE to avoid a stale dependency on Enscript.
+PAPERSIZE?=	letter
+RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-${PAPERSIZE}
+
 LATEST_LINK=	cvsweb3
+CONFLICTS=	cvsweb-2.*
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 
@@ -73,6 +79,9 @@ CONFFILES=	cvsweb.conf \
 
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}" CSSDIR="${CSSDIR}"
 
+SUB_FILES=	pkg-message
+SUB_LIST=	PREFIX="${PREFIX}" DOCSDIR="${DOCSDIR}"
+
 post-patch:
 	${PERL} -i -pe "\
 		s'!!PERL!!'${PERL}'g; \
@@ -95,6 +104,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/${ICONSDIR}/cvsweb/
 	${MKDIR} ${PREFIX}/${CSSDIR}/cvsweb
 	${INSTALL_DATA} ${WRKSRC}/css/*.css ${PREFIX}/${CSSDIR}/cvsweb/
+	${MKDIR} ${PREFIX}/share/enscript/hl
 	${INSTALL_DATA} ${WRKSRC}/enscript/*.st ${PREFIX}/share/enscript/hl/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
