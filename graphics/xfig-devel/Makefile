@@ -19,7 +19,7 @@ COMMENT=	A drawing program for X11
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}

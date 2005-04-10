@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X-based TV Display and Capture Application (for use with bt848 driver)
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

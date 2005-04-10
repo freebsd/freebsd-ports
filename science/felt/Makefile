@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-devel.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for Finite Element Analysis
 
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
+LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d \
 		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 
 USE_X_PREFIX=	yes
