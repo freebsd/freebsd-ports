@@ -482,6 +482,7 @@
     SUBDIR += trackballs
     SUBDIR += tractorgen
     SUBDIR += traindirector
+    SUBDIR += trigger
     SUBDIR += trojka
     SUBDIR += trophy
     SUBDIR += tsito
