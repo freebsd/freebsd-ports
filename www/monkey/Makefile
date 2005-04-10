@@ -29,7 +29,13 @@ CONFIGURE_ENV+=	EXTRA_CFLAGS="${CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/monkey.sh ${PREFIX}/etc/rc.d/monkey.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
