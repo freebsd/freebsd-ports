@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LiveUser
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 CATEGORIES=	security www pear
 
 MAINTAINER=	antonio@php.net
@@ -25,11 +25,11 @@ OPTIONS=	PEAR_DB "PEAR::DB support" off \
 
 CATEGORY=	LiveUser
 FILES=		Auth/Common.php Auth/DB.php Auth/MDB.php Auth/MDB2.php \
-		Auth/PEARAuth.php Auth/Session.php Auth/XML.php Perm/Complex.php \
-		Perm/Medium.php Perm/Simple.php Perm/Storage.php \
-		Perm/Storage/Cache.php Perm/Storage/DB.php Perm/Storage/Globals.php \
-		Perm/Storage/MDB.php Perm/Storage/MDB2.php Perm/Storage/SQL.php \
-		Perm/Storage/XML.php LiveUser.php
+		Auth/PEARAuth.php Auth/Session.php Auth/XML.php Perm/Storage/Cache.php \
+		Perm/Storage/DB.php Perm/Storage/Globals.php Perm/Storage/MDB.php \
+		Perm/Storage/MDB2.php Perm/Storage/SQL.php Perm/Storage/XML.php \
+		Perm/Complex.php Perm/Medium.php Perm/Simple.php Perm/Storage.php \
+		LiveUser.php
 SQLS=		auth_mdb_schema.xml Auth_XML.xml install.php perm_mdb_schema.xml \
 		Perm_XML.xml README
 DOCS=		lgpl.txt
