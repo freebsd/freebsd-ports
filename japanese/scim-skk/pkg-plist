@@ -1,0 +1,7 @@
+lib/scim-1.0/IMEngine/skk.so
+lib/scim-1.0/SetupUI/skk-imengine-setup.so
+share/locale/ja/LC_MESSAGES/scim-skk.mo
+share/scim/icons/scim-skk.png
+@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/icons 2>/dev/null || true
