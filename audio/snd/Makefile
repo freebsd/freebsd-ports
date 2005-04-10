@@ -17,6 +17,8 @@ COMMENT=		Multitracking sound editor and utilities
 
 LIB_DEPENDS=		gsl.6:${PORTSDIR}/math/gsl
 
+BROKEN=			"Does not install"
+
 ALL_TARGET=		audinfo snd sndinfo sndplay sndrecord sndsine
 CONFIGURE_ARGS=		--with-float-samples \
 			--with-multifile
@@ -78,12 +80,6 @@ CONFIGURE_ARGS+=	--with-gtk \
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_XLIB=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
 .endif
 
 post-build:
@@ -157,4 +153,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
