@@ -27,10 +27,6 @@ PLIST_FILES=	bin/codeworker
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 .if ${OSVERSION} < 500035
 CFLAGS+=	-fpermissive
 .endif
