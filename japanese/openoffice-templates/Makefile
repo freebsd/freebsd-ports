@@ -19,6 +19,8 @@ COMMENT=	OpenOffice.org 1.1 Impress Templates
 
 RUN_DEPENDS=	${LOCALBASE}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 PLIST_FILES=	${OOTEMPLATES:S|^|${TEMPLATEDIR}/|}
 
