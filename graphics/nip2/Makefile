@@ -5,26 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nip
-PORTVERSION=	7.8.14
+PORTNAME=	nip2
+PORTVERSION=	7.10.10
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.8/
+MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.10/
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
 
-LIB_DEPENDS=	vips.0:${PORTSDIR}/graphics/vips \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
+LIB_DEPENDS=	vips.14:${PORTSDIR}/graphics/vips \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	gnomemimedata glib20 pkgconfig gtk20
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
-USE_XLIB=	yes
 USE_REINPLACE=	yes
 
-MAN1=		nip.1
+MAN1=		nip2.1
 
 .include <bsd.port.pre.mk>
 
