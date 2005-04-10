@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8dbf7894-a9a8-11d9-a788-0001020eed82">
+    <topic>squid -- DoS on failed PUT/POST requests vulnerability</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><le>2.5.7_12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-post">
+	  <p>An inconsistent state is entered on a failed PUT/POST
+	    request making a high risk for segmentation faults or
+	    other strange errors</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0718</cvename>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-post</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1224</url>
+    </references>
+    <dates>
+      <discovery>2005-02-03</discovery>
+      <entry>2005-04-10</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="396ee517-a607-11d9-ac72-000bdb1444a4">
     <topic>horde -- Horde Page Title Cross-Site Scripting Vulnerability</topic>
