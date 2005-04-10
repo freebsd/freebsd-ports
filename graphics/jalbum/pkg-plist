@@ -83,7 +83,6 @@ bin/jalbum
 %%DATADIR%%/help/images/xborderexample.jpg
 %%DATADIR%%/help/images/zoomexample.jpg
 %%DATADIR%%/help/index.html
-%%DATADIR%%/help/index.ico
 %%DATADIR%%/help/misc.html
 %%DATADIR%%/help/quickstart.html
 %%DATADIR%%/help/scripting.html
@@ -107,6 +106,8 @@ bin/jalbum
 %%DATADIR%%/plugins/LogoFilter.class
 %%DATADIR%%/plugins/LogoFilter.java
 %%DATADIR%%/plugins/LogoFilter.jbx
+%%DATADIR%%/plugins/Printing.class
+%%DATADIR%%/plugins/Printing.java
 %%DATADIR%%/plugins/PropertySettingFilterWrapper.class
 %%DATADIR%%/plugins/PropertySettingFilterWrapper.java
 %%DATADIR%%/plugins/RotationFilter.class
@@ -144,21 +145,66 @@ bin/jalbum
 %%DATADIR%%/res/xls.gif
 %%DATADIR%%/res/xml.gif
 %%DATADIR%%/res/zip.gif
-%%DATADIR%%/skins/BluPlusPlus/bsh/base.bsh
-%%DATADIR%%/skins/BluPlusPlus/bsh/common.bsh
 %%DATADIR%%/skins/BluPlusPlus/bsh/index.bsh
-%%DATADIR%%/skins/BluPlusPlus/bsh/photographic-meta-info.bsh
 %%DATADIR%%/skins/BluPlusPlus/bsh/slide-original.bsh
 %%DATADIR%%/skins/BluPlusPlus/bsh/slide.bsh
-%%DATADIR%%/skins/BluPlusPlus/bsh/vars.bsh
 %%DATADIR%%/skins/BluPlusPlus/cameras.properties
+%%DATADIR%%/skins/BluPlusPlus/connect.pht
 %%DATADIR%%/skins/BluPlusPlus/docs/ChangesHistory.txt
 %%DATADIR%%/skins/BluPlusPlus/docs/ReadMe.txt
 %%DATADIR%%/skins/BluPlusPlus/docs/UserGuide.txt
+%%DATADIR%%/skins/BluPlusPlus/frames/border_01.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/border_02.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/border_03.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/bracket.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/bracket_horizontal.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/bracket_vertical.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/elaborate_01.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/elaborate_02.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/frame.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/glow_01.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/glow_02.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/glow_03.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/hakki.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/images/corner_d4d4d4_5.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/corner_d4d4d4_5l.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/eos_cdw30.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/eos_mosaic15.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/eos_mosaic9.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/eos_networking4b.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/eos_networking5.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/parchment_01.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/tape_orange5.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/tape_orange6.gif
+%%DATADIR%%/skins/BluPlusPlus/frames/images/wood_02.jpg
+%%DATADIR%%/skins/BluPlusPlus/frames/none.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/oval_01.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/oval_02.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/oval_03.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/oval_04.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/preview.jpg
+%%DATADIR%%/skins/BluPlusPlus/frames/shadow.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/shadow_full.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/shadow_nw.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/simple_01.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/simple_02.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/simple_03.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/simple_04.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/simple_05.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/simple_06.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/soft_01.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/soft_02.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/soft_03.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/soft_04.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/soft_05.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/soft_06.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/soft_07.xbp
+%%DATADIR%%/skins/BluPlusPlus/frames/tape_01.xbp
 %%DATADIR%%/skins/BluPlusPlus/hints.jap
 %%DATADIR%%/skins/BluPlusPlus/includes/footer.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/header.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/help.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/html-header.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-bottom-navigation.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-top-navigation.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-topbar.inc
@@ -170,11 +216,95 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/includes/slide-comment.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/slide-info.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/slide-photographic-meta-info.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/slide-remarks.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/slide-top-navigation.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/slide-topbar.inc
 %%DATADIR%%/skins/BluPlusPlus/index.htt
 %%DATADIR%%/skins/BluPlusPlus/init.bsh
 %%DATADIR%%/skins/BluPlusPlus/onload.bsh
+%%DATADIR%%/skins/BluPlusPlus/plugins/AbstractSlide.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/AbstractSlide.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPCompiledScript.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPCompiledScript.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPFilterGroup.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPFilterGroup.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPFilterProperties.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPFilterProperties.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPFrameHandler.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPFrameHandler.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPStyleSheet.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/BPPStyleSheet.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/Base.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/Base.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/Common.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/Common.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/Compile.bat
+%%DATADIR%%/skins/BluPlusPlus/plugins/Constants.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/Constants.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/DynamicComboBoxModel.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/DynamicComboBoxModel.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/FramePreviewPanel.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/FramePreviewPanel.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/FrameTypeComboBox$1.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/FrameTypeComboBox$FrameTypeComboBoxModel.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/FrameTypeComboBox.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/FrameTypeComboBox.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/Index.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/Index.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox$1.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox$LanguageComboBoxModel.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/OriginalSlide.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/OriginalSlide.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/PhotographicMetaInformation.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/PhotographicMetaInformation.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinAboutSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinAboutSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinAbstractSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinAbstractSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinAdvancedSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinAdvancedSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinFilterManagementSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinFilterManagementSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinFramesSection$EditAction.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinFramesSection$PreviewAction.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinFramesSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinFramesSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$1.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$10.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$11.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$12.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$13.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$14.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$15.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$16.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$17.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$18.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$19.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$2.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$20.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$3.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$4.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$5.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$6.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$7.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$8.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$9.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGeneralSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGeneralSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinIndexSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinIndexSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinPanel.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinPanel.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinRemarksSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinRemarksSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinSlideSection.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinSlideSection.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/Slide.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/Slide.java
 %%DATADIR%%/skins/BluPlusPlus/preview.jpg
 %%DATADIR%%/skins/BluPlusPlus/res/actions/black/download.gif
 %%DATADIR%%/skins/BluPlusPlus/res/actions/black/first.gif
@@ -291,164 +421,20 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/res/actions/white/sound.gif
 %%DATADIR%%/skins/BluPlusPlus/res/actions/white/sound_small.gif
 %%DATADIR%%/skins/BluPlusPlus/res/actions/white/up.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_top_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_bottom_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_bottom_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_bottom_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_right.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_top_left.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_top_middle.gif
-%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_top_right.gif
 %%DATADIR%%/skins/BluPlusPlus/res/empty.gif
 %%DATADIR%%/skins/BluPlusPlus/res/favicon.ico
 %%DATADIR%%/skins/BluPlusPlus/res/folder.gif
 %%DATADIR%%/skins/BluPlusPlus/res/js/common.js
-%%DATADIR%%/skins/BluPlusPlus/res/js/help.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/keyboard.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/nav-index.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/nav-slide.js
-%%DATADIR%%/skins/BluPlusPlus/res/js/photographic-meta-info.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/remarks.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/save-protection.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/shadow.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/slideshow.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/statusbar.js
 %%DATADIR%%/skins/BluPlusPlus/res/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/php/remarks.php
 %%DATADIR%%/skins/BluPlusPlus/res/styles/arcs.css
 %%DATADIR%%/skins/BluPlusPlus/res/styles/arcs/background.jpg
 %%DATADIR%%/skins/BluPlusPlus/res/styles/arcs/rule.gif
@@ -484,6 +470,10 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/res/styles/gray/theme.properties
 %%DATADIR%%/skins/BluPlusPlus/res/styles/hakki.css
 %%DATADIR%%/skins/BluPlusPlus/res/styles/hakki/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/scrapbook.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/scrapbook/background.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/scrapbook/rule.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/scrapbook/theme.properties
 %%DATADIR%%/skins/BluPlusPlus/res/styles/white.css
 %%DATADIR%%/skins/BluPlusPlus/res/styles/white/theme.properties
 %%DATADIR%%/skins/BluPlusPlus/res/topbars/black/classic.gif
@@ -524,6 +514,7 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/styles/glacier.css
 %%DATADIR%%/skins/BluPlusPlus/styles/gray.css
 %%DATADIR%%/skins/BluPlusPlus/styles/hakki.css
+%%DATADIR%%/skins/BluPlusPlus/styles/scrapbook.css
 %%DATADIR%%/skins/BluPlusPlus/styles/white.css
 %%DATADIR%%/skins/BluPlusPlus/texts/photo-metadata.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/photo-metadata_en.properties
@@ -537,6 +528,7 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_fr.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_it.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_nl.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_no.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_pl.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_pl.properties_original
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_pt.properties
@@ -923,17 +915,28 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/slideshowstop.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/up.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/cameras.properties
 %%DATADIR%%/skins/ExhibitPlus/changelog.txt
+%%DATADIR%%/skins/ExhibitPlus/guestbook.inc
+%%DATADIR%%/skins/ExhibitPlus/guestbook/processXML.php
 %%DATADIR%%/skins/ExhibitPlus/hints.jap
+%%DATADIR%%/skins/ExhibitPlus/index.bsh
 %%DATADIR%%/skins/ExhibitPlus/index.htt
 %%DATADIR%%/skins/ExhibitPlus/init.bsh
+%%DATADIR%%/skins/ExhibitPlus/next_version.txt
 %%DATADIR%%/skins/ExhibitPlus/onload.bsh
 %%DATADIR%%/skins/ExhibitPlus/originalslide.htt
 %%DATADIR%%/skins/ExhibitPlus/originalslide2.htt
+%%DATADIR%%/skins/ExhibitPlus/plugins/Compile.bat
+%%DATADIR%%/skins/ExhibitPlus/plugins/Utils.class
+%%DATADIR%%/skins/ExhibitPlus/plugins/Utils.java
+%%DATADIR%%/skins/ExhibitPlus/promotion.properties
 %%DATADIR%%/skins/ExhibitPlus/res/basestyle.css
 %%DATADIR%%/skins/ExhibitPlus/res/download.gif
 %%DATADIR%%/skins/ExhibitPlus/res/folder.gif
+%%DATADIR%%/skins/ExhibitPlus/res/folder2.gif
 %%DATADIR%%/skins/ExhibitPlus/res/foldernew.gif
+%%DATADIR%%/skins/ExhibitPlus/res/guestbook.swf
 %%DATADIR%%/skins/ExhibitPlus/res/help.gif
 %%DATADIR%%/skins/ExhibitPlus/res/info.gif
 %%DATADIR%%/skins/ExhibitPlus/res/keyboard.js
@@ -944,7 +947,9 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/res/navslideorig2.js
 %%DATADIR%%/skins/ExhibitPlus/res/orderprints.gif
 %%DATADIR%%/skins/ExhibitPlus/res/purplestripe.gif
+%%DATADIR%%/skins/ExhibitPlus/res/warning_icon.gif
 %%DATADIR%%/skins/ExhibitPlus/shutterfly_xhtml.inc
+%%DATADIR%%/skins/ExhibitPlus/slide.bsh
 %%DATADIR%%/skins/ExhibitPlus/slide.htt
 %%DATADIR%%/skins/ExhibitPlus/styles/black.css
 %%DATADIR%%/skins/ExhibitPlus/styles/black.jpg
@@ -958,15 +963,21 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/styles/light.jpg
 %%DATADIR%%/skins/ExhibitPlus/styles/metodi-black.css
 %%DATADIR%%/skins/ExhibitPlus/styles/metodi-black.jpg
-%%DATADIR%%/skins/ExhibitPlus/texts.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_de.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_en.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_fr.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_hu.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_is.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_nl.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_sr.properties
-%%DATADIR%%/skins/ExhibitPlus/texts_sv.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_cs.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_de.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_en.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_es.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_fr.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_hu.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_is.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_it.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_ja.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_nl.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_pt.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_sr.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_sv.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/xlat.pl
 %%DATADIR%%/skins/Experience/about.txt
 %%DATADIR%%/skins/Experience/hints.jap
 %%DATADIR%%/skins/Experience/index.htt
@@ -1074,24 +1085,6 @@ bin/jalbum
 %%DATADIR%%/skins/Film/styles/Gray.css
 %%DATADIR%%/skins/Film/styles/Night.css
 %%DATADIR%%/skins/Film/styles/Paper.css
-%%DATADIR%%/skins/Flowing/about.txt
-%%DATADIR%%/skins/Flowing/index.htt
-%%DATADIR%%/skins/Flowing/res/camera.gif
-%%DATADIR%%/skins/Flowing/res/folder.gif
-%%DATADIR%%/skins/Flowing/res/index.gif
-%%DATADIR%%/skins/Flowing/res/movie.gif
-%%DATADIR%%/skins/Flowing/res/next.gif
-%%DATADIR%%/skins/Flowing/res/next_disabled.gif
-%%DATADIR%%/skins/Flowing/res/previous.gif
-%%DATADIR%%/skins/Flowing/res/previous_disabled.gif
-%%DATADIR%%/skins/Flowing/res/up.gif
-%%DATADIR%%/skins/Flowing/slide.htt
-%%DATADIR%%/skins/Flowing/styles/3D.css
-%%DATADIR%%/skins/Flowing/styles/Black.css
-%%DATADIR%%/skins/Flowing/styles/Blue.css
-%%DATADIR%%/skins/Flowing/styles/Khaki.css
-%%DATADIR%%/skins/Flowing/styles/Plain.css
-%%DATADIR%%/skins/Flowing/styles/White.css
 %%DATADIR%%/skins/Horizontal/about.txt
 %%DATADIR%%/skins/Horizontal/frameset.htt
 %%DATADIR%%/skins/Horizontal/hints.jap
@@ -1215,6 +1208,7 @@ bin/jalbum
 %%DATADIR%%/skins/Polaroid/styles/Paper.css
 %%DATADIR%%/skins/Polaroid/styles/Romance.css
 %%DATADIR%%/skins/Polaroid/styles/Sky.css
+%%DATADIR%%/skins/ShowOff/Kopia av hints.jap
 %%DATADIR%%/skins/ShowOff/about.txt
 %%DATADIR%%/skins/ShowOff/hints.jap
 %%DATADIR%%/skins/ShowOff/index.htt
@@ -1235,6 +1229,31 @@ bin/jalbum
 %%DATADIR%%/skins/ShowOff/styles/Custom.css
 %%DATADIR%%/skins/ShowOff/styles/Dark.css
 %%DATADIR%%/skins/ShowOff/styles/Sunset.css
+%%DATADIR%%/skins/Simple/bottom.htt
+%%DATADIR%%/skins/Simple/frameset.htt
+%%DATADIR%%/skins/Simple/hints.jap
+%%DATADIR%%/skins/Simple/index.htt
+%%DATADIR%%/skins/Simple/init.bsh
+%%DATADIR%%/skins/Simple/onload.bsh
+%%DATADIR%%/skins/Simple/res/au.gif
+%%DATADIR%%/skins/Simple/res/b_pil.gif
+%%DATADIR%%/skins/Simple/res/f_pil.gif
+%%DATADIR%%/skins/Simple/res/folder.gif
+%%DATADIR%%/skins/Simple/res/la.gif
+%%DATADIR%%/skins/Simple/res/movie.gif
+%%DATADIR%%/skins/Simple/res/ra.gif
+%%DATADIR%%/skins/Simple/res/sb_pil.gif
+%%DATADIR%%/skins/Simple/res/sf_pil.gif
+%%DATADIR%%/skins/Simple/res/t.gif
+%%DATADIR%%/skins/Simple/slide.htt
+%%DATADIR%%/skins/Simple/styles/black.css
+%%DATADIR%%/skins/Simple/styles/black.jpg
+%%DATADIR%%/skins/Simple/styles/white.css
+%%DATADIR%%/skins/Simple/styles/white.jpg
+%%DATADIR%%/skins/Simple/texts/texts.properties
+%%DATADIR%%/skins/Simple/texts/texts_sk.properties
+%%DATADIR%%/skins/Simple/texts/texts_sv.properties
+%%DATADIR%%/skins/Simple/top.htt
 %%DATADIR%%/skins/Slide show/index.htt
 %%DATADIR%%/skins/Slide show/onload.bsh
 %%DATADIR%%/skins/Slide show/res/camera.gif
@@ -1323,6 +1342,7 @@ bin/jalbum
 %%DATADIR%%/skins/Wedding/styles/white.jpg
 %%DATADIR%%/skins/Wedding/styles/white/background.jpg
 %%DATADIR%%/skins/Wedding/texts/texts.properties
+%%DATADIR%%/skins/Wedding/texts/texts_sk.properties
 %%DATADIR%%/skins/Wedding/texts/texts_sv.properties
 %%DATADIR%%/skins/Whitey/index.htt
 %%DATADIR%%/skins/Whitey/res/camera.gif
@@ -1400,13 +1420,16 @@ bin/jalbum
 %%DATADIR%%/texts/texts_hu.properties
 %%DATADIR%%/texts/texts_it.properties
 %%DATADIR%%/texts/texts_ja.properties
+%%DATADIR%%/texts/texts_ko.properties
 %%DATADIR%%/texts/texts_nl.properties
+%%DATADIR%%/texts/texts_no.properties
 %%DATADIR%%/texts/texts_pl.properties
 %%DATADIR%%/texts/texts_pt.properties
 %%DATADIR%%/texts/texts_ru.properties
 %%DATADIR%%/texts/texts_sk.properties
 %%DATADIR%%/texts/texts_sv.properties
 %%DATADIR%%/texts/texts_th.properties
+%%DATADIR%%/texts/texts_uk.properties
 %%DATADIR%%/tools/Adjust image orientation.bsh
 %%DATADIR%%/tools/Calculate album size.bsh
 %%DATADIR%%/tools/Clear user defined variables.bsh
@@ -1445,6 +1468,10 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Slide show/styles
 @dirrm %%DATADIR%%/skins/Slide show/res
 @dirrm %%DATADIR%%/skins/Slide show
+@dirrm %%DATADIR%%/skins/Simple/texts
+@dirrm %%DATADIR%%/skins/Simple/styles
+@dirrm %%DATADIR%%/skins/Simple/res
+@dirrm %%DATADIR%%/skins/Simple
 @dirrm %%DATADIR%%/skins/ShowOff/styles
 @dirrm %%DATADIR%%/skins/ShowOff/res
 @dirrm %%DATADIR%%/skins/ShowOff
@@ -1468,9 +1495,6 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Horizontal/styles
 @dirrm %%DATADIR%%/skins/Horizontal/res
 @dirrm %%DATADIR%%/skins/Horizontal
-@dirrm %%DATADIR%%/skins/Flowing/styles
-@dirrm %%DATADIR%%/skins/Flowing/res
-@dirrm %%DATADIR%%/skins/Flowing
 @dirrm %%DATADIR%%/skins/Film/styles
 @dirrm %%DATADIR%%/skins/Film/res
 @dirrm %%DATADIR%%/skins/Film
@@ -1484,8 +1508,11 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Experience/styles
 @dirrm %%DATADIR%%/skins/Experience/res
 @dirrm %%DATADIR%%/skins/Experience
+@dirrm %%DATADIR%%/skins/ExhibitPlus/texts
 @dirrm %%DATADIR%%/skins/ExhibitPlus/styles
 @dirrm %%DATADIR%%/skins/ExhibitPlus/res
+@dirrm %%DATADIR%%/skins/ExhibitPlus/plugins
+@dirrm %%DATADIR%%/skins/ExhibitPlus/guestbook
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground
@@ -1528,6 +1555,7 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/black
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/white
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/scrapbook
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/hakki
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/gray
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/glacier
@@ -1541,26 +1569,8 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/artsy
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/arcs
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/php
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/js
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/solid
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/none
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/frame
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black
-@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/white
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/universal
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte
@@ -1568,7 +1578,10 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/black
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res
+@dirrm %%DATADIR%%/skins/BluPlusPlus/plugins
 @dirrm %%DATADIR%%/skins/BluPlusPlus/includes
+@dirrm %%DATADIR%%/skins/BluPlusPlus/frames/images
+@dirrm %%DATADIR%%/skins/BluPlusPlus/frames
 @dirrm %%DATADIR%%/skins/BluPlusPlus/docs
 @dirrm %%DATADIR%%/skins/BluPlusPlus/bsh
 @dirrm %%DATADIR%%/skins/BluPlusPlus

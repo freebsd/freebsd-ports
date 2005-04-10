@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jalbum
-PORTVERSION=	1.5
+PORTVERSION=	5.2
 CATEGORIES=	graphics java
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/jalbum.net/download/ \
 		http://www.i-scream.org/pub/jalbum.net/download/
