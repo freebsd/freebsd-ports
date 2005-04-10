@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base C/C++ compiler from FreeBSD 2.2.x & 3.x (for your old code)
 
 DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
-EXPIRATION_DATE=	20050610
+EXPIRATION_DATE=	2005-06-10
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'old version, not worth the cost in real estate'
