@@ -44,6 +44,10 @@ PORTDOCDIR=	${PREFIX}/share/doc/tkstep${TCLVERSION}jp
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 600006
+BROKEN=		"Depends on libxpg4 which was removed from FreeBSD 6.0"
+.endif
+
 pre-install:
 	cd ${TOPDIR}/library/demos.jp && ${RM} -f *.orig
 

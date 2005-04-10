@@ -37,6 +37,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 600006
+BROKEN=		"Depends on libxpg4 which was removed from FreeBSD 6.0"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-patch:
 	@${CP} ${FILESDIR}/README.FreeBSD.in ${TOPDIR}/README.FreeBSD.JP.in
