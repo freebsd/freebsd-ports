@@ -17,6 +17,8 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
+BROKEN=		Configure fails
+
 OPTIONS=	SERVER "install server" off
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
