@@ -42,8 +42,8 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
+.if ${ARCH} != "i386" && ${ARCH} != "alpha" && ${ARCH} != "amd64"
+BROKEN=		"Does not compile on !i386, !amd64 and !alpha"
 .endif
 
 post-patch:
