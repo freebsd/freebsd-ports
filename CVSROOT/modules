@@ -5806,6 +5806,7 @@ mixminion	ports/mail/mixminion
 mixmos		ports/audio/mixmos
 mixxx		ports/audio/mixxx
 mjpegtools	ports/multimedia/mjpegtools
+mjpegtools-yuvfilters	multimedia/mjpegtools-yuvfilters
 mk-aspell	ports/textproc/mk-aspell
 mkbold		ports/x11-fonts/mkbold
 mkbold-mkitalic	ports/x11-fonts/mkbold-mkitalic
