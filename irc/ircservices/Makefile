@@ -28,6 +28,12 @@ DIST_SUBDIR=	${PORTNAME}
 
 CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386"
+.endif
+
 post-install:
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/ircservices.sh.sample startup file."
 	@${INSTALL_SCRIPT} ${FILESDIR}/ircservices.sh \
@@ -38,4 +44,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/Changes ${WRKSRC}/KnownBugs ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
