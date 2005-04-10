@@ -4,6 +4,14 @@ etc/cvsweb/cvsweb.conf-openbsd.dist
 etc/cvsweb/cvsweb.conf-netbsd.dist
 etc/cvsweb/cvsweb.conf-ruby.dist
 @dirrm etc/cvsweb
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/cvsweb-httpd.conf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%CGIDIR%%/cvsweb.cgi
 %%ICONSDIR%%/cvsweb/back.gif
 %%ICONSDIR%%/cvsweb/binary.gif
@@ -18,11 +26,4 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 @dirrm %%CSSDIR%%/cvsweb
 share/enscript/hl/lang_cvsweb.st
 share/enscript/hl/lang_cvsweb_diff.st
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/cvsweb-httpd.conf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/share/enscript/hl 2>/dev/null || true
