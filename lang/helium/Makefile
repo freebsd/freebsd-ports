@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Functional programming compiler for a subset of Haskell
 
+BROKEN=		Does not build
+
 .if defined(WITH_HINT)
 USE_JAVA=	1.4+
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-src.tar.gz \

@@ -15,6 +15,8 @@ COMMENT=	A client for the gale secure instant messaging system
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+BROKEN=		Does not build
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
