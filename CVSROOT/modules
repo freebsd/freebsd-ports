@@ -10170,6 +10170,7 @@ ruby-html-template	ports/textproc/ruby-html-template
 ruby-htmlcompact	ports/textproc/ruby-htmlcompact
 ruby-htmlrepair	ports/textproc/ruby-htmlrepair
 ruby-htmlsplit	ports/textproc/ruby-htmlsplit
+ruby-htmltools	ports/textproc/ruby-htmltools
 ruby-htree	ports/textproc/ruby-htree
 ruby-http-access	ports/www/ruby-http-access
 ruby-icmp	ports/net/ruby-icmp
