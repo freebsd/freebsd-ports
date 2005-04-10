@@ -39,4 +39,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib/db41 -ldb41
 .error WITH_BDB_VER must be 41 or 42
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>
