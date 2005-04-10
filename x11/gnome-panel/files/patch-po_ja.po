@@ -1,0 +1,20 @@
+--- po/ja.po.orig	Mon Mar  7 23:15:19 2005
++++ po/ja.po	Fri Apr  8 14:12:28 2005
+@@ -105,7 +105,7 @@
+ #.
+ #: ../applets/clock/clock.c:281
+ msgid "%a %b %e"
+-msgstr "%b%e日 (%a)"
++msgstr "%B%e日 (%a)"
+ 
+ #. translators: reverse the order of these arguments
+ #. *              if the time should come before the
+@@ -138,7 +138,7 @@
+ #. we will display the start date in the most abbreviated way possible.
+ #: ../applets/clock/clock.c:591
+ msgid "%b %d"
+-msgstr "%b%e日"
++msgstr "%B%e日"
+ 
+ #: ../applets/clock/clock.c:890
+ msgid "Tasks"
