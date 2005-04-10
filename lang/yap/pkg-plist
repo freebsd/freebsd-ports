@@ -3,7 +3,11 @@ include/Yap/YapInterface.h
 include/Yap/c_interface.h
 include/Yap/yap_structs.h
 lib/Yap/random.so
+lib/Yap/regcomp.so
+lib/Yap/regerror.so
+lib/Yap/regexec.so
 lib/Yap/regexp.so
+lib/Yap/regfree.so
 lib/Yap/startup
 lib/Yap/sys.so
 lib/Yap/yap2swi.so
@@ -75,6 +79,15 @@ share/Yap/chr/sbag_l.pl
 share/Yap/chr/trace.yap
 share/Yap/chr.yap
 share/Yap/cleanup.yap
+share/Yap/clpbn/aggregates.yap
+share/Yap/clpbn/bnt.yap
+share/Yap/clpbn/evidence.yap
+share/Yap/clpbn/graphs.yap
+share/Yap/clpbn/graphviz.yap
+share/Yap/clpbn/utils.yap
+share/Yap/clpbn/vel.yap
+share/Yap/clpbn/xbif.yap
+share/Yap/clpbn.yap
 share/Yap/clpq/arith_q.yap
 share/Yap/clpq/class.yap
 share/Yap/clpq/geler.yap
@@ -175,7 +188,7 @@ share/Yap/heaps.yap
 share/Yap/icon_address.pl
 share/Yap/lists.yap
 share/Yap/logtalk/logtalk.pl
-share/Yap/logtalk/yap430.config
+share/Yap/logtalk/yap.config
 share/Yap/logtalk.yap
 share/Yap/ordsets.yap
 share/Yap/pillow.pl
@@ -213,8 +226,10 @@ share/Yap/pl/yio.yap
 share/Yap/prandom.yap
 share/Yap/queues.yap
 share/Yap/random.yap
+share/Yap/rbtrees.yap
 share/Yap/regexp.yap
 share/Yap/splay.yap
+share/Yap/swi.yap
 share/Yap/system.yap
 share/Yap/terms.yap
 share/Yap/timeout.yap
@@ -229,6 +244,8 @@ share/Yap/ugraphs.yap
 @dirrm share/Yap/clpqr/examples
 @dirrm share/Yap/clpqr
 @dirrm share/Yap/clpq
+@dirrm share/Yap/clpbn/examples
+@dirrm share/Yap/clpbn
 @dirrm share/Yap/chr/examples
 @dirrm share/Yap/chr
 @dirrm share/Yap
