@@ -56,6 +56,10 @@ DOCLANG=	C ja_JP.ujis
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 600006
+BROKEN=		"Depends on libxpg4 which was removed from FreeBSD 6.0"
+.endif
+
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME=	esound
 CONFIGURE_ARGS+=--enable-audio=oss,esd
