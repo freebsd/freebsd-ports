@@ -11452,6 +11452,7 @@ unixODBC	ports/databases/unixODBC
 unixbench	ports/benchmarks/unixbench
 unixstat	ports/math/unixstat
 unlzx		ports/archivers/unlzx
+unmakeself	ports/archivers/unmakeself
 unpost		ports/news/unpost
 unquote		ports/sysutils/unquote
 unrar		ports/archivers/unrar
