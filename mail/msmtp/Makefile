@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	msmtp
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	msmtp
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	SMTP plugin for MUAs
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,22 +24,22 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		msmtp.1
 PLIST_FILES=	bin/msmtp
 
-CONFLICTS=	msmtp-devel-*
-
-.if !defined(WITH_OPENSSL)
-WITH_GNUTLS=	yes
+# XXX we need gnutls >= 1.2.0 which is not avaible via ports tree
+.if defined(WITH_GNUTLS)
+.undef WITH_GNUTLS
 .endif
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
-.endif
-
-.if defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=	--with-ssl=gnutls
+.elif defined (WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=openssl
+.else
+CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-.if defined(WITH_GNU_SASL)
+.if defined(WITH_GSASL)
 LIB_DEPENDS+=	gsasl.9:${PORTSDIR}/security/gsasl
 .else
 CONFIGURE_ARGS+=	--disable-gsasl
