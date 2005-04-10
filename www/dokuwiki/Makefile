@@ -1,0 +1,51 @@
+# New ports collection makefile for:	dokuwiki
+# Date created:		2005-04-10
+# Whom:			chinsan <chinsan@mail2000.com.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dokuwiki
+PORTVERSION=	20050218
+CATEGORIES=	www
+MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
+DISTNAME=	dokuwiki-2005-02-18
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple and easy to use wiki, no database required
+
+USE_PHP=	pcre session
+PHP4_PORT?=	www/mod_php4
+NO_BUILD=	YES
+WANT_PHP_WEB=	YES
+DOKUWIKIDIR?=	www/data-dist/dokuwiki
+PLIST=		${WRKDIR}/pkg-plist
+
+.include <bsd.port.pre.mk>
+
+pre-install:
+	cd ${WRKSRC} && ${FIND} -s . -type f | \
+		${SED} -e 's|^./||;s|^|${DOKUWIKIDIR}/|' > ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm ${DOKUWIKIDIR}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} ${DOKUWIKIDIR}/changes.log >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${DOKUWIKIDIR} >> ${PLIST}
+
+do-install:
+	# Data files
+	-${MKDIR} ${PREFIX}/${DOKUWIKIDIR}
+	@${CHOWN} www:www ${PREFIX}/${DOKUWIKIDIR}
+	@${CHMOD} 755 ${PREFIX}/${DOKUWIKIDIR}
+	@${CP} -R ${WRKSRC}/ ${PREFIX}/${DOKUWIKIDIR}
+	# Setup the correct permissions
+	@${TOUCH} ${PREFIX}/${DOKUWIKIDIR}/changes.log
+	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/changes.log
+	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/data
+	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/media
+	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/attic
+
+post-install:
+	@${SED} -e 's|%%DOKUWIKIDIR%%|${PREFIX}/${DOKUWIKIDIR}|' ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
