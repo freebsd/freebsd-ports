@@ -33,4 +33,8 @@ post-install:
 IGNORE=		This version of lookupd is only supported on FreeBSD 5.1 or later
 .endif
 
+.if ${OSVERSION} > 600021
+BROKEN=		"Does not compile on FreeBSD >= 6.x"
+.endif
+
 .include <bsd.port.post.mk>
