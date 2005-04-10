@@ -2165,7 +2165,7 @@ bin/%%GCC_TARG%%-jar
 %%GCC_TARG%%/lib/libgcj.la
 %%GCC_TARG%%/lib/libgcj.spec
 %%GCC_TARG%%/lib/libiberty.a
-%%GCC_TARG%%/share/java/libgcj-3.4.1.jar
+%%GCC_TARG%%/share/java/libgcj-%%GCC_REV%%.jar
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/crtbegin.o
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/crtend.o
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/emmintrin.h
