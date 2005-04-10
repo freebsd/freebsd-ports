@@ -16,6 +16,8 @@ COMMENT=	C->Haskell, an Interface Generator for Haskell
 
 OPTIONS=	GHC5 "Build for ghc5" off
 
+BROKEN=		Broken dependency
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GHC5)
