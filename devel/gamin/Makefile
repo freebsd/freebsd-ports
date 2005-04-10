@@ -7,7 +7,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.0.26
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -25,21 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFLICTS=	fam-[0-9]*
 
-.if !defined(GAMIN_SLAVE)
-OPTIONS=	KQUEUE "Enable the KQueue backend (UFS only)" on
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if !defined(GAMIN_SLAVE)
-.if defined(WITHOUT_KQUEUE)
-CONFIGURE_ARGS+=	--disable-kqueue
-.else
-CONFIGURE_ARGS+=	--enable-kqueue
-.endif
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
