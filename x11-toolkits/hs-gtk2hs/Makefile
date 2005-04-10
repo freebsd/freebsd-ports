@@ -20,6 +20,8 @@ BUILD_DEPENDS=	ghc-6.2.2:${PORTSDIR}/lang/ghc \
 		${X11BASE}/lib/mozilla/libxpcom.so:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Broken dependency
+
 USE_GNOME=	gtk20 libglade2 gtksourceview gconf2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
