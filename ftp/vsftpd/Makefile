@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
@@ -21,10 +21,14 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
 
+LDFLAGS+=	-lwrap
+
 .if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
 USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+.else
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .include <bsd.port.pre.mk>
