@@ -32,6 +32,48 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="07f3fe15-a9de-11d9-a788-0001020eed82">
+    <topic>php -- readfile() DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_php4-twig</name>
+	<name>php4-cgi</name>
+	<name>php4-cli</name>
+	<name>php4-dtc</name>
+	<name>php4-horde</name>
+	<name>php4-nms</name>
+	<name>php4</name>
+	<range><lt>4.3.5_7</lt></range>
+      </package>
+      <package>
+	<name>mod_php</name>
+	<name>mod_php4</name>
+	<range><lt>4.3.5_7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A SUSE Security advisory reports:</p>
+	<blockquote cite="http://www.novell.com/linux/security/advisories/2005_06_sr.html">
+	  <p>A bug in the readfile() function of php4 could be used to
+	    to crash the httpd running the php4 code when accessing
+	    files with a multiple of the architectures page size
+	    leading to a denial of service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12665</bid>
+      <cvename>CAN-2005-0596</cvename>
+      <url>http://bugs.php.net/bug.php?id=27037</url>
+      <url>http://www.novell.com/linux/security/advisories/2005_06_sr.html</url>
+    </references>
+    <dates>
+      <discovery>2004-01-25</discovery>
+      <entry>2005-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8dbf7894-a9a8-11d9-a788-0001020eed82">
     <topic>squid -- DoS on failed PUT/POST requests vulnerability</topic>
     <affects>
