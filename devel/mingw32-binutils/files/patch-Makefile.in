@@ -1,17 +1,19 @@
---- Makefile.in.orig	Sat Feb 21 09:18:59 2004
-+++ Makefile.in	Wed Mar  3 17:15:18 2004
-@@ -20093,10 +20093,10 @@
- maybe-install-libiberty:
+--- Makefile.in.orig	Tue Jan  4 01:27:39 2005
++++ Makefile.in	Sun Apr 10 13:50:22 2005
+@@ -14162,11 +14162,11 @@
+ maybe-install-libiberty: install-libiberty
  
  install-libiberty: installdirs
 -	@r=`${PWD_COMMAND}`; export r; \
 -	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
 -	$(SET_LIB_PATH) \
+-	$(HOST_EXPORTS) \
 -	(cd libiberty && $(MAKE) $(FLAGS_TO_PASS) install)
 +#	@r=`${PWD_COMMAND}`; export r; \
 +#	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
 +#	$(SET_LIB_PATH) \
++#	$(HOST_EXPORTS) \
 +#	(cd libiberty && $(MAKE) $(FLAGS_TO_PASS) install)
  
+ @endif libiberty
  
- .PHONY: configure-libtool maybe-configure-libtool
