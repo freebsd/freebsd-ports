@@ -35,12 +35,6 @@ LIBDPARSE=	libdparse_gc.a
 LIBDPARSE=	libdparse.a
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/make_dparser ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/make_dparser.1 ${MANPREFIX}/man/man1
@@ -53,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
