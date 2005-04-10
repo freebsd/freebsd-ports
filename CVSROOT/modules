@@ -4124,6 +4124,7 @@ ja-samba3	ports/japanese/samba3
 ja-sazanami-ttf	ports/japanese/sazanami-ttf
 ja-scim-anthy	ports/japanese/scim-anthy
 ja-scim-canna	ports/japanese/scim-canna
+ja-scim-skk	ports/japanese/scim-skk
 ja-scim-tables	ports/japanese/scim-tables
 ja-scim-uim	ports/japanese/scim-uim
 ja-sed		ports/japanese/sed
