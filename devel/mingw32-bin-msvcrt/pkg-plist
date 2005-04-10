@@ -5,6 +5,7 @@ mingw32/include/GL/glu.h
 mingw32/include/_mingw.h
 mingw32/include/accctrl.h
 mingw32/include/aclapi.h
+mingw32/include/aclui.h
 mingw32/include/afxres.h
 mingw32/include/assert.h
 mingw32/include/basetsd.h
@@ -20,6 +21,9 @@ mingw32/include/cpl.h
 mingw32/include/cplext.h
 mingw32/include/ctype.h
 mingw32/include/custcntl.h
+mingw32/include/d3d9.h
+mingw32/include/d3d9caps.h
+mingw32/include/d3d9types.h
 mingw32/include/dbt.h
 mingw32/include/dde.h
 mingw32/include/ddeml.h
@@ -33,6 +37,7 @@ mingw32/include/ddk/ddkmapi.h
 mingw32/include/ddk/hidclass.h
 mingw32/include/ddk/hidpi.h
 mingw32/include/ddk/hidusage.h
+mingw32/include/ddk/kbdmou.h
 mingw32/include/ddk/mcd.h
 mingw32/include/ddk/miniport.h
 mingw32/include/ddk/minitape.h
@@ -107,6 +112,8 @@ mingw32/include/dirent.h
 mingw32/include/dlgs.h
 mingw32/include/docobj.h
 mingw32/include/dos.h
+mingw32/include/dxerr8.h
+mingw32/include/dxerr9.h
 mingw32/include/errno.h
 mingw32/include/errorrep.h
 mingw32/include/excpt.h
@@ -169,6 +176,7 @@ mingw32/include/mem.h
 mingw32/include/memory.h
 mingw32/include/mgmtapi.h
 mingw32/include/mmsystem.h
+mingw32/include/msacm.h
 mingw32/include/mshtml.h
 mingw32/include/mswsock.h
 mingw32/include/nb30.h
@@ -324,6 +332,7 @@ mingw32/lib/dllcrt1.o
 mingw32/lib/dllcrt2.o
 mingw32/lib/gcrt1.o
 mingw32/lib/gcrt2.o
+mingw32/lib/libaclui.a
 mingw32/lib/libadvapi32.a
 mingw32/lib/libapcups.a
 mingw32/lib/libavicap32.a
@@ -336,18 +345,30 @@ mingw32/lib/libcomdlg32.a
 mingw32/lib/libcrtdll.a
 mingw32/lib/libcrypt32.a
 mingw32/lib/libctl3d32.a
+mingw32/lib/libd3d8.a
+mingw32/lib/libd3d9.a
 mingw32/lib/libd3dim.a
 mingw32/lib/libd3drm.a
+mingw32/lib/libd3dx8d.a
+mingw32/lib/libd3dx9d.a
 mingw32/lib/libd3dxof.a
 mingw32/lib/libddraw.a
 mingw32/lib/libdhcpcsvc.a
 mingw32/lib/libdinput.a
+mingw32/lib/libdinput8.a
 mingw32/lib/libdlcapi.a
+mingw32/lib/libdmoguids.a
 mingw32/lib/libdnsapi.a
 mingw32/lib/libdplayx.a
+mingw32/lib/libdpnaddr.a
+mingw32/lib/libdpnet.a
+mingw32/lib/libdpnlobby.a
+mingw32/lib/libdpvoice.a
 mingw32/lib/libdsetup.a
 mingw32/lib/libdsound.a
 mingw32/lib/libdxapi.a
+mingw32/lib/libdxerr8.a
+mingw32/lib/libdxerr9.a
 mingw32/lib/libdxguid.a
 mingw32/lib/libfaultrep.a
 mingw32/lib/libgdi32.a
@@ -364,6 +385,8 @@ mingw32/lib/libimagehlp.a
 mingw32/lib/libimm32.a
 mingw32/lib/libiphlpapi.a
 mingw32/lib/libkernel32.a
+mingw32/lib/libksproxy.a
+mingw32/lib/libksuser.a
 mingw32/lib/liblargeint.a
 mingw32/lib/liblz32.a
 mingw32/lib/libm.a
@@ -378,6 +401,7 @@ mingw32/lib/libmoldname.a
 mingw32/lib/libmoldnamed.a
 mingw32/lib/libmpr.a
 mingw32/lib/libmsacm32.a
+mingw32/lib/libmsdmo.a
 mingw32/lib/libmsimg32.a
 mingw32/lib/libmsvcp60.a
 mingw32/lib/libmsvcr70.a
@@ -407,6 +431,7 @@ mingw32/lib/libpenwin32.a
 mingw32/lib/libpkpd32.a
 mingw32/lib/libpowrprof.a
 mingw32/lib/libpsapi.a
+mingw32/lib/libquartz.a
 mingw32/lib/librapi.a
 mingw32/lib/librasapi32.a
 mingw32/lib/librasdlg.a
@@ -422,6 +447,7 @@ mingw32/lib/libshell32.a
 mingw32/lib/libshfolder.a
 mingw32/lib/libshlwapi.a
 mingw32/lib/libsnmpapi.a
+mingw32/lib/libstrmiids.a
 mingw32/lib/libsvrapi.a
 mingw32/lib/libtapi32.a
 mingw32/lib/libtdi.a
