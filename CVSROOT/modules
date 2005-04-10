@@ -1613,6 +1613,7 @@ doctorj		ports/devel/doctorj
 documancer	ports/misc/documancer
 dodgindiamond2	ports/games/dodgindiamond2
 dog		ports/misc/dog
+dokuwiki	ports/www/dokuwiki
 dolly		ports/sysutils/dolly
 dolly+		ports/sysutils/dolly+
 domc		ports/textproc/domc
