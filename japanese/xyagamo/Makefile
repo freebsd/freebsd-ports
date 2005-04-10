@@ -20,7 +20,13 @@ MAN6=		xyagamo.6
 MANLANG=	ja
 MAN6COMPRESSED=	no
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 600006
+BROKEN=         "Depends on libxpg4 which was removed from FreeBSD 6.0"
+.endif
+
 pre-build:
 	@cd ${BUILD_WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} depend
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
