@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20050208
+PORTVERSION=	20050401
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/ \
 		http://web.inforum.at/downloads/
@@ -34,6 +34,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		SARE1 "Installs more restrictive SARE rules" off \
 		SARE2 "Installs more cpu intensive SARE rules" off \
 		SARE3 "Installs aggressive SARE rules" off \
+		SAREH "Installs SARE high risk rules" off \
 		TRIPWIRE "Matches 3 chars that shouldn't be together" off \
 		WEEDS "Looks at alphanum, hex, lower-, uppercase chars" on \
 		WEEDS2 "More restrictive than WEEDS, dont use together" off
@@ -134,6 +135,10 @@ SPAMASS_FILES+=	$i
 .for i in 70_sare_header3.cf 70_sare_html3.cf 70_sare_genlsubj3.cf
 SPAMASS_FILES+=	$i
 .endfor
+.endif
+
+.if defined(WITH_SAREH)
+SPAMASS_FILES+=	70_sare_highrisk.cf
 .endif
 
 .if defined(WITH_TRIPWIRE)
