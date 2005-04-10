@@ -1,4 +1,2 @@
-MD5 (binutils-2.15.tar.bz2) = 624e6b74983ac6b2960edaf2d522ca58
-SIZE (binutils-2.15.tar.bz2) = 11515075
-MD5 (mingw/binutils-2.15.90-20040222-1-src.diff.gz) = 086ab2aa32be47e159e7ccdddd463b0b
-SIZE (mingw/binutils-2.15.90-20040222-1-src.diff.gz) = 2009
+MD5 (binutils-2.15.94-20050118-1-src.tar.gz) = 89adb382ac9a99953636d2986c85dd2a
+SIZE (binutils-2.15.94-20050118-1-src.tar.gz) = 15269504
