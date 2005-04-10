@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fluxconf
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 
@@ -19,12 +18,15 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	fluxconf.png fluxkeys.png fluxmenu.png index.html
+PLIST_FILES=	bin/fluxbare bin/fluxconf bin/fluxkeys bin/fluxmenu \
+		share/locale/fi/LC_MESSAGES/fluxconf.mo \
+		share/locale/fr/LC_MESSAGES/fluxconf.mo
 
 post-install:
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
 .endfor
 .endif
 
