@@ -7,15 +7,13 @@
 
 PORTNAME=	wsoundprefs
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	WSoundPrefs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for configuring sounds to play for Window Maker events
-
-BROKEN=		"Does not build with new version of windowmaker"
 
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \

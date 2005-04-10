@@ -1,18 +1,41 @@
---- src/SoundPaths.c.orig	Sat Jun 19 02:08:04 1999
-+++ src/SoundPaths.c	Sat Jun 19 23:23:41 1999
-@@ -71,6 +71,7 @@
+--- src/SoundPaths.c.orig	Mon Jun 14 17:28:21 1999
++++ src/SoundPaths.c	Sun Apr 10 21:41:00 2005
+@@ -42,7 +42,8 @@
+ 	Panel		*panel = (Panel*)WMGetHangedData(lPtr);
+ 	WMScreen	*scr = WMWidgetScreen(lPtr);
+ 	Display		*dpy = WMScreenDisplay(scr);
+-	
++	WMColor		*gray = WMGrayColor(scr);
++
+ 	width = rect->size.width;
+ 	height = rect->size.height;
+ 	x = rect->pos.x;
+@@ -50,13 +51,16 @@
+ 	
+ 	if (state & WLDSSelected)
+ 		XFillRectangle(dpy, d, WMColorGC(panel->white), x, y, width, height);
+-	else
+-		XClearArea(dpy, d, x, y, width, height, False);
++	else 
++		XFillRectangle(dpy, d, WMColorGC(gray), x, y, width, height);
++	
+ 
+ 	if (state & 1)
+-		WMDrawString(scr, d, WMColorGC(panel->red), panel->font, x+4, y, text, strlen(text));
++		WMDrawString(scr, d, panel->red, panel->font, x+4, y, text, strlen(text));
+ 	else
+-		WMDrawString(scr, d, WMColorGC(panel->black), panel->font, x+4, y,text, strlen(text));
++		WMDrawString(scr, d, panel->black, panel->font, x+4, y,text, strlen(text));
++
++	WMReleaseColor(gray);
+ }
+ 
+ void
+@@ -71,6 +75,7 @@
  			wwarning(_("bad value in option SoundPath. Using default path list"));
  		addPathToList(panel->sndL, -1, "~/GNUstep/Library/WindowMaker/Sounds");
  		addPathToList(panel->sndL, -1, "/usr/local/share/WindowMaker/Sounds");
 +		addPathToList(panel->sndL, -1, "/usr/X11R6/share/WindowMaker/Sounds");
- 	} else {
- 		for (i=0; i<PLGetNumberOfElements(array); i++) {
- 			val = PLGetArrayElement(array, i);
-@@ -91,6 +92,7 @@
- 			wwarning(_("bad value in option SoundSetPath. Using default path list"));
- 		addPathToList(panel->sndsetL, -1, "~/GNUstep/Library/WindowMaker/SoundSets");
- 		addPathToList(panel->sndsetL, -1, "/usr/local/share/WindowMaker/SoundSets");
-+		addPathToList(panel->sndsetL, -1, "/usr/X11R6/share/WindowMaker/SoundSets");
  	} else {
  		for (i=0; i<PLGetNumberOfElements(array); i++) {
  			val = PLGetArrayElement(array, i);
