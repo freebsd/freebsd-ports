@@ -1,0 +1,6 @@
+bin/qmqtool
+%%PORTDOCS%%%%DOCSDIR%%/Artistic
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
