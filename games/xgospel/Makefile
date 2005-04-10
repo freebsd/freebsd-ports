@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.teaser.fr/~jlgailly/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 Go (weiqi, baduk) client for the Internet Go Server
 
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_XLIB=	yes
 USE_XPM=	yes
