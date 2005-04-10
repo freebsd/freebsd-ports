@@ -7,16 +7,15 @@
 
 PORTNAME=	jaMailHost
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 
 MAINTAINER=	yasi@yasi.to
 COMMENT=	A Zope hotfix Product to send mail in Japanese
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec
-
-BROKEN=		Broken dependency
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
