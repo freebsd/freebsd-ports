@@ -1,5 +1,5 @@
---- src/Imakefile.orig	Mon Oct 18 17:35:58 1999
-+++ src/Imakefile	Sun Dec 10 17:09:01 2000
+--- src/Imakefile.orig	Mon Oct 18 18:35:58 1999
++++ src/Imakefile	Sat Apr  9 17:20:36 2005
 @@ -5,9 +5,9 @@
  
  ICONS = WSoundPrefs.xpm WSoundPrefs.tiff
@@ -12,7 +12,7 @@
  
  XCOMM EFENCELIB = -lefence
  EFENCELIB =
-@@ -18,9 +18,9 @@
+@@ -18,19 +18,19 @@
  WRASTERCFLAGS = `get-wraster-flags --cflags`
  WRASTERLFLAGS = `get-wraster-flags --lflags`
  WRASTERLIBS = `get-wraster-flags --libs`
@@ -24,8 +24,11 @@
 +STD_INCLUDES = $(WRASTERCFLAGS) -I${LOCALBASE}/include -I${X11BASE}/include -I${X11BASE}/include/WINGs
  DEPLIBS = $(DEPXLIB) 
  
- LOCAL_LIBRARIES =	$(XLIB) $(WINGSLIBS) $(WSOUNDLFLAGS) $(WSOUNDLIBS) $(WRASTERLFLAGS) $(WRASTERLIBS) $(EFENCELIB)
-@@ -30,7 +30,7 @@
+-LOCAL_LIBRARIES =	$(XLIB) $(WINGSLIBS) $(WSOUNDLFLAGS) $(WSOUNDLIBS) $(WRASTERLFLAGS) $(WRASTERLIBS) $(EFENCELIB)
++LOCAL_LIBRARIES =	$(XLIB) $(WINGSLIBS) $(WSOUNDLFLAGS) $(WSOUNDLIBS) $(WRASTERLFLAGS) $(WRASTERLIBS) $(EFENCELIB) $(FONTCONFIGLIB) $(XFTLIB) -lintl
+ 
+ LINTLIBS = $(LINTXLIB)
+ 
  SRCS = PLFunctions.c SoundEvents.c SoundPaths.c SystemInfo.c WSoundPrefs.c main.c
  OBJS = PLFunctions.o SoundEvents.o SoundPaths.o SystemInfo.o WSoundPrefs.o main.o
  
