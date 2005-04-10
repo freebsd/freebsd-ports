@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	LiveUser_Admin
-PORTVERSION=	0.2.0
-CATEGORIES=	security pear
+PORTVERSION=	0.2.1
+CATEGORIES=	security www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR user authentication and permission management framework
@@ -24,11 +24,11 @@ OPTIONS=	PEAR_DB "PEAR::DB support" off \
 		PEAR_CRYPT_RC4 "PEAR::Crypt_RC4 support" off
 
 CATEGORY=	LiveUser/Admin
-FILES=		Auth/Common.php Auth/DB.php Auth/MDB.php Auth/MDB2.php Perm/Complex.php \
-		Perm/Medium.php Perm/Simple.php Perm/Storage/DB.php Perm/Storage/MDB.php \
-		Perm/Storage/MDB2.php Storage/DB.php Storage/MDB.php Storage/MDB2.php \
-		Storage/SQL.php Admin.php Storage.php
-EXAMPLES=	Auth_XML.xml test.php example1/Application.php example1/Area.php \
+FILES=		Auth/Common.php Auth/DB.php Auth/MDB.php Auth/MDB2.php \
+		Perm/Storage/DB.php Perm/Storage/MDB.php Perm/Storage/MDB2.php \
+		Perm/Complex.php Perm/Medium.php Perm/Simple.php Storage/DB.php \
+		Storage/MDB.php Storage/MDB2.php Storage/SQL.php Admin.php Storage.php
+EXAMPLES=	example1/Application.php example1/Area.php \
 		example1/Area_Admin_Areas.php example1/config.inc.php \
 		example1/extra_sql.sql example1/Group.php example1/GroupRights.php \
 		example1/ImplyRights.php example1/index.php \
@@ -37,7 +37,8 @@ EXAMPLES=	Auth_XML.xml test.php example1/Application.php example1/Area.php \
 		example1/UserGroup.php example1/UserRights.php example3/area51.php \
 		example3/coffeemaker.php example3/conf.php example3/demodata.sql \
 		example3/example.php example3/index.html example3/loginscreen.php \
-		example3/main.php example3/nav.php example3/testarea.php
+		example3/main.php example3/nav.php example3/testarea.php Auth_XML.xml \
+		test.php
 _EXAMPLESDIR=	docs/examples
 
 post-extract:
