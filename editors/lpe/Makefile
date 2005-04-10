@@ -29,10 +29,4 @@ CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include
 MAN1=		lpe.1
 MANLANG=	"" bg cs de es fr pl ru
 
-.include <bsd.port.pre.mk>
-
-.if ( ${ARCH} == "sparc64" )
-BROKEN=         "Does not compile on sparc64 (dynamic lib issues)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

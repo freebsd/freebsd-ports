@@ -28,8 +28,8 @@ PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH} \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
+BROKEN=		"Does not compile on !i386 and !sparc64"
 .endif
 
 do-build:
