@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tamago
-PORTVERSION=	4.0.6.0.20041122.5
+PORTVERSION=	4.0.6.0.20041122.7
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -15,11 +15,11 @@ DISTNAME=	egg_4.0.6+0.20041122cvs.orig
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/e/egg,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,nork,}
-PATCHFILES=	egg_4.0.6+0.20041122cvs-5.diff.gz
+PATCHFILES=	egg_4.0.6+0.20041122cvs-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	The Multilingual Input Method - Egg V4
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Multilingual Input Method - Egg V4
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -46,6 +46,13 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper ${PREFIX}/bin/egg-helper
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in AUTHORS ChangeLog ChangeLog.1997-1998 ChangeLog.2000-2001 PROBLEMS README.ja.txt TODO debian/README.Debian
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${DOCSDIR}/changelog.Debian
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
