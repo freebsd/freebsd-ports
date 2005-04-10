@@ -1,0 +1,6 @@
+Provides a small beep-media-player icon in the system tray
+(should work with GNOME, KDE, fluxbox, etc.) that provides
+basic play control for beep-media-player. Also displays the
+current song title in a tooltip.
+
+WWW: http://mark.xnull.de/bmp-docklet.php

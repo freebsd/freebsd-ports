@@ -11,6 +11,7 @@
     SUBDIR += basket
     SUBDIR += bigyear
     SUBDIR += blogtk
+    SUBDIR += bmp-docklet
     SUBDIR += cal
     SUBDIR += checkrdf
     SUBDIR += dailystrips
