@@ -45,8 +45,8 @@ CONFIGURE_ARGS+=	--enable-grace
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on alpha or amd64"
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
 .endif
 
 .include <bsd.port.post.mk>
