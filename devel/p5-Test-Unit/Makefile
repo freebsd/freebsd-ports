@@ -39,4 +39,10 @@ MAN3=		Test::Unit.3 Test::Unit::Assert.3 Test::Unit::Assertion.3 \
 		Test::Unit::TkTestRunner.3 Test::Unit::Tutorial.3 \
 		Test::Unit::UnitHarness.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Incorrect pkg-plist"
+.endif
+
+.include <bsd.port.post.mk>
