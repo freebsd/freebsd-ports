@@ -86,6 +86,7 @@
     SUBDIR += demoroniser
     SUBDIR += dhttpd
     SUBDIR += dillo
+    SUBDIR += dokuwiki
     SUBDIR += dpsearch
     SUBDIR += drupal
     SUBDIR += dtse
