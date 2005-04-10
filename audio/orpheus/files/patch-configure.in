@@ -1,0 +1,35 @@
+diff -Nru orpheus-1.5/configure.in orpheus-1.5.1/configure.in
+--- configure.in	Wed Mar 10 22:48:14 2004
++++ configure.in	Mon Apr  4 11:43:05 2005
+@@ -11,14 +11,24 @@
+ 
+ AC_CHECK_LIB(ncurses, main,, AC_CHECK_LIB(curses, main,, AC_MSG_ERROR(The ncurses terminal library is required in order to build the program)))
+ 
+-AC_CHECK_LIB(ghttp, ghttp_request_new,,
+-    [AC_MSG_WARN(libghttp not found - the support for CDDB is be disabled)])
++AC_ARG_ENABLE(ghttp,
++        [  --enable-ghttp   enable HTTP proxy support for CDDB],
++        [if test "$enableval" = yes; then
++		AC_CHECK_LIB(ghttp,ghttp_request_new,,AC_ERROR([cannot locate ghttp library]))
++        fi])
+ 
+-AC_CHECK_LIB(vorbis, vorbis_synthesis_headerin,,
+-    AC_MSG_WARN(libvorbisfile not found - the support for OGG tags edit is disabled))
+-    
+-AC_CHECK_LIB(vorbisfile, ov_open,,
+-    AC_MSG_WARN(libvorbis not found - the support for OGG files is disabled))
++AC_ARG_ENABLE(vorbis,
++        [  --enable-vorbis   enable OGG tags edit support],
++        [if test "$enableval" = yes; then
++                AC_CHECK_LIB(vorbis, vorbis_synthesis_headerin,,AC_ERROR([cannot locate vorbis library]))
++		AC_CHECK_LIB(vorbisfile, ov_open,,AC_ERROR([cannot locate vorbisfile library]))
++        fi])
++
++AC_ARG_ENABLE(vorbis,
++        [  --enable-vorbisfile   enable OGG files support],
++        [if test "$enableval" = yes; then
++                AC_CHECK_LIB(vorbisfile, ov_open,,AC_ERROR([cannot locate vorbisfile library]))
++        fi])
+ 
+ AM_ICONV_LINK
+ 
