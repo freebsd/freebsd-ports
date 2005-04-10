@@ -29,10 +29,6 @@ CXXFLAGS+=		-fPIC
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on ia64 or sparc64"
-.endif
-
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 BROKEN=		"Internal compiler error on alpha 4.x"
 .endif
