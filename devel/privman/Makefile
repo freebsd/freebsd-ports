@@ -8,7 +8,7 @@
 PORTNAME=	privman
 PORTVERSION=	0.9.3
 CATEGORIES=	devel security
-MASTER_SITES=	http://opensource.nailabs.com/privman/downloads/
+MASTER_SITES=	http://www.isso.sparta.com/opensource/privman/downloads/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Library that makes it easy for programs to use privilege separation
