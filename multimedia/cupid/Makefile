@@ -15,6 +15,8 @@ DIST_SUBDIR=    gnome2
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GNOME Gstreamer based video/audio capture solution
 
+BROKEN=		Does not compile
+
 USE_GSTREAMER=	core
 USE_GNOME=	\
 		gnomehack \

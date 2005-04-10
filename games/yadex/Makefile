@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	fracture@allusion.net
 COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
+BROKEN=		Does not compile
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
