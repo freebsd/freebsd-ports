@@ -32,6 +32,109 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ecf68408-a9f5-11d9-a788-0001020eed82">
+    <topic>gaim -- jabber remote crash</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=15">
+	  <p>A remote jabber user can cause Gaim to crash by sending a
+	    specific file transfer request.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13004</bid>
+      <cvename>CAN-2005-0967</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=15</url>
+    </references>
+    <dates>
+      <discovery>2005-04-04</discovery>
+      <entry>2005-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ec09baa3-a9f5-11d9-a788-0001020eed82">
+    <topic>gaim -- remote DoS on receiving certain messages over IRC</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=14">
+	  <p>The IRC protocol plugin in Gaim 1.2.0, and possibly
+	    earlier versions, allows (1) remote attackers to inject
+	    arbitrary Gaim markup via irc_msg_kick, irc_msg_mode,
+	    irc_msg_part, irc_msg_quit, (2) remote attackers to inject
+	    arbitrary Pango markup and pop up empty dialog boxes via
+	    irc_msg_invite, or (3) malicious IRC servers to cause a
+	    denial of service (application crash) by injecting certain
+	    Pango markup into irc_msg_badmode, irc_msg_banned,
+	    irc_msg_unknown, irc_msg_nochan functions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13003</bid>
+      <cvename>CAN-2005-0966</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=14</url>
+    </references>
+    <dates>
+      <discovery>2005-04-02</discovery>
+      <entry>2005-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3fa2b372-a9f5-11d9-a788-0001020eed82">
+    <topic>gaim -- remote DoS on receiving malformed HTML</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=13">
+	  <p>The gaim_markup_strip_html function in Gaim 1.2.0, and
+	    possibly earlier versions, allows remote attackers to
+	    cause a denial of service (application crash) via a string
+	    that contains malformed HTML, which causes an
+	    out-of-bounds read.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12999</bid>
+      <cvename>CAN-2005-0965</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=13</url>
+    </references>
+    <dates>
+      <discovery>2005-04-02</discovery>
+      <entry>2005-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07f3fe15-a9de-11d9-a788-0001020eed82">
     <topic>php -- readfile() DoS vulnerability</topic>
     <affects>
