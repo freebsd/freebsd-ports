@@ -19,7 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS=	mplex-*
-USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
