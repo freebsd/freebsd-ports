@@ -9742,6 +9742,7 @@ qmailmrtg7	ports/mail/qmailmrtg7
 qmake		ports/devel/qmake
 qmc		ports/misc/qmc
 qmls		ports/cad/qmls
+qmqtool		ports/mail/qmqtool
 qmrtg		ports/mail/qmrtg
 qnetwalk	ports/games/qnetwalk
 qnxstyle	ports/x11-themes/qnxstyle
