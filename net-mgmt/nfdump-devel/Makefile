@@ -21,10 +21,16 @@ PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfprofile bin/nfreplay bin/nfclean.pl
 MAN1=		nfcapd.1 nfdump.1 nfprofile.1 nfreplay.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -21,4 +21,10 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 MAN3=		Net::Z3950::GRS1.3 Net::Z3950::SimpleServer.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>
