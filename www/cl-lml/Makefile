@@ -16,6 +16,8 @@ COMMENT=		Lisp Markup Language
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 RUN_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 
+BROKEN=			Unfetchable
+
 NO_BUILD=		yes # installs the sources only
 CL_LIBDIR=		${PREFIX}/lib/common-lisp
 DOCSDIR=		${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
