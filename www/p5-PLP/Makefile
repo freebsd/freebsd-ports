@@ -32,6 +32,10 @@ IGNORE=	WITH_MOD_PERL must be either '1' or '2', or undefined
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 pre-fetch:
 	@${ECHO_CMD}
 .if defined(WITH_MOD_PERL)
