@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.6.6b
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}

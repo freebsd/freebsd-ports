@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- src/applications/testbed/Makefile.in.orig
 +++ src/applications/testbed/Makefile.in
-@@ -281,7 +281,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -84,7 +84,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- DIST_SOURCES = $(libgnunettestbed_protocol_la_SOURCES) \
+ SOURCES = $(libgnunettestbed_protocol_la_SOURCES) \
  	$(gnunet_testbed_SOURCES)
- DIST_COMMON = $(srcdir)/Makefile.in Makefile.am
+ DIST_SOURCES = $(libgnunettestbed_protocol_la_SOURCES) \
