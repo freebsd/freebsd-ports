@@ -40,10 +40,6 @@ MSGPATH=	${PREFIX}/etc/ftp4all/msg
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 do-install:
 	-@${MKDIR} /var/log/ftp4all
 	-@${MKDIR} ${PREFIX}
