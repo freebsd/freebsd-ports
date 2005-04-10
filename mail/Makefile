@@ -393,6 +393,7 @@
     SUBDIR += qmailadmin-devel
     SUBDIR += qmailanalog
     SUBDIR += qmailmrtg7
+    SUBDIR += qmqtool
     SUBDIR += qmrtg
     SUBDIR += qpopper
     SUBDIR += qscan
