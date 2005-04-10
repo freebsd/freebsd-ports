@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	kcwu@csie.org
 COMMENT=	IIIMF gnome input method switcher
 
+BROKEN=		Incorrect pkg-plist
+
 USE_X_PREFIX=	yes
 
 IIIMF_VER=	r12_1-svn2002
