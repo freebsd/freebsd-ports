@@ -34,8 +34,8 @@ SHLIB_MAJOR=	1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500039
-IGNORE=		requires wchar functions for compilation
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4
 .endif
 
 post-patch:
