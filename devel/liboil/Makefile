@@ -20,9 +20,15 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes.h|g' \
 		${WRKSRC}/liboil/liboiltypes.h \
 		${WRKSRC}/liboil/liboil.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
