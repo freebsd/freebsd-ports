@@ -71,7 +71,11 @@ PLIST_SUB+=	CDPARANOIA="@comment "
 .endif
 
 .if exists(${LOCALBASE}/lib/libfam.so) || !defined(WITHOUT_FAM)
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+FAM_DEPENDS=	${PORTSDIR}/devel/fam
+.if exists(${LOCALBASE}/lib/libgamin-1.so)
+FAM_DEPENDS=	${PORTSDIR}/devel/gamin
+.endif
+LIB_DEPENDS+=	fam.0:${FAM_DEPENDS}
 .endif
 
 .if exists(${LOCALBASE}/lib/libkrb5.so)
