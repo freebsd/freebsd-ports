@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yap
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,6 +39,5 @@ post-build:
 
 pre-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/yap.info ${PREFIX}/info
-	install-info ${PREFIX}/info/yap.info ${PREFIX}/info/dir
 
 .include <bsd.port.post.mk>
