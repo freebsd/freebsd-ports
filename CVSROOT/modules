@@ -6378,7 +6378,7 @@ nikto		ports/security/nikto
 nil		ports/games/nil
 ninix-aya	ports/games/ninix-aya
 ninja		ports/irc/ninja
-nip		ports/graphics/nip
+nip2		ports/graphics/nip2
 nitpicker	ports/net-mgmt/nitpicker
 njam		ports/games/njam
 njs		ports/lang/njs
