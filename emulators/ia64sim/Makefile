@@ -21,10 +21,6 @@ USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 EXTRACT_BEFORE_ARGS=	-qLa
 WRKSRC=		${WRKDIR}/home/chuck/ia64simcc
 USE_GMAKE=	yes
