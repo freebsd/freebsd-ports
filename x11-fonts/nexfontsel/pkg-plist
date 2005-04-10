@@ -1,5 +1,5 @@
 bin/nexfontsel
 lib/X11/app-defaults/NeXFontSel
 lib/X11/ja_JP.eucJP/app-defaults/NeXFontSel
-@dirrm lib/X11/ja_JP.eucJP/app-defaults
-@dirrm lib/X11/ja_JP.eucJP
+@unexec rmdir %D/lib/X11/ja_JP.eucJP/app-defaults 2>/dev/null || true
+@unexec rmdir %D/lib/X11/ja_JP.eucJP 2>/dev/null || true
