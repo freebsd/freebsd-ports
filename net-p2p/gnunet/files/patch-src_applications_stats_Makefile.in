@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- src/applications/stats/Makefile.in.orig
 +++ src/applications/stats/Makefile.in
-@@ -240,7 +240,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -71,7 +71,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- DIST_SOURCES = $(gnunet_stats_SOURCES)
- DIST_COMMON = $(srcdir)/Makefile.in Makefile.am
  SOURCES = $(gnunet_stats_SOURCES)
+ DIST_SOURCES = $(gnunet_stats_SOURCES)
+ ETAGS = etags
