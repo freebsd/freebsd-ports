@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -43,6 +43,15 @@ PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
 .include <bsd.port.pre.mk>
 
 SVNREPOS?=	/home/svn/repos
+SVNFSTYPE?=	bdb
+
+.if make(repository)
+WITH_REPOSITORY_CREATION=	yes
+.endif
+
+.if defined(WITH_REPOSITORY_CREATION)
+MKREPOS_TARGET=	_mkrepos
+.endif
 
 .if defined(WITH_MAINTAINER_DEBUG)
 CONFIGURE_ARGS+=--enable-maintainer-mode \
@@ -250,8 +259,9 @@ pre-extract:
 	@${ECHO_MSG} "  subdirectories of your repository"
 	@${ECHO_MSG} "* the above subdirectories are writable by this group"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'"
-	@${ECHO_MSG} "You could change these settings by defining SVNREPOS and SVNGROUP"
+	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'."
+	@${ECHO_MSG} "Type of repository will be '${SVNFSTYPE}'."
+	@${ECHO_MSG} "You could change these settings by defining SVNREPOS, SVNGROUP nad SVNFSTYPE"
 	@${ECHO_MSG} ""
 .endif
 	@${ECHO_MSG} ""
@@ -318,7 +328,7 @@ pre-install:
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
 .endif
 
-post-install:
+post-install:	${MKREPOS_TARGET}
 	@${MKDIR} ${PREFIX}/share/subversion
 	cd ${WRKSRC}/tools ; \
 	  tar --exclude '*.in' -cf - * | tar -C ${PREFIX}/share/subversion -xf -
@@ -351,8 +361,15 @@ post-install:
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
 .endif
-.if defined(WITH_REPOSITORY_CREATION) && !exists(${SVNREPOS})
-. if defined(WITH_SVNSERVE_WRAPPER)
+
+repository:	_mkrepos
+
+_SVNGRPFILES=	dav db locks locks/db.lock locks/db-logs.lock
+SVNGRPFILES=	${_SVNGRPFILES:S,^,${SVNREPOS}/,}
+
+_mkrepos:	.USE
+.if !exists(${SVNREPOS})
+.if defined(WITH_SVNSERVE_WRAPPER)
 	@if /usr/sbin/pw groupshow "${SVNGROUP}" >/dev/null 2>&1; then \
 	    ${ECHO_MSG} "You already have a group \"${SVNGROUP}\", so I will use it."; \
 	else \
@@ -365,20 +382,22 @@ post-install:
 	        ${FALSE}; \
 	    fi; \
 	fi
-. endif
+.endif
 	@${MKDIR} ${SVNREPOS}
-	@${PREFIX}/bin/svnadmin create ${SVNREPOS}
-	@${CHGRP} ${SVNGROUP} ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock ${SVNREPOS}/dav
-	@${CHMOD} g+w ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock ${SVNREPOS}/dav
+	@${PREFIX}/bin/svnadmin create --fs-type ${SVNFSTYPE} ${SVNREPOS}
+.if defined(WITH_SVNSERVE_WRAPPER)
+	@${CHGRP} ${SVNGROUP} ${SVNGRPFILES}
+	@${CHMOD} g+w ${SVNGRPFILES}
 	@for i in ${SVNREPOS}/db/* ; do \
 	    i=$${i##*/}; \
 	    case $$i in \
-	    DB_CONFIG) ;; \
-	    *) ${CHGRP} ${SVNGROUP} ${SVNREPOS}/db/$$i; \
-	       ${CHMOD} g+w ${SVNREPOS}/db/$$i; \
+	    DB_CONFIG|fs-type|uuid) ;; \
+	    *) ${CHGRP} -R ${SVNGROUP} ${SVNREPOS}/db/$$i; \
+	       ${CHMOD} -R g+w ${SVNREPOS}/db/$$i; \
 	       ;; \
 	    esac; \
 	done
+.endif
 .endif
 
 post-deinstall:
