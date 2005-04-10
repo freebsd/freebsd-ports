@@ -22,11 +22,16 @@ NO_CDROM=	'old version, not worth the cost in real estate'
 LATEST_LINK=	gcc28
 
 DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
+EXPIRATION_DATE=	20050610
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
 BROKEN=		"Does not compile on alpha"
+.endif
+
+.if ${OSVERSION} >= 600000
+IGNORE=		Does not compile
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
