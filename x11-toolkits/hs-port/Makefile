@@ -19,6 +19,8 @@ COMMENT=	A low-level GUI library for Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+BROKEN=		Does not compile
+
 USE_GNOME=	glib20 gtk20 libgnomeui
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
