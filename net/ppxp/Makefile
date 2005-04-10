@@ -70,6 +70,8 @@ DOC_ja_JP=	QuickStart.txt QuickUsage.txt guide-1.html guide-2.html \
 
 .if ${OSVERSION} >= 502126
 BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.else
+BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
 
 .if ${ARCH} == "ia64"
