@@ -25,10 +25,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs="${APXS}"
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Doesn't work on 64bit systems, see ports/57523"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

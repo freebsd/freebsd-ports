@@ -29,8 +29,4 @@ MAN3=		Net::LibIDN.3
 IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 and try again
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 .include <bsd.port.post.mk>
