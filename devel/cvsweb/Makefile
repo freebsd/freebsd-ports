@@ -18,8 +18,9 @@ MASTER_SITE_SUBDIR=	scop
 MAINTAINER=	noackjr@alumni.rice.edu
 COMMENT=	WWW CGI script to browse CVS repository trees
 
-NO_BUILD=	yes
+CONFLICTS=	cvsweb-3.*
 
+NO_BUILD=	yes
 USE_PERL5=	yes
 
 # Specify where your repository belongs.
@@ -48,6 +49,9 @@ CONFFILES=	cvsweb.conf \
 
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
 
+SUB_FILES=	pkg-message
+SUB_LIST=	PREFIX="${PREFIX}" DOCSDIR="${DOCSDIR}"
+
 post-patch:
 	${PERL} -i -pe "\
 		s'!!PERL!!'${PERL}'g; \
@@ -67,10 +71,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/etc/cvsweb/${f}.dist
 .endfor
 	${MKDIR} ${PREFIX}/${ICONSDIR}/cvsweb
-	cd ${WRKSRC}/icons && ${INSTALL_DATA} * ${PREFIX}/${ICONSDIR}/cvsweb/
+	${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/${ICONSDIR}/cvsweb/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cvsweb
-	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL README README.FreeBSD TODO TODO.FreeBSD ${PREFIX}/share/doc/cvsweb/
+	${MKDIR} ${DOCSDIR}
+.for f in ChangeLog INSTALL README README.FreeBSD TODO TODO.FreeBSD
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
 .endif
 
 post-install:
