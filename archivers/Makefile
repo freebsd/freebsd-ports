@@ -90,6 +90,7 @@
     SUBDIR += unarj
     SUBDIR += undms
     SUBDIR += unlzx
+    SUBDIR += unmakeself
     SUBDIR += unrar
     SUBDIR += unshield
     SUBDIR += untar
