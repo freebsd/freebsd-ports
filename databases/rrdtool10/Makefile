@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \
 		--program-transform-name=''
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS:=	${CFLAGS:N-ffast-math}
 
