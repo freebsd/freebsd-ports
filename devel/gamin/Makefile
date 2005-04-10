@@ -7,7 +7,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.0.26
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -15,7 +15,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A file and directory monitoring system
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=15
 USE_GNOME?=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
