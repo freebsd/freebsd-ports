@@ -11323,6 +11323,7 @@ triangle	ports/math/triangle
 trickle		ports/net/trickle
 trickyirc	ports/irc/trickyirc
 tridiavnc	ports/net/tridiavnc
+trigger		ports/games/trigger
 trinokiller	ports/security/trinokiller
 trio		ports/devel/trio
 tripwire	ports/security/tripwire
