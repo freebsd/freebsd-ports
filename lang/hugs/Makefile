@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${HUGS_DATE}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
 
+BROKEN=		Incorrect pkg-plist
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
