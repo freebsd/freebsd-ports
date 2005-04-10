@@ -93,6 +93,7 @@
     SUBDIR += lsdvd
     SUBDIR += lxdvdrip
     SUBDIR += mjpegtools
+    SUBDIR += mjpegtools-yuvfilters
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
     SUBDIR += mmpython

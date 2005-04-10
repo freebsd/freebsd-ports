@@ -1,0 +1,22 @@
+Mjpegtools YUV video stream processing tools
+
+yuvdeinterlace:
+  A non destructive deinterlacer. Converts to a double frame rate, alf height,
+  progressive yuv stream for further processing by temporal based filters.
+  Then re-interlaced before encoding. The reinterlacer doesn't exist at this
+  time.
+
+yuvafps:
+  A linear frame averaging, frame rate converter. Does a better job than the
+  frame dropping/duplicating converters.
+
+yuvfade:
+  Will fade the video to black after X number of frames. Uses a trial and
+  error method of fading to black
+
+yuvwater:
+  Attempts to detect and remove semi-transperant watermarks from the source.
+  Produces a PGM file of the detected watermark which is used to remove or
+  reduce the effect.
+
+WWW: http://silicontrip.net/~mark/lavtools/
