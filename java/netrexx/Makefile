@@ -14,6 +14,8 @@ DISTNAME=	NetRexx
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Human-oriented programming language for writing/using Java classes
 
+BROKEN=		Size mismatch
+
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
