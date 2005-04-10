@@ -1,0 +1,99 @@
+bin/trigger
+%%DATADIR%%/events/triggercup/bigjump/colormap.jpg
+%%DATADIR%%/events/triggercup/bigjump/foliagemap.png
+%%DATADIR%%/events/triggercup/bigjump/heightmap.png
+%%DATADIR%%/events/triggercup/bigjump/jump.level
+%%DATADIR%%/events/triggercup/monkeybusiness/colormap.jpg
+%%DATADIR%%/events/triggercup/monkeybusiness/foliagemap.png
+%%DATADIR%%/events/triggercup/monkeybusiness/heightmap.png
+%%DATADIR%%/events/triggercup/monkeybusiness/monkey.level
+%%DATADIR%%/events/triggercup/oldmacdonald/colormap.jpg
+%%DATADIR%%/events/triggercup/oldmacdonald/farm.level
+%%DATADIR%%/events/triggercup/oldmacdonald/foliagemap.png
+%%DATADIR%%/events/triggercup/oldmacdonald/heightmap.png
+%%DATADIR%%/events/triggercup/triggercup.event
+%%DATADIR%%/events/triggercup/warmup/colormap.jpg
+%%DATADIR%%/events/triggercup/warmup/foliagemap.png
+%%DATADIR%%/events/triggercup/warmup/heightmap.png
+%%DATADIR%%/events/triggercup/warmup/warmup.level
+%%DATADIR%%/maps/desertstorm/colormap.jpg
+%%DATADIR%%/maps/desertstorm/foliagemap.png
+%%DATADIR%%/maps/desertstorm/heightmap.png
+%%DATADIR%%/maps/desertstorm/storm.level
+%%DATADIR%%/maps/lunar/colormap.jpg
+%%DATADIR%%/maps/lunar/foliagemap.png
+%%DATADIR%%/maps/lunar/heightmap.png
+%%DATADIR%%/maps/lunar/lunar.level
+%%DATADIR%%/maps/saharatea/level7-c.jpg
+%%DATADIR%%/maps/saharatea/level7-f.png
+%%DATADIR%%/maps/saharatea/level7-h.png
+%%DATADIR%%/maps/saharatea/level7.level
+%%DATADIR%%/plugins/snowlevel.zip
+%%DATADIR%%/sounds/engine1.wav
+%%DATADIR%%/sounds/evo_sound/clank1.wav
+%%DATADIR%%/sounds/evo_sound/clank3.wav
+%%DATADIR%%/sounds/gravel2.wav
+%%DATADIR%%/sounds/wind.wav
+%%DATADIR%%/textures/arrow.png
+%%DATADIR%%/textures/consolefont.png
+%%DATADIR%%/textures/detail.jpg
+%%DATADIR%%/textures/dial_gear.png
+%%DATADIR%%/textures/dial_rev.png
+%%DATADIR%%/textures/dial_speed.png
+%%DATADIR%%/textures/dust.png
+%%DATADIR%%/textures/gunflare.jpg
+%%DATADIR%%/textures/life_helmet.png
+%%DATADIR%%/textures/shadow.png
+%%DATADIR%%/textures/sky/blue.jpg
+%%DATADIR%%/textures/sky/overcast.jpg
+%%DATADIR%%/textures/sky/stars.jpg
+%%DATADIR%%/textures/splash/endgame.jpg
+%%DATADIR%%/textures/splash/splash.jpg
+%%DATADIR%%/textures/veg/cactus1.png
+%%DATADIR%%/textures/veg/grass-sprite.png
+%%DATADIR%%/textures/veg/palmy.png
+%%DATADIR%%/trigger.config.defs
+%%DATADIR%%/vehicles/evo/evo.ase
+%%DATADIR%%/vehicles/evo/evo.vehicle
+%%DATADIR%%/vehicles/evo/evo_complete.fx
+%%DATADIR%%/vehicles/evo/evo_complete.jpg
+%%DATADIR%%/vehicles/evo/evo_wheel.ase
+%%DATADIR%%/vehicles/evo/glass.fx
+%%DATADIR%%/vehicles/evo/glass.png
+%%DATADIR%%/vehicles/focus/focus.ase
+%%DATADIR%%/vehicles/focus/focus.vehicle
+%%DATADIR%%/vehicles/focus/focus_complete.fx
+%%DATADIR%%/vehicles/focus/focus_complete.jpg
+%%DATADIR%%/vehicles/focus/focus_wheel.ase
+%%DATADIR%%/vehicles/seat/seat.ase
+%%DATADIR%%/vehicles/seat/seat.vehicle
+%%DATADIR%%/vehicles/seat/seat.vehicle.contrib
+%%DATADIR%%/vehicles/seat/seat.vehicle.orig
+%%DATADIR%%/vehicles/seat/seat_complete.fx
+%%DATADIR%%/vehicles/seat/seat_complete.jpg
+%%DATADIR%%/vehicles/seat/seat_wheel.ase
+%%PORTDOCS%%%%DOCSDIR%%/README-stereo.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+@dirrm %%DATADIR%%/events/triggercup/bigjump
+@dirrm %%DATADIR%%/events/triggercup/monkeybusiness
+@dirrm %%DATADIR%%/events/triggercup/oldmacdonald
+@dirrm %%DATADIR%%/events/triggercup/warmup
+@dirrm %%DATADIR%%/events/triggercup
+@dirrm %%DATADIR%%/events
+@dirrm %%DATADIR%%/maps/desertstorm
+@dirrm %%DATADIR%%/maps/lunar
+@dirrm %%DATADIR%%/maps/saharatea
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/sounds/evo_sound
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/textures/sky
+@dirrm %%DATADIR%%/textures/splash
+@dirrm %%DATADIR%%/textures/veg
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/vehicles/evo
+@dirrm %%DATADIR%%/vehicles/focus
+@dirrm %%DATADIR%%/vehicles/seat
+@dirrm %%DATADIR%%/vehicles
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
