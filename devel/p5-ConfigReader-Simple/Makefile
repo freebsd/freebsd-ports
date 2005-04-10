@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		ConfigReader::Simple.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Incorrect pkg-plist on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>
