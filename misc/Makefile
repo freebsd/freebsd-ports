@@ -70,6 +70,7 @@
     SUBDIR += edonkey-tool-hash
     SUBDIR += edonkey-tool-slist
     SUBDIR += elscreen
+    SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += ewipe
     SUBDIR += explosions
