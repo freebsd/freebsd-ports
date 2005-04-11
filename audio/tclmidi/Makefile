@@ -17,10 +17,6 @@ COMMENT=	A language designed for creating and editing standard MIDI files
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-IGNORE=		"ignored due to cast from pointer to integer of different size"
-.endif
-
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.2
 GNU_CONFIGURE=	yes
@@ -34,6 +30,10 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 		miditrck.n mididev.n miditime.n midifeat.n
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+IGNORE=		"ignored due to cast from pointer to integer of different size"
+.endif
 
 .if ${OSVERSION} >= 502000
 EXTRA_PATCHES=	${PATCHDIR}/smf.patch ${PATCHDIR}/song.patch
