@@ -1,5 +1,17 @@
 --- configure.orig	Thu Dec 23 16:36:00 2004
-+++ configure	Mon Mar 14 21:58:48 2005
++++ configure	Tue Mar 22 10:50:03 2005
+@@ -29,9 +29,9 @@
+   echo >> "$TMPLOG"
+   cat "$TMPC" >> "$TMPLOG"
+   echo >> "$TMPLOG"
+-  echo "$_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra $TMPC -o $TMPO $@" >> "$TMPLOG"
++  echo "$_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra $TMPC -o $TMPO $@" >> "$TMPLOG"
+   rm -f "$TMPO"
+-  ( $_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra "$TMPC" -o "$TMPO" "$@" ) >> "$TMPLOG" 2>&1
++  ( $_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra "$TMPC" -o "$TMPO" "$@" ) >> "$TMPLOG" 2>&1
+   TMP="$?"
+   echo >> "$TMPLOG"
+   echo "ldd $TMPO" >> "$TMPLOG"
 @@ -359,7 +359,7 @@
  
  
