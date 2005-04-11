@@ -1,7 +1,7 @@
---- Makefile.orig	Thu Jul 17 17:32:21 2003
-+++ Makefile	Mon Dec  6 23:32:28 2004
+--- Makefile-orig	Sun Feb 20 16:47:13 2005
++++ Makefile	Sun Feb 20 16:48:42 2005
 @@ -1,8 +1,9 @@
- # Copyright (C) 1990-2002 Bard Ermentrout
+ # Copyright (C) 1990-2003 Bard Ermentrout
  # Edited for Debian GNU/Linux.
  DESTDIR =
 -BINDIR = $(DESTDIR)/usr/X11R6/bin
@@ -12,22 +12,17 @@
  # End Debian Edit
  #################################
  #
-@@ -13,16 +14,16 @@
- # Standard C compiler
- #CC= cc
- # Use Gnu compiler
--CC= gcc
-+#CC= gcc
+@@ -13,12 +14,12 @@
  AUTLIBS= -lf2c -lX11 -lm 
  OTHERLIBS= libcvode.a libf2cm.a 
  #
  ################################## 
  # Standard Linux distributions   #
  ##################################
--CFLAGS=   -g -O -DAUTO -DCVODE_YES -DHAVEDLL -DMYSTR=$(VERSION)  -I/usr/X11R6/include
+-CFLAGS=   -g -O -DAUTO -DCVODE_YES -DNOERRNO -DHAVEDLL -DMYSTR=$(VERSION)  -I/usr/X11R6/include
 -LDFLAGS=  -L/usr/X11R6/lib
 -LIBS= -lX11 -lm -ldl 
-+CFLAGS+= -DAUTO -DCVODE_YES -DHAVEDLL -DMYSTR=$(VERSION) -I$(X11BASE)/include
++CFLAGS+=   -DAUTO -DCVODE_YES -DNOERRNO -DHAVEDLL -DMYSTR=$(VERSION)  -I/usr/X11R6/include
 +LDFLAGS=  -L$(X11BASE)/lib
 +LIBS= -lX11 -lm 
  # NOTE: Recent (RedHat 8) versions of GCC seem to no longer have
@@ -43,7 +38,7 @@
  xppaut: mkI77 mkcvode   $(OBJECTS) $(AUTOOBJ)
  #
  ###########################################################
-@@ -179,17 +183,18 @@
+@@ -179,16 +183,16 @@
  install: xppaut 
  # Make necessary installation directories
  	mkdir -p $(BINDIR)
@@ -62,10 +57,8 @@
 -	cp xppaut.1 $(DESTDIR)/usr/X11R6/man/man1
 +# PORTDOCS	cp -r ode* $(EXAMPLESDIR)
 +# PORTDOCS	cp -r help/* $(DOCDIR)/html
-+# PORTDOCS	cp README *.pdf $(DOCDIR)
++# PORTDOCS	cp README *.pdf $(DOCDIR) 
 +	cp xppaut.1 $(PREFIX)/man/man1
  # End Debian Ed
-+
  uninstall: 
  # Remove everything you created
- 	rm $(BINDIR)/xppaut
