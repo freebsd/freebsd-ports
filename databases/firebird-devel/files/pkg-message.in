@@ -7,12 +7,12 @@ Firebird.
 
 The symbolic link can be created with:
 
-% ln -s %%PREFIX%%/firebird /usr/interbase
+% ln -s %%PREFIX%% /usr/interbase
 
 It is STRONGLY recommended that you change the SYSDBA
 password with:
 
-% cd %%PREFIX%%/firebird
+% cd %%PREFIX%%
 % gsec -user SYSDBA -pass masterkey
 GSEC> modify SYSDBA -pw newpassword
 GSEC> quit
