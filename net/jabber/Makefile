@@ -19,9 +19,7 @@ COMMENT=	Online presence and instant messaging server
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
 		expat.5:${PORTSDIR}/textproc/expat2
 
-USE_RC_SUBR=	yes
-SUB_FILES=	jabberd.sh
-SUB_LIST=	RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	jabberd.sh
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
