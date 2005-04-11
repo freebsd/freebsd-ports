@@ -501,6 +501,7 @@
     SUBDIR += pardiff
     SUBDIR += pdftohtml
     SUBDIR += pear-Spreadsheet_Excel_Writer
+    SUBDIR += pear-XML_HTMLSax
     SUBDIR += perl2html
     SUBDIR += php4-ctype
     SUBDIR += php4-domxml
