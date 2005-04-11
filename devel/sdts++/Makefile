@@ -18,6 +18,8 @@ COMMENT=	C++ library for SDTS related development
 BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost
 
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
