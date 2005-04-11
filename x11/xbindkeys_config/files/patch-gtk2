@@ -1,0 +1,36 @@
+diff -udp menu.c.orig menu.c
+--- menu.c.orig	Sun Apr 10 22:51:26 2005
++++ menu.c	Sun Apr 10 22:58:43 2005
+@@ -296,7 +296,7 @@ void menu_manual (GtkMenuItem *menuitem,
+   text = gtk_text_new(NULL,NULL);
+   
+   
+-  gtk_text_insert (GTK_TEXT(text), NULL, NULL, NULL,
++  gtk_text_insert (text, NULL, NULL, NULL,
+ 		   MANUAL_TEXT, sizeof(MANUAL_TEXT)-1);
+   gtk_box_pack_start(GTK_BOX(vbox), text, TRUE, TRUE, 0);
+   gtk_widget_set_usize(text,300,250);
+diff -udp middle.c.orig middle.c
+--- middle.c.orig	Sun Apr 10 22:59:11 2005
++++ middle.c	Sun Apr 10 23:00:21 2005
+@@ -565,7 +565,7 @@ void view_generated_file()
+     gtk_container_add (GTK_CONTAINER(src),  text);
+ 
+     while (fgets (line, sizeof(line), f))
+-      gtk_text_insert (GTK_TEXT(text), NULL, NULL, NULL,
++      gtk_text_insert (text, NULL, NULL, NULL,
+ 		       line, strlen(line));
+ 
+     gtk_container_add(GTK_CONTAINER(window),src);
+Binary files work.orig/xbindkeys_config-0.1.3/xbindkeys_config and work/xbindkeys_config-0.1.3/xbindkeys_config differ
+diff -udp xbindkeys_config.c.orig xbindkeys_config.c
+--- xbindkeys_config.c.orig	Sun Apr 10 22:49:47 2005
++++ xbindkeys_config.c	Sun Apr 10 22:50:56 2005
+@@ -95,7 +95,6 @@ int main (int argc, char *argv[])
+      accel_group = gtk_accel_group_new();
+      menu=xbindkeys_config_menu(accel_group);
+      gtk_box_pack_start(GTK_BOX(vbox),menu,FALSE,FALSE,0);
+-     gtk_accel_group_attach(accel_group, GTK_OBJECT(window));
+      
+      middle= xbindkeys_config_middle();
+      gtk_box_pack_start(GTK_BOX(vbox),middle,TRUE,TRUE,0);
