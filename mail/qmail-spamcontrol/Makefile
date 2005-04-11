@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-spamcontrol
 DISTFILES=	${QMAIL_DIST} ${SPAMCONTROL_DIST}:spamcontrol
 EXTRACT_ONLY=	${QMAIL_DIST}
 
-MAINTAINER=	renato@galle.com.br
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Qmail MTA with SpamControl patches
 
 # Distfiles

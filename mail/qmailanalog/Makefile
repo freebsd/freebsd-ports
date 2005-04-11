@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cr.yp.to/software/
 
-MAINTAINER=	renato@galle.com.br
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A collection of tools to analyze qmail-send's activity
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail

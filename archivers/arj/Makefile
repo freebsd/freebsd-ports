@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	renato@galle.com.br
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Open-source ARJ
 
 USE_REINPLACE=	yes
