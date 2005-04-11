@@ -14,23 +14,25 @@ DISTNAME=	${PORTNAME}-${HUGS_DATE}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
 
-BROKEN=		Incorrect pkg-plist
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
+#OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
+WITH_HUGS_OPENGL=	yes
 HUGS_DATE=	Mar2005
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
-CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
+#CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
+#CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_HUGS_OPENGL)
-CONFIGURE_ARGS+=	--enable-hopengl
+#CONFIGURE_ARGS+=	--enable-hopengl
 USE_GL=	yes
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
 .endif
 
 MAN1=		hugs.1
