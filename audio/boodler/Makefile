@@ -31,6 +31,8 @@ LDCONFIG_DIRS=	%%PREFIX%%/share/boodler/boodle
 DRIVER=		FILE
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 PIC=	--PIC
 .endif
@@ -58,4 +60,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
