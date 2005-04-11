@@ -77,7 +77,6 @@ sub bareskel {
 
 	`printf "\n" > $tmpdir/pkg-plist`;
 	`printf "\n" > $tmpdir/pkg-descr`;
-	`printf "A\n" > $tmpdir/pkg-comment`;
 }
 
 sub writemk {
@@ -125,8 +124,9 @@ EOF
 		delete($tmp{"MASTER_SITES"});
 	}
 
-	print MAKEFILE "\nMAINTAINER=\t" . $tmp{"MAINTAINER"} . "\n\n";
+	print MAKEFILE "\nMAINTAINER=\t" . $tmp{"MAINTAINER"} . "\n";
 	delete($tmp{"MAINTAINER"});
+	print MAKEFILE "COMMENT=\t" . "A" . "\n\n";
 
 	if ($tmp{"LIB_DEPENDS"}) {
 		print MAKEFILE "LIB_DEPENDS=". $tmp{"LIB_DEPENDS"} . "\n\n";
