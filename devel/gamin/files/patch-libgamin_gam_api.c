@@ -1,6 +1,14 @@
---- libgamin/gam_api.c.orig	Thu Mar 24 19:07:08 2005
-+++ libgamin/gam_api.c	Thu Mar 24 19:26:39 2005
-@@ -181,7 +181,6 @@ gamin_get_socket_dir(void)
+--- libgamin/gam_api.c.orig	Mon Apr 11 04:10:54 2005
++++ libgamin/gam_api.c	Mon Apr 11 04:16:49 2005
+@@ -13,6 +13,7 @@
+ #include <sys/stat.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
++#include <sys/uio.h>
+ #include "fam.h"
+ #include "gam_protocol.h"
+ #include "gam_data.h"
+@@ -181,7 +182,6 @@
      snprintf(path, MAXPATHLEN, "/tmp/fam-%s", user);
      path[MAXPATHLEN] = 0;
      ret = strdup(path);
@@ -8,7 +16,7 @@
      return (ret);
  }
  
-@@ -421,9 +420,35 @@ gamin_write_credential_byte(int fd)
+@@ -421,9 +421,35 @@
  {
      char data[2] = { 0, 0 };
      int written;
@@ -44,7 +52,7 @@
      if (written < 0) {
          if (errno == EINTR)
              goto retry;
-@@ -616,8 +641,10 @@ gamin_check_cred(GAMDataPtr conn, int fd
+@@ -616,8 +642,10 @@
      gid_t c_gid;
  
  #ifdef HAVE_CMSGCRED
@@ -57,7 +65,7 @@
  #endif
  
      s_uid = getuid();
-@@ -642,9 +669,9 @@ gamin_check_cred(GAMDataPtr conn, int fd
+@@ -642,9 +670,9 @@
      msg.msg_iovlen = 1;
  
  #ifdef HAVE_CMSGCRED
@@ -70,7 +78,7 @@
  #endif
  
  retry:
-@@ -661,7 +688,7 @@ retry:
+@@ -661,7 +689,7 @@
          goto failed;
      }
  #ifdef HAVE_CMSGCRED
@@ -79,7 +87,7 @@
          GAM_DEBUG(DEBUG_INFO,
                    "Message from recvmsg() was not SCM_CREDS\n");
          goto failed;
-@@ -687,13 +714,9 @@ retry:
+@@ -687,13 +715,9 @@
              goto failed;
          }
  #elif defined(HAVE_CMSGCRED)
