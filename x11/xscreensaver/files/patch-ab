@@ -9,33 +9,3 @@
      OBJCC="$OBJCC -Wall"
      # supposedly gcc 3.4 will have "-Wdeclaration-after-statement"
      # and then perhaps we can do without -pedantic?
-@@ -13491,7 +13491,7 @@
-       ok="yes"
-       pkg_check_version gtk+       1.2     ; ac_gtk_version_string="$vers"
-       pkg_check_version glib       1.0
--      pkg_check_version gdk_pixbuf 0.1
-+      # pkg_check_version gdk_pixbuf 0.1 - pick this up later
-       have_gtk="$ok"
- 
-       # Now check for Gnome...
-@@ -19014,13 +19014,13 @@
- # Now that we know whether we have Gnome, we can decide where the XML
- # config files get installed.
- #
--if test -z "$HACK_CONF_DIR" ; then
--  if test -n "$GNOME_DATADIR" ; then
--    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
--  else
--    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
--  fi
--fi
-+#if test -z "$HACK_CONF_DIR" ; then
-+#  if test -n "$GNOME_DATADIR" ; then
-+#    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
-+#  else
-+#    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
-+#  fi
-+#fi
- 
- 
- 
