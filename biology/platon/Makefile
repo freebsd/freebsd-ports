@@ -30,11 +30,13 @@ TESTDATADIR=	ABSORB_EXAMPLE ABSTOMPA_EXAMPLE ABSTOMPA_TEST ADDSYM_EXAMPLE \
 		ASYM_EXAMPLE DELABS_EXAMPLE MULABS_EXAMPLE PSICOR_EXAMPLE \
 		SQUEEZE_EXAMPLE
 
+
+.include <bsd.port.pre.mk>
+
 .if ${ARCH} == "alpha"
 BROKEN=	"/usr/libexec/elf/ld: platon.o: .got subsegment exceeds 64K (size 88552)"
 .endif
 
-.include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400004
 MAKE_ENV+=	HAVE_G2C=yes
 .endif
