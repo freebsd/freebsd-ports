@@ -1,3 +1,4 @@
+@unexec %D/etc/rc.d/mysql-server.sh stop > /dev/null 2>&1 || true
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -135,4 +136,3 @@ libexec/mysqld
 @dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/ukrainian
 @dirrm %%DATADIR%%
-@unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true
