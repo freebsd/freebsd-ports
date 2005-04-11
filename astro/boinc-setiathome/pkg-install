@@ -2,6 +2,6 @@
 
 case $2 in
 POST-INSTALL)
-   chown %%BOINC_USER%% %%BOINC_HOME%%/projects/%%SETI_SITE%%
-   ;;
+    chown %%BOINC_USER%%:%%BOINC_GROUP%% %%BOINC_HOME%%/projects/%%SETI_SITE%%
+    ;;
 esac

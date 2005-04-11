@@ -1,0 +1,11 @@
+--- Makefile.incl.orig	Wed Feb  9 12:03:32 2005
++++ Makefile.incl	Tue Mar  1 10:15:48 2005
+@@ -37,7 +37,7 @@
+ VERSION_MAJOR = @MAJOR_VERSION@
+ VERSION_MINOR = @MINOR_VERSION@
+ 
+-BOINC_CFLAGS= -I$(BOINCDIR)/api -I$(BOINCDIR)/lib 
++BOINC_CFLAGS= -I$(BOINCDIR)/include/BOINC
+ 
+ 
+ DEBUG_PROG = setiathome-$(VERSION_MAJOR).$(VERSION_MINOR).@host@.debug$(DOTEXEEXT)
