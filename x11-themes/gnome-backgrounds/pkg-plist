@@ -22,6 +22,8 @@ share/locale/el/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/en_CA/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/en_GB/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/es/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/et/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/fa/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/fi/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/fr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/gu/LC_MESSAGES/gnome-backgrounds.mo
@@ -31,6 +33,7 @@ share/locale/id/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/it/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ja/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ko/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ku/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/lt/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/nb/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ne/LC_MESSAGES/gnome-backgrounds.mo
@@ -41,11 +44,13 @@ share/locale/pl/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/pt/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ro/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/rw/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/sk/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/sq/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/sr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/sv/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/tr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uk/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/vi/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
