@@ -1906,6 +1906,8 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
 @dirrm share/themes/Crux
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true
 @dirrm share/icons/Smokey-Red/96x96/filesystems
 @dirrm share/icons/Smokey-Red/96x96
 @dirrm share/icons/Smokey-Red/72x72/filesystems
