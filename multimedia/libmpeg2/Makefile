@@ -47,13 +47,13 @@ CONFIGURE_ARGS+=	--disable-sdl
 CONFIGURE_ARGS+=	--disable-warnings
 .endif
 
+.include <bsd.port.pre.mk>
+
 # We must be able to build EV6 code; actual CPU-type optimizations
 # are chosen at runtime.
-.if ${ARCH:L} == "alpha"
+.if ${ARCH} == "alpha"
 CFLAGS:=	${CFLAGS:N-mcpu=*}
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
 BROKEN=		"Does not compile on alpha 5.x"
