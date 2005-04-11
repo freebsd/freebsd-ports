@@ -46,7 +46,10 @@ post-install:
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-BROKEN=		"Does not build with perl < 5.6"
+
+post-patch:
+	@${PERL} -i -pe '$$_ = "" if /require 5\.6/' ${WRKSRC}/Makefile.PL
+
 .endif
 
 .include <bsd.port.post.mk>
