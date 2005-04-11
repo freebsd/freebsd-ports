@@ -15,8 +15,6 @@ DISTNAME=	${DOCFORMAT}-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Documentation for the Python programming language
 
-BROKEN=		Incorrect distinfo
-
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_BZIP2=	yes
