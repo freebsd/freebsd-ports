@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050411:
+  AFFECTS: users of x11/gdm
+  AUTHOR: kwm@FreeBSD.org
+
+  GDM now installs a rcNG script for starting the gdm daemon.
+  To enable that gdm starts a boot time, add the following to /etc/rc.conf:
+
+  gdm_enable="YES"
 
 20050406:
   AFFECTS: users of databases/mysql50-server
