@@ -22,7 +22,6 @@ COMMENT=	Save your screen while you entertain your cat
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
 USE_X_PREFIX=	yes
