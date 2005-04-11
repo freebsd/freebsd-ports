@@ -418,6 +418,7 @@ share/locale/gu/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/he/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/hr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/id/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/is/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -427,6 +428,7 @@ share/locale/lv/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/mn/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ms/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/ne/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nn/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/no/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -436,6 +438,7 @@ share/locale/pt/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ro/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/rw/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -446,6 +449,7 @@ share/locale/tr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/wa/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/xh/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm share/gnome/omf/evolution
