@@ -1,0 +1,11 @@
+This module augments the list of Net::FTP methods with several
+methods that automatically descend directory structures for you.
+The methods are:
+
+     rget - Retrieve an entire directory tree.
+     rput - Send an entire directory tree.
+     rdir - Receive an entire directory tree listing.
+     rls  - Receive an entire directory tree listing, filenames only.
+     rdelete - Remove an entire directory tree.
+
+WWW: http://search.cpan.org/dist/Net-FTP-Recursive/
