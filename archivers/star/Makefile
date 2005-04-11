@@ -23,6 +23,8 @@ MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
 MAN1=		star.1
 MLINKS=		star.1 ustar.1
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 .if ${ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf i386-freebsd-cc.rul \
@@ -36,4 +38,4 @@ do-install:
 	@cd ${PREFIX}/bin ; ${LN} -f star ustar
 	@${INSTALL_MAN} ${WRKSRC}/star/star.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
