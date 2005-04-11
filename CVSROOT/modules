@@ -8581,6 +8581,7 @@ pear-XML_Serializer	ports/devel/pear-XML_Serializer
 pear-XML_Transformer	ports/devel/pear-XML_Transformer
 pear-XML_Tree	ports/devel/pear-XML_Tree
 pear-XML_Util	ports/devel/pear-XML_Util
+pear-XML_Wddx	ports/textproc/pear-XML_Wddx
 pear-XML_XPath	ports/devel/pear-XML_XPath
 pear-apd	ports/devel/pear-apd
 pear-sqlite	ports/databases/pear-sqlite
