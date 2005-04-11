@@ -125,6 +125,7 @@ share/locale/pt/LC_MESSAGES/gcalctool.mo
 share/locale/pt_BR/LC_MESSAGES/gcalctool.mo
 share/locale/ro/LC_MESSAGES/gcalctool.mo
 share/locale/ru/LC_MESSAGES/gcalctool.mo
+share/locale/rw/LC_MESSAGES/gcalctool.mo
 share/locale/sk/LC_MESSAGES/gcalctool.mo
 share/locale/sl/LC_MESSAGES/gcalctool.mo
 share/locale/sq/LC_MESSAGES/gcalctool.mo
@@ -134,8 +135,10 @@ share/locale/sv/LC_MESSAGES/gcalctool.mo
 share/locale/ta/LC_MESSAGES/gcalctool.mo
 share/locale/th/LC_MESSAGES/gcalctool.mo
 share/locale/tk/LC_MESSAGES/gcalctool.mo
+share/locale/tr/LC_MESSAGES/gcalctool.mo
 share/locale/uk/LC_MESSAGES/gcalctool.mo
 share/locale/vi/LC_MESSAGES/gcalctool.mo
+share/locale/xh/LC_MESSAGES/gcalctool.mo
 share/locale/zh_CN/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 @unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2> /dev/null || true
