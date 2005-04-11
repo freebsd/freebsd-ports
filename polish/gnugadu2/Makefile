@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnugadu2
-PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTVERSION=	2.2.5
 CATEGORIES=	polish net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
@@ -19,6 +18,7 @@ COMMENT=	GTK2 based Gadu-Gadu client for X11
 LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/ekg \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -27,7 +27,7 @@ USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
-CONFLICTS=	qhacc-*
+CONFLICTS=	qhacc-[0-9]*
 
 CONFIGURE_ARGS=	\
 		--with-external-libgadu \
@@ -117,7 +117,9 @@ PLIST_SUB+=	KDE:="@comment "
 .endif
 
 pre-everything::
-.if defined(WITH_TLEN) || defined(WITH_JABBER) || defined(WITH_XOSD) || defined(WITH_DOCLET) || defined(WITH_DOCKAPP) || defined(WITH_ARTS) || defined(WITH_ESOUND) || defined(WITH_GTKSPELL)
+.if defined(WITH_TLEN) || defined(WITH_JABBER) || defined(WITH_XOSD) || \
+	defined(WITH_DOCKLET) || defined(WITH_DOCKAPP) || defined(WITH_GTKSPELL) || \
+	defined(WITH_ARTS) || defined(WITH_ESOUND)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  You can define following build options:"
 	@${ECHO_MSG}
