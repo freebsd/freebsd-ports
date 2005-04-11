@@ -177,33 +177,32 @@ MASTER_SITE_ECLIPSE+= \
 MASTER_SITE_EXIM+=	\
 	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/exim/%SUBDIR%/ \
-	ftp://ftp.easynet.be/exim/%SUBDIR%/ \
-	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/%SUBDIR%/ \
-	ftp://sunsite.auc.dk/pub/mail/exim/%SUBDIR%/ \
-	ftp://ftp.doc.cs.univ-paris8.fr/mirrors/ftp.exim.org/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/exim/exim/%SUBDIR%/ \
+	ftp://ftp.easynet.be/exim/exim/%SUBDIR%/ \
+	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/exim/%SUBDIR%/ \
+	ftp://sunsite.auc.dk/pub/mail/exim/exim/%SUBDIR%/ \
+	ftp://ftp.doc.cs.univ-paris8.fr/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/mail/exim/%SUBDIR%/ \
 	ftp://ftp.tin.org/pub/mail/exim/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.esat.net/pub/networking/mail/mta/exim/%SUBDIR%/ \
-	ftp://exim.stupendous.net/mirror/exim/%SUBDIR%/ \
-	http://washitake.com/mail/exim/mirror/%SUBDIR%/ \
-	http://exim.psshee.com/ftp/%SUBDIR%/ \
-	ftp://ftp.nl.uu.net/pub/unix/mail/exim/%SUBDIR%/ \
+	ftp://exim.stupendous.net/mirror/exim/exim/%SUBDIR%/ \
+	http://washitake.com/mail/exim/mirror/exim/%SUBDIR%/ \
+	http://exim.psshee.com/ftp/exim/%SUBDIR%/ \
+	ftp://ftp.nl.uu.net/pub/unix/mail/exim/exim/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/exim/%SUBDIR%/ \
-	ftp://ftp.easynet.nl/mirror/exim/%SUBDIR%/ \
-	ftp://sunsite.uio.no/pub/mail/exim/%SUBDIR%/ \
-	http://www.no.exim.org/ftp/%SUBDIR%/ \
-	http://sunsite.icm.edu.pl/pub/unix/mail/exim/%SUBDIR%/ \
-	ftp://exim.directnet.ru/pub/exim/%SUBDIR%/ \
+	ftp://ftp.easynet.nl/mirror/exim/exim/%SUBDIR%/ \
+	ftp://sunsite.uio.no/pub/mail/exim/exim/%SUBDIR%/ \
+	http://www.no.exim.org/ftp/exim/%SUBDIR%/ \
+	http://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
+	ftp://exim.directnet.ru/pub/exim/exim/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/mail/mta/exim/%SUBDIR%/ \
-	ftp://ftp.reaper.org/pub/exim/%SUBDIR%/ \
-	ftp://sunsite.cnlab-switch.ch/mirror/exim/%SUBDIR%/ \
+	ftp://ftp.reaper.org/pub/exim/exim/%SUBDIR%/ \
+	ftp://sunsite.cnlab-switch.ch/mirror/exim/exim/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.demon.co.uk/pub/mirrors/exim/%SUBDIR%/ \
-	http://www.us.exim.org/ftp/%SUBDIR%/ \
-	http://exim.stanford.edu/ftp/pub/exim/%SUBDIR%/ \
-	ftp://ftp.fsckit.net/pub/exim/%SUBDIR%/
+	http://www.us.exim.org/ftp/exim/%SUBDIR%/ \
+	ftp://ftp.fsckit.net/pub/exim/exim/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
