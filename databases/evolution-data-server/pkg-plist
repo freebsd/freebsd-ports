@@ -277,7 +277,7 @@ lib/libebook-%%VERSION%%.so
 lib/libebook-%%VERSION%%.so.4
 lib/libecal-%%VERSION%%.a
 lib/libecal-%%VERSION%%.so
-lib/libecal-%%VERSION%%.so.2
+lib/libecal-%%VERSION%%.so.3
 lib/libedata-book-%%VERSION%%.a
 lib/libedata-book-%%VERSION%%.so
 lib/libedata-book-%%VERSION%%.so.3
@@ -345,6 +345,21 @@ share/doc/libecal/libecal.devhelp
 share/doc/libecal/right.png
 share/doc/libecal/style.css
 share/doc/libecal/up.png
+share/doc/libedataserver/ch01.html
+share/doc/libedataserver/home.png
+share/doc/libedataserver/index.html
+share/doc/libedataserver/index.sgml
+share/doc/libedataserver/left.png
+share/doc/libedataserver/libedataserver-ETrie.html
+share/doc/libedataserver/libedataserver-EUrl.html
+share/doc/libedataserver/libedataserver-EXMLHash.html
+share/doc/libedataserver/libedataserver-MD5-Utility-Functions.html
+share/doc/libedataserver/libedataserver-Time-Related-Utility-Functions.html
+share/doc/libedataserver/libedataserver-Utility-Functions.html
+share/doc/libedataserver/libedataserver.devhelp
+share/doc/libedataserver/right.png
+share/doc/libedataserver/style.css
+share/doc/libedataserver/up.png
 share/gnome/evolution-data-server-%%VERSION%%/evolutionperson.schema
 share/gnome/evolution-data-server-%%VERSION%%/glade/e-categories-dialog.glade
 share/gnome/evolution-data-server-%%VERSION%%/glade/e-name-selector-dialog.glade
@@ -799,6 +814,7 @@ share/locale/pt/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/ro/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/ru/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
+share/locale/rw/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/sk/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/sl/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/sq/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
@@ -809,6 +825,7 @@ share/locale/tr/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/uk/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/vi/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/wa/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
+share/locale/xh/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 @dirrm share/gnome/pixmaps/evolution-data-server-%%VERSION%%
