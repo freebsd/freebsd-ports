@@ -6393,6 +6393,7 @@ nmap		ports/security/nmap
 nmapfe		ports/security/nmapfe
 nmh		ports/mail/nmh
 nml		ports/lang/nml
+nmzmail		ports/mail/nmzmail
 nn		ports/news/nn
 nn-aspell	ports/textproc/nn-aspell
 nnap		ports/news/nnap
