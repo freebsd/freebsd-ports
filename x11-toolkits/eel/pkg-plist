@@ -104,6 +104,7 @@ share/locale/pt/LC_MESSAGES/eel-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/eel-2.0.mo
 share/locale/ro/LC_MESSAGES/eel-2.0.mo
 share/locale/ru/LC_MESSAGES/eel-2.0.mo
+share/locale/rw/LC_MESSAGES/eel-2.0.mo
 share/locale/sk/LC_MESSAGES/eel-2.0.mo
 share/locale/sl/LC_MESSAGES/eel-2.0.mo
 share/locale/sq/LC_MESSAGES/eel-2.0.mo
@@ -116,8 +117,13 @@ share/locale/tr/LC_MESSAGES/eel-2.0.mo
 share/locale/uk/LC_MESSAGES/eel-2.0.mo
 share/locale/vi/LC_MESSAGES/eel-2.0.mo
 share/locale/wa/LC_MESSAGES/eel-2.0.mo
+share/locale/xh/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang 2> /dev/null || true
 @dirrm include/eel-2/eel
