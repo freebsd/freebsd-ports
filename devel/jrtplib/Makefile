@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-jthread
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ COMMENT=	Shared memory allocation library for pre-forked process models
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		mm-config.1
 MAN3=		mm.3

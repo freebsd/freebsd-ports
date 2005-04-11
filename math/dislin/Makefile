@@ -9,10 +9,10 @@ PORTNAME=	dislin
 PORTVERSION=	8.2
 PORTREVISION=	1
 CATEGORIES=	math linux
-MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/linux/${MACHINE_ARCH}/
+MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/linux/${ARCH}/
 PKGNAMEPREFIX=	linux-
 EXTRACT_SUFX=	.linux.tar.gz
-DIST_SUBDIR=	${MACHINE_ARCH}
+DIST_SUBDIR=	${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
@@ -26,8 +26,8 @@ NO_BUILD=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${DISLIN_DIR}/lib
 
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
-PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
+PLIST=		${PKGDIR}/pkg-plist.${ARCH}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DISLIN_DIR=	${PREFIX}/dislin
 PROGRAMS=	clink disaps disdrv disdrv_nw disdrv_w disgif dishlp dishpj \

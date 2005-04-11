@@ -22,7 +22,7 @@ USE_GNOME=	gnomehack
 USE_INC_LIBTOOL_VER=	13
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

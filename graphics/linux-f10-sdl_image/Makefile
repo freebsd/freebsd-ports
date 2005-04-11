@@ -11,7 +11,7 @@ PORTVERSION=	1.2.3
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	SDL_image-${PORTVERSION}-1.${MACHINE_ARCH}
+DISTNAME=	SDL_image-${PORTVERSION}-1.${ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 

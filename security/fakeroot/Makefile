@@ -17,7 +17,7 @@ COMMENT=	Simulate the root user behaviour
 
 USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MANLANG=	"" es sv

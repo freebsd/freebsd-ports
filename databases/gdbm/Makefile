@@ -17,7 +17,7 @@ COMMENT=	The GNU database manager
 
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=	13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_COMPAT)

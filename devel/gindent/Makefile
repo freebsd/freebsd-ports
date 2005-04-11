@@ -7,7 +7,17 @@
 #
 
 PORTNAME=	gindent
+<<<<<<< Makefile
+<<<<<<< Makefile
 PORTVERSION=	2.2.9
+PORTREVISION=	0
+=======
+PORTVERSION=	2.2.8a
+PORTREVISION=	3
+>>>>>>> 1.29
+=======
+PORTVERSION=	2.2.9
+>>>>>>> 1.30
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	indent
@@ -18,7 +28,7 @@ COMMENT=	GNU indent
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DBERKELEY_DEFAULTS=1" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--program-prefix=g

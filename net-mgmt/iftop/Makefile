@@ -15,7 +15,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network utility for real-time bandwidth usage information
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 
 MAN8=		iftop.8

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	lame
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	ISO code based fast MP3 encoder kit
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 

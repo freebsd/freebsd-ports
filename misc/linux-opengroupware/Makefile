@@ -11,7 +11,7 @@ CATEGORIES=	misc www linux
 MASTER_SITES=	http://download.opengroupware.org/packages/freebsd/linux-opengroupware/RPMS/:ogo \
 		http://download.opengroupware.org/packages/freebsd/linux-opengroupware/NGOBJWEB/:ngo \
 		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR= updates/8.0/en/os/${MACHINE_ARCH}
+MASTER_SITE_SUBDIR= updates/8.0/en/os/${ARCH}
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${SET1} \
 		${SET2} \
@@ -119,7 +119,7 @@ ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	We dont really build anything ...
 DIST_SUBDIR=	ogo
 PLIST=		${WRKDIR}/pkg-plist
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 PREFIX=		${LINUXBASE}
 
 .include <bsd.port.pre.mk>

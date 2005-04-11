@@ -25,11 +25,11 @@ RUN_DEPENDS=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 
-PLIST_SUB=	BUILD=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PLIST_SUB=	BUILD=${ARCH}-portbld-freebsd${OSREL}
 
 .ifndef WITHOUT_FFTW
 .ifdef WITH_FLOAT

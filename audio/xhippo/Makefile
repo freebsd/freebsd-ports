@@ -20,7 +20,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
 		xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz

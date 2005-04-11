@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 STRIP=
 HAS_CONFIGURE=	yes
-XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
+XEMACS_ARCH=	${ARCH}--freebsd
 CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
 		--with-mule \
 		--with-xfs \

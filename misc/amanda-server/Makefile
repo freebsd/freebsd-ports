@@ -32,7 +32,7 @@ PATCH_STRIP=
 .error You have the file /usr/include/sys/scsiio.h on your system.  This was removed after FreeBSD 3.5 and will break the build of this port.  Please remove it.
 .endif
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 AMANDA_USER?=		operator
 AMANDA_GROUP?=		operator
@@ -131,7 +131,7 @@ CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 .if ${OSVERSION} < 400000
 PLIST_SUB+=	SCSICHG=''
 .elif ${OSVERSION} >= 480000
-.if ${MACHINE_ARCH} == "amd64"
+.if ${ARCH} == "amd64"
 PLIST_SUB+=	SCSICHG='@comment '
 .elif ${OSVERSION} >= 502000
 PLIST_SUB+=	SCSICHG='@comment '

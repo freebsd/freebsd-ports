@@ -19,7 +19,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	259
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/acinclude
 MAN1=		acinclude.1

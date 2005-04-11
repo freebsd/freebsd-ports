@@ -15,7 +15,7 @@ COMMENT=	RPM of esound
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile
 
-RPM_SET=	esound-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
+RPM_SET=	esound-${PORTVERSION}-1.${ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
 

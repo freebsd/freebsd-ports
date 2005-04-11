@@ -18,7 +18,7 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		rsnapshot.1
 DOCS=		AUTHORS ChangeLog README TODO

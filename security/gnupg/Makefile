@@ -20,9 +20,9 @@ COMMENT=	The GNU Privacy Guard
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build ${ARCH}-portbld-freebsd${OSREL}
 .if ${MACHINE_CPU:Mi586}
-MACHINE_ARCH=	i586
+ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
 .if !defined(WITHOUT_NLS)

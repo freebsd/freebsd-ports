@@ -23,7 +23,7 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 USE_PERL5=	yes
 USE_AUTOCONF_VER=	259
 CONFIGURE_ARGS=	--bindir=${WWW_DIR}/${PORTNAME}-${PORTVERSION}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .ifdef(WITH_IPV6)
 #enable IPv6 name lookup, and sending IPv6 multicast

@@ -31,7 +31,7 @@ ALL_TARGET=	# empty
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -Wunused-variable
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wunused-variable -Wno-multichar
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 CFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
 CXXFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
 .endif # i386

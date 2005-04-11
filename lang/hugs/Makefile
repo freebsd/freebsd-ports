@@ -35,7 +35,7 @@ USE_GL=	yes
 
 MAN1=		hugs.1
 
-.if ${MACHINE_ARCH:L} == "amd64"
+.if ${ARCH:L} == "amd64"
 CFLAGS+=	"-fPIC"
 .endif
 

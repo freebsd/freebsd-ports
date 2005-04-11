@@ -30,7 +30,7 @@ TESTDATADIR=	ABSORB_EXAMPLE ABSTOMPA_EXAMPLE ABSTOMPA_TEST ADDSYM_EXAMPLE \
 		ASYM_EXAMPLE DELABS_EXAMPLE MULABS_EXAMPLE PSICOR_EXAMPLE \
 		SQUEEZE_EXAMPLE
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 BROKEN=	"/usr/libexec/elf/ld: platon.o: .got subsegment exceeds 64K (size 88552)"
 .endif
 

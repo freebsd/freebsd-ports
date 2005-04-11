@@ -24,14 +24,14 @@ MAN1=		star.1
 MLINKS=		star.1 ustar.1
 
 post-extract:
-.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
+.if ${ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
+		${WRKSRC}/RULES/${ARCH}-freebsd-${CC}.rul
 .endif
 
 do-install:
 	@${INSTALL_PROGRAM} \
-		${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-${CC}/star \
+		${WRKSRC}/star/OBJ/${ARCH}-freebsd-${CC}/star \
 		${PREFIX}/bin
 	@cd ${PREFIX}/bin ; ${LN} -f star ustar
 	@${INSTALL_MAN} ${WRKSRC}/star/star.1 ${MANPREFIX}/man/man1

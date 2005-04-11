@@ -16,7 +16,7 @@ COMMENT=	A medical image conversion utility and library
 
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_SUBMAKE=	yes
 
 OPTIONS=	X11 "With X11" on \

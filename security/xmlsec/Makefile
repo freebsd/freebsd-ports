@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_OPENSSL=	yes
 USE_GNOME=	gnomehack libxslt
 USE_INC_LIBTOOL_VER=13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 MAN1=	xmlsec.1 xmlsec-config.1

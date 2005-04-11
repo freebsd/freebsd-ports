@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented toolkit for SGML parsing and entity management
 
-.if ${MACHINE_ARCH} == sparc64
-BROKEN=		does not compile on ${MACHINE_ARCH}
+.if ${ARCH} == sparc64
+BROKEN=		does not compile on ${ARCH}
 .endif
 
 USE_SUBMAKE=	yes

@@ -8,8 +8,8 @@
 PORTNAME=		linux-gtk-bluecurve-theme
 PORTVERSION=		0.73
 CATEGORIES=		x11-themes
-MASTER_SITES=		ftp://fr.rpmfind.net/linux/redhat/9/en/os/${MACHINE_ARCH}/RedHat/RPMS/
-DISTFILES=		redhat-artwork-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
+MASTER_SITES=		ftp://fr.rpmfind.net/linux/redhat/9/en/os/${ARCH}/RedHat/RPMS/
+DISTFILES=		redhat-artwork-${PORTVERSION}-1.${ARCH}.rpm
 DIST_SUBDIR=		rpm
 
 MAINTAINER=		jylefort@brutele.be

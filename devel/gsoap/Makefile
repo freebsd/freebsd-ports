@@ -17,7 +17,7 @@ COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 ONLY_FOR_ARCHS=	i386
 

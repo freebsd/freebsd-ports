@@ -22,19 +22,15 @@ ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB+=	DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
-		PORTBLD=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+		PORTBLD=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	all gprof aprof
 CYCBINDIR=	${PREFIX}/bin
 CYCINCDIR=	${PREFIX}/include/cyclone
 CYCLIBDIR=	${PREFIX}/lib/cyclone
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-BROKEN=		"Cannot convert header files on -CURRENT!"
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -18,7 +18,7 @@ USE_X_PREFIX=	YES
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_MOTIF)
 CONFIGURE_ARGS+=	--with-toolkit=motif

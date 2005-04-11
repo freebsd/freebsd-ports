@@ -21,7 +21,7 @@ COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAKEFILE=	makefile
 
 MAN1=		cdialog.1

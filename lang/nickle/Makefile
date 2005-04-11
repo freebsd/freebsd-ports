@@ -15,7 +15,7 @@ COMMENT=	A desk calculator language
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 # Nickle now has bindings which are likely to pull in libraries that need
 # libpthread.  Link to it now, since it wouldn't work at runtime.

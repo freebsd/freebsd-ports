@@ -16,7 +16,7 @@ COMMENT=	Mouse and keyboard sharing utility
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
 

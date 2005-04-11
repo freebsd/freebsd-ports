@@ -30,7 +30,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-ffmpeg_libs-prefix=${LOCALBASE} \
 					--with-libdvdread-prefix=${LOCALBASE} \
 					--with-libiconv-prefix=${LOCALBASE}

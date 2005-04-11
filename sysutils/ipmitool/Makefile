@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 # On FreeBSD only lan and lanplus interfaces are supported at this time
 CONFIGURE_ARGS+=	--enable-intf-lan --enable-intf-lanplus \
 		--disable-intf-open --disable-intf-imb --disable-intf-lipmi

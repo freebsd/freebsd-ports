@@ -30,7 +30,7 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 REINPLACE_ARGS=	-i ""
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 
 LDFLAGS+=	-L${LOCALBASE}/lib

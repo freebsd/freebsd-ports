@@ -26,7 +26,7 @@ BROKEN=		"Broken pkg-plist"
 USE_REINPLACE=		yes
 USE_PYTHON=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV=		PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}"
 ALL_TARGET=		default
 

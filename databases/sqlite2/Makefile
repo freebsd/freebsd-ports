@@ -60,7 +60,7 @@ USE_LIBTOOL_VER=	13
 GNU_CONFIGURE=	YES
 USE_REINPLACE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-hints=freebsd.hints
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	all
 #.if defined(WITH_TCL)
 #ALL_TARGET+=	libtclsqlite.la

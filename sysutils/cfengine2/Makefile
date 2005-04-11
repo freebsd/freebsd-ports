@@ -17,7 +17,7 @@ COMMENT=	A systems administration tool for networks
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-berkeleydb=${LOCALBASE} --with-docs
 USE_REINPLACE=	yes
 

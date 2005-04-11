@@ -19,7 +19,7 @@ COMMENT=	A CloneCD to ISO converter
 PLIST_FILES=	bin/ccd2iso
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ccd2iso ${PREFIX}/bin

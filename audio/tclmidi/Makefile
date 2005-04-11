@@ -17,7 +17,7 @@ COMMENT=	A language designed for creating and editing standard MIDI files
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
-.if ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 IGNORE=		"ignored due to cast from pointer to integer of different size"
 .endif
 

@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 .endif
 
@@ -39,7 +39,7 @@ LATEST_LINK=	${PORTNAME}36
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
-.if (${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
+.if (${ARCH} == "i386" && !${ARCH} == "amd64" )
 CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .endif # i386
@@ -52,7 +52,7 @@ CFLAGS=		-O3 -tpp7 -axN -Vaxlib
 CXXFLAGS=	-O3 -tpp7 -axN -Vaxlib
 .endif
 
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" --includedir=${LOCALBASE} \
 		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include" \

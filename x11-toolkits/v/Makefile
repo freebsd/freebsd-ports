@@ -14,7 +14,7 @@ MASTER_SITES=	http://programming.ccp14.ac.uk/ftp-mirror/programming/objectcentra
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ GUI development framework for X11 and Microsoft Windows
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 BROKEN=		compiler error in function fixup_memory_subreg
 .endif
 

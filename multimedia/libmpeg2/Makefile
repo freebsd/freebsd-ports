@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--disable-warnings
 
 # We must be able to build EV6 code; actual CPU-type optimizations
 # are chosen at runtime.
-.if ${MACHINE_ARCH:L} == "alpha"
+.if ${ARCH:L} == "alpha"
 CFLAGS:=	${CFLAGS:N-mcpu=*}
 .endif
 
@@ -73,7 +73,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<SDL/|<SDL11/|' ${WRKSRC}/libvo/*
 	@${REINPLACE_CMD} -e 's|-O3||;s|<termio.h>|<termios.h>|' ${WRKSRC}/configure
 # AMD64 prefers position independent code
-.if ${MACHINE_ARCH:L} == "amd64"
+.if ${ARCH:L} == "amd64"
 	@${REINPLACE_CMD} -e 's|-prefer-non-pic||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif

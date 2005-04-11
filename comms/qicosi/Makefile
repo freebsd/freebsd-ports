@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=	--with-lock-style=open
 .endif
 CONFIGURE_ARGS+=	--with-config=${CONFDIR}/qico.conf \
 			--with-default-speed=115200
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		Changes FAQ README
 EXAMPLES=	fts-0001 onchat qhistory qico.xpm qlinks sfreq \

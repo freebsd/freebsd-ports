@@ -15,7 +15,7 @@ MAINTAINER=	squat@squat.no
 COMMENT=	Packet sniffer which displays TCP information like top(1)
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/tcptrack
 MAN1=		tcptrack.1

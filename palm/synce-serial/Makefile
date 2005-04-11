@@ -16,6 +16,6 @@ COMMENT=	Wrapper for pppd to initiate communications with WinCE devices
 MAN8=		synce-serial-config.8 synce-serial-start.8 synce-serial-abort.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

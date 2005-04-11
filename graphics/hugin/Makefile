@@ -29,7 +29,7 @@ RUN_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 		PTStitcher:${PORTSDIR}/graphics/linux-panorama-tools
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 

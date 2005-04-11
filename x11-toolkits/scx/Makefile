@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/scsh/scsh-install-pkg:${PORTSDIR}/devel/scsh-insta
 NO_BUILD=	yes
 USE_XLIB=	yes
 
-PLIST_SUB=	TARGET=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PLIST_SUB=	TARGET=${ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	(cd ${WRKSRC}; ${LOCALBASE}/lib/scsh/scsh-install-pkg --prefix=${PREFIX}/lib/scsh)

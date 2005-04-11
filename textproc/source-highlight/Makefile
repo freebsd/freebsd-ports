@@ -15,7 +15,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS="${NOPORTDOCS}"
 .endif

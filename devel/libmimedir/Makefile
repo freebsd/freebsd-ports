@@ -14,7 +14,7 @@ MAINTAINER=	boris@brooknet.com.au
 COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	13
 USE_BISON=	yes
 

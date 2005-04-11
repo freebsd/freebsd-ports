@@ -23,7 +23,7 @@ LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-k3bsetup=no
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13

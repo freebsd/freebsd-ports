@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION} \
 		--infodir=${PREFIX}/info
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 INFO=		automake${BUILD_VERSION}
 

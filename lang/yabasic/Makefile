@@ -17,7 +17,7 @@ USE_XLIB=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		yabasic.1
 PORTDOCS=	yabasic.htm

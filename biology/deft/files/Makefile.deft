@@ -4,7 +4,7 @@
 TARGET = DeFT.exec
 FFLAGS += -w -O3
 CFLAGS += -w -O3
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 FFLAGS += -malign-double
 CFLAGS += -malign-double
 .endif

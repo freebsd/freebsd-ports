@@ -32,7 +32,7 @@ USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	DBDIR=${DBDIR} \
 		SHLIB=${PORTVERSION:S/.p/pre/}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \
 		--with-gdbm-root=${LOCALBASE} \

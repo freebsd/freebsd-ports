@@ -27,7 +27,7 @@ USE_AUTOHEADER_VER=	259
 AUTOMAKE_ARGS=	--add-missing
 USE_AUTOMAKE_VER=	19
 USE_LIBTOOL_VER=	15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 do-extract:
 	${MKDIR} ${WRKDIR}

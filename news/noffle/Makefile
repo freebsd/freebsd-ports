@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=--with-configfile=${LOCALBASE}/etc/noffle.conf \
 		--with-usersfile=${LOCALBASE}/etc/noffle.users
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 
 SPOOL_DIR=	/var/spool/noffle
 PLIST_SUB+=	SPOOL_DIR=${SPOOL_DIR}

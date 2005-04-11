@@ -26,7 +26,7 @@ LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 FFLAGS+=	-mfancy-math-387
 .endif # i386
 .endif

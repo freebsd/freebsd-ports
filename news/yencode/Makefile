@@ -19,7 +19,7 @@ COMMENT=	A free (GPL) encoder and decoder for the yEnc Usenet file format
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	ydecode.1 yencode.1 ypost.1

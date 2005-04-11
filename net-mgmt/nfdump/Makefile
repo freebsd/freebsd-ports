@@ -15,7 +15,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Command-line tools to collect and process NetFlow data
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfprofile bin/nfreplay bin/nfclean.pl
 MAN1=		nfcapd.1 nfdump.1 nfprofile.1 nfreplay.1

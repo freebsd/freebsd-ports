@@ -17,7 +17,7 @@ COMMENT=	An application of machine learning to e-mail filtering
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 MAN1=		ifile.1
 
 .include <bsd.port.mk>

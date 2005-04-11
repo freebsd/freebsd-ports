@@ -33,10 +33,10 @@ GNUSTEP_BACK_PORT?=	x11-toolkits/gnustep-back
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 GNU_ARCH=	ix86
 .else
-GNU_ARCH=	${MACHINE_ARCH}
+GNU_ARCH=	${ARCH}
 .endif
 
 SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries

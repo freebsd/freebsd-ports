@@ -20,7 +20,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gnomedesktop
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 USE_REINPLACE=	yes
 
 pre-patch:

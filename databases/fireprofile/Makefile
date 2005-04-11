@@ -29,7 +29,7 @@ WANT_MYSQL_VER=	323
 post-install:
 		$(LN) ${PREFIX}/lib/libfireprofile.so ${PREFIX}/lib/libfireprofile.so.0
 
-.if ${MACHINE_ARCH:L} == amd64
+.if ${ARCH:L} == amd64
 CFLAGS+=	-fPIC
 .endif
 .include <bsd.port.mk>

@@ -59,7 +59,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=# empty
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--enable-mt \
-		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--build=${ARCH}-portbld-freebsd${OSREL} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
 

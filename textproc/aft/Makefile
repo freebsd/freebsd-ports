@@ -16,7 +16,7 @@ COMMENT=	A document preparation system using an Almost Free Text input format
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	-build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	-build=${ARCH}-portbld-freebsd${OSREL}
 
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=	install-binSCRIPTS install-pkgdataDATA install-pkgdataSCRIPTS
