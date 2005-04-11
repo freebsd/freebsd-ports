@@ -275,7 +275,8 @@ rm -rf ${chroot}/usr/ports
 # Don't build in a world-writable directory because some ports hardcode
 # this path and try to load things from it at runtime, which is bad for
 # user security
-mkdir ${chroot}/work
+rm -rf ${chroot}/${WRKDIRPREFIX}
+mkdir -p ${chroot}/${WRKDIRPREFIX}
 
 if [ ! -z "${ccache_dir}" ]; then
   mkdir -p ${chroot}/root/.ccache/
@@ -381,4 +382,5 @@ if [ "${error}" = 0 ]; then
   error=$(cat ${chroot}/tmp/status)
 fi
 
+rm -rf ${chroot}/${WRKDIRPREFIX}
 exit $error
