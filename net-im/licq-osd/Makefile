@@ -11,7 +11,7 @@ PORTVERSION=	${OSD_LICQ_VER}
 CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	OnScreenDisplay messages in licq (like in SIM and more)
+COMMENT=	OnScreenDisplay messages in licq
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 RUN_DEPENDS=${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net/licq-qt-gui
@@ -23,7 +23,10 @@ USE_LIBTOOL_VER=15
 
 LICQ_PORT?=	net/licq
 
-PLIST_FILES=	lib/licq/licq_osd.so
+LOCALES=	de cs es fr pt ro ru se
+PLIST_FILES=	lib/licq/licq_osd.so \
+		${LOCALES:C+^..+share/locale/&/LC_MESSAGES/licq_osd_plugin.mo+}
+PLIST_DIRS=	share/locale/se/LC_MESSAGES share/locale/se
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
