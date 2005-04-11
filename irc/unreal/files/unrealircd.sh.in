@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: unrealircd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable Unreal IRCd:
+# unrealircd_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable Unreal IRCd
+#
+
+. %%RC_SUBR%%
+
+name="unrealircd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/libexec/ircd"
+pidfile="%%RUNDIR%%/ircd.pid"
+
+[ -z "$unrealircd_enable" ]	&& unrealircd_enable="NO"
+
+required_dirs="%%RUNDIR%% %%RUNDIR%%/tmp"
+required_files="%%PREFIX%%/etc/Unreal/unrealircd.conf"
+
+load_rc_config $name
+run_rc_command "$1"

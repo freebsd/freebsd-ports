@@ -1,0 +1,17 @@
+--- networks/makenet	Sun Apr 25 01:19:28 2004
++++ networks/makenet	Mon Feb  7 04:24:00 2005
+@@ -241,10 +241,10 @@
+ __EOF__
+ 
+ echo ""
+-echo "" >> ../unrealircd.conf
+-echo "// Added by makenet $DATE" >> ../unrealircd.conf
+-echo "include \"networks/$FILE\";" >> ../unrealircd.conf
+-echo "All done. I have added \"include \"networks/$FILE\"; to your unrealircd.conf"
++echo "" >> %%PREFIX%%/etc/Unreal/unrealircd.conf
++echo "// Added by makenet $DATE" >> %%PREFIX%%/etc/Unreal/unrealircd.conf
++echo "include \"%%PREFIX%%/share/Unreal/networks/$FILE\";" >> %%PREFIX%%/etc/Unreal/unrealircd.conf
++echo "All done. I have added \"include \"%%PREFIX%%/share/Unreal/networks/$FILE\"; to your unrealircd.conf"
+ echo "You might want to edit it if you have done makenet before"
+ echo "Thank you for choosing UnrealIRCd"
+ exit
