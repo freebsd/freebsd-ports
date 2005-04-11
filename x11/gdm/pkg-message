@@ -1,9 +1,8 @@
 GDM is installed.
 
 Do _NOT_ use /etc/ttys to start gdm at boot time.  This will result in gdm 
-hanging or restarting constantly.  Instead, copy the included gdm.sh.sample 
-script to gdm.sh, and restart.  This script is found in
-%%PREFIX%%/etc/rc.d.
+hanging or restarting constantly. Instead, add gdm_enable="YES" to 
+/etc/rc.conf. GDM will be started automatic on the next reboot.
 
 GDM uses its own locale.alias file to determine its language and especially
 the GNOME 2 fontencoding. This file is located in
@@ -11,16 +10,3 @@ the GNOME 2 fontencoding. This file is located in
 country using the EURO currency is set to ISO8859-15 in order to enable the 
 EURO sign. If you do not feel comfortable with this, edit this file according 
 to your preferences.
-
-If you are running 5.X and you are running 5.1-RELEASE or earlier, GDM will 
-fail to work due to a bug in OpenPAM.  You can download a patch from
-http://www.FreeBSD.org/~marcus/pam_get_user.c.diff.  You must also have the
-FreeBSD src tree on your system.  Do the following to apply the patch:
-
-# cd /usr
-
-# patch -p < /path/to/pam_get_user.c.diff
-
-
-Then rebuild and install world.  Note, this bug does _NOT_ affect FreeBSD
-4.X.

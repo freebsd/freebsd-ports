@@ -7,7 +7,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.6.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.6
@@ -19,6 +19,7 @@ COMMENT=	GNOME 2 version of xdm display manager
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
+USE_RC_SUBR=	gdm.sh
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui librsvg2
 USE_LIBTOOL_VER=15
@@ -49,10 +50,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-post-extract:
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" \
-		${FILESDIR}/gdm.sh.sample > ${WRKSRC}/gdm.sh.sample
-
 post-patch:
 .if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
 	( ${OSVERSION} < 503101 )
@@ -66,7 +63,6 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${MKDIR} ${PREFIX}/etc/gdm/Sessions
-	@${INSTALL_SCRIPT} ${WRKSRC}/gdm.sh.sample ${PREFIX}/etc/rc.d
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
