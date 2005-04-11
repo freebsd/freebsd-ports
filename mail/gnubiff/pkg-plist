@@ -1,4 +1,14 @@
 bin/gnubiff
+share/locale/de/LC_MESSAGES/gnubiff.mo
+share/locale/es/LC_MESSAGES/gnubiff.mo
+share/locale/fr/LC_MESSAGES/gnubiff.mo
+share/locale/fr_CA/LC_MESSAGES/gnubiff.mo
+share/locale/fr_FR/LC_MESSAGES/gnubiff.mo
+share/locale/it/LC_MESSAGES/gnubiff.mo
+share/locale/nl/LC_MESSAGES/gnubiff.mo
+share/locale/ro/LC_MESSAGES/gnubiff.mo
+share/locale/sv/LC_MESSAGES/gnubiff.mo
+share/locale/vi/LC_MESSAGES/gnubiff.mo
 %%SHAREDIR%%/gnubiff/applet-gnome.glade
 %%SHAREDIR%%/gnubiff/applet-gtk.glade
 %%SHAREDIR%%/gnubiff/authentication.glade
@@ -19,6 +29,8 @@ bin/gnubiff
 %%SHAREDIR%%/pixmaps/gnubiff.png
 %%WITH_GNOME%%%%BONOBODIR%%/servers/GNOME_gnubiffApplet.server
 %%WITH_GNOME%%%%SHAREDIR%%/gnome-2.0/ui/GNOME_gnubiffApplet.xml
+@unexec rmdir %D/share/locale/fr_CA/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/fr_CA 2> /dev/null || true
 @unexec rmdir %D/%%BONOBODIR%%/servers 2> /dev/null || true
 @unexec rmdir %D/%%BONOBODIR%% 2> /dev/null || true
 @unexec rmdir %D/%%SHAREDIR%%/gnome-2.0/ui 2> /dev/null || true
