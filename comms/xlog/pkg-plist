@@ -31,35 +31,35 @@ share/pixmaps/xlog/xlog-icon.png
 share/pixmaps/xlog/xlog-keyer.png
 share/pixmaps/xlog/xlog.png
 share/pixmaps/xlog/xlog.xpm
-share/xlog/AUTHORS
-share/xlog/BUGS
-share/xlog/ChangeLog
-share/xlog/FAQ
-share/xlog/FAQ.fr
-share/xlog/FAQ.pl
-share/xlog/MANUAL
-share/xlog/MANUAL.fr
-share/xlog/MANUAL.pl
-share/xlog/THANKS
-share/xlog/TODO
-share/xlog/dxcc/cty.dat
-share/xlog/dxcc/xlog.dat
-share/xlog/images/xlog-defaultsdialog.png
-share/xlog/images/xlog-dupecheckdialog.png
-share/xlog/images/xlog-keyerwindow.png
-share/xlog/images/xlog-logeditor.png
-share/xlog/images/xlog-mainwindow.png
-share/xlog/images/xlog-mergelogdialog.png
-share/xlog/images/xlog-newlogdialog.png
-share/xlog/images/xlog-openlogdialog.png
-share/xlog/images/xlog-preferencesdialog-hamlib.png
-share/xlog/images/xlog-preferencesdialog-info.png
-share/xlog/images/xlog-printdialog.png
-share/xlog/images/xlog-workedwindow.png
-share/xlog/qsllabels.glabels
-@dirrm share/xlog/images
-@dirrm share/xlog/dxcc
-@dirrm share/xlog
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/BUGS
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/FAQ
+%%DATADIR%%/FAQ.fr
+%%DATADIR%%/FAQ.pl
+%%DATADIR%%/MANUAL
+%%DATADIR%%/MANUAL.fr
+%%DATADIR%%/MANUAL.pl
+%%DATADIR%%/THANKS
+%%DATADIR%%/TODO
+%%DATADIR%%/dxcc/cty.dat
+%%DATADIR%%/dxcc/xlog.dat
+%%DATADIR%%/images/xlog-defaultsdialog.png
+%%DATADIR%%/images/xlog-dupecheckdialog.png
+%%DATADIR%%/images/xlog-keyerwindow.png
+%%DATADIR%%/images/xlog-logeditor.png
+%%DATADIR%%/images/xlog-mainwindow.png
+%%DATADIR%%/images/xlog-mergelogdialog.png
+%%DATADIR%%/images/xlog-newlogdialog.png
+%%DATADIR%%/images/xlog-openlogdialog.png
+%%DATADIR%%/images/xlog-preferencesdialog-hamlib.png
+%%DATADIR%%/images/xlog-preferencesdialog-info.png
+%%DATADIR%%/images/xlog-printdialog.png
+%%DATADIR%%/images/xlog-workedwindow.png
+%%DATADIR%%/qsllabels.glabels
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/dxcc
+@dirrm %%DATADIR%%
 @dirrm share/pixmaps/xlog
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
