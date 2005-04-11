@@ -1,0 +1,22 @@
+--- configure.orig	Mon Mar 28 21:16:17 2005
++++ configure	Mon Apr 11 02:44:50 2005
+@@ -35871,15 +35871,15 @@
+ fi
+ 
+ 
+-if test x$SDL_CONFIG = xyes; then
+-    sdl_cflags=`sdl-config --cflags`
+-    sdl_libs=`sdl-config --libs`
++if test -n $SDL_CONFIG ; then
++    sdl_cflags=`$SDL_CONFIG --cflags`
++    sdl_libs=`$SDL_CONFIG --libs`
+ fi
+ 
+ 
+ 
+ 
+-if test x$PKGCONFIGFOUND = xyes -a x$SDL_CONFIG = xyes; then
++if test x$PKGCONFIGFOUND = xyes -a -n $SDL_CONFIG ; then
+ 
+ 
+   succeeded=no
