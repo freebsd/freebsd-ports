@@ -1,0 +1,12 @@
+PEAR::XML_HTMLSax provides an API very similar to the native PHP XML
+extension (http://www.php.net/xml), allowing handlers using one to be easily
+adapted to the other.
+
+The key difference is HTMLSax will not break on badly formed XML, allowing it
+to be used for parsing HTML documents. Otherwise HTMLSax supports all the
+handlers available from Expat except namespace and external entity handlers.
+
+Provides methods for handling XML escapes as well as JSP/ASP opening and close
+tags.
+
+WWW: http://pear.php.net/package/XML_HTMLSax/
