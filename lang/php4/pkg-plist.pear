@@ -1,6 +1,7 @@
 bin/pear
 lib/php/pear/.filemap
 lib/php/pear/.lock
+@exec mkdir -p %D/lib/php/pear/.registry
 share/pear/bootstrap/Archive/Tar.php
 share/pear/bootstrap/PEAR.php
 share/pear/bootstrap/System.php
