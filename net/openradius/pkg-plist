@@ -1,38 +1,32 @@
-etc/openradius/behaviour
-etc/openradius/configuration
-etc/openradius/behaviour.sample-ldap
-etc/openradius/behaviour.sample-ldap-authbind
-etc/openradius/behaviour.sample-mysql
-etc/openradius/behaviour.sample-postgres
-etc/openradius/behaviour.sample-unixpass
-etc/openradius/behaviour.sample-usersfile
-etc/openradius/configuration.sample-ldap
-etc/openradius/configuration.sample-ldap-authbind
-etc/openradius/configuration.sample-mysql
-etc/openradius/configuration.sample-postgres
-etc/openradius/configuration.sample-unixpass
-etc/openradius/configuration.sample-usersfile
-etc/openradius/dictionary
+etc/openradius/behaviour.sample
+etc/openradius/configuration.sample
+etc/openradius/dictionary.sample
 
-etc/openradius/legacy/clients
-etc/openradius/legacy/users
-etc/openradius/legacy/realms
+etc/openradius/legacy/clients.sample
+etc/openradius/legacy/nases.sample
+etc/openradius/legacy/users.sample
+etc/openradius/legacy/realms.sample
 @dirrm etc/openradius/legacy
 
 etc/openradius/modules/radldap.attrmap
 @dirrm etc/openradius/modules
 
+etc/openradius/subdicts/dict.ascend
 etc/openradius/subdicts/dict.cisco
+etc/openradius/subdicts/dict.erx
+etc/openradius/subdicts/dict.garderos
 etc/openradius/subdicts/dict.internal
 etc/openradius/subdicts/dict.microsoft
+etc/openradius/subdicts/dict.nomadix
 etc/openradius/subdicts/dict.rfc2869
 etc/openradius/subdicts/dict.stdacct
 etc/openradius/subdicts/dict.stdauth
 etc/openradius/subdicts/dict.str-ldap
+etc/openradius/subdicts/dict.tnova
 etc/openradius/subdicts/dict.tunnel
 etc/openradius/subdicts/dict.usr
 etc/openradius/subdicts/dict.vendors
-etc/openradius/subdicts/dict.ascend
+etc/openradius/subdicts/dict.wispr
 @dirrm etc/openradius/subdicts
 
 @dirrm etc/openradius

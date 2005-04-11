@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openradius
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~evbergen/openradius/download/ \
 		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/
@@ -34,6 +33,18 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 post-install:
+# Configuration, copy over to sample files
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+.for FILE in dictionary behaviour configuration
+	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} \
+		${PREFIX}/etc/${PORTNAME}/${FILE}.sample
+.endfor
+# Copy over legacy config files to sample
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}/legacy
+.for FILE in clients nases realms users
+	${INSTALL_DATA} ${WRKSRC}/etc/legacy/${FILE} \
+		${PREFIX}/etc/${PORTNAME}/legacy/${FILE}.sample
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
