@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	destroy
-PORTVERSION=	20040415
+PORTVERSION=	20050329
 CATEGORIES=	security
 MASTER_SITES=	http://www.freebsdhackers.net/destroy/ \
+		http://destroy.rider.us/ \
 		http://www.impurity.org/mirrors/destroy/
 
 MAINTAINER=	shane@freebsdhackers.net
