@@ -39,7 +39,7 @@ RESTRICTED=		"binaries under GNU GPL without accompanying source"
 
 USE_LINUX?=		yes
 NO_LATEST_LINK=		yes
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 amd64
 CONFLICTS=		linux_devtools-*
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
 PREFIX=			${LINUXBASE}
@@ -63,6 +63,11 @@ RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
 REMOVE_DIRS=		dev tmp var/tmp
 REMOVE_FILES=
+
+.if (${ARCH} == "amd64")
+ARCH=			i386
+RPMFLAGS+=		--ignorearch
+.endif
 
 do-patch:
 	@${DO_NADA}
