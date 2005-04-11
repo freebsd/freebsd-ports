@@ -1,8 +1,8 @@
---- client/gui_rpc_server.C.orig	Tue Dec 21 13:25:39 2004
-+++ client/gui_rpc_server.C	Tue Dec 21 13:27:04 2004
-@@ -49,7 +49,7 @@
- typedef int socklen_t;
- #elif defined(__APPLE__)
+--- lib/network.h.orig	Mon Mar  7 16:19:09 2005
++++ lib/network.h	Sun Mar 20 22:35:20 2005
+@@ -25,7 +25,7 @@
+ #define SHUT_WR SD_SEND
+ #elif defined( __APPLE__)
  typedef int32_t socklen_t;
 -#elif !defined(GETSOCKOPT_SOCKLEN_T) && !defined(_SOCKLEN_T_DECLARED) && !defined(socklen_t)
 +#elif !defined(__FreeBSD__)

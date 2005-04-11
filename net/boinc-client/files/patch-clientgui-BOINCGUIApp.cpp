@@ -1,0 +1,11 @@
+--- clientgui/BOINCGUIApp.cpp.orig	Fri Mar 11 08:08:50 2005
++++ clientgui/BOINCGUIApp.cpp	Tue Mar 22 14:05:34 2005
+@@ -81,8 +81,6 @@
+         BOINC_DIAG_DUMPCALLSTACKENABLED | 
+         BOINC_DIAG_HEAPCHECKENABLED |
+         BOINC_DIAG_MEMORYLEAKCHECKENABLED |
+-        BOINC_DIAG_REDIRECTSTDERR |
+-        BOINC_DIAG_REDIRECTSTDOUT |
+         BOINC_DIAG_TRACETOSTDOUT;
+ 
+     diagnostics_init(
