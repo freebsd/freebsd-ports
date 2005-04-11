@@ -1,0 +1,7 @@
+PEAR::XML_Beautifier will add indentation and linebreaks to you XML files,
+replace all entities, format your comments and makes your document easier to
+read.
+
+You can influence the way your document is beautified with several options.
+
+WWW: http://pear.php.net/package/XML_Beautifier/
