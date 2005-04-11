@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.2
+PORTVERSION=	4.2.1
 PORTREVISION=
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=lofi
+		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	danny@ricin.com
