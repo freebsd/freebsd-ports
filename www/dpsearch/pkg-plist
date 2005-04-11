@@ -1,10 +1,9 @@
 bin/dps-config
 bin/search.cgi
 bin/storedoc.cgi
-etc/dpsearch/TraditionalChinese.freq
+etc/dpsearch/acronym/en.fido.acr
 etc/dpsearch/cached.conf-dist
 etc/dpsearch/indexer.conf-dist
-etc/dpsearch/korean.freq
 etc/dpsearch/langmap.conf-dist
 etc/dpsearch/langmap/af.latin1.bible.lm
 etc/dpsearch/langmap/af.latin1.lm
@@ -52,6 +51,8 @@ etc/dpsearch/langmap/es.latin1.lm
 etc/dpsearch/langmap/et.cp1257.lm
 etc/dpsearch/langmap/et.latin4.lm
 etc/dpsearch/langmap/eu.latin1.lm
+etc/dpsearch/langmap/fa.isiri3342.lm
+etc/dpsearch/langmap/fa.utf-8.lm
 etc/dpsearch/langmap/fi.latin1.lm
 etc/dpsearch/langmap/fr.latin1.bible.lm
 etc/dpsearch/langmap/fr.latin1.lm
@@ -86,9 +87,14 @@ etc/dpsearch/langmap/lt.latin4.lit.lm
 etc/dpsearch/langmap/lt.latin4.lm
 etc/dpsearch/langmap/lv.cp1257.lm
 etc/dpsearch/langmap/lv.latin4.lm
+etc/dpsearch/langmap/mi.latin1.lm
+etc/dpsearch/langmap/mi.utf-8.lm
+etc/dpsearch/langmap/mt.latin1.lm
+etc/dpsearch/langmap/mt.utf-8.lm
 etc/dpsearch/langmap/nl.latin1.bible.lm
 etc/dpsearch/langmap/nl.latin1.lm
 etc/dpsearch/langmap/no.latin1.lm
+etc/dpsearch/langmap/no.utf-8.lm
 etc/dpsearch/langmap/pl.cp1250.lit.lm
 etc/dpsearch/langmap/pl.cp1250.lm
 etc/dpsearch/langmap/pl.cp852.lit.lm
@@ -139,7 +145,6 @@ etc/dpsearch/langmap/vi.viscii.lm
 etc/dpsearch/langmap/zh.big5.lm
 etc/dpsearch/langmap/zh.gb2312.lm
 etc/dpsearch/langmap/zh.utf8.lm
-etc/dpsearch/mandarin.freq
 etc/dpsearch/search.htm-dist
 etc/dpsearch/searchd.conf-dist
 etc/dpsearch/sections.conf-dist
@@ -185,10 +190,8 @@ etc/dpsearch/stored.conf-dist
 etc/dpsearch/storedoc.htm-dist
 etc/dpsearch/synonym/english.syn
 etc/dpsearch/synonym/francais.syn
-etc/dpsearch/synonym/italian2.syn
-etc/dpsearch/synonym/russian.big.syn
 etc/dpsearch/synonym/russian.syn
-etc/dpsearch/thai.freq
+include/dps_acronym.h
 include/dps_agent.h
 include/dps_alias.h
 include/dps_base.h
@@ -425,4 +428,5 @@ sbin/stored
 @dirrm etc/dpsearch/synonym
 @dirrm etc/dpsearch/stopwords
 @dirrm etc/dpsearch/langmap
+@dirrm etc/dpsearch/acronym
 @dirrm etc/dpsearch
