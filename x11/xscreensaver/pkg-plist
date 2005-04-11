@@ -5,6 +5,7 @@ bin/xscreensaver-getimage
 bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
+bin/xscreensaver-text
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/anemotaxis
 bin/xscreensaver-hacks/ant
