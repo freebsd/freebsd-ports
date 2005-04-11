@@ -15,10 +15,6 @@ MASTER_SITE_SUBDIR=	lame
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	ISO code based fast MP3 encoder kit
 
-.if ${ARCH} == "i386"
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
@@ -30,6 +26,12 @@ NO_PACKAGE=	"patent issues, see http://www.mp3licensing.com/"
 MAN1=		lame.1
 
 DOC_FILES=	API LICENSE README TODO USAGE
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+.endif
 
 .if defined(NOPORTDOCS)
 do-install:
@@ -49,4 +51,4 @@ install-doc:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
