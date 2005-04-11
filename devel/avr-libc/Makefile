@@ -7,7 +7,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -52,6 +52,12 @@ DEMOFILES=	Makefile demo.c
 DEMOFILES+=	demo.bin demo.hex demo.pdf demo.srec
 .endif
 
+.if defined(MAINTAINER_DEBUG)
+ECHO_EXTRA_RM=	${ECHO_CMD} "Removing " $${to_be_rm_ed} "..."
+.else
+ECHO_EXTRA_RM=	${ECHO_CMD} "Removing extraneous man page files..."
+.endif
+
 do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
 
@@ -83,8 +89,20 @@ do-install:
 				${PREFIX}/share/doc/avr-libc/examples/twitest; \
 		done
 .if !defined(NOPORTDOCS)
-		${RM} -f ${PREFIX}/share/doc/avr-libc/man/man3/_tmp*
-		${RM} -f ${PREFIX}/share/doc/avr-libc/man/man3/_work*
+		@( \
+		tmpname=$${TMPDIR:-/tmp}/avr-libc-inst.$$$$ ; \
+		cd ${PREFIX}/share/doc/avr-libc/man/man3 ; \
+		${GREP} '^share/doc/.*man3/' ${PLIST_DOC} | \
+			${SED} -e 's,.*/,,' | \
+			${SORT} > $${tmpname}.1 ; \
+		${LS} -1  | \
+			${SED} -e 's,.*/,,' | \
+			${SORT} > $${tmpname}.2 ; \
+		to_be_rm_ed=$$(${COMM} -13 $${tmpname}.1 $${tmpname}.2) ; \
+		${RM} -f $${tmpname}.1 $${tmpname}.2 ; \
+		${ECHO_EXTRA_RM} ; \
+		${RM} -f $${to_be_rm_ed} \
+		)
 .endif
 
 .include <bsd.port.mk>
