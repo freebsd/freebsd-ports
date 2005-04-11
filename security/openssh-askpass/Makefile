@@ -20,14 +20,18 @@ USE_IMAKE=	yes
 MAN1=		ssh-askpass.1
 MANCOMPRESSED=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/ssh-askpass
+PLIST_FILES=	bin/ssh-askpass lib/X11/app-defaults/SshAskpass
+PORTDOCS=	README
+
 makesrctarball: fetch
 	@cd ${DISTDIR}; \
 	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
 	${ECHO_MSG} ">> \"${DISTNAME}.tar.gz\"."; \
 	${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
-pre-install:
-	${MKDIR} ${PREFIX}/share/doc/ssh-askpass
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ssh-askpass/
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 
 .include <bsd.port.mk>
