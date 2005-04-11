@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/java/javavmwrapper/files/pkg-install.in,v 1.1 2004-12-16 15:38:17 glewis Exp $
+# $FreeBSD: /tmp/pcvs/ports/java/javavmwrapper/files/pkg-install.in,v 1.2 2005-04-11 21:21:16 glewis Exp $
 
 LOCALBASE=%%LOCALBASE%%
 
@@ -12,7 +12,7 @@ fi
 # Ensure all JDKs and JREs are installed
 for jvm in "${LOCALBASE}"/*jdk* "${LOCALBASE}"/*jre*; do
     if [ -x "${jvm}/bin/java" ]; then
-        "${PKG_PREFIX}"/bin/registervm "${jvm}/bin/java"
+        "${PKG_PREFIX}"/bin/registervm "${jvm}/bin/java" > /dev/null 2>&1
     fi
 done
 
