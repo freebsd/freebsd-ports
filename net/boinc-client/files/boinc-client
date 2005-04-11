@@ -1,6 +1,0 @@
-#!/bin/sh
-
-args="$@"
-
-exec idprio 31 su - %%BOINC_USER%% -c "%%BOINC_DATADIR%%/client/%%BOINC_BINARY%% $args"
-

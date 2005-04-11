@@ -1,12 +1,14 @@
-.TH boinc-client 1 "October 1, 2004" "" "BOINC"
+.TH boinc 1 "October 1, 2004" "" "BOINC"
 .SH NAME
-boinc-client \- client for Berkeley Open Infrastructure for Network Computing
+boinc \- client for Berkeley Open Infrastructure for Network Computing
 .SH SYNOPSIS
-boinc-client [ options ]
+boinc [ options ]
+.PP
+boincmgr
 .PP
 sh /usr/local/etc/rc.d/boinc.sh start|stop|restart|status
 .SH DESCRIPTION
-.I boinc-client
+.I boinc
 is the client for the Berkeley Open Infrastructure for Network
 Computing (BOINC) service.  It is used by projects such as SETI@HOME
 and ClimatePredictor to offer your spare CPU cycles to such projects.
@@ -22,9 +24,9 @@ work unit computation, and finally upload the results back to the
 project.  If no work is available for one of your projects, BOINC
 will run another of your projects.
 .PP
-BOINC runs project clients at low priority, with a
-.IR nice (1)
-value of 19, to ensure that as soon as you need your computer for
+BOINC runs project clients at low priority, with an
+.IR idprio (1)
+value of 31, to ensure that as soon as you need your computer for
 any other work, BOINC projects stop so that you are not delayed
 by them.
 .PP
@@ -33,7 +35,7 @@ with each on the project's website.  You can find out about BOINC
 projects on the BOINC website.  Upon registering with a project,
 you will receive an account ID for the project.
 Run
-.I "boinc-client -attach_project"
+.I "boinc -attach_project"
 to add new projects to your BOINC configuration using the project
 URL and your account ID.
 Depending on what operating system platforms the project supports
@@ -47,7 +49,7 @@ available.  In such cases, you will not be able to participate in
 that project from FreeBSD.
 .PP
 Running
-.I boinc-client
+.I boinc
 with no arguments starts the service and any configured projects.
 .PP
 You can edit both BOINC general preferences and project-specific
@@ -56,19 +58,9 @@ registered with.  Preferences will take effect next time BOINC
 contacts that project's server, e.g., to download more work or
 to upload results.
 .PP
-.I /usr/local/etc/rc.d/boinc.sh
-script is run automatically at system boot time.
-The
-.I /etc/rc.conf
-variable
-.I boinc_enable
-must be set to
-.I boinc_enable="YES"
-for this script to start BOINC at boot time.
-.PP
 The user
 .I %%BOINC_USER%%
-needs to exist; all invocations of boinc-client will run as this
+needs to exist; all invocations of boinc will run as this
 user.  If you want users other than root to be able to start
 BOINC, set a password on this account so that anyone can run
 .I boinc_client
@@ -83,6 +75,78 @@ program is trustworthy and will not abuse your computer.  The
 BOINC scheduler does not restrict clients in any way other than to
 run them as the user
 .IR %%BOINC_USER%% .
+.SH "GRAPHICAL MANAGEMENT INTERFACE"
+Running
+.I "boinc -allow_remote_gui_rpc"
+allows the
+.I boincmgr
+graphical management interface to interact with the client.
+.PP
+The
+.I boincmgr
+program provides a graphical management interface to the core
+boinc.  After
+.I boinc
+has been started, run
+.I boincmgr
+to add new projects, to see the status of existing projects'
+work units, and to control the client.
+.PP
+.I boincmgr
+can also be used to monitor and manage BOINC clients on other
+hosts.
+.PP
+On the
+.I Work
+tab, there is a
+.I "Show graphics"
+button which displays a graphical status window from the client
+application.
+For the
+.I "Show graphics"
+option to have effect, it must be understood that it is the
+client application that opens up the status window.  The value
+of the
+.I DISPLAY
+environment variable of the
+.I boincmgr
+process is passed to the BOINC core and then to the client
+application, and must have meaning to that client.  A value
+of
+.I ":0.0"
+will work for local clients, but for clients on remote hosts,
+a value such as
+.I "hostname:0.0"
+or
+.I "hostname.domain.com:0.0"
+will be needed.
+In addition, the local X-server host access permissions must
+allow access to the display by the client.
+For local clients, the simplest way to allow this is to use
+.IR xhost (1),
+e.g.,
+.IR "xhost\ +local:" .
+.PP
+Full documentation of
+.I boincmgr
+is not provided here, but may be added in a future release.
+.SH "STARTING BOINC AT BOOT TIME"
+The
+.I /usr/local/etc/rc.d/boinc.sh
+script is run automatically at system boot time.
+Several variables can be set in
+.I /etc/rc.conf
+to control the BOINC client's behavior.
+.IP boinc_enable
+set to
+.I "YES"
+to start BOINC at boot time
+.IP boinc_flags
+passed to the BOINC client, e.g.,
+.I boinc_flags="-allow_remote_gui_rpc"
+to allow access from the
+.I boincmgr
+graphical management interface.
 .SH OPTIONS
 The command-line client has the following command-line options:
 .IP -attach_project
@@ -112,6 +176,8 @@ check for input activity on all current logins;
 default is to check only local mouse/keyboard
 .IP -exit_when_idle
 Get, process and report work, then exit.
+.IP -redirectio
+Redirect stdout and stderr to log files.
 .IP -allow_remote_gui_rpc
 Allow GUI RPCs from remote hosts
 .IP -help
@@ -140,16 +206,14 @@ default home directory for
 .I %%BOINC_USER%%
 user
 .IP %%BOINC_HOME%%/*
-boinc-client configuration files
+boinc configuration files
 .IP %%BOINC_HOME%%/projects/*
 BOINC projects
 .IP %%BOINC_HOME%%/projects/*/*
 BOINC project work unit files
-.IP %%BOINC_DATADIR%%
-boinc-client and BOINC project programs
 .SH BUGS
 Suspending
-.I boinc-client
+.I boinc
 using ^Z works, but resuming using
 .I fg
 or
@@ -167,4 +231,5 @@ further restrict the size of its project or slot directories.
 On a hyperthreadded processor, performance may be limited due to shared
 use of processor modules such as the FPU.
 .SH "SEE ALSO"
+.IR xhost (1),
 http://boinc.berkeley.edu/

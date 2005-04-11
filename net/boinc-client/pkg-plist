@@ -1,51 +1,57 @@
-@exec mkdir -p %D/boinc/projects
-bin/boinc-client
-boinc/client/%%BOINC_BINARY%%
+bin/boinc
+bin/boincmgr
 etc/rc.d/boinc.sh
-boinc/Makefile.am
-boinc/lib/Makefile.am
-boinc/lib/app_ipc.h
-boinc/lib/base64.h
-boinc/lib/boinc_win.h
-boinc/lib/crypt.h
-boinc/lib/diagnostics.h
-boinc/lib/error_numbers.h
-boinc/lib/exception.h
-boinc/lib/filesys.h
-boinc/lib/gui_rpc_client.h
-boinc/lib/hostinfo.h
-boinc/lib/language.h
-boinc/lib/libboinc.a
-boinc/lib/librsaeuro.a
-boinc/lib/md5.h
-boinc/lib/md5_file.h
-boinc/lib/mfile.h
-boinc/lib/miofile.h
-boinc/lib/msg_log.h
-boinc/lib/msg_queue.h
-boinc/lib/parse.h
-boinc/lib/proxy_info.h
-boinc/lib/result_state.h
-boinc/lib/shmem.h
-boinc/lib/stackwalker_win.h
-boinc/lib/std_fixes.h
-boinc/lib/synch.h
-boinc/lib/util.h
-boinc/api/Makefile.am
-boinc/api/boinc_api.h
-boinc/api/boinc_gl.h
-boinc/api/graphics_api.h
-boinc/api/graphics_data.h
-boinc/api/gutil.h
-boinc/api/mac_app_opengl.h
-boinc/api/mac_carbon_gl.h
-boinc/api/reduce.h
-boinc/api/x_opengl.h
-@dirrm boinc/api
-@dirrm boinc/client
-@dirrm boinc/lib
-@dirrm boinc/projects
-@dirrm boinc
+include/BOINC/acct_mgr_client.h
+include/BOINC/app_ipc.h
+include/BOINC/base64.h
+include/BOINC/bmplib.h
+include/BOINC/boinc_api.h
+include/BOINC/boinc_gl.h
+include/BOINC/boinc_win.h
+include/BOINC/boinc_zip.h
+include/BOINC/crypt.h
+include/BOINC/diagnostics.h
+include/BOINC/error_numbers.h
+include/BOINC/exception.h
+include/BOINC/filesys.h
+include/BOINC/graphics_api.h
+include/BOINC/graphics_data.h
+include/BOINC/graphics_impl.h
+include/BOINC/graphics_lib.h
+include/BOINC/gui_rpc_client.h
+include/BOINC/gutil.h
+include/BOINC/hostinfo.h
+include/BOINC/language.h
+include/BOINC/md5.h
+include/BOINC/md5_file.h
+include/BOINC/mem_usage.h
+include/BOINC/mfile.h
+include/BOINC/miofile.h
+include/BOINC/msg_log.h
+include/BOINC/msg_queue.h
+include/BOINC/network.h
+include/BOINC/parse.h
+include/BOINC/prefs.h
+include/BOINC/proxy_info.h
+include/BOINC/reduce.h
+include/BOINC/result_state.h
+include/BOINC/shmem.h
+include/BOINC/stackwalker_win.h
+include/BOINC/std_fixes.h
+include/BOINC/synch.h
+include/BOINC/tgalib.h
+include/BOINC/util.h
+include/BOINC/x_opengl.h
+lib/boinc/%%BOINC_BINARY%%
+lib/libboinc.a
+lib/libboinc_api.a
+lib/libboinc_graphics_api.a
+lib/libboinc_graphics_impl.a
+lib/libboinc_graphics_lib.a
+lib/librsaeuro.a
+lib/libboinc_zip.a
+@dirrm include/BOINC
+@dirrm lib/boinc
 @unexec if [ -d %%BOINC_HOME%% ]; then echo "If you are deinstalling boinc completely, remove the %%BOINC_HOME%% directory."; fi
 @unexec if [ -d %%BOINC_HOME%% ]; then echo -n "Also, d"; else echo -n "D"; fi
 @unexec echo "on't forget to remove the \"%%BOINC_USER%%\" user."

@@ -1,11 +1,18 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/boinc-client/files/Attic/boinc.sh-4.x,v 1.1 2004-12-15 05:14:36 edwin Exp $
+# $FreeBSD$
 #
 # Start or stop BOINC
 #
 
-. /usr/local/etc/rc.subr
+if [ -f /etc/rc.subr ]
+then
+	. /etc/rc.subr
+elif [ -f /usr/local/etc/rc.subr ]
+then
+	# FreeBSD 4.x
+	. /usr/local/etc/rc.subr
+fi
 
 name="boinc"
 rcvar=`set_rcvar`
@@ -13,7 +20,8 @@ rcvar=`set_rcvar`
 boinc_user=%%BOINC_USER%%
 boinc_home=%%BOINC_HOME%%
 program_file=%%BOINC_BINARY%%
-program_path=%%BOINC_DATADIR%%/client/${program_file}
+program_path=%%LOCALBASE%%/lib/boinc/${program_file}
+syslog_facility=daemon.err
 
 [ -z "$boinc_enable" ] && boinc_enable="NO"
 
@@ -34,14 +42,14 @@ start)
 			"unable to start: ${program_file} is already running."
 			exit 72
 		fi
-		echo -n "BOINC "
-		idprio 31 su - ${boinc_user} -c "${program_path} >/dev/null &"
+		echo "Starting BOINC client."
+		export LD_LIBRARY_PATH=%%LOCALBASE%%/lib/boinc
+		idprio 31 su - ${boinc_user} -c "${program_path} ${boinc_flags} >/dev/null &"
 	fi
 	;;
 
 stop)
-	program=`expr ${program_file} : '^\(................\).*$'`
-	killall ${program} 2> /dev/null
+	killall ${program_file} 2> /dev/null
 	;;
 
 restart)
