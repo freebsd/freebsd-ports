@@ -226,6 +226,7 @@
     SUBDIR += nbsmtp
     SUBDIR += newmail
     SUBDIR += nmh
+    SUBDIR += nmzmail
     SUBDIR += noattach
     SUBDIR += nocc
     SUBDIR += nohtml
