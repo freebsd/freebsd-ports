@@ -19,6 +19,8 @@ LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
+USE_GNOME=		gnomehack intltool intlhack gtk20 libartlgpl2
+WANT_GNOME=		yes
 ALL_TARGET=		build
 INSTALL_TARGET=		install-admin
 
