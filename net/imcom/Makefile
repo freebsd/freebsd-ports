@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	imcom
-PORTVERSION=	1.33
+DISTVERSION=	1.33p1
 CATEGORIES=	net
 MASTER_SITES=	http://nafai.dyndns.org/files/ \
 		http://imcom.floobin.cx/files/
