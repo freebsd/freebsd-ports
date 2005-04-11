@@ -1,9 +1,22 @@
-libdata/bonobo/servers/timer-applet.server
+libdata/bonobo/servers/GNOME_TimerApplet.server
 libexec/timer-applet
-share/gnome/gnome-2.0/ui/timer-applet.xml
+share/gnome/gnome-2.0/ui/GNOME_TimerApplet.xml
+share/gnome/help/timer-applet/C/legal.xml
+share/gnome/help/timer-applet/C/timer-applet.xml
+share/gnome/help/timer-applet/fr/legal.xml
+share/gnome/help/timer-applet/fr/timer-applet.xml
+share/gnome/omf/timer-applet/timer-applet-C.omf
+share/gnome/omf/timer-applet/timer-applet-fr.omf
 share/gnome/pixmaps/timer-applet/timer-applet-icon.png
 share/locale/de/LC_MESSAGES/timer-applet.mo
+share/locale/es/LC_MESSAGES/timer-applet.mo
 share/locale/eu/LC_MESSAGES/timer-applet.mo
 share/locale/fr/LC_MESSAGES/timer-applet.mo
 share/locale/sv/LC_MESSAGES/timer-applet.mo
+@dirrm share/gnome/help/timer-applet/C/figures
+@dirrm share/gnome/help/timer-applet/C
+@dirrm share/gnome/help/timer-applet/fr/figures
+@dirrm share/gnome/help/timer-applet/fr
+@dirrm share/gnome/help/timer-applet
+@dirrm share/gnome/omf/timer-applet
 @dirrm share/gnome/pixmaps/timer-applet
