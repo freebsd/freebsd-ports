@@ -198,7 +198,7 @@ CONFIGURE_ARGS+=--with-mnogosearch=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mssql"
-LIB_DEPENDS+=	sybdb.4:${PORTSDIR}/databases/freetds-msdblib
+LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 
 CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
 .endif
@@ -330,7 +330,7 @@ OPTIONS=	UTF8 "Enable UTF-8 support" off
 .endif
 
 .if ${PHP_MODNAME} == "sybase_ct"
-LIB_DEPENDS+=	ct.2:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	ct.3:${PORTSDIR}/databases/freetds
 
 CONFIGURE_ARGS+=--with-sybase-ct=${LOCALBASE}
 .endif
