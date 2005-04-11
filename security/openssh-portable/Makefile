@@ -162,6 +162,8 @@ LDFLAGS=
 .else
 CONFIGURE_ARGS+=	--with-rpath=${OPENSSLRPATH}
 .endif
+.if ${OPENSSLBASE} != "/usr"
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
+.endif
 
 .include <bsd.port.post.mk>
