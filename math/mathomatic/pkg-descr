@@ -1,0 +1,11 @@
+Mathomatic is a highly portable, general purpose CAS (Computer Algebra System)
+published under the GNU LGPL license.  Mathomatic can:
+
+    * Solve, simplify, and compare algebraic equations,
+    * Perform calculus transformations,
+    * Help with finite series analysis,
+    * Generate the sensitivity formula for one or more variables in an equation,
+    * Perform complex number and polynomial arithmetic,
+    * Generate efficient C or Java code from equations. 
+
+WWW: http://www.mathomatic.com/

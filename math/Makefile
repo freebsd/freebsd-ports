@@ -105,6 +105,7 @@
     SUBDIR += linux-dislin
     SUBDIR += linux-relview
     SUBDIR += lp_solve
+    SUBDIR += mathomatic
     SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += mbasecalc
