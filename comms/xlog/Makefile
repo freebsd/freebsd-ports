@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	comms
 MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
 		http://www.qsl.net/pg4i/download/
