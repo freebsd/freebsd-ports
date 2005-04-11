@@ -7,7 +7,7 @@
 
 PORTNAME=	pgperl
 PORTVERSION=	2.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PGPLOT
@@ -19,11 +19,9 @@ COMMENT=	A perl5 extension which makes available the pgplot library
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
 
-BROKEN=		Incorrectly installs a perllocal.pod file
-
 USE_PERL5=	yes
-ALL_TARGET=	dynamic
 SCRIPTS_ENV=	PERL=${PERL}
+INSTALL_TARGET=	pure_install
 
 .include <bsd.port.pre.mk>
 
