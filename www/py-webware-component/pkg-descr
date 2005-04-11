@@ -1,0 +1,9 @@
+From document:
+
+	Components are useful if you have code that should know about the
+request and response, and possible intercept it. If the code doesn't need to
+know about the request at all, you should just create a normal Python library,
+and call into it explicitly. Components can also be a convenient way to add new
+convenience methods to your servlet.
+
+WWW:	http://wiki.w4py.org/component.html

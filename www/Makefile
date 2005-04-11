@@ -642,6 +642,7 @@
     SUBDIR += py-scgi
     SUBDIR += py-websvcs
     SUBDIR += py-webware
+    SUBDIR += py-webware-component
     SUBDIR += pyphany
     SUBDIR += pyweblib
     SUBDIR += qdecoder

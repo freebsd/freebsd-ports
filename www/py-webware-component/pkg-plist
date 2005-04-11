@@ -1,0 +1,15 @@
+share/webware/Component/Docs/default.css
+share/webware/Component/Docs/index.html
+share/webware/Component/Docs/index.txt
+share/webware/Component/Properties.py
+share/webware/Component/Properties.pyc
+share/webware/Component/__init__.py
+share/webware/Component/__init__.pyc
+share/webware/Component/component.py
+share/webware/Component/component.pyc
+share/webware/Component/cpage.py
+share/webware/Component/cpage.pyc
+share/webware/Component/notify.py
+share/webware/Component/notify.pyc
+@dirrm share/webware/Component/Docs
+@dirrm share/webware/Component
