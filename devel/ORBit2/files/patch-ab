@@ -1,14 +1,5 @@
 --- Makefile.in.orig	Fri Mar  5 23:34:38 2004
 +++ Makefile.in	Fri Mar  5 23:35:59 2004
-@@ -34,7 +34,7 @@
- includedir = @includedir@
- oldincludedir = /usr/include
- pkgdatadir = $(datadir)/@PACKAGE@
--pkglibdir = $(libdir)/@PACKAGE@
-+pkglibdir = $(prefix)/libdata/pkgconfig
- pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = .
- 
 @@ -125,7 +125,7 @@
  
  DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
