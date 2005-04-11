@@ -20,13 +20,13 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 
-BROKEN=		Broken dependency
+BROKEN=		Does not build
 
 .if defined(WITH_GHC5)
 GHC=		ghc-5.04.3
 GHCDEP=		ghc5
 .else
-GHC=		ghc-6.2.2
+GHC=		ghc-6.4
 GHCDEP=		ghc
 .endif
 
