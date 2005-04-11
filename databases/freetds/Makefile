@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.62.4
+PORTVERSION=	0.63
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
@@ -26,8 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 INSTALLS_SHLIB=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-MAN1=		freebcp.1 tsql.1
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-0.63
+MAN1=		freebcp.1 tsql.1 bsqldb.1 defncopy.1
 
 .if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
@@ -45,6 +45,8 @@ PLIST_SUB+=	ODBC=""
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
+# We cannot use msdblib-style by default, because port databases/sybtcl
+# relies on sybase-style dblib
 .if defined(WITH_MSDBLIB)
 CONFIGURE_ARGS+=	--enable-msdblib
 .endif
