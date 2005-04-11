@@ -1928,6 +1928,7 @@ esdl		ports/devel/esdl
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
 esmtp		ports/mail/esmtp
+esniper		ports/misc/esniper
 esound		ports/audio/esound
 est		ports/sysutils/est
 estctrl		ports/sysutils/estctrl
