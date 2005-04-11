@@ -1,3 +1,5 @@
+PORTREVISION=	1
+
 LIB_DEPENDS+=   expat.5:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
@@ -28,4 +30,7 @@ post-patch:
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/pear/scripts/pear ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/php/pear/.registry
+	@${TOUCH} ${PREFIX}/lib/php/pear/.filemap
+	@${TOUCH} ${PREFIX}/lib/php/pear/.lock
 	@${SED} "s|\$${LOCALBASE}|${LOCALBASE}|g;s|\$${PREFIX}|${PREFIX}|g" < ${PKGMESSAGE}
