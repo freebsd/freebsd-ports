@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	google
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6
 CATEGORIES=	net python
-MASTER_SITES=	http://diveintomark.org/projects/pygoogle/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pygoogle
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygoogle-${PORTVERSION}
 
@@ -18,13 +19,14 @@ COMMENT=	Python wrapper for the Google web API
 RUN_DEPENDS=	${PYXML}
 
 USE_PYTHON=	yes
-USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
-EXTRACT_BEFORE_ARGS=	-q -aa
 
-WRKSRC=		${WRKDIR}/pygoogle
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+DOCSDIR=	${PREFIX}/share/doc/py-google
 EXAMPLESDIR=	${PREFIX}/share/examples/py-google
+.endif
 
 post-patch:
 # www/py-websvcs has an incompatible version of SOAP.py
@@ -40,6 +42,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tests/*.py ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
