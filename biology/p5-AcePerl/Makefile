@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Ace
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	philip@p6m7g8.com
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Perl5 interface to the ACEDB genome database system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5

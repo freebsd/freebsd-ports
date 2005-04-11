@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filter
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	philip@p6m7g8.com
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Simplified source filtering
 
 PERL_CONFIGURE=	yes
