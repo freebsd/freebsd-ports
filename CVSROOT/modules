@@ -187,7 +187,6 @@ ac3dec		ports/audio/ac3dec
 accessx		ports/x11/accessx
 accrete		ports/astro/accrete
 ace		ports/devel/ace
-linux-firefox	ports/www/linux-firefox
 ace+tao		ports/devel/ace+tao
 ace+tao-doc	ports/devel/ace+tao-doc
 acfax		ports/comms/acfax
@@ -5297,6 +5296,7 @@ lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
 lindele		ports/audio/lindele
 lineak_defaultplugin	ports/sysutils/lineak_defaultplugin
+lineak_kdeplugins	ports/sysutils/lineak_kdeplugins
 lineak_xosdplugin	ports/sysutils/lineak_xosdplugin
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
@@ -5339,6 +5339,7 @@ linux-edonkey-tool-recovermet	ports/misc/linux-edonkey-tool-recovermet
 linux-enemyterritory	ports/games/linux-enemyterritory
 linux-esound	ports/audio/linux-esound
 linux-expat	ports/textproc/linux-expat
+linux-firefox	ports/www/linux-firefox
 linux-flashplugin	ports/www/linux-flashplugin
 linux-flashplugin6	ports/www/linux-flashplugin6
 linux-flashplugin7	ports/www/linux-flashplugin7
