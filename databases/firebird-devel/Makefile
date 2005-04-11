@@ -6,43 +6,50 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	2.0.a0
-PORTREVISION=	1
+PORTVERSION=	2.0.a1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.aims.net.au/chris/firebird/
-MASTER_SITE_SUBDIR=firebird
+MASTER_SITES=	http://www.ramenzoni.com.br/~garga/firebird/
+MASTER_SITE_SUBDIR=	firebird
 PKGNAMESUFFIX=	-devel
-DISTNAME=	firebird2-20031110
+DISTNAME=	firebird2-20050327
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-WANT_LIBTOOL_VER=	13
-GNU_CONFIGURE=	yes
+USE_BZIP2=		yes
+USE_GMAKE=		yes
+WANT_LIBTOOL_VER=	15
 WANT_AUTOCONF_VER=	259
-USE_GCC=	3.4
+GNU_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	autogen.sh
+CONFIGURE_ARGS=		--with-lock-manager --with-editline
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GCC=		3.4
+
+PREFIX?=	${LOCALBASE}/${PORTNAME}
+NO_MTREE=	yes
 
 CONFLICTS=	firebird-1.*
 NO_PACKAGE=	pkg-install not finished
 
 WRKSRC=		${WRKDIR}/firebird2
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
-MSG_FILE=	${PKGDIR}/pkg-message
+LDCONFIG_DIRS=	%%PREFIX%%/lib
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-USE_REINPLACE=	yes
 
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build on FreeBSD-4.x"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "NOTE: If the work directory is on an NFS mount, you will"
 	@${ECHO_MSG} "require NFS client locking support for the build to"
-	@${ECHO_MSG} "succeed. Currently this is only available on FreeBSD 5.0"
-	@${ECHO_MSG} "or greater."
+	@${ECHO_MSG} "succeed."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
 	@${ECHO_MSG} "changed since version 1.0.x."
@@ -52,14 +59,7 @@ pre-everything::
 	@sleep 10
 .endif
 
-do-configure:
-	@(cd ${WRKSRC} && ${ENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE} ./autogen.sh --prefix=${PREFIX}/firebird --with-lock-manager --with-editline)
-
-do-build:
-	@(								\
-	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE};	\
-	cd ${WRKSRC};							\
-	${ENV} CC=${CC} CXX=${CXX} ${GMAKE} all;			\
-	)
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
