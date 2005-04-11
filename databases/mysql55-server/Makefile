@@ -7,7 +7,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.0.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.0
@@ -153,6 +153,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
 .endif
@@ -189,6 +190,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
 .endif
