@@ -16,10 +16,6 @@ COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
-.if ${ARCH} == "i386"
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
@@ -39,6 +35,12 @@ MAKE_ENV=	DOC=doc
 INSTALLS_SHLIB=	yes
 MAN1=		flac.1 metaflac.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+.endif
+
 # "obj" is magic to our make(1)
 post-configure:
 	@${RM} -rf ${WRKSRC}/obj
@@ -49,4 +51,4 @@ post-build:
 test: build
 	@cd ${WRKSRC}; ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
