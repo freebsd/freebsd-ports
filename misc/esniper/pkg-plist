@@ -1,0 +1,4 @@
+bin/esniper
+%%EXAMPLESDIR%%/sample_auction.txt
+%%EXAMPLESDIR%%/sample_config.txt
+@dirrm %%EXAMPLESDIR%%
