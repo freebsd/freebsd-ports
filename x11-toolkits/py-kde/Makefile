@@ -10,10 +10,8 @@ PORTVERSION=	4.0.0
 PORTREVISION=
 CATEGORIES=	x11-toolkits kde python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/snapshots/PyKDE/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=lofi
+		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-# Tarball is pre-release snapshot ATM
 DISTNAME=	PyKDE-snapshot20050316
 
 MAINTAINER=	danny@ricin.com
@@ -25,10 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
-
-PYQTVERSION=	3.14
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
-
 NO_FILTER_SHLIBS=	yes
 
 .include <bsd.port.pre.mk>
