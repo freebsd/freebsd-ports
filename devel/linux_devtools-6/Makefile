@@ -10,19 +10,19 @@ PORTVERSION=		6.1
 PORTREVISION=		2
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${MACHINE_ARCH}/RedHat/RPMS
+MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${ARCH}/RedHat/RPMS
 DISTFILES=		${RPM_KERNEL_HEADERS} \
 			${RPM_GLIBC_DEVEL} \
-			make-3.77-6.${MACHINE_ARCH}.rpm \
-			cpp-1.1.2-24.${MACHINE_ARCH}.rpm \
-			egcs-1.1.2-24.${MACHINE_ARCH}.rpm \
-			egcs-c++-1.1.2-24.${MACHINE_ARCH}.rpm \
-			egcs-g77-1.1.2-24.${MACHINE_ARCH}.rpm \
+			make-3.77-6.${ARCH}.rpm \
+			cpp-1.1.2-24.${ARCH}.rpm \
+			egcs-1.1.2-24.${ARCH}.rpm \
+			egcs-c++-1.1.2-24.${ARCH}.rpm \
+			egcs-g77-1.1.2-24.${ARCH}.rpm \
 			${RPM_GDB} \
 			${RPM_X_DEVEL}
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
-PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/en/os/${MACHINE_ARCH}
+PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/en/os/${ARCH}
 PATCHFILES=
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
@@ -39,11 +39,11 @@ NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 USE_LINUX=		6
-PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
+PLIST=			${PKGDIR}/pkg-plist.${ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 RPM_GDB=		gdb-4.18-4.i386.rpm
 RPM_GLIBC_DEVEL=	glibc-devel-2.1.2-11.i386.rpm
 RPM_KERNEL_HEADERS=	kernel-headers-2.2.12-20.i386.rpm

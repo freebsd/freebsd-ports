@@ -23,7 +23,7 @@ USE_SDL=	image mixer sdl
 USE_GL=		yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-optimize
 
 MAN6=		critter.6

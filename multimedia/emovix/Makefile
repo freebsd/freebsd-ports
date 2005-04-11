@@ -16,7 +16,7 @@ MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A mini linux distro to create bootable video CDs
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_PERL5_BUILD=yes

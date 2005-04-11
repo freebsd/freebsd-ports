@@ -22,7 +22,7 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 .if defined(NOPORTDOCS)
 USE_REINPLACE=	yes
 .endif

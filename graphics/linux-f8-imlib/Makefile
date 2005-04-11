@@ -13,6 +13,6 @@ CATEGORIES=	graphics linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of imlib
 
-RPM_SET=	imlib-${PORTVERSION}-2.${MACHINE_ARCH}.rpm
+RPM_SET=	imlib-${PORTVERSION}-2.${ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

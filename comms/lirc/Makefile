@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-manage-devices --with-devdir=/var/lirc
 
 .include <bsd.port.pre.mk>

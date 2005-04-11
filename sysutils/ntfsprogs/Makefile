@@ -22,7 +22,7 @@ USE_GETOPT_LONG=	yes
 USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	GNOMEVFS2 "Install Gnome-VFS-2.0 libntfs interface" off
 

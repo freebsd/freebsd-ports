@@ -17,7 +17,7 @@ COMMENT=	ASCII to PostScript filter
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 INFO=		enscript
 MAN1=		diffpp.1 enscript.1 sliceprint.1 states.1

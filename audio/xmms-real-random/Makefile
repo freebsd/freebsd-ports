@@ -23,7 +23,7 @@ USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}'
 
 post-patch:

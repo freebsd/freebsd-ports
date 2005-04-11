@@ -34,7 +34,7 @@ USE_AUTOMAKE_VER=	19
 WANT_LIBTOOL_VER=	15
 
 AUTOMAKE_ARGS+=		--add-missing
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/src-//}/gnome-im-switcher
 PATCH_WRKSRC=   ${WRKDIR}/${DISTNAME:S/src-//}

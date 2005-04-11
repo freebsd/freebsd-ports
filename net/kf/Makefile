@@ -21,7 +21,7 @@ LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2
 USE_GETOPT_LONG=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

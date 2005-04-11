@@ -20,7 +20,7 @@ USE_LIBLTDL=	yes
 USE_INC_LIBTOOL_VER=	13
 USE_RC_SUBR=	yes
 CONFIGURE_ARGS=	--enable-fork
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
 USE_ICONV=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

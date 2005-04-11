@@ -18,7 +18,7 @@ DO_CFLAGS +=	-DNO_WINDOWED_MOUSE
 .undef WITHOUT_X86_ASM
 .endif
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
 .endif
 
@@ -116,7 +116,7 @@ CL_COMMON_OBJS = \
 		rulesets.o \
 		utils.o
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 CL_COMMON_AS_OBJS = \
 		cl_math.o \
 		math.o \
@@ -154,7 +154,7 @@ CL_SOFT_OBJS = \
 		r_surf.o \
 		r_vars.o
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 CL_SOFT_AS_OBJS = \
 		d_draw.o \
 		d_draw16.o \
@@ -192,7 +192,7 @@ CL_GLX_OBJS = \
 
 CL_SVGA_OBJS = vid_svgalib.o
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 CL_SVGA_AS_OBJS = d_copy.o
 .endif
 

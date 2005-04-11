@@ -32,7 +32,7 @@ INFO=		autoconf standards
 CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
 CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--without-lispdir
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		autoconf.1 autoheader.1 autom4te.1 autoreconf.1 autoscan.1 \
 		autoupdate.1 config.guess.1 config.sub.1 ifnames.1

@@ -21,7 +21,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=--with-libevent=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		trickle.1
 MAN5=		trickled.conf.5

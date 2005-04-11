@@ -16,14 +16,14 @@ COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sse \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"

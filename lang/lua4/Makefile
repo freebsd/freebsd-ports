@@ -48,7 +48,7 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/lua
 	@${STRIP_CMD} ${PREFIX}/bin/luac
 
-.if ${MACHINE_ARCH:L} == "amd64"
+.if ${ARCH:L} == "amd64"
 CFLAGS+=    -fPIC
 .endif
 

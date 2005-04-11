@@ -31,9 +31,9 @@ post-patch:
 
 do-install:
 .for i in mpeg3cat mpeg3dump mpeg3toc
-	${INSTALL_PROGRAM} ${WRKSRC}/${MACHINE_ARCH}/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${ARCH}/${i} ${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/${MACHINE_ARCH}/libmpeg3.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/${ARCH}/libmpeg3.a ${PREFIX}/lib
 .for i in libmpeg3.h mpeg3private.h
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include
 .endfor

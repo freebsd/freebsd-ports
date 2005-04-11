@@ -38,7 +38,7 @@ XEMACS_ARCH=		${CONFIGURE_TARGET}
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
 USE_AUTOCONF_VER=213
-CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
+CONFIGURE_TARGET=${ARCH}--freebsd
 
 CONFIGURE_ARGS?=--with-clash-detection \
 		--with-sound=native,nonas,noesd \

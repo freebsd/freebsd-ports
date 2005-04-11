@@ -21,7 +21,7 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
 		--localstatedir=/var/dpsearch \
 		--enable-mp3 \

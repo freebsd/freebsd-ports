@@ -19,7 +19,7 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qt-moc=${MOC}
 
 MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}" \

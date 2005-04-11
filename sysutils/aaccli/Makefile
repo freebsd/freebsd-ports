@@ -22,8 +22,8 @@ RESTRICTED=		"May not be redistributed in binary form"
 NO_CDROM=		yes
 
 ONLY_FOR_ARCHS=		i386
-PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=			${MASTERDIR}/pkg-plist.${ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes

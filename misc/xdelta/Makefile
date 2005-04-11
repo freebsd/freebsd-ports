@@ -17,7 +17,7 @@ COMMENT=	A diff/patch utility for binary files
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		xdelta.1
 

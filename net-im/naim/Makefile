@@ -17,7 +17,7 @@ USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-pkgdocdir=${DOCSDIR} \
 			--mandir=${MANPREFIX}/man
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		naim.1
 MLINKS=		naim.1 nirc.1 naim.1 nicq.1 naim.1 nlily.1

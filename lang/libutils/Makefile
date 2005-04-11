@@ -19,7 +19,7 @@ COMMENT=	Support lib for Tensile/NSL
 
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 INSTALLS_SHLIB=	yes
 

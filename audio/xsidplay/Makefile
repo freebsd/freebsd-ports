@@ -38,7 +38,7 @@ MAN1=		xsidplay.1
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
 

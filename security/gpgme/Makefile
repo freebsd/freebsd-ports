@@ -22,7 +22,7 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
 		--includedir=${PREFIX}/include/gpgme

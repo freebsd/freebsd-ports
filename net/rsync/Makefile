@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--disable-debug \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_POPT_PORT)
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \

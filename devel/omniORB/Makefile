@@ -15,7 +15,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A robust high performance CORBA ORB for C++ and Python
 
 CONFIGURE_WRKSRC=	${WRKSRC}/build
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 USE_GMAKE=	yes

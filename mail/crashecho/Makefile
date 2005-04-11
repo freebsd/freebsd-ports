@@ -16,7 +16,7 @@ COMMENT=	An FTN JAM and *.MSG tosser
 LIB_DEPENDS=	jam.2:${PORTSDIR}/mail/jamlib
 
 USE_LIBTOOL_VER=	13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	crashecho.1 \
 	crashexport.1 \

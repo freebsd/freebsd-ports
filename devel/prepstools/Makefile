@@ -23,7 +23,7 @@ USE_GNOME=	glib12
 USE_INC_LIBTOOL_VER=13
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-pgsqldir=${LOCALBASE} --with-plpgsqldir=${LOCALBASE}
 
 INSTALLS_SHLIB=	yes

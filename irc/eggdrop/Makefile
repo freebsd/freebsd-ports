@@ -19,7 +19,7 @@ MAINTAINER=	q@uni.de
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 USE_BZIP2=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(WITHOUT_TCL)
 LIB_DEPENDS+=		tcl84.1:${PORTSDIR}/lang/tcl84

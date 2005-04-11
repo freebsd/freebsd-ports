@@ -19,7 +19,7 @@ MAN3=		csb.3
 MANCOMPRESSED=	no
 
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	include/csb.h lib/libcsb.a lib/libcsb.so lib/libcsb.so.1
 

@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \

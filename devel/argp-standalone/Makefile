@@ -14,7 +14,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Standalone version of arguments parsing functions from GLIBC
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	lib/libargp.a include/argp.h
 

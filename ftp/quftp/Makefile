@@ -22,7 +22,7 @@ USE_REINPLACE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		quftp.1
 PLIST_FILES=	bin/quftp

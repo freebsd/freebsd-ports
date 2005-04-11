@@ -46,7 +46,7 @@ CBLAS=		-lcblas -lf77blas -latlas -lg2c
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
-.if (${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
+.if (${ARCH} == "i386" && !${ARCH} == "amd64" )
 CFLAGS+=	 -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 CXXFLAGS+=	 -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386

@@ -20,7 +20,7 @@ SIG_SUFFIX=		.sig
 USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS=	--without-nls

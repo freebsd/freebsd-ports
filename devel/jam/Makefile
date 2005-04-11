@@ -32,7 +32,7 @@ pre-patch:
 		 s|^	jam|	./jam|g' ${WRKSRC}/Makefile
 
 do-install:
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 	${INSTALL_PROGRAM} ${WRKSRC}/bin.freebsdaxp/jam ${PREFIX}/bin
 .else
 	${INSTALL_PROGRAM} ${WRKSRC}/bin.freebsd/jam ${PREFIX}/bin

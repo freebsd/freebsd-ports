@@ -16,7 +16,7 @@ COMMENT=	A threaded, anonymous only FTP server designed for security
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		oftpd.8
 PORTDOCS=	README AUTHORS ChangeLog NEWS TODO BUGS

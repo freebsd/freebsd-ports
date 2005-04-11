@@ -18,6 +18,6 @@ INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_LIBTOOL_VER=	15
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ LIB_DEPENDS=	pci.2:${PORTSDIR}/devel/libpci
 ONLY_FOR_ARCHS=	i386
 
 CONFIGURE_ENV=	CC="${CC} -I${PREFIX}/include"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 USE_LIBTOOL_VER=	15
 USE_GETOPT_LONG=	yes

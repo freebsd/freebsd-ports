@@ -18,7 +18,7 @@ COMMENT=	Fully featured ANSI art editor/viewer with TCP/IP multidraw support
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -13,7 +13,7 @@ CATEGORIES=	devel linux
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		ftp://ftp.icm.edu.pl/vol/rzm9/linux-pld/pool/s/SDL/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1.${MACHINE_ARCH}
+DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1.${ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
@@ -30,8 +30,8 @@ ONLY_FOR_ARCHS=	i386 alpha
 DIST_SUBDIR=	rpm
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-PLIST=		${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=		${MASTERDIR}/pkg-plist.${ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 DBPATH=		/var/lib/rpm
 RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \

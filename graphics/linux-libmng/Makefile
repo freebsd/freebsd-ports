@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		graphics linux
 MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 PKGNAMEPREFIX=	linux-
-DISTNAME=		libmng-${PORTVERSION}-1.${MACHINE_ARCH}
+DISTNAME=		libmng-${PORTVERSION}-1.${ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
@@ -29,8 +29,8 @@ ONLY_FOR_ARCHS=	i386
 DIST_SUBDIR=	rpm
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
-PLIST?=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE?=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST?=		${PKGDIR}/pkg-plist.${ARCH}
+MD5_FILE?=	${MASTERDIR}/distinfo.${ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG?=		en
@@ -38,8 +38,8 @@ RPM_MIRRORS=	\
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.redhat.com/pub/redhat/__DIR__/
-STDDIR=		linux/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
-UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}
+STDDIR=		linux/${BASEVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
+UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${ARCH}
 DBPATH=		/var/lib/rpm
 RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
 		--nodeps --replacepkgs

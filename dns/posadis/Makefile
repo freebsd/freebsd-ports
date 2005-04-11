@@ -21,7 +21,7 @@ USE_AUTOCONF_VER=	259
 USE_LIBTOOL_VER=	15
 USE_LIBLTDL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)

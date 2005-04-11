@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	\
 .endif
 
 CONFIGURE_TARGET=	\
-		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+		--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pcregrep.1 pcretest.1
 MAN3=		pcre.3 pcre_compile.3 pcre_config.3 \

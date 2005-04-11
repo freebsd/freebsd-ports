@@ -28,7 +28,7 @@ USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=259
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${X11BASE}/include/gtk12 -I${X11BASE}/include/gdk-pixbuf-1.0 \
 		-I${LOCALBASE}/include/glib12" \

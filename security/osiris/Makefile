@@ -19,7 +19,7 @@ OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
 		CLI "Enable to build the management CLI" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL} \
 			--enable-fancy-cli
 USE_LIBTOOL_VER=	15
 USE_RC_SUBR=	yes

@@ -36,7 +36,7 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .endif
-.if ${MACHINE_ARCH} != "alpha"
+.if ${ARCH} != "alpha"
 #  coredump in sgmls
 WITH_SGML_DOCS?=yes
 .endif

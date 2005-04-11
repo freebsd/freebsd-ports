@@ -63,7 +63,7 @@ USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-nls \
 		--with-gettext-includes=${LOCALBASE}/include \
 		--with-gettext-libraries=${LOCALBASE}/lib \

@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=13
 CONFIGURE_ARGS+=	--without-pam
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	UTF8 "Enable UTF8 support" off \

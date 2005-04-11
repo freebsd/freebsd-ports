@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

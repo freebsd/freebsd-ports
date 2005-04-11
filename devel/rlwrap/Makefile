@@ -16,7 +16,7 @@ COMMENT=	Readline wrapper
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	ptyttylib_cv_ptys=BSD
 
 MAN1=	rlwrap.1

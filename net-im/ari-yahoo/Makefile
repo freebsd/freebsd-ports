@@ -18,7 +18,7 @@ COMMENT=	A console Yahoo! messenger client
 PLIST_FILES=	bin/ari-yahoo
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:
 	@(cd ${WRKSRC}/libyahoo && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \

@@ -25,7 +25,7 @@ INSTALLS_SHLIB=		yes
 USE_INC_LIBTOOL_VER=	13
 USE_REINPLACE=		yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+CONFIGURE_ARGS+=	--build=${ARCH}-portbld-freebsd${OSREL} \
 		--with-hk_classes-dir=${LOCALBASE}/lib/hk_classes \
 		--with-hk_classes-incdir=${LOCALBASE}/include/hk_classes
 

@@ -32,7 +32,7 @@ BROKEN=		"Does not compile on sparc64"
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.${MACHINE_ARCH}/b2bua \
+	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.${ARCH}/b2bua \
 		${PREFIX}/bin
 	${MKDIR} ${DOCSDIR}
 .for file in LICENSE HOWTO HOWTO.PROV b2bdesign.pdf

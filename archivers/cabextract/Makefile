@@ -15,7 +15,7 @@ COMMENT=	A program to extract Microsoft cabinet (.CAB) files
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MANLANG=	"" ja
 MAN1=		cabextract.1

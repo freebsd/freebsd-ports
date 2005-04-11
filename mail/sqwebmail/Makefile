@@ -72,7 +72,7 @@ CACHEOWNER?=	bin
 
 # End of user variables
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-unknown-freebsd${OSREL}
 USE_PERL5=	YES
 HAS_CONFIGURE=	YES
 USE_BZIP2=	YES

@@ -42,7 +42,7 @@ WITH_FREEWNN?=	NO
 WITH_CANNA?=	YES
 WITH_SJ3?=	NO
 
-CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
+CONFIGURE_TARGET=	${ARCH}--freebsd
 
 .if !defined(NO_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --with-pop

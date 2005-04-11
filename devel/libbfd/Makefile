@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 		--disable-nls \
 		--without-pic \
 		--enable-targets=all
-.if (${MACHINE_ARCH} == "amd64")
+.if (${ARCH} == "amd64")
 CONFIGURE_ARGS+=	--host=x86_64-portbld-freebsd${OSREL}
 .endif
 

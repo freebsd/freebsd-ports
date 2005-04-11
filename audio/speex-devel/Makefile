@@ -25,7 +25,7 @@ USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 

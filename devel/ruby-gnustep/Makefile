@@ -59,10 +59,10 @@ COMBOLIBDIR=	${SYSLIBDIR}
 MAKE_ENV+=	GNUSTEP_FLATTENED=yes
 
 .include <bsd.port.pre.mk>
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 GNU_ARCH=	ix86
 .else
-GNU_ARCH=	${MACHINE_ARCH}
+GNU_ARCH=	${ARCH}
 .endif
 
 MAKEFILE=	GNUmakefile

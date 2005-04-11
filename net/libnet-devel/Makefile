@@ -17,7 +17,7 @@ COMMENT=	A C library for creating IP packets (development version)
 CONFLICTS=	libnet-1.*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

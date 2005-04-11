@@ -20,7 +20,7 @@ USE_PERL5_BUILD=	yes
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		xvattr.1
 

@@ -15,7 +15,7 @@ MAINTAINER=	weaseal@users.sourceforge.net
 COMMENT=	Srvx IRC services
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug

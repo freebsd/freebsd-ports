@@ -23,7 +23,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+="--with-findlib"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 
 PKGDEINSTALL=	${PKGINSTALL}
 FINDLIB_PKGNAME=${PORTNAME:S/o//}

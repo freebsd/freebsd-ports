@@ -30,7 +30,7 @@ BUILD_DEPENDS=		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
 USE_GL=			yes
 USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-blas="${lib_blas}"
 CONFIGURE_ENV=		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${THRDFLG}"	\
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${THRDLIB}"

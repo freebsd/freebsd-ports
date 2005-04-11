@@ -29,7 +29,7 @@ USE_GNOME=	gnomelibs gdkpixbuf libglade
 USE_PYTHON=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk

@@ -18,7 +18,7 @@ COMMENT=	Chemical drawing program
 LIB_DEPENDS=	openbabel.0:${PORTSDIR}/science/openbabel
 
 CFLAGS+=	-O0
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 QTCFGLIBS+=	${PTHREAD_LIBS}

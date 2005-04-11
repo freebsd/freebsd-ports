@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-x-toolkit \
 		--sharedstatedir=/var/run
-CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
+CONFIGURE_TARGET=	${ARCH}--freebsd
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
 

@@ -20,7 +20,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_RC_SUBR=	yes

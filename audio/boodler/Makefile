@@ -31,7 +31,7 @@ LDCONFIG_DIRS=	%%PREFIX%%/share/boodler/boodle
 DRIVER=		FILE
 .endif
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 PIC=	--PIC
 .endif
 

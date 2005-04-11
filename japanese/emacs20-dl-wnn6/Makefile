@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-wnn6 \
 		--with-wnn-libraries=${PREFIX}/lib \
 		--with-emacs-src=${EMACSDL_SRCDIR}
 CONFIGURE_ENV=	EMACS=${PREFIX}/bin/emacs-dl-${EMACS_VER}
-PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
+PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${ARCH}--freebsd \
 		DOCDIR=${DOCDIR}
 
 DOCDIR=		share/doc/emacs20-dl-wnn6

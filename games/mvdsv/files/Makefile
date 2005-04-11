@@ -13,7 +13,7 @@
 
 DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -DSERVERONLY -Dstricmp=strcasecmp
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
 .endif
 
@@ -64,7 +64,7 @@ SV_OBJS = \
 		world.o \
 		zone.o
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 SV_AS_OBJS = \
 		math.o \
 		sys_x86.o \

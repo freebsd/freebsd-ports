@@ -22,7 +22,7 @@ USE_SDL=	sdl mixer
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	expack.1 ipack.1 shp2pcx.1 splitshp.1 textpack.1
 MAN6=	exult.6
