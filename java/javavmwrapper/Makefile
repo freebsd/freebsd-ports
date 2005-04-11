@@ -9,7 +9,7 @@
 
 PORTNAME=	javavmwrapper
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -23,6 +23,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PKGINSTALL=	${WRKDIR}/pkg-install
+
+MAN1=		checkvms.1 javavm.1 registervm.1 unregistervm.1
+MAN5=		javavms.5
 
 SRC=		${.CURDIR}/src
 SCRIPTS=	classpath javavmwrapper
@@ -41,6 +44,11 @@ do-configure:
 .endfor
 	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|;' \
 		${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+.for _man in checkvms.1 javavm.1 registervm.1 ${MAN5}
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|;' \
+	       -e 's|%%LOCALBASE%%|${LOCALBASE}|;' \
+	       ${SRC}/${_man} > ${WRKDIR}/${_man}
+.endfor
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/classpath.sh ${PREFIX}/bin/classpath
@@ -48,6 +56,12 @@ do-install:
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/registervm
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/unregistervm
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/checkvms
+.for _man in checkvms.1 javavm.1 registervm.1
+	${INSTALL_MAN} ${WRKDIR}/${_man} ${MAN1PREFIX}/man/man1
+.endfor
+	${INSTALL_MAN} ${WRKDIR}/registervm.1 \
+		${MAN1PREFIX}/man/man1/unregistervm.1
+	${INSTALL_MAN} ${WRKDIR}/${MAN5} ${MAN5PREFIX}/man/man5
 
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \

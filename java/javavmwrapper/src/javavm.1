@@ -1,0 +1,111 @@
+.\"
+.\" Copyright (C) 2005 Greg Lewis. All rights reserved.
+.\" 
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 
+.\" THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd February 24, 2005
+.Os
+.Dt JAVAVM 1
+.Sh NAME
+.Nm javavm
+.Nd convenient wrapper for switching Java VMs
+.Sh SYNOPSIS
+.Nm
+.Op Ar arguments ...
+.Sh DESCRIPTION
+The Java VM wrapper provides a convenient system for switching between
+different Java VMs.
+It also provides symbolic links in %%LOCALBASE%%/bin to allow the use of
+the Java executables without having to add the specific Java VM executable
+directories to the PATH environment variable.
+.Pp
+The
+.Nm
+utility itself is currently a synonym for "java".  However, this behaviour
+is deprecated and is provided only for compatibility with the previous
+version of
+.Nm .
+This functionality may be removed in a future version and should not be
+relied upon.
+.Pp
+By default,
+.Nm
+will select the most "native" and up to date version of the Java VM when
+a given symbolic link is used, invoking and passing the arguments to the
+matching executable within the chosen Java VM.
+The choice of Java VM may also be influenced by using environment variables
+to constrain the version, vendor and operating system of the Java VM.
+.Sh ENVIRONMENT
+.Bl -tag -width indent
+.It JAVA_HOME
+The presence of this variable in the environment when executing
+.Nm
+will override all other considerations regarding the Java VM to be used
+and the Java VM located at ${JAVA_HOME}/bin/java will be used.
+.Pp
+This variable is set by
+.Nm
+when executing the actual Java VM and will be available to it and all of
+its child processes.
+.It JAVA_OS
+The operating system that the Java VM was created for.
+.Pp
+Currently allowed values are "native" and "linux".
+.It JAVA_VENDOR
+The vendor that created the Java VM.
+.Pp
+Currently allowed values are "bsdjava", "freebsd", "blackdown", "ibm" and
+"sun".
+.It JAVA_VERSION
+The version of the Java VM that should be used.  By appending a '+' to
+the version, any Java VM with a version greater than or equals to the
+given version will be used.
+.Pp
+Currently allowed values are 1.1, 1.1+, 1.2, 1.2+, 1.3, 1.3+, 1.4, 1.4+,
+1.5 and 1.5+.
+.El
+.Sh FILES
+.Bl -tag -width indent
+.It %%PREFIX%%/etc/javavms
+The location of the Java VM wrapper configuration file.
+.El
+.Sh EXAMPLES
+.Bl -tag -width indent
+.It %%LOCALBASE%%/bin/java
+Execute the most up to date and "native" Java VM registered with
+.Nm .
+.It JAVA_VERSION=1.4+ %%LOCALBASE%%/bin/javac MyClass.java
+Compile MyClass.java with a registered Java VM's javac that is at least
+version 1.4.
+.It JAVA_OS=native %%LOCALBASE%%/bin/java -jar MyApp.jar
+Execute MyApp with the most up to date native Java VM that is registered
+with
+.Nm .
+This is necessary if MyApp uses JNI, for instance.
+.El
+.Sh SEE ALSO
+.Xr checkvms 1 ,
+.Xr registervm 1 ,
+.Xr unregistervm 1 ,
+.Xr javavms 5
