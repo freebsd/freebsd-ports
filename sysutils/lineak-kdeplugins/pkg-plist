@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+lib/lineakd/plugins/amarokplugin.so
+lib/lineakd/plugins/jukplugin.so
+lib/lineakd/plugins/kdesktopplugin.so
+lib/lineakd/plugins/kmailplugin.so
+lib/lineakd/plugins/kmixplugin.so
+lib/lineakd/plugins/konqplugin.so
+lib/lineakd/plugins/kscdplugin.so

@@ -245,6 +245,7 @@
     SUBDIR += libretto-config
     SUBDIR += libutempter
     SUBDIR += lineak_defaultplugin
+    SUBDIR += lineak_kdeplugins
     SUBDIR += lineak_xosdplugin
     SUBDIR += lineakd
     SUBDIR += linneighborhood
