@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cpige
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ed.zehome.com/cpige/
 
