@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	philip@p6m7g8.com
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	DBIx::Browse - Perl extension to browse tables
 
 PERL_CONFIGURE=	yes
