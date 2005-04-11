@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,11 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lauri@kde.org
 COMMENT=	Media player for KDE
 
-LIB_DEPENDS=    tag.4:${PORTSDIR}/audio/taglib
-
-BROKEN=		Incomplete pkg-plist
-
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
@@ -27,13 +22,15 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_SDL=	sdl
 
-OPTIONS=	ARTS "aRts support" off \
-		GSTREAMER "GStreamer support" on \
-		XINE "xine support" off \
-		XMMS "XMMS visualizations" on \
-		LIBVISUAL "libvisual support" on \
+OPTIONS=	ARTS "aRts playback engine" off \
+		GSTREAMER "GStreamer playback engine" on \
+		XINE "Xine playback engine" off \
+		XMMS "XMMS visualizations" off \
+		LIBVISUAL "libvisual support" off \
 		OPENGL "OpenGL support" on \
-		AMAZON "Amazon cover fetching support" on
+		AMAZON "Amazon cover fetching support" on \
+		MYSQL "Use MySQL as collection backend" off \
+		AKODE "Akode playback engine" off
 
 .include <bsd.port.pre.mk>
 
@@ -49,16 +46,16 @@ PLIST_SUB+=	ARTS=""
 CONFIGURE_ARGS+=--without-gstreamer
 PLIST_SUB+=	GSTREAMER="@comment "
 .else
-LIB_DEPENDS+=	gstplay-0.8.1:${PORTSDIR}/multimedia/gstreamer-plugins
+USE_GSTREAMER+=	core
 PLIST_SUB+=	GSTREAMER=""
 .endif
 
 .if defined(WITHOUT_XINE)
 CONFIGURE_ARGS+=--without-xine
-PLIST_SUB+=     XINE="@comment "
+PLIST_SUB+=	XINE="@comment "
 .else
-LIB_DEPENDS+=   xine.12:${PORTSDIR}/multimedia/libxine
-PLIST_SUB+=     XINE=""
+LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
+PLIST_SUB+=	XINE=""
 .endif
 
 .if defined(WITHOUT_XMMS)
@@ -70,11 +67,10 @@ PLIST_SUB+=	XMMS=""
 .endif
 
 .if defined(WITHOUT_LIBVISUAL)
-PLIST_SUB+=     LIBVISUAL="@comment "
+PLIST_SUB+=	LIBVISUAL="@comment "
 .else
-LIB_DEPENDS+=   visual.0:${PORTSDIR}/graphics/libvisual
-PLIST_SUB+=     LIBVISUAL=""
-
+LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
+PLIST_SUB+=	LIBVISUAL=""
 .endif
 
 .if defined(WITHOUT_OPENGL)
@@ -83,6 +79,20 @@ CONFIGURE_ARGS+=--without-opengl
 
 .if defined(WITHOUT_AMAZON)
 CONFIGURE_ARGS+=--without-amazon
+.endif
+
+.if !defined(WITHOUT_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--enable-mysql
+.endif
+
+.if defined(WITHOUT_AKODE)
+CONFIGURE_ARGS+=--without-akode
+PLIST_SUB+=	AKODE="@comment "
+.else
+CONFIGURE_ARGS+=--with-akode
+LIB_DEPENDS+=	akode:${PORTSDIR}/audio/akode
+PLIST_SUB+=	AKODE=""
 .endif
 
 post-patch:
