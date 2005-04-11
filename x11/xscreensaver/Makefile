@@ -12,7 +12,7 @@
 #************************************************************************
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.18
+PORTVERSION=	4.21
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -20,13 +20,15 @@ MAINTAINER?=	DougB@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
@@ -76,7 +78,9 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	apple2.1 blinkbox.1 fontglide.1 gleidescope.1 mirrorblob.1 pong.1 \
 	xanalogtv.1 mismunch.1 noof.1 pacman.1 wormhole.1 anemotaxis.1 \
 	antinspect.1 fuzzyflakes.1 polyhedra.1 providence.1 memscroller.1 \
-	xscreensaver-command.1 xscreensaver-demo.1 \
+	boing.1 boxfit.1 carousel.1 fiberlamp.1 fireworkx.1 fliptext.1 intermomentary.1 \
+	pinion.1 substrate.1 \
+	xscreensaver-command.1 xscreensaver-demo.1 xscreensaver-text.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
 
