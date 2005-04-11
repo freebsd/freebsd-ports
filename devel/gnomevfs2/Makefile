@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTVERSION=	2.10.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.10
@@ -106,7 +105,7 @@ post-patch:
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
+	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]' 2> /dev/null`" ]; then \
 		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
 		${FALSE}; \
 	fi
