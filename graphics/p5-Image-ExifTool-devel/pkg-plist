@@ -16,6 +16,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
+%%SITE_PERL%%/Image/ExifTool/Kodak.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
@@ -25,6 +26,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
 %%SITE_PERL%%/Image/ExifTool/README
+%%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Sanyo.pm
 %%SITE_PERL%%/Image/ExifTool/Shortcuts.pm
 %%SITE_PERL%%/Image/ExifTool/Sigma.pm
