@@ -26,8 +26,8 @@ XFREE86_HTML_MAN=	no
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != i386
-BROKEN=		"Does not compile on ${ARCH}"
+.if ${MACHINE_ARCH} != i386
+BROKEN=		"Does not compile on ${MACHINE_ARCH}"
 .endif
 
 post-patch:

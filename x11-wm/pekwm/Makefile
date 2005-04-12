@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shape --enable-xinerama --enable-xrandr \
 		--disable-pcre --enable-xft --enable-imlib2 --disable-debug \
 		--enable-menus --enable-harbour

@@ -41,13 +41,13 @@ MAN1=		gforth.1
 # Local variables
 #
 
-.if ${ARCH} == i386
+.if ${MACHINE_ARCH} == i386
 WORDSIZE=32
 .else
 WORDSIZE=64
 .endif
 
-.if ${ARCH} == sparc64
+.if ${MACHINE_ARCH} == sparc64
 BYTEORDER=b
 .else
 BYTEORDER=l

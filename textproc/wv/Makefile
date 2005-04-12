@@ -38,7 +38,7 @@ MLINKS=	wvWare.1 wvConvert.1
 CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if ${ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64"
 USE_GNOME+=	glib20
 CONFIGURE_ARGS+=	--with-glib
 .else

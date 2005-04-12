@@ -15,7 +15,7 @@ MAINTAINER=	daniel+aputils@pelleg.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib"

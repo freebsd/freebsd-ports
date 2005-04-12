@@ -25,7 +25,7 @@ USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 CONFIGURE_TARGET=
-CONFIGURE_ARGS=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"

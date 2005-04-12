@@ -16,7 +16,7 @@ COMMENT=	SAP and SLP announcement for the VLC Media Player
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 MAN1=		sapserver.1
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README

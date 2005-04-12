@@ -29,7 +29,7 @@ DOC_FILES=	API LICENSE README TODO USAGE
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 

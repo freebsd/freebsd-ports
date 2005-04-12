@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --with-user=mailnull --with-group=mail \
 		--with-confdir=${PREFIX}/etc/masqmail --with-logdir=/var/log/masqmail
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_LIBCRYPTO)
 CONFIGURE_ARGS+=	--with-libcrypto

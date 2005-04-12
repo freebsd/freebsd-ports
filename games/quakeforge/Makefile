@@ -43,7 +43,7 @@ WANT_SDL=	yes
 BROKEN=		"Does not compile on sparc64"
 .endif
 
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${PREFIX}/share/quakeforge \
 		--disable-optimize

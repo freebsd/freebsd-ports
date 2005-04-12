@@ -23,7 +23,7 @@ USE_REINPLACE=		yes
 USE_RC_SUBR=		yes
 USE_LIBTOOL_VER=	15
 USE_GNOME=		lthack
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
 CONFIGURE_ARGS=		--libdir=${PREFIX}/lib/lighttpd
 STARTUP_FILE=		${PREFIX}/etc/rc.d/lighttpd.sh

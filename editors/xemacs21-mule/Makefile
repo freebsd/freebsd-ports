@@ -48,7 +48,7 @@ USE_XLIB=	yes
 USE_XPM=	yes
 STRIP=
 USE_AUTOCONF_VER=	213
-CONFIGURE_TARGET=${ARCH}--freebsd
+CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
 CONFIGURE_ARGS=	--with-x11 \
 		--with-mule \

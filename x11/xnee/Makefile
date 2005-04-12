@@ -20,7 +20,7 @@ BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		xnee.1
 INFO=		xnee xnee_develop

@@ -35,7 +35,7 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-POP2 --enable-SDPS \
 		--with-hesiod=no --enable-fallback=no
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

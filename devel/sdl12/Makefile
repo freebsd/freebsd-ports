@@ -27,7 +27,7 @@ CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-video-aalib
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -27,7 +27,7 @@ USE_GNOME=	gnomelibs bonobo gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"
 
-.if ${ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	-fPIC
 .endif
 

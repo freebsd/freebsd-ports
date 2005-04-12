@@ -33,7 +33,7 @@ INSTALL_TARGET+=	install.linkkit
 .endif
 DIST_SUBDIR=	xc
 SCRIPTS_ENV=	OSVERSION=${OSVERSION} MACHINE=${MACHINE} \
-		ARCH=${ARCH}
+		MACHINE_ARCH=${MACHINE_ARCH}
 MAKE_ARGS=	WORLDOPTS=
 # can't use USE_X_PREFIX here -- it will cause a circular dependency
 PREFIX=		${X11BASE}

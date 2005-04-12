@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}2
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN3=		argtable2.3
 

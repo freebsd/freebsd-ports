@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		xdaliclock.1
 PLIST_FILES=	bin/xdaliclock
 

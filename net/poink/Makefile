@@ -16,8 +16,8 @@ COMMENT=	Nosuid, secure ping like utility
 
 USE_ZIP=	yes
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Hostname resolution broken on ${ARCH}"
+.if ${MACHINE_ARCH} == "sparc64"
+BROKEN=		"Hostname resolution broken on ${MACHINE_ARCH}"
 .endif
 
 MAN1=		poink.1

@@ -39,7 +39,6 @@ DISTFILES=	suse-release-9.1-0.i586.rpm \
 		libgcc-3.3.3-41.i586.rpm \
 		termcap-2.0.8-876.i586.rpm \
 		freetype2-2.1.7-53.i586.rpm
-EXTRACT_ONLY=
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Basic packages for Linux mode from SUSE 9.1/i386
@@ -52,7 +51,7 @@ CONFLICTS=	linux_base-6* linux_base-7* linux_base-debian* \
 NO_LATEST_LINK=		yes
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 ONLY_FOR_ARCHS=		i386
-DIST_SUBDIR=		rpm/${ARCH}/suse
+DIST_SUBDIR=		rpm/${MACHINE_ARCH}/suse
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
@@ -82,7 +81,7 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-pre-install:
+do-extract:
 #
 # Handle the loading of the linux loadable kernel module if required.
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -113,7 +112,7 @@ pre-install:
 # mtab in etc, albeit an empty one. This is needed in a couple of
 # cases. Most notably staroffice6.
 #
-	${INSTALL_DATA} ${FILESDIR}/yp.conf ${WRKSRC}/etc
+	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${WRKSRC}/etc
 	${TOUCH} ${WRKSRC}/etc/mtab ${WRKSRC}/etc/host.conf
 #
 # Finish
@@ -126,6 +125,7 @@ pre-install:
 	done
 	@${LN} -sf /var/tmp ${WRKSRC}/usr/tmp
 
+pre-install:
 	${RM} -f ${PLIST}
 	cd ${WRKSRC} && ${FIND} -s . -type f -o -type l | \
 		${CUT} -c3-999 >> ${PLIST} \

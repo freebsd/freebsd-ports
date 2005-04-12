@@ -17,7 +17,7 @@ CONFLICTS=	jive* chef*
 
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	talkfilters.1 wrap.1
 MLINKS=	talkfilters.1 austro.1 \

@@ -19,7 +19,7 @@ USE_MESA=	yes
 USE_FREETYPE=	yes
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \

@@ -16,7 +16,7 @@ COMMENT=	A library for manipulating POSIX and GNU tar files
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 .include "files/manpages"

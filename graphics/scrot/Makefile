@@ -17,7 +17,7 @@ LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	NO_DOC=yes

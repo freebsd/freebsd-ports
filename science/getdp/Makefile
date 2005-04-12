@@ -20,7 +20,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw	\
 		lapack.3:${PORTSDIR}/math/lapack
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-fftw-prefix=${LOCALBASE}	\
 		--with-gsl-prefix=${LOCALBASE}
 

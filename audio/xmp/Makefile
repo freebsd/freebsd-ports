@@ -29,7 +29,7 @@ CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500013 || ${ARCH} == "alpha"
+.if ${OSVERSION} > 500013 || ${MACHINE_ARCH} == "alpha"
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--disable-oss --enable-esd
 PKGNAMESUFFIX=	-esound

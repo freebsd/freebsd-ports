@@ -44,7 +44,7 @@ post-install:
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
 .endif
 
-.if ${ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	-fPIC
 .endif
 

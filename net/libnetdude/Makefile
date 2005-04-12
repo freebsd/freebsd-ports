@@ -18,7 +18,7 @@ LIB_DEPENDS=	pcapnav.0:${PORTSDIR}/net/libpcapnav
 
 USE_INC_LIBTOOL_VER=	13
 USE_GNOME=	glib12
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

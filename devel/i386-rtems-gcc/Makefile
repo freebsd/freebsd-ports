@@ -68,7 +68,7 @@ PATCH_STRIP=		-p
 
 WITHOUT_CPU_CFLAGS=	yes
 MAKE_FLAGS=	LANGUAGES="c c++ java"
-MAKE_ENV=	ARCH=${RTEMS_ARCH} NO_CPU_CFLAGS=true
+MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH} NO_CPU_CFLAGS=true
 
 MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 ${LCLTARGET}-gcj.1 \
 		cpp.1 gcov.1 gcjh.1 jv-scan.1 jcf-dump.1 gij.1 \

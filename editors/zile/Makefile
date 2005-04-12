@@ -19,7 +19,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	19
 USE_AUTOCONF_VER=	259
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		zile.1
 INFO=		zile

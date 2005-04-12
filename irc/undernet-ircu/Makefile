@@ -17,7 +17,7 @@ COMMENT=	Undernet IRCU irc daemon
 CONFLICTS=	ircd-hybrid*
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc --with-symlink=no
 
 PLIST_FILES=	bin/chkconf bin/ircd etc/ircd.conf.example

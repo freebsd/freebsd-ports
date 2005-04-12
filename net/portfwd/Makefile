@@ -16,7 +16,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Port Forwarding Daemon
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

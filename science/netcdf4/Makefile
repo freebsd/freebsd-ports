@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 CONFLICTS=	hdf-4.*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-fPIC -DPIC -Df2cFortran"
 INSTALLS_SHLIB=	yes
 

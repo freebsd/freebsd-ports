@@ -73,7 +73,7 @@ CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash \
 		CPPFLAGS='${CPPFLAGS}' \
 		LDFLAGS='${LDFLAGS}'
 MAKE_ENV:=	${CONFIGURE_ENV}
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--enable-syslog=1 --enable-use-flock \
 		--program-transform-name=s,^,, \

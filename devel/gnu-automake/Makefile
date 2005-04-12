@@ -29,7 +29,7 @@ NO_MTREE=	yes
 CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/gnu-autotools/bin/autoconf \
 		AUTOHEADER=${LOCALBASE}/gnu-autotools/bin/autoheader \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

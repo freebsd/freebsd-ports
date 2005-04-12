@@ -17,7 +17,7 @@ COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-standard-prefix --datadir=${DATADIR} --enable-viewer
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 

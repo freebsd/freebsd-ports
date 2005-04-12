@@ -73,7 +73,7 @@ LIB_DEPENDS+=	wx_gtk2u-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-unicode
 
 .if ${WXGTK_FLAVOR:Mgtk2*} != ""
 USE_GNOME=	gtk20
-CONFIGURE_ARGS+=--enable-gtk2 ${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .else
 USE_GNOME=	gtk12
 CONFIGURE_ARGS+=--host=${CONFIGURE_TARGET} --build=${CONFIGURE_TARGET}

@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 USE_ICONV=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
 

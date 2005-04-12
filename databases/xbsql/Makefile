@@ -17,7 +17,7 @@ LIB_DEPENDS=	xbase-2.0.0:${PORTSDIR}/databases/xbase
 
 USE_BISON=	yes
 USE_INC_LIBTOOL_VER=	13
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

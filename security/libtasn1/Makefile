@@ -22,7 +22,7 @@ SIG_SUFFIX=	.sig
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	15
 USE_GETOPT_LONG=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps

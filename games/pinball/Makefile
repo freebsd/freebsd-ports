@@ -30,7 +30,7 @@ USE_GL=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug
 .if defined(WITH_ALLEGRO)
 CONFIGURE_ARGS+=	--with-allegro
@@ -45,9 +45,9 @@ DOCS=		README
 .include <bsd.port.pre.mk>
 
 post-install:
-	@${MV} ${PREFIX}/bin/${ARCH}-unknown-freebsd${OSREL}-pinball \
+	@${MV} ${PREFIX}/bin/${MACHINE_ARCH}-unknown-freebsd${OSREL}-pinball \
 		${PREFIX}/bin/pinball
-	@${MV} ${PREFIX}/bin/${ARCH}-unknown-freebsd${OSREL}-pinball-config \
+	@${MV} ${PREFIX}/bin/${MACHINE_ARCH}-unknown-freebsd${OSREL}-pinball-config \
 		${PREFIX}/bin/pinball-config
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

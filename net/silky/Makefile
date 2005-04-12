@@ -19,7 +19,7 @@ LIB_DEPENDS=	silcclient-1.0.3:${PORTSDIR}/devel/silc-toolkit
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-silc-include=${LOCALBASE}/include/silc \
 		--with-silc-libs=${LOCALBASE}/lib \
 		--with-docdir=${DOCSDIR} \

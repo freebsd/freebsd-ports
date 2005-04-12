@@ -21,7 +21,7 @@ USE_LIBTOOL_VER=	15
 USE_RC_SUBR=	YES
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR} \
 		--enable-static
 

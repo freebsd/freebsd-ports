@@ -43,11 +43,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' \
 			  -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g' \
 		${WRKSRC}/config.c
-.if (${ARCH} == "alpha")
+.if (${MACHINE_ARCH} == "alpha")
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
 .endif
 
-.if ${ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64"
 PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic

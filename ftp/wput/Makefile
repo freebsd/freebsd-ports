@@ -22,7 +22,7 @@ USE_GETOPT_LONG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="${LDFLAGS}"
 
 PLIST_FILES=	bin/wput

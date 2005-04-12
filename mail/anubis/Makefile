@@ -30,7 +30,7 @@ COMMENT=		Outgoing SMTP mail processor
 USE_REINPLACE=		yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split" LDFLAGS="${LDFLAGS}" \
 			CFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}"
 LDFLAGS+=		-L${LOCALBASE}/lib

@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify

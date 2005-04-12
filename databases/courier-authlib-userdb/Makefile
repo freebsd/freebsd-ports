@@ -55,7 +55,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--without-authshadow \
 		--without-authcustom \

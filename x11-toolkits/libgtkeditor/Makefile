@@ -30,7 +30,7 @@ CFLAGS+=	-fPIC
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:
 .for file in install-sh mkinstalldirs

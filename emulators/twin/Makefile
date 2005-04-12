@@ -25,7 +25,7 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
-.if ${ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha"
 CONFIGURE_ARGS+=--disable-intp
 .endif
 USE_GMAKE=	yes

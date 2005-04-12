@@ -22,7 +22,7 @@ USE_X_PREFIX=		yes
 USE_XPM=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 

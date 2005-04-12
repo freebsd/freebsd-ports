@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-included-gsl
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db42" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb-4.2"
 CONFIGURE_ENV+=	PERL="${PERL}"
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-strip prefix=${PREFIX}
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1

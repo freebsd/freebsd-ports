@@ -22,7 +22,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-distri=freebsd --with-kde3-prefix=${LOCALBASE}\
 			--with-applnk-dir=${PREFIX}/share/applnk/Utilities \
-			--build=${ARCH}-portbld-freebsd${OSREL}
+			--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_KDELIBS_VER=	3
 USE_REINPLACE=		yes
 

@@ -19,7 +19,7 @@ COMMENT=	A video encoding library
 USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN3=	fame_close.3 fame_encode_frame.3 fame_get_object.3 fame_init.3 \
 	fame_open.3 fame_register.3 fame_unregister.3 fame_encode_slice.3 \

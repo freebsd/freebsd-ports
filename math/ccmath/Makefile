@@ -17,7 +17,7 @@ COMMENT=	A mathematics library with many different functions
 INSTALLS_SHLIB=	yes
 
 post-configure:
-.if (${ARCH} != "i386")
+.if (${MACHINE_ARCH} != "i386")
 	(cd ${WRKSRC} && ${SH} non_intel.sh)
 .endif
 

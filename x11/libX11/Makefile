@@ -26,7 +26,7 @@ CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ARGS+= --enable-xdmauth
 CFLAGS+=	-DMALLOC_0_RETURNS_NULL

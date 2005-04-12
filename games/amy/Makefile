@@ -22,7 +22,7 @@ NOT_FOR_ARCHS=	sparc64 alpha
 MAN6=		Amy.6
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-extract:
 	${BZCAT} ${DISTDIR}/ClassicGames.pgn.bz2 > \

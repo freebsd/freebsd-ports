@@ -52,7 +52,7 @@ pre-extract:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha"
 BROKEN=	test script t/flexraw.t fails all 26 tests
 .endif
 

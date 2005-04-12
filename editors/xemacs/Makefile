@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDI
 USE_BZIP2=	yes
 STRIP=
 USE_AUTOCONF_VER=213
-CONFIGURE_TARGET=${ARCH}--freebsd
+CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
 CONFIGURE_ARGS?=--with-clash-detection \
 		--with-sound=native,nonas,noesd \

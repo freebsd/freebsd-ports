@@ -19,7 +19,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
 		--with-dynaload-cflags="${CFLAGS} -shared" \
 		--with-gd-includes="${LOCALBASE}/include" \

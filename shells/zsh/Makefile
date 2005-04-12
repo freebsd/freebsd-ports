@@ -60,7 +60,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-curses-terminfo --with-tcsetpgrp \
 		--enable-etcdir=${ZSH_ETCDIR} \
 		--enable-fndir=${ZSH_FNDIR} --enable-function-subdirs \

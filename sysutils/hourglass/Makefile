@@ -17,7 +17,7 @@ RUN_DEPENDS=	jgraph:${PORTSDIR}/graphics/jgraph
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/busy bin/hourglass
 PORTDOCS=	CALIBRATION

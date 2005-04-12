@@ -28,7 +28,7 @@ NO_CDROM=	${RESTRICTED}
 #NO_PACKAGE=	${RESTRICTED}
 
 ONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 post-install:

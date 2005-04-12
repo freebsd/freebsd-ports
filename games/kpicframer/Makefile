@@ -19,7 +19,7 @@ USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-build:
 	${TOUCH} ${WRKSRC}/config.h.in

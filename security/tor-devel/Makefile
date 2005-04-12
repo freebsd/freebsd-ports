@@ -17,7 +17,7 @@ COMMENT=	An anonymizing overlay network for TCP
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 

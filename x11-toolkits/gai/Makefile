@@ -31,7 +31,7 @@ PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.4 lib/libgai.so.0 \
 PLIST_DIRS=	include/gai
 INSTALLS_SHLIB=	yes
 
-.if ${ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	-fPIC
 .endif
 

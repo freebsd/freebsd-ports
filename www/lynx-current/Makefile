@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-nls --with-bzlib \
 		--enable-nested-tables --enable-locale-charset \

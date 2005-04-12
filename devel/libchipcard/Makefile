@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL} \
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-distri=freebsd
 
 MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1 \

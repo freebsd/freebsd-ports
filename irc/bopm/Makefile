@@ -16,7 +16,7 @@ COMMENT=	Open proxy monitor and blocker, designed for use with ircds
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
 INSTALLS_SHLIB=	yes

@@ -14,7 +14,7 @@ MAINTAINER=	setagllib@optusnet.com.au
 COMMENT=	Tool to impose load on and stress test Unix-like systems
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build ${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 INFO=		stress
 MAN1=		stress.1

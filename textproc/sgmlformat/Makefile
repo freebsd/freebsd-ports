@@ -20,7 +20,7 @@ COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${MACHINE_ARCH} != "i386"
 WITH_OPENJADE=	yes
 .endif
 

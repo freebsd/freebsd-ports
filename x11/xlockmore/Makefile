@@ -34,7 +34,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN1=		xlock.1
 
-.if ${ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64"
 WITH_MESAGL=	no
 .else
 WITH_MESAGL?=	yes

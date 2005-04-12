@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 USE_RC_SUBR=	mysql-server.sh
 .endif
 
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \

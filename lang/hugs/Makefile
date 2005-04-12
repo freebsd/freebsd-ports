@@ -37,7 +37,7 @@ PLIST_SUB+=	X11="@comment "
 
 MAN1=		hugs.1
 
-.if ${ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	"-fPIC"
 .endif
 

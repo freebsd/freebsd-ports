@@ -15,7 +15,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool that collects network traffic data
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 

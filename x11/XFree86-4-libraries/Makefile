@@ -119,7 +119,7 @@ PLIST_SUB+=	OSMESA:=""
 .endif
 
 # sparc64 doesn't have a working libc_r yet, and -current doesn't need libXThrStub.
-.if ${ARCH} == "sparc64" || ${OSVERSION} >= 500043
+.if ${MACHINE_ARCH} == "sparc64" || ${OSVERSION} >= 500043
 PLIST_SUB+=	XTHRSTUB:="@comment "
 .else
 PLIST_SUB+=	XTHRSTUB:=""

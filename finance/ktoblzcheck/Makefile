@@ -21,7 +21,7 @@ EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIBS=	yes
 
 MAN1=		ktoblzcheck.1

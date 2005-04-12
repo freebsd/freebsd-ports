@@ -26,7 +26,7 @@ WANT_SDL=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/q2f/'
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes

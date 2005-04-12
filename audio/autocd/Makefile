@@ -14,7 +14,7 @@ MAINTAINER=	KOT@MATPOCKuH.Ru
 COMMENT=	Compact disc control utility
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		cdctl.1 acdplay.1
 MAN8=		autocd.8
 MLINKS=		cdctl.1 eject.1 cdctl.1 pause.1

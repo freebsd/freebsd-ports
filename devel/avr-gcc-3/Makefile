@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--target=avr --disable-nls
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 # get rid of that silly -mcpu=pentiumpro FreeBSD 5+ is so fond of. :-(
-MAKE_ENV=	ARCH=avr
+MAKE_ENV=	MACHINE_ARCH=avr
 
 MAN1=		avr-cpp.1 avr-gcc.1 avr-g++.1 avr-gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
