@@ -10,7 +10,7 @@ CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	Library to support communication with WinCE devices
 
 MAN1=		synce.1

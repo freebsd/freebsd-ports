@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 GNU_CONFIGURE=	yes

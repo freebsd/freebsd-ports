@@ -15,7 +15,7 @@ DISTFILES=	jump-${PORTVERSION}.zip:main \
 		jump.png:extra jump.desktop:extra
 EXTRACT_ONLY=	jump-${PORTVERSION}.zip
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	A GUI based application for viewing and processing spatial data
 
 WRKSRC=		${WRKDIR}/jump

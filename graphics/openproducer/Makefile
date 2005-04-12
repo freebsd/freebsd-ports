@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.andesengineering.com/Producer/Download/
 DISTNAME=	Producer-${PORTVERSION}-3
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	A cross-platform C++/OpenGL library focused on camera control
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads

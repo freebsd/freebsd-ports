@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
 GNU_CONFIGURE=	yes
