@@ -33,6 +33,8 @@ prdone  - checks in the port, attempting to fill out the commit message using
 portsearch - A utility for searching the ports tree. It allows more detailed
              search criteria than ``make search key=<string>'' and accepts
              all perl(1) regular expressions.
+splitpatch.pl - A small script to convert multi-file patches to several
+                appropriately named single-file patches.
 tindex - script used to build INDEXes for supported FreeBSD branches, which
          are the source of the 'make fetchindex' INDEXes, and the build
          failure reports on ports@FreeBSD.org
