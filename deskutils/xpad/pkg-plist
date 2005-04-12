@@ -1,5 +1,9 @@
 bin/xpad
-share/xpad/xpad.xpm
-share/xpad/xpad2.xpm
-share/xpad/sticky.xpm
-@dirrm share/xpad
+share/icons/hicolor/48x48/apps/xpad.png
+share/icons/hicolor/scalable/apps/xpad.svg
+@unexec rmdir %D/share/icons/hicolor/scalable/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/scalable 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
