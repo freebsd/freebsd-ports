@@ -22,7 +22,8 @@ USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
-OPTIONS=	METACITY "Depend on MetaCity Theme" On
+OPTIONS=	METACITY "Depend on MetaCity Theme" On \
+		ANIMATION "Enable experimental animated progressbars" Off
 
 .include <bsd.port.pre.mk>
 
