@@ -153,6 +153,7 @@
     SUBDIR += freedt
     SUBDIR += freeipmi
     SUBDIR += freesbie
+    SUBDIR += fsbackup
     SUBDIR += ftrace
     SUBDIR += fvcool
     SUBDIR += ganglia-monitor-core
