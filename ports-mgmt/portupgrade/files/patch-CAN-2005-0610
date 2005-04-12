@@ -1,0 +1,68 @@
+diff -ru ../orig.pkgtools-20041224/lib/pkgdb.rb ./lib/pkgdb.rb
+--- ../orig.pkgtools-20041224/lib/pkgdb.rb	Wed Mar 23 21:37:47 2005
++++ ./lib/pkgdb.rb	Tue Mar 29 00:27:02 2005
+@@ -97,7 +97,7 @@
+ 
+     @db_file = File.join(@db_dir, 'pkgdb.db')
+     @tmp_dir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
+-    @fixme_file = File.join(@tmp_dir, 'pkgdb.fixme')
++    @fixme_file = File.join(@db_dir, 'pkgdb.fixme')
+     @db_filebase = @db_file.sub(/\.db$/, '')
+     close_db
+ 
+diff -ru ../orig.pkgtools-20041224/lib/pkgsqldb.rb ./lib/pkgsqldb.rb
+--- ../orig.pkgtools-20041224/lib/pkgsqldb.rb	Wed Mar 23 21:37:47 2005
++++ ./lib/pkgsqldb.rb	Tue Mar 29 00:29:51 2005
+@@ -74,7 +74,7 @@
+ 
+     @db_file = File.join(@db_dir, 'pkgdb.sqldb')
+     @tmp_dir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
+-    @fixme_file = File.join(@tmp_dir, 'pkgdb.fixme')
++    @fixme_file = File.join(@db_dir, 'pkgdb.fixme')
+     close_db
+ 
+     @db_dir
+diff -ru ../orig.pkgtools-20041224/lib/pkgtools.rb ./lib/pkgtools.rb
+--- ../orig.pkgtools-20041224/lib/pkgtools.rb	Wed Mar 23 21:37:47 2005
++++ ./lib/pkgtools.rb	Wed Mar 30 23:51:50 2005
+@@ -204,7 +204,7 @@
+   $ports_dir = $portsdb.ports_dir
+   $packages_base = ENV['PACKAGES'] || File.join($ports_dir, 'packages')
+   $packages_dir = File.join($packages_base, 'All')
+-  $tmpdir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
++  init_tmpdir
+   $pkg_path = ENV['PKG_PATH'] || $packages_dir
+ 
+   $pkg_sites = (ENV['PKG_SITES'] || '').split
+@@ -222,6 +222,31 @@
+ 
+   $portsdb.ignore_categories = config_value(:IGNORE_CATEGORIES) || []
+   $portsdb.extra_categories = config_value(:EXTRA_CATEGORIES) || []
++end
++
++def init_tmpdir
++  maintmpdir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
++  if !FileTest.directory?(maintmpdir)
++    raise "Temporary directory #{maintmpdir} does not exist"
++  end
++
++  cmdline = shelljoin("/usr/bin/mktemp", "-d", maintmpdir + "/portupgradeXXXXXXXX")
++  pipe = IO.popen(cmdline)
++  tmpdir = pipe.gets
++  pipe.close
++  if $? != 0 || tmpdir.nil? || tmpdir.length == 0
++    raise "Could not create temporary directory in #{maintmpdir}"
++  end
++  tmpdir.chomp!
++
++  at_exit {
++    begin
++      Dir.delete(tmpdir)
++    rescue
++      warning_message "Could not clean up temporary directory: " + $!
++    end
++    }
++  $tmpdir=tmpdir
+ end
+ 
+ def parse_pattern(str, regex = false)
