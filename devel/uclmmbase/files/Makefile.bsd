@@ -1,4 +1,4 @@
-CFLAGS+= -I${OPENSSLINC}
+CFLAGS+= -I${OPENSSLINC} -DBSD
 LDADD  = -L${OPENSSLLIB} -lssl -lcrypto
 VERSION!=cat ${.CURDIR:H}/VERSION
 LIB    = uclmmbase
