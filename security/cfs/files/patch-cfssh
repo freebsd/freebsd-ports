@@ -1,5 +1,8 @@
---- cfssh.orig	Wed Dec  3 16:21:40 1997
-+++ cfssh	Tue Apr 20 19:45:17 2004
+
+$FreeBSD$
+
+--- cfssh.orig
++++ cfssh
 @@ -1,15 +1,16 @@
 -#!/bin/ksh
 +#!/bin/sh

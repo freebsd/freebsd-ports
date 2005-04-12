@@ -1,5 +1,8 @@
---- cmkdir.c.orig	Mon Jun 21 20:23:18 1999
-+++ cmkdir.c	Mon Jun 21 20:23:45 1999
+
+$FreeBSD$
+
+--- cmkdir.c.orig
++++ cmkdir.c
 @@ -43,7 +43,7 @@
  	struct timeval tv;
  	u_long r;
