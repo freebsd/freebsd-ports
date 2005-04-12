@@ -1,0 +1,16 @@
+fsbackup/FAQ
+fsbackup/README
+fsbackup/VERSION
+fsbackup/cfg_example
+fsbackup/create_backup.sh
+fsbackup/fsbackup.pl
+fsbackup/scripts/fsrestore.sh
+fsbackup/scripts/mysql_backup.sh
+fsbackup/scripts/pgsql_backup.sh
+fsbackup/scripts/sysbackup.sh
+fsbackup/scripts/sysrestore.sh
+fsbackup/scripts/sqlite_backup.sh
+@dirrm fsbackup/scripts
+@dirrm fsbackup/cache
+@dirrm fsbackup/sys_backup
+@dirrm fsbackup
