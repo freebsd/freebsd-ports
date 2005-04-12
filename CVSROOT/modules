@@ -9439,6 +9439,7 @@ py-dns		ports/dns/py-dns
 py-dnspython	ports/dns/py-dnspython
 py-docutils	ports/textproc/py-docutils
 py-dosage	ports/deskutils/py-dosage
+py-dot		ports/graphics/py-dot
 py-dsv		ports/textproc/py-dsv
 py-elementtree	ports/devel/py-elementtree
 py-exif		ports/graphics/py-exif
