@@ -50,13 +50,13 @@ OPTIONS=	IMLIB "Build Kuickshow, a fast and versatile image viewer" off \
 
 .if defined(WITH_IMLIB)
 RUN_DEPENDS+=	kuickshow:${PORTSDIR}/graphics/kuickshow
-.elseif defined(WITHOUT_IMLIB)
+.elif defined(WITHOUT_IMLIB)
 CONFIGURE_ARGS+=--without-imlib-config
 .endif
 
 .if defined(WITH_GPHOTO2)
 RUN_DEPENDS+=	${LOCALBASE}/lib/kde3/kcm_kamera.la:${PORTSDIR}/graphics/kamera
-.elseif defined(WITHOUT_GPHOTO2)
+.elif defined(WITHOUT_GPHOTO2)
 CONFIGURE_ARGS+=--without-kamera
 .endif
 
