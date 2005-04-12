@@ -134,4 +134,7 @@ In particular,
 .Nm
 does not respect environment variables such as
 .Ev JAVA_PREFERRED_PORT
-which is used by %%PORTSDIR%%/Mk/bsd.java.mk.
+which is used by %%PORTSDIR%%/Mk/bsd.java.mk and will not use the values
+of such variables if they are set up as
+.Nm make
+variables in /etc/make.conf, for example.
