@@ -1,14 +1,10 @@
-
-$FreeBSD$
-
---- glib-1.2.8/Makefile.in.orig	Thu Jul 12 03:45:31 2001
-+++ glib-1.2.8/Makefile.in	Wed Aug  1 10:42:44 2001
-@@ -501,7 +501,7 @@
+--- glib-1.2.8/Makefile.in.orig	Tue Apr 12 13:51:56 2005
++++ glib-1.2.8/Makefile.in	Tue Apr 12 13:52:41 2005
+@@ -727,7 +727,6 @@
+ installdirs-am:
  
- install-am: all-am
- 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
--install: install-recursive
-+install:
- uninstall-am:
+ install: $(BUILT_SOURCES)
+-	$(MAKE) $(AM_MAKEFLAGS) install-recursive
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
  uninstall: uninstall-recursive
- all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
