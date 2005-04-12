@@ -21,7 +21,7 @@ COMMENT=		Capture your X display to individual frames or MPEG video
 RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 #CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 #			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=		--with-forced-embedded-ffmpeg	# To be removed after 1.1.4pre2?

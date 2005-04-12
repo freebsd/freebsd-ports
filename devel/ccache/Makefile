@@ -15,7 +15,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ccache.1
 PLIST_FILES=	bin/ccache

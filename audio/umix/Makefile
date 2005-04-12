@@ -17,7 +17,7 @@ COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		umix.1
 PLIST_FILES=	bin/umix

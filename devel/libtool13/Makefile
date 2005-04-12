@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install \
 		--program-suffix=${BUILD_VERSION}
 CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 INFO=		libtool${BUILD_VERSION}
 

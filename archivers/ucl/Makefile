@@ -16,7 +16,7 @@ COMMENT=	A data compression library with low memory usage
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	AUTHORS NEWS README THANKS TODO
 

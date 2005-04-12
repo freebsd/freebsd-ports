@@ -63,7 +63,7 @@ CONFLICTS=	zsh-4.0.*
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-#CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+#CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-etcdir=${ZSH_ETCDIR} --with-curses-terminfo \
 		--enable-fndir=${ZSH_FNDIR} --enable-function-subdirs \
 		--enable-site-fndir=${ZSH_SITEFNDIR}

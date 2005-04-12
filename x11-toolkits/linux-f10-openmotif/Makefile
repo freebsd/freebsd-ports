@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.ics.com/pub/Products/Motif/%SUBDIR%/
 MASTER_SITE_SUBDIR=	om2.2.4/redhat-7.3
 PKGNAMEPREFIX=	linux-
-EXTRACT_SUFX=	-0.1.${ARCH}.rpm
+EXTRACT_SUFX=	-0.1.${MACHINE_ARCH}.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 EXTRACT_FILES=	./usr/X11R6/lib/libMrm.so.3.0.3 \
 		./usr/X11R6/lib/libUil.so.3.0.3 \

@@ -17,7 +17,7 @@ COMMENT=	A program that automatically solves games of Freecell
 
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 MAN6=	fc-solve-board_gen.6 fc-solve.6 \

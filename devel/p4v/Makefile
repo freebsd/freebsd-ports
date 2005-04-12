@@ -24,8 +24,8 @@ ONLY_FOR_ARCHS=		i386
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
-PLIST=			${MASTERDIR}/pkg-plist.${ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
+PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 P4V_DOCS_DIR=	P4VResources/p4vhelp
 P4V_DOCS=	About_Perforce_products.html About_file_icons.html \

@@ -33,7 +33,7 @@ post-extract:
 	${SED} 's|%%XAWVER%%|${XAWVER}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
-.if ${ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha"
 post-configure:
 	@(cd ${WRKSRC}; ${MV} Makefile Makefile.orig; ${SED} -e \
 	  's/CDEBUGFLAGS = -O/CDEBUGFLAGS =/g' Makefile.orig > Makefile)

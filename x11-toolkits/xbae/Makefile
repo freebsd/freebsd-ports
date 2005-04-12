@@ -19,7 +19,7 @@ COMMENT=	A Motif-based widget which displays a grid of cells as a spreadsheet
 
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes

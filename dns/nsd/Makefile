@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-pidfile=/var/run/nsd.pid \
 		--with-dbfile=${NSDDBFILE} \
 		--with-libwrap
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 SED_SCRIPT=	-e 's,%%NSDUSER%%,${NSDUSER},g' \
 		-e 's,%%NSDDIR%%,${NSDDIR},g' \

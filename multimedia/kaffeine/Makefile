@@ -21,7 +21,7 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		kaffeine.1
 MANLANG=	"" de

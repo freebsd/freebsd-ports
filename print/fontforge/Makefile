@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_ICONV=	yes
 PATCH_STRIP=	-l
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .if !defined(FONTFORGE_NO_MULTILAYER)
 CONFIGURE_ARGS=	--with-multilayer --with-devicetables --without-freetype-src
 .else

@@ -19,7 +19,7 @@ USE_GNOME=		pkgconfig
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-ssl --disable-pcre
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 			PTHREADLIB="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes

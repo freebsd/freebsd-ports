@@ -23,7 +23,7 @@ COMMENT=	A DocBook SGML DTD into nroff/troff -man macros converter
 # Jade is preferred, but it currently doesn't compile on 2.1.x
 # system, so use sp in that case.
 
-.if ${ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha"
 WITH_OPENJADE=	yes
 .endif
 

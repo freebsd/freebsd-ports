@@ -16,7 +16,7 @@ COMMENT=	A tool intended for Blackbox that checks for new mail
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bbmail.1
 PLIST_FILES=	bin/bbmail share/bbtools/bbmail.bb

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LIB_PC_DEPENDS}
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 NO_BUILD=	yes
 USE_GNOME=	gnomehack pkgconfig

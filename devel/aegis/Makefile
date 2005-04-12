@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-nlsdir=${LOCALBASE}/share/locale
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	ae-sccs-put.1 ae_c.1 ae_p.1 aeannotate.1 aeb.1 aebuffy.1 \
 	aeca.1 aecd.1 aechown.1 aeclean.1 aeclone.1 aecomp.1 \

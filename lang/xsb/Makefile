@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 
 MAN1=	xsb.1
 
-PLIST_SUB+=	ARCH=${ARCH} \
+PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH} \
 		OPSYS=${OPSYS:S/BSD/bsd/g:S/F/f/g:S/O/o/g:S/N/n/g}
 
 .include <bsd.port.pre.mk>

@@ -18,7 +18,7 @@ USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN5=		tac_plus.conf.5
 MAN8=		tac_plus.8 tac_pwd.8

@@ -28,7 +28,7 @@ USE_GL=		yes
 USE_MOTIF=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-javadx
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	ARCH="${OPSYS:L}" \

@@ -16,7 +16,7 @@ MAINTAINER=	vlm@lionet.info
 COMMENT=	Modern ASN.1 to C compiler
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5=	yes
 
 MAN1=	asn1c.1 enber.1 unber.1

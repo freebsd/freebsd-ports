@@ -25,11 +25,11 @@ DISTFILES+=	${DOCFILES:S/$/:doc/}
 ALL_TARGET=	crafty
 
 OPT=		-DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS
-.if ${ARCH} == "i386"
+.if ${MACHINE_ARCH} == "i386"
 MAKE_ENV+=	asm=X86-elf.o
 OPT+=		-DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
 # XXX Someone with ASM knowledge would have to fix the Sparc.S
-.elif ${ARCH} == "sparc64" && defined(CRAFTY_SPARC_ASM)
+.elif ${MACHINE_ARCH} == "sparc64" && defined(CRAFTY_SPARC_ASM)
 MAKE_ENV+=	asm=Sparc.o
 OPT+=		-DUSE_ASSEMBLY_A
 .else

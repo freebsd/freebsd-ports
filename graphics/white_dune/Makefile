@@ -24,7 +24,7 @@ USE_MOTIF=	yes
 USE_GL=		yes
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		YACC="/usr/bin/byacc"
 CONFIGURE_ARGS=	--with-optimization \

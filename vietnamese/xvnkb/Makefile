@@ -19,7 +19,7 @@ USE_XLIB=	yes
 USE_GNOME=	gtk20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 .if defined(WITHOUT_XFT)

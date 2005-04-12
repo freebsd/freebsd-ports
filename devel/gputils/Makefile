@@ -15,7 +15,7 @@ MAINTAINER=	sam@rfc1149.net
 COMMENT=	GPUTILS is a set of utilities for Microchip PIC microcontrollers
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	gpal.1 gpasm.1 gpdasm.1 gplib.1 gplink.1 gputils.1 gpvc.1 gpvo.1
 

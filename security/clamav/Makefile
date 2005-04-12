@@ -29,7 +29,7 @@ OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
 

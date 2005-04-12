@@ -13,20 +13,6 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
-.if defined(WANT_ANTIKICK)
-PATCH_SITES=	http://www.cs.cmu.edu/~dst/Adobe/Gallery/XPDF/anti-kick/
-PATCHFILES=	anti.diff
-#.else
-#PATCH_SITES=	http://vzzbx.xs4all.nl/files/ \
-#		http://www.cs.cmu.edu/~dst/Adobe/Gallery/
-#PATCHFILES=	xpdf-ro-remove.patch
-.endif
-PATCH_DIST_STRIP= -p1
-PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
-		${MASTER_SITE_TEX_CTAN}
-PATCH_SITE_SUBDIR=	support/xpdf
-PATCHFILES=	xpdf-2.01-patch1
-
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Display PDF files, and convert them to other formats
 
@@ -40,7 +26,7 @@ USE_MOTIF=	yes
 
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	259
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gzip --enable-opi --with-x \
@@ -50,9 +36,6 @@ CONFIGURE_ARGS=	--with-gzip --enable-opi --with-x \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2"
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4-paper
-.endif
-.if defined(WANT_ANTIKICK)
-CONFIGURE_ARGS+=	--enable-antikick
 .endif
 
 MAN1=		pdffonts.1 \
@@ -73,7 +56,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-static
-.endif

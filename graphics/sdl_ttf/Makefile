@@ -22,7 +22,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	LT_CURRENT=3 LT_REVISION=0 LT_AGE=0

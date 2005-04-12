@@ -23,7 +23,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 MAN8=		nast.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

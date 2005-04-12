@@ -19,6 +19,6 @@ GNU_CONFIGURE=	yes
 MAN8=		checkpassword-pam.8
 PLIST_FILES=	bin/checkpassword-pam
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

@@ -28,7 +28,7 @@ USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lgdbm"
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:

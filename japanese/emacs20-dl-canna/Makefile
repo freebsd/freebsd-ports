@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-canna-includes=${PREFIX}/include \
 		--with-canna-libraries=${PREFIX}/lib \
 		--with-emacs-srcdir=${EMACSDL_SRCDIR}
 CONFIGURE_ENV=	EMACS="emacs-dl-${EMACS_VER}"
-PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${ARCH}--freebsd \
+PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
 		DLCANNA_VER=${DLCANNA_VER} LISPDIR=${LISPDIR} DOCDIR=${DOCDIR}
 
 # ports variables

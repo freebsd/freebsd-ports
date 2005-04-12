@@ -24,7 +24,7 @@ USE_LIBTOOL_VER=13
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 INSTALLS_SHLIB=	YES
 

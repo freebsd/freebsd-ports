@@ -16,7 +16,7 @@ COMMENT=	A FTP benchmark program
 PLIST_FILES=	bin/dkftpbench
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 USE_AUTOCONF_VER=259
 USE_AUTOMAKE_VER=14

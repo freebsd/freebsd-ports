@@ -17,7 +17,7 @@ COMMENT=	Little logical game for KDE
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
 

@@ -22,9 +22,9 @@ MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
 MAN1=		srmt.1
 
 post-extract:
-.if ${ARCH} != "i386" || ${CC} != "cc"
+.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${ARCH}-freebsd-${CC}.rul
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
 .endif
 
 post-patch:
@@ -34,7 +34,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} \
-		${WRKSRC}/rmt/OBJ/${ARCH}-freebsd-${CC}/rmt \
+		${WRKSRC}/rmt/OBJ/${MACHINE_ARCH}-freebsd-${CC}/rmt \
 		${PREFIX}/sbin/srmt
 	@${INSTALL_MAN} ${WRKSRC}/rmt/rmt.1 ${MANPREFIX}/man/man1/srmt.1
 	@${INSTALL_DATA} ${WRKSRC}/rmt/rmt.dfl ${PREFIX}/etc/srmt.conf.dist

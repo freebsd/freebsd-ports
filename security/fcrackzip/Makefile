@@ -14,7 +14,7 @@ MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Portable, fast and featureful ZIP password cracker
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes

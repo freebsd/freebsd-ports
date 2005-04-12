@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	i386 sparc64
 
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
 MAN1=		lightningize.1

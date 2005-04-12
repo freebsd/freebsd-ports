@@ -38,7 +38,7 @@ PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/leafnode \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=
 PKGMESSAGE=	${WRKSRC}/pkg-message
 

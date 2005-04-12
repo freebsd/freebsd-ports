@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
-.if ${ARCH} != "i386"
+.if ${MACHINE_ARCH} != "i386"
 WITHOUT_SIMD=	yes
 .endif
 

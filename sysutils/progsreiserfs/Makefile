@@ -22,7 +22,7 @@ USE_GETOPT_LONG=yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debug
 
 .if defined(WITHOUT_NLS)

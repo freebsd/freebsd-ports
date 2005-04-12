@@ -32,7 +32,7 @@ USE_BZIP2=	yes
 USE_LINUX_PREFIX=	yes
 PREFIX=		${LINUXBASE}${X11BASE}
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--host=${ARCH}--linux-gnu \
+CONFIGURE_ARGS=	--host=${MACHINE_ARCH}--linux-gnu \
 		--enable-shared --enable-production \
 		--enable-build-12 --enable-default-12 --disable-build-20 \
 		--disable-debug --no-recursion \

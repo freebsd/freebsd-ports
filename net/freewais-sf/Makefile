@@ -22,7 +22,7 @@ USE_PERL5_BUILD=yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	-sde -Dprefix="${PREFIX}" \
-		-Darchname="${ARCH}-freebsd"
+		-Darchname="${MACHINE_ARCH}-freebsd"
 INSTALL_TARGET=	install install.man
 
 PORTDOCS=	fwsf.ps

@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 png2swf.1 \

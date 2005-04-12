@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--enable-cxx --enable-dynamic \
 		--includedir=${PREFIX}/include/db41

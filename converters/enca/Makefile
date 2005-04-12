@@ -23,7 +23,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--without-librecode \
 		--with-libiconv=${LOCALBASE}
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 

@@ -16,7 +16,7 @@ COMMENT=	A program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 
 MAN1=		migrate.1

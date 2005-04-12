@@ -20,7 +20,7 @@ LIB_DEPENDS=	pdf.7:${PORTSDIR}/print/pdflib \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

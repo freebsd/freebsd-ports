@@ -61,7 +61,7 @@ PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 		USERDB=${USERDB:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--with-userdb=${USERDB} \
 		--datadir=${DATADIR} \

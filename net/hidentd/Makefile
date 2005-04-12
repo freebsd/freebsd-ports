@@ -14,7 +14,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Simple and secure ident (RFC1413) server
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		hidentd.8
 

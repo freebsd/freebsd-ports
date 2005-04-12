@@ -33,7 +33,7 @@ TESTDATADIR=	ABSORB_EXAMPLE ABSTOMPA_EXAMPLE ABSTOMPA_TEST ADDSYM_EXAMPLE \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha"
 BROKEN=	"/usr/libexec/elf/ld: platon.o: .got subsegment exceeds 64K (size 88552)"
 .endif
 

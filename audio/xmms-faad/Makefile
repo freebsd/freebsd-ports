@@ -33,7 +33,7 @@ USE_GNOME=		gtk12
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
 
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-xmms --with-mp4v2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DHAVE_GTK" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \

@@ -17,7 +17,7 @@ COMMENT=	A command-driven interactive function plotting program
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-tutorial \
 		--without-linux-vga \
 		--with-lasergnu

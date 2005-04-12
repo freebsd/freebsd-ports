@@ -20,7 +20,7 @@ USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-initscriptdir=${PREFIX}/etc/rc.d \
 		--with-docdir=${DOCSDIR} --enable-sample
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PROGRAMS=	smartctl smartd
 MAN5=		smartd.conf.5

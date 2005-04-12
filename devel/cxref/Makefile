@@ -19,7 +19,7 @@ COMMENT=	C program cross-referencing & documentation tool
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-cxref-cpp
 ALL_TARGET=	programs
 

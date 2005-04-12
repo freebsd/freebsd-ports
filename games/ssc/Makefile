@@ -24,7 +24,7 @@ USE_GL=		yes
 USE_SDL=	mixer sdl
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
 		LDFLAGS=-L${X11BASE}/lib
 ONLY_FOR_ARCHS=	i386

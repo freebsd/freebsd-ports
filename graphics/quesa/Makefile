@@ -21,7 +21,7 @@ COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GL=		yes
 USE_X_PREFIX=	yes
 .ifdef (WITH_QUESA_EXAMPLES)

@@ -26,14 +26,14 @@ MLINKS=		star.1 ustar.1
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${ARCH} != "i386" || ${CC} != "cc"
+.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${ARCH}-freebsd-${CC}.rul
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
 .endif
 
 do-install:
 	@${INSTALL_PROGRAM} \
-		${WRKSRC}/star/OBJ/${ARCH}-freebsd-${CC}/star \
+		${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-${CC}/star \
 		${PREFIX}/bin
 	@cd ${PREFIX}/bin ; ${LN} -f star ustar
 	@${INSTALL_MAN} ${WRKSRC}/star/star.1 ${MANPREFIX}/man/man1

@@ -18,7 +18,7 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--with-imagemagick=no
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		psiconv.1 psiconv-config.1
 

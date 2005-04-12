@@ -20,7 +20,7 @@ LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		unshield.0:${PORTSDIR}/archivers/unshield
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE}
 USE_ICONV=	yes
 USE_LIBTOOL_VER=15

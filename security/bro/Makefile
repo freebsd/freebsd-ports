@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-pub-${PORTVERSION}a37
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	CC="${CC}"
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 USE_BISON=	yes
 USE_PERL5=	yes

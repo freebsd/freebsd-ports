@@ -20,7 +20,7 @@ LIB_DEPENDS=	Coin.43:${PORTSDIR}/graphics/Coin
 USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 CONFIGURE_ARGS=	--with-pthread=yes --with-coin=${X11BASE}
 INSTALLS_SHLIB=	yes

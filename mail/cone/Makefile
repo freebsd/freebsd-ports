@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	-C --without-db --prefix=${PREFIX} --exec-prefix=${PREFIX}
 
 CONFIGURE_ENV=	REHASH="${PERL} ${SCRIPTDIR}/c_rehash" LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		cone.1 leaf.1 mailtool.1
 INSTALL_TARGET=	install-strip
 

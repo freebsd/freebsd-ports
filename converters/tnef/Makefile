@@ -16,7 +16,7 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		tnef.1
 PORTDOCS=		AUTHORS NEWS README THANKS TODO

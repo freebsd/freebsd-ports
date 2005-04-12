@@ -18,7 +18,7 @@ INFO=		openal
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/linux
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes

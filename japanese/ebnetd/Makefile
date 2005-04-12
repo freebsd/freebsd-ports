@@ -18,7 +18,7 @@ COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 LIB_DEPENDS=	eb.9:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
 
 # Local variables

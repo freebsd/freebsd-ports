@@ -31,7 +31,7 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
 IGNORE=		"ignored due to cast from pointer to integer of different size"
 .endif
 

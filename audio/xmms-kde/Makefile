@@ -23,7 +23,7 @@ USE_INC_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL} \
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-xmms-prefix=${X11BASE}
 USE_GNOME=	gtk12
 

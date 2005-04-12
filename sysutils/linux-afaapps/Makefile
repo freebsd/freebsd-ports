@@ -11,7 +11,7 @@ PORTREVISION=		3
 CATEGORIES=		sysutils linux
 MASTER_SITES=		ftp://ftp.us.dell.com/scsi-raid/
 PKGNAMEPREFIX=		linux-
-DISTNAME=		aacraid-util-rh8.0-${ARCH}
+DISTNAME=		aacraid-util-rh8.0-${MACHINE_ARCH}
 
 MAINTAINER=		bms@FreeBSD.org
 COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
@@ -32,10 +32,10 @@ LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
 
 ONLY_FOR_ARCHS=		i386
 NO_FILTER_SHLIBS=	yes
-PLIST=			${MASTERDIR}/pkg-plist.${ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
+PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
-RPMFILE=		${PORTNAME}-${PORTVERSION}-2.${ARCH}.rpm
+RPMFILE=		${PORTNAME}-${PORTVERSION}-2.${MACHINE_ARCH}.rpm
 
 DBPATH=			/var/lib/rpm
 RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \

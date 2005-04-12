@@ -32,7 +32,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -DBSD" \
 		LDFLAGS="-L${X11BASE}/lib"
 

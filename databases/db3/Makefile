@@ -33,7 +33,7 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--enable-dynamic \
 			--prefix=${PREFIX} \
 			--includedir=${PREFIX}/include/db3
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=		install_include install_lib install_utilities
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}

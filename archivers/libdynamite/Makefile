@@ -15,7 +15,7 @@ MAINTAINER=	boris@brooknet.com.au
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

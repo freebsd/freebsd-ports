@@ -24,7 +24,7 @@ NO_MTREE=	yes
 INFO=		libtool
 CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	PREFIX=${PREFIX}
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

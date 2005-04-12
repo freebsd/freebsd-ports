@@ -18,7 +18,7 @@ COMMENT=	Toolkit for developing bioinformatic related software in C++
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=	13
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:

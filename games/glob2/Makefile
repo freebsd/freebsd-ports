@@ -19,7 +19,7 @@ LIB_DEPENDS=		vorbis.3:${PORTSDIR}/audio/libvorbis	\
 
 USE_SDL=		image net sdl
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_GCC=		3.4

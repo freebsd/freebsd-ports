@@ -35,7 +35,7 @@ INC_FILES=	Flv_CStyle.H Flv_Data_Source.H Flv_List.H Flv_Style.H \
 
 INSTALLS_SHLIB=	yes
 
-.if ${ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	-fPIC
 .endif
 

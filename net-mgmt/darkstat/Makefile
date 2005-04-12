@@ -17,7 +17,7 @@ COMMENT=	Network statistics gatherer, similar to ntop
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS=	--disable-nls

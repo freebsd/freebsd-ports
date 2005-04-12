@@ -33,7 +33,7 @@ USE_GCC=		3.4
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-download					\
 			--with-blas="${LIBBLAS}"				\
 			--with-amd="-lamd"					\

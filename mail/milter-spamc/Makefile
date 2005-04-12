@@ -50,7 +50,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 DOCS=		CHANGES.TXT index.shtml style.css mailto.js \
 		LICENSE.TXT
 
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--localstatedir=/var/spool
 .if !defined(WITH_DEBUG)

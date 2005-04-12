@@ -18,7 +18,7 @@ COMMENT=	Xdebug extension for PHP
 USE_PHP=	yes
 USE_PHPIZE=	yes
 CONFIGURE_ARGS=	--enable-xdebug --with-php-config=${PREFIX}/bin/php-config
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-build:

@@ -35,7 +35,7 @@ MAKE_ARGS+=	FC=ftn77
 MAKE_ARGS+=	FC=f77
 .endif
 MAKE_ARGS+=	FFLAGS="${FFLAGS} -w" CFLAGS="${CFLAGS} -I${PREFIX}/include"
-.if ${ARCH} == "i386"
+.if ${MACHINE_ARCH} == "i386"
 FFLAGS+=	-malign-double
 .endif
 

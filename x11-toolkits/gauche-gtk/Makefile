@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/gtk
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/gtk
 PLIST_SUB=	VERSION="`gauche-config -V`" \
-		TARGET="${ARCH}-portbld-freebsd${OSREL}"
+		TARGET="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
 .if defined(WITH_GTKGLEXT)
 LIB_DEPENDS+=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext

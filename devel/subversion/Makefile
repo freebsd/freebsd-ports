@@ -19,7 +19,7 @@ INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl
 
 MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnversion.1

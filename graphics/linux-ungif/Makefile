@@ -11,10 +11,10 @@ CATEGORIES=	graphics linux
 MAINTAINTER=	maho@FreeBSD.org
 COMMENT=	RPM of the ungif lib
 
-.if (${ARCH} == "i386")
-RPM_SET=	libungif-4.1.0-7.${ARCH}.rpm
+.if (${MACHINE_ARCH} == "i386")
+RPM_SET=	libungif-4.1.0-7.${MACHINE_ARCH}.rpm
 .else
-RPM_SET=	libungif-4.1.0-8.${ARCH}.rpm
+RPM_SET=	libungif-4.1.0-8.${MACHINE_ARCH}.rpm
 .endif
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

@@ -15,7 +15,7 @@ MAINTAINER=	jeremy@external.org
 COMMENT=	Portable debug memory allocation library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-threads --enable-shlib
 CFLAGS+=	-fPIC
 USE_REINPLACE=	yes
