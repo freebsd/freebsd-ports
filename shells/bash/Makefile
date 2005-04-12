@@ -25,7 +25,7 @@ PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}:bash
 PATCHLEVEL=		${patch}
 .endfor
 
-MAINTAINER=		eik@FreeBSD.org, obrien@FreeBSD.org
+MAINTAINER=		eik@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
@@ -53,7 +53,6 @@ PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH
 .endif
 
 CONFIGURE_ARGS=		--without-bash-malloc \
-			--with-installed-readline \
 			--disable-rpath \
 			--enable-disabled-builtins
 
@@ -75,7 +74,7 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CPPFLAGS+=		${PTHREAD_CFLAGS} \
 			-I${LOCALBASE}/include
