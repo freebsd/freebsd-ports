@@ -1,5 +1,8 @@
---- Makefile.orig	Sat Dec 20 10:57:08 1997
-+++ Makefile	Mon May 22 18:38:56 2000
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -74,8 +74,9 @@
  #CC=cc
  #COPT=-O -DNOT_ANSI_C -DPROTOTYPES=0
@@ -12,7 +15,7 @@
  
  #1B: paths:
  #some peple like /usr/local/sbin instead of /usr/local/etc
-@@ -217,12 +218,18 @@
+@@ -224,12 +225,18 @@
  ## not sure what to do for NeXT.  I think this works:
  #CFLAGS=$(COPT) -posix -D_BSD -DANYPORT -I$(RINCLUDES)
  

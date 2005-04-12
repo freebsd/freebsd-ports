@@ -1,5 +1,8 @@
---- cfs.c.orig	Fri Dec 19 01:30:50 1997
-+++ cfs.c	Mon May 22 18:30:01 2000
+
+$FreeBSD$
+
+--- cfs.c.orig
++++ cfs.c
 @@ -43,7 +43,7 @@
  
  struct in_addr validhost;
@@ -9,7 +12,7 @@
  void nfs_program_2();
  void adm_program_2();
  #include <string.h>
-@@ -236,7 +236,7 @@
+@@ -240,7 +240,7 @@
   	setuid(0);
  	umask(0);
  
