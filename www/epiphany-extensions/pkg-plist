@@ -23,12 +23,12 @@ lib/epiphany-%%VERSION%%/extensions/libtabsmenuextension.so
 lib/epiphany-%%VERSION%%/extensions/libtabstatesextension.a
 lib/epiphany-%%VERSION%%/extensions/libtabstatesextension.so
 lib/epiphany-%%VERSION%%/extensions/libtabstatesextension.so.0
-lib/epiphany-%%VERSION%%/extensions/tab-states.xml
 lib/epiphany-%%VERSION%%/extensions/page-info.xml
 lib/epiphany-%%VERSION%%/extensions/select-stylesheet.xml
 lib/epiphany-%%VERSION%%/extensions/sidebar.xml
 lib/epiphany-%%VERSION%%/extensions/smart-bookmarks.xml
 lib/epiphany-%%VERSION%%/extensions/tab-groups.xml
+lib/epiphany-%%VERSION%%/extensions/tab-states.xml
 lib/epiphany-%%VERSION%%/extensions/tabsmenu.xml
 share/gnome/epiphany-extensions/ephy-gestures.xml
 share/gnome/epiphany-extensions/glade/action-properties.glade
