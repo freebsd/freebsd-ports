@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	forcedattack
 DISTNAME=	4stAttack-${PORTVERSION}
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Connect four stones in a straight line
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game

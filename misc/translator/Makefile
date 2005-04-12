@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		misc
 MASTER_SITES=		http://jodrell.net/files/translator/
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A GTK+ frontend to the Babelfish translation service
 
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

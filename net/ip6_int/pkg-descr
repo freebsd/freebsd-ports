@@ -5,4 +5,4 @@ addresses.  If the address is followed by /n, the PTR is truncated
 to n bits.
 
 - Jean-Yves Lefort
-jylefort@brutele.be
+jylefort@FreeBSD.org

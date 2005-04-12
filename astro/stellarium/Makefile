@@ -11,7 +11,7 @@ CATEGORIES=		astro
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A 3D photo-realistic sky renderer
 
 USE_GCC=		3.4

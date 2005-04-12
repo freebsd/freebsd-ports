@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		x11-wm
 MASTER_SITES=		http://www.burtonini.com/computing/
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A window manipulation tool
 
 LIB_DEPENDS=		popt:${PORTSDIR}/devel/popt

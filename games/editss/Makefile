@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/contrib/
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	An editor for XPilot shipshapes
 
 USE_IMAKE=	yes

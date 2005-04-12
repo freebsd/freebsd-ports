@@ -12,7 +12,7 @@ CATEGORIES=		x11-fonts
 MASTER_SITES=		http://linuxadvocate.org/projects/gfontsampler/downloads/
 DISTNAME=		gfontsampler-${PORTVERSION}
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A program for viewing several fonts at once
 
 USE_X_PREFIX=		yes

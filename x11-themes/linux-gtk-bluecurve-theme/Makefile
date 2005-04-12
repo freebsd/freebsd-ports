@@ -12,7 +12,7 @@ MASTER_SITES=		ftp://fr.rpmfind.net/linux/redhat/9/en/os/${MACHINE_ARCH}/RedHat/
 DISTFILES=		redhat-artwork-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
 DIST_SUBDIR=		rpm
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		Bluecurve theme for GTK1 and GTK2 from RedHat 8.0 (Linux version)
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio

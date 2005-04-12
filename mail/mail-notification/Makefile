@@ -12,7 +12,7 @@ CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A mail notification for freedesktop.org-compliant system trays
 
 USE_X_PREFIX=		yes
