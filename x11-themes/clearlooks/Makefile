@@ -11,7 +11,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.x engine based on Bluecurve
 
 USE_BZIP2=	yes
