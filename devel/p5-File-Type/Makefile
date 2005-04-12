@@ -24,6 +24,6 @@ MAN3=	File::Type.3 \
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
-.endifo
+.endif
 
 .include <bsd.port.post.mk>
