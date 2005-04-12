@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	librsync
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steve@ion.lu
 COMMENT=	Library for delta compression of streams
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
