@@ -8,7 +8,6 @@
 PORTNAME=	mbrolavox
 PORTVERSION=	3.0.1
 CATEGORIES=	audio accessibility
-DIST_SUBDIR=	mbrolavox
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
@@ -48,7 +47,12 @@ MYFILES+=	${FILE_${ii}}
 MYWITH+=	${ii}
 . endif
 .endfor
+.if !empty(MYDISTFILES)
 DISTFILES=	${MYDISTFILES}
+DIST_SUBDIR=	mbrolavox
+.else
+DISTFILES=	# none
+.endif
 
 .for ii in ${FILEDIRS}
 MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/:${ii} \
