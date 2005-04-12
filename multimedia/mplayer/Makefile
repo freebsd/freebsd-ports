@@ -260,7 +260,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -422,7 +422,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 WITH_XANIM=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/RealPlayer8/realplay)
+.if exists(${LOCALBASE}/lib/RealPlayer/realplay.bin)
 WITH_REALPLAYER=	yes
 .endif
 
@@ -524,6 +524,7 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 #Kernel granularity
 DEFAULT_KERN_HZ=1024
 .else #MPLAYER_GENERIC_BUILD
+CFLAGS+=	-fno-force-addr
 .if defined(DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -701,7 +702,7 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 .if defined(WITH_REALPLAYER)
 CONFIGURE_ARGS+=	--enable-real \
-			--with-reallibdir=${LOCALBASE}/lib/RealPlayer8/Codecs
+			--with-reallibdir=${LOCALBASE}/lib/RealPlayer/codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .endif
