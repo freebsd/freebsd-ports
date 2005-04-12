@@ -37,7 +37,7 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 WITH_XS=	yes
 .endif # exists(${X11BASE}/bin/xscreensaver)
 
-.if exists(${X11BASE}/share/gnome/control-center-2.0/capplets/screensaver-properties.desktop)
+.if exists(${X11BASE}/share/gnome/applications/gnome-screensaver-properties.desktop)
 WITH_XSGNOME=	yes
 .endif # exists(${X11BASE}/bin/screensaver-properties-capplet)
 
