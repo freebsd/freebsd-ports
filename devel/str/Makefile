@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	str
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -20,12 +20,10 @@ INSTALLS_SHLIB=	yes
 MAN1=		str-config.1
 MAN3=		str.3
 
-.include <bsd.port.pre.mk>
-
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
