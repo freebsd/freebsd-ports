@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	lmtp2nntp
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	mail news
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"OSSP mail to news gateway"
+COMMENT=	OSSP mail to news gateway
 
 LIB_DEPENDS=	str.9:${PORTSDIR}/devel/str \
 		ex.10:${PORTSDIR}/devel/ossp-ex \
