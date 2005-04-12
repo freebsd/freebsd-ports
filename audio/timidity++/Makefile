@@ -6,89 +6,114 @@
 #
 
 PORTNAME=	timidity++
-PORTVERSION=	2.11.3
-PORTREVISION=	1
+PORTVERSION=	2.13.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.timidity.jp/dist/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	timidity
 DISTNAME=	TiMidity++-${PORTVERSION}
 
-MAINTAINER?=	yatt@luna2.org
-COMMENT?=	Software MIDI player
+MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Software MIDI player
+
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 CONFLICTS=	timidity-0.*
 
 # If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
 #WITHOUT_X11=	yes
-
-SLAVEDIRS=	audio/timidity++-emacs
-# rest are included by timidity++-emacs port
-SLAVEDIRS+=	audio/timidity++-gtk audio/timidity++-motif \
-		audio/timidity++-slang audio/timidity++-tcltk \
-		audio/timidity++-xaw audio/timidity++-xskin \
-		japanese/timidity++-slang japanese/timidity++-tcltk
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-.if !defined(WITHOUT_X11)
+
+CONFIGURE_ARGS?=--enable-interface=ncurses,vt100,server
+CONFIGURE_ARGS+=--program-transform-name= --enable-network
+
+.if ${CONFIGURE_ARGS:M*ncurses*} != ""
+MANLANG=	"" ja
+MAN1=		timidity.1
+MAN5=		timidity.cfg.5
+.else
+RUN_DEPENDS+=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
+.endif
+
+PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE} TIMID_LIBDIR=${TIMID_LIBDIR} \
+		ELISPDIR=share/emacs/site-lisp
+
+DOCFILES?=	README.alsaseq README.dl README.m2m README.mts README.sf
+DOCLANG?=	C ja_JP.eucJP
+
+TIMID_LIBDIR=	lib/timidity
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--without-x --disable-spectrogram --disable-wrd --disable-dynamic
+.else
+CONFIGURE_ARGS+=--with-x    --enable-spectrogram  --enable-wrd  --enable-dynamic
 USE_XLIB=	yes
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 .endif
 
-DIST_SUBDIR=	timidity
-
-.if !defined(WITHOUT_X11)
-CONFIGURE_ARGS=	--with-x --enable-ncurses --enable-vt100 \
-		--enable-dynamic --enable-server \
-		--enable-network --enable-spectrogram --enable-wrd \
-		--program-transform-name=
+.if ${OSVERSION} >= 450002
+EUCJP_LOCALE=	ja_JP.eucJP
 .else
-CONFIGURE_ARGS=	--enable-ncurses --enable-vt100 \
-		--enable-network --disable-spectrogram --disable-wrd \
-		--program-transform-name=
+EUCJP_LOCALE=	ja_JP.EUC
 .endif
 
-MAN1=		timidity.1
-MAN5=		timidity.cfg.5
-
-MANLANG=	"" ja
-DOCFILES=	README.dl README.sf
-DOCLANG=	C ja_JP.ujis
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 600006
-BROKEN=		"Depends on libxpg4 which was removed from FreeBSD 6.0"
-.endif
+#.if ${OSVERSION} > 600006
+#BROKEN=		"Depends on libxpg4 which was removed from FreeBSD 6.0"
+#.endif
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME=	esound
-CONFIGURE_ARGS+=--enable-audio=oss,esd
-PKGNAMESUFFIX=	-esound
+CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
 .else
-CONFIGURE_ARGS+=--enable-audio=oss
+CONFIGURE_ARGS+=--enable-audio=oss,vorbis
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
 CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 .endif
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.1 \
-	${PREFIX}/man/ja/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.cfg.5 \
-	${PREFIX}/man/ja/man5
+pre-install:
+.for dir in ${PREFIX}/share/timidity ${PREFIX}/${TIMID_LIBDIR}
+	@[ -d ${dir} ] || ${MKDIR} ${dir}
+.endfor
+
+.if ${CONFIGURE_ARGS:M*ncurses*} != ""
+post-install::
+	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.eucJP/timidity.1 \
+		${PREFIX}/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.eucJP/timidity.cfg.5 \
+		${PREFIX}/man/ja/man5
+.else
+do-build:
+	@cd ${WRKSRC}/interface; ${MAKE} ${ALL_TARGET}
+
+do-install:
+	@cd ${WRKSRC}/interface; ${MAKE} ${INSTALL_TARGET}
+.endif
+
 .if !defined(NOPORTDOCS)
+post-install::
 .for lang in ${DOCLANG}
-	@${MKDIR} \
-	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++
-	for f in ${DOCFILES}; do \
-	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/$$f \
-	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++; \
-	done;
+	${MKDIR} ${DOCSDIR}/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.eucJP$$//'`
+.for file in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/${file} ${DOCSDIR}/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.eucJP$$//'`
+.endfor
 .endfor
 .endif
-	${SETENV} PKG_PREFIX=${PREFIX} \
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.if defined(LINK)
+post-install::
+	${LN} -sf ${PREFIX}/bin/timidity ${PREFIX}/bin/${LINK}
+.endif
+
+.if exists(${PKGMESSAGE})
+post-install::
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
