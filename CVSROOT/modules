@@ -2664,6 +2664,7 @@ gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
 gimp-pmosaic	ports/graphics/gimp-pmosaic
 gimp-print	ports/print/gimp-print
+gimp-ufraw	ports/graphics/gimp-ufraw
 gimp1		ports/graphics/gimp1
 gindent		ports/devel/gindent
 gini		ports/net/gini
