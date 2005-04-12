@@ -60,3 +60,5 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/x11cplot.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/x11cplot.h
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p %D/lib/chicken
+@dirrm lib/chicken
