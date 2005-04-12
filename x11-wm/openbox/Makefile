@@ -8,7 +8,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
@@ -16,8 +16,6 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Derived from, and similar to, Blackbox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-
-BROKEN=		Incorrect pkg-plist
 
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/openbox --prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc/openbox
@@ -77,7 +75,7 @@ pre-install:
 	${ECHO_CMD} lib/libobparser.${ii} >> ${PLIST}
 	${ECHO_CMD} lib/libobrender.${ii} >> ${PLIST}
 .endfor
-.for ii in gnome/wm-properties gnome locale/ja/LC_MESSAGES
+.for ii in gnome/wm-properties gnome
 	${ECHO_CMD} "@unexec rmdir %D/share/${ii} 2>/dev/null || true" \
 		>> ${PLIST}
 .endfor
