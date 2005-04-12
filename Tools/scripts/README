@@ -1,7 +1,9 @@
 $FreeBSD$
 
 addport	- replacement for easy-import
-
+bump_revision.pl - Small script to bump the PORTREVISION variable of ports
+                   which are depending on a port with a changed shared lib
+                   version.
 consistency-check -  check whether all your ports are installed properly,
                      what files have changed, and what new files there are.
 check-latest-link - search for duplicate LATEST_LINK values and send nag
