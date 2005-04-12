@@ -68,8 +68,8 @@ share/fonts/amspsfont/wncyi10.pfb
 share/fonts/amspsfont/wncyr10.pfb
 share/fonts/amspsfont/wncysc10.pfb
 share/fonts/amspsfont/wncyss10.pfb
-share/fonts/amspsfont/Fontmap
-share/fonts/amspsfont/fonts.dir
-share/fonts/amspsfont/fonts.scale
+%%PLIST_X11%%share/fonts/amspsfont/Fontmap
+%%PLIST_X11%%share/fonts/amspsfont/fonts.dir
+%%PLIST_X11%%share/fonts/amspsfont/fonts.scale
 @dirrm share/fonts/amspsfont
 @unexec /bin/rmdir %D/share/fonts 2>/dev/null || /usr/bin/true
