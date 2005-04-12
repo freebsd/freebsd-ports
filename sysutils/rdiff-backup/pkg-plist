@@ -37,6 +37,12 @@ bin/rdiff-backup
 %%PYTHON_SITELIBDIR%%/rdiff_backup/connection.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/connection.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/connection.pyo
+%%PYTHON_SITELIBDIR%%/rdiff_backup/eas_acls.py
+%%PYTHON_SITELIBDIR%%/rdiff_backup/eas_acls.pyc
+%%PYTHON_SITELIBDIR%%/rdiff_backup/eas_acls.pyo
+%%PYTHON_SITELIBDIR%%/rdiff_backup/fs_abilities.py
+%%PYTHON_SITELIBDIR%%/rdiff_backup/fs_abilities.pyc
+%%PYTHON_SITELIBDIR%%/rdiff_backup/fs_abilities.pyo
 %%PYTHON_SITELIBDIR%%/rdiff_backup/increment.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/increment.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/increment.pyo
@@ -82,6 +88,9 @@ bin/rdiff-backup
 %%PYTHON_SITELIBDIR%%/rdiff_backup/statistics.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/statistics.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/statistics.pyo
+%%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.py
+%%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.pyc
+%%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html

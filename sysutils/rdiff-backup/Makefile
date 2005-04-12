@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION=	0.12.7
+PORTVERSION=	0.13.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://rdiff-backup.stanford.edu/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steve@ion.lu
 COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
