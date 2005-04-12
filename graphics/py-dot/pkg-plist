@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/dot_parser.py
+%%PYTHON_SITELIBDIR%%/dot_parser.pyc
+%%PYTHON_SITELIBDIR%%/dot_parser.pyo
+%%PYTHON_SITELIBDIR%%/pydot.py
+%%PYTHON_SITELIBDIR%%/pydot.pyc
+%%PYTHON_SITELIBDIR%%/pydot.pyo

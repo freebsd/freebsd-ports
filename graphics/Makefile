@@ -429,6 +429,7 @@
     SUBDIR += py-cairo
     SUBDIR += py-cgkit
     SUBDIR += py-chart
+    SUBDIR += py-dot
     SUBDIR += py-exif
     SUBDIR += py-gd
     SUBDIR += py-gdchart
