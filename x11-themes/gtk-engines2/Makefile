@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-engines2
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Theme engine for the gtk+-2.0 toolkit
 
-CONFLICTS=	gtk-smooth-engine-[0-9]*
+CONFLICTS=	gtk-smooth-engine-[0-9]* clearlooks-[0-9]*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

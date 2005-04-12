@@ -1,3 +1,4 @@
+lib/gtk-2.0/%%GTK_VERSION%%/engines/libclearlooks.so
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libcrux-engine.so
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libhcengine.so
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libindustrial.so
@@ -8,6 +9,7 @@ lib/gtk-2.0/%%GTK_VERSION%%/engines/libredmond95.so
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libsmooth.so
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libthinice.so
 libdata/pkgconfig/gtk-engines-2.pc
+share/themes/Clearlooks/gtk-2.0/gtkrc
 share/themes/Crux/gtk-2.0/gtkrc
 share/themes/Crux/pixmaps/arrow_down-spinner.png
 share/themes/Crux/pixmaps/arrow_down.png
