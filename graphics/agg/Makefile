@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	agg
-PORTVERSION=	2.2
+PORTVERSION=	2.3.a
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.antigrain.com/
+MASTER_SITES=	http://www.antigrain.com/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vector-agg
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A High Quality Rendering Engine for C++
 
-WRKSRC=		${WRKDIR}/agg2
+WRKSRC=		${WRKDIR}/agg23
 USE_GMAKE=	yes
 MAKE_ENV=	C="${CC}" CXX="${CXX}"
 
