@@ -36,18 +36,21 @@ The
 file contains a list of the registered Java VMs which are available to be
 used by
 .Nm javavm .
-Each Java VM is listed by specifying the location of the main 'java'
+Each Java VM is listed by specifying the location of the main
+.Dq java
 executable on a line.
 .Pp
 The
 .Nm
 file may also contains comments.
-Comments must start with the '#' character, and can be both lines by
+Comments must start with the
+.Sq #
+character, and can be both lines by
 themselves or the trailing portion of a line containing a registered
 Java VM.
 .Sh FILES
 .Bl -tag -width indent
-.It %%PREFIX%%/etc/javavms
+.It Pa %%PREFIX%%/etc/javavms
 The location of the Java VM wrapper configuration file.
 .El
 .Sh SEE ALSO
