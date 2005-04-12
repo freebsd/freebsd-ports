@@ -189,8 +189,8 @@ share/fonts/cmpsfont/logo8.pfb
 share/fonts/cmpsfont/logo9.pfb
 share/fonts/cmpsfont/logobf10.pfb
 share/fonts/cmpsfont/logosl10.pfb
-share/fonts/cmpsfont/Fontmap
-share/fonts/cmpsfont/fonts.dir
-share/fonts/cmpsfont/fonts.scale
+%%PLIST_X11%%share/fonts/cmpsfont/Fontmap
+%%PLIST_X11%%share/fonts/cmpsfont/fonts.dir
+%%PLIST_X11%%share/fonts/cmpsfont/fonts.scale
 @dirrm share/fonts/cmpsfont
 @unexec /bin/rmdir %D/share/fonts 2> /dev/null || /usr/bin/true
