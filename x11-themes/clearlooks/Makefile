@@ -25,6 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 OPTIONS=	METACITY "Depend on MetaCity Theme" On \
 		ANIMATION "Enable experimental animated progressbars" Off
 
+CONFLICTS=	gtk-engines2-[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_METACITY)
