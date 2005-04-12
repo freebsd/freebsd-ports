@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	clisp-hyperspec
-PORTVERSION=	6.0
+PORTVERSION=	7.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.xanalys.com/pub/software_tools/reference/
-DISTNAME=	HyperSpec-6-0
+MASTER_SITES=	ftp://ftp.lispworks.com/pub/software_tools/reference/
+DISTNAME=	HyperSpec-7-0
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A Common Lisp reference in HTML format, from Xanalys
+COMMENT=	A Common Lisp reference in HTML format, from LispWorks Ltd
 
 NO_CDROM=	Commercial redistribution prohibited
 

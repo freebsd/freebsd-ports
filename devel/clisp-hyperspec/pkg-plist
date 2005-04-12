@@ -1505,6 +1505,7 @@
 %%DOCSDIR%%/HyperSpec/Data/Map_IssW.txt
 %%DOCSDIR%%/HyperSpec/Data/Map_IssX.txt
 %%DOCSDIR%%/HyperSpec/Data/Map_Sym.txt
+%%DOCSDIR%%/HyperSpec/Data/clhs.css
 %%DOCSDIR%%/HyperSpec/Data/md5.txt
 %%DOCSDIR%%/HyperSpec/Front/Contents.htm
 %%DOCSDIR%%/HyperSpec/Front/Help.htm
@@ -1605,6 +1606,8 @@
 %%DOCSDIR%%/HyperSpec/Graphics/Hilights.gif
 %%DOCSDIR%%/HyperSpec/Graphics/Index.gif
 %%DOCSDIR%%/HyperSpec/Graphics/Issues.gif
+%%DOCSDIR%%/HyperSpec/Graphics/LWLarge.gif
+%%DOCSDIR%%/HyperSpec/Graphics/LWSmall.gif
 %%DOCSDIR%%/HyperSpec/Graphics/Next.gif
 %%DOCSDIR%%/HyperSpec/Graphics/NoNext.gif
 %%DOCSDIR%%/HyperSpec/Graphics/NoPrev.gif
@@ -1614,8 +1617,6 @@
 %%DOCSDIR%%/HyperSpec/Graphics/StartPts.gif
 %%DOCSDIR%%/HyperSpec/Graphics/Symbols.gif
 %%DOCSDIR%%/HyperSpec/Graphics/Up.gif
-%%DOCSDIR%%/HyperSpec/Graphics/XanLarge.gif
-%%DOCSDIR%%/HyperSpec/Graphics/XanSmall.gif
 %%DOCSDIR%%/HyperSpec/Issues/IC_ARR.htm
 %%DOCSDIR%%/HyperSpec/Issues/IC_CHA.htm
 %%DOCSDIR%%/HyperSpec/Issues/IC_CLO.htm
@@ -2274,9 +2275,9 @@
 %%DOCSDIR%%/HyperSpec/Issues/iss331.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss331_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss332.htm
-%%DOCSDIR%%/HyperSpec/Issues/iss332_m.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss332_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss333.htm
+%%DOCSDIR%%/HyperSpec/Issues/iss333_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss334.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss334_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss335.htm
@@ -2310,11 +2311,11 @@
 %%DOCSDIR%%/HyperSpec/Issues/iss349.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss349_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss350.htm
+%%DOCSDIR%%/HyperSpec/Issues/iss350_m.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss350_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss351.htm
-%%DOCSDIR%%/HyperSpec/Issues/iss351_m.htm
-%%DOCSDIR%%/HyperSpec/Issues/iss351_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss352.htm
+%%DOCSDIR%%/HyperSpec/Issues/iss352_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss353.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss353_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss354.htm
@@ -2341,8 +2342,6 @@
 %%DOCSDIR%%/HyperSpec/Issues/iss364_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss365.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss365_w.htm
-%%DOCSDIR%%/HyperSpec/Issues/iss366.htm
-%%DOCSDIR%%/HyperSpec/Issues/iss366_w.htm
 @dirrm %%DOCSDIR%%/HyperSpec/Issues
 @dirrm %%DOCSDIR%%/HyperSpec/Graphics
 @dirrm %%DOCSDIR%%/HyperSpec/Front
