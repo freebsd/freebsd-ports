@@ -32,6 +32,57 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="22f00553-a09d-11d9-a788-0001020eed82">
+    <topic>portupgrade -- insecure temporary file handling
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>portupgrade</name>
+	<range><lt>20041226_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon L. Nielsen discovered that portupgrade handles
+	  temporary files in an insecure manner.  This could allow an
+	  unprivileged local attacker to execute arbitrary commands or
+	  overwrite arbitrary files with the permissions of the user
+	  running portupgrade, typically root, by way of a symlink
+	  attack.</p>
+	<p>The following issues exist where the temporary files are
+	  created, by default in the world writeable directory
+	  /var/tmp, with the permissions of the user running
+	  portupgrade:</p>
+	<ul>
+	  <li>pkg_fetch download packages with a predictable local
+	    filename allowing a local attacker to overwrite arbitrary
+	    local files or potentially replace the downloaded package
+	    after download but before install with a package with
+	    malicious content, allowing the attacker to run arbitrary
+	    commands.</li>
+	  <li>portupgrade will, when upgrading ports/packages, write
+	    the old package to a predictable temporary file, allowing
+	    an attacker to overwrite arbitrary files via a symlink
+	    attack.</li>
+	  <li>portupgrade will <q>touch</q> a temporary temporary file
+	    with a constant filename (pkgdb.fixme) allowing an
+	    attacker to create arbitrary zero-byte files via a symlink
+	    attack.</li>
+	</ul>
+	<p>A workaround for these issues is to set the
+	  <code>PKG_TMPDIR</code> environment variable to a directory
+	  only write-able by the user running portupgrade.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0610</cvename>
+    </references>
+    <dates>
+      <discovery>2005-04-12</discovery>
+      <entry>2005-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecf68408-a9f5-11d9-a788-0001020eed82">
     <topic>gaim -- jabber remote crash</topic>
     <affects>
