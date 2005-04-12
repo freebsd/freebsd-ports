@@ -7,7 +7,7 @@
 
 PORTNAME=	oneko
 PORTVERSION=	2.0b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www02.so-net.ne.jp/~nsasaki/oneko/ \
 		http://www.net24.ne.jp/~ryo2/archives/:ryo2 \
@@ -23,8 +23,6 @@ MAINTAINER=	candy@kgc.co.jp
 COMMENT=	A cat chasing a mouse all over the screen
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
-
-BROKEN=		Incomplete pkg-plist
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
