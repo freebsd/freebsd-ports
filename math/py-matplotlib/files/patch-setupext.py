@@ -1,16 +1,7 @@
---- setupext.py.orig	Thu Jan 27 17:47:41 2005
-+++ setupext.py	Thu Jan 27 17:49:08 2005
-@@ -37,6 +37,8 @@
-     'linux'  : ['/usr/local', '/usr',],
-     'darwin' : ['/usr/local', '/usr', '/sw', '/usr/X11R6'],
-     'freebsd4' : ['/usr/local', '/usr'],
-+    'freebsd5' : ['/usr/local', '/usr'],
-+    'freebsd6' : ['/usr/local', '/usr'],
-     'sunos5' : [os.getenv('MPLIB_BASE') or '/usr/local',],
- }
- 
-@@ -302,7 +304,7 @@
-     o = find_tcltk()
+--- setupext.py.orig	Tue Apr 12 16:09:32 2005
++++ setupext.py	Tue Apr 12 16:10:28 2005
+@@ -308,7 +308,7 @@
+     o = find_tcltk() # todo: try/except
      module.include_dirs.extend([o.tcl_inc, o.tk_inc])
      module.library_dirs.extend([o.tcl_lib, o.tk_lib])
 -    module.libraries.extend(['tk'+o.tkv, 'tcl'+o.tkv])
