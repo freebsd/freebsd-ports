@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		devel
 MASTER_SITES=		http://www.freedesktop.org/software/wininfo/
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A window information utility
 
 USE_X_PREFIX=		yes

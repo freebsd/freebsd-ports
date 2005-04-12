@@ -10,7 +10,7 @@ PORTVERSION=		4.1
 CATEGORIES=		games
 MASTER_SITES=		http://ironphoenix.org/tril/gtklife/
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A GTK+ implementation of Conway's Game of Life
 
 USE_X_PREFIX=		yes

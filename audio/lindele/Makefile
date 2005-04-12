@@ -11,7 +11,7 @@ PORTREVISION=		3
 CATEGORIES=		audio
 MASTER_SITES=		http://download.gna.org/${PORTNAME}/
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		Yet another simple GNOME music player
 
 RUN_DEPENDS=		musicbox-tag-editor:${PORTSDIR}/audio/musicbox-tag-editor

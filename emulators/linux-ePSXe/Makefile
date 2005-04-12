@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.epsxe.com/files/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	epsxe160lin
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A Sony Playstation emulator (Linux version)
 
 # The binary is built against glibc 2.3, so we need linux_base-8.

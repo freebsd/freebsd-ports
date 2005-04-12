@@ -11,7 +11,7 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xpilot
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		An enhanced version of XPilot
 
 LIB_DEPENDS=		expat:${PORTSDIR}/textproc/expat2

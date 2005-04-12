@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.methane.fsnet.co.uk/
 DISTNAME=	methane
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A port of the Amiga platform game of the same name
 
 LIB_DEPENDS=	clanCore.2:${PORTSDIR}/devel/clanlib \

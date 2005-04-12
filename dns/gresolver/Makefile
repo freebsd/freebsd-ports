@@ -11,7 +11,7 @@ PORTREVISION=		2
 CATEGORIES=		dns
 MASTER_SITES=		http://jodrell.net/files/gresolver/
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A graphical DNS query tool using GTK+
 
 USE_GCC=	4.0

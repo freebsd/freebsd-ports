@@ -12,7 +12,7 @@ CATEGORIES=		games
 MASTER_SITES=		http://linux.tlk.fr/games/Powermanga/download/
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		An arcade 2D shoot-em-up
 
 USE_X_PREFIX=		yes

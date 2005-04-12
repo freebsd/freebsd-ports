@@ -12,7 +12,7 @@ CATEGORIES=		net ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	link-monitor
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A GNOME applet displaying the round-trip time to one or more hosts
 
 USE_X_PREFIX=		yes
