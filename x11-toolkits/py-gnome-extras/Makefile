@@ -26,10 +26,15 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/
 
 MOZILLA=	mozilla
 HEADERS_SUFX=
+MOZ_BUILD=	mozilla
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
 HEADERS_SUFX=
+.else
+.if ${WITH_MOZILLA}=="firefox"
+MOZILLA=	firefox
+MOZ_BUILD=	firefox
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
@@ -39,6 +44,7 @@ MOZILLA=	mozilla
 HEADERS_SUFX=
 .endif
 .endif
+.endif
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -46,6 +52,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomehack libgnomeprintui libgtkhtml gnomepanel \
 		gtksourceview libwnck nautiluscdburner pygnome2
 USE_LIBTOOL_VER=15
+CONFIGURE_ARGS=	--with-gtkmozembed=${MOZ_BUILD}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -79,6 +86,7 @@ pre-everything::
 	@${ECHO_MSG} " By default py-gnome-extras uses www/mozilla for html rendering, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
+	@${ECHO_MSG} "  firefox       "
 	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} ""
 
