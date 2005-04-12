@@ -51,6 +51,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 GTK_VERSION=	2.4.0
 PLIST_SUB=	GTK_VERSION="${GTK_VERSION}"
 
+.if defined(WITH_DEBUG)
+.if ${WITH_DEBUG:L} == "no"
+CONFIGURE_ARGS+=	--enable-debug=no
+.else
+.if ${WITH_DEBUG:L} == "yes"
+CONFIGURE_ARGS+=	--enable-debug=yes
+.else
+CONFIGURE_ARGS+=	--enable-debug=minimum
+.endif
+.endif
+.endif
+
 pre-everything::
 .if !defined(WITH_DROPSHADOW)
 	@${ECHO_MSG}
@@ -59,6 +71,14 @@ pre-everything::
 	@${ECHO_MSG} "NOTE: This option is not supported by the FreeBSD GNOME Team."
 	@${ECHO_MSG} "If the patch does not work or causes the build to fail, just"
 	@${ECHO_MSG} "stop using the patch; we will not further debug it."
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_DEBUG)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Enable or disable debugging with the following knob"
+	@${ECHO_MSG} "WITH_DEBUG=[no|minimum|yes]"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Default is minimum"
 	@${ECHO_MSG}
 .endif
 
