@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codes
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/i/${PKGNAMEPREFIX}${PORTNAME}
@@ -74,14 +74,14 @@ post-patch:
 		${WRKSRC}/iso_639/Makefile.in
 
 do-install:
-.for cat in ${CATALOGS_iso639}
-	@${MKDIR} ${PREFIX}/share/locale/${cat:S|.mo||}/LC_MESSAGES
+.for catalog in ${CATALOGS_iso639}
+	@${MKDIR} ${PREFIX}/share/locale/${catalog:S|.mo||}/LC_MESSAGES
 	@${INSTALL_SCRIPT} \
-		${WRKSRC}/iso_639/${cat} \
-		${PREFIX}/share/locale/${cat:S|.mo||}/LC_MESSAGES/iso_639.mo
+		${WRKSRC}/iso_639/${catalog} \
+		${PREFIX}/share/locale/${catalog:S|.mo||}/LC_MESSAGES/iso_639.mo
 .endfor
 .for catalog in ${CATALOGS_iso3166}
-	@${MKDIR} ${PREFIX}/share/locale/${cat:S|.mo||}/LC_MESSAGES
+	@${MKDIR} ${PREFIX}/share/locale/${catalog:S|.mo||}/LC_MESSAGES
 	@${INSTALL_SCRIPT} \
 		${WRKSRC}/iso_3166/${catalog} \
 		${PREFIX}/share/locale/${catalog:S|.mo||}/LC_MESSAGES/iso_3166.mo
