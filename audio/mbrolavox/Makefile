@@ -47,7 +47,7 @@ MYFILES+=	${FILE_${ii}}
 MYWITH+=	${ii}
 . endif
 .endfor
-.if !empty(MYDISTFILES)
+.if defined(MYDISTFILES)
 DISTFILES=	${MYDISTFILES}
 DIST_SUBDIR=	mbrolavox
 .else
