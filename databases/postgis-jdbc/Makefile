@@ -11,7 +11,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	http://postgis.refractions.net/
 DISTNAME=	postgis-1.0.0-rc3
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	PostGIS spatial data structures for JDBC
 
 BUILD_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc

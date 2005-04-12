@@ -11,7 +11,7 @@ CATEGORIES=	palm
 MASTER_SITES=	http://people.tecnik93.com/~sam/ports/
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	USB device driver for Windows CE handhelds
 
 MAN4=		uppc.4
