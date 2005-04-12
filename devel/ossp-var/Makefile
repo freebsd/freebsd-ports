@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	var
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A flexible, full-featured and fast variable expansion library
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
