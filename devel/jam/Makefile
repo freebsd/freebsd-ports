@@ -7,14 +7,14 @@
 
 PORTNAME=	jam
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/pub/jam/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A build utility like make(1)
 
-ONLY_FOR_ARCHS=	alpha i386
+ONLY_FOR_ARCHS=	alpha i386 amd64
 
 USE_ZIP=	yes
 USE_REINPLACE=	yes
