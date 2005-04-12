@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=-platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-.elseif defined(WITHOUT_XFT)
+.elif defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=-no-xft
 .endif
 
@@ -98,21 +98,21 @@ CONFIGURE_ARGS+=-debug
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		yes
 CONFIGURE_ARGS+=-dlopen-opengl
-.elseif defined(WITHOUT_OPENGL)
+.elif defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL
 
 .if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
-.elseif defined(WITHOUT_CUPS)
+.elif defined(WITHOUT_CUPS)
 CUPS=
 .endif
 
 .if !defined(WITHOUT_NAS)
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound -no-pch
-.elseif defined(WITHOUT_NAS)
+.elif defined(WITHOUT_NAS)
 CONFIGURE_ARGS+=-no-nas-sound
 .endif
 
@@ -143,7 +143,7 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 PKGNAMESUFFIX=	-copy
 COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*
-.elseif defined(WITHOUT_KDE_PATCHES)
+.elif defined(WITHOUT_KDE_PATCHES)
 CONFLICTS+=	qt-copy-[0-9]*
 .endif
 

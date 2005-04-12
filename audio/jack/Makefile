@@ -44,7 +44,7 @@ WITH_DOCS=	yes
 .if defined(WITH_DOCS) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
 PLIST_SUB+=		DOCS=""
-.elseif defined(WITHOUT_DOCS)
+.elif defined(WITHOUT_DOCS)
 CONFIGURE_ENV+=		ac_cv_prog_HAVE_DOXYGEN="false"
 PLIST_SUB+=		DOCS="@comment "
 .endif

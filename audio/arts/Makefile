@@ -72,7 +72,7 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|LIBS="-laudio  $$LIBS"|LIBS="-laudio -lm -lXt -lXau $$LIBS"|g' \
 			${WRKSRC}/configure
-.elseif defined(WITHOUT_NAS)
+.elif defined(WITHOUT_NAS)
 	${REINPLACE_CMD} \
 		-e 's|ac_cv_lib_audio_AuOpenServer=yes|ac_cv_lib_audio_AuOpenServer=no|g' \
 			${WRKSRC}/configure

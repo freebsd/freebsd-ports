@@ -36,7 +36,7 @@ OPTIONS=	PTH "Enable alternative libgpgme using GNU portable threads" off
 .if defined(WITH_PTH)
 LIB_DEPENDS+=	pth:${PORTSDIR}/devel/pth
 PLIST_SUB+=	WITH_PTH=''
-.elseif defined(WITHOUT_PTH)
+.elif defined(WITHOUT_PTH)
 CONFIGURE_ARGS+=--without-pth --without-pth-test
 PLIST_SUB+=	WITH_PTH='@comment '
 .endif
