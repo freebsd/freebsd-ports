@@ -34,6 +34,7 @@
 .Nd show diffs with colors
 .Sh SYNOPSIS
 .Nm cdiff
+.Op Fl m
 .Op Ar diff ...
 .Sh DESCRIPTION
 .Nm
@@ -43,6 +44,11 @@ results to
 .Xr less 1 .
 If used on a color terminal, it makes diffs much easier to read.
 There is also handling of "cvs annotate" in it.
+.Pp
+.Bl -tag -width Ds
+.It Fl m
+Use bold, reverse and underline codes (for monochrome terminals).
+.El
 .Sh AUTHORS
 .Nm
 was written by
