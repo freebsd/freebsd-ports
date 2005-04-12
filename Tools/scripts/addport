@@ -182,6 +182,7 @@ foreach my $thisdir (@dirs) {
 
 	$portname = `basename $thisdir`;	# avoid problems with dirs containing `/' in cvs
 	chomp $portname;
+	warnx("Port directory contains upper-case character! Please try using an all lower-case name to make everybody's life a bit easier.") if ($portname =~ /[A-Z]/);
 	if ($interactive) {
 		if (prompt("Port directory name will be $portname in CVS Repo.  OK? ")) {
 			do {
