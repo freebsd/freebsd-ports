@@ -1,3 +1,4 @@
+bin/rdiff
 include/librsync.h
 include/librsync-config.h
 lib/librsync.a
