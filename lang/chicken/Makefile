@@ -7,6 +7,7 @@
 
 PORTNAME=	chicken
 PORTVERSION=	1.89
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
@@ -47,6 +48,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|"/usr/local/include" ||' ${WRKSRC}/csc.scm.in
 
 post-install:
+	${MKDIR} ${PREFIX}/lib/chicken
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
