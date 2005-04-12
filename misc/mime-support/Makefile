@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mime-support
-PORTVERSION=	3.21.1
+PORTVERSION=	3.31.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/(.*)\.([^.])/\1-\2/}
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	MIME Media Types list
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
