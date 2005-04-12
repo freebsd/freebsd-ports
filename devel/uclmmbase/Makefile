@@ -27,8 +27,8 @@ post-configure:
 # the networking-error, which may be due IPv6 (or IPv4) being unavailable
 # or some network (mis)configuration:
 post-build test:
-	${WRKSRC}/tests/test-libcommon | ${AWK} '	\
-		/fail/ && $$2 != "networking" { code=1 }	\
+	${WRKSRC}/tests/test-libcommon 2>&1 | ${AWK} '	\
+		/fail$$/ && $$2 != "networking" { code=1 }	\
 		{ print } END { exit code }'
 
 do-install:

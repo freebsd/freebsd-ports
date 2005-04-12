@@ -1,5 +1,5 @@
 --- src/net_udp.c	Tue Jun 29 12:21:37 2004
-+++ src/net_udp.c	Thu Mar 24 13:17:14 2005
++++ src/net_udp.c	Tue Apr 12 13:04:16 2005
 @@ -44,7 +44,4 @@
  #include "debug.h"
  #include "memory.h"
@@ -8,3 +8,41 @@
 -#include "vsnprintf.h"
  #include "net_udp.h"
  
+@@ -126,4 +123,10 @@
+ /*****************************************************************************/
+ 
++#ifdef BSD
++#	define socket_error	warn
++#else /* { */
++#	ifdef __FreeBSD__	/* A simple check */
++#		error On FreeBSD BSD should be defined
++#	endif
+ static void
+ socket_error(const char *msg, ...)
+@@ -166,4 +169,5 @@
+ #endif
+ }
++#endif /* } not a BSD system */
+ 
+ #ifdef WIN32
+@@ -251,5 +255,5 @@
+ 		return TRUE;
+ 	}
+-	socket_error("Can't resolve IP address for %s", dst);
++	herror(dst);
+ 
+         return FALSE;
+@@ -273,5 +277,5 @@
+ 		struct hostent *h = gethostbyname(addr);
+ 		if (h == NULL) {
+-			socket_error("Can't resolve IP address for %s", addr);
++			herror(addr);
+                         free(s);
+ 			return NULL;
+@@ -422,5 +426,5 @@
+ 	hent = gethostbyname(hname);
+ 	if (hent == NULL) {
+-		socket_error("Can't resolve IP address for %s", hname);
++		herror(hname);
+ 		return NULL;
+ 	}
