@@ -7,6 +7,7 @@
 
 PORTNAME=	GD
 PORTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -19,7 +20,7 @@ COMMENT=	A perl5 interface to Gd Graphics Library version2
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	-options "JPEG,FT,XPM,GIF" \
+CONFIGURE_ARGS=	-options "JPEG,FT,XPM,GIF,PNG" \
 		-lib_gd_path ${LOCALBASE} -lib_ft_path ${X11BASE} \
 		-lib_png_path ${LOCALBASE} -lib_zlib_path ${LOCALBASE}
 
