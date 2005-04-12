@@ -56,6 +56,13 @@ a given symbolic link is used, invoking and passing the arguments to the
 matching executable within the chosen Java VM.
 The choice of Java VM may also be influenced by using environment variables
 to constrain the version, vendor and operating system of the Java VM.
+.Pp
+This selection process is usually achieved through the use of
+%%PORTSDIR%%/Mk/bsd.java.mk.
+However, if this is not present then
+.Nm
+will use its own internal selection process which is
+designed to behave almost identically.
 .Sh ENVIRONMENT
 .Bl -tag -width indent
 .It JAVA_HOME
@@ -69,19 +76,20 @@ This variable is set by
 when executing the actual Java VM and will be available to it and all of
 its child processes.
 .It JAVA_OS
-A space delimited list of operating systems.  The selected Java VM must
-have been created for one of the operating systems in the list.
+A space delimited list of operating systems.
+The selected Java VM must have been created for one of the operating systems
+in the list.
 .Pp
 Currently allowed operating system values are "native" and "linux".
 .It JAVA_VENDOR
-A space delimited list of Java VM vendors.  The selected Java VM must
-have been released by one of the vendors in the list.
+A space delimited list of Java VM vendors.
+The selected Java VM must have been released by one of the vendors in the list.
 .Pp
 Currently allowed vendors are "bsdjava", "freebsd", "blackdown", "ibm"
 and "sun".
 .It JAVA_VERSION
-A space delimited list of versions of the Java VM that may be used.  By
-appending a '+' to a version, any Java VM with a version greater than or
+A space delimited list of versions of the Java VM that may be used.
+By appending a '+' to a version, any Java VM with a version greater than or
 equal to the given version will be used.
 .Pp
 Currently allowed versions are 1.1, 1.1+, 1.2, 1.2+, 1.3, 1.3+, 1.4, 1.4+,
@@ -91,6 +99,10 @@ Currently allowed versions are 1.1, 1.1+, 1.2, 1.2+, 1.3, 1.3+, 1.4, 1.4+,
 .Bl -tag -width indent
 .It %%PREFIX%%/etc/javavms
 The location of the Java VM wrapper configuration file.
+.It %%PORTSDIR%%/Mk/bsd.java.mk
+The file usually used, along with
+.Nm make ,
+to select the Java VM to be used.
 .El
 .Sh EXAMPLES
 .Bl -tag -width indent
@@ -110,6 +122,16 @@ Execute MyApp with either a Java VM that is either version 1.2 or version 1.4.
 .El
 .Sh SEE ALSO
 .Xr checkvms 1 ,
+.Xr make 1 ,
 .Xr registervm 1 ,
 .Xr unregistervm 1 ,
 .Xr javavms 5
+.Sh BUGS
+The internal selection procedure of
+.Nm
+is not fully identical to that of %%PORTSDIR%%/Mk/bsd.java.mk.
+In particular,
+.Nm
+does not respect environment variables such as
+.Ev JAVA_PREFERRED_PORT
+which is used by %%PORTSDIR%%/Mk/bsd.java.mk.

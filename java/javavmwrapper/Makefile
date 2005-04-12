@@ -47,6 +47,7 @@ do-configure:
 .for _man in checkvms.1 javavm.1 registervm.1 ${MAN5}
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|;' \
 	       -e 's|%%LOCALBASE%%|${LOCALBASE}|;' \
+	       -e 's|%%PORTSDIR%%|${PORTSDIR}|;' \
 	       ${SRC}/${_man} > ${WRKDIR}/${_man}
 .endfor
 
