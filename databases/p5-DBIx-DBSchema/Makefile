@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-DBSchema
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -26,6 +26,15 @@ MAN3=	DBIx::DBSchema.3 DBIx::DBSchema::ColGroup.3 \
 	DBIx::DBSchema::DBD::mysql.3 DBIx::DBSchema::DBD::Pg.3 \
 	DBIx::DBSchema::DBD::Sybase.3 DBIx::DBSchema::Table.3 \
 	DBIx::DBSchema::DBD::Oracle.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
