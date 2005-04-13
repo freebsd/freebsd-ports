@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050413
+  AFFECTS: users of www/quixote
+  AUTHOR: dryice@liu.com.cn
+
+  There are backward-incompatible changes upgrading from 1.2 to
+  2.0. Including renaming quixote.form to quixote.form1 and
+  quixote.form2 to quixote.form. Please refer to upgrading.txt in the
+  docs dir for detail.
+
 20050411:
   AFFECTS: users of x11/gdm
   AUTHOR: kwm@FreeBSD.org
