@@ -47,11 +47,11 @@ do-install:
 .if defined(USE_LINUX)
 .if (${MACHINE_ARCH} == "alpha")
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-alpha ${PREFIX}/bin/mbrola
-.elseif (${MACHINE_ARCH} == "i386")
+.elif (${MACHINE_ARCH} == "i386")
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${PREFIX}/bin/mbrola
-.elseif (${MACHINE_ARCH} == "ppc")
+.elif (${MACHINE_ARCH} == "ppc")
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola206a-linux-ppc ${PREFIX}/bin/mbrola
-.elseif (${MACHINE_ARCH} == "sparc64")
+.elif (${MACHINE_ARCH} == "sparc64")
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-SuSElinux-ultra1.dat \
 		${PREFIX}/bin/mbrola
 .endif
