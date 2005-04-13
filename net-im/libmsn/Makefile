@@ -18,6 +18,7 @@ COMMENT=	A library for connecting to MSN Messenger service
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
+USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
