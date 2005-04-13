@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A traceroute implementation using TCP packets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
