@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	clearlooks
+PORTNAME?=	clearlooks
 PORTVERSION=	0.5
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
+DISTNAME=	clearlooks-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.x engine based on Bluecurve
@@ -25,9 +26,22 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 OPTIONS=	METACITY "Depend on MetaCity Theme" On \
 		ANIMATION "Enable experimental animated progressbars" Off
 
-CONFLICTS=	gtk-engines2-[0-9]*
-
 .include <bsd.port.pre.mk>
+
+.if ${PORTNAME} == "clearlooks"
+CONFLICTS=	gtk-engines2-[0-9]* clearlooks-themes[0-9]*
+PLIST_SUB+=	ENGINE=""
+.else
+CONFLICTS=	clearlooks-[0-9]*
+
+BUILD_DEPENDS=  ${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+RUN_DEPENDS=    ${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+
+BUILD_WRKSRC=	${WRKSRC}/themes
+INSTALL_WRKSRC=	${WRKSRC}/themes
+
+PLIST_SUB+=	ENGINE="@comment "
+.endif
 
 .if !defined(WITHOUT_METACITY)
 RUN_DEPENDS+=	${X11BASE}/share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity

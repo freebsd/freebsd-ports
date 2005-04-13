@@ -1,4 +1,4 @@
-lib/gtk-2.0/2.4.0/engines/libclearlooks.so
+%%ENGINE%%lib/gtk-2.0/2.4.0/engines/libclearlooks.so
 share/icons/Clearlooks/16x16/gtk/gtk-apply.png
 share/icons/Clearlooks/16x16/gtk/gtk-cancel.png
 share/icons/Clearlooks/16x16/gtk/gtk-go-back-ltr.png
