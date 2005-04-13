@@ -583,6 +583,7 @@
     SUBDIR += ngpt
     SUBDIR += noweb
     SUBDIR += nspr
+    SUBDIR += nx
     SUBDIR += oaf
     SUBDIR += ocaml-camomile
     SUBDIR += ocaml-classes
