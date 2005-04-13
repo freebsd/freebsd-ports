@@ -1,15 +1,15 @@
---- src/Makefile.in.orig	Wed Jan 26 18:36:37 2005
-+++ src/Makefile.in	Wed Jan 26 18:37:47 2005
-@@ -661,10 +661,10 @@
- 			 sdl_ttf/SDL_ttf.h \
- 			 wesconfig.h
+--- src/Makefile.in.orig	Tue Apr 12 12:40:30 2005
++++ src/Makefile.in	Tue Apr 12 12:41:54 2005
+@@ -961,10 +961,10 @@
+ 	wesconfig.h
  
--AM_CXXFLAGS = -I sdl_ttf -I../intl -I$(top_srcdir)/intl @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
-+AM_CXXFLAGS = -I sdl_ttf @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
- 	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR)
+ wesnoth_zip_LDADD = @SDL_LIBS@ @SDL_NET_LIBS@
+-AM_CXXFLAGS = -I $(srcdir)/sdl_ttf -I../intl -I$(top_srcdir)/intl @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
++AM_CXXFLAGS = -I $(srcdir)/sdl_ttf @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
+ 	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR) -DFIFODIR=\"$(fifodir)\"
  
--AM_CFLAGS = -I sdl_ttf -I../intl -I$(top_srcdir)/intl @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
-+AM_CFLAGS = -I sdl_ttf @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
+-AM_CFLAGS = -I $(srcdir)/sdl_ttf -I../intl -I$(top_srcdir)/intl @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
++AM_CFLAGS = -I $(srcdir)/sdl_ttf @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
  	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR)
  
  CXXLD = $(LDPREFIX) $(CXX)

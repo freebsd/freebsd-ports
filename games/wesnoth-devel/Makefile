@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.8.11
+PORTVERSION=	0.9.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -30,7 +30,8 @@ USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-freetype-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
@@ -38,7 +39,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS} -ftemplate-depth-45" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
-MAN6=		wesnoth.6 wesnoth_editor.6 wesnothd.6
+MAN6=		wesnoth.6
 MANLANG=	"" de
 
 .if defined(LITE)
@@ -61,6 +62,7 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if defined(WITH_EDITOR) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-editor
+MAN6+=			wesnoth_editor.6
 PLIST_SUB+=		EDITOR:=""
 .else
 PLIST_SUB+=		EDITOR:="@comment "
@@ -68,6 +70,7 @@ PLIST_SUB+=		EDITOR:="@comment "
 
 .if defined(WITH_SERVER) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-server
+MAN6+=			wesnothd.6
 PLIST_SUB+=		SERVER:=""
 .else
 PLIST_SUB+=		SERVER:="@comment "
@@ -81,6 +84,10 @@ PLIST_SUB+=		TOOLS:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=does not compile on FreeBSD 4.x, due to lack of towupper() and wide character in libc
+.endif
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
 CONFIGURE_ARGS+=	--with-gnome
@@ -102,7 +109,7 @@ pre-everything::
 	@${ECHO_MSG} " "
 .endif
 .if !defined(LITE)
-	@${ECHO_MSG} "LITE=yes for lite version of Wesnoth (without music)."
+	@${ECHO_MSG} "LITE=yes for lite version of Wesnoth (without music and story images)."
 .endif
 .if !defined(WITH_CAMPAIGN)
 	@${ECHO_MSG} "WITH_CAMPAIGN=yes to enable compilation of campaign server."
