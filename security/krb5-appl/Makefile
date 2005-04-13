@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.3.6
-PORTREVISION=		1
+PORTVERSION=		1.4
 CATEGORIES=		security
-MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}/
+MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION}/
 EXTRACT_SUFX=		.tar
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 
@@ -25,9 +24,11 @@ USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS?=	--enable-shared
+USE_LIBTOOL_VER=	15
+CONFIGURE_ARGS?=	--enable-shared --enable-static
+CONFIGURE_ARGS+=	--disable-thread-support
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
-			CFLAGS="${CFLAGS}"
+			CFLAGS="${CFLAGS} -DNDEBUG"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 KRB5_KRB4_COMPAT?=	NO
 
@@ -46,7 +47,7 @@ INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
 			krb5-admin.info-2 krb5-admin.info-3 krb5-install.info \
 			krb5-install.info-1 krb5-install.info-2 krb5-user.info
 
-MAN1=			krb5-send-pr.1 kpasswd.1 v5passwd.1 klist.1 kinit.1 \
+MAN1=			krb5-send-pr.1 kpasswd.1 klist.1 kinit.1 \
 			kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 rlogin.1     \
 			ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
 .if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
