@@ -28,7 +28,7 @@ USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS?=	--enable-shared --enable-static
 CONFIGURE_ARGS+=	--disable-thread-support
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
-			CFLAGS="${CFLAGS} -DNDEBUG"
+			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 KRB5_KRB4_COMPAT?=	NO
 
