@@ -1,7 +1,9 @@
 bin/algotutor
 bin/gen_at_graph
-%%SITE_PERL%%/algotutor/.algotutor
 %%SITE_PERL%%/algotutor/BST.pm
+%%SITE_PERL%%/algotutor/Board.pm
+%%SITE_PERL%%/algotutor/Collection.pm
+%%SITE_PERL%%/algotutor/Configurable.pm
 %%SITE_PERL%%/algotutor/DCEdge.pm
 %%SITE_PERL%%/algotutor/Edge.pm
 %%SITE_PERL%%/algotutor/Graph.pm
@@ -13,6 +15,15 @@ bin/gen_at_graph
 %%SITE_PERL%%/algotutor/TreeNode.pm
 %%SITE_PERL%%/algotutor/Vector.pm
 %%SITE_PERL%%/algotutor/Vertex.pm
+%%SITE_PERL%%/algotutor/basic.pl
+%%SITE_PERL%%/algotutor/cgeom/dom
+%%SITE_PERL%%/algotutor/cgeom/graham
+%%SITE_PERL%%/algotutor/cgeom/utils
+%%SITE_PERL%%/algotutor/dp/lcs
+%%SITE_PERL%%/algotutor/dp/matrixchain
+%%SITE_PERL%%/algotutor/graph/dfs
+%%SITE_PERL%%/algotutor/graph/flwa
+%%SITE_PERL%%/algotutor/graph/pfs
 %%SITE_PERL%%/algotutor/utilalgo
 share/algotutor/data/countries.gr
 share/algotutor/data/lv.gr
@@ -21,10 +32,9 @@ share/algotutor/data/randgrid.gr
 share/algotutor/data/simple.gr
 share/algotutor/data/trc.gr
 share/algotutor/data/tt.gr
-share/algotutor/graph/dfs
-share/algotutor/graph/flwa
-share/algotutor/graph/pfs
-@dirrm share/algotutor/graph
 @dirrm share/algotutor/data
 @dirrm share/algotutor
+@dirrm %%SITE_PERL%%/algotutor/graph
+@dirrm %%SITE_PERL%%/algotutor/dp
+@dirrm %%SITE_PERL%%/algotutor/cgeom
 @dirrm %%SITE_PERL%%/algotutor

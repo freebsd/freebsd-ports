@@ -1,18 +1,18 @@
---- algotutor.orig	Wed Jan 19 12:06:33 2005
-+++ algotutor	Wed Jan 19 12:09:25 2005
+--- algotutor.orig	Tue Apr 12 21:35:39 2005
++++ algotutor	Wed Apr 13 11:50:11 2005
 @@ -4,7 +4,7 @@
  
  use strict;
  use Getopt::Std;
 -use lib '/usr/share/perl5/algotutor';
-+use lib '!!PREFIX!!/lib/perl5/site_perl/5.8.5/algotutor';
++use lib '!!PREFIX!!/lib/perl5/site_perl/5.8.6/algotutor';
  
  BEGIN {
      my ($path) = $0 =~ m#(.*/)#;
-@@ -24,7 +24,7 @@
- );
+@@ -33,7 +33,7 @@
+     dynprog($opts{a});
+ }
  
- getopts('a:s:', \%opts);
 -die "need exactly one data file. Example:\n\talgotutor -a bst /usr/share/algotutor/data/countries.gr\n" 
 +die "need exactly one data file. Example:\n\talgotutor -a bst !!PREFIX!!/share/algotutor/data/countries.gr\n" 
      unless $#ARGV == 0;
