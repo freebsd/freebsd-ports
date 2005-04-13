@@ -9,6 +9,7 @@
     SUBDIR += clean-theme-gtk
     SUBDIR += clearlooks
     SUBDIR += clearlooks-metacity
+    SUBDIR += clearlooks-themes
     SUBDIR += clearlooks-themes-extras
     SUBDIR += colorstep
     SUBDIR += engradient
