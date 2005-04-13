@@ -100,6 +100,7 @@ share/themes/ThinIce/gtk-2.0/gtkrc
 @dirrm share/themes/Industrial/gtk-2.0
 @dirrm share/themes/Crux/pixmaps
 @dirrm share/themes/Crux/gtk-2.0
+@dirrm share/themes/Clearlooks/gtk-2.0
 @unexec /bin/rmdir %D/share/themes/ThinIce 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Redmond 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Mist 2>/dev/null || true
@@ -107,3 +108,4 @@ share/themes/ThinIce/gtk-2.0/gtkrc
 @unexec /bin/rmdir %D/share/themes/LighthouseBlue 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Industrial 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Crux 2>/dev/null || true
+@unexec /bin/rmdir %D/share/themes/Clearlooks 2>/dev/null || true
