@@ -1,5 +1,5 @@
 Kerberos V5 is an authentication system developed at MIT.  
-WWW: http://web.mit.edu/kerberos/www/
+WWW: http://web.mit.edu/kerberos/
 
 Abridged from the User Guide:
        Under Kerberos, a client sends a request for a ticket to the 
