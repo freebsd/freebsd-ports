@@ -1,8 +1,10 @@
---- lib/fbsd-device.c.orig	Fri Jun 13 11:11:29 2003
-+++ lib/fbsd-device.c	Fri Jun 13 11:21:52 2003
-@@ -14,9 +14,19 @@
+--- lib/fbsd-device.c.orig	Tue Jul 20 07:01:31 1999
++++ lib/fbsd-device.c	Tue Apr 12 10:49:09 2005
+@@ -13,10 +13,21 @@
+ 
  #include <fcntl.h>
  #include <string.h>
++#include <errno.h>
  #include <unistd.h>
 +#include <osreldate.h>
  
@@ -22,3 +24,18 @@
  
  #include "internal.h"
  
+@@ -75,8 +86,12 @@
+   pi.pi_reg = pos;
+   pi.pi_width = len;
+ 	
+-  if (ioctl(d->access->fd, PCIOCREAD, &pi) < 0)
+-    d->access->error("fbsd_read: ioctl(PCIOCREAD) failed");
++  if (ioctl(d->access->fd, PCIOCREAD, &pi) < 0) {
++    if (errno == ENODEV)
++      return 0;
++    else
++      d->access->error("fbsd_read: ioctl(PCIOCREAD) failed");
++  }
+   
+   switch (len)
+     {
