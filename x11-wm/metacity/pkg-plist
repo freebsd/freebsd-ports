@@ -8,7 +8,10 @@ include/metacity-1/metacity-private/preview-widget.h
 include/metacity-1/metacity-private/theme-parser.h
 include/metacity-1/metacity-private/theme.h
 include/metacity-1/metacity-private/util.h
-lib/libmetacity-private.a lib/libmetacity-private.so lib/libmetacity-private.so.0 libdata/pkgconfig/libmetacity-private.pc
+lib/libmetacity-private.a
+lib/libmetacity-private.so
+lib/libmetacity-private.so.0
+libdata/pkgconfig/libmetacity-private.pc
 libexec/metacity-dialog
 share/gnome/metacity/icons/metacity-window-demo.png
 share/gnome/themes/AgingGorilla/metacity-1/active-button.png
