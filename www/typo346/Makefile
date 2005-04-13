@@ -7,7 +7,7 @@
 
 PORTNAME=	typo3
 PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ MAINTAINER=	tux@pinguru.net
 COMMENT=	The typo3 content management system
 
 NO_BUILD=	yes
-USE_PHP=	mysql
+USE_PHP=	mysql pcre xml
 WANT_PHP_WEB=	yes
 
 TYPO3DIR=	www/${DISTNAME}
