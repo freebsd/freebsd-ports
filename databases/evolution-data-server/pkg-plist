@@ -847,6 +847,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution-data-server-%%EVO_VERSION%%.mo
 @dirrm share/gnome/evolution-data-server-%%VERSION%%/weather
 @dirrm share/gnome/evolution-data-server-%%VERSION%%/glade
 @dirrm share/gnome/evolution-data-server-%%VERSION%%
+@dirrm share/doc/libedataserver
 @dirrm share/doc/libecal
 @dirrm share/doc/libebook
 @dirrm lib/evolution-data-server-%%VERSION%%/extensions
