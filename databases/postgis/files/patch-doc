@@ -1,34 +1,40 @@
---- doc/Makefile	Thu Jan 13 07:42:40 2005
-+++ doc/Makefile	Mon Jan 31 16:48:51 2005
-@@ -1,20 +1,22 @@
+--- doc/Makefile	Fri Mar  4 16:34:47 2005
++++ doc/Makefile	Mon Mar 21 09:07:57 2005
+@@ -1,11 +1,14 @@
  COMMONOPTS = -f docbook -b html -e no-valid
- LAST_RELEASE_VERSION = 1.0.0RC1
  
 +include ../Makefile.config
 +include $(top_srcdir)/src/Makefile.shlib
++
+ # fetch version numbers from central repository
+ include ../Version.config
  
- postgis-out.xml: postgis.xml
- 	cat $< | sed "s/@@LAST_RELEASE_VERSION@@/$(LAST_RELEASE_VERSION)/g" > $@
+ LAST_RELEASE_VERSION = $(SO_MAJOR_VERSION).$(SO_MINOR_VERSION).$(SO_MICRO_VERSION)
  
+-XSLBASE?=/usr/share/sgml/docbook/xsl-stylesheets
++XSLBASE?=/usr/local/share/xsl/docbook
+ 
+ all: html
+ 
+@@ -15,14 +18,13 @@
  chunked-html: postgis-out.xml
  	xsltproc \
+ 		--output html/ \
 -		--param shade.verbatim 1 \
-+		--output html/ \
  		--param chunk.section.depth 0 \
  		--param section.autolabel 1 \
  		--param section.label.includes.component.label 1 \
  		--stringparam html.stylesheet style.css \
  		--stringparam saxon.character.representation decimal \
--		/usr/share/sgml/docbook/xsl-stylesheets/html/chunk.xsl \
+ 		$(XSLBASE)/html/chunk.xsl \
 -		$<
-+		/usr/local/share/xsl/docbook/html/chunk.xsl \
 +		$< && touch chunked-html
  
- html: postgis-out.xml
+ html/postgis.html: postgis-out.xml
  	xsltproc \
-@@ -53,3 +55,12 @@
- 		postgis.out \
- 		postgis.log
+@@ -66,5 +68,15 @@
+ maintainer-clean: clean
+ 	@rm -f html/*.html
  
 +install: chunked-html
 +	$(mkinstalldirs) $(DOCSDIR)
@@ -39,3 +45,6 @@
 +	$(INSTALL_DATA)	html/ch04.html $(DOCSDIR)/ch04.html
 +	$(INSTALL_DATA)	html/ch05.html $(DOCSDIR)/ch05.html
 +	$(INSTALL_DATA)	html/ch06.html $(DOCSDIR)/ch06.html
++	$(INSTALL_DATA)	html/ch07.html $(DOCSDIR)/ch07.html
+ 
+ .PHONY: html 

@@ -4,6 +4,6 @@ Postgis Installation note
 
 * The name of the postgis library has changed.
   Users from older versions (0.9.1 or older), *must* read 
-  PREFIX/share/postgis/README.upgrade for instructions.
+  PREFIX/share/postgis/README.postgis for instructions.
 
 =============================================================

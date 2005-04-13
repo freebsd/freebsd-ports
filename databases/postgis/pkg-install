@@ -42,8 +42,6 @@ case "$2" in
 	SHAREDIR=${PREF}/share/postgis
 	LIBDIR=${PREF}/lib
 	sed -e "s|\$libdir|${LIBDIR}|g" ${SHAREDIR}/lwpostgis.sql.default > ${SHAREDIR}/lwpostgis.sql
-	sed -e "s|%%LIBDIR%%|${LIBDIR}|g" ${SHAREDIR}/updatedb.default > ${SHAREDIR}/updatedb
-	chmod 0755 ${SHAREDIR}/updatedb
   ;;
   "MESSAGE")
 	msg

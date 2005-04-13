@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.0.0-rc3
+DISTVERSION=	1.0.0-rc5
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/
 
@@ -71,8 +71,6 @@ pre-configure:
 	${MV} ${WRKDIR}/pgsql/postgresql* ${PGSQL_SRC} \
 
 post-install:
-	@ ${INSTALL_DATA} ${FILESDIR}/updatedb.default ${PREFIX}/share/postgis
-	@ ${INSTALL_DATA} ${FILESDIR}/README.upgrade ${PREFIX}/share/postgis
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 	@ ${CAT} ${PKGMESSAGE}
