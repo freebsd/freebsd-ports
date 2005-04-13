@@ -7,6 +7,7 @@
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
@@ -23,9 +24,9 @@ USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
+OPTIONS=	METACITY "Depend on MetaCity Theme" On
 .if defined(PORTNAME) && ${PORTNAME} == "clearlooks"
-OPTIONS=	METACITY "Depend on MetaCity Theme" On \
-		ANIMATION "Enable experimental animated progressbars" Off
+OPTIONS+=	ANIMATION "Enable experimental animated progressbars" Off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -51,6 +52,16 @@ RUN_DEPENDS+=	${X11BASE}/share/gnome/themes/Clearlooks/metacity-1/metacity-theme
 
 .if defined(WITH_ANIMATION)
 CONFIGURE_ARGS+=	--enable-animation
+.endif
+
+.if ${PORTNAME} == "clearlooks"
+pre-everything::
+	@if [ -n "`${PKG_INFO} -xI '^gtk-engines2*[0-9]*'`" ]; then \
+		${ECHO_MSG} ; \
+		${ECHO_MSG} "Gnome/gtk-engine users should use ${PORTSDIR}/x11-themes/clear
+		${ECHO_MSG} ; \
+		${FALSE}; \
+	fi
 .endif
 
 .include <bsd.port.post.mk>
