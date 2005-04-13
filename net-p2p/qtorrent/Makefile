@@ -7,7 +7,7 @@
 
 PORTNAME=	qtorrent
 PORTVERSION=	0.9.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	http://thegraveyard.org/files/
 
@@ -26,5 +26,10 @@ pre-everything::
 	@${ECHO_MSG} "===> For qtorrent to work you need to compile"
 	@${ECHO_MSG} "===> python WITH_THREADS defined, it is default"
 	@${ECHO_MSG} "===>"
+
+post-patch:
+.for i in torrentsettings torrentwindow
+	@pyuic -o ${WRKSRC}/pyqtorrent/${i}.py ${WRKSRC}/pyqtorrent/${i}.ui
+.endfor
 
 .include <bsd.port.mk>
