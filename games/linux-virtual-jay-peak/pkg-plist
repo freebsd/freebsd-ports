@@ -1,0 +1,229 @@
+bin/virtual-jay-peak
+libexec/soulride-static
+%%DATADIR%%/Recordings/jaydemo.srr
+%%DATADIR%%/data/Jay_Peak/Jay_Peak.srt
+%%DATADIR%%/data/Jay_Peak/angelswig.psd
+%%DATADIR%%/data/Jay_Peak/angelswig.srm
+%%DATADIR%%/data/Jay_Peak/apple tree.psd
+%%DATADIR%%/data/Jay_Peak/bldplain.psd
+%%DATADIR%%/data/Jay_Peak/bldplain.srm
+%%DATADIR%%/data/Jay_Peak/blue.psd
+%%DATADIR%%/data/Jay_Peak/bluegate.srm
+%%DATADIR%%/data/Jay_Peak/columbia finish.psd
+%%DATADIR%%/data/Jay_Peak/columbia finish.srm
+%%DATADIR%%/data/Jay_Peak/columbia sign.psd
+%%DATADIR%%/data/Jay_Peak/columbia sign.srm
+%%DATADIR%%/data/Jay_Peak/convert sign orig.psd
+%%DATADIR%%/data/Jay_Peak/convert sign.psd
+%%DATADIR%%/data/Jay_Peak/convert sign.srm
+%%DATADIR%%/data/Jay_Peak/everglade.psd
+%%DATADIR%%/data/Jay_Peak/everglade.srm
+%%DATADIR%%/data/Jay_Peak/fence.srm
+%%DATADIR%%/data/Jay_Peak/finish.psd
+%%DATADIR%%/data/Jay_Peak/gray.psd
+%%DATADIR%%/data/Jay_Peak/jay_base.srm
+%%DATADIR%%/data/Jay_Peak/jay_finish.psd
+%%DATADIR%%/data/Jay_Peak/jay_ldg_win.psd
+%%DATADIR%%/data/Jay_Peak/jay_siding.psd
+%%DATADIR%%/data/Jay_Peak/jay_top.srm
+%%DATADIR%%/data/Jay_Peak/jay_wall.psd
+%%DATADIR%%/data/Jay_Peak/jay_wall2.psd
+%%DATADIR%%/data/Jay_Peak/jay_wall3.psd
+%%DATADIR%%/data/Jay_Peak/jay_win.psd
+%%DATADIR%%/data/Jay_Peak/jay_window.psd
+%%DATADIR%%/data/Jay_Peak/jaydeck.srm
+%%DATADIR%%/data/Jay_Peak/jaylogo.psd
+%%DATADIR%%/data/Jay_Peak/lift.psd
+%%DATADIR%%/data/Jay_Peak/lift.srm
+%%DATADIR%%/data/Jay_Peak/lifthouse.srm
+%%DATADIR%%/data/Jay_Peak/liftwin.psd
+%%DATADIR%%/data/Jay_Peak/maple.psd
+%%DATADIR%%/data/Jay_Peak/maple2.psd
+%%DATADIR%%/data/Jay_Peak/maple3.psd
+%%DATADIR%%/data/Jay_Peak/metal.psd
+%%DATADIR%%/data/Jay_Peak/montrealer.psd
+%%DATADIR%%/data/Jay_Peak/montrealer.srm
+%%DATADIR%%/data/Jay_Peak/mtdew finish.psd
+%%DATADIR%%/data/Jay_Peak/mtdew finish.srm
+%%DATADIR%%/data/Jay_Peak/mtdew.psd
+%%DATADIR%%/data/Jay_Peak/mtdew.srm
+%%DATADIR%%/data/Jay_Peak/new lift building.srm
+%%DATADIR%%/data/Jay_Peak/paradise.psd
+%%DATADIR%%/data/Jay_Peak/paradise.srm
+%%DATADIR%%/data/Jay_Peak/poma blue.psd
+%%DATADIR%%/data/Jay_Peak/postload.lua
+%%DATADIR%%/data/Jay_Peak/preload.lua
+%%DATADIR%%/data/Jay_Peak/red.psd
+%%DATADIR%%/data/Jay_Peak/redcross.psd
+%%DATADIR%%/data/Jay_Peak/redgate.srm
+%%DATADIR%%/data/Jay_Peak/rider-board.psd
+%%DATADIR%%/data/Jay_Peak/rider-jacket columbia.psd
+%%DATADIR%%/data/Jay_Peak/rider-jacket.psd
+%%DATADIR%%/data/Jay_Peak/roof.psd
+%%DATADIR%%/data/Jay_Peak/salomon finish.psd
+%%DATADIR%%/data/Jay_Peak/salomon finish.srm
+%%DATADIR%%/data/Jay_Peak/salomon sign.psd
+%%DATADIR%%/data/Jay_Peak/salomon sign.srm
+%%DATADIR%%/data/Jay_Peak/salomon-board.psd
+%%DATADIR%%/data/Jay_Peak/salomon-bottom.psd
+%%DATADIR%%/data/Jay_Peak/shingles.psd
+%%DATADIR%%/data/Jay_Peak/sign-right.psd
+%%DATADIR%%/data/Jay_Peak/sign-right.srm
+%%DATADIR%%/data/Jay_Peak/stateside.srm
+%%DATADIR%%/data/Jay_Peak/stone.psd
+%%DATADIR%%/data/Jay_Peak/timbuktu.psd
+%%DATADIR%%/data/Jay_Peak/timbuktu.srm
+%%DATADIR%%/data/Jay_Peak/vermonter.psd
+%%DATADIR%%/data/Jay_Peak/vermonter.srm
+%%DATADIR%%/data/Jay_Peak/wood.psd
+%%DATADIR%%/data/airdrag.wav
+%%DATADIR%%/data/arrow-cursor.psd
+%%DATADIR%%/data/asphalt0.psd
+%%DATADIR%%/data/asphalt1.psd
+%%DATADIR%%/data/ching0.wav
+%%DATADIR%%/data/clear.lua
+%%DATADIR%%/data/cloud0.psd
+%%DATADIR%%/data/cloudy.lua
+%%DATADIR%%/data/cross-cursor.psd
+%%DATADIR%%/data/cursor.psd
+%%DATADIR%%/data/deedoodeedoo.wav
+%%DATADIR%%/data/detail.psd
+%%DATADIR%%/data/ding.wav
+%%DATADIR%%/data/ding1.wav
+%%DATADIR%%/data/ding2.wav
+%%DATADIR%%/data/ding3.wav
+%%DATADIR%%/data/ding4.wav
+%%DATADIR%%/data/doodooding.wav
+%%DATADIR%%/data/dropmarker.psd
+%%DATADIR%%/data/figure/armll.srm
+%%DATADIR%%/data/figure/armlr.srm
+%%DATADIR%%/data/figure/armul.srm
+%%DATADIR%%/data/figure/armur.srm
+%%DATADIR%%/data/figure/board-and-feet.srm
+%%DATADIR%%/data/figure/legll.srm
+%%DATADIR%%/data/figure/leglr.srm
+%%DATADIR%%/data/figure/legul.srm
+%%DATADIR%%/data/figure/legur.srm
+%%DATADIR%%/data/figure/torsol.srm
+%%DATADIR%%/data/figure/torsou.srm
+%%DATADIR%%/data/finishgate.srm
+%%DATADIR%%/data/finishside.psd
+%%DATADIR%%/data/forest0.psd
+%%DATADIR%%/data/forest1.psd
+%%DATADIR%%/data/granular0.psd
+%%DATADIR%%/data/granular1.psd
+%%DATADIR%%/data/gui/attract-jay.ggm
+%%DATADIR%%/data/gui/attract.psd
+%%DATADIR%%/data/gui/attract_type.psd
+%%DATADIR%%/data/gui/bonus-desc.ggm
+%%DATADIR%%/data/gui/bonus-num.ggm
+%%DATADIR%%/data/gui/bonus.ggm
+%%DATADIR%%/data/gui/credits-intro-layout.ggm
+%%DATADIR%%/data/gui/credits-intro.ggm
+%%DATADIR%%/data/gui/credits-music.ggm
+%%DATADIR%%/data/gui/credits-people-layout.ggm
+%%DATADIR%%/data/gui/credits-people.ggm
+%%DATADIR%%/data/gui/credits-team.ggm
+%%DATADIR%%/data/gui/credits.ggm
+%%DATADIR%%/data/gui/fixedsys.ggf
+%%DATADIR%%/data/gui/font-lcd.psd
+%%DATADIR%%/data/gui/font-score.psd
+%%DATADIR%%/data/gui/font-slick.psd
+%%DATADIR%%/data/gui/font-swiss-xcbi.psd
+%%DATADIR%%/data/gui/gui_intro.psd
+%%DATADIR%%/data/gui/guidefs.h
+%%DATADIR%%/data/gui/hud-menu.ggm
+%%DATADIR%%/data/gui/hud.ggm
+%%DATADIR%%/data/gui/infoborder.ggm
+%%DATADIR%%/data/gui/intro.ggm
+%%DATADIR%%/data/gui/jaycutout.ggm
+%%DATADIR%%/data/gui/jaylogo_cut.psd
+%%DATADIR%%/data/gui/jaylogo_matte.psd
+%%DATADIR%%/data/gui/lcd.ggf
+%%DATADIR%%/data/gui/loading.ggm
+%%DATADIR%%/data/gui/loading_message.ggm
+%%DATADIR%%/data/gui/logos-1.psd
+%%DATADIR%%/data/gui/menus.ggf
+%%DATADIR%%/data/gui/mountain_name.ggm
+%%DATADIR%%/data/gui/outro.ggm
+%%DATADIR%%/data/gui/player_name.ggm
+%%DATADIR%%/data/gui/player_status.ggm
+%%DATADIR%%/data/gui/playername.ggm
+%%DATADIR%%/data/gui/preintro.ggm
+%%DATADIR%%/data/gui/runinfo.psd
+%%DATADIR%%/data/gui/runinfo_text.ggm
+%%DATADIR%%/data/gui/runintro.ggm
+%%DATADIR%%/data/gui/score.ggf
+%%DATADIR%%/data/gui/score.ggm
+%%DATADIR%%/data/gui/scoresheet.ggm
+%%DATADIR%%/data/gui/scoresheet_text.ggm
+%%DATADIR%%/data/gui/slick.ggf
+%%DATADIR%%/data/gui/spinning_disk.ggm
+%%DATADIR%%/data/gui/srcutout.ggm
+%%DATADIR%%/data/gui/srlogo.psd
+%%DATADIR%%/data/gui/srlogo_cut.psd
+%%DATADIR%%/data/gui/srlogo_matte.psd
+%%DATADIR%%/data/gui/sshot_logoflash.ggm
+%%DATADIR%%/data/gui/static.psd
+%%DATADIR%%/data/gui/swiss-xcbi.ggf
+%%DATADIR%%/data/gui/time_lcd.ggm
+%%DATADIR%%/data/gui/vcr.ggm
+%%DATADIR%%/data/gui/vcr.psd
+%%DATADIR%%/data/gui/vcr_buttons.ggm
+%%DATADIR%%/data/gui/vcr_chrome.ggm
+%%DATADIR%%/data/gui/vcr_ffwd.ggm
+%%DATADIR%%/data/gui/vcr_labels.ggm
+%%DATADIR%%/data/gui/vcr_load.ggm
+%%DATADIR%%/data/gui/vcr_pause.ggm
+%%DATADIR%%/data/gui/vcr_play.ggm
+%%DATADIR%%/data/gui/vcr_restart.ggm
+%%DATADIR%%/data/gui/vcr_rew.ggm
+%%DATADIR%%/data/gui/vcr_save.ggm
+%%DATADIR%%/data/gui/vcr_slow.ggm
+%%DATADIR%%/data/gui/vcr_static.ggm
+%%DATADIR%%/data/hardpack0.psd
+%%DATADIR%%/data/hardpack1.psd
+%%DATADIR%%/data/hemlock.psd
+%%DATADIR%%/data/ice0.psd
+%%DATADIR%%/data/ice1.psd
+%%DATADIR%%/data/icedrag.wav
+%%DATADIR%%/data/mapcursor.psd
+%%DATADIR%%/data/ogldrivers.txt
+%%DATADIR%%/data/powder0.psd
+%%DATADIR%%/data/powder1.psd
+%%DATADIR%%/data/rewind-icon.psd
+%%DATADIR%%/data/rewind.wav
+%%DATADIR%%/data/rider-arm.psd
+%%DATADIR%%/data/rider-board-bottom.psd
+%%DATADIR%%/data/rider-board.psd
+%%DATADIR%%/data/rider-feet.psd
+%%DATADIR%%/data/rider-head.psd
+%%DATADIR%%/data/rider-legs.psd
+%%DATADIR%%/data/rock0.psd
+%%DATADIR%%/data/rock1.psd
+%%DATADIR%%/data/sand0.psd
+%%DATADIR%%/data/sand1.psd
+%%DATADIR%%/data/shadetable-gray.psd
+%%DATADIR%%/data/shadetable-sunset.psd
+%%DATADIR%%/data/shadetable.psd
+%%DATADIR%%/data/skydome-gray.psd
+%%DATADIR%%/data/skydome-sunset.psd
+%%DATADIR%%/data/skydome.psd
+%%DATADIR%%/data/snow-particle.psd
+%%DATADIR%%/data/snowbump.wav
+%%DATADIR%%/data/snowdrag.wav
+%%DATADIR%%/data/snowflake.psd
+%%DATADIR%%/data/snowing.lua
+%%DATADIR%%/data/sunset.lua
+%%DATADIR%%/data/water0.psd
+%%DATADIR%%/data/water1.psd
+%%DATADIR%%/data/whiteout.lua
+%%PORTDOCS%%%%DOCSDIR%%/readme-jay_peak.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme-linux.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/Recordings
+@dirrm %%DATADIR%%/data/Jay_Peak
+@dirrm %%DATADIR%%/data/figure
+@dirrm %%DATADIR%%/data/gui
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

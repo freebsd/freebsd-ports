@@ -5411,6 +5411,7 @@ linux-understand_java	ports/devel/linux-understand_java
 linux-ungif	ports/graphics/linux-ungif
 linux-urw-fonts	ports/x11-fonts/linux-urw-fonts
 linux-ut2004-demo	ports/games/linux-ut2004-demo
+linux-virtual-jay-peak	ports/games/linux-virtual-jay-peak
 linux-vmware-toolbox2 ports/emulators/linux-vmware-toolbox2
 linux-vmware-toolbox4 ports/emulators/linux-vmware-toolbox4
 linux-vsound	ports/audio/linux-vsound
