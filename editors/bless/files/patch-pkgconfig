@@ -1,0 +1,78 @@
+--- src/ByteBuffer/Makefile.in.orig	Tue Apr 12 11:22:18 2005
++++ src/ByteBuffer/Makefile.in	Tue Apr 12 11:22:52 2005
+@@ -113,7 +113,7 @@
+ EXTRA_DIST = $(SRC)
+ DLL = Bless.Buffers.dll
+ CLEANFILES = $(DLL)
+-REFS = -r:../util/Bless.Util.dll -pkg:gtk-sharp
++REFS = -r:../util/Bless.Util.dll $(shell pkg-config --libs gtk-sharp)
+ all: all-am
+ 
+ .SUFFIXES:
+--- src/Makefile.in.orig	Tue Apr 12 11:20:04 2005
++++ src/Makefile.in	Tue Apr 12 11:20:44 2005
+@@ -485,7 +485,7 @@
+ 
+ 
+ bless.exe: $(GUI_SRC) $(BB_SRC) $(GUI_DRAWERS_SRC) $(GUI_AREAS_SRC) $(GUI_DIALOGS_SRC) $(TOOLS_FIND_SRC) $(UTIL_SRC) $(MISC_DEPS)
+-	$(MCS) $(MCS_FLAGS) -o bless.exe -t:exe $(RESOURCES) -r:Mono.Posix -pkg:gtk-sharp -pkg:glade-sharp \
++	$(MCS) $(MCS_FLAGS) -o bless.exe -t:exe $(RESOURCES) -r:Mono.Posix $(shell pkg-config --libs gtk-sharp glade-sharp) \
+ 	$(GUI_SRC) $(BB_SRC) $(GUI_DRAWERS_SRC)  $(GUI_AREAS_SRC) $(GUI_DIALOGS_SRC) $(TOOLS_FIND_SRC) $(UTIL_SRC)
+ 
+ install-exec-local: bless.exe
+--- src/gui/Makefile.in.orig	Tue Apr 12 11:24:11 2005
++++ src/gui/Makefile.in	Tue Apr 12 11:24:40 2005
+@@ -418,7 +418,7 @@
+ dll: $(DLL)
+ 
+ $(DLL): $(SRC)
+-	$(MCS) -target:library -r:$(REFS) -pkg:$(PKGS) -out:$(DLL) $(SRC)
++	$(MCS) -target:library -r:$(REFS) $(shell pkg-config --libs $(PKGS)) -out:$(DLL) $(SRC)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+--- src/gui/areas/Makefile.in.orig	Tue Apr 12 11:27:20 2005
++++ src/gui/areas/Makefile.in	Tue Apr 12 11:27:43 2005
+@@ -270,7 +270,7 @@
+ all: $(DLL)
+ 
+ $(DLL): $(SRC)
+-	$(MCS) -target:library -r:$(REFS) -pkg:$(PKGS) -out:$(DLL) $(SRC)
++	$(MCS) -target:library -r:$(REFS) $(shell pkg-config --libs $(PKGS)) -out:$(DLL) $(SRC)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+--- src/gui/dialogs/Makefile.in.orig	Tue Apr 12 11:28:49 2005
++++ src/gui/dialogs/Makefile.in	Tue Apr 12 11:29:18 2005
+@@ -123,8 +123,7 @@
+       -r:../../ByteBuffer/Bless.Buffers.dll \
+       -r:../../tools/find/Bless.Tools.Find.dll
+ 
+-PKGS = -pkg:gtk-sharp \
+-      -pkg:glade-sharp 
++PKGS = $(shell pkg-config --libs gtk-sharp glade-sharp)
+ 
+ all: all-am
+ 
+--- src/gui/drawers/Makefile.in.orig	Tue Apr 12 11:30:13 2005
++++ src/gui/drawers/Makefile.in	Tue Apr 12 11:30:28 2005
+@@ -269,7 +269,7 @@
+ all: $(DLL)
+ 
+ $(DLL): $(SRC)
+-	$(MCS) -target:library -pkg:$(PKGS) -out:$(DLL) $(SRC)
++	$(MCS) -target:library $(shell pkg-config --libs $(PKGS)) -out:$(DLL) $(SRC)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+--- src/util/Makefile.in.orig	Tue Apr 12 11:32:07 2005
++++ src/util/Makefile.in	Tue Apr 12 11:32:23 2005
+@@ -268,7 +268,7 @@
+ dll: $(DLL)
+ 
+ $(DLL): $(SRC)
+-	$(MCS) -pkg:gtk-sharp -target:library -out:$(DLL) $(SRC)
++	$(MCS) $(shell pkg-config --libs gtk-sharp) -target:library -out:$(DLL) $(SRC)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
