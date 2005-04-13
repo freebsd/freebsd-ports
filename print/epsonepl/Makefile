@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}ijs-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Printer filter for EPSON EPL-5700L etc"
 
 USE_GHOSTSCRIPT_RUN=	yes

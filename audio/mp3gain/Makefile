@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mpex.net/software/mirror/ \
 		http://www.speakeasy.net/~djkarmad/mp3gain/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}_src${EXTSUFFIX}
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to normalize the gain of mp3 files
 
 PLIST_FILES=	bin/mp3gain
