@@ -7,6 +7,7 @@
 
 PORTNAME=	pkgconfig
 PORTVERSION=	0.17.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgconfig.freedesktop.org/releases/
 DIST_SUBDIR=	gnome2
@@ -16,6 +17,7 @@ COMMENT=	A utility to retrieve information about installed libraries
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
+USE_GNOME=	gnometarget
 LIBTOOLFILES=	glib-1.2.8/configure
 LIBTOOLFLAGS=	--disable-ltlibs \
 		--disable-shared
