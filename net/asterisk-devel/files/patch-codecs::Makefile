@@ -1,12 +1,12 @@
---- codecs/Makefile.orig	Thu Jan 13 10:22:07 2005
-+++ codecs/Makefile	Sun Feb 27 23:53:30 2005
-@@ -17,24 +17,23 @@
+--- codecs/Makefile.orig	Thu Mar 17 20:43:51 2005
++++ codecs/Makefile	Thu Apr 14 00:09:04 2005
+@@ -17,25 +17,23 @@
  # g723.1b)
  #
  #MODG723=codec_g723_1.so codec_g723_1b.so
 -MODG723=$(shell [ -f g723.1/coder.c ] && echo "codec_g723_1.so")
 -MODG723+=$(shell [ -f g723.1b/coder2.c ] && echo "codec_g723_1b.so")
--MODSPEEX=$(shell [ -f /usr/include/speex.h ] || [ -f /usr/local/include/speex.h ] || [ -f /usr/local/include/speex/speex.h ] && echo "codec_speex.so")
+-MODSPEEX=$(shell [ -f /usr/include/speex.h ] || [ -f /usr/include/speex/speex.h ] || [ -f /usr/local/include/speex.h ] || [ -f /usr/local/include/speex/speex.h ] && echo "codec_speex.so")
 -MODILBC=$(shell [ -f ilbc/iLBC_decode.h ] && echo "codec_ilbc.so")
 +MODG723=codec_g723_1_dummy.so
 +MODG729=codec_g729_dummy.so
@@ -15,6 +15,7 @@
  CFLAGS+=-fPIC
 -CFLAGS+=$(shell [ -f /usr/local/include/speex.h ] && echo "-I/usr/local/include")
 -CFLAGS+=$(shell [ -f /usr/local/include/speex/speex.h ] && echo "-I/usr/local/include/speex")
+-CFLAGS+=$(shell [ -f /usr/include/speex/speex.h ] && echo "-I/usr/include/speex")
 +CFLAGS+=-I$(LOCALBASE)/include
  
  LIBG723=g723.1/libg723.a
@@ -32,7 +33,7 @@
          codec_adpcm.so codec_ulaw.so codec_alaw.so codec_a_mu.so \
  	codec_g726.so
  
-@@ -92,7 +91,7 @@
+@@ -93,7 +91,7 @@
  endif
  
  install: all

@@ -300,6 +300,7 @@ lib/asterisk/modules/res_musiconhold.so
 sbin/asterisk
 sbin/astgenkey
 sbin/astman
+sbin/autosupport
 sbin/safe_asterisk
 %%DATADIR%%/agi-bin/agi-test.agi
 %%DATADIR%%/agi-bin/eagi-sphinx-test
@@ -431,8 +432,8 @@ sbin/safe_asterisk
 %%DATADIR%%/sounds/digits/tomorrow.gsm
 %%DATADIR%%/sounds/digits/yesterday.gsm
 %%DATADIR%%/sounds/dir-instr.gsm
-%%DATADIR%%/sounds/dir-intro.gsm
 %%DATADIR%%/sounds/dir-intro-fn.gsm
+%%DATADIR%%/sounds/dir-intro.gsm
 %%DATADIR%%/sounds/dir-nomatch.gsm
 %%DATADIR%%/sounds/dir-nomore.gsm
 %%DATADIR%%/sounds/invalid.gsm
@@ -549,8 +550,8 @@ sbin/safe_asterisk
 %%DATADIR%%/sounds/vm-from.gsm
 %%DATADIR%%/sounds/vm-goodbye.gsm
 %%DATADIR%%/sounds/vm-helpexit.gsm
-%%DATADIR%%/sounds/vm-incorrect.gsm
 %%DATADIR%%/sounds/vm-incorrect-mailbox.gsm
+%%DATADIR%%/sounds/vm-incorrect.gsm
 %%DATADIR%%/sounds/vm-instructions.gsm
 %%DATADIR%%/sounds/vm-intro.gsm
 %%DATADIR%%/sounds/vm-isonphone.gsm
@@ -590,8 +591,8 @@ sbin/safe_asterisk
 %%DATADIR%%/sounds/vm-saved.gsm
 %%DATADIR%%/sounds/vm-savedto.gsm
 %%DATADIR%%/sounds/vm-savefolder.gsm
-%%DATADIR%%/sounds/vm-saveoper.gsm
 %%DATADIR%%/sounds/vm-savemessage.gsm
+%%DATADIR%%/sounds/vm-saveoper.gsm
 %%DATADIR%%/sounds/vm-sorry.gsm
 %%DATADIR%%/sounds/vm-star-cancel.gsm
 %%DATADIR%%/sounds/vm-starmain.gsm
