@@ -1,36 +1,18 @@
---- bin/ifort.orig	Thu Nov 25 15:41:18 2004
-+++ bin/ifort	Thu Nov 25 15:47:00 2004
-@@ -1,6 +1,11 @@
+$FreeBSD$
+
+--- bin/ifort.orig	Thu Apr  7 09:47:54 2005
++++ bin/ifort	Thu Apr  7 09:49:52 2005
+@@ -1,5 +1,10 @@
  #!/bin/sh
  
--if [ -z INTEL_LICENSE_FILE ]
 +ICC_LOCALBASE=%%ICC_LOCALBASE%%
 +export ICC_LOCALBASE;
 +GXX_ROOT=<INSTALLDIR>/lib
 +export GXX_ROOT
 +
-+if [ -z "$INTEL_LICENSE_FILE" ]
+ if [ -z "$INTEL_LICENSE_FILE" ]
  then
- INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
- else
-@@ -8,7 +13,7 @@
- fi
- export INTEL_LICENSE_FILE;
- 
--if [ -z LD_LIBRARY_PATH ]
-+if [ -z "$LD_LIBRARY_PATH" ]
- then 
-  LD_LIBRARY_PATH=<INSTALLDIR>/lib;
- else
-@@ -16,7 +21,7 @@
- fi
- export LD_LIBRARY_PATH;
- 
--if [ -z PATH ]
-+if [ -z "$PATH" ]
- then
-  PATH=<INSTALLDIR>/bin;
- else
+  INTEL_LICENSE_FILE="<INSTALLDIR>/licenses";
 @@ -24,11 +29,31 @@
  fi
  export PATH;
