@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-print
 PORTVERSION=	4.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -29,6 +29,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
@@ -50,7 +51,7 @@ PLIST_SUB+=	CUPS="@comment "
 CONFIGURE_ARGS+=--disable-bsdlpr
 PLIST_SUB+=	LPR="@comment "
 .else
-CONFIGURE_ARGS+=--enable-bsdlpr
+CONFIGURE_ARGS+=--enable-bsdlpr --with-printcap=/etc/printcap
 PLIST_SUB+=	LPR=""
 .endif
 
@@ -63,5 +64,9 @@ CONFIGURE_ARGS+=--disable-letter
 BUILD_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's/@LDFLAGS@/& -Wl,-E/' ${WRKSRC}/xfprint/Makefile.in \
+		 ${WRKSRC}/xfprint-manager/Makefile.in
 
 .include <bsd.port.mk>
