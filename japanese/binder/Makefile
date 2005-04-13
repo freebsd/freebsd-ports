@@ -9,5 +9,6 @@ CATEGORIES=	japanese
 
 LANGUAGE=	Japanese
 MASTERDIR=	${.CURDIR}/../../x11-fm/binder
+CONFLICTS=	binder-[0-9]*
 
 .include	"${MASTERDIR}/Makefile"
