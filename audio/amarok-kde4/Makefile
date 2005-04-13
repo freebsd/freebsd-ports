@@ -47,7 +47,7 @@ PLIST_SUB+=	ARTS=""
 CONFIGURE_ARGS+=--without-gstreamer
 PLIST_SUB+=	GSTREAMER="@comment "
 .else
-USE_GSTREAMER+=	mad vorbis faad flac musepack artsd
+USE_GSTREAMER+=	mad vorbis flac musepack artsd
 PLIST_SUB+=	GSTREAMER=""
 .endif
 
