@@ -6,6 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +24,7 @@ USE_REINPLACE=	yes
 USE_SDL=	sdl
 
 OPTIONS=	ARTS "aRts playback engine" off \
-		GSTREAMER "GStreamer playback engine" on \
+		GSTREAMER "GStreamer playback engine (includes aRts-output)" on \
 		XINE "Xine playback engine" off \
 		XMMS "XMMS visualizations" off \
 		LIBVISUAL "libvisual support" off \
@@ -46,7 +47,7 @@ PLIST_SUB+=	ARTS=""
 CONFIGURE_ARGS+=--without-gstreamer
 PLIST_SUB+=	GSTREAMER="@comment "
 .else
-USE_GSTREAMER+=	core
+USE_GSTREAMER+=	mad vorbis faad flac musepack artsd
 PLIST_SUB+=	GSTREAMER=""
 .endif
 
