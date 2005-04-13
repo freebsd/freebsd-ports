@@ -276,6 +276,7 @@
     SUBDIR += libmt_client
     SUBDIR += libshhcards
     SUBDIR += lincity
+    SUBDIR += linux-doom3-demo
     SUBDIR += linux-enemyterritory
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
