@@ -5332,6 +5332,7 @@ linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
 linux-blackdown-jdk14	ports/java/linux-blackdown-jdk14
 linux-blackdown-jre11	ports/java/linux-blackdown-jre11
 linux-bmrt	ports/graphics/linux-bmrt
+linux-doom3-demo	ports/games/linux-doom3-demo
 linux-dislin	ports/math/linux-dislin
 linux-divx4linux	ports/multimedia/linux-divx4linux
 linux-divx4linux4	ports/multimedia/linux-divx4linux4
