@@ -128,6 +128,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/public_module/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/public_module/submodule/__init__.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/public_module/submodule/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testAcquisition.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testAcquisition.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testBindings.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testBindings.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testClassSecurityInfo.py
@@ -708,6 +710,11 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/testExternalMethod.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/LICENSE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -2397,6 +2404,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRequest.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPResponse.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPResponse.pyc
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testIterators.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testIterators.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testPublish.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testPublish.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testTaintedString.py
@@ -3077,6 +3086,7 @@ etc/rc.d/zeo.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/Extensions
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests
