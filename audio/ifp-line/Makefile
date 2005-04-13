@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ifp-driver
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Command line interface to iRiver music players
 
-LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 MAN1=		ifp.1
 

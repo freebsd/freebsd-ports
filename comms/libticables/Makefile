@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
 
-LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
