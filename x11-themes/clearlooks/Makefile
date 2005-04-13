@@ -12,8 +12,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
 DISTNAME=	clearlooks-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK+ 2.x engine based on Bluecurve
+MAINTAINER=	ahze@FreeBSD.org
+COMMENT?=	GTK+ 2.x engine based on Bluecurve
 
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
