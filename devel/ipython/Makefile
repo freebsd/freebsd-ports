@@ -18,7 +18,7 @@ COMMENT=	An enhanced Interactive Python shell
 MAN1=		ipython.1 pycolor.1
 MANCOMPRESSED=	yes
 
-USE_PYTHON=	2.1+
+USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
