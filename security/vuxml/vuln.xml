@@ -32,6 +32,80 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b206dd82-ac67-11d9-a788-0001020eed82">
+    <topic>openoffice -- DOC document heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>openoffice</name>
+	<name>ar-openoffice</name>
+	<name>ca-openoffice</name>
+	<name>cs-openoffice</name>
+	<name>de-openoffice</name>
+	<name>dk-openoffice</name>
+	<name>el-openoffice</name>
+	<name>es-openoffice</name>
+	<name>et-openoffice</name>
+	<name>fi-openoffice</name>
+	<name>fr-openoffice</name>
+	<name>gr-openoffice</name>
+	<name>hu-openoffice</name>
+	<name>it-openoffice</name>
+	<name>ja-openoffice</name>
+	<name>ko-openoffice</name>
+	<name>nl-openoffice</name>
+	<name>pl-openoffice</name>
+	<name>pt-openoffice</name>
+	<name>pt_BR-openoffice</name>
+	<name>ru-openoffice</name>
+	<name>se-openoffice</name>
+	<name>sk-openoffice</name>
+	<name>sl-openoffice-SI</name>
+	<name>tr-openoffice</name>
+	<name>zh-openoffice-CN</name>
+	<name>zh-openoffice-TW</name>
+	<!-- Deprecated names -->
+	<name>jp-openoffice</name>
+	<name>kr-openoffice</name>
+	<name>sl-openoffice-SL</name>
+	<name>zh-openoffice</name>
+	<name>zh_TW-openoffice</name>
+	<range><lt>1.1.5</lt></range>
+	<range><gt>2.*</gt><le>2.0.20050406</le></range>
+      </package>
+      <package>
+	<name>openoffice</name>
+	<name>ja-openoffice</name>
+	<range><ge>6.0.a609</ge><le>6.0.a638</le></range>
+	<range><ge>641c</ge><le>645</le></range>
+	<range><eq>1.1RC4</eq></range>
+	<range><eq>1.1rc5</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>AD-LAB reports that a heap-based buffer overflow
+	  vulnerability exists in OpenOffice's handling of DOC
+	  documents.  When reading a DOC document 16 bit from a 32 bit
+	  integer is used for memory allocation, but the full 32 bit
+	  is used for further processing of the document.  This can
+	  allow an attacker to crash OpenOffice, or potentially
+	  execute arbitrary code as the user running OpenOffice, by
+	  tricking an user into opening a specially crafted DOC
+	  document.</p>
+      </body>
+    </description>
+    <references>
+      <bid>13092</bid>
+      <cvename>CAN-2005-0941</cvename>
+      <mlist msgid="20050412000438.17342.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111325305109137</mlist>
+      <url>http://www.openoffice.org/issues/show_bug.cgi?id=46388</url>
+    </references>
+    <dates>
+      <discovery>2005-04-11</discovery>
+      <entry>2005-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="22f00553-a09d-11d9-a788-0001020eed82">
     <topic>portupgrade -- insecure temporary file handling
       vulnerability</topic>
