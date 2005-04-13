@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
-DISTNAME=	Zope-${PORTVERSION}-0
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
+		http://www.zope.org/Products/Zope/Hotfix-2005-04-05/Hotfix-20050405/
+DISTNAME=	Zope-${PORTVERSION}-final
+DISTFILES=	Zope-${PORTVERSION}-final.tgz \
+		Hotfix_20050405.tar.gz
 
 MAINTAINER=	estartu@augusta.de
 COMMENT=	An object-based web application platform
@@ -66,7 +68,11 @@ post-patch:
 		-e 's,^\(EXENAMES="\).*"$$,\1${PYTHON_VERSION}",g' \
 		${WRKSRC}/configure
 
+post-build:
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/Hotfix_20050405/
+
 post-install:
+	@${CP} -Rp ${WRKDIR}/Hotfix_20050405 ${ZOPEBASEDIR}/lib/python/Products/
 	@${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in ${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} < ${FILESDIR}/pkg-message.in \
 		> ${PKGMESSAGE}
