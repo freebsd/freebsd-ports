@@ -20,6 +20,7 @@ lib/MailScanner/MailScanner/ConfigDefs.pl
 lib/MailScanner/MailScanner/CustomConfig.pm
 lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
 lib/MailScanner/MailScanner/CustomFunctions/DavidHooton.pm
+lib/MailScanner/MailScanner/CustomFunctions/ZMRouterDirHash.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
 lib/MailScanner/MailScanner/Lock.pm
@@ -524,6 +525,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/oldnews.shtml
 %%PORTDOCS%%%%DOCSDIR%%/osdir.png
 %%PORTDOCS%%%%DOCSDIR%%/performance.shtml
+%%PORTDOCS%%%%DOCSDIR%%/phishing3.png
 %%PORTDOCS%%%%DOCSDIR%%/poetry.shtml
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.google.gif
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif

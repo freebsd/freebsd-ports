@@ -1,13 +1,146 @@
---- ../MailScanner-install-4.39.6.orig/docs/man/MailScanner.conf.5.html	Mon Mar 14 23:05:12 2005
-+++ docs/man/MailScanner.conf.5.html	Mon Mar 14 23:05:33 2005
+--- ../MailScanner-install-4.40.10.old/docs/man/MailScanner.conf.5.html	Fri Apr  1 16:10:19 2005
++++ docs/man/MailScanner.conf.5.html	Fri Apr  1 16:10:40 2005
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Mon Jan 17 15:53:41 2005 -->
-+<!-- CreationDate: Mon Mar 14 23:04:48 2005 -->
++<!-- CreationDate: Fri Apr  1 16:08:30 2005 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
-@@ -1638,6 +1638,90 @@
+@@ -120,13 +120,15 @@
+ directories within the MailScanner installation and in the
+ section &quot;RULESETS&quot; later in this manpage.</p>
+ <!-- INDENTATION -->
+-<p>The options are best listed in a few categories. This is
+-also the order in which you will find them in the
+-MailScanner.conf file. If this list looks very large then
+-don&rsquo;t worry, the supplied MailScanner.conf file (or
+-MailScanner.conf.sample) contains sensible defaults for all
+-the values. You will probably only need to change a very few
+-of them to start with.</p>
++<p>The options are best listed in a few categories. If this
++list looks very large then don&rsquo;t worry, the supplied
++MailScanner.conf file (or MailScanner.conf.sample) contains
++sensible defaults for all the values. You will probably only
++need to change a very few of them to start with.</p>
++<!-- INDENTATION -->
++<p>Starting with version 4.40.10 of MailScanner you can use
++shell environment variables such as $HOSTNAME or ${HOSTNAME}
++in MailScanner.conf and its relatives.</p>
+ <!-- INDENTATION -->
+ <p>You should define the following variables:</p>
+ </td>
+@@ -220,6 +222,54 @@
+ headers.</p>
+ </td>
+ </table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>%org&minus;long&minus;name%</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: Your Organisation Name Here</p>
++<!-- INDENTATION -->
++<p>Enter the full name of your organisation below, this is
++used in the signature placed at the bottom of report
++messages sent by MailScanner. It can include pretty much any
++text you like. You can make the result span several lines by
++including &quot;0 sequences in the text. These will be
++replaced by line&minus;breaks.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>%web&minus;site%</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: www.your&minus;organisation.com</p>
++<!-- INDENTATION -->
++<p>Enter the location of your organisation&rsquo;s web site
++below. This is used in the signature placed at the bottom of
++report messages sent by MailScanner. It should preferably be
++the location of a page that you have written explaining why
++you might have rejected the mail and what the recipient
++and/or sender should do about it.</p>
++</td>
++</table>
+ <a name="System Settings"></a>
+ <h2>System Settings</h2>
+ <!-- INDENTATION -->
+@@ -1071,6 +1121,54 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Unrar Command</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: /usr/bin/unrar</p>
++<!-- INDENTATION -->
++<p>Where the &quot;unrar&quot; command is installed. If you
++haven&rsquo;t got this command, look at www.rarlab.com. This
++is used for unpacking rar archives so that the contents can
++be checked for banned filenames and filetypes, and also that
++the archive can be tested to see if it is
++password&minus;protected. Virus scanning the contents of rar
++archives is still left to the virus scanner, with one
++exception: If using the clavavmodule virus scanner, this
++adds external RAR checking to that scanner which is needed
++for archives which are RAR version 3.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Unrar Timeout</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 50</p>
++<!-- INDENTATION -->
++<p>The maximum length of time the &quot;unrar&quot; command
++is allowed to run for 1 RAR archive (in seconds)</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Block Encrypted Messages</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1638,6 +1736,90 @@
  scanner, not the &quot;clamav&quot; scanner setting.</p>
  </td>
  </table>
@@ -98,7 +231,7 @@
  <a name="Removing/Logging dangerous or potentially offensive content"></a>
  <h2>Removing/Logging dangerous or potentially offensive content</h2>
  <!-- INDENTATION -->
-@@ -1761,6 +1845,33 @@
+@@ -1761,6 +1943,33 @@
  <tr valign="top" align="left">
  <td width="11%"></td>
  <td width="89%">
@@ -132,7 +265,7 @@
  <p><b>Allow IFrame Tags</b></p></td>
  </table>
  <!-- INDENTATION -->
-@@ -5122,6 +5233,28 @@
+@@ -5122,6 +5331,28 @@
  <p>Log all occurrences of &quot;Silent Viruses&quot; as
  defined above? This can only be a simple yes/no value, not a
  ruleset.</p>
