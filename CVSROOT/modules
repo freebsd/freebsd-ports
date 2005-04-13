@@ -1071,6 +1071,7 @@ cleanfeed	ports/news/cleanfeed
 cleanscore	ports/news/cleanscore
 clearlooks	ports/x11-themes/clearlooks
 clearlooks-metacity	ports/x11-themes/clearlooks-metacity
+clearlooks-themes	ports/x11-themes/clearlooks-themes
 clearlooks-themes-extras	ports/x11-themes/clearlooks-themes-extras
 clearsilver	ports/www/clearsilver
 clearsilver-python	ports/www/clearsilver-python
