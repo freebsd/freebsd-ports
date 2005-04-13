@@ -8,7 +8,7 @@
 
 PORTNAME=	matplotlib
 PORTVERSION=	0.74
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,6 +27,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
 
+USE_REINPLACE=	yes
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 USE_GNOME=	gtk20 pygtk2
@@ -41,6 +42,10 @@ PLISTDIR+=	${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${GREP} -lR "share/matplotlib" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		-e "s,share/matplotlib,share/py-matplotlib,g"
 
 post-install:
 .if !defined(NOPORTDOCS)
