@@ -16,15 +16,13 @@ DISTNAME=	gq-${PORTVERSION:S/b/beta/}
 MAINTAINER=	ports@oven.org
 COMMENT=	GTK-based LDAP client
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_GETTEXT=	yes
 USE_OPENLDAP=	yes
 USE_OPENSSL=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gnomehier gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
 
