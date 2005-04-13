@@ -7,7 +7,7 @@
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
@@ -62,6 +63,12 @@ pre-everything::
 		${ECHO_MSG} ; \
 		${FALSE}; \
 	fi
+.endif
+
+.if ${PORTNAME} != "clearlooks"
+post-patch:
+	@${REINPLACE_CMD} -e 's|gtkrc||' \
+		${WRKSRC}/themes/Clearlooks/gtk-2.0/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
