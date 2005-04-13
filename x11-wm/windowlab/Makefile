@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	windowlab
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.nickgravgaard.com/windowlab/
 EXTRACT_SUFX=	.tar
@@ -19,7 +19,8 @@ MAN1=		windowlab.1x
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-MAKE_ARGS+=	MENURC=${PREFIX}/etc/windowlab/menurc
+MAKE_ARGS+=	MENURC=${PREFIX}/etc/windowlab/menurc \
+		CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/windowlab etc/windowlab/menurc
 PLIST_DIRS=	etc/windowlab
