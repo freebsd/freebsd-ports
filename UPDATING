@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050414:
+  AFFECTS: users of databases/postgresql and any port that depends on it
+  AUTHOR: girgen@FreeBSD.org
+
+  The PostgreSQL ports are updated to 8.0.2. All shared libraries'
+  versions have been bumped, so you will need to recompile all client
+  applications that depend on libpq.so. The recommended way to
+  upgrade from 8.0.x would be something like
+
+  	portupgrade -rf postgresql-client
+
 20050413:
   AFFECTS: users of mail/spamd
   AUTHOR: delphij@FreeBSD.org

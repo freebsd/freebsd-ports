@@ -410,16 +410,16 @@ include/sql3types.h
 include/sqlca.h
 lib/libecpg.a
 lib/libecpg.so
-lib/libecpg.so.4
+lib/libecpg.so.5
 lib/libecpg_compat.a
 lib/libecpg_compat.so
-lib/libecpg_compat.so.1
+lib/libecpg_compat.so.2
 lib/libpq.a
 lib/libpq.so
-lib/libpq.so.3
+lib/libpq.so.4
 lib/libpgtypes.a
 lib/libpgtypes.so
-lib/libpgtypes.so.1
+lib/libpgtypes.so.2
 %%DOCSDIR%%/README-client
 @unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
 share/postgresql/pg_service.conf.sample
