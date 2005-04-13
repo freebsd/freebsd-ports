@@ -1,6 +1,0 @@
-#!/bin/sh
-
-LIBDIR=%%LIBDIR%%
-
-sed "s|'.*/libpostgis\.so\.0'|'${LIBDIR}/liblwgeom.so.1'|g
-     s|'.*/liblwgeom\.so\.1'|'${LIBDIR}/liblwgeom.so.1'|g $1 > $1.updated

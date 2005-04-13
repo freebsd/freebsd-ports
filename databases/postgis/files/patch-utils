@@ -1,0 +1,21 @@
+--- utils/Makefile	Tue Mar  8 09:11:29 2005
++++ utils/Makefile	Mon Mar 28 09:45:41 2005
+@@ -1,3 +1,6 @@
++include ../Makefile.config
++include $(top_srcdir)/src/Makefile.shlib
++
+ SCRIPTS = \
+ 	postgis_restore.pl \
+ 	profile_intersects.pl \
+@@ -6,3 +9,11 @@
+ 
+ all:
+ 	chmod +x $(SCRIPTS)
++
++install:
++	$(mkinstalldirs) $(DATADIR)/utils
++	$(INSTALL_DATA)	README $(DATADIR)/utils/README
++	$(INSTALL_DATA)	postgis_restore.pl $(DATADIR)/utils/postgis_restore.pl
++	$(INSTALL_DATA)	profile_intersects.pl $(DATADIR)/utils/profile_intersects.pl
++	$(INSTALL_DATA)	test_estimation.pl $(DATADIR)/utils/test_estimation.pl
++	$(INSTALL_DATA)	test_joinestimation.pl $(DATADIR)/utils/test_joinestimation.pl
