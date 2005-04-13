@@ -1,4 +1,4 @@
-# New ports collection makefile for:	titano
+# New ports collection makefile for:	Titano
 # Date created:				25 September 2000
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
@@ -6,40 +6,41 @@
 #
 
 PORTNAME=	titano
-PORTVERSION=	0.0.5b
-PORTREVISION=	2
+PORTVERSION=	0.0.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An IDE for GNOME desktop
 
-LIB_DEPENDS=	gtkeditor.0:${PORTSDIR}/x11-toolkits/libgtkeditor
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
+LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_REINPLACE=	yes
-USE_GNOME=	gnomelibs
+USE_GNOME=	gnomelibs libglade
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile (bad C++ code)"
+.if ${OSVERSION} > 500034
+EXTRA_PATCHES+=	${FILESDIR}/gcc3-*
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/gnome/|\$$(datadir)/|g ; \
-		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
-
-post-install:
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps/titano
-	${INSTALL_DATA} ${WRKSRC}/src/xpm/* ${PREFIX}/share/gnome/pixmaps/titano
+pre-patch: .SILENT
+	${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|' \
+		${WRKSRC}/src/scintilla/PosRegExp.cxx
+	${REINPLACE_CMD} -e 's|^INCLUDES.*$$|&$$(LIBGLADE_CFLAGS)|' \
+		${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -E 's|(POTFILES\.in )\\$$|\1--from-code=koi8-r \\|' \
+		${WRKSRC}/po/Makefile.in.in
+# Now, take care of CC/CFLAGS
+	${REINPLACE_CMD} -e 's|cc -Wall -ggdb $$(OPTIMIZE)|${CC} ${CFLAGS}|' \
+		${WRKSRC}/src/gtkeditor/tktext-port/Makefile
+	${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}|' \
+		${WRKSRC}/src/scanners/Makefile.in
+	${REINPLACE_CMD} -E 's|^(CXXFLAGS).*$$|\1 += -DGTK -DSCI_LEXER|' \
+		${WRKSRC}/src/scintilla/Makefile.in
 
 .include <bsd.port.post.mk>
