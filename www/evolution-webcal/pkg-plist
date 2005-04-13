@@ -26,6 +26,7 @@ share/locale/it/LC_MESSAGES/evolution-webcal.mo
 share/locale/ja/LC_MESSAGES/evolution-webcal.mo
 share/locale/ko/LC_MESSAGES/evolution-webcal.mo
 share/locale/lt/LC_MESSAGES/evolution-webcal.mo
+share/locale/mk/LC_MESSAGES/evolution-webcal.mo
 share/locale/ms/LC_MESSAGES/evolution-webcal.mo
 share/locale/nb/LC_MESSAGES/evolution-webcal.mo
 share/locale/ne/LC_MESSAGES/evolution-webcal.mo
@@ -37,6 +38,7 @@ share/locale/pl/LC_MESSAGES/evolution-webcal.mo
 share/locale/pt/LC_MESSAGES/evolution-webcal.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-webcal.mo
 share/locale/ru/LC_MESSAGES/evolution-webcal.mo
+share/locale/rw/LC_MESSAGES/evolution-webcal.mo
 share/locale/sq/LC_MESSAGES/evolution-webcal.mo
 share/locale/sr/LC_MESSAGES/evolution-webcal.mo
 share/locale/sr@Latn/LC_MESSAGES/evolution-webcal.mo
@@ -46,5 +48,6 @@ share/locale/th/LC_MESSAGES/evolution-webcal.mo
 share/locale/tr/LC_MESSAGES/evolution-webcal.mo
 share/locale/uk/LC_MESSAGES/evolution-webcal.mo
 share/locale/vi/LC_MESSAGES/evolution-webcal.mo
+share/locale/xh/LC_MESSAGES/evolution-webcal.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-webcal.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-webcal.mo
