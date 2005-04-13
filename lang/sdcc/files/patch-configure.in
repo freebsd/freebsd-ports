@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Apr 11 20:55:28 2005
++++ configure.in	Mon Apr 11 20:55:44 2005
+@@ -650,7 +650,7 @@
+ AC_CONFIG_SUBDIRS(support/cpp2)
+ AC_CONFIG_SUBDIRS(packihx)
+ AC_CONFIG_SUBDIRS(sim/ucsim)
+-#AC_CONFIG_SUBDIRS(device/lib/pic16)
++AC_CONFIG_SUBDIRS(device/lib/pic16)
+ 
+ AC_CONFIG_FILES([main.mk:main_in.mk
+ src/Makefile

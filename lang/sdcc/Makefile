@@ -7,6 +7,7 @@
 
 PORTNAME=	sdcc
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sdcc
@@ -18,14 +19,11 @@ WRKSRC=		${WRKDIR}/sdcc
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
 
 OPTIONS=	MCS51   "Intel mcs51 port" on \
-		GBZ80   "Gameboy gbz80 port" on \
 		Z80     "Z80 port" on \
 		AVR     "AVR port" on \
-		DS390   "DS390 port" on \
-		DS400   "DS400 port" on \
+		DS390   "DS390/DS400 port" on \
 		PIC     "PIC port" on \
 		PIC16   "PIC16 port" on \
 		XA51    "XA51 port" on \
@@ -42,15 +40,8 @@ PLIST_SUB+=		MCS51="@comment "
 PLIST_SUB+=		MCS51=""
 .endif
 
-.if defined(WITHOUT_GBZ80)
-CONFIGURE_ARGS+=	--disable-gbz80-port
-PLIST_SUB+=		GBZ80="@comment "
-.else
-PLIST_SUB+=		GBZ80=""
-.endif
-
 .if defined(WITHOUT_Z80)
-CONFIGURE_ARGS+=	--disable-z80-port
+CONFIGURE_ARGS+=	--disable-gbz80-port --disable-z80-port
 PLIST_SUB+=		Z80="@comment "
 .else
 PLIST_SUB+=		Z80=""
@@ -61,17 +52,10 @@ CONFIGURE_ARGS+=	--disable-avr-port
 .endif
 
 .if defined(WITHOUT_DS390)
-CONFIGURE_ARGS+=	--disable-ds390-port
+CONFIGURE_ARGS+=	--disable-ds390-port --disable-ds400-port
 PLIST_SUB+=		DS390="@comment "
 .else
 PLIST_SUB+=		DS390=""
-.endif
-
-.if defined(WITHOUT_DS400)
-CONFIGURE_ARGS+=	--disable-ds400-port
-PLIST_SUB+=		DS400="@comment "
-.else
-PLIST_SUB+=		DS400=""
 .endif
 
 .if defined(WITHOUT_PIC)
@@ -82,6 +66,8 @@ CONFIGURE_ARGS+=	--disable-pic-port
 CONFIGURE_ARGS+=	--disable-pic16-port
 PLIST_SUB+=		PIC16="@comment "
 .else
+BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
+USE_AUTOCONF_VER=	259
 PLIST_SUB+=		PIC16=""
 .endif
 
@@ -100,6 +86,8 @@ PLIST_SUB+=		HC08=""
 CONFIGURE_ARGS+=	--disable-ucsim
 PLIST_SUB+=		UCSIM="@comment "
 .else
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=		sim/ucsim/aclocal.m4
 PLIST_SUB+=		UCSIM=""
 .endif
 
