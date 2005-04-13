@@ -8589,7 +8589,6 @@ pear-XML_Util	ports/devel/pear-XML_Util
 pear-XML_Wddx	ports/textproc/pear-XML_Wddx
 pear-XML_XPath	ports/devel/pear-XML_XPath
 pear-apd	ports/devel/pear-apd
-pear-sqlite	ports/databases/pear-sqlite
 pearpc		ports/emulators/pearpc
 pebrot		ports/net/pebrot
 pecl-APC	ports/www/pecl-APC
@@ -8601,6 +8600,7 @@ pecl-memcache	ports/databases/pecl-memcache
 pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-radius	ports/net/pecl-radius
+pecl-sqlite	ports/databases/pecl-sqlite
 pecl-statgrab	ports/devel/pecl-statgrab
 pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
