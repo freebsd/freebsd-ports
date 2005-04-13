@@ -45,7 +45,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 .if !defined(WITHOUT_IODBC) && !exists(${LOCALBASE}/bin/odbcinst)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 PLIST_SUB=	ODBC=""
-.elseif !defined(WITHOUT_UNIXODBC)
+.elif !defined(WITHOUT_UNIXODBC)
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 PLIST_SUB=	ODBC=""
 .else
