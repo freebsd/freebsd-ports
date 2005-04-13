@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--enable-animation
 pre-everything::
 	@if [ -n "`${PKG_INFO} -xI '^gtk-engines2*[0-9]*'`" ]; then \
 		${ECHO_MSG} ; \
-		${ECHO_MSG} "Gnome/gtk-engine users should use ${PORTSDIR}/x11-themes/clear
+		${ECHO_MSG} "Gnome/gtk-engine users should use ${PORTSDIR}/x11-themes/clearlooks-themes instead" ; \
 		${ECHO_MSG} ; \
 		${FALSE}; \
 	fi
