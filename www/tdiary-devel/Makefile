@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES?=	www ruby
 MASTER_SITES=	\
 		${MASTER_SITE_SOURCEFORGE} \
@@ -26,7 +26,7 @@ USE_RUBY_FEATURES=	fileutils
 .endif
 
 RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/plugin/squeeze.rb \
-			misc/plugin/windex.rb misc/plugin/a/a_conf.rb \
+			misc/plugin/windex.rb \
 			misc/plugin/trackback/tb.rb misc/style/etdiary/etdiary_test.rb
 
 TDIARYDIR=	${EXAMPLESDIR}
