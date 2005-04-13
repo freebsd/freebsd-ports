@@ -51,6 +51,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 GTK_VERSION=	2.4.0
 PLIST_SUB=	GTK_VERSION="${GTK_VERSION}"
 
+# Setting WITH_DEBUG=yes effectively adds -g to $CFLAGS
+# unless doing so would clobber a preexisting $CFLAGS.
+# Setting to yes also causes debugging into to be spat out
+# on the command-line.
+# Set to minimum if you want to send in a backtrace; set
+# to yes if you want to know what gtk thinks it's doing.
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG:L} == "no"
 CONFIGURE_ARGS+=	--enable-debug=no
