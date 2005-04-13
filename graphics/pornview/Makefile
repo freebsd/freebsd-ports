@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if defined(WITH_LIBXINE)
 LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
-.elseif defined(WITH_MPLAYER)
+.elif defined(WITH_MPLAYER)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 CONFIGURE_ARGS+=	--enable-mplayer
 .endif
