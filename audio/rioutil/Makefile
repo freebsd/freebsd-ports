@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to inferface with the Rio600, Rio800 and psa[play devices
 
-LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes

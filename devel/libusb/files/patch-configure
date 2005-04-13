@@ -1,0 +1,19 @@
+--- configure.orig	Fri Feb 25 23:04:35 2005
++++ configure	Fri Feb 25 23:05:03 2005
+@@ -21635,16 +21635,10 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <dev/usb/usb.h>
+-int
+-main ()
+-{
+ int main(void)
+      {
+        int a = ((struct usb_ctl_request *)0L)->ucr_addr;
+        return 0;
+      }
+-  ;
+-  return 0;
+-}
+ _ACEOF
+ rm -f conftest.$ac_objext

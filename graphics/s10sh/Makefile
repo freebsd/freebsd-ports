@@ -17,7 +17,7 @@ COMMENT=	USB/serial userspace driver for the Canon PowerShot digital cameras
 .if defined(NOUSB) || defined(WITHOUT_USB)
 MAKE_ENV+=	WITHOUT_USB=YES
 .else
-LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .endif
 
 # Don't extract the libusb bundled with s10sh:

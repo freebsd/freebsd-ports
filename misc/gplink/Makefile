@@ -13,7 +13,7 @@ MASTER_SITES=	http://dexy.mine.nu/gp32/gplink/
 MAINTAINER=	king@v2project.com
 COMMENT=	A GP32 USB linker tool
 
-LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

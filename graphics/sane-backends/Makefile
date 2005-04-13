@@ -39,7 +39,7 @@ OPTIONS=	USB "USB support" on \
 CONFIGURE_ARGS+=	--disable-libusb
 PLIST_SUB+=	USB="@comment "
 .else
-LIB_DEPENDS+=	usb-0.1.7:${PORTSDIR}/devel/libusb
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 PLIST_SUB+=	USB=""
 .endif
 
