@@ -53,7 +53,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|atlc/examples|examples/atlc|' \
 		-e 's|cvsignore||' -e 's|create_for_Makefile.am||' \
 		${WRKSRC}/examples/Makefile.in
-.elseif
+.else
 	@${REINPLACE_CMD} -e 's|docs examples||' ${WRKSRC}/Makefile.in
 .endif
 
