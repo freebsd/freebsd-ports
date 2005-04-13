@@ -1,5 +1,7 @@
 %%PIXMAP_PATH%%/Binder.xpm
 %%PIXMAP_PATH%%/DiskHardDrive.xpm
+@dirrm %%PIXMAP_PATH%%
+@dirrm share/WindowMaker
 JDE/Binder/bin/Binder.app
 JDE/Binder/bin/Processes.app
 JDE/Binder/defaults/Binder
