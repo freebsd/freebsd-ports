@@ -7,8 +7,8 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	8.0.1
-PORTREVISION?=	3
+PORTVERSION?=	8.0.2
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -89,8 +89,37 @@ OPTIONS+=	LIBC_R "Link w/ libc_r, used by plpython (server)" off
 OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
+# See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
+OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
+
+# See http://gppl.moonbone.ru/ for more info
+OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
+
+# See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
+# (requires dump/restore if modified.)
+OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
+
+.  if defined(SERVER_ONLY) && defined(WITH_HIER)
+PATCH_SITES+=	http://gppl.moonbone.ru/:hier801054
+PATCHFILES+=	hier-Pg8.0.1-0.5.4.diff.gz:hier801054
+.  endif
+
+.  if defined(SERVER_ONLY) && defined(WITH_ICU)
+USE_AUTOCONF_VER=253
+CONFIGURE_ARGS+=--with-icu
+LIB_DEPENDS=	icudata.32:${PORTSDIR}/devel/icu
+PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
+PATCHFILES+=	pg-802-icu-2005-03-26.diff.gz:icu
+.  endif
+
+PATCH_DIST_STRIP=-p1
+
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
+.  endif
+
+.  if defined(WITH_INTDATE)
+CONFIGURE_ARGS+=--enable-integer-datetimes
 .  endif
 
 . if !defined(WITHOUT_GNUGETOPT) || exists(${LOCALBASE}/include/getopt.h)
