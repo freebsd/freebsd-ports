@@ -7,14 +7,13 @@
 
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/0.5/
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Extras colour schemes for Clearlooks engine theme
-
-RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
@@ -31,6 +30,14 @@ GTKRC=		Clearlooks-3.1-Ergo Clearlooks-4Humans Clearlooks-Ana \
 		Clearlooks-gOrangeous ClearlooksM
 ICONS=		Clearlooks-Ana Clearlooks-Bluey Clearlooks-Etiquette \
 		Clearlooks-Lila Clearlooks-Milk Clearlooks-Nuvola
+
+.include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc) || defined(WITH_GTKENGINE)
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+.else
+RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|iconrc|icons/iconrc|g' \
@@ -69,4 +76,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/Clearlooks-gOrangeous/gtk-2.0/icons/Xtra/* \
 		${THEME_DIR}/Clearlooks-gOrangeous/gtk-2.0/icons/Xtra/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
