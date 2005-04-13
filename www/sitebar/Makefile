@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sitebar
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,22 +16,18 @@ DISTNAME=	SiteBar-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Bookmark Server for Personal and Team Use
 
-BROKEN=		Size mismatch
-
 USE_BZIP2=	yes
-USE_PHP=	yes
+USE_PHP=	mysql pcre
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
-DATADIR?=	${PREFIX}/www/${PORTNAME}
-
-pre-everything::
-	@${ECHO_CMD} "***************************************************************"
-	@${ECHO_CMD} "* Please installs PHP with MySQL extension before using this. *"
-	@${ECHO_CMD} "***************************************************************"
+DATADIR=	${PREFIX}/www/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
+	@cd ${WRKSRC} && \
+		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
+	@cd ${WRKSRC} && \
+		${FIND} . ! -type d -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
