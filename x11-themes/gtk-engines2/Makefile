@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-engines2
 PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -30,5 +30,7 @@ PLIST_SUB=	GTK_VERSION="2.4.0"
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk gtk-2.0|gtk-2.0|' \
 		${WRKSRC}/themes/Redmond/Makefile.in
+	@${REINPLACE_CMD} -e 's|menubarstyle|sunkenmenubar|g' \
+		${WRKSRC}/themes/Clearlooks/gtk-2.0/gtkrc		
 
 .include <bsd.port.mk>
