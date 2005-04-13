@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portell
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,8 +19,11 @@ COMMENT=	Quick display of FreeBSD port descriptions
 USE_ZIP=	YES
 USE_PYTHON=	YES
 USE_REINPLACE=	YES
+NO_BUILD=	YES
 
-do-build:
+post-extract:
+	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/portell.py
+	${REINPLACE_CMD} -e 's/free/freebsd/' ${WRKSRC}/portell.py
 	${REINPLACE_CMD} -e 's/portell.py/portell/' ${WRKSRC}/README.txt
 
 do-install:
