@@ -10,8 +10,8 @@ lib/common-lisp/lml/tests.lisp
 lib/common-lisp/lml/lml.asd
 lib/common-lisp/system-registry/lml.asd
 @dirrm lib/common-lisp/lml/
-%%PORTDOCS%%share/doc/cl-lml/Makefile
-%%PORTDOCS%%share/doc/cl-lml/make.lisp
-%%PORTDOCS%%share/doc/cl-lml/readme.html
-%%PORTDOCS%%share/doc/cl-lml/readme.lml
-%%PORTDOCS%%@dirrm share/doc/cl-lml/
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/make.lisp
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.lml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
