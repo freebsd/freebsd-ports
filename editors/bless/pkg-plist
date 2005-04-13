@@ -1,13 +1,46 @@
 bin/bless
-lib/bless/bin/bless.exe
-lib/bless/data/Makefile
-lib/bless/data/bless-about.png
-lib/bless/data/bless-icon.png
+lib/bless-0.3.3/bin/bless.exe
+lib/bless-0.3.3/data/bless-48x48.png
+lib/bless-0.3.3/data/bless-about.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/developer/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/developer/Makefile.am
+%%PORTDOCS%%%%DOCSDIR%%/developer/Makefile.in
+%%PORTDOCS%%%%DOCSDIR%%/developer/Makefile.in.bak
+%%PORTDOCS%%%%DOCSDIR%%/developer/bless.xmi
+%%PORTDOCS%%%%DOCSDIR%%/user/bless-manual.xml
+%%PORTDOCS%%%%DOCSDIR%%/user/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch02s02.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch03s02.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch04s02.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch04s03.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch04s04.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch05.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch06.html
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_area_focus.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_display_tag.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_edit_mode.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_layout_example1.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_layout_oha.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_search_find.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_search_replace.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_start_window.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_tab_close.png
+%%PORTDOCS%%%%DOCSDIR%%/user/index.html
+%%PORTDOCS%%%%DOCSDIR%%/user/legal.xml
+share/gnome/applications/bless.desktop
+share/gnome/pixmaps/bless-48x48.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/user/figures
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/user
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/bless/data
-@dirrm lib/bless/bin
-@dirrm lib/bless
+@dirrm lib/bless-0.3.3/data
+@dirrm lib/bless-0.3.3/bin
+@dirrm lib/bless-0.3.3
