@@ -7,10 +7,6 @@
 
 MASTERDIR=      ${.CURDIR}/../nethack33
 
-MAINTAINER=	Jan.Stocker@t-online.de
-
 PKGNAMESUFFIX=	-gnome
-
-BROKEN=		Incomplete pkg-plist
 
 .include "${MASTERDIR}/Makefile"
