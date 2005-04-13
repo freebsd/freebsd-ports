@@ -6,59 +6,50 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	1.0.2
-CATEGORIES=	databases www pear
+PORTVERSION=	1.0.3
+CATEGORIES=	databases www
+MASTER_SITES=	http://pecl.php.net/get/
+PKGNAMEPREFIX=	pecl-
+DISTNAME=	SQLite-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	PECL
 
-MAINTAINER=	mat@FreeBSD.org
-COMMENT=	PEAR classes to access sqlite databases
-
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PECL classes to access sqlite databases
 
 WRKSRC=		${WRKDIR}/SQLite-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
+USE_PHPEXT=	yes
+PHP_MODNAME=	sqlite
+
+CONFIGURE_ARGS=	--with-sqlite
+
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
-.if exists(${LOCALBASE}/bin/php-config)
-EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e \
-			"s:${PHP_BASE}/::"
+.if ${PHP_VER} == 5
+IGNORE=		Please use databases/php${PHP_VER}-sqlite
 .endif
-PHP_DIR?=	${LOCALBASE}/etc
-PHP_INI=	${PHP_DIR}/php.ini
-PLIST_SUB+=	EXTDIR=${EXT_DIR}
 
-DOCSDIR=	${PEARDIR}/docs/${PORTNAME}
-DOCS=		CREDITS README
-TESTDIR=	${PEARDIR}/tests/${PORTNAME}
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
-post-install-script:
-	@${STRIP_CMD} ${PHP_BASE}/${EXT_DIR}/sqlite.so
-# Configure extension_dir
-	@if [ ! -f ${PHP_INI} ]; then \
-		${ECHO_MSG} "===>   Creating ${PHP_INI} for PHP" ; \
-		${CP} -p ${PHP_INI}-dist ${PHP_INI} ; \
-	fi
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-	@${MKDIR} ${TESTDIR}
-	@${CP} -Rp ${WRKSRC}/tests/* ${TESTDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TESTDIR}
-	@${ECHO_MSG} "===> Examples installed in ${TESTDIR}."
+	@${MKDIR} ${DOCSDIR}/tests
+	@${INSTALL_DATA} ${WRKSRC}/CREDITS ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/tests/* ${DOCSDIR}/tests
+
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sqlite.php ${EXAMPLESDIR}
 .endif
-	@${ECHO_MSG}
-	@${SED} -e "s:%%INI%%:${PHP_INI}:"	\
-		-e "s:%%BASE%%:${PHP_BASE}/${EXT_DIR}:" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
