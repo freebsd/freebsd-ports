@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export UT2004_DATA_PATH="@UTDIR@/System"
+
+if [ -n "$LD_LIBRARY_PATH" ]; then
+    export LD_LIBRARY_PATH="$UT2004_DATA_PATH:$LD_LIBRARY_PATH"
+else
+    export LD_LIBRARY_PATH="$UT2004_DATA_PATH"
+fi
+
+cd "$UT2004_DATA_PATH" || exit 1
+exec ./ut2004-bin "$@"
