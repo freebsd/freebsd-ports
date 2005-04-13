@@ -2,5 +2,5 @@ libexec/spamd
 libexec/spamlogd
 sbin/spamd-setup
 sbin/spamdb
-etc/rc.d/pf-spamd.sh
+etc/rc.d/pfspamd.sh
 etc/spamd.conf.sample
