@@ -23,8 +23,10 @@ USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
+.if defined(PORTNAME) && ${PORTNAME} == "clearlooks"
 OPTIONS=	METACITY "Depend on MetaCity Theme" On \
 		ANIMATION "Enable experimental animated progressbars" Off
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -34,8 +36,8 @@ PLIST_SUB+=	ENGINE=""
 .else
 CONFLICTS=	clearlooks-[0-9]*
 
-BUILD_DEPENDS=  ${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
-RUN_DEPENDS=    ${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 
 BUILD_WRKSRC=	${WRKSRC}/themes
 INSTALL_WRKSRC=	${WRKSRC}/themes
