@@ -95,6 +95,8 @@ share/bomberclone/player/player2.png
 share/bomberclone/player/player1.png
 share/bomberclone/player/player0.png
 share/bomberclone/player/dead0.png
+share/bomberclone/player/ghost.png
+share/bomberclone/pixmaps/bomberclone.png
 share/bomberclone/music/zb-tnt.xm
 share/bomberclone/music/slice_me_nice.xm
 share/bomberclone/music/mario_is_a_weenie.xm
@@ -158,6 +160,7 @@ share/bomberclone/gfx/logo.png
 share/bomberclone/gfx/font2.png
 share/bomberclone/gfx/font1.png
 share/bomberclone/gfx/font0.png
+
 @dirrm share/bomberclone/tileset/zbb_frog
 @dirrm share/bomberclone/tileset/uccia_garbage
 @dirrm share/bomberclone/tileset/tricked
@@ -174,6 +177,7 @@ share/bomberclone/gfx/font0.png
 @dirrm share/bomberclone/tileset/cemetery
 @dirrm share/bomberclone/tileset
 @dirrm share/bomberclone/player
+@dirrm share/bomberclone/pixmaps
 @dirrm share/bomberclone/music
 @dirrm share/bomberclone/maps
 @dirrm share/bomberclone/gfx
