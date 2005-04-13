@@ -283,6 +283,7 @@
     SUBDIR += linux-q3ademo
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
+    SUBDIR += linux-ut2004-demo
     SUBDIR += lm-solve
     SUBDIR += ltris
     SUBDIR += macopix
