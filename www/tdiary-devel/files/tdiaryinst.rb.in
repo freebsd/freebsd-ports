@@ -2,7 +2,7 @@
 #
 # tdiaryinstall.rb - tDiary user directory copy script
 # Date created:                        13 July 2003
-# Whom:                                KAMIYA Satosi  <mimoriso@anet.ne.jp>
+# Whom:                                KAMIYA Satosi  <mimoriso@gmail.com>
 #
 # $FreeBSD$
 #
@@ -30,6 +30,7 @@ module FileUtils16
   def FileUtils16.cp(src, dest, *options)
     begin
       FileUtils.cp(src, dest, *options)
+      FileUtils.chmod(0644, dest, *options)
     rescue TypeError
       optionhash = {}
       options.each { |o| optionhash[o] = true }
