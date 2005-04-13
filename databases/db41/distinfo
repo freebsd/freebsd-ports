@@ -2,3 +2,5 @@ MD5 (bdb/db-4.1.25.tar.gz) = df71961002b552c0e72c6e4e358f27e1
 SIZE (bdb/db-4.1.25.tar.gz) = 3080234
 MD5 (bdb/patch.4.1.25.1) = 1e073d12cd89f9345e281ca07368f74b
 SIZE (bdb/patch.4.1.25.1) = 610
+MD5 (bdb/patch.4.1.25.2) = 5eedc6818783b4b89317d89d2babb6f7
+SIZE (bdb/patch.4.1.25.2) = 18100

@@ -7,7 +7,7 @@
 
 PORTNAME=	db41
 PORTVERSION=	4.1.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://downloads.sleepycat.com/
 PKGNAMESUFFIX?=
@@ -15,7 +15,7 @@ DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
-PATCHFILES=	patch.${PORTVERSION}.1
+PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
