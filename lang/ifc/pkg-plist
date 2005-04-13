@@ -887,8 +887,6 @@
 %%PORTDOCS%%%%COMPILERDIR%%/doc/for_ug1.pdf
 %%PORTDOCS%%%%COMPILERDIR%%/doc/for_ug2.pdf
 %%COMPILERDIR%%/doc/fsupport
-%%COMPILERDIR%%/doc/notes/l_ifort_ia32_issues.txt
-@dirrm %%COMPILERDIR%%/doc/notes
 %%PORTDOCS%%%%COMPILERDIR%%/doc/training/optimize/ch0/conventi.htm
 %%PORTDOCS%%%%COMPILERDIR%%/doc/training/optimize/ch0/descript.htm
 %%PORTDOCS%%%%COMPILERDIR%%/doc/training/optimize/ch0/obj.htm
