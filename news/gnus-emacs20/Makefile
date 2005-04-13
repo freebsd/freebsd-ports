@@ -7,7 +7,7 @@
 
 PORTNAME=	gnus
 PORTVERSION=	5.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news mail elisp
 MASTER_SITES=	http://quimby.gnus.org/gnus/dist/ \
 		ftp://quimby.gnus.org/gnus/dist/ \
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--infodir=${INFODIR}
 
 INFODIR=	${PREFIX}/info
-INFO=		emacs-mime gnus message
+INFO=		emacs-mime gnus gnus-1 gnus-2 gnus-3 message
 
 PORTDOCDIR=	share/doc/gnus-${EMACS_PORT_NAME}
 DOCS=		ChangeLog GNUS-NEWS README
