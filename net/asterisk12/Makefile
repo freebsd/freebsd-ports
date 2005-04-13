@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
+PATCHFILES=	${PORTNAME}-1.0.6-${BRIVER}.patch.gz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	fjoe
 PATCH_DIST_STRIP=	-p1

@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jan 21 11:18:35 2005
-+++ Makefile	Mon Feb 28 00:19:37 2005
+--- Makefile.orig	Thu Apr 14 00:05:14 2005
++++ Makefile	Thu Apr 14 00:05:14 2005
 @@ -45,6 +45,15 @@
  PROC=$(shell uname -m)
  endif
@@ -225,7 +225,7 @@
  
  update: 
  	@if [ -d CVS ]; then \
-@@ -367,113 +372,88 @@
+@@ -367,125 +372,90 @@
  	fi
  
  bininstall: all
@@ -239,6 +239,7 @@
 -	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/tmp
 -	install -m 755 asterisk $(DESTDIR)$(ASTSBINDIR)/
 -	install -m 755 contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
+-	install -m 755 contrib/scripts/autosupport $(DESTDIR)$(ASTSBINDIR)/
 +	$(MKDIR) $(DESTDIR)$(MODULES_DIR)
 +	$(MKDIR) $(DESTDIR)$(ASTSBINDIR)
 +	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
@@ -249,6 +250,7 @@
 +	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/tmp
 +	$(BSD_INSTALL_PROGRAM) asterisk $(DESTDIR)$(ASTSBINDIR)/
 +	$(BSD_INSTALL_SCRIPT) contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
++	$(BSD_INSTALL_SCRIPT) contrib/scripts/autosupport $(DESTDIR)$(ASTSBINDIR)/
  	if [ ! -f $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ]; then \
 -		install -m 755 contrib/scripts/safe_asterisk $(DESTDIR)$(ASTSBINDIR)/ ;\
 +		$(BSD_INSTALL_SCRIPT) contrib/scripts/safe_asterisk $(DESTDIR)$(ASTSBINDIR)/ ;\
@@ -316,8 +318,19 @@
 -	@echo " + **Note** This requires that you have      +"
 -	@echo " + doxygen installed on your local system    +"
 -	@echo " +-------------------------------------------+"
+-	@echo " +                                           +"
+-	@echo " + ** NOTE FOR DOWNGRADING FROM CVS HEAD **  +"
+-	@echo " +                                           +"
+-	@echo " + If you are downgrading from CVS HEAD to   +"
+-	@echo " + a stable release, remember to delete      +"
+-	@echo " + everything from your asterisk modules     +"
+-	@echo " + directory (/usr/lib/asterisk/modules/)    +"
+-	@echo " + before doing a '$(MAKE) install'.            +"
+-	@echo " +                                           +"
+-	@echo " +-------------------------------------------+"
 +	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -sf $(ASTSPOOLDIR)/vm . )
 +	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -sf $(ASTSPOOLDIR)/voicemail . )
+ 
  
 -install: all datafiles bininstall
 +install: all datafiles bininstall samples
@@ -390,7 +403,7 @@
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -486,7 +466,7 @@
+@@ -500,7 +470,7 @@
  	@[ -d $(DESTDIR)$(HTTPDIR)/html ] || ( echo "No http directory" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTPDIR)/cgi-bin ] || ( echo "No cgi-bin directory" && exit 1 )
  	install -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTPDIR)/cgi-bin/vmail.cgi
@@ -399,7 +412,7 @@
  	for x in images/*.gif; do \
  		install -m 644 $$x $(DESTDIR)$(HTTPDIR)/html/_asterisk/; \
  	done
-@@ -506,10 +486,10 @@
+@@ -520,10 +490,10 @@
  
  __rpm: _version
  	rm -rf /tmp/asterisk ; \
