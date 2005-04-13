@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.74 2005/03/21 19:50:06 marcus Exp $
+# $Id: portlint.pl,v 1.75 2005/04/13 03:18:22 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 7;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -329,12 +329,18 @@ if ($committer) {
 			&perror("Warning: $fullname: dotfiles are not preferred. ".
 					"If this file is a dotfile to be installed as an example, ".
 					"consider importing it as \"dot$_\".");
+		} elsif (/[^-.a-zA-Z0-9_]/) {
+			&perror("Warning: $fullname: only use characters ".
+					"[-_.a-zA-Z0-9] for patch or script names.");
 		} elsif (/\.(orig|rej|bak)$/ || /~$/ || /^\#/) {
 			&perror("FATAL: $fullname: for safety, be sure to cleanup ".
 					"backup files before committing the port.");
 		} elsif (/(^|\.)core$/) {
 			&perror("FATAL: $fullname: for safety, be sure to cleanup ".
 					"core files before committing the port.");
+		} elsif (/README.html/) {
+			&perror("FATAL: $fullname: for safety, be sure to cleanup ".
+					"README.html files before committing the port.");
 		} elsif ($_ eq 'CVS' && -d) {
 			if ($newport) {
 				&perror("FATAL: $fullname: for safety, be sure to cleanup ".
@@ -1015,6 +1021,16 @@ sub checkmakefile {
 	}
 
 	#
+	# whole file: use of .elseif
+	#
+	print "OK: checking for use of .elseif.\n" if ($verbose);
+	if ($whole =~ /^\.\s*elseif/m) {
+		my $lineno = &linenumber($`);
+		&perror("FATAL: $file [$lineno]: use of .elseif is not supported ".
+			"in all versions of FreeBSD.  Use .elif instead.");
+	}
+
+	#
 	# whole file: PLIST_FILES and PLIST_DIRS
 	#
 	print "OK: checking PLIST_FILES and PLIST_DIRS.\n" if ($verbose);
@@ -1127,6 +1143,26 @@ sub checkmakefile {
 		my $lineno = &linenumber($`);
 		&perror("FATAL: $file [$lineno]: MACHINE_ARCH should never be ".
 		    "overridden.");
+	}
+
+	#
+	# whole file: BROKEN
+	#
+	print "OK: checking BROKEN.\n" if ($verbose);
+	if ($whole =~ /\nBROKEN[+?]?=[ \t][^"]+\w+/) {
+		my $lineno = &linenumber($`);
+		&perror("WARN: $file [$lineno]: BROKEN messages should be ".
+			"quoted.");
+	}
+
+	#
+	# whole file: IGNORE
+	#
+	print "OK: checking IGNORE.\n" if ($verbose);
+	if ($whole =~ /\nIGNORE[+?]?=[ \t]+"/) {
+		my $lineno = &linenumber($`);
+		&perror("WARN: $file [$lineno]: IGNORE messages should not ".
+			"be quoted.");
 	}
 
 	#
