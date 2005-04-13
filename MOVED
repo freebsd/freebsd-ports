@@ -1450,3 +1450,4 @@ www/p5-HTML-Navigation||2005-04-08|Deprecated, no longer on CPAN
 net/icqnix||2005-04-09|abandoned project
 mail/msmtp-devel||2005-04-10|Development version is not active anymore
 graphics/nip|graphics/nip2|2005-04-10|Name changed in new version
+databases/pear-sqlite|databases/pecl-sqlite|2005-04-13|Project is now PECL extension
