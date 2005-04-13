@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.39.6
+PORTVERSION=	4.40.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -30,7 +30,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
@@ -84,7 +85,9 @@ do-build:
 		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
 		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
-		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g;' \
+		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
+		s,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g; \
+		s,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g;' \
 		${WRKSRC}/etc/MailScanner.conf
 	${PERL} -pi -e \
 		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g; \

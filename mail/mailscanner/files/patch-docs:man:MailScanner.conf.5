@@ -1,12 +1,70 @@
---- ../MailScanner-install-4.39.6.orig/docs/man/MailScanner.conf.5	Mon Mar 14 23:05:12 2005
-+++ docs/man/MailScanner.conf.5	Mon Mar 14 23:05:30 2005
+--- ../MailScanner-install-4.40.10.old/docs/man/MailScanner.conf.5	Fri Apr  1 16:10:19 2005
++++ docs/man/MailScanner.conf.5	Fri Apr  1 16:10:37 2005
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.38.2" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.39.6" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.40.10" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -562,6 +562,41 @@
+@@ -27,7 +27,9 @@
+ Many of the options can also be the filename of a ruleset, which can be used to control features depending on the addresses of the message, and/or the IP address where the message came from. You will find some examples of rulesets and an explanation of them in the "rules" directories within the MailScanner installation and in the section "RULESETS" later in this manpage.
+ 
+ .LP 
+-The options are best listed in a few categories. This is also the order in which you will find them in the MailScanner.conf file. If this list looks very large then don't worry, the supplied MailScanner.conf file (or MailScanner.conf.sample) contains sensible defaults for all the values. You will probably only need to change a very few of them to start with.
++The options are best listed in a few categories. If this list looks very large then don't worry, the supplied MailScanner.conf file (or MailScanner.conf.sample) contains sensible defaults for all the values. You will probably only need to change a very few of them to start with.
++
++Starting with version 4.40.10 of MailScanner you can use shell environment variables such as $HOSTNAME or ${HOSTNAME} in MailScanner.conf and its relatives.
+ 
+ .LP 
+ You should define the following variables:
+@@ -74,6 +76,22 @@
+ Enter a short identifying name for your organisation below, this is used to make the X\-MailScanner headers unique for your organisation. Multiple servers within one site should use an identical value here to avoid adding multiple redundant headers where mail has passed through several servers within your organisation. 
+ .br 
+ Note: Some Symantec scanners complain (incorrectly) about "." characters appearing in the names of headers.
++
++.TP 
++\fB%org\-long\-name%\fR
++Default: Your Organisation Name Here
++.br 
++
++.br 
++Enter the full name of your organisation below, this is used in the signature placed at the bottom of report messages sent by MailScanner. It can include pretty much any text you like. You can make the result span several lines by including "\n" sequences in the text. These will be replaced by line\-breaks.
++
++.TP 
++\fB%web\-site%\fR
++Default: www.your\-organisation.com
++.br 
++
++.br 
++Enter the location of your organisation's web site below. This is used in the signature placed at the bottom of report messages sent by MailScanner. It should preferably be the location of a page that you have written explaining why you might have rejected the mail and what the recipient and/or sender should do about it.
+ .SH "System Settings"
+ .TP 
+ \fBMax Children\fR
+@@ -370,6 +388,23 @@
+ .br 
+ The maximum length of time the "file" command is allowed to run for one batch of messages (in seconds).
+ 
++
++.TP 
++\fBUnrar Command\fR
++Default: /usr/bin/unrar
++.br 
++
++.br 
++Where the "unrar" command is installed. If you haven't got this command, look at www.rarlab.com. This is used for unpacking rar archives so that the contents can be checked for banned filenames and filetypes, and also that the archive can be tested to see if it is password\-protected. Virus scanning the contents of rar archives is still left to the virus scanner, with one exception: If using the clavavmodule virus scanner, this adds external RAR checking to that scanner which is needed for archives which are RAR version 3.
++
++.TP 
++\fBUnrar Timeout\fR
++Default: 50
++.br 
++
++.br 
++The maximum length of time the "unrar" command is allowed to run for 1 RAR archive (in seconds)
++
+ .TP 
+ \fBBlock Encrypted Messages\fR
+ Default: no
+@@ -562,6 +597,41 @@
  
  .br 
  ClamAVModule only: monitor each of these files for changes in size to detect when a ClamAV update has happened. This is only used by the "clamavmodule" virus scanner, not the "clamav" scanner setting.
@@ -48,7 +106,7 @@
  .SH "Removing/Logging dangerous or potentially offensive content"
  .TP 
  \fBAllow Partial Messages\fR
-@@ -601,6 +636,15 @@
+@@ -601,6 +671,15 @@
  
  
  .TP 
@@ -64,7 +122,7 @@
  \fBAllow IFrame Tags\fR
  Default: no
  .br 
-@@ -1753,6 +1797,12 @@
+@@ -1753,6 +1832,12 @@
  
  .br 
  Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.
