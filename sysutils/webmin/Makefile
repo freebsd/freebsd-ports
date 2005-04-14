@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.190
-PORTREVISION=	1
+PORTVERSION=	1.200
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,13 +25,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	bind8-1.190-1.wbm.gz \
-		dhcpd-1.190-1.wbm.gz \
-		file-1.190-4.wbm.gz \
-		ipfw-1.190-3.wbm.gz \
-		postgresql-1.190-1.wbm.gz \
-		status-1.190-1.wbm.gz \
-		usermin-1.190-1.wbm.gz
+WEBMIN_MODULES=
 WEBMIN_THEMES=
 
 post-extract:
