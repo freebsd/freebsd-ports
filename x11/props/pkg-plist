@@ -1,5 +1,4 @@
 bin/props
-lib/help/props.info
 lib/X11/locale/C/props/C
 lib/X11/locale/C/props/basic_setting
 lib/X11/locale/C/props/en_AU

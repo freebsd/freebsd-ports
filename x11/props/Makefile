@@ -18,13 +18,12 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/props
 USE_IMAKE=	yes
+MAKE_ARGS=	INFOFILES=""
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502000
 BROKEN=		"Does not compile"
-.else
-BROKEN=		"Incorrect pkg-plist"
 .endif
 
 post-install:
