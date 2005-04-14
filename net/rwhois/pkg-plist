@@ -17,6 +17,7 @@ lib/rwhois/a.com/schema
 lib/rwhois/a.com/soa
 lib/rwhois/bin/rwhois_deleter
 lib/rwhois/bin/rwhois_indexer
+lib/rwhois/bin/rwhois_repack
 lib/rwhois/net-10.0.0.0-8/attribute_defs/contact.tmpl
 lib/rwhois/net-10.0.0.0-8/attribute_defs/guardian.tmpl
 lib/rwhois/net-10.0.0.0-8/attribute_defs/host.tmpl
@@ -26,6 +27,15 @@ lib/rwhois/net-10.0.0.0-8/data/network/network.txt
 lib/rwhois/net-10.0.0.0-8/data/referral/referral.txt
 lib/rwhois/net-10.0.0.0-8/schema
 lib/rwhois/net-10.0.0.0-8/soa
+lib/rwhois/net-fd00:1234::-32/attribute_defs/host.tmpl
+lib/rwhois/net-fd00:1234::-32/attribute_defs/referral.tmpl
+lib/rwhois/net-fd00:1234::-32/attribute_defs/contact.tmpl
+lib/rwhois/net-fd00:1234::-32/attribute_defs/guardian.tmpl
+lib/rwhois/net-fd00:1234::-32/attribute_defs/network.tmpl
+lib/rwhois/net-fd00:1234::-32/data/referral/referral.txt
+lib/rwhois/net-fd00:1234::-32/data/network/network.txt
+lib/rwhois/net-fd00:1234::-32/soa
+lib/rwhois/net-fd00:1234::-32/schema
 lib/rwhois/rwhoisd.allow
 lib/rwhois/rwhoisd.auth_area
 lib/rwhois/rwhoisd.conf
@@ -49,6 +59,11 @@ lib/rwhois/sbin/rwhoisd
 @dirrm lib/rwhois/net-10.0.0.0-8/data
 @dirrm lib/rwhois/net-10.0.0.0-8/attribute_defs
 @dirrm lib/rwhois/net-10.0.0.0-8
+@dirrm lib/rwhois/net-fd00:1234::-32/attribute_defs
+@dirrm lib/rwhois/net-fd00:1234::-32/data/referral
+@dirrm lib/rwhois/net-fd00:1234::-32/data/network
+@dirrm lib/rwhois/net-fd00:1234::-32/data
+@dirrm lib/rwhois/net-fd00:1234::-32
 @dirrm lib/rwhois/bin
 @dirrm lib/rwhois/a.com/data/referral
 @dirrm lib/rwhois/a.com/data/org
