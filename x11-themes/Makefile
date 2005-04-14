@@ -100,6 +100,7 @@
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-wasp
     SUBDIR += kdeartwork3
+    SUBDIR += kdmtheme
     SUBDIR += lila-xfwm4
     SUBDIR += linux-gtk-bluecurve-theme
     SUBDIR += metacity-aluminumalloy-cryogenic-theme

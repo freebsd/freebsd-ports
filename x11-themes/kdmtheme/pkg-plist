@@ -1,0 +1,11 @@
+lib/kde3/kcm_kdmtheme.la
+lib/kde3/kcm_kdmtheme.so
+share/applications/kde/kdmtheme.desktop
+share/doc/HTML/en/kdmtheme/common
+share/doc/HTML/en/kdmtheme/index.cache.bz2
+share/doc/HTML/en/kdmtheme/index.docbook
+share/doc/HTML/en/kdmtheme/kdmtheme.png
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm share/doc/ja
+@dirrm share/doc/HTML/en/kdmtheme
