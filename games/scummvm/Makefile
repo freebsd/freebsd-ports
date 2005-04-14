@@ -7,11 +7,12 @@
 
 PORTNAME=	scummvm
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alexander@trull.com
+MAINTAINER=	freebsd.alex@trull.org
 COMMENT=	Graphical Adventure Game Virtual Machine
 
 USE_BZIP2=	yes
@@ -27,7 +28,7 @@ CONFIGURE_ARGS=--with-sdl-prefix=${LOCALBASE} \
 
 OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
 		MAD "Enable mad (MP3) support" on \
-		MPEG2 "Enable MPEG2 support" off
+		MPEG2 "Enable MPEG2 support (implies VORBIS)" off
 
 MAN6=		scummvm.6
 
@@ -52,6 +53,7 @@ CONFIGURE_ARGS+=--disable-mad
 .endif
 
 .if defined(WITH_MPEG2)
+WITH_VORBIS=	yes
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--with-mpeg2-prefix=${LOCALBASE}
 .else
