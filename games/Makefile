@@ -278,6 +278,7 @@
     SUBDIR += lincity
     SUBDIR += linux-doom3-demo
     SUBDIR += linux-enemyterritory
+    SUBDIR += linux-enemyterritory-fortress
     SUBDIR += linux-enemyterritory-tce
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
