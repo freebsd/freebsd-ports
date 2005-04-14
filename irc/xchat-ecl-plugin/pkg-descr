@@ -1,0 +1,7 @@
+The X-Chat ECL Plugin is a plugin to the famous X-Chat IRC Client that enables
+the user to write and use own plugins that are written in Common Lisp.
+
+WWW: http://sourceforge.net/projects/xchatlisp/
+
+- Julian Stecklina
+der_julian@web.de
