@@ -1,24 +1,11 @@
---- Makefile.orig	Sat Sep 27 16:52:29 2003
-+++ Makefile	Wed Feb  9 10:46:58 2005
-@@ -4,8 +4,10 @@
- 
- # Change this to match your expat installation.
- EXPAT_LIB=-lexpat
--EXPAT_LIBDIR=/usr/local/lib
--EXPAT_INCDIR=/usr/local/include
-+EXPAT_LIBDIR=${LOCALBASE}/lib
-+EXPAT_INCDIR=${LOCALBASE}/include
-+
-+CAML_INCDIR=${LOCALBASE}/lib/ocaml
- 
- NAME=expat
- OBJECTS=expat.cmo
-@@ -31,7 +33,7 @@
+--- Makefile.orig	Wed Apr 13 11:14:20 2005
++++ Makefile	Wed Apr 13 11:15:49 2005
+@@ -32,7 +34,7 @@
  allopt:  $(XARCHIVE)
  
  depend: *.c *.ml *.mli
 -	gcc -MM *.c > depend	
-+	gcc -I$(EXPAT_INCDIR) -I$(CAML_INCDIR) -MM *.c > depend	
++	$(CC) -I$(EXPAT_INCDIR) -I$(CAML_INCDIR) -MM *.c > depend	
  	$(OCAMLDEP) *.mli *.ml >> depend
  
  ## Library creation
