@@ -1,0 +1,19 @@
+lib/common-lisp/system-registry/uffi.asd
+lib/common-lisp/uffi/uffi.asd
+lib/common-lisp/uffi/src/aggregates.lisp
+lib/common-lisp/uffi/src/functions.lisp
+lib/common-lisp/uffi/src/libraries.lisp
+lib/common-lisp/uffi/src/objects.lisp
+lib/common-lisp/uffi/src/os.lisp
+lib/common-lisp/uffi/src/package.lisp
+lib/common-lisp/uffi/src/primitives.lisp
+lib/common-lisp/uffi/src/readmacros-mcl.lisp
+lib/common-lisp/uffi/src/strings.lisp
+%%PORTDOCS%%share/doc/cl-uffi/README
+%%PORTDOCS%%share/doc/cl-uffi/NEWS
+%%PORTDOCS%%share/doc/cl-uffi/TODO
+%%PORTDOCS%%share/doc/cl-uffi/uffi.pdf
+%%PORTDOCS%%share/doc/cl-uffi/html.tar.gz
+@dirrm lib/common-lisp/uffi/src
+@dirrm lib/common-lisp/uffi
+@dirrm share/doc/cl-uffi
