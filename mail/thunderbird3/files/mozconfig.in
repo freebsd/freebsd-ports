@@ -39,7 +39,6 @@ ac_add_options --prefix=@PREFIX@
 ac_add_options --with-system-jpeg=@LOCALBASE@
 ac_add_options --with-system-zlib
 ac_add_options --with-system-png=@LOCALBASE@
-ac_add_options --with-system-mng=@LOCALBASE@
 ######################################################################
 # set compile/link features
 ac_add_options --with-pthreads

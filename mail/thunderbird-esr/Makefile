@@ -17,8 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng
+		png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_X_PREFIX=	yes
