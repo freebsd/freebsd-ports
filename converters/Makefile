@@ -19,6 +19,7 @@
     SUBDIR += fribidi
     SUBDIR += gbase
     SUBDIR += i18ntools
+    SUBDIR += ical2html
     SUBDIR += iconv
     SUBDIR += iconv-extra
     SUBDIR += iconv-rfc1345

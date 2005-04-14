@@ -1,0 +1,5 @@
+bin/ical2html
+bin/icalfilter
+bin/icalmerge
+share/ical2html/calendar.css
+@dirrm share/ical2html
