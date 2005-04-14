@@ -4576,6 +4576,7 @@ kdewebdev	ports/www/kdewebdev
 kdiff3		ports/textproc/kdiff3
 kdirstat	ports/sysutils/kdirstat
 kdissert	ports/deskutils/kdissert
+kdmtheme	ports/x11-themes/kdmtheme
 kenny		ports/misc/kenny
 kermit		ports/comms/kermit
 kexchange	ports/finance/kexchange
