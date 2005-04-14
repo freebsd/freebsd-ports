@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkpasman
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +25,11 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PLIST_FILES=	bin/gtkpasman
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README gpasman4.sample
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkpasman ${PREFIX}/bin
