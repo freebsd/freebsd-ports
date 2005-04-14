@@ -47,3 +47,33 @@ bin/radclient
 bin/radtest
 
 sbin/radiusd
+etc/rc.d/openradiusd.sh
+
+%%PORTDOCS%%%%DOCSDIR%%/async-iface-notes
+%%PORTDOCS%%%%DOCSDIR%%/language.html
+%%PORTDOCS%%%%DOCSDIR%%/module-interface.html
+%%PORTDOCS%%%%DOCSDIR%%/note-struct-ownership
+%%PORTDOCS%%%%DOCSDIR%%/using-openradius.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/accounts.mysql
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/behaviour
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/configuration
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/accounts
+
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-ldap
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-ldap-authbind
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-mysql
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-postgres
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-unixpass
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-usersfile
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-usersfile-longpass
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-ldap
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-ldap-authbind
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-mysql
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-postgres
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-unixpass
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-usersfile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redhat-sysv-init-script
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
