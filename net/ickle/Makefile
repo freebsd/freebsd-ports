@@ -26,7 +26,6 @@ USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${X11BASE}
