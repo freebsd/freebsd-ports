@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
 USE_BISON=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	asterisk.sh
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MKDIR="${MKDIR}" \
@@ -69,6 +69,6 @@ PLIST_SUB+=	WITH_ZAPTEL=""
 .endif
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/asterisk.sh ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${WRKDIR}/asterisk.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>
