@@ -5347,6 +5347,7 @@ linux-edonkey-server	ports/net/linux-edonkey-server
 linux-edonkey-tool-list	ports/misc/linux-edonkey-tool-list
 linux-edonkey-tool-recovermet	ports/misc/linux-edonkey-tool-recovermet
 linux-enemyterritory	ports/games/linux-enemyterritory
+linux-enemyterritory-tce	ports/games/linux-enemyterritory-tce
 linux-esound	ports/audio/linux-esound
 linux-expat	ports/textproc/linux-expat
 linux-firefox	ports/www/linux-firefox
