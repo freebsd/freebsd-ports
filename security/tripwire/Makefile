@@ -52,10 +52,6 @@ TRIPWIRE_CLOBBER?=	NO
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} >= 500000
-#BROKEN=		"Fails to build under 5.X"
-#.endif
-
 PLIST_SUB+=	TWCFG=${TWCFG} TWDB=${TWDB}
 
 pre-configure:
