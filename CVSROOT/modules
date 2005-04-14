@@ -1055,6 +1055,7 @@ cl-split-sequence-clisp	ports/devel/cl-split-sequence-clisp
 cl-split-sequence-cmucl	ports/devel/cl-split-sequence-cmucl
 cl-split-sequence-sbcl	ports/devel/cl-split-sequence-sbcl
 cl-uffi		ports/devel/cl-uffi
+cl-uffi-cmucl	ports/devel/cl-uffi-cmucl
 clamassassin	ports/security/clamassassin
 clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
