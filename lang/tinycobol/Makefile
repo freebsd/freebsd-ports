@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	tinycobol
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tiny-cobol
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny COBOL compiler for IA32 platforms
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
+LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
 
 INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386
@@ -23,16 +23,13 @@ HAS_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--with-libdb=2
-# --with-readline disabled because of CPP-clash between readline/chardefs.h
-#   and htcobol.tab.h:PAGE/RETURN/ALPHABETIC
-#CONFIGURE_ARGS+=	--with-readline
+CONFIGURE_ARGS=	--with-libdb=3 --with-readline
 CPPFLAGS=	-I${LOCALBASE}/include
 CFLAGS=		${CPPFGLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		htcobol.1 htcobf2f.1 htcobolpp.1
+MAN1=		htcobol.1 htcobf2f.1
 
 post-install:
 .if !defined(NOPORTDOCS)
