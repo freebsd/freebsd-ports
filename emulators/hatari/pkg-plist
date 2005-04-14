@@ -1,4 +1,3 @@
 bin/hatari
-share/hatari/font8.bmp
 share/hatari/tos.img
 @dirrm share/hatari
