@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	peak
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Events and Asynchronous tasKing Library
 
+USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
