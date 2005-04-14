@@ -18,12 +18,29 @@ COMMENT=	GTK2 client for giFT daemon
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net/gift
 
-BROKEN=	"Needs an update for GTK+ 2.6"
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gconf2 gtk20
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
+GCONF_SCHEMAS=	giftui.schemas
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^giftuidatadir=.*|giftuidatadir=${DATADIR}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^giftuidocdir =.*|giftuidocdir =${DOCSDIR}|g' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

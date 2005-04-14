@@ -1,0 +1,141 @@
+Index: src/Makefile.am
+===================================================================
+RCS file: /cvsroot/giftui/giftui/src/Makefile.am,v
+retrieving revision 1.2
+retrieving revision 1.3
+diff -u -p -r1.2 -r1.3
+--- src/Makefile.am	15 May 2004 05:45:36 -0000	1.2
++++ src/Makefile.am	27 Jul 2004 08:18:09 -0000	1.3
+@@ -10,7 +10,6 @@ giftui_SOURCES = \
+ 	io.c io.h\
+ 	main.c main.h\
+ 	util.c util.h\
+-	gtkcellrendererprogress.c gtkcellrendererprogress.h\
+ 	ui_parent.c ui_parent.h\
+ 	ui_child.c ui_child.h\
+ 	ui.h\
+Index: src/Makefile.in
+===================================================================
+RCS file: /cvsroot/giftui/giftui/src/Makefile.in,v
+retrieving revision 1.2
+retrieving revision 1.3
+diff -u -p -r1.2 -r1.3
+--- src/Makefile.in	15 May 2004 05:45:36 -0000	1.2
++++ src/Makefile.in	27 Jul 2004 08:18:09 -0000	1.3
+@@ -147,7 +147,6 @@ giftui_SOURCES = \
+ 	io.c io.h\
+ 	main.c main.h\
+ 	util.c util.h\
+-	gtkcellrendererprogress.c gtkcellrendererprogress.h\
+ 	ui_parent.c ui_parent.h\
+ 	ui_child.c ui_child.h\
+ 	ui.h\
+@@ -175,13 +174,12 @@ bin_PROGRAMS = giftui$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+ am_giftui_OBJECTS = configure.$(OBJEXT) event.$(OBJEXT) io.$(OBJEXT) \
+-	main.$(OBJEXT) util.$(OBJEXT) gtkcellrendererprogress.$(OBJEXT) \
+-	ui_parent.$(OBJEXT) ui_child.$(OBJEXT) ui_menu.$(OBJEXT) \
+-	ui_notebook.$(OBJEXT) ui_about.$(OBJEXT) ui_browse.$(OBJEXT) \
+-	ui_connect.$(OBJEXT) ui_icon.$(OBJEXT) ui_pref.$(OBJEXT) \
+-	ui_search.$(OBJEXT) ui_search_cb.$(OBJEXT) \
+-	ui_transfer.$(OBJEXT) ui_transfer_cb.$(OBJEXT) \
+-	ui_util.$(OBJEXT)
++	main.$(OBJEXT) util.$(OBJEXT) ui_parent.$(OBJEXT) \
++	ui_child.$(OBJEXT) ui_menu.$(OBJEXT) ui_notebook.$(OBJEXT) \
++	ui_about.$(OBJEXT) ui_browse.$(OBJEXT) ui_connect.$(OBJEXT) \
++	ui_icon.$(OBJEXT) ui_pref.$(OBJEXT) ui_search.$(OBJEXT) \
++	ui_search_cb.$(OBJEXT) ui_transfer.$(OBJEXT) \
++	ui_transfer_cb.$(OBJEXT) ui_util.$(OBJEXT)
+ giftui_OBJECTS = $(am_giftui_OBJECTS)
+ giftui_DEPENDENCIES =
+ giftui_LDFLAGS =
+@@ -190,7 +188,6 @@ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/configure.Po ./$(DEPDIR)/event.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/gtkcellrendererprogress.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/io.Po ./$(DEPDIR)/main.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/ui_about.Po ./$(DEPDIR)/ui_browse.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/ui_child.Po ./$(DEPDIR)/ui_connect.Po \
+@@ -272,7 +269,6 @@ distclean-compile:
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/configure.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/event.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gtkcellrendererprogress.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/io.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ui_about.Po@am__quote@
+Index: src/main.c
+===================================================================
+RCS file: /cvsroot/giftui/giftui/src/main.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- src/main.c	6 May 2004 06:55:02 -0000	1.1.1.1
++++ src/main.c	27 Jul 2004 08:18:09 -0000	1.2
+@@ -32,6 +32,7 @@
+ #include "ui.h"
+ #include "ui_connect.h"
+ #include "ui_menu.h"
++#include "ui_transfer.h"
+ 
+ static GtkWidget *window;
+ 
+Index: src/ui_transfer.c
+===================================================================
+RCS file: /cvsroot/giftui/giftui/src/ui_transfer.c,v
+retrieving revision 1.2
+retrieving revision 1.3
+diff -u -p -r1.2 -r1.3
+--- src/ui_transfer.c	15 May 2004 05:45:36 -0000	1.2
++++ src/ui_transfer.c	27 Jul 2004 08:18:09 -0000	1.3
+@@ -24,8 +24,6 @@
+ #include <gdk/gdkkeysyms.h>
+ #include <gtk/gtk.h>
+ 
+-#include "gtkcellrendererprogress.h"
+-
+ #include "io.h"
+ #include "event.h"
+ #include "configure.h"
+Index: src/ui_transfer.h
+===================================================================
+RCS file: /cvsroot/giftui/giftui/src/ui_transfer.h,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- src/ui_transfer.h	6 May 2004 06:55:01 -0000	1.1.1.1
++++ src/ui_transfer.h	27 Jul 2004 08:18:09 -0000	1.2
+@@ -38,6 +38,14 @@
+ 
+ #define GIFTUI_TRANSFERFILE(arg) ((GiftuiTransferFile_t *) (arg))
+ 
++typedef enum
++{
++	GTK_CELL_RENDERER_PROGRESS_ACTIVE,
++	GTK_CELL_RENDERER_PROGRESS_COMPLETED,
++	GTK_CELL_RENDERER_PROGRESS_PAUSED,
++	GTK_CELL_RENDERER_PROGRESS_CANCELED
++} GtkCellRendererProgressColor;
++
+ typedef struct _GiftuiTransfer GiftuiTransfer;
+ typedef struct _GiftuiTransferClass GiftuiTransferClass;
+ 
+Index: src/ui_transfer_cb.c
+===================================================================
+RCS file: /cvsroot/giftui/giftui/src/ui_transfer_cb.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- src/ui_transfer_cb.c	6 May 2004 06:54:58 -0000	1.1.1.1
++++ src/ui_transfer_cb.c	27 Jul 2004 08:31:49 -0000	1.2
+@@ -23,8 +23,6 @@
+ #include <libgift/libgift.h>
+ #include <gtk/gtk.h>
+ 
+-#include "gtkcellrendererprogress.h"
+-
+ #include "io.h"
+ #include "event.h"
+ #include "configure.h"
