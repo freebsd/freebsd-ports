@@ -6,115 +6,98 @@
 #
 
 PORTNAME=	enemyterritory
-PORTVERSION=	2.56.2
-PORTREVISION=	1
+PORTVERSION=	2.60
 CATEGORIES=	games linux
-MASTER_SITES=	http://rtcw2.baconsbits.com/download/gamefiles/ \
-		http://ftp.games.skynet.be/pub/ftp.idsoftware.com/et/linux/ \
-		http://mirrors.xmission.com/idsoftware/et/linux/ \
-		http://gda.utp.edu.co/pub/et/ \
+MASTER_SITES=	http://mirrors.xmission.com/idsoftware/et/linux/ \
 		http://3dgamers.intelenet.net/pub/3dgamers/games/wolfensteinet/ \
 		http://ftp7.3dgamers.com/pub/3dgamers/games/wolfensteinet/ \
 		http://ftp4.3dgamers.com/pub/3dgamers/games/wolfensteinet/ \
 		http://3dgamers.gameservers.net/pub/3dgamers/games/wolfensteinet/ \
-		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/wolfensteinet/
+		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/wolfensteinet/ \
+		http://3dgamers.iinet.net.au/pub/3dgamers/games/wolfensteinet/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	et-linux-2.56-2.x86
+DISTNAME=	et-linux-2.60.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
-USE_LINUX?=	yes
-NO_PACKAGE=	Distfile is 258MB, set FORCE_PACKAGE if you really want to build this package
+PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
+USE_LINUX=	yes
+NO_PACKAGE=	Package will be 257MB, set FORCE_PACKAGE if you really want to build it
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
+STRIP=		# empty: do not strip(1) linux binaries
 NO_WRKSUBDIR=	yes
-ETDIR=		usr/games/et
-PLIST_SUB+=	ETDIR="${ETDIR}"
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
-ETWRKDIR=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+ETDIR=		${PREFIX}/lib/${PORTNAME}
+INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${MKDIR} ${ETWRKDIR}
-	@cd ${ETWRKDIR} && \
-		${TAIL} +356 ${DISTDIR}/${DISTFILES} | ${TAR} xfz -
+	@${MKDIR} ${WRKSRC}
+	@cd ${WRKSRC} && \
+		${TAIL} +374 ${_DISTDIR}/${DISTFILES} | ${TAR} xfz -
+
+post-patch:
+.for FILE in et etded
+	@${SED} -e 's|@ETDIR@|${ETDIR}|' ${FILESDIR}/${FILE}.in > ${WRKSRC}/${FILE}
+.endfor
 
 do-install:
-	${INSTALL_DIR} ${PREFIX}/${ETDIR}
+	${INSTALL_DIR} ${ETDIR}
+
+.for DIR in etmain etmain/video pb
+	${INSTALL_DIR} ${ETDIR}/${DIR}
+.endfor
 
 .if !defined(NOPORTDOCS)
-	${CP} -R -p ${ETWRKDIR}/Docs ${PREFIX}/${ETDIR} && \
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/${ETDIR}/Docs
-	${FIND} ${PREFIX}/${ETDIR}/Docs -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644
-	${FIND} ${PREFIX}/${ETDIR}/Docs -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755
+	${INSTALL_DIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/Docs/* ${DOCSDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/*
+	${FIND} ${DOCSDIR}/* -type f -print0 | \
+		${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${FIND} ${DOCSDIR}/* -type d -print0 | \
+		${XARGS} -0 ${CHMOD} ${BINMODE}
+.for FILE in CHANGES pb/PB_EULA.txt
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
 .endif
 
-.for DIR in etmain etmain/video pb pb
-	${INSTALL_DIR} ${PREFIX}/${ETDIR}/${DIR}
+	${CP} -R ${WRKSRC}/pb/htm ${ETDIR}/pb
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${ETDIR}/pb/htm
+	${FIND} ${ETDIR}/pb/htm -type f -print0 | \
+		${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${FIND} ${ETDIR}/pb/htm -type d -print0 | \
+		${XARGS} -0 ${CHMOD} ${BINMODE}
+
+	${INSTALL_SCRIPT} ${WRKSRC}/openurl.sh ${ETDIR}
+	${INSTALL_DATA} ${WRKSRC}/etmain/video/etintro.roq \
+		${ETDIR}/etmain/video
+
+.for FILE in campaigncycle.cfg cgame.mp.i386.so hunkusage.dat lmscycle.cfg \
+	mp_bin.pk3 objectivecycle.cfg pak0.pk3 pak1.pk3 pak2.pk3 \
+	punkbuster.cfg qagame.mp.i386.so server.cfg stopwatchcycle.cfg \
+	ui.mp.i386.so
+	${INSTALL_DATA} ${WRKSRC}/etmain/${FILE} ${ETDIR}/etmain
 .endfor
 
-	${INSTALL_SCRIPT} ${ETWRKDIR}/openurl.sh ${PREFIX}/${ETDIR}
-	${INSTALL_DATA} ${ETWRKDIR}/etmain/video/etintro.roq \
-		${PREFIX}/${ETDIR}/etmain/video
-
-.for FILE in campaigncycle.cfg description.txt hunkusage.dat lmscycle.cfg \
-	objectivecycle.cfg punkbuster.cfg server.cfg stopwatchcycle.cfg \
-	cgame.mp.i386.so qagame.mp.i386.so ui.mp.i386.so mp_bin.pk3 pak0.pk3 \
-	pak1.pk3
-	${INSTALL_DATA} ${ETWRKDIR}/etmain/${FILE} ${PREFIX}/${ETDIR}/etmain
+.for FILE in pbag.so pbags.so pbcl.db pbcl.so pbcls.so pbsv.db pbsv.so
+	${INSTALL_DATA} ${WRKSRC}/pb/${FILE} ${ETDIR}/pb
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/pb/pbweb.x86 ${ETDIR}/pb
 
-	${CP} -R -p ${ETWRKDIR}/pb/htm ${PREFIX}/${ETDIR}/pb && \
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/${ETDIR}/pb/htm
-	${FIND} ${PREFIX}/${ETDIR}/pb/htm -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644
-	${FIND} ${PREFIX}/${ETDIR}/pb/htm -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755
-
-.for FILE in PB_EULA.txt pbag.so pbcl.db pbcl.so pbsv.db pbsv.so
-	${INSTALL_DATA} ${ETWRKDIR}/pb/${FILE} ${PREFIX}/${ETDIR}/pb
-.endfor
-
-	${INSTALL} -m 755 ${ETWRKDIR}/pb/pbweb.x86 ${PREFIX}/${ETDIR}/pb
-
-.for FILE in CHANGES ET.xpm v1.02_Readme.htm
-	${INSTALL_DATA} ${ETWRKDIR}/${FILE} ${PREFIX}/${ETDIR}
-.endfor
+	${INSTALL_DIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ET.xpm ${DATADIR}
 
 .for FILE in et.x86 etded.x86
-	${INSTALL} -m 755 ${ETWRKDIR}/bin/FreeBSD/x86/${FILE} \
-		${PREFIX}/${ETDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${FILE} ${ETDIR}
 .endfor
 
-	@${ECHO} 'creating wrapper script: et'
-	@${ECHO} '#!/bin/sh' > ${PREFIX}/${ETDIR}/et
-	@${ECHO} '# Needed to make symlinks/shortcuts work.' >> \
-		${PREFIX}/${ETDIR}/et
-	@${ECHO} '# the binaries must run with correct working directory' >> \
-		${PREFIX}/${ETDIR}/et
-	@${ECHO} 'cd "${PREFIX}/${ETDIR}"' >> ${PREFIX}/${ETDIR}/et
-	@${ECHO} './et.x86 \$*' >> ${PREFIX}/${ETDIR}/et
-	@${ECHO} 'exit \$?' >> ${PREFIX}/${ETDIR}/et
-	@${CHMOD} 755 ${PREFIX}/${ETDIR}/et
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/${ETDIR}/et
-
-	@${ECHO} 'creating wrapper script: etded'
-	@${ECHO} '#!/bin/sh' > ${PREFIX}/${ETDIR}/etded
-	@${ECHO} '# Needed to make symlinks/shortcuts work.' >> \
-		${PREFIX}/${ETDIR}/etded
-	@${ECHO} '# the binaries must run with correct working directory' >> \
-		${PREFIX}/${ETDIR}/etded
-	@${ECHO} 'cd "${PREFIX}/${ETDIR}"' >> \
-		${PREFIX}/${ETDIR}/etded
-	@${ECHO} './etded.x86 \$*' >> ${PREFIX}/${ETDIR}/etded
-	@${ECHO} 'exit \$?' >> ${PREFIX}/${ETDIR}/etded
-	@${CHMOD} 755 ${PREFIX}/${ETDIR}/etded
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/${ETDIR}/etded
+	${INSTALL_DIR} ${PREFIX}/bin
+.for FILE in et etded
+	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
+.endfor
 
 .include <bsd.port.mk>
