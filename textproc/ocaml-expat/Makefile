@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ocaml-expat
-PORTVERSION=	0.1.0
+PORTVERSION=	0.9.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 
@@ -21,6 +21,10 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
+MAKE_ARGS=	EXPAT_LIBDIR=${LOCALBASE}/lib \
+		EXPAT_INCDIR=${LOCALBASE}/include \
+		CAML_INCDIR=${LOCALBASE}/lib/ocaml
+
 ALL_TARGET=	all allopt
 
 .if !defined(NOPORTDOCS)
@@ -38,7 +42,7 @@ post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.css ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
