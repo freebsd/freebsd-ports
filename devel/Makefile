@@ -1322,6 +1322,7 @@
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
+    SUBDIR += py-zopeInterface
     SUBDIR += py_otp_interface
     SUBDIR += pychecker
     SUBDIR += pylint
