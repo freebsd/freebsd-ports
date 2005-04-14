@@ -130,6 +130,7 @@
     SUBDIR += cl-split-sequence-sbcl
     SUBDIR += cl-uffi
     SUBDIR += cl-uffi-cmucl
+    SUBDIR += cl-uffi-sbcl
     SUBDIR += clanlib
     SUBDIR += clanlib-devel
     SUBDIR += clig

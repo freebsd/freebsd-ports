@@ -1,0 +1,8 @@
+UFFI provides platform-independent access to the foreign function
+interfaces of AllegroCL, Lispworks, CMUCL, SBCL, SCL, OpenMCL, and MCL.
+(A foreign function interface allows Lisp programs to call routines
+located in C libraries.)
+
+This package contains binaries compiled for SBCL.
+
+WWW: http://uffi.b9.com/
