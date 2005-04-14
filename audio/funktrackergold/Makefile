@@ -7,6 +7,7 @@
 
 PORTNAME=	funktrackergold
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://jsno.leal.com.au/rel/unix_projects/
