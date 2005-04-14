@@ -13,6 +13,7 @@
  * chkproc.c: checks for signs of LKM trojans.
  * chkdirs.c: checks for signs of LKM trojans.
  * strings.c: quick and dirty strings replacement.
+ * chkutmp.c: checks for utmp deletions.
 
  For an updated list of rootkits, worms and LKMs detected by
  chkrootkit please visit: http://www.chkrootkit.org/
