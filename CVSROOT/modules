@@ -3014,6 +3014,7 @@ gopher		ports/net/gopher
 gorm		ports/devel/gorm
 gossip		ports/net/gossip
 gotmail		ports/mail/gotmail
+gourmet		ports/deskutils/gourmet
 gozer		ports/graphics/gozer
 gpa		ports/security/gpa
 gpaint		ports/graphics/gpaint
