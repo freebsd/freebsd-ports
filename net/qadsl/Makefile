@@ -6,18 +6,33 @@
 #
 
 PORTNAME=	qadsl
-PORTVERSION=	1.2
+PORTVERSION=	1.3.3
 CATEGORIES=	net
-MASTER_SITES=	http://kuba.unix.se/code/qadsl/
-DISTNAME=	qadsl-final-${PORTVERSION}
+MASTER_SITES=	http://savannah.gnu.org/download/alive/
+DISTNAME=	qadsl-${PORTVERSION}
 
 MAINTAINER=	arlu@telia.com
-COMMENT=	Auto login/Keep-alive for Telia AB ADSL and COMHEM Cable internet
+COMMENT=	Auto login/Keep-alive for Telia AB ADSL, COMHEM Cable and Tiscali Internet
+
+USE_RC_SUBR=	qadsl.sh
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	\
+		--with-global-cfg=${PREFIX}/etc/qadsl.conf \
+		--with-pidfile=/var/run/qadsl.pid
 
 MAN8=		qadsl.8
-MANCOMPRESSED=	yes
+MAN5=		qadsl.conf.5
+INFO=		qadsl
+PLIST_FILES=	sbin/qadsl etc/qadsl.conf.sample
+
+post-extract:
+	@${CAT} ${WRKSRC}/etc/qadsl.conf > ${WRKSRC}/etc/qadsl.conf.sample
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/qadsl.sh ${PREFIX}/etc/rc.d/qadsl.sh
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

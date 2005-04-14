@@ -1,0 +1,19 @@
+
+*********************************************************
+
+A sample configuration file has been copied to
+%%PREFIX%%/etc/qadsl.conf.sample.  
+qadsl (GNU Alive) will NOT work 
+without a valid %%PREFIX%%/etc/qadsl.conf.
+
+*********************************************************
+
+===>  COMPATIBILITY NOTE:
+	Configuration file from qadsl 1.2 and below
+	are not compatible with qadsl 1.3.3 or after.
+	Make sure to edit your configuration properly. 
+
+===>  BE CAREFULL HOW TO BOOT on 1.3.3 or after:
+	To run qadsl from startup, add qadsl_enable="YES"
+	in your /etc/rc.conf.
+
