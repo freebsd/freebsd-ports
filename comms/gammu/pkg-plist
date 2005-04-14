@@ -6,18 +6,18 @@ bin/gammu
 %%DOCSDIR%%/docs/english/replace.txt
 %%DOCSDIR%%/docs/italian/gammu.txt
 %%DOCSDIR%%/docs/italian/readme.txt
-%%DOCSDIR%%/examples/gammu.png
+%%DOCSDIR%%/docs/gammu.png
 %%DOCSDIR%%/examples/config/gammurc
-%%DOCSDIR%%/examples/config/smsd_mysql.sql
 %%DOCSDIR%%/examples/config/smsdrc
+%%DOCSDIR%%/examples/config/mysql.sql
 %%DOCSDIR%%/examples/fax/faxreceive
 %%DOCSDIR%%/examples/fax/faxsend
-%%DOCSDIR%%/examples/logo/greatings.nlm
 %%DOCSDIR%%/examples/ppp/data
 %%DOCSDIR%%/examples/ppp/gprs
 %%DOCSDIR%%/examples/ppp/startppp
 %%DOCSDIR%%/examples/ppp/statsppp
-%%DOCSDIR%%/examples/ring/axelf.txt
+%%DOCSDIR%%/examples/media/aliens.nlm
+%%DOCSDIR%%/examples/media/axelf.txt
 share/gammu/gammu_cs.txt
 share/gammu/gammu_de.txt
 share/gammu/gammu_it.txt
@@ -57,6 +57,7 @@ include/gammu/phone/nokia/nfunc.h
 include/gammu/phone/nokia/nfuncold.h
 include/gammu/phone/nokia/dct3/dct3comm.h
 include/gammu/phone/nokia/dct3/dct3func.h
+include/gammu/phone/nokia/dct3/n0650.h
 include/gammu/phone/nokia/dct3/n6110.h
 include/gammu/phone/nokia/dct3/n7110.h
 include/gammu/phone/nokia/dct3/n9210.h
@@ -64,6 +65,8 @@ include/gammu/phone/nokia/dct4/dct4func.h
 include/gammu/phone/nokia/dct4/n3320.h
 include/gammu/phone/nokia/dct4/n3650.h
 include/gammu/phone/nokia/dct4/n6510.h
+include/gammu/phone/nokia/dct4/6510cal.h
+include/gammu/phone/nokia/dct4/6510file.h
 include/gammu/phone/obex/obexgen.h
 include/gammu/phone/symbian/mroutgen.h
 include/gammu/protocol/protocol.h
@@ -123,9 +126,8 @@ include/gammu/service/sms/gsmsms.h
 @dirrm %%DOCSDIR%%/docs/italian
 @dirrm %%DOCSDIR%%/docs
 @dirrm %%DOCSDIR%%/examples/config
+@dirrm %%DOCSDIR%%/examples/media
 @dirrm %%DOCSDIR%%/examples/ppp
-@dirrm %%DOCSDIR%%/examples/ring
-@dirrm %%DOCSDIR%%/examples/logo
 @dirrm %%DOCSDIR%%/examples/fax
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
