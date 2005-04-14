@@ -20,6 +20,8 @@ share/doc/HTML/de/ksteak/index.docbook
 share/doc/HTML/en/ksteak/common
 share/doc/HTML/en/ksteak/index.cache.bz2
 share/doc/HTML/en/ksteak/index.docbook
+@dirrm share/doc/HTML/de/ksteak
+@dirrm share/doc/HTML/en/ksteak
 share/icons/hicolor/16x16/apps/ksteak.png
 share/icons/hicolor/16x16/apps/ksteakplugin.png
 share/icons/hicolor/22x22/apps/ksteakplugin.png
@@ -29,3 +31,4 @@ share/icons/locolor/16x16/apps/ksteakplugin.png
 share/locale/de/LC_MESSAGES/ksteak.mo
 @dirrm share/apps/ksteak/pics
 @dirrm share/apps/ksteak
+@unexec /bin/rmdir %D/share/apps/khtml/kpartplugins 2>/dev/null || /usr/bin/true
