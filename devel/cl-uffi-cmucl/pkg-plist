@@ -1,0 +1,9 @@
+lib/common-lisp/uffi/src/cmuclfasl/aggregates.fasl
+lib/common-lisp/uffi/src/cmuclfasl/functions.fasl
+lib/common-lisp/uffi/src/cmuclfasl/libraries.fasl
+lib/common-lisp/uffi/src/cmuclfasl/objects.fasl
+lib/common-lisp/uffi/src/cmuclfasl/os.fasl
+lib/common-lisp/uffi/src/cmuclfasl/package.fasl
+lib/common-lisp/uffi/src/cmuclfasl/primitives.fasl
+lib/common-lisp/uffi/src/cmuclfasl/strings.fasl
+@dirrm lib/common-lisp/uffi/src/cmuclfasl
