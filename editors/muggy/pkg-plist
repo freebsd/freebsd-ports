@@ -24,6 +24,8 @@ JDE/Muggy/modules/Undo.m/new.tcl
 JDE/Muggy/modules/Undo.m/textundo.tcl
 bin/Muggy.app
 %%PIXMAP_PATH%%/Muggy.xpm
+@dirrm %%PIXMAP_PATH%%
+@dirrm share/WindowMaker
 @dirrm JDE/Muggy/bin
 @dirrm JDE/Muggy/contrib
 @dirrm JDE/Muggy/defaults

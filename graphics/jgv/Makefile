@@ -20,7 +20,7 @@ COMMENT=	A graphic viewer with various image types
 RUN_DEPENDS=	${RUN_DEP_LIST}
 LIB_DEPENDS=	${LIB_DEP_LIST}
 
-BROKEN=		Incomplete pkg-plist
+CONFLICTS?=	ja-jgv-[0-9]*
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -31,9 +31,6 @@ SCRIPTS_ENV=	LANG=C LN=${LN} REINPLACE_CMD="${REINPLACE_CMD}" \
 		LANGUAGE=${LANGUAGE} VERSION=${TKSTEPVERSION}
 PLIST_SUB=	PIXMAP_PATH=${PIXMAPPATH:S@^${PREFIX}/@@}
 
-# This port is for both graphics/jgv and japanese/jgv.
-# But graphics/jgv and japanese/jgv are mutually exclusive and
-# SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
 TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
 LANGUAGE?=

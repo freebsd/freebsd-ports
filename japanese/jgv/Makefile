@@ -9,5 +9,6 @@ CATEGORIES=	japanese
 
 LANGUAGE=	Japanese
 MASTERDIR=	${.CURDIR}/../../graphics/jgv
+CONFLICTS=	jgv-[0-9]*
 
 .include	"${MASTERDIR}/Makefile"
