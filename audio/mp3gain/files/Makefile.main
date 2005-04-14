@@ -1,4 +1,4 @@
-SRCS=	gain_analysis.c mp3gain.c rg_error.c
+SRCS=	gain_analysis.c mp3gain.c rg_error.c apetag.c
 PROG=	mp3gain
 
 LDADD=	-LmpglibDBL -lm -lmpglibDBL

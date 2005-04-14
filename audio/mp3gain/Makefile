@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mp3gain
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.6
 CATEGORIES=	audio
-MASTER_SITES=	http://www.mpex.net/software/mirror/ \
-		http://www.speakeasy.net/~djkarmad/mp3gain/
-DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}_src${EXTSUFFIX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to normalize the gain of mp3 files
@@ -24,11 +24,9 @@ NO_WRKSUBDIR=	yes
 MAKE_ENV=	PREFIX="${PREFIX}"
 
 pre-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s/`/usr/bin/printf '\r'`//"
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s/`${PRINTF} '\r'`//"
 
 post-patch:
-	@${REINPLACE_CMD} -e '906,943s,/?,-h,;921,945s,/,-,g' ${WRKSRC}/mp3gain.c
-	@${REINPLACE_CMD} -e 's,\\,/,' ${WRKSRC}/mpglibDBL/interface.h
 	@${CP} ${FILESDIR}/Makefile.main ${WRKSRC}/Makefile
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/mpglibDBL/Makefile
 
