@@ -1,0 +1,6 @@
+This is a separate distribution of the zope.interface package used in Zope 3, 
+along with the packages it depends on.
+
+WWW: http://www.zope.org/Products/ZopeInterface
+
+-- Neal Nelson <neal@nelson.name>
