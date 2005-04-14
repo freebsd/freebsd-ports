@@ -1,0 +1,269 @@
+bin/gourmet
+%%PYTHON_SITELIBDIR%%/gourmet/FileChooserSaveAs.py
+%%PYTHON_SITELIBDIR%%/gourmet/FileChooserSaveAs.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/FileChooserSaveAs.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetFauxThreads.py
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetFauxThreads.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetFauxThreads.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetRecipeManager.py
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetRecipeManager.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetRecipeManager.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetThreads.py
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetThreads.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/GourmetThreads.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/ImageExtras.py
+%%PYTHON_SITELIBDIR%%/gourmet/ImageExtras.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/ImageExtras.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/OptionParser.py
+%%PYTHON_SITELIBDIR%%/gourmet/OptionParser.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/OptionParser.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/PngImagePluginUpToDate.py
+%%PYTHON_SITELIBDIR%%/gourmet/PngImagePluginUpToDate.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/PngImagePluginUpToDate.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/TextBufferMarkup.py
+%%PYTHON_SITELIBDIR%%/gourmet/TextBufferMarkup.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/TextBufferMarkup.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/ThumbnailGenerator.py
+%%PYTHON_SITELIBDIR%%/gourmet/ThumbnailGenerator.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/ThumbnailGenerator.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/Undo.py
+%%PYTHON_SITELIBDIR%%/gourmet/Undo.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/Undo.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/WidgetSaver.py
+%%PYTHON_SITELIBDIR%%/gourmet/WidgetSaver.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/WidgetSaver.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/DatabaseChooser.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/DatabaseChooser.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/DatabaseChooser.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/PythonicSQL.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/PythonicSQL.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/PythonicSQL.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/pythonic_mysql.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/pythonic_mysql.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/pythonic_mysql.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/pythonic_sqlite.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/pythonic_sqlite.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/pythonic_sqlite.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rdatabase.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rdatabase.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rdatabase.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rmetakit.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rmetakit.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rmetakit.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rmysql.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rmysql.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rmysql.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rsqlite.py
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rsqlite.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/backends/rsqlite.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/cb_extras.py
+%%PYTHON_SITELIBDIR%%/gourmet/cb_extras.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/cb_extras.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/check_encodings.py
+%%PYTHON_SITELIBDIR%%/gourmet/check_encodings.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/check_encodings.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/convert.py
+%%PYTHON_SITELIBDIR%%/gourmet/convert.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/convert.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/convertGui.py
+%%PYTHON_SITELIBDIR%%/gourmet/convertGui.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/convertGui.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_en.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_en.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_en.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_en_GB.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_en_GB.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_en_GB.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_es.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_es.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_es.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/dialog_extras.py
+%%PYTHON_SITELIBDIR%%/gourmet/dialog_extras.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/dialog_extras.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/MarkupString.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/MarkupString.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/MarkupString.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/exporter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/exporter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/exporter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gnomeprinter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gnomeprinter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gnomeprinter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gnomeprinter_obsolete.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gnomeprinter_obsolete.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gnomeprinter_obsolete.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gxml2_exporter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gxml2_exporter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gxml2_exporter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gxml_exporter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gxml_exporter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/gxml_exporter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/html_exporter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/html_exporter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/html_exporter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/lprprinter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/lprprinter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/lprprinter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/mealmaster_exporter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/mealmaster_exporter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/mealmaster_exporter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/pdf_exporter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/pdf_exporter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/pdf_exporter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/printer.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/printer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/printer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/recipe_emailer.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/recipe_emailer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/recipe_emailer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/rtf_exporter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/rtf_exporter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/rtf_exporter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/winprinter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/winprinter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/winprinter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/wxprinter.py
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/wxprinter.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/exporters/wxprinter.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/gdebug.py
+%%PYTHON_SITELIBDIR%%/gourmet/gdebug.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/gdebug.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/gglobals.py
+%%PYTHON_SITELIBDIR%%/gourmet/gglobals.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/gglobals.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/gxml2_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/gxml2_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/gxml2_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/gxml_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/gxml_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/gxml_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/krecipe_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/krecipe_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/krecipe_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mastercook_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mastercook_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mastercook_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mastercook_plaintext_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mastercook_plaintext_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mastercook_plaintext_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mealmaster_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mealmaster_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/mealmaster_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/plaintext_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/plaintext_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/plaintext_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/xml_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/xml_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/xml_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/keyEditor.py
+%%PYTHON_SITELIBDIR%%/gourmet/keyEditor.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/keyEditor.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/keymanager.py
+%%PYTHON_SITELIBDIR%%/gourmet/keymanager.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/keymanager.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/optionTable.py
+%%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/prefs.py
+%%PYTHON_SITELIBDIR%%/gourmet/prefs.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/prefs.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/reccard.py
+%%PYTHON_SITELIBDIR%%/gourmet/reccard.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/reccard.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/recindex.py
+%%PYTHON_SITELIBDIR%%/gourmet/recindex.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/recindex.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/recipeManager.py
+%%PYTHON_SITELIBDIR%%/gourmet/recipeManager.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/recipeManager.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/shopEditor.py
+%%PYTHON_SITELIBDIR%%/gourmet/shopEditor.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/shopEditor.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/shopgui.py
+%%PYTHON_SITELIBDIR%%/gourmet/shopgui.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/shopgui.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/shopping.py
+%%PYTHON_SITELIBDIR%%/gourmet/shopping.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/shopping.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/thumbnail.py
+%%PYTHON_SITELIBDIR%%/gourmet/thumbnail.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/thumbnail.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/timeEntry.py
+%%PYTHON_SITELIBDIR%%/gourmet/timeEntry.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/timeEntry.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/treeview_extras.py
+%%PYTHON_SITELIBDIR%%/gourmet/treeview_extras.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/treeview_extras.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/version.py
+%%PYTHON_SITELIBDIR%%/gourmet/version.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/version.pyo
+share/applications/gourmet.desktop
+share/gourmet/app.glade
+share/gourmet/converter.glade
+share/gourmet/databaseChooser.glade
+share/gourmet/default.css
+share/gourmet/gourmet_logo.png
+share/gourmet/i18n/cs/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/de_AT/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/de_DE/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/es/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/fr/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/gourmet.mo
+share/gourmet/i18n/nl_BE/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/pt_BR/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/sk/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/sv_SE/LC_MESSAGES/gourmet.mo
+share/gourmet/i18n/tr/LC_MESSAGES/gourmet.mo
+share/gourmet/keyeditor.glade
+share/gourmet/recCard.glade
+share/gourmet/recSelector.glade
+share/gourmet/rec_ref_window.glade
+share/gourmet/recbox.png
+share/gourmet/recipe.dtd
+share/gourmet/shopList.glade
+share/gourmet/splash.png
+share/pixmaps/recbox.png
+@dirrm share/gourmet/i18n/tr/LC_MESSAGES
+@dirrm share/gourmet/i18n/tr
+@dirrm share/gourmet/i18n/sv_SE/LC_MESSAGES
+@dirrm share/gourmet/i18n/sv_SE
+@dirrm share/gourmet/i18n/sk/LC_MESSAGES
+@dirrm share/gourmet/i18n/sk
+@dirrm share/gourmet/i18n/pt_BR/LC_MESSAGES
+@dirrm share/gourmet/i18n/pt_BR
+@dirrm share/gourmet/i18n/nl_BE/LC_MESSAGES
+@dirrm share/gourmet/i18n/nl_BE
+@dirrm share/gourmet/i18n/fr/LC_MESSAGES
+@dirrm share/gourmet/i18n/fr
+@dirrm share/gourmet/i18n/es/LC_MESSAGES
+@dirrm share/gourmet/i18n/es
+@dirrm share/gourmet/i18n/de_DE/LC_MESSAGES
+@dirrm share/gourmet/i18n/de_DE
+@dirrm share/gourmet/i18n/de_AT/LC_MESSAGES
+@dirrm share/gourmet/i18n/de_AT
+@dirrm share/gourmet/i18n/cs/LC_MESSAGES
+@dirrm share/gourmet/i18n/cs
+@dirrm share/gourmet/i18n
+@dirrm share/gourmet
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/backends
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet
