@@ -18,6 +18,7 @@ COMMENT=	X.Org distribution metaport
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/xorg-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/xorg-clients \
 		${X11BASE}/share/doc/X11/ddx.txt:${PORTSDIR}/x11/xorg-documents \
+		${X11BASE}/man/man1/Xserver.1.gz:${PORTSDIR}/x11/xorg-manpages \
 		${FONT100DPI}:${PORTSDIR}/x11-fonts/xorg-fonts-100dpi \
 		${FONT75DPI}:${PORTSDIR}/x11-fonts/xorg-fonts-75dpi \
 		${FONTCYR}:${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic \
