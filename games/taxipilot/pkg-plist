@@ -500,6 +500,9 @@ share/apps/taxipilot/tips
 share/doc/HTML/en/taxipilot/common
 share/doc/HTML/en/taxipilot/index.cache.bz2
 share/doc/HTML/en/taxipilot/index.docbook
+share/icons/hicolor/16x16/apps/taxipilot.png
+share/icons/hicolor/32x32/apps/taxipilot.png
+share/icons/hicolor/48x48/apps/taxipilot.png
 share/icons/locolor/16x16/apps/taxipilot.png
 share/icons/locolor/32x32/apps/taxipilot.png
 @dirrm share/doc/HTML/en/taxipilot
