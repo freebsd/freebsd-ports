@@ -11,4 +11,6 @@ CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../editors/muggy
 
+CONFLICTS=	muggy-[0-9]*
+
 .include	"${MASTERDIR}/Makefile"

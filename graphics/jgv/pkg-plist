@@ -19,6 +19,8 @@ JDE/JGV/menu/menu.ja
 JDE/JGV/modules/PrefJGV.m
 bin/JGV.app
 %%PIXMAP_PATH%%/JGV.xpm
+@dirrm %%PIXMAP_PATH%%
+@dirrm share/WindowMaker
 @dirrm JDE/JGV/bin
 @dirrm JDE/JGV/defaults
 @dirrm JDE/JGV/docs
