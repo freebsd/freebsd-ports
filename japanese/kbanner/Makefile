@@ -7,15 +7,13 @@
 
 PORTNAME=	kbanner
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 DISTFILES=	${PORTNAME}2.tar.Z
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays large japanese letters on the standard output
-
-BROKEN=		Size mismatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2
 ALL_TARGET=	kbanner

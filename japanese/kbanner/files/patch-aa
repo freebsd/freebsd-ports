@@ -1,10 +1,10 @@
---- Makefile.orig	Fri Oct 15 06:19:54 1993
-+++ Makefile	Wed Apr 30 18:02:04 2003
+--- Makefile.orig	Tue Jul 13 02:06:57 2004
++++ Makefile	Thu Apr 14 18:01:24 2005
 @@ -1,21 +1,20 @@
  SHELL = /bin/sh
 -DESTDIR = /usr/local/bin
 -MANUAL = /usr/local/man/man1/kbanner.1
--CFLAGS = -O -KEOPT -KBREG -KINF
+-CFLAGS = -O
 +DESTDIR = ${PREFIX}/bin
 +MANUAL = ${PREFIX}/man/man1/kbanner.1
  OBJ = kbanner.o font1.o font2.o font3.o
