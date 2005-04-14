@@ -8,7 +8,8 @@
 PORTNAME=	neon
 PORTVERSION=	0.24.7
 CATEGORIES=	www
-MASTER_SITES=	http://www.webdav.org/neon/
+MASTER_SITES=	http://www.webdav.org/neon/ \
+		http://keyserver.kjsl.com/~jharris/distfiles/
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
