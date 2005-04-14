@@ -16,13 +16,15 @@ COMMENT=	An official experimental development fork of IDE for Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-BROKEN=		Incorrect pkg-plist
+DEPRECATED=	"has been integrated into Pyhton 2.3+"
+IGNORE=		${DEPRECATED}
+EXPIRATION_DATE=2005-06-01
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 pre-install:
-	@printf "#!/bin/sh\nexec ${PYTHON_CMD} ${PYTHON_SITELIBDIR}/idlelib/idle.pyc\n" \
+	@${PRINTF} "#!/bin/sh\nexec ${PYTHON_CMD} ${PYTHON_SITELIBDIR}/idlelib/idle.pyc\n" \
 		> ${WRKSRC}/idle
 
 .if !defined(NOPORTDOCS)
