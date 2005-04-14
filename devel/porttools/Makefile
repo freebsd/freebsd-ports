@@ -7,7 +7,7 @@
 
 PORTNAME=	porttools
 PORTVERSION=	0.63
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
 
 RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
+		cdiff:${PORTSDIR}/textproc/cdiff \
 		sudo:${PORTSDIR}/security/sudo
 
 .include <bsd.port.pre.mk>
