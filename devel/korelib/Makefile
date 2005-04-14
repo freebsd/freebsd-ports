@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.smga3000.com/thekompany/Korelib/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform C++ library for developing modular applications
 
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
