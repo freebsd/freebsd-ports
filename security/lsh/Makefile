@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	lsh
-PORTVERSION=	1.5.3
-PORTREVISION=	3
+PORTVERSION=	2.0.1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
 MASTER_SITE_SUBDIR=	lsh lsh/old
 DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
@@ -26,6 +27,7 @@ INSTALL_TARGET=	install
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+USE_GPG?=	yes
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PLIST_SUB+=	KRB=""
 .else
@@ -35,6 +37,13 @@ PLIST_SUB+=	KRB="@comment "
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 .endif
+MAN1=		lsftp.1 ssh-conv.1 lshg.1 lsh.1 lsh-writekey.1 lsh-upgrade.1 \
+		lsh-upgrade-key.1 lsh-make-seed.1 lsh-keygen.1 \
+		lsh-export-key.1 lsh-decrypt-key.1 lsh-decode-key.1 \
+		lsh-authorize.1
+MAN5=		secsh.5 SPKI.5 SHA.5 DSA.5
+MAN8=		sftp-server.8 lshd.8
+INFO=		lsh nettle
 
 .include <bsd.port.pre.mk>
 
