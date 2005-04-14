@@ -22,15 +22,9 @@ USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 LDFLAGS+=	-L${OPENSSLLIB}
-CFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	${CPPFLAGS} -I${OPENSSLINC}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 PLIST_FILES=	bin/drill
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
