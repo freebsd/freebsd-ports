@@ -3556,6 +3556,7 @@ iSiloXC		ports/palm/iSiloXC
 ia-aspell	ports/textproc/ia-aspell
 ia64sim		ports/emulators/ia64sim
 ical		ports/deskutils/ical
+ical2html	ports/converters/ical2html
 icb		ports/net/icb
 icbirc		ports/irc/icbirc
 icbm3d		ports/games/icbm3d
