@@ -10,7 +10,19 @@ DIR_BIN 	= $PREFIX/bin
 DIR_SBIN	= $PREFIX/sbin
 DIR_ETC 	= $PREFIX/etc/openradius
 DIR_LIB 	= $PREFIX/lib/openradius
-FILE_LOG	= $PREFIX/var/log/openradius.log
+END
+
+if [ x$LOGFILE != x ]; then
+cat >> Makefile << END
+FILE_LOG	= $LOGFILE
+END
+else
+cat >> Makefile << END
+FILE_LOG	= /var/log/openradius.log
+END
+fi
+
+cat >> Makefile << END
 
 ### Modules that will be built and installed
 #
@@ -51,7 +63,6 @@ LL_RADLDAP	= -lldap -llber
 
 ### Build tools
 # 
-# The C compiler named here must output full (header) dependencies in $(@).d.
 # It may be necessary to create a script similar to ccd-gcc for your compiler.
 # 
 CMPLR		= ./build/ccd-gcc
