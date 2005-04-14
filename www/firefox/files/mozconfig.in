@@ -32,7 +32,6 @@ ac_add_options --x-libraries=@X11BASE@/lib
 ac_add_options --with-system-jpeg=@LOCALBASE@
 ac_add_options --with-system-zlib
 ac_add_options --with-system-png=@LOCALBASE@
-ac_add_options --with-system-mng=@LOCALBASE@
 ac_add_options --without-system-nspr
 ac_add_options --with-gssapi=/usr
 ######################################################################

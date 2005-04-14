@@ -17,8 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng
+		png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 ALL_TARGET=	default
@@ -110,7 +109,7 @@ LIBS+=			${PTHREAD_LIBS}
 EXTRA_SCRIPTS=		${PORTNAME}.rb
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	"core dumps on alpha during post-build"
+IGNORE=	core dumps on alpha during post-build
 .endif
 
 .if ${PERL_LEVEL} < 500600
