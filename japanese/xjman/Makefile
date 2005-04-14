@@ -9,6 +9,7 @@
 
 PORTNAME=	xjman
 PORTVERSION?=	0.7
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES?=	${MASTER_SITE_PORTS_JP} \
 		http://xjman.dsl.gr.jp/dist/
@@ -37,7 +38,7 @@ post-extract:
 .for sec in ${MANSECS}
 	(cd ${WRKSRC}/man${sec}; \
 	for f in *.${sec}x; do ${CP} $$f $${f%x}; done; \
-	${REINPLACE_CMD} -e 's/^\(\.so .*\)x$$/$$1/' *.${sec})
+	${REINPLACE_CMD} -e 's/^\(\.so .*\)x$$/\1/' *.${sec})
 .endfor
 
 post-build:
