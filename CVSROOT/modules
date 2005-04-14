@@ -12045,6 +12045,7 @@ xcept		ports/comms/xcept
 xchadance	ports/games/xchadance
 xchain		ports/games/xchain
 xchat		ports/irc/xchat
+xchat-ecl-plugin	ports/irc/xchat-ecl-plugin
 xchat-fish	ports/irc/xchat-fish
 xchat-gnome	ports/irc/xchat-gnome
 xchat-mircryption	ports/irc/xchat-mircryption
