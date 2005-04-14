@@ -18,3 +18,4 @@ lib/ocaml/site-lib/classes/ostream.mli
 lib/ocaml/site-lib/classes/stdclass.cma
 lib/ocaml/site-lib/classes/META
 @dirrm lib/ocaml/site-lib/classes
+@dirrm lib/ocaml/site-lib
