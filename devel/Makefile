@@ -1315,6 +1315,7 @@
     SUBDIR += py-tconfpy
     SUBDIR += py-twisted
     SUBDIR += py-twistedCore
+    SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
     SUBDIR += py-ui
     SUBDIR += py-unit
