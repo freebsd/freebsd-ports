@@ -5,26 +5,39 @@
 # $FreeBSD$
 
 PORTNAME=	isync
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
+LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
+
 USE_GETOPT_LONG=	yes
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		isync.1
-PLIST_FILES=	bin/isync
+MAN1=		isync.1 mbsync.1 mdconvert.1
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+PLIST_FILES=	bin/get-cert bin/isync bin/mbsync bin/mdconvert
 
-CPPFLAGS=	-I${LOCALBASE}/include/db3 -I${OPENSSLINC}
-LDFLAGS=	-L${LOCALBASE}/lib -ldb3 -L${OPENSSLLIB} -lssl -lcrypto
+CPPFLAGS=	-I${LOCALBASE}/include/db42 -I${OPENSSLINC}
+LDFLAGS=	-L${LOCALBASE}/lib/db42 -L${OPENSSLLIB} -lssl -lcrypto
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
