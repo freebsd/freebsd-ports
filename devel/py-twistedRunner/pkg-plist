@@ -1,0 +1,21 @@
+%%S%%/twisted/runner/__init__.py
+%%S%%/twisted/runner/__init__.pyc
+%%S%%/twisted/runner/__init__.pyo
+%%S%%/twisted/runner/inetd.py
+%%S%%/twisted/runner/inetd.pyc
+%%S%%/twisted/runner/inetd.pyo
+%%S%%/twisted/runner/inetdconf.py
+%%S%%/twisted/runner/inetdconf.pyc
+%%S%%/twisted/runner/inetdconf.pyo
+%%S%%/twisted/runner/inetdtap.py
+%%S%%/twisted/runner/inetdtap.pyc
+%%S%%/twisted/runner/inetdtap.pyo
+%%S%%/twisted/runner/portmap.c
+%%S%%/twisted/runner/portmap.so
+%%S%%/twisted/runner/procmon.py
+%%S%%/twisted/runner/procmon.pyc
+%%S%%/twisted/runner/procmon.pyo
+%%S%%/twisted/runner/procutils.py
+%%S%%/twisted/runner/procutils.pyc
+%%S%%/twisted/runner/procutils.pyo
+@dirrm %%S%%/twisted/runner
