@@ -540,6 +540,7 @@
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
     SUBDIR += py-syck
+    SUBDIR += py-twistedLore
     SUBDIR += py-wordnet
     SUBDIR += py-xml
     SUBDIR += py-xmltools
