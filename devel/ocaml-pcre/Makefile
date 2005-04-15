@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	5.09.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
@@ -17,7 +18,7 @@ COMMENT=	Perl compatible regular expressions for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
 
 USE_GMAKE=	yes
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/pcre" \
