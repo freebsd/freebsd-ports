@@ -23,7 +23,13 @@ USE_GMAKE=	yes
 
 INFO=	riece-en riece-ja
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Byte compile fails on ia64. It is probably bug of emacs, not of riece. See ports/75832."
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
