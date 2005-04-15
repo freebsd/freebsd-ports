@@ -71,9 +71,9 @@ IGNORE=		"Kernel source files required"
 .endif
 
 .if ${OSVERSION} < 500023
-VMNET1_MINOR=  0x00010001
+VMNET1_MINOR=	0x00010001
 .else
-VMNET1_MINOR=  0x00800001
+VMNET1_MINOR=	0x00800001
 .endif
 
 SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
@@ -87,6 +87,12 @@ PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
 PLIST_SUB+=	FREEBSD5="@comment "
 .else
 PLIST_SUB+=	FREEBSD5=""
+.endif
+
+.if ${OSVERSION} >= 500104
+LINUXBASE_MAYBE=
+.else
+LINUXBASE_MAYBE=	${LINUXBASE}
 .endif
 
 post-extract:
@@ -123,10 +129,11 @@ post-patch:
 	cd ${WRKSRC}/vmmon-only/freebsd && ${TOUCH} bus_if.h device_if.h
 .if ${OSVERSION} >= 500019
 	${PERL} -i -pe 's,<machine/ioctl_fd\.h>,<sys/fdcio.h>,' \
-		${WRKSRC}/vmmon-only/freebsd/*.c \
-		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
+		${WRKDIR}/vmmon-only/freebsd/*.c \
+		${WRKDIR}/vmware-distrib/vmmon-only/freebsd/*.c
 .endif
 	${CAT} ${FILESDIR}/kmoddeps.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/Makefile_FreeBSD.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .if ${OSVERSION} >= 500038
 	${CAT} ${FILESDIR}/fo_ioctl.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
@@ -136,6 +143,7 @@ post-patch:
 .endif
 .if ${OSVERSION} >= 500104
 	${CAT} ${FILESDIR}/cdevsw.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/driver_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 .if ${OSVERSION} >= 500109 || ${OSVERSION} < 500000 && ${OSVERSION} >= 480102
 	${CAT} ${FILESDIR}/hostif_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
@@ -152,7 +160,7 @@ setoptions:
 		${FILESDIR}/config > ${WRKDIR}/config
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
+		-e 's;@@LINUXBASE@@;${LINUXBASE_MAYBE};' \
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
 		-e 's;@@BRIDGED@@;${VMNET_BRIDGED};' \
 		-e 's;@@BRIDGE_INTF@@;${VMNET_BRIDGED_INTERFACE};' \

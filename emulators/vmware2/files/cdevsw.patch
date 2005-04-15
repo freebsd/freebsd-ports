@@ -1,10 +1,14 @@
 --- vmmon-only/freebsd/driver.c_original	Wed Mar  5 19:22:35 2003
 +++ vmmon-only/freebsd/driver.c	Wed Mar  5 19:22:44 2003
-@@ -155,6 +155,14 @@
+@@ -155,6 +155,18 @@
  
  /* static struct cdevsw vmmon_cdevsw = { */
  static struct cdevsw vmmon_cdevsw = {
 +#if __FreeBSD_version >= 500104
++#if __FreeBSD_version >= 502103
++	.d_version = D_VERSION,
++	.d_flags = D_NEEDGIANT,
++#endif
 +	.d_open =	FreeBSD_Driver_Open,
 +	.d_close =	FreeBSD_Driver_Close,
 +	.d_ioctl =	FreeBSD_Driver_Ioctl,
@@ -54,11 +58,15 @@
  }
 --- vmnet-only/freebsd/vmnet.c_original	Wed Mar  5 19:21:51 2003
 +++ vmnet-only/freebsd/vmnet.c	Wed Mar  5 19:22:00 2003
-@@ -103,6 +103,16 @@
+@@ -103,6 +103,20 @@
  static int vmnet_modeevent(module_t mod, int cmd, void *arg);
  
  static struct cdevsw vmnet_cdevsw = {
 +#if __FreeBSD_version >= 500104
++#if __FreeBSD_version >= 502103
++ 	.d_version = D_VERSION,
++	.d_flags = D_NEEDGIANT,
++#endif
 +	.d_open = 	vmnet_open,
 +	.d_close = 	vmnet_close,
 +	.d_read = 	vmnet_read,

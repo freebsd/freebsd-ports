@@ -1,0 +1,58 @@
+--- vmmon-only/freebsd/driver.c.original Tue Jun 22 15:24:52 2004
++++ vmmon-only/freebsd/driver.c	Tue Jun 22 10:01:30 2004
+@@ -157,8 +157,8 @@
+ static struct cdevsw vmmon_cdevsw = {
+ #if __FreeBSD_version >= 500104
+ #if __FreeBSD_version >= 502103
+-	.d_version = D_VERSION,
+-	.d_flags = D_NEEDGIANT,
++ 	.d_version = D_VERSION,
++ 	.d_flags = D_NEEDGIANT,
+ #endif
+ 	.d_open =	FreeBSD_Driver_Open,
+ 	.d_close =	FreeBSD_Driver_Close,
+@@ -233,7 +233,7 @@
+  *
+  *----------------------------------------------------------------------
+  */
+-static dev_t vmmon_dev;
++static struct cdev * vmmon_dev;
+ static int 
+ init_module(void)
+ {
+@@ -359,7 +359,7 @@
+  *----------------------------------------------------------------------
+  */
+ static int 
+-FreeBSD_Driver_Open(dev_t dev, int oflag, int devtype, struct thread *td)
++FreeBSD_Driver_Open(struct cdev * dev, int oflag, int devtype, struct thread *td)
+ {
+    VMFreeBSD *vmFreeBSD;
+    VMDriver *vm;
+@@ -439,7 +439,7 @@
+  */
+ 
+ static int
+-FreeBSD_Driver_Close(dev_t dev, int fflag, int devtype, struct thread *td)
++FreeBSD_Driver_Close(struct cdev * dev, int fflag, int devtype, struct thread *td)
+ {
+    VMFreeBSD *vmFreeBSD = (VMFreeBSD *) dev->si_drv1;
+ 
+@@ -491,7 +491,7 @@
+  */
+ 
+ static int 
+-FreeBSD_Driver_Poll(dev_t dev, int events, struct thread *td)
++FreeBSD_Driver_Poll(struct cdev * dev, int events, struct thread *td)
+ {
+    int revents = 0;
+ 
+@@ -573,7 +573,7 @@
+  *----------------------------------------------------------------------
+  */
+ static int 
+-FreeBSD_Driver_Ioctl( dev_t dev, u_long cmd, caddr_t parg, int mode, 
++FreeBSD_Driver_Ioctl( struct cdev * dev, u_long cmd, caddr_t parg, int mode, 
+ 		      struct thread *td)
+ {
+    VMFreeBSD *vmFreeBSD = (VMFreeBSD *) dev->si_drv1;

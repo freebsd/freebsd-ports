@@ -17,8 +17,11 @@ ln -s /dev/ttyvb ${linux_dev}/tty12
 ln -s ${linux_dev}/tty1 ${linux_dev}/tty0
 mknod ${linux_dev}/null c 2 2
 chmod 666 ${linux_dev}/null
-echo Creating vmnet1 node
-mknod /compat/linux/dev/vmnet1 c 149 ${VMNET1_MINOR}
+rm -f /compat/linux/dev/vmnet1
+if [ "$OSVERSION" -lt "500104" ]; then
+	echo Creating vmnet1 node
+	mknod /compat/linux/dev/vmnet1 c 149 ${VMNET1_MINOR}
+fi
 echo Creating $linux_dev/hd\?
 mknod ${linux_dev}/hda b 0 0x00010002
 mknod ${linux_dev}/hdb b 0 0x0001000a

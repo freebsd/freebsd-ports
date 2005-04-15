@@ -1,5 +1,5 @@
---- vmmon-only/freebsd/driver.c.orig	Thu Jun 29 21:06:18 2000
-+++ vmmon-only/freebsd/driver.c	Sat Sep 23 01:41:34 2000
+--- vmmon-only/freebsd/driver.c.orig Sat Apr 10 16:52:28 2004
++++ vmmon-only/freebsd/driver.c Sat Apr 10 16:54:39 2004
 @@ -73,6 +73,24 @@
  #include "private.h"
  #endif
@@ -25,3 +25,13 @@
  #ifdef SUPPORT_PASSTHROUGH
  #include "passthrough.h"	// _driver_ version of passthrough.h 
  #endif
+@@ -256,7 +274,9 @@
+ 
+ #include <machine/md_var.h>
+ #include <machine/segments.h>
++#if __FreeBSD_version < 501114
+ #include <i386/isa/intr_machep.h>
++#endif
+ 
+ static int
+ vmmon_modeevent(module_t mod, int cmd, void *arg)
