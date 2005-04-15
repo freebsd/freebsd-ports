@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra
@@ -114,11 +116,7 @@ post-install:
 		< ${FILESDIR}/zebractl.sh  \
 		> ${PREFIX}/sbin/zebractl
 	@${CHMOD} 555 ${PREFIX}/sbin/zebractl
-	@${ECHO} "Make these entries in /etc/rc.conf to start zebra:"
-	@${ECHO} "defaultrouter=\"NO\""
-	@${ECHO} "router_enable=\"YES\""
-	@${ECHO} "router=\"${PREFIX}/sbin/zebractl\""
-	@${ECHO} "router_flags=\"start\""
 	@${ECHO} "done."
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
