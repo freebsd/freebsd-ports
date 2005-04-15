@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	gai
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.8
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	General Applet Interface Library
 
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
@@ -22,12 +21,12 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	sdl
-USE_GNOME=	gnomehack gdkpixbuf gtk20 pango gnomepanel
+USE_GNOME=	gnomehack gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG}
 
-PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.4 lib/libgai.so.0 \
-		lib/libgai.so libdata/pkgconfig/gai.pc
+PLIST_FILES=	include/gai/gai.h lib/libgai.so.${PORTVERSION} \
+		lib/libgai.so.0 lib/libgai.so libdata/pkgconfig/gai.pc
 PLIST_DIRS=	include/gai
 INSTALLS_SHLIB=	yes
 
