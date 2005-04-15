@@ -29,6 +29,7 @@ HAS_CONFIGURE=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
+SUB_FILES=	pkg-message
 CRICKET_USER?=	wwwadm
 CRICKET_UID?=	81
 CRICKET_GROUP?=	www
@@ -41,8 +42,6 @@ post-patch:
 		${WRKSRC}/cricket-conf.pl.sample
 	@${REINPLACE_CMD} -e 's,/usr/local/net/bin/ssh,/usr/bin/ssh,g' \
 		${WRKSRC}/sample-config/news-server/Defaults
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-message.in > \
-		${PKGMESSAGE}
 
 do-install:
 	@PREFIX="${PREFIX}" USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" \
