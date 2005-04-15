@@ -29,30 +29,30 @@ etc/raddb/certs/cert-clt.p12
 etc/raddb/certs/cert-clt.der
 etc/raddb/certs/root.pem
 etc/raddb/certs/README
-etc/raddb/acct_users
-etc/raddb/attrs
-etc/raddb/clients
-etc/raddb/clients.conf
-etc/raddb/dictionary
+etc/raddb/acct_users.sample
+etc/raddb/attrs.sample
+etc/raddb/clients.sample
+etc/raddb/clients.conf.sample
+etc/raddb/dictionary.sample
 %%EXPM%%etc/raddb/example.pl
-etc/raddb/experimental.conf
-etc/raddb/eap.conf
-etc/raddb/hints
-etc/raddb/huntgroups
-etc/raddb/ldap.attrmap
-etc/raddb/mssql.conf
-etc/raddb/naslist
-etc/raddb/naspasswd
-etc/raddb/oraclesql.conf
-etc/raddb/postgresql.conf
-etc/raddb/preproxy_users
-etc/raddb/proxy.conf
-etc/raddb/radiusd.conf
-etc/raddb/realms
-etc/raddb/snmp.conf
-etc/raddb/sql.conf
-etc/raddb/users
-etc/raddb/x99.conf
+etc/raddb/experimental.conf.sample
+etc/raddb/eap.conf.sample
+etc/raddb/hints.sample
+etc/raddb/huntgroups.sample
+etc/raddb/ldap.attrmap.sample
+etc/raddb/mssql.conf.sample
+etc/raddb/naslist.sample
+etc/raddb/naspasswd.sample
+etc/raddb/oraclesql.conf.sample
+etc/raddb/postgresql.conf.sample
+etc/raddb/preproxy_users.sample
+etc/raddb/proxy.conf.sample
+etc/raddb/radiusd.conf.sample
+etc/raddb/realms.sample
+etc/raddb/snmp.conf.sample
+etc/raddb/sql.conf.sample
+etc/raddb/users.sample
+etc/raddb/x99.conf.sample
 etc/raddb/x99passwd.sample
 etc/rc.d/radiusd.sh
 lib/libeap-%%PORTVERSION%%.la
@@ -195,6 +195,11 @@ lib/rlm_ippool-%%PORTVERSION%%.so
 lib/rlm_ippool.a
 lib/rlm_ippool.la
 lib/rlm_ippool.so
+%%KRB5%%lib/rlm_krb5-%%PORTVERSION%%.la
+%%KRB5%%lib/rlm_krb5-%%PORTVERSION%%.so
+%%KRB5%%lib/rlm_krb5.a
+%%KRB5%%lib/rlm_krb5.la
+%%KRB5%%lib/rlm_krb5.so
 %%LDAP%%lib/rlm_ldap-%%PORTVERSION%%.la
 %%LDAP%%lib/rlm_ldap-%%PORTVERSION%%.so
 %%LDAP%%lib/rlm_ldap.a
@@ -425,14 +430,16 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.versanet
 %%DATADIR%%/dictionary.wispr
 %%DATADIR%%/dictionary.xedia
+%%MYSQL%%%%EXAMPLESDIR%%/db_mysql.sql
+%%PGSQL%%%%EXAMPLESDIR%%/db_postgresql.sql
 @dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/raddb/certs/demoCA
 @dirrm etc/raddb/certs
 @exec mkdir -p /var/log/raddb
 @exec chmod -R og= /var/log/raddb
-@unexec rm -fr /var/log/raddb
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd
 @unexec rmdir %D/etc/raddb 2> /dev/null || echo "You should remove %D/etc/raddb if you don't need it anymore."
