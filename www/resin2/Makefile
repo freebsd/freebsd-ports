@@ -13,8 +13,6 @@ MASTER_SITES=		http://www.caucho.com/download/
 MAINTAINER=		jb.quenot@caraldi.com
 COMMENT=		Resin, a Java-based Application Server, 2.x branch
 
-BROKEN=			Does not build
-
 USE_JAVA=		yes
 JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
@@ -43,8 +41,6 @@ APXS?=			${LOCALBASE}/sbin/apxs
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 PKGMESSAGE=		${WRKDIR}/pkg-message
-# We need WRKSRC and WRKDIR right now so define them "manually"
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 REINPLACE_FILES=	${WRKSRC}/src/c/plugin/apache/Makefile.in \
 			${WRKSRC}/src/c/plugin/apache2/Makefile.in
 REPLACE_FILES=		${FILESDIR}/pkg-install \
@@ -110,12 +106,10 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%WRKSRC%%|${WRKSRC}|g"
 
 post-patch:
-.for FILE in ${REINPLACE_FILES}
-	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${FILE}
-.endfor
-.for FILE in ${REPLACE_FILES}
-	@${SED} ${SUBSTITUTIONS} ${FILE} > ${WRKDIR}/`basename ${FILE}`
-.endfor
+	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${REINPLACE_FILES}
+	@for FILE in ${REPLACE_FILES} ; do \
+	    ${SED} ${SUBSTITUTIONS} $${FILE} > ${WRKDIR}/`basename $${FILE}` ; \
+	    done
 	@${FMT} -w 80 < ${WRKDIR}/pkg-message.in > ${PKGMESSAGE}
 .if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES) || \
 defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
@@ -134,10 +128,10 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 post-install:
 	@${SETENV} RUNASUSER=${RUNASUSER} GROUP=${GROUP} ${SH} ${WRKDIR}/install.sh
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_CMD}
-	@${ECHO_CMD} "********************************************************************************"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "********************************************************************************"
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} "********************************************************************************"
-	@${ECHO_CMD}
+	@${ECHO_MSG} "********************************************************************************"
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
