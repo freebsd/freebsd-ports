@@ -26,7 +26,7 @@ post-patch:
 
 do-build do-install:
 .for d in lib client
-	cd ${WRKSRC}/$d && ${ENV} ${MAKE_ENV} ${MAKE} ${MAKEFLAGS} -j2 \
+	cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKEFLAGS} -j2 \
 		-f ${FILESDIR}/Makefile.$d ${.TARGET:S/do-//}
 .endfor
 
