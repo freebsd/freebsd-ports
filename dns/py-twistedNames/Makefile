@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedNames
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	dns devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Names/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Names/0.2/
@@ -16,7 +17,8 @@ DISTNAME=	TwistedNames-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	A DNS protocol implementation with client and server
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedNames-${PORTVERSION}
 
