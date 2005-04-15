@@ -645,6 +645,7 @@
     SUBDIR += py-soapy
     SUBDIR += py-spreadmodule
     SUBDIR += py-twistedPair
+    SUBDIR += py-twistedWords
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-zsi
