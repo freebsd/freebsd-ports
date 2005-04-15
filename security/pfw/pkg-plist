@@ -1,0 +1,43 @@
+@comment $FreeBSD$
+www/pfw/INSTALL
+www/pfw/README
+www/pfw/bin/pfctlwrapper.sh
+www/pfw/bin/pfctlwrapper.sh.remote
+www/pfw/lib/altq.class.php
+www/pfw/lib/filter.class.php
+www/pfw/lib/macro.class.php
+www/pfw/lib/nat.class.php
+www/pfw/lib/options.class.php
+www/pfw/lib/pf.class.php
+www/pfw/lib/queue.class.php
+www/pfw/lib/rules.class.php
+www/pfw/lib/scrub.class.php
+www/pfw/lib/table.class.php
+www/pfw/web/altq.php
+www/pfw/web/altqedit.php
+www/pfw/web/commentedit.php
+www/pfw/web/config.php
+www/pfw/web/filter.php
+www/pfw/web/filteredit.php
+www/pfw/web/include.inc.php
+www/pfw/web/index.php
+www/pfw/web/install.php
+www/pfw/web/macro.php
+www/pfw/web/macroedit.php
+www/pfw/web/menu.php
+www/pfw/web/nat.php
+www/pfw/web/natedit.php
+www/pfw/web/options.php
+www/pfw/web/queue.php
+www/pfw/web/queueedit.php
+www/pfw/web/scrub.php
+www/pfw/web/scrubedit.php
+www/pfw/web/stylesheet.css
+www/pfw/web/table.php
+www/pfw/web/tableedit.php
+www/pfw/web/test.php
+www/pfw/web/write.php
+@dirrm www/pfw/bin
+@dirrm www/pfw/lib
+@dirrm www/pfw/web
+@dirrm www/pfw
