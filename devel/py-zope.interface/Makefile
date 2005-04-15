@@ -7,7 +7,7 @@
 
 PORTNAME=	zopeInterface
 PORTVERSION=	3.0.1
-CATEGORIES=	zope devel python
+CATEGORIES=	devel zope python
 MASTER_SITES=	http://www.zope.org/Products/ZopeInterface/3.0.1final/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ZopeInterface-${PORTVERSION}
