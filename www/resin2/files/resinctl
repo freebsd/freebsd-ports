@@ -105,10 +105,10 @@ def start():
 
     # Wait a little
     time.sleep(.4)
-    (unused_pid, status) = os.waitpid(pid, os.WNOHANG)
+    (status_pid, status) = os.waitpid(pid, os.WNOHANG)
 
     # Check program exit status, if available
-    if unused_pid != 0 and os.WIFEXITED(status):
+    if status_pid != 0 and os.WIFEXITED(status):
         sys.stderr = os.fdopen(orig_stderr, 'w')
         print >> sys.stderr, 'Could not start %s.  Check %s for errors.' % (APP_NAME, LOG_FILE)
         sys.exit(2)
@@ -153,7 +153,6 @@ if __name__ == '__main__':
     LOG_FILE = "%%LOG_FILE%%"
     APP_NAME = "%%APP_NAME%%"
     APP_HOME = "%%APP_HOME%%"
-    CONTROL_PROGRAM = "%%APP_NAME%%ctl"
     PID_FILE = "%%PID_FILE%%"
     COMMAND = "%%JAVA%%"
     ARGS = [COMMAND]
