@@ -1,23 +1,26 @@
 # New ports collection makefile for:	grappa
 # Date created:		30 June 2001
-# Whom:                 dbader@eece.unm.edu
+# Whom:                 dbader@ece.unm.edu
 #
 # $FreeBSD$
 #
 
 PORTNAME=	grappa
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	biology
-MASTER_SITES=	http://www.cs.unm.edu/~moret/
-DISTNAME=	GRAPPA-1.03
+MASTER_SITES=	http://www.cs.unm.edu/~moret/GRAPPA/
+DISTNAME=	GRAPPA20
 
-MAINTAINER=	dbader@eece.unm.edu
+MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	Genome Rearrangements Analysis and Phylogeny Software
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libconcorde.a:${PORTSDIR}/math/concorde
-
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+PLIST_FILES=	bin/grappa bin/invdist bin/distmat
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grappa ${PREFIX}/bin
