@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.10.15
-PORTREVISION=	3
+PORTVERSION=	3.10.17
+#PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,14 +24,19 @@ PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
-		--disable-install-distdir --enable-usb \
+		--disable-install-distdir \
 		--sysconfdir=${PREFIX}/etc/apcupsd \
 		--with-serial-dev=/dev/usv
 
 OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off
-OPTIONS+=       CGI "Compile with CGI programms to show status" off
+OPTIONS+=	CGI "Compile with CGI programms to show status" off
+OPTIONS+=	USB "Compile with USB Support (READ MANUAL!!!)" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_USB)
+CONFIGURE_ARGS+=--enable-usb
+.endif
 
 .if defined(WITH_CGI)
 CONFIGURE_ARGS+=--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi
@@ -61,11 +66,7 @@ PLIST_SUB+=	POWERFL="@comment "
 
 MAN8=		"apcupsd.8"
 
-PORTDOCS=	apcupsd.pdf manual.html manual.css \
-		apcupsd.png back.png charging.png home.png main_configs.png \
-		multimon.png next.png onbatt.png online.png status.png thanks.png \
-		wininstall1.png wininstall2.png	wininstall3.png wininstall4.png \
-		wininstall5.png wininstall6.png wininstall7.png
+PORTDOCS=	manual.pdf
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -73,6 +74,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CGI=yes		if you want to build CGI support."
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want a network client."
+	@${ECHO_MSG} "  WITH_USB=yes		to compile with USB support (READ MANUAL!!!)"
 	@${ECHO_MSG} ""
 .if defined(WITH_CGI)
 	@${ECHO_MSG} "===> Building with CGI support."
@@ -85,8 +87,8 @@ post-configure:
 	${REINPLACE_CMD} -e "s|%PREFIX%|${PREFIX}|g" ${WRKSRC}/doc/apcupsd.man
 
 post-install:
-	# If the files presaved are identical with the new one, include then in
-	# the package list. So the port could be removed without problems
+# 	If the files presaved are identical with the new one, include then in
+# 	the package list. So the port could be removed without problems
 	for na in apccontrol commfailure mainsback mastertimeout \
 		  changeme commok masterconnect onbattery; do \
 		if [ -f ${PREFIX}/etc/apcupsd/$$na.orig ]; then \
@@ -95,12 +97,12 @@ post-install:
 			fi \
 		fi; \
 	done
-	${ECHO_CMD} "@unexec if [ -d %D/etc/apcupsd ]; then echo \"If you are permanently removing this port, you should do a ``rm -rf ${PREFIX}/etc/apcupsd`` to remove config files left.\" | fmt ; fi" >> ${TMPPLIST}
-	# Install sample startup script
+	${ECHO_CMD} "@unexec if [ -d %D/etc/apcupsd ]; then ${ECHO_CMD} \"If you are permanently removing this port, you should do a ``rm -rf ${PREFIX}/etc/apcupsd`` to remove config files left.\" | ${FMT} ; fi" >> ${TMPPLIST}
+# 	Install sample startup script
 	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
 	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-master.sample ${PREFIX}/etc/apcupsd/
 	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-slave.sample ${PREFIX}/etc/apcupsd/
-	# If there is already an config file it is installed as ...new
+# 	If there is already a config file it is installed as ...new
 	for na in apcupsd.conf apcupsd.css hosts.conf multimon.conf; do \
 		if [ -f ${PREFIX}/etc/apcupsd/$$na ]; then \
 			if [ -f ${PREFIX}/etc/apcupsd/$$na.new ]; then \
@@ -114,7 +116,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for filen in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/docbook/${filen} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/texi/${filen} ${DOCSDIR}
 .endfor
 .endif
 
