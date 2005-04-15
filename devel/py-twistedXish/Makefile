@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedXish
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Xish/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Xish/0.1/
@@ -16,7 +17,8 @@ DISTNAME=	TwistedXish-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	Twisted Xish is XML-ish
 
-RUN_DEPENDS=    ${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedXish-${PORTVERSION}
 
