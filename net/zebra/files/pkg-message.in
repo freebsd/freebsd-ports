@@ -1,0 +1,6 @@
+To run zebra you should add in your /etc/rc.conf these lines:
+
+defaultrouter="NO"
+router_enable="YES"
+router="%%PREFIX%%/sbin/zebractl"
+router_flags="start"
