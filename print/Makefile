@@ -55,6 +55,7 @@
     SUBDIR += dvips2ascii
     SUBDIR += dvipsk-tetex
     SUBDIR += dviselect
+    SUBDIR += dvisvg
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj

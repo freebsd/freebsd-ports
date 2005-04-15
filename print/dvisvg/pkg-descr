@@ -1,0 +1,10 @@
+DVISVG creates one SVG Document, which includes content of the selected page
+from the specified DVI file. DVISVG produces outlines for used glyphs/characters
+in DVI file as an external SVG Font.
+
+SVG Document produced by DVISVG uses external SVG Fonts so there is
+a problem with using Adobe's SVG Viewer which doesn't currently support it.
+Solution is using embeded fonts which can to be easily inserted in svg file
+from the external fonts file.
+
+WWW: http://dvisvg.sourceforge.net/

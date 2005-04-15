@@ -1,0 +1,55 @@
+# ex:ts=8
+# Ports collection makefile for:	dvisvg
+# Date created:			Apr 15, 2005
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dvisvg
+PORTVERSION=	0.7.1.d
+CATEGORIES=	print
+MASTER_SITES=	http://dvisvg.sourceforge.net/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convertor from DVI to SVG
+
+BUILD_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
+USE_GHOSTSCRIPT_RUN=	yes
+ALL_TARGET=	# empty
+MAKE_ENV=	TEXMFLOCAL=${TEXMFLOCAL}
+
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+
+PLIST_FILES=	bin/dvisvg
+MAN1=	dvisvg.1
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,[$$][(]CC[)],$$\(CC\) ${CFLAGS}," ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,/usr/share/texmf,${LOCALBASE}/${TEXMFLOCAL}," ${WRKSRC}/version.h
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/dvisvg ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dvisvg.man ${MAN1PREFIX}/man/man1/dvisvg.1
+	@${MKDIR} ${PREFIX}/${TEXMFLOCAL}/${PORTNAME}
+.for file in dvisvg.map font2svg.enc font2svg.ps
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${TEXMFLOCAL}/${PORTNAME}
+	@${ECHO_CMD} "${TEXMFLOCAL}/${PORTNAME}/${file}" >> ${TMPPLIST}
+.endfor
+	@${ECHO_CMD} "@dirrm ${TEXMFLOCAL}/${PORTNAME}" >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${MKTEXLSR}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@unexec ${MKTEXLSR}' >> ${TMPPLIST}
+
+post-install:
+	@${MKTEXLSR}
+
+.include <bsd.port.mk>
