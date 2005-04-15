@@ -7,6 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
@@ -33,17 +34,28 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--with-ltdl-lib=${LOCALBASE}/lib \
 		--with-large-files --without-rlm_sql_unixodbc \
 		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
-		--without-rlm_sql_db2 --without-rlm_krb5
+		--without-rlm_sql_db2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS=	LDAP		"With LDAP user database" off \
+OPTIONS=	KERBEROS	"With Kerberos support" off \
+		LDAP		"With LDAP user database" off \
 		MYSQL		"With MySQL user database" off \
 		PGSQL		"With PostgreSQL use database" off \
 		SNMP		"With SNMP support" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
 .include <bsd.port.pre.mk>
+
+.ifdef(WITH_KERBEROS)
+LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=${LOCALBASE}/lib
+CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=${LOCALBASE}/include
+PLIST_SUB+=	KRB5=""
+.else
+CONFIGURE_ARGS+=--without-rlm_krb5
+PLIST_SUB+=	KRB5="@comment "
+.endif
 
 .ifdef(WITH_LDAP)
 USE_OPENLDAP=	YES
@@ -129,10 +141,21 @@ post-patch:
 		< ${FILESDIR}/radiusd.sh > ${WRKDIR}/radiusd.sh
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR}
+	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR} ${EXAMPLESDIR}
 .for dict in ${DICTS}
 	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${DATADIR}/${dict}
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
+.ifdef(WITH_MYSQL)
+	${INSTALL_DATA} \
+	${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_mysql/db_mysql.sql \
+	${EXAMPLESDIR}/db_mysql.sql
+.endif
+
+.ifdef(WITH_PGSQL)
+	${INSTALL_DATA} \
+	${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_postgresql/db_postgresql.sql \
+	${EXAMPLESDIR}/db_postgresql.sql
+.endif
 
 .include <bsd.port.post.mk>

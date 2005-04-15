@@ -22,6 +22,7 @@ required_files=${radiusd_config}
 pidfile=/var/run/radiusd/radiusd.pid
 
 radiusd_enable=${radiusd_enable:-"NO"}
+start_precmd="${radiusd_start_precmd}"
 
 load_rc_config $name
 run_rc_command "$1"
