@@ -132,6 +132,7 @@
     SUBDIR += fmio
     SUBDIR += freebirth
     SUBDIR += funktrackergold
+    SUBDIR += gai-album
     SUBDIR += gaim-festival
     SUBDIR += gdam
     SUBDIR += gdesklets-cornerxmms

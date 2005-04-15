@@ -1,0 +1,6 @@
+bin/gai-album
+libdata/bonobo/servers/GNOME_gai-albumApplet.server
+share/gnome/pixmaps/gai-album-icon.png
+share/gnome/pixmaps/gai-album/naif.png
+share/gnome/pixmaps/gai-album/no_xmms.png
+@dirrm share/gnome/pixmaps/gai-album
