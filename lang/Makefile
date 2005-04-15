@@ -171,6 +171,7 @@
     SUBDIR += p5-Switch
     SUBDIR += p5-Tcl
     SUBDIR += p5-ePerl
+    SUBDIR += parrot
     SUBDIR += pbasic
     SUBDIR += pdss
     SUBDIR += perl5

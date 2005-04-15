@@ -1,0 +1,7 @@
+Parrot is the new interpreter being designed from scratch to support the
+upcoming Perl6 language.  It is being designed as a standalone virtual
+machine that can be used to execute bytecode compiled dynamic languages
+such as Perl6, but also Perl5.  Ideally, Parrot can be used to support
+other dynamic, bytecode-compiled languages such as Python, Ruby and Tcl.
+
+WWW: http://www.parrotcode.org/
