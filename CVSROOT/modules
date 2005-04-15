@@ -9626,6 +9626,18 @@ py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-twisted	ports/devel/py-twisted
+py-twistedConch	ports/security/py-twistedConch
+py-twistedCore	ports/devel/py-twistedCore
+py-twistedFlow	ports/devel/py-twistedFlow
+py-twistedLore	ports/nextproc/py-twistedLore
+py-twistedMail	ports/mail/py-twistedMail
+py-twistedNames	ports/dns/py-twistedNames
+py-twistedNews	ports/news/py-twistedNews
+py-twistedPair	ports/net/py-twistedPair
+py-twistedRunner	ports/devel/py-twistedRunner
+py-twistedWeb	ports/www/py-twistedWeb
+py-twistedWords	ports/net/py-twistedWords
+py-twistedXish	ports/devel/py-twistedXish
 py-twofish	ports/security/py-twofish
 py-ui		ports/devel/py-ui
 py-unit		ports/devel/py-unit
@@ -9650,6 +9662,7 @@ py-xmms		ports/audio/py-xmms
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-yaml		ports/devel/py-yaml
 py-yapsnmp	ports/net-mgmt/py-yapsnmp
+py-zopeInterface	ports/devel/py-zopeInterface
 py-zpt		ports/textproc/py-zpt
 py-zsi		ports/net/py-zsi
 py2html		ports/textproc/py2html
