@@ -7,16 +7,18 @@
 
 PORTNAME=	twistedFlow
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Flow/0.1/ \
-    http://tmrc.mit.edu/mirror/twisted/Flow/0.1/
+		http://tmrc.mit.edu/mirror/twisted/Flow/0.1/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedFlow-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	Generator based asynchronous result flows
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedFlow-${PORTVERSION}
 
