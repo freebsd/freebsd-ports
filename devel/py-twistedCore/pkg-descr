@@ -1,0 +1,21 @@
+Twisted is an asynchronous networking framework written in python. It is used
+by most of the servers, clients and protocols that are part of other
+Twisted projects.
+
+    * twisted.cred, a pluggable authentication system for servers;
+    * twisted.enterprise, an asynchonous adaptor of Python DB-API 2.0 database
+	interfaces;
+    * twisted.internet, the Twisted event loop;
+    * twisted.manhole, a debugging service;
+    * twisted.persisted, a collection of object persistance systems
+    * twisted.protocols, a collection of simple network protocols and helper
+	utilities;
+    * twisted.python, a set of Twisted programming abstractions;
+    * twisted.spread, a network transport, serializer and object broker;
+    * twisted.trial, a unit-testing framework; and
+
+Twisted is available under the MIT Free Software licence. 
+
+WWW: http://twistedmatrix.com/
+
+-- Neal Nelson <neal@nelson.name>
