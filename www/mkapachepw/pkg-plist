@@ -1,0 +1,8 @@
+bin/mkapachepw.py
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
+%%PORTDOCS%%%%DOCSDIR%%/mkapachepw-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/mkapachepw.html
+%%PORTDOCS%%%%DOCSDIR%%/mkapachepw.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mkapachepw.ps
+%%PORTDOCS%%%%DOCSDIR%%/mkapachepw.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

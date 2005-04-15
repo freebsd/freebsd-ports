@@ -1,0 +1,15 @@
+'mkapachepw' is an Apache user/group management package with a rich set of
+features:
+
+  - automatically create apache users/groups from underlying os users/groups
+  - break large, complex user & group data into separately managed files
+  - specify which particular users/groups are to be included or excluded
+  - catch (and prevent) redefinition of user/groups
+
+'mkapachepw' is a pure-Python application and should run on any Unix system
+that support Python 2.4 or later.
+
+'mkapachepw' is free for individual, non-commerical, personal use.   Use in any
+setting where there is any remuneration, direct or indirect, requires payment
+of a licensing fee.  Individual, multiple, and enterprise licensing is
+available.  Contact mkapachepw@tundraware.com for current pricing.
