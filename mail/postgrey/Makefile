@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.18
+PORTVERSION=	1.21
 CATEGORIES=	mail
 MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 
 USE_PERL5=	yes
 USE_RC_SUBR=	yes
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 ETCFILES=	whitelist_clients whitelist_recipients
@@ -51,6 +52,9 @@ pre-extract:
 .if ${PERL_LEVEL} < 500600
 IGNORE=	Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s#/etc/#${PREFIX}/etc/#" ${WRKSRC}/postgrey
 
 pre-install:
 	${SED}	-e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%RC_SUBR%%#${RC_SUBR}#g' \

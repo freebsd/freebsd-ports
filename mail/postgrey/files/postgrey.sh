@@ -36,10 +36,7 @@ stop_postcmd()
 postgrey_enable=${postgrey_enable:-"NO"}
 postgrey_pidfile=${postgrey_pidfile:-"/var/run/postgrey.pid"}
 postgrey_flags=${postgrey_flags:-"--pidfile=${postgrey_pidfile} \
-	--inet=10023 -d --user=postgrey --group=postgrey --dbdir=/var/db/postgrey \
-	--whitelist-clients=%%PREFIX%%/etc/postfix/postgrey_whitelist_clients \
-	--whitelist-clients=%%PREFIX%%/etc/postfix/postgrey_whitelist_clients.local \
-	--whitelist-recipients=%%PREFIX%%/etc/postfix/postgrey_whitelist_recipients"}
+	--inet=10023 -d --user=postgrey --group=postgrey --dbdir=/var/db/postgrey"}
 
 pidfile="${postgrey_pidfile}"
 
