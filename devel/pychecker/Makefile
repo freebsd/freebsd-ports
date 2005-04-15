@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Python source code checking tool to help hunting common bugs
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
