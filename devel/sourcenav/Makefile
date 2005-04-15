@@ -7,12 +7,12 @@
 
 PORTNAME=	sourcenav
 PORTVERSION=	5.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Source code analysis tool
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
@@ -28,7 +28,7 @@ NO_MTREE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 600000
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
+EXTRA_PATCHES+=     ${FILESDIR}/FreeBSD6-cdefs.h
 .endif
 
 .include <bsd.port.post.mk>
