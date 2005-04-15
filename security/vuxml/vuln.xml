@@ -5384,9 +5384,12 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>wget</name>
-	<name>wget+ipv6</name>
 	<name>wget-devel</name>
+	<range><lt>1.10.a1</lt></range>
+      </package>
+      <package>
 	<name>wgetpro</name>
+	<name>wget+ipv6</name>
 	<range><ge>0</ge></range>
       </package>
     </affects>
@@ -5422,7 +5425,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-09</discovery>
       <entry>2004-12-14</entry>
-      <modified>2005-02-23</modified>
+      <modified>2005-04-15</modified>
     </dates>
   </vuln>
 
