@@ -12,7 +12,7 @@
 #
 # You may also wish to use the following variables to fine-tune startup:
 #quagga_flags="-d"
-#quagga_daemons="zebra ripd ripng ospfd ospf6d bgpd isisd"
+#quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"
 #
 # If the quagga daemons require additional shared libraries to start,
 # use the following variable to run ldconfig(8) in advance:
