@@ -30,6 +30,7 @@ PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 USE_AUTOCONF_VER=	213
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp \
 	--enable-xlibHack --enable-onTheSpot
 RANLIB=		ranlib
@@ -37,12 +38,9 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 600006
-BROKEN=		"Depends on libxpg4 which was removed from FreeBSD 6.0"
-.endif
-
-.if !defined(NOPORTDOCS)
 post-patch:
+	@${REINPLACE_CMD} -e '/xpg4/d' ${WRKSRC}/configure.in
+.if !defined(NOPORTDOCS)
 	@${CP} ${FILESDIR}/README.FreeBSD.in ${TOPDIR}/README.FreeBSD.JP.in
 	@${SED} -e 's%AC_OUTPUT(Makefile tkConfig.sh)%AC_OUTPUT(Makefile tkConfig.sh ../README.FreeBSD.JP)%' \
 	  < ${WRKSRC}/configure.in \
