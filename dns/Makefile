@@ -75,6 +75,7 @@
     SUBDIR += py-adns
     SUBDIR += py-dns
     SUBDIR += py-dnspython
+    SUBDIR += py-twistedNames
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += sheerdns
