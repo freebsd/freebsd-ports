@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedMail
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	mail devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Mail/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Mail/0.1/
@@ -16,8 +17,9 @@ DISTNAME=	TwistedMail-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	An SMTP, IMAP and POP protocol implementation with clients and servers
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
 		${PYTHON_SITELIBDIR}/twisted/names:${PORTSDIR}/dns/py-twistedNames
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedMail-${PORTVERSION}
 
