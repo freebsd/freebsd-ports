@@ -1,0 +1,36 @@
+%%S%%/twisted/xish/__init__.py
+%%S%%/twisted/xish/__init__.pyc
+%%S%%/twisted/xish/__init__.pyo
+%%S%%/twisted/xish/domish.py
+%%S%%/twisted/xish/domish.pyc
+%%S%%/twisted/xish/domish.pyo
+%%S%%/twisted/xish/test/__init__.py
+%%S%%/twisted/xish/test/__init__.pyc
+%%S%%/twisted/xish/test/__init__.pyo
+%%S%%/twisted/xish/test/test_domish.py
+%%S%%/twisted/xish/test/test_domish.pyc
+%%S%%/twisted/xish/test/test_domish.pyo
+%%S%%/twisted/xish/test/test_xishutil.py
+%%S%%/twisted/xish/test/test_xishutil.pyc
+%%S%%/twisted/xish/test/test_xishutil.pyo
+%%S%%/twisted/xish/test/test_xmlstream.py
+%%S%%/twisted/xish/test/test_xmlstream.pyc
+%%S%%/twisted/xish/test/test_xmlstream.pyo
+%%S%%/twisted/xish/test/test_xpath.py
+%%S%%/twisted/xish/test/test_xpath.pyc
+%%S%%/twisted/xish/test/test_xpath.pyo
+%%S%%/twisted/xish/utility.py
+%%S%%/twisted/xish/utility.pyc
+%%S%%/twisted/xish/utility.pyo
+%%S%%/twisted/xish/xmlstream.py
+%%S%%/twisted/xish/xmlstream.pyc
+%%S%%/twisted/xish/xmlstream.pyo
+%%S%%/twisted/xish/xpath.py
+%%S%%/twisted/xish/xpath.pyc
+%%S%%/twisted/xish/xpath.pyo
+%%S%%/twisted/xish/xpathparser.g
+%%S%%/twisted/xish/xpathparser.py
+%%S%%/twisted/xish/xpathparser.pyc
+%%S%%/twisted/xish/xpathparser.pyo
+@dirrm %%S%%/twisted/xish/test
+@dirrm %%S%%/twisted/xish
