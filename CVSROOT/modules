@@ -5831,6 +5831,7 @@ mixxx		ports/audio/mixxx
 mjpegtools	ports/multimedia/mjpegtools
 mjpegtools-yuvfilters	ports/multimedia/mjpegtools-yuvfilters
 mk-aspell	ports/textproc/mk-aspell
+mkapachepw	ports/www/mkapachepw
 mkbold		ports/x11-fonts/mkbold
 mkbold-mkitalic	ports/x11-fonts/mkbold-mkitalic
 mkcatalog	ports/textproc/mkcatalog
