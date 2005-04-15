@@ -348,6 +348,7 @@
     SUBDIR += pear-Text_Password
     SUBDIR += pf
     SUBDIR += pft
+    SUBDIR += pfw
     SUBDIR += pgp
     SUBDIR += pgp6
     SUBDIR += pgpdump
