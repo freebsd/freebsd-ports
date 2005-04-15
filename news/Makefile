@@ -71,6 +71,7 @@
     SUBDIR += papercut
     SUBDIR += pgpmoose
     SUBDIR += plor
+    SUBDIR += py-twistedNews
     SUBDIR += pyne
     SUBDIR += rawdog
     SUBDIR += rkive

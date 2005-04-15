@@ -1,0 +1,29 @@
+%%S%%/twisted/news/__init__.py
+%%S%%/twisted/news/__init__.pyc
+%%S%%/twisted/news/__init__.pyo
+%%S%%/twisted/news/database.py
+%%S%%/twisted/news/database.pyc
+%%S%%/twisted/news/database.pyo
+%%S%%/twisted/news/news.py
+%%S%%/twisted/news/news.pyc
+%%S%%/twisted/news/news.pyo
+%%S%%/twisted/news/nntp.py
+%%S%%/twisted/news/nntp.pyc
+%%S%%/twisted/news/nntp.pyo
+%%S%%/twisted/news/tap.py
+%%S%%/twisted/news/tap.pyc
+%%S%%/twisted/news/tap.pyo
+%%S%%/twisted/news/test/__init__.py
+%%S%%/twisted/news/test/__init__.pyc
+%%S%%/twisted/news/test/__init__.pyo
+%%S%%/twisted/news/test/test_news.py
+%%S%%/twisted/news/test/test_news.pyc
+%%S%%/twisted/news/test/test_news.pyo
+%%S%%/twisted/news/test/test_nntp.py
+%%S%%/twisted/news/test/test_nntp.pyc
+%%S%%/twisted/news/test/test_nntp.pyo
+%%S%%/twisted/plugins/twisted_news.py
+%%S%%/twisted/plugins/twisted_news.pyc
+%%S%%/twisted/plugins/twisted_news.pyo
+@dirrm %%S%%/twisted/news/test
+@dirrm %%S%%/twisted/news
