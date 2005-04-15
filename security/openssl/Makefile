@@ -10,7 +10,7 @@ PORTNAME=	openssl
 PORTVERSION=	0.9.7
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
-PORTVERSION=	0.9.7f
+PORTVERSION=	0.9.7g
 PORTREVISION?=	0
 .endif
 CATEGORIES=	security devel
