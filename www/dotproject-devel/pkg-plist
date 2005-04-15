@@ -1,0 +1,990 @@
+www/dotproject/COPYING
+www/dotproject/ChangeLog
+www/dotproject/LICENSE
+www/dotproject/README
+www/dotproject/classes/CustomFields.class.php
+www/dotproject/classes/authenticator.class.php
+www/dotproject/classes/customfieldsparser.class.php
+www/dotproject/classes/date.class.php
+www/dotproject/classes/dp.class.php
+www/dotproject/classes/event_queue.class.php
+www/dotproject/classes/index.html
+www/dotproject/classes/libmail.class.php
+www/dotproject/classes/permissions.class.php
+www/dotproject/classes/query.class.php
+www/dotproject/classes/ui.class.php
+www/dotproject/db/README
+www/dotproject/db/dotproject.sql
+www/dotproject/db/index.html
+www/dotproject/db/upgrade_101_to_102.sql
+www/dotproject/db/upgrade_102_to_20alpha.sql
+www/dotproject/db/upgrade_20_to_201.sql
+www/dotproject/db/upgrade_20alpha_to_20beta.sql
+www/dotproject/db/upgrade_20beta_to_20.sql
+www/dotproject/db/upgrade_contacts.php
+www/dotproject/db/upgrade_contacts_company.php
+www/dotproject/db/upgrade_latest.php
+www/dotproject/db/upgrade_latest.sql
+www/dotproject/db/upgrade_permissions.php
+www/dotproject/db/upgrade_to_20.php
+www/dotproject/db/upgrade_to_201.php
+www/dotproject/db/upgrade_to_20beta.php
+www/dotproject/docs/about.html
+www/dotproject/docs/check.php
+www/dotproject/docs/index.html
+www/dotproject/docs/main.css
+www/dotproject/docs/nav.html
+www/dotproject/docs/phpinfo.php
+www/dotproject/docs/rfc0001.00.html
+www/dotproject/files/.cvsignore
+www/dotproject/files/.htaccess
+www/dotproject/files/index.html
+www/dotproject/files/temp/.cvsignore
+www/dotproject/files/temp/.htaccess
+www/dotproject/files/temp/index.html
+www/dotproject/fileviewer.php
+www/dotproject/functions/admin_func.php
+www/dotproject/functions/forums_func.php
+www/dotproject/functions/index.html
+www/dotproject/functions/projects_func.php
+www/dotproject/functions/tasks_func.php
+www/dotproject/images/arrow-down.gif
+www/dotproject/images/arrow-right.gif
+www/dotproject/images/block-end-16.png
+www/dotproject/images/block-start-16.png
+www/dotproject/images/calendar.gif
+www/dotproject/images/clip.png
+www/dotproject/images/colorchart.gif
+www/dotproject/images/corner-dots.gif
+www/dotproject/images/icons/1.gif
+www/dotproject/images/icons/admin.gif
+www/dotproject/images/icons/calendar.gif
+www/dotproject/images/icons/ci.png
+www/dotproject/images/icons/co.png
+www/dotproject/images/icons/collapse.gif
+www/dotproject/images/icons/companies.gif
+www/dotproject/images/icons/customfields.png
+www/dotproject/images/icons/dialog-warning5.png
+www/dotproject/images/icons/dp.gif
+www/dotproject/images/icons/expand.gif
+www/dotproject/images/icons/graph.gif
+www/dotproject/images/icons/index.html
+www/dotproject/images/icons/low.gif
+www/dotproject/images/icons/mail.gif
+www/dotproject/images/icons/milestone.gif
+www/dotproject/images/icons/pencil.gif
+www/dotproject/images/icons/pin.gif
+www/dotproject/images/icons/posticon.gif
+www/dotproject/images/icons/priority+1.gif
+www/dotproject/images/icons/priority+2.gif
+www/dotproject/images/icons/priority-1.gif
+www/dotproject/images/icons/priority-2.gif
+www/dotproject/images/icons/rc-gui-status-downgr.png
+www/dotproject/images/icons/shim.gif
+www/dotproject/images/icons/stock_attach-16.png
+www/dotproject/images/icons/stock_cancel-16.png
+www/dotproject/images/icons/stock_delete-16.png
+www/dotproject/images/icons/stock_edit-16.png
+www/dotproject/images/icons/stock_help-16.png
+www/dotproject/images/icons/stock_new.png
+www/dotproject/images/icons/stock_new_small.png
+www/dotproject/images/icons/stock_ok-16.png
+www/dotproject/images/icons/stock_print-16.png
+www/dotproject/images/icons/stock_trash_full-16.png
+www/dotproject/images/icons/ticketsmith.gif
+www/dotproject/images/icons/trash.gif
+www/dotproject/images/icons/unpin.gif
+www/dotproject/images/icons/updown.gif
+www/dotproject/images/icons/users.gif
+www/dotproject/images/index.html
+www/dotproject/images/log-error.gif
+www/dotproject/images/log-info.gif
+www/dotproject/images/log-notice.gif
+www/dotproject/images/navfirst.gif
+www/dotproject/images/navlast.gif
+www/dotproject/images/navleft.gif
+www/dotproject/images/navright.gif
+www/dotproject/images/next.gif
+www/dotproject/images/obj/alert.gif
+www/dotproject/images/obj/contact.gif
+www/dotproject/images/obj/dotgreen.gif
+www/dotproject/images/obj/dotgrey.gif
+www/dotproject/images/obj/dotredanim.gif
+www/dotproject/images/obj/dotyellowanim.gif
+www/dotproject/images/obj/email.gif
+www/dotproject/images/obj/error.gif
+www/dotproject/images/obj/event-attendees.gif
+www/dotproject/images/obj/event.gif
+www/dotproject/images/obj/folder-shared.gif
+www/dotproject/images/obj/folder.gif
+www/dotproject/images/obj/help.gif
+www/dotproject/images/obj/index.html
+www/dotproject/images/obj/lock.gif
+www/dotproject/images/obj/palette.gif
+www/dotproject/images/obj/phone.gif
+www/dotproject/images/obj/warning.gif
+www/dotproject/images/prev.gif
+www/dotproject/images/shim.gif
+www/dotproject/images/smartfolder.gif
+www/dotproject/images/trash_small.gif
+www/dotproject/images/view.week.gif
+www/dotproject/images/week.gif
+www/dotproject/includes/.cvsignore
+www/dotproject/includes/.htaccess
+www/dotproject/includes/config-dist.php
+www/dotproject/includes/db_adodb.php
+www/dotproject/includes/db_connect.php
+www/dotproject/includes/gateway.pl
+www/dotproject/includes/index.html
+www/dotproject/includes/main_functions.php
+www/dotproject/includes/permissions.php
+www/dotproject/includes/sendpass.php
+www/dotproject/includes/session.php
+www/dotproject/includes/version.php
+www/dotproject/index.php
+www/dotproject/install/db.php
+www/dotproject/install/do_install_db.php
+www/dotproject/install/dp.png
+www/dotproject/install/index.php
+www/dotproject/install/install.inc.php
+www/dotproject/install/vw_idx_check.php
+www/dotproject/js/base.js
+www/dotproject/js/collapse.js
+www/dotproject/lib/PEAR/Contact_Vcard_Build.php
+www/dotproject/lib/PEAR/Contact_Vcard_Parse.php
+www/dotproject/lib/PEAR/Date.php
+www/dotproject/lib/PEAR/Date/Calc.php
+www/dotproject/lib/PEAR/Date/Human.php
+www/dotproject/lib/PEAR/Date/Span.php
+www/dotproject/lib/PEAR/Date/TimeZone.php
+www/dotproject/lib/adodb/adodb-csvlib.inc.php
+www/dotproject/lib/adodb/adodb-datadict.inc.php
+www/dotproject/lib/adodb/adodb-error.inc.php
+www/dotproject/lib/adodb/adodb-errorhandler.inc.php
+www/dotproject/lib/adodb/adodb-errorpear.inc.php
+www/dotproject/lib/adodb/adodb-exceptions.inc.php
+www/dotproject/lib/adodb/adodb-iterator.inc.php
+www/dotproject/lib/adodb/adodb-lib.inc.php
+www/dotproject/lib/adodb/adodb-pager.inc.php
+www/dotproject/lib/adodb/adodb-pear.inc.php
+www/dotproject/lib/adodb/adodb-perf.inc.php
+www/dotproject/lib/adodb/adodb-php4.inc.php
+www/dotproject/lib/adodb/adodb-time.inc.php
+www/dotproject/lib/adodb/adodb-time.zip
+www/dotproject/lib/adodb/adodb-xmlschema.inc.php
+www/dotproject/lib/adodb/adodb.inc.php
+www/dotproject/lib/adodb/contrib/toxmlrpc.inc.php
+www/dotproject/lib/adodb/cute_icons_for_site/adodb.gif
+www/dotproject/lib/adodb/cute_icons_for_site/adodb2.gif
+www/dotproject/lib/adodb/datadict/datadict-access.inc.php
+www/dotproject/lib/adodb/datadict/datadict-db2.inc.php
+www/dotproject/lib/adodb/datadict/datadict-firebird.inc.php
+www/dotproject/lib/adodb/datadict/datadict-generic.inc.php
+www/dotproject/lib/adodb/datadict/datadict-ibase.inc.php
+www/dotproject/lib/adodb/datadict/datadict-informix.inc.php
+www/dotproject/lib/adodb/datadict/datadict-mssql.inc.php
+www/dotproject/lib/adodb/datadict/datadict-mysql.inc.php
+www/dotproject/lib/adodb/datadict/datadict-oci8.inc.php
+www/dotproject/lib/adodb/datadict/datadict-postgres.inc.php
+www/dotproject/lib/adodb/datadict/datadict-sybase.inc.php
+www/dotproject/lib/adodb/docs/docs-adodb.htm
+www/dotproject/lib/adodb/docs/docs-datadict.htm
+www/dotproject/lib/adodb/docs/docs-perf.htm
+www/dotproject/lib/adodb/docs/docs-session.htm
+www/dotproject/lib/adodb/docs/old-changelog.htm
+www/dotproject/lib/adodb/docs/readme.htm
+www/dotproject/lib/adodb/docs/tips_portable_sql.htm
+www/dotproject/lib/adodb/docs/tute.htm
+www/dotproject/lib/adodb/drivers/adodb-access.inc.php
+www/dotproject/lib/adodb/drivers/adodb-ado.inc.php
+www/dotproject/lib/adodb/drivers/adodb-ado_access.inc.php
+www/dotproject/lib/adodb/drivers/adodb-ado_mssql.inc.php
+www/dotproject/lib/adodb/drivers/adodb-borland_ibase.inc.php
+www/dotproject/lib/adodb/drivers/adodb-csv.inc.php
+www/dotproject/lib/adodb/drivers/adodb-db2.inc.php
+www/dotproject/lib/adodb/drivers/adodb-fbsql.inc.php
+www/dotproject/lib/adodb/drivers/adodb-firebird.inc.php
+www/dotproject/lib/adodb/drivers/adodb-ibase.inc.php
+www/dotproject/lib/adodb/drivers/adodb-informix.inc.php
+www/dotproject/lib/adodb/drivers/adodb-informix72.inc.php
+www/dotproject/lib/adodb/drivers/adodb-ldap.inc.php
+www/dotproject/lib/adodb/drivers/adodb-mssql.inc.php
+www/dotproject/lib/adodb/drivers/adodb-mssqlpo.inc.php
+www/dotproject/lib/adodb/drivers/adodb-mysql.inc.php
+www/dotproject/lib/adodb/drivers/adodb-mysqli.inc.php
+www/dotproject/lib/adodb/drivers/adodb-mysqlt.inc.php
+www/dotproject/lib/adodb/drivers/adodb-netezza.inc.php
+www/dotproject/lib/adodb/drivers/adodb-oci8.inc.php
+www/dotproject/lib/adodb/drivers/adodb-oci805.inc.php
+www/dotproject/lib/adodb/drivers/adodb-oci8po.inc.php
+www/dotproject/lib/adodb/drivers/adodb-odbc.inc.php
+www/dotproject/lib/adodb/drivers/adodb-odbc_mssql.inc.php
+www/dotproject/lib/adodb/drivers/adodb-odbc_oracle.inc.php
+www/dotproject/lib/adodb/drivers/adodb-odbtp.inc.php
+www/dotproject/lib/adodb/drivers/adodb-odbtp_unicode.inc.php
+www/dotproject/lib/adodb/drivers/adodb-oracle.inc.php
+www/dotproject/lib/adodb/drivers/adodb-pdo.inc.php
+www/dotproject/lib/adodb/drivers/adodb-postgres.inc.php
+www/dotproject/lib/adodb/drivers/adodb-postgres64.inc.php
+www/dotproject/lib/adodb/drivers/adodb-postgres7.inc.php
+www/dotproject/lib/adodb/drivers/adodb-proxy.inc.php
+www/dotproject/lib/adodb/drivers/adodb-sapdb.inc.php
+www/dotproject/lib/adodb/drivers/adodb-sqlanywhere.inc.php
+www/dotproject/lib/adodb/drivers/adodb-sqlite.inc.php
+www/dotproject/lib/adodb/drivers/adodb-sqlitepo.inc.php
+www/dotproject/lib/adodb/drivers/adodb-sybase.inc.php
+www/dotproject/lib/adodb/drivers/adodb-vfp.inc.php
+www/dotproject/lib/adodb/lang/adodb-bg.inc.php
+www/dotproject/lib/adodb/lang/adodb-bgutf8.inc.php
+www/dotproject/lib/adodb/lang/adodb-ca.inc.php
+www/dotproject/lib/adodb/lang/adodb-cn.inc.php
+www/dotproject/lib/adodb/lang/adodb-cz.inc.php
+www/dotproject/lib/adodb/lang/adodb-de.inc.php
+www/dotproject/lib/adodb/lang/adodb-en.inc.php
+www/dotproject/lib/adodb/lang/adodb-es.inc.php
+www/dotproject/lib/adodb/lang/adodb-fr.inc.php
+www/dotproject/lib/adodb/lang/adodb-it.inc.php
+www/dotproject/lib/adodb/lang/adodb-nl.inc.php
+www/dotproject/lib/adodb/lang/adodb-pl.inc.php
+www/dotproject/lib/adodb/lang/adodb-pt-br.inc.php
+www/dotproject/lib/adodb/lang/adodb-ro.inc.php
+www/dotproject/lib/adodb/lang/adodb-ru1251.inc.php
+www/dotproject/lib/adodb/lang/adodb-sv.inc.php
+www/dotproject/lib/adodb/license.txt
+www/dotproject/lib/adodb/pear/Auth/Container/ADOdb.php
+www/dotproject/lib/adodb/pear/readme.Auth.txt
+www/dotproject/lib/adodb/perf/perf-db2.inc.php
+www/dotproject/lib/adodb/perf/perf-informix.inc.php
+www/dotproject/lib/adodb/perf/perf-mssql.inc.php
+www/dotproject/lib/adodb/perf/perf-mysql.inc.php
+www/dotproject/lib/adodb/perf/perf-oci8.inc.php
+www/dotproject/lib/adodb/perf/perf-postgres.inc.php
+www/dotproject/lib/adodb/pivottable.inc.php
+www/dotproject/lib/adodb/readme.txt
+www/dotproject/lib/adodb/rsfilter.inc.php
+www/dotproject/lib/adodb/server.php
+www/dotproject/lib/adodb/session/adodb-compress-bzip2.php
+www/dotproject/lib/adodb/session/adodb-compress-gzip.php
+www/dotproject/lib/adodb/session/adodb-cryptsession.php
+www/dotproject/lib/adodb/session/adodb-encrypt-mcrypt.php
+www/dotproject/lib/adodb/session/adodb-encrypt-md5.php
+www/dotproject/lib/adodb/session/adodb-encrypt-secret.php
+www/dotproject/lib/adodb/session/adodb-sess.txt
+www/dotproject/lib/adodb/session/adodb-session-clob.php
+www/dotproject/lib/adodb/session/adodb-session.php
+www/dotproject/lib/adodb/session/adodb-sessions.mysql.sql
+www/dotproject/lib/adodb/session/adodb-sessions.oracle.clob.sql
+www/dotproject/lib/adodb/session/adodb-sessions.oracle.sql
+www/dotproject/lib/adodb/session/crypt.inc.php
+www/dotproject/lib/adodb/session/old/adodb-cryptsession.php
+www/dotproject/lib/adodb/session/old/adodb-session-clob.php
+www/dotproject/lib/adodb/session/old/adodb-session.php
+www/dotproject/lib/adodb/session/old/crypt.inc.php
+www/dotproject/lib/adodb/tests/benchmark.php
+www/dotproject/lib/adodb/tests/client.php
+www/dotproject/lib/adodb/tests/pdo.php
+www/dotproject/lib/adodb/tests/test-datadict.php
+www/dotproject/lib/adodb/tests/test-perf.php
+www/dotproject/lib/adodb/tests/test-pgblob.php
+www/dotproject/lib/adodb/tests/test-php5.php
+www/dotproject/lib/adodb/tests/test-xmlschema.php
+www/dotproject/lib/adodb/tests/test.php
+www/dotproject/lib/adodb/tests/test2.php
+www/dotproject/lib/adodb/tests/test3.php
+www/dotproject/lib/adodb/tests/test4.php
+www/dotproject/lib/adodb/tests/test5.php
+www/dotproject/lib/adodb/tests/test_rs_array.php
+www/dotproject/lib/adodb/tests/testcache.php
+www/dotproject/lib/adodb/tests/testdatabases.inc.php
+www/dotproject/lib/adodb/tests/testgenid.php
+www/dotproject/lib/adodb/tests/testmssql.php
+www/dotproject/lib/adodb/tests/testoci8.php
+www/dotproject/lib/adodb/tests/testoci8cursor.php
+www/dotproject/lib/adodb/tests/testpaging.php
+www/dotproject/lib/adodb/tests/testpear.php
+www/dotproject/lib/adodb/tests/testsessions.php
+www/dotproject/lib/adodb/tests/time.php
+www/dotproject/lib/adodb/tests/tmssql.php
+www/dotproject/lib/adodb/tests/xmlschema.xml
+www/dotproject/lib/adodb/toexport.inc.php
+www/dotproject/lib/adodb/tohtml.inc.php
+www/dotproject/lib/adodb/xmlschema.dtd
+www/dotproject/lib/adodb/xsl/convert-0.1-0.2.xsl
+www/dotproject/lib/adodb/xsl/convert-0.2-0.1.xsl
+www/dotproject/lib/calendar/README
+www/dotproject/lib/calendar/calendar-dp.css
+www/dotproject/lib/calendar/calendar.js
+www/dotproject/lib/calendar/lang/calendar-br.js
+www/dotproject/lib/calendar/lang/calendar-ca.js
+www/dotproject/lib/calendar/lang/calendar-cs-win.js
+www/dotproject/lib/calendar/lang/calendar-da.js
+www/dotproject/lib/calendar/lang/calendar-du.js
+www/dotproject/lib/calendar/lang/calendar-el.js
+www/dotproject/lib/calendar/lang/calendar-en.js
+www/dotproject/lib/calendar/lang/calendar-es.js
+www/dotproject/lib/calendar/lang/calendar-fr.js
+www/dotproject/lib/calendar/lang/calendar-it.js
+www/dotproject/lib/calendar/lang/calendar-nl.js
+www/dotproject/lib/calendar/lang/calendar-ro.js
+www/dotproject/lib/calendar/lang/calendar-sp.js
+www/dotproject/lib/calendar/lang/calendar-sw.js
+www/dotproject/lib/ezpdf/class.ezpdf.php
+www/dotproject/lib/ezpdf/class.pdf.php
+www/dotproject/lib/ezpdf/fonts/Helvetica-Bold.afm
+www/dotproject/lib/ezpdf/fonts/Helvetica.afm
+www/dotproject/lib/index.html
+www/dotproject/lib/jpgraph/QPL.txt
+www/dotproject/lib/jpgraph/README
+www/dotproject/lib/jpgraph/README.dotproject
+www/dotproject/lib/jpgraph/index.html
+www/dotproject/lib/jpgraph/src/imgdata_diamonds.inc
+www/dotproject/lib/jpgraph/src/index.html
+www/dotproject/lib/jpgraph/src/jpg-config.inc
+www/dotproject/lib/jpgraph/src/jpgraph.php
+www/dotproject/lib/jpgraph/src/jpgraph_bar.php
+www/dotproject/lib/jpgraph/src/jpgraph_canvas.php
+www/dotproject/lib/jpgraph/src/jpgraph_canvtools.php
+www/dotproject/lib/jpgraph/src/jpgraph_error.php
+www/dotproject/lib/jpgraph/src/jpgraph_gantt.php
+www/dotproject/lib/jpgraph/src/jpgraph_gradient.php
+www/dotproject/lib/jpgraph/src/jpgraph_iconplot.php
+www/dotproject/lib/jpgraph/src/jpgraph_line.php
+www/dotproject/lib/jpgraph/src/jpgraph_log.php
+www/dotproject/lib/jpgraph/src/jpgraph_pie.php
+www/dotproject/lib/jpgraph/src/jpgraph_pie3d.php
+www/dotproject/lib/jpgraph/src/jpgraph_plotband.php
+www/dotproject/lib/jpgraph/src/jpgraph_plotmark.inc
+www/dotproject/lib/phpgacl/AUTHORS
+www/dotproject/lib/phpgacl/CHANGELOG
+www/dotproject/lib/phpgacl/COPYING.lib
+www/dotproject/lib/phpgacl/CREDITS
+www/dotproject/lib/phpgacl/Cache_Lite/Cache_Lite.php
+www/dotproject/lib/phpgacl/Cache_Lite/Hashed_Cache_Lite.php
+www/dotproject/lib/phpgacl/Cache_Lite/LICENSE
+www/dotproject/lib/phpgacl/FAQ
+www/dotproject/lib/phpgacl/README
+www/dotproject/lib/phpgacl/TODO
+www/dotproject/lib/phpgacl/admin/about.php
+www/dotproject/lib/phpgacl/admin/acl_admin.php
+www/dotproject/lib/phpgacl/admin/acl_debug.php
+www/dotproject/lib/phpgacl/admin/acl_list.php
+www/dotproject/lib/phpgacl/admin/acl_test.php
+www/dotproject/lib/phpgacl/admin/admin.css
+www/dotproject/lib/phpgacl/admin/admin_functions.js
+www/dotproject/lib/phpgacl/admin/assign_group.php
+www/dotproject/lib/phpgacl/admin/edit_group.php
+www/dotproject/lib/phpgacl/admin/edit_object_sections.php
+www/dotproject/lib/phpgacl/admin/edit_objects.php
+www/dotproject/lib/phpgacl/admin/gacl_admin.inc.php
+www/dotproject/lib/phpgacl/admin/group_admin.php
+www/dotproject/lib/phpgacl/admin/images/bot-l.png
+www/dotproject/lib/phpgacl/admin/images/bot-r.png
+www/dotproject/lib/phpgacl/admin/images/div-l.png
+www/dotproject/lib/phpgacl/admin/images/div-r.png
+www/dotproject/lib/phpgacl/admin/images/logo.png
+www/dotproject/lib/phpgacl/admin/images/mid-l.png
+www/dotproject/lib/phpgacl/admin/images/mid-r.png
+www/dotproject/lib/phpgacl/admin/images/spacer.gif
+www/dotproject/lib/phpgacl/admin/images/tab-off-l.png
+www/dotproject/lib/phpgacl/admin/images/tab-off-r.png
+www/dotproject/lib/phpgacl/admin/images/tab-on-l.png
+www/dotproject/lib/phpgacl/admin/images/tab-on-r.png
+www/dotproject/lib/phpgacl/admin/images/top-l.png
+www/dotproject/lib/phpgacl/admin/images/top-r.png
+www/dotproject/lib/phpgacl/admin/index.php
+www/dotproject/lib/phpgacl/admin/object_search.php
+www/dotproject/lib/phpgacl/admin/s.gif
+www/dotproject/lib/phpgacl/admin/test.php
+www/dotproject/lib/phpgacl/docs/manual.html
+www/dotproject/lib/phpgacl/docs/manual.pdf
+www/dotproject/lib/phpgacl/docs/manual.sxw
+www/dotproject/lib/phpgacl/docs/manual.txt
+www/dotproject/lib/phpgacl/docs/manual_html_7dced6ce.png
+www/dotproject/lib/phpgacl/docs/manual_html_m481ab4b3.png
+www/dotproject/lib/phpgacl/docs/manual_html_m48c2db5c.png
+www/dotproject/lib/phpgacl/docs/manual_html_m6a630ca2.png
+www/dotproject/lib/phpgacl/docs/manual_html_m770a5a15.png
+www/dotproject/lib/phpgacl/docs/phpgacl-db-schema.png
+www/dotproject/lib/phpgacl/docs/phpgacl-db-schema.vsd
+www/dotproject/lib/phpgacl/example.php
+www/dotproject/lib/phpgacl/gacl.class.php
+www/dotproject/lib/phpgacl/gacl_api.class.php
+www/dotproject/lib/phpgacl/other_languages/perl/perlGACL-check-1.0.tar.gz
+www/dotproject/lib/phpgacl/profiler.inc
+www/dotproject/lib/phpgacl/schema.xml
+www/dotproject/lib/phpgacl/setup.php
+www/dotproject/lib/phpgacl/soap/clients/perl_client.pl
+www/dotproject/lib/phpgacl/soap/clients/php_client.php
+www/dotproject/lib/phpgacl/soap/clients/python_client.py
+www/dotproject/lib/phpgacl/soap/nusoap.php
+www/dotproject/lib/phpgacl/soap/server.php
+www/dotproject/lib/phpgacl/test_suite/acl_tests.php
+www/dotproject/lib/phpgacl/test_suite/phpunit/ChangeLog
+www/dotproject/lib/phpgacl/test_suite/phpunit/README
+www/dotproject/lib/phpgacl/test_suite/phpunit/phpunit.php
+www/dotproject/lib/phpgacl/test_suite/phpunit/phpunit_test.php
+www/dotproject/lib/phpgacl/test_suite/phpunit/runtests.php
+www/dotproject/lib/phpgacl/test_suite/phpunit/runtests2.php
+www/dotproject/lib/phpgacl/test_suite/phpunit/stylesheet.css
+www/dotproject/lib/phpgacl/test_suite/random_acl_check.php
+www/dotproject/lib/phpgacl/test_suite/run.php
+www/dotproject/lib/phpgacl/test_suite/stress_test.php
+www/dotproject/lib/phpgacl/test_suite/styles.css
+www/dotproject/lib/phpgacl/test_suite/unit_tests.php
+www/dotproject/lib/smarty/Config_File.class.php
+www/dotproject/lib/smarty/Smarty.class.php
+www/dotproject/lib/smarty/Smarty_Compiler.class.php
+www/dotproject/lib/smarty/debug.tpl
+www/dotproject/lib/smarty/plugins/block.strip.php
+www/dotproject/lib/smarty/plugins/block.textformat.php
+www/dotproject/lib/smarty/plugins/compiler.assign.php
+www/dotproject/lib/smarty/plugins/function.assign.php
+www/dotproject/lib/smarty/plugins/function.assign_debug_info.php
+www/dotproject/lib/smarty/plugins/function.config_load.php
+www/dotproject/lib/smarty/plugins/function.counter.php
+www/dotproject/lib/smarty/plugins/function.cycle.php
+www/dotproject/lib/smarty/plugins/function.debug.php
+www/dotproject/lib/smarty/plugins/function.eval.php
+www/dotproject/lib/smarty/plugins/function.fetch.php
+www/dotproject/lib/smarty/plugins/function.html_checkboxes.php
+www/dotproject/lib/smarty/plugins/function.html_image.php
+www/dotproject/lib/smarty/plugins/function.html_options.php
+www/dotproject/lib/smarty/plugins/function.html_radios.php
+www/dotproject/lib/smarty/plugins/function.html_select_date.php
+www/dotproject/lib/smarty/plugins/function.html_select_time.php
+www/dotproject/lib/smarty/plugins/function.html_table.php
+www/dotproject/lib/smarty/plugins/function.mailto.php
+www/dotproject/lib/smarty/plugins/function.math.php
+www/dotproject/lib/smarty/plugins/function.popup.php
+www/dotproject/lib/smarty/plugins/function.popup_init.php
+www/dotproject/lib/smarty/plugins/modifier.capitalize.php
+www/dotproject/lib/smarty/plugins/modifier.cat.php
+www/dotproject/lib/smarty/plugins/modifier.count_characters.php
+www/dotproject/lib/smarty/plugins/modifier.count_paragraphs.php
+www/dotproject/lib/smarty/plugins/modifier.count_sentences.php
+www/dotproject/lib/smarty/plugins/modifier.count_words.php
+www/dotproject/lib/smarty/plugins/modifier.date_format.php
+www/dotproject/lib/smarty/plugins/modifier.debug_print_var.php
+www/dotproject/lib/smarty/plugins/modifier.default.php
+www/dotproject/lib/smarty/plugins/modifier.escape.php
+www/dotproject/lib/smarty/plugins/modifier.indent.php
+www/dotproject/lib/smarty/plugins/modifier.lower.php
+www/dotproject/lib/smarty/plugins/modifier.nl2br.php
+www/dotproject/lib/smarty/plugins/modifier.regex_replace.php
+www/dotproject/lib/smarty/plugins/modifier.replace.php
+www/dotproject/lib/smarty/plugins/modifier.spacify.php
+www/dotproject/lib/smarty/plugins/modifier.string_format.php
+www/dotproject/lib/smarty/plugins/modifier.strip.php
+www/dotproject/lib/smarty/plugins/modifier.strip_tags.php
+www/dotproject/lib/smarty/plugins/modifier.truncate.php
+www/dotproject/lib/smarty/plugins/modifier.upper.php
+www/dotproject/lib/smarty/plugins/modifier.wordwrap.php
+www/dotproject/lib/smarty/plugins/outputfilter.trimwhitespace.php
+www/dotproject/lib/smarty/plugins/shared.escape_special_chars.php
+www/dotproject/lib/smarty/plugins/shared.make_timestamp.php
+www/dotproject/lib/smarty/templates/phpgacl/about.tpl
+www/dotproject/lib/smarty/templates/phpgacl/acl_admin.tpl
+www/dotproject/lib/smarty/templates/phpgacl/acl_admin_js.tpl
+www/dotproject/lib/smarty/templates/phpgacl/acl_debug.tpl
+www/dotproject/lib/smarty/templates/phpgacl/acl_list.tpl
+www/dotproject/lib/smarty/templates/phpgacl/acl_test.tpl
+www/dotproject/lib/smarty/templates/phpgacl/assign_group.tpl
+www/dotproject/lib/smarty/templates/phpgacl/debug.tpl
+www/dotproject/lib/smarty/templates/phpgacl/edit_group.tpl
+www/dotproject/lib/smarty/templates/phpgacl/edit_object_sections.tpl
+www/dotproject/lib/smarty/templates/phpgacl/edit_objects.tpl
+www/dotproject/lib/smarty/templates/phpgacl/footer.tpl
+www/dotproject/lib/smarty/templates/phpgacl/group_admin.tpl
+www/dotproject/lib/smarty/templates/phpgacl/header.tpl
+www/dotproject/lib/smarty/templates/phpgacl/navigation.tpl
+www/dotproject/lib/smarty/templates/phpgacl/object_search.tpl
+www/dotproject/lib/smarty/templates/phpgacl/pager.tpl
+www/dotproject/locales/core.php
+www/dotproject/locales/en/admin.inc
+www/dotproject/locales/en/calendar.inc
+www/dotproject/locales/en/common.inc
+www/dotproject/locales/en/companies.inc
+www/dotproject/locales/en/contacts.inc
+www/dotproject/locales/en/departments.inc
+www/dotproject/locales/en/files.inc
+www/dotproject/locales/en/forums.inc
+www/dotproject/locales/en/help.inc
+www/dotproject/locales/en/history.inc
+www/dotproject/locales/en/index.html
+www/dotproject/locales/en/lang.php
+www/dotproject/locales/en/locales.php
+www/dotproject/locales/en/projects.inc
+www/dotproject/locales/en/public.inc
+www/dotproject/locales/en/resources.inc
+www/dotproject/locales/en/smartsearch.inc
+www/dotproject/locales/en/styles.inc
+www/dotproject/locales/en/system.inc
+www/dotproject/locales/en/tasks.inc
+www/dotproject/locales/en/ticketsmith.inc
+www/dotproject/locales/index.html
+www/dotproject/misc/cvs2cl/README
+www/dotproject/misc/cvs2cl/cvs2cl.pl
+www/dotproject/misc/cvs2cl/index.html
+www/dotproject/misc/debug.php
+www/dotproject/misc/holidays/fr
+www/dotproject/misc/holidays/uk
+www/dotproject/misc/index.html
+www/dotproject/misc/mime.types
+www/dotproject/misc/postnuke/README
+www/dotproject/misc/postnuke/dplink/index.php
+www/dotproject/misc/postnuke/dplink/pnadmin.php
+www/dotproject/misc/postnuke/dplink/pninit.php
+www/dotproject/misc/postnuke/dplink/pnlang/eng/admin.php
+www/dotproject/misc/postnuke/dplink/pnuser.php
+www/dotproject/misc/postnuke/dplink/pnversion.php
+www/dotproject/modules/admin/addedituser.php
+www/dotproject/modules/admin/admin.class.php
+www/dotproject/modules/admin/do_perms_aed.php
+www/dotproject/modules/admin/do_user_aed.php
+www/dotproject/modules/admin/do_userrole_aed.php
+www/dotproject/modules/admin/images/helix-setup-user.png
+www/dotproject/modules/admin/images/helix-setup-users.png
+www/dotproject/modules/admin/images/helix-setup-users2.png
+www/dotproject/modules/admin/images/helix-setup-users3.png
+www/dotproject/modules/admin/index.html
+www/dotproject/modules/admin/index.php
+www/dotproject/modules/admin/viewuser.php
+www/dotproject/modules/admin/vw_active_usr.php
+www/dotproject/modules/admin/vw_inactive_usr.php
+www/dotproject/modules/admin/vw_usr.php
+www/dotproject/modules/admin/vw_usr_log.php
+www/dotproject/modules/admin/vw_usr_perms.php
+www/dotproject/modules/admin/vw_usr_proj.php
+www/dotproject/modules/admin/vw_usr_roles.php
+www/dotproject/modules/calendar/addedit.php
+www/dotproject/modules/calendar/calendar.class.php
+www/dotproject/modules/calendar/clash.php
+www/dotproject/modules/calendar/day_view.php
+www/dotproject/modules/calendar/do_event_aed.php
+www/dotproject/modules/calendar/images/event0.png
+www/dotproject/modules/calendar/images/event1.png
+www/dotproject/modules/calendar/images/event2.png
+www/dotproject/modules/calendar/images/event3.png
+www/dotproject/modules/calendar/images/event4.png
+www/dotproject/modules/calendar/images/event5.png
+www/dotproject/modules/calendar/images/myevo-appointments.png
+www/dotproject/modules/calendar/index.html
+www/dotproject/modules/calendar/index.php
+www/dotproject/modules/calendar/links_events.php
+www/dotproject/modules/calendar/links_tasks.php
+www/dotproject/modules/calendar/view.php
+www/dotproject/modules/calendar/vw_day_events.php
+www/dotproject/modules/calendar/vw_day_tasks.php
+www/dotproject/modules/calendar/week_view.php
+www/dotproject/modules/companies/addedit.php
+www/dotproject/modules/companies/companies.class.php
+www/dotproject/modules/companies/do_company_aed.php
+www/dotproject/modules/companies/images/handshake.png
+www/dotproject/modules/companies/index.html
+www/dotproject/modules/companies/index.php
+www/dotproject/modules/companies/view.php
+www/dotproject/modules/companies/vw_active.php
+www/dotproject/modules/companies/vw_archived.php
+www/dotproject/modules/companies/vw_companies.php
+www/dotproject/modules/companies/vw_contacts.php
+www/dotproject/modules/companies/vw_depts.php
+www/dotproject/modules/companies/vw_users.php
+www/dotproject/modules/contacts/addedit.php
+www/dotproject/modules/contacts/contacts.class.php
+www/dotproject/modules/contacts/csvexport.php
+www/dotproject/modules/contacts/do_contact_aed.php
+www/dotproject/modules/contacts/images/monkeychat-48.png
+www/dotproject/modules/contacts/index.html
+www/dotproject/modules/contacts/index.php
+www/dotproject/modules/contacts/select_contact_company.php
+www/dotproject/modules/contacts/vcardexport.php
+www/dotproject/modules/contacts/vcardimport.php
+www/dotproject/modules/contacts/view.php
+www/dotproject/modules/departments/addedit.php
+www/dotproject/modules/departments/departments.class.php
+www/dotproject/modules/departments/do_dept_aed.php
+www/dotproject/modules/departments/index.html
+www/dotproject/modules/departments/index.php
+www/dotproject/modules/departments/view.php
+www/dotproject/modules/departments/vw_contacts.php
+www/dotproject/modules/files/addedit.php
+www/dotproject/modules/files/co.php
+www/dotproject/modules/files/companies_tab.files.php
+www/dotproject/modules/files/do_file_aed.php
+www/dotproject/modules/files/do_file_co.php
+www/dotproject/modules/files/do_searchfiles.php
+www/dotproject/modules/files/file_index_ignore.php
+www/dotproject/modules/files/files.class.php
+www/dotproject/modules/files/images/folder5.png
+www/dotproject/modules/files/index.html
+www/dotproject/modules/files/index.php
+www/dotproject/modules/files/index_table.php
+www/dotproject/modules/files/projects_tab.files.php
+www/dotproject/modules/files/tasks_tab.files.php
+www/dotproject/modules/files/tasks_tab.view.files.php
+www/dotproject/modules/forums/addedit.php
+www/dotproject/modules/forums/configure.php
+www/dotproject/modules/forums/do_forum_aed.php
+www/dotproject/modules/forums/do_post_aed.php
+www/dotproject/modules/forums/do_watch_forum.php
+www/dotproject/modules/forums/forums.class.php
+www/dotproject/modules/forums/images/support.png
+www/dotproject/modules/forums/index.html
+www/dotproject/modules/forums/index.php
+www/dotproject/modules/forums/post_message.php
+www/dotproject/modules/forums/setup.php
+www/dotproject/modules/forums/view_messages.php
+www/dotproject/modules/forums/view_pdf.php
+www/dotproject/modules/forums/view_topics.php
+www/dotproject/modules/forums/viewer.php
+www/dotproject/modules/help/en/help.toc.hlp
+www/dotproject/modules/help/en/index.html
+www/dotproject/modules/help/index.html
+www/dotproject/modules/help/index.php
+www/dotproject/modules/history/addedit.php
+www/dotproject/modules/history/images/stock_book_blue_48.png
+www/dotproject/modules/history/index.html
+www/dotproject/modules/history/index.php
+www/dotproject/modules/history/projects_tab.history.php
+www/dotproject/modules/history/setup.php
+www/dotproject/modules/index.html
+www/dotproject/modules/install/images/control-center.png
+www/dotproject/modules/projects/addedit.php
+www/dotproject/modules/projects/do_project_aed.php
+www/dotproject/modules/projects/gantt.php
+www/dotproject/modules/projects/gantt2.php
+www/dotproject/modules/projects/images/applet3-48.png
+www/dotproject/modules/projects/index.html
+www/dotproject/modules/projects/index.php
+www/dotproject/modules/projects/projects.class.php
+www/dotproject/modules/projects/reports.php
+www/dotproject/modules/projects/reports/allocateduserhours.en.txt
+www/dotproject/modules/projects/reports/allocateduserhours.php
+www/dotproject/modules/projects/reports/completed.en.txt
+www/dotproject/modules/projects/reports/completed.php
+www/dotproject/modules/projects/reports/overall.en.txt
+www/dotproject/modules/projects/reports/overall.php
+www/dotproject/modules/projects/reports/overdue.en.txt
+www/dotproject/modules/projects/reports/overdue.php
+www/dotproject/modules/projects/reports/stats.en.txt
+www/dotproject/modules/projects/reports/stats.php
+www/dotproject/modules/projects/reports/taskenddate.en.txt
+www/dotproject/modules/projects/reports/taskenddate.php
+www/dotproject/modules/projects/reports/tasklist.en.txt
+www/dotproject/modules/projects/reports/tasklist.php
+www/dotproject/modules/projects/reports/tasklogs.en.txt
+www/dotproject/modules/projects/reports/tasklogs.php
+www/dotproject/modules/projects/reports/tasksperuser.en.txt
+www/dotproject/modules/projects/reports/tasksperuser.php
+www/dotproject/modules/projects/reports/upcoming.en.txt
+www/dotproject/modules/projects/reports/upcoming.php
+www/dotproject/modules/projects/reports/userperformance.en.txt
+www/dotproject/modules/projects/reports/userperformance.php
+www/dotproject/modules/projects/view.php
+www/dotproject/modules/projects/viewgantt.php
+www/dotproject/modules/projects/vw_files.php
+www/dotproject/modules/projects/vw_forums.php
+www/dotproject/modules/projects/vw_idx_active.php
+www/dotproject/modules/projects/vw_idx_archived.php
+www/dotproject/modules/projects/vw_idx_complete.php
+www/dotproject/modules/projects/vw_idx_proposed.php
+www/dotproject/modules/projects/vw_logs.php
+www/dotproject/modules/public/access_denied.php
+www/dotproject/modules/public/calendar.php
+www/dotproject/modules/public/chpwd.php
+www/dotproject/modules/public/color_selector.php
+www/dotproject/modules/public/contact_selector.php
+www/dotproject/modules/public/date_format.php
+www/dotproject/modules/public/index.html
+www/dotproject/modules/public/index.php
+www/dotproject/modules/public/selector.php
+www/dotproject/modules/resources/addedit.js
+www/dotproject/modules/resources/addedit.php
+www/dotproject/modules/resources/do_resource_aed.php
+www/dotproject/modules/resources/index.php
+www/dotproject/modules/resources/resources.class.php
+www/dotproject/modules/resources/setup.php
+www/dotproject/modules/resources/tabs.js
+www/dotproject/modules/resources/tasks_dosql.addedit.php
+www/dotproject/modules/resources/tasks_tab.addedit.other_resources.php
+www/dotproject/modules/resources/tasks_tab.view.other_resources.php
+www/dotproject/modules/resources/view.js
+www/dotproject/modules/resources/view.php
+www/dotproject/modules/resources/vw_resources.php
+www/dotproject/modules/smartsearch/index.html
+www/dotproject/modules/smartsearch/index.php
+www/dotproject/modules/smartsearch/searchobjects/companies.inc.php
+www/dotproject/modules/smartsearch/searchobjects/contacts.inc.php
+www/dotproject/modules/smartsearch/searchobjects/departments.inc.php
+www/dotproject/modules/smartsearch/searchobjects/events.inc.php
+www/dotproject/modules/smartsearch/searchobjects/files.inc.php
+www/dotproject/modules/smartsearch/searchobjects/files_content.inc.php
+www/dotproject/modules/smartsearch/searchobjects/forum_messages.inc.php
+www/dotproject/modules/smartsearch/searchobjects/forums.inc.php
+www/dotproject/modules/smartsearch/searchobjects/projects.inc.php
+www/dotproject/modules/smartsearch/searchobjects/task_log.inc.php
+www/dotproject/modules/smartsearch/searchobjects/tasks.inc.php
+www/dotproject/modules/smartsearch/searchobjects/tickets.inc.php
+www/dotproject/modules/smartsearch/searchobjects/users.inc.php
+www/dotproject/modules/smartsearch/setup.php
+www/dotproject/modules/smartsearch/smartsearch.class.php
+www/dotproject/modules/system/addeditpref.php
+www/dotproject/modules/system/billingcode.php
+www/dotproject/modules/system/contacts_ldap.php
+www/dotproject/modules/system/custom_field_addedit.php
+www/dotproject/modules/system/custom_field_editor.php
+www/dotproject/modules/system/do_billingcode_aed.php
+www/dotproject/modules/system/do_custom_field_aed.php
+www/dotproject/modules/system/do_preference_aed.php
+www/dotproject/modules/system/do_systemconfig_aed.php
+www/dotproject/modules/system/domodsql.php
+www/dotproject/modules/system/images/48_my_computer.png
+www/dotproject/modules/system/images/control-center.png
+www/dotproject/modules/system/images/index.html
+www/dotproject/modules/system/images/main-settings.png
+www/dotproject/modules/system/images/myevo-weather.png
+www/dotproject/modules/system/images/power-management.png
+www/dotproject/modules/system/images/rdf2.png
+www/dotproject/modules/system/index.html
+www/dotproject/modules/system/index.php
+www/dotproject/modules/system/roles/do_perms_aed.php
+www/dotproject/modules/system/roles/do_role_aed.php
+www/dotproject/modules/system/roles/index.html
+www/dotproject/modules/system/roles/index.php
+www/dotproject/modules/system/roles/roles.class.php
+www/dotproject/modules/system/roles/viewrole.php
+www/dotproject/modules/system/roles/vw_role_perms.php
+www/dotproject/modules/system/syskeys/do_syskey_aed.php
+www/dotproject/modules/system/syskeys/do_sysval_aed.php
+www/dotproject/modules/system/syskeys/index.html
+www/dotproject/modules/system/syskeys/index.php
+www/dotproject/modules/system/syskeys/keys.php
+www/dotproject/modules/system/syskeys/syskeys.class.php
+www/dotproject/modules/system/system.class.php
+www/dotproject/modules/system/systemconfig.php
+www/dotproject/modules/system/systemconfig_help.php
+www/dotproject/modules/system/translate.php
+www/dotproject/modules/system/translate_save.php
+www/dotproject/modules/system/viewmods.php
+www/dotproject/modules/tasks/addedit.js
+www/dotproject/modules/tasks/addedit.php
+www/dotproject/modules/tasks/ae_dates.php
+www/dotproject/modules/tasks/ae_depend.php
+www/dotproject/modules/tasks/ae_desc.php
+www/dotproject/modules/tasks/ae_resource.php
+www/dotproject/modules/tasks/do_task_aed.php
+www/dotproject/modules/tasks/do_task_assign_aed.php
+www/dotproject/modules/tasks/do_updatetask.php
+www/dotproject/modules/tasks/gantt.php
+www/dotproject/modules/tasks/images/add.png
+www/dotproject/modules/tasks/images/applet-48.png
+www/dotproject/modules/tasks/images/exchange.png
+www/dotproject/modules/tasks/images/remove.png
+www/dotproject/modules/tasks/index.html
+www/dotproject/modules/tasks/index.php
+www/dotproject/modules/tasks/listtasks.php
+www/dotproject/modules/tasks/organize.php
+www/dotproject/modules/tasks/organizer.php
+www/dotproject/modules/tasks/tasks.class.php
+www/dotproject/modules/tasks/tasks.php
+www/dotproject/modules/tasks/tasksperuser.php
+www/dotproject/modules/tasks/tasksperuser_sub.php
+www/dotproject/modules/tasks/todo.php
+www/dotproject/modules/tasks/todo_tasks_sub.php
+www/dotproject/modules/tasks/view.js
+www/dotproject/modules/tasks/view.php
+www/dotproject/modules/tasks/viewgantt.php
+www/dotproject/modules/tasks/vw_log_update.php
+www/dotproject/modules/tasks/vw_logs.php
+www/dotproject/modules/ticketsmith/CHANGELOG
+www/dotproject/modules/ticketsmith/CREDITS
+www/dotproject/modules/ticketsmith/INSTALL
+www/dotproject/modules/ticketsmith/LICENSE
+www/dotproject/modules/ticketsmith/README
+www/dotproject/modules/ticketsmith/TODO
+www/dotproject/modules/ticketsmith/UPGRADE
+www/dotproject/modules/ticketsmith/admin.php
+www/dotproject/modules/ticketsmith/attach.php
+www/dotproject/modules/ticketsmith/comment.php
+www/dotproject/modules/ticketsmith/common.inc.php
+www/dotproject/modules/ticketsmith/config.inc.php
+www/dotproject/modules/ticketsmith/do_ticket_aed.php
+www/dotproject/modules/ticketsmith/followup.php
+www/dotproject/modules/ticketsmith/images/gconf-app-icon.png
+www/dotproject/modules/ticketsmith/images/ltwt.gif
+www/dotproject/modules/ticketsmith/images/posticon.gif
+www/dotproject/modules/ticketsmith/images/rtwt.gif
+www/dotproject/modules/ticketsmith/index.html
+www/dotproject/modules/ticketsmith/index.php
+www/dotproject/modules/ticketsmith/login.php
+www/dotproject/modules/ticketsmith/pdf.php
+www/dotproject/modules/ticketsmith/post_ticket.php
+www/dotproject/modules/ticketsmith/reattachticket.php
+www/dotproject/modules/ticketsmith/search.php
+www/dotproject/modules/ticketsmith/style.css
+www/dotproject/modules/ticketsmith/table.schema
+www/dotproject/modules/ticketsmith/view.php
+www/dotproject/queuescanner.php
+www/dotproject/style/classic/footer.php
+www/dotproject/style/classic/header.php
+www/dotproject/style/classic/images/bground.gif
+www/dotproject/style/classic/images/index.html
+www/dotproject/style/classic/index.html
+www/dotproject/style/classic/login.php
+www/dotproject/style/classic/main.css
+www/dotproject/style/classic/overrides.php
+www/dotproject/style/default/footer.php
+www/dotproject/style/default/header.php
+www/dotproject/style/default/images/dp_icon.gif
+www/dotproject/style/default/images/favicon.ico
+www/dotproject/style/default/images/index.html
+www/dotproject/style/default/images/obj/index.html
+www/dotproject/style/default/images/obj/tick.gif
+www/dotproject/style/default/images/tabBg.png
+www/dotproject/style/default/images/tabLeft.png
+www/dotproject/style/default/images/tabRight.png
+www/dotproject/style/default/images/tabSelectedBg.png
+www/dotproject/style/default/images/tabSelectedLeft.png
+www/dotproject/style/default/images/tabSelectedRight.png
+www/dotproject/style/default/images/titlegrad.jpg
+www/dotproject/style/default/index.html
+www/dotproject/style/default/login.php
+www/dotproject/style/default/lostpass.php
+www/dotproject/style/default/main.css
+www/dotproject/style/default/overrides.php
+www/dotproject/style/dp-grey-theme/README.TXT
+www/dotproject/style/dp-grey-theme/footer.php
+www/dotproject/style/dp-grey-theme/header.php
+www/dotproject/style/dp-grey-theme/images/bar_top_Selectedleft.gif
+www/dotproject/style/dp-grey-theme/images/bar_top_Selectedmiddle.gif
+www/dotproject/style/dp-grey-theme/images/bar_top_Selectedright.gif
+www/dotproject/style/dp-grey-theme/images/bar_top_left.gif
+www/dotproject/style/dp-grey-theme/images/bar_top_middle.gif
+www/dotproject/style/dp-grey-theme/images/bar_top_right.gif
+www/dotproject/style/dp-grey-theme/images/dp_icon.gif
+www/dotproject/style/dp-grey-theme/images/favicon.ico
+www/dotproject/style/dp-grey-theme/images/index.html
+www/dotproject/style/dp-grey-theme/images/lines_title_bar.gif
+www/dotproject/style/dp-grey-theme/images/lines_title_shadow.gif
+www/dotproject/style/dp-grey-theme/images/obj/index.html
+www/dotproject/style/dp-grey-theme/images/obj/tick.gif
+www/dotproject/style/dp-grey-theme/images/titlegrad.jpg
+www/dotproject/style/dp-grey-theme/index.html
+www/dotproject/style/dp-grey-theme/login.php
+www/dotproject/style/dp-grey-theme/lostpass.php
+www/dotproject/style/dp-grey-theme/main.css
+www/dotproject/style/dp-grey-theme/overrides.php
+www/dotproject/style/dp-grey-theme/tabBg.png
+www/dotproject/style/dp-grey-theme/tabLeft.png
+www/dotproject/style/dp-grey-theme/tabRight.png
+www/dotproject/style/dp-grey-theme/tabSelectedBg.png
+www/dotproject/style/dp-grey-theme/tabSelectedLeft.png
+www/dotproject/style/dp-grey-theme/tabSelectedRight.png
+www/dotproject/style/index.html
+@dirrm www/dotproject/style/dp-grey-theme/images/obj
+@dirrm www/dotproject/style/dp-grey-theme/images
+@dirrm www/dotproject/style/dp-grey-theme
+@dirrm www/dotproject/style/default/images/obj
+@dirrm www/dotproject/style/default/images
+@dirrm www/dotproject/style/default
+@dirrm www/dotproject/style/classic/images
+@dirrm www/dotproject/style/classic
+@dirrm www/dotproject/style
+@dirrm www/dotproject/modules/ticketsmith/images
+@dirrm www/dotproject/modules/ticketsmith
+@dirrm www/dotproject/modules/tasks/images
+@dirrm www/dotproject/modules/tasks
+@dirrm www/dotproject/modules/system/syskeys
+@dirrm www/dotproject/modules/system/roles
+@dirrm www/dotproject/modules/system/images
+@dirrm www/dotproject/modules/system
+@dirrm www/dotproject/modules/smartsearch/searchobjects
+@dirrm www/dotproject/modules/smartsearch
+@dirrm www/dotproject/modules/resources
+@dirrm www/dotproject/modules/public
+@dirrm www/dotproject/modules/projects/reports
+@dirrm www/dotproject/modules/projects/images
+@dirrm www/dotproject/modules/projects
+@dirrm www/dotproject/modules/install/images
+@dirrm www/dotproject/modules/install
+@dirrm www/dotproject/modules/history/images
+@dirrm www/dotproject/modules/history
+@dirrm www/dotproject/modules/help/en
+@dirrm www/dotproject/modules/help
+@dirrm www/dotproject/modules/forums/images
+@dirrm www/dotproject/modules/forums
+@dirrm www/dotproject/modules/files/images
+@dirrm www/dotproject/modules/files
+@dirrm www/dotproject/modules/departments
+@dirrm www/dotproject/modules/contacts/images
+@dirrm www/dotproject/modules/contacts
+@dirrm www/dotproject/modules/companies/images
+@dirrm www/dotproject/modules/companies
+@dirrm www/dotproject/modules/calendar/images
+@dirrm www/dotproject/modules/calendar
+@dirrm www/dotproject/modules/admin/images
+@dirrm www/dotproject/modules/admin
+@dirrm www/dotproject/modules
+@dirrm www/dotproject/misc/postnuke/dplink/pnlang/eng
+@dirrm www/dotproject/misc/postnuke/dplink/pnlang
+@dirrm www/dotproject/misc/postnuke/dplink
+@dirrm www/dotproject/misc/postnuke
+@dirrm www/dotproject/misc/holidays
+@dirrm www/dotproject/misc/cvs2cl
+@dirrm www/dotproject/misc
+@dirrm www/dotproject/locales/en
+@dirrm www/dotproject/locales
+@dirrm www/dotproject/lib/smarty/templates/phpgacl
+@dirrm www/dotproject/lib/smarty/templates
+@dirrm www/dotproject/lib/smarty/plugins
+@dirrm www/dotproject/lib/smarty
+@dirrm www/dotproject/lib/phpgacl/test_suite/phpunit
+@dirrm www/dotproject/lib/phpgacl/test_suite
+@dirrm www/dotproject/lib/phpgacl/soap/clients
+@dirrm www/dotproject/lib/phpgacl/soap
+@dirrm www/dotproject/lib/phpgacl/other_languages/perl
+@dirrm www/dotproject/lib/phpgacl/other_languages
+@dirrm www/dotproject/lib/phpgacl/docs
+@dirrm www/dotproject/lib/phpgacl/admin/images
+@dirrm www/dotproject/lib/phpgacl/admin
+@dirrm www/dotproject/lib/phpgacl/Cache_Lite
+@dirrm www/dotproject/lib/phpgacl
+@dirrm www/dotproject/lib/jpgraph/src
+@dirrm www/dotproject/lib/jpgraph
+@dirrm www/dotproject/lib/ezpdf/fonts
+@dirrm www/dotproject/lib/ezpdf
+@dirrm www/dotproject/lib/calendar/lang
+@dirrm www/dotproject/lib/calendar
+@dirrm www/dotproject/lib/adodb/xsl
+@dirrm www/dotproject/lib/adodb/tests
+@dirrm www/dotproject/lib/adodb/session/old
+@dirrm www/dotproject/lib/adodb/session
+@dirrm www/dotproject/lib/adodb/perf
+@dirrm www/dotproject/lib/adodb/pear/Auth/Container
+@dirrm www/dotproject/lib/adodb/pear/Auth
+@dirrm www/dotproject/lib/adodb/pear
+@dirrm www/dotproject/lib/adodb/lang
+@dirrm www/dotproject/lib/adodb/drivers
+@dirrm www/dotproject/lib/adodb/docs
+@dirrm www/dotproject/lib/adodb/datadict
+@dirrm www/dotproject/lib/adodb/cute_icons_for_site
+@dirrm www/dotproject/lib/adodb/contrib
+@dirrm www/dotproject/lib/adodb
+@dirrm www/dotproject/lib/PEAR/Date
+@dirrm www/dotproject/lib/PEAR
+@dirrm www/dotproject/lib
+@dirrm www/dotproject/js
+@dirrm www/dotproject/install
+@dirrm www/dotproject/includes
+@dirrm www/dotproject/images/obj
+@dirrm www/dotproject/images/icons
+@dirrm www/dotproject/images
+@dirrm www/dotproject/functions
+@dirrm www/dotproject/files/temp
+@dirrm www/dotproject/files
+@dirrm www/dotproject/docs
+@dirrm www/dotproject/db
+@dirrm www/dotproject/classes
+@dirrm www/dotproject
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
