@@ -1,0 +1,29 @@
+bin/libsee-config
+bin/see-shell
+include/see/cfunction.h
+include/see/debug.h
+include/see/error.h
+include/see/eval.h
+include/see/input.h
+include/see/intern.h
+include/see/interpreter.h
+include/see/mem.h
+include/see/native.h
+include/see/no.h
+include/see/object.h
+include/see/see.h
+include/see/string.h
+include/see/try.h
+include/see/type.h
+include/see/value.h
+lib/libsee.a
+lib/libsee.la
+lib/libsee.so
+lib/libsee.so.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/USAGE.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/see
