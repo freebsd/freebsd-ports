@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkmm
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -45,7 +45,7 @@ PLIST_SUB+=	EXAMPLES="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
-		-e '/^SUBDIRS =/s/demos//' \
+		-e '/^SUBDIRS =/s/@DEMO_SUBDIR@//' \
 		${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/docs//' \
