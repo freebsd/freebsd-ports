@@ -87,6 +87,7 @@
     SUBDIR += dhttpd
     SUBDIR += dillo
     SUBDIR += dokuwiki
+    SUBDIR += dotproject
     SUBDIR += dpsearch
     SUBDIR += drupal
     SUBDIR += dtse

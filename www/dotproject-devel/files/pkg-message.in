@@ -1,0 +1,8 @@
+dotProject has been installed into %%DOTPROJECTDIR%%
+
+It is suggested that you add the following to httpd.conf:
+
+    Alias /dotproject/ "%%DOTPROJECTDIR%%/"
+
+Then access http://<host>/dotproject and follow the instructions to
+complete the installation.
