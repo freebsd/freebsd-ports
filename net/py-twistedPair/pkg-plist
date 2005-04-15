@@ -1,0 +1,32 @@
+%%S%%/twisted/pair/__init__.py
+%%S%%/twisted/pair/__init__.pyc
+%%S%%/twisted/pair/__init__.pyo
+%%S%%/twisted/pair/ethernet.py
+%%S%%/twisted/pair/ethernet.pyc
+%%S%%/twisted/pair/ethernet.pyo
+%%S%%/twisted/pair/ip.py
+%%S%%/twisted/pair/ip.pyc
+%%S%%/twisted/pair/ip.pyo
+%%S%%/twisted/pair/raw.py
+%%S%%/twisted/pair/raw.pyc
+%%S%%/twisted/pair/raw.pyo
+%%S%%/twisted/pair/rawudp.py
+%%S%%/twisted/pair/rawudp.pyc
+%%S%%/twisted/pair/rawudp.pyo
+%%S%%/twisted/pair/test/__init__.py
+%%S%%/twisted/pair/test/__init__.pyc
+%%S%%/twisted/pair/test/__init__.pyo
+%%S%%/twisted/pair/test/test_ethernet.py
+%%S%%/twisted/pair/test/test_ethernet.pyc
+%%S%%/twisted/pair/test/test_ethernet.pyo
+%%S%%/twisted/pair/test/test_ip.py
+%%S%%/twisted/pair/test/test_ip.pyc
+%%S%%/twisted/pair/test/test_ip.pyo
+%%S%%/twisted/pair/test/test_rawudp.py
+%%S%%/twisted/pair/test/test_rawudp.pyc
+%%S%%/twisted/pair/test/test_rawudp.pyo
+%%S%%/twisted/pair/tuntap.py
+%%S%%/twisted/pair/tuntap.pyc
+%%S%%/twisted/pair/tuntap.pyo
+@dirrm %%S%%/twisted/pair/test
+@dirrm %%S%%/twisted/pair
