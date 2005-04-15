@@ -9,7 +9,7 @@ PORTNAME=	pinentry
 
 COMMENT=	GTK version of the gnupg password dialog
 
-CONFLICTS=	pinentry-0.7.1
+CONFLICTS=	pinentry-[0-9]*
 
 PINENTRY_GTK=	yes
 

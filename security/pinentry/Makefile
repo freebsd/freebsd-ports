@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinentry
-PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTVERSION=	0.7.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	pinentry
@@ -18,7 +17,7 @@ COMMENT?=	A collection of simple PIN or passphrase entry dialogs
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		ksba.13:${PORTSDIR}/security/libksba
 
-CONFLICTS?=	pinentry-qt* pinentry-gtk* pinentry-curses*
+CONFLICTS?=	pinentry-[a-z]*-[0.9]*
 
 USE_GETOPT_LONG=yes
 USE_ICONV=	yes
@@ -56,16 +55,7 @@ PLIST_SUB+=	WITH_GTK="@comment "
 .if defined(PINENTRY_GTK2)
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
-
-PATCH_SITES=		http://home.arcor.de/dralbrecht.dress/GnuPG/
-PATCHFILES=		pinentry-0.7.1-gtk+-2.4.diff.bz2
-PATCH_DIST_STRIP=	-p1
-
-USE_AUTOCONF_VER=	259
-USE_AUTOMAKE_VER=	19
-
-pre-configure:
-	@cd ${WRKSRC}; ${ACLOCAL}
+CONFIGURE_ENV+=	CFLAGS=-I/usr/local/include
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gtk2
 PLIST_SUB+=	WITH_GTK2="@comment "
@@ -78,28 +68,12 @@ CONFIGURE_ARGS+=--disable-pinentry-curses
 PLIST_SUB+=	WITH_CURSES="@comment "
 .endif
 .else
-PATCH_SITES=            http://home.arcor.de/dralbrecht.dress/GnuPG/
-PATCHFILES=             pinentry-0.7.1-gtk+-2.4.diff.bz2
-PATCH_DIST_STRIP=       -p1
-USE_AUTOCONF_VER=       259
-USE_AUTOMAKE_VER=       19
 USE_QT_VER=	3
 USE_GNOME+=	gtk12 gtk20
 PLIST_SUB+=	WITH_QT=""
 PLIST_SUB+=	WITH_GTK=""
 PLIST_SUB+=	WITH_GTK2=""
 PLIST_SUB+=	WITH_CURSES=""
-
-pre-configure:
-	@cd ${WRKSRC}; ${ACLOCAL}
-
-run-autotools:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
-		${AUTOMAKE_ARGS})
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
-		${AUTOCONF_ARGS})
-	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
-		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure
 .endif
 
 .include <bsd.port.mk>
