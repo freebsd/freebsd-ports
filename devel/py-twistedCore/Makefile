@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedCore
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Twisted/2.0/
 #MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,9 @@ DISTNAME=	Twisted-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	An asynchronous networking framework for Python - Core module
 
-RUN_DEPENDS=    ${PYTHON_SITELIBDIR}/zope/interface:${PORTSDIR}/devel/py-zopeInterface
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zope/interface:${PORTSDIR}/devel/py-zopeInterface
+
+CONFLICTS=	py-twisted-[0-9]*
 
 WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
