@@ -4,58 +4,58 @@ bin/motorsync
 %%NLS%%share/locale/pl/LC_MESSAGES/motor.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/motor.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/motor.mo
-share/motor/CVS.vcsrc
-share/motor/external
-share/motor/syntax
-share/motor/templates/library/static/Debug
-share/motor/templates/library/static/Folders
-share/motor/templates/library/static/Makefile.func
-share/motor/templates/library/static/Parserules
-share/motor/templates/library/static/Settings
-share/motor/templates/library/static/[value name].spec.tmpl
-share/motor/templates/library/static/configure.in.tmpl
-share/motor/templates/terminal program/C++/Debug
-share/motor/templates/terminal program/C++/Folders
-share/motor/templates/terminal program/C++/Makefile.func
-share/motor/templates/terminal program/C++/Parserules
-share/motor/templates/terminal program/C++/Settings
-share/motor/templates/terminal program/C++/[value name].cc.tmpl
-share/motor/templates/terminal program/C++/[value name].spec.tmpl
-share/motor/templates/terminal program/C++/configure.in.tmpl
-share/motor/templates/terminal program/C/Debug
-share/motor/templates/terminal program/C/Folders
-share/motor/templates/terminal program/C/Makefile.func
-share/motor/templates/terminal program/C/Parserules
-share/motor/templates/terminal program/C/Settings
-share/motor/templates/terminal program/C/[value name].c.tmpl
-share/motor/templates/terminal program/C/[value name].spec.tmpl
-share/motor/templates/terminal program/C/configure.in.tmpl
-share/motor/templates/terminal program/java/Debug
-share/motor/templates/terminal program/java/Folders
-share/motor/templates/terminal program/java/Makefile.func
-share/motor/templates/terminal program/java/Parserules
-share/motor/templates/terminal program/java/Settings
-share/motor/templates/terminal program/java/[value name].java.tmpl
-share/motor/templates/terminal program/java/[value name].spec.tmpl
-share/motor/templates/terminal program/java/configure.in.tmpl
-share/motor/templates/terminal program/perl/Debug
-share/motor/templates/terminal program/perl/Folders
-share/motor/templates/terminal program/perl/Makefile.func
-share/motor/templates/terminal program/perl/Parserules
-share/motor/templates/terminal program/perl/Settings
-share/motor/templates/terminal program/perl/[value name].pl.tmpl
-share/motor/templates/terminal program/perl/[value name].spec.tmpl
-share/motor/templates/terminal program/perl/configure.in.tmpl
-share/motor/themes
-@dirrm share/motor/templates/terminal program/perl
-@dirrm share/motor/templates/terminal program/java
-@dirrm share/motor/templates/terminal program/C++
-@dirrm share/motor/templates/terminal program/C
-@dirrm share/motor/templates/terminal program
-@dirrm share/motor/templates/library/static
-@dirrm share/motor/templates/library
-@dirrm share/motor/templates
-@dirrm share/motor
+%%DATADIR%%/CVS.vcsrc
+%%DATADIR%%/external
+%%DATADIR%%/syntax
+%%DATADIR%%/templates/library/static/Debug
+%%DATADIR%%/templates/library/static/Folders
+%%DATADIR%%/templates/library/static/Makefile.func
+%%DATADIR%%/templates/library/static/Parserules
+%%DATADIR%%/templates/library/static/Settings
+%%DATADIR%%/templates/library/static/[value name].spec.tmpl
+%%DATADIR%%/templates/library/static/configure.in.tmpl
+%%DATADIR%%/templates/terminal program/C++/Debug
+%%DATADIR%%/templates/terminal program/C++/Folders
+%%DATADIR%%/templates/terminal program/C++/Makefile.func
+%%DATADIR%%/templates/terminal program/C++/Parserules
+%%DATADIR%%/templates/terminal program/C++/Settings
+%%DATADIR%%/templates/terminal program/C++/[value name].cc.tmpl
+%%DATADIR%%/templates/terminal program/C++/[value name].spec.tmpl
+%%DATADIR%%/templates/terminal program/C++/configure.in.tmpl
+%%DATADIR%%/templates/terminal program/C/Debug
+%%DATADIR%%/templates/terminal program/C/Folders
+%%DATADIR%%/templates/terminal program/C/Makefile.func
+%%DATADIR%%/templates/terminal program/C/Parserules
+%%DATADIR%%/templates/terminal program/C/Settings
+%%DATADIR%%/templates/terminal program/C/[value name].c.tmpl
+%%DATADIR%%/templates/terminal program/C/[value name].spec.tmpl
+%%DATADIR%%/templates/terminal program/C/configure.in.tmpl
+%%DATADIR%%/templates/terminal program/java/Debug
+%%DATADIR%%/templates/terminal program/java/Folders
+%%DATADIR%%/templates/terminal program/java/Makefile.func
+%%DATADIR%%/templates/terminal program/java/Parserules
+%%DATADIR%%/templates/terminal program/java/Settings
+%%DATADIR%%/templates/terminal program/java/[value name].java.tmpl
+%%DATADIR%%/templates/terminal program/java/[value name].spec.tmpl
+%%DATADIR%%/templates/terminal program/java/configure.in.tmpl
+%%DATADIR%%/templates/terminal program/perl/Debug
+%%DATADIR%%/templates/terminal program/perl/Folders
+%%DATADIR%%/templates/terminal program/perl/Makefile.func
+%%DATADIR%%/templates/terminal program/perl/Parserules
+%%DATADIR%%/templates/terminal program/perl/Settings
+%%DATADIR%%/templates/terminal program/perl/[value name].pl.tmpl
+%%DATADIR%%/templates/terminal program/perl/[value name].spec.tmpl
+%%DATADIR%%/templates/terminal program/perl/configure.in.tmpl
+%%DATADIR%%/themes
+@dirrm %%DATADIR%%/templates/terminal program/perl
+@dirrm %%DATADIR%%/templates/terminal program/java
+@dirrm %%DATADIR%%/templates/terminal program/C++
+@dirrm %%DATADIR%%/templates/terminal program/C
+@dirrm %%DATADIR%%/templates/terminal program
+@dirrm %%DATADIR%%/templates/library/static
+@dirrm %%DATADIR%%/templates/library
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/
