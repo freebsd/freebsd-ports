@@ -372,6 +372,7 @@
     SUBDIR += py-mimelib
     SUBDIR += py-spambayes
     SUBDIR += py-spf
+    SUBDIR += py-twistedMail
     SUBDIR += pygmy
     SUBDIR += pymsgauth
     SUBDIR += pyzor
