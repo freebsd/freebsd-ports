@@ -16,6 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Parrot GUI Builder
 
+DEPRECATED=	Obsolete and not maintained anymore
+EXPIRATION_DATE=	2005-07-15
+NO_LATEST_LINK=	YES
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
