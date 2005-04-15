@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	esmtp
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,18 +17,21 @@ COMMENT=	Relay-only Mail Transfer Agent with sendmail compatible syntax
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GETOPT_LONG=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 USE_BISON=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-DOC_FILES=	README
 MAN1=		esmtp.1
 MAN5=		esmtprc.5
+PORTDOCS=	README
+PLIST_FILES=	bin/esmtp etc/esmtprc.sample
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g' \
@@ -41,20 +43,20 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/esmtprc.5 ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/esmtprc.5 ${MANPREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/sample.esmtprc \
 		${PREFIX}/etc/esmtprc.sample
-	@${ECHO} "------------------------------------------------------------"
-	@${ECHO} "Sample of configuration file placed at"
-	@${ECHO} "${PREFIX}/etc/esmtprc.sample"
-	@${ECHO} "------------------------------------------------------------"
+	@${ECHO_MSG} "------------------------------------------------------------"
+	@${ECHO_MSG} "Sample of configuration file placed at"
+	@${ECHO_MSG} "${PREFIX}/etc/esmtprc.sample"
+	@${ECHO_MSG} "------------------------------------------------------------"
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
