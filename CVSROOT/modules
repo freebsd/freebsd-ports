@@ -1712,6 +1712,7 @@ dvips		ports/print/dvips
 dvips2ascii	ports/print/dvips2ascii
 dvipsk-tetex		ports/print/dvipsk-tetex
 dviselect	ports/print/dviselect
+dvisvg		ports/print/dvisvg
 dvorak7min	ports/misc/dvorak7min
 dvorakng	ports/misc/dvorakng
 dvts		ports/multimedia/dvts
