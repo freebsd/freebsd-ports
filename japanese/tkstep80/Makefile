@@ -21,6 +21,7 @@ COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
 USE_AUTOCONF_VER=	213
@@ -42,11 +43,10 @@ TCLVERSION=	8.0
 TOPDIR=		${WRKDIR}/${DISTNAME}
 PORTDOCDIR=	${PREFIX}/share/doc/tkstep${TCLVERSION}jp
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/xpg4/d' ${WRKSRC}/configure.in
 
-.if ${OSVERSION} > 600006
-BROKEN=		"Depends on libxpg4 which was removed from FreeBSD 6.0"
-.endif
+.include <bsd.port.pre.mk>
 
 pre-install:
 	cd ${TOPDIR}/library/demos.jp && ${RM} -f *.orig

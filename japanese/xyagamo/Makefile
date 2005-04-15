@@ -15,18 +15,16 @@ COMMENT=	Japanese version of a four player mahjong game
 
 USE_X_PREFIX=	YES
 USE_XPM=	yes
+USE_REINPLACE=	yes
 
 MAN6=		xyagamo.6
 MANLANG=	ja
 MAN6COMPRESSED=	no
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 600006
-BROKEN=         "Depends on libxpg4 which was removed from FreeBSD 6.0"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lxpg4//' ${WRKSRC}/src/Makefile
 
 pre-build:
 	@cd ${BUILD_WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} depend
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
