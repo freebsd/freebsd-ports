@@ -640,6 +640,7 @@
     SUBDIR += py-imdbpy
     SUBDIR += py-mt
     SUBDIR += py-scgi
+    SUBDIR += py-twistedWeb
     SUBDIR += py-websvcs
     SUBDIR += py-webware
     SUBDIR += py-webware-component
