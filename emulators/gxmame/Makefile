@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gxmame
-PORTVERSION=	0.35
-PORTREVISION=	1
+DISTVERSION=	0.35beta2
+PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta1
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	GXmame is a GTK frontend for xmame
@@ -19,21 +19,28 @@ COMMENT=	GXmame is a GTK frontend for xmame
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
-USE_GETTEXT=	yes
-USE_GZIP=	yes
-USE_ICONV=	yes
-USE_XLIB=	yes
-USE_GNOME=	gtk20
+USE_X_PREFIX=	yes
+USE_GNOME=	gtk20 intlhack gnomehack gnomeprefix
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-#ONLY_FOR_ARCHS=	i386
-
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-xmame-dir=${X11BASE}/share/xmame
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|$$(top_builddir)/./mkinstalldirs|./mkinstalldirs|' ${WRKSRC}/intl/Makefile
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
+
+MAN6=		gxmame.6
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS="-Wall.*||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(datadir)/doc|${PREFIX}/share/doc|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|__GNUC___|__GNUC__|' ${WRKSRC}/src/common.h
 
 .include <bsd.port.mk>
