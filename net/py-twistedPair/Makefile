@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedPair
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Pair/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Pair/0.1/
@@ -16,7 +17,8 @@ DISTNAME=	TwistedPair-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	Twisted Pair can do low level TCP work
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedPair-${PORTVERSION}
 
