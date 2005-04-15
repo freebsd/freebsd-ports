@@ -9629,7 +9629,7 @@ py-twisted	ports/devel/py-twisted
 py-twistedConch	ports/security/py-twistedConch
 py-twistedCore	ports/devel/py-twistedCore
 py-twistedFlow	ports/devel/py-twistedFlow
-py-twistedLore	ports/nextproc/py-twistedLore
+py-twistedLore	ports/textproc/py-twistedLore
 py-twistedMail	ports/mail/py-twistedMail
 py-twistedNames	ports/dns/py-twistedNames
 py-twistedNews	ports/news/py-twistedNews
