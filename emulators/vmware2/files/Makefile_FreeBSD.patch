@@ -1,0 +1,12 @@
+--- vmmon-only/Makefile.FreeBSD.orig	Tue Jun 22 16:52:23 2004
++++ vmmon-only/Makefile.FreeBSD	Tue Jun 22 16:51:58 2004
+@@ -57,7 +59,9 @@
+ 
+ device:
+ 	rm -f /compat/linux/dev/${DEVNAME}
++.if ${OSVERSION} > 500104
+ 	mknod /compat/linux/dev/${DEVNAME} c ${CDEV_MAJOR} 0
++.endif
+ 
+ 
+ .include <bsd.kmod.mk>

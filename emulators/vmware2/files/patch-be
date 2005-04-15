@@ -1,5 +1,5 @@
---- vmmon-only/freebsd/hostif.c.orig	Mon Sep  2 19:19:50 2002
-+++ vmmon-only/freebsd/hostif.c	Mon Sep  2 19:30:03 2002
+--- vmmon-only/freebsd/hostif.c.orig Sat Apr 10 16:52:23 2004
++++ vmmon-only/freebsd/hostif.c Sat Apr 10 16:54:17 2004
 @@ -55,7 +55,11 @@
  
  #include <vm/vm.h>
@@ -57,7 +57,33 @@
    	return 0;
  }
   
-@@ -1066,10 +1098,33 @@
+@@ -1006,8 +1038,12 @@
+ HostIF_APIC_Base(VMDriver *vm, Bool setVMPtr)
+ {
+ #if defined(SMP)
++#if __FreeBSD_version < 501114
+    return cpu_apic_address;
++#else
++   return 0; /* XXX */
++#endif
+ #else
+    return 0;
+ #endif
+ }
+@@ -1035,8 +1070,12 @@
+ HostIF_IOAPIC_Base(VMDriver *vm)
+ {
+ #if defined(SMP)
++#if __FreeBSD_version < 501114
+    return io_apic_address[0]; /* XXX How about another APIC's */
+ #else
++   return 0; /* XXX */
++#endif
++#else
+    return 0;
+ #endif
+ }
+@@ -1066,10 +1105,33 @@
          return NULL;
    }
    paddr = vtophys(addr);
@@ -91,7 +117,7 @@
    return ka->kaddr;
  }
  
-@@ -1079,9 +1134,29 @@
+@@ -1079,9 +1141,29 @@
    if (ka->map==NULL)
  	  return 0;
  
