@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nvu
-PORTVERSION=	0.90
-PORTREVISION=	1
+DISTVERSION=	1.0PR
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
+DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
@@ -19,8 +18,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		nspr4.1:${PORTSDIR}/devel/nspr
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -35,7 +33,7 @@ OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
 		DEBUG "Enable debugging (i.e. gdb) support" off \
 		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
-NVU=		${PORTNAME}-${PORTVERSION}
+NVU=		${PORTNAME}-${DISTVERSION}
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
@@ -45,6 +43,13 @@ ALL_TARGET=	build_all
 
 PKG_CONFIGS=	nvu-gtkmozembed.pc nvu-js.pc nvu-nspr.pc \
 		nvu-nss.pc nvu-plugin.pc nvu-xpcom.pc
+
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
+			--exclude */macbuild/*\
+			--exclude */package/* \
+			--exclude .cvsignore \
+			--exclude makefile.win \
+			--exclude MANIFEST
 
 .include <bsd.port.pre.mk>
 
@@ -72,6 +77,11 @@ post-patch:
 		s|%%PREFIX%%|${FAKEDIR}|; \
 		s|%%LOCALBASE%%|${LOCALBASE}|' \
 		${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
+# Stupid workaround.. 
+.for f in toolkit/components/Makefile.in toolkit/components/gnome/Makefile.in
+	@${ECHO_CMD} "LDFLAGS += -L${LOCALBASE}/lib" \
+		>> ${WRKSRC}/${f}
+.endfor
 .if defined(WITHOUT_XFT)
 	@${ECHO_CMD} "ac_add_options  --disable-xft" >> ${WRKSRC}/.mozconfig
 .else
