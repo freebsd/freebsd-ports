@@ -226,6 +226,7 @@
     SUBDIR += micro_httpd
     SUBDIR += middleman
     SUBDIR += mini_httpd
+    SUBDIR += mkapachepw
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mmosaic
     SUBDIR += mnogosearch
