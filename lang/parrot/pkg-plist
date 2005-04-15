@@ -1,0 +1,405 @@
+parrot/NEWS
+parrot/PBC_COMPAT
+parrot/PLATFORMS
+parrot/README
+parrot/README.win32
+parrot/RESPONSIBLE_PARTIES
+parrot/TODO
+parrot/VERSION
+parrot/parrot-config.imc
+parrot/LICENSES/Artistic
+parrot/LICENSES/gpl.txt
+parrot/bin/parrot
+parrot/docs/debugger.pod
+parrot/docs/embed.pod
+parrot/docs/faq.pod
+parrot/docs/gettingstarted.pod
+parrot/docs/glossary.pod
+parrot/docs/intro.pod
+parrot/docs/jit.pod
+parrot/docs/memory_internals.pod
+parrot/docs/mmd.pod
+parrot/docs/nanoparrot.c
+parrot/docs/native_exec.pod
+parrot/docs/overview.pod
+parrot/docs/parrot.pod
+parrot/docs/parrotbyte.pod
+parrot/docs/pmc.pod
+parrot/docs/porting_intro.pod
+parrot/docs/practical_notes.pod
+parrot/docs/running.pod
+parrot/docs/strings.pod
+parrot/docs/submissions.pod
+parrot/docs/tests.pod
+parrot/docs/vtables.pod
+parrot/docs/dev/byteorder.dev
+parrot/docs/dev/jit_i386.dev
+parrot/docs/dev/longopt.dev
+parrot/docs/dev/rx.dev
+parrot/docs/pdds/pdd00_pdd.pod
+parrot/docs/pdds/pdd01_overview.pod
+parrot/docs/pdds/pdd02_vtables.pod
+parrot/docs/pdds/pdd03_calling_conventions.pod
+parrot/docs/pdds/pdd04_datatypes.pod
+parrot/docs/pdds/pdd05_opfunc.pod
+parrot/docs/pdds/pdd06_pasm.pod
+parrot/docs/pdds/pdd07_codingstd.pod
+parrot/docs/pdds/pdd08_keys.pod
+parrot/docs/pdds/pdd09_gc.pod
+parrot/docs/pdds/pdd10_embedding.pod
+parrot/docs/pdds/pdd11_extending.pod
+parrot/docs/pdds/pdd12_assembly.pod
+parrot/docs/pdds/pdd13_bytecode.pod
+parrot/docs/pdds/pdd14_bignum.pod
+parrot/docs/pdds/pdd15_objects.pod
+parrot/docs/pdds/pdd16_native_call.pod
+parrot/docs/pdds/pdd17_basic_types.pod
+parrot/docs/pdds/pdd18_security.pod
+parrot/docs/pdds/pdd_template.pod
+parrot/docs/pmc/array.pod
+parrot/docs/pmc/iterator.pod
+parrot/docs/pmc/perlarray.pod
+parrot/docs/pmc/perlhash.pod
+parrot/docs/pmc/perlstring.pod
+parrot/docs/pmc/struct.pod
+parrot/docs/pmc/subs.pod
+parrot/examples/assembly/99beer.pasm
+parrot/examples/assembly/Makefile
+parrot/examples/assembly/acorn.l
+parrot/examples/assembly/bsr.pasm
+parrot/examples/assembly/cat.pasm
+parrot/examples/assembly/coroutine.pasm
+parrot/examples/assembly/euclid.pasm
+parrot/examples/assembly/fact.pasm
+parrot/examples/assembly/getopt_demo.imc
+parrot/examples/assembly/hanoi.pasm
+parrot/examples/assembly/hello-dwim.imc
+parrot/examples/assembly/hello.pasm
+parrot/examples/assembly/io1.pasm
+parrot/examples/assembly/io2.pasm
+parrot/examples/assembly/jump.pasm
+parrot/examples/assembly/lexical.pasm
+parrot/examples/assembly/lexical2.pasm
+parrot/examples/assembly/lexical3.pasm
+parrot/examples/assembly/life.pasm
+parrot/examples/assembly/local_label.pasm
+parrot/examples/assembly/mandel.pasm
+parrot/examples/assembly/mops.pasm
+parrot/examples/assembly/mops_p.pasm
+parrot/examples/assembly/nanoforth.pasm
+parrot/examples/assembly/nanoforth2.pasm
+parrot/examples/assembly/ncurses_life.imc
+parrot/examples/assembly/pcre.imc
+parrot/examples/assembly/pmcmops.pasm
+parrot/examples/assembly/queens.pasm
+parrot/examples/assembly/queens_r.imc
+parrot/examples/assembly/slurp.pasm
+parrot/examples/assembly/small.xml
+parrot/examples/assembly/stack.pasm
+parrot/examples/assembly/sub.pasm
+parrot/examples/assembly/substr.pasm
+parrot/examples/assembly/thr-primes.imc
+parrot/examples/assembly/trace.pasm
+parrot/examples/assembly/uniq.pasm
+parrot/examples/assembly/xml_parser.pasm
+parrot/examples/benchmarks/addit.imc
+parrot/examples/benchmarks/addit.pasm
+parrot/examples/benchmarks/addit.pl
+parrot/examples/benchmarks/addit.rb
+parrot/examples/benchmarks/addit2.imc
+parrot/examples/benchmarks/array_access.imc
+parrot/examples/benchmarks/arriter.imc
+parrot/examples/benchmarks/arriter.pl
+parrot/examples/benchmarks/arriter.rb
+parrot/examples/benchmarks/arriter_o1.imc
+parrot/examples/benchmarks/bench_newp.pasm
+parrot/examples/benchmarks/fib.imc
+parrot/examples/benchmarks/fib.pl
+parrot/examples/benchmarks/fib.py
+parrot/examples/benchmarks/fib.rb
+parrot/examples/benchmarks/freeze.pasm
+parrot/examples/benchmarks/freeze.pl
+parrot/examples/benchmarks/gc_alloc_new.pasm
+parrot/examples/benchmarks/gc_alloc_reuse.pasm
+parrot/examples/benchmarks/gc_generations.pasm
+parrot/examples/benchmarks/gc_header_new.pasm
+parrot/examples/benchmarks/gc_header_reuse.pasm
+parrot/examples/benchmarks/gc_waves_headers.pasm
+parrot/examples/benchmarks/gc_waves_sizeable_data.pasm
+parrot/examples/benchmarks/gc_waves_sizeable_headers.pasm
+parrot/examples/benchmarks/mops.pasm
+parrot/examples/benchmarks/mops.pl
+parrot/examples/benchmarks/oo1.pasm
+parrot/examples/benchmarks/oo1.pl
+parrot/examples/benchmarks/oo1.py
+parrot/examples/benchmarks/oo1.rb
+parrot/examples/benchmarks/oo2.pasm
+parrot/examples/benchmarks/oo2.pl
+parrot/examples/benchmarks/oo2.py
+parrot/examples/benchmarks/oo2.rb
+parrot/examples/benchmarks/oo3.pasm
+parrot/examples/benchmarks/oo3.pl
+parrot/examples/benchmarks/oo3.py
+parrot/examples/benchmarks/oo3.rb
+parrot/examples/benchmarks/oo4.pasm
+parrot/examples/benchmarks/oo4.pl
+parrot/examples/benchmarks/oo4.py
+parrot/examples/benchmarks/oo4.rb
+parrot/examples/benchmarks/oo5.imc
+parrot/examples/benchmarks/oo5.pl
+parrot/examples/benchmarks/oo5.py
+parrot/examples/benchmarks/oo5.rb
+parrot/examples/benchmarks/oo6.imc
+parrot/examples/benchmarks/oo6.pl
+parrot/examples/benchmarks/oo6.py
+parrot/examples/benchmarks/oo6.rb
+parrot/examples/benchmarks/oofib.imc
+parrot/examples/benchmarks/oofib.pl
+parrot/examples/benchmarks/oofib.py
+parrot/examples/benchmarks/oofib.rb
+parrot/examples/benchmarks/oon.txt
+parrot/examples/benchmarks/overload.imc
+parrot/examples/benchmarks/overload.pl
+parrot/examples/benchmarks/primes.c
+parrot/examples/benchmarks/primes.pasm
+parrot/examples/benchmarks/primes.pl
+parrot/examples/benchmarks/primes2.c
+parrot/examples/benchmarks/primes2.pasm
+parrot/examples/benchmarks/primes2.pl
+parrot/examples/benchmarks/primes2.py
+parrot/examples/benchmarks/primes2.rb
+parrot/examples/benchmarks/primes2_i.pasm
+parrot/examples/benchmarks/primes_i.pasm
+parrot/examples/benchmarks/shared_ref.pasm
+parrot/examples/benchmarks/shared_ref.pl
+parrot/examples/benchmarks/stress.pasm
+parrot/examples/benchmarks/stress.pl
+parrot/examples/benchmarks/stress.rb
+parrot/examples/benchmarks/stress1.pasm
+parrot/examples/benchmarks/stress1.pl
+parrot/examples/benchmarks/stress2.pasm
+parrot/examples/benchmarks/stress2.pl
+parrot/examples/benchmarks/stress2.rb
+parrot/examples/benchmarks/stress3.pasm
+parrot/examples/benchmarks/vpm.imc
+parrot/examples/benchmarks/vpm.pl
+parrot/examples/benchmarks/vpm.py
+parrot/examples/benchmarks/vpm.rb
+parrot/examples/c/test_main.c
+parrot/examples/compilers/Makefile
+parrot/examples/compilers/japhc.c
+parrot/examples/io/echo_client.imc
+parrot/examples/io/http.imc
+parrot/examples/io/httpd.imc
+parrot/examples/io/net_smtp.pasm
+parrot/examples/io/pioctl.pasm
+parrot/examples/io/pipe2.imc
+parrot/examples/io/pipe3.imc
+parrot/examples/japh/README
+parrot/examples/japh/japh1.pasm
+parrot/examples/japh/japh10.pasm
+parrot/examples/japh/japh11.pasm
+parrot/examples/japh/japh12.pasm
+parrot/examples/japh/japh13.pasm
+parrot/examples/japh/japh14.pasm
+parrot/examples/japh/japh15.pasm
+parrot/examples/japh/japh16.pasm
+parrot/examples/japh/japh17.pasm
+parrot/examples/japh/japh2.pasm
+parrot/examples/japh/japh3.pasm
+parrot/examples/japh/japh4.pasm
+parrot/examples/japh/japh5.pasm
+parrot/examples/japh/japh6.pasm
+parrot/examples/japh/japh7.pasm
+parrot/examples/japh/japh8.pasm
+parrot/examples/japh/japh9.pasm
+parrot/examples/mops/README
+parrot/examples/mops/mops.c
+parrot/examples/mops/mops.cs
+parrot/examples/mops/mops.il
+parrot/examples/mops/mops.p6
+parrot/examples/mops/mops.pl
+parrot/examples/mops/mops.ps
+parrot/examples/mops/mops.py
+parrot/examples/mops/mops.rb
+parrot/examples/mops/mops.scheme
+parrot/examples/pni/PQt.C
+parrot/examples/pni/QtHelloWorld.pasm
+parrot/examples/pni/sdl_blue_rectangle.imc
+parrot/examples/pni/win32api.imc
+parrot/examples/sdl/minesweeper/README
+parrot/examples/sdl/minesweeper/eventhandler.imc
+parrot/examples/sdl/minesweeper/field.imc
+parrot/examples/sdl/minesweeper/mines.imc
+parrot/examples/sdl/minesweeper/mines.png
+parrot/examples/sdl/minesweeper/mines_debug.png
+parrot/examples/sdl/minesweeper/smiley.png
+parrot/examples/sdl/tetris/README
+parrot/examples/sdl/tetris/app.imc
+parrot/examples/sdl/tetris/block.imc
+parrot/examples/sdl/tetris/blockdata.imc
+parrot/examples/sdl/tetris/blocks.imc
+parrot/examples/sdl/tetris/board.imc
+parrot/examples/sdl/tetris/boarddata.imc
+parrot/examples/sdl/tetris/eventhandler.imc
+parrot/examples/sdl/tetris/tetris.imc
+parrot/examples/streams/Bytes.imc
+parrot/examples/streams/Combiner.imc
+parrot/examples/streams/Coroutine.imc
+parrot/examples/streams/FileLines.imc
+parrot/examples/streams/Filter.imc
+parrot/examples/streams/Include.imc
+parrot/examples/streams/Lines.imc
+parrot/examples/streams/ParrotIO.imc
+parrot/examples/streams/Replay.imc
+parrot/examples/streams/SubCounter.imc
+parrot/examples/streams/SubHello.imc
+parrot/examples/streams/Writer.imc
+parrot/examples/subs/sub1.imc
+parrot/examples/subs/sub2.imc
+parrot/examples/subs/sub3.imc
+parrot/imcc/ChangeLog
+parrot/imcc/README
+parrot/imcc/docs/calling_conventions.pod
+parrot/imcc/docs/imcc.pod
+parrot/imcc/docs/imcfaq.pod
+parrot/imcc/docs/macros.pod
+parrot/imcc/docs/operation.pod
+parrot/imcc/docs/parsing.pod
+parrot/imcc/docs/running.pod
+parrot/imcc/docs/syntax.pod
+parrot/imcc/examples/README
+parrot/imcc/examples/sample.imc
+parrot/imcc/examples/sub.imc
+parrot/imcc/examples/test_allocate.imc
+parrot/imcc/examples/test_spilling.imc
+parrot/runtime/parrot/dynext/README
+parrot/runtime/parrot/include/DWIM.imc
+parrot/runtime/parrot/include/README
+parrot/runtime/parrot/include/config.fpmc
+parrot/runtime/parrot/include/datatypes.pasm
+parrot/runtime/parrot/include/errors.pasm
+parrot/runtime/parrot/include/except_severity.pasm
+parrot/runtime/parrot/include/except_types.pasm
+parrot/runtime/parrot/include/iglobals.pasm
+parrot/runtime/parrot/include/interpcores.pasm
+parrot/runtime/parrot/include/interpflags.pasm
+parrot/runtime/parrot/include/interpinfo.pasm
+parrot/runtime/parrot/include/iotypes.pasm
+parrot/runtime/parrot/include/iterator.pasm
+parrot/runtime/parrot/include/longopt.pasm
+parrot/runtime/parrot/include/mmd.pasm
+parrot/runtime/parrot/include/parrotlib.pbc
+parrot/runtime/parrot/include/pmctypes.pasm
+parrot/runtime/parrot/include/signal.pasm
+parrot/runtime/parrot/include/stat.pasm
+parrot/runtime/parrot/include/stdio.pasm
+parrot/runtime/parrot/include/stringinfo.pasm
+parrot/runtime/parrot/include/sysinfo.pasm
+parrot/runtime/parrot/include/timer.pasm
+parrot/runtime/parrot/include/tm.pasm
+parrot/runtime/parrot/include/vtable_methods.pasm
+parrot/runtime/parrot/include/warnings.pasm
+parrot/runtime/parrot/library/PGE.pir
+parrot/runtime/parrot/library/SDL.imc
+parrot/runtime/parrot/library/config.imc
+parrot/runtime/parrot/library/config.pbc
+parrot/runtime/parrot/library/dumper.imc
+parrot/runtime/parrot/library/dumper.pbc
+parrot/runtime/parrot/library/libpcre.imc
+parrot/runtime/parrot/library/ncurses.declarations
+parrot/runtime/parrot/library/ncurses.imc
+parrot/runtime/parrot/library/ncurses.pasm
+parrot/runtime/parrot/library/ncurses.pbc
+parrot/runtime/parrot/library/parrotlib.pbc
+parrot/runtime/parrot/library/pcre.imc
+parrot/runtime/parrot/library/pcre.pbc
+parrot/runtime/parrot/library/postgres.declarations
+parrot/runtime/parrot/library/postgres.imc
+parrot/runtime/parrot/library/postgres.pasm
+parrot/runtime/parrot/library/Data/Dumper.imc
+parrot/runtime/parrot/library/Data/Dumper.pbc
+parrot/runtime/parrot/library/Data/Escape.imc
+parrot/runtime/parrot/library/Data/Escape.pbc
+parrot/runtime/parrot/library/Data/Replace.imc
+parrot/runtime/parrot/library/Data/Sort.imc
+parrot/runtime/parrot/library/Data/Sort.pbc
+parrot/runtime/parrot/library/Data/Dumper/Base.imc
+parrot/runtime/parrot/library/Data/Dumper/Base.pbc
+parrot/runtime/parrot/library/Data/Dumper/Default.imc
+parrot/runtime/parrot/library/Data/Dumper/Default.pbc
+parrot/runtime/parrot/library/Getopt/Long.imc
+parrot/runtime/parrot/library/Getopt/Long.pbc
+parrot/runtime/parrot/library/PGE/Class.pir
+parrot/runtime/parrot/library/PGE/RegCounter.pir
+parrot/runtime/parrot/library/SDL/App.imc
+parrot/runtime/parrot/library/SDL/Button.imc
+parrot/runtime/parrot/library/SDL/Color.imc
+parrot/runtime/parrot/library/SDL/Constants.imc
+parrot/runtime/parrot/library/SDL/Event.imc
+parrot/runtime/parrot/library/SDL/EventHandler.imc
+parrot/runtime/parrot/library/SDL/Font.imc
+parrot/runtime/parrot/library/SDL/Image.imc
+parrot/runtime/parrot/library/SDL/LCD.imc
+parrot/runtime/parrot/library/SDL/LCD.png
+parrot/runtime/parrot/library/SDL/Rect.imc
+parrot/runtime/parrot/library/SDL/Sprite.imc
+parrot/runtime/parrot/library/SDL/StopWatch.imc
+parrot/runtime/parrot/library/SDL/Surface.imc
+parrot/runtime/parrot/library/Stream/Base.imc
+parrot/runtime/parrot/library/Stream/Base.pbc
+parrot/runtime/parrot/library/Stream/Combiner.imc
+parrot/runtime/parrot/library/Stream/Combiner.pbc
+parrot/runtime/parrot/library/Stream/Coroutine.imc
+parrot/runtime/parrot/library/Stream/Coroutine.pbc
+parrot/runtime/parrot/library/Stream/Filter.imc
+parrot/runtime/parrot/library/Stream/Filter.pbc
+parrot/runtime/parrot/library/Stream/Lines.imc
+parrot/runtime/parrot/library/Stream/Lines.pbc
+parrot/runtime/parrot/library/Stream/ParrotIO.imc
+parrot/runtime/parrot/library/Stream/ParrotIO.pbc
+parrot/runtime/parrot/library/Stream/Replay.imc
+parrot/runtime/parrot/library/Stream/Replay.pbc
+parrot/runtime/parrot/library/Stream/Sub.imc
+parrot/runtime/parrot/library/Stream/Sub.pbc
+parrot/runtime/parrot/library/Stream/Writer.imc
+parrot/runtime/parrot/library/Stream/Writer.pbc
+@dirrm parrot/runtime/parrot/library/Stream
+@dirrm parrot/runtime/parrot/library/SDL
+@dirrm parrot/runtime/parrot/library/PGE
+@dirrm parrot/runtime/parrot/library/Getopt
+@dirrm parrot/runtime/parrot/library/Data/Dumper
+@dirrm parrot/runtime/parrot/library/Data
+@dirrm parrot/runtime/parrot/library
+@dirrm parrot/runtime/parrot/include
+@dirrm parrot/runtime/parrot/dynext
+@dirrm parrot/runtime/parrot
+@dirrm parrot/runtime
+@dirrm parrot/imcc/examples
+@dirrm parrot/imcc/docs
+@dirrm parrot/imcc
+@dirrm parrot/examples/subs
+@dirrm parrot/examples/streams
+@dirrm parrot/examples/sdl/tetris
+@dirrm parrot/examples/sdl/minesweeper
+@dirrm parrot/examples/sdl
+@dirrm parrot/examples/pni
+@dirrm parrot/examples/mops
+@dirrm parrot/examples/japh
+@dirrm parrot/examples/io
+@dirrm parrot/examples/compilers
+@dirrm parrot/examples/c
+@dirrm parrot/examples/benchmarks
+@dirrm parrot/examples/assembly
+@dirrm parrot/examples
+@dirrm parrot/docs/pmc
+@dirrm parrot/docs/pdds
+@dirrm parrot/docs/dev
+@dirrm parrot/docs
+@dirrm parrot/blib/lib/icu/2.6.1
+@dirrm parrot/blib/lib/icu
+@dirrm parrot/blib/lib
+@dirrm parrot/blib
+@dirrm parrot/bin
+@dirrm parrot/LICENSES
+@dirrm parrot
