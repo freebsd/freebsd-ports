@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 
 LIB_DEPENDS+=   expat.5:${PORTSDIR}/textproc/expat2
 

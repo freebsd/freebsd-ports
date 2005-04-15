@@ -1,7 +1,7 @@
 bin/pear
-lib/php/pear/.filemap
-lib/php/pear/.lock
 @exec mkdir -p %D/lib/php/pear/.registry
+@exec touch %D/lib/php/pear/.filemap
+@exec touch %D/lib/php/pear/.lock
 share/pear/bootstrap/Archive/Tar.php
 share/pear/bootstrap/PEAR.php
 share/pear/bootstrap/System.php
@@ -34,8 +34,10 @@ share/pear/bootstrap/PEAR/Remote.php
 share/pear/bootstrap/PEAR/RunTest.php
 share/pear/bootstrap/XML/RPC.php
 share/pear/bootstrap/XML/RPC/Server.php
-@dirrm lib/php/pear/.registry
-@dirrm lib/php/pear
+@unexec rm %D/lib/php/pear/.filemap 2> /dev/null || true
+@unexec rm %D/lib/php/pear/.lock 2> /dev/null || true
+@unexec rmdir %D/lib/php/pear/.registry 2> /dev/null || true
+@unexec rmdir %D/lib/php/pear 2> /dev/null || true
 @unexec rmdir %D/lib/php 2> /dev/null || true
 @dirrm share/pear/bootstrap/Archive
 @dirrm share/pear/bootstrap/Console
