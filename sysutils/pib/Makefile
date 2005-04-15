@@ -19,10 +19,6 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 do-install:
 	${MKDIR} ${PREFIX}/lib/pib
 	${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${PREFIX}/lib/pib
