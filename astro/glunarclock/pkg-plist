@@ -26,6 +26,7 @@ share/locale/nl/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/no/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/ro/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/rw/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/glunarclock-%%VERSION%%.mo
@@ -39,3 +40,9 @@ share/locale/wa/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 @dirrm share/gnome/glunarclock
 @unexec rmdir %D/share/locale/ast_ES/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ast_ES 2> /dev/null || true
+@unexec rmdir %D/share/locale/br/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/br 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@unexec rmdir %D/share/locale/wa/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/wa 2> /dev/null || true
