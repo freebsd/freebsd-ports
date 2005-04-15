@@ -1,0 +1,20 @@
+PyBlosxom is a lightweight weblog system. It originally started out as
+a Python clone of Blosxom but has since evolved into a beast of its
+own. PyBlosxom focuses on three things: simplicity, extensibility, and
+community.
+
+simplicity - PyBlosxom uses the file system for all its data
+storage. Because of this you can use whatever editor you want to use
+to create, update, and manipulate entries.
+
+extensibility - PyBlosxom has plugin framework allowing you to build
+plugins in Python to augment and change PyBlosxom's default behavior.
+
+community - There are hundreds of PyBlosxom users out there all of
+whom have different needs. PyBlosxom is used on a variety of operating
+systems in a variety of environments.
+
+PyBlosxom is a pretty straight-forward system that allows you to do
+the things you need to do without building everything from scratch.
+
+WWW:      http://pyblosxom.sf.net
