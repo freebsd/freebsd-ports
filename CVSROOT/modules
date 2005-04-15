@@ -2433,6 +2433,7 @@ gadfly		ports/databases/gadfly
 gag		ports/security/gag
 gai		ports/x11-toolkits/gai
 gai-album	ports/audio/gai-album
+gai-visual-audio	ports/audio/gai-visual-audio
 gail		ports/accessibility/gail
 gaim		ports/net/gaim
 gaim-encryption	ports/security/gaim-encryption
