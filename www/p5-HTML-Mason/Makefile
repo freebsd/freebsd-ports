@@ -57,10 +57,16 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Tools.3 \
 		HTML::Mason::Utils.3
 
+OPTIONS=	MOD_PERL "with mod_perl dependency" off
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.if defined(WITH_MOD_PERL)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq
 .endif
 
 .include <bsd.port.post.mk>
