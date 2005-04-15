@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_vhs
 PORTVERSION=	1.0.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.oav.net/projects/mod_vhs/
 DIST_SUBDIR=	apache2
@@ -26,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 AP_INC+=	${LOCALBASE}/include/home
 AP_LIB+=	${LOCALBASE}/lib -lhome
-AP_EXTRAS+=	-I ${LOCALBASE}/include/php -I ${LOCALBASE}/include/php/Zend -DHAVE_MOD_PHP_SUPPORT
+AP_EXTRAS+=	-I ${LOCALBASE}/include/php -I ${LOCALBASE}/include/php/Zend -I ${LOCALBASE}/include/php/TSRM -DHAVE_MOD_PHP_SUPPORT
 
 PORTDOCS=	AUTHORS README
 
