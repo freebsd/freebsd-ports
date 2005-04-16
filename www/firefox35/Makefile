@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0.2/source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0.3/source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -166,7 +166,7 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|libesd\.so\.\d+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
-	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.no|g' \
+	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
 		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
 	embedding/minimo
