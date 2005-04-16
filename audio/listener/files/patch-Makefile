@@ -1,17 +1,17 @@
---- Makefile.old	Wed Jan 19 09:19:02 2005
-+++ Makefile	Wed Jan 19 09:21:43 2005
+--- Makefile.old	Wed Mar 23 15:19:35 2005
++++ Makefile	Wed Mar 23 15:22:21 2005
 @@ -1,8 +1,8 @@
- VERSION=0.8
+ VERSION=1.6.5
  
 -INSTALL_PREFIX=/usr/local
 +INSTALL_PREFIX=${PREFIX}
  
--CFLAGS=-O2 -Wall -DVERSION=\"$(VERSION)\"
+-CFLAGS+=-g -O2 -Wall -DVERSION=\"$(VERSION)\"
 +CFLAGS+=-L${LOCALBASE}/lib -I${LOCALBASE}/include -Wall -DVERSION=\"$(VERSION)\"
  
  OBJSsl=sl.o snd_dev.o error.o utils.o
  OBJSli=listener.o snd_dev.o error.o utils.o lib.o
-@@ -11,10 +11,10 @@
+@@ -11,19 +11,19 @@
  all: setlistener listener listenersoundpipe
  
  setlistener: $(OBJSsl)
@@ -19,12 +19,14 @@
 +	$(CC) $(CFLAGS) -g -Wall -W $(OBJSsl) -lncurses -o setlistener
  
  listener: $(OBJSli)
--	$(CC) -g -Wall -W $(OBJSli) -ldl -lsndfile -o listener -DCONFIGFILE=$(INSTALL_PREFIX)/etc/listener.conf
+-	$(CC) -g -Wall -W $(OBJSli) -ldl -lm -lsndfile -o listener -DCONFIGFILE=$(INSTALL_PREFIX)/etc/listener.conf
 +	$(CC) $(CFLAGS) -g -Wall -W $(OBJSli) -lsndfile -o listener -DCONFIGFILE=$(INSTALL_PREFIX)/etc/listener.conf
  
  listenersoundpipe: $(OBJSsp)
- 	$(CC) -g -Wall -W $(OBJSsp) -o listenersoundpipe
-@@ -23,7 +23,7 @@
+-	$(CC) -g -Wall -W $(OBJSsp) -o listenersoundpipe
++	$(CC) $(CFLAGS) -g -Wall -W $(OBJSsp) -o listenersoundpipe
+ 
+ install: setlistener listener listenersoundpipe
  	cp setlistener $(INSTALL_PREFIX)/bin
  	cp listenersoundpipe $(INSTALL_PREFIX)/bin
  	cp listener $(INSTALL_PREFIX)/bin
