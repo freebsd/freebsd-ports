@@ -1,5 +1,15 @@
 bin/mailsync
+%%PORTDOCS%%%%DOCSDIR%%/ABSTRACT
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/mailsync
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart.dia
+%%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart.svg
+%%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart2.svg
+%%PORTDOCS%%%%EXAMPLESDIR%%/mailsync
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
