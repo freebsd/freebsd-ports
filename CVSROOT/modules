@@ -2834,6 +2834,7 @@ gnofin		ports/finance/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
+gnome-art	ports/x11-themes/gnome-art
 gnome-backgrounds	ports/x11-themes/gnome-backgrounds
 gnome-btdownload	ports/net/gnome-btdownload
 gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
