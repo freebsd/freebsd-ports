@@ -32,6 +32,309 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f650d5b8-ae62-11d9-a788-0001020eed82">
+    <topic>mozilla -- privilege escalation via DOM property overrides</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.7,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><lt>1.7.7</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-41.html">
+	  <p>moz_bug_r_a4 reported several exploits giving an attacker
+	    the ability to install malicious code or steal data,
+	    requiring only that the user do commonplace actions like
+	    click on a link or open the context menu. The common cause
+	    in each case was privileged UI code ("chrome") being
+	    overly trusting of DOM nodes from the content
+	    window. Scripts in the web page can override properties
+	    and methods of DOM nodes and shadow the native values,
+	    unless steps are taken to get the true underlying values.</p>
+	  <p>We found that most extensions also interacted with
+	    content DOM in a natural, but unsafe, manner. Changes were
+	    made so that chrome code using this natural DOM coding
+	    style will now automatically use the native DOM value if
+	    it exists without having to use cumbersome wrapper
+	    objects.</p>
+	  <p>Most of the specific exploits involved tricking the
+	    privileged code into calling eval() on an
+	    attacker-supplied script string, or the equivalent using
+	    the Script() object. Checks were added in the security
+	    manager to make sure eval and Script objects are run with
+	    the privileges of the context that created them, not the
+	    potentially elevated privileges of the context calling
+	    them.</p>
+	  <p><strong>Workaround</strong>: Disable Javascript</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-41.html</url>
+    </references>
+    <dates>
+      <discovery>2005-04-15</discovery>
+      <entry>2005-04-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1989b511-ae62-11d9-a788-0001020eed82">
+    <topic>mozilla -- code execution through javascript: favicons</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.7,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><lt>1.7.7</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-37.html">
+	  <p>Firefox and the Mozilla Suite support custom "favicons"
+	    through the &lt;LINK rel="icon"&gt; tag. If a link tag is added
+	    to the page programmatically and a javascript: url is
+	    used, then script will run with elevated privileges and
+	    could run or install malicious software.</p>
+	  <p><strong>Workaround</strong>: Disable Javascript</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-37.html</url>
+    </references>
+    <dates>
+      <discovery>2005-04-12</discovery>
+      <entry>2005-04-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="45b75152-ae5f-11d9-a788-0001020eed82">
+    <topic>mozilla --  javascript "lambda" replace exposes memory
+      contents</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.7,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><lt>1.7.7</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-33.html">
+	  <p>A bug in javascript's regular expression string
+	    replacement when using an anonymous function as the
+	    replacement argument allows a malicious script to capture
+	    blocks of memory allocated to the browser. A web site
+	    could capture data and transmit it to a server without
+	    user interaction or knowledge.</p>
+	  <p><strong>Workaround</strong>: Disable Javascript</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0989</cvename>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-33.html</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=288688</url>
+    </references>
+    <dates>
+      <discovery>2005-04-01</discovery>
+      <entry>2005-04-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1f2fdcff-ae60-11d9-a788-0001020eed82">
+    <topic>firefox -- arbitrary code execution in sidebar panel</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-39.html">
+	  <p>Sites can use the _search target to open links in the
+	    Firefox sidebar. Two missing security checks allow
+	    malicious scripts to first open a privileged page (such as
+	    about:config) and then inject script using a javascript:
+	    url. This could be used to install malicious code or steal
+	    data without user interaction.</p>
+	  <p><strong>Workaround</strong>: Disable Javascript</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-39.html</url>
+    </references>
+    <dates>
+      <discovery>2005-04-12</discovery>
+      <entry>2005-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b206dd82-ac67-11d9-a788-0001020eed82">
     <topic>openoffice -- DOC document heap overflow vulnerability</topic>
     <affects>
