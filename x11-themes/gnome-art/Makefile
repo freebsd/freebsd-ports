@@ -7,15 +7,14 @@
 
 PORTNAME=	gnome-art
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.miketech.net/gnome-art/download/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Frontend for art.gnome.org
 
-BUILD_DEPENDS=	ruby-glade-create-template:${PORTSDIR}/devel/ruby-libglade2 \
-		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	gnome-splashscreen-manager:${PORTSDIR}/x11-themes/gnome-splashscreen-manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 USE_RUBY=	yes
