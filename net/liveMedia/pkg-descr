@@ -10,3 +10,5 @@ extended to support additional (audio and/or video) codecs. They can
 also be used to build basic RTSP clients and servers, and have been
 used to add streaming support to existing media player applications,
 such as "mplayer".
+
+WWW: http://www.live.com/liveMedia/

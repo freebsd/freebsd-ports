@@ -7,19 +7,13 @@
 
 PORTNAME=	liveMedia
 PORTVERSION=	2005.04.13
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
-#MASTER_SITES+=	${MASTER_SITE_LOCAL}
-#MASTER_SITE_SUBDIR=	nork
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nork
 DISTNAME=	live.${PORTVERSION}
-# liveMedia's author says that use the latest version whenever
-# possible, and doesn't keep old archives.
-# So nork decided to set MASTER_SITES and MASTER_SITE_SUBDIR,
-# while ports frozen.
-# NOTE: If you notice that nork doesn't update this port,
-#       please go ahead before you informed to nork.
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	LIVE.COM Streaming Media
@@ -222,5 +216,8 @@ do-install:
 .for file in ${liveMedia}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/liveMedia/include/
 .endfor
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
