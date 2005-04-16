@@ -6378,6 +6378,7 @@ newvox		ports/games/newvox
 nexfontsel	ports/x11-fonts/nexfontsel
 nfbtrans	ports/textproc/nfbtrans
 nfdump		ports/net-mgmt/nfdump
+nfsen		ports/net-mgmt/nfsen
 nfsshell	ports/net/nfsshell
 ng_daphne	ports/net/ng_daphne
 ng_ipacct	ports/net-mgmt/ng_ipacct
