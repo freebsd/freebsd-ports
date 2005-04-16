@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_POP3
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	net pear
 
 MAINTAINER=	tux@pinguru.net
