@@ -4,9 +4,13 @@ bin/qnetwalk
 %%DATADIR%%/sounds/start.wav
 %%DATADIR%%/sounds/turn.wav
 %%DATADIR%%/sounds/win.wav
+%%DATADIR%%/translations/qnetwalk_de.qm
+%%DATADIR%%/translations/qnetwalk_es.qm
 %%DATADIR%%/translations/qnetwalk_fr.qm
 %%DATADIR%%/translations/qnetwalk_nl.qm
+%%DATADIR%%/translations/qnetwalk_pl.qm
+%%DATADIR%%/translations/qnetwalk_pt_BR.qm
 %%DATADIR%%/translations/qnetwalk_ru.qm
-@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
