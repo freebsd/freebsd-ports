@@ -96,7 +96,7 @@
 #
 # WITH_XOSD=yes
 #
-# Multimedia Knbos:
+# Multimedia Knobs:
 #
 # WITH_H264
 #  Enable H.264/AVC Video Support
