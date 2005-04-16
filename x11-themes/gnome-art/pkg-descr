@@ -1,0 +1,13 @@
+A frontend for art.gnome.org
+ 
+The GNOME Art Collection written in ruby is a collection of tools for managing
+art from the art.gnome.org website. GNOME Art is the graphical frontend for
+art.gnome.org. 
+
+Backgrounds and all themes can be downloaded and previewed.
+Backgrounds, icon themes and splash screens can be installed directly.
+
+GNOME Splash Screen Manager is for managing the splash screens of the GNOME
+desktop. 
+
+WWW:	http://www.miketech.net/gnome-art/
