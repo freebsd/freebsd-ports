@@ -1,6 +1,6 @@
---- configure.orig	Sun May 30 19:45:23 2004
-+++ configure	Tue Dec 14 22:19:39 2004
-@@ -14789,7 +14789,7 @@
+--- configure.orig	Sat Feb 26 03:35:31 2005
++++ configure	Sat Mar 12 09:28:45 2005
+@@ -19621,7 +19621,7 @@
  
  
  # This can be used to rebuild libtool when needed
@@ -9,30 +9,21 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -18476,7 +18476,7 @@
- 		fi
- 		CPPFLAGS="$CPPFLAGS -I$SS_QT_INCDIR $CPPFLAGS $X_CFLAGS"
- 		CXXFLAGS="-O2 -Wall $CXXFLAGS"
--		LIBS="-L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_EXTRA_LIBS $X_LIBS $LIBS -l$SS_QTLIB_NAME -lXext -lX11"
-+		LIBS="-L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_EXTRA_LIBS $X_LIBS $LIBS -l$SS_QTLIB_NAME -lXext -lX11 -pthread"
- 		LDFLAGS="-s $LDFLAGS"
- 		cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
-@@ -18859,7 +18859,7 @@
- 		ss_save_LIBS="$LIBS"
- 		CPPFLAGS="-I$SS_X_INCDIR -I$SS_QT_INCDIR -I$SS_KDE_INCDIR $CPPFLAGS $X_CFLAGS"
- 		CXXFLAGS="-O2 -Wall $CXXFLAGS"
--		LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -Wl,-rpath $SS_KDE_LIBDIR"
-+		LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -Wl,-rpath $SS_KDE_LIBDIR -pthread"
- 		if test "$SS_LINK_TO_LIBDL" = "yes"; then
- 			LIBS="$LIBS -ldl";
- 		fi
-@@ -19695,7 +19695,7 @@
- 			ss_save_LIBS="$LIBS"
- 			CPPFLAGS="-I$SS_X_INCDIR -I$SS_QT_INCDIR -I$SS_KDE_INCDIR $CPPFLAGS $X_CFLAGS"
- 			CXXFLAGS="-O2 -Wall $CXXFLAGS"
--			LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lsoundserver_idl -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -Wl,-rpath $SS_KDE_LIBDIR"
-+			LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lsoundserver_idl -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -pthread -Wl,-rpath $SS_KDE_LIBDIR"
- 			if test "$SS_LINK_TO_LIBDL" = "yes"; then
- 				LIBS="$LIBS -ldl";
- 			fi
+@@ -21745,7 +21745,7 @@
+ 		else
+ 			echo "$as_me:$LINENO: result: no..using lpthread" >&5
+ echo "${ECHO_T}no..using lpthread" >&6
+-			SS_THREAD_LIBLINK="-lpthread"
++			SS_THREAD_LIBLINK="-pthread"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define COMPILE_THREADS_USE_POSIX 1
+@@ -23316,7 +23316,7 @@
+ 			# Set the X include and lib dir
+ 	 		SS_X_INCDIR="$x_includes"
+ 			SS_X_LIBDIR="$x_libraries"
+-			SS_X_LIBLINK="-lX11 -lXext"
++			SS_X_LIBLINK="-lX11 -lXext -pthread"
+ 
+ 			if test -z "$SS_X_INCDIR"; then
+ 				# Ops... X headers not found ?

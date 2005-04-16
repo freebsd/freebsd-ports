@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTVERSION=	3.2.0
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
 		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
@@ -26,7 +25,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=	15
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man/man1
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 PLIST_SUB=		VER=${PORTVERSION}
 
 MAN1=	kvirc.1
@@ -63,6 +62,11 @@ CONFIGURE_ARGS+=	--without-gsm
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" \
+		-e "s,.SS_KDE_GENERAL_DIR/share/icons,${PREFIX}/share/icons," \
+		-e "s,.SS_KDE_GENERAL_DIR/share/applnk,${PREFIX}/share/applnk," \
+		-e "s,.SS_KDE_GENERAL_DIR/share/mimelnk,${PREFIX}/share/mimelnk," \
+		-e "s,kdeservicesdir=\".SS_KDE_SERVICESDIR\",kdeservicesdir=\"${PREFIX}/share/services\"," \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
