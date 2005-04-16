@@ -24,7 +24,6 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/credits.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/download.html
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/files.txt
