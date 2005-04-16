@@ -1,0 +1,12 @@
+NfSen is a graphical web based front end for the nfdump netflow tools.
+
+NfSen allows you to:
+
+    * Display your netflow data: Flows, Packets and Bytes using RRD 
+      (Round Robin Database).
+    * Easily navigate through the netflow data.
+    * Process the netflow data within the specified time span.
+    * Create history as well as continuous profiles.
+    * Write your own plugins to process netflow data on a regular interval
+
+WWW: http://nfsen.sourceforge.net/
