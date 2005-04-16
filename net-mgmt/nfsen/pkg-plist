@@ -1,0 +1,45 @@
+nfsen/bin/GenGraph.pl
+nfsen/bin/nfsen
+nfsen/bin/nfsen-run
+nfsen/bin/nfsen.rc
+nfsen/bin/testPlugin
+nfsen/etc/nfsen-dist.conf
+nfsen/etc/nfsen-dist.conf.orig
+nfsen/etc/nfsen-shell-param
+nfsen/etc/nfsen.conf
+nfsen/libexec/Log.pm
+nfsen/libexec/NfConf.pm
+nfsen/libexec/NfProfile.pm
+nfsen/libexec/NfSen.pm
+nfsen/libexec/NfSenRRD.pm
+nfsen/libexec/Notification.pm
+nfsen/libexec/PluginTemplate.pm
+nfsen/libexec/demoplugin.pm
+nfsen/profiles/live/profile.dat
+www/nfsen/conf.php
+www/nfsen/css-admin.html
+www/nfsen/css.html
+www/nfsen/details.php
+www/nfsen/edit.png
+www/nfsen/info.php
+www/nfsen/invisible.gif
+www/nfsen/navigator.php
+www/nfsen/nfsen.php
+www/nfsen/nfsenutil.php
+www/nfsen/overview.php
+www/nfsen/pic.gif
+www/nfsen/pic.php
+www/nfsen/process.php
+www/nfsen/profileadmin.php
+www/nfsen/rrdgraph.php
+www/nfsen/trash.png
+@dirrm www/nfsen
+@dirrm nfsen/var/run
+@dirrm nfsen/var/filters
+@dirrm nfsen/var
+@dirrm nfsen/profiles/live
+@dirrm nfsen/profiles
+@dirrm nfsen/libexec
+@dirrm nfsen/etc
+@dirrm nfsen/bin
+@dirrm nfsen
