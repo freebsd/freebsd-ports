@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	crossfire
 PKGNAMESUFFIX=	-server
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}.maps-big${EXTRACT_SUFX}
+		${DISTNAME}.maps${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for multiplayer graphical arcade and adventure game
@@ -45,7 +45,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${DATADIR}/maps
-	cd ${WRKDIR}/maps-bigworld && ${FIND} . | \
+	cd ${WRKDIR}/maps && ${FIND} . ! -name ".#*" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/maps
 	@${CHOWN} ${BINOWN}:games ${PREFIX}/bin/crossfire
 	@${CHMOD} 2755 ${PREFIX}/bin/crossfire
