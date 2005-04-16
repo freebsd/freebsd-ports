@@ -32,6 +32,50 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce6ac624-aec8-11d9-a788-0001020eed82">
+    <topic>firefox -- PLUGINSPAGE privileged javascript execution</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-34.html">
+	  <p>When a webpage requires a plugin that is not installed
+	    the user can click to launch the Plugin Finder Service
+	    (PFS) to find an appropriate plugin. If the service does
+	    not have an appropriate plugin the EMBED tag is checked
+	    for a PLUGINSPAGE attribute, and if one is found the PFS
+	    dialog will contain a "manual install" button that will
+	    load the PLUGINSPAGE url.</p>
+	  <p>Omar Khan reported that if the PLUGINSPAGE attribute
+	    contains a javascript: url then pressing the button could
+	    launch arbitrary code capable of stealing local data or
+	    installing malicious code.</p>
+	  <p>Doron Rosenberg reported a variant that injects script by
+	    appending it to a malformed URL of any protocol.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0752</cvename>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-34.html</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=288556</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=289171</url>
+    </references>
+    <dates>
+      <discovery>2005-03-31</discovery>
+      <entry>2005-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18e5428f-ae7c-11d9-837d-000e0c2e438a">
     <topic>jdk -- jar directory traversal vulnerability</topic>
     <affects>
