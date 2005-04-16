@@ -32,6 +32,61 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="18e5428f-ae7c-11d9-837d-000e0c2e438a">
+    <topic>jdk -- jar directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>jdk</name>
+	<range><le>1.4.2p8</le></range>
+	<range><ge>1.5.*</ge><le>1.5.0p1_1</le></range>
+      </package>
+      <package>
+	<name>linux-ibm-jdk</name>
+	<range><le>1.4.2_1</le></range>
+      </package>
+      <package>
+	<name>linux-sun-jdk</name>
+	<range><le>1.4.2.08_1</le></range>
+	<range><ge>1.5.*</ge><le>1.5.2.02,2</le></range>
+      </package>
+      <package>
+	<name>linux-blackdown-jdk</name>
+	<range><le>1.4.2_2</le></range>
+      </package>
+      <package>
+	<name>diablo-jdk</name>
+	<range><le>1.3.1.0_1</le></range>
+      </package>
+      <package>
+	<name>linux-jdk</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pluf has discovered a vulnerability in Sun Java JDK/SDK,
+	  which potentially can be exploited by malicious people to
+	  compromise a user's system.</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111331593310508">
+	  <p>The jar tool does not check properly if the files to be
+	    extracted have the string "../" on its names, so it's
+	    possible for an attacker to create a malicious jar file in
+	    order to overwrite arbitrary files within the filesystem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1080</cvename>
+      <mlist msgid="200504120226.10559.pluf@7a69ezine.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111331593310508</mlist>
+      <url>http://www.securiteam.com/securitynews/5IP0C0AFGW.html</url>
+      <url>http://secunia.com/advisories/14902/</url>
+    </references>
+    <dates>
+      <discovery>2005-04-11</discovery>
+      <entry>2005-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f650d5b8-ae62-11d9-a788-0001020eed82">
     <topic>mozilla -- privilege escalation via DOM property overrides</topic>
     <affects>
