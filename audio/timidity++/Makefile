@@ -68,7 +68,8 @@ EUCJP_LOCALE=	ja_JP.EUC
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME=	esound
 CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
+# 4.x make(1) doesn't like/work when using :=, so just disable esound suffix
+#PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
 .else
 CONFIGURE_ARGS+=--enable-audio=oss,vorbis
 .endif
