@@ -1,0 +1,13 @@
+bin/gacxtool
+share/gacxtool/icons/gacxtool.png
+share/gacxtool/themes/default/README
+share/gacxtool/themes/default/default.gtkrc
+share/gacxtool/themes/default/noise_progressbar.png
+share/gacxtool/themes/default/quality_progressbar.png
+share/gacxtool/themes/default/receive_progressbar.png
+share/gacxtool/themes/default/strength_progressbar.png
+share/gacxtool/themes/default/transmit_progressbar.png
+@dirrm share/gacxtool/icons
+@dirrm share/gacxtool/themes/default
+@dirrm share/gacxtool/themes
+@dirrm share/gacxtool
