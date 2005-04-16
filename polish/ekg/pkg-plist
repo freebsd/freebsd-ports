@@ -4,23 +4,23 @@ include/libgadu.h
 lib/libgadu.so
 lib/libgadu.so.3
 libdata/pkgconfig/libgadu.pc
-share/ekg/themes/arim.theme
-share/ekg/themes/dj.theme
-share/ekg/themes/eileen.theme
-share/ekg/themes/emers.theme
-share/ekg/themes/feeg.theme
-share/ekg/themes/irc.theme
-share/ekg/themes/jamzed.theme
-share/ekg/themes/klith.theme
-share/ekg/themes/krzyk.theme
-share/ekg/themes/lcamtuf.theme
-share/ekg/themes/leon.theme
-share/ekg/themes/matik.theme
-share/ekg/themes/old.theme
-share/ekg/themes/sic.theme
-share/ekg/themes/tohver.theme
-share/ekg/vars.txt
+%%DATADIR%%/themes/arim.theme
+%%DATADIR%%/themes/dj.theme
+%%DATADIR%%/themes/eileen.theme
+%%DATADIR%%/themes/emers.theme
+%%DATADIR%%/themes/feeg.theme
+%%DATADIR%%/themes/irc.theme
+%%DATADIR%%/themes/jamzed.theme
+%%DATADIR%%/themes/klith.theme
+%%DATADIR%%/themes/krzyk.theme
+%%DATADIR%%/themes/lcamtuf.theme
+%%DATADIR%%/themes/leon.theme
+%%DATADIR%%/themes/matik.theme
+%%DATADIR%%/themes/old.theme
+%%DATADIR%%/themes/sic.theme
+%%DATADIR%%/themes/tohver.theme
+%%DATADIR%%/vars.txt
 @unexec rmdir %D/man/pl/man1 2>/dev/null || true
 @unexec rmdir %D/man/pl 2>/dev/null || true
-@dirrm share/ekg/themes
-@dirrm share/ekg
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
