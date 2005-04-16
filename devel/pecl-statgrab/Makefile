@@ -7,6 +7,7 @@
 
 PORTNAME=	statgrab
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -29,6 +30,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${OSVERSION} < 500000
 EXTRA_LIBS=	-lkvm
+.endif
+
+.if ${PHP_VER} < 5
+post-patch:
+	@${PATCH} -d ${WRKSRC} -p0 < ${FILESDIR}/php_statgrab.h.patch
 .endif
 
 .include <bsd.port.post.mk>
