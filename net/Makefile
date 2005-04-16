@@ -143,6 +143,7 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += fugu
+    SUBDIR += gacxtool
     SUBDIR += gaim
     SUBDIR += gaim-openq
     SUBDIR += gaim-rss-reader

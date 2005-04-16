@@ -2428,6 +2428,7 @@ g2c		ports/devel/g2c
 g3dviewer	ports/graphics/g3dviewer
 ga-aspell	ports/textproc/ga-aspell
 gaa		ports/devel/gaa
+gacxtool	ports/net/gacxtool
 gaddr		ports/deskutils/gaddr
 gadfly		ports/databases/gadfly
 gag		ports/security/gag
