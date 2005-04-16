@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.75 2005/04/13 03:18:22 marcus Exp $
+# $Id: portlint.pl,v 1.76 2005/04/15 04:53:34 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -329,7 +329,7 @@ if ($committer) {
 			&perror("Warning: $fullname: dotfiles are not preferred. ".
 					"If this file is a dotfile to be installed as an example, ".
 					"consider importing it as \"dot$_\".");
-		} elsif (/[^-.a-zA-Z0-9_]/) {
+		} elsif (/[^-.a-zA-Z0-9_\+]/) {
 			&perror("Warning: $fullname: only use characters ".
 					"[-_.a-zA-Z0-9] for patch or script names.");
 		} elsif (/\.(orig|rej|bak)$/ || /~$/ || /^\#/) {
