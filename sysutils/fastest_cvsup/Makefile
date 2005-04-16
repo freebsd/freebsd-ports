@@ -7,6 +7,7 @@
 
 PORTNAME=	fastest_cvsup
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
 
@@ -22,7 +23,7 @@ PLIST_FILES=	bin/fastest_cvsup
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500805
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 .include <bsd.port.post.mk>
