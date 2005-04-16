@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	qnetwalk
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	http://qt.osdn.org.ua/
 
