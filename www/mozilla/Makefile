@@ -6,18 +6,18 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.6
-PORTREVISION?=	1
+PORTVERSION=	1.7.7
+PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/source \
-			adamw/:local
+			ahze/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
-#.if !defined(WITH_CAIRO_RENDER)
-#DISTFILES+=	libart_lgpl${EXTRACT_SUFX}:local
-#.endif
+.if !defined(WITH_CAIRO_RENDER)
+DISTFILES+=	libart_lgpl-1${EXTRACT_SUFX}:local
+.endif
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -237,7 +237,7 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
-	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.no|g' \
+	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
 		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/modules/libpref/src/init/all.js
