@@ -15,9 +15,6 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/source \
 			ahze/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
-.if !defined(WITH_CAIRO_RENDER)
-DISTFILES+=	libart_lgpl-1${EXTRACT_SUFX}:local
-.endif
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -110,6 +107,10 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	MENU_ENTRY "Add Mozilla to the GNOME menu" on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_CAIRO_RENDER)
+DISTFILES+=	libart_lgpl-1${EXTRACT_SUFX}:local
+.endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	core dumps on ${ARCH} during post-build
