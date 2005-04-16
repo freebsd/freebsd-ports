@@ -1,2 +1,4 @@
-MD5 (maradns-1.0.23.tar.bz2) = 666f04f72b5eef6411304e55618d53e6
-SIZE (maradns-1.0.23.tar.bz2) = 433164
+MD5 (maradns-1.0.25.tar.bz2) = 9680c7fca7779a4ea8adf2ea9a8facd2
+SIZE (maradns-1.0.25.tar.bz2) = 433304
+MD5 (maradns-1.0.25-egcs_build.patch) = cc31375d13e087f393828b93f6abf00a
+SIZE (maradns-1.0.25-egcs_build.patch) = 2824
