@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	2.9
+PORTVERSION=	4.0
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apeiron+ports@coitusmentis.info
 COMMENT=	A fully event-driven IRC client module
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
@@ -23,7 +23,13 @@ PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Filter-CTCP.3 \
 		POE::Component::IRC.3 \
-		POE::Component::Filter-IRC.3
+		POE::Component::Filter-IRC.3 \
+		POE::Component::Plugin.3 \
+		POE::Component::Plugin-State.3 \
+		POE::Component::Plugin-Whois.3 \
+		POE::Component::IRC-State.3 \
+		POE::Component::IRC-Qnet.3 \
+		POE::Component::IRC-Qnet-State.3
 
 post-install:
 .ifndef(NOPORTDOCS)
