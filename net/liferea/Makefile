@@ -7,18 +7,13 @@
 
 PORTNAME=	liferea
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
-
-.ifdef WITH_MOZILLA
-BUILD_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
-RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
-.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgtkhtml
@@ -27,23 +22,39 @@ USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=${MOZILLA_ARG}
 
 MAN1=		liferea.1
 GCONF_SCHEMAS=	liferea.schemas
 
 .ifdef WITH_MOZILLA
+.if ${WITH_MOZILLA}=="mozilla" || ${WITH_MOZILLA}=="yes"
+MOZILLA=	mozilla
+MOZ_BUILD=	mozilla
+.elif ${WITH_MOZILLA}=="mozilla-devel"
+MOZILLA=	mozilla-devel
+MOZ_BUILD=	mozilla
+.elif ${WITH_MOZILLA}=="firefox"
+MOZILLA=	firefox
+MOZ_BUILD=	firefox
+.else
+IGNORE=		: Available options for WITH_MOZILLA are: mozilla mozilla-devel firefox
+.endif
+.endif # WITH_MOZILLA
+
+.ifdef MOZILLA
+BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA} 
 PLIST_SUB=	MOZ=""
 .else
 PLIST_SUB=	MOZ="@comment "
 .endif
 
 post-patch:
-.ifdef WITH_MOZILLA
-	${REINPLACE_CMD} -e 's,/usr/lib/moz,${X11BASE}/lib/moz,g' \
+	${REINPLACE_CMD} -e 's,/usr/lib/mozilla,${X11BASE}/lib/${MOZ_BUILD},g' \
 		${WRKSRC}/src/liferea
-.else
-	${REINPLACE_CMD} -e 's,gtkmozembed,donttrythis,g' \
+	${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
+		-e 's,\(gecko_provider=\).*$$,\1${MOZ_BUILD},' \
 		${WRKSRC}/configure
-.endif
 
 .include <bsd.port.mk>
