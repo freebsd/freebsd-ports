@@ -1,5 +1,14 @@
---- config/Makefile.in.orig	Wed Sep  8 22:54:44 2004
-+++ config/Makefile.in	Wed Sep  8 22:54:54 2004
+--- config/Makefile.in.orig	Wed Apr 13 18:52:02 2005
++++ config/Makefile.in	Sun Apr 17 00:44:57 2005
+@@ -150,7 +150,7 @@
+ endif
+ 
+ ifneq ("$(ICONV_LIB)", "")
+-  LIBS_flags += -cclib "$(ICONV_LIB)"
++  LIBS_flags += -ccopt "-I%%LOCALBASE%%/include" -ccopt "-L%%LOCALBASE%%/lib" -cclib "$(ICONV_LIB)"
+ endif
+ 
+ ifeq ("$(BROOSNET)", "yes")
 @@ -280,7 +280,7 @@
  all: Makefile config/Makefile.config $(TARGET_TYPE)
  
