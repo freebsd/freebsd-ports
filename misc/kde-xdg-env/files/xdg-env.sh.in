@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# Submit missing XDG-file locations to kde@freebsd.org!
+
+export XDG_CONFIG_DIRS=\
+${XDG_CONFIG_DIRS}:/etc/xdg:%%LOCALBASE%%/etc/xdg:%%X11BASE%%/etc/xdg:\
+%%LOCALBASE%%/etc/xdg/xfce4
+
+export XDG_DATA_DIRS=\
+${XDG_DATA_DIRS}:/usr/share:%%LOCALBASE%%/share:\
+%%X11BASE%%/share:%%X11BASE%%/share/gnome
+
+kbuildsycoca
