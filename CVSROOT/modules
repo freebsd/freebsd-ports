@@ -12573,6 +12573,7 @@ xtl		ports/devel/xtl
 xtla		ports/devel/xtla
 xtoolwait	ports/x11/xtoolwait
 xtraceroute	ports/net/xtraceroute
+xtrader		ports/finance/xtrader
 xtriangles	ports/games/xtriangles
 xtris		ports/games/xtris
 xtrlock		ports/x11/xtrlock
