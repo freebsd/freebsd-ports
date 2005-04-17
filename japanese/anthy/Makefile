@@ -33,7 +33,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 .if defined(WITH_ODIC)
 MASTER_SITES+=	http://www.ofug.net/~yamajun/files/:odic
-DISTFILES+=	okinawa-20041220.t:odic
+DISTFILES+=	okinawa-20050410.t:odic
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -51,9 +51,9 @@ post-extract:
 .endif
 
 .if defined(WITH_ODIC)
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/okinawa-20041220.t ${WRKSRC}/mkanthydic
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/okinawa-20050410.t ${WRKSRC}/mkanthydic
 	${REINPLACE_CMD} -e \
-		's/base.t extra.t/base.t extra.t okinawa-20041220.t/' \
+		's/base.t extra.t/base.t extra.t okinawa-20050410.t/' \
 		${WRKSRC}/mkanthydic/Makefile.in
 .endif
 
