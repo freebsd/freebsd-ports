@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	amp
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/audio/mpeg/amp/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-99
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www-users.cs.umn.edu/~wburdick/ftp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphus@gmail.com
 COMMENT=	Another mp3 player
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}"
 
 MAN1=		amp.1
 PLIST_FILES=	bin/amp
