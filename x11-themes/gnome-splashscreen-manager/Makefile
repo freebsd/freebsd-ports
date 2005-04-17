@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-splashscreen-manager
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.miketech.net/gnome-art/download/
 DISTNAME=	gnome-art-${PORTVERSION}
@@ -14,7 +15,8 @@ DISTNAME=	gnome-art-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gnome splash screen manager
 
-BUILD_DEPENDS=	ruby-glade-create-template:${PORTSDIR}/devel/ruby-libglade2 \
+BUILD_DEPENDS=	gnome-session:${PORTSDIR}/x11/gnomesession \
+		ruby-glade-create-template:${PORTSDIR}/devel/ruby-libglade2 \
 		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -23,8 +25,17 @@ WRKSRC=		${WRKDIR}/gnome-art/${PORTNAME}
 USE_RUBY=	yes
 USE_REINPLACE=	yes
 USE_RUBY_SETUP=	yes
+GSPLASH=	${X11BASE}/share/gnome/pixmaps/splash
 
 post-patch:
+	cd ${WRKSRC}/lib/gnome-splashscreen-manager/ && \
+	for file in `${FIND} ${GSPLASH} -type f` ; do \
+		${SED} -e 's|%%SPLASHSCREENS%%|\\n<splash_screen>\\n\\t<name>%%F%%</name>\\n\\t<filename>%%F%%</filename>\\n\\t<description>...</description>\\n\\t<author>?</author>\\n\\t<license>unknown</license>\\n</splash_screen>\\n%%SPLASHSCREENS%%|' \
+		< gnome_splashscreen_manager.rb > gnome_splashscreen_manager.rb.bak ; \
+		${SED} -e "s|%%F%%|$${file}|g" < gnome_splashscreen_manager.rb.bak > gnome_splashscreen_manager.rb ; \
+	done
+	@${REINPLACE_CMD} -e 's|%%SPLASHSCREENS%%||' \
+		${WRKSRC}/lib/gnome-splashscreen-manager/gnome_splashscreen_manager.rb
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/lib/gnome-splashscreen-manager/ui/main_window.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
