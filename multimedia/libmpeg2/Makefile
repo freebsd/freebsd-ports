@@ -55,10 +55,6 @@ CONFIGURE_ARGS+=	--disable-warnings
 CFLAGS:=	${CFLAGS:N-mcpu=*}
 .endif
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on alpha 5.x"
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "====>"
 .ifndef(WITH_SDL)
