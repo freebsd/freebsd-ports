@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.1.5
+PORTVERSION=	4.1.7
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://darkambient.net/
@@ -19,12 +19,15 @@ OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
 		CLI "Enable to build the management CLI" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-			--enable-fancy-cli
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
 USE_RC_SUBR=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
 
 .if defined(WITH_OSIRISMD)
 PLIST_SUB+=	OSIRISMD=""
