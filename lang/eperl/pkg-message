@@ -10,3 +10,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
 FITNESS FOR A PARTICULAR PURPOSE.  See either the Artistic License or the
 GNU General Public License for more details.
+
+*** WARNING ***
+
+Using eperl in CGI or NHP-CGI mode with a webserver will expose any files
+having extension .html, .phtml, .ephtml, .epl, .pl, or .cgi under the
+document root.
+
+Any files matching those extensions that do not contain eperl script
+may be served to a client verbatim on request.
