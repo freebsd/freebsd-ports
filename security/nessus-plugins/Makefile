@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nessus-plugins
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
