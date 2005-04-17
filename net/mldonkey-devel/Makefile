@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.30.5
+PORTVERSION=	2.5.30.6
 CATEGORIES+=	net
-MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/ \
-		ftp://ftp.berlios.de/pub/mldonkey/spiralvoice/cvs/
+MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DOWNLOADVERSION}
 
@@ -22,7 +21,7 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 #DOWNLOADVERSION=${PORTVERSION:R}
-DOWNLOADVERSION=2.5.30.5
+DOWNLOADVERSION=2.5.30.6
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
