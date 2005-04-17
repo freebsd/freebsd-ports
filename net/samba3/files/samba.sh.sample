@@ -18,6 +18,7 @@
 #
 #nmbd_enable="YES"
 #smbd_enable="YES"
+%%WINBIND%%# You need to enable winbindd separately, by adding:
 %%WINBIND%%#winbindd_enable="YES"
 #
 
@@ -41,11 +42,9 @@ fi
 if test -n ${samba_enable:-""} && checkyesno samba_enable; then
     nmbd_enable=${nmbd_enable:-"YES"}
     smbd_enable=${smbd_enable:-"YES"}
-%%WINBIND%%    winbindd_enable=${winbindd_enable:-"YES"}
 %%WINBIND%%    # Check, that winbind is actally configured
-%%WINBIND%%    if [ ! "`egrep -i '(idmap.*uid|winbind.*uid)' ${samba_config} 2>/dev/null | egrep -v [\#\;]`" ]; then
-%%WINBIND%%    	#warn "Winbind support is not configured"
-%%WINBIND%%	winbindd_enable="NO"
+%%WINBIND%%    if [ "`egrep -i '(idmap.*uid|winbind.*uid)' ${samba_config} 2>/dev/null | egrep -v [\#\;]`" ]; then
+%%WINBIND%%	winbindd_enable="YES"
 %%WINBIND%%    fi
 fi
 
