@@ -1,22 +1,21 @@
-4Suite is a collection of Python tools for XML processing and object data
-management, published by Fourthought, Inc under an open source licence.
+4Suite is a suite of Python modules for XML and RDF processing.
+Its major components include the following:
 
-The suite provides support for XML parsing, several transient and persistent
-DOM implementations, XPath expressions, XPointer, XSLT transforms, XLink, RDF
-and ODMG object databases.
+ * Ft.Xml.Domlette: A very fast, lightweight XPath-oriented DOM.
+ * Ft.Xml.XPath: An XPath 1.0 implementation for Domlette documents.
+ * Ft.Xml.Xslt: A robust XSLT 1.0 processor.
+ * Ft.Rdf: RDF processing tools, including a query/inference language.
+ * Ft.Server: An integrated document & RDF repository with web access.
+ * Ft.Lib: Various support libraries that can be used independently.
 
-The development of 4Suite is closely coordinated with that of the publicly
-developed PyXML extension for Python.  4Suite is not intended to replace
-PyXML, but rather to augment it with additional functionality.  As certain
-parts of 4Suite reach maturity they will be transferred to PyXML (this has
-already happened with the 4DOM implementation of the DOM API).  Eventually
-PyXML will be a complete and stable toolkit, while 4Suite will continue to
-provide bleeding edge (re)implementations.
-
-The user of Python 2.0 and later therefore now has three options for XML
-processing:  the built-in 'xml' package, PyXML, and 4Suite.  PyXML overrides
-and/or extends the 'xml' package, and 4Suite does the same for PyXML.
+4Suite also includes convenient command-line tools:
+ * 4xml: XML document parsing and reserialization.
+ * 4xpath: XPath expression evaluation.
+ * 4xslt: XSLT processing engine.
+ * 4rdf: RDF/XML parsing, persistence, querying and reserialization.
+ * 4ss_manager: Document/RDF repository administration.
+ * 4ss: Document/RDF repository user commands.
 
 WWW: http://4suite.org/
 
--- Johann Visagie <wjv@FreeBSD.org>
+-- Mike Brown <mike@skew.org>

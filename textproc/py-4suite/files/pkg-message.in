@@ -1,0 +1,28 @@
+4Suite version %%DISTVERSION%% has been successfully installed!
+Please note the installation locations:
+
+    Example repository config files:
+    %%PREFIX%%/%%SYSCONFDIR%%
+
+    Machine-specific variable data space:
+    %%PREFIX%%/%%LOCALSTATEDIR%%
+
+    Local message catalogs:
+    %%PREFIX%%/%%LOCALEDIR%%
+
+    Demos, default XML catalogs, schemas, profiling code, load
+    tests, and various standard files for installation in new
+    4Suite repositories:
+    %%PREFIX%%/%%DATADIR%%
+
+    Python library code, including Python C extensions:
+    %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%
+
+    Test suites:
+    %%PREFIX%%/%%LIBDIR%%/tests
+
+    Executable scripts (add this to your executable path):
+    %%PREFIX%%/%%BINDIR%%
+
+    Documentation in various formats, if installed:
+    %%PREFIX%%/%%DOCSDIR%%
