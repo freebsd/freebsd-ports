@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.4.8.2005.04.11
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sdcc
+MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
+		http://www.kalimero.be/mirror/
+DISTNAME=	${PORTNAME}-src-20050411
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -18,6 +18,7 @@ COMMENT=	Small Device C Compiler
 WRKSRC=		${WRKDIR}/sdcc
 
 GNU_CONFIGURE=	yes
+NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	MCS51   "Intel mcs51 port" on \
