@@ -10815,6 +10815,7 @@ sparc-rtems-gcc	ports/devel/sparc-rtems-gcc
 sparc-rtems-gdb	ports/devel/sparc-rtems-gdb
 sparc-rtems-objc	ports/devel/sparc-rtems-objc
 spassgen	ports/sysutils/spassgen
+spcaview	ports/graphics/spcaview
 speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely
 speedbar	ports/editors/speedbar
