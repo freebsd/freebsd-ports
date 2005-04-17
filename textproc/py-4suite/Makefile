@@ -6,45 +6,69 @@
 #
 
 PORTNAME=	4suite
-PORTVERSION=	0.11.1
-PORTREVISION=	2
+PORTVERSION=	1.0.b1
 CATEGORIES=	textproc python
-MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/
+MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	foursuite
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	4Suite-${PORTVERSION}
+DISTNAME=	4Suite-1.0b1
 
 MAINTAINER=	mike@skew.org
-COMMENT=	A collection of Python tools for XML processing and object database management
+COMMENT=	A collection of Python tools for XML and RDF processing
 
-BROKEN=		"has a broken pkg-plist that removes dozens of files not installed by this port"
-EXPIRATION_DATE=2005-04-18
-DEPRECATED=	${BROKEN}
-
-BUILD_DEPENDS=	${PYXML}
-RUN_DEPENDS=	${PYXML}
-
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i "" -E
-USE_PYTHON=	yes
+USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
-		--install-data=${PREFIX}/share
 
 .include <bsd.port.pre.mk>
-.if ${PYTHON_VERSION} == "python1.5" || ${PYTHON_VERSION} == "python1.6"
-PLIST_SUB+=	PACKAGE_DIR=xml PYTHON2_ONLY="@comment "
+
+BINDIR=		bin
+SYSCONFDIR=	etc/4Suite
+LIBDIR=		lib/4Suite
+LOCALSTATEDIR=	var/4Suite
+DATADIR=	share/4Suite
+DOCSDIR=	share/doc/4Suite
+LOCALEDIR=	share/locale
+
+PLIST_SUB+=	PACKAGE_DIR=Ft BINDIR=${BINDIR} SYSCONFDIR=${SYSCONFDIR} \
+		LIBDIR=${LIBDIR} LOCALSTATEDIR=${LOCALSTATEDIR} \
+		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} LOCALEDIR=${LOCALEDIR}
+
+SUB_FILES=	pkg-message
+SUB_LIST+=	PACKAGE_DIR=Ft BINDIR=${BINDIR} SYSCONFDIR=${SYSCONFDIR} \
+		LIBDIR=${LIBDIR} LOCALSTATEDIR=${LOCALSTATEDIR} \
+		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} LOCALEDIR=${LOCALEDIR} \
+		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
+		DISTVERSION=${DISTVERSION}
+
+PYDISTUTILS_CONFIGUREARGS=	--bindir=${PREFIX}/${BINDIR} \
+				--sysconfdir=${PREFIX}/${SYSCONFDIR} \
+				--libdir=${PREFIX}/${LIBDIR} \
+				--localstatedir=${PREFIX}/${LOCALSTATEDIR} \
+				--datadir=${PREFIX}/${DATADIR} \
+				--docdir=${PREFIX}/${DOCSDIR} \
+				--localedir=${PREFIX}/${LOCALEDIR} \
+				--pythonlibdir=${PYTHON_SITELIBDIR}
+
+.if defined(NOPORTDOCS)
+PYDISTUTILS_BUILDARGS=		--without-docs
+PYDISTUTILS_INSTALLARGS=	--without-docs
 .else
-PLIST_SUB+=	PACKAGE_DIR=_xmlplus PYTHON2_ONLY=""
+PYDISTUTILS_BUILDARGS=		--with-docs
+PYDISTUTILS_INSTALLARGS=	--with-docs
 .endif
 
-post-patch:
-	@ ${REINPLACE_CMD} \
-	    -e 's#(copy_to=.)docs#\1doc/${PORTNAME}#' \
-	    -e 's#(copy_to=.)(test_suite|demo)#\1examples/${PORTNAME}/\2#' \
-	    ${WRKSRC}/setup.py
-.if defined(NOPORTDOCS)
-	@ ${REINPLACE_CMD} -e 's/(data_files=)data_files/\1/' \
-	  ${WRKSRC}/setup.py
+post-extract:
+	@ ${REINPLACE_CMD} -e "s#'4ss.conf'#'4ss.conf.sample'#" \
+		${WRKSRC}/packages/Server.pkg
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCSDIR}
 .endif
+	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
