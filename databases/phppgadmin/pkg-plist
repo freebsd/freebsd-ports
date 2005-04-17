@@ -95,6 +95,7 @@
 %%PGADMDIR%%/lang/po2php
 %%PGADMDIR%%/lang/polish.php
 %%PGADMDIR%%/lang/portuguese-br.php
+%%PGADMDIR%%/lang/portuguese-pt.php
 %%PGADMDIR%%/lang/recoded/README
 %%PGADMDIR%%/lang/recoded/afrikaans.php
 %%PGADMDIR%%/lang/recoded/arabic.php
@@ -113,6 +114,7 @@
 %%PGADMDIR%%/lang/recoded/mongol.php
 %%PGADMDIR%%/lang/recoded/polish.php
 %%PGADMDIR%%/lang/recoded/portuguese-br.php
+%%PGADMDIR%%/lang/recoded/portuguese-pt.php
 %%PGADMDIR%%/lang/recoded/romanian.php
 %%PGADMDIR%%/lang/recoded/russian.php
 %%PGADMDIR%%/lang/recoded/slovak.php
