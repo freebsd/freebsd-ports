@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.portaone.com/~sobomax/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	A FreeBSD Driver for Digium X100P/TDM400P Telephony Cards
+COMMENT=	A FreeBSD Driver for FXO, FXS, BRI and PRI Telephony Cards
 
 LIB_DEPENDS=	newt.51:${PORTSDIR}/devel/newt
 
@@ -23,6 +22,12 @@ ONLY_FOR_ARCHS=	i386
 
 PKGMESSAGE=	${WRKSRC}/.MESSAGE
 MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"FreeBSD versions below 5.x is not supported yet. If you can add support please do it and send your patches to Alexander Timoshenko <gonzo@portaone.com>. We will integrate into the driver. Thanks!"
+.endif
 
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
@@ -43,4 +48,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/zaptel.sh.sample ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

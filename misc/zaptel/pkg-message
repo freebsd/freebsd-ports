@@ -20,13 +20,7 @@ help to improve quality of the drivers.
 
 Great thanks to all companies and individuals who made this driver happen,
 including but not limited to, John Todd, Chris Coleman, Alexander Timoshenko,
-Porta Software Ltd and others contributors of the bounty project.
-
-Also, we would be grateful if anyone who uses this driver can send a short
-note to DigiumBSD@portaone.com, with brief description of what X100P is used
-for as well as with extimated number of cards deployed under FreeBSD. We will
-use this information to persuage Digium that in the order to sell more
-hardware they have to support FreeBSD drivers along with Linux ones.
+Porta Software Ltd, Max Khon and others contributors.
 
 Thanks and enjoy!
 
