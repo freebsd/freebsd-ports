@@ -18,9 +18,10 @@
 name=sixxs_aiccu
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/sbin/sixxs-aiccu start"
+command="%%PREFIX%%/sbin/sixxs-aiccu"
 command_args=%%PREFIX%%/etc/aiccu.conf
-stop_cmd="%%PREFIX%%/sbin/sixxs-aiccu stop"
+start_cmd="%%PREFIX%%/sbin/sixxs-aiccu start $command_args"
+stop_cmd="%%PREFIX%%/sbin/sixxs-aiccu stop $command_args"
 required_files=%%PREFIX%%/etc/aiccu.conf
 
 # set default
