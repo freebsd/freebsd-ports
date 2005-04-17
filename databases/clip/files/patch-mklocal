@@ -1,0 +1,47 @@
+--- mklocal.orig	Tue Jul 20 18:59:08 2004
++++ mklocal	Sun Apr 17 11:28:48 2005
+@@ -1,5 +1,8 @@
+ #!/bin/sh
+ 
++# FreeBSD changes:
++# - add a number of '|| exit' so the build will stop immediately at any
++#   failure (rather than being detected later when packaging)
+ 
+ for opt in $*
+ do
+@@ -89,7 +92,7 @@
+ #	./configure ${RFLAG} ${CLIP_CONFIGURE_FLAGS}
+ #	$MAKE install || exit 2
+ 	./configure ${RFLAG} ${CLIP_CONFIGURE_FLAGS} || exit 2
+-	$MAKE install DESTDIR=${DESTDIR}
++	$MAKE install DESTDIR=${DESTDIR} || exit 2
+ cd $pwd
+ 
+ fi
+@@ -106,12 +109,12 @@
+ #$MAKE install
+ 
+ #(
+-	cd cliplibs
++	cd cliplibs || exit 2
+ 	CLIPROOT=${DESTDIR}${CLIPROOT}
+ 	LD_LIBRARY_PATH=${DESTDIR}/usr/lib:$LD_LIBRARY_PATH
+ 	export CLIPROOT  LD_LIBRARY_PATH
+-	$MAKE
+-	$MAKE install DESTDIR=''
++	$MAKE || exit 2
++	$MAKE install DESTDIR='' || exit 2
+ #)
+ 
+ cd $pwd
+@@ -133,8 +136,8 @@
+ #		CLIPROOT=${DESTDIR}${CLIPROOT}
+ #		LD_LIBRARY_PATH=${DESTDIR}/usr/lib:$LD_LIBRARY_PATH
+ #		export CLIPROOT  LD_LIBRARY_PATH
+-		$MAKE
+-		$MAKE install
++		$MAKE || exit 3
++		$MAKE install || exit 3
+ #		${DESTDIR}${CLIPROOT}/bin/clip_msgmerge
+ #		${DESTDIR}${CLIPROOT}/bin/clip_msgfmt
+ #	)

@@ -1,0 +1,38 @@
+--- cliplibs/Makefile.orig	Sat Jan 22 01:58:51 2005
++++ cliplibs/Makefile	Sun Apr 17 11:26:06 2005
+@@ -1,17 +1,27 @@
+ #
++# FreeBSD changes:
++# - remove some directories from being built automatically
++# - switch from shell for (which never fails) to phony targets (fail fast)
++# - build in any directories specified in OPT_CLIPLIBS
++# - execute install target to install libs into the temporary CLIPROOT
++#   under WRKSRC, so the rest of clip can find them.
+ 
+ dirs = clip-gzip clip-bzip2 clip-crypto clip-gd clip-fcgi \
+        clip-cti clip-gtk clip-gtkextra clip-gtk2 clip-fw \
+-       clip-mysql clip-postgres clip-oracle clip-interbase clip-odbc \
+        clip-com clip-oasis clip-rtf clip-r2d2 clip-ui \
+ 
+-all local user system install lib:
+-	for dir in $(dirs); \
+-	do \
+-		(cd $$dir ;\
+-		[ -x ./configure ] && ./configure ;\
+-		$(MAKE) $@ );\
+-	done
++dirs += $(OPT_CLIPLIBS)
++
++.PHONY: subdirs $(dirs)
++
++subdirs: $(dirs)
++
++$(dirs):
++	cd $@; ( [ -x ./configure ] && ./configure ) || true
++	$(MAKE) -C $@
++	$(MAKE) -C $@ install
++
++all local user system install lib: subdirs
+ 
+ clean:
+ 	for dir in $(dirs); \

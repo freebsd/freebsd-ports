@@ -1,5 +1,5 @@
---- cliplibs/clip-gtkextra/configure.orig	Fri Dec 26 11:34:59 2003
-+++ cliplibs/clip-gtkextra/configure	Mon Apr 19 22:02:13 2004
+--- cliplibs/clip-gtkextra/configure.orig	Mon Oct 25 19:56:51 2004
++++ cliplibs/clip-gtkextra/configure	Fri Apr 15 21:24:57 2005
 @@ -3,6 +3,10 @@
  uname=`uname -s`
  uver=`uname -r`
@@ -36,13 +36,13 @@
  	echo "*****************************************************************"
  	USE_GTK=no
  else
--	gtkincpath=`find $gtkprefix/include -name 'gtk.h' -printf '%h'`
-+	gtkincpath=`find $gtkprefix/include$gtkpath -name 'gtk.h' -exec dirname {} \;`
+-	gtkincpath=`find $gtkprefix/include/gtk-1.2 -name 'gtk.h' -printf '%h'`
++ 	gtkincpath=`find $gtkprefix/include$gtkpath -name 'gtk.h' -exec dirname {} \;`
  	cd $gtkincpath/..
  	gtkincpath=`pwd`
  	cd $oldpwd
 -	LIBS=`gtk-config --libs`
-+	LIBS=`${gtkconfig} --libs`
++ 	LIBS=`${gtkconfig} --libs`
  
  	if [ "$osname" = "CYGWIN" ]
  	then
@@ -61,8 +61,8 @@
  	echo "****************************************************************************"
  	USE_GTK_EXTRA=no
  else
--	gtkextraincpath=`find $gtkprefix/include -name 'gtk.h' -printf '%h'`
-+	gtkextraincpath=gtkextraincpath=`find $gtkprefix/include -name 'gtk.h' -exec dirname {} \;`
+-	gtkextraincpath=`find $gtkextraprefix/include -name 'gtkextra.h' -printf '%h'`
++ 	gtkextraincpath=`find $gtkprefix/include -name 'gtk.h' -exec dirname {} \;`
  	cd $gtkextraincpath/..
  	gtkextraincpath=`pwd`
  	cd $oldpwd

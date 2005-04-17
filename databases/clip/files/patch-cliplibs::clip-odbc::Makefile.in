@@ -1,5 +1,5 @@
---- cliplibs/clip-odbc/Makefile.in.orig	Thu Feb 19 14:16:38 2004
-+++ cliplibs/clip-odbc/Makefile.in	Mon Apr 19 22:07:12 2004
+--- cliplibs/clip-odbc/Makefile.in.orig	Mon Mar 29 22:59:56 2004
++++ cliplibs/clip-odbc/Makefile.in	Sat Apr 16 00:54:33 2005
 @@ -8,7 +8,7 @@
  
  LIBODBC=@LIBODBC@
@@ -9,6 +9,15 @@
  C_FLAGS=-Wall -g -I.
  #CC=gcc
  
+@@ -22,7 +22,7 @@
+ all:  $(TARGET) $(TARGET1) $(ATARGET)
+ 
+ $(TARGET): $(OBJS)
+-	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) $(LIBODBC)
++	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) $(LIBODBC) -L/usr/local/lib 
+ 
+ $(ATARGET): $(OBJS)
+ 	$(CLIPROOT)/bin/clip_makelib $(ATARGET) $(OBJS) $(LIBODBC)
 @@ -38,7 +38,7 @@
  
  install:
