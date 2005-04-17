@@ -1,0 +1,24 @@
+USB Cameras based SPCA5xx Utilities for NetBSD
+-----------------------------------------------
+1. What is it?
+   They are patches from SPCA5xx chipset linux driver to be worked on *BSD,
+   There is included two userland programs as follow;
+	spca5shot ... simple image capture program.
+	spca5view ... sequential image viewer program.
+
+2. Supported USB cameras
+	Vendor	Device	Product Name
+	------	------	------------
+	0x041e	0x403a  Creative webcam nx pro
+	0x04fc  0x0561  FlexiCam B100
+	0x0572	0x0041  Creative webcam notebook PD1170
+	0x060b	0xa001	Maxell CompactPC Camera PM3
+	0x0733	0x0401  Intel CS330
+	0x0ac8	0x301b  LOAS MCM-H06SL
+	0x0ac8	0x301b  sanwa CMS-V11
+	0x0c45  0x6025  LOAS MCM-S02SL ( 352x288 not worked )
+	0x0c45  0x6025  VGA WEB CAMERA "WEB CAM." ( 352x288 not worked )
+	0x0c45	0x6029  Raccoon AM-ST3
+	0xabcd	0xcdee	SIGMA-APO Petcam
+
+WWW: http://www2.starcat.ne.jp/~takam/bsd/NetBSD.html#spca561

@@ -498,6 +498,7 @@
     SUBDIR += sng
     SUBDIR += snx101util
     SUBDIR += sodipodi
+    SUBDIR += spcaview
     SUBDIR += springgraph
     SUBDIR += stamp
     SUBDIR += svg2png
