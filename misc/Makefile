@@ -161,6 +161,7 @@
     SUBDIR += kaddressbook-plugins
     SUBDIR += katalog
     SUBDIR += kcd
+    SUBDIR += kde-xdg-env
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n-af
     SUBDIR += kde3-i18n-az
