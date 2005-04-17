@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	goggles
-PORTVERSION=	0.7.10
-PORTREVISION=	4
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.fifthplanet.net/files/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	lioux
+MASTER_SITES=	http://www.fifthplanet.net/files/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
@@ -34,10 +31,6 @@ pre-everything::
 .endif
 
 .include <bsd.port.pre.mk>
-
-#.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-#BROKEN=		"Does not compile on alpha 5.x"
-#.endif
 
 .ifdef(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
