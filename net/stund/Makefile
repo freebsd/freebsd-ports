@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	stund
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stun
-DISTNAME=	${PORTNAME}_${PORTVERSION}_Jun06
+DISTNAME=	${PORTNAME}_${PORTVERSION}_Oct29
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -20,14 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/server ${LOCALBASE}/sbin/stund
 	${INSTALL_PROGRAM} ${WRKSRC}/client ${LOCALBASE}/bin/stun_client
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
