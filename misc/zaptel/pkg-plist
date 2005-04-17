@@ -4,15 +4,16 @@ bin/ztmonitor
 bin/zttest
 bin/zttool
 etc/rc.d/zaptel.sh.sample
-@unexec if cmp -s %D/etc/zaptel.conf %D/etc/zaptel.conf.sample; then rm -f %D/etc/zaptel.conf; fi
-etc/zaptel.conf.sample
-@exec [ -f %B/zaptel.conf ] || cp %B/%f %B/zaptel.conf
 include/tonezone.h
 include/zaptel.h
 lib/libtonezone.a
 lib/zaptel/linker.hints
+lib/zaptel/qozap.ko
 lib/zaptel/wcfxo.ko
 lib/zaptel/wcfxs.ko
+lib/zaptel/wct1xxp.ko
+lib/zaptel/wct4xxp.ko
+lib/zaptel/wcte11xp.ko
 lib/zaptel/zaptel.ko
 lib/zaptel/ztdummy.ko
 @dirrm lib/zaptel
