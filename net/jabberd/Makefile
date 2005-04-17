@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	net
-MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
-DISTNAME=	${PORTNAME}-2.0s6
+MASTER_SITES=	http://files.jabberstudio.org/jabberd2/
+DISTNAME=	${PORTNAME}-2.0s7
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	kirk@strauser.com
@@ -20,14 +20,12 @@ LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	jabberd.sh
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-ssl \
 		--with-extra-include-path=${LOCALBASE}/include${EIP} \
 		--with-extra-library-path=${LOCALBASE}/lib${ELP} \
 		--enable-fs
-
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
@@ -82,10 +80,6 @@ pre-everything::
 	@${ECHO} "WITH_LDAP		use LDAP for authentication"
 	@${ECHO} "WITH_PAM		use PAM for authentication"
 	@${ECHO}
-
-post-patch:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/jabberd.sh > ${WRKDIR}/jabberd.sh
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
