@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.30.1
+PORTVERSION=	2.5.30.5
 CATEGORIES+=	net
 MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/ \
 		ftp://ftp.berlios.de/pub/mldonkey/spiralvoice/cvs/
@@ -22,21 +22,28 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 #DOWNLOADVERSION=${PORTVERSION:R}
-DOWNLOADVERSION=2.5.30-1
+DOWNLOADVERSION=2.5.30.5
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 WANT_AUTOCONF_VER=	259
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
 
-CONFIGURE_ARGS=	--disable-pthread --enable-ocamlver=3
+CONFIGURE_ARGS+=\
+		--disable-pthread \
+		--enable-ocamlver=3 \
+		--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ENV+=	\
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
+#WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
 
 .if defined(WITHOUT_GUI)
 .if defined(WITHOUT_CORE)
@@ -79,6 +86,7 @@ post-patch:
 		${WRKDIR}/wrapper.sh
 	@${REINPLACE_CMD} -E \
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${BUILD_WRKSRC}/config/Makefile.in
 
 pre-configure:
