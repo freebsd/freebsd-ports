@@ -7,7 +7,7 @@
 
 PORTNAME=	djbfft
 PORTVERSION=	0.76
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/djbfft/
 
@@ -19,7 +19,7 @@ NO_PACKAGE=	Forbidden - we have patches to the distribution.
 DISABLE_SIZE=	yes
 ALL_TARGET=
 INSTALL_TARGET=setup check
-USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
 
 HEADER_FILES=	complex4.h complex8.h fftc4.h fftc8.h fftfreq.h \
 		fftr4.h fftr8.h real4.h real8.h
@@ -27,8 +27,8 @@ LIB_FILES=	libdjbfft.a
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec \
-		${PERL} -pi -e 's!(djbfft.a)!lib\1!' {} \;
-	@${PERL} -pi -e 's|("include)|\1/${PORTNAME}|' ${WRKSRC}/hier.c
+		${REINPLACE_CMD} -E -e 's!(djbfft.a)!lib\1!' {} \;
+	@${REINPLACE_CMD} -E 's|("include)|\1/${PORTNAME}|' ${WRKSRC}/hier.c
 
 do-configure:
 	@${ECHO_CMD} '${CC} ${CFLAGS} -fPIC' > ${WRKSRC}/conf-cc
