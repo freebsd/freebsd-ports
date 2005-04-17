@@ -1,0 +1,19 @@
+--- cliplibs/clip-fcgi/Makefile.orig	Fri Apr 15 20:59:45 2005
++++ cliplibs/clip-fcgi/Makefile	Fri Apr 15 21:08:03 2005
+@@ -15,13 +15,13 @@
+ 
+ 
+ have_lib:
+-	test -f /usr/include/fcgi_config.h
++	test -f /usr/local/include/fcgi_config.h
+ 
+ $(TARGET): $(OBJS)
+-	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) -lfcgi
++	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) -lfcgi -L/usr/local/lib
+ 
+ $(ATARGET): $(OBJS)
+-	$(CLIPROOT)/bin/clip_makelib $(ATARGET) $(OBJS) -lfcgi
++	$(CLIPROOT)/bin/clip_makelib $(ATARGET) $(OBJS) -lfcgi -L/usr/local/lib
+ 
+ fcgi.o: fcgi.c hashcode.h
+ 	$(CC) $(C_FLAGS) $(CLIPINCLUDE) -c fcgi.c

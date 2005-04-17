@@ -1,0 +1,24 @@
+--- cliplibs/clip-gd/gd/configure.orig	Tue Jan 18 23:02:01 2005
++++ cliplibs/clip-gd/gd/configure	Sun Apr 17 11:31:23 2005
+@@ -4,6 +4,9 @@
+ #	<uri@itk.ru>
+ #
+ 
++# FreeBSD changes:
++# - use freetype-config 
++
+ uname=`uname -s`
+ uver=`uname -r`
+ hname=`hostname -f 2>/dev/null`
+@@ -91,9 +94,9 @@
+ echo "COMPILER='$CC'" >&3
+ echo "INSTALL_LIB='$stdlibpath'" >&3
+ echo "INSTALL_INCLUDE='$stdincpath'" >&3
+-echo "LIBDIRS='-L. -L$stdlibpath -L/usr/lib/X11 -L/usr/X11R6/lib'" >&3
++echo "LIBDIRS='-L. -L$stdlibpath -L/usr/lib/X11 -L/usr/X11R6/lib `freetype-config --libs` '">&3
+ #echo "INCLUDEDIRS='-I. -I/usr/include/freetype2 -I/usr/include/X11 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I$stdincpath'" >&3
+-echo "INCLUDEDIRS='-I. -I/usr/include/freetype2 -I/usr/include/freetype2/freetype -I/usr/include/X11 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I$stdincpath'" >&3
++echo "INCLUDEDIRS='-I. -I/usr/include/freetype2 -I/usr/include/freetype2/freetype -I/usr/include/X11 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I$stdincpath `freetype-config --cflags` '" >&3
+ 
+ if [ -f $stdlibpath/libpng${DLLSUFF} ]
+ then

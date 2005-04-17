@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clip
-PORTVERSION=	1.1.11.1
-PORTREVISION=	2
+PORTVERSION=	1.1.14.1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/	\
 		ftp://ftp.linux.ru.net/mirrors/clip/
@@ -20,10 +19,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
+		wget:${PORTSDIR}/ftp/wget			\
+		xmkmf:${X_IMAKE_PORT}
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
+		png.5:${PORTSDIR}/graphics/png			\
+		freetype.9:${PORTSDIR}/print/freetype2		\
+		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
+		gd.4:${PORTSDIR}/graphics/gd			\
+		fcgi.0:${PORTSDIR}/www/fcgi
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
+		wget:${PORTSDIR}/ftp/wget
 
 USE_GETTEXT=	yes
-
 WANT_GNOME=	yes
+
+OPTIONS=	IODBC		"iODBC support"				on \
+		UNIXODBC	"unixODBC support (not with iODBC)"	off \
+		MYSQL		"MySQL support"				off \
+		PGSQL		"PostgreSQL support"			off \
+		FIREBIRD	"Firebird (Interbase) support"		off
 
 .include <bsd.port.pre.mk>
 
@@ -31,44 +46,43 @@ WANT_GNOME=	yes
 BROKEN=		"Does not compile on !i386"
 .endif
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
-		wget:${PORTSDIR}/ftp/wget			\
-		xmkmf:${X_IMAKE_PORT}
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
-		png.5:${PORTSDIR}/graphics/png			\
-		freetype.9:${PORTSDIR}/print/freetype2		\
-		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
-		gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
-		wget:${PORTSDIR}/ftp/wget
+# OPT_CLIPLIBS contains the optional subdirectories built by
+# the patched ${WRKSRC}/cliplibs/Makefile
+# Not currently built: clip-oracle
 
-.if !defined(WITHOUT_IODBC) && !exists(${LOCALBASE}/bin/odbcinst)
+# Either IODBC or UNIXODBC
+.if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 PLIST_SUB=	ODBC=""
-.elif !defined(WITHOUT_UNIXODBC)
+OPT_CLIPLIBS+=clip-odbc
+.elif defined(WITH_UNIXODBC)
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 PLIST_SUB=	ODBC=""
+OPT_CLIPLIBS+=clip-odbc
 .else
 PLIST_SUB=	ODBC="@comment "
 .endif
 
-.if !defined(WITHOUT_MYSQL) || exists(${LOCALBASE}/include/mysql/mysql.h)
+.if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 PLIST_SUB+=	MYSQL=""
+OPT_CLIPLIBS+=clip-mysql
 .else
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL) || exists(${LOCALBASE}/include/libpq-fe.h)
+.if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 PLIST_SUB+=	PGSQL=""
+OPT_CLIPLIBS+=clip-postgres
 .else
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_FIREBIRD) || exists(${LOCALBASE}/firebird/include/ibase.h)
+.if defined(WITH_FIREBIRD)
 LIB_DEPENDS+=	gds.1:${PORTSDIR}/${FIREBIRD_PORT}
 PLIST_SUB+=	IBASE=""
+OPT_CLIPLIBS+=clip-interbase
 .else
 PLIST_SUB+=	IBASE="@comment "
 .endif
@@ -84,8 +98,17 @@ USE_GNOME=		gtk12 gtk20
 HAS_CONFIGURE=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/clip
 INSTALLS_SHLIB=		yes
+LDCONFIG_DIRS=		${LOCALBASE}/clip/lib
 ALL_TARGET=		local
-MAKE_ENV=		HOME=${WRKDIR} LANG=C
+MAKE_ENV=		HOME="${WRKDIR}" \
+			LANG="C" \
+			PGLIBDIR="${LOCALBASE}/lib" \
+			PGINCDIR="${LOCALBASE}/include" \
+			OPT_CLIPLIBS="${OPT_CLIPLIBS}" \
+			PTHREAD_LIBS="${PTHREAD_LIBS}" \
+			LOCALBASE="${LOCALBASE}" \
+			WITH_IODBC="${WITH_IODBC}" \
+			CLIP_CONFIGURE_FLAGS="-l"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -121,12 +144,6 @@ pre-configure:
 	-e "s|#!/bin/sh|#!${LOCALBASE}/bin/bash|"				\
 	-e "s|/usr/local|${LOCALBASE}|g"					\
 	-e "s|/usr/X11R6|${X11BASE}|g"
-	@${REINPLACE_CMD} -e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|"		\
-	-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" ${WRKSRC}/cliplibs/clip-odbc/configure
-	@${REINPLACE_CMD} -e 's|;;|;|g' \
-		${WRKSRC}/cliplibs/clip-gtk2/toolbutton.c \
-		${WRKSRC}/cliplibs/clip-gtk2/cellrenderer.c \
-		${WRKSRC}/cliplibs/clip-gtk2/action.c
 
 post-build: # don't include emppty directories
 	@cd ${WRKDIR}/cliproot && ${RMDIR} include/memdebug doc/clip-oasis/nanfor doc/clip-oasis
