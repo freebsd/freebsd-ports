@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdv
-PORTVERSION=	0.103
+PORTVERSION=	0.104
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,16 +18,19 @@ COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GNOME=	gnometarget \
-		gtk12
+USE_GNOME=	gnometarget
+WANT_GNOME=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+CONFIGURE_ARGS=	--with-gtk-prefix="${X11BASE}" \
+		--x-includes="${X11BASE}/include" \
+		--x-libraries="${X11BASE}/lib"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${X11BASE}/libdata/pkgconfig
 INSTALLS_SHLIB=	yes
 
-MAN1=	dubdv.1 dvconnect.1 encodedv.1 playdv.1
+MAN1=	dubdv.1 dvconnect.1 encodedv.1
 
 PORTDOCS=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 		README.dvconnect README.encoder TODO
@@ -36,6 +39,14 @@ PORTDOCS=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 IGNORE=		"Requires Xv Extension"
+.endif
+
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+MAN1+=		playdv.1
+PLIST_FILES+=	bin/playdv
+.else
+CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 # XXX - work around compiler bug

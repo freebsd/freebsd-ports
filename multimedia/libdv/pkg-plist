@@ -5,6 +5,7 @@ bin/playdv
 include/libdv/dv.h
 include/libdv/dv_types.h
 lib/libdv.a
+lib/libdv.la
 lib/libdv.so
 lib/libdv.so.4
 libdata/pkgconfig/libdv.pc
