@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0163b498-af54-11d9-acd0-000854d03344">
+    <topic>axel -- remote buffer overflow</topic>
+    <affects>
+      <package>
+	<name>axel</name>
+	<range><lt>1.0a_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian Security Advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-706">
+	  <p>Ulf Härnhammar from the Debian Security Audit Project
+	  discovered a buffer overflow in axel, a light download
+	  accelerator.  When reading remote input the program did
+	  not check if a part of the input can overflow a buffer
+	  and maybe trigger the execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13059</bid>
+      <cvename>CAN-2005-0390</cvename>
+      <url>http://www.debian.org/security/2005/dsa-706</url>
+    </references>
+    <dates>
+      <discovery>2005-04-16</discovery>
+      <entry>2005-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce6ac624-aec8-11d9-a788-0001020eed82">
     <topic>firefox -- PLUGINSPAGE privileged javascript execution</topic>
     <affects>
