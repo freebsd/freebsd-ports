@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mysql-administrator
-PORTVERSION=	1.0.14
-PORTREVISION=	2
+PORTVERSION=	1.0.20
 CATEGORIES=	databases
 MASTER_SITES=	http://www.softagency.co.jp/MySQL/%SUBDIR%/ \
 		ftp://sunsite.dk/mirrors/mysql/%SUBDIR%/ \
@@ -32,6 +31,7 @@ CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/share/gnome
 USE_ICONV=	yes
 USE_GNOME=	libglade2 gnomehack
 USE_MYSQL=	yes
+DEFAULT_MYSQL_VER=	41
 BROKEN_WITH_MYSQL=	323 40
 GNU_CONFIGURE=	yes
 
@@ -41,9 +41,20 @@ LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 BUILD_DEPENDS=  scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-DIRS_ORDER=	mysql-gui-common mysql-administrator
+GUI_CONFIG_COOKIE=	${WRKDIR}/.gui_configure_done
+GUI_BUILD_COOKIE=	${WRKDIR}/.gui_build_done
+MAIN_CONFIG_COOKIE=	${WRKDIR}/.main_configure_done
+MAIN_BUILD_COOKIE=	${WRKDIR}/.main_build_done
+
+GUI_DIR=	${WRKSRC}/mysql-gui-common
+MAIN_DIR=	${WRKSRC}/mysql-administrator
 
 .include <bsd.port.pre.mk>
+
+# XXX
+.if ${OSVERSION} < 500000
+BROKEN=		Does not build on 4.x
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#%%PTHREAD_CFLAGS%%#${PTHREAD_CFLAGS}#" \
@@ -57,24 +68,29 @@ do-configure:
 	@${DO_NADA}
 
 do-build:
-	@for d in ${DIRS_ORDER}; do \
-		${ECHO_MSG} ""; \
-		${ECHO_MSG} "--->"; \
-		${ECHO_MSG} "---> Building: $${d}"; \
-		${ECHO_MSG} "--->"; \
-		cd ${WRKSRC}/$${d}; \
+	@cd ${GUI_DIR}; \
+	if [ ! -f ${GUI_CONFIG_COOKIE} ]; then \
+		${TOUCH} ${TOUCH_FLAGS} ${GUI_CONFIG_COOKIE}; \
 		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
+	fi; \
+	if [ ! -f ${GUI_BUILD_COOKIE} ]; then \
+		${TOUCH} ${TOUCH_FLAGS} ${GUI_BUILD_COOKIE}; \
 		${GMAKE} DATADIRNAME=share; \
-	done
+	fi
+	@cd ${MAIN_DIR}; \
+	if [ ! -f ${MAIN_CONFIG_COOKIE} ]; then \
+		${TOUCH} ${TOUCH_FLAGS} ${MAIN_CONFIG_COOKIE}; \
+		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
+	fi; \
+	if [ ! -f ${MAIN_BUILD_COOKIE} ]; then \
+		${TOUCH} ${TOUCH_FLAGS} ${MAIN_BUILD_COOKIE}; \
+		${GMAKE} DATADIRNAME=share; \
+	fi
 
 do-install:
-	@for d in ${DIRS_ORDER}; do \
-		${ECHO_MSG} ""; \
-		${ECHO_MSG} "--->"; \
-		${ECHO_MSG} "---> Installing: $${d}"; \
-		${ECHO_MSG} "--->"; \
-		cd ${WRKSRC}/$${d}; \
-		${GMAKE} install; \
-	done
+		@cd ${GUI_DIR}; \
+		${GMAKE} install
+		@cd ${MAIN_DIR}; \
+		${GMAKE} install
 
 .include <bsd.port.post.mk>
