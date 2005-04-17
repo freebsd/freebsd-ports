@@ -38,7 +38,7 @@ $FreeBSD$
 -      }
 +   if (background) {
 +       if (daemon(0,0) < 0) {
-+           cerr << "demon() call failed" << endl;
++           cerr << "daemon() call failed" << endl;
 +           exit(1);
 +       }
     }

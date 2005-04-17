@@ -1,17 +1,19 @@
 
 $FreeBSD$
 
---- stun.cxx.orig
+--- stun.cxx
 +++ stun.cxx
-@@ -648,55 +648,11 @@
+@@ -648,55 +648,13 @@
  stunRand()
  {
     // return 32 bits of random stuff
 -   assert( sizeof(int) == 4 );
     static bool init=false;
-    if ( !init )
+-   if ( !init )
 -   { 
--      init = true;
++   if ( !init ) {
++      srandomdev();
+       init = true;
 -		
 -      UInt64 tick;
 -		
@@ -43,7 +45,7 @@ $FreeBSD$
 -#else
 -      srandom(seed);
 -#endif
--   }
+    }
 -	
 -#ifdef WIN32
 -   assert( RAND_MAX == 0x7fff );
@@ -56,7 +58,6 @@ $FreeBSD$
 -#else
 -   return random(); 
 -#endif
-+      srandomdev();
 +   /* random() is described as returning 0...2**31-1 */
 +   return 0xffffffff & ( ( random() << 31 ) | random() );
  }
