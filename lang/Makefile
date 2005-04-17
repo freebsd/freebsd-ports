@@ -246,6 +246,7 @@
     SUBDIR += scriba
     SUBDIR += scsh
     SUBDIR += sdcc
+    SUBDIR += sdcc-devel
     SUBDIR += see
     SUBDIR += siod
     SUBDIR += sisc

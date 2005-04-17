@@ -1,5 +1,5 @@
---- configure.in.orig	Mon Apr 11 20:55:28 2005
-+++ configure.in	Mon Apr 11 20:55:44 2005
+--- configure.in.orig	Fri Apr  8 15:58:08 2005
++++ configure.in	Fri Apr  8 15:58:22 2005
 @@ -650,7 +650,7 @@
  AC_CONFIG_SUBDIRS(support/cpp2)
  AC_CONFIG_SUBDIRS(packihx)
