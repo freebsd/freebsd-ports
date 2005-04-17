@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5102
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/
 DISTNAME=	${PORTNAME}-20050410
