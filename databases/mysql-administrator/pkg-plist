@@ -68,6 +68,7 @@ share/mysql-gui/administrator/backup_gray.png
 share/mysql-gui/administrator/catalogs.glade
 share/mysql-gui/administrator/catalogs.png
 share/mysql-gui/administrator/catalogs_gray.png
+share/mysql-gui/administrator/connect_header_admin.png
 share/mysql-gui/administrator/disk_level_bg.png
 share/mysql-gui/administrator/disk_level_fg.png
 share/mysql-gui/administrator/health.glade
