@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.12
-PORTREVISION?=		1
+PORTVERSION?=		3.0.14a
+PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -93,7 +93,7 @@ USE_RC_SUBR=		yes
 CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 			--without-libsmbclient --without-python
 
-.if defined(WITH_CUPS)
+.if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--enable-cups
 CUPS=			cups
@@ -216,7 +216,7 @@ CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
 # Common part
-.if defined(WITH_ADS)
+.if !defined(WITHOUT_ADS)
 WANT_LDAP=		yes
 WANT_KRB5=		yes
 CONFIGURE_ARGS+=	--with-ads
@@ -280,15 +280,6 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 			SAMBA_RUNDIR=${SAMBA_RUNDIR} \
 			SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
 			SAMBA_SPOOL=${SAMBA_SPOOL}
-
-pre-configure::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "!!! Due to a bug in the deinstall procedure in port versions prior to 3.0.9,"
-	@${ECHO_MSG} "!!! you should BACK UP YOUR VALUABLE ${SAMBA_LOCKDIR}/windbindd_* FILES"
-	@${ECHO_MSG} "!!! before you continue the (re)installation."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "***        Press Ctrl-C *now* if you need to preserve these files       ***"
-	@sleep 5
 
 pre-fetch:
 	@${ECHO_MSG} "===>  -------------------------------------------"
@@ -362,8 +353,7 @@ post-install:
 	@${ECHO_CMD} "@exec ${MKDIR} ${SAMBA_LOCKDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${CHMOD} 0755 ${SAMBA_LOCKDIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_LOCKDIR}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_LOCKDIR}/printing" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec for f in \`${LS} ${SAMBA_LOCKDIR} | ${GREP} -v '^winbindd_'\`; do ${RM} -f ${SAMBA_LOCKDIR}/\$${f}; done" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec for f in connections.tdb locking.tdb messages.tdb sessionid.tdb unexpected.tdb brlock.tdb namelist.debug; do ${RM} -f ${SAMBA_LOCKDIR}/\$${f}; done" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_LOCKDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove ${SAMBA_LOCKDIR}/* manually.\"" >> ${TMPPLIST}
 # Private
