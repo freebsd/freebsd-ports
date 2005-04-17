@@ -1,6 +1,6 @@
---- src/totem-disc.c.orig	Tue Nov 23 04:03:19 2004
-+++ src/totem-disc.c	Tue Nov 23 04:05:27 2004
-@@ -25,12 +25,35 @@
+--- src/totem-disc.c.orig	Sun Mar 13 08:37:57 2005
++++ src/totem-disc.c	Wed Mar 23 03:29:26 2005
+@@ -34,18 +34,40 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <errno.h>
@@ -9,7 +9,7 @@
  
  #include <sys/ioctl.h>
  #include <sys/stat.h>
-+
+ 
 +#ifdef __FreeBSD__
 +#include <sys/cdio.h>
 +#include <sys/disklabel.h>
@@ -32,8 +32,15 @@
 +#define CDROM_GET_CAPABILITY CDIOCCLRDEBUG
 +#else
 +#include <mntent.h>
- #include <linux/cdrom.h>
++#include <linux/cdrom.h>
 +#endif
- 
++
  #include <glib.h>
  #include <glib/gi18n.h>
+ #include <libgnomevfs/gnome-vfs.h>
+ 
+-#include <linux/cdrom.h>
+-
+ #include "totem-disc.h"
+ 
+ typedef struct _CdCache {

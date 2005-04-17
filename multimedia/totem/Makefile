@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	hendrik@scholz.net
@@ -33,7 +32,7 @@ CONFIGURE_ARGS+=--disable-mozilla
 OPTIONS?=	DVDNAV "Enable DVD support" on \
 		GSTREAMER "Use Gstreamer instead of Xine" off
 
-MAN1=	totem.1
+MAN1=	totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
 CONFLICTS=	totem-gstreamer-[0-9]*
