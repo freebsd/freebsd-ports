@@ -36,7 +36,7 @@ stop_postcmd()
 
 quagga_enable=${quagga_enable:-"NO"}
 quagga_flags=${quagga_flags:-"-d"}
-quagga_daemons=${quagga_daemons:-"zebra ripd ripng ospfd ospf6d bgpd isisd"}
+quagga_daemons=${quagga_daemons:-"zebra ripd ripngd ospfd ospf6d bgpd isisd"}
 quagga_extralibs_path=${quagga_extralibs_path:-""}
 load_rc_config $name
 
