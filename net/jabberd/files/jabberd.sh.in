@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start or stop jabberd
-# $FreeBSD: /tmp/pcvs/ports/net-im/jabberd/files/Attic/jabberd.sh,v 1.5 2004-07-29 20:56:33 pav Exp $
+# $FreeBSD$
 
 # PROVIDE: jabberd
 # REQUIRE: DAEMON
