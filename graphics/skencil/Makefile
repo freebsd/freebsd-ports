@@ -7,6 +7,7 @@
 
 PORTNAME=	skencil
 PORTVERSION=	0.6.16
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sketch
@@ -22,6 +23,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} == "python2.4"
+EXTRA_PATCHES=	${FILESDIR}/py24-patch-Pax_paxtkinter.c
+.endif
 
 CONFFLAGS=	--tk-autoconf --tk-flags="-I${X11BASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -L${LOCALBASE}/lib -ltk84 -ltcl84 -L${X11BASE}/lib -lX11"
 
@@ -56,4 +63,4 @@ do-install:
 	${CHOWN} ${BINOWN}:${BINGROUP} ${PREFIX}/bin/${exec}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
