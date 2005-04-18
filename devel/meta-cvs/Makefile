@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	meta-cvs
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.13
 CATEGORIES=	devel
 MASTER_SITES=	http://users.footprints.net/~kaz/
 DISTNAME=	mcvs-${PORTVERSION}
@@ -16,6 +15,7 @@ MAINTAINER=	johs@copyleft.no
 COMMENT=	A more capable version control system than CVS, built around CVS
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp
+RUN_DEPENDS=	clisp:${PORTSDIR}/lang/clisp
 
 USE_GCC=	2.95
 
