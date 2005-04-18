@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	0.8b
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -56,6 +56,8 @@ post-configure:
 post-install:
 	@${MKDIR} ${DATADIR}/scripts/snmp
 	@cd ${WRKSRC}/scripts && \
+		${INSTALL_DATA} README* INSTALL* kuang2.conf \
+			${DATADIR}/scripts && \
 		${INSTALL_SCRIPT} *.pl *.sh ${DATADIR}/scripts
 	@cd ${WRKSRC}/scripts/snmp && \
 		${INSTALL_DATA} README default.snmp *.tpl \
