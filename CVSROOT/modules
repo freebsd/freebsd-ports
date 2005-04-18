@@ -1550,6 +1550,8 @@ disktype	ports/sysutils/disktype
 diskusage	ports/sysutils/diskusage
 display		ports/misc/display
 dissembler	ports/security/dissembler
+distcache	ports/security/distcache
+distcache-devel	ports/security/distcache-devel
 distcc		ports/devel/distcc
 distel		ports/devel/distel
 distribfold	ports/biology/distribfold
