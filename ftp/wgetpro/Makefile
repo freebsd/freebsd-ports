@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wgetpro
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +16,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wget with "PRO" features
 
-USE_PERL5_BUILD=	yes
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(WITHOUT_NLS)
@@ -35,6 +34,6 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|^PACKAGE=.*$$|PACKAGE=wpro|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^\(PACKAGE=\).*|\1wpro|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
