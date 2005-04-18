@@ -7,6 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.netsw.org/softeng/lang/js/ \
 		http://www.adaptive-enterprises.com.au/~d/software/see/
