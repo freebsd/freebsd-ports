@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
 DISTFILES=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 EXTRACT_ONLY=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	sylvioc@gmail.com
 COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
 
 WRKSRC=		${WRKDIR}/BitchX
@@ -78,7 +78,7 @@ USE_AUTOCONF_VER=253
 .endif
 
 .if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
-IGNORE=	"dumps core on startup"
+IGNORE=	dumps core on startup
 .endif
 
 .if defined(WITH_IPV6)
