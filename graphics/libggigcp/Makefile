@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libggigcp
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +21,9 @@ LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 MAN3=		gcpBlendColor.3 \
 		gcpGetLuminance.3 \
