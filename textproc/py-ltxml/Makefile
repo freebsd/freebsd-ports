@@ -7,7 +7,7 @@
 
 PORTNAME=	ltxml
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,6 @@ COMMENT=	Python bindings to the LT XML toolkit
 BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:${PORTSDIR}/textproc/ltxml
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Size mismatch
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 INSTALLS_SHLIB=	yes
@@ -31,11 +29,11 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not build on ia64 or amd64 (tries to link non-shared with shared libraries)"
+CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/projects/ltg/projects/lcontrib|${LOCALBASE}|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|/group/ltg/projects/lcontrib9|${LOCALBASE}|' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
