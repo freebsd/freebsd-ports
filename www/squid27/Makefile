@@ -66,7 +66,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -92,7 +92,16 @@ PATCHFILES=	squid-2.5.STABLE9-setcookie.patch \
 		squid-2.5.STABLE9-ctype.patch \
 		squid-2.5.STABLE9-defer_digest_fetch.patch \
 		squid-2.5.STABLE9-dup_content_length.patch \
-		squid-2.5.STABLE9-excess_data.patch
+		squid-2.5.STABLE9-excess_data.patch \
+		squid-2.5.STABLE9-aufs.patch \
+		squid-2.5.STABLE9-long_basic_auth.patch \
+		squid-2.5.STABLE9-CONNECT_truncated.patch \
+		squid-2.5.STABLE9-disable_hostname_checks.patch \
+		squid-2.5.STABLE9-aufs_shutdown.patch \
+		squid-2.5.STABLE9-2GB.patch \
+		squid-2.5.STABLE9-cachemgr_objects.patch \
+		squid-2.5.STABLE9-extaclauth.patch \
+		squid-2.5.STABLE9-syslog.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -135,6 +144,7 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
+		SQUID_LARGEFILE "Support log and cache files >2GB" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
 		SQUID_RCNG "Install an rcNG startup script" on
 
@@ -306,6 +316,9 @@ CONFIGURE_ARGS+=	--enable-ipf-transparent
 EXTRA_PATCHES+=		${PATCHDIR}/follow_xff-2.5.patch \
 			${PATCHDIR}/follow_xff-configure.patch
 CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
+.endif
+.if defined(WITH_SQUID_LARGEFILE)
+CONFIGURE_ARGS+=	--with-large-files --enable-large-cache-files
 .endif
 .if defined(WITH_SQUID_STACKTRACES)
 CONFIGURE_ARGS+=	--enable-stacktraces
