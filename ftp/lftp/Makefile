@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.0.13
+PORTVERSION=	3.1.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
