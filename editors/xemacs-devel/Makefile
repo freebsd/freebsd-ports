@@ -32,22 +32,22 @@ USE_XPM=	yes
 
 XEMACS_MAJOR_VER?=	21
 XEMACS_REL=		${XEMACS_MAJOR_VER}.5
-XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b17
+XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b20
 XEMACS_ARCH=		${CONFIGURE_TARGET}
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
-USE_AUTOCONF_VER=213
+USE_AUTOCONF_VER=259
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
-CONFIGURE_ARGS?=--with-clash-detection \
-		--with-sound=native,nonas,noesd \
-		--site-includes=${LOCALBASE}/include \
-		--site-libraries=${LOCALBASE}/lib \
+CONFIGURE_ARGS?=--enable-clash-detection \
+		--enable-sound=native,nonas,noesd \
+		--with-site-includes=${LOCALBASE}/include \
+		--with-site-libraries=${LOCALBASE}/lib \
 		--with-ldap=no \
 		--with-postgresql=no \
 		--with-site-lisp \
-		--with-database=berkdb \
+		--enable-database=berkdb \
 		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX} ${WITH_GTK}
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
@@ -60,7 +60,7 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == "amd64"
-CONFIGURE_ARGS+= --with-system-malloc --pdump 
+CONFIGURE_ARGS+= --with-system-malloc --enable-pdump 
 BROKEN=		"Incomplete pkg-plist"
 .endif
 
@@ -89,12 +89,12 @@ pre-fetch:
 CONFIG_ARGS+= --with-png=yes --with-tiff=yes
 .endif
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x11
+CONFIGURE_ARGS+=	--with-x11=no
 .endif
 
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
-WITH_DIALOGS=	--with-dialogs=athena
+WITH_DIALOGS=	--enable-dialogs=athena
 .endif
 
 .if defined(WITH_XAW3D)
