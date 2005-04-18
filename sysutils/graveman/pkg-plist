@@ -1,12 +1,13 @@
 bin/graveman
 share/gnome/applications/graveman.desktop
-share/gnome/graveman/dialog-question3.png
 share/gnome/graveman/dialog_about.glade
 share/gnome/graveman/dialog_add_device.glade
 share/gnome/graveman/dialog_confirm_operation.glade
 share/gnome/graveman/dialog_device.glade
 share/gnome/graveman/dialog_media.glade
 share/gnome/graveman/dialog_properties.glade
+share/gnome/graveman/dialog-question3.png
+share/gnome/graveman/dialog_select_operation.glade
 share/gnome/graveman/dialog_welcome.glade
 share/gnome/graveman/erase-cdrw.png
 share/gnome/graveman/file_image.png
@@ -57,7 +58,7 @@ share/gnome/graveman/window_burn.glade
 share/gnome/graveman/window_inprogress.glade
 share/gnome/graveman/window_main.glade
 share/gnome/graveman/window_welcome.glade
-share/gnome/pixmaps/graveman.png
+share/gnome/pixmaps/graveman48.png
 share/locale/cs/LC_MESSAGES/graveman.mo
 share/locale/de/LC_MESSAGES/graveman.mo
 share/locale/es/LC_MESSAGES/graveman.mo
