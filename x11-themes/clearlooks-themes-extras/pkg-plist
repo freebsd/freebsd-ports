@@ -1,4 +1,3 @@
-share/themes/Clearlooks-3.1-Ergo/gtk-2.0/gtkrc
 share/themes/Clearlooks-4Humans/gtk-2.0/gtkrc
 share/themes/Clearlooks-Ana/gtk-2.0/gtkrc
 share/themes/Clearlooks-Ana/gtk-2.0/icons/iconrc
@@ -189,6 +188,7 @@ share/themes/Clearlooks-Bluey/gtk-2.0/icons/v3.png
 share/themes/Clearlooks-Bluey/gtk-2.0/icons/v4.png
 share/themes/Clearlooks-Bluey/gtk-2.0/icons/vm.png
 share/themes/Clearlooks-Bluey/gtk-2.0/icons/volume-mute.png
+share/themes/Clearlooks-Breathe/gtk-2.0/gtkrc
 share/themes/Clearlooks-Coffee/gtk-2.0/gtkrc
 share/themes/Clearlooks-Decaf_Coffee/gtk-2.0/gtkrc
 share/themes/Clearlooks-DeepSkyM/gtk-2.0/gtkrc
@@ -263,6 +263,7 @@ share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-med.svg
 share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-min.svg
 share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-mute.svg
 share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-zero.svg
+share/themes/Clearlooks-Executive/gtk-2.0/gtkrc
 share/themes/Clearlooks-Gartoon/gtk-2.0/gtkrc
 share/themes/Clearlooks-Gartoon/gtk-2.0/icons/Xtra/stock_cut.svg
 share/themes/Clearlooks-Gartoon/gtk-2.0/icons/button_cancel.svg
@@ -514,7 +515,6 @@ share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-min.svg
 share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-mute.svg
 share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-zero.svg
 share/themes/Clearlooks-Lucidity/gtk-2.0/gtkrc
-share/themes/Clearlooks-Mask/gtk-2.0/gtkrc
 share/themes/Clearlooks-Milk/gtk-2.0/gtkrc
 share/themes/Clearlooks-Milk/gtk-2.0/icons/gnome-main-menu.svg
 share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-add.svg
@@ -614,8 +614,8 @@ share/themes/Clearlooks-Nuvola/gtk-2.0/icons/stock_stop.svg
 share/themes/Clearlooks-Nuvola/gtk-2.0/icons/stock_undo.svg
 share/themes/Clearlooks-OliveM/gtk-2.0/gtkrc
 share/themes/Clearlooks-Pastel/gtk-2.0/gtkrc
-share/themes/Clearlooks-Phacile_blue/gtk-2.0/gtkrc
 share/themes/Clearlooks-Serenity/gtk-2.0/gtkrc
+share/themes/Clearlooks-Sunset/gtk-2.0/gtkrc
 share/themes/Clearlooks-Ubuntu/gtk-2.0/gtkrc
 share/themes/Clearlooks-gOrangeous/gtk-2.0/gtkrc
 share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/Xtra/stock_cut.svg
@@ -699,10 +699,10 @@ share/themes/ClearlooksM/gtk-2.0/gtkrc
 @dirrm share/themes/Clearlooks-gOrangeous
 @dirrm share/themes/Clearlooks-Ubuntu/gtk-2.0
 @dirrm share/themes/Clearlooks-Ubuntu
+@dirrm share/themes/Clearlooks-Sunset/gtk-2.0
+@dirrm share/themes/Clearlooks-Sunset
 @dirrm share/themes/Clearlooks-Serenity/gtk-2.0
 @dirrm share/themes/Clearlooks-Serenity
-@dirrm share/themes/Clearlooks-Phacile_blue/gtk-2.0
-@dirrm share/themes/Clearlooks-Phacile_blue
 @dirrm share/themes/Clearlooks-Pastel/gtk-2.0
 @dirrm share/themes/Clearlooks-Pastel
 @dirrm share/themes/Clearlooks-OliveM/gtk-2.0
@@ -713,8 +713,6 @@ share/themes/ClearlooksM/gtk-2.0/gtkrc
 @dirrm share/themes/Clearlooks-Milk/gtk-2.0/icons
 @dirrm share/themes/Clearlooks-Milk/gtk-2.0
 @dirrm share/themes/Clearlooks-Milk
-@dirrm share/themes/Clearlooks-Mask/gtk-2.0
-@dirrm share/themes/Clearlooks-Mask
 @dirrm share/themes/Clearlooks-Lucidity/gtk-2.0
 @dirrm share/themes/Clearlooks-Lucidity
 @dirrm share/themes/Clearlooks-Lila/gtk-2.0/icons
@@ -729,6 +727,8 @@ share/themes/ClearlooksM/gtk-2.0/gtkrc
 @dirrm share/themes/Clearlooks-Gartoon/gtk-2.0/icons
 @dirrm share/themes/Clearlooks-Gartoon/gtk-2.0
 @dirrm share/themes/Clearlooks-Gartoon
+@dirrm share/themes/Clearlooks-Executive/gtk-2.0
+@dirrm share/themes/Clearlooks-Executive
 @dirrm share/themes/Clearlooks-Etiquette/gtk-2.0/icons
 @dirrm share/themes/Clearlooks-Etiquette/gtk-2.0
 @dirrm share/themes/Clearlooks-Etiquette
@@ -738,6 +738,8 @@ share/themes/ClearlooksM/gtk-2.0/gtkrc
 @dirrm share/themes/Clearlooks-Decaf_Coffee
 @dirrm share/themes/Clearlooks-Coffee/gtk-2.0
 @dirrm share/themes/Clearlooks-Coffee
+@dirrm share/themes/Clearlooks-Breathe/gtk-2.0
+@dirrm share/themes/Clearlooks-Breathe
 @dirrm share/themes/Clearlooks-Bluey/gtk-2.0/icons
 @dirrm share/themes/Clearlooks-Bluey/gtk-2.0
 @dirrm share/themes/Clearlooks-Bluey
@@ -746,5 +748,3 @@ share/themes/ClearlooksM/gtk-2.0/gtkrc
 @dirrm share/themes/Clearlooks-Ana
 @dirrm share/themes/Clearlooks-4Humans/gtk-2.0
 @dirrm share/themes/Clearlooks-4Humans
-@dirrm share/themes/Clearlooks-3.1-Ergo/gtk-2.0
-@dirrm share/themes/Clearlooks-3.1-Ergo
