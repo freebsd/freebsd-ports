@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libggiwmh
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +21,9 @@ LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 MAN3=		ggiWmhIconify.3 \
 		ggiWmhInit.3 \
@@ -35,9 +37,7 @@ MLINKS=		ggiWmhIconify.3 ggiWmhMoveIcon.3 \
 		- ggiWmhDetach.3 - ggiWmhExit.3 \
 		ggiWmhMove.3 ggiWmhAllowResize.3 \
 		- ggiWmhGetPos.3 - ggiWmhGetSize.3 \
-		- ggiWmhResize.3
-
-.include <bsd.port.pre.mk>
+		- ggiWmhMaximize.3 - ggiWmhResize.3
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
@@ -50,4 +50,4 @@ PLIST_SUB+=	XWMH="@comment "
 post-install:
 	@${CP} ${WRKSRC}/libggiwmh.conf ${PREFIX}/etc/ggi/libggiwmh.conf.dist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
