@@ -7,6 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	20050218
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
 DISTNAME=	dokuwiki-2005-02-18
@@ -19,7 +20,12 @@ USE_PHP=	pcre session
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-DOKUWIKIDIR?=	www/data-dist/dokuwiki
+
+WWWDOCROOT?=	www/data-dist
+DOKUWIKIURL?=	dokuwiki
+WWWOWN?=	www
+WWWGRP?=	www
+DOKUWIKIDIR?=	${WWWDOCROOT}/${DOKUWIKIURL}
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
@@ -35,17 +41,19 @@ pre-install:
 do-install:
 	# Data files
 	-${MKDIR} ${PREFIX}/${DOKUWIKIDIR}
-	@${CHOWN} www:www ${PREFIX}/${DOKUWIKIDIR}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKIDIR}
 	@${CHMOD} 755 ${PREFIX}/${DOKUWIKIDIR}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${DOKUWIKIDIR}
 	# Setup the correct permissions
 	@${TOUCH} ${PREFIX}/${DOKUWIKIDIR}/changes.log
-	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/changes.log
-	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/data
-	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/media
-	@${CHOWN} -R www:www ${PREFIX}/${DOKUWIKIDIR}/attic
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKIDIR}/changes.log
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKIDIR}/data
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKIDIR}/media
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKIDIR}/attic
 
 post-install:
-	@${SED} -e 's|%%DOKUWIKIDIR%%|${PREFIX}/${DOKUWIKIDIR}|' ${PKGMESSAGE}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%WWWDOCROOT%%|${WWWDOCROOT}|' \
+		-e 's|%%DOKUWIKIURL%%|${DOKUWIKIURL}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
 =================================================================
           	**** NOTE ****
-  edit PREFIX/www/data-dist/dokuwiki/conf/dokuwiki.php 
+  edit %%PREFIX%%/%%WWWDOCROOT%%/%%DOKUWIKIURL%%/conf/dokuwiki.php 
   if you want to change anything within it or (better) create
   dokuwiki/conf/local.php containing those lines from dokuwiki.php, 
   which you want to change. This way your changes are preserved 
