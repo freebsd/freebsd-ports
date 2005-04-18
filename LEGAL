@@ -165,6 +165,7 @@ dnews_*			news/dnews		Only free for schools and
 						We currently ask for permission
 						to put a package on the CD-ROM
 dns.tar.Z		dns/h2n			Never get an approval yet
+doom3-linux-*		games/linux-doom3-demo	Redistribution limited
 doomsrc.zip		games/doom		requested by id Software
 drweb-qmail-*.tar.gz	security/drweb-qmail	Non-commercial or evaluation use
 dsnake-*		games/dsnake		License prohibits any reselling
@@ -179,7 +180,8 @@ edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
 emc2*			math/emc2		Contact author personally
 						regarding commercial use
-et-linux-*		games/linux-enemyterritory Redistribution prohibited
+et-linux-*		games/linux-enemyterritory Redistribution limited
+etf_*			games/linux-enemyterritory-fortress Redistribution limited
 ezmlm-*			mail/ezmlm		No license -- see
 						http://cr.yp.to/softwarelaw.html
 ezmlm-*			mail/ezmlm-idx		No license -- see
@@ -541,6 +543,7 @@ susv3.tar.bz2		misc/susv3		Redistribution of the documents is
 swing1_1_1*		java/jfc		Do not distribute without
 						value-added application
 tasks.zip		www/tasks		License prohibits redistribution
+tcetest_*		games/linux-enemyterritory-tce Redistribution limited
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed
 						with any commercial product
 timidity-*		audio/timidity		Uses copyrighted patches
@@ -573,6 +576,7 @@ upsmon*			sysutils/upsmon		Redistribute only with
 						original source code
 urchin*.tar.gz		www/urchin5		Commercial software, also comes
 						bundled with Apache-SSL
+ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 uzap.tar.gz             editors/uzap		Restrictive copyright
 vbsd407e.tar.Z		security/vscan		Commercial software
 vdesk-*			x11/vdesk		Distributed without license
