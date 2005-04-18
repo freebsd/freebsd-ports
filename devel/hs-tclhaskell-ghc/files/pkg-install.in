@@ -1,0 +1,27 @@
+#!/bin/sh
+
+GHC_LIB=$PKG_PREFIX/lib/ghc-%%GHC_VERSION%%
+
+if [ x"$2" = xPOST-INSTALL ]; then
+cat << CONFEOF | $PKG_PREFIX/bin/ghc-pkg -a
+name:			TclHaskell
+version:		1.2
+maintainer:	
+exposed:		True
+exposed-modules:	Tcl,ConcTcl, ExtArray, GUIMonad, PlacePos, Remover, Tcl, TclCompatibility, TclConf, TclGUI, TclHandle, TclPrim, TclPrimCore, TclPrimExports, TclPrimImpl, TclPrimWidgets, TclTime, TclTrie, TclWidgets, TrieIO, Utils
+
+hidden-modules:
+import-dirs:		"$GHC_LIB/imports/tclhaskell"
+library-dirs:		"$GHC_LIB"
+hs-libraries:		"HSTclHaskell"
+extra-libraries:	"tcl83","tk83","HSTclHaskell_cbits"
+include-dirs:		"$GHC_LIB/include"
+includes:
+depends:		"haskell98","lang","concurrent"
+hugs-options:
+cc-options:		"-fglasgow-exts", "-fvia-C"
+ld-options:		"-L$PKG_PREFIX/lib", "-lncurses"
+CONFEOF
+/bin/rm -f $PKG_PREFIX/lib/ghc-%%GHC_VERSION%%/package.conf.old
+fi
+
