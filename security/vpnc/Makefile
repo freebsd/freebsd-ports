@@ -7,7 +7,7 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/:source \
 	http://dragon.roe.ch/mirrors/distfiles/vpnc/:script
@@ -19,7 +19,7 @@ COMMENT=	Client for Cisco 3000 VPN Concentrator
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
-STARTSCRIPT=    vpnc-wrapper-1.10
+STARTSCRIPT=	vpnc-wrapper-1.25
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	vpnc
@@ -41,9 +41,9 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
-	@${CP} ${DISTDIR}/${STARTSCRIPT} ${WRKDIR}/vpnc.sh-fulltunnel
+	@${INSTALL_SCRIPT} ${DISTDIR}/${STARTSCRIPT} ${WRKDIR}/vpnc.sh-fulltunnel
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|' ${WRKDIR}/vpnc.sh-fulltunnel
-	@${CP} ${FILESDIR}/vpnc.sh ${WRKDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/vpnc.sh ${WRKDIR}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKDIR}/vpnc.sh
 	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh ${PREFIX}/etc/rc.d/vpnc.sh.sample
 	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh-fulltunnel ${PREFIX}/etc/rc.d/vpnc.sh.sample-fulltunnel
