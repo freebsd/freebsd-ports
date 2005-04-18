@@ -401,8 +401,8 @@
     SUBDIR += qscan
     SUBDIR += qsf
     SUBDIR += qtools
-    SUBDIR += queue-repair
     SUBDIR += queue-fix
+    SUBDIR += queue-repair
     SUBDIR += quickml
     SUBDIR += raysfilter
     SUBDIR += razor-agents
