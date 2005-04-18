@@ -11,6 +11,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -21,7 +22,7 @@ COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		fftw:${PORTSDIR}/math/fftw
+		fftw3:${PORTSDIR}/math/fftw3
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
