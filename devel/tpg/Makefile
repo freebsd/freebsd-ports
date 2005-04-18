@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpg
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
