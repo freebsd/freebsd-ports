@@ -83,6 +83,7 @@
     SUBDIR += docbook-to-man
     SUBDIR += docbook-xml
     SUBDIR += docbook-xml-430
+    SUBDIR += docbook-xml-440
     SUBDIR += docbook-xsd
     SUBDIR += docbook-xsl
     SUBDIR += docbookide.el
