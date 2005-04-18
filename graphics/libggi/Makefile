@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libggi
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
@@ -14,24 +14,18 @@ MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antoine.brodin@laposte.net
 COMMENT=	A flexible drawing library
 
 LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=
+USE_LIBTOOL_VER=	15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-CFLAGS+=	${PTHREAD_CFLAGS}
-
-.if exists(/usr/include/dev/kgi/kgi.h)
-CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
-.endif
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 MAN1=		cube3d.1 ggi-demo.1 ggiteleserver.1 monitest.1
 MAN3=		ggiCheckMode.3 ggiCopyBox.3 ggiCrossBlit.3 \
@@ -45,7 +39,8 @@ MAN3=		ggiCheckMode.3 ggiCopyBox.3 ggiCrossBlit.3 \
 		ggiPutc.3 ggiResourceAcquire.3 ggiSetColorfulPalette.3 \
 		ggiSetDisplayFrame.3 ggiSetFlags.3 ggiSetGCClipping.3 \
 		ggiSetGCForeground.3 ggiSetMode.3 ggiSetOrigin.3 \
-		ggiSetPalette.3 ggi_color.3 ggi_colormap.3 \
+		ggiSetPalette.3 ggiSetTextMode.3 \
+		ggi_color.3 ggi_colormap.3 \
 		ggi_directbuffer.3 ggi_mode.3 ggi_pixelformat.3
 MAN7=		libggi.7 display-aa.7 display-auto.7 \
 		display-dga.7 display-directx.7 \
@@ -88,16 +83,28 @@ MLINKS=		ggi-demo.1 demo.1 \
 		ggiSetGCClipping.3 ggiGetGCClipping.3 \
 		ggiSetGCForeground.3 ggiGetGCBackground.3 \
 		- ggiGetGCForeground.3 - ggiSetGCBackground.3 \
-		ggiSetMode.3 ggiGetMode.3 - ggiSetGraphMode.3 \
-		- ggiSetSimpleMode.3 - ggiSetTextMode.3 \
+		ggiSetMode.3 ggiGetMode.3 \
 		ggiSetOrigin.3 ggiGetOrigin.3 \
 		ggiSetPalette.3 ggiGetPalette.3 \
+		ggiSetTextMode.3 ggiSetGraphMode.3 - ggiSetSimpleMode.3 \
 		ggi_color.3 ggi_pixel.3 \
 		ggi_colormap.3 ggi_colormap_region.3 \
 		ggi_directbuffer.3 ggi_pixellinearbuffer.3 \
 		- ggi_pixelplanarbuffer.3 - ggi_samplelinearbuffer.3 \
 		- ggi_sampleplanarbuffer.3 \
 		ggi_mode.3 ggi_coord.3 - ggi_graphtype.3
+
+.if exists(/usr/include/dev/kgi/kgi.h)
+CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
+.endif
+
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+PLIST_SUB+=	WITH_X=""
+.else
+CONFIGURE_ARGS+=	--disable-x --disable-dga
+PLIST_SUB+=	WITH_X="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
