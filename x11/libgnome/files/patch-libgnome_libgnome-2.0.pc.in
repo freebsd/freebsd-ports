@@ -1,0 +1,9 @@
+--- libgnome/libgnome-2.0.pc.in.orig	Mon Apr 18 16:54:21 2005
++++ libgnome/libgnome-2.0.pc.in	Mon Apr 18 16:54:41 2005
+@@ -8,5 +8,5 @@
+ Description: libgnome
+ Requires: glib-2.0 ORBit-2.0 libbonobo-2.0 gconf-2.0 gnome-vfs-2.0
+ Version: @VERSION@
+-Libs: -L${libdir} -lgnome-2 -lpopt
++Libs: -L${libdir} -L%%LOCALBASE%%/lib -lgnome-2 -lpopt
+ Cflags: -I${includedir}/libgnome-2.0
