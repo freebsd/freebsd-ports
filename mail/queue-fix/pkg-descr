@@ -1,0 +1,9 @@
+This is a small utility for checking and repairing the qmail queue
+structure.  It will fix uid/gid settings and permissions.  It will
+rename the message files to match their inodes.  It will even create
+directories and files that don't exist that should be there (you can
+even create a queue from scratch).  It will also print warnings for
+any files it finds that should not exist.
+
+Author:	Eric Huss <e-huss at netmeridian.com>
+WWW:	http://www.qmail.org/
