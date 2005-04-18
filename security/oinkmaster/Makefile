@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	oinkmaster
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	Help you update your snort rules after each update
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
@@ -20,6 +20,12 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+
+PLIST_FILES=	bin/oinkmaster etc/oinkmaster.conf
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
 
 .include <bsd.port.pre.mk>
 
