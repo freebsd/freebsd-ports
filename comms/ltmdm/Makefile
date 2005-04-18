@@ -20,7 +20,8 @@ ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm
 NO_WRKSUBDIR=	yes
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	ltmdm.sh
+SUB_LIST=	MAJOR=${LTMDM_DEV_MAJOR}
 LTMDM_DEV_MAJOR		?= 228
 LTMDM_OBJ_VERSION	?= 600
 
@@ -35,7 +36,8 @@ MAKE_ENV+=	WERROR=
 PORTDOCS=	README.TXT README-en.TXT INSTALL.TXT INSTALL-en.TXT
 SYSDIR?=	${SRC_BASE}/sys
 
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} MAJOR=${LTMDM_DEV_MAJOR}
+PLIST_FILES=	%%DATADIR%%/ltmdm.ko
+PLIST_DIRS=	%%DATADIR%%
 
 pre-fetch:
 .if !exists(${SYSDIR}/Makefile)
@@ -51,11 +53,6 @@ pre-fetch:
 	@${ECHO} "Otheriwse your modem will not connect            ";
 	@${ECHO} "*************************************************";
 .endif
-
-post-extract:
-	@ [ -f ${WRKSRC}/ltmdm.sh ] && ${RM} -f ${WRKSRC}/ltmdm.sh
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/ltmdm.sh > ${WRKSRC}/ltmdm.sh
 
 do-install:
 	@${MKDIR} ${DATADIR}

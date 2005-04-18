@@ -1,4 +1,1 @@
 @unexec sh %D/etc/rc.d/ltmdm.sh stop || true
-etc/rc.d/ltmdm.sh
-%%DATADIR%%/ltmdm.ko
-@dirrm %%DATADIR%%

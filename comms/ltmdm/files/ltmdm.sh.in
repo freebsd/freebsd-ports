@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/comms/ltmdm/files/Attic/ltmdm.sh.in,v 1.1 2005-04-18 15:20:08 vs Exp $
 
 # PROVIDE: ltmdm
 # REQUIRE: DAEMON
