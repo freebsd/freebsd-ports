@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
@@ -50,6 +51,8 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 post-patch:
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/libgnome/libgnome-2.0.pc.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|gnome-data po doc|gnome-data po|g' \
 		${WRKSRC}/Makefile.in
