@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	xtrlock
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.10
 CATEGORIES=	x11
-MASTER_SITES=	http://ftp.debian.org/debian/pool/main/x/xtrlock/
-DISTNAME=	${PORTNAME}_2.0-8
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/x/xtrlock/
+DISTNAME=	${PORTNAME}_2.0-${PORTVERSION:E}
 
 MAINTAINER=	karma@ez.pereslavl.ru
 COMMENT=	X Transparent Lock

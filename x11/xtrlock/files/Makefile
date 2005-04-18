@@ -17,8 +17,8 @@
 #
 
 LDLIBS=-lX11 -lcrypt
-CC=gcc
-CFLAGS=-I${X11BASE}/include -L${X11BASE}/lib
+CC?=gcc
+CFLAGS+=-I${X11BASE}/include -L${X11BASE}/lib
 INSTALL=install -c
 INSTALL_PROGRAM = ${INSTALL}
 INSTPGMFLAGS = -s -o root -m4111
