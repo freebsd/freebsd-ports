@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-engines2
 PORTVERSION=	2.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -26,11 +26,24 @@ USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gtk20
 PLIST_SUB=	GTK_VERSION="2.4.0"
 
+.if defined(WITH_ANIMATION)
+CFLAGS+=	-DHAVE_ANIMATION=1
+.endif
+
+pre-everything::
+.if !defined(WITH_ANIMATION)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " You can enable experimental animated progressbars"
+	@${ECHO_MSG} " with the clearlooks engine by defining"
+	@${ECHO_MSG} " WITH_ANIMATION"
+	@${ECHO_MSG} ""
+.endif
+
 # Disable the gtk1 theme.
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk gtk-2.0|gtk-2.0|' \
 		${WRKSRC}/themes/Redmond/Makefile.in
 	@${REINPLACE_CMD} -e 's|menubarstyle|sunkenmenubar|g' \
-		${WRKSRC}/themes/Clearlooks/gtk-2.0/gtkrc		
+		${WRKSRC}/themes/Clearlooks/gtk-2.0/gtkrc
 
 .include <bsd.port.mk>
