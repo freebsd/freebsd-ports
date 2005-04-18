@@ -18,10 +18,23 @@ bin/wpro
 %%NLS%%share/locale/no/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wpro.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/wpro.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wpro.mo
+%%NLS%%@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/el/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/no/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2> /dev/null || true
