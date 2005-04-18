@@ -161,12 +161,13 @@ Execute MyApp with either a Java VM that is either version 1.2 or version 1.4.
 .Sh BUGS
 The internal selection procedure of
 .Nm
-is not fully identical to that of
-.Pa %%PORTSDIR%%/Mk/bsd.java.mk .
+is not fully identical to that used when
+.Pa %%PORTSDIR%%/Mk/bsd.java.mk
+is present.
 In particular,
 .Nm
 does not respect environment variables such as
-.Ev JAVA_PREFERRED_PORT
+.Ev JAVA_PREFERRED_PORTS
 which is used by
 .Pa %%PORTSDIR%%/Mk/bsd.java.mk
 and will not use the values of such variables if they are set up as
