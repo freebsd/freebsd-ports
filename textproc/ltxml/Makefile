@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ltxml
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 
@@ -36,6 +36,10 @@ OPTIONS=	OPTIMIZED_CFLAGS "Extra optimizations" off
 
 .ifdef WITH_OPTIMIZED_CFLAGS
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations -O3
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=        -fPIC
 .endif
 
 post-install:
