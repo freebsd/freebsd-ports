@@ -1,50 +1,8 @@
---- Makefile.orig	Wed Oct  3 16:58:55 2001
-+++ Makefile	Thu Mar  6 11:50:51 2003
-@@ -11,10 +11,10 @@
- LIBDIR = $(PREFIX)
- 
- # where to install the TclHaskell interface files
--IMPORTS = $(PREFIX)/imports
-+IMPORTS = $(PREFIX)/imports/tclhaskell
- 
- # the library files to use - change for different version
--TCLLIBS = -ltk8.3 -ltcl8.3
-+TCLLIBS = -ltk83 -ltcl83
- 
- # Ununcomment this line to support concurrency. 
- # This support does NOT work with ghci. It does not currently export 
-@@ -36,9 +36,9 @@
- #
- #######################################################################
- 
--CC = gcc
--CC_OPTS = -O
--CC_INC = -I/usr/X11/include -I/usr/local/include
-+CC ?= gcc
-+CC_OPTS = $(CFLAGS)
-+CC_INC = -I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3
- 
- # ld options for generating shared libraries for Hugs:
- 
-@@ -48,15 +48,15 @@
- 
- # The directories containing the X11, Tcl and Tk (binary) libraries:
- 
--CCLIB = -L /usr/lib/X11 -L /usr/local/lib
-+CCLIB = -L${X11BASE}/lib/X11 -L${LOCALBASE}/lib
- 
- 
- # the libraries required by Tcl/Tk:
- 
- #TCLREQ =  -ltk8.3 -ltcl8.3 -lX11 -lm -lsocket -lnsl -lintl -lw # (Solaris)
--TCL_REQ  = -ltk8.3 -ltcl8.3 -lm -lc                   # (OSF/1+Linux)
-+TCL_REQ  = $(TCLLIBS) # -lm -lc                   # (OSF/1+Linux)
- 
--GHC = ghc
-+GHC ?= ghc
- 
- RM   = rm -f
- 
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -72,7 +72,7 @@
  HIS = *.hi
  
@@ -75,3 +33,12 @@
  
  pkg : 
  	ghc-pkg -a < tclhaskell.conf
+@@ -134,7 +134,7 @@
+ 		@:
+ 
+ TclCompatibilityGhc.o: Check.h TclPrim.hi
+-	$(GHC) $(GHC_OPTS) $(GHC_INC) '-#include "Check.h"' -c  $(SUPPORTCONCURRENCY) -ohi TclCompatibility.hi -o $@ 
++	$(GHC) $(GHC_OPTS) $(GHC_INC) -c  $(SUPPORTCONCURRENCY) -ohi TclCompatibility.hi -o $@ 
+ 
+ 
+ 

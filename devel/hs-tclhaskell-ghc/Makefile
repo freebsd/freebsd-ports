@@ -20,8 +20,6 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 
-BROKEN=		Does not build
-
 .if defined(WITH_GHC5)
 GHC=		ghc-5.04.3
 GHCDEP=		ghc5
@@ -30,9 +28,10 @@ GHC=		ghc-6.4
 GHCDEP=		ghc
 .endif
 
+SUB_FILES=	pkg-install
+SUB_LIST=	GHC_VERSION="${GHC_VERSION}"
 WRKSRC=		${WRKDIR}/TclHaskell1.2/src
 USE_GMAKE=	YES
-USE_REINPLACE=	YES
 
 GHC_VERSION=	${GHC:S/^ghc-//} # `${LOCALBASE}/bin/${GHC} --numeric-version`
 GHC_LIB=	${LOCALBASE}/lib/${GHC}
@@ -40,6 +39,11 @@ PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 PKGINSTALL=	${WRKDIR}/pkg-install
 MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}" \
 		MKDIR="${MKDIR}" GHC="${GHC}"
+MAKE_ARGS+=	CC="${CC}" GHC="${GHC}" CC_OPTS="${CFLAGS}" \
+		CC_INC="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3" \
+		CCLIB="-L${X11BASE}/lib/X11 -L${LOCALBASE}/lib" \
+		IMPORTS="${GHC_LIB}/imports/tclhaskell" TCLLIBS="-ltk83 -ltcl83" \
+		TCL_REQ="-ltk83 -ltcl83" PREFIX="${GHC_LIB}"
 
 pre-everything::
 	@${ECHO}
@@ -47,9 +51,6 @@ pre-everything::
 	@${ECHO} "the Glasgow Haskell Compiler 5.x, restart this build with"
 	@${ECHO} "WITH_GHC5=YES."
 	@${ECHO}
-
-post-patch:
-	${REINPLACE_CMD} -e "s,/local.*tclhaskell,${GHC_LIB}," ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}/images
@@ -61,7 +62,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}/
 .endif
-	@${SED} -e s,GHC_VERSION,${GHC_VERSION}, <${MASTERDIR}/pkg-install.in >${PKGINSTALL}
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} dummy POST-INSTALL
 
 .include <bsd.port.mk>
