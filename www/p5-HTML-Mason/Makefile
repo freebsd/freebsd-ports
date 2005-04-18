@@ -66,7 +66,11 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
 
 .if defined(WITH_MOD_PERL)
+.if defined(WITH_APACHE2)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq2
+.else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq
+.endif
 .endif
 
 .include <bsd.port.post.mk>
