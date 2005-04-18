@@ -34,6 +34,7 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/util.py
 %%PYTHON_SITELIBDIR%%/revelation/__init__.pyc
 %%PYTHON_SITELIBDIR%%/revelation/config.pyc
+%%PYTHON_SITELIBDIR%%/revelation/crack.so
 %%PYTHON_SITELIBDIR%%/revelation/data.pyc
 %%PYTHON_SITELIBDIR%%/revelation/dialog.pyc
 %%PYTHON_SITELIBDIR%%/revelation/entry.pyc
@@ -59,6 +60,8 @@ share/icons/hicolor/24x24/apps/revelation.png
 share/icons/hicolor/32x32/apps/revelation.png
 share/icons/hicolor/48x48/apps/revelation.png
 share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-revelation.png
+share/icons/hicolor/scalable/filesystems/revelation-fallback-folder.svg
+share/icons/hicolor/scalable/filesystems/revelation-fallback-folder-open.svg
 @exec update-mime-database %D/share/mime
 @unexec update-mime-database %D/share/mime
 share/gnome/revelation/ui/actions.xml
@@ -66,4 +69,7 @@ share/gnome/revelation/ui/menubar.xml
 share/gnome/revelation/ui/popup-tree.xml
 share/gnome/revelation/ui/toolbar.xml
 @dirrm share/gnome/revelation/ui
+share/gnome/revelation/pwdict.hwm
+share/gnome/revelation/pwdict.pwd
+share/gnome/revelation/pwdict.pwi
 @dirrm share/gnome/revelation
