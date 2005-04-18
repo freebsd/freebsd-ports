@@ -6,30 +6,23 @@
 #
 
 PORTNAME=	libgii
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antoine.brodin@laposte.net
 COMMENT=	GGI API for input sources
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
-USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+USE_REINPLACE=	yes
 
-.if exists(/usr/include/dev/kii/kii.h)
-CONFIGURE_ARGS+=	--enable-kii --with-extra-includes=/usr/include/dev
-PLIST_SUB+=	KII=""
-.else
-PLIST_SUB+=	KII="@comment "
-.endif
-
-MAN1=		mhub.1 xsendbut.1
+MAN1=		mhub.1
 MAN3=		ggAddTask.3 ggCurTime.3 \
 		ggGetSwarType.3 ggGetUserDir.3 ggInit.3 ggLoadModule.3 \
 		ggLockCreate.3 ggRegisterCleanup.3 ggstrlcpy.3 \
@@ -44,7 +37,8 @@ MAN3=		ggAddTask.3 ggCurTime.3 \
 MAN7=		filter-key.7 filter-mouse.7 filter-save.7 filter-tcp.7 \
 		input-directx.7 input-file.7 input-linux-evdev.7 \
 		input-linux-kbd.7 input-linux-mouse.7 input-lk201.7 \
-		input-mouse.7 input-tcp.7 libgg.7 libgii.7
+		input-mouse.7 input-tcp.7 input-x.7 input-xwin.7 \
+		libgg.7 libgii.7
 MLINKS=		ggAddTask.3 ggDelTask.3 - ggTimeBase.3 \
 		- GG_SCHED_TICKS2USECS.3 - GG_SCHED_USECS2TICKS.3 \
 		ggRegisterCleanup.3 ggCleanupForceExit.3 \
@@ -67,11 +61,25 @@ MLINKS=		ggAddTask.3 ggDelTask.3 - ggTimeBase.3 \
 		- gii_event_type.3 \
 		gii_cmddata_getvalinfo.3 gii_phystype.3 - gii_valrange.3 \
 		filter-key.7 filter-keytrans.7
-DOCSDIR=	share/doc/libgii
 DOCS=		ChangeLog NEWS README
-EXAMPLESDIR=	share/examples/libgii
 EXAMPLES=	demos/demo.c demos/filter.c \
 		demos/mhub.c demos/xsendbut.c
+
+.if exists(/usr/include/dev/kii/kii.h)
+CONFIGURE_ARGS+=	--enable-kii --with-extra-includes=/usr/include/dev
+PLIST_SUB+=	KII=""
+.else
+PLIST_SUB+=	KII="@comment "
+.endif
+
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+PLIST_SUB+=	WITH_X=""
+MAN1+=		xsendbut.1
+.else
+CONFIGURE_ARGS+=	--disable-x --disable-xwin --without-x
+PLIST_SUB+=	WITH_X="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -82,30 +90,25 @@ PLIST_SUB+=	VGL="@comment "
 PLIST_SUB+=	VGL=""
 .endif
 
+.if defined(WITHOUT_X11)
+post-patch:
+	@${REINPLACE_CMD} -e 's|\(mhub\.1\).*|\1|; s|xsendbut\.1||' \
+		${WRKSRC}/doc/man/Makefile.in
+.endif
+
 post-install:
 	@${CP} ${WRKSRC}/libgii.conf ${PREFIX}/etc/ggi/libgii.conf.dist
 	@${CP} ${WRKSRC}/filter/mouse/mouse ${PREFIX}/etc/ggi/filter/mouse.dist
 	@${CP} ${WRKSRC}/filter/keytrans/keytrans ${PREFIX}/etc/ggi/filter/keytrans.dist
-	@${MAKE} install-examples
+	@${MKDIR} ${EXAMPLESDIR}
+.for f in ${EXAMPLES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
+.endfor
 .if !defined(NOPORTDOCS)
-	@${MAKE} install-documents
+	@${MKDIR} ${DOCSDIR}
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
-
-#################################################
-# local targets for this port
-
-install-examples:
-	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
-	@(cd ${WRKSRC} && \
-	for i in ${EXAMPLES} ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${EXAMPLESDIR} ; \
-	done)
-
-install-documents:
-	@${MKDIR} ${PREFIX}/${DOCSDIR}
-	@(cd ${WRKSRC} && \
-	for i in ${DOCS} ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${DOCSDIR} ; \
-	done)
 
 .include <bsd.port.post.mk>
