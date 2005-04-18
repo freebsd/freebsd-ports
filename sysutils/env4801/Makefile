@@ -15,6 +15,7 @@ DIST_SUBDIR=		env4801
 MAINTAINER=		pmh@hausen.com
 COMMENT=		Output the voltages and temperatures of a Soekris Net4801 computer
 
+ONLY_FOR_ARCHS=		i386
 NO_WRKSUBDIR=		yes
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=
