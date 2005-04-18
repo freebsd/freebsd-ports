@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmon
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdconsulting.no/tools/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFile
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 do-install:
 	${INSTALL} -d -m 0755 ${PREFIX}/${PORTNAME}
@@ -26,6 +27,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/control.pl ${PREFIX}/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/examples/control.cfg ${PREFIX}/${PORTNAME}/control.cfg.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/lmon.init ${PREFIX}/etc/rc.d/lmon.sh.sample
+	@${REINPLACE_CMD} -E -e "s@^(user=).*@\1\"root\"@;s@^(lmonhome=).*@\1\"${PREFIX}/${PORTNAME}\"@" ${PREFIX}/etc/rc.d/lmon.sh.sample
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 0755 ${DOCSDIR}
 .for f in LICENSE README TODO
