@@ -7,7 +7,7 @@
 
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/0.5/
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}
@@ -20,13 +20,13 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 THEME_DIR=	${PREFIX}/share/themes
-GTKRC=		Clearlooks-3.1-Ergo Clearlooks-4Humans Clearlooks-Ana \
-		Clearlooks-Bluey Clearlooks-Coffee Clearlooks-Decaf_Coffee \
-		Clearlooks-DeepSkyM Clearlooks-Etiquette Clearlooks-Gartoon \
-		Clearlooks-Glider Clearlooks-Gull Clearlooks-Lila \
-		Clearlooks-Lucidity Clearlooks-Mask Clearlooks-Milk \
+GTKRC=		Clearlooks-4Humans Clearlooks-Ana Clearlooks-Bluey \
+		Clearlooks-Breathe Clearlooks-Coffee Clearlooks-Decaf_Coffee \
+		Clearlooks-DeepSkyM Clearlooks-Etiquette Clearlooks-Executive \
+		Clearlooks-Gartoon Clearlooks-Glider Clearlooks-Gull \
+		Clearlooks-Lila Clearlooks-Lucidity Clearlooks-Milk \
 		Clearlooks-Nuvola Clearlooks-OliveM Clearlooks-Pastel \
-		Clearlooks-Phacile_blue Clearlooks-Serenity Clearlooks-Ubuntu \
+		Clearlooks-Serenity Clearlooks-Sunset Clearlooks-Ubuntu \
 		Clearlooks-gOrangeous ClearlooksM
 ICONS=		Clearlooks-Ana Clearlooks-Bluey Clearlooks-Etiquette \
 		Clearlooks-Lila Clearlooks-Milk Clearlooks-Nuvola
