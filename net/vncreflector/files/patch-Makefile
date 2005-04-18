@@ -3,12 +3,34 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -14,7 +14,7 @@
+@@ -14,10 +14,10 @@
  #
  # Variables you might want to edit: CFLAGS, CONFFLAGS
  
 -IFLAGS =	-I.
-+IFLAGS =	-I/usr/local/include
++IFLAGS =	-I%%LOCALBASE%%/include
  
  # Production
- CFLAGS =	-O2 $(IFLAGS)
+-CFLAGS =	-O2 $(IFLAGS)
++#CFLAGS =	-O2 $(IFLAGS)
+ # Debug (strict)
+ #CFLAGS =	-g -pedantic -Wall $(IFLAGS)
+ # Debug (profiling)
+@@ -50,7 +50,7 @@
+ default: $(PROG)
+ 
+ $(PROG): $(OBJS)
+-	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)
++	$(CC) $(CFLAGS) $(IFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)
+ 
+ clean: 
+ 	rm -f $(OBJS) *core* ./*~ ./*.bak $(PROG)
+@@ -59,7 +59,7 @@
+ 	$(MAKEDEPEND) $(MAKEDEPFLAGS) -I. $(SRCS) 2> /dev/null
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(CONFFLAGS) -c $<
++	$(CC) $(CFLAGS) $(IFLAGS) $(CONFFLAGS) -c $<
+ 
+ 
+ # DO NOT DELETE
