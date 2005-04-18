@@ -1603,6 +1603,7 @@ docbook-tdg	ports/textproc/docbook-tdg
 docbook-to-man	ports/textproc/docbook-to-man
 docbook-xml	ports/textproc/docbook-xml
 docbook-xml-430	ports/textproc/docbook-xml-430
+docbook-xml-440	ports/textproc/docbook-xml-440
 docbook-xsd	ports/textproc/docbook-xsd
 docbook-xsl	ports/textproc/docbook-xsl
 docbookide.el	ports/textproc/docbookide.el
