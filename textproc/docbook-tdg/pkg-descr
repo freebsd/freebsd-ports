@@ -8,11 +8,8 @@ used by, amongst others, the FreeBSD Documentation Project).  A dead-tree
 edition of the book is published by O'Reilly & Associates, Inc., but the text
 is freely licensed under the GNU FDL.
 
-Note that the current edition - which documents DocBook v4.2 with the EBNF,
-HTML Forms, MathML and SVG modules - is considered to be a work in progress
-and may contain inconsistencies.
+The current edition purports to document DocBook v4.4 with the EBNF,
+HTML Forms, MathML and SVG modules.
 
 Author: <nwalsh@nwalsh.com>
 WWW:    http://www.docbook.org/
-
--- Johann Visagie <wjv@FreeBSD.org>

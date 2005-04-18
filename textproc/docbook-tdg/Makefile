@@ -6,31 +6,23 @@
 #
 
 PORTNAME=	docbook-tdg
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/tdg/en/
 DISTNAME=	tdg-en-html-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Norman Walsh's book "DocBook: The Definitive Guide"
 
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tdg/en
-CPIO=		cpio --quiet -pdum -R
-
-post-patch:
-	@ ${REINPLACE_CMD} -E -e \
-	   's#file:/share/projects/sourceforge/docbook/defguide/(glyphs/100dpi/)#../\1#g' \
-	  ${WRKSRC}/html/*.html
-# XXX - hack due to REINPLACE_CMD
-	@ ${RM} -f ${WRKSRC}/html/*.html.bak
 
 do-install:
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${FILESDIR}/index.html ${DOCSDIR}
+.for D in html/figures/callouts html/figures/admon html/figures html
+	${MKDIR} ${DOCSDIR}/${D}
+	${INSTALL_DATA} ${WRKSRC}/${D}/*.* ${DOCSDIR}/${D}/
+.endfor
+	${INSTALL_DATA} ${FILESDIR}/index.html ${DOCSDIR}
 
 .include <bsd.port.mk>
