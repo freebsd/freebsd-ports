@@ -7,6 +7,7 @@
 
 PORTNAME=	libgiigic
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +22,9 @@ LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 MAN3=		gicActionLazyAction.3 \
 		gicActionWrite.3 \
