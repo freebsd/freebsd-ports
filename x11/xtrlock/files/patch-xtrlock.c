@@ -15,12 +15,4 @@ $FreeBSD$
  
  #ifdef SHADOW_PWD
  #include <shadow.h>
-@@ -203,7 +201,7 @@
-         break;
-       }
-       break;
--    default:
-+    default: break;
-     }
-   }
-  loop_x:
+
