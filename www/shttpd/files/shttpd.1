@@ -7,8 +7,15 @@ shttpd \- Simple HTTP Daemon
 .br
 .SH "DESCRIPTION"
 .B shttpd
-is a simple web server with CGI support.
-It does not detach from terminal. It stores logs in a standard format.
+is a simple web server. It supports: CGI, Digest authentication, cookies,
+GET, POST, PUT, DELETE methods, SSL. It does not detach from terminal. 
+It stores logs in a standard format. If -d option is not given, the document
+root is assumed to be current directory.
+.B shttpd
+can be embedded into existing application, in order to provide a Web GUI.
+To do that, a header file with interface definition is needed, and application
+should be compiled with shttpd.c, with -DEMBEDDED compilation flag set.
+Refer to http://shttpd.sf.net to get the header file.
 .SH OPTIONS
 .TP 13
 .I \-d directory
@@ -33,7 +40,7 @@ error log file (default none)
 log file  (default shttpd.log)
 .TP 13
 .I \-i file1[,file2..]
-index file (default index.html,index.cgi,index.php)
+index file (default index.html,index.cgi)
 .TP 13
 .I \-c pattern
 CGI file pattern (default .cgi)
@@ -41,17 +48,17 @@ CGI file pattern (default .cgi)
 .I \-P passfile
 global auth passwords file (default none)
 .TP 13
-.I \-u uid
-run-time numeric UID (default none)
+.I \-u username
+switch UID to given username's UID (default none)
 .TP 13
 .I \-m file
 mime types file (default none)
 .TP 13
 .I \-N realm
-authentication realm (default auth)
+authentication realm (default mydomain.com)
 .TP 13
 .I \-D
-do directory listing (default no)
+forbid directory listing (default yes)
 .SH COPYRIGHT
 .B shttpd
 is licensed under the terms of MIT license.
