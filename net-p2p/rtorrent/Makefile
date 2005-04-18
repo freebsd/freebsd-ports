@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtorrent
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/rtorrent
 PORTDOCS=	README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${DOCSDIR}
