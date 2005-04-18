@@ -1,3 +1,4 @@
-This PEAR package provides an object-oriented API for building SVG documents.
+PEAR::XML_SVG package provides an object-oriented API for building SVG
+documents.
 
-WWW: http://pear.php.net/package/XML_SVG
+WWW: http://pear.php.net/package/XML_SVG/
