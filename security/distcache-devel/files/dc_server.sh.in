@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: %%NAME%%
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: FreeBSD shutdown
+
+# Add the following line to /etc/rc.conf to enable `%%NAME%%':
+#
+#%%NAME%%_enable="YES"
+#
+# See %%NAME%%(1)
+#
+
+. "%%RC_SUBR%%"
+
+name="%%NAME%%"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/dc_server"
+command_args="-daemon -listen IP:9001 -user nobody -pidfile /var/run/$name.pid"
+pidfile="/var/run/$name.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${%%NAME%%_enable="NO"}
+: ${%%NAME%%_flags=""}
+
+run_rc_command "$1"
