@@ -1,0 +1,17 @@
+#/bin/sh
+PORTSENTRY="%%PREFIX%%/bin/portsentry"
+
+case "$1" in
+        start)  
+                echo -n ' portsentry ('
+                ${PORTSENTRY} -tcp > /dev/null && echo -n 'tcp'
+                ${PORTSENTRY} -udp > /dev/null && echo -n ' udp'
+                echo -n ')'
+                ;;
+        stop)   
+                killall `basename ${PORTSENTRY}`
+                ;;
+        *)
+                echo "Usage: `basename $0` {start|stop}" >&2
+                ;;
+esac

@@ -1,11 +1,12 @@
 bin/portsentry
+etc/rc.d/portsentry.sh
 @unexec if cmp -s %D/etc/portsentry.conf %D/etc/portsentry.conf.default; then rm -f %D/etc/portsentry.conf; fi
 etc/portsentry.conf.default
 @exec if [ ! -f %D/etc/portsentry.conf ] ; then cp -p %B/portsentry.conf %D/etc/portsentry.conf ; fi
 @unexec if cmp -s %D/etc/portsentry.ignore %D/etc/portsentry.ignore.default; then rm -f %D/etc/portsentry.ignore; fi
 etc/portsentry.ignore.default
 @exec if [ ! -f %D/etc/portsentry.ignore ] ; then cp -p %B/portsentry.ignore %D/etc/portsentry.ignore ; fi
-share/doc/portsentry/README.install
-share/doc/portsentry/README.methods
-share/doc/portsentry/README.stealth
-@dirrm share/doc/portsentry
+%%PORTDOCS%%%%DOCSDIR%%/README.install
+%%PORTDOCS%%%%DOCSDIR%%/README.methods
+%%PORTDOCS%%%%DOCSDIR%%/README.stealth
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
