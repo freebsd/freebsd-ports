@@ -1,32 +1,68 @@
-@comment $FreeBSD$
 bin/honeyd
 bin/honeydctl
 include/honeyd/debug.h
 include/honeyd/hooks.h
 include/honeyd/plugins.h
 include/honeyd/plugins_config.h
-@dirrm include/honeyd
 lib/honeyd/libhoneyd.so
-@dirrm lib/honeyd
-%%DATADIR%%/README
-%%DATADIR%%/nmap.assoc
-%%DATADIR%%/nmap.prints
-%%DATADIR%%/xprobe2.conf
-%%DATADIR%%/config.sample
-%%DATADIR%%/config.ethernet
-%%DATADIR%%/pf.os
-%%DATADIR%%/scripts/mydoom.pl
-%%DATADIR%%/scripts/proxy.pl
-%%DATADIR%%/scripts/router-telnet.pl
-%%DATADIR%%/scripts/smtp.pl
-%%DATADIR%%/scripts/test.sh
-%%DATADIR%%/scripts/web.sh
+share/honeyd/README
+share/honeyd/config.ethernet
+share/honeyd/config.sample
+share/honeyd/nmap.assoc
+share/honeyd/nmap.prints
+share/honeyd/pf.os
+share/honeyd/webserver/htdocs/config.py
+share/honeyd/webserver/htdocs/graphs/traffic_daily.gif
+share/honeyd/webserver/htdocs/graphs/traffic_hourly.gif
+share/honeyd/webserver/htdocs/images/add.gif
+share/honeyd/webserver/htdocs/images/arrow_down.gif
+share/honeyd/webserver/htdocs/images/arrow_right.gif
+share/honeyd/webserver/htdocs/images/delete.gif
+share/honeyd/webserver/htdocs/images/edit.gif
+share/honeyd/webserver/htdocs/images/google_logo.gif
+share/honeyd/webserver/htdocs/images/logo.gif
+share/honeyd/webserver/htdocs/index.py
+share/honeyd/webserver/htdocs/styles/layout.css
+share/honeyd/webserver/htdocs/templates/config_ip.tmpl
+share/honeyd/webserver/htdocs/templates/inc/footer.tmpl
+share/honeyd/webserver/htdocs/templates/inc/header.tmpl
+share/honeyd/webserver/htdocs/templates/inc/main.tmpl
+share/honeyd/webserver/htdocs/templates/inc/nav.tmpl
+share/honeyd/webserver/htdocs/templates/index.tmpl
+share/honeyd/webserver/htdocs/templates/status_connections.tmpl
+share/honeyd/webserver/htdocs/templates/status_stats.tmpl
+share/honeyd/webserver/htmltmpl.py
+share/honeyd/webserver/server.py
+share/honeyd/webserver/support.py
+share/honeyd/xprobe2.conf
 %%DATADIR%%/scripts/snmp/README
 %%DATADIR%%/scripts/snmp/buildSNMPConfig.pl
-%%DATADIR%%/scripts/snmp/default.snmp
 %%DATADIR%%/scripts/snmp/fake-snmp.pl
-%%DATADIR%%/scripts/snmp/linux-2.4.snmp.tpl
+%%DATADIR%%/scripts/snmp/default.snmp
 %%DATADIR%%/scripts/snmp/windows2000.snmp.tpl
+%%DATADIR%%/scripts/snmp/linux-2.4.snmp.tpl
+%%DATADIR%%/scripts/web.sh
+%%DATADIR%%/scripts/router-telnet.pl
+%%DATADIR%%/scripts/test.sh
+%%DATADIR%%/scripts/mydoom.pl
+%%DATADIR%%/scripts/README.mydoom
+%%DATADIR%%/scripts/cmdexe.pl
+%%DATADIR%%/scripts/README.cmdexe
+%%DATADIR%%/scripts/README.kuang2
+%%DATADIR%%/scripts/INSTALL.kuang2
+%%DATADIR%%/scripts/kuang2.pl
+%%DATADIR%%/scripts/kuang2.conf
+%%DATADIR%%/scripts/smtp.pl
+%%DATADIR%%/scripts/proxy.pl
+@dirrm include/honeyd
+@dirrm lib/honeyd
 @dirrm %%DATADIR%%/scripts/snmp
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/webserver/htdocs/templates/inc
+@dirrm %%DATADIR%%/webserver/htdocs/templates
+@dirrm %%DATADIR%%/webserver/htdocs/graphs
+@dirrm %%DATADIR%%/webserver/htdocs/images
+@dirrm %%DATADIR%%/webserver/htdocs/styles
+@dirrm %%DATADIR%%/webserver/htdocs
+@dirrm %%DATADIR%%/webserver
 @dirrm %%DATADIR%%
