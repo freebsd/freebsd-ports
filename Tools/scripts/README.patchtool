@@ -24,7 +24,7 @@ The following options are supported:
   -f -- don't ask any question if target patchfile already exists and is to be
         replaced;
   -u -- run tool in the "update" mode (see above);
-  -i -- perform requiested operation (generate or update) even if the
+  -i -- perform requested operation (generate or update) even if the
 	patchfile seems to be up-to-date based on last modification time of
 	all files involved.
 
@@ -74,11 +74,11 @@ EXAMPLES
 Following are several sample sessions which show common usage patterns for
 this tool.
 
-1. Generation mode (usefull when creating new port).
+1. Generation mode (useful when creating new port).
 $ cd /somewhere/foo ; make
 [compilation blows with error in src/bar/baz.c]
 $ cd work/foo-1.0/src/bar
-[digged here and there and finally have found that the problem in baz.c]
+[dig here and there and finally find that the problem in baz.c]
 $ cp baz.c baz.c.orig
 $ vi baz.c
 [fixing it]
