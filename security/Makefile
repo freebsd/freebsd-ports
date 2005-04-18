@@ -71,6 +71,7 @@
     SUBDIR += digest
     SUBDIR += dirmngr
     SUBDIR += dissembler
+    SUBDIR += distcache
     SUBDIR += dmitry
     SUBDIR += donkey
     SUBDIR += doorman

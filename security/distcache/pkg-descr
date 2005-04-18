@@ -1,0 +1,9 @@
+Distributed session caching tools and APIs, primarily for SSL/TLS servers
+though perhaps useful for other (non-SSL/TLS) circumstances.
+Also includes a self-contained network abstraction library (libnal), and the
+sslswamp SSL/TLS benchmark/test utility.
+
+WWW: http://www.distcache.org/
+
+- Marcel Prisi
+marcel.prisi@virtua.ch
