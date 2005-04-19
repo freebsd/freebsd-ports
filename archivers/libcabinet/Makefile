@@ -23,7 +23,7 @@ PROGFILE=	${SRCFILE:S/.cpp$//}
 post-build:
 	${CXX} ${CXXFLAGS} -o ${PROGFILE} ${SRCFILE} -L${WRKSRC} -lcabinet
 
-pre-install:
+pre-su-install:
 	${MKDIR} ${PREFIX}/include/cabinet
 
 post-install:
