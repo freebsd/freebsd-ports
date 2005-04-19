@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 
 WRKSRC=		${WRKDIR}/yahoo-transport-${PORTVERSION}
+PLIST_FILES=	lib/jabber/yahoo-transport.so etc/yahoo-jabber.xml.sample
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/yahoo-transport.so ${PREFIX}/lib/jabber/
