@@ -14,7 +14,10 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple audio file player
 
-CONFLICTS=	sox-*
+CONFLICTS=	sox-[0-9]*
+
+USE_REINPLACE=	yes
+MAKE_ARGS=	CFLAGS="${CFLAGS}" DESTDIR="${PREFIX}" MANDIR="/man/ja/man"
 
 MANLANG=	ja
 MAN1=		play.1
@@ -23,10 +26,7 @@ PLIST_FILES=	bin/play
 
 post-patch:
 .for file in play_audio.c mixer_ctl.c encode_sun.c encode_riff.c speed.c
-	@${CHMOD} u+w ${WRKSRC}/${file}
-	@${SED} 's,machine/soundcard.h,sys/soundcard.h,' < ${WRKSRC}/${file} \
-		> ${WRKSRC}/${file}.new
-	@${MV} ${WRKSRC}/${file}.new ${WRKSRC}/${file}
+	@${REINPLACE_CMD} 's,machine/soundcard.h,sys/soundcard.h,' ${WRKSRC}/${file}
 .endfor
 
 .include <bsd.port.mk>
