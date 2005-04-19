@@ -17,7 +17,7 @@ COMMENT=	KDE plugins for lineakd
 
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
-USE_KDE_VER=	3
+USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
