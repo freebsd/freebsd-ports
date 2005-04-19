@@ -3,7 +3,14 @@ www/pfw/INSTALL
 www/pfw/README
 www/pfw/bin/pfctlwrapper.sh
 www/pfw/bin/pfctlwrapper.sh.remote
+www/pfw/conf/isakmpd.conf
+www/pfw/conf/pf-bart.conf
+www/pfw/conf/pf-demo.conf
+www/pfw/conf/pf-holodoc.conf
+www/pfw/conf/pf-test1.conf
+www/pfw/conf/pf.conf
 www/pfw/lib/altq.class.php
+www/pfw/lib/anchor.class.php
 www/pfw/lib/filter.class.php
 www/pfw/lib/macro.class.php
 www/pfw/lib/nat.class.php
@@ -15,6 +22,9 @@ www/pfw/lib/scrub.class.php
 www/pfw/lib/table.class.php
 www/pfw/web/altq.php
 www/pfw/web/altqedit.php
+www/pfw/web/anchor.php
+www/pfw/web/anchoredit.php
+www/pfw/web/anchorloadedit.php
 www/pfw/web/commentedit.php
 www/pfw/web/config.php
 www/pfw/web/filter.php
@@ -24,20 +34,32 @@ www/pfw/web/index.php
 www/pfw/web/install.php
 www/pfw/web/macro.php
 www/pfw/web/macroedit.php
+www/pfw/web/manual/altq.php
+www/pfw/web/manual/anchor.php
+www/pfw/web/manual/filter.php
+www/pfw/web/manual/macro.php
+www/pfw/web/manual/nat.php
+www/pfw/web/manual/options.php
+www/pfw/web/manual/queue.php
+www/pfw/web/manual/scrub.php
+www/pfw/web/manual/table.php
 www/pfw/web/menu.php
 www/pfw/web/nat.php
 www/pfw/web/natedit.php
 www/pfw/web/options.php
+www/pfw/web/print.css
 www/pfw/web/queue.php
 www/pfw/web/queueedit.php
+www/pfw/web/screen.css
 www/pfw/web/scrub.php
 www/pfw/web/scrubedit.php
-www/pfw/web/stylesheet.css
 www/pfw/web/table.php
 www/pfw/web/tableedit.php
 www/pfw/web/test.php
 www/pfw/web/write.php
 @dirrm www/pfw/bin
+@dirrm www/pfw/conf
 @dirrm www/pfw/lib
+@dirrm www/pfw/web/manual
 @dirrm www/pfw/web
 @dirrm www/pfw
