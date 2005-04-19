@@ -15,7 +15,13 @@ don't do anything nasty before doing this :-)
 http://httpd.apache.org/docs/howto/auth.html and add authentication
 accordingly.
 
-If you want to use pfw to update a remote pfw, please read the
+4) Add the following line to your httpd.conf:
+
+Alias /pfw/ "%%PFW_PREFIX%%/web/"
+
+Restart apache and access pfw as http://localhost/pfw/
+
+5) If you want to use pfw to update a remote pfw, please read the
 documentation in %%PFW_PREFIX%%/bin/pfwctlwrapper.sh.remote.
 
 That's it. Pfw is now installed and ready to be used.

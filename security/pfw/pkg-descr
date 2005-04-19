@@ -1,23 +1,19 @@
 A web frontend for the pf firewall written in PHP.
 
-What works?
+Features
 
-    o Editing of macro, address translation, scrub, tables and
-      filter rules. See the screenshots to see which options has been
-      implemented.
-    o Queues - works as of version 0.5.
-    o Importing your current rulebase. And please backup your current
-      /etc/pf.conf before you install pfw.
+With the exceptions listed below, everything that can be done with
+pf can be done through pfw. This includes:
+
+    o Editing of all pf rules types like macros, address translation,
+      queues, scrub, tables and filter rules.
+    o Importing your current rulebase. Please backup your current
+      /etc/pf.conf before installing pfw.
     o Installing the rulebase. This is not just a rulebase generator,
       it will read and write to and from your /etc/pf.conf file and
       reload pf through pfctl.
-    o pfw makes an effort to preserving configurations currently
-      not supported.
-
-What doesn't work yet?
-
-    o Advanced filter options like dup-to & fastroute.
-    o Specifications using negated hosts, nets,... like !www.freebsd.org.
+    o Standard based xhtml 1.1 and CSS 2.0 compliant code with
+      separate print style sheet that will print your ruleset nicely.
 
 Author: Allard Consulting
 WWW: http://www.allard.nu/pfw/

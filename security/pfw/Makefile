@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfw
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -28,16 +28,18 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		"pf is only in 5.x"
+IGNORE=		pf is only in 5.x
 .elif ${OSVERSION} < 502105
 RUN_DEPENDS+=	pf:${PORTSDIR}/security/pf
 .endif
 
 do-install:
-	@${MKDIR} ${PFW_PREFIX} ${PFW_PREFIX}/bin ${PFW_PREFIX}/lib ${PFW_PREFIX}/web
+.for dir in conf lib web
+	@${MKDIR} ${PFW_PREFIX}/${dir}
+	@${CP} -Rv ${WRKSRC}/${dir}/* ${PFW_PREFIX}/${dir}
+.endfor
 	@${CP} -v ${WRKSRC}/INSTALL ${WRKSRC}/README ${PFW_PREFIX}
-	@${CP} -Rv ${WRKSRC}/web/* ${PFW_PREFIX}/web
-	@${CP} -Rv ${WRKSRC}/lib/* ${PFW_PREFIX}/lib
+	@${MKDIR} ${PFW_PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/pfctlwrapper.sh.remote ${PFW_PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/pfctlwrapper.sh ${PFW_PREFIX}/bin
 
