@@ -641,6 +641,7 @@
     SUBDIR += py-htmltestcase
     SUBDIR += py-imdbpy
     SUBDIR += py-mt
+    SUBDIR += py-nevow
     SUBDIR += py-scgi
     SUBDIR += py-twistedWeb
     SUBDIR += py-websvcs

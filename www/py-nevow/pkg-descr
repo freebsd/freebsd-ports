@@ -1,0 +1,9 @@
+Nevow is a next-generation web application templating system, based on the ideas
+developed in the Twisted Woven package. Its main focus is on separating the HTML
+template from both the business logic and the display logic, while allowing the
+programmer to write pure Python code as much as possible. It separates your code
+into 'data' and 'render' functions, a simplified implementation of traditional
+MVC. It has various parts which can be used individually or as a whole,
+integrated web solution.
+
+WWW:	http://nevow.com/
