@@ -1,27 +1,6 @@
 *** Makefile.orig	Mon May  9 03:26:47 1994
 --- Makefile	Fri Oct  5 05:18:35 2001
 ***************
-*** 7,15 ****
-  
-  INCLUDE =
-  
-! ATLCONFIG = -DMEMSTAT -DALIGNMENT -DEXPORT
-  
-! CFLAGS = $(COPTIONS) $(INCLUDE) $(ATLCONFIG)
-  
-  ATLOBJ = atlast.o atlmain.o
-  
---- 7,15 ----
-  
-  INCLUDE =
-  
-! ATLCONFIG = -DMEMSTAT -DALIGNMENT -DEXPORT -DNOMEMCHECK
-  
-! CFLAGS += $(INCLUDE) $(ATLCONFIG)
-  
-  ATLOBJ = atlast.o atlmain.o
-  
-***************
 *** 18,24 ****
   all:	$(APPS)
   

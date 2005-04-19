@@ -1,4 +1,0 @@
-bin/atlast
-%%PORTDOCS%%share/doc/atlast/atlast.ps
-%%PORTDOCS%%share/doc/atlast/atlast.rtf
-%%PORTDOCS%%@dirrm share/doc/atlast
