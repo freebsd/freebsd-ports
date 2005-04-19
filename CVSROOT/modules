@@ -5169,6 +5169,7 @@ libopendaap	ports/devel/libopendaap
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
 libotf		ports/print/libotf
+libotr		ports/security/libotr
 libowfat	ports/devel/libowfat
 libpanelappletmm	ports/x11-toolkits/libpanelappletmm
 libpano12	ports/graphics/libpano12
