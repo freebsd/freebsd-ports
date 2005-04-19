@@ -91,6 +91,7 @@
     SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
     SUBDIR += ftree
+    SUBDIR += gaim-bangexec
     SUBDIR += gaim-guifications
     SUBDIR += gctpc
     SUBDIR += geekcode
