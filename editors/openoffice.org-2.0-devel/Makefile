@@ -17,9 +17,9 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050406
+SNAPDATE=	20050416
 NO_LATEST_LINK=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 MOZILLA_VERSION=	1.7.5
 .if !defined(WITHOUT_MOZILLA)
@@ -47,7 +47,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		91
+MILESTONE=		94
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -200,7 +200,7 @@ package-rename:
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
 	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
-	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}.m${MILESTONE}_SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
+	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org2.0_SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"

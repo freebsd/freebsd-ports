@@ -44,6 +44,10 @@ COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und P
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "en-GB"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "eo"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
@@ -94,6 +98,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 CATEGORIES=	japanese
 LANG_PKGNAME=	${LOCALIZED_LANG}
 RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "km"
+LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "kn-IN"
@@ -176,6 +184,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 #.endif
 ################################################################
 .if ${LOCALIZED_LANG} == "tr"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "xh"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
