@@ -18,9 +18,9 @@ lib/gambas/lib.gb.compress.zlib.so
 lib/gambas/lib.gb.compress.zlib.so.0
 lib/gambas/lib.gb.db.a
 lib/gambas/lib.gb.db.component
-lib/gambas/lib.gb.db.mysql.a
-lib/gambas/lib.gb.db.mysql.so
-lib/gambas/lib.gb.db.mysql.so.0
+%%MYSQL%%lib/gambas/lib.gb.db.mysql.a
+%%MYSQL%%lib/gambas/lib.gb.db.mysql.so
+%%MYSQL%%lib/gambas/lib.gb.db.mysql.so.0
 %%PGSQL%%lib/gambas/lib.gb.db.postgresql.a
 %%PGSQL%%lib/gambas/lib.gb.db.postgresql.so
 %%PGSQL%%lib/gambas/lib.gb.db.postgresql.so.0

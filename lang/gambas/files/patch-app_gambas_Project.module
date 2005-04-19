@@ -1,0 +1,11 @@
+--- ./app/gambas/Project.module.orig	Tue Apr 19 10:58:00 2005
++++ ./app/gambas/Project.module	Tue Apr 19 21:46:21 2005
+@@ -87,7 +87,7 @@
+   OUTPUT_FILE = Temp$()
+   'CLASSES_FILE = Temp$()
+ 
+-  EXAMPLES_DIR = System.Path &/ "share/gambas/examples"
++  EXAMPLES_DIR = System.Path &/ "share/examples/gambas"
+ 
+   'Config = NEW Config '(System.Home &/ ".gambas")
+ 
