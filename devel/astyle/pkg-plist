@@ -1,5 +1,0 @@
-bin/astyle
-%%PORTDOCS%%share/doc/astyle/astyle.html
-%%PORTDOCS%%share/doc/astyle/astyle_release_notes.html
-%%PORTDOCS%%share/doc/astyle/license.html
-%%PORTDOCS%%@dirrm share/doc/astyle

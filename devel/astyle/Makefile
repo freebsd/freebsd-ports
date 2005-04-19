@@ -20,6 +20,10 @@ EXTRACT_BEFORE_ARGS=	-q -aa
 EXTRACT_AFTER_ARGS=	-d ${DISTNAME}
 CFLAGS+=	"-fpermissive"
 ALL_TARGET=	astyle
+MAKE_ARGS=	CPPFLAGS="${CXXFLAGS}"
+
+PLIST_FILES=	bin/astyle
+PORTDOCS=	astyle.html astyle_release_notes.html license.html
 
 .include <bsd.port.pre.mk>
 
