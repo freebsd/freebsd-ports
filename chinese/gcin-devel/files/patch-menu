@@ -1,0 +1,74 @@
+diff -ruN menu.orig/Makefile menu/Makefile
+--- menu.orig/Makefile	Wed Feb  9 15:55:03 2005
++++ menu/Makefile	Mon Apr 18 07:56:45 2005
+@@ -1,4 +1,4 @@
+-MENUS = gcin gcin-setup
++MENUS = gcin.desktop gcin-setup.desktop
+ 
+ include ../config.mak
+ 
+@@ -10,8 +10,8 @@
+ 	   install -m 644 $(MENUS) /usr/lib/menu; \
+ 	   which update-menus >& /dev/null && update-menus || exit 0; \
+ 	else \
+-	   install -d $(libdir)/menu; \
+-	   install -m 644 $(MENUS) $(libdir)/menu; \
++	   install -d $(prefix)/share/applications; \
++	   install -m 644 $(MENUS) $(prefix)/share/applications; \
+ 	fi
+ clean:
+ 	rm -f $(MENUS) *~
+diff -ruN menu.orig/gcin menu/gcin
+--- menu.orig/gcin	Fri Apr 15 09:12:37 2005
++++ menu/gcin	Thu Jan  1 08:00:00 1970
+@@ -1 +0,0 @@
+-?package(gcin): icon="gcin.png" title="gcin" longtitle="gcin chinese input method" needs="x11" section="Chinese" command="/usr/local/bin/gcin"
+diff -ruN menu.orig/gcin-setup menu/gcin-setup
+--- menu.orig/gcin-setup	Fri Apr 15 09:12:37 2005
++++ menu/gcin-setup	Thu Jan  1 08:00:00 1970
+@@ -1 +0,0 @@
+-?package(gcin): icon="gcin.png" title="gcin-setup 設定" longtitle="gcin-setup 設定" needs="x11" section="Chinese" command="/usr/local/bin/gcin-setup"
+diff -ruN menu.orig/gcin-setup.desktop.in menu/gcin-setup.desktop.in
+--- menu.orig/gcin-setup.desktop.in	Thu Jan  1 08:00:00 1970
++++ menu/gcin-setup.desktop.in	Mon Apr 18 07:56:45 2005
+@@ -0,0 +1,13 @@
++[Desktop Entry]
++Categories=Application;Settings;
++Encoding=UTF-8
++Type=Application
++Name=gcin-setup
++Exec=gcin-setup -caption "%c" %i %m %u
++GenericName=gcin-setup
++GenericName[zh_CN]=gcin-setup 設定 gcin
++GenericName[zh_TW]=gcin-setup 設定 gcin
++Comment=gcin-setup 設定 gcin
++MimeTypes=
++Terminal=false
++Icon=/usr/X11R6/share/icons/gcin.png
+diff -ruN menu.orig/gcin-setup.in menu/gcin-setup.in
+--- menu.orig/gcin-setup.in	Thu Nov 11 15:54:50 2004
++++ menu/gcin-setup.in	Thu Jan  1 08:00:00 1970
+@@ -1 +0,0 @@
+-?package(gcin): icon="gcin.png" title="gcin-setup 設定" longtitle="gcin-setup 設定" needs="x11" section="Chinese" command="/usr/local/bin/gcin-setup"
+diff -ruN menu.orig/gcin.desktop.in menu/gcin.desktop.in
+--- menu.orig/gcin.desktop.in	Thu Jan  1 08:00:00 1970
++++ menu/gcin.desktop.in	Mon Apr 18 07:56:45 2005
+@@ -0,0 +1,13 @@
++[Desktop Entry]
++Categories=Application;System;Utility;
++Encoding=UTF-8
++Type=Application
++Name=gcin
++Exec=gcin -caption "%c" %i %m %u
++GenericName=gcin chinese input method
++GenericName[zh_CN]=gcin 輸入法
++GenericName[zh_TW]=gcin 輸入法
++Comment=A triditional chinese input utility in X
++MimeTypes=
++Terminal=false
++Icon=/usr/X11R6/share/icons/gcin.png
+diff -ruN menu.orig/gcin.in menu/gcin.in
+--- menu.orig/gcin.in	Thu Nov 11 15:53:01 2004
++++ menu/gcin.in	Thu Jan  1 08:00:00 1970
+@@ -1 +0,0 @@
+-?package(gcin): icon="gcin.png" title="gcin" longtitle="gcin chinese input method" needs="x11" section="Chinese" command="/usr/local/bin/gcin"
