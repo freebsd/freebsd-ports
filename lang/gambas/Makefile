@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		1.0.4
-PORTREVISION=	1
+PORTVERSION=		1.0.5
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
@@ -28,7 +27,6 @@ CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 			--with-moc=${X11BASE}/bin
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"		\
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
-USE_MYSQL=		yes
 USE_REINPLACE=		yes
 
 LIBS2FIX=		libqt-mt libkdecore libkdeui libDCOP libkio
@@ -36,6 +34,14 @@ SRC2FIX1=		configure src/comp/gbi.c src/exec/gbx_library.c
 SRC2FIX2=		src/comp/gbc_archive.c src/comp/gbi.c		\
 			src/exec/gbx_library.c src/share/gb_component.h
 SRC2FIX3=		Makefile.in src/exec/gbx_project.c
+
+.if defined(WITHOUT_MYSQL)
+CONFIGURE_ARGS+=	--disable-mysql
+PLIST_SUB+=		MYSQL="@comment "
+.else
+USE_MYSQL=		yes
+PLIST_SUB+=		MYSQL=""
+.endif
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=		mixer
