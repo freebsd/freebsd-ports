@@ -1,2 +1,2 @@
 bin/xplanet
-@unexec if cmp -s %D/share/xplanet/config/defult %D/share/xplanet/config/defult.sample; then rm -f %D/share/xplanet/config/defult; fi
+@unexec if cmp -s %D/share/xplanet/config/default %D/share/xplanet/config/default.sample; then rm -f %D/share/xplanet/config/default;fi
