@@ -47,9 +47,9 @@ INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
 			krb5-admin.info-2 krb5-admin.info-3 krb5-install.info \
 			krb5-install.info-1 krb5-install.info-2 krb5-user.info
 
-MAN1=			krb5-send-pr.1 kpasswd.1 klist.1 kinit.1 \
-			kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 rlogin.1     \
-			ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
+MAN1=			krb5-send-pr.1 krb5-config.1 kpasswd.1 klist.1 \
+			kinit.1 kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 \
+			rlogin.1 ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
 .if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
 MAN1+=			v4rcp.1
 .endif
@@ -57,7 +57,7 @@ MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
 MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 			ktutil.8 kadmind.8 kprop.8 kpropd.8 sserver.8 \
 			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8 \
-			k5srvutil.8
+			k5srvutil.8 krb524d.8
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
