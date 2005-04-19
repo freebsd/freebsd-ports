@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgail-gnome
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -23,8 +22,13 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomepanel atspi
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
