@@ -1,19 +1,5 @@
 --- Makefile.orig	Wed Jan  6 11:28:39 1999
 +++ Makefile	Thu Aug  3 21:28:34 2000
-@@ -1,8 +1,8 @@
--CC     = gcc
--CFLAGS = -O2 -Wall
--INCDIR = -I/usr/X11R6/include/X11
--DESTDIR= /usr/X11R6
--LIBDIR = -L/usr/X11R6/lib
-+CC     ?= gcc
-+CFLAGS ?= -O2
-+INCDIR = -I${X11BASE}/include
-+DESTDIR= ${PREFIX}
-+LIBDIR = -L${X11BASE}/lib
- 
- 
- 
 @@ -22,14 +22,14 @@
  
  
@@ -31,12 +17,3 @@
  
  clean:
  	for i in $(OBJS) ; do \
-@@ -38,6 +38,6 @@
- 	rm -f wmSun
- 
- install:: wmSun
--	install -s -m 0755 wmSun $(DESTDIR)/bin
--	install    -m 0644 wmSun.1 $(DESTDIR)/man/man1 
-+	${BSD_INSTALL_PROGRAM} wmSun $(DESTDIR)/bin
-+	${BSD_INSTALL_MAN} wmSun.1 $(DESTDIR)/man/man1 
- 
