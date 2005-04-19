@@ -8,6 +8,7 @@
 PORTNAME=	gxmame
 DISTVERSION=	0.35beta2
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,7 +41,7 @@ MAN6=		gxmame.6
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS="-Wall.*||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(datadir)/doc|${PREFIX}/share/doc|' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in ${WRKSRC}/html/Makefile.in
 	@${REINPLACE_CMD} -e 's|__GNUC___|__GNUC__|' ${WRKSRC}/src/common.h
 
 .include <bsd.port.mk>
