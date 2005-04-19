@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 WRKTOP=		${WRKDIR}/${DISTNAME}
 WRKSUBDIR=	bwbasic-2.20
 WRKSRC=		${WRKTOP}/${WRKSUBDIR}
+MAKE_ARGS=	CFLAGS="${CFLAGS} -ansi"
 
 pre-patch:
 	cd ${WRKTOP} && ${MV} bwb-2.20-patch01/* ${WRKSUBDIR}
