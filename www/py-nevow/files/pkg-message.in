@@ -1,0 +1,5 @@
+to execute examples try below
+
+$ cd %%EXAMPLESDIR%% && PYTHONPATH=`pwd` twistd -noy examples.tac 
+
+and navigate http://localhost:8080/ 

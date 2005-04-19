@@ -1,0 +1,501 @@
+@comment $FreeBSD$
+bin/nevow-xmlgettext
+%%PYTHON_SITELIBDIR%%/formless/__init__.py
+%%PYTHON_SITELIBDIR%%/formless/__init__.pyc
+%%PYTHON_SITELIBDIR%%/formless/__init__.pyo
+%%PYTHON_SITELIBDIR%%/formless/annotate.py
+%%PYTHON_SITELIBDIR%%/formless/annotate.pyc
+%%PYTHON_SITELIBDIR%%/formless/annotate.pyo
+%%PYTHON_SITELIBDIR%%/formless/configurable.py
+%%PYTHON_SITELIBDIR%%/formless/configurable.pyc
+%%PYTHON_SITELIBDIR%%/formless/configurable.pyo
+%%PYTHON_SITELIBDIR%%/formless/formutils.py
+%%PYTHON_SITELIBDIR%%/formless/formutils.pyc
+%%PYTHON_SITELIBDIR%%/formless/formutils.pyo
+%%PYTHON_SITELIBDIR%%/formless/freeform-default.css
+%%PYTHON_SITELIBDIR%%/formless/iformless.py
+%%PYTHON_SITELIBDIR%%/formless/iformless.pyc
+%%PYTHON_SITELIBDIR%%/formless/iformless.pyo
+%%PYTHON_SITELIBDIR%%/formless/processors.py
+%%PYTHON_SITELIBDIR%%/formless/processors.pyc
+%%PYTHON_SITELIBDIR%%/formless/processors.pyo
+%%PYTHON_SITELIBDIR%%/formless/test/__init__.py
+%%PYTHON_SITELIBDIR%%/formless/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/formless/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/formless/test/test_formless.py
+%%PYTHON_SITELIBDIR%%/formless/test/test_formless.pyc
+%%PYTHON_SITELIBDIR%%/formless/test/test_formless.pyo
+%%PYTHON_SITELIBDIR%%/formless/test/test_freeform.py
+%%PYTHON_SITELIBDIR%%/formless/test/test_freeform.pyc
+%%PYTHON_SITELIBDIR%%/formless/test/test_freeform.pyo
+%%PYTHON_SITELIBDIR%%/formless/webform.py
+%%PYTHON_SITELIBDIR%%/formless/webform.pyc
+%%PYTHON_SITELIBDIR%%/formless/webform.pyo
+%%PYTHON_SITELIBDIR%%/nevow/Canvas.swf
+%%PYTHON_SITELIBDIR%%/nevow/__init__.py
+%%PYTHON_SITELIBDIR%%/nevow/__init__.pyc
+%%PYTHON_SITELIBDIR%%/nevow/__init__.pyo
+%%PYTHON_SITELIBDIR%%/nevow/accessors.py
+%%PYTHON_SITELIBDIR%%/nevow/accessors.pyc
+%%PYTHON_SITELIBDIR%%/nevow/accessors.pyo
+%%PYTHON_SITELIBDIR%%/nevow/appserver.py
+%%PYTHON_SITELIBDIR%%/nevow/appserver.pyc
+%%PYTHON_SITELIBDIR%%/nevow/appserver.pyo
+%%PYTHON_SITELIBDIR%%/nevow/blocks.py
+%%PYTHON_SITELIBDIR%%/nevow/blocks.pyc
+%%PYTHON_SITELIBDIR%%/nevow/blocks.pyo
+%%PYTHON_SITELIBDIR%%/nevow/canvas.py
+%%PYTHON_SITELIBDIR%%/nevow/canvas.pyc
+%%PYTHON_SITELIBDIR%%/nevow/canvas.pyo
+%%PYTHON_SITELIBDIR%%/nevow/compy.py
+%%PYTHON_SITELIBDIR%%/nevow/compy.pyc
+%%PYTHON_SITELIBDIR%%/nevow/compy.pyo
+%%PYTHON_SITELIBDIR%%/nevow/compyCompat.py
+%%PYTHON_SITELIBDIR%%/nevow/compyCompat.pyc
+%%PYTHON_SITELIBDIR%%/nevow/compyCompat.pyo
+%%PYTHON_SITELIBDIR%%/nevow/context.py
+%%PYTHON_SITELIBDIR%%/nevow/context.pyc
+%%PYTHON_SITELIBDIR%%/nevow/context.pyo
+%%PYTHON_SITELIBDIR%%/nevow/dirlist.py
+%%PYTHON_SITELIBDIR%%/nevow/dirlist.pyc
+%%PYTHON_SITELIBDIR%%/nevow/dirlist.pyo
+%%PYTHON_SITELIBDIR%%/nevow/entities.py
+%%PYTHON_SITELIBDIR%%/nevow/entities.pyc
+%%PYTHON_SITELIBDIR%%/nevow/entities.pyo
+%%PYTHON_SITELIBDIR%%/nevow/events.py
+%%PYTHON_SITELIBDIR%%/nevow/events.pyc
+%%PYTHON_SITELIBDIR%%/nevow/events.pyo
+%%PYTHON_SITELIBDIR%%/nevow/failure.py
+%%PYTHON_SITELIBDIR%%/nevow/failure.pyc
+%%PYTHON_SITELIBDIR%%/nevow/failure.pyo
+%%PYTHON_SITELIBDIR%%/nevow/flat/__init__.py
+%%PYTHON_SITELIBDIR%%/nevow/flat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/nevow/flat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatmdom.py
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatmdom.pyc
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatmdom.pyo
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatsax.py
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatsax.pyc
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatsax.pyo
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatstan.py
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatstan.pyc
+%%PYTHON_SITELIBDIR%%/nevow/flat/flatstan.pyo
+%%PYTHON_SITELIBDIR%%/nevow/flat/ten.py
+%%PYTHON_SITELIBDIR%%/nevow/flat/ten.pyc
+%%PYTHON_SITELIBDIR%%/nevow/flat/ten.pyo
+%%PYTHON_SITELIBDIR%%/nevow/flat/twist.py
+%%PYTHON_SITELIBDIR%%/nevow/flat/twist.pyc
+%%PYTHON_SITELIBDIR%%/nevow/flat/twist.pyo
+%%PYTHON_SITELIBDIR%%/nevow/guard.py
+%%PYTHON_SITELIBDIR%%/nevow/guard.pyc
+%%PYTHON_SITELIBDIR%%/nevow/guard.pyo
+%%PYTHON_SITELIBDIR%%/nevow/i18n.py
+%%PYTHON_SITELIBDIR%%/nevow/i18n.pyc
+%%PYTHON_SITELIBDIR%%/nevow/i18n.pyo
+%%PYTHON_SITELIBDIR%%/nevow/inevow.py
+%%PYTHON_SITELIBDIR%%/nevow/inevow.pyc
+%%PYTHON_SITELIBDIR%%/nevow/inevow.pyo
+%%PYTHON_SITELIBDIR%%/nevow/itaglibrary.py
+%%PYTHON_SITELIBDIR%%/nevow/itaglibrary.pyc
+%%PYTHON_SITELIBDIR%%/nevow/itaglibrary.pyo
+%%PYTHON_SITELIBDIR%%/nevow/liveevil.js
+%%PYTHON_SITELIBDIR%%/nevow/liveevil.py
+%%PYTHON_SITELIBDIR%%/nevow/liveevil.pyc
+%%PYTHON_SITELIBDIR%%/nevow/liveevil.pyo
+%%PYTHON_SITELIBDIR%%/nevow/liveglue.js
+%%PYTHON_SITELIBDIR%%/nevow/livepage.py
+%%PYTHON_SITELIBDIR%%/nevow/livepage.pyc
+%%PYTHON_SITELIBDIR%%/nevow/livepage.pyo
+%%PYTHON_SITELIBDIR%%/nevow/livetest-postscripts.js
+%%PYTHON_SITELIBDIR%%/nevow/livetest.css
+%%PYTHON_SITELIBDIR%%/nevow/livetest.js
+%%PYTHON_SITELIBDIR%%/nevow/livetest.py
+%%PYTHON_SITELIBDIR%%/nevow/livetest.pyc
+%%PYTHON_SITELIBDIR%%/nevow/livetest.pyo
+%%PYTHON_SITELIBDIR%%/nevow/loaders.py
+%%PYTHON_SITELIBDIR%%/nevow/loaders.pyc
+%%PYTHON_SITELIBDIR%%/nevow/loaders.pyo
+%%PYTHON_SITELIBDIR%%/nevow/query.py
+%%PYTHON_SITELIBDIR%%/nevow/query.pyc
+%%PYTHON_SITELIBDIR%%/nevow/query.pyo
+%%PYTHON_SITELIBDIR%%/nevow/rend.py
+%%PYTHON_SITELIBDIR%%/nevow/rend.pyc
+%%PYTHON_SITELIBDIR%%/nevow/rend.pyo
+%%PYTHON_SITELIBDIR%%/nevow/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/nevow/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/nevow/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/nevow/scripts/xmlgettext.py
+%%PYTHON_SITELIBDIR%%/nevow/scripts/xmlgettext.pyc
+%%PYTHON_SITELIBDIR%%/nevow/scripts/xmlgettext.pyo
+%%PYTHON_SITELIBDIR%%/nevow/stan.py
+%%PYTHON_SITELIBDIR%%/nevow/stan.pyc
+%%PYTHON_SITELIBDIR%%/nevow/stan.pyo
+%%PYTHON_SITELIBDIR%%/nevow/static.py
+%%PYTHON_SITELIBDIR%%/nevow/static.pyc
+%%PYTHON_SITELIBDIR%%/nevow/static.pyo
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/__init__.py
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/__init__.pyc
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/__init__.pyo
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/cal.py
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/cal.pyc
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/cal.pyo
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/progressbar.py
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/progressbar.pyc
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/progressbar.pyo
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane-layout.css
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane-style.css
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.js
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.py
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.pyc
+%%PYTHON_SITELIBDIR%%/nevow/taglibrary/tabbedPane.pyo
+%%PYTHON_SITELIBDIR%%/nevow/tags.py
+%%PYTHON_SITELIBDIR%%/nevow/tags.pyc
+%%PYTHON_SITELIBDIR%%/nevow/tags.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/__init__.py
+%%PYTHON_SITELIBDIR%%/nevow/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_accessors.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_accessors.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_accessors.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_appserver.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_appserver.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_appserver.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_context.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_context.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_context.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_disktemplate.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_disktemplate.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_disktemplate.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatsax.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatsax.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatsax.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatstan.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatstan.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatstan.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatten.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatten.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_flatten.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_guard.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_guard.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_guard.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_i18n.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_i18n.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_i18n.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_later.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_later.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_later.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_livepage.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_livepage.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_livepage.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_loaders.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_loaders.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_loaders.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_passobj.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_passobj.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_passobj.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_query.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_query.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_query.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_rend.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_rend.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_rend.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_stan.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_stan.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_stan.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_static.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_static.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_static.pyo
+%%PYTHON_SITELIBDIR%%/nevow/test/test_url.py
+%%PYTHON_SITELIBDIR%%/nevow/test/test_url.pyc
+%%PYTHON_SITELIBDIR%%/nevow/test/test_url.pyo
+%%PYTHON_SITELIBDIR%%/nevow/testutil.py
+%%PYTHON_SITELIBDIR%%/nevow/testutil.pyc
+%%PYTHON_SITELIBDIR%%/nevow/testutil.pyo
+%%PYTHON_SITELIBDIR%%/nevow/url.py
+%%PYTHON_SITELIBDIR%%/nevow/url.pyc
+%%PYTHON_SITELIBDIR%%/nevow/url.pyo
+%%PYTHON_SITELIBDIR%%/nevow/util.py
+%%PYTHON_SITELIBDIR%%/nevow/util.pyc
+%%PYTHON_SITELIBDIR%%/nevow/util.pyo
+%%PYTHON_SITELIBDIR%%/nevow/vhost.py
+%%PYTHON_SITELIBDIR%%/nevow/vhost.pyc
+%%PYTHON_SITELIBDIR%%/nevow/vhost.pyo
+%%PYTHON_SITELIBDIR%%/nevow/wsgi.py
+%%PYTHON_SITELIBDIR%%/nevow/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/nevow/wsgi.pyo
+%%PYTHON_SITELIBDIR%%/nevow/zomnesrv.py
+%%PYTHON_SITELIBDIR%%/nevow/zomnesrv.pyc
+%%PYTHON_SITELIBDIR%%/nevow/zomnesrv.pyo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/hier.py
+%%PORTDOCS%%%%DOCSDIR%%/hier.pyc
+%%PORTDOCS%%%%DOCSDIR%%/html/.svn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/nevow-intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nevow-traversal.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nevow-rendering.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nevow-xml-templates.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nevow-deployment.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nevow-glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/default.css
+%%PORTDOCS%%%%DOCSDIR%%/make.py
+%%PORTDOCS%%%%DOCSDIR%%/man/.svn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/old/.svn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/old/nevow.doc
+%%PORTDOCS%%%%DOCSDIR%%/old/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/qdlocale.py
+%%PORTDOCS%%%%DOCSDIR%%/qdlocale.pyc
+%%PORTDOCS%%%%DOCSDIR%%/txt/.svn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/nevow-deployment.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/nevow-glossary.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/nevow-intro.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/nevow-rendering.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/nevow-traversal.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/nevow-xml-templates.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt2html.py
+%%EXAMPLESDIR%%/advanced_manualform.py
+%%EXAMPLESDIR%%/blogengine/atom.xml
+%%EXAMPLESDIR%%/blogengine/blogengine.tac
+%%EXAMPLESDIR%%/blogengine/email_client.py
+%%EXAMPLESDIR%%/blogengine/frontend.py
+%%EXAMPLESDIR%%/blogengine/iblogengine.py
+%%EXAMPLESDIR%%/blogengine/images/bg-header2.jpg
+%%EXAMPLESDIR%%/blogengine/images/blank.gif
+%%EXAMPLESDIR%%/blogengine/images/geek-bullet.gif
+%%EXAMPLESDIR%%/blogengine/images/here-bullet.gif
+%%EXAMPLESDIR%%/blogengine/images/home-bullet.gif
+%%EXAMPLESDIR%%/blogengine/images/top.gif
+%%EXAMPLESDIR%%/blogengine/populate.py
+%%EXAMPLESDIR%%/blogengine/smtpserver.py
+%%EXAMPLESDIR%%/blogengine/store.py
+%%EXAMPLESDIR%%/blogengine/styles/form.css
+%%EXAMPLESDIR%%/blogengine/styles/site.css
+%%EXAMPLESDIR%%/blogengine/styles/typo.css
+%%EXAMPLESDIR%%/blogengine/ui.html
+%%EXAMPLESDIR%%/cal.py
+%%EXAMPLESDIR%%/canvas.py
+%%EXAMPLESDIR%%/chatola/Chatola.html
+%%EXAMPLESDIR%%/chatola/__init__.py
+%%EXAMPLESDIR%%/chatola/chatola.py
+%%EXAMPLESDIR%%/chatola/chatola.tac
+%%EXAMPLESDIR%%/children.py
+%%EXAMPLESDIR%%/childrenhtml.py
+%%EXAMPLESDIR%%/childrenhtml_ChildOfChildPage.html
+%%EXAMPLESDIR%%/childrenhtml_ChildPage.html
+%%EXAMPLESDIR%%/childrenhtml_RootPage.html
+%%EXAMPLESDIR%%/customform.py
+%%EXAMPLESDIR%%/db.py
+%%EXAMPLESDIR%%/disktemplates.html
+%%EXAMPLESDIR%%/disktemplates.py
+%%EXAMPLESDIR%%/disktemplates_stan.py
+%%EXAMPLESDIR%%/examples.tac
+%%EXAMPLESDIR%%/files/words
+%%EXAMPLESDIR%%/formbuilder.py
+%%EXAMPLESDIR%%/formpost.py
+%%EXAMPLESDIR%%/formpost2.py
+%%EXAMPLESDIR%%/guarded.py
+%%EXAMPLESDIR%%/guarded2.py
+%%EXAMPLESDIR%%/hellohtml.html
+%%EXAMPLESDIR%%/hellohtml.py
+%%EXAMPLESDIR%%/hellostan.py
+%%EXAMPLESDIR%%/http_auth.py
+%%EXAMPLESDIR%%/i18n/__init__.py
+%%EXAMPLESDIR%%/i18n/hello.html
+%%EXAMPLESDIR%%/i18n/i18n.py
+%%EXAMPLESDIR%%/i18n/locale/de/LC_MESSAGES/test.mo
+%%EXAMPLESDIR%%/i18n/locale/de/LC_MESSAGES/test.po
+%%EXAMPLESDIR%%/i18n/locale/en-us/LC_MESSAGES/test.mo
+%%EXAMPLESDIR%%/i18n/locale/en-us/LC_MESSAGES/test.po
+%%EXAMPLESDIR%%/i18n/locale/en/LC_MESSAGES/test.mo
+%%EXAMPLESDIR%%/i18n/locale/en/LC_MESSAGES/test.po
+%%EXAMPLESDIR%%/i18n/locale/fi/LC_MESSAGES/test.mo
+%%EXAMPLESDIR%%/i18n/locale/fi/LC_MESSAGES/test.po
+%%EXAMPLESDIR%%/i18n/locale/fr/LC_MESSAGES/test.mo
+%%EXAMPLESDIR%%/i18n/locale/fr/LC_MESSAGES/test.po
+%%EXAMPLESDIR%%/i18n/locale/it/LC_MESSAGES/test.mo
+%%EXAMPLESDIR%%/i18n/locale/it/LC_MESSAGES/test.po
+%%EXAMPLESDIR%%/i18n/test.pot
+%%EXAMPLESDIR%%/i18n/xmli18n.py
+%%EXAMPLESDIR%%/image_uploader/images.py
+%%EXAMPLESDIR%%/image_uploader/imagination.py
+%%EXAMPLESDIR%%/image_uploader/imagination.tac
+%%EXAMPLESDIR%%/index.css
+%%EXAMPLESDIR%%/index.html
+%%EXAMPLESDIR%%/irenderer.py
+%%EXAMPLESDIR%%/liveanimal.py
+%%EXAMPLESDIR%%/liveanimal.tac
+%%EXAMPLESDIR%%/liveevil.py
+%%EXAMPLESDIR%%/logout_guard.py
+%%EXAMPLESDIR%%/logout_guard2.py
+%%EXAMPLESDIR%%/manualform.py
+%%EXAMPLESDIR%%/most_basic.py
+%%EXAMPLESDIR%%/objcontainer.py
+%%EXAMPLESDIR%%/pastebin/pastebin.tac
+%%EXAMPLESDIR%%/pastebin/pastebin/__init__.py
+%%EXAMPLESDIR%%/pastebin/pastebin/interfaces.py
+%%EXAMPLESDIR%%/pastebin/pastebin/pasting.py
+%%EXAMPLESDIR%%/pastebin/pastebin/service.py
+%%EXAMPLESDIR%%/pastebin/pastebin/web/__init__.py
+%%EXAMPLESDIR%%/pastebin/pastebin/web/pages.py
+%%EXAMPLESDIR%%/pastebin/static/css/default.css
+%%EXAMPLESDIR%%/pastebin/static/css/freeform.css
+%%EXAMPLESDIR%%/pastebin/static/css/python.css
+%%EXAMPLESDIR%%/pastebin/static/css/standard.css
+%%EXAMPLESDIR%%/pastebin/static/images/pasting.gif
+%%EXAMPLESDIR%%/pastebin/templates/pasting.html
+%%EXAMPLESDIR%%/pastebin/templates/site.html
+%%EXAMPLESDIR%%/postit/atom.xml
+%%EXAMPLESDIR%%/postit/images/blank.gif
+%%EXAMPLESDIR%%/postit/images/geek-bullet.gif
+%%EXAMPLESDIR%%/postit/images/grad.png
+%%EXAMPLESDIR%%/postit/images/here-bullet.gif
+%%EXAMPLESDIR%%/postit/images/home-bullet.gif
+%%EXAMPLESDIR%%/postit/images/hr2.gif
+%%EXAMPLESDIR%%/postit/images/postit-bg.jpg
+%%EXAMPLESDIR%%/postit/images/postit-bg2.png
+%%EXAMPLESDIR%%/postit/images/top.gif
+%%EXAMPLESDIR%%/postit/postit.html
+%%EXAMPLESDIR%%/postit/postit.py
+%%EXAMPLESDIR%%/postit/postit.tac
+%%EXAMPLESDIR%%/postit/store.py
+%%EXAMPLESDIR%%/postit/styles/postit.css
+%%EXAMPLESDIR%%/postit/styles/typo.css
+%%EXAMPLESDIR%%/progress.py
+%%EXAMPLESDIR%%/simple.py
+%%EXAMPLESDIR%%/simple_irenderer.py
+%%EXAMPLESDIR%%/simplehtml.html
+%%EXAMPLESDIR%%/simplehtml.py
+%%EXAMPLESDIR%%/tabbed.py
+%%EXAMPLESDIR%%/tablehtml.html
+%%EXAMPLESDIR%%/tablehtml.py
+%%EXAMPLESDIR%%/testexamples.py
+%%EXAMPLESDIR%%/todo/controller.py
+%%EXAMPLESDIR%%/todo/database.sql
+%%EXAMPLESDIR%%/todo/dispatcher.py
+%%EXAMPLESDIR%%/todo/environment.py
+%%EXAMPLESDIR%%/todo/itodo.py
+%%EXAMPLESDIR%%/todo/store.py
+%%EXAMPLESDIR%%/todo/todo.tac
+%%EXAMPLESDIR%%/tree.py
+%%EXAMPLESDIR%%/userdb/userdb.tac
+%%EXAMPLESDIR%%/with_atop/main.tac
+%%EXAMPLESDIR%%/with_atop/powerups.py
+%%EXAMPLESDIR%%/wsgi/test-cgi.py
+%%EXAMPLESDIR%%/wsgi/test-modpy.py
+%%EXAMPLESDIR%%/xul_example.xul
+%%EXAMPLESDIR%%/xul_nevow.py
+%%EXAMPLESDIR%%/blogengine/email_client.pyc
+%%EXAMPLESDIR%%/blogengine/frontend.pyc
+%%EXAMPLESDIR%%/blogengine/iblogengine.pyc
+%%EXAMPLESDIR%%/blogengine/populate.pyc
+%%EXAMPLESDIR%%/blogengine/smtpserver.pyc
+%%EXAMPLESDIR%%/blogengine/store.pyc
+%%EXAMPLESDIR%%/chatola/__init__.pyc
+%%EXAMPLESDIR%%/chatola/chatola.pyc
+%%EXAMPLESDIR%%/i18n/__init__.pyc
+%%EXAMPLESDIR%%/i18n/i18n.pyc
+%%EXAMPLESDIR%%/i18n/xmli18n.pyc
+%%EXAMPLESDIR%%/image_uploader/images.pyc
+%%EXAMPLESDIR%%/image_uploader/imagination.pyc
+%%EXAMPLESDIR%%/pastebin/pastebin/web/__init__.pyc
+%%EXAMPLESDIR%%/pastebin/pastebin/web/pages.pyc
+%%EXAMPLESDIR%%/pastebin/pastebin/__init__.pyc
+%%EXAMPLESDIR%%/pastebin/pastebin/interfaces.pyc
+%%EXAMPLESDIR%%/pastebin/pastebin/pasting.pyc
+%%EXAMPLESDIR%%/pastebin/pastebin/service.pyc
+%%EXAMPLESDIR%%/postit/postit.pyc
+%%EXAMPLESDIR%%/postit/store.pyc
+%%EXAMPLESDIR%%/todo/controller.pyc
+%%EXAMPLESDIR%%/todo/dispatcher.pyc
+%%EXAMPLESDIR%%/todo/environment.pyc
+%%EXAMPLESDIR%%/todo/itodo.pyc
+%%EXAMPLESDIR%%/todo/store.pyc
+%%EXAMPLESDIR%%/with_atop/powerups.pyc
+%%EXAMPLESDIR%%/wsgi/test-modpy.pyc
+%%EXAMPLESDIR%%/wsgi/test-cgi.py.orig
+%%EXAMPLESDIR%%/wsgi/test-cgi.pyc
+%%EXAMPLESDIR%%/advanced_manualform.pyc
+%%EXAMPLESDIR%%/cal.pyc
+%%EXAMPLESDIR%%/canvas.pyc
+%%EXAMPLESDIR%%/children.pyc
+%%EXAMPLESDIR%%/childrenhtml.pyc
+%%EXAMPLESDIR%%/customform.pyc
+%%EXAMPLESDIR%%/db.pyc
+%%EXAMPLESDIR%%/disktemplates.pyc
+%%EXAMPLESDIR%%/disktemplates_stan.pyc
+%%EXAMPLESDIR%%/formbuilder.pyc
+%%EXAMPLESDIR%%/formpost.pyc
+%%EXAMPLESDIR%%/formpost2.pyc
+%%EXAMPLESDIR%%/guarded.pyc
+%%EXAMPLESDIR%%/guarded2.pyc
+%%EXAMPLESDIR%%/hellohtml.pyc
+%%EXAMPLESDIR%%/hellostan.pyc
+%%EXAMPLESDIR%%/http_auth.pyc
+%%EXAMPLESDIR%%/irenderer.pyc
+%%EXAMPLESDIR%%/liveanimal.pyc
+%%EXAMPLESDIR%%/liveevil.pyc
+%%EXAMPLESDIR%%/logout_guard.pyc
+%%EXAMPLESDIR%%/logout_guard2.pyc
+%%EXAMPLESDIR%%/manualform.pyc
+%%EXAMPLESDIR%%/most_basic.pyc
+%%EXAMPLESDIR%%/objcontainer.pyc
+%%EXAMPLESDIR%%/progress.pyc
+%%EXAMPLESDIR%%/simple.pyc
+%%EXAMPLESDIR%%/simple_irenderer.pyc
+%%EXAMPLESDIR%%/simplehtml.pyc
+%%EXAMPLESDIR%%/tabbed.pyc
+%%EXAMPLESDIR%%/tablehtml.pyc
+%%EXAMPLESDIR%%/testexamples.pyc
+%%EXAMPLESDIR%%/tree.pyc
+%%EXAMPLESDIR%%/xul_nevow.pyc
+@dirrm %%EXAMPLESDIR%%/wsgi
+@dirrm %%EXAMPLESDIR%%/with_atop
+@dirrm %%EXAMPLESDIR%%/userdb
+@dirrm %%EXAMPLESDIR%%/todo
+@dirrm %%EXAMPLESDIR%%/postit/styles
+@dirrm %%EXAMPLESDIR%%/postit/images
+@dirrm %%EXAMPLESDIR%%/postit
+@dirrm %%EXAMPLESDIR%%/pastebin/templates
+@dirrm %%EXAMPLESDIR%%/pastebin/static/images
+@dirrm %%EXAMPLESDIR%%/pastebin/static/css
+@dirrm %%EXAMPLESDIR%%/pastebin/static
+@dirrm %%EXAMPLESDIR%%/pastebin/pastebin/web
+@dirrm %%EXAMPLESDIR%%/pastebin/pastebin
+@dirrm %%EXAMPLESDIR%%/pastebin
+@dirrm %%EXAMPLESDIR%%/i18n/locale/it/LC_MESSAGES
+@dirrm %%EXAMPLESDIR%%/i18n/locale/it
+@dirrm %%EXAMPLESDIR%%/i18n/locale/fr/LC_MESSAGES
+@dirrm %%EXAMPLESDIR%%/i18n/locale/fr
+@dirrm %%EXAMPLESDIR%%/i18n/locale/fi/LC_MESSAGES
+@dirrm %%EXAMPLESDIR%%/i18n/locale/fi
+@dirrm %%EXAMPLESDIR%%/i18n/locale/en/LC_MESSAGES
+@dirrm %%EXAMPLESDIR%%/i18n/locale/en-us/LC_MESSAGES
+@dirrm %%EXAMPLESDIR%%/i18n/locale/en-us
+@dirrm %%EXAMPLESDIR%%/i18n/locale/en
+@dirrm %%EXAMPLESDIR%%/i18n/locale/de/LC_MESSAGES
+@dirrm %%EXAMPLESDIR%%/i18n/locale/de
+@dirrm %%EXAMPLESDIR%%/i18n/locale
+@dirrm %%EXAMPLESDIR%%/i18n
+@dirrm %%EXAMPLESDIR%%/image_uploader
+@dirrm %%EXAMPLESDIR%%/files
+@dirrm %%EXAMPLESDIR%%/chatola
+@dirrm %%EXAMPLESDIR%%/blogengine/styles
+@dirrm %%EXAMPLESDIR%%/blogengine/images
+@dirrm %%EXAMPLESDIR%%/blogengine
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/.svn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/man/.svn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/old/.svn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/old
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt/.svn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/test
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/taglibrary
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/nevow/flat
+@dirrm %%PYTHON_SITELIBDIR%%/nevow
+@dirrm %%PYTHON_SITELIBDIR%%/formless/test
+@dirrm %%PYTHON_SITELIBDIR%%/formless
