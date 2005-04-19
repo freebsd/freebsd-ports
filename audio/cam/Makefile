@@ -15,11 +15,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cpu's Audio Mixer [curses based]
 
-MAN1=	cam.1
-PLIST=	${WRKDIR}/pkg-plist
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		BINDIR="${PREFIX}/bin" \
+		MANDIR="${MAN1PREFIX}/man/man1" \
+		XEFILE=""
 
-pre-install:
-	${ECHO_CMD} bin/cam > ${PLIST}
+MAN1=		cam.1
+PLIST_FILES=	bin/cam
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cam ${PREFIX}/bin
