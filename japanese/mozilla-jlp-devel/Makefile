@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.8.a6
-PORTREVISION=	1
+PORTVERSION=	1.8.b1
+PORTREVISION=	0
 CATEGORIES=	japanese www
-MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla-japan/mozilla/development/1.8a6/
+MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla-japan/mozilla/development/1.8b1/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	mozilla-1.8a6-langjajp0.6
+DISTNAME=	mozilla-1.8b1-langjajp-1
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	fortune@n.jpn.ph
@@ -20,8 +20,6 @@ COMMENT=	Mozilla Japanese Language Pack (JLP)
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/regxpcom:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${MOZILLA}:${PORTSDIR}/www/${MOZILLA} \
 		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
-
-BROKEN=		Install fails
 
 WRKSRC=		${WRKDIR}/bin
 
@@ -52,10 +50,7 @@ do-build:
 
 do-install:
 	(cd ${PREFIX}/lib/${MOZILLA}/chrome; \
-	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
-	(cd ${PREFIX}/lib/${MOZILLA}/components; \
-	${MV} -f xpti.dat ../xpti.dat.orig)
 	${MV} -f ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/${MOZILLA}.orig
 	${INSTALL_SCRIPT} ${WRKDIR}/${MOZILLA} ${PREFIX}/bin
 	(cd ${WRKDIR}/sp; ${TAR} -cf - *) | \
