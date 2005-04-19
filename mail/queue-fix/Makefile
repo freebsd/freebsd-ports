@@ -15,17 +15,20 @@ COMMENT=	Repairs or generates a qmail queue structure
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
+QMAIL_DIR?=	/var/qmail
+PREFIX?=	${QMAIL_DIR}
+
 OPTIONS=	BIG_TODO "Use big_todo patch" off
 
 CONFIGURE_SCRIPT=
 ALL_TARGET=
 
 PLIST_SUB=	DOCDIR=${DOCDIR}
+PLIST_FILES=	bin/queue-fix
 
-.if exists(${PREFIX}/qmail/bin/qmail-send)
-PREFIX?=	${PREFIX}/qmail
-.else
-PREFIX?=	/var/qmail
+.if !defined(NOPORTDOCS)
+PLIST_FILES+=	%%DOCDIR%%/README
+PLIST_DIRS+=	%%DOCDIR%%
 .endif
 
 .if (${PREFIX} == ${LOCALBASE})

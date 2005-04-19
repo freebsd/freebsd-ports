@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/queue-fix
-%%PORTDOCS%%%%DOCDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCDIR%%
