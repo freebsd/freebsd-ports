@@ -1,133 +1,99 @@
 bin/linux-opera
 %%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/help
 %%GNOME:%%share/gnome/applications/linux-opera.desktop
 %%GNOME:%%share/gnome/pixmaps/linux-opera.xpm
-share/linux-opera/bin/missingsyms.so
-share/linux-opera/bin/opera
-share/linux-opera/bin/spellcheck.so
-share/linux-opera/bin/works
-share/linux-opera/chartables.bin
-share/linux-opera/config/opera6rc
-share/linux-opera/config/opera6rc.fixed
-share/linux-opera/help/advertising.html
-share/linux-opera/help/background.png
-share/linux-opera/help/chat.html
-share/linux-opera/help/dialogs.html
-share/linux-opera/help/filetypes.html
-share/linux-opera/help/fonts.html
-share/linux-opera/help/glossary.html
-share/linux-opera/help/help.css
-share/linux-opera/help/history.html
-share/linux-opera/help/index.html
-share/linux-opera/help/input.html
-share/linux-opera/help/keyboard.html
-share/linux-opera/help/languages.html
-share/linux-opera/help/layout.html
-share/linux-opera/help/license.txt
-share/linux-opera/help/m2.html
-share/linux-opera/help/mail.html
-share/linux-opera/help/menus.html
-share/linux-opera/help/mouse.html
-share/linux-opera/help/multimedia.html
-share/linux-opera/help/network.html
-share/linux-opera/help/page.html
-share/linux-opera/help/panels.html
-share/linux-opera/help/paths.html
-share/linux-opera/help/personal.html
-share/linux-opera/help/preferences.html
-share/linux-opera/help/privacy.html
-share/linux-opera/help/search.html
-share/linux-opera/help/security.html
-share/linux-opera/help/skin.html
-share/linux-opera/help/sounds.html
-share/linux-opera/help/start.html
-share/linux-opera/help/toc.html
-share/linux-opera/help/toolbars.html
-share/linux-opera/help/windows.html
-share/linux-opera/hhd.ssr
-share/linux-opera/html40_entities.dtd
-share/linux-opera/images/background.gif
-share/linux-opera/images/blank.gif
-share/linux-opera/images/drive.gif
-share/linux-opera/images/file.gif
-share/linux-opera/images/folder.gif
-share/linux-opera/images/link.gif
-share/linux-opera/images/opera.xpm
-share/linux-opera/images/opera_16x16.png
-share/linux-opera/images/opera_22x22.png
-share/linux-opera/images/opera_32x32.png
-share/linux-opera/images/opera_48x48.png
-share/linux-opera/images/operabanner.png
-share/linux-opera/images/shared.gif
-share/linux-opera/images/splash.png
-share/linux-opera/images/startup1.png
-share/linux-opera/images/startup2.png
-share/linux-opera/ini/dialog.ini
-share/linux-opera/ini/fastforward.ini
-share/linux-opera/ini/filehandler.ini
-share/linux-opera/ini/pluginpath.ini
-share/linux-opera/ini/spellcheck.ini
-share/linux-opera/ini/standard_keyboard.ini
-share/linux-opera/ini/standard_menu.ini
-share/linux-opera/ini/standard_mouse.ini
-share/linux-opera/ini/standard_toolbar.ini
-share/linux-opera/ini/unix_keyboard.ini
-share/linux-opera/java/opera.jar
-share/linux-opera/java/opera.policy
-share/linux-opera/jsconsole.html
-share/linux-opera/lngcode.txt
-share/linux-opera/locale/en/default.adr
-share/linux-opera/locale/en/lngcode.txt
-share/linux-opera/locale/en/search.ini
-share/linux-opera/locale/english.lng
-share/linux-opera/opera6.adr
-share/linux-opera/plugins/libnpp.so
-share/linux-opera/plugins/operamotifwrapper-3
-share/linux-opera/plugins/operaplugincleaner
-share/linux-opera/search.ini
-share/linux-opera/skin/standard_skin.zip
-share/linux-opera/skin/windows_skin.zip
-share/linux-opera/styles/OPF.css
-share/linux-opera/styles/about.css
-share/linux-opera/styles/cache.css
-share/linux-opera/styles/csr.css
-share/linux-opera/styles/dir.css
-share/linux-opera/styles/drives.css
-share/linux-opera/styles/email.css
-share/linux-opera/styles/history.css
-share/linux-opera/styles/im.css
-share/linux-opera/styles/info.css
-share/linux-opera/styles/mime.css
-share/linux-opera/styles/mimehead.css
-share/linux-opera/styles/opf.css
-share/linux-opera/styles/plugins.css
-share/linux-opera/styles/user/accessibility.css
-share/linux-opera/styles/user/contrastbw.css
-share/linux-opera/styles/user/contrastwb.css
-share/linux-opera/styles/user/debugwithoutline.css
-share/linux-opera/styles/user/disabletables.css
-share/linux-opera/styles/user/hidecertainsizes.css
-share/linux-opera/styles/user/hidenonlinkimages.css
-share/linux-opera/styles/user/imageandlinkonly.css
-share/linux-opera/styles/user/nostalgia.css
-share/linux-opera/styles/user/showstructure.css
-share/linux-opera/styles/user/textonly.css
-share/linux-opera/styles/user/userstyle.ini
-share/linux-opera/styles/wml.css
-@dirrm share/linux-opera/styles/user
-@dirrm share/linux-opera/styles
-@dirrm share/linux-opera/skin
-@dirrm share/linux-opera/plugins
-@dirrm share/linux-opera/locale/en
-@dirrm share/linux-opera/locale
-@dirrm share/linux-opera/java
-@dirrm share/linux-opera/ini
-@dirrm share/linux-opera/images
-@dirrm share/linux-opera/help
-@dirrm share/linux-opera/config
-@dirrm share/linux-opera/bin
-@dirrm share/linux-opera
+%%DATADIR%%/bin/missingsyms.so
+%%DATADIR%%/bin/opera
+%%DATADIR%%/bin/spellcheck.so
+%%DATADIR%%/bin/works
+%%DATADIR%%/chartables.bin
+%%DATADIR%%/config/opera6rc
+%%DATADIR%%/config/opera6rc.fixed
+%%DATADIR%%/hhd.ssr
+%%DATADIR%%/html40_entities.dtd
+%%DATADIR%%/images/blank.gif
+%%DATADIR%%/images/drive.gif
+%%DATADIR%%/images/file.gif
+%%DATADIR%%/images/folder.gif
+%%DATADIR%%/images/link.gif
+%%DATADIR%%/images/opera.xpm
+%%DATADIR%%/images/opera_16x16.png
+%%DATADIR%%/images/opera_22x22.png
+%%DATADIR%%/images/opera_32x32.png
+%%DATADIR%%/images/opera_48x48.png
+%%DATADIR%%/images/operabanner.png
+%%DATADIR%%/ini/dialog.ini
+%%DATADIR%%/ini/fastforward.ini
+%%DATADIR%%/ini/filehandler.ini
+%%DATADIR%%/ini/pluginpath.ini
+%%DATADIR%%/ini/spellcheck.ini
+%%DATADIR%%/ini/standard_keyboard.ini
+%%DATADIR%%/ini/standard_menu.ini
+%%DATADIR%%/ini/standard_mouse.ini
+%%DATADIR%%/ini/standard_toolbar.ini
+%%DATADIR%%/ini/unix_keyboard.ini
+%%DATADIR%%/java/opera.jar
+%%DATADIR%%/java/opera.policy
+%%DATADIR%%/jsconsole.html
+%%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/en/default.adr
+%%DATADIR%%/locale/en/license.txt
+%%DATADIR%%/locale/en/lngcode.txt
+%%DATADIR%%/locale/en/search.ini
+%%DATADIR%%/locale/english.lng
+%%DATADIR%%/opera6.adr
+%%DATADIR%%/plugins/libnpp.so
+%%DATADIR%%/plugins/operamotifwrapper-3
+%%DATADIR%%/plugins/operaplugincleaner
+%%DATADIR%%/search.ini
+%%DATADIR%%/skin/standard_skin.zip
+%%DATADIR%%/skin/windows_skin.zip
+%%DATADIR%%/styles/OPF.css
+%%DATADIR%%/styles/about.css
+%%DATADIR%%/styles/cache.css
+%%DATADIR%%/styles/certinfo.css
+%%DATADIR%%/styles/csr.css
+%%DATADIR%%/styles/dir.css
+%%DATADIR%%/styles/drives.css
+%%DATADIR%%/styles/email.css
+%%DATADIR%%/styles/history.css
+%%DATADIR%%/styles/im.css
+%%DATADIR%%/styles/info.css
+%%DATADIR%%/styles/mime.css
+%%DATADIR%%/styles/mimehead.css
+%%DATADIR%%/styles/opf.css
+%%DATADIR%%/styles/plugins.css
+%%DATADIR%%/styles/user/accessibility.css
+%%DATADIR%%/styles/user/contrastbw.css
+%%DATADIR%%/styles/user/contrastwb.css
+%%DATADIR%%/styles/user/debugwithoutline.css
+%%DATADIR%%/styles/user/disabletables.css
+%%DATADIR%%/styles/user/hidecertainsizes.css
+%%DATADIR%%/styles/user/hidenonlinkimages.css
+%%DATADIR%%/styles/user/imageandlinkonly.css
+%%DATADIR%%/styles/user/nostalgia.css
+%%DATADIR%%/styles/user/showstructure.css
+%%DATADIR%%/styles/user/textonly.css
+%%DATADIR%%/styles/user/userstyle.ini
+%%DATADIR%%/styles/wml.css
+%%DATADIR%%/svg-mo.dat
+%%DATADIR%%/svg-mobd.dat
+%%DATADIR%%/svg-sa.dat
+%%DATADIR%%/svg-sabd.dat
+%%DATADIR%%/svg-se.dat
+%%DATADIR%%/svg-sebd.dat
+@dirrm %%DATADIR%%/styles/user
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%/ini
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
 
 %%KDE:%%@cwd %%LOCALBASE%%

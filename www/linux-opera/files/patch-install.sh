@@ -1,5 +1,5 @@
---- install.sh.orig	Mon Jan 31 09:19:45 2005
-+++ install.sh	Sun Feb 20 16:20:11 2005
+--- install.sh.orig	Tue Apr 19 13:21:58 2005
++++ install.sh	Tue Apr 19 13:36:51 2005
 @@ -761,10 +761,9 @@
      case "${machine}:${os}" in
  	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
@@ -45,7 +45,7 @@
          if test -f \"\${INIJAVA}/libjava.so\"; then OPERA_JAVA_DIR=\"\${INIJAVA}\"; fi
      fi
  fi
-@@ -873,52 +876,16 @@
+@@ -873,53 +876,16 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -84,6 +84,7 @@
 -	j2se/1.3/jre \\
 -	j2se/jre \\
 -	jre1.3.1_15 \\
+-	jre1.3.1_04 \\
 -	jre1.3.1_02 \\
 -	jre1.3.1_01 \\
 -	j2re1.3.1 \\
@@ -106,7 +107,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -967,11 +934,8 @@
+@@ -970,11 +936,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -120,7 +121,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1009,7 +973,7 @@
+@@ -1012,7 +975,7 @@
  };
  
  // Opera package classes get all permissions
@@ -129,7 +130,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1077,7 +1041,7 @@
+@@ -1080,7 +1043,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -138,7 +139,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1112,7 +1076,7 @@
+@@ -1115,7 +1078,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -147,7 +148,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1214,27 +1178,6 @@
+@@ -1222,27 +1185,6 @@
  	mkdir $mkdirv $mkdirp $plugin_dir/
  	chmod $chmodv 755 $plugin_dir
  
@@ -175,7 +176,7 @@
  	if test -f plugins/operamotifwrapper-3
  	    then
  		cp $cpv $cpf plugins/operamotifwrapper-3 $plugin_dir/
-@@ -1242,13 +1185,6 @@
+@@ -1250,13 +1192,6 @@
  		plugin_support='yes'
  	fi
  
@@ -189,28 +190,33 @@
  	if test -f plugins/libnpp.so
  	    then
  		cp $cpv $cpf plugins/libnpp.so $plugin_dir/
-@@ -1286,8 +1222,9 @@
+@@ -1293,36 +1228,13 @@
+ 
  	if test -z "${OPERADESTDIR}"; then
  
- 	# System wide configuration files
+-	# System wide configuration files
 -	config_dir="/etc"
-+	config_dir="$prefix/etc"
- 	if can_write_to "$config_dir"; then
-+if false; then # XXX
- 	    echo
- 	    echo "System wide configuration files:"
- 	    echo "  $config_dir/opera6rc"
-@@ -1299,6 +1236,7 @@
- 		cp $cpv $cpf config/opera6rc $config_dir
- 		cp $cpv $cpf config/opera6rc.fixed $config_dir
- 	    fi
-+fi # XXX
- 	else
- 	    echo
- 	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
-@@ -1309,12 +1247,12 @@
- 	fi
- 
+-	if can_write_to "$config_dir"; then
+-	    echo
+-	    echo "System wide configuration files:"
+-	    echo "  $config_dir/opera6rc"
+-	    echo "  $config_dir/opera6rc.fixed"
+-	    echo " cannot be prefixed"
+-	    if con_firm "Do you want to install them"; then
+-		backup $config_dir/opera6rc opera6rc config
+-		backup $config_dir/opera6rc.fixed opera6rc.fixed config
+-		cp $cpv $cpf config/opera6rc $config_dir
+-		cp $cpv $cpf config/opera6rc.fixed $config_dir
+-	    fi
+-	else
+-	    echo
+-	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
+-	    echo " System wide configuration files:"
+-	    echo "  $config_dir/opera6rc"
+-	    echo "  $config_dir/opera6rc.fixed"
+-	    echo " were not installed"
+-	fi
+-
       # Shorcuts and Icons
 -	icons
 +#	icons
@@ -225,7 +231,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1359,15 +1297,16 @@
+@@ -1367,15 +1279,16 @@
  {
      # arg1 = location
  
@@ -247,16 +253,16 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1443,74 +1382,27 @@
+@@ -1451,74 +1364,26 @@
  
      debug_msg 1 "in gnome()"
  
 -    if test -d /opt/gnome/; then
--
--      # /opt/gnome share
--      if test -d /opt/gnome/share; then
 +    if test -d %%X11BASE%%/share/gnome/; then
  
+-      # /opt/gnome share
+-      if test -d /opt/gnome/share; then
+-
 -        # /opt/gnome icon
 -        if test ! -d /opt/gnome/share/pixmaps/; then
 -	  if test -w /opt/gnome/share; then
@@ -299,12 +305,7 @@
 +      # end %%X11BASE%%/share/gnome icon
  
 -    elif test -d /usr/share/gnome/; then
-+      # %%X11BASE%%/share/gnome link
-+      if test -d %%X11BASE%%/share/gnome/applications/; then
-+        generate_desktop %%X11BASE%%/share/gnome/applications
-+      fi
-+      # end %%X11BASE%%/share/gnome link
- 
+-
 -        # /usr/share/gnome icon
 -        if test ! -d /usr/share/gnome/pixmaps/; then
 -	  if test -w /usr/share/gnome; then
@@ -335,11 +336,16 @@
 -	# end /usr/share/gnome link
 -   fi
 -   # Add ximian here
++      # %%X11BASE%%/share/gnome link
++      if test -d %%X11BASE%%/share/gnome/applications/; then
++        generate_desktop %%X11BASE%%/share/gnome/applications
++      fi
++      # end %%X11BASE%%/share/gnome link
 +    fi
  }
  
  kde()
-@@ -1519,39 +1411,31 @@
+@@ -1527,39 +1392,31 @@
  
      debug_msg 1 "in kde()"
  
@@ -381,7 +387,7 @@
 +	if test -w %%LOCALBASE%%/share/applnk/Internet; then generate_desktop %%LOCALBASE%%/share/applnk/Internet ${1}; fi
        fi
  
-     fi  
+-    fi  
 -    
 -    if test -d /usr/share/applnk/Networking; then
 -      if test ! -d /usr/share/applnk/Networking/WWW/ -a -w /usr/share/applnk/Networking; then
@@ -390,6 +396,7 @@
 -      fi
 -      if test -w /usr/share/applnk/Networking/WWW; then generate_desktop /usr/share/applnk/Networking/WWW ${1}; fi
 -    fi
++    fi    
  }
  
  kde1()

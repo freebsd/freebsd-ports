@@ -1,23 +1,18 @@
 ##
-Changelog for 7.54u2 Final: http://www.opera.com/linux/changelogs/754u2/
+Changelog for 8.0 Final: http://www.opera.com/linux/changelogs/800/
 
-The name of the the binary, data directory, personal "~/.opera" directory,
-etc., have been renamed from "opera" to "linux-opera." This means that
-www/linux-opera and www/opera no longer conflict, and can be installed and
-can run at the same time. Bookmarks and mail can be preserved by copying
-~/.opera/mail and ~/.opera/opera6.adr into ~/.linux-opera. Configurations for
-toolbars, options, etc., have changed from previous versions, and are not
-recommend to transferred from the old configuration. The mail format will be
-converted to the new format automatically when the new linux-opera is run for
-the first time.
+If you are upgrade from version 7.x or below, it is recommend for you to
+backup your personal "~/.linux-opera" directory and remove it. It can be done
+following from the command line:
 
-*** IMPORTANT: users with custom search.ini ***
+	# cp -Rp ~/.linux-opera ~/.linux-opera-bak
+	# rm -rf ~/.linux-opera/*
 
-If you have a custom search.ini and you've used opera 7.51 or an earlier
-version before this upgrade, edit ~/.linux-opera/search.ini _before_ running
-the upgraded Opera for the first time, and change the file version to 4. It
-should look like this:
-
-[Version]
-File Version=4
+After that, you can put your bookmark, email, contacts and etc back in
+~/.linux-opera/. The bookmark is ~/.linux-opera/opera6.adr and the email is
+~/.linux-opera/mail as you can figure out by view in ~/.linux-opera/. It is
+probably not good idea to put opera6.ini, userstyle.ini, search.ini,
+pluginpath.ini and other non-personal stuff back in ~/.linux-opera/. The
+non-personal stuff should be re-configure on new stuff by either Opera
+preferences in GUI or hand (manual) in your editor.
 ##
