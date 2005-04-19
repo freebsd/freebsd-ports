@@ -19,10 +19,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	OPTIM="${CFLAGS}"
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--disable-float
 
 MAN1=		pfe.1
+PLIST_FILES=	bin/pfe lib/pfe/p4ed.so
+PLIST_DIRS=	lib/pfe
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
