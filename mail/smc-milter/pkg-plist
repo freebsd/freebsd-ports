@@ -3,4 +3,4 @@ etc/smc/smc-milter.conf
 etc/smc/smc-milter.policy
 etc/smc/smc-milter.users
 @dirrm etc/smc
-etc/rc.d/smc-milter.sh
+etc/rc.d/smc-milter.sh.sample
