@@ -539,7 +539,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>sl-openoffice-SL</name>
 	<name>zh-openoffice</name>
 	<name>zh_TW-openoffice</name>
-	<range><lt>1.1.5</lt></range>
+	<range><lt>1.1.4_2</lt></range>
 	<range><gt>2.*</gt><le>2.0.20050406</le></range>
       </package>
       <package>
@@ -573,6 +573,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-04-11</discovery>
       <entry>2005-04-13</entry>
+      <modified>2005-04-20</modified>
     </dates>
   </vuln>
 
