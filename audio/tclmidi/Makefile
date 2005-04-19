@@ -17,7 +17,6 @@ COMMENT=	A language designed for creating and editing standard MIDI files
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
-INSTALLS_SHLIB=	yes
 MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclsh=${LOCALBASE}/bin/tclsh8.2
