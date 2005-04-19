@@ -1,5 +1,6 @@
 bin/giftui
 share/applications/giftui.desktop
+@dirrm share/applications
 %%DATADIR%%/icons/fasttrack-down.png
 %%DATADIR%%/icons/fasttrack-network.png
 %%DATADIR%%/icons/fasttrack-search.png
