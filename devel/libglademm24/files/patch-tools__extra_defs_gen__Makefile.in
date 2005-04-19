@@ -1,0 +1,11 @@
+--- tools/extra_defs_gen/Makefile.in.orig	Sun Mar  6 23:00:45 2005
++++ tools/extra_defs_gen/Makefile.in	Tue Apr 19 18:39:53 2005
+@@ -125,7 +125,7 @@
+ LIBGLADEMM_VERSION = @LIBGLADEMM_VERSION@
+ LIBGLADE_VERSION_NEEDED = @LIBGLADE_VERSION_NEEDED@
+ LIBOBJS = @LIBOBJS@
+-LIBS = $(LIBGLADEMM_LIBS) -lglibmm_generate_extra_defs-2.4
++LIBS = $(LIBGLADEMM_LIBS) -L$(GMM_PROCDIR)/../.. -lglibmm_generate_extra_defs-2.4
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
