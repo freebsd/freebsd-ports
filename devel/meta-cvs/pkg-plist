@@ -2,6 +2,7 @@ bin/mcvs
 lib/clisp/meta-cvs/lispinit.mem
 lib/clisp/meta-cvs/lisp.run
 @dirrm lib/clisp/meta-cvs
+@unexec rmdir %D/lib/clisp 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/Meta-CVS-PAPER
 %%PORTDOCS%%%%DOCSDIR%%/QUICK-GUIDE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
