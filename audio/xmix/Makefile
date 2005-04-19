@@ -22,11 +22,12 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xmix
 
 MAN1=		xmix.1
+PLIST_FILES=	bin/xmix lib/X11/app-defaults/XMix
 
 pre-build:
 	${CP} ${WRKSRC}/xmix.1 ${WRKSRC}/xmix.man
 
-pre-install:
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/XMix ${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.mk>
