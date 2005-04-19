@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Greylisting daemon for Postfix
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/6c2d4f29-af3e-11d9-837d-000e0c2e438a.html
+
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
