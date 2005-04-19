@@ -93,6 +93,7 @@
     SUBDIR += ftree
     SUBDIR += gaim-bangexec
     SUBDIR += gaim-guifications
+    SUBDIR += gaim-ignorance
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += getopt
