@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/devel/cvsnt/files/Attic/cvslockd.sh.in,v 1.1 2005-04-19 19:03:52 fjoe Exp $
 #
 # PROVIDE: cvslockd
 # REQUIRE: LOGIN

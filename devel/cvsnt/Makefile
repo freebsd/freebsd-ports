@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cvsnt
-PORTVERSION=	2.0.58d
-PORTREVISION=	4
+PORTVERSION=	2.5.01.1927
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/
 
@@ -18,13 +17,13 @@ CONFLICTS=	cvs-1*
 
 USE_LIBLTDL=	yes
 USE_INC_LIBTOOL_VER=	13
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	cvslockd.sh
 CONFIGURE_ARGS=	--enable-fork
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
 USE_ICONV=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
@@ -37,16 +36,5 @@ PLIST_SUB=	GSERVER=""
 PLIST_SUB=	GSERVER="@comment "
 CONFIGURE_ARGS+=--disable-gserver
 .endif
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-STARTUPDIR=	etc/rc.d
-STARTUPFILES=	cvslockd.sh
-
-post-install:
-.for file in ${STARTUPFILES}
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${file} > ${WRKDIR}/${file}
-	${INSTALL_SCRIPT} ${WRKDIR}/${file} ${PREFIX}/${STARTUPDIR}/${file}
-.endfor
 
 .include <bsd.port.mk>
