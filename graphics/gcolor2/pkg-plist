@@ -1,0 +1,5 @@
+bin/gcolor2
+share/gnome/applications/gcolor2.desktop
+share/gnome/pixmaps/gcolor2/about_icon.png
+share/gnome/pixmaps/gcolor2/icon.png
+@dirrm share/gnome/pixmaps/gcolor2

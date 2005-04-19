@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Color Selector
+Name[es]=Probador de colores
+Name[pl]=Próbnik kolorów
+Comment=Choose colors from palette or screen
+Comment[es]=Elige y proba colores de la gama de colores o la pantalla
+Comment[pl]=Wybiera kolory z palety lub ekranu
+Exec=gcolor2
+Icon=%%PREFIX%%/share/gnome/pixmaps/gcolor2/icon.png
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Graphics;
+StartupNotify=true

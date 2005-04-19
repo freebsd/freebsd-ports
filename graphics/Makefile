@@ -109,6 +109,7 @@
     SUBDIR += g3dviewer
     SUBDIR += gauche-gl
     SUBDIR += gcolor
+    SUBDIR += gcolor2
     SUBDIR += gd
     SUBDIR += gdal
     SUBDIR += gdchart
