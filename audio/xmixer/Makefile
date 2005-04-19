@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 USE_AUTOCONF_VER=	213
 
+PLIST_FILES=	bin/xmixer bin/xgmixer
 MAN1=		xmixer.1
 MLINKS=		xmixer.1 xgmixer.1
 
