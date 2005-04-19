@@ -9567,6 +9567,7 @@ py-musicbrainz	ports/audio/py-musicbrainz
 py-mx-base	ports/lang/py-mx-base
 py-mx-experimental	ports/devel/py-mx-experimental
 py-ncurses	ports/devel/py-ncurses
+py-nevow	ports/www/py-nevow
 py-numarray	ports/math/py-numarray
 py-numeric	ports/math/py-numeric
 py-numeric17	ports/math/py-numeric17
