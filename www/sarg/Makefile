@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	http://sarg.sourceforge.net/
-PATCHFILES=	sarg-2.0.4-segmentation-fault.patch
+PATCHFILES=	freebsd.patch abbreviation.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mt@primats.org.ua
@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=gcc
 CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
 		--enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" \
-		--enable-htmldir=${PREFIX}/www/${PORTNAME}
+		--enable-htmldir="${PREFIX}/www/${PORTNAME}" \
+		--enable-mandir="${MAN1PREFIX}/man/man1"
 
 .if !defined(WITHOUT_GD)
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
