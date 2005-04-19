@@ -1,0 +1,13 @@
+[ excerpt from developer's web site ]
+
+EC PostScript Type1 fonts with TFMs for TeX
+
+These are PostScript Type1 renderings and TFMs of the EC variant
+of the standard TeX CMR font family. These fonts include characters
+with European accents.
+
+GNU LilyPond depends on this.
+
+WWW: http://lilypond.org/
+
+-- lioux@FreeBSD.org
