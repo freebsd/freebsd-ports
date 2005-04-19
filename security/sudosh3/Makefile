@@ -22,4 +22,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
 CONFIGURE_ENV=		LDFLAGS="-lutil"
 
+MAN1=			sudosh.1
+MAN8=			sudosh-replay.8
+
 .include <bsd.port.mk>
