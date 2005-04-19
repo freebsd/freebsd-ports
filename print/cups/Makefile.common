@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var		\
 			--with-rcdir=${CUPS_RCDIR}
 
 .if !defined(WITHOUT_GNUTLS)
-CONFIGURE_ARGS+=	--enable-gnutls
+CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
 LIB_DEPENDS+=		gnutls-openssl.12:${PORTSDIR}/security/gnutls
 .endif
 
