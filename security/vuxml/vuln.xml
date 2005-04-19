@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6c2d4f29-af3e-11d9-837d-000e0c2e438a">
+    <topic>gld -- format string and buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gld</name>
+	<range><lt>1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gld has been found vulnerable to multiple buffer overflows as
+	  well as multiple format string vulnerabilities.</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111339935903880">
+	  <p>An attacker could exploit this vulnerability to execute
+	    arbitrary code with the permissions of the user running Gld,
+	    the default user being root.</p>
+	</blockquote>
+	<p>The FreeBSD port defaults to running gld as the root user.
+	  The risk of exploitation can be minimized by making gld
+	  listen on the loopback address only, or configure it to only
+	  accept connections from trusted smtp servers.</p>
+      </body>
+    </description>
+    <references>
+      <bid>13129</bid>
+      <bid>13133</bid>
+      <cvename>CAN-2005-1099</cvename>
+      <cvename>CAN-2005-1100</cvename>
+      <mlist msgid="20050412004111.562AC7A890E@ws4-4.us4.outblaze.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111339935903880</mlist>
+      <mlist msgid="20050413174736.20947.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111342432325670</mlist>
+    </references>
+    <dates>
+      <discovery>2005-04-12</discovery>
+      <entry>2005-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0163b498-af54-11d9-acd0-000854d03344">
     <topic>axel -- remote buffer overflow</topic>
     <affects>
