@@ -2,3 +2,4 @@
 %%WITH_GTK%%bin/pinentry-gtk
 %%WITH_GTK2%%bin/pinentry-gtk-2
 %%WITH_QT%%bin/pinentry-qt
+bin/pinentry
