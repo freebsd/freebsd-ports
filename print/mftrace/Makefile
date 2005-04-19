@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.0.29
-PORTREVISION=	1
+PORTVERSION=	1.1.8
 CATEGORIES=	print
 MASTER_SITES=	http://www.xs4all.nl/~hanwen/mftrace/
 
-MAINTAINER=	atamaniuk-ports@frobs.net
+MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
 
 RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
@@ -30,19 +29,15 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-PLIST=		${WRKDIR}/pkg-plist
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	mftrace.1
 
-pre-install:
-	${RM} -f ${PLIST}
-.for ii in gf2pbm mftrace
-	${ECHO_CMD} bin/${ii} >> ${PLIST}
-.endfor
-.for ii in afm tfm
-	${ECHO_CMD} lib/%%PYTHON_VERSION%%/site-packages/${ii}.py >> ${PLIST}
-.endfor
+PLIST_FILES=	\
+		bin/gf2pbm \
+		bin/mftrace \
+		lib/%%PYTHON_VERSION%%/site-packages/afm.py \
+		lib/%%PYTHON_VERSION%%/site-packages/tfm.py
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gf2pbm ${PREFIX}/bin
