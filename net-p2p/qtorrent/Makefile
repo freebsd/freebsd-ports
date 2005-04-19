@@ -29,7 +29,7 @@ pre-everything::
 
 post-patch:
 .for i in torrentsettings torrentwindow
-	@pyuic -o ${WRKSRC}/pyqtorrent/${i}.py ${WRKSRC}/pyqtorrent/${i}.ui
+	@${LOCALBASE}/bin/pyuic -o ${WRKSRC}/pyqtorrent/${i}.py ${WRKSRC}/pyqtorrent/${i}.ui
 .endfor
 
 .include <bsd.port.mk>
