@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmon
-PORTVERSION=	1.1
+PORTVERSION=	1.1a
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdconsulting.no/tools/
 EXTRACT_SUFX=	.tgz
