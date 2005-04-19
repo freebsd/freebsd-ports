@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	jdk-tutorial
-PORTVERSION=	2005.02.17
-CATEGORIES=	java
+PORTVERSION=	2005.04.15
+CATEGORIES=	java devel
 MASTER_SITES=	http://java.sun.com/docs/books/tutorialNB/download/
 .if defined(WITH_EXTRAS)
 DISTNAME=	tutorial.zip tut-examples.zip tut-swing.zip tut-bookstore-21.zip \
