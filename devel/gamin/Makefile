@@ -15,7 +15,6 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A file and directory monitoring system
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
 USE_GNOME?=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
@@ -24,6 +23,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFLICTS=	fam-[0-9]*
+
+.if defined(GAMIN_SLAVE)
+USE_LIBTOOL_VER=15
+.else
+USE_INC_LIBTOOL_VER=15
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
