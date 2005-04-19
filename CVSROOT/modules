@@ -1748,6 +1748,7 @@ ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
 eboxy		ports/devel/eboxy
 ebuttons	ports/x11/ebuttons
+ec-fonts-mftraced	ports/print/ec-fonts-mftraced
 ecartis		ports/mail/ecartis
 ecasound	ports/audio/ecasound
 ecawave	ports/audio/ecawave
