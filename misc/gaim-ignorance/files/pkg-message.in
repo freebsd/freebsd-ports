@@ -1,0 +1,7 @@
+===============================================================================
+If this is the first time you use this port, you should copy the default
+filters into your Gaim directory. To do so, log into your user account and
+type:
+
+    cp %%EXAMPLESDIR%%/ignorance ~/.gaim
+===============================================================================
