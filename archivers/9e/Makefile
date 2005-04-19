@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Explode Plan9 archives
 
 PLIST_FILES=	bin/9e
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="" HDRS=""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/9e ${PREFIX}/bin
