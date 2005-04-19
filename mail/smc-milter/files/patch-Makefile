@@ -1,52 +1,45 @@
---- Makefile.orig	Sun Apr 10 11:29:10 2005
-+++ Makefile	Tue Apr 19 10:23:16 2005
-@@ -5,22 +5,19 @@
+--- Makefile.orig	Mon Apr 18 21:07:30 2005
++++ Makefile	Mon Apr 18 21:07:36 2005
+@@ -5,8 +5,9 @@
  SRCS		= utils.c relay.c smtp.c regex.c 
  MILTER_OBJS	= utils.o relay.o smtp.o regex.o
  MILTER		= smc-milter
 -INSDIR		= /opt/SMC
 -CC		= gcc
-+PREFIX		?= /usr/local
-+CONFINSDIR	= ${PREFIX}/etc/smc
-+BININSDIR	= ${PREFIX}/bin
++BINDIR		= ${PREFIX}/bin
++ETCDIR		= ${PREFIX}/etc/smc
 +CC		?= gcc
  
  ifdef DEBUG
      CFLAGS	= -g -ggdb2
+@@ -18,8 +19,8 @@
+     CFLAGS	+= -Wall -D_GNU_SOURCE -D_REENTRANT -I/usr/lib/bind/include
+     LIBS	= /usr/lib/bind/lib/libbind_r.a -lmilter -pthread -lssl
  else
--    CFLAGS	= -O2
-+    CFLAGS	?= -O2
+-    CFLAGS	+= -Wall -D_GNU_SOURCE -D_REENTRANT 
+-    LIBS	= -lmilter -pthread -lssl -lresolv
++    CFLAGS	+= -Wall -D_GNU_SOURCE -D_REENTRANT -I${LOCALBASE}/include/bind
++    LIBS	= -lmilter ${PTHREAD_LIBS} -lssl -lbind_r -lcrypto -L${LOCALBASE}/lib
  endif
  
--ifeq ($(LIBC_VERSION),2.1)
--    CFLAGS	+= -Wall -D_GNU_SOURCE -D_REENTRANT -I/usr/lib/bind/include
--    LIBS	= /usr/lib/bind/lib/libbind_r.a -lmilter -pthread -lssl -ldb
--else
--    CFLAGS	+= -Wall -D_GNU_SOURCE -D_REENTRANT 
--    LIBS	= -lmilter -pthread -lssl -ldb -lresolv
--endif
-+    CFLAGS	+= -Wall -D_GNU_SOURCE -D_REENTRANT -I${LOCALBASE}/include/bind -I${LOCALBASE}/include/db42
-+    LIBS	= -lmilter -pthread -lssl -ldb -lbind_r -lcrypto -L${LOCALBASE}/lib -L${LOCALBASE}/lib/db42
- 
  all: milter
- 
-@@ -31,14 +28,14 @@
+@@ -31,14 +32,14 @@
  	$(CC) $(CFLAGS) -c $<
  
  install:
 -	[ -d "$(INSDIR)" ] || mkdir $(INSDIR)
-+	[ -d "$(CONFINSDIR)" ] || mkdir $(CONFINSDIR)
++	[ -d "$(ETCDIR)" ] || mkdir $(ETCDIR)
  	if [ -n "$(MILTER)" ]; then \
  		strip $(MILTER) ; \
 -		install -m 755 $(MILTER) $(INSDIR) ; \
-+		install -m 755 $(MILTER) $(BININSDIR) ; \
++		install -m 755 $(MILTER) $(BINDIR) ; \
  	fi
 -	install -m 644 $(MILTER).conf $(INSDIR)
 -	install -m 644 $(MILTER).policy $(INSDIR)
 -	install -m 644 $(MILTER).users $(INSDIR)
-+	install -m 644 $(MILTER).conf $(CONFINSDIR)
-+	install -m 644 $(MILTER).policy $(CONFINSDIR)
-+	install -m 644 $(MILTER).users $(CONFINSDIR)
++	install -m 644 $(MILTER).conf $(ETCDIR)
++	install -m 644 $(MILTER).policy $(ETCDIR)
++	install -m 644 $(MILTER).users $(ETCDIR)
  
  remove:
  	rm -f $(INSDIR)/$(MILTER)*
