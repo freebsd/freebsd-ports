@@ -14,12 +14,10 @@ MASTER_SITES=	http://www.gpsdrive.cc/           \
 		http://gpsdrive.teachlinux.com/   \
 		http://gpsdrive.flugfunk.de/
 
-MAINTAINER=	molter@gufi.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A GPS navigation system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
-
-BROKEN=		Incomplete pkg-plist
 
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
