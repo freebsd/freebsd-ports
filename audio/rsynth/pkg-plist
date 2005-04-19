@@ -1,4 +1,5 @@
 bin/dlookup
 bin/mkdictdb
 bin/say
+@exec mkdir -p %D/lib/dict
 @dirrm lib/dict
