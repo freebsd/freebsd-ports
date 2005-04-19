@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Net_UserAgent_Detect
-PORTVERSION=	2.0.1
-CATEGORIES=	net pear
+PORTVERSION=	2.1.0
+CATEGORIES=	net www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class that detects web browser, version and platform
@@ -15,18 +15,18 @@ COMMENT=	PEAR class that detects web browser, version and platform
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	yes
+USE_REINPLACE=	yes
 
-CATEGORY=	Net/UserAgent
-FILES=		Detect.php
+CATEGORY=	Net
+FILES=		UserAgent/Detect.php
+TESTS=		example.php
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/UserAgent
+	@${MV} ${WRKSRC}/Detect.php ${WRKSRC}/UserAgent
+	@${REINPLACE_CMD} -e "s|../Detect.php|${CATEGORY}/${FILES}|" \
+		${WRKSRC}/tests/${TESTS}
 
 .include <bsd.port.pre.mk>
-
-PHP_VERS=	${PHP_VERSION:S/.//g}
-
-.if defined(PHP_VERS) && ${PHP_VERS} < 410
-IGNORE=		"You need PHP 4.1.0 or later to install PEAR::Net_UserAgent_Detect"
-.endif
-
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
