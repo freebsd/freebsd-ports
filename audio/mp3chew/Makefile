@@ -21,9 +21,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	${PORTNAME}
 USE_REINPLACE=	yes
-MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+CFLAGS+=	${PTHREAD_CFLAGS}
+MAKE_ARGS=	CC="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		ARGS="${PTHREAD_LIBS} -lncurses"
 
-DOCFILES=	CHANGELOG INSTALL README TODO
+PLIST_FILES=	bin/mp3chew
+PORTDOCS=	CHANGELOG INSTALL README TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, _to, to,g' ${WRKSRC}/CMp3Filter.cc
@@ -31,10 +34,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3chew ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-.for D in ${DOCFILES}
-	${MKDIR} ${PREFIX}/share/doc/mp3chew
-	${INSTALL_DATA} ${WRKSRC}/docs/$D ${PREFIX}/share/doc/mp3chew
-.endfor
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
