@@ -17,6 +17,8 @@ DISTNAME=	HSQL-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell access to SQL
 
+BROKEN=		"Not compatible with latest GHC yet"
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
