@@ -297,7 +297,6 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_java_class
 %%ZSH_FNDIR%%/Completion/Unix/_joe
 %%ZSH_FNDIR%%/Completion/Unix/_killall
-%%ZSH_FNDIR%%/Completion/Unix/_larch
 %%ZSH_FNDIR%%/Completion/Unix/_last
 %%ZSH_FNDIR%%/Completion/Unix/_less
 %%ZSH_FNDIR%%/Completion/Unix/_links
@@ -317,6 +316,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_mh
 %%ZSH_FNDIR%%/Completion/Unix/_mime_types
 %%ZSH_FNDIR%%/Completion/Unix/_mount
+%%ZSH_FNDIR%%/Completion/Unix/_mpc
 %%ZSH_FNDIR%%/Completion/Unix/_mt
 %%ZSH_FNDIR%%/Completion/Unix/_mtools
 %%ZSH_FNDIR%%/Completion/Unix/_mtr
@@ -392,6 +392,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_time_zone
 %%ZSH_FNDIR%%/Completion/Unix/_tin
 %%ZSH_FNDIR%%/Completion/Unix/_tla
+%%ZSH_FNDIR%%/Completion/Unix/_unace
 %%ZSH_FNDIR%%/Completion/Unix/_uniq
 %%ZSH_FNDIR%%/Completion/Unix/_urls
 %%ZSH_FNDIR%%/Completion/Unix/_user_admin

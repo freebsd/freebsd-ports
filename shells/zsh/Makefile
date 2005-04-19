@@ -25,7 +25,7 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	shells
 MASTER_SITES=	\
 		http://archive.progeny.com/zsh/ \
@@ -33,17 +33,21 @@ MASTER_SITES=	\
 		http://www.zsh.org/pub/ \
 		ftp://ftp.zsh.org/pub/ \
 		ftp://sunsite.dk/pub/unix/shells/zsh/ \
-		ftp://ftp.rge.com/pub/shells/zsh/ \
-		ftp://sunsite.org.uk/package/zsh/ \
-		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
-		ftp://ftp.ayamura.org/pub/zsh/ \
-		ftp://linux.sarang.net/mirror/system/zsh/ \
-		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
-		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
-		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
+		http://mirrors.dotsrc.org/zsh/ \
+		ftp://mirrors.dotsrc.org/zsh/ \
 		ftp://ftp.funet.fi/pub/unix/shells/zsh/ \
+		ftp://nephtys.lip6.fr/pub/unix/shells/zsh/ \
+		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
+		http://www.cs.elte.hu/pub/zsh/ \
+		ftp://ftp.cs.elte.hu/pub/zsh/ \
 		ftp://ftp.kfki.hu/pub/packages/zsh/ \
-		http://www.math.technion.ac.il/pub/zsh/
+		ftp://ftp.math.technion.ac.il/pub/zsh/ \
+		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
+		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
+		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
+		ftp://sunsite.org.uk/package/zsh/ \
+		ftp://ftp.rge.com/pub/shells/zsh/ \
+		http://zsh.open-mirror.com/
 DISTNAME=	${PORTNAME}-${ZSH_VER}
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
