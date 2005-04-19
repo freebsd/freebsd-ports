@@ -1,17 +1,16 @@
 #########################################################
 
-Simple config:
+Enable mod_perl built as DSO, by adding to httpd.conf:
 
-  LoadModule perl_module modules/mod_perl.so
-  #PerlModule Apache::compat
-  # your config comes here
+  LoadModule perl_module libexec/apache2/mod_perl.so
 
-For a more detailed version (including more options) refer to:
+Next, tell Perl where to find mod_perl2 libraries:
 
-  docs/user/intro/start_fast.pod
+  PerlModule Apache2
 
-or online:
+There are many other configuration options which you can
+find in the configuration manual:
 
-  http://perl.apache.org/docs/2.0/user/intro/start_fast.html
+  http://perl.apache.org/docs/2.0/user/config/config.html
 
 #########################################################
