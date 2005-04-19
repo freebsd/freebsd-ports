@@ -187,6 +187,7 @@
     SUBDIR += libksba
     SUBDIR += libmcrypt
     SUBDIR += libntlm
+    SUBDIR += libotr
     SUBDIR += libparanoia
     SUBDIR += libprelude
     SUBDIR += libsectok
