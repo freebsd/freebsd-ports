@@ -7,8 +7,8 @@ share/gnome/applications/gxmame.desktop
 %%NLS%%share/locale/it/LC_MESSAGES/gxmame.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gxmame.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gxmame.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/gxmame.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gxmame.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gxmame.mo
 share/gnome/gxmame/gxmame.png
 share/gnome/gxmame/gxmame-general.png
 share/gnome/gxmame/gxmame-screen.png
@@ -21,5 +21,17 @@ share/doc/gxmame/ChangeLog
 share/doc/gxmame/NEWS
 share/doc/gxmame/README
 share/doc/gxmame/TODO
+share/doc/gxmame/html/gui/metal2.jpg
+share/doc/gxmame/html/gxmame-doc-1.html
+share/doc/gxmame/html/gxmame-doc-2.html
+share/doc/gxmame/html/gxmame-doc-3.html
+share/doc/gxmame/html/gxmame-doc-4.html
+share/doc/gxmame/html/gxmame-doc-5.html
+share/doc/gxmame/html/gxmame-doc-6.html
+share/doc/gxmame/html/gxmame-doc.html
+share/doc/gxmame/html/includes/gxmame.css
 @dirrm share/gnome/gxmame
+@dirrm share/doc/gxmame/html/gui
+@dirrm share/doc/gxmame/html/includes
+@dirrm share/doc/gxmame/html
 @dirrm share/doc/gxmame
