@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://thrush.omix.com/pub/misc/
 
-MAINTAINER=	zenin@archive.rhps.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The world's most useless WindowMaker dock app
 
 USE_IMAKE=	yes
