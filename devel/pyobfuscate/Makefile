@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pyobfuscate
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/pyobfuscate/
 
@@ -21,6 +21,6 @@ USE_PYDISTUTILS=	yes
 PLIST_FILES=	bin/pyobfuscate
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/usr,${PREFIX}," ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s,'/usr/bin','${PREFIX}/bin'," ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
