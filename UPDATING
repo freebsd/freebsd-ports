@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050419:
+  AFFECTS: users of linux-opera
+  AUTHOR: mezz@FreeBSD.org
+
+  Opera has been updated to 8.0. If you are upgrade from version 7.x or
+  below, it is recommend for you to backup your personal "~/.linux-opera"
+  directory and remove it. It can be done following from the command line:
+
+	# cp -Rp ~/.linux-opera ~/.linux-opera-bak
+	# rm -rf ~/.linux-opera/*
+
+  After that, you can put your bookmark, email, contacts and etc back in
+  ~/.linux-opera/. The bookmark is ~/.linux-opera/opera6.adr and the email is
+  ~/.linux-opera/mail as you can figure out by view in ~/.linux-opera/. It is
+  probably not good idea to put opera6.ini, userstyle.ini, search.ini,
+  pluginpath.ini and other non-personal stuff back in ~/.linux-opera/. The
+  non-personal stuff should be re-configure on new stuff by either Opera
+  preferences in GUI or hand (manual) in your editor.
+
 20050415:
   AFFECTS: users of net-mgmt/cricket
   AUTHOR: ijliao@FreeBSD.org

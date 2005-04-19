@@ -1,9 +1,10 @@
---- config/opera6rc.orig	Thu May 13 13:57:43 2004
-+++ config/opera6rc	Thu May 13 13:58:16 2004
-@@ -1,5 +1,5 @@
+--- config/opera6rc.orig	Tue Mar  1 16:28:54 2005
++++ config/opera6rc	Tue Mar  1 16:29:04 2005
+@@ -1,6 +1,6 @@
  ; Put any default settings here that are overridable by users
  
  [User Prefs]
 -Language Files Directory=/usr/share/opera/locale/
 +Language Files Directory=%%PREFIX%%/share/linux-opera/locale/
+ Force DPI=96
  
