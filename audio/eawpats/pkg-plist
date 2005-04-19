@@ -370,7 +370,6 @@ share/timidity/timidity.cfg
 %%PORTDOCS%%%%DOCSDIR%%/patref24.hlp
 %%PORTDOCS%%%%DOCSDIR%%/power/e_power.txt
 %%PORTDOCS%%%%DOCSDIR%%/wime/wime.txt
-@dirrm share/timidity
 @dirrm %%DATADIR%%/wime
 @dirrm %%DATADIR%%/sfx
 @dirrm %%DATADIR%%/power
