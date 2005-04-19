@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Net/Whois/update.pl
 %%SITE_PERL%%/Net/Whois/RIPE.pm
 %%SITE_PERL%%/Net/Whois/RIPE.pod
 %%SITE_PERL%%/Net/Whois/RIPE/Iterator.pm
