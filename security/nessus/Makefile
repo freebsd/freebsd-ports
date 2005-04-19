@@ -52,7 +52,7 @@ PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=--disable-gtk
 .endif
 
-MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1
+MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1 nessus-fetch.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
