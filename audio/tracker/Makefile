@@ -16,23 +16,28 @@ COMMENT=	MOD player
 
 RESTRICTED=	"Non-redistributable beta"
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/tracker
 INSTALL_TARGET=	install install.info
+MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" \
+		MACHINE=freebsd COMPRESSION_FILE="${PREFIX}/etc/compression_methods" \
+		CFLAGS="${CFLAGS} -funroll-loops -finline-functions"
+
 INFO=		tracker
+PLIST_FILES=	bin/randomize bin/tracker etc/compression_methods
+PORTDOCS=	*
 
 post-patch:
-	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
-		${WRKSRC}/Arch/PCux/audio.c > ${WRKSRC}/Arch/PCux/audio.c.new
-	@${MV} ${WRKSRC}/Arch/PCux/audio.c.new ${WRKSRC}/Arch/PCux/audio.c
+	@${REINPLACE_CMD} -e 's,machine/soundcard.h,sys/soundcard.h,' \
+		${WRKSRC}/Arch/PCux/audio.c
 
 post-install:
 	@install-info ${PREFIX}/info/tracker.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tracker
+	@${MKDIR} ${PREFIX}/share/doc/tracker/html
 .for docfile in FAQ readme tracker.doc
 	${INSTALL_DATA} ${WRKSRC}/Docs/${docfile} ${PREFIX}/share/doc/tracker
 .endfor
-	@${MKDIR} ${PREFIX}/share/doc/tracker/html
 	${INSTALL_DATA} ${WRKSRC}/Docs/Html/* ${PREFIX}/share/doc/tracker/html
 .endif
 
