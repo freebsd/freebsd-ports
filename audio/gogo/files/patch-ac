@@ -1,24 +1,6 @@
 --- Makefile.orig	Sat Jan  6 22:36:06 2001
 +++ Makefile	Sun Jan  7 06:15:55 2001
-@@ -12,7 +12,7 @@
- 
- #use multi-thread
- #OS must be Linux with libc6, FreeBSD-4.0R with linuxthreads or BeOS 
--USE_MT=yes
-+#USE_MT=yes
- 
- #define if OS is BeOS
- #OS=BeOS
-@@ -30,15 +30,15 @@
- endif
- 
- # common definition
--LD=gcc
-+LD=$(CC)
- #LD=gcc -Wl,-Map,gogo.map
- LIBS=-lm
--CC=gcc -c -m486 -O3 -finline-functions -fomit-frame-pointer -funroll-loops
-+#CC=gcc -c -m486 -O3 -finline-functions -fomit-frame-pointer -funroll-loops
+@@ -12,8 +12,8 @@
  # This option is available for gcc-2.8.x
  #CC=gcc -c -mcpu=pentiumpro -malign-double -O6 -fstrength-reduce -fexpensive-optimizations  -finline-functions -fomit-frame-pointer -funroll-loops
  # This option is available for gcc-2.95.1, gcc-2.95.2, gcc-2.95.3,... on P6 or later

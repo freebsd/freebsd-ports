@@ -16,14 +16,20 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast MP3 encoder using recent x86 processors' features
 
+OPTIONS=	THREADS "Use linuxthreads for increased SMP performance" off
+
 # More than version 0.98
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
 ALL_TARGET=	gogo
+MAKE_ARGS=	CC="${CC}" LD="${CC}"
 
 RESTRICTED=	Condition is not clear
 ONLY_FOR_ARCHS=	i386
+
+PLIST_FILES=	bin/cdda2mp3.gogo bin/gogo
+PORTDOCS=	cdda2mp3.gogo.en cdda2mp3.gogo.ja
 
 # A sample of heavily optimized CFLAGS(typically used with pgcc).
 # Recommended ONLY for benchmarks.
@@ -31,13 +37,10 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
-.if !defined(WITH_THREADS)
-	@${ECHO_MSG} "set WITH_THREADS to compile with linuxthreads."
-	@${ECHO_MSG} "It would increase performance in SMP environment."
-MAKE_ENV+=	"USE_MT=no"
+.if defined(WITHOUT_THREADS)
+MAKE_ARGS+=	"USE_MT=no"
 .else
-MAKE_ENV+=	"USE_MT=yes"
+MAKE_ARGS+=	"USE_MT=yes"
 .if ${OSVERSION} >= 500035
 LIB_DEPENDS=	lthread.3:${PORTSDIR}/devel/linuxthreads
 .else
