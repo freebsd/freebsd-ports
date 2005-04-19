@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/workman
 USE_IMAKE=	yes
 MAN1=		workman.1
 MAN5=		workmandb.5
+PLIST_FILES=	bin/workman lib/help/workman.info
 
 .include <bsd.port.pre.mk>
 
