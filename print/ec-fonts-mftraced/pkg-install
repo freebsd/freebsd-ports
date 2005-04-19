@@ -1,0 +1,34 @@
+#!/bin/sh
+# $FreeBSD$
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+PATH="${PATH}:/usr/bin:/usr/local/bin:${PKG_PREFIX}/bin"
+
+MKTEXLSR=mktexlsr
+SETENV=env
+UPDMAP=updmap
+
+case "$ACTION" in
+
+POST-INSTALL)
+	${SETENV} PATH="${PATH}" ${MKTEXLSR}
+	${SETENV} PATH="${PATH}" ${UPDMAP} --enable Map ec-mftrace.map
+	;;
+
+DEINSTALL)
+	${SETENV} PATH="${PATH}" ${MKTEXLSR}
+	${SETENV} PATH="${PATH}" ${UPDMAP} --disable ec-mftrace.map
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit

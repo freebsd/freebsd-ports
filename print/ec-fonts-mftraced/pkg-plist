@@ -1,0 +1,126 @@
+%%TEXMFLOCALDIR%%/dvips/ec-fonts-mftraced
+%%TEXMFLOCALDIR%%/fonts/map/dvips/ec-fonts-mftraced/ec-mftrace.map
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecb10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecb12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecb7.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecb8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecb9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbi10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbi12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbi14.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbi17.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbi8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbi9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbx10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbx12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbx5.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbx6.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbx7.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbx8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecbx9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/eccc10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/eccc12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrb10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrb12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrb14.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrb17.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrb7.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm17.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm5.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm6.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm7.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecrm9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsc10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsc12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsc14.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsc9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsl10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsl12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsl8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecsl9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecss10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecss12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecss17.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecss8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecss9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecssdc10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecti10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecti12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecti7.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecti8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ecti9.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ectt10.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ectt12.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ectt8.tfm
+%%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced/ectt9.tfm
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecb10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecb12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecb7.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecb8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecb9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbi10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbi12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbi14.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbi17.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbi8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbi9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbx10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbx12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbx5.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbx6.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbx7.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbx8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecbx9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/eccc10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/eccc12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrb10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrb12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrb14.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrb17.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrb7.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm17.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm5.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm6.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm7.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecrm9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsc10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsc12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsc14.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsc9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsl10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsl12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsl8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecsl9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecss10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecss12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecss17.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecss8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecss9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecssdc10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecti10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecti12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecti7.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecti8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ecti9.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ectt10.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ectt12.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ectt8.pfa
+%%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ectt9.pfa
+@dirrm %%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/type1/public 2>/dev/null || true
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/type1 2>/dev/null || true
+@dirrm %%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/tfm/public 2>/dev/null || true
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/tfm 2>/dev/null || true
+@dirrm %%TEXMFLOCALDIR%%/fonts/map/dvips/ec-fonts-mftraced
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/map/dvips 2>/dev/null || true
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/map 2>/dev/null || true
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts 2>/dev/null || true
+@unexec rmdir %D/%%TEXMFLOCALDIR%%/dvips 2>/dev/null || true
+@unexec rmdir %D/%%TEXMFLOCALDIR%% 2>/dev/null || true
