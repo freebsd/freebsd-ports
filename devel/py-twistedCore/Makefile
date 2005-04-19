@@ -17,7 +17,8 @@ DISTNAME=	Twisted-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	An asynchronous networking framework for Python - Core module
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zope/interface:${PORTSDIR}/devel/py-zopeInterface
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/zope/interface:${PORTSDIR}/devel/py-zopeInterface
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	py-twisted-[0-9]*
 
