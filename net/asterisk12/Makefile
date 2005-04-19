@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -67,8 +68,5 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
 .endif
-
-post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/asterisk.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>
