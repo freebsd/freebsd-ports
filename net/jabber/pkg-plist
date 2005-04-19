@@ -1,7 +1,6 @@
 sbin/jabberd
 @unexec if cmp -s %D/etc/jabber.xml.sample %D/etc/jabber.xml; then rm -f %D/etc/jabber.xml; fi
 etc/jabber.xml.sample
-etc/rc.d/jabberd.sh
 include/jabber/lib/lib.h
 include/jabber/platform-settings
 include/jabber/jabberd.h
