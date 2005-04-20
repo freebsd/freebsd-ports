@@ -183,6 +183,8 @@ MAN5+=	ldap.conf.5 \
 	slapd.conf.5 \
 	slapd.plugin.5 \
 	slapd.replog.5
+MLINKS+= \
+	slapd-bdb.5 slapd-hdb.5
 
 MAN8+=	slapadd.8 \
 	slapcat.8 \
