@@ -6,7 +6,7 @@
 
 PORTNAME=	vcdimager
 PORTVERSION=	0.7.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://download.videolan.org/pub/videolan/vlc/0.8.1/contrib/ \
@@ -18,7 +18,7 @@ COMMENT=	"GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool"
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
-		cdio.4:${PORTSDIR}/sysutils/libcdio
+		cdio.5:${PORTSDIR}/sysutils/libcdio
 
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
