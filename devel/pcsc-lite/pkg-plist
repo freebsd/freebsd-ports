@@ -1,33 +1,34 @@
-bin/bundleTool
 bin/formaticc
-bin/installifd
-bin/pcsc_demo
+etc/rc.d/pcscd.sh.sample
+etc/reader.conf.d/reader.conf.sample
+include/PCSC/debuglog.h
+include/PCSC/dyn_generic.h
+include/PCSC/ifdhandler.h
+include/PCSC/parser.h
+include/PCSC/pcsclite.h
+include/PCSC/sys_generic.h
+include/PCSC/thread_generic.h
+include/PCSC/winscard.h
+include/PCSC/wintypes.h
+lib/libpcsclite.a
+lib/libpcsclite.so
+lib/libpcsclite.so.1
+lib/pcsc/drivers/.keep_me
+lib/pcsc/services/.keep_me
+libdata/pkgconfig/libpcsclite.pc
+sbin/installifd
+sbin/pcscd
+sbin/update-reader.conf
 %%PORTDOCS%%%%DOCSDIR%%/README.DAEMON
-%%PORTDOCS%%%%DOCSDIR%%/pcsc-lite-0.8.7.pdf
-%%PORTDOCS%%%%DOCSDIR%%/muscle-api-1.3.0.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pcsc-lite.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ifdhandler-3.pdf
 %%EXAMPLESDIR%%/Makefile.am
 %%EXAMPLESDIR%%/Makefile.in
 %%EXAMPLESDIR%%/pcsc_demo.c
-etc/rc.d/pcscd.sh.sample
-etc/reader.conf.sample
-include/debuglog.h
-include/mscdefines.h
-include/musclecard.h
-include/pcsclite.h
-include/winscard.h
-include/wintypes.h
-lib/libpcsclite.a
-lib/libpcsclite.so
-lib/libpcsclite.so.0
-lib/libmusclecard.a
-lib/libmusclecard.so
-lib/libmusclecard.so.0
-libdata/pkgconfig/libpcsclite.pc
-libdata/pkgconfig/libmusclecard.pc
-sbin/pcscd
+@dirrm etc/reader.conf.d
+@dirrm include/PCSC
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm libdata/pkgconfig
-@dirrm pcsc/drivers
-@dirrm pcsc/services
-@dirrm pcsc
+@dirrm lib/pcsc/drivers
+@dirrm lib/pcsc/services
+@dirrm lib/pcsc

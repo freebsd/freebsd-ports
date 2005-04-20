@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PCSC-Card
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,9 @@ DISTNAME=	pcsc-perl-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Perl bindings for the PC/SC Lite Framework
 
-LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -29,5 +31,10 @@ MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
 
 MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-I/usr/local/pcsc/include,${LOCALBASE}/include/PCSC," \
+		${WRKSRC}/Makefile.PL
+
 
 .include <bsd.port.post.mk>

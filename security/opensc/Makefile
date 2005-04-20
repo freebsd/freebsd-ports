@@ -7,6 +7,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.9.4
+PORTREVSION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc.org/files/
 
@@ -19,6 +20,7 @@ USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MANCOMPRESSED=	no
 MAN1=	pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 opensc-tool.1 \
@@ -47,7 +49,7 @@ CONFIGURE_ARGS+=	--with-pam
 .endif
 
 .if !defined(WITHOUT_PCSC_LITE)
-LIB_DEPENDS+=		pcsclite.0:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS+=		pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 CONFIGURE_ARGS+=	--with-pcsclite=${LOCALBASE}
 .endif
 
@@ -84,4 +86,9 @@ CONFIGURE_ARGS+=	--without-docbook
 CONFIGURE_ARGS+=	--with-openct=${LOCALBASE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,ulong,u_long," ${WRKSRC}/src/openscd/openscd.c
+
+.include <bsd.port.post.mk>

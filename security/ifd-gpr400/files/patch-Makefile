@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Aug  9 06:14:42 2001
-+++ Makefile	Sun Sep  8 18:11:11 2002
-@@ -1,36 +1,41 @@
+--- Makefile.orig	Thu Aug  9 07:14:42 2001
++++ Makefile	Mon Apr 11 21:07:03 2005
+@@ -1,36 +1,39 @@
 -# GPR400 IFD Handler Makefile
 -# 
 -# Author: Joe Phillips <joe.phillips@innovationsw.com>
@@ -16,32 +16,43 @@
 -LEX      = flex
 -OBJ     := $(filter-out test.o, $(patsubst %.c,%.o,$(wildcard *.c)))
 -INCLUDE  = -I.
-+#XXX
-+PREFIX?=	/usr/local
 +DESTDIR?=	${PREFIX}
-+
+ 
+-MAKEXE   = make
+-LIBNAME  = libgpr400_ifd.so
+-PREFIX   = /usr/local/pcsc
 +# XXX
 +LIBDIR=		/lib
 +#LIBDIR=		/pcsc
 +INCSDIR=	/include
-+
+ 
+-DEFS     = -DPCSC_DEBUG=1 #-DATR_DEBUG=1
 +SHLIB_NAME=	libgpr400_ifd.so
 +SHLIB_MAJOR=	0
 +SHLIB_MINOR=	3
-+
+ 
+-all: unix
 +NOMAN=		1
 +NOPROFILE=	1
-+
+ 
+-clean:
+-	rm -f *.o $(LIBNAME) core
 +.if !defined(NO_DEBUG)
 +CFLAGS+=	-g -Wall
 +.endif
-+
+ 
+-osx: $(OBJ)
+-	$(CC) -dynamiclib $(OBJ) -o $(LIBNAME)
 +GPRDEVNAME?=	/dev/gprsc0
-+
-+CFLAGS+=	-I. -I${DESTDIR}${INCSDIR} -DGPRDEVNAME=\"${GPRDEVNAME}\"
+ 
+-unix: $(OBJ)
+-	$(LD) -shared $(OBJ) -o $(LIBNAME)
++CFLAGS+=	-I. -I${DESTDIR}${INCSDIR}/PCSC -I${DESTDIR}${INCSDIR} -DGPRDEVNAME=\"${GPRDEVNAME}\"
 +LDFLAGS+=	-L${DESTDIR}/lib
 +LDADD+=		-lpcsclite
-+
+ 
+-$(patsubst %.c,%.o,$(wildcard *.c)) : %.o : %.c
+-	$(CC) $(CFLAGS) -c $< $(INCLUDE) $(DEFS)
 +.if !defined(NO_PCSC_DEBUG)
 +CFLAGS+=	-DPCSC_DEBUG=1
 +.if defined(PCSC_ATR_DEBUG)
@@ -49,27 +60,8 @@
 +.endif
 +.endif
  
--MAKEXE   = make
--LIBNAME  = libgpr400_ifd.so
--PREFIX   = /usr/local/pcsc
+-##
 +SRCS=	gpr400_ifd.c
 +INCS=	gpr400.h
- 
--DEFS     = -DPCSC_DEBUG=1 #-DATR_DEBUG=1
--
--all: unix
--
--clean:
--	rm -f *.o $(LIBNAME) core
--
--osx: $(OBJ)
--	$(CC) -dynamiclib $(OBJ) -o $(LIBNAME)
--
--unix: $(OBJ)
--	$(LD) -shared $(OBJ) -o $(LIBNAME)
--
--$(patsubst %.c,%.o,$(wildcard *.c)) : %.o : %.c
--	$(CC) $(CFLAGS) -c $< $(INCLUDE) $(DEFS)
--
--##
++
 +.include <bsd.lib.mk>

@@ -5,8 +5,6 @@ bin/hbcicard
 bin/libchipcard-config
 bin/memcard
 bin/readertest
-etc/chipcardc.conf.example
-etc/chipcardd.conf.example
 etc/rc.d/chipcardd.sh
 include/chameleon/chameleon.h
 include/chameleon/conf.h
@@ -22,21 +20,26 @@ include/chameleon/ipcservicelayer.h
 include/chameleon/ipctransportlayer.h
 include/chameleon/libloader.h
 include/chameleon/logger.h
+include/chipcard.h
 include/chipcard/ctcard.h
+include/chipcard/ctcardbase.h
+include/chipcard/ctcardtrader.h
 include/chipcard/ctcommand.h
 include/chipcard/ctcore_public.h
 include/chipcard/ctdatacache.h
 include/chipcard/cterror.h
 include/chipcard/ctfilesystem2.h
 include/chipcard/ctgeldkarte.h
+include/chipcard/ctinitializer.h
 include/chipcard/ctkvkcard.h
 include/chipcard/ctmemorycard.h
 include/chipcard/ctmisc.h
 include/chipcard/ctpointer.h
 include/chipcard/ctprocessorcard.h
+include/chipcard/ctreadercontext.h
+include/chipcard/ctreadertrader.h
 include/chipcard/cttlv.h
 include/chipcard/ctversion.h
-include/chipcard.h
 include/chipcard/hbcicard.h
 include/chipcard/libchipcard.h
 include/chipcard/rsacard.h
@@ -44,7 +47,7 @@ include/ctversion.h
 lib/libchipcard.a
 lib/libchipcard.la
 lib/libchipcard.so
-lib/libchipcard.so.17
+lib/libchipcard.so.20
 sbin/chipcardd
 sbin/kvkd
 share/aclocal/libchipcard.m4
@@ -59,9 +62,13 @@ share/libchipcard/drivers/README
 share/libchipcard/drivers/ctapi-fake.dsc
 share/libchipcard/drivers/cyberjack.dsc
 share/libchipcard/drivers/kobil.dsc
+share/libchipcard/drivers/orga.dsc
 share/libchipcard/drivers/towitoko.dsc
-@dirrm include/chameleon
-@dirrm include/chipcard
+share/libchipcard/examples/chipcardc.conf
+share/libchipcard/examples/chipcardd.conf
+@dirrm share/libchipcard/examples
 @dirrm share/libchipcard/drivers
 @dirrm share/libchipcard/commands
 @dirrm share/libchipcard
+@dirrm include/chipcard
+@dirrm include/chameleon
