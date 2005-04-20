@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-SQLite
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -35,4 +35,10 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500503
+IGNORE=	requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+.endif
+
+.include <bsd.port.post.mk>
