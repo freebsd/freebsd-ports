@@ -318,6 +318,7 @@
     SUBDIR += pantomime
     SUBDIR += pantomime-ssl
     SUBDIR += pathalias
+    SUBDIR += pear-MIME_Type
     SUBDIR += pear-Mail
     SUBDIR += pear-Mail_Mime
     SUBDIR += pear-Mail_Queue
