@@ -44,4 +44,7 @@ post-install:
 .endif
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS}," ${WRKSRC}/configure
+
 .include <bsd.port.mk>
