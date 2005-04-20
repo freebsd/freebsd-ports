@@ -7,6 +7,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LT/LTOETSCH
@@ -36,4 +37,10 @@ do-configure:
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>
