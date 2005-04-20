@@ -6,22 +6,31 @@
 #
 
 PORTNAME=	plog
-PORTVERSION=	0.3.2
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	plog
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		_all_plugins${EXTRACT_SUFX} \
+		_all_templates${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A PHP and MySQL based blogging platform
 
-USE_BZIP2=	YES
+USE_ZIP=	YES
 
-USE_PHP=	mysql pcre session
+USE_PHP=	ctype mysql pcre session xml
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-PLOGDIR?=	www/data-dist/plog
+WWWDOCROOT?=	www/data
+PLOGURL?=	plog
+WWWOWN?=	www
+WWWGRP?=	www
+PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
 PLIST=		${WRKDIR}/pkg-plist
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	GD		"With GD Support" on \
 		IMAGICK		"With ImageMagick Support" off
@@ -41,22 +50,27 @@ pre-patch:
 	@${ECHO_CMD} "Without GD or ImageMagick support. No thumbnails will be generated at all."
 .endif
 
+post-extract:
+.for x in plugins templates
+	cd ${WRKSRC}/${x} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/_all_${x}${EXTRACT_SUFX}
+.endfor
+
 pre-install:
-	@${RM} ${WRKSRC}/.cvsignore
-	cd ${WRKSRC} && ${FIND} -s . -type f | \
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${SED} -e 's|^./||;s|^|${PLOGDIR}/|' > ${PLIST} \
+		&& ${ECHO_CMD} "@unexec ${RM} -fr %D/${PLOGDIR}/tmp/* 2>/dev/null || ${TRUE}" >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${PLOGDIR}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${PLOGDIR} >> ${PLIST}
 
 do-install:
-	-${MKDIR} ${PREFIX}/${PLOGDIR}
-	@${CHOWN} www:www ${PREFIX}/${PLOGDIR}
-	@${CHMOD} 755 ${PREFIX}/${PLOGDIR}
+	@${MKDIR} ${PREFIX}/${PLOGDIR}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PLOGDIR}
-	@${CHOWN} www:www ${PREFIX}/${PLOGDIR}/tmp
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PLOGDIR}
 
 post-install:
-	@${SED} -e 's|%%PLOGDIR%%|${PREFIX}/${PLOGDIR}|' ${PKGMESSAGE}
+	@${SED} -e 's|%%PLOGURL%%|${PLOGURL}|' pkg-message > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
