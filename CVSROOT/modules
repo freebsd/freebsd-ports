@@ -4975,6 +4975,7 @@ libcabinet	ports/archivers/libcabinet
 libcaca		ports/graphics/libcaca
 libcapplet	ports/x11/libcapplet
 libcapsinetwork	ports/devel/libcapsinetwork
+libccid		ports/devel/libccid
 libcdaudio	ports/audio/libcdaudio
 libcddb		ports/audio/libcddb
 libcdio		ports/sysutils/libcdio
