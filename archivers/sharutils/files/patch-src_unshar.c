@@ -1,26 +1,3 @@
---- src/shar.c.orig	1999-09-10 21:20:41.000000000 +0200
-+++ src/shar.c	2004-09-29 15:09:40.790061000 +0200
-@@ -1571,7 +1571,7 @@
- 	  sprintf (command, "%s '%s'", CHARACTER_COUNT_COMMAND, local_name);
- 	  if (pfp = popen (command, "r"), pfp)
- 	    {
--	      char wc[BUFSIZ];
-+		char wc[BUFSIZ], tempform[50];      
- 	      const char *prefix = "";
- 
- 	      if (did_md5)
-@@ -1579,8 +1579,8 @@
- 		  fputs ("  else\n", output);
- 		  prefix = "  ";
- 		}
--
--	      fscanf (pfp, "%s", wc);
-+	sprintf (tempform, "%%%ds", BUFSIZ - 1);
-+	fscanf (pfp, tempform, wc);
- 	      fprintf (output, "\
- %s  shar_count=\"`%s '%s'`\"\n\
- %s  test %s -eq \"$shar_count\" ||\n\
-diff -Naur ./sharutils-4.2.1/src/unshar.c ./sharutils-4.2.1_new/src/unshar.c
 --- src/unshar.c.orig	1995-11-21 17:22:14.000000000 +0100
 +++ src/unshar.c	2004-09-29 15:09:44.682469264 +0200
 @@ -346,8 +346,8 @@
