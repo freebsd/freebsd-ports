@@ -1,6 +1,5 @@
 bin/gnome-splashscreen-manager
 %%DATADIR%%/glade/gnome-graphics.png
-%%DATADIR%%/glade/gnome_splashscreen_manager.gladep
 %%DATADIR%%/glade/gnome_splashscreen_manager.glade
 %%RUBY_SITELIBDIR%%/gnome_splashscreen_manager.rb
 %%RUBY_SITELIBDIR%%/gnome-splashscreen-manager/gnome_splashscreen_manager.rb
