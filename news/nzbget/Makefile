@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nzbget
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nzbget
@@ -23,11 +23,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LOCALBASE="${LOCALBASE}"
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
 
 PLIST_FILES=	bin/nzbget etc/nzbget.cfg.example
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/nzbget|${PREFIX}/bin/nzbget|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nzbget.cfg.example ${PREFIX}/etc

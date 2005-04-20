@@ -1,0 +1,55 @@
+--- Makefile.in.orig	Sun Feb 27 12:59:05 2005
++++ Makefile.in	Fri Apr 15 16:31:02 2005
+@@ -19,8 +19,8 @@
+ CP		= @CP@
+ CFLAGS		= @CFLAGS@ 
+ DEFS		= @DEFS@ -DVERSION=\"$(VERSION)\"
+-CPPFLAGS	= -I./uulib @CPPFLAGS@
+-LDFLAGS		= -L./uulib @LDFLAGS@
++CPPFLAGS	= @CPPFLAGS@
++LDFLAGS		= @LDFLAGS@
+ LIBS		= -luu -lncurses @LIBS@
+ INSTALL		= @INSTALL@
+ 
+@@ -94,19 +94,14 @@
+ 
+ # Executable programmes
+ #
+-nzbget: $(OBJECTS) nzbget.o ./uulib/libuu.a
++nzbget: $(OBJECTS) nzbget.o
+ 	$(CXX) $(CFLAGS) -o $@ $(OBJECTS) nzbget.o $(LDFLAGS) $(LIBS)
+ 	@echo "Build succeeded."
+ 
+-./uulib/libuu.a:
+-	make -C uulib
+-
+ clean:
+-	-cd ./uulib && make clean && cd ..
+ 	-$(RM) -f *.o $(PROGRAMS) .depend libuu.a
+ 
+ distclean: clean
+-	-cd ./uulib && make distclean && cd ..
+ 	-$(RM) -f Makefile config.status config.log config.h .depend
+ 
+ 
+@@ -123,17 +118,15 @@
+ 
+ distrib:
+ 	$(MKDIR) nzbget-$(VERSION)
+-	$(MKDIR) nzbget-$(VERSION)/uulib
+ 	$(CP) -av $(DISTFILES) nzbget-$(VERSION)
+-	$(CP) -av $(UUDISTFILES) nzbget-$(VERSION)/uulib
+ 	cd nzbget-$(VERSION) && ./configure
+-	cd nzbget-$(VERSION) && make
+-	cd nzbget-$(VERSION) && make distclean
++	cd nzbget-$(VERSION) && ${MAKE}
++	cd nzbget-$(VERSION) && ${MAKE} distclean
+ 	tar -czf nzbget-$(VERSION).tar.gz nzbget-$(VERSION)
+ 	$(RM) -r nzbget-$(VERSION)
+ 
+ install: nzbget
+-	$(INSTALL) nzbget /usr/bin/nzbget
++	$(INSTALL) nzbget ${PREFIX}/bin/nzbget
+ 
+ 
+ -include .depend
