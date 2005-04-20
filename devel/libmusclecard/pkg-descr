@@ -1,0 +1,8 @@
+The MUSCLE Framework provides cross-compatibility across multiple vendor 
+smartcards and it's client side API provides cross-compatibility across many
+platforms. By being built on PC/SC and providing simple, clean functionality
+for multiple platforms it is possible to develop cross-platform applications
+which make use of cryptographic smartcards and tokens, independant of both the
+car/crypto token manufacturer, operating system and platform.
+
+WWW:	http://pcsclite.alioth.debian.org/

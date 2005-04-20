@@ -1,0 +1,7 @@
+include/PCSC/mscdefines.h
+include/PCSC/musclecard.h
+lib/libmusclecard.so.1
+lib/libmusclecard.so
+lib/libmusclecard.a
+libdata/pkgconfig/libmusclecard.pc
+sbin/bundleTool
