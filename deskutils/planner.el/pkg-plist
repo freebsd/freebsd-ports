@@ -20,6 +20,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-mhe.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-multi.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-notes-index.el
+%%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-psvn.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-rank.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-rdf.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-report.el
