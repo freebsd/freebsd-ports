@@ -7,9 +7,9 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
-MASTER_SITES=	http://www.timidity.jp/dist/	\
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/	\
 		http://pubweb.bnl.gov/people/hoff/midi/1.10/	\
 		${MASTER_SITE_NETSCAPE}
@@ -22,24 +22,22 @@ PATCHFILES=	ump-patch-1.gz ump-patch-2.gz ump-patch-3.gz ump-patch-4.gz
 MAINTAINER=	llwang@infor.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
-RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++	\
-		${X11BASE}/lib/mozilla/mozilla-bin:${PORTSDIR}/www/mozilla
+RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 
 BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2
 ZDIST=		unix-sdk-3.0b5.tar.Z ump_with_volume.tar.Z timdiffs.tar.Z
 
-TIMIDITY_VERSION=	2.11.3
+TIMIDITY_VERSION=	2.13.2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_XPM=	yes
 WANT_GNOME=	yes
 # CONFIGURE_ARGS+=	--enable-motif
-EXTRA_PATCHES=	${.CURDIR}/../../audio/timidity++/files/*
+EXTRA_PATCHES=	${PORTSDIR}/audio/timidity++/files/*
 PKGDIR=		${.CURDIR}
-DIST_SUBDIR=	timidity
 WRKSRC=		${WRKDIR}/TiMidity++-${TIMIDITY_VERSION}
 
 # USE_MOTIF=	yes
@@ -85,6 +83,7 @@ do-build:
 	@cd ${WRKSRC}/ump; ${GMAKE} ump
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ump/ump.so ${X11BASE}/lib/browser_plugins
+	${MKDIR} ${PREFIX}/lib/browser_plugins
+	${INSTALL_PROGRAM} ${WRKSRC}/ump/ump.so ${PREFIX}/lib/browser_plugins
 
 .include <bsd.port.post.mk>
