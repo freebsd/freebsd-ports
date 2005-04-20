@@ -216,6 +216,8 @@ include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
 include/wine/windows/mscat.h
 include/wine/windows/mshtmdid.h
+include/wine/windows/mshtmhst.h
+include/wine/windows/mshtmhst.idl
 include/wine/windows/mshtml.h
 include/wine/windows/mshtml.idl
 include/wine/windows/msi.h
@@ -248,6 +250,7 @@ include/wine/windows/oleidl.h
 include/wine/windows/oleidl.idl
 include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
+include/wine/windows/powrprof.h
 include/wine/windows/propidl.h
 include/wine/windows/propidl.idl
 include/wine/windows/prsht.h
