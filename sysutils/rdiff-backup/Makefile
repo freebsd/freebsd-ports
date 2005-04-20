@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION=	0.13.4
-PORTREVISION=	1
+PORTVERSION=	0.12.8
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://rdiff-backup.stanford.edu/
+MASTER_SITES=	http://savannah.nongnu.org/download/rdiff-backup/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	steve@ion.lu
@@ -32,6 +32,7 @@ post-install:
 .for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
