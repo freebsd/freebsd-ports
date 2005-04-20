@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedLore
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Lore/0.1/ \
     http://tmrc.mit.edu/mirror/twisted/Lore/0.1/
@@ -16,7 +17,8 @@ DISTNAME=	TwistedLore-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	Documentation generator with HTML and LaTeX support
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedLore-${PORTVERSION}
 
