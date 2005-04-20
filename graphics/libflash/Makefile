@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libflash
-PORTVERSION=	0.4.12
+PORTVERSION=	0.4.13
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gplflash
@@ -27,5 +27,9 @@ CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_BZIP2=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/swf.h
 
 .include <bsd.port.mk>
