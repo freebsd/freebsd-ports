@@ -8,7 +8,7 @@
 PORTNAME=	3dpong
 PORTVERSION=	0.5
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/3dpong/src/
+MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/3dpong/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window 3D Pong game for 1 or 2 players with a ball and paddles
