@@ -42,15 +42,6 @@
 %%PYTHON_SITELIBDIR%%/quixote/form/widget.py
 %%PYTHON_SITELIBDIR%%/quixote/form/widget.pyc
 %%PYTHON_SITELIBDIR%%/quixote/form/widget.pyo
-%%PYTHON_SITELIBDIR%%/quixote/form1/__init__.py
-%%PYTHON_SITELIBDIR%%/quixote/form1/__init__.pyc
-%%PYTHON_SITELIBDIR%%/quixote/form1/__init__.pyo
-%%PYTHON_SITELIBDIR%%/quixote/form1/form.py
-%%PYTHON_SITELIBDIR%%/quixote/form1/form.pyc
-%%PYTHON_SITELIBDIR%%/quixote/form1/form.pyo
-%%PYTHON_SITELIBDIR%%/quixote/form1/widget.py
-%%PYTHON_SITELIBDIR%%/quixote/form1/widget.pyc
-%%PYTHON_SITELIBDIR%%/quixote/form1/widget.pyo
 %%PYTHON_SITELIBDIR%%/quixote/html/__init__.py
 %%PYTHON_SITELIBDIR%%/quixote/html/__init__.pyc
 %%PYTHON_SITELIBDIR%%/quixote/html/__init__.pyo
@@ -155,7 +146,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/server
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/ptl
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/html
-@dirrm %%PYTHON_SITELIBDIR%%/quixote/form1
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/form
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/demo
 @dirrm %%PYTHON_SITELIBDIR%%/quixote
