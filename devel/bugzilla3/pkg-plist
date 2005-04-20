@@ -1,7 +1,7 @@
-%%PORTDOCS%%%%DOCSDIR%%/contrib/README
-%%PORTDOCS%%%%DOCSDIR%%/contrib/README.Mailif
-%%PORTDOCS%%%%DOCSDIR%%/contrib/bugmail_help.html
-%%PORTDOCS%%%%DOCSDIR%%/contrib/bugzilla.procmailrc
+%%CONTRIB%%%%PORTDOCS%%%%DOCSDIR%%/contrib/README
+%%CONTRIB%%%%PORTDOCS%%%%DOCSDIR%%/contrib/README.Mailif
+%%CONTRIB%%%%PORTDOCS%%%%DOCSDIR%%/contrib/bugmail_help.html
+%%CONTRIB%%%%PORTDOCS%%%%DOCSDIR%%/contrib/bugzilla.procmailrc
 %%PORTDOCS%%%%DOCSDIR%%/html/Bugzilla-Guide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/about.html
 %%PORTDOCS%%%%DOCSDIR%%/html/administration.html
@@ -418,7 +418,7 @@
 @dirrm %%BUGZILLADIR%%/template/en/default/account
 @dirrm %%BUGZILLADIR%%/template/en/default
 @dirrm %%BUGZILLADIR%%/template/en
-@dirrm %%BUGZILLADIR%%/template
+@unexec rmdir %D/%%BUGZILLADIR%%/template 2>/dev/null || true
 @dirrm %%BUGZILLADIR%%/css
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/gnatsparse
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/cmdline
@@ -427,16 +427,18 @@
 @dirrm %%BUGZILLADIR%%/Bugzilla/Auth
 @dirrm %%BUGZILLADIR%%/Bugzilla/Template/Plugin
 @dirrm %%BUGZILLADIR%%/Bugzilla/Template
-@dirrm %%BUGZILLADIR%%/Bugzilla
+@unexec rmdir %D/%%BUGZILLADIR%%/Bugzilla 2>/dev/null || true
+@unexec rmdir %D/%%BUGZILLADIR%%/data 2>/dev/null || true
+@unexec rmdir %D/%%BUGZILLADIR%%/graphs 2>/dev/null || true
 @dirrm %%BUGZILLADIR%%/js
 @dirrm %%BUGZILLADIR%%/skins/standard
 @dirrm %%BUGZILLADIR%%/skins
-@dirrm %%BUGZILLADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/xml
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/txt
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/pdf
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images/callouts
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/contrib
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+@unexec rmdir %D/%%BUGZILLADIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/callouts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%CONTRIB%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

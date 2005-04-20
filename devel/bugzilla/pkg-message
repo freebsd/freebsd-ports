@@ -2,10 +2,11 @@
   Bugzilla has now been installed.  To quick setup you have to:
 
   1. Create database user who has rights on bugs database manipulation
-     by following mysql commands:
+     by following mysql commands (for MySQL 4.0 or later):
 
-     GRANT SELECT,INSERT,UPDATE,DELETE,INDEX,ALTER,CREATE,DROP,REFERENCES,\
-	   LOCK TABLES ON <database>.* TO <dbuser>@<host> \
+     GRANT SELECT, INSERT, UPDATE, DELETE, INDEX, ALTER, CREATE, LOCK TABLES,
+           CREATE TEMPORARY TABLES, DROP, REFERENCES 
+	   ON <database>.* TO <dbuser>@<host> 
 	   IDENTIFIED BY '<password>';
      FLUSH PRIVILEGES;
 
@@ -13,11 +14,11 @@
            owner; <host> is a host there bugzilla is being setup;
            <password> is a database owner's password;
 
-  2. Change working directory to %%PREFIX%%/%%BUGZILLADIR%%
+  2. Change working directory to %%BUGZILLADIR%%
   3. Run "./checksetup.pl" script as root user
   4. Read output carefully and follow all instructions
 
   For more complete database setup and post-installation instructions
-  and security tips/notes please read Bugzilla Guide in
-  %%PORTDOCS%%%%DOCSDIR%% (chapter 4: Installation)
+  and security tips/notes please read "Bugzilla Guide" in
+  %%DOCSDIR%% (chapter 4: Installation)
 ==========================================================================
