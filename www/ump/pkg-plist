@@ -1,2 +1,2 @@
-@cwd %%X11BASE%%
 lib/browser_plugins/ump.so
+@unexec rmdir %D/lib/browser_plugins 2>/dev/null || true
