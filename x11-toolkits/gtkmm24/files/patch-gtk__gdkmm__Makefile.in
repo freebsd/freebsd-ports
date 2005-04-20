@@ -1,0 +1,12 @@
+--- gdk/gdkmm/Makefile.in.bak	Sat Apr  9 20:53:29 2005
++++ gdk/gdkmm/Makefile.in	Tue Apr 19 19:06:31 2005
+@@ -325,8 +325,7 @@
+ # libraries at link time to resolve symbols (remember a dll is like an
+ # executable).
+ @PLATFORM_WIN32_TRUE@no_undefined = -no-undefined -Wl,--export-all-symbols
+-@PLATFORM_WIN32_FALSE@win32_dlls_extra_libs = 
+-@PLATFORM_WIN32_TRUE@win32_dlls_extra_libs = $(sublib_win32_dlls_libs)
++win32_dlls_extra_libs = $(sublib_win32_dlls_libs)
+ common_ldflags = -version-info $(sublib_libversion) $(no_undefined)
+ 
+ # All modules can include all other modules,
