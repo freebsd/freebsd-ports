@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=	--enable-force-setpassent
 .endif
 
 .if defined(WITHOUT_PAM)
-CONFIGURE_ARGS+=	--disable-pam
+CONFIGURE_ARGS+=	--disable-auth-pam
 .endif
 
 .if defined(WITH_IPV6)
