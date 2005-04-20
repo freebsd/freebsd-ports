@@ -1,0 +1,11 @@
+PEAR::File_Archive will let you manipulate easily the tar, gz and zip files.
+This library is strongly object oriented. It makes it very easy to use, writing
+simple code, yet the library is very powerfull.
+
+File_Archive is made of two objects: readers and writers. Are currently
+implemented readers from file, directory, tar, gz, zip and bzip2 archives.
+
+You can write to file(s), send mails with files attached, or create tar, gz,
+zip, bzip2 archives.
+
+WWW: http://pear.php.net/package/File_Archive/
