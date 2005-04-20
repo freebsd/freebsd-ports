@@ -1,7 +1,13 @@
---- elisp.texi.orig	Wed Jun 28 13:22:31 2000
-+++ elisp.texi	Sat Dec 30 04:55:55 2000
-@@ -3,10 +3,9 @@
- @setfilename elisp
+
+$FreeBSD$
+
+--- elisp.texi.orig
++++ elisp.texi
+@@ -1,12 +1,11 @@
+ \input texinfo  @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename elisp
++@setfilename elisp.info
  @settitle GNU Emacs Lisp Reference Manual
  @c %**end of header
 -
@@ -12,4 +18,4 @@
 +* Elisp manual: (elisp).        The Emacs Lisp Reference Manual.
  @end direntry
  
- @c uncomment this if you want the result in @smallbook format
+ @smallbook
