@@ -1,0 +1,27 @@
+
+RusNet IRC Network                     Town IRC server (irc.town.ru)
+====================================================================
+Location:   Town, Russia
+Admins:     SeaD (sead@mail.ru) HZ (hz@blah.ru)
+
+Codepages per ports are:
+
+        6667: KOI8-R     7770: KOI8-R   7773: ISO-8859_5
+        6668: Translit   7771: CP1251   7774: Macintosh
+        6669: CP1251     7772: CP866    7775: Translit
+
+To change your codepage on-the-fly:
+        /quote codepage codepage-name
+
+There are Network Services running:
+        NickServ, MemoServ, InfoServ, ChanServ
+
+Start using them with:
+        /msg NickServ@*.Rusnet help, /msg ChanServ@*.Rusnet help
+
+Help Channels on the net:
+        /join #help or #irchelp
+
+====================================================================
+NO: CLONES, WARS, FLOOD, SPAM!
+====================================================================

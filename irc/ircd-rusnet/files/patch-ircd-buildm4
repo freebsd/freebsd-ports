@@ -1,0 +1,11 @@
+--- ircd/buildm4.orig	Mon Oct 13 14:10:13 2003
++++ ircd/buildm4	Sat Mar 19 17:15:42 2005
+@@ -22,7 +22,7 @@
+ #
+ # If only this was a perl script...*sigh*
+ #
+-INCLUDE=`../support/config.guess`
++INCLUDE="build"
+ # Installation with absolute path now (Kratz)
+ M4=$1
+ /bin/rm -f $M4

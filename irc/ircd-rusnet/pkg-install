@@ -1,0 +1,35 @@
+#! /bin/sh
+
+if [ "$2" != "PRE-CONFIGURE" -a "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+PATH=/bin:/usr/bin
+
+USER=ircd
+UID=72
+GROUP=${USER}
+GID=${UID}
+
+if ! /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+    if /usr/sbin/pw groupadd ${GROUP} -g ${GID}; then
+        echo -n "Added group: "
+        /usr/sbin/pw groupshow ${GROUP}
+    else
+        echo "Adding group \"${GROUP}\" failed"
+        exit 1
+    fi
+fi
+
+if ! /usr/sbin/pw usershow "${USER}" 2>/dev/null 1>&2; then
+    if /usr/sbin/pw useradd ${USER} -h - -u ${UID} -g ${GROUP} \
+        -d "/nonexistent" -s "/sbin/nologin" -c "RusNet IRC Server"; then
+        echo -n "Added user: "
+        /usr/sbin/pw usershow ${USER}
+    else
+        echo "Adding user \"${USER}\" failed"
+        exit 1
+    fi
+fi
+
+exit 0

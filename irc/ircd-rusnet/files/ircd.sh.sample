@@ -1,0 +1,33 @@
+#! /bin/sh
+
+PATH=/bin:/usr/bin
+
+daemon=ircd
+daemon_path=/usr/local/sbin
+daemon_pid=/var/run/ircd/$daemon.pid
+daemon_flags=
+
+case $1 in
+    start)
+        if [ -x ${daemon_path}/$daemon ]; then
+            ${daemon_path}/$daemon $daemon_flags >/dev/null 2>&1
+            echo -n " $daemon"
+        fi
+        ;;
+    stop)
+        if [ -f $daemon_pid ]; then
+            kill `head -1 $daemon_pid` && echo -n " $daemon"
+        fi
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        echo "Usage: `basename $0` {start|stop|restart}" >&2
+        exit 64
+        ;;
+esac
+
+exit 0

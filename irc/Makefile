@@ -39,6 +39,7 @@
     SUBDIR += ircd-hybrid
     SUBDIR += ircd-hybrid-ru
     SUBDIR += ircd-ru
+    SUBDIR += ircd-rusnet
     SUBDIR += irchat-pj-emacs20
     SUBDIR += irchat-pj-emacs21
     SUBDIR += irchat-pj-xemacs21-mule

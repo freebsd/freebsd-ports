@@ -1,0 +1,26 @@
+#! /bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+PATH=/bin:/usr/bin
+
+USER=ircd
+GROUP=${USER}
+
+if /usr/sbin/pw groupdel ${GROUP}; then
+    echo "Deleted group \"${GROUP}\""
+else
+    echo "Deleting group \"${GROUP}\" failed"
+    exit 1
+fi
+
+if /usr/sbin/pw userdel ${USER}; then
+    echo "Deleted user \"${USER}\""
+else
+    echo "Deleting user \"${USER}\" failed"
+    exit 1
+fi
+
+exit 0
