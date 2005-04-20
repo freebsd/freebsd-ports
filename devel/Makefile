@@ -414,6 +414,7 @@
     SUBDIR += libbonobo
     SUBDIR += libbonobomm
     SUBDIR += libcapsinetwork
+    SUBDIR += libccid
     SUBDIR += libcheck
     SUBDIR += libchipcard
     SUBDIR += libchipcard-kde

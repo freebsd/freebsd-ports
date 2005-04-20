@@ -1,0 +1,20 @@
+--- configure.orig	Fri Apr  8 18:14:57 2005
++++ configure	Fri Apr  8 18:18:13 2005
+@@ -20223,6 +20223,17 @@
+ 		CFLAGS="$CFLAGS -no-cpp-precomp"
+ 	fi
+ 	;;
++*-*-freebsd*)
++	BUNDLE_HOST="FreeBSD"
++	DYN_LIB_EXT="so"
++if false; then
++  NEED_PARSER_TRUE=
++  NEED_PARSER_FALSE='#'
++else
++  NEED_PARSER_TRUE='#'
++  NEED_PARSER_FALSE=
++fi
++	;;
+ *)
+ 	BUNDLE_HOST="Linux"
+ 	DYN_LIB_EXT="so"
