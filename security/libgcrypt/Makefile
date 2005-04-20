@@ -16,7 +16,6 @@ COMMENT=	"General purpose crypto library based on code used in GnuPG"
 LIB_DEPENDS=	gpg-error.1:${PORTSDIR}/security/libgpg-error
 
 USE_REINPLACE=	yes
-USE_PERL5=	yes
 USE_INC_LIBTOOL_VER=15
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
