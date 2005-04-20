@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	050408
+PORTVERSION=	050415
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(WITH_SHLIB)
 USE_GMAKE=	yes
-PLIST_SUB=	SHLIB="@comment "
+PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 .else
 USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS+=	-a -c --foreign
@@ -31,7 +31,7 @@ USE_AUTOCONF_VER=	213
 CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-PLIST_SUB=	SHLIB=""
+PLIST_SUB=	SHLIB="" NSHLIB="@comment "
 .endif
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -40,13 +40,19 @@ BIN2STRIP=	tidy tab2space
 
 .if !defined(WITH_SHLIB)
 MAN1=		tidy.1
+MAN7=		tidy-config.7
 .endif
 
 .if !defined(NOPORTDOCS)
-DOCVER=		050310
+. if !defined(WITH_SHLIB)
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
+ALL_TARGET=	all doc
+DOCFILES=	quickref.html
+. endif
+DOCVER=		050414
 DISTFILES+=	tidy_docs_${DOCVER}${EXTRACT_SUFX}:docs
-DOCFILES=	Overview.html faq.html grid.gif pending.html	\
-		quickref.html release-notes.html tidy.css tidy.gif
+DOCFILES+=	Overview.html checked_by_tidy.gif faq.html grid.gif pending.html	\
+		release-notes.html tidy.css tidy.gif
 .endif
 
 post-patch:
