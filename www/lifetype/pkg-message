@@ -1,7 +1,12 @@
-
-          **** NOTE ****
+======================================================================
+                            **** NOTE ****
 For first use of pLog, remember to point your browser to
 
-http://your.plog.host/wizard.php
+http://your.plog.host/%%PLOGURL%%/wizard.php
 
-Maybe you should prepare a empty database first.
+and, remember to load your templates at
+
+http://your.plog.host/%%PLOGURL%%/admin.php?op=adminSettings
+
+and then click 'scanTemplates'
+======================================================================
