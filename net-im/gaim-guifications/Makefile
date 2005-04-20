@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	guifications
-PORTVERSION=	2.9
-PORTREVISION=	5
+PORTVERSION=	2.10
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,5 +38,6 @@ post-extract:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-e 's#\([@(]\)GAIM_LIBDIR\([@)]\)#\1libdir\2#' \
 		-e 's#\([@(]\)GAIM_DATADIR\([@)]\)#\1datadir\2#'
+	@${REINPLACE_CMD} -e 's|-g3||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
