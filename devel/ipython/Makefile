@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.6.12
+PORTVERSION=	0.6.13
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		http://bsdchat.com/dist/dryice/
