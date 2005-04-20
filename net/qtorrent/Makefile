@@ -14,6 +14,7 @@ MASTER_SITES=	http://thegraveyard.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client that uses the Qt widget-set
 
+PATCH_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
