@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Text/ASCIITable.pm
+%%SITE_PERL%%/Text/ASCIITable/Wrap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ASCIITable/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ASCIITable
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Text/ASCIITable
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
