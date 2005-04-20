@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
-BROKEN=		Incomplete pkg-plist
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
 
 USE_GMAKE=	yes
@@ -40,20 +38,7 @@ PLIST_FILES=	bin/c3270 \
 		etc/x3270/ibm_hosts
 PLIST_DIRS=	etc/x3270
 
-PORTDOCS=	LICENSE \
-		README \
-		html/Bugs.html \
-		html/Build.html \
-		html/FAQ.html \
-		html/Intro.html \
-		html/Lineage.html \
-		html/New.html \
-		html/README.html \
-		html/Wishlist.html \
-		html/c3270-man.html \
-		html/x3270-script.html \
-		html/x3270.xbm \
-		html/x3270if.html
+PORTDOCS=	*
 
 # c3270's ./configure script supports these.
 # Within it all options except DBCS are enabled by default.
