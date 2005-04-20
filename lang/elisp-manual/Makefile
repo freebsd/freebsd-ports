@@ -18,7 +18,12 @@ COMMENT=	Emacs Lisp reference manual
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}
 GNU_CONFIGURE=	yes
-
 ALL_TARGET=	elisp
+MAKE_ARGS=	MAKEINFO="makeinfo --no-split"
+
+INFO=		elisp
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/elisp ${PREFIX}/${INFO_PATH}/elisp.info
 
 .include <bsd.port.mk>

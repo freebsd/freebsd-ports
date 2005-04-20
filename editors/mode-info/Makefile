@@ -20,11 +20,11 @@ MI_WITH_MAKE?=	yes
 
 .if (${MI_WITH_ELISP} == "yes")
 .if (${MI_ELISP_LANG} == "en")
-BUILD_DEPENDS+=	${LOCALBASE}/info/elisp:${PORTSDIR}/lang/elisp-manual
-RUN_DEPENDS+=	${LOCALBASE}/info/elisp:${PORTSDIR}/lang/elisp-manual
+BUILD_DEPENDS+=	${LOCALBASE}/info/elisp.info:${PORTSDIR}/lang/elisp-manual
+RUN_DEPENDS+=	${LOCALBASE}/info/elisp.info:${PORTSDIR}/lang/elisp-manual
 .elif (${MI_ELISP_LANG} == "ja")
-BUILD_DEPENDS+=	${LOCALBASE}/info/elisp-ja:${PORTSDIR}/japanese/elisp-manual
-RUN_DEPENDS+=	${LOCALBASE}/info/elisp-ja:${PORTSDIR}/japanese/elisp-manual
+BUILD_DEPENDS+=	${LOCALBASE}/info/elisp-ja.info:${PORTSDIR}/japanese/elisp-manual
+RUN_DEPENDS+=	${LOCALBASE}/info/elisp-ja.info:${PORTSDIR}/japanese/elisp-manual
 .else
 .error MI_ELISP_LANG should be "en" or "ja".
 .endif
