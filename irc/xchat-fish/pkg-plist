@@ -1,1 +1,0 @@
-@unexec rmdir %D/lib/xchat/plugins 2>/dev/null || true
