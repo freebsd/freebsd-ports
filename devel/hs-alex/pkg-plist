@@ -12,18 +12,18 @@ lib/alex-%%PORTVERSION%%/AlexWrapper-gscan
 @dirrm lib/alex-%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/alex.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/Tokens.x
-%%EXAMPLESDIR%%/Tokens_gscan.x
-%%EXAMPLESDIR%%/Tokens_posn.x
-%%EXAMPLESDIR%%/examples.x
-%%EXAMPLESDIR%%/haskell.x
-%%EXAMPLESDIR%%/lit.x
-%%EXAMPLESDIR%%/pp.x
-%%EXAMPLESDIR%%/state.x
-%%EXAMPLESDIR%%/tiny.y
-%%EXAMPLESDIR%%/tkns.hs
-%%EXAMPLESDIR%%/words.x
-%%EXAMPLESDIR%%/words_monad.x
-%%EXAMPLESDIR%%/words_posn.x
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/Tokens.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/Tokens_gscan.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/Tokens_posn.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/examples.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/haskell.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/lit.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/state.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/tiny.y
+%%PORTDOCS%%%%EXAMPLESDIR%%/tkns.hs
+%%PORTDOCS%%%%EXAMPLESDIR%%/words.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/words_monad.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/words_posn.x
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

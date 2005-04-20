@@ -5,24 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	alex
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.haskell.org/alex/dist/
+MASTER_SITES=	http://www.haskell.org/alex/dist/ \
+		http://www.haskell.org/alex/doc/:doc
 PKGNAMEPREFIX=	hs-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
+		alex.ps:doc
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \
-		jadetex:${PORTSDIR}/print/jadetex \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		${LOCALBASE}/share/sgml/docbook/3.1/docbook.dtd:${PORTSDIR}/textproc/docbook-310 \
-		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
-.endif
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -38,16 +33,11 @@ BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
 .if !defined(NOPORTDOCS)
-post-build:
-	${GMAKE} -C ${WRKSRC}/alex/doc ps
-.endif
-
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${FIND} ${WRKSRC}/alex/examples -type f -exec ${INSTALL_DATA} \{\} ${EXAMPLESDIR} \;
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/alex/doc/alex.ps ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/alex.ps ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
