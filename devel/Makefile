@@ -459,6 +459,7 @@
     SUBDIR += libmcve
     SUBDIR += libmimedir
     SUBDIR += libmtrie
+    SUBDIR += libmusclecard
     SUBDIR += liboil
     SUBDIR += libol
     SUBDIR += libole2
