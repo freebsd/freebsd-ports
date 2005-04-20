@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pstree
-PORTVERSION=	2.25
+PORTVERSION=	2.27
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thp.uni-duisburg.de/pub/source/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvioc@gmail.com
 COMMENT=	List processes as a tree
 
 NO_WRKSUBDIR=	yes
@@ -24,6 +24,6 @@ do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -o pstree pstree.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/pstree ${PREFIX}/bin/pstree
+	${INSTALL_PROGRAM} ${WRKDIR}/pstree ${PREFIX}/bin
 
 .include <bsd.port.mk>
