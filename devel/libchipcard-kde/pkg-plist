@@ -1,11 +1,14 @@
 bin/kcardsetup
+bin/kchipcardcontrol
 bin/kmedicalcard
 bin/kpcscsetup
 share/applnk/Utilities/Chipcard-Utilities/.directory
 share/applnk/Utilities/Chipcard-Utilities/kcardsetup.desktop
+share/applnk/Utilities/Chipcard-Utilities/kchipcardcontrol.desktop
 share/applnk/Utilities/Chipcard-Utilities/kmedicalcard.desktop
 share/applnk/Utilities/Chipcard-Utilities/kpcscsetup.desktop
 share/locale/de/LC_MESSAGES/kcardsetup.mo
+share/locale/de/LC_MESSAGES/kchipcardcontrol.mo
 share/locale/de/LC_MESSAGES/kmedicalcard.mo
 share/locale/de/LC_MESSAGES/kpcscsetup.mo
 @dirrm share/applnk/Utilities/Chipcard-Utilities/
