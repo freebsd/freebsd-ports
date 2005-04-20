@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	flashplugin-mozilla
-PORTVERSION=	0.4.12
-PORTREVISION=	1
+PORTVERSION=	0.4.13
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gplflash
@@ -17,14 +16,13 @@ MAINTAINER=	llwang@infor.org
 COMMENT=	A GPL standalone Flash (TM) plugin for Mozilla web browser
 
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
-RUN_DEPENDS?=	mozilla:${PORTSDIR}/www/mozilla
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/plugin
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-PLUGIN_DIR?=	lib/browser_plugins
+PLUGIN_DIR=	lib/browser_plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-plugin-dir="${PREFIX}/${PLUGIN_DIR}"
@@ -36,5 +34,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,-L../lib/.libs,-L${LOCALBASE}/lib,"	\
 		-e "s/libnpflash.so.0.0.0/libnpflash.so.0/"	\
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/npapi.h
 
 .include <bsd.port.mk>
