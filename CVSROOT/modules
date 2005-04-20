@@ -2161,9 +2161,7 @@ flash		ports/shells/flash
 flasher		ports/sysutils/flasher
 flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
-flashplugin-firefox	ports/www/flashplugin-firefox
 flashplugin-mozilla	ports/www/flashplugin-mozilla
-flashplugin-mozilla-devel	ports/www/flashplugin-mozilla-devel
 flashpluginwrapper	ports/www/flashpluginwrapper
 flasm		ports/graphics/flasm
 flawfinder	ports/security/flawfinder
