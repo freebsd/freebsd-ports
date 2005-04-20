@@ -1,4 +1,0 @@
-%%DOCSDIR%%/README-plperl
-lib/postgresql/plperl.so
-@unexec rmdir %D/lib/postgresql 2>/dev/null || true
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true

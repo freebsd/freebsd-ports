@@ -1,9 +1,0 @@
---- audiofile_artsplugin/audiofilearts.idl.orig	Sat Aug 21 15:03:32 2004
-+++ audiofile_artsplugin/audiofilearts.idl	Sat Aug 21 15:04:33 2004
-@@ -1,5 +1,5 @@
--#include <kmedia2.idl>
- #include <soundserver.idl>
-+#include <kmedia2.idl>
- 
- module Arts
- {

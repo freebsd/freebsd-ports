@@ -1,5 +1,5 @@
---- src/ftpd.c.orig	Mon Mar  8 07:24:50 2004
-+++ src/ftpd.c	Mon Mar  8 07:24:50 2004
+--- src/ftpd.c.orig	Tue Apr  5 03:22:01 2005
++++ src/ftpd.c	Tue Apr  5 04:10:13 2005
 @@ -447,7 +447,6 @@
  #ifdef OPIE
  #include <opie.h>
@@ -24,10 +24,10 @@
  
      if (pwd == NULL || skeychallenge(&skey, pwd->pw_name, sbuf))
 -	sprintf(buf, "Password required for %s.", name);
-+	snprintf(buf, 128, "Password required for %s.", name);
++	snprintf(buf, sizeof(buf)-1, "Password required for %s.", name);
      else
 -	sprintf(buf, "%s %s for %s.", sbuf,
-+	snprintf(buf, 128, "%s %s for %s.", sbuf,
++	snprintf(buf, sizeof(buf)-1, "%s %s for %s.", sbuf,
  		pwok ? "allowed" : "required", name);
      return (buf);
  }
@@ -95,3 +95,22 @@
  #ifdef VERBOSE_ERROR_LOGING
  		syslog(LOG_NOTICE, "FTP LOGIN FAILED (cannot chdir) for %s, %s",
  		       remoteident, pw->pw_name);
+@@ -7469,6 +7471,8 @@
+ 	    in++;
+ 	    if (*in == '/')
+ 		in++;
++	    else
++		out++;
+ 	}
+ 	else if ((in[0] == '.') && (in[1] == '.') && ((in[2] == '/') || (in[2] == '\0'))) {
+ 	    if (out == path) {
+@@ -7497,6 +7501,9 @@
+ 	}
+ 	else {
+ 	    do
++	      if ((in[0] == '*') && (in[1] == '*'))
++		in++;
++	      else
+ 		*out++ = *in++;
+ 	    while ((*in != '\0') && (*in != '/'));
+ 	    if (*in == '/')

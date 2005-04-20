@@ -1,8 +1,0 @@
-bin/vicq
-%%SITE_PERL%%/Net/vICQ.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/vICQ/.packlist
-share/examples/vicq/vicqrc.example
-@dirrm share/examples/vicq
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/vICQ
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2> /dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net 2> /dev/null || true

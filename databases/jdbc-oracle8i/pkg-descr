@@ -1,6 +1,0 @@
-This is a port of the JDBC driver which is used to access Oracle
-databases using a database-independant API in Java.
-
-WWW: http://technet.oracle.com/tech/java/sqlj_jdbc/content.html
-
-patrick@freebsd.org

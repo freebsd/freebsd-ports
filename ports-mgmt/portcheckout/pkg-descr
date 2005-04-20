@@ -1,7 +1,0 @@
-The portcheckout(1) reads the /usr/ports/INDEX file and checks-out
-a given port and its dependencies.  This makes it easy to use the
-ports system without having a full and up-to-date /usr/ports tree.
-
-A typical use would be to connect to the Internet, possibly download
-a new INDEX and ports upgrade kit, download a port skeleton with
-portcheckout(1), and then build the port.

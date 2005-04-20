@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0.2/source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0.3/source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng
+		png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 ALL_TARGET=	default
@@ -110,7 +109,7 @@ LIBS+=			${PTHREAD_LIBS}
 EXTRA_SCRIPTS=		${PORTNAME}.rb
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	"core dumps on alpha during post-build"
+IGNORE=	core dumps on alpha during post-build
 .endif
 
 .if ${PERL_LEVEL} < 500600
@@ -167,7 +166,7 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|libesd\.so\.\d+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
-	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.no|g' \
+	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
 		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
 	embedding/minimo

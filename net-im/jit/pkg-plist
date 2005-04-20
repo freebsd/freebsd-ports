@@ -1,7 +1,0 @@
-lib/jabber/jit/jit.so
-lib/jabber/jit/xdb_file.so
-sbin/jit
-etc/jabber-icq.example
-etc/rc.d/jit.sh
-@dirrm lib/jabber/jit
-@unexec rmdir %D/lib/jabber 2>/dev/null || true

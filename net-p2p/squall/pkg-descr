@@ -1,8 +1,0 @@
-pdtpd is a server for the Peer Distributed Transfer Protocol (PDTP),
-a BitTorrent-like protocol with stricter server control and support
-for exporting large, changing hierarchical filesystems (i.e. more akin
-to HTTP/FTP).
-
-For a more thorough description of PDTP, see http://www.pdtp.org/.
-
-WWW: http://pdtpd.sourceforge.net/

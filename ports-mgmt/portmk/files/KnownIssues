@@ -1,2 +1,0 @@
-* List of ports that fail to fetch/build with portmk, but build with a `stock' bsd.port.mk:
-

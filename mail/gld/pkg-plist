@@ -4,5 +4,7 @@ sbin/gld
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/tables.sql
+%%PORTDOCS%%%%DOCSDIR%%/table-whitelist.sql
+%%PORTDOCS%%%%DOCSDIR%%/tables.mysql
+%%PORTDOCS%%%%DOCSDIR%%/tables.pgsql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -9,11 +9,11 @@
 
 PORTNAME=	wu-ftpd
 PORTVERSION=	2.6.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 PATCH_SITES=    ftp://ftp.wu-ftpd.org/pub/wu-ftpd/patches/apply_to_2.6.2/
-PATCHFILES=     connect-dos.patch realpath.patch
+PATCHFILES=	connect-dos.patch realpath.patch
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A replacement ftp server for Un*x systems
