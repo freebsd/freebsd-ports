@@ -16,7 +16,7 @@ COMMENT=	A simple AMaViS statistics generator based on rrdtool
 RUN_DEPENDS=	${SITE_PERL}/mach/RRDs.pm:${PORTSDIR}/net/rrdtool
 
 USE_PERL5_RUN=	yes
-USE_PHP=	yes
+USE_PHP=	pcre
 
 MAN1=		amavis-stats.1
 
@@ -40,7 +40,7 @@ SUB_LIST+=	AMAVISUSER=${AMAVISUSER} AMAVISGROUP=${AMAVISGROUP}
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		"Need at least perl 5.6.1 to build"
+IGNORE=		Need at least perl 5.6.1 to build
 .endif
 
 pre-install: apply-slist
