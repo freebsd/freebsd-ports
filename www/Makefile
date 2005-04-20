@@ -111,9 +111,7 @@
     SUBDIR += firefox
     SUBDIR += firefox-remote
     SUBDIR += flashplugin
-    SUBDIR += flashplugin-firefox
     SUBDIR += flashplugin-mozilla
-    SUBDIR += flashplugin-mozilla-devel
     SUBDIR += flashpluginwrapper
     SUBDIR += flood
     SUBDIR += formication

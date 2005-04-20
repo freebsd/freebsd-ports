@@ -1,2 +1,0 @@
-%%PLUGIN_DIR%%/libnpflash.so
-@unexec rmdir %D/%%PLUGIN_DIR%% 2>/dev/null || true
