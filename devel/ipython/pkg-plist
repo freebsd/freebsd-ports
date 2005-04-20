@@ -88,7 +88,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-pysh
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-scipy
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-tutorial
-%%PYTHON_SITELIBDIR%%/IPython/UserConfig/pysh.py
 %%PYTHON_SITELIBDIR%%/IPython/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyo
