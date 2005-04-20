@@ -1,0 +1,60 @@
+--- support/configure.in.orig	2003-09-30 17:23:20.000000000 +0300
++++ support/configure.in	2004-11-10 08:38:57.000000000 +0200
+@@ -1329,7 +1329,7 @@
+ test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+ AC_SUBST(INSTALL_PROGRAM)dnl
+ 
+-test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
++test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -g ${IRC_USER} -o ${IRC_UID} -m 644'
+ AC_SUBST(INSTALL_DATA)dnl
+ ])
+ 
+@@ -1434,6 +1434,38 @@
+ fi
+ ])
+ 
++AC_DEFUN(IRC_SETUP_NETWORK,
++[
++AC_MSG_CHECKING("Set IRC Network Name[default Rusnet]")
++AC_DEFINE(IRC_NETNAME)
++AC_ARG_WITH(name, [  --with-netname=[name]           set IRC Network Name],
++[IRC_NETNAME=$withval],
++[IRC_NETNAME='"RusNet"'],
++)
++AC_MSG_RESULT( $IRC_NETNAME )
++AC_SUBST(IRC_NETNAME)
++])
++
++AC_DEFUN(IRC_SETUP_USER,
++[
++AC_MSG_CHECKING("set user for own ircd files [default nobody]")
++AC_DEFINE(IRC_UID)
++AC_DEFINE(IRC_GID)
++AC_ARG_WITH(user, [  --with-user=[username]          set user for own ircd files],
++[user=$withval],
++[user="nobody"]
++)
++`id $user >/dev/null`
++if test $? -eq 1;  then
++    AC_MSG_ERROR( "no valid users set" )
++fi
++AC_MSG_RESULT( $user )
++IRC_UID=`id -ru $user`
++IRC_GID=`id -rg $user`
++
++AC_SUBST(IRC_UID)
++AC_SUBST(IRC_GID)
++])
+ 
+ dnl ----
+ dnl main
+@@ -1521,5 +1553,8 @@
+ IRC_SHAREDMODULES
+ IRC_ALPHA_BETA
+ 
+-AC_OUTPUT(Makefile:../support/Makefile.in version.c.SH:../ircd/version.c.SH.in sums:../support/sums.in tkconf.h:../support/tkconf.h.dist)
++IRC_SETUP_NETWORK
++IRC_SETUP_USER
++
++AC_OUTPUT(Makefile:../support/Makefile.in version.c.SH:../ircd/version.c.SH.in sums:../support/sums.in tkconf.h:../support/tkconf.h.dist config.h:../support/config.h.dist )
+ AC_OUTPUT_COMMANDS(chmod a+x version.c.SH)
