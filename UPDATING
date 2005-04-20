@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050420:
+  AFFECTS: users of www/ipython
+  AUTHOR: dryice@liu.com.cn
+
+  This is backward-incompatible changes for pysh.
+
+  1. You must update your pysh profile (~/.ipython/ipythonrc-pysh):
+     a) Add to it the line:
+        import_all IPython.Extensions.InterpreterExec
+     b) Delete the line
+        execfile pysh.py
+  2. You must also delete from ~/.ipython/ the file pysh.py.
+
 20050419:
   AFFECTS: users of linux-opera
   AUTHOR: mezz@FreeBSD.org
