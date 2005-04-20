@@ -7,7 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,14 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kanou@khdd.net
 COMMENT=	Convert bitmap to vector graphics
 
-LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
-		df.1:${PORTSDIR}/science/hdf \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ming.3:${PORTSDIR}/graphics/ming \
-		wmf.2:${PORTSDIR}/graphics/libwmf \
 		Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		pstoedit.0:${PORTSDIR}/graphics/pstoedit
 .if !exists(/usr/bin/bzip2)
