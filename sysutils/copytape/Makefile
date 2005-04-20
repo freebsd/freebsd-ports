@@ -23,6 +23,7 @@ NO_WRKSUBDIR=		yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKDIR}
+ALL_TARGET=		copytape
 
 MAN1=			copytape.1
 MAN5=			copytape.5
