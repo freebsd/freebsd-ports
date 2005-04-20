@@ -1,5 +1,5 @@
---- gtk/Makefile.in.orig	Fri Mar  2 19:49:26 2001
-+++ gtk/Makefile.in	Tue Mar  6 11:04:35 2001
+--- gtk/Makefile.in.orig	Mon Apr  2 12:14:13 2001
++++ gtk/Makefile.in	Wed Apr 20 14:32:17 2005
 @@ -125,7 +125,7 @@
  x_libs = @x_libs@
  xinput_progs = @xinput_progs@
@@ -9,16 +9,20 @@
  
  
  #
-@@ -134,7 +134,7 @@
+@@ -134,10 +134,8 @@
  lib_LTLIBRARIES = libgtk.la
  
  # libtool stuff: set version and export symbols for resolving
 -libgtkincludedir = $(includedir)/gtk-1.2/gtk
+-libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
+-
+-#	$(top_builddir)/gdk/libgdk.la
 +libgtkincludedir = $(includedir)/gtk
- libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
++libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm					$(top_builddir)/gdk/libgdk.la	@STRIP_END@
  
- #	$(top_builddir)/gdk/libgdk.la
-@@ -190,8 +190,8 @@
+ #
+ # setup source file variables
+@@ -190,8 +188,8 @@
  gen_sources = xgen-gdef xgen-gtbh xgen-gtbvc xgen-gtbic xgen-gtbec xgen-gmh xgen-gmc
  CLEANFILES =  $(gen_sources)
  
@@ -29,7 +33,7 @@
  
  
  #
-@@ -415,6 +415,7 @@
+@@ -415,6 +413,7 @@
  	    $(INSTALL_DATA) $$p $(DESTDIR)$(gtkconfdir)/$$p; \
  	  fi; fi; \
  	done
@@ -37,7 +41,7 @@
  
  uninstall-gtkconfDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -1362,7 +1363,7 @@
+@@ -1362,7 +1361,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
  		uninstall-libgtkincludeHEADERS uninstall-local
  uninstall: uninstall-am
