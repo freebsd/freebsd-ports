@@ -1,0 +1,10 @@
+PEAR::MIME_Type provides functionality for dealing with MIME types.
+
+* Parse MIME type.
+* Supports full RFC2045 specification.
+* Many utility functions for working with and determining info about types.
+* Most functions can be called statically.
+* Autodetect a file's mime-type, either with mime_content_type() or the 'file'
+command.
+
+WWW: http://pear.php.net/package/MIME_Type/
