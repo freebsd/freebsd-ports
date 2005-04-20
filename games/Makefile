@@ -38,7 +38,6 @@
     SUBDIR += atomix
     SUBDIR += atr3d
     SUBDIR += awele
-    SUBDIR += baduki
     SUBDIR += barrage
     SUBDIR += bass
     SUBDIR += bastet
