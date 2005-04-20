@@ -19,7 +19,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:build
+PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:build
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_X_PREFIX=	yes
