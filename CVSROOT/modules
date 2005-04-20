@@ -10454,6 +10454,7 @@ scandoc		ports/devel/scandoc
 scanlogd	ports/security/scanlogd
 scanssh		ports/security/scanssh
 scare		ports/games/scare
+scavenge	ports/dns/scavenge
 sccmilter	ports/mail/sccmilter
 scdp		ports/net-mgmt/scdp
 sced		ports/graphics/sced
