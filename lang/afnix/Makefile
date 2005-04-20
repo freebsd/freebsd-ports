@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
@@ -25,10 +25,6 @@ PLIST_SUB=	PORTVER=${PORTVERSION:R}
 MAN1=	afnix.1 axc.1 axd.1 axl.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000 && ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64 FreeBSD >= 6.x"
-.endif
 
 do-configure:
 	@${WRKSRC}/cnf/bin/${PORTNAME}-setup -o
