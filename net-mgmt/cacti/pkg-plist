@@ -126,7 +126,9 @@
 %%CACTIDIR%%/images/transparent_line.gif
 %%CACTIDIR%%/include/auth.php
 %%CACTIDIR%%/include/bottom_footer.php
-%%CACTIDIR%%/include/config.php
+%%CACTIDIR%%/include/config.php.orig
+@exec [ -f %D/%%CACTIDIR%%/include/config.php ] || cp %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php
+@unexec if cmp -s %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php; then rm -f %D/%%CACTIDIR%%/include/config.php; fi
 %%CACTIDIR%%/include/config_arrays.php
 %%CACTIDIR%%/include/config_constants.php
 %%CACTIDIR%%/include/config_form.php
