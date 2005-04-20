@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	ksocrat
-PORTVERSION=	3.2
-PORTREVISION=	4
+PORTVERSION=	3.2.1
+PORTREVISION=	0
 CATEGORIES=	russian kde
 MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/ \
 		http://voodoo.oberon.net/download/
@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-enru-dic-1.0.1${EXTRACT_SUFX} \
 		${PORTNAME}-ruen-dic-1.0.1${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	KSocrat is the simple English/Russian Russian/English dictionary
 
 USE_BZIP2=	yes
