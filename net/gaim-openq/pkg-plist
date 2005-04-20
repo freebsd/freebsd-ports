@@ -525,15 +525,7 @@ share/gnome/pixmaps/gaim/status/default/qq_group_unexit.png
 share/gnome/pixmaps/gaim/status/default/qq_p_group.png
 share/gnome/pixmaps/gaim/status/default/qq_p_group_unexit.png
 share/gnome/pixmaps/gaim/status/default/qqshow_default.gif
-share/gnome/doc/%%PATH_SUB%%/AUTHORS
-share/gnome/doc/%%PATH_SUB%%/COPYING
-share/gnome/doc/%%PATH_SUB%%/ChangeLog
-share/gnome/doc/%%PATH_SUB%%/INSTALL
-share/gnome/doc/%%PATH_SUB%%/NEWS
-share/gnome/doc/%%PATH_SUB%%/README
-share/gnome/doc/%%PATH_SUB%%/TODO
-share/locale/zh_CN/LC_MESSAGES/OpenQ.mo
+share/locale/zh_CN/LC_MESSAGES/openq.mo
 @dirrm share/gnome/pixmaps/gaim/smileys/2003iii
-@dirrm share/gnome/doc/%%PATH_SUB%%
 @unexec rmdir %D/share/gnome/doc 2> /dev/null || true
 @unexec rmdir %D/share/gnome/gaim 2> /dev/null || true

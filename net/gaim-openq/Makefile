@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	openq
-PORTVERSION=	0.3.0
-PORTREVISION=	11
+PORTVERSION=	0.3.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	gaim-
-DISTNAME=	OpenQ-${PORTVERSION}.p4
 
 MAINTAINER=	hamigua@hotpop.com
 COMMENT=	A QQ-liked protocol plugin for Gaim
@@ -28,6 +26,10 @@ CONFIGURE_ARGS=	--enable-static=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-PLIST_SUB=	PATH_SUB=${DISTNAME}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500000
+BROKEN=		"does not compile"
+.endif
+
+.include <bsd.port.post.mk>
