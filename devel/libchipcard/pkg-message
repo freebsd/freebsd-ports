@@ -1,9 +1,8 @@
-***********************************************************************
-*								      *
-*  You need to setup the following configurations files before using  *
-*  LibChipCard:							      *
-*  - %%PREFIX%%/etc/chipcardc.conf (client configuration)	      *
-*  - %%PREFIX%%/etc/chipcardd.conf (daemon configuration)	      *
-*  I have installed example files (filenames above+".example").	      *
-*								      *
-***********************************************************************
+*******************************************************************************
+*								      	      *
+* Example configurations have been installed to:			      *
+*  									      *
+* %%PREFIX%%/share/libchipcard/examples/chipcardc.conf (client configuration) *
+* %%PREFIX%%/share/libchipcard/examples/chipcardd.conf (daemon configuration) *
+*  								      	      *
+*******************************************************************************

@@ -7,6 +7,7 @@
 
 PORTNAME=	ifd-slb_rf60
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 DISTNAME=	${PORTNAME:S/^ifd-//}-drv-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME:S/^ifd-//}-drv-${PORTVERSION}
 MAINTAINER=	toni@soth.at
 COMMENT=	PC/SC Lite driver for the Reflex 62 serial smart card reader
 
-LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 USE_GMAKE=	yes
 

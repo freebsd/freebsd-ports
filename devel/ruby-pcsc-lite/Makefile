@@ -17,7 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	toni@soth.at
 COMMENT=	Ruby extension for the UNIX PC/SC Lite API (MUSCLE)
 
-LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+
+BROKEN=		"Does not compile with new pcsc-lite. Port will be updated soon."
 
 USE_RUBY=	yes
 RUBY_VER=	1.8
