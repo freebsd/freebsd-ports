@@ -103,6 +103,8 @@ share/locale/ga/LC_MESSAGES/gnopernicus.mo
 share/locale/gu/LC_MESSAGES/gnopernicus.mo
 share/locale/hi/LC_MESSAGES/gnopernicus.mo
 share/locale/hr/LC_MESSAGES/gnopernicus.mo
+share/locale/hu/LC_MESSAGES/gnopernicus.mo
+share/locale/id/LC_MESSAGES/gnopernicus.mo
 share/locale/it/LC_MESSAGES/gnopernicus.mo
 share/locale/ja/LC_MESSAGES/gnopernicus.mo
 share/locale/ko/LC_MESSAGES/gnopernicus.mo
@@ -110,6 +112,7 @@ share/locale/lt/LC_MESSAGES/gnopernicus.mo
 share/locale/mn/LC_MESSAGES/gnopernicus.mo
 share/locale/ms/LC_MESSAGES/gnopernicus.mo
 share/locale/nb/LC_MESSAGES/gnopernicus.mo
+share/locale/ne/LC_MESSAGES/gnopernicus.mo
 share/locale/nl/LC_MESSAGES/gnopernicus.mo
 share/locale/no/LC_MESSAGES/gnopernicus.mo
 share/locale/pa/LC_MESSAGES/gnopernicus.mo
@@ -118,6 +121,7 @@ share/locale/pt/LC_MESSAGES/gnopernicus.mo
 share/locale/pt_BR/LC_MESSAGES/gnopernicus.mo
 share/locale/ro/LC_MESSAGES/gnopernicus.mo
 share/locale/ru/LC_MESSAGES/gnopernicus.mo
+share/locale/rw/LC_MESSAGES/gnopernicus.mo
 share/locale/sk/LC_MESSAGES/gnopernicus.mo
 share/locale/sq/LC_MESSAGES/gnopernicus.mo
 share/locale/sr/LC_MESSAGES/gnopernicus.mo
