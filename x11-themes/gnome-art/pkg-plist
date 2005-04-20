@@ -1,10 +1,9 @@
 bin/gnome-art
 %%DATADIR%%/glade/download_dialog.glade
-%%DATADIR%%/glade/download_dialog.gladep
 %%DATADIR%%/glade/gnome-graphics.png
 %%DATADIR%%/glade/gnome_art.glade
-%%DATADIR%%/glade/gnome_art.gladep
 %%DATADIR%%/glade/pixmaps/gnome-graphics.png
+%%DATADIR%%/images/no-thumbnail.png
 %%RUBY_SITELIBDIR%%/gnome_art.rb
 %%RUBY_SITELIBDIR%%/gnome-art/config.rb
 %%RUBY_SITELIBDIR%%/gnome-art/get_art.rb
@@ -15,4 +14,5 @@ bin/gnome-art
 @dirrm %%RUBY_SITELIBDIR%%/gnome-art
 @dirrm %%DATADIR%%/glade/pixmaps
 @dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
