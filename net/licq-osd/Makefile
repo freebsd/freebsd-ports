@@ -25,7 +25,7 @@ LICQ_PORT?=	net/licq
 
 LOCALES=	de cs es fr pt pt_BR ro ru se
 PLIST_FILES=	lib/licq/licq_osd.so \
-		${LOCALES:C+^..+share/locale/&/LC_MESSAGES/licq_osd_plugin.mo+}
+		${LOCALES:C+^.*$+share/locale/&/LC_MESSAGES/licq_osd_plugin.mo+}
 PLIST_DIRS=	share/locale/se/LC_MESSAGES share/locale/se
 
 .include <bsd.port.pre.mk>
