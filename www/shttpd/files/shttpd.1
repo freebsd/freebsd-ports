@@ -2,20 +2,30 @@
 .SH NAME
 shttpd \- Simple HTTP Daemon
 .SH SYNOPSIS
+.PP
 .B shttpd
 .I [OPTIONS]
-.br
+.PP
+.B http    stream  tcp     nowait  nobody  /usr/local/bin/shttpd shttpd -I -d /var/www
 .SH "DESCRIPTION"
 .B shttpd
 is a simple web server. It supports: CGI, Digest authentication, cookies,
 GET, POST, PUT, DELETE methods, SSL. It does not detach from terminal. 
 It stores logs in a standard format. If -d option is not given, the document
-root is assumed to be current directory.
+root is assumed to be the current directory.
+.P
 .B shttpd
 can be embedded into existing application, in order to provide a Web GUI.
 To do that, a header file with interface definition is needed, and application
 should be compiled with shttpd.c, with -DEMBEDDED compilation flag set.
 Refer to http://shttpd.sf.net to get the header file.
+.P
+.B shttpd
+can be run as stand-alone server, or it may be managed by the
+.I inetd(8)
+superdaemon. In latter case,
+.I \-I
+option should be specified in inetd configuration line.
 .SH OPTIONS
 .TP 13
 .I \-d directory
@@ -28,7 +38,7 @@ listening port (default 80 for non-SSL, 443 for SSL mode)
 display help
 .TP 13
 .I \-S
-use SSL (default NO)
+use SSL
 .TP 13
 .I \-s certfile
 use SSL certificate file (default shttpd.pem)
@@ -38,6 +48,9 @@ error log file (default none)
 .TP 13
 .I \-l logfile
 log file  (default shttpd.log)
+.TP 13
+.I \-I
+inetd mode
 .TP 13
 .I \-i file1[,file2..]
 index file (default index.html,index.cgi)
@@ -58,7 +71,11 @@ mime types file (default none)
 authentication realm (default mydomain.com)
 .TP 13
 .I \-D
-forbid directory listing (default yes)
+forbid directory listing
+.SH FILES
+.I /etc/inetd.conf
+.SH SEE ALSO
+.I inetd(8)
 .SH COPYRIGHT
 .B shttpd
 is licensed under the terms of MIT license.
