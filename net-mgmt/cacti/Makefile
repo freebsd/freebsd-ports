@@ -7,7 +7,7 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.6c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
@@ -35,32 +35,27 @@ USE_PHP=	mysql pcre session xml
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES=	pkg-message pkg-install
 
 CACTIDIR?=	share/cacti
 CACTIUSER?=	cacti
 CACTIGROUP?=	${CACTIUSER}
 PLIST_SUB+=	CACTIDIR=${CACTIDIR}
-
-post-extract:
-	@${RM} -rf ${WRKSRC}/cactid/.deps
+SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
+		CACTIGROUP=${CACTIGROUP}
 
 post-patch:
-	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
-		s|%%LOCALBASE%%|${LOCALBASE}| ; \
-		s|%%CACTIDIR%%|${CACTIDIR}| ; \
-		s|%%CACTIUSER%%|${CACTIUSER}|' > ${PKGMESSAGE}
+	@${FIND} ${WRKSRC} -name \*.orig -delete; \
+	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.orig; \
+	${RM} -d ${WRKSRC}/include/lang/en ${WRKSRC}/include/lang
 
-# Create cacti user/group and clean *.orig files
 pre-install:
-	@PREFIX=${PREFIX} CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
-	CACTIGROUP=${CACTIGROUP} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
-	cd ${WRKSRC}; \
-	${FIND} . -name \*.orig -delete
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
 
 do-install:
 	@${MKDIR} ${PREFIX}/${CACTIDIR}; \
-	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.orig; \
-	${CP} -R ${WRKSRC}/* ${PREFIX}/${CACTIDIR}/
+	${CP} -R ${WRKSRC}/* ${PREFIX}/${CACTIDIR}/; \
 	if [ ! -f ${PREFIX}/${CACTIDIR}/include/config.php ]; then \
 		${CP} ${PREFIX}/${CACTIDIR}/include/config.php.orig \
 			${PREFIX}/${CACTIDIR}/include/config.php; \
@@ -68,8 +63,7 @@ do-install:
 
 # Fix permissions
 post-install:
-	@PREFIX=${PREFIX} CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
-	CACTIGROUP=${CACTIGROUP} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

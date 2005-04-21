@@ -5,14 +5,17 @@ to make it work correctly.
 1: Create the MySQL database
 # mysqladmin --user=root create cacti
 2: Create a mysql user/password for cacti
+(change user and/or password if requered)
 # echo "GRANT ALL ON cacti.* TO cactiuser at localhost IDENTIFIED BY 'cactiuser'; FLUSH PRIVILEGES;" | mysql &&
 3: Import the default cacti database
 # mysql cacti < %%PREFIX%%/%%CACTIDIR%%/cacti.sql
-4: Edit your config.php
+4: Edit include/config.php
 Specify the MySQL user, password and database for your cacti configuration.
 5: Add a line to your /etc/crontab file similar to:
 */5 * * * * %%CACTIUSER%% %%LOCALBASE%%/bin/php %%PREFIX%%/%%CACTIDIR%%/poller.php > /dev/null 2>&1
-6: Point your web browser to the cacti dir and login with admin/admin
+6: Add alias in apache config for the cacti dir
+Alias /cacti "%%PREFIX%%/%%CACTIDIR%%/"
+7: Open cacti login page in your web browser and login with admin/admin
 
 Have fun!
 ==================================================================
