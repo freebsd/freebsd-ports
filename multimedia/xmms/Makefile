@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
@@ -55,6 +55,10 @@ MASTER_SITE_SUBDIR+=	rusxmms/:enc
 PLIST_SUB+=	ENCODING=""
 .else
 PLIST_SUB+=	ENCODING="@comment "
+.endif
+
+.if defined(WITH_EXTENDED_VORBIS_FILEINFO)
+CFLAGS+=	-DALL_VORBIS_TAGS
 .endif
 
 .if !defined(WITHOUT_MIKMOD)
