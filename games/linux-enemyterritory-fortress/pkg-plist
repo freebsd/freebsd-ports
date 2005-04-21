@@ -1,4 +1,5 @@
 bin/et-fortress
+bin/etded-fortress
 lib/enemyterritory/etf/autoexec.cfg
 lib/enemyterritory/etf/cgame.mp.i386.so
 lib/enemyterritory/etf/classconfigs/agent.cfg
@@ -12,39 +13,38 @@ lib/enemyterritory/etf/classconfigs/recon.cfg
 lib/enemyterritory/etf/classconfigs/sniper.cfg
 lib/enemyterritory/etf/classconfigs/soldier.cfg
 lib/enemyterritory/etf/etconfig.cfg
+lib/enemyterritory/etf/etf_dissect.pk3
 lib/enemyterritory/etf/etf_pak0.pk3
 lib/enemyterritory/etf/etf_pak1.pk3
 lib/enemyterritory/etf/etf_pak2.pk3
+lib/enemyterritory/etf/etf_pak3.pk3
+lib/enemyterritory/etf/etf_server.cfg
 lib/enemyterritory/etf/mp_bin.pk3
+lib/enemyterritory/etf/preset_normal.cfg
 lib/enemyterritory/etf/qagame.mp.i386.so
-lib/enemyterritory/etf/sample_server.cfg
 lib/enemyterritory/etf/servercache.dat
-lib/enemyterritory/etf/ui.mp.i386.so
 lib/enemyterritory/etf/ui/usermenu/default_defense.cfg
 lib/enemyterritory/etf/ui/usermenu/default_general.cfg
 lib/enemyterritory/etf/ui/usermenu/default_main.cfg
 lib/enemyterritory/etf/ui/usermenu/default_offense.cfg
 lib/enemyterritory/etf/ui/usermenu/default_team.cfg
+lib/enemyterritory/etf/ui.mp.i386.so
 lib/enemyterritory/etf/video/etintro.roq
-%%PORTDOCS%%%%DOCSDIR%%/12_changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/EULA
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/advanced_server_configs/ACTF.zip
-%%DATADIR%%/advanced_server_configs/DUEL.zip
-%%DATADIR%%/advanced_server_configs/MIXED.zip
-%%DATADIR%%/advanced_server_configs/readme_samples.txt
 %%DATADIR%%/etf.xpm
-%%DATADIR%%/sample_server/ACTF.zip
-%%DATADIR%%/sample_server/DUEL.zip
-%%DATADIR%%/sample_server/MIXED.zip
-%%DATADIR%%/sample_server/readme_samples.txt
+%%EXAMPLESDIR%%/sample_server/ACTF.zip
+%%EXAMPLESDIR%%/sample_server/DUEL.zip
+%%EXAMPLESDIR%%/sample_server/MIXED.zip
+%%EXAMPLESDIR%%/sample_server/README
+%%EXAMPLESDIR%%/sample_server/sample_server.cfg
 @dirrm lib/enemyterritory/etf/classconfigs
 @dirrm lib/enemyterritory/etf/ui/usermenu
 @dirrm lib/enemyterritory/etf/ui
 @dirrm lib/enemyterritory/etf/video
 @dirrm lib/enemyterritory/etf
-@unexec rmdir %D/lib/enemyterritory 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/advanced_server_configs
-@dirrm %%DATADIR%%/sample_server
 @dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%/sample_server
+@dirrm %%EXAMPLESDIR%%
