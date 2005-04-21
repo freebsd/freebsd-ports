@@ -25,6 +25,10 @@ OPTIONS=	ARTS "Build with aRts support" on
 
 .include <bsd.port.pre.mk>
 
+.if (${OSVERSION} < 500000)
+BROKEN=		"Does not build with gcc2 and can't link with gcc3"
+.endif
+
 .if !defined(WITH_ARTS)
 CONFIGURE_ARGS+=	--without-arts
 .endif
