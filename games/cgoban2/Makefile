@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	cgoban2
-PORTVERSION=	2.6.8
-CATEGORIES=	games
+PORTVERSION=	2.6.12
+CATEGORIES=	games java
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	cgoban-unix-${PORTVERSION}
 
 MAINTAINER=	philip.reynolds@rfc-networks.ie
 COMMENT=	Internet Go Server client and game editor
 
-BROKEN=		Unfetchable
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/cgoban
-INSTALLDIR=	${PREFIX}/share/java/cgoban2
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/cgoban2 share/java/cgoban2/cgoban.jar
-PLIST_DIRS=	share/java/cgoban2
+PLIST_FILES=	bin/cgoban2 %%DATADIR%%/cgoban.jar
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	${SED} -e 's|_DIR=.|_DIR=${INSTALLDIR}| ; s|^java|javavm|'\
+	${SED} -e 's|_DIR=.|_DIR=${DATADIR}| ; s|^java|JAVA_VERSION="${JAVA_VERSION}" "${LOCALBASE}/bin/java"|'\
 		< ${WRKSRC}/cgoban.sh.in > ${WRKSRC}/cgoban2
 
 do-install:
-	${MKDIR} ${INSTALLDIR}
-	${INSTALL_DATA} ${WRKSRC}/cgoban.jar ${INSTALLDIR}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/cgoban.jar ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cgoban2 ${PREFIX}/bin/cgoban2
 
 .include <bsd.port.mk>
