@@ -48,41 +48,42 @@ lib/IM/Ssh.pm
 lib/IM/Stdio.pm
 lib/IM/TcpTransaction.pm
 lib/IM/Util.pm
-%%DOCSDIR%%/00changes
-%%DOCSDIR%%/00copyright
-%%DOCSDIR%%/00copyright.jis
-%%DOCSDIR%%/00perl
-%%DOCSDIR%%/00readme
-%%DOCSDIR%%/00usage
-%%DOCSDIR%%/man/00readme
-%%DOCSDIR%%/man/imali.jis
-%%DOCSDIR%%/man/imcat.jis
-%%DOCSDIR%%/man/imcd.jis
-%%DOCSDIR%%/man/imclean.jis
-%%DOCSDIR%%/man/imget.jis
-%%DOCSDIR%%/man/imhist.jis
-%%DOCSDIR%%/man/imjoin.jis
-%%DOCSDIR%%/man/immv.jis
-%%DOCSDIR%%/man/impack.jis
-%%DOCSDIR%%/man/imput
-%%DOCSDIR%%/man/imput.jis
-%%DOCSDIR%%/man/imrm.jis
-%%DOCSDIR%%/man/imsetup.jis
-%%DOCSDIR%%/man/imsort.jis
-%%DOCSDIR%%/man/imstore.jis
-%%DOCSDIR%%/man/imtar.jis
-%%EXAMPLESDIR%%/Config
-%%EXAMPLESDIR%%/Petnames
-%%EXAMPLESDIR%%/get.sbr
-%%EXAMPLESDIR%%/get.sbr.refile
-%%EXAMPLESDIR%%/getchk.sbr
-%%EXAMPLESDIR%%/getchk.sbr.postpet
-%%EXAMPLESDIR%%/password
-%%EXAMPLESDIR%%/scan.sbr
-%%EXAMPLESDIR%%/scan.sbr.sample1
-%%EXAMPLESDIR%%/scan.sbr.sample2
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/man
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/00changes
+%%PORTDOCS%%%%DOCSDIR%%/00copyright
+%%PORTDOCS%%%%DOCSDIR%%/00copyright.jis
+%%PORTDOCS%%%%DOCSDIR%%/00diff
+%%PORTDOCS%%%%DOCSDIR%%/00perl
+%%PORTDOCS%%%%DOCSDIR%%/00readme
+%%PORTDOCS%%%%DOCSDIR%%/00usage
+%%PORTDOCS%%%%DOCSDIR%%/man/00readme
+%%PORTDOCS%%%%DOCSDIR%%/man/imali.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imcat.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imcd.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imclean.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imget.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imhist.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imjoin.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/immv.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/impack.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imput
+%%PORTDOCS%%%%DOCSDIR%%/man/imput.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imrm.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imsetup.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imsort.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imstore.jis
+%%PORTDOCS%%%%DOCSDIR%%/man/imtar.jis
+%%PORTDOCS%%%%EXAMPLESDIR%%/Config
+%%PORTDOCS%%%%EXAMPLESDIR%%/Petnames
+%%PORTDOCS%%%%EXAMPLESDIR%%/get.sbr
+%%PORTDOCS%%%%EXAMPLESDIR%%/get.sbr.refile
+%%PORTDOCS%%%%EXAMPLESDIR%%/getchk.sbr
+%%PORTDOCS%%%%EXAMPLESDIR%%/getchk.sbr.postpet
+%%PORTDOCS%%%%EXAMPLESDIR%%/password
+%%PORTDOCS%%%%EXAMPLESDIR%%/scan.sbr
+%%PORTDOCS%%%%EXAMPLESDIR%%/scan.sbr.sample1
+%%PORTDOCS%%%%EXAMPLESDIR%%/scan.sbr.sample2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/IM
 @dirrm etc/im
