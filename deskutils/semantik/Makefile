@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	0.3.8
+PORTVERSION=	0.9.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.kde-apps.org/content/files/
 DISTNAME=	12725-${PORTNAME}-${PORTVERSION}
@@ -14,8 +14,7 @@ DISTNAME=	12725-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE mindmapping tool
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
-		gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -28,8 +27,6 @@ post-patch:
 		's:%%CXX%%:${CXX}:g ; \
 		 s:%%CXXFLAGS%%:${CXXFLAGS} ${PTHREAD_CFLAGS}:g ; \
 		 s:%%LINKFLAGS%%:${PTHREAD_LIBS}:g' ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e \
-		's:|sed:|gsed:g' ${WRKSRC}/kde.py
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} PREFIX="${PREFIX}" \
@@ -99,7 +96,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/appdata/hi${size}-app-kdissert.png \
 		${PREFIX}/share/icons/hicolor/${size}x${size}/apps/kdissert.png
 .endfor
-.for lang in de fr nl pl
+.for lang in de fr it nl pl
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.gmo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/kdissert.mo
