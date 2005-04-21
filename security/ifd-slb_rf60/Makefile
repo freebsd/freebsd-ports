@@ -18,17 +18,18 @@ COMMENT=	PC/SC Lite driver for the Reflex 62 serial smart card reader
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 USE_GMAKE=	yes
+CFLAGS+=	-fPIC
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^ifd-//}
 
 PORTDOCS=	README
-PLIST_FILES=	pcsc/drivers/libslb_rf60.so
+PLIST_FILES=	lib/pcsc/drivers/libslb_rf60.so
 
 do-install:
-	test -f ${PREFIX}/pcsc/drivers/ || ${MKDIR} ${PREFIX}/pcsc/drivers/
+	${MKDIR} ${PREFIX}/lib/pcsc/drivers/
 	${INSTALL_DATA} ${WRKSRC}/libslb_rf60.so \
-		${PREFIX}/pcsc/drivers/libslb_rf60.so
+		${PREFIX}/lib/pcsc/drivers/libslb_rf60.so
 
 post-install:
 .if !defined(NOPORTDOCS)

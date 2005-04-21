@@ -5,7 +5,7 @@
  
      #ifndef SUN_SPARC
 -     BretVal = IO_InitializePort(9600,8,'E',"/dev/ttyS0");
-+     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuaa0");
++     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuad0");
      #endif
  
      break;
@@ -14,7 +14,7 @@
  
      #ifndef SUN_SPARC
 -     BretVal = IO_InitializePort(9600,8,'E',"/dev/ttyS1");
-+     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuaa1");
++     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuad1");
      #endif
  
      break;
@@ -23,7 +23,7 @@
  
      #ifndef SUN_SPARC
 -     BretVal = IO_InitializePort(9600,8,'E',"/dev/ttyS2");
-+     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuaa2");
++     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuad2");
      #endif
  
      break;
@@ -32,7 +32,7 @@
  
      #ifndef SUN_SPARC
 -     BretVal = IO_InitializePort(9600,8,'E',"/dev/ttyS3");
-+     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuaa3");
++     BretVal = IO_InitializePort(9600,8,'E',"/dev/cuad3");
      #endif
  
      break;

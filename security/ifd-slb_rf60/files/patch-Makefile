@@ -1,14 +1,22 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
-@@ -2,7 +2,7 @@
- # Linux Serial Driver
- # Implementation
+--- Makefile.bak	Tue Jan 11 10:59:54 2005
++++ Makefile	Tue Jan 11 11:00:03 2005
+@@ -16,19 +16,13 @@
+ 	$(LD) -shared $(OBJS) -o $(LIBN)
  
--CC   = gcc -DCPU_ICAP_PC=1
-+CC   = gcc -DCPU_ICAP_PC=1 -fPIC
- LD   = ld
- OBJS = serial.o ifdhandler.o ctapi.o AdmHndlr.o T1Hndlr.o
- LIBN = libslb_rf60.so
+ test: test.c $(OBJS)
+-	$(CC) -o test test.c $(OBJS)
+ 
+ ifdhandler.o: ifdhandler.h ifdhandler.c
+-	$(CC) -c ifdhandler.c
+ 
+ T1Hndlr.o: T1Hndlr.h T1Hndlr.c
+-	$(CC) -c T1Hndlr.c
+ 
+ AdmHndlr.o: AdmHndlr.h AdmHndlr.c
+-	$(CC) -c AdmHndlr.c
+ 
+ ctapi.o: ctapi.h ctapi.c
+-	$(CC) -c ctapi.c
+ 
+ scio.o: serial.h serial.c
+-	$(CC) -c serial.c
