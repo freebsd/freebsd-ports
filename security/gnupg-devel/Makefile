@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.9.15
+PORTVERSION=	1.9.16
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/gnupg
@@ -17,11 +17,12 @@ COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
-		ksba.13:${PORTSDIR}/security/libksba \
+		ksba.14:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		dirmngr:${PORTSDIR}/security/dirmngr
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=# empty
 USE_GMAKE=	yes

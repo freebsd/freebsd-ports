@@ -1,16 +1,14 @@
 bin/gpg-agent
-bin/gpg2
+bin/gpg-connect-agent
 bin/gpgconf
 bin/gpgsm
 bin/gpgsm-gencert.sh
-bin/gpgv2
 bin/kbxutil
 %%WITH_OPENSC%%bin/scdaemon
 bin/watchgnupg
 libexec/gpg-preset-passphrase
 libexec/gpg-protect-tool
 sbin/addgnupghome
-share/gnupg/gpg-conf.skel
 %%NLS%%share/locale/de/LC_MESSAGES/gnupg2.mo
 %%NLS%%@dirrm share/locale/de/LC_MESSAGES
 @dirrm share/gnupg
