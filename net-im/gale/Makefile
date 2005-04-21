@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	gale
-PORTVERSION=	0.99e
+PORTVERSION=	0.99f
 CATEGORIES=	net
-MASTER_SITES=	http://www.mit.edu/afs/sipb/project/gale/src/ \
-		# http://download.ofb.net/gale/ - original mastersite
-DISTNAME=	${PORTNAME}-${PORTVERSION}gg
+MASTER_SITES=	http://download.ofb.net/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
 
-MAINTAINER=	peterh@sapros.com
+MAINTAINER=	jason-fbsd-ports-gale@shalott.net
 COMMENT=	A secure instant messaging system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \
 		adns.1:${PORTSDIR}/dns/adns
 
+USE_ICONV=	yes
+USE_GNOME=	glib12
+GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_AUTOCONF_VER=213
-USE_AUTOMAKE_VER=14
-USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	YES
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
@@ -33,12 +33,15 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.if ${OSVERSION} < 500039
+IGNORE=         requires wchar functions for compilation
 .endif
 
+# cheesy hack - test-oop doesn't build, but we don't care.
 pre-configure:
-	cd ${WRKSRC} && ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl
+	${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
+			${WRKSRC}/liboop/Makefile.in
+	${ECHO} -n > ${WRKSRC}/libgale/wcwidth.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
