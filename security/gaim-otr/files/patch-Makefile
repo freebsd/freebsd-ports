@@ -1,10 +1,33 @@
---- Makefile.bak	Fri Dec 17 16:19:08 2004
-+++ Makefile	Fri Dec 17 16:19:16 2004
-@@ -1,4 +1,4 @@
- all install clean distclean:
--	make -C libotr $@
--	make -C gaim-otr $@
--	make -C tools $@
-+	gmake -C libotr $@
-+	gmake -C gaim-otr $@
-+	gmake -C tools $@
+--- Makefile.orig	Wed Feb 23 14:49:10 2005
++++ Makefile	Mon Mar 21 18:31:51 2005
+@@ -2,7 +2,7 @@
+ GAIM_OTR_VERSION = 2.0.1
+ 
+ # Replace this with the path to the GAIM headers
+-GAIM_SOURCE ?= /usr/include/gaim
++GAIM_SOURCE ?= %%X11BASE%%/include/gaim
+ 
+ # If you don't have pkg-config, put the appropriate -I entry on the next line
+ GTK_HDRS ?= `pkg-config --cflags glib-2.0 gtk+-2.0`
+@@ -10,10 +10,10 @@
+ # The location of the libotr include files.  Note that if, for example,
+ # the full path of message.h is /usr/include/libotr/message.h, you
+ # should put /usr/include on the next line, not /usr/include/libotr
+-LIBOTRINCDIR = /usr/include
++LIBOTRINCDIR = %%LOCALBASE%%/include
+ 
+ # The locataion of libotr.a.
+-LIBOTRLIBDIR = /usr/lib
++LIBOTRLIBDIR = %%LOCALBASE%%/lib
+ 
+ # The target
+ TARGET = gaim-otr.so
+@@ -29,7 +29,7 @@
+          -lgcrypt -lgpg-error
+ else
+ FPIC = -fPIC
+-LDFLAGS = -module -avoid-version
++LDFLAGS = -module -avoid-version -L%%LOCALBASE%%/lib
+ LDLIBS = -lotr -lgcrypt
+ endif
+ 
