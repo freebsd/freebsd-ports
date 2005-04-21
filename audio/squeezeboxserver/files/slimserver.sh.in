@@ -21,9 +21,12 @@ stop_cmd="slimserver_stop"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
-pidfile=/var/run/${name}.pid
-conffile=/var/db/slimserver/slimserver.conf
+pidfile=/var/run/slimserver/${name}.pid
 logfile=/var/log/slimserver.log
+statedir=/var/db/slimserver
+cachedir=${statedir}/cache
+playlistdir=${statedir}/playlists
+conffile=${statedir}/slimserver.conf
 u=slimserv
 g=slimserv
 command_args="--daemon --prefsfile=${conffile} --logfile=${logfile} --user=${u} --group=${g} --pidfile=${pidfile}"
@@ -32,9 +35,29 @@ PGREP=%%PGREPBASE%%/bin/pgrep
 
 slimserver_start_precmd()
 {
+	if [ ! -d ${statedir} ]; then
+		mkdir -p ${statedir}
+		chown -R ${u}:${g} ${statedir}
+	fi
+	if [ ! -d ${cachedir} ]; then
+		mkdir -p ${cachedir}
+		chown -R ${u}:${g} ${cachedir}
+	fi
+	if [ ! -d ${playlistdir} ]; then
+		mkdir -p ${playlistdir}
+		chown -R ${u}:${g} ${playlistdir}
+	fi
+	if [ ! -d /var/run/slimserver ]; then
+		mkdir -p /var/run/slimserver
+		chown -R ${u}:${g} /var/run/slimserver
+	fi
 	if [ ! -f ${conffile} ]; then
 		touch ${conffile}
-		chown slimserv:slimserv ${conffile}
+		chown ${u}:${g} ${conffile}
+	fi
+	if [ ! -f ${logfile} ]; then
+		touch ${logfile}
+		chown ${u}:${g} ${logfile}
 	fi
 }
 
