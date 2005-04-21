@@ -13,12 +13,10 @@ MASTER_SITES=	http://www.io.com/~kazushi/xtt/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sada
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Libraries to use the FreeType library from the perl language
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
-
-BROKEN=		Installs perllocal.pod
+RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 USE_FREETYPE=	yes
 USE_PERL5=	yes
@@ -30,17 +28,11 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAKE_ENV=	PERL_VER=${PERL_VER} PERL5=${PERL5}
 
 pre-patch:
-	${MV} ${WRKSRC}/FreeType/Makefile.PL ${WRKSRC}/FreeType/Makefile.PL.bak
-	${SED} 's,/usr/local/X11R6.3,${PREFIX},' \
-		${WRKSRC}/FreeType/Makefile.PL.bak \
-		> ${WRKSRC}/FreeType/Makefile.PL
+	@${PERL} -pi -e 's!/usr/local/X11R6.3!${PREFIX}!' ${WRKSRC}/FreeType/Makefile.PL
 
 post-build:
-		cd ${WRKSRC}; \
-		for DIST in ftinfo mkttfdir; do \
-			${MV} $${DIST} $${DIST}.bak; \
-			${SED} -e 's;^#! */usr/local/bin/perl *;#!${PERL5};' \
-				$${DIST}.bak > $${DIST}; \
-		done
+.for DIST in ftinfo mkttfdir
+	@${PERL} -pi -e 's;^#! */usr/local/bin/perl *;#!${PERL5};' ${WRKSRC}/${DIST}
+.endfor
 
 .include <bsd.port.mk>
