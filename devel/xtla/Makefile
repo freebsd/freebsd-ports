@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtla
-PORTVERSION=	0.9
+PORTVERSION=	0.99
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://download.gna.org/xtla-el/ \
@@ -42,7 +42,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in BINDINGS FEATURES HACKING TODO
+.for i in ANNOUNCEMENTS BINDINGS FEATURES HACKING TODO
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
 .endif
