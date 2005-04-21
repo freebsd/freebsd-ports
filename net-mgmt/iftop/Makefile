@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ex-parrot.com/~pdw/iftop/download/ \
 		http://voodoo.oberon.net/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network utility for real-time bandwidth usage information
 
 GNU_CONFIGURE=	yes

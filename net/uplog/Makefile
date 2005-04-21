@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.nerdlabs.org/downloads/${PORTNAME}/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UDP-based ping programm
 
 USE_GETOPT_LONG=	yes

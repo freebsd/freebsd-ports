@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network monitoring daemon
 
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://nast.berlios.de/src/ \
 		http://voodoo.oberon.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nast is a packet sniffer
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel

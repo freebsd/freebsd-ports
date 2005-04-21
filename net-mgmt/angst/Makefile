@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/angst:}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An active sniffer
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet

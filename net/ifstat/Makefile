@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gael.roualland.free.fr/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network interface statistics monitoring tool
 
 GNU_CONFIGURE=	yes
