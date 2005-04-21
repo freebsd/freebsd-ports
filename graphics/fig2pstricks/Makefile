@@ -20,7 +20,8 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/fig2pstricks
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|gcc|$$(CC)|g ; \
+		 s|^CFLAGS|#CFLAGS|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
