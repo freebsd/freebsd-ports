@@ -14,6 +14,11 @@ MASTER_SITE_SUBDIR=	geekcode
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Geek Code Generator
 
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+PLIST_FILES=	bin/geekcode
+PORTDOCS=	geekcode.txt
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/geekcode ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

@@ -1,9 +1,0 @@
---- Makefile.orig	Mon Feb 21 20:49:20 2000
-+++ Makefile	Mon Feb 21 20:49:41 2000
-@@ -1,6 +1,4 @@
--CFLAGS=-O3 -s
- TARGET=geekcode
--CC=gcc
- 
- SRCFILES = gc_appearance.c    \
-            gc_computers.c     \
