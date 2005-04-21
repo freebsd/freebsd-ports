@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ftgl
-PORTVERSION=	2.09
+PORTVERSION=	2.12
 CATEGORIES=	graphics
-MASTER_SITES=	http://homepages.paradise.net.nz/henryj/code/
+MASTER_SITES=	http://opengl.geek.nz/ftgl/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/([[:digit:]])$/.\1/}
 
 MAINTAINER=	ip@doom.homeunix.org
@@ -16,8 +16,6 @@ COMMENT=	An OpenGL FreeType fonts rendering library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
-
-BROKEN=		Incomplete pkg-plist
 
 USE_GMAKE=	yes
 USE_GL=		yes
