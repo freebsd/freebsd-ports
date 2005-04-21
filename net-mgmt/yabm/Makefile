@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabm
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://shapeshifter.se/code/yabm/release/ \
 		http://www2.shapeshifter.se/yabm/release/
@@ -20,7 +20,6 @@ USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-extract:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
