@@ -14,13 +14,20 @@ etc/rc.d/openvpn.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-inter
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key-pass
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key-pkcs12
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key-server
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-req
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-req-pass
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/clean-all
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/list-crl
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/make-crl
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/openssl.cnf
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/revoke-crt
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/revoke-full
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/sign-req
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/vars
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/README
+%%PORTDOCS%%%%DOCSDIR%%/sample-config-files/client.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/firewall.sh
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/home.up
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/loopback-client
@@ -28,12 +35,16 @@ etc/rc.d/openvpn.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/office.up
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/openvpn-shutdown.sh
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/openvpn-startup.sh
+%%PORTDOCS%%%%DOCSDIR%%/sample-config-files/server.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/static-home.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/static-office.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/tls-home.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/tls-office.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/xinetd-client-config
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/xinetd-server-config
+%%PORTDOCS%%%%DOCSDIR%%/sample-scripts/auth-pam.pl
+%%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-start
+%%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-stop
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/openvpn.init
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/verify-cn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample-scripts
