@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/-\1/:S/p/pre/}
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	Native interface to serial ports in Java
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
