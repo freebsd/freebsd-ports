@@ -11,14 +11,5 @@ arj and rpm and can handle other KIOSlaves such as smb or fish. It is
 (almost) completely customizable, very user friendly, fast and looks great 
 on your desktop! :-) 
 
-Many things changed since 1.40, so here's some hightlights:
-* New user-action system, which allows you to define your own
-  personal krusader-actions.
-  Please take a look at the tutorial that comes in the doc\ section
-* 3rd Panel: new popup-panel that can display quick view, tree etc. Just click
-  the little arrow button on the bottom of each panel.
-* ISO protocol now allows you to step into .iso files
-* Cut, Copy and Paste: ctrl-v, ctrl-c and ctrl-x is working
-
 WWW: http://krusader.sourceforge.net
 Heiner (h.eichmann@gmx.de)
