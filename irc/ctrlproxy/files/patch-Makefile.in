@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jan 12 09:26:24 2004
-+++ Makefile.in	Thu Mar  4 19:02:20 2004
+--- Makefile.in.orig	Wed Feb  4 10:28:45 2004
++++ Makefile.in	Thu Apr 21 02:05:12 2005
 @@ -24,7 +24,7 @@
  	$(CC) $(LIBS) -rdynamic -o $@ $(OBJS)
  
@@ -14,7 +14,7 @@
  	$(INSTALL) -d $(DESTDIR)$(includedir)
  	$(INSTALL) -d $(DESTDIR)$(modulesdir)
 -	$(INSTALL) -d $(DESTDIR)$(docdir)
- 	$(INSTALL) -d $(DESTDIR)$(datadir)
+ 	$(INSTALL) -d $(DESTDIR)$(cdatadir)
  	$(MAKE) -C doc install 
  	
 @@ -45,9 +44,6 @@
@@ -26,4 +26,4 @@
 -	$(INSTALL) TODO $(DESTDIR)$(docdir)
  
  install-data:
- 	$(INSTALL) motd $(DESTDIR)$(datadir)
+ 	$(INSTALL) motd $(DESTDIR)$(cdatadir)
