@@ -28,8 +28,9 @@ include/oop-tcl.h
 include/oop-www.h
 include/oop.h
 lib/libgale.a
+lib/libgale.la
 lib/libgale.so
-lib/libgale.so.12
+lib/libgale.so.14
 lib/liboop-adns.a
 lib/liboop-adns.la
 lib/liboop-adns.so
@@ -53,7 +54,7 @@ lib/liboop-www.so.0
 lib/liboop.a
 lib/liboop.la
 lib/liboop.so
-lib/liboop.so.3
+lib/liboop.so.4
 sbin/gksign
 @exec mkdir -m 1777 %D/etc/gale/auth/cache
 @exec mkdir -m 1777 %D/etc/gale/auth/local
