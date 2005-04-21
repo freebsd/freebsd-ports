@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	duhdraw
-PORTVERSION=	2.7.7
+PORTVERSION=	2.7.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.helsinki.fi/u/penberg/duhdraw/
 
