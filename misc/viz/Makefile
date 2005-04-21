@@ -15,6 +15,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert invisible (binary) characters to a visible form
 
+MAKE_ARGS=	CC="${CC}" DEFS="${CFLAGS}"
+
 MAN1=		viz.1 inviz.1
+PLIST_FILES=	bin/viz bin/inviz
+
+do-install:
+		cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES:T} ${PREFIX}/bin/
+		cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
