@@ -1,5 +1,6 @@
 bin/gem
 bin/gem_server
+bin/gemwhich
 bin/generate_yaml_index.rb
 bin/update_rubygems
 lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.1.gem
@@ -11,6 +12,8 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/command.rb
 %%RUBY_SITELIBDIR%%/rubygems/config_file.rb
 %%RUBY_SITELIBDIR%%/rubygems/custom_require.rb
+%%RUBY_SITELIBDIR%%/rubygems/dependency_list.rb
+%%RUBY_SITELIBDIR%%/rubygems/deployment.rb
 %%RUBY_SITELIBDIR%%/rubygems/doc_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/format.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_commands.rb
