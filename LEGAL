@@ -514,6 +514,10 @@ sim*.zip		emulators/sim		No commercial use
 simpjava.tar.gz		java/simplicity		Restrictive license
 ski-*.i386.rpm		emulators/ski		Restrictive license
 skype_ver-*		net/skype		Not for redistribution
+SlimServer_v*		audio/slimserver	Version 6.0 and above contain
+						non-redistributable firmware,
+						images, and documentation.  See
+						License.txt in the distribution
 so-*-ga-bin-linux-en.*	editors/staroffice60	Must be bought and downloaded
 						directly from Sun via WWW interface
 so-7-ga-bin-linux-de.*	german/staroffice70	Must be bought and downloaded
