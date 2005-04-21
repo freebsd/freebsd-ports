@@ -6,16 +6,30 @@
 #
 
 PORTNAME=	wmeyes
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://thrush.omix.com/pub/misc/
+MASTER_SITES=	http://www.bstern.org/wmeyes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The world's most useless WindowMaker dock app
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-MAN1=		wmeyes.1
+USE_REINPLACE=	yes
+NO_INSTALL_MANPAGES=	yes
+
+PORTDOCS=	README
 PLIST_FILES=	bin/wmeyes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|Target(|TargetNoMan(|g' ${WRKSRC}/Imakefile
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
