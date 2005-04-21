@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20050125
+PORTVERSION=	0.0.20050421
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|}
 #		http://download.videolan.org/pub/videolan/contrib/ \
@@ -22,9 +22,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
-SHLIB_VER=	0
-CFLAGS+=	-DSYS_FREEBSD
+SHLIB_VER=	1
 INSTALLS_SHLIB=	yes
+HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/x264 \
 		include/x264.h \
@@ -35,33 +35,28 @@ PLIST_FILES=	bin/x264 \
 OPTIONS=	DEBUG "Enable Debugging" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
 
+CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC" \
+			--extra-ldflags="${LDFLAGS}"
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-
-CFLAGS+=	-DARCH_X86
 MAKE_ENV+=	ARCH_X86="1"
-.if ${MACHINE_CPU:Mmmx}
-CFLAGS+=	-DHAVE_MMXEXT
 .endif
-.if ${MACHINE_CPU:Msse}
-CFLAGS+=	-DHAVE_SSE2
-.endif
+
+.if ${ARCH}=="amd64"
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+MAKE_ENV+=	ARCH_X86_64="1"
 .endif
 
 .if !defined(WITH_DEBUG)
-MAKE_ENV+=	NDEBUG="1"
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O2 -funroll-loops
+CFLAGS+=	-O2 -funroll-loops -ffast-math
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CPPFLAGS} ${CFLAGS}|; \
-		s|%%SHLIB_VER%%|${SHLIB_VER}|; \
-		s|-lm|${LDFLAGS} -lm|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x264 ${PREFIX}/bin

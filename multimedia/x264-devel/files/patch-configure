@@ -1,0 +1,22 @@
+--- configure.orig	Thu Apr 21 08:03:47 2005
++++ configure	Thu Apr 21 08:08:16 2005
+@@ -22,8 +22,8 @@
+ debug="no"
+ vfw="no"
+ 
+-CC="gcc"
+-CFLAGS="-Wall -I. -O4 -funroll-loops -ffast-math -D__X264__"
++#CC="gcc"
++CFLAGS="-Wall -I. -D__X264__"
+ LDFLAGS=""
+ 
+ AS="nasm"
+@@ -75,7 +75,7 @@
+     ARCH="X86"
+     CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
+     ;;
+-  x86_64)
++  x86_64 | amd64)
+     ARCH="X86_64"
+     CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
+     AS="yasm"
