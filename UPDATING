@@ -6,6 +6,35 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050421:
+  AFFECTS: users of www/opera-devel
+  AUTHOR: avleeuwen@piwebs.com
+
+  Opera 8.0 final has been released and can be installed by installing the
+  www/opera port. The opera-devel port is now deprecated. If you want
+  to continue using the personal settings you used with www/opera-devel,
+  issue this command:
+
+	# mv ~/.opera-devel ~/.opera
+
+20050421:
+  AFFECTS: users of www/opera
+  AUTHOR: avleeuwen@piwebs.com
+
+  Opera has been updated to 8.0. If are upgrading from version 7.x or
+  below, it is recommend that you backup your personal "~/.opera"
+  directory and remove it, like this:
+
+        # cp -Rp ~/.opera ~/.opera-bak
+        # rm -rf ~/.opera/*
+
+  After that, you can put your bookmarks, email, contacts, etc. back in
+  ~/.opera/. The most important files are your bookmarks 
+  (~/.opera/opera6.adr) and your emails (~/.opera/mail). It is not a good 
+  idea to put opera6.ini, userstyle.ini, search.ini, pluginpath.ini and other 
+  non-personal stuff back in ~/.opera/. If you need custom settings, 
+  reconfigure Opera from the preferences pane or edit the files by hand.
+
 20050420:
   AFFECTS: users of www/ipython
   AUTHOR: dryice@liu.com.cn
