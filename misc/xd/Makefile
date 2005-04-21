@@ -14,6 +14,9 @@ DISTNAME=	xd-8087
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another dump utility
 
+MAKE_ARGS=	CC="${CC}" BINDIR="${PREFIX}/bin" \
+		MANDIR="${MAN1PREFIX}/man/man"
+
 MAN1=		xd.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/xd
