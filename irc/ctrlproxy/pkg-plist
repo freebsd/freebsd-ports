@@ -20,9 +20,9 @@ lib/ctrlproxy/libstats.so
 lib/ctrlproxy/libstrip.so
 %%DATADIR%%/motd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/ctrlproxy.html
-%%PORTDOCS%%%%DOCSDIR%%/ctrlproxy.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/ctrlproxy
