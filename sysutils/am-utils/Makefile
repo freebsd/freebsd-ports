@@ -17,7 +17,7 @@ COMMENT=	The Berkeley Automounter Suite of Utilities
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 
-.if defined(WITH_OPENLDAP)
+.if defined(WITH_OPENLDAP) || defined(PACKAGE_BUILDING)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap=yes --enable-ldflags=-L${LOCALBASE}/lib --enable-cppflags=-I${LOCALBASE}/include
 .endif
