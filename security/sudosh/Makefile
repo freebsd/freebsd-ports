@@ -7,6 +7,7 @@
 
 PORTNAME=		sudosh
 PORTVERSION=		1.4.8
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -20,6 +21,11 @@ USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
+.if defined(SUDOSH_LOGDIR)
+CONFIGURE_ARGS+=	--with-logdir="${SUDOSH_LOGDIR}"
+.else
+CONFIGURE_ARGS+=	--with-logdir=/var/log/sudosh
+.endif
 CONFIGURE_ENV=		LDFLAGS="-lutil"
 
 MAN1=			sudosh.1
