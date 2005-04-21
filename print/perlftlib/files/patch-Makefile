@@ -1,5 +1,5 @@
---- ./Makefile.orig	Mon Dec 14 14:13:26 1998
-+++ ./Makefile	Tue Dec 22 16:14:46 1998
+--- Makefile.orig	Mon Dec 14 02:13:26 1998
++++ Makefile	Wed Apr 20 16:31:11 2005
 @@ -1,8 +1,8 @@
  
 -BINDIR = /usr/local/bin
@@ -24,11 +24,13 @@
  	rm -f $(MANDIR)/ftinfo.1
  	ln -s $(BINDIR)/ftinfo $(MANDIR)/ftinfo.1
  	rm -f $(MANDIR)/mkttfdir.1
-@@ -43,7 +45,7 @@
+@@ -42,8 +44,8 @@
+ 	cp $? $@
  
  installlib: $(FREETYPELIB)
- 	cd FreeType; $(MAKE) $(MFLAGS) install
+-	cd FreeType; $(MAKE) $(MFLAGS) install
 -	cp FreeTypeWrapper.pm $(PERLLIBDIR)
++	cd FreeType; $(MAKE) $(MFLAGS) pure_install
 +	cp FreeTypeWrapper.pm $(PERLLIBDIR)/${PERL_VER}
  
  $(FREETYPELIB): FreeType/Makefile
