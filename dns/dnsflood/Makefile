@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.adotout.com/ \
 		http://voodoo.oberon.net/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS flood detector
 
 USE_GETOPT_LONG=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	http://core.segfault.pl/~hobbit/hidentd/dist/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and secure ident (RFC1413) server
 
 GNU_CONFIGURE=	yes

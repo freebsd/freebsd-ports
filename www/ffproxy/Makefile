@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	http://faith.eu.org/${PORTNAME}/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filtering HTTP proxy server
 
 GNU_CONFIGURE=	yes

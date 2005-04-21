@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://forgate.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	4g8 is a tool that allows you to capture traffic
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel

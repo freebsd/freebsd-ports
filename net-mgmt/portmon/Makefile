@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://voodoo.oberon.net/download/ \
 		http://www.aboleo.net/software/portmon/downloads/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that monitor network services
 
 GNU_CONFIGURE=	yes
