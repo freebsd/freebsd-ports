@@ -9320,6 +9320,7 @@ proguard	ports/java/proguard
 proj		ports/graphics/proj
 projectcenter.app	ports/devel/projectcenter.app
 projectionlib	ports/misc/projectionlib
+projectx	ports/multimedia/projectx
 prokyon3	ports/audio/prokyon3
 prom-mew	ports/mail/prom-mew
 prom-wl		ports/mail/prom-wl
