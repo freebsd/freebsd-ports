@@ -79,6 +79,8 @@ libdata/pkgconfig/ftgl.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/FTTextureGlyph_8cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FTVectoriser_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FTVectoriser_8cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_000000.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
