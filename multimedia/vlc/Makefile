@@ -176,7 +176,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -455,7 +455,7 @@ CONFIGURE_ARGS+=--enable-aa
 
 .if defined(WITH_H264) && !defined(WITHOUT_H264)
 CONFIGURE_ARGS+=--enable-x264
-LIB_DEPENDS+=	x264.0:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=--disable-x264
 .endif
@@ -668,8 +668,10 @@ post-patch:
 			${WRKSRC}/mozilla/Makefile.in
 .endif
 # skins2 interface
+.if ${OSVERSION} < 504000
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
 		${WRKSRC}/modules/gui/skins2/controls/ctrl_list.cpp
+.endif
 # s/Linux/FreeBSD/
 	@${REINPLACE_CMD} -e 's|Linux|FreeBSD|' \
 		${WRKSRC}/po/*
