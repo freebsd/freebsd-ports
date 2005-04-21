@@ -7,7 +7,7 @@
 
 PORTNAME=	dnshijacker
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns security
 MASTER_SITES=	http://pedram.redhive.com/downloads/
 
@@ -19,7 +19,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 LDFLAGS+=	-lpcap -lnet
 
 PLIST_FILES=	bin/dnshijacker
+
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README
+.endif
 
 do-build:
 	cd ${WRKSRC} && \
@@ -29,7 +32,9 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnshijacker ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
