@@ -13,9 +13,16 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asbutton/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that displays 4 or 9 buttons to run apps of your choice
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	asbutton
+MAKE_ARGS=	INCLUDES="-I${X11BASE}/include/X11 -I${X11BASE}/include" \
+		LIBINC="-L${X11BASE}/lib" LIBS="-lm -lX11 -lXpm -lXext" \
+		CCFLAGS="${CFLAGS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's:gcc :${CC} :' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asbutton ${PREFIX}/bin
