@@ -1,5 +1,5 @@
---- rw/libpnmrw.c.orig	Wed Oct  4 00:16:52 2000
-+++ rw/libpnmrw.c	Wed Oct  4 00:18:10 2000
+--- rw/libpnmrw.c.orig	Sun Apr 10 17:52:02 2005
++++ rw/libpnmrw.c	Sun Apr 17 01:33:51 2005
 @@ -131,6 +131,7 @@
  static void
  pm_perror(char *reason)
@@ -8,11 +8,11 @@
  #if defined(BSD4_4)
      __const extern char *__const sys_errlist[];
  #else
-@@ -146,6 +147,7 @@
- #endif
- #if !defined(__EMX__) || defined(__CYGWIN__)
-     extern int errno;
+@@ -141,6 +142,7 @@
+ #else
+ #ifdef MISSING_STRERROR
+     extern char *sys_errlist[];
 +#endif
  #endif
-     char *e;
- 
+ #endif
+ #endif
