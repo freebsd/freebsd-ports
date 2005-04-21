@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	im
-PORTVERSION=	147
+PORTVERSION=	148
 CATEGORIES=	mail
 MASTER_SITES=	http://tats.haun.org/im/ \
 		${MASTER_SITE_PORTS_JP}
@@ -16,22 +16,22 @@ COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --libdir=${PREFIX}/etc
-# If you use RPOP instead of APOP, comment out following line.
-#CONFIGURE_ARGS+=--enable-rpop
+CONFIGURE_ARGS=	--libdir=${PREFIX}/etc
 MAKE_ARGS=	prefix=${PREFIX} imlibdir=${PREFIX}/etc/im
 
-PORTDOCDIR=	${PREFIX}/share/doc/im
-SAMPLEDIR=	${PREFIX}/share/examples/im
-MYPORTDOCS=	00changes 00copyright 00copyright.jis 00perl 00readme 00usage
+# Use RPOP instead of APOP
+.if defined(WITH_RPOP)
+CONFIGURE_ARGS+=	--enable-rpop
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PORTDOCDIR}/man ${SAMPLEDIR}
-	@cd ${WRKSRC}; \
-	${INSTALL_DATA} ${MYPORTDOCS} ${PORTDOCDIR}; \
-	${INSTALL_DATA} man/* ${PORTDOCDIR}/man; \
-	${INSTALL_DATA} dot.im/* ${SAMPLEDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/00* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/man
+	${INSTALL_DATA} ${WRKSRC}/man/* ${DOCSDIR}/man
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/dot.im/* ${EXAMPLESDIR}
 .endif
 
 ## for make PLIST (only maintainer use)
