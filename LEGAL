@@ -263,6 +263,8 @@ goemon.tgz		audio/timidity		Uses copyrighted patches
 gogo239b.tgz		audio/gogo		Condition is not clear
 grande-KXL-*.tar.gz	games/grande		Possible copyright infringement
 graphviz/*		graphics/graphviz	Needs license before fetching
+GTL-*			misc/gtl		Non-commercial use only,
+						license forbids redistribution
 himeno/*		benchmarks/himeno	Uncertain to distribute sources and binaries
 hjb3_0-linux.sfx	www/hotjava		Licensed for individual
 						non-commercial use only
