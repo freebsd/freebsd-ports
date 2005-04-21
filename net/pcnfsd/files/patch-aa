@@ -40,7 +40,7 @@
   #define BSD_STYLE_CANCEL
   #define BSD_STYLE_STATUS
   #define BSD_STYLE_MONITOR
-! #define GETUSERSHELL
+! #define USE_GETUSERSHELL
   #endif
   
   #ifdef OSVER_ULTRIX
