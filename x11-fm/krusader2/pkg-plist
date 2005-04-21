@@ -4,6 +4,7 @@ lib/kde3/kio_iso.so
 lib/kde3/kio_krarc.la
 lib/kde3/kio_krarc.so
 share/applnk/Applications/krusader.desktop
+share/applnk/Applications/krusader_root-mode.desktop
 share/apps/konqueror/servicemenus/isoservice.desktop
 share/apps/krusader/about.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_addbookmark.png
@@ -90,8 +91,14 @@ share/apps/krusader/icons/hicolor/32x32/actions/kr_terminal.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_treeview.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_unselect.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_unselectall.png
+share/apps/krusader/icons/hicolor/32x32/actions/kr_useractions.png
 share/apps/krusader/konfig_small.jpg
 share/apps/krusader/krusaderui.rc
+share/apps/krusader/midnight_commander.color
+share/apps/krusader/total_commander.color
+share/apps/krusader/total_commander.keymap
+share/apps/krusader/total_commander.keymap.info
+share/apps/krusader/useractions.xml
 share/config/kio_isorc
 share/doc/HTML/en/krusader/bookmanadd.png
 share/doc/HTML/en/krusader/bookmanedit.png
@@ -125,12 +132,16 @@ share/icons/hicolor/16x16/apps/krusader.png
 share/icons/hicolor/16x16/apps/krusader_red.png
 share/icons/hicolor/22x22/apps/krusader.png
 share/icons/hicolor/22x22/apps/krusader_red.png
+share/icons/hicolor/22x22/apps/krusader_shield.png
 share/icons/hicolor/32x32/apps/krusader.png
 share/icons/hicolor/32x32/apps/krusader_red.png
+share/icons/hicolor/32x32/apps/krusader_shield.png
 share/icons/hicolor/48x48/apps/krusader.png
 share/icons/hicolor/48x48/apps/krusader_red.png
+share/icons/hicolor/48x48/apps/krusader_shield.png
 share/icons/hicolor/64x64/apps/krusader.png
 share/icons/hicolor/64x64/apps/krusader_red.png
+share/icons/hicolor/64x64/apps/krusader_shield.png
 share/locale/bg/LC_MESSAGES/krusader.mo
 share/locale/bs/LC_MESSAGES/krusader.mo
 share/locale/ca/LC_MESSAGES/krusader.mo
@@ -147,6 +158,7 @@ share/locale/pl/LC_MESSAGES/krusader.mo
 share/locale/pt/LC_MESSAGES/krusader.mo
 share/locale/ru/LC_MESSAGES/krusader.mo
 share/locale/sk/LC_MESSAGES/krusader.mo
+share/locale/sl/LC_MESSAGES/krusader.mo
 share/locale/sv/LC_MESSAGES/krusader.mo
 share/locale/uk/LC_MESSAGES/krusader.mo
 share/locale/zh_CN/LC_MESSAGES/krusader.mo
