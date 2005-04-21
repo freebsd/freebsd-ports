@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netspeed_applet
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.12
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
@@ -22,6 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehier intlhack gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PKG_CONFIG=${LOCALBASE}/bin/pkg-config
 
 .include <bsd.port.mk>
