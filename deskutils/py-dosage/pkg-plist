@@ -1,5 +1,4 @@
 bin/mainline
-%%PYTHON_SITELIBDIR%%/dosage/main.py
 %%PYTHON_SITELIBDIR%%/dosage/progress.py
 %%PYTHON_SITELIBDIR%%/dosage/events.py
 %%PYTHON_SITELIBDIR%%/dosage/comic.py
@@ -8,6 +7,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/output.py
 %%PYTHON_SITELIBDIR%%/dosage/__init__.py
 %%PYTHON_SITELIBDIR%%/dosage/version.py
+%%PYTHON_SITELIBDIR%%/dosage/mainline.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Zapiro.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Qwantz.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Spoonies.py
@@ -129,6 +129,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/StarCrossdDestiny.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Winter.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/ShadowInTheMirror.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/PiledHigherAndDeeper.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/UnderPower.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/OurHomePlanet.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/NeoGreenwood.py
@@ -139,15 +140,12 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/Fallen.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/EightBitTheater.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/BasicComicModule.py
-%%PYTHON_SITELIBDIR%%/dosage/modules/helpers/XHTMLComicModule.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/PHPComicModule.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/__init__.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/BasicComicModule.pyc
-%%PYTHON_SITELIBDIR%%/dosage/modules/helpers/XHTMLComicModule.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/PHPComicModule.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/BasicComicModule.pyo
-%%PYTHON_SITELIBDIR%%/dosage/modules/helpers/XHTMLComicModule.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/PHPComicModule.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/helpers/__init__.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheOrderOfTheStick.py
@@ -272,6 +270,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/StarCrossdDestiny.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/Winter.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/ShadowInTheMirror.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/PiledHigherAndDeeper.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/UnderPower.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/OurHomePlanet.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/NeoGreenwood.pyc
@@ -403,6 +402,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/StarCrossdDestiny.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/Winter.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/ShadowInTheMirror.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/PiledHigherAndDeeper.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/UnderPower.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/OurHomePlanet.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/NeoGreenwood.pyo
@@ -413,7 +413,6 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/Fallen.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/EightBitTheater.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheOrderOfTheStick.pyo
-%%PYTHON_SITELIBDIR%%/dosage/main.pyc
 %%PYTHON_SITELIBDIR%%/dosage/progress.pyc
 %%PYTHON_SITELIBDIR%%/dosage/events.pyc
 %%PYTHON_SITELIBDIR%%/dosage/comic.pyc
@@ -422,7 +421,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/output.pyc
 %%PYTHON_SITELIBDIR%%/dosage/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dosage/version.pyc
-%%PYTHON_SITELIBDIR%%/dosage/main.pyo
+%%PYTHON_SITELIBDIR%%/dosage/mainline.pyc
 %%PYTHON_SITELIBDIR%%/dosage/progress.pyo
 %%PYTHON_SITELIBDIR%%/dosage/events.pyo
 %%PYTHON_SITELIBDIR%%/dosage/comic.pyo
@@ -431,6 +430,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/output.pyo
 %%PYTHON_SITELIBDIR%%/dosage/__init__.pyo
 %%PYTHON_SITELIBDIR%%/dosage/version.pyo
+%%PYTHON_SITELIBDIR%%/dosage/mainline.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/dosage/modules/helpers
 @dirrm %%PYTHON_SITELIBDIR%%/dosage/modules
 @dirrm %%PYTHON_SITELIBDIR%%/dosage
