@@ -7,7 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-CATEGORIES=	www
+CATEGORIES=	www ipv6
 MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
 		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
 		http://www.mehok.uni-miskolc.hu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
@@ -28,10 +28,10 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	7.54
-OPERA_MINVER=	u2
+OPERA_VER=	8.0
+OPERA_MINVER=	0
 OPERA_REL=	final
-OPERA_DATE=	20050131
+OPERA_DATE=	20050415
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
@@ -74,10 +74,8 @@ pre-everything::
 	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to not install aspell.'
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/ini/pluginpath.ini
-
 post-patch:
+	@${CP} ${WRKSRC}/search.ini ${WRKSRC}/locale/en
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
 			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
