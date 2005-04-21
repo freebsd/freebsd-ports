@@ -44,6 +44,10 @@ PLISTDIR+=	${EXAMPLESDIR}
 
 .include <bsd.port.pre.mk>
 
+.if ( ${OSVERSION} < 500000)
+USE_GCC=	3.4
+.endif
+
 post-patch:
 	@${GREP} -lR "share/matplotlib" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s,share/matplotlib,share/py-matplotlib,g"
