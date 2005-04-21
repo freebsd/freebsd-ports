@@ -7,6 +7,7 @@
 
 PORTNAME=	pcnfsd
 PORTVERSION=	93.02.16
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bcm.tmc.edu/pcnfs/
 DISTNAME=	pcnfsd.93.02.16
