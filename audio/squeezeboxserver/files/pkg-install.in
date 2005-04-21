@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/audio/squeezeboxserver/files/pkg-install.in,v 1.1 2005-04-21 05:17:02 brooks Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/squeezeboxserver/files/pkg-install.in,v 1.2 2005-04-21 20:05:53 brooks Exp $
 
 name=slimserver
 u=slimserv
@@ -11,6 +11,7 @@ comment="Slim Devices SlimServer pseudo-user"
 slimdir="%%PREFIX%%/%%SLIMDIR%%"
 statedir=/var/db/slimserver
 cachedir=${statedir}/cache
+conffile=${statedir}/slimserver.conf
 playlistdir=${statedir}/playlists
 pidfile=/var/run/${name}.pid
 newsyslogfile=/etc/newsyslog.conf
@@ -43,18 +44,24 @@ PRE-INSTALL)
 	fi
 	;;
 POST-INSTALL)
-	if [ ! -d ${statedir} ]; then
-		mkdir -p ${statedir}
+	if [ -d ${statedir} ]; then
 		chown -R ${u}:${g} ${statedir}
 	fi
-	if [ ! -d ${cachedir} ]; then
-		mkdir -p ${cachedir}
+	if [ -d ${cachedir} ]; then
 		chown -R ${u}:${g} ${cachedir}
 	fi
-	if [ ! -d ${playlistdir} ]; then
-		mkdir -p ${playlistdir}
+	if [ -d ${playlistdir} ]; then
 		chown -R ${u}:${g} ${playlistdir}
 	fi
+        if [ -d /var/run/slimserver ]; then
+                chown -R ${u}:${g} /var/run/slimserver
+        fi
+        if [ -f ${conffile} ]; then
+                chown ${u}:${g} ${conffile}
+        fi
+        if [ -f ${logfile} ]; then
+                chown ${u}:${g} ${logfile}
+        fi
 	if egrep -q "^${logfile}\>" ${newsyslogfile}; then
 		echo "Using existing ${newsyslogfile} entry."
 	else
