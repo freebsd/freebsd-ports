@@ -5622,6 +5622,7 @@ maketool	ports/devel/maketool
 makeztxt	ports/palm/makeztxt
 malbolge	ports/lang/malbolge
 malsync		ports/palm/malsync
+mambo		ports/www/mambo
 man.el		ports/misc/man.el
 man2html	ports/textproc/man2html
 man2web		ports/www/man2web
