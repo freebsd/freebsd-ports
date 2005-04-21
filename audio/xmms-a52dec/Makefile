@@ -26,7 +26,7 @@ CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64"
-CFLAGS=	-fPIC
+CFLAGS+=	-fPIC
 .endif
 
 PLIST_FILES=	lib/xmms/Input/liba52dec.so
