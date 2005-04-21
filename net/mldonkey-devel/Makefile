@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.30.6
+PORTVERSION=	2.5.30.7
 CATEGORIES+=	net
 MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/
 PKGNAMESUFFIX=	-devel
@@ -21,7 +21,7 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 #DOWNLOADVERSION=${PORTVERSION:R}
-DOWNLOADVERSION=2.5.30.6
+DOWNLOADVERSION=2.5.30.7
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
@@ -35,7 +35,6 @@ USE_GMAKE=	yes
 ALL_TARGET=	opt
 
 CONFIGURE_ARGS+=\
-		--disable-pthread \
 		--enable-ocamlver=3 \
 		--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV+=	\
