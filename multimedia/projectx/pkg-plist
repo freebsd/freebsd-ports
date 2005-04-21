@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+bin/project-x
+%%DATADIR%%/htmls/cli.html
+%%DATADIR%%/htmls/faq.html
+%%DATADIR%%/htmls/index.html
+%%DATADIR%%/htmls/images/right.gif
+%%DATADIR%%/htmls/images/up.gif
+%%DATADIR%%/htmls/images/px.gif
+%%DATADIR%%/htmls/de/cli.html
+%%DATADIR%%/htmls/de/faq.html
+%%DATADIR%%/htmls/de/index.html
+%%DATADIR%%/lib/commons-net-1.3.0.jar
+%%DATADIR%%/lib/jakarta-oro-2.0.8.jar
+%%DATADIR%%/ProjectX.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/htmls/images
+@dirrm %%DATADIR%%/htmls/de
+@dirrm %%DATADIR%%/htmls
+@dirrm %%DATADIR%%

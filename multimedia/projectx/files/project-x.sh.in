@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+case "$#" in
+0)
+	mkdir -p "${HOME}/.projectx"
+	cd "${HOME}/.projectx"
+	ln -sf %%PREFIX%%/share/projectx/htmls .
+	;;
+esac
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/ProjectX.jar" "$@"
