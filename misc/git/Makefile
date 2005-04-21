@@ -17,6 +17,7 @@ COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
 GNU_CONFIGURE=	YES
 MAN1=		git.1 gitaction.1 gitkeys.1 gitmount.1 \
 		gitrgrep.1 gitunpack.1
+INFO=		git
 
 pre-patch:
 	${CP} ${WRKSRC}/term/.gitrc.ansi \
