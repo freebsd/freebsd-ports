@@ -9,11 +9,10 @@ PORTNAME=	ump
 PORTVERSION=	1.10
 PORTREVISION=	7
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
-		http://www.geocities.com/SiliconValley/Lab/2826/1-10/	\
-		http://pubweb.bnl.gov/people/hoff/midi/1.10/	\
-		${MASTER_SITE_NETSCAPE}
-MASTER_SITE_SUBDIR=	sdk/plugin/unix
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/timidity/}:timidity \
+		http://www.geocities.com/SiliconValley/Lab/2826/1-10/:ump \
+		http://pubweb.bnl.gov/people/hoff/midi/1.10/:ump \
+		${MASTER_SITE_NETSCAPE:S/%SUBDIR%/sdk\/plugin\/unix/}:plugin
 DISTFILES=	${BZ2DIST} ${ZDIST}
 
 PATCH_SITES=	http://www.timidity.jp/dist/
@@ -24,8 +23,8 @@ COMMENT=	Unix MIDI Plugin based on TiMidity++
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 
-BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2
-ZDIST=		unix-sdk-3.0b5.tar.Z ump_with_volume.tar.Z timdiffs.tar.Z
+BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2:timidity
+ZDIST=		unix-sdk-3.0b5.tar.Z:plugin ump_with_volume.tar.Z:ump timdiffs.tar.Z:ump
 
 TIMIDITY_VERSION=	2.13.2
 
