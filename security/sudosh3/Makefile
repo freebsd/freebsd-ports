@@ -6,21 +6,22 @@
 #
 
 PORTNAME=		sudosh
-PORTVERSION=		1.4.8
-PORTREVISION=		1
+PORTVERSION=		1.4.9.1
 CATEGORIES=		security
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
+DISTNAME=		${PORTNAME}-${PORTVERSION:C/\.[0-9]*$/p&/:C/p\./p/}
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=	A sudo shell
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
-USE_BZIP2=		yes
+USE_GZIP=		yes
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
+CONFIGURE_ARGS+=	--program-transform-name=''
 .if defined(SUDOSH_LOGDIR)
 CONFIGURE_ARGS+=	--with-logdir="${SUDOSH_LOGDIR}"
 .else
