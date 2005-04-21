@@ -65,6 +65,7 @@ else
 		xcf xcfcmyk \
 		faxg3 faxg32d faxg4 \
 		miff24 inferno jpeg jpeggray \
+		mgrmono mgrgray2 mgrgray4 mgrgray8 mgr4 mgr8 \
 		pcxmono pcxgray pcx16 pcx256 pcx24b pcxcmyk pdfwrite \
 		psdrgb psdcmyk \
 		bit bitrgb bitcmyk plan9bm pam pbm pbmraw \
@@ -291,6 +292,12 @@ Have fun with this new configuration style !     -andreas \n\n\
   "inferno"  "Inferno bitmaps" "$status_inferno" \
   "jpeg"     "JPEG format, RGB output" "$status_jpeg" \
   "jpeggray" "JPEG format, gray output" "$status_jpeggray" \
+  "mgrmono"  "MGR devices 1-bit monochrome" "$status_mgrmono" \
+  "mgrgray2" "MGR devices 2-bit gray scale" "$status_mgrgray2" \
+  "mgrgray4" "MGR devices 4-bit gray scale" "$status_mgrgray4" \
+  "mgrgray8" "MGR devices 8-bit gray scale" "$status_mgrgray8" \
+  "mgr4"     "MGR devices 4-bit (VGA) color" "$status_mgr4" \
+  "mgr8"     "MGR devices 8-bit color" "$status_mgr8" \
   "pcxmono"  "PCX file format, monochrome 1-bit b/w" "$status_pcxmono" \
   "pcxgray"  "PCX file format, 8-bit gray scale" "$status_pcxgray" \
   "pcx16"    "PCX file format, 4-bit planar EGA/VGA color" "$status_pcx16" \

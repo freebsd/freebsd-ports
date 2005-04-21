@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/bdftops
+bin/dumphint
 bin/dvipdf
 bin/eps2eps
 bin/ert
@@ -75,12 +76,14 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Add-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Add-RKSJ-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Add-V
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-3
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-B5pc
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-ETenms-B5
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-H-CID
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-H-Host
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-H-Mac
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-UCS2
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-4
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-GBK-EUC
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-GBpc-EUC
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-H-CID
@@ -90,6 +93,7 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-0
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-1
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-2
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-4
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-90ms-RKSJ
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-90pv-RKSJ
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-H-CID
@@ -98,6 +102,7 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-PS-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-PS-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-UCS2
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-H-CID
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-H-Host
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-H-Mac
@@ -228,7 +233,6 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/doc/Lib.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Maintain.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Make.htm
-%%DATADIR%%/%%GS_VERSION%%/doc/New-user.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/News.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/PUBLIC
 %%DATADIR%%/%%GS_VERSION%%/doc/Projects.htm
@@ -241,7 +245,6 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/doc/Readme.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Release.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Source.htm
-%%DATADIR%%/%%GS_VERSION%%/doc/Tester.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Unix-lpr.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Use.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Xfonts.htm
@@ -303,6 +306,7 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/dnj750c.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/dnj750m.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/docie.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/dumphint.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/errpage.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/font2c.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/font2pcl.ps
