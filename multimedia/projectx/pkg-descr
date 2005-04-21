@@ -1,0 +1,11 @@
+Project X - a free Java based demux utility
+Copyright (C) 2001-2004 dvb.matt
+
+European digital radio & television uses the DVB standard to broadcast its
+data. Project X gives you a look behind the transmissions and tries its best
+to handle & repair many stream types and shows what went wrong on reception.
+
+It is intended for educational purposes only, as a non-commercial test project.
+It may not be used otherwise. Most parts are only experimental.
+
+WWW: http://sourceforge.net/projects/project-x
