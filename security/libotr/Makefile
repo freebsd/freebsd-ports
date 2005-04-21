@@ -8,6 +8,7 @@
 
 PORTNAME=	libotr
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 
