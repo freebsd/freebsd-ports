@@ -127,7 +127,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/doc/manuals
 	@${LN} -sf ${DOCSDIR}/html \
 		${PREFIX}/lib/${PORTNAME}/doc/manuals/html
-.endif /* NOPORTDOCS */
+.endif # NOPORTDOCS
 # Binary installation
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/bin/pc-linux_elf
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME}

@@ -83,6 +83,6 @@ do-install:
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif /* NOPORTDOCS */
+.endif # NOPORTDOCS
 
 .include <bsd.port.mk>

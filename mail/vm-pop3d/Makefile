@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 
 .if defined(WITH_IPVIRTUAL)
 CONFIGURE_ARGS+=	--enable-ip-based-virtual --enable-virtual
-.elsif defined(WITH_VIRTUAL)
+.elif defined(WITH_VIRTUAL)
 CONFIGURE_ARGS+=	--enable-virtual
 .endif
 
