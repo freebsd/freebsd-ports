@@ -1,0 +1,43 @@
+Index: kommander/executor/instance.cpp
+===================================================================
+RCS file: /home/kde/kdewebdev/kommander/executor/instance.cpp,v
+retrieving revision 1.49
+retrieving revision 1.49.2.3
+diff -u -3 -d -p -r1.49 -r1.49.2.3
+--- kommander/executor/instance.cpp	29 Dec 2004 09:58:46 -0000	1.49
++++ kommander/executor/instance.cpp	17 Apr 2005 08:56:01 -0000	1.49.2.3
+@@ -131,6 +131,14 @@ bool Instance::build(QFile *a_file)
+ 
+ bool Instance::run(QFile *a_file)
+ {
++  // Check whether extension is *.kmdr
++  if (!m_uiFileName.fileName().endsWith(".kmdr")) {
++    KMessageBox::error(0, i18n("<qt>This file does not have a <b>.kmdr</b> extension. As a security precaution "
++           "Kommander will only run Kommander scripts with a clear identity.</qt>"),
++           i18n("Wrong Extension"));
++    return false;
++  }
++
+   /* add runtime arguments */
+   if (m_cmdArguments) {
+     QString args;
+@@ -144,8 +152,17 @@ bool Instance::run(QFile *a_file)
+   }
+   KommanderWidget::setGlobal("ARGCOUNT", QString("%1").arg(m_cmdArguments));
+     
+-  if (m_uiFileName.directory().startsWith(locateLocal("tmp", "") + "/") ||
+-      m_uiFileName.directory().startsWith("/tmp/"))
++  QStringList tmpDirs = KGlobal::dirs()->resourceDirs("tmp");
++  tmpDirs += KGlobal::dirs()->resourceDirs("cache");
++  tmpDirs.append("/tmp/");
++  tmpDirs.append("/var/tmp/");
++  
++  bool inTemp = false;
++  for (QStringList::ConstIterator I = tmpDirs.begin(); I != tmpDirs.end(); ++I)
++  if (m_uiFileName.directory().startsWith(*I))
++      inTemp = true;
++        
++  if (inTemp)
+   {
+      if (KMessageBox::warningYesNo(0, i18n("<qt>This dialog is running from your <i>/tmp</i> directory. "
+          " This may mean that it was run from a KMail attachment or from a webpage. "
