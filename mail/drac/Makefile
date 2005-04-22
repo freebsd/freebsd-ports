@@ -24,8 +24,7 @@ LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	dracd.sh
 
 MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
@@ -61,12 +60,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
 .endif
 
-post-build:
-	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/dracd.sh > ${WRKSRC}/dracd.sh
-
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/dracd.sh ${PREFIX}/etc/rc.d/dracd.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
