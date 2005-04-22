@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.0.0.7
-PORTREVISION=	0
+PORTVERSION=	1.0.0.20
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -41,7 +40,7 @@ do-build:
 
 do-install:
 	${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
-	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"$$@\"" >${PREFIX}/bin/skype
+	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' exec skype_bin \"\$$@\"" >${PREFIX}/bin/skype
 	${CHMOD} a+rx ${PREFIX}/bin/skype
 .if ${HAVE_GNOME:Mgnomehier} != ""
 	${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/gnome/applications/
@@ -67,6 +66,8 @@ post-install:
 	@${ECHO} " - Creative CT5880 (snd_es137x) based ones"
 	@${ECHO} " - Yamaha DS-1E (snd_ds1) based ones (reported for FreeBSD 4.10)"
 	@${ECHO} " - SB16 DSP 4.16 (snd_sb16) based ones"
+	@${ECHO} " - ESS 18xx (snd_ess) based ones"
+	@${ECHO} " - Acer Labs M5451 (snd_t4dwave) based ones"
 	@${ECHO}
 	@${ECHO} "If your soundcard is not listed here, send the the output of 'cat /dev/sndstat' with a short note if it works or not to ${MAINTAINER} please." | fmt
 	@${ECHO} "##########################################################################"
