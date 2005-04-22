@@ -612,6 +612,7 @@
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
     SUBDIR += phpgedview
+    SUBDIR += phpmyfaq
     SUBDIR += phpsurveyor
     SUBDIR += phpwebapp
     SUBDIR += phpwiki
