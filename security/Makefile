@@ -191,6 +191,7 @@
     SUBDIR += libparanoia
     SUBDIR += libprelude
     SUBDIR += libsectok
+    SUBDIR += libssh2
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
