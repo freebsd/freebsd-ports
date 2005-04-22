@@ -19,6 +19,8 @@ PATCHFILES=	${DISTNAME}-ipv6-20020129-3.diff.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mirror program for FTP sites (written in C)
 
+MAKE_ARGS=	MANDIR=${MAN1PREFIX}/man/man
+
 MANCOMPRESSED=	yes
 MAN1=		spegla.1
 
