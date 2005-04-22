@@ -16,6 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Four-Dimensional graphics tumbler for X11
 
 USE_XLIB=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
+		CLIBS="-lm -lX11 -L${X11BASE}/lib"
+
 MAN1=		4va.1
 
 4VA_DATA_FILES=		16cell.4vd 24cell.4vd 5cell.4vd 600cell.4vd ctor.4vd \
