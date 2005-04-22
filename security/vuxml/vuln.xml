@@ -91,7 +91,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    vulnerabilities in the PCX and other image file format
 	    readers, some of them exploitable to execute arbitrary
 	    code.</p>
-	  <p><strong>Impact:</strong> Remotly supplied, specially
+	  <p><strong>Impact:</strong> Remotely supplied, specially
 	    crafted image files can be used to execute arbitrary
 	    code.</p>
 	</blockquote>
