@@ -20,6 +20,7 @@
 %%PYTHON_SITELIBDIR%%/numarray/_converter.so
 %%PYTHON_SITELIBDIR%%/numarray/_ndarray.so
 %%PYTHON_SITELIBDIR%%/numarray/_numarray.so
+%%PYTHON_SITELIBDIR%%/numarray/_numerictype.so
 %%PYTHON_SITELIBDIR%%/numarray/_objectarray.so
 %%PYTHON_SITELIBDIR%%/numarray/_operator.so
 %%PYTHON_SITELIBDIR%%/numarray/_sort.so
@@ -363,6 +364,12 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/sortperf.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testthread.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Lib/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/RipNumeric/_na_cephesmodule.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/RipNumeric/gen_na_cephes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/RipNumeric/na_cephes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/RipNumeric/na_cephes_table.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/RipNumeric/nc_cephesmodule.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/RipNumeric/rip_ufuncs.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/_foo.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/_na_specialmodule.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/airy.c
@@ -371,6 +378,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup_special.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/Src
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/RipNumeric
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/Lib
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/f2py
