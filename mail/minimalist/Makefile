@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minimalist
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mml.org.ua/LIST/ \
 		http://www.giovannelli.it/~gmarco/files/
@@ -16,12 +16,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	A minimalistic mailing list manager
 
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+EXTRA_SUB_FILES=docs/README minimalist.conf-sample minimalist.pl \
+		contrib/minimalist_request.pl
 
 post-patch:
-	@(cd ${WRKSRC}; ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' docs/README \
-		minimalist.conf-sample minimalist.pl contrib/minimalist_request.pl)
+	@(cd ${WRKSRC}; ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},;s,#!/bin/perl,${PERL},;s,--fqdn,,;s,/usr/lib/sendmail,/usr/sbin/sendmail,' ${EXTRA_SUB_FILES})
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/minimalist/FAQ
