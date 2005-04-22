@@ -1,0 +1,11 @@
+--- tools/extra_defs_gen/Makefile.in.bak	Tue Jun  8 19:58:29 2004
++++ tools/extra_defs_gen/Makefile.in	Fri Apr 22 12:25:56 2005
+@@ -119,7 +119,7 @@
+ LIBGNOMEPRINTMM_VERSION = @LIBGNOMEPRINTMM_VERSION@
+ LIBGNOMEPRINT_VERSION_NEEDED = @LIBGNOMEPRINT_VERSION_NEEDED@
+ LIBOBJS = @LIBOBJS@
+-LIBS = $(LIBGNOMEPRINTMM_LIBS) -lglibmm_generate_extra_defs-2.4
++LIBS = $(LIBGNOMEPRINTMM_LIBS) -L$(GMM_PROCDIR)/../.. -lglibmm_generate_extra_defs-2.4
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
