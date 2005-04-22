@@ -132,7 +132,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/understand_c/doc/manuals
 	@${LN} -sf ${PREFIX}/share/doc/understand_c/html \
 		${PREFIX}/lib/understand_c/doc/manuals/html
-.endif /* NOPORTDOCS */
+.endif # NOPORTDOCS
 # Binary installation
 	@${MKDIR} ${PREFIX}/lib/understand_c/bin/pc-linux_elf
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/understand_c

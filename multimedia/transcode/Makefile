@@ -324,7 +324,7 @@ pre-everything::
 .if !defined(WITH_AVIFILE)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable avifile-dependent modules by defining WITH_AVIFILE."
-.endif(WITH_AVIFILE)
+.endif #WITH_AVIFILE
 .if !defined(WITH_QUICKTIME)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable openquicktime-dependent modules by defining WITH_QUICKTIME."
