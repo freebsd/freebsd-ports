@@ -1,5 +1,5 @@
---- driver/Makefile.in.orig	Sun Mar 20 23:18:18 2005
-+++ driver/Makefile.in	Sun Apr 10 17:56:12 2005
+--- driver/Makefile.in.orig	Mon Mar 21 02:18:18 2005
++++ driver/Makefile.in	Thu Apr 21 01:46:25 2005
 @@ -121,7 +121,7 @@
  		  test-randr    xdpyinfo
  
@@ -9,14 +9,26 @@
  XML_LIBS	= @XML_LIBS@
  
  XDPMS_LIBS	= @XDPMS_LIBS@
-@@ -234,7 +234,6 @@
+@@ -232,9 +232,8 @@
+ MEN		= $(MEN_1) @MEN_OSX@
+ 
  EXTRAS		= README Makefile.in \
- 		  XScreenSaver.ad.in XScreenSaver-Xm.ad xscreensaver.pam \
+-		  XScreenSaver.ad.in XScreenSaver-Xm.ad xscreensaver.pam \
++		  XScreenSaver.ad.in XScreenSaver-Xm.ad \
  		  xscreensaver-demo.glade2 xscreensaver-demo.glade2p \
 -		  screensaver-properties.desktop.in \
  		  .gdbinit
  VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
  		  vms-getpwnam.c vms-pwd.h vms-hpwd.c vms-validate.c \
+@@ -253,7 +252,7 @@
+ tests: $(TEST_EXES)
+ 
+ install:   install-program   install-ad    install-scripts \
+-	   install-gnome     install-man   install-xml install-pam
++	   install-gnome     install-man   install-xml
+ uninstall: uninstall-program uninstall-ad  \
+ 	   uninstall-gnome   uninstall-man uninstall-xml  
+ 
 @@ -461,21 +460,6 @@
   $$e ""									     ;\
  	  fi ;								\
