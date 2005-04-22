@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolki
 
 USE_PYTHON=	yes
 
-MAKE_ENV=	PYTHON_VERSION="${PYTHON_VERSION}"
+MAKE_ARGS=	PREFIX="${PREFIX}" PYTHON="${LOCALBASE}/bin/${PYTHON_VERSION}"
 ALL_TARGET=	pythonprogs
 
 do-configure:
@@ -34,7 +34,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/share/pygmy/icons
 	${INSTALL_DATA} ${WRKSRC}/pygmy ${PREFIX}/share/pygmy
-	@printf "#!/bin/sh\nexec ${PYTHON_CMD} ${PREFIX}/share/pygmy/pygmy" > \
+	@${PRINTF} "#!/bin/sh\nexec ${PYTHON_CMD} ${PREFIX}/share/pygmy/pygmy" > \
 		${WRKDIR}/pygmy.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/pygmy.sh ${PREFIX}/bin/pygmy
 
