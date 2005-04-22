@@ -1,7 +1,0 @@
---- Makefile.orig	Thu Dec 19 19:12:26 1996
-+++ Makefile	Sun Jan 24 02:33:30 1999
-@@ -8,2 +8,2 @@
--CC=	cc
--CFLAGS= #-DDEBUG -g
-+#CC=	cc
-+#CFLAGS= #-DDEBUG -g

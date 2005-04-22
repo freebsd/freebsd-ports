@@ -15,12 +15,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Progressive Networks RealAudio Proxy Kit 3.0 beta 1
 
-# Get it through http://www.real.com/firewall/fwdload/index.html
-# if the master site does not exists somehow.
 ALL_TARGET=	raproxy
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 RESTRICTED=	License allows only use in a firewall or with RA products.
 
+PLIST_FILES=	libexec/raproxy
+PORTDOCS=	*
 MAN8=		raproxy.8
 
 do-install:
