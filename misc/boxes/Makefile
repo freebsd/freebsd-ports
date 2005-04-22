@@ -21,11 +21,14 @@ MAN1=		boxes.1
 USE_GMAKE=	yes
 USE_BISON=	yes
 ALL_TARGET=	boxes
-MAKE_ARGS=	GLOBALCONF=${GLOBALCONF} CFLAGS_ADDTL="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" GLOBALCONF=${GLOBALCONF} CFLAGS="${CFLAGS} -ansi -I. -Iregexp"
 
 GLOBALCONF=	${DATADIR}/boxes-config
 PLIST_FILES=	bin/boxes share/boxes/boxes-config
 PLIST_DIRS=	share/boxes
+
+do-configure:
+	${RM} ${WRKSRC}/src/boxes.h ${WRKSRC}/doc/boxes.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/boxes ${PREFIX}/bin
