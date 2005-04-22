@@ -1,5 +1,0 @@
-bin/wmpop3
-%%PORTDOCS%%share/doc/wmpop3/README
-share/examples/wmpop3/wmpop3rc
-%%PORTDOCS%%@dirrm share/doc/wmpop3
-@dirrm share/examples/wmpop3
