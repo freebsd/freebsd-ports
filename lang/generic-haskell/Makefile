@@ -13,6 +13,8 @@ DISTNAME=	gh-${PORTVERSION}-source
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	The Generic Haskell compiler
 
+BROKEN=		"Not compatible with latest GHC yet"
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		bash:${PORTSDIR}/shells/bash
 

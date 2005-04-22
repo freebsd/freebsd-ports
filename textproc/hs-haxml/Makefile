@@ -15,6 +15,8 @@ DISTNAME=	HaXml-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A collection of utilities for using Haskell and XML together
 
+BROKEN=		"Not compatible with latest GHC yet"
+
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
