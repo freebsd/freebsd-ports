@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/cftp
-@unexec install-info --delete %D/info/cftp.info %D/info/dir
-info/cftp.info
-@exec install-info %D/info/cftp.info %D/info/dir

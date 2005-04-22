@@ -18,4 +18,7 @@ COMMENT=	Comfortable FTP, a full screen ftp client
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sftp
 
+PLIST_FILES=	bin/cftp
+INFO=		cftp
+
 .include <bsd.port.mk>
