@@ -54,6 +54,7 @@
     SUBDIR += terminus-font
     SUBDIR += texcm-ttf
     SUBDIR += tkfont
+    SUBDIR += tolkien-ttf
     SUBDIR += ttmkfdir
     SUBDIR += tv-fonts
     SUBDIR += urwfonts

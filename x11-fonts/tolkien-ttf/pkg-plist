@@ -1,0 +1,26 @@
+@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
+%%FONTSDIR%%/ANGERTH.TTF
+%%FONTSDIR%%/CirthErebor.ttf
+%%FONTSDIR%%/CirthErebor1.ttf
+%%FONTSDIR%%/CirthErebor2.ttf
+%%FONTSDIR%%/CirthEreborCaps.ttf
+%%FONTSDIR%%/CirthEreborCaps1.ttf
+%%FONTSDIR%%/CirthEreborCaps2.ttf
+%%FONTSDIR%%/Parmaite.TTF
+%%FONTSDIR%%/Parmaite_alt.TTF
+%%FONTSDIR%%/TENGWAR.TTF
+%%FONTSDIR%%/TengwarNoldor.ttf
+%%FONTSDIR%%/TengwarNoldorAlt.ttf
+%%FONTSDIR%%/TengwarNoldorCapitals1.ttf
+%%FONTSDIR%%/TengwarNoldorCapitals2.ttf
+%%FONTSDIR%%/TengwarQuenya.ttf
+%%FONTSDIR%%/TengwarQuenyaAlt.ttf
+%%FONTSDIR%%/TengwarQuenyaCapitals1.ttf
+%%FONTSDIR%%/TengwarQuenyaCapitals2.ttf
+%%FONTSDIR%%/TengwarSindarin.ttf
+%%FONTSDIR%%/TengwarSindarinAlt.ttf
+%%FONTSDIR%%/TengwarSindarinCapitals1.ttf
+%%FONTSDIR%%/TengwarSindarinCapitals2.ttf
+%%FONTSDIR%%/Tengwarc.ttf
+%%FONTSDIR%%/fonts.cache-1
+@dirrm %%FONTSDIR%%
