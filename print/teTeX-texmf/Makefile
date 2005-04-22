@@ -91,7 +91,7 @@ CYRILLICFONTS=	wncyss10.pfb wncyb10.pfb wncyi10.pfb wncyr10.pfb wncysc10.pfb
 do-install:
 	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}
 	cd ${PREFIX}/${TEXMFDISTDIR} && \
-		${TAR} xzUf ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF_SRC} \
+		${TAR} -x -z -U -f ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF_SRC} \
 			${EXCLUDE_LIST:S,^,--exclude ,g}
 	${INSTALL_DATA} ${FILESDIR}/cslatex.ini ${PREFIX}/${TEXMFDISTDIR}/tex/cslatex/cslatex.ini
 	${INSTALL_DATA} ${FILESDIR}/csplain.ini ${PREFIX}/${TEXMFDISTDIR}/tex/csplain/csplain.ini
