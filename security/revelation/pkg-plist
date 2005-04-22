@@ -51,6 +51,8 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/util.pyo
 %%PYTHON_SITELIBDIR%%/revelation/authmanager.so
 @dirrm %%PYTHON_SITELIBDIR%%/revelation
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2> /dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2> /dev/null || true
 share/gnome/applications/revelation.desktop
 share/mime/packages/revelation.xml
 @exec update-desktop-database > /dev/null || /usr/bin/true
