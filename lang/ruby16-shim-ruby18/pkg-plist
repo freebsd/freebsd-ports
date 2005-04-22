@@ -78,6 +78,7 @@ bin/rdoc%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/openssl.rb
 %%RUBY_SITELIBDIR%%/openssl/buffering.rb
 @dirrm %%RUBY_SITELIBDIR%%/openssl
+@dirrm %%RUBY_SITELIBDIR%%/net
 @comment optparse
 %%RUBY_SITELIBDIR%%/optparse.rb
 %%RUBY_SITELIBDIR%%/optparse/shellwords.rb
