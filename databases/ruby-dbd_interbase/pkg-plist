@@ -1,2 +1,3 @@
 %%RUBY_SITELIBDIR%%/DBD/InterBase/InterBase.rb
 @dirrm %%RUBY_SITELIBDIR%%/DBD/InterBase
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/DBD 2>/dev/null || true
