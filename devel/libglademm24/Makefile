@@ -38,6 +38,8 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = .*\)\(docs\)\(.*\)|\1\3|' ${WRKSRC}/Makefile.in
 .endif
+	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
+		${WRKSRC}/tools/extra_defs_gen/Makefile.in
 
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \

@@ -36,6 +36,9 @@ PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
+		${WRKSRC}/tools/extra_defs_gen/Makefile.in
+
 
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
