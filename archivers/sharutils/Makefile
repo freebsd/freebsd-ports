@@ -7,6 +7,7 @@
 
 PORTNAME=	sharutils
 PORTVERSION=	4.3.77
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -14,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	sylvioc@gmail.com
 COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
 
+USE_PERL5=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
@@ -30,5 +33,10 @@ CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
 PLIST_FILES+=	share/locale/${l}/LC_MESSAGES/sharutils.mo
 .endfor
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@SH@|${SH}|' \
+		${WRKSRC}/src/mail-files.in ${WRKSRC}/src/mailshar.in
+	@${REINPLACE_CMD} -e 's|@PERL@|${PERL}|' ${WRKSRC}/src/remsync.in
 
 .include <bsd.port.mk>
