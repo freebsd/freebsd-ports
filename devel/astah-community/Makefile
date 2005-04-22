@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	1.4.3
-CATEGORIES=	devel
+PORTVERSION=	1.5.2
+CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
 EXTRACT_SUFX=	.zip
@@ -39,7 +39,8 @@ PORTDOCS=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"You must manually fetch the distribution file from ${DOWNLOAD_URL}, then place it in ${DISTDIR} and run make again"
+IGNORE=		You must manually fetch the distribution file from ${DOWNLOAD_URL}, then\
+		place it in ${DISTDIR} and run make again
 .endif
 
 post-patch:
