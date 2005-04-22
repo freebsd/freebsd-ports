@@ -9935,6 +9935,7 @@ rdiff-backup	ports/sysutils/rdiff-backup
 rdigest		ports/security/rdigest
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
+re_graph	ports/textproc/re_graph
 readline	ports/devel/readline
 readlink	ports/sysutils/readlink
 reallyslick	ports/graphics/reallyslick
