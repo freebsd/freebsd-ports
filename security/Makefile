@@ -350,6 +350,7 @@
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Text_Password
+    SUBDIR += pecl-ssh2
     SUBDIR += pf
     SUBDIR += pft
     SUBDIR += pfw
