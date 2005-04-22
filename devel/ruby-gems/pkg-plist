@@ -7,6 +7,7 @@ lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.1.gem
 lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1/lib/sources.rb
 lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 @unexec rm %D/lib/ruby/gems/%%RUBY_VER%%/source_cache 2>/dev/null || true
+%%RUBY_SITELIBDIR%%/gemconfigure.rb
 %%RUBY_SITELIBDIR%%/rubygems/builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/cmd_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/command.rb
