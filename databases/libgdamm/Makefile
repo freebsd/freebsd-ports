@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GCC=	3.4
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gnomehack libgda2
 USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
@@ -35,5 +36,9 @@ patch-autotools:
 		$$file.tmp > $$file; \
 		${RM} $$file.tmp; \
 	done);
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
+		${WRKSRC}/tools/extra_defs_gen/Makefile.in
 
 .include <bsd.port.mk>

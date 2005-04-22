@@ -21,6 +21,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomeprefix gnomehack libgnomeprint
 INSTALLS_SHLIB=	yes
@@ -28,6 +29,10 @@ USE_INC_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.5" API_VERSION="2.6"
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
+		${WRKSRC}/tools/extra_defs_gen/Makefile.in
 
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
