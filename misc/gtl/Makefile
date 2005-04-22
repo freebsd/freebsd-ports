@@ -24,7 +24,9 @@ USE_INC_LIBTOOL_VER=13
 USE_GNOME=	lthack
 USE_GCC=	3.3	# Won't build with 3.4
 
-.if !exists("${DISTDIR}/${DISTFILES}") && !defined(PACKAGE_BUILDING)
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/GTL-${PORTVERSION}.tar.gz)
 ECHO_MSG=/usr/bin/printf
 IGNORE= \n\
 With the release of version 1.0.0 the download policy of GTL has been\n\
@@ -44,4 +46,4 @@ If you intend to use GTL commercially please send an email to\n\
 brandenb@fmi.uni-passau.de.\n
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
