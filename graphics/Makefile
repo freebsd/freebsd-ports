@@ -350,6 +350,7 @@
     SUBDIR += p5-Chart-PNGgraph
     SUBDIR += p5-Color-Rgb
     SUBDIR += p5-GD
+    SUBDIR += p5-GD-Arrow
     SUBDIR += p5-GD-Barcode
     SUBDIR += p5-GD-Graph
     SUBDIR += p5-GD-Graph3d
