@@ -1,5 +1,6 @@
-%%RUBY_SITELIBDIR%%/DBD/Mysql/Mysql.rb
-@dirrm %%RUBY_SITELIBDIR%%/DBD/Mysql
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/HISTORY
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%RUBY_SITELIBDIR%%/DBD/Mysql/Mysql.rb
+@dirrm %%RUBY_SITELIBDIR%%/DBD/Mysql
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/DBD 2>/dev/null || true
