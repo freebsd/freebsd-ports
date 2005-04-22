@@ -1,2 +1,3 @@
 %%RUBY_SITELIBDIR%%/DBD/ODBC/ODBC.rb
 @dirrm %%RUBY_SITELIBDIR%%/DBD/ODBC
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/DBD 2>/dev/null || true
