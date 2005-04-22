@@ -1,3 +1,4 @@
+%%RUBY_SITEARCHLIBDIR%%/sqlite3_api.so
 %%RUBY_SITELIBDIR%%/sqlite3.rb
 %%RUBY_SITELIBDIR%%/sqlite3/constants.rb
 %%RUBY_SITELIBDIR%%/sqlite3/database.rb
