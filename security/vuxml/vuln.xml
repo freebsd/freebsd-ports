@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="97edf5ab-b319-11d9-837d-000e0c2e438a">
+    <topic>junkbuster -- heap corruption vulnerability and configuration
+      modification vulnerability</topic>
+    <affects>
+      <package>
+	<name>junkbuster</name>
+	<range><lt>2.0.2_3</lt></range>
+      </package>
+      <package>
+	<name>junkbuster-zlib</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-713">
+	  <p>James Ranson discovered that an attacker can modify the
+	    referrer setting with a carefully crafted URL by accidently
+	    overwriting a global variable.</p>
+	  <p>Tavis Ormandy from the Gentoo Security Team discovered
+	    several heap corruptions due to inconsistent use of an
+	    internal function that can crash the daemon or possibly
+	    lead to the execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13146</bid>
+      <bid>13147</bid>
+      <cvename>CAN-2005-1108</cvename>
+      <cvename>CAN-2005-1109</cvename>
+      <url>http://www.debian.org/security/2005/dsa-713</url>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200504-11.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-04-13</discovery>
+      <entry>2005-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06404241-b306-11d9-a788-0001020eed82">
     <topic>kdelibs -- kimgio input validation errors</topic>
     <affects>
