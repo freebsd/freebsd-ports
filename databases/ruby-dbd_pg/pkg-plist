@@ -1,4 +1,5 @@
-%%RUBY_SITELIBDIR%%/DBD/Pg/Pg.rb
-@dirrm %%RUBY_SITELIBDIR%%/DBD/Pg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%RUBY_SITELIBDIR%%/DBD/Pg/Pg.rb
+@dirrm %%RUBY_SITELIBDIR%%/DBD/Pg
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/DBD 2>/dev/null || true
