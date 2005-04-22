@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atmsupport
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 PORTREVISION=
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -28,10 +28,6 @@ MAN1=	unidecode.1 uniencode.1
 
 .if ${OSVERSION} < 501114
 IGNORE=		"ngATM not implemented on FreeBSD 4.x, 5.1 and earlier"
-.endif
-
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		"Does not build on sparc64 or ia64"
 .endif
 
 .include <bsd.port.post.mk>
