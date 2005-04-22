@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	links
-PORTVERSION=	2.1.p15
+PORTVERSION=	2.1.p17
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
-DISTNAME=	${PORTNAME}-2.1pre15
+DISTNAME=	${PORTNAME}-2.1pre17
 
 MAINTAINER?=	demon@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
