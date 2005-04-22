@@ -7,6 +7,7 @@
 
 PORTNAME=	netspeed_applet
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
@@ -23,5 +24,6 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PKG_CONFIG=${LOCALBASE}/bin/pkg-config
+CONFIGURE_ARGS=	--enable-libgtop
 
 .include <bsd.port.mk>
