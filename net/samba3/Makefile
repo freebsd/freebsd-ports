@@ -216,7 +216,7 @@ CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
 # Common part
-.if !defined(WITHOUT_ADS)
+.if !defined(PACKAGE_BUILDING) && !defined(WITHOUT_ADS)
 WANT_LDAP=		yes
 WANT_KRB5=		yes
 CONFIGURE_ARGS+=	--with-ads
