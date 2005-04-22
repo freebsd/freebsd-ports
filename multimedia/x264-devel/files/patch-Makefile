@@ -38,7 +38,7 @@
 +	$(CC) -o $@ x264.o $(SHARED_LIB_VER) $(LDFLAGS)
 +
 +$(SHARED_LIB_VER): $(OBJS) libx264.a
-+	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS) $(OBJASM) -lm
++	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS) $(OBJASM) $(LDFLAGS)
  
  x264vfw.dll: libx264.a $(wildcard vfw/*.c vfw/*.h)
  	make -C vfw/build/cygwin
