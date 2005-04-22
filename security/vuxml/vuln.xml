@@ -32,6 +32,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="06404241-b306-11d9-a788-0001020eed82">
+    <topic>kdelibs -- kimgio input validation errors</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<range><ge>3.2</ge><lt>3.4.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A KDE Security Advisory reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20050421-1.txt">
+	  <p>kimgio contains a PCX image file format reader that does
+	    not properly perform input validation. A source code audit
+	    performed by the KDE security team discovered several
+	    vulnerabilities in the PCX and other image file format
+	    readers, some of them exploitable to execute arbitrary
+	    code.</p>
+	  <p><strong>Impact:</strong> Remotly supplied, specially
+	    crafted image files can be used to execute arbitrary
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1046</cvename>
+      <url>http://bugs.kde.org/102328</url>
+      <url>http://www.kde.org/info/security/advisory-20050421-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-04-21</discovery>
+      <entry>2005-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c2d4f29-af3e-11d9-837d-000e0c2e438a">
     <topic>gld -- format string and buffer overflow vulnerabilities</topic>
     <affects>
