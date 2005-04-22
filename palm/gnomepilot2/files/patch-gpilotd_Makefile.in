@@ -1,0 +1,20 @@
+--- gpilotd/Makefile.in.orig	Thu Apr 21 20:56:17 2005
++++ gpilotd/Makefile.in	Thu Apr 21 21:00:38 2005
+@@ -70,7 +70,7 @@
+ 	"$(DESTDIR)$(libgpilotdincludedir)"
+ gpilotdlibsLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(gpilotdlibs_LTLIBRARIES)
+-libgpilotd_la_LIBADD =
++libgpilotd_la_LIBADD = $(GNOME_PILOT_LIBS)
+ am__objects_1 =
+ am__objects_2 = gnome-pilot-common.lo gnome-pilot-skels.lo \
+ 	gnome-pilot-stubs.lo $(am__objects_1)
+@@ -78,7 +78,7 @@
+ am_libgpilotd_la_OBJECTS = $(am__objects_2) $(am__objects_3) \
+ 	$(am__objects_1)
+ libgpilotd_la_OBJECTS = $(am_libgpilotd_la_OBJECTS)
+-libgpilotdconduit_la_LIBADD =
++libgpilotdconduit_la_LIBADD = $(GNOME_PILOT_LIBS)
+ am__objects_4 = gnome-pilot-conduit.lo gnome-pilot-conduit-file.lo \
+ 	gnome-pilot-conduit-backup.lo gnome-pilot-conduit-standard.lo \
+ 	$(am__objects_1)
