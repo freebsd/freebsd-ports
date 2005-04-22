@@ -1,0 +1,9 @@
+          **** NOTE ****
+
+For first use of bBLog, remember to point your browser to
+
+http://localhost/%%BBLOGURL%%/install.php
+
+At the end of the install when the config file is written to disk, you
+should change the permissions back to 755 so it is not writable by the 
+webserver.

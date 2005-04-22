@@ -1,0 +1,10 @@
+bBlog is a blogging program written in OOP style PHP. Major features include
+threaded comments and trackback support. It is designed from the ground up
+to use the Smarty templating engine. It has unparalleled extendability and
+versility.
+
+Perhaps bBlog's most distinctive feature is that it is built around a
+templating system called Smarty, which makes customizing your blog as easy
+as editing any web page, no programming skills required.
+
+WWW:	http://www.bblog.com/
