@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gems
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.10
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/3463/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/3700/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -25,8 +25,5 @@ NO_BUILD=	yes
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
