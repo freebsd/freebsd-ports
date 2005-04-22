@@ -1,0 +1,10 @@
+phpMyFAQ is a multilingual, completely database-driven FAQ-system. It
+supports various databases to store all data, PHP 4.1.0 (or higher) is
+needed in order to access this data. phpMyFAQ also offers a Content
+Management-System with a WYSIWYG editor and an Image Manager, flexible
+multi-user support with LDAP support, a news-system, user-tracking, language
+modules, enhanced automatic content negotiation, templates, extensive
+XML-support, PDF-support, a backup-system and an easy to use installation
+script.
+
+WWW:	http://www.phpmyfaq.de/
