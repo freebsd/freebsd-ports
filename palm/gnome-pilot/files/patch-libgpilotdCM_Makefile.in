@@ -1,0 +1,11 @@
+--- libgpilotdCM/Makefile.in.orig	Thu Apr 21 23:51:24 2005
++++ libgpilotdCM/Makefile.in	Thu Apr 21 23:51:39 2005
+@@ -60,7 +60,7 @@
+ 	"$(DESTDIR)$(libgpilotdcmincludedir)"
+ gpilotdcmlibsLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(gpilotdcmlibs_LTLIBRARIES)
+-libgpilotdcm_la_LIBADD =
++libgpilotdcm_la_LIBADD = $(GNOME_PILOT_LIBS)
+ am__objects_1 = gnome-pilot-conduit-management.lo \
+ 	gnome-pilot-conduit-config.lo
+ am_libgpilotdcm_la_OBJECTS = $(am__objects_1)
