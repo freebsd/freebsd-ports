@@ -155,6 +155,7 @@ share/locale/fi/LC_MESSAGES/gthumb.mo
 share/locale/fr/LC_MESSAGES/gthumb.mo
 share/locale/ga/LC_MESSAGES/gthumb.mo
 share/locale/gu/LC_MESSAGES/gthumb.mo
+share/locale/hi/LC_MESSAGES/gthumb.mo
 share/locale/hr/LC_MESSAGES/gthumb.mo
 share/locale/hu/LC_MESSAGES/gthumb.mo
 share/locale/id/LC_MESSAGES/gthumb.mo
@@ -175,12 +176,15 @@ share/locale/pl/LC_MESSAGES/gthumb.mo
 share/locale/pt/LC_MESSAGES/gthumb.mo
 share/locale/pt_BR/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
+share/locale/rw/LC_MESSAGES/gthumb.mo
 share/locale/sk/LC_MESSAGES/gthumb.mo
 share/locale/sq/LC_MESSAGES/gthumb.mo
 share/locale/sr/LC_MESSAGES/gthumb.mo
 share/locale/sr@Latn/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
+share/locale/tr/LC_MESSAGES/gthumb.mo
 share/locale/uk/LC_MESSAGES/gthumb.mo
+share/locale/xh/LC_MESSAGES/gthumb.mo
 share/locale/zh_CN/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/omf/gthumb
