@@ -1,0 +1,12 @@
+--- gdk/gdkmm/Makefile.in.orig	Fri Jun  4 02:49:50 2004
++++ gdk/gdkmm/Makefile.in	Fri Apr 22 11:37:45 2005
+@@ -327,8 +327,7 @@
+ # libraries at link time to resolve symbols (remember a dll is like an
+ # executable).
+ @OS_WIN32_TRUE@no_undefined = -no-undefined -Wl,--export-all-symbols
+-@OS_WIN32_FALSE@win32_dlls_extra_libs = 
+-@OS_WIN32_TRUE@win32_dlls_extra_libs = $(sublib_win32_dlls_libs)
++win32_dlls_extra_libs = $(sublib_win32_dlls_libs)
+ common_ldflags = -version-info $(LIBGTKMM_SO_VERSION) $(no_undefined)
+ all_includes = -I$(top_builddir)/glib	-I$(top_srcdir)/glib	\
+ 		  -I$(top_builddir)/pango	-I$(top_srcdir)/pango	\
