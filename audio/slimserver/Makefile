@@ -25,6 +25,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
+USE_PERL5=	yes
+
 .include <bsd.port.pre.mk>
 
 SLIMCPANPKGS=	Compress-Zlib-1.33.tar.gz \
