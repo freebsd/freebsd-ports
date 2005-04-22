@@ -15,10 +15,11 @@ COMMENT=	DHIS client for updating dynamic DNS entries in dhisd DNS tables
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
-LDFLAGS+=	-L${PREFIX}/lib
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DQRC=1" \
+		LFLAGS="-L${LOCALBASE}/lib"
 
-DOCFILES=	AUTHORS CONTRIBUTORS COPYRIGHT INSTALL README WHATSNEW
+PORTDOCS=	AUTHORS CONTRIBUTORS COPYRIGHT INSTALL README WHATSNEW
+PLIST_FILES=	sbin/dhid bin/genkeys etc/dhid.conf.sample etc/rc.d/dhid.sh.sample
 USE_REINPLACE=	yes
 
 DHID_USER=	dhis
@@ -26,24 +27,18 @@ DHID_GROUP=	dhis
 DHID_PID_DIR=	/var/run/dhis
 
 post-patch:
-	@${ECHO} "===>   Patching dhid.h and Makefile"
-	@${REINPLACE_CMD} -e "s^__PREFIX__^${PREFIX}^g" ${WRKSRC}/dhid.h ${WRKSRC}/Makefile
+	@${ECHO} "===>   Patching dhid.h"
+	@${REINPLACE_CMD} -e "s^__PREFIX__^${PREFIX}^g" ${WRKSRC}/dhid.h
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${ECHO_MSG} "===>   Installing ${PREFIX}/sbin/dhid."
 	${INSTALL_PROGRAM} ${WRKSRC}/dhid ${PREFIX}/sbin
-	@${ECHO_CMD} "sbin/dhid" >> ${TMPPLIST}
-	@${ECHO_MSG} "===>   Installing ${PREFIX}/bin/genkeys."
 	${INSTALL_PROGRAM} ${WRKSRC}/genkeys ${PREFIX}/bin
-	@${ECHO_CMD} "bin/genkeys" >> ${TMPPLIST}
-	@${ECHO_MSG} "===>   Installing ${PREFIX}/etc/dhid.conf.sample."
 	${INSTALL_DATA} ${WRKSRC}/dhid.conf.sample ${PREFIX}/etc/dhid.conf.sample
 	${CHOWN} ${DHID_USER}:${DHID_GROUP} ${PREFIX}/etc/dhid.conf.sample
 	${CHMOD} 0600 ${PREFIX}/etc/dhid.conf.sample
-	@${ECHO_CMD} "etc/dhid.conf.sample" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${CHOWN} ${DHID_USER}:${DHID_GROUP} %D/etc/dhid.conf.sample" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${CHMOD} 0600 %D/etc/dhid.conf.sample" >> ${TMPPLIST}
 	${MKDIR} ${DHID_PID_DIR}
@@ -57,16 +52,9 @@ do-install:
 	@${ECHO_MSG} "===>   Installing ${PREFIX}/etc/rc.d/dhid.sh.sample startup file."
 	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dhid.sh ${PREFIX}/etc/rc.d/dhid.sh.sample
 .endif
-	@${ECHO_CMD} "etc/rc.d/dhid.sh.sample" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation in ${DOCSDIR}"
 	${MKDIR} ${DOCSDIR}
-	${CHMOD} 755 ${DOCSDIR}
-.for DOCFILE in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
-	@${ECHO_CMD} "share/doc/${PORTNAME}/${DOCFILE}" >> ${TMPPLIST}
-.endfor
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >> ${TMPPLIST}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
