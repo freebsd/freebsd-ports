@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Jan 31 14:40:03 2005
++++ src/Makefile.in	Sun Mar 13 13:05:41 2005
+@@ -306,7 +306,7 @@
+ 
+ 
+ kscope_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+-kscope_LDADD = -lkateinterfaces -lktexteditor $(LIB_KDEUI)
++kscope_LDADD = -lkateinterfaces -lktexteditor $(LIB_KDEUI) $(LIBPTHREAD)
+ 
+ # this is where the desktop file will go 
+ shelldesktopdir = $(kde_appsdir)/Utilities
