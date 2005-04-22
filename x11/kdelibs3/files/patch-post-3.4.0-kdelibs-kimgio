@@ -1,0 +1,1017 @@
+diff -u -3 -d -p -r1.4 -r1.4.2.1
+--- kimgio/exr.cpp	22 Nov 2004 03:48:27 -0000	1.4
++++ kimgio/exr.cpp	19 Apr 2005 10:48:00 -0000	1.4.2.1
+@@ -136,6 +136,8 @@ KDE_EXPORT void kimgio_exr_read( QImageI
+         file.readPixels (dw.min.y, dw.max.y);
+ 
+ 		QImage image(width, height, 32, 0, QImage::BigEndian);
++		if( image.isNull())
++			return;
+ 
+ 		// somehow copy pixels into image
+ 		for ( int y=0; y < height; y++ ) {
+diff -u -3 -d -p -r1.4 -r1.4.2.1
+--- kimgio/g3r.cpp	22 Nov 2004 03:48:27 -0000	1.4
++++ kimgio/g3r.cpp	18 Apr 2005 13:08:44 -0000	1.4.2.1
+@@ -28,7 +28,7 @@ KDE_EXPORT void kimgio_g3_read( QImageIO
+ 
+   QImage image(width, height, 1, 0, QImage::BigEndian);
+   
+-  if (scanlength != image.bytesPerLine())
++  if (image.isNull() || scanlength != image.bytesPerLine())
+     {
+       TIFFClose(tiff);
+       return;
+diff -u -3 -d -p -r1.14 -r1.14.2.1
+--- kimgio/jp2.cpp	22 Nov 2004 03:48:27 -0000	1.14
++++ kimgio/jp2.cpp	19 Apr 2005 10:48:00 -0000	1.14.2.1
+@@ -157,8 +157,9 @@ namespace {
+ 	void
+ 	draw_view_gray( gs_t& gs, QImage& qti )
+ 	{
+-		qti.create( jas_image_width( gs.image ), jas_image_height( gs.image ),
+-			8, 256 );
++		if( !qti.create( jas_image_width( gs.image ), jas_image_height( gs.image ),
++			8, 256 ))
++			return;
+ 		for( int i = 0; i < 256; ++i )
+ 			qti.setColor( i, qRgb( i, i, i ) );
+ 
+diff -u -3 -d -p -r1.12 -r1.12.2.2
+--- kimgio/pcx.cpp	22 Nov 2004 03:48:27 -0000	1.12
++++ kimgio/pcx.cpp	19 Apr 2005 10:48:00 -0000	1.12.2.2
+@@ -1,5 +1,5 @@
+ /* This file is part of the KDE project
+-   Copyright (C) 2002-2003 Nadeem Hasan <nhasan@kde.org>
++   Copyright (C) 2002-2005 Nadeem Hasan <nhasan@kde.org>
+ 
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+@@ -44,6 +44,11 @@ static QDataStream &operator>>( QDataStr
+   s >> ph.HScreenSize;
+   s >> ph.VScreenSize;
+ 
++  // Skip the rest of the header
++  Q_UINT8 byte;
++  while ( s.device()->at() < 128 )
++    s >> byte;
++
+   return s;
+ }
+ 
+@@ -85,25 +90,22 @@ static QDataStream &operator<<( QDataStr
+   return s;
+ }
+ 
+-static PCXHEADER header;
+-static QImage img;
+-static Q_UINT16 w, h;
+-
+-void PCXHEADER::reset()
++PCXHEADER::PCXHEADER()
+ {
++  // Initialize all data to zero
+   QByteArray dummy( 128 );
+   dummy.fill( 0 );
+   QDataStream s( dummy, IO_ReadOnly );
+   s >> *this;
+ }
+ 
+-static void readLine( QDataStream &s, QByteArray &buf )
++static void readLine( QDataStream &s, QByteArray &buf, const PCXHEADER &header )
+ {
+   Q_UINT32 i=0;
+   Q_UINT32 size = buf.size();
+   Q_UINT8 byte, count;
+ 
+-  if ( header.Encoding == 1 )
++  if ( header.isCompressed() )
+   {
+     // Uncompress the image data
+     while ( i < size )
+@@ -130,13 +132,14 @@ static void readLine( QDataStream &s, QB
+   }
+ }
+ 
+-static void readImage1( QDataStream &s )
++static void readImage1( QImage &img, QDataStream &s, const PCXHEADER &header )
+ {
+   QByteArray buf( header.BytesPerLine );
+ 
+-  img.create( w, h, 1, 2, QImage::BigEndian );
++  if(!img.create( header.width(), header.height(), 1, 2, QImage::BigEndian ))
++    return;
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     if ( s.atEnd() )
+     {
+@@ -144,10 +147,11 @@ static void readImage1( QDataStream &s )
+       return;
+     }
+ 
+-    readLine( s, buf );
+-
+-    for ( int x=0; x<header.BytesPerLine; ++x )
+-      *( img.scanLine( y )+x ) = buf[ x ];
++    readLine( s, buf, header );
++    uchar *p = img.scanLine( y );
++    unsigned int bpl = QMIN((header.width()+7)/8, header.BytesPerLine);
++    for ( unsigned int x=0; x< bpl; ++x )
++      p[ x ] = buf[x];
+   }
+ 
+   // Set the color palette
+@@ -155,14 +159,15 @@ static void readImage1( QDataStream &s )
+   img.setColor( 1, qRgb( 255, 255, 255 ) );
+ }
+ 
+-static void readImage4( QDataStream &s )
++static void readImage4( QImage &img, QDataStream &s, const PCXHEADER &header )
+ {
+   QByteArray buf( header.BytesPerLine*4 );
+-  QByteArray pixbuf( w );
++  QByteArray pixbuf( header.width() );
+ 
+-  img.create( w, h, 8, 16, QImage::IgnoreEndian );
++  if(!img.create( header.width(), header.height(), 8, 16 ))
++    return;
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     if ( s.atEnd() )
+     {
+@@ -171,20 +176,19 @@ static void readImage4( QDataStream &s )
+     }
+ 
+     pixbuf.fill( 0 );
+-    readLine( s, buf );
++    readLine( s, buf, header );
+ 
+     for ( int i=0; i<4; i++ )
+     {
+       Q_UINT32 offset = i*header.BytesPerLine;
+-      for ( int x=0; x<w; ++x )
++      for ( unsigned int x=0; x<header.width(); ++x )
+         if ( buf[ offset + ( x/8 ) ] & ( 128 >> ( x%8 ) ) )
+           pixbuf[ x ] += ( 1 << i );
+     }
+ 
+     uchar *p = img.scanLine( y );
+-
+-    for ( int x=0; x<w; ++x )
+-      *p++ = pixbuf[ x ];
++    for ( unsigned int x=0; x<header.width(); ++x )
++      p[ x ] = pixbuf[ x ];
+   }
+ 
+   // Read the palette
+@@ -192,13 +196,14 @@ static void readImage4( QDataStream &s )
+     img.setColor( i, header.ColorMap.color( i ) );
+ }
+ 
+-static void readImage8( QDataStream &s )
++static void readImage8( QImage &img, QDataStream &s, const PCXHEADER &header )
+ {
+   QByteArray buf( header.BytesPerLine );
+ 
+-  img.create( w, h, 8, 256, QImage::IgnoreEndian );
++  if(!img.create( header.width(), header.height(), 8, 256 ))
++    return;
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     if ( s.atEnd() )
+     {
+@@ -206,19 +211,19 @@ static void readImage8( QDataStream &s )
+       return;
+     }
+ 
+-    readLine( s, buf );
++    readLine( s, buf, header );
+ 
+     uchar *p = img.scanLine( y );
+-
+-    for ( int x=0; x<header.BytesPerLine; ++x )
+-      *p++ = buf[ x ];
++    unsigned int bpl = QMIN(header.BytesPerLine, header.width());
++    for ( unsigned int x=0; x<bpl; ++x )
++      p[ x ] = buf[ x ];
+   }
+ 
+   Q_UINT8 flag;
+   s >> flag;
+-  kdDebug() << "Flag: " << flag << endl;
++  kdDebug( 399 ) << "Palette Flag: " << flag << endl;
+ 
+-  if ( flag == 12 && header.Version == 5 )
++  if ( flag == 12 && ( header.Version == 5 || header.Version == 2 ) )
+   {
+     // Read the palette
+     Q_UINT8 r, g, b;
+@@ -230,15 +235,16 @@ static void readImage8( QDataStream &s )
+   }
+ }
+ 
+-static void readImage24( QDataStream &s )
++static void readImage24( QImage &img, QDataStream &s, const PCXHEADER &header )
+ {
+   QByteArray r_buf( header.BytesPerLine );
+   QByteArray g_buf( header.BytesPerLine );
+   QByteArray b_buf( header.BytesPerLine );
+ 
+-  img.create( w, h, 32 );
++  if(!img.create( header.width(), header.height(), 32 ))
++    return;
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     if ( s.atEnd() )
+     {
+@@ -246,14 +252,13 @@ static void readImage24( QDataStream &s 
+       return;
+     }
+ 
+-    readLine( s, r_buf );
+-    readLine( s, g_buf );
+-    readLine( s, b_buf );
++    readLine( s, r_buf, header );
++    readLine( s, g_buf, header );
++    readLine( s, b_buf, header );
+ 
+     uint *p = ( uint * )img.scanLine( y );
+-
+-    for ( int x=0; x<header.BytesPerLine; ++x )
+-      *p++ = qRgb( r_buf[ x ], g_buf[ x ], b_buf[ x ] );
++    for ( unsigned int x=0; x<header.width(); ++x )
++      p[ x ] = qRgb( r_buf[ x ], g_buf[ x ], b_buf[ x ] );
+   }
+ }
+ 
+@@ -268,6 +273,8 @@ KDE_EXPORT void kimgio_pcx_read( QImageI
+     return;
+   }
+ 
++  PCXHEADER header;
++
+   s >> header;
+ 
+   if ( header.Manufacturer != 10 || s.atEnd())
+@@ -276,10 +283,8 @@ KDE_EXPORT void kimgio_pcx_read( QImageI
+     return;
+   }
+ 
+-  w = ( header.XMax-header.XMin ) + 1;
+-  h = ( header.YMax-header.YMin ) + 1;
+-
+-  img.reset();
++  int w = header.width();
++  int h = header.height();
+ 
+   kdDebug( 399 ) << "Manufacturer: " << header.Manufacturer << endl;
+   kdDebug( 399 ) << "Version: " << header.Version << endl;
+@@ -288,30 +293,27 @@ KDE_EXPORT void kimgio_pcx_read( QImageI
+   kdDebug( 399 ) << "Width: " << w << endl;
+   kdDebug( 399 ) << "Height: " << h << endl;
+   kdDebug( 399 ) << "Window: " << header.XMin << "," << header.XMax << "," 
+-            << header.YMin << "," << header.YMax << endl;
++                 << header.YMin << "," << header.YMax << endl;
+   kdDebug( 399 ) << "BytesPerLine: " << header.BytesPerLine << endl;
+   kdDebug( 399 ) << "NPlanes: " << header.NPlanes << endl;
+ 
+-  // Skip the rest of the header
+-  Q_UINT8 byte;
+-  while ( s.device()->at() < 128 )
+-    s >> byte;
++  QImage img;
+ 
+   if ( header.Bpp == 1 && header.NPlanes == 1 )
+   {
+-    readImage1( s );
++    readImage1( img, s, header );
+   }
+   else if ( header.Bpp == 1 && header.NPlanes == 4 )
+   {
+-    readImage4( s );
++    readImage4( img, s, header );
+   }
+   else if ( header.Bpp == 8 && header.NPlanes == 1 )
+   {
+-    readImage8( s );
++    readImage8( img, s, header );
+   }
+   else if ( header.Bpp == 8 && header.NPlanes == 3 )
+   {
+-    readImage24( s );
++    readImage24( img, s, header );
+   }
+ 
+   kdDebug( 399 ) << "Image Bytes: " << img.numBytes() << endl;
+@@ -359,7 +361,7 @@ static void writeLine( QDataStream &s, Q
+   }
+ }
+ 
+-static void writeImage1( QDataStream &s )
++static void writeImage1( QImage &img, QDataStream &s, PCXHEADER &header )
+ {
+   img = img.convertBitOrder( QImage::BigEndian );
+ 
+@@ -367,29 +369,27 @@ static void writeImage1( QDataStream &s 
+   header.NPlanes = 1;
+   header.BytesPerLine = img.bytesPerLine();
+ 
+-  header.ColorMap.setColor( 0, qRgb( 0, 0, 0 ) );
+-  header.ColorMap.setColor( 1, qRgb( 255, 255, 255 ) );
+-
+   s << header;
+ 
+   QByteArray buf( header.BytesPerLine );
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     Q_UINT8 *p = img.scanLine( y );
+ 
++    // Invert as QImage uses reverse palette for monochrome images?
+     for ( int i=0; i<header.BytesPerLine; ++i )
+-      buf[ i ] = p[ i ];
++      buf[ i ] = ~p[ i ];
+ 
+     writeLine( s, buf );
+   }
+ }
+ 
+-static void writeImage4( QDataStream &s )
++static void writeImage4( QImage &img, QDataStream &s, PCXHEADER &header )
+ {
+   header.Bpp = 1;
+   header.NPlanes = 4;
+-  header.BytesPerLine = w/8;
++  header.BytesPerLine = header.width()/8;
+ 
+   for ( int i=0; i<16; ++i )
+     header.ColorMap.setColor( i, img.color( i ) );
+@@ -401,14 +401,14 @@ static void writeImage4( QDataStream &s 
+   for ( int i=0; i<4; ++i )
+       buf[ i ].resize( header.BytesPerLine );
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     Q_UINT8 *p = img.scanLine( y );
+ 
+     for ( int i=0; i<4; ++i )
+       buf[ i ].fill( 0 );
+ 
+-    for ( int x=0; x<w; ++x )
++    for ( unsigned int x=0; x<header.width(); ++x )
+     {
+       for ( int i=0; i<4; ++i )
+         if ( *( p+x ) & ( 1 << i ) )
+@@ -420,7 +420,7 @@ static void writeImage4( QDataStream &s 
+   }
+ }
+ 
+-static void writeImage8( QDataStream &s )
++static void writeImage8( QImage &img, QDataStream &s, PCXHEADER &header )
+ {
+   header.Bpp = 8;
+   header.NPlanes = 1;
+@@ -430,7 +430,7 @@ static void writeImage8( QDataStream &s 
+ 
+   QByteArray buf( header.BytesPerLine );
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     Q_UINT8 *p = img.scanLine( y );
+ 
+@@ -449,23 +449,23 @@ static void writeImage8( QDataStream &s 
+     s << RGB( img.color( i ) );
+ }
+ 
+-static void writeImage24( QDataStream &s )
++static void writeImage24( QImage &img, QDataStream &s, PCXHEADER &header )
+ {
+   header.Bpp = 8;
+   header.NPlanes = 3;
+-  header.BytesPerLine = w;
++  header.BytesPerLine = header.width();
+ 
+   s << header;
+ 
+-  QByteArray r_buf( w );
+-  QByteArray g_buf( w );
+-  QByteArray b_buf( w );
++  QByteArray r_buf( header.width() );
++  QByteArray g_buf( header.width() );
++  QByteArray b_buf( header.width() );
+ 
+-  for ( int y=0; y<h; ++y )
++  for ( int y=0; y<header.height(); ++y )
+   {
+     uint *p = ( uint * )img.scanLine( y );
+ 
+-    for ( int x=0; x<w; ++x )
++    for ( unsigned int x=0; x<header.width(); ++x )
+     {
+       QRgb rgb = *p++;
+       r_buf[ x ] = qRed( rgb );
+@@ -484,10 +484,10 @@ KDE_EXPORT void kimgio_pcx_write( QImage
+   QDataStream s( io->ioDevice() );
+   s.setByteOrder( QDataStream::LittleEndian );
+ 
+-  img = io->image();
++  QImage img = io->image();
+ 
+-  w = img.width();
+-  h = img.height();
++  int w = img.width();
++  int h = img.height();
+ 
+   kdDebug( 399 ) << "Width: " << w << endl;
+   kdDebug( 399 ) << "Height: " << h << endl;
+@@ -495,6 +495,8 @@ KDE_EXPORT void kimgio_pcx_write( QImage
+   kdDebug( 399 ) << "BytesPerLine: " << img.bytesPerLine() << endl;
+   kdDebug( 399 ) << "Num Colors: " << img.numColors() << endl;
+ 
++  PCXHEADER header;
++
+   header.Manufacturer = 10;
+   header.Version = 5;
+   header.Encoding = 1;
+@@ -509,19 +511,19 @@ KDE_EXPORT void kimgio_pcx_write( QImage
+ 
+   if ( img.depth() == 1 )
+   {
+-    writeImage1( s );
++    writeImage1( img, s, header );
+   }
+   else if ( img.depth() == 8 && img.numColors() <= 16 )
+   {
+-    writeImage4( s );
++    writeImage4( img, s, header );
+   }
+   else if ( img.depth() == 8 )
+   {
+-    writeImage8( s );
++    writeImage8( img, s, header );
+   }
+   else if ( img.depth() == 32 )
+   {
+-    writeImage24( s );
++    writeImage24( img, s, header );
+   }
+ 
+   io->setStatus( 0 );
+Index: pcx.h
+===================================================================
+RCS file: /home/kde/kdelibs/kimgio/pcx.h,v
+retrieving revision 1.4
+retrieving revision 1.4.8.1
+diff -u -3 -d -p -r1.4 -r1.4.8.1
+--- kimgio/pcx.h	4 Jan 2003 00:48:25 -0000	1.4
++++ kimgio/pcx.h	19 Apr 2005 10:48:00 -0000	1.4.8.1
+@@ -49,7 +49,7 @@ class Palette
+       rgb[ i ] = RGB( color );
+     }
+ 
+-    QRgb color( int i )
++    QRgb color( int i ) const
+     {
+       return qRgb( rgb[ i ].r, rgb[ i ].g, rgb[ i ].b );
+     }
+@@ -60,12 +60,11 @@ class Palette
+ class PCXHEADER
+ {
+   public:
+-    PCXHEADER()
+-    {
+-      reset();
+-    }
++    PCXHEADER();
+ 
+-    void reset();
++    inline int width() const { return ( XMax-XMin ) + 1; }
++    inline int height() const { return ( YMax-YMin ) + 1; }
++    inline bool isCompressed() const { return ( Encoding==1 ); }
+ 
+     Q_UINT8  Manufacturer;    // Constant Flag, 10 = ZSoft .pcx
+     Q_UINT8  Version;         // Version information·
+@@ -99,7 +98,7 @@ class PCXHEADER
+                               // found only in PB IV/IV Plus
+     Q_UINT16 VScreenSize;     // Vertical screen size in pixels. New field
+                               // found only in PB IV/IV Plus
+-};
++} KDE_PACKED;
+ 
+ #endif // PCX_H
+ 
+diff -u -3 -d -p -r1.1 -r1.1.2.1
+--- kimgio/psd.cpp	16 Dec 2004 09:59:07 -0000	1.1
++++ kimgio/psd.cpp	19 Apr 2005 10:48:00 -0000	1.1.2.1
+@@ -66,6 +66,19 @@ namespace {	// Private.
+ 		s >> header.color_mode;
+ 		return s;
+ 	}
++        static bool seekBy(QDataStream& s, unsigned int bytes)
++        {
++                char buf[4096];
++                while (bytes) {
++                        unsigned int num= QMIN(bytes,sizeof(buf));
++                        unsigned int l = num;
++                        s.readRawBytes(buf, l);
++                        if(l != num)
++                          return false;
++                        bytes -= num;
++                }
++                return true;
++        }
+ 
+ 	// Check that the header is a valid PSD.
+ 	static bool IsValid( const PSDHeader & header )
+@@ -149,10 +162,8 @@ namespace {	// Private.
+ 		if( compression ) {
+ 		
+ 			// Skip row lengths.
+-			ushort w;
+-			for(uint i = 0; i < header.height * header.channel_count; i++) {
+-	  			s >> w;
+-			}	
++                        if(!seekBy(s, header.height*header.channel_count*sizeof(ushort)))
++                                return false;
+ 
+ 			// Read RLE data.						
+ 			for(uint channel = 0; channel < channel_num; channel++) {
+@@ -162,6 +173,8 @@ namespace {	// Private.
+ 				uint count = 0;
+ 				while( count < pixel_count ) {
+ 					uchar c;
++                                        if(s.atEnd())
++                                                return false;
+ 					s >> c;
+ 					uint len = c;
+ 					
+@@ -169,6 +182,9 @@ namespace {	// Private.
+ 						// Copy next len+1 bytes literally.
+ 						len++;
+ 						count += len;
++                                                if ( count > pixel_count )
++                                                        return false;
++
+ 						while( len != 0 ) {
+ 							s >> *ptr;
+ 							ptr += 4;
+@@ -181,6 +197,8 @@ namespace {	// Private.
+ 						len ^= 0xFF;
+ 						len += 2;
+ 						count += len;
++                                                if(s.atEnd() || count > pixel_count)
++                                                        return false;
+ 						uchar val;
+ 						s >> val;
+ 						while( len != 0 ) {
+diff -u -3 -d -p -r1.31 -r1.31.2.1
+--- kimgio/rgb.cpp	10 Jan 2005 19:54:19 -0000	1.31
++++ kimgio/rgb.cpp	19 Apr 2005 10:48:00 -0000	1.31.2.1
+@@ -87,7 +87,9 @@ bool SGIImage::getRow(uchar *dest)
+ 	int n, i;
+ 	if (!m_rle) {
+ 		for (i = 0; i < m_xsize; i++) {
+-			*dest++ = uchar(*m_pos);
++			if(m_pos >= m_data.end())
++				return false;
++			dest[i] = uchar(*m_pos);
+ 			m_pos += m_bpc;
+ 		}
+ 		return true;
+@@ -120,7 +122,7 @@ bool SGIImage::readData(QImage& img)
+ {
+ 	QRgb *c;
+ 	Q_UINT32 *start = m_starttab;
+-	QCString lguard(m_xsize);
++	QByteArray lguard(m_xsize);
+ 	uchar *line = (uchar *)lguard.data();
+ 	unsigned x, y;
+ 
+@@ -128,7 +130,7 @@ bool SGIImage::readData(QImage& img)
+ 		m_pos = m_data.begin();
+ 
+ 	for (y = 0; y < m_ysize; y++) {
+-		c = reinterpret_cast<QRgb *>(img.scanLine(m_ysize - y - 1));
++		c = (QRgb *) img.scanLine(m_ysize - y - 1);
+ 		if (m_rle)
+ 			m_pos = m_data.begin() + *start++;
+ 		if (!getRow(line))
+@@ -166,11 +168,11 @@ bool SGIImage::readData(QImage& img)
+ 	}
+ 
+ 	for (y = 0; y < m_ysize; y++) {
+-		c = reinterpret_cast<QRgb *>(img.scanLine(m_ysize - y - 1));
+ 		if (m_rle)
+ 			m_pos = m_data.begin() + *start++;
+ 		if (!getRow(line))
+ 			return false;
++		c = (QRgb*) img.scanLine(m_ysize - y - 1);
+ 		for (x = 0; x < m_xsize; x++, c++)
+ 			*c = qRgba(qRed(*c), qGreen(*c), qBlue(*c), line[x]);
+ 	}
+@@ -270,7 +272,7 @@ bool SGIImage::readImage(QImage& img)
+ 	// sanity ckeck
+ 	if (m_rle)
+ 		for (uint o = 0; o < m_numrows; o++)
+-			if (m_starttab[o] + m_lengthtab[o] > m_data.size()) {
++			if (m_starttab[o] + m_lengthtab[o] >= m_data.size()) {
+ 				kdDebug(399) << "image corrupt (sanity check failed)" << endl;
+ 				return false;
+ 			}
+diff -u -3 -d -p -r1.14 -r1.14.2.1
+--- kimgio/tiffr.cpp	22 Nov 2004 03:52:18 -0000	1.14
++++ kimgio/tiffr.cpp	19 Apr 2005 10:48:00 -0000	1.14.2.1
+@@ -84,6 +84,10 @@ KDE_EXPORT void kimgio_tiff_read( QImage
+             return;
+ 
+ 	QImage image( width, height, 32 );
++	if( image.isNull()) {
++		TIFFClose( tiff );
++		return;
++	}
+ 	data = (uint32 *)image.bits();
+ 
+ 	//Sven: changed to %ld for 64bit machines
+diff -u -3 -d -p -r1.3 -r1.3.2.1
+--- kimgio/xcf.cpp	22 Nov 2004 03:48:27 -0000	1.3
++++ kimgio/xcf.cpp	19 Apr 2005 10:48:00 -0000	1.3.2.1
+@@ -234,10 +234,10 @@ bool XCFImageFormat::loadImageProperties
+ 					property.readBytes(tag, size);
+ 
+ 					Q_UINT32 flags;
+-					char* data;
++					char* data=0;
+ 					property >> flags >> data;
+ 
+-					if (strcmp(tag, "gimp-comment") == 0)
++					if (tag && strncmp(tag, "gimp-comment", strlen("gimp-comment")) == 0)
+ 						xcf_image.image.setText("Comment", 0, data);
+ 
+ 					delete[] tag;
+@@ -257,6 +257,9 @@ bool XCFImageFormat::loadImageProperties
+ 
+ 				case PROP_COLORMAP:
+ 					property >> xcf_image.num_colors;
++                                        if(xcf_image.num_colors < 0 || xcf_image.num_colors > 65535)
++                                            return false;
++
+ 					xcf_image.palette.reserve(xcf_image.num_colors);
+ 
+ 					for (int i = 0; i < xcf_image.num_colors; i++) {
+@@ -307,6 +310,9 @@ bool XCFImageFormat::loadProperty(QDataS
+ 			return false;
+ 		}
+ 
++                if(size > 65535 || size < 4)
++                    return false;
++
+ 		size = 3 * (size - 4) + 4;
+ 		data = new char[size];
+ 
+@@ -336,19 +342,21 @@ bool XCFImageFormat::loadProperty(QDataS
+ 		}
+ 
+ 		size = 0;
+-	} else
+-		xcf_io.readBytes(data, size);
++	} else {
++                xcf_io >> size;
++                if(size >256000)
++                    return false;
++                data = new char[size];
++		xcf_io.readRawBytes(data, size);
++        }
+ 
+ 	if (xcf_io.device()->status() != IO_Ok) {
+ 		kdDebug(399) << "XCF: read failure on property " << type << " data, size " << size << endl;
+ 		return false;
+ 	}
+ 
+-	if (size != 0) {
+-		bytes.resize(size);
+-		for (uint i = 0; i < size; i++)
+-			bytes[i] = data[i];
+-		delete[] data;
++	if (size != 0 && data) {
++                bytes.assign(data,size);
+ 	}
+ 
+ 	return true;
+@@ -401,7 +409,8 @@ bool XCFImageFormat::loadLayer(QDataStre
+ 	// Allocate the individual tile QImages based on the size and type
+ 	// of this layer.
+ 
+-	composeTiles(xcf_image);
++	if( !composeTiles(xcf_image))
++		return false;
+ 	xcf_io.device()->at(layer.hierarchy_offset);
+ 
+ 	// As tiles are loaded, they are copied into the layers tiles by
+@@ -425,7 +434,8 @@ bool XCFImageFormat::loadLayer(QDataStre
+ 	// of the QImage.
+ 
+ 	if (!xcf_image.initialized) {
+-		initializeImage(xcf_image);
++		if( !initializeImage(xcf_image))
++			return false;
+ 		copyLayerToImage(xcf_image);
+ 		xcf_image.initialized = true;
+ 	} else
+@@ -516,7 +526,7 @@ bool XCFImageFormat::loadLayerProperties
+  * QImage structures for each of them.
+  * \param xcf_image contains the current layer.
+  */
+-void XCFImageFormat::composeTiles(XCFImage& xcf_image)
++bool XCFImageFormat::composeTiles(XCFImage& xcf_image)
+ {
+ 	Layer& layer(xcf_image.layer);
+ 
+@@ -556,48 +566,67 @@ void XCFImageFormat::composeTiles(XCFIma
+ 			switch (layer.type) {
+ 				case RGB_GIMAGE:
+ 					layer.image_tiles[j][i] = QImage(tile_width, tile_height, 32, 0);
++					if( layer.image_tiles[j][i].isNull())
++						return false;
+ 					layer.image_tiles[j][i].setAlphaBuffer(false);
+ 					break;
+ 
+ 				case RGBA_GIMAGE:
+ 					layer.image_tiles[j][i] = QImage(tile_width, tile_height, 32, 0);
++					if( layer.image_tiles[j][i].isNull())
++						return false;
+ 					layer.image_tiles[j][i].setAlphaBuffer(true);
+ 					break;
+ 
+ 				case GRAY_GIMAGE:
+ 					layer.image_tiles[j][i] = QImage(tile_width, tile_height, 8, 256);
++					if( layer.image_tiles[j][i].isNull())
++						return false;
+ 					setGrayPalette(layer.image_tiles[j][i]);
+ 					break;
+ 
+ 				case GRAYA_GIMAGE:
+ 					layer.image_tiles[j][i] = QImage(tile_width, tile_height, 8, 256);
++					if( layer.image_tiles[j][i].isNull())
++						return false;
+ 					setGrayPalette(layer.image_tiles[j][i]);
+ 
+ 					layer.alpha_tiles[j][i] = QImage( tile_width, tile_height, 8, 256);
++					if( layer.alpha_tiles[j][i].isNull())
++						return false;
+ 					setGrayPalette(layer.alpha_tiles[j][i]);
+ 					break;
+ 
+ 				case INDEXED_GIMAGE:
+ 					layer.image_tiles[j][i] = QImage(tile_width, tile_height, 8,
+ 							xcf_image.num_colors);
++					if( layer.image_tiles[j][i].isNull())
++						return false;
+ 					setPalette(xcf_image, layer.image_tiles[j][i]);
+ 					break;
+ 
+ 				case INDEXEDA_GIMAGE:
+ 					layer.image_tiles[j][i] = QImage(tile_width, tile_height,8,
+ 							xcf_image.num_colors);
++					if( layer.image_tiles[j][i].isNull())
++						return false;
+ 					setPalette(xcf_image, layer.image_tiles[j][i]);
+ 
+ 					layer.alpha_tiles[j][i] = QImage(tile_width, tile_height, 8, 256);
++					if( layer.alpha_tiles[j][i].isNull())
++						return false;
+ 					setGrayPalette(layer.alpha_tiles[j][i]);
+ 			}
+ 
+ 			if (layer.mask_offset != 0) {
+ 				layer.mask_tiles[j][i] = QImage(tile_width, tile_height, 8, 256);
++				if( layer.mask_tiles[j][i].isNull())
++					return false;
+ 				setGrayPalette(layer.mask_tiles[j][i]);
+ 			}
+ 		}
+ 	}
++	return true;
+ }
+ 
+ 
+@@ -1072,7 +1101,7 @@ void XCFImageFormat::assignMaskBytes(Lay
+  * For indexed images, translucency is an all or nothing effect.
+  * \param xcf_image contains image info and bottom-most layer.
+  */
+-void XCFImageFormat::initializeImage(XCFImage& xcf_image)
++bool XCFImageFormat::initializeImage(XCFImage& xcf_image)
+ {
+ 	// (Aliases to make the code look a little better.)
+ 	Layer& layer(xcf_image.layer);
+@@ -1082,12 +1111,16 @@ void XCFImageFormat::initializeImage(XCF
+ 		case RGB_GIMAGE:
+ 			if (layer.opacity == OPAQUE_OPACITY) {
+ 				image.create( xcf_image.width, xcf_image.height, 32);
++				if( image.isNull())
++					return false;
+ 				image.fill(qRgb(255, 255, 255));
+ 				break;
+ 			} // else, fall through to 32-bit representation
+ 
+ 		case RGBA_GIMAGE:
+ 			image.create(xcf_image.width, xcf_image.height, 32);
++			if( image.isNull())
++				return false;
+ 			image.fill(qRgba(255, 255, 255, 0));
+ 			// Turning this on prevents fill() from affecting the alpha channel,
+ 			// by the way.
+@@ -1097,6 +1130,8 @@ void XCFImageFormat::initializeImage(XCF
+ 		case GRAY_GIMAGE:
+ 			if (layer.opacity == OPAQUE_OPACITY) {
+ 				image.create(xcf_image.width, xcf_image.height, 8, 256);
++				if( image.isNull())
++					return false;
+ 				setGrayPalette(image);
+ 				image.fill(255);
+ 				break;
+@@ -1104,6 +1139,8 @@ void XCFImageFormat::initializeImage(XCF
+ 
+ 		case GRAYA_GIMAGE:
+ 			image.create(xcf_image.width, xcf_image.height, 32);
++			if( image.isNull())
++				return false;
+ 			image.fill(qRgba(255, 255, 255, 0));
+ 			image.setAlphaBuffer(true);
+ 			break;
+@@ -1125,12 +1162,16 @@ void XCFImageFormat::initializeImage(XCF
+ 				image.create(xcf_image.width, xcf_image.height,
+ 						1, xcf_image.num_colors,
+ 						QImage::LittleEndian);
++				if( image.isNull())
++					return false;
+ 				image.fill(0);
+ 				setPalette(xcf_image, image);
+ 			} else if (xcf_image.num_colors <= 256) {
+ 				image.create(xcf_image.width, xcf_image.height,
+ 				8, xcf_image.num_colors,
+ 				QImage::LittleEndian);
++				if( image.isNull())
++					return false;
+ 				image.fill(0);
+ 				setPalette(xcf_image, image);
+ 			}
+@@ -1147,6 +1188,8 @@ void XCFImageFormat::initializeImage(XCF
+ 				image.create(xcf_image.width, xcf_image.height,
+ 						1, xcf_image.num_colors,
+ 						QImage::LittleEndian);
++				if( image.isNull())
++					return false;
+ 				image.fill(0);
+ 				setPalette(xcf_image, image);
+ 				image.setAlphaBuffer(true);
+@@ -1160,6 +1203,8 @@ void XCFImageFormat::initializeImage(XCF
+ 				xcf_image.palette[0] = qRgba(255, 255, 255, 0);
+ 				image.create( xcf_image.width, xcf_image.height,
+ 						8, xcf_image.num_colors);
++				if( image.isNull())
++					return false;
+ 				image.fill(0);
+ 				setPalette(xcf_image, image);
+ 				image.setAlphaBuffer(true);
+@@ -1168,6 +1213,8 @@ void XCFImageFormat::initializeImage(XCF
+ 				// true color. (There is no equivalent PNG representation output
+ 				// from The GIMP as of v1.2.)
+ 				image.create(xcf_image.width, xcf_image.height, 32);
++				if( image.isNull())
++					return false;
+ 				image.fill(qRgba(255, 255, 255, 0));
+ 				image.setAlphaBuffer(true);
+ 			}
+@@ -1176,6 +1223,7 @@ void XCFImageFormat::initializeImage(XCF
+ 
+ 	image.setDotsPerMeterX((int)(xcf_image.x_resolution * INCHESPERMETER));
+ 	image.setDotsPerMeterY((int)(xcf_image.y_resolution * INCHESPERMETER));
++	return true;
+ }
+ 
+ 
+Index: xcf.h
+===================================================================
+RCS file: /home/kde/kdelibs/kimgio/xcf.h,v
+retrieving revision 1.1
+retrieving revision 1.1.2.1
+diff -u -3 -d -p -r1.1 -r1.1.2.1
+--- kimgio/xcf.h	13 Aug 2004 18:31:44 -0000	1.1
++++ kimgio/xcf.h	19 Apr 2005 10:48:00 -0000	1.1.2.1
+@@ -176,7 +176,7 @@ private:
+ 	bool loadProperty(QDataStream& xcf_io, PropType& type, QByteArray& bytes);
+ 	bool loadLayer(QDataStream& xcf_io, XCFImage& xcf_image);
+ 	bool loadLayerProperties(QDataStream& xcf_io, Layer& layer);
+-	void composeTiles(XCFImage& xcf_image);
++	bool composeTiles(XCFImage& xcf_image);
+ 	void setGrayPalette(QImage& image);
+ 	void setPalette(XCFImage& xcf_image, QImage& image);
+ 	static void assignImageBytes(Layer& layer, uint i, uint j);
+@@ -185,7 +185,7 @@ private:
+ 	static void assignMaskBytes(Layer& layer, uint i, uint j);
+ 	bool loadMask(QDataStream& xcf_io, Layer& layer);
+ 	bool loadChannelProperties(QDataStream& xcf_io, Layer& layer);
+-	void initializeImage(XCFImage& xcf_image);
++	bool initializeImage(XCFImage& xcf_image);
+ 	bool loadTileRLE(QDataStream& xcf_io, uchar* tile, int size,
+ 			int data_length, Q_INT32 bpp);
+ 	static void copyLayerToImage(XCFImage& xcf_image);
+diff -u -3 -d -p -r1.12 -r1.12.2.1
+--- kimgio/xview.cpp	22 Nov 2004 03:52:18 -0000	1.12
++++ kimgio/xview.cpp	19 Apr 2005 10:48:00 -0000	1.12.2.1
+@@ -7,6 +7,7 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
++#include <stdlib.h>
+ #include <qimage.h>
+ 
+ #include <kdelibs_export.h>
+@@ -15,6 +16,9 @@
+ 
+ #define BUFSIZE 1024
+ 
++static const int b_255_3[]= {0,85,170,255},  // index*255/3
++           rg_255_7[]={0,36,72,109,145,182,218,255}; // index *255/7
++
+ KDE_EXPORT void kimgio_xv_read( QImageIO *_imageio )
+ {      
+ 	int x=-1;
+@@ -50,10 +54,14 @@ KDE_EXPORT void kimgio_xv_read( QImageIO
+ 	sscanf(str, "%d %d %d", &x, &y, &maxval);
+ 
+ 	if (maxval != 255) return;
++	int blocksize = x*y;
++        if(x < 0 || y < 0 || blocksize < x || blocksize < y)
++            return;
+ 
+ 	// now follows a binary block of x*y bytes. 
+-	int blocksize = x*y;
+-	char *block = new char[ blocksize ];
++	char *block = (char*) malloc(blocksize);
++        if(!block)
++            return;
+ 
+ 	if (iodev->readBlock(block, blocksize) != blocksize ) 
+ 	{
+@@ -62,6 +70,10 @@ KDE_EXPORT void kimgio_xv_read( QImageIO
+ 
+ 	// Create the image
+ 	QImage image( x, y, 8, maxval + 1, QImage::BigEndian );
++	if( image.isNull()) {
++                free(block);
++		return;
++        }
+ 
+ 	// how do the color handling? they are absolute 24bpp
+ 	// or at least can be calculated as such.
+@@ -69,29 +81,9 @@ KDE_EXPORT void kimgio_xv_read( QImageIO
+ 
+ 	for ( int j = 0; j < 256; j++ )
+ 	{
+-// ----------- OLIVER EIDEN
+-// 	That is the old-code !
+-/*		r =  ((int) ((j >> 5) & 0x07)) << 5;
+-		g =  ((int) ((j >> 2) & 0x07)) << 5;
+-		b =  ((int) ((j >> 0) & 0x03)) << 6;*/
+-
+-
+-// 	That is the code-how xv, decode 3-3-2 pixmaps, it is slighly different,
+-//	but yields much better visuals results
+-/*		r =  (((int) ((j >> 5) & 0x07)) *255) / 7;
+-		g =  (((int) ((j >> 2) & 0x07)) *255) / 7;
+-		b =  (((int) ((j >> 0) & 0x03)) *255) / 3;*/
+-
+-//	This is the same as xv, with multiplications/divisions replaced by indexing
+-
+-//      Look-up table to avoid multiplications and divisons
+-	static int b_255_3[]= {0,85,170,255},  // index*255/3
+-		   rg_255_7[]={0,36,72,109,145,182,218,255}; // index *255/7
+-
+ 		r =  rg_255_7[((j >> 5) & 0x07)];
+ 		g =  rg_255_7[((j >> 2) & 0x07)];
+ 		b =  b_255_3[((j >> 0) & 0x03)];
+-// ---------------
+ 		image.setColor( j, qRgb( r, g, b ) );
+ 	}
+ 
+@@ -104,7 +96,7 @@ KDE_EXPORT void kimgio_xv_read( QImageIO
+ 	_imageio->setImage( image );
+ 	_imageio->setStatus( 0 );
+ 
+-	delete [] block;
++	free(block);
+ 	return;
+ }
+ 
