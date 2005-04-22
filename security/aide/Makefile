@@ -7,6 +7,7 @@
 
 PORTNAME=	aide
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITE_SOURCEFORGE+= http://unc.dl.sourceforge.net/%SUBDIR%/ \
 		http://umn.dl.sourceforge.net/%SUBDIR%/ \
@@ -27,14 +28,12 @@ COMMENT=	A replacement and extension for Tripwire
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
-BROKEN=		"Incomplete pkg-plist (installs files into nonstandard locale directory)"
-
 USE_GMAKE=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
-		--with-config_file=/var/db/aide/aide.conf
+		--with-config_file=${PREFIX}/etc/aide.conf
 
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -43,8 +42,11 @@ MAN5=		aide.conf.5
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf.sample
-	@${MKDIR} /var/db/aide/databases
-	@if [ ! -f /var/db/aide/aide.conf ]; then \
+	@if [ ! -d ${PREFIX}/etc/aide.conf ]; then \
+		${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf ; \
+	fi
+	@if [ ! -d /var/db/aide/databases ]; then \
+		${MKDIR} -p /var/db/aide/databases; \
 		${CHOWN} root:wheel /var/db/aide ; \
 		${CHOWN} root:wheel /var/db/aide/databases ; \
 		${CHMOD} 0700 /var/db/aide ; \
