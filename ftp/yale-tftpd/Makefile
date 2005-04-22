@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced tftpd(8) from Yale University and cisco Systems
 
 NO_WRKSUBDIR=
+MAKE_ARGS=	ETCDIR=${PREFIX}/etc BINDIR=${PREFIX}/libexec MANDIR=${PREFIX}/man/man
+
 MAN8=		tftpd.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	libexec/tftpd
