@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 PLIST_FILES=	bin/snowflake
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
+MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snowflake ${PREFIX}/bin
