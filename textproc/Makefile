@@ -554,6 +554,7 @@
     SUBDIR += queequeg
     SUBDIR += rand
     SUBDIR += raptor
+    SUBDIR += re_graph
     SUBDIR += redland
     SUBDIR += redland-bindings
     SUBDIR += replaceit

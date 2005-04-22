@@ -1,0 +1,17 @@
+The re_graph.pl program graphs regular expressions. The guts of the regular
+expression engine is a simple state machine. The various states and operations
+in the regular expression parser can be displayed using a surprisingly simple
+diagram.
+
+A few notes on what you are looking at:
+   * The nodes Start and Stop denote the beginning and end of the regular
+     expression.
+   * The solid squares denote atoms. Lines indicate the next state. When a
+     line splits, the state machine will take the top line first. If it's
+     path is blocked it will backup and take the next lower line. This is
+     repeated until it finds a path to the end or all paths are exhausted.
+   * Brown boxes indicate a grouping operation, i.e. ().                                                               
+   * Green boxes indicate a zero with test. The state machine will perform the
+     test inside the box before moving ahead.
+
+WWW: http://www.oualline.com/sw/
