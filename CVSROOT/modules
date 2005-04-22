@@ -8637,6 +8637,7 @@ pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-radius	ports/net/pecl-radius
 pecl-sqlite	ports/databases/pecl-sqlite
+pecl-ssh2	ports/security/pecl-ssh2
 pecl-statgrab	ports/devel/pecl-statgrab
 pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
