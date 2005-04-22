@@ -20,6 +20,10 @@ EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c
 EXTRACT_AFTER_ARGS=	| tail -n 1759 | sh
 
+MAKE_ARGS=	BINDIR="${PREFIX}/bin" \
+		MANDIR="${MAN1PREFIX}/man" \
+		TUTORIALS="${DATADIR}"
+
 MAN1=		vilearn.1
 
 .include <bsd.port.mk>
