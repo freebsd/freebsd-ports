@@ -2,6 +2,4 @@ WMPop3 is a POP3 mail box checker.  It will connect to a POP3 server
 to check if you have mail, if you do then it will alert you of new
 mail and how many messages are currently in your mail box.
 
-WWW:	http://www.cs.mun.ca/~scotth/
-
 - Jim <jim@FreeBSD.org>
