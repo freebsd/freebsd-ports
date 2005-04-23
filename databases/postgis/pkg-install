@@ -2,14 +2,15 @@
 
 msg(){
  echo "
-  ================== ** Postgis Upgrade Notice ** ===================
+  ================== ** Postgis Upgrade Notice ** ====================
 
-  If you are a user from a old version of Postgis (0.9.1 or older), 
-  make a backup from your databases before continue !
+  If you are a user from old versions of Postgis (1.0.0-RC5 or older), 
+  stop now and read the README.postgis file located in port's files 
+  directory to know how to make a dump from your databases !
 
   If you need to backup your data, press CTRL-C now !
 
-  ======================= GEOS Support Notice =======================
+  ======================= GEOS Support Notice ========================
   In order to use the GEOS support, you may need to specially compile
   your version of PostgreSQL to link the C++ runtime library.
   To do this, invoke the PostgreSQL Makefile script this way:
@@ -27,7 +28,7 @@ msg(){
   The initial LDFLAGS variable is passed through to the Makefile and
   adds the C++ library to the linking stage.
 
-  ===================================================================
+  ====================================================================
 "
 sleep 10
 
