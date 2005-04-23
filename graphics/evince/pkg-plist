@@ -5,6 +5,10 @@ share/gnome/applications/evince.desktop
 share/gnome/evince/evince-password.glade
 share/gnome/evince/evince-ui.xml
 share/gnome/evince/pdf-icon.png
+share/gnome/help/evince/C/evince.xml
+share/gnome/help/evince/C/figures/evince_start_window.png
+share/gnome/help/evince/C/legal.xml
+share/gnome/omf/evince/evince-C.omf
 share/locale/bg/LC_MESSAGES/evince.mo
 share/locale/ca/LC_MESSAGES/evince.mo
 share/locale/cs/LC_MESSAGES/evince.mo

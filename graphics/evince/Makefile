@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
@@ -21,6 +21,7 @@ USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT=yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libgnomeprintui \
 		desktopfileutils
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
