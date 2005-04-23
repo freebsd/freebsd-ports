@@ -7,10 +7,11 @@
 
 PORTNAME=	wpa_supplicant
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
 USE_REINPLACE=	yes
