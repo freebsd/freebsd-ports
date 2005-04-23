@@ -14,11 +14,10 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	4.3.0
-PORTREVISION=	3
+PORTVERSION=	4.4
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
-DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
+DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
 
 MAINTAINER=	ko@irfu.se
 COMMENT?=	The Visualization Toolkit shared libs
@@ -26,14 +25,12 @@ COMMENT?=	The Visualization Toolkit shared libs
 USE_REINPLACE=	yes
 
 LIBVER=		1
-CVSDATE=	20031006
 VTKSRCDIR=	${WRKDIR}/VTK
 TESTINGDIR=	${EXAMPLESDIR}/Testing
 VTKDATAROOT=	${EXAMPLESDIR}/VTKData
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
-RESTRICTED=	yes
 
 VTK_KITS=	Common Filtering Graphics Hybrid IO Imaging Rendering Parallel Patented
 
@@ -58,25 +55,9 @@ RUN_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 BUILD_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 .endif
 
-ONLY_FOR_ARCHS=	i386 # was not tested on other ARCHS
 USE_GMAKE=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
-
-# if optimization flag -O2 or -O3 is present - use g++33
-# There is a problem compiling Imaging/vtkImageEuclideanDistance.o by gcc 3.2.2
-# with -02 -march=pentium3
-.if defined(CXXFLAGS)
-TTT=	"${CXXFLAGS}"	# this quotes are VERY important!
-OPTFLAGPRESENT=	${TTT:C/^.*-O[23].*$/yes/}
-.if ${OPTFLAGPRESENT} == "yes"
-USE_GCC=	3.3
-.endif
-.endif
-
-.if ${OSVERSION} < 500016
-ADDITIONAL_EXE_LINKER_FLAGS=	${PTHREAD_LIBS}
-.endif
 
 CMAKE?=		${LOCALBASE}/bin/cmake
 CXXFLAGS+=	-Wno-deprecated
@@ -84,7 +65,7 @@ CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="${LINKERFLAGS}" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${ADDITIONAL_EXE_LINKER_FLAGS}" \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${PTHREAD_LIBS}" \
 		-DCMAKE_THREAD_LIBS:STRING="${PTHREAD_LIBS}"\
 		-DCMAKE_USE_PTHREADS:BOOL=ON \
 		-DCMAKE_C_COMPILER:STRING='${CC}' \

@@ -75,8 +75,13 @@
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestConvexPointSet.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestCurvatures.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestGraphLayoutFilter.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestHierarchicalBox.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestHierarchicalBoxPipeline.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestMultiBlock.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestMultiBlockStreamer.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestPlatonicSolids.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestQuadricClustering.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestQuadricClustering_1.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestRibbonAndTube.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestRibbonAndTube_1.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Graphics/TestRibbonAndTube_2.png
@@ -217,6 +222,7 @@
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/TestGridWarpNearest.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/TestICPTransform.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/TestImageStencilWithPolydata.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/TestImageTracerWidget.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/TestImplicitPlaneWidget.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/TestInteractorEventRecorder.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/TestInteractorEventRecorder_1.png
@@ -255,13 +261,12 @@
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/xyPlot.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/xyPlot2.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/xyPlot3.png
-%%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/xyPlot3_1.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/xyPlot4.png
-%%EXAMPLESDIR%%/VTKData/Baseline/Hybrid/xyPlot_1.png
 %%EXAMPLESDIR%%/VTKData/Baseline/IO/ParticleReader.png
 %%EXAMPLESDIR%%/VTKData/Baseline/IO/Plot3DScalars.png
 %%EXAMPLESDIR%%/VTKData/Baseline/IO/Plot3DScalars_1.png
 %%EXAMPLESDIR%%/VTKData/Baseline/IO/Plot3DVectors.png
+%%EXAMPLESDIR%%/VTKData/Baseline/IO/TestAVSucdReader.png
 %%EXAMPLESDIR%%/VTKData/Baseline/IO/TestBMPReader.png
 %%EXAMPLESDIR%%/VTKData/Baseline/IO/TestImageWriters.png
 %%EXAMPLESDIR%%/VTKData/Baseline/IO/TestJPEGReader.png
@@ -398,6 +403,7 @@
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/ImageActor.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/MesaText.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/ScalarBar.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestBunykRayCastFunction.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestFlyTo.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestFreetypeTextMapper.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestFreetypeTextMapperBigger.png
@@ -407,6 +413,7 @@
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestParallelCoordinates.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestStyleJoystickActor.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestStyleJoystickCamera.png
+%%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestStyleRubberBandZoom.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestStyleTerrain.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestStyleTrackballActor.png
 %%EXAMPLESDIR%%/VTKData/Baseline/Rendering/TestStyleTrackballCamera.png
@@ -594,6 +601,24 @@
 %%EXAMPLESDIR%%/VTKData/Data/cactus.3337.pts
 %%EXAMPLESDIR%%/VTKData/Data/caffeine.pdb
 %%EXAMPLESDIR%%/VTKData/Data/camscene.png
+%%EXAMPLESDIR%%/VTKData/Data/cellsnd.ascii.inp
+%%EXAMPLESDIR%%/VTKData/Data/cellsnd.bin.inp
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_0.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_1.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_10.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_11.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_12.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_13.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_14.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_15.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_2.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_3.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_4.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_5.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_6.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_7.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_8.vti
+%%EXAMPLESDIR%%/VTKData/Data/chombo3d/chombo3d_9.vti
 %%EXAMPLESDIR%%/VTKData/Data/combq.bin
 %%EXAMPLESDIR%%/VTKData/Data/combxyz.bin
 %%EXAMPLESDIR%%/VTKData/Data/earth.ppm
@@ -705,6 +730,9 @@
 %%EXAMPLESDIR%%/VTKData/Data/masonry.bmp
 %%EXAMPLESDIR%%/VTKData/Data/matrix.vtk
 %%EXAMPLESDIR%%/VTKData/Data/motor.g
+%%EXAMPLESDIR%%/VTKData/Data/multicomb_0.vts
+%%EXAMPLESDIR%%/VTKData/Data/multicomb_1.vts
+%%EXAMPLESDIR%%/VTKData/Data/multicomb_2.vts
 %%EXAMPLESDIR%%/VTKData/Data/neghip.slc
 %%EXAMPLESDIR%%/VTKData/Data/nut.slc
 %%EXAMPLESDIR%%/VTKData/Data/office.binary.vtk
@@ -728,6 +756,7 @@
 %%EXAMPLESDIR%%/VTKData/VTKData.readme
 @dirrm %%EXAMPLESDIR%%/VTKData/Data/libtiff
 @dirrm %%EXAMPLESDIR%%/VTKData/Data/headsq
+@dirrm %%EXAMPLESDIR%%/VTKData/Data/chombo3d
 @dirrm %%EXAMPLESDIR%%/VTKData/Data/Viewpoint
 @dirrm %%EXAMPLESDIR%%/VTKData/Data/EnSight
 @dirrm %%EXAMPLESDIR%%/VTKData/Data
@@ -739,7 +768,6 @@
 @dirrm %%EXAMPLESDIR%%/VTKData/Baseline/Hybrid
 @dirrm %%EXAMPLESDIR%%/VTKData/Baseline/Graphics
 @dirrm %%EXAMPLESDIR%%/VTKData/Baseline/Filtering
-@unexec rmdir %D/%%EXAMPLESDIR%%/VTKData/Baseline/Common 2>/dev/null || true
 @dirrm %%EXAMPLESDIR%%/VTKData/Baseline
 @dirrm %%EXAMPLESDIR%%/VTKData
 @unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
