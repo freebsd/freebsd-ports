@@ -30,7 +30,6 @@ PREFIX?=	${LOCALBASE}/${PORTNAME}
 NO_MTREE=	yes
 
 CONFLICTS=	firebird-1.*
-NO_PACKAGE=	pkg-install not finished
 
 WRKSRC=		${WRKDIR}/firebird2
 INSTALLS_SHLIB=	yes
