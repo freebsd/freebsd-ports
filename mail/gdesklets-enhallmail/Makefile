@@ -8,7 +8,8 @@
 PORTNAME=	enhallmail
 PORTVERSION=	0.3
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/ \
+		http://www.mathematik.uni-marburg.de/~wetzmj/files/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	LT${PORTNAME}-${PORTVERSION}
 
