@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="91f1adc7-b3e9-11d9-a788-0001020eed82">
+    <topic>kdewebdev -- kommander untrusted code execution
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>kdewebdev</name>
+	<range><lt>3.4.0_1,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A KDE Security Advisory reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20050420-1.txt">
+	  <p>Kommander executes without user confirmation data files
+	    from possibly untrusted locations. As they contain
+	    scripts, the user might accidentally run arbitrary
+	    code.</p>
+	  <p><strong>Impact:</strong> Remotly supplied kommander files
+	    from untrusted sources are executed without
+	    confirmation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0754</cvename>
+      <url>http://www.kde.org/info/security/advisory-20050420-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-04-20</discovery>
+      <entry>2005-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="97edf5ab-b319-11d9-837d-000e0c2e438a">
     <topic>junkbuster -- heap corruption vulnerability and configuration
       modification vulnerability</topic>
