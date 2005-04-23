@@ -25,7 +25,7 @@ USE_JAVA=	yes
 USE_ANT=	yes
 JAVA_VERSION=	1.4+
 ALL_TARGET=	clean compile-driver
-MAKE_ARGS=	-Djavajardir=${JAVAJARDIR}
+MAKE_ARGS=	-Djavalibdir=${JAVALIBDIR}
 BUILDDIR=	${WRKDIR}/build-mysql-jdbc/${DISTNAME}
 
 .else
