@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	c3270
-PORTVERSION=	3.3.2p2
+PORTVERSION=	3.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://x3270.bgp.nu/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
@@ -31,12 +31,6 @@ MAN1=		c3270.1 \
 		pr3287.1
 MAN5=		ibm_hosts.5
 MANCOMPRESSED=	no
-
-PLIST_FILES=	bin/c3270 \
-		bin/x3270if \
-		bin/pr3287 \
-		etc/x3270/ibm_hosts
-PLIST_DIRS=	etc/x3270
 
 PORTDOCS=	*
 
@@ -83,12 +77,9 @@ CONFIGURE_ARGS+=	--disable-apl
 .if defined(WITH_DBCS) && !defined(WITHOUT_DBCS)
 CONFIGURE_ARGS+=	--enable-dbcs
 BUILD_DEPENDS+=	${LOCALBASE}/include/unicode/ucnv.h:${PORTSDIR}/devel/icu2:install
-UCM_TABLES=	ibm-1027_P100-1995	\
-		ibm-300_P110-1997	\
-		ibm-837_P100-2000
-.for table_name in ${UCM_TABLES}
-PLIST_FILES+=	etc/x3270/icudt28l_${table_name}.cnv
-.endfor
+LIST_SUB+=	DBCS=""
+.else
+PLIST_SUB+=	DBCS="@comment "
 .endif
 
 .if defined(WITHOUT_FT) && !defined(WITH_FT)
@@ -123,18 +114,14 @@ pre-patch:
 .endif
 
 post-install:
-	-( cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} Makefile install.man )
+	@( cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} Makefile install.man )
 .if !defined(NOPORTDOCS)
-	-${MKDIR} ${DOCSDIR}
-	-${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/html
 .for i in ${PORTDOCS}
-		-${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 	@${ECHO_MSG} "===> Extra Documentation installed in ${DOCSDIR}/html ."
 .endif
-
-post-deinstall:
-	-${RMDIR} ${DOCSDIR}/html
-	-${RMDIR} ${DOCSDIR}
 
 .include <bsd.port.post.mk>
