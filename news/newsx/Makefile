@@ -7,7 +7,7 @@
 
 PORTNAME=	newsx
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
 
@@ -16,7 +16,7 @@ COMMENT=	A program to fetch news from and post news to a remote NNTP server
 
 .if defined(WITH_CNEWS)
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
-.else !defined(WITHOUT_INN_2-X)
+.elif !defined(WITHOUT_INN_2-X)
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
