@@ -1,5 +1,5 @@
 --- gai/gai-gnome.c.orig	Sat Aug 14 13:58:24 2004
-+++ gai/gai-gnome.c	Fri Apr 15 22:52:09 2005
++++ gai/gai-gnome.c	Sat Apr 23 17:06:12 2005
 @@ -181,7 +181,7 @@
  static void gai_gnome_create_menu(void)
  {
@@ -19,13 +19,3 @@
      sprintf(gnome_menu_xml+ptr,"</popup>\n");
  
  
-@@ -345,8 +348,8 @@
- static int
- gai_gnome_expose(GtkWidget *widget, GdkEventExpose *event, gpointer d)
- {
--    static gboolean expose_lock = FALSE;
-     GAI_ENTER;
-+    static gboolean expose_lock = FALSE;
- 
-     if(expose_lock){
- 	GAI_NOTE("Expose lock");
