@@ -6,8 +6,6 @@ share/munger-%%MUNGER_VERSION%%/mime2munger.munger
 share/munger-%%MUNGER_VERSION%%/google.munger
 share/munger-%%MUNGER_VERSION%%/google.template
 share/munger-%%MUNGER_VERSION%%/ed.munger
-share/munger-%%MUNGER_VERSION%%/xml2lisp.munger
-share/munger-%%MUNGER_VERSION%%/xml2lisp2.munger
 share/munger-%%MUNGER_VERSION%%/xmlquery.munger
 share/munger-%%MUNGER_VERSION%%/filter.munger
 share/munger-%%MUNGER_VERSION%%/tags.munger

@@ -6,34 +6,22 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.44
+PORTVERSION=	4.54
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
 MAINTAINER=	jimmy@jamesbailie.com
 COMMENT=	Static lisp interpreter with text processing abilities
 
-PLIST_SUB=	MUNGER_VERSION=${PORTVERSION}
-
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 MAN1=		munger.1 httpf.1 xml2munger.1
 MANCOMPRESSED=	yes
+PLIST_SUB=	MUNGER_VERSION=${PORTVERSION}
 
-.if !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
 OPTIONS=	FCGI "include FastCGI interface" on \
 		SQL  "include SQLite interface"  on \
 		TERM "include character-I/O functions" on
-.else
-WITH_SQL=	yes
-WITH_FCGI=	yes
-WITH_TERM=	yes
-.endif
-
-# Prevents SQLite from obnoxiously installing Tcl/Tk merely to build its docs.
-
-NOPORTDOCS=	yes
 
 .include <bsd.port.pre.mk>
 

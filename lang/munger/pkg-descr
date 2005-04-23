@@ -9,5 +9,8 @@ Munger.  Basic facilities for doing line-oriented I/O and cursor-addressing
 are provided.  Munger also has interfaces to the FastCGI devkit
 (http://www.fastcgi.com), and the SQLite library (http://www.sqlite.org).
 
-WWW: http://www.jamesbailie.com/munger.html
-Author: James Bailie <jimmy@jamesbailie.com>
+WWW: http://jamesbailie.com/munger.html
+
+--
+James Bailie <jimmy@jamesbailie.com>
+http://jamesbailie.com
