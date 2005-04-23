@@ -6847,6 +6847,7 @@ p5-Array-PrintCols	ports/misc/p5-Array-PrintCols
 p5-Array-RefElem	ports/misc/p5-Array-RefElem
 p5-Array-Window	ports/devel/p5-Array-Window
 p5-AsciiDB-TagFile	ports/databases/p5-AsciiDB-TagFile
+p5-Asterisk	ports/misc/p5-Asterisk
 p5-Astro-ADS	ports/astro/p5-Astro-ADS
 p5-Astro-Catalog	ports/astro/p5-Astro-Catalog
 p5-Astro-DSS	ports/astro/p5-Astro-DSS
