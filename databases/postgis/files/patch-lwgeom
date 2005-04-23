@@ -1,5 +1,5 @@
---- lwgeom/Makefile	Fri Mar 18 09:43:23 2005
-+++ lwgeom/Makefile	Mon Mar 21 08:58:26 2005
+--- lwgeom/Makefile	Mon Apr  4 06:48:57 2005
++++ lwgeom/Makefile	Thu Apr 21 17:08:37 2005
 @@ -21,10 +21,10 @@
  
  ifeq (${USE_VERSION},71) 
@@ -23,10 +23,10 @@
 +	$(INSTALL_DATA) lwpostgis.sql $(DESTDIR)$(DATADIR)/lwpostgis.sql.default
 +	$(INSTALL_DATA) ../spatial_ref_sys.sql $(DESTDIR)$(DATADIR)/spatial_ref_sys.sql
 +	$(INSTALL_DATA) ../README.postgis $(DESTDIR)$(DATADIR)/README.postgis
+ 	$(INSTALL_DATA) ../doc/man/pgsql2shp.1 $(DESTDIR)$(mandir)/man1/pgsql2shp.1
+ 	$(INSTALL_DATA) ../doc/man/shp2pgsql.1 $(DESTDIR)$(mandir)/man1/shp2pgsql.1
  
- #- This has been copied from postgresql and adapted
- install-lwgeom-lib: $(shlib)
-@@ -169,9 +169,9 @@
+@@ -171,9 +171,9 @@
  	sh ../geos_version.sh $(GEOS_DIR) > postgis_geos_version.h
  
  installdirs:

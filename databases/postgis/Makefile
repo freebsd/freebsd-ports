@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.0.0-rc5
+DISTVERSION=	1.0.0
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/
 
@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_PERL5_BUILD=	yes
 
-PKGMESSAGE=	pkg-message
 PGSQL_SRC=	${WRKDIR}/pgsql/postgresql
 
 INSTALL_TARGET=	install
@@ -40,6 +39,8 @@ MAKE_ARGS=	PGSQL_SRC="${PGSQL_SRC}" \
 		LIBDIR="${PREFIX}/lib"
 
 PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+
+MAN1=		pgsql2shp.1 shp2pgsql.1
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
@@ -73,7 +74,6 @@ pre-configure:
 post-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-	@ ${CAT} ${PKGMESSAGE}
 
 post-deinstall:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
