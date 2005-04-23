@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.4
+PORTVERSION=		1.4.1
 CATEGORIES=		security
-MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION}/
+MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$/&/:C/\.[0-9]*$//}/
 EXTRACT_SUFX=		.tar
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 
@@ -57,7 +57,10 @@ MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
 MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 			ktutil.8 kadmind.8 kprop.8 kpropd.8 sserver.8 \
 			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8 \
-			k5srvutil.8 krb524d.8
+			k5srvutil.8
+.if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
+MAN8+=			krb524d.8
+.endif
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
