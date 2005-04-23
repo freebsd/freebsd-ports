@@ -14,8 +14,6 @@ MASTER_SITES=	http://starplot.org/downloads/
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	3-dimensional viewer for star charts
 
-BROKEN=		Incomplete pkg-plist
-
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

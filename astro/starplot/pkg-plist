@@ -19,3 +19,9 @@ share/starplot/test.stars
 @dirrm %%DOCSDIR%%/html/images
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/locale/en@boldquot/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en@boldquot 2> /dev/null || true
+@unexec rmdir %D/share/locale/en@quot/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en@quot 2> /dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/es 2> /dev/null || true
