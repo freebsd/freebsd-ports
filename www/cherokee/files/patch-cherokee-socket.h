@@ -1,5 +1,5 @@
---- src/socket.h.orig	Sat Jun 19 23:03:54 2004
-+++ src/socket.h	Sat Jul 17 20:36:02 2004
+--- cherokee/socket.h.orig	Sun Mar  6 08:09:33 2005
++++ cherokee/socket.h	Fri Apr  1 13:09:44 2005
 @@ -45,12 +45,12 @@
  # include <sys/socket.h>
  #endif

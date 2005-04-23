@@ -6,34 +6,59 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.4.17
+PORTVERSION=	0.4.19
 CATEGORIES=	www
-MASTER_SITES=	ftp://laurel.datsi.fi.upm.es/pub/linux/cherokee/%SUBDIR%/
+MASTER_SITES=	http://www.0x50.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extremely fast and flexible web server
 
-LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
+CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www
 INSTALLS_SHLIB=	yes
 
 MAN1=		cherokee-config.1 cherokee.1
 
-CPPFLAGS=	${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.if defined(WITHOUT_GNUTLS)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--enable-tls=openssl
+LDFLAGS+=	-lssl -lcrypto
+.else
+LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--enable-tls=gnutls
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken pkg-plist"
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	PAM="" PAM5="@comment "
+.else
+PLIST_SUB+=	PAM="@comment " PAM5=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(top_builddir)/sherokee_reinplace|true|g' \
+		${WRKSRC}/Makefile.in
+
+pre-build:
+.for file in advanced.conf cherokee.conf mods-ssl sites-default sites-example
+	@cd ${BUILD_WRKSRC} && ${SED} -e \
+		's:%sysconfdir%:${PREFIX}/etc:g ; \
+		 s:%datadir%:${PREFIX}/share:g ; \
+		 s:%wwwroot%:${PREFIX}/www:g ; \
+		 s:%prefix%:${PREFIX}:g' < ${file}.sample.pre > ${file}.sample
+.endfor
 
 pre-install:
 	@if [ ! -f ${PREFIX}/www ]; then \
