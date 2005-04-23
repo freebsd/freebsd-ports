@@ -25,10 +25,6 @@ MAN6=		pipenightdreams.6
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g; \
 		s|SDL_LIBSS|SDL_LIBS|g; s|datadir/games|datadir|;' \
