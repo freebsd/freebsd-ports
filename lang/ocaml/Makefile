@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.08.2
+PORTVERSION=	3.08.3
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -39,8 +39,10 @@ LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
+STRIP=
 
 MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamldoc.1 ocamlopt.1 \
 		ocamlrun.1 ocamlyacc.1 ocamlmktop.1 ocaml.1 ocamlc.1 \
@@ -92,6 +94,27 @@ PLIST_SUB+=	PROF=""
 BROKEN=		"Does not compile on sparc64"
 .endif
 
+post-configure:
+# CFLAGS safeness
+	@${REINPLACE_CMD} -E \
+		-e 's|(BYTECCCOMPOPTS[[:space:]]*=.*)|\1 ${CFLAGS}|' \
+		-e 's|(NATIVECCCOMPOPTS[[:space:]]*=.*)|\1 ${CFLAGS}|' \
+		${WRKSRC}/config/Makefile
+# INSTALL* safeness (which preserves the correct permissions despite
+# user's umask(1)
+	@${FIND} ${WRKDIR} -type f -name Makefile -print0 | \
+		${XARGS} -0 -n 5 -x \
+		${REINPLACE_CMD} -E \
+		-e 's,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \3,' \
+		-e 's,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,^([[:space:]]*(then)?[[:space:]]*)\$$\(CP\)([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \3,' \
+		-e 's,^([[:space:]]*(then)?[[:space:]]*)\$$\(CP\)([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,^([[:space:]]*(then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,' \
+		-e 's,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \2,' \
+		-e 's,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \2,' \
+		-e 's,([[:space:]]*(do|then)[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
+
 post-install:
 	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
 .if !defined(WITHOUT_TK)
@@ -108,5 +131,17 @@ post-install:
 		ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
 	@${STRIP_CMD} ${PREFIX}/bin/${prog}
 .endfor
+# XXX ugly hack to fix permissions. I could not find the proper
+# Makefile entry
 
+	@${FIND} ${EXAMPLESDIR} -type f -print0 | \
+		${XARGS} -0 -n 5 -x \
+		${CHMOD} ${SHAREMODE}
+	@${FIND} -d ${EXAMPLESDIR} -type d -print0 | \
+		${XARGS} -0 -n 5 -x \
+		${CHMOD} ${SHAREMODE}
+	@${FIND} -s ${EXAMPLESDIR} -type d -print0 | \
+		${XARGS} -0 -n 5 -x \
+		${CHMOD} a+x
+		
 .include <bsd.port.post.mk>
