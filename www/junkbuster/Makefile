@@ -22,6 +22,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An HTTP proxy server that eliminates ads
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/97edf5ab-b319-11d9-837d-000e0c2e438a.html
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2005-05-23
+
 USE_REINPLACE=	yes
 
 ALL_TARGET=	# yes, an empty target.
