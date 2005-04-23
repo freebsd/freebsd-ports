@@ -7,6 +7,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:-lcrypto:-lcrypto -lm:g' ${WRKSRC}/configure
 
 post-install:
-	@${MV} ${PREFIX}/lib/libssh2.so ${PREFIX}/lib/libssh2.so.0
-	@cd ${PREFIX}; ${LN} -s libssh2.so.0 libssh2.so
+	${MV} ${PREFIX}/lib/libssh2.so ${PREFIX}/lib/libssh2.so.0
+	cd ${PREFIX}/lib; ${LN} -s libssh2.so.0 libssh2.so
 
 .include <bsd.port.mk>
