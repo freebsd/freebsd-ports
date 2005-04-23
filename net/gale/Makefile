@@ -34,14 +34,13 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500039
-IGNORE=         requires wchar functions for compilation
+CFLAGS+=	-DNEED_WCWIDTH
 .endif
 
 # cheesy hack - test-oop doesn't build, but we don't care.
 pre-configure:
 	${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
 			${WRKSRC}/liboop/Makefile.in
-	${ECHO} -n > ${WRKSRC}/libgale/wcwidth.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
