@@ -1,0 +1,725 @@
+diff -ruN ../../0.2.9_3/portmanager/ChangeLog ./ChangeLog
+--- ../../0.2.9_3/portmanager/ChangeLog	Wed Apr  6 19:50:14 2005
++++ ./ChangeLog	Fri Apr 22 12:32:22 2005
+@@ -1,6 +1,32 @@
+ change log
+ 
+-NOTE to self: Monitor from 0.2.1 to 0.2.2 item 3.
++from 0.2.9_3 to 0.2.9_4	(April 2005)
++
++1) Improved warning message if a +CONTENTS file is missing in PMGRrVerifyContentsFile.c
++
++2) PMGRrAddDependencies.c changed way stringSize is calculated for portDependency variable
++to eliminate a potential buffer over run. While I have never duplicated a buffer overrun
++the portmanager.core file received from "TJ Varghese" <tjv@wynet.com.my> from a FreeBSD
++4.11 system proves it is possible.
++
++
++from 0.2.9_2 to 0.2.9_3	(March 2005)
++
++1) Added check for really old ports in PMGRrAddDependencies that
++aborts portmanager and provides suggestion on how to update manually.
++This is to fix a seg fault when @comment DEPORIGIN: is missing in
++a port's +CONTENTS file
++
++2) Incorporated  Alistair Sutton's <alistair.sutton@gmail.com>
++code that adds interactive update option "portmanager -ui".
++
++3) Slowly switching license from GNU to BSD.
++
++from 0.2.9 to 0.2.9_2	(March 2005)
++
++from 0.2.9 to 0.2.9_1	(March 2005)
++
++	1) Added warnings if portmanager is not run as root
+ 
+ from 0.2.8 to 0.2.9	(February 2005)
+ 
+@@ -23,7 +49,7 @@
+ 
+ 	2) Added conflict handling when upgrading ports
+ 	
+-	3) If running in xter, now indicates %done in title bar.
++	3) If running in xterm, now indicates %done in title bar.
+ 
+ from 0.2.6 to 0.2.7	(February 2005)
+ 
+@@ -33,7 +59,7 @@
+ 
+ from 0.2.5 to 0.2.6	(February 2005)
+ 
+-	Added -sl and -slid options to help users safely remove uneeded
++	Added -sl and -slid options to help users safely remove unneeded
+ 	ports ports from their system. 
+ 
+ from 0.2.4 to 0.2.5	(February 2005)
+@@ -51,7 +77,7 @@
+ 
+ from 0.2.2 to 0.2.3	(January 2005)
+ 
+-	Major rewrite of libMG routines. Now most datbase related code is
++	Major rewrite of libMG routines. Now most database related code is
+ 	object oriented, this will simplify adding user requested features
+ 	in future releases.
+ 	
+@@ -63,7 +89,7 @@
+ 	for an index to the others. Be warned, many still need to be written,
+ 	I'll try to add a few with each new version of portmanager.
+ 	
+-	One final thing, found a major openfile leak while running pmstatus
++	One final thing, found a major open file leak while running pmstatus
+ 	which is run once with portmanager -s or several times with
+ 	portmanager -u. In this version (0.2.3) pmstatus and pmupgrade were
+ 	merged into portmanager and the open files grew to:
+@@ -73,7 +99,7 @@
+ 	After tracking down the problem and fixing it individual ports seem
+ 	to build faster. It is likely that previous versions of portmanager
+ 	caused a few ports to fail to build because it was hogging too many
+-	open file handles, if so I appologize and promise to tighly monitor
++	open file handles, if so I apologize and promise to tightly monitor
+ 	memory leaks and open files in future versions. BTW, this version under
+ 	extensive monitoring with top and fstat -p shows no leakage at all in my
+ 	initial tests.
+@@ -97,10 +123,10 @@
+ 
+ 	5) pmupgrade.c fixed hard coded paths
+ 	
+-	6) pmupgrade.c Major cleanup of code, seperated upgrade routine into
++	6) pmupgrade.c Major cleanup of code, separated upgrade routine into
+ 	upgrade, checkForOldDepencies, and doUpgrade routines.
+ 	
+-	7) fixed portmanager seg faulting when it selfupdates.  (thanks to
++	7) fixed portmanager seg faulting when it self updates.  (thanks to
+ 	"Noah" <admin2@enabled.com> for reporting
+ 	
+ from 0.2.0 to 0.2.1	(December 2004)
+@@ -110,7 +136,7 @@
+ 
+ 	2) Replaced html docs with a portmanager.1 man page.
+ 
+-	3) Eleminated several useless header files
++	3) Eliminated several useless header files
+ 
+ 	4) Added better error checking or /var/db/{portname}/+CONTENTS
+ 	files
+@@ -120,13 +146,13 @@
+ from 0.1.9 to 0.2.0
+ 
+ 	added patches (with some mods) provided by  Gudin Francis to
+-	pmupgrade.c (add error checking durring make) and
++	pmupgrade.c (add error checking during make) and
+ 	PMGRrMakeDescribe (modify's how make describe is called by
+ 	placing options before target)
+ 
+ 	reworked config file, now renamed to pm-020.conf
+ 
+-	added -pkgadd switch though this may not be a permament change
++	added -pkgadd switch though this may not be a permanent change
+ 	yet.
+ 
+ from 0.1.8 to 0.1.9
+@@ -155,9 +181,9 @@
+ 
+ from 0.1.4 to 0.1.5
+ 
+-	if pmStatus receives a segfault it will reset the cache
+-	automatically. pmUpgrade and portmanager -s will automatically
+-	retry pmStatus one time after a cache reset.
++	if pmstatus receives a seg fault it will reset the cache
++	automatically. pmupgrade and portmanager -s will automatically
++	retry pmstatus one time after a cache reset.
+ 
+ from 0.1.3 to 0.1.4
+ 
+@@ -202,10 +228,10 @@
+ 
+ 	April 20, 2004
+ 
+-	1 Added portmanager the executable which serves to run pmUpgrade
+-	and pmStatus. 
++	1 Added portmanager the executable which serves to run pmupgrade
++	and pmstatus. 
+ 
+-	2 Renamed port from portManager to  portmanager because the cap 
++	2 Renamed port from portmanager to  portmanager because the cap 
+ 	in the middle may be annoying to remember for users running it
+ 	from the command line.
+ 
+diff -ruN ../../0.2.9_3/portmanager/NEWS ./NEWS
+--- ../../0.2.9_3/portmanager/NEWS	Wed Apr  6 19:50:14 2005
++++ ./NEWS	Fri Apr 22 12:31:39 2005
+@@ -1,5 +1,14 @@
+ change log
+ 
++from 0.2.9_3 to 0.2.9_4	(April 2005)
++
++1) Improved warning message if a +CONTENTS file is missing in PMGRrVerifyContentsFile.c
++
++2) PMGRrAddDependencies.c changed way stringSize is calculated for portDependency variable
++to eliminate a potential buffer over run. While I have never duplicated a buffer overrun
++the portmanager.core file received from "TJ Varghese" <tjv@wynet.com.my> from a FreeBSD
++4.11 system proves it is possible.
++
+ 
+ from 0.2.9_2 to 0.2.9_3	(March 2005)
+ 
+@@ -40,7 +49,7 @@
+ 
+ 	2) Added conflict handling when upgrading ports
+ 	
+-	3) If running in xter, now indicates %done in title bar.
++	3) If running in xterm, now indicates %done in title bar.
+ 
+ from 0.2.6 to 0.2.7	(February 2005)
+ 
+@@ -50,7 +59,7 @@
+ 
+ from 0.2.5 to 0.2.6	(February 2005)
+ 
+-	Added -sl and -slid options to help users safely remove uneeded
++	Added -sl and -slid options to help users safely remove unneeded
+ 	ports ports from their system. 
+ 
+ from 0.2.4 to 0.2.5	(February 2005)
+@@ -68,7 +77,7 @@
+ 
+ from 0.2.2 to 0.2.3	(January 2005)
+ 
+-	Major rewrite of libMG routines. Now most datbase related code is
++	Major rewrite of libMG routines. Now most database related code is
+ 	object oriented, this will simplify adding user requested features
+ 	in future releases.
+ 	
+@@ -80,7 +89,7 @@
+ 	for an index to the others. Be warned, many still need to be written,
+ 	I'll try to add a few with each new version of portmanager.
+ 	
+-	One final thing, found a major openfile leak while running pmstatus
++	One final thing, found a major open file leak while running pmstatus
+ 	which is run once with portmanager -s or several times with
+ 	portmanager -u. In this version (0.2.3) pmstatus and pmupgrade were
+ 	merged into portmanager and the open files grew to:
+@@ -90,7 +99,7 @@
+ 	After tracking down the problem and fixing it individual ports seem
+ 	to build faster. It is likely that previous versions of portmanager
+ 	caused a few ports to fail to build because it was hogging too many
+-	open file handles, if so I appologize and promise to tighly monitor
++	open file handles, if so I apologize and promise to tightly monitor
+ 	memory leaks and open files in future versions. BTW, this version under
+ 	extensive monitoring with top and fstat -p shows no leakage at all in my
+ 	initial tests.
+@@ -114,10 +123,10 @@
+ 
+ 	5) pmupgrade.c fixed hard coded paths
+ 	
+-	6) pmupgrade.c Major cleanup of code, seperated upgrade routine into
++	6) pmupgrade.c Major cleanup of code, separated upgrade routine into
+ 	upgrade, checkForOldDepencies, and doUpgrade routines.
+ 	
+-	7) fixed portmanager seg faulting when it selfupdates.  (thanks to
++	7) fixed portmanager seg faulting when it self updates.  (thanks to
+ 	"Noah" <admin2@enabled.com> for reporting
+ 	
+ from 0.2.0 to 0.2.1	(December 2004)
+@@ -127,7 +136,7 @@
+ 
+ 	2) Replaced html docs with a portmanager.1 man page.
+ 
+-	3) Eleminated several useless header files
++	3) Eliminated several useless header files
+ 
+ 	4) Added better error checking or /var/db/{portname}/+CONTENTS
+ 	files
+@@ -137,13 +146,13 @@
+ from 0.1.9 to 0.2.0
+ 
+ 	added patches (with some mods) provided by  Gudin Francis to
+-	pmupgrade.c (add error checking durring make) and
++	pmupgrade.c (add error checking during make) and
+ 	PMGRrMakeDescribe (modify's how make describe is called by
+ 	placing options before target)
+ 
+ 	reworked config file, now renamed to pm-020.conf
+ 
+-	added -pkgadd switch though this may not be a permament change
++	added -pkgadd switch though this may not be a permanent change
+ 	yet.
+ 
+ from 0.1.8 to 0.1.9
+@@ -172,9 +181,9 @@
+ 
+ from 0.1.4 to 0.1.5
+ 
+-	if pmStatus receives a segfault it will reset the cache
+-	automatically. pmUpgrade and portmanager -s will automatically
+-	retry pmStatus one time after a cache reset.
++	if pmstatus receives a seg fault it will reset the cache
++	automatically. pmupgrade and portmanager -s will automatically
++	retry pmstatus one time after a cache reset.
+ 
+ from 0.1.3 to 0.1.4
+ 
+@@ -219,10 +228,10 @@
+ 
+ 	April 20, 2004
+ 
+-	1 Added portmanager the executable which serves to run pmUpgrade
+-	and pmStatus. 
++	1 Added portmanager the executable which serves to run pmupgrade
++	and pmstatus. 
+ 
+-	2 Renamed port from portManager to  portmanager because the cap 
++	2 Renamed port from portmanager to  portmanager because the cap 
+ 	in the middle may be annoying to remember for users running it
+ 	from the command line.
+ 
+diff -ruN ../../0.2.9_3/portmanager/libPMGR/src/PMGRrAddDependencies.c ./libPMGR/src/PMGRrAddDependencies.c
+--- ../../0.2.9_3/portmanager/libPMGR/src/PMGRrAddDependencies.c	Wed Apr  6 19:50:14 2005
++++ ./libPMGR/src/PMGRrAddDependencies.c	Fri Apr 22 12:30:40 2005
+@@ -102,11 +102,20 @@
+ 	while( ( portDependency = strnstr( buffPtr, "@pkgdep ", bufferSize - (buffPtr - buffer) ) ) )
+ 	{
+ 		portDependency			+= strlen( "@pkgdep " ); 
++
++/*
+ 		stringSize			= strstr( portDependency, "\n" ) - portDependency;
+ 		if(stringSize < 1)
+ 		{
+ 			break;
+ 		}
++*/
++		stringSize			= 0;
++		while( portDependency[stringSize] != LINEFEED && stringSize < 256 )
++		{
++			stringSize++;
++		}		
++
+ 		portDependency[stringSize]	= 0;
+ 
+ 		buffPtr 			= portDependency + stringSize + 1;
+@@ -173,4 +182,5 @@
+ 	}
+ 	return(0);
+ }
++
+ 
+diff -ruN ../../0.2.9_3/portmanager/libPMGR/src/PMGRrVerifyContentsFile.c ./libPMGR/src/PMGRrVerifyContentsFile.c
+--- ../../0.2.9_3/portmanager/libPMGR/src/PMGRrVerifyContentsFile.c	Wed Apr  6 19:50:14 2005
++++ ./libPMGR/src/PMGRrVerifyContentsFile.c	Fri Apr 22 12:09:41 2005
+@@ -34,6 +34,7 @@
+ 	int		stringSize		= 0;
+ 	signed int	fopenIdx		= 0;
+ 	signed int	mallocIdx		= 0;
++	pid_t		pid;
+ 
+ 	stringSize	= strlen(PKGDBDIR)
+ 			+ strlen("/")
+@@ -72,7 +73,15 @@
+ 	{
+ 		fprintf( stderr, "%s %s error: could not open %s\n", id, VERSION, contentsFileName );
+ 		perror( "system message" );
+-		assert(0);
++		pid	= fork();
++		if( !pid )
++		{
++			execl( "/usr/sbin/pkg_info", "pkg_info", portName, 0 );
++		}
++		wait( pid );
++		fprintf( stderr, "%s %s error: portmanager cannot continue, recommend you manually reinstall %s\n", id, VERSION, portName );
++		free( contentsFileName );
++		exit( 1 );
+ 	}
+ 
+ 	bufferSize	= MGrFileSize( contentsFileName );
+diff -ruN ../../0.2.9_3/portmanager/patch-0.2.9_4 ./patch-0.2.9_4
+--- ../../0.2.9_3/portmanager/patch-0.2.9_4	Wed Dec 31 16:00:00 1969
++++ ./patch-0.2.9_4	Fri Apr 22 12:32:26 2005
+@@ -0,0 +1,333 @@
++diff -ruN ../../0.2.9_3/portmanager/ChangeLog ./ChangeLog
++--- ../../0.2.9_3/portmanager/ChangeLog	Wed Apr  6 19:50:14 2005
+++++ ./ChangeLog	Fri Apr 22 12:32:22 2005
++@@ -1,6 +1,32 @@
++ change log
++ 
++-NOTE to self: Monitor from 0.2.1 to 0.2.2 item 3.
+++from 0.2.9_3 to 0.2.9_4	(April 2005)
+++
+++1) Improved warning message if a +CONTENTS file is missing in PMGRrVerifyContentsFile.c
+++
+++2) PMGRrAddDependencies.c changed way stringSize is calculated for portDependency variable
+++to eliminate a potential buffer over run. While I have never duplicated a buffer overrun
+++the portmanager.core file received from "TJ Varghese" <tjv@wynet.com.my> from a FreeBSD
+++4.11 system proves it is possible.
+++
+++
+++from 0.2.9_2 to 0.2.9_3	(March 2005)
+++
+++1) Added check for really old ports in PMGRrAddDependencies that
+++aborts portmanager and provides suggestion on how to update manually.
+++This is to fix a seg fault when @comment DEPORIGIN: is missing in
+++a port's +CONTENTS file
+++
+++2) Incorporated  Alistair Sutton's <alistair.sutton@gmail.com>
+++code that adds interactive update option "portmanager -ui".
+++
+++3) Slowly switching license from GNU to BSD.
+++
+++from 0.2.9 to 0.2.9_2	(March 2005)
+++
+++from 0.2.9 to 0.2.9_1	(March 2005)
+++
+++	1) Added warnings if portmanager is not run as root
++ 
++ from 0.2.8 to 0.2.9	(February 2005)
++ 
++@@ -23,7 +49,7 @@
++ 
++ 	2) Added conflict handling when upgrading ports
++ 	
++-	3) If running in xter, now indicates %done in title bar.
+++	3) If running in xterm, now indicates %done in title bar.
++ 
++ from 0.2.6 to 0.2.7	(February 2005)
++ 
++@@ -33,7 +59,7 @@
++ 
++ from 0.2.5 to 0.2.6	(February 2005)
++ 
++-	Added -sl and -slid options to help users safely remove uneeded
+++	Added -sl and -slid options to help users safely remove unneeded
++ 	ports ports from their system. 
++ 
++ from 0.2.4 to 0.2.5	(February 2005)
++@@ -51,7 +77,7 @@
++ 
++ from 0.2.2 to 0.2.3	(January 2005)
++ 
++-	Major rewrite of libMG routines. Now most datbase related code is
+++	Major rewrite of libMG routines. Now most database related code is
++ 	object oriented, this will simplify adding user requested features
++ 	in future releases.
++ 	
++@@ -63,7 +89,7 @@
++ 	for an index to the others. Be warned, many still need to be written,
++ 	I'll try to add a few with each new version of portmanager.
++ 	
++-	One final thing, found a major openfile leak while running pmstatus
+++	One final thing, found a major open file leak while running pmstatus
++ 	which is run once with portmanager -s or several times with
++ 	portmanager -u. In this version (0.2.3) pmstatus and pmupgrade were
++ 	merged into portmanager and the open files grew to:
++@@ -73,7 +99,7 @@
++ 	After tracking down the problem and fixing it individual ports seem
++ 	to build faster. It is likely that previous versions of portmanager
++ 	caused a few ports to fail to build because it was hogging too many
++-	open file handles, if so I appologize and promise to tighly monitor
+++	open file handles, if so I apologize and promise to tightly monitor
++ 	memory leaks and open files in future versions. BTW, this version under
++ 	extensive monitoring with top and fstat -p shows no leakage at all in my
++ 	initial tests.
++@@ -97,10 +123,10 @@
++ 
++ 	5) pmupgrade.c fixed hard coded paths
++ 	
++-	6) pmupgrade.c Major cleanup of code, seperated upgrade routine into
+++	6) pmupgrade.c Major cleanup of code, separated upgrade routine into
++ 	upgrade, checkForOldDepencies, and doUpgrade routines.
++ 	
++-	7) fixed portmanager seg faulting when it selfupdates.  (thanks to
+++	7) fixed portmanager seg faulting when it self updates.  (thanks to
++ 	"Noah" <admin2@enabled.com> for reporting
++ 	
++ from 0.2.0 to 0.2.1	(December 2004)
++@@ -110,7 +136,7 @@
++ 
++ 	2) Replaced html docs with a portmanager.1 man page.
++ 
++-	3) Eleminated several useless header files
+++	3) Eliminated several useless header files
++ 
++ 	4) Added better error checking or /var/db/{portname}/+CONTENTS
++ 	files
++@@ -120,13 +146,13 @@
++ from 0.1.9 to 0.2.0
++ 
++ 	added patches (with some mods) provided by  Gudin Francis to
++-	pmupgrade.c (add error checking durring make) and
+++	pmupgrade.c (add error checking during make) and
++ 	PMGRrMakeDescribe (modify's how make describe is called by
++ 	placing options before target)
++ 
++ 	reworked config file, now renamed to pm-020.conf
++ 
++-	added -pkgadd switch though this may not be a permament change
+++	added -pkgadd switch though this may not be a permanent change
++ 	yet.
++ 
++ from 0.1.8 to 0.1.9
++@@ -155,9 +181,9 @@
++ 
++ from 0.1.4 to 0.1.5
++ 
++-	if pmStatus receives a segfault it will reset the cache
++-	automatically. pmUpgrade and portmanager -s will automatically
++-	retry pmStatus one time after a cache reset.
+++	if pmstatus receives a seg fault it will reset the cache
+++	automatically. pmupgrade and portmanager -s will automatically
+++	retry pmstatus one time after a cache reset.
++ 
++ from 0.1.3 to 0.1.4
++ 
++@@ -202,10 +228,10 @@
++ 
++ 	April 20, 2004
++ 
++-	1 Added portmanager the executable which serves to run pmUpgrade
++-	and pmStatus. 
+++	1 Added portmanager the executable which serves to run pmupgrade
+++	and pmstatus. 
++ 
++-	2 Renamed port from portManager to  portmanager because the cap 
+++	2 Renamed port from portmanager to  portmanager because the cap 
++ 	in the middle may be annoying to remember for users running it
++ 	from the command line.
++ 
++diff -ruN ../../0.2.9_3/portmanager/NEWS ./NEWS
++--- ../../0.2.9_3/portmanager/NEWS	Wed Apr  6 19:50:14 2005
+++++ ./NEWS	Fri Apr 22 12:31:39 2005
++@@ -1,5 +1,14 @@
++ change log
++ 
+++from 0.2.9_3 to 0.2.9_4	(April 2005)
+++
+++1) Improved warning message if a +CONTENTS file is missing in PMGRrVerifyContentsFile.c
+++
+++2) PMGRrAddDependencies.c changed way stringSize is calculated for portDependency variable
+++to eliminate a potential buffer over run. While I have never duplicated a buffer overrun
+++the portmanager.core file received from "TJ Varghese" <tjv@wynet.com.my> from a FreeBSD
+++4.11 system proves it is possible.
+++
++ 
++ from 0.2.9_2 to 0.2.9_3	(March 2005)
++ 
++@@ -40,7 +49,7 @@
++ 
++ 	2) Added conflict handling when upgrading ports
++ 	
++-	3) If running in xter, now indicates %done in title bar.
+++	3) If running in xterm, now indicates %done in title bar.
++ 
++ from 0.2.6 to 0.2.7	(February 2005)
++ 
++@@ -50,7 +59,7 @@
++ 
++ from 0.2.5 to 0.2.6	(February 2005)
++ 
++-	Added -sl and -slid options to help users safely remove uneeded
+++	Added -sl and -slid options to help users safely remove unneeded
++ 	ports ports from their system. 
++ 
++ from 0.2.4 to 0.2.5	(February 2005)
++@@ -68,7 +77,7 @@
++ 
++ from 0.2.2 to 0.2.3	(January 2005)
++ 
++-	Major rewrite of libMG routines. Now most datbase related code is
+++	Major rewrite of libMG routines. Now most database related code is
++ 	object oriented, this will simplify adding user requested features
++ 	in future releases.
++ 	
++@@ -80,7 +89,7 @@
++ 	for an index to the others. Be warned, many still need to be written,
++ 	I'll try to add a few with each new version of portmanager.
++ 	
++-	One final thing, found a major openfile leak while running pmstatus
+++	One final thing, found a major open file leak while running pmstatus
++ 	which is run once with portmanager -s or several times with
++ 	portmanager -u. In this version (0.2.3) pmstatus and pmupgrade were
++ 	merged into portmanager and the open files grew to:
++@@ -90,7 +99,7 @@
++ 	After tracking down the problem and fixing it individual ports seem
++ 	to build faster. It is likely that previous versions of portmanager
++ 	caused a few ports to fail to build because it was hogging too many
++-	open file handles, if so I appologize and promise to tighly monitor
+++	open file handles, if so I apologize and promise to tightly monitor
++ 	memory leaks and open files in future versions. BTW, this version under
++ 	extensive monitoring with top and fstat -p shows no leakage at all in my
++ 	initial tests.
++@@ -114,10 +123,10 @@
++ 
++ 	5) pmupgrade.c fixed hard coded paths
++ 	
++-	6) pmupgrade.c Major cleanup of code, seperated upgrade routine into
+++	6) pmupgrade.c Major cleanup of code, separated upgrade routine into
++ 	upgrade, checkForOldDepencies, and doUpgrade routines.
++ 	
++-	7) fixed portmanager seg faulting when it selfupdates.  (thanks to
+++	7) fixed portmanager seg faulting when it self updates.  (thanks to
++ 	"Noah" <admin2@enabled.com> for reporting
++ 	
++ from 0.2.0 to 0.2.1	(December 2004)
++@@ -127,7 +136,7 @@
++ 
++ 	2) Replaced html docs with a portmanager.1 man page.
++ 
++-	3) Eleminated several useless header files
+++	3) Eliminated several useless header files
++ 
++ 	4) Added better error checking or /var/db/{portname}/+CONTENTS
++ 	files
++@@ -137,13 +146,13 @@
++ from 0.1.9 to 0.2.0
++ 
++ 	added patches (with some mods) provided by  Gudin Francis to
++-	pmupgrade.c (add error checking durring make) and
+++	pmupgrade.c (add error checking during make) and
++ 	PMGRrMakeDescribe (modify's how make describe is called by
++ 	placing options before target)
++ 
++ 	reworked config file, now renamed to pm-020.conf
++ 
++-	added -pkgadd switch though this may not be a permament change
+++	added -pkgadd switch though this may not be a permanent change
++ 	yet.
++ 
++ from 0.1.8 to 0.1.9
++@@ -172,9 +181,9 @@
++ 
++ from 0.1.4 to 0.1.5
++ 
++-	if pmStatus receives a segfault it will reset the cache
++-	automatically. pmUpgrade and portmanager -s will automatically
++-	retry pmStatus one time after a cache reset.
+++	if pmstatus receives a seg fault it will reset the cache
+++	automatically. pmupgrade and portmanager -s will automatically
+++	retry pmstatus one time after a cache reset.
++ 
++ from 0.1.3 to 0.1.4
++ 
++@@ -219,10 +228,10 @@
++ 
++ 	April 20, 2004
++ 
++-	1 Added portmanager the executable which serves to run pmUpgrade
++-	and pmStatus. 
+++	1 Added portmanager the executable which serves to run pmupgrade
+++	and pmstatus. 
++ 
++-	2 Renamed port from portManager to  portmanager because the cap 
+++	2 Renamed port from portmanager to  portmanager because the cap 
++ 	in the middle may be annoying to remember for users running it
++ 	from the command line.
++ 
++diff -ruN ../../0.2.9_3/portmanager/libPMGR/src/PMGRrAddDependencies.c ./libPMGR/src/PMGRrAddDependencies.c
++--- ../../0.2.9_3/portmanager/libPMGR/src/PMGRrAddDependencies.c	Wed Apr  6 19:50:14 2005
+++++ ./libPMGR/src/PMGRrAddDependencies.c	Fri Apr 22 12:30:40 2005
++@@ -102,11 +102,20 @@
++ 	while( ( portDependency = strnstr( buffPtr, "@pkgdep ", bufferSize - (buffPtr - buffer) ) ) )
++ 	{
++ 		portDependency			+= strlen( "@pkgdep " ); 
+++
+++/*
++ 		stringSize			= strstr( portDependency, "\n" ) - portDependency;
++ 		if(stringSize < 1)
++ 		{
++ 			break;
++ 		}
+++*/
+++		stringSize			= 0;
+++		while( portDependency[stringSize] != LINEFEED && stringSize < 256 )
+++		{
+++			stringSize++;
+++		}		
+++
++ 		portDependency[stringSize]	= 0;
++ 
++ 		buffPtr 			= portDependency + stringSize + 1;
++@@ -173,4 +182,5 @@
++ 	}
++ 	return(0);
++ }
+++
++ 
++diff -ruN ../../0.2.9_3/portmanager/libPMGR/src/PMGRrVerifyContentsFile.c ./libPMGR/src/PMGRrVerifyContentsFile.c
++--- ../../0.2.9_3/portmanager/libPMGR/src/PMGRrVerifyContentsFile.c	Wed Apr  6 19:50:14 2005
+++++ ./libPMGR/src/PMGRrVerifyContentsFile.c	Fri Apr 22 12:09:41 2005
++@@ -34,6 +34,7 @@
++ 	int		stringSize		= 0;
++ 	signed int	fopenIdx		= 0;
++ 	signed int	mallocIdx		= 0;
+++	pid_t		pid;
++ 
++ 	stringSize	= strlen(PKGDBDIR)
++ 			+ strlen("/")
++@@ -72,7 +73,15 @@
++ 	{
++ 		fprintf( stderr, "%s %s error: could not open %s\n", id, VERSION, contentsFileName );
++ 		perror( "system message" );
++-		assert(0);
+++		pid	= fork();
+++		if( !pid )
+++		{
+++			execl( "/usr/sbin/pkg_info", "pkg_info", portName, 0 );
+++		}
+++		wait( pid );
+++		fprintf( stderr, "%s %s error: portmanager cannot continue, recommend you manually reinstall %s\n", id, VERSION, portName );
+++		free( contentsFileName );
+++		exit( 1 );
++ 	}
++ 
++ 	bufferSize	= MGrFileSize( contentsFileName );
+diff -ruN ../../0.2.9_3/portmanager/rePackage.sh ./rePackage.sh
+--- ../../0.2.9_3/portmanager/rePackage.sh	Wed Apr  6 19:50:14 2005
++++ ./rePackage.sh	Mon Apr 18 12:15:09 2005
+@@ -1,31 +1,35 @@
+ #!/bin/sh
+ 
+-echo	/usr/local/bin/autoheader259
++echo	"sh cleanUp.sh"
++	sh cleanUp.sh
++
++echo	"touch NEWS README AUTHORS ChangeLog THANKS"
++	touch NEWS README AUTHORS ChangeLog THANKS
++
++echo	"/usr/local/bin/autoheader259"
+ 	/usr/local/bin/autoheader259
+ 
+-echo	/usr/local/bin/aclocal19
+-	/usr/local/bin/aclocal19
++echo	"/usr/local/bin/aclocal15"
++	/usr/local/bin/aclocal15
++
++echo	"cat /usr/local/share/aclocal/libtool15.m4 >> acinclude.m4"
++	cat /usr/local/share/aclocal/libtool15.m4 >> acinclude.m4
+ 
+ echo	"cat acinclude.m4 >> aclocal.m4"
+ 	cat acinclude.m4 >> aclocal.m4
+ 	
+-echo	/usr/local/bin/libtoolize15 --force --copy
++echo	"/usr/local/bin/libtoolize15 --force --copy"
+ 	/usr/local/bin/libtoolize15 --force --copy
+ 
+-echo	/usr/local/bin/automake19 --add-missing --copy
+-	/usr/local/bin/automake19 --add-missing --copy
++echo	"/usr/local/bin/automake15 --add-missing --copy"
++	/usr/local/bin/automake15 --add-missing --copy
+ 
+-echo	/usr/local/bin/autoconf259
++echo	"/usr/local/bin/autoconf259"
+ 	/usr/local/bin/autoconf259
+ 	
+-#echo	./configure
+-#	./configure
++echo	"./configure --with-debug"
++	./configure --with-debug
+ 	
+-#echo	make
+-#	make
++echo	"make"
++	make
+ 	
+-#echo	make dist
+-#	make dist
+-
+-#echo	make clean
+-#	make clean
