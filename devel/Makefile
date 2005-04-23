@@ -167,6 +167,7 @@
     SUBDIR += cvs2svn
     SUBDIR += cvsadmin
     SUBDIR += cvsbook
+    SUBDIR += cvschk
     SUBDIR += cvsd
     SUBDIR += cvsdelta
     SUBDIR += cvsdiff2patch
