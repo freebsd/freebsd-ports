@@ -1,0 +1,12 @@
+To build and run C++ examples/tests you need to install
+vtk, vtk-headers, and cmake.
+
+To run Tcl, Python or Java examples/tests you need to install
+vtk and vtk-tcl, vtk-python or vtk-java correspondingly.
+
+Remember to set your VTK_DATA_ROOT variable to:
+
+	 %%PREFIX%%/share/examples/vtk/VTKData
+
+before running examples/tests.
+

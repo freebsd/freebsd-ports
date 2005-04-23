@@ -1,6 +1,3 @@
-%%DOCSDIR%%/README.html
-%%DOCSDIR%%/README.patented-classes
-%%DOCSDIR%%/vtkLogo.jpg
 include/vtk/DICOMParser/DICOMAppHelper.h
 include/vtk/DICOMParser/DICOMCMakeConfig.h
 include/vtk/DICOMParser/DICOMCallback.h
@@ -12,11 +9,14 @@ include/vtk/DICOMParser/DICOMTypes.h
 include/vtk/vtk3DS.h
 include/vtk/vtk3DSImporter.h
 include/vtk/vtk3DWidget.h
+include/vtk/vtkAMRBox.h
+include/vtk/vtkAVSucdReader.h
 include/vtk/vtkAbstractMapper.h
 include/vtk/vtkAbstractMapper3D.h
 include/vtk/vtkAbstractPicker.h
 include/vtk/vtkAbstractPropPicker.h
 include/vtk/vtkAbstractTransform.h
+include/vtk/vtkAbstractVolumeMapper.h
 include/vtk/vtkActor.h
 include/vtk/vtkActor2D.h
 include/vtk/vtkActor2DCollection.h
@@ -24,6 +24,8 @@ include/vtk/vtkActorCollection.h
 include/vtk/vtkAmoebaMinimizer.h
 include/vtk/vtkAppendFilter.h
 include/vtk/vtkAppendPolyData.h
+include/vtk/vtkApplyFilterCommand.h
+include/vtk/vtkApplyFilterCommandInternal.h
 include/vtk/vtkApproximatingSubdivisionFilter.h
 include/vtk/vtkArcPlotter.h
 include/vtk/vtkArrayCalculator.h
@@ -91,7 +93,12 @@ include/vtk/vtkColorTransferFunction.h
 include/vtk/vtkCommand.h
 include/vtk/vtkCommonInstantiator.h
 include/vtk/vtkCommunicator.h
+include/vtk/vtkCompositeDataCommand.h
+include/vtk/vtkCompositeDataIterator.h
+include/vtk/vtkCompositeDataSet.h
+include/vtk/vtkCompositeDataVisitor.h
 include/vtk/vtkCompositeManager.h
+include/vtk/vtkCompositeRenderManager.h
 include/vtk/vtkCompositer.h
 include/vtk/vtkCompressCompositer.h
 include/vtk/vtkCone.h
@@ -122,6 +129,7 @@ include/vtk/vtkDataArray.h
 include/vtk/vtkDataArrayCollection.h
 include/vtk/vtkDataArrayCollectionIterator.h
 include/vtk/vtkDataArraySelection.h
+include/vtk/vtkDataArrayTemplate.h
 include/vtk/vtkDataCompressor.h
 include/vtk/vtkDataObject.h
 include/vtk/vtkDataObjectCollection.h
@@ -207,7 +215,6 @@ include/vtk/vtkFunctionParser.h
 include/vtk/vtkFunctionSet.h
 include/vtk/vtkGESignaReader.h
 include/vtk/vtkGL2PSExporter.h
-include/vtk/vtkGLUTesselatorTriangleFilter.h
 include/vtk/vtkGaussianCubeReader.h
 include/vtk/vtkGaussianSplatter.h
 include/vtk/vtkGeneralTransform.h
@@ -227,6 +234,20 @@ include/vtk/vtkGridTransform.h
 include/vtk/vtkHeap.h
 include/vtk/vtkHedgeHog.h
 include/vtk/vtkHexahedron.h
+include/vtk/vtkHierarchicalBoxApplyFilterCommand.h
+include/vtk/vtkHierarchicalBoxCellDataToPointData.h
+include/vtk/vtkHierarchicalBoxContour.h
+include/vtk/vtkHierarchicalBoxCutter.h
+include/vtk/vtkHierarchicalBoxDataSet.h
+include/vtk/vtkHierarchicalBoxDataSetInternal.h
+include/vtk/vtkHierarchicalBoxOutlineFilter.h
+include/vtk/vtkHierarchicalBoxSource.h
+include/vtk/vtkHierarchicalBoxToHierarchicalBoxFilter.h
+include/vtk/vtkHierarchicalBoxToPolyDataFilter.h
+include/vtk/vtkHierarchicalBoxVisitor.h
+include/vtk/vtkHierarchicalDataIterator.h
+include/vtk/vtkHierarchicalDataSet.h
+include/vtk/vtkHierarchicalDataSetInternal.h
 include/vtk/vtkHomogeneousTransform.h
 include/vtk/vtkHull.h
 include/vtk/vtkHybridInstantiator.h
@@ -356,6 +377,7 @@ include/vtk/vtkImageToImageFilter.h
 include/vtk/vtkImageToImageStencil.h
 include/vtk/vtkImageToPolyDataFilter.h
 include/vtk/vtkImageToStructuredPoints.h
+include/vtk/vtkImageTracerWidget.h
 include/vtk/vtkImageTranslateExtent.h
 include/vtk/vtkImageTwoInputFilter.h
 include/vtk/vtkImageVariance3D.h
@@ -462,7 +484,6 @@ include/vtk/vtkMergeDataObjectFilter.h
 include/vtk/vtkMergeFields.h
 include/vtk/vtkMergeFilter.h
 include/vtk/vtkMergePoints.h
-include/vtk/vtkMergePoints2D.h
 include/vtk/vtkMesaActor.h
 include/vtk/vtkMesaCamera.h
 include/vtk/vtkMesaFreeTypeTextMapper.h
@@ -472,13 +493,21 @@ include/vtk/vtkMesaLight.h
 include/vtk/vtkMesaPolyDataMapper.h
 include/vtk/vtkMesaPolyDataMapper2D.h
 include/vtk/vtkMesaProperty.h
+include/vtk/vtkMesaRayCastImageDisplayHelper.h
 include/vtk/vtkMesaRenderWindow.h
 include/vtk/vtkMesaRenderer.h
 include/vtk/vtkMesaTexture.h
 include/vtk/vtkMesaVolumeRayCastMapper.h
 include/vtk/vtkMesaVolumeTextureMapper2D.h
 include/vtk/vtkMeshQuality.h
+include/vtk/vtkMetaImageReader.h
+include/vtk/vtkMetaImageWriter.h
 include/vtk/vtkMoleculeReaderBase.h
+include/vtk/vtkMultiBlockApplyFilterCommand.h
+include/vtk/vtkMultiBlockDataIterator.h
+include/vtk/vtkMultiBlockDataSet.h
+include/vtk/vtkMultiBlockDataSetInternal.h
+include/vtk/vtkMultiBlockDataVisitor.h
 include/vtk/vtkMultiPartExtentTranslator.h
 include/vtk/vtkMultiProcessController.h
 include/vtk/vtkMultiProcessLog.h
@@ -506,6 +535,7 @@ include/vtk/vtkOpenGLLight.h
 include/vtk/vtkOpenGLPolyDataMapper.h
 include/vtk/vtkOpenGLPolyDataMapper2D.h
 include/vtk/vtkOpenGLProperty.h
+include/vtk/vtkOpenGLRayCastImageDisplayHelper.h
 include/vtk/vtkOpenGLRenderWindow.h
 include/vtk/vtkOpenGLRenderer.h
 include/vtk/vtkOpenGLStateCache.h
@@ -549,6 +579,7 @@ include/vtk/vtkPStreamTracer.h
 include/vtk/vtkParallelCoordinatesActor.h
 include/vtk/vtkParallelFactory.h
 include/vtk/vtkParallelInstantiator.h
+include/vtk/vtkParallelRenderManager.h
 include/vtk/vtkParticleReader.h
 include/vtk/vtkPassThroughFilter.h
 include/vtk/vtkPatentedInstantiator.h
@@ -567,11 +598,11 @@ include/vtk/vtkPlaneCollection.h
 include/vtk/vtkPlaneSource.h
 include/vtk/vtkPlaneWidget.h
 include/vtk/vtkPlanes.h
+include/vtk/vtkPlatonicSolidSource.h
 include/vtk/vtkPointData.h
 include/vtk/vtkPointDataToCellData.h
 include/vtk/vtkPointLoad.h
 include/vtk/vtkPointLocator.h
-include/vtk/vtkPointLocator2D.h
 include/vtk/vtkPointPicker.h
 include/vtk/vtkPointSet.h
 include/vtk/vtkPointSetSource.h
@@ -634,6 +665,7 @@ include/vtk/vtkRIBExporter.h
 include/vtk/vtkRIBLight.h
 include/vtk/vtkRIBProperty.h
 include/vtk/vtkRTAnalyticSource.h
+include/vtk/vtkRayCastImageDisplayHelper.h
 include/vtk/vtkRayCastStructures.h
 include/vtk/vtkRearrangeFields.h
 include/vtk/vtkRectilinearGrid.h
@@ -703,6 +735,7 @@ include/vtk/vtkSpline.h
 include/vtk/vtkSplineFilter.h
 include/vtk/vtkSplineWidget.h
 include/vtk/vtkSplitField.h
+include/vtk/vtkStdString.h
 include/vtk/vtkStreamLine.h
 include/vtk/vtkStreamPoints.h
 include/vtk/vtkStreamTracer.h
@@ -726,6 +759,7 @@ include/vtk/vtkStructuredPointsToPolyDataFilter.h
 include/vtk/vtkStructuredPointsToStructuredPointsFilter.h
 include/vtk/vtkStructuredPointsToUnstructuredGridFilter.h
 include/vtk/vtkStructuredPointsWriter.h
+include/vtk/vtkStructuredVisibilityConstraint.h
 include/vtk/vtkSubPixelPositionEdgels.h
 include/vtk/vtkSubdivideTetra.h
 include/vtk/vtkSuperquadric.h
@@ -742,6 +776,7 @@ include/vtk/vtkTcl.h
 include/vtk/vtkTclUtil.h
 include/vtk/vtkTensor.h
 include/vtk/vtkTensorGlyph.h
+include/vtk/vtkTesting.h
 include/vtk/vtkTetra.h
 include/vtk/vtkTextActor.h
 include/vtk/vtkTextMapper.h
@@ -781,15 +816,20 @@ include/vtk/vtkTriangularTCoords.h
 include/vtk/vtkTriangularTexture.h
 include/vtk/vtkTubeFilter.h
 include/vtk/vtkUGFacetReader.h
+include/vtk/vtkUniformGrid.h
 include/vtk/vtkUnsignedCharArray.h
 include/vtk/vtkUnsignedIntArray.h
 include/vtk/vtkUnsignedLongArray.h
 include/vtk/vtkUnsignedShortArray.h
 include/vtk/vtkUnstructuredGrid.h
+include/vtk/vtkUnstructuredGridBunykRayCastFunction.h
 include/vtk/vtkUnstructuredGridReader.h
 include/vtk/vtkUnstructuredGridSource.h
 include/vtk/vtkUnstructuredGridToPolyDataFilter.h
 include/vtk/vtkUnstructuredGridToUnstructuredGridFilter.h
+include/vtk/vtkUnstructuredGridVolumeMapper.h
+include/vtk/vtkUnstructuredGridVolumeRayCastFunction.h
+include/vtk/vtkUnstructuredGridVolumeRayCastMapper.h
 include/vtk/vtkUnstructuredGridWriter.h
 include/vtk/vtkVRML.h
 include/vtk/vtkVRMLExporter.h
@@ -830,10 +870,8 @@ include/vtk/vtkWarpVector.h
 include/vtk/vtkWedge.h
 include/vtk/vtkWeightedTransformFilter.h
 include/vtk/vtkWin32Header.h
-include/vtk/vtkWin32ImageMapper.h
 include/vtk/vtkWin32OpenGLRenderWindow.h
 include/vtk/vtkWin32OutputWindow.h
-include/vtk/vtkWin32PolyDataMapper2D.h
 include/vtk/vtkWin32RenderWindowInteractor.h
 include/vtk/vtkWin32VideoSource.h
 include/vtk/vtkWinCE.h
@@ -887,7 +925,6 @@ include/vtk/vtkXMLUtilities.h
 include/vtk/vtkXMLWriter.h
 include/vtk/vtkXMesaRenderWindow.h
 include/vtk/vtkXOpenGLRenderWindow.h
-include/vtk/vtkXPolyDataMapper2D.h
 include/vtk/vtkXRenderWindowInteractor.h
 include/vtk/vtkXRenderWindowTclInteractor.h
 include/vtk/vtkXYPlotActor.h
@@ -907,6 +944,19 @@ include/vtk/vtkstd/stack
 include/vtk/vtkstd/string
 include/vtk/vtkstd/utility
 include/vtk/vtkstd/vector
+lib/vtk/CMake/libcmVTK_GENERATE_JAVA_DEPENDENCIES.so
+lib/vtk/CMake/libcmVTK_MAKE_INSTANTIATOR2.so
+lib/vtk/CMake/libcmVTK_WRAP_JAVA2.so
+lib/vtk/CMake/libcmVTK_WRAP_PYTHON2.so
+lib/vtk/CMake/libcmVTK_WRAP_TCL2.so
+lib/vtk/CMake/vtkLoadCMakeExtensions.cmake
+lib/vtk/UseVTK.cmake
+lib/vtk/VTKBuildSettings.cmake
+lib/vtk/VTKConfig.cmake
+lib/vtk/VTKLibraryDepends.cmake
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/README.patented-classes
+%%DOCSDIR%%/vtkLogo.jpg
 share/vtk/doxygen/authors.txt
 share/vtk/doxygen/doc_class2example.pl
 share/vtk/doxygen/doc_cleanhtml.pl
@@ -927,18 +977,9 @@ share/vtk/doxygen/header.html
 share/vtk/doxygen/paper-clip.gif
 share/vtk/doxygen/pic.gif
 share/vtk/doxygen/vtk-logo.gif
-lib/vtk/CMake/libcmVTK_GENERATE_JAVA_DEPENDENCIES.so
-lib/vtk/CMake/libcmVTK_MAKE_INSTANTIATOR2.so
-lib/vtk/CMake/libcmVTK_WRAP_JAVA2.so
-lib/vtk/CMake/libcmVTK_WRAP_PYTHON2.so
-lib/vtk/CMake/libcmVTK_WRAP_TCL2.so
-lib/vtk/CMake/vtkLoadCMakeExtensions.cmake
-lib/vtk/UseVTK.cmake
-lib/vtk/VTKBuildSettings.cmake
-lib/vtk/VTKConfig.cmake
-lib/vtk/VTKLibraryDepends.cmake
 @dirrm share/vtk/doxygen
 @unexec rmdir %D/share/vtk 2>/dev/null || true
+@dirrm %%DOCSDIR%%
 @dirrm lib/vtk/CMake
 @unexec rmdir %D/lib/vtk 2>/dev/null || true
 @dirrm include/vtk/vtkstd

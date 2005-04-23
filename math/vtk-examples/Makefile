@@ -13,7 +13,8 @@ RUN_DEPENDS=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 
 MASTERDIR=	${.CURDIR}/../vtk
 
-PKGMESSAGE=	${.CURDIR}/pkg-message
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include "${MASTERDIR}/Makefile"
 
@@ -25,17 +26,19 @@ do-install: install-cnotice
 	@${ECHO_MSG} "Installing Examples to ${EXAMPLESDIR} ..."
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/Examples
-	@${CP} -R ${VTKSRCDIR}/Examples/* ${EXAMPLESDIR}/Examples
+	@cd ${VTKSRCDIR} && \
+		${FIND} Examples -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; && \
+		${FIND} Examples \! -type d -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	@${RM} ${EXAMPLESDIR}/Examples/CMakeList*
 
 	@${ECHO_MSG} "Installing Testing to ${EXAMPLESDIR} ... "
 	@${MKDIR} ${TESTINGDIR}
 .for i in ${VTK_KITS}
-	@${MKDIR} ${TESTINGDIR}/${i}
-	@${CP} -R ${VTKSRCDIR}/${i}/Testing/* ${TESTINGDIR}/${i}
+	@cd ${VTKSRCDIR}/${i}/Testing && \
+		${FIND} * -type d -exec ${MKDIR} ${TESTINGDIR}/${i}/{} \; && \
+		${FIND} * \! -type d -exec ${INSTALL_DATA} {} ${TESTINGDIR}/${i}/{} \; 
 .endfor
 
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${EXAMPLESDIR}/BUILD-HOWTO
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${DOCSDIR}/README.examples
+	@${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README.examples
 
 .include <bsd.port.post.mk>

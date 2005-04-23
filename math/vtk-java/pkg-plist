@@ -1,4 +1,3 @@
-bin/VTKJavaExecutable
 bin/vtkParseJava
 bin/vtkWrapJava
 lib/libvtkCommonJava.so
@@ -29,8 +28,6 @@ share/java/classes/vtk.jar
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/ImagePlaneWidget$2.class
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/ImagePlaneWidget.class
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/ImagePlaneWidget.java
-%%TESTING_ONLY%%share/examples/vtk/Testing/Java/Regression.class
-%%TESTING_ONLY%%share/examples/vtk/Testing/Java/Regression.java
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/SimpleVTK$1.class
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/SimpleVTK.class
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/SimpleVTK.java
@@ -50,5 +47,5 @@ share/java/classes/vtk.jar
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/README
 @unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
 %%TESTING_ONLY%%@dirrm share/examples/vtk/Testing/Java
-%%TESTING_ONLY%%@unexec rmdir %D/share/examples/vtk/testing 2>/dev/null || true
+%%TESTING_ONLY%%@unexec rmdir %D/share/examples/vtk/Testing 2>/dev/null || true
 %%TESTING_ONLY%%@unexec rmdir %D/share/examples/vtk 2>/dev/null || true

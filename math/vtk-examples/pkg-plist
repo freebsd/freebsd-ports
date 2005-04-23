@@ -1,7 +1,10 @@
+%%DOCSDIR%%/README.examples
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/README.patented-classes
 %%DOCSDIR%%/vtkLogo.jpg
-%%DOCSDIR%%/README.examples
+%%EXAMPLESDIR%%/Examples/AMR/Cxx/CMakeLists.txt
+%%EXAMPLESDIR%%/Examples/AMR/Cxx/HierarchicalBox.cxx
+%%EXAMPLESDIR%%/Examples/AMR/Cxx/HierarchicalBoxPipeline.cxx
 %%EXAMPLESDIR%%/Examples/Annotation/Python/DispAllFonts.py
 %%EXAMPLESDIR%%/Examples/Annotation/Python/TestText.py
 %%EXAMPLESDIR%%/Examples/Annotation/Python/TestTextOldWay.py
@@ -53,6 +56,10 @@
 %%EXAMPLESDIR%%/Examples/Build/vtkMy/Unsorted/vtkBar2.cxx
 %%EXAMPLESDIR%%/Examples/Build/vtkMy/Unsorted/vtkBar2.h
 %%EXAMPLESDIR%%/Examples/Build/vtkMy/Unsorted/vtkmyUnsortedWin32Header.h
+%%EXAMPLESDIR%%/Examples/Build/vtkMy/Utilities/CMakeLists.txt
+%%EXAMPLESDIR%%/Examples/Build/vtkMy/Utilities/Doxygen/CMakeLists.txt
+%%EXAMPLESDIR%%/Examples/Build/vtkMy/Utilities/Doxygen/doc_makeall.sh.in
+%%EXAMPLESDIR%%/Examples/Build/vtkMy/Utilities/Doxygen/doxyfile.in
 %%EXAMPLESDIR%%/Examples/Build/vtkMy/Wrapping/Tcl/MakePackages.tcl
 %%EXAMPLESDIR%%/Examples/Build/vtkMy/Wrapping/Tcl/vtkmy/pkgIndex.tcl
 %%EXAMPLESDIR%%/Examples/Build/vtkMy/Wrapping/Tcl/vtkmy/vtkmy.tcl
@@ -98,6 +105,7 @@
 %%EXAMPLESDIR%%/Examples/GUI/Tcl/BoxWidget.tcl
 %%EXAMPLESDIR%%/Examples/GUI/Tcl/CustomInteraction.tcl
 %%EXAMPLESDIR%%/Examples/GUI/Tcl/ImagePlaneWidget.tcl
+%%EXAMPLESDIR%%/Examples/GUI/Tcl/ImageTracerWidget.tcl
 %%EXAMPLESDIR%%/Examples/GUI/Tcl/ImplicitPlaneWidget.tcl
 %%EXAMPLESDIR%%/Examples/GUI/Tcl/Mace.tcl
 %%EXAMPLESDIR%%/Examples/GUI/Tcl/MaceTk.tcl
@@ -234,6 +242,8 @@
 %%EXAMPLESDIR%%/Examples/Modelling/Tcl/iceCream.tcl
 %%EXAMPLESDIR%%/Examples/Modelling/Tcl/procrustesAlignment.tcl
 %%EXAMPLESDIR%%/Examples/Modelling/Tcl/reconstructSurface.tcl
+%%EXAMPLESDIR%%/Examples/MultiBlock/Cxx/CMakeLists.txt
+%%EXAMPLESDIR%%/Examples/MultiBlock/Cxx/MultiBlock.cxx
 %%EXAMPLESDIR%%/Examples/ParallelProcessing/CMakeLists.txt
 %%EXAMPLESDIR%%/Examples/ParallelProcessing/Generic/CMakeLists.txt
 %%EXAMPLESDIR%%/Examples/ParallelProcessing/Generic/Cxx/CMakeLists.txt
@@ -351,11 +361,11 @@
 %%EXAMPLESDIR%%/Examples/VolumeRendering/Python/PseudoVolumeRendering.py
 %%EXAMPLESDIR%%/Examples/VolumeRendering/Python/SimpleRayCast.py
 %%EXAMPLESDIR%%/Examples/VolumeRendering/Python/SimpleTextureMap2D.py
+%%EXAMPLESDIR%%/Examples/VolumeRendering/Tcl/IntermixedUnstructuredGrid.tcl
 %%EXAMPLESDIR%%/Examples/VolumeRendering/Tcl/PseudoVolumeRendering.tcl
 %%EXAMPLESDIR%%/Examples/VolumeRendering/Tcl/SimpleRayCast.tcl
 %%EXAMPLESDIR%%/Examples/VolumeRendering/Tcl/SimpleTextureMap2D.tcl
 %%EXAMPLESDIR%%/Examples/VolumeRendering/Tcl/volSimpleLOD.tcl
-%%EXAMPLESDIR%%/BUILD-HOWTO
 %%EXAMPLESDIR%%/Testing/Common/CMakeLists.txt
 %%EXAMPLESDIR%%/Testing/Common/Cxx/CMakeLists.txt
 %%EXAMPLESDIR%%/Testing/Common/Cxx/ObjectFactory.cxx
@@ -421,6 +431,9 @@
 %%EXAMPLESDIR%%/Testing/Graphics/Cxx/Mace.cxx
 %%EXAMPLESDIR%%/Testing/Graphics/Cxx/PointLocator.cxx
 %%EXAMPLESDIR%%/Testing/Graphics/Cxx/RGrid.cxx
+%%EXAMPLESDIR%%/Testing/Graphics/Cxx/TestHierarchicalBox.cxx
+%%EXAMPLESDIR%%/Testing/Graphics/Cxx/TestHierarchicalBoxPipeline.cxx
+%%EXAMPLESDIR%%/Testing/Graphics/Cxx/TestMultiBlock.cxx
 %%EXAMPLESDIR%%/Testing/Graphics/Cxx/expCos.cxx
 %%EXAMPLESDIR%%/Testing/Graphics/Cxx/volProt.cxx
 %%EXAMPLESDIR%%/Testing/Graphics/Python/CMakeLists.txt
@@ -487,6 +500,7 @@
 %%EXAMPLESDIR%%/Testing/Graphics/Tcl/TestCurvatures.tcl
 %%EXAMPLESDIR%%/Testing/Graphics/Tcl/TestGraphLayoutFilter.tcl
 %%EXAMPLESDIR%%/Testing/Graphics/Tcl/TestMultiBlockStreamer.tcl
+%%EXAMPLESDIR%%/Testing/Graphics/Tcl/TestPlatonicSolids.tcl
 %%EXAMPLESDIR%%/Testing/Graphics/Tcl/TestQuadricClustering.tcl
 %%EXAMPLESDIR%%/Testing/Graphics/Tcl/TestRectilinearGridToTetrahedra.tcl
 %%EXAMPLESDIR%%/Testing/Graphics/Tcl/TestRibbonAndTube.tcl
@@ -591,6 +605,7 @@
 %%EXAMPLESDIR%%/Testing/Hybrid/Cxx/CMakeLists.txt
 %%EXAMPLESDIR%%/Testing/Hybrid/Cxx/ImagePlaneWidget.cxx
 %%EXAMPLESDIR%%/Testing/Hybrid/Cxx/PushTest.cxx
+%%EXAMPLESDIR%%/Testing/Hybrid/Cxx/TestImageTracerWidget.cxx
 %%EXAMPLESDIR%%/Testing/Hybrid/Cxx/TestImplicitPlaneWidget.cxx
 %%EXAMPLESDIR%%/Testing/Hybrid/Cxx/TestLineWidget.cxx
 %%EXAMPLESDIR%%/Testing/Hybrid/Cxx/TestPlaneWidget.cxx
@@ -649,10 +664,12 @@
 %%EXAMPLESDIR%%/Testing/IO/Tcl/ParticleReader.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/Plot3DScalars.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/Plot3DVectors.tcl
+%%EXAMPLESDIR%%/Testing/IO/Tcl/TestAVSucdReader.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/TestBMPReader.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/TestEmptyXML.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/TestImageWriters.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/TestJPEGReader.tcl
+%%EXAMPLESDIR%%/Testing/IO/Tcl/TestMHD.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/TestPLYReadWrite.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/TestPolygonWriters.tcl
 %%EXAMPLESDIR%%/Testing/IO/Tcl/TestTIFFReader.tcl
@@ -800,6 +817,7 @@
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/ImageActor.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/MesaText.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/ScalarBar.tcl
+%%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestBunykRayCastFunction.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestFlyTo.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestFreetypeTextMapper.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestFreetypeTextMapperBigger.tcl
@@ -812,6 +830,7 @@
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestStyleBaseSpike.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestStyleJoystickActor.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestStyleJoystickCamera.tcl
+%%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestStyleRubberBandZoom.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestStyleTerrain.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestStyleTrackballActor.tcl
 %%EXAMPLESDIR%%/Testing/Rendering/Tcl/TestStyleTrackballCamera.tcl
@@ -860,7 +879,6 @@
 @dirrm %%EXAMPLESDIR%%/Testing/Common/Tcl
 @dirrm %%EXAMPLESDIR%%/Testing/Common/Python
 @dirrm %%EXAMPLESDIR%%/Testing/Common/Install
-@unexec rmdir %D/%%EXAMPLESDIR%%/Testing/Common/Cxx/TestWrapping 2>/dev/null || true
 @dirrm %%EXAMPLESDIR%%/Testing/Common/Cxx
 @dirrm %%EXAMPLESDIR%%/Testing/Common
 @unexec rmdir %D/%%EXAMPLESDIR%%/Testing 2>/dev/null || true
@@ -872,7 +890,6 @@
 @dirrm %%EXAMPLESDIR%%/Examples/VisualizationAlgorithms
 @dirrm %%EXAMPLESDIR%%/Examples/Tutorial/Step6/Tcl
 @dirrm %%EXAMPLESDIR%%/Examples/Tutorial/Step6/Python
-@unexec rmdir %D/%%EXAMPLESDIR%%/Examples/Tutorial/Step6/Java 2>/dev/null || true
 @dirrm %%EXAMPLESDIR%%/Examples/Tutorial/Step6/Cxx
 @dirrm %%EXAMPLESDIR%%/Examples/Tutorial/Step6
 @dirrm %%EXAMPLESDIR%%/Examples/Tutorial/Step5/Tcl
@@ -905,13 +922,14 @@
 @dirrm %%EXAMPLESDIR%%/Examples/Rendering/Python
 @dirrm %%EXAMPLESDIR%%/Examples/Rendering/Cxx
 @dirrm %%EXAMPLESDIR%%/Examples/Rendering
-@unexec rmdir %D/%%EXAMPLESDIR%%/Examples/ParallelProcessing/MultiThreaded 2>/dev/null || true
 @dirrm %%EXAMPLESDIR%%/Examples/ParallelProcessing/MPI/Tcl
 @dirrm %%EXAMPLESDIR%%/Examples/ParallelProcessing/MPI/Python
 @dirrm %%EXAMPLESDIR%%/Examples/ParallelProcessing/MPI
 @dirrm %%EXAMPLESDIR%%/Examples/ParallelProcessing/Generic/Cxx
 @dirrm %%EXAMPLESDIR%%/Examples/ParallelProcessing/Generic
 @dirrm %%EXAMPLESDIR%%/Examples/ParallelProcessing
+@dirrm %%EXAMPLESDIR%%/Examples/MultiBlock/Cxx
+@dirrm %%EXAMPLESDIR%%/Examples/MultiBlock
 @dirrm %%EXAMPLESDIR%%/Examples/Modelling/Tcl
 @dirrm %%EXAMPLESDIR%%/Examples/Modelling/Python
 @dirrm %%EXAMPLESDIR%%/Examples/Modelling/Cxx
@@ -954,6 +972,8 @@
 @dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Wrapping/Tcl/vtkmy
 @dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Wrapping/Tcl
 @dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Wrapping
+@dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Utilities/Doxygen
+@dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Utilities
 @dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Unsorted
 @dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Imaging
 @dirrm %%EXAMPLESDIR%%/Examples/Build/vtkMy/Examples/Tcl
@@ -970,6 +990,8 @@
 @dirrm %%EXAMPLESDIR%%/Examples/Annotation/Tcl
 @dirrm %%EXAMPLESDIR%%/Examples/Annotation/Python
 @dirrm %%EXAMPLESDIR%%/Examples/Annotation
+@dirrm %%EXAMPLESDIR%%/Examples/AMR/Cxx
+@dirrm %%EXAMPLESDIR%%/Examples/AMR
 @dirrm %%EXAMPLESDIR%%/Examples
 @unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
