@@ -4,7 +4,7 @@
  			<include name="**/*.jar"/>
  		</fileset>
  
-+		<fileset dir="${javajardir}">
++		<fileset dir="${javalibdir}">
 +			<include name="junit.jar"/>
 +			<include name="log4j.jar"/>
 +		</fileset>
