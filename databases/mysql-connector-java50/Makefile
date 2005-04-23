@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.1.7
+PORTVERSION=	3.1.8
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
