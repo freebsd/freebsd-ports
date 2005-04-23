@@ -50,6 +50,7 @@ include/poppler/UnicodeTypeTable.h
 include/poppler/XRef.h
 include/poppler/glib/poppler-action.h
 include/poppler/glib/poppler-document.h
+include/poppler/glib/poppler-enums.h
 include/poppler/glib/poppler-page.h
 include/poppler/glib/poppler.h
 include/poppler/goo/GooHash.h
