@@ -1,0 +1,171 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+PRE-INSTALL)
+
+if [ -d $PKG_PREFIX ]; then
+	if [ -d $PKG_PREFIX.old ]; then
+		rm -rf $PKG_PREFIX.old
+	fi
+	cp -Rp $PKG_PREFIX $PKG_PREFIX.old
+fi
+
+if [ `id -u` -ne 0 ]; then
+	echo; echo "You must be root to run this step!"; echo; echo
+  exit 1
+fi
+
+nofbuid=0
+fbUID=`id -u firebird 2>/dev/null`
+if [ $? -ne 0 ]; then
+	fbUID=90
+	while [ ! -z `id -un $fbUID 2>/dev/null` ]
+	do
+		fbUID=$(($fbUID+1))
+	done
+	nofbuid=1
+fi
+
+fbGID=`pw groupshow firebird 2>/dev/null`
+if [ $? -ne 0 ]; then
+	fbGID=90
+	while [ ! -z `id -gn $fbGID 2>/dev/null` ]
+	do
+		fbGID=$(($fbGID+1))
+	done
+	echo "firebird:*:$fbGID:" >> /etc/group
+else
+	fbGID=`echo $fbGID | awk -F: '{print $3}'`
+fi
+
+echo "firebird user using uid $fbUID"
+echo "firebird user using gid $fbGID"
+
+if which -s pw; then
+	if [ $nofbuid -ne 0 ]; then
+		pw useradd firebird -u $fbUID -g $fbGID -h - -s /bin/sh \
+		-d $PKG_PREFIX -c "Firebird Database Administrator"
+	fi
+else
+	echo -n "unable to create user firebird - please create it manually,"
+	echo " before reinstalling this package."
+	exit 1
+fi
+;;
+
+POST-INSTALL)
+chown -R firebird:firebird $PKG_PREFIX
+chmod -R o= $PKG_PREFIX
+
+# Now fix up the mess.
+
+# fix up directories
+for i in `find $PKG_PREFIX -print`
+do
+	FileName=$i
+	if [ -d $FileName ]; then
+		chmod u=rwx,go=rx $FileName
+	fi
+done
+
+# make lib ldconfig-compatible
+chown -R root:wheel $PKG_PREFIX/lib
+
+# make the following read-only
+chmod -R a=r $PKG_PREFIX/WhatsNew
+for i in `find $PKG_PREFIX/doc -type f -print`
+do
+	chmod a=r $i
+done
+#chmod -R a=r $PKG_PREFIX/examples/*
+chmod -R a=r $PKG_PREFIX/include/*
+chmod -R a=r $PKG_PREFIX/intl/*
+#chmod -R a=r $PKG_PREFIX/misc/*
+
+chmod -R ug=rx,o= $PKG_PREFIX/UDF/*
+chmod -R ug=rx,o= $PKG_PREFIX/intl/fbintl
+chmod -R a=rx $PKG_PREFIX/lib/*
+
+#cd $PKG_PREFIX/lib
+#ln -sf libfbembed.so libgds.so
+#ln -sf libfbembed.so.2 libgds.so.2
+
+cd $PKG_PREFIX/bin
+for i in `ls`
+do
+	chmod ug=rx,o= $i
+done
+
+chmod a=rx isql qli
+
+# SUID is needed for running server programs.
+for i in fb_lock_mgr gds_drop fb_inet_server
+do
+	if [ -f $i ]; then
+		chmod ug=rx,o= $i
+		chmod ug+s $i
+	fi
+done
+
+
+cd $PKG_PREFIX
+
+# Lock files
+
+for i in isc_init1 isc_lock1 isc_event1
+do
+	FileName=$i.`hostname`
+	touch $FileName
+	chmod uga=rw $FileName
+	chown firebird:firebird $FileName
+done
+
+touch firebird.log
+chown firebird:firebird firebird.log
+chmod ug=rw,o= firebird.log
+chmod a=r firebird.msg README
+chown root:wheel *.sample
+chmod ug=r,o= *.sample
+
+# make databases writable by firebird only
+# local database connections are not a good idea
+#chmod ug=rw,o= examples/*.fdb
+chmod ug=rw,o= help/*.fdb
+chmod ug=rw,o= security2.fdb
+
+chmod 444 aliases.conf firebird.conf
+chmod 660 security2.fdb
+
+# remove any existing gds service
+cp /etc/services /etc/services.old
+cp /etc/inetd.conf /etc/inetd.conf.old
+cat /etc/services |grep -v gds_db >/etc/services.new
+cat /etc/inetd.conf |grep -v gds_db >/etc/inetd.conf.new
+mv /etc/services.new /etc/services
+mv /etc/inetd.conf.new /etc/inetd.conf
+
+# add the gds service and restart inetd
+cat >>/etc/services <<EOF
+gds_db		 3050/tcp  #InterBase Database Remote Protocol
+EOF
+cat >>/etc/inetd.conf <<EOF
+gds_db	stream	tcp	nowait	firebird	$PKG_PREFIX/bin/fb_inet_server  fb_inet_server
+EOF
+if [ -f /var/run/inetd.pid ]; then
+	kill -HUP `cat /var/run/inetd.pid`
+fi
+
+# shared lib startup script
+if [ -d $PKG_PREFIX/etc/rc.d ]; then
+	(
+	echo "#!/bin/sh"; echo "[ -d $PKG_PREFIX/lib ] && /sbin/ldconfig -m $PKG_PREFIX/lib"
+	) > $PKG_PREFIX/etc/rc.d/000.firebird.sh
+  chmod a=rx $PKG_PREFIX/etc/rc.d/000.firebird.sh
+fi
+;;
+
+esac
