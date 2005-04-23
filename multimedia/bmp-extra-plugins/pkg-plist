@@ -21,4 +21,8 @@ share/bmp/status_docklet/stave-anim5.xpm
 share/bmp/status_docklet/timetre-idle.xpm
 share/bmp/status_docklet/timetre-paused-anim.xpm
 share/bmp/status_docklet/timetre-playing-anim.xpm
+share/locale/de/LC_MESSAGES/bmp-extra-plugins.mo
+share/locale/fr/LC_MESSAGES/bmp-extra-plugins.mo
+share/locale/nl/LC_MESSAGES/bmp-extra-plugins.mo
+share/locale/pl/LC_MESSAGES/bmp-extra-plugins.mo
 @dirrm share/bmp/status_docklet
