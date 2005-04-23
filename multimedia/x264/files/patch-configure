@@ -1,5 +1,5 @@
---- configure.orig	Thu Apr 21 11:04:21 2005
-+++ configure	Fri Apr 22 16:01:23 2005
+--- configure.orig	Thu Apr 21 05:04:21 2005
++++ configure	Sat Apr 23 14:26:33 2005
 @@ -22,8 +22,8 @@
  debug="no"
  vfw="no"
@@ -11,15 +11,19 @@
  LDFLAGS=""
  
  AS="nasm"
-@@ -75,7 +75,7 @@
+@@ -75,9 +75,9 @@
      ARCH="X86"
      CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
      ;;
 -  x86_64)
+-    ARCH="X86_64"
+-    CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
 +  x86_64 | amd64)
-     ARCH="X86_64"
-     CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
++    ARCH="amd64"
++    CFLAGS="$CFLAGS"
      AS="yasm"
+     ASFLAGS="-f elf -m amd64"
+     ;;
 @@ -89,6 +89,10 @@
      else
        CFLAGS="$CFLAGS -maltivec -mabi=altivec"
