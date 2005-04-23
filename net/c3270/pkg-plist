@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bin/c3270
+bin/x3270if
+bin/pr3287
+etc/x3270/ibm_hosts
+%%DBCS%%etc/x3270/icudt28l_ibm-1027_P100-1995.cnv
+%%DBCS%%etc/x3270/icudt28l_ibm-300_P110-1997.cnv
+%%DBCS%%etc/x3270/icudt28l_ibm-837_P100-2000.cnv
+@unexec rmdir %D/etc/x3270 2>/dev/null || true
