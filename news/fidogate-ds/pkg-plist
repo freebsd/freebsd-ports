@@ -80,6 +80,7 @@ var/fidogate/areas.bbs.sample
 var/fidogate/fareas.bbs.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.ru
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.ru
+%%PORTDOCS%%%%DOCSDIR%%/FAQ_Config.ru
 %%PORTDOCS%%%%DOCSDIR%%/FIDOGATE+tracker.ru
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Changes.ru

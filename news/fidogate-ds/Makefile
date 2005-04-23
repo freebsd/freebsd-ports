@@ -5,7 +5,7 @@
 #
 
 PORTNAME=		fidogate
-PORTVERSION=		5.1.2
+PORTVERSION=		5.1.3
 CATEGORIES=		news mail
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rusfidogate
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--libexec=${PREFIX}/libexec/fidogate \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		doc/README.ru doc/README doc/FAQ.ru doc/FIDOGATE+tracker.ru \
-		ChangeLog Changes.ru doc/old/FAQ_fidogate \
+		ChangeLog Changes.ru doc/old/FAQ_fidogate doc/FAQ_Config.ru \
 		doc/old/FIDOGATE_ftrack doc/old/README.snp \
 		doc/old/fidogate.txt doc/old/fidogate.texi doc/old/msgid.doc
 
