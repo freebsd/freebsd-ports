@@ -88,5 +88,6 @@
     SUBDIR += updatedd
     SUBDIR += walker
     SUBDIR += zonecheck
+    SUBDIR += zonenotify
 
 .include <bsd.port.subdir.mk>
