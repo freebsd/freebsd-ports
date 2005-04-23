@@ -114,6 +114,7 @@ post-configure:
 		-e 's,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \2,' \
 		-e 's,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \2,' \
 		-e 's,([[:space:]]*(do|then)[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
+	@${FIND} ${WRKDIR} -type f -name Makefile.bak -delete
 
 post-install:
 	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
