@@ -59,9 +59,9 @@ CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR} && tar -jxf ${DISTDIR}/${DIST_SUBDIR}/${BZ2DIST})
+	@(cd ${WRKDIR} && tar -jxf ${DISTDIR}/${DIST_SUBDIR}/${BZ2DIST:C/:.*$//})
 	@${MKDIR} ${WRKSRC}/ump
-	@for file in ${ZDIST}; do \
+	@for file in ${ZDIST:C/:.*$//}; do \
 		if ! (cd ${WRKSRC}/ump && tar -Zxf ${DISTDIR}/${DIST_SUBDIR}/$${file}); \
 		then \
 			exit 1; \
