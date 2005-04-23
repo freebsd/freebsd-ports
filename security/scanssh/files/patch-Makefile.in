@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Apr 23 15:51:17 2005
++++ Makefile.in	Sat Apr 23 15:51:24 2005
+@@ -79,7 +79,7 @@
+ scanssh_SOURCES = scanssh.c atomicio.c exclude.c connecter.c xmalloc.c 	interface.c socks.c http.c telnet.c exclude.h interface.h 	scanssh.h socks.h xmalloc.h
+ 
+ scanssh_LDADD = @LIBOBJS@ @PCAPLIB@ @EVENTLIB@ @DNETLIB@
+-CFLAGS = -O2 -Wall -g
++CFLAGS+= -Wall -g
+ 
+ INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat 	@EVENTINC@ @PCAPINC@ @DNETINC@
+ 

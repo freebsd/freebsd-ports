@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	scanssh
-PORTVERSION=	1.60b
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
-DISTNAME=	${PORTNAME}-1.6b
 
 MAINTAINER=	kris@FreeBSD.org
-COMMENT=	Scanssh scans a subnet and reports the version of SSH installed
+COMMENT=	Scans networks for open proxies, SSH, Web and SMTP servers
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
+		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	YES
+PLIST_FILES=	bin/scanssh
 
 MAN1=		scanssh.1
-WRKSRC=		${WRKDIR}/scanssh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanssh ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/scanssh.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/scanssh/
-	${TOUCH} ${PREFIX}/share/scanssh/exclude.list
 
 .include <bsd.port.mk>
