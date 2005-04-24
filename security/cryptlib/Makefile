@@ -6,11 +6,10 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.1
-PORTREVISION=		2
+PORTVERSION=		3.2
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
-DISTNAME=		cl31
+DISTNAME=		cl32
 EXTRACT_SUFX=		.zip
 
 MAINTAINER=		ports@FreeBSD.org
@@ -31,9 +30,9 @@ INSTALLS_SHLIB=		yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/endian ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.3.1.0 \
+	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.3.2.0 \
 		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libcl.so.3.1.0 ${PREFIX}/lib/libcl.so
+	${LN} -sf ${PREFIX}/lib/libcl.so.3.2.0 ${PREFIX}/lib/libcl.so
 	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cryptlib
