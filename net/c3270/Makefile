@@ -119,7 +119,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 .for i in ${PORTDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+		@${INSTALL_DATA} ${WRKSRC}/html/${i} ${DOCSDIR}/${i}
 .endfor
 	@${ECHO_MSG} "===> Extra Documentation installed in ${DOCSDIR}/html ."
 .endif
