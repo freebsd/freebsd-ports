@@ -2,5 +2,6 @@ bin/xmlwf
 include/expat.h
 include/expat_external.h
 lib/libexpat.a
+lib/libexpat.la
 lib/libexpat.so
 lib/libexpat.so.%%SHLIB_MAJOR%%
