@@ -6570,6 +6570,7 @@ ocaml-wdialog	ports/www/ocaml-wdialog
 ocaml-yaxi	ports/textproc/ocaml-yaxi
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocamlweb	ports/devel/ocamlweb
+ocp		ports/audio/ocp
 ocrad		ports/graphics/ocrad
 octave		ports/math/octave
 octave-forge	ports/math/octave-forge

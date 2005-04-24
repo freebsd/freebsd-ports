@@ -1,0 +1,59 @@
+bin/ocp
+@unexec if cmp -s %D/etc/ocp.ini %D/etc/ocp.ini.default; then rm -f %D/etc/ocp.ini; fi
+etc/ocp.ini.default
+@exec [ -f %B/ocp.ini ] || cp %B/%f %B/ocp.ini
+lib/ocp/arctar.so
+lib/ocp/compat.so
+lib/ocp/cphelper.so
+lib/ocp/cphlpif.so
+lib/ocp/cpiface.so
+lib/ocp/devi.so
+lib/ocp/devpdisk.so
+lib/ocp/devpnone.so
+lib/ocp/devposs.so
+lib/ocp/devsnone.so
+lib/ocp/devsoss.so
+lib/ocp/devwmix.so
+lib/ocp/devwmixf.so
+lib/ocp/devwnone.so
+lib/ocp/framelock.so
+lib/ocp/fstypes.so
+lib/ocp/hardware.so
+lib/ocp/inflate.so
+lib/ocp/libocp.so
+lib/ocp/load669.so
+lib/ocp/loadams.so
+lib/ocp/loaddmf.so
+lib/ocp/loadmdl.so
+lib/ocp/loadmtm.so
+lib/ocp/loadokt.so
+lib/ocp/loadptm.so
+lib/ocp/loads3m.so
+lib/ocp/loadult.so
+lib/ocp/mchasm.so
+lib/ocp/mcpbase.so
+lib/ocp/mixclip.so
+lib/ocp/pfilesel.so
+lib/ocp/playgmd.so
+lib/ocp/playgmi.so
+lib/ocp/playit.so
+lib/ocp/playmp2.so
+lib/ocp/playogg.so
+lib/ocp/playsid.so
+lib/ocp/playwav.so
+lib/ocp/playxm.so
+lib/ocp/plrbase.so
+lib/ocp/poutput.so
+lib/ocp/sets.so
+lib/ocp/smpbase.so
+%%DATADIR%%/cp.pak
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/KEYBOARD_REMAPS
+%%PORTDOCS%%%%DOCSDIR%%/SUID
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+@dirrm lib/ocp
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
