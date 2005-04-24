@@ -9,7 +9,7 @@ PORTNAME=	icu
 PORTVERSION=	3.2
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://www-126.ibm.com/pub/icu/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.software.ibm.com/software/globalization/icu/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
