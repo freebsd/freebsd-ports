@@ -8,7 +8,7 @@
 PORTNAME=	baudline
 PORTVERSION=	1.00
 CATEGORIES=	audio linux
-MASTER_SITES=	http://www.baudline.com/
+MASTER_SITES=	# http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 
@@ -34,7 +34,7 @@ PLIST_FILES=	bin/baudline
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTFILES})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions. You must manually fetch ${DISTFILES} from\
 		http://www.baudline.com/download.html. Once ${DISTFILES}\
