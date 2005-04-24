@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logilab-common
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
