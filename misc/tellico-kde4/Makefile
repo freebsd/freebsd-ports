@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	0.13.5
-PORTREVISION=	1
+PORTVERSION=	0.13.6
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
@@ -15,7 +14,6 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Collection manager for KDE
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		kcddb:${PORTSDIR}/multimedia/kdemultimedia3 \
 		yaz.2:${PORTSDIR}/net/yaz
 
