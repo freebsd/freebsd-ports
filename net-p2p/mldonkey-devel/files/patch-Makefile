@@ -1,20 +1,20 @@
---- config/Makefile.in.orig	Wed Apr 13 18:52:02 2005
-+++ config/Makefile.in	Sun Apr 17 00:44:57 2005
-@@ -150,7 +150,7 @@
+--- config/Makefile.in.orig	Sat Apr 23 18:53:48 2005
++++ config/Makefile.in	Sun Apr 24 00:40:38 2005
+@@ -151,6 +151,8 @@
+ 
  endif
  
- ifneq ("$(ICONV_LIB)", "")
--  LIBS_flags += -cclib "$(ICONV_LIB)"
-+  LIBS_flags += -ccopt "-I%%LOCALBASE%%/include" -ccopt "-L%%LOCALBASE%%/lib" -cclib "$(ICONV_LIB)"
- endif
- 
++LIBS_flags += -ccopt "-I%%LOCALBASE%%/include" -ccopt "-L%%LOCALBASE%%/lib" -cclib -liconv
++
  ifeq ("$(BROOSNET)", "yes")
-@@ -280,7 +280,7 @@
+   BROOSNET = \
+        $(SRC_BITTORRENT)/bTBrooseTypes.ml \
+@@ -278,7 +280,7 @@
  all: Makefile config/Makefile.config $(TARGET_TYPE)
  
  config/configure: config/configure.in
 -	cd config; autoconf
-+	cd config; %%AUTOCONF%%
++	cd config; /usr/local/bin/autoconf259
  
  ifeq ("$(MYCONFIG_ARGS_DEFINED)" , "yes")
  
