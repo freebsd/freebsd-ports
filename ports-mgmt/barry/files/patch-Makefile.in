@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Apr 24 02:27:28 2005
++++ src/Makefile.in	Sun Apr 24 02:27:43 2005
+@@ -240,7 +240,7 @@
+ INCLUDES = $(all_includes)
+ 
+ barry_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+-barry_LDADD = $(LIB_KIO) $(LIB_KHTML)
++barry_LDADD = $(LIB_KIO) $(LIB_KHTML) $(LIBPTHREAD)
+ 
+ barry_SOURCES = actionprogressdialog.cc application.cc configdialog.cc \
+ 	databaseinfodialog.cc databasewrapper.cc dependlistview.cc \
