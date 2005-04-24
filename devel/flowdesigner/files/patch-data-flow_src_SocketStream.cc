@@ -1,6 +1,12 @@
---- data-flow/src/SocketStream.cc.orig	Tue Mar  8 18:52:37 2005
-+++ data-flow/src/SocketStream.cc	Tue Mar  8 18:21:43 2005
-@@ -195,7 +195,7 @@ size_t network_socket::recv_packet(unsig
+--- data-flow/src/SocketStream.cc.orig	Sun Apr 24 15:16:43 2005
++++ data-flow/src/SocketStream.cc	Sun Apr 24 15:16:32 2005
+@@ -190,12 +190,12 @@
+ 
+   size_t packet_len = 0;
+   unsigned int flags = 0;
+-  size_t addr_len = sizeof(m_read_addr);
++  socklen_t addr_len = sizeof(m_read_addr);
+ 
    switch (m_type) {
    case BROADCAST_TYPE:
  
