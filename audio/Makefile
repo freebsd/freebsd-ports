@@ -319,6 +319,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
+    SUBDIR += ocp
     SUBDIR += oggsplit
     SUBDIR += openal
     SUBDIR += opennap
