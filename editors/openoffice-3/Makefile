@@ -17,16 +17,18 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050416
+SNAPDATE=	20050422
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 MOZILLA_VERSION=	1.7.5
 .if !defined(WITHOUT_MOZILLA)
 DISTFILES+=	${MOZILLA_SOURCE}:mozsrc
-USE_GNOME+=	orbit gtk12
 .endif
 
+.if defined(WITH_KDE)
+USE_KDELIBS_VER=        3
+.endif
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -47,7 +49,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		94
+MILESTONE=		96
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -81,19 +83,18 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison-devel:${PORTSDIR}/devel/bison-devel
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		IDL-2.0:${PORTSDIR}/devel/libIDL
 .if defined(WITHOUT_JAVA)
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
-WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant

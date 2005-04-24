@@ -9,9 +9,7 @@ CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .endif
 
 .if defined(WITH_KDE)
-BUILD_DEPENDS=  qmake:${PORTSDIR}/devel/qmake
-USE_QT_VER=	3
-CONFIGURE_ARGS+=	--enable-kde
+CONFIGURE_ARGS+=	--enable-kde QTDIR="${QT_PREFIX}"
 .endif
 
 .if defined(WITH_CUPS)
