@@ -23,16 +23,12 @@ USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-pre-build:
-	${REINPLACE_CMD} "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.h" -and -not -name "linklocator.h" | \
+		${XARGS} ${REINPLACE_CMD} -e 's/^};/}/g'
+	@${REINPLACE_CMD} "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 pre-install:
-	${MKDIR} ${DESTDIR}${PREFIX}/share/applnk/Utilities
+	@${MKDIR} ${DESTDIR}${PREFIX}/share/applnk/Utilities
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
