@@ -17,6 +17,10 @@ COMMENT=	Property library for gnome and Window Maker
 
 USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
-USE_AUTOCONF_VER=	213
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s,mkdir rmdir,mkdir mkstemp rmdir," \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
