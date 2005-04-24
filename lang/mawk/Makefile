@@ -15,7 +15,8 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/languages/mawk/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of new/posix awk
 
-USE_AUTOCONF_VER=	213
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	MATHLIB="-lm"
 ALL_TARGET=	${PORTNAME}
 
 MAN1=		mawk.1
