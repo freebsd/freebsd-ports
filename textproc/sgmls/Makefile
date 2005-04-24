@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sgmls/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	justas@mbank.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML parser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
