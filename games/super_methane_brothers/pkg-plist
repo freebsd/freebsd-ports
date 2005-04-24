@@ -1,23 +1,24 @@
 bin/methane
-%%PORTDOCS%%share/doc/super_methane_brothers/authors
-%%PORTDOCS%%share/doc/super_methane_brothers/history
-%%PORTDOCS%%share/doc/super_methane_brothers/html/block.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/bug.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/cookie.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/gamepic.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/gen.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/info.htm
-%%PORTDOCS%%share/doc/super_methane_brothers/html/mbug.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/potion.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/puff.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/spike.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/spring.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/sucker.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/title.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/turbo.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/whirly.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/html/zoom.gif
-%%PORTDOCS%%share/doc/super_methane_brothers/readme
-%%PORTDOCS%%share/doc/super_methane_brothers/todo
-%%PORTDOCS%%@dirrm share/doc/super_methane_brothers/html
-%%PORTDOCS%%@dirrm share/doc/super_methane_brothers
+%%PORTDOCS%%%%DOCSDIR%%/authors
+%%PORTDOCS%%%%DOCSDIR%%/history
+%%PORTDOCS%%%%DOCSDIR%%/html/backdrop.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/block.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/bug.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/cookie.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/gamepic.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/gen.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/info.html
+%%PORTDOCS%%%%DOCSDIR%%/html/mbug.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/potion.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/puff.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/spike.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/spring.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/sucker.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/title.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/turbo.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/whirly.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/zoom.gif
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%%%DOCSDIR%%/todo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

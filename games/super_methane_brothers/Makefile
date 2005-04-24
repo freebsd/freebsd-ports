@@ -6,32 +6,44 @@
 #
 
 PORTNAME=	super_methane_brothers
-PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTVERSION=	1.4.7
 CATEGORIES=	games
-MASTER_SITES=	http://www.methane.fsnet.co.uk/
-DISTNAME=	methane
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	methane
+DISTNAME=	methane-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A port of the Amiga platform game of the same name
 
-LIB_DEPENDS=	clanCore.2:${PORTSDIR}/devel/clanlib \
+LIB_DEPENDS=	clanCore-0.7:${PORTSDIR}/devel/clanlib-devel \
 		mikmod:${PORTSDIR}/audio/libmikmod
 
-WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/source/linux
 MAKEFILE=	makefile
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
-MAKE_ENV=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
-		PTHREAD_LIBS=${PTHREAD_LIBS}
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not compile on FreeBSD 4.X
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|g\+\+|$${CXX}|; \
+		 s|gcc|$${CXX}|; \
+		 s|^\(METHANE_FLAGS =\)|\1 -I${X11BASE}/include|; \
+		 s|^\(METHANE_LIBS =\)|\1 -L${X11BASE}/lib|' \
+		${BUILD_WRKSRC}/makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/methane ${PREFIX}/bin
+	${CHGRP} games ${PREFIX}/bin/methane
+	${CHMOD} g+s ${PREFIX}/bin/methane
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} \
@@ -41,24 +53,11 @@ do-install:
 		${WRKSRC}/todo \
 		${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} \
-		${WRKSRC}/docs/block.gif \
-		${WRKSRC}/docs/bug.gif \
-		${WRKSRC}/docs/cookie.gif \
-		${WRKSRC}/docs/gamepic.gif \
-		${WRKSRC}/docs/gen.gif \
-		${WRKSRC}/docs/info.htm \
-		${WRKSRC}/docs/mbug.gif \
-		${WRKSRC}/docs/potion.gif \
-		${WRKSRC}/docs/puff.gif \
-		${WRKSRC}/docs/spike.gif \
-		${WRKSRC}/docs/spring.gif \
-		${WRKSRC}/docs/sucker.gif \
-		${WRKSRC}/docs/title.gif \
-		${WRKSRC}/docs/turbo.gif \
-		${WRKSRC}/docs/whirly.gif \
-		${WRKSRC}/docs/zoom.gif \
+	${INSTALL_DATA} ${WRKSRC}/docs/*.gif ${WRKSRC}/docs/*.html \
 		${DOCSDIR}/html
 .endif
 
-.include <bsd.port.mk>
+post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.include <bsd.port.post.mk>

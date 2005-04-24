@@ -1,0 +1,9 @@
+#!/bin/sh
+
+SCOREFILE="/var/games/methanescores"
+
+[ "$2" != "POST-INSTALL" -o -f "$SCOREFILE" ] && exit 0
+
+touch $SCOREFILE
+chown root:games $SCOREFILE
+chmod 664 $SCOREFILE
