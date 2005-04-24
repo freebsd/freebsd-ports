@@ -105,8 +105,10 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/nonregr.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/nonregr.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/nonregr.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/normal_file.txt
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub/doc.txt
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub/momo.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/write_protected_file.txt
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data2/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data2/__init__.pyo
