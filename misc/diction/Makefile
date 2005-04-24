@@ -15,12 +15,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diction and style
 
-USE_AUTOCONF_VER=	213
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/diction bin/style share/diction/C share/diction/de \
 		share/diction/en
 PLIST_DIRS=	share/diction
 
 MAN1=		diction.1 style.1
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure
 
 .include <bsd.port.mk>
