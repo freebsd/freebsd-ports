@@ -1,34 +1,11 @@
---- Makefile.orig	Tue Jun 29 10:42:05 2004
-+++ Makefile	Sun Jul 11 23:11:10 2004
-@@ -4,12 +4,13 @@
- PREFIX = /usr/local
- 
- LOCALEDIR = $(PREFIX)/share/locale
--ASSETMLDIR = /usr/share/assetml
-+ASSETMLDIR = $(PREFIX)/share/gnome/assetml
- PYTHON = /usr/bin/env python
--DOCDIR = $(PREFIX)/doc/childsplay
-+DOCDIR = $(PREFIX)/share/doc/childsplay
- MANDIR = $(PREFIX)/man
--DESTDIR = $(PREFIX)/games/childsplay
-+DESTDIR = $(PREFIX)/childsplay
- 
-+all:     childsplay
- default: childsplay
- 
- install:
-@@ -36,12 +37,12 @@
- 	@cp -rf lib $(DESTDIR)
- 
- 	@echo "Copy docs to $(MANDIR) and $(DOCDIR)"
--	@cp -rf man/childsplay.6.gz $(MANDIR)
-+	@cp -rf man/childsplay.6.gz $(MANDIR)/man6
- 	@cp -rf doc/* $(DOCDIR)
- 
- 	@echo "Looking for old locale files, and removing them"
- 	@sh ./cleanup.sh
--	
+--- Makefile.orig	Wed Apr 20 11:08:53 2005
++++ Makefile	Wed Apr 20 11:08:45 2005
+@@ -0,0 +1,8 @@
++PYTHON = /usr/bin/env python
 +
- 	@echo "Copy locales to $(LOCALEDIR)"
- 	@cp -rf locale/* $(LOCALEDIR)
- 
++all:
++	@echo "Compiling modules to bytecode..."
++	@$(PYTHON) install.py --compile .
++	@$(PYTHON) install.py --compile ./lib
++install:
++	./INSTALL.sh

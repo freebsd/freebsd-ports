@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	childsplay
-PORTVERSION=	0.71
-PORTREVISION=	1
+PORTVERSION=	0.80.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	childsplay
@@ -20,24 +19,21 @@ BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR
 RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
 LIB_DEPENDS=	assetml.0:${PORTSDIR}/devel/libassetml
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
+USE_X_PREFIX=	yes
 
 # avoid asking for translation to your local language on install
 MAKE_ENV=	LANG=C
 
-MAN6=		childsplay.6
+MAN6=		childsplay.6 letters-trans.6
+MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s@PREFIX = /usr/local@PREFIX=${PREFIX}@g " ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s@ASSETMLROOT = '/usr/local'@ASSETMLROOT= '${PREFIX}'@g " ${WRKSRC}/pyassetml.py
-	@${REINPLACE_CMD} -e "s@PREFIX = \"/usr/local\"@PREFIX= '${PREFIX}'@g" ${WRKSRC}/pyassetmlcreator.py
-	@${REINPLACE_CMD} -e "s@ASSETMLROOT= '/usr/local'@ASSETMLROOT= '${PREFIX}/share/gnome/assetml'@g" ${WRKSRC}/pyassetmlSDL.py
-	@${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g " ${WRKSRC}/cleanup.sh
-	@${REINPLACE_CMD} -e "s@'/','usr'@'${PREFIX}'@g" ${WRKSRC}/pyassetmlcreator.py
-	@${REINPLACE_CMD} -e "s@/usr/share/assetml@${PREFIX}/share/gnome/assetml@g" ${WRKSRC}/pyassetml.py ${WRKSRC}/pyassetmlSDL.py
+	@${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g " ${WRKSRC}/INSTALL.sh
+	@${REINPLACE_CMD} -e "s@ASSETMLROOT = '/usr/local@ASSETMLROOT= '${PREFIX}@g" ${WRKSRC}/pyassetml.py
+	@${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g" ${WRKSRC}/cleanup.sh
+	@${REINPLACE_CMD} -e "s@/usr/local/lib/games@${PREFIX}@g" ${WRKSRC}/childsplay.sh
 
 post-build:
 	@${FIND} ${WRKSRC} -name *.orig -delete
