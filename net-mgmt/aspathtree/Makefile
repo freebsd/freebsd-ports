@@ -6,6 +6,7 @@
 
 PORTNAME=	aspathtree
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	#http://carmen.ipv6.cselt.it/ipv6/tools/ASpath-tree/index.html
 DISTNAME=	ASpath-tree-v${PORTVERSION}
@@ -14,7 +15,7 @@ MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Checks IPv6 routes' stability and correctness on IPv6 internet
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
-		ripewhois:${PORTSDIR}/net/ripetools
+		whois3:${PORTSDIR}/net/ripe-whois
 
 WRKSRC=			${WRKDIR}/ASpath-tree-v${PORTVERSION}/
 RESTRICTED=		"not redistributable, license agreement required"

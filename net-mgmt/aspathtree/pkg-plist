@@ -23,9 +23,9 @@ libexec/aspathtree/route-stability.pl
 libexec/aspathtree/utility.pl
 libexec/aspathtree/ASmain.pl
 bin/update-rtree
-%%PORTDOCS%%share/doc/aspathtree/DISCLAIMER
-%%PORTDOCS%%share/doc/aspathtree/readme.txt
-%%PORTDOCS%%share/doc/aspathtree/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
 @dirrm var/aspathtree/htdocs/changes
 @dirrm var/aspathtree/htdocs/details
 @dirrm var/aspathtree/htdocs/icons
@@ -41,4 +41,4 @@ bin/update-rtree
 @dirrm var/aspathtree/log
 @dirrm var/aspathtree
 @dirrm libexec/aspathtree
-%%PORTDOCS%%@dirrm share/doc/aspathtree/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
