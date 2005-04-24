@@ -33,4 +33,9 @@ USE_INC_LIBTOOL_VER=15
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
+tests: build
+	@${ECHO_MSG} "===> Running gamin regression tests"
+	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		Makefile ${MAKE_ARGS} tests)
+
 .include <bsd.port.mk>
