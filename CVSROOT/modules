@@ -9062,7 +9062,6 @@ pocketreader	ports/textproc/pocketreader
 poedit		ports/editors/poedit
 poink		ports/net/poink
 pointless	ports/misc/pointless
-policyd		ports/mail/policyd
 polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
 polygraph	ports/benchmarks/polygraph
@@ -9229,6 +9228,7 @@ postfinger	ports/mail/postfinger
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
 postfix-gps	ports/mail/postfix-gps
+postfix-policyd-spf	ports/mail/postfix-policyd-spf
 postfix1	ports/mail/postfix1
 postfix21	ports/mail/postfix21
 postfixadmin	ports/mail/postfixadmin
