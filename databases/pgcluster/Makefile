@@ -17,7 +17,7 @@ PATCH_SITES=	http://dist.bsdlab.org/
 PATCHFILES=	pgcluster-${PORTVERSION}-patch.bz2
 PATCH_DIST_STRIP=	-p0
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=The multi-master and synchronous replication system for PostgreSQL
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
