@@ -1,0 +1,31 @@
+--- Makefile.in	Mon Sep 27 20:54:17 2004
++++ Makefile.in	Fri Apr 22 17:01:48 2005
+@@ -17,15 +17,15 @@
+ SUBDIRS = @mod_irc@ @mod_pubsub@ @mod_muc@ @eldap@ @web@ stringprep @tls@
+ ERLSHLIBS = expat_erl.so
+ 
+-DESTDIR =
++DESTDIR = @prefix@
+ 
+-EJABBERDDIR = $(DESTDIR)/var/lib/ejabberd
++EJABBERDDIR = $(DESTDIR)/lib/erlang/lib/ejabberd-%%PORTVERSION%%
+ BEAMDIR = $(EJABBERDDIR)/ebin
+ PRIVDIR = $(EJABBERDDIR)/priv
+ SODIR = $(PRIVDIR)/lib
+ MSGSDIR = $(PRIVDIR)/msgs
+-LOGDIR = $(DESTDIR)/var/log/ejabberd
+-ETCDIR = $(DESTDIR)/etc/ejabberd
++LOGDIR = /var/log/ejabberd
++ETCDIR = $(DESTDIR)/etc
+ 
+ all: $(ERLSHLIBS) compile-beam all-recursive
+ 
+@@ -60,7 +60,7 @@
+ 	install -d $(MSGSDIR)
+ 	install -m 644 msgs/*.msg $(MSGSDIR)
+ 	install -d $(ETCDIR)
+-	install -b -m 644 ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg
++	install -b -m 644 ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg.sample
+ 	install -d $(LOGDIR)
+ 
+ clean: clean-recursive clean-local

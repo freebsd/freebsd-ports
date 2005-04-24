@@ -27,7 +27,7 @@
 +
 +status()
 +{
-+    $EJABBERDCTL status >/dev/null
++    su $EJABBERDUSER -c "$EJABBERDCTL ejabberd@`hostname -s` status >/dev/null"
 +}
 +
 +start()
@@ -53,7 +53,7 @@
 +    stop)
 +	echo -n "Stopping $DESC: "
 +
-+       if $EJABBERDCTL stop
++       if su $EJABBERDUSER -c "$EJABBERDCTL ejabberd@`hostname -s` stop"
 +        then
 +            cnt=0
 +            while status
@@ -77,7 +77,7 @@
 +	    echo -n "Restarting $DESC: "
 +        if status
 +        then
-+            $EJABBERDCTL restart
++            su $EJABBERDUSER -c "$EJABBERDCTL ejabberd@`hostname -s` restart"
 +        else
 +            start
 +        fi
