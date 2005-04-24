@@ -34,7 +34,7 @@ PLIST_FILES=	bin/baudline
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions. You must manually fetch ${DISTFILES} from\
 		http://www.baudline.com/download.html. Once ${DISTFILES}\
