@@ -12928,3 +12928,4 @@ zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 p5-Net-FTP-Recursive	ports/ftp/p5-Net-FTP-Recursive
 p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
+p5-iCal-Parser	ports/devel/p5-iCal-Parser
