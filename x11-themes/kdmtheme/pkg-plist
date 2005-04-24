@@ -7,5 +7,4 @@ share/doc/HTML/en/kdmtheme/index.docbook
 share/doc/HTML/en/kdmtheme/kdmtheme.png
 share/nls/POSIX
 share/nls/en_US.US-ASCII
-@dirrm share/doc/ja
 @dirrm share/doc/HTML/en/kdmtheme
