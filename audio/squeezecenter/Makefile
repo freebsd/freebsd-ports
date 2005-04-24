@@ -21,6 +21,7 @@ RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
 DISTVERSION?=	${PORTVERSION}
 
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
 
 PKGINSTALL=	${WRKDIR}/pkg-install
