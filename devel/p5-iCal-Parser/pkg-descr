@@ -1,0 +1,7 @@
+This module processes iCalendar (vCalendar 2.0) files as specified in
+RFC 2445 into a data structure. It handles recurrences ("RRULE"s),
+exclusions ("EXDATE"s), event updates (events with a "RECURRENCE-ID"),
+and nested data structures ("ATTENDEES" and "VALARM"s). It currently
+ignores the "VTIMEZONE", "VJOURNAL" and "VFREEBUSY" entry types.
+
+WWW: http://search.cpan.org/dist/iCal-Parser/
