@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-2.1.2-21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Matrix Template Library
 
-USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
