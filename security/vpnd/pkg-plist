@@ -1,8 +1,0 @@
-sbin/vpnd
-etc/vpnd.conf.sample
-etc/vpnd.chat.sample
-%%PORTDOCS%%share/doc/vpnd/README
-%%PORTDOCS%%share/doc/vpnd/FAQ.TXT
-%%PORTDOCS%%share/doc/vpnd/SPEED.TXT
-%%PORTDOCS%%share/doc/vpnd/VERSIONS
-%%PORTDOCS%%@dirrm share/doc/vpnd
