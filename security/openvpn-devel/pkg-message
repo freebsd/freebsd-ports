@@ -11,17 +11,10 @@
 ###    mssfix 1450							   ###
 ###                                                                        ###
 ###    key-method 2       <- this key-method line only for TLS setups	   ###
+### - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  ###
+###  WARNING: THE DEFAULT PORT HAS CHANGED AND IS NOW 1194!                ###
+###  OpenVPN 1.6 and older used 5000 rather than 1194 as their default     ###
+###  port, so add the proper port options to your configuration file!      ###
 ### ---------------------------------------------------------------------- ###
-###  When connecting to 1.4.X or older peers with a TAP-style tunnel, set  ###
-###  --tun-mtu 1500 --tun-mtu-extra 32 on the peer.			   ###
-###                                                                        ###
-###  To retain backwards compatibility of OpenVPN 1.3.0 with OpenVPN peers ###
-###  that run older versions (back to 1.1.0), you will have to set the MTU ###
-###  explicitly by command line options since OpenVPN 1.3.0.               ###
-###                                                                        ###
-###  When using TLS security and your peer runs OpenVPN 1.3.X, the PEER    ###
-###  must use --disable-occ.  This version of OpenVPN cannot use TLS mode  ###
-###  to peers running OpenVPN 1.2.x or older.                              ###
-###                                                                        ###
-###  Note: use at most --verb 4 for regular use, --verb 5 is for debugging ###
+###  For further compatibility, see <http://openvpn.net/relnotes.html>     ###
 ### ---------------------------------------------------------------------- ###
