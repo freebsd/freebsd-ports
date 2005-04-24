@@ -18,7 +18,6 @@ USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
-USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
