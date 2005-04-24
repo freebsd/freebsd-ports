@@ -8,7 +8,7 @@ PORTNAME=	ksetiwatch
 PORTVERSION=	3.0.1
 CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ksetiwatch
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A monitoring tool for the seti@home client
