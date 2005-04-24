@@ -1,0 +1,19 @@
+***
+*** NOTE: Now %%PREFIX%%/sbin/policyd has renamed to %%PREFIX%%/sbin/postfix-policyd-spf
+***
+
+To run this from %%PREFIX%%/etc/postfix/master.cf:
+
+policy  unix  -       n       n       -       -       spawn
+  user=nobody argv=%%PREFIX%%/sbin/postfix-policyd-spf
+
+To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf:
+
+smtpd_recipient_restrictions = ...
+                               reject_unknown_sender_domain
+                               reject_unauth_destination
+                               check_policy_service unix:private/policy
+                               ...
+
+NOTE: specify check_policy_service AFTER reject_unauth_destination
+or else your system can become an open relay.
