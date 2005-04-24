@@ -32,6 +32,7 @@ lib/webmin/virtual-server/domain_form.cgi
 lib/webmin/virtual-server/domain_setup.cgi
 lib/webmin/virtual-server/edit_afile.cgi
 lib/webmin/virtual-server/edit_alias.cgi
+lib/webmin/virtual-server/edit_database.cgi
 lib/webmin/virtual-server/edit_domain.cgi
 lib/webmin/virtual-server/edit_ffile.cgi
 lib/webmin/virtual-server/edit_limits.cgi
@@ -70,6 +71,7 @@ lib/webmin/virtual-server/help/aliasname.html
 lib/webmin/virtual-server/help/bwlimit.html
 lib/webmin/virtual-server/help/createmailbox.de.html
 lib/webmin/virtual-server/help/createmailbox.html
+lib/webmin/virtual-server/help/dbname.html
 lib/webmin/virtual-server/help/diskquota.de.html
 lib/webmin/virtual-server/help/diskquota.html
 lib/webmin/virtual-server/help/dns.de.html
@@ -93,6 +95,7 @@ lib/webmin/virtual-server/help/mailfile.de.html
 lib/webmin/virtual-server/help/mailfile.html
 lib/webmin/virtual-server/help/mailgroupname.html
 lib/webmin/virtual-server/help/mysql.de.html
+lib/webmin/virtual-server/help/mysql.fr.html
 lib/webmin/virtual-server/help/mysql.html
 lib/webmin/virtual-server/help/newmail.html
 lib/webmin/virtual-server/help/ownersemail.html
@@ -124,8 +127,10 @@ lib/webmin/virtual-server/help/virtualinterface.de.html
 lib/webmin/virtual-server/help/virtualinterface.html
 lib/webmin/virtual-server/help/web.de.html
 lib/webmin/virtual-server/help/web.html
+lib/webmin/virtual-server/help/webalizer.fr.html
 lib/webmin/virtual-server/help/webalizer.html
 lib/webmin/virtual-server/help/webmin.de.html
+lib/webmin/virtual-server/help/webmin.fr.html
 lib/webmin/virtual-server/help/webmin.html
 lib/webmin/virtual-server/help/webservertype.de.html
 lib/webmin/virtual-server/help/webservertype.html
@@ -156,12 +161,15 @@ lib/webmin/virtual-server/images/v-icon.gif
 lib/webmin/virtual-server/images/web.gif
 lib/webmin/virtual-server/images/white.gif
 lib/webmin/virtual-server/import.cgi
+lib/webmin/virtual-server/import_database.cgi
 lib/webmin/virtual-server/import_form.cgi
 lib/webmin/virtual-server/index.cgi
 lib/webmin/virtual-server/lang/de
 lib/webmin/virtual-server/lang/en
+lib/webmin/virtual-server/lang/es
 lib/webmin/virtual-server/lang/fr
 lib/webmin/virtual-server/list_aliases.cgi
+lib/webmin/virtual-server/list_databases.cgi
 lib/webmin/virtual-server/list_users.cgi
 lib/webmin/virtual-server/local-template
 lib/webmin/virtual-server/log_parser.pl
@@ -174,6 +182,7 @@ lib/webmin/virtual-server/restore.cgi
 lib/webmin/virtual-server/restore_form.cgi
 lib/webmin/virtual-server/save_afile.cgi
 lib/webmin/virtual-server/save_alias.cgi
+lib/webmin/virtual-server/save_database.cgi
 lib/webmin/virtual-server/save_domain.cgi
 lib/webmin/virtual-server/save_expframe.cgi
 lib/webmin/virtual-server/save_ffile.cgi
