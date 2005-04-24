@@ -15,18 +15,17 @@ DISTFILES=	mpeg2vidcodec_v12.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An MPEG-2 Encoder and Decoder
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/mpeg2
-
+DATADIR=	share/mpeg2
 CFLAGS+=-DVERIFY -DVERBOSE -DTRACE
 
 do-install:
 .for i in dec enc
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${WRKSRC}/src/mpeg2${i}/mpeg2${i}ode ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpeg2${i}/mpeg2${i}ode ${PREFIX}/bin
 .endfor
-	${MKDIR} ${PREFIX}/share/mpeg2
-	${CP} ${WRKSRC}/doc/mpeg2enc.doc ${PREFIX}/share/mpeg2
-	${CP} ${WRKSRC}/par/* ${PREFIX}/share/mpeg2
+	${MKDIR} ${PREFIX}/${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mpeg2enc.doc ${PREFIX}/${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/par/* ${PREFIX}/${DATADIR}
 
 .include <bsd.port.mk>
