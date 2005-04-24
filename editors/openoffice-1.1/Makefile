@@ -88,7 +88,7 @@ CODELINE=		645
 RELEASE_NR=		${PORTVERSION}
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}
-DIST_SUBDIR=		openoffice1.1
+DIST_SUBDIR=		openoffice.org1.1
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
 PACKAGE_BASENAME=       OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel
 
@@ -119,12 +119,12 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
 .endif
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2
 .if defined(WITHOUT_JAVA)
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
