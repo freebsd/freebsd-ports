@@ -1101,6 +1101,7 @@
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Test-WWW-Mechanize
+    SUBDIR += p5-Text-vFile-asData
     SUBDIR += p5-Tie-Array-Sorted
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_File-SplitHash

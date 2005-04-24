@@ -1,0 +1,4 @@
+Text::vFile::asData reads vFile format files, such as vCard
+(RFC 2426) and vCalendar (RFC 2445).
+
+WWW: http://search.cpan.org/dist/Text-vFile-asData/
