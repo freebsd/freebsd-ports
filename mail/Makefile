@@ -339,7 +339,6 @@
     SUBDIR += pine4
     SUBDIR += pm-lib
     SUBDIR += pmail
-    SUBDIR += policyd
     SUBDIR += pop-before-smtp
     SUBDIR += pop3gwd
     SUBDIR += pop3lite
@@ -358,6 +357,7 @@
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postfix-gps
+    SUBDIR += postfix-policyd-spf
     SUBDIR += postfix1
     SUBDIR += postfix21
     SUBDIR += postfixadmin

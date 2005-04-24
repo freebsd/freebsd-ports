@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Mon Jun 28 13:59:26 2004
++++ Makefile.in	Mon Apr 18 11:24:56 2005
+@@ -192,8 +192,8 @@
+ 	     || test -f $$p1 \
+ 	  ; then \
+ 	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/postfix-policyd-spf"; \
++	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/postfix-policyd-spf; \
+ 	  else :; fi; \
+ 	done
+ 
