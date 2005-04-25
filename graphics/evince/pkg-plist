@@ -26,10 +26,17 @@ share/locale/nb/LC_MESSAGES/evince.mo
 share/locale/nl/LC_MESSAGES/evince.mo
 share/locale/no/LC_MESSAGES/evince.mo
 share/locale/pt_BR/LC_MESSAGES/evince.mo
+share/locale/ru/LC_MESSAGES/evince.mo
 share/locale/rw/LC_MESSAGES/evince.mo
 share/locale/sv/LC_MESSAGES/evince.mo
 share/locale/wa/LC_MESSAGES/evince.mo
 share/locale/zh_CN/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrm share/gnome/omf/evince
+@dirrm share/gnome/help/evince/C/figures
+@dirrm share/gnome/help/evince/C
+@dirrm share/gnome/help/evince
 @dirrm share/gnome/evince
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
