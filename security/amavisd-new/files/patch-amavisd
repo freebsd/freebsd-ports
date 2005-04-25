@@ -1,11 +1,11 @@
---- amavisd.orig	Thu Dec 23 02:38:39 2004
-+++ amavisd	Sun Dec 26 14:06:38 2004
-@@ -7805,7 +7805,7 @@
- umask(0027);
+--- amavisd.orig	Mon Apr 25 01:23:32 2005
++++ amavisd	Mon Apr 25 09:53:59 2005
+@@ -8495,7 +8495,7 @@
+ Amavis::Conf::build_default_maps();
  
  # default location of the config file if none specified
 -push(@config_files, '/etc/amavisd.conf')  if !@config_files;
 +push(@config_files, '%%PREFIX%%/etc/amavisd.conf')  if !@config_files;
+ # Read/execute the config file, which may override default settings
+ Amavis::Conf::read_config(@config_files);
  
- # Read config file, which may override default settings
- Amavis::Conf::build_default_maps();
