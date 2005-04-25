@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-apl
 .if defined(WITH_DBCS) && !defined(WITHOUT_DBCS)
 CONFIGURE_ARGS+=	--enable-dbcs
 BUILD_DEPENDS+=	${LOCALBASE}/include/unicode/ucnv.h:${PORTSDIR}/devel/icu2:install
-LIST_SUB+=	DBCS=""
+PLIST_SUB+=	DBCS=""
 .else
 PLIST_SUB+=	DBCS="@comment "
 .endif
