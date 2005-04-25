@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glademm
-PORTVERSION=	2.0.0.1
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -19,19 +18,24 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_GETOPT_LONG=	yes
+
+PLIST_FILES=	bin/glade-- bin/glademm-embed
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${RM} -f ${WRKSRC}/src/getopt.*
+	@${RM} -f ${WRKSRC}/src/getopt.*
 	@${REINPLACE_CMD} \
-		-e 's|automake-1.7|automake18|g' \
-		-e 's|automake-1.5|automake15|g' \
-		-e 's|automake-1.4|automake14|g' \
-		-e 's|autoconf2.50|autoconf259|g' \
-		-e 's|autoconf2.13|autoconf213|g' \
-		${WRKSRC}/src/glade--.cc
+		-Ee '/^@AMDEP/!s|getopt([^[:space:]])+||g' \
+		-Ee '/^@AMDEP(.)+getopt/d' \
+			${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} \
+		-Ee 's|automake-([[:digit:]]+)\.([[:digit:]]+)|automake\1\2|g' \
+		-e 's|autoconf2\.50|autoconf259|g' \
+		-e 's|autoconf2\.13|autoconf213|g' \
+			${WRKSRC}/src/glade--.cc \
+			${WRKSRC}/src/Cxx.cc
 
 .include <bsd.port.post.mk>
