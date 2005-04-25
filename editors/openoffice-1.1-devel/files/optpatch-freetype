@@ -1,0 +1,87 @@
+Index: freetype/freetype-2.1.4.patch
+===================================================================
+RCS file: /cvs/external/freetype/freetype-2.1.4.patch,v
+retrieving revision 1.2
+diff -u -r1.2 freetype-2.1.4.patch
+--- freetype/freetype-2.1.4.patch	17 Apr 2003 15:11:01 -0000	1.2
++++ freetype/freetype-2.1.4.patch	16 Jan 2005 08:29:56 -0000
+@@ -1,5 +1,5 @@
+-*** misc/freetype-2.1.4/builds/compiler/visualc.mk	Thu Dec 14 00:44:33 2000
+---- misc/build/freetype-2.1.4/builds/compiler/visualc.mk	Wed Apr  9 16:45:16 2003
++*** misc/freetype-2.1.4/builds/compiler/visualc.mk	Thu Dec 14 08:44:33 2000
++--- misc/build/freetype-2.1.4/builds/compiler/visualc.mk	Sun Jan 16 17:01:31 2005
+ ***************
+ *** 63,69 ****
+   #   ANSI compliance.
+@@ -17,8 +17,8 @@
+   endif
+   
+   # ANSIFLAGS: Put there the flags used to make your compiler ANSI-compliant.
+-*** misc/freetype-2.1.4/builds/unix/ltmain.sh	Sat Jan 18 17:39:18 2003
+---- misc/build/freetype-2.1.4/builds/unix/ltmain.sh	Wed Apr  9 16:45:16 2003
++*** misc/freetype-2.1.4/builds/unix/ltmain.sh	Sun Jan 19 01:39:18 2003
++--- misc/build/freetype-2.1.4/builds/unix/ltmain.sh	Sun Jan 16 17:01:31 2005
+ ***************
+ *** 2296,2302 ****
+   	  ;;
+@@ -36,8 +36,8 @@
+   
+   	  case $version_type in
+   	    nonstopux) verstring_prefix=nonstopux ;;
+-*** misc/freetype-2.1.4/builds/win32/visualc/freetype.dsp	Fri Jan 31 00:24:18 2003
+---- misc/build/freetype-2.1.4/builds/win32/visualc/freetype.dsp	Wed Apr  9 16:45:16 2003
++*** misc/freetype-2.1.4/builds/win32/visualc/freetype.dsp	Fri Jan 31 08:24:18 2003
++--- misc/build/freetype-2.1.4/builds/win32/visualc/freetype.dsp	Sun Jan 16 17:01:32 2005
+ ***************
+ *** 44,51 ****
+   # PROP Output_Dir "..\..\..\objs\release"
+@@ -57,8 +57,8 @@
+   # SUBTRACT CPP /nologo /YX
+   # ADD BASE RSC /l 0x409 /d "NDEBUG"
+   # ADD RSC /l 0x409 /d "NDEBUG"
+-*** misc/freetype-2.1.4/include/freetype/config/ftmodule.h	Thu Oct 31 09:29:31 2002
+---- misc/build/freetype-2.1.4/include/freetype/config/ftmodule.h	Wed Apr  9 16:45:16 2003
++*** misc/freetype-2.1.4/include/freetype/config/ftmodule.h	Thu Oct 31 17:29:31 2002
++--- misc/build/freetype-2.1.4/include/freetype/config/ftmodule.h	Sun Jan 16 17:01:32 2005
+ ***************
+ *** 1,8 ****
+   FT_USE_MODULE(autohint_module_class)
+@@ -92,8 +92,8 @@
+   FT_USE_MODULE(winfnt_driver_class)
+ + #endif
+   
+-*** misc/freetype-2.1.4/include/freetype/config/ftoption.h	Fri Jan 31 00:24:18 2003
+---- misc/build/freetype-2.1.4/include/freetype/config/ftoption.h	Wed Apr  9 16:45:16 2003
++*** misc/freetype-2.1.4/include/freetype/config/ftoption.h	Fri Jan 31 08:24:18 2003
++--- misc/build/freetype-2.1.4/include/freetype/config/ftoption.h	Sun Jan 16 17:04:45 2005
+ ***************
+ *** 108,114 ****
+     /*   this will however force you to link the zlib to any program that    */
+@@ -111,8 +111,25 @@
+   
+   
+     /*************************************************************************/
+-*** misc/freetype-2.1.4/src/base/ftobjs.c	Thu Mar 27 22:35:43 2003
+---- misc/build/freetype-2.1.4/src/base/ftobjs.c	Sun Apr 13 17:57:51 2003
++***************
++*** 378,384 ****
++    /*   do not #undef this macro here, since the build system might         */
++    /*   define for certain configurations                                   */
++    /*                                                                       */
++! /* #define  TT_CONFIG_OPTION_BYTECODE_INTERPRETER */
++  
++  
++    /*************************************************************************/
++--- 378,384 ----
++    /*   do not #undef this macro here, since the build system might         */
++    /*   define for certain configurations                                   */
++    /*                                                                       */
++! #define  TT_CONFIG_OPTION_BYTECODE_INTERPRETER
++  
++  
++    /*************************************************************************/
++*** misc/freetype-2.1.4/src/base/ftobjs.c	Fri Mar 28 06:35:43 2003
++--- misc/build/freetype-2.1.4/src/base/ftobjs.c	Sun Jan 16 17:01:32 2005
+ ***************
+ *** 804,810 ****
+       {
