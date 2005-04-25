@@ -1,12 +1,5 @@
 @comment $FreeBSD$
 bin/pychecker
-%%PYTHON_SITELIBDIR%%/pychecker/CHANGELOG
-%%PYTHON_SITELIBDIR%%/pychecker/COPYRIGHT
-%%PYTHON_SITELIBDIR%%/pychecker/KNOWN_BUGS
-%%PYTHON_SITELIBDIR%%/pychecker/MAINTAINERS
-%%PYTHON_SITELIBDIR%%/pychecker/README
-%%PYTHON_SITELIBDIR%%/pychecker/TODO
-%%PYTHON_SITELIBDIR%%/pychecker/VERSION
 %%PYTHON_SITELIBDIR%%/pychecker/CodeChecks.py
 %%PYTHON_SITELIBDIR%%/pychecker/CodeChecks.pyc
 %%PYTHON_SITELIBDIR%%/pychecker/CodeChecks.pyo
