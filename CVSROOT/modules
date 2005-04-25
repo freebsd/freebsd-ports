@@ -9769,6 +9769,7 @@ qcamview	ports/graphics/qcamview
 qcc		ports/games/qcc
 qccx		ports/games/qccx
 qcl		ports/science/qcl
+qcomicbook	ports/graphics/qcomicbook
 qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
 qdbm		ports/databases/qdbm
