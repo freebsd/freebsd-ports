@@ -8,7 +8,7 @@
 PORTNAME=	asmutils
 PORTVERSION=	0.17
 CATEGORIES=	devel
-MASTER_SITES=	http://linuxassembly.org/asmutils/
+MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A set of UNIX utilities written in assembly language
