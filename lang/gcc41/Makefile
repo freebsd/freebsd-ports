@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.0.1
-PORTREVISION=	20050423
+PORTVERSION=	4.1.0
+PORTREVISION=	20050424
 CATEGORIES=	lang java
-VERSIONSTRING=	4.0-${PORTREVISION}
+VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
@@ -24,9 +24,9 @@ DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 4.0
+COMMENT?=	GNU Compiler Collection 4.1
 
-LATEST_LINK?=	gcc40${PKGNAMESUFFIX}
+LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
 
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
@@ -57,12 +57,12 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
-# FIXME: needed to make gcc40 port work for now.
+# FIXME: needed to make gcc41 port work for now.
 WITHOUT_LIBJAVA=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		40
+SUFFIX=		41
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
