@@ -1,0 +1,8 @@
+Policyd-weight is (as the name says) a weighted policyd for Postfix.
+It uses HELO, MAIL FROM and the MTA IP address for scoring their
+correctness. It also uses definable DNSBLs in a scored fashion.
+
+WWW: http://robtone.mine.nu/postfix/
+
+- Robert Felber
+robtone@ek-muc.de

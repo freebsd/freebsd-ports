@@ -1,0 +1,23 @@
+**********
+*
+* To run this from %%PREFIX%%/etc/postfix/master.cf:
+
+policy  unix  -       n       n       -       -       spawn
+  user=nobody argv=%%PREFIX%%/libexec/postfix/policyd-weight
+
+*
+* To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf
+*
+smtpd_recipient_restrictions = 
+	...
+	permit_mynetworks
+	...
+	reject_unauth_destination
+	reject_unauth_pipelining
+	check_policy_service unix:private/policy
+	...
+
+* NOTE: specify check_policy_service AFTER reject_unauth_destination
+* or else your system can become an open relay.
+*
+*************
