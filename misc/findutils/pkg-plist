@@ -38,3 +38,5 @@ libexec/gbigram
 %%NLS%%share/locale/tr/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/findutils.mo
+%%NLS%%@unexec rmdir %D/share/locale/lg/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/lg 2>/dev/null || true
