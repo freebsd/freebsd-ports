@@ -62,6 +62,7 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/formats.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/function_locale.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/headers.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/hide_sheet.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/hyperlink1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/hyperlink2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/images.pl
