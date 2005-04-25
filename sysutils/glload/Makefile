@@ -20,8 +20,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_GL=		yes
 MAKEFILE=	Makefile.FreeBSD
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -I${X11BASE}/include -DFreeBSD ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}" \
+		OBJS="get_load.o trackball.o glload.o texture.o screenShot.o"
 ALL_TARGET=	glload
 
 PLIST_FILES=	bin/glload
