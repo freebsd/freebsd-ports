@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -132,7 +131,7 @@ post-install:
 .endif
 
 .if ${PERL_LEVEL} < 500802
-IGNORE=		"requires perl 5.8.2 or higher"
+IGNORE=		requires perl 5.8.2 or higher
 .endif
 
 .include <bsd.port.post.mk>
