@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gromit
-PORTVERSION=	20011210
-PORTREVISION=	1
+PORTVERSION=	20041213
 CATEGORIES=	x11
 MASTER_SITES=	http://www.home.unix-ag.org/simon/gromit/
 
@@ -15,9 +14,15 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	"GRaphics Over Miscellaneous Objects (Gromit)"
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_REINPLACE=	yes
+USE_GNOME=	gtk20
 
 DOCS=		AUTHORS ChangeLog README
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' \
+		-e 's|`gtk-config|$${CFLAGS} `pkg-config gtk\+-2.0|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gromit ${PREFIX}/bin
