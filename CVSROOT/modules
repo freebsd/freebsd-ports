@@ -382,6 +382,7 @@ apel-mule	ports/editors/apel-mule
 apel-xemacs21-mule	ports/editors/apel-xemacs21-mule
 apg		ports/security/apg
 apinger		ports/net/apinger
+apollon		ports/net/apollon
 apr		ports/devel/apr
 apr-svn		ports/devel/apr-svn
 apsfilter	ports/print/apsfilter
