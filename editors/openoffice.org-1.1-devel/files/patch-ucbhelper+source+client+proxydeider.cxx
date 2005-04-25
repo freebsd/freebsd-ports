@@ -1,6 +1,6 @@
-#iz XXXXX
-sys/socket.h is needed, there should be
-appropreate place to give this definition, though.
+http://www.openoffice.org/issues/show_bug.cgi?id=40191
+
+sys/socket.h is needed for FreeBSD
 
 Index: ucbhelper/source/client/proxydecider.cxx
 ===================================================================
@@ -8,15 +8,15 @@ RCS file: /cvs/ucb/ucbhelper/source/client/proxydecider.cxx,v
 retrieving revision 1.3.16.1
 diff -u -r1.3.16.1 proxydecider.cxx
 --- ucbhelper/source/client/proxydecider.cxx	20 Oct 2004 12:04:36 -0000	1.3.16.1
-+++ ucbhelper/source/client/proxydecider.cxx	30 Oct 2004 23:08:26 -0000
-@@ -107,6 +107,10 @@
- using namespace com::sun::star;
- using namespace ucbhelper;
++++ ucbhelper/source/client/proxydecider.cxx	30 Dec 2004 04:12:01 -0000
+@@ -127,6 +127,10 @@
+ #include <unistd.h>
+ #endif
  
 +#if defined (FREEBSD)
 +#include <sys/socket.h>
 +#endif
 +
- #define CONFIG_ROOT_KEY     "org.openoffice.Inet/Settings"
- #define PROXY_TYPE_KEY      "ooInetProxyType"
- #define NO_PROXY_LIST_KEY   "ooInetNoProxy"
+ #ifdef SOLARIS
+ 
+ extern "C"

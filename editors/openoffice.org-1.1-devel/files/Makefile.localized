@@ -1,6 +1,6 @@
 # localized makefile
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.1-devel/files/Attic/Makefile.localized,v 1.4 2004-08-13 03:04:04 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.1-devel/files/Attic/Makefile.localized,v 1.5 2005-04-25 12:32:33 maho Exp $
 
 ################################################################
 .if defined(LOCALIZED_LANG)
@@ -53,6 +53,7 @@ L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_PKGNAME=   cs
 LANG_EXT=       42
 LANG_CONFIGURE_ARG=     CZECH
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "dk"
@@ -102,7 +103,6 @@ LANG_EXT=	49
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	GER
 COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Praesentationsprogramm
-PKGMESSAGE=     ${FILESDIR}/pkg-message.de
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "el"
@@ -142,8 +142,8 @@ CATEGORIES=	japanese
 LANG_PKGNAME=   ja
 LANG_EXT=       81
 LANG_CONFIGURE_ARG=     JAPN
-MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,}
-RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,}
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
 L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
@@ -216,6 +216,7 @@ CATEGORIES=	russian
 LANG_PKGNAME=	ru
 LANG_EXT=	07
 LANG_CONFIGURE_ARG=	RUSS
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "es"
@@ -236,6 +237,7 @@ LANG_CONFIGURE_ARG=	SWED
 LANG_PKGNAME=	sk
 LANG_EXT=	43
 LANG_CONFIGURE_ARG=	SLOVAK
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "sl-SI"
@@ -243,6 +245,7 @@ LANG_PKGNAME=	sl
 LANG_SUFFIX=	SI
 LANG_EXT=	50
 LANG_CONFIGURE_ARG=	SLOVENIAN
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "th"

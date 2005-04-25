@@ -1,3 +1,5 @@
+http://www.openoffice.org/issues/show_bug.cgi?id=40189
+
 Index: config_office/configure.in
 ===================================================================
 RCS file: /cvs/tools/config_office/configure.in,v

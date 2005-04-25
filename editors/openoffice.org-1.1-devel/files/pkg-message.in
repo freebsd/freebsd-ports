@@ -1,0 +1,55 @@
+OpenOffice.org Build %%RELEASE_NR%% Personal Install How-To
+
+Written by:	Martin Blapp <mbr@freebsd.org>
+		and Maho Nakata <maho@FreeBSD.org>
+
+OpenOffice.org %%RELEASE_NR%% will soon been installed in
+%%PREFIX%%/%%EXECBASE%%
+
+1 User installation
+-------------------
+
+Just type "%%EXECBASE%%" after you have successfully
+installed the package. If there is no installed
+OO.org dir in your homedir, you'll be prompted to
+install some files and choose a installed JDK.
+The setup installs a "OpenOffice.org%%RELEASE_NR%%" folder
+in your homedir.
+
+If the setup tells you there is already an installed
+version, you may look at the file ".sversionrc" in
+your homedir. In this file OpenOffice and StarOffice
+have both a line for each version which is installed.
+After removing the problematic line you should be able to
+install again.
+
+2 Start OO.org
+--------------
+
+There are some wrappers installed for fast startup.
+Add "%%PREFIX%%/bin/" to your PATH and you will be able
+to use them.
+
+%%PREFIX%%/bin/openoffice.org
+%%PREFIX%%/bin/%%EXECBASE%%
+%%PREFIX%%/bin/%%EXECBASE%%-sagenda
+%%PREFIX%%/bin/%%EXECBASE%%-scalc
+%%PREFIX%%/bin/%%EXECBASE%%-sdraw
+%%PREFIX%%/bin/%%EXECBASE%%-setup
+%%PREFIX%%/bin/%%EXECBASE%%-sfax
+%%PREFIX%%/bin/%%EXECBASE%%-simpress
+%%PREFIX%%/bin/%%EXECBASE%%-spadmin
+%%PREFIX%%/bin/%%EXECBASE%%-sweb
+%%PREFIX%%/bin/%%EXECBASE%%-swriter
+
+OO.org does need $LANG to be set to a suitable value.
+If it is not already set, a default value is chosen.
+
+3 If you stuck into a trouble
+--------------------------------------------------
+Somehow you can stuck into a trouble. 
+To solve this issue, please remove the already installed
+"OpenOffice.org%%RELEASE_NR%%" dir in your homedir and remove the
+appropriate entry from ".sversionrc". After you have done
+this, redo the user installation and the problem will
+go away.
