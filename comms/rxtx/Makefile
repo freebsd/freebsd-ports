@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/-\1/:S/p/pre/}
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	Native interface to serial ports in Java
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
@@ -26,5 +24,6 @@ USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 PREFIX=		${JAVA_HOME}/jre
+NO_MTREE=	yes
 
 .include <bsd.port.mk>
