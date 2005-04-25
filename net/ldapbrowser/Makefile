@@ -5,18 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=       ldapbrowser
-PORTVERSION=    2.8.1
-CATEGORIES=     net
-MASTER_SITES=   http://www-unix.mcs.anl.gov/~gawor/ldapcommon/bin/
+PORTNAME=	ldapbrowser
+PORTVERSION=	2.8.1
+CATEGORIES=	net java
+MASTER_SITES=	http://www-unix.mcs.anl.gov/~gawor/ldapcommon/bin/
 DISTNAME=	Browser281
 
-MAINTAINER=     bms@FreeBSD.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Java/Swing-based LDAP Browser/Editor
 
 RESTRICTED=	"No reply from author regarding redistribution licensing"
 
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 NOMAN=		defined
 WRKSRC=		${WRKDIR}/${PORTNAME}
