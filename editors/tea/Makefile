@@ -6,15 +6,16 @@
 #
 
 PORTNAME=		tea
-PORTVERSION=		8.2
+DISTVERSION=		9.0-pre4
 CATEGORIES=		editors
-MASTER_SITES=		http://tea.linux.kiev.ua/
-DISTNAME=		${PORTNAME}
+MASTER_SITES=		${MASTER_SITE_LOCAL} \
+			http://freebsd.nsu.ru/distfiles/
+MASTER_SITE_SUBDIR=	danfe
 
 MAINTAINER=		danfe@FreeBSD.org
 COMMENT=		A simple and powerful GTK+ text editor
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=			${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-pre4//}
 
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
