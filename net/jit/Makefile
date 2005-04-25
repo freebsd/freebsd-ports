@@ -17,6 +17,8 @@ COMMENT=	Jabber ICQ Transport
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 

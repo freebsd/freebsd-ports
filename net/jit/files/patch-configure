@@ -1,0 +1,13 @@
+--- configure.orig	Mon Apr 25 14:41:07 2005
++++ configure	Mon Apr 25 14:42:05 2005
+@@ -60,8 +60,8 @@
+         CFLAGS="$CFLAGS -I/usr/include -fPIC"
+         LIBS="$LIBS -ldl -lpthread";;	
+     FreeBSD)
+-	CFLAGS="$CFLAGS -I/usr/local/include -I/usr/src/contrib/libstdc++ -D_THREAD_SAFE -DSUNOS"
+-	LIBS="$LIBS -pthread -lcompat -lc_r -L/usr/local/lib -liconv";;
++	CFLAGS="$CFLAGS -I/usr/local/include -I/usr/src/contrib/libstdc++ \${PTHREAD_CFLAGS} -DSUNOS"
++	LIBS="$LIBS \${PTHREAD_LIBS} -lcompat -L/usr/local/lib -liconv";;
+     OpenBSD)
+ 	CFLAGS="$CFLAGS -I/usr/local/include -I/usr/src/contrib/libstdc++ -D_THREAD_SAFE -DSUNOS"
+ 	LIBS="$LIBS -pthread -lcompat -lc_r -L/usr/local/lib -liconv";;	
