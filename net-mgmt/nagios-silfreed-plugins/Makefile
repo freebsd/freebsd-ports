@@ -90,7 +90,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/check_max_clients_route-0.1.6/${i} ${NAGIOS_PLUGIN_DIR}
 .endfor
 .for i in ${CHECKPM3CLIENTS_SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/check_pm3_clients_route-0.1.0/${i} ${NAGIOS_PLUGIN_DIR} )
+	${INSTALL_SCRIPT} ${WRKSRC}/check_pm3_clients_route-0.1.0/${i} ${NAGIOS_PLUGIN_DIR}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
