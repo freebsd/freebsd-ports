@@ -21,8 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehier intlhack gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PKG_CONFIG=${LOCALBASE}/bin/pkg-config
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-libgtop
 
 .include <bsd.port.mk>
