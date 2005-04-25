@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	Authen-Krb5
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Krb5-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Perl extension for Kerberos 5
 
 LIB_DEPENDS=	gssapi_krb5.2:${PORTSDIR}/security/krb5
 
-BROKEN=		Incomplete pkg-plist
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
 
