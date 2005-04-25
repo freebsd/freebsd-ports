@@ -65,10 +65,10 @@ do-install: install-cnotice install-binaries install-libs
 	@${ECHO_MSG} "Installing ${DESTJARFILE} to ${JAVAJARDIR} ..."
 	@${INSTALL_DATA} ${WRKSRC}/bin/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
 
+.if defined(WITH_TESTING)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${TESTINGDIR}
 	@${MKDIR} ${TESTINGDIR}/Java
-.if defined(WITH_TESTING)
 	@${ECHO_MSG} "Installing Java tests to ${TESTINGDIR}/Java ..."
 .for i in AxesActor SimpleVTK TestVTKCanvas TestInternalFrames ImagePlaneWidget
 	@${INSTALL_DATA} ${WRKSRC}/Wrapping/Java/${i}*.class ${TESTINGDIR}/Java
