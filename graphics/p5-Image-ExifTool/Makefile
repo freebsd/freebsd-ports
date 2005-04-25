@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	4.93
+PORTVERSION=	5.05
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -57,5 +57,13 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::XMP.3
 
 MAN1=		exiftool.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/TagNames
+	${INSTALL_DATA} ${WRKSRC}/html/TagNames/*.html ${DOCSDIR}/TagNames
+.endif
 
 .include <bsd.port.mk>

@@ -42,8 +42,46 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Writer.pl
 %%SITE_PERL%%/Image/ExifTool/XMP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/ExifTool.html
+%%PORTDOCS%%%%DOCSDIR%%/canon_raw.html
+%%PORTDOCS%%%%DOCSDIR%%/data_members.html
+%%PORTDOCS%%%%DOCSDIR%%/exiftool_pod.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/verbose.html
+%%PORTDOCS%%%%DOCSDIR%%/writing.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Canon.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/CanonCustom.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/CanonRaw.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Casio.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Composite.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/EXIF.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Extra.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/FujiFilm.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/GPS.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/GeoTiff.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/ICC_Profile.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/IPTC.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Jpeg2000.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Kodak.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Olympus.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Panasonic.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Pentax.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Photoshop.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/PrintIM.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Ricoh.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Sanyo.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Sigma.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Sony.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Unknown.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/XMP.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/index.html
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Image/ExifTool
 @unexec rmdir %D/%%SITE_PERL%%/Image 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/TagNames
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
