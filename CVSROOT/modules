@@ -9235,6 +9235,7 @@ postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
 postfix-gps	ports/mail/postfix-gps
 postfix-policyd-spf	ports/mail/postfix-policyd-spf
+postfix-policyd-weight	ports/mail/postfix-policyd-weight
 postfix1	ports/mail/postfix1
 postfix21	ports/mail/postfix21
 postfixadmin	ports/mail/postfixadmin
