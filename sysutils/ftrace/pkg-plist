@@ -1,7 +1,0 @@
-bin/ftrace
-lib/libftrace.so
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
