@@ -11231,6 +11231,7 @@ tftp-hpa	ports/ftp/tftp-hpa
 tgif		ports/graphics/tgif
 tgif-nls	ports/graphics/tgif-nls
 tgif2tex	ports/print/tgif2tex
+thailocale	ports/misc/thailocale
 thcrut		ports/net/thcrut
 the		ports/editors/the
 thebridge	ports/comms/thebridge
