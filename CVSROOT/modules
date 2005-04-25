@@ -4657,6 +4657,7 @@ knowit		ports/deskutils/knowit
 knowlan		ports/net-mgmt/knowlan
 knowledgekit	ports/www/knowledgekit
 knutclient	ports/sysutils/knutclient
+knzb		ports/news/knzb
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
