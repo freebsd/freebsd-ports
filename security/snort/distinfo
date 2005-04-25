@@ -1,4 +1,6 @@
 MD5 (snort-2.3.2.tar.gz) = 692602827ce9d1a611630149f8e50ec8
 SIZE (snort-2.3.2.tar.gz) = 2620487
+MD5 (snort-prelude-reporting-patch-0.3.6.tar.gz) = 323ab2956a59de113aa13099917f0d3a
+SIZE (snort-prelude-reporting-patch-0.3.6.tar.gz) = 21964
 MD5 (snort-2.3.2.tar.gz.asc) = cbeec538a9a4a17ccc7a1749b4a77f46
 SIZE (snort-2.3.2.tar.gz.asc) = 189
