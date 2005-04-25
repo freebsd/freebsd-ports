@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- configure.orig	Tue Oct 12 18:34:32 2004
-+++ configure	Tue Oct 12 18:34:48 2004
-@@ -8487,20 +8487,6 @@
+--- configure.orig	Wed Jan 12 00:00:26 2005
++++ configure	Mon Apr 25 11:21:46 2005
+@@ -8669,20 +8669,6 @@
  # Using Perl if it's available.
  #
  PERL=`which perl`
@@ -23,3 +21,23 @@ $FreeBSD$
  
  #if test -z "${LD_SHLIB}"; then
  #  AC_MSG_ERROR([Can't determine compilation flags.]);
+@@ -8947,8 +8933,8 @@
+ 
+ if test -z "${OPENSSL_LIB}"; then
+   foo=bar
+-elif test -r "${OPENSSL_LIB}/libcrypt.so"; then
+-  SSL_LIBS="${SSL_LIBS} -lcrypt"
++elif test -r "${OPENSSL_LIB}/libcrypto.so"; then
++  SSL_LIBS="${SSL_LIBS} -lcrypto"
+ elif test -r "${OPENSSL_LIB}/libcrypt.dylib"; then
+   SSL_LIBS="${SSL_LIBS} -lcrypt"
+ elif test -r "${OPENSSL_LIB}/libcrypt.a"; then
+@@ -8983,7 +8969,7 @@
+   foo=bar
+ elif test -z "${OPENSSL_LIB}"; then
+   foo=bar
+-elif test ! -r "${OPENSSL_LIB}/libcrypt.so" -a \
++elif test ! -r "${OPENSSL_LIB}/libcrypto.so" -a \
+           ! -r "${OPENSSL_LIB}/libcrypt.dylib" -a \
+           ! -r "${OPENSSL_LIB}/libcrypt.a" ; then
+   { { echo "$as_me:$LINENO: error: Can't find valid OpenSSL library in ${OPENSSL_LIB}" >&5

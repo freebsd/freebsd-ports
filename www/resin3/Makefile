@@ -18,6 +18,7 @@ JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_REINPLACE=		yes
+USE_OPENSSL=		yes
 
 # Customizable settings
 RUNASUSER?=		www
@@ -55,7 +56,9 @@ COPYDIRS=		lib libexec webapps
 .include <bsd.port.pre.mk>
 
 # Pass JAVA_HOME as determined by bsd.java.mk
-CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME}
+CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
+			--with-openssl-lib=${OPENSSLLIB} \
+			--with-openssl-include=${OPENSSLINC}
 
 # Install the Apache plugin if needed
 .if defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)
