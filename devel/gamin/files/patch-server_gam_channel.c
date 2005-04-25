@@ -1,5 +1,5 @@
---- server/gam_channel.c.orig	Mon Apr 11 04:20:17 2005
-+++ server/gam_channel.c	Mon Apr 11 04:21:00 2005
+--- server/gam_channel.c.orig	Mon Apr 25 01:03:31 2005
++++ server/gam_channel.c	Mon Apr 25 01:26:09 2005
 @@ -6,6 +6,7 @@
  #include <sys/socket.h>
  #include <sys/stat.h>
@@ -17,7 +17,7 @@
  {
      char data[2] = { 0, 0 };
 +    int written;
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +    struct {
 +	    struct cmsghdr hdr;
 +	    struct cmsgcred cred;
@@ -42,7 +42,7 @@
  
 -    return(gam_client_conn_write(source, fd, &data[0], 1));
 +retry:
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +    written = sendmsg(fd, &msg, 0);
 +#else
 +    written = write(fd, &data[0], 1);
@@ -64,7 +64,7 @@
  }
  
  /**
-@@ -49,8 +92,10 @@
+@@ -49,13 +92,15 @@ gam_client_conn_check_cred(GIOChannel * 
      gid_t c_gid;
  
  #ifdef HAVE_CMSGCRED
@@ -77,7 +77,13 @@
  #endif
  
      s_uid = getuid();
-@@ -75,9 +120,9 @@
+ 
+-#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED)
++#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED) && !defined(__FreeBSD__)
+     /* Set the socket to receive credentials on the next message */
+     {
+         int on = 1;
+@@ -75,9 +120,9 @@ gam_client_conn_check_cred(GIOChannel * 
      msg.msg_iovlen = 1;
  
  #ifdef HAVE_CMSGCRED
@@ -90,7 +96,7 @@
  #endif
  
    retry:
-@@ -94,7 +139,7 @@
+@@ -94,7 +139,7 @@ gam_client_conn_check_cred(GIOChannel * 
          goto failed;
      }
  #ifdef HAVE_CMSGCRED
@@ -99,7 +105,7 @@
          GAM_DEBUG(DEBUG_INFO,
                    "Message from recvmsg() was not SCM_CREDS\n");
          goto failed;
-@@ -120,13 +165,9 @@
+@@ -120,13 +165,9 @@ gam_client_conn_check_cred(GIOChannel * 
              goto failed;
          }
  #elif defined(HAVE_CMSGCRED)
@@ -116,7 +122,7 @@
  #else /* !SO_PEERCRED && !HAVE_CMSGCRED */
          GAM_DEBUG(DEBUG_INFO,
                    "Socket credentials not supported on this OS\n");
-@@ -149,7 +190,7 @@
+@@ -149,7 +190,7 @@ gam_client_conn_check_cred(GIOChannel * 
          goto failed;
      }
  
@@ -125,7 +131,7 @@
          GAM_DEBUG(DEBUG_INFO, "Failed to send credential byte to client\n");
          goto failed;
      }
-@@ -305,6 +346,7 @@
+@@ -305,6 +346,7 @@ gam_get_socket_path(const char *session)
          gam_client_id = g_getenv("GAM_CLIENT_ID");
          if (gam_client_id == NULL) {
              GAM_DEBUG(DEBUG_INFO, "Error getting GAM_CLIENT_ID\n");
