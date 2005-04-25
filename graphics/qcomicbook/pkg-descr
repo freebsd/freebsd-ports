@@ -1,0 +1,13 @@
+QComicBook is a viewer for comic book archives containing jpeg/png
+images, which aims at convenience and simplicity. Features include:
+
+	* automatic handling of archives
+	* full-screen mode
+	* two-pages mode and japanese mode
+	* thumbnails view
+	* page scaling (fit to window witdth/height, whole page)
+	* mouse or keyboard navigation, whatever you prefer
+	* bookmarks
+	* and more... 
+
+WWW: http://linux.bydg.org/~yogin/

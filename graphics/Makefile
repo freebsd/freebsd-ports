@@ -443,6 +443,7 @@
     SUBDIR += py-pydot
     SUBDIR += q-graph
     SUBDIR += qcamview
+    SUBDIR += qcomicbook
     SUBDIR += qcread
     SUBDIR += qglviewer
     SUBDIR += qiv
