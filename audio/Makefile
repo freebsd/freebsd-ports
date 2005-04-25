@@ -229,6 +229,7 @@
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
     SUBDIR += libcddb
+    SUBDIR += libcddb-doc
     SUBDIR += libid3tag
     SUBDIR += libmad
     SUBDIR += libmikmod
