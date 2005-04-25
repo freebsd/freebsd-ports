@@ -21,6 +21,7 @@
     SUBDIR += amule-devel
     SUBDIR += apache-soap
     SUBDIR += apinger
+    SUBDIR += apollon
     SUBDIR += archie
     SUBDIR += archie.el
     SUBDIR += ari-yahoo

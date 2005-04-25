@@ -1,0 +1,80 @@
+bin/apollon
+lib/libapollon.a
+lib/libapollon.so.0
+lib/libapollon.so
+share/locale/de/LC_MESSAGES/apollon.mo
+share/locale/es/LC_MESSAGES/apollon.mo
+share/locale/fr/LC_MESSAGES/apollon.mo
+share/locale/he/LC_MESSAGES/apollon.mo
+share/locale/it/LC_MESSAGES/apollon.mo
+share/locale/el/LC_MESSAGES/apollon.mo
+share/locale/dk/LC_MESSAGES/apollon.mo
+share/locale/fi/LC_MESSAGES/apollon.mo
+share/locale/nl/LC_MESSAGES/apollon.mo
+share/locale/pl/LC_MESSAGES/apollon.mo
+share/locale/ru/LC_MESSAGES/apollon.mo
+share/locale/sr/LC_MESSAGES/apollon.mo
+share/locale/pt_br/LC_MESSAGES/apollon.mo
+share/locale/nb_NO/LC_MESSAGES/apollon.mo
+share/icons/hicolor/16x16/apps/kazaa.png
+share/icons/hicolor/16x16/apps/gnutella.png
+share/icons/hicolor/16x16/apps/openft.png
+share/icons/hicolor/16x16/apps/soulseek.png
+share/icons/hicolor/16x16/apps/napster.png
+share/icons/hicolor/16x16/actions/openftdown.png
+share/icons/hicolor/16x16/actions/openftup.png
+share/icons/hicolor/16x16/actions/gnutellaup.png
+share/icons/hicolor/16x16/actions/soulseekup.png
+share/icons/hicolor/16x16/actions/napsterdown.png
+share/icons/hicolor/16x16/actions/soulseekdown.png
+share/icons/hicolor/16x16/actions/napsterup.png
+share/icons/hicolor/16x16/actions/kazaaup.png
+share/icons/hicolor/16x16/actions/kazaadown.png
+share/icons/hicolor/16x16/actions/gnutelladown.png
+share/icons/hicolor/32x32/apps/gnutella.png
+share/icons/hicolor/32x32/apps/napster.png
+share/icons/hicolor/32x32/apps/soulseek.png
+share/icons/hicolor/32x32/apps/openft.png
+share/icons/hicolor/32x32/apps/kazaa.png
+share/icons/crystalsvg/32x32/filesystems/folder_apollon.png
+share/icons/crystalsvg/32x32/apps/apollon.png
+share/icons/crystalsvg/22x22/apps/apollon.png
+share/icons/crystalsvg/16x16/filesystems/folder_apollon.png
+share/icons/crystalsvg/16x16/apps/apollon.png
+share/icons/crystalsvg/48x48/filesystems/folder_apollon.png
+share/icons/crystalsvg/48x48/apps/apollon.png
+share/icons/crystalsvg/64x64/filesystems/folder_apollon.png
+share/icons/crystalsvg/64x64/apps/apollon.png
+share/icons/crystalsvg/128x128/filesystems/folder_apollon.png
+share/icons/crystalsvg/128x128/apps/apollon.png
+share/applnk/Applications/Apollon.desktop
+%%PORTDOCS%%share/doc/HTML/en/apollon/commands.docbook
+%%PORTDOCS%%share/doc/HTML/en/apollon/index.docbook
+%%PORTDOCS%%share/doc/HTML/en/apollon/credits.docbook
+%%PORTDOCS%%share/doc/HTML/en/apollon/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/en/apollon/common
+@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_br/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_br 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64/filesystems 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/filesystems 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/filesystems 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/filesystems 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128/filesystems 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/share/doc/HTML/en/apollon
+%%PORTDOCS%%@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
