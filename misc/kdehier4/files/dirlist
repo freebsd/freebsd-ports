@@ -457,6 +457,9 @@ share/apps
 share/apps/kabc
 share/apps/kabc/formats
 share/apps/kabc/plugins
+@comment ---------------------------------------------------------------------
+@comment -- KDE-LIRc profiles
+share/apps/profiles
 share/icons
 share/icons/crystalsvg
 share/icons/crystalsvg/128x128
