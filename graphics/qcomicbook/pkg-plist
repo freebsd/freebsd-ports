@@ -1,0 +1,25 @@
+bin/qcomicbook
+share/qcomicbook/bestfit.png
+share/qcomicbook/fbackward.png
+share/qcomicbook/fforward.png
+share/qcomicbook/fitheight.png
+share/qcomicbook/fitwidth.png
+share/qcomicbook/help/en/index.html
+share/qcomicbook/help/en/internals.html
+share/qcomicbook/help/en/intro.html
+share/qcomicbook/help/en/keyboard.html
+share/qcomicbook/help/en/menu.html
+share/qcomicbook/info.png
+share/qcomicbook/japanese.png
+share/qcomicbook/nextpage.png
+share/qcomicbook/orgsize.png
+share/qcomicbook/pagebottom.png
+share/qcomicbook/pagetop.png
+share/qcomicbook/prevpage.png
+share/qcomicbook/qcomicbook.png
+share/qcomicbook/thumbnails.png
+share/qcomicbook/twopages.png
+share/qcomicbook/wholepage.png
+@dirrm share/qcomicbook/help/en
+@dirrm share/qcomicbook/help
+@dirrm share/qcomicbook
