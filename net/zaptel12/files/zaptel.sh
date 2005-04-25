@@ -5,8 +5,8 @@ LIBDIR=${PREFIX}/lib/zaptel
 
 case "$1" in
 	start)
-		/sbin/kldload ${LIBDIR}/qozap.ko || exit 1
 		/sbin/kldload ${LIBDIR}/zaptel.ko || exit 1
+		/sbin/kldload ${LIBDIR}/qozap.ko || exit 1
 		/sbin/kldload ${LIBDIR}/wcfxo.ko || exit 1
 		/sbin/kldload ${LIBDIR}/wcfxs.ko || exit 1
 		/sbin/kldload ${LIBDIR}/wct1xxp.ko || exit 1
@@ -19,10 +19,10 @@ case "$1" in
 		/sbin/kldunload qozap.ko || exit 1
 		/sbin/kldunload wcfxs.ko || exit 1
 		/sbin/kldunload wcfxo.ko || exit 1
-		/sbin/kldunload zaptel.ko || exit 1
 		/sbin/kldunload wct1xxp.ko || exit 1
 		/sbin/kldunload wct4xxp.ko || exit 1
 		/sbin/kldunload wcte11xp.ko || exit 1
+		/sbin/kldunload zaptel.ko || exit 1
 		echo -n " zaptel"
 		;;
 
