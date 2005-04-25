@@ -304,6 +304,7 @@ share/xml/iso-codes/iso_3166.xml
 share/xml/iso-codes/iso_3166_2.xml
 share/xml/iso-codes/iso_4217.xml
 share/xml/iso-codes/iso_639.xml
+@dirrm share/xml/iso-codes
 @unexec rmdir %D/share/locale/zu/LC_MESSAGES 2>/dev/null || /usr/bin/true
 @unexec rmdir %D/share/locale/zu 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || /usr/bin/true
@@ -334,8 +335,6 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/ti 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/te/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/te 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ta/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ta 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/syr/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/syr 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/sw/LC_MESSAGES 2>/dev/null ||/usr/bin/true
@@ -358,6 +357,8 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/ro 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/pt 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/ps/LC_MESSAGES 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/ps 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/om/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/om 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/oc/LC_MESSAGES 2>/dev/null ||/usr/bin/true
@@ -368,8 +369,6 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/no 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/nn/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/nn 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/mt/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/mt 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/mr 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/mi/LC_MESSAGES 2>/dev/null ||/usr/bin/true
@@ -418,3 +417,5 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/be 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/aa/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/aa 2>/dev/null ||/usr/bin/true
+@dirrm share/iso-codes
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || /usr/bin/true
