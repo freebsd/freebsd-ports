@@ -1,0 +1,4 @@
+Set the variable PATH_LOCALE to %%PREFIX%%/share/locale and export it, 
+e.g.: 
+ 
+export PATH_LOCALE=%%PREFIX%%/share/locale 

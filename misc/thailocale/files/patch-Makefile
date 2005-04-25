@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Jan  6 06:26:30 2005
++++ Makefile	Fri Feb 25 23:20:52 2005
+@@ -45,8 +45,8 @@
+ .endif
+ 
+ install: lc_all check
+-	mkdir ${PATH}	
+-	cp LC_CTYPE LC_COLLATE LC_MONETARY LC_NUMERIC LC_TIME LC_MESSAGES ${PATH}
++	mkdir -p ${PATH}
++	install -m 444 LC_CTYPE LC_COLLATE LC_MONETARY LC_NUMERIC LC_TIME LC_MESSAGES ${PATH}
+ 	ln -sf ${PATH} ${LPATH}
+ 	@echo
+ 	@echo "Installation successfully completed"
+@@ -67,5 +67,10 @@
+ 	@echo
+ 
+ clean:
+-	-rm LC_CTYPE LC_COLLATE
++.if exists(LC_CTYPE)
++	rm LC_CTYPE
++.endif
++.if exists(LC_COLLATE)
++	rm LC_COLLATE
++.endif
+ 

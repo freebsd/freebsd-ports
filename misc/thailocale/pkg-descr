@@ -1,0 +1,9 @@
+This software is a POSIX Thai locale definition (Thai in Thailand) for 
+FreeBSD. It defines data files for the character set TIS 620.2533. 
+Once installed, it adds a locale 'th_TH.TIS-620' (and an alias 'th_TH') 
+to your system.
+
+WWW: http://www.usablelabs.com/download/thailocale-0.11.tar.gz
+
+Thawatchai Piyawat
+piyawat@usablelabs.com
