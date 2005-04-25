@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	xipmsg
-PORTVERSION=	0.8087
+PORTVERSION=	0.8088
 CATEGORIES=	net
-MASTER_SITES=	http://www.bsddiary.net/xipmsg/ \
-		http://hp.vector.co.jp/authors/VA004959/xipmsg/
-DISTNAME=	xipmsg-8087
+MASTER_SITES=	http://www.bsddiary.net/xipmsg/
+DISTNAME=	xipmsg-${PORTVERSION:E}
 
 MAINTAINER=	candy@kgc.co.jp
 COMMENT=	A popup style message communication tool for X11
-
-BROKEN=		Incomplete pkg-plist
 
 USE_IMAKE=	yes
 MAN1=		xipmsg.1
