@@ -50,6 +50,7 @@
     SUBDIR += flowscan
     SUBDIR += fprobe
     SUBDIR += gps
+    SUBDIR += grepcidr
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += ifgraph
