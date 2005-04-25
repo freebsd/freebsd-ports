@@ -1,2 +1,4 @@
-Wrapper script to allow several different Java Virtual Machines to be installed
-on the same system.
+The Java VM wrapper provides a convenient system for switching between
+different Java VMs.  It also provides symbolic links in ${PREFIX}/bin to
+allow the use of the Java executables without having to add the specific
+Java VM executable directories to the PATH environment variable.
