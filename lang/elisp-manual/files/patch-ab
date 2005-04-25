@@ -6,8 +6,7 @@ $FreeBSD$
 @@ -1,12 +1,11 @@
  \input texinfo  @c -*-texinfo-*-
  @c %**start of header
--@setfilename elisp
-+@setfilename elisp.info
+ @setfilename elisp
  @settitle GNU Emacs Lisp Reference Manual
  @c %**end of header
 -
