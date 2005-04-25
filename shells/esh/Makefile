@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "easy shell", a small shell with Lisp-like syntax
 
 WRKSRC=		${WRKDIR}/esh
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I/usr/include/readline"
 INFO=		esh
 
 pre-build:
@@ -29,7 +30,6 @@ do-install:
 	@${RM} /etc/shells.bak
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/esh.info ${PREFIX}/info/esh.info
-	install-info ${PREFIX}/info/esh.info ${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>
