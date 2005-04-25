@@ -17,6 +17,7 @@ COMMENT=	Graphically display output of du
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+PLIST_FILES=	bin/xdu lib/X11/app-defaults/XDu
 MAN1=		xdu.1
 
 .include <bsd.port.mk>
