@@ -1,0 +1,5 @@
+Knzb is a KDE binary newsgroup download tool. It parses and loads nzb files,
+such as those from Newzbin.com (An nzb file is an xml 'index' file, for
+news posts).
+
+WWW: http://dmp.org.uk/linux/knzb/
