@@ -32,6 +32,72 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b0e94cc-b5cd-11d9-a788-0001020eed82">
+    <topic>gaim -- AIM/ICQ remote denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports that GAIM is vulnerable to a
+	  denial-of-service vulnerability which can cause GAIM to
+	  freeze:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/index.php?id=10">
+	  <p>Certain malformed SNAC packets sent by other AIM or ICQ
+	    users can trigger an infinite loop in Gaim when parsing
+	    the SNAC. The remote user would need a custom client, able
+	    to generate malformed SNACs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0472</cvename>
+      <url>http://gaim.sourceforge.net/security/index.php?id=10</url>
+    </references>
+    <dates>
+      <discovery>2005-02-17</discovery>
+      <entry>2005-04-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="142353df-b5cc-11d9-a788-0001020eed82">
+    <topic>gaim -- remote DoS on receiving malformed HTML</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/index.php?id=12">
+	  <p>Receiving malformed HTML can result in an invalid memory
+	    access causing Gaim to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0208</cvename>
+      <cvename>CAN-2005-0473</cvename>
+      <url>http://gaim.sourceforge.net/security/index.php?id=11</url>
+      <url>http://gaim.sourceforge.net/security/index.php?id=12</url>
+    </references>
+    <dates>
+      <discovery>2005-02-17</discovery>
+      <entry>2005-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91f1adc7-b3e9-11d9-a788-0001020eed82">
     <topic>kdewebdev -- kommander untrusted code execution
       vulnerability</topic>
