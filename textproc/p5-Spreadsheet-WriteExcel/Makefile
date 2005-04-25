@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
@@ -18,6 +18,7 @@ COMMENT=	Write to a cross-platform Excel binary file
 BUILD_DEPENDS=	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
 		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -37,10 +38,6 @@ MAN3=		Spreadsheet::WriteExcel.3 \
 		Spreadsheet::WriteExcel::Worksheet.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.p[lm]"| \
