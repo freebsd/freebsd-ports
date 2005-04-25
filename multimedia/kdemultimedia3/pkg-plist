@@ -1038,7 +1038,6 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/desktop-directories
-@dirrm share/apps/profiles
 @dirrm share/apps/noatun/skins/winamp/Winamp
 @dirrm share/apps/noatun/skins/winamp
 @dirrm share/apps/noatun/skins/kjofol/vibrocentric

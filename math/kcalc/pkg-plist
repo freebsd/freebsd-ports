@@ -439,7 +439,6 @@ share/services/kwalletmanager_show.desktop
 @dirrm share/doc/HTML/en/ark
 @dirrm share/doc/HTML/en/KRegExpEditor
 @dirrm share/apps/remotes
-@dirrm share/apps/profiles
 @dirrm share/apps/kwalletmanager/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kwalletmanager/icons/crystalsvg/22x22
 @dirrm share/apps/kwalletmanager/icons/crystalsvg
