@@ -1,0 +1,100 @@
+etc/rc.d/instiki.sh
+
+%%INSTIKIDIR%%app/controllers/wiki.rb
+%%INSTIKIDIR%%app/models/author.rb
+%%INSTIKIDIR%%app/models/chunks/category.rb
+%%INSTIKIDIR%%app/models/chunks/category_test.rb
+%%INSTIKIDIR%%app/models/chunks/chunk.rb
+%%INSTIKIDIR%%app/models/chunks/engines.rb
+%%INSTIKIDIR%%app/models/chunks/include.rb
+%%INSTIKIDIR%%app/models/chunks/literal.rb
+%%INSTIKIDIR%%app/models/chunks/match.rb
+%%INSTIKIDIR%%app/models/chunks/nowiki.rb
+%%INSTIKIDIR%%app/models/chunks/nowiki_test.rb
+%%INSTIKIDIR%%app/models/chunks/test.rb
+%%INSTIKIDIR%%app/models/chunks/uri.rb
+%%INSTIKIDIR%%app/models/chunks/uri_test.rb
+%%INSTIKIDIR%%app/models/chunks/wiki.rb
+%%INSTIKIDIR%%app/models/chunks/wiki_test.rb
+%%INSTIKIDIR%%app/models/page.rb
+%%INSTIKIDIR%%app/models/page_lock.rb
+%%INSTIKIDIR%%app/models/page_set.rb
+%%INSTIKIDIR%%app/models/page_test.rb
+%%INSTIKIDIR%%app/models/revision.rb
+%%INSTIKIDIR%%app/models/revision_test.rb
+%%INSTIKIDIR%%app/models/web.rb
+%%INSTIKIDIR%%app/models/web_test.rb
+%%INSTIKIDIR%%app/models/wiki_content.rb
+%%INSTIKIDIR%%app/models/wiki_service.rb
+%%INSTIKIDIR%%app/models/wiki_service_test.rb
+%%INSTIKIDIR%%app/models/wiki_words.rb
+%%INSTIKIDIR%%app/models/wiki_words_test.rb
+%%INSTIKIDIR%%app/views/bottom.rhtml
+%%INSTIKIDIR%%app/views/markdown_help.rhtml
+%%INSTIKIDIR%%app/views/navigation.rhtml
+%%INSTIKIDIR%%app/views/rdoc_help.rhtml
+%%INSTIKIDIR%%app/views/static_style_sheet.rhtml
+%%INSTIKIDIR%%app/views/textile_help.rhtml
+%%INSTIKIDIR%%app/views/top.rhtml
+%%INSTIKIDIR%%app/views/wiki/authors.rhtml
+%%INSTIKIDIR%%app/views/wiki/edit.rhtml
+%%INSTIKIDIR%%app/views/wiki/edit_web.rhtml
+%%INSTIKIDIR%%app/views/wiki/export.rhtml
+%%INSTIKIDIR%%app/views/wiki/feeds.rhtml
+%%INSTIKIDIR%%app/views/wiki/list.rhtml
+%%INSTIKIDIR%%app/views/wiki/locked.rhtml
+%%INSTIKIDIR%%app/views/wiki/login.rhtml
+%%INSTIKIDIR%%app/views/wiki/new.rhtml
+%%INSTIKIDIR%%app/views/wiki/new_system.rhtml
+%%INSTIKIDIR%%app/views/wiki/new_web.rhtml
+%%INSTIKIDIR%%app/views/wiki/page.rhtml
+%%INSTIKIDIR%%app/views/wiki/print.rhtml
+%%INSTIKIDIR%%app/views/wiki/published.rhtml
+%%INSTIKIDIR%%app/views/wiki/recently_revised.rhtml
+%%INSTIKIDIR%%app/views/wiki/revision.rhtml
+%%INSTIKIDIR%%app/views/wiki/rollback.rhtml
+%%INSTIKIDIR%%app/views/wiki/rss_feed.rhtml
+%%INSTIKIDIR%%app/views/wiki/search.rhtml
+%%INSTIKIDIR%%app/views/wiki/tex.rhtml
+%%INSTIKIDIR%%app/views/wiki/tex_web.rhtml
+%%INSTIKIDIR%%app/views/wiki/web_list.rhtml
+%%INSTIKIDIR%%app/views/wiki_words_help.rhtml
+%%INSTIKIDIR%%libraries/action_controller_servlet.rb
+%%INSTIKIDIR%%libraries/bluecloth.rb
+%%INSTIKIDIR%%libraries/diff/diff.rb
+%%INSTIKIDIR%%libraries/diff/diff_test.rb
+%%INSTIKIDIR%%libraries/erb.rb
+%%INSTIKIDIR%%libraries/madeleine/automatic.rb
+%%INSTIKIDIR%%libraries/madeleine/clock.rb
+%%INSTIKIDIR%%libraries/madeleine/files.rb
+%%INSTIKIDIR%%libraries/madeleine/zmarshal.rb
+%%INSTIKIDIR%%libraries/madeleine.rb
+%%INSTIKIDIR%%libraries/madeleine_service.rb
+%%INSTIKIDIR%%libraries/rdocsupport.rb
+%%INSTIKIDIR%%libraries/redcloth.rb
+%%INSTIKIDIR%%libraries/redcloth_for_tex.rb
+%%INSTIKIDIR%%libraries/redcloth_for_tex_test.rb
+%%INSTIKIDIR%%libraries/view_helper.rb
+%%INSTIKIDIR%%libraries/web_controller_server.rb
+%%INSTIKIDIR%%libraries/zip/ioextras.rb
+%%INSTIKIDIR%%libraries/zip/stdrubyext.rb
+%%INSTIKIDIR%%libraries/zip/tempfile_bugfixed.rb
+%%INSTIKIDIR%%libraries/zip/zip.rb
+%%INSTIKIDIR%%libraries/zip/zipfilesystem.rb
+%%INSTIKIDIR%%libraries/zip/ziprequire.rb
+%%INSTIKIDIR%%instiki
+%%INSTIKIDIR%%README
+@dirrm %%INSTIKIDIR%%app/controllers
+@dirrm %%INSTIKIDIR%%app/models/chunks
+@dirrm %%INSTIKIDIR%%app/models
+@dirrm %%INSTIKIDIR%%app/views/wiki
+@dirrm %%INSTIKIDIR%%app/views
+@dirrm %%INSTIKIDIR%%app
+@dirrm %%INSTIKIDIR%%libraries/diff
+@dirrm %%INSTIKIDIR%%libraries/madeleine
+@dirrm %%INSTIKIDIR%%libraries/zip
+@dirrm %%INSTIKIDIR%%libraries
+@dirrm %%INSTIKIDIR%%storage/2500
+@dirrm %%INSTIKIDIR%%storage
+@dirrm %%INSTIKIDIR%%
+
