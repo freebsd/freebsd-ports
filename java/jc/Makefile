@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jc
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=jcvm/
@@ -16,15 +16,14 @@ COMMENT=	JVM that converts class files to C source and compiles them with GCC
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		ffi.2:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 MAN1=		jc.1
 
 USE_LIBTOOL_VER=15
 USE_JAVA=	yes
 USE_GMAKE=	yes
-JAVA_BUILD=	yes
+JAVA_BUILD=	jre
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-classpath=${LOCALBASE}
