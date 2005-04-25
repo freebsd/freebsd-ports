@@ -1,0 +1,6 @@
+bin/knzb
+share/applnk/Applications/knzb.desktop
+share/apps/knzb/knzbui.rc
+share/icons/locolor/16x16/apps/knzb.png
+share/icons/locolor/32x32/apps/knzb.png
+@dirrm share/apps/knzb

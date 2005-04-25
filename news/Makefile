@@ -40,6 +40,7 @@
     SUBDIR += inn-stable
     SUBDIR += klibido
     SUBDIR += knews
+    SUBDIR += knzb
     SUBDIR += leafnode
     SUBDIR += leafnode+
     SUBDIR += mmail
