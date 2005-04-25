@@ -15,7 +15,6 @@ MAINTAINER=     bms@FreeBSD.org
 COMMENT=	Java/Swing-based LDAP Browser/Editor
 
 RESTRICTED=	"No reply from author regarding redistribution licensing"
-BROKEN=		"Creates a file in /"
 
 USE_JAVA=	1.4+
 NO_BUILD=	yes
@@ -27,7 +26,7 @@ do-install:
 	cd ${WRKSRC} ; tar cf - . | ( cd ${PREFIX}/lib/ldapbrowser ; tar xf - )
 	${SED} "s#^JH=.*#JH=${JAVA_HOME} ; cd ${PREFIX}/lib/ldapbrowser#" \
 		< ${PREFIX}/lib/ldapbrowser/lbe.sh \
-		> ${TMPDIR}/ldapbrowser
-	${INSTALL_SCRIPT} ${TMPDIR}/ldapbrowser ${PREFIX}/bin
+		> ${WRKDIR}/ldapbrowser
+	${INSTALL_SCRIPT} ${WRKDIR}/ldapbrowser ${PREFIX}/bin
 
 .include <bsd.port.mk>
