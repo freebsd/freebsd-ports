@@ -1,0 +1,32 @@
+# New ports collection makefile for: apollon
+# Date Created:			29 Dec 2004
+# Whom:				Alex Varju <freebsd-ports@varju.ca>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	apollon
+PORTVERSION=	1.0.1
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	apollon
+
+MAINTAINER=	freebsd-ports@varju.ca
+COMMENT=	KDE client for giFT daemon
+
+LIB_DEPENDS=	gift.0:${PORTSDIR}/net/gift
+
+USE_BZIP2=	yes
+USE_KDELIBS_VER=3
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=15
+
+post-patch:
+.ifdef(NOPORTDOCS)
+	@${REINPLACE_CMD} -E -e 's/^(all:)[[:space:]]+docs-am/\1/; s/^(SUBDIRS.+)doc/\1/' \
+		${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.mk>
