@@ -8,26 +8,25 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  top_builddir = .
-@@ -542,16 +543,12 @@
- 
- install-data-local:
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
--	cp -r $(srcdir)/doc $(DESTDIR)$(pkgdatadir); \
--	cp $(srcdir)/FAQ $(DESTDIR)$(pkgdatadir)/doc; \
--	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdatadir)/doc; \
--	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdatadir)/doc; \
--	cp $(srcdir)/README $(DESTDIR)$(pkgdatadir)/doc; \
--	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdatadir)/doc; \
--	cp $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/doc; \
--	cp $(srcdir)/TODO $(DESTDIR)$(pkgdatadir)/doc; \
--	cp $(srcdir)/BUGS $(DESTDIR)$(pkgdatadir)/doc; \
-+	$(mkinstalldirs) $(DESTDIR)$(pkgdocsdir); \
-+	cp -r $(srcdir)/doc/ $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/TODO $(DESTDIR)$(pkgdocsdir); \
- 	if test -d $(srcdir)/pixmaps; then \
- 	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
- 	  for pixmap in $(srcdir)/pixmaps/*; do \
+@@ -562,15 +563,12 @@
+ @DEB_TRUE@	fi 
+ @DEB_FALSE@install-data-local:
+ @DEB_FALSE@	@$(NORMAL_INSTALL)
+-@DEB_FALSE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp -r $(srcdir)/doc $(DESTDIR)$(pkgdatadir); \
+-@DEB_FALSE@	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/README $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/TODO $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/BUGS $(DESTDIR)$(pkgdatadir)/doc; \
++@DEB_FALSE@	$(mkinstalldirs) $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp -r $(srcdir)/doc/ $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/TODO $(DESTDIR)$(pkgdocsdir); \
+ @DEB_FALSE@	if test -d $(srcdir)/pixmaps; then \
+ @DEB_FALSE@	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
+ @DEB_FALSE@	  for pixmap in $(srcdir)/pixmaps/*; do \
