@@ -3,6 +3,8 @@ lib/kde3/libkdissOOOdoc.la
 lib/kde3/libkdissOOOdoc.so
 lib/kde3/libkdissOOOimpress.la
 lib/kde3/libkdissOOOimpress.so
+lib/kde3/libkdissapplet.la
+lib/kde3/libkdissapplet.so
 lib/kde3/libkdissasciidoc.la
 lib/kde3/libkdissasciidoc.so
 lib/kde3/libkdissbeamerslides.la
