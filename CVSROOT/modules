@@ -4980,6 +4980,7 @@ libcapsinetwork	ports/devel/libcapsinetwork
 libccid		ports/devel/libccid
 libcdaudio	ports/audio/libcdaudio
 libcddb		ports/audio/libcddb
+libcddb-doc	ports/audio/libcddb-doc
 libcdio		ports/sysutils/libcdio
 libcheck	ports/devel/libcheck
 libchipcard	ports/devel/libchipcard
