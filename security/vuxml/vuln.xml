@@ -32,6 +32,67 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="91c606fc-b5d0-11d9-a788-0001020eed82">
+    <topic>mplayer &amp; libxine -- MMS and Real RTSP buffer overflow
+      vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.7</lt></range>
+      </package>
+      <package>
+	<name>libxine</name>
+	<range><ge>0.9.9</ge><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A xine security announcement reports:</p>
+	<blockquote cite="http://xinehq.de/index.php/security/XSA-2004-8">
+	  <p>By a user receiving data from a malicious network
+	    streaming server, an attacker can overrun a heap buffer,
+	    which can, on some systems, lead to or help in executing
+	    attacker-chosen malicious code with the permissions of the
+	    user running a xine-lib based media application.</p>
+	  <p>Both the MMS and Real RTSP streaming client code made
+	    some too-strong assumptions on the transferred
+	    data. Several critical bounds checks were missing,
+	    resulting in the possibility of heap overflows, should the
+	    remote server not adhere to these assumptions. In the MMS
+	    case, a remote server could present content with too many
+	    individual streams; in the RTSP case, a remote server's
+	    reply could have too many lines.</p>
+	  <p>An attacker can set up a server delivering malicious data
+	    to the users. This can be used to overflow a heap buffer,
+	    which can, with certain implementations of heap
+	    management, lead to attacker chosen data written to the
+	    stack. This can cause attacker-chosen code being executed
+	    with the permissions of the user running the
+	    application. By tricking users to retrieve a stream, which
+	    can be as easy as providing a link on a website, this
+	    vulnerability can be exploited remotely.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13270</bid>
+      <bid>13271</bid>
+      <cvename>CAN-2005-1195</cvename>
+      <url>http://www.mplayerhq.hu/homepage/design7/news.html#vuln10</url>
+      <url>http://www.mplayerhq.hu/homepage/design7/news.html#vuln11</url>
+      <url>http://xinehq.de/index.php/security/XSA-2004-8</url>
+    </references>
+    <dates>
+      <discovery>2005-04-16</discovery>
+      <entry>2005-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b0e94cc-b5cd-11d9-a788-0001020eed82">
     <topic>gaim -- AIM/ICQ remote denial of service vulnerability</topic>
     <affects>
