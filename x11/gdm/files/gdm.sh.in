@@ -17,7 +17,7 @@ command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}.pid"
 
 gdm_start() {
-    checkyesno gdm_enable && echo "Starting GDM " && \
+    checkyesno gdm_enable && echo " Starting GDM " && \
     	${command}
 }
 
