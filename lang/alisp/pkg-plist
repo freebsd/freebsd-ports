@@ -162,9 +162,9 @@ bin/alisp_install
 %%DATADIR%%/src/queens.l
 %%DATADIR%%/src/unlabel.l
 %%DATADIR%%/src/xeval.l
-%%PORTDOCS%%%%DOCSDIR%%/alisp.sd
+%%DOCSDIR%%/alisp.sd
 @dirrm %%DATADIR%%/ext
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
