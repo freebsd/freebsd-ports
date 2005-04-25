@@ -31,15 +31,15 @@ post-patch:
 	${PERL} -pi -e "s'!!PREFIX!!'${PREFIX}'g" ${WRKSRC}/algotutor
 
 do-install:
+	${MKDIR} ${SITE_PERL}/algotutor
 	${MKDIR} ${PREFIX}/share/algotutor
 	${CP} -R ${WRKSRC}/data ${PREFIX}/share/algotutor
-	${CP} -R ${WRKSRC}/cgeom ${SITE_PERL}/algotutor/
+	${CP} -R ${WRKSRC}/cgeom ${SITE_PERL}/algotutor
 	${CP} -R ${WRKSRC}/dp ${SITE_PERL}/algotutor
 	${CP} -R ${WRKSRC}/graph ${SITE_PERL}/algotutor
 .for file in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${PREFIX}/man/man1
 .endfor
-	${MKDIR} ${SITE_PERL}/algotutor
 .for file in ${BINFILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
