@@ -1,0 +1,9 @@
+share/locale/th_TH.TIS-620/LC_COLLATE
+share/locale/th_TH.TIS-620/LC_CTYPE
+share/locale/th_TH.TIS-620/LC_MESSAGES
+share/locale/th_TH.TIS-620/LC_MONETARY
+share/locale/th_TH.TIS-620/LC_NUMERIC
+share/locale/th_TH.TIS-620/LC_TIME
+@exec ln -sf %D/share/locale/th_TH.TIS-620 %D/share/locale/th_TH
+@dirrm share/locale/th_TH.TIS-620
+@unexec rm -f %D/share/locale/th_TH
