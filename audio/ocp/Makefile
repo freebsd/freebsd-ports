@@ -7,6 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/
 
@@ -34,6 +35,22 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
+TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
+
+.include <bsd.port.pre.mk>
+
+.if exists(${TIMIDITY_CFG}) || !defined(WITHOUT_MIDI)
+RUN_DEPENDS=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
+.endif
+
+.if !exists(${TIMIDITY_CFG}) && !defined(WITHOUT_MIDI)
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "In order to be able to play MIDI files, audio/eawpats will be installed."
+	@${ECHO_MSG} "Define WITHOUT_MIDI if you do not want to install it."
+	@${ECHO_MSG} ""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBDIR@|${PREFIX}/lib/ocp|' \
 		${WRKSRC}/Rules.make.in
@@ -44,6 +61,8 @@ post-patch:
 		${WRKSRC}/playmp2/Makefile \
 		${WRKSRC}/playogg/Makefile \
 		${WRKSRC}/playsid/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
+		${WRKSRC}/playgmi/gmitimidity.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocp ${PREFIX}/bin
@@ -67,4 +86,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
