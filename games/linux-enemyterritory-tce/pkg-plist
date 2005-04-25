@@ -1,4 +1,5 @@
 bin/et-tce
+bin/etded-tce
 lib/enemyterritory/tcetest/cgame.mp.i386.so
 lib/enemyterritory/tcetest/elitelogoicon.ico
 lib/enemyterritory/tcetest/maps.cfg

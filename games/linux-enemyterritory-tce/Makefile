@@ -7,11 +7,10 @@
 
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.48
+PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://ftp.games.skynet.be/pub/www.filesnetwork.com/Wolfenstein_Enemy_Territory/Mods/Total_Conversions/:full \
-		http://ftp.games.skynet.be/pub/www.filesnetwork.com/Wolfenstein_Enemy_Territory/Mods/Total_Conversions/:update \
-		http://darkstar.ist.utl.pt/pub/games/:full \
-		http://darkstar.ist.utl.pt/pub/games/:update \
+MASTER_SITES=	http://ftp.games.skynet.be/pub/www.filesnetwork.com/Wolfenstein_Enemy_Territory/Mods/Total_Conversions/:full,update \
+		http://darkstar.ist.utl.pt/pub/games/:full,update \
 		http://ftp.wireplay.co.uk/pub/enemyterritory/mods/tcelite/Linux/:full \
 		http://et2.migamer.com/:full \
 		http://jogos.bragatel.pt/downloads/et/tcE/linux/:update
@@ -35,12 +34,15 @@ ETDIR=		${PREFIX}/lib/enemyterritory
 STRIP=		# do not brand Linux binaries as FreeBSD on INSTALL_PROGRAM
 
 do-build:
-	@${ECHO} '#!/bin/sh' > ${WRKSRC}/et-tce
-	@${ECHO} 'exec ${PREFIX}/bin/et +set fs_game tcetest "$$@"' >> ${WRKSRC}/et-tce
+.for f in et etded
+	@${ECHO} '#!/bin/sh' > ${WRKSRC}/${f}-tce
+	@${ECHO} 'exec ${PREFIX}/bin/${f} +set fs_game tcetest "$$@"' >> ${WRKSRC}/${f}-tce
+.endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/et-tce ${PREFIX}/bin
+.for f in et etded
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-tce ${PREFIX}/bin
+.endfor
 
 	${MKDIR} ${ETDIR}/tcetest
 .for f in cgame.mp.i386.so elitelogoicon.ico maps.cfg mp_bin.pk3 pak0.pk3 \
