@@ -1,7 +1,8 @@
---- nxclient.desktop.orig	Wed Sep  1 18:18:13 2004
-+++ nxclient.desktop	Wed Sep  1 18:18:44 2004
-@@ -1,6 +1,7 @@
+--- nxclient.desktop.orig	Tue Apr 26 08:23:07 2005
++++ nxclient.desktop	Tue Apr 26 08:27:04 2005
+@@ -1,6 +1,8 @@
  [Desktop Entry]
++Encoding=UTF-8
  Comment=Client for connection to a remote NX server
 -Exec=/usr/NX/bin/nxclient
 -Icon=/usr/NX/share/icons/nx.png

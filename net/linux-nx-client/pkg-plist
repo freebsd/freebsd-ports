@@ -57,10 +57,10 @@ lib/linux-nx-client/share/images/view-log-dsb.png
 lib/linux-nx-client/share/images/view-log.png
 lib/linux-nx-client/share/images/warning.png
 lib/linux-nx-client/share/images/wizard.png
-share/gnome/applications/nxclient-admin.desktop
-share/gnome/applications/nxclient-help.desktop
-share/gnome/applications/nxclient-wizard.desktop
-share/gnome/applications/nxclient.desktop
+share/applications/nxclient-admin.desktop
+share/applications/nxclient-help.desktop
+share/applications/nxclient-wizard.desktop
+share/applications/nxclient.desktop
 share/gnome/pixmaps/nx-desktop.png
 share/gnome/pixmaps/nx.png
 share/gnome/pixmaps/nxclient-admin.png
@@ -70,7 +70,7 @@ share/gnome/pixmaps/nxclient-wizard.png
 @dirrm lib/linux-nx-client/share/images
 @dirrm lib/linux-nx-client/share
 @dirrm lib/linux-nx-client
-@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/gnome 2>/dev/null || true
 @cwd %%LOCALBASE%%
@@ -78,13 +78,7 @@ share/icons/crystalsvg/48x48/nx-desktop.png
 share/icons/crystalsvg/32x32/nx.png
 share/icons/crystalsvg/32x32/nxclient-admin.png
 share/icons/crystalsvg/32x32/nxclient-wizard.png
-share/applnk/Internet/nxclient-admin.desktop
-share/applnk/Internet/nxclient-help.desktop
-share/applnk/Internet/nxclient-wizard.desktop
-share/applnk/Internet/nxclient.desktop
 @unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true

@@ -7,6 +7,7 @@
 
 PORTNAME=		linux-nx-client
 PORTVERSION=		1.4.0
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		http://www.nomachine.com/download/nxclient/${PORTVERSION}/Linux-Static-Tar/
 DISTNAME=		nxclient-${PORTVERSION}-91.i386
@@ -23,7 +24,6 @@ NO_BUILD=		yes
 
 NXSRC=			${WRKSRC}/NX
 NXDST=			${PREFIX}/lib/linux-nx-client
-ICONS3232=		nx.png nxclient-admin.png nxclient-wizard.png
 
 # Linux binary should not be stripped by INSTALL_PROGRAM
 # because as a side effect it brands the binary as FreeBSD.
@@ -32,7 +32,7 @@ STRIP=
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
 post-extract:
-	${CP} ${NXSRC}/share/applnk/NX\ Client\ for\ Linux/* ${WRKSRC}
+	@${CP} ${NXSRC}/share/applnk/NX\ Client\ for\ Linux/* ${WRKSRC}
 
 do-install:
 	${MKDIR} ${NXDST}/bin
@@ -46,22 +46,19 @@ do-install:
 	${MKDIR} ${NXDST}/share/images
 	${INSTALL_DATA} ${NXSRC}/share/images/* ${NXDST}/share/images
 
-	${MKDIR} ${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/*.desktop ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/*.desktop ${PREFIX}/share/applications
 	${MKDIR} ${PREFIX}/share/gnome/pixmaps
 	${INSTALL_DATA} ${NXSRC}/share/icons/* ${PREFIX}/share/gnome/pixmaps
-	${MKDIR} ${LOCALBASE}/share/applnk/Internet
-	${INSTALL_DATA} ${WRKSRC}/*.desktop ${LOCALBASE}/share/applnk/Internet
 	${MKDIR} ${LOCALBASE}/share/icons/crystalsvg/48x48 \
 		${LOCALBASE}/share/icons/crystalsvg/32x32
 	${INSTALL_DATA} ${NXSRC}/share/icons/nx-desktop.png \
 		${LOCALBASE}/share/icons/crystalsvg/48x48
-.for FILE in ${ICONS3232}
-	${INSTALL_DATA} ${NXSRC}/share/icons/${FILE} \
+.for f in nx.png nxclient-admin.png nxclient-wizard.png
+	${INSTALL_DATA} ${NXSRC}/share/icons/${f} \
 		${LOCALBASE}/share/icons/crystalsvg/32x32
 .endfor
 
-	${MKDIR} ${PREFIX}/bin
 .for f in nxclient nxprint nxproxy nxssh
 	${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/${f}
 	${ECHO_CMD} "export NXDIR=${NXDST}" >> ${WRKSRC}/${f}
