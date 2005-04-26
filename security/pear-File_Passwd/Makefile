@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Passwd
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	security pear
 
 MAINTAINER=	antonio@php.net
