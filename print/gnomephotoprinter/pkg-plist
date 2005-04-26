@@ -2,4 +2,5 @@ bin/gnome-photo-printer
 share/gnome/gnome-photo-printer/gpp.glade
 share/gnome/gnome-photo-printer/scale_with_ratio.jpg
 share/gnome/gnome-photo-printer/scale_without_ratio.jpg
+share/gnome/applications/gnomephotoprinter.desktop
 @dirrm share/gnome/gnome-photo-printer

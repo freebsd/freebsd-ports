@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gnome Photo Printer
+Comment=Gnome Photo Printer is intended for printing photos in an easy way
+Icon=gnome-dev-printer
+Exec=gnome-photo-printer
+Terminal=false
+Type=Application
+Categories=Application;Graphics;
