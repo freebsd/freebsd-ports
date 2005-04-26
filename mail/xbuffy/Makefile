@@ -19,5 +19,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xbuffy.1
+PLIST_FILES=	bin/xbuffy lib/X11/app-defaults/XBuffy
 
 .include <bsd.port.mk>
