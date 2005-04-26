@@ -1,0 +1,17 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: symux
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: FreeBSD
+
+. %%RC_SUBR%%
+
+name="symux"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/symux"
+symux_enable=${symux_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"
+

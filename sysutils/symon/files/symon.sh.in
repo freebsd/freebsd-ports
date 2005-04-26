@@ -1,0 +1,18 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: symon
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: FreeBSD
+
+. %%RC_SUBR%%
+
+name="symon"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/symon"
+
+symon_enable=${symon_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"
+
