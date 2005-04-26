@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \

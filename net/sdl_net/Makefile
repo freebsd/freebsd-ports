@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A small sample cross-platform networking library
 
 LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib

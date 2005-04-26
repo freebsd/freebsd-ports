@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.newimage.com/~rhk/SDL_gui/
 DISTNAME=	SDL_gui-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A Graphical User Interface library for SDL
 
 USE_SDL=	sdl image ttf
