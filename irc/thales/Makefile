@@ -20,7 +20,7 @@ USE_MYSQL=	yes
 USE_REINPLACE=	yes
 
 # Currently, not all supported IRCDs are handled here, only the ones
-# I could find corresponding RUN_DEPENDS in our Ports Collection
+# I could find corresponding RUN_DEPENDS in our Ports Collection.
 .if defined(WITH_IRCD) && ${WITH_IRCD} == hybrid
 RUN_DEPENDS=	${LOCALBASE}/bin/ircd:${PORTSDIR}/irc/ircd-hybrid
 IS_INTERACTIVE=	yes
@@ -32,6 +32,8 @@ WITH_IRCD=	unreal
 RUN_DEPENDS=	${LOCALBASE}/Unreal/ircd:${PORTSDIR}/irc/unreal
 .endif
 
+# ``Assign with expansion'' is needed here, otherwise we cannot override
+# WITH_IRCD value supplied as make(1) argument (which can be bogus).
 CONFIGURE_ARGS:=	--with-ircd=${WITH_IRCD}
 
 .if defined(WITHOUT_MODES)
