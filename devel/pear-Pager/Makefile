@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Pager
-PORTVERSION=	2.2.7
-CATEGORIES=	devel pear
+PORTVERSION=	2.3.0
+CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR data paging class
