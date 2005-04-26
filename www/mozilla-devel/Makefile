@@ -32,7 +32,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude .cvsignore \
 			--exclude makefile.win \
 			--exclude MANIFEST
-USE_GNOME=	gtk20 libidl
+USE_GNOME=	gtk20 libidl desktopfileutils
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -104,8 +104,7 @@ OPTIONS=CALENDAR "Enable the Calendar module" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
 	CAIRO_RENDER "Enable SVG rendering with Cairo" off \
 	CAIRO "Enable Cairo-specific Canvas features" off \
-	SMB "Enable smb:// URI support via gnomevfs" off \
-	MENU_ENTRY "Add Mozilla to the GNOME menu" on
+	SMB "Enable smb:// URI support via gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
@@ -289,9 +288,8 @@ pre-install:
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
-.if !defined(WITHOUT_MENU_ENTRY)
-	 ${ECHO_CMD} share/gnome/applications/mozilla-devel.desktop >> ${PLIST}
-.endif
+	${ECHO_CMD} share/applications/mozilla-devel.desktop >> ${PLIST}
+	${ECHO_CMD} @unexec ${RMDIR} %D/share/applications 2>/dev/nulll || ${TRUE} >> ${PLIST}
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
@@ -305,6 +303,8 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm include/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm include/${MOZILLA} >> ${PLIST}
+	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
@@ -341,10 +341,11 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
 	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
-.if !defined(WITHOUT_MENU_ENTRY)
-	${MKDIR} ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla-devel.desktop \
 		${PREFIX}/share/gnome/applications
-.endif
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
