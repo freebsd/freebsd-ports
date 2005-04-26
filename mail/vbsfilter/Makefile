@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vbsfilter
-PORTVERSION=	1.11
+PORTVERSION=	1.15
 CATEGORIES=	mail
 MASTER_SITES=	http://aeschi.ch.eu.org/milter/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,6 +15,9 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vbs-attachment filter for Sendmail
+
+SUB_FILES=	vbsfilter.sh
+PLIST_FILES=	libexec/vbsfilter etc/rc.d/vbsfilter.sh.sample
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 .if defined(SENDMAIL_WITH_SHARED_MILTER)
@@ -57,8 +60,6 @@ pre-fetch:
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${_DISTDIR}vbsfilter-${PORTVERSION}.c ${WRKSRC}
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/vbsfilter.sh \
-		> ${WRKSRC}/vbsfilter.sh
 
 .for i in ${CTARGETS}
 ${i}:
@@ -72,7 +73,7 @@ do-build:	${CTARGETS}
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbsfilter-${PORTVERSION} \
 		${PREFIX}/libexec/vbsfilter
-	${INSTALL_SCRIPT} ${WRKSRC}/vbsfilter.sh \
+	${INSTALL_SCRIPT} ${WRKDIR}/vbsfilter.sh \
 		${PREFIX}/etc/rc.d/vbsfilter.sh.sample
 
 .include <bsd.port.post.mk>
