@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.11.0
+PORTVERSION=	1.11.1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
@@ -36,21 +36,20 @@ LEAFNODE_SPOOLDIR?=${LOCALBASE}/var/spool/leafnode
 LEAFNODE_SPOOLDIR?=/var/spool/leafnode
 PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/leafnode \
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ARGS=
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
 
 MAN1=		leafnode-version.1 newsq.1
 MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
-MANLANG=	"" de.ISO8859-1
+MANLANG=	de.ISO8859-1
 MAN1DIR_DE=	${MAN1PREFIX}/man/de.ISO8859-1/man1
 MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
 
 DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
-		README-daemontools README.FIRST TODO leafnode.cron.daily \
+		README-daemontools README.FIRST leafnode.cron.daily \
 		leafnode-SA-2002-01.txt leafnode-SA-2003-01.txt \
 		leafnode-SA-2004-01.txt KNOWNBUGS
 DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
@@ -59,7 +58,7 @@ DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
 PORTDOCS=	*
 .endif
 
-pre-configure:
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "------------------------------------------------------------------------"
 	@${ECHO_MSG} "This port will use ${LEAFNODE_SPOOLDIR} as spool directory."
@@ -68,7 +67,7 @@ pre-configure:
 	@${ECHO_MSG}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
@@ -79,9 +78,8 @@ post-install:
 	cd ${WRKSRC}/doc_german && \
 	${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/de.ISO8859-1/man1 && \
 	${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/de.ISO8859-1/man8
-	@${SED} 's:%%DOCSDIR%%:${DOCSDIR}:g' ${FILESDIR}/pkg-message.in >${PKGMESSAGE}
 	PKG_PREFIX=${PREFIX} SPOOLDIR=${LEAFNODE_SPOOLDIR} \
 		${SH} pkg-install ${PORTNAME} POST-INSTALL
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
