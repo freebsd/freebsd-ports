@@ -25,7 +25,8 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.2.4
-PKGMESSAGE=	${WRKDIR}/pkg-message
+MAKE_ARGS=	CC="${CC}" PRODROOT="${DATADIR}" SOELIMPATHNAME="/usr/bin/soelim"
+SUB_FILES=	pkg-message
 PORTDOCS=	README gmat.sgm
 
 DTDVER?=	4.2	# docbook-xml version
@@ -59,8 +60,6 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-	@${SED} -e "s|/usr/local|${PREFIX}|" < ${FILESDIR}/pkg-message.in	\
-		> ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
