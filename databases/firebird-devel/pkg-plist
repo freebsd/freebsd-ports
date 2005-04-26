@@ -91,11 +91,7 @@ lib/libib_util.so
 security2.fdb.sample
 security2.fdb
 @dirrm UDF
-@dirrm bin
 @dirrm doc/sql.extensions
 @dirrm doc
 @dirrm help
-@dirrm include
 @dirrm intl
-@dirrm lib
-@unexec rmdir %D 2>/dev/null || true
