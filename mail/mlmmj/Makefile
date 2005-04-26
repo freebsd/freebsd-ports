@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.mmj.dk/files/
 

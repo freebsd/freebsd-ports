@@ -10,6 +10,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/access
 %%DATADIR%%/text.skel/bounce-probe
 %%DATADIR%%/text.skel/listhelp
+%%DATADIR%%/text.skel/listsubs
 %%DATADIR%%/text.skel/moderation
 %%DATADIR%%/text.skel/notifysub
 %%DATADIR%%/text.skel/notifysub-digest
