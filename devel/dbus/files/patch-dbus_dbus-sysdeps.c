@@ -1,10 +1,10 @@
---- dbus/dbus-sysdeps.c.orig	Tue Jan 11 17:35:58 2005
-+++ dbus/dbus-sysdeps.c	Fri Jan 21 19:45:12 2005
-@@ -740,12 +740,40 @@
+--- dbus-sysdeps.c.orig	Sat Mar  5 13:38:54 2005
++++ dbus-sysdeps.c	Tue Apr 26 01:59:05 2005
+@@ -742,12 +742,40 @@ write_credentials_byte (int             
  {
    int bytes_written;
    char buf[1] = { '\0' };
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  struct {
 +	  struct cmsghdr hdr;
 +	  struct cmsgcred cred;
@@ -13,7 +13,7 @@
 +  struct msghdr msg;
 +#endif
 +
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  iov.iov_base = buf;
 +  iov.iov_len = 1;
 +
@@ -33,7 +33,7 @@
    
   again:
  
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  bytes_written = sendmsg (server_fd, &msg, 0);
 +#else
    bytes_written = write (server_fd, buf, 1);
@@ -41,7 +41,7 @@
  
    if (bytes_written < 0 && errno == EINTR)
      goto again;
-@@ -799,8 +827,10 @@
+@@ -801,8 +829,10 @@ _dbus_read_credentials_unix_socket  (int
    char buf;
  
  #ifdef HAVE_CMSGCRED 
@@ -54,7 +54,16 @@
  #endif
  
    _DBUS_ASSERT_ERROR_IS_CLEAR (error);
-@@ -835,9 +865,9 @@
+@@ -817,7 +847,7 @@ _dbus_read_credentials_unix_socket  (int
+ 
+   _dbus_credentials_clear (credentials);
+ 
+-#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED)
++#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED) && !defined(__FreeBSD__)
+   /* Set the socket to receive credentials on the next message */
+   {
+     int on = 1;
+@@ -837,9 +867,9 @@ _dbus_read_credentials_unix_socket  (int
    msg.msg_iovlen = 1;
  
  #ifdef HAVE_CMSGCRED
@@ -67,7 +76,7 @@
  #endif
  
   again:
-@@ -860,9 +890,10 @@
+@@ -862,9 +892,10 @@ _dbus_read_credentials_unix_socket  (int
      }
  
  #ifdef HAVE_CMSGCRED
@@ -80,7 +89,7 @@
        _dbus_verbose ("Message from recvmsg() was not SCM_CREDS\n");
        return FALSE;
      }
-@@ -888,13 +919,9 @@
+@@ -890,13 +921,9 @@ _dbus_read_credentials_unix_socket  (int
  		       cr_len, (int) sizeof (cr), _dbus_strerror (errno));
        }
  #elif defined(HAVE_CMSGCRED)

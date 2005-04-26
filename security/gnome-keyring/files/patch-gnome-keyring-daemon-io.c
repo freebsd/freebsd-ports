@@ -1,6 +1,6 @@
---- gnome-keyring-daemon-io.c.orig	Tue Jan 13 05:29:02 2004
-+++ gnome-keyring-daemon-io.c	Fri Dec 17 00:44:55 2004
-@@ -100,8 +100,10 @@
+--- gnome-keyring-daemon-io.c.orig	Mon Feb 21 02:50:03 2005
++++ gnome-keyring-daemon-io.c	Tue Apr 26 01:56:16 2005
+@@ -100,14 +100,16 @@ read_unix_socket_credentials (int fd,
  	char buf;
  	
  #ifdef HAVE_CMSGCRED 
@@ -13,7 +13,14 @@
  #endif
  	
  	*pid = 0;
-@@ -126,9 +128,9 @@
+ 	*uid = 0;
+ 	
+-#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED)
++#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED) && !defined(__FreeBSD__)
+ 	/* Set the socket to receive credentials on the next message */
+ 	{
+ 		int on = 1;
+@@ -126,9 +128,9 @@ read_unix_socket_credentials (int fd,
  	msg.msg_iovlen = 1;
  	
  #ifdef HAVE_CMSGCRED
@@ -26,7 +33,7 @@
  #endif
  
   again:
-@@ -147,7 +149,8 @@
+@@ -147,7 +149,8 @@ read_unix_socket_credentials (int fd,
  	}
  
  #ifdef HAVE_CMSGCRED
@@ -36,7 +43,7 @@
  		g_warning ("Message from recvmsg() was not SCM_CREDS\n");
  		return FALSE;
  	}
-@@ -168,12 +171,8 @@
+@@ -168,12 +171,8 @@ read_unix_socket_credentials (int fd,
  			return FALSE;
  		}
  #elif defined(HAVE_CMSGCRED)

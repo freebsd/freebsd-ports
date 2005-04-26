@@ -1,5 +1,5 @@
---- gnome-keyring.c.orig	Tue Sep  7 00:05:37 2004
-+++ gnome-keyring.c	Fri Dec 17 10:06:11 2004
+--- gnome-keyring.c.orig	Mon Feb 21 02:50:29 2005
++++ gnome-keyring.c	Tue Apr 26 01:57:25 2005
 @@ -36,6 +36,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -8,11 +8,11 @@
  #include <sys/un.h>
  #include <stdarg.h>
  
-@@ -253,11 +254,39 @@
+@@ -253,11 +254,39 @@ write_credentials_byte_sync (int socket)
  {
    char buf;
    int bytes_written;
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  struct {
 +	  struct cmsghdr hdr;
 +	  struct cmsgcred cred;
@@ -22,7 +22,7 @@
 +#endif
 +
 +  buf = 0;
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  iov.iov_base = &buf;
 +  iov.iov_len = 1;
 +
@@ -41,7 +41,7 @@
   again:
  
 -  buf = 0;
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  bytes_written = sendmsg (socket, &msg, 0);
 +#else
    bytes_written = write (socket, &buf, 1);
@@ -49,11 +49,11 @@
  
    if (bytes_written < 0 && errno == EINTR)
      goto again;
-@@ -275,11 +304,39 @@
+@@ -275,11 +304,39 @@ write_credentials_byte (GnomeKeyringOper
  {
    char buf;
    int bytes_written;
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  struct {
 +	  struct cmsghdr hdr;
 +	  struct cmsgcred cred;
@@ -63,7 +63,7 @@
 +#endif
 +
 +  buf = 0;
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  iov.iov_base = &buf;
 +  iov.iov_len = 1;
 +
@@ -82,7 +82,7 @@
   again:
  
 -  buf = 0;
-+#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
++#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
 +  bytes_written = sendmsg (op->socket, &msg, 0);
 +#else
    bytes_written = write (op->socket, &buf, 1);
