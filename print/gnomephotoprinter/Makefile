@@ -20,4 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui libglade2 libgnomeprintui gnomevfs2
 USE_LIBTOOL_VER=15
 
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/gnomephotoprinter.desktop ${PREFIX}/share/gnome/applications
+
 .include <bsd.port.mk>
