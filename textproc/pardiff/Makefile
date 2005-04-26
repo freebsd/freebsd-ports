@@ -18,12 +18,15 @@ GNU_CONFIGURE=	yes
 
 MAN1=	pardiff.1 diffp.1
 
-DOCS=	AUTHORS ChangeLog README
+PLIST_FILES=	bin/pardiff bin/diffp
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS ChangeLog README
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -m 0755 ${PREFIX}/share/doc/pardiff
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/pardiff/
 .endfor
 .endif

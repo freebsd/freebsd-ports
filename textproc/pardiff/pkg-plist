@@ -1,6 +1,0 @@
-bin/pardiff
-bin/diffp
-%%PORTDOCS%%share/doc/pardiff/AUTHORS
-%%PORTDOCS%%share/doc/pardiff/ChangeLog
-%%PORTDOCS%%share/doc/pardiff/README
-%%PORTDOCS%%@dirrm share/doc/pardiff
