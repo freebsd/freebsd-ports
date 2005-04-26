@@ -24,6 +24,7 @@ bin/dvdstyler
 %%DATADIR%%/rc/plus.png
 %%DATADIR%%/rc/run.png
 %%DATADIR%%/rc/save.png
+share/applications/dvdstyler.desktop
 share/locale/ca/LC_MESSAGES/dvdstyler.mo
 share/locale/de/LC_MESSAGES/dvdstyler.mo
 share/locale/es/LC_MESSAGES/dvdstyler.mo
@@ -33,6 +34,7 @@ share/locale/it/LC_MESSAGES/dvdstyler.mo
 share/locale/pl/LC_MESSAGES/dvdstyler.mo
 share/locale/pt/LC_MESSAGES/dvdstyler.mo
 share/locale/ru/LC_MESSAGES/dvdstyler.mo
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @dirrm %%DATADIR%%/rc
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/buttons

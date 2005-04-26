@@ -1,0 +1,10 @@
+# $FreeBSD$
+[Desktop Entry]
+Encoding=UTF-8
+Name=DVDStyler
+Comment=%%COMMENT%%
+Icon=%%DVDSTYLER_ICON%%
+Exec=dvdstyler
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;
