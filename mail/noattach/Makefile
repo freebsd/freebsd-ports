@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	noattach
-PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
-DISTNAME=	${PORTNAME}-1.1p1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An attachment filter for Sendmail
@@ -62,7 +60,7 @@ do-install:
 		${PREFIX}/etc/rc.d/noattach.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/noattach.patterns \
 		 ${PREFIX}/etc/noattach.patterns-dist
-	${INSTALL_MAN} ${WRKSRC}/doc/noattach.8 ${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/noattach.8 ${PREFIX}/man/man8/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
