@@ -1,5 +1,5 @@
---- configure.orig	Thu Dec 23 16:36:00 2004
-+++ configure	Tue Mar 22 10:50:03 2005
+--- configure.orig	Wed Apr 13 13:46:35 2005
++++ configure	Mon Apr 25 20:59:27 2005
 @@ -29,9 +29,9 @@
    echo >> "$TMPLOG"
    cat "$TMPC" >> "$TMPLOG"
@@ -12,7 +12,7 @@
    TMP="$?"
    echo >> "$TMPLOG"
    echo "ldd $TMPO" >> "$TMPLOG"
-@@ -359,7 +359,7 @@
+@@ -369,7 +369,7 @@
  
  
  # 1st pass checking for vital options
@@ -21,7 +21,7 @@
  _ranlib=ranlib
  _cc=cc
  test "$CC" && _cc="$CC"
-@@ -461,14 +461,7 @@
+@@ -471,14 +471,7 @@
        case "`( uname -m ) 2>&1`" in
        i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686|BePC) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
@@ -37,7 +37,7 @@
        macppc|ppc) host_arch=ppc ;;
        alpha) host_arch=alpha ;;
        sparc) host_arch=sparc ;;
-@@ -681,22 +674,10 @@
+@@ -691,22 +684,10 @@
  _cpuinfo="echo"
  # Cygwin has /proc/cpuinfo, but only supports Intel CPUs
  # FIXME: Remove the cygwin check once AMD CPUs are supported
@@ -60,7 +60,7 @@
  
  x86_exts_check()
  {
-@@ -1843,8 +1824,8 @@
+@@ -1878,8 +1859,8 @@
      ;;
  
    *)
@@ -71,7 +71,7 @@
      ;;
  
    esac
-@@ -1854,7 +1835,7 @@
+@@ -1889,7 +1870,7 @@
  test -z "$_bindir" && _bindir="$_prefix/bin"
  test -z "$_datadir" && _datadir="$_prefix/share/mplayer"
  test -z "$_mandir" && _mandir="$_prefix/man"
@@ -80,7 +80,7 @@
  test -z "$_libdir" && _libdir="$_prefix/lib"
  test -z "$_mlibdir" && _mlibdir="$MLIBHOME"
  
-@@ -2576,13 +2557,7 @@
+@@ -2591,13 +2572,7 @@
  
  
  echocheck "memalign()"
@@ -94,7 +94,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -2671,48 +2646,11 @@
+@@ -2699,47 +2674,11 @@
  _def_threads='#undef HAVE_THREADS'
  
  echocheck "pthread"
@@ -108,7 +108,7 @@
 -elif hpux ; then
 -  _ld_pthread=''
 -elif ( cc_check && $TMPO ) ; then              # QNX
--  _ld_pthread=''
+-  _ld_pthread=' ' # _ld_pthread='' would disable pthreads, but the test worked
 -elif ( cc_check -lpthread && $TMPO ) ; then
 -  _ld_pthread='-lpthread'
 -elif ( cc_check -pthread && $TMPO ) ; then
@@ -140,25 +140,10 @@
 -  _pthreads=''
 -  _def_pthreads='#undef HAVE_PTHREADS'
 -fi
--
+ 
  
  echocheck "sys/soundcard.h"
- cat > $TMPC << EOF
-@@ -5000,11 +4938,11 @@
- 
- 
- echocheck "RTC"
--if linux ; then
-+if freebsd ; then
-   if test "$_rtc" = auto ; then
-     cat > $TMPC << EOF
- #include <sys/ioctl.h>
--#include <linux/rtc.h>
-+#include <rtc.h>
- int main(void) { return RTC_IRQP_READ; }
- EOF
-     _rtc=no
-@@ -5235,7 +5173,7 @@
+@@ -5323,7 +5262,7 @@
  if test "$_faad_internal" = auto ; then
    # the faad check needs a config.h file
    if not test -f "config.h" ; then
@@ -167,16 +152,16 @@
    fi
    # internal faad: check if our dear gcc is able to compile it...
    cp "`pwd`/libfaad2/cfft.c" $TMPC
-@@ -6314,7 +6252,7 @@
+@@ -6477,7 +6416,7 @@
    fi
    _stripbinaries=no
  elif test -z "$CFLAGS" ; then
 -    CFLAGS="-O4 $_march $_mcpu $_pipe -ffast-math -fomit-frame-pointer"
-+    CFLAGS="-O"
++    CFLAGS="-O $_pipe"
    # always compile with '-g' if .developer:
    if test -f ".developer" ; then
      CFLAGS="-g $CFLAGS"
-@@ -6324,6 +6262,9 @@
+@@ -6487,6 +6426,9 @@
      _stripbinaries=no
    fi
  else
@@ -186,7 +171,7 @@
    cat <<EOF
  
  MPlayer compilation will use the CFLAGS set by you, but:
-@@ -6363,7 +6304,7 @@
+@@ -6526,7 +6468,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es

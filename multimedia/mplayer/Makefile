@@ -215,6 +215,10 @@
 #
 # WITH_VORBIS
 # default: autodetect
+# If vorbis libs are not available on the system, mplayer includes
+# an internal vorbis codec based on tremor. If the libs are present
+# or this knob is defined, mplayer links to the shared system-wide
+# installation of ogg/vorbis.
 #
 # WITH_XANIM
 # default: autodetect
@@ -259,8 +263,7 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.99.6
-PORTREVISION=	3
+PORTVERSION=	0.99.7
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -272,7 +275,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-1.0pre6a
+DISTNAME=	MPlayer-1.0pre7
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
@@ -697,6 +700,7 @@ CONFIGURE_ARGS+=	--disable-esd
 .endif
 
 .if defined(WITH_VORBIS)
+CONFIGURE_ARGS+=	--disable-internal-tremor
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
@@ -843,9 +847,6 @@ pre-everything::
 #.endif
 
 post-patch:
-.if (${OSVERSION} > 502125 || (defined(USE_GCC) && ${USE_GCC} == 3.4))
-	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-gcc34
-.endif
 	@${REINPLACE_CMD} -e \
 		's|libxmms.so.1|libxmms.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -860,24 +861,12 @@ post-patch:
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
 .if defined(WITH_RTC)
 	@${REINPLACE_CMD} -e \
-		's|<linux/rtc.h>|<rtc.h>|' \
-		${WRKSRC}/mplayer.c
-	@${REINPLACE_CMD} -e \
-		's|RTC_IRQP_SET|RTCIO_IRQP_SET|' \
-		${WRKSRC}/mplayer.c
-	@${REINPLACE_CMD} -e \
-		's|RTC_PIE_ON|RTCIO_PIE_ON|' \
-		${WRKSRC}/mplayer.c
-	@${REINPLACE_CMD} -e \
-		's|rtc_fd|rtc|' \
-		${WRKSRC}/mplayer.c
-	@${REINPLACE_CMD} -e \
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
 .endif
 .if defined(MPLAYER_GENERIC_BUILD)
 	@${REINPLACE_CMD} -e \
-		's|1.0pre6|1.0pre6-FreeBSD-generic|' \
+		's|1.0pre7|1.0pre7-FreeBSD-generic|' \
 		${WRKSRC}/version.sh
 .endif
 

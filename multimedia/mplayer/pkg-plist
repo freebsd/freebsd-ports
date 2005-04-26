@@ -46,7 +46,6 @@ bin/mplayer
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-mpeg.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-mpeg4.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-extractsub.html
-%%PORTDOCS%%%%DOCSDIR%%/menc-feat-fix-avi.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-rescale.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-streamcopy.html
 %%PORTDOCS%%%%DOCSDIR%%/mencoder.html
