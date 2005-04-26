@@ -21,6 +21,7 @@
 %%SITE_PERL%%/Net/LDAP/Examples.pod
 %%SITE_PERL%%/Net/LDAP/Extension.pm
 %%SITE_PERL%%/Net/LDAP/Extension/SetPassword.pm
+%%SITE_PERL%%/Net/LDAP/Extension/WhoAmI.pm
 %%SITE_PERL%%/Net/LDAP/Extra.pm
 %%SITE_PERL%%/Net/LDAP/FAQ.pod
 %%SITE_PERL%%/Net/LDAP/Filter.pm

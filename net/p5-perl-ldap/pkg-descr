@@ -4,3 +4,4 @@ maintenance functions such as add, deleting or modify entries in an LDAP
 directory.
 
 WWW: http://ldap.perl.org/
+WWW: http://search.cpan.org/dist/perl-ldap/
