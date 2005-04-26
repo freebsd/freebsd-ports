@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
 LIB_DEPENDS+=	prelude.1:${PORTSDIR}/security/libprelude \
