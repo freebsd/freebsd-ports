@@ -9,13 +9,16 @@ PORTNAME=	stuphead
 PORTVERSION=	0.5.3
 PORTREVISION=	4
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://stuphead.asplinux.ru/stuphead/
+MASTER_SITES=	# http://stuphead.asplinux.ru/stuphead/
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-1.patch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight MUA for X11
+
+EXPIRATION_DATE=2005-08-01
+DEPRECATED=	Mastersite disappeared
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
@@ -35,18 +38,20 @@ CONFIGURE_ARGS+=	--disable-gdk-pixbuf \
 .endif
 
 .if defined (WITH_GNOME)
-USE_GNOME=	yes
-PLIST=		${PKGDIR}/pkg-plist.gnome
+PLIST_SUB+=	GNOME=""
 CONFIGURE_ARGS+=	--enable-gnome
 .else
+PLIST_SUB+=	GNOME="@comment "
 CONFIGURE_ARGS+=	--disable-imlib \
 			--disable-imlibtest
 .endif
 
 .if defined (WITH_MOZILLA)
-PLIST=		${PKGDIR}/pkg-plist.mozilla
+PLIST_SUB+=	MOZILLA=""
 CONFIGURE_ARGS+=	--enable-mozilla
 RUN_DEPENDS+=	${PREFIX}/bin/mozilla:${PORTSDIR}/www/mozilla
+.else
+PLIST_SUB+=	MOZILLA="@comment "
 .endif
 
 .if defined (WITH_ISPELL)
