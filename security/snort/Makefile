@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--with-postgresql=no
 .if defined(WITH_PRELUDE)
 #BROKEN=			Prelude reporting patch have not been updated for Snort 2.2.0
 PRELUDE_PATCH=		0.3.6
-MASTER_SITES+=		http://prelude-ids.org/download/releases/:prelude
+MASTER_SITES+=		http://prelude-ids.org/download/releases/old/:prelude
 SIGNED_FILES=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES+=		snort-prelude-reporting-patch-${PRELUDE_PATCH}.tar.gz:prelude
 EXTRA_PATCHES+=		${WRKDIR}/snort-2.2.0-prelude-${PRELUDE_PATCH}.diff
