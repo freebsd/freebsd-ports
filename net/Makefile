@@ -324,7 +324,6 @@
     SUBDIR += libyahoo2
     SUBDIR += licq
     SUBDIR += licq-console
-    SUBDIR += licq-jons-gtk-gui
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
     SUBDIR += liferea
