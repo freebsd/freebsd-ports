@@ -25,6 +25,11 @@ COMMENT=	A programmable troff translator with backend for HTML
 LIB_DEPENDS=	elk.0:${PORTSDIR}/lang/elk
 
 BUILD_WRKSRC=	${WRKSRC}/src
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD"	\
+		INCLUDE="-I${LOCALBASE}/include/elk"	\
+		LIBS="-lm -lelk -L${LOCALBASE}/lib"	\
+		ELKDIR="${LOCALBASE}/share/elk"		\
+		DIR="${DATADIR}" ELK=""
 
 MAN1=		unroff.1 unroff-html.1 unroff-html-man.1 \
 		unroff-html-me.1 unroff-html-ms.1
