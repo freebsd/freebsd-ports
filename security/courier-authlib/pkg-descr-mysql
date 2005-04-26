@@ -1,0 +1,5 @@
+This package installs MySQL support for the Courier authentication library
+to read the list of mail accounts and passwords from a table in a MySQL
+database.
+
+WWW:	http://www.Courier-MTA.org/authlib/

@@ -1,0 +1,4 @@
+This package installs vpopmail/vchkpw support for the Courier authentication
+library.
+
+WWW:	http://www.Courier-MTA.org/authlib/

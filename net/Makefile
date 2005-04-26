@@ -79,6 +79,7 @@
     SUBDIR += coda6_client
     SUBDIR += coda6_server
     SUBDIR += corkscrew
+    SUBDIR += courier-authlib-ldap
     SUBDIR += cphone
     SUBDIR += crescendo
     SUBDIR += cryptcat

@@ -1,0 +1,8 @@
+--- authdaemond.in.orig	Wed Oct 20 20:10:49 2004
++++ authdaemond.in	Wed Oct 20 20:10:49 2004
+@@ -15,4 +15,4 @@
+ set -a
+ . @authdaemonrc@
+ 
+-exec ${sbindir}/courierlogger -pid=@authdaemonvar@/pid -$1 @libexecdir@/courier-authlib/authdaemond
++exec ${sbindir}/courierlogger -facility=${subsystem:-mail} -pid=@authdaemonvar@/pid -$1 @libexecdir@/courier-authlib/authdaemond

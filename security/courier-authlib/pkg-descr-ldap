@@ -1,0 +1,4 @@
+This package installs LDAP support for the Courier authentication library
+to read the list of mail accounts and passwords from an LDAP directory.
+
+WWW:	http://www.Courier-MTA.org/authlib/

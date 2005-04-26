@@ -1,4 +1,4 @@
-# New ports collection makefile for:	courier-authdaemon
+# New ports collection makefile for:	courier-authlib
 # Date created:				19 Dec 2004
 # Whom:					Oliver Lehmann
 #
@@ -7,171 +7,218 @@
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.55
-PORTREVISION=	1
-CATEGORIES=	mail
+PORTREVISION=	2
+CATEGORIES?=	security mail
+.if defined(PKGNAMESUFFIX)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
+.else
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
+.endif
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	Authentication library used by courier ports
+COMMENT?=	Meta-port for the courier authentication library
 
-CONFLICTS=	courier-0.*
+CONFLICTS=	courier-0.45*
+
+.if !defined(PKGNAMESUFFIX)
+RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+
+NO_BUILD=	yes
+PATCHDIR=	/dev/null
+
+OPTIONS+=	GDBM	"Use gdbm instead of system bdb"	off
+
+.include "${.CURDIR}/Makefile.opt"
+
+.else	# !defined(PKGNAMESUFFIX)
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
-USE_PERL5=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	yes
-USE_LIBTOOL_VER=15
 USE_LIBLTDL=	yes
+USE_LIBTOOL_VER=15
+USE_PERL5=	yes
+USE_REINPLACE=	yes
+USE_SUBMAKE=	yes
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}
 
-#
-# options available:
-#
-# WITH_MAILUSER:		The user running authlib
-# WITH_MAILGROUP:		The group running authlib
-# WITH_SYSLOG_FACILITY:		The syslogfacility to use
-#
-
-OPTIONS=	PAM		"Build with PAM support"		on \
-		VPOPMAIL	"Build in vpopmail support"		off \
-		MYSQL		"Build in mysql support"		off \
-		POSTGRESQL	"Build in postgresql support"		off \
-		LDAP		"Build in ldap support with openldap"	off \
-		GDBM		"Use gdbm files instead of bdb"		off \
-		AUTHUSERDB	"Build with authuserdb"			on \
-		MERGECFGS	"Merge new Options into old auth-rc files" on
+MAILOWN=	courier
+MAILGRP=	courier
+MAILUID=	465
+MAILGID=	465
+LOCALSTATEDIR=	/var
+AUTHDAEMONVAR=	${LOCALSTATEDIR}/run/authdaemond
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
-WITH_MAILUSER?=	daemon
-WITH_MAILGROUP?=daemon
-CONFDIR?=	${PREFIX}/etc
 USERDB?=	${PREFIX}/etc/userdb
 
-PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' \
+		LDFLAGS='${LDFLAGS}'
+MAKE_ENV:=	${CONFIGURE_ENV}
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LDFLAGS} -L${LOCALBASE}/lib"
-
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
-		--without-authshadow \
-		--without-authcustom \
-		--enable-unicode \
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-unicode \
 		--enable-ltdl-install=no \
-		--with-mailuser=${WITH_MAILUSER} \
-		--with-mailgroup=${WITH_MAILGROUP} \
-		--with-authdaemonvar=/var/run/authdaemond
+		--without-authcustom \
+		--without-authshadow \
+		--without-authpwd \
+		--with-mailuser=${MAILOWN} \
+		--with-mailgroup=${MAILGRP} \
+		--localstatedir=${LOCALSTATEDIR} \
+		--with-authdaemonvar=${AUTHDAEMONVAR} \
+		--cache-file=${WRKDIR}/courier-authlib.cache
 
-.include <bsd.port.pre.mk>
+INSTALL_TARGET=	install-strip install-configure
 
-.if defined(WITH_SYSLOG_FACILITY)
-CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
-.endif
+DESCR=		${PKGDIR}/pkg-descr${PKGNAMESUFFIX}
+PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX:S/gdbm/db/}
 
-.if defined(WITH_GDBM)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=--with-db=gdbm
-.else
-CONFIGURE_ARGS+=--with-db=db
-.endif
+AUTHMOD=	auth${PKGNAMESUFFIX:S/-//:S/gdbm/db/}
 
-.if !defined(WITH_VPOPMAIL)
-CONFIGURE_ARGS+=--without-authvchkpw
-PLIST_SUB+=	VPOPMAILFLAG="@comment "
-.else
-CONFIGURE_ARGS+=--with-authvchkpw
-BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-PLIST_SUB+=	VPOPMAILFLAG=""
-.endif
-
-.if defined(WITH_LDAP)
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-authldap
-PLIST_SUB+=	LDAPFLAG=""
-.else
-CONFIGURE_ARGS+=--without-authldap
-PLIST_SUB+=	LDAPFLAG="@comment "
-.endif
-
-.if !defined(WITH_MYSQL)
-CONFIGURE_ARGS+=--without-authmysql
-PLIST_SUB+=	MYSQLFLAG="@comment "
-.else
-USE_MYSQL=	YES
-PLIST_SUB+=	MYSQLFLAG=""
-CONFIGURE_ARGS+=--with-authmysql \
-		--with-mysql-libs=${LOCALBASE}/lib/mysql \
-		--with-mysql-includes=${LOCALBASE}/include/mysql
-.endif
-
-.if !defined(WITH_POSTGRESQL)
-CONFIGURE_ARGS+=--without-authpgsql
-PLIST_SUB+=	PGSQLFLAG="@comment "
-.else
-USE_PGSQL=	YES
-PLIST_SUB+=	PGSQLFLAG=""
-.endif
-
-.if !defined(WITHOUT_PAM)
-CONFIGURE_ARGS+=--with-authpam
-PLIST_SUB+=	PAMFLAG=""
-.else
-CONFIGURE_ARGS+=--without-authpam
-PLIST_SUB+=	PAMFLAG="@comment "
-.endif
-
-.if defined(WITHOUT_AUTHUSERDB)
-CONFIGURE_ARGS+=--without-authuserdb
-PLIST_SUB+=     AUTHUSERDBFLAG="@comment "
-.else
-CONFIGURE_ARGS+=--with-userdb=${USERDB}
-PLIST_SUB+=     AUTHUSERDBFLAG=""
-.endif
-
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} MAILUSER=${WITH_MAILUSER} MAILGROUP=${WITH_MAILGROUP}
+.if ${AUTHMOD} == authbase
+RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool
+CONFIGURE_ARGS+=--with-base --with-authpam
 
 MAN1=		courierlogger.1
 
 MAN3=		authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
 		auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3
 
-MAN8=		makeuserdb.8 userdb.8 userdbpw.8
+DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README \
+		README.authdebug.html README_authlib.html
 
-EXTRA_DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
-		README.authdebug.html README.authmysql.html \
-		README.authmysql.myownquery README.authpostgres.html \
-		README.ldap README_authlib.html
+PLIST_SUB+=	MAILOWN=${MAILOWN} MAILGRP=${MAILGRP} \
+		MAILUID=${MAILUID} MAILGID=${MAILGID} \
+		AUTHDAEMONVAR=${AUTHDAEMONVAR}
+SUB_LIST:=	${PLIST_SUB}
+SUB_FILES+=	pkg-install pkg-deinstall
+
+.else
+RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+CONFIGURE_ARGS+=--without-base --without-authpam
+REMOVE_SUBDIRS+=liblock liblog
+.endif
+
+.if ${AUTHMOD} == authuserdb
+MAN8=		makeuserdb.8 userdb.8 userdbpw.8
+.if ${PKGNAMESUFFIX} == -usergdbm
+CONFLICTS+=	${PORTNAME}-userdb-0.*
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=--with-db=gdbm
+.elif ${PKGNAMESUFFIX} == -userdb
+CONFLICTS+=	${PORTNAME}-usergdbm-0.*
+CONFIGURE_ARGS+=--with-db=db
+.endif
+CONFIGURE_ARGS+=--with-userdb=${USERDB}
+.else
+CONFIGURE_ARGS+=--with-db=db --without-authuserdb
+REMOVE_SUBDIRS+=makedat userdb
+.endif
+
+.if ${AUTHMOD} == authldap
+DOCS=		README.ldap
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-authldap
+.else
+CONFIGURE_ARGS+=--without-authldap
+.endif
+
+.if ${AUTHMOD} == authmysql
+DOCS=		README.authmysql.html README.authmysql.myownquery
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-authmysql \
+		--with-mysql-libs=${LOCALBASE}/lib/mysql \
+		--with-mysql-includes=${LOCALBASE}/include/mysql
+.else
+CONFIGURE_ARGS+=--without-authmysql
+.endif
+
+.if ${AUTHMOD} == authpgsql
+DOCS=		README.authpostgres.html
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=--with-authpgsql
+.else
+CONFIGURE_ARGS+=--without-authpgsql
+.endif
+
+.if ${AUTHMOD} == authvchkpw
+BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+CONFIGURE_ARGS+=--with-authvchkpw
+.else
+CONFIGURE_ARGS+=--without-authvchkpw
+.endif
+
+.endif	# !defined(PKGNAMESUFFIX)
+
+.include <bsd.port.pre.mk>
+
+.if !defined(PKGNAMESUFFIX)
+
+.include "${.CURDIR}/Makefile.dep"
+
+do-install:	#empty
+do-build:	#empty
+.else	# !defined(PKGNAMESUFFIX)
+
+.if ${AUTHMOD} == authbase
+.if defined(WITH_RCORDER)
+USE_RCORDER=	courier-authdaemond.sh
+.else
+USE_RC_SUBR=	courier-authdaemond.sh
+.endif
+.endif
+
+LOCKTEST!=	${MKTEMP} /tmp/courier-authlib.locktest.XXXXX
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/liblog/Makefile.in \
-		${WRKSRC}/userdb/Makefile.in
-	@${REINPLACE_CMD} -e 's|DEFAULTOPTIONS=""|DEFAULTOPTIONS="wbnodsn=1"|' \
+	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g' \
+		-e 's|^\(INSTALL_STRIP_PROGRAM=\).*$$|\1"$${INSTALL_PROGRAM} -s"|' \
+		${WRKSRC}/*/configure \
+		${WRKSRC}/configure
+.for subdir in ${REMOVE_SUBDIRS}
+	@${REINPLACE_CMD} -E 's,(^(ac_subdirs_all|subdirs).*)${subdir},\1,g' \
+		${WRKSRC}/configure
+.endfor
+	@${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) \(.$$$$file.\)|${INSTALL_MAN} \1|' \
+		${WRKSRC}/*/Makefile.in \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^\(DEFAULTOPTIONS=\)""$$|\1"wbnodsn=1"|' \
+		-e 's|@ALLMODULES@|authuserdb authvchkpw authpam authldap authmysql authpgsql|' \
 		${WRKSRC}/authdaemonrc.in
-	@${REINPLACE_CMD} -e 's|conftest.lock|/tmp/courier-authlib.locktest|g' \
+	@${REINPLACE_CMD} -e 's:@EXPECT@:${SETENV} expect:' \
+		${WRKSRC}/authsystem.passwd.in
+	@${REINPLACE_CMD} -e 's|conftest.lock|${LOCKTEST}|g ; \
+		s|close(f);|& unlink("${LOCKTEST}");|g ; \
+		s|if (s == 0)|unlink("${LOCKTEST}"); &|g' \
 		${WRKSRC}/liblock/locktest.c
 
+pre-configure:
+	@if [ -f "${WRKDIR}/courier-authlib.cache" -a -s "${WRKDIR}/courier-authlib.cache" ] ; then \
+		${RM} -f "${WRKDIR}/courier-authlib.cache" ; \
+	fi
+
 post-configure:
-	@${RM} -f /tmp/courier-authlib.locktest
+	@if [ -f "${LOCKTEST}" ] ; then \
+		${RM} -f "${LOCKTEST}" ; \
+	fi
+
+.if ${PKGNAMESUFFIX} == "-base"
+pre-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.endif	# ${PKGNAMESUFFIX} == "-base"
 
 post-install:
-	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/courier-authdaemond.sh > ${WRKDIR}/courier-authdaemond.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/courier-authdaemond.sh ${PREFIX}/etc/rc.d/courier-authdaemond.sh
-.if defined(WITH_MERGECFGS)
-	cd ${WRKSRC} && ( ${GMAKE} install-configure ; cd - )
-.endif
-
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for a in ${EXTRA_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
+	@${INSTALL} ${_SHROWNGRP} -d ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+.endif	# !defined(PKGNAMESUFFIX)
 
 .include <bsd.port.post.mk>

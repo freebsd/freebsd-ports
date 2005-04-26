@@ -1,0 +1,6 @@
+This package installs the userdb support for the Courier authentication
+library.  Userdb is a simple way to manage virtual mail accounts using
+a BDB-based database file.  This module also incorporates userdb-based
+challenge-response authentication implementation.
+
+WWW:	http://www.Courier-MTA.org/authlib/
