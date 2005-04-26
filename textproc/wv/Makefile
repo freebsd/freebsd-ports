@@ -29,6 +29,7 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-exporter --with-libwmf=${LOCALBASE}
 MAKEFILE=	GNUmakefile
+MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 INSTALLS_SHLIB=	yes
 
 MAN1=	wvAbw.1 wvCleanLatex.1 wvDVI.1 wvHtml.1 wvLatex.1 wvMime.1 wvPDF.1 \
