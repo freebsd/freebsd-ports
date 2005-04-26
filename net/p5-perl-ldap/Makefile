@@ -13,16 +13,16 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/..//g}
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Client interface to LDAP servers
 
-DISTVERSION=	0.32..02
+DISTVERSION=	0.33
 
 BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		${SITE_PERL}/URI/ldap.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
-		${SITE_PERL}/XML/SAX/Base.pm:${PORTSDIR}/textproc/p5-XML-SAX-Base
+		${SITE_PERL}/XML/SAX/Base.pm:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -44,6 +44,7 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP::Entry.3 \
 		Net::LDAP::Examples.3 \
 		Net::LDAP::Extension::SetPassword.3 \
+		Net::LDAP::Extension::WhoAmI.3 \
 		Net::LDAP::Extra.3 \
 		Net::LDAP::FAQ.3 \
 		Net::LDAP::Filter.3 \
