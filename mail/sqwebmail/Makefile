@@ -15,10 +15,14 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
-RUN_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
-
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+
+BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+
+.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
+.include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
+.endif
 
 #
 # User-serviceable variables
@@ -43,6 +47,8 @@ RCDIR?=		${PREFIX}/etc/rc.d
 CACHEDIR?=	${PREFIX}/var/sqwebmail/cache
 CACHEOWNER?=	bin
 
+#
+# will be migrated to options if possible sooner or later!
 #
 # set WITHOUT_CACHEDIR to disable the cache dir
 # set WITH_HTTPS to generate https:// URLs for all accesses
@@ -182,6 +188,12 @@ MAN8=		deliverquota.8
 EXTRA_DOCS=	README README.logindomainlist.html README.pam sqwebmail/ChangeLog \
 		maildir/README.maildirquota.txt maildir/README.sharedfolders.txt
 
+.include <bsd.port.pre.mk>
+
+.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
+.include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
@@ -214,4 +226,4 @@ post-install:
 	@${ECHO_MSG} "0 * * * * ${CACHEOWNER} ${PREFIX}/share/sqwebmail/cleancache.pl"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
