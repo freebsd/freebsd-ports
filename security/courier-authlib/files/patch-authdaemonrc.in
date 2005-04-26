@@ -1,0 +1,45 @@
+--- authdaemonrc.in.orig	Tue Nov  9 19:42:04 2004
++++ authdaemonrc.in	Tue Nov  9 19:42:04 2004
+@@ -59,6 +59,42 @@
+ 
+ authdaemonvar=@authdaemonvar@
+ 
++##NAME: subsystem:0
++#
++# The syslog facility uses subsystem to determine which log messages
++# are recorded in which log files.
++#
++# The currently defined subsystems are:
++#
++#	o auth
++#	o authpriv
++#	o console
++#	o cron
++#	o daemon
++#	o ftp
++#	o kern
++#	o lpr
++#	o mail
++#	o news
++#	o security
++#	o user
++#	o uucp
++#	o local0
++#	o local1
++#	o local2
++#	o local3
++#	o local4
++#	o local5
++#	o local6
++#	o local7
++#
++# Note:  Not all of the above facility names are implemented on
++# every system.  Check your system's syslog documentation for
++# information on which facility names are allowed, and which log
++# files record the corresponding messages for each facility.
++
++subsystem=mail
++
+ ##NAME: DEBUG_LOGIN:0
+ #
+ # Dump additional diagnostics to syslog

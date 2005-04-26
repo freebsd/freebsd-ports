@@ -1,0 +1,46 @@
+@unexec [ -x %D/sbin/authdaemond ] && %D/sbin/authdaemond stop || true
+@exec pw groupshow %%MAILGRP%% 2>/dev/null || pw groupadd %%MAILGRP%% -g %%MAILUID%% -h -
+@exec pw user show %%MAILOWN%% 2>/dev/null || pw useradd %%MAILOWN%% -u %%MAILUID%% -g %%MAILGID%% -h - -d /var/spool/courier -s /sbin/nologin -c "Courier Mail System"
+bin/courierauthconfig
+@unexec cmp -s %D/etc/authlib/authdaemonrc.dist %D/etc/authlib/authdaemonrc && rm -f %D/etc/authlib/authdaemonrc 2>/dev/null || true
+etc/authlib/authdaemonrc.dist
+@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authdaemonrc.dist && chmod 0600 %D/etc/authlib/authdaemonrc
+@exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/etc/authlib && chmod 0750 %D/etc/authlib
+include/courier_auth_config.h
+include/courierauth.h
+include/courierauthdebug.h
+include/courierauthsasl.h
+include/courierauthsaslclient.h
+lib/courier-authlib/libcourierauth.a
+lib/courier-authlib/libcourierauth.so
+lib/courier-authlib/libcourierauth.so.0
+lib/courier-authlib/libcourierauthcommon.a
+lib/courier-authlib/libcourierauthcommon.so
+lib/courier-authlib/libcourierauthcommon.so.0
+lib/courier-authlib/libcourierauthsasl.a
+lib/courier-authlib/libcourierauthsasl.so
+lib/courier-authlib/libcourierauthsasl.so.0
+lib/courier-authlib/libcourierauthsaslclient.a
+lib/courier-authlib/libcourierauthsaslclient.so
+lib/courier-authlib/libcourierauthsaslclient.so.0
+lib/courier-authlib/libauthpam.so
+lib/courier-authlib/libauthpam.so.0
+libexec/courier-authlib/authdaemond
+libexec/courier-authlib/authsystem.passwd
+sbin/authdaemond
+sbin/authenumerate
+sbin/authtest
+sbin/courierlogger
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.authdebug.html
+%%PORTDOCS%%%%DOCSDIR%%/README_authlib.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rm -rf %%AUTHDAEMONVAR%% 2>/dev/null || true
+@unexec rmdir %D/etc/authlib 2>/dev/null || true
+@dirrm libexec/courier-authlib
+@dirrm lib/courier-authlib

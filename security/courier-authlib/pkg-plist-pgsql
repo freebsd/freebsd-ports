@@ -1,0 +1,7 @@
+@unexec cmp -s %D/etc/authlib/authpgsqlrc.dist %D/etc/authlib/authpgsqlrc && rm -f %D/etc/authlib/authpgsqlrc 2>/dev/null || true
+etc/authlib/authpgsqlrc.dist
+@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authpgsqlrc.dist && chmod 0600 %D/etc/authlib/authpgsqlrc
+lib/courier-authlib/libauthpgsql.so
+lib/courier-authlib/libauthpgsql.so.0
+%%PORTDOCS%%%%DOCSDIR%%/README.authpostgres.html
+

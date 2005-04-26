@@ -1,0 +1,23 @@
+The Courier Authentication Library is a generic authentication API used
+for two purposes:
+
+1. Read the name of a mail account. Determine the local account's home
+   directory, and system userid and groupid.
+2. Read an account name, and a password. If valid, determine the
+   account's home directory, system userid, and groupid.
+
+The base package only installs the authpam authentication module to
+obtain account information and passwords using PAM
+
+Other plugin authentication modules are provided:
+
+	net/courier-authlib-ldap		OpenLDAP
+	databases/courier-authlib-mysql		MySQL
+	databases/courier-authlib-pgsql		PostgreSQL
+	databases/courier-authlib-userdb	libc db based
+	databases/courier-authlib-usergdbm	gdbm dependant
+	mail/courier-authlib-vchkpw		vpopmail/vchkpw
+
+Install them as occasion demands.
+
+WWW:	http://www.Courier-MTA.org/authlib/

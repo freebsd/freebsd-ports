@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050426:
+  AFFECTS: users of mail/courier-authlib
+  AUTHOR: oliver@FreeBSD.org
+
+  mail/courier-authlib has been moved to security/courier-authlib and is
+  now only a meta-port. Installing the meta-port installs security/
+  courier-authlib-base and no, one or more sub-ports regarding to what
+  authentification methods you've choosen. Courier-authlib-base only
+  provides you athentification via PAM. All ports depending on courier-
+  authlib (at the time of writing, courier-imap, sqwebmail and maildrop)
+  giving you the same choice the meta-port provides you.
+
 20050421:
   AFFECTS: users of www/opera-devel
   AUTHOR: avleeuwen@piwebs.com

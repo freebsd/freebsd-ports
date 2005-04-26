@@ -1,0 +1,35 @@
+# New ports collection makefile for:	courier-authlib
+# Date created:				19 Dec 2004
+# Whom:					Oliver Lehmann
+#
+# $FreeBSD$
+#
+
+# To depend on courier-authlib you might consider using this file by specifying 
+#
+#.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
+#.include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
+#.endif
+#
+# in your Makefile *before* any 
+#.include <bsd.port.pre.mk>
+
+.if defined(WITH_AUTH_LDAP)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:${PORTSDIR}/net/courier-authlib-ldap
+.endif
+.if defined(WITH_AUTH_MYSQL)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthmysql.so:${PORTSDIR}/databases/courier-authlib-mysql
+.endif
+.if defined(WITH_AUTH_PGSQL)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthpgsql.so:${PORTSDIR}/databases/courier-authlib-pgsql
+.endif
+.if defined(WITH_AUTH_USERDB)
+.if defined(WITH_GDBM)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthuserdb.so:${PORTSDIR}/databases/courier-authlib-usergdbm
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthuserdb.so:${PORTSDIR}/databases/courier-authlib-userdb
+.endif
+.endif
+.if defined(WITH_AUTH_VCHKPW)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthvchkpw.so:${PORTSDIR}/mail/courier-authlib-vchkpw
+.endif

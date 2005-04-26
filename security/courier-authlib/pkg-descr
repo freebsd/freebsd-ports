@@ -1,7 +1,9 @@
-The Courier Authentication Library is a generic authentication API that
-encapsulates the process of validating account passwords. In addition to
-reading the traditional account passwords from /etc/passwd, the account
-information can alternatively be obtained from an LDAP directory; a MySQL
-or a PostgreSQL database; or a GDBM or a DB file.
+The Courier Authentication Library is a generic authentication API used
+for two purposes:
 
-WWW:	http://www.courier-mta.org/authlib/
+1. Read the name of a mail account. Determine the local account's home
+   directory, and system userid and groupid.
+2. Read an account name, and a password. If valid, determine the
+   account's home directory, system userid, and groupid.
+
+WWW:	http://www.Courier-MTA.org/authlib/

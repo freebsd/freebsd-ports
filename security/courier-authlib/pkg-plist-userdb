@@ -1,0 +1,10 @@
+libexec/courier-authlib/makedatprog
+sbin/makeuserdb
+sbin/pw2userdb
+sbin/userdb
+sbin/userdb-test-cram-md5
+sbin/userdbpw
+sbin/vchkpw2userdb
+lib/courier-authlib/libauthuserdb.so
+lib/courier-authlib/libauthuserdb.so.0
+

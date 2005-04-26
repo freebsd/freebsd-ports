@@ -41,7 +41,7 @@
     SUBDIR += contact-lookup-applet
     SUBDIR += coolmail
     SUBDIR += courier
-    SUBDIR += courier-authlib
+    SUBDIR += courier-authlib-vchkpw
     SUBDIR += courier-imap
     SUBDIR += crashecho
     SUBDIR += crm114

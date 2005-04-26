@@ -51,6 +51,8 @@
     SUBDIR += clamav-devel
     SUBDIR += clamsmtp
     SUBDIR += cmd5checkpw
+    SUBDIR += courier-authlib
+    SUBDIR += courier-authlib-base
     SUBDIR += cops
     SUBDIR += cp2fwb
     SUBDIR += crack

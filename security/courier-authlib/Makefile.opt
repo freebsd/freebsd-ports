@@ -1,0 +1,21 @@
+# New ports collection makefile for:	courier-authlib
+# Date created:				19 Dec 2004
+# Whom:					Oliver Lehmann
+#
+# $FreeBSD$
+#
+
+# To depend on courier-authlib you might consider using this file by specifying 
+#
+#.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
+#.include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
+#.endif
+#
+# in your Makefile *after* any
+#.include <bsd.port.pre.mk>
+
+OPTIONS+=	AUTH_LDAP	"LDAP support"			off \
+		AUTH_MYSQL	"MySQL support"			off \
+		AUTH_PGSQL	"PostgreSQL support"		off \
+		AUTH_USERDB	"Userdb support"		off \
+		AUTH_VCHKPW	"Vpopmail/vchkpw support"	off
