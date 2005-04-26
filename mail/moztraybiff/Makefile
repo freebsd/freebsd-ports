@@ -34,6 +34,8 @@ MAKE_ARGS+=	MOZILLA_PLATFORM=tbird
 FILENAME=	mozTrayBiff-${PORTVERSION}-FreeBSD-tb${TBVER}.xpi
 PLIST_FILES=	share/${PORTNAME}/${FILENAME}
 PLIST_DIRS=	share/${PORTNAME}
+
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
@@ -43,17 +45,14 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|-fshort-wchar||" \
 		${WRKSRC}/components/Makefile
 .endif
-	@${REINPLACE_CMD} -e "s|%%TBVER%%|${TBVER}|" \
-		${WRKSRC}/components/Makefile
-
-post-build:
-	@${SED} 's|%%DATADIR%%|${DATADIR}|' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL} -m 644 ${WRKSRC}/${FILENAME} ${DATADIR}
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
