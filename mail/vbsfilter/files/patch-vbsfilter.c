@@ -1,11 +1,10 @@
---- vbsfilter-1.11.c.orig	Thu Jan 16 04:21:30 2003
-+++ vbsfilter-1.11.c	Thu Jan 16 04:27:36 2003
-@@ -13,6 +13,12 @@
+--- vbsfilter-1.15.c.orig
++++ vbsfilter-1.15.c
+@@ -14,6 +14,11 @@
+ #include <sysexits.h>
  #include <termios.h>
  #include <unistd.h>
- #include <sys/ioctl.h>
 +#ifdef __FreeBSD__
-+#include <ctype.h>
 +#include <stdlib.h>
 +#include <netdb.h>
 +#include <unistd.h>

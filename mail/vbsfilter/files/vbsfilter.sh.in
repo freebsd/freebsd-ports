@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/vbsfilter/files/Attic/vbsfilter.sh,v 1.4 2003-12-04 03:24:09 dinoex Exp $
+# $FreeBSD$
 # 
 if ! test -x %%PREFIX%%/libexec/vbsfilter
 then
