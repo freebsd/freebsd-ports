@@ -14,12 +14,15 @@ MASTER_SITES=	http://opensource.confusticate.com/rbl-milter/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A milter that adds mail header warnings on mail from open-relays
 
+SUB_FILES=	rbl-milter.sh
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-sendmail=/usr \
 		--with-sendmail-obj=/usr/lib
+
+PLIST_FILES=	sbin/rbl-milter etc/rc.d/rbl-milter.sh
 
 .if defined(NO_WERROR)
 pre-configure:
@@ -28,8 +31,6 @@ pre-configure:
 .endif
 
 post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' \
-		${FILESDIR}/rbl-milter.sh.in > ${WRKDIR}/rbl-milter.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/rbl-milter.sh \
 		${PREFIX}/etc/rc.d/rbl-milter.sh
 	@${CAT} ${PKGMESSAGE}
