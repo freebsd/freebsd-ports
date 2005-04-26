@@ -9,7 +9,7 @@ PORTNAME=	wmGrabImage
 PORTVERSION=	0.72
 PORTREVISION=	1
 CATEGORIES=	graphics windowmaker
-MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=	http://dockapps.org/files/12/19/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sascha@root-login.org
