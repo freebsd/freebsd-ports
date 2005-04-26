@@ -1,7 +1,8 @@
---- nxclient-help.desktop.orig	Wed Sep  1 18:18:13 2004
-+++ nxclient-help.desktop	Wed Sep  1 18:18:34 2004
-@@ -1,6 +1,6 @@
+--- nxclient-help.desktop.orig	Tue Apr 26 08:23:07 2005
++++ nxclient-help.desktop	Tue Apr 26 08:26:44 2005
+@@ -1,6 +1,7 @@
  [Desktop Entry]
++Encoding=UTF-8
  Comment=Help online
 -Exec=konqueror http://www.nomachine.com/help
 -Icon=konqueror

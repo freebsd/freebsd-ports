@@ -1,7 +1,8 @@
---- nxclient-wizard.desktop.orig	Wed Sep  1 18:18:13 2004
-+++ nxclient-wizard.desktop	Wed Sep  1 18:18:39 2004
-@@ -1,6 +1,7 @@
+--- nxclient-wizard.desktop.orig	Tue Apr 26 08:23:07 2005
++++ nxclient-wizard.desktop	Tue Apr 26 08:26:56 2005
+@@ -1,6 +1,8 @@
  [Desktop Entry]
++Encoding=UTF-8
  Comment=Launch connection wizard
 -Exec=/usr/NX/bin/nxclient -wizard
 -Icon=/usr/NX/share/icons/nxclient-wizard.png
