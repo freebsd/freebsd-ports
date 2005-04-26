@@ -1,9 +1,9 @@
-bin/symon
-bin/symux
-%%EXAMPLESDIR%%/symon.conf
-%%EXAMPLESDIR%%/symux.conf
-%%DATADIR%%/c_config.sh
-%%DATADIR%%/c_smrrds.sh
+%%SYMON%%bin/symon
+%%SYMUX%%bin/symux
+%%SYMON%%%%EXAMPLESDIR%%/symon.conf
+%%SYMUX%%%%EXAMPLESDIR%%/symux.conf
+%%SYMON%%%%DATADIR%%/c_config.sh
+%%SYMUX%%%%DATADIR%%/c_smrrds.sh
 %%DATADIR%%/client/SymuxClient.0
 %%DATADIR%%/client/SymuxClient.pm
 %%DATADIR%%/client/getsymonitem.pl
