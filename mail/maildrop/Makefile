@@ -37,6 +37,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.if defined(WITH_AUTHLIB)
+.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
+.include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
+.endif
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 502010
@@ -71,8 +77,11 @@ CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
 .endif
 
 .if defined(WITH_AUTHLIB)
-BUILD_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
-RUN_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
+.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
+.include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
+.endif
+BUILD_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--enable-authlib
 

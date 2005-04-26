@@ -16,8 +16,8 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
-RUN_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
+BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
 .if defined(WITH_DRAC)
 BROKEN=		DRAC support doesn't work with 4.0.0 right now
@@ -44,12 +44,17 @@ CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 # WITH_SYSLOG_FACILITY:         The syslogfacility to use
 #
 
-OPTIONS=	OPENSSL		"Build with OpenSSL support"		on \
-		FAM		"Build in fam support for IDLE command"	off \
-		DRAC		"Build in DRAC support"			off \
-		TRASHQUOTA	"Include deleted mails in the quota"	off \
-		GDBM		"Use gdbm files instead of bdb"		off \
-		IPV6		"Build with IPv6 support"		on
+OPTIONS=	OPENSSL		"Build with OpenSSL support"			on \
+		FAM		"Build in fam support for IDLE command"		off \
+		DRAC		"Build in DRAC support"				off \
+		TRASHQUOTA	"Include deleted mails in the quota"		off \
+		GDBM		"Use gdbm db instead of system bdb"		off \
+		IPV6		"Build with IPv6 support"			on
+
+
+.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
+.include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
+.endif
 
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
 RCDIR?=		${PREFIX}/etc/rc.d
@@ -58,12 +63,10 @@ LIBEXECDIR?=	${PREFIX}/libexec/${PORTNAME}
 
 PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 		RCDIR=${RCDIR:S,^${PREFIX}/,,} \
-		USERDB=${USERDB:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
-		--with-userdb=${USERDB} \
 		--datadir=${DATADIR} \
 		--libexecdir=${LIBEXECDIR} \
 		--enable-workarounds-for-imap-client-bugs \
@@ -72,6 +75,10 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--with-locking-method=fcntl
 
 .include <bsd.port.pre.mk>
+
+.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
+.include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
+.endif
 
 .if !defined(WITHOUT_SSL)
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
@@ -86,15 +93,13 @@ PLIST_SUB+=	OPENSSLFLAG="@comment "
 CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
 .endif
 
-# Without explicitly mentioning this, if gdbm libraries are present,
-# they are silently picked up and used by courier-imap in place of
-# the standard db (v1) files.
-#
+.if defined(WITH_AUTH_USERDB) 
 .if defined(WITH_GDBM)
+CONFIGURE_ARGS+=--with-db=gdb --with-userdb=${USERDB}
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=--with-db=gdbm
 .else
-CONFIGURE_ARGS+=--with-db=db
+CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
+.endif
 .endif
 
 .if defined(WITHOUT_IPV6)
