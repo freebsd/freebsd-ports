@@ -2505,6 +2505,7 @@ gcc32		ports/lang/gcc32
 gcc33		ports/lang/gcc33
 gcc34		ports/lang/gcc34
 gcc40		ports/lang/gcc40
+gcc41		ports/lang/gcc41
 gccxml		ports/devel/gccxml
 gcdmaster	ports/sysutils/gcdmaster
 gchempaint	ports/science/gchempaint
