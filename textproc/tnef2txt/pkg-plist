@@ -1,3 +1,0 @@
-bin/tnef2txt
-%%PORTDOCS%%share/doc/tnef2txt/README
-%%PORTDOCS%%@dirrm share/doc/tnef2txt

@@ -14,6 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable application/ms-tnef parser
 
 ALL_TARGET=	tnef2txt
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+PLIST_FILES=	bin/tnef2txt
+PORTDOCS=	README
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tnef2txt ${PREFIX}/bin
