@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.1.7
+PORTVERSION=	4.1.8
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://darkambient.net/
@@ -18,7 +18,6 @@ OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
 		OSIRISD "Enable to build the osirisd scan agent" on \
 		CLI "Enable to build the management CLI" off
 
-GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
 USE_RC_SUBR=	yes
