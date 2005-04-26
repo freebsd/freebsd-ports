@@ -48,8 +48,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 FIREFOX=	${PORTNAME}
 FF_VER=		${PORTVERSION}
 
-FIREFOX_ICON=	firefox.png
-FIREFOX_ICON_SRC=${WRKSRC}/other-licenses/branding/firefox/content/alert-exclam.png
+FIREFOX_ICON=	${PREFIX}/lib/${FIREFOX}/chrome/icons/default/default.xpm
 
 PKGCONFIG_FILES=firefox-gtkmozembed firefox-js firefox-xpcom \
 		firefox-nspr firefox-nss firefox-plugin
@@ -187,8 +186,7 @@ pre-install:
 		Makefile ${MAKE_ARGS} install
 	@${MKDIR} ${SCRIPTS_DIR}
 	@${MKDIR} ${MOZ_PIS_DIR}
-	${ECHO_CMD} 'share/gnome/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
-	${ECHO_CMD} 'share/gnome/applications/firefox.desktop' >> ${PLIST}
+	${ECHO_CMD} 'share/applications/firefox.desktop' >> ${PLIST}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g; \
 		s|${FIREFOX}-${FF_VER}|${FIREFOX}|' \
 		${FAKEDIR}/bin/firefox \
@@ -265,8 +263,8 @@ post-install:
 .for i in ${EXTRA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${FIREFOX_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${FIREFOX_ICON}
-	${INSTALL_DATA} ${WRKDIR}/firefox.desktop ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/firefox.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/firefox/default.xpm \
 		${PREFIX}/lib/${FIREFOX}/chrome/icons/default/default.xpm
 	@-update-desktop-database

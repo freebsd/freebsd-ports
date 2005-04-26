@@ -33,7 +33,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude .cvsignore \
 			--exclude makefile.win \
 			--exclude MANIFEST
-USE_GNOME=	gtk20 libidl
+USE_GNOME=	gtk20 libidl desktopfileutils
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -103,8 +103,7 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	JAVASCRIPT_DEBUGGER "Enable DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
 	CAIRO_RENDER "Enable SVG rendering with Cairo" off \
-	SMB "Enable smb:// URI support via gnomevfs" off \
-	MENU_ENTRY "Add Mozilla to the GNOME menu" on
+	SMB "Enable smb:// URI support via gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
@@ -215,10 +214,6 @@ CFLAGS+=		-O2
 CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
-.if !defined(WITHOUT_MENU_ENTRY)
-USE_GNOME+=	gnomehier desktopfileutils
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
@@ -307,9 +302,8 @@ pre-install:
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
-.if !defined(WITHOUT_MENU_ENTRY)
-	${ECHO_CMD} share/gnome/applications/mozilla.desktop >> ${PLIST}
-.endif
+	${ECHO_CMD} share/applications/mozilla.desktop >> ${PLIST}
+	${ECHO_CMD} @unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE} >> ${PLIST}
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
@@ -361,19 +355,15 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
 	cd ${FAKEDIR}/include/mozilla && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
-.if !defined(WITHOUT_MENU_ENTRY)
-	${MKDIR} ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla.desktop \
-		${PREFIX}/share/gnome/applications
-.endif
+		${PREFIX}/share/applications
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-.if !defined(WITHOUT_MENU_ENTRY)
 	@-update-desktop-database
-.endif
 
 .include <bsd.port.post.mk>

@@ -31,7 +31,7 @@ HAS_CONFIGURE=	yes
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/plist
 ALL_TARGET=	default
-USE_GNOME=	gtk20 libidl gnomehier
+USE_GNOME=	gtk20 libidl
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -44,8 +44,7 @@ LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 ESD_LIB=		libesd.so.2
 
 THUNDERBIRD=		${PORTNAME}
-THUNDERBIRD_ICON=	thunderbird.xpm
-THUNDERBIRD_ICON_SRC=	${WRKSRC}/other-licenses/branding/thunderbird/default.xpm
+THUNDERBIRD_ICON=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/default.xpm
 MOZ_PIS_SCRIPTS=	S50cleanhome
 SCRIPTS_DIR=		${FAKEDIR}/${LOCAL_SUBDIR}/lib/${PORTNAME}-${PORTVERSION}
 MOZ_PIS_DIR=		${SCRIPTS_DIR}/init.d
@@ -191,8 +190,8 @@ pre-install:
 		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
 	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
 		${GREP} / >> ${PLIST}
-	${ECHO_CMD} 'share/gnome/pixmaps/${THUNDERBIRD_ICON}' >> ${PLIST}
-	${ECHO_CMD} 'share/gnome/applications/thunderbird.desktop' >> ${PLIST}
+	${ECHO_CMD} 'share/applications/thunderbird.desktop' >> ${PLIST}
+	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE} >> ${PLIST}
 
 do-install:
 # This is the actual installation.  First, the contents of FAKEDIR are
@@ -213,8 +212,8 @@ post-install:
 		${LOCAL_PREFIX}/bin/thunderbird-config
 	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} \
 		${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g'
-	${INSTALL_DATA} ${THUNDERBIRD_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${THUNDERBIRD_ICON}
-	${INSTALL_DATA} ${WRKDIR}/thunderbird.desktop ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/thunderbird.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/default.xpm \
 		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/default.xpm
 
