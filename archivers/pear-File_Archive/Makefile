@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	File_Archive
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	antonio@php.net
-COMMENT=	PEAR class to easily manipulate tar, gz and zip files
+COMMENT=	PEAR class to easily manipulate tar, gz, bz2 and zip files
 
 BUILD_DEPENDS=	${PEARDIR}/MIME/Type.php:${PORTSDIR}/mail/pear-MIME_Type
 RUN_DEPENDS=	${BUILD_DEPENDS}
