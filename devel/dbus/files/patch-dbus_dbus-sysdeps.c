@@ -1,5 +1,5 @@
---- dbus-sysdeps.c.orig	Sat Mar  5 13:38:54 2005
-+++ dbus-sysdeps.c	Tue Apr 26 01:59:05 2005
+--- dbus/dbus-sysdeps.c.orig	Sat Mar  5 13:38:54 2005
++++ dbus/dbus-sysdeps.c	Tue Apr 26 01:59:05 2005
 @@ -742,12 +742,40 @@ write_credentials_byte (int             
  {
    int bytes_written;
