@@ -90,6 +90,7 @@
     SUBDIR += sircd
     SUBDIR += slirc
     SUBDIR += srvx
+    SUBDIR += thales
     SUBDIR += tirc
     SUBDIR += tircproxy
     SUBDIR += tkirc

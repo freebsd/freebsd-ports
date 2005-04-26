@@ -1,0 +1,15 @@
+Thales is an IRC to MySQL Gateway.  It connects to your IRC network as a
+service, and converts messages it receives to SQL queries to update the
+database.  It collects data about users, channels and servers.  It does
+not build stats itself, but gives you the database, it's your role to
+write third-party applications or scripts, for example in PHP, to extract
+data from it.  Some example applications are provided.
+
+Supported DBMS and IRCDs:
+
+* Currently runs with MySQL
+* Currently supports Unreal (3.1 or later)
+* Support for Bahamut (1.4.27 or later), Hybrid 7 and Ultimate (2.8 or
+  later, 3.0.0 or later) is still included, but is not maintained
+
+WWW: http://www.gnu.org/software/thales/
