@@ -5314,7 +5314,6 @@ libzvbi		ports/devel/libzvbi
 libzvt		ports/x11-toolkits/libzvt
 licq		ports/net/licq
 licq-console	ports/net/licq-console
-licq-jons-gtk-gui	ports/net/licq-jons-gtk-gui
 licq-osd	ports/net/licq-osd
 licq-qt-gui	ports/net/licq-qt-gui
 liedentd	ports/security/liedentd
@@ -10574,7 +10573,6 @@ sendip		ports/net-mgmt/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-sasl	ports/mail/sendmail-sasl
 sendmail811	ports/mail/sendmail811
-sendmail812	ports/mail/sendmail812
 senken		ports/games/senken
 senso		ports/games/senso
 sentinel	ports/mail/sentinel
