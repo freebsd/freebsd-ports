@@ -26,6 +26,7 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 
+DVDSTYLER_ICON=	${DATADIR}/rc/dvdstyler.png
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=15
@@ -61,6 +62,9 @@ pre-everything::
 .endif
 
 post-patch:
+	@${SED} -e 's|%%COMMENT%%|${COMMENT}|; \
+		s|%%DVDSTYLER_ICON%%|${DVDSTYLER_ICON}|' \
+		< ${FILESDIR}/dvdstyler.desktop.in > ${WRKDIR}/dvdstyler.desktop
 	@${REINPLACE_CMD} -e 's|$$prefix/dvdstyler|${DATADIR}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@datadir@/docs/@PACKAGE@|${DOCSDIR}|' \
@@ -71,5 +75,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||' \
 		${WRKSRC}/configure
 .endif
+
+post-install:
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/dvdstyler.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.post.mk>
