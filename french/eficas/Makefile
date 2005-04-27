@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eficas
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-sansdoc-${PORTVERSION}-1
@@ -43,7 +43,8 @@ EF_LANG=	ang
 ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py
 
 post-patch:
-	@${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig
+	@${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig	\
+		${WRKSRC}/Editeur/bureau.py.orig
 
 pre-configure:
 .for FILE in ${ENV2PYTHON}
