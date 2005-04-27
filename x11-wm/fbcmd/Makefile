@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	fbcmd
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://darkshed.dyndns.org/~mathias/files/c_cpp/fbcmd/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://darkshed.feuersenger.net/files/c_cpp/fbcmd/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A commandline utility for controlling fluxbox
@@ -22,6 +20,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	first
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
+MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/fbcmd
 
