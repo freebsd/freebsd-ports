@@ -1186,8 +1186,8 @@ cosmo		ports/games/cosmo
 cost		ports/textproc/cost
 cotty		ports/sysutils/cotty
 courier		ports/mail/courier
-courier-authlib	ports/securty/courier-authlib
-courier-authlib-base	ports/securty/courier-authlib-base
+courier-authlib	ports/security/courier-authlib
+courier-authlib-base	ports/security/courier-authlib-base
 courier-authlib-ldap	ports/net/courier-authlib-ldap
 courier-authlib-mysql	ports/databases/courier-authlib-mysql
 courier-authlib-pgsql	ports/databases/courier-authlib-pgsql
