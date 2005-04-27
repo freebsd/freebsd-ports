@@ -168,3 +168,4 @@ share/mysql-gui/common/thread_stop.png
 @dirrm share/mysql-gui/common
 @dirrm share/mysql-gui/administrator
 @dirrm share/mysql-gui
+@unexec rmdir %D/share/applications 2>/dev/null || true
