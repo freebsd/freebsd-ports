@@ -223,6 +223,16 @@ share/gnome/gok/es/numberpad.kbd
 share/gnome/gok/es/quit.kbd
 share/gnome/gok/es/text-operations.kbd
 share/gnome/gok/es/valuator.kbd
+share/gnome/gok/eu/gok-controls.kbd
+share/gnome/gok/eu/hide.kbd
+share/gnome/gok/eu/launcher.kbd
+share/gnome/gok/eu/main.kbd
+share/gnome/gok/eu/mouse.kbd
+share/gnome/gok/eu/move-resize.kbd
+share/gnome/gok/eu/numberpad.kbd
+share/gnome/gok/eu/quit.kbd
+share/gnome/gok/eu/text-operations.kbd
+share/gnome/gok/eu/valuator.kbd
 share/gnome/gok/fi/gok-controls.kbd
 share/gnome/gok/fi/hide.kbd
 share/gnome/gok/fi/launcher.kbd
@@ -492,6 +502,16 @@ share/gnome/gok/ro/numberpad.kbd
 share/gnome/gok/ro/quit.kbd
 share/gnome/gok/ro/text-operations.kbd
 share/gnome/gok/ro/valuator.kbd
+share/gnome/gok/rw/gok-controls.kbd
+share/gnome/gok/rw/hide.kbd
+share/gnome/gok/rw/launcher.kbd
+share/gnome/gok/rw/main.kbd
+share/gnome/gok/rw/mouse.kbd
+share/gnome/gok/rw/move-resize.kbd
+share/gnome/gok/rw/numberpad.kbd
+share/gnome/gok/rw/quit.kbd
+share/gnome/gok/rw/text-operations.kbd
+share/gnome/gok/rw/valuator.kbd
 share/gnome/gok/singlekey-automatic-scanning.xam
 share/gnome/gok/singlekey-inverse-scanning.xam
 share/gnome/gok/sl/gok-controls.kbd
@@ -622,6 +642,7 @@ share/locale/el/LC_MESSAGES/gok.mo
 share/locale/en_CA/LC_MESSAGES/gok.mo
 share/locale/en_GB/LC_MESSAGES/gok.mo
 share/locale/es/LC_MESSAGES/gok.mo
+share/locale/eu/LC_MESSAGES/gok.mo
 share/locale/fi/LC_MESSAGES/gok.mo
 share/locale/fr/LC_MESSAGES/gok.mo
 share/locale/ga/LC_MESSAGES/gok.mo
@@ -647,6 +668,7 @@ share/locale/pl/LC_MESSAGES/gok.mo
 share/locale/pt/LC_MESSAGES/gok.mo
 share/locale/pt_BR/LC_MESSAGES/gok.mo
 share/locale/ro/LC_MESSAGES/gok.mo
+share/locale/rw/LC_MESSAGES/gok.mo
 share/locale/sl/LC_MESSAGES/gok.mo
 share/locale/sq/LC_MESSAGES/gok.mo
 share/locale/sr/LC_MESSAGES/gok.mo
@@ -657,6 +679,8 @@ share/locale/uk/LC_MESSAGES/gok.mo
 share/locale/vi/LC_MESSAGES/gok.mo
 share/locale/zh_CN/LC_MESSAGES/gok.mo
 share/locale/zh_TW/LC_MESSAGES/gok.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/gnome/omf/gok
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
@@ -670,6 +694,7 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/sr
 @dirrm share/gnome/gok/sq
 @dirrm share/gnome/gok/sl
+@dirrm share/gnome/gok/rw
 @dirrm share/gnome/gok/ro
 @dirrm share/gnome/gok/pt_BR
 @dirrm share/gnome/gok/pt
@@ -696,6 +721,7 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/ga
 @dirrm share/gnome/gok/fr
 @dirrm share/gnome/gok/fi
+@dirrm share/gnome/gok/eu
 @dirrm share/gnome/gok/es
 @dirrm share/gnome/gok/en_GB
 @dirrm share/gnome/gok/en_CA
