@@ -6,7 +6,9 @@ bin/gnome-splashscreen-manager
 %%RUBY_SITELIBDIR%%/gnome-splashscreen-manager/config.rb
 %%RUBY_SITELIBDIR%%/gnome-splashscreen-manager/splash_screens.rb
 %%RUBY_SITELIBDIR%%/gnome-splashscreen-manager/ui/main_window.rb
+share/applications/gnome-splashscreen-manager.desktop
 @dirrm %%RUBY_SITELIBDIR%%/gnome-splashscreen-manager/ui
 @dirrm %%RUBY_SITELIBDIR%%/gnome-splashscreen-manager
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
+@unexec rmdir %D/share/applications 2>/dev/null || true

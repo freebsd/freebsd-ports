@@ -25,8 +25,13 @@ USE_RUBY=	yes
 USE_REINPLACE=	yes
 USE_RUBY_SETUP=	yes
 GSPLASH=	${X11BASE}/share/gnome/pixmaps/splash
+SPLASH_ICON=	${DATADIR}/glade/gnome-graphics.png
 
 post-patch:
+	@${SED} -e 's|%%COMMENT%%|${COMMENT}|; \
+		s|%%SPLASH_ICON%%|${SPLASH_ICON}|' \
+		< ${FILESDIR}/gnome-splashscreen-manager.desktop.in \
+		> ${WRKDIR}/gnome-splashscreen-manager.desktop
 	cd ${WRKSRC}/lib/gnome-splashscreen-manager/ && \
 	for file in `${FIND} ${GSPLASH} -type f` ; do \
 		${SED} -e 's|%%SPLASHSCREENS%%|\\n<splash_screen>\\n\\t<name>%%F%%</name>\\n\\t<filename>%%F%%</filename>\\n\\t<description>...</description>\\n\\t<author>?</author>\\n\\t<license>unknown</license>\\n</splash_screen>\\n%%SPLASHSCREENS%%|' \
@@ -38,5 +43,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/lib/gnome-splashscreen-manager/ui/main_window.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
+post-install:
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/gnome-splashscreen-manager.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>
