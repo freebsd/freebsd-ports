@@ -5,10 +5,23 @@
 # REQIORE: DAEMON
 # KEYWORD: FreeBSD shutdown
 
+# XXX: This should really be two seperate scripts with rcorder
+# dependencies, but we can't do that at the moment and gmetad doesn't
+# work without a running gmond.
+
 gmond_enable="NO"
 gmond_conf="%%PREFIX%%/etc/gmond.conf"
+
 gmetad_enable="NO"
 gmetad_conf="%%PREFIX%%/etc/gmetad.conf"
+gmetasnap_enable="NO"
+gmetasnap_rrddir="/var/db/ganglia/rrds"
+gmetasnap_snapdir="/var/db/ganglia/snaps"
+gmetasnap_snapname="snap"
+gmetasnap_flags=""
+gmetasnap_command="%%PREFIX%%/sbin/gmetasnap"
+
+### gmond ###
 
 . %%RC_SUBR%%
 
@@ -24,6 +37,8 @@ required_files=${gmond_conf}
 
 run_rc_command $*
 
+### gmetad ###
+
 # Don't continue if we didn't run gmond
 if ! checkyesno ${rcvar}; then
 	return 0
@@ -32,6 +47,36 @@ fi
 name=gmetad
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/${name}"
+start_precmd="gmetad_prestart"
+stop_postcmd="gmetad_poststop"
+
+gmetad_prestart()
+{
+	if [ ! -d ${gmetasnap_rrddir} ]; then
+		mkdir -p ${gmetasnap_rrddir}
+	fi
+	chown ganglia:ganglia ${gmetasnap_rrddir}
+	if checkyesno gmetasnap_enable; then
+		if [ ! -d ${gmetasnap_snapdir} ]; then
+			mkdir -p ${gmetasnap_snapdir}
+			chown ganglia:ganglia ${gmetasnap_snapdir}
+		fi
+		if [ `ls ${gmetasnap_rrddir} | egrep -v ^.snap | wc -l` -eq 0 ]; then
+			${gmetasnap_command} -r ${gmetasnap_rrddir} \
+			    -s ${gmetasnap_snapdir} ${gmetasnap_flags} \
+			    restore ${gmetasnap_snapname}
+		fi
+	fi
+}
+
+gmetad_poststop()
+{
+	if checkyesno gmetasnap_enable; then
+		${gmetasnap_command} -r ${gmetasnap_rrddir} \
+		    -s ${gmetasnap_snapdir} ${gmetasnap_flags} \
+		    save ${gmetasnap_snapname}
+	fi
+}
 
 load_rc_config $name
 command_args="-c ${gmetad_conf}"

@@ -13,6 +13,7 @@ etc/gmond.conf.sample
 %%LIBGANGLIA%%lib/libganglia.la
 %%LIBGANGLIA%%lib/libganglia.a
 %%GMETAD%%sbin/gmetad
+%%GMETAD%%sbin/gmetasnap
 sbin/gmond
 @unexec rmdir %D/var/db/ganglia/rrds 2>/dev/null || true
 @unexec rmdir %D/var/db/ganglia 2>/dev/null || true
