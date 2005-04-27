@@ -1,17 +1,5 @@
 --- Makefile.orig	Wed Dec 20 00:26:47 2000
 +++ Makefile	Sun Jul  6 20:19:19 2003
-@@ -5,10 +5,8 @@
- #
- #
- 
--CFLAGS	= -O4 -m486 -Wall #-funsigned-char -Wshadow -Wmissing-prototypes -Wmissing-declarations -Winline
- PROGS	= htdump
--LFLAGS	= -s #-static
--CC	= cc
-+LFLAGS	= -s ${LDFLAGS}
- 
- # Nothing should have to change beneath this line
- 
 @@ -26,15 +24,15 @@
  
  ssl:		$(OBJS) socket-ssl.o
