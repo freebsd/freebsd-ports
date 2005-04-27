@@ -7,6 +7,7 @@
 
 PORTNAME=	phpmyfaq
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -30,21 +31,15 @@ WWWGRP?=	www
 
 PHPMYFAQDIR?=	${WWWDOCROOT}/${PHPMYFAQURL}
 PLIST=		${WRKDIR}/pkg-plist
-EXCEPTFILES=	${PREFIX}/${PHPMYFAQDIR}/install/bbcode2xhtml.php \
-		${PREFIX}/${PHPMYFAQDIR}/install/index.html \
-		${PREFIX}/${PHPMYFAQDIR}/install/installer.php \
-		${PREFIX}/${PHPMYFAQDIR}/install/update.php
 
 .include <bsd.port.pre.mk>
 
 pre-install:
-	cd ${WRKSRC} && ${MV} inc/data.php.original inc/data.php \
-		&&  ${MV} inc/config.php.original inc/config.php \
-		&& ${FIND} -s . -type f | \
+	cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${SED} -e 's|^./||;s|^|${PHPMYFAQDIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${PHPMYFAQDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PHPMYFAQDIR}/attachment/ >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${PHPMYFAQDIR}/attachments/ >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${PHPMYFAQDIR}/data/ >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${PHPMYFAQDIR}/pdf/ >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${PHPMYFAQDIR} >> ${PLIST}
@@ -52,23 +47,22 @@ pre-install:
 do-install:
 	# Data files
 	-${MKDIR} ${PREFIX}/${PHPMYFAQDIR}
-	@${CHOWN} www:www ${PREFIX}/${PHPMYFAQDIR}
 	@${CHMOD} 755 ${PREFIX}/${PHPMYFAQDIR}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PHPMYFAQDIR}
-	@${MKDIR} ${PREFIX}/${PHPMYFAQDIR}/attachment/
+	@${MKDIR} ${PREFIX}/${PHPMYFAQDIR}/attachments/
 	@${MKDIR} ${PREFIX}/${PHPMYFAQDIR}/data/
 	@${MKDIR} ${PREFIX}/${PHPMYFAQDIR}/pdf/
-	#set the correct permissions
+	# set the correct permissions
 	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQDIR}/inc/
-	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQDIR}/attachment/
+	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQDIR}/attachments/
 	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQDIR}/data/
 	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQDIR}/images/
 	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQDIR}/pdf/
 	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQDIR}/xml/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPMYFAQDIR}
 
 post-install:
 	@${SED} \
-	 -e 's|%%DELETEFILES%%|${EXCEPTFILES}|' \
 	 -e 's|%%PHPMYFAQURL%%|${PHPMYFAQURL}|' \
 	 -e 's|%%PHPMYFAQDIR%%|${PREFIX}/${PHPMYFAQDIR}|' ${PKGMESSAGE}
 
