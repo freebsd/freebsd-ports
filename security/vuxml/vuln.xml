@@ -433,6 +433,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-04-11</discovery>
       <entry>2005-04-16</entry>
+      <modified>2005-04-27</modified>
     </dates>
   </vuln>
 
@@ -6596,7 +6597,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-11-24</discovery>
       <entry>2004-11-25</entry>
-      <modified>2004-12-04</modified>
+      <modified>2005-04-27</modified>
     </dates>
   </vuln>
 
