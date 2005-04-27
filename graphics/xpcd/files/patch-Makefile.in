@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jul 21 14:22:47 2003
++++ Makefile.in	Wed Apr 27 17:34:12 2005
+@@ -11,7 +11,7 @@
+ 
+ ##########################################################################
+ 
+-SUBDIRS=libpcd xpcd test
++SUBDIRS=xpcd test
+ 
+ all dep depend clean install:
+ 	set -e; for dir in $(SUBDIRS); do (cd $$dir; make $@); done

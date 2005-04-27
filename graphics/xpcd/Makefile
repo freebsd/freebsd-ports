@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xpcd
-PORTVERSION=	2.08
-PORTREVISION=	2
+PORTVERSION=	2.09
 CATEGORIES+=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/xpcd/
 
@@ -15,13 +14,15 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	PhotoCD tool collection
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		pcd.2:${PORTSDIR}/graphics/libpcd
 
 # USE_IMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
+GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 USE_X_PREFIX=	yes

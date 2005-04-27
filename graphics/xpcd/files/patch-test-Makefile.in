@@ -1,0 +1,24 @@
+--- test/Makefile.in.orig	Mon Jul 21 15:02:26 2003
++++ test/Makefile.in	Wed Apr 27 17:43:23 2005
+@@ -18,7 +18,7 @@
+ 
+ pcdview: view.o dither.o svga.o
+ 	rm -f $@
+-	$(CC) $(CFLAGS) -o $@ view.o dither.o svga.o $(LDLIBS) @LIBVGA@
++	$(CC) $(LDFLAGS) -o $@ view.o dither.o svga.o $(LDLIBS) @LIBVGA@
+ 
+ suid:
+ 	su -c "chown root.root pcdview;chmod 4711 pcdview"
+@@ -32,10 +32,10 @@
+ 		$(INSTALL_PROGRAM) $(SUID_ROOT) pcdview $(bindir) || true
+ 
+ pcdtoppm: ppm.o
+-	$(CC) $(CFLAGS) -o $@ ppm.o $(LDLIBS) @LIBJPEG@
++	$(CC) $(LDFLAGS) -o $@ ppm.o $(LDLIBS) @LIBJPEG@
+ 
+ plug-0.54: plug-0.54.o
+-	$(CC) $(CFLAGS) -o $@ plug.o $(LDLIBS) @LIBGIMP54@
++	$(CC) $(LDFLAGS) -o $@ plug.o $(LDLIBS) @LIBGIMP54@
+ 
+ 
+ depend dep:
