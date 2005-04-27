@@ -19,7 +19,8 @@ COMMENT=	KDE Rich Site Summary viewer
 USE_KDEBASE_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBQT="-lqt-mt" KDB2HTML=${TRUE}
+CONFIGURE_ENV=	LIBQT="-lqt-mt ${PTHREAD_LIBS}" KDB2HTML=${TRUE}
+MAKE_ENV=	LIBQT="-lqt-mt ${PTHREAD_LIBS}" KDB2HTML=${TRUE}
 USE_REINPLACE=	yes
 
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
@@ -27,6 +28,7 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|$$(LIB_KFILE)|-lkio|' ${WRKSRC}/krss/Makefile.in
-	${REINPLACE_CMD} -e 's|-pedantic||' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-pedantic||;s|-Wmissing-prototypes||' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
