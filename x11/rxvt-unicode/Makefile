@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	5.4
+PORTVERSION=	5.5
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -116,7 +116,7 @@ BROKEN=		"libsupc++.a cannot be used when making a shared object (missing -fPIC)
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		missing wide-character functions in FreeBSD-4.x libc
+BROKEN=		"missing wide-character functions in FreeBSD-4.x libc"
 .endif
 
 .if ${OSVERSION} < 502110
