@@ -58,7 +58,7 @@ $FreeBSD$
 +   }
 +
 +done:
-+   val.uint16 = freq;
++   val.uint32 = freq;
  
     return val;
  }
