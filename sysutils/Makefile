@@ -334,6 +334,7 @@
     SUBDIR += p5-Unix-Syslog
     SUBDIR += p5-User
     SUBDIR += paicc
+    SUBDIR += pcfclock
     SUBDIR += pciutils
     SUBDIR += pdumpfs
     SUBDIR += pdumpfs-clean
