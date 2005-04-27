@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES+=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/xpcd/
 
-MAINTAINER?=	jylitalo@iki.fi
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	PhotoCD tool collection
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
