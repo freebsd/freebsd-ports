@@ -7,7 +7,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.0.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils net parallel
 .if !defined(PORTDEV)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -109,6 +109,7 @@ post-build:
 do-install:
 .if defined (WITH_GMETAD)
 	cd ${WRKSRC}/gmetad && make install
+	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh ${PREFIX}/sbin/gmetasnap
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${GMETAD_CONF} ${PREFIX}/etc/gmetad.conf.sample
 .endif
