@@ -10,9 +10,11 @@ bin/gnome-art
 %%RUBY_SITELIBDIR%%/gnome-art/gnome_art.rb
 %%RUBY_SITELIBDIR%%/gnome-art/ui/main_window.rb
 %%RUBY_SITELIBDIR%%/gnome-art/ui/download_dialog.rb
+share/applications/gnome-art.desktop
 @dirrm %%RUBY_SITELIBDIR%%/gnome-art/ui
 @dirrm %%RUBY_SITELIBDIR%%/gnome-art
 @dirrm %%DATADIR%%/glade/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+@unexec rmdir %D/share/applications 2>/dev/null || true

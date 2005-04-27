@@ -1,0 +1,10 @@
+# $FreeBSD
+[Desktop Entry]
+Encoding=UTF-8
+Name=Theme Downloader
+Comment=%%COMMENT%%
+Icon=%%GNOMEART_ICON%%
+Exec=gnome-art
+Terminal=false
+Type=Application
+Categories=Application;Settings;AdvancedSettings;
