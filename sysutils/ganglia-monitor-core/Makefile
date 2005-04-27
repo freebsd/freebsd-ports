@@ -24,7 +24,7 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
-PKGINSTALL=	${WRKSRC}/pkg-install
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 OPTIONS+=	GMETAD "include gmetad" on \
 		LIBGANGLIA "include libganglia" off
