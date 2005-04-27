@@ -40,12 +40,9 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 NO_FILTER_SHLIBS=	yes
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		needs a lot of -fPIC added
-.endif
 
 .if ${OSVERSION} < 500014
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nx-X11-programs-Xserver-hw-nxagent-Reconnect.c
