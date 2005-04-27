@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.30.9
+PORTVERSION=	2.5.30.14
 CATEGORIES+=	net
 MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/
 PKGNAMESUFFIX=	-devel
@@ -21,7 +21,7 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 #DOWNLOADVERSION=${PORTVERSION:R}
-DOWNLOADVERSION=2.5.30.9
+DOWNLOADVERSION=2.5.30.14
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
@@ -48,13 +48,15 @@ CONFIGURE_ENV+=	\
 .error "Cool, you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing."
 .endif
 # have no 'without-' flag
-CONFIGURE_ARGS+=--disable-gui
+CONFIGURE_ARGS+=--disable-gui \
+		--disable-gd
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
 PKGNAMESUFFIX=	-core-devel
 .else
 PLIST_SUB+=	GUI=""
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk12
 
@@ -84,7 +86,6 @@ post-patch:
 		${WRKDIR}/wrapper.sh
 	@${REINPLACE_CMD} -E \
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${BUILD_WRKSRC}/config/Makefile.in
 
 pre-configure:
