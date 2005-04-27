@@ -18,6 +18,13 @@ COMMENT=	Perl 5 module that allows Term::ReadLine to use GNU readline
 
 PERL_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libreadline.so)
+CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/deve/readline
+.endif
+
 MAN3=		Term::ReadLine::Gnu.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
