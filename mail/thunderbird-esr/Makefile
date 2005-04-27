@@ -191,7 +191,7 @@ pre-install:
 	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
 		${GREP} / >> ${PLIST}
 	${ECHO_CMD} 'share/applications/thunderbird.desktop' >> ${PLIST}
-	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE} >> ${PLIST}
+	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}' >> ${PLIST}
 
 do-install:
 # This is the actual installation.  First, the contents of FAKEDIR are
