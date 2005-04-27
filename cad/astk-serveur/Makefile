@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster-full-src-${ASTER_VER}-5
+DISTNAME=	aster-full-src-${ASTER_VER}-6
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
@@ -108,7 +108,7 @@ SHIADEP=	${SHIA}
 WITH_ED=	nedit
 RUN_DEPENDS+=	${X11BASE}/bin/nedit:${PORTSDIR}/editors/nedit
 . elif exists(${LOCALBASE}/bin/gvim)
-WITH_ED=	gvim${WRKSRC}/bin/as_exec.orig
+WITH_ED=	gvim
 RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 . elif exists(${LOCALBASE}/bin/emacs)
 WITH_ED=	emacs
