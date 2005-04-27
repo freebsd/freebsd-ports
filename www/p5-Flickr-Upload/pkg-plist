@@ -1,0 +1,10 @@
+bin/flickr_upload
+bin/thickr_upload
+%%SITE_PERL%%/Flickr/Upload.pm
+@unexec rmdir %D/%%SITE_PERL%%/Flickr 2>/dev/null || true
+%%SITE_PERL%%/auto/Flickr/Upload/autosplit.ix
+@dirrm %%SITE_PERL%%/auto/Flickr/Upload
+@unexec rmdir %D/%%SITE_PERL%%/auto/Flickr 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr 2>/dev/null || true
