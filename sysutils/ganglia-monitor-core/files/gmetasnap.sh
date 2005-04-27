@@ -16,6 +16,7 @@ snapdir=$def_snapdir
 snapname=$def_snapname
 comp=$def_comp
 delete_old=0
+quiet=0
 
 usage()
 {
@@ -32,6 +33,7 @@ usage:
 options:
 	-D		Delete .old file after creating snapshot.
 	-h		Display this message
+	-q		Avoid output unless there is an error.
 	-r <rrddir>	Set the rrddir [default: ${def_rrddir}]
 	-s <snapdir>	Set the snapdir [default: ${def_snapdir}]
 	-z <comptype>	Set the compression type.  Valid values are
@@ -55,6 +57,13 @@ err()
 warn()
 {
 	echo ${command} $* >&2
+}
+
+status()
+{
+	if [ $quiet -eq 0 ]; then
+		echo $*
+	fi
 }
 
 compsuffix()
@@ -98,15 +107,19 @@ compflag()
 while [ -n "$1" ]; do
 	case "$1" in
 	-D)
-		shift;
+		shift
 		delete_old=1
 		;;
 	-h)
-		shift;
+		shift
 		usage 0
 		;;
+	-q)
+		shift
+		quiet=1
+		;;
 	-r)
-		shift;
+		shift
 		if [ -z "$1" ]; then
 			usage 1 "-r requires an argument"
 		fi
@@ -114,7 +127,7 @@ while [ -n "$1" ]; do
 		shift
 		;;
 	-s)
-		shift;
+		shift
 		if [ -z "$1" ]; then
 			usage 1 "-s requires an argument"
 		fi
@@ -122,7 +135,7 @@ while [ -n "$1" ]; do
 		shift
 		;;
 	-z)
-		shift;
+		shift
 		if [ -z "$1" ]; then
 			usage 1 "-z requires an argument"
 		fi
@@ -152,7 +165,7 @@ save)
 	if [ ! -d ${snapdir} ]; then
 		err 2 "snapdir ${snapdir} does not exist"
 	fi
-	echo "saving ${rrddir} to ${basefile}"
+	status "saving ${rrddir} to ${basefile}"
 	cd ${rrddir}
 	if ! ${tarcmd}cf ${basefile}.new .; then
 		err 2 "Failed to create ${basefile}.new"
@@ -182,7 +195,7 @@ restore)
 	if [ -z "$sourcefile" ]; then
 		err 1 "no snapshot found in ${snapdir}."
 	fi
-	echo "restoring ${rrddir} from ${sourcefile}"
+	status "restoring ${rrddir} from ${sourcefile}"
 	if [ ! -d "${rrddir}" ]; then
 		err 1 "${rrddir} does not exist"
 	fi
