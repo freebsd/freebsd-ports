@@ -1,47 +1,87 @@
-share/proguard/lib/proguard.jar
-share/proguard/docs/manual/retrace/introduction.html
-share/proguard/docs/manual/retrace/usage.html
-share/proguard/docs/manual/retrace/examples.html
-share/proguard/docs/manual/usage.html
-share/proguard/docs/manual/sections.html
-share/proguard/docs/manual/introduction.html
-share/proguard/docs/manual/limitations.html
-share/proguard/docs/manual/examples.html
-share/proguard/docs/manual/troubleshooting.html
-share/proguard/docs/manual/refcard.html
-share/proguard/docs/manual/index.html
-share/proguard/docs/alternatives.html
-share/proguard/docs/title.html
-share/proguard/docs/sections.html
-share/proguard/docs/main.html
-share/proguard/docs/FAQ.html
-share/proguard/docs/license.html
-share/proguard/docs/downloads.html
-share/proguard/docs/index.html
-share/proguard/docs/LGPL.html
-share/proguard/docs/drop1.gif
-share/proguard/docs/drop2.gif
-share/proguard/docs/testimonials.html
-share/proguard/docs/drop3.gif
-share/proguard/docs/feedback.html
-share/proguard/docs/GPL.html
-share/proguard/docs/acknowledgements.html
-share/proguard/docs/luciadlogo.png
-share/proguard/docs/quality.html
-share/proguard/docs/checkmark.gif
-share/proguard/docs/title.gif
-share/proguard/docs/results.html
-share/proguard/docs/steel.gif
-share/proguard/docs/sflogo.png
-share/proguard/examples/applets.pro
-share/proguard/examples/applications.pro
-share/proguard/examples/library.pro
-share/proguard/examples/midlets.pro
-share/proguard/examples/proguard.pro
-share/proguard/examples/servlets.pro
-@dirrm share/proguard/lib
-@dirrm share/proguard/docs/manual/retrace
-@dirrm share/proguard/docs/manual
-@dirrm share/proguard/docs
-@dirrm share/proguard/examples
-@dirrm share/proguard
+@comment $FreeBSD$
+bin/proguard
+bin/proguard-gui
+%%DATADIR%%/docs/FAQ.html
+%%DATADIR%%/docs/GPL.html
+%%DATADIR%%/docs/GPL_exception.html
+%%DATADIR%%/docs/acknowledgements.html
+%%DATADIR%%/docs/alternatives.html
+%%DATADIR%%/docs/checkmark.gif
+%%DATADIR%%/docs/downloads.html
+%%DATADIR%%/docs/drop1.gif
+%%DATADIR%%/docs/drop2.gif
+%%DATADIR%%/docs/drop3.gif
+%%DATADIR%%/docs/feedback.html
+%%DATADIR%%/docs/index.html
+%%DATADIR%%/docs/license.html
+%%DATADIR%%/docs/luciadlogo.png
+%%DATADIR%%/docs/main.html
+%%DATADIR%%/docs/manual/ant.html
+%%DATADIR%%/docs/manual/examples.html
+%%DATADIR%%/docs/manual/gui.html
+%%DATADIR%%/docs/manual/index.html
+%%DATADIR%%/docs/manual/introduction.html
+%%DATADIR%%/docs/manual/limitations.html
+%%DATADIR%%/docs/manual/refcard.html
+%%DATADIR%%/docs/manual/retrace/examples.html
+%%DATADIR%%/docs/manual/retrace/index.html
+%%DATADIR%%/docs/manual/retrace/introduction.html
+%%DATADIR%%/docs/manual/retrace/usage.html
+%%DATADIR%%/docs/manual/sections.html
+%%DATADIR%%/docs/manual/style.css
+%%DATADIR%%/docs/manual/troubleshooting.html
+%%DATADIR%%/docs/manual/usage.html
+%%DATADIR%%/docs/manual/wtk.html
+%%DATADIR%%/docs/quality.html
+%%DATADIR%%/docs/results.html
+%%DATADIR%%/docs/screenshot_console.gif
+%%DATADIR%%/docs/screenshot_console_small.gif
+%%DATADIR%%/docs/screenshot_gui1.gif
+%%DATADIR%%/docs/screenshot_gui2.gif
+%%DATADIR%%/docs/screenshot_gui3.gif
+%%DATADIR%%/docs/screenshot_gui4.gif
+%%DATADIR%%/docs/screenshot_gui5.gif
+%%DATADIR%%/docs/screenshot_gui6.gif
+%%DATADIR%%/docs/screenshot_gui7.gif
+%%DATADIR%%/docs/screenshot_gui8.gif
+%%DATADIR%%/docs/screenshots.html
+%%DATADIR%%/docs/screenshots_gui_small.gif
+%%DATADIR%%/docs/sections.html
+%%DATADIR%%/docs/sflogo.png
+%%DATADIR%%/docs/steel.gif
+%%DATADIR%%/docs/style.css
+%%DATADIR%%/docs/testimonials.html
+%%DATADIR%%/docs/title.gif
+%%DATADIR%%/docs/title.html
+%%DATADIR%%/docs/vtitle.gif
+%%DATADIR%%/examples/ant/applets.xml
+%%DATADIR%%/examples/ant/applications1.xml
+%%DATADIR%%/examples/ant/applications2.xml
+%%DATADIR%%/examples/ant/applications3.xml
+%%DATADIR%%/examples/ant/library.xml
+%%DATADIR%%/examples/ant/midlets.xml
+%%DATADIR%%/examples/ant/proguard.xml
+%%DATADIR%%/examples/ant/servlets.xml
+%%DATADIR%%/examples/applets.pro
+%%DATADIR%%/examples/applications.pro
+%%DATADIR%%/examples/dictionaries/compact.txt
+%%DATADIR%%/examples/dictionaries/keywords.txt
+%%DATADIR%%/examples/dictionaries/shakespeare.txt
+%%DATADIR%%/examples/library.pro
+%%DATADIR%%/examples/midlets.pro
+%%DATADIR%%/examples/proguard.pro
+%%DATADIR%%/examples/proguardall.pro
+%%DATADIR%%/examples/proguardgui.pro
+%%DATADIR%%/examples/retrace.pro
+%%DATADIR%%/examples/servlets.pro
+%%DATADIR%%/lib/proguard.jar
+%%DATADIR%%/lib/proguardgui.jar
+%%DATADIR%%/lib/retrace.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/examples/dictionaries
+@dirrm %%DATADIR%%/examples/ant
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/docs/manual/retrace
+@dirrm %%DATADIR%%/docs/manual
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%
