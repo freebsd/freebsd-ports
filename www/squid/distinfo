@@ -44,5 +44,5 @@ MD5 (squid2.5/squid-2.5.STABLE9-cachemgr_objects.patch) = cc3c6c61b46f50ea932719
 SIZE (squid2.5/squid-2.5.STABLE9-cachemgr_objects.patch) = 2625
 MD5 (squid2.5/squid-2.5.STABLE9-extaclauth.patch) = b3c3282e6f1550e698e7a3f3ad87a7bc
 SIZE (squid2.5/squid-2.5.STABLE9-extaclauth.patch) = 1799
-MD5 (squid2.5/squid-2.5.STABLE9-syslog.patch) = c04abf725b5061c0a009364097ccd253
-SIZE (squid2.5/squid-2.5.STABLE9-syslog.patch) = 6859
+MD5 (squid2.5/squid-2.5.STABLE9-syslog.patch) = 80998c4bea14b0eacabc10065acb672e
+SIZE (squid2.5/squid-2.5.STABLE9-syslog.patch) = 7439
