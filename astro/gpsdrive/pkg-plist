@@ -19,47 +19,48 @@ lib/libnautic.a
 lib/libnautic.so
 lib/libnautic.so.2
 share/applications/gpsdrive.desktop
-share/gpsdrive/AUTHORS
-share/gpsdrive/CREDITS
-share/gpsdrive/FAQ.gpsdrive
-share/gpsdrive/FAQ.gpsdrive.fr
-share/gpsdrive/GPS-receivers
-share/gpsdrive/LEEME
-share/gpsdrive/LISEZMOI
-share/gpsdrive/NMEA.txt
-share/gpsdrive/README
-share/gpsdrive/README.FreeBSD
-share/gpsdrive/README.SQL
-share/gpsdrive/README.gpspoint2gspdrive
-share/gpsdrive/README.kismet
-share/gpsdrive/README.nasamaps
-share/gpsdrive/TODO
-share/gpsdrive/create.sql
-share/gpsdrive/friendsicon.png
-share/gpsdrive/gpsdriveanim.gif
-share/gpsdrive/gpsdrivemini.png
-share/gpsdrive/gpsdrivesplash.png
-share/gpsdrive/gpsicon.png
-share/gpsdrive/gpsiconbt.png
-share/gpsdrive/top_GPSWORLD.jpg
-share/gpsdrive/wp2sql
-share/locale/da/LC_MESSAGES/gpsdrive.mo
-share/locale/de/LC_MESSAGES/gpsdrive.mo
-share/locale/de_AT/LC_MESSAGES/gpsdrive.mo
-share/locale/es/LC_MESSAGES/gpsdrive.mo
-share/locale/fr/LC_MESSAGES/gpsdrive.mo
-share/locale/gr/LC_MESSAGES/gpsdrive.mo
-share/locale/hu/LC_MESSAGES/gpsdrive.mo
-share/locale/it/LC_MESSAGES/gpsdrive.mo
-share/locale/ja/LC_MESSAGES/gpsdrive.mo
-share/locale/nl/LC_MESSAGES/gpsdrive.mo
-share/locale/no/LC_MESSAGES/gpsdrive.mo
-share/locale/pt_BR/LC_MESSAGES/gpsdrive.mo
-share/locale/sk/LC_MESSAGES/gpsdrive.mo
-share/locale/sv/LC_MESSAGES/gpsdrive.mo
-share/locale/tr/LC_MESSAGES/gpsdrive.mo
 share/pixmaps/gpsicon.png
-@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/gr 2> /dev/null || true
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/CREDITS
+%%DATADIR%%/FAQ.gpsdrive
+%%DATADIR%%/FAQ.gpsdrive.fr
+%%DATADIR%%/GPS-receivers
+%%DATADIR%%/LEEME
+%%DATADIR%%/LISEZMOI
+%%DATADIR%%/NMEA.txt
+%%DATADIR%%/README
+%%DATADIR%%/README.FreeBSD
+%%DATADIR%%/README.SQL
+%%DATADIR%%/README.gpspoint2gspdrive
+%%DATADIR%%/README.kismet
+%%DATADIR%%/README.nasamaps
+%%DATADIR%%/TODO
+%%DATADIR%%/create.sql
+%%DATADIR%%/friendsicon.png
+%%DATADIR%%/gpsdriveanim.gif
+%%DATADIR%%/gpsdrivemini.png
+%%DATADIR%%/gpsdrivesplash.png
+%%DATADIR%%/gpsicon.png
+%%DATADIR%%/gpsiconbt.png
+%%DATADIR%%/top_GPSWORLD.jpg
+%%DATADIR%%/wp2sql
+%%NLS%%share/locale/da/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/de_AT/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/gr/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/no/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gpsdrive.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gpsdrive.mo
+%%NLS%%@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/gr 2> /dev/null || true
 @unexec rmdir %D/share/applications 2> /dev/null || true
-@dirrm share/gpsdrive
+@unexec rmdir %D/share/pixmaps 2> /dev/null || true
+@dirrm %%DATADIR%%
