@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $2 in
+POST-INSTALL)
+	if [ ! -f %%PREFIX%%/%%WEBFRONTDIR%%/conf.php ]; then
+		cp %%PREFIX%%/%%WEBFRONTDIR%%/conf.php.sample \
+		    %%PREFIX%%/%%WEBFRONTDIR%%/conf.php
+	fi
+	;;
+esac

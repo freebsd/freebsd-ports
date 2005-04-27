@@ -2,6 +2,7 @@
 %%WEBFRONTDIR%%/class.TemplatePower.inc.php
 %%WEBFRONTDIR%%/cluster_legend.html
 %%WEBFRONTDIR%%/cluster_view.php
+%%WEBFRONTDIR%%/conf.php.sample
 %%WEBFRONTDIR%%/footer.php
 %%WEBFRONTDIR%%/functions.php
 %%WEBFRONTDIR%%/ganglia.php
@@ -20,19 +21,33 @@
 %%WEBFRONTDIR%%/private_clusters
 %%WEBFRONTDIR%%/show_node.php
 %%WEBFRONTDIR%%/styles.css
-%%WEBFRONTDIR%%/version.php
-%%WEBFRONTDIR%%/templates/Rocks/images/ganglia.jpg
-%%WEBFRONTDIR%%/templates/Rocks/images/rocks.jpg
-%%WEBFRONTDIR%%/templates/Rocks/images/hardhat.png
 %%WEBFRONTDIR%%/templates/Rocks/cluster_extra.tpl
 %%WEBFRONTDIR%%/templates/Rocks/header.tpl
 %%WEBFRONTDIR%%/templates/Rocks/host_extra.tpl
+%%WEBFRONTDIR%%/templates/Rocks/images/ganglia.jpg
+%%WEBFRONTDIR%%/templates/Rocks/images/hardhat.png
+%%WEBFRONTDIR%%/templates/Rocks/images/rocks.jpg
+%%WEBFRONTDIR%%/templates/default/cluster_extra.tpl
+%%WEBFRONTDIR%%/templates/default/cluster_view.tpl
+%%WEBFRONTDIR%%/templates/default/footer.tpl
+%%WEBFRONTDIR%%/templates/default/grid_tree.tpl
+%%WEBFRONTDIR%%/templates/default/header-nobanner.tpl
+%%WEBFRONTDIR%%/templates/default/header.tpl
+%%WEBFRONTDIR%%/templates/default/host_extra.tpl
+%%WEBFRONTDIR%%/templates/default/host_gmetrics.tpl
+%%WEBFRONTDIR%%/templates/default/host_view.tpl
 %%WEBFRONTDIR%%/templates/default/images/cluster_0-24.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_25-49.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_50-74.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_75-100.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_overloaded.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_private.jpg
+%%WEBFRONTDIR%%/templates/default/images/grid_0-24.jpg
+%%WEBFRONTDIR%%/templates/default/images/grid_25-49.jpg
+%%WEBFRONTDIR%%/templates/default/images/grid_50-74.jpg
+%%WEBFRONTDIR%%/templates/default/images/grid_75-100.jpg
+%%WEBFRONTDIR%%/templates/default/images/grid_overloaded.jpg
+%%WEBFRONTDIR%%/templates/default/images/grid_private.jpg
 %%WEBFRONTDIR%%/templates/default/images/logo.jpg
 %%WEBFRONTDIR%%/templates/default/images/node_0-24.jpg
 %%WEBFRONTDIR%%/templates/default/images/node_25-49.jpg
@@ -40,31 +55,15 @@
 %%WEBFRONTDIR%%/templates/default/images/node_75-100.jpg
 %%WEBFRONTDIR%%/templates/default/images/node_dead.jpg
 %%WEBFRONTDIR%%/templates/default/images/node_overloaded.jpg
-%%WEBFRONTDIR%%/templates/default/images/grid_0-24.jpg
-%%WEBFRONTDIR%%/templates/default/images/grid_25-49.jpg
-%%WEBFRONTDIR%%/templates/default/images/grid_50-74.jpg
-%%WEBFRONTDIR%%/templates/default/images/grid_75-100.jpg
-%%WEBFRONTDIR%%/templates/default/images/grid_overloaded.jpg
-%%WEBFRONTDIR%%/templates/default/images/grid_private.jpg
-%%WEBFRONTDIR%%/templates/default/cluster_extra.tpl
-%%WEBFRONTDIR%%/templates/default/cluster_view.tpl
-%%WEBFRONTDIR%%/templates/default/footer.tpl
-%%WEBFRONTDIR%%/templates/default/header-nobanner.tpl
-%%WEBFRONTDIR%%/templates/default/header.tpl
-%%WEBFRONTDIR%%/templates/default/host_extra.tpl
-%%WEBFRONTDIR%%/templates/default/host_gmetrics.tpl
-%%WEBFRONTDIR%%/templates/default/host_view.tpl
 %%WEBFRONTDIR%%/templates/default/meta_view.tpl
 %%WEBFRONTDIR%%/templates/default/node_extra.tpl
 %%WEBFRONTDIR%%/templates/default/physical_view.tpl
 %%WEBFRONTDIR%%/templates/default/show_node.tpl
-%%WEBFRONTDIR%%/templates/default/grid_tree.tpl
-@unexec if cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample; then rm -f %D/%%WEBFRONTDIR%%/conf.php; fi
-%%WEBFRONTDIR%%/conf.php.sample
-@exec [ -f %B/conf.php ] || cp %B/%f %B/conf.php
-@dirrm %%WEBFRONTDIR%%/templates/Rocks/images
-@dirrm %%WEBFRONTDIR%%/templates/Rocks
+%%WEBFRONTDIR%%/version.php
 @dirrm %%WEBFRONTDIR%%/templates/default/images
 @dirrm %%WEBFRONTDIR%%/templates/default
+@dirrm %%WEBFRONTDIR%%/templates/Rocks/images
+@dirrm %%WEBFRONTDIR%%/templates/Rocks
 @dirrm %%WEBFRONTDIR%%/templates
+@unexec if cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample ; then rm -f %D/%%WEBFRONTDIR%%/conf.php; fi
 @unexec rmdir %D/%%WEBFRONTDIR%% 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")
