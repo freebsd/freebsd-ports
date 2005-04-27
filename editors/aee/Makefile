@@ -13,18 +13,17 @@ MASTER_SITES=	http://mahon.cwx.net/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy editor with both curses and X11 interfaces
 
-.if !defined(BUILD_XAE)
+OPTIONS=	XAE "Build X11 version 'xae'" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_XAE)
 ALL_TARGET=	main
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "If you would like to also install the X11 version of aee (xae)"
-	@${ECHO} "use 'make install BUILD_XAE=yes'. However, the X11 interface looks"
-	@${ECHO} "almost exactly like the text-based curses version."
-	@${ECHO}
+PLIST_SUB=	XAE="@comment "
 .else
 USE_XLIB=	yes
 ALL_TARGET=	both
-PLIST=		${PKGDIR}/pkg-plist.xae
+PLIST_SUB=	XAE=""
 .endif
 
 MAN1=		aee.1
@@ -34,9 +33,9 @@ do-install:
 	${LN} ${PREFIX}/bin/aee ${PREFIX}/bin/rae
 	${INSTALL_MAN} ${WRKSRC}/aee.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/help.ae ${PREFIX}/lib
-.if defined(BUILD_XAE)
+.if defined(WITH_XAE)
 	${INSTALL_PROGRAM} ${WRKSRC}/xae ${PREFIX}/bin
 	${LN} ${PREFIX}/bin/xae ${PREFIX}/bin/rxae
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
