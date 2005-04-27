@@ -7,6 +7,7 @@
 
 PORTNAME=	leafnode
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
@@ -43,7 +44,7 @@ SUB_FILES=	pkg-message
 
 MAN1=		leafnode-version.1 newsq.1
 MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
-MANLANG=	de.ISO8859-1
+MANLANG=	"" de.ISO8859-1
 MAN1DIR_DE=	${MAN1PREFIX}/man/de.ISO8859-1/man1
 MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
 
