@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -21,7 +21,7 @@ COMMENT=	Java Development Kit 1.3
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
-.if !defined(WITHOUT_PLUGIN)
+.if defined(WITH_PLUGIN)
 FORBIDDEN=	Vulnerabilities in the browser plugin
 LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
 		gtk12.2:$(PORTSDIR)/x11-toolkits/gtk12 \
@@ -60,13 +60,13 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
 		JAVA_COMPILER=""
-.if !defined(WITHOUT_PLUGIN)
+.if defined(WITH_PLUGIN)
 MAKE_ENV +=	LIBG_HDRS="${LOCALBASE}/include/glib12" \
 		GTK_HDRS="${X11BASE}/include/gtk12" \
 		LIBIDL_HDRS= \
 		INTL_DIR="${LOCALBASE}"
 .endif
-.if !defined(WITHOUT_PLUGIN)
+.if defined(WITH_PLUGIN)
 ALL_TARGET=	all plugin images
 .else
 ALL_TARGET=	all images
@@ -90,10 +90,10 @@ MAKE_ARGS+=	HPIS="green native"
 PLIST_SUB+=	NATIVE:="@comment "
 .endif
 
-.if defined(WITHOUT_PLUGIN)
-PLIST_SUB+=	PLUGIN:="@comment "
-.else
+.if defined(WITH_PLUGIN)
 PLIST_SUB+=	PLUGIN:=""
+.else
+PLIST_SUB+=	PLUGIN:="@comment "
 .endif
 
 .if defined(WITH_HOTSPOT)
@@ -297,7 +297,7 @@ post-install:
 	${RM} -rf ${PREFIX}/jdk${JDK_VERSION}/jre/bin/i386/native_threads
 .endif
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
-.if !defined(WITHOUT_PLUGIN)
+.if defined(WITH_PLUGIN)
 	@${ECHO_MSG}
 	@${ECHO_MSG} To use the Java plugin with Mozilla you must create a
 	@${ECHO_MSG} symbolic link from
