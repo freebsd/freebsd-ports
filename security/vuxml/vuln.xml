@@ -385,7 +385,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>jdk</name>
-	<range><le>1.4.2p8</le></range>
+	<range><le>1.3.1p9_4</le></range>
+	<range><ge>1.4.*</ge><le>1.4.2p8</le></range>
 	<range><ge>1.5.*</ge><le>1.5.0p1_1</le></range>
       </package>
       <package>
@@ -6553,7 +6554,7 @@ http_access deny Gopher</pre>
       <package>
 	<name>jdk</name>
 	<range><ge>1.4.0</ge><le>1.4.2p6_6</le></range>
-	<range><ge>1.3.0</ge><le>1.3.1p9_4</le></range>
+	<range><ge>1.3.0</ge><le>1.3.1p9_5</le></range>
       </package>
       <package>
 	<name>linux-jdk</name>
