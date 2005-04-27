@@ -493,7 +493,7 @@ MASTER_SITE_GCC+=	\
 	ftp://ring.crl.go.jp/pub/GNU/gcc/%SUBDIR%/ \
 	ftp://core.ring.gr.jp/pub/GNU/gcc/%SUBDIR%/ \
 	ftp://ftp.ring.gr.jp/pub/GNU/gcc/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/mirror/languages/gcc%SUBDIR%/ \
+	ftp://ftp.nluug.nl/mirror/languages/gcc/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/gnu/gcc/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/gnu/gcc/%SUBDIR%/ \
 	ftp://ftp.nctu.edu.tw/computer-languages/C/gcc/%SUBDIR%/ \
