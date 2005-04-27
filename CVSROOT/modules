@@ -8480,6 +8480,7 @@ pcb		ports/cad/pcb
 pccts		ports/devel/pccts
 pcemu		ports/emulators/pcemu
 pcf2bdf		ports/x11-fonts/pcf2bdf
+pcfclock	ports/sysutils/pcfclock
 pcgen		ports/games/pcgen
 pchar		ports/net/pchar
 pciutils	ports/sysutils/pciutils
