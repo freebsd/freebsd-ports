@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Authen/SASL/CRAM_MD5.pm
 %%SITE_PERL%%/Authen/SASL/EXTERNAL.pm
 %%SITE_PERL%%/Authen/SASL/Perl.pm
+%%SITE_PERL%%/Authen/SASL/Perl.pod
 %%SITE_PERL%%/Authen/SASL/Perl/ANONYMOUS.pm
 %%SITE_PERL%%/Authen/SASL/Perl/CRAM_MD5.pm
 %%SITE_PERL%%/Authen/SASL/Perl/DIGEST_MD5.pm
