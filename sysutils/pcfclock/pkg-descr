@@ -1,0 +1,22 @@
+This port provides the pcfdate utility which reads the time of day from a
+pcfclock device, writes it to stdout or, optionally, sets the system time. 
+
+You can benefit from pcfdate in case that
+
+ - your geographic location is in Central Europe within a radius of roughly
+   1500 km from the DCF77 transmitter near Frankfurt/Main, Germany,
+
+ - you have the Conrad parallel port radio clock attached to your machine,
+
+ - you have the pcfclock device driver enabled in your kernel configuration.
+
+The primary use of pcfdate is to initialize the system time on boot. In its
+normal operation the Conrad clock synchronizes with the transmitter once a
+day, and the time of day displayed refers to its internal quartz clock which,
+however, suffers from a considerable drift. The resulting accumulated error
+can reach about 0.6 sec after 24 hours. Combined with the clockspeed port
+this can still be considered a useful initialization: sntpclock can later be
+used to gradually adjust the system time with the global network time very
+effectively within a few minutes.
+
+WWW: http://www-stud.ims.uni-stuttgart.de/~voegelas/pcf.html
