@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cd286cc5-b762-11d9-bfb7-000c6ec775d9">
+    <topic>ImageMagick -- ReadPNMImage() heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>ImageMagick</name>
+	<range><lt>6.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Damian Put reports about ImageMagick:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111445767107869">
+	  <p>Remote exploitation of a heap overflow vulnerability
+	    could allow execution of arbitrary code or course denial
+	    of service.</p>
+	  <p>A heap overflow exists in ReadPNMImage() function, that
+	    is used to decode a PNM image files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13351</bid>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111445767107869</url>
+    </references>
+    <dates>
+      <discovery>2005-04-25</discovery>
+      <entry>2005-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91c606fc-b5d0-11d9-a788-0001020eed82">
     <topic>mplayer &amp; libxine -- MMS and Real RTSP buffer overflow
       vulnerabilities</topic>
