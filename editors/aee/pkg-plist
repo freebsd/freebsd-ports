@@ -1,3 +1,5 @@
 bin/aee
 bin/rae
 lib/help.ae
+%%XAE%%bin/xae
+%%XAE%%bin/rxae
