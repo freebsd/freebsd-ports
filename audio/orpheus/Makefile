@@ -7,13 +7,14 @@
 
 PORTNAME=	orpheus
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://thekonst.net/download/
 
 MAINTAINER=	az@inec.ru
 COMMENT=	Light-weight console UI audio player application
 
-BUILD_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
+RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -37,7 +38,7 @@ CONFIGURE_ARGS+=	--enable-ghttp
 .endif
 
 .if defined(WITH_VORBIS)
-RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-vorbis
