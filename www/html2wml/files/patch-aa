@@ -1,24 +1,5 @@
 --- Makefile.orig	Sun Oct 26 16:23:22 2003
 +++ Makefile	Thu Nov 20 01:44:55 2003
-@@ -1,7 +1,7 @@
- # =========================================================================== #
- # Configuration 
--PREFIX=/usr/local
--CGIDIR=/home/httpd/cgi-bin
-+PREFIX?=/usr/local
-+CGIDIR=${LOCALBASE}/www/cgi-bin
- 
- # =========================================================================== #
- # Do not edit the following unless you know what are you are doing
-@@ -12,7 +12,7 @@
- # Standard subdirectories locations
- BINDIR=$(PREFIX)/bin
- MANDIR=$(PREFIX)/man
--DOCDIR=$(PREFIX)/doc/html2wml
-+DOCDIR=$(PREFIX)/share/doc/html2wml
- 
- MAN1DIR=$(MANDIR)/man1
- 
 @@ -31,14 +31,11 @@
  
  # Installaton targets

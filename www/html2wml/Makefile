@@ -18,8 +18,13 @@ RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_PERL5=	yes
+MAKE_ARGS=	PREFIX=${PREFIX} DOCDIR=${DOCDIR}
 
+PLIST_FILES=	bin/html2wml
 MAN1=		html2wml.1
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 do-build:
 	cd ${BUILD_WRKSRC}/doc; \
