@@ -20,23 +20,18 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
+OPTIONS=	CACHEDIR	"Cache logins"					on \
+		GZIP		"Compress messages with gzip"			on \
+		HTTPS		"Generate https:// URLs for all accesses"	off \
+		HTTPS_LOGIN	"Generate https:// URLs only for login"		off \
+		IMAP		"Use the Courier IMAP Server"			on \
+		ISPELL		"Provide spell checking"			off \
+		MIMETYPES	"search for a mime.types file"			off \
+		SENTRENAME	"Periodic rename the Sent folder"		on
+
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
 .endif
-
-#
-# User-serviceable variables
-#
-# [ There's no need to add trailing ``/''s ]
-#
-# set CGIBINDIR to where you'd like the cgi to be placed
-# set CGIBINSUBDIR to subdirectory of CGIBINDIR, if necessary
-# set WEBDATADIR to where you'd like web pages to be placed
-# set WEBDATASUBDIR to where you'd like web pages to be placed
-# set IMAGEURL to where on the web server URL the images are found
-# set CACHEOWNER to who you'd like to own the cache files
-# set CACHEDIR to where you'd like your cache directory to be
-#
 
 CGIBINDIR?=	www/cgi-bin-dist
 CGIBINSUBDIR?=	sqwebmail
@@ -47,19 +42,8 @@ RCDIR?=		${PREFIX}/etc/rc.d
 CACHEDIR?=	${PREFIX}/var/sqwebmail/cache
 CACHEOWNER?=	bin
 
-#
-# will be migrated to options if possible sooner or later!
-#
-# set WITHOUT_CACHEDIR to disable the cache dir
-# set WITH_HTTPS to generate https:// URLs for all accesses
-# set WITH_HTTPS=login to generate https:// URLs for only password access
-# set WITH_ISPELL to provide spell-checking
-# set WITH_MIMETYPES to enable the search for a mime.types file
 # set WITH_TIMEOUTHARD to something other than 7200 seconds (2hr)
 # set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
-# set WITHOUT_SENTRENAME to turn off periodic renaming of the Sent folder
-# set WITHOUT_IMAP if you don't use the Courier IMAP server
-# set WITHOUT_GZIP for not using gzip to compress messages
 # set WITH_AUTOPURGE to something other than 7 days
 # set WITH_MAXPURGE to something other than 90 days
 #
@@ -103,6 +87,28 @@ PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \
 		WEBDATADIR=${WEBDATADIR} \
 		WEBDATASUBDIR=${WEBDATASUBDIR}
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+MAN1=		maildirmake.1
+MAN8=		deliverquota.8
+
+EXTRA_DOCS=	README README.logindomainlist.html README.pam sqwebmail/ChangeLog \
+		maildir/README.maildirquota.txt maildir/README.sharedfolders.txt
+
+INSTALL_TARGET=	install-strip install-configure
+
+.include <bsd.port.pre.mk>   
+
+.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
+.include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
+.endif
+
+.if defined(WITH_RCORDER)
+USE_RCORDER=	sqwebmail-sqwebmaild.sh
+.else   
+USE_RC_SUBR=	sqwebmail-sqwebmaild.sh
+.endif
+
 .if defined(WITHOUT_CACHEDIR)
 PLIST_SUB+=		CACHE="@comment "
 CONFIGURE_ARGS+=	--without-cachedir
@@ -112,12 +118,10 @@ CONFIGURE_ARGS+=	--with-cachedir=${CACHEDIR} \
 			--with-cacheowner=${CACHEOWNER}
 .endif
 
-.if defined(WITH_HTTPS)
-.if ${WITH_HTTPS} == "login"
+.if defined(WITH_HTTP_LOGIN)
 CONFIGURE_ARGS+=	--enable-https=login
-.else
+.elif defined(WITH_HTTPS)
 CONFIGURE_ARGS+=	--enable-https
-.endif
 .endif
 
 .if defined(WITHOUT_SENTRENAME)
@@ -133,14 +137,17 @@ CONFIGURE_ARGS+=	--without-gzip
 .endif
 
 .if defined(WITH_ISPELL)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell
 .else
 CONFIGURE_ARGS+=	--without-ispell
 .endif
 
-.if !defined(WITH_MIMETYPES)
+.if defined(WITH_MIMETYPES)
+RUN_DEPENDS+=		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+CONFIGURE_ARGS+=	--enable-mimetypes=${LOCALBASE}/etc
+.else
 CONFIGURE_ARGS+=	--disable-mimetypes
 .endif
 
@@ -180,20 +187,6 @@ CONFIGURE_ARGS+=        --enable-autopurge=${WITH_AUTOPURGE}
 CONFIGURE_ARGS+=        --enable-maxpurge=${WITH_MAXPURGE}
 .endif
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-MAN1=		maildirmake.1
-MAN8=		deliverquota.8
-
-EXTRA_DOCS=	README README.logindomainlist.html README.pam sqwebmail/ChangeLog \
-		maildir/README.maildirquota.txt maildir/README.sharedfolders.txt
-
-.include <bsd.port.pre.mk>
-
-.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
-.include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
@@ -208,9 +201,9 @@ post-patch:
 		${WRKSRC}/pcp/intl/Makefile.in
 
 post-install:
-	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/sqwebmail-sqwebmaild.sh > ${WRKDIR}/sqwebmail-sqwebmaild.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/sqwebmail-sqwebmaild.sh ${RCDIR}/sqwebmail-sqwebmaild.sh
+#	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+#		${FILESDIR}/sqwebmail-sqwebmaild.sh > ${WRKDIR}/sqwebmail-sqwebmaild.sh
+#	${INSTALL_SCRIPT} ${WRKDIR}/sqwebmail-sqwebmaild.sh ${RCDIR}/sqwebmail-sqwebmaild.sh
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -218,8 +211,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
 .endfor
 .endif
-	cd ${WRKSRC} && ( ${MAKE} install-configure ; cd - )
-
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Add the following line to your /etc/crontab to make shure the"
 	@${ECHO_MSG} "sqwebmail cache directory gets cleaned up."
