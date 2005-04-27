@@ -1,6 +1,24 @@
---- src/uitext.cc	Tue Feb 17 04:18:21 2004
-+++ src/uitext.cc	Sun Dec 12 22:12:41 2004
-@@ -577,14 +577,16 @@
+diff -Nru src.orig/uitext.cc src/uitext.cc
+--- src.orig/uitext.cc	Tue Feb 17 04:18:21 2004
++++ src/uitext.cc	Tue Apr 26 19:49:01 2005
+@@ -125,6 +125,8 @@
+ }
+ 
+ void OrpheusTextUI::nexttrack() {
++    if (!plist.empty())
++    {
+     if(conf.getplaymode() == Random) {
+ 	int k;
+ 	while(*(plist.begin()+(k = randlimit(0, plist.size()-1))) == currenttrack);
+@@ -143,6 +145,7 @@
+ 	    }
+ 	}
+     }
++    }
+ }
+ 
+ void OrpheusTextUI::prevtrack() {
+@@ -577,14 +580,16 @@
  			autosavepl = !autosavepl;
  			break;
  		    case 41:
@@ -19,7 +37,7 @@
  			    sortorder = byFileName;
  			break;
  		    case 44:
-@@ -719,7 +721,8 @@
+@@ -719,7 +724,8 @@
      while(!finished) {
  	m.clear();
  
