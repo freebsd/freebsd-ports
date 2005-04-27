@@ -17,8 +17,6 @@ COMMENT?=	PhotoCD tool collection
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-BROKEN=		Incomplete pkg-plist
-
 # USE_IMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDFLAGS=	-L${LOCALBASE}/lib
