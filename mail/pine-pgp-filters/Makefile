@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	pine-pgp-filters
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail security
 MASTER_SITES=	http://dougbarton.net/FreeBSD/Downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dougb
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Simple, fast, sh-based filters to integrate Pine with gnupg, or pgp6
@@ -25,5 +27,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
