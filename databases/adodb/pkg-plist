@@ -96,6 +96,7 @@
 %%ADODB_DIR%%/lang/adodb-ro.inc.php
 %%ADODB_DIR%%/lang/adodb-ru1251.inc.php
 %%ADODB_DIR%%/lang/adodb-sv.inc.php
+%%ADODB_DIR%%/lang/adodb-uk1251.inc.php
 %%ADODB_DIR%%/pear/readme.Auth.txt
 %%ADODB_DIR%%/pear/Auth/Container/ADOdb.php
 %%ADODB_DIR%%/perf/perf-db2.inc.php
