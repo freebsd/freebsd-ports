@@ -9413,6 +9413,7 @@ ptlink-ircd	ports/irc/ptlink-ircd
 ptlink-services	ports/irc/ptlink-services
 ptmalloc	ports/devel/ptmalloc
 ptoc		ports/lang/ptoc
+ptunnel		ports/net/ptunnel
 ptypes		ports/devel/ptypes
 publib		ports/devel/publib
 publicfile	ports/www/publicfile
