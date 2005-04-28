@@ -8,7 +8,7 @@
 
 PORTNAME=	bash
 PORTVERSION=	2.05b.007
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -50,11 +50,19 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,.FN /bin/bash,.FN ${PREFIX}/bin/bash," \
 		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/doc/bash.1
 
-post-install:
+update-etc-shells:
+	@${ECHO_MSG} "updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@( ${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; \
+		${ECHO_CMD} ${PREFIX}/bin/bash) >/etc/shells
+	@${RM} /etc/shells.bak
+
+post-install: update-etc-shells
 	${LN} -f ${PREFIX}/bin/bash ${PREFIX}/bin/bash2
-	${CP} /etc/shells /etc/shells.bak
-	(${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; ${ECHO_CMD} ${PREFIX}/bin/bash) >/etc/shells
-	${RM} /etc/shells.bak
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples ; ${PAX} -rw . ${EXAMPLESDIR}
+	@${FIND} ${EXAMPLESDIR} -type d -print | xargs chmod a+rx
+	@${CHMOD} -R a+r ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN}  \
