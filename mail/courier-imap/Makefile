@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	4.0.2
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,9 +20,8 @@ BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
 .if defined(WITH_DRAC)
-BROKEN=		DRAC support doesn't work with 4.0.0 right now
 PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
-PATCHFILES=	courier-imap-3.0.6-drac.patch
+PATCHFILES=	courier-imap-4.0.2-drac.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
