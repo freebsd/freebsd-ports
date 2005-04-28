@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monster
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.cs.aau.dk/~olau/monster-masher/source/
 PKGNAMESUFFIX=	-masher
@@ -16,7 +15,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gnomemm puzzle game where you have to clean the caves of monsters
 
-LIB_DEPENDS=	gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm
+LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -24,13 +23,14 @@ USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASA}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	monster-masher.schemas
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500010
+IGNORE=		Freezes when starting a new game
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-vector.hpp
 .endif
 
