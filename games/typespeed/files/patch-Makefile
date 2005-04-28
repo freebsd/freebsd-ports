@@ -1,0 +1,70 @@
+--- Makefile.orig	Thu Aug 22 19:42:50 2002
++++ Makefile	Thu Apr 28 19:36:50 2005
+@@ -2,20 +2,19 @@
+ # typespeed makefile
+ #
+ 
+-CC = gcc 
+-CFLAGS = -O -D_GNU_SOURCE -Wall
+-LFLAGS = -lncurses
++CFLAGS += -D_GNU_SOURCE -Wall $(CPPFLAGS)
++LFLAGS += -lncurses
+ 
+ PROG = typespeed
+ SRCS = file.c  menu.c  misc.c  network.c
+ OBJS = file.o  menu.o  misc.o  network.o
+ 
+ local_dir = $(HOME)
+-install_dir = "/usr/local/bin"
+-wordfiles = "/usr/local/lib"
+-man_dir  = "/usr/local/man/man1/"
++install_dir = "$(PREFIX)/bin"
++wordfiles = "$(PREFIX)/lib"
++man_dir  = "$(PREFIX)/man/man1/"
+ 
+-all: clean $(PROG)
++all: $(PROG)
+ 
+ 
+ clean:
+@@ -23,31 +22,21 @@
+ 
+ 
+ $(PROG): $(OBJS)
+-	
+ 	$(CC) $(CFLAGS) $(OBJS) -o $(PROG) $(PROG).c $(LFLAGS)
+ 
+ 
+ install: typespeed
+-
+-	@echo Installing. You need to be root, or have access to install dirs
+-	@echo ..and we know that everyone can delete the highscores, but
+-	@echo we did not want to put setuid or setgid to typespeed yet,
+-	@echo because then we would have to make a user for those..
+-	@echo If you like to do it in that way, do it yourself. 
+-	@echo 
+-	cp typespeed $(install_dir)
+-	chmod 755 $(install_dir)/typespeed
++	$(BSD_INSTALL_PROGRAM) typespeed $(install_dir)
++	chgrp games $(install_dir)/typespeed
++	chmod g+s $(install_dir)/typespeed
+ 	if test ! -d $(wordfiles)/typespeed; then mkdir $(wordfiles)/typespeed; fi
+ 	./typespeed --makescores
+-	cp words.* $(wordfiles)/typespeed
+-	cp high.* $(wordfiles)/typespeed
+-	chmod 755 $(wordfiles)/typespeed
+-	chmod 666 $(wordfiles)/typespeed/high.*
+-	chmod 644 $(wordfiles)/typespeed/words.*
+-	echo $(wordfiles)/typespeed/ > /etc/typespeedrc
+-	cp typespeed.1 $(man_dir)
+-	chmod 644 $(man_dir)/typespeed.1
+-	@echo done...
++.for cat in dos dut eng fin portuguese prog spanish unix
++	$(BSD_INSTALL_DATA) words.$(cat) $(wordfiles)/typespeed
++	$(BSD_INSTALL_DATA) high.words.$(cat) $(wordfiles)/typespeed/high.words.$(cat).default
++.endfor
++	echo $(wordfiles)/typespeed/ > $(PREFIX)/etc/typespeedrc
++	$(BSD_INSTALL_MAN) typespeed.1 $(man_dir)
+ 
+ uninstall: distclean
+ 

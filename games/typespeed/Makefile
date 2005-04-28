@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	typespeed
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.sicom.fi/~bestis/
+MASTER_SITES=	http://ls.purkki.org/typespeed/
 DISTNAME=	typespeed-${PORTVERSION}
 
-MAINTAINER=	refugee@vt.edu
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Test your typing speed, and get your fingers\' CPS
 
 MAN1=		typespeed.1
@@ -19,10 +19,13 @@ MAN1=		typespeed.1
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 
-MAKE_ENV=	LFLAGS="${LDFLAGS}"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LFLAGS="${LDFLAGS}"
 
 post-patch:
-	${REINPLACE_CMD} -e 's#_PREFIX_HERE#${PREFIX}#g' \
+	@${REINPLACE_CMD} -e 's|\(/etc\)|${PREFIX}\1|' \
 		${WRKSRC}/typespeed.h
+
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

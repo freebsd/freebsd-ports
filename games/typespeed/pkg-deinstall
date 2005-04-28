@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ "$2" != "DEINSTALL" ] && exit 0
+
+for cat in dos dut eng fin portuguese prog spanish unix; do
+    file="$PKG_PREFIX/lib/typespeed/high.words.$cat"
+    cmp -s "$file" "$file.default" && rm -f "$file"
+done
