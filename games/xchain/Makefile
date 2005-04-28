@@ -17,9 +17,12 @@ COMMENT=	Chain Reaction, a strategy game for 2-4 players
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0
+MAKE_ARGS=	CC="${CC}" CFLAGS='${CFLAGS} -DDEF_WISH_PATH=\"${LOCALBASE}/bin/wish8.2\"'
 
 USE_X_PREFIX=	yes
 MAN6=		xchain.6
+PLIST_FILES=	bin/xchain
+PORTDOCS=	README copyright
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xchain ${PREFIX}/bin
