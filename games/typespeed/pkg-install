@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+# Score files should normally go in /var/games/typespeed, but it would
+# require a lot of modifications to the ugly typespeed source code.
+
+for cat in dos dut eng fin portuguese prog spanish unix; do
+    file="$PKG_PREFIX/lib/typespeed/high.words.$cat"
+    [ -f "$file" ] || install -o root -g games -m 464 "$file.default" "$file"
+done

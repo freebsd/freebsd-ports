@@ -1,9 +1,19 @@
-etc/typespeedrc
 bin/typespeed
+etc/typespeedrc
+lib/typespeed/high.words.dos.default
+lib/typespeed/high.words.dut.default
+lib/typespeed/high.words.eng.default
+lib/typespeed/high.words.fin.default
+lib/typespeed/high.words.portuguese.default
+lib/typespeed/high.words.prog.default
+lib/typespeed/high.words.spanish.default
+lib/typespeed/high.words.unix.default
 lib/typespeed/words.dos
+lib/typespeed/words.dut
 lib/typespeed/words.eng
 lib/typespeed/words.fin
 lib/typespeed/words.portuguese
 lib/typespeed/words.prog
+lib/typespeed/words.spanish
 lib/typespeed/words.unix
-@dirrm lib/typespeed
+@unexec rmdir %D/lib/typespeed 2>/dev/null || true
