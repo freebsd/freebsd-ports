@@ -443,7 +443,7 @@ LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 
 # xine
 .if ${GST_PLUGIN}=="xine"
-LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.13:${PORTSDIR}/multimedia/libxine
 .endif
 
 # xvid
