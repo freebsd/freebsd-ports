@@ -8,7 +8,9 @@
 PORTNAME=	boinc-client
 PORTVERSION=	4.67.20050320
 CATEGORIES=	net
-MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/
+MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	boinc-cvs-2005-03-20
 
 MAINTAINER=	fbsd@opal.com
