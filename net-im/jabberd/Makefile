@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	net
 MASTER_SITES=	http://files.jabberstudio.org/jabberd2/
-DISTNAME=	${PORTNAME}-2.0s7
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}s${PORTVERSION:E}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	kirk@strauser.com
@@ -85,13 +85,11 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${ECHO} "Installing ${PREFIX}/etc/rc.d/jabberd.sh startup file."
-	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh
 	@${CHOWN} -R jabber:jabber ${PREFIX}/etc/jabberd
 	@${FIND} ${PREFIX}/etc/jabberd -type d | ${XARGS} ${CHMOD} 750
 	@${FIND} ${PREFIX}/etc/jabberd -type f | ${XARGS} ${CHMOD} 660
-	@${MKDIR} ${PREFIX}/share/jabberd
-	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${PREFIX}/share/jabberd
-	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.pgsql ${PREFIX}/share/jabberd
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.pgsql ${DATADIR}
 
 .include <bsd.port.mk>
