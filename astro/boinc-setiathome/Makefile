@@ -8,7 +8,9 @@
 PORTNAME=	boinc-setiathome
 PORTVERSION=	4.07.20050218
 CATEGORIES=	astro
-MASTER_SITES=	http://setiweb.ssl.berkeley.edu/sah/seti_source/nightly/
+MASTER_SITES=	http://setiweb.ssl.berkeley.edu/sah/seti_source/nightly/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	seti_boinc-client-cvs-2005-02-18
 
 MAINTAINER=	fbsd@opal.com
