@@ -5,6 +5,7 @@ bin/midi2abc
 bin/midicopy
 bin/yaps
 %%PORTDOCS%%%%DOCSDIR%%/abcguide.txt
+%%PORTDOCS%%%%DOCSDIR%%/abcmatch.txt
 %%PORTDOCS%%%%DOCSDIR%%/gpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/history.txt
 %%PORTDOCS%%%%DOCSDIR%%/programming/abc2midi.txt
