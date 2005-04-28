@@ -29,7 +29,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/ircd:${PORTSDIR}/irc/ircd-ru
 IS_INTERACTIVE=	yes
 .else
 WITH_IRCD=	unreal
-RUN_DEPENDS=	${LOCALBASE}/Unreal/ircd:${PORTSDIR}/irc/unreal
+RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:${PORTSDIR}/irc/unreal
 .endif
 
 # ``Assign with expansion'' is needed here, otherwise we cannot override
