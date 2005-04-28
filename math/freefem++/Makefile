@@ -51,7 +51,7 @@ BADSAMPLES=	load/myfunction.o tutorial/Makefile.in.orig
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not build"
+MAKE_ARGS+=	"PIC=-fPIC"
 .endif
 
 .if ${ARCH} == "sparc64"
