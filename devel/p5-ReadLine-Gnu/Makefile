@@ -22,7 +22,7 @@ PERL_CONFIGURE=	yes
 
 .if exists(${LOCALBASE}/lib/libreadline.so)
 CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/deve/readline
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
 MAN3=		Term::ReadLine::Gnu.3
