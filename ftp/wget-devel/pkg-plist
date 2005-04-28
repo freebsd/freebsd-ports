@@ -7,6 +7,7 @@ etc/wgetrc
 %%NLS%%share/locale/de/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wget.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wget.mo
@@ -30,5 +31,6 @@ etc/wgetrc
 %%NLS%%share/locale/sv/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/wget.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wget.mo
