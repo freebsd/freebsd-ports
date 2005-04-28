@@ -7,4 +7,5 @@ etc/openldap/schema/authldap.schema.default
 lib/courier-authlib/libauthldap.so
 lib/courier-authlib/libauthldap.so.0
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
-
+@unexec rmdir %D/etc/openldap/schema 2>/dev/null || true
+@unexec rmdir %D/etc/openldap 2>/dev/null || true
