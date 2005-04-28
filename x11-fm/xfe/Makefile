@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	xfe
-PORTVERSION=	0.72
-PORTREVISION=	1
+PORTVERSION=	0.80
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like filemanager for X
-
-BROKEN=		"Does not build with current fox-devel version"
 
 LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel \
 		png.5:${PORTSDIR}/graphics/png
@@ -38,6 +35,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings| ; \
 		s|-lFOX|${PTHREAD_LIBS} &|g' ${WRKSRC}/configure
 
-MAN1=		xfe.1 xfq.1 xfv.1
+MAN1=		xfe.1 xfi.1 xfq.1 xfv.1
 
 .include <bsd.port.mk>

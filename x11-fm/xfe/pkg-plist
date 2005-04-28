@@ -1,4 +1,5 @@
 bin/xfe
+bin/xfi
 bin/xfq
 bin/xfv
 lib/foxicons/a_32x32.png
@@ -31,6 +32,8 @@ lib/foxicons/core_16x16.png
 lib/foxicons/core_32x32.png
 lib/foxicons/details.png
 lib/foxicons/dirup.png
+lib/foxicons/djvu_16x16.png
+lib/foxicons/djvu_32x32.png
 lib/foxicons/dot_c_32x32.png
 lib/foxicons/dot_h_32x32.png
 lib/foxicons/dot_o_32x32.png
