@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- ../src/share/classes/sun/tools/jar/Main.java	11 Jul 2001 21:39:05 -0000	1.1.1.1
 +++ ../src/share/classes/sun/tools/jar/Main.java	27 Apr 2005 05:07:30 -0000
 @@ -35,6 +35,7 @@
