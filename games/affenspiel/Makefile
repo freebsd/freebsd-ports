@@ -17,6 +17,14 @@ COMMENT=	Little puzzle game with monkey for X Window System
 
 WRKSRC=		${WRKDIR}/affenspiel
 USE_X_PREFIX=	yes
+CFLAGS+=	-I${X11BASE}/include
+MAKE_ARGS=	CC="${CC}" LIBS="-L${X11BASE}/lib -lX11" DEBUG="${CFLAGS}" \
+		FILE_CONFIG=-DSAVED_GAME_NAME='\"affenspiel.saved\"'
+
+PLIST_FILES=	bin/affenspiel
+.if !defined(NOPORTDOCS)
+PORTDOCS=	COPYRIGHT README
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/affenspiel ${PREFIX}/bin
