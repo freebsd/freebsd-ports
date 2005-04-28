@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2005.04.10
+PORTVERSION=	2005.04.26
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvioc@gmail.com
 COMMENT=	Convert abc music files to MIDI and PostScript
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
