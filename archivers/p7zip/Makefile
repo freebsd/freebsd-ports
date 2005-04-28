@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.14
+PORTVERSION=	4.16
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	p7zip
@@ -23,15 +23,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 PORTDOCS=	*
 
 DLLDIR=		${PREFIX}/libexec/p7zip
-7ZBIN=		7za 7zCon.sfx
 
+PLIST_SUB=	MODULES=""
+ALL_TARGET=	7z 7za sfx
+7ZBIN=		7z 7za 7zCon.sfx
 .if defined(WITHOUT_MODULES)
 PLIST_SUB=	MODULES="@comment "
 ALL_TARGET=	7za sfx
-.else
-PLIST_SUB=	MODULES=""
-ALL_TARGET=	all2
-7ZBIN+=		7z
+7ZBIN=		7za 7zCon.sfx
 .endif
 
 .include <bsd.port.pre.mk>
@@ -45,8 +44,10 @@ post-patch:
 	       -e 's!g\+\+!${CXX}!' \
 	       -e 's!gcc!${CC}!' \
 	       -e '/LITTLE_ENDIAN/d' \
+	       -e 's/-D_LARGEFILE_SOURCE//' \
+	       -e 's/-D_FILE_OFFSET_BITS=64//' \
 	       -e 's/-lc_r/${PTHREAD_LIBS}/' \
-	       ${WRKSRC}/makefile.freebsd_x86 > ${WRKSRC}/makefile.machine
+	       ${WRKSRC}/makefile.freebsd > ${WRKSRC}/makefile.machine
 
 do-install:
 	${MKDIR} ${DLLDIR}
