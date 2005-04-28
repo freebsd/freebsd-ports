@@ -289,7 +289,7 @@ pre-install:
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
 	${ECHO_CMD} share/applications/mozilla-devel.desktop >> ${PLIST}
-	${ECHO_CMD} @unexec ${RMDIR} %D/share/applications 2>/dev/nulll || ${TRUE} >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/nulll || ${TRUE}" >> ${PLIST}
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
