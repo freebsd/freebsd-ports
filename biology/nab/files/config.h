@@ -1,114 +1,70 @@
+#  NAB configuration file, created with: ./configure 
+
 ###############################################################################
-# Configuration section:  look at sections (1) to (4) below, making
-#      changes that seem necessary.  For many UNIX systems, no changes
-#      should be necessary, but check especially the compiler options in
-#      section (4).
-#
-###############################################################################
-#
-# (1)  You need to define the symbols NABHOME and ARCH, either on the
-#    make command line (e.g. "make ARCH=sun4 NABHOME=/thr/eigen/nab5")
-#    or as environment variables.
-#
-#    NABHOME should be an absolute path to this directory.
-#    ARCH is used to distinguish compilations for various architectures.
-#
-#    Files created by "make install" end up in:
-#        $NABHOME/bin/$ARCH
-#        $NABHOME/lib/$ARCH
-#        $NABHOME/include
-#
-#       You can choose ARCH as you wish, but it would generally 
-#       be related to the output of the "uname" command.
-#
+
+# (1)  You need to define the symbol NABHOME in your environment
+
+#    NABHOME should be an absolute path to the top-level NAB directory;
+#    files are installed to the following directories:
+
 BINDIR=$(NABHOME)/bin
 LIBDIR=$(NABHOME)/lib
 INCDIR=$(NABHOME)/include
-#
+
 ###############################################################################
-#
-#
+
+
 #  (2) If you want to search additional libraries by default, add them
 #      to the FLIBS variable here.  (External libraries can also be linked into
 #      NAB programs simply by including them on the command line; libraries
 #      included in FLIBS are always searched.)
-#
-#FLIBS=$(LIBDIR)/cifparse.a $(LIBDIR)/libsym.a
-#
-#  following for linking in fortran subroutines on Sun4, Solaris 2.x
-#
-#FLIBS=$(LIBDIR)/cifparse.a $(LIBDIR)/libsym.a -lF77 -lM77 -lsunmath
-#
-#  following for HP-UX
-#
-#FLIBS=$(LIBDIR)/cifparse.a $(LIBDIR)/libsym.a lapack.a blas.a -lf -lvec
-#
+
+FLIBS= $(LIBDIR)/libsym.a $(LIBDIR)/lapack.a $(LIBDIR)/blas.a  -lg2c
+
 ###############################################################################
-#
-#  (3)  Set AVS to 1 if you want AVS support; if so, set AVSDIR to point to
-#       your AVS distribution.  The directories $AVSDIR/include and $AVSDIR/lib
-#       must exist, and CFLAGS (below) must also be modified for AVS support.
-#
-AVS=		0
-#
-#AVSDIR=	/tsri/avs/$(ARCH)/avs
-#AVSINCDIR=	$(AVSDIR)/include
-#
-#
-###############################################################################
-#
-#  (4)  Modify any of the following if you need to change, e.g. to use gcc
+
+#  (3)  Modify any of the following if you need to change, e.g. to use gcc
 #        rather than cc, etc.
-#
-#
+
 SHELL=		/bin/sh
-#
+
 #  Set the C compiler, etc. 
-#
-#          For GNU:  cc-->gcc; lex-->flex; yacc-->bison -y -t;
-#          Note: If you lexer is "really" flex, you need to set
+
+#          For GNU:  CC-->gcc; LEX-->flex; YACC-->bison -y -t;
+#          Note: If your lexer is "really" flex, you need to set
 #          LEX=flex below.  For example, on many linux distributions,
 #          /usr/bin/lex is really just a pointer to /usr/bin/flex,
 #          so LEX=flex is necessary.  In general, gcc seems to need
 #          flex.
-#
-#          For 64-bit IRIX, add "-n32" unless 64-bit objects are 
-#          needed; it is also useful to add "-Wl,-dont_warn_unused"
-#          to keep the loader from complaining about libraries that
-#          are not used.
-#
-#          For RedHat Linux 5.1 (and other linuxes?) add -DHAVE_STRERROR
-#
-#CC=
-LEX=    	flex
-YACC=   	yacc
-AR=		ar
-#
+
+CC?=		cc
+CFLAGS?= 
+OCFLAGS=${CFLAGS}
+NABFLAGS?= 
+
+LEX=    flex
+YACC=   yacc
+AR=	ar
+RANLIB=	ranlib
+
 #  Set the C-preprocessor.  Code for a small preprocessor is in
-#    uccp-0.7;  it gets installed as $(NABHOME)/bin/$(ARCH)/ucpp;
+#    uccp-1.3;  it gets installed as $(NABHOME)/bin/ucpp;
 #    this should generally *not* be changed.
-#  Changed 14 Feb 2003 to use the ucpp port (FreeBSD). MLD
-#
-#  For FreeBSD 4.x, I had problems using the system C-preprocessor. MLD
-#
+
 CPP=    ucpp -l
-#
-#  Use these CFLAGS if AVS = 0
-#
-# Pick up initial CFLAGS from /etc/make.conf instead of here
-# This is a Berkeley make- (pmake-)specific construct
-CFLAGS+=
-OCFLAGS= ${CFLAGS}
-NABFLAGS=
-#
-#  Use these CFLAGS if AVS = 1
-#
-#CFLAGS= 	-g -DAVS=$(AVS) -DAVSDIR='"$(AVSDIR)"' -I$(AVSINCDIR)
-#OCFLAGS= 	-O -DAVS=$(AVS) -DAVSDIR='"$(AVSDIR)"' -I$(AVSINCDIR)
-#
-#
-#  For Win95/98, set SFX to ".exe"; for Unix,NT leave it empty:
-#
-#SFX=.exe
+
+#  If you are going to use the Fortran lapack and blas libraries, you need
+#  to set the compiler information here.  (Also, add the appropriate entries
+#  to the FLIBS variable, above.)
+
+FC?=f77
+FFLAGS?=
+FOPTFLAGS=${FFLAGS}
+FREEFORMAT_FLAG=-ffree-form
+LAPACK=install
+BLAS=install
+
+#  For Windows/cygwin, set SFX to ".exe"; for Unix/Linux leave it empty:
+
 SFX=
-#
+

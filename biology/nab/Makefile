@@ -6,91 +6,72 @@
 #
 
 PORTNAME=	nab
-PORTVERSION=	4.6
+PORTVERSION=	5.0
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
-		http://www.scripps.edu/case/ \
+MASTER_SITES=	http://www.scripps.edu/case/ \
 		http://siegfried.utmb.edu/bdodson/
 
 MAINTAINER=	bdodson@scms.utmb.edu
-COMMENT=	\
- "This is nab (nucleic acid builder), a language for macromolecules"
+COMMENT=	A language for macromolecules
 
 BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
 
 ONLY_FOR_ARCHS=	i386
 
-MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH}
+MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH} \
+		CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}"
 
 MAN1=		nab.1
-MANCOMPRESSED=	yes
-USE_REINPLACE=	yes
+SUB_FILES=	pkg-message
 
-BINARIES=	matextract      matmul          teLeap          tss_main \
-		matgen          nab             transform       tss_next \
-		matmerge        nab2c           tss_init
+BINARIES=	matextract	matmul		teLeap		tss_main \
+		matgen		nab		transform	tss_next \
+		matmerge	nab2c		tss_init
 
-LIBRARIES=	cifparse.a      libnab.a        libsym.a
+LIBRARIES=	cifparse.a	libnab.a        libsym.a
 
-INCS=	defreal.h       nab.h           nabcode.h       nabtypes.h
+INCS=	defreal.h	nab.h		nabcode.h	nabtypes.h
 
 post-extract:
 	@${CP} ${FILESDIR}/config.h ${WRKSRC}
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/cifparse/cifparse.c
-
 post-patch:
-	@${RM} -f ${WRKSRC}/examples/program_7.nab.orig
-	@${RM} -f ${WRKSRC}/examples/program_1.c \
-		${WRKSRC}/examples/program_1.exe
-	@${RM} -f ${WRKSRC}/test/1ubq/a.exe
-	@${RM} -f ${WRKSRC}/test/1ubq/rattle_min.c
-	@${RM} -f ${WRKSRC}/test/1ubq/runleap.c
-	@${RM} -f ${WRKSRC}/test/*.exe
-	@${RM} -f ${WRKSRC}/tleap/utilMakeHelp.exe
-	@${RM} -f ${WRKSRC}/fd_data/abdna.dat.old
+	@${RM} -f ${WRKSRC}/examples/circle.c
 	@${RM} -f ${WRKSRC}/reslib/conf.lib.orig
-	@${RM} -f ${WRKSRC}/reslib/leap/parm94.dat~
-	@(cd ${WRKSRC}/reslib/leap && \
-		${FIND} . -type f -print | ${GREP} -v '\./[a-zA-Z0-9]' | \
-			${XARGS} ${RM} -f)
 
 pre-install:
 	@cd ${WRKSRC}/src && \
-		${SETENV} PREFIX=${PREFIX} ${MAKE} beforerealinstall
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} beforerealinstall
 
 do-install:
-	@-${MKDIR} ${PREFIX}/share/nab
-	@-${MKDIR} ${PREFIX}/share/nab/bin
-	@-${MKDIR} ${PREFIX}/share/nab/include
-	@-${MKDIR} ${PREFIX}/share/nab/lib
+	${MKDIR} ${DATADIR}/bin ${DATADIR}/include ${DATADIR}/lib
+	cd ${WRKSRC}/test && ${RM} -f gbrna.pdb.lpdb rembed.out
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && (${TAR} cf - examples test peptide suppose | \
-		(cd ${PREFIX}/share/nab; ${TAR} xf -))
-	@-${MKDIR} ${PREFIX}/share/doc/nab
-	${INSTALL_MAN} ${WRKSRC}/doc/NAB.pdf ${PREFIX}/share/doc/nab
+	cd ${WRKSRC} && (${TAR} cf - benchmarks examples test peptide suppose | \
+		(cd ${DATADIR}; ${TAR} xf -))
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/NAB.pdf ${DOCSDIR}
 .endif
-	@cd ${WRKSRC} && (${TAR} cf - dgdb reslib fd_data | \
-		(cd ${PREFIX}/share/nab; ${TAR} xf -))
-	@(cd ${PREFIX}/share; ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} nab; \
-		${CHMOD} -R ugo+rX-w nab)
-	@-(cd ${PREFIX}/share/nab && ${LN} -sf ../NDB coords)
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/*     ${PREFIX}/bin
+	cd ${WRKSRC} && (${TAR} cf - dgdb reslib fd_data leap | \
+		(cd ${DATADIR}; ${TAR} xf -))
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/*
+	cd ${DATADIR} && ${LN} -sf ../NDB coords
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
 .for f in ${INCS}
-	${INSTALL_DATA}    ${WRKSRC}/include/${f} ${PREFIX}/include
-	@-(cd ${PREFIX}/share/nab/include && ${LN} -sf ${PREFIX}/include/${f} .)
+	${INSTALL_DATA} ${WRKSRC}/include/${f} ${PREFIX}/include
+	cd ${DATADIR}/include && ${LN} -sf ${PREFIX}/include/${f} .
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/config.h ${PREFIX}/share/nab/include
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib
-	@-cd ${WRKSRC}/doc && ${GZIP_CMD} ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/nab.1.gz ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/config.h ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/nab.1 ${MAN1PREFIX}/man/man1
 .for f in ${BINARIES}
-	@cd ${PREFIX}/share/nab/bin && ${LN} -sf ../../../bin/${f} .
+	cd ${DATADIR}/bin && ${LN} -sf ${PREFIX}/bin/${f} .
 .endfor
 .for f in ${LIBRARIES}
-	@cd ${PREFIX}/share/nab/lib && ${LN} -sf ../../../lib/${f} .
+	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib
+	cd ${DATADIR}/lib && ${LN} -sf ${PREFIX}/lib/${f} .
+.endfor
+.for f in blas.a lapack.a
+	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${DATADIR}/lib
 .endfor
 
 post-install:

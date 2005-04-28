@@ -1,28 +1,30 @@
---- Makefile.orig	Tue May 18 15:46:55 2004
-+++ Makefile	Thu Jul  1 09:03:32 2004
-@@ -1,16 +1,15 @@
- #   top-level Makefile for the NAB suite of programs
+--- Makefile.orig	Thu Apr  7 20:18:20 2005
++++ Makefile	Mon Apr 25 13:37:39 2005
+@@ -2,42 +2,39 @@
  
-+all:	compiler test
- compiler:
- 	-mkdir bin lib include
+ include config.h
+ 
++all: install test
++
+ install:
+ 	-mkdir $(BINDIR) $(LIBDIR) $(INCDIR)
 -	(cd ucpp-1.3; make install )
 -	(cd byacc; make install )
- 	(cd cifparse; make install )
- 	(cd src; make install )
- 	(cd nss; make install )
- 	(cd tleap; make install )
--	@echo
--	@echo "completed installation of NAB version 4"
--	@echo
-+#	@echo
-+#	@echo "completed installation of NAB version 4"
-+#	@echo
- 
- #   note:  "make test" needs to follow "make", since it is very hard to
- #          tell if the compiler is completely "made" or not.
-@@ -19,18 +18,15 @@
- 	(cd nss; make test )
+-	(cd lapack; make $(LAPACK) )
+-	(cd blas; make $(BLAS) )
+-	(cd cifparse; make install )
+-	(cd src; make install )
+-	(cd nss; make install )
+-	(cd tleap; make install )
++	(cd lapack; env NABHOME=.. make $(LAPACK) )
++	(cd blas; env NABHOME=.. make $(BLAS) )
++	(cd cifparse; env NABHOME=.. make install )
++	(cd src; env NABHOME=.. make install )
++	(cd nss; env NABHOME=.. make install )
++	(cd tleap; env NABHOME=.. make install )
+ 	@echo
+ 	@echo "completed installation of NAB version 5"
+ 	@echo
  
  clean:
 -	(cd ucpp-1.3; make clean )
@@ -31,14 +33,25 @@
  	(cd src; make clean )
  	(cd nss; make clean )
  	(cd tleap; make clean )
+ 	(cd lapack; make clean )
+ 	(cd blas; make clean )
 -	
 +
- uninstall:
+ uninstall: clean
 -	(cd ucpp-1.3; make uninstall )
  	(cd cifparse; make uninstall )
  	(cd src; make uninstall )
  	(cd nss; make uninstall )
  	(cd tleap; make uninstall )
  	-/bin/rm config.h
+ 	-rm -rf $(BINDIR) $(LIBDIR) $(INCDIR)
 -	
 +
+ #   note:  "make test" needs to follow "make", since it is very hard to
+ #          tell if the compiler is completely "made" or not.
+ 
+ test::
+-	(cd test; make test)
+-	(cd nss; make test)
++	(cd test; env NABHOME=.. make test)
++	(cd nss; env NABHOME=.. make test)
