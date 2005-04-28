@@ -1,0 +1,17 @@
+--- src/Makefile.orig	Thu Apr  7 20:17:27 2005
++++ src/Makefile	Tue Apr 26 12:54:15 2005
+@@ -181,6 +181,14 @@
+ 	cp defreal.h $(INCDIR)
+ 	cp nab.h $(INCDIR)
+ 
++beforerealinstall:
++	$(CC) -DBINDIR='"$(PREFIX)/bin"' \
++		-DINCDIR='"$(PREFIX)/include"' \
++		-DLIBDIR='"$(NABHOME)/lib"' \
++		$(CFLAGS) -DCC='"$(CC)"' -DCPP='"$(CPP)"' \
++		-DFLIBS='"$(PREFIX)/share/nab/lib/libsym.a $(PREFIX)/share/nab/lib/lapack.a $(PREFIX)/share/nab/lib/blas.a -lg2c"' \
++		-static -o ../bin/nab${SFX} nab.c
++
+ uninstall: clean
+ 	-rm -f \
+         $(BINDIR)/nab2c$(SFX) $(BINDIR)/nab$(SFX) $(INCDIR)/nabcode.h \

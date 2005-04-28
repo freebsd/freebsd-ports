@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+You must set the environment variable NABHOME to
+
+  %%DATADIR%%
+
+before nab is used. This is needed so that nab can find its residue and
+structure databases.
+-------------------------------------------------------------------------------
