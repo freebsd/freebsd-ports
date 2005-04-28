@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lauri@kde.org
 COMMENT=	Media player for KDE
 
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	tag.4:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
