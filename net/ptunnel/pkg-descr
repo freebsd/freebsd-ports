@@ -1,0 +1,5 @@
+Ptunnel is an application that allows you to reliably tunnel TCP connections
+to a remote host using ICMP echo request and reply packets, commonly known as
+ping requests and replies.
+
+WWW: http://www.cs.uit.no/~daniels/PingTunnel/

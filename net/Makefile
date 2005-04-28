@@ -615,6 +615,7 @@
     SUBDIR += proxychains
     SUBDIR += prtunnel
     SUBDIR += psi
+    SUBDIR += ptunnel
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += pxe
