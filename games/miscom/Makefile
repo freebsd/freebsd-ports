@@ -19,6 +19,15 @@ ALL_TARGET=
 WRKSRC=			${WRKDIR}/miscom
 MAN6=			miscom.6
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-DSOUNDSDIR='\"$(DATADIR)\"' -DSOUND_SUPPORT -DMORE_SOUNDBUF
+.endif
+
+MAKE_ARGS=	CC="${CC}" DATADIR="${DATADIR}" \
+		CFLAGS="${CFLAGS}"
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/miscom ${PREFIX}/bin
 	@ ${INSTALL_MAN} ${WRKSRC}/${MAN6} ${PREFIX}/man/man6
@@ -33,4 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
