@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%MYSUBDIR%%bin/columnt
 %%MYSUBDIR%%bin/ddist
 %%MYSUBDIR%%bin/deferrals
