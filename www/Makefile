@@ -504,6 +504,7 @@
     SUBDIR += p5-HTTP-Proxy
     SUBDIR += p5-HTTP-Recorder
     SUBDIR += p5-HTTP-Server-Simple
+    SUBDIR += p5-HTTP-Server-Simple-Mason
     SUBDIR += p5-HTTP-Server-Simple-Static
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
