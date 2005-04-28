@@ -7,7 +7,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.6.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
@@ -40,7 +40,7 @@ IGNORE=		Doesn't run with recent gstreamer.
 CONFIGURE_ARGS+=--enable-gstreamer=yes
 USE_GSTREAMER+=	mad vorbis flac gconf
 .else
-LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.13:${PORTSDIR}/multimedia/libxine
 .endif
 
 .include <bsd.port.post.mk>

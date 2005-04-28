@@ -39,7 +39,7 @@ OPTIONS=	XINE "Use xine backend instead of GStreamer" off \
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_XINE)
-LIB_DEPENDS+=		xine.12:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS+=		xine.13:${PORTSDIR}/multimedia/libxine \
 			FLAC.7:${PORTSDIR}/audio/flac \
 			mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--with-player=xine

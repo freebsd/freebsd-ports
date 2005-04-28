@@ -7,7 +7,7 @@
 
 PORTNAME=	Xfce4-media
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/projects/xfmedia/files/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		xine.12:${PORTSDIR}/multimedia/libxine
+		xine.13:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes

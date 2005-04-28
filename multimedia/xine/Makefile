@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
-LIB_DEPENDS=	xine.12:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS=	xine.13:${PORTSDIR}/multimedia/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png
 
