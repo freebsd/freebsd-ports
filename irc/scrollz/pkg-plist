@@ -1,5 +1,9 @@
 bin/scrollz
 bin/scrollz-%%SCROLLZ_VER%%
+share/scrollz/help/dvoice
+share/scrollz/help/etdelim
+share/scrollz/help/etopic
+share/scrollz/help/voice
 share/scrollz/help/dcc/chat
 share/scrollz/help/dcc/close
 share/scrollz/help/dcc/dcc
