@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
