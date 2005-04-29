@@ -7,6 +7,7 @@
 
 PORTNAME=	nab
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.scripps.edu/case/ \
 		http://siegfried.utmb.edu/bdodson/
@@ -15,6 +16,7 @@ MAINTAINER=	bdodson@scms.utmb.edu
 COMMENT=	A language for macromolecules
 
 BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
+RUN_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
 
 ONLY_FOR_ARCHS=	i386
 
@@ -45,7 +47,7 @@ pre-install:
 
 do-install:
 	${MKDIR} ${DATADIR}/bin ${DATADIR}/include ${DATADIR}/lib
-	cd ${WRKSRC}/test && ${RM} -f gbrna.pdb.lpdb rembed.out
+	cd ${WRKSRC}/test && ${RM} -f d01.pdb gbrna.pdb.lpdb rembed.out
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && (${TAR} cf - benchmarks examples test peptide suppose | \
 		(cd ${DATADIR}; ${TAR} xf -))
