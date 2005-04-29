@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.3.1
 CATEGORIES=	security
 MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/
 
@@ -24,14 +24,17 @@ RUN_DEPENDS=	ssh-agent:${PORTSDIR}/security/openssh
 
 MAN1=		keychain.1
 
-DOCS=		ChangeLog README
+PLIST_FILES=	bin/keychain
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ChangeLog README
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
