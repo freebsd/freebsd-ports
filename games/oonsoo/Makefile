@@ -16,9 +16,10 @@ COMMENT=	A solitaire card game for X
 
 PLIST_FILES=	bin/oonsoo
 USE_XLIB=	yes
-
-pre-patch:
-	@${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
+MAKEFILE=	Makefile.Linux
+MAKE_ARGS=	CC="${CXX}" CPPFLAGS="${CXXFLAGS} -ansi"	\
+		SYS_INCLUDE="-I${X11BASE}/include"		\
+		SYS_LIBS="-L${X11BASE}/lib -lX11"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/oonsoo ${PREFIX}/bin
