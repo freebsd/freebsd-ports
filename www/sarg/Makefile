@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	http://sarg.sourceforge.net/
-PATCHFILES=	freebsd.patch abbreviation.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
