@@ -30,6 +30,24 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas
 
+.if defined(WITH_DJVU)
+LIB_DEPENDS+=		djvulibre.14:${PORTSDIR}/graphics/djvulibre
+CONFIGURE_ARGS+=	--enable-djvu
+.else
+CONFIGURE_ARGS+=	--disable-djvu
+.endif
+
+pre-everything::
+.if !defined(WITH_DJVU)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want DjVu support included, hit Ctrl-C now and use"
+	@${ECHO_MSG} "\"make WITH_DJVU=yes\""
+	@${ECHO_MSG} "NOTE: GNOME/Gtk+ users may want to avoid QT dependency required"
+	@${ECHO_MSG} "by defaut djvulibre installation. They need to use
+	@${ECHO_MSG} "\"make WITHOUT_X11=yes\" when build that library then."
+	@${ECHO_MSG}
+.endif
+
 post-install:
 	@-update-desktop-database
 
