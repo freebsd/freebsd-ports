@@ -1,0 +1,19 @@
+--- ./libs/libffi/configure.orig	Mon Jun 21 21:27:17 2004
++++ ./libs/libffi/configure	Fri Apr 29 23:36:25 2005
+@@ -3286,7 +3286,7 @@
+ sparc-sun-4*) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc*-sun-*) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc-*-linux* | sparc-*-netbsdelf*) TARGET=SPARC; TARGETDIR=sparc;;
+-sparc64-*-linux* | sparc64-*-netbsd*) TARGET=SPARC; TARGETDIR=sparc;;
++sparc64-*-linux* | sparc64-*-netbsd* | sparc64-*-freebsd*) TARGET=SPARC; TARGETDIR=sparc;;
+ alpha*-*-linux* | alpha*-*-osf* | alpha*-*-freebsd* | alpha*-*-netbsd*) TARGET=ALPHA; TARGETDIR=alpha;;
+ ia64*-*-*) TARGET=IA64; TARGETDIR=ia64;;
+ m68k-*-linux*) TARGET=M68K; TARGETDIR=m68k;;
+@@ -3306,6 +3306,7 @@
+ sh-*-linux* | sh[34]*-*-linux*) TARGET=SH; TARGETDIR=sh;;
+ sh64-*-linux* | sh5*-*-linux*) TARGET=SH64; TARGETDIR=sh64;;
+ hppa-*-linux* | parisc-*-linux*) TARGET=PA; TARGETDIR=pa;;
++amd64-portbld-freebsd*) TARGET=X86_64; TARGETDIR=x86;;
+ esac
+ 
+ 
