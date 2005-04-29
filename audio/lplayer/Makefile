@@ -8,13 +8,13 @@
 #
 
 PORTNAME=	lplayer
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvioc@gmail.com
 COMMENT=	A QT program to queue lots of MP3s for random XMMS play
 
 LIB_DEPENDS=	db_cxx-4.3.0:${PORTSDIR}/databases/db43 \
