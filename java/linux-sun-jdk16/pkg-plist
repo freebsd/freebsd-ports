@@ -257,18 +257,20 @@
 %%T%%/demo/jfc/CodePointIM/CodePointIM.jar
 %%T%%/demo/jfc/CodePointIM/README.html
 %%T%%/demo/jfc/CodePointIM/README_ja.html
+%%T%%/demo/jfc/CodePointIM/README_zh_CN.html
 %%T%%/demo/jfc/CodePointIM/src/CodePointIM.java
 %%T%%/demo/jfc/CodePointIM/src/CodePointInputMethod.java
 %%T%%/demo/jfc/CodePointIM/src/CodePointInputMethodDescriptor.java
 %%T%%/demo/jfc/CodePointIM/src/resources/codepoint.properties
 %%T%%/demo/jfc/CodePointIM/src/resources/codepoint_ja.properties
+%%T%%/demo/jfc/CodePointIM/src/resources/codepoint_zh_CN.properties
 %%T%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
 %%T%%/demo/jfc/FileChooserDemo/README.txt
-%%T%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
-%%T%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
 %%T%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
 %%T%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
 %%T%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
+%%T%%/demo/jfc/FileChooserDemo/src/resources/images/gifIcon.gif
+%%T%%/demo/jfc/FileChooserDemo/src/resources/images/jpgIcon.jpg
 %%T%%/demo/jfc/Font2DTest/Font2DTest.html
 %%T%%/demo/jfc/Font2DTest/Font2DTest.jar
 %%T%%/demo/jfc/Font2DTest/README.txt
@@ -279,6 +281,38 @@
 %%T%%/demo/jfc/Java2D/Java2Demo.html
 %%T%%/demo/jfc/Java2D/Java2Demo.jar
 %%T%%/demo/jfc/Java2D/README.txt
+%%T%%/demo/jfc/Java2D/src/fonts/A.ttf
+%%T%%/demo/jfc/Java2D/src/images/bld.jpg
+%%T%%/demo/jfc/Java2D/src/images/boat.png
+%%T%%/demo/jfc/Java2D/src/images/box.gif
+%%T%%/demo/jfc/Java2D/src/images/boxwave.gif
+%%T%%/demo/jfc/Java2D/src/images/clone.gif
+%%T%%/demo/jfc/Java2D/src/images/clouds.jpg
+%%T%%/demo/jfc/Java2D/src/images/cupanim.gif
+%%T%%/demo/jfc/Java2D/src/images/duke.gif
+%%T%%/demo/jfc/Java2D/src/images/duke.png
+%%T%%/demo/jfc/Java2D/src/images/duke.running.gif
+%%T%%/demo/jfc/Java2D/src/images/dukeplug.gif
+%%T%%/demo/jfc/Java2D/src/images/fight.gif
+%%T%%/demo/jfc/Java2D/src/images/globe.gif
+%%T%%/demo/jfc/Java2D/src/images/java-logo.gif
+%%T%%/demo/jfc/Java2D/src/images/java_logo.png
+%%T%%/demo/jfc/Java2D/src/images/jumptojavastrip.png
+%%T%%/demo/jfc/Java2D/src/images/loop.gif
+%%T%%/demo/jfc/Java2D/src/images/looping.gif
+%%T%%/demo/jfc/Java2D/src/images/magnify.gif
+%%T%%/demo/jfc/Java2D/src/images/painting.gif
+%%T%%/demo/jfc/Java2D/src/images/print.gif
+%%T%%/demo/jfc/Java2D/src/images/remove.gif
+%%T%%/demo/jfc/Java2D/src/images/snooze.gif
+%%T%%/demo/jfc/Java2D/src/images/star7.gif
+%%T%%/demo/jfc/Java2D/src/images/start.gif
+%%T%%/demo/jfc/Java2D/src/images/start2.gif
+%%T%%/demo/jfc/Java2D/src/images/stop.gif
+%%T%%/demo/jfc/Java2D/src/images/stop2.gif
+%%T%%/demo/jfc/Java2D/src/images/surfing.gif
+%%T%%/demo/jfc/Java2D/src/images/thumbsup.gif
+%%T%%/demo/jfc/Java2D/src/images/tip.gif
 %%T%%/demo/jfc/Java2D/src/java2d/AnimatingControlsSurface.java
 %%T%%/demo/jfc/Java2D/src/java2d/AnimatingSurface.java
 %%T%%/demo/jfc/Java2D/src/java2d/CloningFeature.java
@@ -341,23 +375,8 @@
 %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
 %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
 %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
-%%T%%/demo/jfc/Metalworks/HelpFiles/back.gif
-%%T%%/demo/jfc/Metalworks/HelpFiles/credits.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/duke.gif
-%%T%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
-%%T%%/demo/jfc/Metalworks/HelpFiles/metal.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/swing.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/toc.html
 %%T%%/demo/jfc/Metalworks/Metalworks.jar
 %%T%%/demo/jfc/Metalworks/README.txt
-%%T%%/demo/jfc/Metalworks/images/palette_crop.gif
-%%T%%/demo/jfc/Metalworks/images/palette_draw.gif
-%%T%%/demo/jfc/Metalworks/images/palette_hand.gif
-%%T%%/demo/jfc/Metalworks/images/palette_select.gif
-%%T%%/demo/jfc/Metalworks/images/palette_text.gif
-%%T%%/demo/jfc/Metalworks/images/palette_zoom.gif
-%%T%%/demo/jfc/Metalworks/resources/MyTheme.theme
 %%T%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
 %%T%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
 %%T%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
@@ -373,62 +392,71 @@
 %%T%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
 %%T%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
 %%T%%/demo/jfc/Metalworks/src/UISwitchListener.java
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/back.gif
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/credits.html
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/duke.gif
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/javalogo.gif
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/metal.html
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/metalworks.html
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/swing.html
+%%T%%/demo/jfc/Metalworks/src/resources/HelpFiles/toc.html
+%%T%%/demo/jfc/Metalworks/src/resources/MyTheme.theme
 %%T%%/demo/jfc/Notepad/Notepad.jar
 %%T%%/demo/jfc/Notepad/README.txt
-%%T%%/demo/jfc/Notepad/resources/Notepad.properties
-%%T%%/demo/jfc/Notepad/resources/Notepad_fr.properties
-%%T%%/demo/jfc/Notepad/resources/Notepad_sv.properties
-%%T%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
-%%T%%/demo/jfc/Notepad/resources/copy.gif
-%%T%%/demo/jfc/Notepad/resources/cut.gif
-%%T%%/demo/jfc/Notepad/resources/new.gif
-%%T%%/demo/jfc/Notepad/resources/open.gif
-%%T%%/demo/jfc/Notepad/resources/paste.gif
-%%T%%/demo/jfc/Notepad/resources/save.gif
 %%T%%/demo/jfc/Notepad/src/ElementTreePanel.java
 %%T%%/demo/jfc/Notepad/src/Notepad.java
+%%T%%/demo/jfc/Notepad/src/resources/Notepad.properties
+%%T%%/demo/jfc/Notepad/src/resources/Notepad_fr.properties
+%%T%%/demo/jfc/Notepad/src/resources/Notepad_sv.properties
+%%T%%/demo/jfc/Notepad/src/resources/Notepad_zh_CN.properties
+%%T%%/demo/jfc/Notepad/src/resources/copy.gif
+%%T%%/demo/jfc/Notepad/src/resources/cut.gif
+%%T%%/demo/jfc/Notepad/src/resources/new.gif
+%%T%%/demo/jfc/Notepad/src/resources/open.gif
+%%T%%/demo/jfc/Notepad/src/resources/paste.gif
+%%T%%/demo/jfc/Notepad/src/resources/save.gif
 %%T%%/demo/jfc/SampleTree/README.txt
 %%T%%/demo/jfc/SampleTree/SampleTree.jar
-%%T%%/demo/jfc/SampleTree/images/collapsed.gif
-%%T%%/demo/jfc/SampleTree/images/expanded.gif
 %%T%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
 %%T%%/demo/jfc/SampleTree/src/SampleData.java
 %%T%%/demo/jfc/SampleTree/src/SampleTree.java
 %%T%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
 %%T%%/demo/jfc/SampleTree/src/SampleTreeModel.java
+%%T%%/demo/jfc/SampleTree/src/resources/images/collapsed.gif
+%%T%%/demo/jfc/SampleTree/src/resources/images/expanded.gif
 %%T%%/demo/jfc/Stylepad/README.txt
 %%T%%/demo/jfc/Stylepad/Stylepad.jar
-%%T%%/demo/jfc/Stylepad/resources/Notepad.properties
-%%T%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
-%%T%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
-%%T%%/demo/jfc/Stylepad/resources/Notepad_zh_CN.properties
-%%T%%/demo/jfc/Stylepad/resources/Stylepad.properties
-%%T%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
-%%T%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
-%%T%%/demo/jfc/Stylepad/resources/alice.gif
-%%T%%/demo/jfc/Stylepad/resources/bold.gif
-%%T%%/demo/jfc/Stylepad/resources/bullets.gif
-%%T%%/demo/jfc/Stylepad/resources/caterpillar.gif
-%%T%%/demo/jfc/Stylepad/resources/center.gif
-%%T%%/demo/jfc/Stylepad/resources/copy.gif
-%%T%%/demo/jfc/Stylepad/resources/cut.gif
-%%T%%/demo/jfc/Stylepad/resources/fg.gif
-%%T%%/demo/jfc/Stylepad/resources/hatter.gif
-%%T%%/demo/jfc/Stylepad/resources/italic.gif
-%%T%%/demo/jfc/Stylepad/resources/left.gif
-%%T%%/demo/jfc/Stylepad/resources/new.gif
-%%T%%/demo/jfc/Stylepad/resources/open.gif
-%%T%%/demo/jfc/Stylepad/resources/paste.gif
-%%T%%/demo/jfc/Stylepad/resources/rabbit.gif
-%%T%%/demo/jfc/Stylepad/resources/rabbit2.gif
-%%T%%/demo/jfc/Stylepad/resources/right.gif
-%%T%%/demo/jfc/Stylepad/resources/save.gif
-%%T%%/demo/jfc/Stylepad/resources/underline.gif
 %%T%%/demo/jfc/Stylepad/src/ElementTreePanel.java
 %%T%%/demo/jfc/Stylepad/src/HelloWorld.java
 %%T%%/demo/jfc/Stylepad/src/Notepad.java
 %%T%%/demo/jfc/Stylepad/src/Stylepad.java
 %%T%%/demo/jfc/Stylepad/src/Wonderland.java
+%%T%%/demo/jfc/Stylepad/src/resources/Notepad.properties
+%%T%%/demo/jfc/Stylepad/src/resources/Notepad_fr.properties
+%%T%%/demo/jfc/Stylepad/src/resources/Notepad_sv.properties
+%%T%%/demo/jfc/Stylepad/src/resources/Notepad_zh_CN.properties
+%%T%%/demo/jfc/Stylepad/src/resources/Stylepad.properties
+%%T%%/demo/jfc/Stylepad/src/resources/Stylepad_sv.properties
+%%T%%/demo/jfc/Stylepad/src/resources/Stylepad_zh_CN.properties
+%%T%%/demo/jfc/Stylepad/src/resources/alice.gif
+%%T%%/demo/jfc/Stylepad/src/resources/bold.gif
+%%T%%/demo/jfc/Stylepad/src/resources/bullets.gif
+%%T%%/demo/jfc/Stylepad/src/resources/caterpillar.gif
+%%T%%/demo/jfc/Stylepad/src/resources/center.gif
+%%T%%/demo/jfc/Stylepad/src/resources/copy.gif
+%%T%%/demo/jfc/Stylepad/src/resources/cut.gif
+%%T%%/demo/jfc/Stylepad/src/resources/fg.gif
+%%T%%/demo/jfc/Stylepad/src/resources/hatter.gif
+%%T%%/demo/jfc/Stylepad/src/resources/italic.gif
+%%T%%/demo/jfc/Stylepad/src/resources/left.gif
+%%T%%/demo/jfc/Stylepad/src/resources/new.gif
+%%T%%/demo/jfc/Stylepad/src/resources/open.gif
+%%T%%/demo/jfc/Stylepad/src/resources/paste.gif
+%%T%%/demo/jfc/Stylepad/src/resources/rabbit.gif
+%%T%%/demo/jfc/Stylepad/src/resources/rabbit2.gif
+%%T%%/demo/jfc/Stylepad/src/resources/right.gif
+%%T%%/demo/jfc/Stylepad/src/resources/save.gif
+%%T%%/demo/jfc/Stylepad/src/resources/underline.gif
 %%T%%/demo/jfc/SwingApplet/README.txt
 %%T%%/demo/jfc/SwingApplet/SwingApplet.html
 %%T%%/demo/jfc/SwingApplet/SwingApplet.jar
@@ -467,6 +495,193 @@
 %%T%%/demo/jfc/SwingSet2/src/TableDemo.java
 %%T%%/demo/jfc/SwingSet2/src/ToolTipDemo.java
 %%T%%/demo/jfc/SwingSet2/src/TreeDemo.java
+%%T%%/demo/jfc/SwingSet2/src/resources/ant.html
+%%T%%/demo/jfc/SwingSet2/src/resources/bug.html
+%%T%%/demo/jfc/SwingSet2/src/resources/images/About.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/COPYRIGHT
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/apple.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/asparagus.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/banana.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/broccoli.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/cantaloupe.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/carrot.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/corn.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/grapefruit.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/grapes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/kiwi.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/onion.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/peach.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/pear.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/pepper.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/pickle.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/pineapple.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/raspberry.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/strawberry.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/tomato.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food/watermelon.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/cab.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/cab_small.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/fish.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/fish_small.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/moon.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/moon_small.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/sun.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc/sun_small.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/COPYRIGHT
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/ant.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/book.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/bug.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/bug2.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/crest.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/king.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/micro.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo/seaweed.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/Splash.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b1.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b1d.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b1p.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b1r.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b2.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b2d.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b2p.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b2r.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b3.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b3d.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b3p.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/b3r.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/bl.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/bldn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/bm.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/bmdn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/br.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/brdn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/c.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/cb.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/cbr.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/cbrs.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/cbs.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/cdn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/ml.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/mldn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/mr.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/mrdn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/rb.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/rbp.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/rbr.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/rbrs.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/rbs.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/tl.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/tldn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/tm.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/tmdn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/toggle.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/toggledn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/tr.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/buttons/trdn.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/brenteyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/brenthair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/brentmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/georgeseyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/georgeshair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/georgesmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/hanseyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/hanshair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/hansmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/howardeyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/howardhair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/howardmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jameseyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jameshair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jamesmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jeffeyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jeffhair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jeffmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/joneyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jonhair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/jonmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/laraeyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/larahair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/laramouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/larryeyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/larryhair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/larrymouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/lisaeyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/lisahair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/lisamouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/michaeleyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/michaelhair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/michaelmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/philipeyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/philiphair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/philipmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/scotteyes.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/scotthair.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/combobox/scottmouth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/filechooser/find.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/filechooser/gifIcon.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/filechooser/help.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/filechooser/jpgIcon.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/htmldemo/back.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/htmldemo/forward.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/htmldemo/header.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/list/blue.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/list/cyan.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/list/gray.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/list/green.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/list/magenta.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/list/red.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/list/yellow.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/optionpane/bottle.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/optionpane/ibd.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/optionpane/ibu.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/COPYRIGHT
+%%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/colheader.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/crayons.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/lowerleft.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/rowheader.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/upperleft.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane/upperright.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/splitpane/README
+%%T%%/demo/jfc/SwingSet2/src/resources/images/splitpane/earth.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/splitpane/moon.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/blake.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/brooke.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/david.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/ewan.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/ewan.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/hania.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/laine.jpg
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/matthew.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane/stephen.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JButton.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JColorChooser.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JComboBox.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JDesktop.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JDialog.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JEditorPane.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JFileChooser.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JList.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JMenu.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JOptionPane.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JProgressBar.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JRadioButton.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JScrollBar.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JScrollPane.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JSlider.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JSplitPane.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JTabbedPane.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JTable.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/JTree.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar/ToolTip.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/images/tooltip/cow.gif
+%%T%%/demo/jfc/SwingSet2/src/resources/index.html
+%%T%%/demo/jfc/SwingSet2/src/resources/king.html
+%%T%%/demo/jfc/SwingSet2/src/resources/preface.html
+%%T%%/demo/jfc/SwingSet2/src/resources/seaweed.html
+%%T%%/demo/jfc/SwingSet2/src/resources/swingset.properties
+%%T%%/demo/jfc/SwingSet2/src/resources/swingset_ja.properties
+%%T%%/demo/jfc/SwingSet2/src/resources/title.html
+%%T%%/demo/jfc/SwingSet2/src/resources/tree.txt
 %%T%%/demo/jfc/TableExample/README.txt
 %%T%%/demo/jfc/TableExample/TableExample.jar
 %%T%%/demo/jfc/TableExample/src/JDBCAdapter.java
@@ -814,18 +1029,20 @@
 %%T%%/demo/plugin/jfc/CodePointIM/CodePointIM.jar
 %%T%%/demo/plugin/jfc/CodePointIM/README.html
 %%T%%/demo/plugin/jfc/CodePointIM/README_ja.html
+%%T%%/demo/plugin/jfc/CodePointIM/README_zh_CN.html
 %%T%%/demo/plugin/jfc/CodePointIM/src/CodePointIM.java
 %%T%%/demo/plugin/jfc/CodePointIM/src/CodePointInputMethod.java
 %%T%%/demo/plugin/jfc/CodePointIM/src/CodePointInputMethodDescriptor.java
 %%T%%/demo/plugin/jfc/CodePointIM/src/resources/codepoint.properties
 %%T%%/demo/plugin/jfc/CodePointIM/src/resources/codepoint_ja.properties
+%%T%%/demo/plugin/jfc/CodePointIM/src/resources/codepoint_zh_CN.properties
 %%T%%/demo/plugin/jfc/FileChooserDemo/FileChooserDemo.jar
 %%T%%/demo/plugin/jfc/FileChooserDemo/README.txt
-%%T%%/demo/plugin/jfc/FileChooserDemo/images/gifIcon.gif
-%%T%%/demo/plugin/jfc/FileChooserDemo/images/jpgIcon.jpg
 %%T%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileFilter.java
 %%T%%/demo/plugin/jfc/FileChooserDemo/src/ExampleFileView.java
 %%T%%/demo/plugin/jfc/FileChooserDemo/src/FileChooserDemo.java
+%%T%%/demo/plugin/jfc/FileChooserDemo/src/resources/images/gifIcon.gif
+%%T%%/demo/plugin/jfc/FileChooserDemo/src/resources/images/jpgIcon.jpg
 %%T%%/demo/plugin/jfc/Font2DTest/Font2DTest.html
 %%T%%/demo/plugin/jfc/Font2DTest/Font2DTest.jar
 %%T%%/demo/plugin/jfc/Font2DTest/README.txt
@@ -836,6 +1053,38 @@
 %%T%%/demo/plugin/jfc/Java2D/Java2Demo.html
 %%T%%/demo/plugin/jfc/Java2D/Java2Demo.jar
 %%T%%/demo/plugin/jfc/Java2D/README.txt
+%%T%%/demo/plugin/jfc/Java2D/src/fonts/A.ttf
+%%T%%/demo/plugin/jfc/Java2D/src/images/bld.jpg
+%%T%%/demo/plugin/jfc/Java2D/src/images/boat.png
+%%T%%/demo/plugin/jfc/Java2D/src/images/box.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/boxwave.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/clone.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/clouds.jpg
+%%T%%/demo/plugin/jfc/Java2D/src/images/cupanim.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/duke.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/duke.png
+%%T%%/demo/plugin/jfc/Java2D/src/images/duke.running.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/dukeplug.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/fight.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/globe.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/java-logo.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/java_logo.png
+%%T%%/demo/plugin/jfc/Java2D/src/images/jumptojavastrip.png
+%%T%%/demo/plugin/jfc/Java2D/src/images/loop.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/looping.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/magnify.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/painting.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/print.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/remove.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/snooze.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/star7.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/start.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/start2.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/stop.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/stop2.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/surfing.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/thumbsup.gif
+%%T%%/demo/plugin/jfc/Java2D/src/images/tip.gif
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/AnimatingControlsSurface.java
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/AnimatingSurface.java
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/CloningFeature.java
@@ -898,23 +1147,8 @@
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/back.gif
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/credits.html
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/duke.gif
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/javalogo.gif
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/metal.html
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/metalworks.html
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/swing.html
-%%T%%/demo/plugin/jfc/Metalworks/HelpFiles/toc.html
 %%T%%/demo/plugin/jfc/Metalworks/Metalworks.jar
 %%T%%/demo/plugin/jfc/Metalworks/README.txt
-%%T%%/demo/plugin/jfc/Metalworks/images/palette_crop.gif
-%%T%%/demo/plugin/jfc/Metalworks/images/palette_draw.gif
-%%T%%/demo/plugin/jfc/Metalworks/images/palette_hand.gif
-%%T%%/demo/plugin/jfc/Metalworks/images/palette_select.gif
-%%T%%/demo/plugin/jfc/Metalworks/images/palette_text.gif
-%%T%%/demo/plugin/jfc/Metalworks/images/palette_zoom.gif
-%%T%%/demo/plugin/jfc/Metalworks/resources/MyTheme.theme
 %%T%%/demo/plugin/jfc/Metalworks/src/AquaMetalTheme.java
 %%T%%/demo/plugin/jfc/Metalworks/src/BigContrastMetalTheme.java
 %%T%%/demo/plugin/jfc/Metalworks/src/ContrastMetalTheme.java
@@ -930,62 +1164,71 @@
 %%T%%/demo/plugin/jfc/Metalworks/src/MetalworksPrefs.java
 %%T%%/demo/plugin/jfc/Metalworks/src/PropertiesMetalTheme.java
 %%T%%/demo/plugin/jfc/Metalworks/src/UISwitchListener.java
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/back.gif
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/credits.html
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/duke.gif
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/javalogo.gif
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/metal.html
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/metalworks.html
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/swing.html
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles/toc.html
+%%T%%/demo/plugin/jfc/Metalworks/src/resources/MyTheme.theme
 %%T%%/demo/plugin/jfc/Notepad/Notepad.jar
 %%T%%/demo/plugin/jfc/Notepad/README.txt
-%%T%%/demo/plugin/jfc/Notepad/resources/Notepad.properties
-%%T%%/demo/plugin/jfc/Notepad/resources/Notepad_fr.properties
-%%T%%/demo/plugin/jfc/Notepad/resources/Notepad_sv.properties
-%%T%%/demo/plugin/jfc/Notepad/resources/Notepad_zh_CN.properties
-%%T%%/demo/plugin/jfc/Notepad/resources/copy.gif
-%%T%%/demo/plugin/jfc/Notepad/resources/cut.gif
-%%T%%/demo/plugin/jfc/Notepad/resources/new.gif
-%%T%%/demo/plugin/jfc/Notepad/resources/open.gif
-%%T%%/demo/plugin/jfc/Notepad/resources/paste.gif
-%%T%%/demo/plugin/jfc/Notepad/resources/save.gif
 %%T%%/demo/plugin/jfc/Notepad/src/ElementTreePanel.java
 %%T%%/demo/plugin/jfc/Notepad/src/Notepad.java
+%%T%%/demo/plugin/jfc/Notepad/src/resources/Notepad.properties
+%%T%%/demo/plugin/jfc/Notepad/src/resources/Notepad_fr.properties
+%%T%%/demo/plugin/jfc/Notepad/src/resources/Notepad_sv.properties
+%%T%%/demo/plugin/jfc/Notepad/src/resources/Notepad_zh_CN.properties
+%%T%%/demo/plugin/jfc/Notepad/src/resources/copy.gif
+%%T%%/demo/plugin/jfc/Notepad/src/resources/cut.gif
+%%T%%/demo/plugin/jfc/Notepad/src/resources/new.gif
+%%T%%/demo/plugin/jfc/Notepad/src/resources/open.gif
+%%T%%/demo/plugin/jfc/Notepad/src/resources/paste.gif
+%%T%%/demo/plugin/jfc/Notepad/src/resources/save.gif
 %%T%%/demo/plugin/jfc/SampleTree/README.txt
 %%T%%/demo/plugin/jfc/SampleTree/SampleTree.jar
-%%T%%/demo/plugin/jfc/SampleTree/images/collapsed.gif
-%%T%%/demo/plugin/jfc/SampleTree/images/expanded.gif
 %%T%%/demo/plugin/jfc/SampleTree/src/DynamicTreeNode.java
 %%T%%/demo/plugin/jfc/SampleTree/src/SampleData.java
 %%T%%/demo/plugin/jfc/SampleTree/src/SampleTree.java
 %%T%%/demo/plugin/jfc/SampleTree/src/SampleTreeCellRenderer.java
 %%T%%/demo/plugin/jfc/SampleTree/src/SampleTreeModel.java
+%%T%%/demo/plugin/jfc/SampleTree/src/resources/images/collapsed.gif
+%%T%%/demo/plugin/jfc/SampleTree/src/resources/images/expanded.gif
 %%T%%/demo/plugin/jfc/Stylepad/README.txt
 %%T%%/demo/plugin/jfc/Stylepad/Stylepad.jar
-%%T%%/demo/plugin/jfc/Stylepad/resources/Notepad.properties
-%%T%%/demo/plugin/jfc/Stylepad/resources/Notepad_fr.properties
-%%T%%/demo/plugin/jfc/Stylepad/resources/Notepad_sv.properties
-%%T%%/demo/plugin/jfc/Stylepad/resources/Notepad_zh_CN.properties
-%%T%%/demo/plugin/jfc/Stylepad/resources/Stylepad.properties
-%%T%%/demo/plugin/jfc/Stylepad/resources/Stylepad_sv.properties
-%%T%%/demo/plugin/jfc/Stylepad/resources/Stylepad_zh_CN.properties
-%%T%%/demo/plugin/jfc/Stylepad/resources/alice.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/bold.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/bullets.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/caterpillar.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/center.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/copy.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/cut.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/fg.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/hatter.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/italic.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/left.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/new.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/open.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/paste.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/rabbit.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/rabbit2.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/right.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/save.gif
-%%T%%/demo/plugin/jfc/Stylepad/resources/underline.gif
 %%T%%/demo/plugin/jfc/Stylepad/src/ElementTreePanel.java
 %%T%%/demo/plugin/jfc/Stylepad/src/HelloWorld.java
 %%T%%/demo/plugin/jfc/Stylepad/src/Notepad.java
 %%T%%/demo/plugin/jfc/Stylepad/src/Stylepad.java
 %%T%%/demo/plugin/jfc/Stylepad/src/Wonderland.java
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/Notepad.properties
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/Notepad_fr.properties
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/Notepad_sv.properties
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/Notepad_zh_CN.properties
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/Stylepad.properties
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/Stylepad_sv.properties
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/Stylepad_zh_CN.properties
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/alice.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/bold.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/bullets.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/caterpillar.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/center.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/copy.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/cut.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/fg.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/hatter.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/italic.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/left.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/new.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/open.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/paste.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/rabbit.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/rabbit2.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/right.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/save.gif
+%%T%%/demo/plugin/jfc/Stylepad/src/resources/underline.gif
 %%T%%/demo/plugin/jfc/SwingApplet/README.txt
 %%T%%/demo/plugin/jfc/SwingApplet/SwingApplet.html
 %%T%%/demo/plugin/jfc/SwingApplet/SwingApplet.jar
@@ -1024,6 +1267,193 @@
 %%T%%/demo/plugin/jfc/SwingSet2/src/TableDemo.java
 %%T%%/demo/plugin/jfc/SwingSet2/src/ToolTipDemo.java
 %%T%%/demo/plugin/jfc/SwingSet2/src/TreeDemo.java
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/ant.html
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/bug.html
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/About.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/COPYRIGHT
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/apple.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/asparagus.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/banana.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/broccoli.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/cantaloupe.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/carrot.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/corn.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/grapefruit.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/grapes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/kiwi.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/onion.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/peach.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/pear.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/pepper.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/pickle.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/pineapple.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/raspberry.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/strawberry.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/tomato.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food/watermelon.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/cab.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/cab_small.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/fish.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/fish_small.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/moon.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/moon_small.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/sun.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc/sun_small.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/COPYRIGHT
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/ant.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/book.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/bug.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/bug2.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/crest.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/king.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/micro.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo/seaweed.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Splash.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b1.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b1d.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b1p.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b1r.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b2.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b2d.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b2p.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b2r.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b3.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b3d.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b3p.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/b3r.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/bl.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/bldn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/bm.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/bmdn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/br.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/brdn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/c.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/cb.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/cbr.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/cbrs.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/cbs.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/cdn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/ml.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/mldn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/mr.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/mrdn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/rb.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/rbp.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/rbr.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/rbrs.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/rbs.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/tl.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/tldn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/tm.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/tmdn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/toggle.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/toggledn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/tr.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons/trdn.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/brenteyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/brenthair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/brentmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/georgeseyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/georgeshair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/georgesmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/hanseyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/hanshair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/hansmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/howardeyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/howardhair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/howardmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jameseyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jameshair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jamesmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jeffeyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jeffhair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jeffmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/joneyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jonhair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/jonmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/laraeyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/larahair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/laramouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/larryeyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/larryhair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/larrymouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/lisaeyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/lisahair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/lisamouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/michaeleyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/michaelhair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/michaelmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/philipeyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/philiphair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/philipmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/scotteyes.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/scotthair.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox/scottmouth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/filechooser/find.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/filechooser/gifIcon.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/filechooser/help.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/filechooser/jpgIcon.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/htmldemo/back.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/htmldemo/forward.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/htmldemo/header.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list/blue.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list/cyan.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list/gray.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list/green.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list/magenta.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list/red.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list/yellow.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/optionpane/bottle.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/optionpane/ibd.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/optionpane/ibu.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/COPYRIGHT
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/colheader.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/crayons.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/lowerleft.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/rowheader.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/upperleft.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane/upperright.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splitpane/README
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splitpane/earth.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splitpane/moon.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/blake.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/brooke.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/david.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/ewan.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/ewan.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/hania.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/laine.jpg
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/matthew.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane/stephen.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JButton.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JColorChooser.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JComboBox.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JDesktop.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JDialog.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JEditorPane.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JFileChooser.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JList.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JMenu.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JOptionPane.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JProgressBar.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JRadioButton.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JScrollBar.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JScrollPane.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JSlider.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JSplitPane.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JTabbedPane.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JTable.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/JTree.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar/ToolTip.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tooltip/cow.gif
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/index.html
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/king.html
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/preface.html
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/seaweed.html
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/swingset.properties
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/swingset_ja.properties
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/title.html
+%%T%%/demo/plugin/jfc/SwingSet2/src/resources/tree.txt
 %%T%%/demo/plugin/jfc/TableExample/README.txt
 %%T%%/demo/plugin/jfc/TableExample/TableExample.jar
 %%T%%/demo/plugin/jfc/TableExample/src/JDBCAdapter.java
@@ -1992,23 +2422,40 @@
 @dirrm %%T%%/include
 @dirrm %%T%%/demo/plugin/jfc/TableExample/src
 @dirrm %%T%%/demo/plugin/jfc/TableExample
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tooltip
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/splitpane
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/scrollpane
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/optionpane
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/list
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/htmldemo
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/filechooser
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/combobox
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/buttons
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/Octavo
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/misc
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub/food
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/ImageClub
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images
+@dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources
 @dirrm %%T%%/demo/plugin/jfc/SwingSet2/src
 @dirrm %%T%%/demo/plugin/jfc/SwingSet2
 @dirrm %%T%%/demo/plugin/jfc/SwingApplet/src
 @dirrm %%T%%/demo/plugin/jfc/SwingApplet
+@dirrm %%T%%/demo/plugin/jfc/Stylepad/src/resources
 @dirrm %%T%%/demo/plugin/jfc/Stylepad/src
-@dirrm %%T%%/demo/plugin/jfc/Stylepad/resources
 @dirrm %%T%%/demo/plugin/jfc/Stylepad
+@dirrm %%T%%/demo/plugin/jfc/SampleTree/src/resources/images
+@dirrm %%T%%/demo/plugin/jfc/SampleTree/src/resources
 @dirrm %%T%%/demo/plugin/jfc/SampleTree/src
-@dirrm %%T%%/demo/plugin/jfc/SampleTree/images
 @dirrm %%T%%/demo/plugin/jfc/SampleTree
+@dirrm %%T%%/demo/plugin/jfc/Notepad/src/resources
 @dirrm %%T%%/demo/plugin/jfc/Notepad/src
-@dirrm %%T%%/demo/plugin/jfc/Notepad/resources
 @dirrm %%T%%/demo/plugin/jfc/Notepad
+@dirrm %%T%%/demo/plugin/jfc/Metalworks/src/resources/HelpFiles
+@dirrm %%T%%/demo/plugin/jfc/Metalworks/src/resources
 @dirrm %%T%%/demo/plugin/jfc/Metalworks/src
-@dirrm %%T%%/demo/plugin/jfc/Metalworks/resources
-@dirrm %%T%%/demo/plugin/jfc/Metalworks/images
-@dirrm %%T%%/demo/plugin/jfc/Metalworks/HelpFiles
 @dirrm %%T%%/demo/plugin/jfc/Metalworks
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths
@@ -2023,12 +2470,15 @@
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d
+@dirrm %%T%%/demo/plugin/jfc/Java2D/src/images
+@dirrm %%T%%/demo/plugin/jfc/Java2D/src/fonts
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src
 @dirrm %%T%%/demo/plugin/jfc/Java2D
 @dirrm %%T%%/demo/plugin/jfc/Font2DTest/src
 @dirrm %%T%%/demo/plugin/jfc/Font2DTest
+@dirrm %%T%%/demo/plugin/jfc/FileChooserDemo/src/resources/images
+@dirrm %%T%%/demo/plugin/jfc/FileChooserDemo/src/resources
 @dirrm %%T%%/demo/plugin/jfc/FileChooserDemo/src
-@dirrm %%T%%/demo/plugin/jfc/FileChooserDemo/images
 @dirrm %%T%%/demo/plugin/jfc/FileChooserDemo
 @dirrm %%T%%/demo/plugin/jfc/CodePointIM/src/resources
 @dirrm %%T%%/demo/plugin/jfc/CodePointIM/src
@@ -2104,23 +2554,40 @@
 @dirrm %%T%%/demo/jpda
 @dirrm %%T%%/demo/jfc/TableExample/src
 @dirrm %%T%%/demo/jfc/TableExample
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/tooltip
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/splitpane
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/scrollpane
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/optionpane
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/list
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/htmldemo
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/filechooser
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/combobox
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/buttons
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/Octavo
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/ImageClub
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images
+@dirrm %%T%%/demo/jfc/SwingSet2/src/resources
 @dirrm %%T%%/demo/jfc/SwingSet2/src
 @dirrm %%T%%/demo/jfc/SwingSet2
 @dirrm %%T%%/demo/jfc/SwingApplet/src
 @dirrm %%T%%/demo/jfc/SwingApplet
+@dirrm %%T%%/demo/jfc/Stylepad/src/resources
 @dirrm %%T%%/demo/jfc/Stylepad/src
-@dirrm %%T%%/demo/jfc/Stylepad/resources
 @dirrm %%T%%/demo/jfc/Stylepad
+@dirrm %%T%%/demo/jfc/SampleTree/src/resources/images
+@dirrm %%T%%/demo/jfc/SampleTree/src/resources
 @dirrm %%T%%/demo/jfc/SampleTree/src
-@dirrm %%T%%/demo/jfc/SampleTree/images
 @dirrm %%T%%/demo/jfc/SampleTree
+@dirrm %%T%%/demo/jfc/Notepad/src/resources
 @dirrm %%T%%/demo/jfc/Notepad/src
-@dirrm %%T%%/demo/jfc/Notepad/resources
 @dirrm %%T%%/demo/jfc/Notepad
+@dirrm %%T%%/demo/jfc/Metalworks/src/resources/HelpFiles
+@dirrm %%T%%/demo/jfc/Metalworks/src/resources
 @dirrm %%T%%/demo/jfc/Metalworks/src
-@dirrm %%T%%/demo/jfc/Metalworks/resources
-@dirrm %%T%%/demo/jfc/Metalworks/images
-@dirrm %%T%%/demo/jfc/Metalworks/HelpFiles
 @dirrm %%T%%/demo/jfc/Metalworks
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d/demos/Paths
@@ -2135,12 +2602,15 @@
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d/demos/Arcs_Curves
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d/demos
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d
+@dirrm %%T%%/demo/jfc/Java2D/src/images
+@dirrm %%T%%/demo/jfc/Java2D/src/fonts
 @dirrm %%T%%/demo/jfc/Java2D/src
 @dirrm %%T%%/demo/jfc/Java2D
 @dirrm %%T%%/demo/jfc/Font2DTest/src
 @dirrm %%T%%/demo/jfc/Font2DTest
+@dirrm %%T%%/demo/jfc/FileChooserDemo/src/resources/images
+@dirrm %%T%%/demo/jfc/FileChooserDemo/src/resources
 @dirrm %%T%%/demo/jfc/FileChooserDemo/src
-@dirrm %%T%%/demo/jfc/FileChooserDemo/images
 @dirrm %%T%%/demo/jfc/FileChooserDemo
 @dirrm %%T%%/demo/jfc/CodePointIM/src/resources
 @dirrm %%T%%/demo/jfc/CodePointIM/src
