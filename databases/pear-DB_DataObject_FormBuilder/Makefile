@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.13.1
+PORTVERSION=	0.14.0
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
@@ -21,8 +21,11 @@ OPTIONS=	PEAR_DATE "PEAR::Date support" off \
 		PEAR_HTML_TABLE "PEAR::HTML_Table support" off
 
 CATEGORY=	DB/DataObject
-FILES=		FormBuilder.php FormBuilder/QuickForm.php FormBuilder/QuickForm/ElementTable.php \
+FILES=		FormBuilder.php FormBuilder/QuickForm.php \
+		FormBuilder/QuickForm/ElementTable.php \
 		FormBuilder/QuickForm/PopupSelect.php
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_PEAR_DATE)
 RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
@@ -32,6 +35,5 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
 RUN_DEPENDS+=	${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table
 .endif
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
