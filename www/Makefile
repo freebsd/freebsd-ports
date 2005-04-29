@@ -645,6 +645,7 @@
     SUBDIR += py-imdbpy
     SUBDIR += py-mt
     SUBDIR += py-nevow
+    SUBDIR += py-pullparser
     SUBDIR += py-scgi
     SUBDIR += py-twistedWeb
     SUBDIR += py-websvcs
