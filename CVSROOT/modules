@@ -9623,6 +9623,7 @@ py-probstat	ports/math/py-probstat
 py-prolog	ports/lang/py-prolog
 py-psyco	ports/devel/py-psyco
 py-psycopg	ports/databases/py-psycopg
+py-pullparser	ports/www/py-pullparser
 py-px		ports/devel/py-px
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-pycrypto	ports/security/py-pycrypto
