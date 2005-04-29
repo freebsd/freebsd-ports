@@ -584,7 +584,6 @@ lib/libsym.a
 %%PORTDOCS%%%%DATADIR%%/test/crambin.top
 %%PORTDOCS%%%%DATADIR%%/test/crambin.x
 %%PORTDOCS%%%%DATADIR%%/test/d01.lin.check
-%%PORTDOCS%%%%DATADIR%%/test/d01.pdb
 %%PORTDOCS%%%%DATADIR%%/test/d01.pdb.check
 %%PORTDOCS%%%%DATADIR%%/test/dg_gyrate.nab
 %%PORTDOCS%%%%DATADIR%%/test/dg_gyrate.out.check
