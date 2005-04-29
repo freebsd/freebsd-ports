@@ -17,9 +17,17 @@ COMMENT=	3D single/multiplayer military soccer game for X Window System
 USE_X_PREFIX=	yes
 USE_GL=		yes
 WRKSRC=		${WRKDIR}/battleball-2.1-src
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-CFLAGS+=	-Wno-deprecated
+CFLAGS+=	-Wno-deprecated ${PTHREAD_CFLAGS}
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"	\
+		XLIBS="-L${X11BASE}/lib -lX11"		\
+		LIBS="-lm ${XLIBS} ${PTHREAD_LIBS}"	\
+		GLINCS="-I${X11BASE}/include"		\
+		GLLIBS="-lXi -lXmu -lXext -L${X11BASE}/lib -lGL"
+
+PLIST_FILES=	bin/battleball
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CHANGELOG README
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +41,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGELOG README
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
