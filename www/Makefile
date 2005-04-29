@@ -643,6 +643,7 @@
     SUBDIR += py-forgethtml
     SUBDIR += py-htmltestcase
     SUBDIR += py-imdbpy
+    SUBDIR += py-mechanize
     SUBDIR += py-mt
     SUBDIR += py-nevow
     SUBDIR += py-pullparser
