@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSION=	${PORTVERSIONRAW:S/-/./}
+DISTVERSION=	2.3-20050426
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -26,13 +26,11 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		http://people.FreeBSD.org/~seanc/ports/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/experimental/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
-DISTNAME=	postfix-${PORTVERSIONRAW}
+DISTNAME=	postfix-${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A secure alternative to widely-used Sendmail
-
-PORTVERSIONRAW=	2.3-20050422
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
