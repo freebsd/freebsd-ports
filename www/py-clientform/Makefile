@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clientform
-PORTVERSION=	0.1.16
+PORTVERSION=	0.1.17
 CATEGORIES=	www python
 MASTER_SITES=	http://wwwsearch.sourceforge.net/ClientForm/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
