@@ -18,11 +18,6 @@ COMMENT=	Read/Write .css files with as little code as possible
 PERL_CONFIGURE=	yes
 MAN3=		CSS::Tiny.3
 
-post-patch:
-	@${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	@${PERL} -pi -e '$$_="" if /AutoInstall/' ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e '$$_="" if /Test::More|auto_install/' ${WRKSRC}/Makefile.PL
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500503
@@ -32,6 +27,14 @@ EXTRA_PATCHES=	${PATCHDIR}/500503-lib::CSS::Tiny.pm
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+post-patch:
+	@${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
+	@${PERL} -pi -e '$$_="" if /AutoInstall/' ${WRKSRC}/MANIFEST
+	@${PERL} -pi -e '$$_="" if /Test::More|auto_install/' ${WRKSRC}/Makefile.PL
+.if ${PERL_LEVEL} <= 500503
+	@${RM} ${WRKSRC}/lib/CSS/Tiny.pm.orig
 .endif
 
 .include <bsd.port.post.mk>
