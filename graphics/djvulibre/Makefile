@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.13
+PORTVERSION=	3.5.14
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -25,7 +25,8 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-HAS_CONFIGURE=	yes
+USE_AUTOCONF_VER=259
+USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 DATADIR=	${PREFIX}/share/djvu
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
@@ -39,7 +40,6 @@ CONFIGURE_ENV+=	CXX=${CXX} \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		QTLIBS="-L${X11BASE}/lib -lqt-mt"
-CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 .else
 CONFIGURE_ARGS+=--disable-djview
 .endif
@@ -55,6 +55,9 @@ pre-configure:
 	${PERL5} -pi -e 's,/usr/local,${LOCALBASE},g' `${FIND} ${WRKSRC} \
 		-type f -print0 | ${XARGS} -0 ${GREP} -Fl --mmap /usr/local`
 .endif
+
+patch-autotools:
+	@cd ${PATCH_WRKSRC}; ${LIBTOOLIZE} -f >/dev/null
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 post-configure:
