@@ -9581,6 +9581,7 @@ py-mad		ports/audio/py-mad
 py-martel	ports/textproc/py-martel
 py-matplotlib	ports/math/py-matplotlib
 py-mcrypt	ports/security/py-mcrypt
+py-mechanize	ports/www/py-mechanize
 py-medusa	ports/net/py-medusa
 py-memcached	ports/databases/py-memcached
 py-metar	ports/astro/py-metar
