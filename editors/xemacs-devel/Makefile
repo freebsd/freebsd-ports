@@ -59,12 +59,6 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
-# Undump and malloc do not behave on amd64 at the moment
-.if ${ARCH} == "amd64"
-CONFIGURE_ARGS+= --with-system-malloc --enable-pdump 
-BROKEN=		"Incomplete pkg-plist"
-.endif
-
 .if exists(${X11BASE}/lib/libXm.so)
 USE_MOTIF=	yes
 HAVE_MOTIF=	yes
