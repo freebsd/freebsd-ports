@@ -1,0 +1,76 @@
+Configuration Instructions for Flyspray
+=======================================
+
+0) If you are upgrading from a previous version of flyspray, please skip to
+   the Upgrading section below.
+
+1) Create a mysql database for Flyspray to use.  Here is one way to do that,
+   from the unix/linux command line, entering your mysql root password when
+   prompted:
+
+# mysqladmin -u root -p create flyspray
+
+2) Import the Flyspray database tables into your new empty database. Here is
+   the unix/linux command line method; be sure to enter your mysql root
+   password when prompted:
+
+# mysql -u root -p flyspray < flyspray-version.sql
+
+3) Insert the following configuration command into your httpd.conf:
+
+	Alias "/flyspray/" "/usr/local/share/flyspray/"
+
+4) Point your browser to http://yourserver.com/flyspray/ and you should
+   see the Flyspray setup script!
+
+5) If you are upgrading from an old version of Flyspray, skip to note 10
+   below.  Otherwise, create youself a new user, and put this user into the
+   Admin group.
+
+6) CHANGE THE PASSWORD FOR THE super/super ACCOUNT by clicking the 'Change
+   Password' link near the top of the page.  You might like to disable the
+   account entirely, or it will appear in the list of members to be assigned
+   tasks.
+
+7) Click on the admin links to set up your Options and lists.
+
+8) Close the sample task, and begin adding your own.
+
+9) Report any bugs you find back to http://flyspray.rocks.cc/?p=Support or the
+   mailing list linked from the Flyspray homepage.
+
+
+Upgrading from Previous Versions of Flyspray
+============================================
+
+You can upgrade from a previous version of Flyspray by doing the following:
+
+0) read /usr/local/share/doc/flyspray/UPGRADING.txt.
+
+1) back up your old flyspray task database using "mysqldump".  No, really,
+   you seriously run the risk of losing ALL your data if you don't do this.
+
+2) load http://yourserver.com/flyspray/ in your browser,  set up the
+   database access parameters and click the "continue to next page" button. 
+   DO NOT click "Continue to next page" a second time (i.e. on the page
+   which reads "Next, we are going to try setting up your database...")
+
+3) If you are upgrading from 0.9.5, you will need to upgrade your database
+   settings to 0.9.6 before going to 0.9.7.  You can do this by loading the
+   upgrade script on:
+
+      http://yourserver.com/flyspray/sql/upgrade_0.9.5_to_0.9.6-mysql.php
+
+   You will need to click "Perform upgrade now!".
+
+4) To upgrade your database structure from 0.9.6 format to 0.9.7 load the
+   following URL into your browser:
+
+      http://yourserver.com/flyspray/sql/upgrade_0.9.6_to_0.9.7.php
+
+   You will need to click "Take me to Flyspray 0.9.7 now!"
+
+5) That's it! flyspray has been upgraded to 0.9.7.  If you messed up the
+   sequence of commands, you will probably have lost data in the process,
+   and may need to re-install your database from your backup.  You did
+   take a backup, right?
