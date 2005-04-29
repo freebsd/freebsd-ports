@@ -68,11 +68,11 @@ pre-fetch:
 	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
 	@${ECHO} "OOo debug support."
 .endif
-.if !defined(WITHOUT_MOZILLA)
-	@${ECHO}
-	@${ECHO} "You can compile OOo without Mozilla connectivity by"
-	@${ECHO} "make -DWITHOUT_MOZILLA"
-.endif
+#.if !defined(WITHOUT_MOZILLA)
+#	@${ECHO}
+#	@${ECHO} "You can compile OOo without Mozilla connectivity by"
+#	@${ECHO} "make -DWITHOUT_MOZILLA"
+#.endif
 .if !defined(WITH_TTF_BYTECODE_ENABLED)
 	@${ECHO}
 	@${ECHO} "You may get better quality of glyphs"
@@ -87,11 +87,11 @@ pre-fetch:
 	@${ECHO} "You can compile OOo without Java support by"
 	@${ECHO} "make -DWITHOUT_JAVA"
 .endif
-.if !defined(WITH_CUPS)
-	@${ECHO}
-	@${ECHO} "You can compile OOo with CUPS support by"
-	@${ECHO} "make -DWITH_CUPS"
-.endif
+#.if !defined(WITH_CUPS)
+#	@${ECHO}
+#	@${ECHO} "You can compile OOo with CUPS support by"
+#	@${ECHO} "make -DWITH_CUPS"
+#.endif
 .if !defined(WITH_KDE)
 	@${ECHO}
 	@${ECHO} "You can compile OOo to use Qt/KDE vclplug"
