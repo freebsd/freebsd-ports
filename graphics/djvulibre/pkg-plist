@@ -17,8 +17,10 @@ bin/djvuserve
 bin/djvutoxml
 bin/djvutxt
 bin/djvuxmlparser
+include/libdjvu/ddjvuapi.h
 %%X11%%lib/browser_plugins/nsdejavu.so
-lib/libdjvulibre-3.5.13.so
+lib/libdjvulibre.so
+lib/libdjvulibre.so.14
 share/djvu/languages.xml
 %%X11%%share/djvu/osi/de/djview.qm
 share/djvu/osi/de/libdjvu++.xml

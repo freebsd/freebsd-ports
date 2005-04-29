@@ -10,12 +10,3 @@ diff -ur gui/nsdejavu/Makefile.in.ori gui/nsdejavu/Makefile.in
  
  CC = @CC@
  CXX = @CXX@
-@@ -40,7 +40,7 @@
- OPTS = @OPTS@
- NSDEJAVU = @NSDEJAVU@
- NSDEJAVU_FLAGS = @NSDEJAVU_FLAGS@
--NSDEJAVU_LIBS = @NSDEJAVU_LIBS@
-+NSDEJAVU_LIBS = @NSDEJAVU_LIBS@ -lXt
- NSDEJAVU_LINK = @NSDEJAVU_LINK@
- 
- INCS = \
