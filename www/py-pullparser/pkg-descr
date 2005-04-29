@@ -1,0 +1,5 @@
+A simple "pull API" for HTML parsing, after Perl's HTML::TokeParser. Many
+simple HTML parsing tasks are simpler this way than with the HTMLParser
+module. pullparser.PullParser is a subclass of HTMLParser.HTMLParser.
+
+WWW: http://wwwsearch.sourceforge.net/pullparser/
