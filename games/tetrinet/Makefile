@@ -13,7 +13,11 @@ MASTER_SITES=	http://tetrinet.or.cz/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console tetrinet client
 
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_IPV6"
+PLIST_FILES=	bin/tetrinet bin/tetrinet-server
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README tetrinet.txt
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tetrinet ${PREFIX}/bin
