@@ -1,4 +1,5 @@
 bin/gnopernicus
+bin/gnopernicus-mag-config
 bin/srcore
 etc/gnopernicus-1.0/translation_tables/de.a2b
 etc/gnopernicus-1.0/translation_tables/en_US.a2b
@@ -15,6 +16,7 @@ include/gnopernicus-1.0/libsrs/srs-xml.h
 include/gnopernicus-1.0/libsrutil/SREvent.h
 include/gnopernicus-1.0/libsrutil/SRMessages.h
 include/gnopernicus-1.0/libsrutil/srintl.h
+include/gnopernicus-1.0/libsrutil/sru-debug.h
 include/gnopernicus-1.0/libsrutil/util.h
 lib/gnopernicus-1.0/libbrl.a
 lib/gnopernicus-1.0/libbrl.so

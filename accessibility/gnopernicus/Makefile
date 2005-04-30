@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnopernicus
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -29,12 +29,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV=	SED="${SED}"
 
 GCONF_SCHEMAS=	brlmonitor.schemas gnopernicus.schemas remote.schemas
-SHLIB_VERSION=	7
+SHLIB_VERSION=	8
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^F||' \
 		${WRKSRC}/help/braille_monitor/C/brlmonitor-C.omf \
 		${WRKSRC}/help/braille_monitor/es/brlmonitor-es.omf
+	@${CP} ${FILESDIR}/gnopernicus-mag-config ${WRKSRC}/gnopi
 
 .include <bsd.port.mk>
