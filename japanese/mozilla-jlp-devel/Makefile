@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/regxpcom:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${MOZILLA}:${PORTSDIR}/www/${MOZILLA} \
 		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
 
+BROKEN=		Incorrect pkg-plist
+
 WRKSRC=		${WRKDIR}/bin
 
 LATEST_LINK=	ja-mozilla-jlp-devel
