@@ -624,10 +624,7 @@
 %%PORTDOCS%%%%COMPILERDIR%%/doc/c_ug_lnx.pdf
 %%PORTDOCS%%%%COMPILERDIR%%/doc/ccompindex.htm
 %%COMPILERDIR%%/doc/csupport
-%%PORTDOCS%%%%COMPILERDIR%%/doc/flex_ug.pdf
 %%PORTDOCS%%%%COMPILERDIR%%/doc/icpi.htm
-%%COMPILERDIR%%/doc/notes/l_icc_ia32_issues.txt
-@dirrm %%COMPILERDIR%%/doc/notes
 %%PORTDOCS%%%%COMPILERDIR%%/doc/readme.txt
 %%PORTDOCS%%%%COMPILERDIR%%/doc/training/optimize/ch0/conventi.htm
 %%PORTDOCS%%%%COMPILERDIR%%/doc/training/optimize/ch0/descript.htm
