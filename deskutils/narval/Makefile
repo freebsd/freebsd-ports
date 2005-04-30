@@ -30,6 +30,10 @@ DOCFILES=	ANNOUNCE.en ANNOUNCE.fr CHANGELOG CONTRIBUTORS README.WIN32 README.UNI
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+BROKEN=		"Does not build on i386"
+.endif
+
 .if ${PYTHON_VERSION} == "python1.5" || ${PYTHON_VERSION} == "python1.6"
 XMLDIR=		xml
 .else
