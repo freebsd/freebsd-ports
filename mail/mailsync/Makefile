@@ -17,6 +17,8 @@ COMMENT=	Mailsync is a way of keeping a collection of mailboxes synchronized
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
+BROKEN=		Configure fails
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
