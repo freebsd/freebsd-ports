@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	putty
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Secure shell and telnet client
 
 USE_GMAKE=	yes
@@ -19,6 +19,7 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP
+
 .ifndef WITHOUT_IPV6
 CFLAGS+=	-DIPV6
 .endif
@@ -34,7 +35,9 @@ MAKE_ENV+=	PUTTY_WITH_GTK=yes
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,gtk-config,${GTK_CONFIG},' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's,gtk-config,${GTK_CONFIG},; \
+			      s,prefix=/usr/local,prefix=${PREFIX},' \
+			     ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.pre.mk>
 
