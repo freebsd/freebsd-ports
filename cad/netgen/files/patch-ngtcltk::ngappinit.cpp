@@ -14,13 +14,12 @@
  
  namespace netgen
  {
-@@ -26,7 +28,7 @@
+@@ -26,7 +28,5 @@
   * The following variable is a special hack that is needed in order for
   * Sun shared libraries to be used for Tcl.
   */
 -// extern "C" int matherr();
-+extern "C" int matherr();
- int *tclDummyMathPtr = (int *) matherr;
+-int *tclDummyMathPtr = (int *) matherr;
  
  
 @@ -194,8 +196,9 @@
