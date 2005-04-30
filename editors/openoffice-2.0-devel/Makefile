@@ -17,7 +17,7 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050426
+SNAPDATE=	20050429
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
@@ -49,7 +49,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		97
+MILESTONE=		98
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
