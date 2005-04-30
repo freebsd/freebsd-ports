@@ -21,6 +21,8 @@ COMMENT=	A language teaching program with sound
 
 LIB_DEPENDS=	lingoteach.3:${PORTSDIR}/textproc/liblingoteach
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-ui-${PORTVERSION}
 
 USE_GNOME=	gtk20

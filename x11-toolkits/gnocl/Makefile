@@ -17,6 +17,8 @@ COMMENT=	GTK+ and Gnome extension for Tcl
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tcl8.4/tcl.h:${PORTSDIR}/lang/tcl84
 
+BROKEN=		"Does not build"
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
