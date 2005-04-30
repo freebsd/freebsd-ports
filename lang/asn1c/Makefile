@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asn1c
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.14
 CATEGORIES=	lang converters security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 	\
 		http://lionet.info/soft/
@@ -18,12 +18,11 @@ COMMENT=	Modern ASN.1 to C compiler
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5=	yes
+SUB_FILES=	pkg-message
 
 MAN1=	asn1c.1 enber.1 unber.1
 
-.include <bsd.port.pre.mk>
-
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
