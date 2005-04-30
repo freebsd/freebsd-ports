@@ -20,6 +20,8 @@ BUILD_DEPENDS=	4xslt:${PORTSDIR}/textproc/py-4suite
 RUN_DEPENDS=	${PYXML} \
 		4xslt:${PORTSDIR}/textproc/py-4suite
 
+BROKEN=		Unfetchable
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYSETUP=	${FILESDIR}/setup.py
