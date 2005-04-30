@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Apr 29 23:02:10 2005
++++ src/Makefile.in	Fri Apr 29 23:02:24 2005
+@@ -137,7 +137,7 @@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lpolyp-error-0.7
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ MAKEINFO = @MAKEINFO@
