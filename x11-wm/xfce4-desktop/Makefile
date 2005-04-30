@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -41,6 +41,8 @@ CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 MAN1=		xfdesktop.1
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|builtin\(.*\)"quit"|app\1"xfce4-session-logout"|g' \
+		${WRKSRC}/menu.xml*
 	@${REINPLACE_CMD} -e 's|G_INLINE_FUNC||g' ${WRKSRC}/src/xfce-desktop.c
 
 .include <bsd.port.mk>
