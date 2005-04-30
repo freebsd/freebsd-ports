@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	user-selector-applet
-PORTVERSION=	0.0.7
-PORTREVISION=	3
+PORTNAME=	fast-user-switch-applet
+PORTVERSION=	0.2.1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://esco.mine.nu/downloads/ \
+MASTER_SITES=	http://ignore-your.tv/downloads/fusa/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/bland/}
 DIST_SUBDIR=	gnome2
 
@@ -18,7 +17,10 @@ COMMENT=	Fast user switching applet for GNOME
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gtk20 gnomepanel
+USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 gnomepanel
 USE_LIBTOOL_VER=	15
+CONFIGURE_ARGS=	--with-gdm-config=${X11BASE}/etc/gdm/gdm.conf
+
+GCONF_SCHEMAS=	fast-user-switch-applet.schemas
 
 .include <bsd.port.mk>

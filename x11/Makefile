@@ -45,6 +45,7 @@
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += eweather
+    SUBDIR += fast-user-switch-applet
     SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += fbsd-icons
@@ -174,7 +175,6 @@
     SUBDIR += temperature.app
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
-    SUBDIR += user-selector-applet
     SUBDIR += vdesk
     SUBDIR += wdm
     SUBDIR += wmappl
