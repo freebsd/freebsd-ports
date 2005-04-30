@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for writing servers
 
-BROKEN=		Does not build
-
 USE_GNOME=	glib20 gnomehack gnometarget
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -33,4 +31,10 @@ USE_OPENSSL=	yes
 PLIST_SUB+=	OPENSSL=""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 503000
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>

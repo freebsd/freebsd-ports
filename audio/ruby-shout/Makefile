@@ -29,10 +29,6 @@ DOCS=		README	doc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 500000
-BROKEN=		Does not compile
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

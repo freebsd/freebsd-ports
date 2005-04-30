@@ -44,12 +44,6 @@ INFO=	gcl-si gcl-tk
 
 PLIST_SUB=	GCL_VER=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 pre-configure:
 	${RM} -f ${WRKSRC}/configure
 	${SED} -i '' \
@@ -57,4 +51,4 @@ pre-configure:
 		-e 's|@@LOCALLIBS@@|-L${LOCALBASE}/lib -lgmp -lm -lreadline|' \
 		${WRKSRC}/h/FreeBSD.defs
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
