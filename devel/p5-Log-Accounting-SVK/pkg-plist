@@ -4,5 +4,5 @@ bin/svk-accounting.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Accounting/SVK
 @unexec rmdir %D/%%SITE_PERL%%/Log/Accounting 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Log 2>/dev/null || true
-@unexec rmdir %D/%%SITe_PERL%%/%%PERL_ARCH%%/auto/Log/Accounting 2>/dev/null ||true
-@unexec rmdir %D/%%SITe_PERL%%/%%PERL_ARCH%%/auto/Log 2>/dev/null ||true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Accounting 2>/dev/null ||true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log 2>/dev/null ||true
