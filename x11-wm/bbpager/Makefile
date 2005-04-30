@@ -16,6 +16,8 @@ COMMENT=	A pager for the Blackbox window manager
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
+BROKEN=		Does not build
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_GCC=	3.3+

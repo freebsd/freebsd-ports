@@ -18,6 +18,8 @@ COMMENT=	Parrot - virtual machine for dynamic languages
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		icudata.32:${PORTSDIR}/devel/icu
 
+BROKEN=		Does not build
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 #USE_SDL=	yes
