@@ -17,6 +17,8 @@ RUN_DEPENDS=		gimp:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 			tiff.4:${PORTSDIR}/graphics/tiff
 
+BROKEN=			Missing dependency
+
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack intltool intlhack gtk20 libartlgpl2
