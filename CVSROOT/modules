@@ -2042,6 +2042,7 @@ fampp		ports/devel/fampp
 fandango	ports/cad/fandango
 farblazer	ports/games/farblazer
 fargoal		ports/games/fargoal
+fast-user-switch-applet	ports/x11/fast-user-switch-applet
 fasta		ports/biology/fasta
 fasta3		ports/biology/fasta3
 fastcrc		ports/devel/fastcrc
@@ -11590,7 +11591,6 @@ urwfonts-ttf	ports/x11-fonts/urwfonts-ttf
 us-zipcodes	ports/misc/us-zipcodes
 uschedule	ports/sysutils/uschedule
 usendmail	ports/mail/usendmail
-user-selector-applet	ports/x11/user-selector-applet
 useracc		ports/databases/useracc
 userinfo	ports/sysutils/userinfo
 userlist	ports/sysutils/userlist

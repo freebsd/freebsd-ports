@@ -1,8 +1,5 @@
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/user-selector-applet.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/user-selector-applet.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/user-selector-applet.schemas > /dev/null || /usr/bin/true
-libdata/bonobo/servers/GNOME_UserSelectorApplet.server
-libexec/user-selector-applet
-share/icons/hicolor/16x16/apps/gdm-xnest.png
-share/icons/hicolor/32x32/apps/gdm-xnest.png
-share/icons/hicolor/48x48/apps/gdm-xnest.png
+libdata/bonobo/servers/GNOME_FastUserSwitchApplet.server
+libexec/fast-user-switch-applet
+share/gnome/fast-user-switch-applet/ui.glade
+share/gnome/gnome-2.0/ui/GNOME_FastUserSwitchApplet.xml
+@dirrm share/gnome/fast-user-switch-applet

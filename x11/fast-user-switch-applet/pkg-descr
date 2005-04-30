@@ -1,2 +1,4 @@
-The User Selector Applet is an applet for the GNOME 2.6 panel which allows for
-MacOS X-style fast-user-switching.
+The Fast User-Switching Applet is an applet for the GNOME panel which
+provides a menu to switch between users. It integrates with GDM to
+switch between existing X11 sessions or create new ones as needed,
+and will show the same users as the GDM face browser.
