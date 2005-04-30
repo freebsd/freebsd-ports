@@ -34,6 +34,10 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500039
+IGNORE=		requires wchar functions to use the produced library
+.endif
+
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
