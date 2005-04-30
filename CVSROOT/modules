@@ -747,6 +747,7 @@ bmon		ports/net/bmon
 bmp-docklet	ports/deskutils/bmp-docklet
 bmp-extra-plugins	ports/multimedia/bmp-extra-plugins
 bmp-faad	ports/audio/bmp-faad
+bmp-htmlplaylist	ports/audio/bmp-htmlplaylist
 bmp-rootvis	ports/graphics/bmp-rootvis
 bmp-scrobbler	ports/audio/bmp-scrobbler
 bmp-songchange	ports/audio/bmp-songchange
