@@ -19,6 +19,8 @@ DISTNAME=	rusnet-${PORTVERSION}
 MAINTAINER=	sead@mail.ru
 COMMENT=	RusNet Internet Relay Chat Server
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
