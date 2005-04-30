@@ -39,6 +39,10 @@ ALL_TARGET=	7za sfx
 IGNORE=		requires wchar functions (mbrtowc(3) etc.) for compilation
 .endif
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
+
 post-patch:
 	${SED} -e 's/-O2/${CFLAGS} ${PTHREAD_CFLAGS}/' \
 	       -e 's!g\+\+!${CXX}!' \
