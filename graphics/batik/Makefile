@@ -31,12 +31,6 @@ TARGET_DIR=	${WRKSRC}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET+=	html
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
 do-install:
 	cd ${TARGET_DIR} \
 	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; \
@@ -48,4 +42,4 @@ post-install:
 	@${FIND} -s -d ${TARGET_DIR} -type d | \
 	  ${SED} -e 's,^${TARGET_DIR},@dirrm ${DATADIR:S,${PREFIX}/,,},' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

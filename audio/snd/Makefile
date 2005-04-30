@@ -17,8 +17,6 @@ COMMENT=		Multitracking sound editor and utilities
 
 LIB_DEPENDS=		gsl.6:${PORTSDIR}/math/gsl
 
-BROKEN=			"Does not install"
-
 ALL_TARGET=		audinfo snd sndinfo sndplay sndrecord sndsine
 CONFIGURE_ARGS=		--with-float-samples \
 			--with-multifile
@@ -80,6 +78,12 @@ CONFIGURE_ARGS+=	--with-gtk \
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_XLIB=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 503000
+BROKEN=			"Does not install on FreeBSD >= 5.x"
 .endif
 
 post-build:
@@ -153,4 +157,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
