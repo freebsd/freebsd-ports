@@ -20,8 +20,6 @@ PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-APXS?=		${LOCALBASE}/sbin/apxs
-
 # define WITHOUT_APACHE to prevent mod_speedycgi from being built even if Apache is installed
 
 .if !exists(${APXS}) || defined(WITHOUT_APACHE)
@@ -39,6 +37,12 @@ AP_LIBEXEC?=	${PREFIX}/libexec/apache
 .endif
 PLIST_SUB+=	AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
 .endif
+
+post-patch:
+	@${PERL} -pi -e 's,apxs -q,${APXS} -q,;' \
+		${WRKSRC}/src/SpeedyMake.pl
+	@${PERL} -pi -e 's,APXS=apxs,APXS=${APXS},;' \
+		${WRKSRC}/mod_speedycgi/Makefile.tmpl
 
 post-configure:
 	@${PERL} -pi -e 's,^PREFIX = /usr$$,PREFIX = ${PREFIX},g;' \
