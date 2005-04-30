@@ -1,0 +1,24 @@
+--- configure.orig	Sun Aug  8 19:53:25 2004
++++ configure	Sat Aug 14 18:01:58 2004
+@@ -5175,8 +5175,8 @@
+ /* end confdefs.h.  */
+ #include <GL/gl.h>
+ _ACEOF
+-if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+-  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
++if { (eval echo "$as_me:$LINENO: \"$ac_cpp $CFLAGS conftest.$ac_ext\"") >&5
++  (eval $ac_cpp $CFLAGS conftest.$ac_ext) 2>conftest.er1
+   ac_status=$?
+   grep -v '^ *+' conftest.er1 >conftest.err
+   rm -f conftest.er1
+@@ -5318,8 +5318,8 @@
+ /* end confdefs.h.  */
+ #include <GL/glu.h>
+ _ACEOF
+-if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+-  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
++if { (eval echo "$as_me:$LINENO: \"$ac_cpp $CFLAGS conftest.$ac_ext\"") >&5
++  (eval $ac_cpp $CFLAGS conftest.$ac_ext) 2>conftest.er1
+   ac_status=$?
+   grep -v '^ *+' conftest.er1 >conftest.err
+   rm -f conftest.er1
