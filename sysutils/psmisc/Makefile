@@ -15,6 +15,10 @@ COMMENT=	A port of the Linux pstree, killall and pidof commands
 
 CONFLICTS=	pstree-2.*
 
+PLIST_FILES=	bin/killall \
+		bin/pidof \
+		bin/pstree
+
 INSTALL_TARGET=	install-all
 MAN1=		pidof.1 pstree.1 killall.1
 WRKSRC=		${WRKDIR}/psmisc
