@@ -16,6 +16,8 @@ COMMENT=	Gtk+ frontend for the polypaudio sound server
 LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		polyp-0.7.0:${PORTSDIR}/audio/polypaudio
 
+BROKEN=		Does not compile
+
 USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack
