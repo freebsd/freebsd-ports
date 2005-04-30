@@ -26,12 +26,12 @@ DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.1
 
-LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
-
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
+LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
+NOT_FOR_ARCHS=	alpha
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -45,7 +45,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=                 "Bootstrap fails with SPARC-specific error. Reported upstream as http://gcc.gnu.org/PR20633"
+BROKEN=		"Bootstrap fails with SPARC-specific error. Reported upstream as http://gcc.gnu.org/PR20633"
 .endif
 
 .if ${ARCH} == "amd64"
