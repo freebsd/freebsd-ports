@@ -16,6 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	Developer help browser for GNOME 2
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/libgtkembedmoz.so:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
