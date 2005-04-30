@@ -18,6 +18,8 @@ COMMENT=	Foomatic database
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		curl.3:${PORTSDIR}/ftp/curl
 
+BROKEN=		Unfetchable
+
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
