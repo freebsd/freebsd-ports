@@ -21,13 +21,7 @@ USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--disable-html-docs
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not build"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s: doc : :g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
