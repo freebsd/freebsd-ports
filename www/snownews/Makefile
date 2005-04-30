@@ -15,6 +15,7 @@ MASTER_SITES=	http://kiza.kcore.de/software/snownews/download/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode RSS newsreader
 
+USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
