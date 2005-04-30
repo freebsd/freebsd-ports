@@ -1,6 +1,6 @@
 --- gcc/ginclude/stddef.h.orig	Wed Dec 16 22:19:25 1998
 +++ gcc/ginclude/stddef.h	Sun Dec 22 18:18:47 2002
-@@ -25,8 +25,15 @@
+@@ -25,8 +25,16 @@
  /* On 4.3bsd-net2, make sure ansi.h is included, so we have
     one less case to deal with in the following.  */
  #if defined (__BSD_NET2__) || defined (____386BSD____) || defined (__FreeBSD__) || defined(__NetBSD__)
@@ -8,6 +8,7 @@
 +#define __NO_GNUC_VA_LIST
 +#include <osreldate.h>
 +#if __FreeBSD_version >= 500039
++#include <sys/cdefs.h>
 +#include <machine/_types.h>
 +#else
  #include <machine/ansi.h>
