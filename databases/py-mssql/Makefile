@@ -19,6 +19,8 @@ COMMENT=	Python database interface for simple MS-SQL access
 
 LIB_DEPENDS=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 
+BROKEN=		Does not compile
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
