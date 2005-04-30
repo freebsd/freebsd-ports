@@ -1,0 +1,66 @@
+#!/bin/sh
+
+GNOPI_RES_X=`gconftool-2 --get /apps/gnopernicus/magnifier/schema1/generic_zoomer/display_size_x`
+GNOPI_RES_Y=`gconftool-2 --get /apps/gnopernicus/magnifier/schema1/generic_zoomer/display_size_y`
+
+OLD_SOURCE=`gconftool-2 --get /apps/gnopernicus/magnifier/schema1/generic_zoomer/source`
+OLD_TARGET=`gconftool-2 --get /apps/gnopernicus/magnifier/schema1/generic_zoomer/target`
+
+SPLITSCREEN_RES_X=`expr $GNOPI_RES_X / 2`
+
+
+if test $# -eq 0; then
+    echo "Usage: gnopernicus-magnifier [-s] [-t] [[-F] | [-S]]
+    -s source_display  Sets the magnifier source display screen. Eg (:0.0)
+    -t target_display  Sets the magnifier target display screen. Eg (:0.0)
+    -F         Sets the magnifier placement so it will cover the 
+	       whole screen (Fullscreen).
+    -S         Sets the magnifier placement so it will cover the right
+               vertical half of the screen (Vertical Split Screen).
+Note:  When doing a full scren magnification, the source/target screens 
+       have to be set before the full-screen mode and their values have to be different"
+exit 1
+fi
+
+while getopts ":FSs:at:b" Option
+
+do
+    case $Option in
+	F)
+	    echo "FullScreen"
+	    if test "x$OLD_SOURCE" = "x$OLD_TARGET"; then
+		echo "Source and target are the same.Please set them different first"
+		exit 1
+	    fi
+	    echo "Setting fullscreen mode."
+	    gconftool-2 --set --type=int  /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_left 0
+	    gconftool-2 --set --type=int /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_top   0
+	    gconftool-2 --set --type=int /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_width  $GNOPI_RES_X
+	    gconftool-2 --set --type=int /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_height $GNOPI_RES_Y
+	    ;;
+	S) 	
+	    echo "Setting vertical split screen mode."
+	    gconftool-2 --set --type=int  /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_left  $SPLITSCREEN_RES_X
+	    gconftool-2 --set --type=int /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_top    0
+	    gconftool-2 --set --type=int /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_width  $GNOPI_RES_X
+	    gconftool-2 --set --type=int /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_height $GNOPI_RES_Y
+	    ;;
+	s)
+	    
+	    echo "Setting magnifier source screen value from [$OLD_SOURCE] to [$OPTARG]"
+	    gconftool-2 --set --type=string /apps/gnopernicus/magnifier/schema1/generic_zoomer/source $OPTARG
+	    OLD_SOURCE=$OPTARG
+	    ;;
+	t)
+	    
+	    echo "Setting magnifier target screen value from [$OLD_TARGET] to [$OPTARG]"
+	    gconftool-2 --set --type=string /apps/gnopernicus/magnifier/schema1/generic_zoomer/target $OPTARG
+	    OLD_TARGET=$OPTARG
+	    ;;
+	*)
+	    echo "Not handled!"
+	    ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
