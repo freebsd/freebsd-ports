@@ -24,6 +24,12 @@ EXTRACT_BEFORE_ARGS=	-j -aa -L
 PLIST_FILES=	\
 		lib/libmiracl.a
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386"
+.endif
+
 post-patch:
 # C{C,XX} safeness
 # CFLAGS safeness
@@ -41,4 +47,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.a \
 		${PREFIX}/lib/lib${PORTNAME}.a
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
