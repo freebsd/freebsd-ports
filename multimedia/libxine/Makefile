@@ -52,11 +52,6 @@ MAN1=		xine-config.1
 
 .include <bsd.port.pre.mk>
 
-# PRId64, INT16_MAX macro are not defined
-.if ${OSVERSION} < 500040
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-config.h.in
-.endif
-
 # CDIOCREADAUDIO macro is not defined
 .if ${OSVERSION} >= 501106
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:input:input_cdda.c
