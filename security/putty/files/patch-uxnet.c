@@ -1,5 +1,5 @@
---- uxnet.c.orig	Tue Feb  3 15:47:43 2004
-+++ uxnet.c	Fri Feb 13 14:19:00 2004
+--- uxnet.c.orig	Fri Apr 29 12:48:56 2005
++++ uxnet.c	Fri Apr 29 12:49:29 2005
 @@ -11,8 +11,13 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -13,4 +13,4 @@
 +#endif
  #include <netinet/tcp.h>
  #include <netdb.h>
- 
+ #include <sys/un.h>
