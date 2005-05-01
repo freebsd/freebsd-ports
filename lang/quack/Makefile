@@ -31,6 +31,12 @@ PLIST_DIRS=	${EMACS_VERSION_SITE_LISPDIR}/quack
 
 ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"does not build on ia64"
+.endif
+
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile quack.el
 
@@ -41,4 +47,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
