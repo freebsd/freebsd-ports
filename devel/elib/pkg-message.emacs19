@@ -1,4 +1,3 @@
 To use elib, put the following setup into your ~/.emacs:
 
         (require 'elib-startup)
-

@@ -30,7 +30,13 @@ EMACS_PORT_NAME=	emacs21
 # target name for make build
 ALL_TARGET?=	all
 
+INFO=	elib
+
 .include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ChangeLog NEWS README
+.endif
 
 PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		PORT_SETUPEL=${PORT_SETUPEL}
@@ -59,13 +65,14 @@ PLIST_SUB+=	LOADPATHSETUP:="@comment "
 post-build:
 	@${ECHO_CMD} "(provide 'elib-startup)" >> ${WRKSRC}/${PORT_SETUPEL}
 
-post-install:
 .if defined(INSTALL_LOADPATHSETUP)
-	@${MAKE} setupel-install
+POST_INSTALL_SEQ+=	setupel-install
 .endif
 .if !defined(NOPORTDOCS)
-	@${MAKE} doc-install
+POST_INSTALL_SEQ+=	doc-install
 .endif
+
+post-install: ${POST_INSTALL_SEQ}
 .if exists(${PKGMESSAGE})
 	@${CAT} ${PKGMESSAGE}
 .endif
@@ -73,7 +80,7 @@ post-install:
 doc-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${INSTALL_WRKSRC} && \
-	for i in ChangeLog NEWS README ; do \
+	for i in ${PORTDOCS} ; do \
 		${INSTALL_DATA} $${i} ${DOCSDIR} ; \
 	done
 
