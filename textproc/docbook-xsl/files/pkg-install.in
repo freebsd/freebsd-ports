@@ -41,4 +41,4 @@ ${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateSystem \
 ${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateURI \
 	http://docbook.sourceforge.net/release/xsl/ \
 	"file://${CATALOG_XSL}"
-
+exit 0
