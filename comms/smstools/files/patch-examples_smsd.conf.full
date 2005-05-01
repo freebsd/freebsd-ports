@@ -1,0 +1,24 @@
+--- examples/smsd.conf.full.orig	Sat Nov  6 16:11:35 2004
++++ examples/smsd.conf.full	Sat Nov  6 16:16:54 2004
+@@ -45,8 +45,8 @@
+ 
+ [GSM1]
+ init = ATE0+CPMS="SM"+CNMI=2,0,0,2,1
+-# Windows: /dev/com1, Solaris: /dev/cua/a, Linux /dev/ttyS0
+-device = /dev/ttyS0
++# Windows: /dev/com1, Solaris: /dev/cua/a, Linux /dev/ttyS0, FreeBSD5: /dev/cuaa0
++device = /dev/cuaa0
+ incoming = yes
+ queues = OTHER
+ #You don't need a PIN for mobile phones
+@@ -61,8 +61,8 @@
+ 
+ [GSM2]
+ init = ATE0
+-# Windows: /dev/com2, Solaris: /dev/cua/b, Linux /dev/ttyS1
+-device = /dev/ttyS1
++# Windows: /dev/com2, Solaris: /dev/cua/b, Linux /dev/ttyS1, FreeBSD5: /dev/cuaa1
++device = /dev/cuaa1
+ incoming = yes
+ queues = OTHER
+ #You don't need a PIN for mobile phones
