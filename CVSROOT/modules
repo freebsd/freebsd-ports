@@ -5726,6 +5726,7 @@ menueditor	ports/deskutils/menueditor
 menushki	ports/misc/menushki
 meqcc		ports/games/meqcc
 mercator	ports/devel/mercator
+mercury		ports/net/mercury
 mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
 merlin		ports/games/merlin
