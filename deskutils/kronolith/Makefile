@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/				\
 		ftp://ftp.planetmirror.com/pub/horde/kronolith/			\
@@ -45,8 +45,10 @@ SUB_DIRS=	config lib locale po scripts templates themes
 LHORDEDIR?=	www/horde
 LKRONOLITHDIR?=	${LHORDEDIR}/kronolith
 
-PLIST_SUB=	KRONOLITHDIR=${LKRONOLITHDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	KRONOLITHDIR=${KRONOLITHDIR}
+PLIST_SUB=	KRONOLITHDIR=${LKRONOLITHDIR}
 
 KRONOLITHDIR=	${PREFIX}/${LKRONOLITHDIR}
 CONFDIR=	${KRONOLITHDIR}/config
@@ -114,9 +116,6 @@ post-install:
 	fi
 . endif
 .endif
-	@${SED} -e "s:%%KRONOLITHDIR%%:${KRONOLITHDIR}:g;s:%%DOCSDIR%%:${DOCSDIR}:g"	\
-		-e "s:%%LOCALBASE%%:${LOCALBASE}:" < ${FILESDIR}/pkg-message.in		\
-		 > ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
