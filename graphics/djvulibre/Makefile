@@ -7,6 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.14
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -58,6 +59,9 @@ pre-configure:
 
 patch-autotools:
 	@cd ${PATCH_WRKSRC}; ${LIBTOOLIZE} -f >/dev/null
+
+post-patch:
+	@${RM} ${WRKSRC}/tools/any2djvu.*
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 post-configure:
