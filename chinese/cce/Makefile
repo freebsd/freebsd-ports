@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Console CJK Environment
 
-BROKEN=		Incorrect pkg-plist
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386
 HAS_CONFIGURE=	yes
