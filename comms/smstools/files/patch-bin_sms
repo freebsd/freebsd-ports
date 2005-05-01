@@ -1,0 +1,49 @@
+--- bin/sms.orig	Sun Apr 17 12:56:51 2005
++++ bin/sms	Sun Apr 17 12:58:09 2005
+@@ -1,21 +1,27 @@
+-#! /bin/sh
+-# This script can be used to start/stop smsd 
+-# as a daemon in Linux and Solaris.
++#!/bin/sh
++#
++# $FreeBSD$
++#
++# PROVIDE: smsd 
++# REQUIRE: DAEMON
++# KEYWORD: FreeBSD
++#
++# Add the following line to %%PREFIX%%/etc/rc.conf to enable smsd:
++#
++# smsd_enable="YES"
++#
++smsd_enable=${smsd_enable-"NO"}
++smsd_flags=${smsd_flags-""}
+ 
+-case "$1" in
+-    start)
+-	find /var/spool/sms -name '*.LOCK' -exec rm {} \;
+-        /usr/local/bin/smsd &
+-	;;
+-    stop)
+-        pkill smsd
+-        ;;
+-    restart|reload)
+-	$0 stop
+-        $0 start
+-	;;
+-    *)
+-        echo "Usage: $0 {start|stop|restart}"
+-        exit 1
+-esac
++. /etc/rc.subr
++
++name=smsd
++rcvar=`set_rcvar`
++
++command="find /var/spool/sms -name '*.LOCK' -exec rm {} \; %%PREFIX%%/sbin/${name}"
++pidfile=/var/run/${name}.pid
++sig_stop=-KILL
++
++load_rc_config ${name}
++run_rc_command "$1"
+ 

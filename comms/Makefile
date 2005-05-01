@@ -82,6 +82,7 @@
     SUBDIR += scud
     SUBDIR += seyon
     SUBDIR += sms_client
+    SUBDIR += smstools
     SUBDIR += snooper
     SUBDIR += sredird
     SUBDIR += thebridge

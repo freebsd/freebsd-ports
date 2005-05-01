@@ -1,0 +1,13 @@
+--- examples/smsd.conf.easy.orig	Sat Nov  6 16:10:46 2004
++++ examples/smsd.conf.easy	Sat Nov  6 16:12:34 2004
+@@ -7,8 +7,8 @@
+ loglevel = 7
+ 
+ [GSM1]
+-# Windows: /dev/com1, Solaris: /dev/cua/a, Linux /dev/ttyS0
+-device = /dev/ttyS0
++# Windows: /dev/com1, Solaris: /dev/cua/a, Linux /dev/ttyS0, FreeBSD5: /dev/cuaa0
++device = /dev/cuaa0
+ incoming = yes
+ cs_convert = yes
+ #pin = 1111

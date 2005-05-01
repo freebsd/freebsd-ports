@@ -1,0 +1,37 @@
+--- install.sub.orig	Wed Apr 21 22:37:00 2004
++++ install.sub	Sun May  1 19:37:23 2005
+@@ -15,19 +15,24 @@
+   exit 1
+ fi
+ echo "Installing"
+-cp bin/smsd* bin/getsms* bin/putsms* /usr/local/bin
+-copy bin/smsevent /usr/local/bin/smsevent
+-copy bin/mysmsd /usr/local/bin/mysmsd
+-copy bin/email2sms /usr/local/bin/email2sms
+-copy bin/sendsms /usr/local/bin/sendsms
+-copy bin/smsresend /usr/local/bin/smsresend
+-copy examples/smsd.conf.easy /etc/smsd.conf
+-[ -d /etc/init.d ] && copy bin/sms /etc/init.d/sms 
+-[ -d /sbin/init.d ] && copy bin/sms /sbin/init.d/sms
++cp bin/smsd* bin/getsms* bin/putsms* %%PREFIX%%/bin
++copy bin/smsevent %%PREFIX%%/bin/smsevent
++copy bin/mysmsd %%PREFIX%%/bin/mysmsd
++copy bin/email2sms %%PREFIX%%/bin/email2sms
++copy bin/sendsms %%PREFIX%%/bin/sendsms
++copy bin/smsresend %%PREFIX%%/bin/smsresend
++copy examples/smsd.conf.easy %%PREFIX%%/etc/smsd.conf
++rm examples/.qmailrc
++rm examples/.procmailrc
++[ -d %%PREFIX%%/etc/rc.d ] && copy bin/sms %%PREFIX%%/etc/rc.d/smsd.sh.sample
++[ -d %%EXAMPLESDIR%% ] || mkdir -p %%EXAMPLESDIR%%
++[ -d %%EXAMPLESDIR%% ] && cp -R examples/* %%EXAMPLESDIR%%
++[ -d %%DOCSDIR%% ] || mkdir -p %%DOCSDIR%%
++[ -d %%DOCSDIR%% ] && cp -R doc/* %%DOCSDIR%%
+ [ -d /var/spool ] || mkdir /var/spool
+ [ -d /var/spool/sms ] || mkdir /var/spool/sms
+ [ -d /var/spool/sms/incoming ] || mkdir /var/spool/sms/incoming
+ [ -d /var/spool/sms/outgoing ] || mkdir /var/spool/sms/outgoing
+ [ -d /var/spool/sms/checked ]  || mkdir /var/spool/sms/checked
+ echo Installation finished
+-echo 'Please dont forget to edit /etc/smsd.conf.'
++echo 'Please dont forget to edit %%PREFIX%%/etc/smsd.conf.'

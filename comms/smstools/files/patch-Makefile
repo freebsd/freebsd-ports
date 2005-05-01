@@ -1,0 +1,14 @@
+--- Makefile.orig	Sat Nov  6 16:09:09 2004
++++ Makefile	Sat Nov  6 16:09:24 2004
+@@ -1,9 +1,8 @@
+ # Makefile
+ 
+-VERSION=$(shell grep package_version src/version.h | cut -f2)
+-
++all: compile
+ compile: 
+-	cd src && $(MAKE) -$(MAKEFLAGS) 
++	cd src && $(MAKE) 
+ 
+ install: compile
+ 	./install.sub
