@@ -6,7 +6,7 @@
 
 PORTNAME=	hk_classes
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hk-classes
@@ -15,8 +15,6 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	C++ Library for rapid development of database applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
-
-BROKEN=		Incomplete pkg-plist
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes

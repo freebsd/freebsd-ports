@@ -52,19 +52,25 @@ include/hk_classes/hk_url.h
 include/hk_classes/hk_visible.h
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so.3
+%%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.a
 %%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.so
 %%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.so.0
+%%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.a
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so.0
+%%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.a
 %%SQLITE2%%lib/hk_classes/drivers/libhk_sqlite2driver.so
 %%SQLITE2%%lib/hk_classes/drivers/libhk_sqlite2driver.so.0
+%%SQLITE2%%lib/hk_classes/drivers/libhk_sqlite2driver.a
 %%SQLITE3%%lib/hk_classes/drivers/libhk_sqlite3driver.so
 %%SQLITE3%%lib/hk_classes/drivers/libhk_sqlite3driver.so.0
+%%SQLITE3%%lib/hk_classes/drivers/libhk_sqlite3driver.a
 %%PYTHON_SITELIBDIR%%/_hk_classes.so
 %%PYTHON_SITELIBDIR%%/hk_classes.py
 %%PYTHON_SITELIBDIR%%/hk_classes.pyc
 lib/hk_classes/libhk_classes.so
 lib/hk_classes/libhk_classes.so.7
+lib/hk_classes/libhk_classes.a
 @dirrm lib/hk_classes/drivers
 @dirrm lib/hk_classes
 @dirrm include/hk_classes
