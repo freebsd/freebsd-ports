@@ -32,6 +32,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="756db070-b9d4-11d9-ae81-000ae42e9b93">
+    <topic>coppermine -- IP spoofing and XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>coppermine</name>
+	<range><lt>1.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GHC team reports about coppermine</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/396080">
+	  <p>The lack of sanitizing of user defined variables may
+	    result in undesirable consequences such as IP spoofing
+	    or XSS attack.</p>
+	  <p>Generally users of Coppermine Gallery can post comments.
+	    Remote address &amp; x-forwarded-for variables are logged
+	    for admin's eyes.  X-Forwarded-for variable does not pass
+	    throu any filtration before logging into database. User
+	    can define/redefine this variable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20050418122434.10438.qmail@www.securityfocus.com">http://www.securityfocus.com/archive/1/396080</mlist>
+      <bid>13218</bid>
+      <cvename>CAN-2005-1172</cvename>
+      <url>http://coppermine.sourceforge.net/board/index.php?topic=17134.0</url>
+    </references>
+    <dates>
+      <discovery>2005-04-18</discovery>
+      <entry>2005-05-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cd286cc5-b762-11d9-bfb7-000c6ec775d9">
     <topic>ImageMagick -- ReadPNMImage() heap overflow vulnerability</topic>
     <affects>
