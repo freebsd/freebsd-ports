@@ -4,10 +4,6 @@ bin/yelp
 bin/yelp-bin
 libdata/bonobo/servers/GNOME_Yelp.server
 share/gnome/applications/yelp.desktop
-share/gnome/sgml/docbook/yelp/db2html.xsl
-share/gnome/sgml/docbook/yelp/info2html.xsl
-share/gnome/sgml/docbook/yelp/man2html.xsl
-share/gnome/sgml/docbook/yelp/toc2html.xsl
 share/gnome/yelp/default.css
 share/gnome/yelp/icons/yelp-icon-caution.png
 share/gnome/yelp/icons/yelp-icon-important.png
@@ -25,6 +21,12 @@ share/gnome/yelp/scrollkeeper.xml
 share/gnome/yelp/toc.xml
 share/gnome/yelp/ui/yelp-ui.xml
 share/gnome/yelp/ui/yelp.glade
+share/gnome/yelp/xslt/db-title.xsl
+share/gnome/yelp/xslt/db2html.xsl
+share/gnome/yelp/xslt/info2html.xsl
+share/gnome/yelp/xslt/man2html.xsl
+share/gnome/yelp/xslt/toc2html.xsl
+share/icons/hicolor/192x192/apps/yelp-icon-big.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
@@ -82,6 +84,7 @@ share/locale/pt/LC_MESSAGES/yelp.mo
 share/locale/pt_BR/LC_MESSAGES/yelp.mo
 share/locale/ro/LC_MESSAGES/yelp.mo
 share/locale/ru/LC_MESSAGES/yelp.mo
+share/locale/rw/LC_MESSAGES/yelp.mo
 share/locale/sk/LC_MESSAGES/yelp.mo
 share/locale/sl/LC_MESSAGES/yelp.mo
 share/locale/sq/LC_MESSAGES/yelp.mo
@@ -92,19 +95,23 @@ share/locale/ta/LC_MESSAGES/yelp.mo
 share/locale/tg/LC_MESSAGES/yelp.mo
 share/locale/th/LC_MESSAGES/yelp.mo
 share/locale/tr/LC_MESSAGES/yelp.mo
+share/locale/ug/LC_MESSAGES/yelp.mo
 share/locale/uk/LC_MESSAGES/yelp.mo
 share/locale/vi/LC_MESSAGES/yelp.mo
 share/locale/wa/LC_MESSAGES/yelp.mo
+share/locale/xh/LC_MESSAGES/yelp.mo
 share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
-@dirrm share/locale/zu/LC_MESSAGES
-@dirrm share/locale/zu
-@dirrm share/locale/nso/LC_MESSAGES
-@dirrm share/locale/nso
-@dirrm share/locale/mr/LC_MESSAGES
-@dirrm share/locale/mr
+@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true
+@unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/nso 2> /dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/mr 2> /dev/null || true
+@dirrm share/gnome/yelp/xslt
 @dirrm share/gnome/yelp/ui
 @dirrm share/gnome/yelp/icons
 @dirrm share/gnome/yelp
-@dirrm share/gnome/sgml/docbook/yelp

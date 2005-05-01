@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	yelp
-PORTVERSION=	2.9.3
-PORTREVISION=	4
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.9
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -49,12 +48,13 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-man \
-		--enable-info \
-		--with-mozilla=${MOZILLA}
+CONFIGURE_ARGS=	--with-mozilla=${MOZILLA}
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GCONF_SCHEMAS=	yelp.schemas
+
+OPTIONS=	MAN "Enable man page support" off \
+		INFO "Enable GNU info support" off
 
 .include <bsd.port.pre.mk>
 
@@ -62,6 +62,14 @@ GCONF_SCHEMAS=	yelp.schemas
 .if ${MOZILLA}=="mozilla-devel"
 USE_GCC=	3.4
 .endif
+.endif
+
+.if defined(WITH_MAN)
+CONFIGURE_ARGS+=--enable-man
+.endif
+
+.if defined(WITH_INFO)
+CONFIGURE_ARGS+=--enable-info
 .endif
 
 pre-everything::
