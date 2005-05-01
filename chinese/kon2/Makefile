@@ -8,32 +8,27 @@
 PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../../japanese/kon2-16dot
-EXTRA_PATCHES=	${.CURDIR}/files/patch-lib::coding.c
 CATEGORIES=	chinese
 
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/chinese/kcfonts:patch
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/chinese/kcfonts:patch \
+		${NONEXISTENT}:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps:extract
 
 USE_REINPLACE=	yes
 KCFONTS_WRKSRC=	`cd ${PORTSDIR}/chinese/kcfonts; make -V WRKSRC`
+GB16ST_WRKSRC=	`cd ${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps; make -V WRKSRC`
 
-PLIST_FILES=	share/fonts/bdf/kc15f.bdf.gz
+PLIST_FILES=	share/fonts/bdf/kc15f.bdf.gz \
+		share/fonts/bdf/gb16st.bdf.gz \
+		share/fonts/bdf/8x16.bdf.gz
 
 post-patch: post-patch-zhkon2
 post-patch-zhkon2:
-	@${REINPLACE_CMD} -e "s;jiskan16.bdf.gz;kc15f.bdf.gz;g" \
-		-e "s;ja_JP.ujis:Coding;ja_JP.ujis:;g" \
-		-e "s;zh_TW.big5:;zh_TW.big5:Coding;g" \
-		-e "s;BIG5.HKU-0;BIG5-0;g" \
-		-e "s,GB2312.1980,GBK,g" \
-		${WRKSRC}/kon.cfg.FreeBSD
-	@${REINPLACE_CMD} -e "s;BIG5.HKU-0;BIG5-0;g" \
-		-e "s;BIG5,      0;BIG5, 0xfefe;g" \
-		-e "s,GB2312.1980,GBK,g" \
-		${WRKSRC}/lib/coding.c
 	@${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/term.c \
 		${WRKSRC}/src/display/vga.c
+	@cd ${WRKSRC} && ${PATCH} < ${.CURDIR}/files/patch-lib::coding.c
+	@cd ${WRKSRC} && ${PATCH} < ${.CURDIR}/files/patch-kon.cfg.FreeBSD
 
 post-build: post-build-zhkon2
 post-build-zhkon2:
@@ -43,5 +38,7 @@ post-install: post-install-zhkon2
 post-install-zhkon2:
 	@${MKDIR} ${PREFIX}/share/fonts/bdf
 	cd ${KCFONTS_WRKSRC} && ./kc15f | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/kc15f.bdf.gz
+	cd ${GB16ST_WRKSRC} && cat fonts/bdf/misc/gb16st.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/gb16st.bdf.gz
+	cd ${GB16ST_WRKSRC} && cat fonts/bdf/misc/8x16.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/8x16.bdf.gz
 
 .include "${MASTERDIR}/Makefile"
