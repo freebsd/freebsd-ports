@@ -24,10 +24,3 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/elib/string.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/elib
 %%LOADPATHSETUP:%%%%EMACS_VERSION_SITE_LISPDIR%%/%%PORT_SETUPEL%%
-%%PORTDOCS%%share/doc/elib/ChangeLog
-%%PORTDOCS%%share/doc/elib/NEWS
-%%PORTDOCS%%share/doc/elib/README
-%%PORTDOCS%%@dirrm share/doc/elib
-@unexec install-info --delete %D/info/elib.info %D/info/dir
-info/elib.info
-@exec install-info %D/info/elib.info %D/info/dir
