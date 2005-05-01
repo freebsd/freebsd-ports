@@ -38,6 +38,7 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_app.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_cgi.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_compile.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_config.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_content_negotiation.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ctl.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.hrl
@@ -66,6 +67,8 @@ www/yaws/code.yaws
 www/yaws/code/Makefile
 www/yaws/code/myappmod.beam
 www/yaws/code/myappmod.erl
+www/yaws/compile_layout.dia
+www/yaws/compile_layout.png
 www/yaws/configuration.yaws
 www/yaws/contact.yaws
 www/yaws/contribs.yaws
@@ -205,6 +208,8 @@ www/yaws/motivation.yaws
 www/yaws/news
 www/yaws/pcookie.yaws
 www/yaws/post.yaws
+www/yaws/process_tree.dia
+www/yaws/process_tree.png
 www/yaws/query.yaws
 www/yaws/readcookie.yaws
 www/yaws/readpcookie.yaws
