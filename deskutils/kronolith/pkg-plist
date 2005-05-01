@@ -122,6 +122,7 @@
 %%KRONOLITHDIR%%/scripts/sql/kronolith.pgsql.sql
 %%KRONOLITHDIR%%/scripts/sql/kronolith.sql
 %%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
+%%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
 %%KRONOLITHDIR%%/scripts/upgrades/2004-05-19_convert_categories_to_strings.php
 %%KRONOLITHDIR%%/scripts/upgrades/2004-12-21_add_event_uid.pgsql.sql
 %%KRONOLITHDIR%%/scripts/upgrades/2004-12-21_add_event_uid.sql
@@ -171,10 +172,12 @@
 %%KRONOLITHDIR%%/templates/week/head.inc
 %%KRONOLITHDIR%%/templates/week/head_side_by_side.inc
 %%KRONOLITHDIR%%/themes/bluewhite/screen.css
+%%KRONOLITHDIR%%/themes/burntorange/screen.css
 %%KRONOLITHDIR%%/themes/graphics/alarm_small.png
 %%KRONOLITHDIR%%/themes/graphics/attendees.png
 %%KRONOLITHDIR%%/themes/graphics/calendars.png
 %%KRONOLITHDIR%%/themes/graphics/dayview.png
+%%KRONOLITHDIR%%/themes/graphics/favicon.ico
 %%KRONOLITHDIR%%/themes/graphics/goto.png
 %%KRONOLITHDIR%%/themes/graphics/kronolith.png
 %%KRONOLITHDIR%%/themes/graphics/monthview.png
@@ -198,6 +201,7 @@ etc/horde/httpd.conf.kronolith
 @dirrm %%KRONOLITHDIR%%/themes/print
 @dirrm %%KRONOLITHDIR%%/themes/mozilla
 @dirrm %%KRONOLITHDIR%%/themes/graphics
+@dirrm %%KRONOLITHDIR%%/themes/burntorange
 @dirrm %%KRONOLITHDIR%%/themes/bluewhite
 @dirrm %%KRONOLITHDIR%%/themes
 @dirrm %%KRONOLITHDIR%%/templates/week
