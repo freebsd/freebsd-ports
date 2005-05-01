@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050501:
+  AFFECTS: users of lang/ocaml based applications and libraries
+  AUTHOR: lioux@FreeBSD.org
+
+  With the recent update of ocaml to 3.08.3 some API compability
+  has been broken. It is a bit subtle so that some users might not
+  notice it. However, updating all ocaml based aplications and
+  libraries are advised using the new compiler/interpreter version.
+  Issue the following command:
+
+  	# portupgrade -rf 'ocaml*'
+
 20050426:
   AFFECTS: users of mail/courier-authlib
   AUTHOR: oliver@FreeBSD.org
