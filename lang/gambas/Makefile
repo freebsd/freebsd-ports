@@ -67,8 +67,8 @@ PLIST_SUB+=		XML="@comment "
 BROKEN=	"Does not compile with gcc-2.95"
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=			"Segfault during build on sparc64"
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+BROKEN=			"Segfault during build on ${ARCH}"
 .endif
 
 .if ${OSVERSION} < 502110
