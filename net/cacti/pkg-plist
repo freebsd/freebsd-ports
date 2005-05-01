@@ -94,6 +94,7 @@
 %%CACTIDIR%%/images/button_save.gif
 %%CACTIDIR%%/images/button_view.gif
 %%CACTIDIR%%/images/button_yes.gif
+%%CACTIDIR%%/images/cacti_about_logo.gif
 %%CACTIDIR%%/images/cacti_backdrop.gif
 %%CACTIDIR%%/images/cacti_backdrop2.gif
 %%CACTIDIR%%/images/cacti_logo.gif
@@ -107,7 +108,6 @@
 %%CACTIDIR%%/images/menu_line.gif
 %%CACTIDIR%%/images/move_down.gif
 %%CACTIDIR%%/images/move_up.gif
-%%CACTIDIR%%/images/raxnet_logo.gif
 %%CACTIDIR%%/images/reload_icon_small.gif
 %%CACTIDIR%%/images/shadow.gif
 %%CACTIDIR%%/images/shadow_gray.gif
@@ -198,6 +198,7 @@
 %%CACTIDIR%%/install/0_8_4_to_0_8_5.php
 %%CACTIDIR%%/install/0_8_5a_to_0_8_6.php
 %%CACTIDIR%%/install/0_8_6_to_0_8_6a.php
+%%CACTIDIR%%/install/0_8_6c_to_0_8_6d.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
