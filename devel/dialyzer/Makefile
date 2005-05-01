@@ -16,6 +16,7 @@ COMMENT=	Static analysis tool for Erlang/OTP applications
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
+BROKEN=		"does not work with lang/erlang R10B-4"
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
