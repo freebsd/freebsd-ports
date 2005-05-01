@@ -39,9 +39,9 @@
 +
 +	l = context->devices;
 +	while (l) {
-+		device = l->data;
-+
 +		struct stat dummy;
++
++		device = l->data;
 +
 +		/* Make sure usb device exists */
 +		if (stat(device->port, &dummy) == 0) {
