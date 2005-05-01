@@ -149,6 +149,7 @@
     SUBDIR += gaim
     SUBDIR += gaim-openq
     SUBDIR += gaim-rss-reader
+    SUBDIR += gajim
     SUBDIR += gale
     SUBDIR += gatekeeper
     SUBDIR += gdesklets-lt-network
