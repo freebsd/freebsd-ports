@@ -8,7 +8,7 @@
  	gzip -cd @@PREFIX@@/share/fonts/bdf/jiskan16.bdf.gz | /usr/local/bin/fld -t bdf -n
 -	gzip -cd @@PREFIX@@/share/fonts/bdf/8x16rk.bdf.gz | /usr/local/bin/fld -t bdf -n
 +	gzip -cd @@PREFIX@@/share/fonts/bdf/kc15f.bdf.gz | /usr/local/bin/fld -t bdf -n
-+	gzip -cd @@PREFIX@@/share/fonts/bdf/gb16st.bdf.gz | /usr/local/bin/fld -t bdf -n
++	gzip -cd @@PREFIX@@/share/fonts/bdf/gb16fs.bdf.gz | /usr/local/bin/fld -t bdf -n
  bdf-zcat14:@@KON14FONT@@
  	gzip -cd @@PREFIX@@/share/fonts/bdf/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
  	gzip -cd @@PREFIX@@/share/fonts/bdf/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n

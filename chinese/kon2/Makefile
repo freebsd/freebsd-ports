@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 MASTERDIR=	${.CURDIR}/../../japanese/kon2-16dot
 CATEGORIES=	chinese
@@ -13,14 +13,14 @@ CATEGORIES=	chinese
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/chinese/kcfonts:patch \
-		${NONEXISTENT}:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps:extract
+		${NONEXISTENT}:${PORTSDIR}/chinese/cce:extract
 
 USE_REINPLACE=	yes
 KCFONTS_WRKSRC=	`cd ${PORTSDIR}/chinese/kcfonts; make -V WRKSRC`
-GB16ST_WRKSRC=	`cd ${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps; make -V WRKSRC`
+CCE_WRKSRC=	`cd ${PORTSDIR}/chinese/cce; make -V WRKSRC`
 
 PLIST_FILES=	share/fonts/bdf/kc15f.bdf.gz \
-		share/fonts/bdf/gb16st.bdf.gz \
+		share/fonts/bdf/gb16fs.bdf.gz \
 		share/fonts/bdf/8x16.bdf.gz
 
 post-patch: post-patch-zhkon2
@@ -38,7 +38,7 @@ post-install: post-install-zhkon2
 post-install-zhkon2:
 	@${MKDIR} ${PREFIX}/share/fonts/bdf
 	cd ${KCFONTS_WRKSRC} && ./kc15f | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/kc15f.bdf.gz
-	cd ${GB16ST_WRKSRC} && cat fonts/bdf/misc/gb16st.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/gb16st.bdf.gz
-	cd ${GB16ST_WRKSRC} && cat fonts/bdf/misc/8x16.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/8x16.bdf.gz
+	cd ${CCE_WRKSRC} && cat fonts/gb16fs.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/gb16fs.bdf.gz
+	cd ${CCE_WRKSRC} && cat fonts/8x16.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/8x16.bdf.gz
 
 .include "${MASTERDIR}/Makefile"
