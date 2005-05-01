@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	fireflyttf
-PORTVERSION=	1.2.6
-PORTREVISION=	0
+PORTVERSION=	1.3.0
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	http://www.study-area.org/apt/firefly-font/
-DISTNAME=	fireflysung.ttf
-EXTRACT_SUFX=	.gz
+DISTNAME=	fireflysung-${PORTVERSION}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Firefly TrueType Font is combine of two arphic sung fonts
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
-EXTRACT_AFTER_ARGS=	> ${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-TTF=		${DISTNAME}
+TTF=		fireflysung.ttf
 
 .if !defined(WITHOUT_X11)
 PLIST_SUB+=	X11=""
