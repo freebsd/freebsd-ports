@@ -1,12 +1,16 @@
 Index: qemu/vl.c
-@@ -666,8 +667,8 @@
-         {
-             struct timeval r;
-             if (!gettimeofday(&r, NULL)) {
--                return ((CLK_TCK * 1000LL) * (int64_t)r.tv_sec 
--                      + ((int64_t)r.tv_usec * CLK_TCK) / 1000) / timer_freq;
+@@ -662,6 +662,14 @@
+     case QEMU_TIMER_REALTIME:
+ #ifdef _WIN32
+         return GetTickCount();
++#elif defined(_BSD)
++        {
++            struct timeval r;
++            if (!gettimeofday(&r, NULL)) {
 +                return ((timer_freq * 1000LL) * (int64_t)r.tv_sec 
 +                      + ((int64_t)r.tv_usec * timer_freq) / 1000) / timer_freq;
-             }
-         }        
++            }
++        }        
  #else
+         {
+             struct tms tp;

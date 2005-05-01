@@ -16,4 +16,6 @@ its kernel is built with HZ=5000, and FreeBSD's default is 100...
 (not included since it needs a patch to emulators/rtc.)
 - using physical media doesn't work on 4.x hosts (missing DIOCGMEDIASIZE
 ioctl.)
+- the -smb option (smb-export local dir to guest) needs the net/samba
+port/package installed in addition to qemu.
 ====
