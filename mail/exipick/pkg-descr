@@ -1,0 +1,5 @@
+Exipick is a script for display messages from Exim queue based on 
+a variety of criteria, for example this is usefull for checking Exim
+queue in some stitistics scripts.
+
+WWW: http://jetmore.org/john/code/#exipick
