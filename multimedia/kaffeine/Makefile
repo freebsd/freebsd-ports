@@ -6,12 +6,12 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
 LIB_DEPENDS=	xine.13:${PORTSDIR}/multimedia/libxine
@@ -22,9 +22,14 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		kaffeine.1
 MANLANG=	"" de
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xorg
+CONFIGURE_ARGS+=	--with-xorg
+.endif
+
+.include <bsd.port.post.mk>
