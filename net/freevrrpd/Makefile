@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freevrrpd
-PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTVERSION=	0.9
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://www.bsdshell.net/download/
+MASTER_SITES=	http://www.b0l.org/download/
 
 MAINTAINER=	spe@b0l.org
 COMMENT=	This a VRRP RFC2338 Compliant implementation under FreeBSD
@@ -18,9 +18,6 @@ MAN8=		freevrrpd.8
 
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-post-patch:
-	cd ${WRKSRC}; ${SED} -i.bak -e s/varargs/stdarg/ *.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/sbin
