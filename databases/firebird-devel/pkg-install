@@ -41,7 +41,7 @@ echo "firebird user using gid $fbGID"
 if which -s pw; then
 	if [ $nofbuid -ne 0 ]; then
 		pw useradd firebird -u $fbUID -g $fbGID -h - -s /bin/sh \
-		-d $PKG_PREFIX -c "Firebird Database Administrator"
+		-d $PKG_PREFIX/firebird -c "Firebird Database Administrator"
 	fi
 else
 	echo -n "unable to create user firebird - please create it manually,"
@@ -51,13 +51,13 @@ fi
 ;;
 
 POST-INSTALL)
-chown -R firebird:firebird $PKG_PREFIX
-chmod -R o= $PKG_PREFIX
+chown -R firebird:firebird $PKG_PREFIX/firebird
+chmod -R o= $PKG_PREFIX/firebird
 
 # Now fix up the mess.
 
 # fix up directories
-for i in `find $PKG_PREFIX -print`
+for i in `find $PKG_PREFIX/firebird -print`
 do
 	FileName=$i
 	if [ -d $FileName ]; then
@@ -66,28 +66,28 @@ do
 done
 
 # make lib ldconfig-compatible
-chown -R root:wheel $PKG_PREFIX/lib
+chown -R root:wheel $PKG_PREFIX/firebird/lib
 
 # make the following read-only
-chmod -R a=r $PKG_PREFIX/WhatsNew
-for i in `find $PKG_PREFIX/doc -type f -print`
+chmod -R a=r $PKG_PREFIX/firebird/WhatsNew
+for i in `find $PKG_PREFIX/firebird/doc -type f -print`
 do
 	chmod a=r $i
 done
-#chmod -R a=r $PKG_PREFIX/examples/*
-chmod -R a=r $PKG_PREFIX/include/*
-chmod -R a=r $PKG_PREFIX/intl/*
-#chmod -R a=r $PKG_PREFIX/misc/*
+#chmod -R a=r $PKG_PREFIX/firebird/examples/*
+chmod -R a=r $PKG_PREFIX/firebird/include/*
+chmod -R a=r $PKG_PREFIX/firebird/intl/*
+#chmod -R a=r $PKG_PREFIX/firebird/misc/*
 
-chmod -R ug=rx,o= $PKG_PREFIX/UDF/*
-chmod -R ug=rx,o= $PKG_PREFIX/intl/fbintl
-chmod -R a=rx $PKG_PREFIX/lib/*
+chmod -R ug=rx,o= $PKG_PREFIX/firebird/UDF/*
+chmod -R ug=rx,o= $PKG_PREFIX/firebird/intl/fbintl
+chmod -R a=rx $PKG_PREFIX/firebird/lib/*
 
-#cd $PKG_PREFIX/lib
+#cd $PKG_PREFIX/firebird/lib
 #ln -sf libfbembed.so libgds.so
 #ln -sf libfbembed.so.2 libgds.so.2
 
-cd $PKG_PREFIX/bin
+cd $PKG_PREFIX/firebird/bin
 for i in `ls`
 do
 	chmod ug=rx,o= $i
@@ -105,7 +105,7 @@ do
 done
 
 
-cd $PKG_PREFIX
+cd $PKG_PREFIX/firebird
 
 # Lock files
 
@@ -136,7 +136,7 @@ chmod 660 security2.fdb
 # shared lib startup script
 if [ -d $PKG_PREFIX/etc/rc.d ]; then
 	(
-	echo "#!/bin/sh"; echo "[ -d $PKG_PREFIX/lib ] && /sbin/ldconfig -m $PKG_PREFIX/lib"
+	echo "#!/bin/sh"; echo "[ -d $PKG_PREFIX/firebird/lib ] && /sbin/ldconfig -m $PKG_PREFIX/firebird/lib"
 	) > $PKG_PREFIX/etc/rc.d/000.firebird.sh
   chmod a=rx $PKG_PREFIX/etc/rc.d/000.firebird.sh
 fi

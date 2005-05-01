@@ -22,19 +22,13 @@ USE_GMAKE=		yes
 WANT_LIBTOOL_VER=	15
 WANT_AUTOCONF_VER=	259
 GNU_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	autogen.sh
-CONFIGURE_ARGS=		--with-lock-manager --with-editline
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GCC=		3.4
-
-PREFIX?=	${LOCALBASE}/${PORTNAME}
-NO_MTREE=	yes
 
 CONFLICTS=	firebird-1.*
 
 WRKSRC=		${WRKDIR}/firebird2
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib
+LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -49,7 +43,8 @@ BROKEN=	"Does not build on FreeBSD-4.x"
 pre-everything::
 	@${ECHO_MSG} "NOTE: If the work directory is on an NFS mount, you will"
 	@${ECHO_MSG} "require NFS client locking support for the build to"
-	@${ECHO_MSG} "succeed."
+	@${ECHO_MSG} "succeed. Currently this is only available on FreeBSD 5.0"
+	@${ECHO_MSG} "or greater."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
 	@${ECHO_MSG} "changed since version 1.0.x."
@@ -58,6 +53,17 @@ pre-everything::
 .if !defined(BATCH)
 	@sleep 10
 .endif
+
+do-configure:
+	@(cd ${WRKSRC} && ${ENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
+	${AUTOTOOLS_VARS} ./autogen.sh --prefix=${PREFIX}/firebird	\
+	--with-lock-manager --with-editline)
+
+do-build:
+	@(								\
+	cd ${WRKSRC};							\
+	${ENV} CC=${CC} CXX=${CXX} ${GMAKE} all;			\
+	)
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
