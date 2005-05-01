@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-SSH-Perl
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.27
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -65,7 +64,6 @@ MAN3=		Net::SSH::Perl.3 \
 		Net::SSH::Perl::Cipher::RC4.3 \
 		Net::SSH::Perl::Comp.3 \
 		Net::SSH::Perl::Comp::Zlib.3 \
-		Net::SSH::Perl::Config.3 \
 		Net::SSH::Perl::Constants.3 \
 		Net::SSH::Perl::Kex.3 \
 		Net::SSH::Perl::Kex::DH1.3 \
