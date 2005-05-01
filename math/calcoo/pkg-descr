@@ -6,10 +6,13 @@ other calculator programs are:
 * No double-function buttons.
 * Undo/redo buttons.
 * Copy/paste interaction with X clipboard.
-* Both RPN (reverse Polish notation) and "standard" modes are available.
-* Tick marks to separate thousands.                                  
+* Both RPN (reverse Polish notation) and algebraic modes are available.
+* Tick marks to separate thousands.
+* Two memory registers with displays.
+* Displays for Y, Z, and T registers.
+* It is a purely scientific calculator.
 
-Below are the features that Calcoo lacks (but which are useless anyway):
+Features that Calcoo lacks:
 
 * Statistical mode.
 * HEX mode.
