@@ -1,0 +1,34 @@
+--- kon.cfg.FreeBSD.orig	Sun May  1 01:39:21 2005
++++ kon.cfg.FreeBSD	Sun May  1 01:40:35 2005
+@@ -115,8 +115,10 @@
+ 
+ # Startup command definition (usually font loading commands are specified)
+ bdf-zcat16:@@KON16FONT@@
++	gzip -cd @@PREFIX@@/share/fonts/bdf/8x16.bdf.gz | /usr/local/bin/fld -t bdf -n
+ 	gzip -cd @@PREFIX@@/share/fonts/bdf/jiskan16.bdf.gz | /usr/local/bin/fld -t bdf -n
+-	gzip -cd @@PREFIX@@/share/fonts/bdf/8x16rk.bdf.gz | /usr/local/bin/fld -t bdf -n
++	gzip -cd @@PREFIX@@/share/fonts/bdf/kc15f.bdf.gz | /usr/local/bin/fld -t bdf -n
++	gzip -cd @@PREFIX@@/share/fonts/bdf/gb16st.bdf.gz | /usr/local/bin/fld -t bdf -n
+ bdf-zcat14:@@KON14FONT@@
+ 	gzip -cd @@PREFIX@@/share/fonts/bdf/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
+ 	gzip -cd @@PREFIX@@/share/fonts/bdf/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n
+@@ -199,16 +201,16 @@
+ #   BIG5.HKU-0, GB2312.1980-1, JISX0208.1983-0, KSC5601.1987-0
+ #   EUC, SJIS
+ 
+-ja_JP.ujis:Coding
++ja_JP.ujis:
+ 	JISX0201.1976-0 JISX0208.1983-0 EUC
+ 
+ ja_JP.sjis:
+ 	JISX0201.1976-0 JISX0208.1983-0 SJIS
+ 
+-zh_TW.big5:
++zh_TW.Big5:Coding
+ 	ISO8859-1 BIG5.HKU-0
+ 
+-zh_CN.ugb:
++zh_CN.GB2312:
+ 	ISO8859-1 GB2312.1980-0
+ 
+ ko_KR.euc:
