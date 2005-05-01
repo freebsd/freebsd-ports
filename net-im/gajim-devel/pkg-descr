@@ -1,0 +1,13 @@
+Gajim is a Jabber client based on a plugin system.  At this time, 2 plugins
+have been written: one in GTK2 and one that log messages.
+
+FEATURES:
+
+    * Tabbed chat windows
+    * Groupchat support (with MUC protocol)
+    * Emoticons, URL grabber
+    * Systray icon
+    * GPG support
+    * Multiple accounts support
+
+WWW: http://www.gajim.org/

@@ -1,0 +1,171 @@
+bin/gajim
+lib/gajim/idle.so
+lib/gajim/trayicon.so
+%%DATADIR%%/COPYING
+%%DATADIR%%/Core/__init__.py
+%%DATADIR%%/Core/core.py
+%%DATADIR%%/Messages/fr/LC_MESSAGES/gajim.mo
+%%DATADIR%%/Messages/pt_BR/LC_MESSAGES/gajim.mo
+%%DATADIR%%/common/__init__.py
+%%DATADIR%%/common/debug.py
+%%DATADIR%%/common/hub.py
+%%DATADIR%%/common/i18n.py
+%%DATADIR%%/common/jabber.py
+%%DATADIR%%/common/optparser.py
+%%DATADIR%%/common/plugin.py
+%%DATADIR%%/common/setup.py
+%%DATADIR%%/common/sleepy.py
+%%DATADIR%%/common/thread.py
+%%DATADIR%%/common/xmlstream.py
+%%DATADIR%%/gajim.py
+%%DATADIR%%/gajim.xpm
+%%DATADIR%%/plugins/__init__.py
+%%DATADIR%%/plugins/gtkgui/__init__.py
+%%DATADIR%%/plugins/gtkgui/chat.py
+%%DATADIR%%/plugins/gtkgui/config.py
+%%DATADIR%%/plugins/gtkgui/dialogs.py
+%%DATADIR%%/plugins/gtkgui/emoticons/angry.png
+%%DATADIR%%/plugins/gtkgui/emoticons/bat.png
+%%DATADIR%%/plugins/gtkgui/emoticons/beer.png
+%%DATADIR%%/plugins/gtkgui/emoticons/biggrin.png
+%%DATADIR%%/plugins/gtkgui/emoticons/blush.png
+%%DATADIR%%/plugins/gtkgui/emoticons/boy.png
+%%DATADIR%%/plugins/gtkgui/emoticons/brflower.png
+%%DATADIR%%/plugins/gtkgui/emoticons/brheart.png
+%%DATADIR%%/plugins/gtkgui/emoticons/coffee.png
+%%DATADIR%%/plugins/gtkgui/emoticons/coolglasses.png
+%%DATADIR%%/plugins/gtkgui/emoticons/cry.png
+%%DATADIR%%/plugins/gtkgui/emoticons/cuffs.png
+%%DATADIR%%/plugins/gtkgui/emoticons/devil.png
+%%DATADIR%%/plugins/gtkgui/emoticons/drink.png
+%%DATADIR%%/plugins/gtkgui/emoticons/flower.png
+%%DATADIR%%/plugins/gtkgui/emoticons/frowning.png
+%%DATADIR%%/plugins/gtkgui/emoticons/girl.png
+%%DATADIR%%/plugins/gtkgui/emoticons/heart.png
+%%DATADIR%%/plugins/gtkgui/emoticons/hugleft.png
+%%DATADIR%%/plugins/gtkgui/emoticons/hugright.png
+%%DATADIR%%/plugins/gtkgui/emoticons/kiss.png
+%%DATADIR%%/plugins/gtkgui/emoticons/lamp.png
+%%DATADIR%%/plugins/gtkgui/emoticons/mail.png
+%%DATADIR%%/plugins/gtkgui/emoticons/moon.png
+%%DATADIR%%/plugins/gtkgui/emoticons/music.png
+%%DATADIR%%/plugins/gtkgui/emoticons/no.png
+%%DATADIR%%/plugins/gtkgui/emoticons/oh.png
+%%DATADIR%%/plugins/gtkgui/emoticons/phone.png
+%%DATADIR%%/plugins/gtkgui/emoticons/photo.png
+%%DATADIR%%/plugins/gtkgui/emoticons/pussy.png
+%%DATADIR%%/plugins/gtkgui/emoticons/rainbow.png
+%%DATADIR%%/plugins/gtkgui/emoticons/smile.png
+%%DATADIR%%/plugins/gtkgui/emoticons/star.png
+%%DATADIR%%/plugins/gtkgui/emoticons/stare.png
+%%DATADIR%%/plugins/gtkgui/emoticons/tongue.png
+%%DATADIR%%/plugins/gtkgui/emoticons/unhappy.png
+%%DATADIR%%/plugins/gtkgui/emoticons/wink.png
+%%DATADIR%%/plugins/gtkgui/emoticons/yes.png
+%%DATADIR%%/plugins/gtkgui/groupchat_window.py
+%%DATADIR%%/plugins/gtkgui/gtkgui.glade
+%%DATADIR%%/plugins/gtkgui/gtkgui.py
+%%DATADIR%%/plugins/gtkgui/history_window.py
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/away.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/chat.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/closed.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/connecting.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/dnd.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/error.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/invisible.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/message.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/not_in_the_roster.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/offline.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/online.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/opened.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/requested.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/typing.png
+%%DATADIR%%/plugins/gtkgui/iconsets/gossip/xa.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/away.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/chat.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/closed.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/connecting.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/dnd.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/invisible.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/offline.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/online.png
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/opened.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/icq/xa.png
+%%DATADIR%%/plugins/gtkgui/iconsets/msn/away.png
+%%DATADIR%%/plugins/gtkgui/iconsets/msn/closed.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/msn/connecting.png
+%%DATADIR%%/plugins/gtkgui/iconsets/msn/dnd.png
+%%DATADIR%%/plugins/gtkgui/iconsets/msn/offline.png
+%%DATADIR%%/plugins/gtkgui/iconsets/msn/online.png
+%%DATADIR%%/plugins/gtkgui/iconsets/msn/opened.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/away.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/chat.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/closed.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/connecting.gif
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/dnd.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/error.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/invisible.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/message.gif
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/not_in_the_roster.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/offline.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/online.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/opened.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/requested.png
+%%DATADIR%%/plugins/gtkgui/iconsets/stellar/xa.png
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/away.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/chat.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/closed.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/connecting.gif
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/dnd.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/error.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/invisible.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/message.gif
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/not_in_the_roster.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/offline.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/online.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/opened.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/requested.xpm
+%%DATADIR%%/plugins/gtkgui/iconsets/sun/xa.xpm
+%%DATADIR%%/plugins/gtkgui/pixmaps/logo.png
+%%DATADIR%%/plugins/gtkgui/pixmaps/smile.png
+%%DATADIR%%/plugins/gtkgui/pixmaps/transport/away.png
+%%DATADIR%%/plugins/gtkgui/pixmaps/transport/dnd.png
+%%DATADIR%%/plugins/gtkgui/pixmaps/transport/offline.png
+%%DATADIR%%/plugins/gtkgui/pixmaps/transport/online.png
+%%DATADIR%%/plugins/gtkgui/pixmaps/transport/xa.png
+%%DATADIR%%/plugins/gtkgui/roster_window.py
+%%DATADIR%%/plugins/gtkgui/systray.py
+%%DATADIR%%/plugins/gtkgui/tabbed_chat_window.py
+%%DATADIR%%/plugins/logger/__init__.py
+%%DATADIR%%/plugins/logger/logger.py
+%%DATADIR%%/plugins/sock/__init__.py
+%%DATADIR%%/plugins/sock/sock.py
+%%DATADIR%%/sounds/connected.wav
+%%DATADIR%%/sounds/disconnected.wav
+%%DATADIR%%/sounds/message1.wav
+%%DATADIR%%/sounds/message2.wav
+%%DATADIR%%/sounds/sent.wav
+
+@dirrm lib/gajim
+@dirrm %%DATADIR%%/common
+@dirrm %%DATADIR%%/plugins/gtkgui/emoticons
+@dirrm %%DATADIR%%/plugins/gtkgui/iconsets/gossip
+@dirrm %%DATADIR%%/plugins/gtkgui/iconsets/icq
+@dirrm %%DATADIR%%/plugins/gtkgui/iconsets/msn
+@dirrm %%DATADIR%%/plugins/gtkgui/iconsets/stellar
+@dirrm %%DATADIR%%/plugins/gtkgui/iconsets/sun
+@dirrm %%DATADIR%%/plugins/gtkgui/iconsets
+@dirrm %%DATADIR%%/plugins/gtkgui/pixmaps/transport
+@dirrm %%DATADIR%%/plugins/gtkgui/pixmaps
+@dirrm %%DATADIR%%/plugins/gtkgui
+@dirrm %%DATADIR%%/plugins/logger
+@dirrm %%DATADIR%%/plugins/sock
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/Core
+@dirrm %%DATADIR%%/Messages/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/Messages/fr
+@dirrm %%DATADIR%%/Messages/pt_BR/LC_MESSAGES
+@dirrm %%DATADIR%%/Messages/pt_BR
+@dirrm %%DATADIR%%/Messages
+@dirrm %%DATADIR%%

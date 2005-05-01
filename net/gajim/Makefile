@@ -1,0 +1,25 @@
+# New ports collection makefile for:	gajim
+# Date created:				27 April 2005
+# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gajim
+PORTVERSION=	0.6.1
+CATEGORIES=	net
+MASTER_SITES=	http://www.gajim.org/downloads/
+
+MAINTAINER=	vsevolod@highsecure.ru
+COMMENT=	Gajim is a Jabber client based on a plugin system
+
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+
+USE_X_PREFIX=	yes
+USE_PYTHON=	2.3+
+USE_GMAKE=	yes
+
+MAKE_ENV+=	PY_CFLAGS=-I${PYTHON_INCLUDEDIR} \
+		PY_PREFIX=${LOCALBASE}
+
+.include <bsd.port.mk>

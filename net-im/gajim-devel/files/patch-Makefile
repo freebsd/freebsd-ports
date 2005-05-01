@@ -1,0 +1,50 @@
+--- Makefile.orig	Sun Apr  3 14:40:02 2005
++++ Makefile	Thu Apr 28 16:13:52 2005
+@@ -1,16 +1,21 @@
+ VERSION		?= 0.6.1
+ 
+ MODULES		= common plugins/gtkgui
+-PREFIX		= /usr
++PREFIX		?= /usr/local
+ DESTDIR		= /
++MAKE		?= gmake
+ 
+-FIND		= find -regex '.*\.\(\(glade\)\|\(py\)\|\(xpm\)\|\(gif\)\|\(png\)\|\(mo\)\|\(wav\)\)'
+-FILES		= `$(FIND)`
+-DIRS		= `$(FIND) -exec dirname {} \; | sort -u`
+-FIND_LIB	= find -regex '.*\.\(so\)'
++FIND		= find -E
++FINDOPTS	= -regex '.*.((glade)|(py)|(xpm)|(gif)|(png)|(mo)|(wav))'
++FILES		= `$(FIND) . $(FINDOPTS)`
++DIRS		= `$(FIND) . $(FINDOPTS) -exec dirname {} \; | sort -u`
++FIND_LIB	= $(FIND) . -regex '.*.(so)'
+ FILES_LIB	= `$(FIND_LIB)`
+ 
+ LANGS		= fr pt_BR
++GTK_CFLAGS	= `pkg-config gtk+-2.0 --cflags-only-I | sed -e 's/-I/:/g' | tr -d ' '` 
++GTK_LDFLAGS	= `pkg-config gtk+-2.0 --libs-only-L | sed -e 's/-L/:/g' | tr -d ' '`
++
+ SCRIPTS = \
+ 	scripts/gajim
+ 
+@@ -22,15 +27,15 @@
+ 	done
+ 
+ trayicon:
+-	make -C plugins/gtkgui all;
++	$(MAKE) -C plugins/gtkgui all;
+ 
+ idle:
+-	make -C common all;
++	$(MAKE) -C common all GTK_LDFLAGS="$(GTK_LDFLAGS)" GTK_CFLAGS="$(GTK_CFLAGS)";
+ 
+ clean:
+-	find -name *.pyc -exec rm {} \;
+-	find -name *.mo -exec rm {} \;
+-	$(foreach sdir, $(MODULES), make -C $(sdir) clean;)
++	find . -name *.pyc -exec rm {} \;
++	find . -name *.mo -exec rm {} \;
++	$(foreach sdir, $(MODULES), $(MAKE) -C $(sdir) clean;)
+ 
+ # FIXME -- olé gorito
+ dist:
