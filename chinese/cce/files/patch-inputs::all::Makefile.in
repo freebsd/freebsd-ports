@@ -1,0 +1,19 @@
+--- inputs/all/Makefile.in.orig	Sat Feb 14 12:17:23 2004
++++ inputs/all/Makefile.in	Sun May  1 02:27:37 2005
+@@ -335,8 +335,6 @@
+ .check_convtab:
+ 	@if [ ! -f $(CCE_SHARE_DIR)/cce/cceconv.tab ] ; then \
+        $(NORMAL_INSTALL) ; \
+-       $(mkinstalldirs) $(CCE_SHARE_DIR)/cce ; \
+-	   $(INSTALL_DATA) $(srcdir)/../utils/cceconv.tab $(CCE_SHARE_DIR)/cce/cceconv.tab ; \
+     fi
+ 
+ zhiyin.tab: zhiyin.cin $(CIN2TAB) .check_convtab
+@@ -361,6 +359,7 @@
+ 
+ allinstall: $(CIN2TAB) 
+ 	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
++	$(INSTALL_DATA) $(srcdir)/../utils/cceconv.tab $(CCE_SHARE_DIR)/cce/cceconv.tab ; \
+ 	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce/all
+ 	$(INSTALL_DATA) $(srcdir)/*.tab $(CCE_SHARE_DIR)/cce/all
+ 	$(INSTALL_DATA) $(srcdir)/*.tab.usr $(CCE_SHARE_DIR)/cce/all
