@@ -1,8 +1,11 @@
---- Makefile.orig	Mon Mar  3 18:45:09 2003
-+++ Makefile	Mon Mar  3 18:45:27 2003
-@@ -1,4 +1,4 @@
- all: gromit
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -7,4 +7,4 @@
+ 	gcc -o propertywatch propertywatch.c `gtk-config --libs --cflags`
  
  gromit: gromit.c Makefile
--	gcc -o gromit gromit.c -Wall `gtk-config --libs --cflags`
-+	${CC} -o gromit gromit.c ${CFLAGS} `${GTK_CONFIG} --libs --cflags`
+-	gcc -DG_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGDK_MULTIHEAD_SAFE -DGTK_MULTIHEAD_SAFE -o gromit gromit.c -Wall `pkg-config --libs --cflags gtk+-2.0`
++	${CC} -DG_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGDK_MULTIHEAD_SAFE -DGTK_MULTIHEAD_SAFE -o gromit gromit.c ${CFLAGS} `pkg-config --libs --cflags gtk+-2.0`

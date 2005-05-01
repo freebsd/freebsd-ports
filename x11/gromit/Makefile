@@ -19,16 +19,10 @@ USE_GNOME=	gtk20
 
 DOCS=		AUTHORS ChangeLog README
 
-post-extract:
-	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' \
-		-e 's|`gtk-config|$${CFLAGS} `pkg-config gtk\+-2.0|' \
-		${WRKSRC}/Makefile
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gromit ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA}   ${WRKSRC}/gromitrc       ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/sawfish-config ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
