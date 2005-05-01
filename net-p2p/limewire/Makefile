@@ -8,8 +8,7 @@
 PORTNAME=	limewire
 PORTVERSION=	4.8.1
 CATEGORIES=	net java
-MASTER_SITES=	http://www9.limewire.com:82/download/${PORTVERSION}/ \
-		http://www9.limewire.com:82/download/
+MASTER_SITES=	http://maverick.limewire.com/download/
 DISTNAME=	LimeWireOther
 
 MAINTAINER=	ports@edini.net
