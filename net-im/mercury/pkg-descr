@@ -1,0 +1,14 @@
+Mercury is a Java Based MSN client.
+
+With Mercury you can do the same things as with your normal messenger:
+    * Talk to friends
+    * Change your nickname and status
+    * Add a display picture (also know as avatar)
+    * Send files through the MSN server (for people with a firewall etc..) or
+	direct
+    * Play games (Tic Tac Toe and Connect4 only at the moment)
+    * Look through the webcam of your friends (webcam receiving only)
+
+But Mercury has many extra functions that your normal messenger doesn't have.
+
+WWW: http://www.mercury.to/

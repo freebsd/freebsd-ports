@@ -354,6 +354,7 @@
     SUBDIR += mars_nwe
     SUBDIR += meanwhile
     SUBDIR += meanwhile-gaim
+    SUBDIR += mercury
     SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micq
