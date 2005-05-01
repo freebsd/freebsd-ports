@@ -50,7 +50,7 @@ BROKEN=		"beep and XMMS is mutually exclusive.  Run 'make config' again!"
 .endif
 .if defined(WITH_BEEP_MEDIA_PLAYER)
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
-MAKE_ENV+=	WITH_BMP=yes
+MAKE_ENV+=	USE_BMP=yes
 .elif defined(WITH_XMMS)
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
