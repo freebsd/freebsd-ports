@@ -27,6 +27,12 @@ USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 MAXOBV?=	20000	# Make bigger if you need more observations/variable
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not link on alpha (.got subsegment exceeds 64k)"
+.endif
+
 post-extract:
 	@${INSTALL_DATA} ${FILESDIR}/Makefile.tmpl ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g ; \
@@ -44,4 +50,4 @@ post-install:
 		${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
