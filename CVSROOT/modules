@@ -2002,6 +2002,7 @@ exim-monitor	ports/mail/exim-monitor
 exim-mysql	ports/mail/exim-mysql
 exim-postgresql	ports/mail/exim-postgresql
 exim-sa-exim	ports/mail/exim-sa-exim
+exipick		ports/mail/exipick
 exiv2		ports/graphics/exiv2
 exmh2		ports/mail/exmh2
 expat2		ports/textproc/expat2
