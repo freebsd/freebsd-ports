@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5f003a08-ba3c-11d9-837d-000e0c2e438a">
+    <topic>sharutils -- unshar insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>sharutils</name>
+	<range><lt>4.3.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Ubuntu Advisory reports:</p>
+	<blockquote cite="http://www.ubuntulinux.org/support/documentation/usn/usn-104-1">
+	  <p>Joey Hess discovered that "unshar" created temporary files
+	    in an insecure manner. This could allow a symbolic link
+	    attack to create or overwrite arbitrary files with the
+	    privileges of the user invoking the program.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12981</bid>
+      <cvename>CAN-2005-0990</cvename>
+      <url>http://www.ubuntulinux.org/support/documentation/usn/usn-104-1</url>
+    </references>
+    <dates>
+      <discovery>2005-04-04</discovery>
+      <entry>2005-05-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c5ad0cf-ba37-11d9-837d-000e0c2e438a">
     <topic>rsnapshot -- local privilege escalation</topic>
     <affects>
