@@ -85,6 +85,7 @@
     SUBDIR += exim-mysql
     SUBDIR += exim-postgresql
     SUBDIR += exim-sa-exim
+    SUBDIR += exipick
     SUBDIR += exmh2
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
