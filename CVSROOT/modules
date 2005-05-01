@@ -2459,6 +2459,7 @@ gaim-openq	ports/net/gaim-openq
 gaim-otr	ports/security/gaim-otr
 gaim-rss-reader	ports/net/gaim-rss-reader
 gaim-xmms-remote	ports/multimedia/gaim-xmms-remote
+gajim		ports/net/gajim
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
 galax		ports/textproc/galax
