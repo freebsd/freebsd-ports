@@ -1,97 +1,101 @@
 @comment $FreeBSD$
 @unexec rm -f %%LOCALBASE%%/etc/rc.d/000.firebird.sh
-README
-UDF/fbudf.so
-UDF/fbudf.sql
-UDF/ib_udf.so
-UDF/ib_udf.sql
-WhatsNew
-aliases.conf
-aliases.conf.sample
-bin/fb_inet_server
-bin/fb_lock_mgr
-bin/fb_lock_print
-bin/gbak
-bin/gdef
-bin/gds_drop
-bin/gfix
-bin/gpre
-bin/gsec
-bin/gsplit
-bin/gstat
-bin/isql
-bin/qli
-doc/README.NTSecurity
-doc/README.Optimizer.txt
-doc/README.Win32LibraryInstallation.txt
-doc/README.build.mingw.html
-doc/README.build.msvc.html
-doc/README.coding.style
-doc/README.instsvc
-doc/README.isql_enhancements.txt
-doc/README.makefiles
-doc/README.performance_monitoring
-doc/README.sha1
-doc/README.user
-doc/README.user.embedded
-doc/README.user.troubleshooting
-doc/README.xnet
-doc/sql.extensions/README.PSQL_stack_trace.txt
-doc/sql.extensions/README.aggregate_tracking
-doc/sql.extensions/README.case
-doc/sql.extensions/README.coalesce
-doc/sql.extensions/README.context_variables
-doc/sql.extensions/README.context_variables2
-doc/sql.extensions/README.cursors
-doc/sql.extensions/README.data_type_results_of_aggregations.txt
-doc/sql.extensions/README.data_types
-doc/sql.extensions/README.ddl.txt
-doc/sql.extensions/README.default_parameters
-doc/sql.extensions/README.derived_tables.txt
-doc/sql.extensions/README.distinct
-doc/sql.extensions/README.exception_handling
-doc/sql.extensions/README.execute_block
-doc/sql.extensions/README.execute_statement
-doc/sql.extensions/README.explicit_locks
-doc/sql.extensions/README.expression_indices
-doc/sql.extensions/README.iif
-doc/sql.extensions/README.keywords
-doc/sql.extensions/README.leave_labels
-doc/sql.extensions/README.null_value
-doc/sql.extensions/README.nullif
-doc/sql.extensions/README.order_by_expressions_nulls
-doc/sql.extensions/README.plan
-doc/sql.extensions/README.rows
-doc/sql.extensions/README.savepoints
-doc/sql.extensions/README.select_expressions
-doc/sql.extensions/README.sequence_generators
-doc/sql.extensions/README.universal_triggers
-doc/sql.extensions/README.view_updates
-firebird.conf
-firebird.conf.sample
-@unexec rm -f %D/firebird.log
-firebird.msg
-help/help.fdb
-include/blr.h
-include/ib_util.h
-include/ibase.h
-include/iberror.h
-include/perf.h
-intl/fbintl
-@unexec rm -f %D/isc_event1.`hostname`
-@unexec rm -f %D/isc_init1.`hostname`
-@unexec rm -f %D/isc_lock1.`hostname`
-lib/libfbclient.so
-lib/libfbclient.so.2
-lib/libfbclient.so.2.0.0
-lib/libfbembed.so
-lib/libfbembed.so.2
-lib/libfbembed.so.2.0.0
-lib/libib_util.so
-security2.fdb.sample
-security2.fdb
-@dirrm UDF
-@dirrm doc/sql.extensions
-@dirrm doc
-@dirrm help
-@dirrm intl
+firebird/README
+firebird/UDF/fbudf.so
+firebird/UDF/fbudf.sql
+firebird/UDF/ib_udf.so
+firebird/UDF/ib_udf.sql
+firebird/WhatsNew
+firebird/aliases.conf
+firebird/aliases.conf.sample
+firebird/bin/fb_inet_server
+firebird/bin/fb_lock_mgr
+firebird/bin/fb_lock_print
+firebird/bin/gbak
+firebird/bin/gdef
+firebird/bin/gds_drop
+firebird/bin/gfix
+firebird/bin/gpre
+firebird/bin/gsec
+firebird/bin/gsplit
+firebird/bin/gstat
+firebird/bin/isql
+firebird/bin/qli
+firebird/doc/README.NTSecurity
+firebird/doc/README.Optimizer.txt
+firebird/doc/README.Win32LibraryInstallation.txt
+firebird/doc/README.build.mingw.html
+firebird/doc/README.build.msvc.html
+firebird/doc/README.coding.style
+firebird/doc/README.instsvc
+firebird/doc/README.isql_enhancements.txt
+firebird/doc/README.makefiles
+firebird/doc/README.performance_monitoring
+firebird/doc/README.sha1
+firebird/doc/README.user
+firebird/doc/README.user.embedded
+firebird/doc/README.user.troubleshooting
+firebird/doc/README.xnet
+firebird/doc/sql.extensions/README.PSQL_stack_trace.txt
+firebird/doc/sql.extensions/README.aggregate_tracking
+firebird/doc/sql.extensions/README.case
+firebird/doc/sql.extensions/README.coalesce
+firebird/doc/sql.extensions/README.context_variables
+firebird/doc/sql.extensions/README.context_variables2
+firebird/doc/sql.extensions/README.cursors
+firebird/doc/sql.extensions/README.data_type_results_of_aggregations.txt
+firebird/doc/sql.extensions/README.data_types
+firebird/doc/sql.extensions/README.ddl.txt
+firebird/doc/sql.extensions/README.default_parameters
+firebird/doc/sql.extensions/README.derived_tables.txt
+firebird/doc/sql.extensions/README.distinct
+firebird/doc/sql.extensions/README.exception_handling
+firebird/doc/sql.extensions/README.execute_block
+firebird/doc/sql.extensions/README.execute_statement
+firebird/doc/sql.extensions/README.explicit_locks
+firebird/doc/sql.extensions/README.expression_indices
+firebird/doc/sql.extensions/README.iif
+firebird/doc/sql.extensions/README.keywords
+firebird/doc/sql.extensions/README.leave_labels
+firebird/doc/sql.extensions/README.null_value
+firebird/doc/sql.extensions/README.nullif
+firebird/doc/sql.extensions/README.order_by_expressions_nulls
+firebird/doc/sql.extensions/README.plan
+firebird/doc/sql.extensions/README.rows
+firebird/doc/sql.extensions/README.savepoints
+firebird/doc/sql.extensions/README.select_expressions
+firebird/doc/sql.extensions/README.sequence_generators
+firebird/doc/sql.extensions/README.universal_triggers
+firebird/doc/sql.extensions/README.view_updates
+firebird/firebird.conf
+firebird/firebird.conf.sample
+@unexec rm -f %D/firebird/firebird.log
+firebird/firebird.msg
+firebird/help/help.fdb
+firebird/include/blr.h
+firebird/include/ib_util.h
+firebird/include/ibase.h
+firebird/include/iberror.h
+firebird/include/perf.h
+firebird/intl/fbintl
+@unexec rm -f %D/firebird/isc_event1.`hostname`
+@unexec rm -f %D/firebird/isc_init1.`hostname`
+@unexec rm -f %D/firebird/isc_lock1.`hostname`
+firebird/lib/libfbclient.so
+firebird/lib/libfbclient.so.2
+firebird/lib/libfbclient.so.2.0.0
+firebird/lib/libfbembed.so
+firebird/lib/libfbembed.so.2
+firebird/lib/libfbembed.so.2.0.0
+firebird/lib/libib_util.so
+firebird/security2.fdb.sample
+firebird/security2.fdb
+@dirrm firebird/UDF
+@dirrm firebird/bin
+@dirrm firebird/doc/sql.extensions
+@dirrm firebird/doc
+@dirrm firebird/help
+@dirrm firebird/include
+@dirrm firebird/intl
+@dirrm firebird/lib
+@unexec rmdir %D/firebird 2>/dev/null || true
