@@ -1,5 +1,5 @@
 freevrrpd is a VRRP (Virtual Router Redundancy Protocol) implementation
-daemon under FreeBSD.  freevrrpd is part of the High UpTime project.
+daemon under FreeBSD, NetBSD and OpenBSD.
 This daemon has been rewritten from scratch and is not based on
 existing projects.  In this second public release, you can find:
 
@@ -18,5 +18,6 @@ existing projects.  In this second public release, you can find:
        * Using now only one BPF device for all VRID
        * Support netmask for Virtual IP addresses
        * Support for monitored circuit and dependances between VRIDs
+       * Support for VLAN pseudo devices under *BSD
 
 WWW: http://www.b0l.org/?idcategory=3&idsection=1
