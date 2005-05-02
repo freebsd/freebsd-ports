@@ -7,6 +7,7 @@
 
 PORTNAME=	imapsync
 PORTVERSION=	1.125
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tiamat@komi.mts.ru
 COMMENT=	IMAP synchronization copy or migration tool
 
-BUILD_DEPENDS=	${SITE_PERL}/Mail/IMAPClient.pm:${PORTSDIR}/mail/p5-Mail-IMAPClient
+BUILD_DEPENDS=	${SITE_PERL}/Mail/IMAPClient.pm:${PORTSDIR}/mail/p5-Mail-IMAPClient \
+		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
