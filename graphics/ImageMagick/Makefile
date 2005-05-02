@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.2.0.5
+PORTVERSION=	6.2.2.1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/} \
-		http://people.fruitsalad.org/avleeuwen/distfiles/imagemagick/
+MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	avleeuwen@piwebs.com
@@ -30,8 +30,6 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		compare.1 composite.1 convert.1 identify.1 mogrify.1 montage.1
-MAN4=		miff.4
-MAN5=		quantize.5
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
