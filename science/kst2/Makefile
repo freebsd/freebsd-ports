@@ -16,7 +16,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Data viewing program for KDE
 
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
-		gsl.6:${PORTSDIR}/math/gsl
+		gsl.7:${PORTSDIR}/math/gsl
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

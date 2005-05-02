@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl interface to GNU Scientific Library
 
-LIB_DEPENDS=	gsl.6:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.7:${PORTSDIR}/math/gsl
 
 PERL_CONFIGURE=	yes
 MAKE_ENV=	INC="-I${LOCALBASE}/include"
