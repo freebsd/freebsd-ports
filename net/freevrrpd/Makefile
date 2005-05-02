@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freevrrpd
-PORTVERSION=	0.9
-PORTREVISION=	0
+PORTVERSION=	0.9.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.b0l.org/download/
 
