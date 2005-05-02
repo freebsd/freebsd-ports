@@ -17,6 +17,8 @@ COMMENT=	Python extension module for reading flow-tools' data
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:${PORTSDIR}/net-mgmt/flow-tools
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/flowtools.so
+
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
