@@ -511,7 +511,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>jdk</name>
-	<range><le>1.3.1p9_4</le></range>
+	<range><le>1.2.2p11_3</le></range>
+	<range><ge>1.3.*</ge><le>1.3.1p9_4</le></range>
 	<range><ge>1.4.*</ge><le>1.4.2p7</le></range>
 	<range><ge>1.5.*</ge><le>1.5.0p1_1</le></range>
       </package>
@@ -559,7 +560,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-04-11</discovery>
       <entry>2005-04-16</entry>
-      <modified>2005-04-29</modified>
+      <modified>2005-05-02</modified>
     </dates>
   </vuln>
 
