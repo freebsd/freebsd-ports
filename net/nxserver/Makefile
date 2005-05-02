@@ -8,14 +8,14 @@
 PORTNAME=	nxserver
 PORTVERSION=	1.4.0
 CATEGORIES=	net
-MASTER_SITES=	${URL}/nx-X11/:X11 \
-		${URL}/nxagent/:agent \
-		${URL}/nxcomp/:comp \
-		${URL}/nxcompext/:compext \
-		${URL}/nxproxy/:proxy \
-		${URL}/nxauth/:auth \
-		${URL}/nxviewer/:viewer \
-		${URL}/nxdesktop/:desktop
+MASTER_SITES=	${URL}/:X11 \
+		${URL}/:agent \
+		${URL}/:comp \
+		${URL}/:compext \
+		${URL}/:proxy \
+		${URL}/:auth \
+		${URL}/:viewer \
+		${URL}/:desktop
 DISTFILES=	nx-X11-1.4.0-10.tar.gz:X11 \
 		nxagent-1.4.0-65.tar.gz:agent \
 		nxcomp-1.4.0-31.tar.gz:comp \
@@ -32,7 +32,7 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
 
-URL=		http://www.nomachine.com/download/nxsources
+URL=		http://www.nomachine.com/download/nxsources/1.4.0
 WRKSRC=		${WRKDIR}
 ALL_TARGET=	World
 NXPREFIX?=	${PREFIX}/NX
