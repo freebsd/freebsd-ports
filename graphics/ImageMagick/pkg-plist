@@ -85,6 +85,7 @@ include/magick/semaphore.h
 include/magick/shear.h
 include/magick/signature.h
 include/magick/splay-tree.h
+include/magick/statistic.h
 include/magick/stream.h
 include/magick/string_.h
 include/magick/timer.h
@@ -328,39 +329,34 @@ share/ImageMagick/config/magic.xml
 share/ImageMagick-%%PORTVERSION%%/LICENSE
 share/ImageMagick-%%PORTVERSION%%/ChangeLog
 share/ImageMagick-%%PORTVERSION%%/NEWS
-%%PORTDOCS%%share/doc/ImageMagick/images/ImageMagick.jpg
-%%PORTDOCS%%share/doc/ImageMagick/images/background.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/background.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/button.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/configure.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/devlib.gif
-%%PORTDOCS%%share/doc/ImageMagick/images/dogwaffle.png
+%%PORTDOCS%%share/doc/ImageMagick/images/difference.png
+%%PORTDOCS%%share/doc/ImageMagick/images/donate.png
 %%PORTDOCS%%share/doc/ImageMagick/images/examples.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/frame.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/fuzzy-magick.png
+%%PORTDOCS%%share/doc/ImageMagick/images/georeviews.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/granite.png
-%%PORTDOCS%%share/doc/ImageMagick/images/logo.png
-%%PORTDOCS%%share/doc/ImageMagick/images/magick.png
-%%PORTDOCS%%share/doc/ImageMagick/images/magick-icon.png
-%%PORTDOCS%%share/doc/ImageMagick/images/networkeleven.png
-%%PORTDOCS%%share/doc/ImageMagick/images/pair.png
-%%PORTDOCS%%share/doc/ImageMagick/images/promote.png
-%%PORTDOCS%%share/doc/ImageMagick/images/right_triangle.png
-%%PORTDOCS%%share/doc/ImageMagick/images/right_triangle_option.png
+%%PORTDOCS%%share/doc/ImageMagick/images/label.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/logo.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/montage.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/reconstruct.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/red-ball.png
+%%PORTDOCS%%share/doc/ImageMagick/images/red-circle.png
+%%PORTDOCS%%share/doc/ImageMagick/images/right.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/rose-over.png
+%%PORTDOCS%%share/doc/ImageMagick/images/rose.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/rose.png
-%%PORTDOCS%%share/doc/ImageMagick/images/screen.png
-%%PORTDOCS%%share/doc/ImageMagick/images/script.gif
-%%PORTDOCS%%share/doc/ImageMagick/images/sprite.png
-%%PORTDOCS%%share/doc/ImageMagick/images/star.gif
-%%PORTDOCS%%share/doc/ImageMagick/images/top.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/script.png
+%%PORTDOCS%%share/doc/ImageMagick/images/smile.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/sponsor.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/sprite.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/travelsur.gif
-%%PORTDOCS%%share/doc/ImageMagick/images/twi.png
+%%PORTDOCS%%share/doc/ImageMagick/images/white-highlight.png
 %%PORTDOCS%%share/doc/ImageMagick/index.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Authors.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Changelog.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Copyright.html
-%%PORTDOCS%%share/doc/ImageMagick/www/FAQ.html
-%%PORTDOCS%%share/doc/ImageMagick/www/ImageMagick.html
-%%PORTDOCS%%share/doc/ImageMagick/www/ImageMagickObject.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Install-mac.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Install-unix.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Install-vms.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Install-windows.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Blob.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.fig
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.png
@@ -399,10 +395,8 @@ share/ImageMagick-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-anatomy-plain.jpg
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-sample-framed.jpg
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-sample-plain.jpg
-%%PORTDOCS%%share/doc/ImageMagick/www/News.html
-%%PORTDOCS%%share/doc/ImageMagick/www/Notice.html
-%%PORTDOCS%%share/doc/ImageMagick/www/QuickStart.html
-%%PORTDOCS%%share/doc/ImageMagick/www/README.html
+%%PORTDOCS%%share/doc/ImageMagick/www/advanced-unix-installation.html
+%%PORTDOCS%%share/doc/ImageMagick/www/advanced-windows-installation.html
 %%PORTDOCS%%share/doc/ImageMagick/www/animate.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/animate.html
@@ -410,25 +404,23 @@ share/ImageMagick-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%share/doc/ImageMagick/www/api/attribute.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/blob.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/cache.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/cache-view.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/color.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/colorspace.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/compare.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/composite.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/constitute.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/decorate.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/display.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/draw.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/drawing-wand.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/decorate.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/deprecate.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/display.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/effect.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/enhance.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/exception.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/fx.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/image.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/list.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/magick.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/magick-wand.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/magick.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/memory.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/monitor.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/montage.html
@@ -445,39 +437,40 @@ share/ImageMagick-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%share/doc/ImageMagick/www/api/signature.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/stream.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/transform.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/types.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/widget.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/version.html
-%%PORTDOCS%%share/doc/ImageMagick/www/apis.html
-%%PORTDOCS%%share/doc/ImageMagick/www/cd.html
+%%PORTDOCS%%share/doc/ImageMagick/www/binary-releases.html
+%%PORTDOCS%%share/doc/ImageMagick/www/changelog.html
 %%PORTDOCS%%share/doc/ImageMagick/www/color.html
+%%PORTDOCS%%share/doc/ImageMagick/www/command-line-options.html
+%%PORTDOCS%%share/doc/ImageMagick/www/command-line-processing.html
+%%PORTDOCS%%share/doc/ImageMagick/www/command-line-tools.html
 %%PORTDOCS%%share/doc/ImageMagick/www/compare.html
 %%PORTDOCS%%share/doc/ImageMagick/www/composite.html
 %%PORTDOCS%%share/doc/ImageMagick/www/conjure.html
+%%PORTDOCS%%share/doc/ImageMagick/www/contact.html
 %%PORTDOCS%%share/doc/ImageMagick/www/convert.html
 %%PORTDOCS%%share/doc/ImageMagick/www/cvs.html
 %%PORTDOCS%%share/doc/ImageMagick/www/display.html
 %%PORTDOCS%%share/doc/ImageMagick/www/download.html
+%%PORTDOCS%%share/doc/ImageMagick/www/examples.html
 %%PORTDOCS%%share/doc/ImageMagick/www/formats.html
-%%PORTDOCS%%share/doc/ImageMagick/www/help.html
 %%PORTDOCS%%share/doc/ImageMagick/www/identify.html
 %%PORTDOCS%%share/doc/ImageMagick/www/import.html
-%%PORTDOCS%%share/doc/ImageMagick/www/index.html
-%%PORTDOCS%%share/doc/ImageMagick/www/install.html
-%%PORTDOCS%%share/doc/ImageMagick/www/magick-list.html
+%%PORTDOCS%%share/doc/ImageMagick/www/install-source.html
+%%PORTDOCS%%share/doc/ImageMagick/www/license.html
+%%PORTDOCS%%share/doc/ImageMagick/www/links.html
+%%PORTDOCS%%share/doc/ImageMagick/www/magick-core.html
+%%PORTDOCS%%share/doc/ImageMagick/www/magick-wand.html
 %%PORTDOCS%%share/doc/ImageMagick/www/magick.css
+%%PORTDOCS%%share/doc/ImageMagick/www/mailing-list.html
 %%PORTDOCS%%share/doc/ImageMagick/www/miff.html
 %%PORTDOCS%%share/doc/ImageMagick/www/mogrify.html
 %%PORTDOCS%%share/doc/ImageMagick/www/montage.html
-%%PORTDOCS%%share/doc/ImageMagick/www/new.html
-%%PORTDOCS%%share/doc/ImageMagick/www/objectives.html
-%%PORTDOCS%%share/doc/ImageMagick/www/perl.html
+%%PORTDOCS%%share/doc/ImageMagick/www/perl-magick.html
 %%PORTDOCS%%share/doc/ImageMagick/www/quantize.html
-%%PORTDOCS%%share/doc/ImageMagick/www/smile.c
-%%PORTDOCS%%share/doc/ImageMagick/www/sponsor.html
-%%PORTDOCS%%share/doc/ImageMagick/www/tools.html
-%%PORTDOCS%%share/doc/ImageMagick/www/topics.html
-%%PORTDOCS%%share/doc/ImageMagick/www/windows.html
+%%PORTDOCS%%share/doc/ImageMagick/www/resources.html
+%%PORTDOCS%%share/doc/ImageMagick/www/search.html
+%%PORTDOCS%%share/doc/ImageMagick/www/sponsors.html
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/Magick++
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www
@@ -487,8 +480,8 @@ share/ImageMagick-%%PORTVERSION%%/NEWS
 @dirrm share/ImageMagick/config
 @dirrm share/ImageMagick
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Image
+%%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
+%%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Image
 @dirrm lib/ImageMagick/modules-%%QBIT%%/filters
 @dirrm lib/ImageMagick/modules-%%QBIT%%/coders
 @dirrm lib/ImageMagick/modules-%%QBIT%%
