@@ -19,12 +19,3 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/%%PORT_SETUPEL%%
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs
-%%PORTDOCS%%share/doc/pcl-cvs/ChangeLog
-%%PORTDOCS%%share/doc/pcl-cvs/FAQ
-%%PORTDOCS%%share/doc/pcl-cvs/NEWS
-%%PORTDOCS%%share/doc/pcl-cvs/README
-%%PORTDOCS%%share/doc/pcl-cvs/TODO
-%%PORTDOCS%%@dirrm share/doc/pcl-cvs
-@unexec install-info --delete %D/info/pcl-cvs.info %D/info/dir
-info/pcl-cvs.info
-@exec install-info %D/info/pcl-cvs.info %D/info/dir

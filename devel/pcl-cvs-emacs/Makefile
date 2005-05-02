@@ -9,12 +9,13 @@ PORTNAME=	pcl-cvs
 PORTVERSION=	2.9.9
 PORTREVISION=	1
 CATEGORIES=	devel elisp
-MASTER_SITES=	ftp://rum.cs.yale.edu/pub/monnier/pcl-cvs/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	okazaki/pcl-cvs
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DIST_SUBDIR=	pcl-cvs
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR= okazaki/pcl-cvs
+PATCH_SITE_SUBDIR=	okazaki/pcl-cvs
 PATCHFILES=	pcl-cvs-2.9.9-compat.patch
 
 MAINTAINER?=	okazaki@FreeBSD.org
@@ -38,7 +39,13 @@ ALL_TARGET?=		elcfiles info
 INSTALL_TARGET?=	install_el install_elc install_info
 INSTALL_TARGET+=	install_startup
 
+INFO=	pcl-cvs
+
 .include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ChangeLog FAQ NEWS README TODO
+.endif
 
 .if ${EMACS_VER} == "19.34"
 EASY_MMODE=	easy-mmode.el
@@ -58,16 +65,16 @@ MAKE_ARGS+=	EMACS="${EMACS_CMD} -q --no-site-file" \
 
 .if defined(EMACS_PORT_NAME)
 ELIB_PORTDIR=	${PORTSDIR}/devel/elib${ELIB_PORT_SUFFIX}
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
+BUILD_DEPENDS+=	${EMACS_BASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
+RUN_DEPENDS+=	${EMACS_BASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
 .if (${EMACS_VER} == "19.34")
 CUSTOM_PORTDIR=	${PORTSDIR}/editors/custom${CUSTOM_PORT_SUFFIX}
 # depends on custom: emacs-19.34 or mule-2.3 based on emacs-19.34
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/custom.el:${CUSTOM_PORTDIR}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/custom.el:${CUSTOM_PORTDIR}
+BUILD_DEPENDS+=	${EMACS_BASE}/${EMACS_VERSION_SITE_LISPDIR}/custom.el:${CUSTOM_PORTDIR}
+RUN_DEPENDS+=	${EMACS_BASE}/${EMACS_VERSION_SITE_LISPDIR}/custom.el:${CUSTOM_PORTDIR}
 .else
 # diff-mode.el does not run on emacs-19.34
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/diff-mode.el:${PORTSDIR}/textproc/diff-mode.el
+RUN_DEPENDS+=	${EMACS_BASE}/${EMACS_SITE_LISPDIR}/diff-mode.el:${PORTSDIR}/textproc/diff-mode.el
 .endif
 .else
 .BEGIN:
@@ -88,26 +95,28 @@ post-build:
 	${ECHO_CMD} "(provide 'pcl-cvs-startup)" >> ${WRKSRC}/pcl-cvs-startup.el
 
 pre-install:
+	-${RM} ${INSTALL_WRKSRC}/${PORT_SETUPEL}
 .if defined(ELIB_SETUP) && !empty(ELIB_SETUP)
 	${ECHO_CMD} ${ELIB_SETUP} >> ${INSTALL_WRKSRC}/${PORT_SETUPEL}
 .endif
 
-post-install:
-	${ECHO_CMD} "(provide 'pcl-cvs-setup)" >> ${INSTALL_WRKSRC}/${PORT_SETUPEL}
-	@${MAKE} setupel-install
+POST_INSTALL_SEQ+=	setupel-install
 .if !defined(NOPORTDOCS)
-	@${MAKE} doc-install
+POST_INSTALL_SEQ+=	doc-install
 .endif
+
+post-install: ${POST_INSTALL_SEQ}
 	@${CAT} ${PKGMESSAGE}
 
 doc-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${INSTALL_WRKSRC} && \
-	for i in ChangeLog FAQ NEWS README TODO; do \
+	for i in ${PORTDOCS}; do \
 		${INSTALL_DATA} $${i} ${DOCSDIR} ; \
 	done
 
 setupel-install:
+	${ECHO_CMD} "(provide 'pcl-cvs-setup)" >> ${INSTALL_WRKSRC}/${PORT_SETUPEL}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORT_SETUPEL} \
 		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/
 
