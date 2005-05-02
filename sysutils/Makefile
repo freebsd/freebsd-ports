@@ -357,6 +357,7 @@
     SUBDIR += php4-posix
     SUBDIR += php5-posix
     SUBDIR += pib
+    SUBDIR += pidof
     SUBDIR += pipemeter
     SUBDIR += pkg_cutleaves
     SUBDIR += pkg_install
