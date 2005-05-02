@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension library for GSL (GNU Scientific Library)
 
-LIB_DEPENDS=	gsl.6:${.CURDIR}/../gsl
+LIB_DEPENDS=	gsl.7:${.CURDIR}/../gsl
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
