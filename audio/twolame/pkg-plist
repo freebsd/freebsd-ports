@@ -18,4 +18,3 @@ libdata/pkgconfig/twolame.pc
 %%DOCSDIR%%/html/vbr.html
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
-@dirrm libdata/pkgconfig
