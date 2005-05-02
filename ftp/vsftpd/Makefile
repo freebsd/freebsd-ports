@@ -23,6 +23,8 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 
 LDFLAGS+=	-lwrap
 
+OPTIONS=	RC_NG	"install RC_NG script" off
+
 .if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
 USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
@@ -33,7 +35,18 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_RC_NG)
+USE_RC_SUBR=	yes
+PLIST_SUB+=	RC_NG=""
+.else
+PLIST_SUB+=	RC_NG="@comment "
+.endif
+
 do-configure:
+.if defined(WITH_RC_NG)
+	@${SED} -e 's,%%RC_SUBR%%,${RC_SUBR},g' -e 's,%%PREFIX%%,${PREFIX},g' \
+		${FILESDIR}/${PORTNAME}.sh >${WRKDIR}/${PORTNAME}.sh
+.endif
 	${REINPLACE_CMD} -e "s=/etc/vsftpd.conf=${PREFIX}/etc/vsftpd.conf=" \
 		${WRKSRC}/defs.h
 	${REINPLACE_CMD} \
@@ -80,6 +93,9 @@ do-install:
 	${CP} -p -R -L ${WRKSRC}/${i}/./ ${DOCSDIR}/${i}/
 	${CHMOD} -R -L a+rX,go-w ${DOCSDIR}/${i}/
 .endfor
+.endif
+.if defined(WITH_RC_NG)
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/${PORTNAME}.sh
 .endif
 
 .include <bsd.port.post.mk>
