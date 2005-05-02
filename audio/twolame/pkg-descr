@@ -1,0 +1,8 @@
+TwoLAME is an optimized MPEG Audio Layer 2 encoder
+
+It is based heavily on:
+- tooLAME by Michael Cheng
+- the ISO dist10 code
+- improvement to algorithms as part of the LAME project (lame.sf.net)
+
+WWW: http://twolame.sf.net/

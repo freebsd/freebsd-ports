@@ -460,6 +460,7 @@
     SUBDIR += tta
     SUBDIR += tuneradio
     SUBDIR += tunesbrowser
+    SUBDIR += twolame
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += vorbis-tools
