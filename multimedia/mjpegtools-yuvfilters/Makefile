@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mjpegtools-yuvfilters
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://silicontrip.net/~mark/lavtools/ \
 		${MASTER_SITE_LOCAL}
