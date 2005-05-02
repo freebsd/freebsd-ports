@@ -7,6 +7,7 @@
 
 PORTNAME=	gsl
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	math ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/2108/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
