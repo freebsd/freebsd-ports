@@ -1,0 +1,21 @@
+bin/twolame
+include/twolame.h
+lib/libtwolame.a
+lib/libtwolame.so
+lib/libtwolame.so.0
+libdata/pkgconfig/twolame.pc
+%%DOCSDIR%%/html/api.html
+%%DOCSDIR%%/html/authors.html
+%%DOCSDIR%%/html/doxygen.css
+%%DOCSDIR%%/html/doxygen.png
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/news.html
+%%DOCSDIR%%/html/psycho.html
+%%DOCSDIR%%/html/readme.html
+%%DOCSDIR%%/html/todo.html
+%%DOCSDIR%%/html/twolame_8h-source.html
+%%DOCSDIR%%/html/twolame_8h.html
+%%DOCSDIR%%/html/vbr.html
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrm libdata/pkgconfig
