@@ -30,6 +30,7 @@ lib/ocp/loadokt.so
 lib/ocp/loadptm.so
 lib/ocp/loads3m.so
 lib/ocp/loadult.so
+lib/ocp/medialib.so
 lib/ocp/mchasm.so
 lib/ocp/mcpbase.so
 lib/ocp/mixclip.so
