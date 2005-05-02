@@ -4,20 +4,6 @@ bin/whois
 %%NLS%%share/locale/es/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/it/LC_MESSAGES/whois.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/no/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/whois.mo
-%%NLS%%@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/no 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/es 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/el 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/de 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale 2>/dev/null || true
