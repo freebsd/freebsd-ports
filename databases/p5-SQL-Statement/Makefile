@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Statement
-PORTVERSION=	1.11
+PORTVERSION=	1.14
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
@@ -17,9 +17,13 @@ COMMENT=	A perl5 module for SQL parsing and processing
 
 PERL_CONFIGURE=	yes
 
-MAN3=		SQL::Dialects::ANSI.3 SQL::Dialects::AnyData.3 \
-		SQL::Dialects::CSV.3 SQL::Eval.3 SQL::Parser.3 SQL::Statement.3 \
-		SQL::Statement::Functions.3 SQL::Statement::Util.3
+MAN3=		SQL::Eval.3 \
+		SQL::Parser.3 \
+		SQL::Statement.3 \
+		SQL::Statement::Embed.3 \
+		SQL::Statement::Functions.3 \
+		SQL::Statement::Structure.3 \
+		SQL::Statement::Syntax.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} <= 500503
