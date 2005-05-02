@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sharutils
-PORTVERSION=	4.3.77
-PORTREVISION=	1
+PORTVERSION=	4.3.80
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}/REL-${PORTVERSION}
 
 MAINTAINER=	sylvioc@gmail.com
 COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
@@ -38,5 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@SH@|${SH}|' \
 		${WRKSRC}/src/mail-files.in ${WRKSRC}/src/mailshar.in
 	@${REINPLACE_CMD} -e 's|@PERL@|${PERL}|' ${WRKSRC}/src/remsync.in
+	@${FIND} ${WRKSRC} -name \*.c  -or -name \*.h | ${XARGS} \
+		${REINPLACE_CMD} -e 's|uintmax_t|unsigned long long|;s|intmax_t|long long|'
 
 .include <bsd.port.mk>
