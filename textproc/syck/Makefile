@@ -15,5 +15,6 @@ COMMENT=	Syck is an extension for reading and writing YAML swiftly
 
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
+CFLAGS+=	-fPIC
 
 .include <bsd.port.mk>
