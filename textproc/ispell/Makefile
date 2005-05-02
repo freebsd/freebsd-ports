@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	12
+PORTREVISION?=	13
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -117,7 +117,7 @@ EXTRA_DICT+=	${NLDISTFILE}
 EXTRACT_ONLY+=	${NLDISTFILE}
 .endif
 .if defined(ISPELL_DA)
-DADISTFILE=	ispell-da-1.4.43.tar.gz
+DADISTFILE=	ispell-da-1.4.49.tar.gz
 MASTER_SITES+=	http://da.speling.org/filer/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asmodai

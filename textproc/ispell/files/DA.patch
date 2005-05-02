@@ -1,8 +1,8 @@
---- ispell-da-1.4.43/Makefile.orig	Mon Sep 20 09:30:48 2004
-+++ ispell-da-1.4.43/Makefile	Wed Oct 20 22:08:19 2004
+--- ispell-da-1.4.49/Makefile.orig	Thu Apr 21 11:29:52 2005
++++ ispell-da-1.4.49/Makefile	Sun May  1 21:35:42 2005
 @@ -9,13 +9,13 @@
- lang = da
- version = 1.4.43
+ lang=da
+ version=1.4.49
  
 -installdir=`ispell -vv | grep LIBDIR | cut -d'"' -f2`
 +installdir=`${ISPELL} -vv | grep LIBDIR | cut -d'"' -f2`
@@ -20,9 +20,9 @@
 @@ -26,7 +26,7 @@
  	ln -fs $(installdir)/$(sprog).aff  $(installdir)/$(sprog_en_lower_case).aff
  
- $(sprog).hash: maskbits $(sprog).aff words-$(sprogkode).ispell
--	buildhash words-$(sprogkode).ispell $(sprog).aff $(sprog).hash
-+	${BUILDHASH} words-$(sprogkode).ispell $(sprog).aff $(sprog).hash
+ $(sprog).hash: maskbits $(sprog).aff words-$(language_code).ispell
+-	buildhash words-$(language_code).ispell $(sprog).aff $(sprog).hash
++	${BUILDHASH} words-$(language_code).ispell $(sprog).aff $(sprog).hash
  
  clean:
- 	rm -f words-$(sprogkode).ispell.stat $(sprog).hash words-$(sprogkode).ispell.cnt *~
+ 	rm -f words-$(language_code).ispell.stat $(sprog).hash words-$(language_code).ispell.cnt *~
