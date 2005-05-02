@@ -8913,6 +8913,7 @@ picprog		ports/devel/picprog
 picturebook	ports/graphics/picturebook
 piddle		ports/graphics/piddle
 pidentd		ports/security/pidentd
+pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
 pike70		ports/lang/pike70
 pike72		ports/lang/pike72
