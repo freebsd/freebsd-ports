@@ -14,7 +14,7 @@ MAINTAINER=	dylan@dylex.net
 COMMENT=	A fullscreen RPN calculator for the console
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS= 	gsl.6:${PORTSDIR}/math/gsl
+LIB_DEPENDS= 	gsl.7:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

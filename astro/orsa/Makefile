@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Orbit Reconstruction, Simulation and Analysis
 
-LIB_DEPENDS=	gsl.6:${PORTSDIR}/math/gsl \
+LIB_DEPENDS=	gsl.7:${PORTSDIR}/math/gsl \
 		cln.3:${PORTSDIR}/math/cln \
 		fftw.2:${PORTSDIR}/math/fftw \
 		ginac-1.3.0:${PORTSDIR}/math/GiNaC

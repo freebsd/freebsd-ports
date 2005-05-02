@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header
 LIB_DEPENDS=	plplotd.10:${PORTSDIR}/math/plplot \
 		fftw.2:${PORTSDIR}/math/fftw \
-		gsl.6:${PORTSDIR}/math/gsl
+		gsl.7:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
 

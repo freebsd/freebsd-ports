@@ -19,7 +19,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An environment for rapid engineering and scientific processing
 
 LIB_DEPENDS=		f2c.2:${PORTSDIR}/lang/f2c		\
-			gsl.6:${PORTSDIR}/math/gsl		\
+			gsl.7:${PORTSDIR}/math/gsl		\
 			jpeg.9:${PORTSDIR}/graphics/jpeg	\
 			lapack.3:${PORTSDIR}/math/lapack	\
 			png.5:${PORTSDIR}/graphics/png		\

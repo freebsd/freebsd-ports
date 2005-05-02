@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic 3D finite element mesh generator
 
 RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
-LIB_DEPENDS=	gsl.6:${PORTSDIR}/math/gsl \
+LIB_DEPENDS=	gsl.7:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 .if defined(PACKAGE_BUILDING)

@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A rather general finite element solver using mixed finite elements
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw	\
-		gsl.6:${PORTSDIR}/math/gsl	\
+		gsl.7:${PORTSDIR}/math/gsl	\
 		lapack.3:${PORTSDIR}/math/lapack
 
 GNU_CONFIGURE=	yes
