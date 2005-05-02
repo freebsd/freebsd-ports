@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocp
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/
 
@@ -21,7 +20,6 @@ LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay \
 
 ONLY_FOR_ARCHS=	i386
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -35,6 +33,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
+CONFIGURE_ARGS=	--with-dir-suffix=""
+
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
 .include <bsd.port.pre.mk>
@@ -43,20 +43,35 @@ TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 RUN_DEPENDS=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
 .endif
 
-.if !exists(${TIMIDITY_CFG}) && !defined(WITHOUT_MIDI)
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--without-x11
+.else
+USE_XLIB=	yes
+CONFIGURE_ARGS+=	--with-x11=yes
+.endif
+
 pre-everything::
+.if !exists(${TIMIDITY_CFG}) && !defined(WITHOUT_MIDI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "In order to be able to play MIDI files, audio/eawpats will be installed."
 	@${ECHO_MSG} "Define WITHOUT_MIDI if you do not want to install it."
 	@${ECHO_MSG} ""
 .endif
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you want to compile without X11 support, hit Ctrl-C right now and"
+	@${ECHO_MSG} "define WITHOUT_X11"
+	@${ECHO_MSG} ""
+.endif
 
 post-patch:
+.if defined(WITH_DEBUG)
+	@${REINPLACE_CMD} -e 's|/\*\ \(#define\ .*DEBUG\ 1\)\ \*/|\1|' \
+		${WRKSRC}/config.h.in
+.endif
 	@${REINPLACE_CMD} -e 's|@LIBDIR@|${PREFIX}/lib/ocp|' \
 		${WRKSRC}/Rules.make.in
 	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes\.h|' ${WRKSRC}/types.h
-	@${REINPLACE_CMD} -e 's|ocp-" VERSION|ocp"|' \
-		${WRKSRC}/boot/kickload.c
 	@${REINPLACE_CMD} -e 's|\(-shared\)|-L${LOCALBASE}/lib -L${X11BASE}/lib \1|' \
 		${WRKSRC}/playmp2/Makefile \
 		${WRKSRC}/playogg/Makefile \
@@ -66,7 +81,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocp ${PREFIX}/bin
-	${CHMOD} u+s ${PREFIX}/bin/ocp
 
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/cp.pak ${DATADIR}
