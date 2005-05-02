@@ -1,11 +1,14 @@
 bin/tempest_for_eliza
 bin/tempest_for_mp3
-%%PORTDOCS%%share/doc/tempest/README
 share/tempest/forelise
 share/tempest/fruehling
 share/tempest/jonny
 share/tempest/oldmacdonald
 share/tempest/saints
 share/tempest/ungarian
-%%PORTDOCS%%@dirrm share/doc/tempest
+share/tempest/godfather
+share/tempest/starwars
+share/tempest/tempest
 @dirrm share/tempest
+%%DOCSDIR%%README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
