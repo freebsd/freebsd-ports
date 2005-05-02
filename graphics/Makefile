@@ -86,6 +86,7 @@
     SUBDIR += evas
     SUBDIR += evince
     SUBDIR += evolvotron
+    SUBDIR += exif
     SUBDIR += exifprobe
     SUBDIR += exiftags
     SUBDIR += exiv2
