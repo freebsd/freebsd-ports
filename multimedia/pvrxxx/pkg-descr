@@ -9,16 +9,12 @@ This port contains:
 
   This driver has been successfully tested on:
   - FreeBSD 4.10
-  - FreeBSD 5.2.1
+  - FreeBSD 5.3
 
-- Two simple programs to modify some ioctls on the card: set the
-  channel and set the window size.
+- One program to modify some ioctls on the card: set the channel
+  and set the window size.
 
 Note:
-
-- The configuration screen is only applicable for the the Philips
-  FQ1216M tuner. For other tuners ignore this section. Select just
-  one entry.
 
 - Note: the maintainer of this port has no inside knowledge of the
   workings of this software. Please don't contact me about cards

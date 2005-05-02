@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pvr250
-PORTVERSION=	20041230
-PORTREVISION=	1
+PORTVERSION=	20050412
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
@@ -17,7 +16,7 @@ IGNOREFILES=	hcwPVRP2.sys	# Varies from month to month
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
 
-PVRTOOLS=	pvr250-1.1
+PVRTOOLS=	pvr250-1.2
 CXMSHAR=	cxm-${PORTVERSION}.shar
 
 WRKSRC=		${WRKDIR}
@@ -28,45 +27,10 @@ RESTRICTED=	"This port uses a binary driver which is owned by Hauppauge"
 NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
 
-OPTIONS=	USBROADCAST	"US Broadcast"	Off \
-		USCABLE		"US Cable" Off \
-		BGBROADCAST	"B/G Broadcast" Off \
-		BGCABLE		"B/G Cable" Off \
-		BGAUSTRALIA	"B/G Australia" Off \
-		IBROADCAST	"I Broadcast" Off \
-		LBROADCAST	"L Broadcast" Off
-
 MAN4=		cxm.4
-
-pre-everything::
-	@${ECHO_CMD} "Some tuners (for example the Philips FQ1216M) supports multiple standards."
-	@${ECHO_CMD} "Use the following configuration screen (or 'make config') to choose your local  TV channel system if you have such a tuner."
-	@${ECHO_CMD} "At this moment only the Philips FQ1216M is known to do this. If you don't have  one, just ignore it. If you have one, select one (1) entry."
-	@sleep 5
+MAN1=		pvr250-setchannel.1
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_USBROADCAST)
-EXTRA_PATCHES=	${FILESDIR}/patchtuner-usbroadcast
-.endif
-.if defined(WITH_USCABLE)
-EXTRA_PATCHES=	${FILESDIR}/patchtuner-uscable
-.endif
-.if defined(WITH_BGBROADCAST)
-EXTRA_PATCHES=	${FILESDIR}/patchtuner-bgbroadcast
-.endif
-.if defined(WITH_BGCABLE)
-EXTRA_PATCHES=	${FILESDIR}/patchtuner-bgcable
-.endif
-.if defined(WITH_BGAUSTRALIA)
-EXTRA_PATCHES=	${FILESDIR}/patchtuner-bgaustralia
-.endif
-.if defined(WITH_IBROADCAST)
-EXTRA_PATCHES=	${FILESDIR}/patchtuner-ibroadcast
-.endif
-.if defined(WITH_LBROADCAST)
-EXTRA_PATCHES=	${FILESDIR}/patchtuner-lbroadcast
-.endif
 
 .if ${OSVERSION} < 500000
 MODULESDIR=	/modules
@@ -109,8 +73,7 @@ do-extract:
 post-patch:
 .if ${OSVERSION} > 500000
 	${REINPLACE_CMD} -e 's/bktr0/cxm0/' \
-		${WRKDIR}/${PVRTOOLS}/setchannel.c \
-		${WRKDIR}/${PVRTOOLS}/setsize.c
+		${WRKDIR}/${PVRTOOLS}/setchannel.c
 .endif
 
 do-configure:
@@ -126,8 +89,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm/cxm.ko ${MODULESDIR}
 	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm_iic/cxm_iic.ko ${MODULESDIR}
 	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/cxm.4 ${PREFIX}/man/man4/cxm.4
+	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/pvr250-setchannel.1 ${PREFIX}/man/man1/pvr250-setchannel.1
 	${INSTALL_PROGRAM} ${WRKDIR}/${PVRTOOLS}/setchannel ${PREFIX}/bin/pvr250-setchannel
-	${INSTALL_PROGRAM} ${WRKDIR}/${PVRTOOLS}/setsize ${PREFIX}/bin/pvr250-setsize
 .if ${OSVERSION} < 500000
 	cd /dev; \
 	./MAKEDEV bktr0
