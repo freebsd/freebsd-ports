@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/system/status/ps/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the Linux pstree, killall and pidof commands
 
-CONFLICTS=	pstree-2.*
+CONFLICTS=	pstree-2.* \
+		pidof-*
 
 PLIST_FILES=	bin/killall \
 		bin/pidof \
