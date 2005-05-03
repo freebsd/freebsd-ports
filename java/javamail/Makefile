@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	java mail
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-upd
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	java@freebsd.org
 COMMENT=	A set of abstract Java classes that model a mail system
@@ -23,7 +22,7 @@ USE_JAVA=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_CDROM=	"See the license"
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7515-java_mail-1.3.1-oth-JPR&SiteId=JSC&TransactionId=noreg
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=javamail-1_3_2-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JavaMail-1.1-changes.txt JavaMail-1.2-changes.txt \
