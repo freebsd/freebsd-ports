@@ -25,7 +25,7 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600003
+.if ${OSVERSION} >= 503101
 IGNORE=		"already exists in base system"
 .endif
 
