@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	050425
+PORTVERSION=	050502
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -40,7 +40,6 @@ BIN2STRIP=	tidy tab2space
 
 .if !defined(WITH_SHLIB)
 MAN1=		tidy.1
-MAN7=		tidy-config.7
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -49,7 +48,7 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
 ALL_TARGET=	all doc
 DOCFILES=	quickref.html
 . endif
-DOCVER=		050414
+DOCVER=		050502
 DISTFILES+=	tidy_docs_${DOCVER}${EXTRACT_SUFX}:docs
 DOCFILES+=	Overview.html checked_by_tidy.gif faq.html grid.gif pending.html	\
 		release-notes.html tidy.css tidy.gif
