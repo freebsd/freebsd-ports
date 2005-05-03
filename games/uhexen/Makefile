@@ -23,10 +23,6 @@ OPTIONS=	NOWAD "Do not install demo-version WAD file" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 .if !defined(WITH_NOWAD)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} hexen.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
