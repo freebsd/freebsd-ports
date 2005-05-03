@@ -364,6 +364,7 @@
     SUBDIR += pkg_install-devel
     SUBDIR += pkg_remove
     SUBDIR += pkg_rmleaves
+    SUBDIR += pkg_trackinst
     SUBDIR += pkg_tree
     SUBDIR += pkill
     SUBDIR += plconfig

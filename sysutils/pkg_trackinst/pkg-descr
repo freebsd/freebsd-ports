@@ -1,0 +1,10 @@
+This package provides two commands:
+
+  * pkg_trackinst:
+     Tracks installation of unpackaged software and writes pkgdb
+     entry using the install log.  Then, it also creates a binary
+     package for the installed package.
+
+  * pkg_genplist:
+     Generates `pkg-plist' of a port in current directory automatically
+     by a test installation.
