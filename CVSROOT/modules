@@ -8997,6 +8997,7 @@ pkfonts600	ports/print/pkfonts600
 pkg_cutleaves	ports/sysutils/pkg_cutleaves
 pkg_remove	ports/sysutils/pkg_remove
 pkg_rmleaves	ports/sysutils/pkg_rmleaves
+pkg_trackinst	ports/sysutils/pkg_trackinst
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
 pkill		ports/sysutils/pkill
