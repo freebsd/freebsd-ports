@@ -1,4 +1,4 @@
-# New ports collection makefile for:	uhexen
+# New ports collection makefile for:	U-Hexen
 # Date created:				10 February 2003
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
@@ -16,8 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} hexen.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Yet another port of Hexen, popular game from Raven Softrware
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Yet another port of Hexen, popular game from Raven Software
 
 OPTIONS=	NOWAD "Don't install WAD file" off
 
@@ -60,7 +60,7 @@ pre-everything::
 post-extract:
 .if !defined(WITHOUT_WAD)
 	@${LOCALBASE}/bin/unzip -qo ${_DISTDIR}/hexen.zip \
- 		-d ${WRKSRC}
+		-d ${WRKSRC}
 .endif
 
 do-install:
