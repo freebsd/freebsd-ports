@@ -12,11 +12,11 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 EXTRACT_SUFX=	.bz2
 
-MAINTAINER=	koma2@ms.u-tokyo.ac.jp
+MAINTAINER=	koma2@lovepeers.org
 COMMENT=	Perl script to make BDF font bold
 
 PREFIX?=	${X11BASE}
-CONFLICTS=	mkbold-mkitalic-*
+CONFLICTS=	mkbold-mkitalic-[0-9]*
 
 PLIST_FILES=	bin/mkbold
 USE_PERL5=	yes

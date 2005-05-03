@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	japanese x11-fonts
 DISTFILES=	# empty
 
-MAINTAINER=	koma2@ms.u-tokyo.ac.jp
+MAINTAINER=	koma2@lovepeers.org
 COMMENT=	A meta-port which setups Japanese fonts
 
 RUN_DEPENDS=	\

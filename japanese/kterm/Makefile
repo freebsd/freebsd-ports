@@ -25,7 +25,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	kterm
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/:nfs \
 		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/:wpi \
-		http://straycat.ms.u-tokyo.ac.jp/distfiles/:termios \
+		http://dists.lovepeers.org/distfiles/:termios \
 		${MASTER_SITE_LOCAL:S/$/:jisx0213,color16,termios/}
 PATCH_SITE_SUBDIR=	shige/kterm/:jisx0213,color16 \
        			nork/:termios
