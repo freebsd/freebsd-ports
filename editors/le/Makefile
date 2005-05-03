@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.9.2
+PORTVERSION=	1.12.1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
-#		${MASTER_SITE_SUNSITE}
-#MASTER_SITE_SUBDIR=	apps/editors/terminal
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
 MAN1=		le.1
 
 post-install:
