@@ -17,16 +17,16 @@ COMMENT=	A dockable calendar with interface to iCalendar based calendars
 
 LIB_DEPENDS=	ical.0:${PORTSDIR}/devel/libical
 
-BROKEN=		Does not build
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOME=	gtk20
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		INCDIR="`pkg-config --cflags gtk+-2.0`" \
-		LIBDIR="`pkg-config --libs gtk+-2.0`" \
+MAKE_ARGS=	CC="${CC}" \
+		LFLAGS="`pkg-config --libs gtk+-2.0` -L${LOCALBASE}/lib" \
+		CFLAGS="${CFLAGS}" \
+		INCDIR="`pkg-config --cflags gtk+-2.0` -I${LOCALBASE}/include" \
+		LIBDIR="" \
 		LIBS="-lical -lXpm"
 
 MAN1=		wmCalendar.1
