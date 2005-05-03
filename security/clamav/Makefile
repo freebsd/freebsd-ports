@@ -23,7 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.83
+DISTVERSION=	0.84
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
