@@ -65,7 +65,7 @@ PLIST_SUB+=	LAME=""
 PLIST_SUB+=	LAME="@comment "
 .endif
 
-.if ${MACHINE_CPU:Mmmx}
+.if ${MACHINE_CPU:Mmmx} && ${ARCH}=="i386"
 CONFIGURE_ARGS+=	--enable-mmx
 LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
 .else
