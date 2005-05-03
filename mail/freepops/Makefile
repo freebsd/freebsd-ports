@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freepops
-PORTVERSION=	0.0.26
+PORTVERSION=	0.0.27
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepops
@@ -24,16 +24,29 @@ HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 CONFIGURE_ARGS=	fbsd
-MAKE_ARGS=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s|^WHERE=\/usr\/local\/|WHERE=${PREFIX}\/|g" \
-			${WRKSRC}/${CONFIGURE_SCRIPT}
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|\(WHERE=\)/usr/local|\1${PREFIX}|; \
+		 s|/usr/local|${LOCALBASE}|; \
+		 s|^CC=gcc||; \
+		 s|-O2 -g3|${CFLAGS}|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e \
+		's|$$(PREFIX)|${PREFIX}/|; \
+		 s|share/\(man/man1\)|\1|; \
+		 s|$$(DESTDIR)\(/etc/freepops\)|${PREFIX}\1|; \
+		 s|\(cp config\.lua\) .*|\1 ${PREFIX}/etc/freepops/config.lua.sample|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|\($$(CFLAGS)\)|\1 ${PTHREAD_CFLAGS}|; \
+		 s|\($$(LDFLAGS)\)|\1 ${PTHREAD_LIBS}|' \
+		${WRKSRC}/modules/src/luafull/Makefile
 
 post-install:
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${CHMOD} ${SHAREMODE} ${DATADIR}/lua/*.lua
+	@[ -f ${PREFIX}/etc/freepops/config.lua ] || \
+		${CP} -f ${PREFIX}/etc/freepops/config.lua.sample \
+		${PREFIX}/etc/freepops/config.lua
 
 .include <bsd.port.mk>

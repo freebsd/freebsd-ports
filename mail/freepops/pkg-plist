@@ -1,5 +1,7 @@
 bin/freepopsd
+@unexec if cmp -s %D/etc/freepops/config.lua %D/etc/freepops/config.lua.sample; then rm -f %D/etc/freepops/config.lua; fi
 etc/freepops/config.lua.sample
+@exec [ -f %B/config.lua ] || cp %B/%f %B/config.lua
 %%DOCSDIR%%/MANUAL.txt
 %%DATADIR%%/lua/aggregator.lua
 %%DATADIR%%/lua/aol.lua
@@ -36,7 +38,4 @@ etc/freepops/config.lua.sample
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
 @unexec rmdir %D/etc/freepops 2>/dev/null || true
-@exec mkdir -p %D/share/freepops/lua
 @exec mkdir -p %D/share/freepops/lua_unofficial
-@exec mkdir -p %D/share/doc/freepops
-@exec mkdir -p %D/etc/freepops
