@@ -84,6 +84,8 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 .error You have `USE_PERL5' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+NO_LATEST_LINK=	yes
+
 .if ${OSVERSION} < 500036
 PKGMESSAGE=	${PKGDIR}/pkg-message-sysperl
 .else
