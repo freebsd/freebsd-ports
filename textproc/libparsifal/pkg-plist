@@ -1,7 +1,9 @@
 include/libparsifal/bistream.h
+include/libparsifal/dtdvalid.h
 include/libparsifal/isrcmem.h
 include/libparsifal/parsifal.h
 include/libparsifal/xmlcfg.h
+include/libparsifal/xmldtd.h
 include/libparsifal/xmlhash.h
 include/libparsifal/xmlpool.h
 include/libparsifal/xmlsbuf.h
