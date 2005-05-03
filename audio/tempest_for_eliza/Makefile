@@ -19,14 +19,14 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 
 post-install:
-	${MKDIR} ${PREFIX}/share/tempest
+	@${MKDIR} ${PREFIX}/share/tempest
 .for S in forelise jonny fruehling saints oldmacdonald ungarian \
 	godfather starwars tempest
-	${INSTALL_DATA} ${WRKSRC}/songs/$S ${PREFIX}/share/tempest
+	@${INSTALL_DATA} ${WRKSRC}/songs/$S ${PREFIX}/share/tempest
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tempest
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tempest
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
