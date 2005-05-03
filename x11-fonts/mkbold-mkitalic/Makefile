@@ -10,7 +10,7 @@ PORTVERSION=	0.09
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013651/lib/
 
-MAINTAINER=	koma2@ms.u-tokyo.ac.jp
+MAINTAINER=	koma2@lovepeers.org
 COMMENT=	Programs to make BDF font bold/italic
 
 PREFIX?=	${X11BASE}
