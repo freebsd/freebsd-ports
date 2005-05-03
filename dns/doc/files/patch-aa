@@ -1,20 +1,11 @@
---- doc.orig	Fri Aug  7 22:49:48 1998
-+++ doc	Thu Apr 15 20:19:47 2004
-@@ -40,7 +40,7 @@
- 
- ######## alias to DiG Version 2.0 (if not in path)
- ##
--# alias dig '/nfs/u5/hotz/bin.sun3/dig'
-+alias dig '/usr/bin/dig'
- 
- 
- ######## Differences in 'tr' program
-@@ -65,7 +65,7 @@
+--- doc.orig	Wed Jul 25 19:24:50 2001
++++ doc	Tue May  3 12:10:46 2005
+@@ -106,7 +106,7 @@
  ## Note: Make *sure* you keep the trailing slash on the directory
  ##  name, otherwise doc won't work right.
  ##
--set auxd=/users/brad/bin/doc-2.1.4/
+-#set auxd=/users/brad/bin/doc-2.2.3/
 +set auxd=${PREFIX}/${AUX_DIR}/
- #set auxd=""
  
  ######## where are log files written?
+ ##
