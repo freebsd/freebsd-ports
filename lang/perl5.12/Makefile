@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 CONFIGURE_ARGS+=	-Duse64bitint
 .endif
 
-LATEST_LINK=	perl5.8
+LATEST_LINK=	perl
 
 .if ${OSVERSION} < 500036
 PLIST_SUB+=		NEED_USE_PERL=""
