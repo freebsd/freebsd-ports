@@ -1,6 +1,6 @@
---- gst/cothreads.c.orig	Mon Feb  2 06:56:53 2004
-+++ gst/cothreads.c	Fri Feb  6 13:05:26 2004
-@@ -52,7 +56,7 @@
+--- gst/cothreads.c.orig	Tue May  3 16:17:09 2005
++++ gst/cothreads.c	Tue May  3 16:17:23 2005
+@@ -56,7 +56,7 @@
  #endif
  #endif
  
