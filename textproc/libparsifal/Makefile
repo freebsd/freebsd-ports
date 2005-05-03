@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libparsifal
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
