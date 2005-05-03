@@ -10003,7 +10003,7 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>gnu-radius</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.2.94</lt></range>
       </package>
     </affects>
     <description>
@@ -10031,6 +10031,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-20</entry>
+      <modified>2005-05-03</modified>
     </dates>
   </vuln>
 
