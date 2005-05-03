@@ -21,6 +21,8 @@ GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var/games
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|COPYING||g' ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
@@ -37,4 +39,4 @@ post-install:
 	${CHMOD} g+s ${PREFIX}/bin/dd2
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
