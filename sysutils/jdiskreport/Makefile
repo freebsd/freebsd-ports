@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jdiskreport
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://www.jGoodies.com/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
