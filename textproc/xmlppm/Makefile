@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlppm
-PORTVERSION=	0.98.1
+PORTVERSION=	0.98.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/
@@ -24,19 +24,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexpat -liconv"
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README
+.endif
+
 PLIST_FILES=	bin/xmlppm bin/xmlunppm
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^CC|#CC|g ; \
-		 s|^CPPFLAGS|#CPPFLAGS|g ; \
-		 s|^CFLAGS|#CFLAGS|g ; \
-		 s|$$(CC)|$$(CXX)|g ; \
-		 s|$$(CFLAGS)|$$(CXXFLAGS)|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^CC|#CC|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmlppm ${PREFIX}/bin
