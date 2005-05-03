@@ -17,6 +17,8 @@ COMMENT=	A networking simulator
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+IGNORE=		does not run (core dumps: Arithmetic exception)
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
