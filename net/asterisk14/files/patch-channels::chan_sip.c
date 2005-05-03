@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- channels/chan_sip.c.orig
-+++ channels/chan_sip.c
-@@ -139,7 +139,7 @@
+--- channels/chan_sip.c.orig	Sun Feb 17 18:01:43 2002
++++ channels/chan_sip.c	Sun Feb 17 18:10:52 2002
+@@ -141,7 +141,7 @@
  
  static char default_language[MAX_LANGUAGE] = "";
  
@@ -20,7 +20,16 @@ $FreeBSD$
  };
  
  struct sip_history {
-@@ -4573,6 +4574,10 @@
+@@ -2218,7 +2219,7 @@
+ 	if (p->owner) {
+ 		/* We already hold the channel lock */
+ 		if (f->frametype == AST_FRAME_VOICE) {
+-			if (f->subclass != p->owner->nativeformats) {
++			if (!(f->subclass & p->owner->nativeformats)) {
+ 				ast_log(LOG_DEBUG, "Oooh, format changed to %d\n", f->subclass);
+ 				p->owner->nativeformats = f->subclass;
+ 				ast_set_read_format(p->owner, p->owner->readformat);
+@@ -4620,6 +4621,10 @@
  			/* Make a struct route */
  			thishop = (struct sip_route *)malloc(sizeof(struct sip_route)+len+1);
  			if (thishop) {
@@ -31,7 +40,7 @@ $FreeBSD$
  				strncpy(thishop->hop, rr, len); /* safe */
  				thishop->hop[len] = '\0';
  				ast_log(LOG_DEBUG, "build_route: Record-Route hop: <%s>\n", thishop->hop);
-@@ -4596,31 +4601,41 @@
+@@ -4643,31 +4648,41 @@
  			rr += len+1;
  		}
  	}
@@ -97,7 +106,7 @@ $FreeBSD$
  		}
  	}
  	/* Store as new route */
-@@ -7197,7 +7212,11 @@
+@@ -7338,7 +7353,11 @@
  			/* Get destination right away */
  			gotdest = get_destination(p, NULL);
  			get_rdnis(p, NULL);
@@ -110,7 +119,7 @@ $FreeBSD$
  			build_contact(p);
  
  			if (gotdest) {
-@@ -7225,7 +7244,6 @@
+@@ -7366,7 +7385,6 @@
  				c = sip_new(p, AST_STATE_DOWN, ast_strlen_zero(p->username) ? NULL : p->username );
  				*recount = 1;
  				/* Save Record-Route for any later requests we make on this dialogue */
@@ -118,3 +127,18 @@ $FreeBSD$
  				if (c) {
  					/* Pre-lock the call */
  					ast_mutex_lock(&c->lock);
+@@ -7426,6 +7444,14 @@
+ 				transmit_response(p, "180 Ringing", req);
+ 				break;
+ 			case AST_STATE_UP:
++				/* Assuming this to be reinvite, process new SDP portion */
++				if (!ast_strlen_zero(get_header(req, "Content-Type"))) {
++					process_sdp(p, req);
++				} else {
++					p->jointcapability = p->capability;
++					ast_log(LOG_DEBUG, "Hm....  No sdp for the moment\n");
++				}
++
+ 				transmit_response_with_sdp(p, "200 OK", req, 1);
+ 				break;
+ 			default:
