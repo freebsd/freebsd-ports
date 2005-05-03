@@ -9,34 +9,7 @@ bin/%%GNU_HOST%%-c++33
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc33
 bin/%%GNU_HOST%%-g++33
-bin/%%GNU_HOST%%-gcj33
 bin/gccbug33
-bin/gcj33
-bin/gcjh33
-%%LIBJAVA%%bin/gij33
-bin/jv-scan33
-bin/jcf-dump33
-%%LIBJAVA%%bin/jv-convert33
-bin/jar33
-bin/grepjar33
-%%LIBJAVA%%bin/rmic33
-%%LIBJAVA%%bin/rmiregistry33
-%%LIBJAVA%%bin/addr2name.awk33
-%%LIBJAVA%%include/fficonfig.h
-%%LIBJAVA%%include/ffi.h
-%%LIBJAVA%%include/ffi_mips.h
-%%LIBJAVA%%include/jni.h
-%%LIBJAVA%%include/jvmpi.h
-%%LIBJAVA%%lib/libffi.la
-%%LIBJAVA%%lib/libffi.a
-%%LIBJAVA%%lib/security/classpath.security
-%%LIBJAVA%%lib/security/libgcj.security
-%%LIBJAVA%%@dirrm lib/security
-%%LIBJAVA%%lib/lib-org-xml-sax.la
-%%LIBJAVA%%lib/lib-org-xml-sax.a
-%%LIBJAVA%%lib/lib-org-w3c-dom.la
-%%LIBJAVA%%lib/lib-org-w3c-dom.a
-%%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
 @comment Insert PLIST.lib here
 @comment -=[ begin PLIST.lib ]=-
 @comment -=[ end PLIST.lib ]=-
