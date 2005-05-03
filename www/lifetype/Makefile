@@ -32,7 +32,8 @@ PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	GD		"With GD Support" on \
+OPTIONS=	BIG5		"With Big5 chinese template fix" off \
+		GD		"With GD Support" on \
 		IMAGICK		"With ImageMagick Support" off
 
 .include <bsd.port.pre.mk>
@@ -55,6 +56,14 @@ post-extract:
 	cd ${WRKSRC}/${x} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/_all_${x}${EXTRACT_SUFX}
 .endfor
 
+.if defined(WITH_BIG5)
+USE_REINPLACE=yes
+
+post-patch:
+	${FIND} ${WRKSRC}/templates -name "*.template" | \
+		${XARGS} ${REINPLACE_CMD} -e 's/|capitalize//g' -e 's/%b/%B/g'
+	${FIND} ${WRKSRC}/templates -name "*.template.bak" -delete
+.endif
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
