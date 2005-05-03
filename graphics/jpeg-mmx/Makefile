@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jpeg-mmx
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -19,6 +19,7 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386
 
+WRKSRC=		${WRKDIR}/jpeg-mmx
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -63,4 +64,10 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	Does not build on 4.x
+.endif
+
+.include <bsd.port.post.mk>
