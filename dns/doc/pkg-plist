@@ -1,7 +1,7 @@
 bin/doc
-lib/doc/doc1.awk
-lib/doc/doc3.awk
-lib/doc/doc4.awk
+lib/doc/doc-1.awk
+lib/doc/doc-3.awk
+lib/doc/doc-4.awk
 lib/doc/INFO
 lib/doc/RFC.XXXX
 @dirrm lib/doc
