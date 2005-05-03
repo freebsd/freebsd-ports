@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.9
-PORTREVISION=	2
+PORTVERSION=	0.8.10
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gstreamer/
@@ -47,7 +46,7 @@ MAN1=	gst-complete-${GST_VERSION}.1 gst-compprep-${GST_VERSION}.1 \
 	gst-register-${GST_VERSION}.1 gst-typefind-${GST_VERSION}.1 \
 	gst-xmllaunch-${GST_VERSION}.1 gst-xmlinspect-${GST_VERSION}.1
 
-GST_VERSION=${PORTVERSION:C/..$//}
+GST_VERSION=${PORTVERSION:C/...$//}
 
 # library minor number
 SHLIB_VERSION=	5
