@@ -1,19 +1,19 @@
 @comment $FreeBSD$
 bin/le
-%%PORTDOCS%%share/doc/le/FEATURES
-%%PORTDOCS%%share/doc/le/HISTORY
-%%PORTDOCS%%share/doc/le/NEWS
-%%PORTDOCS%%share/doc/le/README
-%%PORTDOCS%%share/doc/le/TODO
-share/le/colors-black
-share/le/colors-blue
-share/le/colors-defbg
-share/le/colors-green
-share/le/colors-white
-share/le/keymap-emacs
-share/le/le.hlp
-share/le/mainmenu
-share/le/mainmenu-ru
-share/le/syntax
-@dirrm share/le
-%%PORTDOCS%%@dirrm share/doc/le
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/colors-black
+%%DATADIR%%/colors-blue
+%%DATADIR%%/colors-defbg
+%%DATADIR%%/colors-green
+%%DATADIR%%/colors-white
+%%DATADIR%%/keymap-emacs
+%%DATADIR%%/le.hlp
+%%DATADIR%%/mainmenu
+%%DATADIR%%/mainmenu-ru
+%%DATADIR%%/syntax
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
