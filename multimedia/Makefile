@@ -33,6 +33,7 @@
     SUBDIR += gmencoder
     SUBDIR += goggles
     SUBDIR += gopchop
+    SUBDIR += gpac-libm4systems
     SUBDIR += grpplaylist
     SUBDIR += gstreamer
     SUBDIR += gstreamer-editor
