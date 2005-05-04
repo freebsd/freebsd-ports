@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.5.2
+PORTVERSION=	4.6.0
 CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/files/projects/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -36,6 +36,7 @@ do-install:
 	${CP} -R ${WRKSRC}/misc ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/modules ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/scripts ${PREFIX}/${DRUPDIR}
+	${CP} -R ${WRKSRC}/sites ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/themes ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/update.php ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/xmlrpc.php ${PREFIX}/${DRUPDIR}
