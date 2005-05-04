@@ -11386,6 +11386,7 @@ tor		ports/security/tor
 torcs		ports/games/torcs
 tornado		ports/games/tornado
 torrentsniff	ports/net/torrentsniff
+torrentzip	ports/archivers/torrentzip
 torsmo		ports/sysutils/torsmo
 tosha		ports/audio/tosha
 toshctl		ports/sysutils/toshctl
