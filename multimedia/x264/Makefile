@@ -7,6 +7,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20050421
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|}
 #		http://download.videolan.org/pub/videolan/contrib/ \
@@ -32,11 +33,12 @@ PLIST_FILES=	bin/x264 \
 		lib/libx264.so \
 		lib/libx264.so.${SHLIB_VER}
 
-OPTIONS=	DEBUG "Enable Debugging" Off \
+OPTIONS=	GPAC "Enable MPEG-4 Output" On \
+		DEBUG "Enable Debugging" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
 
-CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC" \
-			--extra-ldflags="${LDFLAGS}"
+CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
+			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
@@ -56,6 +58,10 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O2 -funroll-loops -ffast-math
+.endif
+
+.if !defined(WITHOUT_GPAC)
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libm4systems_static.a:${PORTSDIR}/multimedia/gpac-libm4systems
 .endif
 
 do-install:
