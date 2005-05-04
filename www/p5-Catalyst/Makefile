@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.03
+PORTVERSION=	5.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
@@ -29,14 +29,16 @@ BUILD_DEPENDS=	${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-
 		${SITE_PERL}/Tree/Simple/Visitor/FindByPath.pm:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/NEXT.pm:${PORTSDIR}/devel/p5-NEXT \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN1=	catalyst.pl.1
 MAN3=	Catalyst.3 \
 	Catalyst::Base.3 \
+	Catalyst::Build.3 \
 	Catalyst::Dispatcher.3 \
 	Catalyst::Engine.3 \
 	Catalyst::Engine::Apache.3 \
