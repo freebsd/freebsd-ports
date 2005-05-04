@@ -24,7 +24,7 @@ OPTIONS=	WAD "Install demo-version WAD file" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_WAD)
+.if !defined(WITHOUT_WAD)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} hexen.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -43,7 +43,7 @@ PLIST_DIRS=	%%DATADIR%%
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
-.if defined(WITH_WAD)
+.if !defined(WITHOUT_WAD)
 	@${LOCALBASE}/bin/unzip -qo ${_DISTDIR}/hexen.zip \
 		-d ${WRKSRC}
 .endif
@@ -51,7 +51,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uhexen ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-.if defined(WITH_WAD)
+.if !defined(WITHOUT_WAD)
 	${INSTALL_DATA} ${WRKSRC}/hexen.wad ${DATADIR}
 .endif
 	@${TOUCH} ${DATADIR}/.keep_me
