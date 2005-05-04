@@ -1,17 +1,17 @@
 bin/seahorse
 bin/seahorse-agent
 bin/seahorse-pgp-preferences
-lib/bonobo/libseahorse-pgp-file-listener.so
 %%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.so
 %%GEDIT%%lib/gedit-2/plugins/seahorse-pgp.gedit-plugin
 lib/libseahorse-internal.a
 lib/libseahorse-internal.so
 lib/libseahorse-internal.so.0
-libdata/bonobo/servers/Seahorse_PGP_File_Listener.server
+%%NAUTILUS%%lib/nautilus/extensions-1.0/libnautilus-seahorse.so
+share/gnome/applications/seahorse-pgp-preferences.desktop
 share/gnome/applications/seahorse.desktop
-share/gnome/control-center-2.0/capplets/seahorse-pgp-preferences.desktop
 share/gnome/applications/seahorse-pgp-encrypted.desktop
 share/gnome/applications/seahorse-pgp-signature.desktop
+share/gnome/control-center-2.0/capplets/seahorse-pgp-preferences.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/help/seahorse/C/figures/export.png
 share/gnome/help/seahorse/C/figures/file-manager.png
@@ -36,6 +36,7 @@ share/gnome/seahorse/glade/seahorse-add-subkey.glade
 share/gnome/seahorse/glade/seahorse-add-uid.glade
 share/gnome/seahorse/glade/seahorse-agent-cache.glade
 share/gnome/seahorse/glade/seahorse-change-passphrase.glade
+share/gnome/seahorse/glade/seahorse-expires.glade
 share/gnome/seahorse/glade/seahorse-generate-adv.glade
 share/gnome/seahorse/glade/seahorse-generate-druid.glade
 share/gnome/seahorse/glade/seahorse-generate-select.glade
@@ -43,10 +44,12 @@ share/gnome/seahorse/glade/seahorse-key-manager.glade
 share/gnome/seahorse/glade/seahorse-key-properties.glade
 share/gnome/seahorse/glade/seahorse-keyserver-results.glade
 share/gnome/seahorse/glade/seahorse-keyserver-search.glade
+share/gnome/seahorse/glade/seahorse-keyserver-sync.glade
 share/gnome/seahorse/glade/seahorse-multi-encrypt.glade
 share/gnome/seahorse/glade/seahorse-passphrase.glade
 share/gnome/seahorse/glade/seahorse-prefs.glade
 share/gnome/seahorse/glade/seahorse-preferences.glade
+share/gnome/seahorse/glade/seahorse-progress.glade
 share/gnome/seahorse/glade/seahorse-recipients.glade
 share/gnome/seahorse/glade/seahorse-revoke.glade
 share/gnome/seahorse/glade/seahorse-sign.glade
@@ -79,6 +82,7 @@ share/locale/pl/LC_MESSAGES/seahorse.mo
 share/locale/pt/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
+share/locale/rw/LC_MESSAGES/seahorse.mo
 share/locale/sk/LC_MESSAGES/seahorse.mo
 share/locale/sl/LC_MESSAGES/seahorse.mo
 share/locale/sq/LC_MESSAGES/seahorse.mo
