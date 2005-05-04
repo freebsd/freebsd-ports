@@ -1,0 +1,8 @@
+ProxSMTP is a flexible tool that allows you to reject, change or log
+email based on arbitrary critera. It accepts SMTP connections and
+forwards the SMTP commands and responses to another SMTP server. You
+need to be able to write the filtering scripts that integrate it with
+your particular needs.
+
+Author:	Nielsen <nielsen at memberwebs.com>
+WWW:	http://memberwebs.com/nielsen/software/proxsmtp/

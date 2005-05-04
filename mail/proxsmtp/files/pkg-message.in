@@ -1,0 +1,14 @@
+/* ================================================================= */
+Edit /etc/rc.conf and set
+
+proxsmtpd_enable="YES"
+
+to enable proxsmtpd. 
+
+Also, there is a proxsmtpd.conf-sample in %%PREFIX%%/etc/, 
+rename to proxsmtpd.conf, otherwise specify -f option to your
+config file. 
+
+To work with postfix, See also
+http://memberwebs.com/nielsen/software/proxsmtp/postfix.html
+/* ================================================================= */
