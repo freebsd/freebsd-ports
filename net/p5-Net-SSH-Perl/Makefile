@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-SSH-Perl
 PORTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -19,6 +20,10 @@ MANUAL_PACKAGE_BUILD=infinite loop prompting for input
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		"This port needs Perl 5.6.0 or greater, please upgrade your Perl!"
+.endif
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
 		${SITE_PERL}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
@@ -64,6 +69,7 @@ MAN3=		Net::SSH::Perl.3 \
 		Net::SSH::Perl::Cipher::RC4.3 \
 		Net::SSH::Perl::Comp.3 \
 		Net::SSH::Perl::Comp::Zlib.3 \
+		Net::SSH::Perl::Config.3 \
 		Net::SSH::Perl::Constants.3 \
 		Net::SSH::Perl::Kex.3 \
 		Net::SSH::Perl::Kex::DH1.3 \
