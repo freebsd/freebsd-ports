@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.15.3
+PORTVERSION=	1.17
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	v115_${PORTVERSION:E}_src
+DISTNAME=	v${PORTVERSION:S/.//}_src
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 .ifdef (WITH_OPENAL)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
@@ -28,16 +30,13 @@ ALL_TARGET=	all sv
 ONLY_FOR_ARCHS=	i386
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+MAKE_ARGS=	"USE_SDL=1"
 
 .ifdef (WITH_OPENAL)
-MAKE_ARGS=	"USE_AL=1"
+MAKE_ARGS+=	"USE_AL=1"
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .ifndef (WITH_OPENAL)
 pre-everything::
@@ -47,8 +46,11 @@ pre-everything::
 .endif
 
 post-patch:
-	cd ${WRKSRC} && ${TR} -d '\r' <${WRKSRC}/fixunix.sh | ${SH}
-	@${REINPLACE_CMD} -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
+	@${REINPLACE_CMD} -i '' -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
+.if ${OSVERSION} >= 502126
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/utils/acc/parse.c \
+		${WRKSRC}/utils/acc/strlist.c
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Vavoom ${PREFIX}/bin

@@ -1,24 +1,24 @@
 --- Makefile.orig
 +++ Makefile
-@@ -8,7 +8,7 @@
- #DEBUG = 1
- 
- # Uncomment to compile using SDL
--#USE_SDL = 1
-+USE_SDL = 1
- 
- # Uncomment to compile without OpenGL driver
- #NOGL = 1
+@@ -63,7 +63,7 @@
+ ifdef USE_SDL
+ #-- Linux with SDL --
+ SYS_OBJS = \
+-	obj/cd_linux.o \
++	obj/cd_bsd.o \
+ 	obj/d_sdl.o \
+ 	obj/in_sdl.o \
+ 	obj/net_bsd.o \
 @@ -73,7 +73,7 @@
  	obj/sys_i386.o \
  	obj/sys_sdl.o
  GL_SYS_OBJ = obj/gl_sdl.o
--LIBS := `sdl-config --libs` -lSDL_mixer -lm -lstdc++
-+LIBS := `${SDL_CONFIG} --libs` -lSDL_mixer -lm -lstdc++
+-LIBS := `sdl-config --libs` -lSDL_mixer -lpng -lz -lm -lstdc++
++LIBS := `${SDL_CONFIG} --libs` -lSDL_mixer -lpng -lz -lm -lstdc++
  else
  #-- Linux with Allegro --
  SYS_OBJS = \
-@@ -213,7 +213,7 @@
+@@ -215,7 +215,7 @@
  ifdef MESAGL
  LIBS := -lMesaGL $(LIBS)
  else
@@ -27,7 +27,7 @@
  endif
  endif
  
-@@ -317,11 +317,11 @@
+@@ -319,11 +319,11 @@
  
  # ---------------------------------------
  
@@ -44,7 +44,7 @@
  LINK_ARGS = -Wall
  
  ifdef DEBUG
-@@ -348,7 +348,7 @@
+@@ -350,7 +350,7 @@
  exe: Vavoom$(EXE)
  
  Vavoom$(EXE): $(OBJ_FILES) $(LIB_FILES)
@@ -53,7 +53,7 @@
  
  suid:
  	chown root.root Vavoom
-@@ -358,13 +358,13 @@
+@@ -360,13 +360,13 @@
  	addr2line -e Vavoom -f < crash.txt >> basev/debug.txt
  
  obj/%.o : source/%.c
@@ -70,7 +70,7 @@
  
  # ---------------------------------------
  
-@@ -381,16 +381,16 @@
+@@ -383,16 +383,16 @@
  svexe: VavoomSV$(EXE)
  
  VavoomSV$(EXE): $(SV_OBJ_FILES)
@@ -91,12 +91,7 @@
  
  # ---------------------------------------
  
-@@ -433,11 +433,11 @@
- # ---------------------------------------
- 
- ifndef INSTALL
--INSTALL = ginstall
-+INSTALL = install -c
+@@ -439,7 +439,7 @@
  endif
  
  ifndef INSTALL_DIR
@@ -105,14 +100,3 @@
  endif
  
  ifndef INSTALL_GROUP
-@@ -529,8 +529,8 @@
- asm: $(ASM_FILES)
- 
- source/%.asm : source/%.s source/asm_i386.h source/gas2tasm.exe
--	gcc -x assembler-with-cpp -E -P -DGAS2TASM $< -o - | source/gas2tasm.exe > $@
-+	${CC} -x assembler-with-cpp -E -P -DGAS2TASM $< -o - | source/gas2tasm.exe > $@
- 
- source/gas2tasm.exe : source/gas2tasm.c
--	gcc -O3 -ffast-math -fomit-frame-pointer -s -o $@ $<
-+	${CC} -O3 -ffast-math -fomit-frame-pointer -s -o $@ $<
- 

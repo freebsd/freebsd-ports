@@ -17,8 +17,7 @@
 +	${CC} -s -o $@ $^ $(LIBS)
  
  libglvis.a: $(LIB_OBJS)
--	ar rc $@ $^
-+	${AR} rc $@ $^
+ 	ar rc $@ $^
  	ranlib $@
  
  %.o: %.cpp *.h ../common/*.h
