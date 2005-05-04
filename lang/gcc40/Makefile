@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.1
-PORTREVISION=	20050423
+PORTREVISION=	20050430
 CATEGORIES=	lang java
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -26,12 +26,12 @@ DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.0
 
-LATEST_LINK?=	gcc40${PKGNAMESUFFIX}
-
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
+CONFLICTS=	gcc-3.3.* gcc-4.1.*
+LATEST_LINK?=	gcc40${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -53,7 +53,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
-# FIXME: needed to make gcc40 port work for now.
+# FIXME: needed to make this port build at all.
 WITHOUT_LIBJAVA=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
@@ -67,7 +67,7 @@ CONFIGURE_ARGS=	--disable-nls \
 		--program-suffix=${SUFFIX} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 .if defined(WITH_FORTRAN)
-CONFIGURE_ARGS+= --with-gmp=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -177,7 +177,7 @@ post-install: fake-manpages
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
 	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*4\.0'
 .endfor
 
