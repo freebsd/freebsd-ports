@@ -278,6 +278,3 @@ etc/ftpmirror.cf-sample
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Usage
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Fan
-share/doc/ftpmirror/README.jis
-share/doc/ftpmirror/RELEASE.jis
-@dirrm share/doc/ftpmirror
