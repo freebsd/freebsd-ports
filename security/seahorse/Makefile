@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTVERSION=	0.7.7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	asa@agava.com
+MAINTAINER=	gnome@freebsd.org
 COMMENT=	A front end for GnuPG
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
@@ -27,13 +26,16 @@ USE_GNOME=	gnomehack intlhack gnomeprefix eel2
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-gpg-check
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	seahorse.schemas
 
-OPTIONS=	GEDIT "Enable the gedit plug-in" on
+OPTIONS=	GEDIT "Enable the gedit plug-in" on \
+		NAUTILUS "Enable the Nautilus component" on \
+		LDAP "Enable LDAP support" on
 
 .include <bsd.port.pre.mk>
 
@@ -42,12 +44,23 @@ BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
 RUN_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
 PLIST_SUB+=	GEDIT=""
 GCONF_SCHEMAS+=	seahorse-gedit.schemas
-post-patch:
-	@${REINPLACE_CMD} -e "s|gedit-2.8|gedit-2.10|g" \
-		${WRKSRC}/configure
 .else
 PLIST_SUB+=	GEDIT="@comment "
 CONFIGURE_ARGS+=--disable-gedit
+.endif
+
+.if defined(WITH_NAUTILUS)
+USE_GNOME+=	nautilus2
+PLIST_SUB+=	NAUTILUS=""
+.else
+PLIST_SUB+=	NAUTILUS="@comment "
+CONFIGURE_ARGS+=--disable-nautilus
+.endif
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
+.else
+CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 post-install:
