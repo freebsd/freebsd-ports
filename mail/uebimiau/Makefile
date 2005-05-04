@@ -6,26 +6,21 @@
 #
 
 PORTNAME=	uebimiau
-PORTVERSION=	2.7.2
+DISTVERSION=	2.7.8-RC1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.uebimiau.org/downloads/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-any
+DISTNAME=	${PORTNAME}-${DISTVERSION}-any
 
 MAINTAINER=	francisco@gomezmarin.com
 COMMENT=	UebiMiau is a simple yet efficient WebMail written in PHP
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
-
+USE_PHP=	pcre
+WANT_PHP_MOD=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	${MKDIR} ${PREFIX}/www/data/${PORTNAME}
-	${CP} -R ${WRKSRC}/* ${PREFIX}/www/data/uebimiau
-	${CHOWN} -R www:www ${PREFIX}/www/data/uebimiau
+	${CP} -R ${WRKSRC}/* ${PREFIX}/www/data/${PORTNAME}
+	${CHOWN} -R www:www ${PREFIX}/www/data/${PORTNAME}
 
 .include <bsd.port.mk>
