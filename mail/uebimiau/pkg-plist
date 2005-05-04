@@ -1,8 +1,11 @@
+@comment $FreeBSD$
 www/data/uebimiau/CHANGELOG.txt
 www/data/uebimiau/INSTALL.txt
 www/data/uebimiau/README.txt
 www/data/uebimiau/addressbook.php
+www/data/uebimiau/apply_filters.php
 www/data/uebimiau/badlogin.php
+www/data/uebimiau/block_address.php
 www/data/uebimiau/catch.php
 www/data/uebimiau/database/index.php
 www/data/uebimiau/database/temporary files are stored here.txt
@@ -10,7 +13,9 @@ www/data/uebimiau/download.php
 www/data/uebimiau/error.php
 www/data/uebimiau/extra/clean.php.txt
 www/data/uebimiau/extra/rmdir.php.txt
+www/data/uebimiau/folder_list.php
 www/data/uebimiau/folders.php
+www/data/uebimiau/get_message_list.php
 www/data/uebimiau/headers.php
 www/data/uebimiau/images/aleft.gif
 www/data/uebimiau/images/aright.gif
@@ -22,6 +27,7 @@ www/data/uebimiau/images/bold.gif
 www/data/uebimiau/images/bookmark_it.gif
 www/data/uebimiau/images/center.gif
 www/data/uebimiau/images/copy.gif
+www/data/uebimiau/images/cross.gif
 www/data/uebimiau/images/cut.gif
 www/data/uebimiau/images/download.gif
 www/data/uebimiau/images/green.gif
@@ -41,11 +47,14 @@ www/data/uebimiau/images/red.gif
 www/data/uebimiau/images/trans.gif
 www/data/uebimiau/images/under.gif
 www/data/uebimiau/images/wlink.gif
+www/data/uebimiau/inc/class.phpmailer.php
 www/data/uebimiau/inc/class.smtp.php
+www/data/uebimiau/inc/class.tnef.php
 www/data/uebimiau/inc/class.uebimiau.php
 www/data/uebimiau/inc/class.uebimiau_mail.php
 www/data/uebimiau/inc/config.languages.php
 www/data/uebimiau/inc/config.php
+www/data/uebimiau/inc/config.security.php
 www/data/uebimiau/inc/inc.php
 www/data/uebimiau/inc/lib.export.php
 www/data/uebimiau/inc/lib.php
@@ -58,6 +67,7 @@ www/data/uebimiau/langs/dk.txt
 www/data/uebimiau/langs/en_UK.txt
 www/data/uebimiau/langs/es.txt
 www/data/uebimiau/langs/fr.txt
+www/data/uebimiau/langs/he.txt
 www/data/uebimiau/langs/hu.txt
 www/data/uebimiau/langs/is.txt
 www/data/uebimiau/langs/it.txt
@@ -66,24 +76,66 @@ www/data/uebimiau/langs/nl.txt
 www/data/uebimiau/langs/pl.txt
 www/data/uebimiau/langs/pt_BR.txt
 www/data/uebimiau/langs/ro.txt
+www/data/uebimiau/langs/ru.txt
 www/data/uebimiau/langs/ru_KOI.txt
 www/data/uebimiau/langs/se.txt
 www/data/uebimiau/langs/th.txt
 www/data/uebimiau/langs/tr.txt
 www/data/uebimiau/logout.php
-www/data/uebimiau/msglist.php
+www/data/uebimiau/messages.php
 www/data/uebimiau/newmsg.php
 www/data/uebimiau/preferences.php
 www/data/uebimiau/printmsg.php
+www/data/uebimiau/process.php
 www/data/uebimiau/quick_address.php
 www/data/uebimiau/readmsg.php
+www/data/uebimiau/redir.php
 www/data/uebimiau/search.php
 www/data/uebimiau/show_body.php
-www/data/uebimiau/smarty/PEAR.php
-www/data/uebimiau/smarty/Smarty.addons.php
+www/data/uebimiau/smarty/ChangeLog
+www/data/uebimiau/smarty/Config_File.class.php
 www/data/uebimiau/smarty/Smarty.class.php
 www/data/uebimiau/smarty/Smarty_Compiler.class.php
-www/data/uebimiau/smarty/Smarty_Config.class.php
+www/data/uebimiau/smarty/debug.tpl
+www/data/uebimiau/smarty/plugins/block.textformat.php
+www/data/uebimiau/smarty/plugins/function.assign.php
+www/data/uebimiau/smarty/plugins/function.assign_debug_info.php
+www/data/uebimiau/smarty/plugins/function.counter.php
+www/data/uebimiau/smarty/plugins/function.cycle.php
+www/data/uebimiau/smarty/plugins/function.debug.php
+www/data/uebimiau/smarty/plugins/function.eval.php
+www/data/uebimiau/smarty/plugins/function.fetch.php
+www/data/uebimiau/smarty/plugins/function.html_options.php
+www/data/uebimiau/smarty/plugins/function.html_select_date.php
+www/data/uebimiau/smarty/plugins/function.html_select_time.php
+www/data/uebimiau/smarty/plugins/function.math.php
+www/data/uebimiau/smarty/plugins/function.popup.php
+www/data/uebimiau/smarty/plugins/function.popup_init.php
+www/data/uebimiau/smarty/plugins/function.um_welcome_message.php
+www/data/uebimiau/smarty/plugins/modifier.capitalize.php
+www/data/uebimiau/smarty/plugins/modifier.count_characters.php
+www/data/uebimiau/smarty/plugins/modifier.count_paragraphs.php
+www/data/uebimiau/smarty/plugins/modifier.count_sentences.php
+www/data/uebimiau/smarty/plugins/modifier.count_words.php
+www/data/uebimiau/smarty/plugins/modifier.date_format.php
+www/data/uebimiau/smarty/plugins/modifier.debug_print_var.php
+www/data/uebimiau/smarty/plugins/modifier.default.php
+www/data/uebimiau/smarty/plugins/modifier.escape.php
+www/data/uebimiau/smarty/plugins/modifier.indent.php
+www/data/uebimiau/smarty/plugins/modifier.lower.php
+www/data/uebimiau/smarty/plugins/modifier.regex_replace.php
+www/data/uebimiau/smarty/plugins/modifier.replace.php
+www/data/uebimiau/smarty/plugins/modifier.spacify.php
+www/data/uebimiau/smarty/plugins/modifier.string_format.php
+www/data/uebimiau/smarty/plugins/modifier.strip.php
+www/data/uebimiau/smarty/plugins/modifier.strip_tags.php
+www/data/uebimiau/smarty/plugins/modifier.truncate.php
+www/data/uebimiau/smarty/plugins/modifier.upper.php
+www/data/uebimiau/smarty/plugins/modifier.wordwrap.php
+www/data/uebimiau/smarty/plugins/shared.make_timestamp.php
+www/data/uebimiau/smarty/templates/footer.tpl
+www/data/uebimiau/smarty/templates/header.tpl
+www/data/uebimiau/smarty/templates/index.tpl
 www/data/uebimiau/themes/debug.tpl
 www/data/uebimiau/themes/default/address-display.htm
 www/data/uebimiau/themes/default/address-form.htm
@@ -91,11 +143,13 @@ www/data/uebimiau/themes/default/address-list.htm
 www/data/uebimiau/themes/default/address-results.htm
 www/data/uebimiau/themes/default/advanced-editor.htm
 www/data/uebimiau/themes/default/bad-login.htm
+www/data/uebimiau/themes/default/block-address.htm
 www/data/uebimiau/themes/default/catch-address.htm
 www/data/uebimiau/themes/default/error.htm
 www/data/uebimiau/themes/default/folders.htm
 www/data/uebimiau/themes/default/headers-window.htm
 www/data/uebimiau/themes/default/login.htm
+www/data/uebimiau/themes/default/menu.htm
 www/data/uebimiau/themes/default/messagelist.htm
 www/data/uebimiau/themes/default/newmsg-result.htm
 www/data/uebimiau/themes/default/newmsg.htm
@@ -103,53 +157,20 @@ www/data/uebimiau/themes/default/preferences.htm
 www/data/uebimiau/themes/default/print-message.htm
 www/data/uebimiau/themes/default/quick_address.htm
 www/data/uebimiau/themes/default/readmsg.htm
+www/data/uebimiau/themes/default/readmsg_popup.htm
 www/data/uebimiau/themes/default/search.htm
 www/data/uebimiau/themes/default/upload-attach.htm
 www/data/uebimiau/themes/default/webmail.css
 www/data/uebimiau/themes/default/webmail.js
-www/data/uebimiau/themes/neotech.net/address-display.htm
-www/data/uebimiau/themes/neotech.net/address-form.htm
-www/data/uebimiau/themes/neotech.net/address-list.htm
-www/data/uebimiau/themes/neotech.net/address-results.htm
-www/data/uebimiau/themes/neotech.net/address.gif
-www/data/uebimiau/themes/neotech.net/advanced-editor.htm
-www/data/uebimiau/themes/neotech.net/bad-login.htm
-www/data/uebimiau/themes/neotech.net/catch-address.htm
-www/data/uebimiau/themes/neotech.net/compose.gif
-www/data/uebimiau/themes/neotech.net/error.htm
-www/data/uebimiau/themes/neotech.net/folders.gif
-www/data/uebimiau/themes/neotech.net/folders.htm
-www/data/uebimiau/themes/neotech.net/footer.gif
-www/data/uebimiau/themes/neotech.net/header.gif
-www/data/uebimiau/themes/neotech.net/headers-window.htm
-www/data/uebimiau/themes/neotech.net/inbox.gif
-www/data/uebimiau/themes/neotech.net/login.htm
-www/data/uebimiau/themes/neotech.net/logo.gif
-www/data/uebimiau/themes/neotech.net/logo_cc.gif
-www/data/uebimiau/themes/neotech.net/logout.gif
-www/data/uebimiau/themes/neotech.net/messagelist.htm
-www/data/uebimiau/themes/neotech.net/newmsg-result.htm
-www/data/uebimiau/themes/neotech.net/newmsg.htm
-www/data/uebimiau/themes/neotech.net/preferences.gif
-www/data/uebimiau/themes/neotech.net/preferences.htm
-www/data/uebimiau/themes/neotech.net/print-message.htm
-www/data/uebimiau/themes/neotech.net/quick_address.htm
-www/data/uebimiau/themes/neotech.net/readmsg.htm
-www/data/uebimiau/themes/neotech.net/refresh.gif
-www/data/uebimiau/themes/neotech.net/search.gif
-www/data/uebimiau/themes/neotech.net/search.htm
-www/data/uebimiau/themes/neotech.net/trash.gif
-www/data/uebimiau/themes/neotech.net/upload-attach.htm
-www/data/uebimiau/themes/neotech.net/webmail.css
-www/data/uebimiau/themes/neotech.net/webmail.js
 www/data/uebimiau/upload.php
-@dirrm www/data/uebimiau/themes/neotech.net
+@dirrm www/data/uebimiau/database
+@dirrm www/data/uebimiau/extra
+@dirrm www/data/uebimiau/images
+@dirrm www/data/uebimiau/inc
+@dirrm www/data/uebimiau/langs
+@dirrm www/data/uebimiau/smarty/plugins
+@dirrm www/data/uebimiau/smarty/templates
+@dirrm www/data/uebimiau/smarty
 @dirrm www/data/uebimiau/themes/default
 @dirrm www/data/uebimiau/themes
-@dirrm www/data/uebimiau/smarty
-@dirrm www/data/uebimiau/langs
-@dirrm www/data/uebimiau/inc
-@dirrm www/data/uebimiau/images
-@dirrm www/data/uebimiau/extra
-@dirrm www/data/uebimiau/database
 @dirrm www/data/uebimiau
