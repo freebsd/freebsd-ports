@@ -1,6 +1,7 @@
-bin/plugger-5.1.2
+bin/plugger-5.1.3
 bin/plugger-controller
 bin/plugger-oohelper
-etc/pluggerrc-5.1.2.sample
+@unexec if cmp %D/etc/pluggerrc-5.1.3.sample %D/etc/pluggerrc-5.1.3 2>/dev/null; then rm -f %D/etc/pluggerrc-5.1.3; fi
+etc/pluggerrc-5.1.3.sample
 lib/browser_plugins/npplugger.so
 @unexec rmdir %D/lib/browser_plugins 2>/dev/null || true

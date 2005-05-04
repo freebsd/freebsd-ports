@@ -1,0 +1,16 @@
+--- plugger-oohelper.orig	Tue May  3 12:20:51 2005
++++ plugger-oohelper	Tue May  3 12:21:12 2005
+@@ -45,11 +45,11 @@
+   done
+ done
+ 
+-if [ "x${ooprefix}" == "xs" ]; then
++if [ "x${ooprefix}" = "xs" ]; then
+   exec s$1 -n "$@" "$file" >/dev/null
+ fi
+ 
+-if [ "x${ooprefix}" == "xo" ]; then
++if [ "x${ooprefix}" = "xo" ]; then
+   exec oo$1 -n "$@" "$file" >/dev/null
+ fi
+ 

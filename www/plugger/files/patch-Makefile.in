@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun May 16 01:02:46 2004
-+++ Makefile.in	Fri Sep 10 15:03:17 2004
+--- Makefile.in.orig	Tue May  3 11:46:47 2005
++++ Makefile.in	Tue May  3 11:48:35 2005
 @@ -30,7 +30,7 @@
  CC=@CC@
  LD=@LD@
@@ -18,15 +18,6 @@
  NORM_CFLAGS=
  NORM_LDFLAGS=
  XCFLAGS=@XCFLAGS@ @X_CFLAGS@
-@@ -79,7 +79,7 @@
- LDFLAGS=$(COMMON_LDFLAGS) $(NORM_LDFLAGS)
- SHARED_CFLAGS=$(COMMON_CFLAGS) $(XCFLAGS)
- 
--## Targes
-+## Targets
- all: plugger.so plugger-$(VERSION) plugger-controller
- 
- 
 @@ -132,7 +132,7 @@
  plugger-helper.o: plugger.h
  

@@ -1,9 +1,9 @@
---- configure.orig	Wed Jul  7 02:41:28 2004
-+++ configure	Wed Jul  7 02:49:41 2004
-@@ -1819,10 +1819,10 @@
+--- configure.orig	Tue May  3 11:49:26 2005
++++ configure	Tue May  3 11:50:09 2005
+@@ -3704,10 +3704,10 @@
       XLDFLAGS='-expect_unresolved "*" -shared -msym -O3'
    ;;
-    
+ 
 -  FreeBSD)
 +  FreeBSD*)
       case "`file /bin/ls`" in
