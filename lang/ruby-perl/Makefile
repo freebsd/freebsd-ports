@@ -16,8 +16,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension module to use the functions of Perl from Ruby
 
-BROKEN=		Incorrectly installs a perllocal.pod file
-
 USE_PERL5=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -39,7 +37,7 @@ post-build:
 
 post-install:
 	@cd ${WRKSRC}/Ruby; \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} pure_install
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
