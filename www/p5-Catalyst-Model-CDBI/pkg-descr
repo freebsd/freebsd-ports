@@ -1,0 +1,4 @@
+This is the Class::DBI model class for Catalyst. It's built on top
+of Class::DBI::Loader.
+
+WWW: http://search.cpan.org/dist/Catalyst-Model-CDBI
