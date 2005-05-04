@@ -1,0 +1,6 @@
+sbin/dirvish
+sbin/dirvish-expire
+sbin/dirvish-locate
+sbin/dirvish-runall
+@exec mkdir -p %D/etc/dirvish
+@dirrm etc/dirvish
