@@ -1,6 +1,7 @@
 bin/catalyst.pl
 %%SITE_PERL%%/Catalyst.pm
 %%SITE_PERL%%/Catalyst/Base.pm
+%%SITE_PERL%%/Catalyst/Build.pm
 %%SITE_PERL%%/Catalyst/Dispatcher.pm
 %%SITE_PERL%%/Catalyst/Engine.pm
 %%SITE_PERL%%/Catalyst/Engine/Apache.pm
