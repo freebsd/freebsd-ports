@@ -261,7 +261,8 @@ PLIST_SUB+=	WITH_LZO="@comment "
 
 .if defined(WITH_DIVX5)
 BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libdivxdecore.so:${PORTSDIR}/multimedia/linux-divx4linux
-CONFIGURE_ENV+=	CFLAGS="-I${LINUXBASE}/usr/include/divx" CPPFLAGS="-I${LINUXBASE}/usr/include/divx"
+CFLAGS+=	-I${LINUXBASE}/usr/include/divx
+CPPFLAGS+=	-I${LINUXBASE}/usr/include/divx
 .else
 .endif
 
