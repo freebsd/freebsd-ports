@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Wed Apr 20 08:24:33 2005
++++ Makefile.in	Wed Apr 20 08:26:40 2005
+@@ -40,10 +40,13 @@
+ 	${INSTALL_DATA} $? $@
+ 
+ # for subdirectories...
+-all clean realclean install:: Fan/Makefile
++all clean realclean:: Fan/Makefile
+ 	@ for d in ${SUBDIR} ; do \
+ 		( echo "make $@ in $$d..." && cd $$d && make $@ ) ; \
+ 	done
++
++install:: Fan/Makefile
++	( echo "make pure_install in Fan..." && cd Fan && make pure_install ) ; \
+ 
+ # Fan subdirectory requres Makefile first.
+ Fan/Makefile:: Fan/Makefile.PL
