@@ -111,11 +111,13 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/TTRegisters.png
 %%PORTDOCS%%%%DOCSDIR%%/TTStack.png
 %%PORTDOCS%%%%DOCSDIR%%/TTStorage.png
+%%PORTDOCS%%%%DOCSDIR%%/TTgloss.png
 %%PORTDOCS%%%%DOCSDIR%%/TilePath.png
 %%PORTDOCS%%%%DOCSDIR%%/To-kerned.png
 %%PORTDOCS%%%%DOCSDIR%%/To-unkerned.png
 %%PORTDOCS%%%%DOCSDIR%%/Tricolor.png
 %%PORTDOCS%%%%DOCSDIR%%/TrueOpenTables.html
+%%PORTDOCS%%%%DOCSDIR%%/UniqueID.html
 %%PORTDOCS%%%%DOCSDIR%%/VerticalMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/a_dieresis_macron.png
 %%PORTDOCS%%%%DOCSDIR%%/a_with_anchor.png
@@ -130,11 +132,16 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/anchorcontrol-base.png
 %%PORTDOCS%%%%DOCSDIR%%/anchorcontrol-mark.png
 %%PORTDOCS%%%%DOCSDIR%%/anchorcontrol.html
+%%PORTDOCS%%%%DOCSDIR%%/asm1.png
+%%PORTDOCS%%%%DOCSDIR%%/asm2.png
+%%PORTDOCS%%%%DOCSDIR%%/asm3.png
+%%PORTDOCS%%%%DOCSDIR%%/asm4.png
 %%PORTDOCS%%%%DOCSDIR%%/autokern.png
 %%PORTDOCS%%%%DOCSDIR%%/autotrace.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.png
 %%PORTDOCS%%%%DOCSDIR%%/autowidthmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/bed-script.png
 %%PORTDOCS%%%%DOCSDIR%%/bezier.gif
 %%PORTDOCS%%%%DOCSDIR%%/bezier.html
 %%PORTDOCS%%%%DOCSDIR%%/bibliography.html
@@ -209,6 +216,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/editexample4.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample5.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample6.html
+%%PORTDOCS%%%%DOCSDIR%%/editexample6-5.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample7.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/editmenu.html
@@ -233,6 +241,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/faqFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/featsetdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/feature-tag-pos.png
+%%PORTDOCS%%%%DOCSDIR%%/feature-tag-pair.png
 %%PORTDOCS%%%%DOCSDIR%%/feature-tag-sub.png
 %%PORTDOCS%%%%DOCSDIR%%/ffanvil16.png
 %%PORTDOCS%%%%DOCSDIR%%/ffanvil32.png
@@ -258,6 +267,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-encoding.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macfeat.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macstyle.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-markclasses.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-panose.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-private.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ps.png
@@ -340,6 +350,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/mad.html
 %%PORTDOCS%%%%DOCSDIR%%/mergepost.png
 %%PORTDOCS%%%%DOCSDIR%%/mergepre.png
+%%PORTDOCS%%%%DOCSDIR%%/markclass.png
 %%PORTDOCS%%%%DOCSDIR%%/metricsmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/metricsview.html
 %%PORTDOCS%%%%DOCSDIR%%/mmappleaxes.png
@@ -369,6 +380,12 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/o5.png
 %%PORTDOCS%%%%DOCSDIR%%/oldchangelog.html
 %%PORTDOCS%%%%DOCSDIR%%/otherlinks.html
+%%PORTDOCS%%%%DOCSDIR%%/ott1.png
+%%PORTDOCS%%%%DOCSDIR%%/ott2.png
+%%PORTDOCS%%%%DOCSDIR%%/ott2_5.png
+%%PORTDOCS%%%%DOCSDIR%%/ott3.png
+%%PORTDOCS%%%%DOCSDIR%%/ott4.png
+%%PORTDOCS%%%%DOCSDIR%%/ott5.png
 %%PORTDOCS%%%%DOCSDIR%%/outlinechar.png
 %%PORTDOCS%%%%DOCSDIR%%/overlappedlines.png
 %%PORTDOCS%%%%DOCSDIR%%/overshoot.png
@@ -430,6 +447,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/sidebearings.png
 %%PORTDOCS%%%%DOCSDIR%%/showatt.html
 %%PORTDOCS%%%%DOCSDIR%%/showatt.png
+%%PORTDOCS%%%%DOCSDIR%%/sm-picture.png
 %%PORTDOCS%%%%DOCSDIR%%/splash.png
 %%PORTDOCS%%%%DOCSDIR%%/splinefont.html
 %%PORTDOCS%%%%DOCSDIR%%/splines.gif

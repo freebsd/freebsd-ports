@@ -1,6 +1,6 @@
---- Makefile.dynamic.in.orig	Tue Dec 28 05:04:28 2004
-+++ Makefile.dynamic.in	Fri Mar 18 12:01:37 2005
-@@ -47,25 +47,26 @@
+--- Makefile.dynamic.in.orig	Wed Apr 20 01:36:16 2005
++++ Makefile.dynamic.in	Wed May  4 15:06:07 2005
+@@ -48,34 +48,35 @@
  	$(LIBTOOL) $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
  	#cp .libs/*.so.*.* $(libdir)
  	$(LIBTOOL) --finish $(libdir)
@@ -8,6 +8,18 @@
 -	$(LIBTOOL) $(INSTALL) -c fontforge.pc $(libdir)/pkgconfig
 +	mkdir -p ${PREFIX}/libdata/pkgconfig
 +	${BSD_INSTALL_DATA} -c fontforge.pc ${PREFIX}/libdata/pkgconfig
+ 
+ install_docs:
+ 	mkdir -p $(docdir)
+ 	mkdir $(docdir)/flags
+ #explicit use of sh to make sure we don't invoke csh with different "if" syntax
+ 	-sh -c "if test -d htdocs/ja >/dev/null ; then mkdir -p $(docdir)/ja ; fi"
+-	-cp htdocs/*.{html,png,gif,pdf} $(docdir)
+-	-cp htdocs/flags/* $(docdir)/flags
+-	-cp htdocs/ja/* $(docdir)/ja
++	${BSD_INSTALL_DATA} htdocs/*.{html,png,gif,pdf} $(docdir)
++	${BSD_INSTALL_DATA} htdocs/flags/* $(docdir)/flags
++	${BSD_INSTALL_DATA} htdocs/ja/* $(docdir)/ja
  
  install: $(sharedir) all install_libs
  # You may need to be root to do the install
@@ -32,6 +44,6 @@
 +	${BSD_INSTALL_DATA} $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
 +	${BSD_INSTALL_MAN} $(srcdir)/fontforge/fontforge.1 $(mandir)/man1
 +	${BSD_INSTALL_MAN} $(srcdir)/fontforge/sfddiff.1 $(mandir)/man1
+ #explicit use of sh to make sure we don't invoke csh with different "if" syntax
+ 	sh -c "if test -d htdocs >/dev/null ; then $(MAKE) install_docs ; fi"
  
- uninstall:
- 	-rm $(bindir)/fontforge
