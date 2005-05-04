@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Template/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Timer/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Timer
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Template 2>/dev/null || true
