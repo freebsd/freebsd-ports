@@ -5,7 +5,7 @@
 PKGNAME=$1
 ACTION=$2
 
-FILES_DELETE="pluggerrc-5.1.2.old"
+FILES_DELETE="pluggerrc-5.1.3.old"
 
 ETCDIR=${PKG_PREFIX}/etc
 
@@ -16,8 +16,8 @@ ECHO=/bin/echo
 case "$ACTION" in
 
 POST-INSTALL)
-	if [ ! -f ${ETCDIR}/pluggerrc-5.1.2 ]; then
-		${CP} ${ETCDIR}/pluggerrc-5.1.2.sample ${ETCDIR}/pluggerrc-5.1.2
+	if [ ! -f ${ETCDIR}/pluggerrc-5.1.3 ]; then
+		${CP} ${ETCDIR}/pluggerrc-5.1.3.sample ${ETCDIR}/pluggerrc-5.1.3
 	fi
 	;;
 
@@ -46,7 +46,7 @@ PRE-INSTALL)
 POST-DEINSTALL)
 	${ECHO}
 	${ECHO} "If you are permanently removing this port,"
-	${ECHO} "you should do a ''rm -f ${ETCDIR}/pluggerrc-5.1.2''"
+	${ECHO} "you should do a ''rm -f ${ETCDIR}/pluggerrc-5.1.3''"
 	${ECHO} "to remove it."
 	${ECHO}
 	;;

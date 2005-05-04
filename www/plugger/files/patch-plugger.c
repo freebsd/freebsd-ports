@@ -1,5 +1,5 @@
---- plugger.c.orig	Fri Sep 10 14:42:03 2004
-+++ plugger.c	Fri Sep 10 15:00:52 2004
+--- plugger.c.orig	Tue May  3 11:51:06 2005
++++ plugger.c	Tue May  3 11:51:32 2005
 @@ -624,16 +624,6 @@
    if(cb(fname, data)) return 1;
  #endif
