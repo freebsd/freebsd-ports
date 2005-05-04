@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: proxsmtpd
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the fellowing line to /etc/rc.conf to enable proxsmtpd:
+#
+# proxsmtpd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=proxsmtpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+sig_stop=-KILL
+
+load_rc_config ${name}
+
+proxsmtpd_enable=${proxsmtpd_enable-"NO"}
+proxsmtpd_conf=${proxsmtpd_conf-"%%PREFIX%%/etc/proxsmtpd.conf"}
+proxsmtpd_debug=${proxsmtpd_debug-"0"}
+
+command_args="-f ${proxsmtpd_conf}"
+
+run_rc_command "$1"

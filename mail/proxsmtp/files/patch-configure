@@ -1,0 +1,11 @@
+--- configure.orig	Fri Apr 15 07:18:10 2005
++++ configure	Wed Apr 20 15:45:54 2005
+@@ -3156,7 +3156,7 @@
+ # which indicates that we try without any flags at all, and "pthread-config"
+ # which is a program returning the flags for the Pth emulation library.
+ 
+-acx_pthread_flags="pthreads none -Kthread -kthread lthread -pthread -pthreads -mthreads pthread --thread-safe -mt pthread-config"
++acx_pthread_flags="pthreads none -Kthread -kthread %%PTHREAD_LIBS%% -pthreads lthread -mthreads pthread --thread-safe -mt pthread-config"
+ 
+ # The ordering *is* (sometimes) important.  Some notes on the
+ # individual items follow:
