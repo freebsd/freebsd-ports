@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	sem
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.rtelekom.ru/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	ftp://ftp.rtelekom.ru/pub/FreeBSD/ports/distfiles/ \
+		http://ocaml-sem.sourceforge.net/files/ \
+		${MASTER_SITE_FREEBSD_ORG}ports/distfiles/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	argentoff@gmail.com
