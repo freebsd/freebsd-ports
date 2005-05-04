@@ -1,0 +1,39 @@
+--- configs/freebsd-dri.orig	Tue Apr 19 18:46:31 2005
++++ configs/freebsd-dri	Tue Apr 19 19:51:06 2005
+@@ -6,28 +6,29 @@
+ CONFIG_NAME = freebsd-dri
+ 
+ # Compiler and flags
+-CC = gcc
+-CXX = g++
++CC = $(FBSDCC)
++CXX = $(FBSDCXX)
+ WARN_FLAGS = -Wall
+-OPT_FLAGS = -O
++OPT_FLAGS = $(FBSDCFLAGS)
+ 
+ X11_INCLUDES = -I/usr/X11R6/include -I/usr/X11R6/include/X11/extensions
+ DEFINES = -DDRI_NEW_INTERFACE_ONLY 
+-CFLAGS = $(DEFINES) -Wmissing-prototypes -g -std=c99  -Wundef -fPIC -ffast-math -I/usr/local/include $(X11_INCLUDES)
++CFLAGS = $(FBSDCFLAGS) $(DEFINES) -Wmissing-prototypes -g -std=c99  -Wundef \
++	-fPIC -ffast-math -I/usr/local/include $(X11_INCLUDES)
+ CXXFLAGS = $(DEFINES) -Wall -g -ansi -pedantic -fPIC
+ 
+ ASM_SOURCES = 
+ 
+ # Library/program dependencies
+-DRI_LIB_DEPS = -L/usr/local/lib -lm -lpthread -lexpat
+-GL_LIB_DEPS = -L/usr/X11R6/lib -lX11 -lXext -lm -pthread
++DRI_LIB_DEPS = -L/usr/local/lib -lm -lexpat ${PTHREAD_LIBS}
++GL_LIB_DEPS = -L/usr/X11R6/lib -lX11 -lXext -lm ${PTHREAD_LIBS}
+ 
+ GLUT_LIB_DEPS = -L$(LIB_DIR) -L/usr/X11R6/lib -lGLU -lGL -lX11 -lXmu -lXt -lXi -lm
+ GLW_LIB_DEPS = -L$(LIB_DIR) -L/usr/X11R6/lib -lGL -lXt -lXm -lX11
+ 
+ 
+ # Directories
+-SRC_DIRS = mesa glu glut/glx glw glx/x11
++SRC_DIRS = mesa
+ DRIVER_DIRS = dri
+ PROGRAM_DIRS = 
+ WINDOW_SYSTEM=dri
