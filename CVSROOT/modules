@@ -1549,6 +1549,7 @@ dirdiff		ports/sysutils/dirdiff
 directfb	ports/devel/directfb
 dirmngr		ports/security/dirmngr
 dirtree		ports/misc/dirtree
+dirvish		ports/sysutils/dirvish
 dis		ports/lang/dis
 discid		ports/audio/discid
 disco		ports/net-mgmt/disco
