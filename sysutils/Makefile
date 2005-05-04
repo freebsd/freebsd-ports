@@ -97,6 +97,7 @@
     SUBDIR += di
     SUBDIR += dim
     SUBDIR += dirdiff
+    SUBDIR += dirvish
     SUBDIR += diskcheckd
     SUBDIR += diskmark
     SUBDIR += diskprep

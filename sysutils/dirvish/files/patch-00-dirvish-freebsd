@@ -1,0 +1,78 @@
+diff -ru origin/install.sh ./install.sh
+--- origin/install.sh	Tue Feb 24 18:42:15 2004
++++ ./install.sh	Thu Apr 28 22:58:39 2005
+@@ -7,6 +7,8 @@
+   *)       ECHO_N= ECHO_C='\c' ECHO_T= ;;
+ esac
+ 
++ECHO_N=
++
+ EXECUTABLES="dirvish dirvish-runall dirvish-expire dirvish-locate"
+ MANPAGES="dirvish.8 dirvish-runall.8 dirvish-expire.8 dirvish-locate.8"
+ MANPAGES="$MANPAGES dirvish.conf.5"
+@@ -27,6 +29,7 @@
+ 
+ 	until [ -n "$PREFIX_OK" ]
+ 	do
++		PREFIX="/usr/local"
+ 		EXECDIR="/usr/sbin"
+ 		CONFDIR="/etc/dirvish"
+ 		MANDIR="/usr/share/man"
+@@ -36,7 +39,7 @@
+ 		if [ -n "$ans" ] 
+ 		then
+ 			PREFIX="$ans"
+-			if [ "$PREFIX" == "/" ]
++			if [ "$PREFIX" = "/" ]
+ 			then
+ 				PREFIX=""
+ 			fi
+@@ -58,9 +61,9 @@
+ 
+ 		if [ -d "$PREFIX/sbin" ]
+ 		then
+-			BINDIR=$PREFIX/sbin
++			BINDIR="$PREFIX/sbin"
+ 		else
+-			BINDIR=$PREFIX/bin
++			BINDIR="$PREFIX/bin"
+ 		fi
+ 
+ 		if [ -d "$PREFIX/share/man" ]
+@@ -71,13 +74,16 @@
+ 			MANDIR=$PREFIX/usr/share/man
+ 		elif [ -d "$PREFIX/usr/man" ]
+ 		then
+-			MANDIR="$PREFIX/usr/man" ]
++			MANDIR="$PREFIX/usr/man"
+ 		else
+-			MANDIR=$PREFIX/man
++			MANDIR="$PREFIX/man"
+ 		fi
+ 		if [ `expr "$PREFIX" : '.*dirvish.*'` -gt 0 ]
+ 		then
+ 			CONFDIR="$PREFIX/etc"
++		elif [ -d "$PREFIX/etc" ]
++		then
++			CONFDIR="$PREFIX/etc/dirvish"
+ 		else
+ 			CONFDIR="/etc/dirvish"
+ 		fi
+@@ -121,7 +127,7 @@
+ 	if [ `expr "$ans" : '[qQ]'` -ne 0 ]
+ 	then
+ 		exit
+-	elif [ `expr "$ans" : '[yY]'` -ne 0 ]
++	elif [ `expr "$ans" : '[nN]'` -eq 0 ]
+ 	then
+ 		break
+ 	fi
+@@ -147,7 +153,7 @@
+ 
+ echo $ECHO_N "Install executables and manpages? (no/yes) $ECHO_C"
+ read ans
+-if [ `expr "$ans" : '[yY]'` -ne 0 ]
++if [ `expr "$ans" : '[nN]'` -eq 0 ]
+ then
+ 	echo
+ 	if [ -n "$CREATE_PREFIX" ]
