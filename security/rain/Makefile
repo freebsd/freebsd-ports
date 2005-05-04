@@ -7,6 +7,7 @@
 
 PORTNAME=	rain
 PORTVERSION=	1.2.9.b1
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.mirrors.wiretapped.net/security/packet-construction/rain/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
