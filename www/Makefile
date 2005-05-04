@@ -562,6 +562,7 @@
     SUBDIR += p5-Template-Plugin-Class
     SUBDIR += p5-Template-Plugin-Comma
     SUBDIR += p5-Template-Plugin-MP3
+    SUBDIR += p5-Template-Timer
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-W3C-LinkChecker
