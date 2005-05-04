@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PSH="${PKG_PREFIX-/usr/local}/bin/psh"
+SHELLS="${PKG_DESTDIR-}/etc/shells"
+
+case $2 in
+POST-INSTALL)
+  if [ -d "${SHELLS%/*}" ] && ! grep -qs "^$PSH\$" "$SHELLS"; then
+    if [ `id -u` -eq 0 ]; then
+      echo "$PSH" >> "$SHELLS"
+    else
+      echo "Not root, please add $PSH to $SHELLS manually"
+    fi
+  fi
+  ;;
+esac

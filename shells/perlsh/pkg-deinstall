@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PSH="${PKG_PREFIX-/usr/local}/bin/psh"
+SHELLS="${PKG_DESTDIR-}/etc/shells"
+
+case $2 in
+DEINSTALL)
+  if grep -qs "^$PSH\$" "$SHELLS"; then
+    if [ `id -u` -eq 0 ]; then
+      TMPSHELLS=`mktemp -t shells`
+      grep -v "^$PSH\$" "$SHELLS" > "$TMPSHELLS"
+      cat "$TMPSHELLS" > "$SHELLS"
+      rm "$TMPSHELLS"
+    else
+      echo "Not root, please remove $PSH from $SHELLS manually"
+    fi
+  fi
+  ;;
+esac
