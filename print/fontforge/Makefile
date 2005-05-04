@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20050310
-PORTREVISION=	0
+PORTVERSION=	20050502
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fontforge
@@ -25,7 +24,8 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-DOCFILE=	${PORTNAME}_htdocs-${PORTVERSION}.tgz
+DOC_VERSION=	20050503
+DOCFILE=	${PORTNAME}_htdocs-${DOC_VERSION}.tgz
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
