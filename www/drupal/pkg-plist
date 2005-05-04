@@ -10,12 +10,11 @@ www/data/drupal/doc/MAINTAINERS.txt
 www/data/drupal/favicon.ico
 www/data/drupal/includes/bootstrap.inc
 www/data/drupal/includes/common.inc
-www/data/drupal/includes/conf.php
 www/data/drupal/includes/database.inc
 www/data/drupal/includes/database.mysql.inc
-www/data/drupal/includes/database.pear.inc
 www/data/drupal/includes/database.pgsql.inc
 www/data/drupal/includes/file.inc
+www/data/drupal/includes/image.inc
 www/data/drupal/includes/locale.inc
 www/data/drupal/includes/menu.inc
 www/data/drupal/includes/module.inc
@@ -31,7 +30,6 @@ www/data/drupal/misc/arrow-desc.png
 www/data/drupal/misc/blog.png
 www/data/drupal/misc/drupal.css
 www/data/drupal/misc/druplicon-small.png
-www/data/drupal/misc/druplicon.eps.gz
 www/data/drupal/misc/druplicon.png
 www/data/drupal/misc/forum-closed.png
 www/data/drupal/misc/forum-default.png
@@ -46,8 +44,9 @@ www/data/drupal/misc/powered-by-drupal-dark.png
 www/data/drupal/misc/powered-by-drupal-light.png
 www/data/drupal/misc/powered-by-drupal.png
 www/data/drupal/misc/print.css
+www/data/drupal/misc/watchdog-error.png
+www/data/drupal/misc/watchdog-warning.png
 www/data/drupal/misc/xml.png
-www/data/drupal/modules/admin.module
 www/data/drupal/modules/aggregator.module
 www/data/drupal/modules/archive.module
 www/data/drupal/modules/block.module
@@ -55,6 +54,7 @@ www/data/drupal/modules/blog.module
 www/data/drupal/modules/blogapi.module
 www/data/drupal/modules/book.module
 www/data/drupal/modules/comment.module
+www/data/drupal/modules/contact.module
 www/data/drupal/modules/drupal.module
 www/data/drupal/modules/filter.module
 www/data/drupal/modules/forum.module
@@ -81,7 +81,10 @@ www/data/drupal/modules/user.module
 www/data/drupal/modules/watchdog.module
 www/data/drupal/scripts/code-clean.sh
 www/data/drupal/scripts/code-style.pl
+www/data/drupal/scripts/cron-curl.sh
 www/data/drupal/scripts/cron-lynx.sh
+www/data/drupal/scripts/prefix.sh
+www/data/drupal/sites/default/settings.php
 www/data/drupal/themes/bluemarine/logo.png
 www/data/drupal/themes/bluemarine/screenshot.png
 www/data/drupal/themes/bluemarine/style.css
@@ -137,6 +140,8 @@ www/data/drupal/xmlrpc.php
 @dirrm www/data/drupal/themes/chameleon
 @dirrm www/data/drupal/themes/bluemarine
 @dirrm www/data/drupal/themes
+@dirrm www/data/drupal/sites/default
+@dirrm www/data/drupal/sites
 @dirrm www/data/drupal/scripts
 @dirrm www/data/drupal/modules
 @dirrm www/data/drupal/misc
