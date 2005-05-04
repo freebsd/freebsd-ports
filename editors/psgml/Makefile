@@ -7,24 +7,26 @@
 
 PORTNAME=	psgml
 PORTVERSION=	${PSGML_VER}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psgml
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-PATCH_SITES=	http://dist.bsdlab.org/
-PATCHFILES=	psgml-symbol-conflict-041015.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	hrs
+PATCHFILES=	psgml-symbol-conflict-050503.diff.gz
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	hrs@FreeBSD.org
 COMMENT?=	A major mode for editing SGML and XML documents for emacs21
 
+INFO=		psgml psgml-api
+
 # distfile version
-PSGML_VER=		1.2.5
+PSGML_VER=		1.3.2
 PSGML_STARTUPEL=	psgml-startup.el
 
-SCRIPTS_ENV=		TARGETS="${PSGML_STARTUPEL}"
+SCRIPTS_ENV=		TARGETS="${PSGML_STARTUPEL}" SED=${SED}
 PLIST_SUB=		PSGML_STARTUPEL=${PSGML_STARTUPEL}
 
 # This is a master port.
@@ -52,19 +54,11 @@ CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 .endif
 
 pre-configure:
-	(cd ${WRKSRC} ; \
-	  for i in psgml.el psgml.texi ; do \
-	      ${RM} -f $${i}.in; \
-	      ${MV} $${i} $${i}.in; \
-	      ${CAT} $${i}.in | ${SED} -e "s;@prefix@;${LOCALBASE};g" > $${i}; \
-	  done)
 	${CP} ${FILESDIR}/${PSGML_STARTUPEL}.in ${WRKDIR}
 
 post-install:
-	@(cd ${WRKSRC} ; \
-		${MAKE} install-info ; \
-	)
-	@${INSTALL_DATA} ${WRKDIR}/${PSGML_STARTUPEL} \
+	cd ${WRKSRC} && ${MAKE} install-info
+	${INSTALL_DATA} ${WRKDIR}/${PSGML_STARTUPEL} \
 			${LOCALBASE}/${EMACS_LIBDIR}/site-lisp
 
 .include <bsd.port.post.mk>
