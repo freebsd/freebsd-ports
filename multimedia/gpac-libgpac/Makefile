@@ -7,6 +7,7 @@
 
 PORTNAME=	gpac-libm4systems
 DISTVERSION=	0.2.4-rc4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gpac
@@ -36,6 +37,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
 		${WRKSRC}/include/gpac/m4_config.h
 	@${RM} -f ${WRKSRC}/include/gpac/m4_config.h.bak
+	@${REINPLACE_CMD} -e 's|||' \
+		${WRKSRC}/include/gpac/m4_descriptors.h \
+		${WRKSRC}/M4Systems/authoring/TextImport.c
+	@${RM} -f ${WRKSRC}/include/gpac/m4_descriptors.h.bak
 .endif
 
 do-install:
