@@ -20,10 +20,12 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/jpeg-mmx
+USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
+USE_GCC=	3.4+
 
 JPEG_EXT=	-mmx
 INCDIR=		include/${PORTNAME}
@@ -45,7 +47,8 @@ CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 .endif
 
 post-patch:
-	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
+	@${REINPLACE_CMD} -e 's|./libtool|${LIBTOOL} --tag=CXX|' \
+		${WRKSRC}/configure
 
 do-install:
 .for f in ${BIN_FILES}
@@ -64,10 +67,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	Does not build on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
