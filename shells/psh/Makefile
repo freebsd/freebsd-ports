@@ -29,16 +29,7 @@ MAN3=	Psh::Completion.3 \
 	Psh::Strategy.3 \
 	Psh::StrategyBunch.3
 
-pre-install:
-	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/Makefile;
-	@${PERL} -pi -e "s:/usr/local/man/man1:${MAN3PREFIX}/man/man1:g" ${WRKSRC}/Makefile;
-	@${PERL} -pi -e "s:/usr/local/lib/perl5/5.00503/man/man3:${MAN3PREFIX}/man/man3:g" ${WRKSRC}/Makefile;
-
 post-install:
-	@${ECHO_MSG} "Updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/psh /etc/shells.bak; \
-	${ECHO_CMD} ${PREFIX}/bin/psh) > /etc/shells
-	@${RM} /etc/shells.bak
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
