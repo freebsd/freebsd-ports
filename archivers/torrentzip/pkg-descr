@@ -1,0 +1,8 @@
+TorrentZip creates byte-for-byte exact zip files on any machine.  This allows
+people to join a torrent (after they have converted their zip files) with a
+particular set of files, thus preventing them from having to download the
+entire set of files again.  Because of the way TorrentZip creates identical
+zips, the file hashes will always match those in the original torrent. 
+
+WWW: http://trrntzip.sourceforge.net
+     https://sourceforge.net/projects/trrntzip

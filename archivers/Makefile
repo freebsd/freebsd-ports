@@ -84,6 +84,7 @@
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += tardy
+    SUBDIR += torrentzip
     SUBDIR += ucl
     SUBDIR += unace
     SUBDIR += unadf
