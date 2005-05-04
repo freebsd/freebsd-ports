@@ -35,7 +35,7 @@ OPTIONS?=	DVDNAV "Enable DVD support" on \
 MAN1=	totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
-CONFLICTS=	totem-gstreamer-[0-9]*
+CONFLICTS?=	totem-gstreamer-[0-9]*
 
 .include <bsd.port.pre.mk>
 
