@@ -1,6 +1,6 @@
 # New ports collection makefile for:	acx100
 # Date created:				2004-07-01
-# Whom:					Leonid Zolotarev <leoz@saunalahti.fi>
+# Whom:					Leonid Zolotarev <leoz.2005@gmail.com>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ DISTFILES=	${DISTFILE_0}:file_0 \
 DIST_SUBDIR=	acx
 EXTRACT_ONLY=	${DISTFILE_0}
 
-MAINTAINER=	leoz@saunalahti.fi
+MAINTAINER=	leoz.2005@gmail.com
 COMMENT=	Texas Instruments (TI) ACX100 IEEE 802.11 driver
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
