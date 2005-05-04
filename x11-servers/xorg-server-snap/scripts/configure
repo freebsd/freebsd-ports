@@ -21,6 +21,7 @@ echo "#define ModInstall YES"			>> $LOCALDEF
 echo "#define XF86Server NO"			>> $LOCALDEF
 echo "#define BuildServersOnly YES"		>> $LOCALDEF
 echo "#define BuildGLXLibrary YES"		>> $LOCALDEF
+echo "#define BuildDevelDRIDrivers YES"		>> $LOCALDEF
 echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
 echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
 echo "#define BuildXFree86ConfigTools YES"	>> $LOCALDEF

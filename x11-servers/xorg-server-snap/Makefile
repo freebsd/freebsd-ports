@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	6.8.2
+PORTVERSION=	6.8.99.5
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
-DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
-		X11R${PORTVERSION}-src3.tar.gz
+MASTER_SITES=	http://xorg.freedesktop.org/snapshots/
+DISTNAME=	xorg-x11-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.Org X server and related programs
+COMMENT=	X.Org X server development snapshot and related programs
 
+USE_BZIP2=	yes
 .if !defined(WITH_MODULAR)
 USE_XLIB=	yes
 .else
@@ -28,7 +27,7 @@ BUILD_DEPENDS=	${X11BASE}/include/X11/extensions/XKMformat.h:${PORTSDIR}/x11/lib
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 .endif
 
-CONFLICTS=	XFree86-Server-*
+CONFLICTS=	XFree86-Server-* xorg-server-6.[79].* xorg-server-6.8.[012]*
 
 SCRIPTS_ENV=	WITH_DEBUG="${WITH_DEBUG}"
 MAN1=		Xorg.1 \
@@ -67,6 +66,7 @@ MAN5=		getconfig.5 \
 XBUILD_DIRS=	lib/font programs/Xserver
 XINCLUDE_DIRS=	lib/xtrans
 XMAN_DIRS=	programs/Xserver
+LATEST_LINK=	${PORTNAME}-snap
 
 NOT_FOR_ARCHS=	ia64
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
@@ -81,7 +81,7 @@ PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
 .endif
-		
+
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
@@ -148,6 +148,12 @@ MAN4+=		apm.4x \
 .else
 PLIST_SUB+=	AMD64_I386="@comment "
 .endif
+
+pre-everything::
+	@${ECHO_MSG} "This X Server installs with development DRI DDX drivers.  These drivers are"
+	@${ECHO_MSG} "considered insecure by their authors and may allow privilege escalation by"
+	@${ECHO_MSG} "local X clients with DRI privileges."
+	@${ECHO_MSG} ""
 
 .if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
 pre-everything::

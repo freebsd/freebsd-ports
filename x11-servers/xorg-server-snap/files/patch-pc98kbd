@@ -1,17 +1,16 @@
---- programs/Xserver/hw/xfree86/input/keyboard/kbd.c.orig	Tue Feb  8 17:48:07 2005
-+++ programs/Xserver/hw/xfree86/input/keyboard/kbd.c	Tue Feb  8 17:48:52 2005
-@@ -595,10 +595,13 @@
+--- programs/Xserver/hw/xfree86/input/keyboard/kbd.c.orig	Tue Jan 11 06:59:02 2005
++++ programs/Xserver/hw/xfree86/input/keyboard/kbd.c	Sun Apr 17 08:34:33 2005
+@@ -604,10 +604,12 @@
     * they need to get the same key code as the base key on the same
     * physical keyboard key.
     */
--  if (scanCode == KEY_SysReqest)
--    scanCode = KEY_Print;
+-  if (ModifierDown(AltMask) && (scanCode == KEY_SysReqest))
+-      scanCode = KEY_Print;
 -  else if (scanCode == KEY_Break)
 -    scanCode = KEY_Pause;
-+  /* PC98 keyboards however don't need this */
 +  if (!xf86IsPc98()) {
-+    if (scanCode == KEY_SysReqest)
-+      scanCode = KEY_Print;
++    if (ModifierDown(AltMask) && (scanCode == KEY_SysReqest))
++        scanCode = KEY_Print;
 +    else if (scanCode == KEY_Break)
 +      scanCode = KEY_Pause;
 +  }
