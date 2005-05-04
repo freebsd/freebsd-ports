@@ -7,7 +7,7 @@
 
 PORTNAME=	uhexen
 PORTVERSION=	0.601
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://uhexen.sourceforge.net/
 DISTNAME=	${PORTNAME}-latest
@@ -19,11 +19,12 @@ USE_SDL=	mixer sdl
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	NOWAD "Do not install demo-version WAD file" off
+OPTIONS=	WAD "Install demo-version WAD file" on \
+		MUSIC "Enable support for in-game music" on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_NOWAD)
+.if defined(WITH_WAD)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} hexen.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -32,13 +33,17 @@ PLIST_SUB=	WAD=""
 PLIST_SUB=	WAD="@comment "
 .endif
 
+.if defined(WITH_MUSIC)
+RUN_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
+.endif
+
 PLIST_FILES=	bin/uhexen %%DATADIR%%/.keep_me %%WAD%%%%DATADIR%%/hexen.wad
 PLIST_DIRS=	%%DATADIR%%
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
-.if !defined(WITH_NOWAD)
+.if defined(WITH_WAD)
 	@${LOCALBASE}/bin/unzip -qo ${_DISTDIR}/hexen.zip \
 		-d ${WRKSRC}
 .endif
@@ -46,7 +51,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uhexen ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-.if !defined(WITH_NOWAD)
+.if defined(WITH_WAD)
 	${INSTALL_DATA} ${WRKSRC}/hexen.wad ${DATADIR}
 .endif
 	@${TOUCH} ${DATADIR}/.keep_me
