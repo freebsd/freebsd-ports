@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocp
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/
 
@@ -48,6 +48,9 @@ CONFIGURE_ARGS+=	--without-x11
 .else
 USE_XLIB=	yes
 CONFIGURE_ARGS+=	--with-x11=yes
+.endif
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debug
 .endif
 
 pre-everything::
