@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
-.for l in ca cs da de el es fr gl hu ja nb nl nn pt ru sv tr zh_TW
+.for l in et it vi fi sr rw ca cs da de el es fr gl hu ja nb nl nn pt ru sv tr zh_TW
 PLIST_FILES+=	share/locale/${l}/LC_MESSAGES/sharutils.mo
 .endfor
 .endif
