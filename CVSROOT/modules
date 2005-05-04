@@ -8124,6 +8124,7 @@ p5-Template-Magic	ports/textproc/p5-Template-Magic
 p5-Template-Plugin-Class	ports/www/p5-Template-Plugin-Class
 p5-Template-Plugin-Comma	ports/www/p5-Template-Plugin-Comma
 p5-Template-Plugin-MP3	ports/www/p5-Template-Plugin-MP3
+p5-Template-Timer	ports/www/p5-Template-Timer
 p5-Template-Toolkit	ports/www/p5-Template-Toolkit
 p5-Term-ANSIColor	ports/devel/p5-Term-ANSIColor
 p5-Term-ANSIScreen	ports/devel/p5-Term-ANSIScreen
