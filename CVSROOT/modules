@@ -3043,6 +3043,7 @@ gotmail		ports/mail/gotmail
 gourmet		ports/deskutils/gourmet
 gozer		ports/graphics/gozer
 gpa		ports/security/gpa
+gpac-libm4systems	ports/multimedia/gpac-libm4systems
 gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
 gpasman		ports/security/gpasman
