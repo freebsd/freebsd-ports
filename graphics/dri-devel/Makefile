@@ -6,51 +6,66 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	6.1.p20040507
+PORTVERSION=	6.2.20050419
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	anholt/dri-devel
-DISTFILES=	dri-20040507.tar.bz2	\
-		Mesa-20040507.tar.bz2	\
-		drm-20040507.tar.bz2
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~anholt/dri/
+MASTER_SITE_SUBDIR=	anholt
+DISTFILES=	Mesa-20050419.tar.bz2	\
+		drm-20050419.tar.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
-COMMENT=	OpenGL hardware acceleration drivers snapshot for XFree86
+COMMENT=	DRI OpenGL drivers snapshot
 
-WRKSRC=		${WRKDIR}/xc
-BUILD_WRKSRC=	${WRKSRC}/lib/GL
-INSTALL_WRKSRC=	${WRKSRC}/lib/GL/mesa/drivers/dri
-USE_BZIP2=	yes
+BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
+
+CONFLICTS=	xfree86-dri-* dri-6.2_*
+
+WRKSRC=		${WRKDIR}/Mesa
 USE_X_PREFIX=	yes
-MAKE_ENV=	FBSDCFLAGS="${CFLAGS}" FBSDCC="${CC}" FBSDCXX="${CXX}"
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 LATEST_LINK=	${PORTNAME}-devel
+MAKE_ENV+=	FBSDCC="${CC}" FBSDCXX="${CXX}" \
+		FBSDCFLAGS="${CFLAGS}" FBSDCXXFLAGS="${CXXFLAGS}" \
+		PTHREAD_LIBS=${PTHREAD_LIBS}
 
-ONLY_FOR_ARCHS=	alpha i386
+ONLY_FOR_ARCHS=	i386 alpha amd64
 
-IGNORE=		is currently older than graphics/dri. Please use that one instead
-
-do-configure:
-	@${RM} -f ${WRKSRC}/config/cf/projectroot.def
-	@${ECHO} "#define ProjectRoot ${X11BASE}" > ${WRKSRC}/config/cf/projectroot.def
-	@${RM} -f  ${WRKSRC}/config/cf/version.def
-	@${RM} -f  ${WRKSRC}/config/cf/date.def
-	@${TOUCH} ${WRKSRC}/config/cf/version.def
-	@${TOUCH} ${WRKSRC}/config/cf/date.def
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} Makefile.boot
-.for target in VerifyOS version.def Makefiles includes depend
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f xmakefile ${target}
-.endfor
-
-pre-build:
-	cd ${WRKSRC}/config && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+DRIMODDIR=	${PREFIX}/lib/modules/dri
 
 .include <bsd.port.pre.mk>
+
+do-install:
+.if ${ARCH} == i386
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i830_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/unichrome_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/tdfx_dri.so ${DRIMODDIR}
+.elif ${ARCH} == amd64
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/mach64_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/mga_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/r128_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/r200_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/radeon_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/savage_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/sis_dri.so ${DRIMODDIR}
+
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
+PLIST_SUB+=	I386_AMD64=""
+ALL_TARGET=	freebsd-dri-x86
+.elif ${ARCH} == amd64
+PLIST_SUB+=	I386="@comment "
+PLIST_SUB+=	I386_AMD64=""
+ALL_TARGET=	freebsd-dri
 .else
 PLIST_SUB+=	I386="@comment "
+PLIST_SUB+=	I386_AMD64="@comment "
+ALL_TARGET=	freebsd-dri
 .endif
-
 .include <bsd.port.post.mk>
