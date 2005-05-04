@@ -302,7 +302,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/mess/sysinfo.dat \
 				${PREFIX}/share/xmess/history.dat
 .endif
-.if ${MAMEMESS} == "mame" && defined(WITH_DATFILES) && ${WITH_DATFILES} == "yes"
+.if ${MAMEMESS} == "mame" && defined(WITH_DATFILES)
 	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
