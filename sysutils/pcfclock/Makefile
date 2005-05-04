@@ -7,6 +7,7 @@
 
 PORTNAME=	pcfclock
 PORTVERSION=	0.44
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www-stud.ims.uni-stuttgart.de/~voegelas/pcfclock/
 
@@ -20,6 +21,14 @@ MAN8=		pcfdate.8
 PLIST_FILES=	sbin/pcfdate
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+IGNORE=		Not supported for architecture ${ARCH}
+.endif
+
+.if ${OSVERSION} < 400000
+IGNORE=		Not supported for versions prior to FreeBSD 4.0
+.endif
 
 post-install:
 .if ${OSVERSION} < 500000
