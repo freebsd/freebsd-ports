@@ -1,0 +1,20 @@
+--- configure.orig	Tue Jul 27 18:33:12 2004
++++ configure	Sat Aug 14 17:05:23 2004
+@@ -21782,7 +21782,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-liodbc  $LIBS"
++LIBS="-liodbc  $LIBS  $LTHREAD_LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 21788 "configure"
+ #include "confdefs.h"
+@@ -21826,7 +21826,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lodbc  $LIBS"
++LIBS="-lodbc  $LIBS  $LTHREAD_LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 21832 "configure"
+ #include "confdefs.h"
