@@ -15,13 +15,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}.${PORTVERSION:E}
 MAINTAINER=	patrick_dkt@yahoo.com.hk
 COMMENT=	A simple tool for doing everyday things with PDF documents
 
-# needs gcj
-BUILD_DEPENDS=	gcj33:${PORTSDIR}/lang/gcc33
-
-# gcj don't exist on (and gcc33 is broken on amd64)
+# gcj/libgcj don't exist on these platforms
 NOT_FOR_ARCHS=	amd64 ia64 sparc64
 
-USE_GCC=	3.3
+USE_GCC=	3.4
+
+# Get gcc version suffix without the dot in USE_GCC
+CSUFF=		${USE_GCC:S/.//}
+
+# needs gcj
+BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
+
+USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_REINPLACE=	yes
@@ -29,14 +34,14 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 MAKEFILE=	Makefile.Generic
-MAKE_ENV=	CXX=g++33 GCJ=gcj33 GCJH=gcjh33
+MAKE_ENV=	CXX=g++${CSUFF} GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF}
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/pdftk
 
 post-extract:
 	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g" ${WRKSRC}/Makefile.Generic
-	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=33|g" ${WRKSRC}/Makefile.Generic
+	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=${CSUFF}|g" ${WRKSRC}/Makefile.Generic
 	@${REINPLACE_CMD} -e "s|CXXFLAGS= -lgcj|CXXFLAGS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz|g" ${WRKSRC}/Makefile.Generic
 
 do-install:
