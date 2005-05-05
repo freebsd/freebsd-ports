@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.50
+EXIM_VERSION=	4.51
 SA_EXIM_VERSION=4.2
 
 IGNOREFILES=	FAQ.txt.bz2
@@ -295,7 +295,7 @@ SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,,'
 .if defined(WITH_LDAP) || defined(LDAP_LIB_TYPE) \
 	|| defined(WITH_OPENLDAP1) || defined(WITH_OPENLDAP2) \
 	|| defined(WITH_OPENLDAP20) || defined(WITH_OPENLDAP21)
-BROKEN=		deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER
+BROKEN=		"deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER"
 .endif
 
 .if defined(WITH_OPENLDAP_VER) && ${WITH_OPENLDAP_VER:L} != "auto"
@@ -315,7 +315,7 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 .endif
 
 .if defined(DB_LIB_VERSION)
-BROKEN=		deprecated option DB_LIB_VERSION used, use WITH_BDB_VER
+BROKEN=		"deprecated option DB_LIB_VERSION used, use WITH_BDB_VER"
 .endif
 
 .if ${WITH_BDB_VER} == 1
@@ -339,7 +339,7 @@ DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.3
 DB_INCLUDES=	-I${LOCALBASE}/include/db43
 LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
 .else
-BROKEN=		WITH_BDB_VER must be either 1, 4, 41, 42 or 43
+BROKEN=		"WITH_BDB_VER must be either 1, 4, 41, 42 or 43"
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
