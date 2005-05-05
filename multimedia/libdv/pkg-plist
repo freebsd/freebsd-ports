@@ -1,7 +1,6 @@
 bin/dubdv
 bin/dvconnect
 bin/encodedv
-bin/playdv
 include/libdv/dv.h
 include/libdv/dv_types.h
 lib/libdv.a
