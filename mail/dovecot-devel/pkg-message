@@ -7,7 +7,7 @@
  the systems passwd file and use the default /var/mail/$USER mbox
  files.
 
-  cd %%PREFIX%%/etc; cp dovecot-example.conf dovecot.conf
+  cd %%PREFIX%%/etc; cp dovecot.conf.sample dovecot.conf
   
   echo dovecot_enable="YES" >> /etc/rc.conf
  
