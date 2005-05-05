@@ -21,6 +21,10 @@ GNU_CONFIGURE=	YES
 
 CONFIGURE_ENV+=	PERL="${PERL}" INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 
+.if !defined (NOPORTDOCS)
+PORTDOCS=	README.jis RELEASE.jis
+.endif
+
 post-configure:
 	@${PERL} -i.bak -pe 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/Fan/Fan.pm
 .for f in ftpmirror rotate
@@ -29,7 +33,6 @@ post-configure:
 
 post-install:
 .if !defined (NOPORTDOCS)
-	PORTDOCS=       README.jis RELEASE.jis
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
