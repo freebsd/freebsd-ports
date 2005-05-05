@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A PHP and MySQL based blogging platform
 
+IGNOREFILES=	_all_plugins${EXTRACT_SUFX} _all_templates${EXTRACT_SUFX}
+
 USE_ZIP=	YES
 
 USE_PHP=	ctype mysql pcre session xml
