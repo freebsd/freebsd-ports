@@ -6,33 +6,43 @@
 #
 
 PORTNAME=	arla
-PORTVERSION=	0.35.6
+PORTVERSION=	0.38
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free AFS client implementation
 
-BROKEN=		"Does not build"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_XLIB=	yes
-
-.if !exists(/usr/lib/libkafs.a)
-IGNORE=		requires kerberos
-.endif
+USE_RC_SUBR=	arla.sh
+USE_INC_LIBTOOL_VER=15
+INSTALLS_SHLIB=	yes
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
 .endif
 
+.if defined(WITHOUT_KRB5)
+CONFIGURE_ARGS+=--without-krb5
+.elif !defined(WITH_SYSTEM_HEIMDAL)
+LIB_DEPENDS+=	krb5.20:${PORTSDIR}/security/heimdal
+CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-krb5=/usr
+.endif
+
 GNU_CONFIGURE=	yes
-MAN1=		rxdebug.1 tokens.1 unlog.1 aklog.1 klog.1 fs.1 kalog.1 pts.1 \
-		udebug.1
-MAN3=		cmd.3
-MAN5=		CellServDB.5 DynRootDB.5 ThisCell.5 SuidCells.5
-MAN8=		mount_xfs.8 umount_xfs.8 arlad.8 arla-cli.8 vos.8 bos.8
-INFO=		arla
+CONFIGURE_TARGET=
+MAN1=		afstool.1 arla-send-pr.1 kalog.1 pts.1 rxdebug.1 \
+		tokens.1 udebug.1
+MAN3=		arg_printusage.3 getarg.3 log_close.3 log_get_mask.3 \
+		log_log.3 log_mask2str.3 log_open.3 log_set_mask.3 \
+		log_set_mask_str.3 log_unit_free.3 log_unit_init.3 \
+		log_vlog.3
+MAN4=		nnpfs.4
+MAN5=		AliasDB.5 CellServDB.5 DynRootDB.5 SuidCells.5 \
+		ThisCell.5 arla.conf.5
+MAN8=		arla-cli.8 arlad.8 mount_nnpfs.8 umount_nnpfs.8 vos.8
+INFO=		arla send-pr
 
 .include <bsd.port.mk>

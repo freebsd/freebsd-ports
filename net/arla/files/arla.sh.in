@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: arla
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD
+
+# Add the following line to /etc/rc.conf to enable `arla':
+#
+#arla_enable="YES"
+#
+# See arla(1) for arla_flags
+#
+
+. "%%RC_SUBR%%"
+
+name="arla"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/startarla"
+procname="%%PREFIX%%/libexec/arlad"
+pidfile="/var/run/arlad.pid"
+required_files="%%PREFIX%%/etc/$name.conf
+	%%PREFIX%%/etc/ThisCell
+	%%PREFIX%%/etc/CellServDB"
+
+stop_precmd="stop_precmd"
+
+stop_precmd()
+{
+	mount | grep -q 'arla on /afs (nnpfs)' && umount /afs
+}
+
+stop_postcmd="stop_postcmd"
+
+stop_postcmd()
+{
+	kldstat | grep -q ' nnpfs.ko$' && kldunload nnpfs
+	if ! rm "$pidfile" 2>/dev/null; then
+		warn "Couldn't remove $pidfile"
+	fi
+}
+
+# read settings, set default values
+load_rc_config "$name"
+: ${arla_enable="NO"}
+: ${arla_flags=""}
+
+run_rc_command "$1"
