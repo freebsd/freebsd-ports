@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/
 
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
-COMMENT=	A triditional chinese input utility in X
+COMMENT=	A traditional chinese input utility in X
 
 USE_X_PREFIX=	YES
 USE_BZIP2=	YES
