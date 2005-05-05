@@ -1,0 +1,68 @@
+Index: qemu/kqemu/Makefile
+@@ -1,62 +1,5 @@
+-ifeq ($(PATCHLEVEL),)
+-# compile in kqemu directory 
++KMOD=	kqemu
++SRCS=	kmod_bsd.c
++OBJS=	kqemu-mod-i386.o
+ 
+--include ../config-host.mak
+-
+-ifdef CONFIG_KBUILD26
+-# 2.6 build
+-
+-all: kqemu.ko
+-
+-kqemu.ko:
+-	make -C $(KERNEL_PATH) M=`pwd` modules
+-
+-else
+-# 2.4 build
+-
+-all: kqemu.o
+-
+-kqemu.o:
+-	make -C $(KERNEL_PATH) SUBDIRS=`pwd` modules
+-
+-endif # !CONFIG_KBUILD26
+-
+-clean:
+-	rm -f kqemu.o kqemu.ko kmod.o kqemu-mod.o kqemu.mod.c *~
+-
+-FILES=Makefile README LICENSE install.sh  kmod.c  kqemu.h  kqemu-mod-i386.o \
+-      kqemu-doc.texi kqemu-doc.html
+-VERSION=0.6.2
+-
+-tar:
+-	cd .. ; tar zcvf /tmp/kqemu-$(VERSION).tar.gz $(addprefix kqemu/, $(FILES))
+-
+-# documentation
+-doc: kqemu-doc.html
+-
+-%.html: %.texi
+-	texi2html -monolithic -number $<
+-
+-else
+-
+-ifeq ($(PATCHLEVEL),4)
+-# called from 2.4 kernel kbuild
+-
+-obj-m:= kqemu.o
+-kqemu-objs:= kmod.o kqemu-mod-i386.o
+-
+-include $(TOPDIR)/Rules.make
+-
+-kqemu.o: $(kqemu-objs)
+-	$(LD) -r -o $@ $(kqemu-objs)
+-
+-else
+-# called from 2.6 kernel kbuild
+-
+-obj-m:= kqemu.o
+-kqemu-objs:= kmod.o kqemu-mod.o
+-
+-$(obj)/kqemu-mod.o: $(src)/kqemu-mod-i386.o
+-	cp $< $@
+-endif
+-endif # PATCHLEVEL
++.include <bsd.kmod.mk>
