@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/
 
@@ -24,5 +24,11 @@ USE_GMAKE=	YES
 .if ${OSVERSION} <= 500034
 USE_GCC=	3.4
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
+	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
+	@${ECHO}
 
 .include <bsd.port.post.mk>

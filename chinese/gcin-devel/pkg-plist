@@ -25,9 +25,10 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/hsu.kbm
 %%DATADIR%%/table/ibm.kbm
 %%DATADIR%%/table/jyutping.gtab
-%%DATADIR%%/table/phrase.table
-%%DATADIR%%/table/pho.tab
 %%DATADIR%%/table/pho-huge.tab
+%%DATADIR%%/table/pho.tab
+%%DATADIR%%/table/phrase.table
+%%DATADIR%%/table/simplex.gtab
 %%DATADIR%%/table/pinyin.gtab
 %%DATADIR%%/table/symbol-table
 %%DATADIR%%/table/tsin
@@ -41,11 +42,11 @@ share/applications/gcin-setup.desktop
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
-@dirrm %%DOCSDIR%%
-@dirrm share/icons/gcin
+@unexec rmdir %D/%%DOCSDIR%%  2>/dev/null || true
+@unexec rmdir %D/share/icons/gcin  2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@dirrm %%DATADIR%%/table
-@dirrm %%DATADIR%%/script
-@dirrm %%DATADIR%%
+@unexec rmdir %D/%%DATADIR%%/table 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/script 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @unexec rmdir %D/lib/gtk-2.0/immodules 2>/dev/null || true
