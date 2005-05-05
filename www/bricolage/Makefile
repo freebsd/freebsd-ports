@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.5
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
 		${SITE_PERL}/Test/Class.pm:${PORTSDIR}/devel/p5-Test-Class \
+		${SITE_PERL}/Test/MockModule.pm:${PORTSDIR}/devel/p5-Test-MockModule \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
 		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
@@ -51,7 +52,7 @@ APXS?=		${LOCALBASE}/sbin/apxs
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
 
 # Used to determine which versions we can upgrade from
-PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 ${PORTVERSION}
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 # Skip ${PORTVERSION} for 1.8.5
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes

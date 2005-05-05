@@ -1,5 +1,5 @@
-*** inst/config.pl.orig	Fri Jul 25 00:39:23 2003
---- inst/config.pl	Tue Jun  1 22:23:26 2004
+*** inst/config.pl.orig	Fri Mar 18 17:12:51 2005
+--- inst/config.pl	Tue May  3 18:40:57 2005
 ***************
 *** 36,41 ****
 --- 36,45 ----
@@ -14,12 +14,12 @@
   our %CONFIG;
   
 ***************
-*** 71,92 ****
+*** 73,94 ****
   
   END
   
-!     $CONFIG{set} = ask_choice("Your choice?", 
-!                               [ "s", "m" ], "s");
+!     $CONFIG{set} = ask_choice("Your choice?",
+!                               [ "s", "m" ], "m");
   
       # setup the default
       if ($CONFIG{set} eq 's') {
@@ -32,12 +32,12 @@
           $CONFIG{MASON_COMP_ROOT} = '$CONFIG{BRICOLAGE_ROOT}/comp';
           $CONFIG{MASON_DATA_ROOT} = '$CONFIG{BRICOLAGE_ROOT}/data';
   
-!         # remove man3 trailer
+          # remove man3 trailer
 !         $CONFIG{MAN_DIR} =~ s!/man3!!;
   
           # construct default system-wide log directory based on Apache
           # error_log setting
---- 75,99 ----
+--- 77,101 ----
   
   END
   
@@ -52,19 +52,19 @@
           $CONFIG{TEMP_DIR}        = tmpdir();
 !         $CONFIG{MODULE_DIR}      = '/usr/local/lib/perl5/site_perl/5.8.2/ '; #$Config{sitelib};
 !         $CONFIG{BIN_DIR}         = '/usr/local/bin'; #$Config{scriptdir};
-!         $CONFIG{MAN1_DIR}         = '/usr/local/man/man1'; #$Config{man3dir};
-!         $CONFIG{MAN3_DIR}         = '/usr/local/lib/perl5/5.8.2/man/man3'; #$Config{man1dir};
+!         $CONFIG{MAN1_DIR}         = '/usr/local/man/man1'; #$Config{man1dir};
+!         $CONFIG{MAN3_DIR}         = '/usr/local/lib/perl5/5.8.2/man/man3'; #$Config{man3dir};
           $CONFIG{MASON_COMP_ROOT} = '$CONFIG{BRICOLAGE_ROOT}/comp';
           $CONFIG{MASON_DATA_ROOT} = '$CONFIG{BRICOLAGE_ROOT}/data';
   
-!         # remove manN trailer
+          # remove man3 trailer
 !         $CONFIG{MAN1_DIR} =~ s!/man1!!;
 !         $CONFIG{MAN3_DIR} =~ s!/man3!!;
   
           # construct default system-wide log directory based on Apache
           # error_log setting
 ***************
-*** 113,119 ****
+*** 115,121 ****
           $CONFIG{TEMP_DIR}         = '$CONFIG{BRICOLAGE_ROOT}/tmp';
           $CONFIG{MODULE_DIR}       = '$CONFIG{BRICOLAGE_ROOT}/lib';
           $CONFIG{BIN_DIR}          = '$CONFIG{BRICOLAGE_ROOT}/bin';
@@ -72,7 +72,7 @@
           $CONFIG{LOG_DIR}          = '$CONFIG{BRICOLAGE_ROOT}/log';
           $CONFIG{PID_FILE}         = '$CONFIG{BRICOLAGE_ROOT}/log/httpd.pid';
           $CONFIG{MASON_COMP_ROOT}  = '$CONFIG{BRICOLAGE_ROOT}/comp';
---- 120,127 ----
+--- 122,129 ----
           $CONFIG{TEMP_DIR}         = '$CONFIG{BRICOLAGE_ROOT}/tmp';
           $CONFIG{MODULE_DIR}       = '$CONFIG{BRICOLAGE_ROOT}/lib';
           $CONFIG{BIN_DIR}          = '$CONFIG{BRICOLAGE_ROOT}/bin';
@@ -82,7 +82,7 @@
           $CONFIG{PID_FILE}         = '$CONFIG{BRICOLAGE_ROOT}/log/httpd.pid';
           $CONFIG{MASON_COMP_ROOT}  = '$CONFIG{BRICOLAGE_ROOT}/comp';
 ***************
-*** 123,129 ****
+*** 125,131 ****
   
   sub confirm_settings {
     my $default_root = $CONFIG{BRICOLAGE_ROOT};
@@ -90,7 +90,7 @@
   
     # make sure this directory isn't the same at the source directory
     if (canonpath($CONFIG{BRICOLAGE_ROOT}) eq canonpath(cwd())) {
---- 131,142 ----
+--- 133,144 ----
   
   sub confirm_settings {
     my $default_root = $CONFIG{BRICOLAGE_ROOT};
@@ -104,7 +104,7 @@
     # make sure this directory isn't the same at the source directory
     if (canonpath($CONFIG{BRICOLAGE_ROOT}) eq canonpath(cwd())) {
 ***************
-*** 140,163 ****
+*** 142,165 ****
         -e catfile($CONFIG{BRICOLAGE_ROOT}, "conf", "bricolage.conf")) {
         print "That directory already contains a Bricolage installation.\n";
         print "Consider running `make upgrade`, instead.\n";
@@ -129,7 +129,7 @@
 -   ask_confirm("Mason Component Directory", \$CONFIG{MASON_COMP_ROOT});
 -   ask_confirm("Mason Data Directory",      \$CONFIG{MASON_DATA_ROOT});
   }
---- 153,190 ----
+--- 155,192 ----
         -e catfile($CONFIG{BRICOLAGE_ROOT}, "conf", "bricolage.conf")) {
         print "That directory already contains a Bricolage installation.\n";
         print "Consider running `make upgrade`, instead.\n";
