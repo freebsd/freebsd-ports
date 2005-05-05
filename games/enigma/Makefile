@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	enigma
-PORTVERSION=	0.90
-PORTREVISION=	2
+PORTVERSION=	0.91
 CATEGORIES=	games
 MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	enigma-${PORTVERSION}-beta
+DISTNAME=	enigma-${PORTVERSION}
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
@@ -25,8 +24,10 @@ USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_SDL=	gfx image mixer sdl ttf
-CONFIGURE_ARGS=	--target=""
+CONFIGURE_ARGS=	--target="" \
+		--with-libintl-prefix="${LOCALBASE}"
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
 
