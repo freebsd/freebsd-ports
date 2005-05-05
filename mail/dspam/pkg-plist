@@ -1,4 +1,5 @@
 bin/dspam
+bin/dspamc
 bin/dspam_2sql
 bin/dspam_admin
 bin/dspam_clean
@@ -6,20 +7,23 @@ bin/dspam_corpus
 bin/dspam_crc
 bin/dspam_dump
 bin/dspam_genaliases
+bin/dspam_logrotate
 bin/dspam_merge
+%%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
 @unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
 etc/dspam.conf.sample
 include/dspam/buffer.h
 include/dspam/config.h
+include/dspam/config_shared.h
 include/dspam/decode.h
+include/dspam/diction.h
 include/dspam/error.h
-include/dspam/lht.h
+include/dspam/heap.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
 include/dspam/storage_driver.h
-include/dspam/tbt.h
 lib/libdspam.a
 lib/libdspam.so
 lib/libdspam.so.6
@@ -30,17 +34,22 @@ libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/README.courier
-%%PORTDOCS%%%%DOCSDIR%%/README.exim
-%%PORTDOCS%%%%DOCSDIR%%/README.pop3filter
-%%PORTDOCS%%%%DOCSDIR%%/README.postfix
-%%PORTDOCS%%%%DOCSDIR%%/README.qmail
-%%PORTDOCS%%%%DOCSDIR%%/README.sendmail
+%%PORTDOCS%%%%DOCSDIR%%/appliance.txt
+%%PORTDOCS%%%%DOCSDIR%%/courier.txt
+%%PORTDOCS%%%%DOCSDIR%%/exim.txt
+%%PORTDOCS%%%%DOCSDIR%%/mysql_drv.txt
+%%PORTDOCS%%%%DOCSDIR%%/ora_drv.txt
+%%PORTDOCS%%%%DOCSDIR%%/pgsql_drv.txt
+%%PORTDOCS%%%%DOCSDIR%%/pop3filter.txt
+%%PORTDOCS%%%%DOCSDIR%%/postfix.txt
+%%PORTDOCS%%%%DOCSDIR%%/qmail.txt
+%%PORTDOCS%%%%DOCSDIR%%/sendmail.txt
+%%PORTDOCS%%%%DOCSDIR%%/sqlite_drv.txt
 %%PORTDOCS%%%%DOCSDIR%%/UPDATING
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/310_to_320.my.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/README
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-4.1.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-space.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-speed.sql
@@ -50,13 +59,11 @@ libdata/pkgconfig/dspam.pc
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%
-%%PGSQL%%%%EXAMPLESDIR%%/pgsql/README
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%
-%%SQLITE%%%%EXAMPLESDIR%%/sqlite/README
 %%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge.sql
 %%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
 %%SQLITE%%@dirrm %%EXAMPLESDIR%%

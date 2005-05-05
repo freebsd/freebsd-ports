@@ -1,41 +1,13 @@
 
 -------------------------------------------------------------------------------
+ Reporting problems, asking questions:
+ - FreeBSD specific port-related problems/questions/paches: maintainer
+(and ports@ if you fell the need); send-pr only if you get no timely reply
+ - dspam specific questions: dspam/dspam-dev mailling list (maintainer cc'ed)
+ - dspam specific patches: dspam/dspam-dev mailling list (maintainer cc'ed if)
+ Please be sure to include in your email/pr relevant information such as:
+ uname -a, dspam --version, %%_VAR_DIR%%/db/ports/%%PORTNAME%%/options, MTA setup.
 
- See the file %%DOCSDIR%%/README for advice about 
- how to configure DSPAM and
- %%DOCSDIR%%/README.your_mta_name 
- for MTA or pop3 integration; examples for:
- courier, exim, pop3filter, postfix, qmail and sendmail.
- Keep in mind that while this port obeys our hier(7) this thing is not
- reflected in distributed files because I lack the time for patching them.
-
-%%MYSQL%%
-%%MYSQL%% See %%EXAMPLESDIR%%/mysql/README
-%%MYSQL%% for instructions on how to configure DSPAM - MySQL interaction.
-%%MYSQL%%
-%%MYSQL%% BACKUP FIRST !!!
-%%MYSQL%%
-%%MYSQL%% To modify a 2.x database use and use it with dspam 3.x use:
-%%MYSQL%% %%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
-%%MYSQL%% To modify a 3.1.0  *mysql4.0* use :
-%%MYSQL%% %%EXAMPLESDIR%%/mysql/310_to_320.my.sql
-%%MYSQL%%
-%%PGSQL%%
-%%PGSQL%% See %%EXAMPLESDIR%%/pgsql/README
-%%PGSQL%% for instructions on how to configure PostrgreSQL
-%%PGSQL%% for use with DSPAM.
-%%PGSQL%% 
-%%SQLITE%%
-%%SQLITE%% See %%EXAMPLESDIR%%/sqlite/README
-%%SQLITE%% for suggestion on SQLite back-end. It should work out-of-the-box.
-%%SQLITE%%
-%%SQLITE%% You'll always want to run dspam_clean -p0 and 
-%%SQLITE%% sqlite %%DSPAM_HOME%%/data/user/user.sdb < vacuum 
-%%SQLITE%% after a corpusfeed.
-%%SQLITE%% There are  most likely 70%+ junk tokens that need to be removed.
-%%SQLITE%% This will have a HUGE impact on the disk space your db uses.
-%%SQLITE%%
-%%CGI%%
 %%CGI%% The CGI files had been installed in
 %%CGI%% %%CGI_PATH%%
 %%CGI%% Copy
@@ -55,40 +27,13 @@
 %%CGI%% to
 %%CGI%% %%CGI_PATH%%/admins 
 %%CGI%% and edit the file to your needs. 
-%%CGI%% See %%DOCSDIR%%/README 
-%%CGI%% especially the CGI and Trusted Users sections for more info.
 %%CGI%% If you have problems (after upgrading) check permissions.
+%%DAEMON%%
+%%DAEMON%% To enable the dspam deamon put dspam_enable="YES" in your
+%%DAEMON%% /etc/rc.conf
 
-  See %%DOCSDIR%%/RELEASE.NOTES 
-  for new things in this %%PKGNAME%% and 
-  %%DOCSDIR%%/CHANGELOG
-  for the full list from 3.0.0 stable.
-  Preference extensions are NOT yet integrated in this port, 
-  feel free to test and send patches.
-
- ***************************** WARNING: ***************************************
- Almost everything regarding how dspam must be configured has changed.
- If you are upgrading from 2.x or 3.x be sure to read
- %%DOCSDIR%%/UPDATING
- ******************************************************************************
-
- ---- %%PKGNAME%% is considered to be a STABLE release.  ---
- Reporting problems, asking questions:
- - small typos, etc. to the maintainer
- - FreeBSD specific port-related problems/questions: ports@, maintainer cc'ed
- - FreeBSD specific patches, doc enhancements: send-pr maintainer cc'ed
- - dspam specific questions: dspam mailling list (maintainer cc'ed if you like)
- - dspam specific patches: dspam/dspam-dev mailling list (maintainer cc'ed if you like)
- Please be sure to include in your email/pr relevant information such as:
- uname -a, dspam --version, /var/db/ports/dspam-devel/options, MTA setup.
- If needed rebuild WITH_DEBUG and to turn on debugging see DebugOpt in dsapm.conf
-
- Please send unified diff's (diff -u).
- 
- If you don't want to see in your maillog : 
- "query error: verbose debug INFO ONLY: see sql.errors for more details"
- please recompile withOUT verbose debug; those who will report this "error" will
- be sent to spen their night in a room with a cardassian, a klingonian and a romulan.
-
-				-- Thanks for making both our lives easier.
+ You'll find additional setup instructions under
+ %%DOCSDIR%%
+and
+ %%EXAMPLESDIR%%
 ------------------------------------------------------------------------------
