@@ -15,7 +15,7 @@
 -CFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wmissing-prototypes -g -std=c99  -Wundef -fPIC -ffast-math -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11/extensions
 -CXXFLAGS = -DDRI_NEW_INTERFACE_ONLY -Wall -g -ansi -pedantic -fPIC
 +CFLAGS = $(FBSDCFLAGS) -DDRI_NEW_INTERFACE_ONLY -Wmissing-prototypes -g \
-+	-std=c9x -Wundef -fPIC -ffast-math -I$(LOCALBASE)/include \
++	-std=c9x -Wundef -fPIC -I$(LOCALBASE)/include \
 +	-I$(X11BASE)/include -I$(X11BASE)/include/X11/extensions
 +CXXFLAGS = $(FBSDCXXFLAGS) -DDRI_NEW_INTERFACE_ONLY -Wall -g -ansi -pedantic \
 +	-fPIC

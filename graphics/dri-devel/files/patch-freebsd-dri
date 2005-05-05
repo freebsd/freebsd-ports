@@ -16,7 +16,7 @@
  DEFINES = -DDRI_NEW_INTERFACE_ONLY 
 -CFLAGS = $(DEFINES) -Wmissing-prototypes -g -std=c99  -Wundef -fPIC -ffast-math -I/usr/local/include $(X11_INCLUDES)
 +CFLAGS = $(FBSDCFLAGS) $(DEFINES) -Wmissing-prototypes -g -std=c99  -Wundef \
-+	-fPIC -ffast-math -I/usr/local/include $(X11_INCLUDES)
++	-fPIC -I/usr/local/include $(X11_INCLUDES)
  CXXFLAGS = $(DEFINES) -Wall -g -ansi -pedantic -fPIC
  
  ASM_SOURCES = 

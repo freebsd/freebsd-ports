@@ -20,7 +20,7 @@ COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
 BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 
-CONFLICTS=	xfree86-dri-*
+CONFLICTS=	xfree86-dri-* dri-6.2.2005*
 
 WRKSRC=		${WRKDIR}/Mesa
 USE_X_PREFIX=	yes
