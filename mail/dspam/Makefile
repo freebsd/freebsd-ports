@@ -1,26 +1,26 @@
 # New ports collection makefile for:	dspam
-# Date created:			3 August 2003
-# Whom:				Dominic Marks <dom@wirespeed.org.uk>
+# Date created:				3 August 2003
+# Whom:					Dominic Marks <dom@wirespeed.org.uk>
 #
 # $FreeBSD$
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
-# or user variables (WITH*) changes please and an entry in ${FILESDIR}/UPDATING and
-# modify UPD_LINE_NO=(no_of_added_lines-1) in this Makefile
+# or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING and
+# modify _UPD_LINE_NO=(no_of_added_lines-1) in this Makefile
 # else the port will be broken. Thanks.
 
 PORTNAME=	dspam
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
 PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
+MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.2.8
-#SNAP_DATE=	.20050302.1330
+PORTVER_MAJ=	3.4.5
+#SNAP_DATE=	.20050417.0700
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
@@ -39,14 +39,16 @@ FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
 OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
+OPTIONS+=	BNR_DEBUG "Enable debug for BNR" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
+OPTIONS+=	DAEMON "Daemonize dspam" on
 
 ## algorithm options
 OPTIONS+=	GRAHAM_BAYES "Enable Graham (traditional) bayesian" on
 OPTIONS+=	BURTON_BAYES "Enable Burton (alternative) bayesian" on
 OPTIONS+=	RNB "Use Robinson Naive Bayesian calculation" off
 OPTIONS+=	CHI_SQUARE "Use Fisher-Robinson Inv Chi-Square" off
-OPTIONS+=	RPV "Use Robinson technique combining p-values" off
+OPTIONS+=	RPV "Use Robinson technique combining p-values" on
 OPTIONS+=	TEST_COND "More inoculous results rapidly, risk fps" on
 OPTIONS+=	NO_BIAS "No bias toward innocent mail" off
 OPTIONS+=	NEURAL_NET "Enable neural networking" off
@@ -57,13 +59,14 @@ OPTIONS+=	TRUSTED_USERS "Disable trusted user security" off
 
 ## back-end
 OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" off
-OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" off
+OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" on
 OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" off
 #OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
 OPTIONS+=	BDB4 "Use BDB4 as back-end (not recomanded)" off
-OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" on
+OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" off
+OPTIONS+=	SQLITE3 "Use SQLite v3.x as back-end" off
 OPTIONS+=	VIRT_USERS "Enable virtual users (needs SQL back-end)" off
 OPTIONS+=	LONG_USERNAMES "Usernames longer that OS supports" off
 OPTIONS+=	LARGE_SCALE "File structure for large scale" off
@@ -95,11 +98,11 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	-g -DDEBUG
 .endif
 
-PKGMESSAGE=	${WRKSRC}/README.FreeBSD
+PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-UPD_LINE_NO=	6
+_UPD_LINE_NO=	16
 
-CONFLICTS=	dspam-2* dspam-devel-[0-9]*
+CONFLICTS=	dspam-2* dspam-3*
 
 SIGNATURE_LIFE?=	15
 
@@ -117,12 +120,17 @@ DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
 
+## Actually Thu Feb 10 17:38:05 EET 2005 works
+#.if ${OSVERSION} >= 500036
+#.	if	${OSVERSION} < 503102
+#IGNORE=	Need newer pthread support, please upgrade your system
+#.	endif
+#.endif
+
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
 
 CONFIGURE_ARGS+=	--with-dspam-home=${DSPAM_HOME}
-PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME}
-
 CONFIGURE_ARGS+=	--with-dspam-home-owner=${DSPAM_HOME_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-home-group=${DSPAM_HOME_GROUP}
 CONFIGURE_ARGS+=	--with-dspam-home-mode=${DSPAM_HOME_MODE}
@@ -130,14 +138,16 @@ PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME}
 
 CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
-# we set DSPAM_MODE at the end as some LDA want specific mode
+# we set DSPAM_MODE at the end as some LDA whant specific mode
 
-SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+_SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
-		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%PKGNAME%%,${PKGNAME},g' \
-		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
+		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g' \
+		-e 's,%%PORTNAME%%,${PORTNAME},g' \
+		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g'
+#		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+#		-e 's,%%PREFIX%%,${PREFIX},g' \
+#		-e 's,%%PKGNAME%%,${PKGNAME},g' \
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -147,8 +157,31 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-verbose-debug
 .endif
 
+.if defined(WITH_BNR_DEBUG)
+CONFIGURE_ARGS+=	--enable-bnr-debug
+.endif
+
 .if defined(WITH_PREF_EXT)
 CONFIGURE_ARGS+=	--enable-preferences-extension
+.endif
+
+####
+# quick hack to build the package with daemon
+.ifndef(WITHOUT_DAEMON)
+WITH_DAEMON=	on
+.endif
+
+.ifdef(WITH_DAEMON)
+CONFIGURE_ARGS+=	--enable-daemon
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+USE_RC_SUBR=	yes
+PLIST_FILES+=	etc/rc.d/dspam${RC_SUFX}
+_SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
+_SED_RC_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
+.else
+_SED_SCRIPT+=	-e ',%%DAEMON%%,D'
 .endif
 
 .if !defined(WITH_GRAHAM_BAYES)
@@ -191,37 +224,8 @@ CONFIGURE_ARGS+=	--enable-homedir
 CONFIGURE_ARGS+=	--disable-trusted-user-security
 .endif
 
-DBDRV_TOTAL_COUNT=	ooooooo # 7
+DBDRV_TOTAL_COUNT=	ooooooooo # 8
 DBDRV_COUNT=	${DBDRV_TOTAL_COUNT}
-
-.ifdef(WITH_MYSQL40)
-WANT_MYSQL_VER=	40
-#PKGNAMESUFFIX=	-mysql40
-.elifdef(WITH_MYSQL41)
-WANT_MYSQL_VER=	41
-#PKGNAMESUFFIX=	-mysql41
-.elifdef(WITH_MYSQL50)
-WANT_MYSQL_VER=	50
-#PKGNAMESUFFIX=	-mysql50
-.endif
-
-.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41) || defined(WITH_MYSQL50)
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
-		--with-mysql-includes=${LOCALBASE}/include/mysql \
-		--with-mysql-libraries=${LOCALBASE}/lib/mysql
-PLIST_SUB+=	DB4="@comment "
-PLIST_SUB+=	MYSQL=""
-PLIST_SUB+=	PGSQL="@comment "
-PLIST_SUB+=	SQLITE="@comment "
-SED_SCRIPT+=	-e 's,%%MYSQL%%,,g'
-SED_SCRIPT+=	-e '/%%PGSQL%%/D'
-SED_SCRIPT+=	-e '/%%SQLITE%%/D'
-DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
-.if defined(WITH_MYSQL_COMPRESS)
-CONFIGURE_ARGS+=	--enable-client-compression
-.endif
-.endif
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
@@ -232,15 +236,15 @@ PLIST_SUB+=	DB4="@comment "
 PLIST_SUB+=	MYSQL="@comment "
 PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	SQLITE="@comment "
-SED_SCRIPT+=	-e '/%%MYSQL%%/D'
-SED_SCRIPT+=	-e 's,%%PGSQL%%,,g'
-SED_SCRIPT+=	-e '/%%SQLITE%%/D'
+#_SED_SCRIPT+=	-e '/%%MYSQL%%/D'
+#_SED_SCRIPT+=	-e 's,%%PGSQL%%,,g'
+#_SED_SCRIPT+=	-e '/%%SQLITE%%/D'
 #PKGNAMESUFFIX=	-pgsql
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
 .if defined(WITH_ORACLE)
-BUILD_DEPENDS+=	${LOCALBASE}/oracle7/rdbms/lib/libnlsrtl3.a:\
+BUILD_DEPENDS=	${LOCALBASE}/oracle7/rdbms/lib/libnlsrtl3.a:\
 	${PORTSDIR}/databases/oracle7-client
 CONFIGURE_ARGS+=	--with-storage-driver=ora_drv \
 		--with-oracle-home=	${LOCALBASE}/oracle7
@@ -256,16 +260,24 @@ PLIST_SUB+=	DB4=""
 PLIST_SUB+=	MYSQL="@comment "
 PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	SQLITE="@comment "
-SED_SCRIPT+=	-e '/%%MYSQL%%/D'
-SED_SCRIPT+=	-e '/%%PGSQL%%/D'
-SED_SCRIPT+=	-e '/%%SQLITE%%/D'
+#_SED_SCRIPT+=	-e '/%%MYSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%SQLITE%%/D'
 #PKGNAMESUFFIX=	-bdb
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
-.if ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT} || defined(WITH_SQLITE2)
-WITH_SQLITE2=	on
+.if defined(WITH_SQLITE3)
+HAVE_SQLITE=	yes
+LIB_DEPENDS+=	sqlite.3:${PORTSDIR}/databases/sqlite3
+.endif
+
+.if defined(WITH_SQLITE2)
+HAVE_SQLITE=	yes
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
+.endif
+
+.if defined(HAVE_SQLITE)
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 	--with-sqlite-includes=${LOCALBASE}/include \
 	--with-sqlite-libraries=${LOCALBASE}/lib
@@ -273,11 +285,43 @@ PLIST_SUB+=	DB4="@comment "
 PLIST_SUB+=	MYSQL="@comment "
 PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	SQLITE=""
-SED_SCRIPT+=	-e '/%%MYSQL%%/D'
-SED_SCRIPT+=	-e '/%%PGSQL%%/D'
-SED_SCRIPT+=	-e 's,%%SQLITE%%,,g'
+#_SED_SCRIPT+=	-e '/%%MYSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
+#_SED_SCRIPT+=	-e 's,%%SQLITE%%,,g'
 #PKGNAMESUFFIX=	-sqlite2
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
+.endif
+
+.ifdef(WITH_MYSQL40)
+WANT_MYSQL_VER=	40
+#PKGNAMESUFFIX=	-mysql40
+.elifdef(WITH_MYSQL41)
+WANT_MYSQL_VER=	41
+#PKGNAMESUFFIX=	-mysql41
+.elifdef(WITH_MYSQL50)
+WANT_MYSQL_VER=	50
+#PKGNAMESUFFIX=	-mysql50
+.endif
+
+.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41) || defined(WITH_MYSQL50) || ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT}
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
+		--with-mysql-includes=${LOCALBASE}/include/mysql \
+		--with-mysql-libraries=${LOCALBASE}/lib/mysql
+PLIST_SUB+=	DB4="@comment "
+PLIST_SUB+=	MYSQL=""
+PLIST_SUB+=	PGSQL="@comment "
+PLIST_SUB+=	SQLITE="@comment "
+#_SED_SCRIPT+=	-e 's,%%MYSQL%%,,g'
+#_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%SQLITE%%/D'
+DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
+.	if defined(WITH_MYSQL_COMPRESS)
+CONFIGURE_ARGS+=	--enable-client-compression
+.	endif
+_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,mysql,g'
+.else
+_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,,'
 .endif
 
 .if defined(WITH_VIRT_USERS)
@@ -313,7 +357,7 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 .if defined(WITH_EXIM_LDA)
 .	if defined(WITH_MYSQL40) || (WITH_MYSQL41)
 _EXIM_EXT=	-mysql
-.	elseif defined(WITH_POSTGRESQL)
+.	elif defined(WITH_POSTGRESQL)
 _EXIM_EXT=	-postgresql
 .	endif
 RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
@@ -323,13 +367,13 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 
 .if defined(WITH_MAILDROP_LDA)
 RUN_DEPENDS+=	maildrop:${PORTSDIR}/mail/maildrop
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/maildrop -d $$u'
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/maildrop'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
 
 .if defined(WITH_PROCMAIL_LDA)
 RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/procmail -d $$u'
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/procmail'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
 
@@ -349,9 +393,9 @@ DSPAM_MODE=	4511
 
 .if defined(WITH_POSTFIX_MBC)
 DSPAM_MODE=	4511
-SED_SCRIPT+=	-e 's,%%POSTFIX_MBC%%,,g'
+#_SED_SCRIPT+=	-e 's,%%POSTFIX_MBC%%,,g'
 .else
-SED_SCRIPT+=	-e '/%%POSTFIX_MBC%%/D'
+#_SED_SCRIPT+=	-e '/%%POSTFIX_MBC%%/D'
 .endif
 
 .if defined(WITH_QMAIL)
@@ -374,13 +418,13 @@ CONFIGURE_ARGS+=--enable-user-logging
 USE_PERL5_RUN=	yes
 PLIST_SUB+=	CGI=""
 CGI_PATH?=	${PREFIX}/www/vhosts/dspam
-SED_SCRIPT+=	-e 's,%%CGI%%,,g'
-SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
-#SED_FILES=      ${LS} ${WRKSRC}/cgi/*.pl
-#SED_FILES+=     ${LS} $PWRKSRC}/cgi/*.cgi
+_SED_SCRIPT+=	-e 's,%%CGI%%,,g'
+_SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
+#SED_FILES=	${LS}  ${WRKSRC}/cgi/*.pl
+#SED_FILES+=	${LS} $PWRKSRC}/cgi/*.cgi
 .else
 PLIST_SUB+=	CGI="@comment "
-SED_SCRIPT+=	-e '/%%CGI%%/D'
+_SED_SCRIPT+=	-e '/%%CGI%%/D'
 .endif
 
 MAN1=	dspam.1 dspam_clean.1 dspam_corpus.1 dspam_dump.1 dspam_merge.1 \
@@ -395,21 +439,22 @@ MLINKS+=	libdspam.3 dspam_getsource.3
 MLINKS+=	libdspam.3 dspam_destroy.3
 MLINKS+=	libdspam.3 dspam_detach.3
 
-DOCS=	CHANGELOG LICENSE README README.FreeBSD README.courier README.exim \
-	README.pop3filter README.postfix README.qmail README.sendmail \
-	RELEASE.NOTES
+_DOCS=	CHANGELOG LICENSE README README.FreeBSD RELEASE.NOTES UPGRADING
+_DOCSL=	appliance.txt exim.txt ora_drv.txt pgsql_drv.txt postfix.txt \
+	sendmail.txt courier.txt mysql_drv.txt pop3filter.txt qmail.txt \
+	sqlite_drv.txt
 
 .ifndef(MAINT)
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
-	@${GREP} -B 1 -A ${UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
+	@${GREP} -B 1 -A ${_UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} ""
-.else	# maintainer only
+	@sleep 5
+.else # maintainer only
 post-fetch:
 .	ifndef(STOP)
-.		include "/root/ports/upd"
+#.		include "/root/ports/upd"
 .	endif
 .endif
 
@@ -431,6 +476,7 @@ pre-extract:
 		@${ECHO_CMD} "installed in other place that this installation's default"
 		@${ECHO_CMD} "${PREFIX}/www/vhosts/dspam"
 .	endif
+	@${ECHO_CMD} "Define WITHOUT_DAEMON if not using OPTIONS and do not want daemon."
 	@${ECHO_CMD} ""
 	@sleep 5
 
@@ -438,7 +484,7 @@ pre-extract:
 	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
 	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
 	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT WHITELIST \
-	POSTGRESQL73 POSTGRESQL74 ORACLE
+	POSTGRESQL73 POSTGRESQL74
 .	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "******************************************************************"
@@ -450,10 +496,7 @@ pre-extract:
 	@${ECHO_CMD} "You shold always read ${PORTSDIR}/UPDATING before installing/updating"
 	@${ECHO_CMD} "any port. Please remove/adjust your pkgtools.conf, environment and"
 	@${ECHO_CMD} "your make command-line and/or do 'make rmconfig' as appropiate."
-	@${ECHO_CMD} "But before read ${FILESDIR}/UPDATING"
-	@${ECHO_CMD} "as a lot of things have changed, notably the majority of"
-	@${ECHO_CMD} "compile-time options can/must now be set in"
-	@${ECHO_CMD} "${PREFIX}/etc/dspam.conf"
+	@${ECHO_CMD} "But before read ${FILESDIR}/UPDATING as a lot of things have changed."
 	@${ECHO_CMD} "******************************************************************"
 	@${ECHO_CMD} "******************************************************************"
 	@${ECHO_CMD} ""
@@ -465,12 +508,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTNAME%%|${PORTNAME}|; \
 		s|%%PKGNAME%%|${PKGNAME}|; s|%%MAINTAINER%%|${MAINTAINER}|; \
 		s|%%LIBTOOLFLAGS%%|${LIBTOOLFLAGS}|g; \
-		s|-ldb-4.1|-ldb41|g;' ${WRKSRC}/configure
+		s|-ldb-4.1|-ldb41|g;'  ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
-	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' ${WRKSRC}/tools.mysql_drv/purge.sql
-	@${REINPLACE_CMD} -e 's|WHERE CURRENT_DATE - created_on > 14;|WHERE CURRENT_DATE - created_on > ${SIGNATURE_LIFE};|' ${WRKSRC}/tools.pgsql_drv/purge.sql
-	@${REINPLACE_CMD} -e 's|where SYSDATE-created_on > 14|where SYSDATE-created_on > ${SIGNATURE_LIFE};|' ${WRKSRC}/tools.ora_drv/purge.sql
-	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|" ${WRKSRC}/tools.sqlite_drv/purge.sql
+	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|'  ${WRKSRC}/src/tools.mysql_drv/purge.sql
+	@${REINPLACE_CMD} -e 's|WHERE CURRENT_DATE - created_on > 14;|WHERE CURRENT_DATE - created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.pgsql_drv/purge.sql
+	@${REINPLACE_CMD} -e 's|where SYSDATE-created_on > 14|where SYSDATE-created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.ora_drv/purge.sql
+	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge.sql
+.if defined(WITH_DAEMON)
+	@${CP} ${FILESDIR}/dspam.rc ${WRKSRC}
+	@${REINPLACE_CMD} ${_SED_RC_SCRIPT} ${WRKSRC}/dspam.rc
+.endif
 
 pre-configure:
 	@${ECHO_CMD}
@@ -498,23 +547,36 @@ pre-configure:
 	@${ECHO_CMD} "You need MySQL or Postgres for preferences extension"
 	@${FALSE}
 .endif
+.if defined(WITH_DAEMON) && !( defined(USE_MYSQL) || \
+	defined(WITH_POSTGRESQL) )
+	@${ECHO_CMD} "You need MySQL or Postgres for Daemon mode, because multithreading support is needed"
+	@${FALSE}
+.endif
 .if defined(WITH_USER_HOMEDIR) && defined(WITH_CGI)
 	@${ECHO_CMD} "USER_HOMEDIR and CGI are incopatible"
 	@${FALSE}
 .endif
 
 post-install:
-	${CP} ${WRKSRC}/dspam.conf ${WRKSRC}/dspam.conf.sample
-	cd ${WRKSRC}/ && \
+	${CP} ${WRKSRC}/src/dspam.conf ${WRKSRC}/src/dspam.conf.sample
+	cd ${WRKSRC}/src/ && \
 		${INSTALL} -o ${DSPAM_OWNER} -g ${DSPAM_GROUP} -m 0640 \
-			 dspam.conf.sample ${PREFIX}/etc
-#	@${MKDIR} ${LOG_DIR}
-#	@${MKDIR} ${DSPAM_HOME}
+			dspam.conf.sample ${PREFIX}/etc
+.if defined(WITH_DAEMON)
+	${INSTALL_SCRIPT} ${WRKSRC}/dspam.rc ${RC_DIR}/dspam${RC_SUFX}
+.endif
+
+########
+# stupid hack until I figure out where/how to patch
+	@${MKDIR} ${PREFIX}/libdata/pkgconfig
+	@${MV} ${PREFIX}/lib/pkgconfig/dspam.pc ${PREFIX}/libdata/pkgconfig/dspam.pc
+	${TEST} `ls -1 ${PREFIX}/lib/pkgconfig | wc -l` -eq 0 && \
+		${RM} -R ${PREFIX}/lib/pkgconfig || true
 
 .if defined(USE_MYSQL)
 	@${MKDIR} ${EXAMPLESDIR}/mysql
-	cd ${WRKSRC}/tools.mysql_drv && \
-		${INSTALL_DATA} README mysql_objects-space.sql \
+	cd  ${WRKSRC}/src/tools.mysql_drv && \
+		${INSTALL_DATA} mysql_objects-space.sql \
 			mysql_objects-speed.sql purge.sql \
 			virtual_users.sql mysql_objects-4.1.sql \
 			purge-4.1.sql neural.sql  ${EXAMPLESDIR}/mysql
@@ -523,18 +585,18 @@ post-install:
 .endif
 .if defined(WITH_POSTGRESQL)
 	@${MKDIR} ${EXAMPLESDIR}/pgsql
-	@cd ${WRKSRC}/tools.pgsql_drv && \
-		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/pgsql
+	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
+		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/pgsql
 .endif
-.if defined(WITH_SQLITE2)
+.if defined(HAVE_SQLITE)
 	@${MKDIR} ${EXAMPLESDIR}/sqlite
-	cd ${WRKSRC}/tools.sqlite_drv && \
-		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/sqlite
+	cd ${WRKSRC}/src/tools.sqlite_drv && \
+		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/sqlite
 .endif
 .if defined(WITH_ORACLE)
 	@${MKDIR} ${EXAMPLESDIR}/oracle
-	cd ${WRKSRC}/tools.ora_drv && \
-		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/oracle
+	cd ${WRKSRC}/src/tools.ora_drv && \
+		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/oracle
 .endif
 
 .if defined(WITH_CGI)
@@ -555,11 +617,12 @@ post-install:
 		${INSTALL_DATA} *.html ${CGI_PATH}/templates/
 .endif
 
-	@${SED} ${SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
+	@${SED} ${_SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	cd ${FILESDIR} && ${INSTALL_DATA} UPDATING ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${_DOCSL} ${DOCSDIR}
+	cd ${FILESDIR} && ${INSTALL_DATA} UPDATING ${DOCSDIR}/UPDATING
 .endif
 
 	@${MKDIR} -m ${DSPAM_HOME_MODE} ${DSPAM_HOME}

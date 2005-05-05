@@ -15,6 +15,23 @@ also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
+###########################################################################
+# dspam-3.4.5
+#
+
+This is the post-3.4 devel branch. A lot of things have changed and your
+existing dspam.conf won't probably work anymore. Please compare it with the
+dspam.conf.sample located in the same etc/ directory.
+
+Most notable addition is the SMTP delivery which together with "standard"
+inbound LMTP make a very nice content and light (e.g. it's the fastest setup
+I've had so far) filter.
+
+Database structure is roughly the same but you may wish to check your
+existing database structure with the *.sql corresponding to you database
+driver from EXAMPLESDIR (Mysql 4.1.x is now default as it's _much_ faster).
+Please read carefully distributed docs like README and UPGRADING.
+
 #############################################################################
 # dspam-3.2.8
 #
