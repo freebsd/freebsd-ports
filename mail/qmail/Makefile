@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmail
-PORTVERSION?= 	${QMAIL_VERSION}
+PORTVERSION?=	${QMAIL_VERSION}
 PORTREVISION?=	3
 CATEGORIES=	mail
 MASTER_SITES+=	http://cr.yp.to/software/ \
@@ -15,6 +15,9 @@ MASTER_SITES+=	http://cr.yp.to/software/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
+
+MAINTAINER?=	freebsd@galle.com.br
+COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
 # qmail-* skeleton ports including this port may not want
 # its patches
@@ -34,10 +37,19 @@ PATCH_SITES+=	http://david.acz.org/software/:sendmail_flagf
 PATCHFILES+=	sendmail-flagf.patch:sendmail_flagf
 .endif # MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER
 
-PATCH_SITES+=  ${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,smtp_auth_tls,tls/}
-PATCH_SITE_SUBDIR+=    lioux/:local,dns,ldap,mysql,smtp_auth_tls,tls
+.if !defined(MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER)
+# This patch changes qmail-remote to skip over MX servers that greet with
+# codes 400 to 499 and to bounce mail when any MX server that qmail tries
+# greets with a code 500 to 599.
+# Created by Matthias Andree
+PATCH_SITES+=	http://www-dt.e-technik.uni-dortmund.de/~ma/qmail/:rfc2821
+PATCHFILES+=	patch-qmail-1.03-rfc2821.diff:rfc2821
+.endif # MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER
 
-MASTER_SITE_QMAIL+= \
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,smtp_auth_tls,tls/}
+PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,smtp_auth_tls,tls
+
+MASTER_SITE_QMAIL+=	\
 	http://qmail.geto.net/%SUBDIR%/ \
 	http://qmail.palomine.net/%SUBDIR%/ \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
@@ -114,7 +126,7 @@ PATCH_SITES+=	${MASTER_SITE_QMAIL}
 # MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER
 #
 .if defined(WITH_QMAILQUEUE_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
-PATCHFILES+= 	qmailqueue-patch
+PATCHFILES+=	qmailqueue-patch
 .endif # WITH_QMAILQUEUE_PATCH && !MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER
 .if defined(WITH_BIG_TODO_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
 PATCHFILES+=	big-todo.103.patch
@@ -126,10 +138,7 @@ PATCHFILES+=	big-concurrency.patch
 PATCHFILES+=	outgoingip.patch
 .endif # WITH_OUTGOINGIP_PATCH && !MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER
 
-MAINTAINER?=	freebsd@galle.com.br
-COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
-
-NO_PACKAGE=	djb\'s packaging license does not allow non-standard\
+NO_PACKAGE=	djb's packaging license does not allow non-standard\
 		qmail binary distributions
 
 # A normal qmail installation puts everything into /var/qmail/.
@@ -142,17 +151,6 @@ QMAIL_VERSION?=		1.03
 .if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
 .endif # WITH_BIG_CONCURRENCY_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
-
-# Some configuration files we use for installing the port
-MAILER_CONF_FILE?=	/etc/mail/mailer.conf
-MAKE_CONF_FILE?=	/etc/make.conf
-RC_CONF_FILE?=	/etc/rc.conf
-# Some programs we use when building/installing the port
-FMT?=		/usr/bin/fmt
-HEAD?=		/usr/bin/head
-MAILQ?=		/usr/bin/mailq
-NEWALIASES?=	/usr/bin/newaliases
-SENDMAIL?=	/usr/sbin/sendmail
 
 ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
@@ -193,13 +191,13 @@ DOCFILES+=	${WRKSRC}/FAQ ${WRKSRC}/UPGRADE ${WRKSRC}/SENDMAIL \
 		${WRKSRC}/PIC.relaygood ${WRKSRC}/PIC.rem2local
 
 # More files normally installed with from hier.c
-BOOTFILES=	${WRKSRC}/home ${WRKSRC}/home+df ${WRKSRC}/proc \
-		${WRKSRC}/proc+df ${WRKSRC}/binm1 ${WRKSRC}/binm1+df \
-		${WRKSRC}/binm2 ${WRKSRC}/binm2+df ${WRKSRC}/binm3 \
-		${WRKSRC}/binm3+df
+BOOTFILES=	home home+df proc proc+df binm1 binm1+df \
+		binm2 binm2+df binm3 binm3+df
 
 # Supplied by Stuart Henderson <stuart@internationalschool.co.uk>
-BOOTFILES+=	${FILESDIR}/maildir
+BOOTFILES+=	maildir
+
+SCRIPTS+=	enable-qmail
 
 CONFIGUREPROGS=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
 		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
@@ -212,7 +210,7 @@ DOCDIR=	doc
 .endif
 
 NO_MTREE=	yes
-USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
 
 .if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>
@@ -265,7 +263,7 @@ post-pre-fetch:
 	@${ECHO_MSG} ""
 .endif
 
-post-patch: thereal-post-patch slaveport-post-patch post-post-patch
+post-patch: slaveport-post-patch post-post-patch
 
 # Yet anther ugly hack (used by qmail-* skeleton ports)
 # Permits them to define local targets without braking everything
@@ -275,14 +273,33 @@ slaveport-post-patch:
 .endif
 
 post-post-patch:
-	@${PERL} -pi -ne "s!/var/qmail!${PREFIX}!;s!/usr/local/!${LOCALBASE}/!" ${WRKSRC}/Makefile
+	@${SED} 's!%%PREFIX%%!${PREFIX}!g; \
+	         s!%%ECHO_CMD%%!${ECHO_CMD}!g' \
+	         ${FILESDIR}/bootfiles.sed.in > \
+	         ${WRKDIR}/bootfiles.sed
+.for i in ${BOOTFILES}
+	@if  [ -f ${WRKSRC}/${i}.sh ] ; \
+	then \
+		${SED} -f ${WRKDIR}/bootfiles.sed ${WRKSRC}/$i.sh > ${WRKDIR}/${i} ; \
+	elif [ -f ${FILESDIR}/${i} ] ; \
+	then \
+		${SED} -f ${WRKDIR}/bootfiles.sed ${FILESDIR}/$i > ${WRKDIR}/${i} ; \
+	fi
+.endfor
+	@${MKDIR} ${WRKDIR}/scripts
+	@${SED} "s!%%PREFIX%%!${PREFIX}!g; s!%%DOCDIR%%!${DOCDIR}!g" \
+		${FILESDIR}/enable-qmail.in > \
+		${WRKDIR}/scripts/enable-qmail
+	@${SED} s!/var/qmail/!${PREFIX}/!g ${FILESDIR}/mailer.conf.sample > \
+		${WRKDIR}/mailer.conf.sample
+	@${REINPLACE_CMD} "s!/var/qmail!${PREFIX}!;s!/usr/local/!${LOCALBASE}/!" ${WRKSRC}/Makefile
 
 # If you want to change the qmail users, they must be changed in both
 # work/*/conf-users and pkg/INSTALL.
 
 do-configure:
 	@# Create/Check the necessary groups/users
-	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL}
+	@PKG_PREFIX=${PREFIX} ${PKGINSTALL}
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
@@ -297,7 +314,7 @@ do-configure:
 
 do-install:
 	@# Check again, just in case (ideally should error if not found)
-	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL}
+	@PKG_PREFIX=${PREFIX} ${PKGINSTALL}
 	@${MKDIR} ${PREFIX}/${DOCDIR} ${PREFIX}/configure
 	@cd ${WRKSRC} ; ./install
 	${INSTALL_PROGRAM} ${CONFIGUREPROGS} ${PREFIX}/configure
@@ -325,137 +342,18 @@ do-install:
 	@${TOUCH} ${PREFIX}/alias/.qmail-${i}
 .endfor
 	@# This is not part of qmail proper, hence the 2nd class citizenship
-	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/${DOCDIR}
 .if !defined(WITH_PRESERVE_CONFIG_FILES)
 	@cd ${PREFIX}/configure ; ./config
 .endif
+	@${MKDIR} ${PREFIX}/scripts
+	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/scripts
+.for script in ${SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKDIR}/scripts/${script} ${PREFIX}/scripts
+.endfor
 	@${MKDIR} ${LOCALBASE}/etc/rc.d
 	@${LN} -sf ${PREFIX}/rc ${LOCALBASE}/etc/rc.d/qmail.sh
-	@${ECHO}
+	@${ECHO_CMD}
 	@${SED} s!/var/qmail!${PREFIX}!g ${PKGMESSAGE} | ${FMT}
+	@${ECHO_CMD}
 
-# hack to allow slave ports to include bsd.port.pre.mk and then this file
-.if defined(_PREMKINCLUDED)
 .include <bsd.port.post.mk>
-.else
-.include <bsd.port.mk>
-.endif
-
-# Ugh...  ;-)
-thereal-post-patch:
-.for i in ${BOOTFILES}
-	@if  [ -f ${i}.sh ] ; \
-	then \
-		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO_CMD} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i.sh > ${WRKDIR}/${i:T} ; \
-	elif [ -f ${i} ] ; \
-	then \
-		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO_CMD} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i > ${WRKDIR}/${i:T} ; \
-	fi
-.endfor
-	@${SED} s!/var/qmail/!${PREFIX}/!g ${FILESDIR}/mailer.conf.sample > \
-		${WRKDIR}/mailer.conf.sample
-
-# Double Ugh... ;-)
-${WRKDIR}/.thereal_disable_sendmail_done:
-	@if [ ! -d ${WRKDIR} ]; \
-	then \
-		${MKDIR} ${WRKDIR} ; \
-	fi
-
-# I would like some input on the targets below. Only constructive ones
-# please. :)
-# based on shells/pdksh /etc/shells update PLIST.
-thereal-disable-sendmail: ${WRKDIR}/.thereal_disable_sendmail_done ${RC_CONF_FILE}
-	@if [ -f ${RC_CONF_FILE} ]; \
-	then \
-		${CP} ${RC_CONF_FILE} ${RC_CONF_FILE}.bak && \
-			${GREP} -v sendmail_enable ${RC_CONF_FILE}.bak > \
-				${RC_CONF_FILE} && \
-			${TOUCH} ${WRKDIR}/.thereal_disable_sendmail_done ; \
-	else \
-		${ECHO_MSG} "===> ERROR: YOU DO NOT HAVE A VALID ${RC_CONF_FILE}" ; \
-		${ECHO_MSG} "===> FIX this and try again" ; \
-		${FALSE} ; \
-	fi
-
-disable-sendmail: thereal-disable-sendmail
-	@${ECHO_MSG} "===> I hope you know what you are doing:"
-	@${ECHO_MSG} "===> You just told your system to not"
-	@${ECHO_MSG} "===> automaticaly start sendmail on your"
-	@${ECHO_MSG} "===> next startup."
-	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\"NONE\" to rc.conf)"
-	@if [ -f ${RC_CONF_FILE} ]; \
-	then \
-		${ECHO_CMD} sendmail_enable=\"NONE\" >> ${RC_CONF_FILE} ; \
-	fi
-
-enable-sendmail: thereal-disable-sendmail
-	@${ECHO_MSG} "===> I hope you know what you are doing:"
-	@${ECHO_MSG} "===> You just told your system to"
-	@${ECHO_MSG} "===> automaticaly start sendmail on your"
-	@${ECHO_MSG} "===> next startup."
-	@${ECHO_MSG} "===> (i.e., removed sendmail_enable=\"NONE\" from rc.conf)"
-
-enable-qmail: install disable-sendmail
-	@if [ -f ${MAILER_CONF_FILE} ]; \
-	then \
-		${CP} ${MAILER_CONF_FILE} ${MAILER_CONF_FILE}.bak && \
-		${CP} ${WRKDIR}/mailer.conf.sample ${MAILER_CONF_FILE} ; \
-	else \
-		${ECHO_MSG} "===> ERROR: YOU DO NOT HAVE A VALID ${MAILER_CONF_FILE}" ; \
-		${ECHO_MSG} "===> FIX this and try again" ; \
-		${ECHO_MSG} "===> or, do \"make force_enable_qmail\" if you are sure" ; \
-		${ECHO_MSG} "===> you want this port replacing some binaries" ; \
-		${ECHO_MSG} "===> IF THIS FEELS UNEASY, read ${PREFIX}/${DOCDIR}/REMOVE.sendmail and do it manually" ; \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "=======> VERY IMPORTANT <=======" ; \
-		${ECHO_MSG} "===> One side issue is that if you do replace them," ; \
-		${ECHO_MSG} "===> you really should consider ADDING \"NO_SENDMAIL=true\"" ; \
-		${ECHO_MSG} "===> to your ${MAKE_CONF_FILE} if you do \"make world\"." ; \
-		${ECHO_MSG} "===> Otherwise, \"make world\" will \"fix\" your sendmail" ; \
-		${ECHO_MSG} "===> installation breaking your qmail one." ; \
-		${ECHO_MSG} "===> Read the FreeBSD Handbook section on \"make world\"" ; \
-		${ECHO_MSG} "===> if you do not know what I am talking about." ; \
-		${ECHO_MSG} "===> Check http://www.FreeBSD.org/ for the most" ; \
-		${ECHO_MSG} "===> updated copy of the Handbook." ; \
-	fi
-	@${ECHO_MSG} "===> Do not forget to choose an appropriate qmail startup"
-	@${ECHO_MSG} "===> script. Go through ${PREFIX}/boot, choose one"
-	@${ECHO_MSG} "===> and copy the chosen script as ${PREFIX}/rc"
-	@${ECHO_MSG} "===> For example, \"cp ${PREFIX}/boot/proc+df ${PREFIX}/rc\""
-
-# taken from mail/postfix idea
-force-enable-qmail: install disable-sendmail
-	@${ECHO_MSG} "===> Replacing sendmail"
-	@if [ -e ${SENDMAIL} ]; then \
-		${MV} -f ${SENDMAIL} ${SENDMAIL}.OFF && \
-		${CHMOD} 0 ${SENDMAIL}.OFF; \
-	fi
-	@if [ -e ${PREFIX}/bin/sendmail ]; then \
-		${LN} -sf ${PREFIX}/bin/sendmail ${SENDMAIL}; \
-	fi
-	@${ECHO_MSG} "===> Replacing mailq"
-	@if [ -e ${MAILQ} ]; then \
-		${MV} -f ${MAILQ} ${MAILQ}.OFF && \
-		${CHMOD} 0 ${MAILQ}.OFF; \
-	fi
-	@if [ -e ${PREFIX}/bin/qmail-qread ]; then \
-		${LN} -sf ${PREFIX}/bin/qmail-qread ${MAILQ}; \
-	fi
-	@${ECHO_MSG} "===> Replacing newaliases"
-	@if [ -e ${NEWALIASES} ]; then \
-		${MV} -f ${NEWALIASES} ${NEWALIASES}.OFF && \
-		${CHMOD} 0 ${NEWALIASES}.OFF; \
-	fi
-	@if [ -e ${PREFIX}/bin/newaliases ]; then \
-		${LN} -sf ${PREFIX}/bin/newaliases ${NEWALIASES}; \
-	fi
-
-# The users are instructed (in PORT_NOTES) to install ${QUEUE_DIR}/rc
-# themselves.  Each /var/qmail/ should have its own rc.  On many machines,
-# /usr/local/ is nfs mounted and /var/qmail/ is local.  An individual
-# machine may want/not-want qmail.  Pity we can't add a dir to local_startup
-# from here.
-
-# Wouldn't hurt to provide an "enable_qmail" and "disable_sendmail" target
-# that do 1) and 2) above and disable the existing sendmail, respectively.

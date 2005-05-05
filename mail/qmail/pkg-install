@@ -1,106 +1,129 @@
-#!/usr/bin/perl
-#
+#!/bin/csh -f
 
-# The post-install script
-if ($ARGV[1] eq "POST-INSTALL") {
-	# Build the queue directory structure
-	# Some of these directories will have been created during the
-	# pkg_add(1) process.  Hopefully this will at least make sure
-	# that they have the right permissions and owners.
+# Author : Marcos Tischer Vallim
+# E-Mail : tischer@gmail.com
+# Date   : Tue Mar 22 00:40:45 BRT 2005
 
-	system ("$ENV{PKG_PREFIX}/configure/install x");
-	system ("cd $ENV{PKG_PREFIX}/configure && ./config");
+# Variables
+set pw = '/usr/sbin/pw';
+set touch = '/usr/bin/touch';
+set sed = '/usr/bin/sed';
+set null = '/dev/null';
 
-	utime time, time, "$ENV{PKG_PREFIX}/alias/.qmail-postmaster", "$ENV{PKG_PREFIX}/alias/.qmail-root", "$ENV{PKG_PREFIX}/alias/.qmail-mailer-daemon";
+if ($uid != 0) then
+	echo "It is necessary to add missing qmail users/groups at";
+	echo "this stage.  Please either add them manually or retry";
+	echo "as root.";
+	exit 1;
+endif
+
+if (! -x "$pw") then
+	echo "This system looks like a pre-2.2 version of FreeBSD.  We see that it";
+	echo "is missing the "pw" utility.  We need this utility.  Please get and";
+	echo "install it, and try again.  You can get the source from:";
+	echo "";
+	echo "  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz";
+	echo "";
+	echo "No $pw";
+	exit 1;
+endif
+
+set groups  = (qmail qnofiles);
+set gids    = (82 81);
+set users   = (alias qmaild qmaill qmailp qmailq qmailr qmails);
+set users_g = (qnofiles qnofiles qnofiles qnofiles qmail qmail qmail);
+set uids    = (81 82 83 84 85 86 87);
+set doguid  = 0;
+
+if ($#argv) then
+	if ($argv[1] == "POST-INSTALL") then
+		${PKG_PREFIX}/configure/install x;
+		cd ${PKG_PREFIX}/configure && ./config;
+
+		$touch "${PKG_PREFIX}/alias/.{qmail-postmaster,qmail-root,qmail-mailer-daemon}";
+
+		if ($status) then
+			echo "Failed to create files :";
+			echo "  ${PKG_PREFIX}/alias/.qmail-postmaster";
+			echo "  ${PKG_PREFIX}/alias/.qmail-root";
+			echo "  ${PKG_PREFIX}/alias/.qmail-mailer-daemon";
+			exit 1;
+		endif
+
+		exit 0;
+	endif
+
+	if ($argv[1] == "PRE-INSTALL") then
+		set doguid = 1;
+	endif
+endif
+
+if (${?PACKAGE_BUILDING}) then
+	set doguid = 1;
+endif
+
+if ($doguid) then
+	set k = 1;
+	foreach group ($groups) {
+		set chkgid = (`$pw groupshow $group | $sed -e "s/:/ /"`); 
+		if ($chkgid[3] != $gids[$k]) then
+			echo "Group '$group' should have gid '$gids[$k]'";
+			exit 1;
+		endif
+
+		@ k = $k + 1;
+	}
+
+	set k = 1;
+	foreach user ($users) {
+		set chkuid = (`$pw usershow $user | $sed -e "s/:/ /"`); 
+		if ($chkuid[3] != $uids[$k]) then
+			echo "User '$user' should have uid '$uids[$k]'";
+			exit 1;
+		endif
+
+		@ k = $k + 1;
+	}
+
 	exit 0;
-}
+endif
 
-@groups = ("qmail", "qnofiles");
-%users = ('qmaild', "qnofiles", 'qmaill', "qnofiles", 'qmailp', "qnofiles",
-          'qmailq', "qmail", 'qmailr', "qmail", 'qmails', "qmail");
-# daemon, local, pop, queue, remote, deliver, respectively.
-# alias is a special case above...
-%gids = ("qmail", 82, "qnofiles", 81);
-%uids = ('alias', 81, 'qmaild', 82, 'qmaill', 83, 'qmailp', 84, 'qmailq', 85,
-         'qmailr', 86, 'qmails', 87);
+set k = 1;
+foreach group ($groups)
+	$pw groupshow $group >& $null;
 
-if ($ENV{PACKAGE_BUILDING} || $ARGV[1] eq "PRE-INSTALL") {
-	$doguid=1;  # Make sure we get the assigned guids.
-}
+	if ($status) then
+		$pw groupadd $group -g $gids[$k];
 
-foreach $group (@groups) {
-	if (! getgrnam ($group)) {
-		do checkrpw;  # May exit
+		if ($status) then
+			echo "Failed to add group '$group' as gid '$gids[$k]'";
+			exit 1;
+		endif
+	endif
 
-		$x = "-g $gids{$group}";
-		$result = system ("/usr/sbin/pw groupadd $group $x");
-		if ($result) {
-			die "Failed to add group $group as gid $gids{$group}\n";
-		}
-	}
-}
+	@ k = $k + 1;
+end
 
-if (! getpwnam ("alias")) {
-	do checkrpw;  # May exit
+set k = 1;
+foreach user ($users)
+	$pw usershow $user >& $null;
 
-	$x = "-u $uids{'alias'}";
-	$result = system ("/usr/sbin/pw useradd alias -g qnofiles -d \"$ENV{PKG_PREFIX}/alias\" -s /nonexistent $x");
-	if ($result) {
-		die "Failed to add user alias as uid $uids{'alias'}\n";
-	}
-}
+	if ($status) then
+		if ($user == "alias") then
+			set home = ${PKG_PREFIX}/alias;
+		else
+			set home = ${PKG_PREFIX};
+		endif
 
-foreach $user (keys %users) {
-	if (! getpwnam ($user)) {
-		do checkrpw;  # May exit
+		$pw useradd $user -g $users_g[$k] -d $home -s /nonexistent -u $uids[$k];
 
-		$x = "-u $uids{$user}";
-		$result = system ("/usr/sbin/pw useradd $user -g $users{$user} -d \"$ENV{PKG_PREFIX}\" -s /nonexistent $x");
-		if ($result) {
-			die "Failed to add user $user as uid $uids{$user}\n";
-		}
-	}
-}
+		if ($status) then
+			echo "Failed to add user '$user' as uid '$uids[$k]'";
+			exit 1;
+		endif
+	endif
 
-# Check that all gids/uids are as they should be...
-# If we are being installed as a package...
-if ($doguid) {
-	foreach $group (@groups) {
-		if (getgrnam($group) != $gids{$group}) {
-			die "Group $group should have gid $gids{$group}\n";
-		}
-	}
-
-	foreach $user (keys %users) {
-		if (getpwnam($user) != $uids{$user}) {
-			die "User $user should have uid $uids{$user}\n";
-		}
-	}
-	if (getpwnam("alias") != $uids{"alias"}) {
-		die "User alias should have uid $uids{'alias'}\n";
-	}
-}
+	@ k = $k + 1;
+end
 
 exit 0;
-
-sub checkrpw {
-	if (! -x "/usr/sbin/pw") {
-		print <<'EOM';
-This system looks like a pre-2.2 version of FreeBSD.  We see that it
-is missing the "pw" utility.  We need this utility.  Please get and
-install it, and try again.  You can get the source from:
-
-  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
-
-EOM
-		die "No /usr/sbin/pw";
-	}
-
-	if ($> != 0) {
-		print "It is necessary to add missing qmail users/groups at";
-		print "this stage.  Please either add them manually or retry";
-		print "as root.";
-		# Let pw(1) signal the failure so the user can see which
-		# group/user is actually missing.
-	}
-}

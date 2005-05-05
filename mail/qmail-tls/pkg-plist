@@ -1,6 +1,74 @@
+bin/bouncesaying
+bin/condredirect
+bin/datemail
+bin/elq
+bin/except
+bin/forward
+bin/maildir2mbox
+bin/maildirmake
+bin/maildirwatch
+bin/mailsubj
+bin/pinq
+bin/predate
+bin/preline
+bin/qail
+bin/qbiff
+bin/qmail-clean
+bin/qmail-getpw
+bin/qmail-inject
+bin/qmail-local
+bin/qmail-lspawn
+bin/qmail-newmrh
+bin/qmail-newu
+bin/qmail-pop3d
+bin/qmail-popup
+bin/qmail-pw2u
+bin/qmail-qmqpc
+bin/qmail-qmqpd
+bin/qmail-qmtpd
+bin/qmail-qread
+bin/qmail-qstat
+bin/qmail-queue
+bin/qmail-remote
+bin/qmail-rspawn
+bin/qmail-send
+bin/qmail-showctl
+bin/qmail-smtpd
+bin/qmail-start
+bin/qmail-tcpok
+bin/qmail-tcpto
+bin/qreceipt
+bin/qsmhook
+bin/sendmail
+bin/splogger
+bin/tcp-env
+boot/binm1
+boot/binm1+df
+boot/binm2
+boot/binm2+df
+boot/binm3
+boot/binm3+df
+boot/home
+boot/home+df
+boot/maildir
+boot/proc
+boot/proc+df
+@comment This port installs the following manually (ie. not through qmail-hier)
+configure/config
+configure/config-fast
+configure/dnsfq
+configure/dnsip
+configure/dnsptr
+configure/hostname
+configure/install
+configure/ipmeprint
+scripts/enable-qmail
+scripts/mkaliasdir
+%%PORTDOCS%%%%DOCDIR%%/BLURB
+%%PORTDOCS%%%%DOCDIR%%/BLURB2
+%%PORTDOCS%%%%DOCDIR%%/BLURB3
+%%PORTDOCS%%%%DOCDIR%%/BLURB4
 %%PORTDOCS%%%%DOCDIR%%/FAQ
-%%PORTDOCS%%%%DOCDIR%%/UPGRADE
-%%PORTDOCS%%%%DOCDIR%%/SENDMAIL
 %%PORTDOCS%%%%DOCDIR%%/INSTALL
 %%PORTDOCS%%%%DOCDIR%%/INSTALL.alias
 %%PORTDOCS%%%%DOCDIR%%/INSTALL.ctl
@@ -8,10 +76,7 @@
 %%PORTDOCS%%%%DOCDIR%%/INSTALL.maildir
 %%PORTDOCS%%%%DOCDIR%%/INSTALL.mbox
 %%PORTDOCS%%%%DOCDIR%%/INSTALL.vsm
-%%PORTDOCS%%%%DOCDIR%%/TEST.deliver
-%%PORTDOCS%%%%DOCDIR%%/TEST.receive
-%%PORTDOCS%%%%DOCDIR%%/REMOVE.sendmail
-%%PORTDOCS%%%%DOCDIR%%/REMOVE.binmail
+%%PORTDOCS%%%%DOCDIR%%/INTERNALS
 %%PORTDOCS%%%%DOCDIR%%/PIC.local2alias
 %%PORTDOCS%%%%DOCDIR%%/PIC.local2ext
 %%PORTDOCS%%%%DOCDIR%%/PIC.local2local
@@ -21,142 +86,24 @@
 %%PORTDOCS%%%%DOCDIR%%/PIC.relaybad
 %%PORTDOCS%%%%DOCDIR%%/PIC.relaygood
 %%PORTDOCS%%%%DOCDIR%%/PIC.rem2local
-%%PORTDOCS%%%%DOCDIR%%/TLS.readme
-boot/home
-boot/home+df
-boot/proc
-boot/proc+df
-boot/binm1
-boot/binm1+df
-boot/binm2
-boot/binm2+df
-boot/binm3
-boot/binm3+df
-
-@group qmail
-@mode 04711
-@comment *** NOTE different owner
-@owner qmailq
-bin/qmail-queue
-@owner
-@mode 0700
-bin/qmail-lspawn
-@mode 0700
-bin/qmail-start
-@mode 0711
-bin/qmail-getpw
-@mode 0711
-bin/qmail-local
-@mode 0711
-bin/qmail-remote
-@mode 0711
-bin/qmail-rspawn
-@mode 0711
-bin/qmail-clean
-@mode 0711
-bin/qmail-send
-@mode 0711
-bin/splogger
-@mode 0700
-bin/qmail-newu
-@mode 0700
-bin/qmail-newmrh
-@mode 0711
-bin/qmail-pw2u
-@mode 0755
-bin/qmail-inject
-@mode 0755
-bin/predate
-@mode 0755
-bin/datemail
-@mode 0755
-bin/mailsubj
-@mode 0755
-bin/qmail-showctl
-@mode 0755
-bin/qmail-qread
-@mode 0755
-bin/qmail-qstat
-@mode 0755
-bin/qmail-tcpto
-@mode 0755
-bin/qmail-tcpok
-@mode 0755
-bin/qmail-pop3d
-@mode 0711
-bin/qmail-popup
-@mode 0755
-bin/qmail-qmqpc
-@mode 0755
-bin/qmail-qmqpd
-@mode 0755
-bin/qmail-qmtpd
-@mode 0755
-bin/qmail-smtpd
-@mode 0755
-bin/sendmail
-@mode 0755
-bin/tcp-env
-@mode 0755
-bin/qreceipt
-@mode 0755
-bin/qsmhook
-@mode 0755
-bin/qbiff
-@mode 0755
-bin/forward
-@mode 0755
-bin/preline
-@mode 0755
-bin/condredirect
-@mode 0755
-bin/bouncesaying
-@mode 0755
-bin/except
-@mode 0755
-bin/maildirmake
-@mode 0755
-bin/maildir2mbox
-@mode 0755
-bin/maildirwatch
-@mode 0755
-bin/qail
-@mode 0755
-bin/elq
-@mode 0755
-bin/pinq
-
-@group
-@owner
-@mode
-
-@comment This port installs the following manually (ie. not through qmail-hier)
-configure/install
-configure/config
-configure/config-fast
-configure/dnsfq
-configure/hostname
-configure/dnsip
-configure/ipmeprint
-configure/dnsptr
-%%PORTDOCS%%%%DOCDIR%%/BLURB
-%%PORTDOCS%%%%DOCDIR%%/BLURB2
-%%PORTDOCS%%%%DOCDIR%%/BLURB3
-%%PORTDOCS%%%%DOCDIR%%/BLURB4
-%%PORTDOCS%%%%DOCDIR%%/INTERNALS
-%%PORTDOCS%%%%DOCDIR%%/SECURITY
-%%PORTDOCS%%%%DOCDIR%%/THOUGHTS
 %%PORTDOCS%%%%DOCDIR%%/PORT_NOTES
 %%PORTDOCS%%%%DOCDIR%%/PORT_NOTES_FreeBSD_40-RELEASE
+%%PORTDOCS%%%%DOCDIR%%/REMOVE.sendmail
+%%PORTDOCS%%%%DOCDIR%%/REMOVE.binmail
+%%PORTDOCS%%%%DOCDIR%%/SECURITY
+%%PORTDOCS%%%%DOCDIR%%/SENDMAIL
 %%PORTDOCS%%%%DOCDIR%%/SYSDEPS
+%%PORTDOCS%%%%DOCDIR%%/TEST.deliver
+%%PORTDOCS%%%%DOCDIR%%/TEST.receive
+%%PORTDOCS%%%%DOCDIR%%/THOUGHTS
+%%PORTDOCS%%%%DOCDIR%%/TLS.readme
+%%PORTDOCS%%%%DOCDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCDIR%%/mailer.conf.sample
-%%PORTDOCS%%%%DOCDIR%%/mkaliasdir
-boot/maildir
 %%PORTDOCS%%@dirrm %%DOCDIR%%
+@dirrm scripts
 @dirrm configure
 @dirrm boot
 @dirrm bin
-
 @unexec echo "1) If you are permanently removing qmail, you should also ``rm -Rf ${PKG_PREFIX}/alias ${PKG_PREFIX}/control ${PKG_PREFIX}/queue ${PKG_PREFIX}/users'' and remove the qmail users/groups." | /usr/bin/fmt
 @unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
-@unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. Go to mail/qmail portsdir and do a 'make enable-sendmail'" | /usr/bin/fmt
+@unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. You can do it just executing 'echo sendmail_enable=\"YES\" >> /etc/rc.conf" | /usr/bin/fmt

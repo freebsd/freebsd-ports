@@ -1,5 +1,5 @@
 --- orig/qmail-smtpd.c.patch	Sun Apr  3 15:51:55 2005
-+++ ./galle/qmail-smtpd.c.patch	Mon Apr  4 08:06:31 2005
++++ qmail-smtpd.c.patch	Mon Apr  4 08:06:31 2005
 @@ -1,8 +1,6 @@
 ---- qmail-smtpd.c.orig  1998-06-15
 -+++ qmail-smtpd.c       2005-04-03

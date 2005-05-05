@@ -1,27 +1,3 @@
-@group qmail
-@mode 04711
-@comment *** NOTE different owner
-@owner qmailq
-bin/qmail-queue
-@owner
-@mode 0700
-bin/qmail-badloadertypes
-bin/qmail-badmimetypes
-bin/qmail-lspawn
-bin/qmail-newmrh
-bin/qmail-newu
-bin/qmail-recipients
-bin/qmail-start
-@mode 0711
-bin/qmail-clean
-bin/qmail-getpw
-bin/qmail-local
-bin/qmail-pw2u
-bin/qmail-remote
-bin/qmail-rspawn
-bin/qmail-send
-bin/splogger
-@mode 0755
 bin/bouncesaying
 bin/condredirect
 bin/datemail
@@ -37,25 +13,38 @@ bin/predate
 bin/preline
 bin/qail
 bin/qbiff
+bin/qmail-badloadertypes
+bin/qmail-badmimetypes
+bin/qmail-clean
+bin/qmail-getpw
 bin/qmail-inject
+bin/qmail-local
+bin/qmail-lspawn
+bin/qmail-newmrh
+bin/qmail-newu
 bin/qmail-pop3d
 bin/qmail-popup
+bin/qmail-pw2u
 bin/qmail-qmqpc
 bin/qmail-qmqpd
 bin/qmail-qmtpd
 bin/qmail-qread
 bin/qmail-qstat
+bin/qmail-queue
+bin/qmail-recipients
+bin/qmail-remote
+bin/qmail-rspawn
+bin/qmail-send
 bin/qmail-showctl
 bin/qmail-smtpd
+bin/qmail-start
 bin/qmail-tcpok
 bin/qmail-tcpto
 bin/qreceipt
 bin/qsmhook
 bin/sendmail
+bin/splogger
 bin/tcp-env
-@group
-@owner
-@mode
 boot/binm1
 boot/binm1+df
 boot/binm2
@@ -76,6 +65,8 @@ configure/dnsptr
 configure/hostname
 configure/install
 configure/ipmeprint
+scripts/enable-qmail
+scripts/mkaliasdir
 scripts/qmail-alias2recipients
 scripts/qmail-pwd2recipients
 scripts/qmail-users2recipients
@@ -142,7 +133,6 @@ scripts/qmail-vpopmail2recipients
 %%PORTDOCS%%%%DOCDIR%%/conf-spamcontrol
 %%PORTDOCS%%%%DOCDIR%%/install_spamcontrol.sh
 %%PORTDOCS%%%%DOCDIR%%/mailer.conf.sample
-%%PORTDOCS%%%%DOCDIR%%/mkaliasdir
 %%PORTDOCS%%%%DOCDIR%%/tarpitcount
 %%PORTDOCS%%@dirrm %%DOCDIR%%
 @dirrm scripts
@@ -151,4 +141,4 @@ scripts/qmail-vpopmail2recipients
 @dirrm bin
 @unexec echo "1) If you are permanently removing qmail, you should also ``rm -Rf ${PKG_PREFIX}/alias ${PKG_PREFIX}/control ${PKG_PREFIX}/queue ${PKG_PREFIX}/users'' and remove the qmail users/groups." | /usr/bin/fmt
 @unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
-@unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. Go to mail/qmail portsdir and do a 'make enable-sendmail'" | /usr/bin/fmt
+@unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. You can do it just executing 'echo sendmail_enable=\"YES\" >> /etc/rc.conf" | /usr/bin/fmt
