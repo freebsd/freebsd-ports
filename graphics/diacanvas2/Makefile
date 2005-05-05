@@ -25,7 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 .if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
 post-patch:

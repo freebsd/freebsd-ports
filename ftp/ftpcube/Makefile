@@ -18,7 +18,8 @@ COMMENT=	A graphical FTP Client
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 .if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
 USE_REINPLACE=	yes
