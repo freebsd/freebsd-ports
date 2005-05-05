@@ -1,24 +1,24 @@
---- Docs/sample/gnokiirc.orig	Thu Jan  8 15:16:55 2004
-+++ Docs/sample/gnokiirc	Thu Jan  8 15:17:40 2004
+--- Docs/sample/gnokiirc.orig	Fri Apr 29 22:40:17 2005
++++ Docs/sample/gnokiirc	Thu May  5 14:23:45 2005
 @@ -6,7 +6,7 @@
  
  # Set port to the physical serial port used to connect to your phone.
  # Linux version is:
 -port = /dev/ttyS0
 +port = /dev/cuaa0
+ #
  # For MacOSX you will need something like:
  # port = /dev/cu.USA28X1P1.1
- #
-@@ -14,7 +14,7 @@
+@@ -19,7 +19,7 @@
  # port = aa:bb:cc:dd:ee:ff
-  
+ 
  # Set model to the model number of your phone
 -model = 6110
 +model = 6210
  
  # Initlength controls the number of characters sent to the
  # phone during initialisation.  You can either set it to
-@@ -50,7 +50,7 @@
+@@ -49,7 +49,7 @@
  # port software (eg. minicom). If you have wrong permissions for the
  # directory, a warning will be generated. If you don't want a lockfile, set
  # it to 'no'.

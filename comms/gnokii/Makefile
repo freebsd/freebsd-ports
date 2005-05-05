@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
@@ -49,6 +49,10 @@ WITH_ICAL=	yes
 
 .if defined(WITH_ICAL)
 LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
+.endif
+
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
 
 # If smsd is enabled check if MySQL or PostgreSQL are installed and
