@@ -7,7 +7,7 @@
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
 # or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING and
-# modify UPD_LINE_NO=(no_of_added_lines-1) in this Makefile
+# modify _UPD_LINE_NO=(no_of_added_lines-1) in this Makefile
 # else the port will be broken. Thanks.
 
 PORTNAME=	dspam-devel
@@ -19,8 +19,8 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sourc
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.4.r2
-SNAP_DATE=	.20050305.0930
+PORTVER_MAJ=	3.5.0
+SNAP_DATE=	.20050428.1100
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
@@ -58,8 +58,8 @@ OPTIONS+=	USER_HOMEDIR "Store user data in ~/.dspam" off
 OPTIONS+=	TRUSTED_USERS "Disable trusted user security" off
 
 ## back-end
-OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" on
-OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" off
+OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" off
+OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" on
 OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" off
@@ -100,7 +100,7 @@ CFLAGS+=	-g -DDEBUG
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-UPD_LINE_NO=	24
+_UPD_LINE_NO=	16
 
 CONFLICTS=	dspam-2* dspam-3*
 
@@ -140,12 +140,12 @@ CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
 # we set DSPAM_MODE at the end as some LDA whant specific mode
 
-SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+_SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
-		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%PKGNAME%%,${PKGNAME},g' \
 		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
+#		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+#		-e 's,%%PREFIX%%,${PREFIX},g' \
+#		-e 's,%%PKGNAME%%,${PKGNAME},g' \
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -175,11 +175,11 @@ RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 USE_RC_SUBR=	yes
 PLIST_FILES+=	etc/rc.d/dspam${RC_SUFX}
-SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
-SED_RC_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+_SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
+_SED_RC_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
 .else
-SED_SCRIPT+=	-e ',%%DAEMON%%,D'
+_SED_SCRIPT+=	-e ',%%DAEMON%%,D'
 .endif
 
 .if !defined(WITH_GRAHAM_BAYES)
@@ -234,9 +234,9 @@ PLIST_SUB+=	DB4="@comment "
 PLIST_SUB+=	MYSQL="@comment "
 PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	SQLITE="@comment "
-SED_SCRIPT+=	-e '/%%MYSQL%%/D'
-SED_SCRIPT+=	-e 's,%%PGSQL%%,,g'
-SED_SCRIPT+=	-e '/%%SQLITE%%/D'
+#_SED_SCRIPT+=	-e '/%%MYSQL%%/D'
+#_SED_SCRIPT+=	-e 's,%%PGSQL%%,,g'
+#_SED_SCRIPT+=	-e '/%%SQLITE%%/D'
 #PKGNAMESUFFIX=	-pgsql
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
@@ -258,9 +258,9 @@ PLIST_SUB+=	DB4=""
 PLIST_SUB+=	MYSQL="@comment "
 PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	SQLITE="@comment "
-SED_SCRIPT+=	-e '/%%MYSQL%%/D'
-SED_SCRIPT+=	-e '/%%PGSQL%%/D'
-SED_SCRIPT+=	-e '/%%SQLITE%%/D'
+#_SED_SCRIPT+=	-e '/%%MYSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%SQLITE%%/D'
 #PKGNAMESUFFIX=	-bdb
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
@@ -283,9 +283,9 @@ PLIST_SUB+=	DB4="@comment "
 PLIST_SUB+=	MYSQL="@comment "
 PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	SQLITE=""
-SED_SCRIPT+=	-e '/%%MYSQL%%/D'
-SED_SCRIPT+=	-e '/%%PGSQL%%/D'
-SED_SCRIPT+=	-e 's,%%SQLITE%%,,g'
+#_SED_SCRIPT+=	-e '/%%MYSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
+#_SED_SCRIPT+=	-e 's,%%SQLITE%%,,g'
 #PKGNAMESUFFIX=	-sqlite2
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
@@ -310,16 +310,16 @@ PLIST_SUB+=	DB4="@comment "
 PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	SQLITE="@comment "
-SED_SCRIPT+=	-e 's,%%MYSQL%%,,g'
-SED_SCRIPT+=	-e '/%%PGSQL%%/D'
-SED_SCRIPT+=	-e '/%%SQLITE%%/D'
+#_SED_SCRIPT+=	-e 's,%%MYSQL%%,,g'
+#_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
+#_SED_SCRIPT+=	-e '/%%SQLITE%%/D'
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .	if defined(WITH_MYSQL_COMPRESS)
 CONFIGURE_ARGS+=	--enable-client-compression
 .	endif
-SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,mysql,g'
+_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,mysql,g'
 .else
-SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,,'
+_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,,'
 .endif
 
 .if defined(WITH_VIRT_USERS)
@@ -355,7 +355,7 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 .if defined(WITH_EXIM_LDA)
 .	if defined(WITH_MYSQL40) || (WITH_MYSQL41)
 _EXIM_EXT=	-mysql
-.	elseif defined(WITH_POSTGRESQL)
+.	elif defined(WITH_POSTGRESQL)
 _EXIM_EXT=	-postgresql
 .	endif
 RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
@@ -391,9 +391,9 @@ DSPAM_MODE=	4511
 
 .if defined(WITH_POSTFIX_MBC)
 DSPAM_MODE=	4511
-SED_SCRIPT+=	-e 's,%%POSTFIX_MBC%%,,g'
+#_SED_SCRIPT+=	-e 's,%%POSTFIX_MBC%%,,g'
 .else
-SED_SCRIPT+=	-e '/%%POSTFIX_MBC%%/D'
+#_SED_SCRIPT+=	-e '/%%POSTFIX_MBC%%/D'
 .endif
 
 .if defined(WITH_QMAIL)
@@ -416,13 +416,13 @@ CONFIGURE_ARGS+=--enable-user-logging
 USE_PERL5_RUN=	yes
 PLIST_SUB+=	CGI=""
 CGI_PATH?=	${PREFIX}/www/vhosts/dspam
-SED_SCRIPT+=	-e 's,%%CGI%%,,g'
-SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
+_SED_SCRIPT+=	-e 's,%%CGI%%,,g'
+_SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
 #SED_FILES=	${LS}  ${WRKSRC}/cgi/*.pl
 #SED_FILES+=	${LS} $PWRKSRC}/cgi/*.cgi
 .else
 PLIST_SUB+=	CGI="@comment "
-SED_SCRIPT+=	-e '/%%CGI%%/D'
+_SED_SCRIPT+=	-e '/%%CGI%%/D'
 .endif
 
 MAN1=	dspam.1 dspam_clean.1 dspam_corpus.1 dspam_dump.1 dspam_merge.1 \
@@ -437,16 +437,18 @@ MLINKS+=	libdspam.3 dspam_getsource.3
 MLINKS+=	libdspam.3 dspam_destroy.3
 MLINKS+=	libdspam.3 dspam_detach.3
 
-DOCS=	CHANGELOG LICENSE README README.FreeBSD README.courier README.exim \
-	README.pop3filter README.postfix README.qmail README.sendmail \
-	RELEASE.NOTES
+_DOCS=	CHANGELOG LICENSE README README.FreeBSD RELEASE.NOTES UPGRADING
+_DOCSL=	appliance.txt exim.txt ora_drv.txt pgsql_drv.txt postfix.txt \
+	sendmail.txt courier.txt mysql_drv.txt pop3filter.txt qmail.txt \
+	sqlite_drv.txt
 
 .ifndef(MAINT)
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
-	@${GREP} -B 1 -A ${UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
+	@${GREP} -B 1 -A ${_UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
 	@${ECHO_CMD} ""
+	@sleep 5
 .else # maintainer only
 post-fetch:
 .	ifndef(STOP)
@@ -517,7 +519,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge.sql
 .if defined(WITH_DAEMON)
 	@${CP} ${FILESDIR}/dspam.rc ${WRKSRC}
-	@${REINPLACE_CMD} ${SED_RC_SCRIPT} ${WRKSRC}/dspam.rc
+	@${REINPLACE_CMD} ${_SED_RC_SCRIPT} ${WRKSRC}/dspam.rc
 .endif
 
 pre-configure:
@@ -575,7 +577,7 @@ post-install:
 .if defined(USE_MYSQL)
 	@${MKDIR} ${EXAMPLESDIR}/mysql
 	cd  ${WRKSRC}/src/tools.mysql_drv && \
-		${INSTALL_DATA} README mysql_objects-space.sql \
+		${INSTALL_DATA} mysql_objects-space.sql \
 			mysql_objects-speed.sql purge.sql \
 			virtual_users.sql mysql_objects-4.1.sql \
 			purge-4.1.sql neural.sql  ${EXAMPLESDIR}/mysql
@@ -585,17 +587,17 @@ post-install:
 .if defined(WITH_POSTGRESQL)
 	@${MKDIR} ${EXAMPLESDIR}/pgsql
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
-		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/pgsql
+		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/pgsql
 .endif
 .if defined(HAVE_SQLITE)
 	@${MKDIR} ${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
-		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/sqlite
+		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/sqlite
 .endif
 .if defined(WITH_ORACLE)
 	@${MKDIR} ${EXAMPLESDIR}/oracle
 	cd ${WRKSRC}/src/tools.ora_drv && \
-		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/oracle
+		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/oracle
 .endif
 
 .if defined(WITH_CGI)
@@ -616,11 +618,12 @@ post-install:
 		${INSTALL_DATA} *.html ${CGI_PATH}/templates/
 .endif
 
-	@${SED} ${SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
+	@${SED} ${_SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	cd ${FILESDIR} && ${INSTALL_DATA} UPDATING ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${_DOCSL} ${DOCSDIR}
+	cd ${FILESDIR} && ${INSTALL_DATA} UPDATING ${DOCSDIR}/UPDATING
 .endif
 
 	@${MKDIR} -m ${DSPAM_HOME_MODE} ${DSPAM_HOME}
