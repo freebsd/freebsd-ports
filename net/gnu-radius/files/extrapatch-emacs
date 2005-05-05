@@ -1,0 +1,91 @@
+--- configure.orig	Mon May  2 20:32:36 2005
++++ configure	Mon May  2 20:33:56 2005
+@@ -9868,49 +9868,49 @@
+ ### Check for Emacs site-lisp directory
+  # If set to t, that means we are running in a shell under Emacs.
+  # If you have an Emacs named "t", then use the full path.
+- test x"$EMACS" = xt && EMACS=
+- for ac_prog in emacs xemacs
+-do
++# test x"$EMACS" = xt && EMACS=
++# for ac_prog in emacs xemacs
++#do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+-set dummy $ac_prog; ac_word=$2
+-echo "$as_me:$LINENO: checking for $ac_word" >&5
+-echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+-if test "${ac_cv_prog_EMACS+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  if test -n "$EMACS"; then
+-  ac_cv_prog_EMACS="$EMACS" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-  for ac_exec_ext in '' $ac_executable_extensions; do
+-  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_EMACS="$ac_prog"
+-    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-done
++#set dummy $ac_prog; ac_word=$2
++#echo "$as_me:$LINENO: checking for $ac_word" >&5
++#echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
++#if test "${ac_cv_prog_EMACS+set}" = set; then
++#  echo $ECHO_N "(cached) $ECHO_C" >&6
++#else
++#  if test -n "$EMACS"; then
++#  ac_cv_prog_EMACS="$EMACS" # Let the user override the test.
++#else
++#as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++#for as_dir in $PATH
++#do
++#  IFS=$as_save_IFS
++#  test -z "$as_dir" && as_dir=.
++#  for ac_exec_ext in '' $ac_executable_extensions; do
++#  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++#    ac_cv_prog_EMACS="$ac_prog"
++#    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++#    break 2
++#  fi
++#done
++#done
+ 
+-fi
+-fi
+-EMACS=$ac_cv_prog_EMACS
+-if test -n "$EMACS"; then
+-  echo "$as_me:$LINENO: result: $EMACS" >&5
+-echo "${ECHO_T}$EMACS" >&6
+-else
+-  echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6
+-fi
+-
+-  test -n "$EMACS" && break
+-done
+-test -n "$EMACS" || EMACS="no"
++#fi
++#fi
++#EMACS=$ac_cv_prog_EMACS
++#if test -n "$EMACS"; then
++#  echo "$as_me:$LINENO: result: $EMACS" >&5
++#echo "${ECHO_T}$EMACS" >&6
++#else
++#  echo "$as_me:$LINENO: result: no" >&5
++#echo "${ECHO_T}no" >&6
++#fi
+ 
++#  test -n "$EMACS" && break
++#done
++#test -n "$EMACS" || EMACS="no"
+ 
++EMACS="no"
+ 
+ 
+ # Check whether --with-lispdir or --without-lispdir was given.

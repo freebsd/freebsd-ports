@@ -1,0 +1,103 @@
+--- intl/Makefile.in.orig	Tue May  3 16:14:12 2005
++++ intl/Makefile.in	Tue May  3 16:22:23 2005
+@@ -123,7 +123,7 @@
+   osdep.$lo \
+   intl-compat.$lo
+ DISTFILES.common = Makefile.in \
+-config.charset locale.alias ref-add.sin ref-del.sin $(HEADERS) $(SOURCES)
++ref-add.sin ref-del.sin $(HEADERS) $(SOURCES)
+ DISTFILES.generated = plural.c
+ DISTFILES.normal = VERSION
+ DISTFILES.gettext = COPYING.LIB-2.0 COPYING.LIB-2.1 libintl.glibc \
+@@ -132,7 +132,7 @@
+ COPYING.LIB-2 gettext.h libgettext.h plural-eval.c libgnuintl.h
+ 
+ all: all-@USE_INCLUDED_LIBINTL@
+-all-yes: libintl.$la libintl.h charset.alias ref-add.sed ref-del.sed
++all-yes: libintl.$la libintl.h ref-add.sed ref-del.sed
+ all-no: all-no-@BUILD_INCLUDED_LIBINTL@
+ all-no-yes: libgnuintl.$la
+ all-no-no:
+@@ -229,10 +229,6 @@
+ libintl.h: libgnuintl.h
+ 	cp libgnuintl.h libintl.h
+ 
+-charset.alias: $(srcdir)/config.charset
+-	$(SHELL) $(srcdir)/config.charset '@host@' > t-$@
+-	mv t-$@ $@
+-
+ check: all
+ 
+ # We must not install the libintl.h/libintl.a files if we are on a
+@@ -271,30 +267,6 @@
+ 	fi
+ 	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
+ 	  test @GLIBC21@ != no || $(mkinstalldirs) $(DESTDIR)$(libdir); \
+-	  temp=$(DESTDIR)$(libdir)/t-charset.alias; \
+-	  dest=$(DESTDIR)$(libdir)/charset.alias; \
+-	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
+-	    orig=$(DESTDIR)$(libdir)/charset.alias; \
+-	    sed -f ref-add.sed $$orig > $$temp; \
+-	    $(INSTALL_DATA) $$temp $$dest; \
+-	    rm -f $$temp; \
+-	  else \
+-	    if test @GLIBC21@ = no; then \
+-	      orig=charset.alias; \
+-	      sed -f ref-add.sed $$orig > $$temp; \
+-	      $(INSTALL_DATA) $$temp $$dest; \
+-	      rm -f $$temp; \
+-	    fi; \
+-	  fi; \
+-	  $(mkinstalldirs) $(DESTDIR)$(localedir); \
+-	  test -f $(DESTDIR)$(localedir)/locale.alias \
+-	    && orig=$(DESTDIR)$(localedir)/locale.alias \
+-	    || orig=$(srcdir)/locale.alias; \
+-	  temp=$(DESTDIR)$(localedir)/t-locale.alias; \
+-	  dest=$(DESTDIR)$(localedir)/locale.alias; \
+-	  sed -f ref-add.sed $$orig > $$temp; \
+-	  $(INSTALL_DATA) $$temp $$dest; \
+-	  rm -f $$temp; \
+ 	else \
+ 	  : ; \
+ 	fi
+@@ -308,7 +280,6 @@
+ 	    $(INSTALL_DATA) $(srcdir)/$$file \
+ 			    $(DESTDIR)$(gettextsrcdir)/$$file; \
+ 	  done; \
+-	  chmod a+x $(DESTDIR)$(gettextsrcdir)/config.charset; \
+ 	  dists="$(DISTFILES.generated)"; \
+ 	  for file in $$dists; do \
+ 	    if test -f $$file; then dir=.; else dir=$(srcdir); fi; \
+@@ -365,32 +336,6 @@
+ 	if test "$(PACKAGE)" = "gettext-tools" \
+ 	   && test '@USE_INCLUDED_LIBINTL@' = no; then \
+ 	  rm -f $(DESTDIR)$(libdir)/preloadable_libintl.so; \
+-	else \
+-	  : ; \
+-	fi
+-	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
+-	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
+-	    temp=$(DESTDIR)$(libdir)/t-charset.alias; \
+-	    dest=$(DESTDIR)$(libdir)/charset.alias; \
+-	    sed -f ref-del.sed $$dest > $$temp; \
+-	    if grep '^# Packages using this file: $$' $$temp > /dev/null; then \
+-	      rm -f $$dest; \
+-	    else \
+-	      $(INSTALL_DATA) $$temp $$dest; \
+-	    fi; \
+-	    rm -f $$temp; \
+-	  fi; \
+-	  if test -f $(DESTDIR)$(localedir)/locale.alias; then \
+-	    temp=$(DESTDIR)$(localedir)/t-locale.alias; \
+-	    dest=$(DESTDIR)$(localedir)/locale.alias; \
+-	    sed -f ref-del.sed $$dest > $$temp; \
+-	    if grep '^# Packages using this file: $$' $$temp > /dev/null; then \
+-	      rm -f $$dest; \
+-	    else \
+-	      $(INSTALL_DATA) $$temp $$dest; \
+-	    fi; \
+-	    rm -f $$temp; \
+-	  fi; \
+ 	else \
+ 	  : ; \
+ 	fi

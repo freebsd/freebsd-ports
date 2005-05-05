@@ -33,8 +33,6 @@ etc/raddb/realms
 etc/raddb/sqlserver
 etc/raddb/users
 etc/rc.d/radiusd.sh
-@dirrm etc/raddb/dict
-@dirrm etc/raddb
 include/radius/argcv.h
 include/radius/argp.h
 include/radius/dictionary.h
@@ -54,44 +52,40 @@ include/radius/radutmp.h
 include/radius/sha1.h
 include/radius/symtab.h
 include/radius/types.h
-@dirrm include/radius
 lib/libgnuradius.a
-lib/libgnuradius.la
 lib/libgnuradius.so
 lib/libgnuradius.so.0
 %%GUILE%%bin/radsession
-%%GUILE%%lib/libradscm.a
-%%GUILE%%lib/libradscm.la
 %%GUILE%%lib/libradscm.so
 %%GUILE%%lib/libradscm.so.0
-%%CLIENT%%lib/libservscm.a
-%%CLIENT%%lib/security/pam_radius.a
-%%CLIENT%%lib/security/pam_radius.la
 %%CLIENT%%lib/security/pam_radius.so
 %%CLIENT%%libexec/nas.scm
 share/locale/ca/LC_MESSAGES/radius.mo
 share/locale/es/LC_MESSAGES/radius.mo
 share/locale/pl/LC_MESSAGES/radius.mo
 share/locale/ru/LC_MESSAGES/radius.mo
-%%GUILE%%share/radius/%%PORTVERSION%%/scheme/gnuradius.scm
-%%GUILE%%share/radius/%%PORTVERSION%%/scheme/ipalloc.scm
-%%GUILE%%share/radius/%%PORTVERSION%%/scheme/radiusd.scm
-%%GUILE%%share/radius/%%PORTVERSION%%/scheme/ttl.scm
-%%GUILE%%share/radius/%%PORTVERSION%%/scheme/guile-procedures.txt
-share/radius/%%PORTVERSION%%/rewrite/checknas.rw
-share/radius/%%PORTVERSION%%/rewrite/log-hook.rw
-share/radius/%%PORTVERSION%%/rewrite/nas-ip.rw
-%%MYSQL%%share/radius/%%PORTVERSION%%/modules/mysql.a
-%%MYSQL%%share/radius/%%PORTVERSION%%/modules/mysql.la
-%%MYSQL%%share/radius/%%PORTVERSION%%/modules/mysql.so
-%%PGSQL%%share/radius/%%PORTVERSION%%/modules/postgres.a
-%%PGSQL%%share/radius/%%PORTVERSION%%/modules/postgres.la
-%%PGSQL%%share/radius/%%PORTVERSION%%/modules/postgres.so
-@dirrm share/radius/%%PORTVERSION%%/scheme
-@dirrm share/radius/%%PORTVERSION%%/rewrite
-@dirrm share/radius/%%PORTVERSION%%/modules
-@dirrm share/radius/%%PORTVERSION%%
-@dirrm share/radius
+%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/gnuradius.scm
+%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/ipalloc.scm
+%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/radiusd.scm
+%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/ttl.scm
+%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/guile-procedures.txt
+%%DATADIR%%/%%PORTVERSION%%/rewrite/checknas.rw
+%%DATADIR%%/%%PORTVERSION%%/rewrite/log-hook.rw
+%%DATADIR%%/%%PORTVERSION%%/rewrite/nas-ip.rw
+%%MYSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/mysql.so
+%%PGSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/postgres.so
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/radconf-mode.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/radius-mode.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/rewrite-mode.el
+@dirrm etc/raddb/dict
+@dirrm etc/raddb
+@dirrm include/radius
+@dirrm %%DATADIR%%/%%PORTVERSION%%/scheme
+@dirrm %%DATADIR%%/%%PORTVERSION%%/rewrite
+@dirrm %%DATADIR%%/%%PORTVERSION%%/modules
+@dirrm %%DATADIR%%/%%PORTVERSION%%
+@dirrm %%DATADIR%%
+@unexec rmdir %D/lib/security 2>/dev/null || true
 @unexec rm -f /var/run/radiusd.pid
 @unexec rm -rf /var/log/radius
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."
