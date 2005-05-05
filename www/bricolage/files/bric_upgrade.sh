@@ -12,7 +12,7 @@ fi
 
 # Ensure the old version exists at the end of the argument list
 OLDVERSION=`echo "$*" | sed -e "s/^.* \([^ ]*\)/\1/"`
-VTEST=`echo "$OLDVERSION" | sed -e "s/^1\.8\.[012]$/OKAY/"`
+VTEST=`echo "$OLDVERSION" | sed -e "s/^1\.8\.[01234]$/OKAY/"`
 if [ "${VTEST}" != "OKAY" ]
 then
 	echo "The final argument should be the old version of the port, in the format."
@@ -31,10 +31,13 @@ fi
 # Now try to upgrade it
 for ver in `grep -A 1000 ${OLDVERSION} ${BRICUPGRADE}/versions.txt | tail -n +2`
 do
-	for file in `ls ${BRICUPGRADE}/${ver}`
-	do
-		${BRICUPGRADE}/${ver}/${file} $@ # Run with our args
-	done
+	if [ -d ${BRICUPGRADE}/${ver} ]
+	then
+		for file in `ls ${BRICUPGRADE}/${ver}`
+		do
+			${BRICUPGRADE}/${ver}/${file} $@ # Run with our args
+		done
+	fi
 done
 
 echo "Upgrade complete"
