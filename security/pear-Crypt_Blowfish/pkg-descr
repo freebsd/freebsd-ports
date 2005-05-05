@@ -1,0 +1,6 @@
+PEAR::Crypt_Blowfish allows you to prefore two-way blowfish on the fly using
+only PHP.
+
+This package does not require the Mcrypt PHP extension to work.
+
+WWW: http://pear.php.net/package/Crypt_Blowfish/
