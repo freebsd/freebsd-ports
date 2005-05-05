@@ -21,8 +21,8 @@
  FILES_LIB	= `$(FIND_LIB)`
  
  LANGS		= fr pt_BR
-+GTK_CFLAGS	= `pkg-config gtk+-2.0 --cflags-only-I | sed -e 's/-I/:/g' | tr -d ' '` 
-+GTK_LDFLAGS	= `pkg-config gtk+-2.0 --libs-only-L | sed -e 's/-L/:/g' | tr -d ' '`
++GTK_CFLAGS	= `pkg-config glib-2.0 gtk+-2.0 --cflags-only-I | sed -e 's/-I/:/g' | tr -d ' '` 
++GTK_LDFLAGS	= `pkg-config glib-2.0 gtk+-2.0 --libs-only-L | sed -e 's/-L/:/g' | tr -d ' '`
 +
  SCRIPTS = \
  	scripts/gajim
