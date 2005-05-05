@@ -12,8 +12,8 @@
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml-ids.elc
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml-info.el
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml-info.elc
-%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-other.el
-%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-other.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-lucid.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-lucid.elc
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml-parse.el
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml-parse.elc
 %%EMACS_LIBDIR%%/site-lisp/psgml/psgml-sysdep.el
