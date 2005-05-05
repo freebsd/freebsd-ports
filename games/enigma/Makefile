@@ -13,7 +13,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	enigma-${PORTVERSION}-beta
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libzipios.a:${PORTSDIR}/archivers/zipios++
