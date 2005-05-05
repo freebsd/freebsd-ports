@@ -1,0 +1,25 @@
+--------------------------------------------------------------------
+Remember to set environment varible:
+
+  (csh/tcsh) 				(sh/bash)
+  setenv XMODIFIERS @im=xcin		export XMODIFIERS='@im=xcin'
+  setenv GTK_IM_MODULE xim		export GTK_IM_MODULE=xim
+  setenv QT_IM_SWITCHER imsw-multi	export QT_IM_SWITCHER=imsw-multi
+  setenv QT_IM_MODULE xim		export QT_IM_MODULE=xim
+
+and set LANG, LC_CTYPE to one of zh_TW.UTF-8, zh_TW.Big5 value:
+  	(csh/tcsh)			(sh/bash)
+Big5:  	setenv LC_CTYPE zh_TW.Big5	export LC_CTYPE=zh_TW.Big5
+  	setenv LANG zh_TW.Big5		export LANG=zh_TW.Big5
+or
+UTF-8:
+	setenv LC_CTYPE zh_TW.UTF-8	export LC_CTYPE=zh_TW.UTF-8
+	setenv LANG zh_TW.UTF-8		export LANG=zh_TW.UTF-8
+
+Finally, to start the GCIN input method daemon, use command:
+
+  exec gcin &
+
+If you get problem with gcin, please visit http://cle.linux.org.tw/gcin/
+Happy Gcining...:-)
+--------------------------------------------------------------------
