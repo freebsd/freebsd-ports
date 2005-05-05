@@ -1,0 +1,86 @@
+#!/bin/sh
+
+disable_sendmail() {
+	echo "===> I hope you know what you are doing:"
+	echo "===> You just told your system to not"
+	echo "===> automaticaly start sendmail on your"
+	echo "===> next startup."
+	echo "===> (i.e., added sendmail_enable=\"NONE\" to rc.conf)"
+
+	if [ -f ${RC_CONF_FILE} ]; then
+		echo sendmail_enable=\"NONE\" >> ${RC_CONF_FILE}
+	fi
+}
+
+enable_qmail() {
+	if [ -f ${MAILER_CONF_FILE} ]; then
+		cp ${MAILER_CONF_FILE} ${MAILER_CONF_FILE}.bak && \
+		cp %%PREFIX%%/%%DOCDIR%%/mailer.conf.sample ${MAILER_CONF_FILE}
+	else
+		echo "===> ERROR: YOU DO NOT HAVE A VALID ${MAILER_CONF_FILE}"
+		echo "===> FIX this and try again"
+		echo "===> or, run \"$0 --force\" if you are sure"
+		echo "===> you want this port replacing some binaries"
+		echo "===> IF THIS FEELS UNEASY, read %%PREFIX%%/%%DOCDIR%%/REMOVE.sendmail and do it manually"
+		echo ""
+		echo "=======> VERY IMPORTANT <======="
+		echo "===> One side issue is that if you do replace them,"
+		echo "===> you really should consider ADDING \"NO_SENDMAIL=true\""
+		echo "===> to your /etc/make.conf if you do \"make world\"."
+		echo "===> Otherwise, \"make world\" will \"fix\" your sendmail"
+		echo "===> installation breaking your qmail one."
+		echo "===> Read the FreeBSD Handbook section on \"make world\""
+		echo "===> if you do not know what I am talking about."
+		echo "===> Check http://www.FreeBSD.org/ for the most"
+		echo "===> updated copy of the Handbook."
+	fi
+	echo "===> Do not forget to choose an appropriate qmail startup"
+	echo "===> script. Go through %%PREFIX%%/boot, choose one"
+	echo "===> and copy the chosen script as %%PREFIX%%/rc"
+	echo "===> For example, \"cp %%PREFIX%%/boot/proc+df %%PREFIX%%/rc\""
+}
+
+# taken from mail/postfix idea
+force_enable_qmail() {
+	echo "===> Replacing sendmail"
+	if [ -e ${SENDMAIL} ]; then
+		mv -f ${SENDMAIL} ${SENDMAIL}.OFF && \
+		chmod 0 ${SENDMAIL}.OFF
+	fi
+	if [ -e %%PREFIX%%/bin/sendmail ]; then
+		ln -sf %%PREFIX%%/bin/sendmail ${SENDMAIL}
+	fi
+
+	echo "===> Replacing mailq"
+	if [ -e ${MAILQ} ]; then
+		mv -f ${MAILQ} ${MAILQ}.OFF && \
+		chmod 0 ${MAILQ}.OFF
+	fi
+	if [ -e %%PREFIX%%/bin/qmail-qread ]; then
+		ln -sf %%PREFIX%%/bin/qmail-qread ${MAILQ}
+	fi
+
+	echo "===> Replacing newaliases"
+	if [ -e ${NEWALIASES} ]; then
+		mv -f ${NEWALIASES} ${NEWALIASES}.OFF && \
+		chmod 0 ${NEWALIASES}.OFF
+	fi
+	if [ -e %%PREFIX%%/bin/newaliases ]; then
+		ln -sf %%PREFIX%%/bin/newaliases ${NEWALIASES}
+	fi
+}
+
+# main
+RC_CONF_FILE=/etc/rc.conf
+MAILER_CONF_FILE=/etc/mail/mailer.conf
+SENDMAIL=/usr/sbin/sendmail
+MAILQ=/usr/bin/mailq
+NEWALIASES=/usr/bin/newaliases
+
+disable_sendmail
+
+if [ "$1" = "--force"]; then
+  force_enable_qmail
+else
+  enable_qmail
+fi

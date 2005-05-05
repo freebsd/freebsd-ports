@@ -10,10 +10,5 @@ or login.conf(5)).
 Do not forget to read http://iain.cx/unix/qmail/mysql.php. After all,
 this is NOT our old stock qmail.
 
-You can enable qmail as your default mailer:
-
-# this will disable the default MTA
-1) do "make disable-sendmail"
-
-# enable qmail as your default MTA
-2) do "make enable-qmail"
+You can enable qmail as your default mailer executing:
+> /var/qmail/scripts/enable-qmail

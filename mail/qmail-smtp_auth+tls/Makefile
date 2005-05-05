@@ -20,17 +20,18 @@ COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH SMTP_AUTH+TLS
 ONLY_FOR_ARCHS=	i386
 
 USE_OPENSSL=	YES
+USE_REINPLACE=	yes
 
 # Patches from the main qmail port are not wanted
 MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER=	yes
+MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER=		yes
 
 SMTP_AUTH-TLS_PATCH_DATE=	20020519
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
-#PREFIX=		/var/qmail-smtp_auth+tls
 
-.if !defined(PRE_MK_INCLUDED)
+.if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>
 .endif
 
@@ -40,9 +41,14 @@ CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
 CFLAGS+=	-DDEBUG
 .endif # WITH_TLS_DEBUG
 
-#QMAIL_PORT=	${PORTSDIR}/mail/qmail
-QMAIL_PORT=	${.CURDIR}/../qmail
-QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
+# Local overrides
+MASTERDIR=	${.CURDIR}/../qmail
+PKGDIR_LOCAL=	${.CURDIR}
+DESCR=		${PKGDIR_LOCAL}/pkg-descr
+PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
+PLIST=		${PKGDIR_LOCAL}/pkg-plist
+
+QMAIL_PORT_PREFIX!=	cd ${MASTERDIR} && ${MAKE} -V PREFIX
 
 DOCFILES+=	${WRKDIR}/SMTP_AUTH+TLS.readme \
 		${WRKSRC}/README.auth
@@ -58,7 +64,7 @@ qmail-smtp_auth+tls-post-patch:
 	@${HEAD} -6 ${DISTDIR}/qmail-1.03-starttls-smtp-auth.patch \
 		| ${TAIL} -5 \
 		> ${WRKDIR}/SMTP_AUTH+TLS.readme
-	@${PERL} -pi -ne "s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
 
 # Primary Ugh... ;-)
 # idea stolen from www/apache13-ssl, a target written by adam@algroup.co.uk
@@ -98,12 +104,5 @@ certificate-req:
 	else \
 		${ECHO_MSG} "===> You must create the file ${OPENSSLDIR}/openssl.cnf first." ; \
 	fi
-
-# Local overrides
-MASTERDIR=	${QMAIL_PORT}
-PKGDIR_LOCAL=	${.CURDIR}
-DESCR=		${PKGDIR_LOCAL}/pkg-descr
-PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
-PLIST=		${PKGDIR_LOCAL}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

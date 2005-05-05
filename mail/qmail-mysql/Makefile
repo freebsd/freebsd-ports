@@ -17,7 +17,8 @@ PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH MySQL support
 
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
+USE_REINPLACE=	yes
 
 # patches from the master port that brake this one are now allowed
 MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER=	yes
@@ -26,30 +27,25 @@ MYSQL_PATCH_VERSION=	1.1.8
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
-#PREFIX=		/var/qmail-mysql
 
-.if !defined(PRE_MK_INCLUDED)
+.if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>
 .endif
 
-#QMAIL_PORT=	${PORTSDIR}/mail/qmail
-QMAIL_PORT=	${.CURDIR}/../qmail
-QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
+# Local overrides
+MASTERDIR=	${.CURDIR}/../qmail
+PKGDIR_LOCAL=	${.CURDIR}
+DESCR=		${PKGDIR_LOCAL}/pkg-descr
+PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
+
+QMAIL_PORT_PREFIX!=	cd ${MASTERDIR} && ${MAKE} -V PREFIX
 
 # Yet anther ugly hack (works due to code inside the main qmail port)
 slaveport-post-patch: qmail-mysql-post-patch
 
 qmail-mysql-post-patch:
-	@${PERL} -pi -ne \
+	@${REINPLACE_CMD} \
 		 's|/opt/mysql|${LOCALBASE}|' \
 			${WRKSRC}/Makefile
-
-# Local overrides
-MASTERDIR=	${QMAIL_PORT}
-PKGDIR_LOCAL=	${.CURDIR}
-DESCR=		${PKGDIR_LOCAL}/pkg-descr
-PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
-
-PRE_MK_INCLUDED=	yes
 
 .include "${MASTERDIR}/Makefile"
