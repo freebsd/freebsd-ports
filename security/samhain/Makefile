@@ -17,7 +17,7 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.6
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -124,8 +124,10 @@ post-extract:
 post-install:
 .if !defined(WITH_SERVER)
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/samhain.sh.sample
+	@${CP} ${WRKSRC}/samhainrc ${PREFIX}/etc/samhainrc.sample
 .else
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/yule.sh.sample
+	@${CP} ${WRKSRC}/yulerc ${PREFIX}/etc/yulerc.sample
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
