@@ -51,6 +51,13 @@ TEXIFILES=	ada-mode autotype cc-mode cl dired-x ebrowse ediff \
 
 LATEST_LINK=	emacs
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+CFLAGS:=	${CFLAGS:C/-O(2|3|s)/-O/g}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+.endif
+
 pre-everything::
 .if !defined(WITH_MENUBAR_FONTSET)
 	@${ECHO_MSG} "====>"
@@ -77,4 +84,4 @@ post-build:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
