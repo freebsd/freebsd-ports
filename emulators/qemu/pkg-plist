@@ -49,3 +49,5 @@ share/qemu/keymaps/tr
 @dirrm share/qemu/keymaps
 @dirrm share/qemu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+%%WITH_KQEMU%%%%KMODDIR%%/kqemu.ko
