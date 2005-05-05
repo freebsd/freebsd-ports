@@ -32,6 +32,10 @@ MAN1=		c3270.1 \
 MAN5=		ibm_hosts.5
 MANCOMPRESSED=	no
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 # c3270's ./configure script supports these.
 # Within it all options except DBCS are enabled by default.
 
@@ -114,7 +118,6 @@ pre-patch:
 post-install:
 	@( cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} Makefile install.man )
 .if !defined(NOPORTDOCS)
-	PORTDOCS=       *
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 .for i in ${PORTDOCS}
