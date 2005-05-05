@@ -88,6 +88,7 @@ sbin/mgnokiidev
 %%NLS%%share/locale/pl/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gnokii.mo
 %%SMSD%%share/smsd/README
 %%SMSD%%share/smsd/action
 %%SMSD%%lib/smsd/libfile.a

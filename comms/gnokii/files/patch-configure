@@ -1,6 +1,6 @@
---- configure.orig	Sun Oct 17 21:44:38 2004
-+++ configure	Mon Dec 27 12:48:43 2004
-@@ -26348,13 +26348,15 @@
+--- configure.orig	Fri Apr 29 22:40:40 2005
++++ configure	Thu May  5 14:20:32 2005
+@@ -26347,13 +26347,15 @@
  # First of all, check if the user has set any of the PTHREAD_LIBS,
  # etcetera environment variables, and if threads linking works using
  # them:
@@ -21,7 +21,7 @@
          cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -26726,7 +26728,7 @@
+@@ -26725,7 +26727,7 @@
  echo $ECHO_N "checking if more special flags are required for pthreads... $ECHO_C" >&6
          flag=no
          case "${host_cpu}-${host_os}" in
@@ -30,7 +30,7 @@
                  *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
          esac
          echo "$as_me:$LINENO: result: ${flag}" >&5
-@@ -27570,7 +27572,7 @@
+@@ -27569,7 +27571,7 @@
  USE_LIBICAL="no"
  OLD_LIBS="$LIBS"
  OLD_CFLAGS="$CFLAGS"
@@ -39,3 +39,12 @@
  CFLAGS="$CFLAGS $ICAL_CFLAGS"
  echo "$as_me:$LINENO: checking whether libical is installed" >&5
  echo $ECHO_N "checking whether libical is installed... $ECHO_C" >&6
+@@ -29111,7 +29113,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&5
+ echo "${ECHO_T}$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6
+ if test $ac_cv_lib_Xpm_XpmWriteFileFromXpmImage = yes; then
+-   XPM_CFLAGS="$XINCL" XPM_LIBS="-L$x_libraries -lXpm -lX11"
++   XPM_CFLAGS="$XINCL" XPM_LIBS="-L$x_libraries -lXpm -lX11 -lroken -lcrypt"
+               cat >>confdefs.h <<\_ACEOF
+ #define XPM 1
+ _ACEOF
