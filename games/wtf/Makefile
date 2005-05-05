@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wtf
-PORTVERSION=	20040124
+PORTVERSION=	20050505
 CATEGORIES=	games
 MASTER_SITES=	http://www.mu.org/~mux/wtf/ \
 		${MASTER_SITE_LOCAL}
@@ -20,6 +20,9 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 MAN6=		wtf.6
+
+PLIST_FILES=	bin/wtf %%DATADIR%%/acronyms %%DATADIR%%/acronyms.comp
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/misc|${DATADIR}|g' ${WRKSRC}/wtf*
