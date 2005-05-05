@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.11.1
-PORTREVISION=	1
+PORTVERSION=	1.11.2
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
