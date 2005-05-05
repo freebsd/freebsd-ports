@@ -5,7 +5,7 @@
  
  for tcl_prefix in $tcl_prefix $exec_prefix /usr/local /usr NONE; do
 -  if test -r $tcl_prefix/lib/tclConfig.sh; then
-+  if test -r $tcl_prefix/lib/tcl8.2/tclConfig.sh; then
++  if test -r $tcl_prefix/lib/tcl8.4/tclConfig.sh; then
      break;
    fi
  done
@@ -19,7 +19,7 @@
    AC_MSG_ERROR(tclConfig.sh doesn't exist)
  fi
 -AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib])
-+AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib/tcl8.2])
++AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib/tcl8.4])
  . $file
  
  if test $TCL_MAJOR_VERSION -lt 8; then
@@ -27,7 +27,7 @@
  fi
  
 -TCL_CFLAGS="-I$TCL_SRC_DIR"
-+TCL_CFLAGS="-I$tcl_prefix/include/tcl8.2"
++TCL_CFLAGS="-I$tcl_prefix/include/tcl8.4"
  TCL_LDFLAGS="$TCL_LIB_SPEC"
  AC_SUBST(TCL_CFLAGS)
  AC_SUBST(TCL_LDFLAGS)

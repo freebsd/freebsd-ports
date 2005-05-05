@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tcl82.1:${PORTSDIR}/lang/tcl82
+		tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_MESA=	YES
 USE_PERL5_BUILD=yes
@@ -35,10 +35,6 @@ CONFIGURE_ARGS+= --with-plib=${X11BASE}/plib
 MAN6=		gracer.6
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
