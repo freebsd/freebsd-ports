@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	1.14.2
+PORTVERSION=	2.0.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 MAINTAINER?=	rehsack@liwing.de
 COMMENT?=	A civilisation clone for X11; multiplayer
 
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+
 USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes
@@ -22,7 +24,7 @@ WANT_GNOME=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
