@@ -71,6 +71,7 @@
 %%SITE_PERL%%/PPI/Token/_QuoteEngine/Full.pm
 %%SITE_PERL%%/PPI/Token/_QuoteEngine/Simple.pm
 %%SITE_PERL%%/PPI/Tokenizer.pm
+%%SITE_PERL%%/PPI/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/.packlist
 @dirrm %%SITE_PERL%%/PPI/Token/_QuoteEngine
 @dirrm %%SITE_PERL%%/PPI/Token/QuoteLike
