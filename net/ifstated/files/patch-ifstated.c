@@ -1,8 +1,8 @@
---- ifstated.c	18 Nov 2004 21:43:12 -0000	1.1.1.1
-+++ ifstated.c	18 Nov 2004 21:48:39 -0000	1.2
+--- ../ifstated-20050505.orig/ifstated.c	Thu May  5 11:51:24 2005
++++ ifstated.c	Thu May  5 12:06:07 2005
 @@ -1,4 +1,5 @@
- /*	$OpenBSD: ifstated.c,v 1.20 2004/10/05 21:17:02 mpf Exp $	*/
-+/*	$Id: ifstated.c,v 1.2 2004/11/18 21:48:39 mdg Exp $	*/
+ /*	$OpenBSD: ifstated.c,v 1.21 2005/02/07 12:38:44 mcbride Exp $	*/
++/*	$Id: ifstated.c,v 1.3 2005/05/05 16:06:07 mdg Exp $	*/
 
  /*
   * Copyright (c) 2004 Marco Pfatschbacher <mpf@openbsd.org>
@@ -53,16 +53,16 @@
  void	external_async_exec(struct ifsd_external *);
  void	check_external_status(struct ifsd_state *);
  void	external_evtimer_setup(struct ifsd_state *, int);
-@@ -76,6 +78,8 @@
+@@ -75,6 +77,8 @@
  void	remove_expression(struct ifsd_expression *, struct ifsd_state *);
  void	log_init(int);
- void	logit(int level, const char *fmt, ...);
+ void	logit(int, const char *, ...);
 +int     get_ifcount(void);
 +int     get_ifmib_general(int, struct ifmibdata *);
 
  void
  usage(void)
-@@ -90,7 +94,7 @@
+@@ -89,7 +93,7 @@
  int
  main(int argc, char *argv[])
  {
@@ -71,7 +71,7 @@
  	int ch;
 
  	while ((ch = getopt(argc, argv, "dD:f:hniv")) != -1) {
-@@ -137,26 +141,54 @@
+@@ -136,26 +140,54 @@
  		setproctitle(NULL);
  	}
 
@@ -135,7 +135,7 @@
 
  	if (load_config() != 0) {
  		logit(IFSD_LOG_NORMAL, "unable to load config");
-@@ -166,18 +198,20 @@
+@@ -165,18 +197,20 @@
  	if ((rt_fd = socket(PF_ROUTE, SOCK_RAW, 0)) < 0)
  		err(1, "no routing socket");
 
@@ -162,7 +162,7 @@
  {
  	logit(IFSD_LOG_NORMAL, "reloading config");
  	if (load_config() != 0)
-@@ -208,7 +242,7 @@
+@@ -207,7 +241,7 @@
  }
 
  void
@@ -171,7 +171,7 @@
  {
  	char msg[2048];
  	struct rt_msghdr *rtm = (struct rt_msghdr *)&msg;
-@@ -246,22 +280,6 @@
+@@ -245,22 +279,6 @@
  }
 
  void
@@ -194,7 +194,7 @@
  external_async_exec(struct ifsd_external *external)
  {
  	char *argp[] = {"sh", "-c", NULL, NULL};
-@@ -355,23 +373,25 @@
+@@ -354,23 +372,25 @@
  external_evtimer_setup(struct ifsd_state *state, int action)
  {
  	struct ifsd_external *external;
@@ -210,8 +210,7 @@
  			TAILQ_FOREACH(external,
  			    &state->external_tests, entries) {
 -				struct timeval tv;
--
-+
+
  				/* run it once right away */
  				external_async_exec(external);
 
@@ -227,7 +226,7 @@
  			}
  			break;
  		case IFSD_EVTIMER_DEL:
-@@ -381,7 +401,9 @@
+@@ -380,7 +400,9 @@
  					kill(external->pid, SIGKILL);
  					external->pid = 0;
  				}
@@ -238,7 +237,7 @@
  			}
  			break;
  		}
-@@ -505,7 +527,6 @@
+@@ -504,7 +526,6 @@
  		logit(IFSD_LOG_NORMAL, "changing state to %s",
  		    conf->nextstate->name);
  		if (conf->curstate != NULL) {
@@ -246,7 +245,7 @@
  			external_evtimer_setup(conf->curstate,
  			    IFSD_EVTIMER_DEL);
  		}
-@@ -551,6 +572,48 @@
+@@ -550,6 +571,48 @@
  	}
  }
 
@@ -295,7 +294,7 @@
  /*
   * Fetch the current link states.
   */
-@@ -560,29 +623,34 @@
+@@ -559,29 +622,34 @@
  	struct ifaddrs *ifap, *ifa;
  	char *oname = NULL;
  	int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -318,16 +317,15 @@
 
 -		strlcpy(ifr.ifr_name, ifa->ifa_name, sizeof(ifr.ifr_name));
 -		ifr.ifr_data = (caddr_t)&ifrdat;
--
--		if (ioctl(sock, SIOCGIFDATA, (caddr_t)&ifr) == -1)
--			continue;
 +		for (i = 1; i <= ifcount; i++)
 +		  {
 +		    get_ifmib_general(i, &ifmd);
 +		    if (! strcmp(ifmd.ifmd_name, oname))
 +		      break;
 +		  }
-+
+
+-		if (ioctl(sock, SIOCGIFDATA, (caddr_t)&ifr) == -1)
+-			continue;
 +		ifdata = ifmd.ifmd_data;
 
  		scan_ifstate(if_nametoindex(ifa->ifa_name),
@@ -340,7 +338,7 @@
  	}
  	freeifaddrs(ifap);
  	close(sock);
-@@ -664,7 +732,6 @@
+@@ -663,7 +731,6 @@
  			TAILQ_REMOVE(&state->external_tests,
  			    expression->u.external, entries);
  			free(expression->u.external->command);
