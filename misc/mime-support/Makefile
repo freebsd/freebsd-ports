@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mime-support
-PORTVERSION=	3.31.1
+PORTVERSION=	3.32.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/(.*)\.([^.])/\1-\2/}
@@ -20,6 +20,6 @@ NO_BUILD=	yes
 PLIST_FILES=	etc/mime.types
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc
 
 .include <bsd.port.mk>
