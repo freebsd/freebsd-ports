@@ -11527,6 +11527,7 @@ ua-ispell	ports/textproc/ua-ispell
 uae		ports/emulators/uae
 ubench		ports/benchmarks/ubench
 ubh		ports/news/ubh
+ucarp		ports/net/ucarp
 ucblogo		ports/lang/logo
 ucl		ports/archivers/ucl
 uclmmbase	ports/devel/uclmmbase
