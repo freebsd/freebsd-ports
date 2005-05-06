@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	GNU editing macros
 
+CONFLICTS=	emacs-19.* emacs-20.* \
+		xemacs-[0-9]* xemacs-devel-[0-9]* \
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
