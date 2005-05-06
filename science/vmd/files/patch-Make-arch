@@ -1,5 +1,5 @@
---- ../plugins/Make-arch.orig	Fri Nov 14 07:50:25 2003
-+++ ../plugins/Make-arch	Fri Jan 21 19:30:53 2005
+--- Make-arch.orig	Mon Feb  7 13:09:55 2005
++++ ../plugins/Make-arch	Fri Mar 25 16:54:01 2005
 @@ -9,6 +9,7 @@
  	@echo "--------------------------------------"
  	@echo " AIX4"
@@ -8,10 +8,14 @@
  	@echo " HPUX11"
  	@echo " IRIX6"
  	@echo " IRIX6_64"
-@@ -142,6 +143,20 @@
+@@ -142,8 +143,22 @@
+ 	"LOPTO = -o " \
+ 	"CC = gcc" \
  	"CXX = g++" \
- 	"CCFLAGS = -O2 -Wall -ansi -I/usr/local/include/tcl8.4" \
- 	"CXXFLAGS = -O2 -Wall" \
+-	"CCFLAGS = -O2 -Wall -I/usr/local/include/tcl8.4" \
+-	"CXXFLAGS = -O2 -Wall" \
++	"CCFLAGS = ${CFLAGS} -O2 -Wall -I/usr/local/include/tcl8.4" \
++	"CXXFLAGS = ${CFLAGS} -O2 -Wall" \
 +	"TCLLDFLAGS = -L/usr/local/lib -ltcl84" \
 +	"NM = nm -p" \
 +	"RANLIB = touch" \
@@ -24,8 +28,8 @@
 +	"LOPTO = -fPIC -m64 -o " \
 +	"CC = gcc" \
 +	"CXX = g++" \
-+	"CCFLAGS = -m64 -O2 -Wall -ansi -I/usr/local/include/tcl8.4" \
-+	"CXXFLAGS = -m64 -O2 -Wall" \
++	"CCFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.4" \
++	"CXXFLAGS = ${CFLAGS} -m64 -O2 -Wall" \
  	"TCLLDFLAGS = -L/usr/local/lib -ltcl84" \
  	"NM = nm -p" \
  	"RANLIB = touch" \
