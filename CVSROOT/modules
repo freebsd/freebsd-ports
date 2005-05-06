@@ -6485,6 +6485,7 @@ nologinmsg	ports/shells/nologinmsg
 nomarch		ports/archivers/nomarch
 nonsense	ports/games/nonsense
 normalize	ports/audio/normalize
+nos-ttb		ports/net/nos-ttb
 nosefart	ports/audio/nosefart
 notebook	ports/deskutils/notebook
 notftp		ports/www/notftp
