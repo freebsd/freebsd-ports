@@ -15,7 +15,7 @@ DISTNAME=	cpg${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Coppermine is a web picture gallery script
 
-USE_PHP=	mysql
+USE_PHP=	mysql pcre
 WANT_PHP_MOD=	yes
 USE_ZIP=	yes
 
