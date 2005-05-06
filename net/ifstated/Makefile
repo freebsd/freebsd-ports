@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifstated
-PORTVERSION=	20041117
+PORTVERSION=	20050505
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.secureworks.net/pub/ifstated/
 
