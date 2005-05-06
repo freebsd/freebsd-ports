@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.lug.udel.edu/MPlayer/Skin/ \
@@ -89,7 +89,7 @@ TRIUM_FILE=		trium-1.3.tar.bz2
 TVISOR_FILE=		tvisor-1.1.tar.bz2
 ULTRAFINA_FILE=		ultrafina-1.1.tar.bz2
 WEBBY_FILE=		webby-1.2.tar.bz2
-WMP6_FILE=		WMP6-2.2.tar.bz2
+WINDOWSMEDIAPLAYER6_FILE= WMP6-2.2.tar.bz2
 XANIM_FILE=		xanim-1.6.tar.bz2
 XFCE4_FILE=		XFce4-1.0.tar.bz2
 XINE_LCD_FILE=		xine-lcd-1.2.tar.bz2

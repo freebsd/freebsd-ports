@@ -1626,6 +1626,43 @@
 %%XMMPLAYER%%share/mplayer/Skin/xmmplayer/symbols.fnt
 %%XMMPLAYER%%share/mplayer/Skin/xmmplayer/symbols.png
 %%XMMPLAYER%%share/mplayer/Skin/xmmplayer/volume.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/README
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/VERSION
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/bw10sec.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/bw1min.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/close.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/equalizer.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/favorites.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/file.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/font.fnt
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/font.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/fw10sec.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/fw1min.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/go.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/help.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/main.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/maximize.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/media.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/menu.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/menus.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/minimize.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/music.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/mute.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/next.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/pause.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/play.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/playlist.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/pos.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/prev.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/radio.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/skin
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/stop.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/sub.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/sub.png.win
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/symbols.fnt
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/symbols.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/view.png
+%%WINDOWSMEDIAPLAYER6%%share/mplayer/Skin/WMP6/vol.png
 share/mplayer/Skin/default
 share/mplayer/Skin/%%PKGNAME%%
 %%XMMPLAYER%%@dirrm share/mplayer/Skin/xmmplayer
@@ -1691,5 +1728,6 @@ share/mplayer/Skin/%%PKGNAME%%
 %%ALIENMIND%%@dirrm share/mplayer/Skin/AlienMind
 %%ABYSS%%@dirrm share/mplayer/Skin/Abyss/icons
 %%ABYSS%%@dirrm share/mplayer/Skin/Abyss
+%%WINDOWSMEDIAPLAYER6%%@dirrm share/mplayer/Skin/WMP6
 @dirrm share/mplayer/Skin
 @unexec rmdir %D/share/mplayer/ 2>/dev/null || true
