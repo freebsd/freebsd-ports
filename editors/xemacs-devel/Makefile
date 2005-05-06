@@ -19,6 +19,10 @@ DIST_SUBDIR=	xemacs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This port tracks the development (GAMMA) version of the XEmacs text editor
 
+CONFLICTS=	emacs-[0-9]* \
+		xemacs-[0-9]* \
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
