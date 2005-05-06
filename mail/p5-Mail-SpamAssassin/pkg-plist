@@ -1,3 +1,4 @@
+@unexec %D/etc/rc.d/sa-spamd.sh stop > /dev/null 2>&1 || true
 bin/sa-learn
 bin/spamassassin
 bin/spamc
@@ -92,3 +93,4 @@ etc/rc.d/sa-spamd.sh
 @unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
 @unexec rmdir %D/etc/mail/spamassassin 2>/dev/null || true
 @unexec rmdir %D/etc/mail 2>/dev/null || true
+@unexec rmdir /var/run/spamd 2>/dev/null || true

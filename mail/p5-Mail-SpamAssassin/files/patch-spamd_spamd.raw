@@ -1,0 +1,22 @@
+--- spamd/spamd.raw.orig	Fri May  6 20:16:50 2005
++++ spamd/spamd.raw	Fri May  6 20:17:30 2005
+@@ -881,12 +881,14 @@
+       }
+ 
+       # if we changed UID during processing, change back!
+-      if ( $> != $< and $> != ( $< - 2**32 ) ) {
+-        $) = "$( $(";    # change eGID
+-        $> = $<;         # change eUID
++      if($setuid_to_user) {
+         if ( $> != $< and $> != ( $< - 2**32 ) ) {
+-          logmsg("fatal: return setuid failed");
+-          die;           # make it fatal to avoid security breaches
++          $) = "$( $(";    # change eGID
++          $> = $<;         # change eUID
++          if ( $> != $< and $> != ( $< - 2**32 ) ) {
++            logmsg("fatal: return setuid failed");
++            die;           # make it fatal to avoid security breaches
++          }
+         }
+       }
+ 

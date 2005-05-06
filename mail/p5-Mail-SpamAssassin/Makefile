@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
@@ -89,9 +88,9 @@ USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%RC_SUBR%%|${RC_SUBR}|g'
 .if defined(USE_SQLDB)
-SED_SCRIPT+=	-e 's|%%SQL%%|-Q|g'
+SED_SCRIPT+=	-e 's|%%SQL_FLAG%%|-Q|g'
 .else
-SED_SCRIPT+=	-e 's|%%SQL%%||g'
+SED_SCRIPT+=	-e 's|%%SQL_FLAG%%||g'
 .endif
 
 pre-patch:
@@ -117,6 +116,9 @@ post-patch:
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKDIR}/sa-spamd.sh
+
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
