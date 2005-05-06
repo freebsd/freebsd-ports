@@ -620,15 +620,6 @@ diff -u -3 -d -p -r1.31 -r1.31.2.1
  		for (x = 0; x < m_xsize; x++, c++)
  			*c = qRgba(qRed(*c), qGreen(*c), qBlue(*c), line[x]);
  	}
-@@ -270,7 +272,7 @@ bool SGIImage::readImage(QImage& img)
- 	// sanity ckeck
- 	if (m_rle)
- 		for (uint o = 0; o < m_numrows; o++)
--			if (m_starttab[o] + m_lengthtab[o] > m_data.size()) {
-+			if (m_starttab[o] + m_lengthtab[o] >= m_data.size()) {
- 				kdDebug(399) << "image corrupt (sanity check failed)" << endl;
- 				return false;
- 			}
 diff -u -3 -d -p -r1.14 -r1.14.2.1
 --- kimgio/tiffr.cpp	22 Nov 2004 03:52:18 -0000	1.14
 +++ kimgio/tiffr.cpp	19 Apr 2005 10:48:00 -0000	1.14.2.1
