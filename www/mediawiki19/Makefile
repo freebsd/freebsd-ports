@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -17,9 +17,30 @@ COMMENT=	The wiki enginge used by Wikipedia
 CONFLICTS=	mediawiki-1.3.*
 
 NO_BUILD=	yes
-USE_PHP=	mysql session zlib
+USE_PHP=	iconv mbstring pcre session xml zlib imagick readline
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/data-dist/mediawiki
+
+OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
+		LDAP "Use LDAP authentication" off
+
+PORT_DBDIR?=	/var/db/ports
+NO_LATEST_LINK=	yes
+OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+
+.if exists(${OPTIONSFILE})
+.include "${OPTIONSFILE}"
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PHP+=	pgsql
+.else
+USE_PHP+=	mysql
+.endif
+
+.if defined(WITH_LDAP)
+USE_PHP+=	ldap
+.endif
 
 do-install:
 	-${MKDIR} ${PREFIX}/${MEDIAWIKIDIR}
