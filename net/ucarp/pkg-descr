@@ -1,0 +1,6 @@
+UCARP allows a couple of hosts to share common virtual IP addresses
+in order to provide automatic failover. It is a portable userland
+implementation of the secure and patent-free Common Address Redundancy
+Protocol (CARP, OpenBSD's alternative to the VRRP).
+
+WWW: http://www.ucarp.org/
