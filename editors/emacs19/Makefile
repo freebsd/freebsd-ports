@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	emacs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU editing macros
 
+CONFLICTS=	emacs-21.* emacs-20.* \
+		xemacs-[0-9]* xemacs-devel-[0-9]* \
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+
 ONLY_FOR_ARCHS=	i386
 DEPRECATED=	"editors/emacs is recommended instead for new installations"
 
