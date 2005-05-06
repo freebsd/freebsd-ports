@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuserv
-PORTVERSION=	3.12.5
-PORTREVISION=	2
+PORTVERSION=	3.12.7
 CATEGORIES=	editors
 MASTER_SITES=	http://meltin.net/hacks/emacs/src/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
