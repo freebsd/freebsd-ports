@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glfw
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,9 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A portable framework for OpenGL development
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 ALL_TARGET=	x11
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 do-configure:
 	@(cd ${WRKSRC} &&		\
