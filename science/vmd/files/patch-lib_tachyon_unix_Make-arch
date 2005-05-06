@@ -1,0 +1,11 @@
+--- Make-arch-orig	Fri Mar 25 14:34:38 2005
++++ lib/tachyon/unix/Make-arch	Fri Mar 25 14:34:50 2005
+@@ -859,7 +859,7 @@
+ 	$(MAKE) all \
+ 	"ARCH = bsd" \
+ 	"CC = gcc" \
+-	"CFLAGS = -O6 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
++	"CFLAGS += -O6 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+ 	"STRIP = strip" \

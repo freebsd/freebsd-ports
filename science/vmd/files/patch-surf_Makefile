@@ -1,0 +1,11 @@
+--- lib/surf/Makefile.orig	Fri Mar 25 17:52:40 2005
++++ lib/surf/Makefile	Fri Mar 25 17:50:20 2005
+@@ -6,7 +6,7 @@
+ LINCLUDE    = -lm
+ OPT_CFLAGS  = -O2 $(FLAGS) $(INCLUDE)
+ #CFLAGS	    = -g $(FLAGS) $(INCLUDE)
+-CFLAGS	    = -O2 $(FLAGS) $(INCLUDE)
++CFLAGS	    += -O2 $(FLAGS) $(INCLUDE)
+ 
+ # These are the user object files in the application
+ SRCS        = surf.c io.c compute.c dual.c utils.c lp.c chull.c tessel_cases.c \

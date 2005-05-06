@@ -109,3 +109,17 @@
   
      if ($config_python) {
        # this is to make python happy
+@@ -2052,11 +2114,11 @@
+ 
+ # compiler and compiler directives 
+ CC          = $arch_cc
+-CFLAGS      = $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
+ COMPILERC   = $arch_compilerc
+ RCFLAGS     = $arch_rcflags
+ CCPP	    = $arch_ccpp
+-CPPFLAGS    = $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
++CPPFLAGS    = \${CXXFLAGS} $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
++CFLAGS      += $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
+ 
+ DEPEND      = $arch_depend_flag
+ DEPENDFILE  = Makedata.depend

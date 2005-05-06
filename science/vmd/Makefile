@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		vmd
-PORTVERSION=		1.8.2
-PORTREVISION=		2
+PORTVERSION=		1.8.3
+PORTREVISION=		0
 CATEGORIES=		science graphics python tcl84 tk84
-MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.96/ \
+MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.97/ \
 			ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/
 DISTFILES=		${VMD_DIST} ${TACHYON_DIST} ${STRIDE_DIST}
 
@@ -33,7 +33,7 @@ NO_CDROM=		"License has restrictions"
 RESTRICTED=		"License has restrictions"
 
 VMD_DIST=		${PORTNAME}-${PORTVERSION}.src.tar.gz
-TACHYON_DIST=		tachyon-0.96.tar.gz
+TACHYON_DIST=		tachyon-0.97.tar.gz
 STRIDE_DIST=		stride.tar.gz
 
 .include <bsd.port.pre.mk>
@@ -63,10 +63,10 @@ ${VMD_DIST}.  Please place this file in ${DISTDIR}.\n
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	cd ${WRKDIR} && ${TAR} xfz ${DISTDIR}/${VMD_DIST}
-	cd ${WRKSRC}/lib/surf && ${TAR} xfz surf.tar.Z
-	cd ${WRKSRC}/lib && ${TAR} xfz ${DISTDIR}/${TACHYON_DIST}
-	cd ${WRKSRC}/lib/stride && ${TAR} xfz ${DISTDIR}/${STRIDE_DIST}
+	${TAR} xfz ${DISTDIR}/${VMD_DIST} -C ${WRKDIR}
+	${TAR} xfz ${WRKSRC}/lib/surf/surf.tar.Z -C ${WRKSRC}/lib/surf
+	${TAR} xfz ${DISTDIR}/${TACHYON_DIST} -C ${WRKSRC}/lib
+	${TAR} xfz ${DISTDIR}/${STRIDE_DIST} -C ${WRKSRC}/lib/stride
 
 post-patch:
 	${REINPLACE_CMD} "s/-lpthread/${PTHREAD_LIBS}/" ${WRKSRC}/configure
@@ -74,17 +74,19 @@ post-patch:
 	${REINPLACE_CMD} "s/-ltcl8.4/-ltcl84/" ${WRKSRC}/configure
 	${REINPLACE_CMD} "s%\$$python_dir/lib_\$$config_arch%${PREFIX}%" ${WRKSRC}/configure
 	${REINPLACE_CMD} "s/python2.2/${PYTHON_VERSION}/" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/Makefile
+	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/*/Makefile
 
 do-build:
-	cd ${WRKSRC}/lib/tachyon/unix && ${SETENV} ${MAKE_ENV} ${GMAKE} bsd && ${MV} ../compile/bsd/tachyon ../tachyon_${VMD_ARCH}
-	cd ${WRKDIR}/plugins && ${SETENV} ${MAKE_ENV} PLUGINDIR=${WRKSRC}/plugins ${GMAKE} ${VMD_ARCH} distrib
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.4 TK_INCLUDE_DIR=${PREFIX}/include/tk8.4 ${GMAKE} ${VMD_TARGET}
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} all
-	cd ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${GMAKE} depend && ${SETENV} ${MAKE_ENV} ${GMAKE} surf && ${MV} surf surf_${VMD_ARCH}
-	cd ${WRKSRC}/lib/stride && ${SETENV} ${MAKE_ENV} ${GMAKE} && ${MV} stride stride_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${GMAKE} bsd -C ${WRKSRC}/lib/tachyon/unix && ${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon ${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} PLUGINDIR=${WRKSRC}/plugins ${GMAKE} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
+	${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.4 TK_INCLUDE_DIR=${PREFIX}/include/tk8.4 ${GMAKE} ${VMD_TARGET} -C ${WRKSRC}
+	${SETENV} ${MAKE_ENV} ${GMAKE} all -C ${WRKSRC}/src
+	${SETENV} ${MAKE_ENV} ${GMAKE} depend -C ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${GMAKE} surf -C ${WRKSRC}/lib/surf && ${MV} ${WRKSRC}/lib/surf/surf ${WRKSRC}/lib/surf/surf_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC}/lib/stride && ${MV} ${WRKSRC}/lib/stride/stride ${WRKSRC}/lib/stride/stride_${VMD_ARCH}
 
 do-install:
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} install
-#	cd ${WRKSRC}/lib/surf && ${INSTALL_PROGRAM} surf_${VMD_ARCH} ${PREFIX}/lib/vmd
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC}/src install
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/vmd
 
 .include <bsd.port.post.mk>
