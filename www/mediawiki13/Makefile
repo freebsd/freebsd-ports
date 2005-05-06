@@ -23,7 +23,7 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
 		LDAP "Use LDAP authentication" off
 
 PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}
+NO_LATEST_LINK=	yes
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
 .if exists(${OPTIONSFILE})
