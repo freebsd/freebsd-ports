@@ -1,0 +1,42 @@
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libclntsh.so
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libocci.so
+usr/share/oracle/%%PORTVERSION%%/client/cdemo81.c
+usr/share/oracle/%%PORTVERSION%%/client/demo.mk
+usr/share/oracle/%%PORTVERSION%%/client/occidemo.sql
+usr/share/oracle/%%PORTVERSION%%/client/occidemod.sql
+usr/share/oracle/%%PORTVERSION%%/client/occidml.cpp
+usr/include/oracle/%%PORTVERSION%%/client/nzerror.h
+usr/include/oracle/%%PORTVERSION%%/client/nzt.h
+usr/include/oracle/%%PORTVERSION%%/client/occi.h
+usr/include/oracle/%%PORTVERSION%%/client/occiAQ.h
+usr/include/oracle/%%PORTVERSION%%/client/occiCommon.h
+usr/include/oracle/%%PORTVERSION%%/client/occiControl.h
+usr/include/oracle/%%PORTVERSION%%/client/occiData.h
+usr/include/oracle/%%PORTVERSION%%/client/occiObjects.h
+usr/include/oracle/%%PORTVERSION%%/client/oci.h
+usr/include/oracle/%%PORTVERSION%%/client/oci1.h
+usr/include/oracle/%%PORTVERSION%%/client/oci8dp.h
+usr/include/oracle/%%PORTVERSION%%/client/ociap.h
+usr/include/oracle/%%PORTVERSION%%/client/ociapr.h
+usr/include/oracle/%%PORTVERSION%%/client/ocidef.h
+usr/include/oracle/%%PORTVERSION%%/client/ocidem.h
+usr/include/oracle/%%PORTVERSION%%/client/ocidfn.h
+usr/include/oracle/%%PORTVERSION%%/client/ociextp.h
+usr/include/oracle/%%PORTVERSION%%/client/ocikpr.h
+usr/include/oracle/%%PORTVERSION%%/client/ocixmldb.h
+usr/include/oracle/%%PORTVERSION%%/client/odci.h
+usr/include/oracle/%%PORTVERSION%%/client/oratypes.h
+usr/include/oracle/%%PORTVERSION%%/client/ori.h
+usr/include/oracle/%%PORTVERSION%%/client/orid.h
+usr/include/oracle/%%PORTVERSION%%/client/orl.h
+usr/include/oracle/%%PORTVERSION%%/client/oro.h
+usr/include/oracle/%%PORTVERSION%%/client/ort.h
+usr/include/oracle/%%PORTVERSION%%/client/xa.h
+@dirrm usr/include/oracle/%%PORTVERSION%%/client
+@dirrm usr/include/oracle/%%PORTVERSION%%
+@dirrm usr/include/oracle
+@dirrm usr/share/oracle/%%PORTVERSION%%/client
+@dirrm usr/share/oracle/%%PORTVERSION%%
+@dirrm usr/share/oracle
+@unexec rmdir %D/usr/include 2>/dev/null || true
+@unexec rmdir %D/usr/share   2>/dev/null || true
