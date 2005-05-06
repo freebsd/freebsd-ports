@@ -1,0 +1,15 @@
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libclntsh.so.10.1
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libnnz10.so
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libocci.so.10.1
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libociei.so
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libocijdbc10.so
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libocci10_296.so.10.1
+@dirrm usr/lib/oracle/%%PORTVERSION%%/client/lib
+@dirrm usr/lib/oracle/%%PORTVERSION%%/client
+@dirrm usr/lib/oracle/%%PORTVERSION%%
+@dirrm usr/lib/oracle
+@unexec rmdir %D/usr/lib 2>/dev/null || true
+@unexec rmdir %D/usr     2>/dev/null || true
+@unexec cp %D/etc/ld.so.conf %D/etc/ld.so.conf.bak && sed "/\/usr\/lib\/oracle\/%%PORTVERSION%%\/client\/lib/d" %D/etc/ld.so.conf.bak > %D/etc/ld.so.conf && rm %D/etc/ld.so.conf.bak
+@exec echo /usr/lib/oracle/%%PORTVERSION%%/client/lib >> %D/etc/ld.so.conf
+@exec %D/sbin/ldconfig

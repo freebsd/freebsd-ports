@@ -1,0 +1,9 @@
+Oracle instant client - basic distribution
+
+Instant Client allows you to run your applications without installing
+the standard Oracle client or having an ORACLE_HOME.  OCI, OCCI, ODBC,
+and JDBC applications work without modification, while using
+significantly less disk space than before.  Even SQL*Plus can be used
+with Instant Client.  No recompile, no hassle.
+
+WWW: http://www.oracle.com/technology/tech/oci/instantclient/instantclient.html
