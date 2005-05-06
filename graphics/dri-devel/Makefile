@@ -37,6 +37,10 @@ DRIMODDIR=	${PREFIX}/lib/modules/dri
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+USE_GCC=        3.4
+.endif
+
 do-install:
 .if ${ARCH} == i386
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
