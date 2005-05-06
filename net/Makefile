@@ -809,6 +809,7 @@
     SUBDIR += ttt
     SUBDIR += tund
     SUBDIR += tvark
+    SUBDIR += ucarp
     SUBDIR += udptunnel
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
