@@ -21,7 +21,7 @@ if [ -z "${BATCH}" ]; then
 Please select desired options:" -1 -1 16 \
 ROOT_SERVER	"Configure NSD as a root server" "$status_ROOT_SERVER" \
 NOIPv6		"Disable IPv6 support" "$status_NOIPv6" \
-DNSSEC		"Enable experimental DNSSEC support according to the latest drafts." "$status_DNSSEC" \
+NODNSSEC	"Disable DNSSEC" "$status_NODNSSEC" \
 NOAXFR		"Disable AXFR" "$status_NOAXFR" \
 BIND8_STATS	"Enable BIND8 like NSTATS & XSTATS" "$status_BIND8_STATS" \
 PLUGINS		"Enable plugin support" "$status_PLUGINS" \
@@ -58,8 +58,8 @@ while [ "$1" ]; do
 		NOIPv6)
 			echo "CONFIGURE_ARGS+=        --disable-ipv6"
 			;;
-		DNSSEC)
-			echo "CONFIGURE_ARGS+=        --enable-dnssec"
+		NODNSSEC)
+			echo "CONFIGURE_ARGS+=        --disable-dnssec"
 			;;
 		NOAXFR)
 			echo "CONFIGURE_ARGS+=        --disable-axfr"
