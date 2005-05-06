@@ -1,5 +1,4 @@
 %%SITE_PERL%%/IO/Capture.pm
-%%SITE_PERL%%/IO/Capture/ErrorMessages.pm
 %%SITE_PERL%%/IO/Capture/Overview.pod
 %%SITE_PERL%%/IO/Capture/Stderr.pm
 %%SITE_PERL%%/IO/Capture/Stdout.pm
