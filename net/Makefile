@@ -425,6 +425,7 @@
     SUBDIR += nocatauth-gateway
     SUBDIR += nocatauth-server
     SUBDIR += nocatsplash
+    SUBDIR += nos-ttb
     SUBDIR += ns
     SUBDIR += nss_ldap
     SUBDIR += ntalk
