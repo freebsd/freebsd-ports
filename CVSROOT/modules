@@ -5716,6 +5716,7 @@ mdw		ports/www/mdw
 meanwhile	ports/net/meanwhile
 meanwhile-gaim	ports/net/meanwhile-gaim
 mediawiki	ports/www/mediawiki
+mediawiki13	ports/www/mediawiki13
 megapov		ports/graphics/megapov
 meld		ports/textproc/meld
 memcached	ports/databases/memcached
