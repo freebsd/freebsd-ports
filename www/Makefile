@@ -222,6 +222,7 @@
     SUBDIR += mathopd
     SUBDIR += mdw
     SUBDIR += mediawiki
+    SUBDIR += mediawiki13
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
