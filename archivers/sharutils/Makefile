@@ -21,16 +21,14 @@ CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1
 INFO=		sharutils
-PLIST_FILES=	bin/gmail-files bin/gmailshar bin/gremsync bin/gshar bin/gunshar
 
 .if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--disable-nls
 .else
+PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
-.for l in et it vi fi sr rw ca cs da de el es fr gl hu ja nb nl nn pt ru sv tr zh_TW
-PLIST_FILES+=	share/locale/${l}/LC_MESSAGES/sharutils.mo
-.endfor
 .endif
 
 post-patch:
