@@ -18,8 +18,6 @@ COMMENT=	A simple tool for doing everyday things with PDF documents
 # gcj/libgcj don't exist on these platforms
 NOT_FOR_ARCHS=	amd64 ia64 sparc64
 
-USE_GCC=	3.4
-
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${USE_GCC:S/.//}
 
