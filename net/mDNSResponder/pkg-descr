@@ -1,3 +1,4 @@
-The mDNSResponder project is a component of Rendezvous,
+The mDNSResponder project is a component of Bonjour,
 Apple's ease-of-use IP networking initiative:
-WWW: http://developer.apple.com/macosx/rendezvous/index.html
+
+WWW: http://developer.apple.com/networking/bonjour/index.html
