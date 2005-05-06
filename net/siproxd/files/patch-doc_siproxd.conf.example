@@ -1,17 +1,17 @@
---- doc/siproxd.conf.example.orig	Thu Dec 30 12:26:17 2004
-+++ doc/siproxd.conf.example	Fri Apr  8 21:02:45 2005
-@@ -9,8 +9,8 @@
- ######################################################################
- # The interface names of INBOUND and OUTBOUND interface.
+--- doc/siproxd.conf.example.orig	Tue Apr 19 21:00:20 2005
++++ doc/siproxd.conf.example	Thu May  5 17:35:35 2005
+@@ -17,8 +17,8 @@
+ #    or a hostname that resolves to that address (use a dyndns address for
+ #    example).
  #
 -if_inbound  = eth0
 -if_outbound = ppp0
 +if_inbound  = ed0
 +if_outbound = tun0
- 
- 
- ######################################################################
-@@ -70,20 +70,20 @@
+ # uncomment the following line ONLY IF YOU KNOW WHAT YOU ARE DOING!
+ # READ THE FAQ FIRST!
+ #host_outbound = 1.2.3.4
+@@ -81,14 +81,14 @@
  #   user:	uid/gid to switch to after startup
  #   chrootjail:	path to chroot to (chroot jail)
  user = nobody
@@ -27,6 +27,8 @@
 +registration_file = siproxd_registrations
  
  ######################################################################
+ # Automatically save current registrations every 'n' seconds
+@@ -99,7 +99,7 @@
  # PID file:
  #   Where to create the PID file.
  #   This file holds the PID of the main thread of siproxd.
