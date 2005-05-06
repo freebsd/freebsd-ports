@@ -1,11 +1,12 @@
 --- loadparts.cpp.orig	Wed May  4 19:19:33 2005
-+++ loadparts.cpp	Wed May  4 19:19:48 2005
-@@ -245,7 +245,7 @@
++++ loadparts.cpp	Fri May  6 11:11:49 2005
+@@ -69,8 +69,7 @@
+     return a <= x && x <= b;
+ }
  
- 	while ('\\' == line[l-1]) {
-             // concat next line(s)
--	    int bufsize = clamp(0U, sizeof(line)-l, sizeof(line)-1);
-+	    int bufsize = clamp(0UL, sizeof(line)-l, sizeof(line)-1);
- 	    fgets(&line[l-2], bufsize, fp);
- 	    if (feof((FILE*)fp)) break;
- 	    l = strlen(line);
+-template <typename T>
+-inline const T& clamp(const T& a, const T& x, const T& b) {
++inline const long clamp(long a, long x, long b) {
+     if (a > x) return a;
+     elif (b < x) return b;
+     else return x;
