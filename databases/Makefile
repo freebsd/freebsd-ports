@@ -83,6 +83,7 @@
     SUBDIR += libudbc
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
+    SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += lsdb
     SUBDIR += lsdb-emacs20
     SUBDIR += mantis

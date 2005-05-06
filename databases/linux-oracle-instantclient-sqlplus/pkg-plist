@@ -1,0 +1,6 @@
+usr/bin/sqlplus
+usr/lib/oracle/%%PORTVERSION%%/client/bin/sqlplus
+usr/lib/oracle/%%PORTVERSION%%/client/lib/glogin.sql
+usr/lib/oracle/%%PORTVERSION%%/client/lib/libsqlplus.so
+@dirrm usr/lib/oracle/%%PORTVERSION%%/client/bin
+@unexec rmdir %D/usr/bin 2>/dev/null || true
