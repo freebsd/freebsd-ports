@@ -192,7 +192,10 @@ MAN5+=	ldap.conf.5 \
 	slapo-refint.5 \
 	slapo-rwm.5 \
 	slapo-syncprov.5 \
+	slapo-translucent.5 \
 	slapo-unique.5
+MLINKS+= \
+	slapd-bdb.5 slapd-hdb.5
 
 MAN8+=	slapacl.8 \
 	slapadd.8 \
