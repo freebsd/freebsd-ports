@@ -5428,6 +5428,7 @@ linux-opengroupware	ports/misc/linux-opengroupware
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-oracle-instantclient-basic	ports/databases/linux-oracle-instantclient-basic
+linux-oracle-instantclient-sdk	ports/databases/linux-oracle-instantclient-sdk
 linux-overnet-core	ports/net/linux-overnet-core
 linux-pam-docs	ports/security/linux-pam-docs
 linux-pango	ports/x11-toolkits/linux-pango
