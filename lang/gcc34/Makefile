@@ -71,6 +71,9 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
 EXTRA_SHLIB=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
+.if ${OSVERSION} < 500000 && ${ARCH} == alpha
+CXXFLAGS+=	-fPIC
+.endif
 .endif
 ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
