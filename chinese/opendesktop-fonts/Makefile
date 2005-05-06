@@ -8,7 +8,8 @@
 PORTNAME=	fireflyttf
 PORTVERSION=	1.3.0
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://www.study-area.org/apt/firefly-font/
+MASTER_SITES=	http://firefly.idv.tw/apt/firefly-font/ \
+		http://www.study-area.org/apt/firefly-font/
 DISTNAME=	fireflysung-${PORTVERSION}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
