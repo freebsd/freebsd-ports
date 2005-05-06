@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	98
-PORTREVISION=	1
+PORTVERSION=	107.1
 CATEGORIES=	net dns
 MASTER_SITES=	http://darwinsource.opendarwin.org/tarballs/apsl/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
