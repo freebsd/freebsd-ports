@@ -41,9 +41,9 @@ etc/openldap/DB_CONFIG.example
 %%BACK_SQL%%libexec/openldap/back_sql.so
 %%BACK_SQL%%libexec/openldap/back_sql-2.3.so
 %%BACK_SQL%%libexec/openldap/back_sql-2.3.so.0
-%%MODULES%%@unexec rmdir %D/libexec/openldap 2>/dev/null || true
 libexec/slapd
 libexec/slurpd
+@unexec rmdir %D/libexec/openldap 2>/dev/null || true
 sbin/slapacl
 sbin/slapadd
 sbin/slapauth

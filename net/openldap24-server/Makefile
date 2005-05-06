@@ -8,6 +8,7 @@
 PORTNAME=		openldap
 DISTVERSION=		2.3.2beta
 PORTREVISION=		${OPENLDAP_PORTREVISION}
+PORTREVISION=		1
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			http://public.planetmirror.com/pub/openldap/%SUBDIR%/ \
