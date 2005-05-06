@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20050408
+PORTVERSION=	20050503
 CATEGORIES=	security
-MASTER_SITES=	http://www.clamav.net/snapshot/
+MASTER_SITES=	http://www.clamav.net/snapshot/ \
+		http://www.galle.com.br/~renato/clamav-devel/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -25,6 +26,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
