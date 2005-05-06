@@ -127,6 +127,8 @@ MAN4+=		vesa.4x
 PLIST_SUB+=	I386=""
 MAN1+=		scanpci.1
 MAN4+=		i740.4x \
+		imstt.4x \
+		newport.4x \
 		nsc.4x \
 		via.4x \
 		vmware.4x

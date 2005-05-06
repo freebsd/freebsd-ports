@@ -92,8 +92,10 @@ lib/modules/drivers/glint_drv.so
 %%AMD64_I386%%lib/modules/drivers/i128_drv.so
 %%I386%%lib/modules/drivers/i740_drv.so
 %%AMD64_I386%%lib/modules/drivers/i810_drv.so
+%%I386%%lib/modules/drivers/imstt_drv.so
 lib/modules/drivers/mga_drv.so
 %%AMD64_I386%%lib/modules/drivers/neomagic_drv.so
+%%I386%%lib/modules/drivers/newport_drv.so
 %%I386%%lib/modules/drivers/nsc_drv.so
 %%SPARC64_NA%%lib/modules/drivers/nv_drv.so
 lib/modules/drivers/r128_drv.so
