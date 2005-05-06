@@ -29,6 +29,10 @@ DIST_SUBDIR=	xemacs
 MAINTAINER?=	anrays@gmail.com
 COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
+CONFLICTS=	emacs-[0-9]* \
+		xemacs-[0-9]* xemacs-devel-[0-9]* \
+		xemacs-devel-mule-[0-9]*
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base:${PORTSDIR}/editors/xemacs-mule-packages
 RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base:${PORTSDIR}/editors/xemacs-mule-packages
 .if defined(PKGNAMEPREFIX)
