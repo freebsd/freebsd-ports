@@ -38,6 +38,10 @@ MAKE_ARGS+=	"USE_AL=1"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+BROKEN=		Does not build on FreeBSD 6.X
+.endif
+
 .ifndef (WITH_OPENAL)
 pre-everything::
 	@${ECHO_CMD} "********************************************************************"
