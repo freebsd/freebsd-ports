@@ -1,0 +1,20 @@
+Monsterz is a little arcade puzzle game, similar to the famous Bejeweled or
+Zookeeper.
+
+The goal of the game is to create rows of similar monsters, either
+horizontally or vertically. The only allowed move is the swap of two adjacent
+monsters, on the condition that it creates a row of three or more. When
+alignments are cleared, pieces fall from the top of the screen to fill the
+board again. Chain reactions earn you even more points.
+
+This game is mostly about luck, but it remains highly addictive. You have been
+warned. Currently two modes are available:
+
+    * Classic - play against the clock and clear a given number of each monster
+      type to reach next level.
+    * Puzzle - clear lines of monsters to move pieces around and put together
+      the puzzle.
+    * Training - play against the clock in a neverending level, chose the timer
+      difficulty and number of monsters for infinite fun.
+
+WWW: http://sam.zoy.org/monsterz/

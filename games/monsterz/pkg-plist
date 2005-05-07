@@ -1,0 +1,24 @@
+%%LINSTDIR%%/graphics/background.png
+%%LINSTDIR%%/graphics/bigtiles.png
+%%LINSTDIR%%/graphics/board.png
+%%LINSTDIR%%/graphics/icon.png
+%%LINSTDIR%%/graphics/logo.png
+%%LINSTDIR%%/graphics/tiles.png
+%%LINSTDIR%%/monsterz.py
+%%LINSTDIR%%/monsterz.pyc
+%%LINSTDIR%%/monsterz.pyo
+%%LINSTDIR%%/sound/applause.wav
+%%LINSTDIR%%/sound/boing.wav
+%%LINSTDIR%%/sound/click.wav
+%%LINSTDIR%%/sound/ding.wav
+%%LINSTDIR%%/sound/duh.wav
+%%LINSTDIR%%/sound/grunt.wav
+%%LINSTDIR%%/sound/laugh.wav
+%%LINSTDIR%%/sound/music.s3m
+%%LINSTDIR%%/sound/pop.wav
+%%LINSTDIR%%/sound/warning.wav
+%%LINSTDIR%%/sound/whip.wav
+@dirrm %%LINSTDIR%%/sound
+@dirrm %%LINSTDIR%%/graphics
+@dirrm %%LINSTDIR%%
+@unexec rmdir %D/share/games 2>/dev/null || true
