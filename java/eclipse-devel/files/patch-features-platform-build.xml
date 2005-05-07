@@ -1,0 +1,127 @@
+--- features/org.eclipse.platform/build.xml.orig	Fri Apr  1 13:54:42 2005
++++ features/org.eclipse.platform/build.xml	Sat Apr  2 13:43:10 2005
+@@ -44,6 +44,16 @@
+ 		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk" target="${target}">
+ 			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk" target="${target}">
++			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="motif"/>
++		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.motif" target="${target}">
++			<property name="arch" value="x86"/>
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="gtk"/>
+ 		</ant>
+@@ -63,6 +73,11 @@
+ 			<property name="ws" value="gtk"/>
+ 		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk64" target="${target}">
++			<property name="arch" value="amd64"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk64" target="${target}">
+ 			<property name="arch" value="ia64"/>
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="gtk"/>
+@@ -182,6 +197,11 @@
+ 			<property name="os" value="win32"/>
+ 			<property name="ws" value="win32"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.update.core.freebsd" target="${target}">
++			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="motif"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.update.core.linux" target="${target}">
+ 			<property name="arch" value="x86"/>
+ 			<property name="os" value="linux"/>
+@@ -222,6 +242,11 @@
+ 			<property name="os" value="qnx"/>
+ 			<property name="ws" value="photon"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.resources.freebsd" target="${target}">
++			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="motif"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.resources.linux" target="${target}">
+ 			<property name="arch" value="x86"/>
+ 			<property name="os" value="linux"/>
+@@ -449,7 +474,7 @@
+ 		<copy todir="${feature.base}/features/org.eclipse.platform_3.1.0" failonerror="true">
+ 			<fileset dir="${basedir}" includes="epl-v10.html,eclipse_update_120.jpg,feature.xml,feature.properties,license.html"			/>
+ 		</copy>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="" pluginIds="org.apache.ant,1.6.2,org.apache.lucene,1.4.3,org.eclipse.ant.core,3.1.0,org.eclipse.compare,3.1.0,org.eclipse.core.boot,3.0.0,org.eclipse.core.commands,3.1.0,org.eclipse.core.filebuffers,3.1.0,org.eclipse.core.expressions,3.1.0,org.eclipse.core.resources,3.1.0,org.eclipse.core.resources.compatibility,3.1.0,org.eclipse.core.runtime,3.1.0,org.eclipse.core.runtime.compatibility,3.1.0,org.eclipse.osgi,3.1.0,org.eclipse.osgi.services,3.0.0,org.eclipse.osgi.util,3.0.0,org.eclipse.core.variables,3.1.0,org.eclipse.debug.core,3.1.0,org.eclipse.debug.ui,3.1.0,org.eclipse.help,3.1.0,org.eclipse.help.webapp,3.1.0,org.eclipse.help.base,3.1.0,org.eclipse.help.ui,3.1.0,org.eclipse.help.appserver,3.1.0,org.eclipse.platform,3.1.0,org.eclipse.platform.doc.user,3.1.0,org.eclipse.search,3.1.0,org.eclipse.swt,3.1.0,org.eclipse.team.core,3.1.0,org.eclipse.team.cvs.core,3.1.0,org.eclipse.team.cvs.ssh,3.1.0,org.eclipse.team.cvs.ssh2,3.1.0,org.eclipse.team.cvs.ui,3.1.0,org.eclipse.team.ui,3.1.0,org.eclipse.tomcat,4.1.30.1,org.eclipse.text,3.1.0,org.eclipse.jface,3.1.0,org.eclipse.jface.text,3.1.0,org.eclipse.ui.console,3.1.0,org.eclipse.ui.presentations.r21,3.1.0,org.eclipse.ui.intro,3.1.0,org.eclipse.ui.cheatsheets,3.0.0,org.eclipse.ui.browser,3.1.0,org.eclipse.ui.workbench,3.1.0,org.eclipse.ui.workbench.texteditor,3.1.0,org.eclipse.ui.views,3.1.0,org.eclipse.ui.editors,3.1.0,org.eclipse.ui.forms,3.1.0,org.eclipse.ui,3.1.0,org.eclipse.ui.externaltools,3.1.0,org.eclipse.ui.ide,3.1.0,org.eclipse.update.configurator,3.1.0,org.eclipse.update.core,3.1.0,org.eclipse.update.scheduler,3.1.0,org.eclipse.update.ui,3.1.0,org.eclipse.ui.workbench.compatibility,3.1.0,org.eclipse.swt.motif,3.1.0,org.eclipse.swt.motif,3.1.0,org.eclipse.core.resources.hpux,3.0.0,org.eclipse.swt.gtk,3.1.0,org.eclipse.swt.gtk,3.1.0,org.eclipse.core.resources.linux,3.0.0,org.eclipse.update.core.linux,3.1.0,org.eclipse.swt.gtk64,3.1.0,org.eclipse.swt.gtk64,3.1.0,org.eclipse.swt.gtk64,3.1.0,org.eclipse.swt.motif,3.1.0,org.eclipse.swt.carbon,3.1.0,org.eclipse.core.resources.macosx,3.0.0,org.eclipse.ui.carbon,3.1.0,org.eclipse.swt.photon,3.1.0,org.eclipse.core.resources.qnx,3.0.0,org.eclipse.swt.motif,3.1.0,org.eclipse.swt.gtk,3.1.0,org.eclipse.swt.win32,3.1.0,org.eclipse.core.resources.win32,3.0.0,org.eclipse.ui.win32,3.1.0,org.eclipse.update.core.win32,3.1.0,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="" pluginIds="org.apache.ant,1.6.2,org.apache.lucene,1.4.3,org.eclipse.ant.core,3.1.0,org.eclipse.compare,3.1.0,org.eclipse.core.boot,3.0.0,org.eclipse.core.commands,3.1.0,org.eclipse.core.filebuffers,3.1.0,org.eclipse.core.expressions,3.1.0,org.eclipse.core.resources,3.1.0,org.eclipse.core.resources.compatibility,3.1.0,org.eclipse.core.runtime,3.1.0,org.eclipse.core.runtime.compatibility,3.1.0,org.eclipse.osgi,3.1.0,org.eclipse.osgi.services,3.0.0,org.eclipse.osgi.util,3.0.0,org.eclipse.core.variables,3.1.0,org.eclipse.debug.core,3.1.0,org.eclipse.debug.ui,3.1.0,org.eclipse.help,3.1.0,org.eclipse.help.webapp,3.1.0,org.eclipse.help.base,3.1.0,org.eclipse.help.ui,3.1.0,org.eclipse.help.appserver,3.1.0,org.eclipse.platform,3.1.0,org.eclipse.platform.doc.user,3.1.0,org.eclipse.search,3.1.0,org.eclipse.swt,3.1.0,org.eclipse.team.core,3.1.0,org.eclipse.team.cvs.core,3.1.0,org.eclipse.team.cvs.ssh,3.1.0,org.eclipse.team.cvs.ssh2,3.1.0,org.eclipse.team.cvs.ui,3.1.0,org.eclipse.team.ui,3.1.0,org.eclipse.tomcat,4.1.30.1,org.eclipse.text,3.1.0,org.eclipse.jface,3.1.0,org.eclipse.jface.text,3.1.0,org.eclipse.ui.console,3.1.0,org.eclipse.ui.presentations.r21,3.1.0,org.eclipse.ui.intro,3.1.0,org.eclipse.ui.cheatsheets,3.0.0,org.eclipse.ui.browser,3.1.0,org.eclipse.ui.workbench,3.1.0,org.eclipse.ui.workbench.texteditor,3.1.0,org.eclipse.ui.views,3.1.0,org.eclipse.ui.editors,3.1.0,org.eclipse.ui.forms,3.1.0,org.eclipse.ui,3.1.0,org.eclipse.ui.externaltools,3.1.0,org.eclipse.ui.ide,3.1.0,org.eclipse.update.configurator,3.1.0,org.eclipse.update.core,3.1.0,org.eclipse.update.scheduler,3.1.0,org.eclipse.update.ui,3.1.0,org.eclipse.ui.workbench.compatibility,3.1.0,org.eclipse.swt.motif,3.1.0,org.eclipse.swt.motif,3.1.0,org.eclipse.core.resources.hpux,3.0.0,org.eclipse.swt.gtk,3.1.0,org.eclipse.swt.gtk,3.1.0,org.eclipse.core.resources.linux,3.0.0,org.eclipse.core.resources.freebsd,3.0.0,org.eclipse.update.core.linux,3.1.0,org.eclipse.update.core.freebsd,3.1.0,org.eclipse.swt.gtk64,3.1.0,org.eclipse.swt.gtk64,3.1.0,org.eclipse.swt.gtk64,3.1.0,org.eclipse.swt.motif,3.1.0,org.eclipse.swt.carbon,3.1.0,org.eclipse.core.resources.macosx,3.0.0,org.eclipse.ui.carbon,3.1.0,org.eclipse.swt.photon,3.1.0,org.eclipse.core.resources.qnx,3.0.0,org.eclipse.swt.motif,3.1.0,org.eclipse.swt.gtk,3.1.0,org.eclipse.swt.win32,3.1.0,org.eclipse.core.resources.win32,3.0.0,org.eclipse.ui.win32,3.1.0,org.eclipse.update.core.win32,3.1.0,"/>
+ 		<antcall target="rootFiles${os}_${ws}_${arch}"/>
+ 	</target>
+ 	<target name="rootFileswin32_win32_x86">
+@@ -472,6 +497,16 @@
+ 		</copy>
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="eclipse" /> 
+ 	</target>
++	<target name="rootFilesfreebsd_gtk_x86">
++		<mkdir dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/../../features/org.eclipse.launchers/bin/gtk/freebsd/x86" includes="**"			/>
++			<fileset dir="${basedir}/gtk" includes="**"			/>
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../../plugins/org.eclipse.platform" includes="startup.jar"			/>
++		</copy>
++		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" includes="eclipse" /> 
++	</target>
+ 	<target name="rootFileslinux_gtk_ppc">
+ 		<mkdir dir="${feature.base}/linux.gtk.ppc/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.gtk.ppc/${collectingFolder}" failonerror="true">
+@@ -512,6 +547,16 @@
+ 		</copy>
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="eclipse" /> 
+ 	</target>
++	<target name="rootFilesfreebsd_gtk_amd64">
++		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/../../features/org.eclipse.launchers/bin/gtk/freebsd/amd64" includes="**"			/>
++			<fileset dir="${basedir}/gtk" includes="**"			/>
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../../plugins/org.eclipse.platform" includes="startup.jar"			/>
++		</copy>
++		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="eclipse" /> 
++	</target>
+ 	<target name="rootFileslinux_motif_x86">
+ 		<mkdir dir="${feature.base}/linux.motif.x86/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.motif.x86/${collectingFolder}" failonerror="true">
+@@ -523,6 +568,28 @@
+ 		</copy>
+ 		<chmod perm="755" dir="${feature.base}/linux.motif.x86/${collectingFolder}" includes="eclipse" /> 
+ 		<chmod perm="755" dir="${feature.base}/linux.motif.x86/${collectingFolder}" includes="*.so*" /> 
++	</target>
++	<target name="rootFilesfreebsd_motif_x86">
++		<mkdir dir="${feature.base}/freebsd.motif.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.motif.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/../../features/org.eclipse.launchers/bin/motif/freebsd/x86" includes="**"			/>
++			<fileset dir="${basedir}/../../plugins/org.eclipse.swt.motif/os/freebsd/x86" includes="libXm.so.2.1"			/>
++			<fileset dir="${basedir}/motif" includes="**"			/>
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../../plugins/org.eclipse.platform" includes="startup.jar"			/>
++		</copy>
++		<chmod perm="755" dir="${feature.base}/freebsd.motif.x86/${collectingFolder}" includes="eclipse" /> 
++		<exec executable="ln" dir="${feature.base}/freebsd.motif.x86/${collectingFolder}" os="FreeBSD">
++			<arg line="-s"/>
++			<arg line="libXm.so.2.1"/>
++			<arg line="libXm.so.2"/>
++		</exec>
++		<exec executable="ln" dir="${feature.base}/freebsd.motif.x86/${collectingFolder}" os="FreeBSD">
++			<arg line="-s"/>
++			<arg line="libXm.so.2.1"/>
++			<arg line="libXm.so"/>
++		</exec>
++		<chmod perm="755" dir="${feature.base}/freebsd.motif.x86/${collectingFolder}" includes="*.so*" /> 
+ 	</target>
+ 	<target name="rootFilessolaris_motif_sparc">
+ 		<mkdir dir="${feature.base}/solaris.motif.sparc/${collectingFolder}"/>

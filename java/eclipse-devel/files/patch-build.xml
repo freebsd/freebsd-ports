@@ -1,0 +1,41 @@
+--- build.xml.orig	Fri Apr  1 13:58:26 2005
++++ build.xml	Sat Apr  9 17:03:28 2005
+@@ -48,17 +48,20 @@
+ 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-ppc64"/>
+ 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-ia64"/>
+ 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-x86_64"/>
++				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="freebsd-gtk-amd64"/>
+ 			</or>
+ 		</condition>
+ 		<condition property="wsType" value="gtk">
+ 			<or>
+ 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-ppc"/>
+ 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-x86"/>
++				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="freebsd-gtk-x86"/>
+ 			</or>
+ 		</condition>
+ 		<condition property="wsType" value="motif">
+ 			<or>
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-motif-x86"/>
++				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-motif-x86"/>
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-ia64"/>
+ 			</or>
+ 		</condition>
+@@ -82,12 +85,12 @@
+ 		<!--unzip launcher -->
+ 		<property name="launcherlibs" value="${buildDirectory}/launchertmp"/>
+ 		<mkdir dir="${launcherlibs}"/>
+-		<unzip dest="${launcherlibs}">
+-			<fileset dir="${buildDirectory}/plugins/org.eclipse.platform.source/src/">
+-				<include name ="org.eclipse.platform_*/launchersrc.zip"/>
++		<copy todir="${launcherlibs}">
++			<fileset dir="${buildDirectory}/features/org.eclipse.launchers">
++				<include name ="**"/>
+ 			</fileset>
+-		</unzip>
+-		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" os="Linux" failonerror="true">
++		</copy>
++		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" os="FreeBSD" failonerror="true">
+ 			<arg line="build.sh"/>
+ 		</exec>
+ 		<move file="${launcherlibs}/library/${installWs}/eclipse" todir="${launcherlibs}/"/>

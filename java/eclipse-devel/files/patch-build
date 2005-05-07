@@ -1,0 +1,11 @@
+--- build.orig	Fri Apr  1 13:58:26 2005
++++ build	Sun Apr  3 23:33:46 2005
+@@ -52,7 +52,7 @@
+ 	exit 1
+ fi
+ 
+-if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86_64" ] || [ "$os-$ws-$arch" = "linux-gtk-ia64" ] || [ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "solaris-gtk-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc64" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-ia64" ]
++if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86_64" ] || [ "$os-$ws-$arch" = "linux-gtk-ia64" ] || [ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "solaris-gtk-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc64" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-ia64" ] || [ "$os-$ws-$arch" = "freebsd-gtk-x86" ] || [ "$os-$ws-$arch" = "freebsd-motif-x86" ] || [ "$os-$ws-$arch" = "freebsd-gtk-amd64" ]
+ then
+         ORIGCLASSPATH=$CLASSPATH;export ORIGCLASSPATH
+         ant -q -buildfile jdtcoresrc/compilejdtcorewithjavac.xml
