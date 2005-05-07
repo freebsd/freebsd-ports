@@ -23,6 +23,7 @@ lib/ethereal/plugins/%%PORTVERSION%%/megaco.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
 lib/ethereal/plugins/%%PORTVERSION%%/opsi.so
 lib/ethereal/plugins/%%PORTVERSION%%/pcli.so
+lib/ethereal/plugins/%%PORTVERSION%%/profinet.so
 lib/ethereal/plugins/%%PORTVERSION%%/rdm.so
 lib/ethereal/plugins/%%PORTVERSION%%/rlm.so
 lib/ethereal/plugins/%%PORTVERSION%%/rtnet.so
