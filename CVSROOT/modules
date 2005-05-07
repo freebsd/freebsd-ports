@@ -5817,7 +5817,6 @@ milter-greylist	ports/mail/milter-greylist
 milter-greylist-devel	ports/mail/milter-greylist-devel
 milter-regex	ports/mail/milter-regex
 milter-skem	ports/mail/milter-skem
-milter-spamc	ports/mail/milter-spamc
 mime		ports/devel/mime
 mime-support	ports/misc/mime-support
 mimedefang	ports/mail/mimedefang
@@ -6023,7 +6022,6 @@ mod_sequester	ports/www/mod_sequester
 mod_shapvh	ports/www/mod_shapvh
 mod_snake	ports/www/mod_snake
 mod_sqlinclude	ports/www/mod_sqlinclude
-mod_throttle	ports/www/mod_throttle
 mod_ticket	ports/www/mod_ticket
 mod_tidy	ports/www/mod_tidy
 mod_traf_thief	ports/www/mod_traf_thief
@@ -6034,8 +6032,6 @@ mod_uid		ports/www/mod_uid
 mod_v2h		ports/www/mod_v2h
 mod_vdbh	ports/www/mod_vdbh
 mod_vhs		ports/www/mod_vhs
-mod_watch	ports/www/mod_watch
-mod_watch4	ports/www/mod_watch4
 mod_webapp	ports/www/mod_webapp
 mod_zap		ports/www/mod_zap
 mode-info	ports/editors/mode-info
