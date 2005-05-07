@@ -7,6 +7,7 @@
 
 PORTNAME=	astyle
 PORTVERSION=	1.15.3
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +24,9 @@ ALL_TARGET=	astyle
 MAKE_ARGS=	CPPFLAGS="${CXXFLAGS}"
 
 PLIST_FILES=	bin/astyle
+.if !defined(NOPORTDOCS)
 PORTDOCS=	astyle.html astyle_release_notes.html license.html
-
-.include <bsd.port.pre.mk>
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin
@@ -34,4 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
