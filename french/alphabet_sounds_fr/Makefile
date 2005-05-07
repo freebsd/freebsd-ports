@@ -14,6 +14,8 @@ DISTNAME=	alphabet_sounds_fr
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	Educative games for children. Alphabet sounds package
 
+BROKEN=		Size mismatch
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/childsplay:${PORTSDIR}/games/childsplay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
