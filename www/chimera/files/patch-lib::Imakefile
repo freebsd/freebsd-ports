@@ -1,0 +1,10 @@
+--- lib/Imakefile.orig	Sat May  7 13:14:22 2005
++++ lib/Imakefile	Sat May  7 13:14:26 2005
+@@ -7,7 +7,6 @@
+ InstallNonExec(convert,$(CLIBDIR))
+ InstallNonExec(home.html,$(CLIBDIR))
+ InstallNonExec(help.html,$(CLIBDIR))
+-InstallNonExec(mime.types,$(CLIBDIR))
+ InstallNonExec(mailcap,$(CLIBDIR))
+ InstallNonExec(protocol,$(CLIBDIR))
+ InstallNonExec(cacheinfo,$(CLIBDIR))

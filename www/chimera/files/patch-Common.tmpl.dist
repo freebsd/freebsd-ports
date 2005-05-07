@@ -1,6 +1,20 @@
---- ./Common.tmpl.dist.org	Sat Apr  1 19:20:24 1995
-+++ ./Common.tmpl.dist	Tue Apr  4 07:51:01 1995
-@@ -80,7 +80,7 @@
+--- Common.tmpl.dist.orig	Sun Apr  2 05:20:24 1995
++++ Common.tmpl.dist	Sat May  7 13:15:10 2005
+@@ -28,11 +28,12 @@
+ CUTILDIR = $(BINDIR)
+ CLIBDIR = $(LIBDIR)/chimera
+ CMANDIR = $(MANDIR)
++CETCDIR = $(LOCALBASE)/etc
+ 
+ CDEFINES = \
+ -DCUTILDIR=\"$(CUTILDIR)\" \
+ -DCONVERT_FILES=\"~/.chimera_convert:$(CLIBDIR)/convert\" \
+--DMIME_TYPE_FILES=\"~/.chimera_mime.types:$(CLIBDIR)/mime.types\" \
++-DMIME_TYPE_FILES=\"~/.chimera_mime.types:$(CETCDIR)/mime.types\" \
+ -DMAIL_CAPS=\"~/.mailcap:$(CLIBDIR)/mailcap\" \
+ -DPROTOCOL_FILES=\"~/.chimera_protocol:$(CLIBDIR)/protocol\" \
+ -DCACHE_INFO_FILES=\"~/.chimera_cacheinfo:$(CLIBDIR)/cacheinfo\" \
+@@ -80,7 +81,7 @@
  #define NEED_STRCASECMP 0
  
  CEXTRA_DEFINES = -DHAVE_MKTIME -DHAVE_STDLIB_H -DHAVE_STRING_H \
