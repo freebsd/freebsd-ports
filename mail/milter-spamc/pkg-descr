@@ -1,5 +1,0 @@
-SpamAssassin is a well established free open-source mail classification tool, 
-however it has no means by which to interface with Sendmail. 
-milter-spamc provides such an interface between Sendmail and SpamAssassin. 
-
-WWW: http://www.milter.info/milter-spamc/
