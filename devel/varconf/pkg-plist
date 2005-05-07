@@ -8,7 +8,7 @@ include/varconf-1.0/varconf/varconf.h
 include/varconf-1.0/varconf/variable.h
 lib/libvarconf-1.0.a
 lib/libvarconf-1.0.so
-lib/libvarconf-1.0.so.2
+lib/libvarconf-1.0.so.4
 libdata/pkgconfig/varconf-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

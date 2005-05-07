@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	varconf
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/varconf/ \
-		http://purple.worldforge.org/wf/downloads/libs/varconf/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=worldforge
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A Configuration System for the STAGE Server
 
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
+USE_BZIP2=	YES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; \
