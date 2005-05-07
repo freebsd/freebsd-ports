@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kcheckers
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	http://kcheckers.osdn.org.ua/
 
