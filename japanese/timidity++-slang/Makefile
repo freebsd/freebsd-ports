@@ -10,6 +10,8 @@ CATEGORIES=	japanese
 MAINTAINER=	yatt@luna2.org
 COMMENT=	Slang interface for TiMidity++ with Japanese support
 
+BROKEN=		Incomplete distinfo file
+
 INTERFACE=	slang
 JAPANESE=	yes
 PLIST_FILES=	lib/timidity/interface_s.so

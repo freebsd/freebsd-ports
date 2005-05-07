@@ -19,6 +19,8 @@ COMMENT?=	Emacs interface for TiMidity++
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 LIB_DEPENDS=	${INTERFACE_DEPS}
 
+BROKEN=		Incomplete distinfo file
+
 SLAVEDIRS=	audio/timidity++-gtk audio/timidity++-motif \
 		audio/timidity++-slang audio/timidity++-tcltk \
 		audio/timidity++-xaw audio/timidity++-xskin \
