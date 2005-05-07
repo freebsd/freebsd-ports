@@ -6,4 +6,4 @@ available from CPAN. It's compatible with RFC2033 (LMTP)
 and works great with postfix, and other LHLO/LMTP-fluent MTA's.
 
 Author:	Jesper Noehr <jesper@noehr.org>
-WWW:	http://code.printf.dk/~decius/yadda/
+WWW:	http://www.printf.dk/projects/yadda.xml
