@@ -33,6 +33,12 @@ CFLAGS+=	-O3 -ffast-math
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
@@ -45,4 +51,4 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
