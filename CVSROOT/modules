@@ -11042,6 +11042,7 @@ suckblow	ports/net/suckblow
 sudo		ports/security/sudo
 sudoscript	ports/security/sudoscript
 sudosh		ports/security/sudosh
+sugarcrm	ports/deskutils/sugarcrm
 sun-wtk		ports/java/sun-wtk
 sunclock	ports/astro/sunclock
 sunterlib	ports/devel/sunterlib
