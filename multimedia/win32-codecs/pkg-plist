@@ -1,5 +1,6 @@
 @comment Readmes
 lib/win32/README
+lib/win32/NOTE
 lib/win32/Readme.txt
 @comment win32codecs
 lib/win32/wmv8ds32.ax
@@ -83,7 +84,7 @@ lib/win32/vsslight.dll
 lib/win32/vsswlt.dll
 lib/win32/ultimo.dll
 lib/win32/vp4vfw.dll
-@comment qt6dlls
+@comment qt63dlls
 lib/win32/ACTLComponent.qtx
 lib/win32/AvidQTAVUICodec.qtx
 lib/win32/QuickTimeEssentials.qtx
@@ -96,7 +97,7 @@ lib/win32/Indeo4.qtx
 lib/win32/On2_VP3.qtx
 lib/win32/ZyGoVideo.qtx
 lib/win32/3ivX.qtx
-@comment rp8codecs
+@comment rp9codecs
 lib/win32/dnet.so.6.0
 lib/win32/drv2.so.6.0
 lib/win32/tokr.so.6.0
@@ -108,7 +109,17 @@ lib/win32/ddnt.so.6.0
 lib/win32/cook.so.6.0
 lib/win32/sipr.so.6.0
 lib/win32/tokf.so.6.0
-@comment xanim
+@comment rp9codecs-win32
+lib/win32/atrc3260.dll
+lib/win32/cook3260.dll
+lib/win32/drv13260.dll
+lib/win32/drv23260.dll
+lib/win32/drv33260.dll
+lib/win32/drv43260.dll
+lib/win32/pncrt.dll
+lib/win32/sipr3260.dll
+lib/win32/tokr3260.dll
+@comment xanimdlls
 lib/win32/vid_3ivX.xa
 lib/win32/vid_3ivX_d3.5_linuxELFx86c6.xa
 lib/win32/vid_cvid.xa
