@@ -18,6 +18,8 @@ COMMENT=	The base set of libraries needed in OSF/1 (Tru64) mode
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=	alpha
 
 PREFIX=			/compat/osf1
