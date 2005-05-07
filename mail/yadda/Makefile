@@ -8,16 +8,12 @@
 PORTNAME=	yadda
 PORTVERSION=	1.0
 CATEGORIES=	mail
-MASTER_SITES=	#
+MASTER_SITES=	http://www.printf.dk/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Damn Delivery Agent
 
 RUN_DEPENDS=	${SITE_PERL}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit
-
-BROKEN=		Size mismatch, mastersites disappeared
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=	2005-05-07
 
 USE_PERL5_RUN=	yes
 
