@@ -1,84 +1,63 @@
-include/Atlas-C++-0.5/Atlas/Bridge.h
-include/Atlas-C++-0.5/Atlas/Codec.h
-include/Atlas-C++-0.5/Atlas/Codec_impl.h
-include/Atlas-C++-0.5/Atlas/Codecs/Packed.h
-include/Atlas-C++-0.5/Atlas/Codecs/Utility.h
-include/Atlas-C++-0.5/Atlas/Codecs/XML.h
-include/Atlas-C++-0.5/Atlas/EncoderBase.h
-include/Atlas-C++-0.5/Atlas/Funky/Encoder.h
-include/Atlas-C++-0.5/Atlas/Message/DecoderBase.h
-include/Atlas-C++-0.5/Atlas/Message/Element.h
-include/Atlas-C++-0.5/Atlas/Message/Encoder.h
-include/Atlas-C++-0.5/Atlas/Message/Layer.h
-include/Atlas-C++-0.5/Atlas/Message/QueuedDecoder.h
-include/Atlas-C++-0.5/Atlas/Negotiate.h
-include/Atlas-C++-0.5/Atlas/Net/Loopback.h
-include/Atlas-C++-0.5/Atlas/Net/Stream.h
-include/Atlas-C++-0.5/Atlas/Objects/Decoder.h
-include/Atlas-C++-0.5/Atlas/Objects/Encoder.h
-include/Atlas-C++-0.5/Atlas/Objects/Entity/Account.h
-include/Atlas-C++-0.5/Atlas/Objects/Entity/Admin.h
-include/Atlas-C++-0.5/Atlas/Objects/Entity/AdminEntity.h
-include/Atlas-C++-0.5/Atlas/Objects/Entity/Game.h
-include/Atlas-C++-0.5/Atlas/Objects/Entity/GameEntity.h
-include/Atlas-C++-0.5/Atlas/Objects/Entity/Player.h
-include/Atlas-C++-0.5/Atlas/Objects/Entity/RootEntity.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Action.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Appearance.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Combine.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Communicate.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Create.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Delete.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Disappearance.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Divide.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Error.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Feel.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Get.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Imaginary.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Info.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Listen.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Login.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Logout.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Look.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Move.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Perceive.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Perception.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/RootOperation.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Set.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Sight.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Smell.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Sniff.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Sound.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Talk.h
-include/Atlas-C++-0.5/Atlas/Objects/Operation/Touch.h
-include/Atlas-C++-0.5/Atlas/Objects/Root.h
-include/Atlas-C++-0.5/Atlas/Task.h
-include/Atlas-C++-0.5/Atlas/Version.h
-lib/libAtlas-0.5.la
-lib/libAtlas-0.5.so
-lib/libAtlas-0.5.so.1
-lib/libAtlasCodecs-0.5.la
-lib/libAtlasCodecs-0.5.so
-lib/libAtlasCodecs-0.5.so.1
-lib/libAtlasFunky-0.5.la
-lib/libAtlasFunky-0.5.so
-lib/libAtlasFunky-0.5.so.1
-lib/libAtlasMessage-0.5.la
-lib/libAtlasMessage-0.5.so
-lib/libAtlasMessage-0.5.so.1
-lib/libAtlasNet-0.5.la
-lib/libAtlasNet-0.5.so
-lib/libAtlasNet-0.5.so.1
-lib/libAtlasObjects-0.5.la
-lib/libAtlasObjects-0.5.so
-lib/libAtlasObjects-0.5.so.1
-lib/libAtlasObjectsEntity-0.5.la
-lib/libAtlasObjectsEntity-0.5.so
-lib/libAtlasObjectsEntity-0.5.so.1
-lib/libAtlasObjectsOperation-0.5.la
-lib/libAtlasObjectsOperation-0.5.so
-lib/libAtlasObjectsOperation-0.5.so.1
-libdata/pkgconfig/atlascpp-0.5.pc
+bin/atlas_convert
+include/Atlas-C++-0.6/Atlas/Bridge.h
+include/Atlas-C++-0.6/Atlas/Codec.h
+include/Atlas-C++-0.6/Atlas/Codec_impl.h
+include/Atlas-C++-0.6/Atlas/Codecs/Bach.h
+include/Atlas-C++-0.6/Atlas/Codecs/Packed.h
+include/Atlas-C++-0.6/Atlas/Codecs/Utility.h
+include/Atlas-C++-0.6/Atlas/Codecs/XML.h
+include/Atlas-C++-0.6/Atlas/Debug.h
+include/Atlas-C++-0.6/Atlas/EncoderBase.h
+include/Atlas-C++-0.6/Atlas/Exception.h
+include/Atlas-C++-0.6/Atlas/Filter.h
+include/Atlas-C++-0.6/Atlas/Formatter.h
+include/Atlas-C++-0.6/Atlas/Funky/FEncoder.h
+include/Atlas-C++-0.6/Atlas/Message/DecoderBase.h
+include/Atlas-C++-0.6/Atlas/Message/Element.h
+include/Atlas-C++-0.6/Atlas/Message/Layer.h
+include/Atlas-C++-0.6/Atlas/Message/MEncoder.h
+include/Atlas-C++-0.6/Atlas/Message/QueuedDecoder.h
+include/Atlas-C++-0.6/Atlas/Negotiate.h
+include/Atlas-C++-0.6/Atlas/Net/Loopback.h
+include/Atlas-C++-0.6/Atlas/Net/Stream.h
+include/Atlas-C++-0.6/Atlas/Objects/Anonymous.h
+include/Atlas-C++-0.6/Atlas/Objects/BaseObject.h
+include/Atlas-C++-0.6/Atlas/Objects/Decoder.h
+include/Atlas-C++-0.6/Atlas/Objects/Dispatcher.h
+include/Atlas-C++-0.6/Atlas/Objects/Encoder.h
+include/Atlas-C++-0.6/Atlas/Objects/Entity.h
+include/Atlas-C++-0.6/Atlas/Objects/ObjectsFwd.h
+include/Atlas-C++-0.6/Atlas/Objects/Operation.h
+include/Atlas-C++-0.6/Atlas/Objects/Root.h
+include/Atlas-C++-0.6/Atlas/Objects/RootEntity.h
+include/Atlas-C++-0.6/Atlas/Objects/RootOperation.h
+include/Atlas-C++-0.6/Atlas/Objects/SmartPtr.h
+include/Atlas-C++-0.6/Atlas/Objects/loadDefaults.h
+include/Atlas-C++-0.6/Atlas/Objects/objectFactory.h
+include/Atlas-C++-0.6/Atlas/Task.h
+include/Atlas-C++-0.6/Atlas/Version.h
+lib/libAtlas-0.6.a
+lib/libAtlas-0.6.so
+lib/libAtlas-0.6.so.0
+lib/libAtlasCodecs-0.6.a
+lib/libAtlasCodecs-0.6.so
+lib/libAtlasCodecs-0.6.so.0
+lib/libAtlasFilters-0.6.a
+lib/libAtlasFilters-0.6.so
+lib/libAtlasFilters-0.6.so.0
+lib/libAtlasFunky-0.6.a
+lib/libAtlasFunky-0.6.so
+lib/libAtlasFunky-0.6.so.0
+lib/libAtlasMessage-0.6.a
+lib/libAtlasMessage-0.6.so
+lib/libAtlasMessage-0.6.so.0
+lib/libAtlasNet-0.6.a
+lib/libAtlasNet-0.6.so
+lib/libAtlasNet-0.6.so.0
+lib/libAtlasObjects-0.6.a
+lib/libAtlasObjects-0.6.so
+lib/libAtlasObjects-0.6.so.0
+libdata/pkgconfig/atlascpp-0.6.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -88,14 +67,11 @@ libdata/pkgconfig/atlascpp-0.5.pc
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/ROADMAP
-@dirrm include/Atlas-C++-0.5/Atlas/Codecs
-@dirrm include/Atlas-C++-0.5/Atlas/Funky
-@dirrm include/Atlas-C++-0.5/Atlas/Message
-@dirrm include/Atlas-C++-0.5/Atlas/Net
-@dirrm include/Atlas-C++-0.5/Atlas/Objects/Entity
-@dirrm include/Atlas-C++-0.5/Atlas/Objects/Operation
-@dirrm include/Atlas-C++-0.5/Atlas/Objects
-@dirrm include/Atlas-C++-0.5/Atlas
-@dirrm include/Atlas-C++-0.5
+@dirrm include/Atlas-C++-0.6/Atlas/Codecs
+@dirrm include/Atlas-C++-0.6/Atlas/Funky
+@dirrm include/Atlas-C++-0.6/Atlas/Message
+@dirrm include/Atlas-C++-0.6/Atlas/Net
+@dirrm include/Atlas-C++-0.6/Atlas/Objects
+@dirrm include/Atlas-C++-0.6/Atlas
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
