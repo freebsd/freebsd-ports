@@ -35,6 +35,7 @@
     SUBDIR += libcomprex
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
+    SUBDIR += lzma
     SUBDIR += lzo
     SUBDIR += lzop
     SUBDIR += macutils
