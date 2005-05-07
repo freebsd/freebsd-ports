@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: olsrd
+# REQUIRE: NETWORKING SERVERS
+
+. %%RC_SUBR%%
+
+name="olsrd"
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/olsrd
+command_args="-d 0"
+
+olsrd_enable=${olsrd_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"
+
