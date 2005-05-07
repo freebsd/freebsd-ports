@@ -26,6 +26,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A replacement and extension for Tripwire
 
+BROKEN=		Incomplete pkg-plist
+
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
 USE_GMAKE=	yes
