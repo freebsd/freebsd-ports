@@ -1,13 +1,16 @@
 bin/qstat
+@unexec if cmp -s %D/etc/qstat.cfg %D/etc/qstat.cfg.default; then rm -f %D/etc/qstat.cfg; fi
+etc/qstat.cfg.default
+@exec [ -f %B/qstat.cfg ] || cp %B/%f %B/qstat.cfg
 %%PORTDOCS%%share/doc/qstat/qstatdoc.html
 %%PORTDOCS%%share/doc/qstat/info/UT2003.txt
 %%PORTDOCS%%share/doc/qstat/info/GhostRecon.txt
+%%PORTDOCS%%share/doc/qstat/info/a2s.txt
 %%PORTDOCS%%share/doc/qstat/template/README.txt
 %%PORTDOCS%%share/doc/qstat/template/brocTh.html
 %%PORTDOCS%%share/doc/qstat/template/brocTp.html
 %%PORTDOCS%%share/doc/qstat/template/brocTs.html
 %%PORTDOCS%%share/doc/qstat/template/brocTt.html
-%%PORTDOCS%%share/doc/qstat/template/ghostrecon.lst
 %%PORTDOCS%%share/doc/qstat/template/ghostreconTh.html
 %%PORTDOCS%%share/doc/qstat/template/ghostreconTp.html
 %%PORTDOCS%%share/doc/qstat/template/ghostreconTs.html

@@ -1,8 +1,0 @@
---- Makefile.orig	Fri May  7 18:42:29 1999
-+++ Makefile	Fri May  7 18:42:44 1999
-@@ -1,5 +1,4 @@
- 
--CFLAGS =
- 
- # Uncomment if you have gcc
- # CC = gcc
