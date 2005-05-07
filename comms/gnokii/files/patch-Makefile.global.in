@@ -1,5 +1,5 @@
---- Makefile.global.in.orig	Tue Jul  6 11:57:56 2004
-+++ Makefile.global.in	Tue Jul  6 11:59:17 2004
+--- Makefile.global.in.orig	Fri Apr 29 22:40:17 2005
++++ Makefile.global.in	Fri May  6 03:20:25 2005
 @@ -21,14 +21,14 @@
  
  bindir         = @bindir@
@@ -18,3 +18,12 @@
  docdir         = ${prefix}/share/doc/${PACKAGE}
  locdir         = @datadir@/locale
  
+@@ -46,7 +46,7 @@
+ CC             = @CC@
+ CFLAGS         = @CFLAGS@
+ CPPFLAGS       = @CPPFLAGS@
+-LIBS           = @LIBS@
++LIBS           = @LIBS@ -lroken -lcrypt
+ LDFLAGS        = @LDFLAGS@
+ LEX            = @LEX@
+ AR             = @AR@
