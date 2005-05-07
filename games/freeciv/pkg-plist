@@ -24,7 +24,6 @@ bin/civmanual
 %%DATADIR%%/default/techs.ruleset
 %%DATADIR%%/default/terrain.ruleset
 %%DATADIR%%/default/units.ruleset
-%%DATADIR%%/freeciv.rc-2.0
 %%DATADIR%%/helpdata.txt
 %%DATADIR%%/history/buildings.ruleset
 %%DATADIR%%/history/game.ruleset
@@ -298,6 +297,9 @@ bin/civmanual
 %%DATADIR%%/isophex/terrain2.spec
 %%DATADIR%%/isophex/tiles.png
 %%DATADIR%%/isophex/tiles.spec
+%%XAW%%%%DATADIR%%/Freeciv
+%%GTK%%%%DATADIR%%/freeciv.rc
+%%GTK2%%%%DATADIR%%/freeciv.rc-2.0
 share/locale/da/LC_MESSAGES/freeciv.mo
 share/locale/ca/LC_MESSAGES/freeciv.mo
 share/locale/cs/LC_MESSAGES/freeciv.mo
