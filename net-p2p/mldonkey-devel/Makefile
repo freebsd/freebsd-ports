@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.30.14
+PORTVERSION=	2.5.30.15
 CATEGORIES+=	net
 MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/
 PKGNAMESUFFIX=	-devel
@@ -21,7 +21,7 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 #DOWNLOADVERSION=${PORTVERSION:R}
-DOWNLOADVERSION=2.5.30.14
+DOWNLOADVERSION=2.5.30.15
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
@@ -39,10 +39,15 @@ CONFIGURE_ARGS+=\
 		--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV+=	\
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 #WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
 
+###
+## Options activation
+###
 .if defined(WITHOUT_GUI)
 .if defined(WITHOUT_CORE)
 .error "Cool, you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing."
@@ -75,10 +80,26 @@ PORTDOCS=	${DOCFILES}
 
 .include <bsd.port.pre.mk>
 
+### Development version
+## Thus, we will use non standard threading library
+## We will switch from libpthread to libthr which should produce
+## better results in some scenarios. You can read more at pthread(3)
+.if defined(WITH_THR_THREAD_MODEL)
+PTHREAD_CFLAGS=	-D_THREAD_SAFE
+PTHREAD_LIBS=	-lthr
+.endif
+
 pre-everything::
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_CORE)
 	@${ECHO_MSG} "You can disable the GUI by defining WITHOUT_GUI."
 	@${ECHO_MSG} "You can disable the CORE by defining WITHOUT_CORE."
+	@${ECHO_MSG}
+.endif
+.ifndef(WITH_THR_THREAD_MODEL)
+	@${ECHO_MSG} "Define WITH_THR_THREAD_MODEL to switch from"
+	@${ECHO_MSG} "pthread to thr threading model which could produce better"
+	@${ECHO_MSG} "results in some scenarios.  Use at your discretion."
+
 .endif
 
 post-patch:
@@ -90,6 +111,12 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC}/config && ${AUTOCONF}
+
+post-configure:
+	@${REINPLACE_CMD} -E \
+		-e 's|^(PTHREAD_CFLAGS[^=]*=).*$$|\1${PTHREAD_CFLAGS}|' \
+		-e 's|^(PTHREAD_LIBS[^=]*=).*$$|\1${PTHREAD_LIBS}|' \
+		${BUILD_WRKSRC}/config/Makefile.config
 
 do-install:
 .ifndef(WITHOUT_CORE)
