@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
@@ -26,7 +25,7 @@ INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libgnomeprintui \
 		desktopfileutils
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas
 
