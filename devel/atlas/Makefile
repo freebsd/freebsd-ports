@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	Atlas
-PORTVERSION=	0.4.94
+PORTVERSION=	0.4.95
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	worldforge
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=worldforge
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
 USE_REINPLACE=	YES
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
+USE_BZIP2=	YES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| install-docDATA | |g' \
-		-e 's|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} -e 's| install-docDATA | |g;\
+		s|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 
 post-install:
