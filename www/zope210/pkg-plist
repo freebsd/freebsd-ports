@@ -46,6 +46,7 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/doc/TODO.txt
 %%ZOPEBASEDIR%%/doc/UNITTEST.txt
 %%ZOPEBASEDIR%%/doc/WEBSERVER.txt
+%%ZOPEBASEDIR%%/doc/WINDOWS.txt
 %%ZOPEBASEDIR%%/doc/ZODB.txt
 %%ZOPEBASEDIR%%/doc/zconfig/schema.dtd
 %%ZOPEBASEDIR%%/doc/zconfig/zconfig.pdf
@@ -710,11 +711,6 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/testExternalMethod.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/LICENSE.txt
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -1762,6 +1758,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/Signals/SignalHandler.pyc
 %%ZOPEBASEDIR%%/lib/python/Signals/Signals.py
 %%ZOPEBASEDIR%%/lib/python/Signals/Signals.pyc
+%%ZOPEBASEDIR%%/lib/python/Signals/WinSignalHandler.py
+%%ZOPEBASEDIR%%/lib/python/Signals/WinSignalHandler.pyc
 %%ZOPEBASEDIR%%/lib/python/Signals/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Signals/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/StructuredText/ClassicDocumentClass.py
@@ -3086,7 +3084,6 @@ etc/rc.d/zeo.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20050405
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/Extensions
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests
