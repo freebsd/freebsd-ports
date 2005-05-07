@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	marco@freepascal.org
 COMMENT=	Delphi and Turbo Pascal compatible Pascal (commandline) compiler
 
+BROKEN=		Incomplete pkg-plist
+
 .include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes
