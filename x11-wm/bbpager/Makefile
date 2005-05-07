@@ -16,12 +16,13 @@ COMMENT=	A pager for the Blackbox window manager
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
-BROKEN=		Does not build
-
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
+		LDFLAGS="`pkg-config --libs xft`"
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README.bbpager
 PLIST_FILES=	bin/bbpager %%DATADIR%%/bbpager.rc
