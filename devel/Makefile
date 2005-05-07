@@ -51,6 +51,7 @@
     SUBDIR += asmutils
     SUBDIR += astyle
     SUBDIR += atlas
+    SUBDIR += atlas-devel
     SUBDIR += aunit
     SUBDIR += autobook
     SUBDIR += autoconf213
