@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-caption
 PORTVERSION=	3.0.20050212
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -38,7 +38,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	caption.dtx caption.sty caption.ins \
 		caption2.dtx caption2.sty caption3.sty
-DOC_FILES=	anleitung.pdf anleitung.tex caption.pdf caption2.pdf caption.xml
+DOC_FILES=	anleitung.pdf anleitung.tex caption.pdf caption2.pdf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
