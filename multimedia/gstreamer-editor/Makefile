@@ -37,4 +37,10 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		gst-editor.1 gst-inspect-gui.1 gst-launch-gui.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>

@@ -51,6 +51,12 @@ PORTDOCS+=	\
 PLIST_SUB+=	\
 		VERSION_PLUGIN="${VERSION_PLUGIN}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-patch:
 # tell qtstalker where to install plugins
 	@${FIND} ${WRKSRC} -type f -name "*pro" | \
@@ -110,4 +116,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
