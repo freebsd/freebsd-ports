@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
@@ -22,7 +22,7 @@ LIB_DEPENDS=	gpgme.14:${PORTSDIR}/security/gpgme
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix eel2
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
@@ -35,7 +35,8 @@ GCONF_SCHEMAS=	seahorse.schemas
 
 OPTIONS=	GEDIT "Enable the gedit plug-in" on \
 		NAUTILUS "Enable the Nautilus component" on \
-		LDAP "Enable LDAP support" on
+		LDAP "Enable LDAP support" on \
+		HKP "Enable HKP keyserver interface" on
 
 .include <bsd.port.pre.mk>
 
@@ -57,10 +58,16 @@ PLIST_SUB+=	NAUTILUS="@comment "
 CONFIGURE_ARGS+=--disable-nautilus
 .endif
 
-.if defined(WITH_LDAP)
+.if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=	yes
 .else
 CONFIGURE_ARGS+=--disable-ldap
+.endif
+
+.if !defined(WITHOUT_HKP)
+USE_GNOME+=	libsoup
+.else
+CONFIGURE_ARGS+=--disable-hkp
 .endif
 
 post-install:
