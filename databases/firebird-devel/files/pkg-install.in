@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/databases/firebird-devel/files/Attic/pkg-install.in,v 1.1 2005-05-07 21:41:51 jylefort Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
 
@@ -137,8 +137,8 @@ chmod 660 security2.fdb
 if [ -d $PKG_PREFIX/etc/rc.d ]; then
 	(
 	echo "#!/bin/sh"; echo "[ -d $PKG_PREFIX/firebird/lib ] && /sbin/ldconfig -m $PKG_PREFIX/firebird/lib"
-	) > $PKG_PREFIX/etc/rc.d/000.firebird.sh
-  chmod a=rx $PKG_PREFIX/etc/rc.d/000.firebird.sh
+	) > %%LOCALBASE%%/etc/rc.d/000.firebird.sh
+  chmod a=rx %%LOCALBASE%%/etc/rc.d/000.firebird.sh
 fi
 ;;
 

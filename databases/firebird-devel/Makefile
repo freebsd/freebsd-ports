@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	2.0.a1
+PORTVERSION=	2.0.a2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ramenzoni.com.br/~garga/firebird/ \
 		http://www.galle.com.br/~renato/firebird/ \
 		http://www.brainsoft.com.br/~garga/firebird/
 MASTER_SITE_SUBDIR=	firebird
 PKGNAMESUFFIX=	-devel
-DISTNAME=	firebird2-20050327
+DISTNAME=	firebird2-20050505
 
 MAINTAINER=	freebsd@galle.com.br
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
@@ -24,14 +24,14 @@ WANT_LIBTOOL_VER=	15
 WANT_AUTOCONF_VER=	259
 GNU_CONFIGURE=		yes
 USE_GCC=		3.4
+USE_REINPLACE=		yes
 
 CONFLICTS=	firebird-1.*
 
 WRKSRC=		${WRKDIR}/firebird2
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message pkg-install
 
 ONLY_FOR_ARCHS=	i386
 
@@ -54,6 +54,10 @@ pre-everything::
 .if !defined(BATCH)
 	@sleep 10
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's,InstallPrefix/etc,${LOCALBASE}/etc,g' \
+		${WRKSRC}/builds/install/arch-specific/freebsd/install.sh.in
 
 do-configure:
 	@(cd ${WRKSRC} && ${ENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
