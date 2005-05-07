@@ -16,6 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for Gtk+, Pango, Atk, and Glib
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
