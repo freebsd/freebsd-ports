@@ -454,6 +454,7 @@
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-Catalyst
     SUBDIR += p5-Catalyst-Model-CDBI
+    SUBDIR += p5-Catalyst-Plugin-Textile
     SUBDIR += p5-Catalyst-View-TT
     SUBDIR += p5-Compress-LeadingBlankSpaces
     SUBDIR += p5-FAQ-OMatic
