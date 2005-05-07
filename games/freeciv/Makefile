@@ -20,6 +20,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes
+USE_PYTHON=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -43,14 +44,28 @@ CONFLICTS=	freeciv-1* freeciv-gtk-1*
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX?=	-gtk2
 CONFIGURE_ARGS+=	--enable-client=gtk2
+PLIST_SUB+=	XAW="@comment "
+PLIST_SUB+=	GTK="@comment "
+PLIST_SUB+=	GTK2=""
 .elif defined(WITH_GTK) || defined(WITH_GTK12)
 CONFLICTS=	freeciv-1* freeciv-gtk2-1*
 USE_GNOME+=	imlib gtk12
 PKGNAMESUFFIX?=	-gtk
 CONFIGURE_ARGS+=	--enable-client=gtk
+PLIST_SUB+=	XAW="@comment "
+PLIST_SUB+=	GTK2="@comment "
+PLIST_SUB+=	GTK=""
 .else
 CONFLICTS=	freeciv-gtk-1* freeciv-gtk2-1*
+.if ${X_WINDOW_SYSTEM:L} == xorg
+LIB_DEPENDS+=	Xaw3d.7:${PORTSDIR}/x11-toolkits/Xaw3d
+.else
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+.endif
+CONFIGURE_ARGS+=	--enable-client=xaw3d
+PLIST_SUB+=	GTK="@comment "
+PLIST_SUB+=	GTK2="@comment "
+PLIST_SUB+=	XAW=""
 .endif
 
 pre-fetch:
