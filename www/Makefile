@@ -329,7 +329,6 @@
     SUBDIR += mod_shapvh
     SUBDIR += mod_snake
     SUBDIR += mod_sqlinclude
-    SUBDIR += mod_throttle
     SUBDIR += mod_ticket
     SUBDIR += mod_tidy
     SUBDIR += mod_traf_thief
@@ -340,8 +339,6 @@
     SUBDIR += mod_v2h
     SUBDIR += mod_vdbh
     SUBDIR += mod_vhs
-    SUBDIR += mod_watch
-    SUBDIR += mod_watch4
     SUBDIR += mod_webapp
     SUBDIR += mod_zap
     SUBDIR += moinmoin
