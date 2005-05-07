@@ -1,0 +1,8 @@
+Some code generators for Prototype, the famous JavaScript OO library.
+This library allows you to do Ajax without writing lots of javascript
+code.
+
+This is mostly a port of the Ruby on Rails helper tags for JavaScript
+for use in Catalyst.
+
+WWW: http://search.cpan.org/dist/HTML-Prototype

@@ -476,6 +476,7 @@
     SUBDIR += p5-HTML-Mason
     SUBDIR += p5-HTML-Pager
     SUBDIR += p5-HTML-Parser
+    SUBDIR += p5-HTML-Prototype
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-Scrubber
     SUBDIR += p5-HTML-SimpleLinkExtor
