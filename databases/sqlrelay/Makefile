@@ -17,6 +17,8 @@ COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments
 
+BROKEN=		Installs file in /etc
+
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_AUTOCONF_VER=	259
