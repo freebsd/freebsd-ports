@@ -8,6 +8,7 @@ include/meanwhile/mw_session.h
 include/meanwhile/mw_srvc_aware.h
 include/meanwhile/mw_srvc_conf.h
 include/meanwhile/mw_srvc_dir.h
+include/meanwhile/mw_srvc_ft.h
 include/meanwhile/mw_srvc_im.h
 include/meanwhile/mw_srvc_resolve.h
 include/meanwhile/mw_srvc_store.h
