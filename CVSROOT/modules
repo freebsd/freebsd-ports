@@ -7480,6 +7480,7 @@ p5-HTML-LinkExtractor	ports/www/p5-HTML-LinkExtractor
 p5-HTML-Mason	ports/www/p5-HTML-Mason
 p5-HTML-Pager	ports/www/p5-HTML-Pager
 p5-HTML-Parser	ports/www/p5-HTML-Parser
+p5-HTML-Prototype	ports/www/p5-HTML-Prototype
 p5-HTML-QuickCheck	ports/www/p5-HTML-QuickCheck
 p5-HTML-Scrubber	ports/www/p5-HTML-Scrubber
 p5-HTML-SimpleLinkExtor	ports/www/p5-HTML-SimpleLinkExtor
