@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/xqf
+@exec mkdir -p %D/lib/xqf
 %%PORTDOCS%%%%DOCSDIR%%/xqfdocs.html
 share/locale/ca/LC_MESSAGES/xqf.mo
 share/locale/da/LC_MESSAGES/xqf.mo
@@ -113,6 +114,7 @@ share/gnome/pixmaps/xqf_32x32.png
 %%DATADIR%%/default/flags/vn.png
 %%DATADIR%%/default/flags/ye.png
 %%DATADIR%%/default/flags/za.png
+%%DATADIR%%/default/gtkrc
 %%DATADIR%%/default/splash.png
 %%DATADIR%%/default/trayicon/around_frame_1.png
 %%DATADIR%%/default/trayicon/around_frame_2.png
@@ -121,15 +123,14 @@ share/gnome/pixmaps/xqf_32x32.png
 %%DATADIR%%/default/trayicon/busy.ani
 %%DATADIR%%/default/trayicon/frame_basic.png
 %%DATADIR%%/default/trayicon/ready.ani
-%%DATADIR%%/default/trayicon/red_frame_1_4.png
-%%DATADIR%%/default/trayicon/red_frame_2_4.png
-%%DATADIR%%/default/trayicon/red_frame_3_4.png
 %%DATADIR%%/default/trayicon/red_frame_4_4.png
+%%DATADIR%%/default/xqf_48x48.png
 %%DATADIR%%/pixmaps/xqf_22x22.png
 %%DATADIR%%/pixmaps/xqf_32x32.png
 %%DATADIR%%/pixmaps/xqf_48x48.png
 %%DATADIR%%/pixmaps/xqf_48x48_2.png
 %%DATADIR%%/qstat.cfg
+@dirrm lib/xqf
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/default/trayicon
 @dirrm %%DATADIR%%/default/flags
