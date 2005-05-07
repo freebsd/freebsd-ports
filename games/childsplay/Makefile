@@ -7,6 +7,7 @@
 
 PORTNAME=	childsplay
 PORTVERSION=	0.80.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	childsplay
@@ -22,6 +23,7 @@ LIB_DEPENDS=	assetml.0:${PORTSDIR}/devel/libassetml
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
+NO_BUILD=	yes
 
 # avoid asking for translation to your local language on install
 MAKE_ENV=	LANG=C

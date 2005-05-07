@@ -61,16 +61,6 @@
  echo -e "\n>>>>>>>>>>> Install childsplay >>>>>>>>>>>>>>>>>>>>"
  echo " Installing in $PREFIX"
  
-@@ -83,8 +74,9 @@
-     fi
- done
- 
- cp -f $CWD/*.py $CPDIR/
-+cp -f $CWD/*.pyc $CPDIR/
- 
- echo " Copy misc. data files"
- for FILE in `ls $CWD/Data`
- do 
 @@ -113,22 +105,14 @@
  echo " Copy docs"
  cp -rf $CWD/doc/* $DOCDIR/
