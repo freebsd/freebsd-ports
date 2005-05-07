@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -27,7 +27,6 @@ WWW_ROOT?=	www/lam
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
 WWW_DATA=	index.html config graphics help lib locale sess style templates tmp
 MYPORTDOCS=	HISTORY README TODO docs/*
-PORTDOCS=	*
 LAM_SCRIPTS=	lib/createntlm.pl lib/lamdaemon.pl
 
 do-configure:
@@ -35,7 +34,7 @@ do-configure:
 
 do-install:
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}
-	@cd ${WRKSRC} && ${TAR} cf - ${WWW_DATA} | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT} 
+	@cd ${WRKSRC} && ${TAR} cf - ${WWW_DATA} | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${MYPORTDOCS}
