@@ -17,13 +17,14 @@ COMMENT=	A keygrabber for the Blackbox window manager
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
-BROKEN=		"Does not build"
-
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
+		LDFLAGS="`pkg-config --libs xft`"
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bbkeys.1
 MAN5=		bbkeysrc.5
