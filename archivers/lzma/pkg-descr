@@ -1,0 +1,10 @@
+Simple command line version of compression program using LZMA compression
+method. This program is taken from LZMA SDK. 7-zip uses the same compression
+method, but creates 7Z archives instead of pure LZMA data stream. LZMA can
+compress and decompress data streams using standard input/output.
+
+Compression ratio is about 25-30% better than bzip2 and decompression speed
+is about two times faster. This makes LZMA good bzip2 replacement for
+use in software distribution.
+
+WWW: http://www.7-zip.org/sdk.html
