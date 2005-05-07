@@ -455,6 +455,7 @@
     SUBDIR += p5-Catalyst
     SUBDIR += p5-Catalyst-Model-CDBI
     SUBDIR += p5-Catalyst-Plugin-FormValidator
+    SUBDIR += p5-Catalyst-Plugin-Prototype
     SUBDIR += p5-Catalyst-Plugin-Textile
     SUBDIR += p5-Catalyst-View-TT
     SUBDIR += p5-Compress-LeadingBlankSpaces

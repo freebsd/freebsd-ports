@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Catalyst/Helper/Prototype.pm
+%%SITE_PERL%%/Catalyst/Plugin/Prototype.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Prototype/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Prototype
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
