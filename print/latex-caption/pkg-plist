@@ -3,7 +3,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/anleitung.tex
 %%PORTDOCS%%%%DOCSDIR%%/caption.pdf
 %%PORTDOCS%%%%DOCSDIR%%/caption2.pdf
-%%PORTDOCS%%%%DOCSDIR%%/caption.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CLASSDIR%%/caption.dtx
 %%CLASSDIR%%/caption.sty
