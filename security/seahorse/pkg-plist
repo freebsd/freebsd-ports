@@ -32,6 +32,7 @@ share/gnome/omf/seahorse/seahorse-C.omf
 share/gnome/pixmaps/seahorse-key.png
 share/gnome/pixmaps/seahorse-secret.png
 share/gnome/pixmaps/seahorse.png
+share/gnome/seahorse/glade/seahorse-add-keyserver.glade
 share/gnome/seahorse/glade/seahorse-add-subkey.glade
 share/gnome/seahorse/glade/seahorse-add-uid.glade
 share/gnome/seahorse/glade/seahorse-agent-cache.glade
