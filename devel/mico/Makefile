@@ -112,6 +112,10 @@ MAN8=		ird.8 micod.8 nsd.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not compile on FreeBSD >= 6.0"
+.endif
+
 # Does not build on alpha 4.x
 .if ${OSVERSION} < 500000
 NOT_FOR_ARCHS=	alpha
