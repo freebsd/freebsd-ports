@@ -16,6 +16,8 @@ COMMENT=	JUMP support for reading and writing a PostGIS database
 
 RUN_DEPENDS=	jumpgis:${PORTSDIR}/graphics/jumpgis
 
+BROKEN=		Incomplete pkg-plist
+
 TARGET_DIR=	${PREFIX}/jumpgis
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+

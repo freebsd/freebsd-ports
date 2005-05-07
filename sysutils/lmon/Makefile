@@ -18,6 +18,8 @@ RUN_DEPENDS=	${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFile
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
+BROKEN=		Incomplete pkg-plist
+
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
