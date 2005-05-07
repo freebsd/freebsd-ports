@@ -5581,6 +5581,7 @@ lynx		ports/www/lynx
 lynx-current	ports/www/lynx-current
 lynx-ssl	ports/www/lynx-ssl
 lyx		ports/print/lyx
+lzma		ports/archivers/lzma
 lzo		ports/archivers/lzo
 lzop		ports/archivers/lzop
 m17n-db		ports/devel/m17n-db
