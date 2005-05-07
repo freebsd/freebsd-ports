@@ -1,11 +1,10 @@
---- Makefile.orig	Wed Apr 20 11:08:53 2005
-+++ Makefile	Wed Apr 20 11:08:45 2005
-@@ -0,0 +1,8 @@
+--- Makefile.orig	Sat May  7 23:13:35 2005
++++ Makefile	Sat May  7 23:15:11 2005
+@@ -0,0 +1,7 @@
 +PYTHON = /usr/bin/env python
 +
-+all:
-+	@echo "Compiling modules to bytecode..."
-+	@$(PYTHON) install.py --compile .
-+	@$(PYTHON) install.py --compile ./lib
 +install:
 +	./INSTALL.sh
++	@echo "Compiling modules to bytecode..."
++	@$(PYTHON) install.py --compile ${PREFIX}/childsplay
++	@$(PYTHON) install.py --compile ${PREFIX}/childsplay/lib

@@ -34,6 +34,7 @@ childsplay/ConfParser.pyc
 childsplay/CPMenu.pyc
 childsplay/version.pyc
 childsplay/BASEPATH.py
+childsplay/BASEPATH.pyc
 share/doc/childsplay/po/fr/childsplay.po
 share/doc/childsplay/po/de/childsplay.po
 share/doc/childsplay/po/de/new_de.po
@@ -164,3 +165,5 @@ share/childsplay/lib/MemoryData/cardback.png
 @dirrm share/childsplay/lib/MemoryData
 @dirrm share/childsplay/lib
 @dirrm share/childsplay
+@cwd /
+var/games/childsplay.score
