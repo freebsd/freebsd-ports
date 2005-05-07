@@ -42,6 +42,8 @@ PORTDOCS=	# empty, not use * 'cause args too long (for find)
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.else
+BROKEN=		"Does not build on i386"
 .endif
 
 post-patch:
