@@ -40,6 +40,10 @@ BROKEN=		coredumps a lot
 IGNORE=		need base libraries built with -fPIC
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		fails to compile
+.endif
+
 # Dependencies for port options
 
 .if defined(WITH_BDB)
