@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Adaptec ASR RAID Management Software
 
+BROKEN=		Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes

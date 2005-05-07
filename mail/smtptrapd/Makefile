@@ -13,6 +13,8 @@ MASTER_SITES=	http://smtptrapd.inodes.org/
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	RFC 2821 compliant SMTP service that always returns a 4xx soft error
 
+BROKEN=		Incomplete pkg-plist
+
 USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g;s|%%RC_SUBR%%|${RC_SUBR}|g'
 

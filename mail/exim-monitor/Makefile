@@ -12,6 +12,8 @@ COMMENT=	The Exim monitor for the Exim MTA
 MASTERDIR=	${.CURDIR}/../exim
 PKGDIR=		${.CURDIR}
 
+BROKEN=		Incomplete pkg-plist
+
 EXIMON_ONLY=	yes
 
 # This dependency is disabled, because it prevents package users from

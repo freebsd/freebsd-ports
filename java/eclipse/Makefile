@@ -21,6 +21,8 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	${EXTRACT_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
 USE_ZIP=	yes
