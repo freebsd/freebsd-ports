@@ -31,6 +31,8 @@ CFLAGS+=	-DCC65_INC=\\\"${PREFIX}/lib/cc65/include\\\" \
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.else
+BROKEN=		"Does not install on i386"
 .endif
 
 WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
