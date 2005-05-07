@@ -6,5 +6,7 @@ MD5 (win32/qtextras-20041107.tar.bz2) = a7e750afda31796d322395d77c4184d0
 SIZE (win32/qtextras-20041107.tar.bz2) = 974913
 MD5 (win32/rp9codecs-20050115.tar.bz2) = a32f4fa1f77593536a57e4b662fde7aa
 SIZE (win32/rp9codecs-20050115.tar.bz2) = 510136
+MD5 (win32/rp9codecs-win32-20050115.tar.bz2) = 6b56c1c127f5ac0c4c8a9878f24477ca
+SIZE (win32/rp9codecs-win32-20050115.tar.bz2) = 540641
 MD5 (win32/xanimdlls-20040626.tar.bz2) = a7c980a1a94fbac6ebd34c7485a1891d
 SIZE (win32/xanimdlls-20040626.tar.bz2) = 318850
