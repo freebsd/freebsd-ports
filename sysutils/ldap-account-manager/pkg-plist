@@ -121,3 +121,13 @@
 @dirrm %%WWWROOT%%/templates
 @dirrm %%WWWROOT%%/tmp
 @dirrm %%WWWROOT%%
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LGPL-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.fpdf.htm
+%%PORTDOCS%%%%DOCSDIR%%/README.hosts.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.lamdaemon.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.openldap.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.security.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
