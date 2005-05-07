@@ -6996,6 +6996,7 @@ p5-Carp-Clan	ports/devel/p5-Carp-Clan
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Catalyst	ports/www/p5-Catalyst
 p5-Catalyst-Model-CDBI	ports/www/p5-Catalyst-Model-CDBI
+p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net-mgmt/p5-Cflow
 p5-Chart-Graph	ports/graphics/p5-Chart-Graph
