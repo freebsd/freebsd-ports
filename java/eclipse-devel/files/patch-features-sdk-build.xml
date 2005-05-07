@@ -1,0 +1,15 @@
+--- features/org.eclipse.sdk/build.xml.orig	Sat Feb 19 12:09:35 2005
++++ features/org.eclipse.sdk/build.xml	Sat Mar 26 18:40:52 2005
+@@ -90,6 +90,12 @@
+ 	</target>
+ 	<target name="rootFileslinux_gtk_x86_64">
+ 	</target>
++	<target name="rootFilesfreebsd_gtk_amd64">
++	</target>
++ 	<target name="rootFilesfreebsd_gtk_x86">
++  	</target>
++	<target name="rootFilesfreebsd_motif_x86">
++	</target>
+ 	<target name="rootFileslinux_motif_x86">
+ 	</target>
+ 	<target name="rootFilessolaris_motif_sparc">

@@ -1,0 +1,27 @@
+--- features/org.eclipse.jdt/build.xml.orig	Sat Feb 19 12:09:29 2005
++++ features/org.eclipse.jdt/build.xml	Sat Mar 26 18:30:33 2005
+@@ -179,6 +179,24 @@
+ 			<fileset dir="${basedir}/rootfiles" includes="**"			/>
+ 		</copy>
+ 	</target>
++	<target name="rootFilesfreebsd_gtk_amd64">
++		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++		</copy>
++	</target>
++	<target name="rootFilesfreebsd_gtk_x86">
++		<mkdir dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++		</copy>
++	</target>
++	<target name="rootFilesfreebsd_motif_x86">
++		<mkdir dir="${feature.base}/freebsd.motif.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.motif.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++		</copy>
++	</target>
+ 	<target name="rootFilessolaris_motif_sparc">
+ 		<mkdir dir="${feature.base}/solaris.motif.sparc/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/solaris.motif.sparc/${collectingFolder}" failonerror="true">

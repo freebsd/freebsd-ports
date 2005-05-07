@@ -1,0 +1,31 @@
+--- plugins/org.eclipse.update.core.freebsd/src/build.xml	Sat Apr  9 14:03:21 2005
++++ ../files/plugins-update-src-build.xml	Tue Feb 15 23:41:47 2005
+@@ -6,7 +6,7 @@
+   <property name="eclipse-home" value="${basedir}/../.."/>
+   <property name="jdk-path" value="${java.home}"/>  
+   <property name="destination" value="${eclipse-home}/org.eclipse.update.core.freebsd/os/freebsd/x86/"/>
+-  <property name="obj-path" value="${eclipse-home}/org.eclipse.update.core.freebsd/src/"/>
++  <property name="obj-path" value="${eclipse-home}/org.eclipse.update.core/src/"/>
+   <property name="src-path" value="${eclipse-home}/org.eclipse.update.core.freebsd/src/"/>  
+   
+   <!-- sets the properties -->
+@@ -44,15 +44,16 @@
+   <target name="build">
+     <echo message="Building ${library-file}"/>
+ 
+-    <property name="header-path" value="${jdk-path}/../include"/>
++    <property name="header-path" value="${jdk-path}/include"/>
+     <property name="header-freebsd-path" value="${header-path}/freebsd" />
+ 
+-	<echo message="gcc -o  ${library-file} -shared -I${src-path} -I${header-freebsd-path} ${library-file} -static -lc"/>
++	<echo message="${CC} -o  ${library-file} -shared -fPIC -I${src-path} -I${header-path} -I${header-freebsd-path} ${library-file} -static -lc"/>
+ 
+-    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
++    <apply executable="${CC}" dest="${eclipse-home}/" parallel="false">
+       <arg value="-o"/>
+       <arg value="${library-file}"/>
+       <arg value="-shared"/>
++      <arg value="-fPIC"/>
+       <arg value="-I${src-path}"/>
+       <arg value="-I${header-path}"/>      
+       <arg value="-I${header-freebsd-path}"/>  

@@ -1,0 +1,39 @@
+--- assemble.org.eclipse.sdk.freebsd.motif.x86.xml~	Sat Apr  9 14:40:56 2005
++++ assemble.org.eclipse.sdk.freebsd.motif.x86.xml	Sat Apr  9 15:05:35 2005
+@@ -419,10 +419,5 @@
+ 		</exec>
+ 		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+ 		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="${assemblyTempDir}"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>
+--- assemble.org.eclipse.sdk.freebsd.gtk.x86.xml~	Sat Apr  9 14:40:56 2005
++++ assemble.org.eclipse.sdk.freebsd.gtk.x86.xml	Sat Apr  9 15:05:42 2005
+@@ -419,10 +419,5 @@
+ 		</exec>
+ 		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+ 		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="${assemblyTempDir}"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>
+--- assemble.org.eclipse.sdk.freebsd.gtk.amd64.xml~	Sat Apr  9 14:40:56 2005
++++ assemble.org.eclipse.sdk.freebsd.gtk.amd64.xml	Sat Apr  9 15:04:59 2005
+@@ -419,10 +419,5 @@
+ 		</exec>
+ 		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+ 		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="${assemblyTempDir}"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>

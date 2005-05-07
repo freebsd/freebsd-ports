@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# FreeBSD-specific startup script for Eclipse Platform
+#
+# See: http://www.eclipse.org
+#
+# $FreeBSD$
+#
+
+DEFAULT_JAVA_HOME=%%JAVA_HOME%%
+ECLIPSE_HOME=%%ECLIPSE_HOME%%
+DEFAULT_JAVA_CMD=java
+MOZILLA_FIVE_HOME=%%X11BASE%%/lib/%%BROWSER%%
+LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
+
+
+#-----------------------------------------------------------------------------
+# Determine configuration settings
+#-----------------------------------------------------------------------------
+
+# Determine the JDK home directory
+if [ -z "${JAVA_HOME}" ]; then
+	JAVA_HOME=${DEFAULT_JAVA_HOME}
+fi
+
+# Determine 'java' executable
+if [ -z "${JAVACMD}" ]; then
+	if [ -n "${JAVA_HOME}"  ]; then
+		JAVACMD="${JAVA_HOME}/bin/java"
+	else
+		JAVACMD=${DEFAULT_JAVACMD}
+	fi
+fi
+
+# Check if 'java' executable can be found
+if [ ! -x "$JAVACMD" ]; then
+	echo "Error: JAVA_HOME is not defined correctly: ${JAVA_HOME}"
+	echo "       Unable to find ${JAVACMD}"
+	exit 1
+fi
+
+# Check if 'eclipse' executable can be found
+if [ ! -x "${ECLIPSE_HOME}/eclipse" ]; then
+	echo "Error: ECLIPSE_HOME is not defined correctly: ${ECLIPSE_HOME}"
+	echo "       Unable to find eclipse launcher binary"
+	exit 1
+fi
+
+PATH=${JAVA_HOME}/bin:$PATH exec "${ECLIPSE_HOME}/eclipse" $@
