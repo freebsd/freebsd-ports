@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://robtone.mine.nu/postfix/
 PKGNAMEPREFIX=  postfix-
