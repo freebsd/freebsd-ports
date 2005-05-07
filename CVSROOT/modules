@@ -999,6 +999,7 @@ chexedit	ports/editors/chexedit
 chgrep		ports/sysutils/chgrep
 chicken		ports/lang/chicken
 childsplay	ports/games/childsplay
+childsplay_plugins	ports/games/childsplay_plugins
 chimera		ports/www/chimera
 chipmunk	ports/cad/chipmunk
 chipvault	ports/cad/chipvault
