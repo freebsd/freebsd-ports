@@ -200,7 +200,6 @@
     SUBDIR += milter-greylist-devel
     SUBDIR += milter-regex
     SUBDIR += milter-skem
-    SUBDIR += milter-spamc
     SUBDIR += mimedefang
     SUBDIR += mini_sendmail
     SUBDIR += minimalist

@@ -57,8 +57,6 @@ altivore.c		security/altivore	No redistribution allowed
 apache*-ssl		www/apache13-ssl	Crypto; export-controlled
 apache/mod_tidy-*	www/mod_tidy		No license
 apache2/mod_taf_thief.c	www/mod_traf_thief	No license
-apache2/mod_watch4*	www/mod_watch4		Do not distribute binaries.  Do
-						not put distfiles on CD-ROM
 apple_pascal_0.dsk.gz	emulators/p-interp	Redistribution rights for Apple
 						Pascal disk images are unclear
 AquaGatekeeper-*	net/AquaGatekeeper	No redistribution allowed
@@ -396,8 +394,6 @@ md5crk_*_freebsdX86.*	security/md5crk		No commercial use
 mew-*.tar.gz		mail/mew		ITAR export-controlled
 						(hooks to pgp)
 mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
-milter-spamc-*		mail/milter-spamc	Non-commercial distribution
-						of the original files only
 mindfocus-*		games/mindfocus		Contains commercial
 						character data
 mindterm-*		security/mindterm-binary Do not sell for profit

@@ -1,7 +1,0 @@
-libexec/apache/mod_throttle.so
-@exec %D/sbin/apxs -e -A -n throttle %D/%F
-@unexec %D/sbin/apxs -e -A -n throttle %D/%F
-%%PORTDOCS%%share/doc/mod_throttle/CHANGES.txt
-%%PORTDOCS%%share/doc/mod_throttle/LICENSE.txt
-%%PORTDOCS%%share/doc/mod_throttle/index.shtml
-%%PORTDOCS%%@dirrm share/doc/mod_throttle

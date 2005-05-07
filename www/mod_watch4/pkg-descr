@@ -1,8 +1,0 @@
-This Apache module will watch and collect the bytes in & out per virtual host,
-per file owner, and the web server as a whole. It was designed for use with
-MRTG, which will make nice graphical representations of the data, but is
-general enough that it can be applied to other purposes.
-
-WWW: http://www.snert.com/Software/mod_watch/
-
-- Toshiya Saitoh <toshiya@saitoh.nu>
