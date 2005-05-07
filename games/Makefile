@@ -69,6 +69,7 @@
     SUBDIR += cgoban
     SUBDIR += cgoban2
     SUBDIR += childsplay
+    SUBDIR += childsplay_plugins
     SUBDIR += chromium
     SUBDIR += circuslinux
     SUBDIR += civ2demo
