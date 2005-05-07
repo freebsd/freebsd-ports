@@ -343,7 +343,7 @@ do-install:
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla-devel.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 
 post-install:
 	@-update-desktop-database
