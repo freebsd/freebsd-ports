@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.rocklinux.net/people/ripclaw/projects/software/chimera/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X/Athena World-Wide Web client
 
+RUN_DEPENDS= 	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
 

@@ -4,7 +4,6 @@ lib/convert
 lib/help.html
 lib/home.html
 lib/mailcap
-lib/mime.types
 lib/protocol
 lib/chimera/Chimera
 lib/chimera/do3270
