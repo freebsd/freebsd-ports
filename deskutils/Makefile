@@ -126,6 +126,7 @@
     SUBDIR += rubrica
     SUBDIR += sliderule
     SUBDIR += splashsetter
+    SUBDIR += sugarcrm
     SUBDIR += superkaramba
     SUBDIR += taskjuggler
     SUBDIR += teapot

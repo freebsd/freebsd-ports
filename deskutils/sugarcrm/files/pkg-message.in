@@ -1,0 +1,26 @@
+##
+
+Notes:
+
+1.  SugarCRM requires that you increase the default PHP memory limit from
+    8Mb to 10Mb in the php.ini file.  You should edit this file and ensure
+    that the memory_limit parameter should be set to 10Mb or greater:
+
+memory_limit = 10M	; Maximum amount of memory a script may consume 
+
+2.  To complete installation of SugarCRM, please point your browser to
+    http://localhost/sugarcrm/ and set up your database and configuration
+    parameters.  Once you have finished the installation procedure, you
+    should remove the installation directory and make the SugarCRM
+    configuration file (config.php) non writable.  You can do these things
+    be executing the following commands:
+
+rm -rf %%PREFIX%%/%%SUGARCRMDIR%%/install
+chown root:wheel %%PREFIX%%/%%SUGARCRMDIR%%/config.php
+
+3.  Please see the documentation directory (%%DOCSDIR%%)
+    for full documentation on how to get the best out of SugarCRM.
+
+4.  Enjoy!
+
+##
