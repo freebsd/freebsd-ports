@@ -12,7 +12,7 @@ CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
 USE_XLIB=	yes
