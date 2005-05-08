@@ -5,23 +5,25 @@ bin/fastjar40
 bin/g++40
 bin/gcc40
 bin/gcov40
+bin/gccbug40
+bin/gcj40
+bin/gcjh40
+bin/gjnih40
+bin/grepjar40
+bin/jv-scan40
+bin/jcf-dump40
+bin/%%GNU_HOST%%-c++40
+bin/%%GNU_HOST%%-g++40
+bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
+bin/%%GNU_HOST%%-gcc40
+bin/%%GNU_HOST%%-gcj40
+bin/%%GNU_HOST%%-gcjh40
+include/mf-runtime.h
 %%FORTRAN%%bin/gfortran40
 %%FORTRAN%%lib/libgfortran.a
 %%FORTRAN%%lib/libgfortranbegin.a
 %%FORTRAN%%lib/libgfortran.la
 %%FORTRAN%%lib/libgfortranbegin.la
-bin/%%GNU_HOST%%-c++40
-bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
-bin/%%GNU_HOST%%-gcc40
-bin/%%GNU_HOST%%-g++40
-bin/%%GNU_HOST%%-gcj40
-bin/%%GNU_HOST%%-gcjh40
-bin/gccbug40
-bin/gcj40
-bin/gcjh40
-bin/grepjar40
-bin/jv-scan40
-bin/jcf-dump40
 %%LIBJAVA%%bin/addr2name.awk40
 %%LIBJAVA%%bin/gcj-dbtool40
 %%LIBJAVA%%bin/gij40
@@ -40,7 +42,6 @@ bin/jcf-dump40
 %%LIBJAVA%%lib/security/libgcj.security
 %%LIBJAVA%%@dirrm lib/security
 %%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
-include/mf-runtime.h
 @comment Insert PLIST.lib here
 @comment -=[ begin PLIST.lib ]=-
 @comment -=[ end PLIST.lib ]=-

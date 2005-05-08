@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.1
-PORTREVISION=	20050430
+PORTREVISION=	20050507
 CATEGORIES=	lang java
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -89,6 +89,7 @@ MAN1=		cpp${SUFFIX}.1 \
 		gcj-dbtool${SUFFIX}.1 \
 		gcjh${SUFFIX}.1 \
 		gij${SUFFIX}.1 \
+		gjnih${SUFFIX}.1 \
 		grmic${SUFFIX}.1 \
 		grmiregistry${SUFFIX}.1 \
 		grepjar${SUFFIX}.1 \
@@ -166,8 +167,8 @@ post-install: fake-manpages
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
-	(${ECHO_CMD} "@unexec rmdir %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/libexec/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
