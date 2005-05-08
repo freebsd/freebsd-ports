@@ -1,4 +1,0 @@
-bin/code-browser
-%%DATADIR%%/languages.cb-config
-%%DATADIR%%/user-preferences.cb-config
-@dirrm %%DATADIR%%
