@@ -16,19 +16,14 @@ DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 MAINTAINER=	jannisan@t-online.de
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
-USE_REINPLACE=	YES
 USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 USE_GCC=	3.4
 USE_BZIP2=	YES
+USE_GNOME=	gnomehack
 
 CONFIGURE_ARGS+=--program-transform-name=
-
-post-patch:
-	@${REINPLACE_CMD} -e '\
-		s|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
