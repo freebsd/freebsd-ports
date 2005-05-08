@@ -7164,6 +7164,7 @@ p5-DBD-LDAP	ports/databases/p5-DBD-LDAP
 p5-DBD-ODBC	ports/databases/p5-DBD-ODBC
 p5-DBD-Oracle	ports/databases/p5-DBD-Oracle
 p5-DBD-Pg	ports/databases/p5-DBD-Pg
+p5-DBD-Pg-13	ports/databases/p5-DBD-Pg-13
 p5-DBD-PgPP	ports/databases/p5-DBD-PgPP
 p5-DBD-PgSPI	ports/databases/p5-DBD-PgSPI
 p5-DBD-RAM	ports/databases/p5-DBD-RAM
