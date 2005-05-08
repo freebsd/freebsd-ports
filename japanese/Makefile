@@ -304,8 +304,9 @@
     SUBDIR += platex-otf
     SUBDIR += platex209
     SUBDIR += postgresql-tcltk
-    SUBDIR += postgresql7-man
     SUBDIR += postgresql73-man
+    SUBDIR += postgresql74-man
+    SUBDIR += postgresql80-man
     SUBDIR += ppxp
     SUBDIR += prn
     SUBDIR += ptex

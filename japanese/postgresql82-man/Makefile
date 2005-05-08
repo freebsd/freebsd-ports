@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql7
-PORTVERSION=	7.4.6
+PORTNAME=	postgresql80
+PORTVERSION=	8.0.2
 CATEGORIES=	japanese databases
 MASTER_SITES=	http://www.postgresql.jp/document/pg${PORTVERSION:C/\.//g}doc/
 PKGNAMESUFFIX=	-man
@@ -29,7 +29,6 @@ MAN1=		clusterdb.1 \
 		dropuser.1 \
 		ecpg.1 \
 		initdb.1 \
-		initlocation.1 \
 		ipcclean.1 \
 		pg_config.1 \
 		pg_controldata.1 \
@@ -38,8 +37,6 @@ MAN1=		clusterdb.1 \
 		pg_dumpall.1 \
 		pg_resetxlog.1 \
 		pg_restore.1 \
-		pgtclsh.1 \
-		pgtksh.1 \
 		postgres.1 \
 		postmaster.1 \
 		psql.1 \
@@ -52,12 +49,16 @@ MANL=		abort.l \
 		alter_domain.l \
 		alter_function.l \
 		alter_group.l \
+		alter_index.l \
 		alter_language.l \
+		alter_operator.l \
 		alter_operator_class.l \
 		alter_schema.l \
 		alter_sequence.l \
 		alter_table.l \
+		alter_tablespace.l \
 		alter_trigger.l \
+		alter_type.l \
 		alter_user.l \
 		analyze.l \
 		begin.l \
@@ -84,6 +85,7 @@ MANL=		abort.l \
 		create_sequence.l \
 		create_table.l \
 		create_table_as.l \
+		create_tablespace.l \
 		create_trigger.l \
 		create_type.l \
 		create_user.l \
@@ -106,6 +108,7 @@ MANL=		abort.l \
 		drop_schema.l \
 		drop_sequence.l \
 		drop_table.l \
+		drop_tablespace.l \
 		drop_trigger.l \
 		drop_type.l \
 		drop_user.l \
@@ -121,30 +124,14 @@ MANL=		abort.l \
 		lock.l \
 		move.l \
 		notify.l \
-		pg_conndefaults.l \
-		pg_connect.l \
-		pg_disconnect.l \
-		pg_exec.l \
-		pg_execute.l \
-		pg_listen.l \
-		pg_lo_close.l \
-		pg_lo_creat.l \
-		pg_lo_export.l \
-		pg_lo_import.l \
-		pg_lo_lseek.l \
-		pg_lo_open.l \
-		pg_lo_read.l \
-		pg_lo_tell.l \
-		pg_lo_unlink.l \
-		pg_lo_write.l \
-		pg_on_connection_loss.l \
-		pg_result.l \
-		pg_select.l \
 		prepare.l \
 		reindex.l \
+		release_savepoint.l \
 		reset.l \
 		revoke.l \
 		rollback.l \
+		rollback_to_savepoint.l \
+		savepoint.l \
 		select.l \
 		select_into.l \
 		set.l \
@@ -154,8 +141,6 @@ MANL=		abort.l \
 		show.l \
 		spi_connect.l \
 		spi_copytuple.l \
-		spi_copytupledesc.l \
-		spi_copytupleintoslot.l \
 		spi_cursor_close.l \
 		spi_cursor_fetch.l \
 		spi_cursor_find.l \
@@ -163,22 +148,30 @@ MANL=		abort.l \
 		spi_cursor_open.l \
 		spi_exec.l \
 		spi_execp.l \
+		spi_execute.l \
+		spi_execute_plan.l \
 		spi_finish.l \
 		spi_fname.l \
 		spi_fnumber.l \
 		spi_freeplan.l \
 		spi_freetuple.l \
 		spi_freetuptable.l \
+		spi_getargcount.l \
+		spi_getargtypeid.l \
 		spi_getbinval.l \
 		spi_getrelname.l \
 		spi_gettype.l \
 		spi_gettypeid.l \
 		spi_getvalue.l \
+		spi_is_cursor_plan.l \
 		spi_modifytuple.l \
 		spi_palloc.l \
 		spi_pfree.l \
+		spi_pop.l \
 		spi_prepare.l \
+		spi_push.l \
 		spi_repalloc.l \
+		spi_returntuple.l \
 		spi_saveplan.l \
 		start_transaction.l \
 		truncate.l \

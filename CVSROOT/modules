@@ -4128,8 +4128,9 @@ ja-platex-otf	ports/japanese/platex-otf
 ja-platex209	ports/japanese/platex209
 ja-port_man	ports/japanese/man
 ja-postgresql-tcltk	ports/japanese/postgresql-tcltk
-ja-postgresql7-man	ports/japanese/postgresql7-man
 ja-postgresql73-man	ports/japanese/postgresql73-man
+ja-postgresql74-man	ports/japanese/postgresql74-man
+ja-postgresql80-man	ports/japanese/postgresql80-man
 ja-ppxp		ports/japanese/ppxp
 ja-prn		ports/japanese/prn
 ja-ptex		ports/japanese/ptex
