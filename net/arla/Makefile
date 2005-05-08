@@ -17,6 +17,7 @@ USE_XLIB=	yes
 USE_RC_SUBR=	arla.sh
 USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+NOT_FOR_ARCH=	sparc64
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
@@ -33,16 +34,31 @@ CONFIGURE_ARGS+=--with-krb5=/usr
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 500000
+WITHOUT_NNPFS=	YES
+.endif
+
 MAN1=		afstool.1 arla-send-pr.1 kalog.1 pts.1 rxdebug.1 \
 		tokens.1 udebug.1
 MAN3=		arg_printusage.3 getarg.3 log_close.3 log_get_mask.3 \
 		log_log.3 log_mask2str.3 log_open.3 log_set_mask.3 \
 		log_set_mask_str.3 log_unit_free.3 log_unit_init.3 \
 		log_vlog.3
-MAN4=		nnpfs.4
 MAN5=		AliasDB.5 CellServDB.5 DynRootDB.5 SuidCells.5 \
 		ThisCell.5 arla.conf.5
-MAN8=		arla-cli.8 arlad.8 mount_nnpfs.8 umount_nnpfs.8 vos.8
+MAN8=		arla-cli.8 arlad.8 vos.8
+
+.if defined(WITHOUT_NNPFS)
+CONFIGURE_ARGS+=--disable-nnpfs
+PLIST_SUB+=	NNPFS="@comment "
+.else
+PLIST_SUB+=	NNPFS=""
+MAN4=		nnpfs.4
+MAN8+=		mount_nnpfs.8 umount_nnpfs.8
+.endif
+
 INFO=		arla send-pr
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
