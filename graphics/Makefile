@@ -399,6 +399,7 @@
     SUBDIR += php5-gd
     SUBDIR += php5-ming
     SUBDIR += phplot
+    SUBDIR += phpsview
     SUBDIR += picturebook
     SUBDIR += piddle
     SUBDIR += pixelize
