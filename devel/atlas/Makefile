@@ -20,12 +20,12 @@ USE_REINPLACE=	YES
 USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
+USE_GCC=	3.4
 USE_BZIP2=	YES
+USE_GNOME=	gnomehack
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| install-docDATA | |g;\
-		s|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's| install-docDATA | |g'	${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
