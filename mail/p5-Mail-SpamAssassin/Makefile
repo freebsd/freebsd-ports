@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
@@ -27,11 +28,20 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="the administrator of that system" \
 		BUILD_SPAMC=yes RUN_NET_TESTS=yes
 
+OPTIONS=	SSL "Build with SSL support" on \
+		MYSQL "Add MySQL support" off \
+		PGSQL "Add PostreSQL support" off \
+		SPF_QUERY "Add SPF query support" off \
+		TOOLS "Install SpamAssassin tools" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SPF_QUERY)
 RUN_DEPENDS+=	spfd:${PORTSDIR}/mail/p5-Mail-SPF-Query
 .endif
 
 .if !defined(WITHOUT_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
@@ -48,6 +58,12 @@ USE_SQLDB=	yes
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 USE_SQLDB=	yes
+.endif
+
+.if defined(WITH_TOOLS)
+RUN_DEPENDS+=	${SITE_PERL}/Parse/Syslog.pm:${PORTSDIR}/textproc/p5-Parse-Syslog \
+		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
+		${SITE_PERL}/Net/CIDR/Lite.pm:${PORTSDIR}/net/p5-Net-CIDR-Lite
 .endif
 
 MAN3=		Mail::SpamAssassin.3 \
@@ -93,19 +109,6 @@ SED_SCRIPT+=	-e 's|%%SQL_FLAG%%|-Q|g'
 SED_SCRIPT+=	-e 's|%%SQL_FLAG%%||g'
 .endif
 
-pre-patch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "================================================================"
-	@${ECHO_MSG} "You can use folowed options to install SpamAssassin with"
-	@${ECHO_MSG} "	an addition features:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_SSL=yes	 - disable SSL,"
-	@${ECHO_MSG} "WITH_MYSQL=yes	 - add MySQL support,"
-	@${ECHO_MSG} "WITH_PGSQL=yes	 - add PostgreSQL support,"
-	@${ECHO_MSG} "WITH_SPF_QUERY=yes - add SPF query support."
-	@${ECHO_MSG} "================================================================"
-	@${ECHO_MSG} ""
-
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${SED} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
@@ -126,6 +129,12 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/init.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/init.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/init.pre
+.if defined(WITH_TOOLS)
+	@${MKDIR} ${DATADIR}/tools
+	@for f in ${WRKSRC}/tools/*; do \
+		${INSTALL} $${f} ${DATADIR}/tools; \
+	done
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/contrib ${DOCSDIR}/ldap
 	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
@@ -135,8 +144,6 @@ post-install:
 
 .endif
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=	Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
