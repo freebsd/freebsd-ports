@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	knzb
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	news
 MASTER_SITES=	http://dmp.org.uk/linux/knzb/download/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	twelch@thepentagon.org
 COMMENT=	KDE binary newsgroup download tool
+
+RUN_DEPENDS=	${LOCALBASE}/bin/uudeview:${PORTSDIR}/converters/uudeview
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/knzb
@@ -21,7 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_QT_VER=	3
 USE_KDELIBS_VER=	3
-NO_INSTALL_MANPAGES=	yes
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
