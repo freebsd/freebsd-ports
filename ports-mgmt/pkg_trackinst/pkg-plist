@@ -1,5 +1,6 @@
 bin/pkg_genplist
 bin/pkg_trackinst
+lib/insthook.so
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/InstallSession.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/InstallSession.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/InstallSession.pyo
