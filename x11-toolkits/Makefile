@@ -28,7 +28,6 @@
     SUBDIR += gal2
     SUBDIR += gauche-gtk
     SUBDIR += gdl
-    SUBDIR += gevas
     SUBDIR += gnocl
     SUBDIR += gnomemm
     SUBDIR += gnustep-art
