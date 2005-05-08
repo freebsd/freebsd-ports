@@ -5,19 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_trackinst
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	PkgDB/pkg-plist generator by tracking installation
 
-RUN_DEPENDS=	${LOCALBASE}/lib/installwatch.so:${PORTSDIR}/sysutils/installwatch
-
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
+MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
 
@@ -26,7 +23,7 @@ IGNORE=		requires dynamically-linked base programs
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's/\(open_manlist_output()\)/self\.\1/g' \
-		${WRKSRC}/PkgTrackInst/PlistWriter.py
+	${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
+		${WRKSRC}/PkgTrackInst/cmd_support.py
 
 .include <bsd.port.post.mk>
