@@ -30,18 +30,21 @@ COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
 CONFLICTS=	mutt-devel-*
 
-.if defined(PACKAGE_BUILDING)
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+.if defined(PACKAGE_BUILDING) && !defined (MUTT_LITE)
 WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
-		urlview:${PORTSDIR}/textproc/urlview \
-		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
+		urlview:${PORTSDIR}/textproc/urlview
 .endif
-.if ${MACHINE_ARCH} != "alpha"
+.if defined (MUTT_LITE)
+WITH_SGML_DOCS:=no
+.elif ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls
 WITH_SGML_DOCS?=yes
 .endif
 
+.if !defined (MUTT_LITE)
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -49,8 +52,9 @@ USE_ICONV=	yes
 .error the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
 	WITHOUT_NLS is also given
 .endif
-.elif !defined(WITHOUT_MUTT_ICONV)
+.elif !defined(WITHOUT_MUTT_ICONV) && !defined (MUTT_LITE)
 USE_ICONV=	yes
+.endif
 .endif
 
 .if defined(WITH_SLANG)
@@ -58,6 +62,7 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
+.if !defined (MUTT_LITE)
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
@@ -67,6 +72,7 @@ BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .if defined(WITH_MUTT_XFACE)
 PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/news/slrnface:extract
 RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
+.endif
 .endif
 
 DIST_SUBDIR=	mutt
