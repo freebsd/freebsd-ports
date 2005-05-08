@@ -187,6 +187,15 @@ WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 .endif
 
+.if defined (MUTT_LITE)
+WITHOUT_MUTT_SGMLFORMAT=		yes
+WITHOUT_NLS=				yes
+WITHOUT_MUTT_COMPRESSED_FOLDERS=	yes
+WITHOUT_MUTT_QUOTE_PATCH=		yes
+WITHOUT_MUTT_HTML=			yes
+WITH_MUTT_NCURSES=			yes
+.endif
+
 # XXX
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
@@ -198,6 +207,7 @@ pre-build:
 		${BUILD_WRKSRC}/Makefile
 
 RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+.if !defined (MUTT_LITE)
 .if exists(${LOCALBASE}/bin/aspell) && !defined(WITH_MUTT_ISPELL)
 WITH_MUTT_ASPELL=	yes
 .elif exists(${LOCALBASE}/bin/ispell) && !defined(WITH_MUTT_ASPELL)
@@ -216,6 +226,7 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 .if defined(PACKAGE_BUILDING)
 RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
+.endif
 .endif
 
 .if defined(WITH_MUTT_NCURSES_PORT)
