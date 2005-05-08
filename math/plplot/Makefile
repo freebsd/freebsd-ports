@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	5.3.1
+PORTVERSION=	5.5.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
+		gd.4:${PORTSDIR}/graphics/gd \
+		qhull.5:${PORTSDIR}/math/qhull
 
 USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
@@ -23,11 +25,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GDINCDIR="${LOCALBASE}/include" \
-		GDLIBDIR="${LOCALBASE}/lib" \
 		M4="${LOCALBASE}/bin/gm4"
 CONFIGURE_ARGS=	--disable-cgm --disable-java --disable-octave \
-		--with-ltdlsystem --without-qhull
+		--with-ltdlsystem \
+		--with-gd-incdir=${LOCALBASE}/include \
+		--with-gd-libdir=${LOCALBASE}/lib \
+		--with-freetype-font-dir=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
