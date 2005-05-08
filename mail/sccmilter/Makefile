@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sccmilter
-PORTVERSION=	0.94.8
+PORTVERSION=	0.95.1
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://ftp.granch.ru/pub/kavmilter/
 
@@ -20,16 +20,17 @@ IGNORE=		requires Sendmail 8.12; upgrade the base system
 USE_BZIP2=		yes
 USE_GETOPT_LONG=	yes
 USE_RC_SUBR=		yes
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	259
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--localstatedir=/var
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN5=		sccmilter.conf.5 scchosts.5 sccusers.5
 MAN8=		sccmilter.8
 
-CPPFLAGS=	${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS}
+CPPFLAGS=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
