@@ -10536,6 +10536,7 @@ scid		ports/games/scid
 scigraphica	ports/math/scigraphica
 scilab		ports/math/scilab
 scim		ports/textproc/scim
+scim-input-pad	ports/textproc/scim-input-pad
 scim-table-imengine	ports/textproc/scim-table-imengine
 scimark2	ports/benchmarks/scimark2
 scimark2c	ports/benchmarks/scimark2c
