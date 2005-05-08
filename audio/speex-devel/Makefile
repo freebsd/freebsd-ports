@@ -34,6 +34,12 @@ MAN1=		speexdec.1 speexenc.1
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_CPU:Msse}!=""
+CONFIGURE_ARGS+=	--enable-sse
+.endif
+
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
@@ -50,4 +56,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
 		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
