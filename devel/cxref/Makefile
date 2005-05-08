@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cxref
-PORTVERSION=	1.6
+PORTVERSION=	1.6a
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-cxref/ \
 		${MASTER_SITE_SUNSITE}
