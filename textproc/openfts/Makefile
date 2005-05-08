@@ -15,8 +15,7 @@ DISTNAME=	Search-OpenFTS-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Open Source Full Text Search engine
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg	\
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes	\
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes	\
 		${LOCALBASE}/lib/postgresql/tsearch2.so:${PORTSDIR}/databases/postgresql-contrib
 
 PERL_CONFIGURE=	yes
@@ -29,6 +28,14 @@ MAN3=	Search::OpenFTS.3 Search::OpenFTS::Base.3 \
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes INSTALL README primer.html
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
+.else
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
@@ -48,4 +55,4 @@ create-database:
 		psql ${DBNAME} < tsearch.sql && \
 		psql ${DBNAME} < openfts.sql
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

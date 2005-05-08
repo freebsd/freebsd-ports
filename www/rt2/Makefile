@@ -44,8 +44,14 @@ WRKSRC=		${WRKDIR}/rt-${RT_VERSION}
 RT_VERSION=	${PORTVERSION:C/\./-/g}
 DB_TYPE?=	mysql
 
+.include <bsd.port.pre.mk>
+
 .if ${DB_TYPE} == "Pg"
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
+.else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
 .else
 DB_TYPE=	mysql
 BUILD_DEPENDS+=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server
@@ -146,8 +152,6 @@ do-install:
 
 post-install:
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502000
 BROKEN=		"Broken pkg-plist"
