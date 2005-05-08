@@ -18,8 +18,6 @@ COMMENT=	Merchant Of Venice, a stock market trading program
 
 BUILD_DEPENDS=	${JYTHON_PREFIX}/jython.jar:${PORTSDIR}/lang/jython
 
-BROKEN=		Unfetchable
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
