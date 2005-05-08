@@ -9709,6 +9709,7 @@ py-tables	ports/devel/py-tables
 py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
 py-tkinter	ports/x11-toolkits/py-tkinter
+py-tvgrab	ports/textproc/py-tvgrab
 py-twisted	ports/devel/py-twisted
 py-twistedConch	ports/security/py-twistedConch
 py-twistedCore	ports/devel/py-twistedCore
