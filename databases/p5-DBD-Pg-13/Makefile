@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	1.41
+PORTVERSION=	1.32
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -15,28 +15,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PGSQL=	yes
 
 PERL_CONFIGURE=	yes
 
 MAN3=		DBD::Pg.3
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	Changes README TODO
-
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Needs DBI 1.38 which needs perl 5.6, install lang/perl5.8 and try again
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+post-patch:
+	@${PERL} -i -pe '$$_ = "" if /5.006001/' \
+		${WRKSRC}/Pg.pm ${WRKSRC}/Makefile.PL
+.else
+IGNORE=		You should use databases/p5-DBD-Pg.
 .endif
 
 PG_CONFIG=	${LOCALBASE}/bin/pg_config
