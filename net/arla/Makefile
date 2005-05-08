@@ -17,7 +17,6 @@ USE_XLIB=	yes
 USE_RC_SUBR=	arla.sh
 USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-NOT_FOR_ARCH=	sparc64
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
