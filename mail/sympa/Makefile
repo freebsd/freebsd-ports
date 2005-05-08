@@ -31,6 +31,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 DB_TYPE=
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_FASTCGI)
 .if defined(WITH_APACHE2)
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
@@ -44,7 +46,11 @@ BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
 .else
 .if ${DB_TYPE} == "Pg"
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
+.else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
 .else
 .if ${DB_TYPE} == "Sybase"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Sybase.pm:${PORTSDIR}/databases/p5-DBD-Sybase
@@ -90,8 +96,6 @@ post-install:
 
 post-deinstall:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Configure fails on amd64"

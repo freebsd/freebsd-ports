@@ -14,8 +14,14 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Automatic documentation generator for postgresql databases
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.include <bsd.port.pre.mk>
+
+BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -24,4 +30,4 @@ CONFIGURE_ARGS+=	--datadir=${DATADIR}
 
 WRKSRC=		${WRKDIR}/postgresql_autodoc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
