@@ -1,0 +1,4 @@
+include/cgi.h
+lib/libcgi.a
+lib/libcgi.so
+lib/libcgi.so.1

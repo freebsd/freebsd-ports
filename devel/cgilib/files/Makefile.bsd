@@ -1,0 +1,13 @@
+LIB=	cgi
+
+NOPROFILE=	yes
+SHLIB_MAJOR?=	1
+SHLIB_MINOR?=	0
+
+SRCS=		cookies.c cgi.c
+
+CFLAGS+=	-I.
+
+LIBDIR=		${PREFIX}/lib
+
+.include <bsd.lib.mk>
