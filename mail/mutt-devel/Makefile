@@ -93,7 +93,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.9
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -197,6 +197,7 @@ pre-build:
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
 
+RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 .if exists(${LOCALBASE}/bin/aspell) && !defined(WITH_MUTT_ISPELL)
 WITH_MUTT_ASPELL=	yes
 .elif exists(${LOCALBASE}/bin/ispell) && !defined(WITH_MUTT_ASPELL)
@@ -460,7 +461,6 @@ pre-install:
 post-install:
 	@${ECHO} > ${PKGMESSAGE}
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
-	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc/mime.types.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
