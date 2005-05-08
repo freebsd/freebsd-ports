@@ -162,6 +162,7 @@
     SUBDIR += p5-DBD-ODBC
     SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
+    SUBDIR += p5-DBD-Pg-13
     SUBDIR += p5-DBD-PgPP
     SUBDIR += p5-DBD-PgSPI
     SUBDIR += p5-DBD-RAM
