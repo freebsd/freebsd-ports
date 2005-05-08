@@ -7,6 +7,7 @@
 
 PORTNAME=	TVGrab
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pytvgrab
@@ -22,10 +23,16 @@ USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+PORTDOCS=	README
+
 post-extract:
 # use tz.py from devel/py-dateutil
 	@${INSTALL_DATA} ${PY_DATEUTIL_WRKSRC}/dateutil/tz.py \
 		${WRKSRC}/lib/timezone.py
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 
