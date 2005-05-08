@@ -9527,6 +9527,7 @@ py-csv		ports/textproc/py-csv
 py-ctypes	ports/devel/py-ctypes
 py-curl		ports/ftp/py-curl
 py-cxx		ports/devel/py-cxx
+py-dateutil	ports/devel/py-dateutil
 py-dbus		ports/devel/py-dbus
 py-dialog	ports/devel/py-dialog
 py-distutils	ports/misc/py-distutils
