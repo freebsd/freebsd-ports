@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.0.6
+PORTVERSION=	4.17
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.7-zip.org/dl/
 DISTNAME=	lzma${PORTVERSION:S/.//g}
@@ -15,7 +15,7 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Command line lzma archiver
 
 USE_GCC=	3.4+
-USE_ZIP=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
@@ -30,7 +30,8 @@ PORTDOCS=	*.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^CXX = .*||; \
+		's|^CXX.*||; \
+		 s|$$(CXX_C)|$$(CC)|; \
 		 s|^CFLAGS =|CFLAGS +=|' \
 		${BUILD_WRKSRC}/${MAKEFILE}
 
