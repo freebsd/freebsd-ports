@@ -18,6 +18,8 @@ COMMENT=	Provides access to PostgreSQL databases through the DBI
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	p5-DBD-Pg-1.3*
+
 USE_PGSQL=	yes
 
 PERL_CONFIGURE=	yes
