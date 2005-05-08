@@ -8,7 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -34,7 +34,8 @@ CONFLICTS=	mutt-devel-*
 WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
-		urlview:${PORTSDIR}/textproc/urlview
+		urlview:${PORTSDIR}/textproc/urlview \
+		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 .endif
 .if ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls
@@ -160,7 +161,6 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
-	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc/mime.types.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
