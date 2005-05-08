@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	0.15.9
+PORTVERSION=	0.15.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.tricknology.org/ports/
@@ -19,16 +19,18 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
+SUB_FILES=	pkg-message
+
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/fcgi/web2ldap.py.orig
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/scgi/web2ldap.py.orig
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/web2ldap/web2ldapcnf/standalone.py.orig
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/mime.types.orig
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/compile.py.orig
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/web2ldap.py.orig
+	@${RM} -f ${WRKSRC}/fcgi/web2ldap.py.orig
+	@${RM} -f ${WRKSRC}/scgi/web2ldap.py.orig
+	@${RM} -f ${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py.orig
+	@${RM} -f ${WRKSRC}/etc/mime.types.orig
+	@${RM} -f ${WRKSRC}/sbin/compile.py.orig
+	@${RM} -f ${WRKSRC}/sbin/web2ldap.py.orig
 	@(cd ${WRKSRC} && ${LOCALBASE}/bin/python ./sbin/compile.py)
-	@${CP} -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ ${PREFIX}/${PORTNAME}
+	@${CP} -r ${WRKSRC}/ ${PREFIX}/${PORTNAME}
 	@if [ -w /var/log ]; then ${MKDIR} /var/log/web2ldap; fi
 
 post-install:
