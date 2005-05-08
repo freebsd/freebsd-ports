@@ -1,0 +1,29 @@
+--- configure.orig	Sun May  8 21:23:28 2005
++++ configure	Sun May  8 21:24:31 2005
+@@ -1108,14 +1108,14 @@
+ 	if test "$WITH_SOUND" = "yes"; then
+ 
+ 	echo "$ac_t""yes" 1>&6
+-	echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:1113: checking for pthread_create in -lpthread" >&5
++	echo $ac_n "checking for pthread_create in ${PTHREAD_LIBS}... $ac_c" 1>&6
++echo "configure:1113: checking for pthread_create in ${PTHREAD_LIBS}" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="${PTHREAD_LIBS}  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1121 "configure"
+ #include "confdefs.h"
+@@ -1143,7 +1143,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS -lpthread"
++  LIBS="$LIBS ${PTHREAD_LIBS}"
+ else
+   echo "$ac_t""no" 1>&6
+ 
