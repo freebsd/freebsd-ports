@@ -22,7 +22,6 @@ USE_PERL5=	yes
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-perl-site-install
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libart-2.0 -I${LOCALBASE}/include/freetype2
