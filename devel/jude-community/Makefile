@@ -23,14 +23,14 @@ JAVA_OS=	native
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-RESTRICTED=	"See http://objectclub.esm.co.jp/Jude/permission_e.html"
+RESTRICTED=	"See http://www.esm.jp/jude-web/en/permission_e.html"
 NO_CDROM=	${RESTRICTED}
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S!-!_!}
 
-DOWNLOAD_URL=	https://www.objectclub.jp/Jude/enquete_e.html
+DOWNLOAD_URL=	https://www.esm.jp/jude-web/en/enquete_e.html
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html
