@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if !defined(WITHOUT_HKP)
-USE_GNOME+=	libsoup
+LIB_DEPENDS+=	soup-2.2.7:${PORTSDIR}/devel/libsoup
 .else
 CONFIGURE_ARGS+=--disable-hkp
 .endif
