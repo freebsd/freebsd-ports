@@ -1,6 +1,49 @@
---- configure.orig	Tue Dec 14 15:39:30 2004
-+++ configure	Sat Dec 18 00:17:55 2004
-@@ -16120,7 +16120,7 @@
+--- configure.orig	Wed May  4 17:32:34 2005
++++ configure	Sat May  7 21:07:38 2005
+@@ -21806,6 +21806,7 @@
+   else
+     GLIB_CFLAGS=`$GLIB_CONFIG $glib_config_args --cflags`
+     GLIB_LIBS=`$GLIB_CONFIG $glib_config_args --libs`
++    GLIB_LIBS="-liconv $GLIB_LIBS"
+     glib_config_major_version=`$GLIB_CONFIG $glib_config_args --version | \
+            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
+     glib_config_minor_version=`$GLIB_CONFIG $glib_config_args --version | \
+@@ -21816,7 +21817,7 @@
+       ac_save_CFLAGS="$CFLAGS"
+       ac_save_LIBS="$LIBS"
+       CFLAGS="$CFLAGS $GLIB_CFLAGS"
+-      LIBS="$GLIB_LIBS $LIBS"
++      LIBS="$GLIB_LIBS -liconv $LIBS"
+       rm -f conf.glibtest
+       if test "$cross_compiling" = yes; then
+   echo $ac_n "cross compiling; assumed OK... $ac_c"
+@@ -22452,6 +22453,7 @@
+   else
+     GLIB_CFLAGS=`$GLIB_CONFIG $glib_config_args --cflags`
+     GLIB_LIBS=`$GLIB_CONFIG $glib_config_args --libs`
++    GLIB_LIBS="-liconv $GLIB_LIBS"
+     glib_config_major_version=`$GLIB_CONFIG $glib_config_args --version | \
+            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
+     glib_config_minor_version=`$GLIB_CONFIG $glib_config_args --version | \
+@@ -22462,7 +22464,7 @@
+       ac_save_CFLAGS="$CFLAGS"
+       ac_save_LIBS="$LIBS"
+       CFLAGS="$CFLAGS $GLIB_CFLAGS"
+-      LIBS="$GLIB_LIBS $LIBS"
++      LIBS="$GLIB_LIBS -liconv $LIBS"
+       rm -f conf.glibtest
+       if test "$cross_compiling" = yes; then
+   echo $ac_n "cross compiling; assumed OK... $ac_c"
+@@ -22683,7 +22685,7 @@
+ ac_save_CFLAGS="$CFLAGS"
+ ac_save_LIBS="$LIBS"
+ CFLAGS="$CFLAGS $GLIB_CFLAGS"
+-LIBS="$GLIB_LIBS $LIBS"
++LIBS="$GLIB_LIBS -liconv $LIBS"
+ if test "$cross_compiling" = yes; then
+   echo $ac_n "cross compiling; assumed OK... $ac_c"
+     ac_cv_glib_supports_modules=yes
+@@ -27560,7 +27562,7 @@
  	  #
  	  CFLAGS="$CFLAGS -I$krb5_dir/include"
  	  CPPFLAGS="$CPPFLAGS -I$krb5_dir/include"
@@ -9,7 +52,7 @@
  	  ac_mit_version=`grep 'Massachusetts Institute of Technology' $krb5_dir/include/krb5.h | head -n 1 | sed 's/^.*Massachusetts Institute of Technology.*$/MIT/'`
  	  ac_krb5_version="$ac_heimdal_version$ac_mit_version"
  	  if test "x$ac_krb5_version" = "xHEIMDAL"
-@@ -16178,7 +16178,7 @@
+@@ -27618,7 +27620,7 @@
  
  	  if test -x "$KRB5_CONFIG"
  	  then
@@ -18,3 +61,21 @@
  	    KRB5_LIBS=`"$KRB5_CONFIG" --libs`
  	    CFLAGS="$CFLAGS $KRB5_FLAGS"
  	    CPPFLAGS="$CPPFLAGS $KRB5_FLAGS"
+@@ -29121,7 +29123,7 @@
+ 
+ 
+ ac_save_LIBS="$LIBS"
+-LIBS="$GLIB_LIBS $LIBS"
++LIBS="$GLIB_LIBS -liconv $LIBS"
+ G_ASCII_STRTOULL_C=""
+ G_ASCII_STRTOULL_O=""
+ G_ASCII_STRTOULL_LO=""
+@@ -30094,7 +30096,7 @@
+ #
+ # The plugin dissectors reside in ./plugins/PROTO/
+ #
+-PLUGIN_LIBS="-L../../epan -lethereal $GLIB_LIBS"
++PLUGIN_LIBS="-L../../epan -lethereal -liconv $GLIB_LIBS"
+ 
+ 
+ #

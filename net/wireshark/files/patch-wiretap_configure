@@ -1,0 +1,20 @@
+--- wiretap/configure.orig	Sat May  7 21:04:37 2005
++++ wiretap/configure	Sat May  7 21:05:31 2005
+@@ -20092,7 +20092,7 @@
+       ac_save_CFLAGS="$CFLAGS"
+       ac_save_LIBS="$LIBS"
+       CFLAGS="$CFLAGS $GLIB_CFLAGS"
+-      LIBS="$GLIB_LIBS $LIBS"
++      LIBS="$GLIB_LIBS -liconv $LIBS"
+       rm -f conf.glibtest
+       if test "$cross_compiling" = yes; then
+   echo $ac_n "cross compiling; assumed OK... $ac_c"
+@@ -20206,7 +20206,7 @@
+   if test "x$no_glib" = x ; then
+      echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-     CFLAGS="$CFLAGS $GLIB_CFLAGS" LIBS="$LIBS $GLIB_LIBS"
++     CFLAGS="$CFLAGS $GLIB_CFLAGS" LIBS="$LIBS -liconv $GLIB_LIBS"
+   else
+      echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
