@@ -1,0 +1,28 @@
+%%PYTHON_SITELIBDIR%%/dateutil/__init__.py
+%%PYTHON_SITELIBDIR%%/dateutil/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dateutil/easter.py
+%%PYTHON_SITELIBDIR%%/dateutil/easter.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/easter.pyo
+%%PYTHON_SITELIBDIR%%/dateutil/parser.py
+%%PYTHON_SITELIBDIR%%/dateutil/parser.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/parser.pyo
+%%PYTHON_SITELIBDIR%%/dateutil/relativedelta.py
+%%PYTHON_SITELIBDIR%%/dateutil/relativedelta.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/relativedelta.pyo
+%%PYTHON_SITELIBDIR%%/dateutil/rrule.py
+%%PYTHON_SITELIBDIR%%/dateutil/rrule.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/rrule.pyo
+%%PYTHON_SITELIBDIR%%/dateutil/tz.py
+%%PYTHON_SITELIBDIR%%/dateutil/tz.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/tz.pyo
+%%PYTHON_SITELIBDIR%%/dateutil/tzwin.py
+%%PYTHON_SITELIBDIR%%/dateutil/tzwin.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/tzwin.pyo
+%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.py
+%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo
+@dirrm %%PYTHON_SITELIBDIR%%/dateutil
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@dirrm %%PYTHON_LIBDIR%%
