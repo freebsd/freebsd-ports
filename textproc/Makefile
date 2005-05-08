@@ -622,6 +622,7 @@
     SUBDIR += saxon-devel
     SUBDIR += sc-aspell
     SUBDIR += scim
+    SUBDIR += scim-input-pad
     SUBDIR += scim-table-imengine
     SUBDIR += scr2txt
     SUBDIR += scrollkeeper

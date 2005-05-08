@@ -1,0 +1,14 @@
+lib/scim-1.0/Helper/input-pad.so
+lib/libscim-input-pad.a
+lib/libscim-input-pad.so.0
+share/locale/ja/LC_MESSAGES/scim-input-pad.mo
+share/locale/zh_CN/LC_MESSAGES/scim-input-pad.mo
+share/locale/zh_TW/LC_MESSAGES/scim-input-pad.mo
+share/scim/icons/input-pad.png
+share/scim/input-pad/base.pad
+share/scim/input-pad/chinese.pad
+share/scim/input-pad/japanese.pad
+share/scim/input-pad/keyboard.pad
+@unexec rmdir %D/lib/scim-1.0/Helper 2>/dev/null || true
+@unexec rmdir %D/lib 2>/dev/null || true
+@unexec rmdir %D/share/scim/input-pad 2>/dev/null || true

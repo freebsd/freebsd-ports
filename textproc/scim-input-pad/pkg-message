@@ -1,0 +1,5 @@
+--------------------------------------------------------------------
+1) Remember to set environment variable XMODIFIERS with scim
+2) use ``scim-input-pad'' command or right click on the SCIM 
+   and choose ``Input Pad'' to start scim-input-pad
+--------------------------------------------------------------------

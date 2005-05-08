@@ -1,0 +1,8 @@
+scim-input-pad is an on-screen input pad that can be used to input symbols
+and key events very easily. It works with the SCIM input method platform.
+
+Smart Common Input Method platform, in short SCIM, is a development platform to
+make Input Method developers live easier. It has very clear architecture and
+very simple programming interface.
+
+WWW: http://freshmeat.net/projects/sciminputpad/
