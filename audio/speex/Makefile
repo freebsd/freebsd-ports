@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.speex.org/download/
+MASTER_SITES=	http://downloads.xiph.org/releases/speex/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -22,11 +21,10 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 CONFLICTS=	speex-devel-*
 
 USE_GNOME=	gnomehack
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	13
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL_VER=15
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
@@ -42,6 +40,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@SPEEX_VERSION@|${PORTVERSION}|' \
 		${WRKSRC}/speex.pc.in
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
-		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
+		 s|LIBS="-lgnugetopt|LIBS="|g; \
+		 s|SPEEX_LT_CURRENT=4|SPEEX_LT_CURRENT=3|' \
+			 ${WRKSRC}/configure
 
 .include <bsd.port.mk>
