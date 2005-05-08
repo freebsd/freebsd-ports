@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.4
-PORTREVISION=	20050429
+PORTREVISION=	20050506
 CATEGORIES=	lang java
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
@@ -154,7 +154,7 @@ post-install: fake-manpages
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
@@ -164,7 +164,7 @@ post-install: fake-manpages
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
 	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*3\.4'
 .endfor
 
