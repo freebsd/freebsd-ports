@@ -8,7 +8,8 @@
 PORTNAME=	cgilib
 PORTVERSION=	0.5
 CATEGORIES=	devel www
-MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/libs/
+MASTER_SITES=	http://www.infodrom.org/projects/cgilib/download/ \
+		http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/libs/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A library of procedures for developing CGI programs in C
