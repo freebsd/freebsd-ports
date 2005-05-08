@@ -6,8 +6,9 @@
 
 PORTNAME=	kcheckers
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://kcheckers.osdn.org.ua/
+MASTER_SITES=	http://kcheckers.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt version of the classic boardgame checkers
@@ -15,7 +16,19 @@ COMMENT=	Qt version of the classic boardgame checkers
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
-MAKE_ENV=	QTDIR="${X11BASE}"
+USE_REINPLACE=	yes
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
+
+PLIST_FILES=	bin/kcheckers %%DATADIR%%/kcheckers.pdn
+PLIST_DIRS=	%%DATADIR%%
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS ChangeLog README
+.endif
+
+post-patch:
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e \
+		's|/usr/local/share/kcheckers|${DATADIR}|g' kcheckers.pro
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
@@ -27,7 +40,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/kcheckers.pdn ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} README AUTHORS ChangeLog ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,0 @@
-bin/kcheckers
-share/kcheckers/kcheckers.pdn
-%%DOCSDIR%%/README
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
-@dirrm %%DOCSDIR%%
-@dirrm share/kcheckers
