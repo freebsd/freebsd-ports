@@ -16,7 +16,8 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 MAINTAINER?=	rehsack@liwing.de
 COMMENT?=	A civilisation clone for X11; multiplayer
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_GETTEXT=	yes
 USE_XPM=	yes
