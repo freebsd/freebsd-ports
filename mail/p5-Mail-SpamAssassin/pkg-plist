@@ -79,6 +79,18 @@ etc/rc.d/sa-spamd.sh
 %%DATADIR%%/languages
 %%DATADIR%%/triplets.txt
 %%DATADIR%%/user_prefs.template
+%%DATADIR%%/tools/README.speedtest
+%%DATADIR%%/tools/bayes_dump_to_trusted_networks
+%%DATADIR%%/tools/check_whitelist
+%%DATADIR%%/tools/convert_awl_dbm_to_sql
+%%DATADIR%%/tools/desc_length.pl
+%%DATADIR%%/tools/mboxsplit
+%%DATADIR%%/tools/sa-stats.pl
+%%DATADIR%%/tools/speedtest
+%%DATADIR%%/tools/split_corpora
+%%DATADIR%%/tools/test_extract
+%%DATADIR%%/tools/triplets.pl
+@dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true

@@ -33,6 +33,6 @@ if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 fi
 
 # Create pid directory
-mkdir /var/run/spamd && chown ${USER}:${GROUP} /var/run/spamd
+mkdir /var/run/spamd 2> /dev/null && chown ${USER}:${GROUP} /var/run/spamd
 
 exit 0
