@@ -1277,6 +1277,7 @@
     SUBDIR += py-coro
     SUBDIR += py-ctypes
     SUBDIR += py-cxx
+    SUBDIR += py-dateutil
     SUBDIR += py-dbus
     SUBDIR += py-dialog
     SUBDIR += py-elementtree
