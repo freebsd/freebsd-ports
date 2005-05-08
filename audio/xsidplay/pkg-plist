@@ -1,7 +1,0 @@
-bin/xsidplay
-share/pixmaps/xsidplay.xpm
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/STIL.faq
-%%PORTDOCS%%%%DOCSDIR%%/hv_sids.faq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
