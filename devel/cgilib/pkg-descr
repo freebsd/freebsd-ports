@@ -1,0 +1,5 @@
+This is quite a simple library that provides an easy interface to the common
+gateway interface, known as CGI.  The purpose is to provide an easy to use
+interface to CGI if you need to write your program in C instead of perl.
+
+WWW: http://www.infodrom.org/projects/cgilib/
