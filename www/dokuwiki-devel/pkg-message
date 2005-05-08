@@ -1,9 +1,9 @@
 =================================================================
           	**** NOTE ****
-  edit %%PREFIX%%/%%WWWDOCROOT%%/%%DOKUWIKIURL%%/conf/dokuwiki.php 
-  if you want to change anything within it or (better) create
-  dokuwiki/conf/local.php containing those lines from dokuwiki.php, 
-  which you want to change. This way your changes are preserved 
-  when overwriting the dokuwiki.php with a new release.
+  Remember to edit the following file:
+    %%PREFIX%%/%%WWWDOCROOT%%/%%DOKUWIKIURL%%/conf/dokuwiki.php 
+
+  For FULL configuration instructions see
+  http://wiki.splitbrain.org/wiki:install
 
 =================================================================

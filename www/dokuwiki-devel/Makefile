@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	dokuwiki
-PORTVERSION=	20050218
-PORTREVISION=	1
+PORTVERSION=	20050507
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
-DISTNAME=	dokuwiki-2005-02-18
+DISTNAME=	${PORTNAME}-2005-05-07
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
-USE_PHP=	pcre session
+USE_PHP=	pcre session xml zlib
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
 WWWDOCROOT?=	www/data-dist
-DOKUWIKIURL?=	dokuwiki
+DOKUWIKIURL?=	${PORTNAME}
 WWWOWN?=	www
 WWWGRP?=	www
 DOKUWIKIDIR?=	${WWWDOCROOT}/${DOKUWIKIURL}
@@ -36,7 +36,7 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${DOKUWIKIDIR}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} ${DOKUWIKIDIR}/changes.log >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${DOKUWIKIDIR} >> ${PLIST}
+		&& ${ECHO_CMD} "@unexec rmdir %D/${DOKUWIKIDIR} 2>/dev/null || true">> ${PLIST}
 
 do-install:
 	# Data files
