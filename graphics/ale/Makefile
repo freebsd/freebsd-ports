@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ale
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
@@ -18,7 +17,7 @@ COMMENT=	Anti-Lamenessing Engine
 USE_GCC=	3.4
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" IOCTL=1
 
 PLIST_FILES=	bin/ale
 
