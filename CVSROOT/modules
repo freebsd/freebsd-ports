@@ -9747,6 +9747,7 @@ py-xmlrpc	ports/net/py-xmlrpc
 py-xmlrpclib	ports/net/py-xmlrpclib
 py-xmlsec	ports/security/py-xmlsec
 py-xmltools	ports/textproc/py-xmltools
+py-xmltv	ports/textproc/py-xmltv
 py-xmms		ports/audio/py-xmms
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-yaml		ports/devel/py-yaml
