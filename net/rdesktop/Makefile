@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.4.0
-PORTREVISION?=	2
+PORTVERSION=	1.4.1
+PORTREVISION?=	0
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,10 +23,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-x=${X11BASE}
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 MAN1=		rdesktop.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$cc|${CC}|' \
-		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${PREFIX}/bin
