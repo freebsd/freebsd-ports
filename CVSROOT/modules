@@ -8914,6 +8914,7 @@ phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
 phprojekt	ports/deskutils/phprojekt
 phpsurveyor	ports/www/phpsurveyor
+phpsview	ports/graphics/phpsview
 phptags		ports/devel/phptags
 phpua-bf	ports/games/phpua-bf
 phpua-cod	ports/games/phpua-cod
