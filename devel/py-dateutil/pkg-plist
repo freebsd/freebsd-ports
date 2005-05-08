@@ -25,4 +25,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo
 @dirrm %%PYTHON_SITELIBDIR%%/dateutil
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
-@dirrm %%PYTHON_LIBDIR%%
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
