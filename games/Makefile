@@ -630,6 +630,7 @@
     SUBDIR += xqf
     SUBDIR += xquarto
     SUBDIR += xracer
+    SUBDIR += xrally
     SUBDIR += xrick
     SUBDIR += xripple
     SUBDIR += xrisk

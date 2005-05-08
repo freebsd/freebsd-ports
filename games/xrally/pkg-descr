@@ -1,0 +1,14 @@
+XRally is a Linux clone of the classic Rally X arcade game. For
+those who don't know, in Rally X you control a blue (good) car,
+that has to collect yellow flags around a maze-like map, while
+avoiding the red (bad) cars. In order to help himself, the blue car
+can use clouds of smoke through the maze. If a enemy touch any of
+these clouds, it stops for a while. The enemy cars can also crash
+one with the other, what gives you some extra time.
+
+XRally is written in C using only the basic Xlib and Xpm libraries.
+It's a project aimed mainly at newbie X11/Game programmers like me
+(but any experienced help is appreciated! :) )
+
+WWW: http://www.linuxgames.com/xrally/
+Author: Ismael Orenstein <perdig@linuxbr.com.br>
