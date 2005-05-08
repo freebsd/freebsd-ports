@@ -231,6 +231,8 @@ web2ldap/sbin/checkinst.pyc
 web2ldap/scgi/web2ldap.py
 web2ldap/scgi/web2ldap.pyc
 web2ldap/web2ldap.spec
+@exec mkdir -p /var/log/web2ldap %B/var/log %B/var/run
+@unexec rmdir /var/log/web2ldap 2>/dev/null || true
 @dirrm web2ldap/var/run
 @dirrm web2ldap/var/log
 @dirrm web2ldap/var

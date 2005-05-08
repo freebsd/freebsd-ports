@@ -1,0 +1,15 @@
+===============================================================================
+Run:
+
+  %%PREFIX%%/web2ldap/sbin/web2ldap.py
+
+to start the standalone version of web2ldap. By default it only accepts
+connections from localhost, but this can be modified in:
+
+  %%PREFIX%%/web2ldap/etc/web2ldap/web2ldapcnf/standalone.py
+
+For instructions on installing the CGI version of web2ldap, please look at the
+enclosed documentation in:
+
+  %%PREFIX%%/web2ldap/htdocs/
+===============================================================================
