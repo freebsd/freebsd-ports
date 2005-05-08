@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Fri May  6 22:24:19 2005
++++ src/Makefile.in	Fri May  6 22:24:19 2005
+@@ -280,6 +280,7 @@
+ 	    		  -I$(top_srcdir) \
+ 	    		  -I$(top_srcdir)/intl \
+ 			  -I$(top_srcdir)/src \
++			  -I/usr/local/include \
+ 			  -DSCIM_ICONDIR=\"@SCIM_ICONDIR@\" \
+ 			  -DSCIM_INPUT_PAD_LOCALEDIR=\"$(datadir)/locale\" \
+ 			  -DSCIM_INPUT_PAD_DATADIR=\"@SCIM_INPUT_PAD_DATADIR@\" \
