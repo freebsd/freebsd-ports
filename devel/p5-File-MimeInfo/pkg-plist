@@ -1,7 +1,8 @@
 bin/mimetype
 %%SITE_PERL%%/File/MimeInfo.pm
-%%SITE_PERL%%/File/MimeInfo/Rox.pm
+%%SITE_PERL%%/File/MimeInfo/Cookbook.pod
 %%SITE_PERL%%/File/MimeInfo/Magic.pm
+%%SITE_PERL%%/File/MimeInfo/Rox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MimeInfo/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/File/MimeInfo 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
