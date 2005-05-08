@@ -1,8 +1,7 @@
-Given SNMP-capable routers and switches, sdig can
-turn an IP address, DNS/WINS host name or a MAC
-address into a port description.
+Given SNMP-capable routers and switches, sdig can turn an IP address, DNS/WINS
+host name or a MAC address into a port description.
 
 WWW: http://sdig.sourceforge.net
 
 - Russell A. Jackson
-raj@cserv62.csub.edu
+raj@csub.edu
