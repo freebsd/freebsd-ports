@@ -32,6 +32,7 @@ GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas
 .if defined(WITH_DJVU)
 LIB_DEPENDS+=		djvulibre.14:${PORTSDIR}/graphics/djvulibre
 CONFIGURE_ARGS+=	--enable-djvu
+GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
 .else
 CONFIGURE_ARGS+=	--disable-djvu
 .endif
