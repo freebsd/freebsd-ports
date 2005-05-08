@@ -6,7 +6,7 @@ bin/bos
 bin/fs
 bin/kalog
 bin/mk_cmds
-bin/nnpfs.ko
+%%NNPFS%%bin/nnpfs.ko
 bin/pts
 bin/rxdebug
 bin/rxperf
@@ -90,10 +90,10 @@ lib/libss.a
 lib/libss.la
 libexec/arlad
 sbin/arla-cli
-sbin/mount_nnpfs
-sbin/nnpfs_makedev
-sbin/startarla
-sbin/umount_nnpfs
+%%NNPFS%%sbin/mount_nnpfs
+%%NNPFS%%sbin/nnpfs_makedev
+%%NNPFS%%sbin/startarla
+%%NNPFS%%sbin/umount_nnpfs
 share/gnats/stacken
 @dirrm include/ss
 @dirrm share/gnats

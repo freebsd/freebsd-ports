@@ -1,0 +1,38 @@
+--- configure.orig	Sat Dec 25 17:45:33 2004
++++ configure	Sun May  8 12:15:13 2005
+@@ -6685,8 +6685,8 @@
+   echo "$as_me:$LINENO: result: DragonFly" >&5
+ echo "${ECHO_T}DragonFly" >&6
+   ;;
+-freebsd[345]* | freebsdelf[345]*)
+-  echo "$as_me:$LINENO: result: FreeBSD [345].x" >&5
++freebsd[3-9]* | freebsdelf[3-9]*)
++  echo "$as_me:$LINENO: result: FreeBSD [3-9].x" >&5
+ echo "${ECHO_T}FreeBSD [345].x" >&6
+   KERNEL_INCLUDE=-I`(cd $srcdir; pwd)`/nnpfs/bsd
+   KERNEL_SRCS='bsd-subr.c'
+@@ -26111,7 +26111,7 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool15/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -55595,7 +55595,14 @@
+ elif test -f $SYS/kern/vnode_if.sh; then
+   /bin/sh $SYS/kern/vnode_if.sh $SYS/kern/vnode_if.src
+ elif test -f $SYS/tools/vnode_if.awk ; then
+-  awk -f $SYS/tools/vnode_if.awk $SYS/kern/vnode_if.src -h
++  case "$nnpfs_target" in
++    freebsd[6-9]* | freebsdelf[6-9]*)
++      awk -f $SYS/tools/vnode_if.awk $SYS/kern/vnode_if.src -h -p -q
++      ;;
++    *)
++      awk -f $SYS/tools/vnode_if.awk $SYS/kern/vnode_if.src -h
++      ;;
++  esac
+ else
+   { { echo "$as_me:$LINENO: error: unable to find any vnode_if script" >&5
+ echo "$as_me: error: unable to find any vnode_if script" >&2;}
