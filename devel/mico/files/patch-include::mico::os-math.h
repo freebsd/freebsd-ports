@@ -1,6 +1,6 @@
 --- include/mico/os-math.h.orig	Mon Oct 13 13:49:32 2003
-+++ include/mico/os-math.h	Sat Jan 29 19:25:49 2005
-@@ -284,12 +284,23 @@
++++ include/mico/os-math.h	Sun May  8 11:40:37 2005
+@@ -284,12 +284,26 @@
      : (sizeof (x) == sizeof (double)) ? __fpclassifyd(x) \
      : __fpclassifyl(x))
  #endif
@@ -16,9 +16,12 @@
 +
 +// configure wrong set HAVE_*
 +#define asinl asin
++#define fmodl fmod
++
++#if __FreeBSD_version < 600026
 +#define ldexpl ldexp
 +#define frexpl frexp
-+#define fmodl fmod
++#endif
 +
 +#if __FreeBSD_version < 503105
 +#define ceill ceil
