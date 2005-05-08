@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="the administrator of that system" \
 		BUILD_SPAMC=yes RUN_NET_TESTS=yes
 
-OPTIONS=	SSL "Build with SSL support" on \
+OPTIONS=	SSL "Build with SSL support for spamd/spamc" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
 		SPF_QUERY "Add SPF query support" off \
@@ -40,8 +40,9 @@ OPTIONS=	SSL "Build with SSL support" on \
 RUN_DEPENDS+=	spfd:${PORTSDIR}/mail/p5-Mail-SPF-Query
 .endif
 
-.if !defined(WITHOUT_OPENSSL)
+.if !defined(WITHOUT_SSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
