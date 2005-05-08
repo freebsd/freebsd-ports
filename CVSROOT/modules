@@ -976,6 +976,7 @@ cgic		ports/www/cgic
 cgicc		ports/www/cgicc
 cgichk		ports/www/cgichk
 cgihtml		ports/www/cgihtml
+cgilib		ports/devel/cgilib
 cgiparse	ports/www/cgiparse
 cgiwrap		ports/www/cgiwrap
 cgoban		ports/games/cgoban
