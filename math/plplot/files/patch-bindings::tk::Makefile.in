@@ -1,11 +1,11 @@
---- bindings/tk/Makefile.in.orig	Mon Feb  2 20:40:59 2004
-+++ bindings/tk/Makefile.in	Tue Feb 10 01:12:09 2004
-@@ -744,7 +744,7 @@
- 
- info-am:
- 
--install-data-am: install-pkgincludeHEADERS install-tclDATA
-+install-data-am: @enable_tk_TRUE@install-pkgincludeHEADERS install-tclDATA
- 
- install-exec-am: install-binPROGRAMS
+--- bindings/tk/Makefile.in.orig	Thu Apr 21 05:35:23 2005
++++ bindings/tk/Makefile.in	Sun May  8 12:19:29 2005
+@@ -467,7 +467,7 @@
+ with_qhull_TRUE = @with_qhull_TRUE@
+ with_rpath_FALSE = @with_rpath_FALSE@
+ with_rpath_TRUE = @with_rpath_TRUE@
+-tcldir = $(TCL_DIR)
++@enable_tk_TRUE@tcldir = $(TCL_DIR)
+ libplplottcltk = $(top_builddir)/bindings/tcl/libplplottcltk$(LIB_TAG).la
+ libplplot = $(top_builddir)/src/libplplot$(LIB_TAG).la
  
