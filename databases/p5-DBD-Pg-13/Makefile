@@ -16,6 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
 CONFLICTS=	p5-DBD-Pg-1.[4-9]*
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-13
 
 USE_PGSQL=	yes
 
