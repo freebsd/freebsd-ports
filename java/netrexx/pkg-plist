@@ -27,7 +27,6 @@ bin/nrc
 %%PORTDOCS%%%%DOCSDIR%%/tablet.gif
 %%PORTDOCS%%%%DOCSDIR%%/spectrum.html
 %%PORTDOCS%%%%DOCSDIR%%/scribble.html
-%%PORTDOCS%%%%DOCSDIR%%/redballw.gif
 %%PORTDOCS%%%%DOCSDIR%%/qtime.nrx
 %%PORTDOCS%%%%DOCSDIR%%/qtime.html
 %%PORTDOCS%%%%DOCSDIR%%/qtime.class
@@ -104,7 +103,6 @@ bin/nrc
 %%PORTDOCS%%%%DOCSDIR%%/cubit.nrx
 %%PORTDOCS%%%%DOCSDIR%%/comment.txt
 %%PORTDOCS%%%%DOCSDIR%%/buttons.html
-%%PORTDOCS%%%%DOCSDIR%%/blueballw.gif
 %%PORTDOCS%%%%DOCSDIR%%/archtext.html
 %%PORTDOCS%%%%DOCSDIR%%/WordClock.nrx
 %%PORTDOCS%%%%DOCSDIR%%/WordClock.class
