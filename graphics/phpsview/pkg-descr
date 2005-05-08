@@ -1,0 +1,30 @@
+Philips USB Cameras Utilities for NetBSD/FreeBSD
+-----------------------------------------------
+
+1. What is it?
+	phpsshot ... simple image capture program ( output stdout PPM file )
+	phpsview ... sequential image viewer program ( about 3fps )
+
+2. What is supported USB camera?
+
+	Vendor  Device  Product Name(Sensor name)
+	------  ------  ----------------------------------
+	0x046d  0x08b1  Logitech QuickCam Notebook Pro
+	0x046d  0x08b2  Logitech QuickCam Pro 4000
+	0x041e	0x400c	Creative Labs Webcam 5
+	0x0471	0x0311	Philips ToUCam Pro
+
+	Maybe the camera that has a same CCD will work. 
+	If cameras worked (or not worked) below, please report me.
+
+	Same CCD cameras
+	- Philips PCVC740K (ToUCam Pro)
+	- Logitech QuickCam Pro 3000
+	- Logitech QuickCam Zoom
+	- Logitech QuickCam Zoom(new model)
+	- Logitech QuickCam Orbit/Sphere
+	- Creative Labs Webcam Pro Ex
+	- Samsung MPC-C30
+	- Visionite VCS-UC300
+
+WWW: http://www2.starcat.ne.jp/~takam/bsd/NetBSD.html#qcamPro

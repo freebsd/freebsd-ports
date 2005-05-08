@@ -1,0 +1,26 @@
+When you have a problem with phpsview, please read following Q and A.
+
+Q. The capture program doesn't work with the message "Not found Philips Webcam",
+   or "Permission denied".
+
+A. 1) Check your dmesg and make sure the camera was attached as ugen device.
+      If your camera was attached as uaudio device, apply a patch that tells
+      to the kernel that these cameras are not audio devices (although it has
+      a microphone in it).
+      http://www2.starcat.ne.jp/~takam/bsd/phpsview-netbsd-sys-1.6.2.diff
+
+      If your camera doesn't match with the entry in above patch, you have to
+      add your camera in the same manner, or disable uaudio driver.
+
+   2) Make sure you can write to the device file connected to your camera.
+      With default settings, regular user can't write to /dev/ugen*.
+      Run chmod a+w /dev/ugen0 (or other corresponding device file)
+      or setup /etc/devfs.rules to makes the device file will be created 
+      with a suitable permission every time you plug your camera to the
+      devfs running system (such as 5.x or higher).
+
+Q. phpsview seems to be working with no errors, but I can't get the right image.
+
+A. Some people said that FreeBSD ohci USB driver had something troubles.
+   If you have problems with ohci system, please upgrade FreeBSD to 5.4
+   and try again (I hear that FreeBSD 5.4-RC is free from the problem).
