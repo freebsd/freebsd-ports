@@ -1,0 +1,14 @@
+bin/aliascheck
+bin/dbutil
+bin/deliver
+bin/dotlock
+bin/edinplace
+bin/macutil
+bin/mailexec
+bin/match
+bin/smtpdcheck
+bin/synos
+libexec/avenger
+libexec/avenger.local
+sbin/asmtpd
+share/pf.os

@@ -19,6 +19,7 @@
     SUBDIR += asmail
     SUBDIR += autorespond
     SUBDIR += autosig
+    SUBDIR += avenger
     SUBDIR += balsa
     SUBDIR += bayespam
     SUBDIR += bbmail

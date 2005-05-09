@@ -1,0 +1,11 @@
+Mail Avenger is a highly-configurable, MTA-independent SMTP server
+daemon. It lets users run messages through filters like ClamAV and
+SpamAssassin during SMTP transactions, so the server can reject mail
+before assuming responsibility for its delivery. Other unique features
+include TCP SYN fingerprint and network route recording, verification
+of sender addresses through SMTP callbacks, SPF (sender policy
+framework) as a general policy language, qmail-style control over both
+SMTP-level behavior and local delivery of extension addresses,
+mail-bomb protection, integration with kernel firewalls, and more.
+
+WWW: http://www.mailavenger.org/
