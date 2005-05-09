@@ -2644,7 +2644,6 @@ getmail		ports/mail/getmail
 gettext		ports/devel/gettext
 gettext-lint	ports/devel/gettext-lint
 getxml		ports/devel/getxml
-gevas		ports/x11-toolkits/gevas
 gexpr		ports/math/gexpr
 gfax		ports/comms/gfax
 gfe		ports/x11-fonts/gfe
