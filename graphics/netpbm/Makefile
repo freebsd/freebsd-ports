@@ -28,7 +28,6 @@ MAKE_ENV=	CC="${CC}" LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 INSTALLS_SHLIB=	yes
-NO_CDROM=	"Not allowed to sell"
 
 MAN1=		netpbm.1
 
