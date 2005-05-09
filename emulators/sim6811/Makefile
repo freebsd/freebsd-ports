@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://crl.nmsu.edu/pub/non-lexical/6811/
 DISTNAME=	sim
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports
 COMMENT=	A Motorola 6811 simulator
 
 NO_WRKSUBDIR=	yes
