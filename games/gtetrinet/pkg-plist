@@ -1,7 +1,4 @@
 bin/gtetrinet
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtetrinet.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gtetrinet.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtetrinet.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gtetrinet.desktop
 share/gnome/gtetrinet/themes/default/blocks.png
 share/gnome/gtetrinet/themes/default/theme.cfg
@@ -12,6 +9,7 @@ share/gnome/pixmaps/gtetrinet/team.png
 share/gnome/pixmaps/gtetrinet.png
 share/locale/am/LC_MESSAGES/gtetrinet.mo
 share/locale/az/LC_MESSAGES/gtetrinet.mo
+share/locale/bg/LC_MESSAGES/gtetrinet.mo
 share/locale/ca/LC_MESSAGES/gtetrinet.mo
 share/locale/cs/LC_MESSAGES/gtetrinet.mo
 share/locale/cy/LC_MESSAGES/gtetrinet.mo
@@ -34,6 +32,9 @@ share/locale/pt/LC_MESSAGES/gtetrinet.mo
 share/locale/it/LC_MESSAGES/gtetrinet.mo
 share/locale/ko/LC_MESSAGES/gtetrinet.mo
 share/locale/pa/LC_MESSAGES/gtetrinet.mo
+share/locale/tr/LC_MESSAGES/gtetrinet.mo
+share/locale/vi/LC_MESSAGES/gtetrinet.mo
+share/locale/rw/LC_MESSAGES/gtetrinet.mo
 share/locale/nb/LC_MESSAGES/gtetrinet.mo
 share/locale/zh_CN/LC_MESSAGES/gtetrinet.mo
 share/locale/pt_BR/LC_MESSAGES/gtetrinet.mo
