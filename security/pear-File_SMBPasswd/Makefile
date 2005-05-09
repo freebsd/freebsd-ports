@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	File_SMBPasswd
-PORTVERSION=	1.0.1
-CATEGORIES=	security pear
+PORTVERSION=	1.0.2
+CATEGORIES=	security www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class for managing SAMBA style password files
