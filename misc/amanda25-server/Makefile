@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amanda
 DISTFILES=	amanda-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
