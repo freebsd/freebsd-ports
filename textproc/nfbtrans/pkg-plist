@@ -1,13 +1,19 @@
 bin/nfbtrans
 share/doc/nfbtrans/nfbtrans.doc
 share/doc/nfbtrans/nfbtrans.fmt
-share/doc/nfbtrans/read.me
+share/doc/nfbtrans/readme.txt
 share/doc/nfbtrans/tvfreqs.fmt
 share/nfbtrans/back.tab
 share/nfbtrans/braille.tab
 share/nfbtrans/english.dic
 share/nfbtrans/menu.cnf
 share/nfbtrans/nfbtrans.cnf
+share/nfbtrans/spanish/span1.tab
+share/nfbtrans/spanish/span2.tab
+share/nfbtrans/spanish/spanish1.cnf
+share/nfbtrans/spanish/spanish1.dic
+share/nfbtrans/spanish/spanish2.cnf
+share/nfbtrans/spanish/spanish2.dic
 share/nfbtrans/tables/bhs_bhm.tab
 share/nfbtrans/tables/danish.tab
 share/nfbtrans/tables/dutch.tab
@@ -24,5 +30,6 @@ share/nfbtrans/tables/spanish.tab
 share/nfbtrans/tables/swedish.tab
 share/nfbtrans/tables/tables.doc
 @dirrm share/nfbtrans/tables
+@dirrm share/nfbtrans/spanish
 @dirrm share/nfbtrans
 @dirrm share/doc/nfbtrans
