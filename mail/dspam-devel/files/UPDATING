@@ -13,6 +13,29 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.5.0.20050506.0930
+#
+
+- Support for clamd virus checking via TCP (see ClamAVHost, ClamAVPort and
+ClamAVResponse in dspam.conf)
+- Support "user+detail" inbound emails and "+quarantine" outbound emails
+(see EnablePlusedDetail and QuarantineMailbox in dspam.conf)
+
+- BUG FIX: "obscure" [1] bug causing dspam to crash under certain conditions 
+when the loose signature was provided without the appropriate delimiter
+- BUG FIX: fix sqlite3 dependency check [2]
+- BUG FIX: don't strip binary if we want GDB suport
+- BUG FIX: DOMAIN_SCALE and LARGE_SCALE are incompatible catch this before
+./cofigure fails [3]
+
+[1] "Obscure" = it took me about 4 hours and a 500 queue processed one by
+one by hand to catch and reproduce the problem after 7 days of mail
+processing w/o error
+[2] Pointed out by vanilla@ for mail/dspam but true here also
+[3] Pointed out by Arvinn Løkkebakken <arvinn@whitebird.no> for mail/dspam
+but true here also
+
+###########################################################################
 # dspam-devel-3.5.0.20050428.1100
 #
 
@@ -28,6 +51,7 @@ Database structure is roughly the same but you may wish to check your
 existing database structure with the *.sql corresponding to you database
 driver from EXAMPLESDIR (Mysql 4.1.x is now default as it's _much_ faster).
 Please read carefully distributed docs like README, UPGRADING and CHANGES.
+
 
 ###########################################################################
 # dspam-devel-3.4.r2.20050305.0930 (this is post RC2A)
