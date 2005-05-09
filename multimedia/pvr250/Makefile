@@ -8,6 +8,7 @@
 
 PORTNAME=	pvr250
 PORTVERSION=	20050412
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
@@ -71,8 +72,13 @@ do-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${PVRTOOLS}.tar.gz ${EXTRACT_AFTER_ARGS};
 
 post-patch:
-.if ${OSVERSION} > 500000
-	${REINPLACE_CMD} -e 's/bktr0/cxm0/' \
+.if ${OSVERSION} < 500000
+	${REINPLACE_CMD} -e 's/cxm0/bktr0/' \
+		${WRKDIR}/${PVRTOOLS}/setchannel.c
+	${REINPLACE_CMD} -e 's/tuner0/bktr0/' \
+		${WRKDIR}/${PVRTOOLS}/setchannel.c
+.else
+	${REINPLACE_CMD} -e 's/tuner0/cxm0/' \
 		${WRKDIR}/${PVRTOOLS}/setchannel.c
 .endif
 
