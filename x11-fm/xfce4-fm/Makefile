@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-fm
 PORTVERSION=	4.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -46,6 +46,11 @@ CONFIGURE_ARGS+=--enable-librsvg
 CONFIGURE_ARGS+=--disable-librsvg
 .endif
 
+post-build:
+	cd ${WRKSRC}/modules && \
+		${CC} -shared .libs/libxffm_prop_la-properties.o ../src/xffm-easy.o \
+		-L${LOCALBASE}/lib -Wl,-soname -Wl,libxffm_prop.so.0 \
+		-o .libs/libxffm_prop.so.0
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/src/Makefile.in
