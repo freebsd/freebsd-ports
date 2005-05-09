@@ -19,7 +19,7 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sourc
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.4.5
+PORTVER_MAJ=	3.4.6
 #SNAP_DATE=	.20050417.0700
 
 .ifdef(SNAP_DATE)
@@ -52,6 +52,9 @@ OPTIONS+=	RPV "Use Robinson technique combining p-values" on
 OPTIONS+=	TEST_COND "More inoculous results rapidly, risk fps" on
 OPTIONS+=	NO_BIAS "No bias toward innocent mail" off
 OPTIONS+=	NEURAL_NET "Enable neural networking" off
+
+#OPTIONS+=	CLAMAV "Enable clamav support" off
+#OPTIONS+=	CLAMAV_DEVEL "Enable clamav support" off
 
 ## run-time configure  options
 OPTIONS+=	USER_HOMEDIR "Store user data in ~/.dspam" off
@@ -96,11 +99,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .ifdef(GDBS)
 CFLAGS+=	-g -DDEBUG
+STRIP=
 .endif
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-_UPD_LINE_NO=	16
+_UPD_LINE_NO=	17
 
 CONFLICTS=	dspam-2* dspam-3*
 
@@ -119,13 +123,6 @@ DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
-
-## Actually Thu Feb 10 17:38:05 EET 2005 works
-#.if ${OSVERSION} >= 500036
-#.	if	${OSVERSION} < 503102
-#IGNORE=	Need newer pthread support, please upgrade your system
-#.	endif
-#.endif
 
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
@@ -216,6 +213,16 @@ CONFIGURE_ARGS+=	--disable-bias
 CONFIGURE_ARGS+=	--enable-neural-networking
 .endif
 
+#.if defined(WITH_CLAMAV)
+#RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav
+#CONFIGURE_ARGS+=	--enable-clamav
+#.endif
+#
+#.if defined(WITH_CLAMAV_DEVEL)
+#RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav-devel
+#CONFIGURE_ARGS+=	--enable-clamav
+#.endif
+
 .if defined(WITH_USER_HOMEDIR)
 CONFIGURE_ARGS+=	--enable-homedir
 .endif
@@ -269,18 +276,19 @@ DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 
 .if defined(WITH_SQLITE3)
 HAVE_SQLITE=	yes
-LIB_DEPENDS+=	sqlite.3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+CONFIGURE_ARGS+=        --with-storage-driver=sqlite3_drv
 .endif
 
 .if defined(WITH_SQLITE2)
 HAVE_SQLITE=	yes
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
+CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv
 .endif
 
 .if defined(HAVE_SQLITE)
-CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
-	--with-sqlite-includes=${LOCALBASE}/include \
-	--with-sqlite-libraries=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
+			--with-sqlite-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	DB4="@comment "
 PLIST_SUB+=	MYSQL="@comment "
 PLIST_SUB+=	PGSQL="@comment "
@@ -554,6 +562,10 @@ pre-configure:
 .endif
 .if defined(WITH_USER_HOMEDIR) && defined(WITH_CGI)
 	@${ECHO_CMD} "USER_HOMEDIR and CGI are incopatible"
+	@${FALSE}
+.endif
+.if defined(WITH_DOMAIN_SCALE) && defined(WITH_LARGE_SCALE)
+	@${ECHO_CMD} "DOMAIN_SCALE and LARGE_SCALE are incopatible"
 	@${FALSE}
 .endif
 
