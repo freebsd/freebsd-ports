@@ -4974,6 +4974,7 @@ libXtrans	ports/x11/libXtrans
 libXv		ports/x11/libXv
 libXxf86	ports/x11/libXxf86
 liba52		ports/audio/liba52
+libadplug	ports/audio/libadplug
 libafterbase	ports/devel/libafterbase
 libafterimage	ports/graphics/libafterimage
 libao		ports/audio/libao
