@@ -7,7 +7,8 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.18.1
-PORTREVISION=	7
+DISTVERSIONSUFFIX=	.1
+PORTREVISION=	8
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_DEBIAN:S,$,:debian,}
@@ -16,7 +17,7 @@ DISTFILES=	${DISTNAME:S,-,_,}.orig${EXTRACT_SUFX}:debian ${TMAC_DISTNAME}.tar.gz
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN}
 PATCH_SITE_SUBDIR=	pool/main/g/groff
-PATCHFILES=	${DISTNAME:S,-,_,}-15.diff.gz
+PATCHFILES=	${DISTNAME:S,-,_,}-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
@@ -44,7 +45,6 @@ TMACDIR=	share/groff/${PORTVERSION}/tmac
 SITETMACDIR=	share/groff/site-tmac
 MDOCDIR=	${TMACDIR}/mdoc
 INFODIR=	${PREFIX}/info
-DOCSDIR=	${PREFIX}/share/doc/groff/${PORTVERSION}
 PLIST_SUB=	GROFF_VERSION=${PORTVERSION}
 
 MAN1=		addftinfo.1 afmtodit.1 \
@@ -68,6 +68,11 @@ MDOCFILES=	ja.eucJP doc-common doc-syms
 DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp
 
 .include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install install_doc
+PORTDOCS=	${PORTVERSION}
+.endif
 
 # nl_langinfo(CODESET) drops the support of ja_JP.EUC after 5.1-RELEASE
 .if ${OSVERSION} > 501100
@@ -98,7 +103,17 @@ PLIST_SUB+=	INFO=""
 WITHOUT_WCHAR_H=	yes
 .endif
 
+POST_INSTALL_SEQ=	install-links
+.if !defined(WITHOUT_INFO)
+POST_INSTALL_SEQ+=	install-info
+.endif
+.if !defined(NOPORTDOCS)
+POST_INSTALL_SEQ+=	install-documents
+.endif
+
 post-patch:
+	${REINPLACE_CMD} -e 's|\(install_data\)|\1 install_doc|g;' \
+		${WRKSRC}/Makefile.in
 .if defined(WITHOUT_WCHAR_H)
 	${REINPLACE_CMD} -e 's|#include <wchar[.]h>||g;' \
 		${WRKSRC}/src/libs/libgroff/encoding.cc
@@ -112,14 +127,6 @@ post-build:
 	cd ${WRKSRC} && ${FIND} font -name DESC \
 	| ${XARGS} ${REINPLACE_CMD} -e 's|pro \(.*\)|pro ${PREFIX}/bin/\1|g;'
 
-POST_INSTALL_SEQ=	install-links
-.if !defined(WITHOUT_INFO)
-POST_INSTALL_SEQ+=	install-info
-.endif
-.if !defined(NOPORTDOCS)
-POST_INSTALL_SEQ+=	install-documents
-.endif
-
 post-install: ${POST_INSTALL_SEQ}
 .for F in ${SITETMACFILES}
 	${INSTALL_DATA} ${TMACBASE}/${F} ${PREFIX}/${SITETMACDIR}
@@ -132,9 +139,9 @@ post-install: ${POST_INSTALL_SEQ}
 .endfor
 
 install-documents:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/${PORTVERSION}
 .for F in ${DOCUMENTS}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/${F} ${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${F} ${DOCSDIR}/${PORTVERSION}
 .endfor
 
 install-info:
