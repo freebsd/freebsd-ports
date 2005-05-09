@@ -1,18 +1,16 @@
---- nfbpatch.c.orig	Mon Mar 25 07:23:16 1996
-+++ nfbpatch.c	Wed Sep  8 05:58:22 1999
-@@ -31,9 +31,11 @@
+--- nfbpatch.c.orig	Thu May 24 08:41:34 2001
++++ nfbpatch.c	Mon May  9 17:48:33 2005
+@@ -21,7 +21,9 @@
  #include <unistd.h>
  
- #define CASE_SHIFT 32	/* diference between upper and lower case */
+ #define CASE_SHIFT 32   /* diference between upper and lower case */
 +#ifndef freebsd
- #define SYSVR4	   /* use with gcc and solaris 2.1 see getpgrp. Also defines
- 		    * usleep.  Wasn't able to link with /usr/ucblib/libucb.a
- 		    * Really no need for delay anyway */
+ #define SYSVR4     /* use with gcc and solaris 2.1 see getpgrp. */
 +#endif
  #ifdef ultrix
  #define ECHOCTL TCTLECH
  #endif
-@@ -97,7 +99,7 @@
+@@ -88,7 +90,7 @@
    int i;
  
    i = tcgetpgrp(0);/* Use stdin as the file descriptor */

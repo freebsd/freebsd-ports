@@ -1,8 +1,8 @@
---- makefile.orig	Sat Sep 23 13:46:52 2000
-+++ makefile	Thu Nov 30 04:13:38 2000
+--- makefile.orig	Fri Jan  4 18:23:22 2002
++++ makefile	Mon May  9 17:39:33 2005
 @@ -3,6 +3,11 @@
  #translation software written by the National Federation of the Blind
- #compile under the Unix operating system.
+ #compile under unix, MSVC, or djgpp
  #
 +#Installation prefix:
 +PREFIX?=/usr/local
@@ -12,26 +12,28 @@
  #The source and object files are as follows:
  
  SRCFILES=nfbtrans.c nfbpatch.c
-@@ -10,8 +15,8 @@
+@@ -10,8 +15,10 @@
  LIBS= -ltermcap
  
  #Compiler and linking flags are as follows:
--CFLAGS="-O"
+-CFLAGS=-O
 -CC=gcc
++#CFLAGS=-O
++#CC=gcc
 +CFLAGS+=-O -DUNIX_PATH=\\\"${UNIX_PATH}\\\"
 +CC?=gcc
  LDFLAGS=-Bdynamic
  
  default:
-@@ -21,6 +26,7 @@
- 	@echo "make ultrix"
- 	@echo "make aix"
+@@ -23,6 +30,7 @@
  	@echo "make linux"
+ 	@echo "make djgpp"
+ 	@echo "make msvc"
 +	@echo "make freebsd"
  all: nfbtrans
  
- nfbtrans: $(OBJFILES)
-@@ -28,6 +34,9 @@
+ djgppall: nfbtrans.exe
+@@ -35,6 +43,9 @@
  
  ultrix:
  	$(MAKE) CFLAGS=-O
