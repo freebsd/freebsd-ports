@@ -57,6 +57,9 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%OPENGL%%share/%%MAMEMESS%%/cab/trans/trans.cab
 %%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/trans
 %%OPENGL%%@dirrm share/%%MAMEMESS%%/cab
+%%DATFILES%%share/%%MAMEMESS%%/hiscore.dat
+%%DATFILES%%share/%%MAMEMESS%%/history.dat
+%%DATFILES%%share/%%MAMEMESS%%/cheat.dat
 @exec mkdir -p %D/share/%%MAMEMESS%%/roms || true
 @dirrm share/%%MAMEMESS%%/roms
 @dirrm share/%%MAMEMESS%%
