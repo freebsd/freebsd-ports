@@ -45,7 +45,10 @@ share/apps/kimdaba/icons/hicolor/16x16/actions/texttool.png
 share/apps/kimdaba/icons/hicolor/16x16/actions/video.png
 share/apps/kimdaba/icons/hicolor/22x22/actions/key.png
 share/apps/kimdaba/kimdabaui.rc
+share/apps/kimdaba/pics/exclamationmark.png
 share/apps/kimdaba/pics/multiconfig.jpg
+share/apps/kimdaba/pics/questionmark-flipped.png
+share/apps/kimdaba/pics/questionmark.png
 share/apps/kimdaba/pics/search.jpg
 share/apps/kimdaba/pics/splash-large.png
 share/apps/kimdaba/pics/splash.png
@@ -72,6 +75,7 @@ share/apps/kimdaba/themes/rounded/upright.png
 share/apps/kimdaba/tips
 share/doc/HTML/da/kimdaba/browsing.docbook
 share/doc/HTML/da/kimdaba/common
+share/doc/HTML/da/kimdaba/datebar.docbook
 share/doc/HTML/da/kimdaba/generating-html.docbook
 share/doc/HTML/da/kimdaba/importexport.docbook
 share/doc/HTML/da/kimdaba/index.cache.bz2
@@ -82,24 +86,42 @@ share/doc/HTML/da/kimdaba/plugins.docbook
 share/doc/HTML/da/kimdaba/setting-properties.docbook
 share/doc/HTML/da/kimdaba/thumbnail-view.docbook
 share/doc/HTML/da/kimdaba/viewer.docbook
+share/doc/HTML/de/kimdaba/browsing.docbook
+share/doc/HTML/de/kimdaba/common
+share/doc/HTML/de/kimdaba/generating-html.docbook
+share/doc/HTML/de/kimdaba/importexport.docbook
+share/doc/HTML/de/kimdaba/index.cache.bz2
+share/doc/HTML/de/kimdaba/index.docbook
+share/doc/HTML/de/kimdaba/introduction.docbook
+share/doc/HTML/de/kimdaba/options.docbook
+share/doc/HTML/de/kimdaba/plugins.docbook
+share/doc/HTML/de/kimdaba/setting-properties.docbook
+share/doc/HTML/de/kimdaba/thumbnail-view.docbook
+share/doc/HTML/de/kimdaba/viewer.docbook
 share/doc/HTML/en/kimdaba/browser-for-jesper.png
 share/doc/HTML/en/kimdaba/browser-for-persons.png
 share/doc/HTML/en/kimdaba/browser-with-images.png
 share/doc/HTML/en/kimdaba/browsing.docbook
 share/doc/HTML/en/kimdaba/categoryEditor.png
 share/doc/HTML/en/kimdaba/common
+share/doc/HTML/en/kimdaba/datebar-for-minutes.png
+share/doc/HTML/en/kimdaba/datebar.docbook
+share/doc/HTML/en/kimdaba/datebar.png
 share/doc/HTML/en/kimdaba/delete-images.png
 share/doc/HTML/en/kimdaba/draw-on-image.png
 share/doc/HTML/en/kimdaba/edit-properies-menu.png
 share/doc/HTML/en/kimdaba/empty-browser-window.png
 share/doc/HTML/en/kimdaba/generating-html.docbook
 share/doc/HTML/en/kimdaba/image-config-window.png
+share/doc/HTML/en/kimdaba/images-with-tokens.png
 share/doc/HTML/en/kimdaba/imagesForPersons.png
+share/doc/HTML/en/kimdaba/import-dialog.png
 share/doc/HTML/en/kimdaba/importexport.docbook
 share/doc/HTML/en/kimdaba/index.cache.bz2
 share/doc/HTML/en/kimdaba/index.docbook
 share/doc/HTML/en/kimdaba/introduction.docbook
 share/doc/HTML/en/kimdaba/marking-zoom-rectangle.png
+share/doc/HTML/en/kimdaba/member-group-setting.png
 share/doc/HTML/en/kimdaba/offline-mode.png
 share/doc/HTML/en/kimdaba/options-general.png
 share/doc/HTML/en/kimdaba/options-groups.png
@@ -113,33 +135,43 @@ share/doc/HTML/en/kimdaba/search.png
 share/doc/HTML/en/kimdaba/setting-properties.docbook
 share/doc/HTML/en/kimdaba/thumbnail-view.docbook
 share/doc/HTML/en/kimdaba/thumbnailview.png
+share/doc/HTML/en/kimdaba/tokens-in-browser.png
 share/doc/HTML/en/kimdaba/usa-as-a-member.png
 share/doc/HTML/en/kimdaba/viewer-contextmenu.png
 share/doc/HTML/en/kimdaba/viewer.docbook
 share/doc/HTML/en/kimdaba/viewer.png
 share/doc/HTML/en/kimdaba/zoomed-view.png
-share/doc/HTML/es/kimdaba/browsing.docbook
-share/doc/HTML/es/kimdaba/introduction.docbook
-share/doc/HTML/es/kimdaba/options.docbook
-share/doc/HTML/es/kimdaba/setting-properties.docbook
-share/doc/HTML/es/kimdaba/thumbnail-view.docbook
-share/doc/HTML/es/kimdaba/viewer.docbook
 share/doc/HTML/et/kimdaba/browsing.docbook
 share/doc/HTML/et/kimdaba/common
 share/doc/HTML/et/kimdaba/generating-html.docbook
+share/doc/HTML/et/kimdaba/importexport.docbook
 share/doc/HTML/et/kimdaba/index.cache.bz2
 share/doc/HTML/et/kimdaba/index.docbook
 share/doc/HTML/et/kimdaba/introduction.docbook
 share/doc/HTML/et/kimdaba/options.docbook
+share/doc/HTML/et/kimdaba/plugins.docbook
 share/doc/HTML/et/kimdaba/setting-properties.docbook
 share/doc/HTML/et/kimdaba/thumbnail-view.docbook
 share/doc/HTML/et/kimdaba/viewer.docbook
+share/doc/HTML/fr/kimdaba/browsing.docbook
+share/doc/HTML/fr/kimdaba/common
+share/doc/HTML/fr/kimdaba/generating-html.docbook
+share/doc/HTML/fr/kimdaba/importexport.docbook
+share/doc/HTML/fr/kimdaba/index.cache.bz2
+share/doc/HTML/fr/kimdaba/index.docbook
+share/doc/HTML/fr/kimdaba/introduction.docbook
+share/doc/HTML/fr/kimdaba/options.docbook
+share/doc/HTML/fr/kimdaba/plugins.docbook
+share/doc/HTML/fr/kimdaba/setting-properties.docbook
+share/doc/HTML/fr/kimdaba/thumbnail-view.docbook
+share/doc/HTML/fr/kimdaba/viewer.docbook
 share/doc/HTML/it/kimdaba/browser-for-jesper.png
 share/doc/HTML/it/kimdaba/browser-for-persons.png
 share/doc/HTML/it/kimdaba/browser-with-images.png
 share/doc/HTML/it/kimdaba/browsing.docbook
 share/doc/HTML/it/kimdaba/categoryEditor.png
 share/doc/HTML/it/kimdaba/common
+share/doc/HTML/it/kimdaba/datebar.docbook
 share/doc/HTML/it/kimdaba/delete-images.png
 share/doc/HTML/it/kimdaba/draw-on-image.png
 share/doc/HTML/it/kimdaba/edit-properies-menu.png
@@ -168,8 +200,22 @@ share/doc/HTML/it/kimdaba/viewer-contextmenu.png
 share/doc/HTML/it/kimdaba/viewer.docbook
 share/doc/HTML/it/kimdaba/viewer.png
 share/doc/HTML/it/kimdaba/zoomed-view.png
+share/doc/HTML/nl/kimdaba/browsing.docbook
+share/doc/HTML/nl/kimdaba/common
+share/doc/HTML/nl/kimdaba/datebar.docbook
+share/doc/HTML/nl/kimdaba/generating-html.docbook
+share/doc/HTML/nl/kimdaba/importexport.docbook
+share/doc/HTML/nl/kimdaba/index.cache.bz2
+share/doc/HTML/nl/kimdaba/index.docbook
+share/doc/HTML/nl/kimdaba/introduction.docbook
+share/doc/HTML/nl/kimdaba/options.docbook
+share/doc/HTML/nl/kimdaba/plugins.docbook
+share/doc/HTML/nl/kimdaba/setting-properties.docbook
+share/doc/HTML/nl/kimdaba/thumbnail-view.docbook
+share/doc/HTML/nl/kimdaba/viewer.docbook
 share/doc/HTML/pt/kimdaba/browsing.docbook
 share/doc/HTML/pt/kimdaba/common
+share/doc/HTML/pt/kimdaba/datebar.docbook
 share/doc/HTML/pt/kimdaba/generating-html.docbook
 share/doc/HTML/pt/kimdaba/importexport.docbook
 share/doc/HTML/pt/kimdaba/index.cache.bz2
@@ -196,18 +242,24 @@ share/doc/HTML/sv/kimdaba/browser-with-images.png
 share/doc/HTML/sv/kimdaba/browsing.docbook
 share/doc/HTML/sv/kimdaba/categoryEditor.png
 share/doc/HTML/sv/kimdaba/common
+share/doc/HTML/sv/kimdaba/datebar-for-minutes.png
+share/doc/HTML/sv/kimdaba/datebar.docbook
+share/doc/HTML/sv/kimdaba/datebar.png
 share/doc/HTML/sv/kimdaba/delete-images.png
 share/doc/HTML/sv/kimdaba/draw-on-image.png
 share/doc/HTML/sv/kimdaba/edit-properies-menu.png
 share/doc/HTML/sv/kimdaba/empty-browser-window.png
 share/doc/HTML/sv/kimdaba/generating-html.docbook
 share/doc/HTML/sv/kimdaba/image-config-window.png
+share/doc/HTML/sv/kimdaba/images-with-tokens.png
 share/doc/HTML/sv/kimdaba/imagesForPersons.png
+share/doc/HTML/sv/kimdaba/import-dialog.png
 share/doc/HTML/sv/kimdaba/importexport.docbook
 share/doc/HTML/sv/kimdaba/index.cache.bz2
 share/doc/HTML/sv/kimdaba/index.docbook
 share/doc/HTML/sv/kimdaba/introduction.docbook
 share/doc/HTML/sv/kimdaba/marking-zoom-rectangle.png
+share/doc/HTML/sv/kimdaba/member-group-setting.png
 share/doc/HTML/sv/kimdaba/offline-mode.png
 share/doc/HTML/sv/kimdaba/options-general.png
 share/doc/HTML/sv/kimdaba/options-groups.png
@@ -221,6 +273,7 @@ share/doc/HTML/sv/kimdaba/search.png
 share/doc/HTML/sv/kimdaba/setting-properties.docbook
 share/doc/HTML/sv/kimdaba/thumbnail-view.docbook
 share/doc/HTML/sv/kimdaba/thumbnailview.png
+share/doc/HTML/sv/kimdaba/tokens-in-browser.png
 share/doc/HTML/sv/kimdaba/usa-as-a-member.png
 share/doc/HTML/sv/kimdaba/viewer-contextmenu.png
 share/doc/HTML/sv/kimdaba/viewer.docbook
@@ -244,8 +297,12 @@ share/locale/et/LC_MESSAGES/kimdaba.mo
 share/locale/fi/LC_MESSAGES/kimdaba.mo
 share/locale/fr/LC_MESSAGES/kimdaba.mo
 share/locale/ga/LC_MESSAGES/kimdaba.mo
+share/locale/gl/LC_MESSAGES/kimdaba.mo
+share/locale/hi/LC_MESSAGES/kimdaba.mo
 share/locale/is/LC_MESSAGES/kimdaba.mo
 share/locale/it/LC_MESSAGES/kimdaba.mo
+share/locale/lt/LC_MESSAGES/kimdaba.mo
+share/locale/mt/LC_MESSAGES/kimdaba.mo
 share/locale/nb/LC_MESSAGES/kimdaba.mo
 share/locale/nl/LC_MESSAGES/kimdaba.mo
 share/locale/pl/LC_MESSAGES/kimdaba.mo
@@ -254,6 +311,7 @@ share/locale/pt_BR/LC_MESSAGES/kimdaba.mo
 share/locale/ro/LC_MESSAGES/kimdaba.mo
 share/locale/ru/LC_MESSAGES/kimdaba.mo
 share/locale/sr/LC_MESSAGES/kimdaba.mo
+share/locale/sr@Latn/LC_MESSAGES/kimdaba.mo
 share/locale/sv/LC_MESSAGES/kimdaba.mo
 share/locale/ta/LC_MESSAGES/kimdaba.mo
 share/locale/tr/LC_MESSAGES/kimdaba.mo
@@ -261,6 +319,24 @@ share/locale/zh_CN/LC_MESSAGES/kimdaba.mo
 share/mimelnk/application/x-vnd.kde.kimdaba-import.desktop
 @unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
 @unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/gl 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
@@ -281,14 +357,18 @@ share/mimelnk/application/x-vnd.kde.kimdaba-import.desktop
 @unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
 @dirrm share/doc/HTML/pt/kimdaba
 @unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/nl/kimdaba
+@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
 @dirrm share/doc/HTML/it/kimdaba
 @unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/fr/kimdaba
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
 @dirrm share/doc/HTML/et/kimdaba
 @unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
-@dirrm share/doc/HTML/es/kimdaba
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
 @dirrm share/doc/HTML/en/kimdaba
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/kimdaba
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
 @dirrm share/doc/HTML/da/kimdaba
 @unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
