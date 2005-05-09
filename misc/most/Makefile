@@ -20,5 +20,6 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-mmap
 MAN1=		most.1
+CFLAGS+=	-O
 
 .include <bsd.port.mk>
