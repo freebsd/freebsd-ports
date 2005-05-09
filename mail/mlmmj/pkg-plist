@@ -25,10 +25,12 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/sub-ok
 %%DATADIR%%/text.skel/sub-ok-digest
 %%DATADIR%%/text.skel/sub-ok-nomail
+%%DATADIR%%/text.skel/sub-subscribed
 %%DATADIR%%/text.skel/subonlypost
 %%DATADIR%%/text.skel/unsub-confirm
 %%DATADIR%%/text.skel/unsub-confirm-digest
 %%DATADIR%%/text.skel/unsub-confirm-nomail
+%%DATADIR%%/text.skel/unsub-notsubscribed
 %%DATADIR%%/text.skel/unsub-ok
 %%DATADIR%%/text.skel/unsub-ok-digest
 %%DATADIR%%/text.skel/unsub-ok-nomail
