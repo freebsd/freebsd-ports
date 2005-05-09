@@ -17,6 +17,7 @@ To do so will invite needless problems from the various parties involved.
 
 Since those connected to the net will also be able to use the ports framework
 to automatically fetch their own original sources and thus complete the puzzle,
+licq-jons-gtk-gui	ports/net/licq-jons-gtk-gui
 the hardship is not as severe as it might otherwise be.
 
 Such ports are listed below:
@@ -423,7 +424,6 @@ mysqlman.tar.gz		databases/mysqlman	Not redistributable, license
 						agreement required
 ncftpd-*		ftp/ncftpd		30 day evaluation license
 netbeans-*		java/netbeans		Restrictive copyright
-netpbm-*		graphics/netpbm		Not allowed to sell
 netscape-*-us-*		www/netscape*		Crypto; export-controlled
 netscape7/*		www/netscape7		No redistribution
 			{french|german|japanese|portuguese}/netscape7
