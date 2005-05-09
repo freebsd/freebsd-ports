@@ -544,6 +544,7 @@ avalon-framework	ports/devel/avalon-framework
 avalon-logkit	ports/java/avalon-logkit
 avarice		ports/devel/avarice
 avcheck		ports/security/avcheck
+avenger		ports/mail/avenger
 avida		ports/biology/avida
 avidemux2	ports/multimedia/avidemux2
 aview		ports/graphics/aview
