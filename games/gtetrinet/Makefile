@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.7.9
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -26,6 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --enable-ipv6
 
 MAN6=		gtetrinet.6
+GCONF_SCHEMAS=	gtetrinet.schemas
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
