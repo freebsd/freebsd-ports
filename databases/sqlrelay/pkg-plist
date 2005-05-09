@@ -25,9 +25,10 @@ bin/sqlr-scaler
 bin/sqlr-start
 bin/sqlr-stop
 bin/sqlrsh
-etc/rc.d/sqlrelay
+etc/rc.d/sqlrelay.sh-sample
 etc/sqlrelay.conf.example
 etc/sqlrelay.dtd
+etc/sqlrelay-sample
 include/sqlrelay/private/bindvar.h
 include/sqlrelay/private/column.h
 include/sqlrelay/private/row.h
@@ -41,156 +42,150 @@ include/sqlrelay/sqlrclientwrapper.h
 @dirrm include/sqlrelay
 lib/libmysql3sqlrelay.so.0
 lib/libmysql3sqlrelay.so
-lib/libmysql3sqlrelay.la
 lib/libmysql3sqlrelay.a
 lib/libmysql40sqlrelay.so.0
 lib/libmysql40sqlrelay.so
-lib/libmysql40sqlrelay.la
 lib/libmysql40sqlrelay.a
 lib/libmysql41sqlrelay.so.0
 lib/libmysql41sqlrelay.so
-lib/libmysql41sqlrelay.la
 lib/libmysql41sqlrelay.a
 lib/libmysql50sqlrelay.so.0
 lib/libmysql50sqlrelay.so
-lib/libmysql50sqlrelay.la
 lib/libmysql50sqlrelay.a
 lib/libsqlrclient.a
-lib/libsqlrclient.la
 lib/libsqlrclient.so
 lib/libsqlrclient.so.0
 lib/libsqlrclientwrapper.a
-lib/libsqlrclientwrapper.la
 lib/libsqlrclientwrapper.so
 lib/libsqlrclientwrapper.so.0
 lib/libpqsqlrelay.a
-lib/libpqsqlrelay.la
 lib/libpqsqlrelay.so
 lib/libpqsqlrelay.so.0
 lib/libsqlrconnection.a
-lib/libsqlrconnection.la
 lib/libsqlrconnection.so
 lib/libsqlrconnection.so.0
 lib/libsqlrconnection_debug.a
-lib/libsqlrconnection_debug.la
 lib/libsqlrconnection_debug.so
 lib/libsqlrconnection_debug.so.0
 lib/libsqlrutil.a
-lib/libsqlrutil.la
 lib/libsqlrutil.so
 lib/libsqlrutil.so.0
 libdata/pkgconfig/sqlrelay-c.pc
 libdata/pkgconfig/sqlrelay-c++.pc
-share/doc/sqlrelay/api/c++/sqlrclient.h.html
-share/doc/sqlrelay/api/c/sqlrclientwrapper.h.html
-share/doc/sqlrelay/api/java/allclasses-frame.html
-share/doc/sqlrelay/api/java/allclasses-noframe.html
-share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/SQLRConnection.html
-share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/SQLRCursor.html
-share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/package-frame.html
-share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/package-summary.html
-share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/package-tree.html
-share/doc/sqlrelay/api/java/constant-values.html
-share/doc/sqlrelay/api/java/deprecated-list.html
-share/doc/sqlrelay/api/java/help-doc.html
-share/doc/sqlrelay/api/java/index-all.html
-share/doc/sqlrelay/api/java/index.html
-share/doc/sqlrelay/api/java/overview-tree.html
-share/doc/sqlrelay/api/java/package-list
-share/doc/sqlrelay/api/java/packages.html
-share/doc/sqlrelay/api/java/stylesheet.css
-share/doc/sqlrelay/api/perl/Connection.html
-share/doc/sqlrelay/api/perl/Cursor.html
-share/doc/sqlrelay/api/perl/SQLRelay.html
-share/doc/sqlrelay/api/perl/perl.html
-share/doc/sqlrelay/api/php/doc.html
-share/doc/sqlrelay/api/python/PySQLRClient.py.html
-share/doc/sqlrelay/api/python/PySQLRDB.py.html
-share/doc/sqlrelay/api/ruby/ruby.html
-share/doc/sqlrelay/api/ruby/rubydbi.html
-share/doc/sqlrelay/clientapis.html
-share/doc/sqlrelay/configuring.html
-share/doc/sqlrelay/connections.html
-share/doc/sqlrelay/css/styles.css
-share/doc/sqlrelay/dropin/mysql.html
-share/doc/sqlrelay/dropin/postgresql.html
-share/doc/sqlrelay/faq.html
-share/doc/sqlrelay/gettingstarted/db2.html
-share/doc/sqlrelay/gettingstarted/interbase.html
-share/doc/sqlrelay/gettingstarted/lago.html
-share/doc/sqlrelay/gettingstarted/msql.html
-share/doc/sqlrelay/gettingstarted/mssqlserver.html
-share/doc/sqlrelay/gettingstarted/mysql.html
-share/doc/sqlrelay/gettingstarted/oracle.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/5/805.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/6/8i.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/7/8i.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/7/8i.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8/8i.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8/9i.html
-share/doc/sqlrelay/gettingstarted/postgresql.html
-share/doc/sqlrelay/gettingstarted/sqlite.html
-share/doc/sqlrelay/gettingstarted/sybase.html
-share/doc/sqlrelay/gettingstarted/sybase/11.0.3.3.html
-share/doc/sqlrelay/gettingstarted/sybase/11.9.2.html
-share/doc/sqlrelay/index.html
-share/doc/sqlrelay/installing.html
-share/doc/sqlrelay/introduction.html
-share/doc/sqlrelay/introtowebdb.html
-share/doc/sqlrelay/invisible.gif
-share/doc/sqlrelay/oraclentier.html
-share/doc/sqlrelay/programming/binds.html
-share/doc/sqlrelay/programming/c++.html
-share/doc/sqlrelay/programming/c.html
-share/doc/sqlrelay/programming/java.html
-share/doc/sqlrelay/programming/perl.html
-share/doc/sqlrelay/programming/perldbi.html
-share/doc/sqlrelay/programming/php.html
-share/doc/sqlrelay/programming/python.html
-share/doc/sqlrelay/programming/pythondb.html
-share/doc/sqlrelay/programming/ruby.html
-share/doc/sqlrelay/programming/rubydbi.html
-share/doc/sqlrelay/programming/zope.html
-share/doc/sqlrelay/programming/zope/instance.gif
-share/doc/sqlrelay/programming/zope/management.gif
-share/doc/sqlrelay/programming/zope/resultset.gif
-share/doc/sqlrelay/programming/zope/sqlrelay.gif
-share/doc/sqlrelay/programming/zope/test.gif
-share/doc/sqlrelay/programming/zope/testzsqlmethod.gif
-share/doc/sqlrelay/programming/zope/zsqlmethod.gif
-share/doc/sqlrelay/programming/zope/zsqlmethodresultset.gif
-share/doc/sqlrelay/running.html
-share/doc/sqlrelay/tuning.html
-share/doc/sqlrelay/windows.html
-@dirrm sqlrelay/cache
-@dirrm sqlrelay
-@dirrm share/doc/sqlrelay/programming/zope
-@dirrm share/doc/sqlrelay/programming
-@dirrm share/doc/sqlrelay/gettingstarted/sybase
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/7
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/slackware
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/9
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/8
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/7
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/6
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/5
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat
-@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux
-@dirrm share/doc/sqlrelay/gettingstarted/oracle
-@dirrm share/doc/sqlrelay/gettingstarted
-@dirrm share/doc/sqlrelay/dropin
-@dirrm share/doc/sqlrelay/css
-@dirrm share/doc/sqlrelay/api/ruby
-@dirrm share/doc/sqlrelay/api/python
-@dirrm share/doc/sqlrelay/api/php
-@dirrm share/doc/sqlrelay/api/perl
-@dirrm share/doc/sqlrelay/api/java/com/firstworks/sqlrelay
-@dirrm share/doc/sqlrelay/api/java/com/firstworks
-@dirrm share/doc/sqlrelay/api/java/com
-@dirrm share/doc/sqlrelay/api/java
-@dirrm share/doc/sqlrelay/api/c++
-@dirrm share/doc/sqlrelay/api/c
-@dirrm share/doc/sqlrelay/api
-@dirrm share/doc/sqlrelay
-@dirrm etc/sqlrelay
+%%DOCSDIR%%/api/c++/sqlrclient.h.html
+%%DOCSDIR%%/api/c/sqlrclientwrapper.h.html
+%%DOCSDIR%%/api/java/allclasses-frame.html
+%%DOCSDIR%%/api/java/allclasses-noframe.html
+%%DOCSDIR%%/api/java/com/firstworks/sqlrelay/SQLRConnection.html
+%%DOCSDIR%%/api/java/com/firstworks/sqlrelay/SQLRCursor.html
+%%DOCSDIR%%/api/java/com/firstworks/sqlrelay/package-frame.html
+%%DOCSDIR%%/api/java/com/firstworks/sqlrelay/package-summary.html
+%%DOCSDIR%%/api/java/com/firstworks/sqlrelay/package-tree.html
+%%DOCSDIR%%/api/java/constant-values.html
+%%DOCSDIR%%/api/java/deprecated-list.html
+%%DOCSDIR%%/api/java/help-doc.html
+%%DOCSDIR%%/api/java/index-all.html
+%%DOCSDIR%%/api/java/index.html
+%%DOCSDIR%%/api/java/overview-tree.html
+%%DOCSDIR%%/api/java/package-list
+%%DOCSDIR%%/api/java/packages.html
+%%DOCSDIR%%/api/java/stylesheet.css
+%%DOCSDIR%%/api/perl/Connection.html
+%%DOCSDIR%%/api/perl/Cursor.html
+%%DOCSDIR%%/api/perl/SQLRelay.html
+%%DOCSDIR%%/api/perl/perl.html
+%%DOCSDIR%%/api/php/doc.html
+%%DOCSDIR%%/api/python/PySQLRClient.py.html
+%%DOCSDIR%%/api/python/PySQLRDB.py.html
+%%DOCSDIR%%/api/ruby/ruby.html
+%%DOCSDIR%%/api/ruby/rubydbi.html
+%%DOCSDIR%%/clientapis.html
+%%DOCSDIR%%/configuring.html
+%%DOCSDIR%%/connections.html
+%%DOCSDIR%%/css/styles.css
+%%DOCSDIR%%/dropin/mysql.html
+%%DOCSDIR%%/dropin/postgresql.html
+%%DOCSDIR%%/faq.html
+%%DOCSDIR%%/gettingstarted/db2.html
+%%DOCSDIR%%/gettingstarted/interbase.html
+%%DOCSDIR%%/gettingstarted/lago.html
+%%DOCSDIR%%/gettingstarted/msql.html
+%%DOCSDIR%%/gettingstarted/mssqlserver.html
+%%DOCSDIR%%/gettingstarted/mysql.html
+%%DOCSDIR%%/gettingstarted/oracle.html
+%%DOCSDIR%%/gettingstarted/oracle/linux/redhat/5/805.html
+%%DOCSDIR%%/gettingstarted/oracle/linux/redhat/6/8i.html
+%%DOCSDIR%%/gettingstarted/oracle/linux/redhat/7/8i.html
+%%DOCSDIR%%/gettingstarted/oracle/linux/slackware/7/8i.html
+%%DOCSDIR%%/gettingstarted/oracle/linux/slackware/8/8i.html
+%%DOCSDIR%%/gettingstarted/oracle/linux/slackware/8/9i.html
+%%DOCSDIR%%/gettingstarted/postgresql.html
+%%DOCSDIR%%/gettingstarted/sqlite.html
+%%DOCSDIR%%/gettingstarted/sybase.html
+%%DOCSDIR%%/gettingstarted/sybase/11.0.3.3.html
+%%DOCSDIR%%/gettingstarted/sybase/11.9.2.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/installing.html
+%%DOCSDIR%%/introduction.html
+%%DOCSDIR%%/introtowebdb.html
+%%DOCSDIR%%/invisible.gif
+%%DOCSDIR%%/oraclentier.html
+%%DOCSDIR%%/programming/binds.html
+%%DOCSDIR%%/programming/c++.html
+%%DOCSDIR%%/programming/c.html
+%%DOCSDIR%%/programming/java.html
+%%DOCSDIR%%/programming/perl.html
+%%DOCSDIR%%/programming/perldbi.html
+%%DOCSDIR%%/programming/php.html
+%%DOCSDIR%%/programming/python.html
+%%DOCSDIR%%/programming/pythondb.html
+%%DOCSDIR%%/programming/ruby.html
+%%DOCSDIR%%/programming/rubydbi.html
+%%DOCSDIR%%/programming/zope.html
+%%DOCSDIR%%/programming/zope/instance.gif
+%%DOCSDIR%%/programming/zope/management.gif
+%%DOCSDIR%%/programming/zope/resultset.gif
+%%DOCSDIR%%/programming/zope/sqlrelay.gif
+%%DOCSDIR%%/programming/zope/test.gif
+%%DOCSDIR%%/programming/zope/testzsqlmethod.gif
+%%DOCSDIR%%/programming/zope/zsqlmethod.gif
+%%DOCSDIR%%/programming/zope/zsqlmethodresultset.gif
+%%DOCSDIR%%/running.html
+%%DOCSDIR%%/tuning.html
+%%DOCSDIR%%/windows.html
+@unexec rmdir /var/sqlrelay/cache
+@unexec rmdir /var/sqlrelay/debug
+@unexec rmdir /var/sqlrelay/tmp/ipc
+@unexec rmdir /var/sqlrelay/tmp/pids
+@unexec rmdir /var/sqlrelay/tmp/sockets
+@unexec rmdir /var/sqlrelay/tmp
+@unexec rmdir /var/sqlrelay
+@dirrm %%DOCSDIR%%/programming/zope
+@dirrm %%DOCSDIR%%/programming
+@dirrm %%DOCSDIR%%/gettingstarted/sybase
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/slackware/8
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/slackware/7
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/slackware
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/redhat/9
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/redhat/8
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/redhat/7
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/redhat/6
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/redhat/5
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux/redhat
+@dirrm %%DOCSDIR%%/gettingstarted/oracle/linux
+@dirrm %%DOCSDIR%%/gettingstarted/oracle
+@dirrm %%DOCSDIR%%/gettingstarted
+@dirrm %%DOCSDIR%%/dropin
+@dirrm %%DOCSDIR%%/css
+@dirrm %%DOCSDIR%%/api/ruby
+@dirrm %%DOCSDIR%%/api/python
+@dirrm %%DOCSDIR%%/api/php
+@dirrm %%DOCSDIR%%/api/perl
+@dirrm %%DOCSDIR%%/api/java/com/firstworks/sqlrelay
+@dirrm %%DOCSDIR%%/api/java/com/firstworks
+@dirrm %%DOCSDIR%%/api/java/com
+@dirrm %%DOCSDIR%%/api/java
+@dirrm %%DOCSDIR%%/api/c++
+@dirrm %%DOCSDIR%%/api/c
+@dirrm %%DOCSDIR%%/api
+@dirrm %%DOCSDIR%%

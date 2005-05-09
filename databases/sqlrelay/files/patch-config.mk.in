@@ -1,6 +1,6 @@
---- config.mk.in.orig	Tue Dec 30 20:17:23 2003
-+++ config.mk.in	Fri May 28 15:59:37 2004
-@@ -14,7 +14,7 @@
+--- config.mk.in.orig	Sun Mar 27 09:48:06 2005
++++ config.mk.in	Mon May  9 01:51:07 2005
+@@ -16,7 +16,7 @@
  exec_prefix= @exec_prefix@
  includedir = @includedir@
  libdir = @libdir@
@@ -9,3 +9,12 @@
  libexecdir = @libexecdir@
  bindir = @bindir@
  localstatedir = @localstatedir@
+@@ -88,7 +88,7 @@
+ # rudiments library
+ RUDIMENTSPATH = @RUDIMENTSPATH@
+ RUDIMENTSINCLUDES = @RUDIMENTSINCLUDES@
+-RUDIMENTSLIBS = @RUDIMENTSLIBS@
++RUDIMENTSLIBS = @RUDIMENTSLIBS@ -lssl
+ RUDIMENTSLIBSPATH = @RUDIMENTSLIBSPATH@ 
+ 
+ # perl
