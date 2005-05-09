@@ -1495,6 +1495,7 @@ detachtty	ports/misc/detachtty
 detex		ports/print/detex
 detox		ports/sysutils/detox
 devel-replay	ports/devel/replay
+devel_atlas-devel	ports/devel/atlas-devel
 devhelp		ports/devel/devhelp
 devil		ports/graphics/devil
 devilspie	ports/x11-wm/devilspie
