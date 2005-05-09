@@ -16,6 +16,24 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.4.6
+#
+
+- BUG FIX: "obscure" [1] bug causing dspam to crash under certain conditions
+when the loose signature was provided without the appropriate delimiter
+- BUG FIX: fix sqlite3 dependency check [2]
+- BUG FIX: don't strip binary if we want GDB suport
+- BUG FIX: DOMAIN_SCALE and LARGE_SCALE are incompatible so catch this
+before ./cofigure fails [3]
+
+[1] "Obscure" = it took me about 4 hours and a 500 queue processed one by
+one by hand to catch and reproduce the problem after 7 days of mail 
+processing w/o error
+[2] Pointed out by vanilla@
+[3] Pointed out by Arvinn Løkkebakken <arvinn@whitebird.no> for mail/dspam
+
+
+###########################################################################
 # dspam-3.4.5
 #
 
