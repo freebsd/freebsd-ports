@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xnc
-PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTVERSION=	5.0.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src-5/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -25,8 +24,6 @@ COMMENT=	File manager for X Window
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-
-BROKEN=		Incomplete pkg-plist
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GETTEXT=	yes
