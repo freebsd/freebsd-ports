@@ -33,6 +33,7 @@ USE_INC_LIBTOOL_VER=15
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
+.if !defined(GAMIN_SLAVE)
 tests: build
 	@${ECHO_MSG} "===> Running gamin regression tests"
 	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
@@ -40,5 +41,6 @@ tests: build
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
