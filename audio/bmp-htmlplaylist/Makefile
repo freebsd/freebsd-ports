@@ -8,7 +8,9 @@
 PORTNAME=	bmp-htmlplaylist
 PORTVERSION=	0.2.1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.berlios.de/bmp-plugins/
+MASTER_SITES=	http://download.berlios.de/bmp-plugins/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	novel
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Application which saves your current BMP playlist to html or xml file
