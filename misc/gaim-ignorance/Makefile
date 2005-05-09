@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gaim-ignorance
-DISTVERSION=	1.1.3beta1
+PORTNAME=	ignorance
+PORTVERSION=	1.3.0.1
 CATEGORIES=	misc
 MASTER_SITES=	http://bard.sytes.net/ignorance/
-DISTNAME=	ignorance-${DISTVERSION}
+PKGNAMEPREFIX=	gaim-
 
 MAINTAINER=	kruptos@mlinux.org
 COMMENT=	Adds filtering capabilities to gaim
