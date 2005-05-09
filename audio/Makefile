@@ -226,6 +226,7 @@
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += liba52
+    SUBDIR += libadplug
     SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
