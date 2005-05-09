@@ -1,0 +1,19 @@
+--- contrib/mom/Makefile.sub.bak	Mon Jul 29 01:22:05 2002
++++ contrib/mom/Makefile.sub	Sun May  8 12:05:26 2005
+@@ -90,13 +90,14 @@
+ 	test -d examples || $(mkinstalldirs) examples
+ 	test -f penguin.ps || cp $(srcdir)/examples/penguin.ps .
+ 
+-install_data: $(NORMALFILES) $(HTMLDOCFILES) \
+-              $(EXAMPLEFILES) $(PROCESSEDEXAMPLEFILES)
++install_data: $(NORMALFILES)
+ 	-test -d $(tmacdir) || $(mkinstalldirs) $(tmacdir)
+ 	for f in $(NORMALFILES); do \
+ 	  rm -f $(tmacdir)/$$f; \
+ 	  $(INSTALL_DATA) $(srcdir)/$$f $(tmacdir)/$$f; \
+ 	done
++
++install_doc: $(HTMLDOCFILES) $(EXAMPLEFILES) $(PROCESSEDEXAMPLEFILES)
+ 	-test -d $(htmldocdir)/momdoc || $(mkinstalldirs) $(htmldocdir)/momdoc
+ 	for f in $(HTMLDOCFILES); do \
+ 	  rm -f $(htmldocdir)/$$f; \

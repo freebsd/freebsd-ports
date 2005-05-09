@@ -14,7 +14,7 @@
  distfiles: groff gnu.eps gnu.png
  
 -install_data: groff $(DOCFILES) $(PROCESSEDDOCFILES) $(make_install_html) \
-+install_data: $(DOCFILES) $(PROCESSEDDOCFILES) $(make_install_html) \
++install_doc: $(DOCFILES) $(PROCESSEDDOCFILES) $(make_install_html) \
                $(EXAMPLEFILES) $(PROCESSEDEXAMPLEFILES)
 -	-test -d $(infodir) || $(mkinstalldirs) $(infodir)
 -# Prefer info files in builddir over srcdir; we test for
