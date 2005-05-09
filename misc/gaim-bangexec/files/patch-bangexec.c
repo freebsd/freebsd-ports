@@ -1,6 +1,6 @@
---- bangexec.c.orig	Tue Apr 19 01:29:32 2005
-+++ bangexec.c	Tue Apr 19 01:29:44 2005
-@@ -253,9 +253,10 @@
+--- bangexec.c.orig	Mon May  9 07:02:52 2005
++++ bangexec.c	Mon May  9 07:03:30 2005
+@@ -287,9 +287,10 @@
  		return -1;
      }else if (pid){		//Parent
  		int rv;
