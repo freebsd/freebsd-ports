@@ -8,7 +8,7 @@
  
  PREFIX=/usr/local
 -DESTDIR=$PREFIX/games/childsplay
-+DESTDIR=$PREFIX/childsplay
++DESTDIR=$PREFIX/share/childsplay
  
  ###########################################################
  #    DO NOT EDIT BEHIND THIS POINT
