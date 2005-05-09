@@ -1,11 +1,11 @@
---- src/Makefile.orig	Thu Aug  5 09:53:48 2004
-+++ src/Makefile	Thu Aug 26 14:47:30 2004
-@@ -297,7 +297,7 @@
+--- src/Makefile.orig	Mon May  9 01:11:53 2005
++++ src/Makefile	Mon May  9 01:12:10 2005
+@@ -334,7 +334,7 @@
  rebuild: clean all
  
  librudiments.la: $(SRCS) $(LOBJS)
--	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CRYPTLIB) $(DLLIB) -rpath $(libdir) -release $(RUDIMENTS_VERSION) -version-info $(SONAME_VERSION_INFO) -no-undefined
-+	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CRYPTLIB) $(DLLIB) -rpath $(libdir) -version-info $(SONAME_VERSION_INFO) -no-undefined
+-	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CLOCKNANOSLEEPLIB) $(SHMOPENLIB) $(CRYPTLIB) $(DLLIB) -rpath $(libdir) -release $(RUDIMENTS_VERSION) -version-info $(SONAME_VERSION_INFO) -no-undefined
++	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CLOCKNANOSLEEPLIB) $(SHMOPENLIB) $(CRYPTLIB) $(DLLIB) -rpath $(libdir) -version-info $(SONAME_VERSION_INFO) -no-undefined
  
  install:
  	$(MKINSTALLDIRS) $(libdir)
