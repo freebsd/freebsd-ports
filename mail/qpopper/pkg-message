@@ -4,4 +4,3 @@ To enable the qpopper-daemon, add the following line to your /etc/inetd.conf:
 
    pop3 stream tcp nowait root /usr/local/libexec/qpopper qpopper -s
 ****************************************************************************
-
