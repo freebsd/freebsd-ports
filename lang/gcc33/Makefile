@@ -100,7 +100,7 @@ post-install: fake-manpages
 	do \
 		${STRIP_CMD} $$prog ; \
 	done )
-.for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ 
+.for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
@@ -129,7 +129,7 @@ post-install: fake-manpages
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
