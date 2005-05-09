@@ -7,34 +7,33 @@
 #
 
 PORTNAME=	pyne
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	news python mail
 MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 offline Newsreader/Emailer
 
-BUILD_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
-.endif
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src/po
+INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src/po
 
-BROKEN=		"Broken pkg-plist"
+USE_GNOME=	pygtk2
+USE_PYTHON=	yes
 
-USE_REINPLACE=		yes
-USE_PYTHON=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ENV=		PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}"
-ALL_TARGET=		default
+pre-build:
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/pyne.sh
+	@${ECHO_CMD} "exec ${PYTHON_CMD} -O ${PYTHON_SITELIBDIR}/pyne/pyne.py \$$*" >> ${WRKDIR}/pyne.sh
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s@[(]PREFIX[)]\/lib@(PYTHON_SITELIBDIR)@g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s@pybins=\(.*\)@pybins=\${PYTHON_VERSION}@" ${WRKSRC}/configure
+post-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} yencdec.c -o yencdec
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/yencdec
+	${INSTALL_SCRIPT} ${WRKDIR}/pyne.sh ${PREFIX}/bin/pyne
+	${INSTALL_PROGRAM} ${WRKSRC}/yencdec  ${PREFIX}/bin/yencdec
+	@${MKDIR} ${PYTHON_SITELIBDIR}/pyne
+	${TAR} -C ${WRKSRC}/src --exclude po --exclude test -cf - . | \
+		${TAR} -C ${PYTHON_SITELIBDIR}/pyne --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PYTHON_SITELIBDIR}/pyne
+	${PYTHON_CMD} -O -c "import compileall ; compileall.compile_dir(\"${PYTHON_SITELIBDIR}/pyne\")"
 
 .include <bsd.port.mk>
