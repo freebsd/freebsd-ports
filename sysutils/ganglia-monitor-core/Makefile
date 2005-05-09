@@ -59,7 +59,7 @@ GMOND_CONF=	${WRKDIR}/gmond.conf
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_GMETAD)
-LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
+LIB_DEPENDS=	rrd.2:${PORTSDIR}/net/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
 SUB_LIST+=	GMETAD=

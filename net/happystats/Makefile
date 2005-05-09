@@ -18,7 +18,7 @@ COMMENT=	Universal log converter into graph
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		rrd.0:${PORTSDIR}/net/rrdtool
+		rrd.2:${PORTSDIR}/net/rrdtool
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
