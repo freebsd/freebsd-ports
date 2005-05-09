@@ -1,0 +1,7 @@
+include/binfile.h
+include/binio.h
+include/binstr.h
+include/binwrap.h
+lib/libbinio.a
+lib/libbinio.so
+lib/libbinio.so.1
