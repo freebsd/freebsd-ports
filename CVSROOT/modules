@@ -4989,6 +4989,7 @@ libaux		ports/graphics/libaux
 libavl		ports/devel/libavl
 libbf		ports/security/libbf
 libbfd		ports/devel/libbfd
+libbinio	ports/devel/libbinio
 libbnr		ports/devel/libbnr
 libbonobo	ports/devel/libbonobo
 libbonobomm	ports/devel/libbonobomm
