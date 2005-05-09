@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bangexec
-PORTVERSION=	1.1.4
+PORTVERSION=	1.3.0.1
 CATEGORIES=	misc
 MASTER_SITES=	http://bard.sytes.net/bangexec/
 PKGNAMEPREFIX=	gaim-
