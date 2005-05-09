@@ -10,7 +10,7 @@ PORTNAME=	speex
 PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/speex/
+MASTER_SITES=	ftp://ftp.osuosl.org/.1/xiph/releases/speex/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	ahze@FreeBSD.org
