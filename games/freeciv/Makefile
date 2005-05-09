@@ -7,7 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
@@ -28,6 +28,8 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN6=		civserver.6 civclient.6
 
 .include <bsd.port.pre.mk>
 
