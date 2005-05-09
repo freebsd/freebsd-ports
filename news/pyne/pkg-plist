@@ -88,17 +88,6 @@ bin/yencdec
 %%PYTHON_SITELIBDIR%%/pyne/msgfilter.pyo
 %%PYTHON_SITELIBDIR%%/pyne/personality.py
 %%PYTHON_SITELIBDIR%%/pyne/personality.pyo
-%%PYTHON_SITELIBDIR%%/pyne/po/Makefile
-%%PYTHON_SITELIBDIR%%/pyne/po/Makefile.orig
-%%PYTHON_SITELIBDIR%%/pyne/po/es_ES.mo
-%%PYTHON_SITELIBDIR%%/pyne/po/es_ES.po
-%%PYTHON_SITELIBDIR%%/pyne/po/es_ES.po.orig
-%%PYTHON_SITELIBDIR%%/pyne/po/nl.mo
-%%PYTHON_SITELIBDIR%%/pyne/po/nl.po
-%%PYTHON_SITELIBDIR%%/pyne/po/pygettext.py
-%%PYTHON_SITELIBDIR%%/pyne/po/pygettext.pyo
-%%PYTHON_SITELIBDIR%%/pyne/po/zh_TW.Big5.mo
-%%PYTHON_SITELIBDIR%%/pyne/po/zh_TW.Big5.po
 %%PYTHON_SITELIBDIR%%/pyne/printmodule.py
 %%PYTHON_SITELIBDIR%%/pyne/printmodule.pyo
 %%PYTHON_SITELIBDIR%%/pyne/ptk/__init__.py
@@ -107,8 +96,6 @@ bin/yencdec
 %%PYTHON_SITELIBDIR%%/pyne/ptk/big_edit_box.pyo
 %%PYTHON_SITELIBDIR%%/pyne/ptk/folder_tree.py
 %%PYTHON_SITELIBDIR%%/pyne/ptk/folder_tree.pyo
-%%PYTHON_SITELIBDIR%%/pyne/ptk/menu_maker.py
-%%PYTHON_SITELIBDIR%%/pyne/ptk/menu_maker.pyo
 %%PYTHON_SITELIBDIR%%/pyne/ptk/message_tree.py
 %%PYTHON_SITELIBDIR%%/pyne/ptk/message_tree.pyo
 %%PYTHON_SITELIBDIR%%/pyne/ptk/misc_widgets.py
@@ -132,8 +119,9 @@ bin/yencdec
 %%PYTHON_SITELIBDIR%%/pyne/sort.py
 %%PYTHON_SITELIBDIR%%/pyne/sort.pyo
 %%PYTHON_SITELIBDIR%%/pyne/timeoutsocket.py
-%%PYTHON_SITELIBDIR%%/pyne/timeoutsocket.py.bak
 %%PYTHON_SITELIBDIR%%/pyne/timeoutsocket.pyo
+%%PYTHON_SITELIBDIR%%/pyne/ui_mainwin.xml
+%%PYTHON_SITELIBDIR%%/pyne/ui_msgeditbox.xml
 %%PYTHON_SITELIBDIR%%/pyne/userconfig.py
 %%PYTHON_SITELIBDIR%%/pyne/userconfig.pyo
 %%PYTHON_SITELIBDIR%%/pyne/utils.py
@@ -142,15 +130,15 @@ bin/yencdec
 %%PYTHON_SITELIBDIR%%/pyne/viewattach.pyo
 share/locale/es_ES/LC_MESSAGES/pyne.mo
 share/locale/nl/LC_MESSAGES/pyne.mo
-@dirrm %%PYTHON_SITELIBDIR%%/pyne/boxformats
+share/locale/zh_TW.Big5/LC_MESSAGES/pyne.mo
+@dirrm %%PYTHON_SITELIBDIR%%/pyne/ptk
+@dirrm %%PYTHON_SITELIBDIR%%/pyne/icons
+@dirrm %%PYTHON_SITELIBDIR%%/pyne/docs
+@dirrm %%PYTHON_SITELIBDIR%%/pyne/boxtypes/nntp_io
 @dirrm %%PYTHON_SITELIBDIR%%/pyne/boxtypes/mail_send
 @dirrm %%PYTHON_SITELIBDIR%%/pyne/boxtypes/mail_recv
-@dirrm %%PYTHON_SITELIBDIR%%/pyne/boxtypes/nntp_io
 @dirrm %%PYTHON_SITELIBDIR%%/pyne/boxtypes
-@dirrm %%PYTHON_SITELIBDIR%%/pyne/docs
-@dirrm %%PYTHON_SITELIBDIR%%/pyne/icons
-@dirrm %%PYTHON_SITELIBDIR%%/pyne/po
-@dirrm %%PYTHON_SITELIBDIR%%/pyne/ptk
+@dirrm %%PYTHON_SITELIBDIR%%/pyne/boxformats
 @dirrm %%PYTHON_SITELIBDIR%%/pyne
 @unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl 2>/dev/null || true
