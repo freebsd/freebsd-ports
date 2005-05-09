@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		kimdaba
-PORTVERSION=		2.0
-PORTREVISION=	1
+PORTVERSION=		2.1
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://ktown.kde.org/kimdaba/download/
 
@@ -16,8 +15,6 @@ COMMENT=		Image database for KDE
 RUN_DEPENDS=		kipidcrawclient:${PORTSDIR}/graphics/kipi-plugins
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-configure
-
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
@@ -26,6 +23,7 @@ USE_REINPLACE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's/xx//g' ${WRKSRC}/po/Makefile.in
+	@${FIND} ${WRKSRC}/translations -name Makefile.in | ${XARGS} \
+		${REINPLACE_CMD} -e 's|LANG)/doc|LANG)/kimdaba|g'
 
 .include <bsd.port.mk>
