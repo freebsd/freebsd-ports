@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.0
-PORTREVISION=	20050501
+PORTREVISION=	20050508
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -23,13 +23,14 @@ DISTFILES=	\
 DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 4.1
+MAINTAINER=	gerald@FreeBSD.org
+COMMENT=	GNU Compiler Collection 4.1
 
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
+CONFLICTS=	gcc-3.3.* gcc-4.0.*
 LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha
 USE_BISON=	yes
@@ -53,7 +54,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
-# FIXME: needed to make gcc41 port work for now.
+# FIXME: needed to make this port build at all.
 WITHOUT_LIBJAVA=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
@@ -67,7 +68,7 @@ CONFIGURE_ARGS=	--disable-nls \
 		--program-suffix=${SUFFIX} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 .if defined(WITH_FORTRAN)
-CONFIGURE_ARGS+= --with-gmp=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -89,6 +90,7 @@ MAN1=		cpp${SUFFIX}.1 \
 		gcj-dbtool${SUFFIX}.1 \
 		gcjh${SUFFIX}.1 \
 		gij${SUFFIX}.1 \
+		gjnih${SUFFIX}.1 \
 		grmic${SUFFIX}.1 \
 		grmiregistry${SUFFIX}.1 \
 		grepjar${SUFFIX}.1 \
@@ -166,8 +168,8 @@ post-install: fake-manpages
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
-	(${ECHO_CMD} "@unexec rmdir %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/libexec/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
@@ -177,8 +179,8 @@ post-install: fake-manpages
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*4\.0'
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
+	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*4\.1'
 .endfor
 
 .include <bsd.port.post.mk>
