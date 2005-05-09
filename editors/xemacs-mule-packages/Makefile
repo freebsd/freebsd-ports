@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
 DISTFILES=	\
 		edict-1.16-pkg.tar.gz \
 		egg-its-1.27-pkg.tar.gz \
-		latin-euro-standards-1.03-pkg.tar.gz \
-		latin-unity-1.14-pkg.tar.gz \
+		latin-euro-standards-1.04-pkg.tar.gz \
+		latin-unity-1.15-pkg.tar.gz \
 		leim-1.22-pkg.tar.gz \
 		locale-1.21-pkg.tar.gz \
 		lookup-1.14-pkg.tar.gz \
@@ -55,7 +55,7 @@ post-install:
 	@${ECHO_MSG} "installed altogether with xemacs-packages."
 	@${ECHO_MSG} "    You can also install these packages by running XEmacs as root and using the"
 	@${ECHO_MSG} "'Manage Packages' menu within the 'Options' menu of the menubar."
-	@${ECHO_MSG} "However,installing the packages using this method defeats the purpose of"
+	@${ECHO_MSG} "However, installing the packages using this method defeats the purpose of"
 	@${ECHO_MSG} "installing this port."
 
 .include <bsd.port.mk>
