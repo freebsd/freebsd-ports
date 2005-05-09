@@ -1,0 +1,13 @@
+--- init/Makefile.orig	Mon May  9 01:50:51 2005
++++ init/Makefile	Mon May  9 01:56:03 2005
+@@ -44,8 +44,8 @@
+ endif
+ ifeq ($(UNAME),FreeBSD)
+ 	$(MKINSTALLDIRS) $(initroot)/usr/local/etc/rc.d
+-	$(INSTALL) -m 755 freebsd/rc.d/sqlrelay $(initroot)/usr/local/etc/rc.d
+-	$(INSTALL) -m 644 freebsd/sqlrelay $(initroot)/etc
++	$(INSTALL) -m 755 freebsd/rc.d/sqlrelay $(initroot)/usr/local/etc/rc.d/sqlrelay.sh-sample
++	$(INSTALL) -m 644 freebsd/sqlrelay $(sysconfdir)/sqlrelay-sample
+ endif
+ ifeq ($(UNAME),SCO_SV)
+ 	$(MKINSTALLDIRS) $(initroot)/etc/init.d

@@ -20,29 +20,3 @@
  FW_INCLUDES(pthreads,[$PTHREADINCLUDES])
  FW_LIBS(pthreads,[$PTHREADLIBS])
  
-@@ -1857,8 +1859,8 @@
- 
- 		if ( test -n "$PYTHONPATH" )
- 		then
--		
--			for i in "2.3" "2.2" "2.1" "2.0" "1.6" "1.5"
-+
-+			for i in "2.4" "2.3" "2.2" "2.1" "2.0" "1.6" "1.5"
- 			do
- 				if ( test -d "$PYTHONPATH/include/python$i" -a -d "$PYTHONPATH/lib/python$i/config" )
- 				then
-@@ -2149,13 +2151,7 @@
- 			FW_CHECK_FILE("$JAVAPATH/include/jni.h",[JAVAINCLUDES=\"-I$JAVAPATH/include\"])
- 			if ( test -n "$JAVAINCLUDES" )
- 			then
--				for i in `ls -d $JAVAPATH/include/*`
--				do
--					if ( test -d "$i" )
--					then
--						JAVAINCLUDES="$JAVAINCLUDES -I$i"
--					fi
--				done
-+				JAVAINCLUDES="$JAVAINCLUDES -I`dirname $JAVAPATH/include/*/jni_md.h`"
- 			fi
- 		fi
- 		
