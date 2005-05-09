@@ -32,6 +32,61 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="01bb84e2-bd88-11d9-a281-02e018374e71">
+    <topic>groff -- pic2graph and eqn2graph are vulnerable to symlink attack through temporary files</topic>
+    <affects>
+      <package>
+	<name>ja-groff</name>
+	<range><ge>1.18.1</ge><lt>1.18.1_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The eqn2graph and pic2graph scripts in groff 1.18.1
+	  allow local users to overwrite arbitrary files via
+	  a symlink attack on temporary files.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/80671</freebsdpr>
+      <bid>12058</bid>
+      <cvename>CAN-2004-1296</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286371</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286372</url>
+    </references>
+    <dates>
+      <discovery>2004-12-20</discovery>
+      <entry>2005-05-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="169f422f-bd88-11d9-a281-02e018374e71">
+    <topic>groff -- groffer uses temporary files unsafely</topic>
+    <affects>
+      <package>
+	<name>ja-groff</name>
+	<range><ge>1.18</ge><lt>1.18.1_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The groffer script in the groff package 1.18 and later versions
+	  allows local users to overwrite files via a symlink attack 
+	  on temporary files.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/80671</freebsdpr>
+      <bid>11287</bid>
+      <cvename>CAN-2004-0969</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=278265</url>
+    </references>
+    <dates>
+      <discovery>2004-09-30</discovery>
+      <entry>2005-05-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f003a08-ba3c-11d9-837d-000e0c2e438a">
     <topic>sharutils -- unshar insecure temporary file creation</topic>
     <affects>
