@@ -226,6 +226,7 @@ adodb		ports/databases/adodb
 adom		ports/games/adom
 adonthell	ports/games/adonthell
 adpcm		ports/audio/adpcm
+adplay		ports/audio/adplay
 adstudio	ports/databases/adstudio
 adtool		ports/sysutils/adtool
 advancecomp	ports/archivers/advancecomp
