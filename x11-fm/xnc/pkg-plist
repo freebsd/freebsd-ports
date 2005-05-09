@@ -21,8 +21,11 @@ share/locale/cs/LC_MESSAGES/xnc.mo
 share/locale/es/LC_MESSAGES/xnc.mo
 share/locale/fr/LC_MESSAGES/xnc.mo
 share/locale/hu/LC_MESSAGES/xnc.mo
+share/locale/it/LC_MESSAGES/xnc.mo
+share/locale/nl/LC_MESSAGES/xnc.mo
 share/locale/pl/LC_MESSAGES/xnc.mo
 share/locale/pt/LC_MESSAGES/xnc.mo
+share/locale/ro/LC_MESSAGES/xnc.mo
 share/locale/ru/LC_MESSAGES/xnc.mo
 share/locale/sr/LC_MESSAGES/xnc.mo
 share/locale/sp/LC_MESSAGES/xnc.mo
