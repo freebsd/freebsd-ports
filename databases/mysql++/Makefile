@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	1.7.32
+PORTVERSION=	1.7.35
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 
@@ -30,8 +30,10 @@ COMMENT+=	${MYSQL_VER}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/man-text/*.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/userman/html ${DOCSDIR}/refman/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/userman/html/* ${DOCSDIR}/userman/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/refman/html/* ${DOCSDIR}/refman/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.cpp ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.h ${EXAMPLESDIR}
