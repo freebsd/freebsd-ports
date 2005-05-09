@@ -413,6 +413,7 @@
     SUBDIR += libast
     SUBDIR += libavl
     SUBDIR += libbfd
+    SUBDIR += libbinio
     SUBDIR += libbnr
     SUBDIR += libbonobo
     SUBDIR += libbonobomm
