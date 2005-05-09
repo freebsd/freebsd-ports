@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smartmontools
-PORTVERSION=	5.32
+PORTVERSION=	5.33
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -47,10 +47,6 @@ do-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501105
-IGNORE=	"ATAng is required to support monitoring of ATA devices"
-.endif
 
 post-install:
 	${CAT} ${PKGMESSAGE}
