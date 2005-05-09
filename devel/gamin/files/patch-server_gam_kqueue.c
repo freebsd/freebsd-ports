@@ -1,6 +1,6 @@
---- server/gam_kqueue.c.orig	Sun Apr 10 13:21:46 2005
-+++ server/gam_kqueue.c	Sun Apr 10 13:29:17 2005
-@@ -0,0 +1,730 @@
+--- server/gam_kqueue.c.orig	Sat Apr 30 12:26:31 2005
++++ server/gam_kqueue.c	Sun May  1 08:18:47 2005
+@@ -0,0 +1,1262 @@
 +/*
 + * gam_kqueue.c - a kqueue(2) Gamin backend
 + *
@@ -21,13 +21,8 @@
 + *       resides on from being unmounted, because kqueue can only
 + *       monitor open files.
 + *
-+ *     * To monitor changes made to files within a monitored
-+ *       directory, we periodically poll the files. If we wanted to
-+ *       use kqueue, we would have to open every file in the
-+ *       directory, which is not acceptable.
-+ *
 + *     * The creation of missing monitored files is detected by
-+ *       performing a stat() every second. Although using kqueue to
++ *       performing a lstat() every second. Although using kqueue to
 + *       monitor the parent directory is technically feasible, it
 + *       would introduce a lot of complexity in the code.
 + *
@@ -39,7 +34,7 @@
 + *           - kqueue needs to be moved out the UFS code.
 + *
 + * Copyright (C) 2005 Joe Marcus Clarke <marcus@FreeBSD.org>
-+ * Copyright (C) 2005 Jean-Yves Lefort <jylefort@brutele.be>
++ * Copyright (C) 2005 Jean-Yves Lefort <jylefort@FreeBSD.org>
 + *
 + * This library is free software; you can redistribute it and/or
 + * modify it under the terms of the GNU Lesser General Public
@@ -61,6 +56,7 @@
 +#include <fcntl.h>
 +#include <unistd.h>
 +#include <sys/types.h>
++#include <sys/sysctl.h>
 +#include <sys/stat.h>
 +#include <sys/event.h>
 +#include <sys/time.h>
@@ -70,12 +66,41 @@
 +#include "gam_event.h"
 +#include "gam_server.h"
 +
-+#define VN_NOTE_ALL	(NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND | \
-+			 NOTE_ATTRIB | NOTE_LINK | NOTE_RENAME | \
-+			 NOTE_REVOKE)
++/*** tunable constants, modify to tweak the backend aggressivity *************/
++
++/*
++ * The backend will use at most n file descriptors, where n is the
++ * minimum value between (kern.maxfiles * CFG_GLOBAL_FILE_RESERVE_RATIO)
++ * and (kern.maxfilesperproc - CFG_SELF_FILE_RESERVE).
++ */
++#define CFG_GLOBAL_FILE_RESERVE_RATIO			0.7
++#define CFG_SELF_FILE_RESERVE				200
++
++/*
++ * If a SubMonitor or FileMonitor is not supported by kqueue and has
++ * to be polled, the backend will re-attempt to enable kqueue
++ * notification every n polls.
++ */
++#define CFG_UNSUPPORTED_SMON_KQUEUE_RETRY_FREQUENCY	10
++#define CFG_UNSUPPORTED_FMON_KQUEUE_RETRY_FREQUENCY	10
++
++/*
++ * The various poll intervals, in milliseconds. The default interval
++ * for each poller is based on the poller's expected usage.
++ */
++#define CFG_MISSING_SMON_POLL_INTERVAL			1000
++#define CFG_UNSUPPORTED_SMON_POLL_INTERVAL		3000
++#define CFG_UNSUPPORTED_FMON_POLL_INTERVAL		3000
++
++/*** end of tunable constants ************************************************/
++
 +#define VN_NOTE_CHANGED	(NOTE_WRITE | NOTE_EXTEND | NOTE_ATTRIB | NOTE_LINK)
 +#define VN_NOTE_DELETED (NOTE_DELETE | NOTE_REVOKE)
++#define VN_NOTE_ALL	(VN_NOTE_CHANGED | VN_NOTE_DELETED | NOTE_RENAME)
 +
++/*
++ * A barebone stat structure, only containing the fields we need.
++ */
 +typedef struct
 +{
 +  gboolean	exists;
@@ -88,66 +113,176 @@
 +  off_t		size;
 +} MiniStat;
 +
-+typedef struct
-+{
-+  const char	*path;		/* belongs to the first sub in subs */
-+  GList		*subs;
-+  GSList	*files;		/* list of files in directory */
-+  MiniStat	sb;		/* for poll */
-+  int		fd;		/* for kqueue */
-+  gboolean	isdir;		/* is a directory monitor? */
-+} Monitor;
++typedef void (*HashTableAddFunc) (GHashTable *table,
++				  gpointer item,
++				  gpointer user_data);
++typedef void (*HashTablePostAddFunc) (GHashTable *table,
++				      gpointer user_data);
++typedef void (*HashTableRemoveFunc) (GHashTable *table,
++				     gpointer item,
++				     gpointer user_data);
++typedef void (*HashTablePostRemoveFunc) (GHashTable *table,
++					 gpointer user_data);
 +
 +typedef struct
 +{
++  HashTableAddFunc		add;
++  HashTablePostAddFunc		post_add;
++  HashTableRemoveFunc		remove;
++  HashTablePostRemoveFunc	post_remove;
++} HashTableMethods;
++  
++/*
++ * A hash table which can be modified while iterating over it.
++ */
++typedef struct
++{
++  GHashTable		*main;
++  gboolean		iterating;
++  GSList		*pending_additions;
++  GSList		*pending_removals;
++  HashTableMethods	*methods;
++  gpointer		user_data;
++} HashTable;
++
++/* the base monitor class */
++typedef struct _Monitor Monitor;
++struct _Monitor
++{
++  void (*handle_kevent) (Monitor *monitor, struct kevent *event);
 +  char		*pathname;
-+  char		*filename;	/* pointer into pathname */
-+  MiniStat	sb;
-+} FileEntry;
++  int		fd;		/* for kqueue */
++  MiniStat	sb;		/* for poll */
++  unsigned int	poll_count;
++};
++#define MONITOR(ptr)		((Monitor *) ptr)
 +
++typedef enum
++{
++  MONITOR_ISDIR		= 1 << 0,
++  MONITOR_ISNOTDIR	= 1 << 1
++} MonitorFlags;
++#define MONITOR_FLAGS_SHIFT	2
++
++/* monitor for Gamin subscriptions */
 +typedef struct
 +{
-+  GSourceFunc	func;
++  Monitor	base;
++  GList		*subs;
++  HashTable	*fmons;			/* FileMonitor objects */
++  HashTable	*unsupported_fmons;	/* subset of fmons to poll */
++  gboolean	isdir;			/* is a directory subscription? */
++} SubMonitor;
++#define SUB_MONITOR(ptr)	((SubMonitor *) ptr)
++
++typedef enum
++{
++  SUB_MONITOR_WAS_MISSING		= 1 << MONITOR_FLAGS_SHIFT
++} SubMonitorFlags;
++
++/* monitor for files within directory subscriptions */
++typedef struct
++{
++  Monitor	base;
++  SubMonitor	*smon;		/* the SubMonitor this fmon belongs to */
++  char		*filename;	/* pointer into base.pathname */
++} FileMonitor;
++#define FILE_MONITOR(ptr)	((FileMonitor *) ptr)
++
++typedef enum
++{
++  FILE_MONITOR_POSSIBLY_RECREATED	= 1 << MONITOR_FLAGS_SHIFT
++} FileMonitorFlags;
++
++typedef void (*PollerFunc) (SubMonitor *smon);
++typedef struct
++{
++  PollerFunc	func;
 +  unsigned int	interval;
 +  unsigned int	timeout_id;
-+  GSList	*monitors;
++  HashTable	*smons;		/* SubMonitor objects */
 +} Poller;
 +
 +static int kq = -1;
 +
++static unsigned int open_files = 0;
++static unsigned int max_open_files = 0;
++
 +static GHashTable *dir_hash = NULL;
 +static GHashTable *file_hash = NULL;
 +
-+/*
-+ * The poller monitoring file creations. Low usage is expected,
-+ * therefore we set a small interval (one second).
-+ */
-+static gboolean gam_kqueue_missing_poll (gpointer user_data);
-+static Poller missing_poller = { gam_kqueue_missing_poll, 1000, -1, NULL };
++static Poller missing_smon_poller;
++static Poller unsupported_smon_poller;
++static Poller unsupported_fmon_poller;
 +
-+/*
-+ * The poller monitoring files not supported by kqueue (remote files,
-+ * etc). Very low usage is expected, but since this poller is likely
-+ * going to access the network, we set a medium interval (3 seconds).
-+ */
-+static gboolean gam_kqueue_unsupported_poll (gpointer user_data);
-+static Poller unsupported_poller = { gam_kqueue_unsupported_poll, 3000, -1, NULL };
++static void gam_kqueue_hash_table_default_add_cb (GHashTable *table,
++						  gpointer item,
++						  gpointer user_data);
++static void gam_kqueue_hash_table_default_remove_cb (GHashTable *table,
++						     gpointer item,
++						     gpointer user_data);
 +
-+/*
-+ * The poller monitoring files inside monitored directories. Very high
-+ * usage is expected (a mail checker monitoring a couple of large MH
-+ * folders will lead to thousands of lstat() calls for each check),
-+ * therefore we set a large interval (6 seconds, same as FAM's
-+ * default).
-+ */
-+static gboolean gam_kqueue_dirs_poll (gpointer user_data);
-+static Poller dirs_poller = { gam_kqueue_dirs_poll, 6000, -1, NULL };
++static void gam_kqueue_poller_post_add_cb (GHashTable *table, Poller *poller);
++static void gam_kqueue_poller_post_remove_cb (GHashTable *table, Poller *poller);
++
++static HashTableMethods poller_hash_table_methods =
++  {
++    gam_kqueue_hash_table_default_add_cb,
++    (HashTablePostAddFunc) gam_kqueue_poller_post_add_cb,
++    gam_kqueue_hash_table_default_remove_cb,
++    (HashTablePostRemoveFunc) gam_kqueue_poller_post_remove_cb
++  };
++
++static void gam_kqueue_sub_monitor_add_fmon_cb (GHashTable *table,
++						FileMonitor *fmon,
++						SubMonitor *smon);
++static void gam_kqueue_sub_monitor_remove_fmon_cb (GHashTable *table,
++						   FileMonitor *fmon,
++						   SubMonitor *smon);
++
++static HashTableMethods sub_monitor_fmons_hash_table_methods =
++  {
++    (HashTableAddFunc) gam_kqueue_sub_monitor_add_fmon_cb,
++    (HashTablePostAddFunc) NULL,
++    (HashTableRemoveFunc) gam_kqueue_sub_monitor_remove_fmon_cb,
++    (HashTablePostRemoveFunc) NULL
++  };
++
++static void gam_kqueue_sub_monitor_post_add_unsupported_fmon_cb (GHashTable *table,
++								 SubMonitor *smon);
++static void gam_kqueue_sub_monitor_post_remove_unsupported_fmon_cb (GHashTable *table,
++								    SubMonitor *smon);
++
++static HashTableMethods sub_monitor_unsupported_fmons_hash_table_methods =
++  {
++    gam_kqueue_hash_table_default_add_cb,
++    (HashTablePostAddFunc) gam_kqueue_sub_monitor_post_add_unsupported_fmon_cb,
++    gam_kqueue_hash_table_default_remove_cb,
++    (HashTablePostRemoveFunc) gam_kqueue_sub_monitor_post_remove_unsupported_fmon_cb
++  };
++
++static void gam_kqueue_sub_monitor_emit_event (SubMonitor *smon,
++					       GaminEventType event,
++					       SubMonitorFlags flags);
++static void gam_kqueue_sub_monitor_handle_kevent (Monitor *mon,
++						  struct kevent *event);
++
++static FileMonitor *gam_kqueue_file_monitor_new (SubMonitor *smon,
++						 const char *filename,
++						 FileMonitorFlags *flags);
++static void gam_kqueue_file_monitor_free (FileMonitor *fmon);
++static void gam_kqueue_file_monitor_emit_event (FileMonitor *fmon,
++						GaminEventType event,
++						FileMonitorFlags flags);
++static void gam_kqueue_file_monitor_handle_kevent (Monitor *mon, struct kevent *event);
++
++/*** helpers *****************************************************************/
 +
 +static void
 +gam_kqueue_mini_lstat (const char *pathname, MiniStat *mini_sb)
 +{
 +  struct stat sb;
-+
++  
 +  if (lstat(pathname, &sb) < 0)
 +    memset(mini_sb, 0, sizeof(*mini_sb));
 +  else
@@ -163,27 +298,6 @@
 +    }
 +}
 +
-+static FileEntry *
-+gam_kqueue_file_entry_new (const char *path, const char *filename)
-+{
-+  FileEntry *entry;
-+
-+  entry = g_new(FileEntry, 1);
-+  entry->pathname = g_build_filename(path, filename, NULL);
-+  entry->filename = strrchr(entry->pathname, G_DIR_SEPARATOR);
-+  entry->filename = entry->filename ? entry->filename + 1 : entry->pathname;
-+  gam_kqueue_mini_lstat(entry->pathname, &entry->sb);
-+
-+  return entry;
-+}
-+
-+static void
-+gam_kqueue_file_entry_free (FileEntry *entry)
-+{
-+  g_free(entry->pathname);
-+  g_free(entry);
-+}
-+
 +static gboolean
 +gam_kqueue_differs (const MiniStat *sb1, const MiniStat *sb2)
 +{
@@ -196,61 +310,233 @@
 +    || sb1->ino != sb2->ino;
 +}
 +
-+static int
-+gam_kqueue_files_find (const FileEntry *entry, const char *filename)
++static gboolean
++gam_kqueue_isdir (const char *pathname, MonitorFlags flags)
 +{
-+    return strcmp(entry->filename, filename);
++  if ((flags & MONITOR_ISDIR) != 0)
++    return TRUE;
++  else if ((flags & MONITOR_ISNOTDIR) != 0)
++    return FALSE;
++  else
++    {
++      struct stat sb;
++      return lstat(pathname, &sb) >= 0 && (sb.st_mode & S_IFDIR) != 0;
++    }
++}
++
++static gboolean
++gam_kqueue_get_uint_sysctl (const char *name, unsigned int *value)
++{
++  unsigned int value_len = sizeof(*value);
++
++  if (sysctlbyname(name, value, &value_len, NULL, 0) < 0)
++    {
++      gam_error(DEBUG_INFO, "unable to retrieve %s: %s\n", name, g_strerror(errno));
++      return FALSE;
++    }
++  else
++    return TRUE;
++}
++
++/*** HashTable ***************************************************************/
++
++static HashTable *
++gam_kqueue_hash_table_new (GHashTable *main,
++			   HashTableMethods *methods,
++			   gpointer user_data)
++{
++  HashTable *table;
++
++  table = g_new0(HashTable, 1);
++  table->main = main;
++  table->methods = methods;
++  table->user_data = user_data;
++
++  return table;
 +}
 +
 +static void
-+gam_kqueue_poller_add_monitor (Poller *poller, Monitor *mon)
++gam_kqueue_hash_table_default_add_cb (GHashTable *table,
++				      gpointer item,
++				      gpointer user_data)
 +{
-+  if (! g_slist_find(poller->monitors, mon))
++  g_hash_table_insert(table, item, GINT_TO_POINTER(TRUE));
++}
++
++static void
++gam_kqueue_hash_table_default_remove_cb (GHashTable *table,
++					 gpointer item,
++					 gpointer user_data)
++{
++  g_hash_table_remove(table, item);
++}
++
++static void
++gam_kqueue_hash_table_add (HashTable *table, gpointer item)
++{
++  if (table->iterating)
++    table->pending_additions = g_slist_prepend(table->pending_additions, item);
++  else
 +    {
-+      poller->monitors = g_slist_prepend(poller->monitors, mon);
-+      if (poller->timeout_id == -1)
-+	poller->timeout_id = g_timeout_add(poller->interval, poller->func, NULL);
++      table->methods->add(table->main, item, table->user_data);
++      if (table->methods->post_add)
++	table->methods->post_add(table->main, table->user_data);
 +    }
 +}
 +
 +static void
-+gam_kqueue_poller_remove_monitor (Poller *poller, Monitor *mon)
++gam_kqueue_hash_table_remove (HashTable *table, gpointer item)
 +{
-+  poller->monitors = g_slist_remove(poller->monitors, mon);
-+  if (! poller->monitors && poller->timeout_id != -1)
++  if (table->iterating)
++    table->pending_removals = g_slist_prepend(table->pending_removals, item);
++  else
++    {
++      table->methods->remove(table->main, item, table->user_data);
++      if (table->methods->post_remove)
++	table->methods->post_remove(table->main, table->user_data);
++    }
++}
++
++static void
++gam_kqueue_hash_table_foreach (HashTable *table,
++			       GHFunc func,
++			       gpointer user_data)
++{
++  g_assert(table->iterating == FALSE);
++
++  table->iterating = TRUE;
++  g_hash_table_foreach(table->main, func, user_data);
++  table->iterating = FALSE;
++  
++  if (table->pending_additions)
++    {
++      GSList *l;
++
++      for (l = table->pending_additions; l != NULL; l = l->next)
++	table->methods->add(table->main, l->data, table->user_data);
++
++      g_slist_free(table->pending_additions);
++      table->pending_additions = NULL;
++
++      if (table->methods->post_add)
++	table->methods->post_add(table->main, table->user_data);
++    }
++
++  if (table->pending_removals)
++    {
++      GSList *l;
++
++      for (l = table->pending_removals; l != NULL; l = l->next)
++	table->methods->remove(table->main, l->data, table->user_data);
++
++      g_slist_free(table->pending_removals);
++      table->pending_removals = NULL;
++
++      if (table->methods->post_remove)
++	table->methods->post_remove(table->main, table->user_data);
++    }
++}
++
++static void
++gam_kqueue_hash_table_destroy (HashTable *table)
++{
++  g_assert(table->iterating == FALSE);
++
++  g_hash_table_destroy(table->main);
++  g_free(table);
++}
++
++/*** Poller ******************************************************************/
++
++static void
++gam_kqueue_poller_init (Poller *poller, PollerFunc func, unsigned int interval)
++{
++  poller->func = func;
++  poller->interval = interval;
++  poller->timeout_id = 0;
++  poller->smons = gam_kqueue_hash_table_new(g_hash_table_new(g_direct_hash, g_direct_equal),
++					    &poller_hash_table_methods,
++					    poller);
++}
++
++static void
++gam_kqueue_poller_foreach_cb (SubMonitor *smon,
++			      gpointer unused,
++			      Poller *poller)
++{
++  poller->func(smon);
++}
++
++static gboolean
++gam_kqueue_poller_timeout_cb (Poller *poller)
++{
++  gam_kqueue_hash_table_foreach(poller->smons, (GHFunc) gam_kqueue_poller_foreach_cb, poller);
++
++  return TRUE;			/* keep source */
++}
++
++static void
++gam_kqueue_poller_post_add_cb (GHashTable *table, Poller *poller)
++{
++  if (! poller->timeout_id)
++    poller->timeout_id = g_timeout_add(poller->interval, (GSourceFunc) gam_kqueue_poller_timeout_cb, poller);
++}
++
++static void
++gam_kqueue_poller_post_remove_cb (GHashTable *table, Poller *poller)
++{
++  if (g_hash_table_size(table) == 0 && poller->timeout_id)
 +    {
 +      g_source_remove(poller->timeout_id);
-+      poller->timeout_id = -1;
++      poller->timeout_id = 0;
 +    }
 +}
 +
 +static void
-+gam_kqueue_monitor_clear_files (Monitor *mon)
++gam_kqueue_poller_add_sub_monitor (Poller *poller, SubMonitor *smon)
 +{
-+  gam_kqueue_poller_remove_monitor(&dirs_poller, mon);
-+  g_slist_foreach(mon->files, (GFunc) gam_kqueue_file_entry_free, NULL);
-+  g_slist_free(mon->files);
-+  mon->files = NULL;
++  gam_kqueue_hash_table_add(poller->smons, smon);
 +}
 +
 +static void
-+gam_kqueue_monitor_set_missing (Monitor *mon)
++gam_kqueue_poller_remove_sub_monitor (Poller *poller, SubMonitor *smon)
 +{
-+  if (mon->fd >= 0)
++  gam_kqueue_hash_table_remove(poller->smons, smon);
++}
++
++/*** Monitor *****************************************************************/
++
++static gboolean
++gam_kqueue_monitor_enable_kqueue (Monitor *mon)
++{
++  struct kevent ev[1];
++
++  if (open_files == max_open_files)
 +    {
++      GAM_DEBUG(DEBUG_INFO, "cannot open %s (max_open_files limit reached), falling back to poll\n", mon->pathname);
++      return FALSE;
++    }
++  
++  mon->fd = open(mon->pathname, O_RDONLY | O_NOFOLLOW);
++  if (mon->fd < 0)
++    {
++      GAM_DEBUG(DEBUG_INFO, "cannot open %s (%s), falling back to poll\n", mon->pathname, g_strerror(errno));
++      return FALSE;
++    }
++
++  EV_SET(ev, mon->fd, EVFILT_VNODE, EV_ADD | EV_ENABLE | EV_CLEAR, VN_NOTE_ALL, 0, mon);
++  if (kevent(kq, ev, G_N_ELEMENTS(ev), NULL, 0, NULL) < 0)
++    {
++      GAM_DEBUG(DEBUG_INFO, "cannot enable kqueue notification for %s (%s), falling back to poll\n", mon->pathname, g_strerror(errno));
++
 +      close(mon->fd);
 +      mon->fd = -1;
++
++      return FALSE;
 +    }
 +
-+  /*
-+   * This shouldn't normally happen, since a directory cannot be
-+   * deleted unless all its files are deleted first.
-+   */
-+  if (mon->files)
-+    gam_kqueue_monitor_clear_files(mon);
-+
-+  gam_kqueue_poller_remove_monitor(&unsupported_poller, mon);
-+  gam_kqueue_poller_add_monitor(&missing_poller, mon);
++  open_files++;
++  return TRUE;
 +}
 +
 +static void
@@ -260,219 +546,316 @@
 +    {
 +      close(mon->fd);
 +      mon->fd = -1;
++
++      open_files--;
 +    }
 +
-+  gam_kqueue_mini_lstat(mon->path, &mon->sb);
-+  gam_kqueue_poller_add_monitor(&unsupported_poller, mon);
++  gam_kqueue_mini_lstat(mon->pathname, &mon->sb);
 +}
 +
 +static void
-+gam_kqueue_monitor_enable_notification (Monitor *mon, gboolean was_missing)
++gam_kqueue_monitor_free (Monitor *mon)
 +{
-+  struct stat sb;
++  g_free(mon->pathname);
++  if (mon->fd >= 0)
++    {
++      close(mon->fd);
++      open_files--;
++    }
++  g_free(mon);
++}
++
++/*** SubMonitor **************************************************************/
++
++static void
++gam_kqueue_sub_monitor_init_fmons (SubMonitor *smon)
++{
++  smon->fmons = gam_kqueue_hash_table_new(g_hash_table_new_full(g_str_hash, g_str_equal, NULL, (GDestroyNotify) gam_kqueue_file_monitor_free),
++					  &sub_monitor_fmons_hash_table_methods,
++					  smon);
++  smon->unsupported_fmons = gam_kqueue_hash_table_new(g_hash_table_new(g_direct_hash, g_direct_equal),
++						      &sub_monitor_unsupported_fmons_hash_table_methods,
++						      smon);
++}
++
++static SubMonitor *
++gam_kqueue_sub_monitor_new (GamSubscription *sub)
++{
++  SubMonitor *smon;
++  Monitor *mon;
++
++  smon = g_new0(SubMonitor, 1);
++
++  mon = MONITOR(smon);
++  mon->handle_kevent = gam_kqueue_sub_monitor_handle_kevent;
++  mon->pathname = g_strdup(gam_subscription_get_path(sub));
++  mon->fd = -1;
++
++  smon->isdir = gam_subscription_is_dir(sub);
++  gam_kqueue_sub_monitor_init_fmons(smon);
++
++  return smon;
++}
++
++static void
++gam_kqueue_sub_monitor_clear_fmons (SubMonitor *smon)
++{
++  if (g_hash_table_size(smon->unsupported_fmons->main) > 0)
++    gam_kqueue_poller_remove_sub_monitor(&unsupported_fmon_poller, smon);
++
++  gam_kqueue_hash_table_destroy(smon->unsupported_fmons);
++  gam_kqueue_hash_table_destroy(smon->fmons);
++}
++
++static void
++gam_kqueue_sub_monitor_free (SubMonitor *smon)
++{
++  gam_kqueue_poller_remove_sub_monitor(&missing_smon_poller, smon);
++  gam_kqueue_poller_remove_sub_monitor(&unsupported_smon_poller, smon);
++  /* unsupported_dirs_poller is handled by _clear_fmons() below */
++  
++  gam_kqueue_sub_monitor_clear_fmons(smon);
++  gam_kqueue_monitor_free(MONITOR(smon));
++}
++
++static void
++gam_kqueue_sub_monitor_add_fmon_cb (GHashTable *table,
++				    FileMonitor *fmon,
++				    SubMonitor *smon)
++{
++  g_hash_table_replace(table, fmon->filename, fmon);
++}
++
++static void
++gam_kqueue_sub_monitor_remove_fmon_cb (GHashTable *table,
++				       FileMonitor *fmon,
++				       SubMonitor *smon)
++{
++  g_hash_table_remove(table, fmon->filename);
++}
++
++static void
++gam_kqueue_sub_monitor_post_add_unsupported_fmon_cb (GHashTable *table,
++						     SubMonitor *smon)
++{
++  gam_kqueue_poller_add_sub_monitor(&unsupported_fmon_poller, smon);
++}
++
++static void
++gam_kqueue_sub_monitor_post_remove_unsupported_fmon_cb (GHashTable *table,
++							SubMonitor *smon)
++{
++  if (g_hash_table_size(table) == 0)
++    gam_kqueue_poller_remove_sub_monitor(&unsupported_fmon_poller, smon);
++}
++
++static void
++gam_kqueue_sub_monitor_set_missing (SubMonitor *smon)
++{
++  Monitor *mon = MONITOR(smon);
++
++  if (mon->fd >= 0)
++    {
++      close(mon->fd);
++      mon->fd = -1;
++
++      open_files--;
++    }
++
++  /*
++   * A removed directory will normally not contain files, but we must
++   * not assume it (we might receive events out of order, etc). We
++   * therefore check if files are remaining, and if yes, clear them.
++   */
++  if (g_hash_table_size(smon->fmons->main) > 0)
++    {
++      gam_kqueue_sub_monitor_clear_fmons(smon);
++      gam_kqueue_sub_monitor_init_fmons(smon);
++    }
++
++  gam_kqueue_poller_remove_sub_monitor(&unsupported_smon_poller, smon);
++  gam_kqueue_poller_add_sub_monitor(&missing_smon_poller, smon);
++}
++
++static void
++gam_kqueue_sub_monitor_set_unsupported (SubMonitor *smon)
++{
++  Monitor *mon = MONITOR(smon);
++
++  gam_kqueue_monitor_set_unsupported(mon);
++  gam_kqueue_poller_add_sub_monitor(&unsupported_smon_poller, smon);
++}
++
++static void
++gam_kqueue_sub_monitor_enable_notification (SubMonitor *smon,
++					    SubMonitorFlags flags)
++{
++  Monitor *mon = MONITOR(smon);
 +  gboolean exists;
-+  gboolean isdir;
-+  struct kevent ev[1];
 +
 +  /* we first send CREATED or EXISTS/DELETED+ENDEXISTS events */
 +
-+  exists = lstat(mon->path, &sb) >= 0;
-+  isdir = exists && (sb.st_mode & S_IFDIR) != 0;
++  if ((flags & SUB_MONITOR_WAS_MISSING) != 0)
++    exists = TRUE;
++  else
++    {
++      struct stat sb;
++
++      exists = lstat(mon->pathname, &sb) >= 0;
++      flags |= (exists && (sb.st_mode & S_IFDIR) != 0) ? MONITOR_ISDIR : MONITOR_ISNOTDIR;
++    }
 +
 +  if (exists)
 +    {
 +      GaminEventType gevent;
 +
-+      gevent = was_missing ? GAMIN_EVENT_CREATED : GAMIN_EVENT_EXISTS;
-+      gam_server_emit_event(mon->path, isdir, gevent, mon->subs, 1);
++      gevent = (flags & SUB_MONITOR_WAS_MISSING) != 0 ? GAMIN_EVENT_CREATED : GAMIN_EVENT_EXISTS;
++      gam_kqueue_sub_monitor_emit_event(smon, gevent, flags);
 +
-+      if (mon->isdir && isdir)
++      if (smon->isdir && (flags & MONITOR_ISDIR) != 0)
 +	{
 +	  GDir *dir;
 +	  GError *err = NULL;
-+
-+	  if (mon->files)
-+	    {
-+	      /* be robust, handle the bug gracefully */
-+	      GAM_DEBUG(DEBUG_INFO, "there is a bug in gam_kqueue: monitor had files\n");
-+	      gam_kqueue_monitor_clear_files(mon);
-+	    }
-+
-+	  dir = g_dir_open(mon->path, 0, &err);
++	  
++	  dir = g_dir_open(mon->pathname, 0, &err);
 +	  if (dir)
 +	    {
 +	      const char *filename;
-+
++	      
 +	      while ((filename = g_dir_read_name(dir)))
 +		{
-+		  FileEntry *entry;
-+
-+		  entry = gam_kqueue_file_entry_new(mon->path, filename);
-+		  mon->files = g_slist_prepend(mon->files, entry);
-+
-+		  gam_server_emit_event(entry->pathname,
-+					(entry->sb.mode & S_IFDIR) != 0,
-+					gevent, mon->subs, 1);
++		  FileMonitor *fmon;
++		  FileMonitorFlags fmon_flags;
++		  
++		  fmon = gam_kqueue_file_monitor_new(smon, filename, &fmon_flags);
++		  gam_kqueue_file_monitor_emit_event(fmon, gevent, fmon_flags);
 +		}
-+
++	      
 +	      g_dir_close(dir);
 +	    }
 +	  else
 +	    {
-+	      GAM_DEBUG(DEBUG_INFO, "unable to open directory %s: %s\n", mon->path, err->message);
++	      GAM_DEBUG(DEBUG_INFO, "unable to open directory %s: %s\n", mon->pathname, err->message);
 +	      g_error_free(err);
 +	    }
-+
-+	  if (mon->files)
-+	    gam_kqueue_poller_add_monitor(&dirs_poller, mon);
 +	}
 +
-+      if (! was_missing)
-+	gam_server_emit_event(mon->path, isdir, GAMIN_EVENT_ENDEXISTS, mon->subs, 1);
++      if ((flags & SUB_MONITOR_WAS_MISSING) == 0)
++	gam_kqueue_sub_monitor_emit_event(smon, GAMIN_EVENT_ENDEXISTS, flags);
 +    }
 +  else
 +    {
-+      if (! was_missing)
-+	{
-+	  gam_server_emit_event(mon->path, isdir, GAMIN_EVENT_DELETED, mon->subs, 1);
-+	  gam_server_emit_event(mon->path, isdir, GAMIN_EVENT_ENDEXISTS, mon->subs, 1);
-+	}
++      gam_kqueue_sub_monitor_emit_event(smon, GAMIN_EVENT_DELETED, flags);
++      gam_kqueue_sub_monitor_emit_event(smon, GAMIN_EVENT_ENDEXISTS, flags);
 +
-+      gam_kqueue_monitor_set_missing(mon);
 +      return;
 +    }
-+
++    
 +  /* then we enable kqueue notification, falling back to poll if necessary */
 +
-+  mon->fd = open(mon->path, O_RDONLY | O_NOFOLLOW);
-+  if (mon->fd < 0)
-+    {
-+      GAM_DEBUG(DEBUG_INFO, "cannot open %s (%s), falling back to poll\n", mon->path, g_strerror(errno));
-+      gam_kqueue_monitor_set_unsupported(mon);
-+      return;
-+    }
-+
-+  EV_SET(ev, mon->fd, EVFILT_VNODE, EV_ADD | EV_ENABLE | EV_CLEAR, VN_NOTE_ALL, 0, mon);
-+  if (kevent(kq, ev, G_N_ELEMENTS(ev), NULL, 0, NULL) < 0)
-+    {
-+      GAM_DEBUG(DEBUG_INFO, "cannot enable kqueue notification for %s (%s), falling back to poll\n", mon->path, g_strerror(errno));
-+      gam_kqueue_monitor_set_unsupported(mon);
-+    }
++  if (! gam_kqueue_monitor_enable_kqueue(mon))
++    gam_kqueue_sub_monitor_set_unsupported(smon);
 +}
 +
 +static void
-+gam_kqueue_monitor_handle_directory_change (Monitor *mon, gboolean isdir)
++gam_kqueue_sub_monitor_handle_directory_change_removal_cb (const char *filename,
++							   FileMonitor *fmon,
++							   GHashTable *filenames)
 +{
-+  GSList *filenames = NULL;
-+  GSList *l;
-+  GSList *tmp_files;
++  if (! g_hash_table_lookup(filenames, filename))
++    gam_kqueue_file_monitor_emit_event(fmon, GAMIN_EVENT_DELETED, MONITOR_ISNOTDIR);
++}
++
++static void
++gam_kqueue_sub_monitor_handle_directory_change (SubMonitor *smon,
++						gboolean isdir)
++{
++  Monitor *mon = MONITOR(smon);
++  GHashTable *filenames;
++
++  filenames = g_hash_table_new_full(g_str_hash, g_str_equal, g_free, NULL);
 +
 +  if (isdir)			/* do not follow symbolic links */
 +    {
 +      GDir *dir;
 +      GError *err = NULL;
 +
-+      dir = g_dir_open(mon->path, 0, &err);
++      dir = g_dir_open(mon->pathname, 0, &err);
 +      if (dir)
 +	{
 +	  const char *filename;
-+
++	  
 +	  while ((filename = g_dir_read_name(dir)))
-+	    filenames = g_slist_prepend(filenames, g_strdup(filename));
++	    {
++	      g_hash_table_insert(filenames, g_strdup(filename), GINT_TO_POINTER(TRUE));
 +
++	      /* handle file creation */
++	      if (! g_hash_table_lookup(smon->fmons->main, filename))
++		{
++		  FileMonitor *fmon;
++		  FileMonitorFlags fmon_flags;
++		  
++		  fmon = gam_kqueue_file_monitor_new(smon, filename, &fmon_flags);
++		  gam_kqueue_file_monitor_emit_event(fmon, GAMIN_EVENT_CREATED, fmon_flags);
++		}
++	    }
++	  
 +	  g_dir_close(dir);
 +	}
 +      else
 +	{
-+	  GAM_DEBUG(DEBUG_INFO, "unable to open directory %s: %s\n", mon->path, err->message);
++	  GAM_DEBUG(DEBUG_INFO, "unable to open directory %s: %s\n", mon->pathname, err->message);
 +	  g_error_free(err);
 +	}
 +    }
 +
-+  /* handle created files */
-+  for (l = filenames; l; l = l->next)
-+    if (! g_slist_find_custom(mon->files, l->data, (GCompareFunc) gam_kqueue_files_find))
-+      {
-+	FileEntry *entry;
-+
-+	entry = gam_kqueue_file_entry_new(mon->path, l->data);
-+	mon->files = g_slist_prepend(mon->files, entry);
-+
-+	gam_server_emit_event(entry->pathname,
-+			      (entry->sb.mode & S_IFDIR) != 0,
-+			      GAMIN_EVENT_CREATED, mon->subs, 1);
-+      }
-+
-+  /* handle deleted files */
-+  tmp_files = g_slist_copy(mon->files);
-+  for (l = tmp_files; l; l = l->next)
-+    {
-+      FileEntry *entry = l->data;
-+
-+      if (! g_slist_find_custom(filenames, entry->filename, (GCompareFunc) strcmp))
-+	{
-+	  mon->files = g_slist_remove(mon->files, entry);
-+
-+	  gam_server_emit_event(entry->pathname,
-+				(entry->sb.mode & S_IFDIR) != 0,
-+				GAMIN_EVENT_DELETED, mon->subs, 1);
-+
-+	  gam_kqueue_file_entry_free(entry);
-+	}
-+    }
-+  g_slist_free(tmp_files);
-+
-+  if (filenames)
-+    {
-+      g_slist_foreach(filenames, (GFunc) g_free, NULL);
-+      g_slist_free(filenames);
-+    }
-+
-+  if (mon->files)
-+    gam_kqueue_poller_add_monitor(&dirs_poller, mon);
-+  else
-+    gam_kqueue_poller_remove_monitor(&dirs_poller, mon);
++  /*
++   * Handle deleted files (they are also handled at the FileMonitor
++   * level, but we must use whichever event comes first).
++   */
++  gam_kqueue_hash_table_foreach(smon->fmons, (GHFunc) gam_kqueue_sub_monitor_handle_directory_change_removal_cb, filenames);
++  g_hash_table_destroy(filenames);
 +}
 +
 +static void
-+gam_kqueue_monitor_emit_event (Monitor *mon,
-+			       GaminEventType event,
-+			       gboolean has_isdir,
-+			       gboolean isdir)
++gam_kqueue_sub_monitor_emit_event (SubMonitor *smon,
++				   GaminEventType event,
++				   SubMonitorFlags flags)
 +{
-+  if (! has_isdir)
-+    {
-+      struct stat sb;
-+      isdir = lstat(mon->path, &sb) >= 0 && (sb.st_mode & S_IFDIR) != 0;
-+    }
++  Monitor *mon = MONITOR(smon);
++  gboolean isdir;
++
++  isdir = gam_kqueue_isdir(mon->pathname, flags);
 +
 +  switch (event)
 +    {
 +    case GAMIN_EVENT_CHANGED:
-+      if (mon->isdir)
++      if (smon->isdir)
 +	{
-+	  gam_kqueue_monitor_handle_directory_change(mon, isdir);
++	  gam_kqueue_sub_monitor_handle_directory_change(smon, isdir);
 +	  return;
 +	}
 +      break;
 +
 +    case GAMIN_EVENT_DELETED:
 +    case GAMIN_EVENT_MOVED:
-+      gam_kqueue_monitor_set_missing(mon);
++      gam_kqueue_sub_monitor_set_missing(smon);
 +      break;
 +    }
 +
-+  gam_server_emit_event(mon->path, isdir, event, mon->subs, 1);
++  gam_server_emit_event(mon->pathname, isdir, event, smon->subs, 1);
 +}
 +
 +static void
-+gam_kqueue_monitor_handle_kevent (Monitor *mon, struct kevent *event)
++gam_kqueue_sub_monitor_handle_kevent (Monitor *mon, struct kevent *event)
 +{
++  SubMonitor *smon = SUB_MONITOR(mon);
++
 +  if ((event->flags & EV_ERROR) != 0)
 +    {
 +      /* kqueue failed, fallback to poll */
-+      GAM_DEBUG(DEBUG_INFO, "kqueue failed for %s, falling back to poll\n", mon->path);
-+      gam_kqueue_monitor_set_unsupported(mon);
++      GAM_DEBUG(DEBUG_INFO, "kqueue failed for %s, falling back to poll\n", mon->pathname);
++      gam_kqueue_sub_monitor_set_unsupported(smon);
 +      return;
 +    }
 +
@@ -481,15 +864,161 @@
 +   * multiple event bits set.
 +   */
 +  if ((event->fflags & VN_NOTE_CHANGED) != 0)
-+    gam_kqueue_monitor_emit_event(mon, GAMIN_EVENT_CHANGED, FALSE, FALSE);
++    gam_kqueue_sub_monitor_emit_event(smon, GAMIN_EVENT_CHANGED, 0);
++
++  /* emitting the following events will add the smon to the missing poller */
 +  if ((event->fflags & VN_NOTE_DELETED) != 0)
-+    gam_kqueue_monitor_emit_event(mon, GAMIN_EVENT_DELETED, FALSE, FALSE);
-+  if ((event->fflags & NOTE_RENAME) != 0)
-+    gam_kqueue_monitor_emit_event(mon, GAMIN_EVENT_MOVED, FALSE, FALSE);
++    gam_kqueue_sub_monitor_emit_event(smon, GAMIN_EVENT_DELETED, MONITOR_ISNOTDIR);
++  else if ((event->fflags & NOTE_RENAME) != 0)
++    gam_kqueue_sub_monitor_emit_event(smon, GAMIN_EVENT_MOVED, MONITOR_ISNOTDIR);
 +}
 +
++/*** FileMonitor *************************************************************/
++
++static void
++gam_kqueue_file_monitor_set_unsupported (FileMonitor *fmon)
++{
++  Monitor *mon = MONITOR(fmon);
++
++  gam_kqueue_monitor_set_unsupported(mon);
++  gam_kqueue_hash_table_add(fmon->smon->unsupported_fmons, fmon);
++}
++
++static FileMonitor *
++gam_kqueue_file_monitor_new (SubMonitor *smon,
++			     const char *filename,
++			     FileMonitorFlags *flags)
++{
++  FileMonitor *fmon;
++  Monitor *mon;
++
++  fmon = g_new0(FileMonitor, 1);
++
++  mon = MONITOR(fmon);
++  mon->handle_kevent = gam_kqueue_file_monitor_handle_kevent;
++  mon->pathname = g_build_filename(MONITOR(smon)->pathname, filename, NULL);
++  mon->fd = -1;
++
++  fmon->smon = smon;
++  fmon->filename = strrchr(mon->pathname, G_DIR_SEPARATOR);
++  fmon->filename = fmon->filename ? fmon->filename + 1 : mon->pathname;
++
++  gam_kqueue_hash_table_add(fmon->smon->fmons, fmon);
++
++  if (gam_kqueue_monitor_enable_kqueue(mon))
++    *flags = 0;
++  else
++    {
++      gam_kqueue_file_monitor_set_unsupported(fmon);
++      *flags = (mon->sb.mode & S_IFDIR) != 0 ? MONITOR_ISDIR : MONITOR_ISNOTDIR;
++    }
++
++  return fmon;
++}
++
++static void
++gam_kqueue_file_monitor_free (FileMonitor *fmon)
++{
++  gam_kqueue_monitor_free(MONITOR(fmon));
++}
++
++static void
++gam_kqueue_file_monitor_emit_event (FileMonitor *fmon,
++				    GaminEventType event,
++				    FileMonitorFlags flags)
++{
++  Monitor *mon = MONITOR(fmon);
++  struct stat sb;
++  gboolean isdir;
++  gboolean stat_done;
++  gboolean stat_succeeded;
++  
++  if ((flags & MONITOR_ISDIR) == 0 && (flags & MONITOR_ISNOTDIR) == 0)
++    {
++      stat_done = TRUE;
++      stat_succeeded = lstat(mon->pathname, &sb) >= 0;
++      isdir = stat_succeeded && (sb.st_mode & S_IFDIR) != 0;
++    }
++  else
++    {
++      stat_done = FALSE;
++      isdir = (flags & MONITOR_ISDIR) != 0;
++    }
++  
++  gam_server_emit_event(mon->pathname, isdir, event, fmon->smon->subs, 1);
++
++  switch (event)
++    {
++    case GAMIN_EVENT_DELETED:
++    case GAMIN_EVENT_MOVED:
++      if (mon->fd < 0)
++	gam_kqueue_hash_table_remove(fmon->smon->unsupported_fmons, fmon);
++
++      if ((flags & FILE_MONITOR_POSSIBLY_RECREATED) != 0)
++	{
++	  if (! stat_done)
++	    stat_succeeded = lstat(mon->pathname, &sb) >= 0;
++
++	  if (stat_succeeded)
++	    {
++	      FileMonitor *new_fmon;
++	      FileMonitorFlags new_fmon_flags;
++	      
++	      /*
++	       * The file exists again. It means that kqueue has
++	       * aggregated a removal+creation into a single event. We
++	       * must therefore create a new fmon and emit a
++	       * GAMIN_EVENT_CREATED event, because
++	       * gam_kqueue_sub_monitor_handle_directory_change() did
++	       * not detect the removal+creation.
++	       */
++
++	      new_fmon = gam_kqueue_file_monitor_new(fmon->smon, fmon->filename, &new_fmon_flags);
++	      gam_kqueue_file_monitor_emit_event(new_fmon, GAMIN_EVENT_CREATED, new_fmon_flags);
++
++	      break;		/* do not remove the fmon we've just created */
++	    }
++	}
++	
++      gam_kqueue_hash_table_remove(fmon->smon->fmons, fmon);
++      break;
++    }
++}
++
++static void
++gam_kqueue_file_monitor_handle_kevent (Monitor *mon, struct kevent *event)
++{
++  FileMonitor *fmon = FILE_MONITOR(mon);
++
++  if ((event->flags & EV_ERROR) != 0)
++    {
++      /* kqueue failed, fallback to poll */
++      GAM_DEBUG(DEBUG_INFO, "kqueue failed for %s, falling back to poll\n", mon->pathname);
++      gam_kqueue_file_monitor_set_unsupported(fmon);
++      return;
++    }
++
++  /*
++   * kevent aggregates events, so we must handle a fflags with
++   * multiple event bits set.
++   */
++
++  if ((event->fflags & VN_NOTE_CHANGED) != 0)
++    gam_kqueue_file_monitor_emit_event(fmon, GAMIN_EVENT_CHANGED, 0);
++
++  /* emitting the following events will free the fmon */
++  if ((event->fflags & VN_NOTE_DELETED) != 0)
++    gam_kqueue_file_monitor_emit_event(fmon, GAMIN_EVENT_DELETED, MONITOR_ISNOTDIR | FILE_MONITOR_POSSIBLY_RECREATED);
++  else if ((event->fflags & NOTE_RENAME) != 0)
++    gam_kqueue_file_monitor_emit_event(fmon, GAMIN_EVENT_MOVED, MONITOR_ISNOTDIR | FILE_MONITOR_POSSIBLY_RECREATED);
++}
++
++/*** kevent/poll callbacks ***************************************************/
++
 +static gboolean
-+gam_kqueue_kevent_cb (GIOChannel *source, GIOCondition condition, gpointer user_data)
++gam_kqueue_kevent_cb (GIOChannel *source,
++		      GIOCondition condition,
++		      gpointer user_data)
 +{
 +  int nevents;
 +  struct kevent ev[1];
@@ -504,99 +1033,86 @@
 +    }
 +
 +  for (i = 0; i < nevents; i++)
-+    gam_kqueue_monitor_handle_kevent(ev[i].udata, &ev[i]);
-+
++    MONITOR(ev[i].udata)->handle_kevent(ev[i].udata, &ev[i]);
++  
 +  return TRUE;			/* keep source */
 +}
 +
-+static gboolean
-+gam_kqueue_missing_poll (gpointer user_data)
++static void
++gam_kqueue_missing_smon_poll (SubMonitor *smon)
 +{
-+  GSList *tmp_list;
-+  GSList *l;
++  struct stat sb;
 +
-+  /* the list may be modified while we're iterating, so we use a copy */
-+
-+  tmp_list = g_slist_copy(missing_poller.monitors);
-+  for (l = tmp_list; l; l = l->next)
++  if (lstat(MONITOR(smon)->pathname, &sb) >= 0)
 +    {
-+      Monitor *mon = l->data;
-+      struct stat sb;
-+
-+      if (lstat(mon->path, &sb) >= 0)
-+	{
-+	  gam_kqueue_poller_remove_monitor(&missing_poller, mon);
-+	  gam_kqueue_monitor_enable_notification(mon, TRUE);
-+	}
++      gam_kqueue_poller_remove_sub_monitor(&missing_smon_poller, smon);
++      gam_kqueue_sub_monitor_enable_notification(smon, SUB_MONITOR_WAS_MISSING | ((sb.st_mode & S_IFDIR) != 0 ? MONITOR_ISDIR : MONITOR_ISNOTDIR));
 +    }
-+  g_slist_free(tmp_list);
-+
-+  return TRUE;
 +}
 +
-+static gboolean
-+gam_kqueue_unsupported_poll (gpointer user_data)
++static void
++gam_kqueue_unsupported_smon_poll (SubMonitor *smon)
 +{
-+  GSList *tmp_list;
-+  GSList *l;
++  Monitor *mon = MONITOR(smon);
++  MiniStat sb;
++  GaminEventType event;
 +
-+  /* the list may be modified while we're iterating, so we use a copy */
-+
-+  tmp_list = g_slist_copy(unsupported_poller.monitors);
-+  for (l = tmp_list; l; l = l->next)
++  if (++mon->poll_count == CFG_UNSUPPORTED_SMON_KQUEUE_RETRY_FREQUENCY)
 +    {
-+      Monitor *mon = l->data;
-+      MiniStat sb;
-+      GaminEventType event;
-+
-+      gam_kqueue_mini_lstat(mon->path, &sb);
-+
-+      if (! sb.exists && mon->sb.exists)
-+	event = GAMIN_EVENT_DELETED;
-+      else if (gam_kqueue_differs(&sb, &mon->sb))
-+	event = GAMIN_EVENT_CHANGED;
-+      else
-+	continue;
-+
-+      memcpy(&mon->sb, &sb, sizeof(sb));
-+      gam_kqueue_monitor_emit_event(mon, event, TRUE, (sb.mode & S_IFDIR) != 0);
++      mon->poll_count = 0;
++      if (gam_kqueue_monitor_enable_kqueue(mon))
++	gam_kqueue_poller_remove_sub_monitor(&missing_smon_poller, smon);
 +    }
-+  g_slist_free(tmp_list);
-+
-+  return TRUE;
++  
++  gam_kqueue_mini_lstat(mon->pathname, &sb);
++  
++  if (! sb.exists && mon->sb.exists)
++    event = GAMIN_EVENT_DELETED;
++  else if (gam_kqueue_differs(&sb, &mon->sb))
++    event = GAMIN_EVENT_CHANGED;
++  else
++    return;
++	
++  memcpy(&mon->sb, &sb, sizeof(sb));
++  gam_kqueue_sub_monitor_emit_event(smon, event, (sb.mode & S_IFDIR) != 0 ? MONITOR_ISDIR : MONITOR_ISNOTDIR);
 +}
 +
-+static gboolean
-+gam_kqueue_dirs_poll (gpointer user_data)
++static void
++gam_kqueue_unsupported_fmon_poll_foreach_cb (FileMonitor *fmon,
++					     gpointer unused,
++					     gpointer user_data)
 +{
-+  GSList *l;
++  Monitor *mon = MONITOR(fmon);
++  MiniStat sb;
++  GaminEventType event;
 +
-+  /* the list cannot be modified while we're iterating */
-+
-+  for (l = dirs_poller.monitors; l; l = l->next)
++  if (++mon->poll_count == CFG_UNSUPPORTED_FMON_KQUEUE_RETRY_FREQUENCY)
 +    {
-+      Monitor *mon = l->data;
-+      GSList *f;
-+
-+      for (f = mon->files; f; f = f->next)
-+	{
-+	  FileEntry *entry = f->data;
-+	  MiniStat sb;
-+
-+	  gam_kqueue_mini_lstat(entry->pathname, &sb);
-+	  if (gam_kqueue_differs(&sb, &entry->sb))
-+	    {
-+	      memcpy(&entry->sb, &sb, sizeof(sb));
-+	      gam_server_emit_event(entry->pathname,
-+				    (sb.mode & S_IFDIR) != 0,
-+				    GAMIN_EVENT_CHANGED,
-+				    mon->subs, 1);
-+	    }
-+	}
++      mon->poll_count = 0;
++      if (gam_kqueue_monitor_enable_kqueue(mon))
++	gam_kqueue_hash_table_remove(fmon->smon->unsupported_fmons, fmon);
 +    }
 +
-+  return TRUE;
++  gam_kqueue_mini_lstat(mon->pathname, &sb);
++
++  if (! sb.exists && mon->sb.exists)
++    event = GAMIN_EVENT_DELETED;
++  else if (gam_kqueue_differs(&sb, &mon->sb))
++    event = GAMIN_EVENT_CHANGED;
++  else
++    return;
++
++  memcpy(&mon->sb, &sb, sizeof(sb));
++  gam_kqueue_file_monitor_emit_event(fmon, event, (sb.mode & S_IFDIR) != 0 ? MONITOR_ISDIR : MONITOR_ISNOTDIR);
 +}
++
++static void
++gam_kqueue_unsupported_fmon_poll (SubMonitor *smon)
++{
++  gam_kqueue_hash_table_foreach(smon->unsupported_fmons, (GHFunc) gam_kqueue_unsupported_fmon_poll_foreach_cb, NULL);
++}
++
++/*** Gamin backend implementation ********************************************/
 +
 +/**
 + * Initializes the kqueue system.  This must be called before
@@ -608,6 +1124,8 @@
 +gam_kqueue_init (void)
 +{
 +  GIOChannel *channel;
++  unsigned int maxfiles;
++  unsigned int maxfilesperproc;
 +
 +  kq = kqueue();
 +  if (kq < 0)
@@ -616,8 +1134,36 @@
 +      return FALSE;
 +    }
 +
++  if (! gam_kqueue_get_uint_sysctl("kern.maxfiles", &maxfiles))
++    return FALSE;
++  if (! gam_kqueue_get_uint_sysctl("kern.maxfilesperproc", &maxfilesperproc))
++    return FALSE;
++
++  /*
++   * We make sure to:
++   *	- never paralyze the system (CFG_GLOBAL_FILE_RESERVE_RATIO)
++   *	- never paralyze our own process (CFG_SELF_FILE_RESERVE)
++   */
++
++  maxfiles *= CFG_GLOBAL_FILE_RESERVE_RATIO;
++  maxfilesperproc = maxfilesperproc > CFG_SELF_FILE_RESERVE
++    ? maxfilesperproc - CFG_SELF_FILE_RESERVE
++    : 0;
++
++  max_open_files = MIN(maxfiles, maxfilesperproc);
++
 +  dir_hash = g_hash_table_new(g_str_hash, g_str_equal);
 +  file_hash = g_hash_table_new(g_str_hash, g_str_equal);
++
++  gam_kqueue_poller_init(&missing_smon_poller,
++			 gam_kqueue_missing_smon_poll,
++			 CFG_MISSING_SMON_POLL_INTERVAL);
++  gam_kqueue_poller_init(&unsupported_smon_poller,
++			 gam_kqueue_unsupported_smon_poll,
++			 CFG_UNSUPPORTED_SMON_POLL_INTERVAL);
++  gam_kqueue_poller_init(&unsupported_fmon_poller,
++			 gam_kqueue_unsupported_fmon_poll,
++			 CFG_UNSUPPORTED_FMON_POLL_INTERVAL);
 +
 +  channel = g_io_channel_unix_new(kq);
 +  g_io_add_watch(channel, G_IO_IN, gam_kqueue_kevent_cb, NULL);
@@ -640,28 +1186,25 @@
 +{
 +  const char *path;
 +  GHashTable *hash;
-+  Monitor *mon;
++  SubMonitor *smon;
 +
 +  gam_listener_add_subscription(gam_subscription_get_listener(sub), sub);
 +
 +  path = gam_subscription_get_path(sub);
 +  hash = gam_subscription_is_dir(sub) ? dir_hash : file_hash;
-+  mon = g_hash_table_lookup(hash, path);
++  smon = g_hash_table_lookup(hash, path);
 +
-+  if (mon)
++  if (smon)
 +    {
-+      mon->subs = g_list_append(mon->subs, sub);
++      smon->subs = g_list_append(smon->subs, sub);
 +      return TRUE;
 +    }
++  
++  smon = gam_kqueue_sub_monitor_new(sub);
++  smon->subs = g_list_append(smon->subs, sub);
 +
-+  mon = g_new0(Monitor, 1);
-+  mon->path = path;
-+  mon->subs = g_list_append(mon->subs, sub);
-+  mon->fd = -1;
-+  mon->isdir = hash == dir_hash;
-+
-+  g_hash_table_insert(hash, (gpointer) mon->path, mon);
-+  gam_kqueue_monitor_enable_notification(mon, FALSE);
++  g_hash_table_insert(hash, MONITOR(smon)->pathname, smon);
++  gam_kqueue_sub_monitor_enable_notification(smon, 0);
 +
 +  return TRUE;
 +}
@@ -676,30 +1219,19 @@
 +gam_kqueue_remove_subscription (GamSubscription *sub)
 +{
 +  GHashTable *hash;
-+  Monitor *mon;
++  SubMonitor *smon;
 +
 +  hash = gam_subscription_is_dir(sub) ? dir_hash : file_hash;
-+  mon = g_hash_table_lookup(hash, gam_subscription_get_path(sub));
++  smon = g_hash_table_lookup(hash, gam_subscription_get_path(sub));
 +
-+  if (! mon)
++  if (! smon)
 +    return FALSE;
 +
-+  mon->subs = g_list_remove_all(mon->subs, sub);
-+  if (! mon->subs)
++  smon->subs = g_list_remove_all(smon->subs, sub);
++  if (! smon->subs)
 +    {
-+      g_hash_table_remove(hash, mon->path);
-+
-+      /* might have been in any of these two */
-+      gam_kqueue_poller_remove_monitor(&missing_poller, mon);
-+      gam_kqueue_poller_remove_monitor(&unsupported_poller, mon);
-+
-+      if (mon->fd >= 0)
-+	close(mon->fd);
-+
-+      if (mon->files)
-+	gam_kqueue_monitor_clear_files(mon);
-+
-+      g_free(mon);
++      g_hash_table_remove(hash, MONITOR(smon)->pathname);
++      gam_kqueue_sub_monitor_free(smon);
 +    }
 +
 +  gam_subscription_cancel(sub);
@@ -723,11 +1255,11 @@
 +
 +  subs = gam_listener_get_subscriptions(listener);
 +
-+  for (l = subs; l; l = l->next)
++  for (l = subs; l != NULL; l = l->next)
 +    if (! gam_kqueue_remove_subscription(l->data))
 +      success = FALSE;
 +
 +  g_list_free(subs);
-+
++  
 +  return success;
 +}

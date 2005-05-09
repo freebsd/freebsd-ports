@@ -1,0 +1,16 @@
+===============================================================================
+
+Gamin will only provide realtime notification of changes for at most n files,
+where n is the minimum value between (kern.maxfiles * 0.7) and
+(kern.maxfilesperproc - 200). Beyond that limit, files will be polled.
+
+If you often open several large folders with Nautilus, you might want to
+increase the kern.maxfiles tunable (you do not need to set
+kern.maxfilesperproc, since it is computed at boot time from kern.maxfiles).
+
+For a typical desktop, add the following line to /boot/loader.conf, then
+reboot the system:
+
+    kern.maxfiles="25000"
+
+===============================================================================
