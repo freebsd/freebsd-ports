@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	agg
-PORTVERSION=	2.3.a
+PORTVERSION=	2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.antigrain.com/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A High Quality Rendering Engine for C++
-
-BROKEN=		Size mismatch
 
 WRKSRC=		${WRKDIR}/agg23
 USE_GMAKE=	yes
