@@ -326,6 +326,8 @@ share/locale/uk/LC_MESSAGES/freeciv.mo
 share/applications/freeciv.desktop
 @unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/he_IL/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/he_IL 2>/dev/null || true
 @unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/no 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
