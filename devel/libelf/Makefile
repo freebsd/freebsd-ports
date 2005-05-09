@@ -10,8 +10,7 @@ PORTVERSION=	0.8.5
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.stud.uni-hannover.de/~michael/software/ \
-		ftp://ftp.stud.uni-hannover.de/pub/users/michael/
+		http://www.mr511.de/software/
 MASTER_SITE_SUBDIR=	libs .
 
 MAINTAINER=	roam@FreeBSD.org
