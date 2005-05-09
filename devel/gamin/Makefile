@@ -7,7 +7,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.0.26
-PORTREVISION?=	12
+PORTREVISION?=	13
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -37,5 +37,8 @@ tests: build
 	@${ECHO_MSG} "===> Running gamin regression tests"
 	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} tests)
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
