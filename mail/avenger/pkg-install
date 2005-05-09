@@ -1,0 +1,61 @@
+#!/bin/sh
+
+if [ -n "${PACKAGE_BUILDING}" ]; then
+	exit 0
+fi
+
+USER=avenger
+GROUP=avenger
+UID=172
+GID=172
+AVDIR=/var/spool/avenger
+AVETC=${PKG_PREFIX}/etc/avenger
+
+PW=/usr/sbin/pw
+
+
+if [ "$2" = "PRE-INSTALL" ]; then
+	echo -n "Checking for group '$GROUP'... "
+
+	if ! ${PW} groupshow $GROUP >/dev/null 2>&1; then
+		echo -n "doesn't exist, adding... "
+		if ${PW} groupadd $GROUP -g ${GID}; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
+	else
+		echo "exists."
+	fi
+
+	echo -n "Checking for user '$USER'... "
+
+	if ! ${PW} usershow $USER >/dev/null 2>&1; then
+		echo -n "doesn't exist, adding... "
+		if ${PW} useradd $USER -u ${UID} -c 'Mail Avenger' -d "$AVDIR" -g $GROUP -s /sbin/nologin -h -; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
+	else
+		echo "exists."
+	fi
+elif [ "$2" = "POST-INSTALL" ]; then
+	echo -n "Checking for config directory ($AVETC)... "
+
+	if [ -d "$AVETC" ]; then
+		echo "already exists."
+	else
+		echo -n "creating... "
+		if mkdir $AVETC; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
+	fi
+fi
+
+exit 0
