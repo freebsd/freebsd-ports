@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.40.11
+PORTVERSION=	4.41.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -40,7 +40,7 @@ PATCHLEVEL=	1
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 MAN8=		MailScanner.8
 MAN5=		MailScanner.conf.5
@@ -232,7 +232,6 @@ do-install:
 			fi; \
 		fi; \
 	done
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 renew-wrapper: install
