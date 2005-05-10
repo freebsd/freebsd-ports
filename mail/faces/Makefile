@@ -8,20 +8,28 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual mail, user and print face server
 
+OPTIONS=	X11 "X11/GTK support" on	\
+		NAS "NAS audio support" off	\
+		RPLAY "rplay audio support" off	\
+		SOX "Sox audio support" off
+
 USE_REINPLACE=	yes
+WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		compface.1
 MAN3=		compface.3
 MLINKS=		compface.1 uncompface.1 \
 		compface.3 uncompface.3
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11="@comment "
@@ -37,58 +45,38 @@ CONFIGURE_ARGS=	--enable-imap --enable-pop \
 		--enable-name-unknown --with-spooldir=/var/mail \
 		--with-facedir=${DATADIR}
 MAN1+=		faces.1
-# Audio support is only possible with X11
-.if defined(WITHOUT_AUDIO)
-WITH_AUDIO=	# none
-.else
-WITH_AUDIO?=	rplay
-.endif
 .endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.if ${WITH_AUDIO} == "nas"
-CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${X11BASE}/bin/auplay
-RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
+.ifdef WITH_NAS
+ CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${X11BASE}/bin/auplay
+ RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
+.elifdef WITH_SOX
+ CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/play
+ RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
+.elifdef WITH_RPLAY
+ CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/rplay
+ RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
 .endif
-.if ${WITH_AUDIO} == "sox"
-CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/play
-RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
-.endif
-.if ${WITH_AUDIO} == "rplay"
-CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/rplay
-RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
-.endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "${PORTNAME} has the following tunables:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITHOUT_X11=yes		build without X11/GTK support"
-	@${ECHO_MSG} "	WITHOUT_AUDIO=yes	build without audio support"
-	@${ECHO_MSG} "	WITH_AUDIO=nas		build with NAS audio support"
-	@${ECHO_MSG} "	WITH_AUDIO=sox		build with SOX audio support"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "The default is X11/GTK with rplay audio support"
-	@${ECHO_MSG} ""
 
 # I have no better idea up to now
-# Insall the working Makefile for compface from the old faces port
+# Install the working Makefile for compface from the old faces port
 # This was much less complex an builds the shared libs, too
 post-patch:
 	@${REINPLACE_CMD} -e "s%/usr/local/faces%${DATADIR}%g ; \
 		 s%/var/spool/mail%/var/mail%g" ${WRKSRC}/faces/faces.man
 	@${LN} -sf ${WRKSRC}/faces/faces.man ${WRKSRC}/faces/faces.1
-.if ${WITH_AUDIO} == ""
-	@${REINPLACE_CMD} -e "s%^faces.audioSupport.*%faces.audioSupport:		false%" ${WRKSRC}/faces/Faces.ad
-.endif
-.if ${WITH_AUDIO} == "nas"
+.ifdef WITH_NAS
 	@${REINPLACE_CMD} -e "s%rplay%auplay%" ${WRKSRC}/faces/Faces.ad
-.endif
-.if ${WITH_AUDIO} == "sox"
+.elifdef WITH_SOX
 	@${REINPLACE_CMD} -e "s%rplay%play%" ${WRKSRC}/faces/Faces.ad
+.elifdef WITH_RPLAY
+	# nada
+.else
+	@${REINPLACE_CMD} -e "s%^faces.audioSupport.*%faces.audioSupport:		false%" ${WRKSRC}/faces/Faces.ad
 .endif
 
 do-build:
@@ -122,4 +110,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
