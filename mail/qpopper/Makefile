@@ -7,6 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		http://core.ring.gr.jp/archives/net/mail/qpopper/
@@ -65,9 +66,9 @@ WITHOUT_IPV6=	yes
 .endif
 
 .if !defined(WITHOUT_IPV6)
-PATCH_SITES=	http://home.tiscali.cz:8080/~cz210552/bsdports/tarballs/
-PATCHFILES=	qpopper4.0.7-inet6-20030313.diff.gz
-PATCH_DIST_STRIP=	-p2
+PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
+PATCHFILES=	qpopper4.0.7-ipv6-20050427.diff.gz
+PATCH_DIST_STRIP=	-p1
 .endif
 
 .if defined(WITHOUT_APOP)

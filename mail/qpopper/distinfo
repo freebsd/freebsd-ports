@@ -1,4 +1,4 @@
 MD5 (qpopper4.0.7.tar.gz) = c9e818cfca00cc196d4b883804f8c905
 SIZE (qpopper4.0.7.tar.gz) = 2350782
-MD5 (qpopper4.0.7-inet6-20030313.diff.gz) = 78d67bc88491219b83d1b4d323801a49
-SIZE (qpopper4.0.7-inet6-20030313.diff.gz) = 9015
+MD5 (qpopper4.0.7-ipv6-20050427.diff.gz) = 2da21925714528a25fe5bf67ddb848fa
+SIZE (qpopper4.0.7-ipv6-20050427.diff.gz) = 11450
