@@ -44,10 +44,10 @@ include/scim-1.0/scim_utility.h
 lib/gtk-2.0/immodules/im-scim.so
 lib/libscim-1.0.a
 lib/libscim-1.0.so
-lib/libscim-1.0.so.6
+lib/libscim-1.0.so.7
 lib/libscim-gtkutils-1.0.a
 lib/libscim-gtkutils-1.0.so
-lib/libscim-gtkutils-1.0.so.6
+lib/libscim-gtkutils-1.0.so.7
 lib/scim-1.0/1.2.0/Config/simple.so
 lib/scim-1.0/1.2.0/Config/socket.so
 lib/scim-1.0/1.2.0/FrontEnd/socket.so
@@ -68,6 +68,7 @@ libdata/pkgconfig/scim.pc
 share/gnome/applications/scim-setup.desktop
 share/gnome/control-center-2.0/capplets/scim-setup.desktop
 share/gnome/pixmaps/scim-setup.png
+share/locale/cs/LC_MESSAGES/scim.mo
 share/locale/de/LC_MESSAGES/scim.mo
 share/locale/fr/LC_MESSAGES/scim.mo
 share/locale/it/LC_MESSAGES/scim.mo

@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-canna
 PORTVERSION=	0.0.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.homa.ne.jp/~ashie/linux/files/
 
