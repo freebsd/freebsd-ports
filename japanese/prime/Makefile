@@ -16,8 +16,8 @@ COMMENT=	PRedictive Input Method Editor(PRIME)
 LIB_DEPENDS=	sary.9:${PORTSDIR}/textproc/sary
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/sary.so:${PORTSDIR}/textproc/ruby-sary \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv \
-		${LOCALBASE}/share/emacs/site-lisp/init-suikyo.el:../suikyo \
-		${LOCALBASE}/share/prime/dict/prime-dict:../prime-dict
+		${LOCALBASE}/share/emacs/site-lisp/init-suikyo.el:${PORTSDIR}/japanese/suikyo \
+		${LOCALBASE}/share/prime/dict/prime-dict:${PORTSDIR}/japanese/prime-dict
 
 USE_RUBY=		yes
 RUBY_WITH_PTHREAD=	yes

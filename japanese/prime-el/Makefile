@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVE
 MAINTAINER=	otsuji@users.sourceforge.jp
 COMMENT=	Emacs lisp set for the prime
 
-RUN_DEPENDS+=	${LOCALBASE}/share/emacs/site-lisp/init-mell.el:../mell \
-		${LOCALBASE}/share/emacs/site-lisp/init-suikyo.el:../suikyo \
-		prime:../prime
+RUN_DEPENDS+=	${LOCALBASE}/share/emacs/site-lisp/init-mell.el:${PORTSDIR}/japanese/mell \
+		${LOCALBASE}/share/emacs/site-lisp/init-suikyo.el:${PORTSDIR}/japanese/suikyo \
+		prime:${PORTSDIR}/japanese/prime
 
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE_VER=	19
