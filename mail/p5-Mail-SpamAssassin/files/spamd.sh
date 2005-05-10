@@ -35,7 +35,7 @@ stop_postcmd()
 
 spamd_enable=${spamd_enable:-"NO"}
 spamd_pidfile=${spamd_pidfile:-"/var/run/spamd/spamd.pid"}
-spamd_flags=${spamd_flags:-"-c -d %%SQL_FLAG%% -r ${spamd_pidfile} -u spamd -H /var/spool/spamd"}
+spamd_flags=${spamd_flags:-"-c -d %%SQL_FLAG%% -r ${spamd_pidfile} %%RUN_AS_USER%%"}
 
 load_rc_config $name
 run_rc_command "$1"

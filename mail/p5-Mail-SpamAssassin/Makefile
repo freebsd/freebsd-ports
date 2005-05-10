@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="the administrator of that system" \
 		BUILD_SPAMC=yes RUN_NET_TESTS=yes
 
-OPTIONS=	SSL "Build with SSL support for spamd/spamc" on \
+OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
+		SSL "Build with SSL support for spamd/spamc" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
 		SPF_QUERY "Add SPF query support" off \
@@ -65,6 +66,9 @@ USE_SQLDB=	yes
 RUN_DEPENDS+=	${SITE_PERL}/Parse/Syslog.pm:${PORTSDIR}/textproc/p5-Parse-Syslog \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Net/CIDR/Lite.pm:${PORTSDIR}/net/p5-Net-CIDR-Lite
+TOOLS=		""
+.else
+TOOLS=		"@comment "
 .endif
 
 MAN3=		Mail::SpamAssassin.3 \
@@ -93,6 +97,8 @@ MAN3=		Mail::SpamAssassin.3 \
 
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
+PLIST_SUB+=	TOOLS=${TOOLS}
+
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
 DOCS=		BUGS CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README STATUS TRADEMARK UPGRADE USAGE procmailrc.example
@@ -108,6 +114,11 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 SED_SCRIPT+=	-e 's|%%SQL_FLAG%%|-Q|g'
 .else
 SED_SCRIPT+=	-e 's|%%SQL_FLAG%%||g'
+.endif
+.if !defined(WITH_AS_ROOT)
+SED_SCRIPT+=	-e 's|%%RUN_AS_USER%%|-u spamd -H /var/spool/spamd|g'
+.else
+SED_SCRIPT+=	-e 's|%%RUN_AS_USER%%||g'
 .endif
 
 post-patch:
