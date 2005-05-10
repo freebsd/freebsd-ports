@@ -11032,6 +11032,7 @@ stellarium	ports/astro/stellarium
 sting		ports/net-mgmt/sting
 stk		ports/lang/STk
 stklos		ports/lang/stklos
+stl2pov		ports/graphics/stl2pov
 stldoc		ports/lang/stldoc
 stlfilt		ports/devel/stlfilt
 stlport		ports/devel/stlport
