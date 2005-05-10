@@ -6,27 +6,21 @@
 #
 
 PORTNAME=	gqradio
-PORTVERSION=	0.99.0
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=gqmpeg
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
-COMMENT=	GTK based FM tuner
+COMMENT=	GTK2 based FM tuner
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-WANT_GNOME=	yes
-USE_GNOME=	gtk12 gdkpixbuf
+USE_GNOME=	gtk20 gnomehack gnomeprefix
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	LIBS=-L${LOCALBASE}/lib \
-		CPPFLAGS=-I${LOCALBASE}/include
 
-.if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
-.endif
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 
 .include <bsd.port.pre.mk>
 
@@ -36,19 +30,14 @@ ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS=	alpha i386 ia64
 .endif
 
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomelibs
-.endif
-
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "You may use the following build options:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "      WITHOUT_PNG=yes  Don't depend on libpng. Skin editor will not"
-	@${ECHO_CMD} "                       be able to save 'internal' skins"
-	@${ECHO_CMD} ""
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|share/gqradio|share/gnome/gqradio|; \
+		 s|\(doc/gqradio\)-\$$VERSION|\1|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|^\(readmedir = \).*|\1$$(prefix)/share/doc/gqradio|; \
+		 s|COPYING||' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
