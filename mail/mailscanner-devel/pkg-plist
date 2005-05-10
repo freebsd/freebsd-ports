@@ -7,6 +7,7 @@ etc/MailScanner/mcp/mcp.spam.assassin.prefs.conf.sample
 etc/MailScanner/rules/EXAMPLES
 etc/MailScanner/rules/README
 etc/MailScanner/rules/spam.whitelist.rules.sample
+etc/MailScanner/phishing.safe.sites.conf.sample
 etc/MailScanner/spam.assassin.prefs.conf.sample
 etc/MailScanner/spam.lists.conf.sample
 etc/MailScanner/virus.scanners.conf.sample
@@ -18,6 +19,8 @@ lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
 lib/MailScanner/MailScanner/CustomConfig.pm
 lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
+lib/MailScanner/MailScanner/CustomFunctions/DavidHooton.pm
+lib/MailScanner/MailScanner/CustomFunctions/ZMRouterDirHash.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
 lib/MailScanner/MailScanner/Lock.pm
@@ -115,6 +118,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/ca/stored.content.message.txt.sample
 %%DATADIR%%/reports/ca/stored.filename.message.txt.sample
 %%DATADIR%%/reports/ca/stored.virus.message.txt.sample
+@exec mkdir -p %D/%%DATADIR%%/reports/cat
 %%DATADIR%%/reports/cy+en/deleted.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.virus.message.txt.sample
@@ -445,6 +449,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.OpenBSD
+%%PORTDOCS%%%%DOCSDIR%%/MailScannerFlyer.pdf
 %%PORTDOCS%%%%DOCSDIR%%/QuickInstall.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD.port
@@ -494,6 +499,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/install/tcp
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch2.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch3.txt
@@ -521,6 +527,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/oldnews.shtml
 %%PORTDOCS%%%%DOCSDIR%%/osdir.png
 %%PORTDOCS%%%%DOCSDIR%%/performance.shtml
+%%PORTDOCS%%%%DOCSDIR%%/phishing3.png
 %%PORTDOCS%%%%DOCSDIR%%/poetry.shtml
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.google.gif
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif

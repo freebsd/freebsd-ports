@@ -1,145 +1,137 @@
---- ../MailScanner-install-4.38.2.orig/docs/man/MailScanner.conf.5	Mon Jan 17 15:49:00 2005
-+++ docs/man/MailScanner.conf.5	Mon Jan 17 15:54:08 2005
+--- ../MailScanner-install-4.40.10.old/docs/man/MailScanner.conf.5	Fri Apr  1 16:10:19 2005
++++ docs/man/MailScanner.conf.5	Fri Apr  1 16:10:37 2005
 @@ -1,4 +1,4 @@
--.TH "MailScanner.conf" "5" "4.34.8" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.38.2" "Julian Field" "Mail"
+-.TH "MailScanner.conf" "5" "4.38.2" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.41.3" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -485,7 +485,7 @@
- .br 
+@@ -27,7 +27,9 @@
+ Many of the options can also be the filename of a ruleset, which can be used to control features depending on the addresses of the message, and/or the IP address where the message came from. You will find some examples of rulesets and an explanation of them in the "rules" directories within the MailScanner installation and in the section "RULESETS" later in this manpage.
  
- .br 
--Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, none (no virus scanning at all). This *cannot* be the filename of a ruleset.
-+Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, symscanengine, generic, none (no virus scanning at all). This *cannot* be the filename of a ruleset.
- .br 
+ .LP 
+-The options are best listed in a few categories. This is also the order in which you will find them in the MailScanner.conf file. If this list looks very large then don't worry, the supplied MailScanner.conf file (or MailScanner.conf.sample) contains sensible defaults for all the values. You will probably only need to change a very few of them to start with.
++The options are best listed in a few categories. If this list looks very large then don't worry, the supplied MailScanner.conf file (or MailScanner.conf.sample) contains sensible defaults for all the values. You will probably only need to change a very few of them to start with.
++
++Starting with version 4.40.10 of MailScanner you can use shell environment variables such as $HOSTNAME or ${HOSTNAME} in MailScanner.conf and its relatives.
  
+ .LP 
+ You should define the following variables:
+@@ -74,6 +76,22 @@
+ Enter a short identifying name for your organisation below, this is used to make the X\-MailScanner headers unique for your organisation. Multiple servers within one site should use an identical value here to avoid adding multiple redundant headers where mail has passed through several servers within your organisation. 
  .br 
-@@ -585,13 +585,22 @@
- 
- .TP 
- \fBFind Phishing Fraud\fR
--Default: no
-+Default: yes
- .br 
- 
- .br 
- Do you want to check for "Phishing" attacks? These are attacks that look like a genuine email message from your bank, which contain a link to click on to take you to the web site where you will be asked to type in personal information such as your account number or credit card details. Except it is not the real bank's web site at all, it is a very good copy of it run by thieves who want to steal your personal information or credit card details. These can be spotted because the real address of the link in the message is not the same as the text that appears to be the link. Note: This does cause significant extra load, particularly on systems       receiving lots of spam such as secondary MX hosts. This *cannot* be the filename of a ruleset, it must be 'yes' or 'no'.
- 
- .TP 
-+\fBAlso Find Numeric Phishing\fR
-+Default: yes
+ Note: Some Symantec scanners complain (incorrectly) about "." characters appearing in the names of headers.
++
++.TP 
++\fB%org\-long\-name%\fR
++Default: Your Organisation Name Here
 +.br 
 +
 +.br 
-+While detecting "Phishing" attacks, do you also want to point out links to numeric IP addresses. Genuine links to totally numeric IP addresses are very rare, so this option is set to "yes" by default. If a numeric IP address is found in a link, the same phishing warning message is used as in the Find Phishing Fraud option above. This value cannot be the name of a ruleset, only a simple yes or no.
++Enter the full name of your organisation below, this is used in the signature placed at the bottom of report messages sent by MailScanner. It can include pretty much any text you like. You can make the result span several lines by including "\n" sequences in the text. These will be replaced by line\-breaks.
++
++.TP 
++\fB%web\-site%\fR
++Default: www.your\-organisation.com
++.br 
++
++.br 
++Enter the location of your organisation's web site below. This is used in the signature placed at the bottom of report messages sent by MailScanner. It should preferably be the location of a page that you have written explaining why you might have rejected the mail and what the recipient and/or sender should do about it.
+ .SH "System Settings"
+ .TP 
+ \fBMax Children\fR
+@@ -370,6 +388,23 @@
+ .br 
+ The maximum length of time the "file" command is allowed to run for one batch of messages (in seconds).
+ 
++
++.TP 
++\fBUnrar Command\fR
++Default: /usr/bin/unrar
++.br 
++
++.br 
++Where the "unrar" command is installed. If you haven't got this command, look at www.rarlab.com. This is used for unpacking rar archives so that the contents can be checked for banned filenames and filetypes, and also that the archive can be tested to see if it is password\-protected. Virus scanning the contents of rar archives is still left to the virus scanner, with one exception: If using the clavavmodule virus scanner, this adds external RAR checking to that scanner which is needed for archives which are RAR version 3.
++
++.TP 
++\fBUnrar Timeout\fR
++Default: 50
++.br 
++
++.br 
++The maximum length of time the "unrar" command is allowed to run for 1 RAR archive (in seconds)
++
+ .TP 
+ \fBBlock Encrypted Messages\fR
+ Default: no
+@@ -562,6 +597,41 @@
+ 
+ .br 
+ ClamAVModule only: monitor each of these files for changes in size to detect when a ClamAV update has happened. This is only used by the "clamavmodule" virus scanner, not the "clamav" scanner setting.
++
++.TP 
++\fBClamAVmodule Maximum Recursion Level\fR
++Default: 5
++.br 
++
++.br 
++ClamAVModule only: The maximum recursion level of archives. This setting *cannot* be the filename of a ruleset, only a simple number.
++
++.TP 
++\fBClamAVmodule Maximum Files\fR
++Default: 100
++.br 
++
++.br 
++ClamAVModule only: The maximum number of files per batch. This setting *cannot* be the filename of a ruleset, only a simple number.
++
++
++.TP 
++\fBClamAVmodule Maximum File Size\fR
++Default: 10000000
++.br 
++
++.br 
++ClamAVModule only: The maximum file of each file (Default = 10MB). This setting *cannot* be the filename of a ruleset, only a simple number.
++
++
++.TP 
++\fB\fRClamAVmodule Maximum Compression Ratio
++Default: 250
++.br 
++
++.br 
++ClamAVModule only: The maximum compression ration of archives. This setting *cannot* be the filename of a ruleset, only a simple number.
++ 
+ .SH "Removing/Logging dangerous or potentially offensive content"
+ .TP 
+ \fBAllow Partial Messages\fR
+@@ -601,6 +671,15 @@
+ 
+ 
+ .TP 
++\fBPhishing Safe Sites File\fR
++Default: %etc\-dir%/phishing.safe.sites.conf
++.br 
++
++.br 
++There are some companies, such as banks, that insist on sending out email messages with links in them that are caught by the "Find Phishing Fraud" test described above. This is the name of a file which contains a list of link destinations which should be ignored in the test. This may, for example, contain the known websites of some banks. See the file itself for more information. This can only be the name of the file containing the list, it *cannot* be the filename of a ruleset.
 +
 +
 +.TP 
  \fBAllow IFrame Tags\fR
  Default: no
  .br 
-@@ -781,6 +790,15 @@
- When an entire message is saved in the quarantine for any reason, do you want to save it as the raw data files out of the mail queue (which can be processed with the df2mbox script, and which is easier to send to its original recipients), or do you want a conventional message file consisting of the header followed by the body of the message. If the previous option is switched off, then this will only affect archived mail and quarantined spam. If the previous option is on, then this also affects quarantined infections. 
+@@ -1753,6 +1832,12 @@
  
- .TP 
-+\fBKeep Spam And MCP Archive Clean\fR
-+Default: no
-+.br 
-+
-+.br 
-+Do you want to stop any virus\-infected spam getting into the spam or MCP archives? If you have a system where users can release messages from the spam or MCP archives, then you probably want to stop them being able to release any infected messages, so set this to yes. It is set to no by default as it causes a small hit in performance, and many people don't allow users to access the spam quarantine, so don't need it. This can also be the filename of a ruleset.
-+
+ .br 
+ Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.
 +
 +.TP 
- \fBLanguage Strings\fR
- Default: %reports\-dir%/languages.conf
- .br 
-@@ -1266,12 +1284,11 @@
- 
- .TP 
- \fBAttachment Encoding Charset\fR
--Default: us\-ascii
-+Default: ISO\-8859\-1
- .br 
- 
- .br 
--This is the name of the encoding character set used for the contents of "VirusWarning.txt" attachments. If your users do not use English as their preferred language, you may want to set this to "ISO\-8859\-1". 
--
-+This is the name of the encoding character set used for the contents of "VirusWarning.txt" attachments. 
- .SH "Mail archiving and monitoring"
- .TP 
- \fBArchive Mail\fR
-@@ -1294,9 +1311,10 @@
- 
- .br 
- If you give this option a ruleset, you can control exactly whose mail is archived or forwarded. If you do this, beware of the legal implications as this could be deemed to be illegal interception unless the police have asked you to do this.
-+.br 
- 
--
--
-+.br 
-+Any of the items above can contain the magic string _DATE_ in them which will be replaced with the current date in yyyymmdd format. This will make archive\-rolling and maintenance much easier, as you can guarantee that yesterday's mail archive will not be in active use today.
- .SH "Notices to system administrators"
- .TP 
- \fBSend Notices\fR
-@@ -1595,22 +1613,24 @@
- .br 
- .RS 7
- .IP  \(bu 4
--"deliver" \- the message is delivered to the recipient as normal 
-+deliver \- the message is delivered to the recipient as normal 
- .IP  \(bu 4
--"delete" \- the message is deleted 
-+delete \- the message is deleted 
- .IP  \(bu 4
--"store" \- the message is stored in the quarantine 
-+store \- the message is stored in the quarantine 
- 
- .IP  \(bu 4
--"forward" \- an email address is supplied, to which the message is forwarded 
-+forward \- an email address is supplied, to which the message is forwarded 
- .IP  \(bu 4
--"notify" \- Send the recipients a short notification that spam addressed to them was not delivered. They can then take action to request retrieval of the orginal message if they think it was not spam.
-+notify \- Send the recipients a short notification that spam addressed to them was not delivered. They can then take action to request retrieval of the orginal message if they think it was not spam.
- .IP  \(bu 4
--"striphtml" \- convert all in\-line HTML content in the message to be stripped to plain text, which removes all images and scripts and so can be used to protect your users from offensive spam. Note that using this action on its own does not imply that the message will be delivered, you will need to specify "deliver" or "forward" to actually deliver the message. 
-+striphtml \- convert all in\-line HTML content in the message to be stripped to plain text, which removes all images and scripts and so can be used to protect your users from offensive spam. Note that using this action on its own does not imply that the message will be delivered, you will need to specify "deliver" or "forward" to actually deliver the message. 
- .IP  \(bu 4
--"attachment" \- Convert the original message into an attachment of the message. This means the user has to take an extra step to open the spam, and stops "web bugs" very effectively.
-+attachment \- Convert the original message into an attachment of the message. This means the user has to take an extra step to open the spam, and stops "web bugs" very effectively.
- .IP  \(bu 4
--"bounce" \- bounce the spam message. This option should not be used and must be enabled with the "Enable Spam Bounce" option first.
-+bounce \- bounce the spam message. This option should not be used and must be enabled with the "Enable Spam Bounce" option first.
-+.IP  \(bu 4
-+header "name: value" \- Add the header "name: value" to the message. name must not contain any spaces.
- .RE
- 
- .TP 
-@@ -1725,8 +1745,16 @@
- 
- .br 
- Log all the filenames that are allowed by the Filetype Rules, or just the filetypes that are denied? This can also be the filename of a ruleset.
-+
-+.TP 
-+\fBLog Silent Viruses\fR
++\fBLog Dangerous HTML Tags\fR
 +Default: no
 +.br 
-+
-+.br 
-+Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.
++Log all occurrences of HTML tags found in messages, that can be blocked. This will help you build up your whitelist of message sources for which particular HTML tags should be allowed, such as mail from newsletters and daily cartoon strips. This can also be the filename of a ruleset.
  .SH "Advanced SpamAssassin Settings"
--If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location.
-+If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location. 
+ If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location. 
  
- .TP 
- \fBSpamAssassin User State Dir\fR
-@@ -1734,7 +1762,7 @@
- .br 
- 
- .br 
--The per\-user files (bayes, auto\-whitelist, user_prefs) are looked for here and in ~/.spamassassin/. Note the files are mutable. If this is unset then no extra places are searched for. If using Postfix, you probably want to set this to /var/spool/MailScanner/spamassassin and do
-+The per\-user files (bayes, auto\-whitelist, user_prefs) are looked for here and in ~/.spamassassin/. Note the files are mutable. If this is unset then no extra places are searched for. NOTE: SpamAssassin is always called from MailScanner as the same user, and that is the "Run As" user specified in MailScanner.conf. So you can only have 1 set of "per\-user" files, it's just that you might possibly need to modify this location. You should not normally need to set this at all. If using Postfix, you probably want to set this to /var/spool/MailScanner/spamassassin and do
- 
- .RS 10
- mkdir /var/spool/MailScanner/spamassassin
