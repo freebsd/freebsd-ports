@@ -4137,6 +4137,7 @@ ja-postgresql73-man	ports/japanese/postgresql73-man
 ja-postgresql74-man	ports/japanese/postgresql74-man
 ja-postgresql80-man	ports/japanese/postgresql80-man
 ja-ppxp		ports/japanese/ppxp
+ja-prime-el	ports/japanese/prime-el
 ja-prn		ports/japanese/prn
 ja-ptex		ports/japanese/ptex
 ja-ptex-base	ports/japanese/ptex-base
