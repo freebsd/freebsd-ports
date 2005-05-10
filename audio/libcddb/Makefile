@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcddb
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,8 @@ COMMENT=	A library to access data on a CDDB server
 USE_LIBTOOL_VER=	15
 USE_GNOME=	gnometarget gnomehack pkgconfig
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--without-cdio
+CONFIGURE_ENV=	CPPFLAGS="-DICONV_CONST=\"const\""
 
 .include <bsd.port.pre.mk>
 
