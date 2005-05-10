@@ -4036,6 +4036,7 @@ ja-makejvf	ports/japanese/makejvf
 ja-man-doc	ports/japanese/man-doc
 ja-marumoji-fonts	ports/japanese/marumoji-fonts
 ja-mecab	ports/japanese/mecab
+ja-mell		ports/japanese/mell
 ja-mendexk-euc	ports/japanese/mendexk-euc
 ja-mendexk-sjis	ports/japanese/mendexk-sjis
 ja-mh		ports/japanese/mh
