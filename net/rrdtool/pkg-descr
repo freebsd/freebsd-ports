@@ -7,4 +7,4 @@ all kinds of data-sources. The data analysis part of RRDtool is based
 on the ability to quickly generate graphical representations of the data
 values collected over a definable time period.
 
-WWW: http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/
+WWW: http://www.rrdtool.org/
