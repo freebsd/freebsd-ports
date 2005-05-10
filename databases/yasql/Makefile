@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		yasql
-PORTVERSION=		1.82
+PORTVERSION=		1.83
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -60,9 +60,9 @@ pre-configure:
 	@${PERL} -pi -e 's|/bin/more|/usr/bin/more|' ${WRKSRC}/yasql.conf
 
 pre-install:
-.if exists(${PREFIX}/etc/yasql.conf)
-	${MV} ${PREFIX}/etc/yasql.conf ${PREFIX}/etc/yasql.conf.precious
-.endif
+	if [ -f ${PREFIX}/etc/yasql.conf ] ; then \
+		${MV} ${PREFIX}/etc/yasql.conf ${PREFIX}/etc/yasql.conf.precious ; \
+	fi
 
 post-install:
 	${MV} ${PREFIX}/etc/yasql.conf ${PREFIX}/etc/yasql.conf.sample
@@ -70,12 +70,12 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-.if exists(${PREFIX}/etc/yasql.conf.precious)
-	${MV} ${PREFIX}/etc/yasql.conf.precious ${PREFIX}/etc/yasql.conf
-.else
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.endif
+	@if [ -f ${PREFIX}/etc/yasql.conf.precious ] ; then \
+		${MV} ${PREFIX}/etc/yasql.conf.precious ${PREFIX}/etc/yasql.conf ; \
+	else \
+		${ECHO_MSG} ; \
+		${CAT} ${PKGMESSAGE} ; \
+		${ECHO_MSG} ; \
+	fi
 
 .include <bsd.port.mk>
