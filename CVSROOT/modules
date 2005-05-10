@@ -3952,6 +3952,7 @@ ja-jls		ports/japanese/jls
 ja-jmode	ports/japanese/jmode
 ja-jmode-skk	ports/japanese/jmode-skk
 ja-jpilot	ports/japanese/jpilot
+ja-jstrings	ports/japanese/jstrings
 ja-jvim		ports/japanese/jvim
 ja-jvim-canna	ports/japanese/jvim-canna
 ja-jvim-canna+freewnn	ports/japanese/jvim-canna+freewnn
