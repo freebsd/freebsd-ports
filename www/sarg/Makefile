@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
 		--enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" \
 		--enable-htmldir="${PREFIX}/www/${PORTNAME}" \
 		--enable-mandir="${MAN1PREFIX}/man/man1"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(WITHOUT_GD)
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
