@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.38.2
+PORTVERSION=	4.42.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
@@ -31,7 +31,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
 
 CONFLICTS=	MailScanner-[0-9]*
 
@@ -40,7 +41,7 @@ PATCHLEVEL=	1
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 MAN8=		MailScanner.8
 MAN5=		MailScanner.conf.5
@@ -60,7 +61,8 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
-		spam.lists.conf virus.scanners.conf
+		spam.lists.conf virus.scanners.conf \
+		phishing.safe.sites.conf
 MCP_FILES=	mcp.spam.assassin.prefs.conf \
 		10_example.cf
 USRLOCAL_FILES_LIB=	\
@@ -84,7 +86,9 @@ do-build:
 		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
 		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
-		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g;' \
+		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
+		s,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g; \
+		s,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g;' \
 		${WRKSRC}/etc/MailScanner.conf
 	${PERL} -pi -e \
 		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g; \
@@ -211,6 +215,7 @@ do-install:
 		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION}" ; \
 	fi
 .endif
+	# Languages.conf update
 	@for LANG_DIR in ${DATADIR}/reports/*; do \
 		if [ -f $${LANG_DIR}/languages.conf ]; then \
 			${ECHO} -n Upgrading $${LANG_DIR}/languages.conf... Please wait...; \
@@ -228,7 +233,6 @@ do-install:
 			fi; \
 		fi; \
 	done
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 renew-wrapper: install
