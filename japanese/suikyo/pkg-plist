@@ -1,0 +1,48 @@
+%%DATADIR%%/conv-table/ascii-wideascii
+%%DATADIR%%/conv-table/azik
+%%DATADIR%%/conv-table/azik-all
+%%DATADIR%%/conv-table/azik-all_reverse
+%%DATADIR%%/conv-table/azik_reverse
+%%DATADIR%%/conv-table/egg-mark
+%%DATADIR%%/conv-table/egg-mark_reverse
+%%DATADIR%%/conv-table/halfkatakana-hiragana
+%%DATADIR%%/conv-table/halfkatakana-katakana
+%%DATADIR%%/conv-table/hiragana-halfkatakana
+%%DATADIR%%/conv-table/hiragana-katakana
+%%DATADIR%%/conv-table/kana
+%%DATADIR%%/conv-table/kana-romaji
+%%DATADIR%%/conv-table/kana_reverse
+%%DATADIR%%/conv-table/katakana-halfkatakana
+%%DATADIR%%/conv-table/katakana-hiragana
+%%DATADIR%%/conv-table/kuten
+%%DATADIR%%/conv-table/kuten_reverse
+%%DATADIR%%/conv-table/romaji
+%%DATADIR%%/conv-table/romaji-hepburn_reverse
+%%DATADIR%%/conv-table/romaji-kana
+%%DATADIR%%/conv-table/romaji_reverse
+%%DATADIR%%/conv-table/skk-mark
+%%DATADIR%%/conv-table/skk-mark_reverse
+%%DATADIR%%/conv-table/tcode
+%%DATADIR%%/conv-table/tcode-dvorak
+%%DATADIR%%/conv-table/tcode-dvorak_reverse
+%%DATADIR%%/conv-table/tcode_reverse
+%%DATADIR%%/conv-table/tutcode
+%%DATADIR%%/conv-table/tutcode_reverse
+%%DATADIR%%/conv-table/wideascii-ascii
+@unexec rmdir %D/%%DATADIR%%/conv-table 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+share/emacs/site-lisp/init-suikyo.el
+share/emacs/site-lisp/suikyo/suikyo.el
+share/emacs/site-lisp/suikyo/suikyo-config.el
+@unexec rmdir %D/share/emacs/site-lisp/suikyo 2>/dev/null || true
+libdata/pkgconfig/suikyo.pc
+%%RUBY_SITELIBDIR%%/suikyo/suikyo-composer.rb
+%%RUBY_SITELIBDIR%%/suikyo/suikyo-config.rb
+%%RUBY_SITELIBDIR%%/suikyo/suikyo.rb
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/suikyo 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/elisp/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ruby/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/elisp 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/ruby 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true

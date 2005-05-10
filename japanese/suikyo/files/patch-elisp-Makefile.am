@@ -1,0 +1,8 @@
+--- elisp/Makefile.am.orig	Tue Jun  3 02:36:20 2003
++++ elisp/Makefile.am	Sat May  7 14:33:22 2005
+@@ -8,4 +8,4 @@
+ # You can redistribute it and/or modify it under the terms of 
+ # the GNU General Public License version 2.
+ 
+-SUBDIRS = doc src etc
++SUBDIRS = src etc

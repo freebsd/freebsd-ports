@@ -1,0 +1,8 @@
+--- ruby/Makefile.am.orig	Tue Jun  3 02:36:22 2003
++++ ruby/Makefile.am	Sat May  7 14:33:56 2005
+@@ -8,4 +8,4 @@
+ # You can redistribute it and/or modify it under the terms of 
+ # the GNU General Public License version 2.
+ 
+-SUBDIRS = doc src test
++SUBDIRS = src test
