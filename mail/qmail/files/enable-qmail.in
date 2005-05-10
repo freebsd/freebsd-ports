@@ -15,13 +15,13 @@ disable_sendmail() {
 enable_qmail() {
 	if [ -f ${MAILER_CONF_FILE} ]; then
 		cp ${MAILER_CONF_FILE} ${MAILER_CONF_FILE}.bak && \
-		cp %%PREFIX%%/%%DOCDIR%%/mailer.conf.sample ${MAILER_CONF_FILE}
+		cp %%DOCSDIR%%/mailer.conf.sample ${MAILER_CONF_FILE}
 	else
 		echo "===> ERROR: YOU DO NOT HAVE A VALID ${MAILER_CONF_FILE}"
 		echo "===> FIX this and try again"
 		echo "===> or, run \"$0 --force\" if you are sure"
 		echo "===> you want this port replacing some binaries"
-		echo "===> IF THIS FEELS UNEASY, read %%PREFIX%%/%%DOCDIR%%/REMOVE.sendmail and do it manually"
+		echo "===> IF THIS FEELS UNEASY, read %%DOCSDIR%%/REMOVE.sendmail and do it manually"
 		echo ""
 		echo "=======> VERY IMPORTANT <======="
 		echo "===> One side issue is that if you do replace them,"
@@ -79,7 +79,7 @@ NEWALIASES=/usr/bin/newaliases
 
 disable_sendmail
 
-if [ "$1" = "--force"]; then
+if [ "$1" = "--force" ]; then
   force_enable_qmail
 else
   enable_qmail
