@@ -16,7 +16,7 @@
  #define B2N_32(x) x = bswap_32(x)
  #define B2N_64(x) x = bswap_64(x)
 +
-+#elif (defined(__FreeBSD__) && __FreeBSD_version >= 470000)
++#elif (defined(__FreeBSD__) && __FreeBSD_version >= 500000)
 +#include <sys/endian.h>
 +#define B2N_16(x) be16toh(x)
 +#define B2N_32(x) be32toh(x)
