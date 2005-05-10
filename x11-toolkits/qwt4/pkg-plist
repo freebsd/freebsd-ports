@@ -49,5 +49,6 @@ include/qwt/qwt_text.h
 include/qwt/qwt_thermo.h
 include/qwt/qwt_wheel.h
 lib/libqwt.so
+lib/libqwt.so.4
 lib/libqwt.so.4.2.0
 @dirrm include/qwt
