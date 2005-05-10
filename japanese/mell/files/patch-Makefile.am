@@ -1,0 +1,17 @@
+--- Makefile.am.orig	Sat Jun  7 08:29:34 2003
++++ Makefile.am	Sat Jun  7 08:29:40 2003
+@@ -8,5 +8,5 @@
+ # You can redistribute it and/or modify it under the terms of 
+ # the GNU General Public License version 2.
+ 
+-SUBDIRS = doc etc src
++SUBDIRS = etc src
+ EXTRA_DIST = autogen.sh
+--- etc/Makefile.am.orig	Mon Jan 19 14:02:53 2004
++++ etc/Makefile.am	Mon Jan 19 14:02:59 2004
+@@ -14,4 +14,4 @@
+ etc_DATA = $(MELL_INIT_FILE)
+ 
+ $(MELL_INIT_FILE): _init-mell.el
+-	cp -a _init-mell.el $(MELL_INIT_FILE)
++	cp _init-mell.el $(MELL_INIT_FILE)

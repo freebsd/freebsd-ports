@@ -1,0 +1,13 @@
+share/emacs/site-lisp/init-mell.el
+share/emacs/site-lisp/mell/mell-alist.el
+share/emacs/site-lisp/mell/mell-event.el
+share/emacs/site-lisp/mell/mell-extra.el
+share/emacs/site-lisp/mell/mell-file.el
+share/emacs/site-lisp/mell/mell-process.el
+share/emacs/site-lisp/mell/mell-sign.el
+share/emacs/site-lisp/mell/mell-split.el
+share/emacs/site-lisp/mell/mell-string.el
+share/emacs/site-lisp/mell/mell.el
+@unexec rmdir %D/share/emacs/site-lisp/mell 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
