@@ -1,0 +1,15 @@
+--- Makefile.am.orig	Tue Jan 11 23:51:49 2005
++++ Makefile.am	Sat May  7 14:32:48 2005
+@@ -8,10 +8,10 @@
+ # You can redistribute it and/or modify it under the terms of 
+ # the GNU General Public License version 2.
+ 
+-SUBDIRS = contrib conv-table doc elisp ruby
++SUBDIRS = contrib conv-table elisp ruby
+ EXTRA_DIST = autogen.sh suikyo.spec suikyo.spec.in suikyo.pc.in
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = suikyo.pc
+ 
+ rpm:

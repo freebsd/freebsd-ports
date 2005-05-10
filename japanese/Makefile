@@ -369,6 +369,7 @@
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
     SUBDIR += stardict2-dict-ja
+    SUBDIR += suikyo
     SUBDIR += t2ps
     SUBDIR += tcl76
     SUBDIR += tcl80

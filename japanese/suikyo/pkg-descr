@@ -1,0 +1,7 @@
+Suikyo is Romaji-Kana conversion Library.
+There are two language bindings for Ruby
+and ELisp.  For more detail, please see
+the following web page.
+
+Author:	Hiroyuki Komatsu <komatsu@taiyaki.org>
+WWW:	http://taiyaki.org/suikyo/

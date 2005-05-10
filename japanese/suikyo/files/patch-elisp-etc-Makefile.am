@@ -1,0 +1,8 @@
+--- elisp/etc/Makefile.am.orig	Wed Jun  4 02:04:30 2003
++++ elisp/etc/Makefile.am	Sat May  7 14:35:09 2005
+@@ -14,4 +14,4 @@
+ etc_DATA = $(SUIKYOEL_INIT_FILE)
+ 
+ $(SUIKYOEL_INIT_FILE): _init-suikyo.el
+-	cp -p _init-suikyo.el $(SUIKYOEL_INIT_FILE)
++	cp _init-suikyo.el $(SUIKYOEL_INIT_FILE)
