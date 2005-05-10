@@ -1,0 +1,78 @@
+bin/prime
+bin/prime-dict-convert
+bin/prime-dict-index
+bin/prime-refresh
+bin/prime-userdict-convert
+bin/prime-userdict-update
+libdata/pkgconfig/prime.pc
+etc/prime/Custom_prime.rb
+@unexec rmdir %D/etc/prime 2>/dev/null || true
+%%DATADIR%%/grammar/prime-grammar
+%%DATADIR%%/makedict/canna2prime.table
+@unexec rmdir %D/%%DATADIR%%/grammar 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/makedict 2>/dev/null || true
+%%RUBY_SITELIBDIR%%/prime/engine/engine-adambnc.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-alphabet.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-basic.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-english.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-network.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-number.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-personaldict.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-sary.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-userdict.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-userdict2-en.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-userdict2-lib.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-userdict2-static.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine-userdict2.rb
+%%RUBY_SITELIBDIR%%/prime/engine/engine.rb
+%%RUBY_SITELIBDIR%%/prime/grammar/grammar.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/basicdict.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-adambnc.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-cannadic.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-pubdic.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-skkdic.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-text.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-usage.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-wordlist.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat-wordnet.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/dictformat.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/prime-sary.rb
+%%RUBY_SITELIBDIR%%/prime/makedict/userdict.rb
+%%RUBY_SITELIBDIR%%/prime/array-agent.rb
+%%RUBY_SITELIBDIR%%/prime/composer.rb
+%%RUBY_SITELIBDIR%%/prime/prime-config.rb
+%%RUBY_SITELIBDIR%%/prime/prime-japanese.rb
+%%RUBY_SITELIBDIR%%/prime/prime-mixed.rb
+%%RUBY_SITELIBDIR%%/prime/prime.rb
+%%RUBY_SITELIBDIR%%/prime/prime08.rb
+%%RUBY_SITELIBDIR%%/prime/prime2.rb
+%%RUBY_SITELIBDIR%%/prime/protocol.rb
+%%RUBY_SITELIBDIR%%/prime/server.rb
+%%RUBY_SITELIBDIR%%/prime/session-english.rb
+%%RUBY_SITELIBDIR%%/prime/session-japanese.rb
+%%RUBY_SITELIBDIR%%/prime/session-prime08.rb
+%%RUBY_SITELIBDIR%%/prime/session.rb
+%%RUBY_SITELIBDIR%%/prime/taiyaki.rb
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime/engine 2>/dev/null || true
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime/grammar 2>/dev/null || true
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime/makedict 2>/dev/null || true
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/examples/Custom_prime.rb
+%%PORTDOCS%%%%DOCSDIR%%/figures/dict-format.png
+%%PORTDOCS%%%%DOCSDIR%%/figures/predictive-input.png
+%%PORTDOCS%%%%DOCSDIR%%/figures/tan-bunsetsu.png
+%%PORTDOCS%%%%DOCSDIR%%/uim/prime-custom.scm
+%%PORTDOCS%%%%DOCSDIR%%/uim/prime-key-custom.scm
+%%PORTDOCS%%%%DOCSDIR%%/uim/prime.scm
+%%PORTDOCS%%%%DOCSDIR%%/uim_prime.html
+%%PORTDOCS%%%%DOCSDIR%%/dictionary.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/prime.html
+%%PORTDOCS%%%%DOCSDIR%%/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/taiyaki.css
+%%PORTDOCS%%%%DOCSDIR%%/taiyaki.png
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/examples 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/figures 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/uim 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true

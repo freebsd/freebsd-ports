@@ -1,0 +1,15 @@
+--- Makefile.am.orig	Tue Mar  8 21:36:20 2005
++++ Makefile.am	Tue May 10 19:30:06 2005
+@@ -8,10 +8,10 @@
+ # You can redistribute it and/or modify it under the terms of 
+ # the GNU General Public License version 2.
+ 
+-SUBDIRS = doc etc grammar lib src packaging uim
++SUBDIRS = etc grammar lib src packaging uim
+ EXTRA_DIST = autogen.sh prime.spec prime.spec.in prime.pc.in
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = prime.pc
+ 
+ install-etc:
