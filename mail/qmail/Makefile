@@ -7,20 +7,34 @@
 
 PORTNAME=	qmail
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	mail
-MASTER_SITES+=	http://cr.yp.to/software/ \
-		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
-		ftp://ftp.jp.qmail.org/qmail/ \
-		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
-		${MASTER_SITE_QMAIL}
+MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 
 MAINTAINER?=	freebsd@galle.com.br
 COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
-# qmail-* skeleton ports including this port may not want
-# its patches
+.if defined(SLAVE_LDAP) || defined(SLAVE_SPAMCONTROL)
+MAIN_QMAIL_PORT_DNS_PATCH_BARRIER=yes
+MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER=yes
+.endif
+
+.if defined(SLAVE_LDAP) || defined(SLAVE_SMTP_AUTH_TLS) || \
+    defined(SLAVE_SPAMCONTROL) || defined(SLAVE_TLS)
+MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER=yes
+MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER=yes
+.endif
+
+.if defined(SLAVE_MYSQL) || defined(SLAVE_SPAMCONTROL)
+MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER=yes
+.endif
+
+.if defined(SLAVE_SPAMCONTROL)
+MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER=yes
+MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER=yes
+.endif
+
 .if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER)
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
@@ -28,14 +42,14 @@ COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 PATCH_SITES+=	http://www.ckdhr.com/ckd/:dns
 PATCHFILES+=	qmail-103.patch:dns
 PATCH_DIST_STRIP+=	-p1
-.endif # MAIN_QMAIL_PORT_DNS_PATCH_BARRIER
+.endif
 
 .if !defined(MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER)
 # David Phillips noticed that sendmail's -f option sets a default
 # From: header, and so should qmail's emulation.
 PATCH_SITES+=	http://david.acz.org/software/:sendmail_flagf
 PATCHFILES+=	sendmail-flagf.patch:sendmail_flagf
-.endif # MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER
+.endif
 
 .if !defined(MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER)
 # This patch changes qmail-remote to skip over MX servers that greet with
@@ -44,102 +58,28 @@ PATCHFILES+=	sendmail-flagf.patch:sendmail_flagf
 # Created by Matthias Andree
 PATCH_SITES+=	http://www-dt.e-technik.uni-dortmund.de/~ma/qmail/:rfc2821
 PATCHFILES+=	patch-qmail-1.03-rfc2821.diff:rfc2821
-.endif # MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER
+.endif
+
+.if defined(SLAVE_LDAP)
+PATCH_SITES+=	http://www.nrg4u.com/qmail/:ldap
+PATCHFILES+=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz:ldap
+.elif defined(SLAVE_MYSQL)
+PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
+PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
+.elif defined(SLAVE_SMTP_AUTH_TLS)
+PATCH_SITES+=	http://students.imsa.edu/~ngroot/:smtp_auth_tls
+PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
+.elif defined(SLAVE_TLS)
+PATCH_SITES+=	http://www.esat.kuleuven.ac.be/~vermeule/qmail/:tls
+PATCHFILES+=	tls.patch:tls
+PATCH_DIST_STRIP+=	-p1
+.endif
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,smtp_auth_tls,tls/}
 PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,smtp_auth_tls,tls
 
-MASTER_SITE_QMAIL+=	\
-	http://qmail.geto.net/%SUBDIR%/ \
-	http://qmail.palomine.net/%SUBDIR%/ \
-	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
-	http://qmail.cdsinet.net/%SUBDIR%/ \
-	http://qmail.fidnet.com/%SUBDIR%/ \
-	http://qmail.mscnetworks.com/%SUBDIR%/ \
-	http://qmail.teleglobe.net/%SUBDIR%/ \
-	http://qmail.homegrownhost.net/%SUBDIR%/ \
-	http://qmail.webmast.com/%SUBDIR%/ \
-	http://qmail.glasswings.com.au/%SUBDIR%/ \
-	http://qmail.planetmirror.com/%SUBDIR%/ \
-	http://qmail.404-not-found.net/%SUBDIR%/ \
-	http://qmail.hostlink.com.hk/%SUBDIR%/ \
-	http://qmail.cbn.net.id/%SUBDIR%/ \
-	http://www9.jp.qmail.org/%SUBDIR%/ \
-	http://qmailorg.data-hotel.net/%SUBDIR%/ \
-	http://qmail.manic.co.kr/%SUBDIR%/ \
-	http://qmail.psshee.com/%SUBDIR%/ \
-	http://qmail.soa.co.nz/%SUBDIR%/ \
-	http://d2.nctu.edu.tw/qmail/%SUBDIR%/ \
-	http://mirrors.kangaroot.net/qmail/%SUBDIR%/ \
-	http://qmail.ssi.bg/%SUBDIR%/ \
-	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
-	http://qmail.xinus.net/%SUBDIR%/ \
-	http://qmail.lightwerk.com/%SUBDIR%/ \
-	http://qmail.mirrors.Space.Net/%SUBDIR%/ \
-	http://qmail-mirror.hoermann-rawema.de/%SUBDIR%/ \
-	http://www.ntua.gr/qmail/%SUBDIR%/ \
-	http://www.agria.hu/qmail/%SUBDIR%/ \
-	http://qmail-mirror.naplopok.hu/%SUBDIR%/ \
-	http://qmail.hu/%SUBDIR%/ \
-	http://qmail.rhnet.is/%SUBDIR%/ \
-	http://qmail.netsoc.ucd.ie/%SUBDIR%/ \
-	http://complanet.ath.cx/qmail/%SUBDIR%/ \
-	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
-	http://qmail.basefreak.nl/%SUBDIR%/ \
-	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
-	http://qmail.obeer.com/%SUBDIR%/ \
-	http://qmail.konnekt.org/%SUBDIR%/ \
-	http://qmail.smux.net/%SUBDIR%/ \
-	http://qmail.netvisao.pt/%SUBDIR%/ \
-	http://qmail.ssc.nsu.ru/%SUBDIR%/ \
-	http://qmail.tps.sk/%SUBDIR%/ \
-	http://qmail.ipg.sk/%SUBDIR%/ \
-	http://qmail.imasd.elmundo.es/%SUBDIR%/ \
-	http://qmail.x42.com/%SUBDIR%/ \
-	http://qmail.netrogenic.com/%SUBDIR%/ \
-	http://qmail.omnis.ch/%SUBDIR%/ \
-	http://qmail.asylog.net/%SUBDIR%/ \
-	http://qmail.humourengine.com/%SUBDIR%/ \
-	http://qmail.softflare.com/%SUBDIR%/ \
-	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
-	http://qmail.usp.br/%SUBDIR%/ \
-	http://qmail.matrix.com.br/%SUBDIR%/ \
-	http://madhaus.utcs.utoronto.ca/qmail/%SUBDIR%/ \
-	http://qmail.freezer-burn.org/%SUBDIR%/ \
-	http://qmail.unam.mx/%SUBDIR%/ \
-	http://qmail.ru.ac.za/%SUBDIR%/ \
-	http://www.qmail.org/%SUBDIR%/
-
-.if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER) \
- 	||(defined(WITH_QMAILQUEUE_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)) \
-	||(defined(WITH_BIG_TODO_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)) \
-	||(defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)) \
-	||(defined(WITH_OUTGOINGIP_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER))
-PATCH_SITES+=	${MASTER_SITE_QMAIL}
-.endif
-
-# qmail-* skeleton ports including this port may not want
-# its patches
-# MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER
-# MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER
-# MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
-# MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER
-#
-.if defined(WITH_QMAILQUEUE_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
-PATCHFILES+=	qmailqueue-patch
-.endif # WITH_QMAILQUEUE_PATCH && !MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER
-.if defined(WITH_BIG_TODO_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
-PATCHFILES+=	big-todo.103.patch
-.endif # WITH_BIG_TODO_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER
-.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
-PATCHFILES+=	big-concurrency.patch
-.endif # WITH_BIG_CONCURRENCY_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
-.if defined(WITH_OUTGOINGIP_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER)
-PATCHFILES+=	outgoingip.patch
-.endif # WITH_OUTGOINGIP_PATCH && !MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER
-
-NO_PACKAGE=	djb's packaging license does not allow non-standard\
-		qmail binary distributions
+#NO_PACKAGE=	djb's packaging license does not allow non-standard \
+#		qmail binary distributions
 
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
@@ -147,10 +87,47 @@ NO_PACKAGE=	djb's packaging license does not allow non-standard\
 PREFIX?=		/var/qmail
 QMAIL_VERSION?=		1.03
 
-# Some default values, these can be modified by make command line
-.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
-WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
-.endif # WITH_BIG_CONCURRENCY_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
+.if defined(SLAVE_SMTP_AUTH_TLS) || defined(SLAVE_TLS)
+CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
+.if defined(WITH_TLS_DEBUG)
+CFLAGS+=	-DDEBUG
+.endif
+.endif
+
+.if !defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
+OPTIONS+=	QMAILQUEUE_PATCH "run a QMAILQUEUE program" off
+.endif
+.if !defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
+OPTIONS+=	BIG_TODO_PATCH "enable big_todo qmail patch" off
+.endif
+.if !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+OPTIONS+=	BIG_CONCURRENCY_PATCH "use a concurrency greater than 240" off
+.endif
+.if !defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER)
+OPTIONS+=	OUTGOINGIP_PATCH "set the IP address to send messages" off
+.endif
+.if defined(SLAVE_TLS) || defined(SLAVE_SMTP_AUTH_TLS)
+OPTIONS+=	TLS_DEBUG "enable additional debug information" off
+.elif defined(SLAVE_LDAP)
+OPTIONS+=	TLS "SMTP TLS support" on \
+		LDAP_CLUSTER "cluster support" on \
+		AUTOMAILDIRMAKE "the auto-maildir-make feature" on \
+		AUTOHOMEDIRMAKE "auto-homedir-make feature" on \
+		LDAP_DEBUG "possibility to log and debug imap/pop" off \
+		CLEARTEXTPASSWD "use cleartext passwords" off \
+		DASH_EXT "dash_ext extended mail addresses add" off
+.elif defined(SLAVE_SPAMCONTROL)
+OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
+		QUITASAP	"Close session in case of a filter condition" off \
+		REQBRACKETS	"Require brackets in <addresses>" on \
+		VERP		"VERP addresses for recipients" on \
+		RECIPIENTS550	"Get a 550 reply instead of a deferred bounce" off \
+		LOCALMFREQAUTH	"Require auth when from is @ your domains" off \
+		AUTHCRAM	"Aditional CRAM-MD5 support" off \
+		MOREIPME	"Additional control files moreipme & notipme" off \
+		BIGTODO		"Bruce Guenter's BigToDo patch" off
+.endif
+OPTIONS+=	RCDLINK "create rc.d/qmail.sh" on
 
 ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
@@ -169,16 +146,55 @@ MAN8+=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
 	qmail-tcpto.8 qmail-pop3d.8 qmail-popup.8 qmail-qmqpc.8 qmail-qmqpd.8 \
 	qmail-qmtpd.8 qmail-smtpd.8 qmail-command.8
 
-PLIST_SUB=	DOCDIR=${DOCDIR}
+.if defined(SLAVE_SPAMCONTROL)
+EXTRA_MAN8=	qmail-badloadertypes.8 qmail-badmimetypes.8 qmail-recipients.8
+ALL_TARGET+=	${EXTRA_MAN8}
+MAN8+=		${EXTRA_MAN8}
+.endif
+
+.if defined(SLAVE_SPAMCONTROL) || defined(SLAVE_SMTP_AUTH_TLS)
+PLIST_SUB+=	README_AUTH=""
+.else
+PLIST_SUB+=	README_AUTH="@comment "
+.endif
+
+.if defined(SLAVE_LDAP)
+PKGMESSAGE_SUFFIX=	-ldap
+PLIST_SUB+=	LDAP=""
+.else
+PLIST_SUB+=	LDAP="@comment "
+.endif
+
+.if defined(SLAVE_SMTP_AUTH_TLS)
+PKGMESSAGE_SUFFIX=	-smtp_auth+tls
+PLIST_SUB+=	SMTP_AUTH_TLS=""
+.else
+PLIST_SUB+=	SMTP_AUTH_TLS="@comment "
+.endif
+
+.if defined(SLAVE_SPAMCONTROL)
+PLIST_SUB+=	SPAMCONTROL=""
+.else
+PLIST_SUB+=	SPAMCONTROL="@comment "
+.endif
+
+.if defined(SLAVE_TLS)
+PKGMESSAGE_SUFFIX=	-tls
+PLIST_SUB+=	TLS=""
+.else
+PLIST_SUB+=	TLS="@comment "
+.endif
+
+SUB_FILES+=	pkg-message${PKGMESSAGE_SUFFIX} mailer.conf.sample \
+		bootfiles.sed enable-qmail
+PKGMESSAGE?=	${WRKDIR}/pkg-message${PKGMESSAGE_SUFFIX}
 
 DOCFILES+=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
 		${WRKSRC}/THOUGHTS ${FILESDIR}/PORT_NOTES \
 		${FILESDIR}/PORT_NOTES_FreeBSD_40-RELEASE \
-		${WRKDIR}/mailer.conf.sample
-
-# The following docfiles are normally installed with qmail-hier
-DOCFILES+=	${WRKSRC}/FAQ ${WRKSRC}/UPGRADE ${WRKSRC}/SENDMAIL \
+		${WRKDIR}/mailer.conf.sample \
+		${WRKSRC}/FAQ ${WRKSRC}/UPGRADE ${WRKSRC}/SENDMAIL \
 		${WRKSRC}/INSTALL ${WRKSRC}/INSTALL.alias \
 		${WRKSRC}/INSTALL.ctl ${WRKSRC}/INSTALL.ids \
 		${WRKSRC}/INSTALL.maildir ${WRKSRC}/INSTALL.mbox \
@@ -190,109 +206,223 @@ DOCFILES+=	${WRKSRC}/FAQ ${WRKSRC}/UPGRADE ${WRKSRC}/SENDMAIL \
 		${WRKSRC}/PIC.nullclient ${WRKSRC}/PIC.relaybad \
 		${WRKSRC}/PIC.relaygood ${WRKSRC}/PIC.rem2local
 
-# More files normally installed with from hier.c
+.if defined(SLAVE_LDAP)
+DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
+		${WRKSRC}/POPBEFORESMTP ${WRKSRC}/QLDAPTODO \
+		${WRKSRC}/QLDAPPICTURE
+.elif defined(SLAVE_SMTP_AUTH_TLS)
+DOCFILES+=	${WRKDIR}/SMTP_AUTH+TLS.readme \
+		${WRKSRC}/README.auth
+.elif defined(SLAVE_TLS)
+DOCFILES+=	${WRKDIR}/TLS.readme
+.elif defined(SLAVE_SPAMCONTROL)
+DOCFILES+=	${WRKDIR}/doc/FILES.spamcontrol ${WRKDIR}/doc/HISTORY.spamcontrol \
+		${WRKDIR}/doc/INSTALL.spamcontrol ${WRKDIR}/doc/LICENSE.spamcontrol \
+		${WRKDIR}/doc/LOGGING.spamcontrol ${WRKDIR}/doc/Makefile.djbdns \
+		${WRKDIR}/doc/README.auth ${WRKDIR}/doc/README.bigtodo \
+		${WRKDIR}/doc/README.bouncemaxbytes ${WRKDIR}/doc/README.djbdns \
+		${WRKDIR}/doc/README.doublebouncetrim ${WRKDIR}/doc/README.moreipme \
+		${WRKDIR}/doc/README.qmailqueue ${WRKDIR}/doc/README.recipients \
+		${WRKDIR}/doc/README.spamcontrol ${WRKDIR}/doc/README.wildmat \
+		${WRKDIR}/doc/README_spamcontrol.html \
+		${WRKDIR}/doc/RELEASE_22.spamcontrol \
+		${WRKDIR}/doc/RELEASE_23.spamcontrol \
+		${WRKDIR}/doc/SMTPREPLY.spamcontrol ${WRKDIR}/doc/TESTING.spamcontrol \
+		${WRKDIR}/doc/TODO.spamcontrol ${WRKDIR}/doc/badloadertypes \
+		${WRKDIR}/doc/badmailfrom ${WRKDIR}/doc/badmimetypes \
+		${WRKDIR}/doc/badrcptto ${WRKDIR}/doc/conf-spamcontrol \
+		${WRKDIR}/doc/install_spamcontrol.sh ${WRKDIR}/doc/tarpitcount
+SCRIPTS+=	qmail-alias2recipients qmail-pwd2recipients \
+		qmail-users2recipients qmail-vpopmail2recipients
+.endif
+
 BOOTFILES=	home home+df proc proc+df binm1 binm1+df \
-		binm2 binm2+df binm3 binm3+df
-
-# Supplied by Stuart Henderson <stuart@internationalschool.co.uk>
-BOOTFILES+=	maildir
-
-SCRIPTS+=	enable-qmail
+		binm2 binm2+df binm3 binm3+df maildir
 
 CONFIGUREPROGS=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
 		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
 CONFIGUREFILES=	${WRKSRC}/config ${WRKSRC}/config-fast
 
-.if (${PREFIX} == ${LOCALBASE})
-DOCDIR=	share/doc/qmail
-.else
-DOCDIR=	doc
+.if (${PREFIX} != ${LOCALBASE})
+DOCSDIR=	${PREFIX}/doc
 .endif
 
 NO_MTREE=	yes
 USE_REINPLACE=	yes
 
-.if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>
+
+.if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER) \
+ 	||(defined(WITH_QMAILQUEUE_PATCH)     && !defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)) \
+	||(defined(WITH_BIG_TODO_PATCH)       && !defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)) \
+	||(defined(WITH_BIG_CONCURRENCY_PATCH)&& !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)) \
+	||(defined(WITH_OUTGOINGIP_PATCH)     && !defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER))
+PATCH_SITES+=	${MASTER_SITE_QMAIL}
 .endif
 
-pre-fetch: pre-pre-fetch slaveport-pre-fetch post-pre-fetch
+.if defined(WITH_QMAILQUEUE_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
+PATCHFILES+=	qmailqueue-patch
+.endif
+.if defined(WITH_BIG_TODO_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
+PATCHFILES+=	big-todo.103.patch
+.endif
+.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+PATCHFILES+=	big-concurrency.patch
+.endif
+.if defined(WITH_OUTGOINGIP_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER)
+PATCHFILES+=	outgoingip.patch
+.endif
 
-pre-pre-fetch:
-.if !defined(MAIN_QMAIL_PORT_BUILD_WITH_OPTIONS_ADVERTISE_BARRIER)
+# Some default values, these can be modified by make command line
+.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
+.endif
+
+.if defined(WITH_RCDLINK)
+PLIST_SUB+=	RCDLINK=""
+.else
+PLIST_SUB+=	RCDLINK="@comment "
+.endif
+
+# Fill SELECTED_OPTIONS with options to write conf-spamcontrol
+.if defined(SLAVE_SPAMCONTROL)
+.if defined(WITH_RELAYMAILFROM)
+SELECTED_OPTIONS+=	relaymailfrom=yes
+.else
+SELECTED_OPTIONS+=	relaymailfrom=no
+.endif
+
+.if defined(WITH_QUITASAP)
+SELECTED_OPTIONS+=	quitasap=yes
+.else
+SELECTED_OPTIONS+=	quitasap=no
+.endif
+
+.if !defined(WITHOUT_REQBRACKETS)
+SELECTED_OPTIONS+=	reqbrackets=yes
+.else
+SELECTED_OPTIONS+=	reqbrackets=no
+.endif
+
+.if !defined(WITHOUT_VERP)
+SELECTED_OPTIONS+=	verp=yes
+.else
+SELECTED_OPTIONS+=	verp=no
+.endif
+
+.if defined(WITH_RECIPIENTS550)
+SELECTED_OPTIONS+=	recipients550=yes
+.else
+SELECTED_OPTIONS+=	recipients550=no
+.endif
+
+.if defined(WITH_LOCALMFREQAUTH)
+SELECTED_OPTIONS+=	localmfreqauth=yes
+.else
+SELECTED_OPTIONS+=	localmfreqauth=no
+.endif
+
+.if defined(WITH_AUTHCRAM)
+SELECTED_OPTIONS+=	authcram=yes
+.else
+SELECTED_OPTIONS+=	authcram=no
+.endif
+
+.if defined(WITH_MOREIPME)
+SELECTED_OPTIONS+=	moreipme=yes
+.else
+SELECTED_OPTIONS+=	moreipme=no
+.endif
+
+.if defined(WITH_BIGTODO)
+SELECTED_OPTIONS+=	bigtodo=yes
+.else
+SELECTED_OPTIONS+=	bigtodo=no
+.endif
+.endif
+
+pre-everything::
+.if !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
-.if !defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
-	@${ECHO_MSG} "WITH_QMAILQUEUE_PATCH=yes	enable patch to qmail to run a QMAILQUEUE"
-	@${ECHO_MSG} "				program instead of bin/qmail-queue"
-.endif # MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER
-.if !defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
-	@${ECHO_MSG} "WITH_BIG_TODO_PATCH=yes		enable big_todo qmail patch"
-.endif # MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER
-.if !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
-	@${ECHO_MSG} "WITH_BIG_CONCURRENCY_PATCH=yes	enable patch to qmail to"
-	@${ECHO_MSG} "				use a concurrency greater than 240"
 	@${ECHO_MSG} "WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT=NUMBER"
 	@${ECHO_MSG} "				(default NUMBER=${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT})"
 	@${ECHO_MSG} "				set this to a value reasonable for"
 	@${ECHO_MSG} "				your system if you use the patch"
-.endif # MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
-.if !defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER)
-	@${ECHO_MSG} "WITH_OUTGOINGIP_PATCH=yes	enable patch to qmail to"
-	@${ECHO_MSG} "				allow setting the IP address"
-	@${ECHO_MSG} "				used by qmail when sending"
-	@${ECHO_MSG} "				outgoing messages"
-.endif # MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER
-.if !defined(MAIN_QMAIL_PORT_WITH_PRESERVE_CONFIG_FILES_BARRIER)
-	@${ECHO_MSG} "WITH_PRESERVE_CONFIG_FILES=yes	do not run automatic config"
-	@${ECHO_MSG} "				to preserve your config files"
-.endif # MAIN_QMAIL_PORT_WITH_PRESERVE_CONFIG_FILES_BARRIER
-	@${ECHO_MSG} "#"
-.endif # MAIN_QMAIL_PORT_BUILD_WITH_OPTIONS_ADVERTISE_BARRIER
-
-# Yet anther ugly hack (used by qmail-* skeleton ports)
-# Permits them to define local targets without braking everything
-# The ugly target name hopefully will avoid name clashing
-.if !target(slaveport-pre-fetch)
-slaveport-pre-fetch:
-.endif
-
-post-pre-fetch:
-.if !defined(MAIN_QMAIL_PORT_BUILD_WITH_OPTIONS_ADVERTISE_BARRIER)
 	@${ECHO_MSG} ""
 .endif
 
-post-patch: slaveport-post-patch post-post-patch
-
-# Yet anther ugly hack (used by qmail-* skeleton ports)
-# Permits them to define local targets without braking everything
-# The ugly target name hopefully will avoid name clashing
-.if !target(slaveport-post-patch)
-slaveport-post-patch:
+post-extract:
+.if defined(SLAVE_SPAMCONTROL)
+	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${SPAMCONTROL_DIST}
 .endif
 
-post-post-patch:
-	@${SED} 's!%%PREFIX%%!${PREFIX}!g; \
-	         s!%%ECHO_CMD%%!${ECHO_CMD}!g' \
-	         ${FILESDIR}/bootfiles.sed.in > \
-	         ${WRKDIR}/bootfiles.sed
-.for i in ${BOOTFILES}
-	@if  [ -f ${WRKSRC}/${i}.sh ] ; \
-	then \
-		${SED} -f ${WRKDIR}/bootfiles.sed ${WRKSRC}/$i.sh > ${WRKDIR}/${i} ; \
-	elif [ -f ${FILESDIR}/${i} ] ; \
-	then \
-		${SED} -f ${WRKDIR}/bootfiles.sed ${FILESDIR}/$i > ${WRKDIR}/${i} ; \
-	fi
+post-patch:
+.if defined(SLAVE_MYSQL)
+	@${REINPLACE_CMD} 's|/opt/mysql|${LOCALBASE}|' \
+		${WRKSRC}/Makefile
+.elif defined(SLAVE_SMTP_AUTH_TLS)
+	@${HEAD} -6 ${DISTDIR}/qmail-1.03-starttls-smtp-auth.patch \
+		| ${TAIL} -5 \
+		> ${WRKDIR}/SMTP_AUTH+TLS.readme
+	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
+.elif defined(SLAVE_SPAMCONTROL)
+	@${ECHO_CMD} ${WRKDIR} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} "# Generated by qmail-spamcontrol FreeBSD port" \
+		> ${WRKSRC}/conf-spamcontrol
+.for option in ${SELECTED_OPTIONS}
+	@${ECHO_CMD} ${option} >> ${WRKSRC}/conf-spamcontrol
 .endfor
-	@${MKDIR} ${WRKDIR}/scripts
-	@${SED} "s!%%PREFIX%%!${PREFIX}!g; s!%%DOCDIR%%!${DOCDIR}!g" \
-		${FILESDIR}/enable-qmail.in > \
-		${WRKDIR}/scripts/enable-qmail
-	@${SED} s!/var/qmail/!${PREFIX}/!g ${FILESDIR}/mailer.conf.sample > \
-		${WRKDIR}/mailer.conf.sample
-	@${REINPLACE_CMD} "s!/var/qmail!${PREFIX}!;s!/usr/local/!${LOCALBASE}/!" ${WRKSRC}/Makefile
+	@cd ${WRKSRC} && ./install_spamcontrol.sh
+.elif defined(SLAVE_TLS)
+	@${HEAD} -74 ${DISTDIR}/tls.patch > ${WRKDIR}/TLS.readme
+	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
+		${WRKSRC}/Makefile
+.elif defined(SLAVE_LDAP)
+	@${REINPLACE_CMD} "s|LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|; \
+			   s|LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" \
+		${WRKSRC}/Makefile
+.if !defined(WITHOUT_TLS)
+	@${REINPLACE_CMD} "s|#TLSON=|TLSON=|; \
+			   s|#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|; \
+			   s|#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|; \
+			   s|#OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" \
+		${WRKSRC}/Makefile
+.endif
+.if !defined(WITHOUT_LDAP_CLUSTER)
+	@${REINPLACE_CMD} "s|#LDAPFLAGS=-DQLDAP_CLUSTER\s+-DEXTERNAL_TODO|LDAPFLAGS\+=-DQLDAP_CLUSTER -DEXTERNAL_TODO#|" \
+		${WRKSRC}/Makefile
+.endif
+.if !defined(WITHOUT_AUTOMAILDIRMAKE)
+	@${REINPLACE_CMD} "s|#MDIRMAKE=-DAUTOMAILDIRMAKE|MDIRMAKE=-DAUTOMAILDIRMAKE|" \
+		${WRKSRC}/Makefile
+.endif
+.if !defined(WITHOUT_AUTOHOMEDIRMAKE)
+	@${REINPLACE_CMD} "s|#HDIRMAKE=-DAUTOHOMEDIRMAKE|HDIRMAKE=-DAUTOHOMEDIRMAKE|" \
+		${WRKSRC}/Makefile
+.endif
+.if defined(WITH_LDAP_DEBUG)
+	@${REINPLACE_CMD} "s|#DEBUG=-DDEBUG|DEBUG=-DDEBUG|" \
+		${WRKSRC}/Makefile
+.endif
+.if defined(WITH_CLEARTEXTPASSWD)
+	@${REINPLACE_CMD} "s|^#\s*-DCLEARTEXTPASSWD.*$$|LDAPFLAGS\+=-DCLEARTEXTPASSWD|" \
+		${WRKSRC}/Makefile
+.endif
+.if defined(WITH_DASH_EXT)
+	@${REINPLACE_CMD} "s|^# -DDASH_EXT.*$$|LDAPFLAGS\+=-DDASH_EXT|" \
+		${WRKSRC}/Makefile
+.endif
+.endif
+	@${REINPLACE_CMD} 's!/var/qmail!${PREFIX}!; \
+			   s!/usr/local/!${LOCALBASE}/!' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's!nofiles!qnofiles!g' \
+		${WRKSRC}/conf-groups
+	@${REINPLACE_CMD} '/"man"/d; /man\/man/d; /man\/cat/d; \
+			   /"doc"/d; /"boot","/d' \
+		${WRKSRC}/hier.c
 
 # If you want to change the qmail users, they must be changed in both
 # work/*/conf-users and pkg/INSTALL.
@@ -305,17 +435,23 @@ do-configure:
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
 	&& !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER) \
 	&& defined(WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT)
-	@if [ ${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT} -gt 0 ]; \
-	then \
+	@if [ ${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT} -gt 0 ]; then \
 		${ECHO_CMD} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
 			> ${WRKSRC}/conf-spawn ; \
 	fi
-.endif # MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
+.endif
 
 do-install:
+.for i in ${BOOTFILES}
+	@if  [ -f ${WRKSRC}/${i}.sh ] ; then \
+		${SED} -f ${WRKDIR}/bootfiles.sed ${WRKSRC}/$i.sh > ${WRKDIR}/${i} ; \
+	elif [ -f ${FILESDIR}/${i} ] ; then \
+		${SED} -f ${WRKDIR}/bootfiles.sed ${FILESDIR}/$i > ${WRKDIR}/${i} ; \
+	fi
+.endfor
 	@# Check again, just in case (ideally should error if not found)
 	@PKG_PREFIX=${PREFIX} ${PKGINSTALL}
-	@${MKDIR} ${PREFIX}/${DOCDIR} ${PREFIX}/configure
+	@${MKDIR} ${DOCSDIR} ${PREFIX}/configure
 	@cd ${WRKSRC} ; ./install
 	${INSTALL_PROGRAM} ${CONFIGUREPROGS} ${PREFIX}/configure
 	${INSTALL_SCRIPT} ${CONFIGUREFILES} ${PREFIX}/configure
@@ -329,31 +465,69 @@ do-install:
 .endfor
 .endfor
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${DOCFILES} ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
 .endif
+	@${MKDIR} ${PREFIX}/scripts
+	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/scripts
+	${INSTALL_SCRIPT} ${WRKDIR}/enable-qmail ${PREFIX}/scripts
+.for script in ${SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKDIR}/scripts/${script} ${PREFIX}/scripts
+.endfor
 .if defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "FreeBSD Binary package qmail installation" \
-		> ${PREFIX}/${DOCDIR}/SYSDEPS
+		> ${DOCSDIR}/SYSDEPS
 .else
 	@cd ${WRKSRC} && ${CAT} `${CAT} SYSDEPS` \
-		> ${PREFIX}/${DOCDIR}/SYSDEPS
+		> ${DOCSDIR}/SYSDEPS
 .endif
 .for i in root postmaster mailer-daemon
 	@${TOUCH} ${PREFIX}/alias/.qmail-${i}
 .endfor
 	@# This is not part of qmail proper, hence the 2nd class citizenship
-.if !defined(WITH_PRESERVE_CONFIG_FILES)
-	@cd ${PREFIX}/configure ; ./config
-.endif
-	@${MKDIR} ${PREFIX}/scripts
-	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/scripts
-.for script in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKDIR}/scripts/${script} ${PREFIX}/scripts
-.endfor
+	@if [ ! -e ${PREFIX}/control/me ]; then \
+		cd ${PREFIX}/configure ; ./config ; \
+	fi
+.if !defined(WITHOUT_RCDLINK)
 	@${MKDIR} ${LOCALBASE}/etc/rc.d
 	@${LN} -sf ${PREFIX}/rc ${LOCALBASE}/etc/rc.d/qmail.sh
+.endif
 	@${ECHO_CMD}
-	@${SED} s!/var/qmail!${PREFIX}!g ${PKGMESSAGE} | ${FMT}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
+
+certificate:
+.if defined(SLAVE_TLS) || defined(SLAVE_SMTP_AUTH_TLS) || defined(SLAVE_LDAP)
+	@if [ -f ${OPENSSLDIR}/openssl.cnf ]; then \
+		if [ ! -d ${WRKDIR} ]; then \
+			${MKDIR} ${WRKDIR} ; \
+		fi ; \
+		${OPENSSLBASE}/bin/openssl req -new -x509 -nodes \
+			-out ${WRKDIR}/servercert.pem -days 366 \
+			-keyout ${WRKDIR}/servercert.pem ; \
+		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/servercert.pem ${PREFIX}/control/servercert.pem ; \
+		${ECHO_MSG} "===> Do not forget to do 'make clean' to clean up temporary files" ; \
+	else \
+		${ECHO_MSG} "===> You must create the file ${OPENSSLDIR}/openssl.cnf first." ; \
+	fi
+.endif
+
+certificate-req:
+.if defined(SLAVE_TLS) || defined(SLAVE_SMTP_AUTH_TLS) || defined(SLAVE_LDAP)
+	@if [ -f ${OPENSSLDIR}/openssl.cnf ]; then \
+		if [ ! -d ${WRKDIR} ]; then \
+			${MKDIR} ${WRKDIR} ; \
+		fi ; \
+		${OPENSSLBASE}/bin/openssl req -new -nodes \
+			-out ${WRKDIR}/req.pem \
+			-keyout ${WRKDIR}/servercert.pem ; \
+		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/servercert.pem ${PREFIX}/control/servercert.pem ; \
+		${ECHO_MSG} ; \
+		${ECHO_MSG} "===> Do not forget to do 'make clean' to clean up temporary files" ; \
+		${ECHO_MSG} "===> Send ${WRKDIR}/req.pem to your CA to obtain signed_req.pem, and do:" ; \
+		${ECHO_MSG} "===> cat signed_req.pem >> ${PREFIX}/control/servercert.pem" ; \
+	else \
+		${ECHO_MSG} "===> You must create the file ${OPENSSLDIR}/openssl.cnf first." ; \
+	fi
+.endif
 
 .include <bsd.port.post.mk>

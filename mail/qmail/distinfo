@@ -22,3 +22,5 @@ MD5 (sendmail-flagf.patch) = 4e1f2d8315e7e2a5482798c9d19fac4d
 SIZE (sendmail-flagf.patch) = 863
 MD5 (patch-qmail-1.03-rfc2821.diff) = 1b85f233ab5b9d7ec1a8da1188bf10ef
 SIZE (patch-qmail-1.03-rfc2821.diff) = 2564
+MD5 (spamcontrol-2313_tgz.bin) = a8ad350699dfd6110c3e8a8784f55ad4
+SIZE (spamcontrol-2313_tgz.bin) = 116888

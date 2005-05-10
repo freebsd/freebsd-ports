@@ -1,6 +1,11 @@
+@comment $FreeBSD$
+%%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmail.sh
+%%LDAP%%bin/auth_imap
+%%LDAP%%bin/auth_pop
 bin/bouncesaying
 bin/condredirect
 bin/datemail
+%%LDAP%%bin/digest
 bin/elq
 bin/except
 bin/forward
@@ -8,14 +13,20 @@ bin/maildir2mbox
 bin/maildirmake
 bin/maildirwatch
 bin/mailsubj
+%%LDAP%%bin/pbsadd
+%%LDAP%%bin/pbscheck
+%%LDAP%%bin/pbsdbd
 bin/pinq
 bin/predate
 bin/preline
 bin/qail
 bin/qbiff
+%%SPAMCONTROL%%bin/qmail-badloadertypes
+%%SPAMCONTROL%%bin/qmail-badmimetypes
 bin/qmail-clean
 bin/qmail-getpw
 bin/qmail-inject
+%%LDAP%%bin/qmail-ldaplookup
 bin/qmail-local
 bin/qmail-lspawn
 bin/qmail-newmrh
@@ -29,7 +40,10 @@ bin/qmail-qmtpd
 bin/qmail-qread
 bin/qmail-qstat
 bin/qmail-queue
+%%LDAP%%bin/qmail-quotawarn
+%%SPAMCONTROL%%bin/qmail-recipients
 bin/qmail-remote
+%%LDAP%%bin/qmail-reply
 bin/qmail-rspawn
 bin/qmail-send
 bin/qmail-showctl
@@ -64,45 +78,85 @@ configure/install
 configure/ipmeprint
 scripts/enable-qmail
 scripts/mkaliasdir
-%%PORTDOCS%%%%DOCDIR%%/BLURB
-%%PORTDOCS%%%%DOCDIR%%/BLURB2
-%%PORTDOCS%%%%DOCDIR%%/BLURB3
-%%PORTDOCS%%%%DOCDIR%%/BLURB4
-%%PORTDOCS%%%%DOCDIR%%/FAQ
-%%PORTDOCS%%%%DOCDIR%%/INSTALL
-%%PORTDOCS%%%%DOCDIR%%/INSTALL.alias
-%%PORTDOCS%%%%DOCDIR%%/INSTALL.ctl
-%%PORTDOCS%%%%DOCDIR%%/INSTALL.ids
-%%PORTDOCS%%%%DOCDIR%%/INSTALL.maildir
-%%PORTDOCS%%%%DOCDIR%%/INSTALL.mbox
-%%PORTDOCS%%%%DOCDIR%%/INSTALL.vsm
-%%PORTDOCS%%%%DOCDIR%%/INTERNALS
-%%PORTDOCS%%%%DOCDIR%%/PIC.local2alias
-%%PORTDOCS%%%%DOCDIR%%/PIC.local2ext
-%%PORTDOCS%%%%DOCDIR%%/PIC.local2local
-%%PORTDOCS%%%%DOCDIR%%/PIC.local2rem
-%%PORTDOCS%%%%DOCDIR%%/PIC.local2virt
-%%PORTDOCS%%%%DOCDIR%%/PIC.nullclient
-%%PORTDOCS%%%%DOCDIR%%/PIC.relaybad
-%%PORTDOCS%%%%DOCDIR%%/PIC.relaygood
-%%PORTDOCS%%%%DOCDIR%%/PIC.rem2local
-%%PORTDOCS%%%%DOCDIR%%/PORT_NOTES
-%%PORTDOCS%%%%DOCDIR%%/PORT_NOTES_FreeBSD_40-RELEASE
-%%PORTDOCS%%%%DOCDIR%%/REMOVE.sendmail
-%%PORTDOCS%%%%DOCDIR%%/REMOVE.binmail
-%%PORTDOCS%%%%DOCDIR%%/SECURITY
-%%PORTDOCS%%%%DOCDIR%%/SENDMAIL
-%%PORTDOCS%%%%DOCDIR%%/SYSDEPS
-%%PORTDOCS%%%%DOCDIR%%/TEST.deliver
-%%PORTDOCS%%%%DOCDIR%%/TEST.receive
-%%PORTDOCS%%%%DOCDIR%%/THOUGHTS
-%%PORTDOCS%%%%DOCDIR%%/UPGRADE
-%%PORTDOCS%%%%DOCDIR%%/mailer.conf.sample
-%%PORTDOCS%%@dirrm %%DOCDIR%%
-@dirrm scripts
-@dirrm configure
-@dirrm boot
+%%SPAMCONTROL%%scripts/qmail-alias2recipients
+%%SPAMCONTROL%%scripts/qmail-pwd2recipients
+%%SPAMCONTROL%%scripts/qmail-users2recipients
+%%SPAMCONTROL%%scripts/qmail-vpopmail2recipients
+%%PORTDOCS%%%%DOCSDIR%%/BLURB
+%%PORTDOCS%%%%DOCSDIR%%/BLURB2
+%%PORTDOCS%%%%DOCSDIR%%/BLURB3
+%%PORTDOCS%%%%DOCSDIR%%/BLURB4
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/FILES.spamcontrol
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/HISTORY.spamcontrol
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.alias
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.ctl
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.ids
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.maildir
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.mbox
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/INSTALL.spamcontrol
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.vsm
+%%PORTDOCS%%%%DOCSDIR%%/INTERNALS
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/LICENSE.spamcontrol
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/LOGGING.spamcontrol
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/Makefile.djbdns
+%%PORTDOCS%%%%DOCSDIR%%/PIC.local2alias
+%%PORTDOCS%%%%DOCSDIR%%/PIC.local2ext
+%%PORTDOCS%%%%DOCSDIR%%/PIC.local2local
+%%PORTDOCS%%%%DOCSDIR%%/PIC.local2rem
+%%PORTDOCS%%%%DOCSDIR%%/PIC.local2virt
+%%PORTDOCS%%%%DOCSDIR%%/PIC.nullclient
+%%PORTDOCS%%%%DOCSDIR%%/PIC.relaybad
+%%PORTDOCS%%%%DOCSDIR%%/PIC.relaygood
+%%PORTDOCS%%%%DOCSDIR%%/PIC.rem2local
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/POPBEFORESMTP
+%%PORTDOCS%%%%DOCSDIR%%/PORT_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/PORT_NOTES_FreeBSD_40-RELEASE
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPINSTALL
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPNEWS
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPPICTURE
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPTODO
+%%README_AUTH%%%%PORTDOCS%%%%DOCSDIR%%/README.auth
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.bigtodo
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.bouncemaxbytes
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.djbdns
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.doublebouncetrim
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.moreipme
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.qmailqueue
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.recipients
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.spamcontrol
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README.wildmat
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/README_spamcontrol.html
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/RELEASE_22.spamcontrol
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/RELEASE_23.spamcontrol
+%%PORTDOCS%%%%DOCSDIR%%/REMOVE.binmail
+%%PORTDOCS%%%%DOCSDIR%%/REMOVE.sendmail
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/SENDMAIL
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/SMTPREPLY.spamcontrol
+%%SMTP_AUTH_TLS%%%%PORTDOCS%%%%DOCSDIR%%/SMTP_AUTH+TLS.readme
+%%PORTDOCS%%%%DOCSDIR%%/SYSDEPS
+%%PORTDOCS%%%%DOCSDIR%%/TEST.deliver
+%%PORTDOCS%%%%DOCSDIR%%/TEST.receive
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/TESTING.spamcontrol
+%%PORTDOCS%%%%DOCSDIR%%/THOUGHTS
+%%TLS%%%%PORTDOCS%%%%DOCSDIR%%/TLS.readme
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/TODO.spamcontrol
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/badloadertypes
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/badmailfrom
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/badmimetypes
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/badrcptto
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/conf-spamcontrol
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/install_spamcontrol.sh
+%%PORTDOCS%%%%DOCSDIR%%/mailer.conf.sample
+%%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/tarpitcount
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm bin
+@dirrm boot
+@dirrm configure
+@dirrm scripts
 @unexec echo "1) If you are permanently removing qmail, you should also ``rm -Rf ${PKG_PREFIX}/alias ${PKG_PREFIX}/control ${PKG_PREFIX}/queue ${PKG_PREFIX}/users'' and remove the qmail users/groups." | /usr/bin/fmt
 @unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
 @unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. You can do it just executing 'echo sendmail_enable=\"YES\" >> /etc/rc.conf" | /usr/bin/fmt

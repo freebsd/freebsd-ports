@@ -1,11 +1,11 @@
-	ATTENTIONATTENTION:
+	ATTENTION:
 
-Please make sure that you read /var/qmail/doc/PORT_NOTES.
+Please make sure that you read %%PREFIX%%/doc/PORT_NOTES.
 It contains important information about testing and configuring
 qmail, and finally replacing sendmail with qmail.
 
-You should also add /var/qmail/man to your MANPATH (see manpath(1)
+You should also add %%PREFIX%%/man to your MANPATH (see manpath(1)
 or login.conf(5)).
 
 You can enable qmail as your default mailer executing:
-> /var/qmail/scripts/enable-qmail
+> %%PREFIX%%/scripts/enable-qmail

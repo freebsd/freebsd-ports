@@ -1,4 +1,7 @@
 #!/bin/csh -f
+#
+# $FreeBSD$
+#
 
 # Author : Marcos Tischer Vallim
 # E-Mail : tischer@gmail.com
@@ -38,7 +41,9 @@ set doguid  = 0;
 if ($#argv) then
 	if ($argv[1] == "POST-INSTALL") then
 		${PKG_PREFIX}/configure/install x;
-		cd ${PKG_PREFIX}/configure && ./config;
+		if ( ! `filetest -e ${PKG_PREFIX}/control/me` ) then
+			cd ${PKG_PREFIX}/configure && ./config;
+		endif
 
 		$touch "${PKG_PREFIX}/alias/.{qmail-postmaster,qmail-root,qmail-mailer-daemon}";
 

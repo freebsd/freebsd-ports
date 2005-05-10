@@ -1,24 +1,24 @@
-	ATTENTIONATTENTION:
+	ATTENTION:
 
-Please make sure that you read /var/qmail/doc/PORT_NOTES.
+Please make sure that you read %%PREFIX%%/doc/PORT_NOTES.
 It contains important information about testing and configuring
 qmail, and finally replacing sendmail with qmail.
 
-You should also add /var/qmail/man to your MANPATH (see manpath(1)
+You should also add %%PREFIX%%/man to your MANPATH (see manpath(1)
 or login.conf(5)).
 
-Do not forget to read /var/qmail/doc/QLDAPINSTALL. After all,
-this is NOT our old stock qmail. And, /var/qmail/doc/ANTISPAM
+Do not forget to read %%PREFIX%%/doc/QLDAPINSTALL. After all,
+this is NOT our old stock qmail. And, %%PREFIX%%/doc/ANTISPAM
 for some antispam control measures.
 
 You can enable qmail as your default mailer executing:
-> /var/qmail/scripts/enable-qmail
+> %%PREFIX%%/scripts/enable-qmail
 
 =====><=====
 
 If you've built this port with TLS support (WITH_TLS=yes)
 
-==> You will need to provide a working certificate in /var/qmail/control/cert.pem :
+==> You will need to provide a working certificate in %%PREFIX%%/control/cert.pem :
 
 # makes a self-signed certificate
 3) do "make certificate"
