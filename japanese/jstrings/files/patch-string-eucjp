@@ -1,0 +1,8 @@
+--- eucjp.c.orig	Thu Aug  5 14:04:36 2004
++++ eucjp.c	Thu Aug  5 14:04:47 2004
+@@ -1,4 +1,5 @@
+ #include	<stdlib.h>
++#include	<string.h>
+ #include	"eucjp.h"
+ #include	"jstrings.h"
+ #include	"ascii.h"
