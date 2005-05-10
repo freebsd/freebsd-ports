@@ -16,8 +16,8 @@ etc/sarg/languages/Czech
 etc/sarg/languages/Dutch
 etc/sarg/languages/English
 etc/sarg/languages/French
-etc/sarg/languages/Greek
 etc/sarg/languages/German
+etc/sarg/languages/Greek
 etc/sarg/languages/Hungarian
 etc/sarg/languages/Indonesian
 etc/sarg/languages/Italian
@@ -29,6 +29,7 @@ etc/sarg/languages/Romanian
 etc/sarg/languages/Russian_koi8
 etc/sarg/languages/Russian_windows1251
 etc/sarg/languages/Serbian
+etc/sarg/languages/Slovak
 etc/sarg/languages/Spanish
 etc/sarg/languages/Turkish
 etc/sarg/languages/Ukrainian_windows1251
