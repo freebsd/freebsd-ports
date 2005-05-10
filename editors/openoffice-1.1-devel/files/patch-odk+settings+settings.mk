@@ -1,3 +1,4 @@
+http://www.openoffice.org/issues/show_bug.cgi?id=40190
 http://www.openoffice.org/issues/show_bug.cgi?id=24142
 
 --- odk/settings/settings.mk.orig	Sun Jan 25 18:41:02 2004

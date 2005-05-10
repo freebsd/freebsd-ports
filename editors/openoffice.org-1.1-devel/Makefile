@@ -23,7 +23,7 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
-SNAPDATE=	20050413
+SNAPDATE=	20050503
 NO_LATEST_LINK=	yes
 
 USE_GNOME=	gtk20
@@ -82,7 +82,7 @@ L10NHELPS=	helpcontent_07_unix.tgz \
 
 CODELINE=		645
 RELEASE_NR=		1.1.4
-MILESTONE=		53
+MILESTONE=		54
 INSTALLATION_BASEDIR=   OpenOffice.org${RELEASE_NR}
 EXECBASE=               openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
@@ -126,7 +126,7 @@ LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	259
+#USE_AUTOCONF_VER=	259
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
