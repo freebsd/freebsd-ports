@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	chinsan@mail2000.com.tw
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	SCIM add-on to input various symbols with on-screen pad
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+USE_GNOME=	intlhack
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
