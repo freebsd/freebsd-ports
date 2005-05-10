@@ -11,6 +11,7 @@ include/yaz/charneg.h
 include/yaz/comstack.h
 include/yaz/cql.h
 include/yaz/diagbib1.h
+include/yaz/diagsrw.h
 include/yaz/ill-core.h
 include/yaz/ill.h
 include/yaz/item-req.h
@@ -120,6 +121,7 @@ share/doc/yaz/server.frontend.html
 share/doc/yaz/server.html
 share/doc/yaz/server.invocation.html
 share/doc/yaz/server.main.html
+share/doc/yaz/server.vhosts.html
 share/doc/yaz/soap.html
 share/doc/yaz/soap.http.html
 share/doc/yaz/soap.srw.html
