@@ -1,0 +1,11 @@
+--- configure.orig	Tue Apr 26 22:49:23 2005
++++ configure	Tue May 10 14:32:24 2005
+@@ -21128,7 +21128,7 @@
+ 	fi
+ 	echo "$as_me:$LINENO: checking for working tcpd.h" >&5
+ echo $ECHO_N "checking for working tcpd.h... $ECHO_C" >&6
+-	LIBS="$LIBS -lwrap -lnsl"
++	LIBS="$LIBS -lwrap"
+ 	cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
