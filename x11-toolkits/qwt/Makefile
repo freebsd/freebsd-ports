@@ -7,6 +7,7 @@
 
 PORTNAME=	qwt
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=qwt
@@ -98,6 +99,7 @@ pre-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libqwt.so.${PORTVERSION} ${PREFIX}/lib
 	${LN} -fs libqwt.so.${PORTVERSION} ${PREFIX}/lib/libqwt.so
+	${LN} -fs libqwt.so.${PORTVERSION} ${PREFIX}/lib/libqwt.so.${PORTVERSION:R:R:R}
 	${MKDIR} ${PREFIX}/include/qwt
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qwt
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
