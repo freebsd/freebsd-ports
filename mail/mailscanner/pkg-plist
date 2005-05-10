@@ -118,6 +118,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/ca/stored.content.message.txt.sample
 %%DATADIR%%/reports/ca/stored.filename.message.txt.sample
 %%DATADIR%%/reports/ca/stored.virus.message.txt.sample
+@exec mkdir -p %D/%%DATADIR%%/reports/cat
 %%DATADIR%%/reports/cy+en/deleted.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.virus.message.txt.sample
@@ -498,6 +499,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/install/tcp
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch2.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch3.txt
