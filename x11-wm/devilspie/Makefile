@@ -5,31 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=		devilspie
-PORTVERSION=		0.8
-PORTREVISION=	1
-CATEGORIES=		x11-wm
-MASTER_SITES=		http://www.burtonini.com/computing/
+PORTNAME=	devilspie
+PORTVERSION=	0.10
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://www.burtonini.com/computing/
 
-MAINTAINER=		jylefort@FreeBSD.org
-COMMENT=		A window manipulation tool
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	A window manipulation tool
 
-LIB_DEPENDS=		popt:${PORTSDIR}/devel/popt
-BUILD_DEPENDS=		xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
-USE_X_PREFIX=		yes
-USE_GNOME=		libwnck libxml2
-USE_REINPLACE=		yes
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_X_PREFIX=	yes
+USE_GNOME=	libwnck libxml2
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-MAN1=			devilspie.1
-
-post-patch:
-	@${FIND} ${WRKSRC}/src -name '*.c' | ${XARGS} ${REINPLACE_CMD} -e \
-		's/G_PARAM_WRITABLE/& | G_PARAM_CONSTRUCT/'
+MAN1=		devilspie.1
 
 post-install:
 	${MKDIR} ${DATADIR}
