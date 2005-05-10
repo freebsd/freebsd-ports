@@ -10,7 +10,9 @@ PORTNAME=	speex
 PORTVERSION=	1.1.8
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.osuosl.org/.1/xiph/releases/speex/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.osuosl.org/.1/xiph/releases/speex/
+MASTER_SITE_SUBDIR=	ahze
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ahze@FreeBSD.org
