@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-table-imengine
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -16,7 +16,7 @@ DISTNAME=	scim-tables-${PORTVERSION}
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	SCIM table based input method engine
 
-LIB_DEPENDS=	scim-1.0.6:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	scim-1.0.7:${PORTSDIR}/textproc/scim
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
