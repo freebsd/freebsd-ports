@@ -79,8 +79,8 @@ DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOMAKE_VER=	14	# configure.in is patched by <PATCHFILES>
-USE_AUTOCONF_VER=	213
+USE_AUTOMAKE_VER=	19	# configure.in is patched by <PATCHFILES>
+USE_AUTOCONF_VER=	259
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -134,6 +134,9 @@ post-patch::
 			-name slrnface-\*`; \
 	cd ${BUILD_WRKSRC}; ${PATCH} ${PATCH_ARGS} < $$slrnface_dir/mutt.patch
 .endif
+
+pre-configure::
+	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
 
 # XXX
 # this should be done automagically by aclocal but ....
