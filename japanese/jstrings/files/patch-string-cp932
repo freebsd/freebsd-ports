@@ -1,0 +1,9 @@
+--- cp932.c.orig	Thu Aug  5 14:03:35 2004
++++ cp932.c	Thu Aug  5 14:04:07 2004
+@@ -1,6 +1,7 @@
+ #include	<stdio.h>
+ #include	<stddef.h>
+ #include	<stdlib.h>
++#include	<string.h>
+ #include	"jstrings.h"
+ #include	"cp932.h"
