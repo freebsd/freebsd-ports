@@ -1,0 +1,46 @@
+share/emacs/site-lisp/prime-el/contrib/insparens.el
+share/emacs/site-lisp/prime-el/prime-conf.el
+share/emacs/site-lisp/prime-el/prime-conv-mode.el
+share/emacs/site-lisp/prime-el/prime-enum-mode.el
+share/emacs/site-lisp/prime-el/prime-fund-mode.el
+share/emacs/site-lisp/prime-el/prime-init.el
+share/emacs/site-lisp/prime-el/prime-input-mode.el
+share/emacs/site-lisp/prime-el/prime-log.el
+share/emacs/site-lisp/prime-el/prime-main.el
+share/emacs/site-lisp/prime-el/prime-process.el
+share/emacs/site-lisp/prime-el/prime-server.el
+share/emacs/site-lisp/prime-el/prime-socialite.el
+share/emacs/site-lisp/prime-el/prime-style.el
+share/emacs/site-lisp/prime-el/prime.el
+share/emacs/site-lisp/init-prime.el
+@unexec rmdir %D/share/emacs/site-lisp/prime-el/contrib 2>/dev/null || true
+@unexec rmdir %D/share/emacs/site-lisp/prime-el 2>/dev/null || true
+etc/prime/Custom_prime-el.el
+@unexec rmdir %D/etc/prime 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/conversion_1.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/conversion_2.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/conversion_3.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/enum-mode_off.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/enum-mode_on.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/input_d.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/input_da.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/input_dam.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/mode_conv.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/mode_fund.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/mode_input.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/mode_list.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/mode_narrow.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/mode_on.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/mode_off.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/para-multi-phrase_1.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/para-multi-phrase_2.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/para-multi-phrase_3.png
+%%PORTDOCS%%%%DOCSDIR%%/emacs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/emacs/customize.html
+%%PORTDOCS%%%%DOCSDIR%%/emacs/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/Custom_prime-el.el
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/emacs/figures/screenshots 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/emacs/figures 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/emacs 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/examples 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true

@@ -1,0 +1,10 @@
+========================================================================
+Add these line to your "~/.emacs"
+
+(push "/usr/local/share/emacs/site-lisp/" load-path)
+(require 'init-mell)
+(require 'init-suikyo)
+(require 'init-prime)
+
+And type "M-x prime-mode" or "C-\".
+========================================================================
