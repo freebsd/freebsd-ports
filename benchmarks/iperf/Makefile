@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://dast.nlanr.net/Projects/Iperf2.0/
+MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf2.0/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	marcus@corp.grupos.com.br
@@ -25,6 +25,8 @@ OPTIONS=	IPV6	"Enable support to IPv6" 	on \
 		THREADS	"Enable threads support"	on
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
