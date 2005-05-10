@@ -8,7 +8,9 @@
 PORTNAME=	gkrellfire
 PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freenet.de/thomas-steinke/
+MASTER_SITES=	http://people.freenet.de/thomas-steinke/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	novel
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	novel@FreeBSD.org
