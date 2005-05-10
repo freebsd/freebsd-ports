@@ -506,6 +506,7 @@
     SUBDIR += spcaview
     SUBDIR += springgraph
     SUBDIR += stamp
+    SUBDIR += stl2pov
     SUBDIR += svg2png
     SUBDIR += svg2swf
     SUBDIR += svgalib
