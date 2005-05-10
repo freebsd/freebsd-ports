@@ -1,0 +1,7 @@
+prime-el is an elisp package for the prime.
+Prime is Japanese PRedictive Input Method
+Editor.  For more detail, please see the
+following web page.
+
+Author:	Hiroyuki Komatsu <komatsu@taiyaki.org>
+WWW:    http://taiyaki.org/prime/

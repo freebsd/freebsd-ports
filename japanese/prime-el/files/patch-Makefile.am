@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Tue Feb  3 17:48:30 2004
++++ Makefile.am	Sat Apr 24 21:59:51 2004
+@@ -8,7 +8,7 @@
+ # You can redistribute it and/or modify it under the terms of 
+ # the GNU General Public License version 2.
+ 
+-SUBDIRS = doc etc src packaging
++SUBDIRS = etc src packaging
+ EXTRA_DIST = autogen.sh prime-el.spec prime-el.spec.in
+ 
+ install-etc:
