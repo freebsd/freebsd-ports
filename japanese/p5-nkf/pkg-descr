@@ -1,6 +1,6 @@
 This is a Perl extension module to use NKF.
 
-Te syntax is as follows:
+The syntax is as follows:
 
 	use NKF;
 	$output = nkf ($flags, $input)

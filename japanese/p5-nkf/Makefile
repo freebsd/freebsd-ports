@@ -5,18 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nkf
-PORTVERSION=	2.04
 CATEGORIES=	japanese perl5
-MASTER_SITES=	http://www01.tcp-ip.or.jp/~furukawa/nkf_utf8/
 PKGNAMEPREFIX=	ja-p5-
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./-/}
-
-MAINTAINER=	max@FreeBSD.org
 COMMENT=	A perl extension module to use NKF
-
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/NKF.mod
+PATCHDIR=	${.CURDIR}/files
 MAN3=		NKF.3
+MASTERDIR=	${.CURDIR}/../nkf
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/../nkf/Makefile"
