@@ -3,5 +3,5 @@ after a given time with a given signal.  A 'warning' signal
 is sent first, then, after a timeout, a 'kill' signal, similar
 to the way init(8) operates on shutdown.
 
-WWW:		http://ringwraith.online.bg/devel/sys/timelimit/
-Author:		Peter Pentchev <roam@orbitel.bg>
+WWW:		http://devel.ringlet.net/sysutils/timelimit/
+Author:		Peter Pentchev <roam@ringlet.net>
