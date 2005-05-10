@@ -1,0 +1,5 @@
+The stl2pov program creates POV-Ray mesh object from the STL files that can
+be exported from most CAD programs. This makes it easy to incorporate CAD
+models in POV-Ray scenes.
+
+WWW: http://www.xs4all.nl/~rsmith/software/
