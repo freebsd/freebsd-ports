@@ -310,6 +310,7 @@
     SUBDIR += postgresql74-man
     SUBDIR += postgresql80-man
     SUBDIR += ppxp
+    SUBDIR += prime-dict
     SUBDIR += prime-el
     SUBDIR += prn
     SUBDIR += ptex

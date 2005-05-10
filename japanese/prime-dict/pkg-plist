@@ -1,0 +1,16 @@
+%%RUBY_SITELIBDIR%%/prime/prime-dict-config.rb
+%%DATADIR%%/dict/prime-dict
+%%DATADIR%%/dict/prime-dict-pos
+%%DATADIR%%/dict/prime-dict-pos.ary
+%%DATADIR%%/dict/prime-dict-pos_literal.ary
+%%DATADIR%%/dict/prime-dict.ary
+%%DATADIR%%/dict/prime-dict_literal.ary
+%%DATADIR%%/dict/prime-dict-en
+%%DATADIR%%/dict/prime-dict-en-pos
+%%DATADIR%%/dict/prime-dict-en-pos.ary
+%%DATADIR%%/dict/prime-dict-en-pos_literal.ary
+%%DATADIR%%/dict/prime-dict-en.ary
+%%DATADIR%%/dict/prime-dict-en_literal.ary
+@unexec rmdir %D/%%DATADIR%%/dict 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime 2>/dev/null || true
