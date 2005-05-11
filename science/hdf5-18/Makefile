@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/${PORTVERSION}/
 
@@ -37,7 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
 
 post-install:
-.for i in gif2h5 h52gif h5debug h5diff h5dump h5import h5ls h5repart
+.for i in gif2h5 h52gif h5debug h5diff h5dump h5import h5ls h5repart h5jam h5unjam
 	@${STRIP_CMD} ${PREFIX}/bin/${i}
 .endfor
 
