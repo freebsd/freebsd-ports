@@ -1,4 +1,5 @@
 share/themes/Clearlooks-4Humans/gtk-2.0/gtkrc
+share/themes/Clearlooks-4Humans/gtk-2.0/lila-brown_iconrc
 share/themes/Clearlooks-Ana/gtk-2.0/gtkrc
 share/themes/Clearlooks-Ana/gtk-2.0/icons/iconrc
 share/themes/Clearlooks-Ana/gtk-2.0/icons/stock_about.svg
@@ -59,212 +60,164 @@ share/themes/Clearlooks-Ana/gtk-2.0/icons/stock_zoom-fit.svg
 share/themes/Clearlooks-Ana/gtk-2.0/icons/stock_zoom-in.svg
 share/themes/Clearlooks-Ana/gtk-2.0/icons/stock_zoom-out.svg
 share/themes/Clearlooks-Ana/gtk-2.0/icons/stock_zoom.svg
-share/themes/Clearlooks-Bluey/gtk-2.0/gtkrc
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/cdplayer-eject.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/cdplayer-next.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/cdplayer-pause.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/cdplayer-play.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/cdplayer-prev.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/cdplayer-record.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/cdplayer-stop.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-logo.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-about.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-attach.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-book-blue.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-connect.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-disconnect.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-edit.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-empty.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-export.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-gnome-run.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-gnome-searchtool.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-import.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-insert-image.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-insert-object.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-insert-table.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-line-in.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-lockscreen.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-mic.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gnome-stock-volume.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/green-gnome-logo.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-add.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-apply.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-bold.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-cancel.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-cdrom.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-clear.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-close.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-convert.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-copy.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-cut.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-delete.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-dialog-error.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-dialog-info.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-dialog-question.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-dialog-warning.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-dnd-multiple.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-dnd.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-execute.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-find-and-replace.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-find.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-floppy.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-go-back.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-go-down.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-go-forward.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-go-up.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-goto-bottom.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-goto-first.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-goto-last.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-goto-top.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-help.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-home.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-index.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-italic.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-jump-to.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-justify-center.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-justify-fill.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-justify-left.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-justify-right.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-missing-image.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-new.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-no.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-ok.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-open.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-paste.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-preferences.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-print-preview.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-print.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-properties.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-quit.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-redo.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-refresh.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-remove.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-revert-to-saved.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-save-as.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-save.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-select-color.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-select-font.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-sort-ascending.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-sort-descending.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-spell-check.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-stop.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-strikethrough.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-undelete.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-underline.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-undo.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-yes.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-zoom-100.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-zoom-fit.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-zoom-in.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/gtk-zoom-out.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/iconrc
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/media-backward.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/media-forward.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/mouse-dblclck-maybe.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/mouse-dblclck-off.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/mouse-dblclck-on.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/null_button.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-accessories.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-amusements.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-drawer.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-internet.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-launcher.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-lockscreen.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-logout.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-multimedia.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-run.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-screenshot.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-searchtool.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/panel-utility.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/printer-broken.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/printer-default.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/printer-inkjet.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/printer-personal-laser.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/printer-workgroup-laser.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/stock-undelete.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/v1.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/v2.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/v3.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/v4.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/vm.png
-share/themes/Clearlooks-Bluey/gtk-2.0/icons/volume-mute.png
-share/themes/Clearlooks-Breathe/gtk-2.0/gtkrc
-share/themes/Clearlooks-Coffee/gtk-2.0/gtkrc
+share/themes/Clearlooks-Ceylon/gtk-2.0/gtkrc
+share/themes/Clearlooks-Curve/gtk-2.0/gtkrc
+share/themes/Clearlooks-Curve/gtk-2.0/icons/cdplayer-eject.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/cdplayer-next.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/cdplayer-pause.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/cdplayer-play.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/cdplayer-prev.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/cdplayer-record.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/cdplayer-stop.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-logo.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-about.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-attach.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-book-blue.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-connect.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-disconnect.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-edit.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-empty.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-export.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-gnome-run.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-gnome-searchtool.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-import.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-insert-image.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-insert-object.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-insert-table.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-line-in.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-lockscreen.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-mic.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gnome-stock-volume.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/green-gnome-logo.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-add.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-apply.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-bold.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-cancel.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-cdrom.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-clear.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-close.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-convert.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-copy.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-cut.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-delete.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-dialog-error.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-dialog-info.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-dialog-question.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-dialog-warning.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-dnd-multiple.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-dnd.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-execute.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-find-and-replace.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-find.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-floppy.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-go-back.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-go-down.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-go-forward.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-go-up.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-goto-bottom.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-goto-first.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-goto-last.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-goto-top.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-help.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-home.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-index.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-italic.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-jump-to.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-justify-center.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-justify-fill.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-justify-left.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-justify-right.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-missing-image.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-new.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-no.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-ok.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-open.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-paste.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-preferences.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-print-preview.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-print.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-properties.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-quit.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-redo.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-refresh.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-remove.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-revert-to-saved.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-save-as.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-save.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-select-color.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-select-font.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-sort-ascending.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-sort-descending.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-spell-check.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-stop.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-strikethrough.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-undelete.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-underline.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-undo.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-yes.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-zoom-100.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-zoom-fit.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-zoom-in.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/gtk-zoom-out.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/iconrc
+share/themes/Clearlooks-Curve/gtk-2.0/icons/media-backward.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/media-forward.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/mouse-dblclck-maybe.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/mouse-dblclck-off.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/mouse-dblclck-on.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/null_button.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-accessories.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-amusements.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-drawer.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-internet.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-launcher.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-lockscreen.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-logout.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-multimedia.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-run.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-screenshot.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-searchtool.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/panel-utility.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/printer-broken.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/printer-default.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/printer-inkjet.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/printer-personal-laser.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/printer-workgroup-laser.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/stock-undelete.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/v1.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/v2.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/v3.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/v4.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/vm.png
+share/themes/Clearlooks-Curve/gtk-2.0/icons/volume-mute.png
+share/themes/Clearlooks-Darjeeling-Simple/gtk-2.0/gtkrc
+share/themes/Clearlooks-Darjeeling/gtk-2.0/gtkrc
 share/themes/Clearlooks-Decaf_Coffee/gtk-2.0/gtkrc
+share/themes/Clearlooks-Decaf_Coffee/gtk-2.0/lila-brown_iconrc
 share/themes/Clearlooks-DeepSkyM/gtk-2.0/gtkrc
-share/themes/Clearlooks-Etiquette/gtk-2.0/gtkrc
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/gnome-fs-desktop.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/gnome-main-menu.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/gnome-main-ubuntu_b-menu.png
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/iconrc
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-eject.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-forward.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-next.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-pause.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-play.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-previous.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-rewind.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/media-stop.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_add.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_apply.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_cancel.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_close.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_convert.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_copy.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_cut.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_delete.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_dialog_error.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_dialog_info.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_dialog_question.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_dialog_warning.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_ep-history.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_find-and-replace.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_find.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_floppy.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_go-back.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_go-down.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_go-forward.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_go-up.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_goto-bottom.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_goto-first.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_goto-last.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_goto-top.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_help.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_home.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_new-tab.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_new-template.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_new.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_no.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_ok.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_open (kolejna kopia).svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_open.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_paste.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_preferences.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_print-preview (kopia).svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_print-preview.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_print.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_quit.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_redo.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_refresh.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_remove.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_save-as.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_save.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_select-color.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_stop.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_undo.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_yes.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_zoom-1.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_zoom-fit.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_zoom-in.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_zoom-out.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/stock_zoom.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-max.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-med.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-min.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-mute.svg
-share/themes/Clearlooks-Etiquette/gtk-2.0/icons/volume-zero.svg
-share/themes/Clearlooks-Executive/gtk-2.0/gtkrc
+share/themes/Clearlooks-Edge/gtk-2.0/gtk-redo.png
+share/themes/Clearlooks-Edge/gtk-2.0/gtk-undo.png
+share/themes/Clearlooks-Edge/gtk-2.0/gtkrc
+share/themes/Clearlooks-Edge/gtk-2.0/iconrc
+share/themes/Clearlooks-Edge/gtk-2.0/media-eject.svg
+share/themes/Clearlooks-Edge/gtk-2.0/media-forward.svg
+share/themes/Clearlooks-Edge/gtk-2.0/media-next.svg
+share/themes/Clearlooks-Edge/gtk-2.0/media-pause.svg
+share/themes/Clearlooks-Edge/gtk-2.0/media-play.svg
+share/themes/Clearlooks-Edge/gtk-2.0/media-previous.svg
+share/themes/Clearlooks-Edge/gtk-2.0/media-rewind.svg
+share/themes/Clearlooks-Edge/gtk-2.0/media-stop.svg
+share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-0.png
+share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-max.png
+share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-med.png
+share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-min.png
+share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-mute.png
+share/themes/Clearlooks-F1/gtk-2.0/gtkrc
+share/themes/Clearlooks-GNOME/gtk-2.0/gtkrc
+share/themes/Clearlooks-Gartoon/README
 share/themes/Clearlooks-Gartoon/gtk-2.0/gtkrc
+share/themes/Clearlooks-Gartoon/gtk-2.0/icons/INSTALL
+share/themes/Clearlooks-Gartoon/gtk-2.0/icons/README
 share/themes/Clearlooks-Gartoon/gtk-2.0/icons/Xtra/stock_cut.svg
 share/themes/Clearlooks-Gartoon/gtk-2.0/icons/button_cancel.svg
 share/themes/Clearlooks-Gartoon/gtk-2.0/icons/gtk-bold.svg
@@ -338,224 +291,21 @@ share/themes/Clearlooks-Gartoon/gtk-2.0/icons/stock_zoom-fit.svg
 share/themes/Clearlooks-Gartoon/gtk-2.0/icons/stock_zoom-in.svg
 share/themes/Clearlooks-Gartoon/gtk-2.0/icons/stock_zoom-out.svg
 share/themes/Clearlooks-Glider/gtk-2.0/gtkrc
-share/themes/Clearlooks-Glider/gtk-2.0/icons/iconrc
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_apply.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_bottom.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_cancel.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_down.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_first.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_last.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_left.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_ok.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_refresh.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_right.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_top.png
-share/themes/Clearlooks-Glider/gtk-2.0/icons/stock_up.png
-share/themes/Clearlooks-Gull/gtk-2.0/gtkrc
-share/themes/Clearlooks-Lila/gtk-2.0/gtkrc
-share/themes/Clearlooks-Lila/gtk-2.0/icons/epiphany-bookmarks.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/epiphany-download.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/epiphany-history.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/fr-add.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/fr-extract.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/fr-view.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-about.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-accounts.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-bgcolor.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-dialog-auth.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-dialog-error.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-dialog-info.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-edit.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-fgcolor.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-icon-away.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-icon-online.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-im.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-image.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-info.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-link.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-send.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-smiley.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-text-bigger.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-text-normal.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-text-smaller.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-typed.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gaim-typing.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gnome-home.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gnome-stock-about.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gnome-stock-mic.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gnome-stock-volume.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-about.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-add.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-apply.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-bold.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-cancel.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-cdrom.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-clear.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-close.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-color-picker.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-convert.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-copy.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-cut.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-delete.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-dialog-authentication.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-dialog-error.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-dialog-info.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-dialog-question.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-dialog-warning.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-dnd-multiple.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-dnd.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-execute.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-find-and-replace.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-find.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-floppy.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-fs-client.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-go-back.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-go-down.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-go-forward.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-go-up.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-goto-bottom.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-goto-first.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-goto-last.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-goto-top.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-harddisk.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-help.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-home.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-indent.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-index.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-italic.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-jump-to.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-justify-center.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-justify-fill.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-justify-left.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-justify-right.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-missing-image.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-network.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-new.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-no.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-ok.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-open.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-paste.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-preferences.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-print-preview.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-print.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-properties.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-quit.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-redo.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-refresh.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-remove.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-revert-to-saved.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-save-as.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-save.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-select-color.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-select-font.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-sort-ascending.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-sort-descending.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-spell-check.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-stop.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-strikethrough.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-undelete.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-underline.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-undo.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-unindent.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-yes.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-zoom-100.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-zoom-fit.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-zoom-in.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-zoom-out.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/gtk-zoom-page-width.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/iconrc
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-eject.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-ffwd.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-next.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-pause.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-play.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-prev.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-record.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-rewind.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/media-stop.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-amusements.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-desktop.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-gnome-logo.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-internet.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-launcher.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-lockscreen.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-logout.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-multimedia.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-run.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-screenshot.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-searchtool.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/panel-utility.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/rox-mount.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/rox-mounted.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/rox-select.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/rox-show-details.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/rox-show-hidden.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_add-bookmark.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_bluetooth.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_cell-phone.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_effects-sound.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_fullscreen.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_headphones.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_insert-video-plugin.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_mail-send.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_mic.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_music-library.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_new-tab.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_print-setup.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_proxy.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_repeat.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_view-html-source.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/stock_volume.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/vim-save-all.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/vim-session-load.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/vim-session-save.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-max.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-med.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-min.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-mute.svg
-share/themes/Clearlooks-Lila/gtk-2.0/icons/volume-zero.svg
+share/themes/Clearlooks-Glider/gtk-2.0/iconrc
+share/themes/Clearlooks-Glider/gtk-2.0/stock_apply.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_bottom.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_cancel.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_down.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_first.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_last.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_left.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_ok.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_refresh.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_right.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_top.png
+share/themes/Clearlooks-Glider/gtk-2.0/stock_up.png
+share/themes/Clearlooks-Lime/gtk-2.0/gtkrc
 share/themes/Clearlooks-Lucidity/gtk-2.0/gtkrc
-share/themes/Clearlooks-Milk/gtk-2.0/gtkrc
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gnome-main-menu.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-add.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-copy.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-cut.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-delete.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-find-and-replace.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-find.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-go-back.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-go-down.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-go-forward.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-go-up.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-home.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-new.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-ok.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-open.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-paste.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-print.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-redo.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-refresh.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-remove.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-save-as.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-save.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-stop.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/gtk-undo.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/iconrc
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-eject.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-ffwd.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-next.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-pause.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-play.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-prev.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-record.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-rewind.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-shuffle.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/media-stop.svg
-share/themes/Clearlooks-Milk/gtk-2.0/icons/volume-max.png
-share/themes/Clearlooks-Milk/gtk-2.0/icons/volume-med.png
-share/themes/Clearlooks-Milk/gtk-2.0/icons/volume-min.png
-share/themes/Clearlooks-Milk/gtk-2.0/icons/volume-mute.png
-share/themes/Clearlooks-Milk/gtk-2.0/icons/volume-zero.png
 share/themes/Clearlooks-Nuvola/gtk-2.0/gtkrc
 share/themes/Clearlooks-Nuvola/gtk-2.0/icons/applets-screenshooter.svg
 share/themes/Clearlooks-Nuvola/gtk-2.0/icons/bookmark.svg
@@ -613,11 +363,11 @@ share/themes/Clearlooks-Nuvola/gtk-2.0/icons/stock_run.svg
 share/themes/Clearlooks-Nuvola/gtk-2.0/icons/stock_stop.svg
 share/themes/Clearlooks-Nuvola/gtk-2.0/icons/stock_undo.svg
 share/themes/Clearlooks-OliveM/gtk-2.0/gtkrc
-share/themes/Clearlooks-Pastel/gtk-2.0/gtkrc
-share/themes/Clearlooks-Serenity/gtk-2.0/gtkrc
-share/themes/Clearlooks-Sunset/gtk-2.0/gtkrc
 share/themes/Clearlooks-Ubuntu/gtk-2.0/gtkrc
+share/themes/Clearlooks-gOrangeous/README
 share/themes/Clearlooks-gOrangeous/gtk-2.0/gtkrc
+share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/INSTALL
+share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/README
 share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/Xtra/stock_cut.svg
 share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/button_cancel.svg
 share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/gtk-bold.svg
@@ -691,6 +441,28 @@ share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/stock_zoom-fit.svg
 share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/stock_zoom-in.svg
 share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/stock_zoom-out.svg
 share/themes/ClearlooksM/gtk-2.0/gtkrc
+share/themes/Hedgehog/gtk-2.0/gtkrc
+share/themes/Hedgehog2/gtk-2.0/gtkrc
+share/themes/Human-In-Blue/gtk-2.0/gtkrc
+share/themes/Human-In-Blue/gtk-2.0/iconrc
+share/themes/Human-In-Blue/gtk-2.0/stock_apply.png
+share/themes/Human-In-Blue/gtk-2.0/stock_bottom.png
+share/themes/Human-In-Blue/gtk-2.0/stock_cancel.png
+share/themes/Human-In-Blue/gtk-2.0/stock_down.png
+share/themes/Human-In-Blue/gtk-2.0/stock_first.png
+share/themes/Human-In-Blue/gtk-2.0/stock_last.png
+share/themes/Human-In-Blue/gtk-2.0/stock_left.png
+share/themes/Human-In-Blue/gtk-2.0/stock_ok.png
+share/themes/Human-In-Blue/gtk-2.0/stock_refresh.png
+share/themes/Human-In-Blue/gtk-2.0/stock_right.png
+share/themes/Human-In-Blue/gtk-2.0/stock_top.png
+share/themes/Human-In-Blue/gtk-2.0/stock_up.png
+@dirrm share/themes/Human-In-Blue/gtk-2.0
+@dirrm share/themes/Human-In-Blue
+@dirrm share/themes/Hedgehog2/gtk-2.0
+@dirrm share/themes/Hedgehog2
+@dirrm share/themes/Hedgehog/gtk-2.0
+@dirrm share/themes/Hedgehog
 @dirrm share/themes/ClearlooksM/gtk-2.0
 @dirrm share/themes/ClearlooksM
 @dirrm share/themes/Clearlooks-gOrangeous/gtk-2.0/icons/Xtra
@@ -699,50 +471,40 @@ share/themes/ClearlooksM/gtk-2.0/gtkrc
 @dirrm share/themes/Clearlooks-gOrangeous
 @dirrm share/themes/Clearlooks-Ubuntu/gtk-2.0
 @dirrm share/themes/Clearlooks-Ubuntu
-@dirrm share/themes/Clearlooks-Sunset/gtk-2.0
-@dirrm share/themes/Clearlooks-Sunset
-@dirrm share/themes/Clearlooks-Serenity/gtk-2.0
-@dirrm share/themes/Clearlooks-Serenity
-@dirrm share/themes/Clearlooks-Pastel/gtk-2.0
-@dirrm share/themes/Clearlooks-Pastel
 @dirrm share/themes/Clearlooks-OliveM/gtk-2.0
 @dirrm share/themes/Clearlooks-OliveM
 @dirrm share/themes/Clearlooks-Nuvola/gtk-2.0/icons
 @dirrm share/themes/Clearlooks-Nuvola/gtk-2.0
 @dirrm share/themes/Clearlooks-Nuvola
-@dirrm share/themes/Clearlooks-Milk/gtk-2.0/icons
-@dirrm share/themes/Clearlooks-Milk/gtk-2.0
-@dirrm share/themes/Clearlooks-Milk
 @dirrm share/themes/Clearlooks-Lucidity/gtk-2.0
 @dirrm share/themes/Clearlooks-Lucidity
-@dirrm share/themes/Clearlooks-Lila/gtk-2.0/icons
-@dirrm share/themes/Clearlooks-Lila/gtk-2.0
-@dirrm share/themes/Clearlooks-Lila
-@dirrm share/themes/Clearlooks-Gull/gtk-2.0
-@dirrm share/themes/Clearlooks-Gull
-@dirrm share/themes/Clearlooks-Glider/gtk-2.0/icons
+@dirrm share/themes/Clearlooks-Lime/gtk-2.0
+@dirrm share/themes/Clearlooks-Lime
 @dirrm share/themes/Clearlooks-Glider/gtk-2.0
 @dirrm share/themes/Clearlooks-Glider
 @dirrm share/themes/Clearlooks-Gartoon/gtk-2.0/icons/Xtra
 @dirrm share/themes/Clearlooks-Gartoon/gtk-2.0/icons
 @dirrm share/themes/Clearlooks-Gartoon/gtk-2.0
 @dirrm share/themes/Clearlooks-Gartoon
-@dirrm share/themes/Clearlooks-Executive/gtk-2.0
-@dirrm share/themes/Clearlooks-Executive
-@dirrm share/themes/Clearlooks-Etiquette/gtk-2.0/icons
-@dirrm share/themes/Clearlooks-Etiquette/gtk-2.0
-@dirrm share/themes/Clearlooks-Etiquette
+@dirrm share/themes/Clearlooks-GNOME/gtk-2.0
+@dirrm share/themes/Clearlooks-GNOME
+@dirrm share/themes/Clearlooks-F1/gtk-2.0
+@dirrm share/themes/Clearlooks-F1
+@dirrm share/themes/Clearlooks-Edge/gtk-2.0
+@dirrm share/themes/Clearlooks-Edge
 @dirrm share/themes/Clearlooks-DeepSkyM/gtk-2.0
 @dirrm share/themes/Clearlooks-DeepSkyM
 @dirrm share/themes/Clearlooks-Decaf_Coffee/gtk-2.0
 @dirrm share/themes/Clearlooks-Decaf_Coffee
-@dirrm share/themes/Clearlooks-Coffee/gtk-2.0
-@dirrm share/themes/Clearlooks-Coffee
-@dirrm share/themes/Clearlooks-Breathe/gtk-2.0
-@dirrm share/themes/Clearlooks-Breathe
-@dirrm share/themes/Clearlooks-Bluey/gtk-2.0/icons
-@dirrm share/themes/Clearlooks-Bluey/gtk-2.0
-@dirrm share/themes/Clearlooks-Bluey
+@dirrm share/themes/Clearlooks-Darjeeling/gtk-2.0
+@dirrm share/themes/Clearlooks-Darjeeling-Simple/gtk-2.0
+@dirrm share/themes/Clearlooks-Darjeeling-Simple
+@dirrm share/themes/Clearlooks-Darjeeling
+@dirrm share/themes/Clearlooks-Curve/gtk-2.0/icons
+@dirrm share/themes/Clearlooks-Curve/gtk-2.0
+@dirrm share/themes/Clearlooks-Curve
+@dirrm share/themes/Clearlooks-Ceylon/gtk-2.0
+@dirrm share/themes/Clearlooks-Ceylon
 @dirrm share/themes/Clearlooks-Ana/gtk-2.0/icons
 @dirrm share/themes/Clearlooks-Ana/gtk-2.0
 @dirrm share/themes/Clearlooks-Ana
