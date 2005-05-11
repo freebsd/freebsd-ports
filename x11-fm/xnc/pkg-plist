@@ -45,5 +45,12 @@ share/doc/xnc/doc8.html
 share/doc/xnc/index.html
 @unexec rmdir %D/share/locale/sp/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sp 2> /dev/null || true
+@unexec rmdir %D/share/gnome/apps/Applications 2> /dev/null || true
+@unexec rmdir %D/share/gnome/apps 2> /dev/null || true
+@unexec rmdir %D/share/gnome 2> /dev/null || true
+@unexec rmdir %D/share/applnk/System 2> /dev/null || true
+@unexec rmdir %D/share/applnk 2> /dev/null || true
+@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrm share/pixmaps
 @dirrm share/doc/xnc
 @dirrm lib/xnc
