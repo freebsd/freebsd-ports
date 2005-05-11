@@ -1,3 +1,8 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : -noinhibit-exec allows linking against non-existent libs
+
 Index: sndfile/makefile.mk
 ===================================================================
 RCS file: /cvs/external/sndfile/makefile.mk,v

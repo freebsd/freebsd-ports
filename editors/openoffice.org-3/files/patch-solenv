@@ -1,4 +1,7 @@
-http://qa.openoffice.org/issues/show_bug.cgi?id=48304
+Issutracker : #i48304#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : getuid.so is not req'ed for FreeBSD
 
 Index: bin/modules/installer/download.pm
 ===================================================================

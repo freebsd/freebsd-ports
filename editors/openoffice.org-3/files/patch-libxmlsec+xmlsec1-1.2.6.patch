@@ -1,3 +1,8 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : correct version number of resultant shared lib
+
 Index: libxmlsec/xmlsec1-1.2.6.patch
 ===================================================================
 RCS file: /cvs/external/libxmlsec/xmlsec1-1.2.6.patch,v
