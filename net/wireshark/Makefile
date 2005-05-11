@@ -7,6 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.10.11
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/all-versions/ \
@@ -17,8 +18,11 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
 USE_PERL5_BUILD=yes
 USE_BZIP2=	yes
+USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 CONFIGURE_ARGS+=	--program-transform-name=""
 INSTALLS_SHLIB=	yes
@@ -43,14 +47,14 @@ USE_X_PREFIX=	yes
 MAN1+=		ethereal.1
 PLIST_SUB+=	ETHEREAL=bin/ethereal
 .if defined(WITHOUT_GTK2)
-USE_GNOME=	gtk12
+USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--disable-gtk2
 .else
-USE_GNOME=	gtk20
+USE_GNOME+=	gtk20
 .endif
 .else
 PLIST_SUB+=	ETHEREAL="@comment ethereal not built"
-USE_GNOME=	glib12
+USE_GNOME+=	glib12
 CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtktest \
 			--with-gtk-prefix=/nonexistent \
