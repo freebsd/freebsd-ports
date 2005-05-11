@@ -348,8 +348,8 @@
 +  return TRUE;
 +}
 +#endif
---- power-management.c.orig	Sun Mar 20 05:20:55 2005
-+++ power-management.c	Wed May 11 10:22:17 2005
+--- battstat/power-management.c.orig	Sun Mar 20 05:20:55 2005
++++ battstat/power-management.c	Wed May 11 10:22:17 2005
 @@ -73,9 +73,18 @@ static int pm_initialised;
   * the problem might be.  This error message is not to be freed.
   */
