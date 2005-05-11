@@ -6,16 +6,11 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.0.25
+PORTVERSION=	1.0.28
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/ \
 		http://maradns.3va.net/download/ \
 		http://kapranoff.ru/~kappa/files/
-
-PATCH_SITES=	http://maradns.org/download/patches/ \
-		http://kapranoff.ru/~kappa/files/
-PATCHFILES=	maradns-1.0.25-egcs_build.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	alex@kapranoff.ru
 COMMENT=	DNS server with focus on security and simplicity
