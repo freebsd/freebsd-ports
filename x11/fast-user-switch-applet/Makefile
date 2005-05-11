@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fast-user-switch-applet
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://ignore-your.tv/downloads/fusa/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/bland/}
