@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 
 MAN1=		gaim.1 gaim-remote.1
 
-OPTIONS=	SILC "Secure Internet Live Conferencing support" off \
+OPTIONS=	BIG5 "With Big5 Chinese input fix" off \
+		SILC "Secure Internet Live Conferencing support" off \
 		GTKSPELL "spell checking support" on \
 		AUDIO "audio support" on \
 		GNUTLS "GNUTLS encryption support" off \
@@ -128,5 +129,8 @@ post-patch:
 		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCLTK_VER} required|g' \
 		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCLTK_VER:E}|' \
 			${WRKSRC}/configure
+.if defined(WITH_BIG5)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_gtkconv.c
+.endif
 
 .include <bsd.port.post.mk>
