@@ -73,6 +73,7 @@ share/locale/tr/LC_MESSAGES/rpm.mo
 @unexec rmdir %D/src/redhat/SPECS 2>/dev/null || true
 @unexec rmdir %D/src/redhat/SOURCES 2>/dev/null || true
 @unexec rmdir %D/src/redhat/RPMS/noarch 2>/dev/null || true
+@unexec rmdir %D/src/redhat/RPMS/amd64 2>/dev/null || true
 @unexec rmdir %D/src/redhat/RPMS/athlon 2>/dev/null || true
 @unexec rmdir %D/src/redhat/RPMS/i686 2>/dev/null || true
 @unexec rmdir %D/src/redhat/RPMS/i586 2>/dev/null || true
@@ -90,6 +91,7 @@ share/locale/tr/LC_MESSAGES/rpm.mo
 @exec mkdir -p %D/src/redhat
 @exec mkdir -p %D/src/redhat/BUILD
 @exec mkdir -p %D/src/redhat/RPMS
+@exec mkdir -p %D/src/redhat/RPMS/amd64
 @exec mkdir -p %D/src/redhat/RPMS/athlon
 @exec mkdir -p %D/src/redhat/RPMS/i386
 @exec mkdir -p %D/src/redhat/RPMS/i486
