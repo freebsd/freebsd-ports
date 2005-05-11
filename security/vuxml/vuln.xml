@@ -32,6 +32,106 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eca6195a-c233-11d9-804c-02061b08fc24">
+    <topic>mozilla -- code execution via javascript: IconURL
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.4</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.8,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><lt>1.7.8</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-42.html">
+	  <p>Two vulnerabilities have been discovered in Firefox,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks and compromise a user's
+	    system.</p>
+	  <ol>
+	    <li>The problem is that "IFRAME" JavaScript URLs are not
+	      properly protected from being executed in context of
+	      another URL in the history list. This can be exploited
+	      to execute arbitrary HTML and script code in a user's
+	      browser session in context of an arbitrary site.</li>
+	    <li>Input passed to the "IconURL" parameter in
+	      "InstallTrigger.install()" is not properly verified
+	      before being used. This can be exploited to execute
+	      arbitrary JavaScript code with escalated privileges via
+	      a specially crafted JavaScript URL.</li>
+	  </ol>
+	  <p>Successful exploitation requires that the site is allowed
+	    to install software (default sites are
+	    "update.mozilla.org" and "addons.mozilla.org").</p>
+	  <p>A combination of vulnerability 1 and 2 can be exploited
+	    to execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1476</cvename>
+      <cvename>CAN-2005-1477</cvename>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-42.html</url>
+    </references>
+    <dates>
+      <discovery>2005-05-08</discovery>
+      <entry>2005-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="01bb84e2-bd88-11d9-a281-02e018374e71">
     <topic>groff -- pic2graph and eqn2graph are vulnerable to symlink attack through temporary files</topic>
     <affects>
