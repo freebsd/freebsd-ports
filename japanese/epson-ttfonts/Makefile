@@ -13,7 +13,7 @@ DISTNAME=	${EPSONFONTS}
 EXTRACT_SUFX=	.exe
 DIST_SUBDIR=	epson
 
-MAINTAINER=     maho@FreeBSD.org
+MAINTAINER=     hrs@FreeBSD.org
 COMMENT=        EPSON TrueTypeFontVer.3.0
 
 RESTRICTED=	"Redistribution not permitted; only usable with EPSON printer."
