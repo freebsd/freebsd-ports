@@ -19,7 +19,6 @@ vpopmail/bin/vmoddomlimits
 vpopmail/bin/vmoduser
 vpopmail/bin/vpasswd
 vpopmail/bin/vpopbull
-vpopmail/bin/vqmaillocal
 vpopmail/bin/vsetuserquota
 vpopmail/bin/vuserinfo
 vpopmail/doc/doc_html/vpopmail.html
@@ -41,7 +40,9 @@ vpopmail/doc/man_html/vsetuserquota.html
 @unexec if [ -f %D/vpopmail/etc/defaultdomain ]; then rm -f %D/vpopmail/etc/defaultdomain; fi
 vpopmail/etc/inc_deps
 vpopmail/etc/lib_deps
-@unexec if [ -f %D/vpopmail/etc/tcp.smtp -a ! -s %D/vpopmail/etc/tcp.smtp ]; then rm -f %D/vpopmail/etc/tcp.smtp; fi
+@unexec if cmp -s %D/vpopmail/etc/tcp.smtp %D/vpopmail/etc/tcp.smtp-dist; then rm -f %D/vpopmail/etc/tcp.smtp; fi
+vpopmail/etc/tcp.smtp-dist
+@exec if [ ! -f %D/vpopmail/etc/tcp.smtp ] ; then cp -p %D/%F %B/tcp.smtp; fi
 @unexec if cmp -s %D/vpopmail/etc/vlimits.default %D/vpopmail/etc/vlimits.default-dist; then rm -f %D/vpopmail/etc/vlimits.default; fi
 vpopmail/etc/vlimits.default-dist
 @unexec if [ -f %D/vpopmail/etc/vpopmail.mysql ]; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
@@ -51,6 +52,11 @@ vpopmail/include/vlimits.h
 vpopmail/include/vpopmail.h
 vpopmail/include/vpopmail_config.h
 vpopmail/lib/libvpopmail.a
+%%LDAP%%vpopmail/ldap/README.ldap
+%%LDAP%%vpopmail/ldap/qmailUser.schema
+%%LDAP%%vpopmail/ldap/slapd.conf
+%%LDAP%%vpopmail/ldap/vpopmail.ldif
+%%LDAP%%@dirrm vpopmail/ldap
 @dirrm vpopmail/lib
 @dirrm vpopmail/include
 @unexec rmdir %D/vpopmail/etc 2>/dev/null || true
