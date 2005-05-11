@@ -7,6 +7,7 @@
 
 PORTNAME=	psi
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	vsevolod@highsecure.ru
 COMMENT=	A Qt-based Jabber client
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
-		${X11BASE}/lib/libqca.so.1:${PORTSDIR}/devel/qca
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	qca.1:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	${X11BASE}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
 
 HAS_CONFIGURE=	yes
