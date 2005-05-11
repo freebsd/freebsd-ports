@@ -36,12 +36,12 @@ lib/modules/extensions/libglx.so.1
 %%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/glx.h
 %%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/glext.h
 %%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/glxtokens.h
-%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/agp.ko-hints.diff
-%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/machdep.c.diff
-%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/vm_map.c_4.10.diff
-%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/device_pager.c_4.10.diff
-%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/vm_object.c_5.2.diff
-%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/device_pager.c_5.2.diff
+%%DIFFS%%%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/agp.ko-hints.diff
+%%DIFFS%%%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/machdep.c.diff
+%%DIFFS%%%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/vm_map.c_4.10.diff
+%%DIFFS%%%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/device_pager.c_4.10.diff
+%%DIFFS%%%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/vm_object.c_5.2.diff
+%%DIFFS%%%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/device_pager.c_5.2.diff
 %%PORTDOCS%%@dirrm share/doc/NVIDIA_GLX-1.0
 %%FREEBSD4%%@cwd /modules
 %%FREEBSD5%%@cwd /boot/modules
