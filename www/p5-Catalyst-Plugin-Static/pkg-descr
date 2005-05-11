@@ -1,0 +1,5 @@
+Serve static files with Catalyst. This module is not as optimized
+for static files as a normal web server, and is most useful for
+stand alone operation and development.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Static
