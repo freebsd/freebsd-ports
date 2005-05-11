@@ -1,4 +1,3 @@
-PHP_Compat provides missing functionality in the form of
-Constants and Functions for older versions of PHP.
+PHP_Compat provides missing functionality for older versions of PHP.
 
 WWW: http://pear.php.net/package/PHP_Compat/
