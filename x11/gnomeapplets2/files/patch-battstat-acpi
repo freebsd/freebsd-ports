@@ -116,118 +116,6 @@
  	NULL
     };
  
---- battstat/power-management.c.orig	Thu Jan 13 23:06:40 2005
-+++ battstat/power-management.c	Mon Mar 14 19:53:13 2005
-@@ -73,9 +73,18 @@
-  * the problem might be.  This error message is not to be freed.
-  */
- 
--#ifdef __FreeBSD__
--
-+#if defined(__FreeBSD__)
-+#if defined(__i386__)
- #include <machine/apm_bios.h>
-+#endif
-+#include "acpi-freebsd.h"
-+
-+struct acpi_info acpiinfo;
-+gboolean using_acpi;
-+int acpi_count;
-+struct apm_info apminfo;
-+
-+gboolean acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info *acpiinfo);
- 
- #define APMDEVICE "/dev/apm"
- 
-@@ -86,32 +95,51 @@
-      FreeBSD.  Each time this functions is called (once every second)
-      the APM device is opened, read from and then closed.
-   */
--  struct apm_info apminfo;
-   int fd;
- 
-   if (DEBUG) g_print("apm_readinfo() (FreeBSD)\n");
- 
--  fd = open(APMDEVICE, O_RDONLY);
--  if (fd == -1)
--  {
--    pm_initialised = 0;
--    return ERR_OPEN_APMDEV;
-+  if (using_acpi) {
-+    fd = -1;
-+    if (acpi_count <= 0) {
-+      acpi_count = 30;
-+      acpi_freebsd_read(&apminfo, &acpiinfo);
-+    }
-+    acpi_count--;
-   }
-+  else {
-+#if defined(__i386__)
-+    fd = open(APMDEVICE, O_RDONLY);
-+    if (fd == -1) {
-+      return ERR_OPEN_APMDEV;
-+    }
- 
--  if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
--    err(1, "ioctl(APMIO_GETINFO)");
-+    if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
-+      err(1, "ioctl(APMIO_GETINFO)");
- 
--  close(fd);
-+      close(fd);
-+
-+    if(apminfo.ai_status == 0)
-+      return ERR_APM_E;
-+#else
-+    return ERR_OPEN_APMDEV;
-+#endif
-+  }
- 
--  if(apminfo.ai_status == 0)
--    return ERR_APM_E;
-+  if (using_acpi) {
-+    acpi_process_event(&acpiinfo);
-+    acpi_freebsd_read(&apminfo, &acpiinfo);
-+  }
- 
-   status->present = TRUE;
-   status->on_ac_power = apminfo.ai_acline ? 1 : 0;
-   status->state = apminfo.ai_batt_stat;
-   status->percent = apminfo.ai_batt_life;
-   status->charging = (status->state == 3) ? TRUE : FALSE;
--  status->minutes = apminfo.ai_batt_time;
-+  if (using_acpi)
-+    status->minutes = apminfo.ai_batt_time;
-+  else
-+    status->minutes = (int) (apminfo.ai_batt_time/60.0);
- 
-   return NULL;
- }
-@@ -339,6 +367,13 @@
-         G_IO_IN | G_IO_ERR | G_IO_HUP,
-         acpi_callback, NULL);
-   }
-+#elif defined(__FreeBSD__)
-+  if (acpi_freebsd_init(&acpiinfo)) {
-+    using_acpi = TRUE;
-+    acpi_count = 0;
-+  }
-+  else
-+    using_acpi = FALSE;
- #endif
-   pm_initialised = 1;
- 
-@@ -360,6 +395,10 @@
-       g_source_remove(acpiwatch);
-      acpiwatch = 0;
-      acpi_linux_cleanup(&acpiinfo);
-+  }
-+#elif defined(__FreeBSD__)
-+  if (using_acpi) {
-+    acpi_freebsd_cleanup(&acpiinfo);
-   }
- #endif
- 
 --- battstat/properties.c.orig	Fri Jan 14 23:38:18 2005
 +++ battstat/properties.c	Mon Mar 14 19:49:26 2005
 @@ -27,7 +27,7 @@
@@ -460,3 +348,109 @@
 +  return TRUE;
 +}
 +#endif
+--- power-management.c.orig	Sun Mar 20 05:20:55 2005
++++ power-management.c	Wed May 11 10:22:17 2005
+@@ -73,9 +73,18 @@ static int pm_initialised;
+  * the problem might be.  This error message is not to be freed.
+  */
+ 
+-#ifdef __FreeBSD__
+-
++#if defined(__FreeBSD__)
++#if defined(__i386__)
+ #include <machine/apm_bios.h>
++#endif
++#include "acpi-freebsd.h"
++
++struct acpi_info acpiinfo;
++gboolean using_acpi;
++int acpi_count;
++struct apm_info apminfo;
++
++gboolean acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info *acpiinfo);
+ 
+ #define APMDEVICE "/dev/apm"
+ 
+@@ -86,32 +95,45 @@ apm_readinfo (BatteryStatus *status)
+      FreeBSD.  Each time this functions is called (once every second)
+      the APM device is opened, read from and then closed.
+   */
+-  struct apm_info apminfo;
+   int fd;
+ 
+   if (DEBUG) g_print("apm_readinfo() (FreeBSD)\n");
+ 
+-  fd = open(APMDEVICE, O_RDONLY);
+-  if (fd == -1)
+-  {
+-    pm_initialised = 0;
+-    return ERR_OPEN_APMDEV;
++  if (using_acpi) {
++    if (acpi_count <= 0) {
++      acpi_count = 30;
++      acpi_freebsd_read(&apminfo, &acpiinfo);
++    }
++    acpi_count--;
+   }
++  else {
++#if defined(__i386__)
++    fd = open(APMDEVICE, O_RDONLY);
++    if (fd == -1) {
++      return ERR_OPEN_APMDEV;
++    }
+ 
+-  if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
+-    err(1, "ioctl(APMIO_GETINFO)");
++    if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
++      err(1, "ioctl(APMIO_GETINFO)");
+ 
+-  close(fd);
++      close(fd);
+ 
+-  if(apminfo.ai_status == 0)
+-    return ERR_APM_E;
++    if(apminfo.ai_status == 0)
++      return ERR_APM_E;
++#else
++    return ERR_OPEN_APMDEV;
++#endif
++  }
+ 
+   status->present = TRUE;
+   status->on_ac_power = apminfo.ai_acline ? 1 : 0;
+   status->state = apminfo.ai_batt_stat;
+   status->percent = apminfo.ai_batt_life;
+   status->charging = (status->state == 3) ? TRUE : FALSE;
+-  status->minutes = apminfo.ai_batt_time;
++  if (using_acpi)
++    status->minutes = apminfo.ai_batt_time;
++  else
++    status->minutes = (int) (apminfo.ai_batt_time/60.0);
+ 
+   return NULL;
+ }
+@@ -339,6 +361,13 @@ power_management_initialise( void )
+         G_IO_IN | G_IO_ERR | G_IO_HUP,
+         acpi_callback, NULL);
+   }
++#elif defined(__FreeBSD__)
++  if (acpi_freebsd_init(&acpiinfo)) {
++    using_acpi = TRUE;
++    acpi_count = 0;
++  }
++  else
++    using_acpi = FALSE;
+ #endif
+   pm_initialised = 1;
+ 
+@@ -360,6 +389,10 @@ power_management_cleanup( void )
+       g_source_remove(acpiwatch);
+      acpiwatch = 0;
+      acpi_linux_cleanup(&acpiinfo);
++  }
++#elif defined(__FreeBSD__)
++  if (using_acpi) {
++    acpi_freebsd_cleanup(&acpiinfo);
+   }
+ #endif
+ 
