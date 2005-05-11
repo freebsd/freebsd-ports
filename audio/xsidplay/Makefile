@@ -56,7 +56,7 @@ QTCFGLIBS+=	-Wl,--rpath,${LOCALBASE}/lib/sidplay/builders
 LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
 .endif
 
-.if defined(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README STIL.faq hv_sids.faq
 .endif
 
