@@ -28,14 +28,18 @@ MAKEFILE=		makefile
 BROKEN=		"Does not install on ia64 or amd64 (segfault during install)"
 .endif
 
+post-extract:
+	@${UNZIP_CMD} -q -L -a -o ${WRKSRC}/tables.zip -d ${WRKDIR}/tables
+	@${UNZIP_CMD} -q -L -a -o ${WRKSRC}/spanish.zip -d ${WRKDIR}/spanish
+
 do-install:
 	${MKDIR} ${PREFIX}/share/nfbtrans/tables
 	${INSTALL_PROGRAM} ${WRKSRC}/nfbtrans ${PREFIX}/bin
 .for f in braille.tab back.tab english.dic nfbtrans.cnf menu.cnf
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/nfbtrans
 .endfor
-	${UNZIP_CMD} -q -L -a -o ${WRKSRC}/tables.zip -d ${PREFIX}/share/nfbtrans/tables
-	${UNZIP_CMD} -q -L -a -o ${WRKSRC}/spanish.zip -d ${PREFIX}/share/nfbtrans/spanish
+	@${CP} -pR ${WRKDIR}/tables ${PREFIX}/share/nfbtrans
+	@${CP} -pR ${WRKDIR}/spanish ${PREFIX}/share/nfbtrans
 .if !defined(NOPORTDOCS)
 	@${ECHO} '~0 ~-pw=80 ~-ls=99 ~-pl=56 ~-if=12 ~-fc=. ~o5 ~p- ~-ip=0 ~-oc=1' \
 	  | ${CAT} - ${WRKSRC}/nfbtrans.fmt > ${WRKSRC}/nfbprint.fmt
