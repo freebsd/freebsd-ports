@@ -32,8 +32,8 @@ IGNORE=	WITH_MOD_PERL must be either '1' or '2', or undefined
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+.if ${PERL_LEVEL} < 500600
+IGNORE=	"Perl 5.6 or newer required. Install lang/perl5.[6,8] and try again"
 .endif
 
 pre-fetch:
