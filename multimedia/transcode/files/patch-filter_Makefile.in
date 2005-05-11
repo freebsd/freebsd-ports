@@ -1,30 +1,11 @@
---- filter/Makefile.in.orig
-+++ filter/Makefile.in	Sat Feb 19 21:30:33 2005
-@@ -335,7 +335,7 @@
+--- filter/Makefile.in.orig	Sun May  8 16:54:37 2005
++++ filter/Makefile.in	Sun May  8 16:55:06 2005
+@@ -356,7 +356,7 @@
  	uninstall-recursive
  ETAGS = etags
  CTAGS = ctags
--DIST_SUBDIRS = pp divxkey extsub resample test yuvdenoise ivtc \
-+DIST_SUBDIRS = divxkey extsub resample test yuvdenoise ivtc \
- 	tomsmocomp preview subtitler
+-DIST_SUBDIRS = pp divxkey extsub yuvdenoise tomsmocomp preview \
++DIST_SUBDIRS = divxkey extsub yuvdenoise tomsmocomp preview \
+ 	subtitler
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  A52_CFLAGS = @A52_CFLAGS@
-@@ -835,7 +835,6 @@
- 
- @HAVE_FREETYPE2_TRUE@@HAVE_LIBICONV_TRUE@@HAVE_LIBXPM_TRUE@@HAVE_XAW_SIMPLE_TRUE@ADD2 = subtitler
- @HAVE_X11_FALSE@SUBDIRS = \
--@HAVE_X11_FALSE@	pp \
- @HAVE_X11_FALSE@	divxkey \
- @HAVE_X11_FALSE@	extsub \
- @HAVE_X11_FALSE@	resample \
-@@ -845,7 +844,6 @@
- @HAVE_X11_FALSE@	$(F_TOMSMOCOMP)
- 
- @HAVE_X11_TRUE@SUBDIRS = \
--@HAVE_X11_TRUE@	pp \
- @HAVE_X11_TRUE@	divxkey \
- @HAVE_X11_TRUE@	extsub \
- @HAVE_X11_TRUE@	resample \
---- transcode-1.0.0beta2.diff ends here ---
-
-
