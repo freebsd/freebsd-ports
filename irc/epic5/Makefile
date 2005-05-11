@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.5
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.tcbug.org/ \
 		ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.tcbug.org/ \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-CONFLICTS=	epic4-*
+CONFLICTS=	epic4-[0-9]*
 
 GNU_CONFIGURE=	yes
 MAN1=		epic5.1
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--with-socks5
 #
 .if defined(WITH_PERL)
 .if ${PERL_LEVEL} < 500601
-IGNORE=		"Perl 5.6.1 or newer is required; we recommend perl 5.8.5"
+IGNORE=		Perl 5.6.1 or newer is required; we recommend perl 5.8.5
 .endif
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
