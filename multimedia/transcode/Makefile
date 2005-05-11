@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	transcode
-DISTVERSION=	1.0.0beta2
-PORTREVISION=	1
+DISTVERSION=	1.0.0beta3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -17,7 +16,8 @@ MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
-				jpeg.9:${PORTSDIR}/graphics/jpeg
+				jpeg.9:${PORTSDIR}/graphics/jpeg \
+				mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 BUILD_DEPENDS=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 				iconv:${PORTSDIR}/converters/libiconv
 
@@ -118,6 +118,10 @@ WITH_DIVX5=	yes
 WITH_JPEGMMX=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/liblavjpeg.so)
+WITH_MJPEG=	yes
+.endif
+
 .if defined(WITH_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-ft-prefix=${LOCALBASE} --enable-freetype2
@@ -163,10 +167,20 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 
 .if defined(WITH_JPEGMMX)
 LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
-
+CONFIGURE_ARGS+=	--enable-libjpegmmx
 PLIST_SUB+=	WITH_JPEGMMX=""
 .else
+CONFIGURE_ARGS+=	--enable-libjpegmmx=no
 PLIST_SUB+=	WITH_JPEGMMX="@comment "
+.endif
+
+.if defined(WITH_MJPEG)
+LIB_DEPENDS+=	lavjpeg-1.6.2:${PORTSDIR}/multimedia/mjpegtools
+CONFIGURE_ARGS+=	--enable-mjpegtools
+PLIST_SUB+=	WITH_MJPEG=""
+.else
+CONFIGURE_ARGS+=	--enable-mjpegtools=no
+PLIST_SUB+=	WITH_MJPEG="@comment "
 .endif
 
 .if defined(WITH_AVIFILE)
@@ -181,8 +195,10 @@ PLIST_SUB+=	WITH_AVIFILE="@comment "
 .if defined(WITH_SDL)
 USE_SDL=	sdl
 WITH_LIBDV=	yes
+CONFIGURE_ARGS+=	--enable-sdl --with-sdl-prefix=${LOCALBASE}
 PLIST_SUB+=	WITH_SDL=""
 .else
+CONFIGURE_ARGS+=	--enable-sdl=no
 PLIST_SUB+=	WITH_SDL="@comment "
 .endif
 
@@ -232,13 +248,17 @@ PLIST_SUB+=	WITH_XVID=""
 PLIST_SUB+=	WITH_XVID="@comment "
 .endif
 
+.if defined(WITH_LIBA52_DEFAULT)
+WITH_LIBA52=	yes
+CONFIGURE_ARGS+=	--enable-a52-default-decoder
+.endif
+
 .if defined(WITH_LIBA52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
-CONFIGURE_ARGS+=	--enable-liba52=yes
+CONFIGURE_ARGS+=	--enable-a52
 PLIST_SUB+=	WITH_LIBA52=""
 .else
-CONFIGURE_ARGS+=	--with-a52=no \
-			--enable-liba52=no
+CONFIGURE_ARGS+=	--with-a52=no
 PLIST_SUB+=	WITH_LIBA52="@comment "
 .endif
 
@@ -266,6 +286,14 @@ CPPFLAGS+=	-I${LINUXBASE}/usr/include/divx
 .else
 .endif
 
+.if defined(WITH_GTK)
+CONFIGURE_ARGS+=	--enable-gtk
+PLIST_SUB+=	WITH_GTK=""
+.else
+CONFIGURE_ARGS+=	--enable-gtk=no
+PLIST_SUB+=	WITH_GTK="@comment "
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG}
@@ -290,6 +318,10 @@ pre-everything::
 .if !defined(WITH_JPEGMMX)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable JPEG with MMX by defining WITH_JPEGMMX."
+.endif
+.if !defined(WITH_MJPEG)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable MJPEG portions by defining WITH_JPEGMMX."
 .endif
 .if !defined(WITH_IMAGEMAGICK)
 	@${ECHO_MSG}
@@ -321,6 +353,12 @@ pre-everything::
 	@${ECHO_MSG} "You can enable liba52-support by defining WITH_LIBA52."
 	@${ECHO_MSG} "You will probably want to enable this, if you plan to"
 	@${ECHO_MSG} "rip DVDs."
+.endif
+.if !defined(WIH_LIBA52_DEFAULT)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can use liba52 as default audio encoder by defining WITH_LIBA52_DEFAULT."
+	@${ECHO_MSG} "This implies WITH_LIBA52."
+	@${ECHO_MSG}
 .endif
 .if !defined(WITH_AVIFILE)
 	@${ECHO_MSG}
@@ -360,6 +398,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -E -e 's|(seek)64|\1|' ${WRKSRC}/avilib/avidump.c
 	@${REINPLACE_CMD} -E -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
+	@${REINPLACE_CMD} -E -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -379,7 +418,7 @@ post-install:
 
 	@${RM} ${PREFIX}/lib/transcode/*.la
 
-.if ${ARCH} == i386
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 PLIST_SUB+=	I386=""
 .else
 PLIST_SUB+=	I386="@comment "
