@@ -9692,6 +9692,7 @@ py-rrdpipe	ports/net/py-rrdpipe
 py-rrdtool_lgpl	ports/net/py-rrdtool_lgpl
 py-rss2gen	ports/textproc/py-rss2gen
 py-rt		ports/net/py-rt
+py-rtf		ports/print/py-rtf
 py-rxp		ports/textproc/py-rxp
 py-samba	ports/net/py-samba
 py-scgi		ports/www/py-scgi
