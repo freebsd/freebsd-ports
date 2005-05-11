@@ -1,5 +1,5 @@
---- configure.old	Wed Aug 25 09:34:22 2004
-+++ configure	Wed Aug 25 09:41:18 2004
+--- configure.orig	Sun Mar 20 16:38:35 2005
++++ configure	Wed May 11 15:26:14 2005
 @@ -838,6 +838,8 @@
    --enable-qmail-newu=PATH   Full path to qmail-newu program.
    --enable-qmail-inject=PATH Full path to qmail-inject program.
@@ -9,7 +9,7 @@
    --enable-vpopuser=USER     User name allocated to vpopmail vpopmail.
    --enable-vpopgroup=GROUP   Group name allocated to vpopmail vchkpw.
    --enable-roaming-users     Enable POP-before-SMTP functionality.
-@@ -4694,7 +4696,7 @@
+@@ -4693,7 +4695,7 @@
  
  #----------------------------------------------------------------------
  
@@ -18,7 +18,7 @@
  then
    { echo "$as_me:$LINENO: WARNING: === vpopmail must be configured as root. ===" >&5
  echo "$as_me: WARNING: === vpopmail must be configured as root. ===" >&2;}
-@@ -4824,6 +4826,46 @@
+@@ -4823,6 +4825,46 @@
      ;;
  esac
  
@@ -65,7 +65,7 @@
  #----------------------------------------------------------------------
  
  echo "$as_me:$LINENO: checking whether we can locate the qmail directory" >&5
-@@ -5202,27 +5244,6 @@
+@@ -5201,27 +5243,6 @@
  
  #----------------------------------------------------------------------
  
@@ -93,7 +93,7 @@
  echo "$as_me:$LINENO: checking whether roaming-users has been enabled" >&5
  echo $ECHO_N "checking whether roaming-users has been enabled... $ECHO_C" >&6
  # Check whether --enable-roaming-users or --disable-roaming-users was given.
-@@ -5310,28 +5331,8 @@
+@@ -5309,29 +5330,9 @@
  if test "${enable_tcpserver_file+set}" = set; then
    enableval="$enable_tcpserver_file"
    tcpserver_file="$enableval"
@@ -113,13 +113,23 @@
 -
 +  echo "127.:allow,RELAYCLIENT=\"\"" > ${VCFGDIR}/tcp.smtp
  fi;
--
+ 
 -    if test ! -f "$tcpserver_file"
 -    then
 -        { { echo "$as_me:$LINENO: error: Unable to find your tcp.smtp file, specify --enable-tcpserver-path=/full/path/to/tcp.smtp" >&5
 -echo "$as_me: error: Unable to find your tcp.smtp file, specify --enable-tcpserver-path=/full/path/to/tcp.smtp" >&2;}
 -   { (exit 1); exit 1; }; }
 -    fi
- 
+-
      echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
+ 
+@@ -5979,7 +5980,7 @@
+ #define USE_LDAP $USE_LDAP
+ _ACEOF
+ 
+-    auth_libs="-L/usr/local/lib -lldap -llber -lresolv"
++    auth_libs="-L/usr/local/lib -lldap -llber"
+ 
+     auth_inc="-I/usr/local/include"
+ 

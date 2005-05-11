@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.6
-PORTREVISION=	1
+PORTVERSION=	5.4.10
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PATCH_SITES=	http://people.FreeBSD.org/~roam/ports/patches/mail/
-PATCHFILES=	vpopmail-547-snap.patch
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail
@@ -36,6 +33,7 @@ CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}"
 CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 #
 # User-configurable variables
@@ -52,6 +50,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_PGSQL	- allow authentication via PostgreSQL
 # WITH_SYBASE   - allow authentication via Sybase (NOT TESTED!)
 # WITH_ORACLE   - allow authentication via Oracle (NOT TESTED!)
+# WITH_LDAP     - allow authentication via LDAP
 # WITH_VALIAS   - enable valias processing
 # WITHOUT_ROAMING - disallow roaming users
 # WITH_IP_ALIAS - enables IP aliasing
@@ -128,6 +127,21 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 RELAYCLEAR?=	30
 SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
+.if defined(WITH_LDAP_SASL)
+WANT_OPENLDAP_SASL=	yes
+.endif
+CONFIGURE_ARGS+=	--enable-auth-module=ldap
+LDAP_FILES=		${WRKSRC}/README.ldap \
+			${WRKSRC}/ldap/qmailUser.schema \
+			${WRKSRC}/ldap/slapd.conf \
+			${WRKSRC}/ldap/vpopmail.ldif
+PLIST_SUB+=	LDAP=""
+.else
+PLIST_SUB+=	LDAP="@comment "
+.endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
@@ -328,10 +342,11 @@ post-install:
 	${MKDIR} ${PREFIX}/vpopmail/etc
 	if [ ! -e "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
 		if [ -e "${VCFGDIR}/tcp.smtp" ]; then \
-			${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/; \
+			${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
 		else \
-			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp; \
+			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
 		fi; \
+		${CP} -p ${PREFIX}/vpopmail/etc/tcp.smtp-dist ${PREFIX}/vpopmail/etc/tcp.smtp; \
 	fi
 .if defined(DEFAULT_DOMAIN)
 	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain
@@ -348,6 +363,10 @@ post-install:
 	${ECHO_CMD} "Now you should add the following options to your spamd.sh startup file:"
 	${ECHO_CMD} "-v -u vpopmail"
 	${ECHO_CMD} "***********************************************************************"
+.endif
+.if defined(WITH_LDAP)
+	${MKDIR} ${PREFIX}/vpopmail/ldap
+	${INSTALL_DATA} ${LDAP_FILES} ${PREFIX}/vpopmail/ldap
 .endif
 
 .include <bsd.port.post.mk>
