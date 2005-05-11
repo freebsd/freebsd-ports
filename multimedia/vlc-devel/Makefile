@@ -295,11 +295,7 @@ WITH_LIBTHEORA=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libspeex.a) && !defined(WITHOUT_SPEEX)
-.if exists(${LOCALBASE}/include/speex.h)
-WITHOUT_SPEEX=	yes
-.else
 WITH_SPEEX=	yes
-.endif
 .endif
 
 .if  exists(${LOCALBASE}/lib/libgnutls.a) && !defined(WITHOUT_SSL)
@@ -575,7 +571,7 @@ CONFIGURE_ARGS+=--disable-slp
 .endif
 
 .if defined(WITH_SPEEX) && !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex-devel
+LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-speex
 CPPFLAGS+=-I${LOCALBASE}/include/speex
 .else
@@ -646,13 +642,6 @@ pre-everything::
 	@${ECHO_MSG} "Take a careful look at the beginning of the Makefile in order"
 	@${ECHO_MSG} "to learn how to tune VLC towards you personal preferences!"
 	@${ECHO_MSG} "For example, make WITH_MOZILLA_PLUGIN=firefox"
-.if defined(WITH_SPEEX) && exists(${LOCALBASE}/include/speex.h)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "**** WARNING ****"
-	@${ECHO_MSG} "Speex 1.0 was detected, if you want Speex support"
-	@${ECHO_MSG} "Please upgrade speex to audio/speex-devel (1.1.x)"
-	@${ECHO_MSG} ""
-.endif
 
 post-patch:
 # Subtitle default font
