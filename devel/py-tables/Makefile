@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	0.7.2
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pytables
@@ -23,13 +23,25 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		ucl.1:${PORTSDIR}/archivers/ucl
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.if !defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/setup.py
+
 post-install:
+	@${FIND} ${PYTHON_SITELIBDIR}/tables ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/tables -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
+	@${FIND} ${EXAMPLESDIR} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>

@@ -2,4 +2,4 @@ The goal of PyTables is to enable the end user to manipulate easily scientific
 data tables and Numerical Python objects in a persistent, disk-based
 hierarchical structure.
 
-WWW: http://pytables.sourceforge.net/
+WWW: http://www.pytables.org/
