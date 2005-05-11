@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crip
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	audio
 MASTER_SITES=	http://bach.dynet.com/crip/src/
 
@@ -18,20 +18,25 @@ RUN_DEPENDS=	${SITE_PERL}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		vorbisgain:${PORTSDIR}/audio/vorbisgain
 
+.if defined(WITH_SOX)
+RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
+.endif
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changelog README criprc_example
 .endif
 
-do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/wav_find_beginning ${WRKSRC}/wav_find_beginning.c
-	${CC} ${CFLAGS} -o ${WRKSRC}/wav_find_end ${WRKSRC}/wav_find_end.c
+NO_BUILD=	yes
+
+pre-fetch:
+.if !defined (WITH_SOX)
+	@${ECHO_MSG} "Define WITH_SOX to enable normalization with sox."
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/crip ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/editcomment ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/editfilenames ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/wav_find_beginning ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/wav_find_end ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
