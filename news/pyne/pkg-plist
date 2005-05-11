@@ -140,7 +140,3 @@ share/locale/zh_TW.Big5/LC_MESSAGES/pyne.mo
 @dirrm %%PYTHON_SITELIBDIR%%/pyne/boxtypes
 @dirrm %%PYTHON_SITELIBDIR%%/pyne/boxformats
 @dirrm %%PYTHON_SITELIBDIR%%/pyne
-@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl 2>/dev/null || true
-@unexec rmdir %D/share/locale/es_ES/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es_ES 2>/dev/null || true
