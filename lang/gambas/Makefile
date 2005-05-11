@@ -7,7 +7,8 @@
 PORTNAME=		gambas
 PORTVERSION=		1.0.6
 CATEGORIES=		lang
-MASTER_SITES=		http://gambas.sourceforge.net/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
