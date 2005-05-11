@@ -60,14 +60,14 @@ post-patch:
 		${WRKSRC}/builds/install/arch-specific/freebsd/install.sh.in
 
 do-configure:
-	@(cd ${WRKSRC} && ${ENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
+	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
 	${AUTOTOOLS_VARS} ./autogen.sh --prefix=${PREFIX}/firebird	\
 	--with-lock-manager --with-editline)
 
 do-build:
 	@(								\
 	cd ${WRKSRC};							\
-	${ENV} CC=${CC} CXX=${CXX} ${GMAKE} all;			\
+	${SETENV} CC=${CC} CXX=${CXX} ${GMAKE} all;			\
 	)
 
 post-install:
