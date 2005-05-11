@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jc
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=jcvm/
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=jcvm/
 MAINTAINER=	archie@freebsd.org
 COMMENT=	JVM that converts class files to C source and compiles them with GCC
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
+BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 MAN1=		jc.1
