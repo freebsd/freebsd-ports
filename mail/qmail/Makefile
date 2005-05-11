@@ -15,27 +15,31 @@ DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 MAINTAINER?=	freebsd@galle.com.br
 COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
+DIST_SUBDIR=	qmail
+
 .if defined(SLAVE_LDAP) || defined(SLAVE_SPAMCONTROL)
-MAIN_QMAIL_PORT_DNS_PATCH_BARRIER=yes
-MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER=yes
+BARRIER_DNS_PATCH=yes
+BARRIER_BIG_CONCURRENCY_PATCH=yes
+BARRIER_QMTPC_PATCH=yes
 .endif
 
 .if defined(SLAVE_LDAP) || defined(SLAVE_SMTP_AUTH_TLS) || \
     defined(SLAVE_SPAMCONTROL) || defined(SLAVE_TLS)
-MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER=yes
-MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER=yes
+BARRIER_OUTGOINGIP_PATCH=yes
+BARRIER_RFC2821_PATCH=yes
 .endif
 
 .if defined(SLAVE_MYSQL) || defined(SLAVE_SPAMCONTROL)
-MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER=yes
+BARRIER_QMAILQUEUE_PATCH=yes
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
-MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER=yes
-MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER=yes
+BARRIER_SENDMAIL_F_PATCH=yes
+BARRIER_BIG_TODO_PATCH=yes
+BARRIER_LOCALTIME_PATCH=yes
 .endif
 
-.if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER)
+.if !defined(BARRIER_DNS_PATCH)
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
 # groundzero. qmail being RFC compliant need to be "fixed" to work with those
@@ -44,14 +48,14 @@ PATCHFILES+=	qmail-103.patch:dns
 PATCH_DIST_STRIP+=	-p1
 .endif
 
-.if !defined(MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER)
+.if !defined(BARRIER_SENDMAIL_F_PATCH)
 # David Phillips noticed that sendmail's -f option sets a default
 # From: header, and so should qmail's emulation.
 PATCH_SITES+=	http://david.acz.org/software/:sendmail_flagf
 PATCHFILES+=	sendmail-flagf.patch:sendmail_flagf
 .endif
 
-.if !defined(MAIN_QMAIL_PORT_RFC2821_PATCH_BARRIER)
+.if !defined(BARRIER_RFC2821_PATCH)
 # This patch changes qmail-remote to skip over MX servers that greet with
 # codes 400 to 499 and to bounce mail when any MX server that qmail tries
 # greets with a code 500 to 599.
@@ -94,17 +98,23 @@ CFLAGS+=	-DDEBUG
 .endif
 .endif
 
-.if !defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
+.if !defined(BARRIER_QMAILQUEUE_PATCH)
 OPTIONS+=	QMAILQUEUE_PATCH "run a QMAILQUEUE program" off
 .endif
-.if !defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
+.if !defined(BARRIER_BIG_TODO_PATCH)
 OPTIONS+=	BIG_TODO_PATCH "enable big_todo qmail patch" off
 .endif
-.if !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+.if !defined(BARRIER_BIG_CONCURRENCY_PATCH)
 OPTIONS+=	BIG_CONCURRENCY_PATCH "use a concurrency greater than 240" off
 .endif
-.if !defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER)
+.if !defined(BARRIER_OUTGOINGIP_PATCH)
 OPTIONS+=	OUTGOINGIP_PATCH "set the IP address to send messages" off
+.endif
+.if !defined(BARRIER_LOCALTIME_PATCH)
+OPTIONS+=	LOCALTIME_PATCH "emit dates in the local timezone" off
+.endif
+.if !defined(BARRIER_QMTPC_PATCH)
+OPTIONS+=	QMTPC_PATCH "send email using qmtp protocol" off
 .endif
 .if defined(SLAVE_TLS) || defined(SLAVE_SMTP_AUTH_TLS)
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
@@ -252,29 +262,43 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER) \
- 	||(defined(WITH_QMAILQUEUE_PATCH)     && !defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)) \
-	||(defined(WITH_BIG_TODO_PATCH)       && !defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)) \
-	||(defined(WITH_BIG_CONCURRENCY_PATCH)&& !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)) \
-	||(defined(WITH_OUTGOINGIP_PATCH)     && !defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER))
+.if (defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)) &&\
+    (defined(WITH_QMTPC_PATCH)      && !defined(BARRIER_QMTPC_PATCH))
+BROKEN=	"OUTGOINGIP and QMTPC conflicts! Please, make your choice"
+.endif
+
+.if !defined(BARRIER_DNS_PATCH) \
+ 	||(defined(WITH_QMAILQUEUE_PATCH)     && !defined(BARRIER_QMAILQUEUE_PATCH)) \
+	||(defined(WITH_BIG_TODO_PATCH)       && !defined(BARRIER_BIG_TODO_PATCH)) \
+	||(defined(WITH_BIG_CONCURRENCY_PATCH)&& !defined(BARRIER_BIG_CONCURRENCY_PATCH)) \
+	||(defined(WITH_OUTGOINGIP_PATCH)     && !defined(BARRIER_OUTGOINGIP_PATCH)) \
+	||(defined(WITH_QMTPC_PATCH)          && !defined(BARRIER_QMTPC_PATCH))
 PATCH_SITES+=	${MASTER_SITE_QMAIL}
 .endif
 
-.if defined(WITH_QMAILQUEUE_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
+.if defined(WITH_QMAILQUEUE_PATCH) && !defined(BARRIER_QMAILQUEUE_PATCH)
 PATCHFILES+=	qmailqueue-patch
 .endif
-.if defined(WITH_BIG_TODO_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
+.if defined(WITH_BIG_TODO_PATCH) && !defined(BARRIER_BIG_TODO_PATCH)
 PATCHFILES+=	big-todo.103.patch
 .endif
-.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+.if defined(WITH_BIG_CONCURRENCY_PATCH) && !defined(BARRIER_BIG_CONCURRENCY_PATCH)
 PATCHFILES+=	big-concurrency.patch
 .endif
-.if defined(WITH_OUTGOINGIP_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER)
+.if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
 PATCHFILES+=	outgoingip.patch
+.endif
+.if defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
+PATCHFILES+=	qmail-1.03-qmtpc.patch
+.endif
+
+.if defined(WITH_LOCALTIME_PATCH) && !defined(BARRIER_LOCALTIME_PATCH)
+PATCH_SITES+=	http://www.alib.jp/files/:localtime
+PATCHFILES+=	qmail-date-localtime.patch:localtime
 .endif
 
 # Some default values, these can be modified by make command line
-.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+.if defined(WITH_BIG_CONCURRENCY_PATCH) && !defined(BARRIER_BIG_CONCURRENCY_PATCH)
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
 .endif
 
@@ -342,7 +366,7 @@ SELECTED_OPTIONS+=	bigtodo=no
 .endif
 
 pre-everything::
-.if !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+.if !defined(BARRIER_BIG_CONCURRENCY_PATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
@@ -355,7 +379,7 @@ pre-everything::
 
 post-extract:
 .if defined(SLAVE_SPAMCONTROL)
-	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${SPAMCONTROL_DIST}
+	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SPAMCONTROL_DIST}
 .endif
 
 post-patch:
@@ -363,7 +387,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|/opt/mysql|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
 .elif defined(SLAVE_SMTP_AUTH_TLS)
-	@${HEAD} -6 ${DISTDIR}/qmail-1.03-starttls-smtp-auth.patch \
+	@${HEAD} -6 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-starttls-smtp-auth.patch \
 		| ${TAIL} -5 \
 		> ${WRKDIR}/SMTP_AUTH+TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
@@ -376,7 +400,7 @@ post-patch:
 .endfor
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 .elif defined(SLAVE_TLS)
-	@${HEAD} -74 ${DISTDIR}/tls.patch > ${WRKDIR}/TLS.readme
+	@${HEAD} -74 ${DISTDIR}/${DIST_SUBDIR}/tls.patch > ${WRKDIR}/TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
 .elif defined(SLAVE_LDAP)
@@ -433,7 +457,7 @@ do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
-	&& !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER) \
+	&& !defined(BARRIER_BIG_CONCURRENCY_PATCH) \
 	&& defined(WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT)
 	@if [ ${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT} -gt 0 ]; then \
 		${ECHO_CMD} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
