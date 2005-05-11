@@ -61,11 +61,7 @@ PLIST_SUB+=	GTK2="@comment "
 PLIST_SUB+=	GTK=""
 .else
 CONFLICTS=	freeciv-gtk-1* freeciv-gtk2-1*
-.if ${X_WINDOW_SYSTEM:L} == xorg
-LIB_DEPENDS+=	Xaw3d.7:${PORTSDIR}/x11-toolkits/Xaw3d
-.else
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
-.endif
 CONFIGURE_ARGS+=	--enable-client=xaw3d
 PLIST_SUB+=	GTK="@comment "
 PLIST_SUB+=	GTK2="@comment "
