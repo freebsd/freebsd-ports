@@ -82,8 +82,8 @@ PATCH_DIST_STRIP+=	-p1
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,smtp_auth_tls,tls/}
 PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,smtp_auth_tls,tls
 
-#NO_PACKAGE=	djb's packaging license does not allow non-standard \
-#		qmail binary distributions
+NO_PACKAGE=	djb's packaging license does not allow non-standard \
+		qmail binary distributions
 
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
