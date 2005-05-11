@@ -1,10 +1,12 @@
 bin/pork
 %%DATADIR%%/QUICK_START
 %%DATADIR%%/examples/perl/acro.pl
+%%DATADIR%%/examples/perl/calendar.pl
 %%DATADIR%%/examples/perl/event_test.pl
 %%DATADIR%%/examples/perl/irc.pl
 %%DATADIR%%/examples/perl/np.pl
 %%DATADIR%%/examples/perl/signon.pl
+%%DATADIR%%/examples/perl/spellcheck.pl
 %%DATADIR%%/examples/perl/wh.pl
 %%DATADIR%%/help/blist/add_block
 %%DATADIR%%/help/blist/add_permit
