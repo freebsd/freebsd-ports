@@ -7013,6 +7013,7 @@ p5-Catalyst-Model-CDBI	ports/www/p5-Catalyst-Model-CDBI
 p5-Catalyst-Plugin-FormValidator	ports/www/p5-Catalyst-Plugin-FormValidator
 p5-Catalyst-Plugin-Prototype	ports/www/p5-Catalyst-Plugin-Prototype
 p5-Catalyst-Plugin-Session-FastMmap	ports/www/p5-Catalyst-Plugin-Session-FastMmap
+p5-Catalyst-Plugin-SubRequest	ports/www/p5-Catalyst-Plugin-SubRequest
 p5-Catalyst-Plugin-Textile	ports/www/p5-Catalyst-Plugin-Textile
 p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
 p5-Cdk		ports/devel/p5-Cdk
