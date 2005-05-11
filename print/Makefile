@@ -239,6 +239,7 @@
     SUBDIR += py-fonttools
     SUBDIR += py-freetype
     SUBDIR += py-reportlab
+    SUBDIR += py-rtf
     SUBDIR += rlpr
     SUBDIR += rprint
     SUBDIR += rtf2latex

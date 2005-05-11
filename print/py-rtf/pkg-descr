@@ -1,0 +1,5 @@
+PyRTF is a pure python module for the efficient generation of
+rich text format documents.  It has good support for tables and
+tries to maintain compatibility with as many RTF readers as possible.
+
+WWW: http://pyrtf.sourceforge.net/
