@@ -19,6 +19,7 @@ share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/nl/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libidn.mo
@@ -26,3 +27,5 @@ share/emacs/site-lisp/punycode.el
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/rw 2> /dev/null || true
