@@ -371,6 +371,7 @@ share/gnome/sounds/gaim/receive.wav
 share/gnome/sounds/gaim/redalert.wav
 share/gnome/sounds/gaim/send.wav
 share/locale/am/LC_MESSAGES/gaim.mo
+share/locale/az/LC_MESSAGES/gaim.mo
 share/locale/bg/LC_MESSAGES/gaim.mo
 share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
@@ -388,6 +389,7 @@ share/locale/hi/LC_MESSAGES/gaim.mo
 share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
+share/locale/ka/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/lt/LC_MESSAGES/gaim.mo
 share/locale/mk/LC_MESSAGES/gaim.mo
