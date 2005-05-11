@@ -1,6 +1,0 @@
-libuta is a Graphical User Interface library for C++ that uses SDL
-as its output layer.  It allows application and game programmers to
-put together portable graphical applications easily.  libuta has a
-range  of already implemented widgets and uses libsigc++ as a signal
-dispatching system.  It also performs resource management and has a
-sound system.
