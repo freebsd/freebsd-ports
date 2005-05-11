@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r10b4
+PORTVERSION=	r10b5
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.erlang.org/download/        \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R10B-4
+DISTNAME=	otp_src_R10B-5
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
@@ -31,9 +31,9 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 JAVABINDIR?=	${LOCALBASE}/jdk1.4.2/bin
 JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk14
 
-ERLANG_MAN=     otp_doc_man_R10B-4.tar.gz
+ERLANG_MAN=     otp_doc_man_R10B-5.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R10B-4.tar.gz
+ERLANG_DOCS=	otp_doc_html_R10B-5.tar.gz
 .endif
 
 USE_GMAKE=	yes
