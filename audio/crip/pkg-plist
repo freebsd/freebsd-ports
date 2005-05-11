@@ -1,5 +1,3 @@
 bin/crip
 bin/editcomment
 bin/editfilenames
-bin/wav_find_beginning
-bin/wav_find_end
