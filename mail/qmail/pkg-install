@@ -67,32 +67,6 @@ if (${?PACKAGE_BUILDING}) then
 	set doguid = 1;
 endif
 
-if ($doguid) then
-	set k = 1;
-	foreach group ($groups) {
-		set chkgid = (`$pw groupshow $group | $sed -e "s/:/ /"`); 
-		if ($chkgid[3] != $gids[$k]) then
-			echo "Group '$group' should have gid '$gids[$k]'";
-			exit 1;
-		endif
-
-		@ k = $k + 1;
-	}
-
-	set k = 1;
-	foreach user ($users) {
-		set chkuid = (`$pw usershow $user | $sed -e "s/:/ /"`); 
-		if ($chkuid[3] != $uids[$k]) then
-			echo "User '$user' should have uid '$uids[$k]'";
-			exit 1;
-		endif
-
-		@ k = $k + 1;
-	}
-
-	exit 0;
-endif
-
 set k = 1;
 foreach group ($groups)
 	$pw groupshow $group >& $null;
@@ -102,6 +76,14 @@ foreach group ($groups)
 
 		if ($status) then
 			echo "Failed to add group '$group' as gid '$gids[$k]'";
+			exit 1;
+		endif
+	endif
+
+	if ($doguid) then
+		set chkgid = (`$pw groupshow $group | $sed -e "s/:/ /g"`); 
+		if ($chkgid[3] != $gids[$k]) then
+			echo "Group '$group' should have gid '$gids[$k]'";
 			exit 1;
 		endif
 	endif
@@ -124,6 +106,14 @@ foreach user ($users)
 
 		if ($status) then
 			echo "Failed to add user '$user' as uid '$uids[$k]'";
+			exit 1;
+		endif
+	endif
+
+	if ($doguid) then
+		set chkuid = (`$pw usershow $user | $sed -e "s/:/ /g"`); 
+		if ($chkuid[3] != $uids[$k]) then
+			echo "User '$user' should have uid '$uids[$k]'";
 			exit 1;
 		endif
 	endif
