@@ -6,10 +6,12 @@ bin/h5debug
 bin/h5diff
 bin/h5dump
 bin/h5import
+bin/h5jam
 bin/h5ls
 bin/h5redeploy
 bin/h5repack
 bin/h5repart
+bin/h5unjam
 include/H5ACpublic.h
 include/H5AbstractDs.h
 include/H5Apublic.h
@@ -22,6 +24,7 @@ include/H5CommonFG.h
 include/H5CompType.h
 include/H5Cpp.h
 include/H5CppDoc.h
+include/H5Cpublic.h
 include/H5DataSet.h
 include/H5DataSpace.h
 include/H5DataType.h
@@ -53,10 +56,12 @@ include/H5Gpublic.h
 include/H5Group.h
 include/H5HGpublic.h
 include/H5HLpublic.h
+include/H5IM.h
 include/H5IdComponent.h
 include/H5Include.h
 include/H5IntType.h
 include/H5Ipublic.h
+include/H5LT.h
 include/H5Library.h
 include/H5MMpublic.h
 include/H5Object.h
@@ -64,10 +69,10 @@ include/H5Opublic.h
 include/H5Ppublic.h
 include/H5PredType.h
 include/H5PropList.h
-include/H5RefCounter.h
 include/H5Rpublic.h
 include/H5Spublic.h
 include/H5StrType.h
+include/H5TA.h
 include/H5Tpublic.h
 include/H5VarLenType.h
 include/H5Zpublic.h
@@ -80,6 +85,10 @@ lib/libhdf5.settings
 lib/libhdf5.so
 lib/libhdf5.so.0
 lib/libhdf5_cpp.a
+lib/libhdf5_cpp.settings
+lib/libhdf5_hl.a
+lib/libhdf5_hl.so
+lib/libhdf5_hl.so.0
 %%EXAMPLESDIR%%/c/h5_attribute.c
 %%EXAMPLESDIR%%/c/h5_chunk_read.c
 %%EXAMPLESDIR%%/c/h5_compound.c
