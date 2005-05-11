@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	8.0.2
+PORTVERSION?=	8.0.3
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -43,7 +43,8 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
-BUILD_DIRS?=	src/timezone src/backend src/backend/utils/mb/conversion_procs src/pl
+BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_procs \
+		src/pl src/utils
 INSTALL_DIRS?=	${BUILD_DIRS}
 PKGMESSAGE=	${WRKDIR}/.pkg-message${PKGNAMESUFFIX}
 
@@ -85,6 +86,7 @@ OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
 OPTIONS+=	LIBC_R "Link w/ libc_r, used by plpython (server)" off
+OPTIONS+=	THREADSAFE "make libpq thread safe" off
 #  to run regression tests:
 OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
@@ -174,6 +176,10 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .  if defined(SERVER_ONLY) && defined(WITH_TESTS)
 DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
 EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
+.  endif
+
+.  if defined(WITH_THREADSAFE)
+CONFIGURE_ARGS+=--enable-thread-safety
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
@@ -295,6 +301,9 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
+.  if defined(CLIENT_ONLY)
+	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} install-local
+.  endif
 	@ if [ -r ${PKGMESSAGE} ]; then \
 		${MKDIR} ${DOCSDIR} ;\
 		${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README${PKGNAMESUFFIX} ;\

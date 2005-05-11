@@ -15,7 +15,7 @@ COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql80-server
 
-BUILD_DIRS=	src/include src/interfaces src/bin doc
+BUILD_DIRS=	src/include src/interfaces src/bin doc src/makefiles
 CLIENT_ONLY=	yes
 INSTALLS_SHLIB=	yes
 

@@ -420,6 +420,15 @@ lib/libpq.so.4
 lib/libpgtypes.a
 lib/libpgtypes.so
 lib/libpgtypes.so.2
+lib/postgresql/pgxs/src/makefiles/pgxs.mk
+@dirrm lib/postgresql/pgxs/src/makefiles
+lib/postgresql/pgxs/src/Makefile.global
+lib/postgresql/pgxs/src/Makefile.port
+lib/postgresql/pgxs/src/Makefile.shlib
+lib/postgresql/pgxs/src/nls-global.mk
+@dirrm lib/postgresql/pgxs/src
+@dirrm lib/postgresql/pgxs
+@dirrm lib/postgresql
 %%DOCSDIR%%/README-client
 @unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
 share/postgresql/pg_service.conf.sample

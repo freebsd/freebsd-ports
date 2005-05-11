@@ -2,6 +2,7 @@ bin/postmaster
 bin/postgres
 etc/periodic/daily/502.pgsql
 etc/rc.d/010.pgsql.sh
+lib/libpgport.a
 lib/postgresql/ascii_and_mic.so
 lib/postgresql/cyrillic_and_mic.so
 lib/postgresql/euc_cn_and_mic.so

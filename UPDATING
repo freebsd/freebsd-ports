@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050511:
+  AFFECTS: users of databases/postgresql??-(server|contrib)
+  AUTHOR: girgen@FreeBSD.org
+
+  The PostgreSQL ports have been updated to latest versions. A
+  security problem in the template database requires a simple SQL
+  command to be run on each database. because these problems are
+  really incorrect system catalog entries. Updating to a new release
+  will NOT by itself solve the problems in an existing
+  installation.
+
+  See http://www.postgresql.org/about/news.315 for details.
+
 20050501:
   AFFECTS: users of lang/ocaml based applications and libraries
   AUTHOR: lioux@FreeBSD.org
