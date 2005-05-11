@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.125
-PORTREVISION=	1
+PORTVERSION=	1.127
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
+MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/ \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,des,}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tiamat@komi.mts.ru
