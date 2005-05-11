@@ -1,5 +1,5 @@
 bin/epic5
-bin/epic5-0.0.3
+bin/epic5-0.0.5
 libexec/wserv4
 %%PORTDOCS%%%%DOCSDIR%%/BUG_FORM
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
@@ -46,6 +46,7 @@ libexec/wserv4
 %%DATADIR%%/script/grep
 %%DATADIR%%/script/guh
 %%DATADIR%%/script/help
+%%DATADIR%%/script/history
 %%DATADIR%%/script/hold_mode
 %%DATADIR%%/script/hybrid6
 %%DATADIR%%/script/imap
@@ -58,6 +59,7 @@ libexec/wserv4
 %%DATADIR%%/script/less
 %%DATADIR%%/script/less-pipe
 %%DATADIR%%/script/list
+%%DATADIR%%/script/loadformats
 %%DATADIR%%/script/local.examp
 %%DATADIR%%/script/ls
 %%DATADIR%%/script/mail
@@ -83,6 +85,7 @@ libexec/wserv4
 %%DATADIR%%/script/recursion
 %%DATADIR%%/script/repeat
 %%DATADIR%%/script/revdcc
+%%DATADIR%%/script/save
 %%DATADIR%%/script/scan
 %%DATADIR%%/script/scandir
 %%DATADIR%%/script/screen
@@ -108,6 +111,7 @@ libexec/wserv4
 %%DATADIR%%/script/webster
 %%DATADIR%%/script/window
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%DATADIR%%/help
 @unexec rmdir %D/%%DATADIR%%/help 2>/dev/null || true
 @dirrm %%DATADIR%%/script
 @dirrm %%DATADIR%%
