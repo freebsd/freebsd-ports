@@ -8,11 +8,17 @@
 PORTNAME=	ircservices
 PORTVERSION=	5.0.${PATCHLEVEL}
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.esper.net/ircservices/
+MASTER_SITES= ftp://ftp.esper.net/ircservices/ \
+	http://www.ircservices.esper.net/download/ \
+	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/ \
+	ftp://ftp.ircd.com.br/ircservices/ \
+	http://www.irc.gr/ircservices/ \
+	http://ircservices.swissirc.ch/
+
 DISTNAME=	${PORTNAME}-5.0.0
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHLEVEL=	50
+PATCHLEVEL= 51
 PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
@@ -23,24 +29,16 @@ COMMENT=	A system of IRC services for IRC networks
 USE_PERL5_BUILD=yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_RC_SUBR=	ircservices.sh
+USE_GCC=	3.2+
+NOT_FOR_ARCHS=	sparc64
 
 DIST_SUBDIR=	${PORTNAME}
-CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
+CONFIGURE_ARGS= -prefix ${PREFIX} -cflags "${CFLAGS} -fPIC" -cc "${CC}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386"
-.endif
-
-.if ${OSVERSION} < 500039
-USE_GCC=	3.2+
-.endif
-
 post-install:
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/ircservices.sh.sample startup file."
-	@${INSTALL_SCRIPT} ${FILESDIR}/ircservices.sh \
-		${PREFIX}/etc/rc.d/ircservices.sh.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
