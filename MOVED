@@ -1466,3 +1466,4 @@ www/mod_throttle||2005-05-07|author does not permit distribution of patch files
 www/mod_watch||2005-05-07|author does not permit distribution of patch files
 www/mod_watch4||2005-05-07|author does not permit distribution of patch files
 japanese/postgresql7-man|japanese/postgresql74-man|2005-05-08|port renamed
+devel/libuta|devel/wftk|2005-05-11|wftk is a fork of libuta which is not any longer maintained

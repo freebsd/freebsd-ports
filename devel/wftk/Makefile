@@ -5,36 +5,42 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libuta
-PORTVERSION=	0.4.4
-PORTREVISION=	4
+PORTNAME=	wftk
+PORTVERSION=	0.7.1
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/wftk/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A Graphical User Interface library for C++
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		sigc.1:${PORTSDIR}/devel/libsigc++
+		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-OPTIONS=	SDL_MIXER "music and sound support" off
+OPTIONS=	SDL_MIXER	"music and sound support"	off
 
 USE_FREETYPE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE}
 
 WANT_SDL=	yes
 
-SDL11_FILES=	configure uta/color.h uta/event.h uta/keysym.h uta/mutex.h \
-		uta/pixelformat.h uta/rect.h uta/sge_blib.cc uta/sge_blib.h \
-		uta/sge_draw.cc uta/sge_draw.h uta/sound.h uta/surface_io.cc \
-		uta/surface.h uta/timer.cc
+SDL11_FILES=	configure wftk/sge_blib.h wftk/sge_blib.cpp wftk/sge_draw.h \
+		wftk/sge_draw.cpp wftk/rotozoom.h wftk/surface.cpp \
+		wftk/surface_io.cpp wftk/screensurface.cpp wftk/timer.cpp \
+		wftk/poll.cpp wftk/sdlhandler.cpp wftk/rootwindow.cpp \
+		wftk/mouse.cpp wftk/joystick.cpp wftk/mixer.cpp wftk/color.h \
+		wftk/rect.h wftk/region.h wftk/keysym.h wftk/pixelformat.h \
+		wftk/surface.h wftk/refobj.h wftk/focus.h wftk/application.h \
+		wftk/mouse.h wftk/joystick.h wftk/sound.h wftk/mixer.h \
+		wftk/mutex.h wftk/timer.h wftk/poll.h wftk/sdlhandler.h
 
 .include <bsd.port.pre.mk>
 
@@ -50,12 +56,5 @@ post-patch:
 .for i in ${SDL11_FILES}
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/$i
 .endfor
-
-pre-configure:
-	@${REINPLACE_CMD} -e '\
-		s|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g; \
-		s|-lpthread||g; \
-		s|-lc_r|${PTHREAD_LIBS}|g' \
-			${WRKSRC}/configure ${WRKSRC}/uta/font.h
 
 .include <bsd.port.post.mk>

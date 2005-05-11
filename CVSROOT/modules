@@ -5301,7 +5301,6 @@ libunicode	ports/devel/libunicode
 libuninameslist	ports/textproc/libuninameslist
 libunp		ports/net/libunp
 libunpipc	ports/net/libunpipc
-libuta		ports/devel/libuta
 libutempter	ports/sysutils/libutempter
 libutf		ports/misc/libutf
 libutf-8	ports/converters/libutf-8
@@ -11896,6 +11895,7 @@ wesnoth		ports/games/wesnoth
 westhawksnmp	ports/java/westhawksnmp
 wfb2sql		ports/databases/wfb2sql
 wfmath		ports/math/wfmath
+wftk		ports/devel/wftk
 wget		ports/ftp/wget
 wget-devel	ports/ftp/wget-devel
 wget4web	ports/www/wget4web
