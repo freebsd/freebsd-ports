@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz++
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz++/
 
@@ -16,7 +16,7 @@ COMMENT=	C++ toolkit for development of Z39.50v3 clients and servers
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-shared --with-yazconfig=${LOCALBASE}/bin
+CONFIGURE_ARGS+=--enable-shared --with-yaz=${LOCALBASE}/bin
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
