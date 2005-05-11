@@ -6,50 +6,45 @@
 #
 
 PORTNAME=	lapack++
-PORTVERSION=	1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	math
-MASTER_SITES=	http://math.nist.gov/lapack++/
-DISTNAME=	Lapackpp1_1a
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} \
+		http://math.nist.gov/lapack++/:doc
+MASTER_SITE_SUBDIR=	lapackpp
+DISTNAME=	lapackpp-${PORTVERSION}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} lapack++.ps.gz lapackpp1_1.ps.gz \
-		lapackppman1_1.ps.gz lapack++_install.ps.gz
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} lapack++.ps.gz:doc lapackpp1_1.ps.gz:doc \
+		lapackppman1_1.ps.gz:doc lapack++_install.ps.gz:doc
 .endif
 DIST_SUBDIR=	lapack++
-EXTRACT_ONLY=	Lapackpp1_1a.tgz
+EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
+.if !defined(WITH_BLAS)
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
+.endif
 
-WRKSRC=		${WRKDIR}/Lapackpp1.1a
-USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-#ATLAS_BLAS
-BLAS_LIB=	-lf77blas -latlas
-LAPACK_LIB=	-lalapack -lcblas
+.if defined(WITH_BLAS)
+BLAS_LIB=	-L${LOCALBASE}/lib -lblas
+LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
+.else
+BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas -latlas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
+.endif
 
-#Vanilla BLAS
-#BLAS_LIB=	-lblas
-#LAPACK_LIB=	-llapack
+#BLAS_LIB=	-L${LOCALBASE}/lib -lptf77blas -latlas_r ${PTHREAD_LIBS}
+#LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack_r -lptcblas ${PTHREAD_LIBS}
 
-#SMP version (KSE required)
-#BLAS_LIB=	-lptf77blas -latlas_r ${PTHREAD_LIBS}
-#LAPACK_LIB=	-lalapack_r -lptcblas ${PTHREAD_LIBS}
-
-post-patch:
-	@(cd ${WRKSRC} ; ${MV} makefile Makefile)
-	@${REINPLACE_CMD} -e 's+%%BLAS_LIB%%+${BLAS_LIB}+g;' \
-			-e 's+%%LAPACK_LIB%%+${LAPACK_LIB}+g;' \
-		${WRKSRC}/makefile.def
+#lapack++ forces to use atlas when detected, so we should disable here.
+CONFIGURE_ARGS+=	--with-blas="${BLAS_LIB}" --with-lapack="${LAPACK_LIB}" --disable-atlas
 
 do-install:
-.for i in libblas++ liblamatrix++ liblapack++
-	${INSTALL_DATA} ${WRKSRC}/${i}.a ${PREFIX}/lib
-.endfor
-	@${MKDIR} ${PREFIX}/include/lapack++
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/lapack++
+	@(cd ${WRKSRC} ; ${GMAKE} install)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapack++.ps.gz ${DOCSDIR}
