@@ -1,3 +1,8 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : contains illigal char
+
 Index: offapi/com/sun/star/rendering/XParametricPolyPolygon2DFactory.idl
 ===================================================================
 RCS file: /cvs/api/offapi/com/sun/star/rendering/XParametricPolyPolygon2DFactory.idl,v

@@ -1,3 +1,8 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : correct shared lib number
+
 Index: sndfile/libsndfile-1.0.9.patch
 ===================================================================
 RCS file: /cvs/external/sndfile/libsndfile-1.0.9.patch,v

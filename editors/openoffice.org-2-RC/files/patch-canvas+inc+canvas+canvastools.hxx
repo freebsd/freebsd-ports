@@ -1,3 +1,7 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : powerof2() is already defined
 
 Index: canvas/inc/canvas/canvastools.hxx
 ===================================================================

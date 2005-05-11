@@ -1,3 +1,8 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : We don't have -ldl and -lnsl
+
 Index: crashrep/source/unx/makefile.mk
 ===================================================================
 RCS file: /cvs/porting/crashrep/source/unx/makefile.mk,v

@@ -1,4 +1,7 @@
-Get rid of -ldl for FREEBSD and MACOSX
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : Get rid of -ldl for FREEBSD and MACOSX
 
 Index: vcl/util/makefile.mk
 ===================================================================

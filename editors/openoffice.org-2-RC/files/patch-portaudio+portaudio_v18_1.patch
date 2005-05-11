@@ -1,3 +1,8 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : Need to include <sys/soundcard.h> to use sound
+
 Index: portaudio/portaudio_v18_1.patch
 ===================================================================
 RCS file: /cvs/external/portaudio/portaudio_v18_1.patch,v
