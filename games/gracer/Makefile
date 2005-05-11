@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tcl84.1:${PORTSDIR}/lang/tcl84
+		tcl82.1:${PORTSDIR}/lang/tcl82
 
 USE_MESA=	YES
 USE_PERL5_BUILD=yes
