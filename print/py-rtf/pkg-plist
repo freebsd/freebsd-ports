@@ -1,0 +1,28 @@
+%%PYTHON_SITELIBDIR%%/PyRTF/Constants.py
+%%PYTHON_SITELIBDIR%%/PyRTF/Constants.pyc
+%%PYTHON_SITELIBDIR%%/PyRTF/Constants.pyo
+%%PYTHON_SITELIBDIR%%/PyRTF/Elements.py
+%%PYTHON_SITELIBDIR%%/PyRTF/Elements.pyc
+%%PYTHON_SITELIBDIR%%/PyRTF/Elements.pyo
+%%PYTHON_SITELIBDIR%%/PyRTF/PropertySets.py
+%%PYTHON_SITELIBDIR%%/PyRTF/PropertySets.pyc
+%%PYTHON_SITELIBDIR%%/PyRTF/PropertySets.pyo
+%%PYTHON_SITELIBDIR%%/PyRTF/Renderer.py
+%%PYTHON_SITELIBDIR%%/PyRTF/Renderer.pyc
+%%PYTHON_SITELIBDIR%%/PyRTF/Renderer.pyo
+%%PYTHON_SITELIBDIR%%/PyRTF/Styles.py
+%%PYTHON_SITELIBDIR%%/PyRTF/Styles.pyc
+%%PYTHON_SITELIBDIR%%/PyRTF/Styles.pyo
+%%PYTHON_SITELIBDIR%%/PyRTF/__init__.py
+%%PYTHON_SITELIBDIR%%/PyRTF/__init__.pyc
+%%PYTHON_SITELIBDIR%%/PyRTF/__init__.pyo
+share/examples/py-rtf/examples.py
+share/examples/py-rtf/examples2.py
+share/examples/py-rtf/image.jpg
+share/examples/py-rtf/img1.png
+share/examples/py-rtf/img2.png
+share/examples/py-rtf/img3.png
+share/examples/py-rtf/img4.png
+share/examples/py-rtf/merged_cells.py
+@dirrm share/examples/py-rtf
+@dirrm %%PYTHON_SITELIBDIR%%/PyRTF
