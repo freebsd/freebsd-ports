@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# PROVIDE: ircservices
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable ircservices:
+#
+# ircservices_enable="YES"
+#
+
+ircservices_enable="NO"
+
+. %%RC_SUBR%%
+
+name=ircservices
+rcvar=`set_rcvar`
+
+prefix=%%PREFIX%%
+command="${prefix}/sbin/ircservices"
+ircservices_pidfile="${prefix}/lib/services/ircservices.pid"
+
+load_rc_config ${name}
+run_rc_command "$1"

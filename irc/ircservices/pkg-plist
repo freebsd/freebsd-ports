@@ -1,4 +1,3 @@
-etc/rc.d/ircservices.sh.sample
 lib/services/convert-db
 lib/services/example-ircservices.conf
 lib/services/example-modules.conf
