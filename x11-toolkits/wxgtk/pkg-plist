@@ -1,8 +1,0 @@
-bin/wxgtk-2.4-config
-include/wx/gtk-2.4/wx/setup.h
-lib/libwx_gtk-2.4.so
-lib/libwx_gtk-2.4.so.0
-lib/libwx_gtk_gl-2.4.so
-lib/libwx_gtk_gl-2.4.so.0
-@dirrm include/wx/gtk-2.4/wx
-@dirrm include/wx/gtk-2.4

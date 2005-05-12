@@ -17,7 +17,7 @@ COMMENT=	A-A-P GUI IDE: a framework for software development
 
 RUN_DEPENDS=	${LOCALBASE}/bin/aap:${PORTSDIR}/devel/aap \
 		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim \
-		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
 
 MAN1=		agide.1
 

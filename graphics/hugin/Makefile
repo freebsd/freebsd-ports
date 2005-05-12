@@ -22,8 +22,8 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		fftw:${PORTSDIR}/math/fftw \
-		wx_gtk2:${PORTSDIR}/x11-toolkits/wxgtk2 \
-		wx_gtk2_xrc:${PORTSDIR}/x11-toolkits/wxgtk2-contrib \
+		wx_gtk2:${PORTSDIR}/x11-toolkits/wxgtk24 \
+		wx_gtk2_xrc:${PORTSDIR}/x11-toolkits/wxgtk24-contrib \
 		boost_date_time:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 		PTStitcher:${PORTSDIR}/graphics/linux-panorama-tools

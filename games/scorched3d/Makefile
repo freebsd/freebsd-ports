@@ -16,7 +16,7 @@ DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 MAINTAINER=		guy@device.dyndns.org
 COMMENT=		Scorched is a game based loosely on the classic DOS game
 
-LIB_DEPENDS=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 SCORCH_VERSION=		38.1
 SCORCH_REVISION=	b

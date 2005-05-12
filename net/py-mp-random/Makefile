@@ -16,7 +16,7 @@ DISTNAME=	MirrorProjectRandomImageWidget-src-${PORTVERSION}
 MAINTAINER=	randomimage-widget@mirrorproject.com
 COMMENT=	Display random Mirror Project images on your desktop
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython24
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes

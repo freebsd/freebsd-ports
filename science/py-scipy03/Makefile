@@ -19,7 +19,7 @@ COMMENT=	Scientific tools for Python
 BUILD_DEPENDS=	${PYNUMERIC} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft \
 		f2py:${PORTSDIR}/lang/f2py \
-		${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+		${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		atlas.1:${PORTSDIR}/math/atlas
 

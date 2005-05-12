@@ -17,7 +17,7 @@ MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes

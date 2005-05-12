@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	BBMan is a BBS client for X Window System
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

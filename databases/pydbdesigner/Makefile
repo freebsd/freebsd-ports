@@ -18,8 +18,8 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical designer for relational databases
 
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
 
 USE_PYTHON=	yes
 PLIST=		${WRKDIR}/plist

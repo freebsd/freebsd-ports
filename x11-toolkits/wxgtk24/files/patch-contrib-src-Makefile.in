@@ -8,13 +8,3 @@
  
  all:
  	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE)); done
-@@ -10,6 +10,9 @@
- 
- install:
- 	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE) install); done
-+
-+install-common:
-+	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE) install-common); done
- 
- uninstall:
- 	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE) uninstall); done

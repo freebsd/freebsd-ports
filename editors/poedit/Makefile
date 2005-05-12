@@ -18,7 +18,7 @@ COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes

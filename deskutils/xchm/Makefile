@@ -15,7 +15,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Windows HTML Help (.chm) viewer for UNIX
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

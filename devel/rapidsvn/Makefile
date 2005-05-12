@@ -32,7 +32,7 @@ MAN1=		rapidsvn.1
 WXPORT=		wxgtk2-devel
 WXCONFIG=	wxgtk2-2.5-config
 .else
-WXPORT=		wxgtk2
+WXPORT=		wxgtk24
 WXCONFIG=	wx-config
 .endif
 SVNDEP=		${LOCALBASE}/include/subversion-1/svn_types.h

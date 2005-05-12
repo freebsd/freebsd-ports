@@ -40,7 +40,7 @@ MAN1=		bittorrent-downloader.1 bittorrent-multi-downloader.1 \
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
 PLIST_SUB+=	GUI=''
 EXTRA_PATCHES+=	${FILESDIR}/extra-gui-patch-setup.py
 .else

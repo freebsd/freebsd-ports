@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.berlios.de/amule/
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	The all-platform eMule p2p client
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
+LIB_DEPENDS=	wx_gtk2_core-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk24 \
 		curl.3:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	aMule-devel-*

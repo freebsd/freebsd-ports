@@ -18,7 +18,7 @@ COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_GETTEXT=	yes

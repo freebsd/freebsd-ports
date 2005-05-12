@@ -30,7 +30,7 @@ WRKSRC=		${WRKDIR}/${RELEASE_DIRECTORY}/MUTE
 PATCH_WRKSRC=	${WRKDIR}/${RELEASE_DIRECTORY}
 
 .ifndef(WITHOUT_GUI)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 .endif

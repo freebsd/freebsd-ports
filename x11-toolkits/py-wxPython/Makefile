@@ -47,16 +47,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_GTK1)
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
-
 CONFIGURE_ARGS+=	--enable-gtk2
 PYDISTUTILS_BUILDARGS+=	WXPORT=gtk2
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} ${PYDISTUTILS_BUILDARGS}
-.else
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
-WX_CONFIG=	${X11BASE}/bin/wxgtk-2.4-config
-.endif
 
 .include <bsd.port.post.mk>

@@ -36,7 +36,7 @@ WXGTK_CONFIG=	wxgtk2-2.4-config
 .include <bsd.port.pre.mk>
 
 .ifndef(WITHOUT_WXGTK)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 MAN1+=		mmg.1
 PLIST_FILES+=	bin/mmg

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Allows you to display and breed L-system forms
 
-LIB_DEPENDS=	wx_gtk2_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 WRKSRC=		${WRKDIR}/LBreeder/LBreeder
 PATCH_WRKSRC=	${WRKDIR}/LBreeder
