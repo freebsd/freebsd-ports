@@ -50,7 +50,7 @@ INFO=		gnucash-design
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/db41/db_185.h)
-LIB_DEPENDS+=	db4.1:${PORTSDIR}/databases/db41
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 post-patch:
 	@${REINPLACE_CMD} -e "s|db4/db_185.h|db41/db_185.h|g" \
 		${WRKSRC}/configure
