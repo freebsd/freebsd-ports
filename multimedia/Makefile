@@ -25,6 +25,7 @@
     SUBDIR += enjoympeg
     SUBDIR += exportvideo
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg-devel
     SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaim-xmms-remote
