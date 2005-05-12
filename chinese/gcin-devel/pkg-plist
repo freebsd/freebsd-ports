@@ -35,8 +35,8 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/tsin.idx
 %%DATADIR%%/table/zo.kbm
 %%DATADIR%%/table/zo-asdf.kbm
-%%DOCSDIR%%/README
 %%DOCSDIR%%/Changelog
+%%DOCSDIR%%/README
 share/applications/gcin.desktop
 share/applications/gcin-setup.desktop
 share/icons/gcin.png
@@ -50,3 +50,5 @@ share/icons/gcin/pin-float16.png
 @unexec rmdir %D/%%DATADIR%%/script 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @unexec rmdir %D/lib/gtk-2.0/immodules 2>/dev/null || true
+@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
