@@ -17,8 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	q@uni.de
 COMMENT=	Ruby bindings for wxWindows (aka wxWidgets)
 
-LIB_DEPENDS=	wx_gtk2-2.4:${PORTSDIR}/x11-toolkits/wxgtk2 \
-		wx_gtk2_xrc-2.4:${PORTSDIR}/x11-toolkits/wxgtk2-contrib
+LIB_DEPENDS=	wx_gtk2-2.4:${PORTSDIR}/x11-toolkits/wxgtk24 \
+		wx_gtk2_xrc-2.4:${PORTSDIR}/x11-toolkits/wxgtk24-contrib
 
 USE_ICONV=	yes
 USE_RUBY=	yes

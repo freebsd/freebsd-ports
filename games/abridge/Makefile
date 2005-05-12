@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.abridgegame.org/src/
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Bridge game
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config

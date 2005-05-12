@@ -17,7 +17,7 @@ MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Configuration tools for the eCos embedded OS
 
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/infra-build

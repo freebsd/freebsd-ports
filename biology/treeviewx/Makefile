@@ -15,8 +15,8 @@ DISTNAME=	tv-${PORTVERSION}
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A phylogenetic tree viewer
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
-		wx_gtk2_dcsvg-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-contrib
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
+		wx_gtk2_dcsvg-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24-contrib
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

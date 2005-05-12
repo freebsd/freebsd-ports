@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	wxglade
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wx.py:${PORTSDIR}/x11-toolkits/py-wxPython
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wx.py:${PORTSDIR}/x11-toolkits/py-wxPython24
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

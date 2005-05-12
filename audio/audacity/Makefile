@@ -16,7 +16,7 @@ MAINTAINER=	craig@yekse.gank.org
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 GNU_CONFIGURE=	yes

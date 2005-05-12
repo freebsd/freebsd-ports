@@ -16,7 +16,7 @@ DISTNAME=	boa-constructor-${PORTVERSION}.src
 MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython24
 
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 

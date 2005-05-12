@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mahogany
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An X11 mail and news client
 
-LIB_DEPENDS+=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS+=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		swish-e:${PORTSDIR}/www/swish-e
 LIB_DEPENDS=	wxmozilla_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxmozilla
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
 
 BROKEN=		Broken dependency
 

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 		lavfile-1.6.2:${PORTSDIR}/multimedia/mjpegtools \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 RUN_DEPENDS=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 

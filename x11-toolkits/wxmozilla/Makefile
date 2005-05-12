@@ -17,8 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedding Mozilla in wxWidgets
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-nspr.pc:${PORTSDIR}/www/mozilla \
-		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes

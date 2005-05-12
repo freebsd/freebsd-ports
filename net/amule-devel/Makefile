@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	The all-platform eMule p2p client
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
 		curl.3:${PORTSDIR}/ftp/curl \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 #		gd.4:${PORTSDIR}/graphics/gd

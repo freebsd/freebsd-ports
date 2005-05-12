@@ -362,14 +362,14 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 CONFIGURE_ARGS+=--enable-skins2 --enable-skins
 .else
 CONFIGURE_ARGS+=--disable-skins2
 .endif
 
 .if !defined(WITHOUT_WXWINDOWS)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 USE_GNOME+=	gnomehier
 CONFIGURE_ARGS+=--enable-wxwindows
 CONFIGURE_ENV+=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
