@@ -205,7 +205,6 @@ do-install:
 .if defined(WITHOUT_SPEEDYCGI)
 	@${PERL} ${OWCGIDIR}/misc/tools/wrapsuid/wrapsuid.pl ${OWCGIDIR} 2>/dev/null
 .endif
-	@${OWCGIDIR}/openwebmail-tool.pl --init --no
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
