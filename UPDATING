@@ -7,6 +7,19 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20050511:
+  AFFECTS: users of multimedia/ffmpeg{,-devel}
+  AUTHOR: lioux@FreeBSD.org
+
+  The latest FreeBSD CVS snapshot has been committed under
+  multimedia/ffmepg-devel. In order to build it, you need to deinstall
+  any ffmpeg ports first.
+
+  # pkg_deinstall multimedia/ffmpeg
+
+  Futhermore, video capture is no longer working in the latest
+  version. Work is been done to overcome this.
+
+20050511:
   AFFECTS: users of databases/postgresql??-(server|contrib)
   AUTHOR: girgen@FreeBSD.org
 
