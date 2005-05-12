@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050512:
+  AFFECTS: users of devel/svk
+  AUTHOR: rafan@infor.org
+
+  Since SVK 0.30, it is fast enough and PPerl causes some problems.
+  Thus, the SVK port no longer supports WITH_PPERL knob.
+  If you still want to use PPerl with it, please go and read:
+  http://svk.elixus.org/?SVKAndPPerl for details.
+
 20050511:
   AFFECTS: users of multimedia/ffmpeg{,-devel}
   AUTHOR: lioux@FreeBSD.org
