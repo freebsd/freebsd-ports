@@ -21,9 +21,7 @@ LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming \
 .if !defined (WITHOUT_AVIPLAY)
 LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
 .endif
-.if defined (WITH_WXGTK)
-LIB_DEPENDS+=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
-.elif defined (WITH_WXGTK2)
+.if defined (WITH_WXGTK2)
 LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 .endif
 .if !defined (WITHOUT_ZIP)
