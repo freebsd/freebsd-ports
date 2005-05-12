@@ -6963,6 +6963,7 @@ p5-Business-OnlinePayment-TCLink	ports/finance/p5-Business-OnlinePayment-TCLink
 p5-Business-OnlinePayment-VirtualNet	ports/finance/p5-Business-OnlinePayment-VirtualNet
 p5-Business-OnlinePayment-eSec		ports/finance/p5-Business-OnlinePayment-eSec
 p5-Business-OnlinePayment-iAuthorizer	ports/finance/p5-Business-OnlinePayment-iAuthorizer
+p5-Business-PayPal-EWP	ports/security/p5-Business-PayPal-EWP
 p5-Business-UPS	ports/misc/p5-Business-UPS
 p5-Business-WorldPay-Junior	ports/finance/p5-Business-WorldPay-Junior
 p5-C-Scan	ports/devel/p5-C-Scan
