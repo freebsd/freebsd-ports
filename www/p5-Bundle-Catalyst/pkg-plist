@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Bundle/Catalyst.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Catalyst/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Catalyst 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
