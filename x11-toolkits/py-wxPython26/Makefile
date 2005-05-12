@@ -48,7 +48,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_GTK1)
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 
 CONFIGURE_ARGS+=	--enable-gtk2
