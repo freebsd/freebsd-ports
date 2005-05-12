@@ -9,14 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A major mode for editing SGML and XML documents for emacs19
 
 # This is a slave port.
-PORTCLASS=	slave
-
 MASTERDIR=	${.CURDIR}/../psgml
 
 # emacs port setup
 EMACS_PORT_NAME=	emacs19
-
-# pkg-* files in ${.CURDIR} are used
-PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"
