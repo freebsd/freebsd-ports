@@ -689,6 +689,7 @@ bioflip		ports/biology/flip
 biojava		ports/biology/biojava
 biology-blast	ports/biology/blast
 biorythm	ports/games/biorythm
+bird		ports/net/bird
 birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
