@@ -54,7 +54,7 @@ JAVA_BUILD=	jdk
 .include <${FILESDIR}/Makefile.localized>
 
 .if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} <= 492000)
-BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade your rtld"
+BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgrade your rtld"
 .endif
 
 LANG_EXT?=	01
