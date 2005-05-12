@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	Mon May 31 19:53:02 2004
++++ tools/Makefile.in	Thu May 12 21:04:36 2005
+@@ -49,7 +49,7 @@
+ 		$(INSTALL_PROGRAM) -s $(exedir)/birdc $(sbindir)/ ;				\
+ 	fi
+ 	if ! test -f $(sysconfdir)/bird.conf ; then						\
+-		$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(sysconfdir)/bird.conf ;	\
++		$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(sysconfdir)/bird.conf.example ;	\
+ 	else											\
+ 		echo "Not overwriting old bird.conf" ;						\
+ 	fi

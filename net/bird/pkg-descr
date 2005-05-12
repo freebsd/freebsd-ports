@@ -1,0 +1,11 @@
+The BIRD project aims to develop a fully functional dynamic IP routing daemon.
+
+- Both IPv4 and IPv6
+- Multiple routing tables
+- BGP
+- RIP
+- OSPF (IPv4 only)
+- Static routes
+- Inter-table protocol
+
+WWW: http://bird.network.cz/
