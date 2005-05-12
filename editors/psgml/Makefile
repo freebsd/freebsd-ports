@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	psgml
-PORTVERSION=	${PSGML_VER}
-PORTREVISION=	0
+PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psgml
@@ -22,18 +22,22 @@ COMMENT?=	A major mode for editing SGML and XML documents for emacs21
 
 INFO=		psgml psgml-api
 
-# distfile version
-PSGML_VER=		1.3.2
 PSGML_STARTUPEL=	psgml-startup.el
 
-SCRIPTS_ENV=		TARGETS="${PSGML_STARTUPEL}" SED=${SED}
-PLIST_SUB=		PSGML_STARTUPEL=${PSGML_STARTUPEL}
+SUB_FILES=	${PSGML_STARTUPEL}
+SUB_LIST=	PSGML_LISPDIR=${PSGML_LISPDIR}
+PLIST_SUB=	PSGML_STARTUPEL=${PSGML_STARTUPEL}
+NOT_FOR_ARCHS=	ia64
 
 # This is a master port.
-PORTCLASS?=	master
+EMACS_PORT_NAME?=	emacs21
 
-.if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs21
+.if ${EMACS_PORT_NAME} == xemacs21-mule
+PLIST_SUB+=	XEMACS="" \
+		NON_XEMACS="@comment "
+.else
+PLIST_SUB+=	XEMACS="@comment " \
+		NON_XEMACS=""
 .endif
 
 .include <bsd.port.pre.mk>
@@ -42,9 +46,10 @@ EMACS_PORT_NAME=	emacs21
 # emacs ports setup
 #
 .if defined(EMACS_PORT_NAME)
+PSGML_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/psgml
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--lispdir=${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/psgml \
-		--infodir=${LOCALBASE}/info
+CONFIGURE_ARGS=	--lispdir=${PSGML_LISPDIR} \
+		--infodir=${PREFIX}/${INFO_PATH}
 CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 .else
 .BEGIN:
@@ -53,12 +58,9 @@ CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 	@${FALSE}
 .endif
 
-pre-configure:
-	${CP} ${FILESDIR}/${PSGML_STARTUPEL}.in ${WRKDIR}
-
 post-install:
 	cd ${WRKSRC} && ${MAKE} install-info
 	${INSTALL_DATA} ${WRKDIR}/${PSGML_STARTUPEL} \
-			${LOCALBASE}/${EMACS_LIBDIR}/site-lisp
+			${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,7 @@
 ;; setup load-path
 (if (not (fboundp 'normal-top-level-add-subdirs-to-load-path))
     (setq load-path (append '(
-	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/psgml"
+	"%%PSGML_LISPDIR%%"
     ) load-path)))
 
 (defalias 'sgml-mode 'psgml-mode)
