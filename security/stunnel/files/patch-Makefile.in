@@ -1,19 +1,11 @@
---- tools/Makefile.in.orig	Mon Dec 27 13:52:12 2004
-+++ tools/Makefile.in	Mon Dec 27 13:52:25 2004
-@@ -163,7 +163,7 @@
- 	stunnel.spec stunnel.mak stunnel.cnf
+--- tools/Makefile.in.orig	Wed May 11 18:33:24 2005
++++ tools/Makefile.in	Wed May 11 18:34:12 2005
+@@ -332,7 +332,7 @@
  
- confdir = $(sysconfdir)/stunnel
--conf_DATA = stunnel.conf-sample stunnel.pem
-+conf_DATA = stunnel.conf-sample
- docdir = $(datadir)/doc/stunnel
- examplesdir = $(docdir)/examples
- examples_DATA = ca.html ca.pl importCA.html importCA.sh script.sh \
-@@ -337,7 +337,6 @@
- install-data-am: install-confDATA install-data-local \
+ info-am:
+ 
+-install-data-am: install-confDATA install-data-local \
++install-data-am: install-confDATA \
  	install-examplesDATA
- 	@$(NORMAL_INSTALL)
--	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
  
  install-exec-am:
- 
