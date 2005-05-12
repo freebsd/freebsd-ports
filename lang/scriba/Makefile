@@ -33,15 +33,11 @@ OPTIONS=	BDB	"Berkeley DB extension"		off \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		coredumps a lot
-.endif
-
-.if ${ARCH} == "amd64"
-IGNORE=		need base libraries built with -fPIC
+BROKEN=		"coredumps a lot"
 .endif
 
 .if ${ARCH} == "ia64"
-BROKEN=		fails to compile
+BROKEN=		"fails to compile"
 .endif
 
 # Dependencies for port options
@@ -112,6 +108,9 @@ post-patch:
 		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g' \
 		-e 's,root:root,root:wheel,g' \
 		${WRKSRC}/setup.pl ${WRKSRC}/scriba.c ${WRKSRC}/make_gcc.jim
+.if ${ARCH} == "amd64"
+	${REINPLACE_CMD} -e 's, -Bstatic,,g' ${WRKSRC}/make_gcc.jim
+.endif
 
 # Remove extensions not selected as options
 
