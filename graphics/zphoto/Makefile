@@ -24,7 +24,7 @@ LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
 .if defined (WITH_WXGTK)
 LIB_DEPENDS+=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 .elif defined (WITH_WXGTK2)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 .endif
 .if !defined (WITHOUT_ZIP)
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
