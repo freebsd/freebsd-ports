@@ -2120,6 +2120,7 @@ fetchmail	ports/mail/fetchmail
 fetchyahoo	ports/mail/fetchyahoo
 ffcall		ports/devel/ffcall
 ffmpeg		ports/multimedia/ffmpeg
+ffmpeg-devel		ports/multimedia/ffmpeg-devel
 ffproxy		ports/www/ffproxy
 ffsrecov	ports/sysutils/ffsrecov
 fftw		ports/math/fftw
