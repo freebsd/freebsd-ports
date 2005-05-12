@@ -7,6 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -20,7 +21,6 @@ DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
 INSTALLS_SHLIB=	yes
@@ -41,7 +41,8 @@ OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
 		UCS4 "Use UCS4 for unicode support" on \
 		PYMALLOC "Use python's internal malloc" on \
-		IPV6 "Enable IPv6 support" on
+		IPV6 "Enable IPv6 support" on \
+		FPECTL "Enable floating point exception handling" off
 
 .include <bsd.port.pre.mk>
 
@@ -95,6 +96,10 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
+.if defined(WITH_FPECTL)
+CONFIGURE_ARGS+= --with-fpectl
+.endif
+
 .if ${OSVERSION} >= 600000
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .elif ${OSVERSION} >= 500000
@@ -122,6 +127,10 @@ pre-patch:
 		${WRKSRC}/Lib/site.py
 	${MKDIR} ${WRKSRC}/Lib/plat-freebsd6
 	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd6/
+.if defined(WITH_FPECTL)
+	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
+	${REINPLACE_CMD} 's,fpreset,fpset,g' ${WRKSRC}/Modules/fpectlmodule.c
+.endif
 
 post-configure:
 	@# prepare a subdir for shared build
