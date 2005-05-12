@@ -1,13 +1,22 @@
---- libavformat/Makefile.orig	Thu Sep 11 22:55:10 2003
-+++ libavformat/Makefile	Thu Sep 11 23:12:50 2003
-@@ -88,8 +88,8 @@
- install: all
- ifeq ($(BUILD_SHARED),yes)
- 	install -d $(prefix)/lib
--	install -s -m 755 $(SLIB) $(prefix)/lib/libavformat-$(VERSION).so
--	ln -sf libavformat-$(VERSION).so $(prefix)/lib/libavformat.so
-+	install -s -m 755 $(SLIB) $(prefix)/lib/libavformat.so.1
+--- libavformat/Makefile.orig	Tue Apr 26 07:17:51 2005
++++ libavformat/Makefile	Sun May  1 17:15:15 2005
+@@ -37,7 +37,7 @@
+ OBJS+= framehook.o 
+ 
+ ifeq ($(CONFIG_VIDEO4LINUX),yes)
+-OBJS+= grab.o
++OBJS+= grab_bsdbktr.o
+ endif
+ 
+ ifeq ($(CONFIG_DV1394),yes)
+@@ -109,8 +109,8 @@
+ 	install $(INSTALLSTRIP) -m 755 $(SLIB) "$(prefix)"
+ else
+ 	install -d $(libdir)
+-	install $(INSTALLSTRIP) -m 755 $(SLIB) $(libdir)/libavformat-$(VERSION).so
+-	ln -sf libavformat-$(VERSION).so $(libdir)/libavformat.so
++	${BSD_INSTALL_DATA} $(SLIB) $(prefix)/lib/libavformat.so.1
 +	ln -sf libavformat.so.1 $(prefix)/lib/libavformat.so
  	ldconfig || true
- 	mkdir -p $(prefix)/include/ffmpeg
- 	install -m 644 $(VPATH)/avformat.h $(prefix)/include/ffmpeg/avformat.h
+ endif
+ else
