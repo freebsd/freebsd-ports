@@ -1,7 +1,10 @@
---- Makefile.orig	Fri Jun  6 17:43:02 2003
-+++ Makefile	Thu Mar 18 20:25:55 2004
-@@ -1,8 +1,7 @@
--LAPACK = $(HOME)/lib/b/lapack
+--- Makefile.orig	Fri Oct  8 15:08:59 2004
++++ Makefile	Thu May 12 14:02:57 2005
+@@ -18,11 +18,10 @@
+ # This file is Makefile of SDPARA
+ # $Id: Makefile,v 1.2 2004/10/08 05:57:48 makoto Exp $
+ 
+-LAPACK = $(HOME)/lapack
 +LAPACK = %%LOCALBASE%%
  RSDPA  = .
  
@@ -11,22 +14,23 @@
  
  # if you use BLAS in clapack.tgz, use next line
  # and set NON_ATLAS_SDPA in rsdpa_include.h to 1.
-@@ -17,10 +16,11 @@
+@@ -36,10 +35,12 @@
+ #RSDPA_LIB_NAME = rsdpa
  RSDPA_LIB = -l$(RSDPA_LIB_NAME)
  
- # CC = /home/yamashi9/lib/b/mpich/bin/mpiCC
 -MPIBIN=
+-CC = $(MPIBIN)mpicxx
 +MPIBIN= %%LOCALBASE%%/mpich/bin/
- CC = $(MPIBIN)mpiCC
++CC = $(MPIBIN)mpiCC
  F77 = $(MPIBIN)mpif77
--OPTION = -O3 #-Wall # -g
+ OPTION = -O3  #-g
 +FFLAGS = %%FFLAGS%%
 +CXXFLAGS = %%CXXFLAGS%%
  
  TARGET_EXE = $(RSDPA_LIB_NAME)
  #TARGET_EXE = rsdpa_main.exe
-@@ -41,9 +41,9 @@
- 	  -L$(LAPACK)/lib $(SCALAPACK_LIB) $(LAPACK_LIB) 
+@@ -60,9 +61,9 @@
+ 	  -L$(LAPACK)/lib $(SCALAPACK_LIB) $(LAPACK_LIB)
  
  .cpp.o:
 -	$(CC) $(OPTION) -c -I$(RSDPA) -I$(LAPACK)/include $<

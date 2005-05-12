@@ -8,5 +8,5 @@ share/examples/sdpara/param.sdpa
 share/sdpara/param.sdpa
 @dirrm share/sdpara
 @dirrm share/examples/sdpara
-%%PORTDOCS%%%%DOCSDIR%%/sdpara.0.90.install.txt
+%%PORTDOCS%%%%DOCSDIR%%/sdpara.%%PORTVERSION%%.install.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
