@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.991
+PORTVERSION=	1.00
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -41,8 +41,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-OPTIONS=	PPERL "Run svk with PPerl" off
 
 USE_REINPLACE=	yes
 
@@ -117,13 +115,6 @@ MAN3=		SVK.3 \
 IGNORE=		This program only support perl 5.8.0 or above
 .endif
 
-PPERL=		${PERL}
-
-.if defined(WITH_PPERL)
-RUN_DEPENDS+=	pperl:${PORTSDIR}/devel/p5-PPerl
-PPERL=		${LOCALBASE}/bin/pperl
-.endif
-
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "If you see some missing dependency, please update your"
@@ -131,18 +122,11 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PPERL%%,${PPERL}," ${WRKSRC}/bin/svk
 	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 post-install:
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
-.if defined(WITH_PPERL)
-	@${ECHO}
-	@${ECHO} "SVK with PPerl has been known some annoying problems,"
-	@${ECHO} "please read http://svk.elixus.org/?SVKAndPPerl for details."
-	@${ECHO}
-.endif
 
 .include <bsd.port.post.mk>
