@@ -196,6 +196,7 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
+WITHOUT_MOZILLA_PLUGIN=	yes
 ### BROKEN ###
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
@@ -231,7 +232,7 @@ CONFIGURE_ARGS+=	--enable-ffmpeg \
 MAN1=		vlc.1 \
 		vlc-config.1
 
-.if defined(WITH_MOZILLA_PLUGIN)
+.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 .if ${WITH_MOZILLA_PLUGIN}=="firefox"
 BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
@@ -254,7 +255,7 @@ HEADERS_SUFX=
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN)
+.if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 .if ${WITH_MOZILLA}=="mozilla-devel"
 USE_GCC=	3.4
 WITHOUT_LIVEMEDIA=	yes
@@ -641,7 +642,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Take a careful look at the beginning of the Makefile in order"
 	@${ECHO_MSG} "to learn how to tune VLC towards you personal preferences!"
-	@${ECHO_MSG} "For example, make WITH_MOZILLA_PLUGIN=firefox"
+	@${ECHO_MSG} "For example, make WITH_LAME=yes"
 
 post-patch:
 # Subtitle default font
