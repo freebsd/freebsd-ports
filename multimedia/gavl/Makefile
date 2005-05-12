@@ -29,6 +29,11 @@ PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 504000
+EXTRA_PATCHES=	${PATCHDIR}/gavl-mix.c-patch \
+		${PATCHDIR}/gavl-c-_cmix_c.c-patch
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "===>"
@@ -39,8 +44,10 @@ pre-everything::
 
 post-patch:
 # No llrintf in freebsd (yet)
+.if ${OSVERSION} < 504000
 	@${REINPLACE_CMD} -e 's|llrintf|rintf|g' \
 		${WRKSRC}/gavl/c/*.*
+.endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e \
 	's|-fomit-frame-pointer -funroll-all-loops -falign-functions=2 -falign-loops=2 -falign-jumps=2||; \

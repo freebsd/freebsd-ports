@@ -7,7 +7,7 @@
 +#include <machine/limits.h>
 +
 +#ifndef INT8_MAX
-+#define INT8_MAX       INT_MAX
++#define INT8_MAX       SCHAR_MAX
 +#endif
 +#ifndef INT16_MAX
 +#define INT16_MAX      SHRT_MAX
