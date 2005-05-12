@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.8
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/source \
 			ahze/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
