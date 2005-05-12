@@ -18,9 +18,13 @@ USE_RC_SUBR=	arla.sh
 USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
+BROKEN=		Broken pkg-plist
+
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
 .endif
+
+CONFIGURE_ARGS=	--with-roken=${LOCALBASE}
 
 .if defined(WITHOUT_KRB5)
 CONFIGURE_ARGS+=--without-krb5
