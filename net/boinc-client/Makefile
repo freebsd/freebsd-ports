@@ -27,7 +27,7 @@ COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv \
-		wx_gtk2:${PORTSDIR}/x11-toolkits/wxgtk2 \
+		wx_gtk2:${PORTSDIR}/x11-toolkits/wxgtk24 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		glut:${PORTSDIR}/graphics/libglut
 USE_XLIBS=	yes
