@@ -1,6 +1,6 @@
---- configure.orig	Mon May 31 18:11:50 2004
-+++ configure	Sun Jun 27 20:13:50 2004
-@@ -32707,7 +32707,7 @@
+--- configure.orig	Thu Apr 21 00:32:34 2005
++++ configure	Thu May  5 16:17:57 2005
+@@ -33918,7 +33918,7 @@
                  fi
                  ;;
            *-*-freebsd*)
@@ -9,7 +9,7 @@
                  ;;
            *-*-darwin* | *-*-cygwin* )
                                                  THREAD_OPTS=""
-@@ -32744,6 +32744,12 @@
+@@ -33955,6 +33955,12 @@
  echo $ECHO_N "checking whether pthreads work without any flags... $ECHO_C" >&6
                      ;;
  
@@ -22,7 +22,7 @@
                  -*)
                      echo "$as_me:$LINENO: checking whether pthreads work with $flag" >&5
  echo $ECHO_N "checking whether pthreads work with $flag... $ECHO_C" >&6
-@@ -34014,6 +34020,7 @@
+@@ -35210,6 +35216,7 @@
      fi
    fi
  fi
@@ -30,7 +30,7 @@
  
  if test "$WXGTK20" = 1 ; then
    cat >>confdefs.h <<_ACEOF
-@@ -34134,7 +34141,7 @@
+@@ -35330,7 +35337,7 @@
          OPTIMISE="-O"
      fi
  fi
@@ -39,17 +39,3 @@
  
  if test "x$WXWIN_COMPATIBILITY_2_2" = "xyes"; then
      cat >>confdefs.h <<\_ACEOF
-@@ -40123,6 +40130,13 @@
- 
-     case "${BAKEFILE_HOST}" in
-       *-*-linux* )
-+        SONAME_FLAG="-Wl,-soname,"
-+        USE_SOVERSION=1
-+        USE_SOVERLINUX=1
-+        USE_SOSYMLINKS=1
-+      ;;
-+
-+      *-*-freebsd* )
-         SONAME_FLAG="-Wl,-soname,"
-         USE_SOVERSION=1
-         USE_SOVERLINUX=1

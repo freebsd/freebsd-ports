@@ -34,16 +34,16 @@ pre-everything::
 .endif
 
 .if !defined(WITHOUT_UNICODE)
-LIB_DEPENDS+=	wx_gtk2u_stc-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-contrib-devel
-CONFIGURE_ARGS+=--with-wx-config=wxgtk2u-2.5-config
+LIB_DEPENDS+=	wx_gtk2u_stc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode-contrib
+CONFIGURE_ARGS+=--with-wx-config=wxgtk2u-2.6-config
 PKGNAMESUFFIX=	-unicode
 PKGMESSAGE=	${PKGDIR}/pkg-message-unicode
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 .else
-LIB_DEPENDS+=	wx_gtk2_stc-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-devel
-CONFIGURE_ARGS+=--with-wx-config=wxgtk2-2.5-config
+LIB_DEPENDS+=	wx_gtk2_stc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-contrib
+CONFIGURE_ARGS+=--with-wx-config=wxgtk2-2.6-config
 .endif # WITHOUT_UNICODE
 
 .include <bsd.port.post.mk>

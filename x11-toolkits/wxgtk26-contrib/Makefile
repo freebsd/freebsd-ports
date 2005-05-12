@@ -1,4 +1,4 @@
-# New ports collection makefile for:	wxgtk2-contrib-devel
+# New ports collection makefile for:	wxgtk26-contrib
 # Date created:         		June 27, 2004
 # Whom:					fjoe@FreeBSD.ORG
 #
@@ -6,9 +6,9 @@
 #
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	The wxWidgets GUI toolkit contributed libraries (devel version)
+COMMENT=	The wxWidgets GUI toolkit contributed libraries
 
 WXGTK_FLAVOR=	gtk2-contrib
-MASTERDIR=	${.CURDIR}/../wxgtk2-devel
+MASTERDIR=	${.CURDIR}/../wxgtk26
 
 .include "${MASTERDIR}/Makefile"

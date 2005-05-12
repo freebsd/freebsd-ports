@@ -28,12 +28,12 @@ CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 MAN1=		rapidsvn.1
 
-.if exists(${X11BASE}/bin/wxgtk2-2.5-config)
-WXPORT=		wxgtk2-devel
-WXCONFIG=	wxgtk2-2.5-config
+.if exists(${X11BASE}/bin/wxgtk2-2.6-config)
+WXPORT=		wxgtk26
+WXCONFIG=	wxgtk2-2.6-config
 .else
 WXPORT=		wxgtk24
-WXCONFIG=	wx-config
+WXCONFIG=	wxgtk2-2.4-config
 .endif
 SVNDEP=		${LOCALBASE}/include/subversion-1/svn_types.h
 

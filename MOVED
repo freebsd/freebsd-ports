@@ -1477,3 +1477,10 @@ x11-toolkits/wxgtk2-contrib|x11-toolkits/wxgtk24-contrib|2005-05-12|old wxgtk 2.
 x11-toolkits/wxgtk2-unicode||2005-05-12|broken
 x11-toolkits/wxgtk2-unicode-contrib||2005-05-12|broken
 x11-toolkits/py-wxPython|x11-toolkits/py-wxPython24|2005-05-12|old wxgtk 2.4.2-based port renamed
+x11-toolkits/wxgtk2-common-devel|x11-toolkits/wxgtk26-common|2005-05-12|renamed
+x11-toolkits/wxgtk2-contrib-common-devel|x11-toolkits/wxgtk26-contrib-common|2005-05-12|renamed
+x11-toolkits/wxgtk2-contrib-devel|x11-toolkits/wxgtk26-contrib|2005-05-12|renamed
+x11-toolkits/wxgtk2-devel|x11-toolkits/wxgtk26|2005-05-12|renamed
+x11-toolkits/wxgtk2-unicode-contrib-devel|x11-toolkits/wxgtk26-unicode-contrib|2005-05-12|renamed
+x11-toolkits/wxgtk2-unicode-devel|x11-toolkits/wxgtk26-unicode|2005-05-12|renamed
+x11-toolkits/wxgtk2-utils-devel|x11-toolkits/wxgtk2-contrib-utils|2005-05-12|renamed
