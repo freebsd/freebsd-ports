@@ -501,7 +501,6 @@
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libusb
-    SUBDIR += libuta
     SUBDIR += libvanessa_adt
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
@@ -1525,6 +1524,7 @@
     SUBDIR += vstr
     SUBDIR += vtcl
     SUBDIR += websvn
+    SUBDIR += wftk
     SUBDIR += wininfo
     SUBDIR += wizard
     SUBDIR += wxGlade
