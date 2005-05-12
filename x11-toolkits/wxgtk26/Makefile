@@ -1,4 +1,4 @@
-# New ports collection makefile for:	wxgtk2-devel
+# New ports collection makefile for:	wxgtk26
 # Date created:         		June 27, 2004
 # Whom:					fjoe@FreeBSD.ORG
 #
@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	wx
-PORTVERSION=	2.5.3
+PORTVERSION=	2.6.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
-PKGNAMESUFFIX=	${WXGTK_FLAVOR}-devel
+PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER?=	fjoe@FreeBSD.org
-COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings (devel version)
+COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
 
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
 		jpeg.9:${PORTSDIR}/graphics/jpeg\
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-expat=sys\
 		--with-opengl\
 		--with-mspack\
-		--enable-gtk2
+		--with-gtk
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv \
@@ -45,17 +45,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST=		${.CURDIR}/pkg-plist
-NO_LATEST_LINK=	yes
 
 WXGTK_FLAVOR?=	gtk2
 
 .if ${WXGTK_FLAVOR} == "gtk2"
-PORTREVISION=	2
 CONFLICTS=	wxgtk2-contrib-devel-2.5.2*
 .endif
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
-RUN_DEPENDS=	${X11BASE}/include/wx-2.5/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk2-common-devel
+RUN_DEPENDS=	${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common
 .endif
 
 .if ${WXGTK_FLAVOR:M*-common} != ""
@@ -70,12 +68,12 @@ BUILD_WRKSRC=	${WRKSRC}/contrib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
-RUN_DEPENDS=	${X11BASE}/include/wx-2.5/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-common-devel
+RUN_DEPENDS=	${X11BASE}/include/wx-2.6/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk26-contrib-common
 
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
-LIB_DEPENDS+=	wx_baseu-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-devel
+LIB_DEPENDS+=	wx_baseu-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
 .else
-LIB_DEPENDS+=	wx_base-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-devel
+LIB_DEPENDS+=	wx_base-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 .endif
 
 pre-configure:
@@ -84,7 +82,7 @@ pre-configure:
 		-e "s,@CFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cflags`," \
 		-e "s,@CPPFLAGS@,,"
 
-.endif # !gtk2-contrib-common
+.endif # !gtk-contrib-common
 .endif # *-contrib*
 
 .include <bsd.port.pre.mk>
@@ -96,9 +94,9 @@ IGNORE=		Systems prior to FreeBSD 5.0 currently out of support
 CONFIGURE_ARGS+=--enable-unicode
 .endif
 
-WXGTK_CONFIG=	${X11BASE}/bin/wxgtk2u-2.5-config
+WXGTK_CONFIG=	${X11BASE}/bin/wxgtk2u-2.6-config
 .else
-WXGTK_CONFIG=	${X11BASE}/bin/wxgtk2-2.5-config
+WXGTK_CONFIG=	${X11BASE}/bin/wxgtk2-2.6-config
 .endif # *-unicode*
 
 .include <bsd.port.post.mk>

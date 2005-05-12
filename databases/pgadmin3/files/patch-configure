@@ -1,13 +1,23 @@
 --- configure.orig	Tue Nov 30 02:09:55 2004
-+++ configure	Wed Jan  5 19:00:36 2005
-@@ -5175,6 +5175,10 @@
-                 LIBS="$LIBS -lwx_gtk2u_stc-${WX_VERSION}"
-                 LIBS="$LIBS $WX_NEW_LDFLAGS"
++++ configure	Fri May  6 00:59:54 2005
+@@ -4996,6 +4996,9 @@
+     # Which version of wxWindows is this?
+     WX_VERSION=`${WX_CONFIG} --version`
+     case "${WX_VERSION}" in
++        2.6*)
++            WX_VERSION="2.6"
++            ;;
+         2.5*)
+             WX_VERSION="2.5"
+             ;;
+@@ -5173,6 +5176,10 @@
                  ;;
-+            *wx_gtk2_core*)
-+                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION}"
+             *wx_gtk2u_core*)
+                 LIBS="$LIBS -lwx_gtk2u_stc-${WX_VERSION}"
 +                LIBS="$LIBS $WX_NEW_LDFLAGS"
 +                ;;
-             *wx_gtkud-*)
-                 LIBS="$LIBS -lwx_gtkud_stc-${WX_VERSION}"
++            *wx_gtk2_core*)
++                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION}"
                  LIBS="$LIBS $WX_NEW_LDFLAGS"
+                 ;;
+             *wx_gtkud-*)
