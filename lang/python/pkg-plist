@@ -3216,6 +3216,14 @@ share/emacs/site-lisp/python-mode.el
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/modulator/genmodule.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/modulator/modulator.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/modulator/varsubst.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/README.txt
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msi.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msilib.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msisupport.c
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/msisupport.mak
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/schema.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/sequence.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/uisample.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/ChipViewer.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/ColorDB.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/DetailsViewer.py
@@ -3320,6 +3328,7 @@ share/emacs/site-lisp/python-mode.el
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/scripts
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche/X
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche
+%%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/msi
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator/Templates
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/i18n
