@@ -46,6 +46,7 @@
     SUBDIR += bindtest
     SUBDIR += bing
     SUBDIR += binkd
+    SUBDIR += bird
     SUBDIR += blam
     SUBDIR += bld
     SUBDIR += bmon
