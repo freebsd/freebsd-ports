@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sdpa
-PORTVERSION=	6.00
-PORTREVISION=	2
+PORTVERSION=	6.2.0
 CATEGORIES=	math
-MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/
+MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}.${PORTVERSION}.manual.ps.gz \
@@ -22,14 +21,10 @@ EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
-BROKEN=		Unfetchable
-
 .if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
-
-RESTRICTED=	"unsure distribution condition"
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -42,13 +37,14 @@ CBLAS=		-lptcblas -lptf77blas -latlas_r -lg2c ${PTHREAD_LIBS}
 LAPACK=		-lalapack
 CBLAS=		-lcblas -lf77blas -latlas -lg2c
 .endif
+PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 #WITH_SMP=	yes
 #WITH_ICC=	yes
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
-.if (${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
+.if (${ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
 CFLAGS+=	 -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 CXXFLAGS+=	 -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
@@ -86,7 +82,7 @@ do-install:
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in sdpa.6.00.manual.ps.gz sdpa.6.00.manual.pdf sdpa.6.00.install.txt
+.for i in ${PORTNAME}.${PORTVERSION}.manual.ps.gz ${PORTNAME}.${PORTVERSION}.manual.pdf ${PORTNAME}.${PORTVERSION}.install.txt
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
