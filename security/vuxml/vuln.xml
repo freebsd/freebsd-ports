@@ -32,6 +32,189 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a6427195-c2c7-11d9-89f7-02061b08fc24">
+    <topic>mozilla -- privilege escalation via non-DOM property
+      overrides</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.4</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.8,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><lt>1.7.8</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-44.html">
+	  <p>Additional checks were added to make sure Javascript eval
+	    and Script objects are run with the privileges of the
+	    context that created them, not the potentially elevated
+	    privilege of the context calling them in order to protect
+	    against an additional variant of <a
+	    href="http://www.mozilla.org/security/announce/mfsa2005-41.html">MFSA
+	    2005-41</a>.</p>
+	</blockquote>
+	<p>The Mozilla Foundation Security Advisory MFSA 2005-41
+	  reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-41.html">
+	  <p>moz_bug_r_a4 reported several exploits giving an attacker
+	    the ability to install malicious code or steal data,
+	    requiring only that the user do commonplace actions like
+	    click on a link or open the context menu.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-44.html</url>
+    </references>
+    <dates>
+      <discovery>2005-05-11</discovery>
+      <entry>2005-05-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a81746a1-c2c7-11d9-89f7-02061b08fc24">
+    <topic>mozilla -- "Wrapped" javascript: urls bypass security
+      checks</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.4</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.8,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><lt>1.7.8</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-43.html">
+	  <p>Some security checks intended to prevent script injection
+	    were incorrect and could be bypassed by wrapping a
+	    javascript: url in the view-source:
+	    pseudo-protocol. Michael Krax demonstrated that a variant
+	    of his <a
+	    href="http://www.mozilla.org/security/announce/mfsa2005-37.html">favicon</a>
+	    exploit could still execute arbitrary code, and the same
+	    technique could also be used to perform cross-site
+	    scripting.</p>
+	  <p>Georgi Guninski demonstrated the same flaw wrapping
+	    javascript: urls with the jar: pseudo-protocol.</p>
+	  <p>L. David Baron discovered a nested variant that defeated
+	    checks in the script security manager.</p>
+	  <p><strong>Workaround:</strong> Disable Javascript</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-43.html</url>
+    </references>
+    <dates>
+      <discovery>2005-05-11</discovery>
+      <entry>2005-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eca6195a-c233-11d9-804c-02061b08fc24">
     <topic>mozilla -- code execution via javascript: IconURL
       vulnerability</topic>
