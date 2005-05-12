@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.07
+PORTVERSION=	4.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
