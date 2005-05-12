@@ -8,49 +8,24 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  top_builddir = .
-@@ -541,29 +542,22 @@
- 	uninstall-recursive
- 
- 
--@DEB_TRUE@install-data-local:
--@DEB_TRUE@	@$(NORMAL_INSTALL)
--@DEB_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@else
--@DEB_TRUE@install-data-local:
--@DEB_TRUE@	@$(NORMAL_INSTALL)
--@DEB_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	cp -r $(srcdir)/doc $(DESTDIR)$(pkgdatadir); \
--@DEB_TRUE@	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	cp $(srcdir)/README $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	cp $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	cp $(srcdir)/TODO $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	cp $(srcdir)/BUGS $(DESTDIR)$(pkgdatadir)/doc; \
--@DEB_TRUE@	if test -d $(srcdir)/pixmaps; then \
--@DEB_TRUE@	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
--@DEB_TRUE@	  for pixmap in $(srcdir)/pixmaps/*; do \
--@DEB_TRUE@	    if test -f $$pixmap; then \
--@DEB_TRUE@	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
--@DEB_TRUE@	    fi \
--@DEB_TRUE@	  done \
--@DEB_TRUE@	fi 
-+install-data-local:
-+	@$(NORMAL_INSTALL)
-+	$(mkinstalldirs) $(DESTDIR)$(pkgdocsdir); \
-+	cp -r $(srcdir)/doc/ $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdocsdir); \
-+	cp $(srcdir)/TODO $(DESTDIR)$(pkgdocsdir); \
-+	if test -d $(srcdir)/pixmaps; then \
-+		$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
-+		for pixmap in $(srcdir)/pixmaps/*; do \
-+			if test -f $$pixmap; then \
-+				$(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
-+			fi \
-+		done \
-+	fi 
- 
- dist-hook:
- 	if test -d $(srcdir)/pixmaps; then \
+@@ -545,14 +546,12 @@
+ @DEB_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; 
+ @DEB_FALSE@install-data-local:
+ @DEB_FALSE@	@$(NORMAL_INSTALL)
+-@DEB_FALSE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp -r $(srcdir)/doc $(DESTDIR)$(pkgdatadir); \
+-@DEB_FALSE@	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/README $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@	cp $(srcdir)/TODO $(DESTDIR)$(pkgdatadir)/doc; \
++@DEB_FALSE@	$(mkinstalldirs) $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp -r $(srcdir)/doc/ $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdocsdir); \
++@DEB_FALSE@	cp $(srcdir)/TODO $(DESTDIR)$(pkgdocsdir); \
+ @DEB_FALSE@	if test -d $(srcdir)/pixmaps; then \
+ @DEB_FALSE@	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
+ @DEB_FALSE@	  for pixmap in $(srcdir)/pixmaps/*; do \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tea
-DISTVERSION=		9.0
+DISTVERSION=		9.1
 CATEGORIES=		editors
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://tea.linux.kiev.ua/ \
