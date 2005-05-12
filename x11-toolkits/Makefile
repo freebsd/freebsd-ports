@@ -156,7 +156,7 @@
     SUBDIR += py-qt
     SUBDIR += py-tkinter
     SUBDIR += py-wmgeneral
-    SUBDIR += py-wxPython
+    SUBDIR += py-wxPython24
     SUBDIR += py-xlib
     SUBDIR += qscintilla
     SUBDIR += qt145
