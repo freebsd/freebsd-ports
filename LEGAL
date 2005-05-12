@@ -491,7 +491,6 @@ rtplib-*		devel/rtplib		Limited use license
 ruby/ruby_cast_256.zip	security/ruby-cast_256	Crypto; export-controlled
 runrev/linux.tgz	devel/linux-runrev	Do not sell for profit
 scilab-*		math/scilab		Do not sell for profit
-sdpara/*		pors/math/sdpara	Unsure distribution condition
 sdr-*			mbone/sdr		Crypto; export-controlled
 serialmail-*		mail/serialmail		No license -- see
 						http://cr.yp.to/softwarelaw.html
