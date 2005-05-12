@@ -25,10 +25,14 @@
 #  This Interface supports a skinned gtk2.0 interface
 #  Skins can be found at http://www.videolan.org/vlc/download-skins.html
 #
-# WITHOUT_WXWINDOWS=yes
+# WITHOUT_WXGTK=yes
 #  WxWindows/Gtk 2.x Interface
 #  This is the default and most supported
 #  x11 interface
+#
+# WITH_WXGTK_VER=[2.4|2.6]
+#  Choose a WxGTK version you want to use.
+#  Defaults to 26
 #
 # Audio Knobs:
 #
@@ -176,7 +180,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -251,6 +255,14 @@ HEADERS_SUFX=	-devel
 .else
 HEADERS_SUFX=
 .endif
+.endif
+
+.if defined(WTIH_WXGTK_VER) && ${WITH_WXGTK_VER}=="2.4"
+WX_CONFIG=	wxgtk2-2.4-config
+WXGTK2_PORT=	wxgtk24
+.else
+WX_CONFIG=	wxgtk2-2.6-config
+WXGTK2_PORT=	wxgtk26
 .endif
 
 .include <bsd.port.pre.mk>
@@ -362,17 +374,19 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
+RUN_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
 CONFIGURE_ARGS+=--enable-skins2 --enable-skins
+CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
 .else
 CONFIGURE_ARGS+=--disable-skins2
 .endif
 
-.if !defined(WITHOUT_WXWINDOWS)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-USE_GNOME+=	gnomehier
+.if !defined(WITHOUT_WXGTK)
+BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
+RUN_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
 CONFIGURE_ARGS+=--enable-wxwindows
-CONFIGURE_ENV+=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
+CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
 .else
 CONFIGURE_ARGS+=--disable-wxwindows
 .endif
@@ -650,7 +664,7 @@ post-patch:
 	's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
 		${WRKSRC}/modules/misc/freetype.c
 # mozilla plugin
-.if defined(WITH_MOZILLA_PLUGIN)
+.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 	@${CP} -f ${WRKDIR}/vlc-intf-mozilla-plugin/vlcintf.h ${WRKSRC}/mozilla
 	@${CP} -f ${WRKDIR}/vlc-intf-mozilla-plugin/vlcintf.xpt ${WRKSRC}/mozilla
 	@${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${FAKEDIR}/mozilla|; \
@@ -685,7 +699,7 @@ pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
-.if !defined(WITHOUT_WXWINDOWS)
+.if !defined(WITHOUT_WXGTK)
 	${ECHO_CMD} "share/gnome/applications/vlc.desktop" >> ${PLIST}
 	${ECHO_CMD} "share/gnome/pixmaps/vlc.png" >> ${PLIST}
 .endif
@@ -718,13 +732,13 @@ pre-install:
 		${ECHO_MSG} "@dirrm share/vlc" >> ${PLIST}
 	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
-.if defined(WITH_MOZILLA_PLUGIN)
+.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
 
 do-install:
-.if !defined(WITHOUT_WXWINDOWS)
+.if !defined(WITHOUT_WXGTK)
 	if [ ! -d ${PREFIX}/share/gnome/applications ]; then \
 		${MKDIR} ${PREFIX}/share/gnome/applications ; \
 	fi
@@ -745,7 +759,7 @@ do-install:
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
 	cd ${FAKEDIR}/share && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN} ${PREFIX}/share
-.if defined(WITH_MOZILLA_PLUGIN)
+.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	${INSTALL_DATA} ${FAKEDIR}/mozilla/* ${PREFIX}/lib/browser_plugins
 .endif
