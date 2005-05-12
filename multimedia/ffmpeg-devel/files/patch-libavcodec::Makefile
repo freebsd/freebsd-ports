@@ -1,22 +1,13 @@
---- libavcodec/Makefile.orig	Sat Jul 17 11:07:57 2004
-+++ libavcodec/Makefile	Sat Jul 17 11:09:21 2004
-@@ -197,7 +197,7 @@
- 	$(CC) $(SHFLAGS) -Wl,--output-def,$(@:.dll=.def) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
- 	-lib /machine:i386 /def:$(@:.dll=.def)
+--- libavcodec/Makefile.orig	Sun May  1 17:07:56 2005
++++ libavcodec/Makefile	Sun May  1 17:08:29 2005
+@@ -303,8 +303,8 @@
+ 	install $(INSTALLSTRIP) -m 755 $(SLIB) "$(prefix)"
  else
--	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS) $(LDFLAGS)
-+	$(CC) $(SHFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
- endif
- 
- dsputil.o: dsputil.c dsputil.h
-@@ -269,8 +269,8 @@
- 	install -s -m 755 $(SLIB) "$(prefix)"
- else
- 	install -d $(prefix)/lib
--	install -s -m 755 $(SLIB) $(prefix)/lib/libavcodec-$(VERSION).so
--	ln -sf libavcodec-$(VERSION).so $(prefix)/lib/libavcodec.so
-+	install -s -m 755 $(SLIB) $(prefix)/lib/libavcodec.so.1
-+	cd $(prefix)/lib && ln -s libavcodec.so.1 libavcodec.so	
+ 	install -d $(libdir)
+-	install $(INSTALLSTRIP) -m 755 $(SLIB) $(libdir)/libavcodec-$(VERSION).so
+-	ln -sf libavcodec-$(VERSION).so $(libdir)/libavcodec.so
++	${BSD_INSTALL_DATA} $(SLIB) $(prefix)/lib/libavcodec.so.1
++	cd $(prefix)/lib && ln -sf libavcodec.so.1 libavcodec.so
  	ldconfig || true
  endif
- else
+ ifeq ($(CONFIG_PP),yes)

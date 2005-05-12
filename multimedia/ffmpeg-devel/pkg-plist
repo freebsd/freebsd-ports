@@ -1,8 +1,4 @@
 bin/ffmpeg
-%%SDL%%bin/ffplay
-%%FFSERVER%%bin/ffserver
-%%FFSERVER%%etc/ffserver.conf.sample
-%%FFSERVER%%etc/rc.d/ffserver.sh
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
 include/ffmpeg/avio.h
@@ -18,9 +14,6 @@ lib/libavcodec.so.%%SHLIB_VERSION%%
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VERSION%%
-%%VHOOK%%%%DRAWTEXT%%lib/vhook/drawtext.so
-%%VHOOK%%lib/vhook/fish.so
-%%VHOOK%%%%IMLIB2%%lib/vhook/imlib2.so
-%%VHOOK%%lib/vhook/null.so
-%%VHOOK%%lib/vhook/ppm.so
-%%VHOOK%%@dirrm lib/vhook
+lib/libpostproc.a
+lib/libpostproc.so
+lib/libpostproc.so.%%SHLIB_VERSION%%

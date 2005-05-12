@@ -80,7 +80,7 @@ static void catchsignal(int signal)
 }
 
 static int bktr_init (const char *video_device, int width, int height,
-	int format, u_int8_t **video_buf, int *video_fd, int *tuner_fd,
+	int format, u_int8_t **video_buf_local, int *video_fd, int *tuner_fd,
 	int idev, double frequency)
 {
 	struct meteor_geomet geo;
@@ -127,10 +127,11 @@ static int bktr_init (const char *video_device, int width, int height,
 		perror("Warning: Tuner not opened continuing");
 	}
 
-	*video_fd = open (video_device, O_RDONLY);
+//	*video_fd = open (video_device, O_RDONLY);
+	*video_fd = open (video_device, O_RDWR);
 	if (*video_fd < 0) {
 		perror (video_device);
-		return -1;
+		return AVERROR_IO;
 	}
 
 	geo.rows = height;
@@ -167,9 +168,9 @@ static int bktr_init (const char *video_device, int width, int height,
 		perror ("METEORSINPUT");
 		return -1;
 	}
-	*video_buf = (u_int8_t *) mmap((caddr_t)0, width*height*2,
+	*video_buf_local = (u_int8_t *) mmap((void *)0, width*height*2,
 		PROT_READ, MAP_SHARED, *video_fd, (off_t) 0);
-	if (*video_buf == MAP_FAILED) {
+	if (*video_buf_local == MAP_FAILED) {
 		perror ("mmap");
 		return -1;
 	}
@@ -185,23 +186,29 @@ static int bktr_init (const char *video_device, int width, int height,
 	return 0;
 }
 
-static void bktr_getframe(u_int64_t per_frame)
+static void bktr_getframe(VideoData *s)
 {
-	u_int64_t curtime;
-	static u_int64_t last_frame_time = 0;
+	int64_t curtime, delay;
+	struct timespec ts;
 
-	curtime = av_gettime();
-	if (!last_frame_time
-	    || ((last_frame_time + per_frame) > curtime)) {
-		if (!usleep (last_frame_time + per_frame + per_frame/8 - curtime)) {
-			if (!nsignals)
-				printf ("\nSLEPT NO signals - %d microseconds late\n",
-				        (int) (av_gettime() - last_frame_time - per_frame));
+	/* Calculate the time of the next frame */
+	s->per_frame += int64_t_C(1000000);
+
+	/* wait based on the frame rate */
+	for(;;) {
+		curtime = av_gettime();
+		delay = s->per_frame  * s->frame_rate_base / s->frame_rate - curtime;
+		if (delay <= 0) {
+			if (delay < int64_t_C(-1000000) * s->frame_rate_base / s->frame_rate) {
+				/* printf("grabbing is %d frames late (dropping)\n", (int) -(delay / 16666)); */
+				s->per_frame += int64_t_C(1000000);
+			}
+			break;
 		}
+		ts.tv_sec = delay / 1000000;
+		ts.tv_nsec = (delay % 1000000) * 1000;
+		nanosleep(&ts, NULL);
 	}
-	nsignals = 0;
-
-	last_frame_time = curtime;
 }
 
 void bf_memcpy (char *dest, char *src, int size)
@@ -226,10 +233,12 @@ static int grab_read_packet(AVFormatContext *s1, AVPacket *pkt)
 
 //	if (av_new_packet(pkt, size + halfsize) < 0)
 	if (av_new_packet(pkt, size + size) < 0)
-		return -EIO;
+		return AVERROR_IO;
 
-	bktr_getframe (s->per_frame);
-	pkt->pts = av_gettime() & ((1LL << 48) - 1);
+	bktr_getframe (s);
+//	pkt->pts = av_gettime() & ((1LL << 48) - 1);
+	pkt->pts = av_gettime() * s->frame_rate / s->frame_rate_base;
+
 	bf_memcpy (pkt->data, video_buf, size + size);
 //	bf_memcpy (pkt->data, video_buf, size + halfsize);
 
@@ -246,17 +255,22 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	int frame_rate_base;
 	int format = -1;
 
-	if (!ap || ap->width <= 0 || ap->height <= 0 || ap->frame_rate <= 0)
+	if (!ap || ap->width <= 0 || ap->height <= 0 || ap->time_base.den <= 0)
 		return -1;
 
 	width = ap->width;
 	height = ap->height;
-	frame_rate = ap->frame_rate;
-	frame_rate_base = ap->frame_rate_base;
+	frame_rate = ap->time_base.den;
+	frame_rate_base = ap->time_base.num;
+
+	if((unsigned)width > 32767 || (unsigned)height > 32767)
+		return -1;
 
 	st = av_new_stream(s1, 0);
 	if (!st)
 		return -ENOMEM;
+
+	av_set_pts_info(st, 48, 1, 1000000); /* 48 bits pts in us */
 
 	s->width = width;
 	s->height = height;
@@ -270,10 +284,8 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	st->codec.codec_id = CODEC_ID_RAWVIDEO;
 	st->codec.width = width;
 	st->codec.height = height;
-	st->codec.frame_rate = frame_rate;
-	st->codec.frame_rate_base = frame_rate_base;
-
-	av_set_pts_info(s1, 48, 1, 1000000); /* 48 bits pts in use */
+	st->codec.time_base.den = frame_rate;
+	st->codec.time_base.num = frame_rate_base;
 
    if (ap->standard) {
 		if (!strcasecmp(ap->standard, "pal"))
@@ -286,7 +298,7 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 
 	if (bktr_init (video_device, width, height, format, &video_buf,
 		       &(s->fd), &(s->tuner_fd), -1, 0.0) < 0)
-		return -EIO;
+		return AVERROR_IO;
 	return 0;
 }
 
@@ -298,7 +310,7 @@ static int grab_read_close (AVFormatContext *s1)
 	ioctl(s->fd, METEORCAPTUR, &c);
 	close(s->fd);
 	close(s->tuner_fd);
-	av_free(s);
+	munmap((void *)video_buf, sizeof(video_buf));
 	return 0;
 }
 
