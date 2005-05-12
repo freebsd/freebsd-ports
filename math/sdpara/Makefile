@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sdpara
-PORTVERSION=	0.90
+PORTVERSION=	1.0.0
 CATEGORIES=	math parallel
-MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/
+MASTER_SITES=   http://grid.r.dendai.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}.${PORTVERSION}.install.txt
@@ -24,14 +24,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
-RESTRICTED=	"unsure distribution condition"
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LAPACK=		-lalapack
 CBLAS=		-lcblas -lf77blas -latlas -lg2c
+PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
@@ -44,7 +43,7 @@ CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
 
-pre-build:
+post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
@@ -61,7 +60,7 @@ do-install:
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in sdpara.0.90.install.txt
+.for i in sdpara.${PORTVERSION}.install.txt
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
