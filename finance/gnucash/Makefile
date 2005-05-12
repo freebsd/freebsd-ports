@@ -21,7 +21,6 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
 		ofx.1:${PORTSDIR}/finance/libofx \
-		db4.0:${PORTSDIR}/databases/db4 \
 		gw-standard.0:${PORTSDIR}/devel/g-wrap
 RUN_DEPENDS=	${LOCALBASE}/share/guile/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
@@ -51,7 +50,7 @@ INFO=		gnucash-design
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/db41/db_185.h)
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db41
+LIB_DEPENDS+=	db4.1:${PORTSDIR}/databases/db41
 post-patch:
 	@${REINPLACE_CMD} -e "s|db4/db_185.h|db41/db_185.h|g" \
 		${WRKSRC}/configure
