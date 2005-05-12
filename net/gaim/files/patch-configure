@@ -1,0 +1,15 @@
+--- configure.orig	Thu May 12 01:20:01 2005
++++ configure	Thu May 12 01:20:31 2005
+@@ -33445,10 +33445,10 @@
+ 
+ 					enable_nss="no"
+ 				else
+-					nsprlibs="-ldl $with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
++					nsprlibs="$with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
+ 				fi
+ 			else
+-				nsprlibs="-ldl -lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
++				nsprlibs="-lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
+ 			fi
+ 
+ 			echo "$as_me:$LINENO: checking for Mozilla nspr libraries" >&5
