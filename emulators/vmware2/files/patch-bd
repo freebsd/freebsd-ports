@@ -30,7 +30,7 @@
  #include <machine/md_var.h>
  #include <machine/segments.h>
 +#if __FreeBSD_version < 501114
- #include <i386/isa/intr_machep.h>
+ #include <i386/isa/intr_machdep.h>
 +#endif
  
  static int
