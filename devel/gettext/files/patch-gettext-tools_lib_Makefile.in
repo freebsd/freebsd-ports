@@ -1,15 +1,15 @@
---- gettext-tools/lib/Makefile.in.orig	Thu Jan 29 12:13:36 2004
-+++ gettext-tools/lib/Makefile.in	Mon Dec 13 02:27:59 2004
-@@ -174,7 +174,7 @@
- CXXFLAGS = @CXXFLAGS@
+--- gettext-tools/lib/Makefile.in.orig	Mon Mar 14 07:24:09 2005
++++ gettext-tools/lib/Makefile.in	Mon Mar 14 21:10:57 2005
+@@ -192,7 +192,7 @@
  CYGPATH_W = @CYGPATH_W@
  DATADIRNAME = @DATADIRNAME@
--DEFS = -DEXEEXT=\"$(EXEEXT)\" -DDEPENDS_ON_LIBINTL=1 -DDEPENDS_ON_LIBICONV=1 @DEFS@ -DLIBDIR=\"$(libdir)\"
-+DEFS = -DEXEEXT=\"$(EXEEXT)\" -DDEPENDS_ON_LIBINTL=1 -DDEPENDS_ON_LIBICONV=1 @DEFS@ -DLIBDIR=\"$(prefix)/libdata\"
+ DEFS = -DEXEEXT=\"$(EXEEXT)\" -DDEPENDS_ON_LIBINTL=1 \
+-	-DDEPENDS_ON_LIBICONV=1 @DEFS@ -DLIBDIR=\"$(libdir)\"
++	-DDEPENDS_ON_LIBICONV=1 @DEFS@ -DLIBDIR=\"$(prefix)/libdata\"
  DEPDIR = @DEPDIR@
  DLLTOOL = @DLLTOOL@
  DVIPS = @DVIPS@
-@@ -451,7 +451,7 @@
+@@ -454,7 +454,7 @@
  # Need @LTLIBICONV@ because linebreak.c uses iconv().
  libgettextlib_la_LDFLAGS = \
    -release @VERSION@ \
@@ -18,7 +18,7 @@
  
  
  # Extra files to be installed.
-@@ -725,7 +725,7 @@
+@@ -736,7 +736,7 @@
  
  install-data-am: install-examplesconfigDATA install-gettextsrcDATA
  

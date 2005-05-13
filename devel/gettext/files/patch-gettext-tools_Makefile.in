@@ -1,11 +1,11 @@
---- gettext-tools/Makefile.in.orig	Thu Jan 29 12:13:35 2004
-+++ gettext-tools/Makefile.in	Mon Dec 13 02:21:20 2004
-@@ -328,7 +328,7 @@
+--- gettext-tools/Makefile.in.orig	Mon Apr 11 15:15:55 2005
++++ gettext-tools/Makefile.in	Mon Apr 18 19:12:07 2005
+@@ -348,7 +348,7 @@
  target_alias = @target_alias@
  AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
- ACLOCAL_AMFLAGS = -I m4 -I ../gettext-runtime/m4 -I ../autoconf-lib-link/m4 -I ../config/m4
--SUBDIRS = doc intl lib libuniname src po projects misc man m4 tests examples
-+SUBDIRS = intl lib libuniname src po projects misc man m4
+ ACLOCAL_AMFLAGS = -I m4 -I ../gettext-runtime/m4 -I ../autoconf-lib-link/m4 -I ../m4
+-SUBDIRS = doc intl lib libgrep libuniname src po projects misc man m4 tests examples
++SUBDIRS = doc intl lib libgrep libuniname src po projects misc man m4
  # vms_jackets.h is a header that comes with Compaq's "porting library".
  # KEEP_CRTL_SETLOCALE tells it to not override the native locale support.
- EXTRA_DIST = misc/DISCLAIM Makefile.vms config.h_vms README.woe32 Makefile.msvc config.h.msvc windows/alloca.h windows/fnmatch.h windows/stdbool.h windows/gettextlib.def windows/gettextsrc.def windows/gettextpo.def windows/gettextlib.rc windows/gettextsrc.rc windows/gettextpo.rc
+ EXTRA_DIST = misc/DISCLAIM Makefile.vms config.h_vms README.woe32 \
