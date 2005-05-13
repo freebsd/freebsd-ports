@@ -1,4 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40189
+Issutracker : #i40189#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : correct PTHREAD_* flags
 
 Index: config_office/configure.in
 ===================================================================

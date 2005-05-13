@@ -1,4 +1,7 @@
-#IZ Not raised yet. this is very ad hoc patch...
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : most pop name of installated GNU make is gmake, not make for FreeBSD
 
 Index: configure.pl
 ===================================================================

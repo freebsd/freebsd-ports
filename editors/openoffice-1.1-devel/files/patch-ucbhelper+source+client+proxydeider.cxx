@@ -1,6 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40191
-
-sys/socket.h is needed for FreeBSD
+Issutracker : #i40191#
+CWS         : cws_srx645_bsd01
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : sys/socket.h is needed for FreeBSD
 
 Index: ucbhelper/source/client/proxydecider.cxx
 ===================================================================

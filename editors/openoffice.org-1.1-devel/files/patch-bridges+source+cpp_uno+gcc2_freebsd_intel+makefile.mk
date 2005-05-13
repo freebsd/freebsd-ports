@@ -1,4 +1,7 @@
-#i48978#
+Issutracker : #i48978#
+CWS         : cws_srx645_bsd02
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : do not compile cpp_uno/gcc2_freebsd_intel unless gcc is 2.95
 
 Index: bridges/source/cpp_uno/gcc2_freebsd_intel/makefile.mk
 ===================================================================

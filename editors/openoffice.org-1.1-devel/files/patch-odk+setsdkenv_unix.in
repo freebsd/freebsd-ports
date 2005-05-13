@@ -1,5 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=24142
-http://www.openoffice.org/issues/show_bug.cgi?id=40190
+Issutracker : #i40190#, #i24142#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : Add SDK support for FreeBSD
 
 --- odk/setsdkenv_unix.in.orig	Sun Jan 25 18:41:01 2004
 +++ odk/setsdkenv_unix.in	Sun Jan 25 18:42:00 2004

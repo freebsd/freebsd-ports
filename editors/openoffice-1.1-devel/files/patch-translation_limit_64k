@@ -1,7 +1,8 @@
-#iZ 33228#
-#iZ 34210#
-Kannada doesn't build since some resources are limited to 64k.
-it won't fix for 1.1.x
+Issutracker : #i33228#, #i34210#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : Kannada doesn't build since some resources are
+limited to 64k. it won't fix for 1.1.x
 
 Index: inc/sc.hrc
 ===================================================================
