@@ -10,8 +10,8 @@ PORTVERSION=	0.6.5
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://www.gnokii.org/download/ \
-		ftp://ftp.gnokii.org/pub/gnokii/
+		http://www.gnokii.org/download/gnokii/0.6.x/ \
+		ftp://ftp.gnokii.org/pub/gnokii/0.6.x/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mad@madpilot.net
