@@ -8,4 +8,12 @@ chmod 0770 ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/sessions
 mkdir -p ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/users
 chmod 0700 ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/users
 chmod 4755 ${PKG_PREFIX}/www/cgi-bin/openwebmail/openwebmail*pl
+
+for x in addressbooks/global calendar.book; do
+  if [ ! -s "${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/${x}" ]; then
+    touch ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/${x}
+    chmod 0666 ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/${x}
+  fi
+done
+
 ${PKG_PREFIX}/www/cgi-bin/openwebmail/openwebmail-tool.pl --init --no
