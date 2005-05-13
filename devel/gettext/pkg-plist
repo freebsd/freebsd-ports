@@ -44,6 +44,7 @@ libdata/gettext-tools/urlget
 libdata/gettext-tools/user-email
 share/aclocal/codeset.m4
 share/aclocal/gettext.m4
+share/aclocal/glibc2.m4
 share/aclocal/glibc21.m4
 share/aclocal/iconv.m4
 share/aclocal/intdiv0.m4
@@ -70,21 +71,22 @@ share/aclocal/ulonglong.m4
 share/aclocal/wchar_t.m4
 share/aclocal/wint_t.m4
 share/aclocal/xsize.m4
+%%DOCSDIR%%/FAQ.html
 %%DOCSDIR%%/csharpdoc/GNU_Gettext.html
 %%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceManager.html
 %%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceSet.html
 %%DOCSDIR%%/csharpdoc/begin.html
 %%DOCSDIR%%/csharpdoc/index.html
 %%DOCSDIR%%/csharpdoc/namespaces.html
-%%DOCSDIR%%/examples/config/csharpcomp.m4
-%%DOCSDIR%%/examples/config/csharpcomp.sh.in
-%%DOCSDIR%%/examples/config/csharpexec.m4
-%%DOCSDIR%%/examples/config/csharpexec.sh.in
-%%DOCSDIR%%/examples/config/gcj.m4
-%%DOCSDIR%%/examples/config/javacomp.m4
-%%DOCSDIR%%/examples/config/javacomp.sh.in
-%%DOCSDIR%%/examples/config/javaexec.m4
-%%DOCSDIR%%/examples/config/javaexec.sh.in
+%%DOCSDIR%%/examples/build-aux/csharpcomp.m4
+%%DOCSDIR%%/examples/build-aux/csharpcomp.sh.in
+%%DOCSDIR%%/examples/build-aux/csharpexec.m4
+%%DOCSDIR%%/examples/build-aux/csharpexec.sh.in
+%%DOCSDIR%%/examples/build-aux/gcj.m4
+%%DOCSDIR%%/examples/build-aux/javacomp.m4
+%%DOCSDIR%%/examples/build-aux/javacomp.sh.in
+%%DOCSDIR%%/examples/build-aux/javaexec.m4
+%%DOCSDIR%%/examples/build-aux/javaexec.sh.in
 %%DOCSDIR%%/javadoc1/AllNames.html
 %%DOCSDIR%%/javadoc1/gnu.gettext.GettextResource.html
 %%DOCSDIR%%/javadoc1/images/blue-ball-small.gif
@@ -126,6 +128,7 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/javadoc2/packages.html
 %%DOCSDIR%%/javadoc2/serialized-form.html
 %%DOCSDIR%%/javadoc2/stylesheet.css
+%%DOCSDIR%%/tutorial.html
 share/doc/libasprintf/autosprintf.html
 share/emacs/site-lisp/po-compat.el
 share/emacs/site-lisp/po-mode.el
@@ -154,6 +157,7 @@ share/gettext/intl/gmo.h
 share/gettext/intl/hash-string.h
 share/gettext/intl/intl-compat.c
 share/gettext/intl/l10nflist.c
+share/gettext/intl/langprefs.c
 share/gettext/intl/libgnuintl.h.in
 share/gettext/intl/loadinfo.h
 share/gettext/intl/loadmsgcat.c
@@ -235,6 +239,7 @@ share/locale/fi/LC_MESSAGES/gettext-runtime.mo
 share/locale/fi/LC_MESSAGES/gettext-tools.mo
 share/locale/fr/LC_MESSAGES/gettext-runtime.mo
 share/locale/fr/LC_MESSAGES/gettext-tools.mo
+share/locale/ga/LC_MESSAGES/gettext-runtime.mo
 share/locale/gl/LC_MESSAGES/gettext-runtime.mo
 share/locale/gl/LC_MESSAGES/gettext-tools.mo
 share/locale/id/LC_MESSAGES/gettext-runtime.mo
@@ -273,6 +278,8 @@ share/locale/sv/LC_MESSAGES/gettext-tools.mo
 share/locale/tr/LC_MESSAGES/gettext-runtime.mo
 share/locale/tr/LC_MESSAGES/gettext-tools.mo
 share/locale/uk/LC_MESSAGES/gettext-runtime.mo
+share/locale/uk/LC_MESSAGES/gettext-tools.mo
+share/locale/vi/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_CN/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
@@ -290,6 +297,7 @@ share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 @dirrm %%DOCSDIR%%/javadoc2
 @dirrm %%DOCSDIR%%/javadoc1/images
 @dirrm %%DOCSDIR%%/javadoc1
+@dirrm %%DOCSDIR%%/examples/build-aux
 @dirrm %%DOCSDIR%%/examples/config
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%/csharpdoc

@@ -1,15 +1,14 @@
-$FreeBSD$
-
---- gettext-tools/misc/Makefile.in.orig	Thu May 22 09:41:22 2003
-+++ gettext-tools/misc/Makefile.in	Wed Jun 11 14:00:52 2003
-@@ -332,10 +332,8 @@
+--- gettext-tools/misc/Makefile.in.orig	Mon Mar 14 07:24:11 2005
++++ gettext-tools/misc/Makefile.in	Mon Mar 14 20:40:33 2005
+@@ -447,11 +447,9 @@
+ 	  list='$(lisp_LISP)'; for p in $$list; do \
  	    if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
- 	    echo " $(lispLISP_INSTALL) $$d$$p $(DESTDIR)$(lispdir)/$$f"; \
--	    $(lispLISP_INSTALL) $$d$$p $(DESTDIR)$(lispdir)/$$f; \
+ 	    f=$(am__strip_dir) \
+-	    echo " $(lispLISP_INSTALL) '$$d$$p' '$(DESTDIR)$(lispdir)/$$f'"; \
+ 	    $(lispLISP_INSTALL) "$$d$$p" "$(DESTDIR)$(lispdir)/$$f"; \
  	    if test -f $${p}c; then \
- 	      echo " $(lispLISP_INSTALL) $${p}c $(DESTDIR)$(lispdir)/$${f}c"; \
--	      $(lispLISP_INSTALL) $${p}c $(DESTDIR)$(lispdir)/$${f}c; \
+ 	      echo " $(lispLISP_INSTALL) '$${p}c' '$(DESTDIR)$(lispdir)/$${f}c'"; \
+-	      $(lispLISP_INSTALL) "$${p}c" "$(DESTDIR)$(lispdir)/$${f}c"; \
  	    else : ; fi; \
  	  done; \
  	else : ; fi

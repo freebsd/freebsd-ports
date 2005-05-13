@@ -1,5 +1,5 @@
---- gettext-runtime/intl/Makefile.in.orig	Sat Jan 17 10:54:06 2004
-+++ gettext-runtime/intl/Makefile.in	Mon Dec 13 02:46:25 2004
+--- gettext-runtime/intl/Makefile.in.orig	Mon Apr 11 14:34:59 2005
++++ gettext-runtime/intl/Makefile.in	Mon Apr 18 19:10:08 2005
 @@ -52,7 +52,7 @@
  YFLAGS = --name-prefix=__gettext
  
@@ -9,25 +9,25 @@
  -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"$(libdir)\" -DNO_XMALLOC \
  -Dset_relocation_prefix=libintl_set_relocation_prefix \
  -Drelocate=libintl_relocate \
-@@ -152,7 +152,7 @@
+@@ -154,7 +154,7 @@
  libintl.la libgnuintl.la: $(OBJECTS)
  	$(LIBTOOL) --mode=link \
  	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
--	  $(OBJECTS) @LTLIBICONV@ $(LIBS) -lc \
-+	  $(OBJECTS) @LTLIBICONV@ $(LIBS) \
+-	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) -lc \
++	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) \
  	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
  	  -rpath $(libdir) \
  	  -no-undefined
-@@ -162,7 +162,7 @@
+@@ -164,7 +164,7 @@
  # according to the libtool documentation, section "Library interface versions".
  # Maintainers of other packages that include the intl directory must *not*
  # change these values.
 -LTV_CURRENT=7
 +LTV_CURRENT=6
- LTV_REVISION=0
+ LTV_REVISION=3
  LTV_AGE=4
  
-@@ -283,22 +283,6 @@
+@@ -288,22 +288,6 @@
  	  : ; \
  	fi
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
@@ -50,7 +50,7 @@
  	  $(mkinstalldirs) $(DESTDIR)$(localedir); \
  	  test -f $(DESTDIR)$(localedir)/locale.alias \
  	    && orig=$(DESTDIR)$(localedir)/locale.alias \
-@@ -382,9 +366,9 @@
+@@ -389,9 +373,9 @@
  	  : ; \
  	fi
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
