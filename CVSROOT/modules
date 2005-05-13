@@ -7300,6 +7300,7 @@ p5-DateTime-TimeZone-Alias	ports/devel/p5-DateTime-TimeZone-Alias
 p5-DateTime-TimeZone-LMT	ports/devel/p5-DateTime-TimeZone-LMT
 p5-Decision-ACL	ports/devel/p5-Decision-ACL
 p5-DelimMatch	ports/textproc/p5-DelimMatch
+p5-Devel-Arena	ports/devel/p5-Devel-Arena
 p5-Devel-Constants	ports/devel/p5-Devel-Constants
 p5-Devel-Cover	ports/devel/p5-Devel-Cover
 p5-Devel-Cycle	ports/devel/p5-Devel-Cycle
