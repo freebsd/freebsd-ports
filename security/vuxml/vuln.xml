@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="66dbb2ee-99b8-45b2-bb3e-640caea67a60">
+    <topic>leafnode -- fetchnews denial-of-service triggered by transmission abort/timeout</topic>
+    <affects>
+      <package>
+        <name>leafnode</name>
+        <range><ge>1.9.48</ge><lt>1.11.2</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+         <p>When an upstream server aborts the transmission or stops sending
+	   data after the fetchnews program has requested an article header
+	   or body, fetchnews may crash, without querying further servers
+	   that are configured. This can prevent articles from being fetched.
+	</p>
+      </body>
+    </description>
+    <references>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2005-01.txt</url>
+      <cvename>CAN-2005-1453</cvename>
+      <freebsdpr>ports/80663</freebsdpr>
+      <bid>13489</bid>
+      <bid>13492</bid>
+      <mlist msgid="20050504152311.GA25593@merlin.emma.line.org">http://sourceforge.net/mailarchive/forum.php?thread_id=7186974&amp;forum_id=10210</mlist>
+      <mlist msgid="20050504152311.GA25593@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/52</mlist>
+      <mlist msgid="20050504152311.GA25593@merlin.emma.line.org">http://www.dt.e-technik.uni-dortmund.de/pipermail/leafnode-list/2005q2/000900.html</mlist>
+      <mlist msgid="20050504152311.GA25593@merlin.emma.line.org">http://www.fredi.de/maillist/msg00111.html</mlist>
+      <mlist msgid="20050504152311.GA25593@merlin.emma.line.org">http://archives.neohapsis.com/archives/vulnwatch/2005-q2/0037.html</mlist>
+      <url>http://www.frsirt.com/english/advisories/2005/0468</url>
+      <url>http://secunia.com/advisories/15252</url>
+    </references>
+    <dates>
+      <discovery>2005-05-04</discovery>
+      <entry>2005-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a6427195-c2c7-11d9-89f7-02061b08fc24">
     <topic>mozilla -- privilege escalation via non-DOM property
       overrides</topic>
@@ -13268,7 +13305,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <url>http://leafnode.sourceforge.net/leafnode-SA-2002-01</url>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2002-01.txt</url>
+      <cvename>CAN-2002-1661</cvename>
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=2796226</mlist>
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/8</mlist>
       <bid>6490</bid>
@@ -13277,6 +13315,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2002-11-06</discovery>
       <entry>2004-05-21</entry>
+      <modified>2005-05-13</modified>
     </dates>
   </vuln>
 
@@ -13296,7 +13335,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <cvename>CAN-2003-0744</cvename>
-      <url>http://leafnode.sourceforge.net/leafnode-SA-2003-01</url>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2003-01.txt</url>
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=5975563</mlist>
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/21</mlist>
       <bid>8541</bid>
@@ -13305,6 +13344,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2003-06-20</discovery>
       <entry>2004-05-21</entry>
+      <modified>2005-05-13</modified>
     </dates>
   </vuln>
 
@@ -13326,7 +13366,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <url>http://leafnode.sourceforge.net/leafnode-SA-2004-01</url>
+      <cvename>CAN-2004-2068</cvename>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2004-01.txt</url>
       <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=873149&amp;group_id=57767&amp;atid=485349</url>
       <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/32</mlist>
       <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=6922570</mlist>
@@ -13335,6 +13376,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-01-08</discovery>
       <entry>2004-05-21</entry>
+      <modified>2005-05-13</modified>
     </dates>
   </vuln>
 
