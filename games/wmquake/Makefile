@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
-MAINTAINER=	q@uni.de
+MAINTAINER=	q@galgenberg.net
 COMMENT=	Id Software\'s Quake I in a 64x64 WM dockapp window
 
 LIB_DEPENDS+=	gdk12.2:${PORTSDIR}/x11-toolkits/gtk12

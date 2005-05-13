@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.berlios.de/lxdvdrip/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-3
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	q@uni.de
+MAINTAINER=	q@galgenberg.net
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread

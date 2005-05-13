@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	wxruby-${PORTVERSION:S/.0$//}-src
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	q@uni.de
+MAINTAINER=	q@galgenberg.net
 COMMENT=	Ruby bindings for wxWindows (aka wxWidgets)
 
 LIB_DEPENDS=	wx_gtk2-2.4:${PORTSDIR}/x11-toolkits/wxgtk24 \

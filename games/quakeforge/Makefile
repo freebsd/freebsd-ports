@@ -23,7 +23,7 @@ MASTER_SITES+=	ftp://ftp.idsoftware.com/idstuff/quakeworld/skins/:skins
 DISTFILES+=	${SKINFILES:S/$/:skins/}
 .endif
 
-MAINTAINER=	q@uni.de
+MAINTAINER=	q@galgenberg.net
 COMMENT=	Cleaned up copy of the GPLd Quake 1 source code
 
 WADFILE=	quakesw-1.0.6.tar.gz

@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://kingleo.home.pages.at/development/stuff/
 DISTNAME=	real_random-${PORTVERSION}
 
-MAINTAINER=	q@uni.de
+MAINTAINER=	q@galgenberg.net
 COMMENT=	REAL shuffle mode for xmms
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
