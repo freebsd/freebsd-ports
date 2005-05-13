@@ -10,7 +10,7 @@ CATEGORIES=	russian archivers
 MAINTAINER=	den@FreeBSD.org
 COMMENT=	Unzip with CP866 and KOI8-R support
 
-CONFLICTS=	unzip-[0-9]* [a-z][a-z]-unzip-[0-9]*
+CONFLICTS=	unzip-[0-9]* ch-unzip-[0-9]* ko-unzip-[0-9]*
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-ebcdic.h
 
