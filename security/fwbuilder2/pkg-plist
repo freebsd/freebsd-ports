@@ -28,6 +28,10 @@ bin/fwbuilder
 %%DOCSDIR%%/ReleaseNotes_2.0.4.txt
 %%DOCSDIR%%/ReleaseNotes_2.0.5.html
 %%DOCSDIR%%/ReleaseNotes_2.0.5.txt
+%%DOCSDIR%%/ReleaseNotes_2.0.6.html
+%%DOCSDIR%%/ReleaseNotes_2.0.6.txt
+%%DOCSDIR%%/ReleaseNotes_2.0.7.html
+%%DOCSDIR%%/ReleaseNotes_2.0.7.txt
 %%DOCSDIR%%/PatchAcceptancePolicy.txt
 %%DATADIR%%/objects_init.xml
 %%DATADIR%%/templates.xml
@@ -46,6 +50,7 @@ bin/fwbuilder
 %%DATADIR%%/os/solaris.xml
 %%DATADIR%%/os/pix_os.xml
 %%DATADIR%%/os/unknown_os.xml
+%%DATADIR%%/locale/fwbuilder_de.qm
 %%DATADIR%%/locale/fwbuilder_fr.qm
 %%DATADIR%%/locale/fwbuilder_ja.qm
 %%DATADIR%%/locale/fwbuilder_ru.qm

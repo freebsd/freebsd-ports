@@ -1,9 +1,10 @@
---- qmake.inc.in.old	Sat Oct 16 23:56:08 2004
-+++ qmake.inc.in	Sat Oct 16 23:56:20 2004
-@@ -37,10 +37,6 @@
+--- qmake.inc.in.linux	2005-04-27 19:17:10.000000000 -0700
++++ qmake.inc.in	2005-04-27 19:17:38.000000000 -0700
+@@ -33,11 +33,6 @@
+ 	LIBS                   += $$LIBS_FWBUILDER
  
  	PKGLOCALEDIR            = $$res.path/locale
- 
+-
 -	QMAKE_CFLAGS_DEBUG     += -Wno-unused-parameter
 -	QMAKE_CFLAGS_RELEASE   += -Wno-unused-parameter
 -	QMAKE_CXXFLAGS_DEBUG   += -Wno-unused-parameter
