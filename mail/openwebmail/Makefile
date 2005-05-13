@@ -136,6 +136,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget-devel
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 .endif
 
+post-extract:
+.for x in addressbooks/global calendar.book
+	@${RM} ${WRKSRC}/cgi-bin/openwebmail/etc/${x}
+.endfor
+
 post-patch:
 .if defined(DISABLE_SPEEDYCGI)
 	@${ECHO_MSG} ""

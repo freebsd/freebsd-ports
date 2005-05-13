@@ -3,4 +3,10 @@ if [ "$2" != "DEINSTALL" ]; then
     exit 0
 fi
 
+for x in addressbooks/global calendar.book; do
+  if [ ! -s "${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/${x}" ]; then
+    rm ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/${x}
+  fi
+done
+
 rm -fr ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/sessions/*
