@@ -51,7 +51,7 @@ awk '/^[[:space:]]+<vuln /,/^NONE$/ { print }' \
   "${vuxml_file}" >> "${tmp}" || exit 1
 
 if cp "${tmp}" "${vuxml_file}"; then
-  exec "${EDITOR:-vi}" "${vuxml_file}"
+  exec ${EDITOR:-vi} "${vuxml_file}"
 else
   doclean="no"
   exec >&2
