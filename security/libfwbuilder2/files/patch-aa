@@ -1,13 +1,13 @@
---- qmake.inc.in.old	Sat Oct 16 23:41:15 2004
-+++ qmake.inc.in	Sat Oct 16 23:41:33 2004
-@@ -45,10 +45,6 @@
+--- qmake.inc.in.linux	2005-04-27 19:15:38.000000000 -0700
++++ qmake.inc.in	2005-04-27 19:15:48.000000000 -0700
+@@ -28,10 +28,6 @@
+ 	doc.path                =$(DDIR)@DOCDIR@
  
  	CONFIG                 += warn_on debug
- 	INCLUDEPATH            += /usr/include @XML_CFLAGS_Q@ @XSLT_CFLAGS_Q@ @PTHREAD_CFLAGS_Q@ @OPENSSL_CFLAGS_Q@ @LWRES_CFLAGS_Q@
 -	QMAKE_CFLAGS_DEBUG     += -Wno-unused-parameter
 -	QMAKE_CFLAGS_RELEASE   += -Wno-unused-parameter
 -	QMAKE_CXXFLAGS_DEBUG   += -Wno-unused-parameter
 -	QMAKE_CXXFLAGS_RELEASE += -Wno-unused-parameter
- 	LIBS                   += @PTHREAD_LIBS@ @XML_LIBS@ @XSLT_LIBS@ @OPENSSL_LIBS@ @LIBSNMP_LIBS@ @LWRES_LIBS@ @LIBS@
+ }
  }
  
