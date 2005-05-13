@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	electricsheep
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6b6
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
-		xsetbg:${PORTSDIR}/graphics/xli \
+		xsetbg:${PORTSDIR}/x11/xloadimage \
 		curl:${PORTSDIR}/ftp/curl
 
 .if defined(WITH_XSCREENSAVER)
@@ -37,7 +36,7 @@ MAN1=		electricsheep.1
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-LIBTOOLFILES=	configure mpeg2dec/configure flame/configure
+LIBTOOLFILES=	configure mpeg2dec/configure flam3/configure
 
 pre-everything::
 .if !defined(WITH_XSCREENSAVER)
@@ -62,7 +61,7 @@ post-patch:
 		${WRKSRC}/mpeg2dec/libvo/video_out_sdl.c
 
 	@${REINPLACE_CMD} -e \
-		's|/usr/local/share|${PREFIX}/share/electricsheep|' \
+		's|/usr/local/share|${DATADIR}|' \
 		${WRKSRC}/electricsheep.c
 
 	@${REINPLACE_CMD} -e \
@@ -72,18 +71,24 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/electricsheep ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/flame/anim-flame ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/flame/convert-flame ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/flame/hqi-flame ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/flame/pick-flame ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/electricsheep-voter ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/uniqueid ${PREFIX}/bin/esheep-uniqueid
+	@${INSTALL_PROGRAM} ${WRKSRC}/flam3/flam3-animate ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/flam3/flam3-convert ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/flam3/flam3-genome ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/flam3/flam3-render ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpeg2dec/src/mpeg2dec_onroot ${PREFIX}/bin
-	@${INSTALL} -d -m 0755 ${PREFIX}/share/electricsheep
-	@${INSTALL_DATA} ${WRKSRC}/*.tif ${PREFIX}/share/electricsheep
+	@${INSTALL} -d -m 0755 ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.tif ${DATADIR}
 .if defined(WITH_XSCREENSAVER)
 	@${INSTALL_DATA} ${WRKSRC}/electricsheep.xml ${PREFIX}/share/xscreensaver/config
 .endif
 .if !defined(NOPORTDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/electricsheep.man ${PREFIX}/man/man1/electricsheep.1
 .endif
+
+post-install:
+	@${PREFIX}/bin/esheep-uniqueid > ${DATADIR}/electricsheep-uniqueid
 
 .include <bsd.port.mk>
