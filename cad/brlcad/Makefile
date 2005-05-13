@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.2.2
+PORTVERSION=	7.2.4
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	brlcad
@@ -84,7 +84,7 @@ MAN1=	aliastorle.1 all_sf.1 alias-pix.1 anim_cascade.1 anim_fly.1 	\
 	rletoalias.1 rletoascii.1 rletocgm.1 rletogif.1 rletogray.1	\
 	rletopaint.1 rletoppm.1 rletops.1 rletorast.1 rletoraw.1	\
 	rletorla.1 rletotarga.1 rletotiff.1 rlezoom.1 rpatch.1 rt.1	\
-	rt_bot_faces.1 rtcheck.1 rtedge.1 rtg3.1 rthide.1 rtpp.1	\
+	rt_bot_faces.1 rtarea.1 rtcheck.1 rtedge.1 rtg3.1 rthide.1 rtpp.1	\
 	rtrange.1 rtray.1 rtregis.1 rtscale.1 rtshot.1 rttherm.1	\
 	rtwalk.1 rtweight.1 rtxray.1 scriptsort.1 secpass.1 shapefact.1	\
 	show3.1 showshot.1 showtherm.1 smush.1 ssamp-bw.1 stl-g.1	\
@@ -201,7 +201,7 @@ BROKEN=		"Does not compile on FreeBSD-${OSREL}"
 .endif
 
 .if ${ARCH} != i386
-IGNORE=		"Dumps core on ${ARCH}!"
+IGNORE=		Dumps core on ${ARCH}!
 .endif
 
 .ifndef WITHOUT_OPTIMIZATION

@@ -482,7 +482,6 @@ html/ReleaseNotes/Rel5.0/Summary/img016.jpg
 html/ReleaseNotes/Rel5.0/Summary/img017.jpg
 html/ReleaseNotes/Rel5.0/Summary/img018.jpg
 html/ReleaseNotes/Rel5.0/Summary/img019.jpg
-html/ReleaseNotes/Rel5.0/Summary/index.htm
 html/ReleaseNotes/Rel5.0/Summary/index.html
 html/ReleaseNotes/Rel5.0/Summary/info.gif
 html/ReleaseNotes/Rel5.0/Summary/last.gif
@@ -541,9 +540,7 @@ html/ReleaseNotes/email4.0.html
 html/ReleaseNotes/email4.4.html
 html/ReleaseNotes/email5.0.html
 html/ReleaseNotes/index.html
-html/manuals/Anim_Tutorial/Butler.html
 html/manuals/Anim_Tutorial/Lee_tux.gif
-html/manuals/Anim_Tutorial/Murdza.html
 html/manuals/Anim_Tutorial/animtbl.gif
 html/manuals/Anim_Tutorial/chans.html
 html/manuals/Anim_Tutorial/chapt0.html
@@ -753,13 +750,15 @@ include/brlcad/RtServerImpl.h
 include/brlcad/XtndRunsv.h
 include/brlcad/anim.h
 include/brlcad/bn.h
+include/brlcad/brlcad.h
+include/brlcad/brlcad_config.h
+include/brlcad/brlcad_version.h
 include/brlcad/bu.h
 include/brlcad/cmd.h
 include/brlcad/colorquant.h
 include/brlcad/common.h
 include/brlcad/compat4.h
 include/brlcad/conf.h
-include/brlcad/config.h
 include/brlcad/config_win.h
 include/brlcad/db.h
 include/brlcad/db5.h
@@ -783,6 +782,7 @@ include/brlcad/itclInt.h
 include/brlcad/itclIntDecls.h
 include/brlcad/itk.h
 include/brlcad/itkDecls.h
+include/brlcad/libterm.h
 include/brlcad/libtermio.h
 include/brlcad/light.h
 include/brlcad/machine.h
@@ -1262,6 +1262,7 @@ sample_applications/nurb_example.c
 sample_applications/pl-dm.c
 sample_applications/raydebug.tcl
 sample_applications/rtexample.c
+share/README.IRIX
 share/README.MacOSX
 share/anim.txt
 share/benchmark.tr
