@@ -1,2 +1,0 @@
-APPENDDEF(`conf_libmilter_ENVDEF', `-D_FFR_MILTER=1')
-APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_MILTER=1')
