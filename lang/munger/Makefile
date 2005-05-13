@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.54
+PORTVERSION=	4.55
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
 MAINTAINER=	jimmy@jamesbailie.com
 COMMENT=	Static lisp interpreter with text processing abilities
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
 
-MAN1=		munger.1 httpf.1 xml2munger.1
+MAN1=		munger.1
 MANCOMPRESSED=	yes
 PLIST_SUB=	MUNGER_VERSION=${PORTVERSION}
 

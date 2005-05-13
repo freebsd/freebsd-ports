@@ -1,7 +1,6 @@
 bin/munger
-bin/httpf
-bin/xml2munger
 share/munger-%%MUNGER_VERSION%%/mbox2munger.munger
+share/munger-%%MUNGER_VERSION%%/xml2alist.munger
 share/munger-%%MUNGER_VERSION%%/mime2munger.munger
 share/munger-%%MUNGER_VERSION%%/google.munger
 share/munger-%%MUNGER_VERSION%%/google.template
