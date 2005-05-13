@@ -1,10 +1,14 @@
 bin/yazproxy
 include/yazproxy/bw.h
+include/yazproxy/module.h
 include/yazproxy/proxy.h
 lib/libyazproxy.a
 lib/libyazproxy.la
 lib/libyazproxy.so
 lib/libyazproxy.so.1
+lib/yazproxy/mod_proxy_sample.a
+lib/yazproxy/mod_proxy_sample.la
+lib/yazproxy/mod_proxy_sample.so
 share/doc/yazproxy/id.png
 share/doc/yazproxy/installation.html
 share/doc/yazproxy/introduction.html
@@ -35,11 +39,14 @@ share/yazproxy/MARC21slim2RDFDC.xsl
 share/yazproxy/MARC21slim2SRWDC.xsl
 share/yazproxy/MARC21slimUtils.xsl
 share/yazproxy/config.xml
+share/yazproxy/config-mafi2ma.xml
+share/yazproxy/explain.xml
 share/yazproxy/pqf.properties
 share/yazproxy/voyager.xml
 share/yazproxy/yazproxy.xsd
 share/yazproxy/yazproxyctl.sh
 share/yazproxy/zeerex-2.0.xsd
 @dirrm include/yazproxy
+@dirrm lib/yazproxy
 @dirrm share/doc/yazproxy
 @dirrm share/yazproxy
