@@ -25,6 +25,8 @@ lib/courier-authlib/libcourierauthsaslclient.so
 lib/courier-authlib/libcourierauthsaslclient.so.0
 lib/courier-authlib/libauthpam.so
 lib/courier-authlib/libauthpam.so.0
+lib/courier-authlib/libauthpipe.so
+lib/courier-authlib/libauthpipe.so.0
 libexec/courier-authlib/authdaemond
 libexec/courier-authlib/authsystem.passwd
 sbin/authdaemond
