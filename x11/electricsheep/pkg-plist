@@ -1,11 +1,13 @@
 bin/electricsheep
-bin/convert-flame
+bin/electricsheep-voter
 bin/mpeg2dec_onroot
-bin/hqi-flame
-bin/anim-flame
-bin/pick-flame
-share/electricsheep/electricsheep-frown.tif
-share/electricsheep/electricsheep-smile.tif
-share/electricsheep/electricsheep-splash-0.tif
-share/electricsheep/electricsheep-splash-1.tif
-@dirrm share/electricsheep
+bin/flam3-animate
+bin/flam3-convert
+bin/flam3-genome
+bin/flam3-render
+bin/esheep-uniqueid
+%%DATADIR%%/electricsheep-frown.png
+%%DATADIR%%/electricsheep-smile.png
+%%DATADIR%%/electricsheep-splash-0.tif
+%%DATADIR%%/electricsheep-splash-1.tif
+@unexec rmdir %%DATADIR%% 2>/dev/null || true
