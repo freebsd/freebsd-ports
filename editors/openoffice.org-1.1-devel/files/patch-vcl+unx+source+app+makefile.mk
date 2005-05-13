@@ -1,6 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=48988
-
-at configure stage,  ENABLE_PASF is settend to NO.
+Issutracker : #i48988#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : at configure stage,  ENABLE_PASF is settend to NO.
 ---config_office/configure.in start
 dnl ===================================================================
 dnl Test whether wwe want to use portaudio/sndfile

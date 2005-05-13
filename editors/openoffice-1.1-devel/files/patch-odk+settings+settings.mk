@@ -1,5 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40190
-http://www.openoffice.org/issues/show_bug.cgi?id=24142
+Issutracker : #i40190#, #i24142#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : SDK support for FreeBSD
 
 --- odk/settings/settings.mk.orig	Sun Jan 25 18:41:02 2004
 +++ odk/settings/settings.mk	Sun Jan 25 18:45:09 2004
