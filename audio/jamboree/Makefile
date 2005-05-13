@@ -25,14 +25,11 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+GCONF_SCHEMAS=	jamboree.schemas
+USE_REINPLACE=	yes
 
-OPTIONS=	DBUS "D-BUS support" off
+post-patch:
+	@${REINPLACE_CMD} -e 's|^\(@GCONF_SCHEMAS_INSTALL_TRUE@\)        |\1	|' \
+		${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DBUS)
-LIB_DEPENDS+=		dbus-1:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+=	--enable-dbus
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
