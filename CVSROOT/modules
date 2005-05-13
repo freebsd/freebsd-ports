@@ -10643,7 +10643,6 @@ sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-sasl	ports/mail/sendmail-sasl
-sendmail811	ports/mail/sendmail811
 senken		ports/games/senken
 senso		ports/games/senso
 sentinel	ports/mail/sentinel
