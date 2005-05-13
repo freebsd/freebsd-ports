@@ -1,0 +1,48 @@
+Issutracker : N/A
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : == -> =
+
+Index: config_office/configure.in
+===================================================================
+RCS file: /cvs/tools/config_office/configure.in,v
+retrieving revision 1.116
+diff -u -r1.116 configure.in
+--- config_office/configure.in	11 Apr 2005 09:31:15 -0000	1.116
++++ config_office/configure.in	13 May 2005 07:13:41 -0000
+@@ -1787,7 +1787,7 @@
+ dnl Checks for javac
+ dnl ===================================================================
+ if test "$SOLAR_JAVA" != ""; then
+-    if test "$JDK" == "gcj"; then 
++    if test "$JDK" = "gcj"; then 
+         javacompiler=`echo $WITH_JAVA | $SED -e "s/gij/gcj/g" | $SED -e "s/java/javac/g"`
+     else
+         javacompiler="javac"
+@@ -1871,7 +1871,7 @@
+     fi
+ fi
+ 
+-if test "$JDK" == "gcj"; then 
++if test "$JDK" = "gcj"; then 
+    save_CFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS -I$JAVA_HOME/include"
+    AC_CHECK_HEADER(jni.h, [],
+@@ -1888,7 +1888,7 @@
+ dnl ===================================================================
+ dnl Check for optional gcj-dbtool
+ dnl ===================================================================
+-if test "$JDK" == "gcj"; then 
++if test "$JDK" = "gcj"; then 
+     javacache=`echo $WITH_JAVA | $SED -e "s/gij/gcj-dbtool/g"`
+     if test -z "$with_jdk_home"; then
+         AC_PATH_PROG(JAVACACHE, $javacache)
+@@ -2684,7 +2684,7 @@
+    if test -z "$MOZILLA_VERSION"; then
+       MOZILLA_VERSION=1.7.5
+    fi
+-   if test "$MOZILLA_VERSION" == "1.7b" ; then
++   if test "$MOZILLA_VERSION" = "1.7b" ; then
+       MOZILLA_SOURCE_VERSION="mozilla-source-1.7b-source.tar.gz"
+    else
+       MOZILLA_SOURCE_VERSION="mozilla-source-${MOZILLA_VERSION}.tar.gz"
