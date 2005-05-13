@@ -15,7 +15,7 @@ DISTFILES=	vuxml-10.dtd  vuxml-model-10.mod \
 		xml1.dcl catalog catalog.xml
 DIST_SUBDIR=	vuxml
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	security@FreeBSD.org
 COMMENT=	Vulnerability and eXposure Markup Language DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr \
