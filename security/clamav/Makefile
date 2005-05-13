@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	${DISTVERSION:C/([a-z])[a-z]*/.\1/g:S/-/./g}
+PORTVERSION=	0.85
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
-DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
@@ -23,8 +22,6 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.84
-
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
 USE_REINPLACE=	yes
@@ -32,9 +29,6 @@ USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
-
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 PORTDOCS=	NEWS ChangeLog html
 
@@ -70,14 +64,14 @@ CLAMAVGROUP?=	clamav
 CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
-SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%DBDIR%%|${DBDIR}|g' \
-		-e 's|%%LOGDIR%%|${LOGDIR}|g' \
-		-e 's|%%RUNDIR%%|${RUNDIR}|g' \
-		-e 's|%%CLAMAVUSER%%|${CLAMAVUSER}|g' \
-		-e 's|%%CLAMAVGROUP%%|${CLAMAVGROUP}|g' \
-		-e 's|%%CLAMAV_CLAMD_SOCKET%%|${CLAMAV_CLAMD_SOCKET}|g' \
-		-e 's|%%CLAMAV_MILTER_SOCKET%%|${CLAMAV_MILTER_SOCKET}|g'
+SUB_FILES=	pkg-install pkg-deinstall clamav-clamd.sh clamav-freshclam.sh
+SUB_LIST=	DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR} \
+		RUNDIR=${RUNDIR} \
+		CLAMAVUSER=${CLAMAVUSER} \
+		CLAMAVGROUP=${CLAMAVGROUP} \
+		CLAMAV_CLAMD_SOCKET=${CLAMAV_CLAMD_SOCKET} \
+		CLAMAV_MILTER_SOCKET=${CLAMAV_MILTER_SOCKET}
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 ${LOGDIR}/\3|' \
@@ -96,15 +90,13 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
-SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
-		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
+SUB_LIST+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
+PLIST_SUB+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MILTER)
+SUB_FILES+=	clamav-milter.sh
 .if !defined(WITHOUT_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
@@ -142,16 +134,6 @@ pre-build:
 post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamd.conf
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf
-	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
-	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-deinstall >${PKGDEINSTALL}
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-clamd.sh \
-		>${WRKDIR}/clamav-clamd.sh
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-freshclam.sh \
-		>${WRKDIR}/clamav-freshclam.sh
-.if defined(WITH_MILTER)
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-milter.sh \
-		>${WRKDIR}/clamav-milter.sh
-.endif
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \

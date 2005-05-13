@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/Attic/clamav-clamd.sh.in,v 1.1 2005-05-13 08:16:40 jylefort Exp $
 #
 
 # PROVIDE: clamd
