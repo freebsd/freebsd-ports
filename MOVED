@@ -1484,3 +1484,4 @@ x11-toolkits/wxgtk2-devel|x11-toolkits/wxgtk26|2005-05-12|renamed
 x11-toolkits/wxgtk2-unicode-contrib-devel|x11-toolkits/wxgtk26-unicode-contrib|2005-05-12|renamed
 x11-toolkits/wxgtk2-unicode-devel|x11-toolkits/wxgtk26-unicode|2005-05-12|renamed
 x11-toolkits/wxgtk2-utils-devel|x11-toolkits/wxgtk2-contrib-utils|2005-05-12|renamed
+mail/sendmail811|mail/sendmail|2005-05-13|obsolete
