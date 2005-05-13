@@ -7,6 +7,7 @@
 
 PORTNAME=	estraier
 PORTVERSION=	1.2.28
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://estraier.sourceforge.net/
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A full-text search system for personal use
 
-LIB_DEPENDS=	qdbm.7:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	qdbm.9:${PORTSDIR}/databases/qdbm
 
 USE_ICONV=	yes
 
