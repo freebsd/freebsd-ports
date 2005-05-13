@@ -4,11 +4,14 @@
 #
 # $FreeBSD$
 
-MASTERDIR=	${.CURDIR}/../../archivers/unzip
-EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 CATEGORIES=	korean archivers
 
 MAINTAINER=	ab@astralblue.net
 COMMENT=	ZIP archive extractor with localized patches
+
+CONFLICTS=	unzip-[0-9]* ru-unzip-[0-9]* zh-unzip-[0-9]*
+
+EXTRA_PATCHES=	${.CURDIR}/files/patch-*
+MASTERDIR=	${.CURDIR}/../../archivers/unzip
 
 .include "${MASTERDIR}/Makefile"

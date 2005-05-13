@@ -9,6 +9,8 @@ CATEGORIES=	chinese
 
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 
+CONFLICTS=	unzip-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
+
 MASTERDIR=	${.CURDIR}/../../archivers/unzip
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-fileio.c
