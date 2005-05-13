@@ -1,7 +1,4 @@
 bin/jamboree
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/jamboree.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/jamboree.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/jamboree.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/jamboree.desktop
 share/gnome/jamboree/jamboree-next.png
 share/gnome/jamboree/jamboree-note.png
