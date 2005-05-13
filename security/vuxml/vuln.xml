@@ -32,6 +32,56 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="180e9a38-060f-4c16-a6b7-49f3505ff22a">
+    <topic>kernel -- information disclosure when using HTT</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><lt>5.4_1</lt></range>
+	<range><ge>5.0</ge><lt>5.3_15</lt></range>
+	<range><ge>4.11</ge><lt>4.11_9</lt></range>
+	<range><lt>4.10_14</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem description and impact</h1>
+	<p>When running on processors supporting Hyper-Threading Technology, it is
+	  possible for a malicious thread to monitor the execution of another
+	  thread.</p>
+	<p>Information may be disclosed to local users, allowing in many
+	  cases for privilege escalation.  For example, on a multi-user
+	  system, it may be possible to steal cryptographic keys used in
+	  applications such as OpenSSH or SSL-enabled web servers.</p>
+	<p><strong>NOTE:</strong> Similar problems may exist in other
+	  simultaneous multithreading implementations, or even some
+	  systems in the absence of simultaneous multithreading.
+	  However, current research has only demonstrated this flaw in
+	  Hyper-Threading Technology, where shared memory caches are
+	  used.</p>
+	<h1>Workaround</h1>
+	<p>Systems not using processors with Hyper-Threading Technology
+	  support are not affected by this issue.  On systems which are
+	  affected, the security flaw can be eliminated by setting the
+	  "machdep.hlt_logical_cpus" tunable:</p>
+	<pre># echo "machdep.hlt_logical_cpus=1" >> /boot/loader.conf</pre>
+	<p>The system must be rebooted in order for tunables to take effect.</p>
+	<p>Use of this workaround is not recommended on "dual-core" systems, as
+	  this workaround will also disable one of the processor
+	  cores.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0109</cvename>
+      <freebsdsa>SA-05:09.htt</freebsdsa>
+      <url>http://www.daemonology.net/hyperthreading-considered-harmful/</url>
+    </references>
+    <dates>
+      <discovery>2005-05-13</discovery>
+      <entry>2005-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66dbb2ee-99b8-45b2-bb3e-640caea67a60">
     <topic>leafnode -- fetchnews denial-of-service triggered by transmission abort/timeout</topic>
     <affects>
