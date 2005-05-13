@@ -134,7 +134,7 @@ TCSH?=		/bin/tcsh
 ZIP?=		${PREFIX}/bin/zip
 UNZIP?=		${PREFIX}/bin/unzip
 PKGMESSAGE=	${WRKDIR}/pkg-message
-NUMOFPROCESSES?=	4
+NUMOFPROCESSES?=	1
 
 .if !defined(DISPLAY)
 DISPLAYHACK=localhost:1001
