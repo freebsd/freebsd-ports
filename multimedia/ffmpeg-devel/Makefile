@@ -18,6 +18,7 @@ HAS_CONFIGURE=	yes
 USE_LINUX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.4
 USE_REINPLACE=	yes
 WANT_SDL=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
@@ -72,6 +73,10 @@ HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
 LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		'Does not compile on FreeBSD 4.x'
+.endif
 
 .if (exists(${LOCALBASE}/lib/libavformat.so))
 BROKEN=		'Please remove previous version of ${PORTNAME} to continue build'
