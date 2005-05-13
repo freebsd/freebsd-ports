@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yazproxy
-PORTVERSION=	0.8
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazproxy/
 
