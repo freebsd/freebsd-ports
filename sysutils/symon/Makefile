@@ -10,7 +10,7 @@ PORTVERSION=	2.71
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
-MAINTAINER=	q@uni.de
+MAINTAINER=	q@galgenberg.net
 COMMENT=	Performance and information monitoring tool
 
 USE_REINPLACE=	yes

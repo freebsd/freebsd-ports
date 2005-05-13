@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.quakeforge.net/quake2forge/ \
 		http://www.galgenberg.net/~q/
 DISTNAME=	quake2-${PORTVERSION}
 
-MAINTAINER=	q@uni.de
+MAINTAINER=	q@galgenberg.net
 COMMENT=	First Person Shooter with many addons available
 
 USE_BZIP2=	yes
