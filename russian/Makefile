@@ -39,6 +39,7 @@
     SUBDIR += rispell
     SUBDIR += rus-ispell
     SUBDIR += tac+ia
+    SUBDIR += unzip
     SUBDIR += wmcyrx
     SUBDIR += xcode
     SUBDIR += xcyrBGR
