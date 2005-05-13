@@ -55,10 +55,10 @@ include/fwb-2.0/fwbuilder/Constants.h
 include/fwb-2.0/fwbuilder/BackgroundOp.h
 include/fwb-2.0/fwbuilder/AddressRange.h
 include/fwb-2.0/fwbuilder/Address.h
-lib/libfwcompiler.so.6.2.0
+lib/libfwcompiler.so.6.3.0
 lib/libfwcompiler.so.6
 lib/libfwcompiler.so
-lib/libfwbuilder.so.6.2.0
+lib/libfwbuilder.so.6.3.0
 lib/libfwbuilder.so.6
 lib/libfwbuilder.so
 %%DOCSDIR%%/INSTALL
@@ -97,6 +97,8 @@ lib/libfwbuilder.so
 %%DATADIR%%/migration/FWObjectDatabase_2.0.2.xslt
 %%DATADIR%%/migration/FWObjectDatabase_2.0.3.xslt
 %%DATADIR%%/migration/FWObjectDatabase_2.0.4.xslt
+%%DATADIR%%/migration/FWObjectDatabase_2.0.5.xslt
+%%DATADIR%%/migration/FWObjectDatabase_2.0.6.xslt
 %%DATADIR%%/fwbuilder.dtd
 @dirrm %%DATADIR%%/migration
 @dirrm %%DATADIR%%
