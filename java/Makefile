@@ -10,6 +10,7 @@
     SUBDIR += bsh
     SUBDIR += bugseeker
     SUBDIR += bugseeker-demo
+    SUBDIR += castor
     SUBDIR += classpath
     SUBDIR += collections
     SUBDIR += cos
