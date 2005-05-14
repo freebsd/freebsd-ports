@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
 
 MAINTAINER=	tux@pinguru.net
-COMMENT=	The wiki enginge used by Wikipedia
+COMMENT=	The wiki engine used by Wikipedia
 
 NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib imagick readline
