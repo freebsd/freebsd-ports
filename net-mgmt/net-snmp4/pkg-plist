@@ -73,9 +73,9 @@ lib/libucdmibs.so
 lib/libucdmibs.so.%%shlib%%
 sbin/snmpd
 sbin/snmptrapd
-share/examples/ucd-snmp/EXAMPLE.conf
-share/examples/ucd-snmp/ucdDemoPublic.conf
-@dirrm share/examples/ucd-snmp
+%%EXAMPLESDIR%%/EXAMPLE.conf
+%%EXAMPLESDIR%%/ucdDemoPublic.conf
+@dirrm %%EXAMPLESDIR%%
 share/snmp/mib2c.conf
 share/snmp/mib2c.storage.conf
 share/snmp/mib2c.vartypes.conf

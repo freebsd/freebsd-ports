@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
-MASTER_SITE_SUBDIR= net-snmp
+MASTER_SITE_SUBDIR=	net-snmp
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
@@ -26,12 +26,13 @@ INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CFLAGS+=	-fPIC
 
-CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
-		 --with-gnu-ld --with-libwrap --with-libs="-ldevstat"
+CONFIGURE_ARGS+=	--enable-shared \
+			--with-mib-modules="host ucd-snmp/diskio" \
+		 	--with-gnu-ld --with-libwrap --with-libs="-ldevstat"
 .if defined(BATCH)
-CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
+CONFIGURE_ARGS+=	--with-defaults --with-sys-contact=nobody@no.where
 .else
-IS_INTERACTIVE= yes
+IS_INTERACTIVE=	yes
 .endif
 
 MAN1=		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 snmpd.1 \
@@ -66,10 +67,10 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 CONFLICTS=	net-snmp-5.*
 
 .if defined(WITHOUT_SSL)
-CONFIGURE_ARGS+= --without-openssl
+CONFIGURE_ARGS+=	--without-openssl
 .else
 USE_OPENSSL=	YES
-CONFIGURE_ARGS+= --with-openssl=/usr
+CONFIGURE_ARGS+=	--with-openssl=/usr
 CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
 .endif
 
@@ -83,7 +84,7 @@ CFLAGS+=	-Dfreebsd5
 .endif
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 pre-everything::
@@ -100,8 +101,8 @@ post-patch:
 		${WRKSRC}/aclocal.m4
 
 post-install:
-	@( cd ${PREFIX}/bin && strip ${BIN} )
-	@( cd ${PREFIX}/sbin && strip ${SBIN} )
+	@( cd ${PREFIX}/bin && ${STRIP_CMD} ${BIN} )
+	@( cd ${PREFIX}/sbin && ${STRIP_CMD} ${SBIN} )
 	@${FIND} ${PREFIX}/include/ucd-snmp ${PREFIX}/share/snmp/mibs -type f \
 		| ${XARGS} ${CHMOD} 644
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
