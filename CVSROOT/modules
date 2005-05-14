@@ -9915,6 +9915,7 @@ qt145		ports/x11-toolkits/qt145
 qt33		ports/x11-toolkits/qt33
 qtella		ports/net/qtella
 qtfw		ports/security/qtfw
+qtiplot		ports/math/qtiplot
 qtk		ports/devel/qtk
 qtools		ports/mail/qtools
 qtorrent	ports/net/qtorrent
