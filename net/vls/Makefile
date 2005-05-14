@@ -10,7 +10,7 @@ PORTVERSION=	0.5.6
 CATEGORIES=	net ipv6 multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vls/${PORTVERSION}/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Broadcasts MPEG(1/2/4, PS/TS) video streams
 
 LIB_DEPENDS=	dvbpsi.3:${PORTSDIR}/multimedia/libdvbpsi
