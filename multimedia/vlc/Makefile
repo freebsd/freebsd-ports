@@ -198,6 +198,8 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
+CONFLICTS=      vlc-devel-*[0-9]*
+
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
 WITHOUT_MOZILLA_PLUGIN=	yes
