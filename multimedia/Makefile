@@ -158,6 +158,7 @@
     SUBDIR += vcdpad
     SUBDIR += vcdtools
     SUBDIR += vlc
+    SUBDIR += vlc-devel
     SUBDIR += win32-codecs
     SUBDIR += x264
     SUBDIR += xanim
