@@ -6005,6 +6005,7 @@ mod_limitipconn2	ports/www/mod_limitipconn2
 mod_log_config-st	ports/www/mod_log_config-st
 mod_log_data	ports/www/mod_log_data
 mod_log_mysql	ports/www/mod_log_mysql
+mod_log_spread	ports/www/mod_log_spread
 mod_log_sql	ports/www/mod_log_sql
 mod_log_sql2	ports/www/mod_log_sql2
 mod_macro	ports/www/mod_macro
