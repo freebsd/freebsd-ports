@@ -1,0 +1,36 @@
+--- makefile.orig	Mon Nov 13 02:43:19 2000
++++ makefile	Sat May 14 12:50:07 2005
+@@ -1,11 +1,9 @@
+-CC=gcc
+-CFLAGS=-g -D__USE_LARGEFILE64 -Wall
+-INCLUDES=-I/usr/local/include
++INCLUDES=-I${LOCALBASE}/include
+ 
+ #### BEGIN ARCH DEPENDANT SECTION ####
+-# For Linux
+-LDFLAGS=-L/usr/local/lib -L.
+-LIBS=-lsp -lskiplist
++# For FreeBSD
++LDFLAGS=-L${LOCALBASE}/lib -L.
++LIBS=-lskiplist -lgnuregex -lspread
+ 
+ # For Solaris
+ #LIBS=-lsp -lskiplist -lnsl -lsocket -lucb 
+@@ -13,7 +11,7 @@
+ #BSDINCLUDES=-I/usr/ucbinclude
+ #### END ARCH DEPENDANT SECTION ####
+ 
+-YACC=bison -y
++YACC=yacc
+ LEX=flex
+ 
+ OBJS=spreadlogd.o lex.yy.o y.tab.o config.o hash.o timefuncs.o
+@@ -46,7 +44,7 @@
+ 	$(AR) cq libskiplist.a $(LSLOBJS)
+ 
+ spreadlogd:	libskiplist.a $(OBJS)
+-	$(CC) -g -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
++	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
+ 
+ clean:
+ 	rm -f *~ *.o spreadlogd libskiplist.a y.tab.h y.tab.c lex.yy.c

@@ -1,0 +1,10 @@
+If you kill -HUP or kill the spreadlogd process, it will not actually process
+the signal until after it has received its next message from Spread. You can
+move you log files to new names and then kill -HUP and it will reopen the log
+files. This is useful for seamless log rotation without losing any messages.
+
+Spread is really cool. It is a poweful group communication toolkit developed
+at the Center for Networking and Distributed Systems at the Johns Hopkins
+University (http://www.spread.org/ and http://www.cnds.jhu.edu/, respectively).
+
+WWW: http://www.lethargy.org/mod_log_spread/

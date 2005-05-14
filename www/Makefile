@@ -707,6 +707,7 @@
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += snownews
+    SUBDIR += spreadlogd
     SUBDIR += squid
     SUBDIR += squidclients
     SUBDIR += squidguard

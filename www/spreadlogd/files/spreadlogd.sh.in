@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: spreadlogd
+# REQUIRE: spread
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable spread:
+#
+#spreadlogd_enable="YES"
+#
+#
+
+. %%RC_SUBR%%
+
+name=spreadlogd
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/spreadlogd"
+command_args=""
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/${name}.conf
+
+# set defaults
+
+spreadlogd_enable=${spreadlogd_enable:-"NO"}
+spreadlogd_flags=${spreadlogd_flags:-""}
+
+load_rc_config ${name}
+run_rc_command "$1"
