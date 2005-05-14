@@ -901,6 +901,7 @@ cap		ports/net/cap
 cardpics	ports/games/cardpics
 carthage	ports/textproc/carthage
 cascade		ports/cad/cascade
+castor		ports/java/castor
 catdoc		ports/textproc/catdoc
 catdvi		ports/print/catdvi
 caudium10	ports/www/caudium10
