@@ -293,7 +293,7 @@ HEADERS_SUFX=
 .endif
 .endif
 
-.if defined(WTIH_WXGTK_VER) && ${WITH_WXGTK_VER}=="2.4"
+.if defined(WITH_WXGTK_VER) && ${WITH_WXGTK_VER}=="2.4"
 WX_CONFIG=	wxgtk2-2.4-config
 WXGTK2_PORT=	wxgtk24
 .else
