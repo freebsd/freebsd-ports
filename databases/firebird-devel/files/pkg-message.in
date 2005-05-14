@@ -8,7 +8,7 @@ gds_db		3050/tcp  #InterBase Database Remote Protocol
 
 And add the following line to /etc/inetd.conf
 
-gds_db	stream	tcp	nowait	firebird	%%PREFIX%%/bin/fb_inet_server  fb_inet_server
+gds_db	stream	tcp	nowait	firebird	%%PREFIX%%/firebird/bin/fb_inet_server  fb_inet_server
 
 And finally restart inetd.
 
