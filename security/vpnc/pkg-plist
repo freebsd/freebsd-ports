@@ -1,4 +1,5 @@
 sbin/vpnc
+sbin/vpnc-script
 etc/vpnc.conf.sample
 etc/rc.d/vpnc.sh.sample
 etc/rc.d/vpnc.sh.sample-fulltunnel
