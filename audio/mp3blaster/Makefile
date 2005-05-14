@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.stack.nl/~brama/mp3blaster/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	MP3 console ncurses-based player
 
 USE_GETOPT_LONG=	yes
@@ -29,6 +29,10 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 OPTIONS=	LIRC "LIRC support" off \
 		SIDPLAY "Sidplayer support" on \
 		VORBIS "Ogg Vorbis support" on
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS CREDITS ChangeLog FAQ README TODO
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -60,5 +64,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local/share/mp3blaster/win2koi.tbl|${DATADIR}/charmap/win2koi.tbl|' \
 				${WRKSRC}/doc/sample.mp3blasterrc
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
