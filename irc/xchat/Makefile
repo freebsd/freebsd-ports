@@ -7,7 +7,7 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.8.11
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
@@ -36,17 +36,24 @@ CONFIGURE_ARGS+=	--without-included-gettext \
 			--datadir="${PREFIX}/share" \
 			--enable-perl
 
+.if defined(WITH_SSL)
+USE_OPENSSL=		YES
+CONFIGURE_ARGS+=	--enable-openssl
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--enable-python
+.else
+CONFIGURE_ARGS+=	--disable-python
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SOCKS)
 # Assign with `+=' for slave ports
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--enable-socks
-.endif
-
-.if defined(WITH_SSL)
-USE_OPENSSL=		YES
-CONFIGURE_ARGS+=	--enable-openssl
 .endif
 
 .if defined(WITH_TRANSPARENCY)
@@ -62,13 +69,6 @@ MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps" \
 			utildir="${PREFIX}/share/gnome/apps/Internet"
 .else
 CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
-.endif
-
-.if defined(WITH_PYTHON)
-USE_PYTHON=	yes
-CONFIGURE_ARGS+=	--enable-python
-.else
-CONFIGURE_ARGS+=	--disable-python
 .endif
 
 post-patch:
