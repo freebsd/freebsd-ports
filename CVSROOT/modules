@@ -11779,6 +11779,7 @@ visualos	ports/emulators/visualos
 visualworks	ports/lang/visualworks
 viz		ports/misc/viz
 vlc		ports/multimedia/vlc
+vlc-devel	ports/multimedia/vlc-devel
 vlock		ports/security/vlock
 vlog		ports/security/vlog
 vls		ports/net/vls
