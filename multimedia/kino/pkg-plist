@@ -7,79 +7,80 @@ include/kino/image_filters.h
 include/kino/image_transitions.h
 include/kino/kino_extra.h
 include/kino/playlist.h
-share/applications/Kino.desktop
-share/kino/about.jpeg
-share/kino/capture.png
-share/kino/edit.png
-share/kino/export.png
-share/kino/fx.png
-share/kino/insert_after-16.png
-share/kino/insert_after.png
-share/kino/insert_before-16.png
-share/kino/insert_before.png
-share/kino/join.xpm
-share/kino/kino.glade
-share/kino/kino.jpeg
-share/kino/kino.png
-share/kino/link.xpm
-share/kino/link_off.xpm
-share/kino/magick.glade
-share/kino/photo-camera.xpm
-share/kino/publish_project.png
-share/kino/publish_still.png
-share/kino/split.xpm
-share/kino/stock_media-begin-16.png
-share/kino/stock_media-end-16.png
-share/kino/stock_media-fwd-16.png
-share/kino/stock_media-next-16.png
-share/kino/stock_media-next-frame-16.png
-share/kino/stock_media-pause-16.png
-share/kino/stock_media-play-16.png
-share/kino/stock_media-prev-16.png
-share/kino/stock_media-prev-frame-16.png
-share/kino/stock_media-rec-16.png
-share/kino/stock_media-repeat-alt.png
-share/kino/stock_media-rew-16.png
-share/kino/stock_media-stop-16.png
-share/kino/timeline.png
-share/kino/trim.png
-share/kino/trim_in.xpm
-share/kino/trim_out.xpm
-share/kino/help/commands.html
-share/kino/help/edit.html
-share/kino/help/export.html
-share/kino/help/fx.html
-share/kino/help/index.html
-share/kino/help/intro.html
-share/kino/help/kino_ui.png
-share/kino/help/prefs.html
-share/kino/help/publish.html
-share/kino/help/terms.html
-share/kino/help/time.html
-share/kino/help/trim.html
-share/kino/help/ui.html
-share/kino/scripts/help.sh
-share/kino/scripts/exports/extract_chapters
-share/kino/scripts/exports/ffmpeg2theora.sh
-share/kino/scripts/exports/ffmpeg_divx.sh
-share/kino/scripts/exports/ffmpeg_dvd.sh
-share/kino/scripts/exports/ffmpeg_dvd_dual.sh
-share/kino/scripts/exports/ffmpeg_mp3.sh
-share/kino/scripts/exports/ffmpeg_vcd.sh
-share/kino/scripts/exports/mencoder.sh
-share/kino/scripts/exports/rawplay.sh
-share/kino/scripts/publish/frame.sh
-share/kino/scripts/publish/project.sh
+share/gnome/applications/Kino.desktop
+share/gnome/kino/about.jpeg
+share/gnome/kino/capture.png
+share/gnome/kino/edit.png
+share/gnome/kino/export.png
+share/gnome/kino/fx.png
+share/gnome/kino/insert_after-16.png
+share/gnome/kino/insert_after.png
+share/gnome/kino/insert_before-16.png
+share/gnome/kino/insert_before.png
+share/gnome/kino/join.xpm
+share/gnome/kino/kino.glade
+share/gnome/kino/kino.jpeg
+share/gnome/kino/kino.png
+share/gnome/kino/link.xpm
+share/gnome/kino/link_off.xpm
+share/gnome/kino/magick.glade
+share/gnome/kino/photo-camera.xpm
+share/gnome/kino/publish_project.png
+share/gnome/kino/publish_still.png
+share/gnome/kino/split.xpm
+share/gnome/kino/stock_media-begin-16.png
+share/gnome/kino/stock_media-end-16.png
+share/gnome/kino/stock_media-fwd-16.png
+share/gnome/kino/stock_media-next-16.png
+share/gnome/kino/stock_media-next-frame-16.png
+share/gnome/kino/stock_media-pause-16.png
+share/gnome/kino/stock_media-play-16.png
+share/gnome/kino/stock_media-prev-16.png
+share/gnome/kino/stock_media-prev-frame-16.png
+share/gnome/kino/stock_media-rec-16.png
+share/gnome/kino/stock_media-repeat-alt.png
+share/gnome/kino/stock_media-rew-16.png
+share/gnome/kino/stock_media-stop-16.png
+share/gnome/kino/timeline.png
+share/gnome/kino/trim.png
+share/gnome/kino/trim_in.xpm
+share/gnome/kino/trim_out.xpm
+share/gnome/kino/help/commands.html
+share/gnome/kino/help/edit.html
+share/gnome/kino/help/export.html
+share/gnome/kino/help/fx.html
+share/gnome/kino/help/index.html
+share/gnome/kino/help/intro.html
+share/gnome/kino/help/kino_ui.png
+share/gnome/kino/help/prefs.html
+share/gnome/kino/help/publish.html
+share/gnome/kino/help/terms.html
+share/gnome/kino/help/time.html
+share/gnome/kino/help/trim.html
+share/gnome/kino/help/ui.html
+share/gnome/kino/scripts/help.sh
+share/gnome/kino/scripts/exports/extract_chapters
+share/gnome/kino/scripts/exports/ffmpeg2theora.sh
+share/gnome/kino/scripts/exports/ffmpeg_divx.sh
+share/gnome/kino/scripts/exports/ffmpeg_dvd.sh
+share/gnome/kino/scripts/exports/ffmpeg_dvd_dual.sh
+share/gnome/kino/scripts/exports/ffmpeg_mp3.sh
+share/gnome/kino/scripts/exports/ffmpeg_vcd.sh
+share/gnome/kino/scripts/exports/mencoder.sh
+share/gnome/kino/scripts/exports/rawplay.sh
+share/gnome/kino/scripts/publish/frame.sh
+share/gnome/kino/scripts/publish/project.sh
+share/gnome/pixmaps/kino.png
 share/locale/cs/LC_MESSAGES/kino.mo
 share/locale/da/LC_MESSAGES/kino.mo
 share/locale/es/LC_MESSAGES/kino.mo
 share/locale/fr/LC_MESSAGES/kino.mo
 share/locale/sv/LC_MESSAGES/kino.mo
-share/pixmaps/kino.png
 @dirrm include/kino
-@dirrm share/kino/help
-@dirrm share/kino/scripts/exports
-@dirrm share/kino/scripts/publish
-@dirrm share/kino/scripts
-@dirrm share/kino
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrm share/gnome/kino/help
+@dirrm share/gnome/kino/scripts/exports
+@dirrm share/gnome/kino/scripts/publish
+@dirrm share/gnome/kino/scripts
+@dirrm share/gnome/kino
+@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
+@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true

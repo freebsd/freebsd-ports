@@ -72,3 +72,26 @@
  
  fi
  
+@@ -10187,15 +10187,15 @@
+      fi
+   fi
+ 
+-  if test $succeeded = yes; then
+-     cat >>confdefs.h <<\_ACEOF
+-#define HAVE_GTK24 1
+-_ACEOF
+-
+-  else
++#  if test $succeeded = yes; then
++#     cat >>confdefs.h <<\_ACEOF
++##define HAVE_GTK24 1
++#_ACEOF
++#
++#  else
+      echo "$as_me:$LINENO: result: not using file chooser dialogs" >&5
+ echo "${ECHO_T}not using file chooser dialogs" >&6
+-  fi
++#  fi
+ 
+ 
+ # ######################################################################
