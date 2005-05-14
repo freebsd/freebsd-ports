@@ -10954,6 +10954,7 @@ spooles		ports/math/spooles
 spooles-mpich	ports/math/spooles-mpich
 spread		ports/net/spread
 spread-j	ports/net/spread-j
+spreadlogd	ports/www/spreadlogd
 springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
 sqldjbdns	ports/dns/sqldjbdns
