@@ -32,6 +32,75 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ad5e70bb-c429-11d9-ac59-02061b08fc24">
+    <topic>gaim -- MSN remote DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/index.php?id=17">
+	  <p>Potential remote denial of service bug resulting from not
+	    checking a pointer for non-NULL before passing it to
+	    strncmp, which results in a crash. This can be triggered
+	    by a remote client sending an SLP message with an empty
+	    body.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1262</cvename>
+      <url>http://gaim.sourceforge.net/security/index.php?id=17</url>
+    </references>
+    <dates>
+      <discovery>2005-05-10</discovery>
+      <entry>2005-05-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="889061af-c427-11d9-ac59-02061b08fc24">
+    <topic>gaim -- remote crash on some protocols</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports that GAIM is vulnerable to a
+	  denial-of-service vulnerability which can cause GAIM to
+	  crash:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/index.php?id=16">
+	  <p>It is possible for a remote user to overflow a static
+	    buffer by sending an IM containing a very large URL
+	    (greater than 8192 bytes) to the Gaim user. This is not
+	    possible on all protocols, due to message length
+	    restrictions. Jabber are SILC are known to be
+	    vulnerable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1261</cvename>
+      <url>http://gaim.sourceforge.net/security/index.php?id=16</url>
+    </references>
+    <dates>
+      <discovery>2005-05-10</discovery>
+      <entry>2005-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="180e9a38-060f-4c16-a6b7-49f3505ff22a">
     <topic>kernel -- information disclosure when using HTT</topic>
     <affects>
