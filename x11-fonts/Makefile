@@ -60,6 +60,7 @@
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
     SUBDIR += webfonts
+    SUBDIR += wqy
     SUBDIR += xfed
     SUBDIR += xmbdfed
     SUBDIR += xorg-fonts-100dpi
