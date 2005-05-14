@@ -9558,6 +9558,7 @@ py-docutils	ports/textproc/py-docutils
 py-dosage	ports/deskutils/py-dosage
 py-dsv		ports/textproc/py-dsv
 py-elementtree	ports/devel/py-elementtree
+py-excelerator	ports/textproc/py-excelerator
 py-exif		ports/graphics/py-exif
 py-expat	ports/textproc/py-expat
 py-eyed3	ports/audio/py-eyed3
