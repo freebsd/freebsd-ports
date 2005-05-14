@@ -14,9 +14,8 @@
 #
 # Interface Knobs:
 #
-# WITHOUT_HTTPD=yes
-#  Web interface to control streaming media
-#   * recommended if you want to stream media
+# WITH_CORBA
+#  Enable a Corba interface via orbit2
 #
 # WITH_NCURSES=yes
 #  Ncurses (console) interface
@@ -39,6 +38,9 @@
 # WITH_ARTS=yes
 #  Arts Support
 #
+# WITH_DAAP=yes
+#  Enable libopendaap to connect to iTunes(R) music shares.
+#
 # WITHOUT_DTS=yes
 #  DTS decoder Support
 #  useful for many dvds
@@ -47,16 +49,18 @@
 #  Esound Support
 #
 # WITH_FAAC=yes
-# Faac audio encoder (mp4/aac) Support
+#  Faac audio encoder (mp4/aac) Support
+#  ** Only enable this if you compiled multimedia/ffmpeg-devel with WITH_FAAC knob **
 #
-# WITHOUT_FAAD=yes
+# WITH_FAAD=yes
 #  Faad audio decoder (mp4/aac) Support
 #
 # WITHOUT_FLAC=yes
 #  Flac Support
 #
-# WITH_LAME=yes
+# WITHOUT_LAME=yes
 #  Mp3 encoder Support
+#   ** NOT DEFINED if PACKAGE_BUILDING is defined **
 #
 # WITHOUT_LIBA52=yes
 #  liba52 audio Support
@@ -68,15 +72,20 @@
 # WITHOUT_MAD=yes
 #  Mad mp3 audio decoder Support
 #
+# WITHOUT_OGG=yes
+#  Ogg audio decoder Support
+#
 # WITH_SPEEX=yes
 #  Speex voice codec Support
-#  Note: you need audio/speex-devel
 #
 # WITH_TOOLAME=yes
 #  Toolame Support
 #
+# WITH_TWOLAME=yes
+#  Twolame Mpeg layer 2 audio Support
+#
 # WITHOUT_VORBIS=yes
-#  Ogg/Vorbis Support
+#  Vorbis Support
 #
 # Graphics Knobs:
 #
@@ -90,7 +99,7 @@
 # WITH_LIBCACA=yes
 #  Console Graphics Support (implies WITH_AALIB)
 #
-# WITHOUT_SDL=yes
+# WITH_SDL=yes
 #  SDL video output
 #
 # WITH_SVG=yes
@@ -102,21 +111,38 @@
 #
 # Multimedia Knobs:
 #
-# WITH_H264
+# WITH_DIRAC
+#  Enable dirac general-purpose video codec
+#
+# WITH_X264
 #  Enable H.264/AVC Video Support
 #
 # WITHOUT_LIBMATROSKA=yes
 #  Matroska Container Format Support
 #
 # WITHOUT_LIBMPEG2=yes
+#  Mpeg-2 A/V Decoder Support
 #
 # WITH_LIBTHEORA=yes
+#  Video codec for OGG/Vorbis Support
 #
-# WITHOUT_TRANSCODE=yes
+# WITH_TRANSCODE=yes
 #  Disable transcode of multimedia via transcode (multimedia/transcode).
 #  This option allows you to convert a media file, dvd, A/V stream, etc
 #  in to another format. This also allows you to transcode multimedia
 #  on-the-fly and stream to a network and/or local playback.
+#
+# Streaming Knobs:
+#
+# WITHOUT_HTTPD=yes
+#  Web interface to control streaming media
+#
+# WITHOUT_LIVEMEDIA=yes
+#  Support for rstp/rtp/sdp protocols
+#  Only versions 2004.11.11 and higher are supported.
+#
+# WITHOUT_STREAM_PLUGINS=yes
+#  Disable build and install of Streaming plugins
 #
 # Other Knobs:
 #
@@ -127,18 +153,20 @@
 #  Disable cddb and vcd support
 #   and other cdrom support
 #
+# WITHOUT_CDPARANOIA=yes
+#  Disable Cdparanoia support
+#
 # WITHOUT_DVBPSI=yes
 #  TS MUX and DEMUX support
 #
-# WITHOUT_DVD=yes
-#  Disable all dvd support
+# WITHOUT_DVDNAV=yes
+#  Disable DVD (dvd menus) support
 #
-# WITHOUT_LIVEMEDIA=yes
-#  Support for rstp/rtp/sdp protocols
-#  Only versions 2004.11.11 and higher are supported.
-#  * recommended if you want to stream media.
+# WITH_DVDREAD=yes
+#  Enable Regular DVD support (non-menu)
 #
-# WITH_MOZILLA_PLUGIN= [mozilla|mozilla-devel|firefox]
+# WITH_MOZILLA=	[mozilla|mozilla-devel|firefox]
+# WITH_MOZILLA_PLUGIN= yes
 #  Enable A mozilla plugin for VLC
 #  See http://www.videolan.org/doc/vlc-user-guide/en/ch07.html#id2529837
 #  for more info on using this plugin.
@@ -146,6 +174,9 @@
 #
 # WITH_OPENGL=yes
 #  Enable OpenGL visual plugin (not playback, play back is default with X11)
+#
+# WITH_SMB=yes
+#  Enable SAMBA Access module
 #
 # WITH_SSL=yes
 #  Enable TLS/SSL Support for web (httpd) interface
@@ -170,6 +201,9 @@
 # WITHOUT_NLS=yes
 #  Disable Languarge Support
 #
+# WITHOUT_STREAM_PLUGINS=yes
+#  Disable ALL streaming plugins.
+#
 # WITH_VLC_DEFAULT_FONT=/path/to/font
 #  default: ${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 #  This option lets you change the default font for subtitles
@@ -179,18 +213,19 @@
 #
 
 PORTNAME=	vlc
-PORTVERSION=	0.8.1
-PORTREVISION=	12
+DISTVERSION=	0.8.2-test1
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
-		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
-		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL:S|$|:mozilla|}
+MASTER_SITES=	http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
+		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
+		http://people.freebsd.org/~ahze/distfiles/:mozilla
+#		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
+#		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
+#		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
+#		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	ahze/:mozilla
-PKGNAMESUFFIX?=	${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		vlc-intf-mozilla-plugin${EXTRACT_SUFX}:mozilla
+PKGNAMESUFFIX?=	-devel${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		vlc-intf-mozilla-plugin-0.1${EXTRACT_SUFX}:mozilla
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
@@ -198,9 +233,11 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
+CONFLICTS=	vlc-*-0.8.1*
+
+#WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.1.//}
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
-WITHOUT_MOZILLA_PLUGIN=	yes
 ### BROKEN ###
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
@@ -211,7 +248,7 @@ USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget libxml2
 USE_REINPLACE=	yes
 WANT_SDL=	yes
 USE_XLIB=	yes
@@ -222,8 +259,7 @@ PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
-		CPPFLAGS="-I${WRKSRC}/include/vlc/ -I${LOCALBASE}/ffmpeg ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ -I${LOCALBASE}/ffmpeg ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
@@ -237,7 +273,7 @@ MAN1=		vlc.1 \
 		vlc-config.1
 
 .if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
-.if ${WITH_MOZILLA_PLUGIN}=="firefox"
+.if ${WITH_MOZILLA}=="firefox"
 BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 
@@ -250,7 +286,7 @@ CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla${HEADERS_SUFX}/mozilla-co
 .endif
 MOZILLA_SUFFIX=-mozilla
 CONFIGURE_ARGS+=--enable-mozilla
-.if ${WITH_MOZILLA_PLUGIN}=="mozilla-devel"
+.if ${WITH_MOZILLA}=="mozilla-devel"
 HEADERS_SUFX=	-devel
 .else
 HEADERS_SUFX=
@@ -264,6 +300,47 @@ WXGTK2_PORT=	wxgtk24
 WX_CONFIG=	wxgtk2-2.6-config
 WXGTK2_PORT=	wxgtk26
 .endif
+
+OPTIONS=	AALIB "Console graphics support" Off \
+		ARTS "Arts audio support" Off \
+		CDROM "Cddb and vcd support" On \
+		CORBA "Corba interface via orbit2" Off \
+		DAAP "iTunes(R) music shares support" Off \
+		DIRAC "Dirac audio/video codec" Off \
+		DTS "DTS audio decoder support" On \
+		DVBPSI "TS MUX and DEMUX support" On \
+		DVDNAV "DVD (dvd menus) support" On \
+		DVDREAD "Regular dvd support (no menus)" Off \
+		ESOUND "Esound audio support" Off \
+		FAAC "Faac audio encoder (mp4/aac) support" Off \
+		FAAD "Faad audio decoder (mp4/aac) support" On \
+		FLAC "Flac audio codec support" On \
+		HTTPD "Web Interface to control streaming media" On \
+		LAME "Mp3 encoder support" On \
+		LIBA52 "Liba52 (dolby) audio decoder support" On \
+		LIBCACA "Console graphics support" Off \
+		LIBMATROSKA "Matroska container format support" On \
+		LIBMPEG2 "Mpeg-2 A/V decoder support" On \
+		LIBTHEORA "OGG/Vorbis video codec support" Off \
+		LIVEMEDIA "Support for rstp/rtp/sdp protocols" On \
+		MAD "Mp3 decoder support" On \
+		MOZILLA_PLUGIN "Enable mozilla plugin" Off \
+		NCURSES "Ncurses (console) interface" Off \
+		OGG "Ogg audio decoder support" On \
+		OPENGL "OpenGL visual plugin" Off \
+		OPTIMIZED_CFLAGS "Complie with -O2 -ffast-math" Off \
+		SMB "SAMBA Access module" Off \
+		SDL "SDL video output support" Off \
+		SKINS "Skinned gtk2.0 interface" Off \
+		SLP "SLP service discovery support" On \
+		SPEEX "Voice codec support" Off \
+		SSL "TLS/SSL support for httpd interface" Off \
+		SVG "SVG graphics support" Off \
+		SVGALIB "SVGAlib video out support" On \
+		TRANSCODE "Depends on multimedia/transcode" Off \
+		TWOLAME "Twolame Mpeg layer 2 audio Support" Off \
+		VORBIS "Vorbis support (implies WITH_OGG)" On \
+		X264 "H.264 AVC video codec" Off
 
 .include <bsd.port.pre.mk>
 
@@ -287,24 +364,40 @@ WITH_LIBCACA=	yes
 WITH_AALIB=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libopendaap.a) && !defined(WITHOUT_DAAP)
+WITH_DAAP=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libdirac_decoder.a) && !defined(WITHOUT_DIRAC)
+WITH_DIRAC=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libfaad.a) && !defined(WITHOUT_FAAD)
+WITH_FAAD=	yes
+.endif
+
 .if exists(${LOCALBASE}/bin/fribidi-config) && !defined(WITHOUT_FRIBIDI)
 WITH_FRIBIDI=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libggi.so.2) && !defined(WITHOUT_GGI)
+.if exists(${LOCALBASE}/lib/libggi.a) && !defined(WITHOUT_GGI)
 WITH_GGI=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libx264.a) && !defined(WITHOUT_H264)
-WITH_H264=	yes
+.if exists(${LOCALBASE}/lib/libx264.a) && !defined(WITHOUT_X264)
+WITH_X264=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libmp3lame.a) && !defined(WITHOUT_LAME)
 WITH_LAME=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libtheora.so.1) && !defined(WITHOUT_LIBTHEORA)
+.if exists(${LOCALBASE}/lib/libtheora.a) && !defined(WITHOUT_LIBTHEORA)
 WITH_LIBTHEORA=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/lib/libsmbclient.a) && !defined(WITHOUT_SMB)
+WITH_SMB=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libspeex.a) && !defined(WITHOUT_SPEEX)
@@ -319,8 +412,12 @@ WITH_SSL=	yes
 WITH_SVG=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/lib/vga.so.1) && !defined(WITHOUT_SVGALIB)
+.if exists(${LOCALBASE}/lib/lib/vga.a) && !defined(WITHOUT_SVGALIB)
 WITH_SVGALIB=	yes
+.endif
+
+.if exists(${LOCALBASE}/bin/transcode)
+WITH_TRANSCODE=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libvorbisidec.a)
@@ -331,7 +428,11 @@ WITH_LIBTREMOR=	yes
 WITH_TOOLAME=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libxosd.so.4) && !defined(WITHOUT_XOSD)
+.if exists(${LOCALBASE}/lib/libtwolame.a) && !defined(WITHOUT_TWOLAME)
+WITH_TWOLAME=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libxosd.a) && !defined(WITHOUT_XOSD)
 WITH_XOSD=	yes
 .endif
 
@@ -374,7 +475,8 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
+BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT} \
+		libtar:${PORTSDIR}/devel/libtar
 RUN_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
 CONFIGURE_ARGS+=--enable-skins2 --enable-skins
 CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
@@ -403,11 +505,29 @@ LIB_DEPENDS+=	vcdinfo.1:${PORTSDIR}/multimedia/vcdimager \
 		cdio.5:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
 		--enable-libcddb \
-		--enable-libcdio
+		--enable-libcdio \
+		--enable-cddax
 .else
 CONFIGURE_ARGS+=--disable-vcd \
 		--disable-libcddb \
-		--disable-libcdio
+		--disable-libcdio \
+		--disable-cddax
+.endif
+
+.if !defined(WITHOUT_CDPARANOIA) && !defined(WITHOUT_CDROM)
+LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
+CONFIGURE_ARGS+=--enable-cdda \
+		--enable-cddax
+.else
+CONFIGURE_ARGS+=--disable-cdda \
+		--disable-cddax
+.endif
+
+.if defined(WITH_CORBA) && !defined(WITHOUT_CORBA)
+USE_GNOME+=	orbit2
+CONFIGURE_ARGS+=--enable-corba
+.else
+CONFIGURE_ARGS+=--disable-corba
 .endif
 
 .if !defined(WITHOUT_DVBPSI)
@@ -418,21 +538,26 @@ CONFIGURE_ARGS+=--enable-dvbpsi \
 CONFIGURE_ARGS+=--disable-dvbpsi
 .endif
 
-.if !defined(WITHOUT_DVD)
+.if !defined(WITHOUT_DVDNAV)
 LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
-CONFIGURE_ARGS+=--enable-dvdnav \
-		--enable-dvdread \
-		--with-dvdcss=${LOCALBASE} \
-		--with-dvdread=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-dvdnav
 .else
-CONFIGURE_ARGS+=--disable-dvdnav \
-		--disable-dvdread
+CONFIGURE_ARGS+=--disable-dvdnav
+.endif
+
+.if defined(WITH_DVDREAD) && !defined(WITHOUT_DVDREAD)
+LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+CONFIGURE_ARGS+=--enable-dvdread
+.else
+CONFIGURE_ARGS+=--disable-dvdread
 .endif
 
 .if defined(WITH_ESOUND) && !defined(WITHOUT_ESOUND)
 ESOUND_SUFFIX=	-esound
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
+.else
+CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if defined(WITH_FAAC) && !defined(WITHOUT_FAAC)
@@ -440,7 +565,7 @@ CONFIGURE_ARGS+=--with-ffmpeg-faac
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 .endif
 
-.if !defined(WITHOUT_FAAD)
+.if defined(WITH_FAAD) && !defined(WITHOUT_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=--enable-faad
 .else
@@ -457,14 +582,26 @@ CONFLGIRE_ARGS+=--disable-flac
 .if defined(WITH_FRIBIDI) && !defined(WITHOUT_FRIBIDI)
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
+.else
+CONFIGURE_ARGS+=--disable-fribidi
 .endif
 
 .if defined(WITH_AALIB) && !defined(WITHOUT_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 CONFIGURE_ARGS+=--enable-aa
+.else
+CONFIGURE_ARGS+=--disable-aa
 .endif
 
-.if defined(WITH_H264) && !defined(WITHOUT_H264)
+.if defined(WITH_DIRAC) && !defined(WITHOUT_DIRAC)
+LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
+CONFIGURE_ARGS+=--enable-dirac
+CPPFLAGS+=	-I${LOCALBASE}/include/dirac
+.else
+CONFIGURE_ARGS+=--disable-dirac
+.endif
+
+.if (defined(WITH_H264) || defined(WITH_X264)) && !defined(WITHOUT_X264)
 CONFIGURE_ARGS+=--enable-x264
 LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
 .else
@@ -481,6 +618,13 @@ CONFIGURE_ARGS+=--enable-caca
 .endif
 .else
 CONFIGURE_ARGS+=--disable-caca
+.endif
+
+.if defined(WITH_DAAP) && !defined(WITHOUT_DAAP)
+LIB_DEPENDS+=	opendaap.0:${PORTSDIR}/devel/libopendaap
+CONFIGURE_ARGS+=--enable-daap
+.else
+CONFIGURE_ARGS+=--disable-daap
 .endif
 
 .if !defined(WITHOUT_DTS)
@@ -501,7 +645,9 @@ CONFIGURE_ARGS+=--enable-ggi
 CONFIGURE_ARGS+=--disable-ggi
 .endif
 
-.if defined(WITH_LAME) && !defined(WITHOUT_LAME)
+# Do not use lame if PACKAGE_BUILDING is defined. since
+# lame can NOT be packaged.
+.if !defined(WITHOUT_LAME) && !defined(PACKAGE_BUILDING)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=--enable-mp3lame
 .else
@@ -510,6 +656,9 @@ CONFIGURE_ARGS+=--disable-mp3lame
 
 .if !defined(WITHOUT_LIBMATROSKA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
+CONFIGURE_ARGS+=--enable-mkv
+.else
+CONFIGURE_ARGS+=--disable-mkv
 .endif
 
 .if !defined(WITHOUT_LIBA52)
@@ -550,6 +699,14 @@ CONFIGURE_ARGS+=--enable-mad \
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
+.if !defined(WITHOUT_OGG)
+LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
+CONFIGURE_ARGS+=--enable-ogg
+.else
+CONFIGURE_ARGS+=--disable-ogg
+WITHOUT_VORBIS=	yes
+.endif
+
 .if defined(WITH_NCURSES) && !defined(WITHOUT_NCURSES)
 CONFIGURE_ARGS+=--enable-ncurses
 .endif
@@ -561,14 +718,21 @@ CONFIGURE_ARGS+=--enable-galaktos
 CONFIGURE_ARGS+=--disable-galaktos
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if defined(WITH_SMB) && !defined(WITHOUT_SMB)
+LIB_DEPEND+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+CONFIGURE_ARGS+=--enable-smb
+.else
+CONFIGURE_ARGS+=--disable-smb
+.endif
+
+.if defined(WITH_SDL) && !defined(WITHOUT_SDL)
 USE_SDL=	yes
 CONFIGURE_ARGS+=--enable-sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
 
-.if !defined(WITHOUT_TRANSCODE)
+.if defined(WITH_TRANSCODE)
 RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
@@ -591,6 +755,10 @@ CONFIGURE_ARGS+=--enable-speex
 CPPFLAGS+=-I${LOCALBASE}/include/speex
 .else
 CONFIGURE_ARGS+=--disable-speex
+.endif
+
+.if defined(WITHOUT_STREAM_PLUGINS)
+CONFIGURE_ARGS+=--disable-sout
 .endif
 
 .if defined(WITH_SVG) && !defined(WITHOUT_SVG)
@@ -621,6 +789,13 @@ CONFIGURE_ARGS+=	--enable-toolame
 CONFIGURE_ARGS+=	--disable-toolame
 .endif
 
+.if defined(WITH_TWOLAME) && !defined(WITHOUT_TWOLAME)
+LIB_DEPENDS+=		twolame.0:${PORTSDIR}/audio/twolame
+CONFIGURE_ARGS+=	--enable-twolame
+.else
+CONFIGURE_ARGS+=	--disable-twolame
+.endif
+
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
@@ -643,9 +818,10 @@ CONFIGURE_ARGS+=--enable-release
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O2 -ffast-math -fomit-frame-pointer
-CONFIGURE_ARGS+=--enable-release
+CONFIGURE_ARGS+=--enable-release \
+		--enable-optimizations
 .else
-CONFIGURE_ARGS+=--disable-optimizations
+CONFIGURE_ARGS+=--enable-release
 .endif
 
 .if ${OSVERSION} < 500000
@@ -656,7 +832,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Take a careful look at the beginning of the Makefile in order"
 	@${ECHO_MSG} "to learn how to tune VLC towards you personal preferences!"
-	@${ECHO_MSG} "For example, make WITH_LAME=yes"
+	@${ECHO_MSG} ""
 
 post-patch:
 # Subtitle default font
@@ -671,7 +847,7 @@ post-patch:
 		s|$$(libdir)/mozilla/components|${FAKEDIR}/mozilla|' \
 			${WRKSRC}/mozilla/Makefile.in
 .endif
-# skins2 interface
+# skins2 interface, no lrint on < 504000
 .if ${OSVERSION} < 504000
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
 		${WRKSRC}/modules/gui/skins2/controls/ctrl_list.cpp
@@ -688,8 +864,6 @@ post-patch:
 		-e 's|-mcpu=pentiumpro||' \
 		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|cflags_tuning=|# cflags_tuning=|' \
-		${WRKSRC}/vlc-config.in
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
@@ -699,9 +873,17 @@ pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
+	${ECHO_CMD} "share/pixmaps/gvlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/applications/svlc.desktop" >> ${PLIST}
+.endif
 .if !defined(WITHOUT_WXGTK)
-	${ECHO_CMD} "share/gnome/applications/vlc.desktop" >> ${PLIST}
-	${ECHO_CMD} "share/gnome/pixmaps/vlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/applications/wxvlc.desktop" >> ${PLIST}
+.endif
+.if defined(WITH_WXGTK) || defined(WITH_SKINS)
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/pixmaps 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
@@ -732,38 +914,54 @@ pre-install:
 		${ECHO_MSG} "@dirrm share/vlc" >> ${PLIST}
 	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
-.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
+.if defined(WITH_MOZILLA_PLUGIN)
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
 
+pre-configure:
+	@if [ -n "`${PKG_INFO} -xI '^ffmpeg-0.4.9.p'`" ]; then \
+		${ECHO_MSG} ;\
+		${ECHO_MSG} "Note: ffmpeg-0.4.9 detected, if you want ffmpeg's postprocess" ;\
+		${ECHO_MSG} " features please hit ^C and remove ffmpeg-0.4.9 and" ;\
+		${ECHO_MSG} " install multimedia/ffmpeg-devel" ;\
+		${ECHO_MSG} ;\
+		sleep 2 ;\
+	fi
+
 do-install:
-.if !defined(WITHOUT_WXGTK)
-	if [ ! -d ${PREFIX}/share/gnome/applications ]; then \
-		${MKDIR} ${PREFIX}/share/gnome/applications ; \
-	fi
-	${INSTALL_DATA} ${FILESDIR}/vlc.desktop ${PREFIX}/share/gnome/applications
-	if [ ! -d ${PREFIX}/share/gnome/pixmaps ]; then \
-		${MKDIR} ${PREFIX}/share/gnome/pixmaps ; \
-	fi
-	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/gnome/pixmaps/vlc.png
-.endif
 	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|' \
 		${FAKEDIR}/bin/vlc-config
 	@${RM} -f ${FAKEDIR}/bin/*.bak
 	cd ${FAKEDIR}/bin && ${FIND} . | \
-		${CPIO} -pdm -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
+		${CPIO} -vpdm -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
 	cd ${FAKEDIR}/include && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include
+		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include
 	cd ${FAKEDIR}/lib && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
+		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
 	cd ${FAKEDIR}/share && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN} ${PREFIX}/share
-.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
+		${CPIO} -vpdm -L -R ${SHAREOWN} ${PREFIX}/share
+.if defined(WITH_MOZILLA_PLUGIN)
 	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	${INSTALL_DATA} ${FAKEDIR}/mozilla/* ${PREFIX}/lib/browser_plugins
 .endif
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc-config.1 ${MANPREFIX}/man/man1/
+.if defined(WITH_SKINS) || !defined(WITHOUT_WXGTK)
+	if [ ! -d ${PREFIX}/share/applications ]; then \
+		${MKDIR} ${PREFIX}/share/applications ; \
+	fi
+	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
+		${MKDIR} ${PREFIX}/share/pixmaps ; \
+	fi
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
+	${INSTALL_DATA} ${FILESDIR}/svlc.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/gvlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
+.endif
+.if !defined(WITHOUT_WXGTK)
+	${INSTALL_DATA} ${FILESDIR}/wxvlc.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/vlc.png
+.endif
+.endif
 
 .include <bsd.port.post.mk>
