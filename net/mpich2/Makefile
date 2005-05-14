@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	mpich
-PORTVERSION=	1.2.5.2
+PORTVERSION=	1.2.6
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
 
+PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
+PATCHFILES=	10039 10243 10246
+
 MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	Message Passing Interface (MPI) Library
 
-PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION:R}/
-PATCHFILES=	8713 8697
-
-CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich
+CONFIGURE_ARGS=	-prefix=${PREFIX}/mpich
 
 .if defined(WITHOUT_X11)
 WITHOUT_TK=	yes
@@ -39,39 +39,26 @@ CONFIGURE_ARGS+=-mpe_opts="--with-wishloc=wish8.4"
 PLIST_SUB+=	TK=""
 .endif
 
-.if defined(WITHOUT_JAVA)
-CONFIGURE_ARGS+= --without-java
+.if defined(WITHOUT_JAVA) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--without-java
 PLIST_SUB+=	JAVA="@comment "
 .else
-RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
-BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
-PLIST_SUB+=     JAVA=""
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
+BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
+PLIST_SUB+=	JAVA=""
 .endif
 
 HAS_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-# To disable ssh client support, build with WITHOUT_SSH set.
-# Use ssh instead of rsh
-.if !defined(WITHOUT_SSH)
-.if ${OSVERSION} >= 400016 && exists(/usr/bin/ssh)
-CONFIGURE_ARGS+= -rsh="/usr/bin/ssh"
-.elif defined(WITH_SSH) || exists(${LOCALBASE}/bin/ssh)
-RUN_DEPENDS+=   ssh:${PORTSDIR}/security/ssh
-CONFIGURE_ARGS+= -rsh="${LOCALBASE}/bin/ssh"
-.endif
-.endif
 
 ALL_TARGET=
 
 MANPREFIX=	${PREFIX}/mpich
 
-MAN1= 		MPI.1 cleanipcs.1 mpiCC.1 mpicc.1 mpif77.1 mpif90.1 mpiman.1		\
+MAN1=		MPI.1 cleanipcs.1 mpiCC.1 mpicc.1 mpif77.1 mpif90.1 mpiman.1		\
 		mpireconfig.1 mpirun.1 Jumpshots.1 chp4_servs.1 tstmachines.1
-MAN3= 		MPI_File_get_position.3 MPI_File_preallocate.3				\
+MAN3=		MPI_File_get_position.3 MPI_File_preallocate.3				\
 		MPI_2DOUBLE_PRECISION.3 MPI_2INT.3 MPI_2INTEGER.3 MPI_2REAL.3		\
 		MPI_ANY_SOURCE.3 MPI_ANY_TAG.3 MPI_Abort.3 MPI_Address.3 MPI_Aint.3	\
 		MPI_Allgatherv.3 MPI_Allreduce.3 MPI_Alltoall.3 MPI_Alltoallv.3		\
@@ -169,7 +156,7 @@ MAN3= 		MPI_File_get_position.3 MPI_File_preallocate.3				\
 		MPI_File_read_at_all_end.3 MPI_File_seek_shared.3 MPI_File_set_view.3	\
 		MPI_File_write_ordered_begin.3 MPIO_Request_f2c.3			\
 		MPI_File_write_at_all_begin.3
-MAN4= 		CLOG_Init.4 CLOG_commtype.4 CLOG_cput.4 CLOG_csync.4			\
+MAN4=		CLOG_Init.4 CLOG_commtype.4 CLOG_cput.4 CLOG_csync.4			\
 		CLOG_get_new_event.4 CLOG_get_new_state.4 CLOG_init_buffers.4		\
 		CLOG_mergelogs.4 CLOG_mergend.4 CLOG_msgtype.4 CLOG_procbuf.4 MPE.4	\
 		CLOG_newbuff.4 CLOG_reclen.4 CLOG_reinit_buff.4 CLOG_treesetup.4	\
@@ -188,6 +175,32 @@ MAN4= 		CLOG_Init.4 CLOG_commtype.4 CLOG_cput.4 CLOG_csync.4			\
 		CLOG_Output.4 CLOG_nodebuffer2disk.4 CLOG_rectype.4			\
 		MPE_Describe_event.4 MPE_Get_mouse_press.4 MPE_Make_color_array.4	\
 		MPE_Print_datatype_unpack_action.4
-INSTALL_TARGET=	install
+
+.include <bsd.port.pre.mk>
+
+# To disable ssh client support, build with WITHOUT_SSH set.
+# Use ssh instead of rsh
+.if !defined(WITHOUT_SSH)
+.if ${OSVERSION} >= 400016 && exists(/usr/bin/ssh)
+CONFIGURE_ENV+=	RSHCOMMAND="/usr/bin/ssh"
+.elif defined(WITH_SSH) || exists(${LOCALBASE}/bin/ssh)
+RUN_DEPENDS+=	${LOCALBASE}/bin/ssh:${PORTSDIR}/security/ssh
+CONFIGURE_ENV+=	RSHCOMMAND="${LOCALBASE}/bin/ssh"
+.endif
+.endif
+
+post-install:
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/mpich/bin ${PREFIX}/mpich/lib
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/mpich/doc ${PREFIX}/mpich/include	\
+		${PREFIX}/mpich/share
+.if ! defined(WITHOUT_JAVA) && ! defined(PACKAGE_BUILDING)
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/mpich/logfiles
+.endif
+
+.if defined(MAINTAINER_MODE)
+test:	build
+	(cd ${WRKSRC}/examples/test ;	\
+	${MAKE} testing)
+.endif
 
 .include <bsd.port.post.mk>

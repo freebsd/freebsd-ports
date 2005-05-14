@@ -1,12 +1,14 @@
+%%JAVA%%mpich/bin/clog2TOslog2
 mpich/bin/clog2alog
-mpich/bin/clog2slog
+%%JAVA%%mpich/bin/clog2print
+%%JAVA%%mpich/bin/clogTOslog2
 mpich/bin/clog_print
-mpich/bin/logviewer
-mpich/bin/mpereconfig
-mpich/bin/mpereconfig.dat
-mpich/bin/mpereconfig.in
-mpich/bin/mpiCC
+%%JAVA%%mpich/bin/clogprint
+%%JAVA%%mpich/bin/jumpshot
+%%JAVA%%mpich/bin/logconvertor
 mpich/bin/mpicc
+mpich/bin/mpichversion
+mpich/bin/mpicxx
 mpich/bin/mpif77
 mpich/bin/mpif90
 mpich/bin/mpiman
@@ -25,10 +27,17 @@ mpich/bin/mpirun_dbg.gdb
 mpich/bin/mpirun_dbg.ladebug
 mpich/bin/mpirun_dbg.totalview
 mpich/bin/mpirun_dbg.xxgdb
+%%JAVA%%mpich/bin/rlogTOslog2
+%%JAVA%%mpich/bin/rlog_check_timeorder
+%%JAVA%%mpich/bin/rlog_print
+%%JAVA%%mpich/bin/rlogprint
 mpich/bin/serv_p4
-mpich/bin/slog_print
+%%JAVA%%mpich/bin/slog2navigator
+%%JAVA%%mpich/bin/slog2print
 mpich/bin/tarch
 mpich/bin/tdevice
+%%JAVA%%mpich/bin/traceTOslog2.in
+%%JAVA%%mpich/bin/traceprint.in
 mpich/doc/mpeman.pdf
 mpich/doc/mpeman.ps.gz
 mpich/doc/mpichman-chp4.pdf
@@ -41,8 +50,134 @@ mpich/doc/mpichman-globus2.pdf
 mpich/doc/mpichman-globus2.ps.gz
 mpich/doc/mpiman.ps
 mpich/doc/romio-users.ps.gz
+%%JAVA%%mpich/doc/jumpshot-4/usersguide.pdf
+%%JAVA%%mpich/doc/jumpshot-4/html/Backward24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Convert24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Delete24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Down24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Edit24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Find24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/FindBack24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/FindFore24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Forward24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/HandCloseUpLeft25.png
+%%JAVA%%mpich/doc/jumpshot-4/html/HandOpenUpLeft25.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Help24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Home24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Information24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/New24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Open24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Paste24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Preferences24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Print24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Properties24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/up.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Refresh24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Stop24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/TreeCollapse24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/TreeExpand24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/Up24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/WARNINGS
+%%JAVA%%mpich/doc/jumpshot-4/html/WinRedo.png
+%%JAVA%%mpich/doc/jumpshot-4/html/WinUndo.png
+%%JAVA%%mpich/doc/jumpshot-4/html/ZoomIn24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/ZoomMinusUpLeft25.png
+%%JAVA%%mpich/doc/jumpshot-4/html/ZoomOut24.png
+%%JAVA%%mpich/doc/jumpshot-4/html/ZoomPlusUpLeft25.png
+%%JAVA%%mpich/doc/jumpshot-4/html/adj_row_count.png
+%%JAVA%%mpich/doc/jumpshot-4/html/adj_row_height.png
+%%JAVA%%mpich/doc/jumpshot-4/html/contents.png
+%%JAVA%%mpich/doc/jumpshot-4/html/convertor_init.png
+%%JAVA%%mpich/doc/jumpshot-4/html/convertor_parameters.png
+%%JAVA%%mpich/doc/jumpshot-4/html/convertor_progress.png
+%%JAVA%%mpich/doc/jumpshot-4/html/histogram_arrow.png
+%%JAVA%%mpich/doc/jumpshot-4/html/histogram_arrow_infobox.png
+%%JAVA%%mpich/doc/jumpshot-4/html/histogram_mpi_overhead.png
+%%JAVA%%mpich/doc/jumpshot-4/html/histogram_state_all_cumu_excl.png
+%%JAVA%%mpich/doc/jumpshot-4/html/histogram_state_infobox.png
+%%JAVA%%mpich/doc/jumpshot-4/html/histogram_state_over_incl.png
+%%JAVA%%mpich/doc/jumpshot-4/html/index.html
+%%JAVA%%mpich/doc/jumpshot-4/html/internals.pl
+%%JAVA%%mpich/doc/jumpshot-4/html/labels.pl
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_checkbox_menu.png
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_color_chooser.png
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_name.png
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_popup.png
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_s.png
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_sort_menu.png
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_topo.png
+%%JAVA%%mpich/doc/jumpshot-4/html/legend_v.png
+%%JAVA%%mpich/doc/jumpshot-4/html/main.png
+%%JAVA%%mpich/doc/jumpshot-4/html/mouse_hand_mode.png
+%%JAVA%%mpich/doc/jumpshot-4/html/mouse_zoom_mode.png
+%%JAVA%%mpich/doc/jumpshot-4/html/next.png
+%%JAVA%%mpich/doc/jumpshot-4/html/next_g.png
+%%JAVA%%mpich/doc/jumpshot-4/html/node1.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node10.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node11.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node12.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node13.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node14.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node15.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node16.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node17.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node18.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node19.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node2.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node20.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node21.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node22.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node23.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node24.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node25.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node26.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node27.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node28.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node29.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node3.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node30.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node31.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node32.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node33.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node34.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node4.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node5.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node6.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node7.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node8.html
+%%JAVA%%mpich/doc/jumpshot-4/html/node9.html
+%%JAVA%%mpich/doc/jumpshot-4/html/preference_pview_state.png
+%%JAVA%%mpich/doc/jumpshot-4/html/prev.png
+%%JAVA%%mpich/doc/jumpshot-4/html/prev_g.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_infobox_duration.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_infobox_preview_state.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_infobox_real_primitive.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_popup.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_infobox_time.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_mpi_overhead.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_nesting_detail.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_nesting_legend_innermost.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_nesting_legend_middle.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_nesting_legend_outermost.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_nesting_preview_all.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_popup_finer.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_preview_detail_0.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_preview_detail_0_excl.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_preview_detail_1.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_preview_detail_1_excl.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_preview_detail_2.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_preview_detail_3.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_preview_detail_4.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_search_preview.png
+%%JAVA%%mpich/doc/jumpshot-4/html/timeline_search_preview_zoomed.png
+%%JAVA%%mpich/doc/jumpshot-4/html/up_g.png
+%%JAVA%%mpich/doc/jumpshot-4/html/usersguide.css
+%%JAVA%%mpich/doc/jumpshot-4/html/usersguide.html
+%%JAVA%%mpich/doc/jumpshot-4/html/yaxis_label_panel_expanded.png
+%%JAVA%%mpich/doc/jumpshot-4/html/yaxis_label_panel_simple.png
 mpich/etc/mpichconf.h.dat
 mpich/etc/mpichlib.conf
+mpich/etc/mpichversion.c
 mpich/etc/mpif77.conf
 mpich/etc/mpif90.conf
 mpich/examples/Makefile
@@ -127,11 +262,31 @@ mpich/lib/libpmpich++.a
 mpich/lib/libpmpich.a
 mpich/lib/libtmpe.a
 mpich/lib/mpe_prof.o
+%%JAVA%%mpich/lib/clog2TOdrawable.jar
+%%JAVA%%mpich/lib/clog2TOslog2.jar
+%%JAVA%%mpich/lib/clog2print.jar
+%%JAVA%%mpich/lib/clogTOdrawable.jar
+%%JAVA%%mpich/lib/clogTOslog2.jar
+%%JAVA%%mpich/lib/clogprint.jar
+%%JAVA%%mpich/lib/jumpshot.jar
+%%JAVA%%mpich/lib/jumpshot_launcher.jar
+%%JAVA%%mpich/lib/libTraceInput.la
+%%JAVA%%mpich/lib/libTraceInput.so
+%%JAVA%%mpich/lib/logconvertor.jar
+%%JAVA%%mpich/lib/slog2navigator.jar
+%%JAVA%%mpich/lib/slog2printrecur.jar
+%%JAVA%%mpich/lib/slog2printserial.jar
+%%JAVA%%mpich/lib/traceTOslog2.jar
+%%JAVA%%mpich/lib/traceprint.jar
+%%JAVA%%mpich/logfiles/barrier.rlog
+%%JAVA%%mpich/logfiles/fpilog.clog
+%%JAVA%%mpich/logfiles/fpilog.slog2
 mpich/man/mandesc
 mpich/sbin/chkserv
 mpich/sbin/chp4_servs
 mpich/sbin/cleanipcs
 mpich/sbin/mpiuninstall
+@unexec rm %D/mpich/sbin/mpiuninstall.old >/dev/null 2>&1 || true
 mpich/sbin/tstmachines
 mpich/share/Makefile.sample
 mpich/share/examples/Makefile
@@ -143,101 +298,8 @@ mpich/share/examples/fpi.f
 mpich/share/examples/fxgraphics.f
 mpich/share/examples/mpirun
 mpich/share/examples/srtest.c
-%%JAVA%%mpich/share/jumpshot-3/README
-%%JAVA%%mpich/share/jumpshot-3/README.slog
-%%JAVA%%mpich/share/jumpshot-3/TourStepByStep.txt
-%%JAVA%%mpich/share/jumpshot-3/UserGuide.txt
-%%JAVA%%mpich/share/jumpshot-3/bin/jumpshot
-%%JAVA%%mpich/share/jumpshot-3/bin/slog_print
-%%JAVA%%mpich/share/jumpshot-3/doc/TourStepByStep.pdf
-%%JAVA%%mpich/share/jumpshot-3/doc/html/TourStepByStep.css
-%%JAVA%%mpich/share/jumpshot-3/doc/html/TourStepByStep.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/WARNINGS
-%%JAVA%%mpich/share/jumpshot-3/doc/html/crossref.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/footnode.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/images.aux
-%%JAVA%%mpich/share/jumpshot-3/doc/html/images.log
-%%JAVA%%mpich/share/jumpshot-3/doc/html/images.pl
-%%JAVA%%mpich/share/jumpshot-3/doc/html/images.tex
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img1.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img10.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img11.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img12.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img13.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img2.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img3.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img4.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img5.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img6.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img7.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img8.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/img9.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/index.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/internals.pl
-%%JAVA%%mpich/share/jumpshot-3/doc/html/labels.pl
-%%JAVA%%mpich/share/jumpshot-3/doc/html/next.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/next_g.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/node1.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/node2.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/node3.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/node4.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/node5.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/node6.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/node7.html
-%%JAVA%%mpich/share/jumpshot-3/doc/html/prev.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/prev_g.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/up.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/html/up_g.gif
-%%JAVA%%mpich/share/jumpshot-3/doc/jumpshot.def
-%%JAVA%%mpich/share/jumpshot-3/etc/jumpshot.conf
-%%JAVA%%mpich/share/jumpshot-3/lib/images.jar
-%%JAVA%%mpich/share/jumpshot-3/lib/jumpshot.jar
-%%JAVA%%mpich/share/jumpshot-3/lib/preview.jar
-%%JAVA%%mpich/share/jumpshot-3/lib/slog.jar
-%%JAVA%%mpich/share/jumpshot-3/lib/slog_print.class
-%%JAVA%%mpich/share/jumpshot-3/lib/slog_print_remote.class
-%%JAVA%%mpich/share/jumpshot-3/lib/statsviewer.jar
-%%JAVA%%mpich/share/jumpshot-3/logfiles/sample.slog
-%%JAVA%%mpich/share/jumpshot-3/logfiles/sppm.stats.0301
-%%JAVA%%mpich/share/jumpshot-3/logfiles/sppm_ic2a.slog
-%%JAVA%%mpich/share/jumpshot-3/logfiles/stats0204.txt
-%%JAVA%%mpich/share/jumpshot-3/logfiles/stats3.txt
-%%JAVA%%mpich/share/jumpshot-3/logfiles/thread1.stats
-%%JAVA%%mpich/share/jumpshot-3/sbin/exejar
-%%JAVA%%mpich/share/jumpshot-3/share/jumpshot.colors
-%%JAVA%%@dirrm mpich/share/jumpshot-3/share
-%%JAVA%%@dirrm mpich/share/jumpshot-3/sbin
-%%JAVA%%@dirrm mpich/share/jumpshot-3/logfiles
-%%JAVA%%@dirrm mpich/share/jumpshot-3/lib
-%%JAVA%%@dirrm mpich/share/jumpshot-3/etc
-%%JAVA%%@dirrm mpich/share/jumpshot-3/doc/html
-%%JAVA%%@dirrm mpich/share/jumpshot-3/doc
-%%JAVA%%@dirrm mpich/share/jumpshot-3/bin
-%%JAVA%%@dirrm mpich/share/jumpshot-3
 mpich/share/machines.freebsd
 mpich/share/machines.sample
-%%TK%%mpich/share/upshot/bin/upshot
-%%TK%%mpich/share/upshot/bitmaps/2x2
-%%TK%%mpich/share/upshot/bitmaps/black
-%%TK%%mpich/share/upshot/bitmaps/boxes
-%%TK%%mpich/share/upshot/bitmaps/dimple3
-%%TK%%mpich/share/upshot/bitmaps/dllines3
-%%TK%%mpich/share/upshot/bitmaps/dllines4
-%%TK%%mpich/share/upshot/bitmaps/drlines3
-%%TK%%mpich/share/upshot/bitmaps/drlines4
-%%TK%%mpich/share/upshot/bitmaps/gray
-%%TK%%mpich/share/upshot/bitmaps/gray2
-%%TK%%mpich/share/upshot/bitmaps/gray3
-%%TK%%mpich/share/upshot/bitmaps/hlines2
-%%TK%%mpich/share/upshot/bitmaps/hlines3
-%%TK%%mpich/share/upshot/bitmaps/hlines4
-%%TK%%mpich/share/upshot/bitmaps/light_gray
-%%TK%%mpich/share/upshot/bitmaps/vlines2
-%%TK%%mpich/share/upshot/bitmaps/vlines3
-%%TK%%mpich/share/upshot/bitmaps/vlines4
-%%TK%%mpich/share/upshot/bitmaps/white
-%%TK%%mpich/share/upshot/logfiles/fft.trf
-%%TK%%mpich/share/upshot/logfiles/sam_hyp.16.log
 mpich/www/index.html
 mpich/www/www1/Jumpshots.html
 mpich/www/www1/MPI.html
@@ -534,15 +596,12 @@ mpich/www/www4/MPE_Stop_log.html
 mpich/www/www4/MPE_TagsEnd.html
 mpich/www/www4/MPE_Update.html
 mpich/www/www4/index.html
+%%JAVA%%@dirrm mpich/doc/jumpshot-4/html/
+%%JAVA%%@dirrm mpich/doc/jumpshot-4/
 @dirrm mpich/www/www4
 @dirrm mpich/www/www3
 @dirrm mpich/www/www1
 @dirrm mpich/www
-%%TK%%@dirrm mpich/share/upshot/sbin
-%%TK%%@dirrm mpich/share/upshot/logfiles
-%%TK%%@dirrm mpich/share/upshot/bitmaps
-%%TK%%@dirrm mpich/share/upshot/bin
-%%TK%%@dirrm mpich/share/upshot
 @dirrm mpich/share/examples
 @dirrm mpich/share
 @dirrm mpich/sbin
@@ -550,6 +609,7 @@ mpich/www/www4/index.html
 @dirrm mpich/man/man3
 @dirrm mpich/man/man1
 @dirrm mpich/man
+%%JAVA%%@dirrm mpich/logfiles
 @dirrm mpich/lib/shared
 @dirrm mpich/lib
 @dirrm mpich/include/mpi2c++
