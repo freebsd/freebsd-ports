@@ -12079,6 +12079,7 @@ wpa_supplicant	ports/security/wpa_supplicant
 wping		ports/net/wping
 wprint		ports/print/wprint
 wput		ports/ftp/wput
+wqy		ports/x11-fonts/wqy
 wrapper		ports/x11/wrapper
 wsdlpull	ports/www/wsdlpull
 wsmake		ports/www/wsmake
