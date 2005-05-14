@@ -1,0 +1,13 @@
+The purpose of QtiPlot was to develop a free, platform independent clone of
+Origin. The result is still far away from its model, but there's a "wish to"
+list that is being constantly worked on.
+
+Features:
+
+  * Neat 2D and 3D data plotting
+  * ASCII-Import
+  * Spreadsheet and calculations in column-logic
+  * Great non-linear y=f(x) curve fitting and estimation of statistical
+    errors of the fit-parameters
+
+WWW: http://soft.proindependent.com/qtiplot.html

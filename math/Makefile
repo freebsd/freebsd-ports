@@ -211,6 +211,7 @@
     SUBDIR += qgfe
     SUBDIR += qhull
     SUBDIR += qscanplot
+    SUBDIR += qtiplot
     SUBDIR += qwtplot3d
     SUBDIR += rascal
     SUBDIR += rpc
