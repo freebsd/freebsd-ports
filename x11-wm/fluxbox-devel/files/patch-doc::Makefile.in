@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Mon Dec  6 18:30:25 2004
-+++ doc/Makefile.in	Mon Dec  6 18:31:00 2004
-@@ -102,10 +102,10 @@
+--- doc/Makefile.in.orig	Fri May 13 23:11:38 2005
++++ doc/Makefile.in	Fri May 13 23:12:22 2005
+@@ -107,10 +107,10 @@
  SUBDIRS = ru
  CLEANFILES = fluxbox.1 fluxstyle.1
  MAINTAINERCLEANFILES = Makefile.in
