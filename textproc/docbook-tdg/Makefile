@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-tdg
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/tdg/en/
 DISTNAME=	tdg-en-html-${PORTVERSION}
