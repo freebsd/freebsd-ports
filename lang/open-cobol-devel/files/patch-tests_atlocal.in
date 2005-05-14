@@ -1,0 +1,11 @@
+--- tests/atlocal.in.orig	Tue May  3 11:31:14 2005
++++ tests/atlocal.in	Sat May 14 18:24:52 2005
+@@ -10,7 +10,7 @@
+ COMPILE_ONLY="${COBC} -fsyntax-only ${FLAGS}"
+ COMPILE_MODULE="${COBC} -m ${FLAGS}"
+ 
+-export COB_CFLAGS="-I${abs_top_srcdir}"
++export COB_CFLAGS="-I${abs_top_srcdir} -I@prefix@/include"
+ export COB_LIBS="-L${abs_top_builddir}/libcob/.libs -lcob @LIBCOB_LIBS@"
+ export COB_CONFIG_DIR="${abs_top_srcdir}/config"
+ export LD_LIBRARY_PATH="${abs_top_builddir}/libcob/.libs"
