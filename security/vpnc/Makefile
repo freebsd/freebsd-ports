@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpnc
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/:source \
 	http://dragon.roe.ch/mirrors/distfiles/vpnc/:script
@@ -28,10 +27,6 @@ MAN8=		vpnc.8
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-IGNORE=		"Crashes on startup"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.c
@@ -41,6 +36,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
+	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-script ${PREFIX}/sbin/vpnc-script
 	@${INSTALL_SCRIPT} ${DISTDIR}/${STARTSCRIPT} ${WRKDIR}/vpnc.sh-fulltunnel
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|' ${WRKDIR}/vpnc.sh-fulltunnel
 	@${INSTALL_SCRIPT} ${FILESDIR}/vpnc.sh ${WRKDIR}
