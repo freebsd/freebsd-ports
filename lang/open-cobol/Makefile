@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	open-cobol
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,5 +43,12 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/lib/libsupport\.a||g' \
 		${WRKSRC}/cobc/Makefile.in
+
+.if defined(MAINTAINER_MODE)
+test:	build
+	(cd ${WRKSRC}/tests;	\
+	./syntax;		\
+	./run)
+.endif
 
 .include <bsd.port.mk>
