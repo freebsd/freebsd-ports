@@ -297,6 +297,7 @@
     SUBDIR += mod_log_config-st
     SUBDIR += mod_log_data
     SUBDIR += mod_log_mysql
+    SUBDIR += mod_log_spread
     SUBDIR += mod_log_sql
     SUBDIR += mod_log_sql2
     SUBDIR += mod_macro
