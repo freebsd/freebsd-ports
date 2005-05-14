@@ -548,6 +548,7 @@
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
     SUBDIR += py-wordnet
+    SUBDIR += py-xlwriter
     SUBDIR += py-xml
     SUBDIR += py-xmltools
     SUBDIR += py-xmltv

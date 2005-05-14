@@ -1,0 +1,5 @@
+pyXLWriter is a Python library for generating Excel-compatible spreadsheets.
+It's a port of John McNamara's Perl Spreadsheet::WriteExcel module (see
+http://www.cpan.org) to Python.
+
+WWW: http://pyxlwriter.sourceforge.net/
