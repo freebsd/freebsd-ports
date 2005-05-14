@@ -38,6 +38,10 @@ PLIST_SUB+=	LIBVER=${LIBVER} PKGNAME=${PKGNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"does not compile on amd64"
+.endif
+
 .if defined(WRAP) || !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-headers"
 
 PATCH_WRKSRC=	${WRKDIR}/VTK
