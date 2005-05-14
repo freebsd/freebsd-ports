@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
 
 MAINTAINER=	tux@pinguru.net
-COMMENT=	The wiki enginge used by Wikipedia
+COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.3.*
 
@@ -25,7 +25,6 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
 		LDAP "Use LDAP authentication" off
 
 PORT_DBDIR?=	/var/db/ports
-NO_LATEST_LINK=	yes
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
 .if exists(${OPTIONSFILE})
