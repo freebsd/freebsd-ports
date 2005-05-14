@@ -531,6 +531,7 @@
     SUBDIR += py-csv
     SUBDIR += py-docutils
     SUBDIR += py-dsv
+    SUBDIR += py-excelerator
     SUBDIR += py-expat
     SUBDIR += py-feedparser
     SUBDIR += py-jaxml
