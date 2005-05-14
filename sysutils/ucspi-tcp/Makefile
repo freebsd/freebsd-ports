@@ -12,18 +12,14 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-.if defined(WITH_RSS_DIFF)
-PATCH_SITES=	http://www.qmail.org/
-PATCHFILES=	ucspi-rss.diff
-PATCH_DIST_STRIP=	-p1
-.endif
-
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Command-line tools for building TCP client-server applications
 
 .if !defined(WITHOUT_MAN)
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
 DISTFILES+=	${DISTNAME}-man.tar.gz:1
+
+OPTIONS=	RSS_DIFF "Patch rblsmtpd for qmail users" off
 
 MAN1=		addcr.1 argv0.1 date@.1 delcr.1 finger@.1 fixcrio.1 \
 		http@.1 mconnect.1 rblsmtpd.1 recordio.1 tcpcat.1 \
@@ -38,6 +34,12 @@ SCRIPTS_ENV=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" \
 		MANMODE="${MANMODE}" CFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_RSS_DIFF)
+PATCH_SITES=	http://www.qmail.org/
+PATCHFILES=	ucspi-rss.diff
+PATCH_DIST_STRIP=	-p1
+.endif
 
 post-configure:
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
