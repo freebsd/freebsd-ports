@@ -1,5 +1,5 @@
---- j502a/profile.ijs.orig	Sun Aug 10 17:53:22 2003
-+++ j502a/profile.ijs	Sun Aug 10 17:58:55 2003
+--- j504/profile.ijs.orig	Sun Aug 10 17:53:22 2003
++++ j504/profile.ijs	Sun Aug 10 17:58:55 2003
 @@ -60,8 +60,8 @@
  prf=. PROFILE {.~ PROFILE i: sep
  add=. prf,sep,'addons'

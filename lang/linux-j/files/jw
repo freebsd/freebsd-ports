@@ -1,8 +1,0 @@
-#!/bin/sh
-JPATHj502a=PREFIX/lib/j
-export JPATHj502a
-if [ ! -d $HOME/J ]
-then
-	cp -r $JPATHj502a/user $HOME/J
-fi
-exec PREFIX/bin/javavm -jar PREFIX/lib/j/j.jar "$@"
