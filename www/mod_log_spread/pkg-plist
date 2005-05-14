@@ -1,0 +1,3 @@
+libexec/apache/mod_log_spread.so
+@exec %D/sbin/apxs -e -a -n log_spread %D/%F
+@unexec %D/sbin/apxs -e -A -n log_spread %D/%F

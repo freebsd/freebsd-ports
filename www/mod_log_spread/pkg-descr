@@ -1,0 +1,14 @@
+mod_log_spread is a patch to Apache's mod_log_config, which provides
+an interface for spread to multicast access logs. It utilizes the
+group communication toolkit Spread, developed at Johns Hopkins
+University's Center for Networking and Distributed Systems.
+mod_log_spread was developed to solve the problem of collecting
+consolidated access logs for large web farms. In particular, the
+solution needed to be scalable to hundreds of machines, utilize a
+reliable network transport, allow machines to added or dropped on
+the fly, and impose minimal performance impact on the webservers.
+Current version is 1.0.3p3. This makes a fix to a stupid vhost
+logging bug as well as providing a complete and flexible log-writing
+solution.
+
+WWW: http://www.lethargy.org/mod_log_spread/
