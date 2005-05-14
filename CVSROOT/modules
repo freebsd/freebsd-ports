@@ -9762,6 +9762,7 @@ py-wsdllib	ports/devel/py-wsdllib
 py-wxPython24	ports/x11-toolkits/py-wxPython24
 py-xdg		ports/devel/py-xdg
 py-xlib		ports/x11-toolkits/py-xlib
+py-xlwriter	ports/textproc/py-xlwriter
 py-xml		ports/textproc/py-xml
 py-xmlrpc	ports/net/py-xmlrpc
 py-xmlrpclib	ports/net/py-xmlrpclib
