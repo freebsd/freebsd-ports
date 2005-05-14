@@ -22,6 +22,7 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/c289.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c722.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c724.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c728.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c740.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c98.html
 %%DOCHTML:%%%%DOCSDIR%%/html/chap-bg.html
@@ -46,11 +47,14 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/x233.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x315.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x317.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x321.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x346.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x348.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x352.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x47.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x739.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x741.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x745.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x757.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x795.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x812.html
@@ -58,12 +62,14 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/x814.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x817.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x820.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x824.html
 %%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
 %%DATADIR%%/init
 %%DATADIR%%/keys
 %%DATADIR%%/menu
 %%NLS:%%%%DATADIR%%/nls/C/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/bg_BG/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/cs_CZ/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/da_DK/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/de_DE/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_ES/fluxbox.cat
@@ -166,6 +172,7 @@ bin/startfluxbox
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_ES
 %%NLS:%%@dirrm %%DATADIR%%/nls/de_DE
 %%NLS:%%@dirrm %%DATADIR%%/nls/da_DK
+%%NLS:%%@dirrm %%DATADIR%%/nls/cs_CZ
 %%NLS:%%@dirrm %%DATADIR%%/nls/bg_BG
 %%NLS:%%@dirrm %%DATADIR%%/nls/C
 %%NLS:%%@dirrm %%DATADIR%%/nls

@@ -1,35 +1,44 @@
---- util/fluxbox-generate_menu.in.orig	Mon Jan 17 19:06:02 2005
-+++ util/fluxbox-generate_menu.in	Mon Jan 17 19:19:37 2005
-@@ -45,7 +45,7 @@
+--- util/fluxbox-generate_menu.in.orig	Fri May 13 23:17:44 2005
++++ util/fluxbox-generate_menu.in	Fri May 13 23:53:48 2005
+@@ -47,7 +47,7 @@
  
  
  WHOAMI=`whoami`
--[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin/:/usr/local/bin:/usr/X11R6/bin
-+[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin/:%%LOCALBASE%%/bin:%%X11BASE%%/bin
+-[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
++[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:%%LOCALBASE%%/bin:%%X11BASE%%/bin
  
  # Check for Imlib2-support
- if ( fluxbox -info 2> /dev/null | grep -- -IMLIB ); then
-@@ -85,8 +85,8 @@
- 
+ if fluxbox -info 2> /dev/null | grep -q "^IMLIB"; then
+@@ -97,7 +97,7 @@
    Only for packagers:
  
--    -p  prefix; default is /usr/local
+     -p  prefix; default is @PREFIX@
 -    -n  Gnome-prefix; /opt, /usr, /usr/X11R6 and /usr/local autodetected
-+    -p  prefix; default is @PREFIX@
 +    -n  Gnome-prefix; %%X11BASE%%, %%LOCALBASE%% and /opt autodetected
      -q  KDE-prefix; idem dito
  
  
-@@ -116,7 +116,7 @@
- case `uname` in
-     Linux|*BSD)
-         find_it() {
--            which $1 > /dev/null 2>&1 && shift && $*
-+            which $1 > /dev/null 2>&1 && shift && "$@"
-         }
+@@ -152,7 +152,7 @@
+ else
+     # can rely on return value
+     find_it() {
+-        which $1 > /dev/null 2>&1 && shift && $*
++        which $1 > /dev/null 2>&1 && shift && "$@"
+     }
  
-         find_it_options() {
-@@ -825,19 +825,19 @@
+     find_it_options() {
+@@ -284,7 +284,9 @@
+     # echo -n "for $temp_icon"
+     eval doSearchLoop $USER_ICONPATHS \
+       "$FB_ICONDIR" \
+-      "/usr/share/${execname%% *}" \
++      "%%LOCALBASE%%/share/${execname%% *}" \
++      "%%X11BASE%%/share/${execname%% *}" \
++      "%%X11BASE%%/share/gnome/${execname%% *}" \
+       ${OTHER_ICONPATHS} \
+ 
+ 
+@@ -1164,19 +1166,19 @@
  # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
  
  # --- PREFIX'es
@@ -42,21 +51,47 @@
 +# fluxbox-generate already looks in %%LOCALBASE%%, %%X11BASE%% and /opt so
  # there should be no need to specify them.
  #
--# PREFIX=/usr
+ # PREFIX=@PREFIX@
 -# GNOME_PREFIX=/opt/gnome
 -# KDE_PREFIX=/opt/kde
-+# PREFIX=@PREFIX@
 +# GNOME_PREFIX=%%X11BASE%%
 +# KDE_PREFIX=%%LOCALBASE%%
  
  
  # Sepparate the list of background-dirs with semicolumns ':'
--# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:/usr/local/share/fluxbox/backgrounds/:/usr/share/wallpapers"
+-# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:/usr/share/wallpapers"
 +# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:%%X11BASE%%/share/wallpapers"
  
  
  # --- Boolean variables.
-@@ -962,7 +962,7 @@
+@@ -1244,16 +1246,22 @@
+         -g) GNOMEMENU=yes; shift;;
+         -in) NO_ICON=yes; shift;;
+         -is) OTHER_ICONPATHS="
++                %%LOCALBASE%%/share/icons
++                %%LOCALBASE%%/share/pixmaps
++                %%X11BASE%%/share/icons
++                %%X11BASE%%/share/pixmaps
++                %%X11BASE%%/share/gnome/icons
++                %%X11BASE%%/share/gnome/pixmaps
+                 /usr{,/local}/share{,/xclass}/{icons,pixmaps}
+                 /usr{,/local}/share/icons/mini
+                 /usr{,/local}/{,X11R6/}share/icons/{default.kde,hicolor}/16x16/*
+             "
+             shift;;
+         -ds) OTHER_DESKTOP_PATHS="
+-                /usr/share/mimelnk 
+-                /usr/share/applications
+-                /usr/share/xsessions 
+-                /usr/share/services 
++                %%LOCALBASE%%/share/applications
++                %%X11BASE%%/share/applications
++                %%X11BASE%%/share/gnome/applications
++                %%X11BASE%%/share/gnome/xsessions
+             "
+             # /usr/share/apps \
+             shift;;
+@@ -1328,7 +1336,7 @@
  
  
  # gnome prefix
@@ -65,7 +100,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -970,7 +970,7 @@
+@@ -1336,7 +1344,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -74,7 +109,7 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -1015,7 +1015,7 @@
+@@ -1424,7 +1432,7 @@
  else
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
@@ -83,7 +118,7 @@
          if find_it $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1055,7 +1055,8 @@
+@@ -1464,7 +1472,8 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
      firefox|firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
@@ -93,9 +128,9 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1073,7 +1074,8 @@
+@@ -1482,7 +1491,8 @@
      append_submenu "${BROWSERMENU}"
-         normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla dillo netscape
+         normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla dillo netscape vncviewer
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
 -        find_it opera       append "[exec]   (opera) {env QT_XFT=true opera}"
 +        find_it linux-opera append "[exec]   (linux-opera) {linux-opera}"
@@ -103,11 +138,12 @@
          find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
          find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
          find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"
-@@ -1241,7 +1243,6 @@
+@@ -1562,7 +1572,7 @@
  
-     append_menu "[submenu] (${SYSTEMSTYLES}) {${STYLEMENUTITLE}}"
-         append "[stylesdir] (${PREFIX}/share/fluxbox/styles)"
--        append "[stylesdir] (/usr/share/commonbox/styles/)"
-     append_menu_end
  
-     append_menu "[submenu] (${USERSTYLES}) {${STYLEMENUTITLE}}"
+        append_submenu "${VIDEOMENU}"
+-           normal_find xine aviplay gtv gmplayer xmovie xcdroast xgdb realplay xawtv fxtv ogle goggles
++           normal_find xine aviplay gtv gmplayer vlc xmovie xcdroast xgdb realplay xawtv fxtv ogle goggles
+            find_it dvdrip append "[exec] (dvdrip) {nohup dvdrip}"
+        append_menu_end
+ 
