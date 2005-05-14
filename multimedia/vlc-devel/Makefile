@@ -214,6 +214,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.2-test1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
@@ -299,6 +300,7 @@ WXGTK2_PORT=	wxgtk24
 .else
 WX_CONFIG=	wxgtk2-2.6-config
 WXGTK2_PORT=	wxgtk26
+CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
 
 OPTIONS=	AALIB "Console graphics support" Off \
