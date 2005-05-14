@@ -180,7 +180,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -265,6 +265,7 @@ WXGTK2_PORT=	wxgtk24
 .else
 WX_CONFIG=	wxgtk2-2.6-config
 WXGTK2_PORT=	wxgtk26
+CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
 
 .include <bsd.port.pre.mk>
