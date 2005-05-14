@@ -1,0 +1,11 @@
+--- configure.orig	Fri May 13 01:19:02 2005
++++ configure	Fri May 13 01:19:42 2005
+@@ -935,6 +935,8 @@
+ builtin_vector=no
+ if $cc -o $TMPO $TMPC 2> /dev/null ; then
+   builtin_vector=yes
++else
++  builtin_vector=no
+ fi
+ 
+ # dlopen/dlfcn.h probing
