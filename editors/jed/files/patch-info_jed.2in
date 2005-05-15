@@ -1,0 +1,11 @@
+--- info/jed.2in.orig	Thu Apr 28 15:48:58 2005
++++ info/jed.2in	Thu Apr 28 15:55:01 2005
+@@ -1,3 +1,8 @@
++INFO-DIR-SECTION Miscellaneous
++START-INFO-DIR-ENTRY
++* JED: (jed).                  JED editor documentation.
++END-INFO-DIR-ENTRY
++
+ 
+ File: jed.info,  Node: Tab Issues.,  Next: Searching,  Prev: Marking Text (Point and Mark),  Up: Basic Editing
+ 

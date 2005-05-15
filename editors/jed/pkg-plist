@@ -1,29 +1,13 @@
+@comment $FreeBSD$
 bin/jed
-bin/rgrep
 bin/jed-script
+bin/rgrep
 %%NOXJED%%bin/xjed
-%%PORTDOCS%%@unexec install-info --delete --section="Miscellaneous" --entry="* JED: (jed).			JED editor documentation." %D/info/jed.info %D/info/dir
-%%PORTDOCS%%info/jed.1in
-%%PORTDOCS%%info/jed.2in
-%%PORTDOCS%%info/jed.3in
-%%PORTDOCS%%info/jed.info
-%%PORTDOCS%%@exec install-info --section="Miscellaneous" --entry="* JED: (jed).			JED editor documentation." %D/info/jed.info %D/info/dir
 lib/jed/bin/getmail
-lib/jed/doc/manual/jed.tex
-lib/jed/doc/README
-lib/jed/lib/colors/Xjed/elegant.sl
-lib/jed/lib/colors/Xjed/pastel0.sl
-lib/jed/lib/colors/black1.sl
-lib/jed/lib/colors/black2.sl
-lib/jed/lib/colors/black3.sl
-lib/jed/lib/colors/blue1.sl
-lib/jed/lib/colors/blue2.sl
-lib/jed/lib/colors/blue3.sl
-lib/jed/lib/colors/default1.sl
-lib/jed/lib/colors/white1.sl
-lib/jed/lib/colors/README
+lib/jed/lib/README
 lib/jed/lib/abbrev.sl
 lib/jed/lib/abbrmisc.sl
+lib/jed/lib/aboutjed.hlp
 lib/jed/lib/acompile.sl
 lib/jed/lib/aprocess.sl
 lib/jed/lib/ashell.sl
@@ -39,10 +23,22 @@ lib/jed/lib/cal.sl
 lib/jed/lib/chglog.sl
 lib/jed/lib/cmisc.sl
 lib/jed/lib/cmode.sl
+lib/jed/lib/colors/README
+lib/jed/lib/colors/Xjed/elegant.sl
+lib/jed/lib/colors/Xjed/pastel0.sl
+lib/jed/lib/colors/black1.sl
+lib/jed/lib/colors/black2.sl
+lib/jed/lib/colors/black3.sl
+lib/jed/lib/colors/blue1.sl
+lib/jed/lib/colors/blue2.sl
+lib/jed/lib/colors/blue3.sl
+lib/jed/lib/colors/default1.sl
+lib/jed/lib/colors/white1.sl
 lib/jed/lib/comments.sl
 lib/jed/lib/compat.sl
 lib/jed/lib/compile.sl
 lib/jed/lib/compress.sl
+lib/jed/lib/cpright.hlp
 lib/jed/lib/ctags.sl
 lib/jed/lib/cua.sl
 lib/jed/lib/dabbrev.sl
@@ -53,7 +49,9 @@ lib/jed/lib/docbook.sl
 lib/jed/lib/dos437.sl
 lib/jed/lib/dos850.sl
 lib/jed/lib/dos852.sl
+lib/jed/lib/edt.hlp
 lib/jed/lib/edt.sl
+lib/jed/lib/emacs.hlp
 lib/jed/lib/emacs.sl
 lib/jed/lib/emacsmsc.sl
 lib/jed/lib/emul.sl
@@ -62,10 +60,12 @@ lib/jed/lib/ff90.sl
 lib/jed/lib/filter.sl
 lib/jed/lib/folding.sl
 lib/jed/lib/fortran.sl
+lib/jed/lib/generic.hlp
 lib/jed/lib/help.sl
 lib/jed/lib/history.sl
 lib/jed/lib/hooks.sl
 lib/jed/lib/html.sl
+lib/jed/lib/ide.hlp
 lib/jed/lib/ide.sl
 lib/jed/lib/idl.sl
 lib/jed/lib/info.sl
@@ -76,6 +76,9 @@ lib/jed/lib/iso-latin.sl
 lib/jed/lib/iso2xxx.sl
 lib/jed/lib/ispell.sl
 lib/jed/lib/javamode.sl
+lib/jed/lib/jed.conf
+lib/jed/lib/jed.hlp
+lib/jed/lib/jed.rc
 lib/jed/lib/jed.sl
 lib/jed/lib/jedhelp.sl
 lib/jed/lib/jedusage.sl
@@ -86,6 +89,7 @@ lib/jed/lib/latex.sl
 lib/jed/lib/latex209.sl
 lib/jed/lib/linux.sl
 lib/jed/lib/lisp.sl
+lib/jed/lib/ltx-comp.dat
 lib/jed/lib/ltx-math.sl
 lib/jed/lib/macro.sl
 lib/jed/lib/mail.sl
@@ -131,6 +135,7 @@ lib/jed/lib/seldisp.sl
 lib/jed/lib/sendmail.sl
 lib/jed/lib/shell.sl
 lib/jed/lib/shmode.sl
+lib/jed/lib/simple.hlp
 lib/jed/lib/site.sl
 lib/jed/lib/slmode.sl
 lib/jed/lib/sort.sl
@@ -151,59 +156,49 @@ lib/jed/lib/untab.sl
 lib/jed/lib/util.sl
 lib/jed/lib/verilog.sl
 lib/jed/lib/vhdlmode.sl
+lib/jed/lib/vms_shell.com
 lib/jed/lib/vmshelp.sl
 lib/jed/lib/win1250.sl
 lib/jed/lib/wmark.sl
 lib/jed/lib/wmenu.sl
+lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
 lib/jed/lib/yankpop.sl
-lib/jed/lib/ltx-comp.dat
-lib/jed/lib/aboutjed.hlp
-lib/jed/lib/cpright.hlp
-lib/jed/lib/edt.hlp
-lib/jed/lib/emacs.hlp
-lib/jed/lib/generic.hlp
-lib/jed/lib/ide.hlp
-lib/jed/lib/jed.hlp
-lib/jed/lib/simple.hlp
-lib/jed/lib/wordstar.hlp
-lib/jed/lib/jed.rc
-lib/jed/lib/vms_shell.com
-lib/jed/lib/jed.conf
-lib/jed/lib/README
-%%PORTDOCS%%share/doc/jed/abbrev.txt
-%%PORTDOCS%%share/doc/jed/color.txt
-%%PORTDOCS%%share/doc/jed/compile.txt
-%%PORTDOCS%%share/doc/jed/dfa.txt
-%%PORTDOCS%%share/doc/jed/edt.txt
-%%PORTDOCS%%share/doc/jed/emacs.txt
-%%PORTDOCS%%share/doc/jed/filelock.txt
-%%PORTDOCS%%share/doc/jed/fold.txt
-%%PORTDOCS%%share/doc/jed/hooks.txt
-%%PORTDOCS%%share/doc/jed/ide-mode.txt
-%%PORTDOCS%%share/doc/jed/jed_faq.txt
-%%PORTDOCS%%share/doc/jed/jedfuns.txt
-%%PORTDOCS%%share/doc/jed/libfuns.txt
-%%PORTDOCS%%share/doc/jed/linux-keys.txt
-%%PORTDOCS%%share/doc/jed/menus.txt
-%%PORTDOCS%%share/doc/jed/mouse.txt
-%%PORTDOCS%%share/doc/jed/pc-keys.txt
-%%PORTDOCS%%share/doc/jed/program.txt
-%%PORTDOCS%%share/doc/jed/rgrep.txt
-%%PORTDOCS%%share/doc/jed/rmail.txt
-%%PORTDOCS%%share/doc/jed/script.txt
-%%PORTDOCS%%share/doc/jed/syntax.txt
-%%PORTDOCS%%share/doc/jed/undo.txt
-%%PORTDOCS%%share/doc/jed/wjed.txt
-%%PORTDOCS%%share/doc/jed/wordstar.txt
-%%PORTDOCS%%share/doc/jed/xjed.txt
-%%PORTDOCS%%share/doc/jed/xrenderfont.txt
-%%PORTDOCS%%share/doc/jed/yankpop.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual/jed.tex
+%%PORTDOCS%%%%DOCSDIR%%/txt/abbrev.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/color.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/compile.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/dfa.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/edt.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/emacs.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/filelock.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/fold.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/hooks.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/ide-mode.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/jed_faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/jedfuns.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/libfuns.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/linux-keys.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/menus.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/mouse.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/pc-keys.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/program.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/rgrep.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/rmail.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/script.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/syntax.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/undo.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/wjed.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/wordstar.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/xjed.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/xrenderfont.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/yankpop.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/jed/bin
 @dirrm lib/jed/lib/colors/Xjed
 @dirrm lib/jed/lib/colors
 @dirrm lib/jed/lib
-@dirrm lib/jed/doc/manual
-@dirrm lib/jed/doc
 @dirrm lib/jed
-%%PORTDOCS%%@dirrm share/doc/jed
