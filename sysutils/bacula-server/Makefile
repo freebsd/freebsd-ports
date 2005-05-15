@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.36.2
-PORTREVISION=	0
+PORTVERSION=	1.36.3
+#PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
 PKGNAMESUFFIX?=	-server
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-doc-${PORTVERSION}.tar.gz
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT?=	The network backup solution (server)
@@ -77,7 +78,7 @@ PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
 CONFIGURE_ARGS+=	--enable-client-only
-PORTDOCS=	bacula.pdf ReleaseNotes html-manual
+PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo html-manual web-manual
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
 PKGINSTALL=	${PKGDIR}/pkg-install.client
 # Build gnome-console
@@ -158,15 +159,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|\(.*$$(MKDIR) $$(DESTDIR)$$(scriptdir)\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
-#	In server port don't install documentation and filed
-	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)doc\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
+#	In server port don't install filed
 	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
 .if defined(WITH_CLIENT_ONLY)
 # 	Install start script
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/bacula.sh.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/z-bacula.sh.sample
+#	Migration: move existing bacula.sh to z-bacula.sh to start bacula AFTER DB start
+	if [ -f ${PREFIX}/etc/rc.d/bacula.sh ]; then \
+		${MV} ${PREFIX}/etc/rc.d/bacula.sh ${PREFIX}/etc/rc.d/z-bacula.sh; \
+	fi
 # 	Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
@@ -195,11 +199,15 @@ post-install:
 .endif
 # Documentaion is only installed in -client port
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/html-manual
-	cd ${WRKSRC}/doc && ${FIND} html-manual | \
-		${CPIO} -pdm -L -R root:wheel ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
+	for na in html-manual web-manual; do \
+		${MKDIR} ${DOCSDIR}/$$na ;\
+		cd ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION} && ${FIND} $$na | \
+			${CPIO} -pdm -L -R root:wheel ${DOCSDIR}; \
+	done
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/ReleaseNotes ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/bacula.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/developers.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/kernstodo ${DOCSDIR}
 .endif
 .else
 # 	Extend /etc/services and install UID/GID
@@ -227,7 +235,6 @@ post-install:
 			${ECHO_CMD} "etc/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
 		fi; \
 	done
-
 
 # Inform user after install about important things ....
 	@${ECHO_MSG} "*********************************************************************"
