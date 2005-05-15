@@ -33,6 +33,7 @@
     SUBDIR += isaac-cfd
     SUBDIR += kmovisto
     SUBDIR += kst
+    SUBDIR += lamprop
     SUBDIR += libctl
     SUBDIR += libsvm
     SUBDIR += libsvm-python

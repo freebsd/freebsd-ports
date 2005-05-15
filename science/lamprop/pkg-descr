@@ -1,0 +1,8 @@
+The purpose of lamprop is to calculate some properties of
+fiber-reinforced composite laminates. It calculates
+- engineering properties like Ex, Ey, Gxy
+- thermal properties CTE_x and CTE_y
+- physical properties like density and laminate thickness
+- stiffness and compliance matrices (ABD and abd)
+
+WWW: http://www.xs4all.nl/~rsmith/software/
