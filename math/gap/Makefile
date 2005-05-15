@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gap
-PORTVERSION=	4.4.4.${GAP_PKGDATE}
+PORTVERSION=	4.4.5.${GAP_PKGDATE}
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/ \
 		ftp://ftp.gap-system.org/pub/gap/gap4/old/
 DISTFILES=	packages-${GAP_PKGTIME}.tar.bz2 \
-		gap4r4p4.tar.bz2 \
-		xtom1r1.tar.bz2
+		gap4r4p5.tar.bz2 \
+		xtom1r1p2.tar.bz2
 DIST_SUBDIR=	gap
 
 MAINTAINER=	johans@stack.nl
@@ -21,7 +21,7 @@ COMMENT=	GAP is a system for computational discrete algebra
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2005_04_02-13_44_UTC
+GAP_PKGTIME=	2005_05_04-17_55_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
@@ -30,8 +30,8 @@ PLIST_FILES=	bin/gap
 do-extract:
 	(${MKDIR} ${WRKSRC}; \
 	cd ${WRKSRC}; \
-	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p4.tar.bz2; \
-	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/xtom1r1.tar.bz2 ; \
+	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p5.tar.bz2; \
+	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/xtom1r1p2.tar.bz2 ; \
 	cd ${GAP_WRKSRC}/pkg; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-${GAP_PKGTIME}.tar.bz2 )
 
