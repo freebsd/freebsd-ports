@@ -1,0 +1,15 @@
+bin/soundstretch
+include/soundtouch/BPMDetect.h
+include/soundtouch/FIFOSampleBuffer.h
+include/soundtouch/FIFOSamplePipe.h
+include/soundtouch/STTypes.h
+include/soundtouch/SoundTouch.h
+@dirrm include/soundtouch
+lib/libBPM.a
+lib/libBPM.la
+lib/libSoundTouch.a
+lib/libSoundTouch.la
+share/aclocal/soundtouch.m4
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.TXT
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
