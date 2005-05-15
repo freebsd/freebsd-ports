@@ -1487,3 +1487,4 @@ x11-toolkits/wxgtk2-utils-devel|x11-toolkits/wxgtk2-contrib-utils|2005-05-12|ren
 mail/sendmail811|mail/sendmail|2005-05-13|obsolete
 games/xpilot-ng|games/xpilot-ng-server|2005-05-15|split into -client and -server
 devel/p5-POE-Component-EasyDBI|databases/p5-POE-Component-EasyDBI|2005-05-15|move to a better category
+www/mnogosearch|www/mnogosearch31|2004-05-15|finished repocopy
