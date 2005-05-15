@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	forkbomb
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	benchmarks
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://home.tiscali.cz:8080/~cz210552/distfiles/
 MASTER_SITE_SUBDIR=	system/benchmark
 
 MAINTAINER=	ports@FreeBSD.org
