@@ -1,0 +1,23 @@
+Unidesc consists of four programs for finding out what is in a Unicode file.
+They are useful when working with Unicode files when one doesn't know the
+writing system, doesn't have the necessary font, needs to inspect invisible
+characters, needs to find out whether characters have been combined or in what
+order they occur, or needs statistics on which characters occur.
+
+uniname defaults to printing the character offset of each character, its byte
+offset, its hex code value, its encoding, the glyph itself, and its name.
+
+unidesc reports the character ranges to which different portions of the text
+belong. It can also be used to identify Unicode encodings (e.g. UTF-16be)
+flagged by magic numbers.
+
+unihist generates a histogram of the characters in its input, which must be
+encoded in UTF-8 Unicode. By default, for each character it prints the
+frequency of the character as a percentage of the total, the absolute number of
+tokens in the input, the UTF-32 code in hexadecimal, and, if the character is
+displayable, the glyph itself as UTF-8 Unicode.
+
+ExplicateUTF8 is intended for debugging or for learning about Unicode. It
+determines and explains the validity of a sequence of bytes as a UTF8 encoding.
+
+WWW: http://www.cis.upenn.edu/~wjposer/unidesc.html
