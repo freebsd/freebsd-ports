@@ -333,11 +333,13 @@ lib/sylpheed-claws/plugins/trayicon.so
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed.sgml
 share/locale/bg/LC_MESSAGES/sylpheed-claws.mo
+share/locale/ca/LC_MESSAGES/sylpheed-claws.mo
 share/locale/cs/LC_MESSAGES/sylpheed-claws.mo
 share/locale/de/LC_MESSAGES/sylpheed-claws.mo
 share/locale/el/LC_MESSAGES/sylpheed-claws.mo
 share/locale/en_GB/LC_MESSAGES/sylpheed-claws.mo
 share/locale/es/LC_MESSAGES/sylpheed-claws.mo
+share/locale/fi/LC_MESSAGES/sylpheed-claws.mo
 share/locale/fr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/hr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/hu/LC_MESSAGES/sylpheed-claws.mo
@@ -354,7 +356,7 @@ share/locale/sv/LC_MESSAGES/sylpheed-claws.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed-claws.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed-claws.mo
 share/pixmaps/sylpheed-claws.png
-%%GNOME%%share/gnome/apps/Internet/sylpheed-claws.desktop
+%%GNOME%%share/gnome/applications/sylpheed-claws.desktop
 %%DATADIR%%/OOo2sylpheed.pl
 %%DATADIR%%/acroread2sylpheed.pl
 %%DATADIR%%/calypso_convert.pl

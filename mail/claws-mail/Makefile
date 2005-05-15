@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.4a
+#PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -14,7 +15,8 @@ MASTER_SITE_SUBDIR=	sylpheed-claws
 DISTFILES=	${EXTRACT_ONLY} \
 		${THEMEFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
@@ -181,7 +183,6 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
-	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -202,8 +203,8 @@ post-install:
 		${DATADIR}
 
 .if ${HAVE_GNOME:Mgnomehier} != ""
-	@${MKDIR} ${PREFIX}/share/gnome/apps/Internet
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/apps/Internet/sylpheed-claws.desktop
+	@${MKDIR} ${PREFIX}/share/gnome/applications
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/applications/sylpheed-claws.desktop
 .endif
 
 .if !defined(WITHOUT_THEMES)
@@ -219,6 +220,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/sylpheed-claws.png
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
