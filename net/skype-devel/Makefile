@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 WANT_GNOME=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 RESTRICTED=	Redistribution not allowed yet.
 
