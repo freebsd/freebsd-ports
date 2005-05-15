@@ -6,9 +6,8 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.3.2beta
+DISTVERSION=		2.3.3beta
 PORTREVISION=		${OPENLDAP_PORTREVISION}
-PORTREVISION=		1
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			http://public.planetmirror.com/pub/openldap/%SUBDIR%/ \
@@ -55,7 +54,7 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!3].* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .else
-BROKEN=			Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}
+BROKEN=			"Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}"
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -82,7 +81,7 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.* \
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[!3].* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.*
 .else
-BROKEN=			Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}
+BROKEN=			"Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}"
 .endif
 
 .endif

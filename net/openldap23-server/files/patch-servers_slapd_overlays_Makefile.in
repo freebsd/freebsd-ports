@@ -1,0 +1,19 @@
+--- servers/slapd/overlays/Makefile.in.orig	Fri May 13 17:44:48 2005
++++ servers/slapd/overlays/Makefile.in	Fri May 13 17:46:31 2005
+@@ -28,6 +28,9 @@
+ 	unique.c
+ OBJS = overlays.o \
+ 	@SLAPD_STATIC_OVERLAYS@
++LIBTOOL_OBJS = overlays.lo \
++	       glue.lo \
++	       version.lo
+ 
+ LDAP_INCDIR= ../../../include       
+ LDAP_LIBDIR= ../../../libraries
+@@ -104,5 +107,5 @@
+ 	$(LTCOMPILE_MOD) $<
+ 
+ $(LIBRARY): version.lo
+-	$(LTLINK_LIB) -o $@ $(OBJS) version.lo
++	$(LTLINK_LIB) -o $@ $(LIBTOOL_OBJS)
+ 

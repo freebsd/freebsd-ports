@@ -1,14 +1,14 @@
---- servers/slapd/Makefile.in.orig	Mon Dec 29 19:10:38 2003
-+++ servers/slapd/Makefile.in	Tue Jan 20 02:33:39 2004
-@@ -360,7 +360,6 @@
+--- servers/slapd/Makefile.in.orig	Fri May  6 20:42:50 2005
++++ servers/slapd/Makefile.in	Fri May 13 17:17:37 2005
+@@ -370,7 +370,6 @@
  
  install-slapd: FORCE
  	-$(MKDIR) $(DESTDIR)$(libexecdir)
 -	-$(MKDIR) $(DESTDIR)$(localstatedir)/run
- 	$(LTINSTALL) $(INSTALLFLAGS) -s -m 755 \
+ 	$(LTINSTALL) $(INSTALLFLAGS) $(STRIP) -m 755 \
  		slapd$(EXEEXT) $(DESTDIR)$(libexecdir)
  	@for i in $(SUBDIRS); do \
-@@ -424,8 +423,6 @@
+@@ -434,8 +433,6 @@
  install-db-config: FORCE
  	@-$(MKDIR) $(DESTDIR)$(localstatedir) $(DESTDIR)$(sysconfdir)
  	@-$(INSTALL) -m 700 -d $(DESTDIR)$(localstatedir)/openldap-data
