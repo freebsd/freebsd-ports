@@ -159,6 +159,7 @@ post-install:
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			-e 's#%%MILESTONE%%#${MILESTONE}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \

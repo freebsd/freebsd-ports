@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/program/
-program=`echo $0 | sed -e 's|.*-%%RELEASE_NR%%-||'`
+program=`echo $0 | sed -e 's|.*-%%RELEASE_NR%%m%%MILESTONE%%-||'`
 
 case $program in
 $0)
