@@ -1,18 +1,40 @@
 bin/xpilot-ng-replay
-%%WITH_SDL%%bin/xpilot-ng-sdl
-bin/xpilot-ng-server
+%%SDL%%bin/xpilot-ng-sdl
 bin/xpilot-ng-x11
-share/xpilot-ng/defaults.txt
+bin/xpilot-ng-xp-mapedit
 share/xpilot-ng/fonts/ConsoleFont.bmp
 share/xpilot-ng/fonts/FreeSansBoldOblique.ttf
 share/xpilot-ng/fonts/VeraMoBd.ttf
-share/xpilot-ng/mapconvert.py
-share/xpilot-ng/maps/polybloods.xp2
-share/xpilot-ng/maps/sadistic_bastard_v2.xp2
-share/xpilot-ng/maps/teamcup.xp
-share/xpilot-ng/password.txt
-share/xpilot-ng/robots.txt
-share/xpilot-ng/sounds.txt
+share/xpilot-ng/shipshapes.txt
+%%SOUND%%share/xpilot-ng/sound/Drop01.wav
+%%SOUND%%share/xpilot-ng/sound/MusicaDefault.wav
+%%SOUND%%share/xpilot-ng/sound/RobotzDefault.wav
+%%SOUND%%share/xpilot-ng/sound/RobotzQuestion.wav
+%%SOUND%%share/xpilot-ng/sound/UtopiaClose.wav
+%%SOUND%%share/xpilot-ng/sound/bfire.wav
+%%SOUND%%share/xpilot-ng/sound/bloop.wav
+%%SOUND%%share/xpilot-ng/sound/buzzer.wav
+%%SOUND%%share/xpilot-ng/sound/confirm.wav
+%%SOUND%%share/xpilot-ng/sound/corkpop.wav
+%%SOUND%%share/xpilot-ng/sound/done.wav
+%%SOUND%%share/xpilot-ng/sound/doorchimes.wav
+%%SOUND%%share/xpilot-ng/sound/explo2.wav
+%%SOUND%%share/xpilot-ng/sound/failure.wav
+%%SOUND%%share/xpilot-ng/sound/finished.wav
+%%SOUND%%share/xpilot-ng/sound/flare.wav
+%%SOUND%%share/xpilot-ng/sound/gundead.wav
+%%SOUND%%share/xpilot-ng/sound/launch1.18.wav
+%%SOUND%%share/xpilot-ng/sound/lboom.wav
+%%SOUND%%share/xpilot-ng/sound/magic.wav
+%%SOUND%%share/xpilot-ng/sound/popclick.wav
+%%SOUND%%share/xpilot-ng/sound/sboom.wav
+%%SOUND%%share/xpilot-ng/sound/sbounce.wav
+%%SOUND%%share/xpilot-ng/sound/sounds.txt
+%%SOUND%%share/xpilot-ng/sound/sstart.wav
+%%SOUND%%share/xpilot-ng/sound/success.wav
+%%SOUND%%share/xpilot-ng/sound/thrust.wav
+%%SOUND%%share/xpilot-ng/sound/waiting.wav
+%%SOUND%%share/xpilot-ng/sound/zap.wav
 share/xpilot-ng/textures/acwise_grav.ppm
 share/xpilot-ng/textures/allitems.ppm
 share/xpilot-ng/textures/asteroid.ppm
@@ -40,6 +62,7 @@ share/xpilot-ng/textures/fuel2.ppm
 share/xpilot-ng/textures/fuelcell.ppm
 share/xpilot-ng/textures/holder1.ppm
 share/xpilot-ng/textures/holder2.ppm
+share/xpilot-ng/textures/huditems.ppm
 share/xpilot-ng/textures/logo.ppm
 share/xpilot-ng/textures/metabtndown.png
 share/xpilot-ng/textures/metabtnup.png
@@ -61,10 +84,13 @@ share/xpilot-ng/textures/sdlmetabg.png
 share/xpilot-ng/textures/shield.ppm
 share/xpilot-ng/textures/ship.ppm
 share/xpilot-ng/textures/ship_blue.ppm
+share/xpilot-ng/textures/ship_enemy.ppm
+share/xpilot-ng/textures/ship_friend.ppm
 share/xpilot-ng/textures/ship_red.ppm
 share/xpilot-ng/textures/ship_red2.ppm
 share/xpilot-ng/textures/ship_red3.ppm
 share/xpilot-ng/textures/sparks.ppm
+share/xpilot-ng/textures/target.ppm
 share/xpilot-ng/textures/volcanic.ppm
 share/xpilot-ng/textures/wall_bottom.ppm
 share/xpilot-ng/textures/wall_dl.ppm
@@ -78,7 +104,7 @@ share/xpilot-ng/textures/wall_ull.ppm
 share/xpilot-ng/textures/wall_ur.ppm
 share/xpilot-ng/textures/wall_url.ppm
 share/xpilot-ng/textures/wormhole.ppm
-@dirrm share/xpilot-ng/textures
-@dirrm share/xpilot-ng/maps
 @dirrm share/xpilot-ng/fonts
+%%SOUND%%@dirrm share/xpilot-ng/sound
+@dirrm share/xpilot-ng/textures
 @dirrm share/xpilot-ng

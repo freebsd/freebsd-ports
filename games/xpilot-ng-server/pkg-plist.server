@@ -1,0 +1,21 @@
+bin/xpilot-ng-server
+share/xpilot-ng/defaults.txt
+share/xpilot-ng/mapconvert.py
+share/xpilot-ng/maps/blood-music.xp2
+share/xpilot-ng/maps/circle2.xp2
+share/xpilot-ng/maps/dodgers-legacy.xp2
+share/xpilot-ng/maps/dodgers-robots.xp2
+share/xpilot-ng/maps/dragon-1.0.xp2
+share/xpilot-ng/maps/ndh.xp2
+share/xpilot-ng/maps/ndh.xpd
+share/xpilot-ng/maps/polybloods.xp2
+share/xpilot-ng/maps/polybloods7.xp2
+share/xpilot-ng/maps/sadistic_bastard_v2.xp2
+share/xpilot-ng/maps/spaceball-0.1.xp2
+share/xpilot-ng/maps/spaceball-0.2.xp2
+share/xpilot-ng/maps/teamcup.xp
+share/xpilot-ng/maps/tourmination.xp2
+share/xpilot-ng/password.txt
+share/xpilot-ng/robots.txt
+@dirrm share/xpilot-ng/maps
+@dirrm share/xpilot-ng
