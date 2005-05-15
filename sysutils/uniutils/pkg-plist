@@ -1,0 +1,16 @@
+bin/ExplicateUTF8
+bin/unidesc
+bin/unihist
+bin/uniname
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test1.ann
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test1.u
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test2.ann
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test2.u
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test3.ann
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test3.u
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test4.ann
+%%PORTDOCS%%%%EXAMPLESDIR%%/Test4.u
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.u
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo32.u
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

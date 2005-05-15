@@ -1,0 +1,23 @@
+--- Makefile.orig	Sun Jan  9 20:55:19 2005
++++ Makefile	Sun May 15 16:11:22 2005
+@@ -5,8 +5,9 @@
+ BINOBJS= unidesc.o uniname.o unames.o ExplicateUTF8.o unihist.o
+ MANS= unidesc.1 uniname.1 ExplicateUTF8.1 unihist.1
+ 
+-CFLAGS= -pedantic -O
+-CC=gcc
++CFLAGS+= -pedantic -I%%LOCALBASE%%/include
++LDFLAGS+= -L%%LOCALBASE%%/lib -lintl
++# CC=gcc
+ 
+ all:		${BINS}
+ 
+@@ -42,7 +43,7 @@
+ 				${CC} -c ${CFLAGS} unihist.c
+ 
+ unihist:			unihist.o Get_UTF32_From_UTF8.o  putu8.o
+-				${CC} -o unihist unihist.o Get_UTF32_From_UTF8.o putu8.o
++				${CC} -o unihist unihist.o Get_UTF32_From_UTF8.o putu8.o ${LDFLAGS}
+ 
+ 
+ ExplicateUTF8.o:		ExplicateUTF8.c

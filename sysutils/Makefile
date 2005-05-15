@@ -478,6 +478,7 @@
     SUBDIR += ucspi-unix
     SUBDIR += udesc_dump
     SUBDIR += udfclient
+    SUBDIR += unidesc
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
