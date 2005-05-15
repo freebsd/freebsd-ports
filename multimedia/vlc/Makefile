@@ -198,7 +198,7 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFLICTS=      vlc-devel-*[0-9]*
+CONFLICTS=	vlc-devel-*[0-9]*
 
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
@@ -269,6 +269,10 @@ CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH}=="amd64"
+WITH_WXGTK_VER=	2.4
+.endif
 
 .if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 .if ${WITH_MOZILLA}=="mozilla-devel"
