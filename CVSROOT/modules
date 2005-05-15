@@ -10895,6 +10895,7 @@ soqt		ports/x11-toolkits/soqt
 sortmail	ports/mail/sortmail
 sound-juicer	ports/audio/sound-juicer
 soundgrab	ports/audio/soundgrab
+soundtouch	ports/audio/soundtouch
 soundtracker	ports/audio/soundtracker
 soup		ports/devel/soup
 source-highlight	ports/textproc/source-highlight
