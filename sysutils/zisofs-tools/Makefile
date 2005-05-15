@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	zisofs-tools
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.6
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/fs/zisofs/
 
@@ -16,11 +16,13 @@ COMMENT=	User utilities for zisofs
 
 PORTDOCS=	README CHANGES INSTALL
 
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	259
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
+
+MAKE_ARGS+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 MAN1=		mkzftree.1
 
