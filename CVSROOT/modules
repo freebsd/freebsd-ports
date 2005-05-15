@@ -12586,7 +12586,8 @@ xperfmon3	ports/sysutils/xperfmon3
 xphoon		ports/astro/xphoon
 xphotohunter	ports/games/xphotohunter
 xpilot		ports/games/xpilot
-xpilot-ng	ports/games/xpilot-ng
+xpilot-ng-client	ports/games/xpilot-ng-client
+xpilot-ng-server	ports/games/xpilot-ng-server
 xpilotmon	ports/games/xpilotmon
 xpipeman	ports/games/xpipeman
 xpired		ports/games/xpired
