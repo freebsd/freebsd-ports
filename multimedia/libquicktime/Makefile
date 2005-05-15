@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,25 +33,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--disable-firewire
 CFLAGS+=	-fPIC
 
-OPTIONS=	LAME "Enable Lame mp3 encoding support" Off
+OPTIONS=	LAME "Enable Lame mp3 encoding support" Off \
+		GTK "Enable Gtk+2 Frontend" Off
 
 MAN1=	lqtplay.1
-PORTDOCS=	codecs.html \
-		qt4l_building.html \
-		qt4l_codecs.html \
-		qt4l_firewire.html \
-		qt4l_index.html \
-		qt4l_license.html \
-		qt4l_opening.html \
-		qt4l_positioning.html \
-		qt4l_reading.html \
-		qt4l_util.html \
-		qt4l_writing.html
+
+PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
+		qt4l_codecs.html qt4l_firewire.html qt4l_index.html \
+		qt4l_license.html qt4l_opening.html qt4l_positioning.html \
+		qt4l_reading.html qt4l_util.html qt4l_writing.html
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
+.if ${HAVE_GNOME:Mgtk20}!="" || defined(WITH_GTK)
+USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK=""
 .else
 PLIST_SUB+=	GTK="@comment "
@@ -65,9 +59,11 @@ PLIST_SUB+=	LAME=""
 PLIST_SUB+=	LAME="@comment "
 .endif
 
-.if ${MACHINE_CPU:Mmmx} && ${ARCH}=="i386"
+.if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
+.if ${ARCH}=="i386"
 LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
@@ -80,8 +76,8 @@ post-extract:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
 
