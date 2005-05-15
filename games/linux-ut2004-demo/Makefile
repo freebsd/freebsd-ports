@@ -15,7 +15,7 @@ PKGNAMEPREFIX=		linux-
 DISTNAME=		ut2004-lnx-demo${PORTVERSION}
 EXTRACT_SUFX=		.run
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		Unreal Tournament 2004 demo
 
 RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
