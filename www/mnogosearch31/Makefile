@@ -1,15 +1,15 @@
-# New ports collection makefile for:    mnogosearch
+# New ports collection makefile for:    mnogosearch31
 # Date created:         27.01.2001
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-PORTNAME=	mnogosearch
+PORTNAME=	mnogosearch31
 PORTVERSION=	3.1.21
-PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
+DISTNAME=	mnogosearch-${PORTVERSION}
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
