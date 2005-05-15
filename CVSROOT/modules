@@ -5941,6 +5941,7 @@ mmv		ports/misc/mmv
 mn-aspell	ports/textproc/mn-aspell
 mnemo		ports/deskutils/mnemo
 mnogosearch	ports/www/mnogosearch
+mnogosearch31	ports/www/mnogosearch31
 mob		ports/devel/mob
 mod_access_identd	ports/www/mod_access_identd
 mod_access_referer	ports/www/mod_access_referer
