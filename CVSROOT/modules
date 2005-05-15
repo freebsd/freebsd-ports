@@ -4862,6 +4862,7 @@ lamarc		ports/biology/lamarc
 lambda		ports/math/lambda
 lambdamoo	ports/net/lambdamoo
 lame		ports/audio/lame
+lamprop		ports/science/lamprop
 lanbrowsing	ports/net/lanbrowsing
 landscape	ports/graphics/landscape
 lang_parrot	ports/lang/parrot
