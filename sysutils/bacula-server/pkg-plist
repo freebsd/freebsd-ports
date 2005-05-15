@@ -1,5 +1,5 @@
 %%DATADIR%%/query.sql
-etc/rc.d/bacula.sh.sample
+etc/rc.d/z-bacula.sh.sample
 sbin/chio-bacula
 sbin/bacula-dir
 sbin/bacula-sd
