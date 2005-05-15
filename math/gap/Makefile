@@ -39,7 +39,7 @@ do-configure:
 	(cd ${GAP_WRKSRC}; ./configure)
 
 do-build:
-	(cd ${GAP_WRKSRC}; make)
+	(cd ${GAP_WRKSRC}; make COPTS="${CFLAGS}")
 
 do-install:
 	(${SED} -e "s:GAP_DIR=.*:GAP_DIR=${GAP_LIBDIR}:g" -e "s:GAP_PRG=.*:GAP_PRG=gap:g" ${GAP_WRKSRC}/bin/gap.sh > ${PREFIX}/bin/gap; \

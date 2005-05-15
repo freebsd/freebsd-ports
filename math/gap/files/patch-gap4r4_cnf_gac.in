@@ -1,0 +1,19 @@
+--- gap4r4/cnf/gac.in.orig	Sun May 15 18:26:27 2005
++++ gap4r4/cnf/gac.in	Sun May 15 18:26:23 2005
+@@ -67,13 +67,13 @@ stat_identifier="USER";
+ 
+ # These three should be filled in by the standard autoconf procedures 
+ c_compiler="@CC@"
+-c_options="@CFLAGS@" 
++c_options="@CFLAGS@ ${CFLAGS}" 
+ c_linker="@CC@"
+-c_link_options=""
++c_link_options="${LDFLAGS}"
+ c_libs="@LIBS@"
+ 
+ # These three will need special care 
+-c_dyn_options="@CDYNOPTIONS@"
++c_dyn_options="@CDYNOPTIONS@ ${CFLAGS}"
+ c_dyn_linker="@CDYNLINKER@"
+ c_dyn_linking="@CDYNLINKING@"
+ c_dynlibs="@C_DYNLIBS@"
