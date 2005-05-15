@@ -2,4 +2,4 @@ unmakeself is a program for extracting Makeself archives without
 having to run the self-extracting shell script.
 
 - Jean-Yves Lefort
-jylefort@brutele.be
+jylefort@FreeBSD.org
