@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
