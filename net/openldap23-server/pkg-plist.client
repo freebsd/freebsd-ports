@@ -40,4 +40,4 @@ lib/libldap_r-2.3.so.0
 @comment share/openldap/ucdata/num.dat
 @comment @dirrm share/openldap/ucdata
 @comment @dirrm share/openldap
-@dirrm libexec/openldap
+@unexec rmdir %D/libexec/openldap 2>/dev/null || true
