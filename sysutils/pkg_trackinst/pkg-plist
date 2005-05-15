@@ -25,6 +25,9 @@ lib/insthook.so
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/cmd_support.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/cmd_support.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/cmd_support.pyo
+%%PYTHON_SITELIBDIR%%/PkgTrackInst/compat23.py
+%%PYTHON_SITELIBDIR%%/PkgTrackInst/compat23.pyc
+%%PYTHON_SITELIBDIR%%/PkgTrackInst/compat23.pyo
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/genplist_main.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/genplist_main.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/genplist_main.pyo
