@@ -17,7 +17,6 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050504
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
@@ -49,7 +48,8 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		101
+MILESTONE=		103
+SNAPDATE=		20050512
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -98,9 +98,8 @@ USE_AUTOCONF_VER=	259
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
-TCSH?=		/bin/tcsh
 ZIP?=		${PREFIX}/bin/zip
-UNZIP?=		${PREFIX}/bin/unzip
+TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
@@ -138,11 +137,11 @@ post-extract:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-.if !defined(WITHOUT_MOZILLA)
-	@cd ${WRKSRC}/moz ; ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; deliver.pl ; dmake zip' 
+.if (${NUMOFPROCESSES}>1)
+	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+.else
+	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes"  ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
-#DEFAULT_TO_ENGLISH_FOR_PACKING=yes, see #iz 35659, 34269 and 36708
-	cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 
 do-install:
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.sw > ${WRKDIR}/INSTALLFILES
