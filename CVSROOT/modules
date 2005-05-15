@@ -7932,7 +7932,7 @@ p5-POE-Component-Client-UserAgent	ports/www/p5-POE-Component-Client-UserAgent
 p5-POE-Component-DBIAgent	ports/databases/p5-POE-Component-DBIAgent
 p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
 p5-POE-Component-DirWatch	ports/devel/p5-POE-Component-DirWatch
-p5-POE-Component-EasyDBI	ports/devel/p5-POE-Component-EasyDBI
+p5-POE-Component-EasyDBI	ports/databases/p5-POE-Component-EasyDBI
 p5-POE-Component-IKC	ports/devel/p5-POE-Component-IKC
 p5-POE-Component-IRC	ports/irc/p5-POE-Component-IRC
 p5-POE-Component-IRC-Object	ports/irc/p5-POE-Component-IRC-Object
