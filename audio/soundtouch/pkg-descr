@@ -1,0 +1,17 @@
+SoundTouch is an open-source audio processing library for changing the
+Tempo, Pitch and Playback Rates of audio streams or files:
+
+  * Tempo (time-stretch): Changes the sound to play at faster or slower
+    speed than original, without affecting the sound pitch
+  * Pitch (key): Changes the sound pitch or key, without affecting the
+    sound tempo or speed
+  * Playback Rate: Changes both the sound tempo and pitch, as if an LP
+    disc was played at wrong RPM rate
+
+The SoundTouch library is suited for application developers writing sound
+processing tools that require tempo/pitch control functionality, or just for
+playing around with the sound effects.  The source kit includes also an
+example utility SoundStretch that allows processing .WAV audio files with
+command-line interface.
+
+WWW: http://sky.prohosting.com/oparviai/soundtouch/

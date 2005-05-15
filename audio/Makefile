@@ -421,6 +421,7 @@
     SUBDIR += sonice
     SUBDIR += sound-juicer
     SUBDIR += soundgrab
+    SUBDIR += soundtouch
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += speex
