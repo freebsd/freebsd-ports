@@ -9,14 +9,14 @@ bin/qtinfo
 bin/qtrechunk
 bin/qtstreamize
 bin/qtyuv4toyuv
-include/quicktime/colormodels.h
-include/quicktime/lqt.h
-include/quicktime/lqt1394_config.h
-include/quicktime/lqt_codecapi.h
-include/quicktime/lqt_codecinfo.h
-include/quicktime/lqt_version.h
-include/quicktime/qtprivate.h
-include/quicktime/quicktime.h
+include/lqt/colormodels.h
+include/lqt/lqt.h
+include/lqt/lqt1394_config.h
+include/lqt/lqt_codecapi.h
+include/lqt/lqt_codecinfo.h
+include/lqt/lqt_version.h
+include/lqt/qtprivate.h
+include/lqt/quicktime.h
 lib/libquicktime.a
 lib/libquicktime.so
 lib/libquicktime.so.0
@@ -32,4 +32,4 @@ lib/libquicktime/lqt_vorbis.so
 libdata/pkgconfig/libquicktime.pc
 share/aclocal/lqt.m4
 @dirrm lib/libquicktime
-@dirrm include/quicktime
+@dirrm include/lqt

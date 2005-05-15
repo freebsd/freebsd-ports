@@ -1,6 +1,6 @@
---- configure.orig	Wed Jan 12 17:17:29 2005
-+++ configure	Wed Jan 12 20:19:58 2005
-@@ -21041,7 +21041,7 @@
+--- configure.orig	Sun May 15 13:27:04 2005
++++ configure	Sun May 15 13:27:04 2005
+@@ -26794,7 +26794,7 @@
  fi
  
  case $compile_mode in
@@ -9,48 +9,3 @@
  #define NDEBUG 1
  _ACEOF
  ;;
-@@ -26120,42 +26120,12 @@
-      echo "*** to the full path to pkg-config."
-      echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
-   else
--     PKG_CONFIG_MIN_VERSION=0.9.0
--     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
--        echo "$as_me:$LINENO: checking for avcodec_acl >= \"0.4.8acl\"" >&5
--echo $ECHO_N "checking for avcodec_acl >= \"0.4.8acl\"... $ECHO_C" >&6
--
--        if $PKG_CONFIG --exists "avcodec_acl >= "0.4.8acl"" ; then
--            echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6
--            succeeded=yes
--
--            echo "$as_me:$LINENO: checking AVCODEC_ACL_CFLAGS" >&5
--echo $ECHO_N "checking AVCODEC_ACL_CFLAGS... $ECHO_C" >&6
--            AVCODEC_ACL_CFLAGS=`$PKG_CONFIG --cflags "avcodec_acl >= "0.4.8acl""`
--            echo "$as_me:$LINENO: result: $AVCODEC_ACL_CFLAGS" >&5
--echo "${ECHO_T}$AVCODEC_ACL_CFLAGS" >&6
--
--            echo "$as_me:$LINENO: checking AVCODEC_ACL_LIBS" >&5
--echo $ECHO_N "checking AVCODEC_ACL_LIBS... $ECHO_C" >&6
--            AVCODEC_ACL_LIBS=`$PKG_CONFIG --libs "avcodec_acl >= "0.4.8acl""`
--            echo "$as_me:$LINENO: result: $AVCODEC_ACL_LIBS" >&5
--echo "${ECHO_T}$AVCODEC_ACL_LIBS" >&6
--        else
-             AVCODEC_ACL_CFLAGS=""
--            AVCODEC_ACL_LIBS=""
-+            AVCODEC_ACL_LIBS="-lavcodec"
-+	    succeeded="yes"
-             ## If we have a custom action on failure, don't print errors, but
-             ## do set a variable so people can do so.
--            AVCODEC_ACL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "avcodec_acl >= "0.4.8acl""`
- 
--        fi
--
--
--
--     else
--        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
--        echo "*** See http://www.freedesktop.org/software/pkgconfig"
--     fi
-   fi
- 
-   if test $succeeded = yes; then
