@@ -11,7 +11,7 @@ CATEGORIES+=	editors
 MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.0/src/:mozsrc \
+		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}src/:mozsrc \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help3 \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
@@ -23,12 +23,13 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
-SNAPDATE=	20050503
+
 NO_LATEST_LINK=	yes
 
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
-MOZILLA_SOURCE=		mozilla-source-1.0.tar.gz
+MOZILLA_VERSION=	1.0
+MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
 DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME+=	orbit gtk12
@@ -83,6 +84,7 @@ L10NHELPS=	helpcontent_07_unix.tgz \
 CODELINE=		645
 RELEASE_NR=		1.1.4
 MILESTONE=		54
+SNAPDATE=		20050503
 INSTALLATION_BASEDIR=   OpenOffice.org${RELEASE_NR}
 EXECBASE=               openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
@@ -112,7 +114,6 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		xmkmf:${X_IMAKE_PORT} \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
-
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
 .endif
@@ -131,7 +132,6 @@ WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
-ZIP?=		${PREFIX}/bin/zip
 UNZIP?=		${PREFIX}/bin/unzip
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
@@ -207,11 +207,19 @@ do-build:
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all'
+.if (${NUMOFPROCESSES}>1)
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+.else
+	cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+.endif
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all'
+.if (${NUMOFPROCESSES}>1)
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+.else
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+.endif
 .endif
 
 do-install:
