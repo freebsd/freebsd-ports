@@ -47,8 +47,8 @@ include/adplug/sng.h
 include/adplug/u6m.h
 include/adplug/xad.h
 include/adplug/xsm.h
-lib/libadplug-1.5.so
-lib/libadplug-1.5.so.0
+lib/libadplug-1.5.1.so
+lib/libadplug-1.5.1.so.0
 lib/libadplug.a
 lib/libadplug.so
 @dirrm include/adplug
