@@ -11616,6 +11616,7 @@ undernet-ircu	ports/irc/undernet-ircu
 undms		ports/archivers/undms
 unfs3		ports/net/unfs3
 unicornscan	ports/security/unicornscan
+unidesc		ports/sysutils/unidesc
 unison		ports/net/unison
 unix2dos	ports/converters/unix2dos
 unix2tcp	ports/net/unix2tcp
