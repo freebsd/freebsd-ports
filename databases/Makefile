@@ -206,6 +206,7 @@
     SUBDIR += p5-Mysql
     SUBDIR += p5-Mysql-Diff
     SUBDIR += p5-POE-Component-DBIAgent
+    SUBDIR += p5-POE-Component-EasyDBI
     SUBDIR += p5-POE-Component-LaDBI
     SUBDIR += p5-Pg
     SUBDIR += p5-ResourcePool-Resource-DBI
