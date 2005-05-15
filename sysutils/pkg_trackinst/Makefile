@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_trackinst
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	PkgDB/pkg-plist generator by tracking installation
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.3+
 USE_REINPLACE=	yes
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
