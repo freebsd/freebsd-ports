@@ -1486,3 +1486,4 @@ x11-toolkits/wxgtk2-unicode-devel|x11-toolkits/wxgtk26-unicode|2005-05-12|rename
 x11-toolkits/wxgtk2-utils-devel|x11-toolkits/wxgtk2-contrib-utils|2005-05-12|renamed
 mail/sendmail811|mail/sendmail|2005-05-13|obsolete
 games/xpilot-ng|games/xpilot-ng-server|2005-05-15|split into -client and -server
+devel/p5-POE-Component-EasyDBI|databases/p5-POE-Component-EasyDBI|2005-05-15|move to a better category
