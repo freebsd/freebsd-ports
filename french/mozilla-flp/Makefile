@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mozilla-flp
-PORTVERSION=	1.7.5
-PORTREVISION=	1
+PORTVERSION=	1.7.8
 CATEGORIES=	french www
 MASTER_SITES=	http://frenchmozilla.sourceforge.net/FTP/${PORTVERSION}/
-DISTNAME=	mozilla-l10n-fr-FR-${PORTVERSION}
+DISTNAME=	mozilla-${PORTVERSION}.fr-FR.langpack
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mozilla French Language Pack (FLP)
