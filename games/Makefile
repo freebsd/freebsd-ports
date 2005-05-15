@@ -620,7 +620,8 @@
     SUBDIR += xpenguins
     SUBDIR += xphotohunter
     SUBDIR += xpilot
-    SUBDIR += xpilot-ng
+    SUBDIR += xpilot-ng-client
+    SUBDIR += xpilot-ng-server
     SUBDIR += xpilotmon
     SUBDIR += xpipeman
     SUBDIR += xpired
