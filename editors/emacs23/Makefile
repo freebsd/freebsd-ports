@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	21.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors ipv6
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -58,7 +58,7 @@ LATEST_LINK=	emacs
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-CFLAGS:=	${CFLAGS:C/-O(2|3|s)/-O/g}
+CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 .endif
 
