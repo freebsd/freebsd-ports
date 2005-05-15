@@ -4,3 +4,5 @@ configuration uses EMACS keystrokes, though WordStar keystrokes are
 available, and most any keystrokes can be programmed.n  JED is customizable 
 and programmable in the language SLANG, which can look like forth or c, 
 depending on your preferences.
+
+WWW: http://www.jedsoft.org/jed/

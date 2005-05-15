@@ -1,0 +1,105 @@
+--- src/Makefile.in.orig	Sun Oct 20 03:55:30 2002
++++ src/Makefile.in	Mon May  2 11:38:08 2005
+@@ -27,7 +27,7 @@
+ JED_MAN_FILES = ../doc/manual/rgrep.1 ../doc/manual/jed.1 
+ JED_COLOR_FILES = ../lib/colors/*.sl ../lib/colors/README
+ XJED_COLOR_FILES = ../lib/colors/Xjed/*.sl
+-JED_INFO_FILES = ../info/*
++JED_INFO_FILES = ../info/jed.info ../info/jed.info-[0-9]
+ 
+ #---------------------------------------------------------------------------
+ # DESTDIR is designed to facilitate making packages.  Normally it is empty
+@@ -148,17 +148,19 @@
+ $(SRCDIR)/syntax.c: $(SRCDIR)/dfasyntx.c
+ 	touch $(SRCDIR)/syntax.c
+ #
++.ifdef XJED
+ xjed : $(OBJDIR) $(CONFIG_H) slangversion $(OBJDIR)/xjed
+ 	@echo xjed created in $(OBJDIR)
+ $(OBJDIR)/xjed : $(OBJS) $(OBJDIR)/xterm.o $(OBJDIR)/vterm.o
+ 	cd $(OBJDIR); \
+ 	$(CC) $(OFILES) xterm.o vterm.o -o xjed $(LDFLAGS) \
+ 	   $(SLANG_LIB) -lslang  $(XLIB) $(XRENDERFONTLIBS)
++.endif
+ #
+ rgrep: $(OBJDIR)/rgrep
+ 	@echo rgrep created in $(OBJDIR)
+ $(OBJDIR)/rgrep: $(OBJDIR)/vfile.o $(OBJDIR)/rgrep.o
+-	cd $(OBJDIR); $(CC) vfile.o rgrep.o -o rgrep $(LDFLAGS) $(SLANG_LIB) -lslang
++	cd $(OBJDIR); $(CC) vfile.o rgrep.o -o rgrep $(LDFLAGS) $(SLANG_LIB) -lslang $(TERMCAP_LIB)
+ #
+ getmail: $(OBJDIR)/getmail
+ 	@echo getmail created in $(OBJDIR)
+@@ -177,21 +179,31 @@
+ install_directories:
+ 	$(MKINSDIR) $(DEST_BIN_DIR)
+ 	$(MKINSDIR) $(DEST_MAN_DIR)
++	$(MKINSDIR) $(DEST_INFO_DIR)
+ 	$(MKINSDIR) $(DEST_JED_ROOT)
+ 	$(MKINSDIR) $(DEST_JED_ROOT)/bin
+-	$(MKINSDIR) $(DEST_JED_ROOT)/info
+-	$(MKINSDIR) $(DEST_JED_ROOT)/doc
+-	$(MKINSDIR) $(DEST_JED_ROOT)/doc/txt
+-	$(MKINSDIR) $(DEST_JED_ROOT)/doc/manual
+ 	$(MKINSDIR) $(DEST_JED_ROOT)/lib
+ 	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors
+ 	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors/Xjed
+-	$(MKINSDIR) $(DEST_JED_ROOT)/lib/tm
++.ifndef JED_WITHOUT_DOCS
++	$(MKINSDIR) $(DEST_DOC_DIR)
++	$(MKINSDIR) $(DEST_DOC_DIR)/manual
++	$(MKINSDIR) $(DEST_DOC_DIR)/txt
++.endif
+ 
+ install: all install_directories
++	@${STRIP_CMD} $(OBJDIR)/getmail
++	@${STRIP_CMD} $(OBJDIR)/jed
++	@${STRIP_CMD} $(OBJDIR)/rgrep
++.ifdef XJED
++	@${STRIP_CMD} $(OBJDIR)/xjed
++.endif
++
+ 	$(INSTALL) $(OBJDIR)/jed $(DEST_BIN_DIR)/
+ 	-cd $(DEST_BIN_DIR); ln -sf jed jed-script
++.ifdef XJED
+ 	-$(INSTALL) $(OBJDIR)/xjed $(DEST_BIN_DIR)/
++.endif
+ 	-$(INSTALL) $(OBJDIR)/rgrep $(DEST_BIN_DIR)/
+ 	-$(INSTALL) $(OBJDIR)/getmail $(DEST_JED_ROOT)/bin/
+ 	@for i in $(JED_LIB_FILES); \
+@@ -223,25 +235,27 @@
+ 		$(INSTALL_DATA) $$i $(DEST_MAN_DIR)/; \
+ 		echo $(INSTALL_DATA) $$i $(DEST_MAN_DIR)/; \
+ 	done
++.ifndef JED_WITHOUT_DOCS
+ 	@for i in $(JED_DOC_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/doc/; \
+-		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/doc/; \
++		$(INSTALL_DATA) $$i $(DEST_DOC_DIR); \
++		echo $(INSTALL_DATA) $$i $(DEST_DOC_DIR); \
+ 	done
+ 	@for i in $(JED_DOC_TXT_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/doc/txt; \
+-		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/doc/txt; \
++		$(INSTALL_DATA) $$i $(DEST_DOC_DIR)/txt; \
++		echo $(INSTALL_DATA) $$i $(DEST_DOC_DIR)/txt; \
+ 	done
+ 	@for i in $(JED_DOC_MAN_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/doc/manual; \
+-		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/doc/manual; \
++		$(INSTALL_DATA) $$i $(DEST_DOC_DIR)/manual; \
++		echo $(INSTALL_DATA) $$i $(DEST_DOC_DIR)/manual; \
+ 	done
++.endif
+ 	@for i in $(JED_INFO_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/info/; \
+-		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/info/; \
++		$(INSTALL_DATA) $$i $(DEST_INFO_DIR); \
++		echo $(INSTALL_DATA) $$i $(DEST_INFO_DIR); \
+ 	done
+ 
+ # The symlinks target is for my own private use.  It simply creates the object

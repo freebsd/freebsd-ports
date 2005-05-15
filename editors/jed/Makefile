@@ -12,15 +12,18 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	s_bschmi@ira.uka.de
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SLang-based text editor
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+
+USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 XJED=		xjed
 PLIST_SUB+=	NOXJED=""
+MAKE_ENV+=	XJED=yes
 .else
 PLIST_SUB+=	NOXJED="@comment "
 .endif
@@ -30,35 +33,28 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV+=	DEST_INFO_DIR=${PREFIX}/${INFO_PATH} \
+		DEST_DOC_DIR=${DOCSDIR} \
+		STRIP_CMD=${STRIP_CMD}
+
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	JED_WITHOUT_DOCS=yes
+.endif
+
 ALL_TARGET=	all getmail ${XJED}
 MAN1=		jed.1 rgrep.1
+INFO=		jed
 
-pre-install:
-	${LN} -sf ${WRKSRC}/autoconf/mkinsdir.sh  ${WRKSRC}/
+pre-configure:
+.for n in 1 2 3
+	@${MV} ${WRKSRC}/info/jed.${n}in ${WRKSRC}/info/jed.info-${n}
+.endfor
+	@${REINPLACE_CMD} 's|jed.\([0-9]\)in|jed.info-\1|' \
+		${WRKSRC}/info/jed.info
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/jed
-	${STRIP_CMD} ${PREFIX}/bin/rgrep
-	${STRIP_CMD} ${PREFIX}/lib/jed/bin/getmail
-.for f in ${XJED}
-	${STRIP_CMD} ${PREFIX}/bin/$f
-.endfor
-#	${CP} -R ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/vms_shell.com ${PREFIX}/lib/jed/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/README ${PREFIX}/lib/jed/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/jed.conf ${PREFIX}/lib/jed/lib
-	-${RM} -f ${PREFIX}/lib/jed/info/*
-	-${RMDIR} ${PREFIX}/lib/jed/info
-	-${RM} -f ${PREFIX}/lib/jed/doc/txt/*
-	-${RMDIR} ${PREFIX}/lib/jed/doc/txt
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jed
-	${INSTALL_DATA} ${WRKSRC}/doc/txt/*.txt \
-		${PREFIX}/share/doc/jed
-	${INSTALL_DATA} ${WRKSRC}/info/jed.* ${PREFIX}/info
-	install-info --section="Miscellaneous" \
-		--entry="* JED: (jed).			JED editor documentation." \
-		${PREFIX}/info/jed.info ${PREFIX}/info/dir
-.endif
 
 .include <bsd.port.mk>
