@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lostirc
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://demian.dyndns.org/src/
