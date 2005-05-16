@@ -42,6 +42,9 @@ etc/mrtg/mrtg.cfg.sample
 %%PORTDOCS%%share/doc/mrtg/mrtg-nt-guide.html
 %%PORTDOCS%%share/doc/mrtg/mrtg-nt-guide.pod
 %%PORTDOCS%%share/doc/mrtg/mrtg-nt-guide.txt
+%%PORTDOCS%%share/doc/mrtg/mrtg-nw-guide.html
+%%PORTDOCS%%share/doc/mrtg/mrtg-nw-guide.pod
+%%PORTDOCS%%share/doc/mrtg/mrtg-nw-guide.txt
 %%PORTDOCS%%share/doc/mrtg/mrtg-r.png
 %%PORTDOCS%%share/doc/mrtg/mrtg-reference.html
 %%PORTDOCS%%share/doc/mrtg/mrtg-reference.pod
