@@ -30,6 +30,7 @@ bin/rdesktop
 %%DATADIR%%/keymaps/is
 %%DATADIR%%/keymaps/it
 %%DATADIR%%/keymaps/ja
+%%DATADIR%%/keymaps/ko
 %%DATADIR%%/keymaps/lt
 %%DATADIR%%/keymaps/lv
 %%DATADIR%%/keymaps/mk
