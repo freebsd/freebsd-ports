@@ -1,7 +1,11 @@
---- abiword.desktop.orig	Mon Apr  4 00:10:55 2005
-+++ abiword.desktop	Mon Apr  4 00:12:20 2005
-@@ -3,11 +3,11 @@
- Icon=abiword_48.png
+--- abiword.desktop.orig	Thu May 12 16:11:31 2005
++++ abiword.desktop	Thu May 12 16:11:37 2005
+@@ -1,15 +1,15 @@
+ [Desktop Entry]
+-Exec=abiword
+-Icon=abiword_48.png
++Exec=AbiWord-2.4
++Icon=abiword24_48.png
  Terminal=false
  Type=Application
 -Categories=Application;Office;WordProcessor;X-Red-Hat-Base;
@@ -10,7 +14,11 @@
  Encoding=UTF-8
  X-Desktop-File-Install-Version=0.9
 -MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/vnd.ms-word;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
+-Name=Word Processor
+-Comment=AbiWord Word Processor
 +MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;application/vnd.ms-word;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
- Name=Word Processor
- Comment=AbiWord Word Processor
++Name=Word Processor (2.3)
++Comment=AbiWord Word Processor (2.3.x)
  Name[de]=Textverarbeitung
+ Comment[de]=AbiWord Textverarbeitung
+ Name[nb]=Tekstbehandling

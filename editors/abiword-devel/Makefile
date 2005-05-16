@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3.0
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -41,8 +41,8 @@ CONFIGURE_ARGS=	--enable-xft \
 		--disable-peer-config
 MAKEFILE=	GNUmakefile
 
-ABIVERSION=	2.2
-PLIST_SUB+=	"ABIVERSION=${ABIVERSION}"
+ABIVERSION=	2.4
+PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
 
 .if defined(WITH_DEBUG)
@@ -96,13 +96,13 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/AbiWord-${ABIVERSION}/plugins
 .if defined(GNOME_ENABLED)
 	@${INSTALL_DATA} ${WRKSRC}/abiword.desktop \
-		${X11BASE}/share/gnome/applications/abiword.desktop
+		${X11BASE}/share/gnome/applications/abiword24.desktop
 	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/icons/abiword_48.png \
-		${X11BASE}/share/gnome/pixmaps/abiword_48.png
-	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
-		${X11BASE}/libdata/bonobo/servers/
-	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
-		${X11BASE}/share/gnome/gnome-2.0/ui/
+		${X11BASE}/share/gnome/pixmaps/abiword24_48.png
+#	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
+#		${X11BASE}/libdata/bonobo/servers/
+#	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
+#		${X11BASE}/share/gnome/gnome-2.0/ui/
 	@-update-desktop-database
 .endif
 

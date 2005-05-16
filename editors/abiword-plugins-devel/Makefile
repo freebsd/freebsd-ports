@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3.0
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -16,8 +16,8 @@ DIST_SUBDIR=	AbiWord
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multi-plugins for AbiWord
 
-BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
-RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
+BUILD_DEPENDS=	AbiWord-2.4:${PORTSDIR}/editors/abiword
+RUN_DEPENDS=	AbiWord-2.4:${PORTSDIR}/editors/abiword
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -34,8 +34,8 @@ MAKEFILE=	GNUmakefile
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abiword-plugins
 MD5_FILE=	${.CURDIR}/../abiword/distinfo
 
-ABIVERSION=	2.2
-PLIST_SUB+=	"ABIVERSION=${ABIVERSION}"
+ABIVERSION=	2.4
+PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 
 # NOTE: Please, keep those knobs in the ABC's order.
 
