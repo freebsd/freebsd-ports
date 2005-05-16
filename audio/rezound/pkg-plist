@@ -1,0 +1,16 @@
+bin/rezound
+%%DATADIR%%/icon_logo_32.gif
+%%DATADIR%%/impulse_hall1.wav
+%%DATADIR%%/key_bindings.dat
+%%DATADIR%%/menu.dat
+%%DATADIR%%/presets.dat
+@dirrm %%DATADIR%%
+%%NLS%%share/locale/de/LC_MESSAGES/rezound.mo
+%%NLS%%share/locale/es/LC_MESSAGES/rezound.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/rezound.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/rezound.mo
+%%PORTDOCS%%%%DOCSDIR%%/Features.txt
+%%PORTDOCS%%%%DOCSDIR%%/FrontendFoxFeatures.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
