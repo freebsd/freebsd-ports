@@ -175,7 +175,9 @@ abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
 abinit		ports/science/abinit
 abiword		ports/editors/abiword
+abiword-devel	ports/editors/abiword-devel
 abiword-plugins	ports/editors/abiword-plugins
+abiword-plugins-devel	ports/editors/abiword-plugins-devel
 abntex		ports/print/abntex
 abook		ports/mail/abook
 abridge		ports/games/abridge
@@ -3261,6 +3263,7 @@ gtk-qnxtheme	ports/x11-themes/gtk-qnxtheme
 gtk-qt-engine	ports/x11-themes/gtk-qt-engine
 gtk-send-pr	ports/sysutils/gtk-send-pr
 gtk-sharp	ports/x11-toolkits/gtk-sharp
+gtk-sharp-devel	ports/x11-toolkits/gtk-sharp-devel
 gtk-smooth-engine	ports/x11-themes/gtk-smooth-engine
 gtk-theme-switch ports/x11/gtk-theme-switch
 gtk-themepreview ports/x11/gtk-themepreview
