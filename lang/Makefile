@@ -251,6 +251,7 @@
     SUBDIR += see
     SUBDIR += siod
     SUBDIR += sisc
+    SUBDIR += sketchy
     SUBDIR += slib
     SUBDIR += slib-gauche
     SUBDIR += slib-guile
