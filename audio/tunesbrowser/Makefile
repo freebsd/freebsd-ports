@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tunesbrowser
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
@@ -17,19 +16,27 @@ COMMENT=	Simple iTunes-like music player
 LIB_DEPENDS=	opendaap.0:${PORTSDIR}/devel/libopendaap
 
 USE_BZIP2=	yes
-USE_INC_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
-USE_GNOME=	libglade2 gnometarget gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix gnometarget libglade2
+WANT_GNOME=	yes
 USE_GSTREAMER=	mad
+GNU_CONFIGURE=	yes
 
 MAN1=		tunesbrowser.1
 
-DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
+OPTIONS=	FAAD "Enable AAC/MP4 Audio output" Off
 
-pre-everything::
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> Warning: ${PORTNAME} is extremelly buggy, especially'
-	@${ECHO_MSG} '===> on the FreeBSD 4.x branch, and may not run at all'
-	@${ECHO_MSG} '===>'
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(WITH_FAAD)
+USE_GSTREAMER+=	faad
+.endif
+
+.if ${HAVE_GNOME:Mlibgnome}!=""
+PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	libgnome
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+.endif
+
+.include <bsd.port.post.mk>
