@@ -7,6 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -64,7 +65,7 @@ PLIST_SUB+=		DICT:=""
 .if ${HAVE_GNOME:Mlibgnomeprintui}!=""
 USE_GNOME+=		libgnomeprintui desktopfileutils
 CONFIGURE_ARGS+=	--enable-gnome
-PKGNAMESUFFIX=		-gnome
+PKGNAMESUFFIX=		-devel-gnome
 GNOME_ENABLED=		yes
 .endif
 
