@@ -3770,6 +3770,7 @@ ipsvd		ports/net/ipsvd
 ipv6calc	ports/net-mgmt/ipv6calc
 ipv6gen		ports/net-mgmt/ipv6gen
 ipv6socket_scrub	ports/net/ipv6socket_scrub
+ipw-firmware	ports/net/ipw-firmware
 ipython		ports/devel/ipython
 irc		ports/irc/irc
 ircII		ports/irc/ircII
