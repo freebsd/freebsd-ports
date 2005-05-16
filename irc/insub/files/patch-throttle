@@ -1,6 +1,38 @@
---- insub.old	Tue Feb 22 22:53:08 2005
-+++ insub.pl	Tue Feb 22 22:54:22 2005
-@@ -916,6 +916,7 @@
+--- insub.old	Wed May 11 00:33:48 2005
++++ insub.pl	Wed May 11 00:33:51 2005
+@@ -364,19 +364,24 @@
+ 		$text =~ s/</&lt;/g;
+ 		$text =~ s/>/&gt;/g;
+ 
+-		if (defined($prev_bg_color) && $bg_col == $prev_bg_color &&
+-		    defined($prev_fg_color) && $fg_col == $prev_fg_color) {
+-			$ret = $text;
++		if ((defined($prev_bg_color) && $bg_col != $prev_bg_color) ||
++		    (defined($prev_fg_color) && $fg_col != $prev_fg_color)) {
++			$ret .= qq(</span>);
++		}
++
++		if ((defined($prev_bg_color) && $bg_col == $prev_bg_color) &&
++		    (defined($prev_fg_color) && $fg_col == $prev_fg_color)) {
++			$ret .= $text;
+ 		} elsif ($bg_col == 1) {
+ 			# black is assumed because of a div taggy
+-			$ret = sprintf(
+-				qq(<span style="color:%s;">%s</span>),
++			$ret .= sprintf(
++				qq(<span style="color:%s;">%s),
+ 				$html_map->{$fg_col},
+ 				$text,
+ 			);
+ 		} else {
+-			$ret = sprintf(
+-				qq(<span style="color:%s;background-color:%s;">%s</span>),
++			$ret .= sprintf(
++				qq(<span style="color:%s;background-color:%s;">%s),
+ 				$html_map->{$fg_col},
+ 				$html_map->{$bg_col},
+ 				$text,
+@@ -916,6 +921,7 @@
  	}
  
  
