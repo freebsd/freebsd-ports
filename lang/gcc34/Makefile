@@ -8,11 +8,10 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.4
-PORTREVISION=	20050506
+PORTREVISION=	20050513
 CATEGORIES=	lang java
 VERSIONSTRING=	3.4-${PORTREVISION}
-MASTER_SITES=	${MASTER_SITE_GCC} \
-		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
+MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -25,8 +24,8 @@ DISTFILES=	\
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.4
 
+CONFLICTS=	gcc-4.0.* gcc-4.1.*
 LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
-
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -68,7 +67,7 @@ MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
-EXTRA_SHLIB=	libgcc_s
+EXTRA_LIBS=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .if ${OSVERSION} < 500000 && ${ARCH} == alpha
@@ -90,13 +89,13 @@ MAN1=		cpp${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
 		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
-MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
 
 .if defined(WITHOUT_LIBJAVA)
 CONFIGURE_ARGS+=	--disable-libgcj
 PLIST_SUB+=	LIBJAVA="@comment "
 .else
+EXTRA_LIBS+=	lib-org-xml-sax lib-org-w3c-dom libffi libgcj
 PLIST_SUB+=	LIBJAVA=""
 .endif
 
@@ -135,17 +134,16 @@ post-install: fake-manpages
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
-	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
+	${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
-.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
+.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_LIBS}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
-	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
-	${RM} -f ${PREFIX}/lib/libiberty.a
-	${RM} -f ${TARGLIB}/*.la
-	# Handle target libraries and GCJ include files.
+	${RM} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}/*.la
+	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
+	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
+	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
 	cd ${PREFIX} ; if [ -d $d ]; then \
@@ -154,14 +152,9 @@ post-install: fake-manpages
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
-	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "r ${WRKDIR}/PLIST.lib"	>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
-	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
-	cd ${WRKDIR} ; ex < ex.script
+	${CAT} ${WRKDIR}/PLIST.lib >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true" >> ${TMPPLIST}
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
