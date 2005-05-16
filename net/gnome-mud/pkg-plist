@@ -1,5 +1,6 @@
 bin/gnome-mud
 share/gnome/applications/gnome-mud.desktop
+share/gnome/gnome-mud/directions.glade
 share/gnome/help/gnome-mud/C/figures/connections-window.png
 share/gnome/help/gnome-mud/C/figures/main-window.png
 share/gnome/help/gnome-mud/C/figures/mudlist-window.png
@@ -18,20 +19,27 @@ share/locale/az/LC_MESSAGES/gnome-mud.mo
 share/locale/ca/LC_MESSAGES/gnome-mud.mo
 share/locale/cs/LC_MESSAGES/gnome-mud.mo
 share/locale/de/LC_MESSAGES/gnome-mud.mo
+share/locale/en_CA/LC_MESSAGES/gnome-mud.mo
+share/locale/en_GB/LC_MESSAGES/gnome-mud.mo
 share/locale/es/LC_MESSAGES/gnome-mud.mo
 share/locale/fr/LC_MESSAGES/gnome-mud.mo
 share/locale/hr/LC_MESSAGES/gnome-mud.mo
 share/locale/mk/LC_MESSAGES/gnome-mud.mo
 share/locale/ml/LC_MESSAGES/gnome-mud.mo
 share/locale/nl/LC_MESSAGES/gnome-mud.mo
+share/locale/pa/LC_MESSAGES/gnome-mud.mo
 share/locale/pl/LC_MESSAGES/gnome-mud.mo
 share/locale/pt/LC_MESSAGES/gnome-mud.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-mud.mo
+share/locale/rw/LC_MESSAGES/gnome-mud.mo
 share/locale/sr/LC_MESSAGES/gnome-mud.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-mud.mo
 share/locale/sv/LC_MESSAGES/gnome-mud.mo
 share/locale/tr/LC_MESSAGES/gnome-mud.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-mud.mo
 @dirrm share/gnome/pixmaps/gnome-mud
 @dirrm share/gnome/omf/gnome-mud
 @dirrm share/gnome/help/gnome-mud/C/figures
 @dirrm share/gnome/help/gnome-mud/C
 @dirrm share/gnome/help/gnome-mud
+@dirrm share/gnome/gnome-mud
