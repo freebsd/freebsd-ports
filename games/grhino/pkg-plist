@@ -1,4 +1,5 @@
 bin/grhino
+bin/gtp-rhino
 share/gnome/grhino-%%VERSION%%/pattern/row1.bin
 share/gnome/grhino-%%VERSION%%/pattern/row2.bin
 share/gnome/grhino-%%VERSION%%/pattern/row3.bin
@@ -11,6 +12,7 @@ share/gnome/grhino-%%VERSION%%/pattern/diag5.bin
 share/gnome/grhino-%%VERSION%%/pattern/corner5x2.bin
 share/gnome/grhino-%%VERSION%%/book/book.bin
 share/gnome/grhino-%%VERSION%%/theme/small/black.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/black_last.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/bottom.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/empty.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/hint_black.xpm
@@ -19,18 +21,18 @@ share/gnome/grhino-%%VERSION%%/theme/small/left.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/right.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/top.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/white.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/white_last.xpm
+share/gnome/help/grhino/C/grhino.xml
 share/gnome/help/grhino/C/grhino-C.omf
 share/gnome/help/grhino/C/legal.xml
+share/gnome/help/grhino/C/figures/gamelist.png
 share/gnome/help/grhino/C/figures/history.png
 share/gnome/help/grhino/C/figures/mainwindow.png
 share/gnome/help/grhino/C/figures/pattern.png
 share/gnome/help/grhino/C/figures/prefs-ai.png
 share/gnome/help/grhino/C/figures/prefs-board.png
 share/gnome/help/grhino/C/figures/prefs-theme.png
-@comment share/locale/en_GB/LC_MESSAGES/grhino.mo
-@exec scrollkeeper-install -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
-share/gnome/help/grhino/C/grhino.xml
+share/locale/en_GB/LC_MESSAGES/grhino.mo
 @dirrm share/gnome/help/grhino/C/figures
 @dirrm share/gnome/help/grhino/C
 @dirrm share/gnome/help/grhino
