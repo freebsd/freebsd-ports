@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rules_du_jour
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 PKGNAMEPREFIX=	spamass-
@@ -18,15 +18,20 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 				spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 OPTIONS=	ANTIDRUG "Already included in SA 3.0" off \
+		BLACKLIST "William Stearn's sa-blacklist" off \
+		BLACKLISTU "William Stearn's URI blacklist" off \
 		BOGUS_VIRUS "Catch 'collateral spam' caused by viruses" on \
 		CURL "Use curl to download rule files" off \
-		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
 		SARE "Installs safe SARE rules" on \
+		SARE_CODING "Ruleset for html coding abuse" off \
+		SARE_HEADER "Ruleset for header abuse" off \
+		SARE_SPEC "SARE Specific Ruleset" off \
 		TRIPWIRE "Matches 3 chars that shouldn't be together" off
 PLIST_FILES=	bin/rules_du_jour etc/mail/rulesdujour.sample
-PKGMESSAGE=		${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 NO_BUILD=		yes
+USE_BZIP2=		yes
 SPAMASS_CONF=	etc/mail/spamassassin
 SPAMASS_DIR=	${PREFIX}/${SPAMASS_CONF}
 
@@ -40,12 +45,16 @@ SPAMASS_FILES+=	ANTIDRUG
 SPAMASS_FILES+=	BOGUSVIRUS
 .endif
 
-.if defined(WITH_CURL)
-RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+.if defined(WITH_BLACKLIST)
+SPAMASS_FILES+=	BLACKLIST
 .endif
 
-.if defined(WITH_EVILNUMBERS)
-SPAMASS_FILES+=	EVILNUMBERS
+.if defined(WITH_BLACKLISTU)
+SPAMASS_FILES+=	BLACKLIST_URI
+.endif
+
+.if defined(WITH_CURL)
+RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITH_RANDOM)
@@ -54,9 +63,22 @@ SPAMASS_FILES+=	RANDOMVAL
 
 .if defined(WITH_SARE)
 .for i in SARE_ADULT SARE_FRAUD SARE_BML SARE_RATWARE SARE_SPOOF \
-	SARE_BAYES_POISON_NXM SARE_OEM SARE_RANDOM SARE_SPECIFIC
+	SARE_BAYES_POISON_NXM SARE_OEM SARE_RANDOM SARE_SPECIFIC \
+	EVILNUMBERS
 SPAMASS_FILES+=	$i
 .endfor
+.endif
+
+.if defined(WITH_SARE_CODING)
+SPAMASS_FILES+=	SARE_CODING
+.endif
+
+.if defined(WITH_SARE_HEADER)
+SPAMASS_FILES+=	SARE_HEADER
+.endif
+
+.if defined(WITH_SARE_SPEC)
+SPAMASS_FILES+=	SARE_SPECIFIC
 .endif
 
 .if defined(WITH_TRIPWIRE)
@@ -67,8 +89,6 @@ do-build:
 	@${DO_NADA}
 
 pre-install:
-	@${SED} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
-		-e 's|%%DOCSDIR%%|${DOCSDIR}|g' <${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${SED} -e 's|TRIPWIRE EVILNUMBERS SARE_RANDOM|${SPAMASS_FILES}|' \
 		-e 's|PREFIX="/usr/local"|PREFIX="${PREFIX}"|' \
 		<${WRKSRC}/config >${WRKSRC}/config.sample

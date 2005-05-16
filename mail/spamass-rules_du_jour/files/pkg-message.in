@@ -1,8 +1,8 @@
 *************************************************************************
 
-Please edit the configuration in %%LOCALBASE%%/etc/mail/rulesdujour
-Run %%LOCALBASE%%/bin/rules_du_jour to fetch the latest rulesets
-The custom rulesets are updated in %%LOCALBASE%%/etc/mail/spamassassin
+Please edit the configuration in %%PREFIX%%/etc/mail/rulesdujour
+Run %%PREFIX%%/bin/rules_du_jour to fetch the latest rulesets
+The custom rulesets are updated in %%PREFIX%%/etc/mail/spamassassin
 
 After updating the rules please do the following:
 
@@ -12,7 +12,7 @@ After updating the rules please do the following:
    installation. You might want to modify scores.
 3. Test the new rulesets. Keep an eye on hits from the new rules to
    determine if the scoring is right for you.
-4. Run %%LOCALBASE%%/bin/rules_du_jour ONLY once per day.
+4. Run %%PREFIX%%/bin/rules_du_jour ONLY once per day.
 
 You may visit http://www.exit0.us/index.php/RulesDuJour before you use
 RulesDuJour.
