@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.netbeans.org/download/release36/promoted/FCS/
-DISTNAME=	netbeans-4_0-bin
+MASTER_SITES=
+DISTNAME=	netbeans-4_1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
