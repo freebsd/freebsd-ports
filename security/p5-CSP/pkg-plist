@@ -1,0 +1,6 @@
+bin/csp
+%%SITE_PERL%%/CSP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSP/.packlist
+%%SITE_PERL%%/auto/CSP/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSP
+@dirrm %%SITE_PERL%%/auto/CSP
