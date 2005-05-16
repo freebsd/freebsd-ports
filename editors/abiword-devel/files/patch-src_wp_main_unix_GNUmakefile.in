@@ -1,0 +1,11 @@
+--- src/wp/main/unix/GNUmakefile.in.orig	Thu May 12 16:03:35 2005
++++ src/wp/main/unix/GNUmakefile.in	Thu May 12 16:03:59 2005
+@@ -733,8 +733,6 @@
+ install-exec-local:	
+ 	@if test -f $(DESTDIR)/$(bindir)/abiword; then \
+ 	  echo "$(DESTDIR)/$(bindir)/abiword is a regular file - I'm not going to create a link."; \
+-	else \
+-	  (cd $(DESTDIR)/$(bindir) && ln -sf AbiWord-2.4 abiword); \
+ 	fi
+ 
+ libAbiCommand.a:	$(abiword_plugins)/tools/abicommand/xp/$(ltsubdir)libAbiCommand.a
