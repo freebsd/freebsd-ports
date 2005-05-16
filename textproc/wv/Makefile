@@ -7,7 +7,7 @@
 
 PORTNAME=	wv
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -23,11 +23,13 @@ RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-ssl
 .endif
 
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	gnometarget pkgconfig glib20
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-exporter --with-libwmf=${LOCALBASE}
+CONFIGURE_ARGS=	--with-exporter \
+		--with-glib=glib2 \
+		--with-libwmf=${LOCALBASE}
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 INSTALLS_SHLIB=	yes
@@ -38,12 +40,5 @@ MLINKS=	wvWare.1 wvConvert.1
 
 CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-.if ${MACHINE_ARCH:L} == "amd64"
-USE_GNOME+=	glib20
-CONFIGURE_ARGS+=	--with-glib
-.else
-CONFIGURE_ARGS+=	--without-glib
-.endif
 
 .include <bsd.port.mk>
