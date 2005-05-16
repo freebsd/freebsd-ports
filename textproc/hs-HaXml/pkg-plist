@@ -25,7 +25,7 @@ bin/Xtract
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Lex.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Parse.hi
 %%NHC98%%lib/nhc98/ix86-FreeBSD/libHSHaXml.a
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/pkg.conf
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/HaXml.pkgconf
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Combinators.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Escape.hi
@@ -183,7 +183,7 @@ bin/Xtract
 %%HUGS%%@dirrm lib/hugs/libraries/Text/XML
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/HaXml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%GHC%%@exec %D/bin/ghc-pkg -a < %D/lib/ghc-%%GHC_VERSION%%/imports/HaXml/pkg.conf
+%%GHC%%@exec %D/bin/ghc-pkg register %D/lib/ghc-%%GHC_VERSION%%/imports/HaXml/HaXml.pkgconf
 %%GHC%%@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-%%GHC%%@unexec %D/bin/ghc-pkg -r HaXml
+%%GHC%%@unexec %D/bin/ghc-pkg unregister HaXml
 %%GHC%%@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

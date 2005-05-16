@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
@@ -14,8 +14,6 @@ DISTNAME=	HaXml-${PORTVERSION}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A collection of utilities for using Haskell and XML together
-
-BROKEN=		"Not compatible with latest GHC yet"
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
@@ -97,7 +95,7 @@ post-patch:
 
 post-install:
 .if defined(WITH_GHC)
-	@${INSTALL_DATA} ${WRKSRC}/obj/ghc/pkg.conf \
+	@${INSTALL_DATA} ${WRKSRC}/obj/ghc/HaXml.pkgconf \
 		${PREFIX}/lib/ghc-${GHC_VERSION}/imports/HaXml/
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 .endif
