@@ -381,6 +381,7 @@
     SUBDIR += replay
     SUBDIR += resid
     SUBDIR += rexima
+    SUBDIR += rezound
     SUBDIR += rhythmbox
     SUBDIR += rio
     SUBDIR += rio500
