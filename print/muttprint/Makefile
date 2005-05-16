@@ -6,10 +6,10 @@
 #
 
 PORTNAME?=	muttprint
-PORTVERSION=	0.72c
+PORTVERSION=	0.72d
 CATEGORIES?=	print mail
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	obraun
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	muttprint
 
 MAINTAINER?=	obraun@FreeBSD.org
 COMMENT?=	Utility to print mail for most any mail client
@@ -74,6 +74,7 @@ post-patch:
 		s|/usr/lib|${PREFIX}/lib|g' \
 			${WRKSRC}/doc/manpages/*/muttprint.1 \
 			${WRKSRC}/doc/manual/*/manual-*/*.html
+	@${REINPLACE_CMD} -e '/\.css/d' ${WRKSRC}/doc/manual/*/Makefile
 .if ${PAPERSIZE}==a4
 	@${REINPLACE_CMD} 's|%%PAPERSIZE%%|${PAPERSIZE:U}|' \
 		${WRKSRC}/muttprint
