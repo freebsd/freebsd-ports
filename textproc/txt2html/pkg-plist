@@ -1,5 +1,6 @@
 bin/txt2html
-share/txt2html/txt2html.dict
 %%SITE_PERL%%/HTML/TextToHTML.pm
-@dirrm share/txt2html
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TextToHTML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TextToHTML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
