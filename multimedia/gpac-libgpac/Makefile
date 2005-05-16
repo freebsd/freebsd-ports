@@ -27,7 +27,7 @@ BUILD_WRKSRC=	${WRKSRC}/M4Systems
 INSTALL_WRKSRC=	${WRKSRC}/bin/gcc
 
 CONFIGURE_ARGS=	--cc="${CC}" \
-		--extra-cflags="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		--extra-cflags="${CFLAGS} ${PTHREAD_CFLAGS} -fPIC" \
 		--extra-ldflags="${LDFLAGS} ${PTHREAD_LDFLAGS}"
 
 .include <bsd.port.pre.mk>
