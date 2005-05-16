@@ -18,6 +18,7 @@ bin/gjnih41
 bin/grepjar41
 bin/jv-scan41
 bin/jcf-dump41
+include/mf-runtime.h
 %%FORTRAN%%bin/gfortran41
 %%FORTRAN%%lib/libgfortran.a
 %%FORTRAN%%lib/libgfortranbegin.a
@@ -30,18 +31,10 @@ bin/jcf-dump41
 %%LIBJAVA%%bin/grmiregistry41
 %%LIBJAVA%%bin/jv-convert41
 %%LIBJAVA%%include/ffi.h
-%%LIBJAVA%%lib/libffi.a
-%%LIBJAVA%%lib/libffi.la
-%%LIBJAVA%%lib/libgij.a
-%%LIBJAVA%%lib/libgij.la
 %%LIBJAVA%%lib/logging.properties
-%%LIBJAVA%%lib/pkgconfig/libgcj.pc
-%%LIBJAVA%%@dirrm lib/pkgconfig
 %%LIBJAVA%%lib/security/classpath.security
 %%LIBJAVA%%lib/security/libgcj.security
-%%LIBJAVA%%@dirrm lib/security
+%%LIBJAVA%%libdata/pkgconfig/libgcj.pc
 %%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
-include/mf-runtime.h
+%%LIBJAVA%%@dirrm lib/security
 @comment Insert PLIST.lib here
-@comment -=[ begin PLIST.lib ]=-
-@comment -=[ end PLIST.lib ]=-
