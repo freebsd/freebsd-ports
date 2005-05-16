@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gsk
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.13
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for writing servers
 
 USE_GNOME=	glib20 gnomehack gnometarget
-USE_PERL5=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--disable-gtk-doc
@@ -31,10 +30,8 @@ USE_OPENSSL=	yes
 PLIST_SUB+=	OPENSSL=""
 .endif
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS =/s|programs tests||g' ${WRKSRC}/src/Makefile.in
 
-.if ${OSVERSION} > 503000
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
