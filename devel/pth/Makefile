@@ -1,6 +1,6 @@
-# New ports collection makefile for:   pth
-# Date Created:			23 May 1999
-# Whom:				Ralf S. Engelschall
+# New ports collection makefile for:	GNU Pth
+# Date Created:				23 May 1999
+# Whom:					Ralf S. Engelschall <rse@gnu.org>
 #
 # $FreeBSD$
 #
@@ -29,10 +29,14 @@ USE_REINPLACE=	yes
 MAN1=		pth-config.1 pthread-config.1
 MAN3=		pth.3 pthread.3
 
+OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on
+
+.include <bsd.port.pre.mk>
+
 post-patch:
-.if !defined(WITH_OPTIMIZED_CFLAGS) || defined(WITHOUT_OPTIMIZED_CFLAGS)
-	${REINPLACE_CMD} -e \
-		's|-funroll-loops -fstrength-reduce -fomit-frame-pointer -ffast-math|${CFLAGS}|' \
+.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+	@${REINPLACE_CMD} -e \
+		's|-funroll-loops -fstrength-reduce -fomit-frame-pointer -ffast-math||' \
 		${WRKSRC}/configure
 .endif
 
@@ -40,9 +44,9 @@ post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/pth.sh ${PREFIX}/etc/rc.d/000.pth.sh
+	${INSTALL_SCRIPT} ${FILESDIR}/pth.sh ${PREFIX}/etc/rc.d/000.pth.sh
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
