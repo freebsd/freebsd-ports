@@ -21,6 +21,8 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 
+BROKEN=	"only works with old versions (1.0.x) of net/rrdtool"
+
 OPTIONS=	FPING "Support for fping probes" on
 OPTIONS+=	ECHOPING "Support for EchoPing probes" off
 OPTIONS+=	CURL "Support for Curl probes" off
