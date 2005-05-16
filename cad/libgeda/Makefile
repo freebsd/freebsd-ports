@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgeda
-PORTVERSION=	20040111
+PORTVERSION=	20050313
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
@@ -18,13 +18,13 @@ COMMENT=	gEDA tools base utility library
 LIB_DEPENDS=	gdgeda.6:${PORTSDIR}/graphics/libgdgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_GMAKE=	yes
-USE_GNOME=	gtk12 gnomehack
+USE_GNOME=	gtk20 gnomehack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gdgeda
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 INFO=		libgedadoc
 
