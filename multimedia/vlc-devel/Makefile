@@ -333,7 +333,7 @@ OPTIONS=	AALIB "Console graphics support" Off \
 		OPTIMIZED_CFLAGS "Complie with -O2 -ffast-math" Off \
 		SMB "SAMBA Access module" Off \
 		SDL "SDL video output support" Off \
-		SKINS "Skinned gtk2.0 interface" Off \
+		SKINS "Skinned x11 interface (similar to xmms)" Off \
 		SLP "SLP service discovery support" On \
 		SPEEX "Voice codec support" Off \
 		SSL "TLS/SSL support for httpd interface" Off \
@@ -351,91 +351,6 @@ OPTIONS=	AALIB "Console graphics support" Off \
 USE_GCC=	3.4
 WITHOUT_LIVEMEDIA=	yes
 .endif
-.endif
-
-.if ${HAVE_GNOME:Mesound}!="" && !defined(WITHOUT_ESOUND)
-WITH_ESOUND=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libaa.so.1) && !defined(WITHOUT_AALIB)
-WITH_AALIB=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libcaca.a)
-WITH_LIBCACA=	yes
-WITH_AALIB=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libopendaap.a) && !defined(WITHOUT_DAAP)
-WITH_DAAP=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libdirac_decoder.a) && !defined(WITHOUT_DIRAC)
-WITH_DIRAC=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libfaad.a) && !defined(WITHOUT_FAAD)
-WITH_FAAD=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/fribidi-config) && !defined(WITHOUT_FRIBIDI)
-WITH_FRIBIDI=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libggi.a) && !defined(WITHOUT_GGI)
-WITH_GGI=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libx264.a) && !defined(WITHOUT_X264)
-WITH_X264=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libmp3lame.a) && !defined(WITHOUT_LAME)
-WITH_LAME=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libtheora.a) && !defined(WITHOUT_LIBTHEORA)
-WITH_LIBTHEORA=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/lib/libsmbclient.a) && !defined(WITHOUT_SMB)
-WITH_SMB=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libspeex.a) && !defined(WITHOUT_SPEEX)
-WITH_SPEEX=	yes
-.endif
-
-.if  exists(${LOCALBASE}/lib/libgnutls.a) && !defined(WITHOUT_SSL)
-WITH_SSL=	yes
-.endif
-
-.if exists(${X11BASE}/lib/librsvg-2.a) && !defined(WITHOUT_SVG)
-WITH_SVG=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/lib/vga.a) && !defined(WITHOUT_SVGALIB)
-WITH_SVGALIB=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/transcode)
-WITH_TRANSCODE=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libvorbisidec.a)
-WITH_LIBTREMOR=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/toolame)
-WITH_TOOLAME=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libtwolame.a) && !defined(WITHOUT_TWOLAME)
-WITH_TWOLAME=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libxosd.a) && !defined(WITHOUT_XOSD)
-WITH_XOSD=	yes
 .endif
 
 # compatible knobs.
@@ -477,11 +392,9 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT} \
-		libtar:${PORTSDIR}/devel/libtar
-RUN_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
+BUILD_DEPENDS+=	libtar:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2 --enable-skins
-CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
+USE_XLIB=	yes
 .else
 CONFIGURE_ARGS+=--disable-skins2
 .endif
@@ -495,7 +408,7 @@ CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
 CONFIGURE_ARGS+=--disable-wxwindows
 .endif
 
-.if defined(WITH_ARTS) && !defined(WITHOUT_ARTS)
+.if (defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so)) && !defined(WITHOUT_ARTS)
 LIB_DEPENDS+=	 artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--enable-arts
 .else
@@ -554,7 +467,7 @@ CONFIGURE_ARGS+=--enable-dvdread
 CONFIGURE_ARGS+=--disable-dvdread
 .endif
 
-.if defined(WITH_ESOUND) && !defined(WITHOUT_ESOUND)
+.if (defined(WITH_ESOUND) || ${HAVE_GNOME:Mesound}!="") && !defined(WITHOUT_ESOUND)
 ESOUND_SUFFIX=	-esound
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
@@ -567,7 +480,7 @@ CONFIGURE_ARGS+=--with-ffmpeg-faac
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 .endif
 
-.if defined(WITH_FAAD) && !defined(WITHOUT_FAAD)
+.if (defined(WITH_FAAD) || exists(${LOCALBASE}/lib/libfaad.a)) && !defined(WITHOUT_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=--enable-faad
 .else
@@ -581,21 +494,21 @@ CONFIGURE_ARGS+=--enable-flac
 CONFLGIRE_ARGS+=--disable-flac
 .endif
 
-.if defined(WITH_FRIBIDI) && !defined(WITHOUT_FRIBIDI)
+.if (defined(WITH_FRIBIDI) || exists(${LOCALBASE}/bin/fribidi-config)) && !defined(WITHOUT_FRIBIDI)
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
 .else
 CONFIGURE_ARGS+=--disable-fribidi
 .endif
 
-.if defined(WITH_AALIB) && !defined(WITHOUT_AALIB)
+.if (defined(WITH_AALIB) || exists(${LOCALBASE}/lib/libaa.so.1)) && !defined(WITHOUT_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 CONFIGURE_ARGS+=--enable-aa
 .else
 CONFIGURE_ARGS+=--disable-aa
 .endif
 
-.if defined(WITH_DIRAC) && !defined(WITHOUT_DIRAC)
+.if (defined(WITH_DIRAC) || exists(${LOCALBASE}/lib/libdirac_decoder.a)) && !defined(WITHOUT_DIRAC)
 LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
 CONFIGURE_ARGS+=--enable-dirac
 CPPFLAGS+=	-I${LOCALBASE}/include/dirac
@@ -603,14 +516,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include/dirac
 CONFIGURE_ARGS+=--disable-dirac
 .endif
 
-.if (defined(WITH_H264) || defined(WITH_X264)) && !defined(WITHOUT_X264)
+.if (defined(WITH_H264) || defined(WITH_X264) || exists(${LOCALBASE}/lib/libx264.a)) && !defined(WITHOUT_X264)
 CONFIGURE_ARGS+=--enable-x264
 LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=--disable-x264
 .endif
 
-.if defined(WITH_LIBCACA) && !defined(WITHOUT_LIBCACA)
+.if (defined(WITH_LIBCACA) || exists(${LOCALBASE}/lib/libcaca.a)) && !defined(WITHOUT_LIBCACA)
 .if !defined(WITHOUT_AALIB)
 WITH_AALIB=	yes
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
@@ -622,7 +535,7 @@ CONFIGURE_ARGS+=--enable-caca
 CONFIGURE_ARGS+=--disable-caca
 .endif
 
-.if defined(WITH_DAAP) && !defined(WITHOUT_DAAP)
+.if (defined(WITH_DAAP) || exists(${LOCALBASE}/lib/libopendaap.a)) && !defined(WITHOUT_DAAP)
 LIB_DEPENDS+=	opendaap.0:${PORTSDIR}/devel/libopendaap
 CONFIGURE_ARGS+=--enable-daap
 .else
@@ -640,7 +553,7 @@ CONFIGURE_ARGS+=--disable-dts
 CONFIGURE_ARGS+=--disable-httpd
 .endif
 
-.if defined(WITH_GGI) && !defined(WITHOUT_GGI)
+.if (defined(WITH_GGI) || exists(${LOCALBASE}/lib/libggi.a)) && !defined(WITHOUT_GGI)
 LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=--enable-ggi
 .else
@@ -677,7 +590,7 @@ CONFIGURE_ARGS+=--enable-libmpeg2
 CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
 
-.if defined(WITH_LIBTHEORA) && !defined(WITHOUT_LIBTHEORA)
+.if (defined(WITH_LIBTHEORA) || exists(${LOCALBASE}/lib/libtheora.a)) && !defined(WITHOUT_LIBTHEORA)
 LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--enable-theora
 .else
@@ -720,7 +633,7 @@ CONFIGURE_ARGS+=--enable-galaktos
 CONFIGURE_ARGS+=--disable-galaktos
 .endif
 
-.if defined(WITH_SMB) && !defined(WITHOUT_SMB)
+.if (defined(WITH_SMB) || exists(${LOCALBASE}/lib/lib/libsmbclient.a)) && !defined(WITHOUT_SMB)
 LIB_DEPEND+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=--enable-smb
 .else
@@ -734,11 +647,11 @@ CONFIGURE_ARGS+=--enable-sdl
 CONFIGURE_ARGS+=--disable-sdl
 .endif
 
-.if defined(WITH_TRANSCODE)
+.if defined(WITH_TRANSCODE) || exists(${LOCALBASE}/bin/transcode)
 RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
-.if !defined(WITHOUT_HTTPD) && defined(WITH_SSL)
+.if !defined(WITHOUT_HTTPD) && (defined(WITH_SSL) || exists(${LOCALBASE}/lib/libgnutls.a))
 LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 .else
@@ -751,7 +664,7 @@ LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 CONFIGURE_ARGS+=--disable-slp
 .endif
 
-.if defined(WITH_SPEEX) && !defined(WITHOUT_SPEEX)
+.if (defined(WITH_SPEEX) || exists(${LOCALBASE}/lib/libspeex.a)) && !defined(WITHOUT_SPEEX)
 LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-speex
 CPPFLAGS+=-I${LOCALBASE}/include/speex
@@ -763,21 +676,21 @@ CONFIGURE_ARGS+=--disable-speex
 CONFIGURE_ARGS+=--disable-sout
 .endif
 
-.if defined(WITH_SVG) && !defined(WITHOUT_SVG)
+.if (defined(WITH_SVG) || ${HAVE_GNOME:Mlibrsvg2}!="") && !defined(WITHOUT_SVG)
 USE_GNOME+=	librsvg2
 CONFIGURE_ARGS+=--enable-svg
 .else
 CONFIGURE_AGRS+=--disable-svg
 .endif
 
-.if defined(WITH_SVGALIB) && !defined(WITHOUT_SVGALIB)
+.if (defined(WITH_SVGALIB) || exists(${LOCALBASE}/lib/lib/vga.a)) && !defined(WITHOUT_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-svgalib
 .else
 CONFIGURE_ARGS+=--disable-svgalib
 .endif
 
-.if defined(WITH_LIBTREMOR) && !defined(WITHOUT_LIBTREMOR)
+.if (defined(WITH_LIBTREMOR) || exists(${LOCALBASE}/lib/libvorbisidec.a)) && !defined(WITHOUT_LIBTREMOR)
 LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .else
 CONFIGURE_ARGS+=--disable-tremor
@@ -791,7 +704,7 @@ CONFIGURE_ARGS+=	--enable-toolame
 CONFIGURE_ARGS+=	--disable-toolame
 .endif
 
-.if defined(WITH_TWOLAME) && !defined(WITHOUT_TWOLAME)
+.if (defined(WITH_TWOLAME) || exists(${LOCALBASE}/lib/libtwolame.a)) && !defined(WITHOUT_TWOLAME)
 LIB_DEPENDS+=		twolame.0:${PORTSDIR}/audio/twolame
 CONFIGURE_ARGS+=	--enable-twolame
 .else
@@ -805,7 +718,7 @@ CONFIGURE_ARGS+=--enable-vorbis
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.if defined(WITH_XOSD) && !defined(WITHOUT_XOSD)
+.if (defined(WITH_XOSD) || exists(${LOCALBASE}/lib/libxosd.a)) && !defined(WITHOUT_XOSD)
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=--enable-xosd
 .else
