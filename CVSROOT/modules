@@ -10075,6 +10075,7 @@ rexx-imc	ports/lang/rexx-imc
 rexx-regina	ports/lang/rexx-regina
 rexx-sock	ports/net/rexx-sock
 rexx-wrapper	ports/lang/rexx-wrapper
+rezound		ports/audio/rezound
 rfbproxy	ports/net/rfbproxy
 rfc		ports/misc/rfc
 rfcdiff		ports/textproc/rfcdiff
