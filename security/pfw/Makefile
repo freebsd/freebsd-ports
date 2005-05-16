@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfw
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -15,6 +15,8 @@ MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A web frontend for the pf firewall
 
 RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1//}
 
 USE_PHP=	session	pcre
 WANT_PHP_WEB=	yes
