@@ -1,4 +1,5 @@
 bin/blam
+lib/blam/atom.dll
 lib/blam/blam.exe
 lib/blam/libblam.a
 lib/blam/libblam.so
@@ -30,6 +31,7 @@ share/locale/gu/LC_MESSAGES/blam.mo
 share/locale/he/LC_MESSAGES/blam.mo
 share/locale/hr/LC_MESSAGES/blam.mo
 share/locale/hu/LC_MESSAGES/blam.mo
+share/locale/it/LC_MESSAGES/blam.mo
 share/locale/ja/LC_MESSAGES/blam.mo
 share/locale/lt/LC_MESSAGES/blam.mo
 share/locale/nb/LC_MESSAGES/blam.mo
@@ -39,6 +41,7 @@ share/locale/pa/LC_MESSAGES/blam.mo
 share/locale/pl/LC_MESSAGES/blam.mo
 share/locale/pt/LC_MESSAGES/blam.mo
 share/locale/pt_BR/LC_MESSAGES/blam.mo
+share/locale/rw/LC_MESSAGES/blam.mo
 share/locale/sq/LC_MESSAGES/blam.mo
 share/locale/sr/LC_MESSAGES/blam.mo
 share/locale/sr@Latn/LC_MESSAGES/blam.mo
@@ -46,6 +49,8 @@ share/locale/sv/LC_MESSAGES/blam.mo
 share/locale/tr/LC_MESSAGES/blam.mo
 share/locale/uk/LC_MESSAGES/blam.mo
 share/locale/zh_CN/LC_MESSAGES/blam.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/gnome/blam/images
 @dirrm share/gnome/blam
 @dirrm lib/blam
