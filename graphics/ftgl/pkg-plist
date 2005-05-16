@@ -90,6 +90,5 @@ libdata/pkgconfig/ftgl.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/FTGL
 @dirrm %%EXAMPLESDIR%%

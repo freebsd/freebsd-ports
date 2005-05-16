@@ -12,4 +12,3 @@ libdata/pkgconfig/libgringotts.pc
 %%PORTDOCS%%share/doc/libgringotts/TODO
 %%PORTDOCS%%share/doc/libgringotts/manual.htm
 %%PORTDOCS%%@dirrm share/doc/libgringotts
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

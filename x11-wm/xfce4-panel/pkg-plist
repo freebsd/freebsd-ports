@@ -123,7 +123,6 @@ share/xfce4/doc/C/xfce4-panel.html
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true

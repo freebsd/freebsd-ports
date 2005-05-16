@@ -245,7 +245,6 @@ share/xfce4/xffm/xffm.spec.in
 @dirrm lib/xfce4/xffm
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/stock/generic 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/stock 2>/dev/null || true

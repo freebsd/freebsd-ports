@@ -46,5 +46,4 @@ share/doc/libgnet1.1-glib2-dev/html/sdr.html
 share/doc/libgnet1.1-glib2-dev/html/tests.html
 @dirrm share/doc/libgnet1.1-glib2-dev/html
 @dirrm share/doc/libgnet1.1-glib2-dev
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/gnet-glib2

@@ -207,7 +207,6 @@ share/xine/libxine1/fonts/serif-64.xinefont.gz
 @dirrm lib/xine/plugins/1.0.1
 @dirrm lib/xine/plugins
 @dirrm lib/xine
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm %%DOCSDIR%%/hackersguide
 @dirrm %%DOCSDIR%%/faq
 @dirrm %%DOCSDIR%%

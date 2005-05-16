@@ -51,7 +51,6 @@ share/xfce4/doc/C/images/smgr_from_setup_button.png
 share/xfce4/doc/C/xfce-mcs-manager.html
 @dirrm include/xfce4/xfce-mcs-manager
 @unexec rmdir %D/include/xfce4 2>/dev/null || true
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true

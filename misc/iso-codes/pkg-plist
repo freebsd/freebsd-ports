@@ -418,4 +418,3 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/aa/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/aa 2>/dev/null ||/usr/bin/true
 @dirrm share/iso-codes
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || /usr/bin/true

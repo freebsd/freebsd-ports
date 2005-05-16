@@ -51,7 +51,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/gnet.m4 ${PREFIX}/share/aclocal/gnet-glib2.m4
 	@${INSTALL_DATA} ${WRKSRC}/gnetconfig.h \
 		${PREFIX}/include/gnet-glib2
-	@${MKDIR} ${PREFIX}/libdata/pkgconfig
 	@${INSTALL_DATA} ${WRKSRC}/gnet.pc \
 		${PREFIX}/libdata/pkgconfig/gnet-glib2.pc
 	@${MKDIR} ${PREFIX}/man/man1

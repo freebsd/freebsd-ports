@@ -90,7 +90,6 @@ share/xfce4/hicolor-index.theme
 @unexec rmdir %D/include/xfce4 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/modules 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/mime 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @dirrm share/gtk-doc/html/libxfcegui4

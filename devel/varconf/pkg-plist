@@ -18,4 +18,3 @@ libdata/pkgconfig/varconf-1.0.pc
 @dirrm include/varconf-1.0/varconf
 @dirrm include/varconf-1.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

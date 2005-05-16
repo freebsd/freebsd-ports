@@ -98,4 +98,3 @@ libdata/pkgconfig/atlascpp-0.5.pc
 @dirrm include/Atlas-C++-0.5/Atlas
 @dirrm include/Atlas-C++-0.5
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

@@ -105,7 +105,6 @@ lib/libmplex2-1.6.so.2
 lib/libmplex2.a
 lib/libmplex2.so
 libdata/pkgconfig/mjpegtools.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/mjpegtools/mplex
 @dirrm include/mjpegtools/mpeg2enc
 @dirrm include/mjpegtools

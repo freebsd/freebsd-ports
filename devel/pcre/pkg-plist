@@ -10,4 +10,3 @@ lib/libpcreposix.a
 lib/libpcreposix.so
 lib/libpcreposix.so.0
 libdata/pkgconfig/libpcre.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

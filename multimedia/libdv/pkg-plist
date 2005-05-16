@@ -8,5 +8,4 @@ lib/libdv.la
 lib/libdv.so
 lib/libdv.so.4
 libdata/pkgconfig/libdv.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/libdv

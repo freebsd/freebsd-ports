@@ -77,6 +77,5 @@ lib/libapr-1.so.0
 lib/libaprutil-1.a
 lib/libaprutil-1.so
 lib/libaprutil-1.so.0
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm build-1
 @dirrm include/apr-1
