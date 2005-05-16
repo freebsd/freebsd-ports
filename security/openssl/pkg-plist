@@ -81,7 +81,6 @@ libdata/pkgconfig/openssl.pc
 %%NOBASE%%openssl/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dirrm include/openssl
-@dirrm libdata/pkgconfig
 %%NOBASE%%@dirrm openssl/certs
 %%MANDIR%%@dirrm openssl/man/man1
 %%MANDIR%%@dirrm openssl/man/man3
