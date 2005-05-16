@@ -1,13 +1,10 @@
 @comment $FreeBSD$
 %%APP_NAME%%/lib/LICENSE.isorelax
-%%APP_NAME%%/lib/LICENSE.retroweaver
 %%APP_NAME%%/lib/aopalliance.jar
-%%APP_NAME%%/lib/boot.jar
 %%APP_NAME%%/lib/ejb-20.jar
 %%APP_NAME%%/lib/ejb-30.jar
 %%APP_NAME%%/lib/isorelax.jar
 %%APP_NAME%%/lib/j2eedeploy.jar
-%%APP_NAME%%/lib/jaxrpc.jar
 %%APP_NAME%%/lib/jca-15.jar
 %%APP_NAME%%/lib/jms-11.jar
 %%APP_NAME%%/lib/jmx-12.jar
@@ -18,8 +15,6 @@
 %%APP_NAME%%/lib/resin-jdk15.jar
 %%APP_NAME%%/lib/resin.jar
 %%APP_NAME%%/lib/resinboot.jar
-%%APP_NAME%%/lib/retroweaver.jar
-%%APP_NAME%%/lib/saaj.jar
 %%APP_NAME%%/lib/script-10.jar
 %%APP_NAME%%/lib/webutil.jar
 %%APP_NAME%%/webapps/ROOT/index.jsp
