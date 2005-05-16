@@ -1414,6 +1414,7 @@ dbow		ports/databases/dbow
 dbs		ports/benchmarks/dbs
 dbtool		ports/databases/dbtool
 dbus		ports/devel/dbus
+dbus-sharp	ports/devel/dbus-sharp
 dbview		ports/databases/dbview
 dc20ctrl	ports/graphics/dc20ctrl
 dc20pack	ports/graphics/dc20pack
@@ -2037,6 +2038,7 @@ ezmlm-web	ports/mail/ezmlm-web
 ezstream	ports/audio/ezstream
 f-prot		ports/security/f-prot
 f-prot-sig	ports/security/f-prot-sig
+f-spot		ports/graphics/f-spot
 f2py		ports/lang/f2py
 f77		ports/lang/f77
 f77flow		ports/devel/f77flow
@@ -11435,6 +11437,7 @@ tolkien-ttf	ports/x11-fonts/tolkien-ttf
 tolua		ports/lang/tolua
 tolua4		ports/lang/tolua4
 tomatoes	ports/games/tomatoes
+tomboy		ports/deskutils/tomboy
 tome		ports/games/tome
 toolame		ports/audio/toolame
 topaz		ports/math/topaz
