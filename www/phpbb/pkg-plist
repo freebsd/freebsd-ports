@@ -43,7 +43,6 @@
 %%PHPBBDIR%%/db/mssql.php
 %%PHPBBDIR%%/db/mysql.php
 %%PHPBBDIR%%/db/mysql4.php
-%%PHPBBDIR%%/db/oracle.php
 %%PHPBBDIR%%/db/postgres7.php
 %%PHPBBDIR%%/extension.inc
 %%PHPBBDIR%%/faq.php

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.13
-PORTREVISION=	1
+PORTVERSION=	2.0.15
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,7 +34,10 @@ WWWGRP?=	www
 WRKSRC=		${WRKDIR}/phpBB2
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	PHPBBURL="${PHPBBURL}" \
+		PHPBBDIR="${PHPBBDIR}" \
+		DELETEFILES="${EXCEPTFILES}"
 PHPBB_VER=	${PORTVERSION:S/.//g:S/.//g}
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PLIST_SUB+=	PHPBB_VER=${PHPBB_VER}
@@ -64,13 +66,6 @@ post-patch:
 	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBBURL}/templates#" \
 	  ${WRKSRC}/docs/*.html
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
-
-post-configure:
-	@ ${SED} \
-	  -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%DOCSDIR%%#${DOCSDIR}#g' \
-	  -e 's#%%PHPBBURL%%#${PHPBBURL}#g' -e 's#%%PHPBBDIR%%#${PHPBBDIR}#g' \
-	  -e 's#%%DATADIR%%#${DATADIR}#g' \
-	  -e 's#%%DELETEFILES%%#${EXCEPTFILES}#g' pkg-message > ${PKGMESSAGE}
 
 do-install:
 	@ ${MKDIR} -m 0775 ${PREFIX}/${PHPBBDIR}
