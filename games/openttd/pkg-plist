@@ -1,12 +1,14 @@
 bin/openttd
 %%DATADIR%%/data/autorail.grf
 %%DATADIR%%/data/canalsw.grf
+%%DATADIR%%/data/dosdummy.grf
 %%DATADIR%%/data/openttd.grf
 %%DATADIR%%/data/opntitle.dat
 %%DATADIR%%/data/signalsw.grf
 %%DATADIR%%/data/trkfoundw.grf
 @dirrm %%DATADIR%%/data
 %%DATADIR%%/lang/american.lng
+%%DATADIR%%/lang/brazilian_portuguese.lng
 %%DATADIR%%/lang/catalan.lng
 %%DATADIR%%/lang/czech.lng
 %%DATADIR%%/lang/danish.lng
@@ -19,6 +21,8 @@ bin/openttd
 %%DATADIR%%/lang/hungarian.lng
 %%DATADIR%%/lang/icelandic.lng
 %%DATADIR%%/lang/italian.lng
+%%DATADIR%%/lang/latvian.lng
+%%DATADIR%%/lang/lithuanian.lng
 %%DATADIR%%/lang/norwegian.lng
 %%DATADIR%%/lang/origveh.lng
 %%DATADIR%%/lang/polish.lng
