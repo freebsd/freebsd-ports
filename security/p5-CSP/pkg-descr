@@ -1,0 +1,5 @@
+CSP is a Perl class and script for running multiple CAs. OpenSSL is used
+for all operations. CSP can also generate a small CA website used to
+distribute certificates and CRLs.
+
+WWW: http://devel.it.su.se/projects/CSP/
