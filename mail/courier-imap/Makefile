@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
 
 .if defined(WITH_AUTH_USERDB) 
 .if defined(WITH_GDBM)
-CONFIGURE_ARGS+=--with-db=gdb --with-userdb=${USERDB}
+CONFIGURE_ARGS+=--with-db=gdbm --with-userdb=${USERDB}
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
