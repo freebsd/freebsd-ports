@@ -7010,6 +7010,7 @@ p5-CPAN-DistnameInfo	ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Mini	ports/devel/p5-CPAN-Mini
 p5-CPAN-YACSmoke	ports/devel/p5-CPAN-YACSmoke
 p5-CPANPLUS	ports/devel/p5-CPANPLUS
+p5-CSP		ports/security/p5-CSP
 p5-CSS-SAC	ports/textproc/p5-CSS-SAC
 p5-CSS-Tiny	ports/textproc/p5-CSS-Tiny
 p5-Cache	ports/devel/p5-Cache
