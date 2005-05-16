@@ -1,7 +1,0 @@
-************************************************************
-Note that rsync now uses SSH as the transport by default.
-
-If you still need to use RSH instead, please specify
-"-e rsh" in the rsync command line or set the environment
-variable RSYNC_RSH to "rsh".
-************************************************************

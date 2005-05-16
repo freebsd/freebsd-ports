@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTVERSION=	2.6.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org//pub/%SUBDIR%/ \
@@ -25,7 +24,7 @@ COMMENT=	A network file distribution/synchronization utility
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 .endif
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	rsyncd.sh
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
@@ -50,9 +49,7 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
 
 .include <bsd.port.pre.mk>
 
-SED_SCRIPT+=	-e 's,%%NAME%%,rsyncd,g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+SUB_LIST+=	NAME=rsyncd
 
 .if ${OSVERSION} < 400016
 WITHOUT_SSH?=	yes
@@ -84,22 +81,15 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
 
-post-build:
-	@${SED} ${SED_SCRIPT} <${FILESDIR}/rsyncd.sh >${WRKDIR}/rsyncd.sh
-
 post-install:
 	@${STRIP_CMD} ${DESTDIR}${PREFIX}/bin/rsync
 	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${DESTDIR}${PREFIX}/etc/
 	@[ -f ${DESTDIR}${PREFIX}/etc/rsyncd.conf ] || \
 		${CP} ${DESTDIR}${PREFIX}/etc/rsyncd.conf.sample \
 		${DESTDIR}${PREFIX}/etc/rsyncd.conf
-	@${INSTALL_SCRIPT} ${WRKDIR}/rsyncd.sh ${DESTDIR}${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DESTDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DESTDIR}${DOCSDIR}
-.endif
-.if !defined(WITHOUT_SSH)
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 test: build
