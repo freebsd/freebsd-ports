@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grhino
-PORTVERSION=	0.12.0
-PORTREVISION=	4
+PORTVERSION=	0.15.0
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rhino
@@ -18,20 +17,16 @@ COMMENT=	GRhino Othello/Reversi Program
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix libgnomeui
+USE_GCC=	3.4+
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_OMF=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Incomplete pkg-plist on 4.x"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
