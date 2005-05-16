@@ -2,12 +2,12 @@
 # Date created:				24 October 2004
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
+# $Id: Makefile,v 1.3 2005/05/10 16:34:16 mezz7 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	bless
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
@@ -18,16 +18,27 @@ COMMENT=	A high quality, full featured hex editor
 BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-USE_X_PREFIX=   yes
+USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-DOCS=		AUTHORS Changelog NEWS README
+DOCS=		AUTHORS COPYING ChangeLog NEWS README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g ; s|config.gmake|config.make|g' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|data tests|data|g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|[(]datadir[)]/applications|(prefix)/share/gnome/applications|g ; \
+		s|[(]datadir[)]/pixmaps|(prefix)/share/gnome/pixmaps|g' \
+			${WRKSRC}/data/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|doc/$$(PACKAGE_NAME)-$$(PACKAGE_VERSION)|doc/$$(PACKAGE_NAME)|g'
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|src doc|src|g' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .ifndef (NOPORTDOCS)
 post-install:
