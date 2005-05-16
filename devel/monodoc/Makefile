@@ -3,13 +3,13 @@
 # Friday the 13th!
 # Whom:                 Christopher Nehren
 #
-# $Id: Makefile,v 1.16 2005/02/18 04:45:26 tmclau02 Exp $
+# $Id: Makefile,v 1.17 2005/05/16 02:37:15 mezz7 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	monodoc
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 
