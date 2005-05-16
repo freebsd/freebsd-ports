@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.11.1
+PORTVERSION=	2.12.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
@@ -37,12 +37,11 @@ CONFIGURE_ENV=	PERL=${PERL}
 
 MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-ipv6.1 mrtg-logfile.1 mrtg-mibhelp.1 mrtg-nt-guide.1 \
-		mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 mrtg-unix-guide.1 \
-		mrtg-webserver.1 mrtg.1 mrtglib.1
+		mrtg-nw-guide.1 mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 \
+		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1 mrtglib.1
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
-	${PERL} -pi -e 's:%%GD%%:-lgd:g' ${WRKSRC}/configure
 
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
