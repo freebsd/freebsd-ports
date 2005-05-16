@@ -7,7 +7,7 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
@@ -40,9 +40,8 @@ post-extract:
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libpng
 
 pre-su-install:
-	@[ -d ${PREFIX}/include/libpng ] || ${MKDIR} ${PREFIX}/include/libpng
-	@[ -d ${PREFIX}/libdata/pkgconfig ] || \
-		${MKDIR} ${PREFIX}/libdata/pkgconfig
+	@${MKDIR} ${PREFIX}/include/libpng
+	@${MKDIR} ${PREFIX}/libdata/pkgconfig
 
 post-install:
 	${SED} -e 's|@PREFIX@|${PREFIX}|' ${WRKSRC}/scripts/libpng.pc.in \
