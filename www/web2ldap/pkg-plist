@@ -47,7 +47,6 @@ web2ldap/htdocs/compability.html
 web2ldap/etc/httpd/sample-mod_fastcgi.conf
 web2ldap/etc/httpd/sample-mod_scgi.conf
 web2ldap/etc/init.d/web2ldap
-web2ldap/etc/mime.types
 web2ldap/etc/web2ldap/web2ldapcnf/plugins/samba.py
 web2ldap/etc/web2ldap/web2ldapcnf/plugins/msperson.py
 web2ldap/etc/web2ldap/web2ldapcnf/plugins/edirectory.py

@@ -11,5 +11,5 @@
   document_root = os.path.join(web2ldapcnf.web2ldap_dir,'htdocs')
   
   # Path name of mime.types file
-! mime_types = '/usr/local/web2ldap/etc/mime.types'
+! mime_types = '%%LOCALBASE%%/etc/mime.types'
   
