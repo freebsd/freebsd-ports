@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ipw
+# REQUIRE: LOGIN abi
+# BEFORE:  securelevel
+# KEYWORD: FreeBSD shutdown
+
+# Add the following line to /etc/rc.conf to enable `ipw':
+#
+# ipw_enable="YES"
+#
+
+. "%%RC_SUBR%%"
+
+name="ipw"
+rcvar=`set_rcvar`
+
+start_cmd="ipw_start_cmd"
+stop_cmd="ipw_stop_cmd"
+
+load_rc_config "$name"
+: ${ipw_enable="NO"}
+: ${ipw_interfaces="ipw0"}
+
+command="/usr/sbin/ipwcontrol"
+
+ipw_start_cmd()
+{
+	echo -n "Starting ipw"
+	for i in ${ipw_interfaces}; do
+		eval _mode=\$ipw_mode_${i}
+		case ${_mode} in
+		""|bss)
+			eval _ipw_file_${i}="ipw2100-%%PORTVERSION%%.fw"
+			;;
+		ibss)
+			eval _ipw_file_${i}="ipw2100-%%PORTVERSION%%-i.fw"
+			;;
+		monitor)
+			eval _ipw_file_${i}="ipw2100-%%PORTVERSION%%-p.fw"
+			;;
+		*)
+			echo "${_mode} - Possible values for ipw_mode_${i} are bss|ibss|monitor."
+			exit 1
+			;;
+		esac
+
+		eval _file=\$_ipw_file_${i}
+		echo -n " [${i}:${_mode:=bss}]"
+		${command} -i ${i} -f %%DATADIR%%/${_file}
+	done
+	echo "."
+}
+
+ipw_stop_cmd()
+{
+	echo "Stopping ipw."
+	for i in ${ipw_interfaces}; do
+		${command} -i ${i} -k
+	done
+}
+
+run_rc_command "$1"

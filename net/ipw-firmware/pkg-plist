@@ -1,0 +1,6 @@
+sbin/ipwcontrol
+%%DATADIR%%/LICENSE
+%%DATADIR%%/ipw2100-1.3-i.fw
+%%DATADIR%%/ipw2100-1.3-p.fw
+%%DATADIR%%/ipw2100-1.3.fw
+@dirrm %%DATADIR%%
