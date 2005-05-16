@@ -1,0 +1,13 @@
+Index: Makefile
+diff -u Makefile.orig Makefile
+--- Makefile.orig	Fri May 13 23:56:35 2005
++++ Makefile	Mon May 16 20:26:00 2005
+@@ -116,7 +116,7 @@
+ export MANDIR SMANDIR MANDIRMODE MANMODE
+ export OS_NAME OS_RELEASE
+ 
+-enable_nls=1
++enable_nls?=1
+ debug=0
+ export enable_nls
+ export debug
