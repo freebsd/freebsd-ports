@@ -25,11 +25,15 @@ share/gEDA/bitmap/gschem-move.xpm
 share/gEDA/bitmap/gschem-delete.xpm
 share/gEDA/bitmap/gschem-rotate.xpm
 share/gEDA/bitmap/gschem-mirror.xpm
+share/gEDA/bitmap/gschem-warning.png
 share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
 share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
 share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
 share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
 share/locale/ru/LC_MESSAGES/geda-gschem.mo
+share/locale/es_ES/LC_MESSAGES/geda-gschem.mo
+share/locale/it_IT/LC_MESSAGES/geda-gschem.mo
+share/locale/fr_FR/LC_MESSAGES/geda-gschem.mo
 @unexec rmdir %D/share/doc/geda-doc/man 2>/dev/null || true
 @unexec rmdir %D/share/gEDA/scheme 2>/dev/null || true
 @dirrm share/gEDA/bitmap
@@ -39,3 +43,7 @@ share/locale/ru/LC_MESSAGES/geda-gschem.mo
 @unexec rmdir %D/share/locale/nl_NL 2> /dev/null || true
 @unexec rmdir %D/share/locale/ja_JP/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ja_JP 2> /dev/null || true
+@unexec rmdir %D/share/locale/it_IT/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/it_IT 2> /dev/null || true
+@unexec rmdir %D/share/locale/fr_FR/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/fr_FR 2> /dev/null || true

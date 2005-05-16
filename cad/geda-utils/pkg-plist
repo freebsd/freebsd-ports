@@ -1,3 +1,4 @@
+bin/gsymfix.pl
 bin/gmk_sym
 bin/smash_megafile
 bin/convert_sym

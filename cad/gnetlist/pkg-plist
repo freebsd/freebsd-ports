@@ -1,7 +1,7 @@
 bin/gnetlist
 bin/mk_verilog_syms
 bin/sw2asc
-bin/gschem2pcb
+bin/sch2eaglepos.sh
 share/doc/geda-doc/readmes/vams_mode.txt
 share/doc/geda-doc/readmes/syntax_architecture.txt
 share/doc/geda-doc/readmes/syntax_entity.txt
@@ -10,6 +10,8 @@ share/doc/geda-doc/readmes/README.pcb
 share/doc/geda-doc/readmes/README.switcap
 share/doc/geda-doc/readmes/README.verilog
 share/doc/geda-doc/readmes/README.vhdl
+share/doc/geda-doc/readmes/README.sysc
+share/doc/geda-doc/readmes/README.eagle
 share/doc/geda-doc/man/gnetlist.html
 share/gEDA/system-gnetlistrc
 share/gEDA/scheme/gnet-PCB.scm
@@ -42,6 +44,8 @@ share/gEDA/scheme/gnet-gsch2pcb.scm
 share/gEDA/scheme/gnet-futurenet2.scm
 share/gEDA/scheme/gnet-cascade.scm
 share/gEDA/scheme/gnet-redac.scm
+share/gEDA/scheme/gnet-systemc.scm
+share/gEDA/scheme/gnet-eagle.scm
 @unexec rmdir %D/share/doc/geda-doc/readmes 2>/dev/null || true
 @unexec rmdir %D/share/doc/geda-doc/man 2>/dev/null || true
 @unexec rmdir %D/share/gEDA/scheme 2>/dev/null || true
