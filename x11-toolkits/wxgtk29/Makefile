@@ -7,6 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.6.0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
@@ -37,7 +38,8 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-expat=sys\
 		--with-opengl\
 		--with-mspack\
-		--with-gtk
+		--with-gtk\
+		--disable-backtrace
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv \
