@@ -1,5 +1,5 @@
---- ltmain.sh.orig	Wed Jan 19 14:56:06 2005
-+++ ltmain.sh	Wed Jan 19 15:34:55 2005
+--- ltmain.sh.orig
++++ ltmain.sh
 @@ -976,6 +976,7 @@
  	;;
  

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -20,6 +20,7 @@ USE_GNOME=	pkgconfig gnomehack
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=	13
+CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
