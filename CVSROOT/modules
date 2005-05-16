@@ -10772,6 +10772,7 @@ sk-ooodict-SK	ports/editors/ooodict-sk_SK
 skadns		ports/dns/skadns
 skalibs		ports/devel/skalibs
 skencil		ports/graphics/skencil
+sketchy		ports/lang/sketchy
 ski		ports/emulators/ski
 skill		ports/sysutils/skill
 skim		ports/textproc/skim
