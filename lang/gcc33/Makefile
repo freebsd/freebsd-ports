@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.6
-PORTREVISION=	20050427
+PORTREVISION=	20050511
 CATEGORIES=	lang
 VERSIONSTRING=	3.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -23,6 +23,7 @@ DISTFILES=	\
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.3
 
+CONFLICTS=	gcc-4.0.* gcc-4.1.*
 LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -47,7 +48,6 @@ SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 SUFFIX=		33
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${PORTVERSION}
-PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
@@ -59,17 +59,17 @@ MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
-EXTRA_SHLIB=	libgcc_s
+EXTRA_LIBS=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 ALL_TARGET=	bootstrap-lean
+PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		g77-${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1
-MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals g77 gcc gccint
 
 pre-everything::
@@ -86,7 +86,7 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-build:
-	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially
+	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
 	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
 	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
 
@@ -111,16 +111,16 @@ post-install: fake-manpages
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
-	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
+	${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
-.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
+.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_LIBS}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
-	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	${RM} -f ${PREFIX}/lib/libiberty.a
-	${RM} -f ${TARGLIB}/*.la
-	# Handle target libraries and GCJ include files.
+	${RM} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}/*.la
+	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
+	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
+	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} include/gnu
 	cd ${PREFIX} ; if [ -d $d ]; then \
@@ -129,18 +129,13 @@ post-install: fake-manpages
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.lib
-	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "r ${WRKDIR}/PLIST.lib"	>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
-	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
-	cd ${WRKDIR} ; ex < ex.script
+	${CAT} ${WRKDIR}/PLIST.lib >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib 2>&1 || true" >> ${TMPPLIST}
 
 cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls ${SITE} | ${GREP} 'LATEST.*3\.3'
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
+	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*3\.3'
 .endfor
 
 .include <bsd.port.post.mk>

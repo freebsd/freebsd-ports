@@ -11,5 +11,3 @@ bin/%%GNU_HOST%%-gcc33
 bin/%%GNU_HOST%%-g++33
 bin/gccbug33
 @comment Insert PLIST.lib here
-@comment -=[ begin PLIST.lib ]=-
-@comment -=[ end PLIST.lib ]=-
