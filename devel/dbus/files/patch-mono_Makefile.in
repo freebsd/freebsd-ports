@@ -1,0 +1,108 @@
+--- mono/Makefile.in.orig	Fri May 13 02:47:06 2005
++++ mono/Makefile.in	Fri May 13 02:51:15 2005
+@@ -279,7 +279,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = . doc example
++SUBDIRS = . example
+ TARGET = $(ASSEMBLY)
+ NOINST_EXES = test-dbus-sharp.exe
+ ASSEMBLY_NAME = dbus-sharp
+@@ -325,6 +325,10 @@
+ 	$(ASSEMBLY).config.in   \
+ 	dbus-sharp.snk
+ 
++pkgconfigdir = $(prefix)/libdata/pkgconfig
++pkgconfigDATA_INSTALL = $(INSTALL_DATA)
++pkgconfig_DATA = ../dbus-sharp.pc
++
+ all: all-recursive
+ 
+ .SUFFIXES:
+@@ -371,6 +375,23 @@
+ distclean-libtool:
+ 	-rm -f libtool
+ uninstall-info-am:
++install-pkgconfigDATA: $(pkgconfig_DATA)
++	@$(NORMAL_INSTALL)
++	test -z "$(pkgconfigdir)" || $(mkdir_p) "$(DESTDIR)$(pkgconfigdir)"
++	@list='$(pkgconfig_DATA)'; for p in $$list; do \
++	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++	  f="`echo $$p | sed -e 's|^.*/||'`"; \
++	  echo " $(pkgconfigDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgconfigdir)/$$f'"; \
++	 $(pkgconfigDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgconfigdir)/$$f"; \
++	done
++
++uninstall-pkgconfigDATA:
++	@$(NORMAL_UNINSTALL)
++	@list='$(pkgconfig_DATA)'; for p in $$list; do \
++	  f="`echo $$p | sed -e 's|^.*/||'`"; \
++	  echo " rm -f '$(DESTDIR)$(pkgconfigdir)/$$f'"; \
++	  rm -f "$(DESTDIR)$(pkgconfigdir)/$$f"; \
++	done
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
+@@ -549,7 +570,7 @@
+ 	done
+ check-am: all-am
+ check: check-recursive
+-all-am: Makefile
++all-am: Makefile $(pkgconfig_DATA)
+ installdirs: installdirs-recursive
+ installdirs-am:
+ install: install-recursive
+@@ -594,7 +615,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local
++install-data-am: install-data-local install-pkgconfigDATA
+ 
+ install-exec-am:
+ 
+@@ -620,7 +641,7 @@
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-info-am uninstall-local
++uninstall-am: uninstall-info-am uninstall-local uninstall-pkgconfigDATA
+ 
+ uninstall-info: uninstall-info-recursive
+ 
+@@ -631,12 +652,13 @@
+ 	html-am info info-am install install-am install-data \
+ 	install-data-am install-data-local install-exec \
+ 	install-exec-am install-info install-info-am install-man \
+-	install-strip installcheck installcheck-am installdirs \
++	install-pkgconfigDATA install-strip installcheck \
++	installcheck-am installdirs \
+ 	installdirs-am maintainer-clean maintainer-clean-generic \
+ 	maintainer-clean-recursive mostlyclean mostlyclean-generic \
+ 	mostlyclean-libtool mostlyclean-recursive pdf pdf-am ps ps-am \
+ 	tags tags-recursive uninstall uninstall-am uninstall-info-am \
+-	uninstall-local
++	uninstall-pkgconfigDATA uninstall-local
+ 
+ 
+ all-am: $(TARGET)
+@@ -652,14 +674,14 @@
+ 
+ install-data-local:
+ 	@if test -n '$(TARGET)'; then                       \
+-	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package dbus-sharp /gacdir $(DESTDIR)$(libdir)";    \
+-	  $(GACUTIL) /i $(ASSEMBLY) /f /package dbus-sharp /gacdir $(libdir) /root $(DESTDIR)$(libdir) || exit 1; \
++	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package dbus-sharp /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";    \
++	  $(GACUTIL) /i $(ASSEMBLY) /f /package dbus-sharp /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir) || exit 1; \
+ 	fi
+ 
+ uninstall-local:
+ 	@if test -n '$(TARGET)'; then                       \
+-	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package dbus-sharp /gacdir $(DESTDIR)$(libdir)";  \
+-	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package dbus-sharp /gacdir $(libdir) /root $(DESTDIR)$(libdir) || exit 1;   \
++	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package dbus-sharp /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";  \
++	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package dbus-sharp /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)|| exit 1;   \
+ 	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

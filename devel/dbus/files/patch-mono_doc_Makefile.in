@@ -1,0 +1,17 @@
+--- mono/doc/Makefile.in.orig	Sun Feb 27 16:41:42 2005
++++ mono/doc/Makefile.in	Sun Feb 27 16:50:51 2005
+@@ -435,10 +435,10 @@
+ 
+ 
+ @ENABLE_MONODOC_TRUE@install-data-local:
+-@ENABLE_MONODOC_TRUE@	install -d -m 755 $(DESTDIR)/`monodoc --get-sourcesdir`
+-@ENABLE_MONODOC_TRUE@	install -m 644 $(srcdir)/dbus-sharp-docs.source $(DESTDIR)/`monodoc --get-sourcesdir`
+-@ENABLE_MONODOC_TRUE@	install -m 644 $(srcdir)/dbus-sharp-docs.tree $(DESTDIR)/`monodoc --get-sourcesdir`
+-@ENABLE_MONODOC_TRUE@	install -m 644 $(srcdir)/dbus-sharp-docs.zip $(DESTDIR)/`monodoc --get-sourcesdir`
++@ENABLE_MONODOC_TRUE@	install -d -m 755 $(DESTDIR)%%LOCALBASE%%/lib/monodoc/sources
++@ENABLE_MONODOC_TRUE@	install -m 644 $(srcdir)/dbus-sharp-docs.source $(DESTDIR)%%LOCALBASE%%/lib/monodoc/sources
++@ENABLE_MONODOC_TRUE@	install -m 644 $(srcdir)/dbus-sharp-docs.tree $(DESTDIR)%%LOCALBASE%%/lib/monodoc/sources
++@ENABLE_MONODOC_TRUE@	install -m 644 $(srcdir)/dbus-sharp-docs.zip $(DESTDIR)%%LOCALBASE%%/lib/monodoc/sources
+ 
+ @ENABLE_MONODOC_TRUE@uninstall-local:
+ @ENABLE_MONODOC_TRUE@	rm -f $(DESTDIR)/`monodoc --get-sourcesdir`/dbus-sharp-docs.source
