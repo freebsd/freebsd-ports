@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tk-Getopt
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
@@ -23,4 +23,10 @@ PERL_CONFIGURE=	yes
 MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Tk::Getopt.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=         Port requires perl 5.8.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
