@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 #PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
@@ -26,15 +26,36 @@ USE_RC_SUBR=	gkrellmd.sh
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 
+.if defined(WITH_GNUTLS) && defined(WITH_OPENSSL)
+BROKEN=		"GnuTLS and OpenSSL is mutually exclusive."
+.endif
+
+.if !defined(WITH_OPENSSL) && !defined(WITH_GNUTLS) && !defined(WITHOUT_GNUTLS)
+WITH_GNUTLS=	yes
+.endif
+
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
 INSTALL_WRKSRC=	${WRKSRC}/server
 USE_GNOME=	glib12
 .else
 USE_GNOME=	gtk20
+.if defined(WITHOUT_NLS)
+MAKE_ENV+=	enable_nls=0
+.else
 USE_GETTEXT=	yes
+.endif
 USE_XLIB=	yes
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls-openssl.12:${PORTSDIR}/security/gnutls
+MAKE_ENV+=	GNUTLSINC=${LOCALBASE}/include GNUTLSLIB=${LOCALBASE}/lib \
+		without-ssl=1
+.elif defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
+MAKE_ENV+=	without-gnutls=1
+.else
+MAKE_ENV+=	without-gnutls=1 without-ssl=1
+.endif
 .endif
 
 USE_BZIP2=	yes
@@ -42,9 +63,14 @@ USE_GMAKE=	yes
 
 PLIST_SUB=	PREFIX=${PREFIX}
 .if defined(GKRELLM_SERVER_ONLY)
-PLIST_SUB+=	CLIENT="@comment "
+PLIST_SUB+=	CLIENT="@comment " NLS="@comment "
 .else
 PLIST_SUB+=	CLIENT=""
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
 #MAN1=		gkrellm.1
 .endif
 MAN8=		gkrellmd.8

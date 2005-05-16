@@ -1,0 +1,26 @@
+Index: src/configure
+diff -u src/configure.orig src/configure
+--- src/configure.orig	Tue May 10 03:54:30 2005
++++ src/configure	Mon May 16 18:44:38 2005
+@@ -48,8 +48,8 @@
+ 	}
+ EOF
+ 
+-$CC ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+-$CC test.o -o test ${PKG_LIBS} -lgnutls-openssl 2>& 5
++$CC ${PKG_INCLUDE} -I${GNUTLSINC} -c test.c -o test.o 2>& 5
++$CC test.o -o test ${PKG_LIBS} -L${GNUTLSLIB} -lgnutls-openssl 2>& 5
+ 
+ if [ -e ./test ] && ./test
+ then
+@@ -88,8 +88,8 @@
+ 	}
+ EOF
+ 
+-$CC ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+-$CC test.o -o test ${PKG_LIBS} -lssl -lcrypto 2>& 5
++$CC ${PKG_INCLUDE} -I${OPENSSLINC} -c test.c -o test.o 2>& 5
++$CC test.o -o test ${PKG_LIBS} -L${OPENSSLLIB} -lssl -lcrypto 2>& 5
+ 
+ if [ -e ./test ] && ./test
+ then

@@ -1,17 +1,30 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	Wed Dec 17 01:53:06 2003
-+++ src/Makefile	Thu Dec 18 04:30:43 2003
-@@ -31,7 +31,7 @@
+--- src/Makefile.orig	Tue May 10 01:54:03 2005
++++ src/Makefile	Mon May 16 18:38:15 2005
+@@ -32,16 +32,18 @@
+ 	CONFIGURE_ARGS += --without-ssl
+ endif
+ 
+-DUMMY_VAR := $(shell ./configure $(CONFIGURE_ARGS))
++DUMMY_VAR := $(shell env OPENSSLINC=$(OPENSSLINC) OPENSSLLIB=$(OPENSSLLIB) \
++		GNUTLSINC=$(GNUTLSINC) GNUTLSLIB=$(GNUTLSLIB) \
++		./configure $(CONFIGURE_ARGS))
+ 
+ HAVE_GNUTLS = $(shell grep -c HAVE_GNUTLS configure.h)
  HAVE_SSL = $(shell grep -c HAVE_SSL configure.h)
  
+ ifeq ($(HAVE_GNUTLS),1)
+-    SSL_LIBS ?= -lgnutls-openssl
++    SSL_LIBS ?= -L$(GNUTLSLIB) -lgnutls-openssl
+ else
  ifeq ($(HAVE_SSL),1)
 -    SSL_LIBS ?= -lssl -lcrypto
 +    SSL_LIBS ?= -L$(OPENSSLLIB) -lssl -lcrypto
  else
      EXTRAOBJS ?= md5c.o
  endif
-@@ -45,8 +45,12 @@
+@@ -56,8 +58,16 @@
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
@@ -19,8 +32,12 @@ diff -u src/Makefile.orig src/Makefile
 +FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
  FLAGS+= $(PTHREAD_INC)
 +
++ifeq ($(HAVE_GNUTLS),1)
++    FLAGS+= -I$(GNUTLSINC)
++else
 +ifeq ($(HAVE_SSL),1)
 +    FLAGS+= -I$(OPENSSLINC)
++endif
 +endif
  
  LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS)
