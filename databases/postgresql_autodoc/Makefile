@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql_autodoc
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rbt.ca/autodoc/binaries/
 DIST_SUBDIR=	postgresql
