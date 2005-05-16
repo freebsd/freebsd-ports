@@ -213,19 +213,19 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.2-test1
-PORTREVISION=	1
+DISTVERSION=	0.8.2.20050516
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
+MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
 		http://people.freebsd.org/~ahze/distfiles/:mozilla
+#		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
 #		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	ahze/:mozilla
 PKGNAMESUFFIX?=	-devel${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.2.//}${EXTRACT_SUFX} \
 		vlc-intf-mozilla-plugin-0.1${EXTRACT_SUFX}:mozilla
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -236,14 +236,14 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 CONFLICTS=	vlc-*-0.8.1*
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.1.//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.2.//}
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
 ### BROKEN ###
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
@@ -252,7 +252,6 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget libxml2
 USE_REINPLACE=	yes
 WANT_SDL=	yes
-USE_XLIB=	yes
 USE_ICONV=	yes
 
 FAKEDIR=	${WRKDIR}/fake
@@ -342,6 +341,7 @@ OPTIONS=	AALIB "Console graphics support" Off \
 		TRANSCODE "Depends on multimedia/transcode" Off \
 		TWOLAME "Twolame Mpeg layer 2 audio Support" Off \
 		VORBIS "Vorbis support (implies WITH_OGG)" On \
+		WXGTK "WxGtk+2 frontend" On \
 		X264 "H.264 AVC video codec" Off
 
 .include <bsd.port.pre.mk>
