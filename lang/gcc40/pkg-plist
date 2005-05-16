@@ -32,16 +32,13 @@ include/mf-runtime.h
 %%LIBJAVA%%bin/jv-convert40
 %%LIBJAVA%%include/ffi.h
 %%LIBJAVA%%lib/libffi.a
-%%LIBJAVA%%lib/libffi.la
 %%LIBJAVA%%lib/libgij.a
-%%LIBJAVA%%lib/libgij.la
 %%LIBJAVA%%lib/logging.properties
-%%LIBJAVA%%lib/pkgconfig/libgcj.pc
-%%LIBJAVA%%@dirrm lib/pkgconfig
 %%LIBJAVA%%lib/security/classpath.security
 %%LIBJAVA%%lib/security/libgcj.security
 %%LIBJAVA%%@dirrm lib/security
 %%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
+%%LIBJAVA%%libdata/pkgconfig/libgcj.pc
 @comment Insert PLIST.lib here
 @comment -=[ begin PLIST.lib ]=-
 @comment -=[ end PLIST.lib ]=-
