@@ -5,6 +5,7 @@ bin/monodocs2html
 bin/monodocs2slashdoc
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
+lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.mdb
 lib/mono/gtk-sharp/monodoc.dll
 lib/monodoc/assembler.exe
 lib/monodoc/browser.exe
