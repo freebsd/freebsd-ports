@@ -1,0 +1,12 @@
+S-Lang is a multi-platform programmer's library designed to
+allow a developer to create robust multi-platform software.
+
+It provides facilities required by interactive applications
+such as display/screen management, keyboard input, keymaps,
+and so on.
+
+The most exciting feature of the library is the slang
+interpreter that may be easily embedded into a program to
+make it extensible. 
+
+WWW:	http://www.s-lang.org
