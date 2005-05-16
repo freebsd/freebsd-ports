@@ -28,7 +28,4 @@ MAN1=		pkg-config.1
 CONFIGURE_ARGS=	--disable-threads \
 		--with-pc-path="${PREFIX}/libdata/pkgconfig:${LOCALBASE}/libdata/pkgconfig:${X11BASE}/libdata/pkgconfig"
 
-post-install:
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-
 .include <bsd.port.post.mk>

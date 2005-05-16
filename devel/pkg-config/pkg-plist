@@ -1,8 +1,2 @@
-@exec mkdir -p %D/libdata/pkgconfig
 bin/pkg-config
 share/aclocal/pkg.m4
-@comment The files in these directories should only be removed if you
-@comment remove the complete GNOME installation. If this is only an
-@comment upgrade, don't throw them out!
-@unexec echo "If you are only upgrading, do not remove %D/libdata/pkgconfig"
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
