@@ -1,0 +1,38 @@
+------------------------------------------------------------------
+This port has installed following files in %%DATADIR%%:
+
+  - LICENSE : License terms,
+  - ipw2100-1.3-i.fw : IBSS mode (aka ad-hoc mode) firmware,
+  - ipw2100-1.3-p.fw : Monitor mode firmware,
+  - ipw2100-1.3.fw : BSS mode (aka infrastructure mode) firmware.
+
+Ensure you've read license terms carefully before you use this
+firmware.
+
+You must choose the correct image depending on how you want to
+use your adapter.
+
+For instance, to download firmware for BSS mode:
+
+  # ipwcontrol -i ipw0 \
+	-f %%DATADIR%%/ipw2100-1.3.fw
+
+The port has installed a startup script (ipw.sh). Add these lines
+to /etc/rc.conf to use it :
+
+  - ipw_enable (bool) : defaults to "NO", set it to "YES" to
+    use the startup script.
+  - ipw_interfaces (str) : defaults to "ipw0", override it to
+    change to interface names list (optional).
+  - ipw_mode_<iface> (str) : defaults to "bss", possible values
+    are bss, ibss and monitor (optional).
+
+Note: 
+
+This port requires ipw(4) driver which has not been MFC'ed to
+RELENG_5 yet. Point your web browser at [1] and install it by hand
+if not already done.
+
+[1] http://damien.bergamini.free.fr/ipw/
+
+------------------------------------------------------------------
