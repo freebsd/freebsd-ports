@@ -7,7 +7,7 @@
 
 PORTNAME=	psi
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,12 +26,38 @@ USE_QT_VER=	3
 
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
-		PTHREAD_LDFLAGS=${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${X11BASE} --disable-kde \
+		PTHREAD_LDFLAGS=${PTHREAD_LIBS} \
+		KDEDIR=${LOCALBASE}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${X11BASE} \
 		--with-qca-inc=${X11BASE}/include/plugins/qca \
 		--with-qca-lib=${X11BASE}/lib
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+
+.if defined(WITH_KDE)
+LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
+_NO_KDE_CONFTARGET_HACK=	yes
+PLIST_SUB+=	KDE=""
+.else
+CONFIGURE_ARGS+=	--disable-kde
+PLIST_SUB+=	KDE="@comment "
+.endif
+
+pre-everything::
+	@${ECHO} "============================================================="
+	@${ECHO}
+	@${ECHO} "You can build ${PKGNAME} with the following options:"
+	@${ECHO}
+	@${ECHO} "WITH_KDE	enable kde tray support"
+	@${ECHO}
+	@${ECHO} "============================================================="
+
+pre-install:
+.if defined(WITH_KDE)
+	@for size in 16x16 32x32 48x48; do \
+	${MKDIR} ${LOCALBASE}/share/icons/hicolor/${size}/apps; \
+	done
+.endif
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/psi
