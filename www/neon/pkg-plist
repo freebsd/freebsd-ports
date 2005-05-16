@@ -80,5 +80,4 @@ libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/using-neon.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/libdata/pkgconfig > /dev/null 2>&1 || true
 @dirrm include/neon

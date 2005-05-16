@@ -65,4 +65,3 @@ lib/libwftk-0.7.a
 libdata/pkgconfig/wftk-0.7.pc
 @dirrm include/wftk-0.7/wftk
 @dirrm include/wftk-0.7
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

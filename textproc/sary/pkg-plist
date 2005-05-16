@@ -23,7 +23,6 @@ lib/libsary.la
 lib/libsary.so
 lib/libsary.so.9
 libdata/pkgconfig/sary.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 %%PORTDOCS%%share/doc/sary/en/libsary.html
 %%PORTDOCS%%share/doc/sary/en/suffix-array.html
 %%PORTDOCS%%share/doc/sary/images/figure1.png

@@ -226,4 +226,3 @@ share/aclocal/gsl.m4
 %%PORTDOCS%%%%DOCSDIR%%/gsl-ref.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/gsl
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

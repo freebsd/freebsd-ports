@@ -71,4 +71,3 @@ lib/libpqxx.so
 lib/libpqxx-%%PORTVERSION%%.so
 libdata/pkgconfig/libpqxx.pc
 @dirrm include/pqxx
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

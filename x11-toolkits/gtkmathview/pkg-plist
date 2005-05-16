@@ -27,4 +27,3 @@ share/gtkmathview/math-engine-configuration.dtd
 share/gtkmathview/math-engine-configuration.xml
 share/gtkmathview/t1.config
 @dirrm share/gtkmathview
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

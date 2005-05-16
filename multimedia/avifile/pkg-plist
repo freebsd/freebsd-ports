@@ -112,7 +112,6 @@ share/avifile/pixmaps/up.ppm
 @dirrm share/doc/avifile
 @dirrm share/avifile/pixmaps
 @dirrm share/avifile
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/lib/avifile/vidix 2>/dev/null || true
 @dirrm lib/avifile
 @dirrm include/avifile

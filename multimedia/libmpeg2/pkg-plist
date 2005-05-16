@@ -13,5 +13,4 @@ lib/libmpeg2convert.so.0
 lib/libvo.a
 libdata/pkgconfig/libmpeg2.pc
 libdata/pkgconfig/libmpeg2convert.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/mpeg2dec

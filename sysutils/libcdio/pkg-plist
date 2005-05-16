@@ -39,5 +39,4 @@ libdata/pkgconfig/libcdio.pc
 libdata/pkgconfig/libcdio_cdda.pc
 libdata/pkgconfig/libcdio_paranoia.pc
 libdata/pkgconfig/libiso9660.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/cdio

@@ -108,7 +108,6 @@ do-install:
 		${PREFIX}/share/xml/iso-codes/iso_4217.xml
 	@${INSTALL_SCRIPT} ${WRKSRC}/iso_639/iso_639.xml \
 		${PREFIX}/share/xml/iso-codes/iso_639.xml
-	@${MKDIR} ${PREFIX}/libdata/pkgconfig
 	@${INSTALL_SCRIPT} ${WRKSRC}/iso-codes.pc \
 		${PREFIX}/libdata/pkgconfig/iso-codes.pc
 	@${MKDIR} ${PREFIX}/share/iso-codes
