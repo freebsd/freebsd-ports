@@ -9,5 +9,4 @@ share/doc/libshout/README
 share/doc/libshout/example.c
 share/doc/libshout/nonblocking.c
 @dirrm share/doc/libshout
-@dirrm libdata/pkgconfig
 @dirrm include/shout
