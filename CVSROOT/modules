@@ -5262,6 +5262,7 @@ libsigc++20	ports/devel/libsigc++20
 libsigcx	ports/devel/libsigcx
 libsigsegv	ports/devel/libsigsegv
 libslang	ports/devel/libslang
+libslang2	ports/devel/libslang2
 libsmi		ports/net-mgmt/libsmi
 libsndfile	ports/audio/libsndfile
 libsocket++	ports/net/libsocket++
