@@ -1,0 +1,40 @@
+bin/f-spot
+lib/f-spot/f-spot.exe
+lib/f-spot/f-spot.exe.config
+lib/f-spot/libfspot.a
+lib/f-spot/libfspot.so
+lib/f-spot/libfspot.so.0
+lib/f-spot/libfspoteog.a
+lib/f-spot/libfspoteog.so
+lib/f-spot/libfspoteog.so.0
+lib/f-spot/libfspotjpegtran.a
+lib/f-spot/libfspotjpegtran.so
+lib/f-spot/libfspotjpegtran.so.0
+lib/f-spot/libgphoto2-sharp.dll
+lib/f-spot/libgphoto2-sharp.dll.config
+share/gnome/applications/f-spot.desktop
+share/gnome/pixmaps/f-spot-logo.png
+share/locale/bg/LC_MESSAGES/f-spot.mo
+share/locale/ca/LC_MESSAGES/f-spot.mo
+share/locale/cs/LC_MESSAGES/f-spot.mo
+share/locale/da/LC_MESSAGES/f-spot.mo
+share/locale/de/LC_MESSAGES/f-spot.mo
+share/locale/el/LC_MESSAGES/f-spot.mo
+share/locale/en_CA/LC_MESSAGES/f-spot.mo
+share/locale/en_GB/LC_MESSAGES/f-spot.mo
+share/locale/es/LC_MESSAGES/f-spot.mo
+share/locale/eu/LC_MESSAGES/f-spot.mo
+share/locale/fr/LC_MESSAGES/f-spot.mo
+share/locale/hu/LC_MESSAGES/f-spot.mo
+share/locale/it/LC_MESSAGES/f-spot.mo
+share/locale/ja/LC_MESSAGES/f-spot.mo
+share/locale/nb/LC_MESSAGES/f-spot.mo
+share/locale/nl/LC_MESSAGES/f-spot.mo
+share/locale/no/LC_MESSAGES/f-spot.mo
+share/locale/pl/LC_MESSAGES/f-spot.mo
+share/locale/rw/LC_MESSAGES/f-spot.mo
+share/locale/sv/LC_MESSAGES/f-spot.mo
+share/locale/zh_CN/LC_MESSAGES/f-spot.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrm lib/f-spot

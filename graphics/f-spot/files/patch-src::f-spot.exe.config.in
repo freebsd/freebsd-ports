@@ -1,0 +1,29 @@
+--- src/f-spot.exe.config.in.orig	Sun May 15 22:07:34 2005
++++ src/f-spot.exe.config.in	Sun May 15 22:07:40 2005
+@@ -1,14 +1,14 @@
+ <configuration>
+-  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so.0"/>
+-  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+-  <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0.so.0"/>
+-  <dllmap dll="libgdk-2.0-0.dll" target="libgdk-x11-2.0.so.0"/>
+-  <dllmap dll="libgdk_pixbuf-2.0-0.dll" target="libgdk_pixbuf-2.0.so.0"/>
+-  <dllmap dll="libgnomevfs-2-0.dll" target="libgnomevfs-2.so.0"/>
+-  <dllmap dll="libgnomeui-2-0.dll" target="libgnomeui-2.so.0"/>
+-  <dllmap dll="libfspot" target="@expanded_libdir@/f-spot/libfspot.so.0"/>
+-  <dllmap dll="libfspoteog" target="@expanded_libdir@/f-spot/libfspoteog.so.0"/>
+-  <dllmap dll="libfspotjpeg" target="@expanded_libdir@/f-spot/libfspotjpg.so.0"/>
+-  <dllmap dll="liblcms-1.0.0.dll" target="liblcms.so.1"/>
+-  <dllmap dll="libexif.dll" target="libexif.so.@EXIF_SOVERSION@"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so"/>
++  <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0.so"/>
++  <dllmap dll="libgdk-2.0-0.dll" target="libgdk-x11-2.0.so"/>
++  <dllmap dll="libgdk_pixbuf-2.0-0.dll" target="libgdk_pixbuf-2.0.so"/>
++  <dllmap dll="libgnomevfs-2-0.dll" target="libgnomevfs-2.so"/>
++  <dllmap dll="libgnomeui-2-0.dll" target="libgnomeui-2.so"/>
++  <dllmap dll="libfspot" target="@expanded_libdir@/f-spot/libfspot.so"/>
++  <dllmap dll="libfspoteog" target="@expanded_libdir@/f-spot/libfspoteog.so"/>
++  <dllmap dll="libfspotjpeg" target="@expanded_libdir@/f-spot/libfspotjpg.so"/>
++  <dllmap dll="liblcms-1.0.0.dll" target="liblcms.so"/>
++  <dllmap dll="libexif.dll" target="libexif.so"/>
+ </configuration>

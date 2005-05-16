@@ -1,0 +1,6 @@
+F-Spot is an application designed to provide personal photo management
+to the GNOME desktop. Plans include import, export, printing and
+advanced sorting of digital images. F-Spot is written in C# using Mono
+and Gtk#.
+
+WWW: http://www.gnome.org/projects/f-spot/

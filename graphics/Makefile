@@ -90,6 +90,7 @@
     SUBDIR += exifprobe
     SUBDIR += exiftags
     SUBDIR += exiv2
+    SUBDIR += f-spot
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += fig2pstricks
