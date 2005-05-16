@@ -1,0 +1,14 @@
+--- Tomboy/Tomboy.exe.config.in.orig	Mon May 16 13:31:52 2005
++++ Tomboy/Tomboy.exe.config.in	Mon May 16 13:32:17 2005
+@@ -1,7 +1,7 @@
+ <configuration>
+-  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so.0"/>
+-  <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0.so.0"/>	
+-  <dllmap dll="libgtkspell" target="libgtkspell.so.0"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so"/>
++  <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0.so"/>	
++  <dllmap dll="libgtkspell" target="libgtkspell.so"/>
+   <dllmap dll="libtomboy" target="libtomboy.so"/>
+-  <dllmap dll="panel-applet-2" target="libpanel-applet-2.so.0"/>
++  <dllmap dll="panel-applet-2" target="libpanel-applet-2.so"/>
+ </configuration>
