@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epoz
-PORTVERSION=	0.8.4
+PORTVERSION=	0.9.0
 CATEGORIES=	www zope
 MASTER_SITES=	http://mjablonski.zope.de/Epoz/releases/
 PKGNAMEPREFIX=	zope-
