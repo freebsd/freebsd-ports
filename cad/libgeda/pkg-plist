@@ -6,9 +6,10 @@ include/libgeda/o_types.h
 include/libgeda/prototype.h
 include/libgeda/struct.h
 include/libgeda/libgeda.h
-lib/libgeda.so.20
+include/libgeda/i_vars.h
+include/libgeda/papersizes.h
+lib/libgeda.so.23
 lib/libgeda.so
-lib/libgeda.la
 lib/libgeda.a
 libdata/pkgconfig/libgeda.pc
 @dirrm include/libgeda
