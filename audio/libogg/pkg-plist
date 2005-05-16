@@ -80,7 +80,6 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisword2.png
 %%PORTDOCS%%%%DOCSDIR%%/white-ogg.png
 %%PORTDOCS%%%%DOCSDIR%%/white-xifish.png
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/ogg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ogg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
