@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-mud
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -15,15 +15,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc
 
 USE_X_PREFIX=	yes
-INSTALLS_OMF=	yes
-USE_PYTHON=	yes
 USE_GNOME=	gnomehack gnometarget gnomeprefix intlhack libgnomeui \
 		pygtk2 vte
+USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-mccp
+INSTALLS_OMF=	yes
 
 MAN6=		gnome-mud.6
 GCONF_SCHEMAS=	gnome-mud.schemas
