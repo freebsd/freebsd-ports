@@ -7,6 +7,7 @@
 
 PORTNAME=	pstngw
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.openh323.org/bin/
 DISTNAME=	pstngw_${PORTVERSION}

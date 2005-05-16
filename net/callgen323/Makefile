@@ -6,6 +6,7 @@
 
 PORTNAME=	callgen
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/
 DISTNAME=	callgen323_${PORTVERSION}
