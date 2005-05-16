@@ -13,6 +13,13 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.5.0.20050512.1145
+#
+
+BUGFIX: fixed signature embedding on malformatted boundary bug
+
+
+###########################################################################
 # dspam-devel-3.5.0.20050506.0930
 #
 

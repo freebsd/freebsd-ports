@@ -20,7 +20,7 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.5.0
-SNAP_DATE=	.20050506.0930
+SNAP_DATE=	.20050512.1145
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
@@ -104,9 +104,9 @@ STRIP=
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-_UPD_LINE_NO=	22
+_UPD_LINE_NO=	6
 
-CONFLICTS=	dspam-2* dspam-3*
+CONFLICTS=	dspam-[0-9]*
 
 SIGNATURE_LIFE?=	15
 
