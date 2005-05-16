@@ -1,15 +1,8 @@
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gfax.schema > /dev/null || /usr/bin/true
-etc/gconf/schemas/gfax.schema
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gfax.schema > /dev/null || /usr/bin/true
-@unexec %D/share/gnome/gfax/printer-setup.sh --remove
-share/gnome/gfax/printer-setup.sh
-@exec %D/share/gnome/gfax/printer-setup.sh --install
 bin/gfax
 bin/gfaxlpr
-bin/mono-gfax.exe
+lib/gfax/gfax.exe
 share/gnome/applications/gfax.desktop
-share/gnome/gfax/GFAX.xml
-share/gnome/gfax/GNOME-GFAX-PS.xml
-share/gnome/gfax/fax-g3.profile
+share/gnome/libgnomeprint/models/GNOME-GFAX-PS.xml
+share/gnome/libgnomeprint/printers/GFAX.xml
 share/gnome/pixmaps/gfax.png
-@dirrm share/gnome/gfax
+share/gnome/pixmaps/send.png

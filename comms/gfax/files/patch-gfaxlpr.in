@@ -1,16 +1,16 @@
---- gfaxlpr.orig	Thu Jul  8 23:11:51 2004
-+++ gfaxlpr	Thu Jul  8 23:50:40 2004
-@@ -11,10 +11,10 @@
+--- gfaxlpr.in.orig	Mon Jan 31 18:03:09 2005
++++ gfaxlpr.in	Thu May 12 18:15:39 2005
+@@ -11,9 +11,9 @@
  #  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECT-
  #  ION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  #
 -RNAME=G$$
  # don't change this spool directory, gfax uses it.
- SPOOL_DIR=/var/spool/gfax
+-SPOOL_DIR=@eprefix@/var/spool/gfax
++SPOOL_DIR=/var/spool/gfax
 +RNAME=`mktemp -q $SPOOL_DIR/D.XXXXXX`
- MYPATH=/usr/bin
  
 -cat > $SPOOL_DIR/D.$RNAME
--mono $MYPATH/mono-gfax.exe -f $SPOOL_DIR/D.$RNAME
+-exec mono @prefix@/lib/gfax/gfax.exe -f $SPOOL_DIR/D.$RNAME &
 +cat > $RNAME
-+mono $MYPATH/mono-gfax.exe -f $RNAME
++exec mono @prefix@/lib/gfax/gfax.exe -f $RNAME &
