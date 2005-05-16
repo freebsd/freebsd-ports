@@ -1,11 +1,14 @@
---- src/muine.exe.config.in.orig	Sat Jun  5 12:48:33 2004
-+++ src/muine.exe.config.in	Thu Jul 15 21:59:47 2004
-@@ -1,6 +1,6 @@
+--- src/muine.exe.config.in.orig	Mon Jan 24 06:58:11 2005
++++ src/muine.exe.config.in	Thu May 12 16:57:20 2005
+@@ -1,7 +1,7 @@
  <configuration>
 -  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so.0"/>
+-  <dllmap dll="libgtk-2.0-0.dll" target="libgtk-x11-2.0.so.0"/>
 -  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+-  <dllmap dll="libgnomevfs-2-0.dll" target="libgnomevfs-2.so.0"/>
 +  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so"/>
++  <dllmap dll="libgtk-2.0-0.dll" target="libgtk-x11-2.0.so"/>
 +  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so"/>
-   <dllmap dll="libgnomevfs-2.dll" target="libgnomevfs-2.so"/>
-   <dllmap dll="libmuine" target="@prefix@/lib/muine/libmuine.so"/>
++  <dllmap dll="libgnomevfs-2-0.dll" target="libgnomevfs-2.so"/>
+   <dllmap dll="libmuine" target="@pkglibdir@/libmuine.so"/>
  </configuration>
