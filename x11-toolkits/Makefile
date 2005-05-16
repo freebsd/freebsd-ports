@@ -39,6 +39,7 @@
     SUBDIR += gtk--
     SUBDIR += gtk--2
     SUBDIR += gtk-sharp
+    SUBDIR += gtk-sharp-devel
     SUBDIR += gtk12
     SUBDIR += gtk12-apireference
     SUBDIR += gtk20
