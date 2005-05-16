@@ -15,9 +15,11 @@ share/locale/nl/LC_MESSAGES/gtklp.mo
 share/locale/pl/LC_MESSAGES/gtklp.mo
 share/locale/pt_BR/LC_MESSAGES/gtklp.mo
 share/locale/ru/LC_MESSAGES/gtklp.mo
+share/locale/zh_CN/LC_MESSAGES/gtklp.mo
+share/locale/zh_TW/LC_MESSAGES/gtklp.mo
+@unexec rmdir %D/share/locale/cz/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/cz 2> /dev/null || true
 @unexec rmdir %D/share/locale/cht/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/cht 2> /dev/null || true
 @unexec rmdir %D/share/locale/chs/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/chs 2> /dev/null || true
-@unexec rmdir %D/share/locale/cz/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/cz 2> /dev/null || true
