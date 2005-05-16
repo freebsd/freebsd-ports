@@ -10,6 +10,7 @@ PORTVERSION=	2.3.0
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
+PKGNAMESUFFIX=	-devel
 DISTNAME=	abiword-${PORTVERSION}
 DIST_SUBDIR=	AbiWord
 
