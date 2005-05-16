@@ -1,13 +1,19 @@
 bin/muine
-lib/muine/AmazonSearchService.dll
+lib/dbus-1.0/services/org.gnome.Muine.service
+lib/mono/gac/muine-dbus/1.0.0.0__e6bf890338fa2913/muine-dbus.dll
+lib/mono/gac/muine-plugin/1.0.0.0__e6bf890338fa2913/muine-plugin.dll
+lib/mono/muine/muine-dbus.dll
+lib/mono/muine/muine-plugin.dll
 lib/muine/libmuine.a
 lib/muine/libmuine.so
 lib/muine/libmuine.so.0
 lib/muine/muine.exe
 lib/muine/muine.exe.config
-share/gnome/application-registry/muine.applications
+libdata/pkgconfig/muine-dbus.pc
+libdata/pkgconfig/muine-plugin.pc
 share/gnome/applications/muine.desktop
 share/gnome/pixmaps/muine.png
+share/locale/az/LC_MESSAGES/muine.mo
 share/locale/bg/LC_MESSAGES/muine.mo
 share/locale/ca/LC_MESSAGES/muine.mo
 share/locale/cs/LC_MESSAGES/muine.mo
@@ -16,19 +22,33 @@ share/locale/de/LC_MESSAGES/muine.mo
 share/locale/en_CA/LC_MESSAGES/muine.mo
 share/locale/en_GB/LC_MESSAGES/muine.mo
 share/locale/es/LC_MESSAGES/muine.mo
+share/locale/et/LC_MESSAGES/muine.mo
 share/locale/eu/LC_MESSAGES/muine.mo
+share/locale/fi/LC_MESSAGES/muine.mo
 share/locale/fr/LC_MESSAGES/muine.mo
 share/locale/hr/LC_MESSAGES/muine.mo
 share/locale/hu/LC_MESSAGES/muine.mo
 share/locale/is/LC_MESSAGES/muine.mo
 share/locale/ja/LC_MESSAGES/muine.mo
 share/locale/ko/LC_MESSAGES/muine.mo
+share/locale/lt/LC_MESSAGES/muine.mo
+share/locale/ms/LC_MESSAGES/muine.mo
+share/locale/nb/LC_MESSAGES/muine.mo
 share/locale/nl/LC_MESSAGES/muine.mo
 share/locale/no/LC_MESSAGES/muine.mo
 share/locale/pl/LC_MESSAGES/muine.mo
 share/locale/pt/LC_MESSAGES/muine.mo
 share/locale/pt_BR/LC_MESSAGES/muine.mo
+share/locale/ro/LC_MESSAGES/muine.mo
+share/locale/ru/LC_MESSAGES/muine.mo
+share/locale/rw/LC_MESSAGES/muine.mo
 share/locale/sr/LC_MESSAGES/muine.mo
 share/locale/sr@Latn/LC_MESSAGES/muine.mo
 share/locale/sv/LC_MESSAGES/muine.mo
+share/locale/zh_CN/LC_MESSAGES/muine.mo
 @dirrm lib/muine
+@dirrm lib/mono/muine
+@dirrm lib/mono/gac/muine-plugin/1.0.0.0__e6bf890338fa2913
+@dirrm lib/mono/gac/muine-plugin
+@dirrm lib/mono/gac/muine-dbus/1.0.0.0__e6bf890338fa2913
+@dirrm lib/mono/gac/muine-dbus
