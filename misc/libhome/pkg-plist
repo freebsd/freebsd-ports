@@ -1,4 +1,5 @@
 bin/home_finger
+bin/home_su
 bin/libhome.sh
 etc/home.conf.dist
 include/home/home_version.h
