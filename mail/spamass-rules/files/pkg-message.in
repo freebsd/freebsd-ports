@@ -1,6 +1,6 @@
 *************************************************************************
 
-The custom rulesets are installed in %%LOCALBASE%%/etc/mail/spamassassin
+The custom rulesets are installed in %%PREFIX%%/etc/mail/spamassassin
 
 Before running these rules please do the following:
 

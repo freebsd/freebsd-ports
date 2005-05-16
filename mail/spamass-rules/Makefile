@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20050401
+PORTVERSION=	20050515
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/ \
 		http://web.inforum.at/downloads/
@@ -30,6 +30,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		MANGLED "Looks for obfuscated/gappy words" off \
 		MIMEVLD "Some mime validation rules" off \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
+		ROMANIAN "Catches spam written in Romanian" off \
 		SARE "Installs safe SARE rules" on \
 		SARE1 "Installs more restrictive SARE rules" off \
 		SARE2 "Installs more cpu intensive SARE rules" off \
@@ -38,7 +39,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		TRIPWIRE "Matches 3 chars that shouldn't be together" off \
 		WEEDS "Looks at alphanum, hex, lower-, uppercase chars" on \
 		WEEDS2 "More restrictive than WEEDS, dont use together" off
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SPAMASS_CONF=	etc/mail/spamassassin
@@ -109,30 +110,34 @@ SPAMASS_FILES+=	mime_validate.cf
 SPAMASS_FILES+=	random.cf
 .endif
 
+.if defined(WITH_ROMANIAN)
+SPAMASS_FILES+=	blacklist_ro.cf
+.endif
+
 .if !defined(WITHOUT_SARE)
 .for i in 70_sare_adult.cf 70_sare_bayes_poison_nxm.cf 70_sare_header0.cf \
-	70_sare_html0.cf 70_sare_genlsubj0.cf 70_sare_oem.cf 70_sare_random.cf \
-	70_sare_specific.cf 70_sare_spoof.cf 70_sare_unsub.cf 70_sare_uri.cf \
-	72_sare_redirect_post3.0.0.cf 72_sare_bml_post25x.cf \
-	99_sare_fraud_post25x.cf
+	70_sare_html0.cf 70_sare_genlsubj0.cf 70_sare_oem.cf 70_sare_obfu0.cf \
+	70_sare_random.cf 70_sare_specific.cf 70_sare_spoof.cf \
+	70_sare_unsub.cf 70_sare_uri.cf 72_sare_redirect_post3.0.0.cf \
+	72_sare_bml_post25x.cf 99_sare_fraud_post25x.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
 
 .if defined(WITH_SARE1)
-.for i in 70_sare_header1.cf 70_sare_html1.cf 70_sare_genlsubj1.cf
+.for i in 70_sare_header1.cf 70_sare_html1.cf 70_sare_genlsubj1.cf 70_sare_obfu1.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
 
 .if defined(WITH_SARE2)
-.for i in 70_sare_header2.cf 70_sare_html2.cf 70_sare_genlsubj2.cf
+.for i in 70_sare_header2.cf 70_sare_html2.cf 70_sare_genlsubj2.cf 70_sare_obfu2.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
 
 .if defined(WITH_SARE3)
-.for i in 70_sare_header3.cf 70_sare_html3.cf 70_sare_genlsubj3.cf
+.for i in 70_sare_header3.cf 70_sare_html3.cf 70_sare_genlsubj3.cf 70_sare_obfu3.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
@@ -157,9 +162,6 @@ PLIST_FILES=	${SPAMASS_FILES:S/^/${SPAMASS_CONF}\//}
 
 do-build:
 	@${DO_NADA}
-
-pre-install:
-	@${SED} -e 's|%%LOCALBASE%%|${PREFIX}|g' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${INSTALL_DIR}
