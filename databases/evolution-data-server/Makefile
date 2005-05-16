@@ -42,7 +42,7 @@ PLIST_SUB=	VERSION="1.2" EVO_VERSION="1.2"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600012
+.if ( ( ${OSVERSION} < 504101 ) || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600012 ) )
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedataserver_e-msgport.c
 .endif
 

@@ -40,7 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600012
+.if ( ( ${OSVERSION} < 504101 ) || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600012 ) )
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gthread_gthread-posix.c
 .endif
 
