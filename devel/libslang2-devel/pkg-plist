@@ -1,0 +1,63 @@
+@comment $FreeBSD$
+bin/slsh
+etc/slsh.rc
+include/slang.h
+include/slcurses.h
+lib/libslang.a
+lib/libslang.so.2
+lib/libslang.so
+lib/slang/v2/modules/slsmg-module.so
+lib/slang/v2/modules/termios-module.so
+lib/slang/v2/modules/select-module.so
+lib/slang/v2/modules/fcntl-module.so
+lib/slang/v2/modules/varray-module.so
+lib/slang/v2/modules/pcre-module.so
+lib/slang/v2/modules/png-module.so
+share/slsh/scripts/jpegsize
+share/slsh/scripts/lsrpm
+share/slsh/scripts/sldb
+share/slsh/scripts/svnsh
+share/slsh/arrayfuns.sl
+share/slsh/autoload.sl
+share/slsh/glob.sl
+share/slsh/print.sl
+share/slsh/require.sl
+share/slsh/sldb.sl
+share/slsh/sldbcore.sl
+share/slsh/slshrl.sl
+share/slsh/stkcheck.sl
+share/slsh/structfuns.sl
+share/slsh/slsmg.sl
+share/slsh/termios.sl
+share/slsh/select.sl
+share/slsh/fcntl.sl
+share/slsh/varray.sl
+share/slsh/pcre.sl
+share/slsh/png.sl
+share/slsh/cmaps/cool.map
+share/slsh/cmaps/copper.map
+share/slsh/cmaps/drywet.map
+share/slsh/cmaps/gebco.map
+share/slsh/cmaps/globe.map
+share/slsh/cmaps/gray.map
+share/slsh/cmaps/haxby.map
+share/slsh/cmaps/hot.map
+share/slsh/cmaps/jet.map
+share/slsh/cmaps/no_green.map
+share/slsh/cmaps/ocean.map
+share/slsh/cmaps/polar.map
+share/slsh/cmaps/rainbow.map
+share/slsh/cmaps/red2green.map
+share/slsh/cmaps/relief.map
+share/slsh/cmaps/sealand.map
+share/slsh/cmaps/seis.map
+share/slsh/cmaps/split.map
+share/slsh/cmaps/topo.map
+share/slsh/cmaps/wysiwyg.map
+share/slsh/help/pcrefuns.hlp
+share/slsh/help/pngfuns.hlp
+@dirrm share/slsh/scripts
+@dirrm share/slsh/help
+@dirrm share/slsh/cmaps
+@unexec rmdir %D/share/slsh/local-packages 2>/dev/null || true
+@dirrm share/slsh

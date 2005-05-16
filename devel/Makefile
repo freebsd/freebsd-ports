@@ -487,6 +487,7 @@
     SUBDIR += libsigcx
     SUBDIR += libsigsegv
     SUBDIR += libslang
+    SUBDIR += libslang2
     SUBDIR += libsoup
     SUBDIR += libstatgrab
     SUBDIR += libstrfunc
