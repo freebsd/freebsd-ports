@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- src/c/apache1/Makefile.in.orig	Mon Oct 11 11:34:53 2004
-+++ src/c/apache1/Makefile.in	Mon Oct 11 12:44:59 2004
+--- modules/c/src/apache1/Makefile.in.orig	Mon Oct 11 11:34:53 2004
++++ modules/c/src/apache1/Makefile.in	Mon Oct 11 12:44:59 2004
 @@ -38,8 +38,7 @@
  	$(LIBTOOL) --mode=install $(CP) mod_caucho.la $(apache_libexec)
  	- rm -f $(apache_libexec)/mod_caucho.la

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.0.12
+PORTVERSION=		3.0.13
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -42,8 +42,8 @@ APXS?=			${LOCALBASE}/sbin/apxs
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 PKGMESSAGE=		${WRKDIR}/pkg-message
-REINPLACE_FILES=	${WRKSRC}/src/c/apache1/Makefile.in \
-			${WRKSRC}/src/c/apache2/Makefile.in
+REINPLACE_FILES=	${WRKSRC}/modules/c/src/apache1/Makefile.in \
+			${WRKSRC}/modules/c/src/apache2/Makefile.in
 REPLACE_FILES=		${FILESDIR}/pkg-install \
 			${FILESDIR}/pkg-deinstall \
 			${FILESDIR}/install.sh \
