@@ -29,6 +29,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 GCONF_SCHEMAS=	mcatalog.schemas
 
+BROKEN="doesn't build with Mono 1.1.7 yet"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pixmaps/mcatalog|/pixmaps|g' \
 		${WRKSRC}/images/Makefile.in
