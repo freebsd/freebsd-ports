@@ -17,7 +17,8 @@ COMMENT=	The all-platform eMule p2p client
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
 		curl.3:${PORTSDIR}/ftp/curl
 
-CONFLICTS=	aMule-devel-*
+LATEST_LINK=	aMule1
+CONFLICTS=	aMule-2.* aMule-devel-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix

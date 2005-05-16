@@ -4,37 +4,7 @@ bin/amulecmd
 bin/amulecmdDLG
 bin/amuleweb
 bin/amulewebDLG
-share/gnome/pixmaps/amule.xpm
-share/gnome/applications/amule.desktop
-share/gnome/doc/aMule-1.2.8/ABOUT-NLS
-share/gnome/doc/aMule-1.2.8/AUTHORS
-share/gnome/doc/aMule-1.2.8/Changelog
-share/gnome/doc/aMule-1.2.8/ED2K-Links.HOWTO
-share/gnome/doc/aMule-1.2.8/INSTALL
-share/gnome/doc/aMule-1.2.8/README
-share/gnome/doc/aMule-1.2.8/TODO
-share/gnome/doc/aMule-1.2.8/amulesig.txt
-share/gnome/doc/aMule-1.2.8/eMule-Imports-Status
-share/gnome/doc/aMule-1.2.8/license.txt
-@dirrm share/gnome/doc/aMule-1.2.8
-@unexec rmdir %D/share/gnome/doc 2>/dev/null || true
-share/locale/en/LC_MESSAGES/amule.mo
-share/locale/es/LC_MESSAGES/amule.mo
-share/locale/de/LC_MESSAGES/amule.mo
-share/locale/fr/LC_MESSAGES/amule.mo
-share/locale/it/LC_MESSAGES/amule.mo
-share/locale/ko/LC_MESSAGES/amule.mo
-share/locale/pl/LC_MESSAGES/amule.mo
-share/locale/ee/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ee 2>/dev/null || true
-share/locale/ru/LC_MESSAGES/amule.mo
-share/locale/bg/LC_MESSAGES/amule.mo
-share/locale/es_MX/LC_MESSAGES/amule.mo
-share/locale/pt_BR/LC_MESSAGES/amule.mo
-share/locale/gl/LC_MESSAGES/amule.mo
-share/locale/eu/LC_MESSAGES/amule.mo
-share/locale/nl/LC_MESSAGES/amule.mo
+share/gnome/amuleweb/aMule.tmpl
 share/gnome/amuleweb/webserver/GraphCon.gif
 share/gnome/amuleweb/webserver/GraphDL.gif
 share/gnome/amuleweb/webserver/GraphUL.gif
@@ -76,6 +46,36 @@ share/gnome/amuleweb/webserver/top_bar_bg.gif
 share/gnome/amuleweb/webserver/top_bar_bg2.gif
 share/gnome/amuleweb/webserver/transparent.gif
 share/gnome/amuleweb/webserver/yellow.gif
-share/gnome/amuleweb/aMule.tmpl
+share/gnome/applications/amule.desktop
+share/gnome/doc/aMule-1.2.8/ABOUT-NLS
+share/gnome/doc/aMule-1.2.8/AUTHORS
+share/gnome/doc/aMule-1.2.8/Changelog
+share/gnome/doc/aMule-1.2.8/ED2K-Links.HOWTO
+share/gnome/doc/aMule-1.2.8/INSTALL
+share/gnome/doc/aMule-1.2.8/README
+share/gnome/doc/aMule-1.2.8/TODO
+share/gnome/doc/aMule-1.2.8/amulesig.txt
+share/gnome/doc/aMule-1.2.8/eMule-Imports-Status
+share/gnome/doc/aMule-1.2.8/license.txt
+share/gnome/pixmaps/amule.xpm
+share/locale/bg/LC_MESSAGES/amule.mo
+share/locale/de/LC_MESSAGES/amule.mo
+share/locale/ee/LC_MESSAGES/amule.mo
+share/locale/en/LC_MESSAGES/amule.mo
+share/locale/es/LC_MESSAGES/amule.mo
+share/locale/es_MX/LC_MESSAGES/amule.mo
+share/locale/eu/LC_MESSAGES/amule.mo
+share/locale/fr/LC_MESSAGES/amule.mo
+share/locale/gl/LC_MESSAGES/amule.mo
+share/locale/it/LC_MESSAGES/amule.mo
+share/locale/ko/LC_MESSAGES/amule.mo
+share/locale/nl/LC_MESSAGES/amule.mo
+share/locale/pl/LC_MESSAGES/amule.mo
+share/locale/pt_BR/LC_MESSAGES/amule.mo
+share/locale/ru/LC_MESSAGES/amule.mo
+@dirrm share/gnome/doc/aMule-1.2.8
+@unexec rmdir %D/share/gnome/doc 2>/dev/null || true
+@unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ee 2>/dev/null || true
 @dirrm share/gnome/amuleweb/webserver
 @dirrm share/gnome/amuleweb
