@@ -17,7 +17,7 @@
     SUBDIR += aget
     SUBDIR += aim
     SUBDIR += amsn
-    SUBDIR += amule
+    SUBDIR += amule1
     SUBDIR += amule-devel
     SUBDIR += apache-soap
     SUBDIR += apinger

@@ -3,4 +3,9 @@ aMule, the all-platform eMule p2p client
 aMule is a multiplatform fork of xMule
 client using wxWindows class library.
 
+This is the last version of aMule-1. It
+is maintained for 4.x compatibility. If
+you would like to install aMule-2, see
+amule2 or amule-devel port.
+
 WWW: http://www.amule.org
