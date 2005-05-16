@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/
 MASTER_SITE_SUBDIR=	cafelog
@@ -32,6 +32,7 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST}
+	${CP} ${WRKSRC}/wp-config-sample.php ${WRKSRC}/wp-config.php
 
 do-install:
 	-@${MKDIR} ${PREFIX}/${WORDPRESS}
