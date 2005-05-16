@@ -1,6 +1,6 @@
---- libgc/dbg_mlc.c.orig	Tue May 13 16:59:49 2003
-+++ libgc/dbg_mlc.c	Wed May 12 20:13:19 2004
-@@ -414,6 +414,23 @@
+--- libgc/dbg_mlc.c.orig	Sat Nov 13 13:52:28 2004
++++ libgc/dbg_mlc.c	Thu May  5 17:34:31 2005
+@@ -475,6 +475,23 @@
      GC_register_displacement((word)sizeof(oh) + offset);
  }
  
@@ -24,7 +24,7 @@
  # ifdef __STDC__
      GC_PTR GC_debug_malloc(size_t lb, GC_EXTRA_PARAMS)
  # else
-@@ -428,6 +445,13 @@
+@@ -489,6 +506,13 @@
  {
      GC_PTR result = GC_malloc(lb + DEBUG_BYTES);
      
@@ -38,7 +38,7 @@
      if (result == 0) {
          GC_err_printf1("GC_debug_malloc(%ld) returning NIL (",
          	       (unsigned long) lb);
-@@ -789,6 +813,13 @@
+@@ -858,6 +882,13 @@
      register size_t old_sz;
      register hdr * hhdr;
      
@@ -52,7 +52,7 @@
      if (p == 0) return(GC_debug_malloc(lb, OPT_RA s, i));
      if (base == 0) {
          GC_err_printf1(
-@@ -1094,7 +1125,11 @@
+@@ -1166,7 +1197,11 @@
  }
  
  #ifdef GC_ADD_CALLER
@@ -65,7 +65,7 @@
  #else
  # define RA
  #endif
-@@ -1102,12 +1137,12 @@
+@@ -1174,12 +1209,12 @@
  GC_PTR GC_debug_malloc_replacement(lb)
  size_t lb;
  {

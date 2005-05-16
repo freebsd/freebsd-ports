@@ -1,6 +1,6 @@
---- mono/metadata/assembly.c.orig	Mon Sep  6 13:06:56 2004
-+++ mono/metadata/assembly.c	Sat Oct 30 02:40:05 2004
-@@ -100,7 +100,8 @@
+--- mono/metadata/assembly.c.orig	Tue May  3 15:42:51 2005
++++ mono/metadata/assembly.c	Thu May  5 17:34:31 2005
+@@ -174,7 +174,8 @@
  	const char *path;
  	char **splitted;
  	
