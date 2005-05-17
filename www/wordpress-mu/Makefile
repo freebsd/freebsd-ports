@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	2005.02.23
+PORTVERSION=	2005.05.08
 CATEGORIES=	www
 MASTER_SITES=	http://blogs.linux.ie/download/wpmu/ \
-		http://mu.wordpress.org/download/
+		http://mu.wordpress.org/nightly-builds/
 DISTNAME=	wpmu-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
