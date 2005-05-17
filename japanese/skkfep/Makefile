@@ -6,19 +6,14 @@
 #
 
 PORTNAME=	skkfep
-PORTVERSION=	0.86c
-PORTREVISION=	3
+PORTVERSION=	0.87
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/s/skkfep
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	http://homepage2.nifty.com/aito/skkfep/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK-like Kana-to-Kanji FrontEnd Processor
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		skkfep.1
 PLIST_FILES=	bin/skkfep
