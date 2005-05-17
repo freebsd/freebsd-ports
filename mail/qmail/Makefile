@@ -197,7 +197,10 @@ PLIST_SUB+=	TLS="@comment "
 
 SUB_FILES+=	pkg-message${PKGMESSAGE_SUFFIX} mailer.conf.sample \
 		bootfiles.sed enable-qmail
+PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGMESSAGE?=	${WRKDIR}/pkg-message${PKGMESSAGE_SUFFIX}
+
+CSH?=	/bin/csh
 
 DOCFILES+=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
@@ -304,8 +307,10 @@ WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
 
 .if defined(WITH_RCDLINK)
 PLIST_SUB+=	RCDLINK=""
+RCDLINK=
 .else
 PLIST_SUB+=	RCDLINK="@comment "
+RCDLINK=	\#
 .endif
 
 # Fill SELECTED_OPTIONS with options to write conf-spamcontrol
@@ -448,12 +453,10 @@ post-patch:
 			   /"doc"/d; /"boot","/d' \
 		${WRKSRC}/hier.c
 
-# If you want to change the qmail users, they must be changed in both
-# work/*/conf-users and pkg/INSTALL.
-
 do-configure:
-	@# Create/Check the necessary groups/users
-	@PKG_PREFIX=${PREFIX} ${PKGINSTALL}
+	@${SED} -e 's,%%RCDLINK%%,${RCDLINK2},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
+		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
@@ -473,8 +476,6 @@ do-install:
 		${SED} -f ${WRKDIR}/bootfiles.sed ${FILESDIR}/$i > ${WRKDIR}/${i} ; \
 	fi
 .endfor
-	@# Check again, just in case (ideally should error if not found)
-	@PKG_PREFIX=${PREFIX} ${PKGINSTALL}
 	@${MKDIR} ${DOCSDIR} ${PREFIX}/configure
 	@cd ${WRKSRC} ; ./install
 	${INSTALL_PROGRAM} ${CONFIGUREPROGS} ${PREFIX}/configure
@@ -504,17 +505,7 @@ do-install:
 	@cd ${WRKSRC} && ${CAT} `${CAT} SYSDEPS` \
 		> ${DOCSDIR}/SYSDEPS
 .endif
-.for i in root postmaster mailer-daemon
-	@${TOUCH} ${PREFIX}/alias/.qmail-${i}
-.endfor
-	@# This is not part of qmail proper, hence the 2nd class citizenship
-	@if [ ! -e ${PREFIX}/control/me ]; then \
-		cd ${PREFIX}/configure ; ./config ; \
-	fi
-.if !defined(WITHOUT_RCDLINK)
-	@${MKDIR} ${LOCALBASE}/etc/rc.d
-	@${LN} -sf ${PREFIX}/rc ${LOCALBASE}/etc/rc.d/qmail.sh
-.endif
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
