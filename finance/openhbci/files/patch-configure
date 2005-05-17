@@ -1,0 +1,11 @@
+--- configure.orig	Sat Aug 21 06:41:37 2004
++++ configure	Tue May 17 15:19:54 2005
+@@ -20034,7 +20034,7 @@
+ echo "$as_me:$LINENO: checking if plugin loading is supported" >&5
+ echo $ECHO_N "checking if plugin loading is supported... $ECHO_C" >&6
+ case `basename $CC` in
+-  gcc*)
++  gcc* | cc*)
+      gccversion=`$CC --version`
+      case $gccversion in
+        0.*)
