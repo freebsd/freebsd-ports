@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	saslauthd
-PORTVERSION=	2.1.20
-PORTREVISION=	1
+PORTVERSION=	2.1.21
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -30,7 +30,7 @@ DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 USE_RC_SUBR=	saslauthd.sh
 
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
