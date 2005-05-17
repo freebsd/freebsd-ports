@@ -7,11 +7,11 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.0.38
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
-DISTNAME=	avidemux-${PORTVERSION}rc1
+DISTNAME=	avidemux-${PORTVERSION}
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
@@ -31,7 +31,6 @@ USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_SDL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-		-I${LOCALBASE}/include/ffmpeg \
 		-I${LOCALBASE}/include/a52dec" \
 		LIBFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -82,12 +81,6 @@ LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--with-xvid-as-decoder
 .endif
 
-.if ${ARCH} != "i386"
-CONFIGURE_ARGS+=	--disable-mmx
-.else
-BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
-.endif
-
 .if defined(WITH_A52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 .endif
@@ -102,6 +95,10 @@ LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 
 .if defined(WITH_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		"does not compile"
 .endif
 
 post-extract:
