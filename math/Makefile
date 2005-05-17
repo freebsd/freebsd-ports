@@ -183,6 +183,7 @@
     SUBDIR += pari-devel
     SUBDIR += parmetis
     SUBDIR += pear-Structures_Graph
+    SUBDIR += pecl-big_int
     SUBDIR += petsc
     SUBDIR += petsc-mpich
     SUBDIR += pgcalc
