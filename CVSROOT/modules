@@ -333,6 +333,7 @@ amsn		ports/net/amsn
 amspsfnt	ports/print/amspsfnt
 amule		ports/net/amule
 amule-devel	ports/net/amule-devel
+amule1		ports/net/amule1
 amy		ports/games/amy
 amyc		ports/www/amyc
 an		ports/games/an
