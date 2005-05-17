@@ -1,0 +1,70 @@
+#!/bin/sh
+#
+# aMule RCng startup script
+# Ogirinal work from Gabriele Cecchetti (amule.org forum)
+# Modified by Ganaël LAPLANCHE (ganael.laplanche@martymac.com)
+# 
+
+# PROVIDE: amuled
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable amuled at startup
+# amuled (bool): Set to "NO" by default.
+#                Set it to "YES" to enable amuled
+# amuled_user (str): Set to user running amuled
+#                    (default 'aMule')
+# amuled_home (str): Set to home directory of user running amuled
+#                    (default /home/${amuled_user})
+#
+. /etc/rc.subr
+
+name="amuled"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+[ -z "$amuled_enable" ] && amuled_enable="NO"
+[ -z "$amuled_user" ] && amuled_user="aMule"
+[ -z "$amuled_home" ] && amuled_home="/home/${amuled_user}"
+
+required_dirs=${amuled_home}
+required_files="${amuled_home}/.aMule/amule.conf"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+amuled_start()
+{
+        if [ ! -f /var/run/${name}.run ]
+        then
+          su -l ${amuled_user} -c "amuled &" 2>>/var/log/${name}.log >>/var/log/${name}.log && touch /var/run/${name}.run
+          echo "Started ${name}."
+          echo `date` : "Started ${name}." >> /var/log/${name}.log
+        else
+          echo "${name} seems to be already running -- remove /var/run/${name}.run manually if needed."
+        fi
+}
+
+amuled_stop()
+{
+        if [ -f /var/run/${name}.run ]
+        then
+          # The following line is much better, but doesn't stop totally amuled
+          # su -l ${amuled_user} -c "amulecmd -c Shutdown" 2>>/var/log/${name}.log >>/var/log/${name}.log
+          # Since amuled catches SIGTERM, this way is preferred for now
+          killall -TERM amuled 2>>/var/log/${name}.log >>/var/log/${name}.log ; sleep 3
+          killall -KILL amuled 2>>/var/log/${name}.log >>/var/log/${name}.log
+          # Also kill amuleweb if needed
+          killall -KILL amuleweb 2>/dev/null >/dev/null
+          rm -f /var/run/${name}.run
+          echo "Stopped ${name}."
+          echo `date` : "Stopped ${name}." >> /var/log/${name}.log
+        else
+          echo "${name} doesn't seem to be running -- create /var/run/${name}.run if needed."
+        fi
+}
+
+run_rc_command "$1"
