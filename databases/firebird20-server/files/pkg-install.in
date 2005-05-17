@@ -1,0 +1,70 @@
+#!/bin/sh
+
+PATH=/sbin:/usr/sbin:/usr/local/sbin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:%%PREFIX%%/bin
+PREFIX=%%PREFIX%%
+DB_DIR=%%PREFIX%%
+
+USER=firebird
+GROUP=${USER}
+UID=3050
+GID=${UID}
+HOME=${DB_DIR}
+DESCR="Firebird Database Administrator"
+
+case $2 in
+PRE-INSTALL)
+	if pw group show "${GROUP}" 2> /dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2> /dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+
+		if pw usermod ${USER} -d ${HOME}; then
+			echo "Changed home directory of \"${USER}\" to \"${HOME}\""
+		else
+			echo "Changing home directory of \"${USER}\" to \"${HOME}\" failed..."
+			exit 1
+		fi
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - -d ${NOME} -s /sbin/nologin -c "${DESCR}" ; then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+        ;;
+
+POST-INSTALL)
+	for f in isc_init1.`hostname` isc_lock1.`hostname` isc_event1.`hostname` firebird.log
+	do
+		touch ${PREFIX}/${f}
+		chown ${USER}:${GROUP} ${PREFIX}/$f
+		chmod 660 ${PREFIX}/${f}
+	done
+
+	# add the gds service and restart inetd
+	cat /etc/services | grep -v gds_db > /etc/services.new
+	cat >>/etc/services.new <<EOF
+gds_db          3050/tcp  #InterBase Database Remote Protocol
+EOF
+	mv /etc/services.new /etc/services
+
+	cat /etc/inetd.conf | grep -v gds_db > /etc/inetd.conf.new
+	cat >>/etc/inetd.conf.new <<EOF
+gds_db  stream  tcp     nowait  firebird        ${PREFIX}/bin/fb_inet_server  fb_inet_server
+EOF
+	mv /etc/inetd.conf.new /etc/inetd.conf
+
+	if [ -f /var/run/inetd.pid ]; then
+	        kill -HUP `cat /var/run/inetd.pid`
+	fi
+esac

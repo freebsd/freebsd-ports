@@ -1,130 +1,28 @@
-etc/rc.d/000.firebird.sh
-firebird/README
 firebird/RELNOTES
 firebird/UDF/fbudf.so
 firebird/UDF/fbudf.sql
 firebird/UDF/ib_udf.so
 firebird/UDF/ib_udf.sql
-firebird/WhatsNew
 @unexec if cmp -s %D/firebird/aliases.conf %D/firebird/aliases.conf.sample; then rm -f %D/firebird/aliases.conf; fi
 firebird/aliases.conf.sample
 @exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
 firebird/bin/fb_inet_server
 firebird/bin/fb_lock_mgr
-firebird/bin/fb_lock_print
-firebird/bin/gbak
-firebird/bin/gdef
-firebird/bin/gds_drop
-firebird/bin/gfix
-firebird/bin/gpre
-firebird/bin/gsec
-firebird/bin/gstat
-firebird/bin/isql
-firebird/bin/qli
-firebird/doc/README.NTSecurity
-firebird/doc/README.Win32LibraryInstallation.txt
-firebird/doc/README.build.mingw.html
-firebird/doc/README.build.msvc.html
-firebird/doc/README.install.Solaris_on_Intel
-firebird/doc/README.instsvc
-firebird/doc/README.makefiles
-firebird/doc/README.user
-firebird/doc/README.user.embedded
-firebird/doc/README.user.troubleshooting
-firebird/doc/sql.extensions/README.aggregate_tracking
-firebird/doc/sql.extensions/README.case
-firebird/doc/sql.extensions/README.coalesce
-firebird/doc/sql.extensions/README.context_variables
-firebird/doc/sql.extensions/README.data_types
-firebird/doc/sql.extensions/README.exception_handling
-firebird/doc/sql.extensions/README.execute_statement
-firebird/doc/sql.extensions/README.explicit_locks
-firebird/doc/sql.extensions/README.nullif
-firebird/doc/sql.extensions/README.order_by_expressions_nulls
-firebird/doc/sql.extensions/README.savepoints
-firebird/doc/sql.extensions/README.universal_triggers
-firebird/examples/align.h
-firebird/examples/api1.c
-firebird/examples/api10.c
-firebird/examples/api11.c
-firebird/examples/api12.c
-firebird/examples/api13.c
-firebird/examples/api14.e
-firebird/examples/api15.c
-firebird/examples/api16.c
-firebird/examples/api16t.c
-firebird/examples/api2.c
-firebird/examples/api3.c
-firebird/examples/api4.c
-firebird/examples/api5.c
-firebird/examples/api6.c
-firebird/examples/api7.c
-firebird/examples/api8.c
-firebird/examples/api9.c
-firebird/examples/api9f.c
-firebird/examples/api9f.sql
-firebird/examples/apifull.c
-firebird/examples/dyn1.e
-firebird/examples/dyn2.e
-firebird/examples/dyn3.e
-firebird/examples/dyn4.e
-firebird/examples/dyn5.e
-firebird/examples/dynfull.e
-firebird/examples/employe2.sql
-firebird/examples/employee.fdb
-firebird/examples/employee.gbk
-firebird/examples/example.h
-firebird/examples/readme
-firebird/examples/stat1.e
-firebird/examples/stat10.e
-firebird/examples/stat11.e
-firebird/examples/stat12.e
-firebird/examples/stat12t.e
-firebird/examples/stat2.e
-firebird/examples/stat3.e
-firebird/examples/stat4.e
-firebird/examples/stat5.e
-firebird/examples/stat6.e
-firebird/examples/stat7.e
-firebird/examples/stat8.e
-firebird/examples/stat9.e
-firebird/examples/udf.sql
-firebird/examples/udflib.c
 @unexec if cmp -s %D/firebird/firebird.conf %D/firebird/firebird.conf.sample; then rm -f %D/firebird/firebird.conf; fi
 firebird/firebird.conf.sample
 @exec [ -f %B/firebird.conf ] || cp %B/%f %B/firebird.conf
 @unexec [ -s %D/firebird/firebird.log ] || rm -f %D/firebird/firebird.log
 firebird/firebird.msg
 firebird/help/help.fdb
-firebird/include/blr.h
-firebird/include/gds.h
-firebird/include/ib_util.h
-firebird/include/ibase.h
-firebird/include/iberror.h
-firebird/include/perf.h
 firebird/intl/fbintl
 @unexec rm -f %D/firebird/isc_event1.`hostname`
 @unexec rm -f %D/firebird/isc_init1.`hostname`
 @unexec rm -f %D/firebird/isc_lock1.`hostname`
-firebird/lib/libfbclient.so
-firebird/lib/libfbclient.so.1
-firebird/lib/libfbclient.so.%%FIREBIRD_VERSION%%
-firebird/lib/libfbembed.so
-firebird/lib/libfbembed.so.1
-firebird/lib/libfbembed.so.%%FIREBIRD_VERSION%%
-firebird/lib/libgds.so
-firebird/lib/libgds.so.1
-firebird/lib/libib_util.so
 @unexec if cmp -s %D/firebird/security.fdb %D/firebird/security.fdb.sample; then rm -f %D/firebird/security.fdb; fi
 firebird/security.fdb.sample
 @exec [ -f %B/security.fdb ] || cp %B/%f %B/security.fdb
 @dirrm firebird/UDF
 @dirrm firebird/bin
-@dirrm firebird/doc/sql.extensions
-@dirrm firebird/doc
-@dirrm firebird/examples
 @dirrm firebird/help
-@dirrm firebird/include
 @dirrm firebird/intl
-@dirrm firebird/lib
 @dirrm firebird

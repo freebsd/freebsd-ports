@@ -1,0 +1,20 @@
+--- builds/posix/Makefile.in.inet_server.orig	Fri Sep 17 20:34:21 2004
++++ builds/posix/Makefile.in.inet_server	Wed Mar  2 16:09:41 2005
+@@ -39,6 +39,8 @@
+ 
+ @SET_MAKE@
+ 
++LINK_OPTS +=
++
+ SERVER_Files = server_stub.cpp 
+ SERVER_Sources = $(addprefix remote/, $(SERVER_Files))
+ SERVER_Objects = $(addprefix $(OBJ)/, $(addsuffix .o, $(basename $(SERVER_Sources))))
+@@ -51,7 +53,7 @@
+ 
+ # SD: We don't need to rebuild fb_inet_server every time libfbembed.so changed,
+ #     but we must ensure it's existance
+-fb_inet_server : $(LIBFBEMBED_SO) $(FB_CLASSIC_SERVER)
++fb_inet_server : $(FB_CLASSIC_SERVER)
+ 
+ $(FB_CLASSIC_SERVER):	$(SERVER_Objects)
+ 	$(LD) $(LINK_OPTS) $^ -o $@ $(FBEMBED_LINK) $(LIB_GUI) $(LINK_LIBS) 
