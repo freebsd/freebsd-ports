@@ -1357,6 +1357,7 @@ cyrus-imapd22	ports/mail/cyrus-imapd22
 cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
 cyrus-sasl2	ports/security/cyrus-sasl2
+cyrus-sasl2-ldapdb	ports/security/cyrus-sasl2-ldapdb
 cyrus-sasl2-saslauthd	ports/security/cyrus-sasl2-saslauthd
 cyrus-smlacapd	ports/databases/cyrus-smlacapd
 d2x		ports/games/d2x
