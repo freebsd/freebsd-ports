@@ -76,6 +76,7 @@ LIB_DEPENDS+=		exif.12:${PORTSDIR}/graphics/libexif
 .endif
 
 .if defined(WITHOUT_MNG)
+LIB_DEPENDS+=		lcms.1:${PORTSDIR}/graphics/lcms
 CONFIGURE_ARGS+=	--without-libmng
 PLIST_SUB+=		MNG="@comment "
 .else
