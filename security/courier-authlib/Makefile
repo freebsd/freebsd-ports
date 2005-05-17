@@ -173,8 +173,6 @@ USE_RC_SUBR=	courier-authdaemond.sh
 .endif
 .endif
 
-LOCKTEST!=	${MKTEMP} /tmp/courier-authlib.locktest.XXXXX
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g' \
 		-e 's|^\(INSTALL_STRIP_PROGRAM=\).*$$|\1"$${INSTALL_PROGRAM} -s"|' \
@@ -192,19 +190,10 @@ post-patch:
 		${WRKSRC}/authdaemonrc.in
 	@${REINPLACE_CMD} -e 's:@EXPECT@:${SETENV} expect:' \
 		${WRKSRC}/authsystem.passwd.in
-	@${REINPLACE_CMD} -e 's|conftest.lock|${LOCKTEST}|g ; \
-		s|close(f);|& unlink("${LOCKTEST}");|g ; \
-		s|if (s == 0)|unlink("${LOCKTEST}"); &|g' \
-		${WRKSRC}/liblock/locktest.c
 
 pre-configure:
 	@if [ -f "${WRKDIR}/courier-authlib.cache" -a -s "${WRKDIR}/courier-authlib.cache" ] ; then \
 		${RM} -f "${WRKDIR}/courier-authlib.cache" ; \
-	fi
-
-post-configure:
-	@if [ -f "${LOCKTEST}" ] ; then \
-		${RM} -f "${LOCKTEST}" ; \
 	fi
 
 .if ${PKGNAMESUFFIX} == "-base"
