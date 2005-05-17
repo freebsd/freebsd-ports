@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pound
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
