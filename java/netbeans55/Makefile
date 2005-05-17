@@ -21,7 +21,7 @@ RESTRICTED=	"Restrictive license"
 
 WRKSRC=		${WRKDIR}/netbeans
 
-DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?p=1&a=bd&os=2&lang=1&rv=4.0&b_bt=2
+DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?type=4.1&p=1&a=bsd&os=1&lang=1&rv=4.1&b_bt=2
 
 .include <bsd.port.pre.mk>
 
