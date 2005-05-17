@@ -1,0 +1,7 @@
+%%SITE_PERL%%/No/Dato.pm
+%%SITE_PERL%%/No/KontoNr.pm
+%%SITE_PERL%%/No/PersonNr.pm
+%%SITE_PERL%%/No/Sort.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/No/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/No 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/No 2>/dev/null || true
