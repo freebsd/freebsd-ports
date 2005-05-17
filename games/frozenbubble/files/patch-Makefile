@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Jan  6 23:52:45 2003
++++ Makefile	Tue May 17 21:51:48 2005
+@@ -6,7 +6,7 @@
+ 
+ install:
+ 	test -e Makefile_c || perl Makefile.PL INSTALLDIRS=$(INSTALLDIRS)
+-	$(MAKE) -f Makefile_c install
++	$(MAKE) -f Makefile_c pure_install
+ 
+ clean:
+ 	test ! -e Makefile_c || $(MAKE) -f Makefile_c clean
