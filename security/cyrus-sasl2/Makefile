@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.20
-PORTREVISION=	1
+PORTVERSION=	2.1.21
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -41,7 +41,7 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
 MAN8=		sasldblistusers2.8 saslpasswd2.8
 
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
@@ -81,13 +81,13 @@ SASLDB_NAME=	sasldb2.db
 .endif
 
 .if defined(WITH_MYSQL_VER)
-WITH_MYSQL=	YES
+WITH_MYSQL=	yes
 .if ${WITH_MYSQL_VER} == 3
 WANT_MYSQL_VER=	323
 .endif
 .endif
 .if defined(WITH_MYSQL)
-USE_MYSQL=	YES
+USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-mysql
@@ -203,12 +203,12 @@ CYRUS_GROUP?=	cyrus
 
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
-DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-08.txt \
-	draft-ietf-sasl-anon-02.txt draft-ietf-sasl-crammd5-01.txt \
-	draft-ietf-sasl-gssapi-00.txt draft-ietf-sasl-plain-03.txt \
-	draft-ietf-sasl-rfc2222bis-03.txt draft-ietf-sasl-rfc2831bis-02.txt \
-	draft-ietf-sasl-saslprep-04.txt draft-murchison-sasl-login-00.txt \
-	draft-newman-sasl-c-api-01.txt rfc1321.txt rfc1939.txt rfc2104.txt \
+DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-xx.txt \
+	draft-ietf-sasl-anon-xx.txt draft-ietf-sasl-crammd5-xx.txt \
+	draft-ietf-sasl-gssapi-xx.txt draft-ietf-sasl-plain-xx.txt \
+	draft-ietf-sasl-rfc2222bis-xx.txt draft-ietf-sasl-rfc2831bis-xx.txt \
+	draft-ietf-sasl-saslprep-xx.txt draft-murchison-sasl-login-xx.txt \
+	draft-newman-sasl-c-api-xx.txt rfc1321.txt rfc1939.txt rfc2104.txt \
 	rfc2195.txt rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt \
 	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
 	server-plugin-flow.fig testing.txt

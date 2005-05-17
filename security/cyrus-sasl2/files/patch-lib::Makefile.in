@@ -1,0 +1,24 @@
+Index: lib/Makefile.in
+diff -u lib/Makefile.in.orig lib/Makefile.in
+--- lib/Makefile.in.orig	Sun May 15 14:58:38 2005
++++ lib/Makefile.in	Wed May 18 01:12:50 2005
+@@ -12,6 +12,8 @@
+ # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ # PARTICULAR PURPOSE.
+ 
++.PATH: ${.CURDIR}/../plugins ${.CURDIR}/../sasldb
++
+ @SET_MAKE@
+ 
+ # Makefile.am for the SASL library
+@@ -645,10 +647,6 @@
+ 	rm -f $@
+ 	ln -s .libs/$@ $@
+ 
+-$(SASL_STATIC_OBJS): linksrcs
+-
+-linksrcs:
+-	-ln -s $(SASL_STATIC_SRCS) .
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
