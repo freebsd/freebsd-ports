@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	garmin-utils
-PORTVERSION=	2.0
+PORTVERSION=	2.2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
