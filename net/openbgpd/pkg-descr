@@ -1,0 +1,8 @@
+OpenBGPD is a FREE implementation of the Border Gateway Protocol, Version 4.
+It allows ordinary machines to be used as routers exchanging routes with
+other systems speaking the BGP protocol.
+
+WWW: http://www.openbgp.org/
+
+- Florent Thoumie
+flz@xbsd.org

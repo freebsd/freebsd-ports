@@ -443,6 +443,7 @@
     SUBDIR += olsrd
     SUBDIR += onenetd
     SUBDIR += openam
+    SUBDIR += openbgpd
     SUBDIR += opendchub
     SUBDIR += opengk
     SUBDIR += openh323
