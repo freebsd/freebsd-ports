@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	dinotrace
-PORTVERSION=	9.1
+PORTVERSION=	9.2.b
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.com/ftp/
-DISTNAME=	dinotrace-9.1m
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	A graphical signal trace waveform viewer
 
-BROKEN=		Size mismatch
-
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_MOTIF=	yes
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 
 INFO=		dinotrace
 PLIST_FILES=	bin/dinotrace
