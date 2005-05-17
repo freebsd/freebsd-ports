@@ -769,6 +769,7 @@ boclient	ports/net/boclient
 boehm-gc	ports/devel/boehm-gc
 bogged		ports/games/bogged
 bogofilter	ports/mail/bogofilter
+bogofilter-current	ports/mail/bogofilter-current
 bogofilter-qdbm	ports/mail/bogofilter-qdbm
 bogofilter-tdb	ports/mail/bogofilter-tdb
 bogosort	ports/misc/bogosort
