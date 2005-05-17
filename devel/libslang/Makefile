@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/
 DISTNAME=	slang-${PORTVERSION}
 
-MAINTAINER=	xaa+ports@timewasters.nl
+MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
 
 USE_BZIP2=	yes
