@@ -1,0 +1,37 @@
+
+$FreeBSD$
+
+--- bgpd/bgpd.8.orig
++++ bgpd/bgpd.8
+@@ -46,9 +46,9 @@
+ .Nm
+ is usually started at boot time, and can be enabled by
+ setting the following in
+-.Pa /etc/rc.conf.local :
++.Pa /etc/rc.conf :
+ .Pp
+-.Dl bgpd_flags=\&"\&"
++.Dl openbgpd_enable=\&"YES\&"
+ .Pp
+ See
+ .Xr rc 8
+@@ -90,7 +90,7 @@
+ .Ar file
+ as the configuration file,
+ instead of the default
+-.Pa /etc/bgpd.conf .
++.Pa %%PREFIX%%/etc/bgpd.conf .
+ .It Fl n
+ Configtest mode.
+ Only check the configuration file for validity.
+@@ -98,8 +98,8 @@
+ Produce more verbose output.
+ .El
+ .Sh FILES
+-.Bl -tag -width "/etc/bgpd.confXXX" -compact
+-.It Pa /etc/bgpd.conf
++.Bl -tag -width "%%PREFIX%%/etc/bgpd.confXXX" -compact
++.It Pa %%PREFIX%%/etc/bgpd.conf
+ default
+ .Nm
+ configuration file

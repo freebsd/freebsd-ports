@@ -1,0 +1,30 @@
+
+$FreeBSD$
+
+--- bgpd/bgpd.conf.5.orig
++++ bgpd/bgpd.conf.5
+@@ -431,11 +431,11 @@
+ With
+ .Xr isakmpd 8 ,
+ it is sufficient to copy the peer's public key, found in
+-.Pa /etc/isakmpd/private/local.pub ,
++.Pa %%PREFIX%%/etc/isakmpd/private/local.pub ,
+ to the local machine.
+ It must be stored in a file
+ named after the peer's IP address and must be stored in
+-.Pa /etc/isakmpd/pubkeys/ipv4/ .
++.Pa %%PREFIX%%/etc/isakmpd/pubkeys/ipv4/ .
+ The local public key must be copied to the peer in the same way.
+ As
+ .Xr bgpd 8
+@@ -819,8 +819,8 @@
+ .Em AS path .
+ .El
+ .Sh FILES
+-.Bl -tag -width "/etc/bgpd.conf" -compact
+-.It Pa /etc/bgpd.conf
++.Bl -tag -width "%%PREFIX%%/etc/bgpd.conf" -compact
++.It Pa %%PREFIX%%/etc/bgpd.conf
+ .Xr bgpd 8
+ configuration file
+ .El

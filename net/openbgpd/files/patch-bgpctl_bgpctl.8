@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- bgpctl/bgpctl.8.orig
++++ bgpctl/bgpctl.8
+@@ -138,8 +138,8 @@
+ and message counters.
+ .El
+ .Sh FILES
+-.Bl -tag -width "/etc/bgpd.conf" -compact
+-.It Pa /etc/bgpd.conf
++.Bl -tag -width "%%PREFIX%%/etc/bgpd.conf" -compact
++.It Pa %%PREFIX%%/etc/bgpd.conf
+ default
+ .Xr bgpd 8
+ configuration file
