@@ -7,6 +7,7 @@
 
 PORTNAME=	tunesbrowser
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
