@@ -29,6 +29,10 @@ echo "#define DriverManSuffix 4x"		>> $LOCALDEF
 echo "#define MiscManDir \$(MANSOURCEPATH)7"	>> $LOCALDEF
 echo "#define MiscManSuffix 7x"			>> $LOCALDEF
 
+if [ X$OLD_KEYBOARD = XYES ]; then
+	echo "#define UseDeprecatedKeyboardDriver YES"	>> $LOCALDEF
+fi
+
 if [ X$WITH_DEBUG != X ]; then
 	export CFLAGS="-g $CFLAGS"
 	echo "#define InstPgmFlags"		>> $LOCALDEF

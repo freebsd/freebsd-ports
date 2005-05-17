@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-server
 PORTVERSION=	6.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
@@ -106,6 +106,11 @@ MAN4+=		sunbw2.4x \
 		sunffb.4x \
 		sunleo.4x \
 		suntcx.4x
+# WITH_SPARC_KBD is meant to be used to ease fixing 'kbd' driver under sparc64.
+# Do not define it if you want your keyboard to work.
+.if !defined(WITH_SPARC_KBD)
+SCRIPTS_ENV+=	OLD_KEYBOARD=YES
+.endif
 .else
 PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
