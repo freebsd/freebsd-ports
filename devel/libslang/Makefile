@@ -23,9 +23,17 @@ CONFLICTS=	libslang2-2.*
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
 
-.if		!defined(NOPORTDOCS)
-post-install:
-		cd ${WRKSRC}/src && ${MAKE} install_docs
+DOCSDIR=	${PREFIX}/share/doc/slang
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}/src && ${MAKE} install_docs
+.endif
+
+.include <bsd.port.post.mk>

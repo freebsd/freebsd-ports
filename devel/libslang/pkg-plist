@@ -1,16 +1,6 @@
+@comment $FreeBSD$
 include/slang.h
 include/slcurses.h
 lib/libslang.a
 lib/libslang.so
 lib/libslang.so.1
-%%PORTDOCS%%share/doc/slang/COPYING
-%%PORTDOCS%%share/doc/slang/COPYING.ART
-%%PORTDOCS%%share/doc/slang/COPYING.GPL
-%%PORTDOCS%%share/doc/slang/COPYRIGHT
-%%PORTDOCS%%share/doc/slang/changes.txt
-%%PORTDOCS%%share/doc/slang/cref.txt
-%%PORTDOCS%%share/doc/slang/cslang.txt
-%%PORTDOCS%%share/doc/slang/slang.txt
-%%PORTDOCS%%share/doc/slang/slangdoc.html
-%%PORTDOCS%%share/doc/slang/slangfun.txt
-%%PORTDOCS%%@dirrm share/doc/slang
