@@ -2538,6 +2538,7 @@ gcc40		ports/lang/gcc40
 gcc41		ports/lang/gcc41
 gccxml		ports/devel/gccxml
 gcdmaster	ports/sysutils/gcdmaster
+gcfilms		ports/multimedia/gcfilms
 gchempaint	ports/science/gchempaint
 gchemutils	ports/science/gchemutils
 gcipher		ports/security/gcipher
