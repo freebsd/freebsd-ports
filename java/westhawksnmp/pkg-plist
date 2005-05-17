@@ -560,7 +560,6 @@ share/java/classes/tablelayout.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/org
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
 @dirrm %%DATADIR%%/stubs
 @dirrm %%DATADIR%%/org/bouncycastle/crypto/params
 @dirrm %%DATADIR%%/org/bouncycastle/crypto/generators

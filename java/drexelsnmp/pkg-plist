@@ -1,2 +1,1 @@
 share/java/classes/snmp.jar
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
