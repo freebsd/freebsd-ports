@@ -41,5 +41,6 @@ RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/xmbmon
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 ||g;' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.post.mk>
