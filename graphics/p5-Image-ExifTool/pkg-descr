@@ -1,8 +1,12 @@
-ExifTool is a highly customizable Perl module and script that extracts
-meta information from JPG, TIFF, CRW, CR2, THM, NEF and GIF images.
-ExifTool can read EXIF, IPTC, XMP and GeoTIFF formatted data as well as
-the maker notes of many digital cameras from various manufacturers
-including Canon, Casio, FujiFilm, Minolta, Nikon, Olympus, Pentax, Sanyo
-and Sigma.
+ExifTool reads EXIF, GPS, IPTC, XMP, GeoTIFF, ICC Profile and Photoshop
+IRB meta information from JPG, JP2, TIFF, GIF, CRW, THM, CR2, MRW, NEF,
+PEF, ORF and DNG images.  ExifTool also extracts information from the
+maker notes of many digital cameras by various manufacturers including
+Canon, Casio, FujiFilm, Kodak, Minolta/Konica-Minolta, Nikon,
+Olympus/Epson, Panasonic/Leica, Pentax/Asahi, Ricoh, Sanyo and
+Sigma/Foveon.
+
+ExifTool writes EXIF, GPS, IPTC, XMP and MakerNotes meta information to
+JPEG, TIFF, GIF, CRW, THM, CR2, NEF, PEF and DNG images.
 
 WWW: http://www.sno.phy.queensu.ca/~phil/exiftool/
