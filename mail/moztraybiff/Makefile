@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moztraybiff
-PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://mozdev.oregonstate.edu/moztraybiff/
 DISTNAME=	mozTrayBiff-${PORTVERSION}
@@ -29,7 +28,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnome
 USE_REINPLACE=	yes
-MAKE_ARGS+=	MOZILLA_PLATFORM=tbird
+MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER}
 
 FILENAME=	mozTrayBiff-${PORTVERSION}-FreeBSD-tb${TBVER}.xpi
 PLIST_FILES=	share/${PORTNAME}/${FILENAME}
