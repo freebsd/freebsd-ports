@@ -5,7 +5,7 @@
  #
  
 -IBROOT=/opt/interbase
-+IBROOT=/usr/local/firebird
++IBROOT=/usr/local
  
  ifdef CLIPROOT
  include $(CLIPROOT)/include/Makefile.inc

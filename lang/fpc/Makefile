@@ -7,7 +7,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	1.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/FreeBSD/ \
 		ftp://planetmirror.com/pub/fpc/dist/FreeBSD/ \
@@ -25,7 +25,7 @@ COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird
+LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird-client
 .if ${OSVERSION} < 470000
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=			${LOCALBASE}/bin/gtar

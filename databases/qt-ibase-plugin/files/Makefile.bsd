@@ -2,10 +2,9 @@ SHLIB_NAME=	libqsql${DB}.so
 
 VPATH=		${PLUGIN}:${DRIVER}
 CXXFLAGS+=	-I${PLUGIN} -I${DRIVER} \
-		-I${LOCALBASE}/firebird/include \
 		-I${LOCALBASE}/include -I${X11BASE}/include \
 		${PTHREAD_CFLAGS} -DQT_THREAD_SUPPORT
-LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/firebird/lib ${PTHREAD_LIBS} -lqt-mt -lgds
+LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lgds
 SRCS=		qsql_${DB}.cpp main.cpp
 
 LIBDIR=		${PREFIX}/lib/plugins/sqldrivers

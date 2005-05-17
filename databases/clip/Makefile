@@ -7,6 +7,7 @@
 
 PORTNAME=	clip
 PORTVERSION=	1.1.14.1
+PORTREVISION=	1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/	\
 		ftp://ftp.linux.ru.net/mirrors/clip/
@@ -112,7 +113,7 @@ MAKE_ENV=		HOME="${WRKDIR}" \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-FIREBIRD_PORT?=	databases/firebird
+FIREBIRD_PORT?=	databases/firebird-client
 
 BIN2STRIP=	bdbf clip clip_bl clip_blank clip_cld clip_conv clip_dbf2txt	\
 		clip_dbg clip_fl clip_hashextract clip_hindex clip_hseek	\

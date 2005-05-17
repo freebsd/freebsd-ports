@@ -7,7 +7,7 @@
 
 PORTNAME=		kinterbasdb
 PORTVERSION=		3.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		databases python
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kinterbasdb
@@ -17,7 +17,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=		rud@cs.uni-magdeburg.de
 COMMENT=		Python extension for Firebird/Interbase(R) relational databases
 
-LIB_DEPENDS=		gds.1:${PORTSDIR}/databases/firebird
+LIB_DEPENDS=		gds.1:${PORTSDIR}/databases/firebird-client
 RUN_DEPENDS=		${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
