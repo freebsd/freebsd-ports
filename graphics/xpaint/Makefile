@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.7.6.3
+PORTVERSION=	2.7.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ac-grenoble.fr/Office/
 MASTER_SITE_SUBDIR=	sf-${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}_${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple paint program
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
