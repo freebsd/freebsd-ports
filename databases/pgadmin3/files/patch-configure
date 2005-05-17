@@ -1,5 +1,5 @@
 --- configure.orig	Tue Nov 30 02:09:55 2004
-+++ configure	Fri May  6 00:59:54 2005
++++ configure	Tue May 17 22:46:56 2005
 @@ -4996,6 +4996,9 @@
      # Which version of wxWindows is this?
      WX_VERSION=`${WX_CONFIG} --version`
@@ -10,14 +10,28 @@
          2.5*)
              WX_VERSION="2.5"
              ;;
-@@ -5173,6 +5176,10 @@
-                 ;;
-             *wx_gtk2u_core*)
+@@ -5175,6 +5178,10 @@
                  LIBS="$LIBS -lwx_gtk2u_stc-${WX_VERSION}"
-+                LIBS="$LIBS $WX_NEW_LDFLAGS"
-+                ;;
-+            *wx_gtk2_core*)
-+                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION}"
                  LIBS="$LIBS $WX_NEW_LDFLAGS"
                  ;;
++            *wx_gtk2_core*)
++                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION}"
++                LIBS="$LIBS $WX_NEW_LDFLAGS"
++                ;;
              *wx_gtkud-*)
+                 LIBS="$LIBS -lwx_gtkud_stc-${WX_VERSION}"
+                 LIBS="$LIBS $WX_NEW_LDFLAGS"
+@@ -5214,11 +5221,11 @@
+             ;;
+     esac
+     wx_wx_h="yes"
+-    if test ! -f "${WX_HOME}/include/wx-2.5/wx/version.h"
++    if test ! -f "${WX_HOME}/include/wx-${WX_VERSION}/wx/version.h"
+     then
+         wx_wx_h="no"
+     fi
+-    if test ! -f "${WX_HOME}/include/wx-2.5/wx/stc/stc.h"
++    if test ! -f "${WX_HOME}/include/wx-${WX_VERSION}/wx/stc/stc.h"
+     then
+         { { echo "$as_me:$LINENO: error: you need to install the stc package from wxWindows/contrib/src/stc" >&5
+ echo "$as_me: error: you need to install the stc package from wxWindows/contrib/src/stc" >&2;}
