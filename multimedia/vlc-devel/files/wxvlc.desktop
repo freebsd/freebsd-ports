@@ -4,6 +4,7 @@ Name=VideoLAN (wxgtk) Media Player
 Comment=Video and Audio player and server
 Icon=vlc.png
 Exec=vlc
+TryExec=wxvlc
 Terminal=false
 Type=Application
 Categories=Application;AudioVideo;
