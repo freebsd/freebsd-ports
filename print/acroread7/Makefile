@@ -24,8 +24,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/l
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
 		${LINUXBASE}/usr/X11R6/lib/libXext.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
-BROKEN=		Incomplete pkg-plist
-
 CONFLICTS=	acroread
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -45,9 +43,13 @@ pre-install:
 	@${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
 		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} | ${CPIO} -id; \
+		${RM} -rf usr/bin/acroread; \
 		${FIND} * -type f -o -type l > ${PLIST} \
 		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' | \
 		${GREP} -vE "(usr/bin$$|local$$|share$$|usr$$)" >> ${PLIST}
+	@${ECHO} @cwd %%LOCALBASE%% >> ${PLIST}
+	@${ECHO} bin/acroread7 >> ${PLIST}
+	@${ECHO} bin/acroread >> ${PLIST}
 
 do-install:
 	@rpm -U --ignorearch --ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \
