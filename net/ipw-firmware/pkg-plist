@@ -4,3 +4,5 @@ sbin/ipwcontrol
 %%DATADIR%%/ipw2100-1.3-p.fw
 %%DATADIR%%/ipw2100-1.3.fw
 @dirrm %%DATADIR%%
+%%IF_IPW_KO%%@cwd /boot/modules
+%%IF_IPW_KO%%if_ipw.ko
