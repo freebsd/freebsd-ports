@@ -46,6 +46,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/canon_raw.html
 %%PORTDOCS%%%%DOCSDIR%%/data_members.html
 %%PORTDOCS%%%%DOCSDIR%%/exiftool_pod.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
