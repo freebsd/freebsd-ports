@@ -6673,6 +6673,7 @@ open-motif	ports/x11-toolkits/open-motif
 openal		ports/audio/openal
 openam		ports/net/openam
 openbabel	ports/science/openbabel
+openbgpd	ports/net/openbgpd
 openbox		ports/x11-wm/openbox
 opencdk		ports/security/opencdk
 opencyc		ports/misc/opencyc
