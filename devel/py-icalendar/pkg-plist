@@ -1,0 +1,14 @@
+%%PORTDOCS%%share/doc/icalendar/example.ics
+%%PORTDOCS%%share/doc/icalendar/example.py
+%%PORTDOCS%%share/doc/icalendar/groupscheduled.ics
+%%PORTDOCS%%share/doc/icalendar/groupscheduled.py
+%%PORTDOCS%%share/doc/icalendar/test.ics
+%%PORTDOCS%%share/doc/icalendar/test.py
+%%PYTHON_SITELIBDIR%%/iCalendar/CaselessDict.py
+%%PYTHON_SITELIBDIR%%/iCalendar/ContentlinesParser.py
+%%PYTHON_SITELIBDIR%%/iCalendar/PropertyValues.py
+%%PYTHON_SITELIBDIR%%/iCalendar/__init__.py
+%%PYTHON_SITELIBDIR%%/iCalendar/iCalendar.py
+%%PYTHON_SITELIBDIR%%/iCalendar/tools.py
+@dirrm %%PYTHON_SITELIBDIR%%/iCalendar
+%%PORTDOCS%%@dirrm share/doc/icalendar

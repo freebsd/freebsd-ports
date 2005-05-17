@@ -1292,6 +1292,7 @@
     SUBDIR += py-gamin
     SUBDIR += py-getargs
     SUBDIR += py-grouch
+    SUBDIR += py-icalendar
     SUBDIR += py-istring
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
