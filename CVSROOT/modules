@@ -331,9 +331,8 @@ ample		ports/audio/ample
 amrcoder	ports/audio/amrcoder
 amsn		ports/net/amsn
 amspsfnt	ports/print/amspsfnt
-amule		ports/net/amule
-amule-devel	ports/net/amule-devel
 amule1		ports/net/amule1
+amule2		ports/net/amule2
 amy		ports/games/amy
 amyc		ports/www/amyc
 an		ports/games/an
