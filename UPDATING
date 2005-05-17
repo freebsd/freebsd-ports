@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20050517:
+  AFFECTS: users of www/mod_perl2 and all ports depending on it
+  AUTHOR: lars.eggert@gmx.net.
+
+  API changed for mod_perl2 - existing code will break!
+  The mod_perl2 developers have significantly changed the API
+  in release candidate 2.0.0-RC5. These changes include changed
+  names for core packages, causing software that uses the old API
+  to fail with the new version. You need to update your code as
+  described in http://perl.apache.org/docs/2.0/rename.html
+
+20050517:
   AFFECTS: users of databases/firebird
   AUTHOR: freebsd@galle.com.br
 
