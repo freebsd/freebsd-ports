@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_QuickForm_Controller
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	dk@catpipe.net
@@ -16,10 +16,10 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickFo
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML/QuickForm
-FILES=		Controller.php \
-		Action.php Page.php \
-		Action/Back.php Action/Direct.php Action/Display.php \
-		Action/Jump.php Action/Next.php Action/Submit.php
+FILES=		Action.php Controller.php Page.php Action/Back.php Action/Direct.php \
+		Action/Display.php Action/Jump.php Action/Next.php Action/Submit.php
+EXAMPLES=	simple.php tabbed.php wizard.php regWizard.php upload.php \
+		templates/upload.html statemachine.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
