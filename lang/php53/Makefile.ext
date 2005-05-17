@@ -142,9 +142,9 @@ USE_OPENSSL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
-LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird
+LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird-client
 
-CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}/firebird
+CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "ldap"

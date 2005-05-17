@@ -8,6 +8,7 @@
 
 PORTNAME=	qt-${DB}-plugin
 PORTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -18,7 +19,7 @@ COMMENT=	A plugin for QT to connect to IBase/Firebird-Databases
 
 DB=		ibase
 
-LIB_DEPENDS+=	gds:${PORTSDIR}/databases/firebird \
+LIB_DEPENDS+=	gds:${PORTSDIR}/databases/firebird-client \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 
 USE_BZIP2=	yes

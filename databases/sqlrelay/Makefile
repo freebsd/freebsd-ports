@@ -7,6 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
@@ -68,8 +69,8 @@ IF_MYSQL=	"@comment "
 .endif
 
 .if defined(WITH_INTERBASE) && ${WITH_INTERBASE:L} != no
-LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird
-CONFIGURE_ARGS+=	--with-interbase-prefix="${LOCALBASE}/firebird"
+LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird-client
+CONFIGURE_ARGS+=	--with-interbase-prefix="${LOCALBASE}"
 IF_INTERBASE=	""
 .else
 CONFIGURE_ARGS+=	--disable-interbase
