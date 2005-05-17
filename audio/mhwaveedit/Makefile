@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.3.8
+PORTVERSION=	1.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		portaudio.0:${PORTSDIR}/audio/portaudio
 
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 WANT_GNOME=	yes
 WANT_SDL=	yes
@@ -28,7 +29,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-optimization --without-alsalib
 
-PLIST_FILES=	bin/mhwaveedit
+PLIST_FILES=	bin/mhwaveedit \
+		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
+		share/locale/sv/LC_MESSAGES/mhwaveedit.mo
 
 .include <bsd.port.pre.mk>
 
