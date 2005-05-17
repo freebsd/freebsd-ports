@@ -32,7 +32,7 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-deinstall
 
 GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_accessibility_startup.schemas \
@@ -49,8 +49,6 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_typing_break.schemas
 
 post-patch:
-	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
-		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/libgnome/libgnome-2.0.pc.in
 .if defined(NOPORTDOCS)

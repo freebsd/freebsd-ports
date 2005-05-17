@@ -22,32 +22,32 @@ lib/libgnome-2.so
 lib/libgnome-2.so.1000
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
-%%DOCSDIR%%/ch01s02.html
-%%DOCSDIR%%/ch01s03.html
-%%DOCSDIR%%/ch01s04.html
-%%DOCSDIR%%/ch01s05.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/libgnome-gnome-config.html
-%%DOCSDIR%%/libgnome-gnome-exec.html
-%%DOCSDIR%%/libgnome-gnome-gconf.html
-%%DOCSDIR%%/libgnome-gnome-help.html
-%%DOCSDIR%%/libgnome-gnome-i18n.html
-%%DOCSDIR%%/libgnome-gnome-init.html
-%%DOCSDIR%%/libgnome-gnome-program.html
-%%DOCSDIR%%/libgnome-gnome-score.html
-%%DOCSDIR%%/libgnome-gnome-sound.html
-%%DOCSDIR%%/libgnome-gnome-triggers.html
-%%DOCSDIR%%/libgnome-gnome-url.html
-%%DOCSDIR%%/libgnome-gnome-util.html
-%%DOCSDIR%%/libgnome-libgnometypebuiltins.html
-%%DOCSDIR%%/libgnome.devhelp
-%%DOCSDIR%%/libgnome.html
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
+%%PORTDOCS%%%%DOCSDIR%%/ch01s02.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01s04.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01s05.html
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-config.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-exec.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-gconf.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-help.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-i18n.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-init.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-program.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-score.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-sound.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-triggers.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-url.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-util.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome-libgnometypebuiltins.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnome.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/libgnome.html
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
@@ -117,4 +117,4 @@ share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
