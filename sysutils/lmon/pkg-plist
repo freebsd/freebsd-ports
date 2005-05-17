@@ -7,6 +7,7 @@ lmon/lmon.pl
 %%EXAMPLESDIR%%/jboss.rules
 %%EXAMPLESDIR%%/messages.rules
 @dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/lmon 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
