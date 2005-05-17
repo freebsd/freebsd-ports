@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.12.0
+PORTVERSION=	2.12.1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
