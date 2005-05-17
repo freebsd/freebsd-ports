@@ -59,6 +59,7 @@ include/openhbci/socket.h
 include/openhbci/standingorder.h
 include/openhbci/statusreport.h
 include/openhbci/stream.h
+include/openhbci/swiftparser.h
 include/openhbci/transaction.h
 include/openhbci/tree.h
 include/openhbci/updjob.h
@@ -68,14 +69,14 @@ include/openhbci/value.h
 lib/libopenhbci.a
 lib/libopenhbci.la
 lib/libopenhbci.so
-lib/libopenhbci.so.13
-lib/openhbci/plugins/13/media/rdhfile.so.0
-lib/openhbci/plugins/13/media/rdhfile.so
-lib/openhbci/plugins/13/media/rdhfile.la
-lib/openhbci/plugins/13/media/rdhfile.a
+lib/libopenhbci.so.14
+lib/openhbci/plugins/14/media/rdhfile.so.0
+lib/openhbci/plugins/14/media/rdhfile.so
+lib/openhbci/plugins/14/media/rdhfile.la
+lib/openhbci/plugins/14/media/rdhfile.a
 share/aclocal/openhbci.m4
-@dirrm lib/openhbci/plugins/13/media
-@dirrm lib/openhbci/plugins/13
+@dirrm lib/openhbci/plugins/14/media
+@dirrm lib/openhbci/plugins/14
 @dirrm lib/openhbci/plugins
 @dirrm lib/openhbci
 @dirrm include/openhbci
