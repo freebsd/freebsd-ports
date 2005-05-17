@@ -1,0 +1,15 @@
+--- components/Makefile.orig	Sun Apr 24 10:25:02 2005
++++ components/Makefile	Tue May 17 18:08:15 2005
+@@ -69,10 +69,10 @@ ${COMPONENT_NAME}.xpt: nsIMessengerFreeD
+ 	LD_LIBRARY_PATH=$(MOZILLA_UTIL_PREFIX):`pwd` $(MOZILLA_UTIL_PREFIX)/xpt_link $@ $<
+ 
+ %.xpt: %.idl
+-	LD_LIBRARY_PATH=$(MOZILLA_UTIL_PREFIX):`pwd` $(MOZILLA_UTIL_PREFIX)/xpidl $(MOZILLA_IDLFLAGS) -m typelib -e $@ $<
++	LD_LIBRARY_PATH=$(MOZILLA_UTIL_PREFIX):`pwd` $(MOZILLA_UTIL_PREFIX)/xpidl $(MOZILLA_IDLFLAGS) -I$(shell thunderbird-config --prefix)/share/idl/thunderbird-$(TBVER) -m typelib -e $@ $<
+ 
+ %.h: %.idl
+-	LD_LIBRARY_PATH=$(MOZILLA_UTIL_PREFIX):`pwd` $(MOZILLA_UTIL_PREFIX)/xpidl $(MOZILLA_IDLFLAGS) -m header -e $@ $<
++	LD_LIBRARY_PATH=$(MOZILLA_UTIL_PREFIX):`pwd` $(MOZILLA_UTIL_PREFIX)/xpidl $(MOZILLA_IDLFLAGS) -I$(shell thunderbird-config --prefix)/share/idl/thunderbird-$(TBVER) -m header -e $@ $<
+ 
+ nsIMessengerFreeDesktopIntegration.xpt: nsIMessengerFreeDesktopIntegration.idl
+ 
