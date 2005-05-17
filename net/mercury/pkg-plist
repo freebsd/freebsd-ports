@@ -135,6 +135,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/UI/dialogs/RemoveContact.xml
 %%INSTDIR%%/resources/UI/dialogs/RemovedContact.xml
 %%INSTDIR%%/resources/UI/dialogs/RenameGroup.xml
+%%INSTDIR%%/resources/UI/panels/ConferencePanel.xml
 %%INSTDIR%%/resources/lang/en.xml
 %%INSTDIR%%/resources/menu/AccountTab.xml
 %%INSTDIR%%/resources/menu/MSN.xml
@@ -163,6 +164,7 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/settings
 @dirrm %%INSTDIR%%/resources/menu
 @dirrm %%INSTDIR%%/resources/lang
+@dirrm %%INSTDIR%%/resources/UI/panels
 @dirrm %%INSTDIR%%/resources/UI/dialogs
 @dirrm %%INSTDIR%%/resources/UI
 @dirrm %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==
