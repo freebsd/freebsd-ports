@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME:S/westhawk//}${PORTVERSION:S/./_/}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Lightweight SNMP stack for Java
 
-BROKEN=		Incorrect pkg-plist
-
 NO_BUILD=	yes
 USE_JAVA=	yes
 USE_ZIP=	yes
