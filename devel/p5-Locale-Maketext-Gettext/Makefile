@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Gettext
-PORTVERSION=	1.10
+PORTVERSION=	1.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -24,6 +24,14 @@ MAN1=		maketext.1
 MAN3=		Locale::Maketext::Gettext.3 \
 		Locale::Maketext::Gettext::Functions.3
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	BUGS Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
