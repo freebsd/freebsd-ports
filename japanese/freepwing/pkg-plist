@@ -6,8 +6,8 @@ bin/fpwmake
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/ColorGraphic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/Control.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/EndWord.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Copyright.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils/ColorGraphic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Copyright.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWUtils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Heading.pm
@@ -30,12 +30,10 @@ bin/fpwmake
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/Word.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/Word2.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING
 libexec/freepwing/catdump
 libexec/freepwing/cphier
-libexec/freepwing/fpwcontrol
 libexec/freepwing/fpwcgraph
+libexec/freepwing/fpwcontrol
 libexec/freepwing/fpwfullchar
 libexec/freepwing/fpwhalfchar
 libexec/freepwing/fpwindex
@@ -44,14 +42,23 @@ libexec/freepwing/fpwsort
 libexec/freepwing/fpwsound
 libexec/freepwing/mkdirhier
 libexec/freepwing/perl.sh
+%%DOCSDIR%%/catdump.txt
+%%DOCSDIR%%/freepwing-01.html
+%%DOCSDIR%%/freepwing-02.html
+%%DOCSDIR%%/freepwing-03.html
+%%DOCSDIR%%/freepwing-04.html
+%%DOCSDIR%%/freepwing-05.html
+%%DOCSDIR%%/freepwing-06.html
+%%DOCSDIR%%/freepwing-07.html
+%%DOCSDIR%%/freepwing-08.html
+%%DOCSDIR%%/freepwing.css
+%%DOCSDIR%%/freepwing.html
+%%DATADIR%%/catalogs/catalogs.txt
+%%DATADIR%%/catalogs/catalogs
+%%DATADIR%%/fpwutils.mk
+@dirrm %%DATADIR%%/catalogs
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm libexec/freepwing
-share/doc/freepwing/catalogs/catalogs
-share/doc/freepwing/catalogs/catalogs.txt
-share/doc/freepwing/doc/catdump.txt
-share/doc/freepwing/doc/freepwing.css
-share/doc/freepwing/doc/freepwing.html
-share/doc/freepwing/doc/index.html
-share/doc/freepwing/fpwutils.mk
-@dirrm share/doc/freepwing/catalogs
-@dirrm share/doc/freepwing/doc
-@dirrm share/doc/freepwing
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING
