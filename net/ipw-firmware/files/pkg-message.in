@@ -26,13 +26,12 @@ to /etc/rc.conf to use it :
     change to interface names list (optional).
   - ipw_mode_<iface> (str) : defaults to "bss", possible values
     are bss, ibss and monitor (optional).
-
-Note: 
-
-This port requires ipw(4) driver which has not been MFC'ed to
-RELENG_5 yet. Point your web browser at [1] and install it by hand
-if not already done.
-
-[1] http://damien.bergamini.free.fr/ipw/
-
+%%MIGHT_NEED_MODULE%%
+%%MIGHT_NEED_MODULE%%Note: 
+%%MIGHT_NEED_MODULE%%
+%%MIGHT_NEED_MODULE%%This port requires ipw(4) driver which has not been MFC'ed to
+%%MIGHT_NEED_MODULE%%RELENG_5 yet. Point your web browser at [1] and install it by hand
+%%MIGHT_NEED_MODULE%%if not already done or rebuild the port with WITH_MODULE=yes.
+%%MIGHT_NEED_MODULE%%
+%%MIGHT_NEED_MODULE%%[1] http://damien.bergamini.free.fr/ipw/
 ------------------------------------------------------------------
