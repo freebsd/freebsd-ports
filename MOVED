@@ -1490,3 +1490,4 @@ devel/p5-POE-Component-EasyDBI|databases/p5-POE-Component-EasyDBI|2005-05-15|mov
 www/mnogosearch|www/mnogosearch31|2004-05-15|finished repocopy
 net/amule|net/amule1|2005-05-16|port renamed
 net/amule-devel|net/amule2|2005-05-16|obsolete
+databases/firebird|databases/firebird-server|2005-05-17|split into -client and -server
