@@ -1,18 +1,18 @@
---- config.h.orig	Tue Sep 22 01:45:27 1998
-+++ config.h	Wed Aug  2 02:50:39 2000
+--- config.h.orig	Wed Sep  3 08:50:18 2003
++++ config.h	Mon May 16 14:16:20 2005
 @@ -2,19 +2,19 @@
   * Configuration for SKKFEP
   */
  
--#include "configs/solaris2.h"
+-#include "configs/linux.h"
 +#include "configs/freebsd.h"
  
  #if makefile_parameter
 -CC=gcc
 +#CC=gcc
  DEFINE=-DUSE_LOCALE
--OPTIMIZE=-O
-+#OPTIMIZE=-O
+-OPTIMIZE=-g
++#OPTIMIZE=-g
  EXTRALIBS=
  #endif
  

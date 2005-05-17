@@ -1,11 +1,11 @@
---- stty.c.orig	Wed Sep 23 01:22:53 1998
-+++ stty.c	Sat Oct 11 22:25:59 2003
-@@ -309,7 +309,7 @@
- chld_changed()
+--- stty.c.orig	Wed Sep  3 08:49:32 2003
++++ stty.c	Mon May 16 14:18:07 2005
+@@ -306,7 +306,7 @@
  {
  	int cpid;
--#if defined(_AIX) || defined(SVR4)
-+#if defined(_AIX) || defined(SVR4) || defined(__FreeBSD__)
+ /* #ifdef _AIX */
+-#if defined(_AIX) || defined(NECEWS) || defined(SOLARIS2)
++#if defined(_AIX) || defined(NECEWS) || defined(SOLARIS2) || defined(__FreeBSD__)
  	int statusp;
- #else
- 	union wait statusp;
+ 	reset_tty_without_close();
+ 	cpid = wait(&statusp);
