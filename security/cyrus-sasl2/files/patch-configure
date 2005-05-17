@@ -1,8 +1,8 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Mon Oct 25 05:21:08 2004
-+++ configure	Mon Oct 25 21:24:23 2004
-@@ -1578,6 +1578,7 @@
+--- configure.orig	Sun May 15 14:58:28 2005
++++ configure	Wed May 18 00:40:41 2005
+@@ -1583,6 +1583,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
@@ -10,16 +10,16 @@ diff -u configure.orig configure
  test "$program_prefix" != NONE &&
    program_transform_name="s,^,$program_prefix,;$program_transform_name"
  # Use a double $ so make ignores it.
-@@ -5129,7 +5130,7 @@
+@@ -5124,7 +5125,7 @@
  	fi
  
  	saved_LIBS=$LIBS
--        for dbname in db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
+-        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5139,6 +5140,7 @@
+@@ -5134,6 +5135,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -27,24 +27,16 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -5161,6 +5163,7 @@
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
-   BDB_LIBADD="$BDB_LIBADD -l$dbname"; dblib="berkeley"; dbname=db
-+  break
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
-@@ -5885,7 +5888,7 @@
+@@ -5881,7 +5883,7 @@
  	fi
  
  	saved_LIBS=$LIBS
--        for dbname in db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
+-        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5895,6 +5898,7 @@
+@@ -5891,6 +5893,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -52,15 +44,34 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -5917,6 +5921,7 @@
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
-   BDB_LIBADD="$BDB_LIBADD -l$dbname"; dblib="berkeley"; dbname=db
-+  break
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
-@@ -7089,6 +7094,8 @@
+@@ -6512,7 +6515,7 @@
+ echo "$as_me: WARNING: Disabling SASL authentication database support" >&2;}
+             SASL_DB_BACKEND="db_none.lo"
+     SASL_DB_BACKEND_STATIC="db_none.o"
+-    SASL_DB_BACKEND_STATIC_SRC="../sasldb/db_none.c"
++    SASL_DB_BACKEND_STATIC_SRCS="../sasldb/db_none.c"
+     SASL_DB_UTILS=""
+     SASL_DB_MANS=""
+     SASL_DB_LIB=""
+@@ -6521,7 +6524,7 @@
+ 
+ if test "$enable_static" = yes; then
+     if test "$dblib" != "none"; then
+-      SASL_STATIC_SRCS="$SASL_STATIC_SRCS ../plugins/sasldb.c $SASL_DB_BACKEND_STATIC_SRC"
++      SASL_STATIC_SRCS="$SASL_STATIC_SRCS ../plugins/sasldb.c $SASL_DB_BACKEND_STATIC_SRCS"
+       SASL_STATIC_OBJS="$SASL_STATIC_OBJS sasldb.o $SASL_DB_BACKEND_STATIC"
+ 
+ cat >>confdefs.h <<\_ACEOF
+@@ -6530,7 +6533,7 @@
+ 
+     else
+       SASL_STATIC_OBJS="$SASL_STATIC_OBJS $SASL_DB_BACKEND_STATIC"
+-      SASL_STATIC_SRCS="$SASL_STATIC_SRCS $SASL_DB_BACKEND_STATIC_SRC"
++      SASL_STATIC_SRCS="$SASL_STATIC_SRCS $SASL_DB_BACKEND_STATIC_SRCS"
+     fi
+ fi
+ 
+@@ -7167,6 +7170,8 @@
    SASLAUTHD_TRUE='#'
    SASLAUTHD_FALSE=
  fi
@@ -69,16 +80,16 @@ diff -u configure.orig configure
  
  echo "$as_me:$LINENO: checking if I should include saslauthd" >&5
  echo $ECHO_N "checking if I should include saslauthd... $ECHO_C" >&6
-@@ -10084,7 +10091,7 @@
+@@ -10564,7 +10569,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
-+LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi` $LIBS"
+-LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
++LIBS="${GSSAPIBASE_LIBS} `krb5-config --libs gssapi` $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10434,7 +10441,7 @@
+@@ -10914,7 +10919,7 @@
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -87,7 +98,7 @@ diff -u configure.orig configure
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
-@@ -11229,7 +11236,7 @@
+@@ -11752,7 +11757,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
