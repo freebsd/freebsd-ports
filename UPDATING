@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050517:
+  AFFECTS: users of databases/firebird
+  AUTHOR: freebsd@galle.com.br
+
+  The port was split into a -server and -client parts. 
+  The -server contains server binary, UDFs, and install all in 
+  ${PREFIX}/firebird. The -client contains libs, includes,
+  client binaries, docs and examples. For migration delete
+  the firebird port and install the -server and/or -client port
+  afterwards.
+
 20050512:
   AFFECTS: users of devel/svk
   AUTHOR: rafan@infor.org
