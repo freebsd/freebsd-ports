@@ -16,6 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A data debugging tool for the XS programmer (under mod_perl)
 
 .if defined(WITH_MODPERL2)
+BROKEN=		Broken due the new mod_perl2 API
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
 MOD_PERL=	2
 .else

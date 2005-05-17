@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Object.pm:${PORTSDIR}/devel/p5-Tim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if defined(WITH_APACHE2)
+BROKEN=		Broken due the new mod_perl2 API
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl

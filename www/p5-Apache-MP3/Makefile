@@ -41,6 +41,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Makete
 .endif
 
 .if defined(WITH_APACHE2)
+BROKEN=		Broken due the new mod_perl2 API
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
 EXTRA_PATCHES=	${PATCHDIR}/mod_perl2.patch

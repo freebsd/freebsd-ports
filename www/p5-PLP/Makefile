@@ -23,6 +23,7 @@ MAN3=		PLP.3 PLP::FAQ.3 PLP::Fields.3 PLP::Functions.3 PLP::HowTo.3 \
 .if ${WITH_MOD_PERL} == 1
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .elif ${WITH_MOD_PERL} == 2
+BROKEN=		Broken due the new mod_perl2 API
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mod_perl2.pm
 .else

@@ -20,6 +20,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+BROKEN=		Broken due the new mod_perl2 API
+
 MAN3=		Apache::ParseFormData.3
 
 .include <bsd.port.pre.mk>
