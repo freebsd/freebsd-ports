@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	2.9.3
+PORTVERSION=	2.9.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,8 +33,8 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	"You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
-	it's outdated. Install lang/perl5 and issue 'use.perl port'"
+IGNORE=	You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
+	it's outdated. Install lang/perl5 and issue 'use.perl port'
 .endif
 
 post-patch:
