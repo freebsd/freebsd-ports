@@ -1,14 +1,6 @@
---- Imakefile.orig	Sun Mar 20 21:15:32 2005
-+++ Imakefile	Wed Apr  6 16:17:16 2005
-@@ -13,6 +13,7 @@
-           "-DSHAREDIR=\"$(SHAREDIR)\"" \
-           "-DXAPPLOADDIR=\"$(XAPPLOADDIR)\"" \
- 	  "-DXPAINT_VERSION=\"$(VERSION)\"" \
-+	  "-DARROW_SCROLLBAR" \
- 
- #ifdef LPCCMD
- DEFINES += "-DLPCCMD=\"$(LPCCMD)\""
-@@ -98,7 +99,7 @@
+--- Imakefile.orig	Thu Apr 28 05:59:37 2005
++++ Imakefile	Mon May  9 00:54:49 2005
+@@ -102,7 +102,7 @@
  #endif
  
  DEPLIBS = always xpaint.man XPaint.ad
@@ -17,7 +9,7 @@
  
  SUBDIRS = rw
  
-@@ -148,7 +149,7 @@
+@@ -152,7 +152,7 @@
  
  xaw::
  	-$(RM) $(XAWDEPENDS)
@@ -26,7 +18,7 @@
  	echo "XAWLIB_DEFINES = -DXAWPLAIN" > Local.xawdefs			
  	echo "SYS_LIBRARIES = XawClientLibs -lm" >> Local.xawdefs
  	xmkmf -a ; make
-@@ -160,7 +161,7 @@
+@@ -164,7 +164,7 @@
  
  xaw3d::
  	-$(RM) $(XAWDEPENDS)
@@ -35,7 +27,7 @@
  	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
  	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
  	xmkmf ; cd rw ; xmkmf ; cd .. ; make
-@@ -171,7 +172,7 @@
+@@ -175,7 +175,7 @@
  	
  xaw3dg::
  	-$(RM) $(XAWDEPENDS)
@@ -44,7 +36,7 @@
  	echo "XAWLIB_DEFINES = -DXAW3D -DXAW3DG" > Local.xawdefs
  	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
  	xmkmf ; cd rw ; xmkmf ; cd .. ; make
-@@ -182,7 +183,7 @@
+@@ -186,7 +186,7 @@
  
  nextaw::
  	-$(RM) $(XAWDEPENDS)
@@ -53,7 +45,7 @@
  	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
  	echo "SYS_LIBRARIES = -lneXtaw -L." >> Local.xawdefs
  	xmkmf ; cd rw ; xmkmf ; cd .. ; make
-@@ -193,7 +194,7 @@
+@@ -197,7 +197,7 @@
  
  xaw95::
  	-$(RM) $(XAWDEPENDS)
@@ -62,7 +54,7 @@
  	echo "XAWLIB_DEFINES = -DXAW95" > Local.xawdefs
  	echo "SYS_LIBRARIES = -lXaw95 -L." >> Local.xawdefs
  	xmkmf -a ; make
-@@ -225,7 +226,7 @@
+@@ -229,7 +229,7 @@
  		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
  		    XPAINT_POSTSCRIPT_VIEWER "$(POSTSCRIPT_VIEWER)" \
  		    XPAINT_EXTERN_VIEWER "$(EXTERN_VIEWER)"
