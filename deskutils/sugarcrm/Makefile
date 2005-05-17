@@ -6,6 +6,7 @@
 
 PORTNAME=	sugarcrm
 PORTVERSION=	2.5.1b
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTFILES=	SugarSuite-Full-2_5_1b.zip \
 MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
-USE_PHP=	gd mysql session
+USE_PHP=	gd mysql session pcre
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
