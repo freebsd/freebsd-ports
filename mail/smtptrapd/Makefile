@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	smtptrapd
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://smtptrapd.inodes.org/
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	RFC 2821 compliant SMTP service that always returns a 4xx soft error
 
-BROKEN=		Incomplete pkg-plist
-
-USE_RC_SUBR=	yes
-SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g;s|%%RC_SUBR%%|${RC_SUBR}|g'
+USE_RC_SUBR=	smtptrapd.sh
 
 PLIST_FILES=	bin/smtptrapd
 
@@ -32,11 +29,9 @@ CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o smtptrapd smtptrapd.c)
-	${SED} ${SED_SCRIPT} ${FILESDIR}/smtptrapd.sh >${WRKSRC}/smtptrapd.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/smtptrapd ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/smtptrapd.sh ${PREFIX}/etc/rc.d/smtptrapd.sh
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
