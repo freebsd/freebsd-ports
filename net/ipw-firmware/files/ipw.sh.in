@@ -3,62 +3,62 @@
 # $FreeBSD$
 #
 
-# PROVIDE: ipw
+# PROVIDE: %%DRIVERNAME%%
 # REQUIRE: LOGIN abi
 # BEFORE:  securelevel
 # KEYWORD: FreeBSD shutdown
 
-# Add the following line to /etc/rc.conf to enable `ipw':
+# Add the following line to /etc/rc.conf to enable `%%DRIVERNAME%%':
 #
-# ipw_enable="YES"
+# %%DRIVERNAME%%_enable="YES"
 #
 
 . "%%RC_SUBR%%"
 
-name="ipw"
+name="%%DRIVERNAME%%"
 rcvar=`set_rcvar`
 
-start_cmd="ipw_start_cmd"
-stop_cmd="ipw_stop_cmd"
+start_cmd="%%DRIVERNAME%%_start_cmd"
+stop_cmd="%%DRIVERNAME%%_stop_cmd"
 
 load_rc_config "$name"
-: ${ipw_enable="NO"}
-: ${ipw_interfaces="ipw0"}
+: ${%%DRIVERNAME%%_enable="NO"}
+: ${%%DRIVERNAME%%_interfaces="%%DRIVERNAME%%0"}
 
-command="/usr/sbin/ipwcontrol"
+command="/usr/local/sbin/%%DRIVERNAME%%control"
 
-ipw_start_cmd()
+%%DRIVERNAME%%_start_cmd()
 {
-	echo -n "Starting ipw"
-	for i in ${ipw_interfaces}; do
-		eval _mode=\$ipw_mode_${i}
+	echo -n "Starting %%DRIVERNAME%%"
+	for i in ${%%DRIVERNAME%%_interfaces}; do
+		eval _mode=\$%%DRIVERNAME%%_mode_${i}
 		case ${_mode} in
 		""|bss)
-			eval _ipw_file_${i}="ipw2100-%%PORTVERSION%%.fw"
+			eval _%%DRIVERNAME%%_file_${i}="%%RELNAME%%-%%PORTVERSION%%.fw"
 			;;
 		ibss)
-			eval _ipw_file_${i}="ipw2100-%%PORTVERSION%%-i.fw"
+			eval _%%DRIVERNAME%%_file_${i}="%%RELNAME%%-%%PORTVERSION%%-i.fw"
 			;;
 		monitor)
-			eval _ipw_file_${i}="ipw2100-%%PORTVERSION%%-p.fw"
+			eval _%%DRIVERNAME%%_file_${i}="%%RELNAME%%-%%PORTVERSION%%-p.fw"
 			;;
 		*)
-			echo "${_mode} - Possible values for ipw_mode_${i} are bss|ibss|monitor."
+			echo "${_mode} - Possible values for %%DRIVERNAME%%_mode_${i} are bss|ibss|monitor."
 			exit 1
 			;;
 		esac
 
-		eval _file=\$_ipw_file_${i}
+		eval _file=\$_%%DRIVERNAME%%_file_${i}
 		echo -n " [${i}:${_mode:=bss}]"
 		${command} -i ${i} -f %%DATADIR%%/${_file}
 	done
 	echo "."
 }
 
-ipw_stop_cmd()
+%%DRIVERNAME%%_stop_cmd()
 {
-	echo "Stopping ipw."
-	for i in ${ipw_interfaces}; do
+	echo "Stopping %%DRIVERNAME%%."
+	for i in ${%%DRIVERNAME%%_interfaces}; do
 		${command} -i ${i} -k
 	done
 }

@@ -1,8 +1,8 @@
-sbin/ipwcontrol
+sbin/%%DRIVERNAME%%control
 %%DATADIR%%/LICENSE
-%%DATADIR%%/ipw2100-1.3-i.fw
-%%DATADIR%%/ipw2100-1.3-p.fw
-%%DATADIR%%/ipw2100-1.3.fw
+%%DATADIR%%/%%RELNAME%%-%%PORTVERSION%%-i.fw
+%%DATADIR%%/%%RELNAME%%-%%PORTVERSION%%-p.fw
+%%DATADIR%%/%%RELNAME%%-%%PORTVERSION%%.fw
 @dirrm %%DATADIR%%
-%%IF_IPW_KO%%@cwd /boot/modules
-%%IF_IPW_KO%%if_ipw.ko
+%%WITH_MODULE%%@cwd %%KMODDIR%%
+%%WITH_MODULE%%if_%%DRIVERNAME%%.ko

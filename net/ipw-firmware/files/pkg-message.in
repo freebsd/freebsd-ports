@@ -2,9 +2,9 @@
 This port has installed following files in %%DATADIR%%:
 
   - LICENSE : License terms,
-  - ipw2100-1.3-i.fw : IBSS mode (aka ad-hoc mode) firmware,
-  - ipw2100-1.3-p.fw : Monitor mode firmware,
-  - ipw2100-1.3.fw : BSS mode (aka infrastructure mode) firmware.
+  - %%RELNAME%%-%%PORTVERSION%%-i.fw : IBSS mode (aka ad-hoc mode) firmware,
+  - %%RELNAME%%-%%PORTVERSION%%-p.fw : Monitor mode firmware,
+  - %%RELNAME%%-%%PORTVERSION%%.fw : BSS mode (aka infrastructure mode) firmware.
 
 Ensure you've read license terms carefully before you use this
 firmware.
@@ -14,23 +14,23 @@ use your adapter.
 
 For instance, to download firmware for BSS mode:
 
-  # ipwcontrol -i ipw0 \
-	-f %%DATADIR%%/ipw2100-1.3.fw
+  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 \
+	-f %%DATADIR%%/%%RELNAME%%-%%PORTVERSION%%.fw
 
-The port has installed a startup script (ipw.sh). Add these lines
+The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
 to /etc/rc.conf to use it :
 
-  - ipw_enable (bool) : defaults to "NO", set it to "YES" to
+  - %%DRIVERNAME%%_enable (bool) : defaults to "NO", set it to "YES" to
     use the startup script.
-  - ipw_interfaces (str) : defaults to "ipw0", override it to
+  - %%DRIVERNAME%%_interfaces (str) : defaults to "%%DRIVERNAME%%0", override it to
     change to interface names list (optional).
-  - ipw_mode_<iface> (str) : defaults to "bss", possible values
+  - %%DRIVERNAME%%_mode_<iface> (str) : defaults to "bss", possible values
     are bss, ibss and monitor (optional).
 %%MIGHT_NEED_MODULE%%
 %%MIGHT_NEED_MODULE%%Note: 
 %%MIGHT_NEED_MODULE%%
-%%MIGHT_NEED_MODULE%%This port requires ipw(4) driver which has not been MFC'ed to
-%%MIGHT_NEED_MODULE%%RELENG_5 yet. Point your web browser at [1] and install it by hand
+%%MIGHT_NEED_MODULE%%This port requires %%DRIVERNAME%%(4) driver which has not been MFC'ed to
+%%MIGHT_NEED_MODULE%%RELENG_5. Point your web browser at [1] and install it by hand
 %%MIGHT_NEED_MODULE%%if not already done or rebuild the port with WITH_MODULE=yes.
 %%MIGHT_NEED_MODULE%%
 %%MIGHT_NEED_MODULE%%[1] http://damien.bergamini.free.fr/ipw/
