@@ -18,7 +18,7 @@
     SUBDIR += aim
     SUBDIR += amsn
     SUBDIR += amule1
-    SUBDIR += amule-devel
+    SUBDIR += amule2
     SUBDIR += apache-soap
     SUBDIR += apinger
     SUBDIR += apollon

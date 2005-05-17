@@ -1488,4 +1488,5 @@ mail/sendmail811|mail/sendmail|2005-05-13|obsolete
 games/xpilot-ng|games/xpilot-ng-server|2005-05-15|split into -client and -server
 devel/p5-POE-Component-EasyDBI|databases/p5-POE-Component-EasyDBI|2005-05-15|move to a better category
 www/mnogosearch|www/mnogosearch31|2004-05-15|finished repocopy
-net/amule|net/amule1|2005-05-16|renamed
+net/amule|net/amule1|2005-05-16|port renamed
+net/amule-devel|net/amule2|2005-05-16|obsolete

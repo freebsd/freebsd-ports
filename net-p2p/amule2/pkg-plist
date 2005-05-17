@@ -1,0 +1,121 @@
+%%PL_AMULEDAEMON%%@unexec %D/etc/rc.d/amuled.sh stop > /dev/null 2>&1 || true
+%%PL_AMULEDAEMON%%etc/rc.d/amuled.sh
+%%PL_ALC%%man/fr/man1/alcc.1.gz
+%%PL_AMULEWEBSRV%%man/fr/man1/amuleweb.1.gz
+%%PL_AMULEWEBSRV%%man/fr/man1/amulewebDLG.1.gz
+%%PL_AMULECMD%%man/fr/man1/amulecmd.1.gz
+%%PL_AMULECMD%%man/fr/man1/amulecmdDLG.1.gz
+%%PL_ED2K%%man/fr/man1/ed2k.1.gz
+%%PL_AMULEDAEMON%%man/fr/man1/amuled.1.gz
+man/fr/man1/amule.1.gz
+share/locale/en_GB/LC_MESSAGES/amule.mo
+share/locale/en_US/LC_MESSAGES/amule.mo
+share/locale/es/LC_MESSAGES/amule.mo
+share/locale/de/LC_MESSAGES/amule.mo
+share/locale/fr/LC_MESSAGES/amule.mo
+share/locale/it/LC_MESSAGES/amule.mo
+share/locale/ko/LC_MESSAGES/amule.mo
+share/locale/pl/LC_MESSAGES/amule.mo
+share/locale/et_EE/LC_MESSAGES/amule.mo
+share/locale/ru/LC_MESSAGES/amule.mo
+share/locale/bg/LC_MESSAGES/amule.mo
+share/locale/es_MX/LC_MESSAGES/amule.mo
+share/locale/pt_BR/LC_MESSAGES/amule.mo
+share/locale/gl/LC_MESSAGES/amule.mo
+share/locale/eu/LC_MESSAGES/amule.mo
+share/locale/nl/LC_MESSAGES/amule.mo
+share/locale/ar/LC_MESSAGES/amule.mo
+share/locale/fi/LC_MESSAGES/amule.mo
+share/locale/zh_CN/LC_MESSAGES/amule.mo
+share/locale/zh_TW/LC_MESSAGES/amule.mo
+share/locale/da/LC_MESSAGES/amule.mo
+share/locale/hu/LC_MESSAGES/amule.mo
+share/locale/ca/LC_MESSAGES/amule.mo
+share/locale/it_CH/LC_MESSAGES/amule.mo
+share/locale/pt_PT/LC_MESSAGES/amule.mo
+share/locale/hr/LC_MESSAGES/amule.mo
+share/locale/sl/LC_MESSAGES/amule.mo
+share/gnome/doc/aMule-2.0.0/ABOUT-NLS
+share/gnome/doc/aMule-2.0.0/amulesig.txt
+share/gnome/doc/aMule-2.0.0/amule-win32.HOWTO.txt
+share/gnome/doc/aMule-2.0.0/Changelog
+share/gnome/doc/aMule-2.0.0/Doxyfile
+share/gnome/doc/aMule-2.0.0/ED2K-Links.HOWTO
+share/gnome/doc/aMule-2.0.0/INSTALL
+share/gnome/doc/aMule-2.0.0/license.txt
+share/gnome/doc/aMule-2.0.0/README
+share/gnome/doc/aMule-2.0.0/TODO
+share/gnome/doc/aMule-2.0.0/EC_Protocol.txt
+share/gnome/doc/aMule-2.0.0/socks4.protocol
+@unexec rmdir %D/share/gnome/doc/aMule-2.0.0 2>/dev/null || true
+@unexec rmdir %D/share/gnome/doc 2>/dev/null || true
+%%PL_CAS%%share/gnome/cas/tmp.html
+%%PL_CAS%%share/gnome/cas/stat.png
+%%PL_CAS%%@unexec rmdir %D/share/gnome/cas 2>/dev/null || true
+%%PL_CAS%%share/gnome/pixmaps/wxcas.xpm
+%%PL_ALC%%share/gnome/pixmaps/alc.xpm
+share/gnome/pixmaps/amule.xpm
+@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
+%%PL_CAS%%share/gnome/applications/wxcas.desktop
+%%PL_ALC%%share/gnome/applications/alc.desktop
+share/gnome/applications/amule.desktop
+@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/aMule.tmpl
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/add_server.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/arrow_down.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/arrow_right.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/arrow_up.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/back.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/black.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue1.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue2.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue3.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue4.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue5.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue6.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_download.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_kad.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_search.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_servers.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_settings.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_shared.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_stats.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/emule.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/green.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/greenpercent.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_cancel.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_connect.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_down.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_ed2klink.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_info.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/log.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/logo.jpg
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_pause.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_resume.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_up.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/main_bg.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/main_top_bg.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/red.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/top_bar_bg2.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/top_bar_bg.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/transparent.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/yellow.gif
+%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver/default 2>/dev/null || true
+%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver 2>/dev/null || true
+%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule 2>/dev/null || true
+lib/xchat/plugins/xas.pl
+@unexec rmdir %D/lib/xchat/plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xchat 2>/dev/null || true
+%%PL_CAS%%bin/cas
+%%PL_CAS%%bin/wxcas
+%%PL_ALC%%bin/alc
+%%PL_ALC%%bin/alcc
+%%PL_AMULEWEBSRV%%bin/amuleweb
+%%PL_AMULEWEBSRV%%bin/amulewebDLG
+%%PL_AMULECMD%%bin/amulecmd
+%%PL_AMULECMD%%bin/amulecmdDLG
+%%PL_ED2K%%bin/ed2k
+%%PL_AMULEDAEMON%%bin/amulegui
+%%PL_AMULEDAEMON%%bin/amuled
+bin/amule
