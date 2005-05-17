@@ -17,20 +17,32 @@ COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
 DIST_SUBDIR=	qmail
 
-.if defined(SLAVE_LDAP) || defined(SLAVE_SPAMCONTROL)
-BARRIER_DNS_PATCH=yes
-BARRIER_BIG_CONCURRENCY_PATCH=yes
-BARRIER_QMTPC_PATCH=yes
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_SPAMCONTROL) || \
+    defined(SLAVE_MYSQL)
+BARRIER_MAILDIRQUOTA_PATCH=	yes
+BARRIER_BLOCKEXEC_PATCH=	yes
 .endif
 
-.if defined(SLAVE_LDAP) || defined(SLAVE_SMTP_AUTH_TLS) || \
-    defined(SLAVE_SPAMCONTROL) || defined(SLAVE_TLS)
-BARRIER_OUTGOINGIP_PATCH=yes
-BARRIER_RFC2821_PATCH=yes
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_SPAMCONTROL)
+BARRIER_DNS_PATCH=		yes
+BARRIER_BIG_CONCURRENCY_PATCH=	yes
+BARRIER_QMTPC_PATCH=		yes
+BARRIER_DISCBOUNCES_PATCH=	yes
 .endif
 
-.if defined(SLAVE_MYSQL) || defined(SLAVE_SPAMCONTROL)
-BARRIER_QMAILQUEUE_PATCH=yes
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_SMTP_AUTH_TLS) || \
+    defined(SLAVE_SPAMCONTROL) || \
+    defined(SLAVE_TLS)
+BARRIER_OUTGOINGIP_PATCH=	yes
+BARRIER_RFC2821_PATCH=		yes
+.endif
+
+.if defined(SLAVE_MYSQL) || \
+    defined(SLAVE_SPAMCONTROL)
+BARRIER_QMAILQUEUE_PATCH=	yes
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
@@ -115,6 +127,15 @@ OPTIONS+=	LOCALTIME_PATCH "emit dates in the local timezone" off
 .endif
 .if !defined(BARRIER_QMTPC_PATCH)
 OPTIONS+=	QMTPC_PATCH "send email using qmtp protocol" off
+.endif
+.if !defined(BARRIER_MAILDIRQUOTA_PATCH)
+OPTIONS+=	MAILDIRQUOTA_PATCH "Maildir++ support" off
+.endif
+.if !defined(BARRIER_BLOCKEXEC_PATCH)
+OPTIONS+=	BLOCKEXEC_PATCH "block many windows viruses/worms" off
+.endif
+.if !defined(BARRIER_DISCBOUNCES_PATCH)
+OPTIONS+=	DISCBOUNCES_PATCH "discard double-bounces" off
 .endif
 .if defined(SLAVE_TLS) || defined(SLAVE_SMTP_AUTH_TLS)
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
@@ -268,6 +289,21 @@ USE_REINPLACE=	yes
 .if (defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)) &&\
     (defined(WITH_QMTPC_PATCH)      && !defined(BARRIER_QMTPC_PATCH))
 BROKEN=	"OUTGOINGIP and QMTPC conflicts! Please, make your choice"
+.endif
+
+.if defined(WITH_MAILDIRQUOTA_PATCH) && !defined(BARRIER_MAILDIRQUOTA_PATCH)
+PATCH_SITES+=	http://www.alexdupre.com/qmail/:quota
+PATCHFILES+=	qmail-maildir++.patch:quota
+.endif
+
+.if defined(WITH_BLOCKEXEC_PATCH) && !defined(BARRIER_BLOCKEXEC_PATCH)
+PATCH_SITES+=	http://www.alexdupre.com/qmail/:blockexec
+PATCHFILES+=	qmail-block-executables.patch:blockexec
+.endif
+
+.if defined(WITH_DISCBOUNCES_PATCH) && !defined(BARRIER_DISCBOUNCES_PATCH)
+PATCH_SITES+=	http://www.alexdupre.com/qmail/:doublebounce
+PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .endif
 
 .if !defined(BARRIER_DNS_PATCH) \
