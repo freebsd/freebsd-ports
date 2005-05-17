@@ -39,7 +39,8 @@
     SUBDIR += erserver
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
-    SUBDIR += firebird
+    SUBDIR += firebird-server
+    SUBDIR += firebird-client
     SUBDIR += firebird-devel
     SUBDIR += fireprofile
     SUBDIR += fpc-ibase
