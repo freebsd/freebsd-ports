@@ -573,6 +573,7 @@ ayttm		ports/net/ayttm
 az-aspell	ports/textproc/az-aspell
 azureus		ports/net/azureus
 b2bua		ports/net/b2bua
+b2evo		ports/www/b2evo
 babel		ports/biology/babel
 babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
