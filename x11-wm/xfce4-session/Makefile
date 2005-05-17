@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -25,11 +25,14 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
 		iceauth:${X_CLIENTS_PORT}
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB= yes
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
