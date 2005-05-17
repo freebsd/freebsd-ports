@@ -14,9 +14,8 @@ MASTER_SITE_SUBDIR=	rtg
 MAINTAINER=	so14k@so14k.com
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
-BUILD_DEPENDS=	\
-	${LOCALBASE}/lib/mysql/libmysqlclient_r.a:${PORTSDIR}/databases/mysql41-client \
-	${LOCALBASE}/sbin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client \
+		netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 
 MAN1=	rtgplot.1 rtgpoll.1
 
@@ -25,6 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/rtg
 
 pre-configure:
-	${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

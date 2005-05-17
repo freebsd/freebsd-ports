@@ -1,0 +1,27 @@
+--- config/config.h.in.orig	Thu Sep 25 08:21:14 2003
++++ config/config.h.in	Sat May 14 01:31:47 2005
+@@ -91,19 +91,19 @@
+ #undef PACKAGE
+ 
+ /* Define to the address where bug reports for this package should be sent. */
+-#undef PACKAGE_BUGREPORT
++#undef RTG_PACKAGE_BUGREPORT
+ 
+ /* Define to the full name of this package. */
+-#undef PACKAGE_NAME
++#undef RTG_PACKAGE_NAME
+ 
+ /* Define to the full name and version of this package. */
+-#undef PACKAGE_STRING
++#undef RTG_PACKAGE_STRING
+ 
+ /* Define to the one symbol short name of this package. */
+-#undef PACKAGE_TARNAME
++#undef RTG_PACKAGE_TARNAME
+ 
+ /* Define to the version of this package. */
+-#undef PACKAGE_VERSION
++#undef RTG_PACKAGE_VERSION
+ 
+ /* Define as the return type of signal handlers (`int' or `void'). */
+ #undef RETSIGTYPE
