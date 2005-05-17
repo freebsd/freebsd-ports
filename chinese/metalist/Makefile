@@ -38,6 +38,7 @@ MAKE_ENV+=	PERL_EXTUTILS_AUTOINSTALL=--skip
 .endif
 
 .if defined(WITH_APACHE2)
+BROKEN=		Broken due the new mod_perl2 API
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes

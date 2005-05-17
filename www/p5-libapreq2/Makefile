@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Broken due the new mod_perl2 API
+
 CONFLICTS=	p5-libapreq-[0-9]*
 
 WITH_APACHE2=	yes

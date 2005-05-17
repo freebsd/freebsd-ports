@@ -23,6 +23,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+BROKEN=		Broken due the new mod_perl2 API
+
 MAN3=		MasonX::Apache2Handler.3 MasonX::Mason-with-mod_perl2.3
 
 post-patch:

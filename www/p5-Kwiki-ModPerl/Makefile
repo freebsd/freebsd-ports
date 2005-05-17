@@ -21,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 .if defined(WITH_APACHE2)
+BROKEN=		Broken due the new mod_perl2 API
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 pre-patch:
 	@${REINPLACE_CMD} -e 's|mod_perl|Apache2::mod_perl|g' ${WRKSRC}/Makefile.PL

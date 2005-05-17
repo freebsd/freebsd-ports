@@ -17,6 +17,7 @@ COMMENT=	A perl module to provide custom forms for reauthentication
 
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .if defined(WITH_MODPERL2)
+BROKEN=		Broken due the new mod_perl2 API
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
