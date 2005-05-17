@@ -27,7 +27,7 @@ MAN1=		pal.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		Needs readline 4.2 or newer
+LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
 post-patch:
