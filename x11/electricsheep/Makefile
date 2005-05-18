@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	electricsheep
-PORTVERSION=	2.6
+PORTVERSION=	2.6c
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
+
+DISTFILES=	${PORTNAME}-2.6.tar.gz
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A nice distributed screensaver
