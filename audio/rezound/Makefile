@@ -58,7 +58,7 @@ LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
 .endif
 
 .if defined(WITH_VORBIS)
