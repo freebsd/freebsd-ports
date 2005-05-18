@@ -1,4 +1,4 @@
-etc/rkhunter.conf.sample
+etc/rkhunter.conf
 bin/rkhunter
 lib/rkhunter/db/backdoorports.dat
 lib/rkhunter/db/mirrors.dat
