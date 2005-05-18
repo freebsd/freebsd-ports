@@ -1,1 +1,3 @@
-MD5 (vmware-linux-tools.tar.gz) = IGNORE
+#MD5 (VMwareTools-5.0.0-13124.tar.gz) = IGNORE
+#MD5 (VMwareTools-${VMWARE_VER}-${BUILD_VER}.tar.gz) = IGNORE
+MD5 (ghogeVMwareTools-${VMWARE_VER}-${BUILD_VER}.tar.gz) = IGNORE

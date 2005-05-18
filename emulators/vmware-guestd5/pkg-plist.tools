@@ -3,4 +3,4 @@ bin/vmware-toolbox
 %%INSTALLXSERVER3:%%etc/XF86Config_VMware
 %%INSTALLXSERVER4:%%etc/XF86Config-4_VMware
 %%INSTALLXSERVER4:%%lib/modules/drivers/vmware_drv.o_VMware
-%%INSTALLXSERVER4:%%lib/modules/input/vmmouse_drv.o_VMware
+%%INSTALLXVMMOUSE:%%lib/modules/input/vmmouse_drv.o_VMware

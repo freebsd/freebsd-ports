@@ -7,17 +7,17 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware itself
 PKGNAMESUFFIX?=	-guestd
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT?=VMware time synchronization daemon for FreeBSD guest OS (for VMware 4.x)
+COMMENT?=VMware time synchronization daemon for FreeBSD guest OS (for VMware 5.x)
 
 .if defined(VMWARE_X_PORTS)
-RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd4
+RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd5
 .endif
 
 DISTDIR=	${MOUNT_PT}
@@ -40,8 +40,8 @@ NO_BUILD=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	4.5.2
-BUILD_VER=	8848
+VMWARE_VER=	5.0.0
+BUILD_VER=	13124
 
 .include <bsd.port.pre.mk>
 
@@ -59,9 +59,15 @@ UMOUNT=		/sbin/umount
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PLIST_SUB+=	INSTALLXSERVER3:=""
 PLIST_SUB+=	INSTALLXSERVER4:="@comment "
-.else
+PLIST_SUB+=	INSTALLXVMMOUSE:="@comment "
+.elif ${X_WINDOW_SYSTEM:L} == xfree86-4
 PLIST_SUB+=	INSTALLXSERVER3:="@comment "
 PLIST_SUB+=	INSTALLXSERVER4:=""
+PLIST_SUB+=	INSTALLXVMMOUSE:=""
+.else
+PLIST_SUB+=	INSTALLXSERVER3:="@comment "
+PLIST_SUB+=	INSTALLXSERVER4:="@comment "
+PLIST_SUB+=	INSTALLXVMMOUSE:=""
 .endif
 
 .else
@@ -88,8 +94,9 @@ fetch-list:
 do-fetch:
 	@${ECHO} ""
 	@${ECHO} "========================================================================"
-	@${ECHO} "Choose \"VM\" -> \"Install VMware Tools...\" from the Workstation menu"
-	@${ECHO} "to connect the VM's CD-ROM drive temporarily to installation CD image."
+	@${ECHO} "Choose \"VM\" -> \"Install VMware Tools...\" from VMware Workstation"
+	@${ECHO} "menu to connect VM's CD-ROM drive and installation CD image temporary."
+	@${ECHO} "Press \"Install\" button when a dialog pops up."
 	@${ECHO} "========================================================================"
 	@${ECHO} ""
 .if !defined(BATCH)
@@ -134,10 +141,12 @@ do-install:
 	@${ECHO} "You have installed XFree86 3.x X Server for VMware."
 	@${ECHO} "${X11BASE}/etc/XF86Config_VMware is a sample XF86Config file."
 	@${ECHO} "Copy this file to /etc/XF86Config before starting X."
-.else
+.elif ${X_WINDOW_SYSTEM:L} == xfree86-4
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
+.else
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
 .endif
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
@@ -163,6 +172,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/vmware-tools
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweroff-vm-default
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweron-vm-default
+	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/resume-vm-default
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/suspend-vm-default
 	${LN} -sfh ${PREFIX}/share/vmware-tools /etc/vmware-tools
 

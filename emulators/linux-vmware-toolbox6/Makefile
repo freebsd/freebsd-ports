@@ -11,10 +11,10 @@ PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	# bundled with VMware itself
 PKGNAMEPREFIX=	linux-
-DISTNAME=	vmware-linux-tools
+DISTNAME=	VMwareTools-${VMWARE_VER}-${BUILD_VER}
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT=VMware toolbox for guest OS (for VMware 4.x, Linux version)
+COMMENT=VMware toolbox for guest OS (for VMware 5.x, Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
@@ -34,8 +34,8 @@ IS_INTERACTIVE=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	4.5.2
-BUILD_VER=	8848
+VMWARE_VER=	5.0.0
+BUILD_VER=	13124
 
 .include <bsd.port.pre.mk>
 
@@ -58,8 +58,8 @@ pre-extract:
 	@${ECHO} ""
 	@${ECHO} "Before installing this port, please follow this instructions:"
 	@${ECHO} ""
-	@${ECHO} "     *) Be sure that your VM have an IDE CD-ROM."
-	@${ECHO} "     *) Select \"Edit -> Removable Devices -> CD-ROM 1 -> Edit\" on VMware menu,"
+	@${ECHO} "     *) Be sure that your VM has an IDE CD-ROM drive."
+	@${ECHO} "     *) Select \"VM -> Removable Devices -> CD-ROM -> Edit\" on VMware menu,"
 	@${ECHO} "     *) Check \"Connected\" box."
 	@${ECHO} "     *) Check \"Use ISO image\" radio button."
 	@${ECHO} "     *) Choose the file \"linux.iso\" for the ISO image.  You will find"
@@ -89,6 +89,6 @@ post-extract:
 	${UMOUNT} ${MOUNT_DEV}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${PREFIX}/bin/linux-vmware-toolbox
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox-old ${PREFIX}/bin/linux-vmware-toolbox
 
 .include <bsd.port.post.mk>
