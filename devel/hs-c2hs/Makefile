@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c2hs
-PORTVERSION=	0.13.4
+PORTVERSION=	0.13.6
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
@@ -15,8 +15,6 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	C->Haskell, an Interface Generator for Haskell
 
 OPTIONS=	GHC5 "Build for ghc5" off
-
-BROKEN=		Does not compile with latest ghc 6.4
 
 .include <bsd.port.pre.mk>
 
