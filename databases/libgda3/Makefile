@@ -7,6 +7,7 @@
 
 PORTNAME=	libgda2
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
@@ -51,7 +52,7 @@ WITH_MYSQL=	yes
 WITH_LDAP=yes
 .endif
 
-.if exists(${LOCALBASE}/firebird/lib/libgds.so.1)
+.if exists(${LOCALBASE}/lib/libgds.so.1)
 WITH_FIREBIRD=	yes
 .endif
 
@@ -103,8 +104,8 @@ PLIST_SUB+=		LDAP:="@comment "
 .endif
 
 .if !defined(WITHOUT_FIREBIRD) && defined(WITH_FIREBIRD)
-LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird
-CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}/firebird
+LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird-client
+CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}
 PLIST_SUB+=		FIREBIRD:=""
 .else
 CONFIGURE_ARGS+=	--without-interbase
