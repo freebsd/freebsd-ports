@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.1.9
+PORTVERSION=	1.2.3
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
 MAINTAINER=	vaidab@safe-mail.net
 COMMENT=	Rootkit detection tool
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+
+# Wget has security holes, and rkhunter can use /usr/bin/fetch instead
+#		wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
