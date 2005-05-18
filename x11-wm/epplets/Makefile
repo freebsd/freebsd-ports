@@ -26,12 +26,13 @@ USE_GNOME=	esound lthack
 USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	EROOT="${X11BASE}/share/enlightenment" \
 		EBIN="${X11BASE}/bin" \
 		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-fsstd
+MAKE_ARGS=	SUBDIRS="epplets debian"
 
 .include <bsd.port.pre.mk>
 
