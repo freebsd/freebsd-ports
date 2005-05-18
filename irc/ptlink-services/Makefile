@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Services
-PORTVERSION=	2.25.1
-PORTREVISION=	1
+PORTVERSION=    2.26.1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/services2/ \
 		http://www.rootxs.org/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	PTlink-
-DISTNAME=	PTlink.${PORTNAME}${PORTVERSION}
+DISTNAME=	PTlink.${PORTNAME}2.26-eol.1
 
 PATCH_DIST_STRIP=	-p1
 

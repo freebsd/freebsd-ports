@@ -23,7 +23,5 @@ etc/ptlink/main.dconf.sample
 etc/ptlink/network.dconf.sample
 etc/ptlink/opers.motd.sample
 etc/ptlink/version.info
-@dirrm var/log
-@dirrm var
 @dirrm etc/ptlink/codepage
 @unexec rmdir %D/etc/ptlink 2> /dev/null || true

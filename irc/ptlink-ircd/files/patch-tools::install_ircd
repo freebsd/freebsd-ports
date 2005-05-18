@@ -1,5 +1,5 @@
---- tools/install_ircd.orig	Tue Oct 26 08:59:37 2004
-+++ tools/install_ircd	Tue Oct 26 09:00:08 2004
+--- tools/install_ircd.orig	Sun May 15 13:25:29 2005
++++ tools/install_ircd	Sun May 15 13:24:43 2005
 @@ -120,12 +120,12 @@
  # try to install the example files if needed
  
@@ -16,6 +16,6 @@
 +#check_install_data ${ETCPATH} samples/kline.conf
 +#check_install_data ${ETCPATH}/main.dconf samples/main.dconf.sample
 +#check_install_data ${ETCPATH}/network.dconf samples/network.dconf.sample
- check_install_data_old ${ETCPATH}/help.user samples/help.user
- check_install_data_old ${ETCPATH}/help.oper samples/help.oper
- check_install_data_old ${ETCPATH}/help.admin samples/help.admin
+ if  [ "${EXESUFFIX}" != "" ]; then
+   check_install_data ${ETCPATH}/resolv.conf samples/resolv.conf.sample
+ fi

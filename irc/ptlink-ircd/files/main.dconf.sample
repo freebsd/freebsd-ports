@@ -22,7 +22,7 @@
 ReverseLookup	Yes
 
 # Define if you want to use ident lookup
-CheckIdentd NO
+CheckIdentd No
 
 # Define if you want to hide information notices sent to users
 # during connection.
@@ -77,14 +77,12 @@ CheckTargetLimit	YES
 
 # CheckSpamOnTarget YES
 
-#  DisableStrongVlines
-#
-#   If defined  messages will not be control code stripped and lowercased 
-#   before vline checking. This will save (A LOT) on cpu usage.
-# DisableStrongVlines	YES
-
 # Defines the maxinum number of channels a user can join
-MaxChansPerUser	20
+MaxChansPerUser	5
+
+# Defines the maximum number of channels a registered user can join
+# If defined will override MaxChansPerUser for registered nicks
+MaxChansPerRegUser 20
 
 # Define if you want to use IRCNTP
 # this will make all time stamps to be adjusted with an 
@@ -98,5 +96,11 @@ CodePagePath "codepage"
 # List of codepage files that should be loaded from CodePagePath
 # a .cp extension will be appended to the filename
 CodePages "iso8859-1,iso8859-5,iso8859-9,cp1251,cp1253,cp850,cp860,cp866"
+
+# Define if you want users to join a given channel after connect
+# NOTES:
+#   Do not prefix channel names with the # symbol 
+#   You can specify multiple channels splitting them with ","
+# AutoJoinChan "PTlink"
 
 # END OF FILE
