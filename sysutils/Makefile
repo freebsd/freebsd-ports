@@ -92,6 +92,7 @@
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
     SUBDIR += deleted
+    SUBDIR += deltup
     SUBDIR += detach
     SUBDIR += detox
     SUBDIR += di

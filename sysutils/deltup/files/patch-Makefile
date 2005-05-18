@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed May 18 18:31:46 2005
++++ Makefile	Wed May 18 18:32:18 2005
+@@ -5,7 +5,7 @@
+ #edelta: edelta.cpp deltup
+ #	gcc edelta.cpp ${CXXFLAGS} -o edelta
+ deltup: deltup.cpp file.h linklist.h
+-	gcc deltup.cpp ${CXXFLAGS} -o deltup -lstdc++ -lz -lbz2 -lssl
++	${CXX} deltup.cpp ${CXXFLAGS} -o deltup -lstdc++ -lz -lbz2 -lssl
+ install: deltup
+ 	mkdir -p $(DESTDIR)$(BINDIR)
+ 	install -m 755 mkdtu $(DESTDIR)$(BINDIR)
