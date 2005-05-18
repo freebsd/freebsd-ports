@@ -1,0 +1,11 @@
+--- configure.orig	Sun Jan 30 06:25:27 2005
++++ configure	Wed May 18 12:06:06 2005
+@@ -2643,7 +2643,7 @@
+ PyLIBP=${PyEXEC_INSTALLDIR}/lib/python${PyVERSION}
+ PyLIBPL=${PyLIBP}/config
+ PyPYTHONLIBS=${PyLIBPL}/libpython${PyVERSION}.a
+-PyLIBS=`grep "^LIB[SMC]=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
++PyLIBS=`ldd $PYTHON_BIN | sed -n 's,^.* => [^ ]*/lib\(.*\)\.so[^ ]* \((.*)\),-l\1,p' | grep -v '^-lc$' | xargs echo`
+ PyMODLIBS=`grep "^LOCALMODLIBS=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
+ PyFRAMEWORK=`grep "^PYTHONFRAMEWORK=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
+ PyFRAMEWORKDIR=`grep "^PYTHONFRAMEWORKDIR=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   ' | awk '{print $1}'`
