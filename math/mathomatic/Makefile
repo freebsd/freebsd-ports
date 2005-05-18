@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	12.1.e
+PORTVERSION=	12.3.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/
 EXTRACT_SUFX=	.tgz
@@ -22,7 +22,7 @@ MAKE_ARGS+=	-DREADLINE prefix=${PREFIX} docdir='$$(prefix)/share/doc'
 USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/mathomatic
-PORTDOCS=	am.htm ctips.html index.html manual.htm notes.htm
+PORTDOCS=	am.htm ctips.html index.html manual.htm notes.htm changes.txt
 
 MAN1=		mathomatic.1
 
