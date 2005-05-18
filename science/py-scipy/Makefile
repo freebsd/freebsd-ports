@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scipy
-PORTVERSION=	0.3
+PORTVERSION=	0.3.2
 CATEGORIES=	science python
 MASTER_SITES=	http://www.scipy.org/download/scipy/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 post-install:
+	@${RMDIR} ${PYTHON_SITELIBDIR}/weave/swig # empty
 .for dir in ${PYTHON_SITELIBDIR}/gui_thread ${PYTHON_SITELIBDIR}/scipy \
 		${PYTHON_SITELIBDIR}/scipy_base ${PYTHON_SITELIBDIR}/scipy_distutils \
 		${PYTHON_SITELIBDIR}/scipy_test ${PYTHON_SITELIBDIR}/weave
