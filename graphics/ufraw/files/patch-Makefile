@@ -1,0 +1,26 @@
+--- ./Makefile.orig	Tue Apr 19 23:53:14 2005
++++ ./Makefile	Tue Apr 19 23:56:49 2005
+@@ -17,7 +17,7 @@
+ 	OBJECTS := $(filter-out dcraw.o,$(OBJECTS))
+ endif
+ CC = gcc
+-CFLAGS += -std=gnu99 -DUFRAW_VERSION='"$(VER)"'
++CFLAGS += -std=gnu99 -DUFRAW_VERSION='"$(VER)"' -I/usr/local/include
+ # To check that deprecated features are not used:
+ #CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
+ LDFLAGS += -llcms
+@@ -91,12 +91,12 @@
+ ifdef UFRAW_NO_JPEG
+ 	CFLAGS += -DNO_JPEG
+ else
+-	LDFLAGS += -ljpeg
++	LDFLAGS += -L/usr/local/lib -ljpeg
+ endif
+ ifdef UFRAW_NO_TIFF
+ 	CFLAGS += -DNO_TIFF
+ else
+-	LDFLAGS += -ltiff
++	LDFLAGS += -L/usr/local/lib -ltiff
+ endif
+ ifdef UFRAW_NO_ZLIB
+ 	CFLAGS += -DNO_ZLIB
