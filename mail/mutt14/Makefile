@@ -44,7 +44,6 @@ WITH_SGML_DOCS:=no
 WITH_SGML_DOCS?=yes
 .endif
 
-.if !defined (MUTT_LITE)
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -52,9 +51,8 @@ USE_ICONV=	yes
 .error the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
 	WITHOUT_NLS is also given
 .endif
-.elif !defined(WITHOUT_MUTT_ICONV) && !defined (MUTT_LITE)
+.elif !defined(WITHOUT_MUTT_ICONV)
 USE_ICONV=	yes
-.endif
 .endif
 
 .if defined(WITH_SLANG)
