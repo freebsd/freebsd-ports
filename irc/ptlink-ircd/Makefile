@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	IRCd
-PORTVERSION=	6.18.2
-PORTREVISION=	1
+PORTVERSION=	6.19.3
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircd/ \
 		http://www.rootxs.org/pub/FreeBSD/distfiles/
