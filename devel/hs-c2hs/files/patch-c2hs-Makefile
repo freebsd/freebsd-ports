@@ -1,0 +1,19 @@
+--- c2hs/Makefile.orig	Wed May 18 05:04:03 2005
++++ c2hs/Makefile	Wed May 18 20:59:56 2005
+@@ -84,7 +84,7 @@
+ 
+ # installation
+ #
+-install: all install-dirs install-conf register-package
++install: all install-dirs install-conf
+ 	$(INSTALL) -s c2hs $(DESTDIR)$(bindir)/c2hs
+ 	$(INSTALL_PROGRAM) c2hs-config $(DESTDIR)$(bindir)/c2hs-config
+ 	$(INSTALL_DATA) lib/libc2hs.a $(DESTDIR)$(pkglibdir)/libc2hs.a
+@@ -93,6 +93,7 @@
+ 	       $(DESTDIR)$(pkgimportdir)/`$(BASENAME) $$hi`;\
+ 	  $(INSTALL_DATA) $$hi $(DESTDIR)$(pkgimportdir)/`$(BASENAME) $$hi`;\
+ 	done
++	$(MAKE) register-package
+ 
+ install-dirs:
+ 	$(INSTALL_PROGRAM) -d $(DESTDIR)$(bindir)
