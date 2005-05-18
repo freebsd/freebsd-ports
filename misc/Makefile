@@ -20,6 +20,7 @@
     SUBDIR += astrolog
     SUBDIR += bb
     SUBDIR += bbjd
+    SUBDIR += bdelta
     SUBDIR += bestfit
     SUBDIR += bibletime
     SUBDIR += bidwatcher
