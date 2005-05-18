@@ -1,0 +1,4 @@
+For a quick demonstration, issue the following commands:
+
+$ cd %%EXAMPLESDIR%%
+$ xjtext README

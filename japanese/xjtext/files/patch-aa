@@ -1,11 +1,26 @@
---- Makefile.orig	Sat Jul  8 00:36:46 2000
-+++ Makefile	Sat Jul  8 00:36:57 2000
-@@ -2,7 +2,7 @@
- CFLAGS	=-c -g -O 
- INCDIRS	=-I/usr/X11R6/include -I/usr/local/include
+--- Makefile.orig	Sat Sep  4 22:45:16 1999
++++ Makefile	Mon May 16 15:30:41 2005
+@@ -1,9 +1,9 @@
+-CC	=g++
+-CFLAGS	=-c -g -O 
+-INCDIRS	=-I/usr/X11R6/include -I/usr/local/include
++CC	=${CXX}
++CFLAGS	=${CXXFLAGS} -c
++INCDIRS	=-I${X11BASE}/include `imlib-config --cflags`
  LIBS 	=-lX11 -lXext  -lm -lfl 
 -IMLIBS	=-ljpeg -lpng -ltiff -lz -lgif -lImlib
-+IMLIBS	=-ljpeg -lpng -ltiff -lz -lungif -lImlib
- LIBDIRS	=-L/usr/X11R6/lib/ -L/usr/local/lib
+-LIBDIRS	=-L/usr/X11R6/lib/ -L/usr/local/lib
++IMLIBS	=`imlib-config --libs`
++LIBDIRS	=-L${X11BASE}/lib
  OBJS	=xwindow.o xfont.o xtext.o xjtext.o lex.yy.o parser.tab.o xjtext-main.o
  
+ all: xjtext
+@@ -39,7 +39,7 @@
+ 	${CC} ${CFLAGS} ${INCDIRS} lex.yy.c
+ 
+ xjtext: ${OBJS}
+-	LD_RUN_PATH=/usr/X11R6/lib/ ${CC} ${OBJS} ${LIBDIRS} ${LIBS} ${IMLIBS}\
++	LD_RUN_PATH=${X11BASE}/lib/ ${CC} ${OBJS} ${LIBDIRS} ${LIBS} ${IMLIBS}\
+ 	-o xjtext
+ 
+ clean:

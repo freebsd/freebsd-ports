@@ -1,12 +1,12 @@
 bin/xjtext
-share/doc/xjtext/README.txt
-share/examples/xjtext/Ao.png
-share/examples/xjtext/Back2.png
-share/examples/xjtext/Brown.png
-share/examples/xjtext/FSS
-share/examples/xjtext/README
-share/examples/xjtext/Royal.png
-share/examples/xjtext/Royal2.png
-share/examples/xjtext/YAMA
-@dirrm share/examples/xjtext
-@dirrm share/doc/xjtext
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%EXAMPLESDIR%%/Ao.png
+%%EXAMPLESDIR%%/Back2.png
+%%EXAMPLESDIR%%/Brown.png
+%%EXAMPLESDIR%%/FSS
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/Royal.png
+%%EXAMPLESDIR%%/Royal2.png
+%%EXAMPLESDIR%%/YAMA
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
