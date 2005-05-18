@@ -21,12 +21,20 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	INCLUDES=-I${X11BASE}/include \
+		CXXFLAGS="${CXXFLAGS} -D_WIN_GNOME_SUPPORT" \
+		novawm_LDFLAGS=-L${X11BASE}/lib
+
+PLIST_FILES=	bin/novawm
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS ChangeLog INSTALL README TODO
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog INSTALL README TODO
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
