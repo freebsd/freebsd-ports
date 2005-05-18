@@ -85,13 +85,18 @@ USE_REINPLACE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
+CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \
 		--with-ssl=${OPENSSLBASE} --sysconfdir=${PREFIX}/etc \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${DOCSDIR} --with-charmaps \
 		--enable-compressed
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
+.endif
+.if defined(WITHOUT_MUTT_FLOCK)
+CONFIGURE_ARGS+=	--disable-flock
+.else
+CONFIGURE_ARGS+=	--enable-flock
 .endif
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
