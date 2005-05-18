@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.00.05
+PORTVERSION=	2.1.0
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--enable-i18n \
 MAKE_ENV=	INCS_PRIVATE="${CPPFLAGS}" LIBS_PRIVATE="${LDFLAGS}"
 
 MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
-		Animate.1x AnimateTypes.1x Audio.1x AudioEvents.1x \
+		Animate.1x AnimateTypes.1x Arrange.1x Audio.1x AudioEvents.1x \
 		AutoExec.1x Base.1x Bevel.1x ColorScheme.1x Feel.1x \
 		FeelWindowBox.1x Functions.1x Gravity.1x Look.1x \
 		MyBackground.1x MyFrame.1x MyStyle.1x Pager.1x \
@@ -73,27 +73,20 @@ post-extract:
 
 post-patch:
 .for file in afterstep/database
-	${PERL} -pi -e 's,linux-penguin,monitor-bsd,' \
+	@${PERL} -pi -e 's,linux-penguin,monitor-bsd,' \
 		${WRKSRC}/${file}
 .endfor
 .for file in libAfterBase/Makefile.in libAfterImage/Makefile.in
-	${PERL} -pi.orig -e 's,^install\.,noinstall.,g ; \
+	@${PERL} -pi.orig -e 's,^install\.,noinstall.,g ; \
 		 s,^install:,install:#,g' ${WRKSRC}/${file}
 .endfor
 .for file in libAfterBase/configure libAfterImage/configure
-	${PERL} -pi.orig -e 's,="-O3",="$$CFLAGS",g' \
+	@${PERL} -pi.orig -e 's,="-O3",="$$CFLAGS",g' \
 		${WRKSRC}/${file}
 .endfor
 .for file in libAfterStep/afterstep-config.in
-	${PERL} -pi -e 's,ft_version,libafterstep_version,g' \
+	@${PERL} -pi -e 's,ft_version,libafterstep_version,g' \
 		${WRKSRC}/${file}
 .endfor
-
-post-install:
-.if defined(WITH_DIFFERENT_LOOKNFEELS)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "===>  The WinList module is broken with different-looknfeels.  Don't use it."
-	@${ECHO_MSG} ""
-.endif
 
 .include <bsd.port.post.mk>

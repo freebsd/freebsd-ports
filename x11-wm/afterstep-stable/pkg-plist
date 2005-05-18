@@ -192,6 +192,10 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/bars/ostx
 %%DATADIR%%/desktop/bars/ostxs
 %%DATADIR%%/desktop/bars/ostxu
+%%DATADIR%%/desktop/bars/postcard_maybe
+%%DATADIR%%/desktop/bars/postcard_msg
+%%DATADIR%%/desktop/bars/postcard_no
+%%DATADIR%%/desktop/bars/postcard_yes
 %%DATADIR%%/desktop/bars/red
 %%DATADIR%%/desktop/bars/south
 %%DATADIR%%/desktop/bars/southeast
@@ -872,6 +876,7 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/Align.html
 %%DATADIR%%/doc/html/Animate.html
 %%DATADIR%%/doc/html/AnimateTypes.html
+%%DATADIR%%/doc/html/Arrange.html
 %%DATADIR%%/doc/html/Audio.html
 %%DATADIR%%/doc/html/AudioEvents.html
 %%DATADIR%%/doc/html/AutoExec.html
@@ -1077,6 +1082,14 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/data/desktop/bars/ostxs.png
 %%DATADIR%%/doc/html/data/desktop/bars/ostxu.html
 %%DATADIR%%/doc/html/data/desktop/bars/ostxu.png
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_maybe.html
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_maybe.png
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_msg.html
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_msg.png
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_no.html
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_no.png
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_yes.html
+%%DATADIR%%/doc/html/data/desktop/bars/postcard_yes.png
 %%DATADIR%%/doc/html/data/desktop/bars/red.html
 %%DATADIR%%/doc/html/data/desktop/bars/red.png
 %%DATADIR%%/doc/html/data/desktop/bars/south.html
@@ -3043,6 +3056,6 @@ share/xsessions/AfterStep.desktop
 @dirrm %%DATADIR%%/backgrounds/Mirrored_Tiles
 @dirrm %%DATADIR%%/backgrounds/Gradient_Textures
 @dirrm %%DATADIR%%/backgrounds
-@dirrm share/afterstep
+@dirrm %%DATADIR%%
 @dirrm include/libAfterStep
 @dirrm include/libAfterConf
