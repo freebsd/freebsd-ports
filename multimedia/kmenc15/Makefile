@@ -6,42 +6,32 @@
 #
 
 PORTNAME=	kmenc15
-PORTVERSION=	0.02
-PORTREVISION=	1
+PORTVERSION=	0.04
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://dividedsky.net/~ods15/kmenc15/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE advanced MEncoder frontend, ala, VirtualDub
 
-BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
-		sox:${PORTSDIR}/audio/sox \
-		yuvtoppm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
+USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	QTDIR="${QT_PREFIX}" \
+		KDEDIR="${KDE_PREFIX}" \
+		CPP="${CXX}" \
+		CFLAGS="${PTHREAD_LIBS}" \
+		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
+		VERSION="${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-# FreeBSD uses sed(1) -E -e instead of sed(1) -r
-	@${REINPLACE_CMD} -E \
-		-e 's|sed -r|${SED} -E -e|' \
-		${BUILD_WRKSRC}/${MAKEFILE} \
-		${WRKSRC}/dialog.cpp
-
-do-configure:
-# CXX{,FLAGS} safeness
-# PTHREAD_{CFLAGS,LIBS} safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|^(CPP[[:space:]]*=).*$$|\1${CXX}|' \
-		-e 's|^(CFLAGS[[:space:]]*=).*$$|\1${CXXFLAGS} ${PTHREAD_CFLAGS}|' \
-		-e 's|^(BFLAGS.*)$$|\1 ${PTHREAD_LIBS}|' \
-		${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|--no-backup-if-mismatch||g' ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
