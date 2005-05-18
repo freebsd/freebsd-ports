@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Alzabo.pm
 %%SITE_PERL%%/Alzabo/BackCompat.pm
 %%SITE_PERL%%/Alzabo/ChangeTracker.pm
