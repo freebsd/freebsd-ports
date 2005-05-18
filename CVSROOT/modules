@@ -628,6 +628,7 @@ bchunk		ports/sysutils/bchunk
 bclock		ports/x11-clocks/bclock
 bcpp		ports/devel/bcpp
 bcwipe		ports/security/bcwipe
+bdelta		ports/misc/bdelta
 bdfresize	ports/x11-fonts/bdfresize
 be-aspell	ports/textproc/be-aspell
 beacon		ports/net/beacon
