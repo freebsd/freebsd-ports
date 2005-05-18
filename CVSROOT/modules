@@ -1490,6 +1490,7 @@ dekagen		ports/audio/dekagen
 delay		ports/misc/delay
 delegate	ports/net/delegate
 deleted		ports/sysutils/deleted
+deltup		ports/sysutils/deltup
 demeter		ports/graphics/demeter
 demime		ports/mail/demime
 demoniac	ports/misc/demoniac
