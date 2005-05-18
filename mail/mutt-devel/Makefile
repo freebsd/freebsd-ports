@@ -90,6 +90,9 @@
 # If you want to have the Mailbox Sidebar patch define:
 #  WITH_MUTT_SIDEBAR_PATCH
 #
+# If you do not want mutt to use the flock() function define:
+#  WITHOUT_MUTT_FLOCK
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.9
@@ -107,7 +110,8 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		http://www3.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www.spinnaker.de/mutt/compressed/:rr
+		http://www.spinnaker.de/mutt/compressed/:rr \
+		http://thomer.com/mutt/:thomer
 DISTNAME=	mutt-${PORTVERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -119,8 +123,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://home.woolridge.ca/mutt/patches/:dw \
-		http://www.spinnaker.de/mutt/compressed/:rr \
-		http://thomer.com/mutt/:thomer
+		http://www.spinnaker.de/mutt/compressed/:rr
 
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
@@ -132,7 +135,7 @@ EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
 DATADIR?=	${PREFIX}/share/mutt
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-flock --disable-fcntl --with-ssl=${OPENSSLBASE} \
+CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-sharedir=${PREFIX}/share/mutt --with-docdir=${DOCSDIR} \
 		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
 		--enable-pop --enable-imap --disable-warnings
@@ -298,7 +301,6 @@ pre-configure::
 .endif
 
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-.error The WITH_MUTT_SIDEBAR_PATCH is not available at the moment
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sidebar
 .endif
@@ -308,6 +310,11 @@ pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aspell
 .endif
 
+.if defined(WITHOUT_MUTT_FLOCK)
+CONFIGURE_ARGS+=	--disable-flock
+.else
+CONFIGURE_ARGS+=	--enable-flock
+.endif
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
@@ -376,7 +383,14 @@ SGML_NEEDED=	yes
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-PATCHFILES+=	patch-1.5.8i.sidebar.20050224.txt:thomer
+SIDEBAR_PATCH=	patch-1.5.8i.sidebar.20050224.txt
+DISTFILES+=	$(SIDEBAR_PATCH):thomer
+SGML_NEEDED=	yes
+pre-patch::
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/$(SIDEBAR_PATCH) > ${WRKDIR}/patch-sidebar
+	@${REINPLACE_CMD} -E '/^diff.*\/Makefile.in$$/,/^diff/d' \
+		 ${WRKDIR}/patch-sidebar
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-sidebar
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
