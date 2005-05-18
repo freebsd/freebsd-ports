@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpixman
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
