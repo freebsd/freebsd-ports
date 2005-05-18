@@ -3,10 +3,10 @@ $FreeBSD$
 This patch allows JBoss to correctly create tables when
 using the auto-increment feature with Postgresql.
 
-diff -r -u ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /tmp/jboss-4.0.0-src/server/src/etc/conf/default/standardjbosscmp-jdbc.xml
---- ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml	Thu Sep 16 03:48:58 2004
-+++ /tmp/jboss-4.0.0-src/server/src/etc/conf/default/standardjbosscmp-jdbc.xml	Sun Dec  5 22:21:18 2004
-@@ -1169,7 +1169,7 @@
+diff -ruN ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /home/jonc/ports/jboss4/work/jboss-4.0.2-src/server/src/etc/conf/default/standardjbosscmp-jdbc.xml
+--- ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml	Thu Jan 27 07:51:35 2005
++++ /home/jonc/ports/jboss4/work/jboss-4.0.2-src/server/src/etc/conf/default/standardjbosscmp-jdbc.xml	Tue May 17 16:13:34 2005
+@@ -1293,7 +1293,7 @@
           <row-locking-template>SELECT ?1 FROM ?2 WHERE ?3 ORDER BY ?4 FOR UPDATE</row-locking-template>
           <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
           <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
@@ -15,7 +15,7 @@ diff -r -u ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /tmp/jboss-4.
           <alias-header-prefix>t</alias-header-prefix>
           <alias-header-suffix>_</alias-header-suffix>
           <alias-max-length>32</alias-max-length>
-@@ -1296,7 +1296,7 @@
+@@ -1420,7 +1420,7 @@
           <row-locking-template>SELECT ?1 FROM ?2 WHERE ?3 ORDER BY ?4 FOR UPDATE</row-locking-template>
           <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
           <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
@@ -24,7 +24,7 @@ diff -r -u ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /tmp/jboss-4.
           <alias-header-prefix>t</alias-header-prefix>
           <alias-header-suffix>_</alias-header-suffix>
           <alias-max-length>32</alias-max-length>
-@@ -1423,7 +1423,7 @@
+@@ -1674,7 +1674,7 @@
           <row-locking-template/>
           <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
           <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
@@ -33,7 +33,7 @@ diff -r -u ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /tmp/jboss-4.
           <add-column-template>ALTER TABLE ?1 ADD COLUMN ?2 ?3</add-column-template>
           <drop-column-template>ALTER TABLE ?1 DROP COLUMN ?2</drop-column-template>
           <alias-header-prefix>t</alias-header-prefix>
-@@ -1717,7 +1717,7 @@
+@@ -1973,7 +1973,7 @@
                <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
           -->
           <fk-constraint-template>ALTER TABLE ?1 ADD INDEX (?3), ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
@@ -42,7 +42,7 @@ diff -r -u ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /tmp/jboss-4.
           <alter-column-template>ALTER TABLE ?1 MODIFY ?2 ?3</alter-column-template>
           <alias-header-prefix>t</alias-header-prefix>
           <alias-header-suffix>_</alias-header-suffix>
-@@ -1857,7 +1857,7 @@
+@@ -2113,7 +2113,7 @@
           <row-locking-template>SELECT ?1 FROM ?2 with (updlock) WHERE ?3 ORDER BY ?4</row-locking-template>
           <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
           <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
@@ -51,7 +51,7 @@ diff -r -u ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /tmp/jboss-4.
           <alter-column-template>ALTER TABLE ?1 ALTER COLUMN ?2 ?3</alter-column-template>
           <alias-header-prefix>t</alias-header-prefix>
           <alias-header-suffix>_</alias-header-suffix>
-@@ -1989,7 +1989,7 @@
+@@ -2245,7 +2245,7 @@
           <row-locking-template>SELECT ?1 FROM ?2 with (xlock) WHERE ?3 ORDER BY ?4</row-locking-template>
           <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
           <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
@@ -60,9 +60,9 @@ diff -r -u ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml /tmp/jboss-4.
           <alias-header-prefix>t</alias-header-prefix>
           <alias-header-suffix>_</alias-header-suffix>
           <alias-max-length>32</alias-max-length>
-diff -r -u ./server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java /tmp/jboss-4.0.0-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java
---- ./server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java	Tue Sep 14 09:23:02 2004
-+++ /tmp/jboss-4.0.0-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java	Sun Dec  5 22:04:56 2004
+diff -ruN ./server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java /home/jonc/ports/jboss4/work/jboss-4.0.2-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java
+--- ./server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java	Tue Oct 26 22:28:23 2004
++++ /home/jonc/ports/jboss4/work/jboss-4.0.2-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java	Tue May 17 16:13:34 2005
 @@ -916,14 +916,18 @@
        // apply auto-increment template
        if(type.getAutoIncrement()[0])
