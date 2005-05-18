@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP-Session
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PHP
@@ -22,5 +22,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		PHP::Session.3 PHP::Session::Serializer::PHP.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
