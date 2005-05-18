@@ -4,8 +4,8 @@
      gnu*)
  	tmp_disk=`echo "$1" | sed 's%\([sh]d[0-9]*\).*%\1%'`
  	tmp_part=`echo "$1" | sed "s%$tmp_disk%%"` ;;
--    freebsd*)
-+    freebsd[234]*)
+-    freebsd* | kfreebsd*-gnu)
++    freebsd[234]* | kfreebsd*-gnu)
  	tmp_disk=`echo "$1" | sed 's%r\{0,1\}\([saw]d[0-9]*\).*$%r\1%' \
  			    | sed 's%r\{0,1\}\(da[0-9]*\).*$%r\1%'`
 +	tmp_part=`echo "$1" \
