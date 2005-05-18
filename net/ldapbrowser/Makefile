@@ -27,7 +27,7 @@ do-install:
 	cd ${WRKSRC} ; tar cf - . | ( cd ${PREFIX}/lib/ldapbrowser ; tar xf - )
 	${SED} "s#^JH=.*#JH=${JAVA_HOME} ; cd ${PREFIX}/lib/ldapbrowser#" \
 		< ${PREFIX}/lib/ldapbrowser/lbe.sh \
-		> ${WRKDIR}/ldapbrowser
-	${INSTALL_SCRIPT} ${WRKDIR}/ldapbrowser ${PREFIX}/bin
+		> ${WRKDIR}/lbe.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/lbe.sh ${PREFIX}/bin/ldapbrowser
 
 .include <bsd.port.mk>
