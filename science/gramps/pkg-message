@@ -1,0 +1,10 @@
+***********************************************************************
+The development of 2.0.0 involved a lot of internal changes and took 
+a long time. While the foundation is solid, there has been little user 
+testing of this branch. Therefore, you are advised to keep 
+
+	a copy of your XML databases in safe place, 
+	
+just in case. We believe that this is an extra precaution, but we want 
+our users to better be safe than sorry.
+***********************************************************************
