@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.0r5
+PORTVERSION=	2.0.0r6
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
@@ -31,15 +31,16 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		APR::BucketAlloc.3 APR::BucketType.3 APR::Const.3 \
 		APR::Date.3 APR::Error.3 APR::Finfo.3 APR::IpSubnet.3 \
 		APR::OS.3 APR::PerlIO.3 APR::Pool.3 APR::SockAddr.3 \
-		APR::Socket.3 APR::String.3 APR::Table.3 APR::ThreadMutex.3 \
-		APR::URI.3 APR::UUID.3 APR::Util.3 Apache2::Access.3 \
-		Apache2::Build.3 Apache2::CmdParms.3 Apache2::Command.3 \
-		Apache2::Connection.3 Apache2::Const.3 Apache2::Directive.3 \
-		Apache2::Filter.3 Apache2::FilterRec.3 Apache2::HookRun.3 \
-		Apache2::Log.3 Apache2::Module.3 Apache2::PerlSections.3 \
-		Apache2::Process.3 Apache2::Reload.3 Apache2::RequestIO.3 \
-		Apache2::RequestRec.3 Apache2::RequestUtil.3 \
-		Apache2::Resource.3 Apache2::Response.3 Apache2::ServerRec.3 \
+		APR::Socket.3 APR::Status.3 APR::String.3 APR::Table.3 \
+		APR::ThreadMutex.3 APR::URI.3 APR::UUID.3 APR::Util.3 \
+		Apache2::Access.3 Apache2::Build.3 Apache2::CmdParms.3 \
+		Apache2::Command.3 Apache2::Connection.3 Apache2::Const.3 \
+		Apache2::Directive.3 Apache2::Filter.3 Apache2::FilterRec.3 \
+		Apache2::HookRun.3 Apache2::Log.3 Apache2::Module.3 \
+		Apache2::PerlSections.3 Apache2::Process.3 Apache2::Reload.3 \
+		Apache2::RequestIO.3 Apache2::RequestRec.3 \
+		Apache2::RequestUtil.3 Apache2::Resource.3 \
+		Apache2::Response.3 Apache2::ServerRec.3 \
 		Apache2::ServerUtil.3 Apache2::SizeLimit.3 Apache2::Status.3 \
 		Apache2::SubProcess.3 Apache2::SubRequest.3 Apache2::URI.3 \
 		Apache2::Util.3 Apache2::compat.3 Apache2::porting.3 \
@@ -57,13 +58,13 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 
 pre-everything::
 	@${ECHO} "************************************************************"
-	@${ECHO} "NOTE: This version of ${PORTNAME} significantly"
-	@${ECHO} "      changes the API - old code *will* break!"
+	@${ECHO} "NOTE: Version RC5 and higher of ${PORTNAME} significantly"
+	@${ECHO} "      change the API - old code *will* break!"
 	@${ECHO} "      See http://perl.apache.org/docs/2.0/rename.html"
 	@${ECHO} ""
-	@${ECHO} "Hit Ctrl-C now to abort, if this is of concern."
+	@${ECHO} "Hit Ctrl-C to abort now, if this is of concern."
 	@${ECHO} "************************************************************"
-	@sleep 5
+	@sleep 10
 
 .include <bsd.port.pre.mk>
 
@@ -76,6 +77,8 @@ post-install:
 	${MKDIR} ${PREFIX}/include/apache2/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
 		${PREFIX}/include/apache2/modules/perl
+	${INSTALL_DATA} ${WRKSRC}/xs/*.h ${PREFIX}/include/apache2
+	${INSTALL_DATA} ${WRKSRC}/xs/APR/PerlIO/*.h ${PREFIX}/include/apache2
 	${MKDIR} ${PREFIX}/libexec/apache2
 	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
 		${PREFIX}/libexec/apache2/mod_perl.so
