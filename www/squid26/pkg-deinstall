@@ -8,7 +8,7 @@ PATH=/bin:/usr/bin:/usr/sbin
 case $2 in
 DEINSTALL)
 	cd ${PKG_PREFIX}/etc/squid || exit 1
-	for f in squid.conf mime.conf msntauth.conf; do
+	for f in cachemgr.conf mime.conf msntauth.conf squid.conf; do
 		cmp -s -z ${f} ${f}.default && rm ${f}
 	done
 	;;

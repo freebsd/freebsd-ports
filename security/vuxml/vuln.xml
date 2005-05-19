@@ -16327,4 +16327,62 @@ misc.c:
     </dates>
   </vuln>
 
+  <vuln vid="a395397c-c7c8-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- possible abuse of cachemgr.cgi</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-cachemgr_conf">
+	  <p>This patch adds access controls to the cachemgr.cgi script,
+	    preventing it from being abused to reach other servers than
+	    allowed in a local configuration file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-1999-0710</cvename>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-cachemgr_conf</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1094</url>
+    </references>
+    <dates>
+      <discovery>19990729</discovery>
+      <entry>20050519</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7e97b288-c7ca-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- DNS lookup spoofing vulnerability</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-dns_query">
+	  <p>Malicious users may spoof DNS lookups if the DNS client UDP port
+	    (random, assigned by OS as startup) is unfiltered and your network
+	    is not protected from IP spoofing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1519</cvename>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-dns_reply</url>
+      <url>http://secunia.com/advisories/15294</url>
+    </references>
+    <dates>
+      <discovery>20050511</discovery>
+      <entry>20050519</entry>
+    </dates>
+  </vuln>
+
 </vuxml>

@@ -65,43 +65,20 @@
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.5.9
-PORTREVISION=	5
+PORTVERSION=	2.5.10
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
-		ftp://ftp.leo.org/pub/comp/general/infosys/www/servers/squid/%SUBDIR%/ \
+		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE9
+DISTNAME=	squid-2.5.STABLE10
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE9-setcookie.patch \
-		squid-2.5.STABLE9-ftp_EPLF.patch \
-		squid-2.5.STABLE9-ftp_base_href.patch \
-		squid-2.5.STABLE9-acl_error.patch \
-		squid-2.5.STABLE9-date.patch \
-		squid-2.5.STABLE9-reload_into_ims.patch \
-		squid-2.5.STABLE9-delay_access_doc.patch \
-		squid-2.5.STABLE9-config_overflow.patch \
-		squid-2.5.STABLE9-bzero.patch \
-		squid-2.5.STABLE9-pid_t.patch \
-		squid-2.5.STABLE9-ctype.patch \
-		squid-2.5.STABLE9-defer_digest_fetch.patch \
-		squid-2.5.STABLE9-dup_content_length.patch \
-		squid-2.5.STABLE9-excess_data.patch \
-		squid-2.5.STABLE9-aufs.patch \
-		squid-2.5.STABLE9-long_basic_auth.patch \
-		squid-2.5.STABLE9-CONNECT_truncated.patch \
-		squid-2.5.STABLE9-disable_hostname_checks.patch \
-		squid-2.5.STABLE9-aufs_shutdown.patch \
-		squid-2.5.STABLE9-2GB.patch \
-		squid-2.5.STABLE9-cachemgr_objects.patch \
-		squid-2.5.STABLE9-extaclauth.patch \
-		squid-2.5.STABLE9-syslog.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -116,7 +93,7 @@ USE_REINPLACE=	yes
 SQUID_UID?=	squid
 SQUID_GID?=	squid
 
-MAN8=		squid.8
+MAN8=		cachemgr.cgi.8 squid.8
 docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 .if !defined(NOPORTDOCS)
 PORTDOCS=	${docs:T}
@@ -148,7 +125,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
 		SQUID_RCNG "Install an rcNG startup script" on
 
-etc_files=	rc.d/squid.sh squid/mib.txt squid/mime.conf.default \
+etc_files=	rc.d/squid.sh squid/cachemgr.conf.default \
+		squid/mib.txt squid/mime.conf.default \
 		squid/msntauth.conf.default squid/squid.conf.default
 
 icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
@@ -307,7 +285,7 @@ EXTRA_PATCHES+=	${WRKDIR}/pf_from_ports.patch
 # information.
 .if defined(WITH_SQUID_IPFILTER)
 .if (${OSVERSION} >= 470000 && ${OSVERSION} < 500000) || (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
-IGNORE=		"IPFilter headers are not part of the base system"
+IGNORE=		IPFilter headers are not part of the base system
 .else
 CONFIGURE_ARGS+=	--enable-ipf-transparent
 .endif
@@ -375,7 +353,6 @@ pre-patch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/doc/squid.8
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' ${WRKSRC}/src/cf.data.pre
 
