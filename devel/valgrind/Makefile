@@ -79,7 +79,7 @@ post-install:
 	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! || true
 .endif
 
-	@yes | ${PREFIX}/bin/valgrind --tool=memcheck --gen-suppressions=yes true \
+	@yes | ${PREFIX}/bin/valgrind --tool=memcheck --gen-suppressions=yes true 2>&1 \
 		| ${SED} -e 's,.*{$$,{,'  \
 		| ${GREP} -v '^=' \
 		> ${WRKDIR}/freebsd-default.supp || \
