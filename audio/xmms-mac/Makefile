@@ -5,9 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	mac
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.1
 CATEGORIES=	audio
-PORTREVISION=	1
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mac-port
 PKGNAMEPREFIX=	xmms-
@@ -26,14 +25,10 @@ CONFIGURE_ARGS+=	CPPFLAGS=${CPPFLAGS}
 USE_AUTOCONF_VER=	259
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 
-WRKSRC=		${WRKDIR}/libxmms-mac
-
-TARGET_DIR=	${PREFIX}/lib/xmms/Input
-
-PROG_FILES=	${WRKSRC}/src/.libs/libxmms-mac.so.1
+PLIST_FILES=	lib/xmms/Input/libxmms-mac.so
 
 do-install:
 	${INSTALL} -d ${TARGET_DIR}
-	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR}/libxmms-mac.so
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libxmms-mac.so ${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>
