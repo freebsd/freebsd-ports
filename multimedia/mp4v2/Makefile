@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/lib/mp4v2
-INSTALL_WRKSRC=	${WRKSRC}/lib/mp4v2
-
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/systems.h)
@@ -38,6 +34,7 @@ CFLAGS+=	-O2
 .endif
 
 post-patch:
+	${TOUCH} -f ${WRKSRC}/bootstrapped
 # Speed up configure by not using 2 unneeded configure scripts.
 	@${ECHO_CMD} "" > ${WRKSRC}/lib/rtp/configure
 	@${ECHO_CMD} "" > ${WRKSRC}/lib/SDLAudio/configure
@@ -45,8 +42,15 @@ post-patch:
 		-e 's|>&/|>/|; s|-Wmissing-declarations||; \
 			s|-Wmissing-prototypes||' \
 			${WRKSRC}/configure
-pre-build:
-	@cd ${WRKSRC}/lib/gnu && ${MAKE}
+do-build:
+.for dir in lib/gnu lib/mp4av lib/mp4v2
+	@(cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.endfor
+
+do-install:
+.for dir in lib/gnu lib/mp4av lib/mp4v2
+	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.endfor
 
 post-install:
 .for i in include/mpeg4ip.h include/mpeg4ip_version.h mpeg4ip_config.h
