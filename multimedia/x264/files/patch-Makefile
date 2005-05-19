@@ -1,7 +1,7 @@
---- Makefile.orig	Thu Apr 21 08:02:33 2005
-+++ Makefile	Thu Apr 21 08:11:28 2005
-@@ -10,7 +10,7 @@
-        encoder/cavlc.c encoder/encoder.c encoder/eval.c
+--- Makefile.orig	Wed May 18 22:55:05 2005
++++ Makefile	Wed May 18 22:56:31 2005
+@@ -15,7 +15,7 @@
+ endif
  
  # MMX/SSE optims
 -ifeq ($(ARCH),X86)
@@ -9,16 +9,7 @@
  SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict.c
  ASMSRC  = common/i386/dct-a.asm common/i386/cpu-a.asm \
            common/i386/pixel-a.asm common/i386/mc-a.asm \
-@@ -19,7 +19,7 @@
- endif
- 
- # MMX/SSE optims
--ifeq ($(ARCH),X86_64)
-+ifdef ARCH_X86_64
- SRCS   += common/amd64/mc-c.c common/amd64/dct-c.c common/amd64/predict.c
- ASMSRC  = common/amd64/dct-a.asm common/amd64/cpu-a.asm \
-           common/amd64/pixel-a.asm common/amd64/mc-a.asm \
-@@ -35,19 +35,25 @@
+@@ -40,19 +40,25 @@
  OBJS = $(SRCS:%.c=%.o)
  DEP  = depend
  

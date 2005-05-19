@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20050421
-PORTREVISION=	1
+PORTVERSION=	0.0.20050518
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|}
 #		http://download.videolan.org/pub/videolan/contrib/ \
@@ -18,7 +17,6 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
 
 USE_GETOPT_LONG=yes
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
