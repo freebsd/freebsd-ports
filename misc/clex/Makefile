@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	clex
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	misc
-MASTER_SITES=	http://freebsdcluster.org/~mich/software/
+MASTER_SITES=	http://www.clex.sk/download/ \
+		http://freebsdcluster.org/~mich/software/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@FreeBSD.org
