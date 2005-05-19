@@ -25,6 +25,7 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/hsu.kbm
 %%DATADIR%%/table/ibm.kbm
 %%DATADIR%%/table/jyutping.gtab
+%%BOSHIAMY%%%%DATADIR%%/table/noseeing.gtab
 %%DATADIR%%/table/pho-huge.tab
 %%DATADIR%%/table/pho.tab
 %%DATADIR%%/table/phrase.table
@@ -35,14 +36,14 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/tsin.idx
 %%DATADIR%%/table/zo.kbm
 %%DATADIR%%/table/zo-asdf.kbm
-%%DOCSDIR%%/Changelog
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/applications/gcin.desktop
 share/applications/gcin-setup.desktop
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
-@unexec rmdir %D/%%DOCSDIR%%  2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%  2>/dev/null || true
 @unexec rmdir %D/share/icons/gcin  2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
