@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	excelerator
-PORTVERSION=	0.5.0a
+PORTVERSION=	0.5.2a
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyexcelerator
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyExcelerator-${PORTVERSION}
+DISTNAME=	pyexcelerator-${PORTVERSION}
 
 MAINTAINER=	whitekid@gmail.com
 COMMENT=	A Python library for generating Excel 97/2000/XP/2003 files
@@ -19,6 +19,7 @@ COMMENT=	A Python library for generating Excel 97/2000/XP/2003 files
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_ZIP=	yes
+WRKSRC=	${WRKDIR}/pyExcelerator-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt THANKS.txt TODO.txt
@@ -30,9 +31,9 @@ post-install:
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
-.endif
 
 	@${MKDIR} ${EXAMPLESDIR}
 	@${FIND} ${WRKSRC}/examples -type f -depth 1 -exec ${INSTALL_DATA} {} ${EXAMPLESDIR} \;
+.endif
 
 .include <bsd.port.mk>

@@ -1,23 +1,9 @@
-%%PYTHON_SITELIBDIR%%/CVS/Entries
-%%PYTHON_SITELIBDIR%%/CVS/Entries.Extra
-%%PYTHON_SITELIBDIR%%/CVS/Entries.Extra.Old
-%%PYTHON_SITELIBDIR%%/CVS/Entries.Old
-%%PYTHON_SITELIBDIR%%/CVS/Repository
-%%PYTHON_SITELIBDIR%%/CVS/Root
-%%PYTHON_SITELIBDIR%%/CVS/TortoiseCVS.Status
 %%PYTHON_SITELIBDIR%%/pyExcelerator/BIFFRecords.py
 %%PYTHON_SITELIBDIR%%/pyExcelerator/BIFFRecords.pyc
 %%PYTHON_SITELIBDIR%%/pyExcelerator/BIFFRecords.pyo
 %%PYTHON_SITELIBDIR%%/pyExcelerator/Bitmap.py
 %%PYTHON_SITELIBDIR%%/pyExcelerator/Bitmap.pyc
 %%PYTHON_SITELIBDIR%%/pyExcelerator/Bitmap.pyo
-%%PYTHON_SITELIBDIR%%/pyExcelerator/CVS/Entries
-%%PYTHON_SITELIBDIR%%/pyExcelerator/CVS/Entries.Extra
-%%PYTHON_SITELIBDIR%%/pyExcelerator/CVS/Entries.Extra.Old
-%%PYTHON_SITELIBDIR%%/pyExcelerator/CVS/Entries.Old
-%%PYTHON_SITELIBDIR%%/pyExcelerator/CVS/Repository
-%%PYTHON_SITELIBDIR%%/pyExcelerator/CVS/Root
-%%PYTHON_SITELIBDIR%%/pyExcelerator/CVS/TortoiseCVS.Status
 %%PYTHON_SITELIBDIR%%/pyExcelerator/Column.py
 %%PYTHON_SITELIBDIR%%/pyExcelerator/Column.pyc
 %%PYTHON_SITELIBDIR%%/pyExcelerator/Column.pyo
@@ -51,25 +37,23 @@
 %%PYTHON_SITELIBDIR%%/pyExcelerator/__init__.py
 %%PYTHON_SITELIBDIR%%/pyExcelerator/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyExcelerator/__init__.pyo
-%%EXAMPLESDIR%%/big-16Mb.py
-%%EXAMPLESDIR%%/big-35Mb.py
-%%EXAMPLESDIR%%/col_width.py
-%%EXAMPLESDIR%%/format.py
-%%EXAMPLESDIR%%/image.py
-%%EXAMPLESDIR%%/merged.py
-%%EXAMPLESDIR%%/merged0.py
-%%EXAMPLESDIR%%/mini.py
-%%EXAMPLESDIR%%/outline.py
-%%EXAMPLESDIR%%/python.bmp
-%%EXAMPLESDIR%%/row_styles.py
-%%EXAMPLESDIR%%/row_styles_empty.py
-%%EXAMPLESDIR%%/sst.py
-%%EXAMPLESDIR%%/unicode0.py
-%%EXAMPLESDIR%%/unicode1.py
-%%EXAMPLESDIR%%/unicode2.py
-%%EXAMPLESDIR%%/wsprops.py
-%%EXAMPLESDIR%%/xls2txt.py
-@dirrm %%PYTHON_SITELIBDIR%%/CVS
-@dirrm %%PYTHON_SITELIBDIR%%/pyExcelerator/CVS
+%%PORTDOCS%%%%EXAMPLESDIR%%/big-16Mb.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/big-35Mb.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/col_width.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/format.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/image.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/merged.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/merged0.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/mini.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/outline.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/python.bmp
+%%PORTDOCS%%%%EXAMPLESDIR%%/row_styles.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/row_styles_empty.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/sst.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode0.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/wsprops.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/xls2txt.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pyExcelerator
-@dirrm %%EXAMPLESDIR%%
