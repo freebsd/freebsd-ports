@@ -34,6 +34,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${X11BASE} \
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
+OPTIONS=	KDE "Enable KDE tray support" on
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_KDE)
 LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
 _NO_KDE_CONFTARGET_HACK=	yes
@@ -42,15 +46,6 @@ PLIST_SUB+=	KDE=""
 CONFIGURE_ARGS+=	--disable-kde
 PLIST_SUB+=	KDE="@comment "
 .endif
-
-pre-everything::
-	@${ECHO} "============================================================="
-	@${ECHO}
-	@${ECHO} "You can build ${PKGNAME} with the following options:"
-	@${ECHO}
-	@${ECHO} "WITH_KDE	enable kde tray support"
-	@${ECHO}
-	@${ECHO} "============================================================="
 
 pre-install:
 .if defined(WITH_KDE)
@@ -62,4 +57,4 @@ pre-install:
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/psi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
