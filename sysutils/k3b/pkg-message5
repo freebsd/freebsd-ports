@@ -7,7 +7,7 @@ Notes for FreeBSD 5.x users:
    have to be adressed by e.g. /dev/cd0 instead of /dev/acd0.
 3. k3b has to be started from a root console, which is not recommended.
    Alternatively do ALL of the following:
-3a. set the suid flag on cdrecord and cdrdao. The 'Notes' the chapter of
+3a. set the suid flag on cdrecord and cdrdao. The 'Notes' chapter of
     'man cdrecord' discusses this.
 3b. - For every user who should be able to use k3b and for every CD or DVD
       device add a directory in the users home directory. These directories
@@ -20,7 +20,7 @@ Notes for FreeBSD 5.x users:
         * add 'devd_enable="YES"' to /etc/rc.conf
         * add a 'perm cdX 666' to /etc/devfs.conf for each cd/dvd device. X 
           is the device number. If you prefer allow access for a group only, 
-          add a 'perm cdX 660' instead, followed by a own 'cdX root:XXX' 
+          add a 'perm cdX 660' instead, followed by an 'own cdX root:XXX' 
           where XXX is the group name.          
     - or just give mount and umount the suid flag, which is a security leak.
 3c. Every user who should be able to use k3b must have read and write access
