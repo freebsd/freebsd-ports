@@ -1,11 +1,11 @@
---- src/main.cpp.orig	Tue Feb 17 17:28:10 2004
-+++ src/main.cpp	Tue Feb 17 17:29:43 2004
-@@ -225,7 +225,7 @@
-    //install translator
-    QString lang = QString(QTextCodec::locale());
+--- src/main.cpp.orig	Sun May 15 17:06:55 2005
++++ src/main.cpp	Wed May 18 21:58:58 2005
+@@ -302,7 +302,7 @@
+    if (pos > -1) lang.truncate(pos);
     if (bDebug) qDebug("LANG: " + lang);
--   QString messagesDir = APPDIR + "/" + LC_MESSAGES_DIR;
-+   QString messagesDir = "%%PREFIX%%/share/lincvs/translation";
  
+-   QString messagesDir = APPDIR + "/" + LC_MESSAGES_DIR;
++   QString messagesDir = "/usr/local/share/lincvs/translation";
+    bool qt_ts_found = false;
     QTranslator translator( 0 );
-    translator.load( lang, messagesDir );
+    QTranslator qtTranslator( 0 );
