@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${X11BASE} \
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-OPTIONS=	KDE "Enable KDE tray support" on
+OPTIONS=	KDE "Enable KDE tray support" off
 
 .include <bsd.port.pre.mk>
 
