@@ -8,7 +8,9 @@
 PORTNAME=	baudline
 PORTVERSION=	1.00
 CATEGORIES=	audio linux
-MASTER_SITES=	# http://www.baudline.com/
+# We have permission from author Erik Olsen <erik@sigblips.net> for the
+# package cluster to automatically fetch baudline
+MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 
