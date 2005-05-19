@@ -1,14 +1,13 @@
---- configure.orig	Thu Dec  2 15:36:17 2004
-+++ configure	Thu Dec  2 15:36:51 2004
-@@ -23179,7 +23179,11 @@
-    echo "$as_me:$LINENO: checking libmpeg2 version" >&5
- echo $ECHO_N "checking libmpeg2 version... $ECHO_C" >&6
-    cat >conftest.$ac_ext <<_ACEOF
-+#if defined(__FreeBSD__) && __FreeBSD__ < 5
-+#include <inttypes.h>
-+#else
- #include <stdint.h>
-+#endif
- #include <mpeg2dec/mpeg2.h>
- 
- #ifndef MPEG2_VERSION
+--- configure.orig	Thu May 19 04:55:17 2005
++++ configure	Thu May 19 04:56:09 2005
+@@ -26062,8 +26062,8 @@
+   if test x$have_ffmpeg_arg = xtrue; then
+      { echo "$as_me:$LINENO: have enable ffmpeg $enable_ffmpeg" >&5
+ echo "$as_me: have enable ffmpeg $enable_ffmpeg" >&6;}
+-     FFMPEG_INC=-I${enable_ffmpeg}/libavcodec
+-     FFMPEG_LIB="${enable_ffmpeg}/libavcodec/libavcodec.a -lz"
++     FFMPEG_INC=-I${enable_ffmpeg}/include/ffmpeg
++     FFMPEG_LIB="${enable_ffmpeg}/lib/libavcodec.a -lz"
+      saveCFLAGS="$CFLAGS"
+      CFLAGS="$CFLAGS $FFMPEG_INC"
+      echo "$as_me:$LINENO: checking for AVRational" >&5
