@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tinycdb
-PORTVERSION=	0.73
-PORTREVISION=	2
+PORTVERSION=	0.74
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.corpit.ru/pub/tinycdb/
 
