@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
 
+USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_REINPLACE=	yes
