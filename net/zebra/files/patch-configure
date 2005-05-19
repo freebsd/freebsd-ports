@@ -1,11 +1,11 @@
---- configure.orig	Tue Nov  4 18:00:53 2003
-+++ configure	Wed Oct 27 16:19:36 2004
-@@ -5669,6 +5669,8 @@
+--- configure.orig	Thu May 19 11:13:47 2005
++++ configure		Thu May 19 11:15:55 2005
+@@ -5772,6 +5772,8 @@
                       zebra_ipforward_path="proc";;
    "/dev/ip")
                       case "$host" in
-+                       *-freebsd*)    IPFORWARD=ipforward_sysctl.o
-+                                      zebra_ipforward_path="sysctl";;
++		       *-freebsd-*)   IPFORWARD=ipforward_sysctl.o
++				      zebra_ipforward_path="sysctl";; 
  		       *-linux-*)     IPFORWARD=ipforward_proc.o
  				      zebra_ipforward_path="proc";;
                         *-nec-sysv4*)  IPFORWARD=ipforward_ews.o

@@ -1,0 +1,11 @@
+--- ospfd/ospf_packet.c.original	Thu May 19 14:22:55 2005
++++ ospfd/ospf_packet.c	Thu May 19 14:23:32 2005
+@@ -270,7 +270,7 @@
+   ospfh = (struct ospf_header *) ibuf;
+ 
+   /* Get pointer to the end of the packet. */
+-  pdigest = ibuf + length;
++  pdigest = (unsigned char *)ibuf + length; 
+ 
+   /* Get secret key. */
+   ck = ospf_crypt_key_lookup (OSPF_IF_PARAM (oi, auth_crypt),
