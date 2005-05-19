@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenBGPD/:openbsd \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
 MASTER_SITE_SUBDIR=	flz/openbgpd/:freebsd
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:openbsd	\
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:openbsd,freebsd \
 		if_media.h:freebsd pfkey_compat.c:freebsd
 DIST_SUBDIR=	openbgpd
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
