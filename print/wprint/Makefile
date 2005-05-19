@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wprint
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	print
 MASTER_SITES=	http://www.esperanto.org.uy/programoj/angle/
 
