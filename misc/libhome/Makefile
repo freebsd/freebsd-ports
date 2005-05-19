@@ -22,7 +22,8 @@ OPTIONS+=	PAM "Support for PAM (Experimental)" off
 OPTIONS+=	PROXY "Support for Proxy Driver (Experimental)" off
 OPTIONS+=	PGSQL "Support for PostgreSQL (Experimental)" off
 
-HAS_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+USE_GNOME=	gnometarget
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -77,10 +78,6 @@ USE_PGSQL=	YES
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
-
-GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}" home_finger
 
 MAN5=		home.conf.5
 

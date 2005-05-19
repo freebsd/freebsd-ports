@@ -8,7 +8,10 @@ include/home/hpwd.h
 include/home/pwd.h
 @dirrm include/home
 lib/libhome.a
+lib/libhome.la
 lib/libhome.so
 lib/libhome.so.1
+lib/libhome-preload.a
+lib/libhome-preload.la
 lib/libhome-preload.so
 lib/libhome-preload.so.1
