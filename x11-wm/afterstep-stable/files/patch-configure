@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- configure.orig	Mon Sep 13 11:43:06 2004
-+++ configure	Mon Sep 13 11:43:30 2004
-@@ -1734,7 +1734,7 @@
+--- configure.old	Thu May 19 20:16:44 2005
++++ configure	Thu May 19 20:25:36 2005
+@@ -1791,7 +1791,7 @@
  # Check whether --enable-reuse-font or --disable-reuse-font was given.
  if test "${enable_reuse_font+set}" = set; then
    enableval="$enable_reuse_font"
@@ -11,7 +11,7 @@ $FreeBSD$
  cat >>confdefs.h <<\_ACEOF
  #define MODULE_REUSE_LOADED_FONT 1
  _ACEOF
-@@ -5450,7 +5450,7 @@
+@@ -5833,7 +5833,7 @@
  
  have_shmimage=no
  
@@ -20,3 +20,19 @@ $FreeBSD$
  	enable_shmimage=no
  fi
  
+@@ -7983,7 +7983,6 @@
+ echo "${ECHO_T}neither fltk nor GTK found" >&6
+ 		echo "You have to install FLTK or GTK libaries in order to be able to compile ascp."
+     fi;
+-fi;
+ 
+ pkg_modules="gtk+-2.0 >= 2.0.0"
+ 
+@@ -8086,6 +8085,7 @@
+ 
+ ASCP_GTK_LIBS=$PACKAGE_LIBS
+ ASCP_GTK_INCLUDES=$PACKAGE_CFLAGS
++fi;
+ 
+ 
+ if test "x$with_libefence" = "xyes"; then
