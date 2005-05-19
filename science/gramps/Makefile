@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gramps
-PORTVERSION=	1.0.11
+PORTVERSION=	2.0.0
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
@@ -14,22 +14,37 @@ MASTER_SITE_SUBDIR=	gramps
 MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	A GTK/GNOME-based genealogy program written in Python
 
-BUILD_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
+		${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix pygnome2
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
 
 MAN1=		gramps.1
+GCONF_SCHEMAS=	gramps.schemas
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|{prefix}/share|{prefix}/share/gnome|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|gnome/help|help|' ${WRKSRC}/doc/gramps-manual/C/Makefile.in
-	@${REINPLACE_CMD} -e 's|share/gramps|share/gnome/gramps|g' ${WRKSRC}/src/gramps_main.py
+	@${REINPLACE_CMD} -e 's|/@PACKAGE@/gnome||' \
+		${WRKSRC}/doc/gramps-manual/C/Makefile.in
+	@${REINPLACE_CMD} -e 's|share/gramps|share/gnome/gramps|' \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/src/docgen/Makefile.in \
+		${WRKSRC}/src/gramps_main.py
+	@${REINPLACE_CMD} -e \
+		's|share/application-registry|share/gnome/application-registry|; \
+		 s|share/applications|share/gnome/applications|; \
+		 s|share/mime-info|share/gnome/mime-info|' \
+		${WRKSRC}/src/data/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|gramps\.png|${PREFIX}/share/gnome/gramps/gramps.png|' \
+		${WRKSRC}/src/data/gramps.desktop
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
