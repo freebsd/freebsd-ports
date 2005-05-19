@@ -8,3 +8,5 @@ MD5 (gcc-objc-4.1-20050515.tar.bz2) = bafaaa6ef5f9dcc510a912017961e97b
 SIZE (gcc-objc-4.1-20050515.tar.bz2) = 178869
 MD5 (gcc-testsuite-4.1-20050515.tar.bz2) = a99ebee17c508e2817da290c42cae778
 SIZE (gcc-testsuite-4.1-20050515.tar.bz2) = 3085128
+MD5 (gcc-fortran-4.1-20050515.tar.bz2) = c996383615c6953e83187b32da503154
+SIZE (gcc-fortran-4.1-20050515.tar.bz2) = 581030
