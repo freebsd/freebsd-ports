@@ -21,19 +21,40 @@ RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
-DRIVER=		oss
+DRIVER?=	oss
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BHOME=		${PREFIX}/share/boodler
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/share/boodler/boodle
 
-.if defined(DRIVER_FILE)
-DRIVER=		FILE
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "The following build options are available for Boodler:"
+	@${ECHO} ""
+	@${ECHO} "      DRIVER=OSS	Configure to use /dev/dsp."
+	@${ECHO} "      DRIVER=ESD	Configure to use EsounD."
+	@${ECHO} "      DRIVER=FILE	Configure to write raw PCM data to a file."
+	@${ECHO} ""
+	@${ECHO} "Boodler can only be configured to use one of these"
+	@${ECHO} "interfaces. The default is to use OSS."
+	@${ECHO} ""
+
+.if ${DRIVER:L} == "oss"
+# Probably nothing here...
+.endif
+
+.if ${DRIVER:L} == "esd"
+LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
+PKGNAMESUFFIX=	-esd
+.endif
+
+.if ${DRIVER:L} == "file"
+PKGNAMESUFFIX=	-file
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 PIC=	--PIC
 .endif
 
@@ -42,7 +63,7 @@ post-patch:
 	@${RMDIR} ${WRKDIR}/boodler-snd/string
 
 do-build:
-	(cd ${WRKSRC} && ${PYTHON_CMD} configure.py --driver ${DRIVER} ${PIC} && make)
+	(cd ${WRKSRC} && ${PYTHON_CMD} configure.py --driver ${DRIVER:L} ${PIC} --include ${PREFIX}/include --lib ${PREFIX}/lib && make)
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/effects ${WRKSRC}/boodle/
 
 do-install:
