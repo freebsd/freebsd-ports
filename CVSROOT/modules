@@ -5205,6 +5205,7 @@ libmtrie	ports/devel/libmtrie
 libmusclecard	ports/devel/libmusclecard
 libmusepack	ports/audio/libmusepack
 libmusicbrainz	ports/audio/libmusicbrainz
+libnaji		ports/devel/libnaji
 libnet		ports/net/libnet
 libnet-devel	ports/net/libnet-devel
 libnetdude	ports/net/libnetdude
@@ -6312,6 +6313,7 @@ nagios12	ports/net-mgmt/nagios12
 nagiostat	ports/net-mgmt/nagiostat
 nail		ports/mail/nail
 naim		ports/net/naim
+najitool	ports/misc/najitool
 nakenchat	ports/net/nakenchat
 nam		ports/net/nam
 namazu2		ports/databases/namazu2
