@@ -34,14 +34,30 @@ nagios_user=%%NAGIOSUSER%%
 
 start_precmd=start_precmd
 stop_postcmd=stop_postcmd
+restart_precmd=nagios_checkconfig
 
 # set defaults
 
 nagios_enable=${nagios_enable:-"NO"}
 nagios_flags=${nagios_flags:-""}
 
+nagios_checkconfig()
+{
+  echo -n 'Performing sanity check on Nagios configuration: '
+  $NagiosBin -v $NagiosCfg > /dev/null 2>&1
+  if [ $? != 0 ]; then 
+    echo 'FAILED.'
+    echo "Use '$NagiosBin -v $NagiosCfg' command for details."
+    return 1
+  else
+    echo 'OK.'
+  fi
+}
+
 start_precmd()
 {
+  nagios_checkconfig; [ $? != 0 ] && return 1
+
   su -m ${nagios_user} -c "touch ${NagiosVar}/nagios.log ${NagiosSav}"
   rm -f ${NagiosCmd}
 }
