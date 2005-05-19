@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnochm
-PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTVERSION=	0.9.5
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/chm/_chmlib.so:${PORTSDIR}/textproc/pychm
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/_chmlib.so:${PORTSDIR}/textproc/pychm
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
+USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2 pygnomeextras
 USE_LIBTOOL_VER=15
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
