@@ -20,8 +20,6 @@ COMMENT?=	Web browser branched from Mozilla
 RUN_DEPENDS?=	\
 	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
-BROKEN=		Incorrect pkg-plist
-
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=	i386
@@ -29,7 +27,6 @@ FIREBIRD_NAME=	${PKGNAMEPREFIX}${PORTNAME}
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST=		${WRKDIR}/pkg-plist
 PREFIX?=	${X11BASE}
 WRKSRC=		${WRKDIR}/MozillaFirebird
 
@@ -51,20 +48,6 @@ linux-blackdown-jdk1.4.1/jre/plugin/i386/mozilla
 			>>${WRKDIR}/linkfarm
 .endfor
 
-pre-install:
-	${ECHO_CMD} bin/${FIREBIRD_NAME} > ${PLIST}
-	${ECHO_CMD} \
-		"@unexec ${FIND} ${PREFIX}/lib/${FIREBIRD_NAME}/plugins \
-		-type l -exec ${RM} {} \;" >> ${PLIST}
-	cd ${WRKSRC} && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's:^:lib/${FIREBIRD_NAME}/:' >> ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's:^:@dirrm lib/${FIREBIRD_NAME}/:' >> ${PLIST}
-	${ECHO_CMD} lib/${FIREBIRD_NAME}/linkfarm >> ${PLIST}
-	${ECHO_CMD} @dirrm lib/${FIREBIRD_NAME} >> ${PLIST}
-	${ECHO_CMD} "@exec ${PREFIX}/lib/${FIREBIRD_NAME}/linkfarm" \
-		>> ${PLIST}
-
 do-install:
 	${MKDIR} ${PREFIX}/lib/${FIREBIRD_NAME}
 	${CHMOD} 755 ${PREFIX}/lib/${FIREBIRD_NAME}
@@ -79,12 +62,14 @@ do-install:
 NEW_LIBSTDCXX=	${LINUXBASE}/usr/lib/libstdc++-libc6.2-2.so.3
 OLD_LIBSTDCXX=	libstdc++-libc6.1-1.so.2
 
+.include <bsd.port.pre.mk>
+
 post-install:
-	if [ ! -e ${NEW_LIBSTDCXX} ]; then \
-		${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}; \
-	fi
+.if !exists(${NEW_LIBSTDCXX})
+	${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}
 	${ECHO_CMD} "@exec if [ ! -e ${NEW_LIBSTDCXX} ]; then ${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}; fi" >> ${TMPPLIST}
 	${ECHO_CMD} "@unexec if [ -L ${NEW_LIBSTDCXX} ]; then ${RM} -f ${NEW_LIBSTDCXX}; fi" >> ${TMPPLIST}
+.endif
 	@${ECHO_CMD} \*\* After adding plugins to \(Linux\) Beonex,
 	@${ECHO_CMD} \*\* Mozilla or Netscape, run\
 		> ${PKGMESSAGE}
@@ -95,4 +80,4 @@ post-install:
 	@- ${SH} ${PREFIX}/lib/${FIREBIRD_NAME}/linkfarm || true
 	@ ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
