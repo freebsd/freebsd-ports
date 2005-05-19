@@ -1,5 +1,5 @@
---- makefile.orig	Tue Nov 30 11:33:21 2004
-+++ makefile	Tue Nov 30 11:38:44 2004
+--- makefile.orig	Wed May 18 12:13:52 2005
++++ makefile	Wed May 18 12:40:23 2005
 @@ -33,11 +33,11 @@
  SUFF=
  else
@@ -26,10 +26,10 @@
  # DEFS macro is deprecatred, edit config.h file instead
  DEFS = 
  
- #CFLAGS = $(TFLAGS) -c -Wall -O5 -g  -fPIC $(DEFS) 
--CFLAGS = -c -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
-+CFLAGS = -c ${CXXFLAGS} $(DEFS) $(TFLAGS) -fPIC
- #CFLAGS = -c -Wall -O0 -fPIC -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
+ #CFLAGS = $(TFLAGS) -Iinc -c -Wall -O5 -g  -fPIC $(DEFS) 
+-CFLAGS = -c -Iinc -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
++CFLAGS = -c -Iinc ${CXXFLAGS} $(DEFS) $(TFLAGS) -fPIC
+ #CFLAGS = -c -Iinc -Wall -O0 -fPIC -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
  
 -#SHFLAGS=-shared -Wl,-soname,$@
 -SHFLAGS=-shared
