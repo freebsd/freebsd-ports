@@ -32,6 +32,7 @@ post-patch:
 		${FILESDIR}/mad.pc.in > ${WRKDIR}/mad.pc
 
 post-install:
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKDIR}/mad.pc ${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>
