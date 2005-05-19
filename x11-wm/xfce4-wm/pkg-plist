@@ -12,9 +12,11 @@ share/locale/az/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
 share/locale/be/LC_MESSAGES/xfwm4.mo
 share/locale/bg/LC_MESSAGES/xfwm4.mo
+share/locale/bn_IN/LC_MESSAGES/xfwm4.mo
 share/locale/ca/LC_MESSAGES/xfwm4.mo
 share/locale/cs/LC_MESSAGES/xfwm4.mo
 share/locale/de/LC_MESSAGES/xfwm4.mo
+share/locale/el/LC_MESSAGES/xfwm4.mo
 share/locale/en_GB/LC_MESSAGES/xfwm4.mo
 share/locale/es/LC_MESSAGES/xfwm4.mo
 share/locale/es_MX/LC_MESSAGES/xfwm4.mo
@@ -31,6 +33,7 @@ share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
 share/locale/lt/LC_MESSAGES/xfwm4.mo
+share/locale/mr/LC_MESSAGES/xfwm4.mo
 share/locale/ms/LC_MESSAGES/xfwm4.mo
 share/locale/nb_NO/LC_MESSAGES/xfwm4.mo
 share/locale/nl/LC_MESSAGES/xfwm4.mo
@@ -425,39 +428,66 @@ share/themes/Tyrex/xfwm4/bottom-right-active.xpm
 share/themes/Tyrex/xfwm4/bottom-right-inactive.png
 share/themes/Tyrex/xfwm4/bottom-right-inactive.xpm
 share/themes/Tyrex/xfwm4/close-active.xpm
+share/themes/Tyrex/xfwm4/close-active.png
 share/themes/Tyrex/xfwm4/close-inactive.xpm
+share/themes/Tyrex/xfwm4/close-inactive.png
 share/themes/Tyrex/xfwm4/close-pressed.xpm
+share/themes/Tyrex/xfwm4/close-pressed.png
 share/themes/Tyrex/xfwm4/hide-active.xpm
+share/themes/Tyrex/xfwm4/hide-active.png
 share/themes/Tyrex/xfwm4/hide-inactive.xpm
+share/themes/Tyrex/xfwm4/hide-inactive.png
 share/themes/Tyrex/xfwm4/hide-pressed.xpm
+share/themes/Tyrex/xfwm4/hide-pressed.png
 share/themes/Tyrex/xfwm4/left-active.png
 share/themes/Tyrex/xfwm4/left-active.xpm
 share/themes/Tyrex/xfwm4/left-inactive.png
 share/themes/Tyrex/xfwm4/left-inactive.xpm
 share/themes/Tyrex/xfwm4/maximize-active.xpm
+share/themes/Tyrex/xfwm4/maximize-active.png
 share/themes/Tyrex/xfwm4/maximize-inactive.xpm
+share/themes/Tyrex/xfwm4/maximize-inactive.png
 share/themes/Tyrex/xfwm4/maximize-pressed.xpm
+share/themes/Tyrex/xfwm4/maximize-pressed.png
 share/themes/Tyrex/xfwm4/maximize-toggled-active.xpm
+share/themes/Tyrex/xfwm4/maximize-toggled-active.png
 share/themes/Tyrex/xfwm4/maximize-toggled-inactive.xpm
+share/themes/Tyrex/xfwm4/maximize-toggled-inactive.png
 share/themes/Tyrex/xfwm4/maximize-toggled-pressed.xpm
+share/themes/Tyrex/xfwm4/maximize-toggled-pressed.png
 share/themes/Tyrex/xfwm4/menu-active.xpm
+share/themes/Tyrex/xfwm4/menu-active.png
 share/themes/Tyrex/xfwm4/menu-inactive.xpm
+share/themes/Tyrex/xfwm4/menu-inactive.png
 share/themes/Tyrex/xfwm4/menu-pressed.xpm
+share/themes/Tyrex/xfwm4/menu-pressed.png
 share/themes/Tyrex/xfwm4/right-active.png
 share/themes/Tyrex/xfwm4/right-active.xpm
 share/themes/Tyrex/xfwm4/right-inactive.png
 share/themes/Tyrex/xfwm4/right-inactive.xpm
 share/themes/Tyrex/xfwm4/shade-active.xpm
+share/themes/Tyrex/xfwm4/shade-active.png
 share/themes/Tyrex/xfwm4/shade-inactive.xpm
+share/themes/Tyrex/xfwm4/shade-inactive.png
 share/themes/Tyrex/xfwm4/shade-pressed.xpm
+share/themes/Tyrex/xfwm4/shade-pressed.png
 share/themes/Tyrex/xfwm4/shade-toggled-active.xpm
+share/themes/Tyrex/xfwm4/shade-toggled-active.png
+share/themes/Tyrex/xfwm4/shade-toggled-inactive.png
 share/themes/Tyrex/xfwm4/shade-toggled-inactive.xpm
+share/themes/Tyrex/xfwm4/shade-toggled-pressed.png
 share/themes/Tyrex/xfwm4/shade-toggled-pressed.xpm
+share/themes/Tyrex/xfwm4/stick-active.png
 share/themes/Tyrex/xfwm4/stick-active.xpm
+share/themes/Tyrex/xfwm4/stick-inactive.png
 share/themes/Tyrex/xfwm4/stick-inactive.xpm
+share/themes/Tyrex/xfwm4/stick-pressed.png
 share/themes/Tyrex/xfwm4/stick-pressed.xpm
+share/themes/Tyrex/xfwm4/stick-toggled-active.png
 share/themes/Tyrex/xfwm4/stick-toggled-active.xpm
+share/themes/Tyrex/xfwm4/stick-toggled-inactive.png
 share/themes/Tyrex/xfwm4/stick-toggled-inactive.xpm
+share/themes/Tyrex/xfwm4/stick-toggled-pressed.png
 share/themes/Tyrex/xfwm4/stick-toggled-pressed.xpm
 share/themes/Tyrex/xfwm4/title-1-active.png
 share/themes/Tyrex/xfwm4/title-1-active.xpm
@@ -667,13 +697,29 @@ share/xfce4/doc/C/images/titlebar.png
 share/xfce4/doc/C/images/workspace_margins.png
 share/xfce4/doc/C/images/xfwm_workspaces.png
 share/xfce4/doc/C/xfwm4.html
+share/xfce4/doc/fr/images/compose_shortcut.png
+share/xfce4/doc/fr/images/decoration_style.png
+share/xfce4/doc/fr/images/focus.png
+share/xfce4/doc/fr/images/keyboard_and_focus.png
+share/xfce4/doc/fr/images/keyboard_shortcuts.png
+share/xfce4/doc/fr/images/misc_wm_prefs.png
+share/xfce4/doc/fr/images/titlebar.png
+share/xfce4/doc/fr/images/workspace_margins.png
+share/xfce4/doc/fr/images/xfwm_workspaces.png
+share/xfce4/doc/fr/xfwm4.html
 share/xfwm4/defaults
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @dirrm share/themes/Default/xfwm4

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-wm-themes
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	misc xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \

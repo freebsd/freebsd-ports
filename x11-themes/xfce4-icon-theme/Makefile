@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-icon-theme
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 PORTREVISION=	0
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \

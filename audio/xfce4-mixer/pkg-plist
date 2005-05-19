@@ -10,9 +10,11 @@ share/locale/ar/LC_MESSAGES/xfce4-mixer.mo
 share/locale/az/LC_MESSAGES/xfce4-mixer.mo
 share/locale/be/LC_MESSAGES/xfce4-mixer.mo
 share/locale/bg/LC_MESSAGES/xfce4-mixer.mo
+share/locale/bn_IN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ca/LC_MESSAGES/xfce4-mixer.mo
 share/locale/da/LC_MESSAGES/xfce4-mixer.mo
 share/locale/de/LC_MESSAGES/xfce4-mixer.mo
+share/locale/el/LC_MESSAGES/xfce4-mixer.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-mixer.mo
 share/locale/es/LC_MESSAGES/xfce4-mixer.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-mixer.mo
@@ -28,6 +30,7 @@ share/locale/it/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ja/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ko/LC_MESSAGES/xfce4-mixer.mo
 share/locale/lt/LC_MESSAGES/xfce4-mixer.mo
+share/locale/mr/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ms/LC_MESSAGES/xfce4-mixer.mo
 share/locale/nb_NO/LC_MESSAGES/xfce4-mixer.mo
 share/locale/nl/LC_MESSAGES/xfce4-mixer.mo
@@ -45,5 +48,9 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true

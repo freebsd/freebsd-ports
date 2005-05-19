@@ -1,6 +1,8 @@
 bin/xfce4-menueditor
 bin/xfdesktop
 etc/xdg/xfce4/desktop/xfce-registered-categories.xml
+etc/xdg/xfce4/desktop/xfce-registered-categories.xml.cs
+etc/xdg/xfce4/desktop/xfce-registered-categories.xml.eu
 etc/xdg/xfce4/desktop/xfce-registered-categories.xml.fi
 etc/xdg/xfce4/desktop/xfce-registered-categories.xml.hu
 etc/xdg/xfce4/desktop/xfce-registered-categories.xml.ja
@@ -12,31 +14,23 @@ etc/xdg/xfce4/desktop/xfce-registered-categories.xml.sk
 etc/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_CN
 etc/xdg/xfce4/desktop/xfce-registered-categories.xml.zh_TW
 etc/xdg/xfce4/desktop/menu.xml
-etc/xdg/xfce4/desktop/menu.xml.az
-etc/xdg/xfce4/desktop/menu.xml.ca
+etc/xdg/xfce4/desktop/menu.xml.cs
 etc/xdg/xfce4/desktop/menu.xml.da
 etc/xdg/xfce4/desktop/menu.xml.de
 etc/xdg/xfce4/desktop/menu.xml.es
-etc/xdg/xfce4/desktop/menu.xml.eu
 etc/xdg/xfce4/desktop/menu.xml.et
-etc/xdg/xfce4/desktop/menu.xml.fa_IR
 etc/xdg/xfce4/desktop/menu.xml.fi
 etc/xdg/xfce4/desktop/menu.xml.fr
 etc/xdg/xfce4/desktop/menu.xml.he
-etc/xdg/xfce4/desktop/menu.xml.hu
 etc/xdg/xfce4/desktop/menu.xml.ja
 etc/xdg/xfce4/desktop/menu.xml.ko
-etc/xdg/xfce4/desktop/menu.xml.ms
 etc/xdg/xfce4/desktop/menu.xml.nl
 etc/xdg/xfce4/desktop/menu.xml.pt_BR
 etc/xdg/xfce4/desktop/menu.xml.ro
 etc/xdg/xfce4/desktop/menu.xml.ru
 etc/xdg/xfce4/desktop/menu.xml.sk
-etc/xdg/xfce4/desktop/menu.xml.ta
-etc/xdg/xfce4/desktop/menu.xml.tr
 etc/xdg/xfce4/desktop/menu.xml.uk
 etc/xdg/xfce4/desktop/menu.xml.vi
-etc/xdg/xfce4/desktop/menu.xml.zh_CN
 etc/xdg/xfce4/desktop/menu.xml.zh_TW
 lib/xfce4/mcs-plugins/backdrop_settings.so
 lib/xfce4/modules/xfce4_desktop_menu.so
@@ -53,10 +47,12 @@ share/locale/ar/LC_MESSAGES/xfdesktop.mo
 share/locale/az/LC_MESSAGES/xfdesktop.mo
 share/locale/be/LC_MESSAGES/xfdesktop.mo
 share/locale/bg/LC_MESSAGES/xfdesktop.mo
+share/locale/bn_IN/LC_MESSAGES/xfdesktop.mo 
 share/locale/ca/LC_MESSAGES/xfdesktop.mo
 share/locale/cs/LC_MESSAGES/xfdesktop.mo
 share/locale/da/LC_MESSAGES/xfdesktop.mo
 share/locale/de/LC_MESSAGES/xfdesktop.mo
+share/locale/el/LC_MESSAGES/xfdesktop.mo   
 share/locale/en_GB/LC_MESSAGES/xfdesktop.mo
 share/locale/es/LC_MESSAGES/xfdesktop.mo
 share/locale/es_MX/LC_MESSAGES/xfdesktop.mo
@@ -73,6 +69,7 @@ share/locale/it/LC_MESSAGES/xfdesktop.mo
 share/locale/ja/LC_MESSAGES/xfdesktop.mo
 share/locale/ko/LC_MESSAGES/xfdesktop.mo
 share/locale/lt/LC_MESSAGES/xfdesktop.mo
+share/locale/mr/LC_MESSAGES/xfdesktop.mo 
 share/locale/ms/LC_MESSAGES/xfdesktop.mo
 share/locale/nb_NO/LC_MESSAGES/xfdesktop.mo
 share/locale/nl/LC_MESSAGES/xfdesktop.mo
@@ -112,6 +109,14 @@ share/xfce4/doc/C/images/xfdesktop-background.png
 share/xfce4/doc/C/images/xfdesktop-list.png
 share/xfce4/doc/C/images/xfdesktop-menu-tab.png
 share/xfce4/doc/C/xfdesktop.html
+share/xfce4/doc/fr/images/root_menu2.png
+share/xfce4/doc/fr/images/root_menu.png
+share/xfce4/doc/fr/images/select_bg_color.png
+share/xfce4/doc/fr/images/xfdesktop-background.png
+share/xfce4/doc/fr/images/xfdesktop-editor.png
+share/xfce4/doc/fr/images/xfdesktop-menu-tab.png
+share/xfce4/doc/fr/images/xfdesktop-list.png
+share/xfce4/doc/fr/xfdesktop.html
 @dirrm etc/xdg/xfce4/desktop
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/etc/xdg/xfce4 2>/dev/null || true
@@ -119,10 +124,16 @@ share/xfce4/doc/C/xfdesktop.html
 @unexec rmdir %D/etc/xfce4 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @dirrm share/xfce4/backdrops
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true

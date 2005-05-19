@@ -29,10 +29,12 @@ share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/az/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
+share/locale/bn_IN/LC_MESSAGES/xfce4-session.mo
 share/locale/ca/LC_MESSAGES/xfce4-session.mo
 share/locale/cs/LC_MESSAGES/xfce4-session.mo
 share/locale/da/LC_MESSAGES/xfce4-session.mo
 share/locale/de/LC_MESSAGES/xfce4-session.mo
+share/locale/el/LC_MESSAGES/xfce4-session.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-session.mo
 share/locale/es/LC_MESSAGES/xfce4-session.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-session.mo
@@ -49,6 +51,7 @@ share/locale/it/LC_MESSAGES/xfce4-session.mo
 share/locale/ja/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
+share/locale/mr/LC_MESSAGES/xfce4-session.mo
 share/locale/ms/LC_MESSAGES/xfce4-session.mo
 share/locale/nb_NO/LC_MESSAGES/xfce4-session.mo
 share/locale/nl/LC_MESSAGES/xfce4-session.mo
@@ -72,17 +75,27 @@ share/xfce4/doc/C/images/xfsm-advanced.png
 share/xfce4/doc/C/images/xfsm-general.png
 share/xfce4/doc/C/images/xfsm-splash.png
 share/xfce4/doc/C/xfce4-session.html
+share/xfce4/doc/fr/images/xfsm-advanced.png
+share/xfce4/doc/fr/images/xfsm-general.png
+share/xfce4/doc/fr/images/xfsm-splash.png 
+share/xfce4/doc/fr/xfce4-session.html  
 @dirrm etc/xdg/xfce4-session
 @unexec rmdir %D/etc/xdg 2>/dev/null || true
 @dirrm include/xfce4/xfce4-session-4.2/libxfsm
 @dirrm include/xfce4/xfce4-session-4.2
 @unexec rmdir %D/include/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @dirrm share/themes/Default/balou
 @unexec rmdir %D/share/themes/Default 2>/dev/null || true
 @unexec rmdir %D/share/themes 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/splash/engines 2>/dev/null || true

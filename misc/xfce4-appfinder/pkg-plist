@@ -1,13 +1,20 @@
 bin/xfce4-appfinder
 share/applications/xfce4-appfinder.desktop
 share/pixmaps/xfce4-appfinder.png
-share/xfce4/doc/C/images/default_appfinder.png
 share/xfce4/doc/C/images/appfinder-handle-popup.png
 share/xfce4/doc/C/images/appfinder-item-popup.png
+share/xfce4/doc/C/images/default_appfinder.png
 share/xfce4/doc/C/xfce4-appfinder.html
+share/xfce4/doc/fr/images/appfinder-handle-popup.png
+share/xfce4/doc/fr/images/appfinder-item-popup.png
+share/xfce4/doc/fr/images/default_appfinder.png
+share/xfce4/doc/fr/xfce4-appfinder.html
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
+

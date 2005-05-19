@@ -45,7 +45,7 @@ lib/xfce4/xffm/libxffm_fstab.so
 lib/xfce4/xffm/libxffm_fstab.so.1
 lib/xfce4/xffm/libxffm_prop.a
 lib/xfce4/xffm/libxffm_prop.so
-lib/xfce4/xffm/libxffm_prop.so.0
+lib/xfce4/xffm/libxffm_prop.so.1
 lib/xfce4/xffm/libxffm_recent.a
 lib/xfce4/xffm/libxffm_recent.so
 lib/xfce4/xffm/libxffm_recent.so.1
@@ -169,6 +169,7 @@ share/icons/hicolor/48x48/stock/generic/t-pastelink.png
 share/locale/ar/LC_MESSAGES/xffm.mo
 share/locale/az/LC_MESSAGES/xffm.mo
 share/locale/bg/LC_MESSAGES/xffm.mo
+share/locale/bn_IN/LC_MESSAGES/xffm.mo  
 share/locale/ca/LC_MESSAGES/xffm.mo
 share/locale/cs/LC_MESSAGES/xffm.mo
 share/locale/de/LC_MESSAGES/xffm.mo
@@ -188,6 +189,7 @@ share/locale/it/LC_MESSAGES/xffm.mo
 share/locale/ja/LC_MESSAGES/xffm.mo
 share/locale/ko/LC_MESSAGES/xffm.mo
 share/locale/lt/LC_MESSAGES/xffm.mo
+share/locale/mr/LC_MESSAGES/xffm.mo  
 share/locale/ms/LC_MESSAGES/xffm.mo
 share/locale/nb_NO/LC_MESSAGES/xffm.mo
 share/locale/nl/LC_MESSAGES/xffm.mo
@@ -238,6 +240,38 @@ share/xfce4/doc/C/images/tools_menu.png
 share/xfce4/doc/C/images/trash_popup.png
 share/xfce4/doc/C/images/xffm_default.png
 share/xfce4/doc/C/xffm.html
+share/xfce4/doc/fr/images/book_popup.png
+share/xfce4/doc/fr/images/column_titles_popup.png
+share/xfce4/doc/fr/images/diagnostics_window.png
+share/xfce4/doc/fr/images/directory_popup.png
+share/xfce4/doc/fr/images/directory_popup_unmount.png
+share/xfce4/doc/fr/images/file_popup.png
+share/xfce4/doc/fr/images/file_subpopup.png
+share/xfce4/doc/fr/images/filter_box.png
+share/xfce4/doc/fr/images/frequent_popup.png
+share/xfce4/doc/fr/images/fstab_popup_mount.png
+share/xfce4/doc/fr/images/go_menu.png
+share/xfce4/doc/fr/images/hide_show_buttons.png
+share/xfce4/doc/fr/images/icon_title_smartbutton.png
+share/xfce4/doc/fr/images/main_menu.png
+share/xfce4/doc/fr/images/mcs-plugin.png
+share/xfce4/doc/fr/images/netfile_popup.png
+share/xfce4/doc/fr/images/open_menu.png
+share/xfce4/doc/fr/images/options_menu.png
+share/xfce4/doc/fr/images/preferences_menu.png
+share/xfce4/doc/fr/images/recent_popup.png
+share/xfce4/doc/fr/images/sidebar_filesubmenu.png
+share/xfce4/doc/fr/images/sidebar_go.png
+share/xfce4/doc/fr/images/sidebar_multiple_select.png
+share/xfce4/doc/fr/images/sidebar_open.png
+share/xfce4/doc/fr/images/sidebar_options.png
+share/xfce4/doc/fr/images/sidebar_paste.png
+share/xfce4/doc/fr/images/sidebar_tools.png
+share/xfce4/doc/fr/images/sort_subpopup.png
+share/xfce4/doc/fr/images/tools_menu.png
+share/xfce4/doc/fr/images/trash_popup.png
+share/xfce4/doc/fr/images/xffm_default.png
+share/xfce4/doc/fr/xffm.html
 share/xfce4/xffm/AUTHORS
 share/xfce4/xffm/AUTHORS.vi
 share/xfce4/xffm/xffm.spec
@@ -251,12 +285,16 @@ share/xfce4/xffm/xffm.spec.in
 @unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/it 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/mime 2>/dev/null || true
 @dirrm share/xfce4/xffm
