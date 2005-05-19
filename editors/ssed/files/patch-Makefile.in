@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Tue Apr 23 12:23:13 2002
-+++ doc/Makefile.in	Tue May 28 19:37:39 2002
-@@ -335,7 +335,7 @@
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -518,7 +518,7 @@
  
  info-am: $(INFO_DEPS)
  
--install-data-am: install-info-am install-man
-+install-data-am: install-man
+-install-data-am: install-docDATA install-info-am install-man
++install-data-am: install-docDATA install-man
  
  install-exec-am:
  
