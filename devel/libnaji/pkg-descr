@@ -1,0 +1,9 @@
+libnaji is a library of functions which implement the features of najitool,
+a flexible file generator, converter, and filter. libnaji is being developed
+in the ANSI C standard so it should work and compile on any system that
+supports ANSI C, which should be every system.
+
+WWW: http://najitool.sf.net/
+
+- NECDET COKYAZICI
+cokyazici@yahoo.co.uk
