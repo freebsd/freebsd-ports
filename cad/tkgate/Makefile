@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		tkgate
-PORTVERSION=		1.6i
-PORTREVISION=	1
+PORTVERSION=		1.8.6
 CATEGORIES=		cad
 MASTER_SITES=		ftp://gadoid.ices.cmu.edu/pub/tkgate/
 EXTRACT_SUFX=		.tgz
@@ -21,6 +20,8 @@ BUILD_DEPENDS=		xmkmf:${X_IMAKE_PORT}
 
 GNU_CONFIGURE=		yes
 USE_BISON=		yes
-USE_X_PREFIX=   	yes
+USE_X_PREFIX=		yes
+
+PLIST_SUB=		VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
