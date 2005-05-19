@@ -1,5 +1,5 @@
---- Docs/sample/gnokiirc.orig	Fri Apr 29 22:40:17 2005
-+++ Docs/sample/gnokiirc	Thu May  5 14:23:45 2005
+--- Docs/sample/gnokiirc.orig	Wed May 18 15:17:32 2005
++++ Docs/sample/gnokiirc	Wed May 18 15:18:17 2005
 @@ -6,7 +6,7 @@
  
  # Set port to the physical serial port used to connect to your phone.
@@ -9,16 +9,16 @@
  #
  # For MacOSX you will need something like:
  # port = /dev/cu.USA28X1P1.1
-@@ -19,7 +19,7 @@
- # port = aa:bb:cc:dd:ee:ff
- 
- # Set model to the model number of your phone
--model = 6110
+@@ -26,7 +26,7 @@
+ # model = AT
+ # If you can't figure out what to put here read the FAQ.
+ # If it still doesn't help, consult gnokii-ml or #gnokii at freenode.
+-model = 6510
 +model = 6210
  
  # Initlength controls the number of characters sent to the
  # phone during initialisation.  You can either set it to
-@@ -49,7 +49,7 @@
+@@ -56,7 +56,7 @@
  # port software (eg. minicom). If you have wrong permissions for the
  # directory, a warning will be generated. If you don't want a lockfile, set
  # it to 'no'.
