@@ -32,7 +32,6 @@ include/gmime/gmime-utils.h
 include/gmime/internet-address.h
 lib/libgmime.so.1
 lib/libgmime.so
-lib/libgmime.la
 lib/libgmime.a
 share/aclocal/gmime.m4
 @dirrm include/gmime
