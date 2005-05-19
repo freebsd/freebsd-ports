@@ -430,11 +430,14 @@ post-patch:
 		${XARGS} -0 -n 5 -x \
 			${REINPLACE_CMD} -E \
 			-e 's@^(CFLAGS.+)$$@\1 ${FFMPEG_CFLAGS}@' \
-			-e 's@^(FFLIBS|LDFLAGS)(.+)$$@\1\2 ${FFMPEG_LDFLAGS}@' \
+			-e 's@^(FFLIBS|LDFLAGS)(.+)$$@\1\2 ${FFMPEG_LDFLAGS}@'
 # fix x264 math, use correct log base 2 from math(3)
 	@${REINPLACE_CMD} -E \
 		-e 's| log2| log|' \
 		${WRKSRC}/libavcodec/x264.c
+	@${REINPLACE_CMD} -E \
+		-e "s|(EXTRALIBS[[:space:]]*=)|\1-L${LOCALBASE}/lib |g" \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # force detection of texi2html
 .ifndef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E \
@@ -528,12 +531,6 @@ post-configure:
 .ifdef(WITH_DTS)
 	@${REINPLACE_CMD} -E \
 		-e 's|-ldts|${LOCALBASE}/lib/libdts.a|' \
-		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
-			${WRKSRC}/config.mak \
-			${WRKSRC}/libavcodec/Makefile
-.endif
-.ifdef(WITH_X264)
-	@${REINPLACE_CMD} -E \
 		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
 			${WRKSRC}/config.mak \
 			${WRKSRC}/libavcodec/Makefile
