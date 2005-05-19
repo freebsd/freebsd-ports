@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	dvisvg
-PORTVERSION=	0.7.1.d
+DISTVERSION=	0.7.1d
 CATEGORIES=	print
 MASTER_SITES=	http://dvisvg.sourceforge.net/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convertor from DVI to SVG
@@ -24,7 +23,11 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 ALL_TARGET=	# empty
-MAKE_ENV=	TEXMFLOCAL=${TEXMFLOCAL}
+MAKE_ARGS=	CC="${CC} ${CFLAGS}" TARGETDIR=${PREFIX} \
+		LINC=${LOCALBASE}/include \
+		LLIB=${LOCALBASE}/lib \
+		BINDIR=${PREFIX}/bin \
+		CNFDIR=${PREFIX}/${TEXMFLOCAL}/dvisvg
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
@@ -34,7 +37,6 @@ PLIST_FILES=	bin/dvisvg
 MAN1=	dvisvg.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,[$$][(]CC[)],$$\(CC\) ${CFLAGS}," ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,/usr/share/texmf,${LOCALBASE}/${TEXMFLOCAL}," ${WRKSRC}/version.h
 
 do-install:
