@@ -1,0 +1,6 @@
+A simple interface for using the Flickr API.
+
+Flickr::API is a subclass of LWP::UserAgent, so all of the various proxy,
+request limits, caching, etc are available.
+
+WWW: http://search.cpan.org/dist/Flickr-API/
