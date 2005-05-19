@@ -22,7 +22,7 @@ include/libAfterImage/ungif.h
 include/libAfterImage/xcf.h
 include/libAfterImage/ximage.h
 include/libAfterImage/xpm.h
-lib/libAfterImage.a
+%%STATIC%%lib/libAfterImage.a
 lib/libAfterImage.so
 lib/libAfterImage.so.0
 %%PORTDOCS%%share/doc/libAfterImage/html/afterimage.html

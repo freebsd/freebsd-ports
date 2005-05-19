@@ -18,7 +18,7 @@ include/libAfterBase/timer.h
 include/libAfterBase/trace.h
 include/libAfterBase/xprop.h
 include/libAfterBase/xwrap.h
-lib/libAfterBase.a
+%%STATIC%%lib/libAfterBase.a
 lib/libAfterBase.so
 lib/libAfterBase.so.0
 @dirrm include/libAfterBase
