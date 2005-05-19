@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--enable-shared \
 		--source-path=${WRKSRC}
 
-FFMPEG_CFLAGS=	${CFLAGS} \
+FFMPEG_CFLAGS=	\
 		-I${WRKSRC}/libavcodec \
 		-I${WRKSRC}/libavcodec/i386 \
 		-I${WRKSRC}/libavformat \
@@ -35,11 +35,15 @@ FFMPEG_CFLAGS=	${CFLAGS} \
 		-I${X11BASE}/include \
 		-I. -I.. \
 		-L${LOCALBASE}/lib \
-		-L${X11BASE}/lib
-FFMPEG_LDFLAGS=	${LDFLAGS} \
+		-L${X11BASE}/lib \
+		${CFLAGS}
+FFMPEG_LDFLAGS=	\
 		-L${WRKSRC}/libavcodec/libpostproc \
+		-L${WRKSRC}/libavcodec \
+		-L${WRKSRC}/libavformat \
 		-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib \
+		${LDFLAGS} \
 		-lm \
 		-fpie \
 		-fPIE
@@ -50,7 +54,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	20050514
+RELEASE_DATE=	20050518
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1
@@ -72,10 +76,6 @@ HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
 LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 
 .include <bsd.port.pre.mk>
-
-.if (exists(${LOCALBASE}/lib/libavformat.so))
-BROKEN=		'Please remove previous version of ${PORTNAME} to continue build'
-.endif
 
 ##
 ## default options
