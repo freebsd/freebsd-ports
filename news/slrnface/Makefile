@@ -20,6 +20,9 @@ LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	slrnface
+MAKE_ARGS=	CC="${CC}" C_FLAGS="${CFLAGS}" \
+		X_INCL=-I${X11BASE}/include \
+		XF_LIB="-L${X11BASE}/lib -L${LOCALBASE}/lib -lcompface"
 
 USE_XLIB=	yes
 
