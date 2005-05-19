@@ -7452,6 +7452,7 @@ p5-Finance-Currency-Convert	ports/finance/p5-Finance-Currency-Convert
 p5-Finance-Currency-Convert-XE	ports/finance/p5-Finance-Currency-Convert-XE
 p5-Finance-Quote	ports/finance/p5-Finance-Quote
 p5-Finance-QuoteHist	ports/finance/p5-Finance-QuoteHist
+p5-Flickr-API	ports/www/p5-Flickr-API
 p5-Flickr-Upload	ports/www/p5-Flickr-Upload
 p5-Font-AFM	ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF	ports/x11-fonts/p5-Font-TTF
