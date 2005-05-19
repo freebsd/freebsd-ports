@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	mail
-MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/
+MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v1.0/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
@@ -20,11 +19,12 @@ GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_GNOME=	glib12
 USE_ICONV=	yes
-USE_LIBTOOL_VER=13
-CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
+USE_LIBTOOL_VER=15
+CFLAGS+=	-L${LOCALBASE}/lib # req'd to find iconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+MAKE_ARGS=	confexecdir=${PREFIX}/etc
 
 INSTALLS_SHLIB=	YES
 

@@ -9,12 +9,3 @@
  
  INCLUDES = -I@srcdir@ $(VERSION_FLAGS) @GLIB_CFLAGS@ -DG_LOG_DOMAIN=\"gmime\"
  
-@@ -126,7 +126,7 @@
- test_parser_DEPENDENCIES = $(DEPS)
- test_parser_LDADD = $(LDADDS)
- 
--confexecdir = $(libdir)
-+confexecdir = $(sysconfdir)
- confexec_DATA = gmimeConf.sh
- 
- CLEANFILES = gmimeConf.sh
