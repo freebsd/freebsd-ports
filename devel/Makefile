@@ -466,6 +466,7 @@
     SUBDIR += libmimedir
     SUBDIR += libmtrie
     SUBDIR += libmusclecard
+    SUBDIR += libnaji
     SUBDIR += liboil
     SUBDIR += libol
     SUBDIR += libole2
