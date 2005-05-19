@@ -1,23 +1,19 @@
---- getmailcore/_retrieverbases.py.orig	Mon Feb 21 15:57:08 2005
-+++ getmailcore/_retrieverbases.py	Mon Feb 21 15:59:11 2005
-@@ -33,6 +33,7 @@
-     'RetrieverSkeleton',
- ]
- 
-+import sys
- import os
- import socket
+--- getmailcore/_retrieverbases.py.orig	Wed May 18 09:31:20 2005
++++ getmailcore/_retrieverbases.py	Wed May 18 10:41:09 2005
+@@ -38,6 +38,7 @@
  import time
-@@ -445,7 +446,11 @@
+ import getpass
+ import email
++import email.Parser
+ import poplib
+ import imaplib
+ import sets
+@@ -445,7 +446,7 @@
          self.log.trace()
          msgnum = self._getmsgnumbyid(msgid)
          response, headerlist, octets = self.conn.top(msgnum, 0)
--        parser = email.Parser.Parser(strict=False)
-+        # 'strict' argument is deprecated in Python 2.4
-+        if sys.version_info < (2, 4):
-+            parser = email.Parser.Parser(strict=False)
-+        else:
-+            parser = email.Parser.Parser()
-         return parser.parsestr(os.linesep.join(headerlist), headersonly=True)
+-        parser = email.Parser.HeaderParser(strict=False)
++        parser = email.Parser.HeaderParser()
+         return parser.parsestr(os.linesep.join(headerlist))
  
      def initialize(self):
