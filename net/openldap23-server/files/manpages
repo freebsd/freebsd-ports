@@ -171,6 +171,7 @@ MAN5+=	ldap.conf.5 \
 	slapd-dnssrv.5 \
 	slapd-ldap.5 \
 	slapd-ldbm.5 \
+	slapd-ldif.5 \
 	slapd-meta.5 \
 	slapd-monitor.5 \
 	slapd-null.5 \
@@ -185,6 +186,7 @@ MAN5+=	ldap.conf.5 \
 	slapd.plugin.5 \
 	slapd.replog.5 \
 	slapo-chain.5 \
+	slapo-dynlist.5 \
 	slapo-glue.5 \
 	slapo-lastmod.5 \
 	slapo-pcache.5 \
