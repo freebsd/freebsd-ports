@@ -17,33 +17,6 @@ lib/libgnomecanvas-2.a
 lib/libgnomecanvas-2.so
 lib/libgnomecanvas-2.so.1000
 libdata/pkgconfig/libgnomecanvas-2.0.pc
-%%DOCSDIR%%/GnomeCanvas.html
-%%DOCSDIR%%/GnomeCanvasBpath.html
-%%DOCSDIR%%/GnomeCanvasClipgroup.html
-%%DOCSDIR%%/GnomeCanvasEllipse.html
-%%DOCSDIR%%/GnomeCanvasGroup.html
-%%DOCSDIR%%/GnomeCanvasItem.html
-%%DOCSDIR%%/GnomeCanvasLine.html
-%%DOCSDIR%%/GnomeCanvasPixbuf.html
-%%DOCSDIR%%/GnomeCanvasPolygon.html
-%%DOCSDIR%%/GnomeCanvasRE.html
-%%DOCSDIR%%/GnomeCanvasRect.html
-%%DOCSDIR%%/GnomeCanvasRichText.html
-%%DOCSDIR%%/GnomeCanvasShape.html
-%%DOCSDIR%%/GnomeCanvasText.html
-%%DOCSDIR%%/GnomeCanvasWidget.html
-%%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/ch02.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/libgnomecanvas-gnome-canvas-path-def.html
-%%DOCSDIR%%/libgnomecanvas-gnome-canvas-util.html
-%%DOCSDIR%%/libgnomecanvas.devhelp
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ang/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -97,6 +70,7 @@ share/locale/pt/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ro/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ru/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/rw/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sk/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sl/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sq/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -117,6 +91,5 @@ share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
 @unexec rmdir %D/share/locale/xh 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang 2> /dev/null || true
-@dirrm %%DOCSDIR%%
 @dirrm include/libgnomecanvas-2.0/libgnomecanvas
 @dirrm include/libgnomecanvas-2.0
