@@ -20,8 +20,9 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-sharedlibs --with-x
+CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs --with-x
 INSTALLS_SHLIB=	yes
+PLIST_SUB=	STATIC="@comment "
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \

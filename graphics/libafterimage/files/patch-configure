@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -4878,6 +4878,7 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 4879 "configure"
+ #include "confdefs.h"
++#include <ft2build.h>
+ #include <freetype/freetype.h>
+                             int main(){FT_Face f; return 0;}
+ _ACEOF
