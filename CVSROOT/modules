@@ -6142,7 +6142,6 @@ mpeg		ports/multimedia/mpeg
 mpeg2codec	ports/multimedia/mpeg2codec
 mpeg2play	ports/multimedia/mpeg2play
 mpeg4ip		ports/multimedia/mpeg4ip
-mpeg4ip-faad	ports/audio/mpeg4ip-faad
 mpeg4ip-libmp4v2	ports/multimedia/mpeg4ip-libmp4v2
 mpeg_encode	ports/multimedia/mpeg_encode
 mpeg_play	ports/multimedia/mpeg_play
