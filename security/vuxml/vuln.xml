@@ -16351,8 +16351,8 @@ misc.c:
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1094</url>
     </references>
     <dates>
-      <discovery>19990729</discovery>
-      <entry>20050519</entry>
+      <discovery>1999-07-29</discovery>
+      <entry>2005-05-19</entry>
     </dates>
   </vuln>
 
@@ -16380,9 +16380,8 @@ misc.c:
       <url>http://secunia.com/advisories/15294</url>
     </references>
     <dates>
-      <discovery>20050511</discovery>
-      <entry>20050519</entry>
+      <discovery>2005-05-11</discovery>
+      <entry>2005-05-19</entry>
     </dates>
   </vuln>
-
 </vuxml>
