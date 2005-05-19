@@ -24,9 +24,11 @@ USE_REINPLACE=	YES
 
 CGIBINDIR?=	www/cgi-bin-dist
 WEBDATADIR?=	www/data-dist
+QMAIL_DIR?=	/var/qmail
 
 CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR} \
-		--enable-htmldir=${PREFIX}/${WEBDATADIR}
+		--enable-htmldir=${PREFIX}/${WEBDATADIR} \
+		--enable-qmaildir=${QMAIL_DIR}
 
 .include <bsd.port.pre.mk>
 
