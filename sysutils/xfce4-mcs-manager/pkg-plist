@@ -8,11 +8,14 @@ share/locale/ar/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/az/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/be/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/bg/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/bn_IN/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/da/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/el/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/en_GB/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/eo/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es_MX/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/et/LC_MESSAGES/xfce-mcs-manager.mo
@@ -28,6 +31,7 @@ share/locale/it/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ja/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ko/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/lt/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/mr/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ms/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/nb_NO/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/nl/LC_MESSAGES/xfce-mcs-manager.mo
@@ -49,13 +53,24 @@ share/xfce4/doc/C/images/settings_manager.png
 share/xfce4/doc/C/images/smgr_from_root_menu.png
 share/xfce4/doc/C/images/smgr_from_setup_button.png
 share/xfce4/doc/C/xfce-mcs-manager.html
+share/xfce4/doc/fr/images/settings_manager.png
+share/xfce4/doc/fr/images/smgr_from_panel.png
+share/xfce4/doc/fr/images/smgr_from_root_menu.png
+share/xfce4/doc/fr/images/smgr_from_setup_button.png
+share/xfce4/doc/fr/xfce-mcs-manager.html
 @dirrm include/xfce4/xfce-mcs-manager
 @unexec rmdir %D/include/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true

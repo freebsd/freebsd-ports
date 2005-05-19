@@ -65,10 +65,12 @@ share/locale/ar/LC_MESSAGES/xfce4-panel.mo
 share/locale/az/LC_MESSAGES/xfce4-panel.mo
 share/locale/be/LC_MESSAGES/xfce4-panel.mo
 share/locale/bg/LC_MESSAGES/xfce4-panel.mo
+share/locale/bn_IN/LC_MESSAGES/xfce4-panel.mo
 share/locale/ca/LC_MESSAGES/xfce4-panel.mo
 share/locale/cs/LC_MESSAGES/xfce4-panel.mo
 share/locale/da/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
+share/locale/el/LC_MESSAGES/xfce4-panel.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-panel.mo
 share/locale/es/LC_MESSAGES/xfce4-panel.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
@@ -85,6 +87,7 @@ share/locale/it/LC_MESSAGES/xfce4-panel.mo
 share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 share/locale/ko/LC_MESSAGES/xfce4-panel.mo
 share/locale/lt/LC_MESSAGES/xfce4-panel.mo
+share/locale/mr/LC_MESSAGES/xfce4-panel.mo
 share/locale/ms/LC_MESSAGES/xfce4-panel.mo
 share/locale/nb_NO/LC_MESSAGES/xfce4-panel.mo
 share/locale/nl/LC_MESSAGES/xfce4-panel.mo
@@ -114,6 +117,19 @@ share/xfce4/doc/C/images/pager-properties.png
 share/xfce4/doc/C/images/panel-settings.png
 share/xfce4/doc/C/images/systembuttons-properties.png
 share/xfce4/doc/C/xfce4-panel.html
+share/xfce4/doc/fr/images/add-item-dialog.png
+share/xfce4/doc/fr/images/clock-properties.png
+share/xfce4/doc/fr/images/default_panel.png
+share/xfce4/doc/fr/images/handle-popup.png
+share/xfce4/doc/fr/images/item-popup.png
+share/xfce4/doc/fr/images/launcher-properties.png
+share/xfce4/doc/fr/images/mailcheck-properties.png
+share/xfce4/doc/fr/images/menuitem-properties.png
+share/xfce4/doc/fr/images/nooptions-properties.png
+share/xfce4/doc/fr/images/pager-properties.png
+share/xfce4/doc/fr/images/panel-settings.png
+share/xfce4/doc/fr/images/systembuttons-properties.png
+share/xfce4/doc/fr/xfce4-panel.html
 @dirrm etc/xdg/xfce4/panel
 @unexec rmdir %D/etc/xdg/xfce4 2>/dev/null || true
 @unexec rmdir %D/etc/xdg 2>/dev/null || true
@@ -124,8 +140,14 @@ share/xfce4/doc/C/xfce4-panel.html
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true

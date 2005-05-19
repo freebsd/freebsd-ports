@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxfce4util
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 PORTREVISION=	0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -18,7 +18,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 library with non-graphical helper functions
 
-USE_GNOME=	glib20
+USE_GNOME=	glib20 gnomehack
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -33,9 +33,5 @@ CONFIGURE_ARGS+=--enable-gtk-doc
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/${PORTNAME}/Makefile.in
 
 .include <bsd.port.mk>

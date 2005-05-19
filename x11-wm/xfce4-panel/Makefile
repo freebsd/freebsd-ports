@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.2.1.1
+PORTVERSION=	4.2.2
 PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GETTEXT=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehack
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
@@ -34,9 +34,5 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/panel/Makefile.in
 
 .include <bsd.port.mk>

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfce4-fm
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.2.2
+PORTREVISION=	0
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -26,7 +26,7 @@ LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GETTEXT=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehack
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -45,14 +45,5 @@ CONFIGURE_ARGS+=--enable-librsvg
 .else
 CONFIGURE_ARGS+=--disable-librsvg
 .endif
-
-post-build:
-	cd ${WRKSRC}/modules && \
-		${CC} -shared .libs/libxffm_prop_la-properties.o ../src/xffm-easy.o \
-		-L${LOCALBASE}/lib -Wl,-soname -Wl,libxffm_prop.so.0 \
-		-o .libs/libxffm_prop.so.0
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

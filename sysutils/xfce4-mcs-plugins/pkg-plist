@@ -19,9 +19,11 @@ share/locale/ar/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/az/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/bg/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/be/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/bn_IN/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/el/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/en_GB/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/es/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/es_MX/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -38,6 +40,7 @@ share/locale/it/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ja/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ko/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/lt/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/mr/LC_MESSAGES/xfce-mcs-plugins.mo  
 share/locale/ms/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/nl/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/pa/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -61,9 +64,21 @@ share/xfce4/doc/C/images/mouse_settings.png
 share/xfce4/doc/C/images/user_interface_settings.png
 share/xfce4/doc/C/images/user_interface_settings_icons.png
 share/xfce4/doc/C/xfce-mcs-plugins.html
+share/xfce4/doc/fr/images/display_preferences.png
+share/xfce4/doc/fr/images/font_selection.png
+share/xfce4/doc/fr/images/keyboard_settings.png
+share/xfce4/doc/fr/images/mouse_settings.png
+share/xfce4/doc/fr/images/user_interface_settings.png
+share/xfce4/doc/fr/xfce-mcs-plugins.html
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true

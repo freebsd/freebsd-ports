@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-mcs-manager
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 PORTREVISION=	0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfce4mcs-manager.2:${PORTSDIR}/x11/libxfce4mcs
 
 USE_GETTEXT=	yes
-USE_GNOME=	glib20
+USE_GNOME=	glib20 gnomehack
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -32,9 +32,5 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
-
-post-patch:
-	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/xfce-mcs-manager/Makefile.in
 
 .include <bsd.port.mk>

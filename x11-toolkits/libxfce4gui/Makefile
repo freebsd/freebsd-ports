@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxfce4gui
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 PORTREVISION=	0
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -22,7 +22,7 @@ COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
 LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehack
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
@@ -36,9 +36,5 @@ CONFIGURE_ARGS+=--enable-gtk-doc
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/libxfcegui4/Makefile.in
 
 .include <bsd.port.mk>
