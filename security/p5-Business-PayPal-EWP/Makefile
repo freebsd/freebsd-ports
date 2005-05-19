@@ -20,10 +20,25 @@ USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	${OPENSSLBASE}
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Business::PayPal::EWP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+foo:
+	echo  ${PERL_LEVEL}
+.endif
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	#${PERL} -pi -e 's!^our \((.*?)(?=\);)!join("","use vars qw(",split(/,/,$$1))!e' ${WRKSRC}/lib/Business/PayPal/EWP.pm
+	${PERL} -pi -e 's/^our /my /' ${WRKSRC}/lib/Business/PayPal/EWP.pm
+.endif
+
+.include <bsd.port.post.mk>
