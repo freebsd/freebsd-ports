@@ -1,8 +1,8 @@
 bin/mp2bug
 include/apache2/modperl_apr_perlio.h
-include/apache2/modperl_xs_util.h
-include/apache2/modperl_xs_typedefs.h
 include/apache2/modperl_xs_sv_convert.h
+include/apache2/modperl_xs_typedefs.h
+include/apache2/modperl_xs_util.h
 include/apache2/modules/perl/mod_perl.h
 include/apache2/modules/perl/modperl_apache_compat.h
 include/apache2/modules/perl/modperl_apache_includes.h
@@ -67,6 +67,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Pool.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/SockAddr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Socket.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Status.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/URI.pm
@@ -197,6 +198,8 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/SockAddr/SockAddr.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Socket/Socket.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Socket/Socket.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Status/Status.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Status/Status.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/String/String.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/String/String.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table/Table.bs
@@ -299,6 +302,7 @@ libexec/apache2/mod_perl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/String
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Status
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Socket
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/SockAddr
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Pool
