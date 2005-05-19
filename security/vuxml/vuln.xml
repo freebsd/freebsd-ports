@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d51a7e6e-c546-11d9-9aed-000e0c2e438a">
+    <topic>cdrdao -- unspecified privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>cdrdao</name>
+	<range><lt>1.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The developers of cdrdao report that there is a potential
+	  root exploit in the software. In order to be able to
+	  succesfully exploit this vulnerability cdrdao must be
+	  installed setuid root. When succesfully exploited a local
+	  user might get escalated privileges. Default this port does
+	  not install setuid root.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/15354/</url>
+      <url>http://sourceforge.net/forum/forum.php?forum_id=466399</url>
+    </references>
+    <dates>
+      <discovery>2005-05-13</discovery>
+      <entry>2005-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad5e70bb-c429-11d9-ac59-02061b08fc24">
     <topic>gaim -- MSN remote DoS vulnerability</topic>
     <affects>
