@@ -6,73 +6,41 @@
 #
 
 PORTNAME=	bomb
-PORTVERSION=	1.0
+PORTVERSION=	1.26
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/hacks/svgalib
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://www.draves.org/bomb/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive display hack for SVGAlib or X
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libquicktime.a:${PORTSDIR}/multimedia/libquicktime
+LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound	\
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
-NO_PACKAGE=	"parts are under GPL, parts under X license"
+USE_REINPLACE=	yes
+MAKE_ENV=	SCM_CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
+ALL_TARGET=	${PORTNAME}
 
-BROKEN=		Checksum mismatch
+PORTDOCS=	README bomb.lsm guile.txt manual.txt notes.txt
 
-DATADIR=	share/${PORTNAME}/
-DOCDIR=		share/doc/${PORTNAME}/
-DOCS=		COPYING README bomb.lsm guile.txt manual.txt notes.txt
-ONLY_FOR_ARCHS=	i386
-PLIST=		${WRKDIR}/pkg-plist
-SRCS=		acidlife anneal bomb brain cmap fast fuse gif image image_rule \
-			image_seq libifs match quad rd rotor rug rug_multi \
-			rug_rug shade slip sound static wave zio
-.for i in ${SRCS}
-OBJS+=	${i}.o
+pre-configure:
+.for fi in Makefile bomb-${PORTVERSION}-1.spec
+	${REINPLACE_CMD} -e 's|/usr/lib/bomb|${DATADIR}|;			\
+	s|/home/spot/src/quicktime4linux-1.1.9/quicktime|${LOCALBASE}/lib|;	\
+	s|/usr/X11R6/lib|${X11BASE}/lib -L${LOCALBASE}/lib|;			\
+	s|-lpthread|${PTHREAD_LIBS}|;						\
+	s|/usr/bin/bomb|${PREFIX}/bin/bomb|;					\
+	s|/usr/share/control-center/.data|${DATADIR}/.data|;			\
+	s|install -d $$(DATA_DIR)|install -d ${DATADIR}/.data|;			\
+	s|cp -a suck|${CP} -R suck|;						\
+	s|cp -a|${INSTALL_DATA}|' ${WRKSRC}/${fi}
 .endfor
-USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
-pre-build:
-	${ECHO_CMD} "bin/bomb" > ${PLIST}
-	for i in `${FIND} -s ${WRKSRC}/suck -type f`; do \
-		${ECHO_CMD} ${DATADIR}suck/`${BASENAME} $${i}` >> ${PLIST}; \
-	done
-.for i in cmap-data flame-data seq-data title.tif
-	${ECHO_CMD} ${DATADIR}/${i} >> ${PLIST}
-.endfor
+post-install:
 .if !defined(NOPORTDOCS)
-.for i in ${DOCS}
-	${ECHO_CMD} ${DOCDIR}${i} >> ${PLIST}
-.endfor
-	${ECHO_CMD} "@dirrm "${DOCDIR} >> ${PLIST}
-.endif
-	${ECHO_CMD} "@dirrm "${DATADIR}/suck >> ${PLIST}
-	${ECHO_CMD} "@dirrm "${DATADIR} >> ${PLIST}
-
-do-build:
-.for i in ${SRCS}
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -DDATA_DIR=\"${PREFIX}/${DATADIR}\" \
-		-L${X11BASE}/lib \
-		-I${X11BASE}/include \
-		-L${LOCALBASE}/lib \
-		-I${LOCALBASE}/include -c ${i}.c
-.endfor
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o bomb ${OBJS} -lX11 -lvga -lm -ltiff \
-		-L${LOCALBASE}/lib -L${X11BASE}/lib
-
-do-install:
-	${MKDIR} ${PREFIX}/${DATADIR}
-	cd ${WRKSRC} && ${PAX} -r -w *-data suck title.tif ${PREFIX}/${DATADIR}
-	${INSTALL} -c -g wheel -o root -m 4755 ${WRKSRC}/bomb ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
-.endfor
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
