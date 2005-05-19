@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Gamin file monitoring system
 
-LIB_DEPENDS=	gamin-1.0:${PORTSDIR}/devel/gamin
+LIB_DEPENDS=	gamin-1.1:${PORTSDIR}/devel/gamin
 
 MASTERDIR=	${.CURDIR}/../gamin
 BUILD_WRKSRC=	${WRKSRC}/python

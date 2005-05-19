@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gamin
-PORTVERSION=	0.0.26
-PORTREVISION?=	13
+PORTVERSION=	0.1.0
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -19,8 +18,8 @@ USE_GNOME?=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--without-python
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 CONFLICTS=	fam-[0-9]*
 
