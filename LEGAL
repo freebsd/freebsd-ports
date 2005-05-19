@@ -75,7 +75,6 @@ bicom*			archivers/bicom		Contact author personally
 bk-*-x86-freebsd*	devel/bitkeeper		Redistribution is not permitted
 blast-freebsd*		biology/blast		Must be downloaded from vendor site
 bnetd			games/bnetd		Has been disabled for legal issue
-bomb.tar.gz		games/bomb		Mixture of GPL and X11 license
 boodler-*		audio/boodler		Not for commercial use
 BMRT*.tar.gz		graphics/linux-bmrt	License restrictions
 boodler-*		audio/boodler		No commercial use
