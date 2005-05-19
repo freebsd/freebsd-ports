@@ -20,7 +20,10 @@ USE_REINPLACE=	yes
 MAN1=	spamoracle.1
 MAN5=	spamoracle.conf.5
 
-DOC_FILES=	Changes README
+PLIST_FILES=	bin/spamoracle	
+.ifndef(NOPORTDOCS)
+PORTDOCS=	Changes README
+.endif
 
 do-configure:
 	@${REINPLACE_CMD} -E -e 's|^(CPP=)gcc[[:space:]]+-E|\1${CPP}|' \
@@ -31,7 +34,7 @@ do-configure:
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
