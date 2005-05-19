@@ -1,8 +1,8 @@
+bin/launch_emacs.sh
+bin/launch_xemacs.sh
 bin/lincvs
 bin/start-ssh-agent.sh
-bin/start-ssh.sh
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAM-HOWTO.txt
@@ -33,6 +33,7 @@ bin/start-ssh.sh
 %%PORTDOCS%%%%DOCSDIR%%/VERSION
 share/lincvs/translation/ca_ES.qm
 share/lincvs/translation/de.qm
+share/lincvs/translation/es.qm
 share/lincvs/translation/fr.qm
 share/lincvs/translation/it.qm
 share/lincvs/translation/ja.qm

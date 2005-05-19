@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	lincvs
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.1
 CATEGORIES=	devel kde
-MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/20_LinCVS/hl_${PORTNAME}-${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1-generic-src
+MASTER_SITES=	http://lincvs.com/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical CVS front-end using QT
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
@@ -35,8 +35,9 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/LinCVS/lincvs.bin ${PREFIX}/bin/lincvs
+	${INSTALL_SCRIPT} ${WRKSRC}/LinCVS/Tools/launch_emacs.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/LinCVS/Tools/launch_xemacs.sh ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/LinCVS/Tools/start-ssh-agent.sh ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/LinCVS/Tools/start-ssh.sh ${PREFIX}/bin
 	${MKDIR} ${DATADIR}/translation
 	${INSTALL_DATA} ${WRKSRC}/ts/*.qm ${DATADIR}/translation
 .ifndef(NOPORTDOCS)
