@@ -41,4 +41,8 @@ post-patch:
 	${PERL} -pi -e 's/^our /my /' ${WRKSRC}/lib/Business/PayPal/EWP.pm
 .endif
 
+post-configure:
+	${PERL} -pi -e 's/\x0d//' ${WRKSRC}/ppport.h
+	${PERL} -pi -e 's/\x0d//' ${WRKSRC}/lib/Business/PayPal/EWP.pm
+
 .include <bsd.port.post.mk>
