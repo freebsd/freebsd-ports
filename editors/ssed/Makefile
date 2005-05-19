@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sed
-PORTVERSION=	3.61a
+PORTVERSION=	3.62
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://sed.sourceforge.net/grabbag/ssed/
 PKGNAMEPREFIX=	s
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super-sed - a heavily enhanced version of sed
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
