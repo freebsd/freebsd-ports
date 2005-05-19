@@ -7,9 +7,10 @@
 
 PORTNAME=	hugs98
 PORTVERSION=	200503
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${HUGS_DATE}/
-DISTNAME=	${PORTNAME}-${HUGS_DATE}
+DISTNAME=	${PORTNAME}-${HUGS_DATE}-patched
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
