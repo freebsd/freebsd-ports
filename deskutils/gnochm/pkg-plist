@@ -11,6 +11,7 @@ share/gnome/omf/gnochm/gnochm-C.omf
 share/gnome/pixmaps/chmfile.png
 share/gnome/pixmaps/gnochm.png
 share/gnome/pixmaps/gnochm_logo.png
+share/locale/cs/LC_MESSAGES/gnochm.mo
 share/locale/de/LC_MESSAGES/gnochm.mo
 share/locale/it/LC_MESSAGES/gnochm.mo
 share/locale/pt_BR/LC_MESSAGES/gnochm.mo
