@@ -9,8 +9,7 @@ PORTNAME=	electricsheep
 PORTVERSION=	2.6c
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
-
-DISTFILES=	${PORTNAME}-2.6.tar.gz
+DISTNAME=	${PORTNAME}-2.6
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A nice distributed screensaver
@@ -25,6 +24,8 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 .if defined(WITH_XSCREENSAVER)
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.6
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
