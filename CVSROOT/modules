@@ -10056,6 +10056,7 @@ redir		ports/net/redir
 redland		ports/textproc/redland
 redland-bindings	ports/textproc/redland-bindings
 reed		ports/misc/reed
+refdb		ports/textproc/refdb
 regexx		ports/devel/regexx
 regexxer	ports/devel/regexxer
 regm		ports/mail/regm
