@@ -31,6 +31,7 @@
     SUBDIR += gnuboy
     SUBDIR += grustibus
     SUBDIR += gsnes9x
+    SUBDIR += gxemul
     SUBDIR += gxmame
     SUBDIR += hatari
     SUBDIR += hercules

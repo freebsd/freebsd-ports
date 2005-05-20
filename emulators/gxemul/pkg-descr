@@ -1,0 +1,19 @@
+GXemul is a free instruction-level machine emulator, emulating not only the
+CPU, but also other hardware components, making it possible to use the emulator
+to run unmodified operating systems such as NetBSD, OpenBSD, or Linux.
+
+A few different machine types are emulated. The following machine types are
+emulated well enough to run at least one "guest OS":
+
+  * DECstation 5000/200 ("3max"): serial controller (including keyboard and
+    mouse), ethernet, SCSI, and graphical framebuffers.
+  * Acer Pica-61 (an ARC machine): serial controller, "VGA" text console, and
+    SCSI.
+  * NEC MobilePro 770, 780, 800, and 880 (HPCmips machines): framebuffer,
+    keyboard, and a PCMCIA IDE controller.
+  * Cobalt: serial controller and PCI IDE.
+
+WWW: http://gavare.se/gxemul/
+
+- Janni
+jannisan@t-online.de
