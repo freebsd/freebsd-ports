@@ -7,6 +7,7 @@
 
 PORTNAME=	gramps
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix pygnome2
+USE_GNOME=	gnomehack gnomeprefix pygnome2 desktopfileutils
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
@@ -31,10 +32,11 @@ GCONF_SCHEMAS=	gramps.schemas
 post-patch:
 	@${REINPLACE_CMD} -e 's|/@PACKAGE@/gnome||' \
 		${WRKSRC}/doc/gramps-manual/C/Makefile.in
+	@${REINPLACE_CMD} -e 's|share/gramps|share/gnome|' \
+		${WRKSRC}/src/gramps_main.py
 	@${REINPLACE_CMD} -e 's|share/gramps|share/gnome/gramps|' \
 		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/src/docgen/Makefile.in \
-		${WRKSRC}/src/gramps_main.py
+		${WRKSRC}/src/docgen/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|share/application-registry|share/gnome/application-registry|; \
 		 s|share/applications|share/gnome/applications|; \
@@ -43,6 +45,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|gramps\.png|${PREFIX}/share/gnome/gramps/gramps.png|' \
 		${WRKSRC}/src/data/gramps.desktop
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/gramps|${PREFIX}/share/gnome/gramps|' \
+		${WRKSRC}/src/data/gramps.keys
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
