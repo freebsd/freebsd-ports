@@ -156,10 +156,12 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/MethodLookup.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/ParseSource.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/PerlRun.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/PerlRunPrefork.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/Registry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/RegistryBB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/RegistryCooker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/RegistryLoader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/RegistryPrefork.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/StructureMap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/TestReport.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/TestRun.pm

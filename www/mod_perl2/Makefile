@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.0r6
-PORTEPOCH=	1
+PORTVERSION=	2.0.0
+PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
 PKGNAMESUFFIX=	2
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-RC/}
 
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
@@ -36,9 +35,9 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		Apache2::Access.3 Apache2::Build.3 Apache2::CmdParms.3 \
 		Apache2::Command.3 Apache2::Connection.3 Apache2::Const.3 \
 		Apache2::Directive.3 Apache2::Filter.3 Apache2::FilterRec.3 \
-		Apache2::HookRun.3 Apache2::Log.3 Apache2::Module.3 \
-		Apache2::PerlSections.3 Apache2::Process.3 Apache2::Reload.3 \
-		Apache2::RequestIO.3 Apache2::RequestRec.3 \
+		Apache2::HookRun.3 Apache2::Log.3 Apache2::MPM.3 \
+		Apache2::Module.3 Apache2::PerlSections.3 Apache2::Process.3 \
+		Apache2::Reload.3 Apache2::RequestIO.3 Apache2::RequestRec.3 \
 		Apache2::RequestUtil.3 Apache2::Resource.3 \
 		Apache2::Response.3 Apache2::ServerRec.3 \
 		Apache2::ServerUtil.3 Apache2::SizeLimit.3 Apache2::Status.3 \
@@ -52,14 +51,15 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		ModPerl::CScan.3 ModPerl::Code.3 ModPerl::Config.3 \
 		ModPerl::Const.3 ModPerl::Global.3 ModPerl::MM.3 \
 		ModPerl::MethodLookup.3 ModPerl::PerlRun.3 \
-		ModPerl::Registry.3 ModPerl::RegistryBB.3 \
-		ModPerl::RegistryCooker.3 ModPerl::RegistryLoader.3 \
+		ModPerl::PerlRunPrefork.3 ModPerl::Registry.3 \
+		ModPerl::RegistryBB.3 ModPerl::RegistryCooker.3 \
+		ModPerl::RegistryLoader.3 ModPerl::RegistryPrefork.3 \
 		ModPerl::Util.3 mod_perl2.3
 
 pre-everything::
 	@${ECHO} "************************************************************"
-	@${ECHO} "NOTE: Version RC5 and higher of ${PORTNAME} significantly"
-	@${ECHO} "      change the API - old code *will* break!"
+	@${ECHO} "NOTE: Version 2.0.0-RC5 and higher of ${PORTNAME}"
+	@${ECHO} "      significantly change the API - old code *will* break!"
 	@${ECHO} "      See http://perl.apache.org/docs/2.0/rename.html"
 	@${ECHO} ""
 	@${ECHO} "Hit Ctrl-C to abort now, if this is of concern."
@@ -82,6 +82,6 @@ post-install:
 	${MKDIR} ${PREFIX}/libexec/apache2
 	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
 		${PREFIX}/libexec/apache2/mod_perl.so
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
