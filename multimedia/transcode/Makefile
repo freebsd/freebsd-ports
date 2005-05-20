@@ -407,7 +407,13 @@ pre-configure:
 	@${REINPLACE_CMD} -E -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|-ldl||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|WRKSRC|${WRKSRC}|g' ${WRKSRC}/export/Makefile.in
-
+	@${REINPLACE_CMD} -E -e 's|<quicktime/|<lqt/|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/export/export_mov.c \
+		${WRKSRC}/import/decode_mov.c \
+		${WRKSRC}/import/import_mov.c \
+		${WRKSRC}/import/probe_mov.c
+	
 post-install:
 .if defined(WITH_XVID)
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
