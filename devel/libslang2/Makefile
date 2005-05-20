@@ -32,6 +32,22 @@ DOCSDIR=	${PREFIX}/share/doc/slang
 PORTDOCS=	*
 .endif
 
+.if !defined(WITHOUT_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+PLIST_SUB+=	PCRE=""
+.else
+CONFIGURE_ARGS+=	--disable-pcre
+PLIST_SUB+=	PCRE="@comment "
+.endif
+
+.if !defined(WITHOUT_PNG)
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+PLIST_SUB+=	PNG=""
+.else
+CONFIGURE_ARGS+=	--disable-png
+PLIST_SUB+=	PNG="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
