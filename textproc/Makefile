@@ -20,6 +20,7 @@
     SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += az-aspell
+    SUBDIR += bar
     SUBDIR += be-aspell
     SUBDIR += bedic-data
     SUBDIR += bg-aspell
