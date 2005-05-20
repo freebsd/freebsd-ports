@@ -10,11 +10,12 @@
 # and you think it should be, check
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
-PORTNAME=	edge-icons
-PORTVERSION=	0.4.2
+PORTNAME=	edge
+PORTVERSION=	0.6
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw/edge
+DISTNAME=	${PORTNAME}-icons-${PORTVERSION}
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Sleek white icon theme for GNOME
