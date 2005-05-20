@@ -1,0 +1,16 @@
+DConnect Daemon is a Direct Connect Hub clone for Unix. It allows people to
+share their resources, i.e.: programs, graphics, other files...
+
+Features:
+
+    * fast, pure C implementation
+    * libwrap support (hosts.allow, hosts.deny)
+    * low per-user memory consumption
+    * uses threads (no forking)
+    * nick pattern matching
+    * simple administration through telnet console
+
+WWW: http://www.dc.ds.pg.gda.pl/ 
+
+- Aleksandr S. Goncharov
+mraleks@bk.ru

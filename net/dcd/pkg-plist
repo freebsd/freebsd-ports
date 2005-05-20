@@ -1,0 +1,15 @@
+sbin/dcd
+@exec install -d -m 751 -o daemon -g daemon %D/etc/dcd
+etc/dcd/console.allow.default
+etc/dcd/dcd.banned.default
+etc/dcd/dcd.conf.default
+etc/dcd/dcd.motd.default
+etc/dcd/dcd.penalties.default
+etc/dcd/dcd.users.default
+etc/dcd/dcd.welcome.default
+etc/dcd/nicks.allow.default
+@exec install -d -m 751 -o daemon -g daemon /var/log/dcd
+@unexec rmdir /var/log/dcd 2>/dev/null || true
+@unexec rmdir %D/etc/dcd 2>/dev/null || true
+@unexec rmdir %D/man/pl.ISO8859-2/man8 2>/dev/null || true
+@unexec rmdir %D/man/pl.ISO8859-2 2>/dev/null || true
