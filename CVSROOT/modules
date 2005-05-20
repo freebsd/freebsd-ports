@@ -1428,6 +1428,7 @@ dc3play		ports/graphics/dc3play
 dc42wrap	ports/sysutils/dc42wrap
 dcc		ports/irc/dcc
 dcc-dccd	ports/mail/dcc-dccd
+dcd		ports/net/dcd
 dcdflib		ports/math/dcdflib
 dcetest		ports/security/dcetest
 dcfldd		ports/sysutils/dcfldd
