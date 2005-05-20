@@ -1164,6 +1164,7 @@
     SUBDIR += pear-Event_Dispatcher
     SUBDIR += pear-FSM
     SUBDIR += pear-HTML_BBCodeParser
+    SUBDIR += pear-HTML_CSS
     SUBDIR += pear-HTML_Common
     SUBDIR += pear-HTML_Form
     SUBDIR += pear-HTML_Javascript
