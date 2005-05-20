@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-db=${LOCALBASE}
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -e \
 		's|\(/etc/avenger\)|${PREFIX}\1|g' {} \;
+	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/configure
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
