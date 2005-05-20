@@ -35,19 +35,19 @@ share/locale/it_CH/LC_MESSAGES/amule.mo
 share/locale/pt_PT/LC_MESSAGES/amule.mo
 share/locale/hr/LC_MESSAGES/amule.mo
 share/locale/sl/LC_MESSAGES/amule.mo
-share/gnome/doc/aMule-2.0.0/ABOUT-NLS
-share/gnome/doc/aMule-2.0.0/amulesig.txt
-share/gnome/doc/aMule-2.0.0/amule-win32.HOWTO.txt
-share/gnome/doc/aMule-2.0.0/Changelog
-share/gnome/doc/aMule-2.0.0/Doxyfile
-share/gnome/doc/aMule-2.0.0/ED2K-Links.HOWTO
-share/gnome/doc/aMule-2.0.0/INSTALL
-share/gnome/doc/aMule-2.0.0/license.txt
-share/gnome/doc/aMule-2.0.0/README
-share/gnome/doc/aMule-2.0.0/TODO
-share/gnome/doc/aMule-2.0.0/EC_Protocol.txt
-share/gnome/doc/aMule-2.0.0/socks4.protocol
-@unexec rmdir %D/share/gnome/doc/aMule-2.0.0 2>/dev/null || true
+share/gnome/doc/aMule-2.0.1/ABOUT-NLS
+share/gnome/doc/aMule-2.0.1/amulesig.txt
+share/gnome/doc/aMule-2.0.1/amule-win32.HOWTO.txt
+share/gnome/doc/aMule-2.0.1/Changelog
+share/gnome/doc/aMule-2.0.1/Doxyfile
+share/gnome/doc/aMule-2.0.1/ED2K-Links.HOWTO
+share/gnome/doc/aMule-2.0.1/INSTALL
+share/gnome/doc/aMule-2.0.1/license.txt
+share/gnome/doc/aMule-2.0.1/README
+share/gnome/doc/aMule-2.0.1/TODO
+share/gnome/doc/aMule-2.0.1/EC_Protocol.txt
+share/gnome/doc/aMule-2.0.1/socks4.protocol
+@unexec rmdir %D/share/gnome/doc/aMule-2.0.1 2>/dev/null || true
 @unexec rmdir %D/share/gnome/doc 2>/dev/null || true
 %%PL_CAS%%share/gnome/cas/tmp.html
 %%PL_CAS%%share/gnome/cas/stat.png
@@ -59,7 +59,6 @@ share/gnome/pixmaps/amule.xpm
 %%PL_CAS%%share/gnome/applications/wxcas.desktop
 %%PL_ALC%%share/gnome/applications/alc.desktop
 share/gnome/applications/amule.desktop
-@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/aMule.tmpl
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/add_server.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/arrow_down.gif

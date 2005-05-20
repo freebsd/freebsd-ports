@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aMule
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/amule/
 
