@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	leafpad
-PORTVERSION=	0.7.9
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,22 +21,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
 		PTHREAD_LIB="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--enable-chooser
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
-
-.if defined (WITH_NEW_SELECTOR)
-EXTRA_PATCHES=	${FILESDIR}/extra-new-selector.patch
-.endif
-
-pre-everything::
-.if !defined(WITH_NEW_SELECTOR)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may choose to compile with unsupported patch"
-	@${ECHO_MSG} "that lets leafpad use the new GTK file selector."
-	@${ECHO_MSG} "Define:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_NEW_SELECTOR=yes"
-	@${ECHO_MSG} ""
 .endif
 
 post-patch:
