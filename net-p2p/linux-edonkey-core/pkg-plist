@@ -1,4 +1,10 @@
-bin/donkey
-sbin/donkey-real
-%%PORTDOCS%%share/doc/edonkey-core/README.FreeBSD
-%%PORTDOCS%%@dirrm share/doc/edonkey-core
+sbin/donkey
+share/edonkey-core/contact.dat
+share/edonkey-core/server.met
+%%PORTDOCS%%%%DOCSDIR%%-core/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%-core/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%-core/LISEZMOI
+%%PORTDOCS%%%%DOCSDIR%%-core/README
+%%PORTDOCS%%%%DOCSDIR%%-core/changelog.Debian.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-core
+@dirrm share/edonkey-core
