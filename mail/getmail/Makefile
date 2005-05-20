@@ -8,7 +8,8 @@
 PORTNAME=	getmail
 PORTVERSION=	4.3.9
 CATEGORIES=	mail python
-MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/
+MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/ \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/novel/}
 MASTER_SITE_SUBDIR=	old-versions
 
 MAINTAINER=	question+fbsdports@closedsrc.org
