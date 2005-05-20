@@ -18,9 +18,9 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_PERL5_BUILD=yes
+USE_PYTHON_BUILD=yes
+USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
