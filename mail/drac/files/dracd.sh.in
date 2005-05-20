@@ -14,12 +14,13 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 dracd_enable=${dracd_enable-"NO"}
+dracd_flags=${dracd_flags-""}
 
 . %%RC_SUBR%%
 
 name="dracd"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/rpc.dracd"
+command="%%PREFIX%%/sbin/rpc.dracd "${dracd_flags}
 
 load_rc_config $name
 run_rc_command "$1"
