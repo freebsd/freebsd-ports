@@ -1,0 +1,480 @@
+bin/hattrickorganizer
+%%DATADIR%%/HO.bat
+%%DATADIR%%/HO.sh
+%%DATADIR%%/Logo.ico
+%%DATADIR%%/defaults.xml
+%%DATADIR%%/flags/100flag.png
+%%DATADIR%%/flags/101flag.png
+%%DATADIR%%/flags/102flag.png
+%%DATADIR%%/flags/103flag.png
+%%DATADIR%%/flags/10flag.png
+%%DATADIR%%/flags/11flag.png
+%%DATADIR%%/flags/12flag.png
+%%DATADIR%%/flags/13flag.png
+%%DATADIR%%/flags/14flag.png
+%%DATADIR%%/flags/15flag.png
+%%DATADIR%%/flags/16flag.png
+%%DATADIR%%/flags/17flag.png
+%%DATADIR%%/flags/18flag.png
+%%DATADIR%%/flags/19flag.png
+%%DATADIR%%/flags/1flag.png
+%%DATADIR%%/flags/20flag.png
+%%DATADIR%%/flags/21flag.png
+%%DATADIR%%/flags/22flag.png
+%%DATADIR%%/flags/23flag.png
+%%DATADIR%%/flags/24flag.png
+%%DATADIR%%/flags/25flag.png
+%%DATADIR%%/flags/26flag.png
+%%DATADIR%%/flags/27flag.png
+%%DATADIR%%/flags/28flag.png
+%%DATADIR%%/flags/29flag.png
+%%DATADIR%%/flags/2flag.png
+%%DATADIR%%/flags/30flag.png
+%%DATADIR%%/flags/31flag.png
+%%DATADIR%%/flags/32flag.png
+%%DATADIR%%/flags/33flag.png
+%%DATADIR%%/flags/34flag.png
+%%DATADIR%%/flags/35flag.png
+%%DATADIR%%/flags/36flag.png
+%%DATADIR%%/flags/37flag.png
+%%DATADIR%%/flags/38flag.png
+%%DATADIR%%/flags/39flag.png
+%%DATADIR%%/flags/3flag.png
+%%DATADIR%%/flags/40flag.png
+%%DATADIR%%/flags/41flag.png
+%%DATADIR%%/flags/42flag.png
+%%DATADIR%%/flags/43flag.png
+%%DATADIR%%/flags/44flag.png
+%%DATADIR%%/flags/45flag.png
+%%DATADIR%%/flags/46flag.png
+%%DATADIR%%/flags/47flag.png
+%%DATADIR%%/flags/48flag.png
+%%DATADIR%%/flags/49flag.png
+%%DATADIR%%/flags/4flag.png
+%%DATADIR%%/flags/50flag.png
+%%DATADIR%%/flags/51flag.png
+%%DATADIR%%/flags/52flag.png
+%%DATADIR%%/flags/53flag.png
+%%DATADIR%%/flags/54flag.png
+%%DATADIR%%/flags/55flag.png
+%%DATADIR%%/flags/56flag.png
+%%DATADIR%%/flags/57flag.png
+%%DATADIR%%/flags/58flag.png
+%%DATADIR%%/flags/59flag.png
+%%DATADIR%%/flags/5flag.png
+%%DATADIR%%/flags/60flag.png
+%%DATADIR%%/flags/61flag.png
+%%DATADIR%%/flags/62flag.png
+%%DATADIR%%/flags/63flag.png
+%%DATADIR%%/flags/64flag.png
+%%DATADIR%%/flags/65flag.png
+%%DATADIR%%/flags/66flag.png
+%%DATADIR%%/flags/67flag.png
+%%DATADIR%%/flags/68flag.png
+%%DATADIR%%/flags/69flag.png
+%%DATADIR%%/flags/6flag.png
+%%DATADIR%%/flags/70flag.png
+%%DATADIR%%/flags/71flag.png
+%%DATADIR%%/flags/72flag.png
+%%DATADIR%%/flags/75flag.png
+%%DATADIR%%/flags/76flag.png
+%%DATADIR%%/flags/77flag.png
+%%DATADIR%%/flags/78flag.png
+%%DATADIR%%/flags/79flag.png
+%%DATADIR%%/flags/7flag.png
+%%DATADIR%%/flags/80flag.png
+%%DATADIR%%/flags/82flag.png
+%%DATADIR%%/flags/83flag.png
+%%DATADIR%%/flags/87flag.png
+%%DATADIR%%/flags/88flag.png
+%%DATADIR%%/flags/89flag.png
+%%DATADIR%%/flags/8flag.png
+%%DATADIR%%/flags/90flag.png
+%%DATADIR%%/flags/91flag.png
+%%DATADIR%%/flags/92flag.png
+%%DATADIR%%/flags/94flag.png
+%%DATADIR%%/flags/95flag.png
+%%DATADIR%%/flags/96flag.png
+%%DATADIR%%/flags/97flag.png
+%%DATADIR%%/flags/98flag.png
+%%DATADIR%%/flags/99flag.png
+%%DATADIR%%/flags/9flag.png
+%%DATADIR%%/flags/Unknownflag.png
+%%DATADIR%%/hocoded.jar
+%%DATADIR%%/hoplugins/Commons.class
+%%DATADIR%%/hoplugins/PluginUpdater.class
+%%DATADIR%%/hoplugins/TeamAnalyzer.class
+%%DATADIR%%/hoplugins/TrainingExperience.class
+%%DATADIR%%/hoplugins/Transfers.class
+%%DATADIR%%/hoplugins/commons/plugin.xml
+%%DATADIR%%/hoplugins/commons/ui/BaseTableModel.class
+%%DATADIR%%/hoplugins/commons/ui/CompositeIcon.class
+%%DATADIR%%/hoplugins/commons/ui/DefaultTableSorter.class
+%%DATADIR%%/hoplugins/commons/ui/InfoPanel.class
+%%DATADIR%%/hoplugins/commons/ui/NumberTextField$DecimalFieldDocument.class
+%%DATADIR%%/hoplugins/commons/ui/NumberTextField.class
+%%DATADIR%%/hoplugins/commons/ui/PositioningUtilities.class
+%%DATADIR%%/hoplugins/commons/ui/VTextIcon.class
+%%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout/TableLayout$Entry.class
+%%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout/TableLayout.class
+%%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout/TableLayoutConstants.class
+%%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout/TableLayoutConstraints.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/AbstractTableSorter$1.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/AbstractTableSorter$2.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/AbstractTableSorter.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/Arrow.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/Directive.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/MouseHandler.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/Row.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/SortableHeaderRenderer.class
+%%DATADIR%%/hoplugins/commons/ui/sorter/TableModelHandler.class
+%%DATADIR%%/hoplugins/commons/utils/DateUtil.class
+%%DATADIR%%/hoplugins/commons/utils/HTCalendar.class
+%%DATADIR%%/hoplugins/commons/utils/HTSwedenCalendar.class
+%%DATADIR%%/hoplugins/commons/utils/HTTrainCalendar.class
+%%DATADIR%%/hoplugins/commons/utils/ListUtil.class
+%%DATADIR%%/hoplugins/commons/utils/MathUtil.class
+%%DATADIR%%/hoplugins/commons/utils/RatingUtil.class
+%%DATADIR%%/hoplugins/commons/vo/MatchRating.class
+%%DATADIR%%/hoplugins/pluginUpdater/DeleteDialog.class
+%%DATADIR%%/hoplugins/pluginUpdater/DialogListener.class
+%%DATADIR%%/hoplugins/pluginUpdater/HPLanguageInfo.class
+%%DATADIR%%/hoplugins/pluginUpdater/HPNewsletter.class
+%%DATADIR%%/hoplugins/pluginUpdater/HPPluginInfo.class
+%%DATADIR%%/hoplugins/pluginUpdater/LanguagesDialog.class
+%%DATADIR%%/hoplugins/pluginUpdater/NewsletterDialog.class
+%%DATADIR%%/hoplugins/pluginUpdater/RSC.class
+%%DATADIR%%/hoplugins/pluginUpdater/RefreshDialog.class
+%%DATADIR%%/hoplugins/pluginUpdater/TableEditor.class
+%%DATADIR%%/hoplugins/pluginUpdater/TableModel.class
+%%DATADIR%%/hoplugins/pluginUpdater/UpdateListener.class
+%%DATADIR%%/hoplugins/pluginUpdater/UpdaterCellRenderer.class
+%%DATADIR%%/hoplugins/pluginUpdater/UpdaterDialog.class
+%%DATADIR%%/hoplugins/pluginUpdater/UpdaterUtil.class
+%%DATADIR%%/hoplugins/pluginUpdater/XMLPLuginInfo.class
+%%DATADIR%%/hoplugins/pluginUpdater/plugin.xml
+%%DATADIR%%/hoplugins/pluginUpdater/rsc/CheckBoxNotSelected.gif
+%%DATADIR%%/hoplugins/pluginUpdater/rsc/CheckBoxSelected.gif
+%%DATADIR%%/hoplugins/pluginUpdater/rsc/empty.gif
+%%DATADIR%%/hoplugins/pluginUpdater/rsc/info.gif
+%%DATADIR%%/hoplugins/pluginUpdater/rsc/languages.xml
+%%DATADIR%%/hoplugins/pluginUpdater/rsc/newsletter.xml
+%%DATADIR%%/hoplugins/pluginUpdater/rsc/tmp.xml
+%%DATADIR%%/hoplugins/pluginUpdater/sprache/Deutsch.properties
+%%DATADIR%%/hoplugins/pluginUpdater/sprache/English.properties
+%%DATADIR%%/hoplugins/pluginUpdater/sprache/Nederlands.properties
+%%DATADIR%%/hoplugins/pluginUpdater/sprache/Polish.properties
+%%DATADIR%%/hoplugins/pluginUpdater/sprache/Spanish.properties
+%%DATADIR%%/hoplugins/pluginUpdater/sprache/svenska.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/SystemManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/TeamAnalyzerProperty.class
+%%DATADIR%%/hoplugins/teamAnalyzer/comparator/AppearanceComparator.class
+%%DATADIR%%/hoplugins/teamAnalyzer/comparator/MatchComparator.class
+%%DATADIR%%/hoplugins/teamAnalyzer/comparator/PerformanceComparator.class
+%%DATADIR%%/hoplugins/teamAnalyzer/dao/DividerDAO.class
+%%DATADIR%%/hoplugins/teamAnalyzer/dao/FavoritesDAO.class
+%%DATADIR%%/hoplugins/teamAnalyzer/dao/PluginConfiguration.class
+%%DATADIR%%/hoplugins/teamAnalyzer/dao/TeamPlayerDAO.class
+%%DATADIR%%/hoplugins/teamAnalyzer/executor/UnixExec.class
+%%DATADIR%%/hoplugins/teamAnalyzer/executor/WindowsExec.class
+%%DATADIR%%/hoplugins/teamAnalyzer/guide.bat
+%%DATADIR%%/hoplugins/teamAnalyzer/guide.sh
+%%DATADIR%%/hoplugins/teamAnalyzer/guide/Deutsch.doc
+%%DATADIR%%/hoplugins/teamAnalyzer/guide/English.doc
+%%DATADIR%%/hoplugins/teamAnalyzer/guide/Italiano.doc
+%%DATADIR%%/hoplugins/teamAnalyzer/guide/Nederlands.doc
+%%DATADIR%%/hoplugins/teamAnalyzer/ht/CHPPManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ht/HattrickManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/MatchList.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/MatchManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/MatchPopulator.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/NameManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/PlayerList.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/PlayerManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/ReportManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/TeamLineupBuilder.class
+%%DATADIR%%/hoplugins/teamAnalyzer/manager/TeamManager.class
+%%DATADIR%%/hoplugins/teamAnalyzer/plugin.xml
+%%DATADIR%%/hoplugins/teamAnalyzer/report/PositionReport.class
+%%DATADIR%%/hoplugins/teamAnalyzer/report/Report.class
+%%DATADIR%%/hoplugins/teamAnalyzer/report/SpotReport.class
+%%DATADIR%%/hoplugins/teamAnalyzer/report/TacticReport.class
+%%DATADIR%%/hoplugins/teamAnalyzer/report/TeamReport.class
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Czech.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Danish.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Deutsch.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/English.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Finnish.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/French.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Italiano.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Nederlands.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Polish.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Romanian.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Spanish.properties
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/AutoFilterPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/ComboBoxRenderer.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/FilterPanel$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/FilterPanel$2.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/FilterPanel$3.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/FilterPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/ManualFilterPanel$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/ManualFilterPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/ManualFilterTableRenderer.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/PlayerPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RatingBox.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RatingPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapPanel$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableRenderer.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter$2.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter$3.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter$4.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/TacticPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/TeamLineupData.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/TeamLineupPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/TeamPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/UIColors.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/UserTeamPlayerPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/AboutPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/AddPanel$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/AddPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/DeletePanel$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/DeletePanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/DownloadPanel$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/DownloadPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/FavouriteMenu$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/FavouriteMenu$2.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/FavouriteMenu.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/JokePanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$1.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$10.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$11.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$2.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$3.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$4.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$5.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$6.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$7.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$8.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$9.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/AboutItemListener.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/DividerListener.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/DownloadItemListener.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/FavoriteItemListener.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/HelpItemListener.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/SimButtonListener.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/lineup/FormationPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/lineup/LineupStylePanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/lineup/MixedLineupPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/lineup/StandardLineupPanel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/model/UiFilterTableModel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/model/UiRatingTableModel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/model/UiRecapTableModel.class
+%%DATADIR%%/hoplugins/teamAnalyzer/util/MatchUtil.class
+%%DATADIR%%/hoplugins/teamAnalyzer/util/NameUtil.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/Filter.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/Match.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/MatchDetail.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/PlayerAppearance.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/PlayerPerformance.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/PlayerStatus.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/SpotLineup.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/Team.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/TeamLineup.class
+%%DATADIR%%/hoplugins/teamAnalyzer/vo/UserTeamSpotLineup.class
+%%DATADIR%%/hoplugins/trainingExperience/FutureTrainingManager.class
+%%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager.class
+%%DATADIR%%/hoplugins/trainingExperience/TrainingExperienceProperty.class
+%%DATADIR%%/hoplugins/trainingExperience/constants/Skills.class
+%%DATADIR%%/hoplugins/trainingExperience/constants/Trainings.class
+%%DATADIR%%/hoplugins/trainingExperience/dao/DividerDAO.class
+%%DATADIR%%/hoplugins/trainingExperience/dao/EffectDAO.class
+%%DATADIR%%/hoplugins/trainingExperience/dao/TrainingDAO.class
+%%DATADIR%%/hoplugins/trainingExperience/plugin.xml
+%%DATADIR%%/hoplugins/trainingExperience/sprache/English.properties
+%%DATADIR%%/hoplugins/trainingExperience/sprache/Finnish.properties
+%%DATADIR%%/hoplugins/trainingExperience/sprache/Italiano.properties
+%%DATADIR%%/hoplugins/trainingExperience/sprache/Nederlands.properties
+%%DATADIR%%/hoplugins/trainingExperience/sprache/Polish.properties
+%%DATADIR%%/hoplugins/trainingExperience/sprache/Spanish.properties
+%%DATADIR%%/hoplugins/trainingExperience/sprache/svenska.properties
+%%DATADIR%%/hoplugins/trainingExperience/ui/AnalyzerPanel$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/AnalyzerPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/ChangeTableRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/EffectPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/MainPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel$2.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel$3.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputTable.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputTableRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputTableSorter$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/OutputTableSorter.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/PlayerDetailPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/SkillupPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/SkillupTable.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/SkillupTableRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel$2.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel$3.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingComparator.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingPanel$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapPanel$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapPanel$2.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapTable.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingTable.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/bar/ColorModus.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/bar/StateBar.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/bar/VerticalIndicator.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/component/DividerListener.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/component/FutureSettingPanel$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/component/FutureSettingPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/component/IntensityComboBox.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/component/TrainingComboBox.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/model/AbstractTrainingsTableModel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/model/ChangesTableModel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/model/EffectTableModel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/model/FutureTrainingsTableModel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/model/OutputTableModel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/model/PastTrainingsTableModel.class
+%%DATADIR%%/hoplugins/trainingExperience/vo/HattrickTrainingWeek.class
+%%DATADIR%%/hoplugins/trainingExperience/vo/PlayerValues.class
+%%DATADIR%%/hoplugins/trainingExperience/vo/SkillChange.class
+%%DATADIR%%/hoplugins/trainingExperience/vo/Skillup.class
+%%DATADIR%%/hoplugins/trainingExperience/vo/TrainWeekEffect.class
+%%DATADIR%%/hoplugins/transfers/TransfersProperty.class
+%%DATADIR%%/hoplugins/transfers/constants/TransferTypes.class
+%%DATADIR%%/hoplugins/transfers/dao/BookmarkDAO.class
+%%DATADIR%%/hoplugins/transfers/dao/DividerDAO.class
+%%DATADIR%%/hoplugins/transfers/dao/PlayerMatchesDAO.class
+%%DATADIR%%/hoplugins/transfers/dao/TransferSettingDAO.class
+%%DATADIR%%/hoplugins/transfers/dao/TransferStatusDAO.class
+%%DATADIR%%/hoplugins/transfers/dao/TransfersDAO.class
+%%DATADIR%%/hoplugins/transfers/dao/XMLParser.class
+%%DATADIR%%/hoplugins/transfers/plugin.xml
+%%DATADIR%%/hoplugins/transfers/sprache/Deutsch.properties
+%%DATADIR%%/hoplugins/transfers/sprache/English.properties
+%%DATADIR%%/hoplugins/transfers/sprache/Finnish.properties
+%%DATADIR%%/hoplugins/transfers/sprache/Italiano.properties
+%%DATADIR%%/hoplugins/transfers/sprache/Nederlands.properties
+%%DATADIR%%/hoplugins/transfers/ui/HistoryPane$1.class
+%%DATADIR%%/hoplugins/transfers/ui/HistoryPane$2.class
+%%DATADIR%%/hoplugins/transfers/ui/HistoryPane$3.class
+%%DATADIR%%/hoplugins/transfers/ui/HistoryPane.class
+%%DATADIR%%/hoplugins/transfers/ui/Icon$1.class
+%%DATADIR%%/hoplugins/transfers/ui/Icon.class
+%%DATADIR%%/hoplugins/transfers/ui/IconCellRenderer.class
+%%DATADIR%%/hoplugins/transfers/ui/PlayerDetailPanel.class
+%%DATADIR%%/hoplugins/transfers/ui/TeamBookmarkPane$1.class
+%%DATADIR%%/hoplugins/transfers/ui/TeamBookmarkPane$2.class
+%%DATADIR%%/hoplugins/transfers/ui/TeamBookmarkPane$3.class
+%%DATADIR%%/hoplugins/transfers/ui/TeamBookmarkPane.class
+%%DATADIR%%/hoplugins/transfers/ui/TeamTransferSorter$1.class
+%%DATADIR%%/hoplugins/transfers/ui/TeamTransferSorter.class
+%%DATADIR%%/hoplugins/transfers/ui/TeamTransfersPane.class
+%%DATADIR%%/hoplugins/transfers/ui/TotalsPanel.class
+%%DATADIR%%/hoplugins/transfers/ui/TransferTypePane.class
+%%DATADIR%%/hoplugins/transfers/ui/TransferTypeSorter$1.class
+%%DATADIR%%/hoplugins/transfers/ui/TransferTypeSorter.class
+%%DATADIR%%/hoplugins/transfers/ui/component/DisablePanel.class
+%%DATADIR%%/hoplugins/transfers/ui/component/OptionPanel$1.class
+%%DATADIR%%/hoplugins/transfers/ui/component/OptionPanel.class
+%%DATADIR%%/hoplugins/transfers/ui/component/StartingPanel.class
+%%DATADIR%%/hoplugins/transfers/ui/controller/DividerListener.class
+%%DATADIR%%/hoplugins/transfers/ui/images/in.gif
+%%DATADIR%%/hoplugins/transfers/ui/images/out.gif
+%%DATADIR%%/hoplugins/transfers/ui/model/PlayerTransferTableModel.class
+%%DATADIR%%/hoplugins/transfers/ui/model/TeamBookmarksTableModel.class
+%%DATADIR%%/hoplugins/transfers/ui/model/TransferTableModel.class
+%%DATADIR%%/hoplugins/transfers/ui/model/TransferTypeTableModel.class
+%%DATADIR%%/hoplugins/transfers/utils/PlayerRetriever.class
+%%DATADIR%%/hoplugins/transfers/vo/Bookmark.class
+%%DATADIR%%/hoplugins/transfers/vo/PlayerTransfer.class
+%%DATADIR%%/hoplugins/transfers/vo/TransferRecap.class
+%%DATADIR%%/hoplugins/transfers/vo/TransferTotals.class
+%%DATADIR%%/hoplugins/transfers/vo/TransferTypeRecap.class
+%%DATADIR%%/hoplugins/transfers/vo/TransferredPlayer.class
+%%DATADIR%%/hsqldb_lic.txt
+%%DATADIR%%/lizenz.txt
+%%DATADIR%%/sprache/Argentina.properties
+%%DATADIR%%/sprache/Bulgarian.properties
+%%DATADIR%%/sprache/Catalan.properties
+%%DATADIR%%/sprache/Czech.properties
+%%DATADIR%%/sprache/Danish.properties
+%%DATADIR%%/sprache/Deutsch.properties
+%%DATADIR%%/sprache/English.properties
+%%DATADIR%%/sprache/Finnish.properties
+%%DATADIR%%/sprache/Italiano.properties
+%%DATADIR%%/sprache/Latvija.properties
+%%DATADIR%%/sprache/Lithuanian.properties
+%%DATADIR%%/sprache/Magyar.properties
+%%DATADIR%%/sprache/Nederlands.properties
+%%DATADIR%%/sprache/Polish.properties
+%%DATADIR%%/sprache/Portugues.properties
+%%DATADIR%%/sprache/PortuguesBrasil.properties
+%%DATADIR%%/sprache/Romanian.properties
+%%DATADIR%%/sprache/Spanish.properties
+%%DATADIR%%/sprache/french.properties
+%%DATADIR%%/sprache/languages.properties
+%%DATADIR%%/sprache/norsk.properties
+%%DATADIR%%/sprache/svenska.properties
+%%DATADIR%%/version.txt
+@dirrm %%DATADIR%%/sprache
+@dirrm %%DATADIR%%/hoplugins/transfers/vo
+@dirrm %%DATADIR%%/hoplugins/transfers/utils
+@dirrm %%DATADIR%%/hoplugins/transfers/ui/model
+@dirrm %%DATADIR%%/hoplugins/transfers/ui/images
+@dirrm %%DATADIR%%/hoplugins/transfers/ui/controller
+@dirrm %%DATADIR%%/hoplugins/transfers/ui/component
+@dirrm %%DATADIR%%/hoplugins/transfers/ui
+@dirrm %%DATADIR%%/hoplugins/transfers/sprache
+@dirrm %%DATADIR%%/hoplugins/transfers/dao
+@dirrm %%DATADIR%%/hoplugins/transfers/constants
+@dirrm %%DATADIR%%/hoplugins/transfers
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/vo
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/model
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/component
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/bar
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/ui
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/sprache
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/dao
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/constants
+@dirrm %%DATADIR%%/hoplugins/trainingExperience
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/vo
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/util
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui/model
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui/lineup
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui/controller
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui/component
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/sprache
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/report
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/manager
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ht
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/guide
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/executor
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/dao
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/comparator
+@dirrm %%DATADIR%%/hoplugins/teamAnalyzer
+@dirrm %%DATADIR%%/hoplugins/pluginUpdater/sprache
+@dirrm %%DATADIR%%/hoplugins/pluginUpdater/rsc
+@dirrm %%DATADIR%%/hoplugins/pluginUpdater
+@dirrm %%DATADIR%%/hoplugins/commons/vo
+@dirrm %%DATADIR%%/hoplugins/commons/utils
+@dirrm %%DATADIR%%/hoplugins/commons/ui/sorter
+@dirrm %%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout
+@dirrm %%DATADIR%%/hoplugins/commons/ui/info/clearthought
+@dirrm %%DATADIR%%/hoplugins/commons/ui/info
+@dirrm %%DATADIR%%/hoplugins/commons/ui
+@dirrm %%DATADIR%%/hoplugins/commons
+@dirrm %%DATADIR%%/hoplugins
+@dirrm %%DATADIR%%/flags
+@dirrm share/hattrickorganizer
