@@ -1,0 +1,18 @@
+Almost anyone would agree that the most prominent problem
+facing mail server administrators is spam mails.
+For that we've decided to code a program which
+will be able to detect and reject spam before the mail gets queued.
+
+Zabit is a content/attachment filter for qmail.
+It's been coded in C language for performance reasons.
+
+Zabit does content filtering and attachment control.
+
+Project Page:
+WWW: http://www.enderunix.org/zabit
+
+Author: 
+   Necati Ersen SISECI
+  siseci@enderunix.org
+ EnderUNIX SDT @ Turkey
+http://www.enderunix.org/
