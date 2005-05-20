@@ -1,0 +1,19 @@
+This program is a domain name server analysis and reporting tool.
+It checks and reports whether a domain name, hosted by your organization,
+is still in use, and if so, reports whether your name servers are
+still the delegated name servers of the domain name in question.
+
+Reports are generated both to the console and as HTML output.
+HTMLs also include information about the MX and WWW records of the domain name.
+
+The tool is expected to be of great use for Internet Service Providers
+who are in need of keeping track of lame dns records.
+
+Project Page:
+WWW: http://www.enderunix.org/checkdns
+
+Author: 
+      Atilim BOY
+   aboy@enderunix.org
+ EnderUNIX SDT @ Turkey
+http://www.enderunix.org/

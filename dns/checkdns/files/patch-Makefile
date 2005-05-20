@@ -1,0 +1,25 @@
+--- Makefile.orig	Sat Jan 15 21:40:27 2005
++++ Makefile	Fri May 20 23:12:20 2005
+@@ -9,7 +9,15 @@
+ 	$(CC) -o checkdns $(OBJS)
+ 
+ install:
+-	cp checkdns /usr/local/bin/checkdns
++	cp checkdns ${PREFIX}/bin/checkdns
++	chown root ${PREFIX}/bin/checkdns
++	chmod 700 ${PREFIX}/bin/checkdns
++	cp -pf checkdns.conf-dist ${PREFIX}/etc/checkdns.conf
++	mkdir -p ${PREFIX}/share/checkdns/lang
++	cp -f README THANKS TODO AUTHORS COPYING INSTALL ChangeLog uninstall.sh ${PREFIX}/share/checkdns
++	cp -f lang/* ${PREFIX}/share/checkdns/lang
++
++
+ 
+ clean:
+ 	rm -f $(OBJS) checkdns
+@@ -17,4 +25,4 @@
+ uninstall: clean
+ 	rm /usr/local/bin/checkdns
+ 
+-all: compile install clean
++all: compile
