@@ -1,6 +1,10 @@
+bin/hat-anim
 bin/hat-check
+bin/hat-cover
 bin/hat-detect
+bin/hat-explore
 bin/hat-graph
+bin/hat-nonterm
 bin/hat-observe
 bin/hat-stack
 bin/hat-trail
@@ -11,7 +15,16 @@ include/hat/CPUTime.hx
 include/hat/Char.hx
 include/hat/Complex.hx
 include/hat/Control/Arrow.hx
+%%GHC%%include/hat/Control/Monad/Cont.hx
+%%GHC%%include/hat/Control/Monad/Error.hx
 include/hat/Control/Monad/Fix.hx
+include/hat/Control/Monad/Identity.hx
+%%GHC%%include/hat/Control/Monad/List.hx
+%%GHC%%include/hat/Control/Monad/RWS.hx
+%%GHC%%include/hat/Control/Monad/Reader.hx
+%%GHC%%include/hat/Control/Monad/State.hx
+include/hat/Control/Monad/Trans.hx
+%%GHC%%include/hat/Control/Monad/Writer.hx
 include/hat/Control/Monad.hx
 include/hat/Data/Array.hx
 include/hat/Data/Bits.hx
@@ -25,9 +38,14 @@ include/hat/Data/IORefBuiltin.hx
 include/hat/Data/Ix.hx
 include/hat/Data/List.hx
 include/hat/Data/Maybe.hx
+include/hat/Data/Monoid.hx
+include/hat/Data/PackedString.hx
+include/hat/Data/PackedStringBuiltin.hx
 include/hat/Data/Ratio.hx
 include/hat/Data/Set.hx
 include/hat/Data/Tuple.hx
+include/hat/Data/Word.hx
+include/hat/Data/WordBuiltin.hx
 include/hat/Debug/Trace.hx
 include/hat/Directory.hx
 include/hat/DirectoryBuiltin.hx
@@ -69,13 +87,6 @@ include/hat/System/Time.hx
 include/hat/System.hx
 include/hat/SystemBuiltin.hx
 include/hat/SystemBuiltinTypes.hx
-include/hat/Text/ParserCombinators/Parsec/Char.hx
-include/hat/Text/ParserCombinators/Parsec/Combinator.hx
-include/hat/Text/ParserCombinators/Parsec/Error.hx
-include/hat/Text/ParserCombinators/Parsec/Expr.hx
-include/hat/Text/ParserCombinators/Parsec/Perm.hx
-include/hat/Text/ParserCombinators/Parsec/Pos.hx
-include/hat/Text/ParserCombinators/Parsec/Prim.hx
 include/hat/Text/ParserCombinators/Parsec.hx
 include/hat/Text/PrettyPrint/HughesPJ.hx
 include/hat/Text/PrettyPrint.hx
@@ -84,91 +95,108 @@ include/hat/Text/Show.hx
 include/hat/Time.hx
 include/hat/TimeBuiltin.hx
 include/hat/TimeBuiltinTypes.hx
-%%NHC98%%include/nhc98/hat/Hat/Array.hi
-%%NHC98%%include/nhc98/hat/Hat/CPUTime.hi
-%%NHC98%%include/nhc98/hat/Hat/Char.hi
-%%NHC98%%include/nhc98/hat/Hat/Complex.hi
-%%NHC98%%include/nhc98/hat/Hat/Control/Arrow.hi
-%%NHC98%%include/nhc98/hat/Hat/Control/Monad/Fix.hi
-%%NHC98%%include/nhc98/hat/Hat/Control/Monad.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Array.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Bits.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Bool.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Char.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Complex.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Either.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/FiniteMap.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/IORef.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/IORefBuiltin.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Ix.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/List.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Maybe.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Ratio.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Set.hi
-%%NHC98%%include/nhc98/hat/Hat/Data/Tuple.hi
-%%NHC98%%include/nhc98/hat/Hat/Debug/Trace.hi
-%%NHC98%%include/nhc98/hat/Hat/Directory.hi
-%%NHC98%%include/nhc98/hat/Hat/DirectoryBuiltin.hi
-%%NHC98%%include/nhc98/hat/Hat/DirectoryBuiltinTypes.hi
-%%NHC98%%include/nhc98/hat/Hat/Foreign/BuiltinTypes.hi
-%%NHC98%%include/nhc98/hat/Hat/Foreign/ForeignPtr.hi
-%%NHC98%%include/nhc98/hat/Hat/Foreign/Marshal/Error.hi
-%%NHC98%%include/nhc98/hat/Hat/Foreign/Ptr.hi
-%%NHC98%%include/nhc98/hat/Hat/Foreign/StablePtr.hi
-%%NHC98%%include/nhc98/hat/Hat/Foreign/Storable.hi
-%%NHC98%%include/nhc98/hat/Hat/Hat.hi
-%%NHC98%%include/nhc98/hat/Hat/IO.hi
-%%NHC98%%include/nhc98/hat/Hat/IOBuiltin.hi
-%%NHC98%%include/nhc98/hat/Hat/IOBuiltinTypes.hi
-%%NHC98%%include/nhc98/hat/Hat/Ix.hi
-%%NHC98%%include/nhc98/hat/Hat/List.hi
-%%NHC98%%include/nhc98/hat/Hat/Locale.hi
-%%NHC98%%include/nhc98/hat/Hat/Maybe.hi
-%%NHC98%%include/nhc98/hat/Hat/Monad.hi
-%%NHC98%%include/nhc98/hat/Hat/Numeric.hi
-%%NHC98%%include/nhc98/hat/Hat/Prelude.hi
-%%NHC98%%include/nhc98/hat/Hat/PreludeBasic.hi
-%%NHC98%%include/nhc98/hat/Hat/PreludeBuiltin.hi
-%%NHC98%%include/nhc98/hat/Hat/PreludeBuiltinTypes.hi
-%%NHC98%%include/nhc98/hat/Hat/Random.hi
-%%NHC98%%include/nhc98/hat/Hat/RandomBuiltin.hi
-%%NHC98%%include/nhc98/hat/Hat/Ratio.hi
-%%NHC98%%include/nhc98/hat/Hat/System/CPUTime.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Cmd.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Console/GetOpt.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Directory.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Environment.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Exit.hi
-%%NHC98%%include/nhc98/hat/Hat/System/IO/Error.hi
-%%NHC98%%include/nhc98/hat/Hat/System/IO/Unsafe.hi
-%%NHC98%%include/nhc98/hat/Hat/System/IO.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Locale.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Random.hi
-%%NHC98%%include/nhc98/hat/Hat/System/Time.hi
-%%NHC98%%include/nhc98/hat/Hat/System.hi
-%%NHC98%%include/nhc98/hat/Hat/SystemBuiltin.hi
-%%NHC98%%include/nhc98/hat/Hat/SystemBuiltinTypes.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec/Char.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec/Combinator.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec/Error.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec/Expr.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec/Perm.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec/Pos.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec/Prim.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/ParserCombinators/Parsec.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/PrettyPrint/HughesPJ.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/PrettyPrint.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/Read.hi
-%%NHC98%%include/nhc98/hat/Hat/Text/Show.hi
-%%NHC98%%include/nhc98/hat/Hat/Time.hi
-%%NHC98%%include/nhc98/hat/Hat/TimeBuiltin.hi
-%%NHC98%%include/nhc98/hat/Hat/TimeBuiltinTypes.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Array.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/CPUTime.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Char.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Complex.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Control/Arrow.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Control/Monad/Fix.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Control/Monad/Identity.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Control/Monad/Trans.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Control/Monad.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Array.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Bits.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Bool.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Char.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Complex.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Either.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/FiniteMap.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/IORef.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/IORefBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Ix.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/List.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Maybe.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Monoid.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/PackedString.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/PackedStringBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Ratio.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Set.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Tuple.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/Word.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Data/WordBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Debug/Trace.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Directory.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/DirectoryBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/DirectoryBuiltinTypes.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Foreign/BuiltinTypes.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Foreign/ForeignPtr.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Foreign/Marshal/Error.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Foreign/Ptr.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Foreign/StablePtr.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Foreign/Storable.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Hack.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Hat.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/IO.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/IOBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/IOBuiltinTypes.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Ix.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/List.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Locale.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Maybe.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Monad.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Numeric.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Prelude.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/PreludeBasic.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/PreludeBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/PreludeBuiltinTypes.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Random.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/RandomBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Ratio.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/CPUTime.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Cmd.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Console/GetOpt.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Directory.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Environment.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Exit.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/IO/Error.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/IO/Unsafe.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/IO.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Locale.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Random.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System/Time.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/System.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/SystemBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/SystemBuiltinTypes.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec/Char.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec/Combinator.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec/Error.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec/Expr.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec/Perm.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec/Pos.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec/Prim.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/PrettyPrint/HughesPJ.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/PrettyPrint.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/Read.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Text/Show.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/Time.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/TimeBuiltin.hi
+%%NHC98%%include/nhc98/packages/hat/Hat/TimeBuiltinTypes.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Array.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/CPUTime.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Char.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Complex.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Arrow.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/Cont.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/Error.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/Fix.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/Identity.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/List.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/RWS.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/Reader.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/State.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/Trans.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad/Writer.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Array.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Bits.hi
@@ -182,9 +210,14 @@ include/hat/TimeBuiltinTypes.hx
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Ix.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/List.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Maybe.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Monoid.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/PackedString.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/PackedStringBuiltin.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Ratio.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Set.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Tuple.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/Word.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Data/WordBuiltin.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Debug/Trace.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Directory.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/DirectoryBuiltin.hi
@@ -195,6 +228,7 @@ include/hat/TimeBuiltinTypes.hx
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Foreign/Ptr.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Foreign/StablePtr.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Foreign/Storable.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Hack.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Hat.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/IO.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/IOBuiltin.hi
@@ -244,81 +278,47 @@ include/hat/TimeBuiltinTypes.hx
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/TimeBuiltinTypes.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/libHShat.a
 lib/ix86-FreeBSD/config
+lib/ix86-FreeBSD/hat-anim
 lib/ix86-FreeBSD/hat-check
+lib/ix86-FreeBSD/hat-cover
+lib/ix86-FreeBSD/hat-detect
+lib/ix86-FreeBSD/hat-explore
+lib/ix86-FreeBSD/hat-nonterm
 lib/ix86-FreeBSD/hat-observe
 lib/ix86-FreeBSD/hat-stack
 lib/ix86-FreeBSD/hat-trail
 lib/ix86-FreeBSD/hat-trans
 lib/ix86-FreeBSD/hat-view
-%%GHC%%lib/ix86-FreeBSD/hat-package.conf
+lib/ix86-FreeBSD/hat.cabal
 %%NHC98%%lib/nhc98/ix86-FreeBSD/libHShat.a
-%%PORTDOCS%%share/doc/hat/BadInsort.hs
-%%PORTDOCS%%share/doc/hat/Insort.hs
-%%PORTDOCS%%share/doc/hat/afp2002.ps.gz
-%%PORTDOCS%%share/doc/hat/bugs.html
-%%PORTDOCS%%share/doc/hat/config.html
-%%PORTDOCS%%share/doc/hat/copyright.html
-%%PORTDOCS%%share/doc/hat/cvs.html
-%%PORTDOCS%%share/doc/hat/download.html
-%%PORTDOCS%%share/doc/hat/faq.html
-%%PORTDOCS%%share/doc/hat/feature-table.html
-%%PORTDOCS%%share/doc/hat/frejaHatHood.ps.gz
-%%PORTDOCS%%share/doc/hat/hat-trail-1.eps
-%%PORTDOCS%%share/doc/hat/hat-trail-1.pdf
-%%PORTDOCS%%share/doc/hat/hat-trail.gif
-%%PORTDOCS%%share/doc/hat/hat-trans.html
-%%PORTDOCS%%share/doc/hat/hat.gif
-%%PORTDOCS%%share/doc/hat/hatuser.tex
-%%PORTDOCS%%share/doc/hat/hw01-draft.ps.gz
-%%PORTDOCS%%share/doc/hat/ifl2002.ps.gz
-%%PORTDOCS%%share/doc/hat/index.html
-%%PORTDOCS%%share/doc/hat/install.html
-%%PORTDOCS%%share/doc/hat/libraries.html
-%%PORTDOCS%%share/doc/hat/maillist.html
-%%PORTDOCS%%share/doc/hat/newhat.ps.gz
-%%PORTDOCS%%share/doc/hat/old-tracing.html
-%%PORTDOCS%%share/doc/hat/paper.dvi
-%%PORTDOCS%%share/doc/hat/proposal.html
-%%PORTDOCS%%share/doc/hat/publications.html
-%%PORTDOCS%%share/doc/hat/requirements.html
-%%PORTDOCS%%share/doc/hat/status.html
-%%PORTDOCS%%share/doc/hat/todo.html
-%%PORTDOCS%%share/doc/hat/toolkitThesis.ps.gz
-%%PORTDOCS%%share/doc/hat/tracing.html
-%%PORTDOCS%%share/doc/hat/tutorial1.hva
-%%PORTDOCS%%share/doc/hat/tutorial1.tex
 @dirrm include/hat/Control/Monad
 @dirrm include/hat/Control
 @dirrm include/hat/Data
 @dirrm include/hat/Debug
-@dirrm include/hat/Foreign/C
 @dirrm include/hat/Foreign/Marshal
 @dirrm include/hat/Foreign
 @dirrm include/hat/System/Console
 @dirrm include/hat/System/IO
 @dirrm include/hat/System
-@dirrm include/hat/Text/Html
-@dirrm include/hat/Text/ParserCombinators/Parsec
 @dirrm include/hat/Text/ParserCombinators
 @dirrm include/hat/Text/PrettyPrint
-@dirrm include/hat/Text/Show
 @dirrm include/hat/Text
 @dirrm include/hat
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Control/Monad
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Control
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Data
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Debug
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Foreign/Marshal
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Foreign
-%%NHC98%%@dirrm include/nhc98/hat/Hat/System/Console
-%%NHC98%%@dirrm include/nhc98/hat/Hat/System/IO
-%%NHC98%%@dirrm include/nhc98/hat/Hat/System
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Text/ParserCombinators/Parsec
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Text/ParserCombinators
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Text/PrettyPrint
-%%NHC98%%@dirrm include/nhc98/hat/Hat/Text
-%%NHC98%%@dirrm include/nhc98/hat/Hat
-%%NHC98%%@dirrm include/nhc98/hat
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Control/Monad
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Control
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Data
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Debug
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Foreign/Marshal
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Foreign
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/System/Console
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/System/IO
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/System
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Text/ParserCombinators/Parsec
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Text/ParserCombinators
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Text/PrettyPrint
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat/Text
+%%NHC98%%@dirrm include/nhc98/packages/hat/Hat
+%%NHC98%%@dirrm include/nhc98/packages/hat
 @dirrm lib/ix86-FreeBSD
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control/Monad
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/Control
@@ -335,8 +335,7 @@ lib/ix86-FreeBSD/hat-view
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/hat/Hat/System
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/hat/Hat
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/hat
-%%PORTDOCS%%@dirrm share/doc/hat
-%%GHC%%@exec /usr/local/bin/ghc-pkg -a < %D/lib/ix86-FreeBSD/hat-package.conf
+%%GHC%%@exec /usr/local/bin/ghc-pkg -a < %D/lib/ix86-FreeBSD/hat.cabal
 %%GHC%%@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 %%GHC%%@unexec /usr/local/bin/ghc-pkg -r hat
 %%GHC%%@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
