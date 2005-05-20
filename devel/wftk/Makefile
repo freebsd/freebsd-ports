@@ -20,12 +20,13 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 OPTIONS=	SDL_MIXER	"music and sound support"	off
 
 USE_FREETYPE=	yes
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=15
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack
+USE_GCC=	3.4+
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE}

@@ -61,7 +61,7 @@ include/wftk-0.7/wftk/string_hash_map.h
 include/wftk-0.7/wftk/version.h
 lib/libwftk-0.7.so.2
 lib/libwftk-0.7.so
-lib/libwftk-0.7.a
+lib/libwftk-0.7.la
 libdata/pkgconfig/wftk-0.7.pc
 @dirrm include/wftk-0.7/wftk
 @dirrm include/wftk-0.7
