@@ -1,0 +1,4 @@
+etc/zabit.conf
+etc/zabit-attach.conf
+etc/zabit-disattach.conf
+bin/zabit
