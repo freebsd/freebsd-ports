@@ -28,9 +28,14 @@ INSTALL_TARGET=	install install-elf
 MAN1=		slsh.1
 DOCSDIR=	${PREFIX}/share/doc/slang
 
+OPTIONS=	PCRE "Include pcre support" on \
+		PNG  "Include png support"  on
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PCRE)
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
@@ -47,8 +52,6 @@ PLIST_SUB+=	PNG=""
 CONFIGURE_ARGS+=	--disable-png
 PLIST_SUB+=	PNG="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .if defined(NOPORTDOCS)
