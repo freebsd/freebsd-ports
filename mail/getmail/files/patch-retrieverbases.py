@@ -1,13 +1,5 @@
 --- getmailcore/_retrieverbases.py.orig	Wed May 18 09:31:20 2005
 +++ getmailcore/_retrieverbases.py	Wed May 18 10:41:09 2005
-@@ -38,6 +38,7 @@
- import time
- import getpass
- import email
-+import email.Parser
- import poplib
- import imaplib
- import sets
 @@ -445,7 +446,7 @@
          self.log.trace()
          msgnum = self._getmsgnumbyid(msgid)
