@@ -94,6 +94,7 @@
     SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += datapipe
+    SUBDIR += dcd
     SUBDIR += dclib
     SUBDIR += dctc
     SUBDIR += dctc-gui
