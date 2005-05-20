@@ -207,6 +207,7 @@
     SUBDIR += gtypist
     SUBDIR += gweled
     SUBDIR += halflifeserver
+    SUBDIR += hattrickorganizer
     SUBDIR += heretic
     SUBDIR += heroes
     SUBDIR += hex

@@ -1,0 +1,29 @@
+************************************************************
+
+Check if %%PREFIX%%/bin/java exists. If not, create a link:
+
+	ln -s %%PREFIX%%/bin/javavm %%PREFIX%%/bin/java
+
+or change the start script %%PREFIX%%/bin/hattrickorganizer
+
+
+    
+    !!! BEWARE OF THE SECURITY RISKS BEFORE DOING THIS !!!
+
+In order to change the language of Hattrick Organizer
+
+uncomment the following in %%PREFIX%%/bin/hattrickorganizer:
+
+#if (! -e $HOME/sprache) then 
+#       ln -s $HODIR/sprache $HOME/sprache
+#endif
+
+If you want to use plugins and the plugin update tool 
+
+uncomment:
+
+#if (! -e $HOME/hoplugins) then
+#               ln -s $HODIR/hoplugins $HOME/hoplugins
+#endif
+
+************************************************************

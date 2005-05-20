@@ -1,0 +1,193 @@
+#!/bin/tcsh
+
+
+### If you like to, you can try to fix the backup/restore
+### commands and submit a pr :)
+
+
+# Enter the maximum amount of backups you do want to store.
+# Default is 5
+#
+#MAX_BACKUPS=5
+
+set MAX_BACKUPS=5
+
+
+##########################################################
+# DO NOT EDIT ANY MORE UNTIL YOU KNOW WHAT YOU'RE DOING! #
+##########################################################
+
+
+# Enter HO!'s directory. Default is the current directory
+#
+#HODIR=.
+
+set HODIR=/usr/local/share/hattrickorganizer
+
+set HOME=~/.hattrickorganizer
+
+# Enter the default backup-directory. It will be created
+# in $HODIR/$DB/ if it doesn't exist. Default is `backup'
+#
+#BACKUPDIR=backup 
+
+set BACKUPDIR=~/.hattrickorganizer/backup
+
+set JAVA=`which java`
+
+set PLUGINSDIR=~/.hattrickorganizer/hoplugins
+
+# database-directory:
+
+set DATABASEDIR=~/.hattrickorganizer/db
+
+# Store the name of this script. 
+
+set HONAME=$0
+
+# Which database to backup?
+
+set SCRIPT=database.script
+
+# We need a date for the backup-file
+
+set DATE=`date "+%Y-%m-%d"`
+
+# Perform backup by default?
+
+set BACKUP=true
+
+# Restore by default? 
+# IMPORTANT! This is just for initialisation!
+# If you set this to true strange things will occure!
+
+set RESTORE=false
+
+# Which version of HO! is this?
+
+set HOVERSION=`cat $HODIR/version.txt`
+
+# MAIN
+
+# Run throuh the params
+
+if ($#argv != 0) then
+  switch ($argv[1])
+   		case {-v,--version}: 
+   			echo "This is HO\! version $HOVERSION"
+   		    exit (0)
+   		#case {-nb,--nobackup}:
+   		#    set BACKUP=false
+		#	breaksw
+   		case {-h,--help}:
+   		 	echo "Usage: $HONAME [option]"
+   		 	echo "Options:"
+   		 	echo "        -h  --help        This help text."
+   		 	echo "        -v  --version     Show HO\! version."
+   		 #	echo "        -nb --nobackup    Start without backup"
+   		 #	echo "        -r  --restore     Restore the last backup-/le."
+   		 #	echo "        -rd --restoredate <date>"
+   		 #	echo "                          Restore the backup-/le from <date>"
+   		 #	echo "        -bd --backupdir   Use this as the backup directory."
+   		 	exit (0)
+   		#case {-bd,--backupdir}:
+   		#    set BACKUPDIR=$2
+   		#    shift
+		#	breaksw
+		#case {-r,--restore}:
+   		#    set RESTORE=true
+   		#    set BACKUP=false
+		#	breaksw
+		#case {rd,--restoredir}:
+   		#    set RESTORE=true
+   		#    set RESTOREDATE=$2
+   		#    if (-z $RESTOREDATE) then
+   		# 		echo "Option rd or restoredate needs a parameter\!"
+   		# 	 	exit 1
+   		#    endif
+   		#    set BACKUP=false;
+   		#    shift
+		#	breaksw
+   		default:
+   		    echo "Unknown parameter $1"
+   		    echo "Try $HONAME --help to get help."
+   		    exit (1)
+  endsw
+  shift
+endif
+
+if (! -d $HOME) then
+	echo "creating ~/.hattrickorganizer"
+	mkdir ~/.hattrickorganizer
+endif
+
+if (! -d $DATABASEDIR) then
+	echo "creating $DATABASEDIR"
+	mkdir -p $DATABASEDIR
+endif
+
+if (! -d $PLUGINSDIR) then
+	echo "creating $PLUGINSDIR"
+	mkdir -p $PLUGINSDIR
+endif
+
+#if (! -e $HOME/sprache) then
+#	ln -s $HODIR/sprache $HOME/sprache
+#endif
+
+#if (! -e $HOME/hoplugins) then
+#		ln -s $HODIR/hoplugins $HOME/hoplugins
+#endif
+
+# Perform backups or restore only if $DATABASEDIR exists
+
+#if (-d $DATABASEDIR) then
+#  `$BACKUP` 
+#  cd $DATABASEDIR
+#  if (! -d $BACKUPDIR) then
+#    echo "creating $DATABASEDIR$BACKUPDIR" 
+#    mkdir -p $BACKUPDIR
+#  endif
+#  cd $BACKUPDIR
+#  #while (`ls -r | wc -l` -gt $MAX_BACKUPS)
+#  #   rm -f `ls -r | tail -1`
+#  #end
+#  cd ..
+#  if (-r $SCRIPT) then
+#    gzip -c $SCRIPT > $BACKUPDIR/$SCRIPT-$DATE.gz
+#  else
+#    echo "No database found, so there is nothing to backup."
+#  endif
+#  cd ..
+#
+#  `$RESTORE` 
+#  cd $DATABASEDIR
+#  if (-z $RESTOREDATE) then
+#    if (`ls $BACKUPDIR/$SCRIPT*.gz | wc -l` -lt 1) then
+#      echo "No backup-/le found."
+#      exit 1
+#    endif
+#    gunzip -c `ls $BACKUPDIR/$SCRIPT*.gz | tail -1` > $SCRIPT
+#  else
+#    if (-r $BACKUPDIR/$SCRIPT-$RESTOREDATE.gz) then
+#      gunzip -c "$BACKUPDIR/$SCRIPT-$RESTOREDATE.gz" > $SCRIPT
+#      echo "restored database from $BACKUPDIR/$SCRIPT-$RESTOREDATE.gz"
+#    else
+#      echo "Error reading backup-/le $BACKUPDIR/$SCRIPT-$RESTOREDATE.gz."
+#      cd ..
+#      exit 1
+#    endif
+#  endif
+#  cd ..
+#
+#else
+#  echo "No directory $DATABASEDIR found. This is your /rst HO\!-Session, isn't it? Have fun\!"
+#endif
+
+# Start HO!
+ cd $HOME
+ $JAVA -jar $HODIR/hocoded.jar
+
+# Exit this script
+
+exit 0 
