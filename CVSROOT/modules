@@ -995,6 +995,7 @@ cgprof		ports/devel/cgprof
 chameleon	ports/lang/chameleon
 chbg		ports/graphics/chbg
 checkbot	ports/www/checkbot
+checkdns	ports/dns/checkdns
 checkpassword	ports/security/checkpassword
 checkpassword-pam	ports/security/checkpassword-pam
 checkrdf	ports/deskutils/checkrdf
