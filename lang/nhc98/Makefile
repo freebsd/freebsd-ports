@@ -6,10 +6,13 @@
 
 PORTNAME=	nhc98
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
-DISTNAME=	${PORTNAME}src-${PORTVERSION}
+DISTFILES=	${PORTNAME}src-${PORTVERSION}${EXTRACT_SUFX} ${PORTNAME}-${PORTVERSION}-library-interfaces${EXTRACT_SUFX}
 DIST_SUBDIR=	nhc98
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	patch-1.18-newtype
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A fully-fledged compiler for Haskell 98

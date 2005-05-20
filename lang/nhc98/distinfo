@@ -1,2 +1,6 @@
 MD5 (nhc98/nhc98src-1.18.tar.gz) = f38b74481ec01a066cc9314b7bd18c90
 SIZE (nhc98/nhc98src-1.18.tar.gz) = 14509719
+MD5 (nhc98/nhc98-1.18-library-interfaces.tar.gz) = f99f413a85462fe719ea634fd319d94f
+SIZE (nhc98/nhc98-1.18-library-interfaces.tar.gz) = 116668
+MD5 (nhc98/patch-1.18-newtype) = b5e714c2065a622678fa8fe5fe970056
+SIZE (nhc98/patch-1.18-newtype) = 824
