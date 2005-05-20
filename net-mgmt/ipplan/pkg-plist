@@ -9,30 +9,17 @@
 %%IPPLANDIR%%/INTERNALS
 %%IPPLANDIR%%/IPplan.jpg
 %%IPPLANDIR%%/LICENSE
-%%IPPLANDIR%%/Net/DNS.php
-%%IPPLANDIR%%/Net/DNS/Header.php
-%%IPPLANDIR%%/Net/DNS/Packet.php
-%%IPPLANDIR%%/Net/DNS/Question.php
-%%IPPLANDIR%%/Net/DNS/RR.php
-%%IPPLANDIR%%/Net/DNS/RR/A.php
-%%IPPLANDIR%%/Net/DNS/RR/CNAME.php
-%%IPPLANDIR%%/Net/DNS/RR/MX.php
-%%IPPLANDIR%%/Net/DNS/RR/NS.php
-%%IPPLANDIR%%/Net/DNS/RR/PTR.php
-%%IPPLANDIR%%/Net/DNS/RR/SOA.php
-%%IPPLANDIR%%/Net/DNS/RR/TSIG.php
-%%IPPLANDIR%%/Net/DNS/Resolver.php
-%%IPPLANDIR%%/Net/LICENSE
+%%IPPLANDIR%%/POLLER
 %%IPPLANDIR%%/README
 %%IPPLANDIR%%/README.html
 %%IPPLANDIR%%/README.sgml
 %%IPPLANDIR%%/README1st-WINDOWS.txt
 %%IPPLANDIR%%/TODO
 %%IPPLANDIR%%/TRANSLATIONS
+%%IPPLANDIR%%/TRIGGERS
 %%IPPLANDIR%%/UPGRADE
 %%IPPLANDIR%%/admin/addboundstogroup.php
 %%IPPLANDIR%%/admin/addusertogroup.php
-%%IPPLANDIR%%/admin/admin.php
 %%IPPLANDIR%%/admin/changepassword.php
 %%IPPLANDIR%%/admin/changesettings.php
 %%IPPLANDIR%%/admin/creategroup.php
@@ -53,6 +40,7 @@
 %%IPPLANDIR%%/admin/install.php
 %%IPPLANDIR%%/admin/modifygroup.php
 %%IPPLANDIR%%/admin/schemacreate.php
+%%IPPLANDIR%%/admin/usermanager.php
 %%IPPLANDIR%%/adodb/adodb-csvlib.inc.php
 %%IPPLANDIR%%/adodb/adodb-datadict.inc.php
 %%IPPLANDIR%%/adodb/adodb-error.inc.php
@@ -131,7 +119,6 @@
 %%IPPLANDIR%%/adodb/drivers/adodb-sapdb.inc.php
 %%IPPLANDIR%%/adodb/drivers/adodb-sqlanywhere.inc.php
 %%IPPLANDIR%%/adodb/drivers/adodb-sqlite.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-sqlite.inc.php.bak
 %%IPPLANDIR%%/adodb/drivers/adodb-sqlitepo.inc.php
 %%IPPLANDIR%%/adodb/drivers/adodb-sybase.inc.php
 %%IPPLANDIR%%/adodb/drivers/adodb-vfp.inc.php
@@ -217,15 +204,23 @@
 %%IPPLANDIR%%/adodb/xsl/remove-0.2.xsl
 %%IPPLANDIR%%/auth.php
 %%IPPLANDIR%%/class.dbflib.php
+%%IPPLANDIR%%/class.dnslib.php
 %%IPPLANDIR%%/class.templib.php
 %%IPPLANDIR%%/config.php
+%%IPPLANDIR%%/contrib/bind9_revzone.xsl
+%%IPPLANDIR%%/contrib/bind9_zone.dtd
 %%IPPLANDIR%%/contrib/bind9_zone.xsl
+%%IPPLANDIR%%/contrib/create-test-users.sh
 %%IPPLANDIR%%/contrib/dumproute.sh
 %%IPPLANDIR%%/contrib/dumproute.txt
+%%IPPLANDIR%%/contrib/ipplan-poller.php
+%%IPPLANDIR%%/docu.css
+%%IPPLANDIR%%/gpl.html
 %%IPPLANDIR%%/index.php
 %%IPPLANDIR%%/ipplanlib.php
 %%IPPLANDIR%%/layout/class.layout
 %%IPPLANDIR%%/layout/layoutman.html
+%%IPPLANDIR%%/license.php
 %%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/es/LC_MESSAGES/messages.mo
@@ -238,6 +233,219 @@
 %%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/main.css
+%%IPPLANDIR%%/menudefs.php
+%%IPPLANDIR%%/menus/ACKNOWLEDGEMENTS
+%%IPPLANDIR%%/menus/CHANGELOG
+%%IPPLANDIR%%/menus/CHANGE_TEMPLATE_CLASS_NAME.sh
+%%IPPLANDIR%%/menus/COPYING
+%%IPPLANDIR%%/menus/DUMPS/mysql.demo_data.dump
+%%IPPLANDIR%%/menus/DUMPS/mysql.start.dump
+%%IPPLANDIR%%/menus/DUMPS/pgsql.demo_data.dump
+%%IPPLANDIR%%/menus/DUMPS/pgsql.start.dump
+%%IPPLANDIR%%/menus/DUMPS/phplayersmenu
+%%IPPLANDIR%%/menus/DUMPS/sqlite.demo_data.dump
+%%IPPLANDIR%%/menus/DUMPS/sqlite.demo_data.dump.php5
+%%IPPLANDIR%%/menus/DUMPS/sqlite.start.dump
+%%IPPLANDIR%%/menus/DUMPS/sqlite.start.dump.php5
+%%IPPLANDIR%%/menus/LICENSE
+%%IPPLANDIR%%/menus/LOGOS/README
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b01.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b02.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b03.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b04.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l01.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l02.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l03.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l04.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_y01.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_y02.png
+%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_y04.png
+%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm.png
+%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_01.png
+%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_02.png
+%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_03.png
+%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_04.png
+%%IPPLANDIR%%/menus/PATCHES/FIXEDMENU/README
+%%IPPLANDIR%%/menus/PATCHES/FIXEDMENU/fixedmenu.patch
+%%IPPLANDIR%%/menus/PATCHES/ICONS_I18N/README
+%%IPPLANDIR%%/menus/PATCHES/ICONS_I18N/icons_i18n.patch
+%%IPPLANDIR%%/menus/PATCHES/ONCLICK/README
+%%IPPLANDIR%%/menus/PATCHES/ONCLICK/onclick-simple.patch
+%%IPPLANDIR%%/menus/PATCHES/ONCLICK/onclick.patch
+%%IPPLANDIR%%/menus/PATCHES/README
+%%IPPLANDIR%%/menus/README.PHPDOC
+%%IPPLANDIR%%/menus/README.ihtml
+%%IPPLANDIR%%/menus/THEMES/galeon-theme.tar.gz
+%%IPPLANDIR%%/menus/THEMES/gmc-theme.tar.gz
+%%IPPLANDIR%%/menus/THEMES/kde-theme.tar.gz
+%%IPPLANDIR%%/menus/THEMES/mozilla-theme.tar.gz
+%%IPPLANDIR%%/menus/THEMES/nautilus-gnome-theme.tar.gz
+%%IPPLANDIR%%/menus/TODO
+%%IPPLANDIR%%/menus/demo.php
+%%IPPLANDIR%%/menus/demo.php.html
+%%IPPLANDIR%%/menus/demo.phps
+%%IPPLANDIR%%/menus/example-db-hormenu.php
+%%IPPLANDIR%%/menus/example-db-treemenu.notshown.php
+%%IPPLANDIR%%/menus/example-db-treemenu.php
+%%IPPLANDIR%%/menus/example-dbtofile.php
+%%IPPLANDIR%%/menus/example-filetodb.php
+%%IPPLANDIR%%/menus/example-frame-body.php
+%%IPPLANDIR%%/menus/example-frame-treemenu.php
+%%IPPLANDIR%%/menus/example-frame.html
+%%IPPLANDIR%%/menus/example-hormenu-old.php
+%%IPPLANDIR%%/menus/example-hormenu.php
+%%IPPLANDIR%%/menus/example-hormenu_and_treemenu.php
+%%IPPLANDIR%%/menus/example-hormenu_and_vermenu.php
+%%IPPLANDIR%%/menus/example-horplainmenu.php
+%%IPPLANDIR%%/menus/example-layersmenus_and_treemenus.php
+%%IPPLANDIR%%/menus/example-phptreemenu.php
+%%IPPLANDIR%%/menus/example-see-through.php
+%%IPPLANDIR%%/menus/example-treemenu.php
+%%IPPLANDIR%%/menus/example-two_treemenus.php
+%%IPPLANDIR%%/menus/example-vermenu.php
+%%IPPLANDIR%%/menus/example-verplainmenu.php
+%%IPPLANDIR%%/menus/examples-frame.html
+%%IPPLANDIR%%/menus/examples-leftbar.html
+%%IPPLANDIR%%/menus/images/valid-xhtml10.png
+%%IPPLANDIR%%/menus/images/vcss.png
+%%IPPLANDIR%%/menus/index.php
+%%IPPLANDIR%%/menus/layersmenu-demo.css
+%%IPPLANDIR%%/menus/layersmenu-galaxy.css
+%%IPPLANDIR%%/menus/layersmenu-gtk2.css
+%%IPPLANDIR%%/menus/layersmenu-horizontal-1.txt
+%%IPPLANDIR%%/menus/layersmenu-horizontal-2.txt
+%%IPPLANDIR%%/menus/layersmenu-index.css
+%%IPPLANDIR%%/menus/layersmenu-index.txt
+%%IPPLANDIR%%/menus/layersmenu-keramik.css
+%%IPPLANDIR%%/menus/layersmenu-old.css
+%%IPPLANDIR%%/menus/layersmenu-vertical-1.txt
+%%IPPLANDIR%%/menus/layersmenu-vertical-2.txt
+%%IPPLANDIR%%/menus/layerstreemenu-hidden.css
+%%IPPLANDIR%%/menus/layerstreemenu.css
+%%IPPLANDIR%%/menus/lib/PHPLIB.php
+%%IPPLANDIR%%/menus/lib/layersmenu-browser_detection.php
+%%IPPLANDIR%%/menus/lib/layersmenu-common.inc.php
+%%IPPLANDIR%%/menus/lib/layersmenu-process.inc.php
+%%IPPLANDIR%%/menus/lib/layersmenu.inc.php
+%%IPPLANDIR%%/menus/lib/phptreemenu.inc.php
+%%IPPLANDIR%%/menus/lib/plainmenu.inc.php
+%%IPPLANDIR%%/menus/lib/treemenu.inc.php
+%%IPPLANDIR%%/menus/libjs/layersmenu-browser_detection.js
+%%IPPLANDIR%%/menus/libjs/layersmenu-footer.ijs
+%%IPPLANDIR%%/menus/libjs/layersmenu-header.ijs
+%%IPPLANDIR%%/menus/libjs/layersmenu-library.js
+%%IPPLANDIR%%/menus/libjs/layersmenu-see-through.js
+%%IPPLANDIR%%/menus/libjs/layersmenu.js
+%%IPPLANDIR%%/menus/libjs/layerstreemenu-cookies.js
+%%IPPLANDIR%%/menus/libjs/layerstreemenu.ijs
+%%IPPLANDIR%%/menus/menuicons/bug-small.png
+%%IPPLANDIR%%/menus/menuicons/debian-icon-mini.png
+%%IPPLANDIR%%/menus/menuicons/desktop.png
+%%IPPLANDIR%%/menus/menuicons/downloadManager16.png
+%%IPPLANDIR%%/menus/menuicons/email.png
+%%IPPLANDIR%%/menus/menuicons/epiphany-16.png
+%%IPPLANDIR%%/menus/menuicons/freshmeat.net_favicon.png
+%%IPPLANDIR%%/menus/menuicons/gnome-starthere-mini.png
+%%IPPLANDIR%%/menus/menuicons/kfm_home.png
+%%IPPLANDIR%%/menus/menuicons/misc_doc.png
+%%IPPLANDIR%%/menus/menuicons/mozilla.org_images_mozilla-16.png
+%%IPPLANDIR%%/menus/menuicons/netscape-icon-mini.png
+%%IPPLANDIR%%/menus/menuicons/office_suites.png
+%%IPPLANDIR%%/menus/menuicons/ooo-icon-mini.png
+%%IPPLANDIR%%/menus/menuicons/pan-icon-mini.png
+%%IPPLANDIR%%/menus/menuicons/php-bugs-icon-mini.png
+%%IPPLANDIR%%/menus/menuicons/phplib-logo-mini.png
+%%IPPLANDIR%%/menus/menuicons/quanta.png
+%%IPPLANDIR%%/menus/menuicons/shortcut_icon_phplm.png
+%%IPPLANDIR%%/menus/menuicons/sitebar_root_transparent.png
+%%IPPLANDIR%%/menus/menuicons/sourceforge.net_images_favicon.png
+%%IPPLANDIR%%/menus/menuicons/tgz.png
+%%IPPLANDIR%%/menus/menuicons/www.gimp.org_icons_wilber16.png
+%%IPPLANDIR%%/menus/menuicons/www.gnome.org_images_gnome-16.png
+%%IPPLANDIR%%/menus/menuicons/www.kde.org_favicon.png
+%%IPPLANDIR%%/menus/menuicons/www.kernel.org_images_tux16-16.png
+%%IPPLANDIR%%/menus/menuicons/www.mysql.com_favicon.png
+%%IPPLANDIR%%/menus/menuicons/www.php.net_favicon.png
+%%IPPLANDIR%%/menus/menuicons/www.ximian.com_favicon.png
+%%IPPLANDIR%%/menus/menuimages/down-arrow.png
+%%IPPLANDIR%%/menus/menuimages/down-galaxy.png
+%%IPPLANDIR%%/menus/menuimages/down-gnome.png
+%%IPPLANDIR%%/menus/menuimages/down-gtk2.png
+%%IPPLANDIR%%/menus/menuimages/down-keramik.png
+%%IPPLANDIR%%/menus/menuimages/down-nautilus.png
+%%IPPLANDIR%%/menus/menuimages/forward-arrow.png
+%%IPPLANDIR%%/menus/menuimages/forward-galaxy.png
+%%IPPLANDIR%%/menus/menuimages/forward-gnome.png
+%%IPPLANDIR%%/menus/menuimages/forward-gtk2.png
+%%IPPLANDIR%%/menus/menuimages/forward-keramik.png
+%%IPPLANDIR%%/menus/menuimages/forward-nautilus.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse_corner.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse_corner_first.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse_first.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_corner.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_expand.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_expand_corner.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_expand_corner_first.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_expand_first.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_folder_closed.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_folder_open.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_leaf.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_space.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_split.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_split_first.png
+%%IPPLANDIR%%/menus/menuimages/kde_tree_vertline.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse_corner.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse_corner_first.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse_first.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_corner.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand_corner.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand_corner_first.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand_first.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_folder_closed.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_folder_open.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_leaf.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_space.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_split.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_split_first.png
+%%IPPLANDIR%%/menus/menuimages/nautilus_tree_vertline.png
+%%IPPLANDIR%%/menus/menuimages/transparent.png
+%%IPPLANDIR%%/menus/menuimages/tree_collapse.png
+%%IPPLANDIR%%/menus/menuimages/tree_collapse_corner.png
+%%IPPLANDIR%%/menus/menuimages/tree_collapse_corner_first.png
+%%IPPLANDIR%%/menus/menuimages/tree_collapse_first.png
+%%IPPLANDIR%%/menus/menuimages/tree_corner.png
+%%IPPLANDIR%%/menus/menuimages/tree_expand.png
+%%IPPLANDIR%%/menus/menuimages/tree_expand_corner.png
+%%IPPLANDIR%%/menus/menuimages/tree_expand_corner_first.png
+%%IPPLANDIR%%/menus/menuimages/tree_expand_first.png
+%%IPPLANDIR%%/menus/menuimages/tree_folder_closed.png
+%%IPPLANDIR%%/menus/menuimages/tree_folder_open.png
+%%IPPLANDIR%%/menus/menuimages/tree_leaf.png
+%%IPPLANDIR%%/menus/menuimages/tree_space.png
+%%IPPLANDIR%%/menus/menuimages/tree_split.png
+%%IPPLANDIR%%/menus/menuimages/tree_split_first.png
+%%IPPLANDIR%%/menus/menuimages/tree_vertline.png
+%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-full.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-keramik-full.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-keramik.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-old.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_plain_menu-red.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_plain_menu.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-plain_menu-green.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-plain_menu.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu-galaxy.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu-keramik.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu-old.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu-galaxy.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu-old.ihtml
+%%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu.ihtml
 %%IPPLANDIR%%/messages.po
 %%IPPLANDIR%%/schema.php
 %%IPPLANDIR%%/templates/swip_reassign-simple-modify3.0.xsl
@@ -246,7 +454,24 @@
 %%IPPLANDIR%%/templates/swip_wdb1.4_delete.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_modify.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
-%%IPPLANDIR%%/testdns.php
+%%IPPLANDIR%%/user/Net/DNS.php
+%%IPPLANDIR%%/user/Net/DNS/Header.php
+%%IPPLANDIR%%/user/Net/DNS/Packet.php
+%%IPPLANDIR%%/user/Net/DNS/Question.php
+%%IPPLANDIR%%/user/Net/DNS/RR.php
+%%IPPLANDIR%%/user/Net/DNS/RR/A.php
+%%IPPLANDIR%%/user/Net/DNS/RR/AAAA.php
+%%IPPLANDIR%%/user/Net/DNS/RR/CNAME.php
+%%IPPLANDIR%%/user/Net/DNS/RR/HINFO.php
+%%IPPLANDIR%%/user/Net/DNS/RR/MX.php
+%%IPPLANDIR%%/user/Net/DNS/RR/NAPTR.php
+%%IPPLANDIR%%/user/Net/DNS/RR/NS.php
+%%IPPLANDIR%%/user/Net/DNS/RR/PTR.php
+%%IPPLANDIR%%/user/Net/DNS/RR/SOA.php
+%%IPPLANDIR%%/user/Net/DNS/RR/SRV.php
+%%IPPLANDIR%%/user/Net/DNS/RR/TSIG.php
+%%IPPLANDIR%%/user/Net/DNS/RR/TXT.php
+%%IPPLANDIR%%/user/Net/DNS/Resolver.php
 %%IPPLANDIR%%/user/createarea.php
 %%IPPLANDIR%%/user/createrange.php
 %%IPPLANDIR%%/user/createsubnet.php
@@ -291,10 +516,26 @@
 %%IPPLANDIR%%/user/swiplib.php
 %%IPPLANDIR%%/user/traceroute.php
 %%IPPLANDIR%%/user/whois.php
-%%IPPLANDIR%%/user/whoisclass.php
 %%IPPLANDIR%%/xmllib.php
+@dirrm %%IPPLANDIR%%/user/Net/DNS/RR
+@dirrm %%IPPLANDIR%%/user/Net/DNS
+@dirrm %%IPPLANDIR%%/user/Net
 @dirrm %%IPPLANDIR%%/user
 @dirrm %%IPPLANDIR%%/templates
+@dirrm %%IPPLANDIR%%/menus/templates
+@dirrm %%IPPLANDIR%%/menus/menuimages
+@dirrm %%IPPLANDIR%%/menus/menuicons
+@dirrm %%IPPLANDIR%%/menus/libjs
+@dirrm %%IPPLANDIR%%/menus/lib
+@dirrm %%IPPLANDIR%%/menus/images
+@dirrm %%IPPLANDIR%%/menus/THEMES
+@dirrm %%IPPLANDIR%%/menus/PATCHES/ONCLICK
+@dirrm %%IPPLANDIR%%/menus/PATCHES/ICONS_I18N
+@dirrm %%IPPLANDIR%%/menus/PATCHES/FIXEDMENU
+@dirrm %%IPPLANDIR%%/menus/PATCHES
+@dirrm %%IPPLANDIR%%/menus/LOGOS
+@dirrm %%IPPLANDIR%%/menus/DUMPS
+@dirrm %%IPPLANDIR%%/menus
 @dirrm %%IPPLANDIR%%/locale/pt/LC_MESSAGES
 @dirrm %%IPPLANDIR%%/locale/pt
 @dirrm %%IPPLANDIR%%/locale/no/LC_MESSAGES
@@ -326,7 +567,4 @@
 @dirrm %%IPPLANDIR%%/adodb/contrib
 @dirrm %%IPPLANDIR%%/adodb
 @dirrm %%IPPLANDIR%%/admin
-@dirrm %%IPPLANDIR%%/Net/DNS/RR
-@dirrm %%IPPLANDIR%%/Net/DNS
-@dirrm %%IPPLANDIR%%/Net
 @dirrm %%IPPLANDIR%%
