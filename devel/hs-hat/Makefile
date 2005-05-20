@@ -33,8 +33,8 @@ RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 PKGNAMESUFFIX=	-nhc98
 .else
 BUILD_DEPENDS=	hmake:${PORTSDIR}/devel/hs-hmake \
-		ghc-6.4:${PORTSDIR}/lang/ghc6
-RUN_DEPENDS+=	ghc-6.4:${PORTSDIR}/lang/ghc6
+		ghc-6.4:${PORTSDIR}/lang/ghc
+RUN_DEPENDS+=	ghc-6.4:${PORTSDIR}/lang/ghc
 PKGNAMESUFFIX=	-ghc6
 .endif
 
