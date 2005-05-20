@@ -5825,6 +5825,7 @@ mget		ports/ftp/mget
 mgetty+sendfax	ports/comms/mgetty+sendfax
 mgetty_sendfax	ports/comms/mgetty+sendfax
 mgeupsd		ports/sysutils/mgeupsd
+mgopen		ports/x11-fonts/mgopen
 mgp-gallery	ports/graphics/mgp-gallery
 mgp-mode.el	ports/misc/mgp-mode.el
 mgstat		ports/www/mgstat
