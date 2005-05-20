@@ -5,11 +5,14 @@ please set these variables in your /etc/rc.conf file:
 sendmail_enable="YES"
 sendmail_flags="-bd"
 sendmail_pidfile="/var/spool/postfix/pid/master.pid"
+sendmail_procname="/usr/local/libexec/postfix/master"
 sendmail_outbound_enable="NO"
 sendmail_submit_enable="NO"
 sendmail_msp_queue_enable="NO"
 
-This will disable Sendmail completely.
+This will disable Sendmail completely, and allow you to use /etc/rc.d/sendmail
+to start and stop postfix (FreeBSD 5.x and up).  For FreeBSD 4.x, it will just
+cause the system boot scripts to start sendmail for you.
 
 Alternatively to the above settings, you can enable postfix to start with
 the other local services, for example, after your database server starts if
@@ -23,8 +26,8 @@ cd /usr/local/etc/rc.d
 ln -s /usr/local/sbin/postfix postfix.sh
 
 
-Also, you will want to disable some Sendmail-specific daily maintenance
-routines in your /etc/periodic.conf file:
+With either startup configuration, you will want to disable some
+Sendmail-specific daily maintenance routines in your /etc/periodic.conf file:
 
 daily_clean_hoststat_enable="NO"
 daily_status_mail_rejects_enable="NO"
