@@ -86,6 +86,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_es.py
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_es.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_es.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_nl.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_nl.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_nl.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/dialog_extras.py
 %%PYTHON_SITELIBDIR%%/gourmet/dialog_extras.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/dialog_extras.pyo
@@ -140,6 +143,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/gdebug.py
 %%PYTHON_SITELIBDIR%%/gourmet/gdebug.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/gdebug.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/gettext_setup.py
+%%PYTHON_SITELIBDIR%%/gourmet/gettext_setup.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/gettext_setup.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/gglobals.py
 %%PYTHON_SITELIBDIR%%/gourmet/gglobals.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/gglobals.pyo
@@ -185,6 +191,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/prefs.py
 %%PYTHON_SITELIBDIR%%/gourmet/prefs.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/prefs.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/prefsGui.py
+%%PYTHON_SITELIBDIR%%/gourmet/prefsGui.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/prefsGui.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/reccard.py
 %%PYTHON_SITELIBDIR%%/gourmet/reccard.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/reccard.pyo
@@ -221,17 +230,7 @@ share/gourmet/converter.glade
 share/gourmet/databaseChooser.glade
 share/gourmet/default.css
 share/gourmet/gourmet_logo.png
-share/gourmet/i18n/cs/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/de_AT/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/de_DE/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/es/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/fr/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/gourmet.mo
-share/gourmet/i18n/nl_BE/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/pt_BR/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/sk/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/sv_SE/LC_MESSAGES/gourmet.mo
-share/gourmet/i18n/tr/LC_MESSAGES/gourmet.mo
+share/gourmet/preferenceDialog.glade
 share/gourmet/keyeditor.glade
 share/gourmet/recCard.glade
 share/gourmet/recSelector.glade
@@ -241,27 +240,39 @@ share/gourmet/recipe.dtd
 share/gourmet/shopList.glade
 share/gourmet/splash.png
 share/pixmaps/recbox.png
-@dirrm share/gourmet/i18n/tr/LC_MESSAGES
-@dirrm share/gourmet/i18n/tr
-@dirrm share/gourmet/i18n/sv_SE/LC_MESSAGES
-@dirrm share/gourmet/i18n/sv_SE
-@dirrm share/gourmet/i18n/sk/LC_MESSAGES
-@dirrm share/gourmet/i18n/sk
-@dirrm share/gourmet/i18n/pt_BR/LC_MESSAGES
-@dirrm share/gourmet/i18n/pt_BR
-@dirrm share/gourmet/i18n/nl_BE/LC_MESSAGES
-@dirrm share/gourmet/i18n/nl_BE
-@dirrm share/gourmet/i18n/fr/LC_MESSAGES
-@dirrm share/gourmet/i18n/fr
-@dirrm share/gourmet/i18n/es/LC_MESSAGES
-@dirrm share/gourmet/i18n/es
-@dirrm share/gourmet/i18n/de_DE/LC_MESSAGES
-@dirrm share/gourmet/i18n/de_DE
-@dirrm share/gourmet/i18n/de_AT/LC_MESSAGES
-@dirrm share/gourmet/i18n/de_AT
-@dirrm share/gourmet/i18n/cs/LC_MESSAGES
-@dirrm share/gourmet/i18n/cs
-@dirrm share/gourmet/i18n
+share/locale/bg/LC_MESSAGES/gourmet.mo
+share/locale/ca/LC_MESSAGES/gourmet.mo
+share/locale/cs/LC_MESSAGES/gourmet.mo
+share/locale/da/LC_MESSAGES/gourmet.mo
+share/locale/de_AT/LC_MESSAGES/gourmet.mo
+share/locale/de_DE/LC_MESSAGES/gourmet.mo
+share/locale/es/LC_MESSAGES/gourmet.mo
+share/locale/es_ES/LC_MESSAGES/gourmet.mo
+share/locale/fr/LC_MESSAGES/gourmet.mo
+share/locale/gl/LC_MESSAGES/gourmet.mo
+share/locale/he/LC_MESSAGES/gourmet.mo
+share/locale/hu/LC_MESSAGES/gourmet.mo
+share/locale/it/LC_MESSAGES/gourmet.mo
+share/locale/nb/LC_MESSAGES/gourmet.mo
+share/locale/nl/LC_MESSAGES/gourmet.mo
+share/locale/nl_BE/LC_MESSAGES/gourmet.mo
+share/locale/nl_NL/LC_MESSAGES/gourmet.mo
+share/locale/pl/LC_MESSAGES/gourmet.mo
+share/locale/pt/LC_MESSAGES/gourmet.mo
+share/locale/pt_BR/LC_MESSAGES/gourmet.mo
+share/locale/pt_PT/LC_MESSAGES/gourmet.mo
+share/locale/sk/LC_MESSAGES/gourmet.mo
+share/locale/sv/LC_MESSAGES/gourmet.mo
+share/locale/sv_SE/LC_MESSAGES/gourmet.mo
+share/locale/tr/LC_MESSAGES/gourmet.mo
+@dirrm share/locale/sv_SE/LC_MESSAGES
+@dirrm share/locale/sv_SE
+@dirrm share/locale/nl_BE/LC_MESSAGES
+@dirrm share/locale/nl_BE
+@dirrm share/locale/es_ES/LC_MESSAGES
+@dirrm share/locale/es_ES
+@dirrm share/locale/de_DE/LC_MESSAGES
+@dirrm share/locale/de_DE
 @dirrm share/gourmet
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
