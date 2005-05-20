@@ -7,6 +7,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://high5.net/postfixadmin/ \
 		http://high5.net/postfixadmin/download.php?file=
