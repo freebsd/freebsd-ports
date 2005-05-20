@@ -1,0 +1,15 @@
+bin/checkdns
+etc/checkdns.conf
+%%DATADIR%%/README
+%%DATADIR%%/THANKS
+%%DATADIR%%/TODO
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/INSTALL
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/uninstall.sh
+%%DATADIR%%/lang/english
+%%DATADIR%%/lang/spanish
+%%DATADIR%%/lang/turkish
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%
