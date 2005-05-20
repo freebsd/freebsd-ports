@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	dvdstyler
-PORTVERSION=	1.31
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	1.4
+PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvdstyler
@@ -22,9 +21,9 @@ BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 		lavfile-1.6.2:${PORTSDIR}/multimedia/mjpegtools \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+		wx_base-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 RUN_DEPENDS=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
+#RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 
 DVDSTYLER_ICON=	${DATADIR}/rc/dvdstyler.png
 USE_X_PREFIX=	yes
@@ -32,7 +31,7 @@ USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=15
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.4-config
+CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.6-config
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	AUTHORS COPYING INSTALL ChangeLog README

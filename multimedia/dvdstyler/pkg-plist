@@ -1,12 +1,24 @@
 bin/dvdstyler
-%%DATADIR%%/backgrounds/autobahn.jpg
-%%DATADIR%%/backgrounds/bi_domrep.jpg
-%%DATADIR%%/backgrounds/blue.jpg
-%%DATADIR%%/backgrounds/creta.jpg
-%%DATADIR%%/backgrounds/darkblue.jpg
-%%DATADIR%%/backgrounds/kiel_kanal.jpg
-%%DATADIR%%/backgrounds/lightblue.jpg
-%%DATADIR%%/backgrounds/swans.jpg
+share/applications/dvdstyler.desktop
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%DATADIR%%/backgrounds/01_autobahn.jpg
+%%DATADIR%%/backgrounds/02_bi_domrep.jpg
+%%DATADIR%%/backgrounds/03_creta.jpg
+%%DATADIR%%/backgrounds/04_kiel_kanal.jpg
+%%DATADIR%%/backgrounds/10_turbulence_blue.jpg
+%%DATADIR%%/backgrounds/11_turbulence_green.jpg
+%%DATADIR%%/backgrounds/15_bordes_blue.jpg
+%%DATADIR%%/backgrounds/16_bordes_green.jpg
+%%DATADIR%%/backgrounds/20_blue.jpg
+%%DATADIR%%/backgrounds/21_steel.jpg
+%%DATADIR%%/backgrounds/22_gold.jpg
+%%DATADIR%%/backgrounds/23_lava.jpg
+%%DATADIR%%/backgrounds/30_brushed_aluminiun.jpg
+%%DATADIR%%/backgrounds/31_texture_border.jpg
 %%DATADIR%%/buttons/simple.xml
 %%DATADIR%%/data/silence.mp2
 %%DATADIR%%/rc/dvdstyler.png
@@ -24,19 +36,22 @@ bin/dvdstyler
 %%DATADIR%%/rc/plus.png
 %%DATADIR%%/rc/run.png
 %%DATADIR%%/rc/save.png
-share/applications/dvdstyler.desktop
 share/locale/ca/LC_MESSAGES/dvdstyler.mo
 share/locale/de/LC_MESSAGES/dvdstyler.mo
 share/locale/es/LC_MESSAGES/dvdstyler.mo
+share/locale/eu/LC_MESSAGES/dvdstyler.mo
 share/locale/fr/LC_MESSAGES/dvdstyler.mo
 share/locale/hu/LC_MESSAGES/dvdstyler.mo
 share/locale/it/LC_MESSAGES/dvdstyler.mo
+share/locale/ja/LC_MESSAGES/dvdstyler.mo
 share/locale/pl/LC_MESSAGES/dvdstyler.mo
 share/locale/pt/LC_MESSAGES/dvdstyler.mo
 share/locale/ru/LC_MESSAGES/dvdstyler.mo
-@unexec rmdir %D/share/applications 2>/dev/null || true
+share/locale/sr/LC_MESSAGES/dvdstyler.mo
 @dirrm %%DATADIR%%/rc
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/buttons
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/applications 2> /dev/null || true
