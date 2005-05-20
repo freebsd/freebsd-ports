@@ -2,5 +2,5 @@ This python module implements constants and functions for working with
 IEEE754 double-precision special values.  It provides constants for
 Not-a-Number (NaN), Positive Infinity (Inf), and Negative Infinity (-Inf),
 as well as functions to test for these values.
- 
-WWW: http://research.warnes.net/projects/rzope/fpconst/
+
+WWW: http://research.warnes.net/projects/RStatServer/fpconst/
