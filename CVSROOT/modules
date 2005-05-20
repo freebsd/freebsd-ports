@@ -3374,6 +3374,7 @@ gworkspace	ports/deskutils/gworkspace
 gxanim		ports/multimedia/gxanim
 gxditview	ports/textproc/gxditview
 gxedit		ports/editors/gxedit
+gxemul		ports/emulators/gxemul
 gxine		ports/multimedia/gxine
 gxmame		ports/emulators/gxmame
 gxmessage	ports/deskutils/gxmessage
