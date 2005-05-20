@@ -28,7 +28,6 @@ lib/libdspam.a
 lib/libdspam.so
 lib/libdspam.so.6
 libdata/pkgconfig/dspam.pc
-@unexec rmdir %B 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
