@@ -8,7 +8,9 @@
 PORTNAME=	nexfontsel
 PORTVERSION=	3.0.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
+MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	NeXFontSel-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
