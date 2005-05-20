@@ -510,6 +510,7 @@
     SUBDIR += wmymail
     SUBDIR += xbuffy
     SUBDIR += xc-mail
+    SUBDIR += xfaces
     SUBDIR += xfmail
     SUBDIR += ximian-connector
     SUBDIR += xlbiff
