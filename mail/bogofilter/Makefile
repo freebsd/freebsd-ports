@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.92.8
-PORTREVISION?=	1
+PORTVERSION=	0.94.12
+PORTREVISION=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,16 +15,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	"Fast, teachable, learning spam detector"
 
-LIB_DEPENDS?=	db-4.2:${PORTSDIR}/databases/db42
+LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
 .if !defined(WITHOUT_GSL)
 LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
 .endif
 .if !defined(WITHOUT_BASH)
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
 
-CONFLICTS?=	bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]* \
-		bogofilter-current-[0-9]*
+CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -35,13 +34,14 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 .if defined(WITHOUT_GSL)
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif
-CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db42" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb-4.2"
+CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db43" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb-4.3"
 CONFIGURE_ENV+=	PERL="${PERL}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-strip prefix=${PREFIX}
 
-MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1
+MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
+		bf_copy.1 bf_compact.1 bf_resize.1 bf_tar.1
 
 post-patch:
 	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
@@ -87,10 +87,11 @@ post-install::
 .endfor
 .for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
 	doc/README.validation TODO \
-	CHANGES-* RELEASE.NOTES-* \
+	RELEASE.NOTES doc/README.db doc/README.sqlite \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
 	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-2002-01 \
-	doc/README.tdb
+	doc/README.tdb doc/bogofilter-SA-2004-01 GETTING.STARTED \
+	doc/bogofilter-faq.html doc/bogofilter-faq-fr.html
 	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
