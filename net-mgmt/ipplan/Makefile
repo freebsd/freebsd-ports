@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.0.4
+PORTVERSION=	4.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	iptrack
-DISTNAME=	${PORTNAME}-4.04
+DISTNAME=	${PORTNAME}-4.31
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	IP address management and tracking
@@ -47,5 +47,10 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/${IPPLANDIR}
 	@${FIND} ${PREFIX}/${IPPLANDIR} -name '*.orig' -delete
 	@${CAT} ${PKGMESSAGE}
+
+post-install:
+	@${MKDIR} -m 700 /var/spool/ipplan/uploads \
+		/var/spool/ipplan/exportdns
+	@${CHOWN} -R www:www /var/spool/ipplan
 
 .include <bsd.port.mk>
