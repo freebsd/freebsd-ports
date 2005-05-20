@@ -61,7 +61,7 @@ _USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver \
 		pygnomeextras pygtk2 vte
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
-gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				's|[(]GNOME_datadir[)]/gnome/|(datadir)/|g ; \
 				 s|[(]GNOME_datadir[)]/locale|(prefix)/share/locale|g ; \
 				 s|[(]datadir[)]/locale|(prefix)/share/locale|g ; \
@@ -77,13 +77,13 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLA
 				 s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \
 				 s|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g ; \
 				 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g' ; \
-			${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+			${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				's|-lpthread|${PTHREAD_LIBS}|g ; \
 				 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 				 s|{datadir}/locale|{prefix}/share/locale|g ; \
 				 s|{libdir}/locale|{prefix}/share/locale|g'
 
-lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'
 
 GNOME_MTREE=		${X11BASE}/etc/mtree/BSD.gnome-x11.dist
