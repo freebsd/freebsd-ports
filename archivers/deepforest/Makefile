@@ -35,7 +35,7 @@ TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
 LANGUAGE?=
 .if (${LANGUAGE} == "Japanese")
-CATEGORY_LIST=	japanese windowmaker tkstep80 japanese
+CATEGORY_LIST=	japanese windowmaker tkstep80
 RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80 \
 		${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg
 .else
