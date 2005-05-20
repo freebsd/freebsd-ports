@@ -164,13 +164,16 @@ post-patch:
 .endif
 
 post-install:
-.if defined(WITH_CLIENT_ONLY)
-# 	Install start script
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/z-bacula.sh.sample
 #	Migration: move existing bacula.sh to z-bacula.sh to start bacula AFTER DB start
 	if [ -f ${PREFIX}/etc/rc.d/bacula.sh ]; then \
 		${MV} ${PREFIX}/etc/rc.d/bacula.sh ${PREFIX}/etc/rc.d/z-bacula.sh; \
 	fi
+	if [ -f ${PREFIX}/etc/rc.d/bacula.sh.sample ]; then \
+		${MV} ${PREFIX}/etc/rc.d/bacula.sh.sample ${PREFIX}/etc/rc.d/z-bacula.sh.sample; \
+	fi
+.if defined(WITH_CLIENT_ONLY)
+# 	Install start script
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/z-bacula.sh.sample
 # 	Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
