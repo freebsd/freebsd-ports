@@ -12832,6 +12832,7 @@ z80-asm		ports/devel/z80-asm
 z88		ports/cad/z88
 zabbix		ports/net-mgmt/zabbix
 zabbix-agent	ports/net/zabbix-agent
+zabit		ports/mail/zabit
 zangband	ports/games/zangband
 zaptel		ports/misc/zaptel
 zebedee		ports/security/zebedee
