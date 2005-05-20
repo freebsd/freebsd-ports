@@ -586,6 +586,7 @@ balance		ports/net/balance
 balsa		ports/mail/balsa
 bamg		ports/math/bamg
 bandwidthd	ports/net-mgmt/bandwidthd
+bar		potrs/textproc/bar
 barcode		ports/graphics/barcode
 barnyard	ports/security/barnyard
 barrage		ports/games/barrage
