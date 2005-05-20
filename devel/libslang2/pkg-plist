@@ -59,5 +59,8 @@ share/slsh/help/pngfuns.hlp
 @dirrm share/slsh/scripts
 @dirrm share/slsh/help
 @dirrm share/slsh/cmaps
+@dirrm lib/slang/v2/modules
+@dirrm lib/slang/v2
+@dirrm lib/slang
 @unexec rmdir %D/share/slsh/local-packages 2>/dev/null || true
 @dirrm share/slsh
