@@ -1,0 +1,22 @@
+The MgOpen typefaces are freely available and contain glyphs for viewing
+texts in Greek (written in the monotoniko system).
+
+The MgOpen typeface collection is composed of the following typefaces:
+
+  - MgOpenCanonica is a serif typeface, based on the design of Times Roman.
+  - MgOpenCosmetica is a sans-serif typeface, based on the design of Optima.
+  - MgOpenModata is another sans-serif typeface.
+  - MgOpenModerna is a sans-serif typeface, based on the design of Helvetica.
+
+Each family contains four fonts, namely all the combinations of regular and
+bold weight and upright and italic (or oblique) shape. All the fonts contain
+glyphs for the latin and greek alphabets (using the monotoniko system), while
+the fonts of the Canonica family also contain all the glyphs necessary for
+viewing Greek texts written in the polytoniko system. All the fonts use the
+Unicode encoding for characters and are in the TrueType format.
+
+The fonts, in their initial release, have some characters missing (the most
+important one being the Euro symbol). These shortcomings will be fixed in
+future releases.
+
+WWW: http://www.ellak.gr/fonts/mgopen/

@@ -1,0 +1,19 @@
+%%FONTSDIR%%/MgOpenCanonicaBold.ttf
+%%FONTSDIR%%/MgOpenCanonicaBoldItalic.ttf
+%%FONTSDIR%%/MgOpenCanonicaItalic.ttf
+%%FONTSDIR%%/MgOpenCanonicaRegular.ttf
+%%FONTSDIR%%/MgOpenCosmeticaBold.ttf
+%%FONTSDIR%%/MgOpenCosmeticaBoldOblique.ttf
+%%FONTSDIR%%/MgOpenCosmeticaOblique.ttf
+%%FONTSDIR%%/MgOpenCosmeticaRegular.ttf
+%%FONTSDIR%%/MgOpenModataBold.ttf
+%%FONTSDIR%%/MgOpenModataBoldOblique.ttf
+%%FONTSDIR%%/MgOpenModataOblique.ttf
+%%FONTSDIR%%/MgOpenModataRegular.ttf
+%%FONTSDIR%%/MgOpenModernaBold.ttf
+%%FONTSDIR%%/MgOpenModernaBoldOblique.ttf
+%%FONTSDIR%%/MgOpenModernaOblique.ttf
+%%FONTSDIR%%/MgOpenModernaRegular.ttf
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
