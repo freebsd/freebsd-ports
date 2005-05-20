@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hat
-PORTVERSION=	2.02
-PORTREVISION=	1
+PORTVERSION=	2.04
 CATEGORIES=	devel haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 PKGNAMEPREFIX=	hs-
@@ -34,9 +33,9 @@ RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 PKGNAMESUFFIX=	-nhc98
 .else
 BUILD_DEPENDS=	hmake:${PORTSDIR}/devel/hs-hmake \
-		ghc-5.04.3:${PORTSDIR}/lang/ghc5
-RUN_DEPENDS+=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
-PKGNAMESUFFIX=	-ghc5
+		ghc-6.4:${PORTSDIR}/lang/ghc6
+RUN_DEPENDS+=	ghc-6.4:${PORTSDIR}/lang/ghc6
+PKGNAMESUFFIX=	-ghc6
 .endif
 
 ALL_TARGET=	hat
@@ -64,10 +63,12 @@ CONFIGURE_ARGS+=	--buildwith=ghc
 .endif
 
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/hat +docs
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR} +docs
+PORTDOCS=	*
 .endif
 
-MAN1=		hat-detect.1 hat-observe.1 hat-stack.1 hat-trail.1
+MAN1=		hat-cover.1 hat-detect.1 hat-nonterm.1 hat-observe.1 \
+		hat-stack.1 hat-trail.1 hat-trans.1
 
 pre-everything::
 	@${ECHO_CMD} ""
@@ -90,13 +91,15 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(WITH_NHC98)
-	@${INSTALL_DATA} ${WRKSRC}/lib/ix86-FreeBSD/hatlib/ghc/hat-package.conf \
+.	for i in Foreign/C NHC System/Directory Text/Html Text/Regex Text/Show
+	  @${RMDIR} ${LOCALBASE}/include/hat/${i} # empty!
+.	endfor
+.	if !defined(WITH_NHC98)
+	  @${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
+.	endif
+
+	@${INSTALL_DATA} ${WRKSRC}/src/hatlib/hat.cabal \
 		${PREFIX}/lib/ix86-FreeBSD
-	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
-.endif
-.if !defined(NOPORTDOCS)
 	@${RM} -rf ${PREFIX}/share/doc/hat/CVS
-.endif
 
 .include <bsd.port.post.mk>
