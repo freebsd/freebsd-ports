@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
@@ -193,6 +194,8 @@ post-install:
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/mpich/bin ${PREFIX}/mpich/lib
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/mpich/doc ${PREFIX}/mpich/include	\
 		${PREFIX}/mpich/share
+	${LN} -sf ${PREFIX}/mpich/bin/mpicxx ${PREFIX}/mpich/bin/mpiCC
+	@${RMDIR} ${PREFIX}/mpich/lib/shared ${PREFIX}/mpich/examples/MPI-2-C++
 .if ! defined(WITHOUT_JAVA) && ! defined(PACKAGE_BUILDING)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/mpich/logfiles
 .endif

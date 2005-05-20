@@ -9,6 +9,8 @@ mpich/bin/clog_print
 mpich/bin/mpicc
 mpich/bin/mpichversion
 mpich/bin/mpicxx
+@exec ln -sf %D/%F %B/mpiCC
+@unexec rm -f %D/mpich/bin/mpiCC
 mpich/bin/mpif77
 mpich/bin/mpif90
 mpich/bin/mpiman
@@ -610,11 +612,9 @@ mpich/www/www4/index.html
 @dirrm mpich/man/man1
 @dirrm mpich/man
 %%JAVA%%@dirrm mpich/logfiles
-@dirrm mpich/lib/shared
 @dirrm mpich/lib
 @dirrm mpich/include/mpi2c++
 @dirrm mpich/include
-@dirrm mpich/examples/MPI-2-C++
 @dirrm mpich/examples
 @dirrm mpich/etc
 @dirrm mpich/doc
