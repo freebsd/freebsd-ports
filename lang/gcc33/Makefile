@@ -93,7 +93,12 @@ post-build:
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
-post-install: fake-manpages
+post-install:
+	# man pages can only be generated if Perl >= 5.6 is installed, so
+	# fake them on 4.x systems.
+.for mp in ${_MANPAGES}
+	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
+.endfor
 	@(for prog in \
 		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
 		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
@@ -111,7 +116,7 @@ post-install: fake-manpages
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
-	${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
+	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_LIBS}
@@ -139,10 +144,3 @@ cklatest:
 .endfor
 
 .include <bsd.port.post.mk>
-
-fake-manpages:
-	# man pages can only be generated if Perl >= 5.6 is installed, so
-	# fake them on 4.x systems.
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
