@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.3.10
-PORTREVISION=	1
+PORTVERSION=	0.3.12
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
 MASTER_SITES=	http://www.bittornado.com/download/ \
@@ -32,11 +31,16 @@ DOC_FILES1=	BUILD.windows.txt FAQ.txt IMPORTANT-multitracker-readme.txt \
 		README-Psyco.txt webseed-spec.txt
 DOC_FILES2=	LICENSE.txt README.txt
 EXTRA_DOC_FILES=	multitracker/README.txt
-MAN1=		bittorrent-downloader.1 bittorrent-multi-downloader.1 \
-		btcompletedir.1 btcopyannounce.1 btdownloadcurses.1 \
-		btdownloadgui.1 btdownloadheadless.1 btlaunchmany.1 \
-		btlaunchmanycurses.1 btmakemetafile.1 btreannounce.1 \
-		btrename.1 btsethttpseeds.1 btshowmetainfo.1 bttrack.1
+MAN1=		bittorrent-downloader.bittornado.1 \
+		bittorrent-multi-downloader.bittornado.1 \
+		btcompletedir.bittornado.1 btcompletedirgui.bittornado.1 \
+		btcopyannounce.1 btdownloadcurses.bittornado.1 \
+		btdownloadgui.bittornado.1 btdownloadheadless.bittornado.1 \
+		btlaunchmany.bittornado.1 btlaunchmanycurses.bittornado.1 \
+		btmakemetafile.bittornado.1 btmaketorrentgui.1 \
+		btreannounce.bittornado.1 btrename.bittornado.1 \
+		btsethttpseeds.1 btshowmetainfo.bittornado.1 \
+		bttrack.bittornado.1
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
