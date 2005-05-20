@@ -8605,6 +8605,7 @@ pear-Crypt_CBC	ports/security/pear-Crypt_CBC
 pear-Crypt_CHAP	ports/security/pear-Crypt_CHAP
 pear-Crypt_HMAC	ports/security/pear-Crypt_HMAC
 pear-Crypt_RC4	ports/security/pear-Crypt_RC4
+pear-Crypt_RSA	ports/security/pear-Crypt_RSA
 pear-DB		ports/databases/pear-DB
 pear-DB_DataObject	ports/databases/pear-DB_DataObject
 pear-DB_DataObject_FormBuilder	ports/databases/pear-DB_DataObject_FormBuilder
