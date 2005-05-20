@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	1.0.R.1
+PORTVERSION=	1.0.R.2
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 MASTER_SITES=	http://magyarispell.sourceforge.net/
-DISTNAME=	${PORTNAME}-1.0-RC1
+DISTFILES=	${PORTNAME}-1.0-RC2${EXTRACT_SUFX} hu_HU-1.0-RC2${EXTRACT_SUFX}
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Improved Hungarian spelling checker
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.0-RC2
 
 MAN1=		hunspell.1
 MAN4=		hunspell.4
@@ -40,9 +41,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hunspell ${PREFIX}/bin
 	${LN} -s ${PREFIX}/bin/hunspell ${PREFIX}/bin/hunstem
 	${MKDIR} ${PREFIX}/share/myspell/ && \
-	${INSTALL_DATA} ${WRKSRC}/hu_HU.dic \
+	${INSTALL_DATA} ${WRKDIR}/hu_HU.dic \
 	${PREFIX}/share/myspell/ && \
-	${INSTALL_DATA} ${WRKSRC}/hu_HU.aff \
+	${INSTALL_DATA} ${WRKDIR}/hu_HU.aff \
 	${PREFIX}/share/myspell/
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.dic ${PREFIX}/share/myspell/magyar.dic
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.dic ${PREFIX}/share/myspell/hungarian.dic
