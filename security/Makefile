@@ -350,6 +350,7 @@
     SUBDIR += pear-Crypt_CHAP
     SUBDIR += pear-Crypt_HMAC
     SUBDIR += pear-Crypt_RC4
+    SUBDIR += pear-Crypt_RSA
     SUBDIR += pear-File_HtAccess
     SUBDIR += pear-File_Passwd
     SUBDIR += pear-File_SMBPasswd

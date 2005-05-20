@@ -1,0 +1,9 @@
+PEAR::Crypt_RSA allows you to use two-key strong cryptography like RSA with
+arbitrary key length.
+
+It uses one of the following extensions for math calculations:
+- PECL big_int extension version greater than or equal to 1.0.3
+- PHP GMP extension
+- PHP BCMath extension for both PHP4 and PHP5
+
+WWW: http://pear.php.net/package/Crypt_RSA/
