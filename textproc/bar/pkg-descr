@@ -1,0 +1,14 @@
+This is a small shell script intended to be used in portable Unix install
+scripts for showing progress bars.
+
+The overall goal is to write a minimally complex shell script (thus a program
+that needs no compilation) that is as robust as possible to work on as many
+Bourne shells and operating systems as possible, and that implements 'cat'
+with an ASCII progress bar and some other nifty features.
+
+This is pure Bourne shell code. (For sh, ash, ksh, zsh, bash, ...)
+
+The script is mainly indented to be used in portable install scripts, where
+you can use the body of the script.
+
+WWW: http://www.theiling.de/projects/bar.html
