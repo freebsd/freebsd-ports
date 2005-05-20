@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.3.9
+PORTVERSION=	4.3.10
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/novel/}
