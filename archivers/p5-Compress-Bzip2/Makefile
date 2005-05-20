@@ -19,4 +19,10 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Compress::Bzip2.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This module only support perl 5.6.1 or above
+.endif
+
+.include <bsd.port.post.mk>
