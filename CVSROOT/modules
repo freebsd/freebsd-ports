@@ -8625,6 +8625,7 @@ pear-File_Passwd	ports/security/pear-File_Passwd
 pear-File_SMBPasswd	ports/security/pear-File_SMBPasswd
 pear-FSM	ports/devel/pear-FSM
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
+pear-HTML_CSS	ports/devel/pear-HTML_CSS
 pear-HTML_Common	ports/devel/pear-HTML_Common
 pear-HTML_Form	ports/devel/pear-HTML_Form
 pear-HTML_Javascript	ports/devel/pear-HTML_Javascript
