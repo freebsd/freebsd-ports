@@ -16,6 +16,7 @@ COMMENT=	Source delta update program
 
 RUN_DEPENDS=	bdelta:${PORTSDIR}/misc/bdelta
 
+USE_OPENSSL=	yes
 ALL_TARGET=	deltup
 PLIST_FILES=	bin/deltup \
 		bin/bzip2_old
