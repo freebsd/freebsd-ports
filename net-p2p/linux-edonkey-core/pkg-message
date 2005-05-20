@@ -1,7 +1,7 @@
 	ATTENTIONATTENTION:
 
 Please make sure that you read
-/usr/local/share/doc/edonkey-core/README.FreeBSD.
+%%DOCSDIR%%/README.FreeBSD.
 It contains important information about both configuring and running
 edonkey2000 under FreeBSD. You will have problems running it if you
 do not read it.
@@ -10,3 +10,11 @@ eDonkey2000 version 0.46 and later store downloads in a different
 format. Therefore, they are not compatible with either lmule or
 older eDonkey2000 clients.
 
+eDonkey2000 version 1.0.2 requires edonkey-gui-gtk version 0.6.3 or higher.
+Older gui versions will not work with this version. Also the standard directory
+in which eDonkey2000 stores the user settings has been changed from
+~/.edonkey2000-core to ~/.eDonkey2000. That's why eDonkey2000 will NOT
+recognise your settings and downloads until you rename the old directory.
+
+Finally, this port doesn't come with a wrapper anymore, because eDonkey2000
+keeps user settings in a directory that is hardcoded into the executable.

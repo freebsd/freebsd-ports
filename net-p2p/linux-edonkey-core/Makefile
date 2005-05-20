@@ -6,54 +6,50 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.50.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES=	net linux
-MASTER_SITES=	http://www.overnet.com/files/
+MASTER_SITES=	http://www.zen18864.zen.co.uk/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-core
-DISTNAME=	donkey${PORTVERSION}
+DISTNAME=	${PORTNAME}clc-${PORTVERSION}_${ARCH}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	eDonkey2000 'core' command line client
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX?=	yes
-NO_WRKSUBDIR=	yes
+USE_LINUX=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 STRIP=
 
-STRIP_CMD=	${LINUXBASE}/usr/bin/strip
-
-.if exists(/usr/bin/brandelf)
-BRANDELF?=	/usr/bin/brandelf
-.else
-BRANDELF?=	brandelf
-.endif
-
-BINARY_NAME_OLD?=	donkey${PORTVERSION}
+BINARY_NAME_OLD?=	${PORTNAME}clc
 BINARY_NAME=	donkey
 
-post-patch:
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
-		${WRKDIR}/wrapper.sh
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME_OLD} ${PREFIX}/sbin/${BINARY_NAME}-real
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${BINARY_NAME}
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
-	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}${PKGNAMESUFFIX}
-.endif
-	@${SED} s!/usr/local/share/doc/edonkey-core!${DOCSDIR}${PKGNAMESUFFIX}! ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
+DOC_FILES=	ChangeLog LISEZMOI README changelog.Debian.gz
 
 pre-install:
-.if exists(${STRIP_CMD})
-	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME_OLD}
-.endif
-	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME_OLD}
 
-.include <bsd.port.post.mk>
+	@${BRANDELF} -t Linux ${WRKSRC}/usr/bin/${BINARY_NAME_OLD}
+
+do-install:
+	${INSTALL} -d ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/usr/bin/${BINARY_NAME_OLD} ${PREFIX}/sbin/${BINARY_NAME}
+	${INSTALL} -d ${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/usr/share/${PORTNAME}clc/contact.dat ${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}/contact.dat
+	${INSTALL_DATA} ${WRKSRC}/usr/share/${PORTNAME}clc/server.met ${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}/server.met
+
+post-install:
+.ifndef(NOPORTDOCS)
+	${INSTALL} -d ${DOCSDIR}${PKGNAMESUFFIX}
+
+.for file in ${DOC_FILES}
+	${INSTALL_MAN} ${WRKSRC}/usr/share/doc/${PORTNAME}clc/${file} ${DOCSDIR}${PKGNAMESUFFIX}
+.endfor
+
+	${INSTALL_MAN} ${FILESDIR}/README.FreeBSD ${DOCSDIR}${PKGNAMESUFFIX}
+.endif
+	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}${PKGNAMESUFFIX}|g' ${PKGMESSAGE}
+
+.include <bsd.port.mk>
