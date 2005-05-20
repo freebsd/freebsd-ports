@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	MySQLdb
-PORTVERSION=	1.1.10
-PORTREVISION=	1
+DISTVERSION=	1.2.1c3
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
-DISTNAME=	MySQL-python-${PORTVERSION}
+DISTNAME=	MySQL-python-${DISTVERSION}
 
 MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Access a MySQL database through Python
 
-USE_PYTHON=		yes
+USE_PYTHON=		2.2+
 USE_PYDISTUTILS=	yes
 USE_MYSQL=		yes
 
@@ -45,20 +44,8 @@ PORTDOCS=	*
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/doc
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.html ${DOCSDIR}/doc
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.css ${DOCSDIR}/doc
-	@${MKDIR} ${DOCSDIR}/doc/public
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/public/* ${DOCSDIR}/doc/public
-	@${MKDIR} ${DOCSDIR}/doc/private
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/private/* ${DOCSDIR}/doc/private
-	@${MKDIR} ${DOCSDIR}/public
-	@${INSTALL_DATA} ${WRKSRC}/doc/public/* ${DOCSDIR}/public
-	@${MKDIR} ${DOCSDIR}/private
-	@${INSTALL_DATA} ${WRKSRC}/doc/private/* ${DOCSDIR}/private
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/MySQLdb.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
