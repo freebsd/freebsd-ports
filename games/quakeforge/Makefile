@@ -37,6 +37,8 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 WANT_SDL=	yes
 
+MAN1=	pak.1 qfcc.1 qflight.1 qfvis.1 wad.1
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -48,7 +50,7 @@ CONFIGURE_ARGS+=--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${PREFIX}/share/quakeforge \
 		--disable-optimize
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 
 .if defined(WITH_OPTIMIZED_CFLAGS) && !defined(WITHOUT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -funroll-loops -fomit-frame-pointer -fno-common \
@@ -72,21 +74,6 @@ WITH_XMMS=	yes
 
 .if exists(${LOCALBASE}/lib/libvorbis.so.3)
 WITH_VORBIS=	yes
-.endif
-
-.if defined(WITHOUT_SERVERS)
-CONFIGURE_ARGS+=--without-servers
-PLIST_SUB+=	SERVER="@comment "
-.else
-PLIST_SUB+=	SERVER=""
-.endif
-
-.if defined(WITHOUT_TOOLS)
-CONFIGURE_ARGS+=--without-tools
-PLIST_SUB+=	TOOL="@comment "
-.else
-PLIST_SUB+=	TOOL=""
-MAN1=	pak.1 qfcc.1 qflight.1 qfvis.1 wad.1
 .endif
 
 .if defined(WITHOUT_CLIENTS)
@@ -137,6 +124,13 @@ CONFIGURE_ARGS+=--disable-sdl --disable-sdltest
 PLIST_SUB+=	SDL="@comment "
 .endif
 
+.if defined(WITH_STATIC_PLUGINS)
+PLIST_SUB+=	PLUGIN="@comment "
+CONFIGURE_ARGS+=--with-static-plugins
+.else
+PLIST_SUB+=	PLUGIN=""
+.endif
+
 .if !defined(NO_WAD)
 PLIST_SUB+=	WAD=""
 .else
@@ -172,14 +166,11 @@ pre-everything::
 .if !defined(WITH_SDL)
 	@${ECHO_MSG} "Define WITH_SDL to use SDL"
 .endif
-.if !defined(WITHOUT_TOOLS)
-	@${ECHO_MSG} "Define WITHOUT_TOOLS to disable building of additional tools"
-.endif
-.if !defined(WITHOUT_SERVERS)
-	@${ECHO_MSG} "Define WITHOUT_SERVERS to disable building of the servers"
-.endif
 .if !defined(WITHOUT_CLIENTS)
 	@${ECHO_MSG} "Define WITHOUT_CLIENTS to disable building of the clients"
+.endif
+.if !defined(WITH_STATIC_PLUGINS)
+	@${ECHO_MSG} "Define WITH_STATIC_PLUGINS to disable building plugins as shared objects"
 .endif
 
 post-patch:
@@ -191,9 +182,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/quakeforge/id1 && \
 	${TAR} xzf ${DISTDIR}/${WADFILE} -C ${PREFIX}/share/quakeforge --no-same-owner id1/pak0.pak
 .endif
-.if !defined(WITHOUT_SERVERS)
 	${TAR} xzf ${DISTDIR}/${PROGFILE} -C ${PREFIX}/share/quakeforge qw/
-.endif
 .if !defined(NO_SKINS)
 .for file in ${SKINFILES}
 	${UNZIP_CMD} -n ${DISTDIR}/${file} -d ${PREFIX}/share/quakeforge/qw/skins
