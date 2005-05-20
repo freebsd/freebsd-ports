@@ -1,0 +1,19 @@
+*** scripts/refdb.orig	Sat Apr 30 16:45:49 2005
+--- scripts/refdb	Sat Apr 30 16:46:18 2005
+***************
+*** 43,49 ****
+  # set to 'YES' if the OS uses a BSD-style daemon startup system (this is
+  # true for BSD-UNIX and Unices derived thereof, as well as for the
+  # Slackware Linux distribution)
+! BSDSTYLE=NO
+  
+  # don't get interrupted
+  trap "" 1
+--- 43,49 ----
+  # set to 'YES' if the OS uses a BSD-style daemon startup system (this is
+  # true for BSD-UNIX and Unices derived thereof, as well as for the
+  # Slackware Linux distribution)
+! BSDSTYLE=YES
+  
+  # don't get interrupted
+  trap "" 1

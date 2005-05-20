@@ -1,0 +1,127 @@
+%%DATADIR%%/declarations/xml.dcl
+%%DATADIR%%/declarations/docbook.dcl
+%%DATADIR%%/dsssl/html/docbook-refdb.dsl
+%%DATADIR%%/dsssl/lib/refdblib.dsl
+%%DATADIR%%/dsssl/lib/refdbvar.dsl
+%%DATADIR%%/dsssl/print/docbook-refdb.dsl
+%%DATADIR%%/dsssl/bibdb2tei.dsl
+%%DATADIR%%/dsssl/citations.dsl
+%%DATADIR%%/dsssl/db2ris.dsl
+%%DATADIR%%/dsssl/makecss.dsl
+%%DATADIR%%/dsssl/catalog
+%%DATADIR%%/refdb.cat
+%%DATADIR%%/dtd/catalog
+%%DATADIR%%/dtd/citestylex.dtd
+%%DATADIR%%/dtd/citationlistx.dtd
+%%DATADIR%%/dtd/risx.dtd
+%%DATADIR%%/dtd/xnote.dtd
+%%DATADIR%%/styles/Eur.J.Pharmacol.xml
+%%DATADIR%%/styles/J.Biol.Chem.xml
+%%DATADIR%%/styles/bibtex-abbrev.xml
+%%DATADIR%%/styles/bibtex-full.xml
+%%DATADIR%%/xsl/common-refdb/refdbvar.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-fo/docbk-refdb-fo.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-html/docbk-refdb-html.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-xhtml/docbk-refdb-xhtml.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-lib/docbk-refdblib.xsl
+%%DATADIR%%/xsl/tei-refdb-xsl/tei-fo/tei-refdb-fo.xsl
+%%DATADIR%%/xsl/tei-refdb-xsl/tei-html/tei-refdb-html.xsl
+%%DATADIR%%/xsl/tei-refdb-xsl/tei-lib/tei-refdblib.xsl
+%%DATADIR%%/xsl/citations.xsl
+%%DATADIR%%/xsl/bibdb2tei.xsl
+%%DATADIR%%/xsl/makecss.xsl
+%%DATADIR%%/templates/refdbq_foot.html
+%%DATADIR%%/templates/refdbqp_foot.html
+%%DATADIR%%/templates/refdbq_head.html
+%%DATADIR%%/templates/refdbqp_head.html
+%%DATADIR%%/templates/refdbadd_foot.html
+%%DATADIR%%/templates/refdbadd_head.html
+%%DATADIR%%/www/refdbadd.html
+%%DATADIR%%/www/refdbdbquery.html
+%%DATADIR%%/www/refdbkajquery.html
+%%DATADIR%%/www/refdblogout.html
+%%DATADIR%%/www/refdbquery.html
+%%DATADIR%%/www/refdbquerynl.html
+%%DATADIR%%/www/refdbq.css
+%%DATADIR%%/www/access.js
+%%DATADIR%%/www/index.html
+%%DATADIR%%/css/refdb.css
+%%DATADIR%%/examples/readme.examples
+%%DATADIR%%/examples/dbtest.short.sgml
+%%DATADIR%%/examples/dbtest.sgml
+%%DATADIR%%/examples/dbxtest.short.xml
+%%DATADIR%%/examples/dbxtest.xml
+%%DATADIR%%/examples/serif.bib
+%%DATADIR%%/examples/teitest.short.xml
+%%DATADIR%%/examples/teitest.xml
+%%DATADIR%%/examples/testrefs.ris
+%%DATADIR%%/examples/testrefs.xml
+%%DATADIR%%/examples/testrefs.usmarc
+%%DATADIR%%/examples/Makefile.template
+%%DATADIR%%/examples/xnoteset.xml
+%%DATADIR%%/sql/refdb.dump
+%%DATADIR%%/sql/refdb.dump.pgsql
+%%DATADIR%%/sql/refdb.dump.sqlite
+%%DATADIR%%/sql/empty.mysql.dump
+%%DATADIR%%/sql/empty.pgsql.dump.in
+%%DATADIR%%/sql/refdb-upgrade.sql
+etc/rc.d/refdb.sh.dist
+etc/refdb/bib2risrc.example
+etc/refdb/bib2riscgirc.example
+etc/refdb/db2risrc.example
+etc/refdb/nmed2risrc.example
+etc/refdb/nmed2riscgirc.example
+etc/refdb/refdbarc.example
+etc/refdb/refdbcrc.example
+etc/refdb/refdbcgirc.example
+etc/refdb/refdbibrc.example
+etc/refdb/med2risrc.example
+etc/refdb/med2riscgirc.example
+etc/refdb/marc2risrc.example
+etc/refdb/refdbxmlrc.example
+etc/refdb/refdbdrc.example
+bin/refdb-bug
+bin/refdbctl
+bin/refdbjade
+bin/runbib
+bin/tex2mail
+bin/db2ris
+bin/refdbxml
+bin/marc2ris.pl
+bin/med2ris.pl
+bin/en2ris.pl
+bin/refdbnd
+bin/dos2unix
+bin/refdbd
+bin/refdbib
+bin/refdbc
+bin/refdba
+bin/refdbxp
+bin/nmed2ris
+bin/eenc
+@dirrm share/refdb/declarations
+@dirrm share/refdb/dsssl/html
+@dirrm share/refdb/dsssl/lib
+@dirrm share/refdb/dsssl/print
+@dirrm share/refdb/dsssl
+@dirrm share/refdb/dtd
+@dirrm share/refdb/styles
+@dirrm share/refdb/xsl/common-refdb
+@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-fo
+@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-html
+@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-xhtml
+@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-lib
+@dirrm share/refdb/xsl/docbk-refdb-xsl
+@dirrm share/refdb/xsl/tei-refdb-xsl/tei-fo
+@dirrm share/refdb/xsl/tei-refdb-xsl/tei-html
+@dirrm share/refdb/xsl/tei-refdb-xsl/tei-lib
+@dirrm share/refdb/xsl/tei-refdb-xsl
+@dirrm share/refdb/xsl
+@dirrm share/refdb/templates
+@dirrm share/refdb/www
+@dirrm share/refdb/css
+@dirrm share/refdb/db
+@dirrm share/refdb/examples
+@dirrm share/refdb/sql
+@dirrm share/refdb
+@dirrm etc/refdb

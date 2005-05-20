@@ -563,6 +563,7 @@
     SUBDIR += re_graph
     SUBDIR += redland
     SUBDIR += redland-bindings
+    SUBDIR += refdb
     SUBDIR += replaceit
     SUBDIR += resume
     SUBDIR += resume-extensions
