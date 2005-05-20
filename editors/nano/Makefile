@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/ \
 		http://www.ewtoo.org/~astyanax/nano/dist/v1.2/
