@@ -40,6 +40,10 @@ MAN3=	Qt.3
 IGNORE=		"This port needs Perl 5.6.0 or greater, please upgrade your Perl!"
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not link on ia64"
+.endif
+
 post-configure:
 	@cd ${CONFIGURE_WRKSRC}/PerlQt && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
