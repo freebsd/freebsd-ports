@@ -20,8 +20,6 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
 
-BROKEN=		Changes permissions of installed file
-
 USE_GMAKE=	yes
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/pcre" \
 		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib"

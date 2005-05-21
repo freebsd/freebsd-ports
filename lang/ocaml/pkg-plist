@@ -887,40 +887,40 @@ lib/ocaml/weak.cmx
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 %%PROF%%lib/ocaml/weak.p.cmx
-%%TK%%share/examples/ocaml/camltk/Makefile
-%%TK%%share/examples/ocaml/camltk/Makefile.nt
-%%TK%%share/examples/ocaml/camltk/addition.ml
-%%TK%%share/examples/ocaml/camltk/eyes.ml
-%%TK%%share/examples/ocaml/camltk/fileinput.ml
-%%TK%%share/examples/ocaml/camltk/fileopen.ml
-%%TK%%share/examples/ocaml/camltk/helloworld.ml
-%%TK%%share/examples/ocaml/camltk/images/CamlBook.gif
-%%TK%%share/examples/ocaml/camltk/images/Lambda2.back.gif
-%%TK%%share/examples/ocaml/camltk/images/dojoji.back.gif
-%%TK%%share/examples/ocaml/camltk/jptest.ml
-%%TK%%share/examples/ocaml/camltk/mytext.ml
-%%TK%%share/examples/ocaml/camltk/socketinput.ml
-%%TK%%share/examples/ocaml/camltk/taddition.ml
-%%TK%%share/examples/ocaml/camltk/tetris.ml
-%%TK%%share/examples/ocaml/camltk/text.ml
-%%TK%%share/examples/ocaml/camltk/winskel.ml
-%%TK%%share/examples/ocaml/labltk/Lambda2.back.gif
-%%TK%%share/examples/ocaml/labltk/Makefile
-%%TK%%share/examples/ocaml/labltk/Makefile.nt
-%%TK%%share/examples/ocaml/labltk/README
-%%TK%%share/examples/ocaml/labltk/calc.ml
-%%TK%%share/examples/ocaml/labltk/clock.ml
-%%TK%%share/examples/ocaml/labltk/demo.ml
-%%TK%%share/examples/ocaml/labltk/eyes.ml
-%%TK%%share/examples/ocaml/labltk/hello.ml
-%%TK%%share/examples/ocaml/labltk/hello.tcl
-%%TK%%share/examples/ocaml/labltk/lang.ml
-%%TK%%share/examples/ocaml/labltk/taquin.ml
-%%TK%%share/examples/ocaml/labltk/tetris.ml
-%%TK%%@dirrm share/examples/ocaml/labltk
-%%TK%%@dirrm share/examples/ocaml/camltk/images
-%%TK%%@dirrm share/examples/ocaml/camltk
-%%TK%%@dirrm share/examples/ocaml
+%%TK%%%%EXAMPLESDIR%%/camltk/Makefile
+%%TK%%%%EXAMPLESDIR%%/camltk/Makefile.nt
+%%TK%%%%EXAMPLESDIR%%/camltk/addition.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/eyes.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/fileinput.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/fileopen.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/helloworld.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/images/CamlBook.gif
+%%TK%%%%EXAMPLESDIR%%/camltk/images/Lambda2.back.gif
+%%TK%%%%EXAMPLESDIR%%/camltk/images/dojoji.back.gif
+%%TK%%%%EXAMPLESDIR%%/camltk/jptest.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/mytext.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/socketinput.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/taddition.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/tetris.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/text.ml
+%%TK%%%%EXAMPLESDIR%%/camltk/winskel.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/Lambda2.back.gif
+%%TK%%%%EXAMPLESDIR%%/labltk/Makefile
+%%TK%%%%EXAMPLESDIR%%/labltk/Makefile.nt
+%%TK%%%%EXAMPLESDIR%%/labltk/README
+%%TK%%%%EXAMPLESDIR%%/labltk/calc.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/clock.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/demo.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/eyes.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/hello.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/hello.tcl
+%%TK%%%%EXAMPLESDIR%%/labltk/lang.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/taquin.ml
+%%TK%%%%EXAMPLESDIR%%/labltk/tetris.ml
+%%TK%%@dirrm %%EXAMPLESDIR%%/labltk
+%%TK%%@dirrm %%EXAMPLESDIR%%/camltk/images
+%%TK%%@dirrm %%EXAMPLESDIR%%/camltk
+%%TK%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/ocaml/vmthreads
 @dirrm lib/ocaml/threads
 @dirrm lib/ocaml/stublibs

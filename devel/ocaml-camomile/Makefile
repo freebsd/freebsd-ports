@@ -19,8 +19,6 @@ COMMENT=	A comprehensive Unicode library for objective caml language
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
-BROKEN=		Changes permissions of installed file
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

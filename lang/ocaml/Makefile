@@ -7,6 +7,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.08.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -132,17 +133,10 @@ post-install:
 		ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
 	@${STRIP_CMD} ${PREFIX}/bin/${prog}
 .endfor
-# XXX ugly hack to fix permissions. I could not find the proper
-# Makefile entry
-
+# XXX ugly hack to fix permissions.
 	@${FIND} ${EXAMPLESDIR} -type f -print0 | \
 		${XARGS} -0 -n 5 -x \
 		${CHMOD} ${SHAREMODE}
-	@${FIND} -d ${EXAMPLESDIR} -type d -print0 | \
-		${XARGS} -0 -n 5 -x \
-		${CHMOD} ${SHAREMODE}
-	@${FIND} -s ${EXAMPLESDIR} -type d -print0 | \
-		${XARGS} -0 -n 5 -x \
-		${CHMOD} a+x
+	@${CHMOD} u+w ${PREFIX}/lib/ocaml/ld.conf
 		
 .include <bsd.port.post.mk>
