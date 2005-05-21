@@ -26,4 +26,10 @@ USE_GETOPT_LONG=yes
 PLIST_FILES=	bin/enblend
 MAN1=		enblend.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>
