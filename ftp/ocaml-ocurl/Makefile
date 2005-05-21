@@ -20,6 +20,8 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
+BROKEN=		Changes permissions of installed file
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+="--with-findlib"
