@@ -29,4 +29,10 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 
 MAN1=		qcomicbook.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Configure fails on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>
