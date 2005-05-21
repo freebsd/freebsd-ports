@@ -28,4 +28,10 @@ MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include" \
 		INCLUDES="-I${X11BASE}/include"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 504000
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>
