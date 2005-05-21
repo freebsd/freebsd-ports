@@ -38,6 +38,10 @@ SUBDIRS=	bgpd \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500037
+IGNORE=		Requires macros present in <sys/tree.h>
+.endif
+
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/bgpctl/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/pfkey_compat.c ${WRKSRC}/bgpd/
