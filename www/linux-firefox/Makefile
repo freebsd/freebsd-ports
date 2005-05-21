@@ -27,7 +27,7 @@ ${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 NO_BUILD=      yes
 NO_FILTER_SHLIBS=yes
-ONLY_FOR_ARCHS=i386
+ONLY_FOR_ARCHS=i386 amd64
 FIREFOX_NAME=  ${PKGNAMEPREFIX}${PORTNAME}
 DESCR=         ${.CURDIR}/pkg-descr
 MD5_FILE=      ${.CURDIR}/distinfo
