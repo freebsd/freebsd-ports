@@ -1,8 +1,8 @@
---- configure.orig	Thu Apr 21 05:04:21 2005
-+++ configure	Sat Apr 23 14:26:33 2005
-@@ -22,8 +22,8 @@
- debug="no"
+--- configure.orig	Wed May 18 22:55:05 2005
++++ configure	Sat May 21 12:19:02 2005
+@@ -24,8 +24,8 @@
  vfw="no"
+ vis="no"
  
 -CC="gcc"
 -CFLAGS="-Wall -I. -O4 -funroll-loops -ffast-math -D__X264__"
@@ -11,7 +11,7 @@
  LDFLAGS=""
  
  AS="nasm"
-@@ -75,9 +75,9 @@
+@@ -77,9 +77,9 @@
      ARCH="X86"
      CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
      ;;
@@ -24,14 +24,18 @@
      AS="yasm"
      ASFLAGS="-f elf -m amd64"
      ;;
-@@ -89,6 +89,10 @@
-     else
+@@ -92,9 +92,12 @@
        CFLAGS="$CFLAGS -maltivec -mabi=altivec"
      fi
-+    ;;
+     ;;
 +  "Sparc64" | sparc64)
 +    ARCH="SPARC64"
 +    CFLAGS="$CFLAGS"
-     ;;
++    ;;
    *)
-     echo "Unknown platform $UNAMEM, edit the configure"
+-    echo "Unknown platform $UNAMEM, edit the configure"
+-    exit 1
++    CFLAGS="$CFLAGS"
+     ;;
+ esac
+ 
