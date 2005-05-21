@@ -20,6 +20,8 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
+BROKEN=		Changes permissions of installed file
+
 USE_GMAKE=	yes
 ALL_TARGET=	all all.opt
 

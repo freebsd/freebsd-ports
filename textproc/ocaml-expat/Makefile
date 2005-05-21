@@ -20,6 +20,8 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
+BROKEN=		Changes permissions of installed file
+
 USE_GMAKE=	yes
 MAKE_ARGS=	EXPAT_LIBDIR=${LOCALBASE}/lib \
 		EXPAT_INCDIR=${LOCALBASE}/include \
