@@ -24,6 +24,12 @@ USE_XLIB=	yes
 
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|lstat$$U.o||' ${WRKSRC}/Makefile
 
@@ -39,4 +45,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
