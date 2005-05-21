@@ -21,8 +21,6 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 
-BROKEN=		Changes permissions of installed file
-
 USE_SDL=	sdl ttf image mixer
 USE_AUTOCONF_VER=259
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

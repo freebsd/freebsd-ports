@@ -29,8 +29,6 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-BROKEN=		Changes permissions of installed file
-
 USE_XPM=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
