@@ -50,6 +50,9 @@ CONFIGURE_ARGS+=	--disable-mmx-optimization
 INSTALL_TARGET=	install install.doc
 .endif
 
+post-extract:
+	@${LN} -sf ${WRKSRC} ${WRKDIR}/libAfterImage
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgif|-lungif|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
