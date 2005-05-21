@@ -1,0 +1,6 @@
+bmp-alarm is an alarm timer plugin for beep-media-player.
+It allows you to set a time for it to start playing a playlist
+with the volume fading up.
+You can set specific alarm times for each day of the week.
+
+WWW: http://www.snika.uklinux.net/index.php?show=xmms-alarm
