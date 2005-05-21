@@ -1,3 +1,4 @@
 lib/bmp/General/libdocklet.so
 share/locale/de/LC_MESSAGES/bmp-docklet.mo
 share/locale/fr/LC_MESSAGES/bmp-docklet.mo
+share/locale/pl/LC_MESSAGES/bmp-docklet.mo
