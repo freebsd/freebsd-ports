@@ -12,4 +12,6 @@ COMMENT=	Fast C routines (Long Double Percision)
 FFTW3_FLAVOR=	long
 MASTERDIR=	${.CURDIR}/../../math/fftw3
 
+ONLY_FOR_ARCHS=	i386
+
 .include "${MASTERDIR}/Makefile"
