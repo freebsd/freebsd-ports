@@ -45,6 +45,9 @@ do-patch:
 		>>${WRKDIR}/linkfarm
 	${ECHO_CMD} "cd ${PREFIX}/lib/${FIREFOX_NAME}/plugins" \
 		>>${WRKDIR}/linkfarm
+	${ECHO_CMD} "${FIND} -L . -type l -delete" \
+		>>${WRKDIR}/linkfarm
+
 .for ii in \
 	lib/linux-beonex/plugins \
 	lib/netscape-linux/plugins \
@@ -52,6 +55,7 @@ do-patch:
 	lib/linux-mozilla/plugins \
 	lib/linux-netscape*/plugins \
 	lib/linux-flashplugin6 \
+	lib/linux-flashplugin7 \
 	linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
 	linux-blackdown-jdk1.4.1/jre/plugin/i386/mozilla
 	${ECHO_CMD} -n "${FIND} ${LOCALBASE}/${ii}/*" \
