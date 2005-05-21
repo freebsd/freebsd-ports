@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fuse
-PORTVERSION=	0.6.1.1
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse-emulator
@@ -15,16 +14,27 @@ MASTER_SITE_SUBDIR=	fuse-emulator
 MAINTAINER=	kemm@in-line.ru
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
-LIB_DEPENDS=	spectrum.2:${PORTSDIR}/emulators/libspectrum \
-		765.3:${PORTSDIR}/emulators/lib765 \
+LIB_DEPENDS=	spectrum.4:${PORTSDIR}/emulators/libspectrum \
+		765.4:${PORTSDIR}/emulators/lib765 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		png.5:${PORTSDIR}/graphics/png
 
+WANT_GNOME=		yes
+WANT_SDL=		yes
 USE_XLIB=		yes
 USE_PERL5_BUILD=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-plus3-disk-prefix=${LOCALBASE}
+
+OPTIONS=	SMALLMEM "Low memory compile needed" off \
+		GTK      "Use GTK1 user interface" off \
+		GTK2	 "Use GTK2 user interface" on \
+		SDL	 "Use SDL user interface" on \
+		SVGALIB  "Use SVGAlib user interface" off \
+		GCRYPT	 "Support digital signing of .RZX files" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SMALLMEM)
 CONFIGURE_ARGS+=	--enable-smallmem
@@ -34,6 +44,11 @@ CONFIGURE_ARGS+=	--enable-smallmem
 USE_GNOME=		gtk12
 .else
 CONFIGURE_ARGS+=	--without-gtk
+.endif
+
+.if defined(WITH_GTK2)
+CONFIGURE_ARGS+=	--with-gtk2
+USE_GNOME+=		gtk20
 .endif
 
 .if defined(WITH_SDL)
@@ -46,42 +61,18 @@ CONFIGURE_ARGS+=	--with-svgalib
 LIB_DEPENDS+=		vga.1:${PORTSDIR}/graphics/svgalib
 .endif
 
-.if defined(WITH_GGI)
-CONFIGURE_ARGS+=	--with-ggi
-LIB_DEPENDS+=		ggi.2:${PORTSDIR}/graphics/libggi
-.endif
-
-.if defined(WITH_GTK2)
-CONFIGURE_ARGS+=	--with-gtk2
-USE_GNOME+=		gtk20
-.endif
-
 .if defined(WITH_GCRYPT) || exists(${LOCALBASE}/include/gcrypt.h)
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-LIB_DEPENDS+=	gcrypt.6:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 .endif
 
 MAN1=	fuse.1
-DOCS=	AUTHORS ChangeLog README THANKS
-
-pre-everything::
-	@${ECHO_MSG} ${CONFIGURE_ARGS}
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_SMALLMEM=yes     low memory compile needed"
-	@${ECHO_MSG} "  WITHOUT_GTK=yes       don't use GTK1 user interface"
-	@${ECHO_MSG} "  WITH_SDL=yes          use SDL user interface"
-	@${ECHO_MSG} "  WITH_SVGALIB=yes      use SVGAlib user interface"
-	@${ECHO_MSG} "  WITH_GGI=yes          use GGI user interface"
-	@${ECHO_MSG} "  WITH_GTK2=yes         use GTK2 user interface"
-	@${ECHO_MSG} "  WITH_GCRYPT=yes       support digital signing of .RZX files"
-	@${ECHO_MSG} ""
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README THANKS \
+		${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
