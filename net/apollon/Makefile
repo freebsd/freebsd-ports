@@ -23,10 +23,16 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-patch:
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e 's/^(all:)[[:space:]]+docs-am/\1/; s/^(SUBDIRS.+)doc/\1/' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
