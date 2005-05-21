@@ -22,4 +22,10 @@ USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha" 
+.endif
+
+.include <bsd.port.post.mk>

@@ -33,6 +33,10 @@ WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk2-${PORTVERSION}-src/jk/native2
 WITH_APACHE2=	yes
 .endif
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if ${ARCH} == "sparc64" && !defined(WITH_APACHE2)
 BROKEN=		"Fails to link on sparc64"
 .endif

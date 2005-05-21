@@ -35,6 +35,12 @@ EXTRAMAN8=	dnsextd.8 mDNSResponder.8
 
 MAN8=		mdnsd.8 ${EXTRAMAN8}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/mDNSPosix/Makefile
@@ -49,4 +55,4 @@ post-install:
 .		endfor
 .	endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

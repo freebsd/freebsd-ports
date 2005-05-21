@@ -30,6 +30,7 @@ LATEST_LINK=	gcc295
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == alpha)
+BROKEN=			"Does not compile on alpha"
 WITHOUT_CPU_CFLAGS=	yes
 .endif
 

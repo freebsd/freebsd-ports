@@ -37,6 +37,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if defined(PARALLEL_PACKAGE_BUILD) && ${OSVERSION} >= 500000
 IGNORE=	hang
 .endif

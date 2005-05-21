@@ -26,6 +26,10 @@ WRKSRC=		${WRKDIR}/sv7
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == alpha
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if ${ARCH} == i386
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
