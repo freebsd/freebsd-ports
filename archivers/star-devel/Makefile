@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	star
-PORTVERSION=	1.5.a.58
-PORTREVISION=	1
+PORTVERSION=	1.5.a.59
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
