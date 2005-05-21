@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/fb_lock_print
 bin/gbak
 bin/gdef
@@ -23,30 +24,11 @@ lib/libfbembed.so.%%FIREBIRD_VERSION%%
 lib/libgds.so
 lib/libgds.so.1
 lib/libib_util.so
-%%DOCSDIR%%/README.NTSecurity
-%%DOCSDIR%%/README.Win32LibraryInstallation.txt
-%%DOCSDIR%%/README.build.mingw.html
-%%DOCSDIR%%/README.build.msvc.html
-%%DOCSDIR%%/README.install.Solaris_on_Intel
-%%DOCSDIR%%/README.instsvc
-%%DOCSDIR%%/README.makefiles
-%%DOCSDIR%%/README.user
-%%DOCSDIR%%/README.user.embedded
-%%DOCSDIR%%/README.user.troubleshooting
-%%DOCSDIR%%/README
-%%DOCSDIR%%/WhatsNew
-%%DOCSDIR%%/sql.extensions/README.aggregate_tracking
-%%DOCSDIR%%/sql.extensions/README.case
-%%DOCSDIR%%/sql.extensions/README.coalesce
-%%DOCSDIR%%/sql.extensions/README.context_variables
-%%DOCSDIR%%/sql.extensions/README.data_types
-%%DOCSDIR%%/sql.extensions/README.exception_handling
-%%DOCSDIR%%/sql.extensions/README.execute_statement
-%%DOCSDIR%%/sql.extensions/README.explicit_locks
-%%DOCSDIR%%/sql.extensions/README.nullif
-%%DOCSDIR%%/sql.extensions/README.order_by_expressions_nulls
-%%DOCSDIR%%/sql.extensions/README.savepoints
-%%DOCSDIR%%/sql.extensions/README.universal_triggers
+@unexec if cmp -s %D/etc/firebird.conf %D/etc/firebird.conf.sample; then rm -f %D/etc/firebird.conf; fi
+etc/firebird.conf.sample
+@exec [ -f %B/firebird.conf ] || cp %B/%f %B/firebird.conf
+%%DATADIR%%/firebird.msg
+@dirrm %%DATADIR%%
 %%EXAMPLESDIR%%/align.h
 %%EXAMPLESDIR%%/api1.c
 %%EXAMPLESDIR%%/api10.c
@@ -94,6 +76,4 @@ lib/libib_util.so
 %%EXAMPLESDIR%%/stat9.e
 %%EXAMPLESDIR%%/udf.sql
 %%EXAMPLESDIR%%/udflib.c
-@dirrm %%DOCSDIR%%/sql.extensions
-@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%

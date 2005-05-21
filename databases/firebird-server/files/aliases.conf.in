@@ -4,5 +4,5 @@
 #
 # Examples:
 #
-# employee = %%PREFIX%%/examples/employee.fdb
+# employee = %%EXAMPLESDIR%%/employee.fdb
 #

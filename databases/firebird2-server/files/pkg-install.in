@@ -1,70 +1,71 @@
 #!/bin/sh
 
-PATH=/sbin:/usr/sbin:/usr/local/sbin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:%%PREFIX%%/bin
-PREFIX=%%PREFIX%%
-DB_DIR=%%PREFIX%%
+# $FreeBSD$
 
-USER=firebird
-GROUP=${USER}
-UID=3050
-GID=${UID}
-HOME=${DB_DIR}
-DESCR="Firebird Database Administrator"
+PATH=/bin:/usr/bin:/usr/sbin
 
 case $2 in
 PRE-INSTALL)
-	if pw group show "${GROUP}" 2> /dev/null; then
-		echo "You already have a group \"${GROUP}\", so I will use it."
-	else
-		if pw groupadd ${GROUP} -g ${GID}; then
-			echo "Added group \"${GROUP}\"."
-		else
-			echo "Adding group \"${GROUP}\" failed..."
-			exit 1
-		fi
-	fi
 
-	if pw user show "${USER}" 2> /dev/null; then
-		echo "You already have a user \"${USER}\", so I will use it."
+if [ `id -u` -ne 0 ]; then
+	echo; echo "You must be root to run this step!"; echo; echo
+  exit 1
+fi
 
-		if pw usermod ${USER} -d ${HOME}; then
-			echo "Changed home directory of \"${USER}\" to \"${HOME}\""
-		else
-			echo "Changing home directory of \"${USER}\" to \"${HOME}\" failed..."
-			exit 1
-		fi
-	else
-		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - -d ${NOME} -s /sbin/nologin -c "${DESCR}" ; then
-			echo "Added user \"${USER}\"."
-		else
-			echo "Adding user \"${USER}\" failed..."
-			exit 1
-		fi
+nofbuid=0
+fbUID=`id -u firebird 2>/dev/null`
+if [ $? -ne 0 ]; then
+	fbUID=90
+	while [ ! -z `id -un $fbUID 2>/dev/null` ]
+	do
+		fbUID=$(($fbUID+1))
+	done
+	nofbuid=1
+fi
+
+fbGID=`pw groupshow firebird 2>/dev/null`
+if [ $? -ne 0 ]; then
+	fbGID=90
+	while [ ! -z `id -gn $fbGID 2>/dev/null` ]
+	do
+		fbGID=$(($fbGID+1))
+	done
+	echo "firebird:*:$fbGID:" >> /etc/group
+else
+	fbGID=`echo $fbGID | awk -F: '{print $3}'`
+fi
+
+echo "firebird user using uid $fbUID"
+echo "firebird user using gid $fbGID"
+
+if which -s pw; then
+	if [ $nofbuid -ne 0 ]; then
+		pw useradd firebird -u $fbUID -g $fbGID -h - -s /bin/sh \
+		-d $PKG_PREFIX/firebird -c "Firebird Database Administrator"
 	fi
-        ;;
+else
+	echo -n "unable to create user firebird - please create it manually,"
+	echo " before reinstalling this package."
+	exit 1
+fi
+;;
 
 POST-INSTALL)
-	for f in isc_init1.`hostname` isc_lock1.`hostname` isc_event1.`hostname` firebird.log
-	do
-		touch ${PREFIX}/${f}
-		chown ${USER}:${GROUP} ${PREFIX}/$f
-		chmod 660 ${PREFIX}/${f}
-	done
+cd $PKG_PREFIX/firebird
 
-	# add the gds service and restart inetd
-	cat /etc/services | grep -v gds_db > /etc/services.new
-	cat >>/etc/services.new <<EOF
-gds_db          3050/tcp  #InterBase Database Remote Protocol
-EOF
-	mv /etc/services.new /etc/services
+# Lock files
 
-	cat /etc/inetd.conf | grep -v gds_db > /etc/inetd.conf.new
-	cat >>/etc/inetd.conf.new <<EOF
-gds_db  stream  tcp     nowait  firebird        ${PREFIX}/bin/fb_inet_server  fb_inet_server
-EOF
-	mv /etc/inetd.conf.new /etc/inetd.conf
+for i in isc_init1 isc_lock1 isc_event1
+do
+	FileName=$i.`hostname`
+	touch $FileName
+	chmod uga=rw $FileName
+	chown firebird:firebird $FileName
+done
 
-	if [ -f /var/run/inetd.pid ]; then
-	        kill -HUP `cat /var/run/inetd.pid`
-	fi
+touch firebird.log
+chown firebird:firebird firebird.log
+
+;;
+
 esac
