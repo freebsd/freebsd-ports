@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+#
+# Add the following lines to /etc/rc.conf to enable apache2:
+# nrpe_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable nrpe
+# nrpe_config (string):	Set to "/usr/local/etc/nrpe.cfg" by default.
+#
+
+. %%RC_SUBR%%
+
+name="nrpe"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/nrpe"
+
+[ -z "$nrpe_enable" ]	&& nrpe_enable="NO"
+[ -z "$nrpe_config" ]	&& nrpe_config="%%PREFIX%%/etc/nrpe.cfg"
+
+nrpe_flags="-d ${nrpe_config}"
+
+load_rc_config $name
+
+run_rc_command "$1"
