@@ -294,7 +294,7 @@ idea.V*.tar.Z		security/idea		A patented algorithm that
 idled-*.tar.gz		sysutils/idled		Non-profit use and distribution
 						only
 invitationtoruby.tgz	devel/invitation_to_ruby No commercial use
-iperf-*-source.tar.gz	net/iperf		Cannot charge a fee for the
+iperf-*-source.tar.gz	benchmarks/iperf	Cannot charge a fee for the
 						software
 IPv6socket_scrub.tar	net/ipv6socket_scrub	Not redistributable,
 						license agreement required

@@ -241,7 +241,6 @@
     SUBDIR += imapproxy
     SUBDIR += imcom
     SUBDIR += ip6_int
-    SUBDIR += iperf
     SUBDIR += ipex
     SUBDIR += ipfw-graph
     SUBDIR += ipgrab
