@@ -4,16 +4,17 @@
 #
 # $FreeBSD$
 
-PORTNAME=		ufraw
+PORTNAME=		gimp-ufraw
 PORTVERSION=		0.4
 CATEGORIES=		graphics gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ufraw
+DISTNAME=		ufraw-${PORTVERSION}
 
 MAINTAINER=		markm@FreeBSD.org
 COMMENT=		GIMP plug-in for raw digital camera image importing
 
-RUN_DEPENDS=		gimp:${PORTSDIR}/graphics/gimp
+BUILD_DEPENDS=		gimp:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 			tiff.4:${PORTSDIR}/graphics/tiff
 
