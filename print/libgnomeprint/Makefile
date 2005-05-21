@@ -15,12 +15,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		popt.0:${PORTSDIR}/devel/popt
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libbonobo libartlgpl2 \
-		gtk20
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
+		libartlgpl2
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
