@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A High Quality Rendering Engine for C++
 
+BROKEN=		Size mismatch
+
 WRKSRC=		${WRKDIR}/agg23
 USE_GMAKE=	yes
 MAKE_ENV=	C="${CC}" CXX="${CXX}"
