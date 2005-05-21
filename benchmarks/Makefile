@@ -16,6 +16,7 @@
     SUBDIR += httperf
     SUBDIR += iozone
     SUBDIR += iozone21
+    SUBDIR += iperf
     SUBDIR += lmbench
     SUBDIR += nbench
     SUBDIR += netio

@@ -1492,3 +1492,4 @@ net/amule|net/amule1|2005-05-16|port renamed
 net/amule-devel|net/amule2|2005-05-16|obsolete
 databases/firebird|databases/firebird-server|2005-05-17|split into -client and -server
 audio/mpeg4ip-faad||2005-05-19|Port no longer needed with new mpeg4ip-1.3
+net/iperf|benchmarks/iperf|2005-02-21|better category
