@@ -20,6 +20,7 @@ ONLY_FOR_ARCHS=	i386
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
+BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
 
 .include <bsd.port.post.mk>
