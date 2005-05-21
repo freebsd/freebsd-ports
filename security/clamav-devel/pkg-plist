@@ -17,7 +17,6 @@ lib/libclamav.so.1
 lib/libclamav.so
 lib/libclamav.a
 libdata/pkgconfig/libclamav.pc
-@unexec rmdir %B 2>/dev/null || true
 @unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
 etc/clamd.conf.default
 @exec [ -f %B/clamd.conf ] || cp %B/%f %B/clamd.conf
