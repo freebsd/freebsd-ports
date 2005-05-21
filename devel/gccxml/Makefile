@@ -35,4 +35,10 @@ do-configure:
 	${LOCALBASE}/bin/cmake ../${DISTNAME} -DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 	  -DGCCXML_MAN_DIR:PATH="/man"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Build fails on alpha"
+.endif
+
+.include <bsd.port.post.mk>
