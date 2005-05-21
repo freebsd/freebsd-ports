@@ -3769,7 +3769,7 @@ ipcalc		ports/net-mgmt/ipcalc
 ipcheck		ports/dns/ipcheck
 ipdf		ports/textproc/ipdf
 ipe		ports/graphics/ipe
-iperf		ports/net/iperf
+iperf		ports/benchmarks/iperf
 ipex		ports/net/ipex
 ipfilter2dshield	ports/security/ipfilter2dshield
 ipfm		ports/net-mgmt/ipfm
