@@ -30,7 +30,9 @@ PLIST_FILES=	include/gai/gai.h lib/libgai.so.${PORTVERSION} \
 PLIST_DIRS=	include/gai
 INSTALLS_SHLIB=	yes
 
-.if ${MACHINE_ARCH:L} == "amd64"
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
 
@@ -57,4 +59,4 @@ post-install:
 		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
