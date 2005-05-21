@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=53
 
+NOT_FOR_ARCHS=	ia64
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
