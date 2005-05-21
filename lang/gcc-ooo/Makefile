@@ -25,6 +25,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	openoffice@FreeBSD.org
 COMMENT?=	GNU Compiler Collection for OpenOffice.org
 
+NOT_FOR_ARCHS=	ia64
+
 NO_LATEST_LINK=	yes
 
 USE_BISON=	yes
