@@ -41,7 +41,6 @@ libdata/pkgconfig/e2p.pc
 libdata/pkgconfig/ext2fs.pc
 libdata/pkgconfig/ss.pc
 libdata/pkgconfig/uuid.pc
-@unexec rmdir %B 2>/dev/null || true
 lib/libss.a
 lib/libss.so.2.0
 lib/libss.so.2
