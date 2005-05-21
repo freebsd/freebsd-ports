@@ -15,6 +15,8 @@ DISTNAME=	python-dateutil-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Provides powerful extensions to the standard datetime module
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
