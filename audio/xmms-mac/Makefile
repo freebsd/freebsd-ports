@@ -28,7 +28,6 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 PLIST_FILES=	lib/xmms/Input/libxmms-mac.so
 
 do-install:
-	${INSTALL} -d ${TARGET_DIR}
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libxmms-mac.so ${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>
