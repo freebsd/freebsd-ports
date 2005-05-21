@@ -27,6 +27,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Incomplete pkg-plist"
+.endif
+
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libexpect530jp.so.1.2 ${PREFIX}/lib/libexpect530jp.so
