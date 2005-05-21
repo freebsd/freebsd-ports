@@ -38,6 +38,10 @@ PORTDOCS=	AUTHORS COPYING INSTALL ChangeLog README
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build.
+.endif
+
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
