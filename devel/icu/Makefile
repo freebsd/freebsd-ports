@@ -62,6 +62,12 @@ ICUMAJOR=	${PORTVERSION:S/.//:R}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR}
 PLIST_SUB+=	ICUVER=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Floating point exception during build on alpha"
+.endif
+
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	#
@@ -101,4 +107,4 @@ post-build: iotest cintltst
 	#	`make intltest' manually.
 	#
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
