@@ -752,6 +752,7 @@ blwm		ports/x11-wm/blwm
 bmeps		ports/graphics/bmeps
 bmf		ports/mail/bmf
 bmon		ports/net/bmon
+bmp-alarm	ports/x11-clocks/bmp-alarm
 bmp-docklet	ports/deskutils/bmp-docklet
 bmp-extra-plugins	ports/multimedia/bmp-extra-plugins
 bmp-faad	ports/audio/bmp-faad
