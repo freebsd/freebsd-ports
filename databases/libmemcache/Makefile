@@ -26,6 +26,10 @@ OPTIONS=	DEBUG	"Build with debugging turned on" off
 PMKARGS=	-e debug
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 do-configure:
 	cd ${WRKSRC}; ${LOCALBASE}/bin/pmk ${PMKARGS}
 
