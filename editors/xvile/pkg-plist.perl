@@ -28,7 +28,9 @@ lib/xvile/vile-esql-filt
 lib/xvile/vile-est-filt
 lib/xvile/vile-html-filt
 lib/xvile/vile-imake-filt
+lib/xvile/vile-ini-filt
 lib/xvile/vile-info-filt
+lib/xvile/vile-iss-filt
 lib/xvile/vile-latex-filt
 lib/xvile/vile-lex-filt
 lib/xvile/vile-lisp-filt
@@ -148,6 +150,8 @@ share/xvile/vile/est.keywords
 share/xvile/vile/fdl.keywords
 share/xvile/vile/html.keywords
 share/xvile/vile/imake.keywords
+share/xvile/vile/ini.keywords
+share/xvile/vile/iss.keywords
 share/xvile/vile/java.keywords
 share/xvile/vile/js.keywords
 share/xvile/vile/latex.keywords
@@ -157,6 +161,7 @@ share/xvile/vile/m4.keywords
 share/xvile/vile/mail.keywords
 share/xvile/vile/make.keywords
 share/xvile/vile/nr.keywords
+share/xvile/vile/nsis.keywords
 share/xvile/vile/perl.keywords
 share/xvile/vile/py.keywords
 share/xvile/vile/pot.keywords

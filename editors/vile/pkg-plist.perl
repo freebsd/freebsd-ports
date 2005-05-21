@@ -27,6 +27,8 @@ lib/vile/vile-esql-filt
 lib/vile/vile-est-filt
 lib/vile/vile-html-filt
 lib/vile/vile-imake-filt
+lib/vile/vile-ini-filt
+lib/vile/vile-iss-filt
 lib/vile/vile-info-filt
 lib/vile/vile-latex-filt
 lib/vile/vile-lex-filt
@@ -144,6 +146,8 @@ share/vile/est.keywords
 share/vile/fdl.keywords
 share/vile/html.keywords
 share/vile/imake.keywords
+share/vile/ini.keywords
+share/vile/iss.keywords
 share/vile/java.keywords
 share/vile/js.keywords
 share/vile/latex.keywords
@@ -153,6 +157,7 @@ share/vile/m4.keywords
 share/vile/mail.keywords
 share/vile/make.keywords
 share/vile/nr.keywords
+share/vile/nsis.keywords
 share/vile/perl.keywords
 share/vile/ps.keywords
 share/vile/py.keywords
