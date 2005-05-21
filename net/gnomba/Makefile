@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	gnomba
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	GNOME compliant browser of SMB shares
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomehier
 USE_PERL5_BUILD=yes
