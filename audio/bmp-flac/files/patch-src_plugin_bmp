@@ -1,0 +1,31 @@
+--- src/plugin_bmp/Makefile.in.orig	Mon Apr 12 21:36:08 2004
++++ src/plugin_bmp/Makefile.in	Sun May 22 00:57:39 2005
+@@ -77,8 +77,7 @@
+ 	$(top_builddir)/src/share/grabbag/libgrabbag.la \
+ 	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
+ 	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
+-	$(top_builddir)/src/share/utf8/libutf8.la \
+-	$(top_builddir)/src/libFLAC/libFLAC.la
++	$(top_builddir)/src/share/utf8/libutf8.la
+ am__libbmp_flac_la_SOURCES_DIST = charset.c configure.c plugin.c \
+ 	wrap_id3.c fileinfo.c
+ am__objects_1 = charset.lo configure.lo plugin.lo wrap_id3.lo \
+@@ -266,7 +265,7 @@
+ 	wrap_id3.h
+ 
+ INCLUDES = -I$(top_srcdir)/src
+-bmpinputplugindir = $(HOME)/.bmp/Plugins
++bmpinputplugindir = ${PREFIX}/lib/bmp/Input
+ bmpinputplugin_LTLIBRARIES = libbmp-flac.la
+ plugin_sources = charset.c configure.c plugin.c wrap_id3.c fileinfo.c
+ @FLaC__HAS_ID3LIB_FALSE@libbmp_flac_la_SOURCES = $(plugin_sources)
+@@ -286,8 +285,7 @@
+ 	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
+ 	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
+ 	$(top_builddir)/src/share/utf8/libutf8.la \
+-	$(top_builddir)/src/libFLAC/libFLAC.la \
+-	-L$(top_builddir)/src/libFLAC/.libs \
++	-lFLAC \
+ 	@BMP_LIBS@ \
+ 	@ID3LIB_LIBS@
+ 
