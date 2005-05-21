@@ -1,6 +1,31 @@
---- Makefile.in.orig	Sun Oct 10 23:12:40 1999
-+++ Makefile.in	Sat Oct 16 20:24:14 1999
-@@ -31,6 +31,7 @@
+--- Makefile.in.orig	Sun Mar  6 01:23:40 2005
++++ Makefile.in	Sat May 21 18:45:15 2005
+@@ -20,17 +20,29 @@
+ SHELL = /bin/sh
+ 
+ compile:
++	for F in psgml.el psgml.texi; do \
++		sed -e "s,@[p]refix@,${prefix}," < $$F > $$F.tmp; \
++		mv $$F.tmp $$F; \
++	done
+ 	$(EMACS) $(FLAGS) -f psgml-compile-files
+ 
+-all: 
+-	rm -f *.elc ; $(EMACS) $(FLAGS) -f psgml-compile-files
++info:
++	for p in psgml psgml-api; do \
++		$(EMACS) -batch -q -no-site-file -l texinfmt \
++		-f batch-texinfo-format $$p.texi; \
++	done
+ 
++all: 
++	rm -f *.elc
++	${MAKE} compile
++	${MAKE} info
+ 
+-install: compile 
++install:
+ 	$(SHELL) mkinstalldirs $(lispdir)
  	for p in *.elc; do \
  	  echo " $(INSTALL_DATA) $$p $(lispdir)/$$p"; \
  	  $(INSTALL_DATA) $$p $(lispdir)/$$p; \
@@ -8,7 +33,7 @@
  	done
  	$(INSTALL_DATA) iso88591.map $(lispdir)
  
-@@ -42,8 +43,8 @@
+@@ -39,8 +51,8 @@
  	$(INSTALL_DATA) psgml-api.info $(infodir)
  	if $(SHELL) -c 'install-info --version' \
  		>/dev/null 2>&1; then \
