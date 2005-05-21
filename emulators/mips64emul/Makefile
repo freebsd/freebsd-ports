@@ -19,7 +19,13 @@ CONFIGURE_ARGS=	--nox11
 
 PLIST_FILES=	bin/mips64emul
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mips64emul ${PREFIX}/bin/mips64emul
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
