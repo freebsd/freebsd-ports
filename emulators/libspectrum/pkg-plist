@@ -1,9 +1,8 @@
 @comment $FreeBSD$
 include/libspectrum.h
 lib/libspectrum.a
-lib/libspectrum.la
 lib/libspectrum.so
-lib/libspectrum.so.2
+lib/libspectrum.so.4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
