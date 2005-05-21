@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Fri May 20 16:54:16 2005
++++ Makefile.am	Fri May 20 16:54:24 2005
+@@ -36,7 +36,7 @@
+ 	@echo
+ 
+ xhydra:	
+-	-cd hydra-gtk && ./make_xhydra.sh
++	-cd hydra-gtk && sh make_xhydra.sh
+ 
+ pw-inspector: pw-inspector.c
+ 	-$(CC) $(OPTS) -o pw-inspector pw-inspector.c
