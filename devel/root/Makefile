@@ -151,7 +151,7 @@ CONFIGURE_ARGS+=	--disable-srp
 BROKEN=			Does not compile
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 BROKEN=			Does not compile
 .endif
 
