@@ -15,6 +15,8 @@ MASTER_SITES=	http://linvdr.org/download/tosvcd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SVCD transcoder
 
+ONLY_FOR_ARCHS=	i386
+
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
 
@@ -26,10 +28,4 @@ MAKE_ENV=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on alpha or amd64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
