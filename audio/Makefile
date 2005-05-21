@@ -47,6 +47,7 @@
     SUBDIR += bladeenc
     SUBDIR += blop
     SUBDIR += bmp-faad
+    SUBDIR += bmp-flac
     SUBDIR += bmp-htmlplaylist
     SUBDIR += bmp-scrobbler
     SUBDIR += bmp-songchange

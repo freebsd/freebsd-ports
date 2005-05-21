@@ -1,0 +1,22 @@
+--- configure.orig	Mon Apr 12 20:29:48 2004
++++ configure	Sun May 22 00:46:57 2005
+@@ -19040,6 +19040,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -21137,9 +21138,9 @@
+ if test x$debug = xtrue; then
+ 	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -g -O0 -DDEBUG"
+ else
+-	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O2 -DNDEBUG"
++	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -DNDEBUG"
+ 	if test x$GCC = xyes; then
+-		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
++		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -Wall -W -Winline -DFLaC__INLINE=__inline__"
+ 	fi
+ fi
+ CFLAGS="$OUR_CFLAGS_HEAD $CFLAGS"
