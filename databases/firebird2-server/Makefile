@@ -7,6 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
@@ -54,6 +55,8 @@ BINMODE=	550
 SHAREOWN=	firebird
 SHAREGRP=	firebird
 
+SUB_FILES=	pkg-install pkg-message aliases.conf
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 
@@ -67,6 +70,10 @@ ALL_TARGET=	firebird_basic libfbembed embed_gfix embed_gbak embed_isql embed_gpr
 		embed_util embed_gdef embed_qli libfbclient extlib
 
 INSTALLS_SHLIB=	yes
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
@@ -85,39 +92,24 @@ pre-everything::
 .if !defined(BATCH)
 	@sleep 10
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^\(LINK_OPTS +=.*\)$$|\1 -L${LOCALBASE}/lib|' \
-		${WRKSRC}/builds/posix/Makefile.in.inet_server
-
-post-build:
-	${SED} 's|%%PREFIX%%|${PREFIX}|g' \
-		< ${FILESDIR}/pkg-message.in \
-		> ${PKGMESSAGE}
-
-	${SED} -e 's|%%PREFIX%%|${PREFIX}/firebird|g' \
-		< ${FILESDIR}/pkg-install.in \
-		> ${PKGINSTALL}
-
-	${SED} -e "s|%%PREFIX%%|${PREFIX}/firebird|g" \
-		< ${FILESDIR}/aliases.conf.in \
-		> ${WRKDIR}/aliases.conf
-
-pre-install:
-	${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-
-post-install:
-	${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 .endif
 
-patch-autotools:
-	@${DO_NADA}
+post-patch:
+.if !defined(CLIENT_ONLY)
+	@${REINPLACE_CMD} -e 's|^\(LINK_OPTS +=.*\)$$|\1 -L${LOCALBASE}/lib|' \
+		${WRKSRC}/builds/posix/Makefile.in.inet_server
+.endif
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/src/jrd/gds.cpp
 
-run-autotools:
-	@${DO_NADA}
+.if !defined(CLIENT_ONLY)
+pre-install:
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+
+post-install:
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
@@ -126,6 +118,12 @@ do-configure:
 post-configure:
 	@${REINPLACE_CMD} -e 's|__attribute__ ((__unused__));||' \
 		${WRKSRC}/src/dsql/parse.cpp
+	@${REINPLACE_CMD} -e 's|firebird\.conf|${PREFIX}/etc/firebird.conf|g; \
+			      s|root_dir + string(CONFIG_FILE)|string(CONFIG_FILE)|g' \
+		${WRKSRC}/src/jrd/os/posix/config_root.cpp
+
+do-build:
+	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} ${GMAKE} ${ALL_TARGET})
 
 do-install:
 .if !defined(CLIENT_ONLY)
@@ -139,11 +137,9 @@ do-install:
 .endfor
 
 	${INSTALL_DATA} ${WRKDIR}/aliases.conf ${PREFIX}/firebird/aliases.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${PREFIX}/firebird/firebird.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/security.fdb ${PREFIX}/firebird/security.fdb.sample
 	${CHMOD} 660 ${PREFIX}/firebird/security.fdb.sample
 
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/firebird.msg ${PREFIX}/firebird/firebird.msg
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/help/help.fdb ${PREFIX}/firebird/help
 
 .for f in ib_udf.so fbudf.so
@@ -165,14 +161,15 @@ do-install:
 
 .else
 
-.for dir in include share/doc/firebird \
-	  share/doc/firebird/sql.extensions share/examples/firebird
-	${MKDIR} ${PREFIX}/${dir}
-.endfor
-
 .for f in fb_lock_print gbak gdef gds_drop gfix gpre gsec gstat isql qli
 	${INSTALL_PROGRAM} ${WRKSRC}/gen/firebird/bin/${f} ${PREFIX}/bin
 .endfor
+
+	@${MKDIR} ${PREFIX}/etc
+.if !exists(${PREFIX}/etc/firebird.conf)
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${PREFIX}/etc
+.endif
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${PREFIX}/etc/firebird.conf.sample
 
 	${INSTALL_PROGRAM} ${WRKSRC}/gen/firebird/lib/libfbclient.so.${PORTVERSION} ${PREFIX}/lib
 	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libfbclient.so.1
@@ -187,15 +184,23 @@ do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/gen/firebird/lib/libib_util.so ${PREFIX}/lib
 
+	@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/include/*.h ${PREFIX}/include
 
-	${INSTALL_DATA} ${WRKSRC}/doc/WhatsNew ${PREFIX}/share/doc/firebird
-	${INSTALL_DATA} ${WRKSRC}/doc/README.* ${PREFIX}/share/doc/firebird
-	${INSTALL_DATA} ${WRKSRC}/doc/README.user ${PREFIX}/share/doc/firebird/README
-	${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/README.* ${PREFIX}/share/doc/firebird/sql.extensions
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/firebird.msg ${DATADIR}
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/sql.extensions
+	${INSTALL_DATA} ${WRKSRC}/doc/WhatsNew ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/README.* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/README.user ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/README.* ${DOCSDIR}/sql.extensions
+.endif
 
 	# Install examples
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/examples/v5/* ${PREFIX}/share/examples/firebird
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/examples/v5/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

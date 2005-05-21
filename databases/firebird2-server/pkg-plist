@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 firebird/RELNOTES
 firebird/UDF/fbudf.so
 firebird/UDF/fbudf.sql
@@ -8,11 +9,7 @@ firebird/aliases.conf.sample
 @exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
 firebird/bin/fb_inet_server
 firebird/bin/fb_lock_mgr
-@unexec if cmp -s %D/firebird/firebird.conf %D/firebird/firebird.conf.sample; then rm -f %D/firebird/firebird.conf; fi
-firebird/firebird.conf.sample
-@exec [ -f %B/firebird.conf ] || cp %B/%f %B/firebird.conf
 @unexec [ -s %D/firebird/firebird.log ] || rm -f %D/firebird/firebird.log
-firebird/firebird.msg
 firebird/help/help.fdb
 firebird/intl/fbintl
 @unexec rm -f %D/firebird/isc_event1.`hostname`

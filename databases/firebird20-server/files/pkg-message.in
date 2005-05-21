@@ -1,8 +1,20 @@
+
 ---------------------------------------------------------
-Firebird is now installed.  A symbolic link from
-/usr/interbase -> %%PREFIX%%/firebird may be needed
-for compatibility with existing programs that use
-Firebird.
+Firebird is now installed.
+
+To start the server add the following line to /etc/services:
+
+gds_db		3050/tcp  #InterBase Database Remote Protocol
+
+And add the following line to /etc/inetd.conf
+
+gds_db	stream	tcp	nowait	firebird	%%PREFIX%%/firebird/bin/fb_inet_server  fb_inet_server
+
+And finally restart inetd.
+
+A symbolic link from /usr/interbase -> %%PREFIX%%/firebird
+may be needed for compatibility with existing programs
+that use Firebird.
 
 The symbolic link can be created with:
 
@@ -20,3 +32,4 @@ before doing anything serious with Firebird.
 
 See %%PREFIX%%/firebird/RELNOTES for more.
 ---------------------------------------------------------
+
