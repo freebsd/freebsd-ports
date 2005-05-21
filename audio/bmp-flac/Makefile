@@ -34,8 +34,8 @@ MAKEFILE=	${FILESDIR}/Makefile
 post-configure:
 	@${RM} -rf ${WRKSRC}/obj
 
-# XXX
-post-install:
-	@${RM} ${PREFIX}/lib/bmp/Input/libbmp-flac.la
+# This is to avoid libtool running ldconfig -m ${X11BASE}/lib/bmp/Input
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/plugin_bmp/.libs/libbmp-flac.so ${PREFIX}/lib/bmp/Input
 
 .include <bsd.port.mk>
