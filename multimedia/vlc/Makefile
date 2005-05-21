@@ -707,8 +707,8 @@ pre-install:
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
 .if !defined(WITHOUT_WXGTK)
-	${ECHO_CMD} "share/gnome/applications/vlc.desktop" >> ${PLIST}
-	${ECHO_CMD} "share/gnome/pixmaps/vlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/applications/vlc.desktop" >> ${PLIST}
+	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
@@ -743,17 +743,19 @@ pre-install:
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/pixmaps 2>/dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
 .if !defined(WITHOUT_WXGTK)
-	if [ ! -d ${PREFIX}/share/gnome/applications ]; then \
-		${MKDIR} ${PREFIX}/share/gnome/applications ; \
+	if [ ! -d ${PREFIX}/share/applications ]; then \
+		${MKDIR} ${PREFIX}/share/applications ; \
 	fi
-	${INSTALL_DATA} ${FILESDIR}/vlc.desktop ${PREFIX}/share/gnome/applications
-	if [ ! -d ${PREFIX}/share/gnome/pixmaps ]; then \
-		${MKDIR} ${PREFIX}/share/gnome/pixmaps ; \
+	${INSTALL_DATA} ${FILESDIR}/vlc.desktop ${PREFIX}/share/applications
+	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
+		${MKDIR} ${PREFIX}/share/pixmaps ; \
 	fi
-	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/gnome/pixmaps/vlc.png
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/vlc.png
 .endif
 	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|' \
 		${FAKEDIR}/bin/vlc-config
