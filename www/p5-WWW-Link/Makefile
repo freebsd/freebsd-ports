@@ -51,6 +51,8 @@ MAN3=	WWW::Link.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
+BROKEN=		"Incomplete pkg-plist"
+
 post-patch:
 	${PERL} -pi.bak \
 		-e 's/^\s*our\s+\(?\s*([\$$\@]\w+)\s*\)?/use vars qw($$1);$$1/;' \
