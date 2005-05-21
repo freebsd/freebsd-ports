@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	4.5
+PORTVERSION=	4.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/ \
 		${MASTER_SITE_PACKETSTORM}
@@ -18,9 +18,11 @@ MAINTAINER=	llevier@argosnet.com
 COMMENT=	Brute force attack utility working on multiple network services
 
 NO_LATEST_LINK=	yes
-PLIST_FILES=	bin/hydra
+PLIST_FILES=	bin/hydra bin/xhydra
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gtk20
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
@@ -30,6 +32,6 @@ post-patch:
 		${WRKSRC}/Makefile.am
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/hydra ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/hydra ${WRKSRC}/hydra-gtk/src/xhydra ${PREFIX}/bin
 
 .include <bsd.port.mk>
