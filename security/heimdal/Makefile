@@ -29,6 +29,10 @@ CONFIGURE_ARGS+=	--enable-shared --without-krb4
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=			"Incomplete pkg-plist on 4.x"
+.endif
+
 .if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
