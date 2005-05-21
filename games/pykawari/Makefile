@@ -43,7 +43,7 @@ CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
 USE_GCC=	3.3
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
 
