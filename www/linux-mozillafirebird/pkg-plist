@@ -1,553 +1,553 @@
-bin/linux-mozillafirebird
-lib/linux-mozillafirebird/MozillaFirebird
-lib/linux-mozillafirebird/MozillaFirebird-bin
-lib/linux-mozillafirebird/chrome/US.jar
-lib/linux-mozillafirebird/chrome/browser.jar
-lib/linux-mozillafirebird/chrome/chrome.rdf
-lib/linux-mozillafirebird/chrome/chromelist.txt
-lib/linux-mozillafirebird/chrome/classic.jar
-lib/linux-mozillafirebird/chrome/comm.jar
-lib/linux-mozillafirebird/chrome/embed-sample.jar
-lib/linux-mozillafirebird/chrome/en-US.jar
-lib/linux-mozillafirebird/chrome/en-mac.jar
-lib/linux-mozillafirebird/chrome/en-unix.jar
-lib/linux-mozillafirebird/chrome/en-win.jar
-lib/linux-mozillafirebird/chrome/installed-chrome.txt
-lib/linux-mozillafirebird/chrome/modern.jar
-lib/linux-mozillafirebird/chrome/overlayinfo/browser/content/overlays.rdf
-lib/linux-mozillafirebird/chrome/overlayinfo/communicator/content/overlays.rdf
-lib/linux-mozillafirebird/chrome/overlayinfo/messenger/content/overlays.rdf
-lib/linux-mozillafirebird/chrome/overlayinfo/navigator/content/overlays.rdf
-lib/linux-mozillafirebird/chrome/pipnss.jar
-lib/linux-mozillafirebird/chrome/pippki.jar
-lib/linux-mozillafirebird/chrome/toolkit.jar
-lib/linux-mozillafirebird/components/accessibility.xpt
-lib/linux-mozillafirebird/components/appshell.xpt
-lib/linux-mozillafirebird/components/autocomplete.xpt
-lib/linux-mozillafirebird/components/autoconfig.xpt
-lib/linux-mozillafirebird/components/bookmarks.xpt
-lib/linux-mozillafirebird/components/caps.xpt
-lib/linux-mozillafirebird/components/chardet.xpt
-lib/linux-mozillafirebird/components/chrome.xpt
-lib/linux-mozillafirebird/components/commandhandler.xpt
-lib/linux-mozillafirebird/components/composer.xpt
-lib/linux-mozillafirebird/components/compreg.dat
-lib/linux-mozillafirebird/components/content_base.xpt
-lib/linux-mozillafirebird/components/content_html.xpt
-lib/linux-mozillafirebird/components/content_htmldoc.xpt
-lib/linux-mozillafirebird/components/content_xmldoc.xpt
-lib/linux-mozillafirebird/components/content_xslt.xpt
-lib/linux-mozillafirebird/components/cookie.xpt
-lib/linux-mozillafirebird/components/directory.xpt
-lib/linux-mozillafirebird/components/docshell.xpt
-lib/linux-mozillafirebird/components/dom.xpt
-lib/linux-mozillafirebird/components/dom_base.xpt
-lib/linux-mozillafirebird/components/dom_core.xpt
-lib/linux-mozillafirebird/components/dom_css.xpt
-lib/linux-mozillafirebird/components/dom_events.xpt
-lib/linux-mozillafirebird/components/dom_html.xpt
-lib/linux-mozillafirebird/components/dom_range.xpt
-lib/linux-mozillafirebird/components/dom_stylesheets.xpt
-lib/linux-mozillafirebird/components/dom_traversal.xpt
-lib/linux-mozillafirebird/components/dom_views.xpt
-lib/linux-mozillafirebird/components/dom_xbl.xpt
-lib/linux-mozillafirebird/components/dom_xpath.xpt
-lib/linux-mozillafirebird/components/dom_xul.xpt
-lib/linux-mozillafirebird/components/downloads.xpt
-lib/linux-mozillafirebird/components/editor.xpt
-lib/linux-mozillafirebird/components/embed_base.xpt
-lib/linux-mozillafirebird/components/exthandler.xpt
-lib/linux-mozillafirebird/components/filepicker.xpt
-lib/linux-mozillafirebird/components/find.xpt
-lib/linux-mozillafirebird/components/gfx.xpt
-lib/linux-mozillafirebird/components/helperAppDlg.xpt
-lib/linux-mozillafirebird/components/history.xpt
-lib/linux-mozillafirebird/components/htmlparser.xpt
-lib/linux-mozillafirebird/components/imglib2.xpt
-lib/linux-mozillafirebird/components/intl.xpt
-lib/linux-mozillafirebird/components/jar.xpt
-lib/linux-mozillafirebird/components/jsconsole-clhandler.js
-lib/linux-mozillafirebird/components/jsconsole.xpt
-lib/linux-mozillafirebird/components/jsdservice.xpt
-lib/linux-mozillafirebird/components/jsurl.xpt
-lib/linux-mozillafirebird/components/layout_base.xpt
-lib/linux-mozillafirebird/components/layout_xul.xpt
-lib/linux-mozillafirebird/components/layout_xul_tree.xpt
-lib/linux-mozillafirebird/components/libaccessibility.so
-lib/linux-mozillafirebird/components/libappcomps.so
-lib/linux-mozillafirebird/components/libautoconfig.so
-lib/linux-mozillafirebird/components/libbrowsercomps.so
-lib/linux-mozillafirebird/components/libcaps.so
-lib/linux-mozillafirebird/components/libchrome.so
-lib/linux-mozillafirebird/components/libcomposer.so
-lib/linux-mozillafirebird/components/libcookie.so
-lib/linux-mozillafirebird/components/libdocshell.so
-lib/linux-mozillafirebird/components/libeditor.so
-lib/linux-mozillafirebird/components/libembedcomponents.so
-lib/linux-mozillafirebird/components/libfileview.so
-lib/linux-mozillafirebird/components/libgfx_gtk.so
-lib/linux-mozillafirebird/components/libgfxps.so
-lib/linux-mozillafirebird/components/libgfxxprint.so
-lib/linux-mozillafirebird/components/libgklayout.so
-lib/linux-mozillafirebird/components/libgkplugin.so
-lib/linux-mozillafirebird/components/libhtmlpars.so
-lib/linux-mozillafirebird/components/libi18n.so
-lib/linux-mozillafirebird/components/libimglib2.so
-lib/linux-mozillafirebird/components/libjar50.so
-lib/linux-mozillafirebird/components/libjsd.so
-lib/linux-mozillafirebird/components/libjsdom.so
-lib/linux-mozillafirebird/components/libmork.so
-lib/linux-mozillafirebird/components/libmozfind.so
-lib/linux-mozillafirebird/components/libnecko.so
-lib/linux-mozillafirebird/components/libnecko2.so
-lib/linux-mozillafirebird/components/libnsappshell.so
-lib/linux-mozillafirebird/components/libnsprefm.so
-lib/linux-mozillafirebird/components/liboji.so
-lib/linux-mozillafirebird/components/libp3p.so
-lib/linux-mozillafirebird/components/libpipboot.so
-lib/linux-mozillafirebird/components/libpipnss.so
-lib/linux-mozillafirebird/components/libpippki.so
-lib/linux-mozillafirebird/components/libpref.so
-lib/linux-mozillafirebird/components/libprofile.so
-lib/linux-mozillafirebird/components/librdf.so
-lib/linux-mozillafirebird/components/libtoolkitcomps.so
-lib/linux-mozillafirebird/components/libtransformiix.so
-lib/linux-mozillafirebird/components/libtxmgr.so
-lib/linux-mozillafirebird/components/libtypeaheadfind.so
-lib/linux-mozillafirebird/components/libuconv.so
-lib/linux-mozillafirebird/components/libucvmath.so
-lib/linux-mozillafirebird/components/libuniversalchardet.so
-lib/linux-mozillafirebird/components/libwebbrwsr.so
-lib/linux-mozillafirebird/components/libwebsrvcs.so
-lib/linux-mozillafirebird/components/libwidget_gtk.so
-lib/linux-mozillafirebird/components/libxmlextras.so
-lib/linux-mozillafirebird/components/libxpcom_compat_c.so
-lib/linux-mozillafirebird/components/libxpconnect.so
-lib/linux-mozillafirebird/components/libxpinstall.so
-lib/linux-mozillafirebird/components/libxremote_client.so
-lib/linux-mozillafirebird/components/libxremoteservice.so
-lib/linux-mozillafirebird/components/locale.xpt
-lib/linux-mozillafirebird/components/lwbrk.xpt
-lib/linux-mozillafirebird/components/mimetype.xpt
-lib/linux-mozillafirebird/components/mozbrwsr.xpt
-lib/linux-mozillafirebird/components/mozfind.xpt
-lib/linux-mozillafirebird/components/necko.xpt
-lib/linux-mozillafirebird/components/necko_about.xpt
-lib/linux-mozillafirebird/components/necko_cache.xpt
-lib/linux-mozillafirebird/components/necko_cookie.xpt
-lib/linux-mozillafirebird/components/necko_data.xpt
-lib/linux-mozillafirebird/components/necko_dns.xpt
-lib/linux-mozillafirebird/components/necko_file.xpt
-lib/linux-mozillafirebird/components/necko_ftp.xpt
-lib/linux-mozillafirebird/components/necko_http.xpt
-lib/linux-mozillafirebird/components/necko_jar.xpt
-lib/linux-mozillafirebird/components/necko_res.xpt
-lib/linux-mozillafirebird/components/necko_socket.xpt
-lib/linux-mozillafirebird/components/necko_strconv.xpt
-lib/linux-mozillafirebird/components/necko_viewsource.xpt
-lib/linux-mozillafirebird/components/nsCloseAllWindows.js
-lib/linux-mozillafirebird/components/nsDictionary.js
-lib/linux-mozillafirebird/components/nsDownloadProgressListener.js
-lib/linux-mozillafirebird/components/nsFilePicker.js
-lib/linux-mozillafirebird/components/nsHelperAppDlg.js
-lib/linux-mozillafirebird/components/nsInterfaceInfoToIDL.js
-lib/linux-mozillafirebird/components/nsKillAll.js
-lib/linux-mozillafirebird/components/nsProgressDialog.js
-lib/linux-mozillafirebird/components/nsProxyAutoConfig.js
-lib/linux-mozillafirebird/components/nsResetPref.js
-lib/linux-mozillafirebird/components/nsSidebar.js
-lib/linux-mozillafirebird/components/nsUpdateNotifier.js
-lib/linux-mozillafirebird/components/nsXmlRpcClient.js
-lib/linux-mozillafirebird/components/oji.xpt
-lib/linux-mozillafirebird/components/p3p.xpt
-lib/linux-mozillafirebird/components/passwordmgr.xpt
-lib/linux-mozillafirebird/components/pipboot.xpt
-lib/linux-mozillafirebird/components/pipnss.xpt
-lib/linux-mozillafirebird/components/pippki.xpt
-lib/linux-mozillafirebird/components/plugin.xpt
-lib/linux-mozillafirebird/components/pref.xpt
-lib/linux-mozillafirebird/components/prefetch.xpt
-lib/linux-mozillafirebird/components/prefmigr.xpt
-lib/linux-mozillafirebird/components/profile.xpt
-lib/linux-mozillafirebird/components/progressDlg.xpt
-lib/linux-mozillafirebird/components/proxyObjInst.xpt
-lib/linux-mozillafirebird/components/rdf.xpt
-lib/linux-mozillafirebird/components/related.xpt
-lib/linux-mozillafirebird/components/satchel.xpt
-lib/linux-mozillafirebird/components/search.xpt
-lib/linux-mozillafirebird/components/shistory.xpt
-lib/linux-mozillafirebird/components/sidebar.xpt
-lib/linux-mozillafirebird/components/timebomb.xpt
-lib/linux-mozillafirebird/components/txmgr.xpt
-lib/linux-mozillafirebird/components/txtsvc.xpt
-lib/linux-mozillafirebird/components/typeaheadfind.xpt
-lib/linux-mozillafirebird/components/ucnative.xpt
-lib/linux-mozillafirebird/components/uconv.xpt
-lib/linux-mozillafirebird/components/unicharutil.xpt
-lib/linux-mozillafirebird/components/uriloader.xpt
-lib/linux-mozillafirebird/components/util.xpt
-lib/linux-mozillafirebird/components/webBrowser_core.xpt
-lib/linux-mozillafirebird/components/webbrowserpersist.xpt
-lib/linux-mozillafirebird/components/webshell_idls.xpt
-lib/linux-mozillafirebird/components/websrvcs.xpt
-lib/linux-mozillafirebird/components/widget.xpt
-lib/linux-mozillafirebird/components/windowds.xpt
-lib/linux-mozillafirebird/components/windowwatcher.xpt
-lib/linux-mozillafirebird/components/xml-rpc.xpt
-lib/linux-mozillafirebird/components/xmlextras.xpt
-lib/linux-mozillafirebird/components/xpcom_base.xpt
-lib/linux-mozillafirebird/components/xpcom_components.xpt
-lib/linux-mozillafirebird/components/xpcom_ds.xpt
-lib/linux-mozillafirebird/components/xpcom_io.xpt
-lib/linux-mozillafirebird/components/xpcom_obsolete.xpt
-lib/linux-mozillafirebird/components/xpcom_threads.xpt
-lib/linux-mozillafirebird/components/xpcom_xpti.xpt
-lib/linux-mozillafirebird/components/xpconnect.xpt
-lib/linux-mozillafirebird/components/xpinstall.xpt
-lib/linux-mozillafirebird/components/xpti.dat
-lib/linux-mozillafirebird/components/xremoteservice.xpt
-lib/linux-mozillafirebird/components/xuldoc.xpt
-lib/linux-mozillafirebird/components/xultmpl.xpt
-lib/linux-mozillafirebird/defaults/autoconfig/platform.js
-lib/linux-mozillafirebird/defaults/autoconfig/prefcalls.js
-lib/linux-mozillafirebird/defaults/pref/all.js
-lib/linux-mozillafirebird/defaults/pref/editor.js
-lib/linux-mozillafirebird/defaults/pref/mailnews.js
-lib/linux-mozillafirebird/defaults/pref/security-prefs.js
-lib/linux-mozillafirebird/defaults/pref/unix.js
-lib/linux-mozillafirebird/defaults/pref/xpinstall.js
-lib/linux-mozillafirebird/defaults/profile/US/bookmarks.html
-lib/linux-mozillafirebird/defaults/profile/US/chrome/userChrome-example.css
-lib/linux-mozillafirebird/defaults/profile/US/chrome/userContent-example.css
-lib/linux-mozillafirebird/defaults/profile/US/localstore.rdf
-lib/linux-mozillafirebird/defaults/profile/US/mimeTypes.rdf
-lib/linux-mozillafirebird/defaults/profile/US/panels.rdf
-lib/linux-mozillafirebird/defaults/profile/US/search.rdf
-lib/linux-mozillafirebird/defaults/profile/bookmarks.html
-lib/linux-mozillafirebird/defaults/profile/chrome/userChrome-example.css
-lib/linux-mozillafirebird/defaults/profile/chrome/userContent-example.css
-lib/linux-mozillafirebird/defaults/profile/localstore.rdf
-lib/linux-mozillafirebird/defaults/profile/mimeTypes.rdf
-lib/linux-mozillafirebird/defaults/profile/panels.rdf
-lib/linux-mozillafirebird/defaults/profile/search.rdf
-lib/linux-mozillafirebird/icons/mozicon16.xpm
-lib/linux-mozillafirebird/icons/mozicon50.xpm
-lib/linux-mozillafirebird/libgkgfx.so
-lib/linux-mozillafirebird/libgtkembedmoz.so
-lib/linux-mozillafirebird/libgtksuperwin.so
-lib/linux-mozillafirebird/libgtkxtbin.so
-lib/linux-mozillafirebird/libjsj.so
-lib/linux-mozillafirebird/libmozjs.so
-lib/linux-mozillafirebird/libmozz.so
-lib/linux-mozillafirebird/libnspr4.so
-lib/linux-mozillafirebird/libnss3.so
-lib/linux-mozillafirebird/libnssckbi.so
-lib/linux-mozillafirebird/libplc4.so
-lib/linux-mozillafirebird/libplds4.so
-lib/linux-mozillafirebird/libsmime3.so
-lib/linux-mozillafirebird/libsoftokn3.chk
-lib/linux-mozillafirebird/libsoftokn3.so
-lib/linux-mozillafirebird/libssl3.so
-lib/linux-mozillafirebird/libxlibrgb.so
-lib/linux-mozillafirebird/libxpcom.so
-lib/linux-mozillafirebird/libxpcom_compat.so
-lib/linux-mozillafirebird/libxpistub.so
-lib/linux-mozillafirebird/linkfarm
-lib/linux-mozillafirebird/mangle
-lib/linux-mozillafirebird/mozilla-xremote-client
-lib/linux-mozillafirebird/plugins/libnullplugin.so
-lib/linux-mozillafirebird/regchrome
-lib/linux-mozillafirebird/regxpcom
-lib/linux-mozillafirebird/res/EditorOverride.css
-lib/linux-mozillafirebird/res/arrow.gif
-lib/linux-mozillafirebird/res/arrowd.gif
-lib/linux-mozillafirebird/res/bloatcycle.html
-lib/linux-mozillafirebird/res/broken-image.gif
-lib/linux-mozillafirebird/res/builtin/htmlBindings.xml
-lib/linux-mozillafirebird/res/builtin/platformHTMLBindings.xml
-lib/linux-mozillafirebird/res/charsetData.properties
-lib/linux-mozillafirebird/res/charsetalias.properties
-lib/linux-mozillafirebird/res/cmessage.txt
-lib/linux-mozillafirebird/res/dtd/mathml.dtd
-lib/linux-mozillafirebird/res/dtd/xhtml11.dtd
-lib/linux-mozillafirebird/res/entityTables/html40Latin1.properties
-lib/linux-mozillafirebird/res/entityTables/html40Special.properties
-lib/linux-mozillafirebird/res/entityTables/html40Symbols.properties
-lib/linux-mozillafirebird/res/entityTables/htmlEntityVersions.properties
-lib/linux-mozillafirebird/res/entityTables/mathml20.properties
-lib/linux-mozillafirebird/res/entityTables/transliterate.properties
-lib/linux-mozillafirebird/res/fonts/mathfont.properties
-lib/linux-mozillafirebird/res/fonts/mathfontCMEX10.properties
-lib/linux-mozillafirebird/res/fonts/mathfontCMSY10.properties
-lib/linux-mozillafirebird/res/fonts/mathfontMTExtra.properties
-lib/linux-mozillafirebird/res/fonts/mathfontMath1.properties
-lib/linux-mozillafirebird/res/fonts/mathfontMath2.properties
-lib/linux-mozillafirebird/res/fonts/mathfontMath4.properties
-lib/linux-mozillafirebird/res/fonts/mathfontPUA.properties
-lib/linux-mozillafirebird/res/fonts/mathfontSymbol.properties
-lib/linux-mozillafirebird/res/forms.css
-lib/linux-mozillafirebird/res/grabber.gif
-lib/linux-mozillafirebird/res/html.css
-lib/linux-mozillafirebird/res/html/gopher-audio.gif
-lib/linux-mozillafirebird/res/html/gopher-binary.gif
-lib/linux-mozillafirebird/res/html/gopher-find.gif
-lib/linux-mozillafirebird/res/html/gopher-image.gif
-lib/linux-mozillafirebird/res/html/gopher-menu.gif
-lib/linux-mozillafirebird/res/html/gopher-movie.gif
-lib/linux-mozillafirebird/res/html/gopher-sound.gif
-lib/linux-mozillafirebird/res/html/gopher-telnet.gif
-lib/linux-mozillafirebird/res/html/gopher-text.gif
-lib/linux-mozillafirebird/res/html/gopher-unknown.gif
-lib/linux-mozillafirebird/res/langGroups.properties
-lib/linux-mozillafirebird/res/language.properties
-lib/linux-mozillafirebird/res/loading-image.gif
-lib/linux-mozillafirebird/res/mathml.css
-lib/linux-mozillafirebird/res/platform-forms.css
-lib/linux-mozillafirebird/res/quirk.css
-lib/linux-mozillafirebird/res/rdf/article.gif
-lib/linux-mozillafirebird/res/rdf/document.gif
-lib/linux-mozillafirebird/res/rdf/dom-test-1.xul
-lib/linux-mozillafirebird/res/rdf/dom-test-2.xul
-lib/linux-mozillafirebird/res/rdf/dom-test-3.xul
-lib/linux-mozillafirebird/res/rdf/dom-test-4.css
-lib/linux-mozillafirebird/res/rdf/dom-test-4.xul
-lib/linux-mozillafirebird/res/rdf/dom-test-5.xul
-lib/linux-mozillafirebird/res/rdf/dom-test-6.xul
-lib/linux-mozillafirebird/res/rdf/dom-test-7.xul
-lib/linux-mozillafirebird/res/rdf/dom-test-8.xul
-lib/linux-mozillafirebird/res/rdf/folder-closed.gif
-lib/linux-mozillafirebird/res/rdf/folder-open.gif
-lib/linux-mozillafirebird/res/rdf/ignore-test.xul
-lib/linux-mozillafirebird/res/rdf/loading.gif
-lib/linux-mozillafirebird/res/rdf/xpidl-test-1.xul
-lib/linux-mozillafirebird/res/sample.unixpsfonts.properties
-lib/linux-mozillafirebird/res/table-add-column-after-active.gif
-lib/linux-mozillafirebird/res/table-add-column-after-hover.gif
-lib/linux-mozillafirebird/res/table-add-column-after.gif
-lib/linux-mozillafirebird/res/table-add-column-before-active.gif
-lib/linux-mozillafirebird/res/table-add-column-before-hover.gif
-lib/linux-mozillafirebird/res/table-add-column-before.gif
-lib/linux-mozillafirebird/res/table-add-row-after-active.gif
-lib/linux-mozillafirebird/res/table-add-row-after-hover.gif
-lib/linux-mozillafirebird/res/table-add-row-after.gif
-lib/linux-mozillafirebird/res/table-add-row-before-active.gif
-lib/linux-mozillafirebird/res/table-add-row-before-hover.gif
-lib/linux-mozillafirebird/res/table-add-row-before.gif
-lib/linux-mozillafirebird/res/table-remove-column-active.gif
-lib/linux-mozillafirebird/res/table-remove-column-hover.gif
-lib/linux-mozillafirebird/res/table-remove-column.gif
-lib/linux-mozillafirebird/res/table-remove-row-active.gif
-lib/linux-mozillafirebird/res/table-remove-row-hover.gif
-lib/linux-mozillafirebird/res/table-remove-row.gif
-lib/linux-mozillafirebird/res/ua.css
-lib/linux-mozillafirebird/res/unixcharset.properties
-lib/linux-mozillafirebird/res/viewer.properties
-lib/linux-mozillafirebird/res/viewsource.css
-lib/linux-mozillafirebird/run-mozilla.sh
-lib/linux-mozillafirebird/searchplugins/google.gif
-lib/linux-mozillafirebird/searchplugins/google.src
-lib/linux-mozillafirebird/shlibsign
-lib/linux-mozillafirebird/timebombgen
-lib/linux-mozillafirebird/xpicleanup
-@dirrm lib/linux-mozillafirebird/searchplugins
-@dirrm lib/linux-mozillafirebird/res/rdf
-@dirrm lib/linux-mozillafirebird/res/html
-@dirrm lib/linux-mozillafirebird/res/fonts
-@dirrm lib/linux-mozillafirebird/res/entityTables
-@dirrm lib/linux-mozillafirebird/res/dtd
-@dirrm lib/linux-mozillafirebird/res/builtin
-@dirrm lib/linux-mozillafirebird/res
-@dirrm lib/linux-mozillafirebird/plugins
-@dirrm lib/linux-mozillafirebird/icons
-@dirrm lib/linux-mozillafirebird/defaults/profile/chrome
-@dirrm lib/linux-mozillafirebird/defaults/profile/US/chrome
-@dirrm lib/linux-mozillafirebird/defaults/profile/US
-@dirrm lib/linux-mozillafirebird/defaults/profile
-@dirrm lib/linux-mozillafirebird/defaults/pref
-@dirrm lib/linux-mozillafirebird/defaults/autoconfig
-@dirrm lib/linux-mozillafirebird/defaults
-@dirrm lib/linux-mozillafirebird/components
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content/passwordmgr
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content/mozapps/downloads
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content/mozapps
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content/global/widgets
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content/global-region
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content/global-platform
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content/global
-@dirrm lib/linux-mozillafirebird/chrome/toolkit/content
-@dirrm lib/linux-mozillafirebird/chrome/toolkit
-@dirrm lib/linux-mozillafirebird/chrome/pippki/content/pippki
-@dirrm lib/linux-mozillafirebird/chrome/pippki/content
-@dirrm lib/linux-mozillafirebird/chrome/pippki
-@dirrm lib/linux-mozillafirebird/chrome/pipnss/content/pipnss
-@dirrm lib/linux-mozillafirebird/chrome/pipnss/content
-@dirrm lib/linux-mozillafirebird/chrome/pipnss
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/navigator/content
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/navigator
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/messenger/content
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/messenger
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/communicator/content
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/communicator
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/browser/content
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo/browser
-@dirrm lib/linux-mozillafirebird/chrome/overlayinfo
-@dirrm lib/linux-mozillafirebird/chrome/modern/skin/modern/communicator/cookie
-@dirrm lib/linux-mozillafirebird/chrome/modern/skin/modern/communicator
-@dirrm lib/linux-mozillafirebird/chrome/modern/skin/modern
-@dirrm lib/linux-mozillafirebird/chrome/modern/skin
-@dirrm lib/linux-mozillafirebird/chrome/modern
-@dirrm lib/linux-mozillafirebird/chrome/en-win/locale/en-US/navigator-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-win/locale/en-US/global-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-win/locale/en-US/communicator-platform/pref
-@dirrm lib/linux-mozillafirebird/chrome/en-win/locale/en-US/communicator-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-win/locale/en-US
-@dirrm lib/linux-mozillafirebird/chrome/en-win/locale
-@dirrm lib/linux-mozillafirebird/chrome/en-win
-@dirrm lib/linux-mozillafirebird/chrome/en-unix/locale/en-US/navigator-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-unix/locale/en-US/global-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-unix/locale/en-US/communicator-platform/pref
-@dirrm lib/linux-mozillafirebird/chrome/en-unix/locale/en-US/communicator-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-unix/locale/en-US
-@dirrm lib/linux-mozillafirebird/chrome/en-unix/locale
-@dirrm lib/linux-mozillafirebird/chrome/en-unix
-@dirrm lib/linux-mozillafirebird/chrome/en-mac/locale/en-US/navigator-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-mac/locale/en-US/global-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-mac/locale/en-US/communicator-platform/pref
-@dirrm lib/linux-mozillafirebird/chrome/en-mac/locale/en-US/communicator-platform
-@dirrm lib/linux-mozillafirebird/chrome/en-mac/locale/en-US
-@dirrm lib/linux-mozillafirebird/chrome/en-mac/locale
-@dirrm lib/linux-mozillafirebird/chrome/en-mac
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/pippki
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/pipnss
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/passwordmgr
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/p3p
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/necko
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/navigator
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/mozapps/downloads
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/mozapps
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/global
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/cookie
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/xpinstall
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/xml
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/webservices
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/timebomb
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/sidebar
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/security
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/search
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/profile
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/pref
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/layout
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/history
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/dom
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator/directory
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/communicator
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/browser/pref
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/browser/history
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/browser/downloads
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/browser/cookieviewer
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/browser/bookmarks
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/browser
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US/autoconfig
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale/en-US
-@dirrm lib/linux-mozillafirebird/chrome/en-US/locale
-@dirrm lib/linux-mozillafirebird/chrome/en-US
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/skin/classic/embed
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/skin/classic
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/skin
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/locale/en-US/embed
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/locale/en-US
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/locale
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/content/embed
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample/content
-@dirrm lib/linux-mozillafirebird/chrome/embed-sample
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/xbl-marquee
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/p3p
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/necko
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/navigator-region
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/navigator-platform
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/navigator
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/cookie
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/xpinstall
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/xml
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/timebomb
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/sidebar
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/search
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/related
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/profile
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/pref
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/p3p
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/history
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/directory
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator/alerts
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator-region
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator-platform
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/communicator
-@dirrm lib/linux-mozillafirebird/chrome/comm/content/autoconfig
-@dirrm lib/linux-mozillafirebird/chrome/comm/content
-@dirrm lib/linux-mozillafirebird/chrome/comm
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/navigator/icons
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/navigator/btn1
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/navigator
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/mozapps/pref
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/mozapps/downloads
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/mozapps
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/messenger/smime/icons
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/messenger/smime
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/messenger/messengercompose
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/messenger/icons
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/messenger/addressbook/icons
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/messenger/addressbook
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/messenger
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/tree
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/toolbar
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/splitter
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/scrollbar/slider
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/scrollbar
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/radio
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/progressmeter
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/menu
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/icons
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/filepicker
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/console
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/checkbox
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global/arrow
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/global
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/editor/icons
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/editor
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/xpinstall
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/taskbar
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/sidebar
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/search
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/related
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/profile
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/icons
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/directory
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/cookie
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/brand
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/bookmarks
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator/alerts
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/communicator
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/browser/pref
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/browser/downloads
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/browser/bookmarks
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic/browser
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin/classic
-@dirrm lib/linux-mozillafirebird/chrome/classic/skin
-@dirrm lib/linux-mozillafirebird/chrome/classic
-@dirrm lib/linux-mozillafirebird/chrome/browser/content/browser/pref
-@dirrm lib/linux-mozillafirebird/chrome/browser/content/browser/history
-@dirrm lib/linux-mozillafirebird/chrome/browser/content/browser/downloads
-@dirrm lib/linux-mozillafirebird/chrome/browser/content/browser/cookieviewer
-@dirrm lib/linux-mozillafirebird/chrome/browser/content/browser/bookmarks
-@dirrm lib/linux-mozillafirebird/chrome/browser/content/browser
-@dirrm lib/linux-mozillafirebird/chrome/browser/content
-@dirrm lib/linux-mozillafirebird/chrome/browser
-@dirrm lib/linux-mozillafirebird/chrome/US/locale/US/navigator-region
-@dirrm lib/linux-mozillafirebird/chrome/US/locale/US/global-region
-@dirrm lib/linux-mozillafirebird/chrome/US/locale/US/communicator-region
-@dirrm lib/linux-mozillafirebird/chrome/US/locale/US/browser-region
-@dirrm lib/linux-mozillafirebird/chrome/US/locale/US
-@dirrm lib/linux-mozillafirebird/chrome/US/locale
-@dirrm lib/linux-mozillafirebird/chrome/US
-@dirrm lib/linux-mozillafirebird/chrome
-@dirrm lib/linux-mozillafirebird
+bin/%%FIREBIRD_NAME%%
+lib/%%FIREBIRD_NAME%%/MozillaFirebird
+lib/%%FIREBIRD_NAME%%/MozillaFirebird-bin
+lib/%%FIREBIRD_NAME%%/chrome/US.jar
+lib/%%FIREBIRD_NAME%%/chrome/browser.jar
+lib/%%FIREBIRD_NAME%%/chrome/chrome.rdf
+lib/%%FIREBIRD_NAME%%/chrome/chromelist.txt
+lib/%%FIREBIRD_NAME%%/chrome/classic.jar
+lib/%%FIREBIRD_NAME%%/chrome/comm.jar
+lib/%%FIREBIRD_NAME%%/chrome/embed-sample.jar
+lib/%%FIREBIRD_NAME%%/chrome/en-US.jar
+lib/%%FIREBIRD_NAME%%/chrome/en-mac.jar
+lib/%%FIREBIRD_NAME%%/chrome/en-unix.jar
+lib/%%FIREBIRD_NAME%%/chrome/en-win.jar
+lib/%%FIREBIRD_NAME%%/chrome/installed-chrome.txt
+lib/%%FIREBIRD_NAME%%/chrome/modern.jar
+lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/browser/content/overlays.rdf
+lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/communicator/content/overlays.rdf
+lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/messenger/content/overlays.rdf
+lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/navigator/content/overlays.rdf
+lib/%%FIREBIRD_NAME%%/chrome/pipnss.jar
+lib/%%FIREBIRD_NAME%%/chrome/pippki.jar
+lib/%%FIREBIRD_NAME%%/chrome/toolkit.jar
+lib/%%FIREBIRD_NAME%%/components/accessibility.xpt
+lib/%%FIREBIRD_NAME%%/components/appshell.xpt
+lib/%%FIREBIRD_NAME%%/components/autocomplete.xpt
+lib/%%FIREBIRD_NAME%%/components/autoconfig.xpt
+lib/%%FIREBIRD_NAME%%/components/bookmarks.xpt
+lib/%%FIREBIRD_NAME%%/components/caps.xpt
+lib/%%FIREBIRD_NAME%%/components/chardet.xpt
+lib/%%FIREBIRD_NAME%%/components/chrome.xpt
+lib/%%FIREBIRD_NAME%%/components/commandhandler.xpt
+lib/%%FIREBIRD_NAME%%/components/composer.xpt
+lib/%%FIREBIRD_NAME%%/components/compreg.dat
+lib/%%FIREBIRD_NAME%%/components/content_base.xpt
+lib/%%FIREBIRD_NAME%%/components/content_html.xpt
+lib/%%FIREBIRD_NAME%%/components/content_htmldoc.xpt
+lib/%%FIREBIRD_NAME%%/components/content_xmldoc.xpt
+lib/%%FIREBIRD_NAME%%/components/content_xslt.xpt
+lib/%%FIREBIRD_NAME%%/components/cookie.xpt
+lib/%%FIREBIRD_NAME%%/components/directory.xpt
+lib/%%FIREBIRD_NAME%%/components/docshell.xpt
+lib/%%FIREBIRD_NAME%%/components/dom.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_base.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_core.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_css.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_events.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_html.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_range.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_stylesheets.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_traversal.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_views.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_xbl.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_xpath.xpt
+lib/%%FIREBIRD_NAME%%/components/dom_xul.xpt
+lib/%%FIREBIRD_NAME%%/components/downloads.xpt
+lib/%%FIREBIRD_NAME%%/components/editor.xpt
+lib/%%FIREBIRD_NAME%%/components/embed_base.xpt
+lib/%%FIREBIRD_NAME%%/components/exthandler.xpt
+lib/%%FIREBIRD_NAME%%/components/filepicker.xpt
+lib/%%FIREBIRD_NAME%%/components/find.xpt
+lib/%%FIREBIRD_NAME%%/components/gfx.xpt
+lib/%%FIREBIRD_NAME%%/components/helperAppDlg.xpt
+lib/%%FIREBIRD_NAME%%/components/history.xpt
+lib/%%FIREBIRD_NAME%%/components/htmlparser.xpt
+lib/%%FIREBIRD_NAME%%/components/imglib2.xpt
+lib/%%FIREBIRD_NAME%%/components/intl.xpt
+lib/%%FIREBIRD_NAME%%/components/jar.xpt
+lib/%%FIREBIRD_NAME%%/components/jsconsole-clhandler.js
+lib/%%FIREBIRD_NAME%%/components/jsconsole.xpt
+lib/%%FIREBIRD_NAME%%/components/jsdservice.xpt
+lib/%%FIREBIRD_NAME%%/components/jsurl.xpt
+lib/%%FIREBIRD_NAME%%/components/layout_base.xpt
+lib/%%FIREBIRD_NAME%%/components/layout_xul.xpt
+lib/%%FIREBIRD_NAME%%/components/layout_xul_tree.xpt
+lib/%%FIREBIRD_NAME%%/components/libaccessibility.so
+lib/%%FIREBIRD_NAME%%/components/libappcomps.so
+lib/%%FIREBIRD_NAME%%/components/libautoconfig.so
+lib/%%FIREBIRD_NAME%%/components/libbrowsercomps.so
+lib/%%FIREBIRD_NAME%%/components/libcaps.so
+lib/%%FIREBIRD_NAME%%/components/libchrome.so
+lib/%%FIREBIRD_NAME%%/components/libcomposer.so
+lib/%%FIREBIRD_NAME%%/components/libcookie.so
+lib/%%FIREBIRD_NAME%%/components/libdocshell.so
+lib/%%FIREBIRD_NAME%%/components/libeditor.so
+lib/%%FIREBIRD_NAME%%/components/libembedcomponents.so
+lib/%%FIREBIRD_NAME%%/components/libfileview.so
+lib/%%FIREBIRD_NAME%%/components/libgfx_gtk.so
+lib/%%FIREBIRD_NAME%%/components/libgfxps.so
+lib/%%FIREBIRD_NAME%%/components/libgfxxprint.so
+lib/%%FIREBIRD_NAME%%/components/libgklayout.so
+lib/%%FIREBIRD_NAME%%/components/libgkplugin.so
+lib/%%FIREBIRD_NAME%%/components/libhtmlpars.so
+lib/%%FIREBIRD_NAME%%/components/libi18n.so
+lib/%%FIREBIRD_NAME%%/components/libimglib2.so
+lib/%%FIREBIRD_NAME%%/components/libjar50.so
+lib/%%FIREBIRD_NAME%%/components/libjsd.so
+lib/%%FIREBIRD_NAME%%/components/libjsdom.so
+lib/%%FIREBIRD_NAME%%/components/libmork.so
+lib/%%FIREBIRD_NAME%%/components/libmozfind.so
+lib/%%FIREBIRD_NAME%%/components/libnecko.so
+lib/%%FIREBIRD_NAME%%/components/libnecko2.so
+lib/%%FIREBIRD_NAME%%/components/libnsappshell.so
+lib/%%FIREBIRD_NAME%%/components/libnsprefm.so
+lib/%%FIREBIRD_NAME%%/components/liboji.so
+lib/%%FIREBIRD_NAME%%/components/libp3p.so
+lib/%%FIREBIRD_NAME%%/components/libpipboot.so
+lib/%%FIREBIRD_NAME%%/components/libpipnss.so
+lib/%%FIREBIRD_NAME%%/components/libpippki.so
+lib/%%FIREBIRD_NAME%%/components/libpref.so
+lib/%%FIREBIRD_NAME%%/components/libprofile.so
+lib/%%FIREBIRD_NAME%%/components/librdf.so
+lib/%%FIREBIRD_NAME%%/components/libtoolkitcomps.so
+lib/%%FIREBIRD_NAME%%/components/libtransformiix.so
+lib/%%FIREBIRD_NAME%%/components/libtxmgr.so
+lib/%%FIREBIRD_NAME%%/components/libtypeaheadfind.so
+lib/%%FIREBIRD_NAME%%/components/libuconv.so
+lib/%%FIREBIRD_NAME%%/components/libucvmath.so
+lib/%%FIREBIRD_NAME%%/components/libuniversalchardet.so
+lib/%%FIREBIRD_NAME%%/components/libwebbrwsr.so
+lib/%%FIREBIRD_NAME%%/components/libwebsrvcs.so
+lib/%%FIREBIRD_NAME%%/components/libwidget_gtk.so
+lib/%%FIREBIRD_NAME%%/components/libxmlextras.so
+lib/%%FIREBIRD_NAME%%/components/libxpcom_compat_c.so
+lib/%%FIREBIRD_NAME%%/components/libxpconnect.so
+lib/%%FIREBIRD_NAME%%/components/libxpinstall.so
+lib/%%FIREBIRD_NAME%%/components/libxremote_client.so
+lib/%%FIREBIRD_NAME%%/components/libxremoteservice.so
+lib/%%FIREBIRD_NAME%%/components/locale.xpt
+lib/%%FIREBIRD_NAME%%/components/lwbrk.xpt
+lib/%%FIREBIRD_NAME%%/components/mimetype.xpt
+lib/%%FIREBIRD_NAME%%/components/mozbrwsr.xpt
+lib/%%FIREBIRD_NAME%%/components/mozfind.xpt
+lib/%%FIREBIRD_NAME%%/components/necko.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_about.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_cache.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_cookie.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_data.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_dns.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_file.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_ftp.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_http.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_jar.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_res.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_socket.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_strconv.xpt
+lib/%%FIREBIRD_NAME%%/components/necko_viewsource.xpt
+lib/%%FIREBIRD_NAME%%/components/nsCloseAllWindows.js
+lib/%%FIREBIRD_NAME%%/components/nsDictionary.js
+lib/%%FIREBIRD_NAME%%/components/nsDownloadProgressListener.js
+lib/%%FIREBIRD_NAME%%/components/nsFilePicker.js
+lib/%%FIREBIRD_NAME%%/components/nsHelperAppDlg.js
+lib/%%FIREBIRD_NAME%%/components/nsInterfaceInfoToIDL.js
+lib/%%FIREBIRD_NAME%%/components/nsKillAll.js
+lib/%%FIREBIRD_NAME%%/components/nsProgressDialog.js
+lib/%%FIREBIRD_NAME%%/components/nsProxyAutoConfig.js
+lib/%%FIREBIRD_NAME%%/components/nsResetPref.js
+lib/%%FIREBIRD_NAME%%/components/nsSidebar.js
+lib/%%FIREBIRD_NAME%%/components/nsUpdateNotifier.js
+lib/%%FIREBIRD_NAME%%/components/nsXmlRpcClient.js
+lib/%%FIREBIRD_NAME%%/components/oji.xpt
+lib/%%FIREBIRD_NAME%%/components/p3p.xpt
+lib/%%FIREBIRD_NAME%%/components/passwordmgr.xpt
+lib/%%FIREBIRD_NAME%%/components/pipboot.xpt
+lib/%%FIREBIRD_NAME%%/components/pipnss.xpt
+lib/%%FIREBIRD_NAME%%/components/pippki.xpt
+lib/%%FIREBIRD_NAME%%/components/plugin.xpt
+lib/%%FIREBIRD_NAME%%/components/pref.xpt
+lib/%%FIREBIRD_NAME%%/components/prefetch.xpt
+lib/%%FIREBIRD_NAME%%/components/prefmigr.xpt
+lib/%%FIREBIRD_NAME%%/components/profile.xpt
+lib/%%FIREBIRD_NAME%%/components/progressDlg.xpt
+lib/%%FIREBIRD_NAME%%/components/proxyObjInst.xpt
+lib/%%FIREBIRD_NAME%%/components/rdf.xpt
+lib/%%FIREBIRD_NAME%%/components/related.xpt
+lib/%%FIREBIRD_NAME%%/components/satchel.xpt
+lib/%%FIREBIRD_NAME%%/components/search.xpt
+lib/%%FIREBIRD_NAME%%/components/shistory.xpt
+lib/%%FIREBIRD_NAME%%/components/sidebar.xpt
+lib/%%FIREBIRD_NAME%%/components/timebomb.xpt
+lib/%%FIREBIRD_NAME%%/components/txmgr.xpt
+lib/%%FIREBIRD_NAME%%/components/txtsvc.xpt
+lib/%%FIREBIRD_NAME%%/components/typeaheadfind.xpt
+lib/%%FIREBIRD_NAME%%/components/ucnative.xpt
+lib/%%FIREBIRD_NAME%%/components/uconv.xpt
+lib/%%FIREBIRD_NAME%%/components/unicharutil.xpt
+lib/%%FIREBIRD_NAME%%/components/uriloader.xpt
+lib/%%FIREBIRD_NAME%%/components/util.xpt
+lib/%%FIREBIRD_NAME%%/components/webBrowser_core.xpt
+lib/%%FIREBIRD_NAME%%/components/webbrowserpersist.xpt
+lib/%%FIREBIRD_NAME%%/components/webshell_idls.xpt
+lib/%%FIREBIRD_NAME%%/components/websrvcs.xpt
+lib/%%FIREBIRD_NAME%%/components/widget.xpt
+lib/%%FIREBIRD_NAME%%/components/windowds.xpt
+lib/%%FIREBIRD_NAME%%/components/windowwatcher.xpt
+lib/%%FIREBIRD_NAME%%/components/xml-rpc.xpt
+lib/%%FIREBIRD_NAME%%/components/xmlextras.xpt
+lib/%%FIREBIRD_NAME%%/components/xpcom_base.xpt
+lib/%%FIREBIRD_NAME%%/components/xpcom_components.xpt
+lib/%%FIREBIRD_NAME%%/components/xpcom_ds.xpt
+lib/%%FIREBIRD_NAME%%/components/xpcom_io.xpt
+lib/%%FIREBIRD_NAME%%/components/xpcom_obsolete.xpt
+lib/%%FIREBIRD_NAME%%/components/xpcom_threads.xpt
+lib/%%FIREBIRD_NAME%%/components/xpcom_xpti.xpt
+lib/%%FIREBIRD_NAME%%/components/xpconnect.xpt
+lib/%%FIREBIRD_NAME%%/components/xpinstall.xpt
+lib/%%FIREBIRD_NAME%%/components/xpti.dat
+lib/%%FIREBIRD_NAME%%/components/xremoteservice.xpt
+lib/%%FIREBIRD_NAME%%/components/xuldoc.xpt
+lib/%%FIREBIRD_NAME%%/components/xultmpl.xpt
+lib/%%FIREBIRD_NAME%%/defaults/autoconfig/platform.js
+lib/%%FIREBIRD_NAME%%/defaults/autoconfig/prefcalls.js
+lib/%%FIREBIRD_NAME%%/defaults/pref/all.js
+lib/%%FIREBIRD_NAME%%/defaults/pref/editor.js
+lib/%%FIREBIRD_NAME%%/defaults/pref/mailnews.js
+lib/%%FIREBIRD_NAME%%/defaults/pref/security-prefs.js
+lib/%%FIREBIRD_NAME%%/defaults/pref/unix.js
+lib/%%FIREBIRD_NAME%%/defaults/pref/xpinstall.js
+lib/%%FIREBIRD_NAME%%/defaults/profile/US/bookmarks.html
+lib/%%FIREBIRD_NAME%%/defaults/profile/US/chrome/userChrome-example.css
+lib/%%FIREBIRD_NAME%%/defaults/profile/US/chrome/userContent-example.css
+lib/%%FIREBIRD_NAME%%/defaults/profile/US/localstore.rdf
+lib/%%FIREBIRD_NAME%%/defaults/profile/US/mimeTypes.rdf
+lib/%%FIREBIRD_NAME%%/defaults/profile/US/panels.rdf
+lib/%%FIREBIRD_NAME%%/defaults/profile/US/search.rdf
+lib/%%FIREBIRD_NAME%%/defaults/profile/bookmarks.html
+lib/%%FIREBIRD_NAME%%/defaults/profile/chrome/userChrome-example.css
+lib/%%FIREBIRD_NAME%%/defaults/profile/chrome/userContent-example.css
+lib/%%FIREBIRD_NAME%%/defaults/profile/localstore.rdf
+lib/%%FIREBIRD_NAME%%/defaults/profile/mimeTypes.rdf
+lib/%%FIREBIRD_NAME%%/defaults/profile/panels.rdf
+lib/%%FIREBIRD_NAME%%/defaults/profile/search.rdf
+lib/%%FIREBIRD_NAME%%/icons/mozicon16.xpm
+lib/%%FIREBIRD_NAME%%/icons/mozicon50.xpm
+lib/%%FIREBIRD_NAME%%/libgkgfx.so
+lib/%%FIREBIRD_NAME%%/libgtkembedmoz.so
+lib/%%FIREBIRD_NAME%%/libgtksuperwin.so
+lib/%%FIREBIRD_NAME%%/libgtkxtbin.so
+lib/%%FIREBIRD_NAME%%/libjsj.so
+lib/%%FIREBIRD_NAME%%/libmozjs.so
+lib/%%FIREBIRD_NAME%%/libmozz.so
+lib/%%FIREBIRD_NAME%%/libnspr4.so
+lib/%%FIREBIRD_NAME%%/libnss3.so
+lib/%%FIREBIRD_NAME%%/libnssckbi.so
+lib/%%FIREBIRD_NAME%%/libplc4.so
+lib/%%FIREBIRD_NAME%%/libplds4.so
+lib/%%FIREBIRD_NAME%%/libsmime3.so
+lib/%%FIREBIRD_NAME%%/libsoftokn3.chk
+lib/%%FIREBIRD_NAME%%/libsoftokn3.so
+lib/%%FIREBIRD_NAME%%/libssl3.so
+lib/%%FIREBIRD_NAME%%/libxlibrgb.so
+lib/%%FIREBIRD_NAME%%/libxpcom.so
+lib/%%FIREBIRD_NAME%%/libxpcom_compat.so
+lib/%%FIREBIRD_NAME%%/libxpistub.so
+lib/%%FIREBIRD_NAME%%/linkfarm
+lib/%%FIREBIRD_NAME%%/mangle
+lib/%%FIREBIRD_NAME%%/mozilla-xremote-client
+lib/%%FIREBIRD_NAME%%/plugins/libnullplugin.so
+lib/%%FIREBIRD_NAME%%/regchrome
+lib/%%FIREBIRD_NAME%%/regxpcom
+lib/%%FIREBIRD_NAME%%/res/EditorOverride.css
+lib/%%FIREBIRD_NAME%%/res/arrow.gif
+lib/%%FIREBIRD_NAME%%/res/arrowd.gif
+lib/%%FIREBIRD_NAME%%/res/bloatcycle.html
+lib/%%FIREBIRD_NAME%%/res/broken-image.gif
+lib/%%FIREBIRD_NAME%%/res/builtin/htmlBindings.xml
+lib/%%FIREBIRD_NAME%%/res/builtin/platformHTMLBindings.xml
+lib/%%FIREBIRD_NAME%%/res/charsetData.properties
+lib/%%FIREBIRD_NAME%%/res/charsetalias.properties
+lib/%%FIREBIRD_NAME%%/res/cmessage.txt
+lib/%%FIREBIRD_NAME%%/res/dtd/mathml.dtd
+lib/%%FIREBIRD_NAME%%/res/dtd/xhtml11.dtd
+lib/%%FIREBIRD_NAME%%/res/entityTables/html40Latin1.properties
+lib/%%FIREBIRD_NAME%%/res/entityTables/html40Special.properties
+lib/%%FIREBIRD_NAME%%/res/entityTables/html40Symbols.properties
+lib/%%FIREBIRD_NAME%%/res/entityTables/htmlEntityVersions.properties
+lib/%%FIREBIRD_NAME%%/res/entityTables/mathml20.properties
+lib/%%FIREBIRD_NAME%%/res/entityTables/transliterate.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfont.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontCMEX10.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontCMSY10.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontMTExtra.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontMath1.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontMath2.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontMath4.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontPUA.properties
+lib/%%FIREBIRD_NAME%%/res/fonts/mathfontSymbol.properties
+lib/%%FIREBIRD_NAME%%/res/forms.css
+lib/%%FIREBIRD_NAME%%/res/grabber.gif
+lib/%%FIREBIRD_NAME%%/res/html.css
+lib/%%FIREBIRD_NAME%%/res/html/gopher-audio.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-binary.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-find.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-image.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-menu.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-movie.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-sound.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-telnet.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-text.gif
+lib/%%FIREBIRD_NAME%%/res/html/gopher-unknown.gif
+lib/%%FIREBIRD_NAME%%/res/langGroups.properties
+lib/%%FIREBIRD_NAME%%/res/language.properties
+lib/%%FIREBIRD_NAME%%/res/loading-image.gif
+lib/%%FIREBIRD_NAME%%/res/mathml.css
+lib/%%FIREBIRD_NAME%%/res/platform-forms.css
+lib/%%FIREBIRD_NAME%%/res/quirk.css
+lib/%%FIREBIRD_NAME%%/res/rdf/article.gif
+lib/%%FIREBIRD_NAME%%/res/rdf/document.gif
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-1.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-2.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-3.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-4.css
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-4.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-5.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-6.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-7.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/dom-test-8.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/folder-closed.gif
+lib/%%FIREBIRD_NAME%%/res/rdf/folder-open.gif
+lib/%%FIREBIRD_NAME%%/res/rdf/ignore-test.xul
+lib/%%FIREBIRD_NAME%%/res/rdf/loading.gif
+lib/%%FIREBIRD_NAME%%/res/rdf/xpidl-test-1.xul
+lib/%%FIREBIRD_NAME%%/res/sample.unixpsfonts.properties
+lib/%%FIREBIRD_NAME%%/res/table-add-column-after-active.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-column-after-hover.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-column-after.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-column-before-active.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-column-before-hover.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-column-before.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-row-after-active.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-row-after-hover.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-row-after.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-row-before-active.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-row-before-hover.gif
+lib/%%FIREBIRD_NAME%%/res/table-add-row-before.gif
+lib/%%FIREBIRD_NAME%%/res/table-remove-column-active.gif
+lib/%%FIREBIRD_NAME%%/res/table-remove-column-hover.gif
+lib/%%FIREBIRD_NAME%%/res/table-remove-column.gif
+lib/%%FIREBIRD_NAME%%/res/table-remove-row-active.gif
+lib/%%FIREBIRD_NAME%%/res/table-remove-row-hover.gif
+lib/%%FIREBIRD_NAME%%/res/table-remove-row.gif
+lib/%%FIREBIRD_NAME%%/res/ua.css
+lib/%%FIREBIRD_NAME%%/res/unixcharset.properties
+lib/%%FIREBIRD_NAME%%/res/viewer.properties
+lib/%%FIREBIRD_NAME%%/res/viewsource.css
+lib/%%FIREBIRD_NAME%%/run-mozilla.sh
+lib/%%FIREBIRD_NAME%%/searchplugins/google.gif
+lib/%%FIREBIRD_NAME%%/searchplugins/google.src
+lib/%%FIREBIRD_NAME%%/shlibsign
+lib/%%FIREBIRD_NAME%%/timebombgen
+lib/%%FIREBIRD_NAME%%/xpicleanup
+@dirrm lib/%%FIREBIRD_NAME%%/searchplugins
+@dirrm lib/%%FIREBIRD_NAME%%/res/rdf
+@dirrm lib/%%FIREBIRD_NAME%%/res/html
+@dirrm lib/%%FIREBIRD_NAME%%/res/fonts
+@dirrm lib/%%FIREBIRD_NAME%%/res/entityTables
+@dirrm lib/%%FIREBIRD_NAME%%/res/dtd
+@dirrm lib/%%FIREBIRD_NAME%%/res/builtin
+@dirrm lib/%%FIREBIRD_NAME%%/res
+@dirrm lib/%%FIREBIRD_NAME%%/plugins
+@dirrm lib/%%FIREBIRD_NAME%%/icons
+@dirrm lib/%%FIREBIRD_NAME%%/defaults/profile/chrome
+@dirrm lib/%%FIREBIRD_NAME%%/defaults/profile/US/chrome
+@dirrm lib/%%FIREBIRD_NAME%%/defaults/profile/US
+@dirrm lib/%%FIREBIRD_NAME%%/defaults/profile
+@dirrm lib/%%FIREBIRD_NAME%%/defaults/pref
+@dirrm lib/%%FIREBIRD_NAME%%/defaults/autoconfig
+@dirrm lib/%%FIREBIRD_NAME%%/defaults
+@dirrm lib/%%FIREBIRD_NAME%%/components
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content/passwordmgr
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content/mozapps/downloads
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content/mozapps
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content/global/widgets
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content/global-region
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content/global-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content/global
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/toolkit
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/pippki/content/pippki
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/pippki/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/pippki
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/pipnss/content/pipnss
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/pipnss/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/pipnss
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/navigator/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/navigator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/messenger/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/messenger
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/communicator/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/communicator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/browser/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo/browser
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/overlayinfo
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/modern/skin/modern/communicator/cookie
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/modern/skin/modern/communicator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/modern/skin/modern
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/modern/skin
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/modern
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-win/locale/en-US/navigator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-win/locale/en-US/global-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-win/locale/en-US/communicator-platform/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-win/locale/en-US/communicator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-win/locale/en-US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-win/locale
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-win
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-unix/locale/en-US/navigator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-unix/locale/en-US/global-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-unix/locale/en-US/communicator-platform/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-unix/locale/en-US/communicator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-unix/locale/en-US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-unix/locale
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-unix
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-mac/locale/en-US/navigator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-mac/locale/en-US/global-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-mac/locale/en-US/communicator-platform/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-mac/locale/en-US/communicator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-mac/locale/en-US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-mac/locale
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-mac
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/pippki
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/pipnss
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/passwordmgr
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/p3p
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/necko
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/navigator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/mozapps/downloads
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/mozapps
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/global
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/cookie
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/xpinstall
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/xml
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/webservices
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/timebomb
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/sidebar
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/security
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/search
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/profile
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/layout
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/history
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/dom
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator/directory
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/communicator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/browser/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/browser/history
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/browser/downloads
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/browser/cookieviewer
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/browser/bookmarks
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/browser
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US/autoconfig
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale/en-US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US/locale
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/en-US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/skin/classic/embed
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/skin/classic
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/skin
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/locale/en-US/embed
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/locale/en-US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/locale
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/content/embed
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/embed-sample
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/xbl-marquee
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/p3p
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/necko
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/navigator-region
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/navigator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/navigator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/cookie
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/xpinstall
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/xml
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/timebomb
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/sidebar
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/search
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/related
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/profile
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/p3p
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/history
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/directory
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator/alerts
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator-region
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator-platform
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/communicator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content/autoconfig
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/comm
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/navigator/icons
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/navigator/btn1
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/navigator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/mozapps/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/mozapps/downloads
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/mozapps
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/messenger/smime/icons
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/messenger/smime
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/messenger/messengercompose
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/messenger/icons
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/messenger/addressbook/icons
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/messenger/addressbook
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/messenger
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/tree
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/toolbar
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/splitter
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/scrollbar/slider
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/scrollbar
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/radio
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/progressmeter
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/menu
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/icons
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/filepicker
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/console
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/checkbox
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global/arrow
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/global
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/editor/icons
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/editor
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/xpinstall
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/taskbar
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/sidebar
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/search
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/related
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/profile
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/icons
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/directory
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/cookie
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/brand
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/bookmarks
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator/alerts
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/communicator
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/browser/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/browser/downloads
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/browser/bookmarks
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic/browser
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin/classic
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic/skin
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/classic
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser/content/browser/pref
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser/content/browser/history
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser/content/browser/downloads
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser/content/browser/cookieviewer
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser/content/browser/bookmarks
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser/content/browser
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser/content
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/browser
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/US/locale/US/navigator-region
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/US/locale/US/global-region
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/US/locale/US/communicator-region
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/US/locale/US/browser-region
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/US/locale/US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/US/locale
+@dirrm lib/%%FIREBIRD_NAME%%/chrome/US
+@dirrm lib/%%FIREBIRD_NAME%%/chrome
+@dirrm lib/%%FIREBIRD_NAME%%
