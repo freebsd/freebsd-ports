@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded anonymous FTP daemon
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
