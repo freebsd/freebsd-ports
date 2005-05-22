@@ -20,10 +20,6 @@ bin/jv-scan41
 bin/jcf-dump41
 include/mf-runtime.h
 %%FORTRAN%%bin/gfortran41
-%%FORTRAN%%lib/libgfortran.a
-%%FORTRAN%%lib/libgfortranbegin.a
-%%FORTRAN%%lib/libgfortran.la
-%%FORTRAN%%lib/libgfortranbegin.la
 %%LIBJAVA%%bin/addr2name.awk41
 %%LIBJAVA%%bin/gcj-dbtool41
 %%LIBJAVA%%bin/gij41
