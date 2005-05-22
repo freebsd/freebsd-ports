@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.flashtux.org/download/
 
