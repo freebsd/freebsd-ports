@@ -1,6 +1,6 @@
-# New ports collection makefile for:	leafpad
-# Date created:		2004-10-18
-# Whom:			Michael Johnson <ahze@ahze.net>
+# New ports collection makefile for:	Leafpad
+# Date created:				2004-10-18
+# Whom:					Michael Johnson <ahze@ahze.net>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	radek@raadradd.com
-COMMENT=	Light-weight GTK+ editor similar to notepad.exe
+COMMENT=	GTK+ based simple text editor
 
 USE_GNOME=	gtk20 gnomehier desktopfileutils
 USE_REINPLACE=	yes
@@ -36,7 +36,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 	-@update-desktop-database
