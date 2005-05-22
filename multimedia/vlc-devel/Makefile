@@ -833,6 +833,10 @@ pre-install:
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
+.for locale in my ps tet tl
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale}/LC_MESSAGES 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale} 2>/dev/null || ${TRUE}" >> ${PLIST}
+.endfor
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^ffmpeg-0.4.9.p'`" ]; then \
