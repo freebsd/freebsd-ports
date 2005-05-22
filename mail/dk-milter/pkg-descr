@@ -1,0 +1,7 @@
+implements Yahoo!, Inc.'s DomainKeys draft standard for signing
+and verifying e-mail messages on a per-domain basis.
+
+Details regarding the protocol and other issues related to the
+draft standard can be found at http://antispam.yahoo.com/domainkeys
+
+WWW: http://sendmail.net/dk-milter/

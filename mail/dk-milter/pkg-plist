@@ -1,0 +1,11 @@
+etc/rc.d/milter-dk.sh.sample
+libexec/dk-filter
+sbin/gentxt
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/autorespond.csh
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
