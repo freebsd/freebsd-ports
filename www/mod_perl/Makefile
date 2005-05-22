@@ -40,8 +40,13 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::PerlSections.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
+.if defined(APACHE_PORT)
+.   if ${APACHE_PORT:Mipv6} != ""
+WITH_APACHE_IPV6=	YES
+.   endif
+.endif
 
-.if defined(WITH_APACHE_IPV6) && ${APACHE_PORT:Mipv6}
+.if defined(WITH_APACHE_IPV6)
 CFLAGS+=	-DAPACHE6
 .endif
 
