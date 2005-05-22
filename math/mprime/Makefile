@@ -19,8 +19,6 @@ EXTRACT_ONLY=
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	mersenne.org distributed Great Internet Mersenne Prime Search
 
-BROKEN=		Size mismatch
-
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
 USE_ZIP=	yes
