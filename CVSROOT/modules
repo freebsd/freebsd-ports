@@ -5388,6 +5388,7 @@ lineak_kdeplugins	ports/sysutils/lineak_kdeplugins
 lineak_xosdplugin	ports/sysutils/lineak_xosdplugin
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
+link-grammar	ports/textproc/link-grammar
 link-monitor-applet	ports/net/link-monitor-applet
 linkcheck	ports/www/linkcheck
 linkchecker	ports/www/linkchecker
