@@ -32,6 +32,100 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2fbe16c2-cab6-11d9-9aed-000e0c2e438a">
+    <topic>freeradius -- sql injection and denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>freeradius</name>
+	<range><le>1.0.2_1</le></range>
+      </package>
+      <package>
+	<name>freeradius-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Gentoo Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200505-13.xml">
+	  <p>The FreeRADIUS server is vulnerable to an SQL injection
+	    attack and a buffer overflow, possibly resulting in
+	    disclosure and modification of data and Denial of
+	    Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13540</bid>
+      <bid>13541</bid>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200505-13.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-05-17</discovery>
+      <entry>2005-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="641e8609-cab5-11d9-9aed-000e0c2e438a">
+    <topic>ppxp -- local root exploit</topic>
+    <affects>
+      <package>
+	<name>ppxp</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>ja-ppxp</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian Advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-725">
+	  <p>Jens Steube discovered that ppxp, yet another PPP program,
+	    does not release root privileges when opening potentially
+	    user supplied log files.  This can be tricked into opening
+	    a root shell.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0392</cvename>
+      <url>http://www.debian.org/security/2005/dsa-725</url>
+    </references>
+    <dates>
+      <discovery>2005-05-19</discovery>
+      <entry>2005-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1033750f-cab4-11d9-9aed-000e0c2e438a">
+    <topic>oops -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>oops</name>
+	<range><le>1.5.24</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A RST/GHC Advisory reports that there is an format string
+	  vulnerability in oops.  The vulnerability can be found in
+	  the MySQL/PgSQL authentication module.  Succesful
+	  exploitation may allow execution of arbitrary code.:</p>
+      </body>
+    </description>
+    <references>
+      <bid>13172</bid>
+      <cvename>CAN-2005-1121</cvename>
+      <url>http://rst.void.ru/papers/advisory24.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-04-14</discovery>
+      <entry>2005-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d51a7e6e-c546-11d9-9aed-000e0c2e438a">
     <topic>cdrdao -- unspecified privilege escalation vulnerability</topic>
     <affects>
