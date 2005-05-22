@@ -9,8 +9,11 @@ bin/papercut
 %%DATADIR%%/auth/phorum_mysql_users.py
 %%DATADIR%%/auth/phorum_pgsql_users.py
 %%DATADIR%%/auth/phpbb_mysql_users.py
+%%DATADIR%%/auth/phpnuke_phpbb_mysql_users.py
+%%DATADIR%%/auth/postnuke_phpbb_mysql_users.py
 %%DATADIR%%/storage/__init__.py
 %%DATADIR%%/storage/forwarding_proxy.py
+%%DATADIR%%/storage/maildir.py
 %%DATADIR%%/storage/mbox.py
 %%DATADIR%%/storage/mime.py
 %%DATADIR%%/storage/mysql.py
@@ -22,6 +25,7 @@ bin/papercut
 %%DATADIR%%/storage/phorum_pgsql_fix.sql
 %%DATADIR%%/storage/phpbb_mysql.py
 %%DATADIR%%/storage/phpbb_mysql_fix.sql
+%%DATADIR%%/storage/phpnuke_phpbb_mysql.py
 %%DATADIR%%/storage/strutil.py
 @exec echo "To use papercut you need to copy %D/%%DATADIR%%/settings.py.sample to %D/%%DATADIR%%/settings.py and edit it." |fmt
 @unexec [ -f %D/%%DATADIR%%/papercut.pyc ] && rm %D/%%DATADIR%%/papercut.pyc || true

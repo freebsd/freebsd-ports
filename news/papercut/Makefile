@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	papercut
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	news python
-MASTER_SITES=	http://papercut.org/
+MASTER_SITES=	http://pessoal.org/papercut/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Papercut is a news server written in Python, using a MySQL backend
