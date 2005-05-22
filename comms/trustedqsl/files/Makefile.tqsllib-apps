@@ -4,8 +4,8 @@ OPENSSL=/usr
 LIBS=-lz -lexpat -lcrypto
 INCDIR = -I$(TQSLINC)
 BUILD=unofficial
-WXFLAGS=`wx-config --cflags`
-WXLIBS=`wx-config --libs`
+WXFLAGS=`wxgtk2-2.4-config --cflags`
+WXLIBS=`wxgtk2-2.4-config --libs`
 CXXFLAGS +=  $(INCDIR)  -DHAVE_LIBCRYPTO=1 -DSTDC_HEADERS=1 -DHAVE_MKDIR=1 -DHAVE_STRERROR=1  $(WXFLAGS)
 LDLIBS = -L$(OPENSSL)/lib -L$(TQSLLIB) -ltqsllib $(LIBS)  $(WXLIBS)
 TQSLLIBFILE=$(TQSLLIB)/libtqsllib.a
