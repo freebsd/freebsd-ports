@@ -5731,6 +5731,7 @@ maxima		ports/math/maxima
 mayavi		ports/science/mayavi
 mb2md		ports/mail/mb2md
 mbasecalc	ports/math/mbasecalc
+mbdyn		ports/science/mbdyn
 mbox		ports/audio/mbox
 mboxcheck-applet	ports/mail/mboxcheck-applet
 mboxgrep	ports/mail/mboxgrep
