@@ -1,0 +1,11 @@
+************************************************************************
+
+In order to run this port, please add the following lines to
+/etc/mail/<your_configuration>.mc:
+
+INPUT_MAIL_FILTER(`dk-filter', `S=unix:/var/run/dk-filter, F=T, T=R:2m')
+
+define(`confMILTER_MACROS_CONNECT', `j, {daemon_name}')
+define(`confMILTER_MACROS_ENVFROM', `i, {auth_type}')
+
+************************************************************************

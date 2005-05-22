@@ -55,6 +55,7 @@
     SUBDIR += dcc-dccd
     SUBDIR += demime
     SUBDIR += distribute
+    SUBDIR += dk-milter
     SUBDIR += dkimap4
     SUBDIR += dovecot
     SUBDIR += drac
