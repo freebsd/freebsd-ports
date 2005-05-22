@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--disable-all
 MAKEFILE=	GNUmakefile
 
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abiword-plugins
-MD5_FILE=	${.CURDIR}/../abiword/distinfo
+MD5_FILE=	${.CURDIR}/../abiword-devel/distinfo
 
 ABIVERSION=	2.4
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
