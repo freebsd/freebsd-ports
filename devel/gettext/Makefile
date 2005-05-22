@@ -69,7 +69,7 @@ pre-extract:
 	@${ECHO_MSG} "Gettext won't build with Kaffe's jar utility.  Doing:"
 	-${MV} ${PREFIX}/bin/jar ${PREFIX}/bin/jar.backup
 	@${ECHO_MSG} "Be sure to mv" ${PREFIX}/bin/jar.backup ${PREFIX}/bin/jar
-	@${ECHO_MSG} "if you abandon your attempt to build gettext.
+	@${ECHO_MSG} "if you abandon your attempt to build gettext."
 	@sleep 5
 .endif
 
