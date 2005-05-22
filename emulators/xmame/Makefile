@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.95
+PORTVERSION?=	0.96
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
-		http://www.sys2064.com/files/util/:history \
-		http://www.sys2064.com/files/mame/:highscore \
-		http://cheat.retrogames.com/:cheat \
-		http://www.win.tue.nl/~stijn/xmame/:history,highscore,cheat
+		http://www.arcade-history.com/download/:history \
+		http://www.mameworld.net/highscore/:highscore \
+		http://cheat.retrogames.com/:cheat
 DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
@@ -131,24 +130,27 @@ PLIST_SUB+=	DATFILES=""
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-HIVER=		795
+#HIVER=		795
 
-DISTFILES+=	uhsdat${HIVER}.zip:highscore history.dat.zip:history \
-			cheat.zip:cheat
+DISTFILES+=	uhsdat${PORTVERSION:S/.//}.zip:highscore \
+		history${PORTVERSION:S/./_/}.zip:history \
+		cheat.zip:cheat
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 post-extract:
 	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${PORTVERSION:S/.//}.zip \
 			hiscore.dat
 	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history.dat.zip \
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history${PORTVERSION:S/./_/}.zip \
 			history.dat
 	cd ${WRKDIR} && \
 		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
 .else
 PLIST_SUB+=	DATFILES="@comment "
 .endif
+.else # xmess
+PLIST_SUB+=	DATFILES="@comment "
 .endif
 
 .if defined(WITH_ASM68K)
