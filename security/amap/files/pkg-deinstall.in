@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ "$2" != "DEINSTALL" ] && exit 0
+
+for f in %%CONF_FILES%%; do
+    if cmp -s "%%CONF_DIR%%/$f" "%%CONF_DIR%%/$f.default"; then
+	rm -f "%%CONF_DIR%%/$f"
+    fi
+done

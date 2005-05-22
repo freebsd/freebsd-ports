@@ -2,4 +2,4 @@ Amap is a next-generation scanning tool, it identifies applications
 and services even if they are not listening to the default port
 by creating a bogus-communication.
 
-WWW: http://www.thc.org/releases.php
+WWW: http://thc.org/thc-amap/
