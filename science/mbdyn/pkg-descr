@@ -1,0 +1,11 @@
+* What MBDyn is
+  o a command-line, direct initial-value problem solver
+    with a large, flexible multifield element library
+  o a research tool
+  o a community developed, research driven open-source software
+* What MBDyn is not
+  o a complete out-of-the-box ``bells and whistles'' GUI for solid modeling
+  o a commercial tool
+  o a completely supported software
+
+WWW: http://www.mbdyn.org

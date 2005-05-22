@@ -1,0 +1,20 @@
+--- configure.orig	Wed Feb 16 21:50:48 2005
++++ configure	Fri Mar 11 19:39:24 2005
+@@ -25334,7 +25334,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltcl  $LIBS"
++LIBS="-ltcl84  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -29925,7 +29925,7 @@
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+                 if test $have_mpi = no ; then
+ 			if test "$ol_with_mpi" = "pmpi" ; then
+-        			try_mpi_LIBS="-lpmpich++ -lmpich -lpmpich -lnsl"
++        			try_mpi_LIBS="-lpmpich++ -lmpich -lpmpich"
+ 			else
+         			try_mpi_LIBS="-lmpich++ -lmpich -lnsl"
+ 			fi
