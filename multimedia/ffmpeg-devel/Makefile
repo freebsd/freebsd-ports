@@ -9,6 +9,7 @@ PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9.cvs.${RELEASE_DATE}
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://mplayerhq.hu/MPlayer/cvs/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	FFMpeg-${RELEASE_DATE}
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -54,7 +55,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	20050520
+RELEASE_DATE=	20050521
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1

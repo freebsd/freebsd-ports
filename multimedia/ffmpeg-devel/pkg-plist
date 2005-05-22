@@ -16,4 +16,5 @@ lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VERSION%%
 lib/libpostproc.a
 lib/libpostproc.so
+lib/libpostproc.so.0
 lib/libpostproc.so.%%SHLIB_VERSION%%
