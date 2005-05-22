@@ -1,7 +1,14 @@
 @comment $FreeBSD$
 bin/amap
+bin/amap6
 bin/amapcrap
-%%DATADIR%%/appdefs.resp
-%%DATADIR%%/appdefs.rpc
-%%DATADIR%%/appdefs.trig
-@dirrm %%DATADIR%%
+etc/amap/appdefs.resp.default
+etc/amap/appdefs.rpc.default
+etc/amap/appdefs.trig.default
+%%AMAPLIBDIR%%/amap-lib.o
+%%AMAPINCDIR%%/amap.h
+%%AMAPINCDIR%%/amap-inc.h
+%%AMAPINCDIR%%/amap-lib.h
+@dirrm %%AMAPLIBDIR%%
+@dirrm %%AMAPINCDIR%%
+@unexec rmdir %D/etc/amap 2>/dev/null || true
