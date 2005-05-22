@@ -8,7 +8,7 @@
 PORTNAME=	mmv
 PORTVERSION=	1.01b
 CATEGORIES=	misc
-MASTER_SITES=	http://wuarchive.wustl.edu/languages/c/unix-c/file-mgmt/
+MASTER_SITES=	http://custom.lab.unb.br/pub/unix-c/file-mgmt/
 DISTNAME=	mmv
 EXTRACT_SUFX=	.tar.Z
 
