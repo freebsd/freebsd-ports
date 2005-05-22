@@ -1,12 +1,28 @@
-%%PYTHON_SITELIBDIR%%/sqlite/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlite/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlite/main.py
-%%PYTHON_SITELIBDIR%%/sqlite/main.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/main.pyo
-%%PYTHON_SITELIBDIR%%/_sqlite.so
-@dirrm %%PYTHON_SITELIBDIR%%/sqlite
-%%PORTDOCS%%%%EXAMPLESDIR%%/converters.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/dbapi_transactions.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/manual_transactions.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+bin/test-pysqlite
+%%PYTHON_SITELIBDIR%%/pysqlite2/__init__.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/_sqlite.so
+%%PYTHON_SITELIBDIR%%/pysqlite2/dbapi2.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/dbapi2.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/dbapi2.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/__init__.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/dbapi.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/dbapi.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/dbapi.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/factory.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/factory.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/factory.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/transactions.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/transactions.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/transactions.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/types.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/types.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/types.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/userfunctions.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/userfunctions.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/userfunctions.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pysqlite2/test
+@dirrm %%PYTHON_SITELIBDIR%%/pysqlite2
