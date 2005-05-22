@@ -96,9 +96,9 @@ check: build
 post-install:
 	# man pages can only be generated if Perl >= 5.6 is installed, so
 	# fake them on 4.x systems.
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
+	for mp in ${_MANPAGES}; do \
+	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
+	done
 	@(for prog in \
 		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
 		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
