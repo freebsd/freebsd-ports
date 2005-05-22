@@ -1,9 +1,0 @@
---- pft/Makefile.orig	Mon Jan  7 17:15:36 2002
-+++ pft/Makefile	Thu Aug  5 19:31:12 2004
-@@ -1,5 +1,5 @@
- CPP=g++
--CPPFLAGS= -Wall -g -DUNIX -L../ -I../
-+CPPFLAGS= -Wall -g -DUNIX -L../ -I../ ${CXXFLAGS}
- DEBUGGING= -D_DEBUG
- AR=ar rcs 
- RM=rm -f 
