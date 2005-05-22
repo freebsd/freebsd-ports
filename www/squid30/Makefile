@@ -66,12 +66,13 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/ \
+		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
 DISTNAME=	squid-2.5.STABLE10
@@ -373,6 +374,10 @@ pre-su-install:
 	    PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+# Create cachemgr.conf.default manually since squid's install routine
+# unfortunately fails to do so:
+	${INSTALL_DATA} ${WRKSRC}/src/cachemgr.conf \
+	    ${PREFIX}/etc/squid/cachemgr.conf.default
 .if defined(WITH_SQUID_PINGER)
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
