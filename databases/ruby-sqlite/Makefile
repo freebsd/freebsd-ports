@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1901/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/2819/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
