@@ -1,4 +1,4 @@
-Issutracker : #iXXXXX#
+Issutracker : #i49681#
 CWS         : N/A
 Author      : NAKATA Maho <maho@openoffice.org> (JCA)
 Description : powerof2() is already defined

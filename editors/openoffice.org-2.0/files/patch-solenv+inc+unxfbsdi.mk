@@ -1,4 +1,4 @@
-Issutracker : #iXXXXX#
+Issutracker : #i49685#
 CWS         : N/A
 Author      : NAKATA Maho <maho@openoffice.org> (JCA)
 Description : Update to recent version of unxlngi6.mk

@@ -1,4 +1,4 @@
-Issutracker : #iXXXXX#
+Issutracker : #i49679#
 CWS         : N/A
 Author      : NAKATA Maho <maho@openoffice.org> (JCA)
 Description : We don't have -ldl and -lnsl
