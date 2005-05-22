@@ -1,0 +1,11 @@
+--- configure.ac.orig	Fri Feb 18 03:00:30 2005
++++ configure.ac	Thu Apr 28 10:47:23 2005
+@@ -154,7 +154,7 @@
+ AC_CHECK_LIB([jpeg], [jpeg_start_decompress])
+ SAH_CHECK_SETILIB
+ 
+-AM_CONDITIONAL(USE_MY_LIBJPEG, [test "${ac_cv_lib_jpeg_jpeg_start_decompress}" != yes])
++AM_CONDITIONAL(USE_MY_LIBJPEG, [test "${enable_gui}" = yes -a "${ac_cv_lib_jpeg_jpeg_start_decompress}" != yes])
+ dnl AC_CHECK_LIB([stdc++], [main])
+ 
+ SAH_REQUIRES([boinc],[SAH_CHECK_BOINC],["${no_boinc}" = yes],

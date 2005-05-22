@@ -7,6 +7,7 @@
 
 PORTNAME=	boinc-setiathome
 PORTVERSION=	4.07.20050218
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://setiweb.ssl.berkeley.edu/sah/seti_source/nightly/ \
 		${MASTER_SITE_LOCAL}
@@ -18,19 +19,19 @@ COMMENT=	Setiathome for boinc
 
 .include <bsd.port.pre.mk>
 
-# Disable GUI on FreeBSD 4.x until
-# undefined reference to `boinc_init_graphics'
-# is fixed
-.if ${OSVERSION} < 500000
-WITHOUT_X11=	yes
-.endif
-
 # Build with "make -DWITHOUT_X11" if you don't want the boincmgr
 # GUI management interface or the "screensaver" status displays
 # from any of the client applications.
 #
 # Defining WITHOUT_X11 removes the dependencies on the X11 libs
 # and the glut and jpeg graphics libs.
+
+# Disable GUI on FreeBSD 4.x until
+# undefined reference to `boinc_init_graphics'
+# is fixed
+.if ${OSVERSION} < 500000
+WITHOUT_X11=	yes
+.endif
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/boinc/boinc-client:${PORTSDIR}/net/boinc-client
 RUN_DEPENDS+=	boinc:${PORTSDIR}/net/boinc-client
@@ -83,12 +84,12 @@ pre-configure:
 
 post-build:
 	${SED} -e "s:%%SETI_BINARY%%:${SETI_BINARY}:g" \
-	  < ${FILESDIR}/app_info.xml > ${WRKDIR}/app_info.xml
+		< ${FILESDIR}/app_info.xml > ${WRKDIR}/app_info.xml
 	${SED} -e "s:%%SETI_SITE%%:${SETI_SITE}:g" \
-	  -e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-	  -e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-	  -e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
-	  < pkg-install > ${WRKDIR}/pkg-install
+		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
+		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
+		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
+		< pkg-install > ${WRKDIR}/pkg-install
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/client/`${FIND_SETI_BINARY}` ${PREFIX}/lib/boinc/${SETI_BINARY}
