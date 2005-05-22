@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_bandwidth
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	www
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
