@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.30
+PORTVERSION=	1.1.31
 CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 		http://w.ods.org/tools/haproxy/src/old/
@@ -47,7 +47,7 @@ post-patch:
 		${FILESDIR}/haproxy.sh > ${WRKDIR}/haproxy.sh
 
 do-build:
-	@cd ${WRKSRC} && \
+	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
 do-install:
