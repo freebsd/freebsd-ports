@@ -10,6 +10,7 @@
 %%FREETRANSLATION:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiFreeTranslation.so
 %%GDICT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGdict.so
 %%GOOGLE:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGoogle.so
+%%GRAMMAR:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGrammar.so
 %%HRTEXT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiHRText.so
 %%HANCOM:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiHancom.so
 %%JPEG:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiJPEG.so
