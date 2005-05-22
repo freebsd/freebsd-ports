@@ -1594,6 +1594,7 @@ djbdns		ports/dns/djbdns
 djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
 djvulibre	ports/graphics/djvulibre
+dk-milter	ports/mail/dk-milter
 dk-openoffice-1.0	ports/editors/openoffice-1.0-dk
 dkftpbench	ports/benchmarks/dkftpbench
 dkimap4		ports/mail/dkimap4
