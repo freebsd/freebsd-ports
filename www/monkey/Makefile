@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monkey
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://monkeyd.sourceforge.net/versions/
 
