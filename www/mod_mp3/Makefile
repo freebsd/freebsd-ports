@@ -8,9 +8,7 @@
 PORTNAME=	mod_mp3
 PORTVERSION=	0.40
 CATEGORIES=	www audio
-MASTER_SITES=	http://software.tangent.org/download/ \
-		ftp://ftp.tangent.org/pub/apache/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to allow MP3 streaming

@@ -8,8 +8,7 @@
 PORTNAME=	mod_trigger
 PORTVERSION=	1.1
 CATEGORIES=	www
-MASTER_SITES=	http://software.tangent.org/download/ \
-		ftp://ftp.tangent.org/pub/apache/
+MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	svenasse@polaris.ca
 COMMENT=	Apache module to launch triggers if certain actions occur

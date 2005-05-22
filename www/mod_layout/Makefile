@@ -8,7 +8,7 @@
 PORTNAME=	mod_layout
 PORTVERSION=	3.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://software.tangent.org/download/
+MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to wrap served pages with a header and/or footer
