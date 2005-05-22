@@ -298,6 +298,7 @@
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PySQLite10
     SUBDIR += py-PySQLite11
+    SUBDIR += py-PySQLite2
     SUBDIR += py-SQLDict
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
