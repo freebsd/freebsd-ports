@@ -715,6 +715,7 @@
     SUBDIR += sambasentinel
     SUBDIR += samplicator
     SUBDIR += sbd
+    SUBDIR += scamper
     SUBDIR += scand
     SUBDIR += scr_ipfm
     SUBDIR += sdl_net
