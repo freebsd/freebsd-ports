@@ -7,6 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -16,8 +17,8 @@ DIST_SUBDIR=	AbiWord
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multi-plugins for AbiWord
 
-BUILD_DEPENDS=	AbiWord-2.4:${PORTSDIR}/editors/abiword
-RUN_DEPENDS=	AbiWord-2.4:${PORTSDIR}/editors/abiword
+BUILD_DEPENDS=	AbiWord-2.4:${PORTSDIR}/editors/abiword-devel
+RUN_DEPENDS=	AbiWord-2.4:${PORTSDIR}/editors/abiword-devel
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -124,6 +125,14 @@ CONFIGURE_ARGS+=	--enable-google
 PLIST_SUB+=		GOOGLE:=""
 .else
 PLIST_SUB+=		GOOGLE:="@comment "
+.endif
+
+.if defined(WITH_GRAMMAR) || defined(PACKAGE_BUILDING)
+LIB_DEPENDS+=		link-grammar.5:${PORTSDIR}/textproc/link-grammar
+CONFIGURE_ARGS+=	--enable-abigrammar
+PLIST_SUB+=		GRAMMAR:=""
+.else
+PLIST_SUB+=		GRAMMAR:="@comment "
 .endif
 
 .if defined(WITH_HANCOM) # Need to be tested
@@ -283,6 +292,9 @@ pre-everything::
 .endif
 .if !defined(WITH_GDICT)
 	@${ECHO_MSG} "WITH_GDICT=yes		Look up definitions of selected text."
+.endif
+.if !defined(WITH_GRAMMAR)
+	@${ECHO_MSG} "WITH_GRAMMAR=yes	Allows AbiWord to be Grammar checked."
 .endif
 .if !defined(WITH_HANCOM)
 	@${ECHO_MSG} "WITH_HANCOM=yes		Hancom Word Importer. Only does text."
