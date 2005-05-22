@@ -10,42 +10,5 @@ libdata/pkgconfig/sqlite3.pc
 %%WITH_TCL%%lib/sqlite/libtclsqlite3.a
 %%WITH_TCL%%lib/sqlite/pkgIndex.tcl
 %%WITH_TCL%%@dirrm lib/sqlite
-%%PORTDOCS%%%%DOCSDIR%%/affinity.html
-%%PORTDOCS%%%%DOCSDIR%%/arch.html
-%%PORTDOCS%%%%DOCSDIR%%/arch2.gif
-%%PORTDOCS%%%%DOCSDIR%%/c_interface.html
-%%PORTDOCS%%%%DOCSDIR%%/capi3.html
-%%PORTDOCS%%%%DOCSDIR%%/capi3ref.html
-%%PORTDOCS%%%%DOCSDIR%%/changes.html
-%%PORTDOCS%%%%DOCSDIR%%/conflict.html
-%%PORTDOCS%%%%DOCSDIR%%/copyright-release.html
-%%PORTDOCS%%%%DOCSDIR%%/copyright-release.pdf
-%%PORTDOCS%%%%DOCSDIR%%/copyright.html
-%%PORTDOCS%%%%DOCSDIR%%/datatype3.html
-%%PORTDOCS%%%%DOCSDIR%%/datatypes.html
-%%PORTDOCS%%%%DOCSDIR%%/docs.html
-%%PORTDOCS%%%%DOCSDIR%%/download.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/fileformat.html
-%%PORTDOCS%%%%DOCSDIR%%/formatchng.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/lang.html
-%%PORTDOCS%%%%DOCSDIR%%/lemon.html
-%%PORTDOCS%%%%DOCSDIR%%/lockingv3.html
-%%PORTDOCS%%%%DOCSDIR%%/mingw.html
-%%PORTDOCS%%%%DOCSDIR%%/nulls.html
-%%PORTDOCS%%%%DOCSDIR%%/oldnews.html
-%%PORTDOCS%%%%DOCSDIR%%/omitted.html
-%%PORTDOCS%%%%DOCSDIR%%/opcode.html
-%%PORTDOCS%%%%DOCSDIR%%/quickstart.html
-%%PORTDOCS%%%%DOCSDIR%%/report1.txt
-%%PORTDOCS%%%%DOCSDIR%%/speed.html
-%%PORTDOCS%%%%DOCSDIR%%/sqlite.gif
-%%PORTDOCS%%%%DOCSDIR%%/sqlite.html
-%%PORTDOCS%%%%DOCSDIR%%/support.html
-%%PORTDOCS%%%%DOCSDIR%%/tclsqlite.html
-%%PORTDOCS%%%%DOCSDIR%%/vdbe.html
-%%PORTDOCS%%%%DOCSDIR%%/version3.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/example.tcl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

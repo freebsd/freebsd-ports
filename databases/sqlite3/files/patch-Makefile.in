@@ -1,11 +1,15 @@
---- Makefile.in.orig	Thu Oct  7 00:03:05 2004
-+++ Makefile.in	Thu Dec 23 17:17:22 2004
-@@ -543,12 +543,13 @@
- install:	sqlite3 libsqlite3.la sqlite3.h
- 	$(INSTALL) -d $(DESTDIR)$(libdir)
- 	$(LTINSTALL) libsqlite3.la $(DESTDIR)$(libdir)
-+	rm $(DESTDIR)$(exec_prefix)/lib/libsqlite3.la
- 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/bin
+--- Makefile.in.orig	Fri Mar 11 14:50:32 2005
++++ Makefile.in	Sat Mar 19 16:06:28 2005
+@@ -212,7 +212,7 @@
+ # This is the default Makefile target.  The objects listed here
+ # are what get build when you type just "make" with no arguments.
+ #
+-all:	sqlite3.h libsqlite3.la sqlite3$(TEXE) $(HAVE_TCL:1=libtclsqlite3.la)
++all:	sqlite3.h libsqlite3.la sqlite3$(TEXE) $(HAVE_TCL:1=libtclsqlite3.la tclsqlite3)
+ 
+ Makefile: $(TOP)/Makefile.in
+ 	./config.status
+@@ -611,8 +611,8 @@
  	$(LTINSTALL) sqlite3 $(DESTDIR)$(exec_prefix)/bin
  	$(INSTALL) -d $(DESTDIR)$(prefix)/include
  	$(INSTALL) -m 0644 sqlite3.h $(DESTDIR)$(prefix)/include
@@ -14,5 +18,5 @@
 +	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
 +	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
  
- clean:	
- 	rm -f *.lo *.la *.o sqlite3@TARGET_EXEEXT@ libsqlite3.la
+ tcl_install:	libtclsqlite3.la
+ 	tclsh $(TOP)/tclinstaller.tcl $(VERSION)
