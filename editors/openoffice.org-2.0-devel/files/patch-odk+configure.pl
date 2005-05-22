@@ -1,4 +1,4 @@
-Issutracker : #iXXXXX#
+Issutracker : #i41144#
 CWS         : N/A
 Author      : NAKATA Maho <maho@openoffice.org> (JCA)
 Description : canonical name by config.guess for FreeBSD is
