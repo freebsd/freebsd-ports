@@ -9541,6 +9541,7 @@ py-MySQLdb-devel	ports/databases/py-MySQLdb-devel
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite10	ports/databases/py-PySQLite10
 py-PySQLite11	ports/databases/py-PySQLite11
+py-PySQLite2	ports/databases/py-PySQLite2
 py-PyX		ports/graphics/py-PyX
 py-SQLDict	ports/databases/py-SQLDict
 py-SciParam	ports/x11-toolkits/py-SciParam
@@ -9794,6 +9795,7 @@ py-wmgeneral	ports/x11-toolkits/py-wmgeneral
 py-wordnet	ports/textproc/py-wordnet
 py-wsdllib	ports/devel/py-wsdllib
 py-wxPython24	ports/x11-toolkits/py-wxPython24
+py-wxPython26	ports/x11-toolkits/py-wxPython26
 py-xdg		ports/devel/py-xdg
 py-xlib		ports/x11-toolkits/py-xlib
 py-xlwriter	ports/textproc/py-xlwriter
