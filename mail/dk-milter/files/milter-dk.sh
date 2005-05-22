@@ -6,7 +6,7 @@ if ! test -x %%PREFIX%%/libexec/dk-filter
 then
 	exit 0
 fi
-dk_filter_args="-c nofws -H -m MSA -s /var/db/domainkeys/default.key.pem -S default"
+dk_filter_args="-d example.com -c nofws -H -m MSA -s /var/db/domainkeys/default.key.pem -S default"
 case "$1" in
 start)
 	sh "${0}" wait
