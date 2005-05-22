@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Wed Nov 24 20:31:09 2004
-+++ Makefile.in	Sat Feb  5 12:04:56 2005
++++ Makefile.in	Sun Apr 17 10:22:37 2005
 @@ -31,15 +31,21 @@
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  	    $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) ; \
@@ -78,7 +78,7 @@
 +	@test -d $(DESTDIR)$(htdocsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir)-dist
 +	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)-dist)
 +	@test -e $(DESTDIR)$(htdocsdir) || ln -sf $(DESTDIR)$(htdocsdir)-dist $(DESTDIR)$(htdocsdir)
-+	-@test "x$(htdocsdir)" != "x" && cd $(DESTDIR)$(htdocsdir)-dist && find -name "CVS" -print | xargs rm -rf
++	-@test "x$(htdocsdir)" != "x" && cd $(DESTDIR)$(htdocsdir)-dist && find . -name ".svn" -print | xargs rm -rf
 +.endif
 +  
  install-error:
@@ -95,7 +95,7 @@
 +	@echo Installing error documents
 +	@test -d $(DESTDIR)$(errordir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(errordir)-dist
 +	cd $(top_srcdir)/docs/error && cp -rp * $(DESTDIR)$(errordir)-dist
-+	-@test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir)-dist && find . -name "CVS" -print | xargs rm -rf 
++	-@test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir)-dist && find . -name ".svn" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(errordir) || ln -sf $(DESTDIR)$(errordir)-dist $(DESTDIR)$(errordir)
 +.endif
 +  
@@ -113,7 +113,7 @@
 +	@echo Installing icons
 +	@test -d $(DESTDIR)$(iconsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(iconsdir)-dist
 +	cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir)-dist
-+	-@test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir)-dist && find . -name "CVS" -print | xargs rm -rf 
++	-@test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir)-dist && find . -name ".svn" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(iconsdir) || ln -sf $(DESTDIR)$(iconsdir)-dist $(DESTDIR)$(iconsdir)
 +.endif 
 +  
@@ -130,7 +130,7 @@
 +	@echo Installing CGIs
 +	@test -d $(DESTDIR)$(cgidir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(cgidir)-dist
 +	cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir)-dist
-+	-@test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir)-dist && find . -name "CVS" -print | xargs rm -rf 
++	-@test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir)-dist && find . -name ".svn" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(cgidir) || ln -sf $(DESTDIR)$(cgidir)-dist $(DESTDIR)$(cgidir)
 +.endif
  
