@@ -8,7 +8,10 @@
 PORTNAME=	freevrrpd
 PORTVERSION=	0.9.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.b0l.org/download/
+MASTER_SITES=	http://www.b0l.org/download/ \
+		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
+MASTER_SITE_SUBDIR=	flz/freevrrpd/:freebsd
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT,freebsd
 
 MAINTAINER=	spe@b0l.org
 COMMENT=	This a VRRP RFC2338 Compliant implementation under FreeBSD
