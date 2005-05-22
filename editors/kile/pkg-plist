@@ -2,6 +2,7 @@ bin/kile
 share/applications/kde/kile.desktop
 share/apps/kconf_update/kile.upd
 share/apps/kconf_update/kile1.6_upd.pl
+share/apps/kconf_update/kile1.7_upd.pl
 share/apps/kile/complete/abbreviation/example.cwl
 share/apps/kile/complete/dictionary/example.cwl
 share/apps/kile/complete/tex/Common.cwl
@@ -19,6 +20,7 @@ share/apps/kile/encodings/latin5.enc
 share/apps/kile/encodings/latin9.enc
 share/apps/kile/help/latex-kile.lst
 share/apps/kile/help/latex-tetex.lst
+share/apps/kile/help/latex-tetex3.lst
 share/apps/kile/icons/hicolor/16x16/actions/acute.png
 share/apps/kile/icons/hicolor/16x16/actions/bar.png
 share/apps/kile/icons/hicolor/16x16/actions/breve.png
@@ -114,6 +116,9 @@ share/apps/kile/icons/hicolor/22x22/actions/multicolumn.png
 share/apps/kile/icons/hicolor/22x22/actions/newline.png
 share/apps/kile/icons/hicolor/22x22/actions/output_win.png
 share/apps/kile/icons/hicolor/22x22/actions/pdflatex.png
+share/apps/kile/icons/hicolor/22x22/actions/preview_env.png
+share/apps/kile/icons/hicolor/22x22/actions/preview_sel.png
+share/apps/kile/icons/hicolor/22x22/actions/preview_subdoc.png
 share/apps/kile/icons/hicolor/22x22/actions/ps2pdf.png
 share/apps/kile/icons/hicolor/22x22/actions/quick.png
 share/apps/kile/icons/hicolor/22x22/actions/quickwizard.png
@@ -129,10 +134,14 @@ share/apps/kile/icons/hicolor/22x22/actions/warnnext.png
 share/apps/kile/icons/hicolor/22x22/actions/warnprev.png
 share/apps/kile/icons/hicolor/22x22/actions/watchfile.png
 share/apps/kile/icons/hicolor/22x22/actions/wizard_array.png
+share/apps/kile/icons/hicolor/22x22/actions/wizard_float.png
+share/apps/kile/icons/hicolor/22x22/actions/wizard_math.png
+share/apps/kile/icons/hicolor/22x22/actions/wizard_pstools.png
 share/apps/kile/icons/hicolor/22x22/actions/wizard_tabbing.png
 share/apps/kile/icons/hicolor/22x22/actions/wizard_tabular.png
 share/apps/kile/icons/hicolor/32x32/actions/bibtex.png
 share/apps/kile/icons/hicolor/32x32/actions/usertool.png
+share/apps/kile/icons/hicolor/64x64/actions/preview.png
 share/apps/kile/kilestdtools.rc
 share/apps/kile/kileui.rc
 share/apps/kile/mathsymbols/img1.png
@@ -600,6 +609,9 @@ share/apps/kile/test/test_plain.tex
 share/apps/kile/test/test_src.tex
 share/apps/kile/tips
 share/config.kcfg/kile.kcfg
+share/doc/HTML/da/kile/common
+share/doc/HTML/da/kile/index.cache.bz2
+share/doc/HTML/da/kile/index.docbook
 share/doc/HTML/en/kile/TODO
 share/doc/HTML/en/kile/common
 share/doc/HTML/en/kile/index.cache.bz2
@@ -618,21 +630,79 @@ share/doc/HTML/en/kile/snap_sidebarmenu.png
 share/doc/HTML/en/kile/snap_structview_label.png
 share/doc/HTML/en/kile/snap_usertag.png
 share/doc/HTML/en/kile/snap_wizardry.png
-share/icons/crystalsvg/128x128/apps/kile.png
-share/icons/crystalsvg/16x16/apps/kile.png
-share/icons/crystalsvg/22x22/apps/kile.png
-share/icons/crystalsvg/32x32/apps/kile.png
-share/icons/crystalsvg/48x48/apps/kile.png
-share/icons/crystalsvg/64x64/apps/kile.png
+share/doc/HTML/et/kile/common
+share/doc/HTML/et/kile/index.cache.bz2
+share/doc/HTML/et/kile/index.docbook
+share/doc/HTML/it/kile/common
+share/doc/HTML/it/kile/index.cache.bz2
+share/doc/HTML/it/kile/index.docbook
+share/doc/HTML/it/kile/snap_autocomplete.png
+share/doc/HTML/it/kile/snap_compile_error.png
+share/doc/HTML/it/kile/snap_editusertag.png
+share/doc/HTML/it/kile/snap_encoding.png
+share/doc/HTML/it/kile/snap_kdvi_settings.png
+share/doc/HTML/it/kile/snap_projectview.png
+share/doc/HTML/it/kile/snap_projectview_add.png
+share/doc/HTML/it/kile/snap_ref_choose.png
+share/doc/HTML/it/kile/snap_ref_select.png
+share/doc/HTML/it/kile/snap_sidebarmenu.png
+share/doc/HTML/it/kile/snap_structview_label.png
+share/doc/HTML/it/kile/snap_usertag.png
+share/doc/HTML/it/kile/snap_wizardry.png
+share/doc/HTML/nl/kile/common
+share/doc/HTML/nl/kile/index.cache.bz2
+share/doc/HTML/nl/kile/index.docbook
+share/doc/HTML/pt/kile/common
+share/doc/HTML/pt/kile/index.cache.bz2
+share/doc/HTML/pt/kile/index.docbook
+share/doc/HTML/sv/kile/common
+share/doc/HTML/sv/kile/index.cache.bz2
+share/doc/HTML/sv/kile/index.docbook
+share/doc/HTML/sv/kile/snap_autocomplete.png
+share/doc/HTML/sv/kile/snap_compile_error.png
+share/doc/HTML/sv/kile/snap_editusertag.png
+share/doc/HTML/sv/kile/snap_encoding.png
+share/doc/HTML/sv/kile/snap_kdvi_settings.png
+share/doc/HTML/sv/kile/snap_projectview.png
+share/doc/HTML/sv/kile/snap_projectview_add.png
+share/doc/HTML/sv/kile/snap_ref_choose.png
+share/doc/HTML/sv/kile/snap_ref_select.png
+share/doc/HTML/sv/kile/snap_sidebarmenu.png
+share/doc/HTML/sv/kile/snap_structview_label.png
+share/doc/HTML/sv/kile/snap_usertag.png
+share/doc/HTML/sv/kile/snap_wizardry.png
 share/icons/hicolor/128x128/apps/kile.png
 share/icons/hicolor/16x16/apps/kile.png
 share/icons/hicolor/22x22/apps/kile.png
 share/icons/hicolor/32x32/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/64x64/apps/kile.png
+share/icons/hicolor/scalable/apps/kile.svgz
+share/locale/da/LC_MESSAGES/kile.mo
+share/locale/en_GB/LC_MESSAGES/kile.mo
+share/locale/es/LC_MESSAGES/kile.mo
+share/locale/et/LC_MESSAGES/kile.mo
+share/locale/fi/LC_MESSAGES/kile.mo
+share/locale/fr/LC_MESSAGES/kile.mo
+share/locale/it/LC_MESSAGES/kile.mo
+share/locale/nl/LC_MESSAGES/kile.mo
+share/locale/pt/LC_MESSAGES/kile.mo
+share/locale/pt_BR/LC_MESSAGES/kile.mo
+share/locale/sr/LC_MESSAGES/kile.mo
+share/locale/sr@Latn/LC_MESSAGES/kile.mo
+share/locale/sv/LC_MESSAGES/kile.mo
+share/locale/ta/LC_MESSAGES/kile.mo
 share/mimelnk/text/x-kilepr.desktop
 @unexec rmdir %D/share/mimelnk/text 2>/dev/null || true
 @unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/scalable/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/scalable 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
@@ -646,28 +716,29 @@ share/mimelnk/text/x-kilepr.desktop
 @unexec rmdir %D/share/icons/hicolor/128x128/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/64x64/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/22x22/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/128x128/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/kile
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/pt/kile
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/nl/kile
+@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
+@dirrm share/doc/HTML/it/kile
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/et/kile
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
 @dirrm share/doc/HTML/en/kile
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/da/kile
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @unexec rmdir %D/share/config.kcfg 2>/dev/null || true
 @dirrm share/apps/kile/test
 @dirrm share/apps/kile/templates
 @dirrm share/apps/kile/pics
 @dirrm share/apps/kile/mathsymbols
+@dirrm share/apps/kile/icons/hicolor/64x64/actions
+@dirrm share/apps/kile/icons/hicolor/64x64
 @dirrm share/apps/kile/icons/hicolor/32x32/actions
 @dirrm share/apps/kile/icons/hicolor/32x32
 @dirrm share/apps/kile/icons/hicolor/22x22/actions

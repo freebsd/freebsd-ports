@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kile
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,7 @@ COMMENT=	A LaTeX source editor for KDE
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+CONFLICTS=	kile-i18n-*
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
@@ -27,6 +26,8 @@ USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| syntax||g' ${WRKSRC}/kile/Makefile.in
+	@${REINPLACE_CMD} -e 's| syntax||g' ${WRKSRC}/src/kile/Makefile.in
+	@${FIND} ${WRKSRC}/translations -name Makefile.in | ${XARGS} \
+		${REINPLACE_CMD} -e 's|LANG)/doc|LANG)/kile|g'
 
 .include <bsd.port.mk>
