@@ -9,8 +9,7 @@
 PORTNAME=	mod_index_rss
 PORTVERSION=	0.10
 CATEGORIES=	www
-MASTER_SITES=	http://software.tangent.org/download/ \
-		ftp://ftp.tangent.org/pub/apache/
+MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to provides RSS output for directories

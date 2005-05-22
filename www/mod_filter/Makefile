@@ -8,7 +8,7 @@
 PORTNAME=		mod_filter
 PORTVERSION=		1.4.1
 CATEGORIES=		www
-MASTER_SITES=		http://software.tangent.org/download/
+MASTER_SITES=		http://download.tangent.org/
 
 MAINTAINER=		svenasse@polaris.ca
 COMMENT=	Filter output from other modules inside of Apache
