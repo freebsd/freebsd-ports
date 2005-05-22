@@ -19,8 +19,8 @@ COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(develo
 
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
-MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 MOZILLA_VERSION=	1.7.5
+MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
 DISTFILES+=	${MOZILLA_SOURCE}:mozsrc
 .endif
@@ -48,8 +48,8 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		103
-SNAPDATE=		20050512
+MILESTONE=		105
+SNAPDATE=		20050521
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
