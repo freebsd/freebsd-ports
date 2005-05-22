@@ -126,7 +126,7 @@ post-install:
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
-	  ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp}; \
+	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
 .for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
