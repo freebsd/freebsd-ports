@@ -10582,6 +10582,7 @@ sbox-dtc	ports/www/sbox-dtc
 sc		ports/math/sc
 sc-aspell	ports/textproc/sc-aspell
 scalapack	ports/math/scalapack
+scamper		ports/net/scamper
 scan_ffs	ports/sysutils/scan_ffs
 scand		ports/net/scand
 scandoc		ports/devel/scandoc
