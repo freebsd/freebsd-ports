@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	doorman
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	A Port Knocking implementation, both daemon and client
 
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
