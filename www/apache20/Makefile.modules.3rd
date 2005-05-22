@@ -18,14 +18,14 @@ OVERRIDABLE_VARS=	SRC_FILE MODULENAME SHORTMODNAME WRKSRC \
 			PKGNAMESUFFIX
 
 
-.if exists(${APXS_PREFIX}/include/apache2/http_core.h)
+.if exists(${LOCALBASE}/include/apache2/http_core.h)
 WITH_APACHE2=	YES
 .   if defined (WANT_APACHE)
 .     if ${WANT_APACHE} == 13
 IGNORE=		"This module require apache13 and you have apache2 installed"
 .     endif
 .   endif
-.elif exists(${APXS_PREFIX}/include/apache/http_core.h)
+.elif exists(${LOCALBASE}/include/apache/http_core.h)
 WITH_APACHE13=	YES
 .   if defined (WANT_APACHE)
 .     if ${WANT_APACHE} == 2
