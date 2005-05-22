@@ -6,24 +6,19 @@
 #
 
 PORTNAME=	libapreq2
-PORTVERSION=	2.04r03
+PORTVERSION=	2.05
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/_/}-dev
+DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	Generic Apache2 Request Library
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
+		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Broken due the new mod_perl2 API
-
-CONFLICTS=	p5-libapreq-[0-9]*
 
 WITH_APACHE2=	yes
 INSTALLS_SHLIB=	yes
