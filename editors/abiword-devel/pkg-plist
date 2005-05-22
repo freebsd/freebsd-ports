@@ -1,6 +1,6 @@
 bin/AbiWord-%%ABIVERSION%%
-bin/ttfadmin.sh
-bin/ttftool
+bin/ttfadmin24.sh
+bin/ttftool24
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Break.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Field.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_FormatFootnotes.glade
@@ -202,7 +202,7 @@ share/AbiSuite-%%ABIVERSION%%/icons/abiword_16.xpm
 share/AbiSuite-%%ABIVERSION%%/icons/abiword_48.png
 share/AbiSuite-%%ABIVERSION%%/icons/abiword_48.tif
 share/AbiSuite-%%ABIVERSION%%/icons/abiword_48.xpm
-%%GNOME:%%share/AbiSuite-%%ABIVERSION%%/icons/abiword_logo.xpm
+share/AbiSuite-%%ABIVERSION%%/icons/abiword_logo.xpm
 share/AbiSuite-%%ABIVERSION%%/templates/A4.awt
 share/AbiSuite-%%ABIVERSION%%/templates/Business-Letter.awt
 share/AbiSuite-%%ABIVERSION%%/templates/Business-Report.awt
@@ -274,8 +274,10 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-ur_PK
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-yi
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_CN
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
-%%GNOME:%%share/gnome/applications/abiword24.desktop
-%%GNOME:%%share/gnome/pixmaps/abiword24_48.png
+share/applications/abiword24.desktop
+share/pixmaps/abiword24_48.png
+@unexec rmdir %D/share/pixmaps 2> /dev/null || true
+@unexec rmdir %D/share/applications 2> /dev/null || true
 @dirrm share/AbiSuite-%%ABIVERSION%%/templates
 @dirrm share/AbiSuite-%%ABIVERSION%%/icons
 @dirrm share/AbiSuite-%%ABIVERSION%%/dictionary
@@ -287,5 +289,5 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
 @dirrm share/AbiSuite-%%ABIVERSION%%
 @dirrm lib/AbiWord-%%ABIVERSION%%/plugins
 @dirrm lib/AbiWord-%%ABIVERSION%%
-%%GNOME:%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%GNOME:%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
