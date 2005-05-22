@@ -1,0 +1,8 @@
+--- Makefile.orig	Thu May 19 12:13:23 2005
++++ Makefile	Thu May 19 12:13:55 2005
+@@ -51,4 +51,4 @@
+ 				libscamperfile.a
+ 
+ install:		scamper
+-			install -m 4755 -o root scamper /usr/local/bin
++			install -m 4755 -o root scamper ${PREFIX}/bin
