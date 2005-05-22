@@ -112,7 +112,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p>A RST/GHC Advisory reports that there is an format string
 	  vulnerability in oops.  The vulnerability can be found in
 	  the MySQL/PgSQL authentication module.  Succesful
-	  exploitation may allow execution of arbitrary code.:</p>
+	  exploitation may allow execution of arbitrary code.</p>
       </body>
     </description>
     <references>
