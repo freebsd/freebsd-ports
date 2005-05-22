@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.4.4
-PORTREVISION=	20050513
+PORTVERSION=	3.4.5
+PORTREVISION=	20050520
 CATEGORIES=	lang java
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -122,7 +122,12 @@ post-build:
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
-post-install: fake-manpages
+post-install:
+	# man pages can only be generated if Perl >= 5.6 is installed;
+	# fake them otherwise.
+	for mp in ${_MANPAGES}; do \
+	  ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp}; \
+	done
 .for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
@@ -134,7 +139,7 @@ post-install: fake-manpages
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
-	${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
+	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_LIBS}
@@ -162,10 +167,3 @@ cklatest:
 .endfor
 
 .include <bsd.port.post.mk>
-
-fake-manpages:
-	# man pages can only be generated if Perl >= 5.6 is installed, so
-	# fake them on 4.x systems.
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
