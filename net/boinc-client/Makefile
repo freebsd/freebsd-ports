@@ -7,6 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	4.67.20050320
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/ \
 		${MASTER_SITE_LOCAL}
@@ -43,6 +44,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-server
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-wx-config=false
+.else
+CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.4-config
 .endif
 CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include CXXFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include"
 
@@ -128,10 +131,10 @@ post-install:
 	${MKDIR} ${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKDIR}/rc-boinc.sh ${PREFIX}/etc/rc.d/boinc.sh
 	${REINPLACE_CMD} \
-	    -e "s:%%BOINC_BINARY%%:${BOINC_BINARY}:g" \
-	    -e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-	    -e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-	    ${TMPPLIST}
+		-e "s:%%BOINC_BINARY%%:${BOINC_BINARY}:g" \
+		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
+		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
+		${TMPPLIST}
 	${CAT} ${PKGMESSAGE}
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

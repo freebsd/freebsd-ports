@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Thu Feb  3 01:44:31 2005
++++ Makefile.am	Fri May 20 12:37:31 2005
+@@ -17,7 +17,7 @@
+ endif
+ 
+ if BUILD_CLIENTGUI
+-   CLIENTGUI_SUBDIRS = clientgui sea
++   CLIENTGUI_SUBDIRS = clientgui
+ endif
+ 
+ # ORDER MATTERS below.  One must build dependencies FIRST, then things
