@@ -31,9 +31,15 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/ftpurl.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/ftpurl.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/ftpurl.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/geoip.py
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/geoip.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/geoip.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.py
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpsurl.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpsurl.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpsurl.pyo
@@ -67,6 +73,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/containers.py
 %%PYTHON_SITELIBDIR%%/linkcheck/containers.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/containers.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/decorators.py
+%%PYTHON_SITELIBDIR%%/linkcheck/decorators.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/decorators.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/__init__.pyo
@@ -302,6 +311,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/linkparse.py
 %%PYTHON_SITELIBDIR%%/linkcheck/linkparse.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/linkparse.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/lock.py
+%%PYTHON_SITELIBDIR%%/linkcheck/lock.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/lock.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/log.py
 %%PYTHON_SITELIBDIR%%/linkcheck/log.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/log.pyo
@@ -338,6 +350,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.py
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.py
+%%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyo
@@ -362,9 +377,6 @@ bin/linkchecker
 %%EXAMPLESDIR%%/linkchecker-completion
 %%DATADIR%%/linkcheckerrc
 %%DATADIR%%/logging.conf
-share/locale/de/LC_MESSAGES/linkchecker.mo
-share/locale/fr/LC_MESSAGES/linkchecker.mo
-share/locale/nl/LC_MESSAGES/linkchecker.mo
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser

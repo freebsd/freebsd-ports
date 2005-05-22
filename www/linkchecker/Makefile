@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	linkchecker
-PORTVERSION=	2.3
+PORTVERSION=	2.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,13 +17,14 @@ COMMENT=	Check HTML documents for broken links
 
 USE_PYTHON=		2.4
 USE_PYDISTUTILS=	yes
-
+USE_REINPLACE=		yes
 MAN1=	linkchecker.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+post-patch:
+	@${REINPLACE_CMD} -e 's/gnu99/gnu89/' ${WRKSRC}/setup.py
 .endif
 
 .include <bsd.port.post.mk>
