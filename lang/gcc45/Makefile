@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.0
-PORTREVISION=	20050515
+PORTREVISION=	20050522
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -54,8 +54,6 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
-# FIXME: needed to make this port build at all.
-WITHOUT_LIBJAVA=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
@@ -104,14 +102,15 @@ INFO=		cpp cppinternals gcc gccinstall gccint gcj fastjar
 CONFIGURE_ARGS+=	--disable-libgcj
 PLIST_SUB+=	LIBJAVA="@comment "
 .else
-EXTRA_LIBS+=	libffi libgcj libgij
 PLIST_SUB+=	LIBJAVA=""
+EXTRA_LIBS+=	libffi libgcj libgij
 .endif
 
 .if defined(WITH_FORTRAN)
 MAN1+=	gfortran${SUFFIX}.1
 INFO+=	gfortran
 PLIST_SUB+=	FORTRAN=""
+EXTRA_LIBS+=	libgfortran libgfortranbegin
 .else
 PLIST_SUB+=	FORTRAN="@comment "
 .endif
@@ -139,7 +138,12 @@ post-build:
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
-post-install: fake-manpages
+post-install:
+	# man pages can only be generated if Perl >= 5.6 is installed;
+	# fake them otherwise.
+	for mp in ${_MANPAGES}; do \
+	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
+	done
 .for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
@@ -179,10 +183,3 @@ cklatest:
 .endfor
 
 .include <bsd.port.post.mk>
-
-fake-manpages:
-	# man pages can only be generated if Perl >= 5.6 is installed, so
-	# fake them on 4.x systems.
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
