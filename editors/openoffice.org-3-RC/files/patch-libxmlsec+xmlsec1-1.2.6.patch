@@ -3,47 +3,17 @@ CWS         : N/A
 Author      : NAKATA Maho <maho@openoffice.org> (JCA)
 Description : correct version number of resultant shared lib
 
-Index: libxmlsec/xmlsec1-1.2.6.patch
+Index: xmlsec1-1.2.6.patch
 ===================================================================
 RCS file: /cvs/external/libxmlsec/xmlsec1-1.2.6.patch,v
-retrieving revision 1.3
-diff -u -r1.3 xmlsec1-1.2.6.patch
---- libxmlsec/xmlsec1-1.2.6.patch	29 Mar 2005 11:45:08 -0000	1.3
-+++ libxmlsec/xmlsec1-1.2.6.patch	6 Apr 2005 04:46:13 -0000
-@@ -13957,3 +13957,61 @@
-   XMLSEC_NSS_ALIBS    	= smime3.lib ssl3.lib nss3.lib libnspr4_s.lib libplds4_s.lib libplc4_s.lib kernel32.lib user32.lib gdi32.lib
-   
-   XMLSEC_MSCRYPTO_SOLIBS  = kernel32.lib user32.lib gdi32.lib Crypt32.lib Advapi32.lib
-+*** misc/xmlsec1-1.2.6/ltmain.sh	Thu Aug 26 15:00:15 2004
-+--- misc/build/xmlsec1-1.2.6/ltmain.sh	Wed Apr  6 13:32:04 2005
-+***************
-+*** 2918,2929 ****
-+  	  # which has an extra 1 added just for fun
-+  	  #
-+  	  case $version_type in
-+! 	  darwin|linux|osf|windows)
-+  	    current=`expr $number_major + $number_minor`
-+  	    age="$number_minor"
-+  	    revision="$number_revision"
-+  	    ;;
-+! 	  freebsd-aout|freebsd-elf|sunos)
-+  	    current="$number_major"
-+  	    revision="$number_minor"
-+  	    age="0"
-+--- 2918,2929 ----
-+  	  # which has an extra 1 added just for fun
-+  	  #
-+  	  case $version_type in
-+! 	  darwin|linux|osf|windows|freebsd-aout|freebsd-elf)
-+  	    current=`expr $number_major + $number_minor`
-+  	    age="$number_minor"
-+  	    revision="$number_revision"
-+  	    ;;
-+! 	  sunos)
-+  	    current="$number_major"
-+  	    revision="$number_minor"
-+  	    age="0"
-+***************
+retrieving revision 1.5
+diff -u -r1.5 xmlsec1-1.2.6.patch
+--- libxmlsec/xmlsec1-1.2.6.patch	18 May 2005 10:11:24 -0000	1.5
++++ libxmlsec/xmlsec1-1.2.6.patch	22 May 2005 01:43:49 -0000
+@@ -756,6 +756,35 @@
+ *** misc/xmlsec1-1.2.6/ltmain.sh	2004-08-26 08:00:15.000000000 +0200
+ --- misc/build/xmlsec1-1.2.6/ltmain.sh	2005-05-09 19:55:51.745319024 +0200
+ ***************
 +*** 2994,3006 ****
 +  	  ;;
 +  
@@ -72,3 +42,7 @@ diff -u -r1.3 xmlsec1-1.2.6.patch
 +  	  ;;
 +  
 +  	irix | nonstopux)
++***************
+ *** 3564,3570 ****
+   		fi
+   	      else

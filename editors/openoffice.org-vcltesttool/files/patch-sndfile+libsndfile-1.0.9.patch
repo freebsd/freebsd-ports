@@ -3,46 +3,19 @@ CWS         : N/A
 Author      : NAKATA Maho <maho@openoffice.org> (JCA)
 Description : correct shared lib number
 
-Index: sndfile/libsndfile-1.0.9.patch
+Index: libsndfile-1.0.9.patch
 ===================================================================
 RCS file: /cvs/external/sndfile/libsndfile-1.0.9.patch,v
 retrieving revision 1.1
 diff -u -r1.1 libsndfile-1.0.9.patch
 --- sndfile/libsndfile-1.0.9.patch	6 Oct 2004 11:49:36 -0000	1.1
-+++ sndfile/libsndfile-1.0.9.patch	28 Mar 2005 07:59:15 -0000
-@@ -231,3 +231,51 @@
++++ sndfile/libsndfile-1.0.9.patch	22 May 2005 02:01:17 -0000
+@@ -231,3 +231,24 @@
    
    #define SF_COUNT_MAX		0x7FFFFFFFFFFFFFFFLL
    
 +*** misc/libsndfile-1.0.9/ltmain.sh	Sat Mar 27 13:02:07 2004
 +--- misc/build/libsndfile-1.0.9/ltmain.sh	Mon Mar 28 16:37:47 2005
-+***************
-+*** 2899,2910 ****
-+  	  # which has an extra 1 added just for fun
-+  	  #
-+  	  case $version_type in
-+! 	  darwin|linux|osf|windows)
-+  	    current=`expr $number_major + $number_minor`
-+  	    age="$number_minor"
-+  	    revision="$number_revision"
-+  	    ;;
-+! 	  freebsd-aout|freebsd-elf|sunos)
-+  	    current="$number_major"
-+  	    revision="$number_minor"
-+  	    age="0"
-+--- 2899,2910 ----
-+  	  # which has an extra 1 added just for fun
-+  	  #
-+  	  case $version_type in
-+! 	  darwin|linux|osf|windows|freebsd-aout|freebsd-elf)
-+  	    current=`expr $number_major + $number_minor`
-+  	    age="$number_minor"
-+  	    revision="$number_revision"
-+  	    ;;
-+! 	  sunos)
-+  	    current="$number_major"
-+  	    revision="$number_minor"
-+  	    age="0"
 +***************
 +*** 2980,2987 ****
 +  	  ;;
