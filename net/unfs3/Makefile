@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--enable-cluster
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+CFLAGS+=	-DHAVE_SYS_MOUNT_H=1
 .endif
 
 .include <bsd.port.post.mk>
