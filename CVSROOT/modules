@@ -4662,7 +4662,6 @@ khacc		ports/finance/khacc
 kicker-applets	ports/misc/kicker-applets
 kickpim		ports/deskutils/kickpim
 kile		ports/editors/kile
-kile-i18n	ports/misc/kile-i18n
 kiltdown	ports/mail/kiltdown
 kimdaba		ports/graphics/kimdaba
 kimwitu		ports/devel/kimwitu
