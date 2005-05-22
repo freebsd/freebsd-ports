@@ -1,0 +1,15 @@
+--- library/Makefile.in.orig	Sat May 21 17:21:51 2005
++++ library/Makefile.in	Sat May 21 17:22:18 2005
+@@ -137,10 +137,10 @@
+ libapreq2_la_OBJECTS = $(am_libapreq2_la_OBJECTS)
+ 
+ DEFS = @DEFS@
+-DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)/include
++DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)/include -I$(prefix)/include/apache2/modules/perl
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -L$(prefix)/lib
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cookie.Plo ./$(DEPDIR)/error.Plo \

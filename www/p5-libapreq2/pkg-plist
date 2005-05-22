@@ -1,39 +1,63 @@
 bin/apreq2-config
+include/apache2/apreq2/apreq_module_apache2.h
 include/apreq2/apreq.h
 include/apreq2/apreq_cookie.h
-include/apreq2/apreq_env.h
-include/apreq2/apreq_params.h
+include/apreq2/apreq_error.h
+include/apreq2/apreq_module.h
+include/apreq2/apreq_param.h
+include/apreq2/apreq_parser.h
+include/apreq2/apreq_util.h
 include/apreq2/apreq_version.h
-lib/libapreq2.a
+lib/libapreq2.so.3
 lib/libapreq2.so
-lib/libapreq2.so.2
-libexec/apache2/mod_apreq.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie/Error.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie/Jar/Error.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie/Table.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Request.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Request.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Request/Error.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Request/Table.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Upload.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Upload.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Upload/Error.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Upload/Table.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Cookie/Cookie.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Cookie/Cookie.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Request/Request.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Request/Request.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Upload/Upload.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Upload/Upload.so
+lib/libapreq2.a
+libexec/apache2/mod_apreq2.so
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Cookie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Request.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Upload.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/Apache2.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/Apache2.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/CGI.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/CGI.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Upload
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Request
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Cookie
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Upload
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Request
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie/Jar
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie
+lib/perl5/%%PERL_VER%%/man/man3/APR::Request::Apache2.3
+lib/perl5/%%PERL_VER%%/man/man3/APR::Request::CGI.3
+lib/perl5/%%PERL_VER%%/man/man3/APR::Request::Cookie.3
+lib/perl5/%%PERL_VER%%/man/man3/APR::Request::Error.3
+lib/perl5/%%PERL_VER%%/man/man3/APR::Request::Param.3
+lib/perl5/%%PERL_VER%%/man/man3/APR::Request.3
+lib/perl5/%%PERL_VER%%/man/man3/Apache2::Cookie.3
+lib/perl5/%%PERL_VER%%/man/man3/Apache2::Upload.3
+lib/perl5/%%PERL_VER%%/man/man3/Apache2::Request.3
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/ 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2
+@dirrm include/apache2/apreq2
 @dirrm include/apreq2
