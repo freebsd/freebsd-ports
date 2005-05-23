@@ -15,12 +15,12 @@
 name="nrpe"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/nrpe"
+command="%%PREFIX%%/sbin/nrpe"
 
 [ -z "$nrpe_enable" ]	&& nrpe_enable="NO"
 [ -z "$nrpe_config" ]	&& nrpe_config="%%PREFIX%%/etc/nrpe.cfg"
 
-nrpe_flags="-d ${nrpe_config}"
+nrpe_flags="-c ${nrpe_config} --daemon"
 
 load_rc_config $name
 
