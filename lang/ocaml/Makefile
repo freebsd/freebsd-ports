@@ -87,12 +87,9 @@ CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/t
 
 .if ${ARCH} != "i386"
 PLIST_SUB+=	PROF="@comment "
+BROKEN=		"Does not compile on !i386"
 .else
 PLIST_SUB+=	PROF=""
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
 .endif
 
 post-configure:
