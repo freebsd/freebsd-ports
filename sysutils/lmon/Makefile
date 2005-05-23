@@ -26,8 +26,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lmon.pl ${PREFIX}/${PORTNAME}/
 	${INSTALL_SCRIPT} ${WRKSRC}/control.pl ${PREFIX}/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/examples/control.cfg ${PREFIX}/${PORTNAME}/control.cfg.sample
+	@${REINPLACE_CMD} -E -e "s@^(user=).*@\1\"root\"@;s@^(lmonhome=).*@\1\"${PREFIX}/${PORTNAME}\"@" ${WRKSRC}/examples/lmon.init
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/lmon.init ${PREFIX}/etc/rc.d/lmon.sh.sample
-	@${REINPLACE_CMD} -E -e "s@^(user=).*@\1\"root\"@;s@^(lmonhome=).*@\1\"${PREFIX}/${PORTNAME}\"@" ${PREFIX}/etc/rc.d/lmon.sh.sample
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 0755 ${DOCSDIR}
 .for f in LICENSE README TODO
