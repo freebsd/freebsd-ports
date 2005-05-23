@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Mar  4 00:03:08 2005
-+++ Makefile.in	Tue Mar  8 00:58:17 2005
-@@ -667,8 +667,8 @@
+--- Makefile.in.orig	Tue Apr 26 10:28:10 2005
++++ Makefile.in	Fri May 20 00:47:48 2005
+@@ -669,8 +669,8 @@
  	${INSTALL_DIRS} ${DESTDIR}/${confdir}
  	@list='${CONFS}'; for p in $$list; do \
  	  if test -f ${SRC_CONFDIR}/$$p; then \

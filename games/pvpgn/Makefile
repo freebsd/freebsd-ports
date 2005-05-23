@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pvpgn
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/pvpgn/
 DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.0.tar.gz
@@ -41,12 +41,11 @@ MAN1=		bnbot.1 bnchat.1 bnetd.1 bnftp.1 bni2tga.1 bnibuild.1 \
 		bniextract.1 bnilist.1 bnpass.1 bnstat.1 bntrackd.1 tgainfo.1
 MAN5=		bnetd.conf.5 bntext.5
 
-.if defined(WITH_MYSQL_VER)
-WITH_MYSQL=	yes
-.if ${WITH_MYSQL_VER} == 3
-WANT_MYSQL_VER=	323
-.endif
-.endif
+OPTIONS=	MYSQL "Include MySQL user accounts support" off \
+		PGSQL "Include PostgreSQL user accounts support" off \
+		SQLITE3 "Include SQLite3 user accounts support" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
@@ -58,18 +57,15 @@ USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
+.if defined(WITH_SQLITE3)
+CONFIGURE_ARGS+=--with-sqlite3
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+.endif
+
 ## support files
 
 SUPPORT_SUFFX=	.tar.gz
 SUPPORT_FILES=	pvpgn-support-1.0
-
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_MYSQL=yes    Include MySQL user account support"
-	@${ECHO} "      WITH_PGSQL=yes    Include PostgreSQL user account support"
-	@${ECHO} ""
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/${SUPPORT_FILES}
@@ -101,4 +97,4 @@ post-install:
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

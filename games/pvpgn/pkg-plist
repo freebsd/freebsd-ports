@@ -46,78 +46,78 @@ sbin/bnetd
 sbin/bntrackd
 sbin/d2cs
 sbin/d2dbs
-share/pvpgn/files/IX86ver1.mpq
-share/pvpgn/files/PMACver1.mpq
-share/pvpgn/files/WAR3IX86.mpq
-share/pvpgn/files/XMACver1.mpq
-share/pvpgn/files/ad000001.mng
-share/pvpgn/files/ad000001.smk
-share/pvpgn/files/ad000004.mng
-share/pvpgn/files/bnserver-D2DV.ini
-share/pvpgn/files/bnserver-D2XP.ini
-share/pvpgn/files/bnserver-WAR3.ini
-share/pvpgn/files/bnserver.ini
-share/pvpgn/files/chathelp-war3-default.txt
-share/pvpgn/files/chathelp-war3-enUS.txt
-share/pvpgn/files/chathelp-war3-frFR.txt
-share/pvpgn/files/chathelp-war3-ruRU.txt
-share/pvpgn/files/chathelp-war3-zhCN.txt
-share/pvpgn/files/icons-WAR3.bni
-share/pvpgn/files/icons.bni
-share/pvpgn/files/icons_STAR.bni
-share/pvpgn/files/matchmaking-war3-default.dat
-share/pvpgn/files/matchmaking-war3-enUS.dat
-share/pvpgn/files/newaccount-default.txt
-share/pvpgn/files/newaccount-enUS.txt
-share/pvpgn/files/newbie.save
-share/pvpgn/files/termsofservice-default.txt
-share/pvpgn/files/termsofservice-enUS.txt
-share/pvpgn/files/tos-unicode_BRA.txt
-share/pvpgn/files/tos-unicode_CHI.txt
-share/pvpgn/files/tos-unicode_DEU.txt
-share/pvpgn/files/tos-unicode_ENU.txt
-share/pvpgn/files/tos-unicode_ESP.txt
-share/pvpgn/files/tos-unicode_FRA.txt
-share/pvpgn/files/tos-unicode_HAN.txt
-share/pvpgn/files/tos-unicode_ITA.txt
-share/pvpgn/files/tos-unicode_JPN.txt
-share/pvpgn/files/tos-unicode_KOR.txt
-share/pvpgn/files/tos-unicode_POL.txt
-share/pvpgn/files/tos-unicode_POR.txt
-share/pvpgn/files/tos-unicode_RUS.txt
-share/pvpgn/files/tos-unicode_SIN.txt
-share/pvpgn/files/tos-unicode_USA.txt
-share/pvpgn/files/tos.txt
-share/pvpgn/files/tos_BRA.txt
-share/pvpgn/files/tos_CHI.txt
-share/pvpgn/files/tos_DEU.txt
-share/pvpgn/files/tos_ENU.txt
-share/pvpgn/files/tos_ESP.txt
-share/pvpgn/files/tos_FRA.txt
-share/pvpgn/files/tos_HAN.txt
-share/pvpgn/files/tos_ITA.txt
-share/pvpgn/files/tos_JPN.txt
-share/pvpgn/files/tos_KOR.txt
-share/pvpgn/files/tos_POL.txt
-share/pvpgn/files/tos_POR.txt
-share/pvpgn/files/tos_RUS.txt
-share/pvpgn/files/tos_SIN.txt
-share/pvpgn/files/tos_USA.txt
-@dirrm share/pvpgn/bak/charinfo
-@dirrm share/pvpgn/bak/charsave
-@dirrm share/pvpgn/bak
-@dirrm share/pvpgn/bnmail
-@dirrm share/pvpgn/chanlogs
-@dirrm share/pvpgn/charinfo
-@dirrm share/pvpgn/charsave
-@dirrm share/pvpgn/clans
-@dirrm share/pvpgn/files
-@dirrm share/pvpgn/ladders
-@dirrm share/pvpgn/reports
-@dirrm share/pvpgn/status
-@dirrm share/pvpgn/teams
-@dirrm share/pvpgn/users
-@dirrm share/pvpgn/userscdb
-@unexec rmdir %D/share/pvpgn 2>/dev/null || true
+%%DATADIR%%/files/IX86ver1.mpq
+%%DATADIR%%/files/PMACver1.mpq
+%%DATADIR%%/files/WAR3IX86.mpq
+%%DATADIR%%/files/XMACver1.mpq
+%%DATADIR%%/files/ad000001.mng
+%%DATADIR%%/files/ad000001.smk
+%%DATADIR%%/files/ad000004.mng
+%%DATADIR%%/files/bnserver-D2DV.ini
+%%DATADIR%%/files/bnserver-D2XP.ini
+%%DATADIR%%/files/bnserver-WAR3.ini
+%%DATADIR%%/files/bnserver.ini
+%%DATADIR%%/files/chathelp-war3-default.txt
+%%DATADIR%%/files/chathelp-war3-enUS.txt
+%%DATADIR%%/files/chathelp-war3-frFR.txt
+%%DATADIR%%/files/chathelp-war3-ruRU.txt
+%%DATADIR%%/files/chathelp-war3-zhCN.txt
+%%DATADIR%%/files/icons-WAR3.bni
+%%DATADIR%%/files/icons.bni
+%%DATADIR%%/files/icons_STAR.bni
+%%DATADIR%%/files/matchmaking-war3-default.dat
+%%DATADIR%%/files/matchmaking-war3-enUS.dat
+%%DATADIR%%/files/newaccount-default.txt
+%%DATADIR%%/files/newaccount-enUS.txt
+%%DATADIR%%/files/newbie.save
+%%DATADIR%%/files/termsofservice-default.txt
+%%DATADIR%%/files/termsofservice-enUS.txt
+%%DATADIR%%/files/tos-unicode_BRA.txt
+%%DATADIR%%/files/tos-unicode_CHI.txt
+%%DATADIR%%/files/tos-unicode_DEU.txt
+%%DATADIR%%/files/tos-unicode_ENU.txt
+%%DATADIR%%/files/tos-unicode_ESP.txt
+%%DATADIR%%/files/tos-unicode_FRA.txt
+%%DATADIR%%/files/tos-unicode_HAN.txt
+%%DATADIR%%/files/tos-unicode_ITA.txt
+%%DATADIR%%/files/tos-unicode_JPN.txt
+%%DATADIR%%/files/tos-unicode_KOR.txt
+%%DATADIR%%/files/tos-unicode_POL.txt
+%%DATADIR%%/files/tos-unicode_POR.txt
+%%DATADIR%%/files/tos-unicode_RUS.txt
+%%DATADIR%%/files/tos-unicode_SIN.txt
+%%DATADIR%%/files/tos-unicode_USA.txt
+%%DATADIR%%/files/tos.txt
+%%DATADIR%%/files/tos_BRA.txt
+%%DATADIR%%/files/tos_CHI.txt
+%%DATADIR%%/files/tos_DEU.txt
+%%DATADIR%%/files/tos_ENU.txt
+%%DATADIR%%/files/tos_ESP.txt
+%%DATADIR%%/files/tos_FRA.txt
+%%DATADIR%%/files/tos_HAN.txt
+%%DATADIR%%/files/tos_ITA.txt
+%%DATADIR%%/files/tos_JPN.txt
+%%DATADIR%%/files/tos_KOR.txt
+%%DATADIR%%/files/tos_POL.txt
+%%DATADIR%%/files/tos_POR.txt
+%%DATADIR%%/files/tos_RUS.txt
+%%DATADIR%%/files/tos_SIN.txt
+%%DATADIR%%/files/tos_USA.txt
+@dirrm %%DATADIR%%/bak/charinfo
+@dirrm %%DATADIR%%/bak/charsave
+@dirrm %%DATADIR%%/bak
+@dirrm %%DATADIR%%/bnmail
+@dirrm %%DATADIR%%/chanlogs
+@dirrm %%DATADIR%%/charinfo
+@dirrm %%DATADIR%%/charsave
+@dirrm %%DATADIR%%/clans
+@dirrm %%DATADIR%%/files
+@dirrm %%DATADIR%%/ladders
+@dirrm %%DATADIR%%/reports
+@dirrm %%DATADIR%%/status
+@dirrm %%DATADIR%%/teams
+@dirrm %%DATADIR%%/users
+@dirrm %%DATADIR%%/userscdb
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @dirrm etc/pvpgn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
