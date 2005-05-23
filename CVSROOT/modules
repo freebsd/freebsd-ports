@@ -4762,6 +4762,7 @@ ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
 ko-openoffice-1.0	ports/korean/openoffice-1.0
 ko-openoffice-1.1	ports/korean/openoffice-1.1
 ko-pgp.language	ports/korean/pgp.language
+ko-php_doc	ports/korean/php_doc
 ko-pinetreefonts	ports/korean/pinetreefonts
 ko-scim-tables	ports/korean/scim-tables
 ko-texinfo	ports/korean/texinfo
