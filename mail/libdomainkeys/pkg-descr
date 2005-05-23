@@ -1,0 +1,5 @@
+The DomainKeys Library is being written in C and provides a foundation
+for implementing the DomainKeys email authentication system in mail
+transfer agents and mail user agents.
+
+WWW: http://domainkeys.sourceforge.net/
