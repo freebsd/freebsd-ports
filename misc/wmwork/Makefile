@@ -22,12 +22,16 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		wmwork.1
 PLIST_FILES=	bin/wmwork
 
-CPPFLAGS=	-I${X11BASE}/include
+CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include
 LDFLAGS=	-L${X11BASE}/lib
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/wmwork ${PREFIX}/bin/wmwork
+	@${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>
