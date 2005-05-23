@@ -16,6 +16,7 @@ COMMENT=	A tool to programm the eeprom on FTDI usb devices
 MAKE_ARGS=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"
 
+PLIST_FILES=	sbin/ftdi-eeprom
 MAN8=		ftdi-eeprom.8
 MANCOMPRESSED=	maybe
 
