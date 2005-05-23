@@ -8,7 +8,7 @@ upgrades.
 
 20050523:
   AFFECTS: users of games/pvgdn
-  AUTOR: mek@mek.uz.ua
+  AUTHOR: mek@mek.uz.ua
 
   The following has been changed in the bnetd.conf file (starting with
   version 1.7.7):
