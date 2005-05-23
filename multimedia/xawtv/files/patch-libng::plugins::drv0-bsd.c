@@ -1,5 +1,5 @@
 --- libng/plugins/drv0-bsd.c.orig	Wed Mar 12 17:45:56 2003
-+++ libng/plugins/drv0-bsd.c	Mon May 23 18:03:01 2005
++++ libng/plugins/drv0-bsd.c	Tue May 24 00:57:02 2005
 @@ -23,10 +23,12 @@
  
  #ifdef HAVE_DEV_IC_BT8XX_H
@@ -42,6 +42,24 @@
      AUDIO_TUNER,
      AUDIO_EXTERN,
      AUDIO_INTERN,
+@@ -242,7 +244,7 @@
+ #define PREFIX "bktr: ioctl: "
+ 
+ static int
+-xioctl(int fd, int cmd, void *arg)
++xioctl(int fd, unsigned long cmd, void *arg)
+ {
+     int rc;
+ 
+@@ -296,7 +298,7 @@
+ 	break;
+     }
+     default:
+-	fprintf(stderr,PREFIX "UNKNOWN(cmd=0x%x)",cmd);
++	fprintf(stderr,PREFIX "UNKNOWN(cmd=0x%x)",(int)cmd);
+ 	break;
+     }
+     fprintf(stderr,": %s\n",(rc == 0) ? "ok" : strerror(errno));
 @@ -502,19 +504,20 @@
  static int bsd_read_attr(struct ng_attribute *attr)
  {
