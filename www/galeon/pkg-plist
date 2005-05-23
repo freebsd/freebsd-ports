@@ -5,7 +5,6 @@ etc/sound/events/galeon.soundlist
 libdata/bonobo/servers/GNOME_Galeon_Automation.server
 libdata/bonobo/servers/GNOME_Galeon_NautilusView.server
 share/gnome/applications/galeon.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/galeon/FAQ.html
 share/gnome/galeon/about_logo.png
 share/gnome/galeon/autoscroll.xpm
@@ -201,6 +200,7 @@ share/locale/pt/LC_MESSAGES/galeon-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/galeon-2.0.mo
 share/locale/ro/LC_MESSAGES/galeon-2.0.mo
 share/locale/ru/LC_MESSAGES/galeon-2.0.mo
+share/locale/rw/LC_MESSAGES/galeon-2.0.mo
 share/locale/sk/LC_MESSAGES/galeon-2.0.mo
 share/locale/sl/LC_MESSAGES/galeon-2.0.mo
 share/locale/sq/LC_MESSAGES/galeon-2.0.mo
@@ -214,12 +214,15 @@ share/locale/vi/LC_MESSAGES/galeon-2.0.mo
 share/locale/wa/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/gnome/sounds/galeon
 @dirrm share/gnome/omf/galeon
-@dirrm share/gnome/help/galeon/C/figures
-@dirrm share/gnome/help/galeon/C
 @dirrm share/gnome/help/galeon/es/figures
 @dirrm share/gnome/help/galeon/es
+@dirrm share/gnome/help/galeon/C/figures
+@dirrm share/gnome/help/galeon/C
 @dirrm share/gnome/help/galeon
 @dirrm share/gnome/galeon
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
