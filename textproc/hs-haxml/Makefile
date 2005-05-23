@@ -35,7 +35,7 @@ WITH_HUGS=	yes
 
 .if defined(PACKAGE_BUILDING)
 WITH_GHC=	yes
-WITH_HUGS=	yes
+#WITH_HUGS=	yes
 .endif
 
 .if defined(WITH_NHC98)
