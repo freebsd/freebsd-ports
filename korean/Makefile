@@ -56,6 +56,7 @@
     SUBDIR += openoffice-1.0
     SUBDIR += openoffice-1.1
     SUBDIR += pgp.language
+    SUBDIR += php_doc
     SUBDIR += pinetreefonts
     SUBDIR += scim-tables
     SUBDIR += texinfo
