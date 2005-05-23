@@ -1,0 +1,11 @@
+--- contrib/trytime/Makefile.in.orig	Mon Apr  5 02:03:53 2004
++++ contrib/trytime/Makefile.in	Tue Apr  6 11:17:12 2004
+@@ -162,7 +162,7 @@
+ target_vendor = @target_vendor@
+ AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/gd1.3
+ EXTRA_DIST = trytime.c
+-contribdir = $(prefix)/contrib/trytime
++contribdir = $(prefix)/share/examples/rrdtool/trytime
+ contrib_DATA = README trytime.c
+ bin_PROGRAMS = trytime
+ trytime_SOURCES = trytime.c

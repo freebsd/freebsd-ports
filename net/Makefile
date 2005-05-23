@@ -692,6 +692,7 @@
     SUBDIR += roadrunner
     SUBDIR += rp-pppoe
     SUBDIR += rrdtool
+    SUBDIR += rrdtool10
     SUBDIR += rshell
     SUBDIR += rsync
     SUBDIR += rtg

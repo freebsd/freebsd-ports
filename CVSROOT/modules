@@ -10200,6 +10200,7 @@ rprint		ports/print/rprint
 rpy		ports/math/rpy
 rqm		ports/mbone/rqm
 rrdtool		ports/net/rrdtool
+rrdtool10	ports/net/rrdtool10
 rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
 rsnapshot	ports/sysutils/rsnapshot
