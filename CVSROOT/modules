@@ -5063,6 +5063,7 @@ libdlmalloc	ports/devel/libdlmalloc
 libdnd		ports/x11/libdnd
 libdnet		ports/net/libdnet
 libdockapp	ports/x11-wm/libdockapp
+libdomainkeys	ports/mail/libdomainkeys
 libds		ports/devel/libds
 libdsp		ports/devel/libdsp
 libdts		ports/multimedia/libdts
