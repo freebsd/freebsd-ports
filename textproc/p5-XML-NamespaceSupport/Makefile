@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-NamespaceSupport
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -19,4 +20,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::NamespaceSupport.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PERL_LEVEL} < 500600
+	${PERL} -pi -e '$$_="" if /warnings/' ${WRKSRC}/NamespaceSupport.pm
+.endif
+
+.include <bsd.port.post.mk>
