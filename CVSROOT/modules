@@ -8953,11 +8953,14 @@ php_doc-de	ports/german/php_doc
 php_doc-en	ports/lang/php_doc
 php_doc-fr	ports/french/php_doc
 php_doc-ja	ports/japanese/php_doc
+php_doc-hk	ports/chinese/php_doc-hk
 php_doc-hu	ports/hungarian/php_doc
 php_doc-ko	ports/korean/php_doc
 php_doc-pl	ports/polish/php_doc
 php_doc-pt	ports/portuguese/php_doc-br
 php_doc-ru	ports/russian/php_doc
+php_doc-tw	ports/chinese/php_doc-tw
+php_doc-zh	ports/chinese/php_doc-zh
 phpbb		ports/www/phpbb
 phpbt		ports/devel/phpbt
 phpeclipse	ports/java/phpeclipse
@@ -12955,9 +12958,6 @@ zh-p5-Lingua-ZH-Summarize	ports/chinese/p5-Lingua-ZH-Summarize
 zh-p5-Lingua-ZH-TaBE	ports/chinese/p5-Lingua-ZH-TaBE
 zh-p5-Lingua-ZH-Toke	ports/chinese/p5-Lingua-ZH-Toke
 zh-p5-Lingua-ZH-Wrap	ports/chinese/p5-Lingua-ZH-Wrap
-zh-php_doc-hk	ports/chinese/php_doc-hk
-zh-php_doc-tw	ports/chinese/php_doc-tw
-zh-php_doc-zh	ports/chinese/php_doc-zh
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
