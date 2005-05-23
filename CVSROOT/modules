@@ -3573,6 +3573,7 @@ hu-kde3-i18n	ports/hungarian/kde3-i18n
 hu-koffice-i18n	ports/hungarian/koffice-i18n
 hu-ooodict-HU	ports/hungarian/ooodict
 hu-openoffice-1.1	ports/hungarian/openoffice-1.1
+hu-php_doc	ports/hungarian/php_doc
 huc		ports/lang/huc
 hugelatex	ports/print/hugelatex
 hugin		ports/graphics/hugin
