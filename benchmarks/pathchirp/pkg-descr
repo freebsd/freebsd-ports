@@ -1,0 +1,12 @@
+pathChirp is a new active probing tool for estimating the available bandwidth
+on a communication network path. Based on the concept of "self-induced
+congestion", pathChirp features an exponential flight pattern of probes we
+call a chirp. Packet chirps offer several significant advantages over current
+probing schemes based on packet pairs or packet trains. By rapidly increasing
+the probing rate within each chirp, pathChirp obtains a rich set of
+information from which to dynamically estimate the available bandwidth.
+
+WWW: http://www.spin.rice.edu/Software/pathChirp/
+
+- dikshie
+dikshie@lapi.itb.ac.id  
