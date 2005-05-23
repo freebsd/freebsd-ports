@@ -2255,6 +2255,7 @@ fmsx		ports/emulators/fmsx
 fnccheck	ports/devel/fnccheck
 fnlib		ports/graphics/fnlib
 fnorb		ports/devel/fnorb
+fnord		ports/www/fnord
 fo-aspell	ports/textproc/fo-aspell
 foiltex		ports/textproc/foiltex
 font2svg	ports/print/font2svg
