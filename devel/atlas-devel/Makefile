@@ -22,6 +22,7 @@ INSTALLS_SHLIB=	YES
 USE_GCC=	3.4
 USE_BZIP2=	YES
 USE_GNOME=	gnomehack
+NO_LATEST_LINK=	YES
 
 CONFIGURE_ARGS+=--program-transform-name=
 
