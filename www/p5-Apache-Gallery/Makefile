@@ -7,7 +7,7 @@
 
 PORTNAME=	Apache-Gallery
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if defined(WITH_APACHE2)
-BROKEN=		Broken due the new mod_perl2 API
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
