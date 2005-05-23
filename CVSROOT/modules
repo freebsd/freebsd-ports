@@ -8553,6 +8553,7 @@ patchutils	ports/misc/patchutils
 pathalias	ports/mail/pathalias
 pathchar	ports/net/pathchar
 pathchirp	ports/benchmarks/pathchirp
+pathload	ports/benchmarks/pathload
 pathological	ports/games/pathological
 pavuk		ports/ftp/pavuk
 pawm		ports/x11-wm/pawm
