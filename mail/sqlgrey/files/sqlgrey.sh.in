@@ -22,6 +22,7 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/sqlgrey
 extra_commands=reload
+command_interpreter=%%PERL%%
 
 stop_postcmd=stop_postcmd
 
@@ -35,7 +36,7 @@ stop_postcmd()
 sqlgrey_enable=${sqlgrey_enable:-"NO"}
 sqlgrey_pidfile=${sqlgrey_pidfile:-"/var/run/sqlgrey.pid"}
 sqlgrey_listen=${sqlgrey_listen:-"2501"}
-sqlgrey_config=${sqlgrey_config:-"/usr/local/etc/sqlgrey.conf"}
+sqlgrey_config=${sqlgrey_config:-"/usr/local/%%ETCDIR%%/sqlgrey.conf"}
 sqlgrey_flags=${sqlgrey_flags:-"--pidfile=${sqlgrey_pidfile} \
 	--inet=${sqlgrey_listen} --daemonize --user=sqlgrey --group=sqlgrey \
 	--configfile=${sqlgrey_config}"}
