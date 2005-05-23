@@ -18,6 +18,7 @@ LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	mandir=${PREFIX}/man
 
 MAN1=		jpeginfo.1
 PLIST_FILES=	bin/jpeginfo
