@@ -16,7 +16,18 @@ COMMENT=	PHP documentation in HTML
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
-SLAVEDIRS=	arabic/php_doc french/php_doc german/php_doc hungarian/php_doc japanese/php_doc korean/php_doc polish/php_doc portugese/php_doc russian/php_doc
+SLAVEDIRS=	arabic/php_doc \
+		chinese/php_doc-hk \
+		chinese/php_doc-tw \
+		chinese/php_doc-zh \
+		french/php_doc \
+		german/php_doc \
+		hungarian/php_doc \
+		japanese/php_doc \
+		korean/php_doc \
+		polish/php_doc \
+		portugese/php_doc \
+		russian/php_doc
 
 PHP_LANG?=	en
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
