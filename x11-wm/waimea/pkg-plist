@@ -1,18 +1,18 @@
 bin/waimea
-share/waimea/actions/action
-share/waimea/actions/action.click-to-focus
-share/waimea/actions/action.no-mouse
-share/waimea/actions/action.non-opaque
-share/waimea/actions/action.sloppy-focus
-share/waimea/backgrounds/waimea.png
-share/waimea/config
-share/waimea/menu
-share/waimea/scripts/filelist.pl
-share/waimea/scripts/procinfo.pl
-share/waimea/scripts/stylesdir.pl
-share/waimea/styles/Default.style
-@dirrm share/waimea/actions
-@dirrm share/waimea/backgrounds
-@dirrm share/waimea/scripts
-@dirrm share/waimea/styles
-@dirrm share/waimea
+%%DATADIR%%/actions/action
+%%DATADIR%%/actions/action.click-to-focus
+%%DATADIR%%/actions/action.no-mouse
+%%DATADIR%%/actions/action.non-opaque
+%%DATADIR%%/actions/action.sloppy-focus
+%%DATADIR%%/backgrounds/waimea.png
+%%DATADIR%%/config
+%%DATADIR%%/menu
+%%DATADIR%%/scripts/filelist.pl
+%%DATADIR%%/scripts/procinfo.pl
+%%DATADIR%%/scripts/stylesdir.pl
+%%DATADIR%%/styles/Default.style
+@dirrm %%DATADIR%%/actions
+@dirrm %%DATADIR%%/backgrounds
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%
