@@ -25,6 +25,7 @@
     SUBDIR += nttcp
     SUBDIR += pathchirp
     SUBDIR += pathload
+    SUBDIR += pathrate
     SUBDIR += pear-Benchmark
     SUBDIR += pipebench
     SUBDIR += pnetmark

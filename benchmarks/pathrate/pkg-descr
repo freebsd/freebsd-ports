@@ -1,0 +1,10 @@
+Pathrate is a tool that can estimate the capacity of network paths. An
+important feature of Pathrate is that it is robust to cross traffic effects,
+meaning that it can measure the path capacity even when the path is
+significantly loaded. This is crucial, since the hardest paths to measure are
+the heavily loaded ones.
+
+WWW: http://www.cc.gatech.edu/fac/Constantinos.Dovrolis/pathrate.html
+
+- dikshie
+dikshie@lapi.itb.ac.id 
