@@ -1,7 +1,7 @@
 etc/rc.d/milter-sid.sh.sample
-include/ar.h
-lib/libar.a
 libexec/sid-filter
+%%WITH_AR%%include/libar.h
+%%WITH_AR%%lib/libar.a
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

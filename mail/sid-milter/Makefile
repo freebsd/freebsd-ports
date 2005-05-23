@@ -7,6 +7,7 @@
 
 PORTNAME=	sid-milter
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sid-milter
@@ -26,16 +27,20 @@ RESTRICTED=	may incorporate intellectual property, possible patent issues
 
 SENDMAIL_MILTER_PORT?=	sendmail
 USE_REINPLACE=	yes
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 WCONF=		${WRKSRC}/devtools/Site
-MAN3=		ar.3
 MAN8=		sid-filter.8
-INCFILES=	libar/ar.h
 DOCSFILES=	INSTALL KNOWNBUGS LICENSE README README-SenderID RELEASE_NOTES
+INSTALL_WRKSRC=	${WRKSRC}/sid-filter
 
 SITE+=		${FILESDIR}/site.config.m4
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 SITE+=		${FILESDIR}/site.config.m4.milter
+.endif
+.if defined(WITH_SIDMILTER_AR)
+MAN3=		ar.3
+PLIST_SUB+=	WITH_AR=""
+.else
+PLIST_SUB+=	WITH_AR="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -52,6 +57,7 @@ pre-configure:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/milter-sid.sh \
 		> ${WRKSRC}/milter-sid.sh
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
+		-e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
@@ -61,17 +67,18 @@ pre-configure:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/milter-sid.sh \
 		${PREFIX}/etc/rc.d/milter-sid.sh.sample
-.for i in ${MAN3}
-	@${RM} -f ${MANPREFIX}/man/cat3/${i} ${MANPREFIX}/man/cat3/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man3/
-.endfor
 .for i in ${MAN8}
 	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8/
 .endfor
-.for i in ${INCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include/
+.if defined(WITH_SIDMILTER_AR)
+	@(cd ${WRKSRC}/libar && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.for i in ${MAN3}
+	@${RM} -f ${MANPREFIX}/man/cat3/${i} ${MANPREFIX}/man/cat3/${i}.gz
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man3/
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/libar/ar.h ${PREFIX}/include/libar.h
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCSFILES}
