@@ -276,6 +276,7 @@
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += mcron
+    SUBDIR += mdf2iso
     SUBDIR += memdump
     SUBDIR += memfetch
     SUBDIR += memgrep
