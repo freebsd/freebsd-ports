@@ -2930,7 +2930,6 @@ gnome2-hacker-tools	ports/devel/gnome2-hacker-tools
 gnome2-lite	ports/x11/gnome2-lite
 gnome2-office	ports/editors/gnome2-office
 gnome2-power-tools	ports/x11/gnome2-power-tools
-gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets2	ports/x11/gnomeapplets2
 gnomeattacks	ports/games/gnomeattacks
 gnomeaudio2	ports/audio/gnomeaudio2
