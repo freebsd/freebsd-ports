@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
@@ -21,7 +21,7 @@ OPTIONS=	XSPIN "Install xspin and TCL/Tk dependency" on
 .if !defined(WITHOUT_XSPIN)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 PLIST_SUB+=	XSPIN=""
-XSPIN_TCL	= ${WRKDIR}/Xspin4.2/xspin423.tcl
+XSPIN_TCL	=${WRKDIR}/Xspin4.2/xspin423.tcl
 .else
 PLIST_SUB+=	XSPIN="@comment "
 .endif
@@ -32,9 +32,6 @@ MAKEFILE=	makefile
 ALL_TARGET=	spin
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNXT"
 USE_REINPLACE=	yes
-
-MANPAGE_WRKSRC=	${WRKDIR}/Man
-MAN1=		spin.1
 
 post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
@@ -71,6 +68,9 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/Test/$i ${DOCSDIR}/Test
 .endfor
 	${INSTALL_MAN} ${WRKDIR}/Man/spin.1 ${PREFIX}/man/man1
+
+MANPAGE_WRKSRC=	${WRKDIR}/Man
+MAN1=		spin.1
 .endif
 
 .include <bsd.port.post.mk>

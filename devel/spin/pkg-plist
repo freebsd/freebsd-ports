@@ -1,9 +1,10 @@
 bin/spin
 %%XSPIN%%bin/xspin
-%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91.Errata
-%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91.answers
-%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91.samples
-%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91_Ch6.add
+%%PORTDOCS%%%%DOCSDIR%%/Doc/Book2003Errata.html
+%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91_Errata.txt
+%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91_answers.txt
+%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91_samples_bundle
+%%PORTDOCS%%%%DOCSDIR%%/Doc/Book91_Ch6_add.txt
 %%PORTDOCS%%%%DOCSDIR%%/Doc/V1.Updates
 %%PORTDOCS%%%%DOCSDIR%%/Doc/V2.Updates
 %%PORTDOCS%%%%DOCSDIR%%/Doc/V3.Updates
