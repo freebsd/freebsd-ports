@@ -16,6 +16,7 @@ COMMENT=	View and manipulate contents of a tar file
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+MAKE_ARGS=	XMLIB="${MOTIFLIB}"
 MAN1=		xtar.1
 
 .include <bsd.port.mk>
