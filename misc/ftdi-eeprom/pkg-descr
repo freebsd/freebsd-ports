@@ -1,2 +1,4 @@
 ftdi-eeprom writes the contents of the configuration eeproms for
 FTDI usb chips.
+
+WWW: http://www.bwct.de/
