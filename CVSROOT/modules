@@ -6756,6 +6756,7 @@ openradius	ports/net/openradius
 openrm		ports/graphics/openrm
 opensc		ports/security/opensc
 opensc-esteid	ports/security/opensc-esteid
+openscep	ports/security/openscep
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
 opensp		ports/textproc/opensp
