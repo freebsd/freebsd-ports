@@ -18,8 +18,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmMand
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GMAKE=	yes
 ALL_TARGET=	clean all
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		INCDIR=-I${X11BASE}/include LIBDIR=-L${X11BASE}/lib
 
 MAN1=		wmMand.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmMand ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmMand.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
