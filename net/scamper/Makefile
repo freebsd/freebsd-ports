@@ -7,6 +7,7 @@
 
 PORTNAME=	scamper
 PORTVERSION=	20050516
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wand.net.nz/scamper/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
