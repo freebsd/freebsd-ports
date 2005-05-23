@@ -21,6 +21,8 @@ PLIST_FILES=	bin/wmproxyper
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" INC=-I${X11BASE}/include \
+		LIBS="-lXext -lX11 -lm -L${LOCALBASE}/lib -L${X11BASE}/lib -lXpm -ldockapp"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
