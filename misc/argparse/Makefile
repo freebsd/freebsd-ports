@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+PLIST_FILES=	bin/argparse
+PORTDOCS=	*
 MAN1=	argparse.1
 
 .include <bsd.port.mk>
