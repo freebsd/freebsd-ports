@@ -35,5 +35,6 @@ post-patch:
 		 s|-lglib||g ; \
 		 s|-lpthread||g ; \
 		 s|-ldl||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|quicktime/quicktime.h|lqt/quicktime.h|' ${WRKSRC}/src/*.c
 
 .include <bsd.port.mk>
