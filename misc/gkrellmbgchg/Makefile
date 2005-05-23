@@ -17,10 +17,13 @@ COMMENT=	A plugin for GKrellM, which changes the desktop's background image
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
-WRKSRC=		${WRKDIR}/gkrellmbgchg-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellmbgchg.so
+
+do-install:
+	${INSTALL_DATA} ${STRIP} ${WRKSRC}/gkrellmbgchg.so \
+	  ${PREFIX}/libexec/gkrellm/plugins
 
 .include <bsd.port.mk>
