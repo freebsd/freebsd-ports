@@ -55,5 +55,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/wsprops.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/xls2txt.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/xls2csv.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/xls2html.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pyExcelerator
