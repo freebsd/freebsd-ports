@@ -26,8 +26,17 @@ GNU_CONFIGURE=	yes
 
 MAN1=		waimea.1
 
+OPTIONS=	PIXMAP "Build with pixmap textures support" on \
+		DITHER "Enable ordered pseudocolor dithering" off
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_PIXMAP)
 LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_DITHER)
+CONFIGURE_ARGS+=	--enable-ordered-pseudo
+.endif
+
+.include <bsd.port.post.mk>
