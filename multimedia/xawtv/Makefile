@@ -81,8 +81,12 @@ PLIST_SUB+=	DV="@comment "
 .endif
 
 .if defined(WITH_MMX)
+.if ${ARCH} == i386
 CONFIGURE_ARGS+=--enable-mmx
 CFLAGS+=	-DMMX=1
+.else
+BROKEN=		MMX support only works on i386, and you are running ${ARCH}
+.endif
 .endif
 
 .if defined(WITH_LIBQTIME)
