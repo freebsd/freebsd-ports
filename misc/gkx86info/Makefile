@@ -22,7 +22,10 @@ ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 imlib
 
-DOC_FILES=	COPYING README
+PLIST_FILES=	libexec/gkrellm/plugins/gkx86info.so
+.ifndef(NOPORTDOCS)
+PORTDOCS=	COPYING README
+.endif
 
 do-build:
 	@cd ${WRKSRC} && eval ${CC} ${CFLAGS} -o MHz.o -c MHz.c
@@ -35,7 +38,7 @@ do-build:
 do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif #NOPORTDOCS
