@@ -8948,7 +8948,7 @@ php5-xsl	ports/textproc/php5-xsl
 php5-yp		ports/net/php5-yp
 php5-zlib	ports/archivers/php5-zlib
 phpSysInfo	ports/www/phpSysInfo
-php_doc		ports/arabic/php_doc
+php_doc-ar	ports/arabic/php_doc
 php_doc-de	ports/german/php_doc
 php_doc-en	ports/lang/php_doc
 php_doc-fr	ports/french/php_doc
