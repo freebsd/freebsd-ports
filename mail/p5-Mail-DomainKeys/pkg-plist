@@ -1,0 +1,14 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DomainKeys/.packlist
+%%SITE_PERL%%/Mail/DomainKeys.pm
+%%SITE_PERL%%/Mail/DomainKeys/Header.pm
+%%SITE_PERL%%/Mail/DomainKeys/Key.pm
+%%SITE_PERL%%/Mail/DomainKeys/Key/Private.pm
+%%SITE_PERL%%/Mail/DomainKeys/Key/Public.pm
+%%SITE_PERL%%/Mail/DomainKeys/Message.pm
+%%SITE_PERL%%/Mail/DomainKeys/Policy.pm
+%%SITE_PERL%%/Mail/DomainKeys/Signature.pm
+@dirrm %%SITE_PERL%%/Mail/DomainKeys/Key
+@dirrm %%SITE_PERL%%/Mail/DomainKeys
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DomainKeys
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
