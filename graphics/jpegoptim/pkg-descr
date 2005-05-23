@@ -3,3 +3,5 @@ Provides:
 	* lossless optimization
 	* lossy optimization based on setting maximum quality factor
 	* selective strip of comments and Exif markers
+
+WWW: http://www.cc.jyu.fi/~tjko/projects.html
