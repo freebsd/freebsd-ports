@@ -11,12 +11,13 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.cc.jyu.fi/~tjko/src/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An utility to optimize jpeg files
+COMMENT=	Utility to optimize jpeg files
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libjpeg=${LOCALBASE}
+MAKE_ARGS=	mandir=${PREFIX}/man
 
 MAN1=		jpegoptim.1
 PLIST_FILES=	bin/jpegoptim
