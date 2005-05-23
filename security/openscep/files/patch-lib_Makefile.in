@@ -1,0 +1,37 @@
+--- lib/Makefile.in.orig	Tue Feb 26 02:11:39 2002
++++ lib/Makefile.in	Thu May 19 16:35:38 2005
+@@ -115,14 +115,13 @@
+ 
+ LDADD = libscep.la
+ LDFLAGS = -R$(libdir) $(LIBS)
+-CPPFLAGS = -DOPENSCEPDIR=\"$(OPENSCEPDIR)\"
++CPPFLAGS += -DOPENSCEPDIR=\"$(OPENSCEPDIR)\"
+ 
+ VERSION_FILE = openscep_vers.c
+ 
+ libscep_la_LDFLAGS = -version-info `../shtool version -d libtool $(VERSION_FILE)`
+ 
+-libscep_la_SOURCES = init.c isasu.c decode.c sigattr.c pkcsreq.c		certrep.c getcertinitial.c getcert.c getcrl.c badreply.c attr.c		goodreply.c encode.c check.c grant.c scepldap.c fingerprint.c		openscep_vers.c selfsigned.c createreq.c http.c iser.c proxy.c		payload.c v2request.c transcheck.c pending.c spki2file.c
+-
++libscep_la_SOURCES = init.c isasu.c decode.c sigattr.c pkcsreq.c		certrep.c getcertinitial.c getcert.c getcrl.c badreply.c attr.c		goodreply.c encode.c check.c grant.c scepldap.c fingerprint.c		openscep_vers.c selfsigned.c createreq.c http.c iser.c proxy.c		payload.c v2request.c transcheck.c pending.c spki2file.c openscep_err.c
+ 
+ INCLUDES = $(INCLTDL) -I$(top_srcdir)/include -I$(OPENSSLDIR)/include
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -138,7 +137,8 @@
+ certrep.lo getcertinitial.lo getcert.lo getcrl.lo badreply.lo attr.lo \
+ goodreply.lo encode.lo check.lo grant.lo scepldap.lo fingerprint.lo \
+ openscep_vers.lo selfsigned.lo createreq.lo http.lo iser.lo proxy.lo \
+-payload.lo v2request.lo transcheck.lo pending.lo spki2file.lo
++payload.lo v2request.lo transcheck.lo pending.lo spki2file.lo \
++openscep_err.lo
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -364,6 +364,7 @@
+ 	../include/scep.h ../include/isasu.h ../include/payload.h \
+ 	../include/transcheck.h ../include/pending.h \
+ 	../include/goodreply.h ../include/badreply.h ../include/init.h
++openscep_err.lo openscep_err.o : openscep_err.c ../include/openscep_err.h
+ 
+ info-am:
+ info: info-am

@@ -1,0 +1,11 @@
+--- scepd/Makefile.in.orig	Thu May 19 16:41:14 2005
++++ scepd/Makefile.in	Thu May 19 16:41:26 2005
+@@ -132,7 +132,7 @@
+ LDADD = ../lib/libscep.la
+ LDFLAGS = -R$(libdir)
+ 
+-CPPFLAGS = -DOPENSCEPDIR=\"$(OPENSCEPDIR)\"
++CPPFLAGS += -DOPENSCEPDIR=\"$(OPENSCEPDIR)\"
+ 
+ INCLUDES = $(INCLTDL) -I$(top_srcdir)/include -I$(OPENSSLDIR)/include
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

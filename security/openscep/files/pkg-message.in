@@ -1,0 +1,14 @@
+======================================================================
+You now need to add an alias to apache's httpd.conf pointing to
+%%PREFIX%%/www/openscep in order to access openscep from
+your web browser, or create a VirtualHost with DocumentRoot set
+to that directory.
+
+You should also include %%PREFIX%%/etc/openscep/openscep.schema
+into your slapd config (sample of this is at
+%%PREFIX%%/etc/openscep/slapd.conf).
+
+Furthermore, you should add your ldap directory information from 
+%%PREFIX%%/etc/openscep/openscep.ldif and edit DN specific information
+there before doing ldapadd.
+======================================================================
