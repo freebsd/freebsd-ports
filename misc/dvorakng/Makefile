@@ -22,13 +22,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-DOCS=		README TODO
+PLIST_FILES=	bin/dvorakng
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README TODO
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dvorakng ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
