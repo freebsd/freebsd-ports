@@ -1,0 +1,96 @@
+--- kopete/protocols/msn/Makefile.in.orig	Fri Mar  4 07:37:18 2005
++++ kopete/protocols/msn/Makefile.in	Sun May 22 18:06:23 2005
+@@ -75,7 +75,7 @@
+ 	msnmessagemanager.lo msndebugrawcmddlg.lo msnnotifysocket.lo \
+ 	msnswitchboardsocket.lo msnfiletransfersocket.lo \
+ 	msninvitation.lo msnp2p.lo msnp2pdisplatcher.lo \
+-	msnp2pincoming.lo msnp2poutgoing.lo sha1.lo
++	msnp2pincoming.lo msnp2poutgoing.lo sha1.lo sslloginhandler.lo
+ #>- libkopete_msn_shared_la_OBJECTS =  \
+ #>- 	$(am_libkopete_msn_shared_la_OBJECTS)
+ #>+ 9
+@@ -85,7 +85,7 @@
+ 	msnmessagemanager.lo msndebugrawcmddlg.lo msnnotifysocket.lo \
+ 	msnswitchboardsocket.lo msnfiletransfersocket.lo \
+ 	msninvitation.lo msnp2p.lo msnp2pdisplatcher.lo \
+-	msnp2pincoming.lo msnp2poutgoing.lo sha1.lo
++	msnp2pincoming.lo msnp2poutgoing.lo sha1.lo sslloginhandler.lo
+ @KDE_USE_FINAL_FALSE@libkopete_msn_shared_la_OBJECTS = $(libkopete_msn_shared_la_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@libkopete_msn_shared_la_OBJECTS = $(libkopete_msn_shared_la_final_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+@@ -469,7 +469,7 @@
+ libkopete_msn_shared_la_SOURCES = msnprotocol.cpp msnaccount.cpp msnaddcontactpage.cpp msncontact.cpp \
+ 	msnsocket.cpp msnmessagemanager.cpp msndebugrawcmddlg.cpp \
+ 	msnnotifysocket.cpp msnswitchboardsocket.cpp msnfiletransfersocket.cpp msninvitation.cpp \
+-	msnp2p.cpp msnp2pdisplatcher.cpp msnp2pincoming.cpp msnp2poutgoing.cpp sha1.cpp
++	msnp2p.cpp msnp2pdisplatcher.cpp msnp2pincoming.cpp msnp2poutgoing.cpp sha1.cpp sslloginhandler.cpp
+ 
+ libkopete_msn_shared_la_LIBADD = ./ui/libkopetemsnui.la ../../libkopete/libkopete.la $(LIB_KIO)
+ #>- libkopete_msn_shared_la_LDFLAGS = -version-info 0:0:0 -no-undefined $(all_libraries)
+@@ -620,6 +620,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msnsocket.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msnswitchboardsocket.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sha1.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sslloginhandler.Plo@am__quote@
+ 
+ .cpp.o:
+ @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+@@ -1054,6 +1055,13 @@
+ mocs: msnnotifysocket.moc
+ 
+ #>+ 3
++sslloginhandler.moc: $(srcdir)/sslloginhandler.h
++	$(MOC) $(srcdir)/sslloginhandler.h -o sslloginhandler.moc
++
++#>+ 2
++mocs: sslloginhandler.moc
++
++#>+ 3
+ msnp2poutgoing.moc: $(srcdir)/msnp2poutgoing.h
+ 	$(MOC) $(srcdir)/msnp2poutgoing.h -o msnp2poutgoing.moc
+ 
+@@ -1092,10 +1100,10 @@
+ 
+ #>+ 3
+ clean-metasources:
+-	-rm -f  msndebugrawcmddlg.moc msnp2pdisplatcher.moc msnmessagemanager.moc msnfiletransfersocket.moc msncontact.moc msnprotocol.moc msnaccount.moc msnsocket.moc msnswitchboardsocket.moc msnnotifysocket.moc msnp2poutgoing.moc msnp2p.moc msnp2pincoming.moc msnaddcontactpage.moc
++	-rm -f  msndebugrawcmddlg.moc msnp2pdisplatcher.moc msnmessagemanager.moc msnfiletransfersocket.moc msncontact.moc msnprotocol.moc msnaccount.moc msnsocket.moc msnswitchboardsocket.moc msnnotifysocket.moc sslloginhandler.moc msnp2poutgoing.moc msnp2p.moc msnp2pincoming.moc msnaddcontactpage.moc
+ 
+ #>+ 2
+-KDE_DIST=msnp2poutgoing.h kopete_msn.desktop msncontact.h msnp2p.h msnmessagemanager.h msnchatui.rc Changelog msnsocket.h msnp2pincoming.h ReleaseNotes msndebugrawcmddlg.h msnaccount.h msnfiletransfersocket.h sha1.h msnp2pdisplatcher.h msninvitation.h Makefile.in msnswitchboardsocket.h msnprotocol.h msnnotifysocket.h msnaddcontactpage.h Makefile.am 
++KDE_DIST=msnp2poutgoing.h kopete_msn.desktop msncontact.h msnp2p.h msnmessagemanager.h msnchatui.rc Changelog msnsocket.h msnp2pincoming.h ReleaseNotes msndebugrawcmddlg.h msnaccount.h msnfiletransfersocket.h sha1.h sslloginhandler.h msnp2pdisplatcher.h msninvitation.h Makefile.in msnswitchboardsocket.h msnprotocol.h msnnotifysocket.h msnaddcontactpage.h Makefile.am 
+ 
+ #>+ 3
+ clean-closures:
+@@ -1143,11 +1151,11 @@
+ 
+ 
+ #>+ 11
+-libkopete_msn_shared_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/msnprotocol.cpp $(srcdir)/msnaccount.cpp $(srcdir)/msnaddcontactpage.cpp $(srcdir)/msncontact.cpp $(srcdir)/msnsocket.cpp $(srcdir)/msnmessagemanager.cpp $(srcdir)/msndebugrawcmddlg.cpp $(srcdir)/msnnotifysocket.cpp $(srcdir)/msnswitchboardsocket.cpp $(srcdir)/msnfiletransfersocket.cpp $(srcdir)/msninvitation.cpp $(srcdir)/msnp2p.cpp $(srcdir)/msnp2pdisplatcher.cpp $(srcdir)/msnp2pincoming.cpp $(srcdir)/msnp2poutgoing.cpp $(srcdir)/sha1.cpp  msndebugrawcmddlg.moc msncontact.moc msnfiletransfersocket.moc msnmessagemanager.moc msnp2pdisplatcher.moc msnprotocol.moc msnaccount.moc msnsocket.moc msnswitchboardsocket.moc msnnotifysocket.moc msnp2p.moc msnp2poutgoing.moc msnaddcontactpage.moc msnp2pincoming.moc
++libkopete_msn_shared_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/msnprotocol.cpp $(srcdir)/msnaccount.cpp $(srcdir)/msnaddcontactpage.cpp $(srcdir)/msncontact.cpp $(srcdir)/msnsocket.cpp $(srcdir)/msnmessagemanager.cpp $(srcdir)/msndebugrawcmddlg.cpp $(srcdir)/msnnotifysocket.cpp $(srcdir)/msnswitchboardsocket.cpp $(srcdir)/msnfiletransfersocket.cpp $(srcdir)/msninvitation.cpp $(srcdir)/msnp2p.cpp $(srcdir)/msnp2pdisplatcher.cpp $(srcdir)/msnp2pincoming.cpp $(srcdir)/msnp2poutgoing.cpp $(srcdir)/sha1.cpp $(srcdir)/sslloginhandler.cpp msndebugrawcmddlg.moc msncontact.moc msnfiletransfersocket.moc msnmessagemanager.moc msnp2pdisplatcher.moc msnprotocol.moc msnaccount.moc msnsocket.moc msnswitchboardsocket.moc msnnotifysocket.moc sslloginhandler.moc msnp2p.moc msnp2poutgoing.moc msnaddcontactpage.moc msnp2pincoming.moc
+ 	@echo 'creating libkopete_msn_shared_la.all_cpp.cpp ...'; \
+ 	rm -f libkopete_msn_shared_la.all_cpp.files libkopete_msn_shared_la.all_cpp.final; \
+ 	echo "#define KDE_USE_FINAL 1" >> libkopete_msn_shared_la.all_cpp.final; \
+-	for file in msnprotocol.cpp msnaccount.cpp msnaddcontactpage.cpp msncontact.cpp msnsocket.cpp msnmessagemanager.cpp msndebugrawcmddlg.cpp msnnotifysocket.cpp msnswitchboardsocket.cpp msnfiletransfersocket.cpp msninvitation.cpp msnp2p.cpp msnp2pdisplatcher.cpp msnp2pincoming.cpp msnp2poutgoing.cpp sha1.cpp ; do \
++	for file in msnprotocol.cpp msnaccount.cpp msnaddcontactpage.cpp msncontact.cpp msnsocket.cpp msnmessagemanager.cpp msndebugrawcmddlg.cpp msnnotifysocket.cpp msnswitchboardsocket.cpp msnfiletransfersocket.cpp msninvitation.cpp msnp2p.cpp msnp2pdisplatcher.cpp msnp2pincoming.cpp msnp2poutgoing.cpp sha1.cpp sslloginhandler.cpp; do \
+ 	  echo "#include \"$$file\"" >> libkopete_msn_shared_la.all_cpp.files; \
+ 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkopete_msn_shared_la.all_cpp.final; \
+ 	done; \
+@@ -1195,7 +1203,8 @@
+ msnmessagemanager.o: msnmessagemanager.moc 
+ msnswitchboardsocket.o: msnswitchboardsocket.moc 
+ msnp2pincoming.lo: msnp2pincoming.moc 
+-msnnotifysocket.lo: msnnotifysocket.moc 
++msnnotifysocket.lo: msnnotifysocket.moc
++sslloginhandler.lo: sslloginhandler.moc 
+ msncontact.o: msncontact.moc 
+ msnp2p.lo: msnp2p.moc 
+ msnfiletransfersocket.o: msnfiletransfersocket.moc 
+@@ -1206,6 +1215,7 @@
+ msndebugrawcmddlg.lo: msndebugrawcmddlg.moc 
+ msnsocket.o: msnsocket.moc 
+ msnnotifysocket.o: msnnotifysocket.moc 
++sslloginhandler.o: sslloginhandler.moc
+ msnaddcontactpage.o: msnaddcontactpage.moc 
+ nmcheck: 
+ msnp2poutgoing.o: msnp2poutgoing.moc 
