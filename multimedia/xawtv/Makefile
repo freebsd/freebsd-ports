@@ -28,7 +28,7 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" CFLAGS="${CFLAGS} -g"
 MAKE_ENV=	verbose=yes
 INSTALLS_SHLIB=	yes
 
@@ -46,7 +46,7 @@ MAN8=		v4l-conf.8
 .if ${OSVERSION} < 500000
 ONLY_FOR_ARCHS=	i386
 .else
-ONLY_FOR_ARCHS=	alpha i386
+ONLY_FOR_ARCHS=	alpha amd64 i386
 .endif
 
 .if defined(WITHOUT_AA)
