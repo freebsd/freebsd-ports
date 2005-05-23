@@ -18,6 +18,8 @@ COMMENT=	A Port Knocking implementation, both daemon and client
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+IGNORE=		does not work correctly, issues with the pcap library. Patches are under development
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # Default to db4
