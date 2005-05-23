@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_MOTIF=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG" \
 		X11INCLUDE="-I${X11BASE}/include" X11LIB="-L${X11BASE}/lib"
+PLIST_FILES=	bin/floatator bin/floatator_X_interface
 
 do-install:
 .for f in floatator floatator_X_interface
