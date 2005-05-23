@@ -101,6 +101,7 @@
     SUBDIR += p5-Lingua-ZH-Toke
     SUBDIR += p5-Lingua-ZH-Wrap
     SUBDIR += php_doc-hk
+    SUBDIR += php_doc-zh
     SUBDIR += pine4
     SUBDIR += pyDict
     SUBDIR += qe
