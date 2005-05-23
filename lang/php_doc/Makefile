@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	20041012
+PORTVERSION=	20050521
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	PHP documentation in HTML
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
-SLAVEDIRS=	french/php_doc german/php_doc japanese/php_doc polish/php_doc portugese/php_doc
+SLAVEDIRS=	arabic/php_doc french/php_doc german/php_doc hungarian/php_doc japanese/php_doc korean/php_doc polish/php_doc portugese/php_doc russian/php_doc
 
 PHP_LANG?=	en
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
@@ -30,12 +30,16 @@ PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"
+	@${ECHO} "	ar (arabic),"
 	@${ECHO} "	br (brazillian),"
 	@${ECHO} "	de (german),"
 	@${ECHO} "	es (spanish),"
 	@${ECHO} "	fr (french) or"
+	@${ECHO} "	hu (hungarian) or"
 	@${ECHO} "	ja (japanese)"
+	@${ECHO} "	kr (korean)"
 	@${ECHO} "	pl (polish)"
+	@${ECHO} "	ru (russian)"
 	@${ECHO} "to get a different language than the default one (english)."
 	@${ECHO}
 .endif
