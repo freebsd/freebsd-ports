@@ -1,46 +1,29 @@
-diff -ru ../orig.pkgtools-20041224/lib/pkgdb.rb ./lib/pkgdb.rb
+diff -ur ../orig.pkgtools-20041224/lib/pkgdb.rb ./lib/pkgdb.rb
 --- ../orig.pkgtools-20041224/lib/pkgdb.rb	Wed Mar 23 21:37:47 2005
-+++ ./lib/pkgdb.rb	Tue Mar 29 00:27:02 2005
-@@ -97,7 +97,7 @@
++++ ./lib/pkgdb.rb	Sun May 22 00:39:38 2005
+@@ -96,8 +96,7 @@
+     @db_dir = File.expand_path(new_db_dir || ENV['PKG_DBDIR'] || '/var/db/pkg')
  
      @db_file = File.join(@db_dir, 'pkgdb.db')
-     @tmp_dir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
+-    @tmp_dir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
 -    @fixme_file = File.join(@tmp_dir, 'pkgdb.fixme')
-+    @fixme_file = File.join(@db_dir, 'pkgdb.fixme')
++    @fixme_file = ENV['PKG_FIXME_FILE'] || "/var/db/pkgdb.fixme"
      @db_filebase = @db_file.sub(/\.db$/, '')
      close_db
  
-diff -ru ../orig.pkgtools-20041224/lib/pkgsqldb.rb ./lib/pkgsqldb.rb
---- ../orig.pkgtools-20041224/lib/pkgsqldb.rb	Wed Mar 23 21:37:47 2005
-+++ ./lib/pkgsqldb.rb	Tue Mar 29 00:29:51 2005
-@@ -74,7 +74,7 @@
- 
-     @db_file = File.join(@db_dir, 'pkgdb.sqldb')
-     @tmp_dir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
--    @fixme_file = File.join(@tmp_dir, 'pkgdb.fixme')
-+    @fixme_file = File.join(@db_dir, 'pkgdb.fixme')
-     close_db
- 
-     @db_dir
-diff -ru ../orig.pkgtools-20041224/lib/pkgtools.rb ./lib/pkgtools.rb
---- ../orig.pkgtools-20041224/lib/pkgtools.rb	Wed Mar 23 21:37:47 2005
-+++ ./lib/pkgtools.rb	Wed Mar 30 23:51:50 2005
-@@ -204,7 +204,7 @@
-   $ports_dir = $portsdb.ports_dir
-   $packages_base = ENV['PACKAGES'] || File.join($ports_dir, 'packages')
-   $packages_dir = File.join($packages_base, 'All')
--  $tmpdir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
-+  init_tmpdir
-   $pkg_path = ENV['PKG_PATH'] || $packages_dir
- 
-   $pkg_sites = (ENV['PKG_SITES'] || '').split
-@@ -222,6 +222,31 @@
- 
-   $portsdb.ignore_categories = config_value(:IGNORE_CATEGORIES) || []
-   $portsdb.extra_categories = config_value(:EXTRA_CATEGORIES) || []
-+end
+Only in ./lib: pkgdb.rb~
+diff -ur ../orig.pkgtools-20041224/lib/pkgmisc.rb ./lib/pkgmisc.rb
+--- ../orig.pkgtools-20041224/lib/pkgmisc.rb	Wed Mar 23 21:37:47 2005
++++ ./lib/pkgmisc.rb	Thu May  5 14:09:37 2005
+@@ -95,3 +95,31 @@
+     end
+   end
+ end
 +
 +def init_tmpdir
++  if ! $tmpdir.nil? && $tmpdir != "" then
++    return
++  end
 +  maintmpdir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
 +  if !FileTest.directory?(maintmpdir)
 +    raise "Temporary directory #{maintmpdir} does not exist"
@@ -63,6 +46,30 @@ diff -ru ../orig.pkgtools-20041224/lib/pkgtools.rb ./lib/pkgtools.rb
 +    end
 +    }
 +  $tmpdir=tmpdir
- end
++end
+diff -ur ../orig.pkgtools-20041224/lib/pkgsqldb.rb ./lib/pkgsqldb.rb
+--- ../orig.pkgtools-20041224/lib/pkgsqldb.rb	Wed Mar 23 21:37:47 2005
++++ ./lib/pkgsqldb.rb	Sun May 22 00:42:04 2005
+@@ -73,8 +73,7 @@
+     @db_dir = File.expand_path(new_db_dir || ENV['PKG_DBDIR'] || '/var/db/pkg')
  
- def parse_pattern(str, regex = false)
+     @db_file = File.join(@db_dir, 'pkgdb.sqldb')
+-    @tmp_dir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
+-    @fixme_file = File.join(@tmp_dir, 'pkgdb.fixme')
++    @fixme_file = ENV['PKG_FIXME_FILE'] || "/var/db/pkgdb.fixme"
+     close_db
+ 
+     @db_dir
+Only in ./lib: pkgsqldb.rb~
+diff -ur ../orig.pkgtools-20041224/lib/pkgtools.rb ./lib/pkgtools.rb
+--- ../orig.pkgtools-20041224/lib/pkgtools.rb	Wed Mar 23 21:37:47 2005
++++ ./lib/pkgtools.rb	Tue May  3 19:29:59 2005
+@@ -204,7 +204,7 @@
+   $ports_dir = $portsdb.ports_dir
+   $packages_base = ENV['PACKAGES'] || File.join($ports_dir, 'packages')
+   $packages_dir = File.join($packages_base, 'All')
+-  $tmpdir = ENV['PKG_TMPDIR'] || ENV['TMPDIR'] || '/var/tmp'
++  init_tmpdir
+   $pkg_path = ENV['PKG_PATH'] || $packages_dir
+ 
+   $pkg_sites = (ENV['PKG_SITES'] || '').split

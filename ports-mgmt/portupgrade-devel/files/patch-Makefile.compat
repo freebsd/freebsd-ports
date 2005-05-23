@@ -1,0 +1,11 @@
+--- ../orig.pkgtools-20041224/Makefile.compat	Wed Mar 23 21:37:47 2005
++++ Makefile.compat	Sun May 22 00:46:39 2005
+@@ -89,7 +89,7 @@
+ .endif
+ .endif
+ 
+-.endif defined(${group}) && !empty(${group})
++.endif # defined(${group}) && !empty(${group})
+ .endfor
+ 
+ .endif
