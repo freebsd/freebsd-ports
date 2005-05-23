@@ -33,13 +33,15 @@ pre-fetch:
 	@${ECHO} "	ar (arabic),"
 	@${ECHO} "	br (brazillian),"
 	@${ECHO} "	de (german),"
-	@${ECHO} "	es (spanish),"
 	@${ECHO} "	fr (french) or"
 	@${ECHO} "	hu (hungarian) or"
 	@${ECHO} "	ja (japanese)"
+	@${ECHO} "	hk (Chinese Hong Kong Cantonese)"
 	@${ECHO} "	kr (korean)"
 	@${ECHO} "	pl (polish)"
 	@${ECHO} "	ru (russian)"
+	@${ECHO} "	tw (Chinese traditional)"
+	@${ECHO} "	zh (Chinese Simplified)"
 	@${ECHO} "to get a different language than the default one (english)."
 	@${ECHO}
 .endif
