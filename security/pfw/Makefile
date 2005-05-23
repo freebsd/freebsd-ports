@@ -16,7 +16,7 @@ COMMENT=	A web frontend for the pf firewall
 
 RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1//}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	session	pcre
 WANT_PHP_WEB=	yes
@@ -36,7 +36,7 @@ RUN_DEPENDS+=	pf:${PORTSDIR}/security/pf
 .endif
 
 do-install:
-.for dir in conf lib web
+.for dir in lib web
 	@${MKDIR} ${PFW_PREFIX}/${dir}
 	@${CP} -Rv ${WRKSRC}/${dir}/* ${PFW_PREFIX}/${dir}
 .endfor
