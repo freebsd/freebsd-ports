@@ -23,9 +23,11 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 PLIST_FILES=	libexec/gkrellm/plugins/fmonitor.so
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
+ALL_TARGET=	fmonitor.so
+CFLAGS+=	-fPIC `gtk12-config --cflags` `imlib-config --cflags-gdk`
+MAKE_ARGS=	CC="${CC} ${CFLAGS}" GTK_LIB="`gtk12-config --libs`"
 
 do-install:
-	${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
 	${INSTALL_PROGRAM} ${WRKSRC}/fmonitor.so ${PREFIX}/libexec/gkrellm/plugins
 
 .include <bsd.port.mk>
