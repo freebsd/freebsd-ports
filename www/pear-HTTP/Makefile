@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	www devel pear
 
 MAINTAINER=	antonio@php.net
