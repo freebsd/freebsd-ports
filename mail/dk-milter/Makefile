@@ -24,6 +24,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 
 SENDMAIL_MILTER_PORT?=	sendmail
 USE_REINPLACE=	yes
+SUB_FILES=	milter-dk.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		dk-filter.8
 DOCSFILES=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
@@ -45,8 +46,6 @@ pre-fetch:
 .endif
 
 pre-configure:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/milter-dk.sh \
-		> ${WRKSRC}/milter-dk.sh
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -59,7 +58,7 @@ post-install:
 	-${STRIP_CMD} ${PREFIX}/libexec/dk-filter
 	${INSTALL_SCRIPT} ${WRKSRC}/dk-filter/gentxt.csh \
 		${PREFIX}/sbin/gentxt
-	${INSTALL_DATA} ${WRKSRC}/milter-dk.sh \
+	${INSTALL_DATA} ${WRKDIR}/milter-dk.sh \
 		${PREFIX}/etc/rc.d/milter-dk.sh.sample
 .for i in ${MAN8}
 	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
