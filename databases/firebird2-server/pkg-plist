@@ -22,4 +22,4 @@ firebird/security.fdb.sample
 @dirrm firebird/bin
 @dirrm firebird/help
 @dirrm firebird/intl
-@dirrm firebird
+@unexec rmdir %D/firebird 2>/dev/null || true

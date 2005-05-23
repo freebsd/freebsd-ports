@@ -27,8 +27,11 @@ lib/libib_util.so
 @unexec if cmp -s %D/etc/firebird.conf %D/etc/firebird.conf.sample; then rm -f %D/etc/firebird.conf; fi
 etc/firebird.conf.sample
 @exec [ -f %B/firebird.conf ] || cp %B/%f %B/firebird.conf
-%%DATADIR%%/firebird.msg
-@dirrm %%DATADIR%%
+%%LIBDATADIR%%/de_DE.msg
+%%LIBDATADIR%%/firebird.msg
+%%LIBDATADIR%%/fr_FR.msg
+%%LIBDATADIR%%/ja_JP.msg
+@dirrm %%LIBDATADIR%%
 %%EXAMPLESDIR%%/align.h
 %%EXAMPLESDIR%%/api1.c
 %%EXAMPLESDIR%%/api10.c
