@@ -3573,7 +3573,6 @@ hu-kde3-i18n	ports/hungarian/kde3-i18n
 hu-koffice-i18n	ports/hungarian/koffice-i18n
 hu-ooodict-HU	ports/hungarian/ooodict
 hu-openoffice-1.1	ports/hungarian/openoffice-1.1
-hu-php_doc	ports/hungarian/php_doc
 huc		ports/lang/huc
 hugelatex	ports/print/hugelatex
 hugin		ports/graphics/hugin
@@ -4762,7 +4761,6 @@ ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
 ko-openoffice-1.0	ports/korean/openoffice-1.0
 ko-openoffice-1.1	ports/korean/openoffice-1.1
 ko-pgp.language	ports/korean/pgp.language
-ko-php_doc	ports/korean/php_doc
 ko-pinetreefonts	ports/korean/pinetreefonts
 ko-scim-tables	ports/korean/scim-tables
 ko-texinfo	ports/korean/texinfo
@@ -8955,8 +8953,11 @@ php_doc-de	ports/german/php_doc
 php_doc-en	ports/lang/php_doc
 php_doc-fr	ports/french/php_doc
 php_doc-ja	ports/japanese/php_doc
+php_doc-hu	ports/hungarian/php_doc
+php_doc-ko	ports/korean/php_doc
 php_doc-pl	ports/polish/php_doc
 php_doc-pt	ports/portuguese/php_doc-br
+php_doc-ru	ports/russian/php_doc
 phpbb		ports/www/phpbb
 phpbt		ports/devel/phpbt
 phpeclipse	ports/java/phpeclipse
@@ -10250,7 +10251,6 @@ ru-p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pgp.language	ports/russian/pgp.language
-ru-php_doc	ports/russian/php_doc
 ru-pine		ports/russian/pine.language
 ru-pine.language	ports/russian/pine.language
 ru-prawda	ports/russian/prawda
