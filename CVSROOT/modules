@@ -10250,6 +10250,7 @@ ru-p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pgp.language	ports/russian/pgp.language
+ru-php_doc	ports/russian/php_doc
 ru-pine		ports/russian/pine.language
 ru-pine.language	ports/russian/pine.language
 ru-prawda	ports/russian/prawda
