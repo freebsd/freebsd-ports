@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.06
+PORTVERSION=	3.08
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -17,8 +17,7 @@ COMMENT=	A perl module to provide custom forms for reauthentication
 
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .if defined(WITH_MODPERL2)
-BROKEN=		Broken due the new mod_perl2 API
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .endif
@@ -34,6 +33,6 @@ CONFIGURE_ENV+=	APACHE="${PREFIX}/sbin/apache" \
 		TESTGRP="${CURGRP}" \
 		TESTPORT="${TESTPORT}"
 
-MAN3=		Apache::AuthCookie.3
+MAN3=		Apache::AuthCookie.3 Apache2::AuthCookie.3
 
 .include <bsd.port.mk>
