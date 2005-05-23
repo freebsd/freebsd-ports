@@ -5755,6 +5755,7 @@ md5deep		ports/security/md5deep
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
 mdcrack		ports/security/mdcrack
+mdf2iso		ports/sysutils/mdf2iso
 mdh		ports/deskutils/mdh
 mdk		ports/lang/mdk
 mdnsd		ports/dns/mdnsd
