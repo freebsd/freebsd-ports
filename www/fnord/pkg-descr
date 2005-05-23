@@ -1,0 +1,8 @@
+fnord is a small and fast webserver with CGI-capability. fnord has
+been written by Felix von Leitner. fnord supports virtual hosting
+und runs under tcpserver.
+
+WWW: http://www.fefe.de/fnord/
+
+- Florent Thoumie
+flz@xbsd.org
