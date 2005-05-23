@@ -8555,6 +8555,7 @@ pathchar	ports/net/pathchar
 pathchirp	ports/benchmarks/pathchirp
 pathload	ports/benchmarks/pathload
 pathological	ports/games/pathological
+pathrate	ports/benchmarks/pathrate
 pavuk		ports/ftp/pavuk
 pawm		ports/x11-wm/pawm
 pbasic		ports/lang/pbasic
