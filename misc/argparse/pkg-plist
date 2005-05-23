@@ -1,4 +1,0 @@
-bin/argparse
-%%DOCSDIR%%/example/argparse-demo.sh
-@dirrm %%DOCSDIR%%/example
-@dirrm %%DOCSDIR%%
