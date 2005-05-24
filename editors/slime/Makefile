@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slime
-PORTVERSION=	1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://common-lisp.net/project/slime/
 
@@ -21,7 +21,10 @@ PORTDOCS=	ChangeLog HACKING NEWS PROBLEMS README
 SLIME_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/slime
 
 do-build:
-	cd ${WRKSRC}/doc && ${GMAKE} contributors.texi slime.info
+	cd ${WRKSRC}/doc && ${GMAKE} slime.info
+	cd ${WRKSRC} && ${EMACS_CMD} -batch \
+		-eval '(setq load-path (cons nil load-path))' \
+		-f batch-byte-compile *.el
 
 pre-install:
 	@${MKDIR} ${SLIME_LISPDIR}
@@ -30,6 +33,7 @@ do-install:
 	cd ${INSTALL_WRKSRC}; \
 		${INSTALL_DATA} ChangeLog ${SLIME_LISPDIR}; \
 		${INSTALL_DATA} *.el ${SLIME_LISPDIR}; \
+		${INSTALL_DATA} *.elc ${SLIME_LISPDIR}; \
 		${INSTALL_DATA} *.lisp ${SLIME_LISPDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/slime.info ${PREFIX}/${INFO_PATH}
 	install-info ${PREFIX}/info/slime.info ${PREFIX}/info/dir
