@@ -1,5 +1,5 @@
 --- libng/plugins/drv0-bsd.c.orig	Wed Mar 12 17:45:56 2003
-+++ libng/plugins/drv0-bsd.c	Tue May 24 00:57:02 2005
++++ libng/plugins/drv0-bsd.c	Tue May 24 11:32:55 2005
 @@ -23,10 +23,12 @@
  
  #ifdef HAVE_DEV_IC_BT8XX_H
@@ -60,13 +60,22 @@
  	break;
      }
      fprintf(stderr,": %s\n",(rc == 0) ? "ok" : strerror(errno));
+@@ -474,7 +476,7 @@
+ /* ---------------------------------------------------------------------- */
+ 
+ static int
+-bsd_get_range(int id, int *get, int *set)
++bsd_get_range(int id, int *get, long *set)
+ {
+     switch (id) {
+     case ATTR_ID_HUE:
 @@ -502,19 +504,20 @@
  static int bsd_read_attr(struct ng_attribute *attr)
  {
      struct bsd_handle *h = attr->handle;
 -    int arg, get, set, i;
-+    int get, set, i;
-+    long arg;
++    int get, i;
++    long arg, set;
      int value = -1;
  
      switch (attr->id) {
@@ -98,8 +107,8 @@
  {
      struct bsd_handle *h = attr->handle;
 -    int arg, get, set;
-+    int get, set;
-+    long arg;
++    int get;
++    long arg, set;
  
      switch (attr->id) {
      case ATTR_ID_NORM:
