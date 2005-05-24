@@ -628,6 +628,7 @@
     SUBDIR += php5-session
     SUBDIR += php5-tidy
     SUBDIR += phpSysInfo
+    SUBDIR += phpadsnew
     SUBDIR += phpbb
     SUBDIR += phpgedview
     SUBDIR += phpmyfaq
