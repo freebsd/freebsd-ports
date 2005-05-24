@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/SMTP/.packlist
+%%SITE_PERL%%/POE/Component/Client/SMTP.pm
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/SMTP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
