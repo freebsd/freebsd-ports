@@ -22,6 +22,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 DESCR=		${PKGDIR}/pkg-descr
 
+PLIST_FILES=	bin/bogoQDBMupgrade
+
 MASTERDIR=	${.CURDIR}/../bogofilter
+PATCHDIR=	${.CURDIR}/files
 
 .include "${MASTERDIR}/Makefile"
