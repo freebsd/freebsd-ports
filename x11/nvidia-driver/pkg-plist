@@ -25,6 +25,7 @@ lib/libnvidia-tls.so.1
 @unexec rm -f %D/lib/libnvidia-tls.so
 lib/libXvMCNVIDIA.a
 lib/modules/drivers/nvidia_drv.o
+%%DRVSO%%lib/modules/drivers/nvidia_drv.so
 lib/modules/extensions/libglx.so.1
 @exec ln -sf %D/lib/modules/extensions/libglx.so.1 %D/lib/modules/extensions/libglx.so
 @unexec rm -f %D/lib/modules/extensions/libglx.so
@@ -70,7 +71,7 @@ nvidia.ko
 %%LINUX%%usr/lib/libnvidia-tls.so.1.0.%%NVVERSION%%
 %%LINUX%%@exec ln -sf %D/usr/lib/libGL.so.1.0.%%NVVERSION%% %D/usr/lib/libGL.so.1
 %%LINUX%%@exec ln -sf %D/usr/lib/libGLcore.so.1.0.%%NVVERSION%% %D/usr/lib/libGLcore.so.1
-%%LINUX%%@exec ln -sf %D/usr/lib/libnvidia-tls.so.1.0.%%NVVERSION%% %D/usr/lib/liblibnvidia-tls.so.1
+%%LINUX%%@exec ln -sf %D/usr/lib/libnvidia-tls.so.1.0.%%NVVERSION%% %D/usr/lib/libnvidia-tls.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libGL.so.1
 %%LINUX%%@unexec rm -f %D/usr/lib/libGLcore.so.1
-%%LINUX%%@unexec rm -f %D/usr/lib/liblibnvidia-tls.so.1
+%%LINUX%%@unexec rm -f %D/usr/lib/libnvidia-tls.so.1
