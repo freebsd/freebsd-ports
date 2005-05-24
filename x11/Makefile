@@ -217,6 +217,7 @@
     SUBDIR += xextensions
     SUBDIR += xf86ext
     SUBDIR += xfce4-clipman-plugin
+    SUBDIR += xfce4-taskmanager
     SUBDIR += xfce4-trigger-launcher
     SUBDIR += xfedor
     SUBDIR += xfishtank
