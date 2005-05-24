@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat May 21 18:34:19 2005
++++ Makefile.in	Sat May 21 18:34:34 2005
+@@ -31,7 +31,7 @@
+ BINS =
+ # The following two lines need to be kept syncronised.
+ LIBOPENNET_OBJS = buffer.o crc.o opennet.o parse.o @LIBOBJS@
+-LIBOPENNET_SHOBJS = buffer_shr.o crc_shr.o opennet_shr.o parse_shr.o @SHLIBOBJS@
++LIBOPENNET_SHOBJS = $(LIBOPENNET_OBJS)
+ 
+ all: $(LIBS) $(BINS)
+ 
