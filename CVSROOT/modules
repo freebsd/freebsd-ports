@@ -8702,6 +8702,7 @@ pear-Net_URL	ports/net/pear-Net_URL
 pear-Net_UserAgent_Detect	ports/net/pear-Net_UserAgent_Detect
 pear-OLE	ports/devel/pear-OLE
 pear-PEAR	ports/devel/pear-PEAR
+pear-PEAR_PackageFileManager	ports/devel/pear-PEAR_PackageFileManager
 pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-PHPUnit2	ports/devel/pear-PHPUnit2
 pear-PHP_Beautifier	ports/devel/pear-PHP_Beautifier
