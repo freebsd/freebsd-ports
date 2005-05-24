@@ -18,7 +18,7 @@
  typedef struct {
  	char	*name;		/* command name */
  	char	*help;		/* help string (NULL for no help) */
-@@ -93,6 +91,10 @@
+@@ -93,6 +91,12 @@
  static int margc;
  static char *margv[20];
  
@@ -26,6 +26,8 @@
 +    void send_dont();
 +    void send_will();
 +    void send_do();
++    typedef int (*intrtn_t)();
++    static call(intrtn_t routine, ...);
      static void
  makeargv()
  {
@@ -148,14 +150,13 @@
  
  static Command cmdtab[] = {
  	{ "close",	closehelp,	bye,		1 },
-@@ -2548,18 +2528,14 @@
+@@ -2548,18 +2528,13 @@
   */
  
      /*VARARGS1*/
 -    static
 -call(va_alist)
 -    va_dcl
-+typedef int (*intrtn_t)();
 +static call(intrtn_t routine, ...)
  {
      va_list ap;
