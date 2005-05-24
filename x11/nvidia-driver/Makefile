@@ -24,6 +24,11 @@ USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 INSTALLS_SHLIB=	yes
 
+OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
+		VM86_INT10CALL	"Use VM86 interface for video BIOS calls" off \
+		ACPI		"Enable support for ACPI Power Management" off \
+		LINUX		"Build with support for Linux compatibility" on
+
 .include <bsd.port.pre.mk>
 
 # Newer releases from NVidia do not play nicely with FreeBSD prior to 5.3.
@@ -34,7 +39,7 @@ INSTALLS_SHLIB=	yes
 .if ${OSVERSION} < 503000
 NVVERSION=	6113
 PORTREVISION=	4
-EXTRA_PATCHES+=	6113-patch-src::nvidia_pci.c
+EXTRA_PATCHES+=	${FILESDIR}/6113-patch-src::nvidia_pci.c
 PLIST_SUB+=	DIFFS=""
 .else
 NVVERSION=	7174
@@ -65,20 +70,6 @@ IGNORE=		supports FreeBSD -STABLE (4.9 or later, 5.2.1 or later), or FreeBSD -CU
 PLIST_SUB+=	FREEBSD5="@comment " FREEBSD4=""
 .else
 PLIST_SUB+=	FREEBSD5="" FREEBSD4="@comment "
-.endif
-
-pre-everything::
-.if !defined(WITH_FREEBSD_AGP)
-	@${ECHO_MSG} "Define WITH_FREEBSD_AGP to use FreeBSD AGP GART driver"
-.endif
-.if !defined(WITH_VM86_INT10CALL)
-	@${ECHO_MSG} "Define WITH_VM86_INT10CALL to use VM86 interface for INT10 calls (video BIOS)"
-.endif
-.if !defined(WITH_ACPI)
-	@${ECHO_MSG} "Define WITH_ACPI to enable support for ACPI Power Management (5.x/6.x only!)"
-.endif
-.if !defined(WITHOUT_LINUX)
-	@${ECHO_MSG} "Define WITHOUT_LINUX to build without support for Linux compatibility"
 .endif
 
 post-patch: .SILENT
