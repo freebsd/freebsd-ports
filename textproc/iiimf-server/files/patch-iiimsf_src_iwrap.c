@@ -1,8 +1,6 @@
-Index: iiimsf/src/iwrap.c
-diff -u -p iiimsf/src/iwrap.c.orig iiimsf/src/iwrap.c
---- iiimsf/src/iwrap.c.orig	Thu Sep  9 06:17:09 2004
-+++ iiimsf/src/iwrap.c	Tue Feb 22 15:22:41 2005
-@@ -72,6 +72,15 @@ int permit_access(
+--- iiimsf/src/iwrap.c.orig	Wed Apr 13 01:51:55 2005
++++ iiimsf/src/iwrap.c	Mon May  9 18:02:18 2005
+@@ -72,6 +72,15 @@
  {
  #ifdef HAVE_LIBWRAP
      struct request_info req;
@@ -12,13 +10,13 @@ diff -u -p iiimsf/src/iwrap.c.orig iiimsf/src/iwrap.c
 +
 +    size = sizeof(ss);
 +    if (getpeername(h, pname, &size) < 0)
-+	return 0;
++       return 0;
 +    if (pname->sa_family == AF_UNIX)
-+    	return 1;
++       return 1;
  
      request_init(&req, RQ_DAEMON, cmdname, RQ_FILE, h, 0);
      fromhost(&req);
-@@ -177,6 +186,14 @@ authenticate_with_unix(
+@@ -177,6 +186,14 @@
  #ifdef HAVE_GETPEEREID
      /* OpenBSD */
      git_t gid;

@@ -1,0 +1,8 @@
+--- leif/Makefile.am.orig	Fri May 13 15:45:41 2005
++++ leif/Makefile.am	Fri May 13 15:46:03 2005
+@@ -1,4 +1,4 @@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = $(LE_TARGETS)
+ 
+-ACLOCAL_AMFLAGS = -I ../acfiles
++ACLOCAL_AMFLAGS = -I %%LOCALBASE%%/share/aclocal -I ../acfiles

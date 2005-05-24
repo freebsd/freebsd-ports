@@ -1,11 +1,24 @@
---- leif/ude/Makefile.am.orig	Thu Mar  3 00:07:57 2005
-+++ leif/ude/Makefile.am	Thu Mar  3 00:08:15 2005
-@@ -2,7 +2,7 @@
- datadir = $(IM_LOCALEDIR)/zh_CN/ude/data
- udengine_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) \
+--- leif/ude/Makefile.am.orig	Thu Apr 14 00:30:34 2005
++++ leif/ude/Makefile.am	Wed May 18 02:42:34 2005
+@@ -1,13 +1,14 @@
+-LE_FILES = udengine.so
+-datadir = $(IM_LEIFDIR)/ude/data
+-udengine_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) \
++LENAME = ude
++LE_FILES = ude.so
++datadir = $(IM_LEIFDIR)/$(LENAME)/data
++ude_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) \
                       -DNO_COLOR_FEEDBACK -DNO_CARET_NEGO \
--                     -I$(IM_INCLUDEDIR)/iml
-+                     -I$(IM_INCLUDEDIR)/iml -DIMDIR="\"${IMDIR}\""
- udengine_la_LDFLAGS = -module -rpath $(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
- udengine_la_LIBADD = $(THREAD_LIBS)
- udengine_la_SOURCES = UDEngine.c Converter.c IMHandler.c \
+                      -I$(IM_INCLUDEDIR)/iml
+-udengine_la_LDFLAGS = -module -rpath $(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
+-udengine_la_LIBADD = $(THREAD_LIBS)
+-udengine_la_SOURCES = UDEngine.c Converter.c IMHandler.c \
++ude_la_LDFLAGS = -module -rpath $(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
++ude_la_LIBADD = $(THREAD_LIBS)
++ude_la_SOURCES = UDEngine.c Converter.c IMHandler.c \
+                       CodeTable.c MakeCodeTable.c
+-noinst_LTLIBRARIES = udengine.la
++noinst_LTLIBRARIES = ude.la
+ data_DATA = data/pinyin.mb
+ 
+ include $(top_srcdir)/install-leif.mak

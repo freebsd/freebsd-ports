@@ -1,7 +1,6 @@
-lib/im/leif/hangul.so
-lib/im/locale/ko_KR/hangul.conf
-lib/im/locale/ko_KR/tables/candidate.txt
-@dirrm lib/im/locale/ko_KR/tables
-@dirrm lib/im/locale/ko_KR
-@unexec rmdir %D/lib/im/leif > /dev/null 2>&1 || true
-@unexec rmdir %D/lib/im/locale > /dev/null 2>&1 || true
+lib/iiim/le/hangul/hangul.so
+lib/iiim/le/hangul/hangul.conf
+lib/iiim/le/hangul/tables/candidate.txt
+@dirrm lib/iiim/le/hangul/tables
+@dirrm lib/iiim/le/hangul
+@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true

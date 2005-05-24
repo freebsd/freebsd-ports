@@ -1,86 +1,92 @@
-lib/im/leif/default.so
-lib/im/leif/unitle.so
-lib/im/locale/UNIT/AM_ET/data/amharic.data
-lib/im/locale/UNIT/ARABIC/data/arabic.data
-lib/im/locale/UNIT/BENGALI/data/inscript.data
-lib/im/locale/UNIT/BENGALI/data/probhat.data
-lib/im/locale/UNIT/BENGALI/phonetic.cfg
-lib/im/locale/UNIT/CYRILLIC/data/cyrillic.data
-lib/im/locale/UNIT/EUROPEAN/data/euro.data
-lib/im/locale/UNIT/GREEK/data/greek.data
-lib/im/locale/UNIT/GUJARATI/data/inscript.data
-lib/im/locale/UNIT/GUJARATI/data/phonetic.data
-lib/im/locale/UNIT/GUJARATI/phonetic.cfg
-lib/im/locale/UNIT/GURMUKHI/data/inscript.data
-lib/im/locale/UNIT/GURMUKHI/data/phonetic.data
-lib/im/locale/UNIT/GURMUKHI/phonetic.cfg
-lib/im/locale/UNIT/HEBREW/data/hebrew.data
-lib/im/locale/UNIT/HINDI/data/inscript.data
-lib/im/locale/UNIT/HINDI/data/phonetic.data
-lib/im/locale/UNIT/HINDI/data/trans.data
-lib/im/locale/UNIT/HINDI/phonetic.cfg
-lib/im/locale/UNIT/KANNADA/data/inscript.data
-lib/im/locale/UNIT/KANNADA/data/kgp.data
-lib/im/locale/UNIT/KANNADA/phonetic.cfg
-lib/im/locale/UNIT/MALAYALAM/data/inscript.data
-lib/im/locale/UNIT/MALAYALAM/phonetic.cfg
-lib/im/locale/UNIT/TAMIL/data/inscript.data
-lib/im/locale/UNIT/TAMIL/data/trans.data
-lib/im/locale/UNIT/TAMIL/phonetic.cfg
-lib/im/locale/UNIT/TELUGU/data/inscript.data
-lib/im/locale/UNIT/TELUGU/phonetic.cfg
-lib/im/locale/UNIT/TI_ER/data/eritrean.data
-lib/im/locale/UNIT/UNICODE-HEX/codepoint.cfg
-lib/im/locale/UNIT/UNICODE-OCTAL/codepoint.cfg
-lib/im/locale/UNIT/VIETNAMESE/data/vietnamese.data
-lib/im/locale/UNIT/common/bin2txt
-lib/im/locale/UNIT/common/codepoint_im.so
-lib/im/locale/UNIT/common/codepoint_im.so.0
-lib/im/locale/UNIT/common/ctim.so
-lib/im/locale/UNIT/common/ctim.so.0
-lib/im/locale/UNIT/common/phonetic_im.so
-lib/im/locale/UNIT/common/phonetic_im.so.0
-lib/im/locale/UNIT/common/search
-lib/im/locale/UNIT/common/txt2bin
-lib/im/locale/UNIT/common/x_txt2bin
-lib/im/locale/UNIT/common/xctim.so
-lib/im/locale/UNIT/common/xctim.so.0
-lib/im/locale/UNIT/sysime.cfg
-@dirrm lib/im/locale/UNIT/AM_ET/data
-@dirrm lib/im/locale/UNIT/AM_ET
-@dirrm lib/im/locale/UNIT/ARABIC/data
-@dirrm lib/im/locale/UNIT/ARABIC
-@dirrm lib/im/locale/UNIT/BENGALI/data
-@dirrm lib/im/locale/UNIT/BENGALI
-@dirrm lib/im/locale/UNIT/CYRILLIC/data
-@dirrm lib/im/locale/UNIT/CYRILLIC
-@dirrm lib/im/locale/UNIT/EUROPEAN/data
-@dirrm lib/im/locale/UNIT/EUROPEAN
-@dirrm lib/im/locale/UNIT/GREEK/data
-@dirrm lib/im/locale/UNIT/GREEK
-@dirrm lib/im/locale/UNIT/GUJARATI/data
-@dirrm lib/im/locale/UNIT/GUJARATI
-@dirrm lib/im/locale/UNIT/GURMUKHI/data
-@dirrm lib/im/locale/UNIT/GURMUKHI
-@dirrm lib/im/locale/UNIT/HEBREW/data
-@dirrm lib/im/locale/UNIT/HEBREW
-@dirrm lib/im/locale/UNIT/HINDI/data
-@dirrm lib/im/locale/UNIT/HINDI
-@dirrm lib/im/locale/UNIT/KANNADA/data
-@dirrm lib/im/locale/UNIT/KANNADA
-@dirrm lib/im/locale/UNIT/MALAYALAM/data
-@dirrm lib/im/locale/UNIT/MALAYALAM
-@dirrm lib/im/locale/UNIT/TAMIL/data
-@dirrm lib/im/locale/UNIT/TAMIL
-@dirrm lib/im/locale/UNIT/TELUGU/data
-@dirrm lib/im/locale/UNIT/TELUGU
-@dirrm lib/im/locale/UNIT/TI_ER/data
-@dirrm lib/im/locale/UNIT/TI_ER
-@dirrm lib/im/locale/UNIT/UNICODE-OCTAL
-@dirrm lib/im/locale/UNIT/UNICODE-HEX
-@dirrm lib/im/locale/UNIT/VIETNAMESE/data
-@dirrm lib/im/locale/UNIT/VIETNAMESE
-@dirrm lib/im/locale/UNIT/common
-@dirrm lib/im/locale/UNIT
-@unexec rmdir %D/lib/im/leif > /dev/null 2>&1 || true
-@unexec rmdir %D/lib/im/locale > /dev/null 2>&1 || true
+lib/iiim/le/default/default.so
+lib/iiim/le/unitle/common/ctim.so.0
+lib/iiim/le/unitle/common/ctim.so
+lib/iiim/le/unitle/common/ctim.la
+lib/iiim/le/unitle/common/ctim.a
+lib/iiim/le/unitle/common/txt2bin
+lib/iiim/le/unitle/common/bin2txt
+lib/iiim/le/unitle/common/search
+lib/iiim/le/unitle/common/xctim.so.0
+lib/iiim/le/unitle/common/xctim.so
+lib/iiim/le/unitle/common/xctim.la
+lib/iiim/le/unitle/common/xctim.a
+lib/iiim/le/unitle/common/x_txt2bin
+lib/iiim/le/unitle/common/codepoint_im.so.0
+lib/iiim/le/unitle/common/codepoint_im.so
+lib/iiim/le/unitle/common/codepoint_im.la
+lib/iiim/le/unitle/common/codepoint_im.a
+lib/iiim/le/unitle/HINDI/phonetic.cfg
+lib/iiim/le/unitle/HINDI/data/inscript.data
+lib/iiim/le/unitle/HINDI/data/trans.data
+lib/iiim/le/unitle/HINDI/data/phonetic.data
+lib/iiim/le/unitle/TAMIL/phonetic.cfg
+lib/iiim/le/unitle/TAMIL/data/inscript.data
+lib/iiim/le/unitle/TAMIL/data/trans.data
+lib/iiim/le/unitle/TAMIL/data/phonetic.data
+lib/iiim/le/unitle/KANNADA/phonetic.cfg
+lib/iiim/le/unitle/KANNADA/data/inscript.data
+lib/iiim/le/unitle/KANNADA/data/kgp.data
+lib/iiim/le/unitle/MALAYALAM/phonetic.cfg
+lib/iiim/le/unitle/MALAYALAM/data/inscript.data
+lib/iiim/le/unitle/TELUGU/phonetic.cfg
+lib/iiim/le/unitle/TELUGU/data/inscript.data
+lib/iiim/le/unitle/GUJARATI/phonetic.cfg
+lib/iiim/le/unitle/GUJARATI/data/inscript.data
+lib/iiim/le/unitle/GUJARATI/data/phonetic.data
+lib/iiim/le/unitle/BENGALI/phonetic.cfg
+lib/iiim/le/unitle/BENGALI/data/inscript.data
+lib/iiim/le/unitle/BENGALI/data/probhat.data
+lib/iiim/le/unitle/GURMUKHI/phonetic.cfg
+lib/iiim/le/unitle/GURMUKHI/data/inscript.data
+lib/iiim/le/unitle/GURMUKHI/data/phonetic.data
+lib/iiim/le/unitle/UNICODE-HEX/codepoint.cfg
+lib/iiim/le/unitle/UNICODE-OCTAL/codepoint.cfg
+lib/iiim/le/unitle/sysime.cfg
+lib/iiim/le/unitle/unitle.so
+lib/iiim/le/unitle/hotkey_config.xml
+lib/iiim/le/unitle/EUROPEAN/data/euro.data
+lib/iiim/le/unitle/CYRILLIC/data/cyrillic.data
+lib/iiim/le/unitle/GREEK/data/greek.data
+lib/iiim/le/unitle/ARABIC/data/arabic.data
+lib/iiim/le/unitle/HEBREW/data/hebrew.data
+lib/iiim/le/unitle/VIETNAMESE/data/vietnamese.data
+lib/iiim/le/unitle/TI_ER/data/eritrean.data
+lib/iiim/le/unitle/AM_ET/data/amharic.data
+@dirrm lib/iiim/le/default
+@dirrm lib/iiim/le/unitle/common
+@dirrm lib/iiim/le/unitle/HINDI/data
+@dirrm lib/iiim/le/unitle/HINDI
+@dirrm lib/iiim/le/unitle/TAMIL/data
+@dirrm lib/iiim/le/unitle/TAMIL
+@dirrm lib/iiim/le/unitle/KANNADA/data
+@dirrm lib/iiim/le/unitle/KANNADA
+@dirrm lib/iiim/le/unitle/MALAYALAM/data
+@dirrm lib/iiim/le/unitle/MALAYALAM
+@dirrm lib/iiim/le/unitle/TELUGU/data
+@dirrm lib/iiim/le/unitle/TELUGU
+@dirrm lib/iiim/le/unitle/GUJARATI/data
+@dirrm lib/iiim/le/unitle/GUJARATI
+@dirrm lib/iiim/le/unitle/BENGALI/data
+@dirrm lib/iiim/le/unitle/BENGALI
+@dirrm lib/iiim/le/unitle/GURMUKHI/data
+@dirrm lib/iiim/le/unitle/GURMUKHI
+@dirrm lib/iiim/le/unitle/UNICODE-HEX
+@dirrm lib/iiim/le/unitle/UNICODE-OCTAL
+@dirrm lib/iiim/le/unitle/EUROPEAN/data
+@dirrm lib/iiim/le/unitle/EUROPEAN
+@dirrm lib/iiim/le/unitle/CYRILLIC/data
+@dirrm lib/iiim/le/unitle/CYRILLIC
+@dirrm lib/iiim/le/unitle/GREEK/data
+@dirrm lib/iiim/le/unitle/GREEK
+@dirrm lib/iiim/le/unitle/ARABIC/data
+@dirrm lib/iiim/le/unitle/ARABIC
+@dirrm lib/iiim/le/unitle/HEBREW/data
+@dirrm lib/iiim/le/unitle/HEBREW
+@dirrm lib/iiim/le/unitle/VIETNAMESE/data
+@dirrm lib/iiim/le/unitle/VIETNAMESE
+@dirrm lib/iiim/le/unitle/TI_ER/data
+@dirrm lib/iiim/le/unitle/TI_ER
+@dirrm lib/iiim/le/unitle/AM_ET/data
+@dirrm lib/iiim/le/unitle/AM_ET
+@dirrm lib/iiim/le/unitle
+@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true

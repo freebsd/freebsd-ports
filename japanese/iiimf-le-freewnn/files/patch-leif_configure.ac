@@ -1,53 +1,28 @@
---- leif/configure.ac.orig	Wed Oct  6 23:00:36 2004
-+++ leif/configure.ac	Thu Mar 24 18:13:32 2005
-@@ -44,15 +44,15 @@
+--- leif/configure.ac.orig	Wed May 11 13:01:08 2005
++++ leif/configure.ac	Wed May 11 13:02:22 2005
+@@ -75,16 +75,16 @@
  
- IM_CHECK_SYSTEM
- IM_CHECK_DLOPEN
--IM_CHECK_CANNA
-+dnl IM_CHECK_CANNA
- IM_CHECK_FREEWNN
+ LDFLAGS="${COMMON_LDFLAGS} ${THREAD_LDFLAGS} ${LDFLAGS}"
  
--IM_CHECK_X
--IM_CHECK_GTK
--IM_CHECK_MOTIF
--PKG_CHECK_MODULES(GTK2, gtk+-2.0 gtk+-x11-2.0)
--AC_SUBST(GTK2_CFLAGS)
--AC_SUBST(GTK2_LIBS)
-+dnl IM_CHECK_X
-+dnl IM_CHECK_GTK
-+dnl IM_CHECK_MOTIF
-+dnl PKG_CHECK_MODULES(GTK2, gtk+-2.0 gtk+-x11-2.0)
-+dnl AC_SUBST(GTK2_CFLAGS)
-+dnl AC_SUBST(GTK2_LIBS)
- 
- dnl --------------------------------------------------------------------------------
- dnl                      Section 5: compilation options
-@@ -63,23 +63,16 @@
- 
- CFLAGS="${COMMON_CXX_CFLAGS} ${COMMON_CFLAGS} \
-         ${DEBUG_CXX_CFLAGS} ${DEBUG_CFLAGS} \
--        ${THREAD_COMMON_CXX_CFLAGS}"
-+        ${THREAD_COMMON_CXX_CFLAGS} ${CFLAGS}"
- 
- CXXFLAGS="${COMMON_CXX_CFLAGS} ${COMMON_CXXFLAGS} \
-           ${DEBUG_CXX_CFLAGS} ${DEBUG_CXXFLAGS} \
--          ${THREAD_COMMON_CXX_CFLAGS}"
-+          ${THREAD_COMMON_CXX_CFLAGS} ${CXXFLAGS}"
- 
--LDFLAGS="${COMMON_LDFLAGS} ${THREAD_LDFLAGS}"
-+LDFLAGS="${COMMON_LDFLAGS} ${THREAD_LDFLAGS} ${LDFLAGS}"
- 
--LE_TARGETS="default template sampleja sampleja2 sampleja3 newpy testEIMIL unit hangul chewing"
+-LE_TARGETS="default template sampleja sampleja2 sampleja3 newpy testEIMIL unit hangul fop_test"
 +LE_TARGETS="freewnn"
  
 -IM_ADD_TARGET(LE_TARGETS, HAVE_CANNA, canna)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_FREEWNN, freewnn)
+-IM_ADD_TARGET(LE_TARGETS, HAVE_CHEWING, chewing)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_X, sampleja3/xaux_common)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_GTK, sampleja3/xaux_gtk)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, newpy/xaux)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, sampleja/xaux)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, sampleja3/xaux_motif)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_CANNA, canna)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_FREEWNN, freewnn)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_CHEWING, chewing)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_X, sampleja3/xaux_common)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_GTK, sampleja3/xaux_gtk)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, newpy/xaux)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, sampleja/xaux)
++#IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, sampleja3/xaux_motif)
  
  dnl --------------------------------------------------------------------------------
  dnl                       Section 6: compilation test

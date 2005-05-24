@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: iiimd
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+prefix=%%PREFIX%%
+
+iiimd_enable=${iiimd_enable:-"NO"}
+
+. %%RC_SUBR%%
+
+name="iiimd"
+rcvar=`set_rcvar`
+command="${prefix}/bin/iiimd"
+
+load_rc_config $name
+command_args="> /dev/null 2>&1 &"
+run_rc_command "$1"

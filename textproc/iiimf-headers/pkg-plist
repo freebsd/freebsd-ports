@@ -1,15 +1,16 @@
-include/iiimf/IMArg.h
-include/iiimf/IMCharSubsets.h
-include/iiimf/IMProtocolStruct.h
-include/iiimf/syscfg.h
-include/iiimf/threaddef.h
-include/iiimf/iml/SunIM.h
-include/iiimf/iml/SunIMCore.h
-include/iiimf/iml/SunIMLock.h
-include/iiimf/iml/SunIMMMan.h
-include/iiimf/iml/SunIMMthd.h
-include/iiimf/iml/SunIMPriv.h
-include/iiimf/iml/SunIMProt.h
-include/iiimf/iml/SunIMPub.h
-@dirrm include/iiimf/iml
-@dirrm include/iiimf
+include/iiim/IMArg.h
+include/iiim/IMCharSubsets.h
+include/iiim/IMProtocolStruct.h
+include/iiim/syscfg.h
+include/iiim/threaddef.h
+include/iiim/iml/SunIM.h
+include/iiim/iml/SunIMCore.h
+include/iiim/iml/SunIMLock.h
+include/iiim/iml/SunIMMMan.h
+include/iiim/iml/SunIMMthd.h
+include/iiim/iml/SunIMPriv.h
+include/iiim/iml/SunIMProt.h
+include/iiim/iml/SunIMPub.h
+include/iiim/iml/iml_fop.h
+@dirrm include/iiim/iml
+@unexec rmdir %D/include/iiim > /dev/null 2>&1 || true

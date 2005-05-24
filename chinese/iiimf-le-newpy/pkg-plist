@@ -1,17 +1,17 @@
-lib/im/leif/newpy.so
-lib/im/locale/zh_CN/newpy/data/PyCiku.dat
-lib/im/locale/zh_CN/newpy/data/UdCiku.dat
-lib/im/locale/zh_CN/newpy/newpy_obj.jar
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/aux.so.0
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/aux.so
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/aux_win
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/full.gif
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/gb.gif
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/gbk.gif
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/half.gif
-%%WANT_XAUX%%lib/im/locale/zh_CN/newpy/help.gif
-@dirrm lib/im/locale/zh_CN/newpy/data
-@dirrm lib/im/locale/zh_CN/newpy
-@unexec rmdir %D/lib/im/locale/zh_CN 2>/dev/null || true
-@unexec rmdir %D/lib/im/locale 2>/dev/null || true
-@unexec rmdir %D/lib/im/leif 2>/dev/null || true
+lib/iiim/le/newpy/newpy.so
+lib/iiim/le/newpy/newpy_obj.jar
+lib/iiim/le/newpy/data/PyCiku.dat
+lib/iiim/le/newpy/data/UdCiku.dat
+%%WANT_XAUX%%lib/iiim/le/newpy/aux.so.0
+%%WANT_XAUX%%lib/iiim/le/newpy/aux.so
+%%WANT_XAUX%%lib/iiim/le/newpy/aux.la
+%%WANT_XAUX%%lib/iiim/le/newpy/aux.a
+%%WANT_XAUX%%lib/iiim/le/newpy/aux_win
+%%WANT_XAUX%%lib/iiim/le/newpy/full.gif
+%%WANT_XAUX%%lib/iiim/le/newpy/gb.gif
+%%WANT_XAUX%%lib/iiim/le/newpy/gbk.gif
+%%WANT_XAUX%%lib/iiim/le/newpy/half.gif
+%%WANT_XAUX%%lib/iiim/le/newpy/help.gif
+@dirrm lib/iiim/le/newpy/data
+@dirrm lib/iiim/le/newpy
+@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true

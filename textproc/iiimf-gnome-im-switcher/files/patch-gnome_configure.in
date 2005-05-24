@@ -1,9 +1,0 @@
---- gnome-im-switcher/configure.in.orig	Thu Oct 14 23:10:11 2004
-+++ gnome-im-switcher/configure.in	Wed Mar  2 22:17:35 2005
-@@ -40,6 +40,7 @@
- GIMLET_LIBS="$X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS $GIMLET_LIBS"
- GIMLET_CFLAGS="$X_CFLAGS $GIMLET_CFLAGS"
- CFLAGS="$GIMLET_CFLAGS $CFLAGS"
-+LDFLAGS="${LDFLAGS}"
- 
- AC_PATH_PROG(GCONFTOOL, gconftool-2, no)

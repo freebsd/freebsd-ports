@@ -1,5 +1,5 @@
---- gnome-im-switcher/src/widgets.c	Thu Oct 14 23:10:11 2004
-+++ gnome-im-switcher/src/widgets.c	Wed Feb 16 16:51:26 2005
+--- gnome-im-switcher/src/widgets.c.orig	Tue May 10 16:29:36 2005
++++ gnome-im-switcher/src/widgets.c	Tue May 10 16:30:04 2005
 @@ -29,7 +29,11 @@
  #include <gnome.h>
  

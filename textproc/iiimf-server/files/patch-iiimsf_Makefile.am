@@ -1,8 +1,11 @@
---- iiimsf/Makefile.am.orig	Sat Feb 19 03:33:28 2005
-+++ iiimsf/Makefile.am	Sat Feb 19 03:33:48 2005
-@@ -2,4 +2,4 @@
+--- iiimsf/Makefile.am.orig	Fri Mar 18 04:26:28 2005
++++ iiimsf/Makefile.am	Mon May  9 19:00:14 2005
+@@ -1,6 +1,6 @@
+ AUTOMAKE_OPTIONS = foreign
+-ACLOCAL_AMFLAGS = -I ../acfiles
++ACLOCAL_AMFLAGS = -I %%LOCALBASE%%/share/aclocal -I ../acfiles
  SUBDIRS = lib src
  
  confdir = $(XMLCONFDIR)
--conf_DATA = htt.xml.conf
-+conf_DATA = htt.xml.conf.sample src/le.xml.conf.sample
+-conf_DATA = iiimd.xml.conf
++conf_DATA = iiimd.xml.conf.sample
