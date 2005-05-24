@@ -39,18 +39,7 @@ include/libicq2000/time_extra.h
 include/libicq2000/userinfoconstants.h
 include/libicq2000/userinfohelpers.h
 include/libicq2000/version.h
-lib/libicq2000.a
-lib/libicq2000.la
 lib/libicq2000.so
 lib/libicq2000.so.5
 share/aclocal/libicq2000.m4
-%%PORTDOCS%%share/doc/libicq2000/AUTHORS
-%%PORTDOCS%%share/doc/libicq2000/COPYING
-%%PORTDOCS%%share/doc/libicq2000/ChangeLog
-%%PORTDOCS%%share/doc/libicq2000/INSTALL
-%%PORTDOCS%%share/doc/libicq2000/NEWS
-%%PORTDOCS%%share/doc/libicq2000/README
-%%PORTDOCS%%share/doc/libicq2000/THANKS
-%%PORTDOCS%%share/doc/libicq2000/TODO
-%%PORTDOCS%%@dirrm share/doc/libicq2000
 @dirrm include/libicq2000

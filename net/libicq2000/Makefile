@@ -17,13 +17,14 @@ COMMENT=	An opensource C++ library to support icq2000/2001 protocol
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=15
+CONFIGURE_ARGS=	--disable-static
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	libicq2000-config.1
 
-DOC_FILES=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS \
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS \
 		TODO
 
 post-patch:
@@ -32,16 +33,12 @@ post-patch:
 		${WRKSRC}/libicq2000/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|^(pkgincludedir.+)/@PACKAGE@|\1|' \
 		${WRKSRC}/libicq2000-config.in
-
-post-configure:
-	@${CP} ${LIBTOOL} ${WRKSRC}
-	@${REINPLACE_CMD} -E -e 's|^(install_ltlibs=).+$$|\1no|' \
-		${WRKSRC}/libtool
+	@${CP} ${LTMAIN} ${WRKSRC}
 
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
