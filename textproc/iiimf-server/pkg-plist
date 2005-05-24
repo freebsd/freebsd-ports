@@ -1,13 +1,19 @@
 bin/iiimf-le-tools
-etc/iiim/htt.xml.conf.sample
+bin/iiimd
+etc/iiim/iiimd.xml.conf.sample
 etc/iiim/le.xml.conf.sample
-lib/im/htt
-lib/im/htt_server
+lib/libiiimutils.a
+lib/libiiimutils.la
+lib/libiiimutils.so
+lib/libiiimutils.so.0
+lib/iiim/iiimd-watchdog
 libexec/iiimf-segv-logger
+include/iiim/lexmlconf.h
 share/iiim/gdbcmd
 @dirrm etc/iiim
 @dirrm share/iiim
-@unexec rmdir %D/lib/im > /dev/null 2>&1 || true
+@unexec rmdir %D/lib/iiim > /dev/null 2>&1 || true
+@unexec rmdir %D/include/iiim > /dev/null 2>&1 || true
 @exec mkdir -p /var/log/iiim
 @unexec rm -f /var/log/iiim/*.log
 @unexec rmdir /var/log/iiim > /dev/null 2>&1 || true

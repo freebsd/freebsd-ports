@@ -1,4 +1,7 @@
-lib/libiiimcf.a
+include/iiim/iiimcf.h
+lib/libiiimcf.so.3
 lib/libiiimcf.so
-lib/libiiimcf.so.2
-include/iiimcf.h
+lib/libiiimcf.la
+lib/libiiimcf.a
+libdata/pkgconfig/iiimf-lib-client.pc
+@unexec rmdir %D/include/iiim > /dev/null 2>&1 || true

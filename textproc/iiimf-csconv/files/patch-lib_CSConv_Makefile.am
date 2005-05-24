@@ -1,0 +1,11 @@
+--- lib/CSConv/Makefile.am.orig	Fri May 13 17:52:28 2005
++++ lib/CSConv/Makefile.am	Fri May 13 17:52:42 2005
+@@ -2,7 +2,7 @@
+ EXTRA_DIST= encoding.norm
+ SUBDIRS=test
+ AUTOMAKE_OPTIONS = foreign
+-ACLOCAL_AMFLAGS = -I ../../acfiles
++ACLOCAL_AMFLAGS = -I %%LOCALBASE%%/share/aclocal -I ../../acfiles
+ csconv_la_CFLAGS = -DCSCONV_DIR="\"${csconvdir}\""
+ csconv_la_LDFLAGS = -avoid-version -module
+ csconv_la_LIBADD = @LTLIBICONV@

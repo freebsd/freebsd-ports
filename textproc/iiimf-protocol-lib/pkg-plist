@@ -1,8 +1,11 @@
-lib/libiiimp.a
+include/iiim/iiimp.h
+include/iiim/iiimp-opcode.h
+include/iiim/iiimp-keycode.h
+include/iiim/iiimp-data.h
+include/iiim/iiimp-character-subsets.h
+lib/libiiimp.so.1
 lib/libiiimp.so
-lib/libiiimp.so.0
-include/iiimp-character-subsets.h
-include/iiimp-data.h
-include/iiimp-keycode.h
-include/iiimp-opcode.h
-include/iiimp.h
+lib/libiiimp.la
+lib/libiiimp.a
+libdata/pkgconfig/iiimf-lib-protocol.pc
+@unexec rmdir %D/include/iiim > /dev/null 2>&1 || true

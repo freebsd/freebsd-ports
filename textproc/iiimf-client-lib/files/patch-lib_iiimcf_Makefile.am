@@ -1,11 +1,14 @@
---- lib/iiimcf/Makefile.am.orig	Wed Mar  2 05:50:46 2005
-+++ lib/iiimcf/Makefile.am	Wed Mar  2 05:51:11 2005
-@@ -2,7 +2,7 @@
+--- lib/iiimcf/Makefile.am.orig	Mon May  9 16:47:15 2005
++++ lib/iiimcf/Makefile.am	Mon May  9 16:48:31 2005
+@@ -1,9 +1,9 @@
+ AUTOMAKE_OPTIONS = foreign
+-ACLOCAL_AMFLAGS = -I ../../acfiles
++ACLOCAL_AMFLAGS = -I %%LOCALBASE%%/share/aclocal -I ../../acfiles
  SUBDIRS = . test
  #libdir = /usr/local/lib
  libiiimcf_la_LDFLAGS = -version-info $(LIBIIIMCF_MAJOR_VERSION):$(LIBIIIMCF_MINOR_VERSION) \
--                       -export-dynamic -export-symbols libiiimcf.sym ../iiimp/libiiimp.la
+-                       -export-dynamic -export-symbols libiiimcf.sym ../iiimp/libiiimp.la -ldl
 +                       -export-dynamic -export-symbols libiiimcf.sym -liiimp
- libiiimcf_la_CFLAGS = -DDEBUG -DSOCKETDIR="\"$(SOCKETDIR)\""
+ libiiimcf_la_CFLAGS = -DDEBUG -DSOCKETDIR="\"$(SOCKETDIR)\"" -I../CSConv
  libiiimcf_la_SOURCES = iiimcf.c input-method.c attr.c commit.c context.c event.c \
                         lookup_choice.c message.c preedit.c status.c trigger.c \

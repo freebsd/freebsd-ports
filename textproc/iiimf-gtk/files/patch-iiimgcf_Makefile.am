@@ -1,21 +1,26 @@
---- iiimgcf/Makefile.am	Thu Jan 15 10:51:58 2004
-+++ iiimgcf/Makefile.am	Thu Feb 17 22:05:59 2005
-@@ -9,14 +9,13 @@
+--- iiimgcf/Makefile.am.orig	Thu Apr 14 05:29:08 2005
++++ iiimgcf/Makefile.am	Tue May 17 22:33:56 2005
+@@ -5,11 +5,11 @@
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ AUTOMAKE_OPTIONS = foreign
+-ACLOCAL_AMFLAGS = -I ../acfiles
++ACLOCAL_AMFLAGS = -I /usr/local/share/aclocal -I /usr/X11R6/share/aclocal -I ../acfiles
+ 
  moduledir = $(GTK2_LIBDIR)/gtk-2.0/$(GTK2_BINARY_VERSION)/immodules
  
 -im_iiim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) $(GTK_CFLAGS)
-+im_iiim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) $(GTK_CFLAGS) -DIMDIR="\"${IMDIR}\""
--im_iiim_la_LDFLAGS = -rpath $(moduledir) -avoid-version -module -no-undefined
-+im_iiim_la_LDFLAGS = -rpath $(moduledir) -avoid-version -module -no-undefined \
-+		     -liiimcf -liiimp
++im_iiim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) $(GTK_CFLAGS) -I $(CSCONV_DIR)
+ im_iiim_la_LDFLAGS = -rpath $(moduledir) -avoid-version -module -no-undefined
  
  im_iiim_la_SOURCES = IIIMGdkEventKey.c IIIMGdkEventKey.h \
-                      gtkimcontextiiim.c gtkimcontextiiim.h \
-                      imiiim.c imswitcher.c imaux.c
--im_iiim_la_LIBADD = $(X_LIBS) $(GTK_LIBS) \
+@@ -18,8 +18,7 @@
+                      imswitcher.c imswitcher.h
+ 
+ im_iiim_la_LIBADD = $(X_LIBS) $(GTK_LIBS) \
 -                    $(IM_LIBDIR)/iiimcf/libiiimcf.la \
 -                    $(IM_LIBDIR)/iiimp/libiiimp.la
-+im_iiim_la_LIBADD = $(X_LIBS) $(GTK_LIBS)
++		    -liiimp -liiimcf
  
  module_LTLIBRARIES = im-iiim.la
  

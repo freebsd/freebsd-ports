@@ -1,19 +1,47 @@
---- Makefile	Thu Apr  8 03:28:00 2004
-+++ Makefile	Wed Feb 16 14:09:34 2005
-@@ -2,6 +2,7 @@
- AUTOMAKE = automake
- AUTOHEADER = autoheader
- AUTOCONF = autoconf
-+LIBTOOLIZE = libtoolize
+--- Makefile.orig	Mon May  9 15:32:45 2005
++++ Makefile	Mon May  9 15:35:03 2005
+@@ -1,29 +1,31 @@
+ ## deprecated in favour of AUTORECONF
+-#ACLOCAL = aclocal
+-#AUTOMAKE = automake --add-missing --copy
+-#LIBTOOLIZE = libtoolize --force --copy
+-#AUTOHEADER = autoheader
+-#AUTOCONF = autoconf
++ACLOCAL = aclocal19
++AUTOMAKE = automake19 --add-missing --copy
++LIBTOOLIZE = libtoolize15 --force --copy
++AUTOHEADER = autoheader259
++AUTOCONF = autoconf259
+ #CONFIG_CMD = $(ACLOCAL) -I $${acfilesdir} && \
+ #             $(LIBTOOLIZE) && \
+ #             $(AUTOHEADER) && \
+ #             $(AUTOMAKE) && \
+ #             $(AUTOCONF)
  
- CONFIG_CMD = $(ACLOCAL) -I $${acfilesdir} && \
-              $(AUTOHEADER) && \
-@@ -21,7 +22,7 @@
+-AUTORECONF = autoreconf
++AUTORECONF = autoreconf259
+ BOOTSTRAP = $(AUTORECONF) --install --force
+ INTL_CMD = glib-gettextize -f && intltoolize --copy --force --automake
  
- update-acfiles:
- 	cd acfiles && \
--        $(ACLOCAL) && $(AUTOMAKE) --add-missing --copy && libtoolize --force --copy && \
-+        $(ACLOCAL) $(ACLOCAL_DIR) && $(AUTOMAKE) --add-missing --copy && $(LIBTOOLIZE) --force --copy && \
-         rm -f Makefile.in aclocal.m4
+-CONFIG_FLAGS = --prefix=/usr --sysconfdir=/etc --localstatedir=/var
++CONFIG_FLAGS = --prefix=%%PREFIX%% --sysconfdir=%%LOCALBASE%%/etc --localstatedir=/var
  
- config:
+-INTLDIRS = iiimgcf gnome-im-switcher
++#INTLDIRS = iiimgcf gnome-im-switcher
+ 
+-BUILDDIRS = lib/CSConv lib/EIMIL lib/iiimp lib/iiimcf \
+-            iiimsf leif leif/sun_le_korea leif/sch_le_sun leif/tch_le_sun \
+-            iiimxcf/xiiimp.so iiimxcf/htt_xbe \
+-            iiimgcf gnome-im-switcher doc
++BUILDDIRS = lib/EIMIL lib/iiimcf
++#BUILDDIRS = lib/CSConv lib/EIMIL lib/iiimp lib/iiimcf \
++#            iiimsf leif leif/sun_le_korea leif/sch_le_sun leif/tch_le_sun \
++#            iiimxcf/xiiimp.so iiimxcf/htt_xbe \
++#            iiimgcf gnome-im-switcher doc
+ 
+-CONFIGDIRS = $(BUILDDIRS) leif/m17n_le leif/thai_le_sun
++CONFIGDIRS = $(BUILDDIRS)
++#CONFIGDIRS = $(BUILDDIRS) leif/m17n_le leif/thai_le_sun
+ 
+ all: compile
+ 

@@ -1,0 +1,7 @@
+--- iiimxcf/htt_xbe/Makefile.am.orig	Fri May 13 15:44:05 2005
++++ iiimxcf/htt_xbe/Makefile.am	Fri May 13 15:44:22 2005
+@@ -1,3 +1,3 @@
+ AUTOMAKE_OPTIONS = foreign
+-ACLOCAL_AMFLAGS = -I ../../acfiles
++ACLOCAL_AMFLAGS = -I %%LOCALBASE%%/share/aclocal -I ../../acfiles
+ SUBDIRS = lib src

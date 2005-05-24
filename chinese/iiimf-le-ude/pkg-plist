@@ -1,7 +1,5 @@
-lib/im/leif/udengine.so
-lib/im/locale/zh_CN/ude/data/pinyin.mb
-@dirrm lib/im/locale/zh_CN/ude/data
-@dirrm lib/im/locale/zh_CN/ude
-@unexec rmdir %D/lib/im/locale/zh_CN > /dev/null 2>&1 || true
-@unexec rmdir %D/lib/im/locale > /dev/null 2>&1 || true
-@unexec rmdir %D/lib/im/leif > /dev/null 2>&1 || true
+lib/iiim/le/ude/ude.so
+lib/iiim/le/ude/data/pinyin.mb
+@dirrm lib/iiim/le/ude/data
+@dirrm lib/iiim/le/ude
+@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true

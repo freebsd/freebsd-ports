@@ -6,27 +6,26 @@
 #
 
 PORTNAME=	headers
-PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
+PORTVERSION=	12.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
-DISTNAME=	im-sdk-src-${IIIMF_VER}
+DISTNAME=	iiimf-src-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	kcwu@csie.org
+MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	Header files for Internet/Intranet Input Method Framework
 
-IIIMF_VER=	r12_1-svn2002
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${PREFIX}/include/iiimf
+	${MKDIR} ${PREFIX}/include/iiim
 .for file in IMArg.h IMCharSubsets.h IMProtocolStruct.h syscfg.h threaddef.h
-	${INSTALL_DATA} ${WRKSRC}/include/${file} ${PREFIX}/include/iiimf
+	${INSTALL_DATA} ${WRKSRC}/include/${file} ${PREFIX}/include/iiim
 .endfor
-	${MKDIR} ${PREFIX}/include/iiimf/iml
-	${INSTALL_DATA} ${WRKSRC}/include/iml/*.h ${PREFIX}/include/iiimf/iml
+	${MKDIR} ${PREFIX}/include/iiim/iml
+	${INSTALL_DATA} ${WRKSRC}/include/iml/*.h ${PREFIX}/include/iiim/iml
 
 .include <bsd.port.mk>
