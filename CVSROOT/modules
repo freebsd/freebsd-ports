@@ -12361,6 +12361,7 @@ xfce4-showdesktop-plugin	ports/sysutils/xfce4-showdesktop-plugin
 xfce4-systemload-plugin	ports/sysutils/xfce4-systemload-plugin
 xfce4-systray	ports/x11-wm/xfce4-systray
 xfce4-taskbar-plugin	ports/deskutils/xfce4-taskbar-plugin
+xfce4-taskmanager	ports/x11/xfce4-taskmanager
 xfce4-toys	ports/games/xfce4-toys
 xfce4-trigger-launcher	ports/x11/xfce4-trigger-launcher
 xfce4-utils	ports/sysutils/xfce4-utils
