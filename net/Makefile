@@ -312,6 +312,7 @@
     SUBDIR += libnetdude
     SUBDIR += libnids
     SUBDIR += libnss-mysql
+    SUBDIR += libopennet
     SUBDIR += libosip
     SUBDIR += libosip2
     SUBDIR += libpcap
