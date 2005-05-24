@@ -15,11 +15,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Apache XSLT processor for transforming XML documents
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
-		${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper \
+		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+
+USE_REINPLACE=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.2 1.3 1.4
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
@@ -31,8 +33,9 @@ PORTDOCS=	apidocs design
 JARFILE=	xalan.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/xalan-j
 
-do-configure:
-	@${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' ${FILESDIR}/xalan.sh >${WRKDIR}/xalan-j
+SUB_FILES=	xalan-j.sh
+
+.include <bsd.port.pre.mk>
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
@@ -47,7 +50,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin/..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/xalan-j ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKDIR}/xalan-j.sh ${PREFIX}/bin/xalan-j
 	@${ECHO_MSG} " [ DONE ]"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

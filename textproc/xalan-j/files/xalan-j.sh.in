@@ -1,0 +1,5 @@
+#!/bin/sh
+# $FreeBSD$
+
+export CLASSPATH="`%%LOCALBASE%%/bin/classpath`:%%JAVAJARDIR%%/xalan.jar"
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" org.apache.xalan.xslt.Process "$@"
