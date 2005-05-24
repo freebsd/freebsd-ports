@@ -505,6 +505,7 @@
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pdftohtml
+    SUBDIR += pear-Numbers_Roman
     SUBDIR += pear-Spreadsheet_Excel_Writer
     SUBDIR += pear-XML_Beautifier
     SUBDIR += pear-XML_HTMLSax
