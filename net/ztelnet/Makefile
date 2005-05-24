@@ -13,6 +13,7 @@
 
 PORTNAME=	ztelnet
 PORTVERSION=	1.0.p3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/unix-app/net/ztelnet/
 DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz \
@@ -29,10 +30,6 @@ MAN1=		ztelnet.1
 PLIST_FILES=	bin/ztelnet
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Install fails on FreeBSD >= 5.x"
-.endif
 
 post-patch:
 	# we can ignore warnings
