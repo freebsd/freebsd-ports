@@ -57,7 +57,8 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-copt \
 		 --without-security \
 		 --with-oob \
-		 --with-poll \
+		 --without-poll \
+		 --without-devpoll \
 		 --with-max-fd=60000 \
 		 --with-gmp \
 		 --with-zlib \
