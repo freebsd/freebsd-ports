@@ -1,8 +1,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/ChangeLog
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/hyperspec.el
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/hyperspec.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/metering.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/nregex.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/slime.el
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/slime.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-abcl.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-allegro.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-backend.lisp
@@ -13,7 +15,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-loader.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-openmcl.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-sbcl.lisp
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-source-file-cache.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank-source-path-parser.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank.lisp
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/tree-widget.el
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/tree-widget.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/xref.lisp
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/slime
