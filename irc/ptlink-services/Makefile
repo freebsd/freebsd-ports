@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	Services
-PORTVERSION=    2.26.1
+PORTVERSION=	2.26.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/services2/ \
 		http://www.rootxs.org/pub/FreeBSD/distfiles/
@@ -27,6 +28,7 @@ CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/*.sample ${SYSCONFDIR}
+	@${INSTALL_DATA} ${FILESDIR}/create_tables.sql ${SYSCONFDIR}
 	@${SED} 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' < ${PKGMESSAGE}
 
 .include <bsd.port.mk>

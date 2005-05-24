@@ -9,6 +9,9 @@ data/languages/pt
 data/languages/pt_br
 data/languages/tr
 etc/ptlink/create_tables.sql
-etc/ptlink/domain.def
+etc/ptlink/domain.def.sample
 etc/ptlink/services.conf.sample
 @unexec rmdir %D/etc/ptlink 2> /dev/null || true
+@dirrm data/logs
+@dirrm data/languages
+@dirrm data
