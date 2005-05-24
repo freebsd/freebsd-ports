@@ -1,0 +1,6 @@
+VoIPong is an utility which detects all Voice Over IP calls on a pipeline, and
+dumps those which are G711-encoded to separate wave files. It supports SIP,
+H323, Cisco's Skinny Client Protocol, RTP and RTCP. For performance reasons,
+it is written in the C programming language.
+
+WWW: http://www.enderunix.org/voipong/
