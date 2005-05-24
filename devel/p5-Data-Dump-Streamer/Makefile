@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Dump-Streamer
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -16,7 +16,8 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Stream a highly accurate breadth first data dump in perl code form to a var or file
 
 BUILD_DEPENDS=	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
+		${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
+		${SITE_PERL}/B/Utils.pm:${PORTSDIR}/devel/p5-Module-Info
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
