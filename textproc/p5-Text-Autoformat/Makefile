@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Autoformat
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Text::Autoformat.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Requires at least perl 5.6.0, use lang/perl5.8 or lang/perl5.
+.endif
+
+.include <bsd.port.post.mk>
