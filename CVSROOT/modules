@@ -5231,6 +5231,7 @@ libol		ports/devel/libol
 libole2		ports/devel/libole2
 liboop		ports/devel/liboop
 libopendaap	ports/devel/libopendaap
+libopennet	ports/net/libopennet
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
 libotf		ports/print/libotf
