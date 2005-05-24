@@ -7965,6 +7965,7 @@ p5-POE-Component-Client-HTTP	ports/www/p5-POE-Component-Client-HTTP
 p5-POE-Component-Client-NNTP	ports/news/p5-POE-Component-Client-NNTP
 p5-POE-Component-Client-POP3	ports/mail/p5-POE-Component-Client-POP3
 p5-POE-Component-Client-Ping	ports/net/p5-POE-Component-Client-Ping
+p5-POE-Component-Client-SMTP	ports/mail/p5-POE-Component-Client-SMTP
 p5-POE-Component-Client-UserAgent	ports/www/p5-POE-Component-Client-UserAgent
 p5-POE-Component-DBIAgent	ports/databases/p5-POE-Component-DBIAgent
 p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
