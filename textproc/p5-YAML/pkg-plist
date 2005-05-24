@@ -1,7 +1,4 @@
-bin/xyx
 bin/ysh
-bin/yaml2outline
-bin/phone2yaml
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/.packlist
 %%SITE_PERL%%/YAML/Transfer.pm
 %%SITE_PERL%%/YAML/Node.pm

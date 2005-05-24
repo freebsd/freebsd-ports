@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	YAML
-PORTVERSION=	0.35
+PORTVERSION=	0.39
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	YAML
@@ -18,7 +18,7 @@ COMMENT=	"YAML implementation in Perl"
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	</dev/null
 
-MAN1=		phone2yaml.1 ysh.1 yaml2outline.1 xyx.1
+MAN1=		ysh.1
 MAN3=		YAML.3 YAML::Node.3
 
 .include <bsd.port.pre.mk>
