@@ -1,10 +1,11 @@
---- Makefile.in.orig	Tue Nov 18 22:06:17 2003
-+++ Makefile.in	Tue Jan  6 17:44:08 2004
-@@ -16,6 +16,7 @@
- 
- INCLUDES=	-I. -I$(srcdir) -I$(incdir)
+--- Makefile.in.orig	Mon Apr  4 09:28:15 2005
++++ Makefile.in	Wed May 18 07:33:32 2005
+@@ -21,7 +21,7 @@
  DEFS=		@DEFS@
-+LDFLAGS=	-L$(libdir)
  
- COMPILEC=	$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) $(VERSNO)
- LINK=		$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) $(LDFLAGS) -o $@
+ COMPILEC=	$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(VERSNO)
+-
++LDFLAGS=	-L@libdir@
+ LINK=		$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) -L. $(LDFLAGS) -o $@
+ MKSO=		$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(VERSNO) -shared
+ 
