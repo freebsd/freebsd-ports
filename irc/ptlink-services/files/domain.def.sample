@@ -1,0 +1,17 @@
+# Please read D
+# The format for domain language definitions is: 
+# domain language_number
+# language number must be one from /NickServ HELP SET Language
+# Unresolved domains will use the default language
+[Domain]
+pt 2
+tr 3
+de 4
+at 4
+uk 1
+us 1
+com 1
+it 5
+nl 6
+br 7
+

@@ -2,10 +2,10 @@
 
 PTlink IRC services is now installed.
 
-Please copy the sample file %%SYSCONFDIR%%/services.conf.sample to 
-%%SYSCONFDIR%%/services.conf.
+Please copy the sample files %%SYSCONFDIR%%/*.conf.sample,*.def.sample
+to %%SYSCONFDIR%%/*.conf,*.def. 
 
-Edit the configuration file %%SYSCONFDIR%%/services.conf to suit your 
-needs.
+Edit the configuration files %%SYSCONFDIR%%/*.conf,*.def to suit your
+needs. 
 
 ======================================================================
