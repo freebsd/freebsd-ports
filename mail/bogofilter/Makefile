@@ -7,13 +7,13 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	0.94.12
-PORTREVISION=	0
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	matthias.andree@gmx.de
-COMMENT=	"Fast, teachable, learning spam detector"
+COMMENT=	Fast, teachable, learning spam detector
 
 LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
 .if !defined(WITHOUT_GSL)
