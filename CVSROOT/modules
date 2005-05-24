@@ -8973,6 +8973,7 @@ php_doc-pt	ports/portuguese/php_doc-br
 php_doc-ru	ports/russian/php_doc
 php_doc-tw	ports/chinese/php_doc-tw
 php_doc-zh	ports/chinese/php_doc-zh
+phpadsnew	ports/www/phpadsnew
 phpbb		ports/www/phpbb
 phpbt		ports/devel/phpbt
 phpeclipse	ports/java/phpeclipse
