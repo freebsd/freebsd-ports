@@ -18,7 +18,4 @@ BUILD_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
 USE_AUTOMAKE_VER=	19
 USE_AUTOCONF_VER=	259
 
-pre-configure:
-	@cd ${WRKSRC} && ${PATCH} -pl < ${FILESDIR}/b4-conf.diff
-
 .include <bsd.port.mk>
