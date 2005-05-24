@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcelXML
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create an Excel file in XML format
 
 PERL_CONFIGURE=	yes
