@@ -26,16 +26,16 @@ MAN3=	Search::OpenFTS.3 Search::OpenFTS::Base.3 \
 	Search::OpenFTS::Index.3 Search::OpenFTS::Morph::ISpell.3 \
 	Search::OpenFTS::Parser.3
 
+.include <bsd.port.pre.mk>
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes INSTALL README primer.html
-
-.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.endif
+.endif	# ${PERL_LEVEL} < 500600
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
@@ -45,7 +45,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+.endif	# defined(NOPORTDOCS)
 
 # Sample DB initialization.
 DBNAME?=	openfts
