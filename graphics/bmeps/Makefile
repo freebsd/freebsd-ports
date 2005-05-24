@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bmeps
-PORTVERSION=	1.0.7a
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,9 +18,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm
 
-USE_AUTOCONF_VER=213
-USE_BZIP2=	yes
-
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include"
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -30,9 +27,12 @@ MAN1=		bmeps.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bmeps ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/bmeps.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/bmepsoe.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/jpgeps.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/pngeps.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/pnmeps.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libbmeps.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/bmeps.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/bmeps.1 ${PREFIX}/man/man1
 
 post-install:
 .if !defined(NOPORTDOCS)
