@@ -5505,6 +5505,7 @@ linux-ut2004-demo	ports/games/linux-ut2004-demo
 linux-virtual-jay-peak	ports/games/linux-virtual-jay-peak
 linux-vmware-toolbox2 ports/emulators/linux-vmware-toolbox2
 linux-vmware-toolbox4 ports/emulators/linux-vmware-toolbox4
+linux-vmware-toolbox5	ports/emulators/linux-vmware-toolbox5
 linux-vsound	ports/audio/linux-vsound
 linux-winetools	ports/emulators/linux-winetools
 linux-xmovie		ports/multimedia/linux-xmovie
