@@ -40,10 +40,10 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 NVVERSION=	6113
 PORTREVISION=	4
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-src::nvidia_pci.c
-PLIST_SUB+=	DIFFS=""
+PLIST_SUB+=	DIFFS="" DRVSO="@comment "
 .else
 NVVERSION=	7174
-PLIST_SUB+=	DIFFS="@comment "
+PLIST_SUB+=	DIFFS="@comment " DRVSO=""
 .endif
 
 # XXX Should use ${PKG_INFO} XXX
