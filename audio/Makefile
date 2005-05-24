@@ -468,6 +468,7 @@
     SUBDIR += twolame
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
+    SUBDIR += voipong
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
