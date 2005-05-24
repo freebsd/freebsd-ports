@@ -1182,6 +1182,7 @@
     SUBDIR += pear-I18N
     SUBDIR += pear-OLE
     SUBDIR += pear-PEAR
+    SUBDIR += pear-PEAR_PackageFileManager
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
     SUBDIR += pear-PHP_Beautifier
