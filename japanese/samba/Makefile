@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://SunSITE.tus.ac.jp/pub/archives/packages/samba/samba-jp/%SUBDIR%/ \
 		ftp://ftp.plathome.co.jp/pub/samba/samba-jp/%SUBDIR%/ \
 		ftp://ftp2.samba.gr.jp/pub/samba-jp/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${SAMBA_VERSION}-ja
+MASTER_SITE_SUBDIR=	${PORTNAME}-${SAMBA_VERSION}-ja/beta
 DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 
 MAINTAINER=	nakaji@jp.FreeBSD.org
@@ -22,8 +22,8 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	samba-2.2.* samba-3.0.* sharity-light-1.*
 
-SAMBA_VERSION=		2.2.11
-SAMBA_JA_VERSION=	1.0
+SAMBA_VERSION=		2.2.12
+SAMBA_JA_VERSION=	1.0beta1
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
