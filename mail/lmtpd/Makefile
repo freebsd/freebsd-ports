@@ -7,6 +7,7 @@
 
 PORTNAME=	lmtpd
 PORTVERSION=	0.9.24
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/pll/ ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pll
@@ -85,5 +86,11 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*8859*' ! -name fr_FR.ISO_8859-1 -exec basename {} \; | ${XARGS} -n1 -I % echo share/nls/%/filtercheck.cat >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*.UTF-8' ! -name fr_FR.UTF-8 -exec basename {} \; | ${XARGS} -n1 -I % echo share/nls/%/filtercheck.cat >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'en_*' -exec basename {} \; | ${XARGS} -n1 -I % echo share/nls/%/filtercheck.cat >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*8859*' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 echo "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*.UTF-8' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 echo "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'en*' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 echo "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
