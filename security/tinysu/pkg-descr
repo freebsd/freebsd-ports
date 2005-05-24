@@ -1,0 +1,6 @@
+tinysu is a featureless replacement for su and sudo. tinysu is installed
+setuid root and executable by members of a particular group. It is intended to
+be used in situations where an unprivileged user is being granted full root
+access, but wants the convenience of a sudo-style log.
+
+WWW: http://peff.net/tinysu/
