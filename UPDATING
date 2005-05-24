@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050524:
+  AFFECTS: users of multimedia/mpeg4ip and multimedia/mpeg4ip-libmp4v2
+  AUTHOR: ahze@FreeBSD.org
+
+  Starting with version 1.3 mpeg4ip-libmp4v2 installs libmp4av that mpeg4ip
+  previously installed. It is advised to de-install mpeg4ip-libmp4v2 and
+  mpeg4ip before updating to mpeg4ip-1.3 or mpeg4ip-libmp4v2-1.3. If you
+  have already updated mpeg4ip-libmp4v2 or mpeg4ip you should reinstall
+  both mpeg4ip-limp4v2 and mpeg4ip.
+
 20050523:
   AFFECTS: users of games/pvgdn
   AUTHOR: mek@mek.uz.ua
