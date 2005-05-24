@@ -158,6 +158,7 @@ lib/exmh-%%EXMH_VERSION%%/mbuntidy.bitmap
 lib/exmh-%%EXMH_VERSION%%/mh.tcl
 lib/exmh-%%EXMH_VERSION%%/mime.tcl
 lib/exmh-%%EXMH_VERSION%%/mime.types
+lib/exmh-%%EXMH_VERSION%%/mimencode.tcl
 lib/exmh-%%EXMH_VERSION%%/mimeSun.tcl
 lib/exmh-%%EXMH_VERSION%%/mosaic.tcl
 lib/exmh-%%EXMH_VERSION%%/msg.tcl
