@@ -64,6 +64,7 @@
     SUBDIR += envelope
     SUBDIR += epsmerge
     SUBDIR += epsonepl
+    SUBDIR += flpsed
     SUBDIR += font2svg
     SUBDIR += fontforge
     SUBDIR += foomatic-db
