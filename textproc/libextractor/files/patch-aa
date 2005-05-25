@@ -1,0 +1,11 @@
+--- src/main/Makefile.in.orig	Sun May 22 02:43:44 2005
++++ src/main/Makefile.in	Wed May 25 17:24:05 2005
+@@ -703,8 +703,6 @@
+ 
+ 
+ install-exec-local:
+-	python libextractor_python_setup.py $(libdir) build
+-	python libextractor_python_setup.py $(libdir) install --prefix=$(PYTHON_PREFIX)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
