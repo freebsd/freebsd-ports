@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	preferential
-PORTREVISION=	3
 #PKGNAMESUFFIX set to -firefox in ../mozex/Makefile.xpi
 
 MAINTAINER=	ports@FreeBSD.org
