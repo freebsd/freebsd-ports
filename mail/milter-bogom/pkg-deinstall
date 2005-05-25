@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$2" = "POST-DEINSTALL" ] 
+then
+	echo "***************************************************************"
+	echo "* The bogomilter user will not be removed by this port        *"
+	echo "* if you are not upgrading and will not use this port anymore *"
+	echo "* delete the bogomilter user using:                           *"
+	echo "* pw userdel bogomilter                                       *"
+	echo "***************************************************************"
+fi

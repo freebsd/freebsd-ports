@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	milter-bogom
-PORTVERSION=	1.5.1
+PORTVERSION=	1.7.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.usebox.net/jjm/bogom/
+MASTER_SITES=	http://www.usebox.net/jjm/bogom/ \
+		http://blackshell.usebox.net/bogom/
 DISTNAME=	bogom-${PORTVERSION}
 
 MAINTAINER=	victor@alf.dyndns.ws
@@ -18,30 +19,39 @@ RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 
 MAN8=		bogom.8
 
-PLIST_FILES=	sbin/bogom \
-		etc/bogom.conf-example \
-		etc/rc.d/milter-bogom.sh
-PORTDOCS=	README CHANGELOG
+MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\" ${PTHREAD_CFLAGS}" \
+		LIBS="-lmilter ${PTHREAD_LIBS}"
 
-post-extract:
-	@${SED} -e 's/LIBS+=-lmilter -lpthread/LIBS+=-lmilter ${PTHREAD_LIBS}/'\
-	-i .bak ${WRKSRC}/Makefile
-	@${SED} -e 's|/etc/bogom.conf|${PREFIX}/etc/bogom.conf|' -i .bak \
-	${WRKSRC}/milter.c
+USE_REINPLACE=	yes
+USE_RC_SUBR=	milter-bogom.sh
+
+PLIST_FILES=	sbin/bogom \
+		etc/bogom.conf-example
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README CHANGELOG
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/bogom.8
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/bin/bogofilter|${LOCALBASE}/bin/bogofilter|g' \
+		${WRKSRC}/bogom.8 \
+		${WRKSRC}/bogom.conf-example \
+		${WRKSRC}/milter.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bogom ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/bogom.8 ${PREFIX}/man/man8
 	@${INSTALL_DATA} ${WRKSRC}/bogom.conf-example ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${FILESDIR}/milter-bogom.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 post-install:
-	@${SED} -e 's|LOCALBASE|${PREFIX}|g' -i "" \
-	${PREFIX}/etc/rc.d/milter-bogom.sh
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
