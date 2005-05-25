@@ -1,0 +1,44 @@
+--- src/liferea.orig	Sun May 22 14:00:07 2005
++++ src/liferea	Sun May 22 14:00:58 2005
+@@ -18,21 +18,24 @@
+ 
+ 		MOZILLA_FIVE_HOME=$MOZILLA_HOME
+ 		export MOZILLA_FIVE_HOME
++		echo Using mozilla from $MOZILLA_FIVE_HOME
+ 		exec "$dist_bin/liferea-bin" $params
+ 	fi
+ }
+ 
+ look_for_mozilla() {
+-
+-	results=`ls -1d $1 2>/dev/null | sort -n`
+-	while [ -n "$results" ]
+-	do
+-		path=`echo "$results" | tail -n 1`
+-		results=`echo "$results" | grep -v $path`
+-		path=`dirname $path` 	# strip comm.jar
+-		path=`dirname $path`	# strip chrome
+-		run_with_mozilla $path
++	
++	for p in $1; do
++		results=`ls -1d $p 2>/dev/null | sort -n`
++		while [ -n "$results" ]
++		do
++			path=`echo "$results" | tail -n 1`
++			results=`echo "$results" | grep -v $path`
++			path=`dirname $path` 	# strip comm.jar
++			path=`dirname $path`	# strip chrome
++			run_with_mozilla $path
+ 		
++		done
+ 	done
+ }
+ 
+@@ -40,6 +43,7 @@
+ 	run_with_mozilla $MOZILLA_FIVE_HOME
+ fi
+ 
++look_for_mozilla "%FREEBSD_MOZILLA_HOME%/chrome/comm.jar"
+ look_for_mozilla "/usr/lib/mozilla*/chrome/comm.jar"
+ look_for_mozilla "/usr/local/mozilla*/chrome/comm.jar"
+ look_for_mozilla "/opt/mozilla/chrome/comm.jar"
