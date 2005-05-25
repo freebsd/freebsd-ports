@@ -4338,6 +4338,7 @@ jakarta-commons-pool	ports/java/jakarta-commons-pool
 jakarta-commons-primitives	ports/java/jakarta-commons-primitives
 jakarta-jmeter	ports/www/jakarta-jmeter
 jakarta-oro	ports/java/jakarta-oro
+jakarta-poi	ports/textproc/jakarta-poi
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-struts	ports/java/jakarta-struts
 jakarta-tomcat3	ports/www/jakarta-tomcat3
