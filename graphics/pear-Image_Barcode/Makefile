@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image_Barcode
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	antonio@php.net
@@ -15,11 +15,14 @@ COMMENT=	PEAR class for barcode generation
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LATEST_LINK=	pear-Image_Barcode
+USE_PHP=	gd
+
+LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_PHP_COMPAT "PEAR::PHP_Compat support" off
 
 CATEGORY=	Image
-FILES=		Barcode.php Barcode/int25.php Barcode/ean13.php Barcode/Code39.php
+FILES=		Barcode.php Barcode/int25.php Barcode/ean13.php Barcode/Code39.php \
+		Barcode/upca.php
 DOCS=		ChangeLog Readme.txt
 TESTS=		test-image-barcode.php barcode_img.php
 _DOCSDIR=	.
