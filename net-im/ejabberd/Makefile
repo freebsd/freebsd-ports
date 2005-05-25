@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
 		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -38,7 +38,7 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberd ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberd.sh ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA} ${FILESDIR}/ejabberd.defaults ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}/tools/ejabberdctl ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/../tools/ejabberdctl ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
