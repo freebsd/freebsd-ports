@@ -1,0 +1,1 @@
+content,install,url,jar:resource:/chrome/bugmenot.jar!/content/bugmenot/
