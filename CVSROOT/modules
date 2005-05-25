@@ -7878,6 +7878,7 @@ p5-Net-MovableType	ports/net/p5-Net-MovableType
 p5-Net-Netmask	ports/net-mgmt/p5-Net-Netmask
 p5-Net-Nslookup	ports/dns/p5-Net-Nslookup
 p5-Net-OSCAR	ports/net/p5-Net-OSCAR
+p5-Net-OpenDHT	ports/net/p5-Net-OpenDHT
 p5-Net-Packet	ports/net/p5-Net-Packet
 p5-Net-ParseWhois	ports/net/p5-Net-ParseWhois
 p5-Net-Patricia	ports/net/p5-Net-Patricia
