@@ -7,6 +7,7 @@
 %%SITE_PERL%%/ExtUtils/Liblist/Kid.pm
 %%SITE_PERL%%/ExtUtils/MANIFEST.SKIP
 %%SITE_PERL%%/ExtUtils/MM.pm
+%%SITE_PERL%%/ExtUtils/MM_AIX.pm
 %%SITE_PERL%%/ExtUtils/MM_Any.pm
 %%SITE_PERL%%/ExtUtils/MM_BeOS.pm
 %%SITE_PERL%%/ExtUtils/MM_Cygwin.pm
@@ -14,13 +15,16 @@
 %%SITE_PERL%%/ExtUtils/MM_MacOS.pm
 %%SITE_PERL%%/ExtUtils/MM_NW5.pm
 %%SITE_PERL%%/ExtUtils/MM_OS2.pm
+%%SITE_PERL%%/ExtUtils/MM_QNX.pm
 %%SITE_PERL%%/ExtUtils/MM_UWIN.pm
 %%SITE_PERL%%/ExtUtils/MM_Unix.pm
 %%SITE_PERL%%/ExtUtils/MM_VMS.pm
+%%SITE_PERL%%/ExtUtils/MM_VOS.pm
 %%SITE_PERL%%/ExtUtils/MM_Win32.pm
 %%SITE_PERL%%/ExtUtils/MM_Win95.pm
 %%SITE_PERL%%/ExtUtils/MY.pm
 %%SITE_PERL%%/ExtUtils/MakeMaker.pm
+%%SITE_PERL%%/ExtUtils/MakeMaker/Config.pm
 %%SITE_PERL%%/ExtUtils/MakeMaker/FAQ.pod
 %%SITE_PERL%%/ExtUtils/MakeMaker/Tutorial.pod
 %%SITE_PERL%%/ExtUtils/MakeMaker/bytes.pm
