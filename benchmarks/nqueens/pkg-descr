@@ -1,0 +1,4 @@
+N-queens benchmark written in C.  Includes base version and (optinal)
+distributed MPI version.
+
+WWW: http://www.yuba.is.uec.ac.jp/~kis/nq/index.htm

@@ -22,6 +22,7 @@
     SUBDIR += netio
     SUBDIR += netperf
     SUBDIR += netpipe
+    SUBDIR += nqueens
     SUBDIR += nttcp
     SUBDIR += pathchirp
     SUBDIR += pathload
