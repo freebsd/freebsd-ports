@@ -1,11 +1,11 @@
---- ac-helpers/ltmain.sh.orig	2004-10-22 22:13:13.000000000 +0400
-+++ ac-helpers/ltmain.sh	2004-11-05 11:30:39.328125000 +0300
-@@ -1061,7 +1061,7 @@
- 	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
--	 *-*-openbsd* | *-*-freebsd*)
-+	 *-*-openbsd* | *-*-freebsd4*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
+--- ac-helpers/ltmain.sh.orig	Fri May 20 21:41:54 2005
++++ ac-helpers/ltmain.sh	Wed May 25 14:38:21 2005
+@@ -1492,7 +1492,7 @@
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
+-	  *-*-openbsd* | *-*-freebsd* | *-*-dragonfly*)
++	  *-*-openbsd* | *-*-freebsd4* | *-*-dragonfly*)
+ 	    # Do not include libc due to us having libc/libc_r.
+ 	    test "X$arg" = "X-lc" && continue
  	    ;;
