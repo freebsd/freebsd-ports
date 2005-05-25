@@ -1,0 +1,52 @@
+--- src/main/Makefile.in.orig	Wed Jun  2 20:17:06 2004
++++ src/main/Makefile.in	Wed May 11 13:18:27 2005
+@@ -14,7 +14,7 @@
+ CFLAGS		+= -DHOSTINFO=\"${HOSTINFO}\"
+ CFLAGS          += -DRADIUSD_VERSION=\"${RADIUSD_VERSION}\"
+ CFLAGS          += $(SNMP_INCLUDE) 
+-LDFLAGS		+= -L../lib
++LDFLAGS_MAIN	= -L../lib $(LDFLAGS)
+ MODULE_LIBS	= $(STATIC_MODULES)
+ MODULE_OBJS	=
+ VFLAGS		= -DRADIUSD_MAJOR_VERSION=$(RADIUSD_MAJOR_VERSION)
+@@ -52,7 +52,7 @@
+ 
+ radiusd: $(SERVER_OBJS) ../lib/libradius.a $(MODULE_OBJS)
+ 	$(LIBTOOL) --mode=link $(CC) -export-dynamic -dlopen self \
+-		$(CFLAGS) $(LDFLAGS) -o $@ \
++		$(CFLAGS) $(LDFLAGS_MAIN) -o $@ \
+ 		$(SERVER_OBJS) $(LCRYPT) $(MODULE_LIBS) $(LIBS) \
+ 		$(PTHREADLIB) $(LIBLTDL) $(LCRYPT)
+ 
+@@ -123,13 +123,13 @@
+ 	$(CC) $(CFLAGS) -o radius_snmp.o -c radius_snmp.c
+ 
+ radclient: radclient.o ../lib/libradius.a
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o radclient radclient.o $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS_MAIN) -o radclient radclient.o $(LIBS)
+ 
+ radclient.o: radclient.c $(INCLUDES)
+ 	$(CC) $(CFLAGS) -c radclient.c
+ 
+ radrelay: radrelay.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o ../lib/libradius.a
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o radrelay radrelay.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS_MAIN) -o radrelay radrelay.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o $(LIBS)
+ 
+ radrelay.o: radrelay.c $(INCLUDES)
+ 	$(CC) $(CFLAGS) -c radrelay.c
+@@ -138,13 +138,13 @@
+ 	$(CC) $(CFLAGS) -c radwho.c
+ 
+ radwho: radwho.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o
+-	$(CC) $(LDFLAGS) -o radwho radwho.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o $(LIBS)
++	$(CC) $(LDFLAGS_MAIN) -o radwho radwho.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o $(LIBS)
+ 
+ radzap.o: radzap.c $(INCLUDES)
+ 	$(CC) $(CFLAGS) -c radzap.c
+ 
+ radzap: radzap.o mainconfig.o util.o nas.o log.o client.o conffile.o files.o xlat.o
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o radzap radzap.o mainconfig.o util.o nas.o log.o client.o conffile.o files.o xlat.o $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS_MAIN) -o radzap radzap.o mainconfig.o util.o nas.o log.o client.o conffile.o files.o xlat.o $(LIBS)
+ 
+ clean:
+ 	rm -rf *.o *.so *~ $(BINARIES) .libs
