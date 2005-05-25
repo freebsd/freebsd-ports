@@ -1,0 +1,37 @@
+@comment $FreeBSD$
+bin/adesklets
+bin/adesklets_checkin
+bin/adesklets_submit
+%%DATADIR%%/FONT_LICENSE
+%%DATADIR%%/Vera.ttf
+%%DATADIR%%/adesklets_debug.sh
+%%PYTHON_SITELIBDIR%%/adesklets/__init__.py
+%%PYTHON_SITELIBDIR%%/adesklets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/children_handler.py
+%%PYTHON_SITELIBDIR%%/adesklets/children_handler.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/commands.py
+%%PYTHON_SITELIBDIR%%/adesklets/commands.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/commands_handler.py
+%%PYTHON_SITELIBDIR%%/adesklets/commands_handler.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/communicator.py
+%%PYTHON_SITELIBDIR%%/adesklets/communicator.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/configfile.py
+%%PYTHON_SITELIBDIR%%/adesklets/configfile.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/error_handler.py
+%%PYTHON_SITELIBDIR%%/adesklets/error_handler.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/events_handler.py
+%%PYTHON_SITELIBDIR%%/adesklets/events_handler.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/initializer.py
+%%PYTHON_SITELIBDIR%%/adesklets/initializer.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/signal_handler.py
+%%PYTHON_SITELIBDIR%%/adesklets/signal_handler.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/singleton.py
+%%PYTHON_SITELIBDIR%%/adesklets/singleton.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/strings.py
+%%PYTHON_SITELIBDIR%%/adesklets/strings.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/utils.py
+%%PYTHON_SITELIBDIR%%/adesklets/utils.pyc
+%%PYTHON_SITELIBDIR%%/adesklets/which.py
+%%PYTHON_SITELIBDIR%%/adesklets/which.pyc
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/adesklets
