@@ -847,6 +847,7 @@ buffer		ports/misc/buffer
 buffy		ports/x11-themes/buffy
 bugbuddy	ports/devel/bugbuddy
 bugle		ports/graphics/bugle
+bugmenot	ports/www/bugmenot
 bugs		ports/security/bugs
 bugseeker	ports/java/bugseeker
 bugseeker-demo	ports/java/bugseeker-demo
