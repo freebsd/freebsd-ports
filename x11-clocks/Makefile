@@ -12,6 +12,7 @@
     SUBDIR += astzclock
     SUBDIR += bbdate
     SUBDIR += bclock
+    SUBDIR += bdesktopclock
     SUBDIR += bmp-alarm
     SUBDIR += buici-clock
     SUBDIR += dclock
