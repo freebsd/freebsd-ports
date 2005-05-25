@@ -51,6 +51,7 @@
     SUBDIR += bozohttpd
     SUBDIR += bricolage
     SUBDIR += bugmenot
+    SUBDIR += bugmenot-firefox
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += caudium10
