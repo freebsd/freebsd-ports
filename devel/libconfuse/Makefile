@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libconfuse
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
@@ -22,6 +22,7 @@ LIB_DEPENDS+=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 
 USE_ICONV=	yes
 USE_LIBTOOL_VER=	15
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--disable-nls
 CFLAGS+=	-I${WRKSRC}/src
 .if defined(WITH_CHECK)
