@@ -6545,6 +6545,7 @@ noweb		ports/devel/noweb
 npadmin		ports/sysutils/npadmin
 npc		ports/www/npc
 nqc		ports/lang/nqc
+nqueens		ports/benchmarks/nqueens
 nrg		ports/net-mgmt/nrg
 nrg2iso		ports/sysutils/nrg2iso
 nrpe		ports/net-mgmt/nrpe
