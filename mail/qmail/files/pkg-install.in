@@ -98,7 +98,7 @@ case "POST-INSTALL":
 
 	%%RCDLINK%%ln -s ${PKG_PREFIX}/rc %%LOCALBASE%%/etc/rc.d/qmail.sh;
 
-	touch "${PKG_PREFIX}/alias/.qmail-{postmaster,root,mailer-daemon}";
+	touch ${PKG_PREFIX}/alias/.qmail-{postmaster,root,mailer-daemon};
 
 	if ($status) then
 		echo "Failed to create files :";
