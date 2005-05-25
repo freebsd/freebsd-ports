@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -43,7 +43,7 @@ PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
 .include <bsd.port.pre.mk>
 
 SVNREPOS?=	/home/svn/repos
-SVNFSTYPE?=	bdb
+SVNFSTYPE?=	fsfs
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
@@ -80,6 +80,7 @@ PLIST_SUB+=		WITHOUT_BDB=""
 IGNORE=	"Subversion\'s Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again"
 .endif
 SWIG_BINDINGS+=		perl
+DEPENDS_ARGS+=		WANT_SWIG_PERL=yes
 USE_PERL5=		yes
 PLIST_SUB+=		WITH_PERL=""
 MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
@@ -99,6 +100,7 @@ PLIST_SUB+=		WITH_PERL="@comment "
 USE_PYTHON=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 SWIG_BINDINGS+=		python
+DEPENDS_ARGS+=		WANT_SWIG_PYTHON=yes
 PLIST_SUB+=		WITH_PYTHON=""
 .else
 PLIST_SUB+=		WITH_PYTHON="@comment "
@@ -119,7 +121,7 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 
 .if defined(SWIG_BINDINGS) && ${SWIG_BINDINGS} != ""
 BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
-DEPENDS_ARGS+=		SWIG_LANGUAGES='${SWIG_BINDINGS}'
+DEPENDS_ARGS+=		SWIG_LANGUAGES=""
 CONFIGURE_ARGS+=	--with-swig=${LOCALBASE} \
 			--enable-swig-bindings=${SWIG_BINDINGS:Q:S/ /,/g:S/\\//g}
 .else
@@ -193,7 +195,7 @@ pre-extract:
 	@${ECHO_MSG} "db4 repository backend disabled."
 .else
 	@${ECHO_MSG} "db4 repository backend enabled."
-	@${ECHO_MSG} "To disable it define WITHOUT_DBD"
+	@${ECHO_MSG} "To disable it define WITHOUT_BDB"
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MAINTAINER_DEBUG)
