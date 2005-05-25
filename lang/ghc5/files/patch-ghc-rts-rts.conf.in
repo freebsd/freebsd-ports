@@ -1,10 +1,10 @@
---- ghc/rts/rts.conf.in.orig	Thu Dec 11 15:53:05 2003
-+++ ghc/rts/rts.conf.in	Thu Dec 11 16:08:54 2003
+--- ghc/rts/rts.conf.in.orig	Mon Feb 10 11:18:31 2003
++++ ghc/rts/rts.conf.in	Tue May 24 21:03:38 2005
 @@ -134,6 +134,7 @@
           , "-u", "GHCziWeak_runFinalizzerBatch_closure"
           , "-u", "__stginit_Prelude"
  #endif
-+         , "-L%%LOCALBASE%%/lib"
++         , "-L/usr/local/lib"
           ]
  #ifdef HAVE_FRAMEWORK_HASKELLSUPPORT
          , extra_frameworks  = [ "HaskellSupport" ]
