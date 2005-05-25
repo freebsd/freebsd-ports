@@ -14,9 +14,21 @@ MASTER_SITES=	http://www.goron.de/~froese/alevt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Teletext decoding and display program. (reads from /dev/vbi)
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+OPTIONS=	PNG		"export pages as png image"	on \
+		SMALLFONT	"use a smaller and thiner font"	off
 
 USE_X_PREFIX=	yes
 MAN1=		alevt.1x alevt-date.1 alevt-cap.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PNG)
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+MAKE_ARGS+=	-DWITH_PNG
+.endif
+
+.if defined(WITH_SMALLFONT)
+MAKE_ARGS+=	-DWITH_SMALLFONT
+.endif
+
+.include <bsd.port.post.mk>

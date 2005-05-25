@@ -1,12 +1,25 @@
 --- Makefile.orig	Tue Aug 20 05:17:53 2002
-+++ Makefile	Wed May 25 12:15:57 2005
-@@ -6,28 +6,26 @@
- # a smaller and thinner font
- #FONT=neep9
++++ Makefile	Wed May 25 13:41:55 2005
+@@ -1,33 +1,35 @@
+ VER=1.6.1
+-OPT=-O2 -s
+-#OPT=-O -g
++
++.if defined(WITH_PNG)
+ DEFS=-DWITH_PNG
++PNG_LIBS=-L${LOCALBASE}/lib -lpng -lz -lm
++.endif
++
++.if defined(WITH_SMALLFONT)
++FONT=neep9
++.else
+ FONT=vtxt
+-# a smaller and thinner font
+-#FONT=neep9
++.endif
  
 -CFLAGS=$(OPT) -DVERSION=\"$(VER)\" $(DEFS) -I/usr/X11R6/include -I/usr/local/include -W
 +CFLAGS+=-DVERSION=\"$(VER)\" $(DEFS) -I${X11BASE}/include -I${LOCALBASE}/include -W
-+PNG_LIBS=-L${LOCALBASE}/lib -lpng -lz -lm
 +X11_LIBS=-L${X11BASE}/lib -lX11
  
  EXPOBJS=export.o exp-txt.o exp-html.o exp-gfx.o font.o
@@ -35,7 +48,7 @@
  
  font.o: font1.xbm font2.xbm
  fontsize.h: font1.xbm font2.xbm
-@@ -69,13 +67,9 @@
+@@ -69,13 +71,9 @@
  # anything below this line is just for me!
  
  install: all
