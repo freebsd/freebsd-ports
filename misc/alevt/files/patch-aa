@@ -1,31 +1,54 @@
-*** Makefile.orig	Thu Nov  4 20:10:08 1999
---- Makefile	Fri Nov  5 12:12:46 1999
-*************** rpm-install: all
-*** 65,77 ****
-  # anything below this line is just for me!
-  
-  install: all
-! 	install -m 0755 alevt		/usr/local/bin
-! 	install -m 0755 alevt-date	/usr/local/bin
-! 	install -m 0755 alevt-cap	/usr/local/bin
-! 	install -m 0644 alevt.1x	/usr/local/man/man1
-! 	install -m 0644 alevt-date.1	/usr/local/man/man1
-! 	install -m 0644 alevt-cap.1	/usr/local/man/man1
-! 	install -m 0644 contrib/mini-alevt.xpm /usr/include/X11/pixmaps
-  	sync
-  
-  depend:
---- 65,77 ----
-  # anything below this line is just for me!
-  
-  install: all
-! 	install -m 0755 alevt		$(PREFIX)/bin
-! 	install -m 0755 alevt-date	$(PREFIX)/bin
-! 	install -m 0755 alevt-cap	$(PREFIX)/bin
-! 	install -m 0644 alevt.1x	$(PREFIX)/man/man1
-! 	install -m 0644 alevt-date.1	$(PREFIX)/man/man1
-! 	install -m 0644 alevt-cap.1	$(PREFIX)/man/man1
-! 	install -m 0644 contrib/mini-alevt.xpm $(PREFIX)/include/X11/pixmaps
-  	sync
-  
-  depend:
+--- Makefile.orig	Tue Aug 20 05:17:53 2002
++++ Makefile	Wed May 25 12:15:57 2005
+@@ -6,28 +6,26 @@
+ # a smaller and thinner font
+ #FONT=neep9
+ 
+-CFLAGS=$(OPT) -DVERSION=\"$(VER)\" $(DEFS) -I/usr/X11R6/include -I/usr/local/include -W
++CFLAGS+=-DVERSION=\"$(VER)\" $(DEFS) -I${X11BASE}/include -I${LOCALBASE}/include -W
++PNG_LIBS=-L${LOCALBASE}/lib -lpng -lz -lm
++X11_LIBS=-L${X11BASE}/lib -lX11
+ 
+ EXPOBJS=export.o exp-txt.o exp-html.o exp-gfx.o font.o
+ OBJS=main.o ui.o xio.o fdset.o vbi.o cache.o help.o edline.o search.o edit.o misc.o hamm.o lang.o $(EXPOBJS)
+ TOBJS=alevt-date.o vbi.o fdset.o misc.o hamm.o lang.o
+ COBJS=alevt-cap.o vbi.o fdset.o misc.o hamm.o lang.o $(EXPOBJS)
+ 
+-ifneq ($(findstring WITH_PNG,$(DEFS)),)
+-EXPLIBS=-L/usr/local/lib -lpng -lz -lm
+-endif
+-
+ all: alevt alevt-date alevt-cap alevt.1x alevt-date.1 alevt-cap.1
+ 	sync
+ 
+ alevt: $(OBJS)
+-	$(CC) $(OPT) $(OBJS) -o alevt -L/usr/X11R6/lib -lX11 $(EXPLIBS)
++	$(CC) $(CFLAGS) $(OBJS) -o alevt $(PNG_LIBS) $(X11_LIBS)
+ 
+ alevt-date: $(TOBJS)
+-	$(CC) $(OPT) $(TOBJS) -o alevt-date
++	$(CC) $(CFLAGS) $(TOBJS) -o alevt-date
+ 
+ alevt-cap: $(COBJS)
+-	$(CC) $(OPT) $(COBJS) -o alevt-cap $(EXPLIBS)
++	$(CC) $(CFLAGS) $(COBJS) -o alevt-cap $(PNG_LIBS)
+ 
+ font.o: font1.xbm font2.xbm
+ fontsize.h: font1.xbm font2.xbm
+@@ -69,13 +67,9 @@
+ # anything below this line is just for me!
+ 
+ install: all
+-	install -m 0755 alevt		/usr/local/bin
+-	install -m 0755 alevt-date	/usr/local/bin
+-	install -m 0755 alevt-cap	/usr/local/bin
+-	install -m 0644 alevt.1x	/usr/local/man/man1
+-	install -m 0644 alevt-date.1	/usr/local/man/man1
+-	install -m 0644 alevt-cap.1	/usr/local/man/man1
+-	install -m 0644 contrib/mini-alevt.xpm /usr/include/X11/pixmaps
++	${BSD_INSTALL_PROGRAM} alevt alevt-date alevt-cap $(PREFIX)/bin
++	${BSD_INSTALL_MAN} alevt.1x alevt-date.1 alevt-cap.1 $(PREFIX)/man/man1
++	${BSD_INSTALL_DATA} contrib/mini-alevt.xpm $(PREFIX)/include/X11/pixmaps
+ 	sync
+ 
+ depend:
