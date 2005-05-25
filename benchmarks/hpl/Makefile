@@ -74,7 +74,8 @@ post-patch:
 		s|^CC[ ]*=.*$$|CC = ${CC}| ; \
 		s|^CCFLAGS[ ]*=.*$$|CCFLAGS = $$\(HPL_DEFS\) ${CFLAGS} -fomit-frame-pointer -funroll-loops| ; \
 		s|^LINKER[ ]*=.*$$|LINKER = ${FC}| ; \
-		s|^ARCHIVER[ ]*=.*$$|ARCHIVER = ${AR}|'\
+		s|^ARCHIVER[ ]*=.*$$|ARCHIVER = ${AR}| ; \
+		s|ARCH[ )]|_&|g' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
 
 .if defined(WITH_LAM)
