@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metasploit
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.metasploit.org/tools/
 DISTNAME=	framework-${PORTVERSION}
@@ -25,14 +24,14 @@ USE_PERL5_RUN=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		"This port requires perl version 5.6.0 or higher."
+IGNORE=		This port requires perl version 5.6.0 or higher.
 .endif
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/ ${DATADIR}
-.	for i in msfcli msfconsole msfdldebug msfelfscan msfencode msflogdump msfpayload msfpayload.cgi msfpescan msfupdate msfweb
-		${LN} -s ${DATADIR}/$i ${PREFIX}/bin/
+.	for i in msfcli msfconsole msfelfscan msfencode msflogdump msfpayload msfpescan msfupdate msfweb
+		${LN} -s ${DATADIR}/$i ${PREFIX}/bin
 .	endfor
 
 .include <bsd.port.post.mk>
