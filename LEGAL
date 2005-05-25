@@ -456,7 +456,6 @@ palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on
 						usage and distribution
 perforce/*		devel/perforce		Restricted distribution
-pftpd-*.tar.gz		ftp/pftpd		License problem
 pgp*			security/pgp*		Various locality restrictions
 pim6dd-*.tar.gz		net/pim6dd		Cannot be sold for profit
 platon*			biology/platon		US$ 5000 for commercial users,
