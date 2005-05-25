@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtla
-PORTVERSION=	0.99
+PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://download.gna.org/xtla-el/ \
