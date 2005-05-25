@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]
+then
+	exit 0;
+fi
+
+# check if bogomilter user exists
+pw user show bogomilter > /dev/null 2>&1
+
+if [ $? != 0 ]
+then
+	echo "===>  Adding user bogomilter"
+	pw useradd bogomilter -u 174 -c "milter-bogom"
+else
+	echo "===>  Using existing user bogomilter" 
+fi
