@@ -56,7 +56,6 @@ include/assa/UDPSocket.h
 include/assa/UNIXAddress.h
 include/assa/UnConUDPSocket.h
 include/assa/xdrIOBuffer.h
-lib/libassa.a
 lib/libassa.so
 lib/libassa.so.3
 libdata/pkgconfig/assa.pc
