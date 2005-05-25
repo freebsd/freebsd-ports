@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 PORTREVISION=	0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -21,10 +21,10 @@ BUILD_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet-2.0
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	WNHOME=${WNHOME}
+CONFIGURE_ARGS=	</dev/null
 USE_REINPLACE=	yes
 
 MAN1=		rawtextFreq.pl.1 \
@@ -41,11 +41,12 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::hso.3 WordNet::Similarity::vector.3 \
 		WordNet::Similarity::random.3 WordNet::Similarity::res.3 \
 		WordNet::Similarity::lesk.3 \
+		WordNet::Similarity::vector_pairs.3 \
 		WordNet::Similarity::lin.3 WordNet::Similarity::lch.3 \
 		WordNet::Similarity::wup.3 WordNet::Similarity::path.3 \
 		WordNet::Similarity::DepthFinder.3 \
+		WordNet::Similarity::GlossFinder.3 \
 		WordNet::Similarity::ICFinder.3 \
-		WordNet::Similarity::LCSFinder.3 \
 		WordNet::Similarity::PathFinder.3
 
 post-patch:
