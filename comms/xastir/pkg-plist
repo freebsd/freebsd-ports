@@ -4,6 +4,7 @@ lib/xastir/Coordinate.pm
 lib/xastir/Xastir_tigerpoly.py
 lib/xastir/coord-convert.pl
 lib/xastir/fcc-get
+lib/xastir/get-gnis
 lib/xastir/icontable.pl
 lib/xastir/inf2geo.pl
 lib/xastir/kiss-off.pl
@@ -24,6 +25,7 @@ lib/xastir/xastir-fixcfg.sh
 lib/xastir/xastir-migrate.sh
 share/xastir/Counties/placeholder
 share/xastir/GNIS/placeholder
+share/xastir/config/24kgrid.dbfawk
 share/xastir/config/gps_wpt.dbfawk
 share/xastir/config/language-Dutch.sys
 share/xastir/config/language-English.sys
@@ -71,6 +73,7 @@ share/xastir/doc/INSTALL
 share/xastir/doc/LICENSE
 share/xastir/doc/README
 share/xastir/doc/README.CVS
+share/xastir/doc/README.Contributing
 share/xastir/doc/README.Getting-Started
 share/xastir/doc/README.MAPS
 share/xastir/doc/README.win32
@@ -104,16 +107,16 @@ share/xastir/symbols/tornado.xbm
 share/xastir/symbols/wind.xbm
 share/xastir/symbols/winter_wx.xbm
 share/xastir/symbols/wntr_strm.xbm
-@dirrm share/xastir/Counties
-@dirrm share/xastir/GNIS
-@dirrm share/xastir/config
-@dirrm share/xastir/doc
-@dirrm share/xastir/fcc
-@dirrm share/xastir/help
-@dirrm share/xastir/maps/GPS
-@dirrm share/xastir/maps/Online
-@dirrm share/xastir/maps
-@dirrm share/xastir/sounds
 @dirrm share/xastir/symbols
-@dirrm lib/xastir
+@dirrm share/xastir/sounds
+@dirrm share/xastir/maps/Online
+@dirrm share/xastir/maps/GPS
+@dirrm share/xastir/maps
+@dirrm share/xastir/help
+@dirrm share/xastir/fcc
+@dirrm share/xastir/doc
+@dirrm share/xastir/config
+@dirrm share/xastir/GNIS
+@dirrm share/xastir/Counties
 @dirrm share/xastir
+@dirrm lib/xastir
