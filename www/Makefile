@@ -50,6 +50,7 @@
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
     SUBDIR += bricolage
+    SUBDIR += bugmenot
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += caudium10
