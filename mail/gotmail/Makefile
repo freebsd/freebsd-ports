@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A script to fetch mail from a Hotmail or MSN mailbox
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
