@@ -1,0 +1,6 @@
+adesklets is an interactive Imlib2 console for the X Window system.
+It provides to scripted languages a clean and simple way to write great
+looking, mildly interactive desktop integrated graphic applets (aka
+"desklets")
+
+WWW: http://adesklets.sf.net/
