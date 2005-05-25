@@ -2231,6 +2231,7 @@ flowd		ports/net-mgmt/flowd
 flowdesigner	ports/devel/flowdesigner
 flowscan	ports/net-mgmt/flowscan
 flphoto		ports/graphics/flphoto
+flpsed		ports/print/flpsed
 fltk		ports/x11-toolkits/fltk
 fltk-threads	ports/x11-toolkits/fltk-threads
 fluctuate	ports/biology/fluctuate
