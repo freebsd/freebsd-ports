@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	String-ShellQuote
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
@@ -17,6 +17,7 @@ COMMENT=	Perl module for quote strings for passing through the shell
 
 PERL_CONFIGURE=	yes
 
-MAN3=		String::ShellQuote.3
+MAN1=	shell-quote.1
+MAN3=	String::ShellQuote.3
 
 .include <bsd.port.mk>
