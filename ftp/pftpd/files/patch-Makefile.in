@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Wed May 15 10:48:26 2002
-+++ src/Makefile.in	Wed May 15 10:48:34 2002
-@@ -32,7 +32,7 @@
+--- src/Makefile.in.orig	Thu Jan  9 14:27:48 2003
++++ src/Makefile.in	Mon May 23 18:23:31 2005
+@@ -40,7 +40,7 @@
  all:	$(PROGRAMS)
  
  pftpd:	$(OBJS) $(LIBPLIB)
 -	$(CC) $(CFLAGS) -o $@ $(OBJS) $(KOBJ) $(LIBPLIB) $(LDFLAGS)
 +	$(CC) $(CFLAGS) -o $@ $(OBJS) $(KOBJ) $(LIBPLIB) $(LDFLAGS) -lcompat
  
- rpad:	rpad.o $(LIBPLIB)
- 	$(CC) $(CFLAGS) -o $@ rpad.o $(LIBPLIB) $(LDFLAGS)
+ rpad:	rpad.o socket.o $(LIBPLIB)
+ 	$(CC) $(CFLAGS) -o $@ rpad.o socket.o $(LIBPLIB) $(LDFLAGS)

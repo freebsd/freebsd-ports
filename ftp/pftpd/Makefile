@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	pftpd
-PORTVERSION=	0.42
+PORTVERSION=	1.0.1
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/ \
+		ftp://ftp.ifm.liu.se/pub/unix/pftpd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded anonymous FTP daemon
 
-BROKEN=		Unfetchable
-
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-
-RESTRICTED=	License problem
 
 MAN1=		pftpd.1 rpad.1
 PLIST_FILES=	sbin/pftpd
 
-.include <bsd.port.pre.mk>
+post-extract:
+.for f in ${MAN1}
+	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/doc/${f}
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
@@ -33,4 +33,4 @@ post-patch:
 post-install:
 	@${CAT} ${WRKSRC}/ISSUES
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
