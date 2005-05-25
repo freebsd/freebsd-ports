@@ -185,6 +185,7 @@
     SUBDIR += it-aspell
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
+    SUBDIR += jakarta-poi
     SUBDIR += java2html
     SUBDIR += javacc
     SUBDIR += jaxup
