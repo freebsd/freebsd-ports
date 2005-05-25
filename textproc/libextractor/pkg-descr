@@ -1,0 +1,6 @@
+Libextractor is a library used to extract meta-data from files of 
+arbitrary type. It is designed to use helper-libraries to perform the 
+actual extraction, and to be trivially extendable by linking against 
+external extractors for additional file types. 
+
+WWW:	http://gnunet.org/libextractor/

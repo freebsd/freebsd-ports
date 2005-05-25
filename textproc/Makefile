@@ -201,6 +201,7 @@
     SUBDIR += latte
     SUBDIR += libcroco
     SUBDIR += libebml
+    SUBDIR += libextractor
     SUBDIR += libhtmlparse
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
