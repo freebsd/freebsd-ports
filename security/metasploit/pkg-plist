@@ -1,11 +1,9 @@
 bin/msfcli
 bin/msfconsole
-bin/msfdldebug
 bin/msfelfscan
 bin/msfencode
 bin/msflogdump
 bin/msfpayload
-bin/msfpayload.cgi
 bin/msfpescan
 bin/msfupdate
 bin/msfweb
@@ -14,6 +12,7 @@ bin/msfweb
 %%DATADIR%%/data/meterpreter/ext_server_process.dll
 %%DATADIR%%/data/meterpreter/ext_server_sys.dll
 %%DATADIR%%/data/meterpreter/metsrv.dll
+%%DATADIR%%/data/msfpayload/template.exe
 %%DATADIR%%/data/msfweb/icons/aix.gif
 %%DATADIR%%/data/msfweb/icons/amiga.gif
 %%DATADIR%%/data/msfweb/icons/any.gif
@@ -39,6 +38,8 @@ bin/msfweb
 %%DATADIR%%/data/msfweb/themes/gwhite/credits.txt
 %%DATADIR%%/data/msfweb/themes/gwhite/logo.jpg
 %%DATADIR%%/data/msfweb/themes/gwhite/style.css
+%%DATADIR%%/data/passivex/passivex.dll
+%%DATADIR%%/data/rpc_names
 %%DATADIR%%/data/shelldemo
 %%DATADIR%%/data/vncdll.dll
 %%DATADIR%%/docs/7f8d5320.0
@@ -47,10 +48,9 @@ bin/msfweb
 %%DATADIR%%/docs/COPYING.Artistic
 %%DATADIR%%/docs/COPYING.GNU
 %%DATADIR%%/docs/COPYING.InlineEgg
+%%DATADIR%%/docs/CrashCourse_BR.pdf
 %%DATADIR%%/docs/CrashCourse_BR.sxw
 %%DATADIR%%/docs/CrashCourse_FR.pdf
-%%DATADIR%%/docs/CrashCourse_IT.doc
-%%DATADIR%%/docs/CrashCourse_IT.html
 %%DATADIR%%/docs/CrashCourse_IT.pdf
 %%DATADIR%%/docs/CrashCourse_IT.sxw
 %%DATADIR%%/docs/Environment.txt
@@ -58,7 +58,7 @@ bin/msfweb
 %%DATADIR%%/docs/QUICKSTART.msfcli
 %%DATADIR%%/docs/QUICKSTART.msfconsole
 %%DATADIR%%/docs/QUICKSTART.msfweb
-%%DATADIR%%/docs/RELEASE_2.3.txt
+%%DATADIR%%/docs/RELEASE_2.4.txt
 %%DATADIR%%/docs/SECURITY
 %%DATADIR%%/docs/VERSION
 %%DATADIR%%/docs/cacert.pem
@@ -78,13 +78,21 @@ bin/msfweb
 %%DATADIR%%/encoders/QuackQuack.pm
 %%DATADIR%%/encoders/ShikataGaNai.pm
 %%DATADIR%%/encoders/Sparc.pm
+%%DATADIR%%/exploits/3com_3cdaemon_ftp_overflow.pm
 %%DATADIR%%/exploits/Credits.pm
-%%DATADIR%%/exploits/Tester.pm
 %%DATADIR%%/exploits/afp_loginext.pm
 %%DATADIR%%/exploits/aim_goaway.pm
 %%DATADIR%%/exploits/apache_chunked_win32.pm
+%%DATADIR%%/exploits/arkeia_agent_access.pm
+%%DATADIR%%/exploits/arkeia_type77_macos.pm
+%%DATADIR%%/exploits/arkeia_type77_win32.pm
 %%DATADIR%%/exploits/backupexec_ns.pm
 %%DATADIR%%/exploits/blackice_pam_icq.pm
+%%DATADIR%%/exploits/cabrightstor_disco.pm
+%%DATADIR%%/exploits/cabrightstor_disco_servicepc.pm
+%%DATADIR%%/exploits/cabrightstor_uniagent.pm
+%%DATADIR%%/exploits/calicclnt_getconfig.pm
+%%DATADIR%%/exploits/calicserv_getconfig.pm
 %%DATADIR%%/exploits/distcc_exec.pm
 %%DATADIR%%/exploits/exchange2000_xexch50.pm
 %%DATADIR%%/exploits/ia_webmail.pm
@@ -94,29 +102,45 @@ bin/msfweb
 %%DATADIR%%/exploits/iis50_webdav_ntdll.pm
 %%DATADIR%%/exploits/iis_fp30reg_chunked.pm
 %%DATADIR%%/exploits/iis_nsiislog_post.pm
+%%DATADIR%%/exploits/iis_source_dumper.pm
 %%DATADIR%%/exploits/iis_w3who_overflow.pm
 %%DATADIR%%/exploits/imail_imap_delete.pm
 %%DATADIR%%/exploits/imail_ldap.pm
 %%DATADIR%%/exploits/irix_lpsched_exec.pm
 %%DATADIR%%/exploits/lsass_ms04_011.pm
+%%DATADIR%%/exploits/maxdb_webdbm_get_overflow.pm
 %%DATADIR%%/exploits/mercantec_softcart.pm
+%%DATADIR%%/exploits/minishare_get_overflow.pm
+%%DATADIR%%/exploits/msasn1_ms04_007_killbill.pm
+%%DATADIR%%/exploits/msmq_deleteobject_ms05_017.pm
 %%DATADIR%%/exploits/msrpc_dcom_ms03_026.pm
 %%DATADIR%%/exploits/mssql2000_preauthentication.pm
 %%DATADIR%%/exploits/mssql2000_resolution.pm
+%%DATADIR%%/exploits/netterm_netftpd_user_overflow.pm
 %%DATADIR%%/exploits/openview_omniback.pm
+%%DATADIR%%/exploits/oracle9i_xdb_ftp.pm
+%%DATADIR%%/exploits/oracle9i_xdb_ftp_pass.pm
+%%DATADIR%%/exploits/payload_handler.pm
 %%DATADIR%%/exploits/poptop_negative_read.pm
 %%DATADIR%%/exploits/realserver_describe_linux.pm
 %%DATADIR%%/exploits/samba_nttrans.pm
 %%DATADIR%%/exploits/samba_trans2open.pm
 %%DATADIR%%/exploits/samba_trans2open_osx.pm
+%%DATADIR%%/exploits/samba_trans2open_solsparc.pm
 %%DATADIR%%/exploits/sambar6_search_results.pm
 %%DATADIR%%/exploits/seattlelab_mail_55.pm
+%%DATADIR%%/exploits/sentinel_lm7_overflow.pm
 %%DATADIR%%/exploits/servu_mdtm_overflow.pm
 %%DATADIR%%/exploits/smb_sniffer.pm
 %%DATADIR%%/exploits/solaris_dtspcd_noir.pm
+%%DATADIR%%/exploits/solaris_kcms_readfile.pm
+%%DATADIR%%/exploits/solaris_lpd_exec.pm
 %%DATADIR%%/exploits/solaris_sadmind_exec.pm
+%%DATADIR%%/exploits/solaris_snmpxdmid.pm
+%%DATADIR%%/exploits/solaris_ttyprompt.pm
 %%DATADIR%%/exploits/squid_ntlm_authenticate.pm
 %%DATADIR%%/exploits/svnserve_date.pm
+%%DATADIR%%/exploits/trackercam_phparg_overflow.pm
 %%DATADIR%%/exploits/uow_imap4_copy.pm
 %%DATADIR%%/exploits/uow_imap4_lsub.pm
 %%DATADIR%%/exploits/ut2004_secure_linux.pm
@@ -125,6 +149,7 @@ bin/msfweb
 %%DATADIR%%/exploits/webstar_ftp_user.pm
 %%DATADIR%%/exploits/windows_ssl_pct.pm
 %%DATADIR%%/exploits/wins_ms04_045.pm
+%%DATADIR%%/exploits/wsftp_server_503_mkd.pm
 %%DATADIR%%/extras/Net_SSLeay.pm-1.23.tar.gz
 %%DATADIR%%/extras/Term-ReadLine-Gnu-1.14.tar.gz
 %%DATADIR%%/lib/Digest/Perl/MD5.pm
@@ -140,7 +165,8 @@ bin/msfweb
 %%DATADIR%%/lib/Msf/Logging.pm
 %%DATADIR%%/lib/Msf/Logo.pm
 %%DATADIR%%/lib/Msf/Module.pm
-%%DATADIR%%/lib/Msf/Nop/OptyNop.pm
+%%DATADIR%%/lib/Msf/Nop/OptyNop2.pm
+%%DATADIR%%/lib/Msf/Nop/OptyNop2Tables.pm
 %%DATADIR%%/lib/Msf/Nop.pm
 %%DATADIR%%/lib/Msf/Payload.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/BSD/BindStager.pm
@@ -167,6 +193,7 @@ bin/msfweb
 %%DATADIR%%/lib/Msf/PayloadComponent/DoubleReverseConnection.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/ExternalPayload.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/FindConnection.pm
+%%DATADIR%%/lib/Msf/PayloadComponent/FindLocalShell.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/FindRecvConnection.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/InlineEggPayload.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Linux/BindStager.pm
@@ -190,6 +217,7 @@ bin/msfweb
 %%DATADIR%%/lib/Msf/PayloadComponent/OSX/ppc/ReverseNFStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/OSX/ppc/ReverseStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/OSX/ppc/ShellStage.pm
+%%DATADIR%%/lib/Msf/PayloadComponent/PassiveXConnection.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/ReverseConnection.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/SolarisBindStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/SolarisFindStager.pm
@@ -201,6 +229,7 @@ bin/msfweb
 %%DATADIR%%/lib/Msf/PayloadComponent/WebConsole.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/BindStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/FindRecvStager.pm
+%%DATADIR%%/lib/Msf/PayloadComponent/Windows/PassiveXStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/Payload.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/ReverseStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/StagePayload.pm
@@ -212,6 +241,7 @@ bin/msfweb
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/ia32/InjectLibStage.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/ia32/InjectMeterpreterStage.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/ia32/InjectVncStage.pm
+%%DATADIR%%/lib/Msf/PayloadComponent/Windows/ia32/PassiveXStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/ia32/PipedShellStage.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/ia32/ReverseOrdinalStager.pm
 %%DATADIR%%/lib/Msf/PayloadComponent/Windows/ia32/ReverseStager.pm
@@ -240,6 +270,7 @@ bin/msfweb
 %%DATADIR%%/lib/NetPacket/UDP.pm
 %%DATADIR%%/lib/NetPacket.pm
 %%DATADIR%%/lib/Pex/Alpha.pm
+%%DATADIR%%/lib/Pex/Arkeia.pm
 %%DATADIR%%/lib/Pex/DCERPC.pm
 %%DATADIR%%/lib/Pex/ELFInfo.pm
 %%DATADIR%%/lib/Pex/Encoder.pm
@@ -283,24 +314,24 @@ bin/msfweb
 %%DATADIR%%/lib/Pex/Socket/Tcp.pm
 %%DATADIR%%/lib/Pex/Socket/Udp.pm
 %%DATADIR%%/lib/Pex/Struct.pm
+%%DATADIR%%/lib/Pex/SunRPC.pm
 %%DATADIR%%/lib/Pex/Text.pm
 %%DATADIR%%/lib/Pex/Utils.pm
+%%DATADIR%%/lib/Pex/XDR.pm
 %%DATADIR%%/lib/Pex/x86.pm
 %%DATADIR%%/lib/Pex.pm
 %%DATADIR%%/msfcli
 %%DATADIR%%/msfconsole
-%%DATADIR%%/msfdldebug
 %%DATADIR%%/msfelfscan
 %%DATADIR%%/msfencode
 %%DATADIR%%/msflogdump
 %%DATADIR%%/msfpayload
-%%DATADIR%%/msfpayload.cgi
 %%DATADIR%%/msfpescan
 %%DATADIR%%/msfupdate
 %%DATADIR%%/msfweb
 %%DATADIR%%/nops/Alpha.pm
 %%DATADIR%%/nops/MIPS.pm
-%%DATADIR%%/nops/Opty.pm
+%%DATADIR%%/nops/Opty2.pm
 %%DATADIR%%/nops/PPC.pm
 %%DATADIR%%/nops/Pex.pm
 %%DATADIR%%/nops/SPARC.pm
@@ -323,11 +354,12 @@ bin/msfweb
 %%DATADIR%%/payloads/bsdi_ia32_reverse.pm
 %%DATADIR%%/payloads/bsdi_ia32_reverse_stg.pm
 %%DATADIR%%/payloads/cmd_generic.pm
+%%DATADIR%%/payloads/cmd_interact.pm
 %%DATADIR%%/payloads/cmd_irix_bind.pm
+%%DATADIR%%/payloads/cmd_localshell.pm
 %%DATADIR%%/payloads/cmd_sol_bind.pm
 %%DATADIR%%/payloads/cmd_unix_reverse.pm
 %%DATADIR%%/payloads/cmd_unix_reverse_bash.pm
-%%DATADIR%%/payloads/cmd_unix_reverse_cross.pm
 %%DATADIR%%/payloads/cmd_unix_reverse_nss.pm
 %%DATADIR%%/payloads/external/WindowsSyscall.py
 %%DATADIR%%/payloads/external/bsdx86bind_ie.py
@@ -343,6 +375,7 @@ bin/msfweb
 %%DATADIR%%/payloads/linux_ia32_bind.pm
 %%DATADIR%%/payloads/linux_ia32_bind_ie.pm
 %%DATADIR%%/payloads/linux_ia32_bind_stg.pm
+%%DATADIR%%/payloads/linux_ia32_dN_reverse.pm
 %%DATADIR%%/payloads/linux_ia32_exec.pm
 %%DATADIR%%/payloads/linux_ia32_findrecv.pm
 %%DATADIR%%/payloads/linux_ia32_findrecv_stg.pm
@@ -354,6 +387,7 @@ bin/msfweb
 %%DATADIR%%/payloads/linux_ia32_reverse_udp.pm
 %%DATADIR%%/payloads/linux_ia32_reverse_xor.pm
 %%DATADIR%%/payloads/linux_sparc_bind.pm
+%%DATADIR%%/payloads/linux_sparc_findsock.pm
 %%DATADIR%%/payloads/linux_sparc_reverse.pm
 %%DATADIR%%/payloads/osx_ppc_bind.pm
 %%DATADIR%%/payloads/osx_ppc_bind_stg.pm
@@ -366,6 +400,7 @@ bin/msfweb
 %%DATADIR%%/payloads/solaris_ia32_findsock.pm
 %%DATADIR%%/payloads/solaris_ia32_reverse.pm
 %%DATADIR%%/payloads/solaris_sparc_bind.pm
+%%DATADIR%%/payloads/solaris_sparc_findsock.pm
 %%DATADIR%%/payloads/solaris_sparc_reverse.pm
 %%DATADIR%%/payloads/win32_adduser.pm
 %%DATADIR%%/payloads/win32_bind.pm
@@ -378,6 +413,10 @@ bin/msfweb
 %%DATADIR%%/payloads/win32_findrecv_ord_meterpreter.pm
 %%DATADIR%%/payloads/win32_findrecv_ord_stg.pm
 %%DATADIR%%/payloads/win32_findrecv_ord_vncinject.pm
+%%DATADIR%%/payloads/win32_passivex.pm
+%%DATADIR%%/payloads/win32_passivex_meterpreter.pm
+%%DATADIR%%/payloads/win32_passivex_stg.pm
+%%DATADIR%%/payloads/win32_passivex_vncinject.pm
 %%DATADIR%%/payloads/win32_reverse.pm
 %%DATADIR%%/payloads/win32_reverse_dllinject.pm
 %%DATADIR%%/payloads/win32_reverse_meterpreter.pm
@@ -399,6 +438,22 @@ bin/msfweb
 %%DATADIR%%/sdk/formatGen.pl
 %%DATADIR%%/sdk/patternOffset.pl
 %%DATADIR%%/sdk/spitCode.pl
+%%DATADIR%%/src/impurity/Makefile
+%%DATADIR%%/src/impurity/README.original
+%%DATADIR%%/src/impurity/script-ld-impurity
+%%DATADIR%%/src/impurity/shelldemo/Makefile
+%%DATADIR%%/src/impurity/shelldemo/cmd.h
+%%DATADIR%%/src/impurity/shelldemo/cmd_base.c
+%%DATADIR%%/src/impurity/shelldemo/cmd_expl.c
+%%DATADIR%%/src/impurity/shelldemo/cmd_fd.c
+%%DATADIR%%/src/impurity/shelldemo/cmd_fs.c
+%%DATADIR%%/src/impurity/shelldemo/cmd_misc.c
+%%DATADIR%%/src/impurity/shelldemo/cmd_privs.c
+%%DATADIR%%/src/impurity/shelldemo/cmd_proc.c
+%%DATADIR%%/src/impurity/shelldemo/cmd_sys.c
+%%DATADIR%%/src/impurity/shelldemo/main.c
+%%DATADIR%%/src/impurity/shelldemo/misc.c
+%%DATADIR%%/src/impurity/tracepath.c
 %%DATADIR%%/src/meterpreter/output/client/.cvskeep
 %%DATADIR%%/src/meterpreter/output/extensions/.cvskeep
 %%DATADIR%%/src/meterpreter/output/server/.cvskeep
@@ -484,6 +539,18 @@ bin/msfweb
 %%DATADIR%%/src/meterpreter/workspace/metcli/metcli.dsp
 %%DATADIR%%/src/meterpreter/workspace/meterpreter.dsw
 %%DATADIR%%/src/meterpreter/workspace/metsrv/metsrv.dsp
+%%DATADIR%%/src/passivex/CPassiveX.cpp
+%%DATADIR%%/src/passivex/CPassiveX.h
+%%DATADIR%%/src/passivex/HttpTunnel.cpp
+%%DATADIR%%/src/passivex/HttpTunnel.h
+%%DATADIR%%/src/passivex/PassiveX.cpp
+%%DATADIR%%/src/passivex/PassiveX.idl
+%%DATADIR%%/src/passivex/PassiveXLib.h
+%%DATADIR%%/src/passivex/passivex.def
+%%DATADIR%%/src/passivex/passivex.dsp
+%%DATADIR%%/src/passivex/passivex.dsw
+%%DATADIR%%/src/passivex/passivex.rc
+%%DATADIR%%/src/passivex/resource.h
 %%DATADIR%%/src/shellcode/Makefile
 %%DATADIR%%/src/shellcode/Makefile.incl
 %%DATADIR%%/src/shellcode/bsd/ia32/Makefile
@@ -536,14 +603,8 @@ bin/msfweb
 %%DATADIR%%/src/shellcode/linux/ia32/stager_sock_reverse_icmp.asm
 %%DATADIR%%/src/shellcode/linux/ia32/stager_sock_reverse_udp.asm
 %%DATADIR%%/src/shellcode/linux/ia32/stager_sock_reverse_udp_dns.asm
-%%DATADIR%%/src/shellcode/linux/impurity/Makefile
-%%DATADIR%%/src/shellcode/linux/impurity/README.metasploit
-%%DATADIR%%/src/shellcode/linux/impurity/README.original
-%%DATADIR%%/src/shellcode/linux/impurity/linux_reverse_impurity.asm
-%%DATADIR%%/src/shellcode/linux/impurity/script-ld-impurity
-%%DATADIR%%/src/shellcode/linux/impurity/shelldemo.c
-%%DATADIR%%/src/shellcode/linux/impurity/tracepath.c
 %%DATADIR%%/src/shellcode/linux/sparc/single_bind_tcp.s
+%%DATADIR%%/src/shellcode/linux/sparc/single_findsock.s
 %%DATADIR%%/src/shellcode/linux/sparc/single_reverse_tcp.s
 %%DATADIR%%/src/shellcode/osx/ppc/encoder_dword_xor.asm
 %%DATADIR%%/src/shellcode/osx/ppc/encoder_dword_xor_tag.asm
@@ -558,6 +619,7 @@ bin/msfweb
 %%DATADIR%%/src/shellcode/osx/ppc/stub_sock_find_peek_flusher.asm
 %%DATADIR%%/src/shellcode/osx/syscall.h
 %%DATADIR%%/src/shellcode/solaris/sparc/single_bind_tcp.s
+%%DATADIR%%/src/shellcode/solaris/sparc/single_findsock.s
 %%DATADIR%%/src/shellcode/solaris/sparc/single_reverse_tcp.s
 %%DATADIR%%/src/shellcode/win32/dllinject/README
 %%DATADIR%%/src/shellcode/win32/dllinject/generic.c
@@ -772,6 +834,7 @@ bin/msfweb
 %%DATADIR%%/src/shellcode/win32/standard/new/stage_sock_shell.asm
 %%DATADIR%%/src/shellcode/win32/standard/new/stage_wsa_shell.asm
 %%DATADIR%%/src/shellcode/win32/standard/new/stager_sock_reverse_ordinal.asm
+%%DATADIR%%/src/shellcode/win32/standard/passivex.asm
 %%DATADIR%%/src/shellcode/win32/standard/templates/inc/README
 %%DATADIR%%/src/shellcode/win32/standard/templates/inc/byte.inc
 %%DATADIR%%/src/shellcode/win32/standard/templates/inc/function.inc
@@ -809,12 +872,18 @@ bin/msfweb
 %%DATADIR%%/tools/memdump.exe
 %%DATADIR%%/tools/socketNinja.pl
 @dirrm %%DATADIR%%/data/meterpreter
+@dirrm %%DATADIR%%/data/msfpayload
+@dirrm %%DATADIR%%/data/msfweb/cache
+@dirrm %%DATADIR%%/data/msfweb/default
+@dirrm %%DATADIR%%/data/msfweb/gblack
+@dirrm %%DATADIR%%/data/msfweb/gwhite
 @dirrm %%DATADIR%%/data/msfweb/icons
 @dirrm %%DATADIR%%/data/msfweb/themes/default
 @dirrm %%DATADIR%%/data/msfweb/themes/gblack
 @dirrm %%DATADIR%%/data/msfweb/themes/gwhite
 @dirrm %%DATADIR%%/data/msfweb/themes
 @dirrm %%DATADIR%%/data/msfweb
+@dirrm %%DATADIR%%/data/passivex
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/encoders
@@ -854,6 +923,8 @@ bin/msfweb
 @dirrm %%DATADIR%%/payloads
 @dirrm %%DATADIR%%/sdk/docs
 @dirrm %%DATADIR%%/sdk
+@dirrm %%DATADIR%%/src/impurity/shelldemo
+@dirrm %%DATADIR%%/src/impurity
 @dirrm %%DATADIR%%/src/meterpreter/output/client
 @dirrm %%DATADIR%%/src/meterpreter/output/extensions
 @dirrm %%DATADIR%%/src/meterpreter/output/server
@@ -893,6 +964,7 @@ bin/msfweb
 @dirrm %%DATADIR%%/src/meterpreter/workspace/metsrv
 @dirrm %%DATADIR%%/src/meterpreter/workspace
 @dirrm %%DATADIR%%/src/meterpreter
+@dirrm %%DATADIR%%/src/passivex
 @dirrm %%DATADIR%%/src/shellcode/bsd/ia32
 @dirrm %%DATADIR%%/src/shellcode/bsd/sparc
 @dirrm %%DATADIR%%/src/shellcode/bsd
@@ -902,7 +974,6 @@ bin/msfweb
 @dirrm %%DATADIR%%/src/shellcode/generic/sparc
 @dirrm %%DATADIR%%/src/shellcode/generic
 @dirrm %%DATADIR%%/src/shellcode/linux/ia32
-@dirrm %%DATADIR%%/src/shellcode/linux/impurity
 @dirrm %%DATADIR%%/src/shellcode/linux/sparc
 @dirrm %%DATADIR%%/src/shellcode/linux
 @dirrm %%DATADIR%%/src/shellcode/osx/ppc
