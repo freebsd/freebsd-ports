@@ -1,4 +1,8 @@
 bin/alevt
 bin/alevt-date
 bin/alevt-cap
-include/X11/pixmaps/mini-alevt.xpm
+share/alevt/icon-old.xbm
+share/alevt/icon48x48.xpm
+share/alevt/icon54x60.xpm
+share/alevt/mini-alevt.xpm
+@dirrm share/alevt

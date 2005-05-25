@@ -7,7 +7,7 @@
 
 PORTNAME=	alevt
 PORTVERSION=	1.6.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.goron.de/~froese/alevt/
 
@@ -30,5 +30,18 @@ MAKE_ARGS+=	-DWITH_PNG
 .if defined(WITH_SMALLFONT)
 MAKE_ARGS+=	-DWITH_SMALLFONT
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/alevt $(PREFIX)/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/alevt-date $(PREFIX)/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/alevt-cap $(PREFIX)/bin
+	${INSTALL_MAN} ${WRKSRC}/alevt.1x $(PREFIX)/man/man1
+	${INSTALL_MAN} ${WRKSRC}/alevt-date.1 $(PREFIX)/man/man1
+	${INSTALL_MAN} ${WRKSRC}/alevt-cap.1 $(PREFIX)/man/man1
+	${MKDIR} $(PREFIX)/share/alevt
+	${INSTALL_DATA} ${WRKSRC}/contrib/mini-alevt.xpm $(PREFIX)/share/alevt
+	${INSTALL_DATA} ${WRKSRC}/contrib/icon-old.xbm $(PREFIX)/share/alevt
+	${INSTALL_DATA} ${WRKSRC}/contrib/icon48x48.xpm $(PREFIX)/share/alevt
+	${INSTALL_DATA} ${WRKSRC}/contrib/icon54x60.xpm $(PREFIX)/share/alevt
 
 .include <bsd.port.post.mk>
