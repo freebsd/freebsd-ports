@@ -219,6 +219,7 @@ adcomplain	ports/mail/adcomplain
 add		ports/math/add
 add-css-links	ports/textproc/add-css-links
 addresses	ports/mail/addresses
+adesklets	ports/deskutils/adesklets
 adgali		ports/games/adgali
 admesh		ports/cad/admesh
 admuser		ports/www/admuser
