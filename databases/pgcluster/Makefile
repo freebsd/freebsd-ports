@@ -26,6 +26,7 @@ WRKSRC?=	${WRKDIR}/postgresql-${BASEPGSQL}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
+USE_REINPLACE=	yes
 MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
 CONFLICTS=	postgresql-*
@@ -75,6 +76,8 @@ MAN7=	abort.7 alter_database.7 alter_group.7 alter_table.7 alter_trigger.7 \
 	start_transaction.7 truncate.7 unlisten.7 update.7 vacuum.7
 
 post-patch:
+	${REINPLACE_CMD} -e 's|^#ifdef HAVE_STRUCT_SOCKCRED$$|#if defined(HAVE_STRUCT_SOCKCRED) \&\& !defined(HAVE_STRUCT_CMSGCRED)|' \
+		${WRKSRC}/src/interfaces/libpq/fe-auth.c
 	cd ${WRKSRC}/src/pgcluster/pgrp; ${CHMOD} +x configure missing
 	cd ${WRKSRC}/src/pgcluster/pglb; ${CHMOD} +x configure
 
