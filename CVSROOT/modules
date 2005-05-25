@@ -5090,6 +5090,7 @@ libexecinfo	ports/devel/libexecinfo
 libexif		ports/graphics/libexif
 libexif-gtk	ports/graphics/libexif-gtk
 libexo		ports/x11/libexo
+libextractor	ports/textproc/libextractor
 libfame		ports/multimedia/libfame
 libffi		ports/devel/libffi
 libflash	ports/graphics/libflash
