@@ -15,6 +15,8 @@ bin/semCorFreq.pl
 %%SITE_PERL%%/WordNet/treedepths-2.0.dat
 %%SITE_PERL%%/WordNet/ic-semcor.dat
 %%SITE_PERL%%/WordNet/synsetdepths-2.0.dat
+%%SITE_PERL%%/WordNet/wordvectors.dat
+%%SITE_PERL%%/WordNet/vector-relation.dat
 %%SITE_PERL%%/WordNet/Similarity.pm
 %%SITE_PERL%%/WordNet/Similarity/hso.pm
 %%SITE_PERL%%/WordNet/Similarity/random.pm
@@ -26,9 +28,10 @@ bin/semCorFreq.pl
 %%SITE_PERL%%/WordNet/Similarity/res.pm
 %%SITE_PERL%%/WordNet/Similarity/wup.pm
 %%SITE_PERL%%/WordNet/Similarity/vector.pm
+%%SITE_PERL%%/WordNet/Similarity/vector_pairs.pm
 %%SITE_PERL%%/WordNet/Similarity/DepthFinder.pm
+%%SITE_PERL%%/WordNet/Similarity/GlossFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/ICFinder.pm
-%%SITE_PERL%%/WordNet/Similarity/LCSFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/PathFinder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity 2>/dev/null || true
