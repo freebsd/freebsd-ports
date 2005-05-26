@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
@@ -15,7 +15,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		oil-0.3.0:${PORTSDIR}/devel/liboil
+		oil-0.3.1:${PORTSDIR}/devel/liboil
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -25,10 +25,10 @@ USE_GSTREAMER=	gconf
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-mozilla-plugin
 INSTALLS_SHLIB=	yes
-CFLAGS+=	-I${X11BASE}/include
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
