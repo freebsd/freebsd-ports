@@ -7,6 +7,7 @@
 
 PORTNAME=	hat
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 PKGNAMEPREFIX=	hs-
@@ -67,7 +68,7 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR} +docs
 PORTDOCS=	*
 .endif
 
-MAN1=		hat-cover.1 hat-detect.1 hat-nonterm.1 hat-observe.1 \
+MAN1=		black-hat.1 hat-cover.1 hat-detect.1 hat-nonterm.1 hat-observe.1 \
 		hat-stack.1 hat-trail.1 hat-trans.1
 
 pre-everything::
