@@ -1,5 +1,3 @@
-%%DATADIR%%/update-po
-%%DATADIR%%/uudec
 bin/sylpheed-claws
 bin/sylpheed-switcher
 bin/sylprint.pl
@@ -27,7 +25,6 @@ include/sylpheed-claws/codeconv.h
 include/sylpheed-claws/common/base64.h
 include/sylpheed-claws/common/defs.h
 include/sylpheed-claws/common/hooks.h
-include/sylpheed-claws/common/intl.h
 include/sylpheed-claws/common/log.h
 include/sylpheed-claws/common/md5.h
 include/sylpheed-claws/common/mgutils.h
@@ -85,7 +82,6 @@ include/sylpheed-claws/gtk/foldersort.h
 include/sylpheed-claws/gtk/gtkaspell.h
 include/sylpheed-claws/gtk/gtksctree.h
 include/sylpheed-claws/gtk/gtkshruler.h
-include/sylpheed-claws/gtk/gtkstext.h
 include/sylpheed-claws/gtk/gtkutils.h
 include/sylpheed-claws/gtk/gtkvscrollbutton.h
 include/sylpheed-claws/gtk/inputdialog.h
@@ -97,8 +93,10 @@ include/sylpheed-claws/gtk/prefswindow.h
 include/sylpheed-claws/gtk/progressdialog.h
 include/sylpheed-claws/gtk/quicksearch.h
 include/sylpheed-claws/gtk/sslcertwindow.h
+include/sylpheed-claws/gtk/sylpheed-marshal.h
 include/sylpheed-claws/headerview.h
 include/sylpheed-claws/html.h
+include/sylpheed-claws/image_viewer.h
 include/sylpheed-claws/imap.h
 include/sylpheed-claws/imap_gtk.h
 include/sylpheed-claws/import.h
@@ -151,6 +149,7 @@ include/sylpheed-claws/prefs_filtering_action.h
 include/sylpheed-claws/prefs_folder_item.h
 include/sylpheed-claws/prefs_fonts.h
 include/sylpheed-claws/prefs_gtk.h
+include/sylpheed-claws/prefs_image_viewer.h
 include/sylpheed-claws/prefs_matcher.h
 include/sylpheed-claws/prefs_msg_colors.h
 include/sylpheed-claws/prefs_spelling.h
@@ -181,9 +180,10 @@ include/sylpheed-claws/toolbar.h
 include/sylpheed-claws/undo.h
 include/sylpheed-claws/unmime.h
 include/sylpheed-claws/vcard.h
-libdata/pkgconfig/sylpheed-claws.pc
+include/sylpheed-claws/wizard.h
 lib/sylpheed-claws/plugins/dillo_viewer.so
 lib/sylpheed-claws/plugins/trayicon.so
+libdata/pkgconfig/sylpheed-claws.pc
 @dirrm include/sylpheed-claws/common
 @dirrm include/sylpheed-claws/gtk
 %%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpmime
@@ -191,7 +191,6 @@ lib/sylpheed-claws/plugins/trayicon.so
 @dirrm include/sylpheed-claws
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.so
-%%IMAGE%%lib/sylpheed-claws/plugins/image_viewer.so
 %%GPGME%%lib/sylpheed-claws/plugins/pgpmime.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.so
@@ -236,7 +235,6 @@ lib/sylpheed-claws/plugins/trayicon.so
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/sylpheed-18.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/sylpheed-19.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/sylpheed-2.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-22.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/sylpheed-20.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/sylpheed-3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/sylpheed-4.html
@@ -260,6 +258,7 @@ lib/sylpheed-claws/plugins/trayicon.so
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-2.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-20.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-21.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-22.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-4.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-5.html
@@ -377,6 +376,8 @@ share/pixmaps/sylpheed-claws.png
 %%DATADIR%%/outlook2sylpheed.pl
 %%DATADIR%%/tb2sylpheed
 %%DATADIR%%/textviewer.sh
+%%DATADIR%%/update-po
+%%DATADIR%%/uudec
 %%DATADIR%%/vcard2xml.py
 %%THEMES%%%%DATADIR%%/themes/Crystal/.sylpheed_themeinfo
 %%THEMES%%%%DATADIR%%/themes/Crystal/close.xpm
