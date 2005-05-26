@@ -49,12 +49,12 @@ OPTIONS=	MYSQL "Include MySQL user accounts support" off \
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
+CONFIGURE_ARGS+=--with-mysql
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
+CONFIGURE_ARGS+=--with-pgsql
 .endif
 
 .if defined(WITH_SQLITE3)
