@@ -1,13 +1,13 @@
---- orig/qmail-smtpd.c.patch	Sun Apr  3 15:51:55 2005
-+++ qmail-smtpd.c.patch	Mon Apr  4 08:06:31 2005
+--- ../orig/qmail-smtpd.c.patch	Mon May 23 18:02:27 2005
++++ qmail-smtpd.c.patch	Wed May 25 09:50:32 2005
 @@ -1,8 +1,6 @@
 ---- qmail-smtpd.c.orig  1998-06-15
--+++ qmail-smtpd.c       2005-04-03
+-+++ qmail-smtpd.c       2005-05-23
 ---- .././qmail-1.03/qmail-smtpd.c	Mon Jun 15 12:53:16 1998
--+++ ../qmail-1.03.2313/qmail-smtpd.c	Sun Apr  3 20:49:22 2005
+-+++ ../qmail-1.03.2314/qmail-smtpd.c	Mon May 23 23:02:20 2005
 -@@ -20,14 +20,51 @@
-+--- qmail-smtpd.c.orig	Mon Apr  4 08:00:20 2005
-++++ qmail-smtpd.c	Mon Apr  4 08:05:18 2005
++--- qmail-smtpd.c.orig	Wed May 25 09:46:36 2005
+++++ qmail-smtpd.c	Wed May 25 09:50:11 2005
 +@@ -20,14 +20,52 @@
   #include "now.h"
   #include "exit.h"
@@ -113,17 +113,28 @@
     i = str_chr(arg,'<');
     if (arg[i])
       arg += i + 1;
-@@ -376,7 +382,7 @@
+@@ -376,17 +382,12 @@
   
     /* strip source route */
     if (*arg == '@') while (*arg) if (*arg++ == ':') break;
--@@ -199,12 +466,106 @@
-+@@ -199,12 +474,106 @@
+-@@ -199,12 +466,105 @@
++@@ -199,12 +474,105 @@
   
   int bmfcheck()
   {
-@@ -406,7 +412,12 @@
- +int brtcheck()
+ +  int i;
+-   int j;
+--  if (!bmfok) return 0;
+--  if (constmap(&mapbmf,addr.s,addr.len - 1)) return 1;
+--  j = byte_rchr(addr.s,addr.len,'@');
+--  if (j < addr.len)
+--    if (constmap(&mapbmf,addr.s + j,addr.len - j - 1)) return 1;
+++  int j;
+ +  int k = 0;
+ +  char subvalue;
+ +
+@@ -436,7 +437,12 @@
+ +int bhelocheck()
  +{
  +  int i;
 -+  int j;
@@ -135,31 +146,17 @@
 +-    if (constmap(&mapbmf,addr.s + j,addr.len - j - 1)) return 1;
  +  int k = 0;
  +  char subvalue;
- +
-@@ -431,12 +442,7 @@
- +int bhelocheck()
- +{
- +  int i;
--   int j;
---  if (!bmfok) return 0;
---  if (constmap(&mapbmf,addr.s,addr.len - 1)) return 1;
---  j = byte_rchr(addr.s,addr.len,'@');
---  if (j < addr.len)
---    if (constmap(&mapbmf,addr.s + j,addr.len - j - 1)) return 1;
-++  int j;
- +  int k = 0;
- +  char subvalue;
  + 
-@@ -488,7 +494,7 @@
+@@ -487,7 +493,7 @@
     return 0;
   }
   
--@@ -216,52 +577,203 @@
-+@@ -216,52 +585,214 @@
+-@@ -216,54 +576,204 @@
++@@ -216,54 +584,215 @@
     return r;
   }
   
-@@ -583,6 +589,16 @@
+@@ -582,6 +588,16 @@
  +    }
  +}
  +
@@ -176,42 +173,42 @@
  +#ifdef RELAYMAILFROM
  +int rmfcheck()
  +{
-@@ -675,6 +691,7 @@
- +    flagrcpt = rcptallowed();
- +    if (!flagrcpt) { err_recipient("Reject::RCPT::Failed_Rcptto:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); flagerrcpts++; return; } 
+@@ -664,6 +680,7 @@
+ +    if (flagbarf) { err_bmf("Reject::ORIG::Bad_Mailfrom:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); return; }
+ +    if (flagdnsmf > 0) { err_mfdns("Reject::ORIG::DNS_MF:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); return; }
  +    if (reqauth) if (!flagauth) { err_authreq("Reject::ORIG::Missing_Auth:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); return; }
 ++    if (localmf_reqauth && !flagauth && !mailfromallowed()) { err_authreq("Reject::ORIG::Local_MailFrom_Req_Auth:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); return; }
-    }
- -  else
- -    if (!addrallowed()) { err_nogateway(); return; }
-@@ -701,7 +718,7 @@
-  }
+ +    flagrcpt = rcptallowed();
+ +    if (!flagrcpt) { err_recipient("Reject::RCPT::Failed_Rcptto:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); flagerrcpts++; return; } 
+ +    if (tarpitcount && flagerrcpts >= tarpitcount) { err_rcpts("Reject::RCPT::Toomany_Rcptto:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); return; }
+@@ -702,7 +719,7 @@
   
-  
--@@ -279,11 +791,69 @@
-+@@ -279,11 +810,69 @@
+  int saferead(fd,buf,len) int fd; char *buf; int len;
+  {
+-@@ -279,11 +789,69 @@
++@@ -279,11 +808,69 @@
   substdio ssin = SUBSTDIO_FDBUF(saferead,0,ssinbuf,sizeof ssinbuf);
   
   struct qmail qqt;
-@@ -772,7 +789,7 @@
+@@ -773,7 +790,7 @@
     if (bytestooverflow)
       if (!--bytestooverflow)
         qmail_fail(&qqt);
--@@ -316,8 +886,8 @@
-+@@ -316,8 +905,8 @@
+-@@ -316,8 +884,8 @@
++@@ -316,8 +903,8 @@
           if (flagmaybex) if (pos == 7) ++*hops;
           if (pos < 2) if (ch != "\r\n"[pos]) flagmaybey = 0;
           if (flagmaybey) if (pos == 1) flaginheader = 0;
-@@ -782,7 +799,7 @@
+@@ -783,7 +800,7 @@
         if (ch == '\n') { pos = 0; flagmaybex = flagmaybey = flagmaybez = 1; }
       }
       switch(state) {
--@@ -373,31 +943,275 @@
-+@@ -373,31 +962,275 @@
+-@@ -373,31 +941,275 @@
++@@ -373,31 +960,275 @@
     if (!seenmail) { err_wantmail(); return; }
     if (!rcptto.len) { err_wantrcpt(); return; }
     seenmail = 0;
-@@ -995,7 +1012,7 @@
+@@ -996,7 +1013,7 @@
  +
  +  if (!user.len || !pass.len) return err_input();
  +  return authenticate();
@@ -220,7 +217,7 @@
  +#endif
  +
  +struct authcmd {
-@@ -1050,10 +1067,10 @@
+@@ -1051,10 +1068,10 @@
  +    case 1:
  +      err_authfail("Reject::ORIG::Failed_Auth:",remoteip,remotehost,helohost.s,user.s,authcmds[i].text);
  +  }
@@ -234,12 +231,12 @@
   struct commands smtpcommands[] = {
     { "rcpt", smtp_rcpt, 0 }
   , { "mail", smtp_mail, 0 }
-@@ -1062,7 +1079,7 @@
+@@ -1063,7 +1080,7 @@
   , { "quit", smtp_quit, flush }
   , { "helo", smtp_helo, flush }
   , { "ehlo", smtp_ehlo, flush }
--@@ -408,8 +1222,11 @@
-+@@ -408,8 +1241,11 @@
+-@@ -408,8 +1220,11 @@
++@@ -408,8 +1239,11 @@
   , { 0, err_unimpl, flush }
   } ;
   
