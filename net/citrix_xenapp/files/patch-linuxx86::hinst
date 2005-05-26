@@ -1,5 +1,5 @@
---- linuxx86/hinst.orig	Fri May  7 14:44:44 2004
-+++ linuxx86/hinst	Fri Jun  4 17:44:53 2004
+--- linuxx86/hinst.orig	Fri Apr  8 19:52:59 2005
++++ linuxx86/hinst	Wed May 18 14:07:10 2005
 @@ -75,7 +75,7 @@
  fi
  
@@ -9,7 +9,7 @@
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -2091,7 +2091,7 @@
+@@ -2166,7 +2166,7 @@
  
  	# rm -f $m_filename $mf_filename $o_filename $of_filename
  
@@ -18,7 +18,7 @@
  }
  
  ###############################################################################
-@@ -2142,10 +2142,34 @@
+@@ -2217,10 +2217,34 @@
  #
  ###############################################################################
  
@@ -55,11 +55,11 @@
  PLUGIN_NAME=npica.so
  PLUGIN_CLASS=ICAClObj.class
  MAILCAP_FILE=mailcap
-@@ -2218,36 +2242,29 @@
+@@ -2293,26 +2317,19 @@
  
  netscape_integrate()
  {
--  $ECHO_CMD $integrate_netscape1
+-  user_echo $integrate_netscape1
    if test -z "$SU_INSTALL"
    then
      set_npui_variables
@@ -77,31 +77,29 @@
 -	|| test "$EXTRA_BROWSERS" != ""
 -    then
 +
-+   case ${FOUND_NS} in
-+   TRUE)
-   	$ECHO_CMD $integrate_netscape3
++    case ${FOUND_NS} in
++    TRUE)
+   	user_echo $integrate_netscape3
    	found_netscape 
 -    else
 +	;;
-+   *)
- 	echo_no_nl $integrate_netscape2
++    *)
+ 	user_prompt $integrate_netscape2
   	getyesno $INSTALLER_NO
--	if [ "$ANSWER" = "$INSTALLER_YES" ]
--	then
-+	if [ "$ANSWER" = "$INSTALLER_YES" ]; then
- 		found_netscape
+ 	if [ "$ANSWER" = "$INSTALLER_YES" ]
+@@ -2321,9 +2338,9 @@
  	else
-   		$ECHO_CMD $integrate_netscape6
+   		user_echo $integrate_netscape6
  	fi
--    fi
++	;;
++    esac
+     fi
 -  fi
-+   	;;
-+   esac
-+   fi
- 
+-
      # Create utility script files in install root.
      create_wfica_script
-@@ -2878,55 +2895,6 @@
+     create_wfica_assoc_script
+@@ -2953,55 +2970,6 @@
      echo "$BINDIR"
  }
  
@@ -115,7 +113,7 @@
 -################################################################################
 -find_browsers()
 -{
--    PROGS="netscape mozilla"
+-    PROGS="netscape mozilla firefox"
 -    DIST_BIN_DIR=""
 -    STANDARD_DIRS="/usr/local/netscape /usr/local/mozilla"
 -
@@ -157,8 +155,8 @@
  BROWSER_LIST_KEY="BROWSER_DIR"
  ################################################################################
  #
-@@ -3151,6 +3119,8 @@
- wfcmgr_ja_NAME='Citrix ICA クライアント'
+@@ -3226,6 +3194,8 @@
+ wfcmgr_ja_NAME='MetaFrame UNIX クライアント'
  
  DEFAULT_GNOME_TARGET_DIRS="/usr/share/applications \
 +                           /usr/local/share/applnk/Internet \
