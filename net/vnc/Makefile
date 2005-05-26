@@ -20,8 +20,8 @@ DISTFILES=	vnc-4_1_1-unixsrc.tar.gz:vnc
 DISTFILES+=	X430src-1.tgz:x \
 		X430src-2.tgz:x \
 		X430src-3.tgz:x
-DIST_SUBDIR=	xc
 .endif
+DIST_SUBDIR=	xc
 
 MAINTAINER=	james@now.ie
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
