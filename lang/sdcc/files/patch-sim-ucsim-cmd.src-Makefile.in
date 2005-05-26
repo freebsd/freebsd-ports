@@ -1,0 +1,11 @@
+--- sim/ucsim/cmd.src/Makefile.in.orig	Thu Apr  7 13:42:10 2005
++++ sim/ucsim/cmd.src/Makefile.in	Thu Apr  7 13:42:26 2005
+@@ -43,7 +43,7 @@
+ 		  cmduc.o cmdstat.o cmdmem.o \
+ 		  cmdpars.o cmdlex.o
+ 
+-DEVEL		= $(shell ( bash -c "test -e $(PRJDIR)/devel && echo yes" ))
++DEVEL		= no
+ 
+ # Compiling entire program or any subproject
+ # ------------------------------------------
