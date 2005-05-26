@@ -200,10 +200,10 @@ share/gnome/gramps/data/templates/sepia.tpkg
 share/gnome/gramps/data/templates/sky_border.tpkg
 share/gnome/gramps/data/templates/templates.xml
 share/gnome/gramps/data/tips.xml
+share/gnome/gramps/dates/Date_de.py
+share/gnome/gramps/dates/Date_de.pyo
 share/gnome/gramps/dates/Date_es.py
 share/gnome/gramps/dates/Date_es.pyo
-share/gnome/gramps/dates/Date_fi.py
-share/gnome/gramps/dates/Date_fi.pyo
 share/gnome/gramps/dates/Date_fr.py
 share/gnome/gramps/dates/Date_fr.pyo
 share/gnome/gramps/dates/Date_ru.py
