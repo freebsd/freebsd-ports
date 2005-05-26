@@ -3186,6 +3186,7 @@ gstreamer-monkeysaudio	ports/audio/gstreamer-monkeysaudio
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gstreamer-plugins-a52dec	ports/audio/gstreamer-plugins-a52dec
 gstreamer-plugins-aalib		ports/graphics/gstreamer-plugins-aalib
+gstreamer-plugins-all		ports/multimedia/gstreamer-plugins-all
 gstreamer-plugins-artsd		ports/audio/gstreamer-plugins-artsd
 gstreamer-plugins-audiofile	ports/audio/gstreamer-plugins-audiofile
 gstreamer-plugins-cairo		ports/graphics/gstreamer-plugins-cairo
