@@ -1,11 +1,10 @@
---- src/Makefile.in.orig	Mon May  3 23:51:50 2004
-+++ src/Makefile.in	Sun Nov 14 02:27:02 2004
-@@ -165,8 +165,6 @@
+--- src/Makefile.in.orig	Wed May 25 01:30:59 2005
++++ src/Makefile.in	Wed May 25 01:30:59 2005
+@@ -190,7 +190,6 @@
+ 	-DRUBRICA_SCRIPT_DIR=\""${datadir}/rubrica"\" \
  	-DFILE_FORMAT=@FILE_FORMAT@
  
- 
 -AM_CFLAGS = -DHAVE_CONFIG_H -Wall -O -g
--
- bin_PROGRAMS = rubrica 
- 
  rubrica_SOURCES = \
+ 	 rubrica_type.h	\
+ 	 account.c           account.h \
