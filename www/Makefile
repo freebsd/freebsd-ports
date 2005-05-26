@@ -461,6 +461,7 @@
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-Catalyst
     SUBDIR += p5-Catalyst-Model-CDBI
+    SUBDIR += p5-Catalyst-Model-CDBI-Sweet
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormValidator
     SUBDIR += p5-Catalyst-Plugin-Prototype
