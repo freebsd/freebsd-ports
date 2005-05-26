@@ -20,6 +20,13 @@ COMMENT=	Message Passing Interface (MPI) Library
 
 CONFIGURE_ARGS=	-prefix=${PREFIX}/mpich
 
+OPTIONS=	X11	"Enable MPE graphics" on \
+		TK	"Build with TK support" on \
+		JAVA	"Build with Java support" off \
+		SSH	"Enable SSH client support" on
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_X11)
 WITHOUT_TK=	yes
 CONFIGURE_ARGS+=--disable-mpe_graphics
@@ -177,9 +184,6 @@ MAN4=		CLOG_Init.4 CLOG_commtype.4 CLOG_cput.4 CLOG_csync.4			\
 		MPE_Describe_event.4 MPE_Get_mouse_press.4 MPE_Make_color_array.4	\
 		MPE_Print_datatype_unpack_action.4
 
-.include <bsd.port.pre.mk>
-
-# To disable ssh client support, build with WITHOUT_SSH set.
 # Use ssh instead of rsh
 .if !defined(WITHOUT_SSH)
 .if ${OSVERSION} >= 400016 && exists(/usr/bin/ssh)
