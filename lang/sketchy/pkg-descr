@@ -1,9 +1,11 @@
-SketchyLISP is a small, tail-recursive, lexically scoped interpreter for
-purely symbolic dialect of LISP that smells like Scheme. It may be considered
-an implementation of pure LISP plus DEFINE and CALL/CC.
+SketchyLISP is a small, tail-recursive, lexically scoped
+interpreter for a purely applicative dialect of Scheme.
+It may be considered an implementation of pure LISP plus
+global definitions (DEFINE) and first-class continuations
+(CALL/CC).
 
-This package contains the SketchyLISP interpreter and library, the reference
-manual, and example programs.
+This package contains the SketchyLISP interpreter and library,
+the reference manual, and example programs.
 
 WWW: http://www.t3x.org/sketchy/
 
