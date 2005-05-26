@@ -9,6 +9,7 @@ ICAClient/libctxssl.so
 ICAClient/Npica
 ICAClient/Npica.ad
 ICAClient/CHARICONV.DLL
+ICAClient/NDS.DLL
 ICAClient/PDCRYPT1.DLL
 ICAClient/PDCRYPT2.DLL
 ICAClient/TW1.DLL
@@ -111,6 +112,8 @@ ICAClient/util/echo_cmd
 ICAClient/util/hinst
 ICAClient/util/icalicense.sh
 ICAClient/util/nslaunch
+ICAClient/util/pacexec
+ICAClient/util/pac.js
 ICAClient/util/xcapture
 ICAClient/wfcmgr
 ICAClient/wfica
