@@ -3812,6 +3812,7 @@ irrd		ports/net/irrd
 irrtoolset	ports/net-mgmt/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
+irssi-fish	ports/irc/irssi-fish
 irssistats	ports/irc/irssistats
 is-aspell	ports/textproc/is-aspell
 isaac-cfd	ports/science/isaac-cfd
