@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTVERSION=	1.0.14
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://digilander.libero.it/nfragale/download/rubrica/
+MASTER_SITES=	http://download.berlios.de/rubrica/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook for the gnome2 desktop

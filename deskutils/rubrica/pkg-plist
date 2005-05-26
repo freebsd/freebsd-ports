@@ -116,6 +116,7 @@ share/gnome/rubrica/stylesheet/rub2vcard.xsl
 share/locale/bg/LC_MESSAGES/rubrica.mo
 share/locale/de/LC_MESSAGES/rubrica.mo
 share/locale/es/LC_MESSAGES/rubrica.mo
+share/locale/eu/LC_MESSAGES/rubrica.mo
 share/locale/fr/LC_MESSAGES/rubrica.mo
 share/locale/it/LC_MESSAGES/rubrica.mo
 share/locale/ja/LC_MESSAGES/rubrica.mo
