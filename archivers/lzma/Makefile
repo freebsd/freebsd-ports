@@ -14,7 +14,6 @@ DISTNAME=	lzma${PORTVERSION:S/.//g}
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Command line lzma archiver
 
-USE_GCC=	3.4+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -22,6 +21,7 @@ NO_WRKSUBDIR=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/SRC/7zip/Compress/LZMA_Alone
 MAKEFILE=	makefile
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 PLIST_FILES=	bin/lzma
 
 .if !defined(NOPORTDOCS)
@@ -29,6 +29,8 @@ PORTDOCS=	*.txt
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC} -name '*.[ch]' -exec ${REINPLACE_CMD} -e \
+		"s|`${ECHO_CMD} -e '\r'`$$||" {} \;
 	@${REINPLACE_CMD} -e \
 		's|^CXX.*||; \
 		 s|$$(CXX_C)|$$(CC)|; \
