@@ -1,6 +1,6 @@
---- device/lib/Makefile.in.orig	Tue Jan 13 16:00:08 2004
-+++ device/lib/Makefile.in	Mon Apr 11 20:59:36 2005
-@@ -150,7 +150,7 @@
+--- device/lib/Makefile.in.orig	Sat Mar 19 19:47:47 2005
++++ device/lib/Makefile.in	Fri Apr  8 16:44:43 2005
+@@ -167,7 +167,7 @@
  
  # Compiling entire program or any subproject
  # ------------------------------------------
@@ -8,19 +8,19 @@
 +all: checkconf models model-ds390 model-ds400 model-z80 model-gbz80 model-hc08 model-pic16
  
  # model-pic16
- 
-@@ -240,9 +240,7 @@
+ # (needs gputils curently not available of sourceforge's compile farm)
+@@ -272,9 +272,7 @@
  # Compiling and installing everything and runing test
  # ---------------------------------------------------
  install: all installdirs
--	cp -r $(BUILDDIR)/* $(sdcc_libdir)
--	cp -r ds390 ds400 gbz80 z80 hc08 *.c $(sdcc_libdir)/src
+-	cp -r -u $(BUILDDIR)/* $(sdcc_libdir)
+-	cp -r -u ds390 ds400 gbz80 z80 hc08 *.c $(sdcc_libdir)/src
 -	rm -r `find $(sdcc_libdir)/src -name '*.rel' -or -name '*.dump*' -or -name '*.sym' -or -name '*.o' -or -name '*.lst' -or -name '*.asm' -or -name 'CVS'`
 +	-cp -r $(BUILDDIR)/* $(sdcc_libdir)
  
  # Deleting all the installed files
  # --------------------------------
-@@ -263,15 +261,6 @@
+@@ -295,15 +293,6 @@
  # ---------------------------------
  installdirs:
  	[ -d $(sdcc_libdir) ] || mkdir -p $(sdcc_libdir)
@@ -29,9 +29,9 @@
 -	 mkdir -p $(sdcc_libdir)/$$model; \
 -	done
 -	[ -d $(sdcc_libdir)/ds390 ] || mkdir -p $(sdcc_libdir)/ds390
--	[ -d $(sdcc_libdir)/ds400 ] || mkdir -p $(sdcc_libdir)/ds400	
--	[ -d $(sdcc_libdir)/hc08 ] || mkdir -p $(sdcc_libdir)/hc08	
--	[ -f $(sdcc_libdir)/pic16 ] || mkdir -p $(sdcc_libdir)/pic16
+-	[ -d $(sdcc_libdir)/ds400 ] || mkdir -p $(sdcc_libdir)/ds400
+-	[ -d $(sdcc_libdir)/hc08 ] || mkdir -p $(sdcc_libdir)/hc08
+-	[ -d $(sdcc_libdir)/pic16 ] || mkdir -p $(sdcc_libdir)/pic16
 -	mkdir -p $(sdcc_libdir)/src
  
  # Creating dependencies

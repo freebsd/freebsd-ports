@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.5.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sdcc
@@ -32,6 +31,10 @@ OPTIONS=	MCS51   "Intel mcs51 port" on \
 		PACKIHX "A tool to pack (compress) Intel hex files" on
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+USE_GCC=	3.1+
+.endif
 
 .if defined(WITHOUT_MCS51)
 CONFIGURE_ARGS+=	--disable-mcs51-port
