@@ -1,7 +1,7 @@
 include/libzvbi.h
 lib/libzvbi.a
 lib/libzvbi.so
-lib/libzvbi.so.6
+lib/libzvbi.so.7
 libdata/pkgconfig/zvbi-0.2.pc
 share/locale/de/LC_MESSAGES/zvbi.mo
 share/locale/en@boldquot/LC_MESSAGES/zvbi.mo
