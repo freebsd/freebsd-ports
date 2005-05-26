@@ -1,22 +1,28 @@
---- libavformat/Makefile.orig	Tue Apr 26 07:17:51 2005
-+++ libavformat/Makefile	Sun May  1 17:15:15 2005
-@@ -37,7 +37,7 @@
- OBJS+= framehook.o 
- 
- ifeq ($(CONFIG_VIDEO4LINUX),yes)
--OBJS+= grab.o
-+OBJS+= grab_bsdbktr.o
- endif
- 
- ifeq ($(CONFIG_DV1394),yes)
-@@ -109,8 +109,8 @@
+--- libavformat/Makefile.orig	Sun May 22 20:58:36 2005
++++ libavformat/Makefile	Thu May 26 13:30:00 2005
+@@ -109,8 +109,7 @@
  	install $(INSTALLSTRIP) -m 755 $(SLIB) "$(prefix)"
  else
  	install -d $(libdir)
 -	install $(INSTALLSTRIP) -m 755 $(SLIB) $(libdir)/libavformat-$(VERSION).so
 -	ln -sf libavformat-$(VERSION).so $(libdir)/libavformat.so
-+	${BSD_INSTALL_DATA} $(SLIB) $(prefix)/lib/libavformat.so.1
-+	ln -sf libavformat.so.1 $(prefix)/lib/libavformat.so
- 	ldconfig || true
++	${BSD_INSTALL_DATA} $(SLIB) $(libdir)/libavformat.so
+ 	$(LDCONFIG) || true
  endif
  else
+@@ -122,12 +121,12 @@
+ 
+ install-headers:
+ 	mkdir -p "$(prefix)/include/ffmpeg"
+-	install -m 644 $(SRC_PATH)/libavformat/avformat.h $(SRC_PATH)/libavformat/avio.h \
++	${BSD_INSTALL_DATA} $(SRC_PATH)/libavformat/avformat.h $(SRC_PATH)/libavformat/avio.h \
+                 $(SRC_PATH)/libavformat/rtp.h $(SRC_PATH)/libavformat/rtsp.h \
+                 $(SRC_PATH)/libavformat/rtspcodes.h \
+                 "$(prefix)/include/ffmpeg"
+-	install -d $(libdir)/pkgconfig
+-	install -m 644 ../libavformat.pc $(libdir)/pkgconfig
++	install -d $(prefix)/libdata/pkgconfig
++	${BSD_INSTALL_DATA} ../libavformat.pc $(prefix)/libdata/pkgconfig
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -c -o $@ $< 

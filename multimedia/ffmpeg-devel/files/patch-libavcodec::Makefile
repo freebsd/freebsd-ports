@@ -1,13 +1,28 @@
---- libavcodec/Makefile.orig	Sun May  1 17:07:56 2005
-+++ libavcodec/Makefile	Sun May  1 17:08:29 2005
-@@ -303,8 +303,8 @@
+--- libavcodec/Makefile.orig	Sun May 22 20:58:35 2005
++++ libavcodec/Makefile	Thu May 26 13:30:41 2005
+@@ -463,8 +463,7 @@
  	install $(INSTALLSTRIP) -m 755 $(SLIB) "$(prefix)"
  else
  	install -d $(libdir)
 -	install $(INSTALLSTRIP) -m 755 $(SLIB) $(libdir)/libavcodec-$(VERSION).so
 -	ln -sf libavcodec-$(VERSION).so $(libdir)/libavcodec.so
-+	${BSD_INSTALL_DATA} $(SLIB) $(prefix)/lib/libavcodec.so.1
-+	cd $(prefix)/lib && ln -sf libavcodec.so.1 libavcodec.so
- 	ldconfig || true
++	${BSD_INSTALL_DATA} $(SLIB) $(libdir)/libavcodec.so
+ 	$(LDCONFIG) || true
  endif
  ifeq ($(CONFIG_PP),yes)
+@@ -479,12 +478,12 @@
+ 
+ install-headers:
+ 	mkdir -p "$(prefix)/include/ffmpeg"
+-	install -m 644 $(SRC_PATH)/libavcodec/avcodec.h \
++	${BSD_INSTALL_DATA} $(SRC_PATH)/libavcodec/avcodec.h \
+ 	               $(SRC_PATH)/libavcodec/common.h \
+ 	               $(SRC_PATH)/libavcodec/rational.h \
+                 "$(prefix)/include/ffmpeg"
+-	install -d $(libdir)/pkgconfig
+-	install -m 644 ../libavcodec.pc $(libdir)/pkgconfig
++	install -d $(prefix)/libdata/pkgconfig
++	${BSD_INSTALL_DATA} ../libavcodec.pc $(prefix)/libdata/pkgconfig
+ 
+ #
+ # include dependency files if they exist

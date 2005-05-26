@@ -55,7 +55,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	20050522
+RELEASE_DATE=	20050526
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1
@@ -244,9 +244,13 @@ CONFIGURE_ARGS+=	--enable-pp \
 			--enable-shared-pp
 
 LIB_FILES+=		libavcodec/libpostproc/libpostproc.a
-PLIST_DIRS+=		include/ffmpeg/postproc \
-			include/ffmpeg
-PLIST_FILES+=		include/ffmpeg/postproc/postprocess.h
+PLIST_DIRS+=		include/ffmpeg/postproc
+PLIST_FILES+=		include/ffmpeg/postproc/postprocess.h \
+			lib/libpostproc.a \
+			lib/libpostproc.so \
+			lib/libpostproc.so.0 \
+			lib/libpostproc.so.%%SHLIB_VERSION%% \
+			libdata/pkgconfig/libpostproc.pc
 .endif
 ## pthreads
 .ifndef(WITHOUT_PTHREADS)
@@ -263,7 +267,6 @@ PLIST_FILES+=	bin/ffplay
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
 ## theora
-.undef WITH_THEORA
 .ifdef(WITH_THEORA)
 LIB_DEPENDS+=		theora.1:${PORTSDIR}/multimedia/libtheora
 
@@ -320,6 +323,12 @@ LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 
 CONFIGURE_ARGS+=	--enable-xvid
 .endif
+
+###
+### XXX - PLIST_DIRS come after PLIST entries so some aforementioned
+### entries breaks PLIST
+###
+PLIST_DIRS+=		include/ffmpeg
 
 pre-everything::
 .ifndef(WITHOUT_LIBA52)
@@ -513,18 +522,16 @@ post-patch:
 		-e 's|#include <SDL|#include <SDL11/SDL|'
 .endif
 .ifndef(WITHOUT_POSTPROCESS)
-	@${REINPLACE_CMD} -E \
-		-e 's|^(SPPVERSION).*$$|\1=${SHLIB_VERSION}|' \
-		-e 's|\$$[(]SPPLIB[)].0|$$(SPPLIB).${SHLIB_VERSION}|' \
-		${WRKSRC}/libavcodec/libpostproc/Makefile
-# XXX - libavcodec.so needs libpostproc.so but looks for libpostproc.so.0
-# exists
 	@${LN} -sf libpostproc.so \
 		${WRKSRC}/libavcodec/libpostproc/libpostproc.so.${SHLIB_VERSION}
 .endif
-.ifndef(WITHOUT_BUILTIN_VECTOR)
+.if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
 	@${REINPLACE_CMD} -E \
-		-e 's|^(builtin_vector).*$$|\1=yes|' \
+		-e 's|^([[:space:]]+builtin_vector).*$$|\1=yes|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.else
+	@${REINPLACE_CMD} -E \
+		-e 's|^([[:space:]]+builtin_vector).*$$|\1=no|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
@@ -574,11 +581,14 @@ post-install:
 .endfor
 .for file in ${LIB_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/${file:T}
+	@${LN} -sf ${file:T:R}.so \
+		${PREFIX}/lib/${file:T:R}.so.${SHLIB_VERSION}
 .endfor
 .ifndef(WITHOUT_POSTPROCESS)
-	@${MKDIR} ${PREFIX}/include/ffmpeg/postproc
-	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/postprocess.h \
-		${PREFIX}/include/ffmpeg/postproc/postprocess.h
+# XXX - libavcodec.so needs libpostproc.so but looks for libpostproc.so.0
+# existence instead of libpostproc.so.${SHLIB_VERSION}
+	@${LN} -sf libpostproc.so \
+		${PREFIX}/lib/libpostproc.so.0
 .endif
 
 .include <bsd.port.post.mk>

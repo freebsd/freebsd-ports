@@ -14,7 +14,6 @@ lib/libavcodec.so.%%SHLIB_VERSION%%
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VERSION%%
-lib/libpostproc.a
-lib/libpostproc.so
-lib/libpostproc.so.0
-lib/libpostproc.so.%%SHLIB_VERSION%%
+libdata/pkgconfig/libavcodec.pc
+libdata/pkgconfig/libavformat.pc
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

@@ -1,0 +1,24 @@
+--- libavcodec/libpostproc/Makefile.orig	Thu May 26 13:50:31 2005
++++ libavcodec/libpostproc/Makefile	Thu May 26 14:00:11 2005
+@@ -56,16 +56,14 @@
+ 	install $(INSTALLSTRIP) -m 755 $(SPPLIB) "$(prefix)"
+ else
+ 	install -d $(libdir)
+-	install $(INSTALLSTRIP) -m 755 $(SPPLIB) $(libdir)/$(SPPLIB).$(SPPVERSION)
+-	ln -sf $(SPPLIB).$(SPPVERSION) $(libdir)/$(SPPLIB)
+-	ln -sf $(SPPLIB).$(SPPVERSION) $(libdir)/$(SPPLIB).$(SPPMAJOR)
+-	install -d $(libdir)/pkgconfig
+-	install -m 644 ../../libpostproc.pc $(libdir)/pkgconfig
++	${BSD_INSTALL_DATA} $(SPPLIB) $(libdir)/libpostproc.so
++	install -d $(prefix)/libdata/pkgconfig
++	${BSD_INSTALL_DATA} ../../libpostproc.pc $(prefix)/libdata/pkgconfig
+ 	$(LDCONFIG) || true
+ endif
+ endif
+-	mkdir -p $(prefix)/include/postproc
+-	install -m 644 $(SRC_PATH)/libavcodec/libpostproc/postprocess.h $(prefix)/include/postproc/postprocess.h
++	mkdir -p $(prefix)/include/ffmpeg/postproc
++	${BSD_INSTALL_DATA} $(SRC_PATH)/libavcodec/libpostproc/postprocess.h $(prefix)/include/ffmpeg/postproc/postprocess.h
+ 
+ 
+ #
