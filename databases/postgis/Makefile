@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	databases
-MASTER_SITES=	http://postgis.refractions.net/
+MASTER_SITES=	http://postgis.refractions.net/download/
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
