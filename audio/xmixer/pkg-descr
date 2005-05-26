@@ -12,3 +12,5 @@ uses the Athena toolkit, and xgmixer, based on GTK+.  From the README:
      * Hide devices which you don't want to see.
      * Batch support - just read and evaluate the settings in the
        configuration file.
+
+WWW: http://mpx.freeshell.net/
