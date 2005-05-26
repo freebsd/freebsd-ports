@@ -170,7 +170,7 @@ libmng_PLIST=	libgstmng
 libpng_DEPENDS=	graphics/gstreamer-plugins-libpng
 libpng_PLIST=	libgstpng
 
-libvisual_DEPNDS=	graphics/gstreamer-plugins-libvisual
+libvisual_DEPENDS=	graphics/gstreamer-plugins-libvisual
 
 swfdec_DEPENDS=	graphics/gstreamer-plugins-swfdec
 
