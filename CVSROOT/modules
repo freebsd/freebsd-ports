@@ -7060,6 +7060,7 @@ p5-Carp-Clan	ports/devel/p5-Carp-Clan
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Catalyst	ports/www/p5-Catalyst
 p5-Catalyst-Model-CDBI	ports/www/p5-Catalyst-Model-CDBI
+p5-Catalyst-Model-CDBI-Sweet	ports/www/p5-Catalyst-Model-CDBI-Sweet
 p5-Catalyst-Plugin-FillInForm	ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormValidator	ports/www/p5-Catalyst-Plugin-FormValidator
 p5-Catalyst-Plugin-Prototype	ports/www/p5-Catalyst-Plugin-Prototype
