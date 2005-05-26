@@ -1,5 +1,7 @@
 bin/ggz-txt
 etc/ggz.modules
 lib/ggz/tttxt
+share/applications/ggz-txt.desktop
 share/locale/de/LC_MESSAGES/ggz-txt.mo
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/lib/ggz 2>/dev/null || true
