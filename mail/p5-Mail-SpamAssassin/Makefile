@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
@@ -20,8 +20,7 @@ COMMENT=	A highly efficient mail filter for identifying spam
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
-RUN_DEPENDS=	${BUILD_DEPENDS} \
-		razor-client:${PORTSDIR}/mail/razor-agents
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
@@ -32,6 +31,7 @@ OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		SSL "Build with SSL support for spamd/spamc" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
+		RAZOR "Add Vipul's Razor support" on \
 		SPF_QUERY "Add SPF query support" off \
 		TOOLS "Install SpamAssassin tools" off
 
@@ -60,6 +60,10 @@ USE_SQLDB=	yes
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 USE_SQLDB=	yes
+.endif
+
+.if !defined(WITHOUT_RAZOR)
+RUN_DEPENDS+=	razor-client:${PORTSDIR}/mail/razor-agents
 .endif
 
 .if defined(WITH_TOOLS)
