@@ -1,0 +1,18 @@
+--- xc/config/cf/FreeBSD.cf.orig	Mon May 16 17:11:31 2005
++++ xc/config/cf/FreeBSD.cf	Mon May 16 17:11:58 2005
+@@ -162,11 +162,11 @@
+  *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
+  */
+ #if BuildThreadStubLibrary && (!defined(UseInstalledX11) || !UseInstalledX11)
+-# define CcCmd			$(CLIENTENVSETUP) cc
+-# define CplusplusCmd		$(CLIENTENVSETUP) c++
++# define CcCmd			$(CLIENTENVSETUP) %%CC%%
++# define CplusplusCmd		$(CLIENTENVSETUP) %%CXX%%
+ #else
+-# define CcCmd			cc
+-# define CplusplusCmd		c++
++# define CcCmd			%%CC%%
++# define CplusplusCmd		%%CXX%%
+ #endif
+ 
+ #define CppCmd			/usr/bin/cpp
