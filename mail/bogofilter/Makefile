@@ -23,7 +23,7 @@ LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
 
-CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
+CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]*
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
