@@ -28,7 +28,6 @@
     SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
-    SUBDIR += bogofilter-current
     SUBDIR += bogofilter-qdbm
     SUBDIR += bogofilter-tdb
     SUBDIR += bsfilter
