@@ -1,6 +1,6 @@
 #!/bin/sh
-#
 # $FreeBSD$
+# formerly $ FreeBSD: ports/mail/dspam/files/dspam,v 1.1 2005/05/05 21:03:37 pav Exp $
 #
 
 # PROVIDE: dspam

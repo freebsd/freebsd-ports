@@ -20,7 +20,7 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
 PORTVER_MAJ=	3.4.6
-SNAP_DATE=	.20050512.1145
+SNAP_DATE=	.20050523.0845
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
@@ -104,7 +104,7 @@ STRIP=
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-_UPD_LINE_NO=	6
+_UPD_LINE_NO=	10
 
 CONFLICTS=	dspam-devel-[0-9]*
 
@@ -170,15 +170,12 @@ WITH_DAEMON=	on
 
 .ifdef(WITH_DAEMON)
 CONFIGURE_ARGS+=	--enable-daemon
-RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
-USE_RC_SUBR=	yes
-PLIST_FILES+=	etc/rc.d/dspam${RC_SUFX}
+USE_RC_SUBR=	${PORTNAME}${RC_SUFX}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
-_SED_RC_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
+SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 .else
-_SED_SCRIPT+=	-e ',%%DAEMON%%,D'
+_SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .endif
 
 .if !defined(WITH_GRAHAM_BAYES)
@@ -277,7 +274,7 @@ DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .if defined(WITH_SQLITE3)
 HAVE_SQLITE=	yes
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
-CONFIGURE_ARGS+=        --with-storage-driver=sqlite3_drv
+CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv
 .endif
 
 .if defined(WITH_SQLITE2)
@@ -295,7 +292,7 @@ PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	SQLITE=""
 #_SED_SCRIPT+=	-e '/%%MYSQL%%/D'
 #_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
-#_SED_SCRIPT+=	-e 's,%%SQLITE%%,,g'
+#_SED_SCRIPT+=	-e 's/%%SQLITE%%//g'
 #PKGNAMESUFFIX=	-sqlite2
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
@@ -320,16 +317,18 @@ PLIST_SUB+=	DB4="@comment "
 PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	SQLITE="@comment "
-#_SED_SCRIPT+=	-e 's,%%MYSQL%%,,g'
+#_SED_SCRIPT+=	-e 's/%%MYSQL%%//g'
 #_SED_SCRIPT+=	-e '/%%PGSQL%%/D'
 #_SED_SCRIPT+=	-e '/%%SQLITE%%/D'
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .	if defined(WITH_MYSQL_COMPRESS)
 CONFIGURE_ARGS+=	--enable-client-compression
 .	endif
-_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,mysql,g'
+#_SED_RC_SCRIPT+=		-e 's/%%MYSQL%%/mysql/g'
+SUB_LIST+=	MYSQL=mysql
 .else
-_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,,'
+#_SED_RC_SCRIPT+=		-e 's/%%MYSQL%%//'
+SUB_LIST+=	MYSQL=
 .endif
 
 .if defined(WITH_VIRT_USERS)
@@ -401,7 +400,7 @@ DSPAM_MODE=	4511
 
 .if defined(WITH_POSTFIX_MBC)
 DSPAM_MODE=	4511
-#_SED_SCRIPT+=	-e 's,%%POSTFIX_MBC%%,,g'
+#_SED_SCRIPT+=	-e 's/%%POSTFIX_MBC%%//g'
 .else
 #_SED_SCRIPT+=	-e '/%%POSTFIX_MBC%%/D'
 .endif
@@ -426,8 +425,8 @@ CONFIGURE_ARGS+=--enable-user-logging
 USE_PERL5_RUN=	yes
 PLIST_SUB+=	CGI=""
 CGI_PATH?=	${PREFIX}/www/vhosts/dspam
-_SED_SCRIPT+=	-e 's,%%CGI%%,,g'
-_SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
+_SED_SCRIPT+=	-e 's/%%CGI%%//g'
+_SED_SCRIPT+=	-e 's/%%CGI_PATH%%/${CGI_PATH}/g'
 #SED_FILES=	${LS}  ${WRKSRC}/cgi/*.pl
 #SED_FILES+=	${LS} $PWRKSRC}/cgi/*.cgi
 .else
@@ -524,10 +523,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|WHERE CURRENT_DATE - created_on > 14;|WHERE CURRENT_DATE - created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.pgsql_drv/purge.sql
 	@${REINPLACE_CMD} -e 's|where SYSDATE-created_on > 14|where SYSDATE-created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.ora_drv/purge.sql
 	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge.sql
-.if defined(WITH_DAEMON)
-	@${CP} ${FILESDIR}/dspam.rc ${WRKSRC}
-	@${REINPLACE_CMD} ${_SED_RC_SCRIPT} ${WRKSRC}/dspam.rc
-.endif
 
 pre-configure:
 	@${ECHO_CMD}
@@ -574,9 +569,6 @@ post-install:
 	cd ${WRKSRC}/src/ && \
 		${INSTALL} -o ${DSPAM_OWNER} -g ${DSPAM_GROUP} -m 0640 \
 			dspam.conf.sample ${PREFIX}/etc
-.if defined(WITH_DAEMON)
-	${INSTALL_SCRIPT} ${WRKSRC}/dspam.rc ${RC_DIR}/dspam${RC_SUFX}
-.endif
 
 ########
 # stupid hack until I figure out where/how to patch
