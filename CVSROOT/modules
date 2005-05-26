@@ -821,6 +821,7 @@ brlcad		ports/cad/brlcad
 bro		ports/security/bro
 brs		ports/misc/brs
 brutecopy	ports/net/brutecopy
+bruteforceblocker	ports/security/bruteforceblocker
 bsd-airtools	ports/net-mgmt/bsd-airtools
 bsdbktr_tvtune	ports/multimedia/bsdbktr_tvtune
 bsdftpd-ssl	ports/ftp/bsdftpd-ssl
