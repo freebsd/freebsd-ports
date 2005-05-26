@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liboil
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.schleef.org/liboil/download/
 
@@ -17,6 +17,7 @@ USE_GNOME=	glib20
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--disable-gtk-doc
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
