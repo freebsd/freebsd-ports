@@ -1,11 +1,19 @@
 bin/ggz-config
 bin/ggz-wrapper
+etc/xdg/menus/applications-merged/ggz.merge.menu
+etc/xdg/menus/ggz.menu
 include/ggzcore.h
-include/ggzmod-ggz.h
 include/ggzmod.h
 lib/libggzcore.a
 lib/libggzcore.so
-lib/libggzcore.so.6
+lib/libggzcore.so.7
 lib/libggzmod.a
 lib/libggzmod.so
 lib/libggzmod.so.3
+share/desktop-directories/ggz-games.directory
+share/desktop-directories/ggz.directory
+share/locale/de/LC_MESSAGES/ggz-config.mo
+@unexec rmdir %D/share/desktop-directories 2>/dev/null || true
+@unexec rmdir %D/etc/xdg/menus/applications-merged 2>/dev/null || true
+@unexec rmdir %D/etc/xdg/menus 2>/dev/null || true
+@unexec rmdir %D/etc/xdg 2>/dev/null || true
