@@ -72,6 +72,7 @@ taginfo		CVSROOT taginfo
 4va		ports/graphics/4va
 54321		ports/games/54321
 6tunnel		ports/net/6tunnel
+915resolution	ports/sysutils/915resolution
 9box		ports/x11/9box
 9e		ports/archivers/9e
 9libs		ports/x11-toolkits/9libs
