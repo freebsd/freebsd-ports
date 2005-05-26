@@ -4,7 +4,7 @@ meaning that it can measure the path capacity even when the path is
 significantly loaded. This is crucial, since the hardest paths to measure are
 the heavily loaded ones.
 
-WWW: http://www.cc.gatech.edu/fac/Constantinos.Dovrolis/pathrate.html
+WWW: http://www.pathrate.org
 
-- dikshie
-dikshie@lapi.itb.ac.id 
+Constantine Dovrolis
+dovrolis@cc.gatech.edu
