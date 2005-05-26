@@ -33,11 +33,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 	       	CPPFLAGS="-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}"
-.if defined (WITH_WXGTK)
-CONFIGURE_ARGS+=	--with-wx-config=wxgtk-2.4-config
-PLIST+=		${PKGDIR}/pkg-plist.wxzphoto
-.elif defined (WITH_WXGTK2)
+.if defined (WITH_WXGTK2)
 CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.4-config
+PLIST_FILES+=	bin/wxzphoto
 .else
 CONFIGURE_ARGS+=	--disable-wx
 .endif
