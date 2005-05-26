@@ -208,7 +208,7 @@ do-build:
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
 .else
 	cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
@@ -216,7 +216,7 @@ do-build:
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
 .else
 	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
