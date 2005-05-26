@@ -1,11 +1,11 @@
---- mkoctfile.in.orig	Thu Jan  2 22:55:47 2003
-+++ mkoctfile.in	Wed Oct 22 10:04:01 2003
-@@ -182,7 +182,7 @@
+--- mkoctfile.in.orig	Sun Mar 27 14:13:29 2005
++++ mkoctfile.in	Wed May 25 23:00:43 2005
+@@ -184,7 +184,7 @@
      -D*)
        defs="$defs $1"
      ;;
--    -[lL]*)
-+    -[lL]* | -pthread)
+-    -[lLR]*)
++    -[lLR]* | -pthread)
        ldflags="$ldflags $1"
      ;;
      -M | --depend)
