@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.9
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	irc
 MASTER_SITES=	http://irssi.org/files/
 

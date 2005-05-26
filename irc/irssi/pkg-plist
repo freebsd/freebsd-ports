@@ -1,6 +1,7 @@
 bin/irssi
 etc/irssi.conf
 etc/irssi.conf.sample
+@exec mkdir -p %D/lib/irssi/modules
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.la
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
