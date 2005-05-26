@@ -117,7 +117,6 @@
  34.81095,	-86.70977,	"steve"				# Huntsville, AL, USA
  42.425,	-86.928,	"will"				# West Lafayette, IN, USA
  43.19,		-89.38,		"jlemon"			# Madison, WI, USA
- 35.09,		-89.48,		"petef"				# Memphis, TN, USA
  44.59556,	-93.15372,	"       ,nectar"		# Minneapolis, MN, USA
  44.99,		-93.25,		"mpp,mks"			# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
@@ -147,6 +146,7 @@
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
+ 37.38,		-122.08,	"petef"				# Mountain View, CA, USA
  47.756,	-122.14,	"seanc"				# Shoreline, WA, USA
  37.55,		-122.26,	"terry"				# Foster City, CA, USA
  37.887398,	-122.264896,	"gsutter"			# Berkeley, CA, USA
