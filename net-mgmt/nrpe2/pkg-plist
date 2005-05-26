@@ -1,4 +1,0 @@
-sbin/nrpe2
-etc/nrpe.cfg-sample
-etc/rc.d/nrpe.sh
-libexec/nagios/check_nrpe2

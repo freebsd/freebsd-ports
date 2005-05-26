@@ -7,7 +7,7 @@
 
 PORTNAME=		nrpe2
 PORTVERSION=		2.0
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		net-mgmt
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
@@ -20,6 +20,11 @@ RUN_DEPENDS=		${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagi
 
 GNU_CONFIGURE=		yes
 USE_PERL5_BUILD=	yes
+USE_REINPLACE=		yes
+
+USE_RC_SUBR=		nrpe2.sh
+
+PLIST_FILES=		sbin/nrpe2 etc/nrpe.cfg-sample libexec/nagios/check_nrpe2
 
 CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/libexec/nagios --bindir=${PREFIX}/sbin --sysconfdir=${PREFIX}/etc
 
@@ -43,6 +48,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe2
 	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${PREFIX}/libexec/nagios/check_nrpe2
 	${INSTALL_DATA} ${WRKSRC}/nrpe.cfg ${PREFIX}/etc/nrpe.cfg-sample
-	${INSTALL_SCRIPT} ${WRKSRC}/init-script.freebsd ${PREFIX}/etc/rc.d/nrpe.sh
 
 .include <bsd.port.post.mk>

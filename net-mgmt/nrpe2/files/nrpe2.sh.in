@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nrpe2
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nrpe2:
+#
+#nrpe2_enable="YES"
+#
+#
+
+. %%RC_SUBR%%
+
+name=nrpe2
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/nrpe2"
+required_files=%%PREFIX%%/etc/nrpe.cfg
+command_args="-c ${required_files} -d"
+pidfile=/var/run/${name}.pid
+
+# set defaults
+
+nrpe2_enable=${nrpe2_enable:-"NO"}
+nrpe2_flags=${nrpe2_flags:-""}
+
+load_rc_config ${name}
+run_rc_command "$1"
