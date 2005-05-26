@@ -1,0 +1,5 @@
+The Digest::SHA256 module allows you to use the NIST SHA 256/384/512 hash
+algorithms in your Perl code. Performance is optimized via the usage of XS
+code.
+
+WWW: http://search.cpan.org/search?dist=SHA256
