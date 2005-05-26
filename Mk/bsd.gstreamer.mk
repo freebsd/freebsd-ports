@@ -185,7 +185,7 @@ ffmpeg_DEPENDS=	multimedia/gstreamer-ffmpeg
 libcaca_PLIST=	libgstcacasink
 
 dv_DEPENDS=	multimedia/gstreamer-plugins-dv
-dv_PLIST=	libgstdv
+dv_PLIST=	libgstdvdec
 
 dvd_DEPENDS=	multimedia/gstreamer-plugins-dvd
 dvd_PLIST=	libgstdvdnavsrc
