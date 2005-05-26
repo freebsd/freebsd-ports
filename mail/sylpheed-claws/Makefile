@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	1.0.4a
+PORTVERSION=	1.9.11
 #PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
-#DISTNAME=	sylpheed-${PORTVERSION}claws
 DISTFILES=	${EXTRACT_ONLY} \
 		${THEMEFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -30,11 +29,21 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
-USE_GNOME=	gnomehack pkgconfig gtk12
+USE_GNOME=	gnomehack pkgconfig gtk20
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
 
 MAN1=		sylpheed-claws.1
+
+CONFIGURE_ARGS=	--program-suffix="-claws" --enable-ipv6 \
+		--with-libiconv-prefix=${LOCALBASE}
+
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES=		${FILESDIR}/extra-doc:Makefile.in
@@ -42,8 +51,10 @@ EXTRA_PATCHES=		${FILESDIR}/extra-doc:Makefile.in
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=		yes
-CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
+CONFIGURE_ARGS+=	--enable-openssl --with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libs=${OPENSSLLIB}
+.else
+CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .include <bsd.port.pre.mk>
@@ -66,28 +77,17 @@ PLIST_SUB+=	GNOME=""
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-CONFIGURE_ARGS+=	--program-suffix="-claws" --enable-ipv6
-
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
 .if exists(${LOCALBASE}/include/clamav.h)
 WITH_CLAMAV=		yes
 .endif
 
 .if defined(WITH_CLAMAV) || defined(WITH_ALL)
+CONFIGURE_ARGS+=	--enable-clamav
 PLIST_SUB+=		CLAM_PLUG=""
 BUILD_DEPENDS=	   	${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 PLIST_SUB+=		CLAM_PLUG="@comment "
-.endif
-.if defined(WITH_PIXBUF) || defined(WITH_ALL)
-USE_GNOME+=		gdkpixbuf
-CONFIGURE_ARGS+=	--disable-imlib
-.else
-USE_GNOME+=		imlib
-CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 .if defined(WITH_COMPFACE) || defined(WITH_ALL)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
@@ -96,6 +96,7 @@ CONFIGURE_ARGS+=	--enable-compface
 CONFIGURE_ARGS+=	--disable-compface
 .endif
 .if defined(WITH_JCONV) || defined(WITH_ALL)
+CONFIGURE_ARGS+=	--enable-jconv
 LIB_DEPENDS+=		jconv.0:${PORTSDIR}/japanese/libjconv
 .else
 CONFIGURE_ARGS+=	--disable-jconv
@@ -103,6 +104,8 @@ CONFIGURE_ARGS+=	--disable-jconv
 .if defined(WITH_ASPELL) || defined(WITH_ALL)
 LIB_DEPENDS+=		pspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--enable-aspell
+.else
+CONFIGURE_ARGS+=	--disable-aspell
 .endif
 .if defined(WITH_JPILOT) || defined(WITH_ALL)
 LIB_DEPENDS+=		pisock.8:${PORTSDIR}/palm/pilot-link
@@ -114,32 +117,30 @@ CONFIGURE_ARGS+=	--disable-jpilot
 .if defined(WITH_LDAP) || defined(WITH_ALL)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
+.else
+CONFIGURE_ARGS+=	--enable-ldap
 .endif
 .if defined(WITH_SA_PLUG) || defined(WITH_ALL)
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin-plugin
 PLIST_SUB+=		SA_PLUG=""
 .else
+CONFIGURE_ARGS+=	--disable-spamassassin-plugin
 PLIST_SUB+=		SA_PLUG="@comment "
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
-PLIST_SUB+=            GPGME=""
-LIB_DEPENDS+=          gpgme03.9:${PORTSDIR}/security/gpgme03
-RUN_DEPENDS+=          gpg:${PORTSDIR}/security/gnupg
+PLIST_SUB+=		GPGME=""
+CONFIGURE_ARGS+=	--enable-pgpmime-plugin
+LIB_DEPENDS+=		gpgme03.9:${PORTSDIR}/security/gpgme03
+RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 .else
-PLIST_SUB+=           GPGME="@comment "
-CONFIGURE_ARGS+=      --disable-pgpmime-plugin
+PLIST_SUB+=		GPGME="@comment "
+CONFIGURE_ARGS+=	--disable-pgpmime-plugin
 .endif
 .if defined(WITHOUT_THEMES)
 PLIST_SUB+=	THEMES="@comment "
 .else
 PLIST_SUB+=	THEMES=""
-.endif
-.if defined(WITHOUT_IMAGE)
-PLIST_SUB+=	IMAGE="@comment "
-CONFIGURE_ARGS+=	--disable-image-viewer-plugin
-.else
-PLIST_SUB+=	IMAGE=""
 .endif
 
 pre-everything::
@@ -148,7 +149,6 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "      WITH_ALL       Enable all options below"
 	@${ECHO} ""
-	@${ECHO} "      WITH_PIXBUF    Enable GDK Pixbuf support"
 	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
 	@${ECHO} "      WITH_GPGME     Build the pgpmime plugin"
 	@${ECHO} "      WITH_JCONV     Enable enhanced charset conversion"
@@ -159,7 +159,6 @@ pre-everything::
 	@${ECHO} "      WITH_CLAMAV    Build Clamav antivirus plugin"
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
-	@${ECHO} "      WITHOUT_IMAGE  Disable internal image viewer"
 	@${ECHO} "      WITHOUT_THEMES Don't install additional themes"
 	@${ECHO} ""
 
@@ -176,7 +175,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@SYLPHEED_GNOME:#@SYLPHEED_GNOME:g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's:%%OPENSSL_LIBS%%:"-lssl -lcrypto":g' ${WRKSRC}/configure
 	@for f in `${FIND} ${WRKSRC}/tools -type f -print`; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
 #	@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
