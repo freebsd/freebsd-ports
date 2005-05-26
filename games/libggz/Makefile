@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libggz
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.11
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
