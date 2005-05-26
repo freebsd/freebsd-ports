@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sketchy
-PORTVERSION=	20050512
+PORTVERSION=	20050526
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://www.t3x.org/sketchy/
 
 MAINTAINER=	nmh@t3x.org
-COMMENT=	An interpreter for purely symbolic LISP that smells like Scheme
+COMMENT=	An interpreter for a purely applicative dialect of Scheme
 
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
 
