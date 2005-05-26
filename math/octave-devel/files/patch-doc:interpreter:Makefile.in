@@ -1,11 +1,11 @@
---- doc/interpreter/Makefile.in.orig	Thu Feb 27 05:55:47 2003
-+++ doc/interpreter/Makefile.in	Tue Jun 10 01:26:37 2003
-@@ -87,7 +87,7 @@
+--- doc/interpreter/Makefile.in.orig	Wed May 25 22:21:11 2005
++++ doc/interpreter/Makefile.in	Wed May 25 22:21:04 2005
+@@ -89,7 +89,7 @@
  	@$(top_srcdir)/move-if-change $@.t $@
  
  octave.info: $(MAIN_TEXINFO) $(SUB_TEXINFO) ../conf.texi
--	-makeinfo -I$(srcdir) -I$(srcdir)/.. $<
-+	-makeinfo --no-split -I$(srcdir) -I$(srcdir)/.. $<
+-	-$(MAKEINFO) -I$(srcdir) -I$(srcdir)/.. $<
++	-$(MAKEINFO) --no-split -I$(srcdir) -I$(srcdir)/.. $<
  
  octave.dvi: $(MAIN_TEXINFO) $(SUB_TEXINFO) ../conf.texi
  	-TEXINPUTS="$(srcdir):$(srcdir)/..:$(TEXINPUTS):"; \
