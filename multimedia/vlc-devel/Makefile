@@ -746,7 +746,7 @@ CONFIGURE_ENV+=	LIBS="-L/usr/lib -lcipher"
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Take a careful look at the beginning of the Makefile in order"
-	@${ECHO_MSG} "to learn how to tune VLC towards you personal preferences!"
+	@${ECHO_MSG} "to learn how to tune VLC to your personal preferences!"
 	@${ECHO_MSG} ""
 
 post-patch:
