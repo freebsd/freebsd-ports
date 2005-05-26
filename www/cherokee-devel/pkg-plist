@@ -10,10 +10,12 @@ etc/cherokee/sites-available/default
 etc/cherokee/sites-available/example.com
 etc/cherokee/sites-enabled/default
 %%PAM5%%etc/pam.d/cherokee
+include/cherokee/admin_client.h
 include/cherokee/buffer.h
 include/cherokee/cherokee-config.h
 include/cherokee/cherokee.h
 include/cherokee/common.h
+include/cherokee/config_value.h
 include/cherokee/connection.h
 include/cherokee/downloader.h
 include/cherokee/encoder.h
@@ -32,18 +34,22 @@ include/cherokee/server.h
 include/cherokee/table.h
 include/cherokee/url.h
 include/cherokee/util.h
+lib/cherokee/libplugin_admin.so
 lib/cherokee/libplugin_cgi.so
 lib/cherokee/libplugin_combined.so
 lib/cherokee/libplugin_common.so
 lib/cherokee/libplugin_dirlist.so
 lib/cherokee/libplugin_error_redir.so
+lib/cherokee/libplugin_fastcgi.so
 lib/cherokee/libplugin_file.so
 lib/cherokee/libplugin_gzip.so
+lib/cherokee/libplugin_htdigest.so
 lib/cherokee/libplugin_ncsa.so
 lib/cherokee/libplugin_nn.so
 %%PAM%%lib/cherokee/libplugin_pam.so
 lib/cherokee/libplugin_phpcgi.so
 lib/cherokee/libplugin_plain.so
+lib/cherokee/libplugin_read_config.so
 lib/cherokee/libplugin_redir.so
 lib/cherokee/libplugin_remote_control.so
 lib/cherokee/libplugin_server_info.so
@@ -54,6 +60,9 @@ lib/libcherokee-base.so.0
 lib/libcherokee-client.a
 lib/libcherokee-client.so
 lib/libcherokee-client.so.0
+lib/libcherokee-config.a
+lib/libcherokee-config.so
+lib/libcherokee-config.so.0
 lib/libcherokee-server.a
 lib/libcherokee-server.so
 lib/libcherokee-server.so.0
@@ -85,6 +94,10 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/icons/text.png
 %%DATADIR%%/icons/unknown.png
 %%DATADIR%%/mime_types.txt
+www/images/cherokee-logo.png
+www/images/powered_by_cherokee.png
+www/images/top-layer.png
+www/index.html
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/deps
 @dirrm %%DATADIR%%
@@ -96,4 +109,5 @@ share/aclocal/cherokee.m4
 @dirrm etc/cherokee/mods-enabled
 @dirrm etc/cherokee/mods-available
 @dirrm etc/cherokee
-@unexec rmdir %%LOCALBASE%%/www/data 2>/dev/null || true
+@unexec rmdir %D/www/images 2>/dev/null || true
+@unexec rmdir %D/www/data 2>/dev/null || true
