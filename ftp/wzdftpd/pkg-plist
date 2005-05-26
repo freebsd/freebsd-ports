@@ -20,6 +20,7 @@ include/wzdftpd/libwzd-auth/wzd_crypt.h
 include/wzdftpd/libwzd-auth/wzd_md5.h
 include/wzdftpd/libwzd-auth/wzd_md5crypt.h
 include/wzdftpd/libwzd-auth/wzd_pam.h
+include/wzdftpd/libwzd-auth/wzd_sha1.h
 include/wzdftpd/libwzd-auth/wzd_tls.h
 include/wzdftpd/libwzd-base/hash.h
 include/wzdftpd/libwzd-base/list.h
@@ -42,6 +43,7 @@ include/wzdftpd/wzd_data.h
 include/wzdftpd/wzd_debug.h
 include/wzdftpd/wzd_dir.h
 include/wzdftpd/wzd_file.h
+include/wzdftpd/wzd_fs.h
 include/wzdftpd/wzd_hardlimits.h
 include/wzdftpd/wzd_ip.h
 include/wzdftpd/wzd_libmain.h
