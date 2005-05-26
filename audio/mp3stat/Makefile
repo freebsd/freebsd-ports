@@ -57,7 +57,7 @@ PORTDOCS=	README
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@$${CXX}|$${CXX}|g ; \
-		 s|-ldl||g ; \
+		 s|-ldl|-lz|g ; \
 		 s|-lc||g ; \
 		 s|-Wl,-soname,.*\.so\.1||g ; \
 		 s|-fpic|-fPIC|g'
