@@ -311,6 +311,7 @@
     SUBDIR += p5-Digest-Nilsimsa
     SUBDIR += p5-Digest-SHA1
     SUBDIR += p5-Digest-SHA2
+    SUBDIR += p5-Digest-SHA256
     SUBDIR += p5-Email-Obfuscate
     SUBDIR += p5-File-Scan
     SUBDIR += p5-Filter-CBC

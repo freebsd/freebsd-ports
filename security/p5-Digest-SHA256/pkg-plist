@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Digest/SHA256.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Digest/SHA256.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Digest/sha256.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA256/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA256/SHA256.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA256/SHA256.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA256/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA256
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Digest 2>/dev/null || true
