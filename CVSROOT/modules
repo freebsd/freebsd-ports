@@ -8149,6 +8149,7 @@ p5-Sledge-Plugin-SessionAutoCleanup	ports/www/p5-Sledge-Plugin-SessionAutoCleanu
 p5-Sledge-Plugin-XSLT	ports/www/p5-Sledge-Plugin-XSLT
 p5-Sledge-SessionManager-CookieStore	ports/www/p5-Sledge-SessionManager-CookieStore
 p5-Sledge-Template-Expr	ports/www/p5-Sledge-Template-Expr
+p5-Smart-Comments	ports/devel/p5-Smart-Comments
 p5-Socket6	ports/net/p5-Socket6
 p5-Socks	ports/net/p5-Socks
 p5-Sort-ArbBiLex	ports/textproc/p5-Sort-ArbBiLex
