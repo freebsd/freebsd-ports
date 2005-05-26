@@ -7,20 +7,21 @@
 #
 
 PORTNAME=	feedonfeeds
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.9
 CATEGORIES=	www
-MASTER_SITES=	http://minutillo.com/steve/feedonfeeds/
+MASTER_SITES=	http://feedonfeeds.com/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side personal RSS (and Atom) aggregator
 
-USE_PHP=	yes
+USE_PHP=	mysql xml
 WANT_PHP_WEB=	yes
 USE_MYSQL=	yes
 NO_BUILD=	yes
 DATADIR?=	${PREFIX}/www/data/feedonfeeds
 
 do-install:
+	${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/ ${DATADIR}
 
 .include <bsd.port.mk>
