@@ -1,0 +1,8 @@
+===>  CONFIGURATION NOTE:
+
+To setup bruteforceblocker, you should check main script
+located at %%PREFIX%%/bin/bruteforceblocker.pl
+
+when you are done, you will also need to add to /etc/rc.conf
+bruteforceblocker_enable="YES", so you will be able to start
+bruteforceblocker via rcNG script.

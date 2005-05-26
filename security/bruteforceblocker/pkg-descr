@@ -1,0 +1,10 @@
+BruteForceBlocker is a script, that works along with pf - OpenBSD's firewall.
+When this script is running, it checks sshd's auth log for Failed Password
+attempts and counts it's number. When given IP reaches specified number of
+fails, script adds this IP to the pf's table and block any other traffic to
+the given box. If you are bored of those automated auth tries, you will be
+happy with this script. It also includes a simple rc script.
+
+WWW: http://danger.rulez.sk/projects/bruteforceblocker/
+
+- Daniel Gerzo <danger@rulez.sk>
