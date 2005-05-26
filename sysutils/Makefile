@@ -4,6 +4,7 @@
     COMMENT = System utilities
 
     SUBDIR += 3dm
+    SUBDIR += 915resolution
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += Tee
