@@ -14,7 +14,10 @@ MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Provides an API to execute callback functions on certain events
 
 GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 USE_REINPLACE=	yes
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 MAN3=	event.3
 MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_loop.3 \

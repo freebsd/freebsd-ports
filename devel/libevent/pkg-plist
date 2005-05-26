@@ -1,2 +1,5 @@
-lib/libevent.a
 include/event.h
+lib/libevent-%%PORTVERSION%%.so
+lib/libevent-%%PORTVERSION%%.so.1
+lib/libevent.a
+lib/libevent.so
