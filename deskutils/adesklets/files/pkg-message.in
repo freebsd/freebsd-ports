@@ -1,0 +1,11 @@
+
+--------------------------------------------------------------------------
+adesklets comes without any desklet by default. Desklets are intended to 
+be installed by user, so there are no ports for them. They all are 
+availbe here: http://adesklets.sourceforge.net/desklets.html
+
+Read documentation: %%DOCSDIR%% 
+(unless build with NOPORTDOCS) or http://adesklets.sourceforge.net/doc/en/ 
+to know how to install it.
+--------------------------------------------------------------------------
+

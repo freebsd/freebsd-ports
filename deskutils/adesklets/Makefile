@@ -25,4 +25,19 @@ MAN1=		adesklets.1
 INFO=		adesklets \
 		adesklets_fr
 
+SUB_FILES=	pkg-message
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*.html
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/html/en/${i} ${DOCSDIR}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
