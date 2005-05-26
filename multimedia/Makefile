@@ -41,6 +41,7 @@
     SUBDIR += gstreamer-editor
     SUBDIR += gstreamer-ffmpeg
     SUBDIR += gstreamer-plugins
+    SUBDIR += gstreamer-plugins-all
     SUBDIR += gstreamer-plugins-core
     SUBDIR += gstreamer-plugins-dirac
     SUBDIR += gstreamer-plugins-dts
