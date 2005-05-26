@@ -1,0 +1,15 @@
+Smart comments provide an easy way to insert debugging and tracking code into
+a program. They can report the value of a variable, track the progress of a
+loop, and verify that particular assertions are true.
+
+Best of all, when you're finished debugging, you don't have to remove them.
+Simply commenting out the use Smart::Comments line turns them back into
+regular comments. Leaving smart comments in your code is smart because if you
+needed them once, you'll almost certainly need them again later.
+
+Author: Damian Conway <DCONWAY@cpan.org>
+
+WWW: http://search.cpan.org/dist/Smart-Comments/
+
+- Aaron Dalton
+aaron@daltons.ca
