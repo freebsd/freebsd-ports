@@ -3,7 +3,6 @@ AleVT - By Edgar Toernig
     This X11 program decodes and displays Videotext/Teletext read from
     a /dev/vbi device (for example the Bt848/Bt878 frame grabber)
 
-
     It features multiple windows, a page cache, regexp searching, built-in
     manual, and more.
     There's also a program to get the time from teletext.

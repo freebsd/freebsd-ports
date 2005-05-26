@@ -1,8 +1,8 @@
 bin/alevt
 bin/alevt-date
 bin/alevt-cap
-share/alevt/icon-old.xbm
-share/alevt/icon48x48.xpm
-share/alevt/icon54x60.xpm
-share/alevt/mini-alevt.xpm
-@dirrm share/alevt
+%%DATADIR%%/icon-old.xbm
+%%DATADIR%%/icon48x48.xpm
+%%DATADIR%%/icon54x60.xpm
+%%DATADIR%%/mini-alevt.xpm
+@dirrm %%DATADIR%%
