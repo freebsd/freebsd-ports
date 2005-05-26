@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/
 
