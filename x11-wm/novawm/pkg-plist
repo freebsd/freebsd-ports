@@ -1,7 +1,0 @@
-bin/novawm
-%%PORTDOCS%%share/doc/novawm/AUTHORS
-%%PORTDOCS%%share/doc/novawm/ChangeLog
-%%PORTDOCS%%share/doc/novawm/INSTALL
-%%PORTDOCS%%share/doc/novawm/README
-%%PORTDOCS%%share/doc/novawm/TODO
-%%PORTDOCS%%@dirrm share/doc/novawm

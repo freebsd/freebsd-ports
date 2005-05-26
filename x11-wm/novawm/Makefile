@@ -1,4 +1,4 @@
-# New ports collection makefile for:	novawm
+# New ports collection makefile for:	NovaWM
 # Date created:				20 June 2002
 # Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
@@ -38,5 +38,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+
+pre-clean:
+	@${CHMOD} -R +w ${WRKSRC}/src/xpm/.xvpics
+	@${CHMOD} -R +w ${WRKSRC}/.xvpics
 
 .include <bsd.port.mk>
