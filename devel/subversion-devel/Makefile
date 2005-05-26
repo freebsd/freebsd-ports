@@ -273,7 +273,7 @@ pre-extract:
 	@${ECHO_MSG} "You can install the Subversion Book by defining WITH_BOOK."
 .endif
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "May useful scripts will be installed into ${PREFIX}/share/subversion"
+	@${ECHO_MSG} "Many useful scripts will be installed into ${PREFIX}/share/subversion"
 
 post-extract:
 	@${RM} -r ${WRKSRC}/neon
