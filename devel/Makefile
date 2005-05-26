@@ -1054,6 +1054,7 @@
     SUBDIR += p5-Shape
     SUBDIR += p5-Shell-Base
     SUBDIR += p5-Shell-Parser
+    SUBDIR += p5-Smart-Comments
     SUBDIR += p5-Sort-ArrayOfArrays
     SUBDIR += p5-Sort-Tree
     SUBDIR += p5-Sort-Versions

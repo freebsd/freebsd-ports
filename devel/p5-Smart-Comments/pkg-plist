@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Smart/Comments.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Smart/Comments/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Smart/Comments
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Smart 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Smart 2>/dev/null || true
