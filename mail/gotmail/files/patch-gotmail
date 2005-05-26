@@ -1,0 +1,264 @@
+--- gotmail.orig	Sun Oct 10 19:42:31 2004
++++ gotmail	Thu May 26 14:28:27 2005
+@@ -197,7 +197,7 @@
+ #    and also to Tim Dijkstra. -pik-
+ 
+ sub parseConfig {
+-	if ("@ARGV" =~ /(\s|^)(-c|--config-file)\ ([\w\.~\/\-]*)(\s|$)/i) {
++	if ("@ARGV" =~ /(\s|^)(-c|--config-file)\ ([\w\.~\/\-\@]*)(\s|$)/i) {
+ 		$conf_file = $3;
+ 		if (! -r $conf_file) {
+ 			die "Config file <$conf_file> is not readable!\n";
+@@ -578,7 +578,7 @@
+ 	# Get rid of any trailing space on options.. Just for neatness.
+ 	$options =~ s/ $//;
+ 
+-	my($cmdline) = "$conf_curl \"$url\" $options -i -m 600 -D $tmp_headers" .
++	my($cmdline) = "$conf_curl \'$url\' $options -i -m 600 -D $tmp_headers" .
+ 	               " -A \"Mozilla/4.73 [en] (Win98; I)\"";
+ 
+ 	# Copy output to logfile if necessary
+@@ -627,25 +627,23 @@
+ {
+ 	dispText("Getting hotmail index page...\n");
+ 	my(@index_page);     ## This will have the login page.
+-	my($form_label);
+ 
+-	my(@java_page) = getPage("http://www.hotmail.com/", "", 1, 1, 0);
+-	## @java_page is now an intermediate page which checks if you
+-	## have javascript enabled or not!!
+-	my($page) = join("", @java_page);
+-
+-	my($check_java);
+-	if($page =~ m/<form.*hiddenform.*action=\"(\S+)\".*>/i) {
+-		$check_java = $1;
+-	}
+-	if ($check_java) {
++	@index_page = getPage("http://www.hotmail.com/", "", 1, 1, 0);
++	my($page) = join("", @index_page);
++
++	## @index_page is now an intermediate page which checks if you
++	## have javascript enabled or not!! This code invokes the form
++  ## on that page to get you to the login/password page.
++	if($page =~ m/<form.*((hiddenform)|(fmHF)).*action=\"(\S+)\".*>/i) {
++    my $action = $4;
++
+ 		## This processing happens only for the "new" hotmail structure.
+ 		dispText("Processing java check....\n");
+ 		my($inp);      ## This var will store all the input fields.
+-		while($page =~ m/<\s*input\s+.*name=\"(\S+)\"\s+value=\"(\S+)\"/) {
+-			$inp .= "$1=$2\&";
++		while($page =~ m/<\s*input\s+.*name=\"(\S+)\"(\s+id="\S+")?\s+value=\"(\S*)\"/) {
+ 			## Get rid of the input field we processed.
+-			$page =~ s/<\s*input/some_weird_unique_value_jsdahf/;
++			$page = $';
++			$inp .= "$1=" . uri_escape($3) . "\&";
+ 		}
+ 		## Get rid of the last "&"
+ 		$inp =~ s/&$//g;
+@@ -658,52 +656,100 @@
+ 		my($params) = "\@$tmp_formdata";
+ 
+ 		## Hopefully this should get us to the correct index page.
+-		@index_page = getPage($check_java, $params, 1, 1, 0);
+-		$form_label = "hotmail_com";
+-	}
+-	else {
+-		## The "old" hotmail page structure
+-		@index_page = @java_page;
+-		$form_label = "";
++		@index_page = getPage($action, $params, 1, 1, 0);
++		$page = join "", @index_page;
+ 	}
+ 
+ 	# Find the form "ACTION" parameter...
+-	my($login_script) = "";
+-	my($ctnum) = "";
++	my($login_script);
++  my($login_new) = 0;
+ 
+-	my $page = join "", @index_page;
+-	if ($page =~ m/<form.*${form_label}.*action=\"(\S+)\".*>/i) {
++  # Old - multiple forms for multiple domains
++	if ($page =~ m/<form.*hotmail_com.*action=\"(\S+)\".*>/i) {
+ 		$login_script = $1;
+ 	}
+-
+-	if ($page =~ m/ct=([0-9]+)/i) {
+-		$ctnum = uri_escape($1);
++  # New - heavy javascript
++	elsif ($page =~ m/<form.*f1.*action=\"(\S+)\".*>/i) {
++		$login_script = $1;
++		$login_new = 1;
+ 	}
+-
+-	if ($login_script eq "") {
+-		die "Page doesn't contain any form action field!\n";
++  # Very old - simple form
++	elsif ($page =~ m/<form.*action=\"(\S+)\".*>/i) {
++		$login_script = $1;
+ 	}
++  else {
++		die "Page doesn't contain any form action field!\n";
++  }
+ 
+ 	my($FORMFILE) = new FileHandle "> $tmp_formdata" ||
+ 	                        die "Couldn't open formdata file: $!\n";
+-	print $FORMFILE ("login=" . uri_escape($login, "^A-Za-z") .
+-	                 "\&passwd=" . uri_escape($password, "^A-Za-z") .
+-	                 "\&svc=mail\&mspp_shared=1" .
+-	                 "\&domain=" . uri_escape($domain) .
+-	                 "\&RemoteDAPost=https://login.msnia.passport.com/ppsecure/post.asp" .
+-	                 "\&sec=share\&curmbox=ACTIVE\&js=yes\&_lang=EN" .
+-	                 "\&beta=0\&ishotmail=1\&id=2\&fs=1" .
+-	                 "\&cb=_lang%3dEN%26country%3dUS\&ct=$ctnum");
++
++  if( $login_new ) {
++		dispText("Using New Login...\n");
++
++    ## The actual action of the form is replace by javascript
++    ## (authentication depends on the domain of your user id).
++    ## and arguments are appended in javascript
++		if( $page =~ m/g_DO\["\Q$domain\E"\]\s*=\s*"([^"]+)\"/ ) {
++			$login_script = $1;
++			#dispText( "g_DO=$1\n" );
++		}
++		if( $page =~ m/g_QS\s*=\s*"([^"]+)\"/ ) {
++			$login_script .= index($login_script,'?') >= 0 ? '&' : '?';
++			$login_script .= $1;
++			#dispText( "g_QS=$1\n" );
++		}
++
++    ## Get (or calculate) the hidden fields of the form 
++		my ( $PPFT, $PPSX, $PwdPad );
++    {
++			if( $page =~ m/<\s*input\s+.*name=\"PPFT\"(\s+id="\S+")?\s+value=\"(\S*)\"/ ) {
++				$PPFT = $2;
++				#dispText( "PPFT=$PPFT\n" );
++			}
++			if( $page =~ m/<\s*input\s+.*name=\"PPSX\"(\s+id="\S+")?\s+value=\"(\S*)\"/ ) {
++				$PPSX = $2;
++				#dispText( "PPSX=$PPSX\n" );
++			}
++			{
++				my $Padding = "IfYouAreReadingThisYouHaveTooMuchFreeTime";
++				$PwdPad = substr( $Padding, 0, length($Padding)-length($password) ); 
++				#dispText( "PwdPad=$PwdPad\n" );
++			}
++		}
++
++		print $FORMFILE ("PPSX=$PPSX" .
++										 "\&PwdPad=$PwdPad" .
++										 "\&login=" . uri_escape($login . '@' . $domain, "^A-Za-z") .
++										 "\&passwd=" . uri_escape($password, "^A-Za-z") .
++										 "\&SI=" . uri_escape( '    Sign In    ' ) . 
++										 "\&LoginOptions=3" .
++										 "\&PPFT=" . uri_escape( $PPFT ) );
++  } else {
++		dispText("Using Old Login...\n");
++		my($ctnum) = "";
++		if ($page =~ m/ct=([0-9]+)/i) {
++			$ctnum = uri_escape($1);
++		}
++		print $FORMFILE ("login=" . uri_escape($login, "^A-Za-z") .
++										 "\&passwd=" . uri_escape($password, "^A-Za-z") .
++										 "\&svc=mail\&mspp_shared=1" .
++										 "\&domain=" . uri_escape($domain) .
++										 "\&RemoteDAPost=https://login.msnia.passport.com/ppsecure/post.asp" .
++										 "\&sec=share\&curmbox=ACTIVE\&js=yes\&_lang=EN" .
++										 "\&beta=0\&ishotmail=1\&id=2\&fs=1" .
++										 "\&cb=_lang%3dEN%26country%3dUS\&ct=$ctnum");
++  }
+ 
+ 	close $FORMFILE;
+ 	my($params) = "\@$tmp_formdata";
+ 
+ 	dispText("Logging in...\n");
+ 	my(@login_page) = getPage($login_script, $params, 1, 1, 0);
++	$page = join "", @login_page;
+ 
+ 	# Find where they are sending us now...
+ 	my($redirect_location) = "";
+-	$page = join "", @login_page;
+ 
+ # Now not needed per Chris Ebenezer's comments
+ #	if ($domain eq 'msn.com') {
+@@ -724,8 +770,9 @@
+ 
+ 	if ($page =~ m/top\.location\.replace\(\"(.*)\"\);/i) {
+ 		$redirect_location = $1;
+-		$redirect_location =~ s/\$/\\\$/g;
+-	}
++	} elsif ($page =~ m/meta\s*http-equiv="refresh"\s*content="0;\s*URL=([^"]+)"/i ) {
++    $redirect_location = $1;
++  }
+ 
+ 	if ($redirect_location eq "") {
+ 		die("Hotmail's page structure has changed! (redirloc)\n");
+@@ -737,30 +784,32 @@
+ 	if ($redirect_location =~ m/http:\/\/([^\/]+)\/(.*)$/i) {
+ 		$host = $1;
+ 	} else {
+-		die ("Could not parse redirect location");
++		die ("Could not parse redirect location\n");
+ 	}
+ 
+ 	dispText("Following redirect...\n");
+ 	my(@redirect_page) = getPage($redirect_location, "", 0, 1, 0);
++	$page = join "", @redirect_page;
+ 
+ 	# Find where the inbox is located...
+-	my($inbox_location) = "";
+-	$page = join "", @redirect_page;
++	my($inbox_location);
+ 	if ($page =~ m/Location: (\S+)/i) {
+ 		my $inbox_loc = $1;
++    if ($inbox_loc =~ m/\&RedirectLocation=(http[^\&]+)\&/i) {
++      $inbox_loc = uri_unescape($1);
++    }
+ 		$inbox_loc =~ /(.+)\/dasp\/ua_info.asp\?pg=browser_limit[^&]*(&.+)/;
+ 		$inbox_location = "$1\/HoTMail";
+-	  dispText("Going to Inbox Page: $inbox_location\n");
+-	  my(@redirect_page) = getPage($inbox_location, "", 1, 1, 0);
+ 	} elsif ($page =~ /unavailable/i) {
+ 		die("Hotmail is reporting that your account is temporarily " .
+-		    "unavailable. Please try again later.");
+-	}
+-
+-	if ($inbox_location eq "") {
++		    "unavailable. Please try again later.\n");
++	} else {
+ 		die("Hotmail's page structure has changed! (inboxloc)\n");
+ 	}
+ 
++	dispText("Going to Inbox Page: $inbox_location\n");
++	getPage($inbox_location, "", 1, 1, 0);
++
+ 	return $inbox_location;
+ }
+ 
+@@ -1008,7 +1057,7 @@
+ 				open PR,"|" . $conf_procmail_bin;
+ 				print PR $output;
+ 				close PR;
+-				print "Done.\n";
++				dispText("Done.\n");
+ 			}
+ 			elsif ($resend_address eq "") {
+ 				my($output) = $Message;
+@@ -1123,13 +1172,13 @@
+ 	if ($conf_movespam) {
+     # Figure out the ID of the Spam folder
+     $spam_folder_id = getFolderId($host, $folder_index_url, $conf_movespam);
+-    print "\$spam_folder_id->".$spam_folder_id."\n";
++    dispText("\$spam_folder_id->".$spam_folder_id."\n");
+   }
+ 
+ 	if ($conf_move_messages_after_download) {
+     # Figure out the ID of the move to folder
+     $move_folder_id = getFolderId($host, $folder_index_url, $conf_move_messages_after_download);
+-    print "\$move_folder_id->".$move_folder_id."\n";
++    dispText("\$move_folder_id->".$move_folder_id."\n");
+   }
+ 
+ 	# Ok let's get the folder list!
