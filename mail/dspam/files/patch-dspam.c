@@ -4,7 +4,7 @@
              LOG (LOG_CRIT, ERROR_MEM_ALLOC);
          }
  
--        if (CTX->result == DSR_ISSPAM)
+-        if (CTX->result == DSR_ISSPAM && ATX->managed_group[0])
 -        {
 +// FreeBSD port patch: put the user in all emails, extremely usefull for scripts
 +//        if (CTX->result == DSR_ISSPAM)

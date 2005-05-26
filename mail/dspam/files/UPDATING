@@ -16,6 +16,17 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.4.6.20050523.0845
+# 
+
+BUGFIX: fix for managed groups where delivery of false positives would fail
+due to the managed group not being recognized
+
+BUGFIX: fixed bug where messages lacking a terminating boundary would fail
+to receive a signature in the message body
+
+
+###########################################################################
 # dspam-3.4.6.20050512.1145
 #
 
