@@ -26,13 +26,11 @@ PM_DEPENDS+=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} > 500800
 MAN3=		Log::Dispatch::Config.3 \
 		Log::Dispatch::Configurator.3 \
 		Log::Dispatch::Configurator::AppConfig.3
-.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
