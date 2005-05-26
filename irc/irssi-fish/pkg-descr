@@ -1,0 +1,7 @@
+This is an encryption plugin for irssi, it is based on blowfish and is fully
+compatible to original 'blowcrypt' script. It supports private chat and channel
+encryption. A secure key-exchange system is included as well. Please read the
+file FiSH-irssi.txt, especially the 'Installation' section, before installing
+it!
+
+WWW: http://fish.sekure.us/

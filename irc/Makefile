@@ -47,6 +47,7 @@
     SUBDIR += ircservices
     SUBDIR += iroffer
     SUBDIR += irssi
+    SUBDIR += irssi-fish
     SUBDIR += irssistats
     SUBDIR += kmyirc
     SUBDIR += konversation
