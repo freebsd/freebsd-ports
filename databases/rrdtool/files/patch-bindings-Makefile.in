@@ -1,0 +1,13 @@
+--- bindings/Makefile.in.orig	Tue May 17 04:57:45 2005
++++ bindings/Makefile.in	Mon May 23 11:40:24 2005
+@@ -519,8 +519,8 @@
+ all-local:  @COMP_PERL@
+ 
+ install-data-local:
+-	cd perl-piped && test -f Makefile && $(MAKE) install || true
+-	cd perl-shared && test -f Makefile && $(MAKE) install || true
++	cd perl-piped && test -f Makefile && $(MAKE) pure_install || true
++	cd perl-shared && test -f Makefile && $(MAKE) pure_install || true
+ 
+ # rules for building the perl module
+ perl_piped: perl-piped/Makefile
