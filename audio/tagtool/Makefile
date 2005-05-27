@@ -6,32 +6,32 @@
 #
 
 PORTNAME=	tagtool
-PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTVERSION=	0.12.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GNOME application that tag mp3/ogg files
+COMMENT=	A GNOME MP3/Ogg file tagger
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier intlhack libglade2
 USE_REINPLACE=	yes
-USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+USE_LIBTOOL_VER=15
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack intlhack libglade2
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -Wl,--export-dynamic ${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(prefix)/share/app|(prefix)/share/gnome/app|g' \
-		${WRKSRC}/data/Makefile.in
-	@${REINPLACE_CMD} -e 's|(datadir)/pix|(prefix)/share/gnome/pix|g' \
-		${WRKSRC}/pixmaps/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
+		${REINPLACE_CMD} -e \
+			's|(prefix)/share/applications|(prefix)/share/gnome/applications|g; \
+			 s|(datadir)/pixmaps|(prefix)/share/gnome/pixmaps|g' \
 
 .include <bsd.port.mk>

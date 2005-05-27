@@ -1,14 +1,11 @@
 Audio Tag Tool is a program to manage the information fields in MP3 and
 Ogg Vorbis files, commonly called tags. Tag Tool can be used to edit tags
-one by one, but the most useful features are the ability to easily tag or
+one-by-one, but the most useful features are the ability to easily tag or
 rename hundreds of files at once, in any desired format.
 
-The interface is arranged into two sections, with the list of available
-files on the left and a set of tabs on the right. Each tab corresponds
-to one of the main operations Audio Tag Tool can do:
-
+Tag Tool's features include:
     * Tag Editor
-    * Tag Multiple Files
+    * Multiple File Tagger
     * Clear Tags
     * Move/Rename Multiple Files
     * Create Playlists
@@ -17,6 +14,3 @@ The mass tag and mass rename features can handle filenames in any format
 thanks to an easily configurable format template.
 
 WWW: http://pwp.netcabo.pt/paol/tagtool/
-
-- Anthony Ginepro
-anthony.ginepro@laposte.net
