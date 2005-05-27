@@ -5,12 +5,27 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Dispatcher.pm
 %%SITE_PERL%%/Catalyst/Engine.pm
 %%SITE_PERL%%/Catalyst/Engine/Apache.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/Apache/MP13.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP13/Apreq.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP13/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/Apache/MP19.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP19/Apreq.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP19/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/Apache/MP20.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP20/Apreq.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP20/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/CGI.pm
-%%SITE_PERL%%/Catalyst/Engine/FCGI.pm
+%%SITE_PERL%%/Catalyst/Engine/CGI/APR.pm
+%%SITE_PERL%%/Catalyst/Engine/CGI/Base.pm
+%%SITE_PERL%%/Catalyst/Engine/FastCGI.pm
+%%SITE_PERL%%/Catalyst/Engine/FastCGI/APR.pm
+%%SITE_PERL%%/Catalyst/Engine/FastCGI/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/HTTP.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Base.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Daemon.pm
+%%SITE_PERL%%/Catalyst/Engine/SpeedyCGI.pm
+%%SITE_PERL%%/Catalyst/Engine/SpeedyCGI/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/Test.pm
 %%SITE_PERL%%/Catalyst/Helper.pm
 %%SITE_PERL%%/Catalyst/Log.pm
@@ -28,7 +43,14 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Response.pm
 %%SITE_PERL%%/Catalyst/Test.pm
 %%SITE_PERL%%/Catalyst/Utils.pm
+@dirrm %%SITE_PERL%%/Catalyst/Engine/Apache/MP13
+@dirrm %%SITE_PERL%%/Catalyst/Engine/Apache/MP19
+@dirrm %%SITE_PERL%%/Catalyst/Engine/Apache/MP20
 @dirrm %%SITE_PERL%%/Catalyst/Engine/Apache
+@dirrm %%SITE_PERL%%/Catalyst/Engine/CGI
+@dirrm %%SITE_PERL%%/Catalyst/Engine/FastCGI
+@dirrm %%SITE_PERL%%/Catalyst/Engine/HTTP
+@dirrm %%SITE_PERL%%/Catalyst/Engine/SpeedyCGI
 @dirrm %%SITE_PERL%%/Catalyst/Engine
 @dirrm %%SITE_PERL%%/Catalyst/Manual
 @dirrm %%SITE_PERL%%/Catalyst/Request
