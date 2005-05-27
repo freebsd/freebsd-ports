@@ -9,7 +9,7 @@
 PORTNAME=	yaxi
 PORTVERSION=	0.5.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://mattam.ath.cx/progs/yaxi/releases/
+MASTER_SITES=	http://mattam.org/soft/yaxi/releases/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
