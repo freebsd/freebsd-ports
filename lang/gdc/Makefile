@@ -18,7 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:gdc \
 EXTRACT_ONLY=	gcc-core-${__GCC_VERSIONSTRING}.tar.bz2 \
 		gcc-g++-${__GCC_VERSIONSTRING}.tar.bz2
 
-MAINTAINER=	daichi@FreeBSD.org
+MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	D Front End for GCC
 
 ONLY_FOR_ARCHS=	i386 alpha
