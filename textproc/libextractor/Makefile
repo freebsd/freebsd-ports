@@ -18,6 +18,7 @@ USE_GNOME=	glib20
 USE_PYTHON=	yes
 USE_LIBLTDL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--disable-ltdl-install
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
