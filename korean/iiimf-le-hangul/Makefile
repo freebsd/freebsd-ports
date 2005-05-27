@@ -7,6 +7,7 @@
 
 PORTNAME=	le-hangul
 PORTVERSION=	12.2
+PORTREVISION=	1
 CATEGORIES=	korean textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
