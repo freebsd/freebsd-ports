@@ -5,6 +5,7 @@ bin/adesklets_submit
 %%DATADIR%%/FONT_LICENSE
 %%DATADIR%%/Vera.ttf
 %%DATADIR%%/adesklets_debug.sh
+%%PYTHON_SITELIBDIR%%/posix_signal.so
 %%PYTHON_SITELIBDIR%%/adesklets/__init__.py
 %%PYTHON_SITELIBDIR%%/adesklets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/adesklets/children_handler.py
