@@ -40,7 +40,7 @@ upgrades.
     - The old config variable `servername' has been renamed to `hostname'.
     - A new `servername' config variable has been introduced for server
       identification.
-  
+
 20050519:
   AFFECTS: users of www/squid
   AUTHOR: tmseck@netcologne.de
@@ -65,8 +65,8 @@ upgrades.
   AFFECTS: users of databases/firebird
   AUTHOR: freebsd@galle.com.br
 
-  The port was split into a -server and -client parts. 
-  The -server contains server binary, UDFs, and install all in 
+  The port was split into a -server and -client parts.
+  The -server contains server binary, UDFs, and install all in
   ${PREFIX}/firebird. The -client contains libs, includes,
   client binaries, docs and examples. For migration delete
   the firebird port and install the -server and/or -client port
@@ -154,10 +154,10 @@ upgrades.
         # rm -rf ~/.opera/*
 
   After that, you can put your bookmarks, email, contacts, etc. back in
-  ~/.opera/. The most important files are your bookmarks 
-  (~/.opera/opera6.adr) and your emails (~/.opera/mail). It is not a good 
-  idea to put opera6.ini, userstyle.ini, search.ini, pluginpath.ini and other 
-  non-personal stuff back in ~/.opera/. If you need custom settings, 
+  ~/.opera/. The most important files are your bookmarks
+  (~/.opera/opera6.adr) and your emails (~/.opera/mail). It is not a good
+  idea to put opera6.ini, userstyle.ini, search.ini, pluginpath.ini and other
+  non-personal stuff back in ~/.opera/. If you need custom settings,
   reconfigure Opera from the preferences pane or edit the files by hand.
 
 20050420:
