@@ -1496,3 +1496,11 @@ net/iperf|benchmarks/iperf|2005-05-21|better category
 misc/kile-i18n|editors/kile|2005-05-22|Merged with kile
 x11-wm/gnome2wmaker||2005-05-22|obsolete and unsupported
 mail/bogofilter-current||2005-05-26|newer stable version available
+chinese/linux-mozillafirebird-zh_CN||2005-05-27|obsolete, use linux-firefox with localization xpi instead
+chinese/linux-mozillafirebird-zh_TW||2005-05-27|obsolete, use linux-firefox with localization xpi instead
+german/linux-mozillafirebird||2005-05-27|obsolete, use linux-firefox with localization xpi instead
+japanese/linux-mozillafirebird-gtk1||2005-05-27|obsolete, use linux-firefox with localization xpi instead
+japanese/linux-mozillafirebird-gtk2||2005-05-27|obsolete, use linux-firefox with localization xpi instead
+russian/linux-mozillafirebird||2005-05-27|obsolete, use linux-firefox with localization xpi instead
+www/linux-mozillafirebird|www/linux-firefox|2005-05-27|obsolete, use linux-firefox instead
+www/linux-mozillafirebird-el||2005-05-27|obsolete, use linux-firefox with localization xpi instead

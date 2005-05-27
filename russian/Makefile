@@ -19,7 +19,6 @@
     SUBDIR += koi8r-ps
     SUBDIR += ksocrat
     SUBDIR += libcyrillic
-    SUBDIR += linux-mozillafirebird
     SUBDIR += messarge
     SUBDIR += mtc
     SUBDIR += mueller-dic
