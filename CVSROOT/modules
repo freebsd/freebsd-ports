@@ -778,6 +778,7 @@ boehm-gc	ports/devel/boehm-gc
 bogged		ports/games/bogged
 bogofilter	ports/mail/bogofilter
 bogofilter-qdbm	ports/mail/bogofilter-qdbm
+bogofilter-sqlite	ports/mail/bogofilter-sqlite
 bogofilter-tdb	ports/mail/bogofilter-tdb
 bogosort	ports/misc/bogosort
 boiling-egg	ports/editors/boiling-egg
