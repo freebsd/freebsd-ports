@@ -1472,7 +1472,6 @@ de-kheisereg	ports/german/kheisereg
 de-koffice-i18n	ports/german/koffice-i18n
 de-ksteak	ports/german/ksteak
 de-linux-eagle	ports/german/linux-eagle
-de-linux-mozillafirebird	ports/german/linux-mozillafirebird
 de-manpages	ports/german/manpages
 de-ooodict-CH	ports/german/ooodict-de_CH
 de-ooodict-DE	ports/german/ooodict-de_DE
@@ -4050,8 +4049,6 @@ ja-libjcode	ports/japanese/libjcode
 ja-libjconv	ports/japanese/libjconv
 ja-libslang	ports/japanese/libslang
 ja-linux-JM	ports/japanese/linux-JM
-ja-linux-mozillafirebird-gtk1	ports/japanese/linux-mozillafirebird-gtk1
-ja-linux-mozillafirebird-gtk2	ports/japanese/linux-mozillafirebird-gtk2
 ja-linux-ttfonts	ports/japanese/linux-ttfonts
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
@@ -5472,8 +5469,6 @@ linux-libxml	ports/textproc/linux-libxml
 linux-mbrola	ports/audio/linux-mbrola
 linux-mozilla	ports/www/linux-mozilla
 linux-mozilla-devel	ports/www/linux-mozilla-devel
-linux-mozillafirebird	ports/www/linux-mozillafirebird
-linux-mozillafirebird-el	ports/www/linux-mozillafirebird-el
 linux-nvu	ports/www/linux-nvu
 linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
@@ -10271,7 +10266,6 @@ ru-koffice-i18n	ports/russian/koffice-i18n
 ru-koi2koi	ports/russian/koi2koi
 ru-koi8r-ps	ports/russian/koi8r-ps
 ru-ksocrat	ports/russian/ksocrat
-ru-linux-mozillafirebird	ports/russian/linux-mozillafirebird
 ru-messarge	ports/russian/messarge
 ru-mtc		ports/russian/mtc
 ru-mueller-dic	ports/russian/mueller-dic
@@ -12964,8 +12958,6 @@ zh-kon2		ports/chinese/kon2
 zh-libchewing	ports/chinese/libchewing
 zh-libtabe	ports/chinese/libtabe
 zh-links	ports/chinese/links
-zh-linux-mozillafirebird-zh_CN	ports/chinese/linux-mozillafirebird-zh_CN
-zh-linux-mozillafirebird-zh_TW	ports/chinese/linux-mozillafirebird-zh_TW
 zh-lunar	ports/chinese/lunar
 zh-metalist	ports/chinese/metalist
 zh-miniChinput	ports/chinese/miniChinput
