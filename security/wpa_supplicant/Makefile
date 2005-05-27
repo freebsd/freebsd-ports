@@ -5,18 +5,27 @@
 # $FreeBSD$
 #
 
+# WITH_STATIC_SUPPLICANT - If you use wpa_supplicant with devd(8) to
+#       start your wireless NIC at boot, it will not be able to resolve
+#       the libdnet library dependency because devd is run before
+#       ldconfig.  Defining this variable will get around the problem by
+#       static-linking the wpa_supplicant executable.  A static-linked
+#       version of the executable is about 1.25MB larger and you will be
+#       required to rebuild this port whenever the net/libdnet port is
+#       updated.
+
 PORTNAME=	wpa_supplicant
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
-USE_REINPLACE=	yes
+LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
+USE_REINPLACE=	yes
 
 PLIST_FILES=	sbin/wpa_supplicant \
 		sbin/wpa_passphrase \
@@ -34,10 +43,16 @@ PLIST_DIRS+=	%%DOCSDIR%%
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 
+.if defined(WITH_STATIC_SUPPLICANT)
+SUPPLICANT_STATIC=	-static
+.else
+SUPPLICANT_STATIC=
+.endif
+MAKE_ENV+=	SUPPLICANT_STATIC=${SUPPLICANT_STATIC}
+
 post-patch:
 	@${CP} ${FILESDIR}/config.bsd ${WRKSRC}/.config
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/.config
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
