@@ -28,6 +28,7 @@
     SUBDIR += jzip.org
     SUBDIR += jzlib
     SUBDIR += lbrate
+    SUBDIR += lcab
     SUBDIR += lha
     SUBDIR += libarc
     SUBDIR += libarchive
