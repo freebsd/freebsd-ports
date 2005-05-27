@@ -26,6 +26,10 @@ INFO=	gcrypt
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+CONFIGURE_ARGS+=	--disable-asm
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
 		${WRKSRC}/ltmain.sh
