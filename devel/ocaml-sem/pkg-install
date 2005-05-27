@@ -6,5 +6,5 @@ elif [ "$2" = "DEINSTALL" ]; then
   mv ${PKG_PREFIX}/lib/ocaml/ld.conf ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp
   grep -v sem ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp > ${PKG_PREFIX}/lib/ocaml/ld.conf
   rm -f ${PKG_PREFIX}/lib/ocaml/ld.conf.tmp
-  chmod 0444 ${PKG_PREFIX}/lib/ocaml/ld.conf
+  chmod 0644 ${PKG_PREFIX}/lib/ocaml/ld.conf
 fi
