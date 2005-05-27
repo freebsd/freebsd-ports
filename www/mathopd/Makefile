@@ -7,11 +7,13 @@
 
 PORTNAME=	mathopd
 PORTVERSION=	1.5p4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.mathopd.org/dist/
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A very small, yet very fast HTTP server
+CFLAGS+=	-DFREEBSD_SENDFILE
 
 DOCS=	CHANGES cgi.txt config.txt running.txt sample.cfg syntax.txt
 
