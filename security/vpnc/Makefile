@@ -7,10 +7,10 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/:source \
-	http://dragon.roe.ch/mirrors/distfiles/vpnc/:script
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source ${STARTSCRIPT}:script
+MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	delta@lackas.net
@@ -37,12 +37,10 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
 	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-script ${PREFIX}/sbin/vpnc-script
-	@${INSTALL_SCRIPT} ${DISTDIR}/${STARTSCRIPT} ${WRKDIR}/vpnc.sh-fulltunnel
-	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|' ${WRKDIR}/vpnc.sh-fulltunnel
+	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-disconnect ${PREFIX}/sbin/vpnc-disconnect
 	@${INSTALL_SCRIPT} ${FILESDIR}/vpnc.sh ${WRKDIR}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKDIR}/vpnc.sh
 	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh ${PREFIX}/etc/rc.d/vpnc.sh.sample
-	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh-fulltunnel ${PREFIX}/etc/rc.d/vpnc.sh.sample-fulltunnel
 	@${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc/vpnc.conf.sample
 .if !defined(NO_INSTALL_MANPAGES)
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/vpnc.8

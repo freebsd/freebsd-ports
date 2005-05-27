@@ -1,5 +1,14 @@
---- config.c.orig	Sat May 14 13:20:11 2005
-+++ config.c	Sat May 14 13:20:51 2005
+--- config.c.bak	Sun May 15 15:06:20 2005
++++ config.c	Sun May 15 15:06:52 2005
+@@ -125,7 +125,7 @@
+ 
+ static const char *config_def_script(void)
+ {
+-	return "/etc/vpnc/vpnc-script";
++	return "%%PREFIX%%/sbin/vpnc-script";
+ }
+ 
+ static const char *config_def_pid_file(void)
 @@ -520,8 +520,8 @@
  	}
  

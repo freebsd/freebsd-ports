@@ -1,0 +1,54 @@
+--- vpnc-script.orig	Thu May  5 19:05:18 2005
++++ vpnc-script	Fri May 27 12:21:50 2005
+@@ -19,8 +19,8 @@
+ #set -x
+ 
+ OS="`uname -s`"
+-DEFAULT_ROUTE_FILE=/var/run/vpnc/defaultroute
+-RESOLV_CONF_BACKUP=/var/run/vpnc/resolv.conf-backup
++DEFAULT_ROUTE_FILE=/var/run/vpnc.defaultroute
++RESOLV_CONF_BACKUP=/var/run/vpnc.resolv.conf-backup
+ 
+ IPROUTE="`which ip 2> /dev/null`"
+ 
+@@ -117,7 +117,7 @@
+ 	}
+ else
+ 	get_default_gw() {
+-		netstat -r -n | grep '^0.0.0.0' | awk '{print $2}'
++		netstat -r -n | grep '^default' | awk '{print $2}'
+ 	}
+ 	
+ 	set_vpngateway_route() {
+@@ -219,11 +219,14 @@
+ 	do_ifconfig
+ 	set_vpngateway_route
+ 	if [ -n "$CISCO_SPLIT_INC" ]; then
+-		for ((i = 0 ; i < CISCO_SPLIT_INC ; i++ )) ; do
++		# for ((i = 0 ; i < CISCO_SPLIT_INC ; i++ )) ; do
++		i=0
++		while [ $i -lt ${CISCO_SPLIT_INC} ]; do
+ 			eval NETWORK="\${CISCO_SPLIT_INC_${i}_ADDR}"
+ 			eval NETMASK="\${CISCO_SPLIT_INC_${i}_MASK}"
+ 			eval NETMASKLEN="\${CISCO_SPLIT_INC_${i}_MASKLEN}"
+ 			set_network_route "$NETWORK" "$NETMASK" "$NETMASKLEN"
++			i=`expr $i + 1`
+ 		done
+ 		for i in $INTERNAL_IP4_DNS ; do
+ 			set_network_route "$i" "255.255.255.255" "32"
+@@ -239,11 +242,14 @@
+ 
+ do_disconnect() {
+ 	if [ -n "$CISCO_SPLIT_INC" ]; then
+-		for ((i = 0 ; i < CISCO_SPLIT_INC ; i++ )) ; do
++		# for ((i = 0 ; i < CISCO_SPLIT_INC ; i++ )) ; do
++		i=0
++		while [ $i -lt ${CISCO_SPLIT_INC} ]; do
+ 			eval NETWORK="\${CISCO_SPLIT_INC_${i}_ADDR}"
+ 			eval NETMASK="\${CISCO_SPLIT_INC_${i}_MASK}"
+ 			eval NETMASKLEN="\${CISCO_SPLIT_INC_${i}_MASKLEN}"
+ 			del_network_route "$NETWORK" "$NETMASK" "$NETMASKLEN"
++			i=`expr $i + 1`
+ 		done
+ 		for i in $INTERNAL_IP4_DNS ; do
+ 			del_network_route "$i" "255.255.255.255" "32"
