@@ -1,13 +1,12 @@
-# New ports collection makefile for:   schism
-# Date created:		26 May 2005
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
+# New ports collection makefile for:	Schism Tracker
+# Date created:				26 May 2005
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	schism
-PORTVERSION=	0.2
-DISTVERSIONSUFFIX=	a
+DISTVERSION=	0.2a
 CATEGORIES=	audio
 MASTER_SITES=	http://rigelseven.com/schism/dl/
 
@@ -21,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GCC=	3.4+
 
+# Dies with bus error unless building debug version
 CXXFLAGS=	-g
 CFLAGS=		-g
 
@@ -28,6 +28,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +40,6 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
