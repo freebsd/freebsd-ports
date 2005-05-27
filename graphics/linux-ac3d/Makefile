@@ -8,9 +8,9 @@
 PORTNAME=	ac3d
 PORTVERSION=	5.0
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://inivis.swmirror.com/
+MASTER_SITES=	http://www.ac3d.org/ac3d/download/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}lx${PORTVERSION:R}
+DISTNAME=	${PORTNAME}lx
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ip@doom.homeunix.org
