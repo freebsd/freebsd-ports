@@ -1,13 +1,17 @@
 bin/tagtool
 share/gnome/applications/tagtool.desktop
 share/gnome/pixmaps/TagTool.png
+share/locale/bg/LC_MESSAGES/tagtool.mo
 share/locale/cs/LC_MESSAGES/tagtool.mo
 share/locale/de/LC_MESSAGES/tagtool.mo
 share/locale/en_GB/LC_MESSAGES/tagtool.mo
 share/locale/es/LC_MESSAGES/tagtool.mo
 share/locale/fr/LC_MESSAGES/tagtool.mo
 share/locale/it/LC_MESSAGES/tagtool.mo
+share/locale/lt/LC_MESSAGES/tagtool.mo
 share/locale/pt/LC_MESSAGES/tagtool.mo
+share/locale/ru/LC_MESSAGES/tagtool.mo
+share/locale/ua/LC_MESSAGES/tagtool.mo
 %%DATADIR%%/TagTool.png
 %%DATADIR%%/edit.png
 %%DATADIR%%/fail.png
@@ -26,5 +30,3 @@ share/locale/pt/LC_MESSAGES/tagtool.mo
 %%DATADIR%%/tagtool.glade
 %%DATADIR%%/warn.png
 @dirrm %%DATADIR%%
-@unexec rmdir /usr/local/share/locale/en_GB/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir /usr/local/share/locale/en_GB 2>/dev/null || true
