@@ -1,9 +1,0 @@
-Mozilla Firebird is a Web, FTP and gopher browser branched from Mozilla.  It
-does not include an HTML editor, e-mail user agent, IRC client, or news reader.
-
-This is a pre-compiled Linux/i386 version, able to run plugins from that
-platform.  This port is compatible with the Flash plugin from
-ports/www/linux-flashplugin6/ and with the Java plugin from
-ports/java/linux-blackdown-jdk14/.
-
-WWW:  http://www.mozilla.org/products/firebird/

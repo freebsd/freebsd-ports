@@ -191,8 +191,6 @@
     SUBDIR += libjconv
     SUBDIR += libslang
     SUBDIR += linux-JM
-    SUBDIR += linux-mozillafirebird-gtk1
-    SUBDIR += linux-mozillafirebird-gtk2
     SUBDIR += linux-ttfonts
     SUBDIR += lipsf
     SUBDIR += lookup
