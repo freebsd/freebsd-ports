@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--disable-html-docs --disable-static
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${CP} ${LTMAIN} ${WRKSRC}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s: doc : :g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
