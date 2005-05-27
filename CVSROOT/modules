@@ -10794,6 +10794,7 @@ sic		ports/irc/sic
 siconv		ports/converters/siconv
 sid-milter	ports/mail/sid-milter
 sidplay		ports/audio/sidplay
+sidplayer	ports/audio/sidplayer
 sidplug		ports/www/sidplug
 siege		ports/benchmarks/siege
 sig2dot		ports/security/sig2dot
