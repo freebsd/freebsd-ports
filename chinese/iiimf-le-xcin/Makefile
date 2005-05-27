@@ -7,6 +7,7 @@
 
 PORTNAME=	iiimf-le-xcin
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/${PORTVERSION}/
 EXTRACT_SUFX=	-11.src.rpm
@@ -15,7 +16,7 @@ MAINTAINER=	kcwu@csie.org
 COMMENT=	IIIMF xcin language engine, a traditional Chinese input method
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
+RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server
 
 WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
@@ -38,10 +39,9 @@ do-extract:
 	${WRKDIR}/${DISTNAME}.tar.bz2 ${EXTRACT_AFTER_ARGS}
 
 post-patch:
-	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
+	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/iiim,g" \
 		${WRKSRC}/acfiles/im_common.m4 \
 		${WRKSRC}/src/cin2tab/constant.h \
-		${WRKSRC}/src/xcin.c \
 		${WRKSRC}/src/xmlconf.c \
 		${WRKSRC}/xcin.xml.conf
 
