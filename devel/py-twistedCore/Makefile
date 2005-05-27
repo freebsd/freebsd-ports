@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	twistedCore
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel net python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Twisted/2.0/
+MASTER_SITES=	http://twistedmatrix.com/downloads/Twisted/2.0/ \
+		http://tmrc.mit.edu/mirror/twisted/Twisted/2.0/
 #MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted-${PORTVERSION}
