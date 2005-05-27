@@ -24,7 +24,7 @@ USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-optimization
+CONFIGURE_ARGS=	--enable-optimization --with-wx-config=wxgtk2-2.4-config
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE=	yes
 
