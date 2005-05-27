@@ -10634,6 +10634,7 @@ sced		ports/graphics/sced
 sceptre		ports/cad/sceptre
 scheme48	ports/lang/scheme48
 schemetoc	ports/lang/schemetoc
+schism		ports/audio/schism
 scid		ports/games/scid
 scigraphica	ports/math/scigraphica
 scilab		ports/math/scilab
