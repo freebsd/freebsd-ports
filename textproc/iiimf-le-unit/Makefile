@@ -7,6 +7,7 @@
 
 PORTNAME=	le-unit
 PORTVERSION=	12.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -55,5 +56,10 @@ post-patch:
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} reconfig
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
+
+pre-install:
+	${REINPLACE_CMD} \
+		-e "/^BUILDDIRS/s,lib/EIMIL,,g" \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>

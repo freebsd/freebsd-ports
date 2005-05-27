@@ -1,3 +1,6 @@
+bin/parsertest
+bin/arithtest
+bin/flowtest
 include/iiim/iiimcf.h
 lib/libiiimcf.so.3
 lib/libiiimcf.so
