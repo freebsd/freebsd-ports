@@ -19,6 +19,12 @@ RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
+PLIST_FILES=	bin/${PORTNAME}
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
