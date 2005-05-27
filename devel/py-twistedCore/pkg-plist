@@ -1083,8 +1083,6 @@ bin/twistd
 %%S%%/twisted/trial/util.py
 %%S%%/twisted/trial/util.pyc
 %%S%%/twisted/trial/util.pyo
-@dirrm share/twistedCore/admin
-@dirrm share/twistedCore
 @dirrm %%S%%/twisted/trial/test
 @dirrm %%S%%/twisted/trial
 @dirrm %%S%%/twisted/test
