@@ -7,6 +7,7 @@
 
 PORTNAME=	hostapd
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 DISTNAME=	hostapd-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	hostapd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Authenticator (server) for WPA/802.1x protocols
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
