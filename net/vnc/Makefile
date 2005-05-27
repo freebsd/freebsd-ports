@@ -30,7 +30,7 @@ COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 RUN_DEPENDS=	xauth:${X_CLIENTS_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT}
 
-USE_PERL5_RUN=	yes
+USE_PERL5=	yes
 
 EXTRA_PATCHES=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \
