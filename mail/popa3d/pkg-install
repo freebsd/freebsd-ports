@@ -27,4 +27,3 @@ if ! id -u "pop" > /dev/null 2>&1; then
 fi
 
 exit 0
-
