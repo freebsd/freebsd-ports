@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050526:
+  AFFECTS: users of mail/sylpheed-claws
+  AUTHOR: netchild@FreeBSD.org
+
+  Sylpheed-claws is updated to the GTK2 version now. This results in a new
+  configuration directory. To keep your konfiguration from the GTK1 version
+  you can
+      cp -rp ~/.sylpheed .sylpheed-gtk2
+  before starting the GTK2 version for the first time, or
+      cp -Rp ~/.sylpheed .sylpheed-gtk2/
+  when you have run the GTK2 version already.
+
 20050524:
   AFFECTS: users of multimedia/mpeg4ip and multimedia/mpeg4ip-libmp4v2
   AUTHOR: ahze@FreeBSD.org
@@ -251,7 +263,7 @@ upgrades.
   11.x to 12.x.
 
 20050324:
-  AFFECTS: users of net/mDNSResponder,
+  AFFECTS: users of net/mDNSResponder
   AUTHOR: brooks@FreeBSD.org
 
   In mDNSResponder 98_1, mdnsd is no longer started by default due to a
