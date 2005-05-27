@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmaiload
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		${PORTNAME}.1 ${PORTNAME}-config.1
 PLIST_FILES=	bin/wmmaiload bin/wmmaiload-config
+PLIST_DIRS=	share/nls/POSIX share/nls/en_US.US-ASCII
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' \
