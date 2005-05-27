@@ -10,12 +10,11 @@ DISTVERSION=	1.45-6
 PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
-		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/
+		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a language dedicated to the finite element method
-
-BROKEN=		Unfetchable
 
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas				\
 		f2c.2:${PORTSDIR}/lang/f2c				\
