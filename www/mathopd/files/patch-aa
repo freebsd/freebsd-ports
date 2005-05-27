@@ -11,7 +11,7 @@
 -SBINDIR = $(PREFIX)/sbin
 +PROG=	mathopd
 +SRCS=	base64.c cgi.c config.c core.c dump.c imap.c log.c \
-+	main.c redirect.c request.c util.c stub.c
++	main.c redirect.c request.c util.c stub.c sendfile.c
 +BINDIR?=${PREFIX}/sbin
 +NOMAN=	yes
 +LDADD=	-lcrypt
