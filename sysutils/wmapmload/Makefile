@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmapmload
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/wmapmload
+PLIST_DIRS=	share/nls/POSIX share/nls/en_US.US-ASCII
 
 BINMODE=	2755
 BINGRP=		operator
