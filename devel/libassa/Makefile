@@ -17,7 +17,7 @@ COMMENT=	An C++ networking library and application framework
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--disable-html-docs --disable-static
 INSTALLS_SHLIB=	yes
 
