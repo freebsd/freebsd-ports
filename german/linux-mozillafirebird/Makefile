@@ -11,5 +11,11 @@ PKGNAMEPREFIX=		de-linux-
 DISTNAME=		MozillaFirebird-${PORTVERSION}-i686-pc-linux-gnu-deDE
 COMMENT=		Firebird Web browser:  German Linux/i386 version
 
+PLIST_FILES=		lib/de-linux-mozillafirebird/chrome/de-win.jar \
+			lib/de-linux-mozillafirebird/chrome/de-unix.jar \
+			lib/de-linux-mozillafirebird/chrome/de-mac.jar \
+			lib/de-linux-mozillafirebird/chrome/DE.jar \
+			lib/de-linux-mozillafirebird/chrome/de-DE.jar
+
 MASTERDIR=		${.CURDIR}/../../www/linux-mozillafirebird
 .include "${MASTERDIR}/Makefile"
