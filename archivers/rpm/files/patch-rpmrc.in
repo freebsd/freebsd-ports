@@ -1,0 +1,45 @@
+--- rpmrc.in.orig	Thu Sep 14 02:55:15 2000
++++ rpmrc.in	Sat May  7 01:21:44 2005
+@@ -53,6 +53,10 @@
+ arch_canon:	i586:	i586	1
+ arch_canon:	i486:	i486	1
+ arch_canon:	i386:	i386	1
++arch_canon:	x86_64:	x86_64	1
++arch_canon:	amd64:	amd64	1
++arch_canon:	ia32e:	ia32e	1
++
+ arch_canon:	alpha:	alpha	2
+ arch_canon:	alphaev5: alphaev5	2
+ arch_canon:	alphaev56: alphaev56	2
+@@ -161,6 +165,10 @@
+ buildarchtranslate: milan: m68kmint
+ buildarchtranslate: hades: m68kmint	
+ 
++buildarchtranslate: x86_64: x86_64
++buildarchtranslate: amd64: x86_64
++buildarchtranslate: ia32e: x86_64
++
+ #############################################################
+ # Architecture compatibility
+ 
+@@ -223,6 +231,10 @@
+ 
+ arch_compat: ia64: noarch
+ 
++arch_compat: x86_64: amd64 athlon noarch
++arch_compat: amd64: x86_64 athlon noarch
++arch_compat: ia32e: x86_64 athlon noarch
++
+ os_compat:   IRIX64: IRIX
+ os_compat: solaris2.7: solaris2.3 solaris2.4 solaris2.5 solaris2.6
+ os_compat: solaris2.6: solaris2.3 solaris2.4 solaris2.5
+@@ -288,6 +300,9 @@
+ 
+ buildarch_compat: ia64: noarch
+ buildarch_compat: s390: noarch
++buildarch_compat: x86_64: noarch
++buildarch_compat: amd64: x86_64
++buildarch_compat: ia32e: x86_64
+ 
+ macrofiles:	@RPMCONFIGDIR@/macros:@RPMCONFIGDIR@/%{_target}/macros:@SYSCONFIGDIR@/macros.specspo:@SYSCONFIGDIR@/macros:@SYSCONFIGDIR@/%{_target}/macros:~/.rpmmacros
+ 
