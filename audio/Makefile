@@ -413,6 +413,7 @@
     SUBDIR += shorten
     SUBDIR += shout
     SUBDIR += sidplay
+    SUBDIR += sidplayer
     SUBDIR += simplemod
     SUBDIR += slimserver
     SUBDIR += snack

@@ -1,0 +1,22 @@
+bin/sidplayer
+%%PORTDOCS%%%%DOCSDIR%%/Antics
+%%PORTDOCS%%%%DOCSDIR%%/Arkanoid
+%%PORTDOCS%%%%DOCSDIR%%/Bombo
+%%PORTDOCS%%%%DOCSDIR%%/Bulldog
+%%PORTDOCS%%%%DOCSDIR%%/Cybernoid_II
+%%PORTDOCS%%%%DOCSDIR%%/Dance_At_Night
+%%PORTDOCS%%%%DOCSDIR%%/Deflektor
+%%PORTDOCS%%%%DOCSDIR%%/F1_Simulator
+%%PORTDOCS%%%%DOCSDIR%%/Geir_Tjelta-01
+%%PORTDOCS%%%%DOCSDIR%%/Immortal_Flash_2
+%%PORTDOCS%%%%DOCSDIR%%/Lightforce
+%%PORTDOCS%%%%DOCSDIR%%/Master_Of_Magic
+%%PORTDOCS%%%%DOCSDIR%%/Ocean_Loader_v3.0
+%%PORTDOCS%%%%DOCSDIR%%/Parallax
+%%PORTDOCS%%%%DOCSDIR%%/Spellbound
+%%PORTDOCS%%%%DOCSDIR%%/Thrust
+%%PORTDOCS%%%%DOCSDIR%%/Times_of_Lore
+%%PORTDOCS%%%%DOCSDIR%%/W.A.R
+%%PORTDOCS%%%%DOCSDIR%%/Yie_Ar_Kung_Fu
+%%PORTDOCS%%%%DOCSDIR%%/Zoids
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
