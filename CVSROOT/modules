@@ -3503,7 +3503,6 @@ hourglass	ports/sysutils/hourglass
 howl		ports/net/howl
 howm		ports/deskutils/howm
 hp2xx		ports/print/hp2xx
-hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
 hping		ports/security/hping
