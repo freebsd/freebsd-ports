@@ -338,7 +338,6 @@
     SUBDIR += gvd
     SUBDIR += happydoc
     SUBDIR += hapy
-    SUBDIR += hp48cc
     SUBDIR += hptools
     SUBDIR += hs-alex
     SUBDIR += hs-buddha
