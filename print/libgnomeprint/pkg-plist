@@ -137,6 +137,8 @@ share/locale/vi/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/wa/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mr 2>/dev/null || true
 @dirrm share/gnome/libgnomeprint/%%VERSION%%/printers/uninstalled
 @dirrm share/gnome/libgnomeprint/%%VERSION%%/printers
 @dirrm share/gnome/libgnomeprint/%%VERSION%%/models/uninstalled
