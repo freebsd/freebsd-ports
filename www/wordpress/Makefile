@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	1.5.11
+PORTVERSION=	1.5.1.2
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/
 MASTER_SITE_SUBDIR=	cafelog
