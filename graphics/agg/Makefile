@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	agg
 # Date created:			Aug 3, 2004
 # Whom:				ijliao
@@ -11,7 +10,8 @@ PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.antigrain.com/ \
-		${MASTER_SITE_SOURCEFORGE}
+		${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/novel/}
 MASTER_SITE_SUBDIR=	vector-agg
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
