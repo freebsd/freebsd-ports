@@ -7,6 +7,7 @@
 
 PORTNAME=	gdc
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc
@@ -22,6 +23,7 @@ COMMENT=	D Front End for GCC
 
 ONLY_FOR_ARCHS=	i386 alpha
 
+USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GCC=	3.4
 USE_GMAKE=	yes
