@@ -64,5 +64,7 @@ share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
 @dirrm share/gnome/idl/libgdl-1.0
 @dirrm share/gnome/gdl/glade
 @dirrm share/gnome/gdl
+@dirrm share/gdl/images
+@dirrm share/gdl
 @dirrm include/libgdl-1.0/gdl
 @dirrm include/libgdl-1.0
