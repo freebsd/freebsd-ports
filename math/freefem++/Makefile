@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a language dedicated to the finite element method
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas				\
 		f2c.2:${PORTSDIR}/lang/f2c				\
 		gsl.7:${PORTSDIR}/math/gsl				\
