@@ -33,6 +33,8 @@ post-patch:
 		${WRKSRC}/libicq2000/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|^(pkgincludedir.+)/@PACKAGE@|\1|' \
 		${WRKSRC}/libicq2000-config.in
+
+pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}
 
 post-install:
