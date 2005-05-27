@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.1
-PORTREVISION=	20050521
+PORTREVISION=	20050526
 CATEGORIES=	lang java
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -103,14 +103,15 @@ INFO=		cpp cppinternals gcc gccinstall gccint gcj fastjar
 CONFIGURE_ARGS+=	--disable-libgcj
 PLIST_SUB+=	LIBJAVA="@comment "
 .else
-EXTRA_LIBS+=	libffi libgcj libgij
 PLIST_SUB+=	LIBJAVA=""
+EXTRA_LIBS+=	libffi libgcj libgij
 .endif
 
 .if defined(WITH_FORTRAN)
 MAN1+=	gfortran${SUFFIX}.1
 INFO+=	gfortran
 PLIST_SUB+=	FORTRAN=""
+EXTRA_LIBS+=	libgfortran libgfortranbegin
 .else
 PLIST_SUB+=	FORTRAN="@comment "
 .endif

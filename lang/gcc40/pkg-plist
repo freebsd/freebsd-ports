@@ -20,10 +20,6 @@ bin/%%GNU_HOST%%-gcj40
 bin/%%GNU_HOST%%-gcjh40
 include/mf-runtime.h
 %%FORTRAN%%bin/gfortran40
-%%FORTRAN%%lib/libgfortran.a
-%%FORTRAN%%lib/libgfortranbegin.a
-%%FORTRAN%%lib/libgfortran.la
-%%FORTRAN%%lib/libgfortranbegin.la
 %%LIBJAVA%%bin/addr2name.awk40
 %%LIBJAVA%%bin/gcj-dbtool40
 %%LIBJAVA%%bin/gij40
