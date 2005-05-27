@@ -1,5 +1,5 @@
---- remote.c.orig	Sat Nov  6 00:38:25 2004
-+++ remote.c	Tue May 24 21:34:59 2005
+--- gdb/remote.c.orig	Sat Nov  6 00:38:25 2004
++++ gdb/remote.c	Tue May 24 21:34:59 2005
 @@ -4895,8 +4895,10 @@
  	return -1;
      }
