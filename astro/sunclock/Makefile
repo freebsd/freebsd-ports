@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sunclock
-PORTVERSION=	3.52
+PORTVERSION=	3.53
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	http://frmas.free.fr/files/
 
