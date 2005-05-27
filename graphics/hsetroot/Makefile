@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://thegraveyard.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Root window parameter setting background for X
+COMMENT=	Utility to compose wallpapers for X
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
