@@ -23,7 +23,7 @@ USE_ZIP=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		"requires explicit agreement to the terms and conditions of the license.  Download ${DISTNAME}${EXTRACT_SUFX} manually from http://www.research.att.com/sw/tools/XMILL/,put it under ${DISTDIR} and run make again"
+IGNORE=		requires explicit agreement to the terms and conditions of the license.  Download ${DISTNAME}${EXTRACT_SUFX} manually from http://www.research.att.com/sw/tools/XMILL/, put it under ${DISTDIR} and run make again
 .endif
 
 post-patch:
