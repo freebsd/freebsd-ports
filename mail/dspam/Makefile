@@ -426,7 +426,7 @@ USE_PERL5_RUN=	yes
 PLIST_SUB+=	CGI=""
 CGI_PATH?=	${PREFIX}/www/vhosts/dspam
 _SED_SCRIPT+=	-e 's/%%CGI%%//g'
-_SED_SCRIPT+=	-e 's/%%CGI_PATH%%/${CGI_PATH}/g'
+_SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
 #SED_FILES=	${LS}  ${WRKSRC}/cgi/*.pl
 #SED_FILES+=	${LS} $PWRKSRC}/cgi/*.cgi
 .else
