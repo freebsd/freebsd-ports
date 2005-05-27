@@ -16,7 +16,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode RSS newsreader
 
 USE_PERL5_BUILD=yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_REINPLACE=	yes
@@ -30,6 +29,13 @@ post-configure:
 .endif
 .endif
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 MAN1=		snownews.1
 MANLANG=	"" de nl fr it ru_RU.KOI8-R
 
@@ -40,14 +46,14 @@ pre-everything::
 	@${ECHO_MSG} " Default is ISO-8859-1."
 	@${ECHO_MSG} " "
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|#!/usr/bin/perl|#!/usr/bin/env perl|g' ${WRKSRC}/configure
-	
 post-patch:
+	@${REINPLACE_CMD} -e 's|#!/usr/bin/perl|#!${PERL}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/platform_settings
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
-
-pre-build:
 	@${REINPLACE_CMD} -e 's|^PREFIX|#PREFIX|' ${WRKSRC}/platform_settings
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
+.if defined(WITHOUT_NLS)
+	${REINPLACE_CMD} -e 's/ install-locales / /g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's/ locales$$//g' ${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.mk>
