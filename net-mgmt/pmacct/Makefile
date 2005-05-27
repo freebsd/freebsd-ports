@@ -6,12 +6,26 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
+
+GNU_CONFIGURE=	yes
+GNUCONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GETOPT_LONG=yes
+USE_REINPLACE=	yes
+
+OPTIONS=	MYSQL "Enable MySQL support." Off \
+		PGSQL "Enable PostgreSQL support." Off \
+		MMAP  "Disable mmap(2) support." Off \
+		LAYER2 "Disable Layer-2 support: MAC Adresses and VLANs" Off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
@@ -32,15 +46,16 @@ PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
 .if defined(WITHOUT_MMAP)
+CONFIGURE_ARGS+=--enable-mmap
+.else
 CONFIGURE_ARGS+=--disable-mmap
 .endif
 
-GNU_CONFIGURE=	yes
-GNUCONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
+.if defined(WITHOUT_LAYER2)
+CONFIGURE_ARGS+=--enable-l2
+.else
+CONFIGURE_ARGS+=--disable-l2
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
@@ -55,4 +70,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
