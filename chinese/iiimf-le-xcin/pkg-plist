@@ -1,21 +1,22 @@
-lib/im/leif/xcin.so
-lib/im/leif/xcin.so.0
-lib/im/locale/zh_TW/xcin/cin2tab
-lib/im/locale/zh_TW/xcin/xcin.xml.conf
-lib/im/locale/zh_TW/xcin/tab/array30.tab
-lib/im/locale/zh_TW/xcin/tab/cj.tab
-lib/im/locale/zh_TW/xcin/tab/cj5.tab
-lib/im/locale/zh_TW/xcin/tab/ez.tab
-lib/im/locale/zh_TW/xcin/tab/jyutping0.tab
-lib/im/locale/zh_TW/xcin/tab/phone.tab
-lib/im/locale/zh_TW/xcin/tab/pinyin.tab
-lib/im/locale/zh_TW/xcin/tab/pinyin0.tab
-lib/im/locale/zh_TW/xcin/tab/simplex.tab
-lib/im/locale/zh_TW/xcin/tab/simplex5.tab
-lib/im/locale/zh_TW/xcin/tab/sys.tab
-lib/im/locale/zh_TW/xcin/tab/telecode.tab
-@dirrm lib/im/locale/zh_TW/xcin/tab
-@dirrm lib/im/locale/zh_TW/xcin
-@unexec rmdir %D/lib/im/locale/zh_TW 2>/dev/null || true
-@unexec rmdir %D/lib/im/locale 2>/dev/null || true
-@unexec rmdir %D/lib/im/leif 2>/dev/null || true
+lib/iiim/le/xcin/xcin.so
+lib/iiim/le/xcin/xcin.so.0
+lib/iiim/locale/zh_TW/xcin/cin2tab
+lib/iiim/locale/zh_TW/xcin/xcin.xml.conf
+lib/iiim/locale/zh_TW/xcin/tab/array30.tab
+lib/iiim/locale/zh_TW/xcin/tab/cj.tab
+lib/iiim/locale/zh_TW/xcin/tab/cj5.tab
+lib/iiim/locale/zh_TW/xcin/tab/ez.tab
+lib/iiim/locale/zh_TW/xcin/tab/jyutping0.tab
+lib/iiim/locale/zh_TW/xcin/tab/phone.tab
+lib/iiim/locale/zh_TW/xcin/tab/pinyin.tab
+lib/iiim/locale/zh_TW/xcin/tab/pinyin0.tab
+lib/iiim/locale/zh_TW/xcin/tab/simplex.tab
+lib/iiim/locale/zh_TW/xcin/tab/simplex5.tab
+lib/iiim/locale/zh_TW/xcin/tab/sys.tab
+lib/iiim/locale/zh_TW/xcin/tab/telecode.tab
+@dirrm lib/iiim/locale/zh_TW/xcin/tab
+@dirrm lib/iiim/locale/zh_TW/xcin
+@unexec rmdir %D/lib/iiim/locale/zh_TW 2>/dev/null || true
+@unexec rmdir %D/lib/iiim/locale 2>/dev/null || true
+@unexec rmdir %D/lib/iiim/le/xcin 2>/dev/null || true
+@unexec rmdir %D/lib/iiim/le 2>/dev/null || true

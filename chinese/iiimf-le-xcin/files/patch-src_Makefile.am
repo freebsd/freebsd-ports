@@ -1,19 +1,17 @@
---- src/Makefile.am.orig	Thu Sep  9 18:51:35 2004
-+++ src/Makefile.am	Thu Sep  9 18:52:22 2004
-@@ -5,6 +5,7 @@
- libdir = $(prefix)/lib/im/leif
+--- src/Makefile.am.orig	Wed May 25 20:10:15 2005
++++ src/Makefile.am	Wed May 25 20:11:40 2005
+@@ -2,12 +2,12 @@
+ 
+ LE_FILES = xcin.so
+ 
+-libdir = $(prefix)/lib/im/leif
++libdir = $(prefix)/lib/iiim/le/xcin
  
  xcin_la_CFLAGS = $(SHLIBCFLAGS) \
-+	$(X_CFLAGS) \
  	$(THREAD_CXX_CFLAGS) \
  	-DNO_COLOR_FEEDBACK -DNO_CARET_NEGO \
- 	-I$(IM_INCLUDEDIR)/iml -I$(XML_CFLAGS)
-@@ -13,7 +14,7 @@
+-	-I$(IM_INCLUDEDIR)/iml -I$(XML_CFLAGS)
++	-I$(IM_INCLUDEDIR)/iml $(XML_CFLAGS) $(X_CFLAGS)
+ 
+ xcin_la_LDFLAGS = \
  	-shared -module -rpath \
- 	$(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
- 
--xcin_la_LIBADD = $(THREAD_LIBS) $(XML_LIBS)
-+xcin_la_LIBADD = $(THREAD_LIBS) $(XML_LIBS) $(X_LIBS)
- 
- xcin_la_SOURCES = xcin.c gen_inp.c charcode.c debugInfo.c keymap.c le_proc.c key_event.c define.c xmlconf.c
- 
