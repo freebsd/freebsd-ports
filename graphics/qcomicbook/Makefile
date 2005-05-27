@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
@@ -18,21 +18,20 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
-
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=--with-Qt-dir="${X11BASE}"
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-Qt-dir="${QT_PREFIX}"
+
+MAN1=		qcomicbook.1
+
 # Luckily, QT apps on FreeBSD don't compile against
 # pthread by default. That might *gasp* make them work!
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 
-MAN1=		qcomicbook.1
+post-patch:
+	@${REINPLACE_CMD} -e 's|="failure"|=""|g' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Configure fails on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
