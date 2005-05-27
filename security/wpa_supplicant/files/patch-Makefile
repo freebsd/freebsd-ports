@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -303,7 +303,7 @@
+ OBJS += wpa_supplicant.o wpa.o l2_packet.o drivers.o
+ 
+ wpa_supplicant: .config $(OBJS)
+-	$(CC) -o wpa_supplicant $(OBJS) $(LIBS)
++	$(CC) ${SUPPLICANT_STATIC} -o wpa_supplicant $(OBJS) $(LIBS)
+ 
+ eapol_test: .config $(OBJS_t)
+ 	$(CC) -o eapol_test $(OBJS_t) $(LIBS)
