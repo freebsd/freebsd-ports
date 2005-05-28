@@ -17,6 +17,7 @@ lib/mecab/dic/ipadic/token.me
 @dirrm lib/mecab/dic/ipadic
 @dirrm lib/mecab/dic
 @dirrm lib/mecab
+%%PORTDOCS%%%%EXAMPLESDIR%%/a.out
 %%PORTDOCS%%%%EXAMPLESDIR%%/example-thread.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/example-thread2.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/example-win32-dll.c
