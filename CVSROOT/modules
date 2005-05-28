@@ -487,6 +487,7 @@ asprint		ports/print/asprint
 asr-manpages	ports/misc/asr-manpages
 asr-utils	ports/sysutils/asr-utils
 asr10		ports/converters/asr10
+assp		ports/mail/assp
 asterisk	ports/net/asterisk
 astime		ports/x11-clocks/astime
 astk-client	ports/cad/astk-client
