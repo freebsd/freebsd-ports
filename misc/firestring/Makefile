@@ -21,9 +21,7 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.2
-.endif
+USE_GCC=	3.4+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
