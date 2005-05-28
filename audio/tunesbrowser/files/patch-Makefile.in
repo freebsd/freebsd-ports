@@ -1,21 +1,20 @@
-+--- Makefile.in.orig	Mon May 16 14:48:28 2005
-++++ Makefile.in	Mon May 16 19:39:09 2005
-+@@ -144,7 +144,7 @@
-+ sysconfdir = @sysconfdir@
-+ target_alias = @target_alias@
-+ SUBDIRS = debug
-+-uidir = $(datadir)
-++uidir = $(pkgdatadir)
-+ bin_PROGRAMS = tunesbrowser
-+ tunesbrowser_SOURCES = albumlist.c artistlist.c audioplayer.c \
-+                        daap.c main.c misc_ui.c songlist.c sourcelist.c \
-+@@ -158,7 +158,7 @@
-+ man_MANS = tunesbrowser.1
-  
-- uninstall-uiDATA:
-+ INCLUDES = -I$(srcdir) -I$(srcdir)/debug
-+-AM_CFLAGS = $(TB_CFLAGS) -W -Wall -DUIDIR=$(datadir)
-++AM_CFLAGS = $(TB_CFLAGS) -W -Wall -DUIDIR=$(pkgdatadir)
-+ 
-+ ui_DATA = tunesbrowser.glade \
-+           comp.blue.png comp.red.png \
+--- Makefile.in.orig	Mon May 16 14:48:28 2005
++++ Makefile.in	Mon May 16 19:39:09 2005
+@@ -144,7 +144,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = debug
+-uidir = $(datadir)
++uidir = $(pkgdatadir)
+ bin_PROGRAMS = tunesbrowser
+ tunesbrowser_SOURCES = albumlist.c artistlist.c audioplayer.c \
+                        daap.c main.c misc_ui.c songlist.c sourcelist.c \
+@@ -158,7 +158,7 @@
+ man_MANS = tunesbrowser.1
+ 
+ INCLUDES = -I$(srcdir) -I$(srcdir)/debug
+-AM_CFLAGS = $(TB_CFLAGS) -W -Wall -DUIDIR=$(datadir)
++AM_CFLAGS = $(TB_CFLAGS) -W -Wall -DUIDIR=$(pkgdatadir)
+ 
+ ui_DATA = tunesbrowser.glade \
+           comp.blue.png comp.red.png \
