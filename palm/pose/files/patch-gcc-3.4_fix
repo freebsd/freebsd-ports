@@ -1,0 +1,153 @@
+diff -ur ../SrcShared/EmStream.h.orig ../SrcShared/EmStream.h
+--- ../SrcShared/EmStream.h.orig	Fri Mar 29 07:11:14 2002
++++ ../SrcShared/EmStream.h	Thu Nov 25 17:04:01 2004
+@@ -90,7 +90,7 @@
+ 
+ 									container.resize (numElements);
+ 
+-									deque<T>::iterator	iter = container.begin ();
++									typename deque<T>::iterator	iter = container.begin ();
+ 									while (iter != container.end ())
+ 									{
+ 										*this >> *iter;
+@@ -108,7 +108,7 @@
+ 
+ 									container.resize (numElements);
+ 
+-									list<T>::iterator	iter = container.begin ();
++									typename list<T>::iterator	iter = container.begin ();
+ 									while (iter != container.end ())
+ 									{
+ 										*this >> *iter;
+@@ -126,7 +126,7 @@
+ 
+ 									container.resize (numElements);
+ 
+-									vector<T>::iterator	iter = container.begin ();
++									typename vector<T>::iterator	iter = container.begin ();
+ 									while (iter != container.end ())
+ 									{
+ 										*this >> *iter;
+@@ -143,7 +143,7 @@
+ 
+ 									*this << numElements;
+ 
+-									deque<T>::const_iterator	iter = container.begin ();
++									typename deque<T>::const_iterator	iter = container.begin ();
+ 									while (iter != container.end ())
+ 									{
+ 										*this << *iter;
+@@ -160,7 +160,7 @@
+ 
+ 									*this << numElements;
+ 
+-									list<T>::const_iterator	iter = container.begin ();
++									typename list<T>::const_iterator	iter = container.begin ();
+ 									while (iter != container.end ())
+ 									{
+ 										*this << *iter;
+@@ -177,7 +177,7 @@
+ 
+ 									*this << numElements;
+ 
+-									vector<T>::const_iterator	iter = container.begin ();
++									typename vector<T>::const_iterator	iter = container.begin ();
+ 									while (iter != container.end ())
+ 									{
+ 										*this << *iter;
+@@ -321,7 +321,7 @@
+ 
+ 	*this << numElements;
+ 
+-	const deque<T>::const_iterator	iter = container.begin ();
++	typename const deque<T>::const_iterator	iter = container.begin ();
+ 	while (iter != container.end ())
+ 	{
+ 		*this << *iter;
+@@ -338,7 +338,7 @@
+ 
+ 	*this << numElements;
+ 
+-	const list<T>::const_iterator	iter = container.begin ();
++	typename const list<T>::const_iterator	iter = container.begin ();
+ 	while (iter != container.end ())
+ 	{
+ 		*this << *iter;
+@@ -355,7 +355,7 @@
+ 
+ 	*this << numElements;
+ 
+-	const vector<T>::const_iterator	iter = container.begin ();
++	typename const vector<T>::const_iterator	iter = container.begin ();
+ 	while (iter != container.end ())
+ 	{
+ 		*this << *iter;
+diff -ur ../SrcShared/Hardware/EmRegsEZTRGpro.cpp.orig ../SrcShared/Hardware/EmRegsEZTRGpro.cpp
+--- ../SrcShared/Hardware/EmRegsEZTRGpro.cpp.orig	Fri Mar 29 07:11:18 2002
++++ ../SrcShared/Hardware/EmRegsEZTRGpro.cpp	Fri Nov 26 21:28:59 2004
+@@ -229,8 +229,8 @@
+ void EmRegsEZTRGpro::SetSubBankHandlers(void)
+ {
+ 	EmRegsEZ::SetSubBankHandlers();
+-	this->SetHandler((ReadFunction)&EmRegs::StdRead,
+-                         (WriteFunction)&EmRegsEZTRGpro::spiWrite,
++	this->SetHandler((ReadFunction) &EmRegsEZTRGpro::StdRead,
++                         (WriteFunction) &EmRegsEZTRGpro::spiWrite,
+ 	                 addressof(spiMasterData),
+ 	                 sizeof(f68EZ328Regs.spiMasterData));
+ }
+diff -ur ../SrcShared/Hardware/EmRegsVZHandEra330.cpp.orig ../SrcShared/Hardware/EmRegsVZHandEra330.cpp
+--- ../SrcShared/Hardware/EmRegsVZHandEra330.cpp.orig	Fri Mar 29 07:11:19 2002
++++ ../SrcShared/Hardware/EmRegsVZHandEra330.cpp	Fri Nov 26 21:30:56 2004
+@@ -588,14 +588,14 @@
+ 
+     // SD support
+ 	this->SetHandler((ReadFunction)&EmRegsVZHandEra330::spiRxDRead,
+-                         (WriteFunction)&EmRegsVZ::StdWrite,
++                         (WriteFunction) &EmRegsVZHandEra330::StdWrite,
+ 	                 addressof(spiRxD),
+ 	                 sizeof(UInt16));
+-	this->SetHandler((ReadFunction)&EmRegsVZ::StdRead,
++	this->SetHandler((ReadFunction) &EmRegsVZHandEra330::StdRead,
+                          (WriteFunction)&EmRegsVZHandEra330::spiTxDWrite,
+ 	                 addressof(spiTxD),
+ 	                 sizeof(UInt16));
+-	this->SetHandler((ReadFunction)&EmRegsVZ::StdRead,
++	this->SetHandler((ReadFunction) &EmRegsVZHandEra330::StdRead,
+                          (WriteFunction)&EmRegsVZHandEra330::spiCont1Write,
+ 	                 addressof(spiCont1),
+ 	                 sizeof(UInt16));
+diff -ur ../SrcShared/Hardware/EmRegsVZPalmM505.cpp.orig ../SrcShared/Hardware/EmRegsVZPalmM505.cpp
+--- ../SrcShared/Hardware/EmRegsVZPalmM505.cpp.orig	Fri Mar 29 07:11:19 2002
++++ ../SrcShared/Hardware/EmRegsVZPalmM505.cpp	Fri Nov 26 21:32:00 2004
+@@ -50,7 +50,7 @@
+ 
+ 	// Now add standard/specialized handers for the defined registers.
+ 
+-	this->SetHandler ((ReadFunction) &EmRegsVZ::StdRead,
++	this->SetHandler ((ReadFunction) &EmRegsVZPalmM505::StdRead,
+ 		(WriteFunction) &EmRegsVZPalmM505::portFSelectWrite,
+ 		addressof (portFSelect), sizeof (f68VZ328Regs.portFSelect));
+ }
+diff -ur ../SrcShared/Hardware/TRG/EmSPISlave330Current.h.orig ../SrcShared/Hardware/TRG/EmSPISlave330Current.h
+--- ../SrcShared/Hardware/TRG/EmSPISlave330Current.h.orig	Fri Mar 29 07:11:05 2002
++++ ../SrcShared/Hardware/TRG/EmSPISlave330Current.h	Fri Nov 26 21:23:41 2004
+@@ -48,4 +48,5 @@
+         Bool                    fPowerConnected;
+ };
+ 
+-#endif
+\ No newline at end of file
++#endif
++
+diff -ur ../SrcShared/Hardware/TRG/EmTRGSD.h.orig ../SrcShared/Hardware/TRG/EmTRGSD.h
+--- ../SrcShared/Hardware/TRG/EmTRGSD.h.orig	Fri Mar 29 07:11:06 2002
++++ ../SrcShared/Hardware/TRG/EmTRGSD.h	Fri Nov 26 21:22:58 2004
+@@ -61,4 +61,5 @@
+ 	    void ExchangeBits(uint16 txData, uint16 *rxData, uint16 Bits);
+ };
+ 
+-#endif
+\ No newline at end of file
++#endif
++
