@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	pserv
-PORTVERSION=	3.1
+PORTVERSION=	3.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A portable and small webserver written in C
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-BUILD_WRKSRC=	${WRKSRC}/sources
 USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
 OPTIONS=	LOG "Enable logging" on \
 		PHP "Enable PHP support" on
@@ -26,7 +24,7 @@ OPTIONS=	LOG "Enable logging" on \
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g;s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKSRC}/defaults/pserv.conf
+		${WRKSRC}/defaults/pserv.conf ${WRKSRC}/sources/main.h
 .if defined(WITHOUT_LOG)
 	@${REINPLACE_CMD} "s|define LOG|undef LOG|" \
 		${WRKSRC}/sources/main.h
@@ -38,7 +36,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${PREFIX}/etc/mime.types
+	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${PREFIX}/etc/mime.types.pserv
 	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${PREFIX}/etc/rc.d/
 
