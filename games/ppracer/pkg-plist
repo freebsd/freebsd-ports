@@ -1,0 +1,339 @@
+bin/ppracer
+%%DATADIR%%/courses/contrib/doing/course.tcl
+%%DATADIR%%/courses/contrib/doing/elev.png
+%%DATADIR%%/courses/contrib/doing/preview.png
+%%DATADIR%%/courses/contrib/doing/terrain.png
+%%DATADIR%%/courses/contrib/doing/trees.png
+%%DATADIR%%/courses/course_idx.tcl
+%%DATADIR%%/courses/events/herring_run/bumpy_ride/course.tcl
+%%DATADIR%%/courses/events/herring_run/bumpy_ride/elev.png
+%%DATADIR%%/courses/events/herring_run/bumpy_ride/preview.png
+%%DATADIR%%/courses/events/herring_run/bumpy_ride/terrain.png
+%%DATADIR%%/courses/events/herring_run/bumpy_ride/trees.png
+%%DATADIR%%/courses/events/herring_run/bunny_hill/course.tcl
+%%DATADIR%%/courses/events/herring_run/bunny_hill/elev.png
+%%DATADIR%%/courses/events/herring_run/bunny_hill/preview.png
+%%DATADIR%%/courses/events/herring_run/bunny_hill/terrain.png
+%%DATADIR%%/courses/events/herring_run/bunny_hill/trees.png
+%%DATADIR%%/courses/events/herring_run/cupicon.png
+%%DATADIR%%/courses/events/herring_run/deadman/README
+%%DATADIR%%/courses/events/herring_run/deadman/course.tcl
+%%DATADIR%%/courses/events/herring_run/deadman/elev.png
+%%DATADIR%%/courses/events/herring_run/deadman/preview.png
+%%DATADIR%%/courses/events/herring_run/deadman/terrain.png
+%%DATADIR%%/courses/events/herring_run/deadman/trees.png
+%%DATADIR%%/courses/events/herring_run/event.tcl
+%%DATADIR%%/courses/events/herring_run/frozen_river/course.tcl
+%%DATADIR%%/courses/events/herring_run/frozen_river/elev.png
+%%DATADIR%%/courses/events/herring_run/frozen_river/preview.png
+%%DATADIR%%/courses/events/herring_run/frozen_river/terrain.png
+%%DATADIR%%/courses/events/herring_run/frozen_river/trees.png
+%%DATADIR%%/courses/events/herring_run/hamburger_hill/README
+%%DATADIR%%/courses/events/herring_run/hamburger_hill/course.tcl
+%%DATADIR%%/courses/events/herring_run/hamburger_hill/elev.png
+%%DATADIR%%/courses/events/herring_run/hamburger_hill/preview.png
+%%DATADIR%%/courses/events/herring_run/hamburger_hill/terrain.png
+%%DATADIR%%/courses/events/herring_run/hamburger_hill/trees.png
+%%DATADIR%%/courses/events/herring_run/hazzard_valley/README
+%%DATADIR%%/courses/events/herring_run/hazzard_valley/course.tcl
+%%DATADIR%%/courses/events/herring_run/hazzard_valley/elev.png
+%%DATADIR%%/courses/events/herring_run/hazzard_valley/preview.png
+%%DATADIR%%/courses/events/herring_run/hazzard_valley/terrain.png
+%%DATADIR%%/courses/events/herring_run/hazzard_valley/trees.png
+%%DATADIR%%/courses/events/herring_run/herringrunicon.png
+%%DATADIR%%/courses/events/herring_run/high_road/course.tcl
+%%DATADIR%%/courses/events/herring_run/high_road/elev.png
+%%DATADIR%%/courses/events/herring_run/high_road/preview.png
+%%DATADIR%%/courses/events/herring_run/high_road/terrain.png
+%%DATADIR%%/courses/events/herring_run/high_road/trees.png
+%%DATADIR%%/courses/events/herring_run/ice_labyrinth/README
+%%DATADIR%%/courses/events/herring_run/ice_labyrinth/course.tcl
+%%DATADIR%%/courses/events/herring_run/ice_labyrinth/elev.png
+%%DATADIR%%/courses/events/herring_run/ice_labyrinth/preview.png
+%%DATADIR%%/courses/events/herring_run/ice_labyrinth/terrain.png
+%%DATADIR%%/courses/events/herring_run/ice_labyrinth/trees.png
+%%DATADIR%%/courses/events/herring_run/ive_got_a_woody/course.tcl
+%%DATADIR%%/courses/events/herring_run/ive_got_a_woody/elev.png
+%%DATADIR%%/courses/events/herring_run/ive_got_a_woody/preview.png
+%%DATADIR%%/courses/events/herring_run/ive_got_a_woody/terrain.png
+%%DATADIR%%/courses/events/herring_run/ive_got_a_woody/trees.png
+%%DATADIR%%/courses/events/herring_run/keep_it_up/course.tcl
+%%DATADIR%%/courses/events/herring_run/keep_it_up/elev.png
+%%DATADIR%%/courses/events/herring_run/keep_it_up/preview.png
+%%DATADIR%%/courses/events/herring_run/keep_it_up/terrain.png
+%%DATADIR%%/courses/events/herring_run/keep_it_up/trees.png
+%%DATADIR%%/courses/events/herring_run/mount_herring/README
+%%DATADIR%%/courses/events/herring_run/mount_herring/course.tcl
+%%DATADIR%%/courses/events/herring_run/mount_herring/elev.png
+%%DATADIR%%/courses/events/herring_run/mount_herring/preview.png
+%%DATADIR%%/courses/events/herring_run/mount_herring/terrain.png
+%%DATADIR%%/courses/events/herring_run/mount_herring/trees.png
+%%DATADIR%%/courses/events/herring_run/mount_satan/README
+%%DATADIR%%/courses/events/herring_run/mount_satan/course.tcl
+%%DATADIR%%/courses/events/herring_run/mount_satan/elev.png
+%%DATADIR%%/courses/events/herring_run/mount_satan/preview.png
+%%DATADIR%%/courses/events/herring_run/mount_satan/terrain.png
+%%DATADIR%%/courses/events/herring_run/mount_satan/trees.png
+%%DATADIR%%/courses/events/herring_run/path_of_daggers/course.tcl
+%%DATADIR%%/courses/events/herring_run/path_of_daggers/elev.png
+%%DATADIR%%/courses/events/herring_run/path_of_daggers/preview.png
+%%DATADIR%%/courses/events/herring_run/path_of_daggers/terrain.png
+%%DATADIR%%/courses/events/herring_run/path_of_daggers/trees.png
+%%DATADIR%%/courses/events/herring_run/penguins_cant_fly/course.tcl
+%%DATADIR%%/courses/events/herring_run/penguins_cant_fly/elev.png
+%%DATADIR%%/courses/events/herring_run/penguins_cant_fly/preview.png
+%%DATADIR%%/courses/events/herring_run/penguins_cant_fly/terrain.png
+%%DATADIR%%/courses/events/herring_run/penguins_cant_fly/trees.png
+%%DATADIR%%/courses/events/herring_run/ski_jump/README
+%%DATADIR%%/courses/events/herring_run/ski_jump/course.tcl
+%%DATADIR%%/courses/events/herring_run/ski_jump/elev.png
+%%DATADIR%%/courses/events/herring_run/ski_jump/preview.png
+%%DATADIR%%/courses/events/herring_run/ski_jump/terrain.png
+%%DATADIR%%/courses/events/herring_run/ski_jump/trees.png
+%%DATADIR%%/courses/events/herring_run/skull_mountain/README
+%%DATADIR%%/courses/events/herring_run/skull_mountain/course.tcl
+%%DATADIR%%/courses/events/herring_run/skull_mountain/elev.png
+%%DATADIR%%/courses/events/herring_run/skull_mountain/preview.png
+%%DATADIR%%/courses/events/herring_run/skull_mountain/terrain.png
+%%DATADIR%%/courses/events/herring_run/skull_mountain/trees.png
+%%DATADIR%%/courses/events/herring_run/slalom/README
+%%DATADIR%%/courses/events/herring_run/slalom/course.tcl
+%%DATADIR%%/courses/events/herring_run/slalom/elev.png
+%%DATADIR%%/courses/events/herring_run/slalom/preview.png
+%%DATADIR%%/courses/events/herring_run/slalom/terrain.png
+%%DATADIR%%/courses/events/herring_run/slalom/trees.png
+%%DATADIR%%/courses/events/herring_run/snow_valley/README
+%%DATADIR%%/courses/events/herring_run/snow_valley/course.tcl
+%%DATADIR%%/courses/events/herring_run/snow_valley/elev.png
+%%DATADIR%%/courses/events/herring_run/snow_valley/preview.png
+%%DATADIR%%/courses/events/herring_run/snow_valley/terrain.png
+%%DATADIR%%/courses/events/herring_run/snow_valley/trees.png
+%%DATADIR%%/courses/events/herring_run/the_narrow_way/README
+%%DATADIR%%/courses/events/herring_run/the_narrow_way/course.tcl
+%%DATADIR%%/courses/events/herring_run/the_narrow_way/elev.png
+%%DATADIR%%/courses/events/herring_run/the_narrow_way/preview.png
+%%DATADIR%%/courses/events/herring_run/the_narrow_way/terrain.png
+%%DATADIR%%/courses/events/herring_run/the_narrow_way/trees.png
+%%DATADIR%%/courses/events/herring_run/tux-toboggan_run/README
+%%DATADIR%%/courses/events/herring_run/tux-toboggan_run/course.tcl
+%%DATADIR%%/courses/events/herring_run/tux-toboggan_run/elev.png
+%%DATADIR%%/courses/events/herring_run/tux-toboggan_run/preview.png
+%%DATADIR%%/courses/events/herring_run/tux-toboggan_run/terrain.png
+%%DATADIR%%/courses/events/herring_run/tux-toboggan_run/trees.png
+%%DATADIR%%/courses/events/herring_run/twisty_slope/course.tcl
+%%DATADIR%%/courses/events/herring_run/twisty_slope/elev.png
+%%DATADIR%%/courses/events/herring_run/twisty_slope/preview.png
+%%DATADIR%%/courses/events/herring_run/twisty_slope/terrain.png
+%%DATADIR%%/courses/events/herring_run/twisty_slope/trees.png
+%%DATADIR%%/courses/themes/common.tcl
+%%DATADIR%%/courses/themes/conditions/common/cloudyback.png
+%%DATADIR%%/courses/themes/conditions/common/cloudybottom.png
+%%DATADIR%%/courses/themes/conditions/common/cloudyfront.png
+%%DATADIR%%/courses/themes/conditions/common/cloudyleft.png
+%%DATADIR%%/courses/themes/conditions/common/cloudyright.png
+%%DATADIR%%/courses/themes/conditions/common/cloudytop.png
+%%DATADIR%%/courses/themes/conditions/common/conditions.tcl
+%%DATADIR%%/courses/themes/conditions/common/envmap.png
+%%DATADIR%%/courses/themes/conditions/common/evening_light.tcl
+%%DATADIR%%/courses/themes/conditions/common/eveningback.png
+%%DATADIR%%/courses/themes/conditions/common/eveningbottom.png
+%%DATADIR%%/courses/themes/conditions/common/eveningenv.png
+%%DATADIR%%/courses/themes/conditions/common/eveningfront.png
+%%DATADIR%%/courses/themes/conditions/common/eveningleft.png
+%%DATADIR%%/courses/themes/conditions/common/eveningright.png
+%%DATADIR%%/courses/themes/conditions/common/eveningtop.png
+%%DATADIR%%/courses/themes/conditions/common/foggy_light.tcl
+%%DATADIR%%/courses/themes/conditions/common/night_light.tcl
+%%DATADIR%%/courses/themes/conditions/common/nightback.png
+%%DATADIR%%/courses/themes/conditions/common/nightbottom.png
+%%DATADIR%%/courses/themes/conditions/common/nightenv.png
+%%DATADIR%%/courses/themes/conditions/common/nightfront.png
+%%DATADIR%%/courses/themes/conditions/common/nightleft.png
+%%DATADIR%%/courses/themes/conditions/common/nightright.png
+%%DATADIR%%/courses/themes/conditions/common/nighttop.png
+%%DATADIR%%/courses/themes/conditions/common/sunny_light.tcl
+%%DATADIR%%/courses/themes/conditions/common/sunnyback.png
+%%DATADIR%%/courses/themes/conditions/common/sunnybottom.png
+%%DATADIR%%/courses/themes/conditions/common/sunnyfront.png
+%%DATADIR%%/courses/themes/conditions/common/sunnyleft.png
+%%DATADIR%%/courses/themes/conditions/common/sunnyright.png
+%%DATADIR%%/courses/themes/conditions/common/sunnytop.png
+%%DATADIR%%/courses/themes/huds/common/huds.tcl
+%%DATADIR%%/courses/themes/items/common/finish.png
+%%DATADIR%%/courses/themes/items/common/flag.png
+%%DATADIR%%/courses/themes/items/common/herring_standard.png
+%%DATADIR%%/courses/themes/items/common/items.tcl
+%%DATADIR%%/courses/themes/items/common/start.png
+%%DATADIR%%/courses/themes/items/flags/flag2.png
+%%DATADIR%%/courses/themes/items/flags/items.tcl
+%%DATADIR%%/courses/themes/items/herrings/herring_dead.png
+%%DATADIR%%/courses/themes/items/herrings/herring_green.png
+%%DATADIR%%/courses/themes/items/herrings/herring_red.png
+%%DATADIR%%/courses/themes/items/herrings/items.tcl
+%%DATADIR%%/courses/themes/items/herrings/star.png
+%%DATADIR%%/courses/themes/items/stuff/items.tcl
+%%DATADIR%%/courses/themes/items/stuff/life.png
+%%DATADIR%%/courses/themes/models/common/models.tcl
+%%DATADIR%%/courses/themes/models/common/shrub.ac
+%%DATADIR%%/courses/themes/models/common/shrub.png
+%%DATADIR%%/courses/themes/models/common/tree.ac
+%%DATADIR%%/courses/themes/models/common/tree.png
+%%DATADIR%%/courses/themes/models/common/tree_barren.ac
+%%DATADIR%%/courses/themes/models/common/tree_barren.png
+%%DATADIR%%/courses/themes/models/stuff/barrier.ac
+%%DATADIR%%/courses/themes/models/stuff/barrier.png
+%%DATADIR%%/courses/themes/models/stuff/models.tcl
+%%DATADIR%%/courses/themes/models/trees/models.tcl
+%%DATADIR%%/courses/themes/models/trees/tree_xmas.ac
+%%DATADIR%%/courses/themes/models/trees/tree_xmas.png
+%%DATADIR%%/courses/themes/ppracer.tcl
+%%DATADIR%%/courses/themes/terrains/add/road.png
+%%DATADIR%%/courses/themes/terrains/add/speed.png
+%%DATADIR%%/courses/themes/terrains/add/terrains.tcl
+%%DATADIR%%/courses/themes/terrains/common/buttprint.png
+%%DATADIR%%/courses/themes/terrains/common/buttstart.png
+%%DATADIR%%/courses/themes/terrains/common/buttstop.png
+%%DATADIR%%/courses/themes/terrains/common/ice.png
+%%DATADIR%%/courses/themes/terrains/common/rock.png
+%%DATADIR%%/courses/themes/terrains/common/snow.png
+%%DATADIR%%/courses/themes/terrains/common/snowparticles.png
+%%DATADIR%%/courses/themes/terrains/common/terrains.tcl
+%%DATADIR%%/courses/themes/terrains/ice/greenice.png
+%%DATADIR%%/courses/themes/terrains/ice/hardice.png
+%%DATADIR%%/courses/themes/terrains/ice/terrains.tcl
+%%DATADIR%%/courses/themes/terrains/lava/lava.png
+%%DATADIR%%/courses/themes/terrains/lava/lavastone.png
+%%DATADIR%%/courses/themes/terrains/lava/terrains.tcl
+%%DATADIR%%/courses/themes/terrains/mud/mud.png
+%%DATADIR%%/courses/themes/terrains/mud/mudparticles.png
+%%DATADIR%%/courses/themes/terrains/mud/mudprint.png
+%%DATADIR%%/courses/themes/terrains/mud/mudstart.png
+%%DATADIR%%/courses/themes/terrains/mud/mudstop.png
+%%DATADIR%%/courses/themes/terrains/mud/terrains.tcl
+%%DATADIR%%/courses/themes/terrains/rock/snowyrock.png
+%%DATADIR%%/courses/themes/terrains/rock/terrains.tcl
+%%DATADIR%%/courses/themes/terrains/sand/redsand.png
+%%DATADIR%%/courses/themes/terrains/sand/sand.png
+%%DATADIR%%/courses/themes/terrains/sand/terrains.tcl
+%%DATADIR%%/courses/themes/terrains/snow/buttprint.png
+%%DATADIR%%/courses/themes/terrains/snow/buttstart.png
+%%DATADIR%%/courses/themes/terrains/snow/buttstop.png
+%%DATADIR%%/courses/themes/terrains/snow/dirtsnow.png
+%%DATADIR%%/courses/themes/terrains/snow/dirtsnowparticles.png
+%%DATADIR%%/courses/themes/terrains/snow/dsnow.png
+%%DATADIR%%/courses/themes/terrains/snow/dsnow2.png
+%%DATADIR%%/courses/themes/terrains/snow/snowparticles.png
+%%DATADIR%%/courses/themes/terrains/snow/snowygrass.png
+%%DATADIR%%/courses/themes/terrains/snow/stsnow1.png
+%%DATADIR%%/courses/themes/terrains/snow/stsnow2.png
+%%DATADIR%%/courses/themes/terrains/snow/terrains.tcl
+%%DATADIR%%/fonts/FreeSansBoldOblique.ttf
+%%DATADIR%%/music/options1-jt.it
+%%DATADIR%%/music/race1-jt.it
+%%DATADIR%%/music/race2-jt.it
+%%DATADIR%%/music/readme
+%%DATADIR%%/music/start1-jt.it
+%%DATADIR%%/music/wonrace1-jt.it
+%%DATADIR%%/ppracer_init.tcl
+%%DATADIR%%/sounds/fish_pickup1.wav
+%%DATADIR%%/sounds/fish_pickup2.wav
+%%DATADIR%%/sounds/fish_pickup3.wav
+%%DATADIR%%/sounds/tux_hit_tree1.wav
+%%DATADIR%%/sounds/tux_on_ice1.wav
+%%DATADIR%%/sounds/tux_on_rock1.wav
+%%DATADIR%%/sounds/tux_on_snow1.wav
+%%DATADIR%%/terrains.png
+%%DATADIR%%/textures/checkmark.png
+%%DATADIR%%/textures/conditions_button.png
+%%DATADIR%%/textures/energymask.png
+%%DATADIR%%/textures/gaugeenergymask.png
+%%DATADIR%%/textures/gaugeoutline.png
+%%DATADIR%%/textures/gaugespeedmask.png
+%%DATADIR%%/textures/herringicon.png
+%%DATADIR%%/textures/listbox_arrows.png
+%%DATADIR%%/textures/mask_outline.png
+%%DATADIR%%/textures/mask_outline2.png
+%%DATADIR%%/textures/menu_bottom_left.png
+%%DATADIR%%/textures/menu_bottom_right.png
+%%DATADIR%%/textures/menu_title.png
+%%DATADIR%%/textures/menu_top_left.png
+%%DATADIR%%/textures/menu_top_right.png
+%%DATADIR%%/textures/mirror_button.png
+%%DATADIR%%/textures/mouse_cursor.png
+%%DATADIR%%/textures/noicon.png
+%%DATADIR%%/textures/nopreview.png
+%%DATADIR%%/textures/snow_button.png
+%%DATADIR%%/textures/snowparticles.png
+%%DATADIR%%/textures/speedmask.png
+%%DATADIR%%/textures/splash.png
+%%DATADIR%%/textures/tuxlife.png
+%%DATADIR%%/textures/wind_button.png
+%%DATADIR%%/translations/de_DE.tcl
+%%DATADIR%%/translations/en_GB.tcl
+%%DATADIR%%/translations/es_ES.tcl
+%%DATADIR%%/translations/eu_ES.tcl
+%%DATADIR%%/translations/fr_FR.tcl
+%%DATADIR%%/translations/it_IT.tcl
+%%DATADIR%%/translations/languages.tcl
+%%DATADIR%%/translations/nb_NO.tcl
+%%DATADIR%%/translations/nl_NL.tcl
+%%DATADIR%%/translations/nn_NO.tcl
+%%DATADIR%%/translations/pt_PT.tcl
+%%DATADIR%%/translations/ru_RU.tcl
+%%DATADIR%%/tux.tcl
+%%DATADIR%%/tux_walk.tcl
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/courses/themes/terrains/snow
+@dirrm %%DATADIR%%/courses/themes/terrains/sand
+@dirrm %%DATADIR%%/courses/themes/terrains/rock
+@dirrm %%DATADIR%%/courses/themes/terrains/mud
+@dirrm %%DATADIR%%/courses/themes/terrains/lava
+@dirrm %%DATADIR%%/courses/themes/terrains/ice
+@dirrm %%DATADIR%%/courses/themes/terrains/common
+@dirrm %%DATADIR%%/courses/themes/terrains/add
+@dirrm %%DATADIR%%/courses/themes/terrains
+@dirrm %%DATADIR%%/courses/themes/models/trees
+@dirrm %%DATADIR%%/courses/themes/models/stuff
+@dirrm %%DATADIR%%/courses/themes/models/common
+@dirrm %%DATADIR%%/courses/themes/models
+@dirrm %%DATADIR%%/courses/themes/items/stuff
+@dirrm %%DATADIR%%/courses/themes/items/herrings
+@dirrm %%DATADIR%%/courses/themes/items/flags
+@dirrm %%DATADIR%%/courses/themes/items/common
+@dirrm %%DATADIR%%/courses/themes/items
+@dirrm %%DATADIR%%/courses/themes/huds/common
+@dirrm %%DATADIR%%/courses/themes/huds
+@dirrm %%DATADIR%%/courses/themes/conditions/common
+@dirrm %%DATADIR%%/courses/themes/conditions
+@dirrm %%DATADIR%%/courses/themes
+@dirrm %%DATADIR%%/courses/events/herring_run/twisty_slope
+@dirrm %%DATADIR%%/courses/events/herring_run/tux-toboggan_run
+@dirrm %%DATADIR%%/courses/events/herring_run/the_narrow_way
+@dirrm %%DATADIR%%/courses/events/herring_run/snow_valley
+@dirrm %%DATADIR%%/courses/events/herring_run/slalom
+@dirrm %%DATADIR%%/courses/events/herring_run/skull_mountain
+@dirrm %%DATADIR%%/courses/events/herring_run/ski_jump
+@dirrm %%DATADIR%%/courses/events/herring_run/penguins_cant_fly
+@dirrm %%DATADIR%%/courses/events/herring_run/path_of_daggers
+@dirrm %%DATADIR%%/courses/events/herring_run/mount_satan
+@dirrm %%DATADIR%%/courses/events/herring_run/mount_herring
+@dirrm %%DATADIR%%/courses/events/herring_run/keep_it_up
+@dirrm %%DATADIR%%/courses/events/herring_run/ive_got_a_woody
+@dirrm %%DATADIR%%/courses/events/herring_run/ice_labyrinth
+@dirrm %%DATADIR%%/courses/events/herring_run/high_road
+@dirrm %%DATADIR%%/courses/events/herring_run/hazzard_valley
+@dirrm %%DATADIR%%/courses/events/herring_run/hamburger_hill
+@dirrm %%DATADIR%%/courses/events/herring_run/frozen_river
+@dirrm %%DATADIR%%/courses/events/herring_run/deadman
+@dirrm %%DATADIR%%/courses/events/herring_run/bunny_hill
+@dirrm %%DATADIR%%/courses/events/herring_run/bumpy_ride
+@dirrm %%DATADIR%%/courses/events/herring_run
+@dirrm %%DATADIR%%/courses/events
+@dirrm %%DATADIR%%/courses/contrib/doing
+@dirrm %%DATADIR%%/courses/contrib
+@dirrm %%DATADIR%%/courses
+@dirrm %%DATADIR%%

@@ -382,6 +382,7 @@
     SUBDIR += powerpak
     SUBDIR += powwow
     SUBDIR += pp
+    SUBDIR += ppracer
     SUBDIR += prboom
     SUBDIR += ptkei
     SUBDIR += pvpgn
