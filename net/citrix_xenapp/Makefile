@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXaw.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXaw.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
+		${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License prohibits redistribution"
