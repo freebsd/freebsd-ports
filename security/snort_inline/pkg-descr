@@ -1,0 +1,8 @@
+snort-inline is a variation of snort that interfaces with the
+IPFW firewall and divert sockets to provide a simple IPS system
+using snort signatures.
+
+WWW: http://freebsd.rogness.net/snort_inline
+
+- Nick Rogness
+nick@rogness.net
