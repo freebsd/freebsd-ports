@@ -7,6 +7,7 @@
 
 PORTNAME=	php_doc
 PORTVERSION=	20050521
+PORTREVISION=	1
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -33,6 +34,17 @@ PHP_LANG?=	en
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
 PLIST=		${WRKDIR}/pkg-plist
 
+.for lang in hk ja kr
+.if ${PHP_LANG} == ${lang}
+WRK_SRC=	${WRKDIR}
+.endif
+.endfor
+.for lang in ar br de en fr hu pl ru tw zh
+.if ${PHP_LANG} == ${lang}
+WRK_SRC=	${WRKDIR}/html
+.endif
+.endfor
+
 PKGNAMESUFFIX=	-${PHP_LANG}
 
 PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
@@ -44,6 +56,7 @@ pre-fetch:
 	@${ECHO} "	ar (arabic),"
 	@${ECHO} "	br (brazillian),"
 	@${ECHO} "	de (german),"
+	@${ECHO} "	en (english),"
 	@${ECHO} "	fr (french) or"
 	@${ECHO} "	hu (hungarian) or"
 	@${ECHO} "	ja (japanese)"
@@ -58,14 +71,14 @@ pre-fetch:
 .endif
 
 pre-install:
-	${FIND} ${WRKDIR} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRKDIR},%%PHPDOCDIR%%," > ${PLIST}
-	${FIND} ${WRKDIR} -type d | ${SORT} -r | ${SED} -e "s,${WRKDIR},@dirrm %%PHPDOCDIR%%," >> ${PLIST}
+	${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRK_SRC},%%PHPDOCDIR%%," > ${PLIST}
+	${FIND} ${WRK_SRC} -type d | ${SORT} -r | ${SED} -e "s,${WRK_SRC},@dirrm %%PHPDOCDIR%%," >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${PHPDOCDIR}
-	${FIND} ${WRKDIR} -type d | ${SED} -e "s,${WRKDIR},${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
-	for f in `${FIND} ${WRKDIR} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRKDIR}/,,"`; do \
-		${INSTALL_DATA} ${WRKDIR}/$$f ${PHPDOCDIR}/$$f; \
+	${FIND} ${WRK_SRC} -type d | ${SED} -e "s,${WRK_SRC},${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
+	for f in `${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRK_SRC}/,,"`; do \
+		${INSTALL_DATA} ${WRK_SRC}/$$f ${PHPDOCDIR}/$$f; \
 	done
 
 # this is for the maintainer only
