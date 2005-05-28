@@ -6279,6 +6279,7 @@ mutella		ports/net/mutella
 mutemix		ports/audio/mutemix
 mutt		ports/mail/mutt
 mutt-devel	ports/mail/mutt-devel
+mutt-lite	ports/mail/mutt-lite
 mutt_vc_query	ports/mail/mutt_vc_query
 muttprint	ports/print/muttprint
 muttzilla	ports/mail/muttzilla
