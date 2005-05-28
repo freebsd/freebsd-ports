@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	andrew@ids.pl
 COMMENT=	International Components for Unicode
 
+CONFLICTS=	icu-[0-9]*
+
 INSTALLS_SHLIB=		yes
 NO_FILTER_SHLIBS=	yes
 
