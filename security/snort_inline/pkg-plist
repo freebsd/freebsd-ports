@@ -1,0 +1,98 @@
+bin/snort_inline
+@unexec if [ -f %D/etc/snort.conf ] && cmp -s %D/etc/snort.conf %D/etc/snort.conf-sample; then rm -f %D/etc/snort.conf; fi
+etc/snort.conf-sample
+@exec [ -f %B/snort.conf ] || cp %B/%f %B/snort.conf
+@unexec if [ -f %D/etc/snort_inline.conf ] && cmp -s %D/etc/snort_inline.conf %D/etc/snort_inline.conf-sample; then rm -f %D/etc/snort_inline.conf; fi
+etc/snort_inline.conf-sample
+@exec [ -f %B/snort_inline.conf ] || cp %B/%f %B/snort_inline.conf
+@unexec if [ -f %D/etc/unicode.map ] && cmp -s %D/etc/unicode.map %D/etc/unicode.map-sample; then rm -f %D/etc/unicode.map; fi
+etc/unicode.map-sample
+@exec [ -f %B/unicode.map ] || cp %B/%f %B/unicode.map
+@unexec if [ -f %D/etc/threshold.conf ] && cmp -s %D/etc/threshold.conf %D/etc/threshold.conf-sample; then rm -f %D/etc/threshold.conf; fi
+etc/threshold.conf-sample
+@exec [ -f %B/threshold.conf ] || cp %B/%f %B/threshold.conf
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
+%%PORTDOCS%%%%DOCSDIR%%/faq.tex
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.INLINE
+%%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
+%%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
+%%PORTDOCS%%%%DOCSDIR%%/README.UNSOCK
+%%PORTDOCS%%%%DOCSDIR%%/README.WIN32
+%%PORTDOCS%%%%DOCSDIR%%/README.alert_order
+%%PORTDOCS%%%%DOCSDIR%%/README.csv
+%%PORTDOCS%%%%DOCSDIR%%/README.database
+%%PORTDOCS%%%%DOCSDIR%%/README.event_queue
+%%PORTDOCS%%%%DOCSDIR%%/README.flow
+%%PORTDOCS%%%%DOCSDIR%%/README.flowbits
+%%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
+%%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
+%%PORTDOCS%%%%DOCSDIR%%/README.asn1
+%%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.thresholding
+%%PORTDOCS%%%%DOCSDIR%%/README.wireless
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/attack-responses.rules
+%%DATADIR%%/backdoor.rules
+%%DATADIR%%/bad-traffic.rules
+%%DATADIR%%/chat.rules
+@unexec if [ -f %B/classification.config ] && cmp -s %B/classification.config %B/classification.config-sample; then rm -f %B/classification.config; fi
+%%DATADIR%%/classification.config-sample
+@exec [ -f %B/classification.config ] || cp %B/%f %B/classification.config
+%%DATADIR%%/ddos.rules
+%%DATADIR%%/deleted.rules
+%%DATADIR%%/dns.rules
+%%DATADIR%%/dos.rules
+%%DATADIR%%/experimental.rules
+%%DATADIR%%/exploit.rules
+%%DATADIR%%/finger.rules
+%%DATADIR%%/ftp.rules
+%%DATADIR%%/icmp-info.rules
+%%DATADIR%%/icmp.rules
+%%DATADIR%%/imap.rules
+%%DATADIR%%/info.rules
+%%DATADIR%%/local.rules
+%%DATADIR%%/misc.rules
+%%DATADIR%%/multimedia.rules
+%%DATADIR%%/mysql.rules
+%%DATADIR%%/netbios.rules
+%%DATADIR%%/nntp.rules
+%%DATADIR%%/oracle.rules
+%%DATADIR%%/other-ids.rules
+%%DATADIR%%/p2p.rules
+%%DATADIR%%/policy.rules
+%%DATADIR%%/pop2.rules
+%%DATADIR%%/pop3.rules
+%%DATADIR%%/porn.rules
+@unexec if [ -f %B/reference.config ] && cmp -s %B/reference.config %B/reference.config-sample; then rm -f %B/reference.config; fi
+%%DATADIR%%/reference.config-sample
+@exec [ -f %B/reference.config ] || cp %B/%f %B/reference.config
+%%DATADIR%%/rpc.rules
+%%DATADIR%%/rservices.rules
+%%DATADIR%%/scan.rules
+%%DATADIR%%/shellcode.rules
+%%DATADIR%%/smtp.rules
+%%DATADIR%%/snmp.rules
+%%DATADIR%%/sql.rules
+%%DATADIR%%/telnet.rules
+%%DATADIR%%/tftp.rules
+%%DATADIR%%/virus.rules
+%%DATADIR%%/web-attacks.rules
+%%DATADIR%%/web-cgi.rules
+%%DATADIR%%/web-client.rules
+%%DATADIR%%/web-coldfusion.rules
+%%DATADIR%%/web-frontpage.rules
+%%DATADIR%%/web-iis.rules
+%%DATADIR%%/web-misc.rules
+%%DATADIR%%/web-php.rules
+%%DATADIR%%/x11.rules
+@dirrm %%DATADIR%%

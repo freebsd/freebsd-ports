@@ -466,6 +466,7 @@
     SUBDIR += sniff
     SUBDIR += snort
     SUBDIR += snort-rep
+    SUBDIR += snort_inline
     SUBDIR += snortreport
     SUBDIR += snortsnarf
     SUBDIR += spike-proxy
