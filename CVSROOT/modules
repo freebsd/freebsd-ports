@@ -9426,6 +9426,7 @@ pppd23		ports/net/pppd23
 pppload		ports/net/pppload
 pppoa		ports/net/pppoa
 ppptraf		ports/net/ppptraf
+ppracer		ports/games/ppracer
 pptpclient	ports/net/pptpclient
 ppunpack	ports/archivers/ppunpack
 ppxp		ports/net/ppxp
