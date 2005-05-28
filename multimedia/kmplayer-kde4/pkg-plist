@@ -22,9 +22,6 @@ share/icons/hicolor/48x48/apps/kmplayer.png
 share/icons/hicolor/64x64/apps/kmplayer.png
 share/icons/hicolor/scalable/apps/kmplayer.svgz
 share/services/kmplayer_part.desktop
-share/services/mms.protocol
-share/services/pnm.protocol
-share/services/rtsp.protocol
 @unexec rmdir %D/share/services 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/scalable/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/scalable 2>/dev/null || true
