@@ -1,9 +1,46 @@
-bin/xb-gui-config
 etc/xbone/cert/CAcert.pem
-etc/xbone/cert/CAcert.der
+etc/xbone/cert/README
+etc/xbone/apache/README
+etc/xbone/apache/xb-apache-config.pl
+etc/xbone/apache/xbone-apache.conf.template
+www/xbone/htdocs/images/zoom.png
+www/xbone/htdocs/images/background_light_tan.gif
+www/xbone/htdocs/images/background_med_tan.gif
+www/xbone/htdocs/images/background_tan.gif
+www/xbone/htdocs/images/background_tan.jpg
+www/xbone/htdocs/images/face.gif
+www/xbone/htdocs/images/face.png
+www/xbone/htdocs/images/h1.gif
+www/xbone/htdocs/images/h2.gif
+www/xbone/htdocs/images/h3.gif
+www/xbone/htdocs/images/h4.gif
+www/xbone/htdocs/images/h5.gif
+www/xbone/htdocs/images/h6.gif
+www/xbone/htdocs/images/h7.gif
+www/xbone/htdocs/images/h8.gif
+www/xbone/htdocs/images/linear.gif
+www/xbone/htdocs/images/link.gif
+www/xbone/htdocs/images/link.png
+www/xbone/htdocs/images/main_background.gif
+www/xbone/htdocs/images/new-ovl.gif
+www/xbone/htdocs/images/new-ovl.png
+www/xbone/htdocs/images/overlays.png
+www/xbone/htdocs/images/ring.gif
+www/xbone/htdocs/images/stag.gif
+www/xbone/htdocs/images/star.gif
+www/xbone/htdocs/images/tree.gif
+www/xbone/htdocs/images/zoom.gif
+www/xbone/htdocs/images/background.gif
 www/xbone/htdocs/index.html
 www/xbone/htdocs/robots.txt
 www/xbone/htdocs/xbone.css
+www/xbone/lib/XB_Common.pm
+www/xbone/lib/XB_Params.pm
+www/xbone/lib/XB_XML_GUI.pm
+www/xbone/lib/XB_XML_scan.pm
+www/xbone/lib/api-2.0.dtd
+www/xbone/lib/api-1.0.dtd
+www/xbone/lib/xb-gui-control.pl
 www/xbone/s-cgi-bin/xb-xml-status.pl
 www/xbone/s-cgi-bin/mroutedctl.pl
 www/xbone/s-cgi-bin/xb-create-dynabone.pl
@@ -63,45 +100,31 @@ www/xbone/xb-cgi-bin/xb-index.pl
 www/xbone/xb-cgi-bin/xb-redirect.pl
 www/xbone/xb-cgi-bin/xb-req-user-cert.pl
 www/xbone/cpan/IO/Socket/SSLv6.pm
+www/xbone/cpan/IO/Socket/Multicast6.pm
 www/xbone/cpan/Net/IP/XB_IP.pm
 www/xbone/cpan/auto/IO/Socket/Multicast6/Multicast6.so
 www/xbone/cpan/auto/IO/Socket/Multicast6/Multicast6.bs
 www/xbone/cpan/auto/IO/Socket/Multicast6/.packlist
-www/xbone/cpan/IO/Socket/Multicast6.pm
-www/xbone/cpan/perllocal.pod
-www/xbone/cpan/IO::Socket::Multicast6.3
-www/xbone/lib/api-1.0.dtd
-www/xbone/lib/api-2.0.dtd
-www/xbone/lib/XB_Params.pm
-www/xbone/lib/XB_Common.pm
-www/xbone/lib/XB_XML_GUI.pm
-www/xbone/lib/XB_XML_scan.pm
-www/xbone/lib/xb-gui-config.pl
-www/xbone/apache-conf/httpsd-13ssl.conf
-www/xbone/apache-conf/httpd-2.0.conf
-www/xbone/apache-conf/ssl-2.0.conf
-www/xbone/apache-conf/linux-httpd-2.0.conf
-www/xbone/apache-conf/linux-ssl-2.0.conf
-@dirrm www/xbone/xb-cgi-bin
+bin/xb-apache-config
+bin/xb-gui-control
+@dirrm etc/xbone/cert
+@dirrm etc/xbone/apache
+@dirrm etc/xbone
+@dirrm www/xbone/htdocs/images
+@dirrm www/xbone/htdocs
+@dirrm www/xbone/lib
+@dirrm www/xbone/s-cgi-bin
 @dirrm www/xbone/s-htdocs/xml/images
 @dirrm www/xbone/s-htdocs/xml
 @dirrm www/xbone/s-htdocs
-@dirrm www/xbone/s-cgi-bin
-@dirrm www/xbone/lib
-@dirrm www/xbone/htdocs
+@dirrm www/xbone/xb-cgi-bin
+@dirrm www/xbone/cpan/IO/Socket
+@dirrm www/xbone/cpan/IO
+@dirrm www/xbone/cpan/Net/IP
+@dirrm www/xbone/cpan/Net
 @dirrm www/xbone/cpan/auto/IO/Socket/Multicast6
 @dirrm www/xbone/cpan/auto/IO/Socket
 @dirrm www/xbone/cpan/auto/IO
 @dirrm www/xbone/cpan/auto
-@dirrm www/xbone/cpan/lib/perl5/%%PERL_VER%%
-@dirrm www/xbone/cpan/lib/perl5
-@dirrm www/xbone/cpan/lib
-@dirrm www/xbone/cpan/Net/IP
-@dirrm www/xbone/cpan/Net
-@dirrm www/xbone/cpan/IO/Socket
-@dirrm www/xbone/cpan/IO
 @dirrm www/xbone/cpan
-@dirrm www/xbone/apache-conf
 @dirrm www/xbone
-@dirrm etc/xbone/cert
-@dirrm etc/xbone
