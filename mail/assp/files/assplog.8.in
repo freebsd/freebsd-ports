@@ -1,0 +1,103 @@
+.TH assplog 8 "May 16, 2005" "" "ASSP"
+.SH NAME
+assplog \- display colorized ASSP log
+.SH SYNOPSIS
+assplog
+.SH DESCRIPTION
+.I assplog
+uses
+.B "tail -f"
+to monitor the ASSP Anti-Spam SMTP Proxy log and then displays
+logged messages using ANSI color sequences for easy reading.
+.PP
+The colors have the following meaning:
+.PP
+1. Messages that were delivered
+.RS
+.TP
+White
+Sender was on whitelist (or was added to whitelist)
+.TP
+Green
+Message passed all checks and was delivered
+.RE
+.PP
+2. Messages that were blocked
+.RS
+.TP
+Blue
+Recipient unknown (failed flat list or LDAP check)
+.TP
+Magenta
+Message failed any of the other checks
+.TP
+Red
+Message failed Bayesian spam check
+.RE
+.PP
+3. Administrative messages
+.RS
+.TP
+Cyan
+Message to assp-{notspam,spam,white}@ address
+.TP
+Yellow
+Admin change from web interface
+.RE
+.PP
+Entries from the log are reformatted to a consistent format and
+classified with one of the following tags:
+.TP
+BA
+Bad attachement rejected
+.TP
+BL
+DNSBL check failed
+.TP
+BS
+Bayesian spam check failed
+.TP
+HL
+Bad HELO greeting
+.TP
+IR
+Invalid recipient, failed LDAP or flat list test
+.TP
+LW
+Local or Whitelisted emails
+.TP
+MA
+Malformed RFC822 recipient address
+.TP
+NS
+assp-notspam@ report submission
+.TP
+Ok
+Email that fully passed all tests
+.TP
+RB
+Blocked Relay attempt
+.TP
+SP
+SPF check failed
+.TP
+WA+
+Whitelist addition by local user
+.TP
+WL+
+Whitelist addition of address CC'd in whitelisted email
+.TP
+SR
+assp-spam@ report submission
+.SH BUGS
+.I assplog
+does not display all log messages; for a complete view of
+the log, use
+.B "tail -f"
+directly on the log file.
+.SH FILES
+.IP %%ASSP_HOME%%/maillog.txt
+location of ASSP log file
+.SH "SEE ALSO"
+.IR assp (8),
+.IR tail (1)

@@ -17,6 +17,7 @@
     SUBDIR += archmbox
     SUBDIR += arrow
     SUBDIR += asmail
+    SUBDIR += assp
     SUBDIR += autorespond
     SUBDIR += autosig
     SUBDIR += avenger

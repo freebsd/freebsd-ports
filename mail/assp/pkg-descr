@@ -1,0 +1,21 @@
+Anti-Spam SMTP Proxy is a spam filter that sits on port 25 in front of your
+regular SMTP server (sendmail, postfix, qmail, etc).
+
+ASSP performs a number of configurable spam checks, and on detecting a spam
+message, provides an immediate 5xx SMTP error code back to the client.
+Non-spam messages are passed to your regular SMTP server for further
+processing and delivery.
+
+ASSP offers:
+	- a whitelist of known good senders
+	- Bayesian checks on message headers and contents
+	- recipient address validation using LDAP and RFC822 conformance
+	- relay denial
+	- HELO checking
+	- SPF (Sender Policy Framework) checking
+	- DNSBL (DNS Block List) checking using many DNSBL services
+	- Virus detection
+
+ASSP is a single script with a web-based configuration tool.
+
+WWW: http://assp.sourceforge.net/
