@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://dvisvg.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Convertor from DVI to SVG
+COMMENT=	Converter from DVI to SVG
 
 BUILD_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX \
@@ -23,11 +23,13 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 ALL_TARGET=	# empty
+# workaround for svgfonts.c not including kpathsea/c-auto.h
+CFLAGS+=	-DHAVE_PROTOTYPES
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" TARGETDIR=${PREFIX} \
 		LINC=${LOCALBASE}/include \
 		LLIB=${LOCALBASE}/lib \
 		BINDIR=${PREFIX}/bin \
-		CNFDIR=${PREFIX}/${TEXMFLOCAL}/dvisvg
+		CNFDIR=${PREFIX}/${TEXMFLOCAL}/dvisvg \
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
