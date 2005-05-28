@@ -1,5 +1,5 @@
---- sources/handlers.c.orig	Fri Nov  5 23:04:15 2004
-+++ sources/handlers.c	Wed Nov 24 15:12:55 2004
+--- sources/handlers.c.orig	Mon May 16 23:03:16 2005
++++ sources/handlers.c	Sat May 28 10:38:18 2005
 @@ -25,6 +25,7 @@
  #endif
  
@@ -8,7 +8,7 @@
  extern int  port;                            /* server port */
  extern char defaultFileName[MAX_PATH_LEN+1]; /* default name for index, default or similar file */
  
-@@ -323,6 +324,14 @@
+@@ -269,6 +270,14 @@
          
          i = 0;
  	/* beware of not overfilling this array, check MAX_ENVP_LEN */
@@ -23,21 +23,9 @@
          strcpy(newEnvp[i], "SERVER_SOFTWARE=");
          strcat(newEnvp[i], SERVER_SOFTWARE_STR);
          strcat(newEnvp[i], "/");
-@@ -345,6 +354,11 @@
- 	strcat(newEnvp[i++], req.userAgent);
- 	strcpy(newEnvp[i], "SCRIPT_FILENAME=");
- 	strcat(newEnvp[i++], completedPath);
-+        if (req.cookie[0] != '\0')
-+        {
-+            strcpy(newEnvp[i], "HTTP_COOKIE=");
-+            strcat(newEnvp[i++], req.cookie);
-+        }
-         newEnvp[i] = NULL;
-         
-         /* we change the current working directory to the scripts one */
-@@ -377,8 +391,237 @@
-     return 0;
+@@ -326,8 +335,237 @@
  }
+ #endif /* ENABLE_CGI */
  
 +#ifdef PHP
 +int phpHandler(port, sock, phpFileName, completedPath, req, postStr)

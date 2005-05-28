@@ -1,33 +1,33 @@
---- sources/log.c.orig	Wed May  5 12:12:12 2004
-+++ sources/log.c	Wed May  5 12:04:57 2004
-@@ -20,6 +20,7 @@
- 
+--- sources/log.c.orig	Mon May 16 23:03:16 2005
++++ sources/log.c	Sat May 28 10:41:25 2005
+@@ -23,6 +23,7 @@
+  */
  int logFileOpen()
  {
 +#ifdef LOG
      char timeStr[256];
      struct tm *timeStruct;
      time_t timeTemp;
-@@ -37,15 +38,18 @@
- #ifdef PRINTF_DEBUG
-     printf("Opened Log File.\n");
- #endif    
-+#endif    
+@@ -38,6 +39,7 @@
+     fflush(lf); /* otherwise we have mysterious problems with fork() !! */ 
+ 
+     DBGPRINTF(("Opened Log File.\n"));
++#endif
      return 0;
  }
  
+@@ -45,8 +47,10 @@
+  */
  int logFileClose()
  {
 +#ifdef LOG
      fclose(lf);
- #ifdef PRINTF_DEBUG
-     printf("Closed Log File.\n");
- #endif    
-+#endif    
+     DBGPRINTF(("Closed Log File.\n"));
++#endif
      return 0;
  }
  
-@@ -57,6 +61,7 @@
+@@ -61,6 +65,7 @@
  struct request req;
  int code;
  {
@@ -35,7 +35,7 @@
      char timeStr[256];
      struct tm *timeStruct;
      time_t timeTemp;
-@@ -104,6 +109,7 @@
+@@ -108,6 +113,7 @@
          printf ("Unknown event to log! Programming error!\n");
      }
      fflush(lf);
