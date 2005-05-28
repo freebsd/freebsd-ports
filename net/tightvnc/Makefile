@@ -48,7 +48,7 @@ post-patch:
 	@${PERL} -pi -e "s,/usr/local/vnc/classes,${DATADIR}/classes,g ; \
 		s,^#!/usr/bin/perl,#!${PERL},g" ${WRKSRC}/vncserver
 	@${PERL} -pi -e "s,%%CC%%,${CC},g ; \
-		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/Xvnc/config/cf/FreeBSD.cf
+		s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/Xvnc/config/cf/FreeBSD.cf
 
 do-install:
 	@(cd ${WRKSRC}; ./vncinstall ${PREFIX}/bin ${PREFIX}/man)
