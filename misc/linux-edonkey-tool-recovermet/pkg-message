@@ -1,0 +1,4 @@
+	ATTENTION:
+
+This application will crash when being used on a file >2GB. See 'man 2 mmap'
+for more information about the memory allocation limits of FreeBSD.

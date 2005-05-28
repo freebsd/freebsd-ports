@@ -50,4 +50,7 @@ pre-install:
 .endif
 	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>
