@@ -8,15 +8,13 @@
 PORTNAME=	MeCab
 PORTVERSION=	${MECAB_PORTVERSION}
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/bindings/
+MASTER_SITES=	http://chasen.org/~taku/software/mecab/bindings/
 DISTNAME=	${PORTNAME:L}-perl-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
 
 LIB_DEPENDS=	mecab.0:${MECAB_PORTDIR}
-
-BROKEN=		Unfetchable
 
 PERL_CONFIGURE=	yes
 

@@ -8,7 +8,7 @@
 PORTNAME=	${MECAB_PORTNAME}
 PORTVERSION=	${MECAB_PORTVERSION}
 CATEGORIES=	japanese textproc ruby
-MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/bindings/
+MASTER_SITES=	http://chasen.org/~taku/software/mecab/bindings/
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org

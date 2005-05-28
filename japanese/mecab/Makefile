@@ -7,10 +7,9 @@
 
 PORTNAME=	${MECAB_PORTNAME}
 PORTVERSION=	${MECAB_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/src/ \
-		http://chasen.aist-nara.ac.jp/stable/ipadic/:ipadic
+MASTER_SITES=	http://chasen.org/~taku/software/mecab/src/ \
+		http://chasen.naist.jp/stable/ipadic/:ipadic
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${IPADIC_DISTNAME}${EXTRACT_SUFX}:ipadic
 
@@ -19,10 +18,9 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 IPADIC_DISTNAME=	ipadic-2.5.1
 
-USE_PERL5_BUILD=	yes
 USE_REINPLACE=		yes
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
@@ -36,8 +34,8 @@ DOCS=		AUTHORS README doc/*.html doc/*.css
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
 .endif
 
 post-extract:
