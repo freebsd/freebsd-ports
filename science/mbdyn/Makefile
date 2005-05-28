@@ -71,4 +71,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 CONFIGURE_ARGS+=	--with-tcl=no
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile"
+.endif
+
 .include <bsd.port.post.mk>
