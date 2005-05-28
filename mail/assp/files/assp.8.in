@@ -1,0 +1,277 @@
+.TH assp 8 "May 16, 2005" "" "ASSP"
+.SH NAME
+assp \- Anti-Spam SMTP Proxy
+.SH SYNOPSIS
+assp [ base_dir [ admin_port ] ]
+.PP
+%%PREFIX%%/etc/rc.d/assp.sh start|stop|restart|status
+.SH DESCRIPTION
+.I "Anti-Spam SMTP Proxy"
+is a spam filter that sits on port 25 in front
+of your regular SMTP server
+.RI ( exim (8),
+.IR postfix (8),
+.IR qmail (8),
+.IR sendmail (8),
+etc).
+.PP
+.I ASSP
+relays the SMTP dialog between an incoming client and your SMTP
+server, intercepting the dialog as needed.
+.I ASSP
+performs a number of configurable spam checks and on detecting
+a spam message provides an immediate 5xx SMTP error code back to
+the client.  Non-spam messages are passed to your regular SMTP server
+for further processing and delivery.  Spam messages can be blocked
+from delivery or subject-tagged and delivered.
+.PP
+.I ASSP
+offers:
+.RS
+.IP - 2m
+a whitelist of known good senders
+.IP -
+Bayesian checks on message headers and contents
+.IP -
+local user validation using RFC822 checks, flat lists or LDAP lookup
+.IP -
+relay denial
+.IP -
+HELO checking
+.IP -
+SPF (Sender Policy Framework) checking
+.IP -
+DNSBL (DNS Block List) checking using many block list services
+.IP -
+Virus detection
+.RE
+.PP
+.I ASSP
+is entirely administrator-managed and is almost totally
+transparent to users.  In particular, users do not need to
+manage
+.IR procmail (1)
+spam filters or challenge-response systems of their own.
+.PP
+The
+.I base_dir
+argument gives the name of
+.IR ASSP 's
+working directory.  If omitted
+it defaults to the current directory.
+.PP
+.I ASSP
+is configured using a web interface.
+The
+.I admin_port
+argument gives the network port for accessing
+.IR ASSP 's
+configuration menu.  It defaults to 55555.
+To access the configuration menu, start
+.I ASSP
+and then point your browser at
+.IR http://localhost:55555 .
+The default admin password is
+.IR nospam4me .
+.PP
+Initial setup of
+.I ASSP
+involves several steps:
+.IP 1.
+Review
+.IR ASSP 's
+configuration options and adjust as necessary.  Be sure
+to change the admin password.  By default
+.IR ASSP 's
+filters are all set to
+.I "Test Mode"
+which means all messages will be delivered to their recipients.
+Leave everything in Test Mode for now.
+.IP 2.
+Decide on which network port(s)
+.I ASSP
+will listen and on which your normal SMTP server will listen.
+Typically,
+.I ASSP
+will listen on port 25 and your SMTP server will be moved to
+something like port 125 or 587.
+.IP 3.
+Reconfigure your SMTP server to its new port.
+.IP 4.
+Reconfigure
+.I ASSP
+to port 25 and restart
+.IR ASSP .
+Since
+.I ASSP
+is in Test Mode, all messages will be delivered to their
+recipients.
+.IP 5.
+Arrange for all users' outbound email to be processed by
+.IR ASSP .
+This is necessary for
+.I ASSP
+to be able to automatically maintain its whitelist.
+If a user's MUA uses SMTP to port 25, this will happen
+without further intervention.  If an MUA invokes
+.I /usr/sbin/sendmail
+and you're using the default
+.IR sendmail (8)
+configuration with submit queues, this will also happen
+without further intervention.  Otherwise, you need to take
+whatever steps are necessary for each MUA that's being used.
+.IP 6.
+Optionally, send a message containing a list of email addresses
+that you want to receive email from to
+.IR assp-white@yourdomain.com .
+Have all your users do this.  This will seed
+.IR ASSP 's
+whitelist.  Messages from senders on the whitelist will
+never be blocked.
+.IP 7.
+To set up the Bayesian word list filtering, do the following:
+.RS
+.IP 7a.
+Ensure some senders' addresses are in the whitelist, either
+by sending email to them or by seeding the whilelist as described
+above.
+.IP 7b.
+Allow some time (could be hours or days, depending on the
+volume of email you receive) for enough email to collect.
+Mesages from senders on the whitelist will be copied in the
+.I notspam
+directory.  Other messages will either be passed or be copied
+in the
+.I spam
+directory based on word scores in the initial greylist.
+.IP 7c.
+Periodically examine the messages in
+.IR ASSP 's
+.IR notspam
+and
+.I spam
+directories to make sure they're sorted correctly.  Move
+any to the other directory as needed.  If you're unsure about
+a particular message, just delete it.
+Also, examine
+.I maillog.txt
+for information about what
+.I ASSP
+is doing.
+.IP 7d.
+After about 400 messages have collected, filtering mode can
+be enabled.
+In the
+.I %%ASSP_HOME%%
+directory, run the
+.I %%PREFIX%%/lib/assp/rebuildspamdb.pl
+script to create the spam database from the logged messages.
+This is the part where the Bayesian filter ``learns'' about
+the words in your
+.I spam
+and
+.I notspam
+collections.
+.IP 7e.
+Uncheck the appropriate Test Mode box in
+.IR ASSP 's
+configuration menu to enable message blocking.
+.IP 7f.
+It is recommended that the
+.I UseSubjectsAsMaillogNames
+configuration option is eventually unchecked and that the
+script
+.I %%PREFIX%%/lib/assp/move2num.pl
+is run in the
+.I %%ASSP_HOME%%
+directory.  This causes messages to be stored with numeric
+filenames, and overwritten after some time.  The benefits
+of this are that the size of the stored messages will
+be limited and that older messages are removed from the
+collection.  This keeps the Bayesian word list current.
+This need not be done immediately; you can do this once
+you no longer feel the need to examine the spam messages
+in detail.
+.RE
+.IP 8.
+.IR ASSP 's
+other filtering options (local user validation, RFC822
+conformance, client HELO validation, SPF validation,
+the use of DNSBLs and the ClamAV virus checker)
+can be enabled by examining and adjusting their
+configuration options as needed and then unchecking the
+appropriate Test Mode boxes.
+.PP
+Once
+.I ASSP
+is live, users should forward a copy of any spam message that
+still gets through to
+.I assp-spam@yourdomain.com
+in order to add it to
+.IR ASSP 's
+spam database.  Any non-spam that was mis-classified as spam
+can be copied to
+.IR assp-notspam@yourdomain.com .
+.PP
+The
+.I rebuildspamdb.pl
+script needs to be re-run periodically to update the spam database
+from the latest logged messages.  There is a 
+.IR periodic (8)
+script that will do this overnight.
+.PP
+For full details of using
+.IR ASSP ,
+see the
+.I ASSP
+website and documentation.
+.SH "STARTING ASSP AT BOOT TIME"
+The
+.I /usr/local/etc/rc.d/assp.sh
+script is run automatically at system boot time.
+Several variables can be set in
+.I /etc/rc.conf
+to control the behavior.
+.IP assp_enable
+set to
+.I "YES"
+to start ASSP at boot time
+.IP assp_args
+passed to the ASSP client, default is
+.I assp_args="%%ASSP_HOME%%"
+.SH FILES
+.IP %%ASSP_HOME%%
+location of ASSP config file, log file and spam databases
+.IP %%ASSP_HOME%%/notspam
+copies of non-spam messages received
+.IP %%ASSP_HOME%%/spam
+copies of spam messages received
+.IP %%ASSP_HOME%%/errors/{notspam,spam}
+messages forwarded to assp-notspam@ and assp-spam@ addresses
+.IP %%ASSP_HOME%%/maillog.txt
+.IR ASSP 's
+log file
+.IP %%PREFIX%%/lib/assp/freshclam.sh
+script to update virus definitions
+.IP %%PREFIX%%/lib/assp/move2num.pl
+script to rename stored messages to numeric filenames
+.IP %%PREFIX%%/lib/assp/rebuildspamdb.pl
+script to update spam database
+.IP %%PREFIX%%/etc/periodic/daily/510.assp
+nightly script to invoke
+.I rebuildspamdb.pl
+and
+.IR freshclam.sh .
+.SH BUGS
+.I ASSP
+currently has no IPv6 support.
+.SH "SEE ALSO"
+.IR procmail (1),
+.IR assplog (8),
+.IR exim (8),
+.IR postfix (8),
+.IR qmail (8),
+.IR sendmail (8),
+%%PREFIX%%/share/doc/assp/ASSP Documentation.htm
+.br
+http://assp.sourceforge.net/

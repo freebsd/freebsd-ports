@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Update ASSP Spam and ClamAV databases
+
+cd %%ASSP_HOME%%
+
+if [ ! -f %%PREFIX%%/lib/assp/rebuildspamdb.pl ]
+then
+	echo "%%PREFIX%%/lib/assp/rebuildspamdb.pl does not exist"
+	rc_spamdb=2
+else
+	echo ""
+	echo "Running ASSP rebuildspamdb.pl:"
+	%%PERL%% %%PREFIX%%/lib/assp/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
+fi
+
+if [ ! -f %%PREFIX%%/lib/assp/freshclam.sh ]
+then
+	# existence of freshclam.sh is optional, dependent
+	# on the WITH_CLAMAV setting, so not an error if not there
+	rc_clamav=0
+else
+	echo ""
+	echo "Fetching ASSP ClamAV virus database updates:"
+	export PATH=$PATH:%%LOCALBASE%%/bin
+	sh %%PREFIX%%/lib/assp/freshclam.sh && rc_clamav=0 || rc_clamav=3
+fi
+
+exit $(($rc_spamdb|$rc_clamav))

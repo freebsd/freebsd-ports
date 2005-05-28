@@ -1,0 +1,25 @@
+etc/periodic/daily/510.assp
+@unexec rmdir %D/etc/periodic/daily 2>/dev/null || true
+@unexec rmdir %D/etc/periodic 2>/dev/null || true
+lib/assp/addservice.pl
+lib/assp/assp.pl
+lib/assp/move2num.pl
+lib/assp/notspamreport.txt
+lib/assp/rebuildspamdb.pl
+lib/assp/repair.pl
+lib/assp/spamreport.txt
+lib/assp/stat.pl
+lib/assp/stats.sh
+lib/assp/whitereport.txt
+%%ASSP_CLAMAV%%lib/assp/freshclam.sh
+@dirrm lib/assp
+sbin/assp
+sbin/assplog
+%%PORTDOCS%%%%DOCSDIR%%/ASSP Documentation.htm
+%%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rm -f %%ASSP_HOME%%/notspamreport.txt 2>/dev/null || true
+@unexec rm -f %%ASSP_HOME%%/spamreport.txt 2>/dev/null || true
+@unexec rm -f %%ASSP_HOME%%/whitereport.txt 2>/dev/null || true
+@unexec rmdir %%ASSP_HOME%% 2>/dev/null || true
+@unexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
