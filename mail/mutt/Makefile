@@ -38,6 +38,7 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .endif
 .if defined (MUTT_LITE)
+PKGNAMESUFFIX=	-lite
 WITH_SGML_DOCS:=no
 .elif ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls

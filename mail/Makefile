@@ -225,6 +225,7 @@
     SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-devel
+    SUBDIR += mutt-lite
     SUBDIR += mutt_vc_query
     SUBDIR += muttzilla
     SUBDIR += nail
