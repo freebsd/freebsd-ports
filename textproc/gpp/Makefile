@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpp
-PORTVERSION=	2.22
+PORTVERSION=	2.24
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nothingisreal.com/gpp/
 
