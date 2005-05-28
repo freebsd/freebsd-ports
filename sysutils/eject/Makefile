@@ -7,6 +7,7 @@
 
 PORTNAME=	eject
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
