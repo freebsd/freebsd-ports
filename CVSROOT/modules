@@ -10962,6 +10962,7 @@ sokoban		ports/games/sokoban
 sol		ports/games/sol
 solarwolf	ports/games/solarwolf
 solfege		ports/audio/solfege
+solid-ircd	ports/irc/solid-ircd
 solidpop3d	ports/mail/solidpop3d
 solitaire	ports/math/solitaire
 sonice		ports/audio/sonice
