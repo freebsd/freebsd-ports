@@ -1,0 +1,16 @@
+solid-ircd/convert_conf
+solid-ircd/ircd
+solid-ircd/ircd.motd
+solid-ircd/mkpasswd
+solid-ircd/template.conf
+solid-ircd/ssl/CVS/Entries
+solid-ircd/ssl/CVS/Repository
+solid-ircd/ssl/CVS/Root
+solid-ircd/ssl/makecert.sh
+solid-ircd/ssl/ssl.cnf
+solid-ircd/ssl/ssl.rnd
+solid-ircd/ssl/vgc.pem
+solid-ircd/ssl/vgckey.pem
+@dirrm solid-ircd/ssl/CVS
+@unexec rmdir %D/solid-ircd/ssl 2>/dev/null || true
+@unexec rmdir %D/solid-ircd 2>/dev/null || true

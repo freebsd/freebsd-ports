@@ -90,6 +90,7 @@
     SUBDIR += sirc
     SUBDIR += sircd
     SUBDIR += slirc
+    SUBDIR += solid-ircd
     SUBDIR += srvx
     SUBDIR += thales
     SUBDIR += tirc
