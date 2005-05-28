@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)
 
+CONFLICTS=	icu2-[0-9]*
+
 INSTALLS_SHLIB=		yes
 NO_FILTER_SHLIBS=	yes
 
