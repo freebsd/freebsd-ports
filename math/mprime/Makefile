@@ -8,53 +8,24 @@
 PORTNAME=	mprime
 PORTVERSION=	0.0.${SOURCE_VERSION}
 CATEGORIES=	math benchmarks net
-MASTER_SITES=	ftp://mersenne.org/gimps/ \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	lioux/:local
-DISTFILES=	source${PORTVERSION:S/^0.0.//:R}.zip \
-		prime95-text-${TEXT_DATE}-${SOURCE_VERSION}.tar.bz2:local
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=
+MASTER_SITES=	ftp://mersenne.org/gimps/
+DISTNAME=	sprime${PORTVERSION:S/^0.0.//:S/.//}-freebsd
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	mersenne.org distributed Great Internet Mersenne Prime Search
 
 ONLY_FOR_ARCHS=	i386
-USE_REINPLACE=	yes
-USE_ZIP=	yes
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/source/linux
-MAKEFILE=	makebsd
-ALL_TARGET=	clean mprime
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 # source code version
 SOURCE_VERSION=	23.5
-# document date version
-TEXT_DATE=	2004022600
-
-post-extract:
-	@cd ${WRKDIR} && ${LOCALBASE}/bin/unzip -qq \
-		${DISTDIR}/${DIST_SUBDIR}/source${PORTVERSION:S/^0.0.//:R}.zip
-	@cd ${WRKDIR} && ${TAR} -xjf \
-		${DISTDIR}/${DIST_SUBDIR}/prime95-text-${TEXT_DATE}-${SOURCE_VERSION}.tar.bz2
 
 post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|||' \
-		${WRKSRC}/makebsd
 # prepare wrapper
 	@${SED} \
 		-e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
-
-do-configure:
-	@${REINPLACE_CMD} -E \
-		-e 's|^(CC).*$$|\1=${CC}|' \
-		-e 's|^(CFLAGS)[[:space:]]*=|\1+=|' \
-		-e 's|^(CFLAGS.*)-m486|\1|' \
-		-e 's|^(CFLAGS.*)-O2|\1|' \
-		${WRKSRC}/makebsd
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mprime ${PREFIX}/bin/mprime-real
