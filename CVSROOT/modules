@@ -10943,6 +10943,7 @@ snobol		ports/lang/snobol
 snooper		ports/comms/snooper
 snort		ports/security/snort
 snort-rep	ports/security/snort-rep
+snort_inline	ports/security/snort_inline
 snortreport	ports/security/snortreport
 snortsnarf	ports/security/snortsnarf
 snowflake	ports/misc/snowflake
