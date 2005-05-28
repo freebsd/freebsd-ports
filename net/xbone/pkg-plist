@@ -1,37 +1,44 @@
-etc/xbone/zebra.conf.sample
-etc/xbone/xbone.conf.sample
-etc/xbone/xbone.sh.sample
-etc/xbone/ripd.conf.sample
-etc/xbone/ripngd.conf.sample
-etc/xbone/named-conf/xbone/xbone-forward.zone
-etc/xbone/named-conf/xbone/xbone-reverse.zone
-etc/xbone/named-conf/xbone/xbone-reverse6.zone
-etc/xbone/named-conf/named.conf
-etc/xbone/named-conf/resolv.conf
-etc/xbone/apache-conf/httpsd-13ssl.conf
-etc/xbone/apache-conf/httpd-2.0.conf
-etc/xbone/apache-conf/ssl-2.0.conf
-etc/xbone/apache-conf/linux-httpd-2.0.conf
-etc/xbone/apache-conf/linux-ssl-2.0.conf
+bin/xbonectl
 etc/xbone/cert/CAcert.pem
-etc/xbone/cert/CAcert.der
-xbone/doc/README
+etc/xbone/cert/README
+etc/xbone/xbone.sh.sample
+etc/xbone/xbone.conf.sample
+etc/xbone/openldap/README
+etc/xbone/openldap/slapd-xbone.conf.template
+etc/xbone/openldap/slave-acl.conf
+etc/xbone/openldap/slave-init-local.ldif
+etc/xbone/openldap/slave-init-global.ldif
+etc/xbone/openldap/xbone-ldap-local.ldif
+etc/xbone/openldap/xbone-ldap-global.ldif
+etc/xbone/openldap/xb-ldap-config.pl
+etc/xbone/openldap/xbone.schema
+etc/xbone/named/xbone/xbone-forward.zone
+etc/xbone/named/xbone/xbone-reverse.zone
+etc/xbone/named/xbone/xbone-reverse6.zone
+etc/xbone/named/named.conf
+etc/xbone/named/resolv.conf
+etc/xbone/routing/ripd.conf.sample
+etc/xbone/routing/ripngd.conf.sample
+etc/xbone/routing/zebra.conf.sample
+xbone/doc/v6/Linux-v6-status.txt
 xbone/doc/v6/modules.README
 xbone/doc/v6/xbone-v6-support.txt
-xbone/doc/v6/Linux-v6-status.txt
+xbone/doc/README
 xbone/doc/api-language.doc
 xbone/doc/dynamic_dns.txt
 xbone/doc/mrouted.conf.example
 xbone/doc/xbone-QoS-support.txt
+xbone/doc/xbone-acl-rules.txt
+xbone/doc/xbone-app-deployment.txt
+xbone/doc/xbone-ca-setup.txt
+xbone/doc/xbone-cisco-support.txt
 xbone/doc/xbone-control-protocol.txt
+xbone/doc/xbone-custom-topology.txt
 xbone/doc/xbone-data-structure.txt
 xbone/doc/xbone-dynamic-routing.txt
-xbone/doc/xbone-app-deployment.txt
-xbone/doc/xbone-acl-rules.txt
-xbone/doc/xbone-networking-req.txt
-xbone/doc/xbone-cisco-support.txt
-xbone/doc/xbone-custom-topology.txt
 xbone/doc/xbone-ipsec-conf.txt
+xbone/doc/xbone-networking-req.txt
+xbone/doc/xbone-ldap.txt
 xbone/apps/prm/webvis/gen.pl
 xbone/apps/prm/webvis/index.html
 xbone/apps/prm/webvis/title-bg.png
@@ -56,32 +63,48 @@ xbone/apps/test-script/xbone-test.conf
 xbone/apps/test-script/xbone-test.sh
 xbone/apps/README.abone
 xbone/apps/abone-script
-xbone/apps/vserver-script.pl
 xbone/apps/sample-app-deploy-script.sh
+xbone/apps/vserver-script.pl
+xbone/conf/named/xbone/xbone-forward.zone
+xbone/conf/named/xbone/xbone-reverse.zone
+xbone/conf/named/xbone/xbone-reverse6.zone
+xbone/conf/named/named.conf
+xbone/conf/named/resolv.conf
+xbone/conf/routing/ripd.conf.sample
+xbone/conf/routing/ripngd.conf.sample
+xbone/conf/routing/zebra.conf.sample
+xbone/conf/apache/README
+xbone/conf/apache/xb-apache-config.pl
+xbone/conf/apache/xbone-apache.conf.template
+xbone/conf/openldap/README
+xbone/conf/openldap/slapd-xbone.conf.template
+xbone/conf/openldap/slave-acl.conf
+xbone/conf/openldap/slave-init-local.ldif
+xbone/conf/openldap/slave-init-global.ldif
+xbone/conf/openldap/xbone-ldap-local.ldif
+xbone/conf/openldap/xbone-ldap-global.ldif
+xbone/conf/openldap/xb-ldap-config.pl
+xbone/conf/openldap/xbone.schema
 xbone/conf/cert/CAcert.pem
-xbone/conf/cert/CAcert.der
-xbone/conf/ripd.conf.sample
-xbone/conf/ripngd.conf.sample
+xbone/conf/cert/README
 xbone/conf/xbone.conf.sample
 xbone/conf/xbone.sh.sample
-xbone/conf/zebra.conf.sample
 xbone/man/man5/XB_Params.pm.5
-xbone/man/man5/xbone.conf.5
 xbone/man/man5/xbone-gui.conf.5
+xbone/man/man5/xbone.conf.5
 xbone/man/man8/X-Bone.8
-xbone/man/man8/xb-config.8
-xbone/man/man8/xb-gui-config.8
+xbone/man/man8/xb-gui-control.8
+xbone/man/man8/xb-node-control.8
 xbone/man/man8/xb-node-daemon.8
+xbone/man/man8/xb-ldap-config.8
+xbone/man/man8/xb-apache-config.8
 xbone/man/man8/xbonectl.8
 xbone/programs/modules/cpan/IO/Socket/SSLv6.pm
+xbone/programs/modules/cpan/IO/Socket/Multicast6.pm
 xbone/programs/modules/cpan/Net/IP/XB_IP.pm
 xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/Multicast6.so
 xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/Multicast6.bs
 xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/.packlist
-xbone/programs/modules/cpan/IO/Socket/Multicast6.pm
-xbone/programs/modules/cpan/perllocal.pod
-xbone/programs/modules/cpan/IO::Socket::Multicast6.3
-xbone/programs/modules/XB_API_GUI.pm
 xbone/programs/modules/XB_API_OM.pm
 xbone/programs/modules/XB_API_SUBS.pm
 xbone/programs/modules/XB_API_grammar.pm
@@ -89,10 +112,13 @@ xbone/programs/modules/XB_API_parser.pm
 xbone/programs/modules/XB_AppCmds.pm
 xbone/programs/modules/XB_AppDeploy.pm
 xbone/programs/modules/XB_CTL_parser.pm
+xbone/programs/modules/XB_Cisco.pm
+xbone/programs/modules/XB_CiscoSSH.pm
 xbone/programs/modules/XB_Common.pm
 xbone/programs/modules/XB_Defs.pm
 xbone/programs/modules/XB_Dummynet.pm
 xbone/programs/modules/XB_IPsec.pm
+xbone/programs/modules/XB_LDAP.pm
 xbone/programs/modules/XB_Log.pm
 xbone/programs/modules/XB_Route.pm
 xbone/programs/modules/XB_SMIME.pm
@@ -106,17 +132,44 @@ xbone/programs/modules/XB_XML_GUI.pm
 xbone/programs/modules/XB_XML_scan.pm
 xbone/programs/modules/XB_XOL.pm
 xbone/programs/modules/XB_Zebra.pm
-xbone/programs/modules/XB_CiscoSSH.pm
-xbone/programs/modules/XB_Cisco.pm
 xbone/programs/modules/api-1.0.dtd
 xbone/programs/modules/api-2.0.dtd
+xbone/programs/modules/XB_API_GUI.pm
 xbone/programs/modules/zebractl
 xbone/programs/XB_CTL.pm
+xbone/programs/XB_Params.pm
 xbone/programs/XB_API.pm
-xbone/programs/xb-api-client.pl
 xbone/programs/xb-node-daemon.pl
 xbone/programs/xbonectl.pl
-xbone/programs/XB_Params.pm
+xbone/programs/xb-api-client.pl
+xbone/www/htdocs/images/zoom.png
+xbone/www/htdocs/images/background_light_tan.gif
+xbone/www/htdocs/images/background_med_tan.gif
+xbone/www/htdocs/images/background_tan.gif
+xbone/www/htdocs/images/background_tan.jpg
+xbone/www/htdocs/images/face.gif
+xbone/www/htdocs/images/face.png
+xbone/www/htdocs/images/h1.gif
+xbone/www/htdocs/images/h2.gif
+xbone/www/htdocs/images/h3.gif
+xbone/www/htdocs/images/h4.gif
+xbone/www/htdocs/images/h5.gif
+xbone/www/htdocs/images/h6.gif
+xbone/www/htdocs/images/h7.gif
+xbone/www/htdocs/images/h8.gif
+xbone/www/htdocs/images/linear.gif
+xbone/www/htdocs/images/link.gif
+xbone/www/htdocs/images/link.png
+xbone/www/htdocs/images/main_background.gif
+xbone/www/htdocs/images/new-ovl.gif
+xbone/www/htdocs/images/new-ovl.png
+xbone/www/htdocs/images/overlays.png
+xbone/www/htdocs/images/ring.gif
+xbone/www/htdocs/images/stag.gif
+xbone/www/htdocs/images/star.gif
+xbone/www/htdocs/images/tree.gif
+xbone/www/htdocs/images/zoom.gif
+xbone/www/htdocs/images/background.gif
 xbone/www/htdocs/index.html
 xbone/www/htdocs/robots.txt
 xbone/www/htdocs/xbone.css
@@ -179,90 +232,84 @@ xbone/www/xb-cgi-bin/xb-get-ca-cert.pl
 xbone/www/xb-cgi-bin/xb-index.pl
 xbone/www/xb-cgi-bin/xb-redirect.pl
 xbone/www/xb-cgi-bin/xb-req-user-cert.pl
-xbone/install/named-conf/xbone/xbone-forward.zone
-xbone/install/named-conf/xbone/xbone-reverse.zone
-xbone/install/named-conf/xbone/xbone-reverse6.zone
-xbone/install/named-conf/named.conf
-xbone/install/named-conf/resolv.conf
-xbone/install/patches/linux/ipip.c.patch71
-xbone/install/patches/linux/ipip.c.patch72
-xbone/install/ports/IO-Socket-Multicast6-0.10/Changes
-xbone/install/ports/IO-Socket-Multicast6-0.10/MANIFEST
-xbone/install/ports/IO-Socket-Multicast6-0.10/Makefile.PL
-xbone/install/ports/IO-Socket-Multicast6-0.10/Multicast6.pm
-xbone/install/ports/IO-Socket-Multicast6-0.10/Multicast6.xs
-xbone/install/ports/IO-Socket-Multicast6-0.10/README
-xbone/install/ports/IO-Socket-Multicast6-0.10/test.pl
 xbone/install/ports/IO-Socket-Multicast6-0.10/examples/client.pl
 xbone/install/ports/IO-Socket-Multicast6-0.10/examples/server.pl
 xbone/install/ports/IO-Socket-Multicast6-0.10/examples/v6_client.pl
 xbone/install/ports/IO-Socket-Multicast6-0.10/examples/v6_server.pl
-xbone/install/apache-conf/httpd-2.0.conf
-xbone/install/apache-conf/linux-httpd-2.0.conf
-xbone/install/apache-conf/httpsd-13ssl.conf
-xbone/install/apache-conf/ssl-2.0.conf
-xbone/install/apache-conf/linux-ssl-2.0.conf
+xbone/install/ports/IO-Socket-Multicast6-0.10/MANIFEST
+xbone/install/ports/IO-Socket-Multicast6-0.10/Makefile.PL
+xbone/install/ports/IO-Socket-Multicast6-0.10/Multicast6.pm
+xbone/install/ports/IO-Socket-Multicast6-0.10/Changes
+xbone/install/ports/IO-Socket-Multicast6-0.10/README
+xbone/install/ports/IO-Socket-Multicast6-0.10/test.pl
+xbone/install/ports/IO-Socket-Multicast6-0.10/Multicast6.xs
+xbone/install/patches/linux/ipip.c.patch71
+xbone/install/patches/linux/ipip.c.patch72
+xbone/install/patches/openldap/README
+xbone/install/patches/openldap/patch-multimaster
+xbone/install/FILELIST
 xbone/install/INSTALL
 xbone/install/Makefile
-xbone/install/README
-xbone/install/xb-config.pl
-xbone/install/xb-gui-config.pl
 xbone/install/QuickInstall
-xbone/install/perl-module-install.sh
+xbone/install/README
 xbone/install/REQUIREMENTS
+xbone/install/perl-module-install.sh
+xbone/install/xb-gui-control.pl
+xbone/install/xb-node-control.pl
 xbone/install/CHANGES
 xbone/install/COPYRIGHT
 xbone/install/FAQ
-xbone/install/FILELIST
-bin/xb-node-daemon
 bin/xb-api-client
-bin/xb-config
-bin/xbonectl
-@dirrm xbone/www/xb-cgi-bin
-@dirrm xbone/www/s-htdocs/xml/images
-@dirrm xbone/www/s-htdocs/xml
-@dirrm xbone/www/s-htdocs
-@dirrm xbone/www/s-cgi-bin
-@dirrm xbone/www/htdocs
-@dirrm xbone/www/lib
-@dirrm xbone/www
+bin/xb-ldap-config
+bin/xb-node-control
+bin/xb-node-daemon
+@dirrm etc/xbone/cert
+@dirrm etc/xbone/openldap
+@dirrm etc/xbone/named/xbone
+@dirrm etc/xbone/named
+@dirrm etc/xbone/routing
+@dirrm etc/xbone
+@dirrm xbone/doc/v6
+@dirrm xbone/doc
+@dirrm xbone/apps/prm/webvis
+@dirrm xbone/apps/prm
+@dirrm xbone/apps/test-script
+@dirrm xbone/apps
+@dirrm xbone/conf/named/xbone
+@dirrm xbone/conf/named
+@dirrm xbone/conf/routing
+@dirrm xbone/conf/apache
+@dirrm xbone/conf/openldap
+@dirrm xbone/conf/cert
+@dirrm xbone/conf
+@dirrm xbone/man/man5
+@dirrm xbone/man/man8
+@dirrm xbone/man
+@dirrm xbone/programs/modules/cpan/IO/Socket
+@dirrm xbone/programs/modules/cpan/IO
+@dirrm xbone/programs/modules/cpan/Net/IP
+@dirrm xbone/programs/modules/cpan/Net
 @dirrm xbone/programs/modules/cpan/auto/IO/Socket/Multicast6
 @dirrm xbone/programs/modules/cpan/auto/IO/Socket
 @dirrm xbone/programs/modules/cpan/auto/IO
 @dirrm xbone/programs/modules/cpan/auto
-@dirrm xbone/programs/modules/cpan/lib/perl5/%%PERL_VER%%
-@dirrm xbone/programs/modules/cpan/lib/perl5
-@dirrm xbone/programs/modules/cpan/lib
-@dirrm xbone/programs/modules/cpan/Net/IP
-@dirrm xbone/programs/modules/cpan/Net
-@dirrm xbone/programs/modules/cpan/IO/Socket
-@dirrm xbone/programs/modules/cpan/IO
 @dirrm xbone/programs/modules/cpan
 @dirrm xbone/programs/modules
 @dirrm xbone/programs
-@dirrm xbone/man/man8
-@dirrm xbone/man/man5
-@dirrm xbone/man
+@dirrm xbone/www/htdocs/images
+@dirrm xbone/www/htdocs
+@dirrm xbone/www/lib
+@dirrm xbone/www/s-cgi-bin
+@dirrm xbone/www/s-htdocs/xml/images
+@dirrm xbone/www/s-htdocs/xml
+@dirrm xbone/www/s-htdocs
+@dirrm xbone/www/xb-cgi-bin
+@dirrm xbone/www
 @dirrm xbone/install/ports/IO-Socket-Multicast6-0.10/examples
 @dirrm xbone/install/ports/IO-Socket-Multicast6-0.10
 @dirrm xbone/install/ports
 @dirrm xbone/install/patches/linux
+@dirrm xbone/install/patches/openldap
 @dirrm xbone/install/patches
-@dirrm xbone/install/named-conf/xbone
-@dirrm xbone/install/named-conf
-@dirrm xbone/install/apache-conf
 @dirrm xbone/install
-@dirrm xbone/doc/v6
-@dirrm xbone/doc
-@dirrm xbone/conf/cert
-@dirrm xbone/conf
-@dirrm xbone/apps/test-script
-@dirrm xbone/apps/prm/webvis
-@dirrm xbone/apps/prm
-@dirrm xbone/apps
 @dirrm xbone
-@dirrm etc/xbone/named-conf/xbone
-@dirrm etc/xbone/named-conf
-@dirrm etc/xbone/apache-conf
-@dirrm etc/xbone/cert
-@dirrm etc/xbone
