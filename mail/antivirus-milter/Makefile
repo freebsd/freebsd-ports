@@ -9,7 +9,8 @@ PORTNAME=	antivirus
 PORTVERSION=	3.30
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://infohost.nmt.edu/~wcolburn/antivirus/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Sendmail milter wich uses Mcafee Virus Scan
