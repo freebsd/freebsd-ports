@@ -1,0 +1,16 @@
+Combinatorics is the branch of mathematics studying the enumeration,
+combination, and permutation of sets of elements and the mathematical
+relations that characterize their properties. As a jumping off point,
+refer to:
+
+http://mathworld.wolfram.com/Combinatorics.html
+
+This module provides a pure-perl implementation of nCk, nPk, and n!
+(combination, permutation, and factorial, respectively).
+
+Author: Allen Day <allenday@ucla.edu>
+
+WWW: http://search.cpan.org/dist/Math-Combinatorics/
+
+- Aaron Dalton
+aaron@daltons.ca
