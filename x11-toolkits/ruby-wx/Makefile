@@ -37,6 +37,7 @@ DOCS=		README README.linux ChangeLog
 post-patch:
 	@${FIND} ${WRKSRC} -name *.t | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${REINPLACE_CMD} -E 's/ html(processor|window).o//' ${WRKSRC}/depend
+	@${REINPLACE_CMD} -e 's/wx-config/wxgtk2-2.4-config/' ${WRKSRC}/extconf.rb
 
 .if !defined(NOPORTDOCS)
 post-install:
