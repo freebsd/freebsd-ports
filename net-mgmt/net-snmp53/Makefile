@@ -236,14 +236,17 @@ post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
 	 ${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[ 	]+=/s|$$| -m 755|'
 
-.if !defined(WITHOUT_PERL)
+
 post-build:
+.if !defined(WITHOUT_PERL)
 	${FIND} ${WRKSRC}/perl -name Makefile | \
-	 ${XARGS} ${REINPLACE_CMD} -E -e '\
+	${XARGS} ${REINPLACE_CMD} -E -e '\
 		s!^(PREFIX) = .*!\1 = ${PREFIX}!; \
 		s!^(INSTALLMAN3DIR) = .*!\1 = ${MAN3PERLPREFIX}/man/man3!; \
 		s! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!; \
 		'
+.else
+	${REINPLACE_CMD} -e 's| perlinstall||' ${WRKSRC}/Makefile
 .endif
 
 post-install: strip-files install-startup-files install-config-files install-doc-files display-message
