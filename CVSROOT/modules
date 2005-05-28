@@ -7795,6 +7795,7 @@ p5-Math-Bezier-Convert	ports/math/p5-Math-Bezier-Convert
 p5-Math-BigInt	ports/math/p5-Math-BigInt
 p5-Math-BigRat	ports/math/p5-Math-BigRat
 p5-Math-Calc-Units	ports/math/p5-Math-Calc-Units
+p5-Math-Combinatorics	ports/math/p5-Math-Combinatorics
 p5-Math-Currency	ports/math/p5-Math-Currency
 p5-Math-Derivative	ports/math/p5-Math-Derivative
 p5-Math-Expr	ports/math/p5-Math-Expr
