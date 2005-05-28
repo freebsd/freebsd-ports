@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	webfs
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	1.21
+PORTREVISION=	0
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://bytesex.org/misc/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://dl.bytesex.org/releases/webfs/
 
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	A simple http server for static content
+
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_REINPLACE=	yes
@@ -25,7 +26,7 @@ MAKE_ENV=	USE_SSL=no
 MAKE_ENV+=	LDLIBS="-lssl -lcrypto" USE_DIET=no
 
 MAN1=		webfsd.1
-MIMEFILE?=	${PREFIX}/etc/webfsd/mime.types
+MIMEFILE?=	${LOCALBASE}/etc/mime.types
 
 .include <bsd.port.pre.mk>
 
@@ -42,7 +43,7 @@ pre-everything::
 	@${ECHO_CMD} "==========================================="
 	@${ECHO_CMD} ""
 
-do-configure:
+post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/webfsd.man
 .if defined(WITHOUT_OPENSSL)
@@ -52,9 +53,5 @@ do-configure:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/webfsd.man ${PREFIX}/man/man1/webfsd.1
-.if !exists(${PREFIX}/etc/webfsd/mime.types)
-	@${MKDIR} ${PREFIX}/etc/webfsd
-	@${ECHO_CMD} "# Insert mime types here" > ${PREFIX}/etc/webfsd/mime.types
-.endif
 
 .include <bsd.port.post.mk>

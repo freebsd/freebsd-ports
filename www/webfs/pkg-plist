@@ -1,3 +1,1 @@
-etc/webfsd/mime.types
 sbin/webfsd
-@dirrm etc/webfsd
