@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20050516
-PORTREVISION=	1
+PORTVERSION=	20050527
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/	\
 		ftp://ftp.spambouncer.org/
