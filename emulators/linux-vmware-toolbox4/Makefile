@@ -33,6 +33,7 @@ IS_INTERACTIVE=	yes
 
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
+NO_LATEST_LINK=	yes
 
 VMWARE_VER=	4.5.2
 BUILD_VER=	8848
