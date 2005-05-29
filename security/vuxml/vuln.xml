@@ -6521,8 +6521,12 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>samba</name>
-	<name>ja-samba</name>
 	<range><lt>3.0.10,1</lt></range>
+      </package>
+      <package>
+	<name>ja-samba</name>
+	<range><lt>2.2.12.j1.0beta1_2</lt></range>
+	<range><gt>3.*</gt><lt>3.0.10,1</lt></range>
       </package>
     </affects>
     <description>
@@ -6553,6 +6557,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-02</discovery>
       <entry>2004-12-21</entry>
+      <modified>2005-05-29</modified>
     </dates>
   </vuln>
 
