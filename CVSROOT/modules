@@ -6373,6 +6373,7 @@ ncftp3		ports/ftp/ncftp3
 ncftpd		ports/ftp/ncftpd
 nclever		ports/biology/nclever
 ncmpc		ports/audio/ncmpc
+ncnf		ports/devel/ncnf
 ncp		ports/net/ncp
 ncplib		ports/net/ncplib
 ncurses		ports/devel/ncurses
