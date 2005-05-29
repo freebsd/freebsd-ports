@@ -12,3 +12,38 @@ lib/libparsifal-%%VERSION%%.so
 lib/libparsifal.a
 lib/libparsifal.so
 @dirrm include/libparsifal
+%%PORTDOCS%%%%DOCSDIR%%/conformance.html
+%%PORTDOCS%%%%DOCSDIR%%/cvs.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/elsewhere.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/links.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/news.html
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/parsifal_results.html
+%%PORTDOCS%%%%DOCSDIR%%/parsifal_results_valid.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/xmlconf_results.html
+%%PORTDOCS%%%%DOCSDIR%%/xmlconf_results_valid.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/canonxml_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/datatype_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/dtddecl_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/elements_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/highlight.css
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/nsvalid_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/parsifal_h.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/test_iconv_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/test_pool_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/winurl_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/xmltest_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/zenstory_c.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/zenstory_h.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/zenvalid_c.html
+%%PORTDOCS%%%%DOCSDIR%%/pics/backg.gif
+%%PORTDOCS%%%%DOCSDIR%%/pics/semail.gif
+%%PORTDOCS%%%%DOCSDIR%%/pics/testsuite.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/csrchtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
