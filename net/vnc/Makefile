@@ -113,6 +113,9 @@ pre-install:
 	@if [ -f ${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so ]; then \
 		${ECHO_CMD} @cwd ${X11BASE} >> ${PLIST} ; \
 		${ECHO_CMD} lib/modules/extensions/vnc.so >> ${PLIST} ; \
+		${ECHO_CMD} "@unexec rmdir %D/lib/modules/extensions 2>/dev/null || true" >> ${PLIST} ; \
+		${ECHO_CMD} "@unexec rmdir %D/lib/modules 2>/dev/null || true" >> ${PLIST} ; \
+		${ECHO_CMD} "@unexec rmdir %D/lib 2>/dev/null || true" >> ${PLIST} ; \
 	fi
 .endif
 
