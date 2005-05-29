@@ -3317,6 +3317,8 @@ eclipse/startup.jar
 @dirrm eclipse/plugins/org.eclipse.core.runtime.compatibility_3.0.0
 @dirrm eclipse/plugins/org.eclipse.core.resources_%%RELEASEVERSION%%/ant_tasks
 @dirrm eclipse/plugins/org.eclipse.core.resources_%%RELEASEVERSION%%
+@dirrm eclipse/plugins/org.eclipse.core.resources.freebsd_3.0.0/os/linux/x86
+@dirrm eclipse/plugins/org.eclipse.core.resources.freebsd_3.0.0/os/linux
 @dirrm eclipse/plugins/org.eclipse.core.resources.freebsd_3.0.0/os/freebsd/x86
 @dirrm eclipse/plugins/org.eclipse.core.resources.freebsd_3.0.0/os/freebsd
 @dirrm eclipse/plugins/org.eclipse.core.resources.freebsd_3.0.0/os
