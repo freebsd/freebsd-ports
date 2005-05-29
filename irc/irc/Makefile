@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.11.0
+PORTVERSION=	2.11.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.irc.org/irc/server/ \
 		ftp://ftp2.nchu.edu.tw/UNIX/IRC/server/ \
