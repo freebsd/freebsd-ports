@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84479a62-ca5f-11d9-b772-000c29b00e99">
+    <topic>fswiki - XSS problem in file upload form</topic>
+    <affects>
+      <package>
+	<name>fswiki</name>
+	<range><le>3.5.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A JP Vendor Status Notes</p>
+	<blockquote cite="http://jvn.jp/jp/JVN%23465742E4/index.html">
+	  <p>There is a problem in fswiki (and other Wiki clones) which
+	    may cause XSS vulnerability.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/81520</freebsdpr>
+      <url>http://fswiki.poi.jp/wiki.cgi?page=%CD%FA%CE%F2%2F2005%2D5%2D19</url>
+      <url>http://jvn.jp/jp/JVN%23465742E4/index.html</url>
+    </references>
+    <dates>
+      <discovery>2005-05-19</discovery>
+      <entry>2005-05-29</entry>
+    </dates>
+  </vuln>
   <vuln vid="2fbe16c2-cab6-11d9-9aed-000e0c2e438a">
     <topic>freeradius -- sql injection and denial of service vulnerability</topic>
     <affects>

@@ -12,17 +12,16 @@
 %%DATADIR%%/docs/API/Parser.pm.html
 %%DATADIR%%/docs/API/Util.pm.html
 %%DATADIR%%/docs/API/Wiki.pm.html
+%%DATADIR%%/docs/API/makedoc.bat
 %%DATADIR%%/docs/API/makedoc.pl
 %%DATADIR%%/docs/API/makedoc.sh
 %%DATADIR%%/docs/changes.html
 %%DATADIR%%/docs/default.css
 %%DATADIR%%/docs/gpl.txt
+%%DATADIR%%/docs/makedoc.bat
 %%DATADIR%%/docs/makedoc.sh
 %%DATADIR%%/docs/readme.html
 %%DATADIR%%/lib/Algorithm/Diff.pm
-%%DATADIR%%/lib/Archive/Tar.pm
-%%DATADIR%%/lib/Archive/Tar/Constant.pm
-%%DATADIR%%/lib/Archive/Tar/File.pm
 %%DATADIR%%/lib/Bundle/LWP.pm
 %%DATADIR%%/lib/CGI/Session.pm
 %%DATADIR%%/lib/CGI/Session/BluePrint.pm
@@ -181,12 +180,12 @@
 %%DATADIR%%/plugin/access/AccessDays.pm
 %%DATADIR%%/plugin/access/Install.pm
 %%DATADIR%%/plugin/admin/AccountHandler.pm
-%%DATADIR%%/plugin/admin/AdminBackupHandler.pm
 %%DATADIR%%/plugin/admin/AdminCacheHandler.pm
 %%DATADIR%%/plugin/admin/AdminConfigHandler.pm
 %%DATADIR%%/plugin/admin/AdminLogHandler.pm
 %%DATADIR%%/plugin/admin/AdminPageHandler.pm
 %%DATADIR%%/plugin/admin/AdminPluginHandler.pm
+%%DATADIR%%/plugin/admin/AdminSpamHandler.pm
 %%DATADIR%%/plugin/admin/AdminStyleHandler.pm
 %%DATADIR%%/plugin/admin/AdminUserHandler.pm
 %%DATADIR%%/plugin/admin/Install.pm
@@ -248,6 +247,7 @@
 %%DATADIR%%/plugin/core/RemoveWikiHandler.pm
 %%DATADIR%%/plugin/core/SendMail.pm
 %%DATADIR%%/plugin/core/ShowPage.pm
+%%DATADIR%%/plugin/core/SpamFilter.pm
 %%DATADIR%%/plugin/core/Source.pm
 %%DATADIR%%/plugin/core/Template.pm
 %%DATADIR%%/plugin/core/WikiList.pm
@@ -306,6 +306,7 @@
 %%DATADIR%%/theme/default/default.css
 %%DATADIR%%/tmpl/admin_cache.tmpl
 %%DATADIR%%/tmpl/admin_config.tmpl
+%%DATADIR%%/tmpl/admin_spam.tmpl
 %%DATADIR%%/tmpl/admin_style.tmpl
 %%DATADIR%%/tmpl/bbs.tmpl
 %%DATADIR%%/tmpl/bugtrack.tmpl
@@ -329,12 +330,10 @@
 @dirrm %%DATADIR%%/plugin/rename
 @dirrm %%DATADIR%%/plugin/recent
 @dirrm %%DATADIR%%/plugin/pdf
-@dirrm %%DATADIR%%/plugin/partedit
 @dirrm %%DATADIR%%/plugin/info
 @dirrm %%DATADIR%%/plugin/google
 @dirrm %%DATADIR%%/plugin/format
 @dirrm %%DATADIR%%/plugin/footnote
-@dirrm %%DATADIR%%/plugin/farm
 @dirrm %%DATADIR%%/plugin/editlog
 @dirrm %%DATADIR%%/plugin/core
 @dirrm %%DATADIR%%/plugin/comment
@@ -379,9 +378,6 @@
 @dirrm %%DATADIR%%/lib/CGI/Session
 @dirrm %%DATADIR%%/lib/CGI
 @dirrm %%DATADIR%%/lib/Bundle
-@dirrm %%DATADIR%%/lib/Archive/Zip
-@dirrm %%DATADIR%%/lib/Archive/Tar
-@dirrm %%DATADIR%%/lib/Archive
 @dirrm %%DATADIR%%/lib/Algorithm
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/docs/API
