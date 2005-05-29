@@ -1,0 +1,92 @@
+diff -u PATCHES PATCHES
+--- PATCHES
++++ PATCHES
+@@ -0,0 +1 @@
++patch-1.5.6.cb.reverse_reply.2
+--- init.h.orig	2005-03-01 16:56:02.000000000 +0100
++++ init.h	2005-05-25 18:20:57.000000000 +0200
+@@ -2257,6 +2257,13 @@
+   ** possibly including eventual real names.  When it is unset, mutt will
+   ** override any such real names with the setting of the $realname variable.
+   */
++  { "reverse_reply",	DT_BOOL, R_NONE, OPTREVREPLY, 0 },
++  /*
++  ** .pp
++  ** When set, this variable uses the name from your aliases in the To and Cc
++  ** headers of reply mails you send, like $reverse_alias does in the index.
++  ** When unset, the headers taken from the original mail are left unchanged.
++  */
+   { "rfc2047_parameters", DT_BOOL, R_NONE, OPTRFC2047PARAMS, 0 },
+   /*
+   ** .pp
+--- mutt.h.orig	2005-02-28 16:13:57.000000000 +0100
++++ mutt.h	2005-05-25 18:20:57.000000000 +0200
+@@ -410,6 +410,7 @@
+   OPTREVALIAS,
+   OPTREVNAME,
+   OPTREVREAL,
++  OPTREVREPLY,
+   OPTRFC2047PARAMS,
+   OPTSAVEADDRESS,
+   OPTSAVEEMPTY,
+--- protos.h.orig	2005-02-01 09:59:02.000000000 +0100
++++ protos.h	2005-05-25 18:20:57.000000000 +0200
+@@ -84,6 +84,7 @@
+ ADDRESS *mutt_get_address (ENVELOPE *, char **);
+ ADDRESS *mutt_lookup_alias (const char *s);
+ ADDRESS *mutt_remove_duplicates (ADDRESS *);
++ADDRESS *mutt_reverse_address (ADDRESS *);
+ ADDRESS *mutt_expand_aliases (ADDRESS *);
+ ADDRESS *mutt_parse_adrlist (ADDRESS *, const char *);
+ 
+--- send.c.orig	2005-02-03 19:47:53.000000000 +0100
++++ send.c	2005-05-25 18:20:57.000000000 +0200
+@@ -588,6 +588,10 @@
+   /* the CC field can get cluttered, especially with lists */
+   env->to = mutt_remove_duplicates (env->to);
+   env->cc = mutt_remove_duplicates (env->cc);
++  if (option (OPTREVREPLY)){
++	env->to = mutt_reverse_address (env->to);
++	env->cc = mutt_reverse_address (env->cc);
++  }
+   env->cc = mutt_remove_xrefs (env->to, env->cc);
+ }
+ 
+--- sendlib.c.orig	2005-02-21 05:45:57.000000000 +0100
++++ sendlib.c	2005-05-25 18:20:57.000000000 +0200
+@@ -2341,6 +2341,35 @@
+   }
+ }
+ 
++/* given a list of addresses, return a list of reverse_alias'ed addresses */
++ADDRESS *mutt_reverse_address (ADDRESS *addr)
++{
++  ADDRESS *top,*tmp,*alias;
++
++  if (addr == NULL)
++    return NULL;
++
++  if ((alias = alias_reverse_lookup (addr)) && alias->personal) {
++    tmp = rfc822_cpy_adr_real(alias);
++    tmp->next = addr->next;
++    addr->next = NULL;
++    rfc822_free_address(&addr);
++    addr = tmp;
++  }
++
++  for (top = addr; top->next != NULL; top = tmp) {
++    tmp = top->next;
++    if ((alias = alias_reverse_lookup (tmp)) && alias->personal) {
++      top->next = rfc822_cpy_adr_real(alias);
++      top->next->next = tmp->next;
++      tmp->next = NULL;
++      rfc822_free_address(&tmp);
++      tmp = top->next;
++    }
++  }
++  return addr;
++}
++
+ int mutt_write_fcc (const char *path, HEADER *hdr, const char *msgid, int post, char *fcc)
+ {
+   CONTEXT f;

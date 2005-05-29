@@ -93,6 +93,9 @@
 # If you do not want mutt to use the flock() function define:
 #  WITHOUT_MUTT_FLOCK
 #
+# If you want to enable reverse_reply option define:
+#  WITH_MUTT_REVERSE_REPLY_PATCH
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.9
@@ -309,6 +312,11 @@ pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aspell
 .endif
 
+.if defined(WITH_MUTT_REVERSE_REPLY_PATCH)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-reverse_reply
+.endif
+
 .if defined(WITHOUT_MUTT_FLOCK)
 CONFIGURE_ARGS+=	--disable-flock
 .else
@@ -447,6 +455,9 @@ SCRIPTS_ENV+=	MUTT_NLS="yes"
 .endif
 .if defined(WITH_MUTT_IDN)
 SCRIPTS_ENV+=	MUTT_IDN="yes"
+.endif
+.if defined(WITH_MUTT_REVERSE_REPLY_PATCH)
+SCRIPTS_ENV+=	MUTT_REVERSE_REPLY_PATCH="yes"
 .endif
 
 .if !defined(NOPORTDOCS)
