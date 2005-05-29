@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-im-switcher
 PORTVERSION=	12.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -58,8 +59,6 @@ post-patch:
 		${BUILDDIR}/configure.ac
 	${REINPLACE_CMD} -e "/^GNOMECC_.*_DIR=/s,[(]datadir[)]/,&gnome/,g" \
 		${BUILDDIR}/configure.ac
-	${REINPLACE_CMD} -e "/^omf_dest_dir/s,[(]datadir[)]/,&gnome/,g" \
-		${BUILDDIR}/help/omf.make
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} bootstrap
