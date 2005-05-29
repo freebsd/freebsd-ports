@@ -5,6 +5,7 @@
 
 PORTNAME=	mini-xml
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.easysw.com/pub/mxml/${PORTVERSION}/ \
 		http://www.nu6.org/_/mirror/ftp.easysw.com/pub/mxml/${PORTVERSION}/
@@ -22,10 +23,6 @@ MAN1=		mxmldoc.1
 MAN3=		mxml.3
 CAT1=		mxmldoc.1
 CAT3=		mxml.3
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
