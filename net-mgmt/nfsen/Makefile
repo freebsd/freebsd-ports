@@ -19,6 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
 HAS_CONFIGURE=	yes
+USE_ICONV=	yes
 USE_PERL5=	yes
 USE_PHP=	session pcre
 NO_BUILD=	yes
