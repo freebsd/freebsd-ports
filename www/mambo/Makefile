@@ -6,6 +6,7 @@
 
 PORTNAME=	mambo
 PORTVERSION=	4.5.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mamboforge.net/frs/download.php/4004/:source1 \
 		http://mamboforge.net/frs/download.php/4043/:source2
@@ -19,7 +20,7 @@ EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
-USE_PHP=	mysql zlib gd pdf xml
+USE_PHP=	mysql session zlib gd pdf xml
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
