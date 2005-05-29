@@ -570,7 +570,7 @@ CONFIGURE_ARGS+=--disable-mp3lame
 .endif
 
 .if !defined(WITHOUT_LIBMATROSKA)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
+LIB_DEPENDS+=	matroska.0:${PORTSDIR}/multimedia/libmatroska
 CONFIGURE_ARGS+=--enable-mkv
 .else
 CONFIGURE_ARGS+=--disable-mkv
