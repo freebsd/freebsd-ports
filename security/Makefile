@@ -344,6 +344,7 @@
     SUBDIR += pam_pop3
     SUBDIR += pam_pwdfile
     SUBDIR += pam_smb
+    SUBDIR += pamtester
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_PrefManager

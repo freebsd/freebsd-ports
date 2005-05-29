@@ -1,0 +1,11 @@
+pamtester is a tiny utility program to test the pluggable authentication
+modules (PAM) facility, which is a de facto standard of unified authentication
+management mechanism in many unices and similar OSes including Solaris, HP-UX,
+*BSD, MacOSX and Linux.
+
+While specifically designed to help PAM module authors to test their modules,
+that might also be handy for system administrators interested in building a
+centralised authentication system using common standards such as NIS, SASL and
+LDAP.
+
+WWW: http://pamtester.sourceforge.net/
