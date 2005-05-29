@@ -160,6 +160,9 @@ EOF
     if [ "$MUTT_IDN" = "yes" ]; then
       html=$(($html + 1))
     fi
+    if [ "$MUTT_REVERSE_REPLY_PATCH" = "yes" ]; then
+      html=$(($html + 1))
+    fi
     if [ "$MUTT_SLAVE_HTML_PAGES" != "" ]; then
       html=$(($html + $MUTT_SLAVE_HTML_PAGES))
     fi
