@@ -1,0 +1,9 @@
+Netli Configuration library (NCNF) is the module for C applications to
+efficiently read and use the configuration file contents.  NCNF converts
+the on-disk configuration file structure to the memory-based tree of
+configuration objects.  Basic NCNF API does not make a distinction
+between different types of configuration objects.  However, there are a
+couple of additional functions present to ease the use of certain types
+of configuration objects.
+
+WWW: http://sourceforge.net/projects/ncnf
