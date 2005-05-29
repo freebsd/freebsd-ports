@@ -6,27 +6,27 @@
 #
 
 PORTNAME=		linux-gtk-bluecurve-theme
-PORTVERSION=		0.73
-PORTREVISION=		1
+PORTVERSION=		0.88
 CATEGORIES=		x11-themes
-MASTER_SITES=		ftp://fr.rpmfind.net/linux/redhat/9/en/os/${MACHINE_ARCH}/RedHat/RPMS/
-DISTFILES=		redhat-artwork-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
+MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=	1/${ARCH}/os/Fedora/RPMS
+DISTFILES=		redhat-artwork-${PORTVERSION}-1.${ARCH}.rpm
 DIST_SUBDIR=		rpm
 
 MAINTAINER=		jylefort@FreeBSD.org
-COMMENT=		Bluecurve theme for GTK1 and GTK2 from RedHat 8.0 (Linux version)
+COMMENT=		Bluecurve theme for GTK1 and GTK2 from Fedora Core (Linux version)
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+
+EXTRACT_CMD=		rpm2cpio.pl
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	| ${CPIO} -id --quiet
 
 NO_WRKSUBDIR=		yes
 USE_LINUX_PREFIX=	yes
 NO_BUILD=		yes
 USE_REINPLACE=		yes
 ONLY_FOR_ARCHS=		i386
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR}; rpm2cpio.pl ${_DISTDIR}/${DISTFILES} | ${CPIO} -id --quiet
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|include "iconrc"||' \
