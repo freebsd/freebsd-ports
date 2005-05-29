@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_auth_external
-PORTVERSION=	2.1.18
+PORTVERSION=	2.1.19
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -26,7 +26,7 @@ do-install:
 	${APXS} -i -A -n auth_external ${WRKSRC}/mod_auth_external.so
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}/examples
-	cd ${WRKSRC} && ${TAR} -chf - mysql pwauth radius sybase test \
+	cd ${WRKSRC} && ${TAR} -chf - mysql radius sybase test \
 		| ${TAR} -xf - -C ${DOCSDIR}/examples
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/

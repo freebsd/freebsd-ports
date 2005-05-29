@@ -3,13 +3,6 @@ libexec/apache/mod_auth_external.so
 @unexec %D/sbin/apxs -e -A -n auth_external %D/%F
 %%PORTDOCS%%%%DOCSDIR%%/examples/mysql/mysql-auth.pl
 %%PORTDOCS%%%%DOCSDIR%%/examples/mysql/README
-%%PORTDOCS%%%%DOCSDIR%%/examples/pwauth/unixgroup
-%%PORTDOCS%%%%DOCSDIR%%/examples/pwauth/pwauth.c
-%%PORTDOCS%%%%DOCSDIR%%/examples/pwauth/config.h
-%%PORTDOCS%%%%DOCSDIR%%/examples/pwauth/README
-%%PORTDOCS%%%%DOCSDIR%%/examples/pwauth/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/examples/pwauth/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/examples/pwauth/FORM_AUTH
 %%PORTDOCS%%%%DOCSDIR%%/examples/radius/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/examples/radius/md5-radius.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/radius/md5-radius.h
@@ -30,7 +23,6 @@ libexec/apache/mod_auth_external.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/mysql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/pwauth
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/radius
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/sybase
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/test
