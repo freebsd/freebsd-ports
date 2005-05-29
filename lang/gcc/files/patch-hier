@@ -1,0 +1,16 @@
+Index: libjava/Makefile.in
+===================================================================
+RCS file: /cvs/gcc/gcc/libjava/Makefile.in,v
+retrieving revision 1.522
+diff -u -3 -p -r1.522 Makefile.in
+--- libjava/Makefile.in	19 May 2005 21:46:39 -0000	1.522
++++ libjava/Makefile.in	29 May 2005 16:00:44 -0000
+@@ -696,7 +696,7 @@ toolexeclib_LTLIBRARIES = libgcj.la libg
+     $(cond_gtk_ltlibrary) $(cond_gtk_gcjawt_ltlibrary) $(cond_xlib_ltlibrary)
+ 
+ toolexecmainlib_DATA = libgcj.spec
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libgcj.pc
+ jardir = $(datadir)/java
+ jar_DATA = libgcj-$(gcc_version).jar

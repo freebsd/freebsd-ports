@@ -28,9 +28,11 @@ include/mf-runtime.h
 %%LIBJAVA%%bin/jv-convert41
 %%LIBJAVA%%include/ffi.h
 %%LIBJAVA%%lib/logging.properties
+%%LIBJAVA%%lib/gcj-%%GCC_VER%%/classmap.db
 %%LIBJAVA%%lib/security/classpath.security
 %%LIBJAVA%%lib/security/libgcj.security
+%%LIBJAVA%%@dirrm lib/gcj-%%GCC_VER%%
+%%LIBJAVA%%@dirrm lib/security
 %%LIBJAVA%%libdata/pkgconfig/libgcj.pc
 %%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
-%%LIBJAVA%%@dirrm lib/security
 @comment Insert PLIST.lib here
