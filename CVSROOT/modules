@@ -7095,6 +7095,7 @@ p5-Class-DBI-BaseDSN	ports/databases/p5-Class-DBI-BaseDSN
 p5-Class-DBI-DDL	ports/databases/p5-Class-DBI-DDL
 p5-Class-DBI-DATA-Schema	ports/databases/p5-Class-DBI-DATA-Schema
 p5-Class-DBI-FromCGI	ports/databases/p5-Class-DBI-FromCGI
+p5-Class-DBI-FromForm	ports/www/p5-Class-DBI-FromForm
 p5-Class-DBI-Loader	ports/databases/p5-Class-DBI-Loader
 p5-Class-DBI-Loader-Relationship	ports/databases/p5-Class-DBI-Loader-Relationship
 p5-Class-DBI-Oracle	ports/databases/p5-Class-DBI-Oracle
