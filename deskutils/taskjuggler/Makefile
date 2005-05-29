@@ -20,8 +20,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date
 		poster:${PORTSDIR}/print/poster \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
-BROKEN=		Does not build
-
 # KTJView currently doesn't compile
 #OPTIONS=	KTJVIEW "Build KDE KTJView program (Requires KDE)" off
 
@@ -34,8 +32,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
 # KTJView currently doesn't compile
 #.if defined(WITH_KTJVIEW)
 #LIB_DEPENDS+=	kwalletbackend:${PORTSDIR}/x11/kdelibs3
@@ -47,4 +43,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|share/doc/packages/|share/doc/|g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
