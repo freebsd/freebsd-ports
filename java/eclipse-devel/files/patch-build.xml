@@ -1,27 +1,15 @@
---- build.xml.orig	Fri Apr  1 13:58:26 2005
-+++ build.xml	Sat Apr  9 17:03:28 2005
-@@ -48,17 +48,20 @@
- 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-ppc64"/>
- 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-ia64"/>
- 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-x86_64"/>
-+				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="freebsd-gtk-amd64"/>
- 			</or>
- 		</condition>
- 		<condition property="wsType" value="gtk">
- 			<or>
- 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-ppc"/>
- 				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="linux-gtk-x86"/>
-+				<equals arg1="${installOs}-${installWs}-${installArch}"	arg2="freebsd-gtk-x86"/>
- 			</or>
- 		</condition>
- 		<condition property="wsType" value="motif">
- 			<or>
- 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-motif-x86"/>
-+				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-motif-x86"/>
- 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-ia64"/>
- 			</or>
- 		</condition>
-@@ -82,12 +85,12 @@
+--- build.xml.orig	Fri May 13 11:38:39 2005
++++ build.xml	Sat May 14 23:42:22 2005
+@@ -53,7 +53,7 @@
+ 		<exec dir="${swtlibs}/" executable="sh" failonerror="true">
+ 			<arg line="build.sh"/>
+ 		</exec>
+-		<property name="swtdir" value="${buildDirectory}/plugins/org.eclipse.swt.${installWs}.{installOs}.{installArch}"/>
++		<property name="swtdir" value="${buildDirectory}/plugins/org.eclipse.swt.${installWs}.${installOs}.${installArch}"/>
+ 		<mkdir dir="${swtdir}"/>
+ 		<move todir="${swtdir}/">
+ 			<fileset dir="${swtlibs}">
+@@ -63,12 +63,12 @@
  		<!--unzip launcher -->
  		<property name="launcherlibs" value="${buildDirectory}/launchertmp"/>
  		<mkdir dir="${launcherlibs}"/>
@@ -29,7 +17,7 @@
 -			<fileset dir="${buildDirectory}/plugins/org.eclipse.platform.source/src/">
 -				<include name ="org.eclipse.platform_*/launchersrc.zip"/>
 +		<copy todir="${launcherlibs}">
-+			<fileset dir="${buildDirectory}/features/org.eclipse.launchers">
++			<fileset dir="${buildDirectory}/features/org.eclipse.platform.launchers">
 +				<include name ="**"/>
  			</fileset>
 -		</unzip>

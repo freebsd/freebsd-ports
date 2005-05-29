@@ -30,7 +30,7 @@ copy_dir()
 
 prepare_files()
 {
-	mkdir ${WRKSRC}/features/org.eclipse.launchers/bin/gtk/freebsd
+	mkdir ${WRKSRC}/features/org.eclipse.platform.launchers/bin/gtk/freebsd
 
 	# Copy the files and rename/change them appropriately
 	for src in $COPY_LIST
@@ -64,11 +64,11 @@ COPY_LIST="
 assemble.org.eclipse.sdk.linux.gtk.x86.xml
 assemble.org.eclipse.sdk.linux.gtk.x86_64.xml
 assemble.org.eclipse.sdk.linux.motif.x86.xml
-features/org.eclipse.launchers/bin/gtk/linux/x86
-features/org.eclipse.launchers/bin/gtk/linux/x86_64
-features/org.eclipse.launchers/bin/motif/linux
-features/org.eclipse.launchers/library/gtk/make_linux.mak
-features/org.eclipse.launchers/library/motif/make_linux.mak
+features/org.eclipse.platform.launchers/bin/gtk/linux/x86
+features/org.eclipse.platform.launchers/bin/gtk/linux/x86_64
+features/org.eclipse.platform.launchers/bin/motif/linux
+features/org.eclipse.platform.launchers/library/gtk/make_linux.mak
+features/org.eclipse.platform.launchers/library/motif/make_linux.mak
 plugins/org.eclipse.core.resources.linux
 plugins/org.eclipse.core.resources.linux/os/linux
 plugins/org.eclipse.jdt.source.linux.gtk.x86
@@ -82,10 +82,9 @@ plugins/org.eclipse.pde.source.linux.motif.x86
 plugins/org.eclipse.platform.source.linux.gtk.x86
 plugins/org.eclipse.platform.source.linux.gtk.x86_64
 plugins/org.eclipse.platform.source.linux.motif.x86
-plugins/org.eclipse.swt.gtk/os/linux
-plugins/org.eclipse.swt.gtk64/os/linux
-plugins/org.eclipse.swt.motif/os/linux
-plugins/org.eclipse.swt.motif/os/linux
+plugins/org.eclipse.swt.gtk.linux.x86
+plugins/org.eclipse.swt.gtk.linux.x86_64
+plugins/org.eclipse.swt.motif.linux.x86
 plugins/org.eclipse.update.core.linux
 plugins/org.eclipse.update.core.linux/os/linux
 "

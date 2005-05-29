@@ -1,0 +1,28 @@
+--- jdtcoresrc/compilejdtcore.xml~	Fri May 13 11:34:19 2005
++++ jdtcoresrc/compilejdtcore.xml	Sun May 15 10:08:14 2005
+@@ -37,9 +37,9 @@
+                 <property name="javacTarget" value="1.2" />
+                 <property name="javacDebugInfo" value="true" />
+                 <property name="javacFailOnError" value="true" />
+-                <record name="../compilelog.txt" action="start" />
++                <record name="compilelog.txt" action="start" />
+                 <javac verbose="true" srcdir="${srcdir}" destdir="${destdir}"/>
+-                <record name="../compilelog.txt" action="stop" />                                                                                                                  
++                <record name="compilelog.txt" action="stop" />                                                                                                                  
+             
+                 <echo message="UPDATE ecj.jar" />
+                 <copy todir="${destdir}">
+--- jdtcoresrc/compilejdtcorewithjavac.xml~	Fri May 13 11:34:19 2005
++++ jdtcoresrc/compilejdtcorewithjavac.xml	Sun May 15 10:08:28 2005
+@@ -22,9 +22,9 @@
+         <property name="javacDebugInfo" value="true" />
+         <property name="javacFailOnError" value="true" />
+ 
+-        <record name="../compilelog.txt" action="start" />
++        <record name="compilelog.txt" action="start" />
+         <javac verbose="true" srcdir="${srcdir}" destdir="${destdir}"/>
+-        <record name="../compilelog.txt" action="stop" />   
++        <record name="compilelog.txt" action="stop" />   
+ 
+         <echo message="UPDATE ecj.jar" />
+              <copy todir="${destdir}">
