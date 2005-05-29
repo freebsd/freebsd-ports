@@ -1,6 +1,6 @@
---- GNUmakefile.orig	Sat Mar 27 18:25:44 2004
-+++ GNUmakefile	Sat Mar 27 20:31:04 2004
-@@ -4,20 +4,16 @@
+--- GNUmakefile.orig	Sat May 21 18:16:04 2005
++++ GNUmakefile	Sat May 21 18:19:41 2005
+@@ -4,22 +4,16 @@
  # in /opt/diet, where they are in the default search path for my diet libc
  # work but don't conflict with anything there.  YMMV.
  
@@ -18,14 +18,16 @@
  all: t $(LIBS) libowfat.a libsocket
  
 -CC=gcc
--CFLAGS=-pipe -Wall -O2 -fomit-frame-pointer
+-CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
 -#CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
+-
+-# CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
 -
  # startrip
  ifneq ($(DEBUG),)
  CFLAGS=-pipe -Wall -g
-@@ -146,10 +142,10 @@
- openreadclose.h readclose.h ndelay.h array.h io.h safemult.h iob.h havealloca.h
+@@ -154,10 +148,10 @@
+ errmsg.h
  
  install: libowfat.a
 -	install -d $(INCLUDEDIR) $(MAN3DIR) $(LIBDIR)
