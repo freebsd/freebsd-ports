@@ -1,0 +1,15 @@
+include/ncnf.h
+include/ncnf_app.h
+include/ncnf_coll.h
+include/ncnf_int.h
+include/ncnf_walk.h
+include/ncnf_diff.h
+include/ncnf_notif.h
+include/ncnf_constr.h
+include/ncnf_ql.h
+lib/libncnf.a
+lib/libncnf.so
+lib/libncnf.so.3
+%%PORTDOCS%%%%DOCSDIR%%/ncnf-validator-syntax.txt
+%%PORTDOCS%%%%DOCSDIR%%/ncnf-whitepaper.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

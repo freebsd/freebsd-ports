@@ -587,6 +587,7 @@
     SUBDIR += nana
     SUBDIR += nasm
     SUBDIR += naturaldocs
+    SUBDIR += ncnf
     SUBDIR += ncurses
     SUBDIR += newfile
     SUBDIR += newt
