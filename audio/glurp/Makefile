@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glurp
-PORTVERSION=	0.11.3
-PORTREVISION=	2
+PORTVERSION=	0.11.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +17,6 @@ COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget libglade2
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic" \
 
 .include <bsd.port.mk>
