@@ -1,5 +1,5 @@
---- features/org.eclipse.launchers/library/motif/build.sh~	Sat Feb 19 12:13:49 2005
-+++ features/org.eclipse.launchers/library/motif/build.sh	Sun Mar 20 15:27:04 2005
+--- features/org.eclipse.platform.launchers/library/motif/build.sh~	Sat Feb 19 12:13:49 2005
++++ features/org.eclipse.platform.launchers/library/motif/build.sh	Sun Mar 20 15:27:04 2005
 @@ -55,6 +55,15 @@
  		MOTIF_HOME=/bluebird/teamswt/swt-builddir/motif21		
  		OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"

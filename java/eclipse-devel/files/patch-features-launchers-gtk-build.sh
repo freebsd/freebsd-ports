@@ -1,5 +1,5 @@
---- features/org.eclipse.launchers/library/gtk/build.sh.orig	Fri Apr  1 13:57:19 2005
-+++ features/org.eclipse.launchers/library/gtk/build.sh	Sun Apr  3 11:37:51 2005
+--- features/org.eclipse.platform.launchers/library/gtk/build.sh.orig	Fri Apr  1 13:57:19 2005
++++ features/org.eclipse.platform.launchers/library/gtk/build.sh	Sun Apr  3 11:37:51 2005
 @@ -67,6 +67,23 @@
  				;;
  		esac

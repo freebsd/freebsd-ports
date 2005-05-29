@@ -1,5 +1,5 @@
---- features/org.eclipse.launchers/library/gtk/make_freebsd.mak.orig	Sun Apr 17 20:24:58 2005
-+++ features/org.eclipse.launchers/library/gtk/make_freebsd.mak	Sun Apr 17 20:25:45 2005
+--- features/org.eclipse.platform.launchers/library/gtk/make_freebsd.mak.orig	Sun Apr 17 20:24:58 2005
++++ features/org.eclipse.platform.launchers/library/gtk/make_freebsd.mak	Sun Apr 17 20:25:45 2005
 @@ -26,7 +26,7 @@
  CC=gcc
  OBJS = eclipse.o eclipseUtil.o eclipseShm.o eclipseConfig.o eclipseGtk.o

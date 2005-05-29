@@ -1,18 +1,15 @@
---- plugins/org.eclipse.update.core.linux/src/update.c.orig	Thu Sep 16 08:48:27 2004
-+++ plugins/org.eclipse.update.core.linux/src/update.c	Fri Feb 18 20:27:34 2005
-@@ -10,8 +10,15 @@
-  *******************************************************************************/
- 
+--- plugins/org.eclipse.update.core.linux/src/update.c.orig	Fri May 13 11:37:58 2005
++++ plugins/org.eclipse.update.core.linux/src/update.c	Sat May 14 19:01:31 2005
+@@ -12,7 +12,12 @@
+ /* bug 82520 : need to include stdlib.h */
+ # include <stdlib.h>
  # include <sys/types.h>
 +#ifdef __FreeBSD__
-+# include <stdlib.h>
 +# include <sys/param.h>
 +# include <sys/mount.h>
-+# include "update.h"
 +#else
  # include <sys/statfs.h>
- # include <update.h>
 +#endif
+ # include <update.h>
  
  /*
-  * Class:     org_eclipse_update_configuration_LocalSystemInfo
