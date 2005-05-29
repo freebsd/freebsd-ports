@@ -1,0 +1,33 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -133,12 +133,12 @@
+ 	done
+ 	$(INSTALL_DIR) $(BUILDROOT)$(includedir)
+ 	$(INSTALL_DATA) mxml.h $(BUILDROOT)$(includedir)
+-	$(INSTALL_DIR) $(BUILDROOT)$(libdir)/pkgconfig
+-	$(INSTALL_DATA) mxml.pc $(BUILDROOT)$(libdir)/pkgconfig
+-	$(INSTALL_DIR) $(BUILDROOT)$(mandir)/cat1
+-	$(INSTALL_MAN) doc/mxmldoc.$(CAT1EXT) $(BUILDROOT)$(mandir)/cat1/mxmldoc.$(CAT1EXT)
+-	$(INSTALL_DIR) $(BUILDROOT)$(mandir)/cat3
+-	$(INSTALL_MAN) doc/mxml.$(CAT3EXT) $(BUILDROOT)$(mandir)/cat3/mxml.$(CAT3EXT)
++	$(INSTALL_DIR) $(BUILDROOT)$(prefix)/libdata/pkgconfig
++	$(INSTALL_DATA) mxml.pc $(BUILDROOT)$(prefix)/libdata/pkgconfig
++	-$(MKDIR) -p $(BUILDROOT)$(mandir)/cat1
++	$(CP) doc/mxmldoc.$(CAT1EXT) $(BUILDROOT)$(mandir)/cat1/mxmldoc.$(CAT1EXT)
++	-$(MKDIR) -p $(BUILDROOT)$(mandir)/cat3
++	$(CP) doc/mxml.$(CAT3EXT) $(BUILDROOT)$(mandir)/cat3/mxml.$(CAT3EXT)
+ 	$(INSTALL_DIR) $(BUILDROOT)$(mandir)/man1
+ 	$(INSTALL_MAN) doc/mxmldoc.man $(BUILDROOT)$(mandir)/man1/mxmldoc.$(MAN1EXT)
+ 	$(INSTALL_DIR) $(BUILDROOT)$(mandir)/man3
+@@ -177,7 +177,7 @@
+ 	$(RM) $(BUILDROOT)$(bindir)/mxmldoc
+ 	$(RM) -r $(BUILDROOT)$(docdir)
+ 	$(RM) $(BUILDROOT)$(includedir)/mxml.h
+-	$(RM) $(BUILDROOT)$(libdir)/pkgconfig/mxml.pc
++	$(RM) $(BUILDROOT)$(prefix)/libdata/pkgconfig/mxml.pc
+ 	$(RM) $(BUILDROOT)$(mandir)/cat1/mxmldoc.$(CAT1EXT)
+ 	$(RM) $(BUILDROOT)$(mandir)/cat3/mxml.$(CAT3EXT)
+ 	$(RM) $(BUILDROOT)$(mandir)/man1/mxmldoc.$(MAN1EXT)
