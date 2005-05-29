@@ -1115,7 +1115,7 @@ MASTER_SITE_SAVANNAH+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for mirror in heanet aleron umn belnet nchc voxel optusnet kent unc
+.for mirror in heanet aleron umn belnet nchc voxel optusnet kent unc ufpr
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
