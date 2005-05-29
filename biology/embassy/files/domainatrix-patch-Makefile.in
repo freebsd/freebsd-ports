@@ -1,0 +1,11 @@
+--- EMBASSY/DOMAINATRIX-1.0.0/src/Makefile.in.orig	Sat May 28 12:21:57 2005
++++ EMBASSY/DOMAINATRIX-1.0.0/src/Makefile.in	Sat May 28 12:22:14 2005
+@@ -315,7 +315,7 @@
+ @LOCALLINK_TRUE@	../../../plplot/libplplot.la \
+ @LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir)
+-depcomp = $(SHELL) $(top_srcdir)/../../depcomp
++depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

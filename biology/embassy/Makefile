@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	embassy
 # Date created:		1.November.2004
 # Whom:	      		Fernan Aguero <fernan@iib.unsamn.edu.ar>
@@ -6,7 +7,7 @@
 #
 
 PORTNAME=	embassy
-PORTVERSION=	2.9.0
+PORTVERSION=	2.10.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
@@ -16,8 +17,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of contributed EMBOSS applications
 
-BUILD_DEPENDS=	${LOCALBASE}/include/emboss.h:${PORTSDIR}/biology/emboss
-LIB_DEPENDS=	nucleus.1:${PORTSDIR}/biology/emboss:install
+LIB_DEPENDS=	nucleus.1:${PORTSDIR}/biology/emboss
 
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
@@ -30,7 +30,7 @@ OPTIONS=	DOMAINATRIX	"Protein structure and domain apps" on \
 		ESIM4		"Align cDNA/EST to genome" on \
 		HMMER		"HMM alignment and searches" on \
 		MEME		"Motif detection" on \
-		MSE		"Sequence editor" on \
+		MSE		"A multiple sequence screen editor" on \
 		PHYLIP		"Phylogeny inference" on \
 		TOPO		"Transmembrane display" on
 
@@ -73,6 +73,16 @@ do-extract:
 	    ${CHOWN} -R 0:0 ${${app}_WRKSRC}; \
 	  fi
 .endfor
+
+.if !defined(WITHOUT_DOMAINATRIX)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/domainatrix-patch-Makefile.in
+.endif
+
+.if !defined(WITHOUT_EMNU)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/emnu-patch-Makefile.in
+.endif
 
 do-configure:
 .for app in ${APPLIST}

@@ -1,0 +1,11 @@
+--- EMBASSY/EMNU-1.05/source/Makefile.in.orig	Sat May 28 12:57:17 2005
++++ EMBASSY/EMNU-1.05/source/Makefile.in	Sat May 28 13:03:33 2005
+@@ -63,7 +63,7 @@
+ @LOCALLINK_TRUE@	../../../plplot/libplplot.la \
+ @LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir)
+-depcomp = $(SHELL) $(top_srcdir)/../../depcomp
++depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
