@@ -7,7 +7,6 @@ etc/ircd-ru/kline.conf
 etc/ircd-ru/ru_RU.CP1251/ircd.motd-dist
 etc/ircd-ru/ru_RU.CP1251/ircd.smotd-dist
 etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
-etc/rc.d/ircd.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.Ilines
 %%PORTDOCS%%%%DOCSDIR%%/opers.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/FAQ
@@ -27,8 +26,5 @@ etc/rc.d/ircd.sh.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -m 755 %%VARDIR%%/log/ircd-ru
 @exec chown ircd:ircd %%VARDIR%%/log/ircd-ru
-@exec mkdir -m 755 %%VARDIR%%/run/ircd-ru
-@exec chown ircd:ircd %%VARDIR%%/run/ircd-ru
-@unexec rm -R %%VARDIR%%/run/ircd-ru 2>&1 >/dev/null || true
 @unexec rm -R %%VARDIR%%/log/ircd-ru 2>&1 >/dev/null || true
 @unexec (rmdir %D/etc/ircd-ru && pw user del ircd) || echo 'To completely remove this port delete user ircd, group ircd and remove etc/ircd-ru'

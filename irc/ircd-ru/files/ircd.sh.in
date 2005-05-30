@@ -1,0 +1,32 @@
+#! /bin/sh
+
+#
+# PROVIDE: ircd
+#
+# Add the fellowing line to /etc/rc.conf to enable ircd:
+#
+# ircd_enable="YES"
+#
+
+. "%%RC_SUBR%%"
+
+name=ircd
+rcvar=`set_rcvar`
+
+command=/usr/local/sbin/ircd
+
+ircd_pidfile="/var/run/ircd-ru/ircd.pid"
+ircd_required_files="/usr/local/etc/ircd-ru/ircd.conf /usr/local/etc/ircd-ru/ircd.motd /usr/local/etc/ircd-ru/ircd.smotd"
+ircd_user="ircd"
+
+pidfile=${ircd_pidfile}
+required_files=${ircd_required_files}
+
+ircd_precmd () {
+	/usr/bin/install -d -o ircd -g ircd /var/run/ircd-ru
+        eval `/usr/bin/limits -U ${ircd_user} -e`
+}
+start_precmd="ircd_precmd"
+
+load_rc_config ${name}
+run_rc_command "$1"
