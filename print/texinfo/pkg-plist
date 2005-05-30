@@ -1,0 +1,66 @@
+bin/info
+bin/infokey
+bin/install-info
+bin/makeinfo
+bin/texi2dvi
+bin/texi2pdf
+bin/texindex
+share/locale/cs/LC_MESSAGES/texinfo.mo
+share/locale/da/LC_MESSAGES/texinfo.mo
+share/locale/de/LC_MESSAGES/texinfo.mo
+share/locale/de_AT/LC_MESSAGES/texinfo.mo
+share/locale/eo/LC_MESSAGES/texinfo.mo
+share/locale/fr/LC_MESSAGES/texinfo.mo
+share/locale/he/LC_MESSAGES/texinfo.mo
+share/locale/hr/LC_MESSAGES/texinfo.mo
+share/locale/ja/LC_MESSAGES/texinfo.mo
+share/locale/nb/LC_MESSAGES/texinfo.mo
+share/locale/nl/LC_MESSAGES/texinfo.mo
+share/locale/no/LC_MESSAGES/texinfo.mo
+share/locale/pl/LC_MESSAGES/texinfo.mo
+share/locale/ro/LC_MESSAGES/texinfo.mo
+share/locale/ru/LC_MESSAGES/texinfo.mo
+share/locale/sv/LC_MESSAGES/texinfo.mo
+share/locale/tr/LC_MESSAGES/texinfo.mo
+share/locale/zh_CN/LC_MESSAGES/texinfo.mo
+share/locale/zh_TW/LC_MESSAGES/texinfo.mo
+%%DATADIR%%/texinfo.cat
+%%DATADIR%%/texinfo.dtd
+%%DATADIR%%/texinfo.xsl
+%%TEXMFLOCAL%%/pdftex/plain/misc/pdfcolor.tex
+%%TEXMFLOCAL%%/tex/generic/dvips/epsf.tex
+%%TEXMFLOCAL%%/tex/texinfo/texinfo.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-cs.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-de.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-en.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-es.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-fr.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-it.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-nl.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-no.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-pl.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-pt.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-tr.tex
+@dirrm %%TEXMFLOCAL%%/tex/texinfo
+@unexec rmdir %D/%%TEXMFLOCAL%%/tex/generic/dvips 2> /dev/null || true
+@unexec rmdir %D/%%TEXMFLOCAL%%/tex/generic 2> /dev/null || true
+@unexec rmdir %D/%%TEXMFLOCAL%%/tex 2> /dev/null || true
+@unexec rmdir %D/%%TEXMFLOCAL%%/pdftex/plain/misc 2> /dev/null || true
+@unexec rmdir %D/%%TEXMFLOCAL%%/pdftex/plain 2> /dev/null || true
+@unexec rmdir %D/%%TEXMFLOCAL%%/pdftex 2> /dev/null || true
+@unexec rmdir %D/%%TEXMFLOCAL%% 2> /dev/null || true
+@dirrm %%DATADIR%%
+@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zh_TW 2> /dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2> /dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ro 2> /dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/pl 2> /dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/no 2> /dev/null || true
+@unexec rmdir %D/share/locale/de_AT/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/de_AT 2> /dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/cs 2> /dev/null || true

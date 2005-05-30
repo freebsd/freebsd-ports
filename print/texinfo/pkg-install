@@ -1,0 +1,28 @@
+#!/bin/sh
+# $FreeBSD$
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+PATH="${PKG_PREFIX}/bin:/usr/local/bin:/usr/bin:${PATH}"
+
+SETENV=env
+TEXHASH=texhash
+TRUE=true
+
+case "$ACTION" in
+
+POST-INSTALL|DEINSTALL)
+	${SETENV} PATH="${PATH}" ${TEXHASH} 2>/dev/null || ${TRUE}
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit
