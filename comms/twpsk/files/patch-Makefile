@@ -1,0 +1,49 @@
+--- Makefile.orig	Thu Aug 15 23:19:20 2002
++++ Makefile	Mon May 30 23:31:25 2005
+@@ -1,9 +1,10 @@
+ # Path settings for 'make install'
+ # cod-file will be searched in DATADIR  /* $(HOME) and current directory */
+ # ini-file will be searched in DATADIR  /* $(HOME), current directory    */
+-BINDIR = /usr/local/bin
+-DATADIR = /usr/local/share/psk31
+-MANDIR = /usr/local/man/man1
++PREFIX?=/usr/local
++BINDIR = ${PREFIX}/bin
++DATADIR = ${PREFIX}/share/psk31
++MANDIR = ${PREFIX}/man/man1
+ CC = g++ 
+ LD = g++
+ ###CXXFLAGS = -O2 -g
+@@ -14,7 +15,7 @@
+ ## If you change these lines, you have to do a "make clean"!!!
+ ##
+ ## Uncomment these two lines for recommended mode with pthread library
+-LIBS = -lncurses -lm -lpthread
++LIBS = -lncurses -lm ${PTHREAD_LIBS}
+ CXXFLAGS += -DUSE_PTHREAD
+ ##
+ ## Uncomment this line for operation without phreads
+@@ -23,7 +24,7 @@
+ ## (Well, it compiles, but the executable does not work...)
+ ##LIBS = -lncurses -lm
+ #############################################################################
+-export CXXFLAGS
++#export CXXFLAGS
+ 
+ OBJS = psk31-coder.o psk31-receiver.o psk31-transmitter.o psk31-main.o window.o
+ # OBJS += hansis-fft.o
+@@ -78,13 +79,9 @@
+ 	install psk31lx $(BINDIR)
+ 	install psk31.ini psk31.cod $(DATADIR)
+ 	install psk31.1 $(MANDIR)
+-
+-install_twpsk:
+-	install -d $(BINDIR)
+-	install -d $(DATADIR)
+ 	install  psk31.ini psk31.cod user-twpsk/twpskHelp $(DATADIR)
+ 	install  twpsk $(BINDIR)
+-	install  user-twpsk/Twpsk /usr/X11R6/lib/X11/app-defaults
++	install  user-twpsk/Twpsk $(DATADIR)
+ 
+ clean:
+ 	/bin/rm -f */*.o psk31lx twpsk core
