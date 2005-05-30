@@ -1,0 +1,5 @@
+include/senna/senna.h
+lib/libsenna.a
+lib/libsenna.so
+lib/libsenna.so.0
+@dirrm include/senna

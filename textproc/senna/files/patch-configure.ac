@@ -1,0 +1,10 @@
+--- configure.ac.orig	Thu May  5 21:23:50 2005
++++ configure.ac	Thu May  5 21:24:17 2005
+@@ -11,6 +11,6 @@
+ AM_PROG_LIBTOOL
+ AC_CONFIG_FILES([Makefile test/Makefile lib/Makefile])
+ AC_SUBST(SENNA_HOME)
+-AC_CHECK_LIB(mecab, mecab_new3, [],[echo "No libmecab found (You need a patched version, if using mecab without mecab_new3)"; exit 1])
++AC_CHECK_LIB(mecab-razil, mecab_new3, [],[echo "No libmecab-razil found (You need a patched version, if using mecab without mecab_new3)"; exit 1])
+ 
+ AC_OUTPUT

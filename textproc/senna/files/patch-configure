@@ -1,0 +1,28 @@
+--- configure.orig	Thu May  5 20:51:43 2005
++++ configure	Thu May  5 20:52:31 2005
+@@ -18635,13 +18635,13 @@
+ 
+ 
+ 
+-echo "$as_me:$LINENO: checking for mecab_new3 in -lmecab" >&5
+-echo $ECHO_N "checking for mecab_new3 in -lmecab... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for mecab_new3 in -lmecab-razil" >&5
++echo $ECHO_N "checking for mecab_new3 in -lmecab-razil... $ECHO_C" >&6
+ if test "${ac_cv_lib_mecab_mecab_new3+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmecab  $LIBS"
++LIBS="-lmecab-razil  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -18703,7 +18703,7 @@
+ #define HAVE_LIBMECAB 1
+ _ACEOF
+ 
+-  LIBS="-lmecab $LIBS"
++  LIBS="-lmecab-razil $LIBS"
+ 
+ else
+   echo "No libmecab found (You need a patched version, if using mecab without mecab_new3)"; exit 1
