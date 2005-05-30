@@ -8643,6 +8643,8 @@ pear-Config	ports/devel/pear-Config
 pear-Console_Getargs	ports/devel/pear-Console_Getargs
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Console_Table	ports/devel/pear-Console_Table
+pear-Contact_Vcard_Build	ports/mail/pear-Contact_Vcard_Build
+pear-Contact_Vcard_Parse	ports/mail/pear-Contact_Vcard_Parse
 pear-Crypt_Blowfish	ports/security/pear-Crypt_Blowfish
 pear-Crypt_CBC	ports/security/pear-Crypt_CBC
 pear-Crypt_CHAP	ports/security/pear-Crypt_CHAP
@@ -8724,6 +8726,7 @@ pear-Net_Ping	ports/net/pear-Net_Ping
 pear-Net_SMTP	ports/net/pear-Net_SMTP
 pear-Net_Server	ports/net/pear-Net_Server
 pear-Net_Sieve	ports/net/pear-Net_Sieve
+pear-Net_SmartIRC	ports/irc/pear-Net_SmartIRC
 pear-Net_Socket	ports/net/pear-Net_Socket
 pear-Net_URL	ports/net/pear-Net_URL
 pear-Net_UserAgent_Detect	ports/net/pear-Net_UserAgent_Detect
