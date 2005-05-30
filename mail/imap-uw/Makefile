@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	2004c1
+PORTVERSION=	2004d
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
