@@ -1,4 +1,5 @@
 sbin/pserv
-etc/mime.types.pserv
-etc/pserv.conf
+etc/pserv/mime.types
+etc/pserv/pserv.conf
 etc/rc.d/pserv.sh
+@dirrm etc/pserv
