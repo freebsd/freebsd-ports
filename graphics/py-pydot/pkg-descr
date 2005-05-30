@@ -1,7 +1,7 @@
 An interface for creating both directed and non directed graphs from
 Python. Currently all attributes implemented in the Dot language are
-supported (up to Graphviz 1.10). Output can be inlined in Postscript
+supported (up to Graphviz 1.16). Output can be inlined in Postscript
 into interactive scientific environments like TeXmacs, or output in any
-of the format's supported by the Graphviz tools dot, neato, twopi.
+of the formats supported by the Graphviz tools dot, neato, twopi.
 
 WWW:	http://dkbza.org/pydot.html
