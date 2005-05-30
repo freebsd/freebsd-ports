@@ -6,7 +6,6 @@ bin/btmaketorrent.py
 bin/btreannounce.py
 bin/btrename.py
 bin/btshowmetainfo.py
-bin/bttest.py
 bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.pyc
@@ -113,32 +112,89 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/parsedir.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/parsedir.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/parsedir.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/platform.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/platform.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/platform.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.pyo
-%%PYTHON_SITELIBDIR%%/BitTorrent/testtest.py
-%%PYTHON_SITELIBDIR%%/BitTorrent/testtest.pyc
-%%PYTHON_SITELIBDIR%%/BitTorrent/testtest.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/track.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/track.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/track.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
-share/pixmaps/BitTorrent-%%PORTVERSION%%/bittorrent.ico
-share/pixmaps/BitTorrent-%%PORTVERSION%%/broken.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/finished.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/info.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/logo/bittorrent_32.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/logo/bittorrent_96.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/pause.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/play.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/queued.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/remove.png
-share/pixmaps/BitTorrent-%%PORTVERSION%%/running.png
-@dirrm share/pixmaps/BitTorrent-%%PORTVERSION%%/logo
-@dirrm share/pixmaps/BitTorrent-%%PORTVERSION%%
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+%%PYTHON_SITELIBDIR%%/khashmir/__init__.py
+%%PYTHON_SITELIBDIR%%/khashmir/__init__.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/__init__.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/actions.py
+%%PYTHON_SITELIBDIR%%/khashmir/actions.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/actions.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/cache.py
+%%PYTHON_SITELIBDIR%%/khashmir/cache.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/cache.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/const.py
+%%PYTHON_SITELIBDIR%%/khashmir/const.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/const.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/defer.py
+%%PYTHON_SITELIBDIR%%/khashmir/defer.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/defer.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/inserter.py
+%%PYTHON_SITELIBDIR%%/khashmir/inserter.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/inserter.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/khash.py
+%%PYTHON_SITELIBDIR%%/khashmir/khash.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/khash.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/khashmir.py
+%%PYTHON_SITELIBDIR%%/khashmir/khashmir.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/khashmir.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/knet.py
+%%PYTHON_SITELIBDIR%%/khashmir/knet.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/knet.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/knode.py
+%%PYTHON_SITELIBDIR%%/khashmir/knode.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/knode.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/krpc.py
+%%PYTHON_SITELIBDIR%%/khashmir/krpc.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/krpc.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/kstore.py
+%%PYTHON_SITELIBDIR%%/khashmir/kstore.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/kstore.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/ktable.py
+%%PYTHON_SITELIBDIR%%/khashmir/ktable.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/ktable.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/node.py
+%%PYTHON_SITELIBDIR%%/khashmir/node.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/node.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/setup.py
+%%PYTHON_SITELIBDIR%%/khashmir/setup.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/setup.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test.py
+%%PYTHON_SITELIBDIR%%/khashmir/test.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.py
+%%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.py
+%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test_kstore.py
+%%PYTHON_SITELIBDIR%%/khashmir/test_kstore.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test_kstore.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/unet.py
+%%PYTHON_SITELIBDIR%%/khashmir/unet.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/unet.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/util.py
+%%PYTHON_SITELIBDIR%%/khashmir/util.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/util.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.py
+%%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyo
+share/locale/fr/LC_MESSAGES/bittorrent.mo
+%%GUI%%@dirrm share/pixmaps/BitTorrent/logo
+%%GUI%%@dirrm share/pixmaps/BitTorrent
+%%GUI%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrm %%PYTHON_SITELIBDIR%%/khashmir
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true

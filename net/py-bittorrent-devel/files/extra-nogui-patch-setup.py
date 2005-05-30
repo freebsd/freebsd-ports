@@ -1,13 +1,18 @@
---- setup.py.orig	Fri Dec 24 06:56:00 2004
-+++ setup.py	Fri Dec 24 06:56:10 2004
-@@ -19,8 +19,8 @@
+--- setup.py.orig	Sat Mar 12 10:01:45 2005
++++ setup.py	Sat Mar 12 10:14:21 2005
+@@ -19,7 +19,7 @@
  
  import glob
  
--scripts = ["btdownloadgui.py", "btdownloadcurses.py", "btdownloadheadless.py", 
+-scripts = ["btdownloadgui.py", "btdownloadcurses.py", "btdownloadheadless.py",
 -           "btmaketorrentgui.py", "btmaketorrent.py",
-+scripts = ["btdownloadcurses.py", "btdownloadheadless.py", 
++scripts = ["btdownloadcurses.py", "btdownloadheadless.py",
 +           "btmaketorrent.py",
             "btlaunchmany.py", "btlaunchmanycurses.py", 
-            "bttrack.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
-            "bttest.py"]
+            "bttrack.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py"]
+@@ -27,4 +27,3 @@
+ img_root, doc_root = BitTorrent.calc_unix_dirs()
+ 
+-data_files = [ (img_root        , glob.glob('images/*png')+['images/bittorrent.ico',]),
+-               (img_root+'/logo', glob.glob('images/logo/bittorrent_[0-9]*.png')     ),
++data_files = [ 
