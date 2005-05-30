@@ -1,0 +1,4 @@
+PEAR::Contact_Vcard_Build allows you to programmatically create a vCard,
+version 2.1 or 3.0, and fetch the vCard text.
+
+WWW: http://pear.php.net/package/Contact_Vcard_Build/
