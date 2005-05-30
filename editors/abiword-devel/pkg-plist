@@ -202,7 +202,7 @@ share/AbiSuite-%%ABIVERSION%%/icons/abiword_16.xpm
 share/AbiSuite-%%ABIVERSION%%/icons/abiword_48.png
 share/AbiSuite-%%ABIVERSION%%/icons/abiword_48.tif
 share/AbiSuite-%%ABIVERSION%%/icons/abiword_48.xpm
-share/AbiSuite-%%ABIVERSION%%/icons/abiword_logo.xpm
+%%GNOME:%%share/AbiSuite-%%ABIVERSION%%/icons/abiword_logo.xpm
 share/AbiSuite-%%ABIVERSION%%/templates/A4.awt
 share/AbiSuite-%%ABIVERSION%%/templates/Business-Letter.awt
 share/AbiSuite-%%ABIVERSION%%/templates/Business-Report.awt
