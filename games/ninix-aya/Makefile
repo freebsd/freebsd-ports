@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ninix-aya
-PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTVERSION=	3.4.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ninix-aya/13548
+MASTER_SITE_SUBDIR=	ninix-aya/14915
 DISTNAME=	ninix-aya-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -23,12 +22,8 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
-PLIST_SUB=	LOCALBASE=${LOCALBASE}
-
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-
-WRKSRC=		${WRKDIR}/ninix-aya-${PORTVERSION}
 
 .include <bsd.port.mk>
