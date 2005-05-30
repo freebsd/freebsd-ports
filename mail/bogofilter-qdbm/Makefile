@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	5
+PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-qdbm
 
@@ -17,8 +17,8 @@ LIB_DEPENDS=	qdbm.10:${PORTSDIR}/databases/qdbm
 CONFLICTS=	bogofilter-[0-9]* bogofilter-tdb-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=qdbm
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+BF_CPPFLAGS=	-I${LOCALBASE}/include
+BF_LIBS=
 DESCR=		${PKGDIR}/pkg-descr
 
 PLIST_FILES=	bin/bogoQDBMupgrade
