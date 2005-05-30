@@ -1,16 +1,17 @@
---- src/osdep/unix/Makefile.orig	Fri Apr 30 02:08:48 2004
-+++ src/osdep/unix/Makefile	Fri Jun  4 07:00:12 2004
-@@ -22,20 +22,20 @@
+--- src/osdep/unix/Makefile.orig	Thu Apr 21 00:48:34 2005
++++ src/osdep/unix/Makefile	Mon May 30 19:08:25 2005
+@@ -22,8 +22,8 @@
  
  EXTRAAUTHENTICATORS=
  EXTRADRIVERS=mbox
 -PASSWDTYPE=std
 -SSLTYPE=nopwd
--IP=4
 +PASSWDTYPE=pam
 +SSLTYPE=unix.nopwd
-+IP=6
+ IP=4
  
+ 
+@@ -41,13 +41,13 @@
  
  # Extended flags needed for SSL.  You may need to modify.
  
@@ -29,7 +30,7 @@
  
  # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
  # to use this instead
-@@ -62,7 +62,7 @@
+@@ -74,7 +74,7 @@
  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
  DCELDFLAGS= -ldce
@@ -38,7 +39,7 @@
  
  
  # Build parameters normally set by the individual port
-@@ -99,7 +99,7 @@
+@@ -111,7 +111,7 @@
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -47,7 +48,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -117,7 +117,7 @@
+@@ -129,7 +129,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -56,8 +57,8 @@
  
  CAT=cat
  MAKE=make
-@@ -134,6 +134,10 @@
-  PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE)
+@@ -146,6 +146,10 @@
+  PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE) IP=$(IP)
  
  
 +# Need this for the shared library rule to work correctly
@@ -67,7 +68,7 @@
  # Here if no make argument established
  
  missing: osdep.h
-@@ -214,13 +218,14 @@
+@@ -226,13 +230,14 @@
  	 BASECFLAGS="-g -Dconst="
  
  bsf:	# FreeBSD
@@ -85,7 +86,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -786,23 +791,35 @@
+@@ -801,23 +806,35 @@
  
  # Build it!
  
@@ -124,7 +125,7 @@
  
  
  # Dependencies
-@@ -835,7 +852,7 @@
+@@ -850,7 +867,7 @@
  
  # OS-dependent
  
@@ -132,8 +133,8 @@
 +OSDEPS= mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c ip_unix.c\
- 	auths.c crexcl.c flocksim.c nfstest.c flcksafe.c fsync.c gethstid.c \
-@@ -848,12 +865,19 @@
+ 	auths.c crexcl.c flockcyg.c flocklnx.c flocksim.c nfstest.c fsync.c \
+@@ -864,12 +881,19 @@
  	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
