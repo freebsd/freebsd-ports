@@ -750,6 +750,7 @@ blogtk		ports/deskutils/blogtk
 blop		ports/audio/blop
 blt		ports/x11-toolkits/blt
 blue		ports/games/blue
+bluecurve-themes	ports/x11-themes/bluecurve-themes
 bluefish	ports/www/bluefish
 bluej		ports/java/bluej
 blwm		ports/x11-wm/blwm
@@ -1313,6 +1314,7 @@ curl		ports/ftp/curl
 curlpp		ports/ftp/curlpp
 curly		ports/sysutils/curly
 cursive		ports/games/cursive
+cursor-bluecurve-theme	ports/x11-themes/cursor-bluecurve-theme
 custom-emacs	ports/editors/custom-emacs
 custom-mule	ports/editors/custom-mule
 cutecom		ports/comms/cutecom
@@ -2891,6 +2893,7 @@ gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
 gnome-art	ports/x11-themes/gnome-art
 gnome-backgrounds	ports/x11-themes/gnome-backgrounds
+gnome-bluecurve-theme	ports/x11-themes/gnome-bluecurve-theme
 gnome-btdownload	ports/net/gnome-btdownload
 gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
 gnome-commander	ports/x11-fm/gnome-commander
@@ -3646,6 +3649,7 @@ icmpquery	ports/net-mgmt/icmpquery
 icoconvert	ports/graphics/icoconvert
 icod		ports/graphics/icod
 icon		ports/lang/icon
+icon-bluecurve-theme	ports/x11-themes/icon-bluecurve-theme
 icon-slicer	ports/graphics/icon-slicer
 icontact	ports/graphics/icontact
 iconv		ports/converters/iconv
@@ -5809,6 +5813,7 @@ metacity-aluminumalloy-toxic-theme	ports/x11-themes/metacity-aluminumalloy-toxic
 metacity-aluminumalloy-volcanic-theme	ports/x11-themes/metacity-aluminumalloy-volcanic-theme
 metacity-ana-theme	ports/x11-themes/metacity-ana-theme
 metacity-aquaextremesunken-theme	ports/x11-themes/metacity-aquaextremesunken-theme
+metacity-bluecurve-theme	ports/x11-themes/metacity-bluecurve-theme
 metacity-longhorninspirat-theme	ports/x11-themes/metacity-longhorninspirat-theme
 metacity-milk-theme	ports/x11-themes/metacity-milk-theme
 metacity-theme-6nome	ports/x11-themes/metacity-theme-6nome
@@ -12558,6 +12563,7 @@ xmms-alarm	ports/x11-clocks/xmms-alarm
 xmms-arts_output	ports/audio/xmms-arts_output
 xmms-audiofile	ports/audio/xmms-audiofile
 xmms-avi	ports/multimedia/xmms-avi
+xmms-bluecurve-theme	ports/x11-themes/xmms-bluecurve-theme
 xmms-blursk	ports/graphics/xmms-blursk
 xmms-bonk	ports/audio/xmms-bonk
 xmms-cdparanoia	ports/audio/xmms-cdparanoia
