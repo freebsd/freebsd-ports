@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: thttpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable thttpd:
+#
+# thttpd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=thttpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/thttpd
+required_files=%%PREFIX%%/etc/thttpd.conf
+
+thttpd_enable=${thttpd_enable:-"NO"}
+thttpd_flags=${thttpd_flags:-"-C %%PREFIX%%/etc/thttpd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,6 @@
+user=%%WWWOWN%%
+dir=%%PREFIX%%/www/data
+chroot
+cgipat=*.cgi
+logfile=/var/log/thttpd.log
+pidfile=/var/run/thttpd.pid
