@@ -20,6 +20,7 @@ COMMENT=	Python bindings for the wxWidgets/GTK GUI toolkit
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
+NO_LATEST_LINK=	yes
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
