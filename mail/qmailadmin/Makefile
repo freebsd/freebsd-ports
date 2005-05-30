@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,12 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
-BUILD_DEPENDS= \
-	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
+BUILD_DEPENDS=	\
 	autorespond:${PORTSDIR}/mail/autorespond \
 	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS= \
-	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
+RUN_DEPENDS=	\
 	autorespond:${PORTSDIR}/mail/autorespond \
 	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
@@ -67,7 +64,7 @@ CGIBINDIR?=	www/cgi-bin.default
 CGIBINSUBDIR?=	qmailadmin
 CGIBINURL?=	/cgi-bin
 WEBDATADIR?=	www/data.default
-WEBDATASUBDIR?= qmailadmin
+WEBDATASUBDIR?=	qmailadmin
 WEBDATAURL?=
 
 PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
@@ -98,6 +95,7 @@ CONFIGURE_ARGS+=	\
 	--enable-vpopmaildir=${LOCALBASE}/vpopmail \
 	--enable-autoresponder-path=${LOCALBASE}/bin \
 	--enable-ezmlmdir=${LOCALBASE}/bin
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_IPAUTH)
 CONFIGURE_ARGS+=	--disable-ipauth
@@ -124,10 +122,10 @@ CONFIGURE_ARGS+=	--enable-help
 .endif
 
 .if defined(WITH_SPAM_DETECTION)
-CONFIGURE_ARGS+=     --enable-modify-spam=y
+CONFIGURE_ARGS+=	--enable-modify-spam=y
 .if defined(SPAM_COMMAND)
-CONFIGURE_ARGS+=    --enable-spam-command="${SPAM_COMMAND}"
-.endif    
+CONFIGURE_ARGS+=	--enable-spam-command="${SPAM_COMMAND}"
+.endif
 .endif
 
 .include <bsd.port.post.mk>
