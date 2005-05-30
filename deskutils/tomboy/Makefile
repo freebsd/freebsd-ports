@@ -8,7 +8,7 @@
 
 PORTNAME=	tomboy
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/tomboy/releases/
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp \
 		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GNOME=	gnomehack gnometarget intltool gnomeprefix
+USE_GNOME=	gnomehack gnometarget intltool gnomeprefix gnomepanel
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+MAN1=		tomboy.1
 GCONF_SCHEMAS=	tomboy.schemas
 
 .include <bsd.port.mk>
