@@ -7,7 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -40,8 +40,7 @@ CONFIGURE_ARGS=	--enable-xft \
 		--with-libpng=${LOCALBASE} \
 		--with-libiconv=${LOCALBASE} \
 		--with-libjpeg-prefix=${LOCALBASE} \
-		--disable-peer-config \
-		--enable-gnome
+		--disable-peer-config
 MAKEFILE=	GNUmakefile
 
 ABIVERSION=	2.4
@@ -62,6 +61,13 @@ PLIST_SUB+=		DICT:=""
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=		libgnomeui	 	
+CONFIGURE_ARGS+=	--enable-gnome
+PKGNAMESUFFIX=		-devel-gnome
+#GNOME_ENABLED=		yes
+.endif
 
 .if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
 LIB_DEPENDS+=		gucharmap.4:${PORTSDIR}/deskutils/gucharmap
