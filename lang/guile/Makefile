@@ -37,7 +37,7 @@ INFO=		goops guile-tut guile r5rs
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ia64
 .endif
 
-.if ${ARCH} != "ia64" && ${ARCH} != "amd64"
+.if ${ARCH} != "ia64" && ${ARCH} != "amd64" && ${ARCH} != "powerpc"
 CONFIGURE_ARGS+=--with-threads
 PLIST_SUB+=	THREADS:=""
 .else
