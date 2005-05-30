@@ -1,8 +1,0 @@
-bin/fpm
-share/gnome/pixmaps/fpm/logo.xpm
-@dirrm share/gnome/pixmaps/fpm
-%%PORTDOCS%%share/doc/fpm/AUTHORS
-%%PORTDOCS%%share/doc/fpm/ChangeLog
-%%PORTDOCS%%share/doc/fpm/README
-%%PORTDOCS%%share/doc/fpm/TODO
-%%PORTDOCS%%@dirrm share/doc/fpm
