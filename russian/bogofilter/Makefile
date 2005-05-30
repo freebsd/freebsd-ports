@@ -17,6 +17,8 @@ CONFLICTS=	bogofilter-[0-9]* bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* bogofi
 # WITH_CP866 tells bogofilter to map KOI8-R, CP1251, and ISO-8859-5 to CP866.
 .if defined(WITH_CP866)
 CONFIGURE_ARGS+=	--enable-russian
+.else
+NO_PACKAGE=	Identical to mail/bogofilter by default since 0.94.13
 .endif
 
 MASTERDIR=	${.CURDIR}/../../mail/bogofilter
