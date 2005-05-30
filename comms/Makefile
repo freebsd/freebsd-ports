@@ -92,6 +92,7 @@
     SUBDIR += tkscanfax
     SUBDIR += tlf
     SUBDIR += trustedqsl
+    SUBDIR += twpsk
     SUBDIR += viewfax
     SUBDIR += vpb2
     SUBDIR += vrflash

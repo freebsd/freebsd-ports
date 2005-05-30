@@ -1,0 +1,7 @@
+PSK31 for Soundblaster/Linux,                             twpsk V 1.1
+(C) 1998-2000
+
+Hansi Reiser - DL9RDZ: base PSK classes and text mode interface
+Ted Williams - WA0EIR: graphical X11 interface
+
+based on PSK31-Software by Peter Martinez G3PLX and Andrew Senior G0TJZ

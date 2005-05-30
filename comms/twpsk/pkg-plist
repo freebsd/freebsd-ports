@@ -1,0 +1,7 @@
+bin/psk31lx
+bin/twpsk
+share/psk31/psk31.ini
+share/psk31/psk31.cod
+share/psk31/Twpsk
+share/psk31/twpskHelp
+@dirrm share/psk31
