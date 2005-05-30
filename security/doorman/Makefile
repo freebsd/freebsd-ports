@@ -7,6 +7,7 @@
 
 PORTNAME=	doorman
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	doorman
@@ -18,12 +19,13 @@ COMMENT=	A Port Knocking implementation, both daemon and client
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-IGNORE=		does not work correctly, issues with the pcap library. Patches are under development
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PATCH_STRIP=	-p1
 
 # Default to db4
 WITH_BDB_VER?=	4
+
+.include <bsd.port.pre.mk>
 
 .if ${WITH_BDB_VER} == 2
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
@@ -39,11 +41,21 @@ LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
 .error WITH_BDB_VER must be one between 2, 3, 4, 41 and 42
 .endif
 
+# doormand does not work with the FreeBSD 4.x version of libpcap.
+# Require the ports version.
+.if ${OSVERSION} < 500000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+.endif
+
+INSTALL_TARGET=	installdirs install-exec install-data
+
 MAN1=	knock.1
 MAN5=	knockcf.5 doormand.cf.5 guestlist.5
 MAN8=	doormand.8
 
 GNU_CONFIGURE=	yes
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	doorman.sh
 
 pre-everything::
 	@${ECHO_MSG}
@@ -55,10 +67,20 @@ pre-everything::
 	@${ECHO_MSG} " CURRENTLY BUILDING WITH db${WITH_BDB_VER} "
 	@${ECHO_MSG}
 
-pre-install:
-	@${SED} 's#%%PREFIX%%#${PREFIX}#' ${MASTERDIR}/pkg-message >${PKGMESSAGE}
-
 post-install:
+	${RM} -f ${PREFIX}/etc/doormand/ipf_add
+	${INSTALL_SCRIPT} ${FILESDIR}/ipf_add.atend ${PREFIX}/etc/doormand/ipf_add.atend
+	${INSTALL_SCRIPT} ${FILESDIR}/ipf_add.before_block ${PREFIX}/etc/doormand/ipf_add.before_block
+	${INSTALL_SCRIPT} ${FILESDIR}/ipf_delete ${PREFIX}/etc/doormand/ipf_delete
+	@for man in ${MAN1}; do \
+		${INSTALL_MAN} -C ${WRKSRC}/$$man ${PREFIX}/man/man1; \
+	done
+	@for man in ${MAN5}; do \
+		${INSTALL_MAN} -C ${WRKSRC}/$$man ${PREFIX}/man/man5; \
+	done
+	@for man in ${MAN8}; do \
+		${INSTALL_MAN} -C ${WRKSRC}/$$man ${PREFIX}/man/man8; \
+	done
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

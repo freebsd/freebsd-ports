@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+#  file "ipf_delete"
+#  IPFilter firewall-delete script, called by "doormand". 
+#  This removes the "pass in quick" rules from the firewall
+#  that were added by one of the ipf_add scripts.
+#
+#  Called with five arguments:
+#
+# $1 : name of the interface (e.g. ne0)
+# $2 : source IP; i.e. dotted-decimal address of the 'knock' client
+# $3 : source port; when this script is called for the first time
+#      to delete a broad firewall rule, this argument will be set
+#      to a single "0" (0x30) character.  This means that the source
+#      port was not known, and a broad rule allowing any source
+#      port was set.
+# $4 : destination IP; that is, the IP address of the interface 
+#      in argument 1.
+# $5 : The port number of the requested service (e.g. 22 for ssh, etc.)
+#
+#
+if [ $3 = 0 ]; then
+     inrule="pass in  quick on $1 proto TCP from $2           to $4 port = $5"
+    outrule="pass out quick on $1 proto TCP from $4 port = $5 to $2"
+else
+     inrule="pass in  quick on $1 proto TCP from $2 port = $3 to $4 port = $5"
+    outrule="pass out quick on $1 proto TCP from $4 port = $5 to $2 port = $3"
+fi
+
+ret=`(echo @$inruleno $inrule; echo @$outruleno $outrule) | /sbin/ipf -r -f - 2>&1`
+
+if [ -z "$ret" ]
+then
+    echo 0
+else
+    echo -1 3 $ret
+fi
+

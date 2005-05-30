@@ -3,7 +3,8 @@ etc/doormand/doormand.cf.EXAMPLE
 etc/doormand/guestlist.EXAMPLE
 etc/doormand/ipchains_add
 etc/doormand/ipchains_delete
-etc/doormand/ipf_add
+etc/doormand/ipf_add.atend
+etc/doormand/ipf_add.before_block
 etc/doormand/ipf_delete
 etc/doormand/ipfw_add
 etc/doormand/ipfw_delete
@@ -12,4 +13,4 @@ etc/doormand/iptables_delete
 etc/doormand/pfctl_add
 etc/doormand/pfctl_delete
 sbin/doormand
-@dirrm etc/doormand
+@unexec rmdir %D/etc/doormand 2>/dev/null || true
