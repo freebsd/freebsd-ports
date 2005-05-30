@@ -1,0 +1,198 @@
+From: gbeauchesne@mandriva.com (Gwenole Beauchesne)
+Subject: [Qemu-devel] [PATCH] slirp 64-bit fixes
+Date: Tue, 17 May 2005 23:46:40 +0000 (UTC)
+
+Hi,
+
+Here are some 64-bit fixes to slirp. Tested on x86_64 as -user-net with a 
+single FTP transaction. You may not need all hunks though.
+
+2005-05-15  Gwenole Beauchesne  <gbeauchesne@mandriva.com>
+
+	* Merge slirp 64-bit fixes from Basilisk II tree.
+
+--- qemu-0.7.0/slirp/bootp.c.slirp-64bit-fixes	2005-04-27 22:52:05.000000000 +0200
++++ qemu-0.7.0/slirp/bootp.c	2005-05-17 07:29:29.000000000 +0200
+@@ -238,7 +238,7 @@ static void bootp_reply(struct bootp_t *
+ 
+ void bootp_input(struct mbuf *m)
+ {
+-    struct bootp_t *bp = (struct bootp_t *)m->m_data;
++    struct bootp_t *bp = mtod(m, struct bootp_t *);
+ 
+     if (bp->bp_op == BOOTP_REQUEST) {
+         bootp_reply(bp);
+--- qemu-0.7.0/slirp/bootp.h.slirp-64bit-fixes	2005-04-27 22:52:05.000000000 +0200
++++ qemu-0.7.0/slirp/bootp.h	2005-05-17 07:29:29.000000000 +0200
+@@ -97,9 +97,9 @@ struct bootp_t {
+     uint8_t bp_htype;
+     uint8_t bp_hlen;
+     uint8_t bp_hops;
+-    unsigned long bp_xid;
+-    unsigned short bp_secs;
+-    unsigned short unused;
++    uint32_t bp_xid;
++    uint16_t bp_secs;
++    uint16_t unused;
+     struct in_addr bp_ciaddr;
+     struct in_addr bp_yiaddr;
+     struct in_addr bp_siaddr;
+--- qemu-0.7.0/slirp/ip_icmp.h.slirp-64bit-fixes	2005-04-27 22:52:05.000000000 +0200
++++ qemu-0.7.0/slirp/ip_icmp.h	2005-05-17 07:29:29.000000000 +0200
+@@ -83,8 +83,8 @@ struct icmp {
+ 			struct ip idi_ip;
+ 			/* options and then 64 bits of data */
+ 		} id_ip;
+-		u_long	id_mask;
+-		char	id_data[1];
++		uint32_t	id_mask;
++		char		id_data[1];
+ 	} icmp_dun;
+ #define	icmp_otime	icmp_dun.id_ts.its_otime
+ #define	icmp_rtime	icmp_dun.id_ts.its_rtime
+--- qemu-0.7.0/slirp/libslirp.h.slirp-64bit-fixes	2005-04-27 22:52:05.000000000 +0200
++++ qemu-0.7.0/slirp/libslirp.h	2005-05-17 07:29:29.000000000 +0200
+@@ -9,6 +9,10 @@ int inet_aton(const char *cp, struct in_
+ #include <arpa/inet.h>
+ #endif
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ void slirp_init(void);
+ 
+ void slirp_select_fill(int *pnfds, 
+@@ -29,4 +33,8 @@ int slirp_add_exec(int do_pty, const cha
+ 
+ extern const char *tftp_prefix;
+ 
++#ifdef __cplusplus
++}
++#endif
++
+ #endif
+--- qemu-0.7.0/slirp/udp.c.slirp-64bit-fixes	2005-04-27 22:52:05.000000000 +0200
++++ qemu-0.7.0/slirp/udp.c	2005-05-17 07:29:29.000000000 +0200
+@@ -420,10 +420,16 @@ struct talk_request {
+ #endif
+ 	
+ struct cu_header {
+-	char 	dest[8];
+-	short 	family;
+-	u_short	port;
+-	u_long	addr;
++	uint16_t	d_family;		// destination family
++	uint16_t	d_port;			// destination port
++	uint32_t	d_addr;			// destination address
++	uint16_t	s_family;		// source family
++	uint16_t	s_port;			// source port
++	uint32_t	s_addr;			// source address
++	uint32_t	seqn;			// sequence number
++	uint16_t	message;		// message
++	uint16_t	data_type;		// data type
++	uint16_t	pkt_len;		// packet length
+ } *cu_head;
+ 
+ 	switch(so->so_emu) {
+@@ -610,8 +616,8 @@ struct cu_header {
+ 			if (getsockname(so->s, (struct sockaddr *)&addr, &addrlen) < 0)
+ 				return;
+ 			cu_head = mtod(m, struct cu_header *);
+-			cu_head->port = addr.sin_port;
+-			cu_head->addr = (u_long) our_addr.s_addr;
++			cu_head->s_port = addr.sin_port;
++			cu_head->s_addr = our_addr.s_addr;
+ 		}
+ 		
+ 		return;
+--- qemu-0.7.0/slirp/udp.h.slirp-64bit-fixes	2005-04-27 22:52:05.000000000 +0200
++++ qemu-0.7.0/slirp/udp.h	2005-05-17 07:29:29.000000000 +0200
+@@ -94,6 +94,7 @@ struct udpstat {
+ 
+ extern struct udpstat udpstat;
+ extern struct socket udb;
++struct mbuf;
+ 
+ void udp_init _P((void));
+ void udp_input _P((register struct mbuf *, int));
+--- qemu-0.7.0/slirp/slirp_config.h.slirp-64bit-fixes	2005-04-27 22:52:05.000000000 +0200
++++ qemu-0.7.0/slirp/slirp_config.h	2005-05-17 08:00:23.000000000 +0200
+@@ -85,9 +85,6 @@
+ /* Define if you have sys/bitypes.h */
+ #undef HAVE_SYS_BITYPES_H
+ 
+-/* Define if the machine is big endian */
+-//#undef WORDS_BIGENDIAN
+-
+ /* Define if your sprintf returns char * instead of int */
+ #undef BAD_SPRINTF
+ 
+@@ -139,19 +136,6 @@
+ /* Define if you don't have u_int32_t etc. typedef'd */
+ #undef NEED_TYPEDEFS
+ 
+-/* Define to sizeof(char) */
+-#define SIZEOF_CHAR 1
+-
+-/* Define to sizeof(short) */
+-#define SIZEOF_SHORT 2
+-
+-/* Define to sizeof(int) */
+-#define SIZEOF_INT 4
+-
+-/* Define to sizeof(char *) */
+-/* XXX: patch it */
+-#define SIZEOF_CHAR_P 4
+-
+ /* Define if you have random() */
+ #undef HAVE_RANDOM
+ 
+--- qemu-0.7.0/configure.slirp-64bit-fixes	2005-05-17 07:05:18.000000000 +0200
++++ qemu-0.7.0/configure	2005-05-17 08:04:55.000000000 +0200
+@@ -614,6 +614,36 @@ if [ "$bsd" = "yes" ] ; then
+   echo "#define _BSD 1" >> $config_h
+ fi
+ 
++# detect type sizes for slirp
++for type in char short int char_p; do
++  case $type in
++  *_p) c_type="`echo $type | sed -e 's/_p//'` *";;
++  *) c_type=$type;;
++  esac
++  d_type="SIZEOF_`echo $type | tr '[:lower:]' '[:upper:]'`"
++  d_size=
++  for size in 1 2 4 8 16; do
++    cat >$TMPC << EOF
++int main(void)
++{
++  static int test_array[1 - 2 * !(((long)(sizeof($c_type))) == $size)];
++  test_array[0] = 0;
++  return 0;
++}
++EOF
++    if $cc -o $TMPO -c $TMPC 2>/dev/null; then
++      d_size=$size
++      break;
++    fi
++  done
++  rm -f $TMPC $TMPO $TMPE
++  if test -n "$d_size"; then
++    echo "#define $d_type $d_size" >> $config_h
++  else
++    echo "#error \"undefined $d_type\"" >> $config_h
++  fi
++done
++
+ for target in $target_list; do 
+ 
+ target_dir="$target"
+
+
+_______________________________________________
+Qemu-devel mailing list
+Qemu-devel@nongnu.org
+http://lists.nongnu.org/mailman/listinfo/qemu-devel
+
+
+

@@ -1,10 +1,11 @@
 Index: qemu/kqemu/Makefile
-@@ -1,62 +1,5 @@
+@@ -1,62 +1,6 @@
 -ifeq ($(PATCHLEVEL),)
 -# compile in kqemu directory 
 +KMOD=	kqemu
 +SRCS=	kmod_bsd.c
 +OBJS=	kqemu-mod-i386.o
++WERROR=
  
 --include ../config-host.mak
 -
