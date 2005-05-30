@@ -5,12 +5,13 @@ etc/pekwm/keys
 etc/pekwm/menu
 etc/pekwm/mouse
 etc/pekwm/start
-share/pekwm/scripts/pekwm_themeset.pl
-share/pekwm/scripts/pekwm_themeset.sh
-share/pekwm/scripts/pekwm_ws_menu.pl
-share/pekwm/themes/default/theme
-@dirrm share/pekwm/scripts
-@dirrm share/pekwm/themes/default
-@dirrm share/pekwm/themes
-@dirrm share/pekwm
+etc/pekwm/vars
+%%DATADIR%%/scripts/pekwm_themeset.pl
+%%DATADIR%%/scripts/pekwm_themeset.sh
+%%DATADIR%%/scripts/pekwm_ws_menu.pl
+%%DATADIR%%/themes/default/theme
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/themes/default
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
 @dirrm etc/pekwm
