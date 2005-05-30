@@ -23,11 +23,11 @@ USE_REINPLACE=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
+.ifndef(NOPORTDOCS)
 PORTDOCS=	LICENSE.txt \
 		redirdonate.html \
 		README.txt credits.txt
-
-.ifdef(NOPORTDOCS)
+.else
 EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
 .endif
 
