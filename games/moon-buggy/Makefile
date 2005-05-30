@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	moon-buggy
-PORTVERSION=	0.5.1
+PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/data/ \
-		http://www.hangout.de/moon-buggy/
+MASTER_SITES=	http://www.seehuhn.de/data/
 
 MAINTAINER=	ralf@akk.org
 COMMENT=	Drive a buggy across the moons surface
 
-USE_AUTOCONF_VER=	213
-USE_CONFIGURE=	YES
+USE_AUTOCONF_VER=	259
 CONFIGURE_ARGS= --prefix=${PREFIX} \
-		--sharedstatedir=/var/games \
+		--sharedstatedir=/var/games\
 		--with-setgid=games
 
-MAN6=		moon-buggy.6 maint-buggy.6
+MAN6=		moon-buggy.6
+INFO=		moon-buggy
+
+PLIST_FILES=	bin/moon-buggy
 
 # make package will fail without doing this
 post-install:
-	${CHMOD} u+r ${PREFIX}/bin/moon-buggy
+	${CHMOD} 0555 ${PREFIX}/bin/moon-buggy
 
 .include <bsd.port.mk>
