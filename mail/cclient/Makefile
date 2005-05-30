@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2004c1
-PORTREVISION=	1
+PORTVERSION=	2004d
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -55,6 +54,10 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
 		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
+.if !defined(WITHOUT_IPV6)
+	@${REINPLACE_CMD} -e "s|^IP=4|IP=6|" ${WRKSRC}/Makefile \
+		${WRKSRC}/src/osdep/unix/Makefile
+.endif
 
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
