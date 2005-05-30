@@ -3646,6 +3646,7 @@ icmpquery	ports/net-mgmt/icmpquery
 icoconvert	ports/graphics/icoconvert
 icod		ports/graphics/icod
 icon		ports/lang/icon
+icon-slicer	ports/graphics/icon-slicer
 icontact	ports/graphics/icontact
 iconv		ports/converters/iconv
 iconv-extra	ports/converters/iconv-extra
