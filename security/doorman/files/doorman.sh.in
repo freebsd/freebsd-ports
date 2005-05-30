@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+
+# PROVIDE: doorman
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD
+
+#
+# Add the following lines to /etc/rc.conf to enable doorman:
+# doorman_enable (bool):      Set to "NO" by default.
+#                             Set it to "YES" to enable doorman
+# doorman_config (path):      Set to "%%PREFIX%%/etc/doormand/doormand.cf" by default.
+#
+
+. %%RC_SUBR%%
+
+name="doorman"
+rcvar=`set_rcvar`
+
+[ -z "$doorman_enable" ] && doorman_enable="NO"
+[ -z "$doorman_config" ] && doorman_config="%%PREFIX%%/etc/doormand/doormand.cf"
+
+[ -f "$doorman_config" ] || (echo "$doorman_config" does not exist.; exit)
+
+command=%%PREFIX%%/sbin/doormand
+pidfile=/var/run/doormand.pid
+command_args="-p $pidfile -f $doorman_config"
+
+load_rc_config $name
+run_rc_command "$1"

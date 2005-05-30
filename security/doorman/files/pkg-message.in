@@ -9,4 +9,9 @@ To configure Doorman, please edit the files guestlist and doormand.cf found in
 
 or by visiting the Doorman website at http://doorman.sourceforge.net.
 
+The doormand daemon will *not* be started automatically. To allow it
+to start, put this line in /etc/rc.conf:
+
+doorman_enable="YES"
+
 ******************************************************************************
