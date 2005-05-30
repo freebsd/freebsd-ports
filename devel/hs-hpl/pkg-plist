@@ -1,11 +1,13 @@
 bin/ports-config
-lib/ports-0.3.3/ghc5/import/HPL.hi
-lib/ports-0.3.3/ghc5/import/Ports.hi
-lib/ports-0.3.3/ghc5/import/PortsConfig.hi
-lib/ports-0.3.3/ghc5/import/PortsVersion.hi
-lib/ports-0.3.3/ghc5/import/Processes.hi
-lib/ports-0.3.3/ghc5/import/SVars.hi
-lib/ports-0.3.3/ghc5/libportsHS.a
-@dirrm lib/ports-0.3.3/ghc5/import
-@dirrm lib/ports-0.3.3/ghc5
-@dirrm lib/ports-0.3.3
+lib/ports-%%PORTVERSION%%/ghc6/import/HPL.hi
+lib/ports-%%PORTVERSION%%/ghc6/import/PortThreads.hi
+lib/ports-%%PORTVERSION%%/ghc6/import/Ports.hi
+lib/ports-%%PORTVERSION%%/ghc6/import/PortsConfig.hi
+lib/ports-%%PORTVERSION%%/ghc6/import/PortsVersion.hi
+lib/ports-%%PORTVERSION%%/ghc6/import/Processes.hi
+lib/ports-%%PORTVERSION%%/ghc6/import/SVars.hi
+lib/ports-%%PORTVERSION%%/ghc6/import/ThreadUtils.hi
+lib/ports-%%PORTVERSION%%/ghc6/libportsHS.a
+@dirrm lib/ports-%%PORTVERSION%%/ghc6/import
+@dirrm lib/ports-%%PORTVERSION%%/ghc6
+@dirrm lib/ports-%%PORTVERSION%%
