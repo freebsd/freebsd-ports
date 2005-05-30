@@ -6,23 +6,18 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	3.9.1
-PORTREVISION=	1
+PORTVERSION=	4.1.1
 PORTEPOCH=	1
 CATEGORIES?=	net python
-MASTER_SITES=	http://www.bittorrent.com/
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-#MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITES=	http://www.bittorrent.com/dl/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX?=	-devel
-#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
-
-BROKEN=		Unfetchable
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -32,13 +27,22 @@ CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
 NO_LATEST_LINK=	yes
 
+.ifndef(NOPORTDOCS)
 PORTDOCS=	\
 		LICENSE.txt \
 		README.txt \
+		TRACKERLESS.txt \
 		credits.txt \
 		redirdonate.html
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
+.endif
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+WITHOUT_PSYCO=	yes
+.endif
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
@@ -46,33 +50,86 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 PLIST_FILES+=	\
 		bin/btmaketorrentgui.py \
-		bin/btdownloadgui.py
+		bin/btdownloadgui.py \
+		share/pixmaps/BitTorrent/bittorrent.ico \
+		share/pixmaps/BitTorrent/broken.png \
+		share/pixmaps/BitTorrent/finished.png \
+		share/pixmaps/BitTorrent/info.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_32.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_96.png \
+		share/pixmaps/BitTorrent/pause.png \
+		share/pixmaps/BitTorrent/paused.png \
+		share/pixmaps/BitTorrent/play.png \
+		share/pixmaps/BitTorrent/queued.png \
+		share/pixmaps/BitTorrent/remove.png \
+		share/pixmaps/BitTorrent/running.png
+
+PLIST_SUB+=	GUI=""
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
+
+PLIST_SUB+=	GUI="@comment "
+.endif
+# required for PSYCO
+.ifndef(WITHOUT_PSYCO)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
+
+EXTRA_PATCHES+= \
+		${FILESDIR}/extra-psyco-patch-btdownloadcurses.py \
+		${FILESDIR}/extra-psyco-patch-btdownloadgui.py \
+		${FILESDIR}/extra-psyco-patch-btdownloadheadless.py \
+		${FILESDIR}/extra-psyco-patch-btlaunchmany.py \
+		${FILESDIR}/extra-psyco-patch-btlaunchmanycurses.py \
+		${FILESDIR}/extra-psyco-patch-btmaketorrent.py \
+		${FILESDIR}/extra-psyco-patch-btmaketorrentgui.py \
+		${FILESDIR}/extra-psyco-patch-btreannouce.py \
+		${FILESDIR}/extra-psyco-patch-btrename.py \
+		${FILESDIR}/extra-psyco-patch-btshowmetainfo.py \
+		${FILESDIR}/extra-psyco-patch-bttrack.py
+
+PLIST_FILES+=	\
+		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.py \
+		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyc \
+		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyo
 .endif
 
 pre-everything::
 .ifndef(WITHOUT_GUI)
 	@${ECHO_MSG} '===> Define WITHOUT_GUI to disable GUI installation'
 .endif
+.ifndef(WITHOUT_PSYCO)
+	@${ECHO_MSG} '===> Define WITHOUT_PSYCO to disable devel/py-psyco optimization'
+.endif
 
 post-patch:
+# whrandom is deprecated: whrandom -> random
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -x -n 10 \
 		${REINPLACE_CMD} -E \
-		-e 's|/usr/bin/env python|${LOCALBASE}/bin/python|'
+		-e 's|whrandom|random|' \
+		-e 's|/usr/bin/env python.*|${LOCALBASE}/bin/python|'
+.ifndef(WITHOUT_PSYCO)
+# activate psyco optimization
+	@${ECHO_CMD} 'psyco = 1' > ${WRKSRC}/BitTorrent/PSYCO.py
+.endif
 
 post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
 # set proper permissions
 	@${CHMOD} -R ${SHAREMODE} \
 		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
 	@${CHMOD} ${SHAREMODE} ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
 	@${CHMOD} a+x ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
+.ifndef(WITHOUT_GUI)
+# pixmaps
+	@${CHMOD} -R ${SHAREMODE} \
+		${PREFIX}/share/pixmaps/${PORTNAME}/*
+	@${CHMOD} a+x \
+		${PREFIX}/share/pixmaps/${PORTNAME}/logo
+.endif
+.ifndef(NOPORTDOCS)
+# docs
+	@${CHMOD} -R ${SHAREMODE} \
+		${DOCSDIR}/*
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
