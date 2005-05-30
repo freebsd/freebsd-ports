@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Catalyst/Helper/View/HTML/Template.pm
+%%SITE_PERL%%/Catalyst/View/HTML/Template.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/HTML/Template/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/HTML/Template
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/View/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/View 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/View/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/View 2>/dev/null || true
