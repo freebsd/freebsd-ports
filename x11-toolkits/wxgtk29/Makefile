@@ -81,9 +81,9 @@ LIB_DEPENDS+=	wx_base-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 pre-configure:
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-		-e "s,@CXXFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cxxflags`," \
-		-e "s,@CFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cflags`," \
-		-e "s,@CPPFLAGS@,,"
+		-e "s|@CXXFLAGS@|${CFLAGS} `${WXGTK_CONFIG} --cxxflags`|" \
+		-e "s|@CFLAGS@|${CFLAGS} `${WXGTK_CONFIG} --cflags`|" \
+		-e "s|@CPPFLAGS@||"
 
 .endif # !gtk2-contrib-common
 .endif # !gtk2-contrib-utils
