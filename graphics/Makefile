@@ -199,6 +199,7 @@
     SUBDIR += hugin
     SUBDIR += icoconvert
     SUBDIR += icod
+    SUBDIR += icon-slicer
     SUBDIR += icontact
     SUBDIR += ida
     SUBDIR += imageindex

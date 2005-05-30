@@ -1,0 +1,33 @@
+icon-slicer is a utility for generating icon themes and libXcursor cursor
+themes.
+
+The inputs to icon-slicer are conceptually:
+ 
+ A) a set of multi-layer images, one for each size
+ B) a XML theme description file
+
+Each image contains all the cursors arranged in a grid; for cursors the
+layers are:
+ 
+ - a layer with a dot for the hotspot of each cursor
+ - the main image or first animation frame for multi-frame animated cursors
+ - the second animation frame for multi-frame animated cursors
+ - ...
+
+For icons, the layers are:
+
+ - a layer with the images
+ - an optional layer with attachment points for emblems
+ - an optional layer with boxes for embedding text into icons
+
+In practice, since loading of multilayer images is not supported by standard
+image libraries, each layer is input as a separate image file.
+
+The theme description file contains, among other things, information about the
+source images to read, the location of each named cursor or icon within the
+grid, and a set of aliases from names to other names.
+
+WWW: http://www.freedesktop.org/wiki/Software/icon-slicer
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org
