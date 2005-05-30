@@ -1,0 +1,8 @@
+Senna is an embeddable fulltext search engine, which you can use in
+conjunction with various scripting languages and databases. Senna is
+an inverted index based engine, and combines the best of n-gram
+indexing and word indexing to achieve fast, precise searches. While
+senna codebase is rather compact it is scalable enough to handle large
+amounts of data and queries.
+
+WWW: http://dev.razil.jp/project/senna/?lang=en

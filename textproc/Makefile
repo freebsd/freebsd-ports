@@ -637,6 +637,7 @@
     SUBDIR += sdf
     SUBDIR += sdocbook-xml
     SUBDIR += sed_inplace
+    SUBDIR += senna
     SUBDIR += sgmlformat
     SUBDIR += sgmls
     SUBDIR += sgmltools-lite
