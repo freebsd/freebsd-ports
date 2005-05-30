@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfw
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -25,7 +25,6 @@ NO_BUILD=	yes
 PFW_PREFIX?=	${PREFIX}/www/pfw
 SUB_FILES=	pkg-message
 SUB_LIST=	PFW_PREFIX=${PFW_PREFIX}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
