@@ -1,0 +1,9 @@
+PEAR::Net_SmartIRC is a PHP class for communication with IRC networks,
+which conforms to the RFC 2812 (IRC protocol).
+
+It's an API that handles all IRC protocol messages.
+
+This class is designed for creating IRC bots, chats and show irc related
+info on webpages.
+
+WWW: http://pear.php.net/package/Net_SmartIRC/
