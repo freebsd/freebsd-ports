@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 PORTSENTRY="%%PREFIX%%/bin/portsentry"
 
 case "$1" in
