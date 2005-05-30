@@ -18,6 +18,7 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 IPADIC_DISTNAME=	ipadic-2.5.1
 
+USE_PERL5_BUILD=	yes
 USE_REINPLACE=		yes
 
 USE_LIBTOOL_VER=15
