@@ -1,0 +1,4 @@
+PEAR::Contact_Vcard_Parse allows you to parse vCard files and text blocks,
+and get back an array of the elements of each vCard in the file or text.
+
+WWW: http://pear.php.net/package/Contact_Vcard_Parse/
