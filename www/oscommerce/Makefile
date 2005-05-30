@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/ms/}
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	An full-featured open source e-commerce system
 
-USE_PHP=	yes
+USE_PHP=	mysql
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 OSCOMMERCE=	${PREFIX}/www/data/oscommerce
