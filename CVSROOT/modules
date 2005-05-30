@@ -3100,6 +3100,7 @@ gprename	ports/x11-fm/gprename
 gprolog		ports/lang/gprolog
 gps		ports/net-mgmt/gps
 gpsdrive	ports/astro/gpsdrive
+gpsk31		ports/comms/gpsk31
 gpsman		ports/astro/gpsman
 gpsmanshp	ports/graphics/gpsmanshp
 gpt31		ports/misc/gpt31
