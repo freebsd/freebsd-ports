@@ -1,7 +1,7 @@
 Bluecurve is a set of themes created by the Red Hat Artwork project.
 It attempts to provide an unified look for the open source desktop.
 
-This port contains the Bluecurve GTK+ 1.x and 2.x themes.
+This port contains the Bluecurve icon set.
 
-- Ryzhyk Eugeney
-rzheka@users.sourceforge.net
+- Jean-Yves Lefort
+jylefort@FreeBSD.org
