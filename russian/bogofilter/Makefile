@@ -9,11 +9,15 @@ CATEGORIES=	russian mail
 
 MAINTAINER=	yar@freebsd.org
 
-BROKEN=		The support for KOI8-R wordlist storage is broken in bogofilter >=0.94.x
+DEPRECATED=	mail/bogofilter provides Unicode support through WITH_ICONV
 
 CONFLICTS=	bogofilter-[0-9]* bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-sqlite-[0-9]*
 
-CFLAGS+=	-DWINDOWS_1251_to_CYRILLIC
+# bogofilter does CP1251->KOI8-R conversion by default since 0.94.13.
+# WITH_CP866 tells bogofilter to map KOI8-R, CP1251, and ISO-8859-5 to CP866.
+.if defined(WITH_CP866)
+CONFIGURE_ARGS+=	--enable-russian
+.endif
 
 MASTERDIR=	${.CURDIR}/../../mail/bogofilter
 
