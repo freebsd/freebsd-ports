@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.94.12
+PORTVERSION=	0.94.13
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,13 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	Fast, teachable, learning spam detector
 
+OPTIONS=	BASH  "Install scripts that depend on the bash(1) shell" on
+OPTIONS+=	GSL   "Link with system-wide GSL dynamically (recommended)" on
+OPTIONS+=	ICONV "Normalize tokens to Unicode (EXPERIMENTAL)" off
+
 LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
-.if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
-.endif
-.if !defined(WITHOUT_BASH)
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-.endif
 
 CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]*
 
@@ -30,13 +28,28 @@ USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_BASH)
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+.endif
+
+BF_LIBS?=		-ldb-4.3
+BF_CPPFLAGS?=		-I${LOCALBASE}/include/db43 -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
-.if defined(WITHOUT_GSL)
+.if defined(WITH_ICONV)
+CONFIGURE_ARGS+=	--enable-iconv
+USE_ICONV=		yes
+BF_LIBS+=		-liconv
+.endif
+.if defined(WITH_GSL)
+LIB_DEPENDS+=		gsl:${PORTSDIR}/math/gsl
+.else
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif
-CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db43" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb-4.3"
-CONFIGURE_ENV+=	PERL="${PERL}"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="${BF_LIBS}" \
+		PERL="${PERL}" CPPFLAGS="${BF_CPPFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-strip prefix=${PREFIX}
 
@@ -57,23 +70,6 @@ post-patch:
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
-
-pre-everything::
-	@${ECHO_CMD} ""
-.if !defined(WITHOUT_BASH)
-	@${ECHO_CMD} "To install without bash dependency, you can use: make -DWITHOUT_BASH install"
-	@${ECHO_CMD} "Note that installing without bash dependency will mean that some of the"
-	@${ECHO_CMD} "${DOCSDIR}/contrib scripts will not be installed."
-	@${ECHO_CMD} ""
-.endif
-.if !defined(WITHOUT_GSL)
-	@${ECHO_CMD} "To have bogofilter link against its shipped GSL 1.4 statically,"
-	@${ECHO_CMD} "you can use: make -DWITHOUT_GSL && make -DWITHOUT_GSL install"
-.if !defined(WITHOUT_BASH)
-	@${ECHO_CMD} "or: make -DWITHOUT_GSL && make -DWITHOUT_GSL -DWITHOUT_BASH install"
-.endif
-	@${ECHO_CMD} ""
 .endif
 
 post-build::
@@ -109,7 +105,7 @@ post-install::
 	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
 	${INSTALL_DATA} ${FILESDIR}/ChangeLog.port ${DOCSDIR}
 .endif
-.if !defined(WITHOUT_BASH)
+.if defined(WITH_BASH)
 .for i in randomtrain scramble trainbogo.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/
 .endfor
@@ -117,4 +113,4 @@ post-install::
 .endif
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

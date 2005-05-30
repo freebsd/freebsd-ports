@@ -15,9 +15,12 @@ LIB_DEPENDS=	tdb.1:${PORTSDIR}/databases/tdb
 
 CONFLICTS=	bogofilter-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]*
 
+DEPRECATED=	TDB is inefficient and unmaintained - use -qdbm or -sqlite
+EXPIRES=	2005-11-30
+
 CONFIGURE_ARGS=	--with-database=tdb
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+BF_CPPFLAGS=	-I${LOCALBASE}/include
+BF_LIBS=
 DESCR=		${PKGDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../bogofilter

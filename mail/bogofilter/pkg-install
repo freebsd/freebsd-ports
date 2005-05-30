@@ -5,7 +5,10 @@ cat - <<_EOF
 The recent bogofilter versions have undergone substantial changes that can
 affect compatibility and may require that you change your configuration.
 
-See the RELEASE.NOTES-* files that shipped with bogofilter for details.
+See the RELEASE.NOTES file that shipped with bogofilter for details,
+particularly the sections with headings [Incompat ...] and [Major ...]!
+
+It is also advisable to check the README.* file for your database driver.
 --------------------------------------------------------------------------
 
 _EOF
