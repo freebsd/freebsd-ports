@@ -3,6 +3,9 @@ bin/cdv-agent
 bin/cdvpasswd
 bin/cdvserver
 bin/cdvupgrade
+%%PYTHON_SITELIBDIR%%/Codeville/DFS.py
+%%PYTHON_SITELIBDIR%%/Codeville/DFS.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/DFS.pyo
 %%PYTHON_SITELIBDIR%%/Codeville/RawServer.py
 %%PYTHON_SITELIBDIR%%/Codeville/RawServer.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/RawServer.pyo
@@ -48,12 +51,27 @@ bin/cdvupgrade
 %%PYTHON_SITELIBDIR%%/Codeville/history.py
 %%PYTHON_SITELIBDIR%%/Codeville/history.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/history.pyo
+%%PYTHON_SITELIBDIR%%/Codeville/lcsmatch.py
+%%PYTHON_SITELIBDIR%%/Codeville/lcsmatch.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/lcsmatch.pyo
 %%PYTHON_SITELIBDIR%%/Codeville/merge.py
 %%PYTHON_SITELIBDIR%%/Codeville/merge.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/merge.pyo
+%%PYTHON_SITELIBDIR%%/Codeville/mergelcs.py
+%%PYTHON_SITELIBDIR%%/Codeville/mergelcs.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/mergelcs.pyo
 %%PYTHON_SITELIBDIR%%/Codeville/network.py
 %%PYTHON_SITELIBDIR%%/Codeville/network.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/network.pyo
+%%PYTHON_SITELIBDIR%%/Codeville/old/__init__.py
+%%PYTHON_SITELIBDIR%%/Codeville/old/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/old/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Codeville/old/history.py
+%%PYTHON_SITELIBDIR%%/Codeville/old/history.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/old/history.pyo
+%%PYTHON_SITELIBDIR%%/Codeville/old/merge.py
+%%PYTHON_SITELIBDIR%%/Codeville/old/merge.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/old/merge.pyo
 %%PYTHON_SITELIBDIR%%/Codeville/passwd.py
 %%PYTHON_SITELIBDIR%%/Codeville/passwd.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/passwd.pyo
@@ -66,8 +84,12 @@ bin/cdvupgrade
 %%PYTHON_SITELIBDIR%%/Codeville/testtest.py
 %%PYTHON_SITELIBDIR%%/Codeville/testtest.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/testtest.pyo
+%%PYTHON_SITELIBDIR%%/Codeville/upgrade.py
+%%PYTHON_SITELIBDIR%%/Codeville/upgrade.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/upgrade.pyo
 %%EXAMPLESDIR%%/cdvserver.conf.sample
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/Codeville/old
 @dirrm %%PYTHON_SITELIBDIR%%/Codeville
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
