@@ -7,7 +7,7 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
@@ -36,24 +36,48 @@ MAN8=		oops.8 oopsctl.8
 OOPSVAR=	/var/run/oops
 OOPSLOG=	/var/log/oops
 
-SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}"
-
 USE_RC_SUBR=	YES
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-.if defined(BATCH)
+OPTIONS=	GIGABASE	"GigaBase storage" on \
+		DB4		"Berkeley DB v4 storage" off \
+		MYSQL		"MySQL auth support" off \
+		PGSQL		"PostgreSQL auth support" off \
+		PCRE		"PCRE support" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_GIGABASE)
+.if defined (WITH_DB4)
+BROKEN=	"Only one DB storage can be used (First)"
+.endif
 LIB_DEPENDS+=	gigabase_r.2:${PORTSDIR}/databases/gigabase
 CONFIGURE_ARGS+=	--without-DB
 .endif
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.oops
+.if defined(WITH_DB4)
+.if defined(WITHOUT_GIGABASE)
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=	--without-GB
+.else
+BROKEN=	"Only one DB storage can be used"
+.endif
+.endif
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if defined(WITH_MYSQL)
+USE_MYSQL=	YES
+CONFIGURE_ARGS+=	--with-MYSQL=${PREFIX}
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	YES
+CONFIGURE_ARGS+=	--with-PGSQL=${PREFIX}/pgsql
+.endif
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=	--with-regexp=pcre
 .endif
 
 pre-configure:
@@ -65,8 +89,6 @@ post-build:
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-.include <bsd.port.pre.mk>
 
 post-install:
 .if !defined(NOPORTDOCS)
