@@ -1,0 +1,3 @@
+A view base class for Catalyst using HTML::Template.
+
+WWW: http://search.cpan.org/dist/Catalyst-View-HTML-Template
