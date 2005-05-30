@@ -7,7 +7,7 @@
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc russian
 MASTER_SITES=	ftp://ftp.ircd.ru/pub/ircd-RU/ ftp://ftp.ircd.ru/pub/ircd-RU/old/
 DISTNAME=	ircd-RU-${PORTVERSION}-02-stable
@@ -18,7 +18,8 @@ COMMENT=	An irc daemon with translation schemes and other useful features
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	ircd.sh
 
 VARDIR=		/var
 PLIST_SUB=	VARDIR=${VARDIR}
@@ -94,12 +95,7 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd.sh.sample ${PREFIX}/etc/rc.d
-	@${CHOWN} -R ircd:ircd ${PREFIX}/etc/ircd-ru ${DATADIR} ${VARDIR}/log/ircd-ru ${VARDIR}/run/ircd-ru
-.if !defined(NOPORTDOCS)
-	@${CHOWN} -R ircd:ircd ${DOCSDIR}
-.endif
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' pkg-message > ${PKGMESSAGE}
+	@${CHOWN} -R ircd:ircd ${VARDIR}/log/ircd-ru
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
