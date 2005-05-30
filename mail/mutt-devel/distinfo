@@ -12,5 +12,5 @@ MD5 (mutt/patch-1.5.4.cd.ifdef.1) = a545036cdb55519154d0b35465f52daa
 SIZE (mutt/patch-1.5.4.cd.ifdef.1) = 3545
 MD5 (mutt/p0-patch-1.5.6.dw.mbox-hook.1) = 9e29a6778ab07a4de3442691e4573fea
 SIZE (mutt/p0-patch-1.5.6.dw.mbox-hook.1) = 6405
-MD5 (mutt/patch-1.5.8i.sidebar.20050224.txt) = 10679ce3392b8ddd55f065e90c7d749d
-SIZE (mutt/patch-1.5.8i.sidebar.20050224.txt) = 46649
+MD5 (mutt/patch-1.5.9i.sidebar.20050525.txt) = 409050fe068d392a962ba102076c7c75
+SIZE (mutt/patch-1.5.9i.sidebar.20050525.txt) = 46560
