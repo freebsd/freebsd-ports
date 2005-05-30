@@ -1,0 +1,6 @@
+MD5 (mecab-0.81.tar.gz) = c38a9b4551abc623d7f13d7e5a5d668e
+SIZE (mecab-0.81.tar.gz) = 358596
+MD5 (ipadic-2.5.1.tar.gz) = 18c37ad9d02aa79e9f9ce752ee4ecea6
+SIZE (ipadic-2.5.1.tar.gz) = 4212891
+MD5 (mecab-0.81.mte.patch) = 6d2fb3ba54ecdba18f3c5436a21a538b
+SIZE (mecab-0.81.mte.patch) = 20881
