@@ -66,6 +66,7 @@
     SUBDIR += p5-POE-Component-IRC
     SUBDIR += p5-POE-Component-IRC-Object
     SUBDIR += party
+    SUBDIR += pear-Net_SmartIRC
     SUBDIR += pircbot
     SUBDIR += pisg
     SUBDIR += psybnc
