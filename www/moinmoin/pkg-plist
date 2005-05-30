@@ -166,6 +166,9 @@ bin/repair-language
 %%PYTHON_SITELIB%%/MoinMoin/i18n/es.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/es.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/es.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/fi.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/fi.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/fi.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/fr.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/fr.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/fr.pyo
@@ -184,6 +187,9 @@ bin/repair-language
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ko.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ko.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ko.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/linkpo2wiki.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/linkpo2wiki.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/linkpo2wiki.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/mail_i18n-maintainers.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/mail_i18n-maintainers.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/mail_i18n-maintainers.pyo
@@ -199,6 +205,15 @@ bin/repair-language
 %%PYTHON_SITELIB%%/MoinMoin/i18n/pl.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/pl.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/pl.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/po2wiki.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/po2wiki.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/po2wiki.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/prepend.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/prepend.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/prepend.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/recode.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/recode.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/recode.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ru.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ru.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ru.pyo
@@ -328,6 +343,9 @@ bin/repair-language
 %%PYTHON_SITELIB%%/MoinMoin/parser/cplusplus.py
 %%PYTHON_SITELIB%%/MoinMoin/parser/cplusplus.pyc
 %%PYTHON_SITELIB%%/MoinMoin/parser/cplusplus.pyo
+%%PYTHON_SITELIB%%/MoinMoin/parser/gettext.py
+%%PYTHON_SITELIB%%/MoinMoin/parser/gettext.pyc
+%%PYTHON_SITELIB%%/MoinMoin/parser/gettext.pyo
 %%PYTHON_SITELIB%%/MoinMoin/parser/irc.py
 %%PYTHON_SITELIB%%/MoinMoin/parser/irc.pyc
 %%PYTHON_SITELIB%%/MoinMoin/parser/irc.pyo
@@ -379,33 +397,39 @@ bin/repair-language
 %%PYTHON_SITELIB%%/MoinMoin/scripts/globaledit.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/globaledit.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/globaledit.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig1.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig1.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig1.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig2.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig2.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig2.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig3.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig3.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig3.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig4.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig4.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig4.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig5.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig5.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig5.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig6.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig6.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig6.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig7.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig7.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig7.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig8.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig8.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig8.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig9.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig9.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig9.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig01.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig01.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig01.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig02.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig02.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig02.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig03.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig03.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig03.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig04.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig04.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig04.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig05.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig05.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig05.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig06.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig06.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig06.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig07.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig07.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig07.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig08.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig08.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig08.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig09.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig09.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig09.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig10.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig10.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig10.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig11.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig11.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/migration/12_to_13_mig11.pyo
 %%PYTHON_SITELIB%%/MoinMoin/scripts/migration/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/migration/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/migration/__init__.pyo
@@ -454,6 +478,12 @@ bin/repair-language
 %%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/putPageTest.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/putPageTest.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/putPageTest.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/putpage.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/putpage.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/putpage.pyo
 %%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.pyo
@@ -662,6 +692,8 @@ share/moin/config/farmconfig.py
 share/moin/config/moinmaster.py
 share/moin/config/wikiconfig.py
 share/moin/data/cache/README
+share/moin/data/cache/i18n/en
+share/moin/data/cache/wikidicts/dicts_groups
 share/moin/data/edit-log
 share/moin/data/intermap.txt
 share/moin/data/pages/BadContent/current
@@ -747,6 +779,8 @@ share/moin/htdocs/classic/img/smile.png
 share/moin/htdocs/classic/img/smile2.png
 share/moin/htdocs/classic/img/smile3.png
 share/moin/htdocs/classic/img/smile4.png
+share/moin/htdocs/classic/img/star_off.png
+share/moin/htdocs/classic/img/star_on.png
 share/moin/htdocs/classic/img/thumbs-up.png
 share/moin/htdocs/classic/img/tired.png
 share/moin/htdocs/classic/img/tongue.png
@@ -821,6 +855,8 @@ share/moin/htdocs/modern/img/smile.png
 share/moin/htdocs/modern/img/smile2.png
 share/moin/htdocs/modern/img/smile3.png
 share/moin/htdocs/modern/img/smile4.png
+share/moin/htdocs/modern/img/star_off.png
+share/moin/htdocs/modern/img/star_on.png
 share/moin/htdocs/modern/img/thumbs-up.png
 share/moin/htdocs/modern/img/tired.png
 share/moin/htdocs/modern/img/tongue.png
@@ -895,6 +931,8 @@ share/moin/htdocs/rightsidebar/img/smile.png
 share/moin/htdocs/rightsidebar/img/smile2.png
 share/moin/htdocs/rightsidebar/img/smile3.png
 share/moin/htdocs/rightsidebar/img/smile4.png
+share/moin/htdocs/rightsidebar/img/star_off.png
+share/moin/htdocs/rightsidebar/img/star_on.png
 share/moin/htdocs/rightsidebar/img/thumbs-up.png
 share/moin/htdocs/rightsidebar/img/tired.png
 share/moin/htdocs/rightsidebar/img/tongue.png
@@ -927,6 +965,8 @@ share/moin/underlay/pages/(d092d0b8d0bad09fd0b5d180d181d0bed0bdd0b0)/current
 share/moin/underlay/pages/(d092d0b8d0bad09fd0b5d180d181d0bed0bdd0b0)/revisions/00000001
 share/moin/underlay/pages/(d098d0bdd182d0b5d180d092d0b8d0bad0b8)/current
 share/moin/underlay/pages/(d098d0bdd182d0b5d180d092d0b8d0bad0b8)/revisions/00000001
+share/moin/underlay/pages/(d09ad180d0b0d182d0bad0b8d0b5d09fd0bed0b4d181d0bad0b0d0b7d0bad0b8)/current
+share/moin/underlay/pages/(d09ad180d0b0d182d0bad0b8d0b5d09fd0bed0b4d181d0bad0b0d0b7d0bad0b8)/revisions/00000001
 share/moin/underlay/pages/(d09cd0bed0b9d0bdd09cd0bed0b9d0bd)/current
 share/moin/underlay/pages/(d09cd0bed0b9d0bdd09cd0bed0b9d0bd)/revisions/00000001
 share/moin/underlay/pages/(d09dd0b0d0b9d182d0b8d0a1d182d180d0b0d0bdd0b8d186d183)/current
@@ -943,6 +983,10 @@ share/moin/underlay/pages/(d09ed0b4d0b8d0bdd0bed0bad0b8d0b5d0a1d182d180d0b0d0bdd
 share/moin/underlay/pages/(d09ed0b4d0b8d0bdd0bed0bad0b8d0b5d0a1d182d180d0b0d0bdd0b8d186d18b)/revisions/00000001
 share/moin/underlay/pages/(d09fd0bed0b9d182d0b8d09fd0bed0a1d0b0d0b9d182d183)/current
 share/moin/underlay/pages/(d09fd0bed0b9d182d0b8d09fd0bed0a1d0b0d0b9d182d183)/revisions/00000001
+share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed093d0bbd0b0d0b2d0b0d0bc)/current
+share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed093d0bbd0b0d0b2d0b0d0bc)/revisions/00000001
+share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed09fd0bed180d18fd0b4d0bad183)/current
+share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed09fd0bed180d18fd0b4d0bad183)/revisions/00000001
 share/moin/underlay/pages/(d09fd180d0b5d0b4d0bcd0b5d182d0bdd18bd0b9d0a3d0bad0b0d0b7d0b0d182d0b5d0bbd18c)/current
 share/moin/underlay/pages/(d09fd180d0b5d0b4d0bcd0b5d182d0bdd18bd0b9d0a3d0bad0b0d0b7d0b0d182d0b5d0bbd18c)/revisions/00000001
 share/moin/underlay/pages/(d0a0d0b0d0b7d0bcd0b5d180d18bd0a1d182d180d0b0d0bdd0b8d186)/current
@@ -1069,6 +1113,8 @@ share/moin/underlay/pages/(e5b8aee58aa92de7bc96e8be91)/current
 share/moin/underlay/pages/(e5b8aee58aa92de7bc96e8be91)/revisions/00000001
 share/moin/underlay/pages/(e5b8aee58aa92de7bc96e8be912fe5ad90e7bd91e9a1b5)/current
 share/moin/underlay/pages/(e5b8aee58aa92de7bc96e8be912fe5ad90e7bd91e9a1b5)/revisions/00000001
+share/moin/underlay/pages/(e5b8aee58aa92de8aebfe997aee69d83e99990e68ea7e588b6e8a1a8)/current
+share/moin/underlay/pages/(e5b8aee58aa92de8aebfe997aee69d83e99990e68ea7e588b6e8a1a8)/revisions/00000001
 share/moin/underlay/pages/(e5b8aee58aa92de8afade8a880)/current
 share/moin/underlay/pages/(e5b8aee58aa92de8afade8a880)/revisions/00000001
 share/moin/underlay/pages/(e5b8aee58aa92de993bee68ea5)/current
@@ -1187,8 +1233,8 @@ share/moin/underlay/pages/AideAuxD(c3a9)veloppeurs/current
 share/moin/underlay/pages/AideAuxD(c3a9)veloppeurs/revisions/00000001
 share/moin/underlay/pages/AideD(27)Administration/current
 share/moin/underlay/pages/AideD(27)Administration/revisions/00000001
-share/moin/underlay/pages/AideD(27)EffacemmentDesPages/current
-share/moin/underlay/pages/AideD(27)EffacemmentDesPages/revisions/00000001
+share/moin/underlay/pages/AideD(27)EffacementDesPages/current
+share/moin/underlay/pages/AideD(27)EffacementDesPages/revisions/00000001
 share/moin/underlay/pages/AideD(27)Installation(2f)ApacheAvecFastCgi/current
 share/moin/underlay/pages/AideD(27)Installation(2f)ApacheAvecFastCgi/revisions/00000001
 share/moin/underlay/pages/AideD(27)Installation(2f)ApacheAvecModPython/current
@@ -1243,8 +1289,8 @@ share/moin/underlay/pages/AideDeMiseEnForme/current
 share/moin/underlay/pages/AideDeMiseEnForme/revisions/00000001
 share/moin/underlay/pages/AideDeNavigation/current
 share/moin/underlay/pages/AideDeNavigation/revisions/00000001
-share/moin/underlay/pages/AideDesActions(2f)JoindreUnFichier/current
-share/moin/underlay/pages/AideDesActions(2f)JoindreUnFichier/revisions/00000001
+share/moin/underlay/pages/AideDesActions(2f)AttachFile/current
+share/moin/underlay/pages/AideDesActions(2f)AttachFile/revisions/00000001
 share/moin/underlay/pages/AideDesActions/current
 share/moin/underlay/pages/AideDesActions/revisions/00000001
 share/moin/underlay/pages/AideDesAnalyseurs/current
@@ -1369,8 +1415,6 @@ share/moin/underlay/pages/AufgegebeneSeiten/current
 share/moin/underlay/pages/AufgegebeneSeiten/revisions/00000001
 share/moin/underlay/pages/Bac(c380)Sable/current
 share/moin/underlay/pages/Bac(c380)Sable/revisions/00000001
-share/moin/underlay/pages/BadContent/current
-share/moin/underlay/pages/BadContent/revisions/00000001
 share/moin/underlay/pages/BenutzerEinstellungen/current
 share/moin/underlay/pages/BenutzerEinstellungen/revisions/00000001
 share/moin/underlay/pages/BrugerProfil/current
@@ -1401,6 +1445,8 @@ share/moin/underlay/pages/EditedSystemPages/current
 share/moin/underlay/pages/EditedSystemPages/revisions/00000001
 share/moin/underlay/pages/EfterladteSider/current
 share/moin/underlay/pages/EfterladteSider/revisions/00000001
+share/moin/underlay/pages/EtsiSivu/current
+share/moin/underlay/pages/EtsiSivu/revisions/00000001
 share/moin/underlay/pages/EtterspurteSider/current
 share/moin/underlay/pages/EtterspurteSider/revisions/00000001
 share/moin/underlay/pages/EventStats(2f)HitCounts/current
@@ -1495,6 +1541,9 @@ share/moin/underlay/pages/HelpOnHeadlines/current
 share/moin/underlay/pages/HelpOnHeadlines/revisions/00000001
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/current
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/attachments/explore.py
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/current
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/revisions/00000001
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/current
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/revisions/00000001
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32/current
@@ -1781,6 +1830,8 @@ share/moin/underlay/pages/InterWiki/current
 share/moin/underlay/pages/InterWiki/revisions/00000001
 share/moin/underlay/pages/InterWikiVF/current
 share/moin/underlay/pages/InterWikiVF/revisions/00000001
+share/moin/underlay/pages/K(c3a4)ytt(c3a4)j(c3a4)Asetukset/current
+share/moin/underlay/pages/K(c3a4)ytt(c3a4)j(c3a4)Asetukset/revisions/00000001
 share/moin/underlay/pages/KategoriHjemmeside/current
 share/moin/underlay/pages/KategoriHjemmeside/revisions/00000001
 share/moin/underlay/pages/KategoriKategori/current
@@ -1883,6 +1934,8 @@ share/moin/underlay/pages/Napu(c5a1)teneStranice/current
 share/moin/underlay/pages/Napu(c5a1)teneStranice/revisions/00000001
 share/moin/underlay/pages/NavigaIlSito/current
 share/moin/underlay/pages/NavigaIlSito/revisions/00000001
+share/moin/underlay/pages/NawigacjaSerwisu/current
+share/moin/underlay/pages/NawigacjaSerwisu/revisions/00000001
 share/moin/underlay/pages/Nedostaju(c487)aStranica/current
 share/moin/underlay/pages/Nedostaju(c487)aStranica/revisions/00000001
 share/moin/underlay/pages/NomWiki/current
@@ -1893,6 +1946,8 @@ share/moin/underlay/pages/NomeWiki/current
 share/moin/underlay/pages/NomeWiki/revisions/00000001
 share/moin/underlay/pages/OntbrekendePagina/current
 share/moin/underlay/pages/OntbrekendePagina/revisions/00000001
+share/moin/underlay/pages/OpuszczoneStrony/current
+share/moin/underlay/pages/OpuszczoneStrony/revisions/00000001
 share/moin/underlay/pages/OrdIndeks/current
 share/moin/underlay/pages/OrdIndeks/revisions/00000001
 share/moin/underlay/pages/OrdListe/current
@@ -1901,6 +1956,8 @@ share/moin/underlay/pages/OrdRegister/current
 share/moin/underlay/pages/OrdRegister/revisions/00000001
 share/moin/underlay/pages/OrphanedPages/current
 share/moin/underlay/pages/OrphanedPages/revisions/00000001
+share/moin/underlay/pages/OsieroconeStrony/current
+share/moin/underlay/pages/OsieroconeStrony/revisions/00000001
 share/moin/underlay/pages/OstatnieZmiany/current
 share/moin/underlay/pages/OstatnieZmiany/revisions/00000001
 share/moin/underlay/pages/P(c3a1)ginasAbandonadas/current
@@ -1947,6 +2004,8 @@ share/moin/underlay/pages/Popularit(c3a9)DesPages/current
 share/moin/underlay/pages/Popularit(c3a9)DesPages/revisions/00000001
 share/moin/underlay/pages/PoslednjePromene/current
 share/moin/underlay/pages/PoslednjePromene/revisions/00000001
+share/moin/underlay/pages/PotrzebneStrony/current
+share/moin/underlay/pages/PotrzebneStrony/revisions/00000001
 share/moin/underlay/pages/Pr(c3a9)f(c3a9)rencesUtilisateur/current
 share/moin/underlay/pages/Pr(c3a9)f(c3a9)rencesUtilisateur/revisions/00000001
 share/moin/underlay/pages/Pr(c3a9)sentationTemplate/current
@@ -1959,6 +2018,8 @@ share/moin/underlay/pages/ProverbesEtCitations/current
 share/moin/underlay/pages/ProverbesEtCitations/revisions/00000001
 share/moin/underlay/pages/PutoKazi/current
 share/moin/underlay/pages/PutoKazi/revisions/00000001
+share/moin/underlay/pages/PuuttuvaSivu/current
+share/moin/underlay/pages/PuuttuvaSivu/revisions/00000001
 share/moin/underlay/pages/R(c3a9)sum(c3a9)DeLaSyntaxe/current
 share/moin/underlay/pages/R(c3a9)sum(c3a9)DeLaSyntaxe/revisions/00000001
 share/moin/underlay/pages/RandomPage/current
@@ -2045,6 +2106,8 @@ share/moin/underlay/pages/SystemPagesInDutchGroup/current
 share/moin/underlay/pages/SystemPagesInDutchGroup/revisions/00000001
 share/moin/underlay/pages/SystemPagesInEnglishGroup/current
 share/moin/underlay/pages/SystemPagesInEnglishGroup/revisions/00000001
+share/moin/underlay/pages/SystemPagesInFinnishGroup/current
+share/moin/underlay/pages/SystemPagesInFinnishGroup/revisions/00000001
 share/moin/underlay/pages/SystemPagesInFrenchGroup/current
 share/moin/underlay/pages/SystemPagesInFrenchGroup/revisions/00000001
 share/moin/underlay/pages/SystemPagesInGermanGroup/current
@@ -2095,6 +2158,8 @@ share/moin/underlay/pages/UserPreferences/current
 share/moin/underlay/pages/UserPreferences/revisions/00000001
 share/moin/underlay/pages/UtdaterteSider/current
 share/moin/underlay/pages/UtdaterteSider/revisions/00000001
+share/moin/underlay/pages/UusimmatMuutokset/current
+share/moin/underlay/pages/UusimmatMuutokset/revisions/00000001
 share/moin/underlay/pages/VeiViser/current
 share/moin/underlay/pages/VeiViser/revisions/00000001
 share/moin/underlay/pages/Veli(c48d)inaStranica/current
@@ -2441,6 +2506,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/Veli(c48d)inaStranica
 @dirrm share/moin/underlay/pages/VeiViser/revisions
 @dirrm share/moin/underlay/pages/VeiViser
+@dirrm share/moin/underlay/pages/UusimmatMuutokset/revisions
+@dirrm share/moin/underlay/pages/UusimmatMuutokset
 @dirrm share/moin/underlay/pages/UtdaterteSider/revisions
 @dirrm share/moin/underlay/pages/UtdaterteSider
 @dirrm share/moin/underlay/pages/UserPreferences/revisions
@@ -2491,6 +2558,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/SystemPagesInGermanGroup
 @dirrm share/moin/underlay/pages/SystemPagesInFrenchGroup/revisions
 @dirrm share/moin/underlay/pages/SystemPagesInFrenchGroup
+@dirrm share/moin/underlay/pages/SystemPagesInFinnishGroup/revisions
+@dirrm share/moin/underlay/pages/SystemPagesInFinnishGroup
 @dirrm share/moin/underlay/pages/SystemPagesInEnglishGroup/revisions
 @dirrm share/moin/underlay/pages/SystemPagesInEnglishGroup
 @dirrm share/moin/underlay/pages/SystemPagesInDutchGroup/revisions
@@ -2577,6 +2646,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/RandomPage
 @dirrm share/moin/underlay/pages/R(c3a9)sum(c3a9)DeLaSyntaxe/revisions
 @dirrm share/moin/underlay/pages/R(c3a9)sum(c3a9)DeLaSyntaxe
+@dirrm share/moin/underlay/pages/PuuttuvaSivu/revisions
+@dirrm share/moin/underlay/pages/PuuttuvaSivu
 @dirrm share/moin/underlay/pages/PutoKazi/revisions
 @dirrm share/moin/underlay/pages/PutoKazi
 @dirrm share/moin/underlay/pages/ProverbesEtCitations/revisions
@@ -2589,6 +2660,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/Pr(c3a9)sentationTemplate
 @dirrm share/moin/underlay/pages/Pr(c3a9)f(c3a9)rencesUtilisateur/revisions
 @dirrm share/moin/underlay/pages/Pr(c3a9)f(c3a9)rencesUtilisateur
+@dirrm share/moin/underlay/pages/PotrzebneStrony/revisions
+@dirrm share/moin/underlay/pages/PotrzebneStrony
 @dirrm share/moin/underlay/pages/PoslednjePromene/revisions
 @dirrm share/moin/underlay/pages/PoslednjePromene
 @dirrm share/moin/underlay/pages/Popularit(c3a9)DesPages/revisions
@@ -2635,6 +2708,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/P(c3a1)ginasAbandonadas
 @dirrm share/moin/underlay/pages/OstatnieZmiany/revisions
 @dirrm share/moin/underlay/pages/OstatnieZmiany
+@dirrm share/moin/underlay/pages/OsieroconeStrony/revisions
+@dirrm share/moin/underlay/pages/OsieroconeStrony
 @dirrm share/moin/underlay/pages/OrphanedPages/revisions
 @dirrm share/moin/underlay/pages/OrphanedPages
 @dirrm share/moin/underlay/pages/OrdRegister/revisions
@@ -2643,6 +2718,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/OrdListe
 @dirrm share/moin/underlay/pages/OrdIndeks/revisions
 @dirrm share/moin/underlay/pages/OrdIndeks
+@dirrm share/moin/underlay/pages/OpuszczoneStrony/revisions
+@dirrm share/moin/underlay/pages/OpuszczoneStrony
 @dirrm share/moin/underlay/pages/OntbrekendePagina/revisions
 @dirrm share/moin/underlay/pages/OntbrekendePagina
 @dirrm share/moin/underlay/pages/NomeWiki/revisions
@@ -2653,6 +2730,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/NomWiki
 @dirrm share/moin/underlay/pages/Nedostaju(c487)aStranica/revisions
 @dirrm share/moin/underlay/pages/Nedostaju(c487)aStranica
+@dirrm share/moin/underlay/pages/NawigacjaSerwisu/revisions
+@dirrm share/moin/underlay/pages/NawigacjaSerwisu
 @dirrm share/moin/underlay/pages/NavigaIlSito/revisions
 @dirrm share/moin/underlay/pages/NavigaIlSito
 @dirrm share/moin/underlay/pages/Napu(c5a1)teneStranice/revisions
@@ -2755,6 +2834,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/KategoriKategori
 @dirrm share/moin/underlay/pages/KategoriHjemmeside/revisions
 @dirrm share/moin/underlay/pages/KategoriHjemmeside
+@dirrm share/moin/underlay/pages/K(c3a4)ytt(c3a4)j(c3a4)Asetukset/revisions
+@dirrm share/moin/underlay/pages/K(c3a4)ytt(c3a4)j(c3a4)Asetukset
 @dirrm share/moin/underlay/pages/InterWikiVF/revisions
 @dirrm share/moin/underlay/pages/InterWikiVF
 @dirrm share/moin/underlay/pages/InterWiki/revisions
@@ -3040,6 +3121,9 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32
 @dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/revisions
 @dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/attachments
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp
 @dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/revisions
 @dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux
 @dirrm share/moin/underlay/pages/HelpOnInstalling
@@ -3135,6 +3219,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/EventStats
 @dirrm share/moin/underlay/pages/EtterspurteSider/revisions
 @dirrm share/moin/underlay/pages/EtterspurteSider
+@dirrm share/moin/underlay/pages/EtsiSivu/revisions
+@dirrm share/moin/underlay/pages/EtsiSivu
 @dirrm share/moin/underlay/pages/EfterladteSider/revisions
 @dirrm share/moin/underlay/pages/EfterladteSider
 @dirrm share/moin/underlay/pages/EditedSystemPages/revisions
@@ -3165,8 +3251,6 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/BrugerProfil
 @dirrm share/moin/underlay/pages/BenutzerEinstellungen/revisions
 @dirrm share/moin/underlay/pages/BenutzerEinstellungen
-@dirrm share/moin/underlay/pages/BadContent/revisions
-@dirrm share/moin/underlay/pages/BadContent
 @dirrm share/moin/underlay/pages/Bac(c380)Sable/revisions
 @dirrm share/moin/underlay/pages/Bac(c380)Sable
 @dirrm share/moin/underlay/pages/AufgegebeneSeiten/revisions
@@ -3290,8 +3374,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/AideDesAnalyseurs/revisions
 @dirrm share/moin/underlay/pages/AideDesAnalyseurs
 @dirrm share/moin/underlay/pages/AideDesActions/revisions
-@dirrm share/moin/underlay/pages/AideDesActions(2f)JoindreUnFichier/revisions
-@dirrm share/moin/underlay/pages/AideDesActions(2f)JoindreUnFichier
+@dirrm share/moin/underlay/pages/AideDesActions(2f)AttachFile/revisions
+@dirrm share/moin/underlay/pages/AideDesActions(2f)AttachFile
 @dirrm share/moin/underlay/pages/AideDesActions
 @dirrm share/moin/underlay/pages/AideDeNavigation/revisions
 @dirrm share/moin/underlay/pages/AideDeNavigation
@@ -3347,8 +3431,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/AideD(27)Installation(2f)ApacheAvecFastCgi/revisions
 @dirrm share/moin/underlay/pages/AideD(27)Installation(2f)ApacheAvecFastCgi
 @dirrm share/moin/underlay/pages/AideD(27)Installation
-@dirrm share/moin/underlay/pages/AideD(27)EffacemmentDesPages/revisions
-@dirrm share/moin/underlay/pages/AideD(27)EffacemmentDesPages
+@dirrm share/moin/underlay/pages/AideD(27)EffacementDesPages/revisions
+@dirrm share/moin/underlay/pages/AideD(27)EffacementDesPages
 @dirrm share/moin/underlay/pages/AideD(27)Administration/revisions
 @dirrm share/moin/underlay/pages/AideD(27)Administration
 @dirrm share/moin/underlay/pages/AideAuxD(c3a9)veloppeurs/revisions
@@ -3467,6 +3551,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/(e5b8aee58aa92de993bee68ea5)
 @dirrm share/moin/underlay/pages/(e5b8aee58aa92de8afade8a880)/revisions
 @dirrm share/moin/underlay/pages/(e5b8aee58aa92de8afade8a880)
+@dirrm share/moin/underlay/pages/(e5b8aee58aa92de8aebfe997aee69d83e99990e68ea7e588b6e8a1a8)/revisions
+@dirrm share/moin/underlay/pages/(e5b8aee58aa92de8aebfe997aee69d83e99990e68ea7e588b6e8a1a8)
 @dirrm share/moin/underlay/pages/(e5b8aee58aa92de7bc96e8be912fe5ad90e7bd91e9a1b5)/revisions
 @dirrm share/moin/underlay/pages/(e5b8aee58aa92de7bc96e8be912fe5ad90e7bd91e9a1b5)
 @dirrm share/moin/underlay/pages/(e5b8aee58aa92de7bc96e8be91)/revisions
@@ -3593,6 +3679,10 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/(d0a0d0b0d0b7d0bcd0b5d180d18bd0a1d182d180d0b0d0bdd0b8d186)
 @dirrm share/moin/underlay/pages/(d09fd180d0b5d0b4d0bcd0b5d182d0bdd18bd0b9d0a3d0bad0b0d0b7d0b0d182d0b5d0bbd18c)/revisions
 @dirrm share/moin/underlay/pages/(d09fd180d0b5d0b4d0bcd0b5d182d0bdd18bd0b9d0a3d0bad0b0d0b7d0b0d182d0b5d0bbd18c)
+@dirrm share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed09fd0bed180d18fd0b4d0bad183)/revisions
+@dirrm share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed09fd0bed180d18fd0b4d0bad183)
+@dirrm share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed093d0bbd0b0d0b2d0b0d0bc)/revisions
+@dirrm share/moin/underlay/pages/(d09fd0bed0bcd0bed189d18cd09fd0bed093d0bbd0b0d0b2d0b0d0bc)
 @dirrm share/moin/underlay/pages/(d09fd0bed0b9d182d0b8d09fd0bed0a1d0b0d0b9d182d183)/revisions
 @dirrm share/moin/underlay/pages/(d09fd0bed0b9d182d0b8d09fd0bed0a1d0b0d0b9d182d183)
 @dirrm share/moin/underlay/pages/(d09ed0b4d0b8d0bdd0bed0bad0b8d0b5d0a1d182d180d0b0d0bdd0b8d186d18b)/revisions
@@ -3609,6 +3699,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/underlay/pages/(d09dd0b0d0b9d182d0b8d0a1d182d180d0b0d0bdd0b8d186d183)
 @dirrm share/moin/underlay/pages/(d09cd0bed0b9d0bdd09cd0bed0b9d0bd)/revisions
 @dirrm share/moin/underlay/pages/(d09cd0bed0b9d0bdd09cd0bed0b9d0bd)
+@dirrm share/moin/underlay/pages/(d09ad180d0b0d182d0bad0b8d0b5d09fd0bed0b4d181d0bad0b0d0b7d0bad0b8)/revisions
+@dirrm share/moin/underlay/pages/(d09ad180d0b0d182d0bad0b8d0b5d09fd0bed0b4d181d0bad0b0d0b7d0bad0b8)
 @dirrm share/moin/underlay/pages/(d098d0bdd182d0b5d180d092d0b8d0bad0b8)/revisions
 @dirrm share/moin/underlay/pages/(d098d0bdd182d0b5d180d092d0b8d0bad0b8)
 @dirrm share/moin/underlay/pages/(d092d0b8d0bad09fd0b5d180d181d0bed0bdd0b0)/revisions
@@ -3656,6 +3748,8 @@ share/moin/underlay/pages/ZufallsSeite/revisions/00000001
 @dirrm share/moin/data/pages/BadContent/revisions
 @dirrm share/moin/data/pages/BadContent
 @dirrm share/moin/data/pages
+@dirrm share/moin/data/cache/wikidicts
+@dirrm share/moin/data/cache/i18n
 @dirrm share/moin/data/cache
 @dirrm share/moin/data
 @dirrm share/moin/config
