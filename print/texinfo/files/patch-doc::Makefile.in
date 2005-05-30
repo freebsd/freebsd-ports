@@ -1,0 +1,29 @@
+--- doc/Makefile.in.orig	Fri Dec 31 16:01:25 2004
++++ doc/Makefile.in	Sun May 29 19:57:29 2005
+@@ -76,7 +76,7 @@
+ CONFIG_CLEAN_FILES =
+ SOURCES =
+ DIST_SOURCES =
+-INFO_DEPS = texinfo info-stnd.info info.info
++INFO_DEPS = texinfo.info info-stnd.info info.info
+ am__TEXINFO_TEX_DIR = $(srcdir)
+ DVIS = texinfo.dvi info-stnd.dvi info.dvi
+ PDFS = texinfo.pdf info-stnd.pdf info.pdf
+@@ -219,7 +219,7 @@
+ 
+ # Put texinfo.txi first because that's the most important.
+ info_TEXINFOS = texinfo.txi info-stnd.texi info.texi
+-DISTCLEANFILES = texinfo texinfo-* info*.info*
++DISTCLEANFILES = texinfo.info texinfo-* info*.info*
+ man_MANS = info.1 infokey.1 install-info.1 makeinfo.1 texindex.1 texi2dvi.1 \
+            info.5 texinfo.5
+ 
+@@ -273,7 +273,7 @@
+ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ 
+-texinfo: texinfo.txi $(srcdir)/version.texi
++texinfo.info: texinfo.txi $(srcdir)/version.texi
+ 	restore=: && backupdir="$(am__leading_dot)am$$$$" && \
+ 	rm -rf $$backupdir && mkdir $$backupdir && \
+ 	for f in $@ $@-[0-9] $@-[0-9][0-9] $(@:.info=).i[0-9] $(@:.info=).i[0-9][0-9]; do \

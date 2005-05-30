@@ -257,6 +257,7 @@
     SUBDIR += tex
     SUBDIR += tex-omegaware-old
     SUBDIR += tex-texmflocal
+    SUBDIR += texinfo
     SUBDIR += texpower
     SUBDIR += tgif2tex
     SUBDIR += tipograf
