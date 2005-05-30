@@ -67,7 +67,6 @@ svscan_start () {
 }
 
 svscan_stop_post () {
-	echo "Stopping svscan."
 	find -L "$svscan_servicedir" -mindepth 1 -maxdepth 2 -type d \( \! -path "$svscan_servicedir/*/*" -or -name 'log' \) -print0 | xargs -0 %%PREFIX%%/bin/svc -dx
 }
 
