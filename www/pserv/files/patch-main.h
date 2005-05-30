@@ -29,7 +29,7 @@
 -#define DEFAULT_MIME_FILE   	"/usr/local/etc/pserv/mime_types.dat"
 -#define DEFAULT_CGI_ROOT    	"/usr/local/var/www/cgi-bin"
 +#define DEFAULT_LOG_FILE    	"/var/log/pserv.log"
-+#define DEFAULT_MIME_FILE   	"%%PREFIX%%/etc/mime.types.pserv"
++#define DEFAULT_MIME_FILE   	"%%PREFIX%%/etc/pserv/mime.types"
 +#define DEFAULT_PHP_FILE    	"%%LOCALBASE%%/bin/php"
 +#define DEFAULT_CGI_ROOT    	"%%PREFIX%%/www/cgi-bin"
  #define DEFAULT_SERVER_NAME 	"localhost"

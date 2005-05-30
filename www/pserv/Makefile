@@ -36,8 +36,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${PREFIX}/etc/mime.types.pserv
-	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/
+	${MKDIR} ${PREFIX}/etc/pserv
+	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${PREFIX}/etc/pserv/mime.types
+	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/pserv/
 	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.post.mk>

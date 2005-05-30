@@ -1,5 +1,5 @@
---- sources/handlers.c.orig	Mon May 16 23:03:16 2005
-+++ sources/handlers.c	Sat May 28 10:38:18 2005
+--- sources/handlers.c.orig	Tue May 17 00:03:16 2005
++++ sources/handlers.c	Mon May 30 11:44:23 2005
 @@ -25,6 +25,7 @@
  #endif
  
@@ -23,7 +23,7 @@
          strcpy(newEnvp[i], "SERVER_SOFTWARE=");
          strcat(newEnvp[i], SERVER_SOFTWARE_STR);
          strcat(newEnvp[i], "/");
-@@ -326,8 +335,237 @@
+@@ -326,8 +335,233 @@
  }
  #endif /* ENABLE_CGI */
  
@@ -36,7 +36,7 @@
 +struct request req;
 +char *postStr;
 +{
-+    char envPath[MAX_PATH_LEN+1]; /* where to hold the envrion PATH parameter */
++    char *envPath; /* pointer to the envrionment PATH variable */
 +    char *relativePath;
 +    char scriptWorkingDir[MAX_PATH_LEN+1];
 +    char **newArgv;
@@ -137,16 +137,8 @@
 +            newEnvp[i] = calloc(MAX_PATH_LEN, sizeof(char));
 +        }
 +
-+
-+
-+        /* extracting PATH env variable */
-+        i = 0;
-+        while (environ && strncmp(environ[i], PATH_MATCH_STRING, strlen(PATH_MATCH_STRING)))
-+            i++;
-+        if(environ[i])
-+            strcpy(envPath, environ[i]);
-+        else
-+            envPath[0] = '\0'; /* maybe we should set some default? */
++        /* extract PATH env variable */
++        envPath = getenv("PATH");
 +
 +        i = 0;
 +        strcpy(newArgv[i++], phpFileName);     /* here we should pass the phppath */
@@ -205,7 +197,6 @@
 +        strcpy(newEnvp[i], "GATEWAY_INTERFACE=");
 +        strcat(newEnvp[i++], CGI_VERSION);
 +        sprintf(newEnvp[i++], "SERVER_PORT=%d", port);
-+        strcpy(newEnvp[i++], envPath);
 +        strcpy(newEnvp[i], "QUERY_STRING=");
 +        strcat(newEnvp[i++], req.queryString);
 +        strcpy(newEnvp[i], "SERVER_PROTOCOL=");
@@ -220,6 +211,11 @@
 +        {
 +            strcpy(newEnvp[i], "HTTP_COOKIE=");
 +            strcat(newEnvp[i++], req.cookie);
++        }
++        if (envPath != NULL)
++        {
++            strcpy(newEnvp[i], "PATH=");
++            strcat(newEnvp[i++], envPath);
 +        }
 +        newEnvp[i] = NULL;
 +
