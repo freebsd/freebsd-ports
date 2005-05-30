@@ -11399,6 +11399,7 @@ tex2im		ports/textproc/tex2im
 texcm-ttf	ports/x11-fonts/texcm-ttf
 texi2db		ports/textproc/texi2db
 texi2html	ports/textproc/texi2html
+texinfo		ports/print/texinfo
 texmacs		ports/editors/texmacs
 texmaker	ports/editors/texmaker
 texpower	ports/print/texpower
