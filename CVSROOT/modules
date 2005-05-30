@@ -11648,6 +11648,7 @@ twin		ports/emulators/twin
 twitch		ports/games/twitch
 twoftpd		ports/ftp/twoftpd
 twolame		ports/audio/twolame
+twpsk		ports/comms/twpsk
 txt2html	ports/textproc/txt2html
 txt2man		ports/textproc/txt2man
 txt2pdbdoc	ports/palm/txt2pdbdoc
