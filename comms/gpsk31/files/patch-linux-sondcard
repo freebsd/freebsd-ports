@@ -1,0 +1,33 @@
+--- src/main.C.orig	Sun May  8 14:01:27 2005
++++ src/main.C	Sun May  8 14:01:43 2005
+@@ -29,7 +29,7 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <stdio.h>
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+--- src/psk31-transmitter.C.orig	Sun May  8 14:02:00 2005
++++ src/psk31-transmitter.C	Sun May  8 14:02:14 2005
+@@ -11,7 +11,7 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #include <sys/ioctl.h>
+ #include "psk31-coder.h"
+ #include "psk31-transmitter.h"
+--- src/spectrum.C.orig	Sun May  8 14:02:28 2005
++++ src/spectrum.C	Sun May  8 14:03:01 2005
+@@ -30,7 +30,7 @@
+ #include <stdlib.h>
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ 
+ #include <gtk/gtk.h>
+ #include <stdio.h>

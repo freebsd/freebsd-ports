@@ -1,0 +1,4 @@
+bin/gpsk31
+share/gpsk31/gpsk31.conf
+share/gpsk31/psk31.cod
+@dirrm share/gpsk31

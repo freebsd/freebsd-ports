@@ -30,6 +30,7 @@
     SUBDIR += gmfsk
     SUBDIR += gnokii
     SUBDIR += gpredict
+    SUBDIR += gpsk31
     SUBDIR += grig
     SUBDIR += gscmxx
     SUBDIR += gsmlib
