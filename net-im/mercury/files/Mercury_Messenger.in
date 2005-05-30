@@ -1,4 +1,6 @@
-#!/bin/sh
+#! /bin/sh
+# $FreeBSD$
+
 MERCURY_INSTALL_PATH="%%PREFIX%%/share/Mercury"
 JMF_INSTALL_PATH="%%JAVALIBDIR%%"
 cd $MERCURY_INSTALL_PATH
@@ -7,8 +9,8 @@ for file in `ls $MERCURY_INSTALL_PATH/lib`
 do
 classpath="$MERCURY_INSTALL_PATH/lib/$file:$classpath"
 done
-for file in `ls $JMF_INSTALL_PATH`
+for file in %%JMF_JARS%%
 do
 classpath="$JMF_INSTALL_PATH/$file:$classpath"
 done
-%%JAVA%% -classpath $classpath com.dMSN.Main
+JAVA_VERSION=%%JAVA_VERSION%% %%LOCALBASE%%/bin/java -classpath $classpath com.dMSN.Main

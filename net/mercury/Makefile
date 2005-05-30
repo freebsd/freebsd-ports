@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1709_RC6b
+DISTVERSION=	1709_RC8
 CATEGORIES=	net java
 MASTER_SITES=	http://download.mercury.to/	\
 		${MASTER_SITE_LOCAL}
@@ -18,15 +18,18 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Java Based MSN client
 
-RUN_DEPENDS=	jmfinit:${PORTSDIR}/java/jmf
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
+		jmfinit:${PORTSDIR}/java/jmf
 
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 
+JMF_JARS=	customizer jmf mediaplayer multiplayer
+
 SUB_FILES=	Mercury_Messenger
-SUB_LIST=	JAVA=${JAVA}
+SUB_LIST=	JAVA_VERSION="${JAVA_VERSION}" JMF_JARS="${JMF_JARS:S|$|.jar|}"
 
 LINSTDIR?=	share/Mercury
 INSTDIR=	${PREFIX}/${LINSTDIR}
