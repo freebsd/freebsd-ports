@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image_Barcode
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	antonio@php.net
@@ -22,11 +22,10 @@ OPTIONS=	PEAR_PHP_COMPAT "PEAR::PHP_Compat support" off
 
 CATEGORY=	Image
 FILES=		Barcode.php Barcode/int25.php Barcode/ean13.php Barcode/Code39.php \
-		Barcode/upca.php
+		Barcode/upca.php Barcode/code128.php
 DOCS=		ChangeLog Readme.txt
-TESTS=		test-image-barcode.php barcode_img.php
-_DOCSDIR=	.
-_TESTSDIR=	.
+EXAMPLES=	test-image-barcode.php barcode_img.php
+_EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
 
