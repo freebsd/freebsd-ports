@@ -1,0 +1,10 @@
+--- src/call_dialog.C.orig	Sun May  8 14:07:32 2005
++++ src/call_dialog.C	Sun May  8 14:08:01 2005
+@@ -27,6 +27,7 @@
+ 
+ #include <gtk/gtk.h>
+ #include <ctype.h>
++#include <string.h>
+ #include "main_screen.h"
+ #include "call_dialog.h"
+ #include "menu.h"
