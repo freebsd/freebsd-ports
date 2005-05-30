@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freevrrpd
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net
 MASTER_SITES=	http://bmw2002.hexod.net/opensource/ \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
