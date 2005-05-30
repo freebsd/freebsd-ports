@@ -129,7 +129,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www.spinnaker.de/mutt/compressed/:rr
 
 MAINTAINER?=	udo.schweigert@siemens.com
-COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
+COMMENT?=	The Mongrel of Mail User Agents (development version)
 
 CONFLICTS=	mutt-[0-9]*
 DIST_SUBDIR=	mutt
@@ -199,6 +199,7 @@ WITHOUT_MUTT_COMPRESSED_FOLDERS=	yes
 WITHOUT_MUTT_QUOTE_PATCH=		yes
 WITHOUT_MUTT_HTML=			yes
 WITH_MUTT_NCURSES=			yes
+PKGNAMESUFFIX=	-lite
 .endif
 
 # XXX
@@ -390,7 +391,7 @@ SGML_NEEDED=	yes
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.8i.sidebar.20050224.txt
+SIDEBAR_PATCH=	patch-1.5.9i.sidebar.20050525.txt
 DISTFILES+=	$(SIDEBAR_PATCH):thomer
 SGML_NEEDED=	yes
 pre-patch::
