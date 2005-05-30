@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
@@ -40,10 +40,14 @@ USE_BZIP2=	yes
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 
-.if !defined(WITHOUT_SSL)
+.if defined(WITH_GNUTLS)
+CONFIGURE_ARGS+=	--with-gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+.endif
+
+.if defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=	--with-openssl
 USE_OPENSSL=	yes
-.else
-CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 GNU_CONFIGURE=	yes
