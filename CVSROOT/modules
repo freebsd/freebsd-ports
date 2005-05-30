@@ -7075,6 +7075,7 @@ p5-Catalyst-Plugin-Session-FastMmap	ports/www/p5-Catalyst-Plugin-Session-FastMma
 p5-Catalyst-Plugin-Static	ports/www/p5-Catalyst-Plugin-Static
 p5-Catalyst-Plugin-SubRequest	ports/www/p5-Catalyst-Plugin-SubRequest
 p5-Catalyst-Plugin-Textile	ports/www/p5-Catalyst-Plugin-Textile
+p5-Catalyst-View-HTML-Template	ports/www/p5-Catalyst-View-HTML-Template
 p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net-mgmt/p5-Cflow
