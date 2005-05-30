@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 PORTEPOCH=	1
 CATEGORIES?=	net python
-MASTER_SITES=	http://www.bittorrent.com/dl/
+MASTER_SITES=	http://www.bittorrent.com/dl/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -67,10 +69,12 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
 EXTRA_PATCHES+= \
 		${FILESDIR}/extra-psyco-patch-btdownloadcurses.py \
+		${FILESDIR}/extra-psyco-patch-btdownloadgui.py \
 		${FILESDIR}/extra-psyco-patch-btdownloadheadless.py \
 		${FILESDIR}/extra-psyco-patch-btlaunchmany.py \
 		${FILESDIR}/extra-psyco-patch-btlaunchmanycurses.py \
 		${FILESDIR}/extra-psyco-patch-btmaketorrent.py \
+		${FILESDIR}/extra-psyco-patch-btmaketorrentgui.py \
 		${FILESDIR}/extra-psyco-patch-btreannouce.py \
 		${FILESDIR}/extra-psyco-patch-btrename.py \
 		${FILESDIR}/extra-psyco-patch-btshowmetainfo.py \
