@@ -23,6 +23,7 @@ bin/rexxwrapper-config
 %%DATADIR%%/des/sk.h
 %%DATADIR%%/des/spr.h
 %%DATADIR%%/des/str2key.c
+%%DATADIR%%/getargv0.c
 %%DATADIR%%/install-sh
 %%DATADIR%%/intbuild.c
 %%DATADIR%%/rexxtok.c
