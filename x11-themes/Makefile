@@ -5,6 +5,7 @@
     COMMENT = X Windows System themes
 
     SUBDIR += baghira
+    SUBDIR += bluecurve-themes
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
     SUBDIR += clearlooks
@@ -12,6 +13,7 @@
     SUBDIR += clearlooks-themes
     SUBDIR += clearlooks-themes-extras
     SUBDIR += colorstep
+    SUBDIR += cursor-bluecurve-theme
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
@@ -24,6 +26,7 @@
     SUBDIR += geramik
     SUBDIR += gnome-art
     SUBDIR += gnome-backgrounds
+    SUBDIR += gnome-bluecurve-theme
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla
@@ -74,6 +77,7 @@
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel
     SUBDIR += icegradient
+    SUBDIR += icon-bluecurve-theme
     SUBDIR += indubstrial
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
@@ -111,6 +115,7 @@
     SUBDIR += metacity-aluminumalloy-volcanic-theme
     SUBDIR += metacity-ana-theme
     SUBDIR += metacity-aquaextremesunken-theme
+    SUBDIR += metacity-bluecurve-theme
     SUBDIR += metacity-longhorninspirat-theme
     SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-6nome
@@ -131,5 +136,6 @@
     SUBDIR += whistlerk
     SUBDIR += xenophilia
     SUBDIR += xenostep
+    SUBDIR += xmms-bluecurve-theme
 
 .include <bsd.port.subdir.mk>

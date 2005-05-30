@@ -1,0 +1,7 @@
+===============================================================================
+
+  If you want to use the Bluecurve QT theme, replace your ~/.qt/qtrc file:
+
+    cp -f %%PREFIX%%/etc/settings/qtrc.bluecurve ~/.qt/qtrc
+
+===============================================================================

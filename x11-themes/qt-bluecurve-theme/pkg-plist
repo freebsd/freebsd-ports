@@ -1,2 +1,6 @@
+@unexec if cmp -s %D/etc/settings/qtrc.bluecurve %D/etc/settings/qtrc; then rm -f %D/etc/settings/qtrc; fi
+etc/settings/qtrc.bluecurve
+@exec [ -f %B/qtrc ] || cp %B/qtrc.bluecurve %B/qtrc
 lib/plugins/styles/bluecurve.so
-@dirrm lib/plugins/styles
+@unexec rmdir %D/etc/settings 2>/dev/null || true
+@unexec rmdir %D/lib/plugins/styles 2>/dev/null || true

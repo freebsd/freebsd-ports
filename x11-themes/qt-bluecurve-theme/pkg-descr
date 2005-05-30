@@ -1,6 +1,7 @@
-This is a port of the Fedora "Bluecurve" theme for QT/KDE.
-It won't install RedHat logos and pixmaps, but only the required
-theme engines.
+Bluecurve is a set of themes created by the Red Hat Artwork project.
+It attempts to provide an unified look for the open source desktop.
+
+This port contains the Bluecurve QT theme.
 
 - Ryzhyk Eugeney
 rzheka@users.sourceforge.net

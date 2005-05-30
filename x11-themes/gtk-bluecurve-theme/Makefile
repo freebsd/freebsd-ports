@@ -6,77 +6,76 @@
 #
 
 PORTNAME=	gtk-bluecurve-theme
-PORTVERSION=	0.73
-PORTREVISION=	1
-CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	9/en/os/i386/SRPMS
-DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 
-MAINTAINER=	rzheka@users.sourceforge.net
-COMMENT=	Bluecurve unified-look theme for GTK1 and GTK2 from RedHat 8.0
+COMMENT=	The Bluecurve GTK+ 1.x and 2.x themes
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
-WRKSRC= 	${WRKDIR}/redhat-artwork-${PORTVERSION}
-USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
 
-RH_SUBVERSION=	1
-THEMES_SUBDIRS= ${WRKSRC}/art/gtk/Bluecurve1
+# GTK+ 1.x theme engine
+USE_GNOME+=	gdkpixbuf
+GTK1_CFLAGS=	`${X11BASE}/bin/gdk-pixbuf-config --cflags`
+GTK1_LIBS=	`${X11BASE}/bin/gdk-pixbuf-config --libs`
+GTK1_WRKSRC=	${WRKSRC}/art/gtk/Bluecurve1
+GTK1_RCDIR=	gtk
+GTK1_SOURCES=	bluecurve1_theme_main.c bluecurve1_theme_draw.c
+GTK1_ENGINEDIR=	lib/gtk/themes/engines
 
-.if defined(WITH_GTK2)
+# GTK+ 2.x theme engine
 USE_GNOME+=	gtk20
-THEMES_SUBDIRS+=	${WRKSRC}/art/gtk/Bluecurve
-PLIST_SUB+=	GTK2="" GTKVERSION="2.4.0"
-.else
-PLIST_SUB+=	GTK2="@comment "
-.endif
+GTK2_CFLAGS=	`${LOCALBASE}/bin/pkg-config --cflags gtk+-2.0`
+GTK2_LIBS=	`${LOCALBASE}/bin/pkg-config --libs gtk+-2.0`
+GTK2_WRKSRC=	${WRKSRC}/art/gtk/Bluecurve
+GTK2_RCDIR=	gtk-2.0
+GTK2_SOURCES=	bluecurve_rc_style.c bluecurve_style.c bluecurve_theme_main.c
+GTK2_ENGINEDIR=	lib/gtk-2.0/2.4.0/engines
 
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "By default only gtk-1.2 theme engine will be built."
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_GTK2=yes   Build gtk-2 theme"
-	@${ECHO} ""
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@if ! (cd ${WRKDIR} && rpm2cpio.pl ${_DISTDIR}/${DISTFILES} | cpio -i redhat-artwork-${PORTVERSION}.tar.gz 2>/dev/null && ${GZIP_CMD} -dc redhat-artwork-${PORTVERSION}.tar.gz | tar -xf - && ${RM} redhat-artwork-${PORTVERSION}.tar.gz);\
-		then \
-			exit 1; \
-		fi
-	${CP} ${FILESDIR}/Makefile-gtk1 ${WRKSRC}/art/gtk/Bluecurve1/Makefile
-	${CP} ${FILESDIR}/Makefile-gtk2 ${WRKSRC}/art/gtk/Bluecurve/Makefile
+PLIST=		${WRKDIR}/pkg-plist
+EXTRA_STYLES=	BerriesAndCream Gnome Grape Lime Slate Strawberry Tangerine
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/art/gtk/Bluecurve1/Makefile
-	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/art/gtk/Bluecurve/Makefile
-
-do-configure:
-	@${DO_NADA}
+.for v in 1 2
+.  for s in ${EXTRA_STYLES}
+	@${REINPLACE_CMD} -e 's|/usr|${X11BASE}|' \
+		${WRKSRC}/art/gtk/Bluecurve-${s}/${GTK${v}_RCDIR}/gtkrc
+.  endfor
+.endfor
 
 do-build:
-	@for theme_dir in ${THEMES_SUBDIRS};do \
-		(cd $$theme_dir; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}); \
-	done
+.for v in 1 2
+	cd ${GTK${v}_WRKSRC} && \
+	${CC} ${CFLAGS} -Wl,-export-dynamic -shared \
+		${GTK${v}_CFLAGS} ${GTK${v}_LIBS} -o libbluecurve.so \
+			${GTK${v}_SOURCES}
+.endfor
+
+pre-install:
+	@${RM} -f ${PLIST}
+.for v in 1 2
+	@${ECHO_CMD} "${GTK${v}_ENGINEDIR}/libbluecurve.so" >> ${PLIST}
+	@${ECHO_CMD} "share/themes/Bluecurve/${GTK${v}_RCDIR}/gtkrc" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm share/themes/Bluecurve/${GTK${v}_RCDIR}" >> ${PLIST}
+.  for s in ${EXTRA_STYLES}
+	@${ECHO_CMD} "share/themes/Bluecurve-${s}/${GTK${v}_RCDIR}/gtkrc" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm share/themes/Bluecurve-${s}/${GTK${v}_RCDIR}" >> ${PLIST}
+.  endfor
+.endfor
+	@${ECHO_CMD} "@unexec rmdir %D/share/themes/Bluecurve 2>/dev/null || true" >> ${PLIST}
+.for s in ${EXTRA_STYLES}
+	@${ECHO_CMD} "@dirrm share/themes/Bluecurve-${s}" >> ${PLIST}
+.endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/themes/Bluecurve && ${CHMOD} a+rx ${PREFIX}/share/themes/Bluecurve
-.if defined(WITH_GTK2)
-	@${MKDIR} ${PREFIX}/lib/gtk-2.0/2.4.0/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk-2.0/2.4.0/engines
-	@${MKDIR} ${PREFIX}/share/themes/Bluecurve/gtk-2.0 && ${CHMOD} a+rx ${PREFIX}/share/themes/Bluecurve/gtk-2.0
-	@${INSTALL_PROGRAM} ${WRKSRC}/art/gtk/Bluecurve/.libs/libbluecurve.so ${PREFIX}/lib/gtk-2.0/2.4.0/engines
-	@${INSTALL_DATA} ${WRKSRC}/art/gtk/Bluecurve/gtk-2.0/gtkrc ${PREFIX}/share/themes/Bluecurve/gtk-2.0
-.endif
-	@${MKDIR} ${PREFIX}/lib/gtk/themes/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk/themes/engines
-	@${INSTALL_PROGRAM} ${WRKSRC}/art/gtk/Bluecurve1/.libs/libbluecurve.so ${PREFIX}/lib/gtk/themes/engines
-	@${MKDIR} ${PREFIX}/share/themes/Bluecurve/gtk && ${CHMOD} a+rx ${PREFIX}/share/themes/Bluecurve/gtk
-	@${INSTALL_DATA} ${WRKSRC}/art/gtk/Bluecurve1/gtk/gtkrc ${PREFIX}/share/themes/Bluecurve/gtk
+.for v in 1 2
+	${MKDIR} ${PREFIX}/${GTK${v}_ENGINEDIR}
+	${INSTALL_PROGRAM} ${GTK${v}_WRKSRC}/libbluecurve.so ${PREFIX}/${GTK${v}_ENGINEDIR}
+	${MKDIR} ${PREFIX}/share/themes/Bluecurve/${GTK${v}_RCDIR}
+	${INSTALL_DATA} ${GTK${v}_WRKSRC}/${GTK${v}_RCDIR}/gtkrc ${PREFIX}/share/themes/Bluecurve/${GTK${v}_RCDIR}
+.  for s in ${EXTRA_STYLES}
+	${MKDIR} ${PREFIX}/share/themes/Bluecurve-${s}/${GTK${v}_RCDIR}
+	${INSTALL_DATA} ${WRKSRC}/art/gtk/Bluecurve-${s}/${GTK${v}_RCDIR}/gtkrc ${PREFIX}/share/themes/Bluecurve-${s}/${GTK${v}_RCDIR}
+.  endfor
+.endfor
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
