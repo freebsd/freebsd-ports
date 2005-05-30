@@ -1,3 +1,4 @@
+bin/ncnf-validator
 include/ncnf.h
 include/ncnf_app.h
 include/ncnf_coll.h
