@@ -1,0 +1,11 @@
+--- configure.orig	Tue May 31 16:56:15 2005
++++ configure	Tue May 31 16:56:26 2005
+@@ -1452,7 +1452,7 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
++$ac_aux_dir/ltconfig --no-reexec \
+ $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $lt_target \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
