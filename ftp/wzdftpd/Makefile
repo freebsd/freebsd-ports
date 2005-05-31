@@ -93,6 +93,9 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|@HAVE_PERL_TRUE@|#|g" ${WRKSRC}/Makefile.in
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e "s|PRIu64|\"llu\"|g" ${WRKSRC}/src/*.[cl]
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
