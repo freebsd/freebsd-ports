@@ -5,7 +5,7 @@
  UNINSTALL = rm -f
  
 -LDFLAGS = -r
-+LDFLAGS = -r @LDFLAGS@
++LDFLAGS = @LDFLAGS@
  DEFS = @DEFS@
  CFLAGS = @CFLAGS@
  CPPFLAGS = @CPPFLAGS@ -I$(srcdir)/src/include -Isrc/include $(DEFS)
