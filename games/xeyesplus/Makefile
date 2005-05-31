@@ -12,6 +12,9 @@ MASTER_SITES=	http://yindy1.aist-nara.ac.jp/~tetu-s/sofken/software/
 DISTNAME=	xeyes+${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
+DEPRECATED=	"no longer available from author's site"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Horrible eyes looking at your mouse cursor
 

@@ -10,6 +10,9 @@ PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	#
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for renaming mp3 files
 

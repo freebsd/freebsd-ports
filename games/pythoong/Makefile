@@ -11,6 +11,9 @@ PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://perso.wanadoo.fr/christophe.cressend/tarballs/
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A snake-like game written for Gnome desktop
 

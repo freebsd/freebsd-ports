@@ -18,6 +18,9 @@ MASTER_SITES=	# ftp://ftp.inria.fr/network/modem/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar.gz
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Receive/Send files via ZMODEM protocol.  (unrestrictive)
 

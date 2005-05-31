@@ -11,6 +11,9 @@ CATEGORIES=	games
 MASTER_SITES=	# mastersite disappeared in 1997
 DISTNAME=	${PORTNAME}
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mahjongg
 

@@ -12,6 +12,9 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	#
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D file viewer for GTK+
 

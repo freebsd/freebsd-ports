@@ -11,6 +11,9 @@ CATEGORIES=	mail sysutils
 # mastersite disappeared in August 2003
 MASTER_SITES=	# ftp://ftp.datrix.co.za/pub/mreport/
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail logfile summary tool
 

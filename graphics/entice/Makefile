@@ -10,6 +10,9 @@ PORTVERSION=	0.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ny.us.rasterman.com/files/
 
+DEPRECATED=	"CVS snapshot on master site gone, no releases from Enlightenment"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer written using libraries for Enlightenment 0.17 development
 

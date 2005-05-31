@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.neosynapse.net/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
+DEPRECATED=	"master site up but distfile unavailable"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpolated Strings
 

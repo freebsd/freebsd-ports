@@ -12,6 +12,9 @@ CATEGORIES=	games gnome
 # mastersite disappeared in February 2002
 MASTER_SITES=	# http://www.informatik.fh-wiesbaden.de/~i820/downloads/
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the famous Yatzi game, also known as Kniffel, for GNOME
 

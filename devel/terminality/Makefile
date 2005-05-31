@@ -12,6 +12,9 @@ CATEGORIES=	devel
 MASTER_SITES=	http://members.optushome.com.au/emikulic/code/tn/
 DISTNAME=	tn-${PORTVERSION}
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform terminal manipulation library
 

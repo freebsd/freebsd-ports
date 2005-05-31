@@ -12,6 +12,9 @@ CATEGORIES=	games
 MASTER_SITES=	# ftp://ftp.simcb.ru/pub/unix/src/
 DISTNAME=	${PORTNAME}-new
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire
 

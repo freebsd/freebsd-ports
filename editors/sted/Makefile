@@ -14,6 +14,9 @@ MASTER_SITES=	http://user.tninet.se/~uxm165t/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple/Small/Stupid Text Editor
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 WRKSRC=		${WRKDIR}/sted
 
 MAN1=		sted.1

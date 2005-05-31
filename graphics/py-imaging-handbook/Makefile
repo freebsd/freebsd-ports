@@ -26,6 +26,9 @@ DISTFILES=	blank.gif blurb-works-1.2.gif concepts.htm \
 		pilfont.htm pilprint.htm preface.htm psdraw.htm pythonware.css \
 		remote-light.gif support.htm tutorial.htm
 
+DEPRECATED=	"unmaintained port mirroring a website, maintenance problems"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Python Imaging Library Handbook
 

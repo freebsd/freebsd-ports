@@ -11,6 +11,9 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf.org/files/
 DISTNAME=	${PORTNAME}.${PORTVERSION}eta
 
+DEPRECATED=	"stale, try mail/libspf2"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
 

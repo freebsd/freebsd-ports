@@ -11,6 +11,9 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://mugca.cc.monash.edu.au/pub/dougt/
 EXTRACT_SUFX=	.tgz
 
+DEPRECATED=	"master site disappeared, last version in port is from 2000"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple text editor which uses many of the shortcuts used in MSDOS EDIT
 

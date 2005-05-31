@@ -11,6 +11,9 @@ PORTVERSION=	0.8.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.ldc.usb.ve/~96-28234/
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crossword Generator
 
