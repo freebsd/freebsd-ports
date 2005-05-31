@@ -19,7 +19,7 @@ COMMENT=	An interpreted dynamic parser
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

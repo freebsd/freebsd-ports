@@ -13,7 +13,7 @@ MASTER_SITES=	http://dl.maptools.org/dl/shapelib/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
-WANT_LIBTOOL_VER=13
+WANT_LIBTOOL_VER=15
 ALL_TARGET=	lib
 INSTALLS_SHLIB=	yes
 
