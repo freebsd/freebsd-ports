@@ -28,6 +28,10 @@ PLIST_SUB=	APACHE=2
 PLIST_SUB=	APACHE=
 .endif
 
+.if defined(WITHOUT_APACHE_SUEXEC)
+APXSOPTS+=	-DNO_SUEXEC_FOR_AP_USER_N_GROUP
+.endif
+
 do-patch:
 .if defined(WITH_APACHE2)
 	@${REINPLACE_CMD} -e "s|/usr/local/apache2|${PREFIX}/share/apache2|g" ${WRKSRC}/${MAKEFILE}
@@ -35,7 +39,7 @@ do-patch:
 	cd ${WRKSRC} ; ${MV} Makefile.tmpl Makefile ;
 
 do-build:
-	cd ${WRKSRC} ; ${LOCALBASE}/sbin/apxs -o mod_fastcgi.so -c *.c
+	cd ${WRKSRC} ; ${LOCALBASE}/sbin/apxs -o mod_fastcgi.so -c ${APXSOPT} *.c
 
 do-install:
 	cd ${WRKSRC} ; ${LOCALBASE}/sbin/apxs -i -a -n fastcgi mod_fastcgi.so
