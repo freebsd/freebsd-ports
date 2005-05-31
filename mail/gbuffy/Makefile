@@ -19,7 +19,7 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 
 PLIST_FILES=	bin/gbuffy
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 

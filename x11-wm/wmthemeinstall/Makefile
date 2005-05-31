@@ -18,7 +18,7 @@ RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

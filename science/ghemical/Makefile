@@ -22,7 +22,7 @@ LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mpqc
 
