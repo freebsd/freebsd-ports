@@ -1,0 +1,9 @@
+Eclipse 3.x caches all plugin.xml files into a single repository for quicker
+loading.
+
+If you used eclipse before installing PHPeclipse, you should start eclipse
+once with the -clean option. This -clean forces Eclipse to rebuild that 
+repository.
+
+Please delete your old project.index files and run menu Project->Clean for
+all projects to create the new project.index files.
