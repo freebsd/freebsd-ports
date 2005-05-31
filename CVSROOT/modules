@@ -3074,6 +3074,7 @@ googolplex	ports/net/googolplex
 goose		ports/www/goose
 gopchop		ports/multimedia/gopchop
 gopher		ports/net/gopher
+gopod		ports/misc/gopod
 gorm		ports/devel/gorm
 gossip		ports/net/gossip
 gotmail		ports/mail/gotmail
