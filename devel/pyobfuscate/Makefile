@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/pyobfuscate/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python source code obfuscator
 
+BROKEN=		Unfetchable
+
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
