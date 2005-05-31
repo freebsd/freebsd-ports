@@ -9,13 +9,11 @@ PORTNAME=	mgen
 PORTVERSION=	4.2b5
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/
+DISTNAME=	src-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DISTFILES=	src-${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	An IP network performance tests and measurements
-
-IGNORE=		does not respect PTHREAD_LIBS
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -26,6 +24,9 @@ PORTDOCS=	README.TXT VERSION.TXT mgen.html example.mgn
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/unix/Makefile.common \
 		${WRKSRC}/protolib/unix/Makefile.common
+
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g' ${WRKSRC}/unix/Makefile.freebsd \
+	                ${WRKSRC}/protolib/unix/Makefile.freebsd
 
 do-build:
 	cd ${WRKSRC}/unix && ${GMAKE} -f Makefile.freebsd ${PORTNAME}
