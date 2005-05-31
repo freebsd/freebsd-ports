@@ -1,6 +1,6 @@
---- configure.orig	Sun Feb 11 07:48:58 2001
-+++ configure	Tue Apr 13 17:11:28 2004
-@@ -1183,21 +1194,21 @@
+--- configure.orig	Tue May 31 16:40:06 2005
++++ configure	Tue May 31 16:40:28 2005
+@@ -1183,21 +1183,21 @@
  echo "$ac_t""$CPP" 1>&6
  
  
@@ -26,7 +26,7 @@
  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
  if test -z "$ac_err"; then
    rm -rf conftest*
-@@ -1233,7 +1244,7 @@
+@@ -1233,7 +1233,7 @@
  ac_cv_cpu_endian_ness="unknown"
  
  case "$target_cpu" in
@@ -35,7 +35,16 @@
  		ac_cv_cpu_endian_ness="little"
  		;;
  		
-@@ -1941,7 +1952,7 @@
+@@ -1674,7 +1674,7 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
++$ac_aux_dir/ltconfig --no-reexec \
+ $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+@@ -1941,7 +1941,7 @@
  fi
  
  if test "$ac_cv_prog_gcc" = yes ; then
