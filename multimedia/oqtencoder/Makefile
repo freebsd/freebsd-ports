@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openquicktime
-DISTNAME=	${PORTNAME:L}-${PORTVERSION}
+DISTNAME=	${PORTNAME:L}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,20 +19,27 @@ COMMENT=	A simple encoder using OpenQuicktime (TM)
 
 LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
-MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
+MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+PLIST_FILES=	bin/oqtencoder
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
 
 post-patch:
-	@${PERL} -pi -e "s///" ${WRKSRC}/readme
+	@${TR} -d '\r' < ${WRKSRC}/readme > ${WRKSRC}/README
+	@${REINPLACE_CMD} -e 's|gcc -g|${CC}|g' ${WRKSRC}/Makefile
 
 do-install:
-.ifndef(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:L} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:L} ${PREFIX}/bin
 
 .include <bsd.port.mk>
