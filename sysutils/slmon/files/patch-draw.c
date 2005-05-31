@@ -1,18 +1,12 @@
---- draw.c.orig	Tue Oct  1 20:32:27 2002
-+++ draw.c	Tue Aug 17 13:40:08 2004
-@@ -26,6 +26,7 @@
+--- draw.c.orig	Mon Jun 21 00:56:48 2004
++++ draw.c	Sun May 29 21:47:00 2005
+@@ -27,7 +27,9 @@
  #include <glibtop/netload.h>
  
  #include <sys/types.h>
 +#include <sys/socket.h>
  #include <netinet/in.h>
++#include <arpa/inet.h>
  
  /*
-@@ -314,6 +315,7 @@
- 	SLsmg_write_string("SPC,ENTER:  leave help");
- 	break;
-     default:
-+	break;
-     }
- }
- 
+  * Clear screen using color n. This should be used instead of SLsmg_cls() to
