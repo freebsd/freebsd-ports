@@ -11,24 +11,16 @@ include/libcomprex/io.h
 include/libcomprex/module.h
 include/libcomprex/types.h
 include/libcomprex/utils.h
-lib/comprex/archive/libar.la
 lib/comprex/archive/libar.so
-lib/comprex/archive/libbzip2.la
 lib/comprex/archive/libbzip2.so
-lib/comprex/archive/libcab.la
 lib/comprex/archive/libcab.so
-lib/comprex/archive/libcpio.la
 lib/comprex/archive/libcpio.so
-lib/comprex/archive/libtar.la
 lib/comprex/archive/libtar.so
-lib/comprex/archive/libzip.la
 lib/comprex/archive/libzip.so
-lib/comprex/archive/libzlib.la
 lib/comprex/archive/libzlib.so
 @comment lib/comprex/scheme/libcurlscm.la
 @comment lib/comprex/scheme/libcurlscm.so
 lib/libcomprex.a
-lib/libcomprex.la
 lib/libcomprex.so
 lib/libcomprex.so.3
 libdata/pkgconfig/libcomprex.pc
