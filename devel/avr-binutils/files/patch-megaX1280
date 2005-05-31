@@ -1,0 +1,10 @@
+--- gas/config/tc-avr.c.orig	Thu Mar 31 22:16:07 2005
++++ gas/config/tc-avr.c	Thu Mar 31 22:20:39 2005
+@@ -113,6 +113,7 @@
+   {"atmega645", AVR_ISA_M323,     bfd_mach_avr5},
+   {"atmega6450",AVR_ISA_M323,     bfd_mach_avr5},
+   {"atmega128", AVR_ISA_M128,     bfd_mach_avr5},
++  {"atmega1280",AVR_ISA_M128,     bfd_mach_avr5},
+   {"at90can128",AVR_ISA_M128,     bfd_mach_avr5},
+   {"at94k",     AVR_ISA_94K,      bfd_mach_avr5},
+   {NULL, 0, 0}
