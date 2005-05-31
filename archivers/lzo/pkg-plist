@@ -11,7 +11,6 @@ include/lzo2a.h
 include/lzoconf.h
 include/lzoutil.h
 lib/liblzo.a
-lib/liblzo.la
 lib/liblzo.so
 lib/liblzo.so.1
 %%PORTDOCS%%%%DOCSDIR%%/LTEST.TXT
