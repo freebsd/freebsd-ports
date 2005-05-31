@@ -131,6 +131,7 @@
     SUBDIR += goldstr
     SUBDIR += gone
     SUBDIR += gonvert
+    SUBDIR += gopod
     SUBDIR += gplbp
     SUBDIR += gplink
     SUBDIR += gpt
