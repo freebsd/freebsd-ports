@@ -7,14 +7,14 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://openvpn.net/release/
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
-LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS=	lzo.2:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
