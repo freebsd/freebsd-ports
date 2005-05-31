@@ -18,7 +18,7 @@ COMMENT=	X11-based MP3 player with nice graphical interface
 
 USE_XLIB=	yes
 USE_GNOME=	gtk12 esound
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 LIBTOOLFILES=	configure libx11amp/configure
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"

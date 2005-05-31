@@ -12,7 +12,9 @@ lib/x11amp/General/libir.so
 lib/x11amp/Input/libmikmod.so
 lib/x11amp/Input/libmpg123.so
 lib/x11amp/Input/libwav.so
+lib/x11amp/Output/libOSS.a
 lib/x11amp/Output/libOSS.so
+lib/x11amp/Output/libesdout.a
 lib/x11amp/Output/libesdout.so
 share/x11amp/wmx11amp.xpm
 @dirrm share/x11amp
