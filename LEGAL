@@ -259,6 +259,7 @@ gnome2/MCity-microGUI*	x11-themes/metacity-theme-microgui See x11-themes/metacit
 gnupg-*			security/gnupg		Crypto; export-controlled
 goemon.tgz		audio/timidity		Uses copyrighted patches
 gogo239b.tgz		audio/gogo		Condition is not clear
+goPod-*			misc/gopod		Unclear legal status in EU countries
 grande-KXL-*.tar.gz	games/grande		Possible copyright infringement
 graphviz/*		graphics/graphviz	Needs license before fetching
 GTL-*			misc/gtl		Non-commercial use only,
