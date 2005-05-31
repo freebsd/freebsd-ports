@@ -1,9 +1,0 @@
---- plugins/gtkgui/Makefile.orig	Wed Apr 27 22:53:16 2005
-+++ plugins/gtkgui/Makefile	Wed Apr 27 22:54:13 2005
-@@ -1,5 +1,5 @@
- # Set the C flags to include the GTK+ and Python libraries
--CFLAGS = `pkg-config --cflags gtk+-2.0 pygtk-2.0` -I/usr/include/python2.4/ -I.
-+CFLAGS = `pkg-config --cflags gtk+-2.0 pygtk-2.0` $(PY_CFLAGS) -I.
- LDFLAGS = `pkg-config --libs gtk+-2.0 pygtk-2.0`
- 
- # Build the shared object
