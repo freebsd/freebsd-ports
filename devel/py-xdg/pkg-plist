@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/xdg/Menu.py
 %%PYTHON_SITELIBDIR%%/xdg/Menu.pyc
 %%PYTHON_SITELIBDIR%%/xdg/Menu.pyo
+%%PYTHON_SITELIBDIR%%/xdg/MenuEditor.py
+%%PYTHON_SITELIBDIR%%/xdg/MenuEditor.pyc
+%%PYTHON_SITELIBDIR%%/xdg/MenuEditor.pyo
 %%PYTHON_SITELIBDIR%%/xdg/Mime.py
 %%PYTHON_SITELIBDIR%%/xdg/Mime.pyc
 %%PYTHON_SITELIBDIR%%/xdg/Mime.pyo
