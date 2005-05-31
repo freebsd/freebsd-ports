@@ -3,14 +3,10 @@ include/eboxy/eboxyplugin.h
 include/eboxy/pluginconstants.h
 include/eboxy/plugintypes.h
 lib/eboxy/libbasewidgets.a
-lib/eboxy/libbasewidgets.la
 lib/eboxy/libbasewidgets.so
 lib/eboxy/libbasewidgets.so.0
-lib/eboxy/plugins/generic/filebrowser.la
 lib/eboxy/plugins/generic/filebrowser.so
-lib/eboxy/plugins/generic/simplemusic.la
 lib/eboxy/plugins/generic/simplemusic.so
-lib/eboxy/plugins/interface/libsdl_gui.la
 lib/eboxy/plugins/interface/libsdl_gui.so
 lib/libeboxyplugin.a
 %%DATADIR%%/eboxy.dtd
