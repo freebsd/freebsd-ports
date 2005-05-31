@@ -5,5 +5,7 @@ Currently supported are:
  o Menu Specification
  o Desktop Entry Specification
  o Icon Theme Specification
+ o Recent File Spec
+ o Shared-MIME-Database Specification
 
 WWW:	http://freedesktop.org/Software/pyxdg
