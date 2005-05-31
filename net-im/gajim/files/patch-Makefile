@@ -1,50 +1,68 @@
---- Makefile.orig	Sun Apr  3 14:40:02 2005
-+++ Makefile	Thu Apr 28 16:13:52 2005
-@@ -1,16 +1,21 @@
- VERSION		?= 0.6.1
+--- Makefile.orig	Mon May 23 22:22:10 2005
++++ Makefile	Thu May 26 15:16:31 2005
+@@ -1,15 +1,17 @@
+ VERSION		?= 0.7
  
- MODULES		= common plugins/gtkgui
+ MODULES		= src src/common po
 -PREFIX		= /usr
 +PREFIX		?= /usr/local
  DESTDIR		= /
-+MAKE		?= gmake
  
--FIND		= find -regex '.*\.\(\(glade\)\|\(py\)\|\(xpm\)\|\(gif\)\|\(png\)\|\(mo\)\|\(wav\)\)'
+-FIND		= find -regex '.*\.\(\(glade\)\|\(pyo\)\|\(xpm\)\|\(gif\)\|\(png\)\|\(mo\)\|\(wav\)\)'
 -FILES		= `$(FIND)`
 -DIRS		= `$(FIND) -exec dirname {} \; | sort -u`
 -FIND_LIB	= find -regex '.*\.\(so\)'
+-FILES_LIB	= `$(FIND_LIB)`
+-FIND_PY		= find -regex '.*\.\(py\)'
++MAKE		= gmake
++
 +FIND		= find -E
 +FINDOPTS	= -regex '.*.((glade)|(py)|(xpm)|(gif)|(png)|(mo)|(wav))'
 +FILES		= `$(FIND) . $(FINDOPTS)`
 +DIRS		= `$(FIND) . $(FINDOPTS) -exec dirname {} \; | sort -u`
 +FIND_LIB	= $(FIND) . -regex '.*.(so)'
- FILES_LIB	= `$(FIND_LIB)`
++FIND_PY		= $(FIND) . -regex '.*.(py)'
+ FILES_PY	= `$(FIND_PY)`
  
- LANGS		= fr pt_BR
-+GTK_CFLAGS	= `pkg-config glib-2.0 gtk+-2.0 --cflags-only-I | sed -e 's/-I/:/g' | tr -d ' '` 
-+GTK_LDFLAGS	= `pkg-config glib-2.0 gtk+-2.0 --libs-only-L | sed -e 's/-L/:/g' | tr -d ' '`
-+
  SCRIPTS = \
- 	scripts/gajim
+@@ -18,13 +20,13 @@
+ all: translation trayicon idle pyo
  
-@@ -22,15 +27,15 @@
- 	done
+ translation:
+-	make -C po all
++	$(MAKE) -C po all
  
  trayicon:
--	make -C plugins/gtkgui all;
-+	$(MAKE) -C plugins/gtkgui all;
+-	make -C src all;
++	$(MAKE) -C src all;
  
  idle:
--	make -C common all;
-+	$(MAKE) -C common all GTK_LDFLAGS="$(GTK_LDFLAGS)" GTK_CFLAGS="$(GTK_CFLAGS)";
+-	make -C src/common all;
++	$(MAKE) -C src/common all;
+ 
+ pyo:
+ 	for f in $(FILES_PY) ; do \
+@@ -32,9 +34,9 @@
+ 	done
  
  clean:
 -	find -name *.pyc -exec rm {} \;
+-	find -name *.pyo -exec rm {} \;
 -	find -name *.mo -exec rm {} \;
--	$(foreach sdir, $(MODULES), make -C $(sdir) clean;)
 +	find . -name *.pyc -exec rm {} \;
++	find . -name *.pyo -exec rm {} \;
 +	find . -name *.mo -exec rm {} \;
-+	$(foreach sdir, $(MODULES), $(MAKE) -C $(sdir) clean;)
+ 	$(foreach sdir, $(MODULES), make -C $(sdir) clean;)
  
- # FIXME -- olé gorito
  dist:
+@@ -64,8 +66,8 @@
+ 	cp COPYING "$(DESTDIR)$(PREFIX)/share/gajim/";
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/share/applications";
+ 	cp gajim.desktop "$(DESTDIR)$(PREFIX)/share/applications/";
+-	mkdir -p "$(DESTDIR)$(PREFIX)/share/man/man1";
+-	cp gajim.1 "$(DESTDIR)$(PREFIX)/share/man/man1";
++	mkdir -p "$(DESTDIR)$(PREFIX)/man/man1";
++	cp gajim.1 "$(DESTDIR)$(PREFIX)/man/man1";
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/lib/gajim";
+ 	for f in $(FILES_LIB) ; do \
+ 		cp "$$f" "$(DESTDIR)$(PREFIX)/lib/gajim/"; \
