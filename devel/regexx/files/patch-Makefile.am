@@ -1,9 +1,0 @@
---- Makefile.am.orig	Tue Mar 13 22:42:20 2001
-+++ Makefile.am	Sat Dec 29 08:24:46 2001
-@@ -4,5 +4,5 @@
- ## $Date: 2001/03/13 14:42:20 $
- ##
- 
--SUBDIRS = @subdirs@ src examples
-+SUBDIRS = src examples
- EXTRA_DIST = regexx.spec.in

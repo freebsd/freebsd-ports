@@ -19,9 +19,17 @@ COMMENT=	A complete regular expressions C++ solution
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}|g ; \
+		s|\./libtool|${LIBTOOL}|g ; \
+		s|\(DEFS.*\)|\1 -I${LOCALBASE}/include|' \
+		${WRKSRC}/src/Makefile.in ${WRKSRC}/pcre/Makefile.in
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir| ; \
+		' ${WRKSRC}/configure
+#		s|subdirs="pcre"||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
