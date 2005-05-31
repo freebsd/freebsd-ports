@@ -81,8 +81,7 @@ while [ "$1" ]; do
 			SUB_MYSQL=""
 			;;
 		\"PostgreSQL\")
-			echo "POSTGRESQL_PORT?=	databases/postgresql7"
-			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
+			echo "USE_PGSQL=	yes"
 			echo "CONFIGURE_ARGS+=	--with-pgsql=\${LOCALBASE}"
 			SUB_PGSQL=""
 			;;

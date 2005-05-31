@@ -80,7 +80,7 @@ while [ "$1" ]; do
 			MySQL=1
 			;;
 		\"PostgreSQL\")
-			echo 'BUILD_DEPENDS+=		${PREFIX}/pgsql/bin/psql:${PORTSDIR}/databases/postgresql7' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo 'USE_PGSQL=		yes' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo 'CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}/pgsql' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			PostgresSQL=1
 			;;
