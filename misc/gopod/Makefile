@@ -17,7 +17,6 @@ COMMENT=	Utility to cap/uncap an iPod
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 RESTRICTED=	Unclear legal status in EU countries
-NO_PACKAGE=	Unclear legal status in EU countries
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}/gtk-version
 
