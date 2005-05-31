@@ -11,25 +11,36 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openquicktime
-DISTNAME=	${PORTNAME:L}-${PORTVERSION}
+DISTNAME=	${PORTNAME:L}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very very small, not functionnal, video OpenQuicktime (TM) player
 
-LIB_DEPENDS=    openquicktime.0:${PORTSDIR}/multimedia/openquicktime
+LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_SDL=	sdl
-MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_REINPLACE=	yes
+MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-CFLAGS+=	-I${LOCALBASE}/include
+PLIST_FILES=	bin/oqtplayer
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	readme
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc -g|${CC}|g ; \
+		 s|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile
 
 do-install:
-.ifndef(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/oqtplayer ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/oqtplayer ${PREFIX}/bin
 
 .include <bsd.port.mk>
