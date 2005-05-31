@@ -63,6 +63,7 @@ lib/gstreamer-%%VERSION%%/libgstfestival.so
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.so
 lib/gstreamer-%%VERSION%%/libgstfilter.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
+lib/gstreamer-%%VERSION%%/libgstfreeze.so
 lib/gstreamer-%%VERSION%%/libgstgamma.so
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 lib/gstreamer-%%VERSION%%/libgstidct.so
@@ -100,6 +101,7 @@ lib/gstreamer-%%VERSION%%/libgstsilence.so
 lib/gstreamer-%%VERSION%%/libgstsinesrc.so
 lib/gstreamer-%%VERSION%%/libgstsmooth.so
 lib/gstreamer-%%VERSION%%/libgstsmpte.so
+@comment lib/gstreamer-%%VERSION%%/libgstspc.so
 lib/gstreamer-%%VERSION%%/libgstspectrum.so
 lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgststereo.so
@@ -127,6 +129,7 @@ lib/gstreamer-%%VERSION%%/libgstvideotestsrc.so
 lib/gstreamer-%%VERSION%%/libgstvolenv.so
 lib/gstreamer-%%VERSION%%/libgstvolume.so
 lib/gstreamer-%%VERSION%%/libgstwavenc.so
+lib/gstreamer-%%VERSION%%/libgstwavpack.so
 lib/gstreamer-%%VERSION%%/libgstwavparse.so
 lib/gstreamer-%%VERSION%%/libgstximagesink.so
 lib/gstreamer-%%VERSION%%/libgstxvimagesink.so
@@ -160,6 +163,7 @@ share/locale/sr/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/zh_TW/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm lib/gstreamer-%%VERSION%%
 @dirrm include/gstreamer-%%VERSION%%/gst/xwindowlistener
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay

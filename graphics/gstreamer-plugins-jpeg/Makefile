@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer jpeg encoder/decoder plugin
 
 GST_PLUGIN=	jpeg
 

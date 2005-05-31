@@ -1505,3 +1505,4 @@ russian/linux-mozillafirebird||2005-05-27|obsolete, use linux-firefox with local
 www/linux-mozillafirebird|www/linux-firefox|2005-05-27|obsolete, use linux-firefox instead
 www/linux-mozillafirebird-el||2005-05-27|obsolete, use linux-firefox with localization xpi instead
 textproc/py-martel||2005-05-31|obsolete, not up-to-date and is only a subset of biology/py-biopython
+multimedia/gstreamer-plugins-xine||2005-05-31|obsolete, use gstreamer-ffmpeg instead

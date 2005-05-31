@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	devel
+PORTREVISION=	0
+
+COMMENT=	Gstreamer gnomevfs plugin
 
 GST_PLUGIN=	gnomevfs
 

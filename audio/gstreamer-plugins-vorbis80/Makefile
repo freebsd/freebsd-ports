@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer vorbis encoder/decoder plugin
 
 GST_PLUGIN=	vorbis
 

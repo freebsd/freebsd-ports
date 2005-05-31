@@ -5,9 +5,10 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	4
-
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer icecast plugin
 
 GST_PLUGIN=	shout2
 

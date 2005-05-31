@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	multimedia
+PORTREVISION=	0
+
+COMMENT=	Gstreamer mplex plugin
+
 GST_PLUGIN=	mplex
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins

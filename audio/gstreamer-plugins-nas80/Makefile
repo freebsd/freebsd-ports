@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	GStreamer NAS (Network Audio System) plugin
 
 GST_PLUGIN=	nas
 

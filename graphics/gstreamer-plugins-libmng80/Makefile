@@ -5,9 +5,10 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
-
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer Multiple-image Network Graphics plugin
 
 GST_PLUGIN=	libmng
 

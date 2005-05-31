@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer ladspa (Linux Audio Developer's Simple Plugin API) plugin
 
 GST_PLUGIN=	ladspa
 

@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer gsm encoding/decoding plugin
 
 GST_PLUGIN=	gsm
 

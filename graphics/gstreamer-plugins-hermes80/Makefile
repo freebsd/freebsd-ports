@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer hermes colorspace plugin
 
 GST_PLUGIN=	hermes
 

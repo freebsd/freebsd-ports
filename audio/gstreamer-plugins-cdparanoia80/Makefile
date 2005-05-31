@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer CDDA extraction (aka audio ripping) plugin
 
 GST_PLUGIN=	cdparanoia
 

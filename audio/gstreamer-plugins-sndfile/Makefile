@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer sndfile plugin
 
 GST_PLUGIN=	sndfile
 

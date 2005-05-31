@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer image decoder plugin
 
 GST_PLUGIN=	gdkpixbuf
 

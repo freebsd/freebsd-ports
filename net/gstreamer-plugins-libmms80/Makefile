@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	net
+PORTREVISION=	0
+
+COMMENT=	Gstreamer mms:// and mmsh:// plugin
 
 GST_PLUGIN=	libmms
 

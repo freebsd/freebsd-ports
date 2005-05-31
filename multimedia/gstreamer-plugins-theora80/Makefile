@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	multimedia
+PORTREVISION=	0
+
+COMMENT=	Gstreamer theora plugin
+
 GST_PLUGIN=	theora
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins

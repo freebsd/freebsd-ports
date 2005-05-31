@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer enlightenment sound library plugin
 
 GST_PLUGIN=	esound
 

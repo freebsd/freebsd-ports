@@ -25,7 +25,6 @@ OPTIONS=	# Hacky.. but it works the way it is set up...
 .if defined(PACKAGE_BUILDING)
 WITHOUT_FAAC=	yes	# Mp4 Dolby license , no package
 WITHOUT_LAME=	yes	# MP3 License , no package
-WITHOUT_XINE=	yes	# Depends on djbfft , no package
 .endif
 .if ${OSVERSION} < 500000
 WITHOUT_LIBVISUAL=yes	# Broken on 4.x

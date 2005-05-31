@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	multimedia
+PORTREVISION=	0
+
+COMMENT=	Gstreamer dts plugin
+
 GST_PLUGIN=	dts
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins

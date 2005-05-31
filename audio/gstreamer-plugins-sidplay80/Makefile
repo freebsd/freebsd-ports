@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer Commodore SID decoder plugin
 
 GST_PLUGIN=	sidplay
 
