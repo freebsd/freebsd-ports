@@ -1,6 +1,8 @@
 bin/libnovaconfig
 include/libnova.h
+lib/libnova-0.9.so
 lib/libnova-0.9.so.0
 lib/libnova.a
+lib/libnova.la
 lib/libnova.so
 share/aclocal/libnova-check.m4
