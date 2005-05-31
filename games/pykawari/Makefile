@@ -7,7 +7,7 @@
 
 PORTNAME=	pykawari
 PORTVERSION=	8.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kawari
@@ -38,10 +38,6 @@ WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}
 CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
