@@ -1,6 +1,10 @@
 lib/scim-1.0/IMEngine/anthy.so
 lib/scim-1.0/SetupUI/anthy-imengine-setup.so
 share/locale/ja/LC_MESSAGES/scim-anthy.mo
+share/scim/Anthy/style/atok.sty
+share/scim/Anthy/style/msime.sty
+@dirrm share/scim/Anthy/style
+@dirrm share/scim/Anthy
 share/scim/icons/scim-anthy.png
 share/scim/icons/scim-anthy-dict.png
 @unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
