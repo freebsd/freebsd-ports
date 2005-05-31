@@ -9,17 +9,11 @@ include/sweep/sweep_typeconvert.h
 include/sweep/sweep_types.h
 include/sweep/sweep_undo.h
 include/sweep/sweep_version.h
-lib/sweep/libbyenergy.la
 lib/sweep/libbyenergy.so
-lib/sweep/libecho.la
 lib/sweep/libecho.so
-lib/sweep/libfade.la
 lib/sweep/libfade.so
-lib/sweep/libladspameta.la
 lib/sweep/libladspameta.so
-lib/sweep/libnormalise.la
 lib/sweep/libnormalise.so
-lib/sweep/libreverse.la
 lib/sweep/libreverse.so
 share/gnome/apps/Multimedia/sweep.desktop
 share/gnome/pixmaps/sweep.png
