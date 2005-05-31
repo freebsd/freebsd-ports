@@ -1,0 +1,7 @@
+===========================================================================
+
+Please make sure you have write permissions on your iPod harddisk device.
+Usually this is da0. You can plug in your iPod and run "camcontrol devlist"
+to figure out which device it is.
+
+===========================================================================
