@@ -7,7 +7,7 @@
 
 PORTNAME=	adplay
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
@@ -20,6 +20,7 @@ LIB_DEPENDS=	adplug-1.5.1:${PORTSDIR}/audio/libadplug
 PLIST_FILES=	bin/adplay
 
 GNU_CONFIGURE=	yes
+USE_GCC=	3.4+
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -36,6 +37,8 @@ MAN1=		adplay.1
 post-patch:
 .if ${OSVERSION} > 500000
 	${RM} ${WRKSRC}/src/getopt.h
+.else
+	${CP} ${FILESDIR}/getopt.h ${WRKSRC}/src/
 .endif
 
 do-install:
