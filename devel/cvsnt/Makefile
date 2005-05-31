@@ -29,6 +29,7 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 MAN1=		cvs.1
 MAN5=		cvs.5
+MLINKS=		cvs.1 cvsnt.1 cvs.5 cvsnt.5
 
 .if exists(/usr/include/gssapi.h)
 PLIST_SUB=	GSERVER=""
