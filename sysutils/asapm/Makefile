@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	asapm
-PORTVERSION=	2.13
+PORTVERSION=	3.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
-		${MASTER_SITE_AFTERSTEP}
-MASTER_SITE_SUBDIR=	apps/asapm
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Laptop battery status display for X11
