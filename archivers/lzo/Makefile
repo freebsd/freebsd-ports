@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	libs/compression
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable speedy, lossless data compression library
 
-USE_INC_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
