@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.mindrot.org/files/pfflowd/
 
-MAINTAINER=	andy@fud.org.nz
+MAINTAINER=	thompsa@FreeBSD.org
 COMMENT=	Convert pfsync states to NetFlow datagrams
 
 MAN8=		pfflowd.8

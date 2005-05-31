@@ -11,7 +11,7 @@ CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		andy@fud.org.nz
+MAINTAINER=		thompsa@FreeBSD.org
 COMMENT=		A command line pam authentication tester
 
 MAN1=			pamtester.1
