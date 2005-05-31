@@ -46,8 +46,7 @@ CONFIGURE_ARGS+=	--with-odbc=no
 .endif
 
 .if defined(WITH_POSTGRESQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
 .if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
 LDFLAGS+=		-lssl -lcrypto
