@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	lzo
-PORTVERSION=	1.08
-PORTREVISION=	1
+PORTVERSION=	2.00
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/
-MASTER_SITE_SUBDIR=	libs/compression
+MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable speedy, lossless data compression library

@@ -1,20 +1,22 @@
-include/lzo1.h
-include/lzo16bit.h
-include/lzo1a.h
-include/lzo1b.h
-include/lzo1c.h
-include/lzo1f.h
-include/lzo1x.h
-include/lzo1y.h
-include/lzo1z.h
-include/lzo2a.h
-include/lzoconf.h
-include/lzoutil.h
+include/lzo/lzo1.h
+include/lzo/lzo1a.h
+include/lzo/lzo1b.h
+include/lzo/lzo1c.h
+include/lzo/lzo1f.h
+include/lzo/lzo1x.h
+include/lzo/lzo1y.h
+include/lzo/lzo1z.h
+include/lzo/lzo2a.h
+include/lzo/lzo_asm.h
+include/lzo/lzoconf.h
+include/lzo/lzodefs.h
+include/lzo/lzoutil.h
 lib/liblzo.a
 lib/liblzo.so
-lib/liblzo.so.1
-%%PORTDOCS%%%%DOCSDIR%%/LTEST.TXT
+lib/liblzo.so.2
 %%PORTDOCS%%%%DOCSDIR%%/LZO.FAQ
 %%PORTDOCS%%%%DOCSDIR%%/LZO.TXT
 %%PORTDOCS%%%%DOCSDIR%%/LZOAPI.TXT
+%%PORTDOCS%%%%DOCSDIR%%/LZOTEST.TXT
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/lzo
