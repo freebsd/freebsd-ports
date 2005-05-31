@@ -24,7 +24,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_LIBLTDL=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
