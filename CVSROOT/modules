@@ -5221,6 +5221,7 @@ libmms		ports/net/libmms
 libmodplug	ports/audio/libmodplug
 libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
+libmpcdec	ports/audio/libmpcdec
 libmpeg2	ports/multimedia/libmpeg2
 libmpeg3	ports/multimedia/libmpeg3
 libmsn		ports/net/libmsn
@@ -5228,7 +5229,6 @@ libmspack	ports/archivers/libmspack
 libmt_client	ports/games/libmt_client
 libmtrie	ports/devel/libmtrie
 libmusclecard	ports/devel/libmusclecard
-libmusepack	ports/audio/libmusepack
 libmusicbrainz	ports/audio/libmusicbrainz
 libnaji		ports/devel/libnaji
 libnet		ports/net/libnet

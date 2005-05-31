@@ -1,3 +1,5 @@
+This port installs the musepack decoder lib.
+
 Musepack is an audio compression format with a strong emphasis on high quality.
 It's not lossless, but it is designed for transparency, so that you won't be
 able to hear differences between the original wave file and the much smaller

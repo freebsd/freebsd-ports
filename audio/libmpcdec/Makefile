@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libmusepack
-PORTVERSION=	1.1
+PORTNAME=	libmpcdec
+PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net-files/source/
 
