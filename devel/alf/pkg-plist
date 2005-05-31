@@ -1,10 +1,7 @@
 include/alf/alf.h
 include/alf/common.h
 lib/libalf.a
-lib/libalf.la
 lib/libalf.so
 lib/libalf.so.0
-%%PYTHON_SITELIBDIR%%/alfmodule.a
-%%PYTHON_SITELIBDIR%%/alfmodule.la
 %%PYTHON_SITELIBDIR%%/alfmodule.so
 @dirrm include/alf

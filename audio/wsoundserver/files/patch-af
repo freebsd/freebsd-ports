@@ -1,10 +1,18 @@
---- configure.orig	Sat Jun  3 14:45:53 2000
-+++ configure	Sat Jun  3 14:48:21 2000
-@@ -3401,9 +3401,9 @@
-   
+--- configure.orig	Tue May 31 17:26:42 2005
++++ configure	Tue May 31 17:26:57 2005
+@@ -1458,7 +1458,7 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
++$ac_aux_dir/ltconfig --no-reexec \
+ $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+@@ -3402,8 +3402,8 @@
    
    rm -f conf.audiofiletest
-
+ 
 -    CFLAGS=$AUDIOFILE_CFLAGS
 -    LIBS=$AUDIOFILE_LIBS
 +    CFLAGS="$CFLAGS $AUDIOFILE_CFLAGS"
@@ -12,7 +20,7 @@
  
      if test "x$AUDIOFILE_LIBS" = "x"; then
          echo
-@@ -3677,8 +3674,8 @@
+@@ -3677,8 +3677,8 @@
    
    rm -f conf.esdtest
  
