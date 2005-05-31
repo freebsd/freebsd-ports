@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/audio/tse3/pkg-plist,v 1.3 2005-01-16 23:11:57 pav Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/audio/tse3/pkg-plist,v 1.4 2005-05-31 21:34:44 oliver Exp $
 bin/tse3play
 include/tse3/DisplayParams.h
 include/tse3/Error.h
@@ -106,7 +106,6 @@ include/tse3/util/Snap.h
 include/tse3/util/Song.h
 include/tse3/util/Track.h
 lib/libtse3.a
-lib/libtse3.la
 lib/libtse3.so
 lib/libtse3.so.0
 share/doc/tse3/AUTHORS

@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} --enable-tcl \
 		--with-expat=${LOCALBASE} --enable-xml
@@ -47,7 +47,9 @@ TCLVND=		${TCL_VER:S/.//}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-O$$|="$${CFLAGS}"|g ; \
-		 s|gcc -shared|$$(CC) -shared|g' ${WRKSRC}/configure
+		s|gcc -shared|$$(CC) -shared|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+			${WRKSRC}/configure
 
 post-install:
 .for file in testcore testcores

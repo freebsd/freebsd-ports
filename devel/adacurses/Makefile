@@ -18,7 +18,7 @@ COMMENT=		Curses library for Ada
 
 BUILD_DEPENDS=		gnat:${PORTSDIR}/lang/gnat
 
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--disable-termcap --includedir=${PREFIX}/include/ncurses \

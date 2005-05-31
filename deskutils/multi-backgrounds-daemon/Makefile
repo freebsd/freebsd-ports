@@ -16,7 +16,7 @@ COMMENT=	Change your GNOME2 backgound when you switch to other workspace
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gnomeprefix libgnomeui libwnck
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

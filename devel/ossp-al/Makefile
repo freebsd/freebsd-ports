@@ -24,7 +24,7 @@ LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
