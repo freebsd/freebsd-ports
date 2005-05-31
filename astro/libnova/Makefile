@@ -18,7 +18,7 @@ COMMENT=	Astronomical Calculation Library
 
 USE_GNOME=	gnometarget lthack
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
 post-patch:
