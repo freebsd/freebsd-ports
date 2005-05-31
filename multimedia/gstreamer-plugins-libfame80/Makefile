@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+CATAGORIES=	multimedia
+PORTREVISION=	0
+
 GST_PLUGIN=	libfame
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins

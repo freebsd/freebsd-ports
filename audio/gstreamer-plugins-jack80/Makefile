@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer low-latency audio server plugin
 
 GST_PLUGIN=	jack
 

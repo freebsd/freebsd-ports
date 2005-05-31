@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer libvisual plugin
 
 GST_PLUGIN=	libvisual
 

@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer CD index/audio metadata plugin
 
 GST_PLUGIN=	musicbrainz
 

@@ -74,7 +74,6 @@ GST_ALL_PLUGINS= \
 		theora \
 		vcd \
 		vorbis \
-		xine \
 		vorbistest \
 		xvid
 
@@ -95,9 +94,12 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-osx_audio \
 		--disable-osx_video \
 		--enable-static \
+		--disable-spc \
 		--disable-sunaudio \
 		--disable-gst_v4l \
 		--disable-gst_v4l2 \
+		--enable-wavpack \
+		--disable-xine \
 		--enable-x \
 		--enable-xshm \
 		--enable-xvideo
@@ -229,7 +231,7 @@ LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
 
 # musepack
 .if ${GST_PLUGIN}=="musepack"
-LIB_DEPENDS+=	musepack.2:${PORTSDIR}/audio/libmusepack
+LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec
 .endif
 
 # hermes
@@ -439,11 +441,6 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 # ivorbis
 .if ${GST_PLUGIN}=="ivorbis"
 LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
-.endif
-
-# xine
-.if ${GST_PLUGIN}=="xine"
-LIB_DEPENDS+=	xine.13:${PORTSDIR}/multimedia/libxine
 .endif
 
 # xvid

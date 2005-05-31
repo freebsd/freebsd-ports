@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer mp3 encode plugin
 
 GST_PLUGIN=	lame
 

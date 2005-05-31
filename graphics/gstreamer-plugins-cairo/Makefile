@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer vector graphics plugin
 
 GST_PLUGIN=	cairo
 

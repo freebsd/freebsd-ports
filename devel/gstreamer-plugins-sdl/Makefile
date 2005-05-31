@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	devel
+PORTREVISION=	0
+
+COMMENT=	Gstreamer SDL plugin
 
 GST_PLUGIN=	sdl
 

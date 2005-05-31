@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer speex voice plugin
 
 GST_PLUGIN=	speex
 

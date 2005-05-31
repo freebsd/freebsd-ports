@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer polypaudio sound server plugin
 
 GST_PLUGIN=	polypaudio
 

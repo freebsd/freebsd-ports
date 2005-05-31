@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer kde audio system plugin
 
 GST_PLUGIN=	artsd
 

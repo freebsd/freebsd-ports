@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer mikmod sound plugin
 
 GST_PLUGIN=	mikmod
 

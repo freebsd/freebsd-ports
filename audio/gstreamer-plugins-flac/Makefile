@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer free lossless audio encoder/decoder plugin
 
 GST_PLUGIN=	flac
 

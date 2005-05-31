@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	multimedia
+PORTREVISION=	0
+
+COMMENT=	Gstreamer mpeg decode plugin
+
 GST_PLUGIN=	mpeg2dec
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins

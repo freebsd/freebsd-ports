@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer audio cd playing plugin
 
 GST_PLUGIN=	cdaudio
 

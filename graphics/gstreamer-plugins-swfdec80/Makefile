@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer flash redering plugin
 
 GST_PLUGIN=	swfdec
 

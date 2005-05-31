@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer MPEG-2 and MPEG-4 ACC decoder plugin
 
 GST_PLUGIN=	faad
 

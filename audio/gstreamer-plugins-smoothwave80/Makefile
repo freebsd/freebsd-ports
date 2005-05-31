@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer visualisation plugin
 
 GST_PLUGIN=	smoothwave
 

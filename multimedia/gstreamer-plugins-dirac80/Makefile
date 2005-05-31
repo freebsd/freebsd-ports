@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+CATAGORIES=	multimedia
+PORTREVISION=	0
+
+COMMENT=	Gstreamer dirac plugin
+
 GST_PLUGIN=	dirac
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins

@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	0
+
+COMMENT=	Gstreamer color ascii art plugin
 
 GST_PLUGIN=	libcaca
 

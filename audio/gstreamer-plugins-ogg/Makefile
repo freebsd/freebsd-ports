@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer Ogg bitstream plugin
 
 GST_PLUGIN=	ogg
 

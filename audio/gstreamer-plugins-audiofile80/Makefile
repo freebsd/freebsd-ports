@@ -6,6 +6,9 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	0
+
+COMMENT=	Gstreamer SGI audio file plugin
 
 GST_PLUGIN=	audiofile
 
