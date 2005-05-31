@@ -15,6 +15,7 @@ MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd
 
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
 USE_GNOME=	gnometarget libglade2
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic" \
