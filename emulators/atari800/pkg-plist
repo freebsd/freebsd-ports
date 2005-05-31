@@ -1,12 +1,12 @@
 bin/atari800
-share/atari800/atari800.cfg
-share/atari800/ataribas.rom
-share/atari800/atariosb.rom
-share/atari800/atarixl.rom
-share/atari800/demos1.xfd
-share/atari800/demos2.xfd
-share/atari800/dos25.xfd
-share/atari800/mydos45d.atr
+%%DATADIR%%/atari800.cfg
+%%DATADIR%%/ataribas.rom
+%%DATADIR%%/atariosb.rom
+%%DATADIR%%/atarixl.rom
+%%DATADIR%%/demos1.xfd
+%%DATADIR%%/demos2.xfd
+%%DATADIR%%/dos25.xfd
+%%DATADIR%%/mydos45d.atr
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.OLD
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
@@ -17,4 +17,4 @@ share/atari800/mydos45d.atr
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/atari800
+@dirrm %%DATADIR%%

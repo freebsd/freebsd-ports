@@ -1,0 +1,34 @@
+--- configure.orig	Sat Apr 30 23:18:04 2005
++++ configure	Sat May 28 02:59:23 2005
+@@ -1369,7 +1369,7 @@
+         a8_target="UNKNOWN"
+         ;;
+ esac
+-if [ "$a8_target" == "UNKNOWN" ]; then
++if [ "$a8_target" = "UNKNOWN" ]; then
+     echo
+     echo "Usage: configure --target=<target> <other options>"
+     echo
+@@ -1569,11 +1569,11 @@
+         ;;
+ esac
+ 
+-if [ "X_$CFLAGS" == "X_" ]; then
++if [ "X_$CFLAGS" = "X_" ]; then
+     CFLAGS="-O2 -Wall"
+ fi
+ 
+-if [ "X_$LDFLAGS" == "X_" ]; then
++if [ "X_$LDFLAGS" = "X_" ]; then
+     LDFLAGS="-s"
+ fi
+
+@@ -4386,7 +4386,7 @@
+ 
+ 
+ OBJS=
+-if [ "$a8_host" == "win" ]; then
++if [ "$a8_host" = "win" ]; then
+ 
+ as_ac_Lib=`echo "ac_cv_lib_gdi32''_main" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for main in -lgdi32" >&5

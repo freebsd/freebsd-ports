@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atari800
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari 8-bit computer emulator
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed."
 
@@ -27,15 +28,19 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		atari800.1
+
+CFLAGS+=	-I${LOCALBASE}/include/libpng
+LDFLAGS=	-L${LOCALBASE}/lib
 
 ATARI_XF=	ataribas.rom atariosb.rom atarixl.rom demos1.xfd \
 		demos2.xfd dos25.xfd mydos45d.atr
 
 .if defined(WITH_SDL)
 PKGNAMESUFFIX=	-sdl
-USE_SDL=	yes
+USE_SDL=	sdl
 CONFIGURE_ARGS+=	--target=sdl
 .else
 USE_XLIB=	yes
@@ -54,10 +59,6 @@ CONFIGURE_ARGS+=	--enable-seriosound
 CONFIGURE_ARGS+=	--enable-cripsound
 .endif
 
-.if defined(WITH_SNAILMETER)
-CONFIGURE_ARGS+=	--enable-snailmeter
-.endif
-
 .if defined(WITH_PAGEDATTRIB)
 CONFIGURE_ARGS+=	--enable-pagedattrib
 .endif
@@ -66,16 +67,8 @@ CONFIGURE_ARGS+=	--enable-pagedattrib
 CONFIGURE_ARGS+=	--enable-bufferdlog
 .endif
 
-.if defined(WITH_DISKLED)
-CONFIGURE_ARGS+=	--enable-diskled
-.endif
-
 .if defined(WITH_VERYSLOW)
 CONFIGURE_ARGS+=	--enable-veryslow
-.endif
-
-.if defined(WITH_CURSORBLOCK)
-CONFIGURE_ARGS+=	--enable-cursorblock
 .endif
 
 pre-everything::
@@ -84,15 +77,12 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_SHM=yes		Use X11 frontend without shared memory extensions"
 	@${ECHO_MSG} "	WITH_SDL=yes		Use SDL frontend"
 	@${ECHO_MSG} "	WITH_SERIOSOUND=yes	Use serial in/out sound"
-	@${ECHO_MSG} "	WITH_CLIPSOUND=yes	Use bufferd debug output"
-	@${ECHO_MSG} "	WITH_SNAILMETER=yes	Show how much the emulator is slower than the original"
+	@${ECHO_MSG} "	WITH_CLIPSOUND=yes	Use sound clipping"
 	@${ECHO_MSG} "	WITH_PAGEDATTRIB=yes	Use page-based attribute array"
 	@${ECHO_MSG} "	WITH_BUFFERDLOG=yes	Use buffered debug output"
 	@${ECHO_MSG} "				(until the graphics mode switches back to text mode)"
-	@${ECHO_MSG} "	WITH_DISKLED=yes	Show disk LED emulation on screen display"
 	@${ECHO_MSG} "	WITH_VERYSLOW=yes	Use very slow computer support"
-	@${ECHO_MSG} "				(disables generating screen completely)"
-	@${ECHO_MSG} "	WITH_CURSORBLOCK=yes	Using cursor/ctrl keys for keyboard joystick"
+	@${ECHO_MSG} "				(use with the -refresh option)"
 	@${ECHO_MSG} ""
 
 post-patch:
@@ -105,7 +95,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
-	@unzip -q -L -o ${DISTDIR}/${DIST_SUBDIR}/xf25.zip ${ATARI_XF} -d ${WRKSRC}
+	@${UNZIP_CMD} -q -L -o ${DISTDIR}/${DIST_SUBDIR}/xf25.zip ${ATARI_XF} -d ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/atari800 ${PREFIX}/bin/atari800
