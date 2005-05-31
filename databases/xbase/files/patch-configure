@@ -1,0 +1,11 @@
+--- configure.orig	Tue May 31 19:03:06 2005
++++ configure	Tue May 31 19:03:17 2005
+@@ -1689,7 +1689,7 @@
+ # Actually configure libtool.  ac_aux_dir is where install-sh is found.
+ CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
+ LD="$LD" NM="$NM" RANLIB="$RANLIB" LN_S="$LN_S" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig \
++$ac_aux_dir/ltconfig \
+ $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+  CC=$ac_save_cc

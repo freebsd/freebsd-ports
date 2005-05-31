@@ -25,6 +25,8 @@ include/xbase/xbstring.h
 include/xbase/xdate.h
 include/xbase/xstack.h
 include/xbase/xtypes.h
+lib/libxbase-2.0.so
 lib/libxbase-2.0.so.0
+lib/libxbase.a
 lib/libxbase.so
 @dirrm include/xbase
