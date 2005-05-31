@@ -15,6 +15,8 @@ COMMENT=	ANSI/Turbo Pascal to C/C++ converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+BROKEN=		Size mismatch
+
 USE_XLIB=	yes
 USE_BISON=	yes
 
