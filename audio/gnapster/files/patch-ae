@@ -1,5 +1,5 @@
---- configure.orig	Sat Jun 16 23:06:15 2001
-+++ configure	Sat Jun 16 23:07:23 2001
+--- configure.orig	Mon Jun  4 09:02:09 2001
++++ configure	Tue May 31 16:22:07 2005
 @@ -1323,7 +1323,7 @@
  
  GNAPSTER_INCLUDES=""
@@ -30,4 +30,13 @@
 +  GNAPSTER_LDADD="`$GTK_CONFIG --libs`"
  fi
  
+ 
+@@ -2927,7 +2927,7 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
++$ac_aux_dir/ltconfig --no-reexec \
+ $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $lt_target \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
  
