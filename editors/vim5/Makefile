@@ -51,7 +51,7 @@ WITHOUT_X11=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
 #MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=yes" ${I18N}
 .elif defined(WITH_GTK)
-USE_GTK=	yes
+USE_GNOME+=	gtk12
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
 .else
 USE_MOTIF=	yes
