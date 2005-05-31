@@ -1,0 +1,14 @@
+--- protolib/unix/Makefile.freebsd.orig	Tue May 31 15:36:12 2005
++++ protolib/unix/Makefile.freebsd	Tue May 31 15:36:35 2005
+@@ -5,9 +5,9 @@
+ # 1) System specific additional libraries, include paths, etc
+ #    (Where to find X11 libraries, etc)
+ #
+-SYSTEM_INCLUDES =  
++SYSTEM_INCLUDES = %%PTHREAD_CFLAGS%% 
+ SYSTEM_LDFLAGS =  
+-SYSTEM_LIBS = -lc_r
++SYSTEM_LIBS = 
+ 
+ # 2) System specific capabilities
+ # Must choose appropriate for the following:
