@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	slmon
-PORTVERSION=	0.5.12
-PORTREVISION=	3
+PORTVERSION=	0.5.13
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +22,7 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		slmon.1
@@ -36,8 +36,5 @@ LDFLAGS=	-L${LOCALBASE}/lib -lncurses -lm
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/glibtop_free/g_free/g' ${WRKSRC}/draw.c ${WRKSRC}/stat.c
 
 .include <bsd.port.post.mk>
