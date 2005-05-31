@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple database library
 
 USE_GNOME=	gnometarget lthack
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 MAN3=		sdb.3 sdb_init.3 sdb_open.3 sdb_close.3 sdb_query.3
