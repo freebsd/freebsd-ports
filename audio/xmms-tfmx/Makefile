@@ -19,11 +19,12 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12 lthack
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 
 PLIST_FILES=	lib/xmms/Input/libtfmx.so
 
 do-install:
+	${MKDIR} ${PREFIX}/lib/xmms/Input
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libtfmx.so ${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>

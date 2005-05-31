@@ -20,7 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Type 1 Rasterizer Library for UNIX/X11
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_REINPLACE=	yes
+USE_INC_LIBTOOL_VER=15
 ALL_TARGET=	without_doc
 INSTALLS_SHLIB=	yes
 
@@ -32,6 +33,15 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^LIBTOOL[ ]*=.*|LIBTOOL=${LIBTOOL}|' \
+		${WRKSRC}/xglyph/Makefile.in ${WRKSRC}/lib/type1/Makefile.in \
+		${WRKSRC}/lib/t1lib/Makefile.in ${WRKSRC}/lib/Makefile.in \
+		${WRKSRC}/type1afm/Makefile.in ${WRKSRC}/examples/Makefile.in
+
 
 post-install:
 .if !defined(NOPORTDOCS)

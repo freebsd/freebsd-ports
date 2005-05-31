@@ -17,7 +17,6 @@ include/libzt/progname.h
 include/libzt/str.h
 include/libzt/zt.h
 lib/libzt.a
-lib/libzt.la
 lib/libzt.so
 lib/libzt.so.0
 @dirrm include/libzt/cfg
