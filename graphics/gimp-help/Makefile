@@ -21,6 +21,7 @@ DISTNAME=	${PORTNAME}-2-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GIMP user's manual
 
+BUILD_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp
 RUN_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp
 
 USE_X_PREFIX=	yes
