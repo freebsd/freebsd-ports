@@ -11,7 +11,7 @@ Features:
   colors, packages matching a string)
 - simple hijacking of a routed connection (in both directions)
 - dns-hijacking of a dns-spoofed connection over switched LAN (todo)
-- logging to text fil
+- logging to text file
 
 WWW:	http://vidatapipe.sourceforge.net/
 AUTHOR:	<embyte@madlab.it>
