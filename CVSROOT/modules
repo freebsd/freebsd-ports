@@ -9720,7 +9720,6 @@ py-ltxml	ports/textproc/py-ltxml
 py-lzma		ports/archivers/py-lzma
 py-m2crypto	ports/security/py-m2crypto
 py-mad		ports/audio/py-mad
-py-martel	ports/textproc/py-martel
 py-matplotlib	ports/math/py-matplotlib
 py-mcrypt	ports/security/py-mcrypt
 py-mechanize	ports/www/py-mechanize
