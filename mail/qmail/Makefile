@@ -46,9 +46,17 @@ BARRIER_QMAILQUEUE_PATCH=	yes
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
-BARRIER_SENDMAIL_F_PATCH=yes
-BARRIER_BIG_TODO_PATCH=yes
-BARRIER_LOCALTIME_PATCH=yes
+BARRIER_SENDMAIL_F_PATCH=	yes
+BARRIER_BIG_TODO_PATCH=		yes
+BARRIER_LOCALTIME_PATCH=	yes
+.endif
+
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_MYSQL) || \
+    defined(SLAVE_SMTP_AUTH_TLS) || \
+    defined(SLAVE_SPAMCONTROL) || \
+    defined(SLAVE_TLS)
+BARRIER_SPF_PATCH=		yes
 .endif
 
 .if !defined(BARRIER_DNS_PATCH)
@@ -136,6 +144,9 @@ OPTIONS+=	BLOCKEXEC_PATCH "block many windows viruses/worms" off
 .endif
 .if !defined(BARRIER_DISCBOUNCES_PATCH)
 OPTIONS+=	DISCBOUNCES_PATCH "discard double-bounces" off
+.endif
+.if !defined(BARRIER_SPF_PATCH)
+OPTIONS+=	SPF_PATCH "Implement SPF checker" off
 .endif
 .if defined(SLAVE_TLS) || defined(SLAVE_SMTP_AUTH_TLS)
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
@@ -304,6 +315,11 @@ PATCHFILES+=	qmail-block-executables.patch:blockexec
 .if defined(WITH_DISCBOUNCES_PATCH) && !defined(BARRIER_DISCBOUNCES_PATCH)
 PATCH_SITES+=	http://www.alexdupre.com/qmail/:doublebounce
 PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
+.endif
+
+.if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
+PATCH_SITES+=	http://www.saout.de/misc/spf/:spf
+PATCHFILES+=	qmail-spf-rc5.patch:spf
 .endif
 
 .if !defined(BARRIER_DNS_PATCH) \
