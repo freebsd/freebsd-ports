@@ -3248,7 +3248,6 @@ gstreamer-plugins-speex		ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-swfdec	ports/graphics/gstreamer-plugins-swfdec
 gstreamer-plugins-theora	ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-vorbis	ports/audio/gstreamer-plugins-vorbis
-gstreamer-plugins-xine		ports/multimedia/gstreamer-plugins-xine
 gstreamer-plugins-xvid		ports/multimedia/gstreamer-plugins-xvid
 gsubedit	ports/multimedia/gsubedit
 gsystem		ports/science/gsystem
