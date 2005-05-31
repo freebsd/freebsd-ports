@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTVERSION=	2.10.2
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -66,6 +65,10 @@ EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 .if ${MOZILLA}=="mozilla-devel"
 USE_GCC=	3.4
 .endif
+.endif
+
+.if exists(${X11BASE}/lib/libgdl-1.so)
+LIB_DEPENDS+=	gdl-1:${PORTSDIR}/x11-toolkits/gdl
 .endif
 
 post-patch:
