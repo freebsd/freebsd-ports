@@ -14,6 +14,9 @@ MASTER_SITES=	# none left
 # the project isn't available on freshmeat.net anymore.
 # informed maintainer - edwin 20021226
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to rename mismatched and garbled MP3 filenames
 

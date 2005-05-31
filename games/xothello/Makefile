@@ -13,6 +13,9 @@ MASTER_SITES=	# http://makosteszta.sote.hu/linux/othello/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Othello aka Reversi game for X Window
 

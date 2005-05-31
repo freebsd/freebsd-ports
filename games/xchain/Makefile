@@ -11,6 +11,9 @@ CATEGORIES=	games
 MASTER_SITES=	# no longer available
 DISTNAME=	${PORTNAME}_1.0-2
 
+DEPRECATED=	"master site disappeared, Debian archive has 1.0.1"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chain Reaction, a strategy game for 2-4 players
 

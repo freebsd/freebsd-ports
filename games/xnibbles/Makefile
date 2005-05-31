@@ -12,6 +12,9 @@ CATEGORIES=	games
 MASTER_SITES=	http://tinton.braschka.org/Files/pub/games/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/BETA/}
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple X11 snake game, like one seen in MS-DOS qbasic
 

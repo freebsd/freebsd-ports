@@ -12,6 +12,9 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cyclooctane.com/sonice/release/
 
+DEPRECATED=	"master site is now a domain holder"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sonice eases reencoding of .ogg files
 

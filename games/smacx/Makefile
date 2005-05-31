@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://download.linuxlords.com/pub/demos/smac/ \
 DISTNAME=	${PORTNAME}-demo-x86
 EXTRACT_SUFX=	.run
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free demo of Sid Meier's Alpha Centauri
 

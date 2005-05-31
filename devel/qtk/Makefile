@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.jump.net/~brooke/qtk/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A neat development tool for various languages
 

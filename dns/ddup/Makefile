@@ -12,6 +12,9 @@ CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITES_LOCAL}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
+DEPRECATED=	"master site disappeared, try dns/ipcheck"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DynDNS.org client for UNIX (Now support NIC v2.0)
 

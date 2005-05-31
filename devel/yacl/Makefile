@@ -11,6 +11,9 @@ CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.cs.sc.edu/pub/yacl/
 DISTNAME=		yacl-0170-beta
 
+DEPRECATED=		"master site disappeared, no trace under sc.edu"
+EXPIRATION_DATE=	2005-07-31
+
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Portable programming library for C++
 

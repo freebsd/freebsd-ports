@@ -13,6 +13,9 @@ CATEGORIES=	games
 MASTER_SITES=	# http://www.rzuser.uni-heidelberg.de/~dheck/columns/
 DISTNAME=	Columns-${PORTVERSION}
 
+DEPRECATED=	"no longer available on master site"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice little implementation of columns game for X Window System
 

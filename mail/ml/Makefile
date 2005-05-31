@@ -11,6 +11,9 @@ CATEGORIES=	mail
 # mastersite disappeared in October 2003
 MASTER_SITES=	# http://ftp.rge.com/pub/mail/ml/
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 IMAP client
 

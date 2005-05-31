@@ -10,6 +10,9 @@ PORTVERSION=	0.2.14
 CATEGORIES=	mail
 MASTER_SITES=	http://hell.binec.ru/crashecho/
 
+DEPRECATED=	"sourceforge site \(crashecho\) up but barren"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An FTN JAM and *.MSG tosser
 

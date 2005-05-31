@@ -12,6 +12,9 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cooptel.qc.ca/~limitln/
 
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple program to administrate users of a CVS repository
 
