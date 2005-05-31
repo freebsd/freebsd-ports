@@ -8,7 +8,7 @@
 
 PORTNAME=	tables
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pytables
@@ -20,7 +20,7 @@ COMMENT=	A hierarchical database for Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
-		lzo.2:${PORTSDIR}/archivers/lzo \
+		lzo.1:${PORTSDIR}/archivers/lzo \
 		ucl.1:${PORTSDIR}/archivers/ucl
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 

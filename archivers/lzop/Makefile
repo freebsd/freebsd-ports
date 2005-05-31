@@ -7,14 +7,14 @@
 
 PORTNAME=	lzop
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.lzop.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast file compressor similar to gzip, using the LZO library
 
-LIB_DEPENDS=	lzo.2:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

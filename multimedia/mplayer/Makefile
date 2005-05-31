@@ -264,7 +264,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -727,7 +727,7 @@ LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 .endif
 
 .if defined(WITH_LZO)
-LIB_DEPENDS+=	lzo.2:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 .else
 CONFIGURE_ARGS+=	--disable-liblzo
 .endif
