@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	teamspeak_server
-PORTVERSION=	2.0.19.40
-PORTREVISION=1
+PORTVERSION=	2.0.20.1
 CATEGORIES=	audio net
-MASTER_SITES=	ftp://ftp2.teamspeak.org/releases/ \
-		ftp://teamspeak.krawall.de/releases/
-DISTNAME=	ts2_server_rc2_201940
+MASTER_SITES=	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/
+DISTNAME=	ts2_server_rc2_20201
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side of the TeamSpeak group voice chat system
 
 WRKSRC=		${WRKDIR}/tss2_rc2
