@@ -24,6 +24,8 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/l
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
 		${LINUXBASE}/usr/X11R6/lib/libXext.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
+BROKEN=		Unfetchable
+
 CONFLICTS=	acroread
 
 ONLY_FOR_ARCHS=	amd64 i386
