@@ -7,6 +7,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	0.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,6 +21,8 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+
+OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 
 .include <bsd.port.pre.mk>
 
@@ -42,6 +45,15 @@ post-patch:
 		s|-fno-rtti||; \
 		s|-ffast-math|${CXXFLAGS} -I${X11BASE}/include|' \
 		${WRKSRC}/config/makefile.unix-gcc
+.if !defined(WITHOUT_OPCODE)
+	@${REINPLACE_CMD} -e \
+		's/^#OPCODE_DIRECTORY/OPCODE_DIRECTORY/' \
+		${WRKSRC}/config/user-settings
+.endif
+
+do-configure:
+	cd ${WRKSRC} ; ${GMAKE} configure
+	@${REINPLACE_CMD} -e '/include.*values.h/d' ${WRKSRC}/include/ode/config.h
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/libode.a ${PREFIX}/lib
