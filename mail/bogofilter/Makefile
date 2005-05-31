@@ -31,7 +31,7 @@ PATCH_STRIP=	-p1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BASH)
+.if !defined(WITHOUT_BASH)
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--enable-iconv
 USE_ICONV=		yes
 BF_LIBS+=		-liconv
 .endif
-.if defined(WITH_GSL)
+.if !defined(WITHOUT_GSL)
 LIB_DEPENDS+=		gsl:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--with-included-gsl
@@ -103,9 +103,8 @@ post-install::
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
 	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
-	${INSTALL_DATA} ${FILESDIR}/ChangeLog.port ${DOCSDIR}
 .endif
-.if defined(WITH_BASH)
+.if !defined(WITHOUT_BASH)
 .for i in randomtrain scramble trainbogo.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/
 .endfor
