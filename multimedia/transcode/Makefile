@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 DISTVERSION=	1.0.0beta3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -270,7 +271,7 @@ CONFIGURE_ARGS+=	--disable-lame
 .endif
 
 .if defined(WITH_LZO)
-LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS+=	lzo.2:${PORTSDIR}/archivers/lzo
 CONFIGURE_ARGS+=	--enable-lzo --with-lzo-prefix=${LOCALBASE} \
 					--with-lzo-includes=${LOCALBASE}
 PLIST_SUB+=	WITH_LZO=""
