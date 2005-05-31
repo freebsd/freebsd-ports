@@ -30,9 +30,18 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
 
+OPTIONS=	GNOME	"Enable GNOME desktop support"	off \
+		IMLIB	"Build with Imlib support"	off \
+		ESOUND	"Enable EsounD daemon support"	off \
+		XFT	"Enable Xft support for fonts"	on \
+		XINERAMA "Enable Xinerama support"	on \
+		X86_ASM	"Use optimized x86 assembly code" on \
+		BEASTIE	"Use Beastie'fied startup button" off \
+		NLS	"Enable National Language Support" on
+
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgnomedesktop}!=""
+.if ${HAVE_GNOME:Mgnomedesktop}!="" || defined(WITH_GNOME)
 USE_GNOME+=	gnomedesktop
 CONFIGURE_ARGS+=	--enable-menus-gnome2
 INSTALL_TARGET=		install install-gnome
@@ -42,7 +51,7 @@ PKGNAMESUFFIX=	-gnome
 PLIST_SUB+=	GNOMEDESKTOP="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mimlib}!=""
+.if ${HAVE_GNOME:Mimlib}!="" || defined(WITH_IMLIB)
 USE_GNOME+=	imlib
 CONFIGURE_ARGS+=	--with-imlib
 .else
@@ -50,7 +59,7 @@ USE_XPM=	yes
 CONFIGURE_ARGS+=	--without-imlib
 .endif
 
-.if ${HAVE_GNOME:Mesound}!=""
+.if ${HAVE_GNOME:Mesound}!="" || defined(WITH_ESOUND)
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--with-icesound=esound
 .else
@@ -72,7 +81,7 @@ CONFIGURE_ARGS+=	--disable-xinerama
 CONFIGURE_ARGS+=	--disable-x86-asm
 .endif
 
-.if defined(WITH_BEASTIE_STARTUP_PIXMAP)
+.if defined(WITH_BEASTIE)
 STARTUP_PIXMAP=		bsd-daemon.xpm
 .else
 STARTUP_PIXMAP=		icewm-logo.xpm
