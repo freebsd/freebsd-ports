@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Archive
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	antonio@php.net
@@ -21,27 +21,29 @@ OPTIONS=	PEAR_MAIL "PEAR::Mail support" off \
 
 CATEGORY=	File
 FILES=		Archive.php Archive/Predicate.php Archive/Reader.php Archive/Writer.php \
-		Archive/Predicate/And.php Archive/Predicate/Custom.php \
+		Archive/Predicate/And.php Archive/Predicate/Current.php \
+		Archive/Predicate/Custom.php Archive/Predicate/Duplicate.php \
 		Archive/Predicate/Ereg.php Archive/Predicate/Eregi.php \
 		Archive/Predicate/Extension.php Archive/Predicate/False.php \
-		Archive/Predicate/MaxDepth.php Archive/Predicate/MIME.php \
-		Archive/Predicate/MinSize.php Archive/Predicate/MinTime.php \
-		Archive/Predicate/Not.php Archive/Predicate/Or.php \
-		Archive/Predicate/True.php Archive/Reader/Ar.php \
-		Archive/Reader/Archive.php Archive/Reader/Bzip2.php \
-		Archive/Reader/ChangeName.php Archive/Reader/Concat.php \
-		Archive/Reader/Directory.php Archive/Reader/File.php \
-		Archive/Reader/Filter.php Archive/Reader/Gzip.php \
-		Archive/Reader/Memory.php Archive/Reader/MimeList.php \
-		Archive/Reader/Multi.php Archive/Reader/Relay.php \
-		Archive/Reader/Select.php Archive/Reader/Tar.php \
-		Archive/Reader/Uncompress.php Archive/Reader/Zip.php \
-		Archive/Writer/Ar.php Archive/Writer/Archive.php \
-		Archive/Writer/Bzip2.php Archive/Writer/Files.php \
-		Archive/Writer/Gzip.php Archive/Writer/Mail.php \
-		Archive/Writer/Memory.php Archive/Writer/MemoryArchive.php \
-		Archive/Writer/Multi.php Archive/Writer/Output.php \
-		Archive/Writer/Tar.php Archive/Writer/Zip.php
+		Archive/Predicate/Index.php Archive/Predicate/MaxDepth.php \
+		Archive/Predicate/MIME.php Archive/Predicate/MinSize.php \
+		Archive/Predicate/MinTime.php Archive/Predicate/Not.php \
+		Archive/Predicate/Or.php Archive/Predicate/True.php \
+		Archive/Reader/Ar.php Archive/Reader/Archive.php \
+		Archive/Reader/Bzip2.php Archive/Reader/ChangeName.php \
+		Archive/Reader/Concat.php Archive/Reader/Directory.php \
+		Archive/Reader/File.php Archive/Reader/Filter.php \
+		Archive/Reader/Gzip.php Archive/Reader/Memory.php \
+		Archive/Reader/MimeList.php Archive/Reader/Multi.php \
+		Archive/Reader/Relay.php Archive/Reader/Select.php \
+		Archive/Reader/Tar.php Archive/Reader/Uncompress.php \
+		Archive/Reader/Zip.php Archive/Writer/Ar.php \
+		Archive/Writer/Archive.php Archive/Writer/Bzip2.php \
+		Archive/Writer/Files.php Archive/Writer/Gzip.php \
+		Archive/Writer/Mail.php Archive/Writer/Memory.php \
+		Archive/Writer/MemoryArchive.php Archive/Writer/Multi.php \
+		Archive/Writer/Output.php Archive/Writer/Tar.php \
+		Archive/Writer/UniqueAppender.php Archive/Writer/Zip.php
 DOCS=		readme.txt
 TESTS=		test.php
 _DOCSDIR=	doc
