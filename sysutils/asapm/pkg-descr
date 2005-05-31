@@ -6,3 +6,5 @@ battery remaining and (b) estimated time to dead.
 
 NOTE: You need APM driver in your kernel. And enable it to edit
       file /etc/rc.conf at `apm_enable=NO' to `YES'.
+
+WWW: http://www.tigr.net/afterstep/view.php?applet=asapm/data
