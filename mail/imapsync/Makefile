@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.127
+PORTVERSION=	1.133
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/ \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,des,}
