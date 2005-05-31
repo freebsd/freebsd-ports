@@ -5,6 +5,7 @@
 
 PORTNAME=	alphabet_sounds_fr
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	french games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	childsplay
@@ -15,8 +16,6 @@ COMMENT=	Educative games for children. Alphabet sounds package (french)
 
 BUILD_DEPENDS=	${X11BASE}/bin/childsplay:${PORTSDIR}/games/childsplay
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Size mismatch
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
