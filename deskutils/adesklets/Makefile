@@ -27,6 +27,12 @@ INFO=		adesklets \
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*.html
 .endif
@@ -40,4 +46,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
