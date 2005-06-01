@@ -4970,6 +4970,7 @@ led		ports/editors/led
 ledit		ports/sysutils/ledit
 leim20		ports/editors/leim20
 leim21		ports/editors/leim21
+lemmatizer	ports/textproc/lemmatizer
 lemon		ports/devel/lemon
 leo		ports/editors/leo
 leoarg		ports/devel/leoarg
