@@ -30,3 +30,5 @@ share/locale/ua/LC_MESSAGES/tagtool.mo
 %%DATADIR%%/tagtool.glade
 %%DATADIR%%/warn.png
 @dirrm %%DATADIR%%
+@unexec /bin/rmdir %D/share/locale/ua/LC_MESSAGES 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/locale/ua 2>/dev/null || /usr/bin/true
