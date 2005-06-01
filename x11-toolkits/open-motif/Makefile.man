@@ -2,7 +2,7 @@ MAN1= \
 	mwm.1 \
 	uil.1 \
 	xmbind.1
-.if !defined(WITHOUT_OPENMOTIF_DEMOS)
+.if defined(WITH_OPENMOTIF_DEMOS)
 MAN1+= \
 	autopopups.1 \
 	earth.1 \

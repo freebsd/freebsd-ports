@@ -347,11 +347,11 @@ lib/libUil.so.3
 lib/libXm.a
 lib/libXm.so
 lib/libXm.so.3
-%%DOCSDIR%%/BUGREPORT
-%%DOCSDIR%%/COPYRIGHT.MOTIF
-%%DOCSDIR%%/README
-%%DOCSDIR%%/RELNOTES
-@dirrm %%DOCSDIR%%
+%%MANUALS%%%%DOCSDIR%%/BUGREPORT
+%%MANUALS%%%%DOCSDIR%%/COPYRIGHT.MOTIF
+%%MANUALS%%%%DOCSDIR%%/README
+%%MANUALS%%%%DOCSDIR%%/RELNOTES
+%%MANUALS%%@dirrm %%DOCSDIR%%
 %%MOTIF_DEMOS%%@dirrm lib/X11/uid/swedish/uid
 %%MOTIF_DEMOS%%@dirrm lib/X11/uid/swedish
 %%MOTIF_DEMOS%%@dirrm lib/X11/uid/japanese/uid
