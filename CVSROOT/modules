@@ -1160,6 +1160,7 @@ codecrusader	ports/devel/codecrusader
 codeville	ports/devel/codeville
 codeworker	ports/devel/codeworker
 cog		ports/sysutils/cog
+cogito		ports/devel/cogito
 coldsync	ports/palm/coldsync
 cole		ports/textproc/cole
 collections	ports/java/collections
