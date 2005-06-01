@@ -28,10 +28,6 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 503001
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
