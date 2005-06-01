@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ae6ec9b8-2f43-4d02-8129-c6a3a53ef09d">
+    <topic>xview -- multiple buffer overflows in xv_parse_one</topic>
+    <affects>
+      <package>
+	<name>xview</name>
+	<range><lt>3.2.1_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian Security Advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-672">
+	  <p>Erik Sjölund discovered that programs linked against xview
+	    are vulnerable to a number of buffer overflows in the XView
+	    library. When the overflow is triggered in a program which
+	    is installed setuid root a malicious user could perhaps
+	    execute arbitrary code as privileged user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0076</cvename>
+      <url>http://www.debian.org/security/2005/dsa-672</url>
+      <url>http://xforce.iss.net/xforce/xfdb/19271</url>
+    </references>
+    <dates>
+      <discovery>2005-02-09</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7e8d2ca-410e-40b2-8748-3abd021e44a9">
     <topic>xtrlock -- X display locking bypass</topic>
     <affects>
