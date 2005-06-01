@@ -37,6 +37,7 @@
     SUBDIR += bbapm
     SUBDIR += bbsmount
     SUBDIR += bchunk
+    SUBDIR += be_agent
     SUBDIR += bkpupsd
     SUBDIR += bksh
     SUBDIR += blimitd

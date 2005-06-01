@@ -1,0 +1,24 @@
+# This port requires 3 steps in order to enable it.
+#
+# 1. Edit the config file located at %%PREFIX%%/etc/be-agent.cfg.sample.  Be 
+# sure  to enter the hostname of your Backup Exec server, and then make a 
+#  matching entry for it in /etc/hosts:
+#
+# be-agent.cfg.sample:
+# tell my_backup_exec_server_hostname
+#
+# /etc/hosts:
+# 192.168.1.3	my_backup_exec_server_hostname
+#
+#  Save your config file as %%PREFIX%%/etc/be-agent.cfg
+#
+# 2. Add the following line to your /etc/services:
+#
+# grfs 6101/tcp # Backup Exec Agent
+#
+# 3. Add the following lines to /etc/rc.conf
+#
+# be_agent_enable="YES"
+# linux_enable="YES"
+#
+#
