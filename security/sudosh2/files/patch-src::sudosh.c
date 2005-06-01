@@ -1,5 +1,5 @@
---- src/sudosh.c.orig	Tue Mar 22 21:05:05 2005
-+++ src/sudosh.c	Thu Mar 24 14:54:25 2005
+--- src/sudosh.c.orig	Thu May 12 19:37:44 2005
++++ src/sudosh.c	Wed Jun  1 14:05:14 2005
 @@ -24,6 +24,9 @@
  #include <unistd.h>
  #include <signal.h>
@@ -10,9 +10,9 @@
  
  #include "config.h"
  
-@@ -75,6 +78,12 @@
- #define SIGCHLD	SIGCLD
- #endif
+@@ -81,6 +84,12 @@
+ 
+ #define WRITE(a, b, c) do_write(a, b, c, __FILE__, __LINE__)
  
 +#ifdef __FreeBSD__
 +#include <sys/types.h>
@@ -23,57 +23,35 @@
  static struct termios termorig;
  static struct winsize winorig;
  
-@@ -105,6 +114,9 @@
- static int findms(struct pst *);
- void mysyslog(int, const char *, ...);
- void mklogdir(void);
-+#ifdef __FreeBSD__
-+static void sanemode(int ttyfd);
-+#endif
- 
- int main(int argc, char *argv[], char *environ[])
+@@ -423,17 +432,41 @@
  {
-@@ -265,8 +277,9 @@
-     mysyslog(LOG_INFO, start_msg);
-     mysyslog(LOG_INFO, "to view this session type: sudosh-replay %s-%s-%i",
- 	     sudo_user, user_name, now);
--
-+#ifndef __FreeBSD__
-     rawmode(0);
-+#endif
+     char *sname;
  
-     if (findms(&pspair) < 0) {
- 	perror("open pty failed");
-@@ -283,6 +296,9 @@
-     default:
- 	close(pspair.sfd);
-     }
-+#ifdef __FreeBSD__
-+    rawmode (0);
-+#endif
- 
-     setuid(getuid());
- 
-@@ -372,15 +388,30 @@
- 
-     if ((p->mfd = open("/dev/ptmx", O_RDWR)) == -1) {
- 	if ((p->mfd = open("/dev/ptc", O_RDWR)) == -1) {
--	    perror("Cannot open cloning master pty");
--	    return -1;
 +#ifdef __FreeBSD__
 +#define PTYLEN        16
-+	    if ((int)(sname= malloc(PTYLEN)) == -1) {
-+		perror("Cannot allocate memory");
-+		return -1;
-+	    }
-+	    if (openpty(&p->mfd, &p->sfd, sname, NULL, NULL) == -1) {
++    char sname_area[PTYLEN];
++    struct termios tt;
++    struct winsize win;
++
++    sname = sname_area;
++    if (tcgetattr(STDIN_FILENO, &tt) == -1) {
++	perror("tcgetattr");
++	return -1;
++    }
++    if (ioctl(STDIN_FILENO, TIOCGWINSZ, &win) == -1) {
++	perror("ioctl");
++	return -1;
++    }
++    if (openpty(&p->mfd, &p->sfd, sname, &tt, &win) == -1) {
++#else
+     if ((p->mfd = open("/dev/ptmx", O_RDWR)) == -1) {
+ 	if ((p->mfd = open("/dev/ptc", O_RDWR)) == -1) {
 +#endif
-+		perror("Cannot open cloning master pty");
-+		return -1;
-+#ifdef __FreeBSD__
-+	    }
-+#endif
+ 	    perror("Cannot open cloning master pty");
+ 	    return -1;
++#ifndef __FreeBSD__
  	}
++#endif
      }
  
 +#if !defined(__FreeBSD_version) || (defined(__FreeBSD_version) && __FreeBSD_version >= 500000)
@@ -87,67 +65,62 @@
  
      if ((p->sfd = open(sname, O_RDWR)) == -1) {
  	perror("open slave pty");
-@@ -447,10 +478,46 @@
-     abort();
- }
+@@ -488,7 +521,10 @@
+     for (i = 3; i < 100; ++i)
+ 	close(i);
  
+-#ifdef TCSETS
 +#ifdef __FreeBSD__
-+static void sanemode(int ttyfd)
-+{
-+    static struct termios termnew;
-+
-+    if (tcgetattr(ttyfd, &termnew) == -1) {
-+	perror ("tcgetattr failed");
-+	exit (1);
-+    }
-+    termnew.c_cflag = TTYDEF_CFLAG | (termnew.c_cflag & CLOCAL);
-+    termnew.c_iflag = TTYDEF_IFLAG;
-+    termnew.c_iflag |= ICRNL;
-+    /* preserve user-preference flags in lflag */
-+#define LKEEP   (ECHOKE|ECHOE|ECHOK|ECHOPRT|ECHOCTL|ALTWERASE|TOSTOP|NOFLSH)
-+    termnew.c_lflag = TTYDEF_LFLAG | (termnew.c_lflag & LKEEP);
-+    termnew.c_oflag = TTYDEF_OFLAG;
-+    if (tcsetattr(ttyfd, TCSAFLUSH, &termnew) == -1) {
-+	perror ("tcsetattr (sane) failed");
-+	exit (1);
-+    }
-+}
-+#endif
-+
- static void rawmode(int ttyfd)
++    (void) tcsetattr(0, TCSADRAIN, &termorig);
++    (void) login_tty(pst->sfd);
++#else
+     (void) ioctl(0, TCSETS, &termorig);
+ #endif
+     (void) ioctl(0, TIOCSWINSZ, &winorig);
+@@ -528,25 +564,32 @@
  {
      static struct termios termnew;
  
+-#ifdef TCGETS
 +#ifdef __FreeBSD__
-+    if (tcgetattr(ttyfd, &termnew) == -1) {
-+	perror ("tcgetattr failed");
-+	exit (1);
-+    }
-+    cfmakeraw(&termnew);
-+    termnew.c_cflag &= ~(CSIZE|PARENB);
-+    termnew.c_cflag |= CS8;
-+    if (tcsetattr(ttyfd, TCSADRAIN, &termnew) == -1) {
-+	perror ("tcsetattr (raw) failed");
-+	exit (1);
-+    }
-+#else  __FreeBSD__
- #ifdef TCGETS
++    if (tcgetattr(ttyfd, &termorig) == -1) {
++	perror("tcgetattr failed");
++#else
      if (ioctl(ttyfd, TCGETS, &termorig) == -1) {
  	perror("ioctl TCGETS failed");
-@@ -472,12 +539,16 @@
- #ifdef TCSETS
++#endif
+ 	exit(1);
+     }
+-#endif
+ 
+     if (ioctl(ttyfd, TIOCGWINSZ, &winorig) == -1) {
+ 	perror("ioctl TIOCGWINSZ failed");
+ 	exit(1);
+     }
+ 
++#ifdef __FreeBSD__
++    (void) cfmakeraw(&termnew);
++    termnew.c_lflag &= ~ECHO;
++    (void) tcsetattr(ttyfd, TCSAFLUSH, &termnew);
++#else
+     termnew.c_cc[VEOF] = 1;
+     termnew.c_iflag = BRKINT | ISTRIP | IXON | IXANY;
+     termnew.c_oflag = 0;
+     termnew.c_cflag = termorig.c_cflag;
+     termnew.c_lflag &= ~ECHO;
+ 
+-#ifdef TCSETS
      (void) ioctl(ttyfd, TCSETS, &termnew);
  #endif
-+#endif __FreeBSD__
  }
- 
- static void bye(int signum)
- {
- #ifdef TCSETS
-     (void) ioctl(0, TCSETS, &termorig);
-+#endif
+@@ -556,7 +599,9 @@
+     char s[32];
+     char t[32];
+     char *sp, *tp;
+-#ifdef TCSETS
 +#ifdef __FreeBSD__
-+    sanemode(0);
++    (void) tcsetattr(0, TCSADRAIN, &termorig);
++#else
+     (void) ioctl(0, TCSETS, &termorig);
  #endif
  
-     fclose(fttime);
