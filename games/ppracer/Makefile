@@ -7,13 +7,15 @@
 
 PORTNAME=	ppracer
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/ppracer/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	3D Downhill racing game... kindof like TuxRacer Improved
 
-LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_SDL=	mixer sdl
