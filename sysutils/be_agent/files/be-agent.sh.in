@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# PROVIDE: be-agent
+# REQUIRE: LOGIN
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable be-agent:
+#
+#be_agent_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=be_agent
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/agent.be"
+
+# set defaults
+
+be_agent_enable=${be_agent_enable:-"NO"}
+be_agent_cfg=${be_agent_cfg:-"%%PREFIX%%/etc/be-agent.cfg"}
+be_agent_flags=${be_agent_flags:-"-c ${be_agent_cfg} &"}
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,16 @@
+#
+#
+# Below is an example configuration.  Please use your real hostname.  The 
+# field 'force_address' is only needed if your machine has multiple 
+# network interfaces and you wish to force it to use a specific one.
+#
+# name myhostname.mydomainname.com
+# force_address 192.168.1.2
+# export /home/myusername as myhome
+# tell my_backup_exec_server_hostname
+# tell_interval 30
+#
+#
+# The following are directories tht are excluded from all backups.
+exclude_dir /dev
+exclude_dir /proc
