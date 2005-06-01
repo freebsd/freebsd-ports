@@ -39,8 +39,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 #.include "files/ktjview-plist.mk"
 #.endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		"Perl > 5.6 is required."
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|share/doc/packages/|share/doc/|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
