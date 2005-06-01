@@ -27,12 +27,11 @@ ARCH?=	i386
 
 .if (${ARCH} == i386) || (${ARCH} == amd64)
 DIST_SUBDIR=	perforce/${VERSION}/i386
-VERSION=	04.2
-REVISION=	13
+VERSION=	05.1
 PLATFORM=	freebsd4
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
-REL_NOTES=	http://www.perforce.com/perforce/doc.042/user/relnotes.txt
+REL_NOTES=	http://www.perforce.com/perforce/doc.051/user/relnotes.txt
 MD5_FILE=	${MASTERDIR}/distinfo.i386
 .elif ${ARCH} == alpha
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
