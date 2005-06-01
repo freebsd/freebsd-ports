@@ -94,8 +94,8 @@ PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 PATCH_SITES+=	http://www.galle.com.br/~renato/qmail/:smtp_auth_tls
 PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
 .elif defined(SLAVE_TLS)
-PATCH_SITES+=	http://www.esat.kuleuven.ac.be/~vermeule/qmail/:tls
-PATCHFILES+=	tls.patch:tls
+PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
+PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}.patch:tls
 PATCH_DIST_STRIP+=	-p1
 .endif
 
