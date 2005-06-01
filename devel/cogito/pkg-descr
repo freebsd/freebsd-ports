@@ -1,0 +1,12 @@
+       Cogito, GIT - the content tracker
+
+The GIT itself is merely an extremely fast and flexible filesystem-based
+database designed to store directory trees with regard to their history.
+The top layer is a SCM-like tool Cogito which enables human beings to work
+with the database in a manner to a degree similar to other SCM tools (like
+CVS, BitKeeper or Monotone).
+
+WWW: http://kernel.org/pub/software/scm/cogito/
+
+- Michael Seyfert
+michaels@sdf.lonestar.org

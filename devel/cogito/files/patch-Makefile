@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -80,7 +80,7 @@
+ 	LIB_OBJS += ppc/sha1.o ppc/sha1ppc.o
+ else
+ 	SHA1_HEADER=<openssl/sha.h>
+-	LIBS += -lssl
++	LIBS += -lssl -lcrypto
+ endif
+ endif
+ 

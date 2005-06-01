@@ -143,6 +143,7 @@
     SUBDIR += codecrusader
     SUBDIR += codeville
     SUBDIR += codeworker
+    SUBDIR += cogito
     SUBDIR += colorer
     SUBDIR += commoncpp
     SUBDIR += cons
