@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ac3d
-PORTVERSION=	5.0
+PORTVERSION=	5.0.21
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://www.ac3d.org/ac3d/download/
+MASTER_SITES=	http://inivis.swmirror.com/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}lx
+DISTNAME=	${PORTNAME}lx${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ip@doom.homeunix.org
@@ -32,7 +32,7 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
 SUB_FILES=	pkg-message
-SUB_LIST+=	"PORTNAME=${PORTNAME}"
+SUB_LIST=	PORTNAME="${PORTNAME}"
 
 .ifndef(INSTALL_DYNLINKED_VERSION)
 PLIST_SUB=	DYNAMIC_VERSION="@comment "	\
@@ -53,7 +53,7 @@ pre-everything::
 	@${ECHO_MSG} 'Define INSTALL_DYNLINKED_VERSION=yes to install'
 	@${ECHO_MSG} 'a dynamically linked (against linux MesaGL)'
 	@${ECHO_MSG} 'version of the program.'
-	@${ECHO_MSG} 'It may be useful with hardware accellerated MesaGL'
+	@${ECHO_MSG} 'It may be useful with hardware accelerated MesaGL.'
 	@${ECHO_MSG} ''
 .endif
 

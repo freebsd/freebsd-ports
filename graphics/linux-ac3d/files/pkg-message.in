@@ -1,4 +1,4 @@
 *******************************************************************************
-Now you can start program by running %%PREFIX%%/bin/%%PORTNAME%%.sh
-There are also some sample models installed in %%EXAMPLESDIR%%
+You can now start the program by running %%PREFIX%%/bin/%%PORTNAME%%.sh
+Sample models have been installed in %%EXAMPLESDIR%%
 *******************************************************************************

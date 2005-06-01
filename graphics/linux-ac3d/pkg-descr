@@ -1,10 +1,9 @@
-AC3D is 3D object/scene modeller available for Linux, 
-Windows 95/NT, and SGI.  It's is very easy to use, 
-but powerful too - anyone can create good looking 3d 
-objects in minutes. It outputs POV-Ray, VRML (1 and 2), 
-RenderMan, Dive, Massive and other formats.
+AC3D is a 3D object/scene modeller available for Linux, Windows 95/NT, and
+SGI. It is is very easy to use, yet powerful - anyone can create good looking
+3D objects in a few minutes. It outputs POV-Ray, VRML (1 and 2), RenderMan,
+Dive, Massive and other formats.
 
-WWW:	http://www.ac3d.org/
+WWW: http://www.ac3d.org/
 
 - Igor Pokrovsky
 tiamat@comset.net
