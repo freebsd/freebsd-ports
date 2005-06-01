@@ -1,3 +1,7 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/rt3/etc/RT_SiteConfig.pm %D/rt3/etc/RT_SiteConfig.pm-dist; then rm -f %D/rt3/etc/RT_SiteConfig.pm; fi
+rt3/etc/RT_SiteConfig.pm-dist
+@exec [ -f %D/rt3/etc/RT_SiteConfig.pm ] || cp -p %D/rt3/etc/RT_SiteConfig.pm-dist %D/rt3/etc/RT_SiteConfig.pm
 rt3/README
 rt3/bin/mason_handler.fcgi
 rt3/bin/mason_handler.scgi
@@ -8,7 +12,6 @@ rt3/bin/rt-mailgate
 rt3/bin/standalone_httpd
 rt3/bin/webmux.pl
 rt3/etc/RT_Config.pm
-rt3/etc/RT_SiteConfig.pm
 rt3/etc/acl.Informix
 rt3/etc/acl.Oracle
 rt3/etc/acl.Pg
@@ -88,7 +91,6 @@ rt3/lib/RT/I18N/cs.po
 rt3/lib/RT/I18N/da.po
 rt3/lib/RT/I18N/de.po
 rt3/lib/RT/I18N/en.po
-rt3/lib/RT/I18N/en_malkovich.po
 rt3/lib/RT/I18N/es.po
 rt3/lib/RT/I18N/fi.po
 rt3/lib/RT/I18N/fr.po
@@ -112,10 +114,19 @@ rt3/lib/RT/Interface/Email/Filter/SpamAssassin.pm
 rt3/lib/RT/Interface/REST.pm
 rt3/lib/RT/Interface/Web.pm
 rt3/lib/RT/Interface/Web/Handler.pm
+rt3/lib/RT/Interface/Web/Standalone.pm
 rt3/lib/RT/Link.pm
 rt3/lib/RT/Link_Overlay.pm
 rt3/lib/RT/Links.pm
 rt3/lib/RT/Links_Overlay.pm
+rt3/lib/RT/ObjectCustomFields.pm
+rt3/lib/RT/ObjectCustomFields_Overlay.pm
+rt3/lib/RT/ObjectCustomField.pm
+rt3/lib/RT/ObjectCustomFieldValues.pm
+rt3/lib/RT/ObjectCustomFieldValue.pm
+rt3/lib/RT/ObjectCustomField_Overlay.pm
+rt3/lib/RT/ObjectCustomFieldValues_Overlay.pm
+rt3/lib/RT/ObjectCustomFieldValue_Overlay.pm
 rt3/lib/RT/Principal.pm
 rt3/lib/RT/Principal_Overlay.pm
 rt3/lib/RT/Principals.pm
@@ -125,6 +136,8 @@ rt3/lib/RT/Queue_Overlay.pm
 rt3/lib/RT/Queues.pm
 rt3/lib/RT/Queues_Overlay.pm
 rt3/lib/RT/Record.pm
+rt3/lib/RT/SavedSearch.pm
+rt3/lib/RT/SavedSearches.pm
 rt3/lib/RT/Scrip.pm
 rt3/lib/RT/ScripAction.pm
 rt3/lib/RT/ScripAction_Overlay.pm
@@ -148,10 +161,6 @@ rt3/lib/RT/Template_Overlay.pm
 rt3/lib/RT/Templates.pm
 rt3/lib/RT/Templates_Overlay.pm
 rt3/lib/RT/Ticket.pm
-rt3/lib/RT/TicketCustomFieldValue.pm
-rt3/lib/RT/TicketCustomFieldValue_Overlay.pm
-rt3/lib/RT/TicketCustomFieldValues.pm
-rt3/lib/RT/TicketCustomFieldValues_Overlay.pm
 rt3/lib/RT/Ticket_Overlay.pm
 rt3/lib/RT/Tickets.pm
 rt3/lib/RT/Tickets_Overlay.pm
@@ -163,22 +172,12 @@ rt3/lib/RT/Transactions_Overlay.pm
 rt3/lib/RT/URI.pm
 rt3/lib/RT/URI/base.pm
 rt3/lib/RT/URI/fsck_com_rt.pm
+rt3/lib/RT/URI/t.pm
 rt3/lib/RT/User.pm
 rt3/lib/RT/User_Overlay.pm
 rt3/lib/RT/Users.pm
 rt3/lib/RT/Users_Overlay.pm
 rt3/lib/t/00smoke.t
-rt3/lib/t/00smoke.t.in
-rt3/lib/t/01harness.t
-rt3/lib/t/01harness.t.in
-rt3/lib/t/02regression.t
-rt3/lib/t/02regression.t.in
-rt3/lib/t/03web.pl
-rt3/lib/t/03web.pl.in
-rt3/lib/t/04_send_email.pl
-rt3/lib/t/04_send_email.pl.in
-rt3/lib/t/05cronsupport.pl
-rt3/lib/t/05cronsupport.pl.in
 rt3/lib/t/data/8859-15-message-series/dir
 rt3/lib/t/data/8859-15-message-series/msg1
 rt3/lib/t/data/8859-15-message-series/msg2
@@ -199,13 +198,36 @@ rt3/lib/t/data/rt-send-cc
 rt3/lib/t/data/russian-subject-no-content-type
 rt3/lib/t/data/text-html-in-russian
 rt3/lib/t/data/text-html-with-umlaut
-rt3/lib/t/regression/00placeholder
+rt3/lib/t/regression/01ticket_link_searching.t
+rt3/lib/t/regression/02basic_web.t
+rt3/lib/t/regression/03web_compiliation_errors.t
+rt3/lib/t/regression/04send_email.t
+rt3/lib/t/regression/05cronsupport.t
+rt3/lib/t/regression/06mailgateway.t
+rt3/lib/t/regression/07acl.t
+rt3/lib/t/regression/08web_cf_access.t
+rt3/lib/t/regression/09record_cf_api.t
+rt3/lib/t/regression/10merge.t
+rt3/lib/t/regression/11-template-insert.t
+rt3/lib/t/regression/12-search.t
+rt3/lib/t/regression/13-attribute-tests.t
+rt3/lib/t/regression/14merge.t
+rt3/lib/t/regression/15cf_single_values_are_single.t
+rt3/lib/t/regression/16-transaction_cf_tests.t
+rt3/lib/t/regression/17multiple_deleg_revocation.t
+rt3/lib/t/regression/18stale_delegations_cleanup.t
+rt3/lib/t/regression/19-rtname.t
+rt3/lib/t/regression/20savedsearch.t
 rt3/lib/t/regression/mime_tests
+rt3/lib/t/setup_regression.t
+rt3/lib/t/create_data.pl
 rt3/sbin/rt-setup-database
 rt3/sbin/rt-test-dependencies
+rt3/sbin/rt-dump-database
 rt3/share/doc/README
 rt3/share/html/Admin/Elements/AddCustomFieldValue
 rt3/share/html/Admin/Elements/CreateUserCalled
+rt3/share/html/Admin/Elements/CustomFieldTabs
 rt3/share/html/Admin/Elements/EditCustomField
 rt3/share/html/Admin/Elements/EditCustomFieldValues
 rt3/share/html/Admin/Elements/EditCustomFields
@@ -214,13 +236,18 @@ rt3/share/html/Admin/Elements/EditScrip
 rt3/share/html/Admin/Elements/EditScrips
 rt3/share/html/Admin/Elements/EditTemplates
 rt3/share/html/Admin/Elements/EditUserComments
+rt3/share/html/Admin/Elements/GlobalCustomFieldTabs
 rt3/share/html/Admin/Elements/GroupTabs
 rt3/share/html/Admin/Elements/Header
 rt3/share/html/Admin/Elements/ListGlobalCustomFields
 rt3/share/html/Admin/Elements/ListGlobalScrips
 rt3/share/html/Admin/Elements/ModifyTemplate
+rt3/share/html/Admin/Elements/ObjectCustomFields
+rt3/share/html/Admin/Elements/PickObjects
+rt3/share/html/Admin/Elements/PickCustomFields
 rt3/share/html/Admin/Elements/QueueRightsForUser
 rt3/share/html/Admin/Elements/QueueTabs
+rt3/share/html/Admin/Elements/SelectCustomFieldLookupType
 rt3/share/html/Admin/Elements/SelectCustomFieldType
 rt3/share/html/Admin/Elements/SelectGroups
 rt3/share/html/Admin/Elements/SelectModifyGroup
@@ -239,8 +266,6 @@ rt3/share/html/Admin/Elements/SystemTabs
 rt3/share/html/Admin/Elements/Tabs
 rt3/share/html/Admin/Elements/ToolTabs
 rt3/share/html/Admin/Elements/UserTabs
-rt3/share/html/Admin/Global/CustomField.html
-rt3/share/html/Admin/Global/CustomFields.html
 rt3/share/html/Admin/Global/GroupRights.html
 rt3/share/html/Admin/Global/Scrip.html
 rt3/share/html/Admin/Global/Scrips.html
@@ -248,11 +273,28 @@ rt3/share/html/Admin/Global/Template.html
 rt3/share/html/Admin/Global/Templates.html
 rt3/share/html/Admin/Global/UserRights.html
 rt3/share/html/Admin/Global/index.html
+rt3/share/html/Admin/Global/CustomFields/Groups.html
+rt3/share/html/Admin/Global/CustomFields/Users.html
+rt3/share/html/Admin/Global/CustomFields/index.html
+rt3/share/html/Admin/Global/CustomFields/Queue-Transactions.html
+rt3/share/html/Admin/Global/CustomFields/Queue-Tickets.html
+rt3/share/html/Admin/CustomFields/GroupRights.html
+rt3/share/html/Admin/CustomFields/UserRights.html
+rt3/share/html/Admin/CustomFields/Modify.html
+rt3/share/html/Admin/CustomFields/index.html
+rt3/share/html/Admin/CustomFields/Objects.html
+rt3/share/html/Admin/Groups/CustomFields.html
 rt3/share/html/Admin/Groups/GroupRights.html
+rt3/share/html/Admin/Groups/History.html
 rt3/share/html/Admin/Groups/Members.html
 rt3/share/html/Admin/Groups/Modify.html
 rt3/share/html/Admin/Groups/UserRights.html
 rt3/share/html/Admin/Groups/index.html
+rt3/share/html/Admin/Users/CustomFields.html
+rt3/share/html/Admin/Users/Memberships.html
+rt3/share/html/Admin/Users/Modify.html
+rt3/share/html/Admin/Users/History.html
+rt3/share/html/Admin/Users/index.html
 rt3/share/html/Admin/Queues/CustomField.html
 rt3/share/html/Admin/Queues/CustomFields.html
 rt3/share/html/Admin/Queues/GroupRights.html
@@ -266,8 +308,7 @@ rt3/share/html/Admin/Queues/UserRights.html
 rt3/share/html/Admin/Queues/index.html
 rt3/share/html/Admin/Tools/Configuration.html
 rt3/share/html/Admin/Tools/index.html
-rt3/share/html/Admin/Users/Modify.html
-rt3/share/html/Admin/Users/index.html
+rt3/share/html/Admin/autohandler
 rt3/share/html/Admin/index.html
 rt3/share/html/Approvals/Display.html
 rt3/share/html/Approvals/Elements/Approve
@@ -275,6 +316,8 @@ rt3/share/html/Approvals/Elements/PendingMyApproval
 rt3/share/html/Approvals/Elements/ShowDependency
 rt3/share/html/Approvals/Elements/Tabs
 rt3/share/html/Approvals/index.html
+rt3/share/html/Download/Tabular/dhandler
+rt3/share/html/Download/CustomFieldValue/dhandler
 rt3/share/html/Elements/BevelBoxRaisedEnd
 rt3/share/html/Elements/BevelBoxRaisedStart
 rt3/share/html/Elements/Callback
@@ -284,6 +327,13 @@ rt3/share/html/Elements/CollectionAsTable/Row
 rt3/share/html/Elements/CollectionAsTable/Header
 rt3/share/html/Elements/CreateTicket
 rt3/share/html/Elements/EditLinks
+rt3/share/html/Elements/EditCustomField
+rt3/share/html/Elements/EditCustomFieldImage
+rt3/share/html/Elements/EditCustomFieldSelect
+rt3/share/html/Elements/EditCustomFieldBinary
+rt3/share/html/Elements/EditCustomFieldFreeform
+rt3/share/html/Elements/EditCustomFieldText
+rt3/share/html/Elements/EditCustomFieldWikitext
 rt3/share/html/Elements/Error
 rt3/share/html/Elements/Footer
 rt3/share/html/Elements/GotoTicket
@@ -325,8 +375,12 @@ rt3/share/html/Elements/SelectTicketTypes
 rt3/share/html/Elements/SelectUsers
 rt3/share/html/Elements/SelectWatcherType
 rt3/share/html/Elements/SetupSessionCookie
+rt3/share/html/Elements/ShowCustomFields
+rt3/share/html/Elements/ShowCustomFieldImage
+rt3/share/html/Elements/ShowCustomFieldWikitext
 rt3/share/html/Elements/ShowLink
 rt3/share/html/Elements/ShowLinks
+rt3/share/html/Elements/ShowMemberships
 rt3/share/html/Elements/SimpleSearch
 rt3/share/html/Elements/Submit
 rt3/share/html/Elements/Tabs
@@ -337,14 +391,9 @@ rt3/share/html/Elements/TitleBoxStart
 rt3/share/html/NoAuth/Logout.html
 rt3/share/html/NoAuth/Reminder.html
 rt3/share/html/NoAuth/images/autohandler
-rt3/share/html/NoAuth/images/back_home.gif
 rt3/share/html/NoAuth/images/bplogo.gif
 rt3/share/html/NoAuth/images/favicon.png
-rt3/share/html/NoAuth/images/head_requestracker.gif
-rt3/share/html/NoAuth/images/rt.jpg
 rt3/share/html/NoAuth/images/space.gif
-rt3/share/html/NoAuth/images/spacer.gif
-rt3/share/html/NoAuth/images/squares_blue.gif
 rt3/share/html/NoAuth/webrt.css
 rt3/share/html/REST/1.0/Forms/queue/default
 rt3/share/html/REST/1.0/Forms/queue/ns
@@ -369,6 +418,7 @@ rt3/share/html/Search/Edit.html
 rt3/share/html/Search/Elements/BuildFormatString
 rt3/share/html/Search/Elements/DisplayOptions
 rt3/share/html/Search/Elements/EditFormat
+rt3/share/html/Search/Elements/EditQuery
 rt3/share/html/Search/Elements/EditSearches
 rt3/share/html/Search/Elements/NewListActions
 rt3/share/html/Search/Elements/PickBasics
@@ -376,6 +426,7 @@ rt3/share/html/Search/Elements/PickCFs
 rt3/share/html/Search/Elements/PickCriteria
 rt3/share/html/Search/Elements/SearchPrivacy
 rt3/share/html/Search/Elements/SelectAndOr
+rt3/share/html/Search/Elements/SelectGroup
 rt3/share/html/Search/Elements/SelectLinks
 rt3/share/html/Search/Elements/SelectPersonType
 rt3/share/html/Search/Elements/SelectSearchObject
@@ -386,6 +437,7 @@ rt3/share/html/Search/Results.tsv
 rt3/share/html/SelfService/Attachment/dhandler
 rt3/share/html/SelfService/Closed.html
 rt3/share/html/SelfService/Create.html
+rt3/share/html/SelfService/CreateTicketInQueue.html
 rt3/share/html/SelfService/Display.html
 rt3/share/html/SelfService/Elements/GotoTicket
 rt3/share/html/SelfService/Elements/Header
@@ -450,13 +502,7 @@ rt3/share/html/User/Prefs.html
 rt3/share/html/autohandler
 rt3/share/html/index.html
 rt3/share/html/l
-@dirrm rt3/var/session_data
-@dirrm rt3/var/mason_data/obj
-@dirrm rt3/var/mason_data/etc
-@dirrm rt3/var/mason_data/cache
-@dirrm rt3/var/mason_data
-@dirrm rt3/var/log
-@dirrm rt3/var
+@unexec rm -R %D/rt3/var 2> /dev/null || true
 @dirrm rt3/share/html/User/Groups
 @dirrm rt3/share/html/User/Elements
 @dirrm rt3/share/html/User
@@ -484,13 +530,18 @@ rt3/share/html/l
 @dirrm rt3/share/html/Elements/RT__Ticket
 @dirrm rt3/share/html/Elements/CollectionAsTable
 @dirrm rt3/share/html/Elements
+@dirrm rt3/share/html/Download/Tabular
+@dirrm rt3/share/html/Download/CustomFieldValue
+@dirrm rt3/share/html/Download
 @dirrm rt3/share/html/Approvals/Elements
 @dirrm rt3/share/html/Approvals
 @dirrm rt3/share/html/Admin/Users
 @dirrm rt3/share/html/Admin/Tools
 @dirrm rt3/share/html/Admin/Queues
 @dirrm rt3/share/html/Admin/Groups
+@dirrm rt3/share/html/Admin/Global/CustomFields
 @dirrm rt3/share/html/Admin/Global
+@dirrm rt3/share/html/Admin/CustomFields
 @dirrm rt3/share/html/Admin/Elements
 @dirrm rt3/share/html/Admin
 @dirrm rt3/share/html
@@ -518,6 +569,6 @@ rt3/share/html/l
 @dirrm rt3/lib/RT/Action
 @dirrm rt3/lib/RT
 @dirrm rt3/lib
-@dirrm rt3/etc
+@unexec rmdir %D/rt3/etc 2> /dev/null || true
 @dirrm rt3/bin
 @dirrm rt3
