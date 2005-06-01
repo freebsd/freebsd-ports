@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="26a08c77-32da-4dd7-a884-a76fc49aa824">
+    <topic>tomcat -- Tomcat Manager cross-site scripting</topic>
+    <affects>
+      <package>
+	<name>jakarta-tomcat</name>
+	<range><ge>5.*</ge><lt>5.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oliver Karow discovered cross-site scripting issues in
+	  the Apache Jakarta Tomcat manager.  The developers refer to
+	  the issues as <q>minor</q>.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.oliverkarow.de/research/jakarta556_xss.txt</url>
+      <mlist>http://www.mail-archive.com/tomcat-dev@jakarta.apache.org/msg66978.html</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-03</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84479a62-ca5f-11d9-b772-000c29b00e99">
     <topic>fswiki - XSS problem in file upload form</topic>
     <affects>
