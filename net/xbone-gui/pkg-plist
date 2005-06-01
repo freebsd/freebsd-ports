@@ -1,5 +1,5 @@
-etc/xbone/cert/CAcert.pem
-etc/xbone/cert/README
+etc/xbone/cert/GUI-CAcert.pem
+etc/xbone/cert/GUI-README
 etc/xbone/apache/README
 etc/xbone/apache/xb-apache-config.pl
 etc/xbone/apache/xbone-apache.conf.template
