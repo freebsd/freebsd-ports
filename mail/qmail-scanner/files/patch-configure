@@ -83,7 +83,7 @@
  	    SPAMD_SOCKET=`ps -ef 2>/dev/null|egrep 'spamd.*socket'|grep -v grep|sed -e 's/^.*socketpath=//'|awk '{print $1}'`
  	    if [ "$SPAMD_SOCKET" = "" ]; then
 -		SPAMD_SOCKET=`ps aux 2>/dev/null|egrep 'spamd.*socket'|grep -v grep|sed -e 's/^.*socketpath=//'|awk '{print $1}'`
-+		SPAMD_SOCKET=`ps auxwww 2>/dev/null|egrep 'spamd.*socket'|grep -v grep|sed -e 's/^.*socketpath=//'|awk '{print $1}'`
++		SPAMD_SOCKET=`ps auxwww 2>/dev/null|egrep 'spamd.*socket'|grep -v grep|sed -e 's/^.*socketpath[\ |=]//'|awk '{print $1}'`
  	    fi
  	    if [ "$SPAMD_SOCKET" != "" -a -S "$SPAMD_SOCKET" ]; then
  		SPAMC_BINARY="$SPAMC_BINARY -U $SPAMD_SOCKET"
