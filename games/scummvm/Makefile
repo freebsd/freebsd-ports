@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,7 +31,12 @@ OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
 
 MAN6=		scummvm.6
 
-DOCS=		NEWS README TODO
+PORTDOCS=	NEWS README TODO
+PLIST_FILES=	bin/scummvm
+
+.if defined(WITH_MPEG2)
+WITH_VORBIS=	yes         
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -69,7 +73,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
+.for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
