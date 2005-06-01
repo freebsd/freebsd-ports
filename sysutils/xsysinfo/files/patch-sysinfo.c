@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- sysinfo.c.orig	Tue Oct  6 16:21:18 1998
-+++ sysinfo.c	Sun Sep  5 22:30:23 2004
+--- sysinfo.c.orig	Tue Oct  6 07:21:18 1998
++++ sysinfo.c	Thu May 12 15:49:32 2005
 @@ -13,7 +13,9 @@
  #include <sys/ioctl_compat.h>	/* XXX NTTYDISC is too well hidden */
  #include <sys/tty.h>
@@ -46,7 +43,7 @@ $FreeBSD$
  #define VM_SWAPLIST	1
  	{ "_swaplist" },/* list of free swap areas */
  #define VM_SWDEVT	2
-@@ -129,6 +141,27 @@
+@@ -129,6 +141,32 @@
  #define X_DKXFER        12
          { "_dk_xfer" },
  #endif
@@ -58,7 +55,12 @@ $FreeBSD$
 +#define V_NUMV		3
 +	{ "_numvnodes" },
 +#define	FNL_NFILE	4
++/* nfiles changes name to openfiles near this FreeBSD version */
++#if __FreeBSD_version > 503101
++	{"_openfiles"},
++#else
 +	{"_nfiles"},
++#endif
 +#define FNL_MAXFILE	5
 +	{"_maxfiles"},
 +#define NLMANDATORY FNL_MAXFILE	/* names up to here are mandatory */
@@ -74,7 +76,7 @@ $FreeBSD$
  	{ "" },
  };
  
-@@ -238,6 +271,14 @@
+@@ -238,6 +276,14 @@
  	int pkt_in_out;
  	int total_xfers=0;
  	int mib[3], size;
@@ -89,7 +91,7 @@ $FreeBSD$
  
  	/* NPROCS=0, CPU */
    if (cpuflag) {
-@@ -356,19 +397,30 @@
+@@ -356,19 +402,30 @@
  	for (i=0; i<10; i++)
  	    states[i] = 0;
  	size = sizeof(nfsstats);
@@ -123,7 +125,7 @@ $FreeBSD$
  	else {
  	    old_nfsStats = nfsStats;
  
-@@ -395,6 +447,22 @@
+@@ -395,6 +452,22 @@
  #else
  				 nfsstats.rpccnt[NFSPROC_READDIR];
  #endif
@@ -146,7 +148,7 @@ $FreeBSD$
  	    nfsStats.nfsServer = nfsstats.srvrpccnt[NFSPROC_GETATTR] + 
  	                         nfsstats.srvrpccnt[NFSPROC_SETATTR] +
  	                         nfsstats.srvrpccnt[NFSPROC_LOOKUP] +
-@@ -418,6 +486,7 @@
+@@ -418,6 +491,7 @@
  #else
  				 nfsstats.srvrpccnt[NFSPROC_READDIR];
  #endif
@@ -154,7 +156,7 @@ $FreeBSD$
  	}
  	scale_bar(250, nfsStats.nfsClient-old_nfsStats.nfsClient, 25, states, 0);
  	draw_bar(nfsflag-1, states, 10);
-@@ -428,7 +497,7 @@
+@@ -428,7 +502,7 @@
    }
  nfs_out:
  
@@ -163,7 +165,7 @@ $FreeBSD$
  
  
  /* swapmode is derived from freebsd's pstat source ...
-@@ -438,6 +507,21 @@
+@@ -438,6 +512,21 @@
  void
  swapmode(int *used, int *avail)
  {
@@ -185,7 +187,7 @@ $FreeBSD$
  	char *header;
  	int hlen, nswap, nswdev, dmmax;
  	int i, div, nfree, npfree;
-@@ -546,6 +630,7 @@
+@@ -546,6 +635,7 @@
  	*used = *avail - nfree;
  	free(sw);
  	free(perdev);
@@ -193,7 +195,7 @@ $FreeBSD$
  }
  
  /*
-@@ -623,13 +708,21 @@
+@@ -623,13 +713,21 @@
  	 * Make sure that the userland devstat version matches the kernel
  	 * devstat version.
  	 */
@@ -215,7 +217,7 @@ $FreeBSD$
  		nodisk++;
  		return;
  	}
-@@ -644,7 +737,11 @@
+@@ -644,7 +742,11 @@
  	 * changed here, since it almost certainly has.  We only look for
  	 * errors.
  	 */
@@ -227,7 +229,7 @@ $FreeBSD$
  		nodisk++;
  		return;
  	}
-@@ -656,7 +753,11 @@
+@@ -656,7 +758,11 @@
  
  	/* only interested in disks */
  	matches = NULL;
@@ -239,7 +241,7 @@ $FreeBSD$
  		nodisk++;
  		return;
  	}
-@@ -671,7 +772,11 @@
+@@ -671,7 +777,11 @@
  	 * device list has changed, so we don't look for return values of 0
  	 * or 1.  If we get back -1, though, there is an error.
  	 */
@@ -251,7 +253,7 @@ $FreeBSD$
  		       &num_selections, &select_generation,
  		       generation, cur.dinfo->devices, num_devices,
  		       matches, num_matches,
-@@ -697,7 +802,11 @@
+@@ -697,7 +807,11 @@
  		 * the selection process again, in case a device that we
  		 * were previously displaying has gone away.
  		 */
@@ -263,7 +265,7 @@ $FreeBSD$
  		case -1:
  			return (0);
  		case 1: {
-@@ -705,7 +814,11 @@
+@@ -705,7 +819,11 @@
  
  			num_devices = cur.dinfo->numdevs;
  			generation = cur.dinfo->generation;
@@ -275,7 +277,7 @@ $FreeBSD$
  					    &num_selections, &select_generation,
  					    generation, cur.dinfo->devices,
  					    num_devices, matches, num_matches,
-@@ -729,14 +842,22 @@
+@@ -729,14 +847,22 @@
  		 * Calculate elapsed time up front, since it's the same for all
  		 * devices.
  		 */
@@ -298,7 +300,7 @@ $FreeBSD$
  			return (0);
  		}
  
-@@ -764,7 +885,11 @@
+@@ -764,7 +890,11 @@
  		last.dinfo = cur.dinfo;
  		cur.dinfo = tmp_dinfo;
  
