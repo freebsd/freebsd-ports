@@ -19,7 +19,9 @@ BUILD_DEPENDS=		etex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		etex:${PORTSDIR}/print/teTeX-base
 
-MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
+TETEXBASE?=		${LOCALBASE}
+
+MAKE_ENV=		TEXMFCNF=${FILESDIR}:${TETEXBASE}/share/texmf/web2c
 
 MESSAGE=		${PKGDIR}/pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message
@@ -30,7 +32,7 @@ pre-patch:
 	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${MESSAGE} > ${PKGMESSAGE}
 
 do-install:
-	@cd ${WRKSRC}; TEXMFMAIN=$$(kpsewhich -expand-var '$$TEXMFMAIN'); \
+	@cd ${WRKSRC}; TEXMFMAIN=${TETEXBASE}/share/texmf; \
 	 ${INSTALL_DATA} jadetex.fmt pdfjadetex.fmt $$TEXMFMAIN/web2c; \
 	 ${MKDIR} -m 555 $$TEXMFMAIN/tex/jadetex; \
 	 ${INSTALL_DATA} dsssl.def jadetex.ltx $$TEXMFMAIN/tex/jadetex; \
