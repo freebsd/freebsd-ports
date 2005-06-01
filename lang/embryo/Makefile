@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	embryo
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1.007
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C like scripting language used in parts of the Enlightenment
