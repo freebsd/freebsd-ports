@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	eet
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10.007
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Enlightenment Data Handling Library
