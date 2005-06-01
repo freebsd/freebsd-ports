@@ -8,7 +8,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.ics.com/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	Products/Motif/om${PORTVERSION}/src
@@ -39,7 +39,6 @@ DEMOS_SRC=	${WRKSRC}/demos/programs
 .if defined(WITH_JDK_PATCH)
 
 PKGNAMESUFFIX=	-jdk
-WITHOUT_OPENMOTIF_DEMOS=	YES
 WITHOUT_OPENMOTIF_MANUALS=	YES
 
 .if exists(${WITH_JDK_PATCH})
@@ -53,20 +52,23 @@ EXTRA_PATCHES+=	${WITH_JDK_PATCH}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-CONFIGURE_ARGS+= --with-pic
+CONFIGURE_ARGS+=	--with-pic
 .endif
 
 # User config option: Build and install Motif demos
-.if defined(WITHOUT_OPENMOTIF_DEMOS)
-PLIST_SUB+=	MOTIF_DEMOS="@comment "
-.else
+.if defined(WITH_OPENMOTIF_DEMOS)
 MAKE_ENV+=	DEMOS="demos"
 PLIST_SUB+=	MOTIF_DEMOS=""
+.else
+PLIST_SUB+=	MOTIF_DEMOS="@comment "
 .endif
 
 # User config option: Build and install Motif manuals
 .if !defined(WITHOUT_OPENMOTIF_MANUALS)
 .include "${.CURDIR}/Makefile.man"
+PLIST_SUB+=	MANUALS=""
+.else
+PLIST_SUB+=	MANUALS="@comment "
 .endif
 
 post-patch:
@@ -84,7 +86,7 @@ post-patch:
 		 s|file formats|5|'
 
 post-install:
-.if !defined(WITHOUT_OPENMOTIF_DEMOS)
+.if defined(WITH_OPENMOTIF_DEMOS)
 	${INSTALL_DATA} ${DEMOS_SRC}/Column/Column.ad \
 		${PREFIX}/lib/X11/app-defaults/Column
 	${INSTALL_DATA} ${DEMOS_SRC}/DropDown/DropDown.ad \
