@@ -1,9 +1,9 @@
---- ../MailScanner-install-4.40.10.old/docs/man/MailScanner.conf.5.html	Fri Apr  1 16:10:19 2005
-+++ docs/man/MailScanner.conf.5.html	Fri Apr  1 16:10:40 2005
+--- ../MailScanner-install-4.42.9.orig/docs/man/MailScanner.conf.5.html	Wed Jun  1 11:24:25 2005
++++ docs/man/MailScanner.conf.5.html	Wed Jun  1 11:30:17 2005
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Mon Jan 17 15:53:41 2005 -->
-+<!-- CreationDate: Fri Apr  1 16:08:30 2005 -->
++<!-- CreationDate: Wed Jun  1 11:29:47 2005 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
@@ -265,7 +265,92 @@
  <p><b>Allow IFrame Tags</b></p></td>
  </table>
  <!-- INDENTATION -->
-@@ -5122,6 +5331,28 @@
+@@ -3617,6 +3826,50 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Disarmed Modify Subject</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>If HTML tags in the message were &quot;disarmed&quot; by
++using the HTML &quot;Allow&quot; options above with the
++&quot;disarm&quot; settings, do you want to modify the
++subject line? This can also be the filename of a
++ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Disarmed Subject Text</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: {Disarmed}</p>
++<!-- INDENTATION -->
++<p>This is the text to add to the start of the subject if
++the &quot;Disarmed Modify Subject&quot; option is set. This
++can also be the filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Spam Modify Subject</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -4118,6 +4371,33 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Spam Lists To Be Spam</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 1</p>
++<!-- INDENTATION -->
++<p>If a message appears in at least this number of
++&quot;Spam Lists&quot; (as defined above), then the message
++will be treated as spam and so the &quot;Spam Actions&quot;
++will happen, unless the message reaches the levels for
++&quot;High Scoring Spam&quot;. By default this is set to 1
++to mimic the previous behaviour, which means that appearing
++in any &quot;Spam Lists&quot; will cause the message to be
++treated as spam. This can also be the filename of a
++ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Spam Lists To Reach High Score</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -5122,6 +5402,28 @@
  <p>Log all occurrences of &quot;Silent Viruses&quot; as
  defined above? This can only be a simple yes/no value, not a
  ruleset.</p>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.41.3
+PORTVERSION=	4.42.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -31,7 +31,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
+		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
+		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
+		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
+		${LOCALBASE}/bin/unace:${PORTSDIR}/archivers/unace \
+		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
