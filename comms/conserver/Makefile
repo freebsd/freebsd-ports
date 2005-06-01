@@ -8,6 +8,7 @@
 
 PORTNAME=	conserver
 PORTVERSION=	8.5
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 		http://www.komquats.com/distfiles/ \
