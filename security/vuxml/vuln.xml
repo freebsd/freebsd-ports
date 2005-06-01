@@ -32,6 +32,44 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b3cd00f7-c0c5-452d-87bc-086c5635333e">
+    <topic>mailman -- generated passwords are poor quality</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<name>ja-mailman</name>
+	<range><lt>2.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Florian Weimer wrote:</p>
+	<blockquote cite="http://mail.python.org/pipermail/mailman-developers/attachments/20041215/be238297/attachment.mht">
+	  <p>Mailman 2.1.5 uses weak auto-generated passwords for new
+	    subscribers.  These passwords are assigned when members
+	    subscribe without specifying their own password (either by
+	    email or the web frontend).  Knowledge of this password
+	    allows an attacker to gain access to the list archive even
+	    though she's not a member and the archive is restricted to
+	    members only.  [...]</p>
+	  <p>This means that only about 5 million different passwords
+	    are ever generated, a number that is in the range of brute
+	    force attacks -- you only have to guess one subscriber
+	    address (which is usually not that hard).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1143</cvename>
+      <mlist>http://mail.python.org/pipermail/mailman-developers/2004-December/017553.html</mlist>
+      <mlist msgid="87llc0u6l8.fsf@deneb.enyo.de">http://mail.python.org/pipermail/mailman-developers/attachments/20041215/be238297/attachment.mht</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad9d2518-3471-4737-b60b-9a1f51023b28">
     <topic>mailman -- password disclosure</topic>
     <affects>
