@@ -1,0 +1,48 @@
+
+$FreeBSD$
+
+--- fanterm.orig
++++ fanterm
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #Copyright 2002, 2003 William Stearns <wstearns@pobox.com>
+ #Released under the GPL
+ #V0.6.1
+@@ -19,11 +19,6 @@
+ trap FanTermCleanup SIGINT         #Ctrl-C generates this
+ 
+ 
+-if ! type -path mktemp >/dev/null 2>/dev/null ; then
+-	echo "Sorry, no mktemp utility, exiting." >&2
+-	exit 1
+-fi
+-
+ if [ -z "$1" ]; then
+ 	echo Usage: >&2
+ 	echo "$0 ssh_host [ssh_host]..." >&2
+@@ -45,13 +40,13 @@
+ 				echo "$0: Can't create temp file $InPipe." >&2
+ 				exit 1
+ 			fi
+-			mknod --mode=600 $InPipe p
++			mkfifo -m 600 $InPipe
+ 			OutPipe=`mktemp -q -u /tmp/fanout.XXXXXX`
+ 			if [ $? -ne 0 ]; then
+ 				echo "$0: Can't create temp file $OutPipe." >&2
+ 				exit 1
+ 			fi
+-			mknod --mode=600 $OutPipe p
++			mkfifo -m 600 $OutPipe
+ 		
+ 			InPipes="$InPipes $InPipe"
+ 			OutPipes="$OutPipes $OutPipe"
+@@ -62,7 +57,7 @@
+ 	fi
+ done
+ 
+-fanmux $InPipes
++%%LOCALBASE%%/bin/fanmux $InPipes
+ 
+ wait
+ 

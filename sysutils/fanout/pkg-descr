@@ -1,0 +1,12 @@
+Fanout and fanterm are two utilities that allow you to run commands on 
+multiple machines. The difference is that fanout only runs non-interactive 
+commands (like dd, cat, adduser, uname -a, etc.) and pipelines built of 
+these. The output is collected into a single display that can be viewed by 
+less or redirected to a file.
+
+Fanterm, on the other hand, allows you to run interactive text mode 
+commands on multiple machines at the same time. Your keystrokes are sent 
+to a shell or application running on each of the target systems. The 
+output from each system is shown in a seperate xterm.
+
+WWW: http://www.stearns.org/fanout/
