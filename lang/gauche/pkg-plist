@@ -31,10 +31,12 @@ lib/gauche/%%VERSION%%/include/gauche/char_none.h
 lib/gauche/%%VERSION%%/include/gauche/char_sjis.h
 lib/gauche/%%VERSION%%/include/gauche/char_utf_8.h
 lib/gauche/%%VERSION%%/include/gauche/class.h
+lib/gauche/%%VERSION%%/include/gauche/code.h
 lib/gauche/%%VERSION%%/include/gauche/config.h
 lib/gauche/%%VERSION%%/include/gauche/exception.h
 lib/gauche/%%VERSION%%/include/gauche/extend.h
 lib/gauche/%%VERSION%%/include/gauche/int64.h
+lib/gauche/%%VERSION%%/include/gauche/mingw-compat.h
 lib/gauche/%%VERSION%%/include/gauche/net.h
 lib/gauche/%%VERSION%%/include/gauche/pthread.h
 lib/gauche/%%VERSION%%/include/gauche/scmconst.h
@@ -47,10 +49,11 @@ lib/gauche/%%VERSION%%/include/gc_config_macros.h
 lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
 lib/gauche/site/%%VERSION%%/%%TARGET%%/.keepme
 lib/libgauche.so
-lib/libgauche.so.0
 lib/libgauche.so.%%VERSION%%
+lib/libgauche.so.0
 share/aclocal/gauche.m4
 share/gauche/%%VERSION%%/aclocal.m4
+share/gauche/%%VERSION%%/lib/.packages/.keepme
 share/gauche/%%VERSION%%/lib/binary/io.scm
 share/gauche/%%VERSION%%/lib/binary/pack.scm
 share/gauche/%%VERSION%%/lib/cesconv
@@ -81,7 +84,6 @@ share/gauche/%%VERSION%%/lib/gauche/interpolate.scm
 share/gauche/%%VERSION%%/lib/gauche/let-opt.scm
 share/gauche/%%VERSION%%/lib/gauche/libutil.scm
 share/gauche/%%VERSION%%/lib/gauche/listener.scm
-share/gauche/%%VERSION%%/lib/gauche/listutil.scm
 share/gauche/%%VERSION%%/lib/gauche/logger.scm
 share/gauche/%%VERSION%%/lib/gauche/logical.scm
 share/gauche/%%VERSION%%/lib/gauche/macroutil.scm
@@ -123,9 +125,9 @@ share/gauche/%%VERSION%%/lib/gauche/uvector.scm
 share/gauche/%%VERSION%%/lib/gauche/validator.scm
 share/gauche/%%VERSION%%/lib/gauche/version.scm
 share/gauche/%%VERSION%%/lib/gauche/vm/debugger.scm
-share/gauche/%%VERSION%%/lib/gauche/vm/disasm.scm
+share/gauche/%%VERSION%%/lib/gauche/vm/insn.scm
+share/gauche/%%VERSION%%/lib/gauche/vm/profiler.scm
 share/gauche/%%VERSION%%/lib/gauche/vport.scm
-share/gauche/%%VERSION%%/lib/gauche/with.scm
 share/gauche/%%VERSION%%/lib/genstub
 share/gauche/%%VERSION%%/lib/math/const.scm
 share/gauche/%%VERSION%%/lib/math/mt-random.scm
@@ -177,7 +179,6 @@ share/gauche/%%VERSION%%/lib/srfi-14/set.scm
 share/gauche/%%VERSION%%/lib/srfi-19.scm
 share/gauche/%%VERSION%%/lib/srfi-19/format.scm
 share/gauche/%%VERSION%%/lib/srfi-19/read-tai.scm
-share/gauche/%%VERSION%%/lib/srfi-2.scm
 share/gauche/%%VERSION%%/lib/srfi-26.scm
 share/gauche/%%VERSION%%/lib/srfi-27.scm
 share/gauche/%%VERSION%%/lib/srfi-29.scm
@@ -186,7 +187,9 @@ share/gauche/%%VERSION%%/lib/srfi-29/format.scm
 share/gauche/%%VERSION%%/lib/srfi-31.scm
 share/gauche/%%VERSION%%/lib/srfi-37.scm
 share/gauche/%%VERSION%%/lib/srfi-4.scm
+share/gauche/%%VERSION%%/lib/srfi-42.scm
 share/gauche/%%VERSION%%/lib/srfi-5.scm
+share/gauche/%%VERSION%%/lib/srfi-55.scm
 share/gauche/%%VERSION%%/lib/srfi-7.scm
 share/gauche/%%VERSION%%/lib/srfi-9.scm
 share/gauche/%%VERSION%%/lib/text/csv.scm
@@ -209,7 +212,6 @@ share/gauche/%%VERSION%%/lib/util/toposort.scm
 share/gauche/%%VERSION%%/lib/util/tree.scm
 share/gauche/%%VERSION%%/lib/www/cgi-test.scm
 share/gauche/%%VERSION%%/lib/www/cgi.scm
-share/gauche/%%VERSION%%/lib/.packages/.keepme
 share/gauche/site/lib/.packages/.keepme
 %%DOCSDIR%%/.keepme
 %%EXAMPLESDIR%%/.keepme
