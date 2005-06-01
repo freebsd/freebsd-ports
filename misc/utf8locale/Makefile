@@ -7,6 +7,7 @@
 
 PORTNAME=	utf8locale
 PORTVERSION=	040319
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES= 	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
