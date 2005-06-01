@@ -6,6 +6,8 @@ bin/roqet
 include/librdf.h
 include/rasqal.h
 include/rdf_concepts.h
+include/rdf_digest.h
+include/rdf_hash.h
 include/rdf_init.h
 include/rdf_iterator.h
 include/rdf_log.h

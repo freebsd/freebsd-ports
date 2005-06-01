@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -28,8 +28,10 @@ LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 .elif ${WITH_BDB_VER} == 42
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
+.elif ${WITH_BDB_VER} == 43
+LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
 .else
-.error WITH_BDB_VER must be one of 3, 4, 41 and 42
+.error WITH_BDB_VER must be one of 3, 4, 41, 42 or 43
 .endif
 
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
