@@ -1,0 +1,11 @@
+--- timedef/de_DE.UTF-8.src.orig	Sat Nov  2 05:57:11 2002
++++ timedef/de_DE.UTF-8.src	Sat Sep 25 19:28:43 2004
+@@ -59,7 +59,7 @@
+ #
+ # x_fmt
+ #
+-%d.%m.%Y
++%Y-%m-%d
+ #
+ # c_fmt
+ #
