@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.15.0
+PORTVERSION=	0.17.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
@@ -23,7 +23,8 @@ OPTIONS=	PEAR_DATE "PEAR::Date support" off \
 CATEGORY=	DB/DataObject
 FILES=		FormBuilder.php FormBuilder/QuickForm.php \
 		FormBuilder/QuickForm/ElementTable.php \
-		FormBuilder/QuickForm/PopupSelect.php
+		FormBuilder/QuickForm/SubForm.php \
+		FormBuilder/QuickForm/SubFormFB.php
 
 .include <bsd.port.pre.mk>
 
