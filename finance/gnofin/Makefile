@@ -18,7 +18,7 @@ COMMENT=	Light-weight GNOME based financial management program
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -28,7 +28,8 @@ MAN1=		gnofin.1
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' \
+		s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 			${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|_la_LDFLAGS =|_la_LDFLAGS = -avoid-version|g'

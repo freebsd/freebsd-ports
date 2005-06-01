@@ -19,9 +19,9 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
 USE_GNOME=	glib12
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

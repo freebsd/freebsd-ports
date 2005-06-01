@@ -6,14 +6,22 @@ include/GL/glu_mangle.h
 include/GL/glx.h
 include/GL/glx_mangle.h
 include/GL/glext.h
+include/GL/glut.h
+include/GL/glutf90.h
+include/GL/glxext.h
 include/GL/osmesa.h
 include/GL/xmesa.h
 include/GL/xmesa_x.h
 include/GL/xmesa_xf86.h
+lib/libGL.a
 lib/libGL.so
 lib/libGL.so.14
+lib/libGLU.a
 lib/libGLU.so
 lib/libGLU.so.14
 lib/libMesaGL.so
 lib/libMesaGLU.so
+lib/libOSMesa.a
+lib/libOSMesa.so
+lib/libOSMesa.so.4
 @dirrm include/GL

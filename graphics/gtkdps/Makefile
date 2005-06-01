@@ -19,7 +19,8 @@ BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 RUN_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib
@@ -29,5 +30,9 @@ CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 .if ${ARCH} == "alpha"
 BROKEN=		"Does not compile on alpha"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -25,8 +25,7 @@ USE_SDL=	sdl
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
@@ -39,6 +38,7 @@ BROKEN=		"Configure fails"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 ||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-release $$(LT_RELEASE)||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

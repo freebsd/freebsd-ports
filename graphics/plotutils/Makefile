@@ -17,7 +17,7 @@ COMMENT=	A plotting library and toolkit
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_MOTIF=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MOTIFLIB="${MOTIFLIB}" \
@@ -30,6 +30,8 @@ MAN1=		ode.1 plot.1 plotfont.1 spline.1 tek2plot.1
 INFO=	libxmi plotutils
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-lXm |\$$\{MOTIFLIB\} |g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lXm |\$$\{MOTIFLIB\} |g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

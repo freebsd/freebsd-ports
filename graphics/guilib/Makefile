@@ -17,8 +17,13 @@ COMMENT=	A very simple GUI framework for use with SDL
 
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-release $$(LT_RELEASE)||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

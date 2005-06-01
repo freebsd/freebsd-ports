@@ -18,7 +18,7 @@ COMMENT=	Fonts and font libraries necessary for Enlightenment
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 

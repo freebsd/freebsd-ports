@@ -15,7 +15,12 @@ COMMENT=	A library for loading (and saving) 3d modeller object files
 
 CONFLICTS=	xmorph*
 
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

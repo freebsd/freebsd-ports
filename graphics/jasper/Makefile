@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_ZIP=	yes
 USE_GNOME=	gnometarget lthack
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -20,13 +20,15 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/gno3dtet

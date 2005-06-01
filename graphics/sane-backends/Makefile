@@ -22,7 +22,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS} \
@@ -58,6 +59,12 @@ PLIST_SUB+=	GPHOTO2=""
 CONFIGURE_ARGS+=	--with-gphoto2=no
 PLIST_SUB+=	GPHOTO2="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|LIBTOOL =.*|LIBTOOL = ${LIBTOOL}|' \
+		${WRKSRC}/backend/Makefile.in ${WRKSRC}/frontend/Makefile.in \
+		${WRKSRC}/japi/Makefile.in ${WRKSRC}/lib/Makefile.in \
+		${WRKSRC}/sanei/Makefile.in ${WRKSRC}/tools/Makefile.in
 
 .include "Makefile.man"
 .include <bsd.port.post.mk>

@@ -18,7 +18,7 @@ COMMENT=	An ascii art library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_X11)
@@ -56,7 +56,8 @@ post-extract:
 post-patch:
 	@${RM} -f ${WRKSRC}/config.cache
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
-		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g' \
+		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} \( -name '*.[ch]' \! -name acconfig.h \) \
 		| ${XARGS} ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g'

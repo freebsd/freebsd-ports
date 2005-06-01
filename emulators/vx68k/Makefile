@@ -19,10 +19,10 @@ LIB_DEPENDS=	vm68k.4:${PORTSDIR}/emulators/libvm68k
 
 USE_GL=		yes
 USE_GNOME=	gtk12
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 LIBTOOLFILES=	configure vx68k-gtk/configure
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+#LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	vx68k.1
@@ -33,7 +33,10 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU \
 		${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,Bison ,Bison,g" ${WRKSRC}/vx68k-gtk/configure
+	@${REINPLACE_CMD} -e 's|Bison |Bison|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir| ; \
+		s|LTLIBRELEASE=".*"|LTLIBRELEASE=|' \
+		${WRKSRC}/configure ${WRKSRC}/vx68k-gtk/configure 
 	@${REINPLACE_CMD} -e '/^#define _POSIX_C_SOURCE 199506L/d' \
 		${WRKSRC}/vx68k-gtk/libvx68k-gtk/gl.cc \
 		${WRKSRC}/vx68k-gtk/libvx68k-gtk/gtkconsole.cc

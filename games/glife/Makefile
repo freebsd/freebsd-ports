@@ -18,12 +18,14 @@ COMMENT=	Conway's Game of Life for GNOME
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack libglade
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

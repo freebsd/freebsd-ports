@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--with-ggi=${LOCALBASE}
 .endif
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	GLVER="${GLVER}" LIBS="-lm"
 SUB_GL=		src si-glu src-glu

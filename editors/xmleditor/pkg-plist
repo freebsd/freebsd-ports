@@ -1,5 +1,4 @@
 bin/xmleditor
-lib/libgtk_xml_editor.a
 lib/libgtk_xml_editor.so
 lib/libgtk_xml_editor.so.1
 %%DATADIR%%/config.xml

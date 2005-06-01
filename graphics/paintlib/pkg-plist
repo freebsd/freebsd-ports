@@ -94,7 +94,6 @@ include/paintlib/test/pltestfilters.h
 include/paintlib/test/pltestcountedpointer.h
 include/paintlib/test/pltestexif.h
 lib/libpaintlib.a
-lib/libpaintlib.la
 lib/libpaintlib.so
 lib/libpaintlib.so.1
 bin/paintlib-config

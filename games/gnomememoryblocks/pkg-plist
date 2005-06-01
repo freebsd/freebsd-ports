@@ -1,8 +1,6 @@
 bin/gnome-memblocks
 etc/sound/events/gnome-memblocks.soundlist
-lib/gnome-memblocks/libscaling.la
 lib/gnome-memblocks/libscaling.so
-lib/gnome-memblocks/libsliding.la
 lib/gnome-memblocks/libsliding.so
 share/gnome/apps/Games/gnome-memblocks.desktop
 share/gnome/games/gnome-memblocks.default.scores
