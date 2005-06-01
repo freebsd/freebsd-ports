@@ -1,0 +1,6 @@
+SnortSMS is a highly configurable sensor management system that 
+provides the ability to remotely manage Snort [and Barnyard] based 
+intrusion detection systems, push configuration files, and monitor 
+system health and statistics all from a simple Web console.
+
+WWW: http://snortsms.servangle.net/
