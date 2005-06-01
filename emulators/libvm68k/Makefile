@@ -15,15 +15,14 @@ MASTER_SITES=	ftp://ftp.hypercore.co.jp/vx68k/${PORTNAME}-${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	M68000 virtual machine library
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^#define _POSIX_C_SOURCE 199506L/d' \
 		${WRKSRC}/memory.cc ${WRKSRC}/memory_map.cc ${WRKSRC}/version.cc
-	@${REINPLACE_CMD} -e '/^LTLIBRELEASE=/d' \
-		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir| ; \
+		s|LTLIBRELEASE=".*"|LTLIBRELEASE=|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

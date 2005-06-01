@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		tiff:${PORTSDIR}/graphics/tiff \
 		ungif:${PORTSDIR}/graphics/libungif
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-SDL --disable-dfb

@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomeprint
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

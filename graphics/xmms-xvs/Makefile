@@ -28,13 +28,15 @@ USE_BISON=	yes
 USE_GNOME=	gtk12 libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	XMMS_CONFIG="${XMMS_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|<xml|<libxml/xml|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|<xml|<libxml/xml|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

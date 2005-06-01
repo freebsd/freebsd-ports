@@ -28,12 +28,17 @@ USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_MESA=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

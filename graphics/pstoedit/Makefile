@@ -14,7 +14,7 @@ MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
 
-USE_GHOSTSCRIPT=	yes
+USE_GHOSTSCRIPT=yes
 
 LIB_DEPENDS=	Magick++.8:${PORTSDIR}/graphics/ImageMagick \
 		ming.3:${PORTSDIR}/graphics/ming \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	Magick++.8:${PORTSDIR}/graphics/ImageMagick \
 		EMF.1:${PORTSDIR}/graphics/libemf
 
 USE_GNOME=	gnometarget pkgconfig
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-libemf-include=${LOCALBASE}/include/libEMF

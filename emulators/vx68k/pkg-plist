@@ -6,5 +6,9 @@ include/vx68k/machine.h
 include/vx68k/memory.h
 include/vx68k/version.h
 lib/libvx68k.a
+lib/libvx68k.so
+lib/libvx68k.so.1
 lib/libvx68kdos.a
+lib/libvx68kdos.so
+lib/libvx68kdos.so.1
 @dirrm include/vx68k
