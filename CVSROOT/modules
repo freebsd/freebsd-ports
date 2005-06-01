@@ -2074,6 +2074,7 @@ falconseye	ports/games/falconseye
 fam		ports/devel/fam
 fampp		ports/devel/fampp
 fandango	ports/cad/fandango
+fanout		ports/sysutils/fanout
 farblazer	ports/games/farblazer
 fargoal		ports/games/fargoal
 fast-user-switch-applet	ports/x11/fast-user-switch-applet
