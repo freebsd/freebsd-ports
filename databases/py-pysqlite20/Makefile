@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pysqlite
-PORTVERSION=		2.0.2
+PORTVERSION=		2.0.3
 CATEGORIES=		databases python
 MASTER_SITES=		http://initd.org/pub/software/pysqlite/releases/2.0/${PORTVERSION}/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
