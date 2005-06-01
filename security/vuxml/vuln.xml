@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bf2e7483-d3fa-440d-8c6e-8f1f2f018818">
+    <topic>linux_base -- vulnerabilities in Red Hat 7.1 libraries</topic>
+    <affects>
+      <package>
+	<name>linux_base</name>
+	<range><lt>7.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Trevor Johnson reported that the Red Hat Linux RPMs used
+	  by linux_base contained multiple older vulnerabilities, such
+	  as a DNS resolver issue and critical bugs in X font handling
+	  and XPM image handling.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://fedoralegacy.org/updates/RH7.3/2004-10-23-FLSA_2004_1947__Updated_glibc_packages_fix_flaws.html</url>
+      <url>http://rhn.redhat.com/errata/RHSA-2004-059.html</url>
+      <url>http://rhn.redhat.com/errata/RHSA-2004-478.html</url>
+      <url>http://rhn.redhat.com/errata/RHSA-2004-612.html</url>
+      <cvename>CAN-2002-0029</cvename>
+      <cvename>CAN-2004-0083</cvename>
+      <cvename>CAN-2004-0084</cvename>
+      <cvename>CAN-2004-0106</cvename>
+      <cvename>CAN-2004-0687</cvename>
+      <cvename>CAN-2004-0688</cvename>
+      <cvename>CAN-2004-0692</cvename>
+      <cvename>CAN-2004-0914</cvename>
+    </references>
+    <dates>
+      <discovery>2004-09-27</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79630c0c-8dcc-45d0-9908-4087fe1d618c">
     <topic>squirrelmail -- XSS and remote code injection vulnerabilities</topic>
     <affects>
