@@ -102,3 +102,7 @@ MD5 (ircservices/ircservices-5.0.50.diff.gz) = b3137b27b89fa0db99bcc4bab5fd376f
 SIZE (ircservices/ircservices-5.0.50.diff.gz) = 18847
 MD5 (ircservices/ircservices-5.0.51.diff.gz) = 118701b5c92c3fe13447c40ffbec52e0
 SIZE (ircservices/ircservices-5.0.51.diff.gz) = 8368
+MD5 (ircservices/ircservices-5.0.52.diff.gz) = 8f830a25ec9248b3d1299deba69e72cb
+SIZE (ircservices/ircservices-5.0.52.diff.gz) = 1423
+MD5 (ircservices/ircservices-5.0.53.diff.gz) = b624ee8cefdb5f84c664f991f4f61aa9
+SIZE (ircservices/ircservices-5.0.53.diff.gz) = 815

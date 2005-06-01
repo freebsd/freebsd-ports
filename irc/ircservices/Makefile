@@ -8,7 +8,7 @@
 PORTNAME=	ircservices
 PORTVERSION=	5.0.${PATCHLEVEL}
 CATEGORIES=	irc
-MASTER_SITES= ftp://ftp.esper.net/ircservices/ \
+MASTER_SITES=	ftp://ftp.esper.net/ircservices/ \
 	http://www.ircservices.esper.net/download/ \
 	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/ \
 	ftp://ftp.ircd.com.br/ircservices/ \
@@ -18,7 +18,7 @@ MASTER_SITES= ftp://ftp.esper.net/ircservices/ \
 DISTNAME=	${PORTNAME}-5.0.0
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHLEVEL= 51
+PATCHLEVEL=	53
 PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
@@ -34,7 +34,7 @@ USE_GCC=	3.2+
 NOT_FOR_ARCHS=	sparc64
 
 DIST_SUBDIR=	${PORTNAME}
-CONFIGURE_ARGS= -prefix ${PREFIX} -cflags "${CFLAGS} -fPIC" -cc "${CC}"
+CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS} -fPIC" -cc "${CC}"
 
 .include <bsd.port.pre.mk>
 
