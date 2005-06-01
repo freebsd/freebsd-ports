@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7e8d2ca-410e-40b2-8748-3abd021e44a9">
+    <topic>xtrlock -- X display locking bypass</topic>
+    <affects>
+      <package>
+	<name>xtrlock</name>
+	<range><lt>2.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X display locking program <code>xtrlock</code> contains
+	  an integer overflow bug.  It is possible for an attacker with
+	  physical access to the system to bypass the display lock.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0079</cvename>
+      <url>http://www.debian.org/security/2005/dsa-649</url>
+      <url>http://xforce.iss.net/xforce/xfdb/18991</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=278191</url>
+    </references>
+    <dates>
+      <discovery>2004-10-25</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bf2e7483-d3fa-440d-8c6e-8f1f2f018818">
     <topic>linux_base -- vulnerabilities in Red Hat 7.1 libraries</topic>
     <affects>
