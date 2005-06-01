@@ -108,7 +108,6 @@ apache2_precmd()
 	else
 		return 0
         fi
-	echo DEBUG ${apache2_flags}
 }
 
 sig_reload=SIGUSR1
