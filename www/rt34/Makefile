@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.2.3
+PORTVERSION?=	3.4.2
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -34,12 +34,14 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
 		${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
 		${SITE_PERL}/Module/Versions/Report.pm:${PORTSDIR}/devel/p5-Module-Versions-Report \
 		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 		${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		${SITE_PERL}/Text/Quoted.pm:${PORTSDIR}/textproc/p5-Text-Quoted \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
@@ -51,7 +53,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LATEST_LINK=	rt32
+LATEST_LINK=	rt34
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
@@ -123,11 +125,25 @@ WEB_USER?=	www
 WEB_GROUP?=	www
 LIBS_GROUP?=	wheel
 
+.if defined(UPGRADE_RT30) || defined(UPGRADE_RT32)
+UPGRADES=	3.1.0 3.1.15 3.1.17
+.endif
+.if defined(UPGRADE_RT32)
+UPGRADES+=	3.3.0 3.3.11
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500803
+IGNORE=		This program only support perl 5.8.3 or above
+.endif
+
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "      UPGRADE_RT30                    Upgrading from a RT 3.0 installation"
+	@${ECHO} "      UPGRADE_RT32                    Upgrading from a RT 3.2 installation"
 	@${ECHO} "      INITIAL_INSTALL                 Do initialize DB (for initial install only)"
 	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
 	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
@@ -144,14 +160,19 @@ pre-fetch:
 	@sleep 3
 
 pre-install:
+	@${RM} -f ${WRKSRC}/html/Admin/Queues/*orig 2>/dev/null
+	@${RM} -f ${WRKSRC}/html/Search/Elements/*orig 2>/dev/null
+	@${RM} -f ${WRKSRC}/lib/RT/I18N/*orig 2>/dev/null
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} \
 		${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
+	@[ -f ${RT_PATH}/etc/RT_SiteConfig.pm ] || \
+		${CP} -p ${RT_PATH}/etc/RT_SiteConfig.pm-dist ${RT_PATH}/etc/RT_SiteConfig.pm
 .if !defined(INITIAL_INSTALL)
-.if defined(UPGRADE_RT30)
-.for version in 3.1.0 3.1.15 3.1.17
+.if defined(UPGRADES)
+.for version in ${UPGRADES}
 	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --action schema --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
 	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --action acl --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
 	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --action insert --datadir ${WRKSRC}/etc/upgrade/${version} --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
@@ -160,10 +181,12 @@ post-install:
 	@${ECHO} "Upgrade of RT3 complete."
 .else
 	@${ECHO} ""
-	@${ECHO} "Installation of RT3 complete.  You may safely ignore the"
-	@${ECHO} "'make initialize-database' instruction above.  Instead,"
-	@${ECHO} "if you are upgrading from RT 3.0, please enter this now:"
+	@${ECHO} "Installation of RT3 complete."
+	@${ECHO} "If you are upgrading from RT 3.0, please enter this now:"
 	@${ECHO} "    make post-install -DUPGRADE_RT30"
+	@${ECHO} ""
+	@${ECHO} "If you are upgrading from RT 3.2, please enter this now:"
+	@${ECHO} "    make post-install -DUPGRADE_RT32"
 	@${ECHO} ""
 	@${ECHO} "If you are initializing a new installation, please do this:"
 	@${ECHO} "    make post-install -DINITIAL_INSTALL"
@@ -177,12 +200,6 @@ post-install:
 	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --force --action drop --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
 	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --force --action init --dba '${DB_DBA_USER}' --dba-password '${DB_DBA_PASSWORD}'
 	@${SED} s!%%RT_PATH%%!${RT_PATH}!g ${PKGMESSAGE}
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-IGNORE=		This program only support perl 5.8.3 or above
 .endif
 
 .include <bsd.port.post.mk>
