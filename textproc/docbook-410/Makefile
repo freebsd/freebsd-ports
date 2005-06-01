@@ -38,7 +38,7 @@ CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 LATEST_LINK=	docbook-410
 
-pre-install:
+pre-su-install:
 	@[ -d ${INSTDIR}/${PORTVERSION} ] || ${MKDIR} ${INSTDIR}/${PORTVERSION}
 
 do-install:
