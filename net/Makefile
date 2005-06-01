@@ -732,6 +732,7 @@
     SUBDIR += silc-server
     SUBDIR += silky
     SUBDIR += simicq
+    SUBDIR += sip_scenario
     SUBDIR += sipp
     SUBDIR += siproxd
     SUBDIR += sipsak
