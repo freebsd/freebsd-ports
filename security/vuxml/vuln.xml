@@ -32,6 +32,65 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79630c0c-8dcc-45d0-9908-4087fe1d618c">
+    <topic>squirrelmail -- XSS and remote code injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squirrelmail</name>
+	<name>ja-squirrelmail</name>
+	<range><lt>1.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A SquirrelMail Security Advisory reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110702772714662">
+	  <p>SquirrelMail 1.4.4 has been released to resolve a number of
+	    security issues disclosed below.  It is strongly recommended
+	    that all running SquirrelMail prior to 1.4.4 upgrade to the
+	    latest release.</p>
+	  <h1>Remote File Inclusion</h1>
+	  <p>Manoel Zaninetti reported an issue in src/webmail.php which
+	    would allow a crafted URL to include a remote web page.
+	    This was assigned CAN-2005-0103 by the Common
+	    Vulnerabilities and Exposures.</p>
+	  <h1>Cross Site Scripting Issues</h1>
+	  <p>A possible cross site scripting issue exists in
+	    src/webmail.php that is only accessible when the PHP
+	    installation is running with register_globals set to On.
+	    This issue was uncovered internally by the SquirrelMail
+	    Development team. This isssue was assigned CAN-2005-0104 by
+	    the Common Vulnerabilities and Exposures.</p>
+	  <p>A second issue which was resolved in the 1.4.4-rc1 release
+	    was uncovered and assigned CAN-2004-1036 by the Common
+	    Vulnerabilities and Exposures.  This issue could allow a
+	    remote user to send a specially crafted header and cause
+	    execution of script (such as javascript) in the client
+	    browser.</p>
+	  <h1>Local File Inclusion</h1>
+	  <p>A possible local file inclusion issue was uncovered by one
+	    of our developers involving custom preference handlers.
+	    This issue is only active if the PHP installation is running
+	    with register_globals set to On.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1036</cvename>
+      <cvename>CAN-2005-0075</cvename>
+      <cvename>CAN-2005-0103</cvename>
+      <cvename>CAN-2005-0104</cvename>
+      <mlist msgid="47249.24.0.109.81.1106975343.squirrel@sm-14.netdork.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110702772714662</mlist>
+      <url>http://www.squirrelmail.org/security/issue/2005-01-14</url>
+      <url>http://www.squirrelmail.org/security/issue/2005-01-19</url>
+      <url>http://www.squirrelmail.org/security/issue/2005-01-20</url>
+    </references>
+    <dates>
+      <discovery>2005-01-29</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d9ba03b-0dbb-42b4-ae0f-60e27af78e22">
     <topic>sympa -- buffer overflow in "queue"</topic>
     <affects>
