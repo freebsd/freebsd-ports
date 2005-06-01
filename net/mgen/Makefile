@@ -15,6 +15,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	An IP network performance tests and measurements
 
+# Dumps core on 64-bit architectures. This was reported to the upstream
+# author, who promised to fix it in one of the next releases.
+ONLY_FOR_ARCHS=	i386
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
