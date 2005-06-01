@@ -1,0 +1,96 @@
+bin/MorphGen
+bin/TestLem
+bin/TestLemClient
+include/lemmatizer/AgramtabLib/EngGramTab.h
+include/lemmatizer/AgramtabLib/GerGramTab.h
+include/lemmatizer/AgramtabLib/RusGramTab.h
+include/lemmatizer/AgramtabLib/StdGramtab.h
+include/lemmatizer/AgramtabLib/agramtab_.h
+include/lemmatizer/AgramtabLib/eng_consts.h
+include/lemmatizer/AgramtabLib/ger_consts.h
+include/lemmatizer/AgramtabLib/morph_const.h
+include/lemmatizer/AgramtabLib/rus_consts.h
+include/lemmatizer/GraphanLib/Consent.h
+include/lemmatizer/GraphanLib/Descriptors.h
+include/lemmatizer/GraphanLib/GraphanDicts.h
+include/lemmatizer/GraphanLib/GraphmatFile.h
+include/lemmatizer/GraphanLib/HTMLConv.h
+include/lemmatizer/GraphanLib/StdGraph.h
+include/lemmatizer/GraphanLib/UnitHolder.h
+include/lemmatizer/GraphanLib/abbrev.h
+include/lemmatizer/GraphanLib/graline.h
+include/lemmatizer/LemClient/LemClient.hpp
+include/lemmatizer/LemClient/LemClientC.h
+include/lemmatizer/LemmatizerLib/Lemmatizers.h
+include/lemmatizer/LemmatizerLib/MorphAutomBuilder.h
+include/lemmatizer/LemmatizerLib/MorphAutomat.h
+include/lemmatizer/LemmatizerLib/MorphDict.h
+include/lemmatizer/LemmatizerLib/MorphDictBuilder.h
+include/lemmatizer/LemmatizerLib/PLMLineCollection.h
+include/lemmatizer/LemmatizerLib/Paradigm.h
+include/lemmatizer/LemmatizerLib/Predict.h
+include/lemmatizer/LemmatizerLib/StaticVectorMap.h
+include/lemmatizer/LemmatizerLib/Statistic.h
+include/lemmatizer/LemmatizerLib/StdMorph.h
+include/lemmatizer/MorphWizardLib/FormInfo.h
+include/lemmatizer/MorphWizardLib/OperationMeter.h
+include/lemmatizer/MorphWizardLib/wizard.h
+include/lemmatizer/PCRE/config.h
+include/lemmatizer/PCRE/internal.h
+include/lemmatizer/PCRE/pcre.h
+include/lemmatizer/PCRE/pcre_rml.h
+include/lemmatizer/StructDictLib/Domen.h
+include/lemmatizer/StructDictLib/Field.h
+include/lemmatizer/StructDictLib/ItemsContainer.h
+include/lemmatizer/StructDictLib/LessDomItem.h
+include/lemmatizer/StructDictLib/Ross.h
+include/lemmatizer/StructDictLib/Signat.h
+include/lemmatizer/StructDictLib/StdRoss.h
+include/lemmatizer/StructDictLib/StructDictConsts.h
+include/lemmatizer/StructDictLib/TempArticle.h
+include/lemmatizer/StructDictLib/TextField.h
+include/lemmatizer/common/COMSyntaxHolder.h
+include/lemmatizer/common/Chunk.h
+include/lemmatizer/common/DDCInternalError.h
+include/lemmatizer/common/DDC_common.h
+include/lemmatizer/common/DwdsThesaurus.h
+include/lemmatizer/common/GramInfo.h
+include/lemmatizer/common/Graspace.h
+include/lemmatizer/common/MorphologyHolder.h
+include/lemmatizer/common/PlmLine.h
+include/lemmatizer/common/SyntaxHolder.h
+include/lemmatizer/common/cgic.h
+include/lemmatizer/common/cortege.h
+include/lemmatizer/common/imports.h
+include/lemmatizer/common/rus_numerals.h
+include/lemmatizer/common/string_socket.h
+include/lemmatizer/common/string_tokenizer.h
+include/lemmatizer/common/util_classes.h
+include/lemmatizer/common/utilit.h
+lib/libAgramtab.a
+lib/libAgramtab.so
+lib/libGraphan.a
+lib/libGraphan.so
+lib/libLemClient.a
+lib/libLemClient.so
+lib/libLemCommon.a
+lib/libLemCommon.so
+lib/libLemPCRE.a
+lib/libLemPCRE.so
+lib/libLemmatizer.a
+lib/libLemmatizer.so
+lib/libMorphWizard.a
+lib/libMorphWizard.so
+lib/libStructDict.a
+lib/libStructDict.so
+@dirrm include/lemmatizer/common
+@dirrm include/lemmatizer/StructDictLib
+@dirrm include/lemmatizer/PCRE
+@dirrm include/lemmatizer/MorphWizardLib
+@dirrm include/lemmatizer/LemmatizerLib
+@dirrm include/lemmatizer/LemClient
+@dirrm include/lemmatizer/GraphanLib
+@dirrm include/lemmatizer/AgramtabLib
+@dirrm include/lemmatizer
+
+@unexec echo "If you going to remove lemmatizer permanently, you should also remove dictionaries directory. E.g.: rm -rf /var/db/lemmatize" | /usr/bin/fmt
