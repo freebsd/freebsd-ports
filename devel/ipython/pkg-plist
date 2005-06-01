@@ -115,6 +115,7 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/usage.py
 %%PYTHON_SITELIBDIR%%/IPython/usage.pyc
 %%PYTHON_SITELIBDIR%%/IPython/usage.pyo
+%%DOCSDIR%%/cvs_notes
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/NEWS
