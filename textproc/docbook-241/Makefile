@@ -37,7 +37,7 @@ DTD_VERSION=	2.4.1
 
 LATEST_LINK=	docbook-241
 
-pre-install:
+pre-su-install:
 	@[ -d ${INSTDIR}/${DTD_VERSION} ] || ${MKDIR} ${INSTDIR}/${DTD_VERSION}
 
 do-install:
