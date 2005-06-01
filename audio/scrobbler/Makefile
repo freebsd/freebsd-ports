@@ -26,6 +26,8 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+SLAVEDIRS=	audio/xmms-scrobbler audio/bmp-scrobbler
+
 .if !defined(WITH_XMMS) && !defined(WITH_BMP)
 WITH_XMMS=	yes
 WITH_BMP=	yes
