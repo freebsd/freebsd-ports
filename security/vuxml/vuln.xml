@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ad9d2518-3471-4737-b60b-9a1f51023b28">
+    <topic>mailman -- password disclosure</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<name>ja-mailman</name>
+	<range><lt>2.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Barry Warsaw reports:</p>
+	<blockquote
+	  cite="http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html">
+	  <p>Today I am releasing Mailman 2.1.5, a bug fix release
+	    [...] This version also contains a fix for an exploit that
+	    could allow 3rd parties to retrieve member passwords.  It is
+	    thus highly recommended that all existing sites upgrade to
+	    the latest version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0412</cvename>
+      <mlist>http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-05-15</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26a08c77-32da-4dd7-a884-a76fc49aa824">
     <topic>tomcat -- Tomcat Manager cross-site scripting</topic>
     <affects>
