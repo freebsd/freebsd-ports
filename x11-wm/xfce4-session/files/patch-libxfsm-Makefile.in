@@ -1,0 +1,11 @@
+--- libxfsm/Makefile.in.orig	Sun May 15 21:16:14 2005
++++ libxfsm/Makefile.in	Wed Jun  1 19:13:37 2005
+@@ -272,7 +272,7 @@
+ 	xfsm-splash-engine.h						\
+ 	xfsm-splash-rc.h
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = xfce4-session-1.0.pc
+ all: all-am
+ 

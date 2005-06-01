@@ -6,7 +6,7 @@ include/xfce4/xfce4-session-4.2/libxfsm/xfsm-splash-rc.h
 lib/libxfsm-4.2.a
 lib/libxfsm-4.2.so
 lib/libxfsm-4.2.so.0
-lib/pkgconfig/xfce4-session-1.0.pc
+libdata/pkgconfig/xfce4-session-1.0.pc
 lib/xfce4/mcs-plugins/session_settings.so
 lib/xfce4/mcs-plugins/splash_settings.so
 lib/xfce4/splash/engines/libbalou.so
