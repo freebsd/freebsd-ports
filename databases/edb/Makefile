@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	edb
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.5.003
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Enlightenment Database Library
