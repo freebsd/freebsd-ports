@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Fstab
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils devel pear
 
 MAINTAINER=	antonio@php.net
@@ -24,8 +24,7 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/Fstab
 	@${MV} ${WRKSRC}/Entry.php ${WRKSRC}/Fstab
 .for file in ${FILES}
-	@${REINPLACE_CMD} -e "s|@package@|${PORTNAME}|" ${WRKSRC}/${file}
-	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
 .endfor
 
 .include <bsd.port.pre.mk>
