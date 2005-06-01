@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Apr  9 01:52:36 2005
++++ Makefile	Wed Jun  1 10:03:20 2005
+@@ -212,7 +212,7 @@
+ 	cp -Rf ${CURDIR}/xb-gui-control.pl    ${WWW}/xbone/lib
+ 	for c in `ls ${CACERT}`; do \
+ 	  if( test ! -e ${CERT}/$$c ) then  {\
+-	      cp -f ${CACERT}/$$c ${CERT}; \
++	      cp -f ${CACERT}/$$c ${CERT}/GUI-$$c; \
+ 	  } fi; \
+ 	done
+ 	echo ">>> Build & install local Perl modules:" | tee -a ${LOG}
