@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0d9ba03b-0dbb-42b4-ae0f-60e27af78e22">
+    <topic>sympa -- buffer overflow in "queue"</topic>
+    <affects>
+      <package>
+	<name>sympa</name>
+	<range><lt>4.1.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Erik Sjölund discovered a vulnerabilitiy in Sympa.  The
+	  <code>queue</code> application processes messages received via
+	  aliases.  It contains a buffer overflow in the usage of
+	  <code>sprintf</code>.  In some configurations, it may allow an
+	  attacker to execute arbitrary code as the <code>sympa</code>
+	  user.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0073</cvename>
+      <url>http://www.debian.org/security/2005/dsa-677</url>
+    </references>
+    <dates>
+      <discovery>2005-02-11</discovery>
+      <entry>2005-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3cd00f7-c0c5-452d-87bc-086c5635333e">
     <topic>mailman -- generated passwords are poor quality</topic>
     <affects>
