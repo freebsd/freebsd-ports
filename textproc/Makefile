@@ -200,6 +200,7 @@
     SUBDIR += lacheck
     SUBDIR += latex2html
     SUBDIR += latte
+    SUBDIR += lemmatizer
     SUBDIR += libcroco
     SUBDIR += libebml
     SUBDIR += libextractor
