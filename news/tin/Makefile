@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.8
 CATEGORIES+=	news ipv6
 MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/v1.7/ \
 		ftp://mirrors.rcn.net/pub/news/tin/v1.7/ \
@@ -24,7 +24,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-TIN_EDITOR?=	/usr/bin/ee
+WITH_TIN_EDITOR?=	/usr/bin/ee
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-spooldir=/var/news \
 		--with-libdir=${PREFIX}/news/lib \
 		--with-defaults-dir=${PREFIX}/etc \
-		--with-editor=${TIN_EDITOR} \
+		--with-editor=${WITH_TIN_EDITOR} \
 		--enable-nls \
 		--with-pcre=yes \
 		--with-screen=ncurses \
