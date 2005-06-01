@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.0.2
+PORTVERSION=	1.0.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
