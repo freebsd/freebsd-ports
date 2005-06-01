@@ -8,7 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/
 
@@ -50,6 +50,12 @@ IGNORE=	Does not work on 4.X and 5.X before 503000
 # ttyname_r(3) patch
 .if ${OSVERSION} < 600028
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-support_mph.h
+.endif
+
+.if exists(${LOCALBASE}/lib/libgamin-1.so)
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/gamin
+.elif exists(${LOCALBASE}/lib/libfam.so)
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 .endif
 
 post-patch:
