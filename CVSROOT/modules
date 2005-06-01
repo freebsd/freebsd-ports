@@ -636,6 +636,7 @@ bdelta		ports/misc/bdelta
 bdesktopclock	ports/x11-clocks/bdesktopclock
 bdfresize	ports/x11-fonts/bdfresize
 be-aspell	ports/textproc/be-aspell
+be_agent	ports/sysutils/be_agent
 beacon		ports/net/beacon
 beacon-server	ports/net/beacon-server
 beagle		ports/devel/beagle
