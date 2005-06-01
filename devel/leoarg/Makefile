@@ -20,8 +20,13 @@ USE_INC_LIBTOOL_VER=	13
 LIBTOOLFLAGS=	--disable-ltlibs --disable-static
 INSTALLS_SHLIB=	yes
 
-PLIST_FILES=	include/LeoArg.hh lib/libLeoArg.so lib/libLeoArg.so.2
+PLIST_FILES=	include/LeoArg.hh lib/libLeoArg.so lib/libLeoArg.so.2 \
+		${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
+.if !defined(NOPORTDOCS)
+EXAMPLES=	Makefile demo.sh leoargmain.cpp
+PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	*
+.endif
 
 MAN3=	LeoArg.3 LeoArg__InvalidOption.3 LeoArg__InvalidSetting.3 \
 	LeoArg__Option.3 LeoArg__Setting.3 LeoArg_cpp.3 LeoArg_hh.3 \
@@ -38,8 +43,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.* ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in Makefile demo.sh leoargmain.cpp
-	${INSTALL_DATA} ${WRKSRC}/example/${file} ${EXAMPLESDIR}
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/example/${f} ${EXAMPLESDIR}
 .endfor
 .endif
 
