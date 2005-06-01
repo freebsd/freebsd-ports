@@ -1,0 +1,11 @@
+--- configure.orig	Mon May 30 14:13:24 2005
++++ configure	Wed Jun  1 19:09:26 2005
+@@ -20552,7 +20552,7 @@
+ 
+ 
+ 
+-xfc_docdir="$datadir/doc/$PACKAGE-$XFC_API_VERSION"
++xfc_docdir="$datadir/doc/$PACKAGE"
+ 
+ 
+ 

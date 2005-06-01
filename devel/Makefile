@@ -1536,6 +1536,7 @@
     SUBDIR += wininfo
     SUBDIR += wizard
     SUBDIR += wxGlade
+    SUBDIR += xfc
     SUBDIR += xmake
     SUBDIR += xparam
     SUBDIR += xtl
