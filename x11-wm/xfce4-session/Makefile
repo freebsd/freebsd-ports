@@ -26,6 +26,7 @@ RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
 		iceauth:${X_CLIENTS_PORT}
 
 USE_GETTEXT=	yes
+USE_GNOME=	gnomehack
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
