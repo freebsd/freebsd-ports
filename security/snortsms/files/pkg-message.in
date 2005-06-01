@@ -1,0 +1,28 @@
+************************************************************
+
+First time installations:
+-You must configure SnortSMS.
+
+Please browse to the SnortSMS web console and edit the
+"Global Settings" in the SnortSMS Settings menu.
+SnortSMS uses the following configuration file:
+%PREFIX%%/www/snortsms/conf/conf.php
+which (if missing) will be automatically created - never
+edit this file directly.
+
+
+* NOTE:  SnortSMS requires a local or remote database (MySQL
+recommended) connection.
+
+
+For how to configure SnortSMS, please read the setup guide
+located at:
+http://<SnortSMS_webroot>/contrib/snortsms_install.html
+-or-
+%%PREFIX%%/www/snortsms/contrib/snortsms_install.html
+
+
+Thank you for using SnortSMS!
+
+
+************************************************************
