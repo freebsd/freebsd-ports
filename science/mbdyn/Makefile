@@ -75,4 +75,8 @@ CONFIGURE_ARGS+=	--with-tcl=no
 BROKEN=		"Does not compile"
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
 .include <bsd.port.post.mk>
