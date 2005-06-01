@@ -152,7 +152,7 @@ OLDCONFIG=	web2c/texmf.cnf web2c/mktex.cnf web2c/fmtutil.cnf \
 		tex/context/config/cont-usr.tex \
 		pdftex/config/pdftex.cfg
 
-pre-install:
+pre-su-install:
 	${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 .for F in ${OLDCONFIG}
