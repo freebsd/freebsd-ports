@@ -131,6 +131,7 @@
     SUBDIR += etcmerge
     SUBDIR += eventwatcher
     SUBDIR += extipl
+    SUBDIR += fanout
     SUBDIR += fastest_cvsup
     SUBDIR += fcron
     SUBDIR += fdupes

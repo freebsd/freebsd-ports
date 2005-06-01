@@ -1,0 +1,51 @@
+
+$FreeBSD$
+
+--- fanout.orig
++++ fanout
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #Copyright 2000, 2001, 2002, 2003 William Stearns <wstearns@pobox.com>
+ #GPL'd, of course.
+ #Version 0.6.1, 8/7/2002
+@@ -23,6 +23,7 @@
+ 	echo "Usage:"											>/dev/stderr
+ 	echo "  $0 \"MACHINES\" \"commands and parameters to run on each machine\""			>/dev/stderr
+ 	echo "  $0 -h	#Show this help"								>/dev/stderr
++	echo "  $0 --noping	# Do not ping before running command"								>/dev/stderr
+ 	echo												>/dev/stderr
+ 	echo "Examples:"										>/dev/stderr
+ 	echo "  fanout \"wstearns@localhost localhost anotherhost.someplace.net\" \\"			>/dev/stderr
+@@ -38,8 +39,7 @@
+ 	echo												>/dev/stderr
+ 	echo "  export SERVERS=\"web1 web2 mail\""							>/dev/stderr
+ 	echo "  fanout \"\$SERVERS \" \"uname -a ; ( if [ -f /var/log/dmesg ]; then \\"			>/dev/stderr
+-	echo "   cat /var/log/dmesg ; else dmesg ; fi ) | egrep -i '(hd[a-h]|sd[a-h])' ; ls -al \\"	>/dev/stderr
+-	echo "   /proc/kcore ; cat /proc/cpuinfo\" >serverspecs"					>/dev/stderr
++	echo "   cat /var/log/dmesg ; else dmesg ; fi ) | egrep -i '(hd[a-h]|sd[a-h])' "	>/dev/stderr
+ 	exit
+ }
+ 
+@@ -65,20 +65,11 @@
+ 		;;
+ 	esac
+ 
+-	if type -path mktemp >/dev/null 2>/dev/null ; then
+-		TMPFILE=`mktemp -q /tmp/fanout.XXXXXX`
+-		if [ $? -ne 0 ]; then
+-			echo "$0: Can't create temp file ${TMPFILE}." >/dev/stderr
+-			exit 1
+-		fi
+-	else
+-		TMPFILE="/tmp/fanout.$MYPID.$ONETARGET.$RANDOM"
+-		touch $TMPFILE
++	TMPFILE=`mktemp -q /tmp/fanout.XXXXXX`
+ 		if [ $? -ne 0 ]; then
+ 			echo "$0: Can't create temp file ${TMPFILE}." >/dev/stderr
+ 			exit 1
+ 		fi
+-	fi
+ 	OUTFILES="$OUTFILES $TMPFILE"						#Remember the filename for later display, cleanup
+ 	if [ "$PING" = "NO" ] || ping -c 3 $ONEMACH >/dev/null 2>/dev/null ; then
+ 		echo Starting $ONETARGET >/dev/stderr				#Machine is reachable
