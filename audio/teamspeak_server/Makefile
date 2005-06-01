@@ -11,7 +11,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/
 DISTNAME=	ts2_server_rc2_20201
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tremere@cainites.net
 COMMENT=	Server side of the TeamSpeak group voice chat system
 
 WRKSRC=		${WRKDIR}/tss2_rc2
