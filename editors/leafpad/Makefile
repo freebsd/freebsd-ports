@@ -14,14 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	radek@raadradd.com
 COMMENT=	GTK+ based simple text editor
 
-USE_GNOME=	gtk20 gnomehier desktopfileutils
+USE_GNOME=	gtk20 gnomehier desktopfileutils intlhack
+USE_GCC=	3.4
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		PTHREAD_LIB="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-chooser
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
