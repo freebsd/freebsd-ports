@@ -1,8 +1,8 @@
---- ../MailScanner-install-4.40.10.old/docs/man/MailScanner.conf.5	Fri Apr  1 16:10:19 2005
-+++ docs/man/MailScanner.conf.5	Fri Apr  1 16:10:37 2005
+--- ../MailScanner-install-4.42.9.orig/docs/man/MailScanner.conf.5	Wed Jun  1 11:24:25 2005
++++ docs/man/MailScanner.conf.5	Wed Jun  1 11:30:13 2005
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.38.2" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.41.3" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.42.9" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
@@ -122,7 +122,47 @@
  \fBAllow IFrame Tags\fR
  Default: no
  .br 
-@@ -1753,6 +1832,12 @@
+@@ -1233,6 +1312,23 @@
+ .br 
+ This is the text inserted at the start of the "Subject:" line if the "Content Modify Subject" option is set. 
+ 
++.TP 
++\fBDisarmed Modify Subject\fR
++Default: yes
++.br 
++
++.br 
++If HTML tags in the message were "disarmed" by using the HTML "Allow" options above with the "disarm" settings, do you want to modify the subject line? This can also be the filename of a ruleset.
++
++
++.TP 
++\fBDisarmed Subject Text\fR
++Default: {Disarmed}
++.br 
++
++.br 
++This is the text to add to the start of the subject if the "Disarmed Modify Subject" option is set. This can also be the filename of a ruleset.
++
+ 
+ .TP 
+ \fBSpam Modify Subject\fR
+@@ -1415,6 +1511,15 @@
+ This provides a space\-separated list of "Spam Lists" (or RBL's or DNSBL's) which are checked for each message. These lists are based on the domain name of the sender address of each message. Every list used here must be defined in the "Spam List Definitions" file mentioned above. 
+ 
+ .TP 
++\fBSpam Lists To Be Spam\fR
++Default: 1
++.br 
++
++.br 
++If a message appears in at least this number of "Spam Lists" (as defined above), then the message will be treated as spam and so the "Spam Actions" will happen, unless the message reaches the levels for "High Scoring Spam". By default this is set to 1 to mimic the previous behaviour, which means that appearing in any "Spam Lists" will cause the message to be treated as spam. This can also be the filename of a ruleset.
++
++
++.TP 
+ \fBSpam Lists To Reach High Score\fR
+ Default: 5
+ .br 
+@@ -1753,6 +1858,12 @@
  
  .br 
  Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.
