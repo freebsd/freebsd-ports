@@ -7517,6 +7517,7 @@ p5-GPS		ports/astro/p5-GPS
 p5-Games-Bingo	ports/games/p5-Games-Bingo
 p5-Games-Bingo-Bot	ports/games/p5-Games-Bingo-Bot
 p5-Games-Bingo-Print	ports/games/p5-Games-Bingo-Print
+p5-Games-Dice	ports/games/p5-Games-Dice
 p5-Gateway	ports/news/p5-Gateway
 p5-GdkImlib	ports/x11-toolkits/p5-GdkImlib
 p5-GdkPixbuf	ports/x11-toolkits/p5-GdkPixbuf
