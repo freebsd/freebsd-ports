@@ -1,7 +1,3 @@
 %%SITE_PERL%%/Text/vFile/asData.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile/asData/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/Text/vFile 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile/asData
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true

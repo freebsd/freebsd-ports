@@ -55,5 +55,3 @@ bin/catalyst.pl
 @dirrm %%SITE_PERL%%/Catalyst/Manual
 @dirrm %%SITE_PERL%%/Catalyst/Request
 @dirrm %%SITE_PERL%%/Catalyst
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
