@@ -2,7 +2,7 @@ bin/dclcc
 bin/dclclr
 bin/dclcmap
 bin/dclconfig
-bin/dclconfig53
+bin/dclconfig531
 bin/dcldate
 bin/dcldbs
 bin/dclexec
@@ -26,33 +26,33 @@ bin/dcltone
 bin/dcltrf
 bin/dclver
 bin/repsl
-lib/dcldbase-%%DCL_VERSION%%/bitmap.x11
-lib/dcldbase-%%DCL_VERSION%%/border_world
-lib/dcldbase-%%DCL_VERSION%%/cl2tnmap
-lib/dcldbase-%%DCL_VERSION%%/cmaplist
-lib/dcldbase-%%DCL_VERSION%%/coast_japan
-lib/dcldbase-%%DCL_VERSION%%/coast_world
-lib/dcldbase-%%DCL_VERSION%%/coast_world_1
-lib/dcldbase-%%DCL_VERSION%%/colormap.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_01.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_02.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_03.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_04.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_05.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_06.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_07.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_08.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_09.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_10.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_11.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_12.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_13.x11
-lib/dcldbase-%%DCL_VERSION%%/font1u
-lib/dcldbase-%%DCL_VERSION%%/font2u
-lib/dcldbase-%%DCL_VERSION%%/plate_world
-lib/dcldbase-%%DCL_VERSION%%/pref_japan
-lib/dcldbase-%%DCL_VERSION%%/state_usa
-lib/libf77dcl53.a
+lib/dcldbase/bitmap.x11
+lib/dcldbase/border_world
+lib/dcldbase/cl2tnmap
+lib/dcldbase/cmaplist
+lib/dcldbase/coast_japan
+lib/dcldbase/coast_world
+lib/dcldbase/coast_world_1
+lib/dcldbase/colormap.x11
+lib/dcldbase/colormap_01.x11
+lib/dcldbase/colormap_02.x11
+lib/dcldbase/colormap_03.x11
+lib/dcldbase/colormap_04.x11
+lib/dcldbase/colormap_05.x11
+lib/dcldbase/colormap_06.x11
+lib/dcldbase/colormap_07.x11
+lib/dcldbase/colormap_08.x11
+lib/dcldbase/colormap_09.x11
+lib/dcldbase/colormap_10.x11
+lib/dcldbase/colormap_11.x11
+lib/dcldbase/colormap_12.x11
+lib/dcldbase/colormap_13.x11
+lib/dcldbase/font1u
+lib/dcldbase/font2u
+lib/dcldbase/plate_world
+lib/dcldbase/pref_japan
+lib/dcldbase/state_usa
+lib/libf77dcl531.a
 %%PORTDOCS%%%%DOCSDIR%%/CHECK
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
@@ -115,6 +115,7 @@ lib/libf77dcl53.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk09.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk10.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/grph1/sgpack/sgtclr.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/grph1/sgpack/sgtcls.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/grph1/sgpack/sgtone.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/grph1/sgpack/sgtonz.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/grph1/slpack/Makefile
@@ -409,4 +410,4 @@ lib/libf77dcl53.a
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rakuraku/uxyz
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rakuraku
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/dcldbase-%%DCL_VERSION%%
+@dirrm lib/dcldbase
