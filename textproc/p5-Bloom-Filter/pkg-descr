@@ -1,0 +1,5 @@
+A Bloom filter is a probabilistic algorithm for doing existence tests
+in less memory than a full list of keys would require.  The tradeoff to
+using Bloom filters is a certain configurable risk of false positives.
+
+WWW: http://search.cpan.org/dist/Bloom-Filter
