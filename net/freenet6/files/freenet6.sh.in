@@ -5,8 +5,8 @@
 
 #
 # PROVIDE: freenet6
-# REQUIRE: LOGIN
-# AFTER: network
+# REQUIRE: NETWORKING
+# BEFORE: SERVERS
 # KEYWORD: FreeBSD shutdown
 #
 
