@@ -13,6 +13,8 @@ MASTER_SITES=	http://rigelseven.com/schism/dl/
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	A module tracker editor/player resembling impulse tracker
 
+ONLY_FOR_ARCHS=	i386
+
 USE_BZIP2=	yes
 USE_SDL=	yes
 USE_X_PREFIX=	yes
