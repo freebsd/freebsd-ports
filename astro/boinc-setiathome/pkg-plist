@@ -1,7 +1,6 @@
-@comment @unexec %D/boinc/boinc_client -detach_project %%SETI_SITE%%
+@comment @unexec %D/lib/boinc_client -detach_project %%SETI_SITE%%
 lib/boinc/%%SETI_BINARY%%
 @comment %%BOINC_GUI%%lib/boinc/%%SETI_BINARY%%.so
-@cd %%BOINC_HOME%%
-projects/%%SETI_SITE%%/app_info.xml
-projects/%%SETI_SITE%%/%%SETI_BINARY%%
-@comment %%BOINC_GUI%%projects/%%SETI_SITE%%/%%SETI_BINARY%%.so
+@unexec rm %%BOINC_HOME%%/projects/%%SETI_SITE%%/app_info.xml 2>&1 >/dev/null || true
+@unexec rm %%BOINC_HOME%%/projects/%%SETI_SITE%%/%%SETI_BINARY%% 2>&1 >/dev/null || true
+@comment %%BOINC_GUI%%@unexec rm %%BOINC_HOME%%/projects/%%SETI_SITE%%/%%SETI_BINARY%%.so 2>&1 >/dev/null || true

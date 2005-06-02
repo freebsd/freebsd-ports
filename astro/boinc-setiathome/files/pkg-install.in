@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case "$2" in
+POST-INSTALL)
+	install -d -o %%BOINC_USER%% -g %%BOINC_GROUP%% %%BOINC_HOME%%/projects/%%SETI_SITE%%
+	ln -s %%PREFIX%%/lib/boinc/%%SETI_BINARY%% %%BOINC_HOME%%/projects/%%SETI_SITE%%
+	#ln -s %%PREFIX%%/lib/boinc/%%SETI_BINARY%%.so %%BOINC_HOME%%/projects/%%SETI_SITE%%
+	;;
+esac
