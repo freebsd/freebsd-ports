@@ -1,12 +1,18 @@
 $FreeBSD$
 
---- dns.c.orig	Fri Mar 12 07:29:07 2004
-+++ dns.c	Fri Mar 12 07:29:19 2004
-@@ -46,6 +46,7 @@
- #include "tree.h"
- #include "http.h"
- #include "dns.h"
-+#include "getaddrinfo.h"
+--- dns.c.orig	Sun May 18 10:21:33 2003
++++ dns.c	Mon May 30 16:20:14 2005
+@@ -562,8 +562,13 @@
+         if (res != 0) {
+                 fprintf(stderr, "%s: getaddrinfo(%s): %s\n", __func__,
+ 		    ip, gai_strerror(res));
++#ifdef EAI_NODATA
+ 		if (res != EAI_NODATA)
+ 			return (-1);
++#else
++		if (res != EAI_NONAME)
++			return (-1);
++#endif
  
- ssize_t atomicio(ssize_t (*f)(), int, void *, size_t);
- 
+ 		/* Negative caching */
+ 		ai = NULL;
