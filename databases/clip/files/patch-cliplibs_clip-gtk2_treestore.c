@@ -1,6 +1,6 @@
---- cliplibs/clip-gtk2/treestore.c.orig	Fri Apr 15 21:47:28 2005
-+++ cliplibs/clip-gtk2/treestore.c	Fri Apr 15 21:48:06 2005
-@@ -298,16 +298,21 @@
+--- cliplibs/clip-gtk2/treestore.c.orig	Tue Apr 19 21:12:14 2005
++++ cliplibs/clip-gtk2/treestore.c	Thu Jun  2 17:40:59 2005
+@@ -322,10 +322,10 @@
  int
  clip_GTK_TREESTORESETVALUE(ClipMachine * cm)
  {
@@ -15,8 +15,9 @@
  	GtkTreeIter iter;
          ClipArrVar *utypes;
  	GValue value;
+@@ -333,6 +333,11 @@
  	gchar *str;
- 	int j;
+ 	int j,n;
  	double d;
 +
 +	cstree = _fetch_co_arg(cm);

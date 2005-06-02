@@ -392,6 +392,7 @@ clip/doc/example/clip-gtk2/drag_and_drop.prg
 clip/doc/example/clip-gtk2/draw.prg
 clip/doc/example/clip-gtk2/entrytempl.prg
 clip/doc/example/clip-gtk2/fonttest.prg
+clip/doc/example/clip-gtk2/iconview.prg
 clip/doc/example/clip-gtk2/ifactory.prg
 clip/doc/example/clip-gtk2/imgmenu.prg
 clip/doc/example/clip-gtk2/lines.prg
@@ -995,7 +996,6 @@ clip/locale.pot/codb/dep_dbf.pot
 clip/locale.pot/codb/dict_dbf.pot
 clip/locale.pot/codb/list_id.pot
 clip/locale.pot/codb/dict_all.pot
-clip/locale.pot/codb/dict_sql.pot
 clip/locale.pot/debug/_.pot
 clip/locale.pot/debug/cld_obj.pot
 clip/locale.pot/debug/clip_cld.pot

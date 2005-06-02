@@ -7,10 +7,12 @@
 
 PORTNAME=	clip
 PORTVERSION=	1.1.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases lang
-MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/	\
-		ftp://ftp.linux.ru.net/mirrors/clip/
+MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
+		ftp://ftp.itk.ru/pub/clip/		\
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lawrance
 DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz \
 		patch.tgz
 DIST_SUBDIR=	clip
@@ -19,7 +21,6 @@ EXTRACT_ONLY=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget			\
 		xmkmf:${X_IMAKE_PORT}
@@ -32,6 +33,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
 
