@@ -47,6 +47,7 @@
     SUBDIR += kpsk
     SUBDIR += libirman
     SUBDIR += libticables
+    SUBDIR += linpsk
     SUBDIR += linrad
     SUBDIR += lirc
     SUBDIR += lrzsz

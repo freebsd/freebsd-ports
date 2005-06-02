@@ -1,0 +1,3 @@
+bin/linpsk
+%%EXAMPLESDIR%%/LinPSKConfig.xml
+@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,4 @@
+===============================================================================
+ You should now copy the default configuration file to your home directory:
+     cp %%EXAMPLESDIR%%/LinPSKConfig.xml ~
+===============================================================================
