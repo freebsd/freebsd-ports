@@ -6,31 +6,18 @@ include/pop3lite/userconf.h
 @unexec install-info --delete %D/info/pop3lite-admin.info %D/info/dir
 info/pop3lite-admin.info
 @exec install-info %D/info/pop3lite-admin.info %D/info/dir
-lib/pop3lite/alias.la
 lib/pop3lite/alias.so
-lib/pop3lite/apop.la
 lib/pop3lite/apop.so
-lib/pop3lite/capa.la
 lib/pop3lite/capa.so
-lib/pop3lite/connectlog.la
 lib/pop3lite/connectlog.so
-lib/pop3lite/disable.la
 lib/pop3lite/disable.so
-lib/pop3lite/expire.la
 lib/pop3lite/expire.so
-lib/pop3lite/filelog.la
 lib/pop3lite/filelog.so
-lib/pop3lite/homebox.la
 lib/pop3lite/homebox.so
-lib/pop3lite/iplog.la
 lib/pop3lite/iplog.so
-lib/pop3lite/pam.la
 lib/pop3lite/pam.so
-lib/pop3lite/sabotage.la
 lib/pop3lite/sabotage.so
-lib/pop3lite/userconf.la
 lib/pop3lite/userconf.so
-lib/pop3lite/vhost.la
 lib/pop3lite/vhost.so
 sbin/pop3lite
 share/doc/pop3lite/AUTHORS

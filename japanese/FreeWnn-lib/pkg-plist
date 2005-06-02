@@ -73,11 +73,9 @@ lib/wnn/lt_LN/uumkey
 lib/wnn/lt_LN/uumkey_e
 lib/wnn/lt_LN/uumrc
 lib/libjd.a
-lib/libjd.la
 lib/libjd.so
 lib/libjd.so.0
 lib/libwnn.a
-lib/libwnn.la
 lib/libwnn.so
 lib/libwnn.so.0
 @dirrm lib/wnn/ja_JP/rk

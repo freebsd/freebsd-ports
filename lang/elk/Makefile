@@ -9,7 +9,7 @@ PORTNAME=	elk
 PORTVERSION=	3.99.6
 PORTREVISION=	2
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://sam.zoy.org/projects/elk/
+MASTER_SITES=	http://sam.zoy.org/elk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An embeddable Scheme interpreter
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 
 USE_BZIP2=	yes
 USE_MOTIF=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

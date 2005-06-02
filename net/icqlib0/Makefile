@@ -16,10 +16,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old branch 0.x.x of library required by kicq (used by icqmail)
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 LATEST_LINK=	icqlib0
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/icqlib/icq.h ${PREFIX}/include/icq0.h

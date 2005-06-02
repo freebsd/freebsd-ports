@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--enable-threads \
 		--prefix=${PREFIX}
 
@@ -59,9 +59,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/ispell-ru:${PORTSDIR}/russian/rus-ispell
 .endif
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's#DATADIRNAME=lib#DATADIRNAME=share#g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's#/usr/bin/gnome-config#$(PREFIX)/bin/gnome-config#g' \
+	@${REINPLACE_CMD} -e 's#DATADIRNAME=lib#DATADIRNAME=share#g ; \
+		s#/usr/bin/gnome-config#$(PREFIX)/bin/gnome-config#g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
 
 do-install:

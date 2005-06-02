@@ -16,7 +16,7 @@ COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)

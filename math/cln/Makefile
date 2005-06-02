@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${MANPREFIX}/man \
 		--with-gmp

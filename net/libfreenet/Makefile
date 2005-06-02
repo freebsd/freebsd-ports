@@ -18,11 +18,13 @@ COMMENT=	Freenet library written in C
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/libfreenet
 INSTALLS_SHLIB=	yes
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-g -Wall|\@CFLAGS\@|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-dicdir=${PREFIX}/share/chasen/dic
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/chasenrc \

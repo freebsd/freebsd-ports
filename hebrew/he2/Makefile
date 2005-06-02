@@ -18,7 +18,7 @@ COMMENT=	An editor for editing (primarily LaTeX) Hebrew files
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/hebrew:${PORTSDIR}/hebrew/elmar-fonts
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

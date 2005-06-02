@@ -2,10 +2,8 @@ bin/xmps
 bin/xmps-config
 include/libxmps/libxmps.h
 include/libxmps/libxmps_config.h
-lib/libxmps.a
 lib/libxmps.so
 lib/libxmps.so.0
-lib/libxmpsutils.a
 lib/libxmpsutils.so
 lib/libxmpsutils.so.0
 lib/xmps/addons/video/libvob.so

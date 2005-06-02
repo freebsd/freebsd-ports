@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -33,12 +33,10 @@ BROKEN=		"Does not compile on !i386"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
 
 .include <bsd.port.post.mk>

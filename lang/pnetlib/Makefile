@@ -22,7 +22,8 @@ BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 USE_XLIB=	yes
 .endif
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
@@ -35,6 +36,10 @@ PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
 .if ${ARCH} == "alpha"
 IGNORE=		Coredump during build on alpha
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

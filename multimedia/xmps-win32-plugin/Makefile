@@ -19,7 +19,7 @@ RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -30,10 +30,11 @@ CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 LIB_VERSION=	0
 PLIST_FILES=	lib/xmps/codecs/video/libwin32.so \
-		lib/xmps/codecs/video/libwin32.so.${LIB_VERSION} \
-		lib/xmps/codecs/video/libwin32.la
+		lib/xmps/codecs/video/libwin32.so.${LIB_VERSION}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|/usr/lib/win32|${LOCALBASE}/lib/win32|" \
 		${WRKSRC}/src/win32_codec.c
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/src/*

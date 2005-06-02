@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolki
 USE_GNOME=	glib12 gnomehack gnomeprefix
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -33,12 +33,9 @@ CONFIGURE_ARGS=	--with-recode-prefix="${LOCALBASE}"
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|glib-config|glib12-config|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/gnome/|$$(datadir)/|g ; \
-		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
+	@${REINPLACE_CMD} -e 's|glib-config|${GLIB_CONFIG}|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 .if ${PYTHON_REL} >= 230
 	@${REINPLACE_CMD} 's|@DEFS@||g' ${WRKSRC}/compiled/Makefile.pre.in
 .endif

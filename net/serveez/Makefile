@@ -25,16 +25,20 @@ GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 MAN1=	serveez.1 serveez-config.1
 INFO=	serveez serveez-api
 
 CPPFLAGS=	`${GUILE_CONFIG} compile`
 LDFLAGS=	`${GUILE_CONFIG} link`
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-release||g' \
+		${WRKSRC}/src/libserveez/Makefile.in
 
 .include <bsd.port.mk>

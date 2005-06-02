@@ -16,7 +16,8 @@ MASTER_SITE_SUBDIR=	fame
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A video encoding library
 
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -37,5 +38,9 @@ CONFIGURE_ARGS+=	--enable-sse
 .if defined(WITHOUT_MMX)
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

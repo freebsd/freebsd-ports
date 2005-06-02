@@ -22,7 +22,7 @@ USE_GNOME=
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_SDL=	sdl
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	GLBASE="${X11BASE}" \
@@ -44,8 +44,8 @@ USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--disable-gtk-player
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
