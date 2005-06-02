@@ -35,11 +35,11 @@ share/locale/it_CH/LC_MESSAGES/amule.mo
 share/locale/pt_PT/LC_MESSAGES/amule.mo
 share/locale/hr/LC_MESSAGES/amule.mo
 share/locale/sl/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/en_US/LC_MESSAGE 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/en_US 2>/dev/null || true
-@unexec rmdir %D/share/locale/et_EE/LC_MESSAGE 2>/dev/null || true
+@unexec rmdir %D/share/locale/et_EE/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/et_EE 2>/dev/null || true
-@unexec rmdir %D/share/locale/it_CH/LC_MESSAGE 2>/dev/null || true
+@unexec rmdir %D/share/locale/it_CH/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/it_CH 2>/dev/null || true
 share/gnome/doc/aMule-2.0.1/ABOUT-NLS
 share/gnome/doc/aMule-2.0.1/amulesig.txt
