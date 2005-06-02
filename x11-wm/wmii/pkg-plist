@@ -1,0 +1,19 @@
+bin/wmibar
+bin/wmifs
+bin/wmii
+bin/wmiinput
+bin/wmikeys
+bin/wmiplumb
+bin/wmir
+bin/wmiwarp
+etc/wmii/actions
+etc/wmii/bar
+etc/wmii/input
+etc/wmii/keys
+etc/wmii/rc
+etc/wmii/rc.conf
+etc/wmii/status.sh
+etc/wmii/wmii
+@dirrm etc/wmii
+%%DATADIR%%/welcome.txt
+@dirrm %%DATADIR%%
