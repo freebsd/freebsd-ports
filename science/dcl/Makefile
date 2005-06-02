@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	5.3
+PORTVERSION=	5.3.1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
 
@@ -32,13 +32,6 @@ DEMOMISC1DIR=	bitlib chglib chklib chnlib clcklib datelib fmtlib hexlib \
 DEMORAKUDIR=	color kihon layout map3d miss quick u2d uspack uxyz
 
 RESTRICTED=	"No commercial use"
-
-DCL_VERSION=	${PORTVERSION}
-PLIST_SUB=	DCL_VERSION=${DCL_VERSION}
-
-pre-build:
-	@cd ${WRKSRC}
-	@${REINPLACE_CMD} -e 's+dcldbase+dcldbase-${PORTVERSION}+' ${WRKSRC}/Mkinclude
 
 post-install:
 .if !defined(NOPORTDOCS)
