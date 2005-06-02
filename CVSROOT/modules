@@ -3002,6 +3002,7 @@ gnomeutils2	ports/deskutils/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
 gnomevfs2	ports/devel/gnomevfs2
 gnomoradio	ports/audio/gnomoradio
+gnonlin		ports/multimedia/gnonlin
 gnopernicus	ports/accessibility/gnopernicus
 gnosamba	ports/net/gnosamba
 gnotepad+	ports/editors/gnotepad+
