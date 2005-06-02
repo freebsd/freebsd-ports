@@ -1,9 +1,9 @@
---- config/_arch-n-opsys.orig	Mon Oct 27 15:46:57 2003
-+++ config/_arch-n-opsys	Fri Nov 28 22:47:10 2003
-@@ -101,6 +101,7 @@
-       i486) ARCH=x86;;
-       i586) ARCH=x86;;
-       i686) ARCH=x86;;
+--- config/_arch-n-opsys.orig	Fri May  6 05:10:32 2005
++++ config/_arch-n-opsys	Sat May 28 18:00:11 2005
+@@ -95,6 +95,7 @@
+     HEAP_OPSYS=bsd
+     case `uname -m` in
+       *86) ARCH=x86;;
 +      alpha) ARCH=alpha32;;
        *) exit 1;;
      esac
