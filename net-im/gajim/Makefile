@@ -7,6 +7,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gajim.org/downloads/
 
