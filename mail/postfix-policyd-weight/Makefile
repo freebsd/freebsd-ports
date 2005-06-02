@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	mail
-MASTER_SITES=	http://robtone.mine.nu/postfix/
+MASTER_SITES=	http://robtone.mine.nu/postfix/releases/
 PKGNAMEPREFIX=  postfix-
 
 MAINTAINER=	robtone@ek-muc.de
