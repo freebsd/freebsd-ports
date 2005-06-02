@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc
@@ -29,8 +28,8 @@ USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-__GCC_VERSION=	3.4.4
-__GCC_REVISION=	20050506
+__GCC_VERSION=	3.4.5
+__GCC_REVISION=	20050524
 __GCC_VERSIONSTRING=	3.4-${__GCC_REVISION}
 
 .include <bsd.port.pre.mk>
@@ -53,6 +52,7 @@ CONFIGURE_ARGS+=--disable-nls --with-system-zlib \
 		--enable-languages=c,d,c++
 MAKE_ARGS+=     MAKEINFOFLAGS="--no-split"
 GNU_CONFIGURE=	yes
+PLIST_SUB=	__GCC_VER=${__GCC_VERSION} CONF_TARGET=${CONFIGURE_TARGET}
 
 .if defined(_GCC_BUILD_DEPENDS)
 RUN_DEPENDS+=	${_GCC_BUILD_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
