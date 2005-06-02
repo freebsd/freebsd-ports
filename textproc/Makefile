@@ -356,6 +356,7 @@
     SUBDIR += p5-Spreadsheet-WriteExcel
     SUBDIR += p5-Spreadsheet-WriteExcel-FromXML
     SUBDIR += p5-Spreadsheet-WriteExcelXML
+    SUBDIR += p5-String-Format
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-ShowDiff

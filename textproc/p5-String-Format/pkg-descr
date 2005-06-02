@@ -1,0 +1,5 @@
+String::Format is a Perl module which gives the user
+sprintf-like string formatting capabilities with arbitrary
+format definitions.
+
+WWW: http://search.cpan.org/dist/String-Format/
