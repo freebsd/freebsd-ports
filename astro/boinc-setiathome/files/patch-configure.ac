@@ -1,5 +1,5 @@
---- configure.ac.orig	Fri Feb 18 03:00:30 2005
-+++ configure.ac	Thu Apr 28 10:47:23 2005
+--- configure.ac.orig	Thu Apr 28 03:01:09 2005
++++ configure.ac	Tue May  3 16:07:32 2005
 @@ -154,7 +154,7 @@
  AC_CHECK_LIB([jpeg], [jpeg_start_decompress])
  SAH_CHECK_SETILIB
@@ -9,3 +9,12 @@
  dnl AC_CHECK_LIB([stdc++], [main])
  
  SAH_REQUIRES([boinc],[SAH_CHECK_BOINC],["${no_boinc}" = yes],
+@@ -231,7 +231,7 @@
+ AC_FUNC_STAT
+ AC_FUNC_STRFTIME
+ AC_CHECK_FUNCS([atexit exit _exit floor getcwd memset munmap putenv sqrt \
+-strchr strstr atoll dlopen sincosf sincos sinf cosf atanf])
++strchr strstr atoll dlopen])
+ 
+ if test "${enable_dynamic_graphics}" = yes; then
+   if test "${ac_cv_func_dlopen}" = yes; then
