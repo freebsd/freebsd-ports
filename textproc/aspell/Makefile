@@ -7,6 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.60.2
+PORTREVISION=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
@@ -72,10 +73,10 @@ DESCR=		${.CURDIR}/pkg-descr
 
 CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\
 		WORD_LIST_COMPRESS="${PREFIX}/bin/word-list-compress"
-AVAIL_DICT=	af am az be bg bn br ca cs cy da de de-alt el en eo es et fa fi fo	\
-		fr ga gd gl gv he hr hsb hu ia id is it la lt lv mi mk mn ms mt nb	\
-		nds nl nn ny or pl pt qu ro ru rw sc sk sl sv sw ta tet tl tn tr uk	\
-		uz vi wa yi zu
+AVAIL_DICT=	af am az be bg bn br ca cs csb cy da de de-alt el en eo es et fa fi fo	\
+		fr ga gd gl gv he hi hil hr hsb hu ia id is it la lt lv mi mk mn mr ms	\
+		mt nb nds nl nn ny or pa pl pt qu ro ru rw sc sk sl sv sw ta tet tl tn	\
+		tr uk uz vi wa yi zu
 DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
@@ -134,12 +135,15 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - German (orig spelling rules) ASPELL_DE-ALT=yes     *'
 	@${ECHO_MSG} '*  - Greek                        ASPELL_EL=yes         *'
 	@${ECHO_MSG} '*  - Hebrew                       ASPELL_HE=yes         *'
+	@${ECHO_MSG} '*  - Hiligaynon                   ASPELL_HIL=yes        *'
+	@${ECHO_MSG} '*  - Hindi                        ASPELL_HI=yes         *'
 	@${ECHO_MSG} '*  - Hungarian                    ASPELL_HU=yes         *'
 	@${ECHO_MSG} '*  - Icelandic                    ASPELL_IS=yes         *'
 	@${ECHO_MSG} '*  - Indonesian                   ASPELL_ID=yes         *'
 	@${ECHO_MSG} '*  - Interlingua                  ASPELL_IA=yes         *'
 	@${ECHO_MSG} '*  - Irish (Gaelic)               ASPELL_GA=yes         *'
 	@${ECHO_MSG} '*  - Italian                      ASPELL_IT=yes         *'
+	@${ECHO_MSG} '*  - Kashubian                    ASPELL_CSB=yes        *'
 	@${ECHO_MSG} '*  - Kinyarwanda                  ASPELL_RW=yes         *'
 	@${ECHO_MSG} '*  - Latin                        ASPELL_LA=yes         *'
 	@${ECHO_MSG} '*  - Latvian                      ASPELL_LV=yes         *'
@@ -150,6 +154,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Malay                        ASPELL_MS=yes         *'
 	@${ECHO_MSG} '*  - Maltese                      ASPELL_MT=yes         *'
 	@${ECHO_MSG} '*  - Manx Gaelic                  ASPELL_GV=yes         *'
+	@${ECHO_MSG} '*  - Marathi                      ASPELL_MR=yes         *'
 	@${ECHO_MSG} '*  - Mongolian                    ASPELL_MN=yes         *'
 	@${ECHO_MSG} '*  - Norwegian Bokmal             ASPELL_NB=yes         *'
 	@${ECHO_MSG} '*  - Norwegian Nynorsk            ASPELL_NN=yes         *'
@@ -158,6 +163,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Persian (Farsi)              ASPELL_FA=yes         *'
 	@${ECHO_MSG} '*  - Polish                       ASPELL_PL=yes         *'
 	@${ECHO_MSG} '*  - Portuguese                   ASPELL_PT=yes         *'
+	@${ECHO_MSG} '*  - Punjabi                      ASPELL_PU=yes         *'
 	@${ECHO_MSG} '*  - Quechua                      ASPELL_QU=yes         *'
 	@${ECHO_MSG} '*  - Romanian                     ASPELL_RO=yes         *'
 	@${ECHO_MSG} '*  - Russian                      ASPELL_RU=yes         *'

@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/mr.dat
+lib/aspell-%%VER%%/u-deva.cmap
+lib/aspell-%%VER%%/u-deva.cset
+share/aspell/mr.multi
+share/aspell/mr.rws
+share/aspell/marathi.alias

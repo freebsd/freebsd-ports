@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/pa.dat
+lib/aspell-%%VER%%/u-guru.cmap
+lib/aspell-%%VER%%/u-guru.cset
+share/aspell/pa.multi
+share/aspell/pa.rws
+share/aspell/punjabi.alias
