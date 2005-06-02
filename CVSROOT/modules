@@ -5423,6 +5423,7 @@ linphone	ports/net/linphone
 linphone-base	ports/net/linphone-base
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
+linpsk		ports/comms/linpsk
 linrad		ports/comms/linrad
 linux-XFree86-libs	ports/x11/linux-XFree86-libs
 linux-ac3d	ports/graphics/linux-ac3d
