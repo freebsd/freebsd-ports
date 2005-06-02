@@ -33,6 +33,7 @@
     SUBDIR += gcfilms
     SUBDIR += gdvrecv
     SUBDIR += gmencoder
+    SUBDIR += gnonlin
     SUBDIR += goggles
     SUBDIR += gopchop
     SUBDIR += gpac-libm4systems

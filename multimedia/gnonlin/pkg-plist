@@ -1,0 +1,15 @@
+bin/gnonlin-config
+include/gnl/gnl.h
+include/gnl/gnlcomposition.h
+include/gnl/gnlmarshal.h
+include/gnl/gnlobject.h
+include/gnl/gnloperation.h
+include/gnl/gnlsource.h
+include/gnl/gnltimeline.h
+include/gnl/gnltypes.h
+include/gnl/gnlversion.h
+lib/gstreamer-0.8/libgnl.a
+lib/gstreamer-0.8/libgnl.so
+lib/gstreamer-0.8/libgnl.so.0
+libdata/pkgconfig/gnonlin.pc
+@dirrm include/gnl
