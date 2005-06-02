@@ -1,0 +1,13 @@
+--- src/backend/sword_main.cc.orig	Thu Jul  1 15:45:30 2004
++++ src/backend/sword_main.cc	Thu Jun  2 16:47:23 2005
+@@ -190,8 +190,8 @@
+ 	VerseKey key;
+ 	GList *retlist = NULL;
+ 	char *book = NULL;
+-	unsigned int bytes_read;
+-	unsigned int bytes_written;
++	gsize bytes_read;
++	gsize bytes_written;
+ 	GError *error;
+ 	int i = 0, j = 0, x = 2;
+ 	
