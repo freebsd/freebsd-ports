@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export LD_LIBRARY_PATH=%%PREFIX%%/lib/boinc
+
+args=${@+"$@"}
+exec idprio 31 su - %%BOINC_USER%% -c "%%PREFIX%%/lib/boinc/%%BOINC_BINARY%% $args"
+

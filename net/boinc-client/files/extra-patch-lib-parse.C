@@ -1,14 +1,14 @@
---- lib/parse.C.orig	Tue Mar 15 15:23:24 2005
-+++ lib/parse.C	Sun Mar 20 21:45:20 2005
-@@ -31,7 +31,6 @@
+--- lib/parse.C.orig	Tue May 31 17:59:28 2005
++++ lib/parse.C	Wed Jun  1 20:56:12 2005
+@@ -32,7 +32,6 @@
  #ifndef _WIN32
  #include <cstring>
  #include <cstdlib>
 -#include <locale>
  #include <string>
- #endif
- 
-@@ -63,10 +62,7 @@
+ #if HAVE_IEEEFP_H
+ #include <ieeefp.h>
+@@ -67,10 +66,7 @@
  bool parse_int(const char* buf, const char* tag, int& x) {
      char* p = strstr(buf, tag);
      if (!p) return false;
@@ -19,14 +19,14 @@
      return true;
  }
  
-@@ -75,10 +71,7 @@
- bool parse_double(const char* buf, const char* tag, double& x) {
+@@ -80,10 +76,7 @@
+     double y;
      char* p = strstr(buf, tag);
      if (!p) return false;
 -    std::string strLocale = setlocale(LC_NUMERIC, NULL);
 -    setlocale(LC_NUMERIC, "C");
-     x = atof(p+strlen(tag));
+     y = atof(p+strlen(tag));
 -    setlocale(LC_NUMERIC, strLocale.c_str());
-     return true;
- }
- 
+     if (finite(y)) {
+         x = y;
+         return true;
