@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	2.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.hexago.com/files/
 DISTNAME=	tspc-${PORTVERSION}-src
