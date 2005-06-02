@@ -8200,6 +8200,7 @@ p5-String-Approx	ports/devel/p5-String-Approx
 p5-String-CRC32	ports/devel/p5-String-CRC32
 p5-String-Checker	ports/devel/p5-String-Checker
 p5-String-Ediff	ports/devel/p5-String-Ediff
+p5-String-Format	ports/textproc/p5-String-Format
 p5-String-LRC	ports/devel/p5-String-LRC
 p5-String-Multibyte	ports/converters/p5-String-Multibyte
 p5-String-Parity	ports/devel/p5-String-Parity
