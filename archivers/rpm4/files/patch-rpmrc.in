@@ -1,0 +1,53 @@
+--- rpmrc.in.orig	Wed May 25 11:34:33 2005
++++ rpmrc.in	Wed May 25 11:44:51 2005
+@@ -19,6 +19,7 @@
+ optflags: i686 -O2 -march=i686
+ optflags: athlon -O2 -march=athlon
+ optflags: ia64 -O2
++optflags: amd64 -O2
+ 
+ # XXX Please note that -mieee has been added in rpm-3.0.5.
+ optflags: alpha -O2 -mieee
+@@ -71,6 +72,9 @@
+ arch_canon:	i586:	i586	1
+ arch_canon:	i486:	i486	1
+ arch_canon:	i386:	i386	1
++arch_canon:	amd64:	amd64	1
++arch_canon:	x86_64:	x86_64	1
++arch_canon:	ia32e:	ia32e	1
+ 
+ arch_canon:	alpha:	alpha	2
+ arch_canon:	alphaev5: alphaev5	2
+@@ -195,6 +199,10 @@
+ buildarchtranslate: s390: s390
+ buildarchtranslate: s390x: s390x
+ 
++buildarchtranslate: amd64: amd64
++buildarchtranslate: x86_64: amd64
++buildarchtranslate: ia32e: amd64
++
+ #############################################################
+ # Architecture compatibility
+ 
+@@ -260,6 +268,10 @@
+ 
+ arch_compat: ia64: i686 noarch
+ 
++arch_compat: amd64: athlon noarch
++arch_compat: x86_64: amd64 athlon noarch
++arch_compat: ia32e: amd64 athlon noarch
++
+ os_compat:   IRIX64: IRIX
+ os_compat: solaris2.7: solaris2.3 solaris2.4 solaris2.5 solaris2.6
+ os_compat: solaris2.6: solaris2.3 solaris2.4 solaris2.5
+@@ -342,6 +354,10 @@
+ 
+ buildarch_compat: s390: noarch
+ buildarch_compat: s390x: noarch
++
++buildarch_compat: amd64: noarch
++buildarch_compat: x86_64: amd64
++buildarch_compat: ia32e: amd64
+ 
+ macrofiles:	@RPMCONFIGDIR@/macros:@RPMCONFIGDIR@/%{_target}/macros:@SYSCONFIGDIR@/macros.specspo:@SYSCONFIGDIR@/macros.db1:@SYSCONFIGDIR@/macros.cdb:@SYSCONFIGDIR@/macros:@SYSCONFIGDIR@/%{_target}/macros:~/.rpmmacros
+ 
