@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.52
+PORTVERSION=	110.54
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -17,12 +17,12 @@ DISTFILES+=	boot.x86-unix.tgz
 #.elif (${ARCH} == "alpha")
 #DISTFILES+=	boot.alpha32-unix.tgz
 .endif
-DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz cml.tgz MLRISC.tgz
+DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz cml.tgz MLRISC.tgz ckit.tgz
 .if defined(WITH_EVERYTHING) || defined(WITH_RECOMPILE)
 DISTFILES+=	ml-burg.tgz \
-		ckit.tgz ml-nlffi-lib.tgz ml-nlffigen.tgz smlnj-c.tgz \
+		ml-nlffi-lib.tgz ml-nlffigen.tgz smlnj-c.tgz \
 		eXene.tgz \
-		cm.tgz compiler.tgz system.tgz
+		cm.tgz compiler.tgz system.tgz tools.tgz
 .endif
 EXTRACT_ONLY=	config.tgz
 
@@ -105,7 +105,8 @@ do-configure:
 # removing targets.customized. See "do-build" below.
 .if defined(WITH_RECOMPILE)
 	( ${ECHO_CMD} "request	ml-yacc" && \
-	  ${ECHO_CMD} "request	ml-lex" ) \
+	  ${ECHO_CMD} "request	ml-lex" && \
+	  ${ECHO_CMD} "request	src-smlnj" ) \
 	> "${WRKDIR}/config/targets.customized"
 .endif
 .endif
@@ -131,12 +132,10 @@ MLRUNTIMEPATCHES!=	cd ${FILESDIR} && \
 			( ${LS} do-patch-src::runtime::* 2> ${AUXDEVNULL} || \
 			  ${TRUE} )
 .if defined(WITH_EVERYTHING)
-MLSOURCEUNPACKTARGETS=	cm compiler mlrisc smlnj-lib system
 MLSOURCEPATCHES!=	cd ${FILESDIR} && \
 			( ${LS} do-patch-src::* 2> ${AUXDEVNULL} || \
 			  ${TRUE} )
 .else
-MLSOURCEUNPACKTARGETS=
 MLSOURCEPATCHES=
 .endif
 
@@ -144,7 +143,6 @@ do-build:
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes \
-	MLSOURCEUNPACKTARGETS="${MLSOURCEUNPACKTARGETS}" \
 	MLRUNTIMEPATCHES="${MLRUNTIMEPATCHES}" \
 	MLSOURCEPATCHES="${MLSOURCEPATCHES}"	./config/install.sh
 .if defined(WITH_RECOMPILE)

@@ -1,0 +1,7 @@
+--- config/allsources.orig	Tue May 11 18:36:07 2004
++++ config/allsources	Wed Mar  9 23:16:54 2005
+@@ -23,3 +23,4 @@
+ mlrisc
+ mlrisc-tools
+ smlnj-c
++tools

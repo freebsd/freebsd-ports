@@ -1,0 +1,12 @@
+--- config/unpack.orig	Sat Jan 15 00:53:18 2005
++++ config/unpack	Wed Mar  9 23:12:31 2005
+@@ -283,6 +283,9 @@
+       heap2asm)
+ 	unpack "Heap->ASM tool" "$SRCDIR" heap2asm heap2asm
+ 	;;
++      tools)
++	unpack "(profiling) tools" "$SRCDIR" tools tools
++	;;
+       doc)
+ 	echo Package doc is currently unavailable.
+ 	# unpack Doc $ROOT doc doc

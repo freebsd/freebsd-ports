@@ -10,6 +10,7 @@ smlnj/bin/.heap/sml.%%MLARCH%%-bsd
 smlnj/bin/.link-sml
 smlnj/bin/.run/run.%%MLARCH%%-freebsd
 smlnj/bin/.run-sml
+smlnj/bin/heap2exec
 smlnj/bin/ml-build
 smlnj/bin/ml-lex
 smlnj/bin/ml-makedepend
@@ -31,6 +32,7 @@ smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/SPARC.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Visual.cm
 smlnj/lib/basis.cm/.cm/%%MLARCH%%-unix/basis.cm
 smlnj/lib/burg-ext.cm/.cm/%%MLARCH%%-unix/burg-ext.cm
+smlnj/lib/ckit-lib.cm/.cm/%%MLARCH%%-unix/ckit-lib.cm
 smlnj/lib/cml/.cm/%%MLARCH%%-unix/basis.cm
 smlnj/lib/cml/.cm/%%MLARCH%%-unix/cml-internal.cm
 smlnj/lib/cml/.cm/%%MLARCH%%-unix/cml.cm
@@ -129,6 +131,9 @@ smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/lib/burg-ext.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/burg-ext.cm/.cm
 @dirrm smlnj/lib/burg-ext.cm
+@dirrm smlnj/lib/ckit-lib.cm/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/ckit-lib.cm/.cm
+@dirrm smlnj/lib/ckit-lib.cm
 @dirrm smlnj/lib/cml/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/cml/.cm
 @dirrm smlnj/lib/cml

@@ -10,7 +10,6 @@ smlnj/bin/nowhere
 smlnj/lib/c/.cm/%%MLARCH%%-unix/c.cm
 smlnj/lib/c/internals/.cm/%%MLARCH%%-unix/c-int.cm
 smlnj/lib/c/memory/.cm/%%MLARCH%%-unix/memory.cm
-smlnj/lib/ckit-lib.cm/.cm/%%MLARCH%%-unix/ckit-lib.cm
 smlnj/lib/eXene.cm/.cm/%%MLARCH%%-unix/eXene.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/match-compiler.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/parser.cm
@@ -31,9 +30,6 @@ smlnj/lib/pgraph-util.cm/.cm/%%MLARCH%%-unix/pgraph-util.cm
 @dirrm smlnj/lib/c/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/c/.cm
 @dirrm smlnj/lib/c
-@dirrm smlnj/lib/ckit-lib.cm/.cm/%%MLARCH%%-unix
-@dirrm smlnj/lib/ckit-lib.cm/.cm
-@dirrm smlnj/lib/ckit-lib.cm
 @dirrm smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/mlrisc-tools/.cm
 @dirrm smlnj/lib/mlrisc-tools
