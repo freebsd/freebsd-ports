@@ -18,8 +18,6 @@ COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 
-BROKEN=		Incomplete pkg-plist
-
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 .endif
@@ -39,7 +37,9 @@ PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 Doxyfile \
 	l10n.html libgc_changes.txt pinvoke.html pnet_faq.html pnetasm.texi \
 	unrolling.txt
 INFO=	pnettools
-MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
+MAN1=	al.1 cli-unknown-ar.1 cli-unknown-cpp.1 cli-unknown-gcc.1 \
+	cli-unknown-ranlib.1 cli-unknown-size.1 cli-unknown-strip.1 clrwrap.1 \
+	csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
 	cscc-cpp.1 csdoc2texi.1 cssrc2html.1 ilalink.1 ilasm.1 ildasm.1 \
 	ildd.1 ilfind.1 ilgac.1 ilheader.1 ilnative.1 ilranlib.1 ilrun.1 \
 	ilsize.1 ilstrip.1 ilverify.1 resgen.1
