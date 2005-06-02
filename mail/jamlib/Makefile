@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A JAM subroutine library
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 NO_INSTALL_MANPAGES=	yes
 INSTALLS_SHLIB=	yes
 

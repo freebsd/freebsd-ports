@@ -16,8 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+USE_LIBTOOL_VER=15
+#LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 
 MAN1=	osip.1

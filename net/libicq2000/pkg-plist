@@ -39,6 +39,7 @@ include/libicq2000/time_extra.h
 include/libicq2000/userinfoconstants.h
 include/libicq2000/userinfohelpers.h
 include/libicq2000/version.h
+lib/libicq2000.a
 lib/libicq2000.so
 lib/libicq2000.so.5
 share/aclocal/libicq2000.m4

@@ -121,7 +121,6 @@ lib/cscc/lib/de/mscorlib.resources.dll
 lib/cscc/lib/ilinstall.exe
 lib/cscc/lib/jsrun.exe
 lib/cscc/lib/libXsharpSupport.a
-lib/cscc/lib/libXsharpSupport.la
 lib/cscc/lib/libXsharpSupport.so
 lib/cscc/lib/libXsharpSupport.so.0
 lib/cscc/lib/mscorlib.dll

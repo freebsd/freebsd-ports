@@ -16,10 +16,10 @@ COMMENT=	Implementation of ANSI Forth
 
 LATEST_LINK=	pfe-devel
 
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 LIBTOOLFILES=	pfe/configure
 LIBTOOLFLAGS=	# none
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man

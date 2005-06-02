@@ -1,6 +1,5 @@
 include/jamlib/jam.h
 lib/libjam.so.2
 lib/libjam.so
-lib/libjam.la
 lib/libjam.a
 @dirrm include/jamlib

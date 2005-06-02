@@ -21,7 +21,8 @@ LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/multimedia/libdivxdecore \
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
@@ -29,6 +30,10 @@ PLIST_FILES=	lib/xmps/codecs/video/libopendivx.so \
 		lib/xmps/codecs/video/libopendivx.so.${LIB_VERSION}
 
 LIB_VERSION=	0
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${LN} -sf libopendivx.so ${PREFIX}/lib/xmps/codecs/video/libopendivx.so.${LIB_VERSION}

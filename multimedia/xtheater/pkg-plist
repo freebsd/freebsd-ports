@@ -1,8 +1,6 @@
 bin/xtheater
 lib/Xtheater/config
-lib/Xtheater/player/libsmpeg.la
 lib/Xtheater/player/libsmpeg.so
-lib/Xtheater/ui/libgtkui.la
 lib/Xtheater/ui/libgtkui.so
 @dirrm lib/Xtheater/ui
 @dirrm lib/Xtheater/player

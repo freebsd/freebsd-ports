@@ -31,7 +31,7 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 USE_AUTOCONF_VER=	213
 
 # directories

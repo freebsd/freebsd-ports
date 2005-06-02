@@ -8,16 +8,12 @@ include/libnewmail/util.h
 lib/libnewmail.a
 lib/libnewmail.so
 lib/libnewmail.so.0
-lib/libnewmail/libimap.a
 lib/libnewmail/libimap.so
 lib/libnewmail/libimap.so.0
-lib/libnewmail/libmaildir.a
 lib/libnewmail/libmaildir.so
 lib/libnewmail/libmaildir.so.0
-lib/libnewmail/libpop3.a
 lib/libnewmail/libpop3.so
 lib/libnewmail/libpop3.so.0
-lib/libnewmail/libunix.a
 lib/libnewmail/libunix.so
 lib/libnewmail/libunix.so.0
 %%PORTDOCS%%%%DOCSDIR%%/README
