@@ -20,14 +20,13 @@ COMMENT=	Japanese enhancement of strings(1) command
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
 
-BROKEN=		Extraction fails
-
 MAN1=		jstrings.1
 MANLANG=	ja
 PLIST_FILES=	bin/jstrings
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
+EXTRACT_AFTER_ARGS=#	empty
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile.gcc
