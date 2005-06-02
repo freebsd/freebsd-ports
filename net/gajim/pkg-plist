@@ -197,6 +197,7 @@ bin/gajim
 %%DATADIR%%/src/vcard.py
 share/applications/gajim.desktop
 
+@dirrm lib/gajim
 @dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common
 @dirrm %%DATADIR%%/src
