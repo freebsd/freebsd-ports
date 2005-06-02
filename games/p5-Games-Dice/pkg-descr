@@ -1,0 +1,22 @@
+Games::Dice simulates die rolls. It uses a function-oriented (not
+object-oriented) interface. No functions are exported by default.
+
+The number and type of dice to roll is given in a style which should be
+familiar to players of popular role-playing games: adb[+-*/b]c. a is optional
+and defaults to 1; it gives the number of dice to roll. b indicates the number
+of sides to each die. % can be used instead of 100 for b; hence, rolling 2d%
+and 2d100 is equivalent. roll simulates a rolls of b-sided dice and adds
+together the results. The optional end, consisting of one of +-*/b and a
+number c, can modify the sum of the individual dice. +-*/ are similar in that
+they take the sum of the rolls and add or subtract c, or multiply or divide
+the sum by c. (x can also be used instead of *.) Using b in this slot is a
+little different: it's short for "best" and indicates "roll a number of dice,
+but add together only the best few". For example, 5d6b3 rolls five six- sided
+dice and adds together the three best rolls.
+
+Author: Philip Newton <pne@cpan.org>
+
+WWW: http://search.cpan.org/dist/Games-Dice/
+
+- Aaron Dalton
+aaron@daltons.ca

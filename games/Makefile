@@ -361,6 +361,7 @@
     SUBDIR += p5-Games-Bingo
     SUBDIR += p5-Games-Bingo-Bot
     SUBDIR += p5-Games-Bingo-Print
+    SUBDIR += p5-Games-Dice
     SUBDIR += pathological
     SUBDIR += pcgen
     SUBDIR += pengpong
