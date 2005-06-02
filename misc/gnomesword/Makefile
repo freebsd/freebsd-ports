@@ -40,10 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile (int type mismatch)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
