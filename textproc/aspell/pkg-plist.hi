@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/hi.dat
+lib/aspell-%%VER%%/u-deva.cmap
+lib/aspell-%%VER%%/u-deva.cset
+share/aspell/hi.multi
+share/aspell/hi.rws
+share/aspell/hindi.alias
