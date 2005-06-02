@@ -54,6 +54,7 @@
     SUBDIR += cost
     SUBDIR += crimson
     SUBDIR += cs-aspell
+    SUBDIR += csb-aspell
     SUBDIR += csv2latex
     SUBDIR += csv2xml
     SUBDIR += ctpp
@@ -146,7 +147,9 @@
     SUBDIR += hevea
     SUBDIR += hgrep
     SUBDIR += hhm
+    SUBDIR += hi-aspell
     SUBDIR += highlight
+    SUBDIR += hil-aspell
     SUBDIR += hr-aspell
     SUBDIR += hs-haxml
     SUBDIR += hsb-aspell
@@ -245,6 +248,7 @@
     SUBDIR += mkcatalog
     SUBDIR += mn-aspell
     SUBDIR += modlogan
+    SUBDIR += mr-aspell
     SUBDIR += ms-aspell
     SUBDIR += mt-aspell
     SUBDIR += nb-aspell
@@ -507,6 +511,7 @@
     SUBDIR += p5-libxml
     SUBDIR += p5-podlators
     SUBDIR += p5-xmltv
+    SUBDIR += pa-aspell
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pdftohtml

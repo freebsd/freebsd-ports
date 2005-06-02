@@ -1278,6 +1278,7 @@ cryptoslam	ports/games/cryptoslam
 cryptplug	ports/security/cryptplug
 cs-aspell	ports/textproc/cs-aspell
 cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
+csb-aspell	ports/textproc/csb-aspell
 cscope		ports/devel/cscope
 cscout		ports/devel/cscout
 csmash		ports/games/csmash
@@ -3461,10 +3462,12 @@ hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
 hgrep		ports/textproc/hgrep
 hhm		ports/textproc/hhm
+hi-aspell	ports/textproc/hi-aspell
 hicolor-icon-theme	ports/misc/hicolor-icon-theme
 hidentd		ports/net/hidentd
 highlight	ports/textproc/highlight
 highmoon	ports/games/highmoon
+hil-aspell	ports/textproc/hil-aspell
 himenobench	ports/benchmarks/himenobench
 hinfo		ports/net/hinfo
 histring	ports/misc/histring
@@ -6202,6 +6205,7 @@ mpqc		ports/science/mpqc
 mpqc-mpich	ports/science/mpqc-mpich
 mprime		ports/math/mprime
 mprof		ports/devel/mprof
+mr-aspell	ports/textproc/mr-aspell
 mreport		ports/mail/mreport
 mrsidviewer	ports/graphics/mrsidviewer
 mrt		ports/net/mrt
@@ -8541,6 +8545,7 @@ p5-vpopmail	ports/mail/p5-vpopmail
 p5-xmltv	ports/textproc/p5-xmltv
 p65		ports/devel/p65
 p7zip		ports/archivers/p7zip
+pa-aspell	ports/textproc/pa-aspell
 packit		ports/net-mgmt/packit
 pad		ports/security/pad
 padkey		ports/x11/padkey
