@@ -1,0 +1,14 @@
+Window Manager Improved 2 is the next generation of the WMI project.  Due
+to a complete rewrite it is highly modularized and uses a new configuration
+and inter-process communication interface which is based on the 9p protocol
+from the Plan 9 operating system.  It achieves following goals:
+
+  * Reduction of compile time
+  * Reduction of memory usage
+  * Reduction of lines of code
+  * Performance improvements
+  * Improved rendering capabilities (optional Cairo)
+  * Improved configuration and IPC interface (Libixp)
+  * Modularized components
+
+WWW: http://wmi.modprobe.de/
