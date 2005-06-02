@@ -6995,6 +6995,7 @@ p5-BerkeleyDB	ports/databases/p5-BerkeleyDB
 p5-Bit-ShiftReg	ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector	ports/math/p5-Bit-Vector
 p5-Bit-Vector-Minimal	ports/math/p5-Bit-Vector-Minimal
+p5-Bloom-Filter	ports/textproc/p5-Bloom-Filter
 p5-Boulder	ports/converters/p5-Boulder
 p5-Bundle-Catalyst	ports/www/p5-Bundle-Catalyst
 p5-Bundle-Slash	ports/www/p5-Bundle-Slash
