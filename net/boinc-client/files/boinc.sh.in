@@ -1,18 +1,12 @@
 #!/bin/sh
 #
 # $FreeBSD$
-#
-# Start or stop BOINC
-#
 
-if [ -f /etc/rc.subr ]
-then
-	. /etc/rc.subr
-elif [ -f /usr/local/etc/rc.subr ]
-then
-	# FreeBSD 4.x
-	. /usr/local/etc/rc.subr
-fi
+# PROVIDE: boinc
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD
+
+. %%RC_SUBR%%
 
 name="boinc"
 rcvar=`set_rcvar`
@@ -20,15 +14,16 @@ rcvar=`set_rcvar`
 boinc_user=%%BOINC_USER%%
 boinc_home=%%BOINC_HOME%%
 program_file=%%BOINC_BINARY%%
-program_path=%%LOCALBASE%%/lib/boinc/${program_file}
+program_path=%%PREFIX%%/lib/boinc/${program_file}
 syslog_facility=daemon.err
 
-[ -z "$boinc_enable" ] && boinc_enable="NO"
-
 load_rc_config $name
+: ${boinc_enable="NO"}
 
-case "$1" in
-start)
+start_cmd=boinc_start
+stop_cmd=boinc_stop
+
+boinc_start() {
 	if checkyesno boinc_enable
 	then
 		if [ ! -x ${program_path} ]
@@ -46,24 +41,10 @@ start)
 		export LD_LIBRARY_PATH=%%LOCALBASE%%/lib/boinc
 		idprio 31 su - ${boinc_user} -c "${program_path} ${boinc_flags} >/dev/null &"
 	fi
-	;;
+}
 
-stop)
+boinc_stop() {
 	killall ${program_file} 2> /dev/null
-	;;
+}
 
-restart)
-	$0 stop
-	$0 start
-	;;
-
-status)
-	ps auxww | egrep ${program_file} | egrep -v "($0|egrep)"
-	;;
-
-*)
-	echo "usage: ${name} {start|stop|restart|status}" >&2
-	exit 64
-	;;
-esac
-
+run_rc_command "$1"

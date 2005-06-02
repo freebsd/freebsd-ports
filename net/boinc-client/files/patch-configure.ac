@@ -1,0 +1,29 @@
+--- configure.ac.orig	Mon May 23 18:01:12 2005
++++ configure.ac	Wed Jun  1 17:43:25 2005
+@@ -361,6 +361,8 @@
+ 
+ dnl check for wxWidgets
+ 
++enable_client_release=no
++disable_static_client=yes
+ if test "${enable_client_release}" = yes ; then
+     if test "${enable_debug}" = yes ; then
+         AM_PATH_WXCONFIG([2.6.0], [wxWin=1], [wxWin=0], --static=yes --unicode=no --debug=yes)
+@@ -426,6 +428,8 @@
+ 	disable_static_client=yes])
+ 
+ dnl Some platform specific settings
++enable_client_release=no
++disable_static_client=yes
+ case $target in
+    *linux* | *sun* ) 
+ 	if ( test "${enable_client_release}" = yes ) && ( test "${enable_client}" != yes ); then
+@@ -491,6 +495,8 @@
+ 
+ CLIENTGUILIBS=${WX_LIBS}
+ 
++enable_client_release=no
++disable_static_client=yes
+ if test "${enable_client_release}" = "yes" ; then
+    SAH_STATICIZE_LDFLAGS([${WX_LIBS_STATIC}],[CLIENTGUILIBS])
+    SAH_STATICIZE_LDFLAGS([${GLUT_LIBS}],[GLUT_LIBS])

@@ -6,29 +6,26 @@
 #
 
 PORTNAME=	boinc-client
-PORTVERSION=	4.67.20050320
-PORTREVISION=	1
+PORTVERSION=	4.68.20050601
 CATEGORIES=	net
 MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
-DISTNAME=	boinc-cvs-2005-03-20
+DISTNAME=	boinc-cvs-2005-06-01
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 .include <bsd.port.pre.mk>
 
-# Build with "make -DWITHOUT_X11" if you don't want the boincmgr
-# GUI management interface or the "screensaver" status displays
-# from any of the client applications.
-#
-# Defining WITHOUT_X11 removes the dependencies on the X11 libs
-# and the wxgtk2 toolkit and jpeg graphics lib.
+# Disable GUI on FreeBSD 4.x due to problems with wxgtk lib
+.if ${OSVERSION} < 500000
+WITHOUT_X11=	yes
+.endif
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv \
-		wx_gtk2:${PORTSDIR}/x11-toolkits/wxgtk24 \
+		wx_base:${PORTSDIR}/x11-toolkits/wxgtk26 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		glut:${PORTSDIR}/graphics/libglut
 USE_XLIBS=	yes
@@ -38,35 +35,50 @@ USE_AUTOMAKE_VER=	19
 USE_AUTOCONF_VER=	259
 USE_AUTOHEADER_VER=	259
 USE_LIBTOOL_VER=	15
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-server
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--with-wx-config=false
-.else
-CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.4-config
-.endif
-CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include CXXFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include"
-
-WRKSRC=		${WRKDIR}/boinc
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGPLIST=	${WRKDIR}/pkg-plist
 
 MAN1=		boinc.1
 .if !defined(WITHOUT_X11)
 MLINKS=		boinc.1 boincmgr.1
 .endif
 
-FIND_BOINC_BINARY=(cd ${WRKSRC}/client; make -V CLIENT_BIN_FILENAME)
-FIND_BOINCMGR_BINARY=(cd ${WRKSRC}/client; make -V CLIENT_GUI_BIN_FILENAME)
-BOINC_BINARY=	boinc-client
-
 BOINC_USER=	boinc
 BOINC_GROUP=	nobody
 BOINC_HOME=	/var/db/boinc
+BOINC_BINARY=	boinc-client
+
+PLIST_SUB=	BOINC_BINARY="${BOINC_BINARY}" BOINC_HOME="${BOINC_HOME}" \
+		BOINC_USER="${BOINC_USER}" BOINC_GROUP="${BOINC_GROUP}"
+.if !defined(WITHOUT_X11)
+PLIST_SUB+=	GUI=""
+.else
+PLIST_SUB+=	GUI="@comment "
+.endif
+
+SUB_FILES=	bin-boinc.sh boinc.1 boinc.sh pkg-install
+SUB_LIST=	BOINC_BINARY="${BOINC_BINARY}" BOINC_HOME="${BOINC_HOME}" \
+		BOINC_USER="${BOINC_USER}" BOINC_GROUP="${BOINC_GROUP}"
+
+USE_RC_SUBR=	boinc.sh
+
+CONFIGURE_ARGS=	--disable-server
+.if !defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.6-config
+.else
+CONFIGURE_ARGS+=	--with-wx-config=false
+.endif
+CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include CXXFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include"
+
+FIND_BOINC_BINARY=(cd ${WRKSRC}/client; make -V CLIENT_BIN_FILENAME)
+FIND_BOINCMGR_BINARY=(cd ${WRKSRC}/client; make -V CLIENT_GUI_BIN_FILENAME)
+
+WRKSRC=		${WRKDIR}/boinc
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGPLIST=	${WRKDIR}/pkg-plist
 
 .if ${OSVERSION} < 500000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-client-time_stats.C
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clientgui-MainDocument.cpp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clientgui-MainFrame.cpp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clientgui-ViewProjects.cpp
@@ -75,40 +87,14 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clientgui-ViewTransfers.cpp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clientgui-ViewWork.cpp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clientgui-stdwx.h
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib-acct_mgr_client.C
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib-network.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib-diagnostics.h
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib-gui_rpc_client.C
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib-parse.C
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-zip-boinc_zip.cpp
 .endif
 
 pre-configure:
-	cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/libtool${USE_LIBTOOL_VER}/libltdl -I m4
-
-post-build:
-	${SED}  -e "s:%%BOINC_BINARY%%:${BOINC_BINARY}:g" \
-		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
-		-e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
-		< ${FILESDIR}/boinc.sh > ${WRKDIR}/boinc.sh
-	${SED}  -e "s:%%BOINC_BINARY%%:${BOINC_BINARY}:g" \
-		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
-		-e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
-		< ${FILESDIR}/boinc.1 > ${WRKDIR}/boinc.1
-	${SED}  -e "s:%%BOINC_BINARY%%:${BOINC_BINARY}:g" \
-		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
-		-e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
-		< ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
-	${SED}  -e "s:%%BOINC_BINARY%%:${BOINC_BINARY}:g" \
-		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
-		-e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
-		< ${FILESDIR}/rc-boinc.sh > ${WRKDIR}/rc-boinc.sh
+	cd ${WRKSRC}; ${ACLOCAL} -I m4
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/boinc
@@ -124,18 +110,11 @@ do-install:
 	${INSTALL} ${WRKSRC}/lib/*.a ${PREFIX}/lib
 	${INSTALL} ${WRKSRC}/zip/*.a ${PREFIX}/lib
 	${INSTALL} ${WRKSRC}/RSAEuro/source/librsaeuro.a ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${WRKDIR}/bin-boinc.sh ${PREFIX}/bin/boinc
+	${INSTALL_MAN} ${WRKDIR}/boinc.1 ${PREFIX}/man/man1
+	${CAT} ${PKGMESSAGE}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/boinc.sh ${PREFIX}/bin/boinc
-	${INSTALL_MAN} ${WRKDIR}/boinc.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/rc-boinc.sh ${PREFIX}/etc/rc.d/boinc.sh
-	${REINPLACE_CMD} \
-		-e "s:%%BOINC_BINARY%%:${BOINC_BINARY}:g" \
-		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-		${TMPPLIST}
-	${CAT} ${PKGMESSAGE}
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

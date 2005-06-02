@@ -1,20 +1,20 @@
---- clientgui/ViewProjects.cpp.orig	Tue Mar 15 18:44:48 2005
-+++ clientgui/ViewProjects.cpp	Sun Mar 20 21:29:09 2005
-@@ -230,7 +230,7 @@
+--- clientgui/ViewProjects.cpp.orig	Sun May 29 03:12:00 2005
++++ clientgui/ViewProjects.cpp	Wed Jun  1 20:44:38 2005
+@@ -446,7 +446,7 @@
  
- wxString CViewProjects::OnListGetItemText(long item, long column) const 
- {
--    CProject* project     = m_ProjectCache.at( item );
+ 
+ wxString CViewProjects::OnListGetItemText(long item, long column) const {
+-    CProject* project     = m_ProjectCache.at(item);
 +    CProject* project     = m_ProjectCache[item];
      wxString  strBuffer   = wxEmptyString;
  
-     switch(column)
-@@ -536,7 +536,7 @@
+     switch(column) {
+@@ -546,7 +546,7 @@
  
- wxInt32 CViewProjects::UpdateCache( long item, long column, wxString& strNewData )
- {
--    CProject* project     = m_ProjectCache.at( item );
+ 
+ wxInt32 CViewProjects::UpdateCache(long item, long column, wxString& strNewData) {
+-    CProject* project     = m_ProjectCache.at(item);
 +    CProject* project     = m_ProjectCache[item];
  
-     switch(column)
-     {
+     switch(column) {
+         case COLUMN_PROJECT:

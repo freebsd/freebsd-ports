@@ -6,7 +6,7 @@ boinc [ options ]
 .PP
 boincmgr
 .PP
-sh /usr/local/etc/rc.d/boinc.sh start|stop|restart|status
+sh %%PREFIX%%/etc/rc.d/boinc.sh start|stop|restart|status
 .SH DESCRIPTION
 .I boinc
 is the client for the Berkeley Open Infrastructure for Network
@@ -132,10 +132,10 @@ Full documentation of
 is not provided here, but may be added in a future release.
 .SH "STARTING BOINC AT BOOT TIME"
 The
-.I /usr/local/etc/rc.d/boinc.sh
+.I %%PREFIX%%/etc/rc.d/boinc.sh
 script is run automatically at system boot time.
 Several variables can be set in
-.I /etc/rc.conf
+.I %%RC_SUBR%%
 to control the BOINC client's behavior.
 .IP boinc_enable
 set to

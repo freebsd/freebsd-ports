@@ -1,20 +1,20 @@
---- clientgui/ViewTransfers.cpp.orig	Tue Mar 15 18:44:48 2005
-+++ clientgui/ViewTransfers.cpp	Sun Mar 20 21:32:00 2005
-@@ -177,7 +177,7 @@
+--- clientgui/ViewTransfers.cpp.orig	Sun May 29 03:12:00 2005
++++ clientgui/ViewTransfers.cpp	Wed Jun  1 20:49:11 2005
+@@ -226,7 +226,7 @@
  
- wxString CViewTransfers::OnListGetItemText(long item, long column) const
- {
--    CTransfer* transfer   = m_TransferCache.at( item );
+ 
+ wxString CViewTransfers::OnListGetItemText(long item, long column) const {
+-    CTransfer* transfer   = m_TransferCache.at(item);
 +    CTransfer* transfer   = m_TransferCache[item];
      wxString   strBuffer  = wxEmptyString;
  
-     switch(column)
-@@ -372,7 +372,7 @@
+     switch(column) {
+@@ -322,7 +322,7 @@
  
- wxInt32 CViewTransfers::UpdateCache( long item, long column, wxString& strNewData )
- {
--    CTransfer* transfer   = m_TransferCache.at( item );
+ 
+ wxInt32 CViewTransfers::UpdateCache(long item, long column, wxString& strNewData) {
+-    CTransfer* transfer   = m_TransferCache.at(item);
 +    CTransfer* transfer   = m_TransferCache[item];
  
-     switch(column)
-     {
+     switch(column) {
+         case COLUMN_PROJECT:
