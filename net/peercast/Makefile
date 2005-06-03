@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	peercast
-PORTVERSION=	0.1211
+PORTVERSION=	0.1212
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://www.peercast.org/
 DISTNAME=	peercast-linux
@@ -15,25 +15,21 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
-USE_LINUX?=	yes
+USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+STRIP=		# empty: do not strip linux binaries
 
-do-build:
-	${SED} -e 's|@PREFIX@|${PREFIX}|g; s|@DATADIR@|${DATADIR}|g' \
-		${FILESDIR}/peercast.in > ${WRKSRC}/peercast.sh
+SUB_FILES=	peercast.sh
 
 do-install:
-	${MKDIR} ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/peercast.sh ${PREFIX}/bin/peercast
 	${INSTALL_PROGRAM} ${WRKSRC}/peercast ${PREFIX}/libexec
-	# rebrand binary (INSTALL_PROGRAM has stripped it)
-	${BRANDELF} -t Linux ${PREFIX}/libexec/peercast
 .for lang in de en fr ja
 	${MKDIR} ${DATADIR}/html/${lang}
 	${INSTALL_DATA} ${WRKSRC}/html/${lang}/*.* ${DATADIR}/html/${lang}
 	${MKDIR} ${DATADIR}/html/${lang}/images
 	${INSTALL_DATA} ${WRKSRC}/html/${lang}/images/*.* ${DATADIR}/html/${lang}/images
 .endfor
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/peercast.sh ${PREFIX}/bin/peercast
 
 .include <bsd.port.mk>
