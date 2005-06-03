@@ -48,12 +48,21 @@ MAKE_APPS=	SSL
 INSTALL_APPS=	SSL
 .endif
 
+.if defined(WITH_GNUSTEP_FAKEMAIN)
+CONFIGURE_ARGS+=	--enable-fake-main
+.endif
+
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1} 
 EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 .include <bsd.port.pre.mk>
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
+
+.if !defined(GNUSTEP_WITH_BASE_GCC)
+pre-configure:
+	${LDCONFIG} -m ${TARGLIB}
+.endif
 
 post-build:
 .for i in ${MAKE_APPS}
