@@ -47,8 +47,10 @@ NO_FILTER_SHLIBS=	yes
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
+.if !defined(WITH_GNUSTEP_FAKEMAIN)
 .if !exists(/proc/curproc)
 IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
+.endif 
 .endif 
 
 pre-configure:
