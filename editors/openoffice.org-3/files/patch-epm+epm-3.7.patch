@@ -1,0 +1,87 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author:     : <maho@openoffice.org> (JCA)
+Description : epm porting for FreeBSD
+o FreeBSD's package manager doesn't allow multiple lines for
+  @exec and @unexec
+o chown is at /usr/sbin/
+o the way to recording package dependency is incorrect
+
+Index: epm/epm-3.7.patch
+===================================================================
+RCS file: /cvs/external/epm/epm-3.7.patch,v
+retrieving revision 1.2
+diff -u -r1.2 epm-3.7.patch
+--- epm/epm-3.7.patch	10 Mar 2005 11:52:43 -0000	1.2
++++ epm/epm-3.7.patch	3 Jun 2005 22:05:23 -0000
+@@ -1,3 +1,69 @@
++*** misc/epm-3.7/bsd.c	Wed Jan 15 02:05:01 2003
++--- misc/build/epm-3.7/bsd.c	Sat Jun  4 06:18:27 2005
++***************
++*** 26,31 ****
++--- 26,38 ----
++  
++  #include "epm.h"
++  
+++ void cr2semicolon(char *command)
+++ {
+++   int len, i;
+++   len=strlen(command);
+++   for (i=0;i<len;i++)
+++     if(*(command+i)=='\n') *(command+i)=';';
+++ }
++  
++  /*
++   * 'make_bsd()' - Make a FreeBSD software distribution package.
++***************
++*** 150,156 ****
++    for (i = dist->num_depends, d = dist->depends; i > 0; i --, d ++)
++    {
++      if (d->type == DEPEND_REQUIRES)
++!       fprintf(fp, "@pkgdep %s", d->product);
++      else
++  #ifdef __FreeBSD__
++       /*
++--- 157,163 ----
++    for (i = dist->num_depends, d = dist->depends; i > 0; i --, d ++)
++    {
++      if (d->type == DEPEND_REQUIRES)
++!       fprintf(fp, "@pkgdep %s-%s-%s", d->product, dist->version, platname);
++      else
++  #ifdef __FreeBSD__
++       /*
++***************
++*** 179,187 ****
++--- 186,196 ----
++  	        "         by the BSD packager.\n", stderr);
++            break;
++        case COMMAND_POST_INSTALL :
+++       cr2semicolon(c->command);
++            fprintf(fp, "@exec %s\n", c->command);
++  	  break;
++        case COMMAND_PRE_REMOVE :
+++       cr2semicolon(c->command);
++            fprintf(fp, "@unexec %s\n", c->command);
++  	  break;
++        case COMMAND_POST_REMOVE :
++***************
++*** 199,205 ****
++        */
++  
++        fprintf(fp, "@exec /bin/mkdir -p %s\n", file->dst);
++!       fprintf(fp, "@exec /bin/chown %s:%s %s\n", file->user, file->group,
++                file->dst);
++        fprintf(fp, "@exec /bin/chmod %04o %s\n", file->mode, file->dst);
++      }
++--- 208,214 ----
++        */
++  
++        fprintf(fp, "@exec /bin/mkdir -p %s\n", file->dst);
++!       fprintf(fp, "@exec /usr/sbin/chown %s:%s %s\n", file->user, file->group,
++                file->dst);
++        fprintf(fp, "@exec /bin/chmod %04o %s\n", file->mode, file->dst);
++      }
+ *** misc/epm-3.7/epm.c	2003-10-28 15:48:30.000000000 +0100
+ --- misc/build/epm-3.7/epm.c	2004-11-24 10:38:40.000000000 +0100
+ ***************
+

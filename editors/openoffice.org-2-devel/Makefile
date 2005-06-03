@@ -103,7 +103,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-package-format=portable
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch
 
 .include <${FILESDIR}/Makefile.knobs>
 
@@ -144,7 +144,7 @@ do-build:
 .endif
 
 do-install:
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.sw > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.tgz > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
@@ -198,6 +198,12 @@ package-rename:
 	@${MV} ${PKGFILE} \
 		${WRKDIR}/../${PACKAGE_BASENAME}_install_${LOCALIZED_LANG}${PKG_SUFX}
 
+package-canonical:
+	@${ECHO_MSG} "===>   Canonical packaging for OpenOffice.org";
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ;\
+	${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_native_install_${LOCALIZED_LANG}${PKG_SUFX} .
+	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_languagepack/install/${LOCALIZED_LANG}/freebsd-*/openofficeorg-*.tgz .
+
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
 	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
@@ -220,7 +226,7 @@ languagepack:
 	@${MKDIR} ${WRKDIR}/langpack_tmp
 .if defined (LOCALIZED_LANG)
 	@cd ${WRKDIR}/langpack_tmp ; \
-		${TAR} xf ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_languagepack/install/${LOCALIZED_LANG}/freebsd-*/openofficeorg-*.sw
+		${TAR} xf ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_languagepack/install/${LOCALIZED_LANG}/freebsd-*/openofficeorg-*.tgz
 	@cd ${WRKDIR}/langpack_tmp/opt/openoffice* ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
 		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
