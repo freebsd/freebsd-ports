@@ -3,5 +3,4 @@ access audio files.  This library is optimized for DSP frame presentation
 and for merging audio from multiple sources.  Support is provided for many
 common and popular sound file formats such as .au, .wav/RIFF, etc.
 
-- David Sugar
-dyfet@gnu.org
+WWW: http://www.gnutelephony.org/
