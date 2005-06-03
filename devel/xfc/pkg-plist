@@ -2749,3 +2749,6 @@ share/xfce4/xfc/demos/ui_manager.cc
 @dirrm include/xfce4/xfc/atk/inline
 @dirrm include/xfce4/xfc/atk
 @dirrm include/xfce4/xfc
+@unexec rmdir %D/include/xfce4 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/xfce4 2>/dev/null || true
