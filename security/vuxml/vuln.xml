@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d1bbc235-c0c9-45cd-8d2d-c1b8fd22e616">
+    <topic>imap-uw -- authentication bypass when CRAM-MD5 is enabled</topic>
+    <affects>
+      <package>
+	<name>imap-uw</name>
+	<range><lt>2004b,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CRAM-MD5 authentication support of the University of
+	  Washington IMAP and POP3 servers contains a vulnerability that
+	  may allow an attacker to bypass authentication and impersonate
+	  arbitrary users.  Only installations with CRAM-MD5 support
+	  configured are affected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0198</cvename>
+      <certvu>702777</certvu>
+    </references>
+    <dates>
+      <discovery>2005-01-04</discovery>
+      <entry>2005-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5bf1a715-cc57-440f-b0a5-6406961c54a7">
     <topic>squid -- denial-of-service vulnerabilities</topic>
     <affects>
