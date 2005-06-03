@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ELFIO
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -17,16 +17,13 @@ COMMENT=	C++ library for reading and generating files in the ELF binary format
 
 GNU_CONFIGURE=	yes
 
-DOCS=		AUTHORS COPYING ChangeLog README
-DOCS2=		elf11g.zip tutorial.docbook tutorial.pdf
-
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
+.for file in AUTHORS ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-.for file in ${DOCS2}
+.for file in elf11g.zip tutorial.docbook tutorial.pdf
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif

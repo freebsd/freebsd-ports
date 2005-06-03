@@ -5,11 +5,10 @@ include/ELFIO.h
 include/ELFO.h
 include/ELFTypes.h
 lib/libELFIO.a
-%%PORTDOCS%%share/doc/ELFIO/AUTHORS
-%%PORTDOCS%%share/doc/ELFIO/COPYING
-%%PORTDOCS%%share/doc/ELFIO/ChangeLog
-%%PORTDOCS%%share/doc/ELFIO/README
-%%PORTDOCS%%share/doc/ELFIO/elf11g.zip
-%%PORTDOCS%%share/doc/ELFIO/tutorial.docbook
-%%PORTDOCS%%share/doc/ELFIO/tutorial.pdf
-%%PORTDOCS%%@dirrm share/doc/ELFIO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/elf11g.zip
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.docbook
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
