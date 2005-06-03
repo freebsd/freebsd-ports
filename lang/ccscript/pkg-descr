@@ -6,5 +6,7 @@ deterministic callback step execution rather than the linear and
 non-deterministic fashion of traditional extension languages such as tcl,
 libguile, etc.
 
+WWW: http://www.gnutelephony.org/
+
 - David Sugar
 dyfet@gnu.org
