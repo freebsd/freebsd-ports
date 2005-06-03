@@ -7,7 +7,7 @@
 
 PORTNAME=	kaffe
 PORTVERSION=	1.1.5
-CATEGORIES=	java
+CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 
 MAINTAINER=	anholt@FreeBSD.org
@@ -17,8 +17,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		gmp.6:${PORTSDIR}/math/libgmp4
-
-CONFLICTS=	kaffe-1.[!1].* javavmwrapper-2.*
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
@@ -30,7 +31,11 @@ USE_ICONV=	yes
 LIBTOOLFLAGS=
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib --with-iconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib \
+		--with-iconv-prefix=${LOCALBASE}
+PREFIX=		${LOCALBASE}/kaffe
+NO_MTREE=	yes
 
 USE_GNOME=	esound gtk20 libartlgpl2
 WANT_GNOME=	esound
@@ -49,5 +54,6 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/BUILD_ENVIRONMENT ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/license.terms ${DATADIR}
+	-@${LOCALBASE}/bin/registervm ${PREFIX}/bin/java
 
 .include <bsd.port.post.mk>
