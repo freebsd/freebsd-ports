@@ -36,7 +36,6 @@ include/Inventor/Xt/SoXtRenderArea.h
 lib/libSoXt.a
 lib/libSoXt.so.0
 lib/libSoXt.so
-lib/libSoXt.la
 share/aclocal/soxt.m4
 share/Coin/conf/soxt-default.cfg
 @dirrm share/Coin/conf

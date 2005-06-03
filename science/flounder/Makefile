@@ -21,7 +21,7 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		png:${PORTSDIR}/graphics/png
 
 USE_MESA=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} -lstdc++"
 USE_GMAKE=	yes

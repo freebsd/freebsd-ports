@@ -1,3 +1,4 @@
+lib/gtk/themes/engines/libgnomelook.a
 lib/gtk/themes/engines/libgnomelook.so
 share/themes/Gnome-Look-Grey/gtk/gtkrc
 share/themes/Gnome-Look-Icy/gtk/gtkrc

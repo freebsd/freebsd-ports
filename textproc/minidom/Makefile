@@ -20,7 +20,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-libxml2=yes
@@ -28,6 +28,8 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lglib|-lglib12|g ; \
-		 s|glib-config|${GLIB_CONFIG}|g' ${WRKSRC}/configure
+		s|glib-config|${GLIB_CONFIG}|g ; \
+		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

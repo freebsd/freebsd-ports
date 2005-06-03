@@ -20,10 +20,15 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 LIBTOOLFILES=	configure libmutt/configure
 CONFIGURE_ENV=	glibpath="${GLIB_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure ${WRKSRC}/libmutt/configure
 
 .include <bsd.port.mk>

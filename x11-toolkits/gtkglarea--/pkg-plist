@@ -2,7 +2,6 @@ include/gtkgl--/private/glarea_p.h
 include/gtkgl--/gdkgl.h
 include/gtkgl--/glarea.h
 lib/libgtkglmm.a
-lib/libgtkglmm.la
 lib/libgtkglmm.so
 lib/libgtkglmm.so.1
 @dirrm include/gtkgl--/private

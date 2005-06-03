@@ -44,7 +44,6 @@ include/udm_word.h
 include/udm_xmalloc.h
 include/udmsearch.h
 lib/libudmsearch.a
-lib/libudmsearch.la
 lib/libudmsearch.so
 lib/libudmsearch.so.1
 sbin/cachelogd

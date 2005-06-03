@@ -19,7 +19,8 @@ COMMENT=	Open source search engine for Internet and Intranet sites
 
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
@@ -121,6 +122,10 @@ LIB_DEPEND+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 pre-install:
 	@${MKDIR} ${DATADIR}

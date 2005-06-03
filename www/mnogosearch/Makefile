@@ -20,8 +20,10 @@ MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
 INSTALLS_SHLIB= yes
+USE_GNOME=	lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-phrase \
@@ -84,6 +86,10 @@ pre-configure:
 	@${ECHO} "One of the databases should be choosed."
 	@exit 1
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/mnogosearch
