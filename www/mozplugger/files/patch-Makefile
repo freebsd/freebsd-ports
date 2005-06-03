@@ -1,0 +1,64 @@
+--- Makefile.orig	Sat Apr 16 12:24:24 2005
++++ Makefile	Fri Jun  3 03:11:52 2005
+@@ -1,5 +1,5 @@
+ # Where is your Xwindows located?
+-X11=/usr/X11R6
++X11=${X11BASE}
+ 
+ #
+ # For building rpms
+@@ -7,14 +7,14 @@
+ 
+ #
+ # For installing
+-prefix=/usr
++prefix=${PREFIX}
+ 
+ #
+ #
+ RPMDIR=/usr/src/RPM
+ 
+ # Choose compiler
+-CC=gcc
++CC?=gcc
+ LD=gcc
+ BINFORMAT=bin
+ 
+@@ -60,7 +60,7 @@
+ 	${MAKE} all CC=gcc XCFLAGS='-fPIC -aout' LD=gcc XLDFLAGS='-shared -aout'
+ 
+ freebsd:
+-	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
++	${MAKE} all CC=${CC} XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=${X11BASE}
+ 
+ openbsd:
+ 	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
+@@ -91,7 +91,7 @@
+ 	     mozplugger-common.c mozplugger.h README.in
+ BIN_FILES=mozplugger.so mozplugger-helper
+ 
+-DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" -Wall #-DDEBUG #-D__amd64__
++DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" -DPREFIX=\"$(prefix)\" -Wall #-DDEBUG #-D__amd64__
+ RPM_OPT_FLAGS=-O2
+ COMMON_CFLAGS=$(RPM_OPT_FLAGS) -Inpapi/include -I$(X11)/include -DXP_UNIX $(DEFINES)
+ COMMON_LDFLAGS=
+@@ -156,14 +156,14 @@
+ 
+ install:
+ 	-@mkdir -p $(root)$(prefix)/bin
+-	-@mkdir -p $(root)$(prefix)/lib/mozilla/plugins
++	-@mkdir -p $(root)$(prefix)/lib/browser_plugins
+ 	-@mkdir -p $(root)$(prefix)/share/man/man7
+-	-@mkdir -p $(root)/etc
++	-@mkdir -p $(root)$(prefix)/etc
+ 	cp mozplugger-helper $(root)$(prefix)/bin/
+ 	cp mozplugger-controller $(root)$(prefix)/bin/
+-	cp mozplugger.so $(root)$(prefix)/lib/mozilla/plugins/
+-	cp mozpluggerrc $(root)/etc/
+-	cp mozplugger.7.bz2 $(root)$(prefix)/share/man/man7/
++	cp mozplugger.so $(root)$(prefix)/lib/browser_plugins/
++	cp mozpluggerrc $(root)$(prefix)/etc/
++	cp mozplugger.7 $(root)$(prefix)/man/man7/
+ 
+ mozplugger.tar.gz: $(BASE_FILES) $(SOURCE_FILES)
+ 	@( DIR=`pwd`;\

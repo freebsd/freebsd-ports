@@ -353,6 +353,7 @@
     SUBDIR += mozilla
     SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel
+    SUBDIR += mozplugger
     SUBDIR += mplayer-plugin
     SUBDIR += nanoblogger
     SUBDIR += nd
