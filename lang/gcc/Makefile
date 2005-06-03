@@ -54,6 +54,9 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
+# FIXME: we are currently getting weird build failures on some 4.x and
+# 5.4 systems, which nobody has been able to track down yet. PR 81788. 
+WITHOUT_LIBJAVA=       yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
