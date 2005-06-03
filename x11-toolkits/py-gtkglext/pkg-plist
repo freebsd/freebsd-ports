@@ -21,8 +21,3 @@ share/pygtk/2.0/defs/gdkglext.defs
 share/pygtk/2.0/defs/gtkglext.defs
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0
-@dirrm share/pygtk/2.0/defs
-@dirrm share/pygtk/2.0
-@dirrm share/pygtk
