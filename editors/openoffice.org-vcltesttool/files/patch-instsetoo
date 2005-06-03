@@ -1,0 +1,100 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author:     : <maho@openoffice.org> (JCA)
+Description : remove circular dependency
+
+in this case,
+core01 is depend on core02-core08, and core0[2-9] and core10
+depends on core01. for FreeBSD this is regarded as circular dependency
+and pkg_add command is forked infinite times and eats up systems' resource.
+namely when core01 tries to install core02, core02 also tries to
+install core01.
+
+Index: instsetoo_native/inc_openoffice/unix/packagelist.txt
+===================================================================
+RCS file: /cvs/installation/instsetoo_native/inc_openoffice/unix/packagelist.txt,v
+retrieving revision 1.13
+diff -u -r1.13 packagelist.txt
+--- instsetoo_native/inc_openoffice/unix/packagelist.txt	20 Apr 2005 11:38:08 -0000	1.13
++++ instsetoo_native/inc_openoffice/unix/packagelist.txt	3 Jun 2005 22:58:41 -0000
+@@ -33,7 +33,7 @@
+ solarispackagename = "openofficeorg-core01"
+ solarisrequires = "openofficeorg-core02,openofficeorg-core03,openofficeorg-core04,openofficeorg-core05,openofficeorg-core06,openofficeorg-core07,openofficeorg-core08"
+ packagename = "openofficeorg-core01"
+-requires = "openofficeorg-core02,openofficeorg-core03,openofficeorg-core04,openofficeorg-core05,openofficeorg-core06,openofficeorg-core07,openofficeorg-core08"
++requires = "openofficeorg-core02,openofficeorg-core03,openofficeorg-core04,openofficeorg-core05,openofficeorg-core06,openofficeorg-core07,openofficeorg-core08,openofficeorg-core09,openofficeorg-core10"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -226,7 +226,6 @@
+ solarispackagename = "openofficeorg-core02"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core02"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -238,7 +237,6 @@
+ solarispackagename = "openofficeorg-core03"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core03"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -250,7 +248,6 @@
+ solarispackagename = "openofficeorg-core04"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core04"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -262,7 +259,6 @@
+ solarispackagename = "openofficeorg-core05"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core05"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -274,7 +270,6 @@
+ solarispackagename = "openofficeorg-core06"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core06"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -286,7 +281,6 @@
+ solarispackagename = "openofficeorg-core07"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core07"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -298,7 +292,6 @@
+ solarispackagename = "openofficeorg-core08"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core08"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -310,7 +303,6 @@
+ solarispackagename = "openofficeorg-core09"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core09"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+@@ -323,7 +315,6 @@
+ solarispackagename = "openofficeorg-core10"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openofficeorg-core10"
+-requires = "openofficeorg-core01"
+ copyright = "1999-2004 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
