@@ -73,7 +73,6 @@
     SUBDIR += gnuserv
     SUBDIR += gnuserv-emacs20
     SUBDIR += gphpedit
-    SUBDIR += gxedit
     SUBDIR += hexcurse
     SUBDIR += hexedit
     SUBDIR += hexpert
