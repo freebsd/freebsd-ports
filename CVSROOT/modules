@@ -406,7 +406,6 @@ ar-openoffice-1.1	ports/arabic/openoffice-1.1
 arc		ports/archivers/arc
 arcexplorer	ports/databases/arcexplorer
 archie		ports/net/archie
-archie.el	ports/net/archie.el
 archivemail	ports/mail/archivemail
 archivers_rvm	ports/archivers/rvm
 archmage	ports/textproc/archmage
@@ -3396,7 +3395,6 @@ gwm		ports/x11-wm/gwm
 gworkspace	ports/deskutils/gworkspace
 gxanim		ports/multimedia/gxanim
 gxditview	ports/textproc/gxditview
-gxedit		ports/editors/gxedit
 gxemul		ports/emulators/gxemul
 gxine		ports/multimedia/gxine
 gxmame		ports/emulators/gxmame
@@ -3682,7 +3680,6 @@ ident2		ports/security/ident2
 identify	ports/security/identify
 idesk		ports/x11/idesk
 idled		ports/sysutils/idled
-idlefork	ports/devel/idlefork
 idnits		ports/textproc/idnits
 idnkit		ports/dns/idnkit
 ifc		ports/lang/ifc
@@ -12895,7 +12892,6 @@ yatex		ports/print/yatex
 yatex-mule	ports/print/yatex-mule
 yatex-xemacs	ports/print/yatex-xemacs
 yatex-xemacs-mule	ports/print/yatex-xemacs-mule
-yaucg		ports/misc/yaucg
 yaunc		ports/misc/yaunc
 yawho		ports/sysutils/yawho
 yawm		ports/x11-wm/yawm
