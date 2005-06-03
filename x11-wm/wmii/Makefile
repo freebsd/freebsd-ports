@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" X11DIR="${X11BASE}" CC="${CC}" \
 		MANPREFIX="${PREFIX}/man"
 
-OPTIONS=	CAIRO	"Enable Cairo rendering backend"	on \
+OPTIONS=	CAIRO	"Enable Cairo rendering backend"	off \
 		STRL	"Use strlcpy()/strlcat() functions"	off
 
 MAN1=		wmibar.1 wmifs.1 wmii.1 wmiinput.1 wmikeys.1 wmiplumb.1 \
@@ -29,6 +29,8 @@ MAN5=		wmii.rc.5
 
 .include <bsd.port.pre.mk>
 
+# The cairo backend is not recommended in production use, because the cairo
+# library is still very buggy and causes crashes often.
 .if defined(WITH_CAIRO)
 LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
 MAKE_ARGS+=	DRAW=cairo
