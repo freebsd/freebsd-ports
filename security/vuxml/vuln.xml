@@ -33,22 +33,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="8c1da77d-d3e9-11d9-8ffb-00061bc2ad93">
-    <topic>xli -- buffer overflows</topic>
+    <topic>xloadimage -- buffer overflow in FACES image handling</topic>
     <affects>
       <package>
 	<name>xli</name>
-	<range><lt>1.17.0_1</lt></range>
+	<range><le>1.17.0_1</le></range>
+      </package>
+      <package>
+	<name>xloadimage</name>
+	<range><lt>4.1.9</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Buffer overflow in xloadimage may allow an attacker
-	  to execute arbitrary commands via a FACES format image.</p>
+	<p>In 2001, zen-parse discovered a buffer overflow in
+	  xloadimage's FACES image loader.  A maliciously crafted image
+	  could cause xloadimage to execute arbitrary code.  A published
+	  exploit exists for this vulnerability.</p>
+	<p>In 2005, Rob Holland discovered that the same vulnerability
+	  was present in xli.</p>
       </body>
     </description>
     <references>
 	<cvename>CAN-2001-0775</cvename>
-	<url>http://www.debian.org/security/2005/dsa-695</url>
+	<mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=99477230306845</mlist>
+	<url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=46186</url>
+	<url>http://bugs.gentoo.org/show_bug.cgi?id=79762</url>
     </references>
     <dates>
       <discovery>2000-02-19</discovery>
