@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bfbbd505-3bd6-409c-8c67-445d3635cf4b">
+    <topic>xli -- integer overflows in image size calculations</topic>
+    <affects>
+      <package>
+	<name>xli</name>
+	<range><le>1.17.0_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tavis Ormandy discovered several integer overflows in xli's
+	  image size handling.  A maliciously crafted image may be able
+	  to cause a heap buffer overflow and execute arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0639</cvename>
+      <url>http://bugs.gentoo.org/show_bug.cgi?id=79762</url>
+      <url>http://pantransit.reptiles.org/prog/xli/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2005-02-08</discovery>
+      <entry>2005-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="310d0087-0fde-4929-a41f-96f17c5adffe">
     <topic>xloadimage -- arbitrary command execution when handling
       compressed files</topic>
