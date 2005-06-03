@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.20
+PORTVERSION=	1.2.21
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,18 +30,18 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
 
-OPTIONS=	GNOME	"Enable GNOME desktop support"	off \
-		IMLIB	"Build with Imlib support"	off \
-		ESOUND	"Enable EsounD daemon support"	off \
-		XFT	"Enable Xft support for fonts"	on \
-		XINERAMA "Enable Xinerama support"	on \
-		X86_ASM	"Use optimized x86 assembly code" on \
-		BEASTIE	"Use Beastie'fied startup button" off \
-		NLS	"Enable National Language Support" on
+OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
+		IMLIB		"Build with Imlib support"		off \
+		ESOUND		"Enable EsounD daemon support"		off \
+		XFT		"Enable Xft support for fonts"		on \
+		XINERAMA	"Enable Xinerama support"		on \
+		X86_ASM		"Use optimized x86 assembly code"	on \
+		BEASTIE		"Use Beastie'fied startup button"	off \
+		NLS		"Enable National Language Support"	on
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgnomedesktop}!="" || defined(WITH_GNOME)
+.if ${HAVE_GNOME:Mgnomedesktop}!="" || defined(WITH_GNOMEDESKTOP)
 USE_GNOME+=	gnomedesktop
 CONFIGURE_ARGS+=	--enable-menus-gnome2
 INSTALL_TARGET=		install install-gnome
