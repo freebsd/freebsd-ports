@@ -48,7 +48,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		105
+MILESTONE=		107
 SNAPDATE=		20050521
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
@@ -93,8 +93,8 @@ LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
+
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	259
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
