@@ -6487,6 +6487,7 @@ newsx		ports/news/newsx
 newt		ports/devel/newt
 newvox		ports/games/newvox
 nexfontsel	ports/x11-fonts/nexfontsel
+nexuiz		ports/games/nexuiz
 nfbtrans	ports/textproc/nfbtrans
 nfdump		ports/net-mgmt/nfdump
 nfsen		ports/net-mgmt/nfsen
