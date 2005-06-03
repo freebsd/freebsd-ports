@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.22
+PORTVERSION=	5.23
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	lars@balker.dk
 COMMENT=	The Elegant MVC Web Application Framework
 
 BUILD_DEPENDS=	${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-exports \
