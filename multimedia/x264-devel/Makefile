@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20050518
+PORTVERSION=	0.0.20050531
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|}
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|} \
+		http://people.freebsd.org/~ahze/distfiles/
 #		http://download.videolan.org/pub/videolan/contrib/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/contrib/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
@@ -38,6 +40,7 @@ OPTIONS=	GPAC "Enable MPEG-4 Output" On \
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib"
+#			--enable-pthread
 
 .include <bsd.port.pre.mk>
 

@@ -1,17 +1,17 @@
---- configure.orig	Wed May 18 22:55:05 2005
-+++ configure	Sat May 21 12:19:02 2005
-@@ -24,8 +24,8 @@
+--- configure.orig	Tue May 31 12:27:55 2005
++++ configure	Tue May 31 12:35:38 2005
+@@ -32,8 +32,8 @@
  vfw="no"
  vis="no"
  
 -CC="gcc"
--CFLAGS="-Wall -I. -O4 -funroll-loops -ffast-math -D__X264__"
+-CFLAGS="-Wall -I. -O4 -ffast-math -D__X264__"
 +#CC="gcc"
-+CFLAGS="-Wall -I. -D__X264__"
++CFLAGS="-Wall -I.  -ffast-math -D__X264__"
  LDFLAGS=""
  
  AS="nasm"
-@@ -77,9 +77,9 @@
+@@ -85,9 +85,9 @@
      ARCH="X86"
      CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
      ;;
@@ -24,7 +24,7 @@
      AS="yasm"
      ASFLAGS="-f elf -m amd64"
      ;;
-@@ -92,9 +92,12 @@
+@@ -100,9 +100,12 @@
        CFLAGS="$CFLAGS -maltivec -mabi=altivec"
      fi
      ;;
@@ -38,4 +38,3 @@
 +    CFLAGS="$CFLAGS"
      ;;
  esac
- 
