@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5bf1a715-cc57-440f-b0a5-6406961c54a7">
+    <topic>squid -- denial-of-service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Squid team reported several denial-of-service
+	  vulnerabilities related to the handling of DNS responses and
+	  NT Lan Manager messages.  These may allow an attacker to crash
+	  the Squid cache.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0446</cvename>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE8-dns_assert</url>
+      <cvename>CAN-2005-0096</cvename>
+      <cvename>CAN-2005-0097</cvename>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-fakeauth_auth</url>
+    </references>
+    <dates>
+      <discovery>2005-01-16</discovery>
+      <entry>2005-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b260179-e464-460d-bf9f-d5cda6204020">
     <topic>racoon -- remote denial-of-service</topic>
     <affects>
