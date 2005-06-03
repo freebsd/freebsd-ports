@@ -1,3 +1,4 @@
+@unexec %%LOCALBASE%%/bin/unregistervm %%PREFIX%%/bin/java
 bin/appletviewer
 bin/install-jar
 bin/jar
@@ -80,10 +81,23 @@ lib/awt/font.properties
 %%DATADIR%%/license.terms
 share/locale/fr/LC_MESSAGES/kaffe.mo
 share/locale/zh_TW/LC_MESSAGES/kaffe.mo
+@dirrm bin
+@dirrm lib/awt
+@dirrm lib
 @dirrm include/kaffe
+@dirrm include
 @dirrm jre/bin
 @dirrm jre/lib/%%ARCH%%
 @dirrm jre/lib/security
 @dirrm jre/lib
 @dirrm jre
+@dirrm man/man1
+@dirrm man
 @dirrm share/kaffe
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale
+@dirrm share
+@exec %%LOCALBASE%%/bin/registervm %%PREFIX%%/bin/java
