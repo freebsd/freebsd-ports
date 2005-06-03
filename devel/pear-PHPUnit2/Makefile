@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	PHPUnit2
-PORTVERSION=	2.2.0
-CATEGORIES=	devel pear
+PORTVERSION=	2.2.1
+CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR regression testing framework for unit tests
@@ -15,8 +15,20 @@ COMMENT=	PEAR regression testing framework for unit tests
 BUILD_DEPENDS=	${PEARDIR}/Benchmark/Timer.php:${PORTSDIR}/benchmarks/pear-Benchmark
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LATEST_LINK=	pear-PHPUnit2
-OPTIONS=	PEAR_LOG "PEAR::Log support" off
+OPTIONS=	PEAR_LOG "PEAR::Log support" off \
+		DOM "PHP DOM extension support" off
+
+PORT_DBDIR?=	/var/db/ports
+LATEST_LINK=	pear-${PORTNAME}
+OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+
+.if exists(${OPTIONSFILE})
+.include "${OPTIONSFILE}"
+.endif
+
+.if defined(WITH_DOM)
+USE_PHP=	dom
+.endif
 
 NO_PACKAGE=	Conflicting dependences between PHP4 and PHP5
 
