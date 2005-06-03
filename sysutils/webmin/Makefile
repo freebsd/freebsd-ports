@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.200
+PORTVERSION=	1.210
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +25,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES= bind8-1.200-1.wbm.gz
+WEBMIN_MODULES=
 WEBMIN_THEMES=
 
 post-extract:
