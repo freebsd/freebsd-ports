@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Find
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	antonio@php.net
