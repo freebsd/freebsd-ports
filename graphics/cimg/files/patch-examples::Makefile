@@ -1,15 +1,15 @@
---- examples/Makefile.orig	Tue Mar 15 16:20:14 2005
-+++ examples/Makefile	Tue Mar 15 22:23:09 2005
+--- examples/Makefile.orig	Thu Jun  2 08:51:07 2005
++++ examples/Makefile	Thu Jun  2 22:49:16 2005
 @@ -7,16 +7,16 @@
  # -----------------------------------------------------------------------------------
  
  # Set correct variables and paths
 -CC      = g++
 -X11PATH = /usr/X11R6
--CFLAGS  = -O2 -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
+-CFLAGS  = -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
 +CC      = $(CXX)
 +#X11PATH = /usr/X11R6
-+#CFLAGS  = -O2 -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
++#CFLAGS  = -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
  
  # Compilation rules
  .cpp:
@@ -19,9 +19,9 @@
 -	$(CC) -o $* $< $(CFLAGS) $(LDFLAGS)
 +	$(CC) -o $* $< $(CPPFLAGS) -Wall -ansi -pedantic -ffast-math  -I$(X11PATH)/include -lX11 -L$(X11PATH)/lib $(LDFLAGS)
  linux:
- 	make "LDFLAGS=-lpthread -lX11 -L$(X11PATH)/lib" all
+ 	make "LDFLAGS=-lm -lpthread -lX11 -L$(X11PATH)/lib" all
  solaris:
-@@ -40,6 +40,7 @@
+@@ -41,6 +41,7 @@
  
  clean:
  	rm -f *.exe *~ \

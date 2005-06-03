@@ -10,7 +10,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/head_reference.html
 %%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/FAQ_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/LastNews.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/download_item.jpg
@@ -147,8 +146,6 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/enemy8.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/enemy9.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/foot.ppm
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/head_face.raw
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/head_point.raw
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/heart.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/lena.pgm
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/light3d.ppm
@@ -160,12 +157,10 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/sh1r.pgm
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/title.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/tomato.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/img/trees.inr
 %%PORTDOCS%%%%EXAMPLESDIR%%/inrcast.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mcf_levelsets.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/odykill.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pde_TschumperleDeriche2D.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/pde_TschumperleDeriche3D.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pde_heatflow2D.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pslider.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/render3d.cpp
