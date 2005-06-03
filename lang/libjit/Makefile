@@ -37,10 +37,4 @@ post-patch:
 		${WRKSRC}/config.h.in
 .endif
 
-post-configure:
-.if ${OSVERSION} >=	502123 && ${ARCH} != "amd64"
-	@${REINPLACE_CMD} -e 's|$$pic_flag -DPIC||' \
-		${WRKSRC}/libtool
-.endif
-
 .include <bsd.port.post.mk>
