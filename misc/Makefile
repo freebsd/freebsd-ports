@@ -463,7 +463,6 @@
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += xtypo
-    SUBDIR += yaucg
     SUBDIR += yaunc
     SUBDIR += ytree
     SUBDIR += zaptel

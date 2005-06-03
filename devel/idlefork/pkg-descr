@@ -1,7 +1,0 @@
-The IDLEfork project is an official experimental development fork of Python's
-small, light, 'bundled' integrated development environment, IDLE. Changes to
-this version that are approved by Python's benevolent dictator for life
-(python's creator, Guido van Rossum) will go back into the stable distribution
-version.
-
-WWW: http://idlefork.sourceforge.net/

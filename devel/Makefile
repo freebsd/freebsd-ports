@@ -369,7 +369,6 @@
     SUBDIR += icu
     SUBDIR += icu2
     SUBDIR += id-utils
-    SUBDIR += idlefork
     SUBDIR += ifd-test
     SUBDIR += imake-4
     SUBDIR += imake-6

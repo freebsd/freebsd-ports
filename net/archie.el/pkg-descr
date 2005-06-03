@@ -1,5 +1,0 @@
-A mock-interface to Archie for Emacs
-
-Add the following line to ~/.emacs (a example)
-(autoload 'archie "archie" "Archie interface" t)
-(setq archie-server "archie.kuis.kyoto-u.ac.jp")

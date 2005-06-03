@@ -23,7 +23,6 @@
     SUBDIR += apinger
     SUBDIR += apollon
     SUBDIR += archie
-    SUBDIR += archie.el
     SUBDIR += ari-yahoo
     SUBDIR += arla
     SUBDIR += arp-sk

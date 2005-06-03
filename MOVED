@@ -1507,3 +1507,7 @@ www/linux-mozillafirebird-el||2005-05-27|obsolete, use linux-firefox with locali
 textproc/py-martel||2005-05-31|obsolete, not up-to-date and is only a subset of biology/py-biopython
 multimedia/gstreamer-plugins-xine||2005-05-31|obsolete, use gstreamer-ffmpeg instead
 audio/libmusepack|audio/libmpcdec|2005-05-31|moved, lib rename.
+devel/idlefork||2005-06-03|has been integrated into Pyhton 2.3+
+editors/gxedit||2005-06-03|project no longer exists
+misc/yaucg||2005-06-03|master site disappeared, script probably broken
+net/archie.el||2005-06-03|master site disappeared
