@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pager
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
