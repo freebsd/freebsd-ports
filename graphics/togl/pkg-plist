@@ -1,9 +1,24 @@
-%%TOGL_INSTDIR%%/double.so
-%%TOGL_INSTDIR%%/gears.so
-%%TOGL_INSTDIR%%/index.so
-%%TOGL_INSTDIR%%/overlay.so
-%%TOGL_INSTDIR%%/texture.so
 %%TOGL_INSTDIR%%/togl.so
 %%TOGL_INSTDIR%%/togl.h
 %%TOGL_INSTDIR%%/pkgIndex.tcl
 @dirrm %%TOGL_INSTDIR%%
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/togl.c
+%%EXAMPLESDIR%%/togl.h
+%%EXAMPLESDIR%%/image.h
+%%EXAMPLESDIR%%/image.c
+%%EXAMPLESDIR%%/ben.rgb
+%%EXAMPLESDIR%%/tree2.rgba
+%%EXAMPLESDIR%%/double.tcl
+%%EXAMPLESDIR%%/double.c
+%%EXAMPLESDIR%%/gears.tcl
+%%EXAMPLESDIR%%/gears.c
+%%EXAMPLESDIR%%/index.tcl
+%%EXAMPLESDIR%%/index.c
+%%EXAMPLESDIR%%/overlay.tcl
+%%EXAMPLESDIR%%/overlay.c
+%%EXAMPLESDIR%%/stereo.tcl
+%%EXAMPLESDIR%%/stereo.c
+%%EXAMPLESDIR%%/texture.tcl
+%%EXAMPLESDIR%%/texture.c
+@dirrm %%EXAMPLESDIR%%
