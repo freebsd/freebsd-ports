@@ -99,14 +99,23 @@ BROKEN=		"Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})"
 #
 # If the GCC package defined in USE_GCC does not exist, but a later
 # version is allowed (for example 3.1+), see if there is a later.
-# The first available version will be used.
+# First check if the base installed version is good enough, otherwise
+# get the first available version.
 #
 .if defined(_GCC_ORLATER)
 . for v in ${GCCVERSIONS}
 .  if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
-_GCC_MIN:=	true
+_GCC_MIN1:=	true
 .  endif
-.  if defined(_GCC_MIN) && defined(_GCC_FOUND${v}) && !defined(_GCC_FOUND)
+.  if defined(_GCC_MIN1) && defined(_GCC_FOUND${v}) && ${_GCC_FOUND${v}}=="base" && !defined(_GCC_FOUND)
+_GCC_FOUND:=	${_GCCVERSION_${v}_V}
+.  endif
+. endfor
+. for v in ${GCCVERSIONS}
+.  if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
+_GCC_MIN2:=	true
+.  endif
+.  if defined(_GCC_MIN2) && defined(_GCC_FOUND${v}) && !defined(_GCC_FOUND)
 _GCC_FOUND:=	${_GCCVERSION_${v}_V}
 .  endif
 . endfor
