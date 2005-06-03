@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b260179-e464-460d-bf9f-d5cda6204020">
+    <topic>racoon -- remote denial-of-service</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20050510a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastian Krahmer discovered that the racoon ISAKMP daemon
+	  could be crashed with a maliciously crafted UDP packet.  No
+	  authentication is required in order to perform the attack.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0398</cvename>
+      <mlist>http://sourceforge.net/mailarchive/forum.php?thread_id=6787713&amp;forum_id=32000</mlist>
+      <url>http://xforce.iss.net/xforce/xfdb/19707</url>
+      <url>https://bugzilla.redhat.com/bugzilla/attachment.cgi?id=109966&amp;action=view</url>
+    </references>
+    <dates>
+      <discovery>2005-03-12</discovery>
+      <entry>2005-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfbbd505-3bd6-409c-8c67-445d3635cf4b">
     <topic>xli -- integer overflows in image size calculations</topic>
     <affects>
