@@ -46,10 +46,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  CVE CAN-2004-1302, several other issues have been
 	  found in audio/yamt, including buffer overflows
 	  and directory tranversals.</p>
-	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1302</cvename>
     </references>
     <dates>
       <discovery>2005-01-20</discovery>
