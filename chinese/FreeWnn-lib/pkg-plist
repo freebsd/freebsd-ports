@@ -104,7 +104,6 @@ lib/wnn/zh_TW/wnnenvrc
 lib/wnn/zh_TW/wnnenvrc_R
 lib/wnn/zh_TW/wnnstat.msg
 lib/libcwnn.a
-lib/libcwnn.la
 lib/libcwnn.so
 lib/libcwnn.so.0
 @dirrm lib/wnn/zh_TW/rk_z

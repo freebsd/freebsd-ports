@@ -33,7 +33,6 @@ lib/wnn/ko_KR/wnnenvrc_R
 lib/wnn/ko_KR/wnnstat.msg
 lib/wnn/serverdefs
 lib/libkwnn.a
-lib/libkwnn.la
 lib/libkwnn.so
 lib/libkwnn.so.0
 @dirrm lib/wnn/ko_KR/rk
