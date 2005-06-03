@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.osuosl.org/.1/xiph/releases/speex/
+MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
 MASTER_SITE_SUBDIR=	ahze
 PKGNAMESUFFIX=	-devel
 
