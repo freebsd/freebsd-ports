@@ -117,8 +117,6 @@ share/gnome/doc/gchemutils/reference/html/xml-utils_8h.html
 share/gnome/doc/gchemutils/reference/html/xml-utils_8h-source.html
 share/gnome/gchemutils/elements.xml
 share/gnome/gchemutils/glade/gtkperiodic.glade
-share/gnome/mime-info/gchemutils.keys
-share/gnome/mime-info/gchemutils.mime
 share/locale/de/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/fr/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/it/LC_MESSAGES/gnome-chemistry-utils.mo
