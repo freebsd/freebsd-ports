@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fe903533-ff96-4c7a-bd3e-4d40efa71897">
+    <topic>gforge -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>gforge</name>
+	<range><lt>4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An STG Security Advisory reports:</p>
+	  <blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110627132209963">
+	    <p>GForge CVS module made by Dragos Moinescu and another
+	      module made by Ronald Petty have a directory traversal
+	      vulnerability. [...] malicious attackers can read
+	      arbitrary directory lists.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0299</cvename>
+      <bid>12318</bid>
+      <mlist msgid="20050120051735.2832.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110627132209963</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-20</discovery>
+      <entry>2005-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1bbc235-c0c9-45cd-8d2d-c1b8fd22e616">
     <topic>imap-uw -- authentication bypass when CRAM-MD5 is enabled</topic>
     <affects>
