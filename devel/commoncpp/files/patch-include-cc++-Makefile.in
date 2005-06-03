@@ -1,0 +1,11 @@
+--- include/cc++/Makefile.in.bak	Sat Nov 20 13:51:00 2004
++++ include/cc++/Makefile.in	Sat Jun  4 00:22:54 2005
+@@ -224,7 +224,7 @@
+ AUTOMAKE_OPTIONS = no-dependencies dist-shar dist-zip
+ EXTRA_DIST = *.h
+ MAINTAINERCLEANFILES = config.h Makefile.in config.tmp
+-ccxxincludedir = $(ccincludedir)/cc++/
++ccxxincludedir = $(ccincludedir)/cc++
+ 
+ # export.h are used by other library
+ ccxxinclude_HEADERS = \

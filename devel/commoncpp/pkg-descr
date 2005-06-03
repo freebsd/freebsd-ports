@@ -3,7 +3,7 @@ framework.  Common C++ provides	classes for threads, sockets, daemon
 management, system logging, object synchronization, realtime network
 development, persistant object management, and file access.
 
-WWW: http://www.gnu.org/software/commoncpp/
+WWW: http://www.gnutelephony.org/
 
 - David Sugar
 dyfet@gnu.org
