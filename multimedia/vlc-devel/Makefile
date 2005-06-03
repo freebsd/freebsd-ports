@@ -346,6 +346,10 @@ OPTIONS=	AALIB "Console graphics support" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH}=="amd64"
+WITH_WXGTK_VER=	2.4
+.endif
+
 .if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 .if ${WITH_MOZILLA}=="mozilla-devel"
 USE_GCC=	3.4
