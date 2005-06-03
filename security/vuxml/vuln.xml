@@ -57,7 +57,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="99b5cfa5-d3d2-11d9-8ffb-00061bc2ad93">
-    <topic>yamt -- Possible buffer overflow and directory transferal issue</topic>
+    <topic>yamt -- buffer overflow and directory traversal
+      issues</topic>
     <affects>
       <package>
 	<name>yamt</name>
@@ -66,14 +67,26 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>In addition to the vulnerabilities listed in
-	  CVE CAN-2004-1302, several other issues have been
-	  found in audio/yamt, including buffer overflows
-	  and directory tranversals.</p>
+	<p>Stanislav Brabec discovered errors in yamt's path name
+	  handling that lead to buffer overflows and directory traversal
+	  issues.  When processing a file with a maliciously crafted ID3
+	  tag, yamt might overwrite arbitrary files or possibly execute 
+	  arbitrary code.</p>
+	<p>The SuSE package ChangeLog contains:</p>
+	<blockquote>
+	  <ul>
+	    <li>Several security fixes (#49337):</li>
+	    <li>directory traversal in rename</li>
+	    <li>directory traversal in sort</li>
+	    <li>buffer overflow in sort</li>
+	    <li>buffer overflow in rename</li>
+	  </ul>
+	</blockquote>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1302</cvename>
+      <url>http://rpmfind.net/linux/RPM/suse/updates/8.2/i386/rpm/i586/yamt-0.5-1277.i586.html</url>
+      <url>ftp://ftp.suse.com/pub/suse/i386/update/8.2/rpm/src/yamt-0.5-1277.src.rpm</url>
     </references>
     <dates>
       <discovery>2005-01-20</discovery>
