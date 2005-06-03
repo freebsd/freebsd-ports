@@ -1,0 +1,5 @@
+bin/mozplugger-helper
+bin/mozplugger-controller
+etc/mozpluggerrc
+lib/browser_plugins/mozplugger.so
+@unexec rmdir %D/lib/browser_plugins 2> /dev/null || true
