@@ -32,6 +32,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="310d0087-0fde-4929-a41f-96f17c5adffe">
+    <topic>xloadimage -- arbitrary command execution when handling
+      compressed files</topic>
+    <affects>
+      <package>
+	<name>xli</name>
+	<range><le>1.17.0_1</le></range>
+      </package>
+      <package>
+	<name>xloadimage</name>
+	<range><le>4.1.10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tavis Ormandy discovered that xli and xloadimage attempt to
+	  decompress images by piping them through <code>gunzip</code>
+	  or similar decompression tools.  Unfortunately, the
+	  unsanitized file name is included as part of the command.
+	  This is dangerous, as in some situations, such as mailcap
+	  processing, an attacker may control the input file name.  As a
+	  result, an attacker may be able to cause arbitrary command
+	  execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0638</cvename>
+      <url>http://bugs.gentoo.org/show_bug.cgi?id=79762</url>
+    </references>
+    <dates>
+      <discovery>2005-02-18</discovery>
+      <entry>2005-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c1da77d-d3e9-11d9-8ffb-00061bc2ad93">
     <topic>xloadimage -- buffer overflow in FACES image handling</topic>
     <affects>
