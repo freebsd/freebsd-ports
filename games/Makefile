@@ -335,6 +335,7 @@
     SUBDIR += nettoe
     SUBDIR += neverball
     SUBDIR += newvox
+    SUBDIR += nexuiz
     SUBDIR += nibbles
     SUBDIR += nighthawk
     SUBDIR += nil
