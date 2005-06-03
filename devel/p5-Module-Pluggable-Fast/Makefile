@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	Module-Pluggable-Fast
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars@balker.dk
 COMMENT=	Fast plugins with instantiation
 
 BUILD_DEPENDS=	${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-exports
