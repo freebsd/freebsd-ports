@@ -20,13 +20,20 @@ MASTER_SITE_SUBDIR=	freetype1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and portable TrueType font rendering engine
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
+USE_REINPLACE=	yes
 
 .ifdef USE_FREETYPE
 .error You have `USE_FREETYPE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|LIBTOOL =.*|LIBTOOL = ${LIBTOOL}|'
 
 # Older versions of freetype installed include files in ${PREFIX}/include
 # this is a compatibility hack for now

@@ -1,3 +1,4 @@
+lib/gtk/themes/engines/libengradient.a
 lib/gtk/themes/engines/libengradient.so
 share/themes/EnGradient-Blue/gtk/gtkrc
 share/themes/EnGradient-Brushed/gtk/brushed-dark.xpm

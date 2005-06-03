@@ -260,11 +260,9 @@ include/dps_xmalloc.h
 include/dpsearch.h
 lib/libdpcharset-4.so
 lib/libdpcharset.a
-lib/libdpcharset.la
 lib/libdpcharset.so
 lib/libdpsearch-4.so
 lib/libdpsearch.a
-lib/libdpsearch.la
 lib/libdpsearch.so
 sbin/cached
 sbin/dpconv

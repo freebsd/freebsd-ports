@@ -16,13 +16,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Parser and Validator
 
 USE_REINPLACE=	yes
-FETCH_CMD=	/usr/bin/fetch
+#FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/share|$$(datadir)|g'
 	@${RM} ${WRKSRC}/config.cache
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

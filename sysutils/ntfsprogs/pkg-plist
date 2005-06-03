@@ -35,7 +35,6 @@ include/ntfs/volume.h
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so.1
 lib/libntfs.a
-lib/libntfs.la
 lib/libntfs.so
 lib/libntfs.so.6
 sbin/mkntfs

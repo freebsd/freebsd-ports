@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small library to interface the ident protocol server (rfc1413)
 
 USE_GNOME=	gnometarget lthack
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 MAN3=		ident.3

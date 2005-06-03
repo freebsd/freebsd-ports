@@ -19,7 +19,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} --disable-html
 USE_OPENSSL=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 
 MAN1=		nefu.1
 MAN4=		nefu.conf.4

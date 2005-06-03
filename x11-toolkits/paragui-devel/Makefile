@@ -21,7 +21,7 @@ LIB_DEPENDS=	physfs-1.0.0:${PORTSDIR}/devel/physfs \
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_SDL=	sdl image ttf
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -47,6 +47,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[$][(]SDL_CFLAGS[)]|\$\(PARAGUI_CFLAGS\)|g ; \
 		 s|lib/pkgconfig|libdata/pkgconfig|g ; \
-		 s|-L[./]*../src|&/.libs |g'
+		 s|-L[./]*../src|&/.libs |g ; \
+		 s|-release $$(LT_RELEASE)||g'
 
 .include <bsd.port.post.mk>

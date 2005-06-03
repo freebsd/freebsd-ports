@@ -1,31 +1,5 @@
 --- configure.orig	Tue Jun 17 13:35:22 2003
 +++ configure	Mon Jun 14 07:46:23 2004
-@@ -3176,13 +3176,14 @@
- fi
- rm -f confcache
- 
-+lt_aux_dir=${LOCALBASE}/share/libtool13
- # Actually configure libtool.  ac_aux_dir is where install-sh is found.
- CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
- LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
- LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
- DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
--${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $lt_target \
-+${CONFIG_SHELL-/bin/sh} $lt_aux_dir/ltconfig --no-reexec \
-+$libtool_flags --no-verify $lt_aux_dir/ltmain.sh $lt_target \
- || { { echo "$as_me:$LINENO: error: libtool configure failed" >&5
- echo "$as_me: error: libtool configure failed" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -3207,7 +3208,7 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="$lt_aux_dir/ltconfig $lt_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 @@ -3659,6 +3660,8 @@
  #line $LINENO "configure"
  #include "confdefs.h"
@@ -46,23 +20,3 @@
  else
      echo "$as_me:$LINENO: result: disabled" >&5
  echo "${ECHO_T}disabled" >&6
-@@ -7553,8 +7556,8 @@
- LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
- LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
- DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
--${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $lt_target \
-+${CONFIG_SHELL-/bin/sh} $lt_aux_dir/ltconfig --no-reexec \
-+$libtool_flags --no-verify $lt_aux_dir/ltmain.sh $lt_target \
- || { { echo "$as_me:$LINENO: error: libtool configure failed" >&5
- echo "$as_me: error: libtool configure failed" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -7579,7 +7582,7 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="$lt_aux_dir/ltconfig $lt_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
