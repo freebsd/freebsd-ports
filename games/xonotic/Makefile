@@ -17,7 +17,6 @@ COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
 NO_PACKAGE=	Package will be 149MB, set FORCE_PACKAGE if you really want to build it
 
-#USE_MAKE=	yes
 USE_REINPLACE=	yes
 USE_ZIP=	yes
 
