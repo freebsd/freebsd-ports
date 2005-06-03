@@ -1,4 +1,5 @@
 bin/ccgnu2-config
+include/cc++2/cc++/address.h
 include/cc++2/cc++/buffer.h
 include/cc++2/cc++/cmdoptns.h
 include/cc++2/cc++/common.h
@@ -31,14 +32,16 @@ include/cc++2/cc++/thread.h
 include/cc++2/cc++/unix.h
 include/cc++2/cc++/url.h
 include/cc++2/cc++/xml.h
-@dirrm include/cc++2/cc++
-@dirrm include/cc++2
-share/aclocal/ost_check2.m4
-lib/libccgnu2.a
-lib/libccgnu2.so
-lib/libccgnu2-1.1.so
-lib/libccgnu2-1.1.so.0
+lib/libccext2-1.2.so
+lib/libccext2-1.2.so.1
 lib/libccext2.a
 lib/libccext2.so
-lib/libccext2-1.1.so
-lib/libccext2-1.1.so.0
+lib/libccgnu2-1.2.so
+lib/libccgnu2-1.2.so.1
+lib/libccgnu2.a
+lib/libccgnu2.so
+libdata/pkgconfig/libccext2.pc
+libdata/pkgconfig/libccgnu2.pc
+share/aclocal/ost_check2.m4
+@dirrm include/cc++2/cc++
+@dirrm include/cc++2
