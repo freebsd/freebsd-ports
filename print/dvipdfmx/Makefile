@@ -7,9 +7,13 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20050201
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
+DIST_SUBDIR=	dvipdfmx
+
+PATCH_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/patch/
+PATCHFILES=	mpost-c-20050201.diff tfm-c-20050201.diff
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
