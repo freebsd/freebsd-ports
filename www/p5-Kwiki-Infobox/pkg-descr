@@ -1,0 +1,10 @@
+Kwiki::Infobox - 
+
+Kwiki information box.
+
+This module works with the Theme-ColumnLayout module.  It allows a topic
+to be placed in the left sidebar with {infobox: SomePage} placed somewhere
+in each topic.
+
+WWW: http://search.cpan.org/dist/Kwiki-Infobox/
+Author:	GUGOD <gugod at cpan.org>

@@ -1,0 +1,11 @@
+/* ================================================================= */
+Note: 
+	Kwiki-NavigationToolbar plugin installed! Now you should add
+	to your kwiki from your kwiki installation directory:
+
+$ cd cgi-bin/my-kwiki
+$ kwiki -add Kwiki::NavigationToolbar
+
+	(Always) perldoc Kwiki::NavigationToolbar for details.
+
+/* ================================================================= */
