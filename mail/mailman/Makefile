@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTVERSION=	2.1.6
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -20,6 +19,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
 .if defined(WITH_HTDIG)
+## this may be broken with mailman 2.1.6 -- someone send patches to $MAINTAINER
 # see http://www.openinfo.co.uk/mailman/index.html
 # Order of application of these patches is critical.
 PATCHFILES+=	indexing-2.1.4-0.1.patch.gz:patch1 \
@@ -82,8 +82,8 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGOPTS=	${FILESDIR}/pkg-opts
 PLIST_SUB+=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR}
 DOCFILES=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
-	  	README.CONTRIB README.EXIM README.NETSCAPE README.POSTFIX \
-		README.QMAIL README.SENDMAIL README.USERAGENT TODO UPGRADING
+	  	README.CONTRIB README.NETSCAPE \
+		README.USERAGENT TODO UPGRADING
 IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 
 options:
