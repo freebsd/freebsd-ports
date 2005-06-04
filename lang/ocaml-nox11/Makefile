@@ -8,12 +8,12 @@
 PORTNAME=	ocaml-nox11
 CATEGORIES=	lang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marwan.burelle@lri.fr
 COMMENT=	Objective Caml compiler and programming environment (no X11)
 
 MASTERDIR=	${.CURDIR}/../ocaml
 
-CONFLICTS=	ocaml-[0-9]* ocaml-notk-*
+CONFLICTS=	ocaml-[0-9]* ocaml-notk-[0-9]*
 
 WITHOUT_X11=	yes
 
