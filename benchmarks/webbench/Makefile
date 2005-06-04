@@ -16,8 +16,8 @@ COMMENT=	Simple forking web benchmark
 
 USE_GETOPT_LONG=yes
 
-MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS}"
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		webbench.1
