@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	1.7.35
+PORTVERSION=	1.7.40
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 
@@ -22,7 +22,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500039
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 
 PKGNAMESUFFIX=	-mysql${MYSQL_VER}
