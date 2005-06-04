@@ -48,7 +48,7 @@ USE_XPM=	yes
 .endif
 
 XEMACS_REL=	21.5
-XEMACS_VER=	${XEMACS_REL}-b20
+XEMACS_VER=	${XEMACS_REL}-b21
 XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
@@ -104,15 +104,6 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs-devel-mule
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
-
-# Undump and malloc do not behave on amd64 and sparc64
-.if (${ARCH} == "amd64") || (${ARCH} == "sparc64")
-CONFIGURE_ARGS+=--with-system-malloc --enable-pdump
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		"Does not build on amd64, sparc64 or ia64"
-.endif
 
 pre-fetch:
 .if defined(WITHOUT_X11)

@@ -105,6 +105,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lisp-union.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lisp.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lrecord.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lstream.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/mc-alloc.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/7300.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/README
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/acorn.h

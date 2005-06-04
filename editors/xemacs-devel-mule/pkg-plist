@@ -583,6 +583,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lisp-union.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lisp.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lrecord.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lstream.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/mc-alloc.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/7300.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/README
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/acorn.h
@@ -900,6 +901,7 @@ lib/xemacs-%%XEMACS_VER%%/info/lispref.info-6
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-7
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-8
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-9
+lib/xemacs-%%XEMACS_VER%%/info/lispref.info-10
 lib/xemacs-%%XEMACS_VER%%/info/new-users-guide.info
 lib/xemacs-%%XEMACS_VER%%/info/standards.info
 lib/xemacs-%%XEMACS_VER%%/info/term.info
