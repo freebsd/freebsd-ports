@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flowd
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/flowd/
 
@@ -67,7 +66,7 @@ post-install:
 .endif
 
 .if defined(WITH_PERL)
-	cd ${WRKSRC}/Flowd && \
+	cd ${WRKSRC}/Flowd-perl && \
 	${PERL} Makefile.PL  && \
 	${GMAKE} && \
 	${GMAKE} install
@@ -79,6 +78,6 @@ post-install:
 	${PYTHON_CMD} setup.py install
 .endif
 
-@FLOWD_USER=${FLOWD_USER} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	FLOWD_USER=${FLOWD_USER} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

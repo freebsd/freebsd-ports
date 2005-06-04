@@ -19,10 +19,10 @@ create_user() {
 	else
 		shell=/nonexistent
 	fi
-	uhome="/nonexistent"
+	uhome="/var/empty"
 
 	if ! ${PW} show user ${USER} -q >/dev/null; then
-		if ! ${PW} add user ${USER} -g ${gid} -d "${uhome}" \
+		if ! ${PW} add user ${USER} -g ${GROUP} -d "${uhome}" \
 				-c "flowd privilege separation user" -s "${shell}" -p "*" \
 				; then
 			e=$?
