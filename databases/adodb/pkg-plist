@@ -122,6 +122,7 @@
 %%ADODB_DIR%%/session/old/adodb-session-clob.php
 %%ADODB_DIR%%/session/old/adodb-session.php
 %%ADODB_DIR%%/session/old/crypt.inc.php
+%%ADODB_DIR%%/session/session_schema.xml
 %%ADODB_DIR%%/xsl/convert-0.1-0.2.xsl
 %%ADODB_DIR%%/xsl/convert-0.2-0.1.xsl
 %%ADODB_DIR%%/xsl/remove-0.2.xsl
