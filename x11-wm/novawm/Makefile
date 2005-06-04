@@ -40,7 +40,11 @@ do-install:
 .endif
 
 pre-clean:
-	@${CHMOD} -R +w ${WRKSRC}/src/xpm/.xvpics
-	@${CHMOD} -R +w ${WRKSRC}/.xvpics
+	@-if [ -e ${WRKSRC}/src/xpm/.xvpics ]; then \
+	    ${CHMOD} -R +w ${WRKSRC}/src/xpm/.xvpics 2>/dev/null; \
+	fi
+	@-if [ -e ${WRKSRC}/.xvpics ]; then \
+	    ${CHMOD} -R +w ${WRKSRC}/.xvpics 2>/dev/null; \
+	fi
 
 .include <bsd.port.mk>
