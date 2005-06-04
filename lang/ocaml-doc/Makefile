@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-doc
 DISTFILES=	${DISTNAME}-refman.html.tar.gz ${DISTNAME}-refman.ps.gz
 EXTRACT_ONLY=	${DISTNAME}-refman.html.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marwan.burelle@lri.fr
 COMMENT=	Documentation (HTML, PS) for the Objective Caml
 
 NO_BUILD=	yes
