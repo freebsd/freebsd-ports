@@ -1,18 +1,5 @@
 --- Makefile.orig	Thu May 27 18:59:27 2004
 +++ Makefile	Sun Jan 16 19:44:14 2005
-@@ -20,9 +20,9 @@
- endif
- 
- # Compiler & flags
--CC=gcc
--CFLAGS=-O2 -Wall
--DEBUG_FLAGS=-Wall -g
-+CC?=gcc
-+CFLAGS+= -Wall
-+DEBUG_FLAGS?=-Wall -g
- 
- #---------------------------------------------------------------------------
- # Release related 
 @@ -55,7 +55,7 @@
  	perl -pi -e 's/my \$$MASTER_CONFIG =.*$$/my \$$MASTER_CONFIG = "$$ENV{AB_CFG}";/' autobench
  	cp crfile autobench autobenchd autobench_admin sesslog bench2graph $(BINDIR)
