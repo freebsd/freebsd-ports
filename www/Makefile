@@ -539,6 +539,7 @@
     SUBDIR += p5-Kwiki-ModPerl
     SUBDIR += p5-Kwiki-NavigationToolbar
     SUBDIR += p5-Kwiki-NewPage
+    SUBDIR += p5-Kwiki-Notify-Mail
     SUBDIR += p5-Kwiki-PagePrivacy
     SUBDIR += p5-Kwiki-RecentChanges
     SUBDIR += p5-Kwiki-RecentChangesRSS

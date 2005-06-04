@@ -1,0 +1,9 @@
+Kwiki::NavigationToolbar - 
+
+Kwiki email notifier.
+
+This module allows users to receive email notification of topic changes.
+
+
+WWW: http://search.cpan.org/dist/Kwiki-Notify-Mail/
+Author:	James Peregrino <jperegrino at post dot harvard dot edu>

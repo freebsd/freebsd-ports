@@ -1,0 +1,139 @@
+--- lib/Kwiki/Notify/Mail.pm.orig	Tue Jan 25 20:49:23 2005
++++ lib/Kwiki/Notify/Mail.pm	Sat Jun  4 14:21:01 2005
+@@ -26,6 +26,37 @@
+ 		  );
+ }
+ 
++sub recipient_list {
++    my $notify_mail_obj = $self->hub->load_class('notify_mail');
++    my $mail_to = $notify_mail_obj->config->notify_mail_to;
++    my $topic = $notify_mail_obj->config->notify_mail_topic;
++    my $meta_data = $self->hub->edit->pages->current->metadata;
++    my $who = $meta_data->{edit_by};
++    my $page_name = $meta_data->{id};
++    my ($cfg, $page, $email);
++
++    return undef unless defined $mail_to && defined $who && defined $page_name;
++
++    # Support for a notify_mail_topic configuration entry giving a page from
++    # which notification info can be read.
++    $cfg = $self->hub->pages->new_page($topic);
++    if (defined $cfg) {
++	foreach (split(/\n/, $cfg->content)) {
++	    s/#.*//;
++	    next if /^\s*$/;
++	    unless (($page, $email) = /^([^:]+):\s*(.+)/) {
++		print STDERR "Kwiki::Notify::Mail: Unregognised line in ",
++		    $topic, ": ", $_, "\n";
++		next;
++	    }
++	    next unless $page_name =~ /^$page$/;
++	    $mail_to .= " " . $email;
++	}
++    }
++
++    return $mail_to;
++}
++
+ sub notify {
+     my $hook = pop;
+     my $page = shift;
+@@ -36,16 +67,19 @@
+ 
+     my $edited_by   = $meta_data->{edit_by}                || 'unknown name';
+     my $page_name   = $meta_data->{id}                     || 'unknown page';
+-    my $to          = $notify_mail_obj->config->notify_mail_to   || 'unknown@unknown';
++    my $to          = $notify_mail_obj->recipient_list();
+     my $from        = $notify_mail_obj->config->notify_mail_from || 'unknown';
+     my $subject     = sprintf($notify_mail_obj->config->notify_mail_subject,
+ 			      $site_title,
+ 			      $page_name,
+ 			      $edited_by)   || 'unknown';
++    $subject =~ s/\$1/$site_title/g;
++    $subject =~ s/\$2/$page_name/g;
++    $subject =~ s/\$3/$edited_by/g;
+ 
+     my $body        = "$site_title page $page_name edited by $edited_by\n";
+ 
+-    $notify_mail_obj->mail_it($to,$from,$subject,$body);
++    $notify_mail_obj->mail_it($to,$from,$subject,$body) if $to;
+     return $self;
+ }
+ 
+@@ -121,7 +155,22 @@
+ 
+ =item * notify_mail_to
+ 
+-Specify the mail address you are sending to.
++Specify the mail address you are sending to.  Email will be sent to these
++addresses for all page updates.
++
++=item * notify_mail_topic
++
++Specify the mail topic or ConfigPage that is used to decide who to send mail
++to.  The ConfigPage is of the format
++
++    WikiPage: email@domain.com
++
++WikiPage may be given as a regular expression, and multiple email addresses
++may be given.  For example:
++
++    HomePage: me@my.domain.com
++    .*: bigmailbox@my.domain.com
++    Doc.*: docs@my.domain.com me@my.domain.com
+ 
+ =item * notify_mail_from
+ 
+@@ -131,9 +180,10 @@
+ 
+ Specify a subject line for the mail message.  You can make use of
+ sprintf()-type formatting codes (%s is the only one that is relevant).
+-If you put or more %s in the configuration directive it will print out
+-the site title, page name and whom it was edited by.  You can can't
+-change the order, however.
++If you put one or more %s in the configuration directive it will print out
++the site title, page name and whom it was edited by.  You may also put
++$1, $2 and/or $3 in the subject line.  They will be replaced with the site
++title, the page name and whom it was edited by respectively.
+ 
+ Examples:
+ 
+@@ -168,8 +218,16 @@
+  Subject: My wiki ProjectDiscussion page NextWeeksAgenda was updated
+  by PointyHairedBoss
+ 
+-The important thing to remember is that you can have either none or one or two
+-or three %s, but you can't change the order.  The default value is
++The important thing to remember is that when using %s, you can't change the
++order of argument substitution.  To do that, you need something like this:
++
++ notify_mail_subject: $3 has updated $2 on $1
++
++gives you the Subject: line
++
++ Subject: PointyHairedBoss has updated NextWeeksAgenda on ProjectDiscussion
++
++The default value is
+ 
+  notify_mail_subject: %s wiki page %s updated by %s
+ 
+@@ -194,9 +252,6 @@
+ 
+ =head1 BUGS
+ 
+-The subject line configuration relies on sprintf() which doesn't allow
+-you to change the order of what gets printed out.
+-
+ The debug file is saved to /tmp and should be user configurable.  This
+ module was not tested under Windows and certainly /tmp doesn't exist
+ there.
+@@ -215,7 +270,8 @@
+ 
+ =cut
+ __config/notify_mail.yaml__
+-notify_mail_to: nobody@nobody.abc
++notify_mail_to:
++notify_mail_topic: NotifyMail
+ notify_mail_from: nobody
+ notify_mail_subject: %s wiki page %s updated by %s
+ notify_mail_debug: 0
