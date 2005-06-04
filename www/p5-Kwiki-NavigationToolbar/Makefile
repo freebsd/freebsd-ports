@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Kwiki
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Kwiki navigation toolbar, works weel with Kwiki-ColumnLayout
+COMMENT=	Kwiki navigation toolbar, works well with Kwiki-ColumnLayout
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
 RUN_DEPENDS=	${BUILD_DEPENDS}
