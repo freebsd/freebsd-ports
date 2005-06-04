@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetApps file system benchmark
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	sbin/postmark
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
