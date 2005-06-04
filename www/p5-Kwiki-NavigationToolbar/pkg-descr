@@ -1,0 +1,10 @@
+Kwiki::NavigationToolbar - 
+
+Kwiki navigation toolbar.
+
+This module works well with the Theme-ColumnLayout module.  It allows links
+to be placed in the header box by editing the KwikiNavigationToolbar topic.
+
+
+WWW: http://search.cpan.org/dist/Kwiki-NavigationToolbar/
+Author:	GUGOD <gugod at cpan.org>
