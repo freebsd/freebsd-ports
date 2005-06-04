@@ -1,0 +1,29 @@
+--- cliplibs/clip-gtk2/Makefile.in.orig	Tue Apr 19 21:12:14 2005
++++ cliplibs/clip-gtk2/Makefile.in	Thu Jun  2 09:07:03 2005
+@@ -40,7 +40,7 @@
+ 	  texttag.c texttagtable.c textview.c tipsquery.c togglebutton.c \
+ 	  toolbar.c tooltips.c treemodel.c treeselection.c treestore.c \
+ 	  treeview.c treeviewcolumn.c style.c viewport.c widget.c window.c windowgroup.c \
+-	  gtkermsg.prg gtkutil.prg gtkbrowse.prg
++	  gtkermsg.prg gtkutil.prg
+ 
+ GTK_EXTEXT_SRC = #gtkextext.c extext.c
+ 
+@@ -67,7 +67,7 @@
+ 	  texttag.o texttagtable.o textview.o tipsquery.o togglebutton.o \
+ 	  toolbar.o tooltips.o treemodel.o treeselection.o treestore.o \
+ 	  treeview.o treeviewcolumn.o style.o viewport.o widget.o window.o windowgroup.o \
+-	  gtkermsg.o gtkutil.o gtkbrowse.o
++	  gtkermsg.o gtkutil.o
+ 
+ GTK_EXTEXT_OBJ = #gtkextext.o extext.o
+ 
+@@ -153,7 +153,7 @@
+ clean:
+ 	rm -rf *.o *.a *.so *.dll *.po *.pa *.b *.BAK *.bak *~ core* \
+ 	*core Makefile.inc *.ex *.nm \
+-	gtkermsg.c gtkutil.c gtkbrowse.c
++	gtkermsg.c gtkutil.c
+ 
+ distclean: clean
+ 	rm -rf clip-gtkcfg2.h hashcode.h _hashcode.h Makefile
