@@ -7682,6 +7682,7 @@ p5-Kwiki-Infobox	ports/www/p5-Kwiki-Infobox
 p5-Kwiki-ModPerl	ports/www/p5-Kwiki-ModPerl
 p5-Kwiki-NavigationToolbar	ports/www/p5-Kwiki-NavigationToolbar
 p5-Kwiki-NewPage	ports/www/p5-Kwiki-NewPage
+p5-Kwiki-Notify-Mail	ports/www/p5-Kwiki-Notify-Mail
 p5-Kwiki-PagePrivacy	ports/www/p5-Kwiki-PagePrivacy
 p5-Kwiki-RecentChanges	ports/www/p5-Kwiki-RecentChanges
 p5-Kwiki-RecentChangesRSS	ports/www/p5-Kwiki-RecentChangesRSS
