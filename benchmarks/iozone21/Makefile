@@ -18,6 +18,7 @@ COMMENT=	Performance Test of Sequential File I/O (older version)
 CONFLICTS=	iozone-3.*
 
 LATEST_LINK=	iozone21
+PLIST_FILES=	bin/iozone
 
 EXTRACT_CMD=	( ${GZCAT} | ${AWK} '{if (/^\#!/) x++} {if(x) print $$0'}| ${SH} )
 EXTRACT_BEFORE_ARGS=	<
