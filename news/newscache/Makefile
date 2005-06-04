@@ -17,8 +17,9 @@ COMMENT=	NewsCache is a free cache server for USENET News
 
 LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 
-USE_AUTOMAKE_VER=	15
-USE_AUTOHEADER_VER=	253
+USE_AUTOMAKE_VER=	19
+USE_AUTOHEADER_VER=	259
+USE_AUTOCONF_VER=	259
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=		yes
 AUTOMAKE_ARGS=		--add-missing
@@ -34,6 +35,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure.in
 
 pre-configure:
-	cd ${WRKSRC}; ${ACLOCAL}
+	(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
 
 .include <bsd.port.mk>
