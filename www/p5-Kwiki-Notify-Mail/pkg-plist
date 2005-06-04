@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Kwiki/Notify/Mail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Notify/Mail/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Notify/Mail
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/Notify 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Kwiki/Notify 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Kwiki 2>/dev/null || true
