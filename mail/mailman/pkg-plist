@@ -338,6 +338,7 @@
 %%MMDIR%%/bin/qrunner
 %%MMDIR%%/bin/rb-archfix
 %%MMDIR%%/bin/remove_members
+%%MMDIR%%/bin/reset_pw.py
 %%MMDIR%%/bin/rmlist
 %%MMDIR%%/bin/show_qfiles
 %%MMDIR%%/bin/sync_members
@@ -447,6 +448,10 @@
 %%MMDIR%%/messages/tr/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/uk/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/uk/LC_MESSAGES/mailman.po
+%%MMDIR%%/messages/zh_CN/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/zh_CN/LC_MESSAGES/mailman.po
+%%MMDIR%%/messages/zh_TW/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/zh_TW/LC_MESSAGES/mailman.po
 %%MMDIR%%/pythonlib/email/Charset.py
 %%MMDIR%%/pythonlib/email/Charset.pyc
 %%MMDIR%%/pythonlib/email/Encoders.py
@@ -626,32 +631,6 @@
 %%MMDIR%%/scripts/request
 %%MMDIR%%/scripts/subscribe
 %%MMDIR%%/scripts/unsubscribe
-%%MMDIR%%/templates/big5/admindbpreamble.html
-%%MMDIR%%/templates/big5/adminsubscribeack.txt
-%%MMDIR%%/templates/big5/adminunsubscribeack.txt
-%%MMDIR%%/templates/big5/admlogin.html
-%%MMDIR%%/templates/big5/approve.txt
-%%MMDIR%%/templates/big5/bounce.txt
-%%MMDIR%%/templates/big5/checkdbs.txt
-%%MMDIR%%/templates/big5/convert.txt
-%%MMDIR%%/templates/big5/cronpass.txt
-%%MMDIR%%/templates/big5/handle_opts.html
-%%MMDIR%%/templates/big5/headfoot.html
-%%MMDIR%%/templates/big5/help.txt
-%%MMDIR%%/templates/big5/listinfo.html
-%%MMDIR%%/templates/big5/masthead.txt
-%%MMDIR%%/templates/big5/newlist.txt
-%%MMDIR%%/templates/big5/options.html
-%%MMDIR%%/templates/big5/postack.txt
-%%MMDIR%%/templates/big5/postauth.txt
-%%MMDIR%%/templates/big5/postheld.txt
-%%MMDIR%%/templates/big5/refuse.txt
-%%MMDIR%%/templates/big5/roster.html
-%%MMDIR%%/templates/big5/subauth.txt
-%%MMDIR%%/templates/big5/subscribe.html
-%%MMDIR%%/templates/big5/subscribeack.txt
-%%MMDIR%%/templates/big5/userpass.txt
-%%MMDIR%%/templates/big5/verify.txt
 %%MMDIR%%/templates/ca/admindbdetails.html
 %%MMDIR%%/templates/ca/admindbpreamble.html
 %%MMDIR%%/templates/ca/admindbsummary.html
@@ -727,6 +706,48 @@
 %%MMDIR%%/templates/cs/unsubauth.txt
 %%MMDIR%%/templates/cs/userpass.txt
 %%MMDIR%%/templates/cs/verify.txt
+%%MMDIR%%/templates/da/admindbdetails.html
+%%MMDIR%%/templates/da/admindbpreamble.html
+%%MMDIR%%/templates/da/admindbsummary.html
+%%MMDIR%%/templates/da/adminsubscribeack.txt
+%%MMDIR%%/templates/da/adminunsubscribeack.txt
+%%MMDIR%%/templates/da/admlogin.html
+%%MMDIR%%/templates/da/approve.txt
+%%MMDIR%%/templates/da/archidxfoot.html
+%%MMDIR%%/templates/da/archidxhead.html
+%%MMDIR%%/templates/da/archliststart.html
+%%MMDIR%%/templates/da/archtoc.html
+%%MMDIR%%/templates/da/archtocentry.html
+%%MMDIR%%/templates/da/archtocnombox.html
+%%MMDIR%%/templates/da/article.html
+%%MMDIR%%/templates/da/bounce.txt
+%%MMDIR%%/templates/da/checkdbs.txt
+%%MMDIR%%/templates/da/convert.txt
+%%MMDIR%%/templates/da/cronpass.txt
+%%MMDIR%%/templates/da/disabled.txt
+%%MMDIR%%/templates/da/emptyarchive.html
+%%MMDIR%%/templates/da/headfoot.html
+%%MMDIR%%/templates/da/help.txt
+%%MMDIR%%/templates/da/invite.txt
+%%MMDIR%%/templates/da/listinfo.html
+%%MMDIR%%/templates/da/masthead.txt
+%%MMDIR%%/templates/da/newlist.txt
+%%MMDIR%%/templates/da/nomoretoday.txt
+%%MMDIR%%/templates/da/options.html
+%%MMDIR%%/templates/da/postack.txt
+%%MMDIR%%/templates/da/postauth.txt
+%%MMDIR%%/templates/da/postheld.txt
+%%MMDIR%%/templates/da/private.html
+%%MMDIR%%/templates/da/probe.txt
+%%MMDIR%%/templates/da/refuse.txt
+%%MMDIR%%/templates/da/roster.html
+%%MMDIR%%/templates/da/subauth.txt
+%%MMDIR%%/templates/da/subscribe.html
+%%MMDIR%%/templates/da/subscribeack.txt
+%%MMDIR%%/templates/da/unsub.txt
+%%MMDIR%%/templates/da/unsubauth.txt
+%%MMDIR%%/templates/da/userpass.txt
+%%MMDIR%%/templates/da/verify.txt
 %%MMDIR%%/templates/de/admindbdetails.html
 %%MMDIR%%/templates/de/admindbpreamble.html
 %%MMDIR%%/templates/de/admindbsummary.html
@@ -843,6 +864,15 @@
 %%MMDIR%%/templates/es/unsubauth.txt
 %%MMDIR%%/templates/es/userpass.txt
 %%MMDIR%%/templates/es/verify.txt
+%%MMDIR%%/templates/es/archidxentry.html
+%%MMDIR%%/templates/es/archidxfoot.html
+%%MMDIR%%/templates/es/archidxhead.html
+%%MMDIR%%/templates/es/archlistend.html
+%%MMDIR%%/templates/es/archliststart.html
+%%MMDIR%%/templates/es/archtoc.html
+%%MMDIR%%/templates/es/archtocentry.html
+%%MMDIR%%/templates/es/archtocnombox.html
+%%MMDIR%%/templates/es/probe.txt
 %%MMDIR%%/templates/et/admindbdetails.html
 %%MMDIR%%/templates/et/admindbpreamble.html
 %%MMDIR%%/templates/et/admindbsummary.html
@@ -995,32 +1025,6 @@
 %%MMDIR%%/templates/fr/unsubauth.txt
 %%MMDIR%%/templates/fr/userpass.txt
 %%MMDIR%%/templates/fr/verify.txt
-%%MMDIR%%/templates/gb/admindbpreamble.html
-%%MMDIR%%/templates/gb/adminsubscribeack.txt
-%%MMDIR%%/templates/gb/adminunsubscribeack.txt
-%%MMDIR%%/templates/gb/admlogin.html
-%%MMDIR%%/templates/gb/approve.txt
-%%MMDIR%%/templates/gb/bounce.txt
-%%MMDIR%%/templates/gb/checkdbs.txt
-%%MMDIR%%/templates/gb/convert.txt
-%%MMDIR%%/templates/gb/cronpass.txt
-%%MMDIR%%/templates/gb/handle_opts.html
-%%MMDIR%%/templates/gb/headfoot.html
-%%MMDIR%%/templates/gb/help.txt
-%%MMDIR%%/templates/gb/listinfo.html
-%%MMDIR%%/templates/gb/masthead.txt
-%%MMDIR%%/templates/gb/newlist.txt
-%%MMDIR%%/templates/gb/options.html
-%%MMDIR%%/templates/gb/postack.txt
-%%MMDIR%%/templates/gb/postauth.txt
-%%MMDIR%%/templates/gb/postheld.txt
-%%MMDIR%%/templates/gb/refuse.txt
-%%MMDIR%%/templates/gb/roster.html
-%%MMDIR%%/templates/gb/subauth.txt
-%%MMDIR%%/templates/gb/subscribe.html
-%%MMDIR%%/templates/gb/subscribeack.txt
-%%MMDIR%%/templates/gb/userpass.txt
-%%MMDIR%%/templates/gb/verify.txt
 %%MMDIR%%/templates/hr/admindbdetails.html
 %%MMDIR%%/templates/hr/admindbpreamble.html
 %%MMDIR%%/templates/hr/admindbsummary.html
@@ -1150,6 +1154,8 @@
 %%MMDIR%%/templates/it/unsubauth.txt
 %%MMDIR%%/templates/it/userpass.txt
 %%MMDIR%%/templates/it/verify.txt
+%%MMDIR%%/templates/it/probe.txt
+%%MMDIR%%/templates/ja/probe.txt
 %%MMDIR%%/templates/ja/admindbdetails.html
 %%MMDIR%%/templates/ja/admindbpreamble.html
 %%MMDIR%%/templates/ja/admindbsummary.html
@@ -1428,6 +1434,14 @@
 %%MMDIR%%/templates/pt/unsubauth.txt
 %%MMDIR%%/templates/pt/userpass.txt
 %%MMDIR%%/templates/pt/verify.txt
+%%MMDIR%%/templates/pt_BR/archidxentry.html
+%%MMDIR%%/templates/pt_BR/archidxfoot.html
+%%MMDIR%%/templates/pt_BR/archidxhead.html
+%%MMDIR%%/templates/pt_BR/archlistend.html
+%%MMDIR%%/templates/pt_BR/archliststart.html
+%%MMDIR%%/templates/pt_BR/archtoc.html
+%%MMDIR%%/templates/pt_BR/archtocentry.html
+%%MMDIR%%/templates/pt_BR/nomoretoday.txt
 %%MMDIR%%/templates/pt_BR/admindbdetails.html
 %%MMDIR%%/templates/pt_BR/admindbpreamble.html
 %%MMDIR%%/templates/pt_BR/admindbsummary.html
@@ -1504,6 +1518,8 @@
 %%MMDIR%%/templates/ro/unsubauth.txt
 %%MMDIR%%/templates/ro/userpass.txt
 %%MMDIR%%/templates/ro/verify.txt
+%%MMDIR%%/templates/ru/archtocnombox.html
+%%MMDIR%%/templates/ru/probe.txt
 %%MMDIR%%/templates/ru/admindbdetails.html
 %%MMDIR%%/templates/ru/admindbpreamble.html
 %%MMDIR%%/templates/ru/admindbsummary.html
@@ -1711,6 +1727,8 @@
 %%MMDIR%%/templates/tr/unsubauth.txt
 %%MMDIR%%/templates/tr/userpass.txt
 %%MMDIR%%/templates/tr/verify.txt
+%%MMDIR%%/templates/uk/archtocnombox.html
+%%MMDIR%%/templates/uk/probe.txt
 %%MMDIR%%/templates/uk/admindbdetails.html
 %%MMDIR%%/templates/uk/admindbpreamble.html
 %%MMDIR%%/templates/uk/admindbsummary.html
@@ -1753,6 +1771,76 @@
 %%MMDIR%%/templates/uk/unsubauth.txt
 %%MMDIR%%/templates/uk/userpass.txt
 %%MMDIR%%/templates/uk/verify.txt
+%%MMDIR%%/templates/zh_CN/admindbdetails.html
+%%MMDIR%%/templates/zh_CN/admindbpreamble.html
+%%MMDIR%%/templates/zh_CN/admindbsummary.html
+%%MMDIR%%/templates/zh_CN/adminsubscribeack.txt
+%%MMDIR%%/templates/zh_CN/adminunsubscribeack.txt
+%%MMDIR%%/templates/zh_CN/admlogin.html
+%%MMDIR%%/templates/zh_CN/approve.txt
+%%MMDIR%%/templates/zh_CN/archidxentry.html
+%%MMDIR%%/templates/zh_CN/archidxfoot.html
+%%MMDIR%%/templates/zh_CN/archidxhead.html
+%%MMDIR%%/templates/zh_CN/archlistend.html
+%%MMDIR%%/templates/zh_CN/archliststart.html
+%%MMDIR%%/templates/zh_CN/archtoc.html
+%%MMDIR%%/templates/zh_CN/archtocentry.html
+%%MMDIR%%/templates/zh_CN/archtocnombox.html
+%%MMDIR%%/templates/zh_CN/article.html
+%%MMDIR%%/templates/zh_CN/bounce.txt
+%%MMDIR%%/templates/zh_CN/checkdbs.txt
+%%MMDIR%%/templates/zh_CN/convert.txt
+%%MMDIR%%/templates/zh_CN/cronpass.txt
+%%MMDIR%%/templates/zh_CN/disabled.txt
+%%MMDIR%%/templates/zh_CN/emptyarchive.html
+%%MMDIR%%/templates/zh_CN/headfoot.html
+%%MMDIR%%/templates/zh_CN/help.txt
+%%MMDIR%%/templates/zh_CN/invite.txt
+%%MMDIR%%/templates/zh_CN/listinfo.html
+%%MMDIR%%/templates/zh_CN/masthead.txt
+%%MMDIR%%/templates/zh_CN/newlist.txt
+%%MMDIR%%/templates/zh_CN/nomoretoday.txt
+%%MMDIR%%/templates/zh_CN/options.html
+%%MMDIR%%/templates/zh_CN/postack.txt
+%%MMDIR%%/templates/zh_CN/postauth.txt
+%%MMDIR%%/templates/zh_CN/postheld.txt
+%%MMDIR%%/templates/zh_CN/private.html
+%%MMDIR%%/templates/zh_CN/probe.txt
+%%MMDIR%%/templates/zh_CN/refuse.txt
+%%MMDIR%%/templates/zh_CN/roster.html
+%%MMDIR%%/templates/zh_CN/subauth.txt
+%%MMDIR%%/templates/zh_CN/subscribe.html
+%%MMDIR%%/templates/zh_CN/subscribeack.txt
+%%MMDIR%%/templates/zh_CN/unsub.txt
+%%MMDIR%%/templates/zh_CN/unsubauth.txt
+%%MMDIR%%/templates/zh_CN/userpass.txt
+%%MMDIR%%/templates/zh_CN/verify.txt
+%%MMDIR%%/templates/zh_TW/admindbpreamble.html
+%%MMDIR%%/templates/zh_TW/adminsubscribeack.txt
+%%MMDIR%%/templates/zh_TW/adminunsubscribeack.txt
+%%MMDIR%%/templates/zh_TW/admlogin.html
+%%MMDIR%%/templates/zh_TW/approve.txt
+%%MMDIR%%/templates/zh_TW/bounce.txt
+%%MMDIR%%/templates/zh_TW/checkdbs.txt
+%%MMDIR%%/templates/zh_TW/convert.txt
+%%MMDIR%%/templates/zh_TW/cronpass.txt
+%%MMDIR%%/templates/zh_TW/handle_opts.html
+%%MMDIR%%/templates/zh_TW/headfoot.html
+%%MMDIR%%/templates/zh_TW/help.txt
+%%MMDIR%%/templates/zh_TW/listinfo.html
+%%MMDIR%%/templates/zh_TW/masthead.txt
+%%MMDIR%%/templates/zh_TW/newlist.txt
+%%MMDIR%%/templates/zh_TW/options.html
+%%MMDIR%%/templates/zh_TW/postack.txt
+%%MMDIR%%/templates/zh_TW/postauth.txt
+%%MMDIR%%/templates/zh_TW/postheld.txt
+%%MMDIR%%/templates/zh_TW/refuse.txt
+%%MMDIR%%/templates/zh_TW/roster.html
+%%MMDIR%%/templates/zh_TW/subauth.txt
+%%MMDIR%%/templates/zh_TW/subscribe.html
+%%MMDIR%%/templates/zh_TW/subscribeack.txt
+%%MMDIR%%/templates/zh_TW/userpass.txt
+%%MMDIR%%/templates/zh_TW/verify.txt
 %%MMDIR%%/tests/EmailBase.py
 %%MMDIR%%/tests/TestBase.py
 %%MMDIR%%/tests/bounces/bounce_01.txt
@@ -1806,7 +1894,6 @@
 %%MMDIR%%/tests/bounces/yale_01.txt
 %%MMDIR%%/tests/fblast.py
 %%MMDIR%%/tests/msgs/bad_01.txt
-%%MMDIR%%/tests/msgs/nimda.txt
 %%MMDIR%%/tests/onebounce.py
 %%MMDIR%%/tests/paths.py
 %%MMDIR%%/tests/test_bounces.py
@@ -1828,11 +1915,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README-I18N.en
 %%PORTDOCS%%%%DOCSDIR%%/README.CONTRIB
-%%PORTDOCS%%%%DOCSDIR%%/README.EXIM
 %%PORTDOCS%%%%DOCSDIR%%/README.NETSCAPE
-%%PORTDOCS%%%%DOCSDIR%%/README.POSTFIX
-%%PORTDOCS%%%%DOCSDIR%%/README.QMAIL
-%%PORTDOCS%%%%DOCSDIR%%/README.SENDMAIL
 %%PORTDOCS%%%%DOCSDIR%%/README.USERAGENT
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
@@ -1841,6 +1924,8 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/tests/msgs
 @dirrm %%MMDIR%%/tests/bounces
 @dirrm %%MMDIR%%/tests
+@dirrm %%MMDIR%%/templates/zh_TW
+@dirrm %%MMDIR%%/templates/zh_CN
 @dirrm %%MMDIR%%/templates/uk
 @dirrm %%MMDIR%%/templates/tr
 @dirrm %%MMDIR%%/templates/sv
@@ -1859,7 +1944,6 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/templates/it
 @dirrm %%MMDIR%%/templates/hu
 @dirrm %%MMDIR%%/templates/hr
-@dirrm %%MMDIR%%/templates/gb
 @dirrm %%MMDIR%%/templates/fr
 @dirrm %%MMDIR%%/templates/fi
 @dirrm %%MMDIR%%/templates/eu
@@ -1867,9 +1951,9 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/templates/es
 @dirrm %%MMDIR%%/templates/en
 @dirrm %%MMDIR%%/templates/de
+@dirrm %%MMDIR%%/templates/da
 @dirrm %%MMDIR%%/templates/cs
 @dirrm %%MMDIR%%/templates/ca
-@dirrm %%MMDIR%%/templates/big5
 @dirrm %%MMDIR%%/templates
 @dirrm %%MMDIR%%/scripts
 @dirrm %%MMDIR%%/pythonlib/lib/%%PYTHON_VERSION%%/site-packages
@@ -1886,6 +1970,10 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/pythonlib/japanese
 @dirrm %%MMDIR%%/pythonlib/email
 @dirrm %%MMDIR%%/pythonlib
+@dirrm %%MMDIR%%/messages/zh_TW/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/zh_TW
+@dirrm %%MMDIR%%/messages/zh_CN/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/zh_CN
 @dirrm %%MMDIR%%/messages/uk/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/uk
 @dirrm %%MMDIR%%/messages/tr/LC_MESSAGES
