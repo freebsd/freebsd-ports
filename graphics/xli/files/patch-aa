@@ -16,7 +16,7 @@
  LOCAL_LIBRARIES = $(XLIB) $(JPEG_LDFLAGS) $(PNG_LDFLAGS) -ljpeg -lpng -lz
  SYS_LIBRARIES = -lm
 -DEFINES = -DHAS_MEMCPY
-+DEFINES = -DHAS_MEMCPY -DHAVE_GUNZIP
++DEFINES = -DHAS_MEMCPY -DHAVE_GUNZIP -DHAVE_BUNZIP2
  EXTRA_INCLUDES = $(JPEG_INCLUDES) $(PNG_INCLUDES)
  
  SRCS1 = bright.c clip.c cmuwmrast.c compress.c dither.c faces.c fbm.c fill.c  g3.c gif.c halftone.c imagetypes.c img.c mac.c mcidas.c mc_tables.c merge.c misc.c new.c options.c path.c pbm.c pcx.c reduce.c jpeg.c rle.c rlelib.c root.c rotate.c send.c smooth.c sunraster.c  value.c window.c xbitmap.c xli.c xpixmap.c xwd.c zio.c zoom.c ddxli.c tga.c bmp.c pcd.c png.c
