@@ -1,11 +1,11 @@
---- include/ivec.h.orig	Tue Dec  9 20:16:16 2003
-+++ include/ivec.h	Tue Dec  9 20:36:38 2003
+--- include/ivec.h.orig	Sat Jun  4 17:36:19 2005
++++ include/ivec.h	Sat Jun  4 17:47:23 2005
 @@ -23,7 +23,7 @@
  #include <assert.h>
  
  /* If using MSVC5.0, explicit keyword should be used */
--#if (_MSC_VER >= 1100) || defined (__linux__)
-+#if (_MSC_VER >= 1100) || defined (__linux__) || defined (__FreeBSD__)
+-#if (_MSC_VER >= 1100) || defined (__linux__) || defined(__QNX__)
++#if (_MSC_VER >= 1100) || defined (__linux__) || defined(__QNX__) || defined (__FreeBSD__)
          #define EXPLICIT explicit
  #else
     #if (__INTEL_COMPILER)

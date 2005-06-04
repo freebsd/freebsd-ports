@@ -940,7 +940,9 @@
 %%COMPILERDIR%%/lib/libimf.a
 %%COMPILERDIR%%/lib/libimf.so
 %%COMPILERDIR%%/lib/libirc.a
+%%COMPILERDIR%%/lib/libirc_nonpic.a
 %%COMPILERDIR%%/lib/libirc_s.a
+%%COMPILERDIR%%/lib/libirc_s_nonpic.a
 %%COMPILERDIR%%/lib/libsvml.a
 %%COMPILERDIR%%/lib/libunwind.a
 @dirrm %%COMPILERDIR%%/lib
