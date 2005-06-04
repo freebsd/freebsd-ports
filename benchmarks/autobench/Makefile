@@ -20,12 +20,13 @@ RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf \
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEBUG_FLAGS= \
+		PREFIX=${PREFIX}
 
 MAN1=	autobench.1 autobench_admin.1 autobenchd.1 bench2graph.1 \
 	crfile.1 sesslog.1
 
 post-patch:
-	@${PERL} -pi -e "s|^PREFIX|#PREFIX|g" ${WRKSRC}/Makefile
 .for file in autobench autobench_admin
 	@${PERL} -pi -e "s|/etc/|${PREFIX}/etc/|g" ${WRKSRC}/${file}
 .endfor
