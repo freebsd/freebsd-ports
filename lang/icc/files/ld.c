@@ -216,12 +216,13 @@ main(int argc, char *argv[], char *envp[])
 
 		/*
 		 * Don't add "-m elf_i386" ICC passed to us. Don't add
-		 * libgcc_eh, libgcc_s or libgcc_s_32.
+		 * libgcc_eh, libgcc_s or libgcc_s_32, libdl.
 		 */
 		if ((ARGCMP(i, "-m") && i < argc - 1 && ARGCMP(i + 1,
 		    "elf_i386")) || (ARGCMP(i, "elf_i386") && i != 0 &&
 		    ARGCMP(i - 1, "-m")) || ARGCMP(i, "-lgcc_eh") ||
-		    ARGCMP(i, "-lgcc_s") || ARGCMP(i, "-lgcc_s_32"))
+		    ARGCMP(i, "-lgcc_s") || ARGCMP(i, "-lgcc_s_32") ||
+		    ARGCMP(i, "-ldl"))
 			continue;
 
 		/*
