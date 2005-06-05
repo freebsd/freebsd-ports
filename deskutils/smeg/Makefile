@@ -5,37 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	menueditor
-PORTVERSION=	0.4.3
-CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://dev.realistanew.com/menu-editor/ \
-		http://dev.realistanew.com/menu-editor/old/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+PORTNAME=	smeg
+PORTVERSION=	0.7.4
+CATEGORIES=	deskutils
+MASTER_SITES=	http://dev.realistanew.com/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A simple menu editor for GNOME 2.10
+COMMENT=	An editor for the freedesktop.org menu specification
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
-USE_GNOME=	pygtk2 gnomehier
+USE_GNOME=	pygtk2
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|\[(libdir,|\[('share/gnome/menu-editor',|g ; \
-		s|, 'lib/|, 'share/gnome/|g ; \
-		s|'share/pixmaps|'share/gnome/pixmaps|g ; \
-		s|'share/applications|'share/gnome/applications|g ; \
-		s|/usr/share|${X11BASE}/share/gnome|g ; \
-		s|/etc|${X11BASE}/etc|g" \
-			${WRKSRC}/setup.py ${WRKSRC}/bin/menu-editor \
-			${WRKSRC}/lib/menu-editor/menu_handler.py
+	@${REINPLACE_CMD} -e "s|libdir, glob|'share/${PORTNAME}', glob|g ; \
+		s|, 'lib/|, 'share/|g ; s|/usr/share|${X11BASE}/share|g" \
+			${WRKSRC}/setup.py ${WRKSRC}/bin/${PORTNAME} \
+			${WRKSRC}/lib/${PORTNAME}/MenuHandler.py \
+			${WRKSRC}/lib/${PORTNAME}/DialogHandler.py
 
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/menu-editor
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		${PREFIX}/share/${PORTNAME}
 
 .include <bsd.port.mk>

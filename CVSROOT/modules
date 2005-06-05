@@ -5800,7 +5800,6 @@ memgrep		ports/sysutils/memgrep
 memtest		ports/sysutils/memtest
 memtest86	ports/sysutils/memtest86
 mencal		ports/deskutils/mencal
-menueditor	ports/deskutils/menueditor
 menushki	ports/misc/menushki
 meqcc		ports/games/meqcc
 mercator	ports/devel/mercator
@@ -10942,6 +10941,7 @@ smb_auth	ports/www/smb_auth
 smbldap-tools	ports/net/smbldap-tools
 smc		ports/devel/smc
 smc-milter	ports/mail/smc-milter
+smeg		ports/deskutils/smeg
 smiley		ports/games/smiley
 sml-mode.el	ports/lang/sml-mode.el
 sml-nj		ports/lang/sml-nj
