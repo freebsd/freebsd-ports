@@ -1,0 +1,95 @@
+--- configure.orig	Thu Mar 24 00:31:42 2005
++++ configure	Mon May 30 16:58:31 2005
+@@ -3902,7 +3902,7 @@
+ #
+ # Try to get the Samba Version for old releases
+ #
+-SAMBA_VERSION_H_STR=$(cat ${SAMBA_srcdir}/include/version.h |grep '#define VERSION'|cut -d ' ' -f3-)
++SAMBA_VERSION_H_STR=`cat ${SAMBA_srcdir}/include/version.h |grep '#define SAMBA_VERSION'|cut -d ' ' -f3-`
+ 
+ SAMBA_VERSION=
+ ####################################################
+@@ -3950,26 +3950,21 @@
+   esac
+ fi;
+ 
+-
+-if test -z "$SAMBA_VERSION_STRING";then
++if /usr/bin/true ;then
+ 
+  if test -z "$SAMBA_VERSION"; then
+ 	SAMBA_VERSION=$SAMBA_VERSION_H_STR
+  fi
+-
+  echo "$as_me:$LINENO: checking for Samba Version" >&5
+ echo $ECHO_N "checking for Samba Version... $ECHO_C" >&6
+ 
+-  SAMBA_VERSION_MAJOR=$(echo $SAMBA_VERSION | sed -e 's/"\([0-9]\)\.\([0-9]\)[\.]*\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)\([a-zA-Z]*\)\([-]*\)\(.*\)"/\1/')
+- SAMBA_VERSION_MINOR=$(echo $SAMBA_VERSION | sed -e 's/"\([0-9]\)\.\([0-9]\)[\.]*\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)\([a-zA-Z]*\)\([-]*\)\(.*\)"/\2/')
+- SAMBA_VERSION_RELEASE=$(echo $SAMBA_VERSION | sed -e 's/"\([0-9]\)\.\([0-9]\)[\.]*\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)\([a-zA-Z]*\)\([-]*\)\(.*\)"/\3/')
+- SAMBA_VERSION_SUFFIX=$(echo $SAMBA_VERSION | sed -e 's/"\([0-9]\)\.\([0-9]\)[\.]*\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)\([a-zA-Z]*\)\([-]*\)\(.*\)"/\4/')
+- SAMBA_VERSION_SUFFIX_RELEASE=$(echo $SAMBA_VERSION | sed -e 's/"\([0-9]\)\.\([0-9]\)[\.]*\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)\([a-zA-Z]*\)\([-]*\)\(.*\)"/\5/')
+- SAMBA_VERSION_SUFFIX_EXTRA1=$(echo $SAMBA_VERSION | sed -e 's/"\([0-9]\)\.\([0-9]\)[\.]*\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)\([a-zA-Z]*\)\([-]*\)\(.*\)"/\6/')
+- SAMBA_VERSION_SUFFIX_EXTRA2=$(echo $SAMBA_VERSION | sed -e 's/"\([0-9]\)\.\([0-9]\)[\.]*\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)\([a-zA-Z]*\)\([-]*\)\(.*\)"/\8/')
++  SAMBA_VERSION_MAJOR=$(echo $SAMBA_VERSION | awk '{print $1}')
++ SAMBA_VERSION_MINOR=$(echo $SAMBA_VERSION | awk '{print $2}')
++ SAMBA_VERSION_RELEASE=$(echo $SAMBA_VERSION | awk '{print $3}'| sed -e 's/\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)/\1/')
++ SAMBA_VERSION_SUFFIX=$(echo $SAMBA_VERSION | awk '{print $3}' | sed -e 's/\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)/\2/')
++ SAMBA_VERSION_SUFFIX_RELEASE=$(echo $SAMBA_VERSION | awk '{print $3}' | sed -e 's/\([0-9]*\)\([a-zA-Z]*\)\([0-9]*\)/\3/')
+ 
+  SAMBA_VERSION_STRING="${SAMBA_VERSION_MAJOR}.${SAMBA_VERSION_MINOR}"
+-
+  if test -n "$SAMBA_VERSION_RELEASE";then
+     SAMBA_VERSION_STRING="${SAMBA_VERSION_STRING}.${SAMBA_VERSION_RELEASE}"
+  fi
+@@ -4085,9 +4080,9 @@
+  fi
+ 
+ 
+-cat >>confdefs.h <<_ACEOF
++#cat >>confdefs.h <<_ACEOF
+ #define SAMBA_VERSION_OFFICIAL_STRING $SAMBA_VERSION_STRING
+-_ACEOF
++#_ACEOF
+ 
+ 
+  if test -n "${SAMBA_VERSION_VENDOR_SUFFIX}";then
+@@ -4101,9 +4096,9 @@
+ 
+  SAMBA_VERSION_STRING="\"${SAMBA_VERSION_STRING}\""
+ 
+-cat >>confdefs.h <<_ACEOF
++#cat >>confdefs.h <<_ACEOF
+ #define SAMBA_VERSION_STRING $SAMBA_VERSION_STRING
+-_ACEOF
++#_ACEOF
+ 
+ 
+  echo "$as_me:$LINENO: result: $SAMBA_VERSION_STRING" >&5
+@@ -5128,7 +5123,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmagic  $LIBS"
++LIBS="-lmagic  -lz $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -5182,7 +5177,7 @@
+ #define HAVE_LIBMAGIC 1
+ _ACEOF
+ 
+-  LIBS="-lmagic $LIBS"
++  LIBS="-lmagic -lz $LIBS"
+ 
+ fi
+ 
+@@ -5190,7 +5185,7 @@
+  if test x"$ac_cv_header_magic_h" = x"yes"; then
+   if test x"$ac_cv_lib_magic_magic_load" = x"yes"; then
+      vscan_cv_filetype=yes
+-     MAGIC_LIB="-lmagic"
++     MAGIC_LIB="-lmagic -lz"
+   fi
+  fi
+ fi

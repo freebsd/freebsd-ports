@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	samba-vscan
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	security
-MASTER_SITES=	http://heanet.dl.sourceforge.net/sourceforge/openantivirus/ \
-		http://easynews.dl.sourceforge.net/sourceforge/openantivirus/ \
-		http://flow.dl.sourceforge.net/sourceforge/openantivirus/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	openantivirus
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	On-access virus scanning with Samba
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README
+.endif
 
 USE_BZIP2=	yes
 SAMBA_WRKSRC=	`cd ${PORTSDIR}/net/${VSCAN_SAMBA_PORT}; make -V WRKSRC`
@@ -25,7 +26,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-samba-source=${SAMBA_WRKSRC}
 ETCDIR=		${PREFIX}/etc/samba-vscan
 PKGMESSAGE=	${WRKDIR}/pkg-message
-VSCAN_SAMBA_PORT?=samba
+VSCAN_SAMBA_PORT?=samba3
 
 .if ${VSCAN_SAMBA_PORT} == "samba3"
 PLIST_SUB=	VFSDIR=lib/samba/vfs
@@ -33,7 +34,18 @@ PLIST_SUB=	VFSDIR=lib/samba/vfs
 PLIST_SUB=	VFSDIR=lib/samba
 .endif
 
+pre-configure:
+.if ${VSCAN_SAMBA_PORT} == "samba3"
+		@cd ${SAMBA_WRKSRC}; make proto 2>&1 > /dev/null
+.endif
+
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 	@${MKDIR} ${PREFIX}/etc/samba-vscan
 	@${INSTALL_DATA} ${WRKSRC}/clamav/vscan-clamav.conf ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/fprot/vscan-fprotd.conf ${ETCDIR}
