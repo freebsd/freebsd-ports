@@ -7,6 +7,7 @@
 
 PORTNAME=	xdg
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.freedesktop.org/~lanius/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +22,7 @@ USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/etc|${PREFIX}/etc|g ; \
+		's|/etc|${X11BASE}/etc|g ; \
 		s|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${WRKSRC}/xdg/BaseDirectory.py \
