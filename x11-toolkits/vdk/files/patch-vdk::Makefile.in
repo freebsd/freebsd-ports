@@ -1,27 +1,35 @@
---- vdk/Makefile.in.orig	Tue May 18 15:55:11 2004
-+++ vdk/Makefile.in	Fri Jul  9 02:31:31 2004
-@@ -197,7 +197,6 @@
- #	vdktextview.h
- #	vdkpacker.h
- vdkinclude_HEADERS = \
--	regex.h\
- 	gtksourcebuffer.h\
- 	gtktextsearch.h \
- 	gtksourcetag.h\
-@@ -333,7 +332,6 @@
- #	vdkregex.cc
- #	vdkpacker.cc
- libvdk_la_SOURCES = \
--	regex.c\
- 	gtksourcebuffer.c\
- 	gtktextsearch.c \
- 	gtksourcetag.c\
-@@ -440,7 +438,7 @@
+--- vdk/Makefile.in.orig	Wed May 25 00:05:27 2005
++++ vdk/Makefile.in	Thu Jun  2 13:58:14 2005
+@@ -59,7 +59,7 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(lib_LTLIBRARIES)
- 
  libvdk_la_LIBADD =
 -am_libvdk_la_OBJECTS = regex.lo gtksourcebuffer.lo gtktextsearch.lo \
 +am_libvdk_la_OBJECTS = gtksourcebuffer.lo gtktextsearch.lo \
  	gtksourcetag.lo gtksourceview.lo gtkundomanager.lo \
  	gtksourceview-marshal.lo gtktextregion.lo vdkeditor.lo \
  	gtkdatabox.lo gtkdataboxmarshal.lo abstract_button.lo \
+@@ -231,7 +231,6 @@
+ lib_LTLIBRARIES = libvdk.la
+ vdkincludedir = $(includedir)/vdk2/vdk
+ vdkinclude_HEADERS = \
+-	regex.h\
+ 	gtksourcebuffer.h\
+ 	gtktextsearch.h \
+ 	gtksourcetag.h\
+@@ -330,7 +329,6 @@
+ 	vdkdockable.h
+ 
+ libvdk_la_SOURCES = \
+-	regex.c\
+ 	gtksourcebuffer.c\
+ 	gtktextsearch.c \
+ 	gtksourcetag.c\
+@@ -528,7 +526,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rawobj.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rawpixbuf.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rawpixmap.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/regex.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scrolled.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/separator.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slider.Plo@am__quote@

@@ -82,11 +82,6 @@ include/vdk2/vdk/vdkfeatures.h
 include/vdk2/vdk/vdkfilechooser.h
 include/vdk2/vdk/vdkfileicondlg.h
 include/vdk2/vdk/vdkfont.h
-include/vdk2/vdk/vdkgnomeapp.h
-include/vdk2/vdk/vdkgnomeappbar.h
-include/vdk2/vdk/vdkgnomededit.h
-include/vdk2/vdk/vdkgnomeentry.h
-include/vdk2/vdk/vdkgnomeform.h
 include/vdk2/vdk/vdkheap.h
 include/vdk2/vdk/vdkhlbutton.h
 include/vdk2/vdk/vdkhlbuttonbar.h
@@ -103,6 +98,7 @@ include/vdk2/vdk/widcontain.h
 lib/libvdk.a
 lib/libvdk.so
 lib/libvdk.so.6
+libdata/pkgconfig/vdk-2.x.pc
 share/aclocal/vdk-2.m4
 @dirrm include/vdk2/vdk
 @dirrm include/vdk2
