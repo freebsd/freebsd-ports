@@ -1,0 +1,75 @@
+--- watch.1.orig	Sun Feb  9 08:05:25 2003
++++ watch.1	Fri Jun  3 23:44:46 2005
+@@ -1,11 +1,11 @@
+ .TH WATCH 1 "1999 Apr 3" " " "Linux User's Manual"
+ .SH NAME
+-watch \- execute a program periodically, showing output fullscreen
++gnu-watch \- execute a program periodically, showing output fullscreen
+ .SH SYNOPSIS
+-.B watch
++.B gnu-watch
+ .I [\-dhvt] [\-n <seconds>] [\-\-differences[=cumulative]] [\-\-help] [\-\-interval=<seconds>] [\-\-no\-title] [\-\-version] <command>
+ .SH DESCRIPTION
+-.BR watch
++.BR gnu-watch
+ runs
+ .I command
+ repeatedly, displaying its output (the first screenfull).  This allows you to
+@@ -30,7 +30,7 @@
+ option turns off the header showing the interval, command, and current
+ time at the top of the display, as well as the following blank line.
+ .PP
+-.BR watch
++.BR gnu-watch
+ will run until interrupted.
+ .SH NOTE
+ Note that
+@@ -42,33 +42,33 @@
+ the first non-option argument).  This means that flags after
+ .I command
+ don't get interpreted by
+-.BR watch
++.BR gnu-watch
+ itself.
+ .SH EXAMPLES
+ .PP
+ To watch for mail, you might do
+ .IP
+-watch \-n 60 from
++gnu-watch \-n 60 from
+ .PP
+ To watch the contents of a directory change, you could use
+ .IP
+-watch \-d ls \-l
++gnu-watch \-d ls \-l
+ .PP
+ If you're only interested in files owned by user joe, you might use 
+ .IP
+-watch \-d 'ls \-l | fgrep joe'
++gnu-watch \-d 'ls \-l | fgrep joe'
+ .PP
+ To see the effects of quoting, try these out
+ .IP
+-watch echo $$
++gnu-watch echo $$
+ .IP
+-watch echo '$$'
++gnu-watch echo '$$'
+ .IP
+-watch echo "'"'$$'"'"
++gnu-watch echo "'"'$$'"'"
+ .PP
+ You can watch for your administrator to install the latest kernel with
+ .IP
+-watch uname -r
++gnu-watch uname -r
+ .PP
+ (Just kidding.)
+ .SH BUGS
+@@ -84,4 +84,5 @@
+ .B watch
+ was written by Tony Rems <rembo@unisoft.com> in 1991, with mods and
+ corrections by Francois Pinard.  It was reworked and new features added by
+-Mike Coleman <mkc@acm.org> in 1999.
++Mike Coleman <mkc@acm.org> in 1999. In 2005 it was modified for FreeBSD by
++Emanuel Haupt <ehaupt@critical.ch>.
