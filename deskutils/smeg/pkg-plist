@@ -1,8 +1,12 @@
-bin/menu-editor
-share/doc/menu-editor/AUTHORS
-share/gnome/applications/menueditor.desktop
-share/gnome/menu-editor/menu_handler.py
-share/gnome/menu-editor/menu_handler.pyc
-share/gnome/pixmaps/menu-editor.png
-@dirrm share/gnome/menu-editor
-@dirrm share/doc/menu-editor
+bin/smeg
+share/applications/smeg-kde.desktop
+share/applications/smeg.desktop
+%%DATADIR%%/DialogHandler.py
+%%DATADIR%%/DialogHandler.pyc
+%%DATADIR%%/MenuHandler.py
+%%DATADIR%%/MenuHandler.pyc
+%%DATADIR%%/config.py
+%%DATADIR%%/config.pyc
+%%DATADIR%%/smeg.glade
+@dirrm %%DATADIR%%
+@unexec rmdir %D/share/applications 2> /dev/null || true

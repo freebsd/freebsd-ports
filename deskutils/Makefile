@@ -94,7 +94,6 @@
     SUBDIR += mcatalog
     SUBDIR += mdh
     SUBDIR += mencal
-    SUBDIR += menueditor
     SUBDIR += metabar
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
@@ -126,6 +125,7 @@
     SUBDIR += rox-memo
     SUBDIR += rubrica
     SUBDIR += sliderule
+    SUBDIR += smeg
     SUBDIR += splashsetter
     SUBDIR += sugarcrm
     SUBDIR += superkaramba

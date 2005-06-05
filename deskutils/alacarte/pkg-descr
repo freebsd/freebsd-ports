@@ -1,4 +1,3 @@
-A simple menu editor for GNOME 2.10 that can edit and add new entries. It
-implements the fd.o menu spec but may or may not work with other DEs.
+Smeg is an editor for the freedesktop.org menu specification.
 
-WWW: http://www.realistanew.com/2005/03/18/gnome-menu-editor/
+WWW: http://www.realistanew.com/projects/smeg/
