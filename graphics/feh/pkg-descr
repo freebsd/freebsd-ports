@@ -1,3 +1,7 @@
-An image viewer that utilizes Imlib2.
+feh is a versatile and fast image viewer using imlib2, the
+premier image file handling library. feh has many features,
+from simple single file viewing, to multiple file modes using
+a slideshow or multiple windows. feh supports the creation of
+montages as index prints with many user-configurable options.
 
 WWW: http://www.linuxbrit.co.uk/feh/
