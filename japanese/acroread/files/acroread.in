@@ -1,0 +1,5 @@
+#!/bin/sh
+# $FreeBSD$
+UNAME_s=Linux; export UNAME_s
+: ${GTK_IM_MODULE:=xim}; export GTK_IM_MODULE
+exec %%INSTALLDIR%%/bin/acroread "$@"
