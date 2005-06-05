@@ -16,4 +16,6 @@ dpt/dptscom
 dpt/dptsig
 dpt/raidutil
 dpt/read.me
-../X11R6/lib/libXm.so.1
+%%LIBXM%%@cwd %%X11BASE%%
+%%LIBXM%%lib/libXm.so.1
+@dirrm dpt
