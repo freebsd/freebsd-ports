@@ -631,6 +631,7 @@ bchunk		ports/sysutils/bchunk
 bclock		ports/x11-clocks/bclock
 bcpp		ports/devel/bcpp
 bcwipe		ports/security/bcwipe
+bdc		ports/security/bdc
 bdelta		ports/misc/bdelta
 bdesktopclock	ports/x11-clocks/bdesktopclock
 bdfresize	ports/x11-fonts/bdfresize
