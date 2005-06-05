@@ -7,7 +7,7 @@
 
 PORTNAME=		pam_krb5
 PORTVERSION=		1.3.r7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		security
 MASTER_SITE_SOURCEFORGE+=	http://unc.dl.sourceforge.net/%SUBDIR%/ \
 			http://umn.dl.sourceforge.net/%SUBDIR%/ \
@@ -40,7 +40,7 @@ KRB5_IMPL=		mit
 .endif
 
 .if defined(KRB5_IMPL) && ${KRB5_IMPL} == heimdal
-LIB_DEPENDS=		krb5.19:${PORTSDIR}/security/heimdal
+LIB_DEPENDS=		krb5.20:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)
 KRB5_DIR?=		${HEIMDAL_HOME}
 .endif
