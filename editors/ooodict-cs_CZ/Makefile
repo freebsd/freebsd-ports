@@ -9,11 +9,12 @@
 
 COMMENT=	Czech (Czech Republic) MySpell dictionary for OpenOffice.org
 
-LANGPREFIX=	cs 
+LANGPREFIX=	cs
 LANGSUFFIX=	CZ
 LANGDIST+=	cs_CZ.zip
 HYPHDIST+=	hyph_cs_CZ.zip
+THESDIST+=	thes_cs_CZ.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

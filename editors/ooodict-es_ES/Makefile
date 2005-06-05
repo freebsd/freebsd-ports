@@ -13,11 +13,8 @@ LANGPREFIX=	es
 LANGSUFFIX=	ES
 LANGDIST+=	es_ES.zip
 HYPHDIST+=	hyph_es_ES.zip
+THESDIST+=	thes_es_ES.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0-es
-
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

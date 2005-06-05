@@ -14,6 +14,6 @@ LANGSUFFIX=	DK
 LANGDIST+=	da_DK.zip
 HYPHDIST+=	hyph_da_DK.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0-dk
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

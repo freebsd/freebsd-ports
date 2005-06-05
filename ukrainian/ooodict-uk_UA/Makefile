@@ -13,7 +13,8 @@ CATEGORIES=	ukrainian
 LANGPREFIX=	uk
 LANGSUFFIX=	UA
 LANGDIST+=	uk_UA.zip
+HYPHDIST+=	hyph_uk_UA.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

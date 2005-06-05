@@ -13,7 +13,8 @@ LANGPREFIX=	it
 LANGSUFFIX=	IT
 LANGDIST+=	it_IT.zip
 HYPHDIST+=	hyph_it_IT.zip
+THESDIST+=	thes_it_IT.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0-it
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

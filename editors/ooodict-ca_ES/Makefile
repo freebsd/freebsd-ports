@@ -13,6 +13,6 @@ LANGPREFIX=	ca
 LANGSUFFIX=	ES
 LANGDIST+=	ca_ES.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0-es
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"
