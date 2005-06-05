@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.5.3.1
+PORTVERSION=	2.5.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/
 
@@ -19,7 +19,7 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400016
-RUN_DEPENDS=	ssh-agent:${PORTSDIR}/security/openssh
+RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh
 .endif
 
 MAN1=		keychain.1
