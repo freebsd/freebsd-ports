@@ -1,0 +1,5 @@
+@unexec %D/etc/rc.d/quoted.sh stop 2>/dev/null > /dev/null || true
+@unexec rm -f /var/run/quoted.pid
+bin/quoted
+etc/quotes
+etc/rc.d/quoted.sh

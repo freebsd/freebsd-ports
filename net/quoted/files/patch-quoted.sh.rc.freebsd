@@ -1,0 +1,20 @@
+--- quoted.sh.rc.freebsd.orig	Thu Dec  2 02:20:30 2004
++++ quoted.sh.rc.freebsd	Wed Jun  1 14:34:54 2005
+@@ -16,7 +16,7 @@
+ name="quoted"
+ rcvar=`set_rcvar`
+ command="${dir}/${name}"
+-command_args="-d"
++command_args="-d -p:17"
+ command_plus_args="${command} ${command_args}"
+ pidfile="/var/run/${name}.pid"
+ required_files="${etc}/quotes"
+@@ -31,7 +31,7 @@
+     if [ -e ${required_files} ] ; then
+       ${command_plus_args}
+       sleep 1
+-      pid=`ps -aewx -o "pid,command" | grep -- "${command_plus_args}" | grep -v "grep" | awk '{ print \$1; }'`
++      pid=`ps ax | awk '{if (match($5, ".*/quoted$") || $5 == "quoted") print $1}`
+       if [ -z ${pid} ]; then
+         echo "${name} failed to start"
+         return 1
