@@ -1124,7 +1124,7 @@ MASTER_SITE_SOURCEFORGE+= \
 # official sf.net mirrors that don't mirror all projects, check
 # http://prdownloads.sourceforge.net/%SUBDIR%/
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_EXTENDED)
-.for mirror in easynews switch puzzle ovh # keihanna is mostly unreachable
+.for mirror in easynews switch puzzle ovh peterhost citkit # keihanna is mostly unreachable
 MASTER_SITE_SOURCEFORGE_EXTENDED+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
