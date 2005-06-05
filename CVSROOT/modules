@@ -3884,6 +3884,7 @@ ja-Wnn6-lib	ports/japanese/Wnn6-lib
 ja-Wnn7-lib	ports/japanese/Wnn7-lib
 ja-a2ps		ports/japanese/a2ps
 ja-ack		ports/japanese/ack
+ja-acroread	ports/japanese/acroread
 ja-acroread5-jpnfont	ports/japanese/acroread5-jpnfont
 ja-addttfont	ports/japanese/addttfont
 ja-alias-fonts	ports/japanese/alias-fonts
