@@ -7,7 +7,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	1.95.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	expat
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	expat
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	XML 1.0 parser written in C
 
-USE_INC_LIBTOOL_VER=15
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 INSTALLS_SHLIB=	yes
@@ -26,6 +26,9 @@ SHLIB_MAJOR=	5
 MAKE_ENV=	LIBCURRENT="${SHLIB_MAJOR}" \
 		SHELL="/bin/sh"
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/.libs/libexpat.la ${PREFIX}/lib
 
 list-depend-ports:
 	cd ${PORTSDIR}; \
