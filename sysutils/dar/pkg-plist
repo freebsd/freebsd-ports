@@ -12,6 +12,7 @@ include/dar/deci.hpp
 include/dar/ea.hpp
 include/dar/erreurs.hpp
 include/dar/generic_file.hpp
+include/dar/gettext.h
 include/dar/header_version.hpp
 include/dar/infinint.hpp
 include/dar/int_tools.hpp
@@ -19,6 +20,7 @@ include/dar/integers.hpp
 include/dar/libdar.hpp
 include/dar/limitint.hpp
 include/dar/mask.hpp
+include/dar/my_config.h
 include/dar/path.hpp
 include/dar/real_infinint.hpp
 include/dar/scrambler.hpp
@@ -50,5 +52,6 @@ lib/libdar.so.3
 %%DATADIR%%/dar_par_create.duc
 %%DATADIR%%/dar_par_test.duc
 %%NLS%%share/locale/fr/LC_MESSAGES/dar.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/dar.mo
 @dirrm %%DATADIR%%
 @dirrm include/dar
