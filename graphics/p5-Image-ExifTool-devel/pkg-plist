@@ -48,6 +48,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/exiftool_pod.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/idiosyncracies.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
 %%PORTDOCS%%%%DOCSDIR%%/writing.html

@@ -1,3 +1,6 @@
+ExifTool is a highly customizable Perl script and module for reading and
+writing meta information in images.
+
 ExifTool reads EXIF, GPS, IPTC, XMP, GeoTIFF, ICC Profile and Photoshop
 IRB meta information from JPG, JP2, TIFF, GIF, CRW, THM, CR2, MRW, NEF,
 PEF, ORF and DNG images.  ExifTool also extracts information from the
