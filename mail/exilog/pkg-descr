@@ -1,0 +1,6 @@
+Exilog is a tool to centralize and visualize Exim logs
+across multiple Exim servers with a web front end.
+It is used in addition to Exim's standard or syslog logging.
+It does not require changing Exim or its logging style.
+
+WWW: http://duncanthrax.net/exilog/

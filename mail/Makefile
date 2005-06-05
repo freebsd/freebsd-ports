@@ -79,6 +79,7 @@
     SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += exact
+    SUBDIR += exilog
     SUBDIR += exim
     SUBDIR += exim-doc-html
     SUBDIR += exim-doc-info
