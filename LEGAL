@@ -43,6 +43,9 @@ acroread/linux-5*.tar.gz print/acroread		Must fill out redistribution
 acroread/AdobeReader_*-7*.*.rpm print/acroread7	Must fill out redistribution
 						form at
 						http://www.adobe.com/products/acrobat/distribute.html
+acroread/AdbeRdr70_linux_jpn.tar.gz japanese/acroread7	Must fill out redistribution
+						form at
+						http://www.adobe.com/products/acrobat/distribute.html
 actx-*			games/actx		Contains commercial character
 						data
 adom-*			games/adom		Copy of CD must be sent to
