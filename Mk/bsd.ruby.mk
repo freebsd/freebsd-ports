@@ -114,12 +114,12 @@ RUBY_VER?=		${RUBY_DEFAULT_VER}
 
 .if defined(RUBY)
 .if !exists(${RUBY})
-.error You set the variable RUBY to "${RUBY}", but it does not seem to exist.  Please specify an already installed ruby executable.
+BROKEN=	"You set the variable RUBY to \"${RUBY}\", but it does not seem to exist.  Please specify an already installed ruby executable."
 .endif
 
 _RUBY_TEST!=		${RUBY} -e 'begin; require "rbconfig"; rescue LoadError; puts "error"; end'
 .if !empty(_RUBY_TEST)
-.error You set the variable RUBY to "${RUBY}", but it failed to include rbconfig.  Please specify a properly installed ruby executable.
+BROKEN=	"You set the variable RUBY to \"${RUBY}\", but it failed to include rbconfig.  Please specify a properly installed ruby executable."
 .endif
 
 _RUBY_CONFIG=		${RUBY} -r rbconfig -e 'C = Config::CONFIG' -e
@@ -143,7 +143,7 @@ RUBY_VERSION?=		1.8.2
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
 #MASTER_SITE_SUBDIR_RUBY=	snapshots
 .elif defined(RUBY_VER) && ${RUBY_VER} == 1.7
-.error "Ruby 1.7 is obsolete; set RUBY_VER to 1.8 instead."
+BROKEN=	"Ruby 1.7 is obsolete; set RUBY_VER to 1.8 instead."
 .else
 RUBY_VERSION?=		1.6.8
 RUBY_DISTVERSION?=	${RUBY_VERSION}-2004.07.28
