@@ -1,6 +1,6 @@
 --- configure.orig	Wed May 25 17:00:45 2005
-+++ configure	Sat Jun  4 21:48:15 2005
-@@ -21331,12 +21331,12 @@
++++ configure	Sun Jun  5 22:59:47 2005
+@@ -21331,13 +21331,13 @@
  # FreeBSD  systems (not supported by INRIA)
    *-*-freebsd*)
       GCC=yes
@@ -11,10 +11,12 @@
       CC_PICFLAGS='-fPIC'
       # script shell f77 have bugs, get ours
 -     FC=f77
+-     FC_OPTIONS="${CFLAGS} -Dfreebsd"
 +     FC=$F77
-      FC_OPTIONS="${CFLAGS} -Dfreebsd"
++     FC_OPTIONS="${FFLAGS} -Dfreebsd"
       FC_OPTIONS_O0='-Dfreebsd'
       FC_LDFLAGS='-lm -Wl,--export-dynamic'
+      FC_PICFLAGS='-fPIC'
 @@ -24208,7 +24208,8 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
