@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Mar  5 03:26:01 2005
++++ src/Makefile.in	Fri Jun  3 03:10:32 2005
+@@ -301,7 +301,7 @@
+ EXTRA_trackballs_SOURCES = trackballsIcon.rc
+ trackballs_LDADD = @WINRESOURCES@
+ trackballs_DEPENDENCIES = @WINRESOURCES@
+-snarfcppopts = $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
++snarfcppopts = $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ localedir = $(datadir)/locale
+ all: all-am
+ 
