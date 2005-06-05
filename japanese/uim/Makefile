@@ -63,7 +63,7 @@ PLIST_SUB+=	CANNA="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' ${WRKSRC}/scm/skk.scm ${WRKSRC}/scm/custom.scm
+	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/scm/skk-custom.scm
 
 .if !defined(NOPORTDOCS)
 post-install:
