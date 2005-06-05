@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fcgi
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	www ruby
-MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
+MASTER_SITES=	http://sugi.nemui.org/pub/ruby/fcgi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
