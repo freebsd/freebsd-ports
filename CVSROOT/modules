@@ -4409,7 +4409,8 @@ jclassinfo	ports/devel/jclassinfo
 jcommon		ports/java/jcommon
 jday		ports/astro/jday
 jdb		ports/databases/jdb
-jdbc-oracle816	ports/databases/jdbc-oracle816
+jdbc-oracle8i	ports/databases/jdbc-oracle8i
+jdbc-oracle9i	ports/databases/jdbc-oracle9i
 jdbcpool	ports/java/jdbcpool
 jde		ports/java/jde
 jde-emacs20	ports/java/jde-emacs20
