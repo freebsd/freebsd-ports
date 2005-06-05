@@ -353,8 +353,6 @@ share/doc/libedataserver/left.png
 share/doc/libedataserver/libedataserver-ETrie.html
 share/doc/libedataserver/libedataserver-EUrl.html
 share/doc/libedataserver/libedataserver-EXMLHash.html
-share/doc/libedataserver/libedataserver-MD5-Utility-Functions.html
-share/doc/libedataserver/libedataserver-Time-Related-Utility-Functions.html
 share/doc/libedataserver/libedataserver-Utility-Functions.html
 share/doc/libedataserver/libedataserver.devhelp
 share/doc/libedataserver/right.png
