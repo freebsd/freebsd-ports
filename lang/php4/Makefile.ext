@@ -389,6 +389,9 @@ CONFIGURE_ARGS+=--without-cdb
 .	endif
 .	if defined(WITH_DB4)
 WITH_DB4_VER?=  41
+.		if ${WITH_DB4_VER} == 43
+LIB_DEPENDS+=   db-4.3.0:${PORTSDIR}/databases/db43
+.		else
 .		if ${WITH_DB4_VER} == 42
 LIB_DEPENDS+=   db-4.2.2:${PORTSDIR}/databases/db42
 .		else
@@ -396,6 +399,7 @@ LIB_DEPENDS+=   db-4.2.2:${PORTSDIR}/databases/db42
 LIB_DEPENDS+=   db4.0:${PORTSDIR}/databases/db4
 .		else
 LIB_DEPENDS+=   db41.1:${PORTSDIR}/databases/db41
+.		endif
 .		endif
 .		endif
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
