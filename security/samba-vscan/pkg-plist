@@ -16,6 +16,7 @@ etc/samba-vscan/vscan-trend.conf
 %%VFSDIR%%/vscan-oav.so
 %%VFSDIR%%/vscan-sophos.so
 %%VFSDIR%%/vscan-trend.so
+%%VFSDIR%%/vscan-antivir.so
 @unexec rmdir %D/%%VFSDIR%% 2>/dev/null || true
 @unexec rmdir %D/lib/samba 2>/dev/null || true
 @dirrm etc/samba-vscan
