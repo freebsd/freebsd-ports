@@ -301,7 +301,7 @@
 -	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
 -fi
 +ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
-+ac_cv_ps_command="$PATH_TO_PS axwo 'state uid ppid vsz rss pcpu command command'"
++ac_cv_ps_command="$PATH_TO_PS axwo 'state uid ppid vsz rss pcpu ucomm command'"
 +ac_cv_ps_format="%s %d %d %d %d %f %s %n"
 +ac_cv_ps_cols=8
 +AC_MSG_RESULT([$ac_cv_ps_command])
