@@ -87,6 +87,7 @@ bin/msfweb
 %%DATADIR%%/exploits/arkeia_type77_macos.pm
 %%DATADIR%%/exploits/arkeia_type77_win32.pm
 %%DATADIR%%/exploits/backupexec_ns.pm
+%%DATADIR%%/exploits/bakbone_netvault_heap.pm
 %%DATADIR%%/exploits/blackice_pam_icq.pm
 %%DATADIR%%/exploits/cabrightstor_disco.pm
 %%DATADIR%%/exploits/cabrightstor_disco_servicepc.pm
@@ -95,6 +96,7 @@ bin/msfweb
 %%DATADIR%%/exploits/calicserv_getconfig.pm
 %%DATADIR%%/exploits/distcc_exec.pm
 %%DATADIR%%/exploits/exchange2000_xexch50.pm
+%%DATADIR%%/exploits/globalscapeftp_user_input.pm
 %%DATADIR%%/exploits/ia_webmail.pm
 %%DATADIR%%/exploits/icecast_header.pm
 %%DATADIR%%/exploits/iis40_htr.pm
@@ -146,6 +148,7 @@ bin/msfweb
 %%DATADIR%%/exploits/ut2004_secure_linux.pm
 %%DATADIR%%/exploits/ut2004_secure_win32.pm
 %%DATADIR%%/exploits/warftpd_165_pass.pm
+%%DATADIR%%/exploits/warftpd_165_user.pm
 %%DATADIR%%/exploits/webstar_ftp_user.pm
 %%DATADIR%%/exploits/windows_ssl_pct.pm
 %%DATADIR%%/exploits/wins_ms04_045.pm

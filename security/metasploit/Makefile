@@ -7,6 +7,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.metasploit.org/tools/
 DISTNAME=	framework-${PORTVERSION}
