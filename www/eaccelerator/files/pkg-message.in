@@ -1,16 +1,18 @@
 *****************************************************************************
 
-You have installed the eaccelerator package.
+Edit %%LOCALBASE%%/etc/php/extensions.ini and add:
 
-Edit %%LOCALBASE%%/etc/php.ini and add:
+extension=eaccelerator.so
 
-[eaccelerator]
-extension="eaccelerator.so"
+****************************************************
+*** This extension must be loaded after          ***
+*** extension=session.so                         ***
+****************************************************
 
 Then create the cache directory:
 
-  mkdir /tmp/eaccelerator
-  chown www /tmp/eaccelerator
-  chmod 0700 /tmp/eaccelerator
+mkdir /tmp/eaccelerator
+chown www /tmp/eaccelerator
+chmod 0700 /tmp/eaccelerator
 
 *****************************************************************************
