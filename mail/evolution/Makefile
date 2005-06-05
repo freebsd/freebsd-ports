@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -56,9 +56,9 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 WITH_GSTREAMER=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libdbus-glib-1.so)
-WITH_DBUS=	yes
-.endif
+#.if exists(${LOCALBASE}/lib/libdbus-glib-1.so)
+#WITH_DBUS=	yes
+#.endif
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
@@ -87,12 +87,12 @@ PLIST_SUB+=	GSTREAMER=""
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
-.if defined(WITH_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.1:${PORTSDIR}/devel/dbus
-PLIST_SUB+=	DBUS=""
-.else
-PLIST_SUB+=	DBUS="@comment "
-.endif
+#.if defined(WITH_DBUS)
+#LIB_DEPENDS+=	dbus-glib-1.1:${PORTSDIR}/devel/dbus
+#PLIST_SUB+=	DBUS=""
+#.else
+#PLIST_SUB+=	DBUS="@comment "
+#.endif
 
 .if ${OSVERSION} >= 500000 && !defined(NO_KERBEROS) && \
 	exists(/usr/lib/libkrb5.so)

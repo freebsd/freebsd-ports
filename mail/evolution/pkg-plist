@@ -157,7 +157,6 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-folder-unsubscribe.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-to-task.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-mailing-list-actions.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-mark-calendar-offline.so
-%%DBUS%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-new-mail-notify.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-plugin-manager.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-save-attachments.so
@@ -187,7 +186,6 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-mail-to-task.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-mark-calendar-offline.eplug
-%%DBUS%%lib/evolution/%%VERSION%%/plugins/org-gnome-new-mail-notify.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-prefer-plain.eplug
