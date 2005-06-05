@@ -24,9 +24,6 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/Cheetah/ImportManager.py
 %%PYTHON_SITELIBDIR%%/Cheetah/ImportManager.pyc
 %%PYTHON_SITELIBDIR%%/Cheetah/ImportManager.pyo
-%%PYTHON_SITELIBDIR%%/Cheetah/Lexer.py
-%%PYTHON_SITELIBDIR%%/Cheetah/Lexer.pyc
-%%PYTHON_SITELIBDIR%%/Cheetah/Lexer.pyo
 %%PYTHON_SITELIBDIR%%/Cheetah/NameMapper.py
 %%PYTHON_SITELIBDIR%%/Cheetah/NameMapper.pyc
 %%PYTHON_SITELIBDIR%%/Cheetah/NameMapper.pyo
@@ -132,9 +129,6 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/Cheetah/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cheetah/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Cheetah/_namemapper.so
-%%PYTHON_SITELIBDIR%%/Cheetah/_properties.py
-%%PYTHON_SITELIBDIR%%/Cheetah/_properties.pyc
-%%PYTHON_SITELIBDIR%%/Cheetah/_properties.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/Cheetah/Utils/optik
 @dirrm %%PYTHON_SITELIBDIR%%/Cheetah/Utils
 @dirrm %%PYTHON_SITELIBDIR%%/Cheetah/Tools
