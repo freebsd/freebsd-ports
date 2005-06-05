@@ -60,7 +60,7 @@ PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
 .if ${HAVE_GNOME:Mimlib}!=""
 USE_GNOME=	imlib
-PKGNAMESUFFIX=	-imlib
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-imlib
 CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
 			--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GTK=""
