@@ -70,6 +70,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-post.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-single.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/multithread.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/opensslthreadlock.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/persistant.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/post-callback.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/postit2.c

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.13.1
-PORTREVISION=	1
+PORTVERSION=	7.14.0
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -49,6 +48,11 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+
+.if defined(WITH_GNUTLS)
+WITHOUT_SSL=	yes
+.endif
+
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
 .endif
@@ -57,9 +61,20 @@ USE_OPENSSL=	yes
 
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
-PLIST_SUB+=	SSL=""
 .else
 CONFIGURE_ARGS=	--without-ssl
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-gnutls
+.endif
+
+.if !defined(WITHOUT_SSL) || defined(WITH_GNUTLS)
+PLIST_SUB+=	SSL=""
+.else
 PLIST_SUB+=	SSL="@comment "
 .endif
 

@@ -1,11 +1,11 @@
---- tests/runtests.pl.orig	Sat Mar 12 03:40:30 2005
-+++ tests/runtests.pl	Sat Mar 12 03:40:39 2005
+--- tests/runtests.pl.orig	Wed May 18 11:50:16 2005
++++ tests/runtests.pl	Wed May 18 11:50:32 2005
 @@ -29,7 +29,7 @@
  @INC=(@INC, $ENV{'srcdir'}, ".");
  
  require "getpart.pm"; # array functions
 -require "valgrind.pm"; # valgrind report parser
 +#require "valgrind.pm"; # valgrind report parser
+ require "ftp.pm";
  
  my $srcdir = $ENV{'srcdir'} || '.';
- my $HOSTIP="127.0.0.1";
