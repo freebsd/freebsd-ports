@@ -17,13 +17,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Adaptec ASR RAID Management Software
 
-BROKEN=		Incomplete pkg-plist
-
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 BINS=		dptcom dpteng dptscom dptsig raidutil dptmgr
+
+.if !exists(${X11BASE}/lib/libXm.so.1)
+# we shall install our own libXm.so.1, enable it in pkg-plist
+PLIST_SUB+=	LIBXM=""
+.else
+PLIST_SUB+=	LIBXM="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
