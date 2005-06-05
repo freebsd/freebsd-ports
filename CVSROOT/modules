@@ -3016,6 +3016,7 @@ gnu-finger	ports/net/gnu-finger
 gnu-libtool	ports/devel/gnu-libtool
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
+gnu-watch	ports/misc/gnu-watch
 gnubg		ports/games/gnubg
 gnubiff		ports/mail/gnubiff
 gnuboy		ports/emulators/gnuboy
