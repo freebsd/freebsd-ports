@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1709_RC8
+DISTVERSION=	1709_RC9a
 CATEGORIES=	net java
 MASTER_SITES=	http://download.mercury.to/	\
 		${MASTER_SITE_LOCAL}

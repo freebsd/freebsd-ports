@@ -46,8 +46,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Sounds/MSN Message.wav
 %%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
 %%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
-%%INSTDIR%%/resources/AppData/SplashWindow/Girl.zip
-%%INSTDIR%%/resources/AppData/SplashWindow/Mercury.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/away.gif
 %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/chat.gif
 %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/dnd.gif
