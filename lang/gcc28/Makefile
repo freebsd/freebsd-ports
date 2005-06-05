@@ -30,10 +30,6 @@ EXPIRATION_DATE=	2005-06-10
 BROKEN=		"Does not compile on alpha"
 .endif
 
-.if ${OSVERSION} >= 600000
-IGNORE=		Does not compile
-.endif
-
 .if ${PORTOBJFORMAT} == "elf"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
