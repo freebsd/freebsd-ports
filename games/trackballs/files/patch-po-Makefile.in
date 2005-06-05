@@ -1,0 +1,18 @@
+--- po/Makefile.in.in.orig	Wed Feb 16 02:16:34 2005
++++ po/Makefile.in.in	Fri Jun  3 03:18:21 2005
+@@ -21,13 +21,13 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ datadir = @datadir@
+-localedir = $(datadir)/${PACKAGE}/locale
++localedir = $(datadir)/locale
+ gettextsrcdir = $(datadir)/gettext/po
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+-mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/$(MKINSTALLDIRS)" ;; esac`
++mkinstalldirs = $(SHELL) $(MKINSTALLDIRS)
+ 
+ GMSGFMT = @GMSGFMT@
+ MSGFMT = @MSGFMT@
