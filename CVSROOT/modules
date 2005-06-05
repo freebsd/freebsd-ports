@@ -243,6 +243,7 @@ aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
 aewm++		ports/x11-wm/aewm++
 af-aspell	ports/textproc/af-aspell
+af-ooodist-ZA	ports/editors/ooodict-af_ZA
 afbackup	ports/misc/afbackup
 afbackup-client	ports/misc/afbackup-client
 afbackup-server	ports/misc/afbackup-server
@@ -1364,6 +1365,7 @@ cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
 cxxtest		ports/devel/cxxtest
 cy-aspell	ports/textproc/cy-aspell
+cy-ooodict-GB	ports/editors/ooodict-cy_GB
 cyberbit-ttfonts	ports/x11-fonts/cyberbit-ttfonts
 cybercalendar	ports/www/cybercalendar
 cyclone		ports/lang/cyclone
@@ -1479,6 +1481,7 @@ de-koffice-i18n	ports/german/koffice-i18n
 de-ksteak	ports/german/ksteak
 de-linux-eagle	ports/german/linux-eagle
 de-manpages	ports/german/manpages
+de-ooodict-AT	ports/german/ooodict-de_AT
 de-ooodict-CH	ports/german/ooodict-de_CH
 de-ooodict-DE	ports/german/ooodict-de_DE
 de-openoffice-1.0	ports/german/openoffice-1.0
@@ -1912,8 +1915,10 @@ emovix		ports/multimedia/emovix
 emp		ports/www/emp
 empire		ports/games/empire
 emu		ports/x11/emu
+en-ooodict-AU	ports/editors/ooodict-en_AU
 en-ooodict-CA	ports/editors/ooodict-en_CA
 en-ooodict-GB	ports/editors/ooodict-en_GB
+en-ooodict-NZ	ports/editors/ooodict-en_NZ
 en-ooodict-US	ports/editors/ooodict-en_US
 enblend		ports/graphics/enblend
 enca		ports/converters/enca
@@ -1978,6 +1983,7 @@ erwn		ports/www/erwn
 es		ports/shells/es
 es-aspell	ports/textproc/es-aspell
 es-ooodict-ES	ports/editors/ooodict-es_ES
+es-ooodict-MX	ports/editors/ooodict-es_MX
 es-openoffice-1.0	ports/editors/openoffice-1.0-es
 esdl		ports/devel/esdl
 esh		ports/shells/esh
@@ -2271,6 +2277,7 @@ fnlib		ports/graphics/fnlib
 fnorb		ports/devel/fnorb
 fnord		ports/www/fnord
 fo-aspell	ports/textproc/fo-aspell
+fo-ooodict-FO	ports/editors/ooodict-fo_FO
 foiltex		ports/textproc/foiltex
 font2svg	ports/print/font2svg
 fontconfig	ports/x11-fonts/fontconfig
@@ -2337,6 +2344,7 @@ fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
 fr-med		ports/french/med
 fr-mozilla-flp	ports/french/mozilla-flp
+fr-ooodict-BE	ports/french/ooodict-fr_BE
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice-1.0	ports/french/openoffice-1.0
 fr-openoffice-1.1	ports/french/openoffice-1.1
@@ -2483,6 +2491,7 @@ g2		ports/graphics/g2
 g2c		ports/devel/g2c
 g3dviewer	ports/graphics/g3dviewer
 ga-aspell	ports/textproc/ga-aspell
+ga-ooodict-IE	ports/editors/ooodict-ga_IE
 gaa		ports/devel/gaa
 gacxtool	ports/net/gacxtool
 gaddr		ports/deskutils/gaddr
@@ -2580,6 +2589,7 @@ gcursor		ports/x11/gcursor
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
 gd-aspell	ports/textproc/gd-aspell
+gd-ooodict-GB	ports/editors/ooodict-gd_GB
 gdal		ports/graphics/gdal
 gdam		ports/audio/gdam
 gdb53		ports/devel/gdb53
@@ -2799,6 +2809,7 @@ gkx86info	ports/misc/gkx86info
 gkx86info2	ports/misc/gkx86info2
 gl-117		ports/games/gl-117
 gl-aspell	ports/textproc/gl-aspell
+gl-ooodict-ES	ports/editors/ooodict-gl_ES
 gl2ps		ports/print/gl2ps
 glabels		ports/deskutils/glabels
 glacier		ports/mail/glacier
@@ -3438,6 +3449,7 @@ hdf		ports/science/hdf
 hdf-szip	ports/science/szip
 hdf5		ports/science/hdf5
 hdup		ports/sysutils/hdup
+he-ooodict-IL	ports/hebrew/ooodict-he_IL
 health-nut	ports/misc/nut
 healthd		ports/sysutils/healthd
 heartbeat	ports/sysutils/heartbeat
@@ -3670,6 +3682,7 @@ icqlib0		ports/net/icqlib0
 icu		ports/devel/icu
 icu2		ports/devel/icu2
 id-aspell	ports/textproc/id-aspell
+id-ooodict-ID	ports/editors/ooodict-id_ID
 id-utils	ports/devel/id-utils
 id3ed		ports/audio/id3ed
 id3el		ports/audio/id3el
@@ -4879,6 +4892,7 @@ ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
 ktoblzcheck	ports/finance/ktoblzcheck
 ktritoc		ports/games/ktritoc
+ku-ooodict-TR	ports/editors/ooodict-ku_TR
 kuake		ports/deskutils/kuake
 kuickshow	ports/graphics/kuickshow
 kvirc		ports/irc/kvirc
@@ -5623,6 +5637,7 @@ lsmlib		ports/sysutils/lsmlib
 lsof		ports/sysutils/lsof
 lsysexp		ports/biology/lsysexp
 lt-aspell	ports/textproc/lt-aspell
+lt-ooodict-LT	ports/editors/ooodict-lt_LT
 ltmdm		ports/comms/ltmdm
 ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
@@ -5853,6 +5868,7 @@ mew3-emacs20	ports/mail/mew3-emacs20
 mew3-xemacs21-mule	ports/mail/mew3-xemacs21-mule
 mftrace		ports/print/mftrace
 mg		ports/editors/mg
+mg-ooodict-MG	ports/editors/ooodict-mg_MG
 mga_hal		ports/x11-servers/mga_hal
 mgapdesk	ports/x11/mgapdesk
 mgdiff		ports/textproc/mgdiff
@@ -5874,6 +5890,7 @@ mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
 mi-aspell	ports/textproc/mi-aspell
+mi-ooodict-NZ	ports/editors/ooodict-mi_NZ
 miau		ports/irc/miau
 mico		ports/devel/mico
 micq		ports/net/micq
@@ -6216,6 +6233,7 @@ mrtg-mysql-load	ports/databases/mrtg-mysql-load
 mrtg-ping-probe	ports/net/mrtg-ping-probe
 mrxvt		ports/x11/mrxvt
 ms-aspell	ports/textproc/ms-aspell
+ms-ooodict-MY	ports/editors/ooodict-ms_MY
 mscompress	ports/archivers/mscompress
 msend		ports/net/msend
 mserver		ports/comms/mserver
@@ -6379,6 +6397,7 @@ nauty		ports/math/nauty
 nav		ports/net-mgmt/nav
 nawk		ports/lang/nawk
 nb-aspell	ports/textproc/nb-aspell
+nb-ooodict-NO	ports/editors/ooodict-nb_NO
 nbaudit		ports/security/nbaudit
 nbd-server	ports/net/nbd-server
 nbench		ports/benchmarks/nbench
@@ -6536,6 +6555,7 @@ nml		ports/lang/nml
 nmzmail		ports/mail/nmzmail
 nn		ports/news/nn
 nn-aspell	ports/textproc/nn-aspell
+nn-ooodict-NO	ports/editors/ooodict-nn_NO
 nnap		ports/news/nnap
 nntp		ports/news/nntp
 nntpbtr		ports/news/nntpbtr
@@ -6634,6 +6654,7 @@ nxml-emacs21	ports/editors/nxml-emacs21
 nxserver	ports/net/nxserver
 nxtvepg		ports/multimedia/nxtvepg
 ny-aspell	ports/textproc/ny-aspell
+ny-ooodict-MW	ports/editors/ooodict-ny_MW
 nylon		ports/net/nylon
 nzbget		ports/news/nzbget
 o2c		ports/lang/o2c
@@ -10218,6 +10239,7 @@ rmsg		ports/net/rmsg
 rname		ports/misc/rname
 rnews		ports/www/rnews
 ro-aspell	ports/textproc/ro-aspell
+ro-ooodict-RO	ports/editors/ooodict-ro_RO
 roadmap		ports/astro/roadmap
 roadrunner	ports/net/roadrunner
 roap		ports/textproc/roap
@@ -10593,6 +10615,7 @@ runwhen		ports/sysutils/runwhen
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
 rw-aspell	ports/textproc/rw-aspell
+rw-ooodict-RW	ports/editors/ooodict-rw_RW
 rwhois		ports/net/rwhois
 rxp		ports/textproc/rxp
 rxtx		ports/comms/rxtx
@@ -10894,6 +10917,7 @@ skype		ports/net/skype
 skyutils	ports/misc/skyutils
 sl		ports/games/sl
 sl-aspell	ports/textproc/sl-aspell
+sl-ooodict-SI	ports/editors/ooodict-sl_SI
 sl2tps		ports/net/sl2tps
 slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
@@ -11230,6 +11254,7 @@ svk		ports/devel/svk
 svnc		ports/net/svnc
 svr4_base	ports/emulators/svr4_base
 sw-aspell	ports/textproc/sw-aspell
+sw-ooodict-KE	ports/editors/ooodict-sw_KE
 swaks		ports/mail/swaks
 swami		ports/audio/swami
 swarm		ports/devel/swarm
@@ -11534,6 +11559,7 @@ tktable		ports/x11-toolkits/tktable
 tkxanim		ports/multimedia/tkxanim
 tkxmlive	ports/textproc/tkxmlive
 tl-aspell	ports/textproc/tl-aspell
+tl-ooodict-PH	ports/editors/ooodict-tl_PH
 tla		ports/devel/tla
 tlb		ports/mail/tlb
 tlf		ports/comms/tlf
@@ -11542,6 +11568,7 @@ tmda		ports/mail/tmda
 tmetric		ports/benchmarks/tmetric
 tmpwatch	ports/sysutils/tmpwatch
 tn-aspell	ports/textproc/tn-aspell
+tn-ooodict-ZA	ports/editors/ooodict-tn_ZA
 tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
@@ -13145,6 +13172,7 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
+zu-ooodict-ZA	ports/editors/ooodict-zu_ZA
 zziplib		ports/devel/zziplib
 p5-Net-FTP-Recursive	ports/ftp/p5-Net-FTP-Recursive
 p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
