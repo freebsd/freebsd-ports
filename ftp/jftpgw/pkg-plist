@@ -1,5 +1,4 @@
 sbin/jftpgw
 etc/jftpgw.conf.sample
-etc/rc.d/jftpgw.sh
 %%PORTDOCS%%share/doc/jftpgw/config.html
 %%PORTDOCS%%@dirrm share/doc/jftpgw
