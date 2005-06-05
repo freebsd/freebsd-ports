@@ -19,7 +19,6 @@ USE_REINPLACE=	yes
 
 MAN1=		rssh.1
 MAN5=		rssh.conf.5
-PLIST_FILES=	bin/rssh etc/rssh.conf.dist libexec/rssh_chroot_helper
 
 OPTIONS=	RSYNC "rsync support" off \
 		RDIST "rdist support" off
@@ -43,5 +42,12 @@ CONFIGURE_ARGS+=--with-rdist=${LOCALBASE}/bin/rdist6
 post-patch:
 	${REINPLACE_CMD} -E -e 's,(\$$\(DESTDIR\)\$$\(sysconfdir\)/\$$\$$f),\1.dist,g' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+	@${ECHO_MSG} "updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/${PORTNAME} /etc/shells.bak; \
+	 ${ECHO_CMD} ${PREFIX}/bin/${PORTNAME}) > /etc/shells
+	@${RM} /etc/shells.bak
 
 .include <bsd.port.post.mk>
