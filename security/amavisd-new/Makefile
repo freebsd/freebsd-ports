@@ -56,7 +56,9 @@ OPTIONS=	MYSQL	"MySQL support"		off \
 		PGSQL	"PgSQL support"		off \
 		LDAP	"LDAP support"		off
 
-.if !exists(/usr/lib/libmilter.so) && !exists(${PREFIX}/lib/libmilter.so)
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/lib/libmilter.a) && !exists(${PREFIX}/lib/libmilter.a)
 AMAVIS_NOMILTER="@comment "
 .endif
 
@@ -79,8 +81,6 @@ SED_SCRIPT=	-e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
