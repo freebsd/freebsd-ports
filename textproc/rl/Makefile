@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rl
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/rl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Randomizes lines from a specified input file
 
 GNU_CONFIGURE=	yes
