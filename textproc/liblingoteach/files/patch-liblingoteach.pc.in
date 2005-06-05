@@ -1,0 +1,9 @@
+--- liblingoteach.pc.in.orig	Fri Jun  3 21:28:42 2005
++++ liblingoteach.pc.in	Fri Jun  3 21:28:56 2005
+@@ -8,5 +8,5 @@
+ Version: @VERSION@
+ Description: libLingoteach library.
+ Requires: libxml-2.0
+-Libs: -L${libdir} -llingoteach
++Libs: -L${libdir} -llingoteach -lxml2
+ Cflags: -I${includedir}/lingoteach
