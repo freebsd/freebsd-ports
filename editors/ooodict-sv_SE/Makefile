@@ -12,7 +12,8 @@ COMMENT=	Swedish (Sweden) MySpell dictionary for OpenOffice.org
 LANGPREFIX=	sv
 LANGSUFFIX=	SE
 LANGDIST+=	sv_SE.zip
+HYPHDIST+=      hyph_sv_SE.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0-se
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

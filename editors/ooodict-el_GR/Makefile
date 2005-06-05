@@ -12,7 +12,8 @@ COMMENT=	Greek (Greece) MySpell dictionary for OpenOffice.org
 LANGPREFIX=	el
 LANGSUFFIX=	GR
 LANGDIST+=	el_GR.zip
+HYPHDIST+=	hyph_el_GR.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.0-gr
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

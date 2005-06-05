@@ -20,6 +20,7 @@
     SUBDIR += ksteak
     SUBDIR += linux-eagle
     SUBDIR += manpages
+    SUBDIR += ooodict-de_AT
     SUBDIR += ooodict-de_CH
     SUBDIR += ooodict-de_DE
     SUBDIR += openoffice-1.0

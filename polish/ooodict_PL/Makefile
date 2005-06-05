@@ -13,11 +13,9 @@ CATEGORIES=	polish
 LANGPREFIX=	pl
 LANGSUFFIX=	PL
 LANGDIST+=	pl_PL.zip
+HYPHDIST+=      hyph_pl_PL.zip
+THESDIST+=	thes_pl_PL.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/polish/openoffice-1.0
-
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"

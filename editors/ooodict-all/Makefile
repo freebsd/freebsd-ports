@@ -6,42 +6,54 @@
 #
 
 PORTNAME=	ooodict
-PORTVERSION=	1.20050221
-PORTREVISION=	1
+PORTVERSION=	1.20050518
 CATEGORIES+=	editors
-MASTER_SITES+=	http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/
+MASTER_SITES+=	http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/ \
+		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/
 DISTFILES+=	${LANGDIST}
 DISTFILES+=	${HYPHDIST}
+DISTFILES+=	${THESDIST}
 
 MAINTAINER=     openoffice@FreeBSD.org
 COMMENT?=	MySpell dictionaries for OpenOffice.org
-
-BROKEN=		Missing dependency on unzip
 
 USE_ZIP=	yes
 EXTRACT_ONLY=
 
 .if !defined(LANGDIST)
 DICTMETAPORT=	yes
-LANGDIST?=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
-		da_DK.zip nl_NL.zip en_CA.zip en_GB.zip \
-		fr_FR.zip de_DE.zip de_CH.zip hu_HU.zip \
-		it_IT.zip pl_PL.zip pt_PT.zip pt_BR.zip \
-		es_ES.zip sk_SK.zip sv_SE.zip el_GR.zip \
-		ru_RU_yo.zip uk_UA.zip
+LANGDIST?=	af_ZA.zip bg_BG.zip ca_ES.zip cs_CZ.zip cy_GB.zip \
+		da_DK.zip de_AT.zip de_DE.zip de_CH.zip el_GR.zip \
+		en_AU.zip en_CA.zip en_GB.zip en_NZ.zip en_US.zip \
+		es_ES.zip es_MX.zip fo_FO.zip fr_BE.zip fr_FR.zip \
+		ga_IE.zip gd_GB.zip gl_ES.zip he_IL.zip hr_HR.zip \
+		hu_HU.zip id_ID.zip it_IT.zip ku_TR.zip lt_LT.zip \
+		mg_MG.zip mi_NZ.zip ms_MY.zip nb_NO.zip nl_NL.zip \
+		nn_NO.zip ny_MW.zip pl_PL.zip pt_PT.zip pt_BR.zip \
+		ro_RO.zip rw_RW.zip ru_RU.zip sk_SK.zip sl_SI.zip \
+		sv_SE.zip sw_KE.zip tl_PH.zip tn_ZA.zip uk_UA.zip \
+		zu_ZA.zip
 
-HYPHDIST?=	hyph_cs_CZ.zip hyph_da_DK.zip hyph_de_DE.zip \
-		hyph_en_CA.zip hyph_en_GB.zip hyph_es_ES.zip \
-		hyph_fr_FR.zip hyph_it_IT.zip hyph_nl_NL.zip \
-		hyph_pt_BR.zip hyph_pt_PT.zip hyph_ru_RU.zip \
-		hyph_sk_SK.zip hyph_sl_SI.zip hyph_uk_UA.zip
+HYPHDIST?=	hyph_bg_BG.zip hyph_cs_CZ.zip hyph_da_DK.zip \
+		hyph_de_CH.zip hyph_de_DE.zip hyph_el_GR.zip \
+		hyph_en_CA.zip hyph_en_AU.zip hyph_en_CA.zip \
+		hyph_en_GB.zip hyph_en_NZ.zip hyph_en_US.zip \
+		hyph_es_ES.zip hyph_es_MX.zip hyph_fr_BE.zip \
+		hyph_fr_FR.zip hyph_ga_IE.zip hyph_id_ID.zip \
+		hyph_it_IT.zip hyph_nl_NL.zip hyph_pl_PL.zip \
+		hyph_pt_BR.zip hyph_pt_PT.zip hyph_ro_RO.zip \
+		hyph_ru_RU.zip hyph_sk_SK.zip hyph_sl_SI.zip \
+		hyph_sv_SE.zip hyph_uk_UA.zip
+
+THESDIST?=	thes_bg_BG.zip thes_cs_CZ.zip thes_de_DE.zip \
+		thes_es_ES.zip thes_fr_FR.zip thes_hu_HU.zip \
+		thes_it_IT.zip thes_pl_PL.zip thes_sk_SK.zip
 .endif
-IGNOREFILES=	${DISTFILES}
 CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .if !defined(INSTALLATION_BASEDIR)
 INSTALLATION_BASEDIR=	OpenOffice.org1.1.4
 .if defined(RDEP)
@@ -182,6 +194,44 @@ post-install:
 		else \
 				${ECHO_MSG} "===>   Hyphenation Dictionary $${LANGUAGE}_$${COUNTRY} already registered"; \
 				${ECHO_MSG} "===>   Set DICT_OVERWRITE=YES if you like to overwrite it"; \
+		fi ; \
+	done
+	@for file in ${THESDIST}; do \
+		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||' -e 's|^thes_||'`; \
+		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
+		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2 | ${TR} "[:lower:]" "[:upper:]"` ; \
+		if ! ( ${GREP} "THES $${LANGUAGE} $${COUNTRY}" \
+			${DICT_LIST_INST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
+		then \
+			if ! (cd ${DICT_PATH} && ${EXTRACT_CMD_L} \
+				${EXTRACT_BEFORE_ARGS_L} \
+				${_DISTDIR}/$${file} '*.dat' '*.idx' \
+				${EXTRACT_AFTER_ARGS_L}) ; \
+			then \
+				${ECHO} "Extracting of $${file} failed"; \
+				exit 1; \
+			fi ; \
+			${ECHO_MSG} "===>   Register thesaurus dictionary th_$${ABRV}"; \
+			${ECHO} "@exec ${ECHO} \"THES $${LANGUAGE} $${COUNTRY} th_$${ABRV}\" \
+				>> ${DICT_LIST}" >> ${TMPPLIST} ; \
+			${ECHO_CMD} "THES $${LANGUAGE} $${COUNTRY} th_$${ABRV}" >> ${DICT_LIST_INST} ; \
+			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+				${GREP} th_$${ABRV} >> ${TMPPLIST} ; \
+			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+				${GREP} th_$${ABRV} | \
+				${XARGS} chmod 755 ; \
+			${ECHO} "@unexec ${CP} ${DICT_LIST} \
+				${DICT_LIST}.th_$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
+			${ECHO} "@unexec \
+			if ! ( ${CAT} ${DICT_LIST}.th_$${LANGUAGE}_$${COUNTRY} | \
+				${GREP} -v -e '^THES.*th_$${ABRV}' > ${DICT_LIST} ) ; then \
+					${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
+			fi" >> ${TMPPLIST} ; \
+			${ECHO} "@unexec ${RM} ${DICT_LIST}.th_$${LANGUAGE}_$${COUNTRY}" \
+				>> ${TMPPLIST} ; \
+		else \
+			${ECHO_MSG} "===>   THESAURUS Dictionary $${LANGUAGE}_$${COUNTRY} already registered"; \
+			${ECHO_MSG} "===>   Set DICT_OVERWRITE=YES if you like to overwrite it"; \
 		fi ; \
 	done
 

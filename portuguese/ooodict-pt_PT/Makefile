@@ -15,8 +15,6 @@ LANGSUFFIX=	PT
 LANGDIST+=	pt_PT.zip
 HYPHDIST+=	hyph_pt_PT.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/portuguese/openoffice-1.0
+RDEP=		${PORTSDIR}/editors/openoffice-1.1
 
 .include "${MASTERDIR}/Makefile"
-
-PKGNAMEPREFIX=	pt_PT-
