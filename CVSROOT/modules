@@ -2027,6 +2027,7 @@ execline	ports/lang/execline
 exif		ports/graphics/exif
 exifprobe	ports/graphics/exifprobe
 exiftags	ports/graphics/exiftags
+exilog		ports/mail/exilog
 exim		ports/mail/exim
 exim-doc-html	ports/mail/exim-doc-html
 exim-doc-info	ports/mail/exim-doc-info
