@@ -1,0 +1,25 @@
+%%AGENT%%@unexec [ ! -f /var/run/exilog.pid ] || %D/etc/rc.d/exilog.sh stop
+%%AGENT%%sbin/exilog_agent.pl
+%%AGENT%%etc/rc.d/exilog.sh
+sbin/exilog_cleanup.pl
+%%EXILOGDIR%%/exilog_cgi.pl
+%%EXILOGDIR%%/exilog_cgi_html.pm
+%%EXILOGDIR%%/exilog_cgi_messages.pm
+%%EXILOGDIR%%/exilog_cgi_param.pm
+%%EXILOGDIR%%/exilog_cgi_queues.pm
+%%EXILOGDIR%%/exilog_cgi_servers.pm
+%%EXILOGDIR%%/exilog_config.pm
+%%EXILOGDIR%%/exilog_parse.pm
+%%EXILOGDIR%%/exilog_sql.pm
+%%EXILOGDIR%%/exilog_util.pm
+%%EXILOGDIR%%/exilog_jscript.js
+%%EXILOGDIR%%/exilog_stylesheet.css
+%%EXILOGDIR%%/.htaccess
+etc/exilog.conf-dist
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/exilog.txt
+%%PORTDOCS%%%%DOCSDIR%%/mysql-db-script.sql
+%%PORTDOCS%%%%DOCSDIR%%/pgsql-db-script.sql
+
+@dirrm %%EXILOGDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

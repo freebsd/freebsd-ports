@@ -1,0 +1,3 @@
+Options +ExecCGI
+AddHandler cgi-script .pl
+DirectoryIndex exilog_cgi.pl
