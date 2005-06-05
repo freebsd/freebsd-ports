@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-btdownload
 PORTVERSION=	0.0.20
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Gnome interface designed as a mime-sink for BitTorrent files
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BitTorrent/__init__.py:${PORTSDIR}/net/py-bittorrent-core
+
+IGNORE=does not run with BitTorrent 4.x yet
 
 USE_X_PREFIX=	yes
 USE_GNOME=	desktopfileutils gnomehack gnomeprefix pygnome2
