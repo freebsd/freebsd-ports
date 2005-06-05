@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdk
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	2.4.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vdklib
@@ -16,19 +15,24 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GTK+ toolkit
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnometarget gtk20 lthack
+USE_GNOME=	gnomehack gnometarget gtk20
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}"
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 INSTALLS_SHLIB=	yes
 
 MAN1=		vdk-config-2.1
 
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|CXXFLAGS="-s"|CXXFLAGS="$$CXXFLAGS"|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|CXXFLAGS="-s"|CXXFLAGS="$$CXXFLAGS"|g' ${WRKSRC}/configure
+.for file in vdk-config-2.in vdk-2.x.pc.in
+	@${REINPLACE_CMD} -e 's|-lpthread|${LDFLAGS}|g' ${WRKSRC}/${file}
+.endfor
 .for file in vdk/FileDialog.h vdk/gtksourcebuffer.h vdk/gtksourcetag.h
 	@${REINPLACE_CMD} -e 's|<regex\.h>|<gnuregex.h>|g' ${WRKSRC}/${file}
 .endfor
