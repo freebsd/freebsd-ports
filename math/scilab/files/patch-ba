@@ -1,11 +1,32 @@
---- Makefile.in	Tue Jul  6 16:12:37 2004
-+++ Makefile.in.new	Sat Jul 24 10:50:09 2004
-@@ -190,7 +190,7 @@
- 		@STRIP@ $(SCIDIR)/bin/scilex; \
- 		(cd tests; make distclean); \
- 		(cd examples; make distclean); \
--		(cd .. ; tar cf - $(BINDISTFILES) @PVMINST@ | (cd ${LIBPREFIX}; tar xf -)); \
-+		(cd .. ; for file in $(BINDISTFILES) @PVMINST@; do tar cf - $${file}  | (cd ${LIBPREFIX}; tar xf -); done); \
- 		(cd ${LIBPREFIX}/$(SCIBASE); make); \
- 		$(RM) .binary; \
+--- Makefile.in.orig	Fri Jun  3 18:28:51 2005
++++ Makefile.in	Fri Jun  3 18:27:33 2005
+@@ -263,7 +263,7 @@
+ install:
+ 	@if test `pwd`/..  != $(PREFIX)/lib ; then \
+ 		install -d $(PREFIX)/lib/$(SCIBASE); \
+-		( tar cf - $(INSTBINDISTFILES) @PVMINST1@  | (cd $(PREFIX)/lib/$(SCIBASE) ; tar xf -)); \
++		( for file in $(INSTBINDISTFILES) @PVMINST1@; do tar cf - $${file}  | (cd $(PREFIX)/lib/$(SCIBASE); tar xf -); done); \
+ 		(cd $(PREFIX)/lib/$(SCIBASE);touch .binary; make postinstall PREFIX=$(PREFIX) ) \
  	fi
+ 	install -d $(PREFIX)/share/doc/$(DOCNAME)/
+@@ -272,9 +272,9 @@
+ 	install -d $(PREFIX)/bin
+ 	$(RM)  $(PREFIX)/bin/scilab
+ 	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/scilab $(PREFIX)/bin/scilab
+-	$(RM)  $(PREFIX)$/bin/intersciXXX
++	$(RM)  $(PREFIX)/bin/intersci
+ 	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/intersci $(PREFIX)/bin/intersci
+-	$(RM)  $(PREFIX)$/bin/intersci-n
++	$(RM)  $(PREFIX)/bin/intersci-n
+ 	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/intersci-n $(PREFIX)/bin/intersci-n
+ 
+ # DESTDIR is the final destination of the file
+@@ -293,7 +293,7 @@
+ 	@$(RM) -f -r contrib
+ 	@mkdir contrib
+ 	@mv contrib-loader.sce contrib/loader.sce
+-	@$(RM) man/*/*/*.xml 
++	@find man -name "*.xml" -print0 | xargs -0 $(RM)
+ 	@@STRIP@ bin/scilex;
+ 
+ uninstall:

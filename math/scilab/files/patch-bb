@@ -1,10 +1,10 @@
---- configure.orig	Fri Jul  9 10:28:05 2004
-+++ configure	Sun Jan 16 14:45:09 2005
-@@ -21087,12 +21087,12 @@
+--- configure.orig	Wed May 25 17:00:45 2005
++++ configure	Sat Jun  4 21:48:15 2005
+@@ -21331,12 +21331,12 @@
  # FreeBSD  systems (not supported by INRIA)
    *-*-freebsd*)
       GCC=yes
--     CC=cc
+-     CC=gcc
 +     CC=$CC
       CC_OPTIONS="${CFLAGS} -Dfreebsd"
       CC_LDFLAGS=-lm
@@ -15,21 +15,22 @@
       FC_OPTIONS="${CFLAGS} -Dfreebsd"
       FC_OPTIONS_O0='-Dfreebsd'
       FC_LDFLAGS='-lm -Wl,--export-dynamic'
-@@ -21106,7 +21106,7 @@
-      fi
-      if test "$WITH_G77" = yes; then
-        # On FreeBSD the gnu fortran compiler is named f77
--       FC=f77
-+       FC=$F77
-      fi
-     DLDLIB='${SCIDIR}/libs/libdld.a'
-     DLD_SUBDIR=dld
-@@ -26503,7 +26503,7 @@
+@@ -24208,7 +24208,8 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <X11/IntrinsicP.h> #include <X11/Xaw3d/ViewportP.h>
++#include <X11/IntrinsicP.h>
++#include <X11/Xaw3d/ViewportP.h>
+ int
+ main ()
+ {
+@@ -26321,7 +26322,7 @@
      ;;
  esac
  
--GETLIBTK=libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.so
-+GETLIBTK=libtk$TK_MAJOR_VERSION$TK_MINOR_VERSION.so
+-GETLIBTK=libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.$SONAME
++GETLIBTK=libtk$TK_MAJOR_VERSION$TK_MINOR_VERSION.$SONAME
  
  case "$host" in
    *-*-darwin*)
