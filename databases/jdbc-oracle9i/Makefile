@@ -5,37 +5,42 @@
 # $FreeBSD$
 #
 
-PORTNAME=	oracle816
-PORTVERSION=	1.11
+PORTNAME=	oracle9i
+PORTVERSION=	9.2.0.5
 CATEGORIES=	databases java
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	jdbc-
-DISTNAME=	classes111_01.
-EXTRACT_SUFX=	zip
+DISTFILES=	${CLASSES} ${OCRS_FILE}
+DIST_SUBDIR=	oracle
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.Org
-COMMENT=	The JDBC drivers for Oracle 8.1.6
-
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
-
-ALL_TARGET=	jar
+MAINTAINER=	thierry@FreeBSD.Org
+COMMENT=	The JDBC drivers for Oracle 9i
 
 RESTRICTED=	'Must be downloaded direct from Oracle via www interface'
-NO_CDROM=	'Must be downloaded direct from Oracle via www interface'
-NO_PACKAGE=	'Must be downloaded direct from Oracle via www interface'
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-PLIST_FILES=	share/java/classes/classes111_01.zip
+
+CLASSES=	ojdbc14.jar
+OCRS_FILE=	ocrs12.zip
+
+PLIST_FILES=	%%JAVAJARDIR%%/${CLASSES}	\
+		%%JAVAJARDIR%%/${OCRS_FILE}
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="Please manually download ${DISTNAME}${EXTRACT_SUFX} from http://technet.oracle.com/software/tech/java/sqlj_jdbc/software_index.htm Oracle8i 8.1.6.0.1 JDBC Drivers for use with JDK 1.1.x, JDBC-Thin 100% Java. Put ${DISTNAME}${EXTRACT_SUFX} into the directory ${_DISTDIR} and run make again."
+.if !exists(${CLASSES:S|^|${_DISTDIR}/|}})	\
+ && !exists(${OCRS_FILE:S|^|${_DISTDIR}/|})
+IGNORE="Please manually download ${DISTFILES} from http://www.oracle.com/technology/software/tech/java/sqlj_jdbc/index.html Oracle9i ${PORTVERSION} JDBC Drivers for use with JDK 1.4 \(JDBC classes + Additional RowSet support\). Put ${DISTFILES} into the directory ${_DISTDIR} and run make again."
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes
-	@${INSTALL_DATA} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${LOCALBASE}/share/java/classes
+	${INSTALL_DATA} ${DISTFILES:S|^|${_DISTDIR}/|} ${JAVAJARDIR}
 
 .include <bsd.port.post.mk>

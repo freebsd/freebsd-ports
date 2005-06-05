@@ -98,8 +98,6 @@ citrix_ica-*.tar.gz	net/citrix_ica		License prohibits redistribution
 cfs-*			security/cfs		Crypto; export-controlled
 clibpdf*.tar.gz		print/clibpdf		Needs a license to bundle with
 						other products
-classes111_01.zip	databases/jdbc-oracle816 This software is under license
-						and export controls
 CODE2000.ZIP		x11-fonts/code2000	Only unmodified original
 						package can be distributed
 collections*.zip	java/collections	See the license
@@ -446,6 +444,8 @@ oneko-*.tar.gz		games/oneko-sakura	Including derivatives from
 openssl-*		security/openssl	Crypto; export/import-controlled
 opera-*			www/linux-opera		No redistribution, commercial
 						software
+oracle/*		databases/jdbc-oracle*	This software is under license
+						and export controls
 orion-*			java/orion		Redistribution of binaries is not
 						permitted
 otojiro*.txt		japanese/otojiro-fpw	The original dictionary is not free

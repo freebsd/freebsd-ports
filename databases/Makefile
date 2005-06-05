@@ -68,7 +68,8 @@
     SUBDIR += hs-hsql
     SUBDIR += java-sqlrelay
     SUBDIR += jdb
-    SUBDIR += jdbc-oracle816
+    SUBDIR += jdbc-oracle8i
+    SUBDIR += jdbc-oracle9i
     SUBDIR += kinterbasdb
     SUBDIR += knoda
     SUBDIR += libdbi
