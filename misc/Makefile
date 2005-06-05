@@ -125,6 +125,7 @@
     SUBDIR += gnomemimedata
     SUBDIR += gnomesword
     SUBDIR += gnomeuserdocs2
+    SUBDIR += gnu-watch
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
     SUBDIR += goblin
