@@ -7,7 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20041226
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -34,6 +34,7 @@ USE_RC_SUBR=	yes
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse ruby18
+USE_PERL5_RUN=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
