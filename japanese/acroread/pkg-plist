@@ -1,0 +1,436 @@
+@comment $FreeBSD$
+bin/acroread
+%%ACRODIR%%/bin/acroread
+%%ACRODIR%%/Reader/help/JPN/README
+%%ACRODIR%%/Reader/help/JPN/Reader.pdf
+%%ACRODIR%%/Reader/help/ENU/Reader.pdf
+%%ACRODIR%%/Reader/help/ENU/README
+%%ACRODIR%%/Reader/Messages/RdrMsgSplash.pdf
+%%ACRODIR%%/Reader/Messages/JPN/RdrMsgJPN.pdf
+%%ACRODIR%%/Reader/Messages/ENU/RdrMsgENU.pdf
+%%ACRODIR%%/Reader/HowTo/ENU/Forms.html
+%%ACRODIR%%/Reader/HowTo/ENU/Forms01.html
+%%ACRODIR%%/Reader/HowTo/ENU/Forms02.html
+%%ACRODIR%%/Reader/HowTo/ENU/Hanko.html
+%%ACRODIR%%/Reader/HowTo/ENU/Hanko01.html
+%%ACRODIR%%/Reader/HowTo/ENU/Hanko02.html
+%%ACRODIR%%/Reader/HowTo/ENU/Hanko03.html
+%%ACRODIR%%/Reader/HowTo/ENU/Hanko04.html
+%%ACRODIR%%/Reader/HowTo/ENU/Hanko05.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo00.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo01.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo02.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo03.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo04.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo05.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo07.html
+%%ACRODIR%%/Reader/HowTo/ENU/HowTo08.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review01.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review02.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review03.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review04.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review05.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review06.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review07.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review08.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review09.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review10.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review11.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review12.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review13.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review14.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review16.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review17.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review18.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review19.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review20.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review21.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review22.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review23.html
+%%ACRODIR%%/Reader/HowTo/ENU/Review28.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign02.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign04.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign06.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign07.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign09.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign11.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign13.html
+%%ACRODIR%%/Reader/HowTo/ENU/Sign05.html
+%%ACRODIR%%/Reader/HowTo/ENU/images
+%%ACRODIR%%/Reader/HowTo/ENU/Images/1.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/2.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/3.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/4.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/5.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/6.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/7.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/8.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/addfile.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/areatool.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/arrow_nxt.ai
+%%ACRODIR%%/Reader/HowTo/ENU/Images/arrow_prev.ai
+%%ACRODIR%%/Reader/HowTo/ENU/Images/attach_comment.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/attach.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/bkgrnd_art.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/bullet.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/crossouttxt.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/callout.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/distance.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/dimensionlinetool.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/distancetool.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/ebookonline.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/forms.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/handtool.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/highlighter.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/layerisvisible.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/listview.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/measure_loop.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/notes.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/obj_data.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/office_convert.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/office_email.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/office_review.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/perimeter.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/readebook.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/rectangle.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/replycomments.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/selecttext.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/sendemailreview.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/showmenu.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/snapshot.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/stamp.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/thumbnailview.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/tip.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/touchupobj.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/underlinetxt.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/zoomintool.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/C_UpOneLevel_Lg_N.png
+%%ACRODIR%%/Reader/HowTo/ENU/Images/C_MoreTopics_Lg_N.gif
+%%ACRODIR%%/Reader/HowTo/ENU/Images/C_HelpGreenButton_Lg_N.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Forms.html
+%%ACRODIR%%/Reader/HowTo/JPN/Forms01.html
+%%ACRODIR%%/Reader/HowTo/JPN/Forms02.html
+%%ACRODIR%%/Reader/HowTo/JPN/Hanko.html
+%%ACRODIR%%/Reader/HowTo/JPN/Hanko01.html
+%%ACRODIR%%/Reader/HowTo/JPN/Hanko02.html
+%%ACRODIR%%/Reader/HowTo/JPN/Hanko03.html
+%%ACRODIR%%/Reader/HowTo/JPN/Hanko04.html
+%%ACRODIR%%/Reader/HowTo/JPN/Hanko05.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo00.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo01.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo02.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo03.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo04.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo05.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo07.html
+%%ACRODIR%%/Reader/HowTo/JPN/HowTo08.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review01.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review02.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review03.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review04.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review05.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review06.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review07.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review08.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review09.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review10.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review11.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review12.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review13.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review14.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review16.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review17.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review18.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review19.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review20.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review21.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review22.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review23.html
+%%ACRODIR%%/Reader/HowTo/JPN/Review28.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign02.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign04.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign06.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign07.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign09.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign11.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign13.html
+%%ACRODIR%%/Reader/HowTo/JPN/Sign05.html
+%%ACRODIR%%/Reader/HowTo/JPN/images
+%%ACRODIR%%/Reader/HowTo/JPN/Images/1.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/2.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/3.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/4.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/5.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/6.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/7.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/8.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/addfile.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/areatool.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/arrow_nxt.ai
+%%ACRODIR%%/Reader/HowTo/JPN/Images/arrow_prev.ai
+%%ACRODIR%%/Reader/HowTo/JPN/Images/attach_comment.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/attach.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/bkgrnd_art.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/bullet.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/crossouttxt.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/callout.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/distance.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/dimensionlinetool.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/distancetool.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/ebookonline.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/forms.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/handtool.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/highlighter.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/layerisvisible.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/listview.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/measure_loop.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/notes.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/obj_data.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/office_convert.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/office_email.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/office_review.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/perimeter.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/readebook.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/rectangle.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/replycomments.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/selecttext.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/sendemailreview.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/showmenu.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/snapshot.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/stamp.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/thumbnailview.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/tip.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/touchupobj.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/underlinetxt.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/zoomintool.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/C_UpOneLevel_Lg_N.png
+%%ACRODIR%%/Reader/HowTo/JPN/Images/C_MoreTopics_Lg_N.gif
+%%ACRODIR%%/Reader/HowTo/JPN/Images/C_HelpGreenButton_Lg_N.gif
+%%ACRODIR%%/Reader/Legal/ENU/license_ENU_uc.txt
+%%ACRODIR%%/Reader/Legal/ENU/License.html
+%%ACRODIR%%/Reader/Legal/JPN/License.html
+%%ACRODIR%%/Reader/Legal/JPN/license_JPN_uc.txt
+%%ACRODIR%%/Reader/AcroVersion
+%%ACRODIR%%/Reader/intellinux/plug_ins/AcroForm/acrobat7.xdc
+%%ACRODIR%%/Reader/intellinux/plug_ins/AcroForm.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/Accessibility.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annots.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/checkers.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/DigSig.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/EFS.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/EScript.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/ewh.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/MakeAccessible.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/PDDom.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/PPKLite.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/SearchFind.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/SaveAsRTF.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/SendMail.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/SOAP.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/Spelling.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/wwwlink.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/LegalPDF.api
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/Words.pdf
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/ENU/Dynamic.pdf
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/ENU/SignHere.pdf
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/ENU/StandardBusiness.pdf
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/JPN/Dynamic.pdf
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/JPN/SignHere.pdf
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/JPN/StandardBusiness.pdf
+%%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/JPN/Hanko.pdf
+%%ACRODIR%%/Reader/intellinux/bin/acroread
+%%ACRODIR%%/Reader/intellinux/sidecars/RdLang32.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/AcroForm.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/Accessibility.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/Annots.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/checkers.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/DigSig.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/EFS.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/EScript.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/ewh.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/MakeAccessible.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/PDDom.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/PPKLite.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/SearchFind.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/SaveAsRTF.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/SendMail.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/SOAP.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/Spelling.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/wwwlink.JPN
+%%ACRODIR%%/Reader/intellinux/sidecars/LegalPDF.JPN
+%%ACRODIR%%/Reader/intellinux/lib/libACE.so.2.07
+%%ACRODIR%%/Reader/intellinux/lib/libACE.so
+%%ACRODIR%%/Reader/intellinux/lib/libAGM.so.4.14
+%%ACRODIR%%/Reader/intellinux/lib/libAGM.so
+%%ACRODIR%%/Reader/intellinux/lib/libBIB.so.1.1
+%%ACRODIR%%/Reader/intellinux/lib/libBIB.so
+%%ACRODIR%%/Reader/intellinux/lib/libCoolType.so.5.01
+%%ACRODIR%%/Reader/intellinux/lib/libCoolType.so
+%%ACRODIR%%/Reader/intellinux/lib/libJP2K.so
+%%ACRODIR%%/Reader/intellinux/lib/libAXE16SharedExpat.so
+%%ACRODIR%%/Reader/intellinux/lib/libAXE8SharedExpat.so
+%%ACRODIR%%/Reader/intellinux/lib/libAXSLE.so
+%%ACRODIR%%/Reader/intellinux/lib/libResAccess.so.0.1
+%%ACRODIR%%/Reader/intellinux/lib/libResAccess.so
+%%ACRODIR%%/Reader/intellinux/lib/libcurl.so.2.0.2
+%%ACRODIR%%/Reader/intellinux/lib/libcurl.so.2
+%%ACRODIR%%/Reader/intellinux/lib/libcurl.so
+%%ACRODIR%%/Reader/intellinux/lib/libssl.so.0.9.6
+%%ACRODIR%%/Reader/intellinux/lib/libssl.so
+%%ACRODIR%%/Reader/intellinux/lib/libssl.so.0
+%%ACRODIR%%/Reader/intellinux/lib/libcrypto.so.0.9.6
+%%ACRODIR%%/Reader/intellinux/lib/libcrypto.so
+%%ACRODIR%%/Reader/intellinux/lib/libcrypto.so.0
+%%ACRODIR%%/Reader/intellinux/lib/libaglcnv.so.28.0
+%%ACRODIR%%/Reader/intellinux/lib/libaglcnv.so.28
+%%ACRODIR%%/Reader/intellinux/lib/libaglcnv.so
+%%ACRODIR%%/Reader/intellinux/lib/libagli18n.so.28.0
+%%ACRODIR%%/Reader/intellinux/lib/libagli18n.so.28
+%%ACRODIR%%/Reader/intellinux/lib/libagli18n.so
+%%ACRODIR%%/Reader/intellinux/lib/libagluc.so.28.0
+%%ACRODIR%%/Reader/intellinux/lib/libagluc.so.28
+%%ACRODIR%%/Reader/intellinux/lib/libagluc.so
+%%ACRODIR%%/Reader/intellinux/lib/libagldata.so.28.0
+%%ACRODIR%%/Reader/intellinux/lib/libagldata.so.28
+%%ACRODIR%%/Reader/intellinux/lib/libagldata.so
+%%ACRODIR%%/Reader/intellinux/lib/libWRServices.so
+%%ACRODIR%%/Reader/intellinux/lib/libadobelinguistic.so.2.0.0
+%%ACRODIR%%/Reader/intellinux/lib/libadobelinguistic.so.2
+%%ACRODIR%%/Reader/intellinux/SPPlugins/ADMPlugin.apl
+%%ACRODIR%%/Reader/intellinux/res
+%%ACRODIR%%/Reader/Cert/curl-ca-bundle.crt
+%%ACRODIR%%/Reader/JavaScripts/JSByteCodeLin.bin
+%%ACRODIR%%/Reader/JavaScripts/WebSearch.js
+%%ACRODIR%%/Reader/WebSearch/WebSearchENU.pdf
+%%ACRODIR%%/Reader/GlobalPrefs/AttachmentPerms
+%%ACRODIR%%/Reader/GlobalPrefs/URLPerms
+%%ACRODIR%%/Resource/Font/CourierStd.otf
+%%ACRODIR%%/Resource/Font/AdobePiStd.otf
+%%ACRODIR%%/Resource/Font/CourierStd-BoldOblique.otf
+%%ACRODIR%%/Resource/Font/CourierStd-Bold.otf
+%%ACRODIR%%/Resource/Font/CourierStd-Oblique.otf
+%%ACRODIR%%/Resource/Font/SY______.PFB
+%%ACRODIR%%/Resource/Font/ZX______.PFB
+%%ACRODIR%%/Resource/Font/ZY______.PFB
+%%ACRODIR%%/Resource/Font/PFM/SY______.PFM
+%%ACRODIR%%/Resource/Font/PFM/zx______.pfm
+%%ACRODIR%%/Resource/Font/PFM/zy______.pfm
+%%ACRODIR%%/Resource/Font/MinionPro-Bold.otf
+%%ACRODIR%%/Resource/Font/MinionPro-BoldIt.otf
+%%ACRODIR%%/Resource/Font/MinionPro-It.otf
+%%ACRODIR%%/Resource/Font/MinionPro-Regular.otf
+%%ACRODIR%%/Resource/Font/MyriadPro-Bold.otf
+%%ACRODIR%%/Resource/Font/MyriadPro-BoldIt.otf
+%%ACRODIR%%/Resource/Font/MyriadPro-It.otf
+%%ACRODIR%%/Resource/Font/MyriadPro-Regular.otf
+%%ACRODIR%%/Resource/CMap/Identity-H
+%%ACRODIR%%/Resource/CMap/Identity-V
+%%ACRODIR%%/Resource/CMap/83pv-RKSJ-H
+%%ACRODIR%%/Resource/CMap/90ms-RKSJ-H
+%%ACRODIR%%/Resource/CMap/90ms-RKSJ-UCS2
+%%ACRODIR%%/Resource/CMap/90ms-RKSJ-V
+%%ACRODIR%%/Resource/CMap/90msp-RKSJ-H
+%%ACRODIR%%/Resource/CMap/90msp-RKSJ-V
+%%ACRODIR%%/Resource/CMap/90pv-RKSJ-H
+%%ACRODIR%%/Resource/CMap/90pv-RKSJ-UCS2
+%%ACRODIR%%/Resource/CMap/90pv-RKSJ-UCS2C
+%%ACRODIR%%/Resource/CMap/Add-RKSJ-H
+%%ACRODIR%%/Resource/CMap/Add-RKSJ-V
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-90ms-RKSJ
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-90pv-RKSJ
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-H-CID
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-H-Host
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-H-Mac
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-PS-H
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-PS-V
+%%ACRODIR%%/Resource/CMap/Adobe-Japan1-UCS2
+%%ACRODIR%%/Resource/CMap/EUC-H
+%%ACRODIR%%/Resource/CMap/EUC-V
+%%ACRODIR%%/Resource/CMap/Ext-RKSJ-H
+%%ACRODIR%%/Resource/CMap/Ext-RKSJ-V
+%%ACRODIR%%/Resource/CMap/H
+%%ACRODIR%%/Resource/CMap/UCS2-90ms-RKSJ
+%%ACRODIR%%/Resource/CMap/UCS2-90pv-RKSJ
+%%ACRODIR%%/Resource/CMap/UniJIS-UCS2-H
+%%ACRODIR%%/Resource/CMap/UniJIS-UCS2-HW-H
+%%ACRODIR%%/Resource/CMap/UniJIS-UCS2-HW-V
+%%ACRODIR%%/Resource/CMap/UniJIS-UCS2-V
+%%ACRODIR%%/Resource/CMap/UniJIS-UTF16-H
+%%ACRODIR%%/Resource/CMap/UniJIS-UTF16-V
+%%ACRODIR%%/Resource/CMap/UniKS-UTF16-H
+%%ACRODIR%%/Resource/CMap/UniKS-UTF16-V
+%%ACRODIR%%/Resource/CMap/V
+%%ACRODIR%%/Resource/Icons/AdobeReader.png
+%%ACRODIR%%/Resource/Support/AdobeReader_GNOME.desktop
+%%ACRODIR%%/Resource/Support/AdobeReader_KDE.desktop
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/brt04.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/brt32.clx
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/brt0401.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/brt0402.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/brtphon.env
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/can32.clx
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/can112.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/canphon.env
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/eng32.clx
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/engphon.env
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/usa86.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/usa8601.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/usa8602.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/usa8603.lex
+%%ACRODIR%%/Resource/Linguistics/Providers/Proximity/usa8604.lex
+%%ACRODIR%%/Resource/Linguistics/LanguageNames/DisplayLanguageNames.ja_JP.txt
+%%ACRODIR%%/Resource/CIDFont/KozGoPro-Medium.otf
+%%ACRODIR%%/Resource/CIDFont/KozMinProVI-Regular.otf
+%%ACRODIR%%/Browser/intellinux/nppdf.so
+%%ACRODIR%%/Browser/install_browser_plugin
+%%ACRODIR%%/Browser/Browser_Plugin_HowTo.txt
+@dirrm %%ACRODIR%%/bin
+@dirrm %%ACRODIR%%/Resource/Support
+@dirrm %%ACRODIR%%/Resource/Linguistics/Providers/Proximity
+@dirrm %%ACRODIR%%/Resource/Linguistics/Providers
+@dirrm %%ACRODIR%%/Resource/Linguistics/LanguageNames
+@dirrm %%ACRODIR%%/Resource/Linguistics
+@dirrm %%ACRODIR%%/Resource/Icons
+@dirrm %%ACRODIR%%/Resource/Font/PFM
+@dirrm %%ACRODIR%%/Resource/Font
+@dirrm %%ACRODIR%%/Resource/CMap
+@dirrm %%ACRODIR%%/Resource/CIDFont
+@dirrm %%ACRODIR%%/Resource
+@dirrm %%ACRODIR%%/Reader/intellinux/sidecars
+@dirrm %%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/JPN
+@dirrm %%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps/ENU
+@dirrm %%ACRODIR%%/Reader/intellinux/plug_ins/Annotations/Stamps
+@dirrm %%ACRODIR%%/Reader/intellinux/plug_ins/Annotations
+@dirrm %%ACRODIR%%/Reader/intellinux/plug_ins/AcroForm
+@dirrm %%ACRODIR%%/Reader/intellinux/plug_ins
+@dirrm %%ACRODIR%%/Reader/intellinux/lib
+@dirrm %%ACRODIR%%/Reader/intellinux/bin
+@dirrm %%ACRODIR%%/Reader/intellinux/SPPlugins
+@dirrm %%ACRODIR%%/Reader/intellinux
+@dirrm %%ACRODIR%%/Reader/help/JPN
+@dirrm %%ACRODIR%%/Reader/help/ENU
+@dirrm %%ACRODIR%%/Reader/help
+@dirrm %%ACRODIR%%/Reader/WebSearch
+@dirrm %%ACRODIR%%/Reader/Messages/JPN
+@dirrm %%ACRODIR%%/Reader/Messages/ENU
+@dirrm %%ACRODIR%%/Reader/Messages
+@dirrm %%ACRODIR%%/Reader/Legal/JPN
+@dirrm %%ACRODIR%%/Reader/Legal/ENU
+@dirrm %%ACRODIR%%/Reader/Legal
+@dirrm %%ACRODIR%%/Reader/JavaScripts
+@dirrm %%ACRODIR%%/Reader/HowTo/JPN/Images
+@dirrm %%ACRODIR%%/Reader/HowTo/JPN
+@dirrm %%ACRODIR%%/Reader/HowTo/ENU/Images
+@dirrm %%ACRODIR%%/Reader/HowTo/ENU
+@dirrm %%ACRODIR%%/Reader/HowTo
+@dirrm %%ACRODIR%%/Reader/GlobalPrefs
+@dirrm %%ACRODIR%%/Reader/Cert
+@dirrm %%ACRODIR%%/Reader
+@dirrm %%ACRODIR%%/Browser/intellinux
+@dirrm %%ACRODIR%%/Browser
