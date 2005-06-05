@@ -29,7 +29,7 @@ DISTFILES+=	OOo_${PORTVERSION}_source.tar.gz gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
+COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz

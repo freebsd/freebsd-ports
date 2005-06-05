@@ -107,7 +107,7 @@ USE_GCC=3.2
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
+COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 #
 # The JDK dependency needs to be at the first place, so all
