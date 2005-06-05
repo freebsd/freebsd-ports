@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X based alarm clock
 
-.include <bsd.port.pre.mk>
-
 USE_IMAKE=	yes
 IS_INTERACTIVE=	yes
+
+.include <bsd.port.pre.mk>
 
 MAN1=		xalarm.1 xmemo.1 xfortune.1 xyow.1
 
