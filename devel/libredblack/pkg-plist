@@ -1,4 +1,8 @@
+%%PYTHON%%bin/rbgen
+include/redblack.h
 lib/libredblack.a
 lib/libredblack.so
 lib/libredblack.so.2
-include/redblack.h
+%%DATADIR%%/redblack.c
+%%DATADIR%%/redblack.h
+@dirrm %%DATADIR%%
