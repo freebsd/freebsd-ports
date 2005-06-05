@@ -28,6 +28,7 @@
     SUBDIR += barnyard
     SUBDIR += base
     SUBDIR += bcwipe
+    SUBDIR += bdc
     SUBDIR += beecrypt
     SUBDIR += bfbtester
     SUBDIR += bjorb

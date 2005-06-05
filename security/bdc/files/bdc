@@ -1,0 +1,4 @@
+#!/bin/sh
+
+BDENG_PATH=%%PREFIX%%/bdc/; export BDENG_PATH
+exec %%PREFIX%%/bdc/bdc.bin ${@+"$@"}
