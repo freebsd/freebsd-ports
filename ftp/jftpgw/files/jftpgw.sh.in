@@ -1,27 +1,28 @@
 #!/bin/sh
 
-PROGRAM=@PREFIX@/sbin/jftpgw
-CFGFILE=@PREFIX@/etc/jftpgw.conf
+# PROVIDE jftpgw
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
 
-PIDFILE=/var/run/jftpgw.pid
+#
+# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+#
+# jftpgw_enable="YES"
+#
 
-case "$1" in
+. %%RC_SUBR%%
 
-start)
-	if [ -x $PROGRAM ] && [ -r $CFGFILE ]
-	then
-		$PROGRAM
-		echo -n " jftpgw"
-	fi
-	;;
+name=jftpgw
+rcvar=`set_rcvar`
 
-stop)
-	PID=`cat $PIDFILE 2>/dev/null`
-	ps -p "$PID" | tail +2 | grep -sqw $PROGRAM && kill $PID
-	;;
+command=%%PREFIX%%/sbin/jftpgw
+jftpgw_config=${jftpgw_config:-"%%PREFIX%%/etc/jftpgw.conf"}
+required_files=${jftpgw_config}
+pidfile=/var/run/jftpgw.pid
 
-*)
-	echo "usage: $0 start|stop"
-	;;
-esac
+jftpgw_enable=${jftpgw_enable:-"NO"}
+command_args="-f ${jftpgw_config}"
 
+load_rc_config $name
+run_rc_command "$1"
