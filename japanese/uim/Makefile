@@ -7,7 +7,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	0.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
@@ -48,7 +48,7 @@ PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .if exists(${X11BASE}/bin/scim) || defined(WITH_SCIM)
-LIB_DEPENDS=	scim-1.0.6:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	scim-1.0.7:${PORTSDIR}/textproc/scim
 PLIST_SUB+=	SCIM=""
 .else
 PLIST_SUB+=	SCIM="@comment "
