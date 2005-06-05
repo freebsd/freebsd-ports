@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	math cad parallel
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Scilab/distributions/
-EXTRACT_SUFX=	.src.tar.gz
+MASTER_SITES=	http://scilabsoft.inria.fr/download/stable/
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	js@jeannot.org
 COMMENT=	A free Matlab clone by INRIA & ENPC
@@ -42,12 +41,13 @@ CONFIGURE_ARGS=	--with-tk \
 		--x-include=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
 		--with-atlas-library=${LOCALBASE}/lib \
+		--without-java \
 		--without-ocaml
 
-CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} X11BASE=${X11BASE} F77=$(F77)
+CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} X11BASE=${X11BASE} F77=${F77}
 MAKE_ENV=	PVM_INCLUDE=${LOCALBASE}/include
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB=	PORTVERSION="${PORTVERSION}" DOCSDIR="share/doc/scilab-${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
