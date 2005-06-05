@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- ntpd.8.orig
 +++ ntpd.8
-@@ -52,6 +52,20 @@
+@@ -53,6 +53,20 @@
  .Xr adjtime 2
  will be logged.
  .Pp
@@ -24,7 +24,7 @@ $FreeBSD$
  When
  .Nm
  starts up, it reads settings from a configuration file,
-@@ -71,7 +85,7 @@
+@@ -72,7 +86,7 @@
  .Ar file
  as the configuration file,
  instead of the default
@@ -33,22 +33,8 @@ $FreeBSD$
  .It Fl S
  Do not set the time immediately at startup.
  This is the default.
-@@ -83,22 +97,10 @@
- .Xr rdate 8
- before starting
+@@ -86,8 +100,8 @@
  .Nm .
--Currently, the
--.Fl s
--option is added unconditionally in
--.Xr rc 8 .
--Make sure to specify the
--.Fl S
--option
--(add/edit
--.Va ntpd_flags
--in
--.Xr rc.conf.local 8 )
--if this behaviour is not desired.
  .El
  .Sh FILES
 -.Bl -tag -width "/etc/ntpd.confXXX" -compact
@@ -58,13 +44,12 @@ $FreeBSD$
  default
  .Nm
  configuration file
-@@ -107,8 +109,8 @@
+@@ -96,6 +110,8 @@
  .Xr date 1 ,
  .Xr adjtime 2 ,
  .Xr ntpd.conf 5 ,
 +.Xr rc.conf 5 ,
- .Xr rc 8 ,
--.Xr rc.conf 8 ,
++.Xr rc 8 ,
  .Xr rdate 8 ,
  .Xr timed 8
  .Rs
