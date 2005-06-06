@@ -43,6 +43,7 @@
     SUBDIR += cimg
     SUBDIR += cinepaint
     SUBDIR += claraocr
+    SUBDIR += comical
     SUBDIR += compupic
     SUBDIR += corona
     SUBDIR += cqcam
