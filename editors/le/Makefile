@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
 
