@@ -13,6 +13,8 @@
 # (the database bindings are detected and recorded automatically if these
 # switches are not set)
 # APR_UTIL_WITH_LDAP:		force dependency on OpenLDAP
+# WITH_PYTHON:                  force dependency on Python and run APR's buildconf.
+# Really only needed if built from APR's CVS depot.
 
 PORTNAME=	apr
 PORTVERSION=	1.0.1
@@ -25,7 +27,12 @@ DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 MAINTAINER=	rodrigc@crodrigues.org
 COMMENT=	The Apache Group's Portability Library
 
+.if defined(WITH_PYTHON)
 BUILD_DEPENDS=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
+USE_PYTHON=		yes
+PYTHON_NO_DEPENDS=	yes
+.endif
+
 LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=		yes
@@ -35,8 +42,6 @@ WANT_LIBTOOL_VER=	15
 USE_REINPLACE=		yes
 USE_PERL5=		yes
 USE_GMAKE=		yes
-USE_PYTHON=		yes
-PYTHON_NO_DEPENDS=	yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=	${WRKDIR}
@@ -141,12 +146,14 @@ pre-configure:
 .endfor
 
 run-autotools:
+.if defined(WITH_PYTHON)
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./buildconf
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
 	${RM} -fr xml/expat
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
 		${SETENV} ${SCRIPTS_ENV} ${SH} ./buildconf \
 		--with-apr=../apr-${PORTVERSION}
+.endif
 	cd ${WRKDIR}/apr-${PORTVERSION}; \
 		${SETENV} ${SCRIPTS_ENV} ${SH} ./configure ${CONFIGURE_ARGS}
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
