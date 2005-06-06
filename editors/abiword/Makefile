@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--enable-xft \
 MAKEFILE=	GNUmakefile
 
 ABIVERSION=	2.2
-PLIST_SUB+=	"ABIVERSION=${ABIVERSION}"
+PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
 
 .if defined(WITH_DEBUG)
@@ -61,7 +61,7 @@ PLIST_SUB+=		DICT:=""
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mlibgnomeprintui}!=""
-USE_GNOME+=		libgnomeprintui desktopfileutils
+USE_GNOME+=		libgnomeprintui libgnomeui desktopfileutils
 CONFIGURE_ARGS+=	--enable-gnome
 PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
