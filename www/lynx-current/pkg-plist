@@ -66,6 +66,7 @@ share/doc/lynx/test/sgml.html
 share/doc/lynx/test/spaces.html
 share/doc/lynx/test/special_urls.html
 share/doc/lynx/test/tabtest.html
+share/doc/lynx/test/tags.html
 share/doc/lynx/test/unicode.html
 share/doc/lynx/test/utf-8-demo.html
 %%NLS%%share/locale/ca/LC_MESSAGES/lynx.mo
@@ -80,10 +81,12 @@ share/doc/lynx/test/utf-8-demo.html
 %%NLS%%share/locale/nl/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lynx.mo
 share/lynx_help/Lynx_users_guide.html
