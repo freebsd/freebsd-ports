@@ -1,9 +1,9 @@
---- pixmaps/Makefile.in.orig	Sat May 14 21:12:17 2005
-+++ pixmaps/Makefile.in	Sun May 15 10:47:58 2005
-@@ -147,7 +147,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- pixmaps/Makefile.in.orig	Thu Jun  2 22:59:56 2005
++++ pixmaps/Makefile.in	Mon Jun  6 20:50:17 2005
+@@ -109,7 +109,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
 -grisbi_pixmapsdir = $(datadir)/pixmaps/grisbi
 +grisbi_pixmapsdir = $(pkgdatadir)/pixmaps
  
