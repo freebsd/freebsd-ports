@@ -1,0 +1,18 @@
+--- imcomm/Makefile.orig	Mon Jun  6 02:49:47 2005
++++ imcomm/Makefile	Mon Jun  6 02:50:17 2005
+@@ -1,15 +1,11 @@
+ EXEC=test
+ #AR=i386-pc-msdosdjgpp-ar
+ #AR=mingw32-ar
+-AR=ar
+ #RANLIB=i386-pc-msdosdjgpp-ranlib
+ #RANLIB=mingw32-ranlib
+-RANLIB=ranlib
+ LIB=libimcomm.a
+ #CC=i386-pc-msdosdjgpp-gcc
+ #CC=mingw32-gcc
+-CC=gcc
+-CFLAGS=-O
+ RM=rm -f
+ #CFLAGS+=-I/usr/local/djgpp/watt/inc
+ #
