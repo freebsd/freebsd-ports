@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 DIST_SUBDIR=	bind-${PORTVERSION}
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER?=	DougB@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
 
 .if defined(PORT_REPLACES_BASE_BIND8_INCLUDES)
