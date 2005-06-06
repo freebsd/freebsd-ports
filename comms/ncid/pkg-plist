@@ -1,0 +1,14 @@
+sbin/ncidd
+bin/ncid
+bin/cidalias
+bin/cidlog
+bin/cidlogupd
+etc/ncidd.conf
+etc/rc.d/ncidd.sh
+etc/rc.d/ncid.sh
+share/ncid/ncidrotate
+share/ncid/ncid-page
+share/ncid/ncid-samba
+share/ncid/ncid-speak
+share/ncid/README
+@dirrm share/ncid

@@ -1,0 +1,17 @@
+*** tools/Makefile.ori	Mon Jun  6 16:04:37 2005
+--- tools/Makefile	Mon Jun  6 16:04:53 2005
+***************
+*** 31,42 ****
+  
+  install-script: $(SCRIPT)
+  	install -m 755 $(SCRIPT) $(BIN)
+- 	touch install-script
+  
+  install-man:	$(MAN)
+  	cd $(MAN1); rm -f ncidtools.1
+  	install -m 644 ncidtools.1 $(MAN1)
+- 	touch install-man
+  
+  clean:
+  
+--- 31,40 ----
