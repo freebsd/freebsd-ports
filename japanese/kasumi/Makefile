@@ -17,9 +17,12 @@ COMMENT=	A dictionary management tool for anthy
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gtk20
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -29,10 +32,4 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
