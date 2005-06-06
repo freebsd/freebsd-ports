@@ -34,57 +34,57 @@ sbin/irpd
 sbin/named
 sbin/named-bootconf
 sbin/ndc
-%%PORTDOCS%%share/doc/bind/CHANGES
-%%PORTDOCS%%share/doc/bind/DNSSEC
-%%PORTDOCS%%share/doc/bind/LICENSE
-%%PORTDOCS%%share/doc/bind/LICENSE_RSA
-%%PORTDOCS%%share/doc/bind/README
-%%PORTDOCS%%share/doc/bind/SUPPORT
-%%PORTDOCS%%share/doc/bind/TODO
-%%PORTDOCS%%share/doc/bind/conf/README
-%%PORTDOCS%%share/doc/bind/conf/recursive/keep-running
-%%PORTDOCS%%share/doc/bind/conf/recursive/named-res1.conf
-%%PORTDOCS%%share/doc/bind/conf/recursive/named.conf.rfc1918-stubs
-%%PORTDOCS%%share/doc/bind/conf/recursive/pri/127.0.0
-%%PORTDOCS%%share/doc/bind/conf/recursive/pri/localhost
-%%PORTDOCS%%share/doc/bind/conf/recursive/root.cache
-%%PORTDOCS%%share/doc/bind/conf/workstation/named.conf
-%%PORTDOCS%%share/doc/bind/conf/workstation/pri/127.0.0
-%%PORTDOCS%%share/doc/bind/conf/workstation/pri/localhost
-%%PORTDOCS%%share/doc/bind/conf/workstation/root.cache
-%%PORTDOCS%%share/doc/bind/conf/workstation/stub/README
-%%PORTDOCS%%share/doc/bind/html/acl.html
-%%PORTDOCS%%share/doc/bind/html/address_list.html
-%%PORTDOCS%%share/doc/bind/html/comments.html
-%%PORTDOCS%%share/doc/bind/html/config.html
-%%PORTDOCS%%share/doc/bind/html/controls.html
-%%PORTDOCS%%share/doc/bind/html/docdef.html
-%%PORTDOCS%%share/doc/bind/html/example.html
-%%PORTDOCS%%share/doc/bind/html/include.html
-%%PORTDOCS%%share/doc/bind/html/index.html
-%%PORTDOCS%%share/doc/bind/html/key.html
-%%PORTDOCS%%share/doc/bind/html/logging.html
-%%PORTDOCS%%share/doc/bind/html/master.html
-%%PORTDOCS%%share/doc/bind/html/options.html
-%%PORTDOCS%%share/doc/bind/html/server.html
-%%PORTDOCS%%share/doc/bind/html/trusted-keys.html
-%%PORTDOCS%%share/doc/bind/html/zone.html
-%%PORTDOCS%%share/doc/bind/misc/DynamicUpdate
-%%PORTDOCS%%share/doc/bind/misc/FAQ.1of2
-%%PORTDOCS%%share/doc/bind/misc/FAQ.2of2
-%%PORTDOCS%%share/doc/bind/misc/rfc2317-notes.txt
-%%PORTDOCS%%share/doc/bind/misc/style.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/DNSSEC
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_RSA
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SUPPORT
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/conf/README
+%%PORTDOCS%%%%DOCSDIR%%/conf/recursive/keep-running
+%%PORTDOCS%%%%DOCSDIR%%/conf/recursive/named-res1.conf
+%%PORTDOCS%%%%DOCSDIR%%/conf/recursive/named.conf.rfc1918-stubs
+%%PORTDOCS%%%%DOCSDIR%%/conf/recursive/pri/127.0.0
+%%PORTDOCS%%%%DOCSDIR%%/conf/recursive/pri/localhost
+%%PORTDOCS%%%%DOCSDIR%%/conf/recursive/root.cache
+%%PORTDOCS%%%%DOCSDIR%%/conf/workstation/named.conf
+%%PORTDOCS%%%%DOCSDIR%%/conf/workstation/pri/127.0.0
+%%PORTDOCS%%%%DOCSDIR%%/conf/workstation/pri/localhost
+%%PORTDOCS%%%%DOCSDIR%%/conf/workstation/root.cache
+%%PORTDOCS%%%%DOCSDIR%%/conf/workstation/stub/README
+%%PORTDOCS%%%%DOCSDIR%%/html/acl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/address_list.html
+%%PORTDOCS%%%%DOCSDIR%%/html/comments.html
+%%PORTDOCS%%%%DOCSDIR%%/html/config.html
+%%PORTDOCS%%%%DOCSDIR%%/html/controls.html
+%%PORTDOCS%%%%DOCSDIR%%/html/docdef.html
+%%PORTDOCS%%%%DOCSDIR%%/html/example.html
+%%PORTDOCS%%%%DOCSDIR%%/html/include.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/key.html
+%%PORTDOCS%%%%DOCSDIR%%/html/logging.html
+%%PORTDOCS%%%%DOCSDIR%%/html/master.html
+%%PORTDOCS%%%%DOCSDIR%%/html/options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/server.html
+%%PORTDOCS%%%%DOCSDIR%%/html/trusted-keys.html
+%%PORTDOCS%%%%DOCSDIR%%/html/zone.html
+%%PORTDOCS%%%%DOCSDIR%%/misc/DynamicUpdate
+%%PORTDOCS%%%%DOCSDIR%%/misc/FAQ.1of2
+%%PORTDOCS%%%%DOCSDIR%%/misc/FAQ.2of2
+%%PORTDOCS%%%%DOCSDIR%%/misc/rfc2317-notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/misc/style.txt
 share/misc/nslookup.help
 @unexec rmdir %D/%%INCLUDE_PATH%%/arpa 2>/dev/null || true
 @unexec rmdir %D/%%INCLUDE_PATH%%/isc 2>/dev/null || true
 @unexec rmdir %D/%%INCLUDE_PATH%%/sys 2>/dev/null || true
 @unexec rmdir %D/%%INCLUDE_PATH%% 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/bind/conf/recursive/pri
-%%PORTDOCS%%@dirrm share/doc/bind/conf/recursive
-%%PORTDOCS%%@dirrm share/doc/bind/conf/workstation/pri
-%%PORTDOCS%%@dirrm share/doc/bind/conf/workstation/stub
-%%PORTDOCS%%@dirrm share/doc/bind/conf/workstation
-%%PORTDOCS%%@dirrm share/doc/bind/conf
-%%PORTDOCS%%@dirrm share/doc/bind/html
-%%PORTDOCS%%@dirrm share/doc/bind/misc
-%%PORTDOCS%%@dirrm share/doc/bind/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/recursive/pri
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/recursive
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/workstation/pri
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/workstation/stub
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/workstation
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
