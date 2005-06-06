@@ -14,6 +14,11 @@ MASTER_SITE_SUBDIR=	system/serial
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 2217 compliant serial port redirector
 
+PLIST_FILES=	libexec/sredird
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README COPYING
+.endif
+
 do-build:
 	${CC} ${CFLAGS} -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c
 
