@@ -7,7 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://svn.xiph.org/releases/icecast/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	icecast2.sh
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
@@ -32,7 +32,6 @@ WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/icecast2.sh ${PREFIX}/etc/rc.d/icecast2.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

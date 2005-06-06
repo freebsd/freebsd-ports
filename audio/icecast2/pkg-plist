@@ -1,6 +1,5 @@
 bin/icecast
 etc/icecast.xml.sample
-etc/rc.d/icecast2.sh
 share/doc/icecast/AUTHORS
 share/doc/icecast/COPYING
 share/doc/icecast/ChangeLog
