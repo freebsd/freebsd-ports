@@ -12,7 +12,7 @@ PORTEPOCH=	${GS_EPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
-		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
+		http://home.vrweb.de/~martin.lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
@@ -123,7 +123,9 @@ HP8XX_SRCS=	gdevcd8.tar.gz
 
 # HPDJ - additional driver for HP PCL3 printers, by Martin Lottermoser
 # still present, just for the case pcl3 is missing some hpdj feature
-# http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
+# http://home.vrweb.de/martin.lottermoser/pcl3.html
+#
+# FIXME: This driver is no longer available at Martin Lottermoser's site!
 HPDJ=		hpdj
 HPDJ_VERS=	2.6
 HPDJ_NAME=	${HPDJ}-${HPDJ_VERS}
@@ -133,7 +135,7 @@ MAN1+=		${HPDJ_MAN1}
 
 # PCL3 (hpdj successor now in RELEASE quality)
 # additional driver for HP PCL3 printers, by Martin Lottermoser
-# http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
+# http://home.vrweb.de/martin.lottermoser/pcl3.html
 PCL3=		pcl3
 PCL3_VERS=	3.3
 PCL3_NAME=	${PCL3}-${PCL3_VERS}

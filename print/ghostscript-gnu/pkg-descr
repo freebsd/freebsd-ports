@@ -15,7 +15,7 @@ This port includes add-on packages (not part of the official gs release)
 	o DJ970 driver for HP DeskJet 970CXi
 	  - http://www.harsch.net/Ghostscript/ghostscript.html
 	o PCL3 and HPDJ driver for HP DeskJet series
-	  - http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
+	  - http://home.vrweb.de/martin.lottermoser/pcl3.html
 	o Gimp-Print driver for Canon/Epson/Lexmark/HP printers
 	  - http://gimp-print.sourceforge.net/
 	o Special drivers for verious printer models
