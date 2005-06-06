@@ -7,7 +7,7 @@
 
 PORTNAME=	comical
 PORTVERSION=	0.4.1
-CATEGORIES=	games
+CATEGORIES=	graphics
 MASTER_SITES=	http://www.mcaree.org/Comical/ \
 		http://www.sketchyorigins.com/Comical/
 
