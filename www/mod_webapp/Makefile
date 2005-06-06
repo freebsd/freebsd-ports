@@ -19,6 +19,7 @@ COMMENT=	Apache module mounts Tomcat web applications
 
 BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:configure
 
+USE_REINPLACE=	yes
 USE_APACHE=	yes
 WANT_AUTOCONF_VER=253
 WANT_LIBTOOL_VER=13
@@ -35,16 +36,19 @@ CONNECTORS_RELEASE=	${PORTVERSION}
 # Apache locations.
 APACHECTL?=	${LOCALBASE}/sbin/apachectl
 APR_LIB?=	${LOCALBASE}/lib/
-APR_INCLUDE?=	${LOCALBASE}/include/apr-0/
-APACHE_MODULES?= libexec/apache/
-APR_SRC?=	${WRKDIRPREFIX}${PORTSDIR}/devel/apr/work/apr-?\.?\.?/
+APR_INCLUDE?=	${LOCALBASE}/include/apr-${APR_MAJORVER}/
+APACHE_MODULES?=libexec/apache
+APR_VER!=	cd ${PORTSDIR}/devel/apr && ${MAKE} -V PORTVERSION
+APR_WRKSRC!=	cd ${PORTSDIR}/devel/apr && ${MAKE} -V WRKSRC
+APR_MAJORVER=	${APR_VER:C/\..*//g}
+APR_SRC=	${APR_WRKSRC}/apr-${APR_VER}
 AUTOCONF?=	${LOCALBASE}/bin/autoconf
 
 # If the user's changed the modules directory, pack things correctly.
 PLIST_SUB=	APACHE_MODULES=${APACHE_MODULES}
 
 # Build options.
-APACHE_VERSION= 1.3.6
+APACHE_VERSION=	1.3.6
 WRKSRC=		${WRKDIR}/${DISTNAME}/webapp
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs=${APXS} \
@@ -52,6 +56,10 @@ CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--with-apr-include=${APR_INCLUDE} \
 		--with-apr=${APR_SRC} \
 		--without-ant
+
+post-patch:
+	${REINPLACE_CMD} -e 's/apr-config/apr-${APR_MAJORVER}-config/g' \
+		${WRKSRC}/support/wa_apr.m4
 
 pre-configure:
 	cd ${WRKSRC} && ${AUTOCONF}
@@ -67,8 +75,8 @@ do-install:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mod_webapp
-	${INSTALL_MAN} ${WRKSRC}/INSTALL.txt ${PREFIX}/share/doc/mod_webapp
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/INSTALL.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
