@@ -1,6 +1,8 @@
 bin/gajim
+lib/gajim/gtkspell.so
+lib/gajim/idle.so
+lib/gajim/trayicon.so
 %%DATADIR%%/COPYING
-%%DATADIR%%/gajim.xpm
 %%DATADIR%%/data/emoticons/angry.png
 %%DATADIR%%/data/emoticons/bat.png
 %%DATADIR%%/data/emoticons/beer.png
@@ -86,7 +88,7 @@ bin/gajim
 %%DATADIR%%/data/iconsets/transports/aim/chat.png
 %%DATADIR%%/data/iconsets/transports/aim/closed.xpm
 %%DATADIR%%/data/iconsets/transports/aim/dnd.png
-%%DATADIR%%/data/iconsets/transports/aim/error.png
+%%DATADIR%%/data/iconsets/transports/aim/error.xpm
 %%DATADIR%%/data/iconsets/transports/aim/invisible.png
 %%DATADIR%%/data/iconsets/transports/aim/message.gif
 %%DATADIR%%/data/iconsets/transports/aim/not_in_the_roster.png
@@ -99,7 +101,7 @@ bin/gajim
 %%DATADIR%%/data/iconsets/transports/gadugadu/chat.png
 %%DATADIR%%/data/iconsets/transports/gadugadu/closed.xpm
 %%DATADIR%%/data/iconsets/transports/gadugadu/dnd.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/error.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/error.xpm
 %%DATADIR%%/data/iconsets/transports/gadugadu/invisible.png
 %%DATADIR%%/data/iconsets/transports/gadugadu/message.gif
 %%DATADIR%%/data/iconsets/transports/gadugadu/not_in_the_roster.png
@@ -112,7 +114,7 @@ bin/gajim
 %%DATADIR%%/data/iconsets/transports/icq/chat.png
 %%DATADIR%%/data/iconsets/transports/icq/closed.xpm
 %%DATADIR%%/data/iconsets/transports/icq/dnd.png
-%%DATADIR%%/data/iconsets/transports/icq/error.png
+%%DATADIR%%/data/iconsets/transports/icq/error.xpm
 %%DATADIR%%/data/iconsets/transports/icq/invisible.png
 %%DATADIR%%/data/iconsets/transports/icq/message.gif
 %%DATADIR%%/data/iconsets/transports/icq/not_in_the_roster.png
@@ -121,11 +123,21 @@ bin/gajim
 %%DATADIR%%/data/iconsets/transports/icq/opened.xpm
 %%DATADIR%%/data/iconsets/transports/icq/requested.png
 %%DATADIR%%/data/iconsets/transports/icq/xa.png
+%%DATADIR%%/data/iconsets/transports/irc/away.png
+%%DATADIR%%/data/iconsets/transports/irc/chat.png
+%%DATADIR%%/data/iconsets/transports/irc/dnd.png
+%%DATADIR%%/data/iconsets/transports/irc/error.xpm
+%%DATADIR%%/data/iconsets/transports/irc/invisible.png
+%%DATADIR%%/data/iconsets/transports/irc/message.gif
+%%DATADIR%%/data/iconsets/transports/irc/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/irc/offline.png
+%%DATADIR%%/data/iconsets/transports/irc/online.png
+%%DATADIR%%/data/iconsets/transports/irc/requested.png
+%%DATADIR%%/data/iconsets/transports/irc/xa.png
 %%DATADIR%%/data/iconsets/transports/msn/away.png
 %%DATADIR%%/data/iconsets/transports/msn/chat.png
 %%DATADIR%%/data/iconsets/transports/msn/closed.xpm
 %%DATADIR%%/data/iconsets/transports/msn/dnd.png
-%%DATADIR%%/data/iconsets/transports/msn/error.png
 %%DATADIR%%/data/iconsets/transports/msn/invisible.png
 %%DATADIR%%/data/iconsets/transports/msn/message.gif
 %%DATADIR%%/data/iconsets/transports/msn/not_in_the_roster.png
@@ -134,11 +146,22 @@ bin/gajim
 %%DATADIR%%/data/iconsets/transports/msn/opened.xpm
 %%DATADIR%%/data/iconsets/transports/msn/requested.png
 %%DATADIR%%/data/iconsets/transports/msn/xa.png
+%%DATADIR%%/data/iconsets/transports/msn/error.xpm
+%%DATADIR%%/data/iconsets/transports/sms/away.png
+%%DATADIR%%/data/iconsets/transports/sms/chat.png
+%%DATADIR%%/data/iconsets/transports/sms/dnd.png
+%%DATADIR%%/data/iconsets/transports/sms/error.xpm
+%%DATADIR%%/data/iconsets/transports/sms/invisible.png
+%%DATADIR%%/data/iconsets/transports/sms/message.gif
+%%DATADIR%%/data/iconsets/transports/sms/offline.png
+%%DATADIR%%/data/iconsets/transports/sms/online.png
+%%DATADIR%%/data/iconsets/transports/sms/requested.png
+%%DATADIR%%/data/iconsets/transports/sms/xa.png
 %%DATADIR%%/data/iconsets/transports/yahoo/away.png
 %%DATADIR%%/data/iconsets/transports/yahoo/chat.png
 %%DATADIR%%/data/iconsets/transports/yahoo/closed.xpm
 %%DATADIR%%/data/iconsets/transports/yahoo/dnd.png
-%%DATADIR%%/data/iconsets/transports/yahoo/error.png
+%%DATADIR%%/data/iconsets/transports/yahoo/error.xpm
 %%DATADIR%%/data/iconsets/transports/yahoo/invisible.png
 %%DATADIR%%/data/iconsets/transports/yahoo/message.gif
 %%DATADIR%%/data/iconsets/transports/yahoo/not_in_the_roster.png
@@ -147,21 +170,26 @@ bin/gajim
 %%DATADIR%%/data/iconsets/transports/yahoo/opened.xpm
 %%DATADIR%%/data/iconsets/transports/yahoo/requested.png
 %%DATADIR%%/data/iconsets/transports/yahoo/xa.png
-%%DATADIR%%/data/pixmaps/logo.png
+%%DATADIR%%/data/pixmaps/gajim.png
 %%DATADIR%%/data/sounds/connected.wav
 %%DATADIR%%/data/sounds/disconnected.wav
 %%DATADIR%%/data/sounds/message1.wav
 %%DATADIR%%/data/sounds/message2.wav
 %%DATADIR%%/data/sounds/sent.wav
+%%DATADIR%%/po/bg/LC_MESSAGES/gajim.mo
+%%DATADIR%%/po/de/LC_MESSAGES/gajim.mo
 %%DATADIR%%/po/el/LC_MESSAGES/gajim.mo
+%%DATADIR%%/po/es/LC_MESSAGES/gajim.mo
 %%DATADIR%%/po/fr/LC_MESSAGES/gajim.mo
 %%DATADIR%%/po/pl/LC_MESSAGES/gajim.mo
 %%DATADIR%%/po/pt/LC_MESSAGES/gajim.mo
+%%DATADIR%%/po/ru/LC_MESSAGES/gajim.mo
 %%DATADIR%%/src/advanced.py
 %%DATADIR%%/src/cell_renderer_image.py
 %%DATADIR%%/src/chat.py
 %%DATADIR%%/src/check_for_new_version.py
 %%DATADIR%%/src/common/GnuPG.py
+%%DATADIR%%/src/common/GnuPGInterface.py
 %%DATADIR%%/src/common/__init__.py
 %%DATADIR%%/src/common/config.py
 %%DATADIR%%/src/common/connection.py
@@ -196,7 +224,7 @@ bin/gajim
 %%DATADIR%%/src/tabbed_chat_window.py
 %%DATADIR%%/src/vcard.py
 share/applications/gajim.desktop
-
+share/pixmaps/gajim.png
 @dirrm lib/gajim
 @dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common
@@ -208,21 +236,32 @@ share/applications/gajim.desktop
 @dirrm %%DATADIR%%/data/iconsets/transports/aim
 @dirrm %%DATADIR%%/data/iconsets/transports/gadugadu
 @dirrm %%DATADIR%%/data/iconsets/transports/icq
+@dirrm %%DATADIR%%/data/iconsets/transports/irc
 @dirrm %%DATADIR%%/data/iconsets/transports/msn
+@dirrm %%DATADIR%%/data/iconsets/transports/sms
 @dirrm %%DATADIR%%/data/iconsets/transports/yahoo
 @dirrm %%DATADIR%%/data/iconsets/transports
 @dirrm %%DATADIR%%/data/iconsets
 @dirrm %%DATADIR%%/data/pixmaps
 @dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/po/bg/LC_MESSAGES/
+@dirrm %%DATADIR%%/po/bg
+@dirrm %%DATADIR%%/po/de/LC_MESSAGES/
+@dirrm %%DATADIR%%/po/de
 @dirrm %%DATADIR%%/po/el/LC_MESSAGES/
 @dirrm %%DATADIR%%/po/el
+@dirrm %%DATADIR%%/po/es/LC_MESSAGES/
+@dirrm %%DATADIR%%/po/es
 @dirrm %%DATADIR%%/po/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/po/fr
 @dirrm %%DATADIR%%/po/pl/LC_MESSAGES
 @dirrm %%DATADIR%%/po/pl
 @dirrm %%DATADIR%%/po/pt/LC_MESSAGES
 @dirrm %%DATADIR%%/po/pt
+@dirrm %%DATADIR%%/po/ru/LC_MESSAGES/
+@dirrm %%DATADIR%%/po/ru
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%
 @unexec rmdir %D/share/applications > /dev/null 2>&1 | true
+@unexec rmdir %D/share/pixmaps > /dev/null 2>&1 | true
