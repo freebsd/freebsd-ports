@@ -2,8 +2,10 @@
 %%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmail.sh
 %%LDAP%%bin/auth_imap
 %%LDAP%%bin/auth_pop
+%%LDAP%%bin/auth_smtp
 bin/bouncesaying
 bin/condredirect
+%%LDAP%%bin/condwrite
 bin/datemail
 %%LDAP%%bin/digest
 bin/elq
@@ -23,8 +25,11 @@ bin/qail
 bin/qbiff
 %%SPAMCONTROL%%bin/qmail-badloadertypes
 %%SPAMCONTROL%%bin/qmail-badmimetypes
+%%LDAP%%bin/qmail-cdb
 bin/qmail-clean
+%%LDAP%%bin/qmail-forward
 bin/qmail-getpw
+%%LDAP%%bin/qmail-group
 bin/qmail-inject
 %%LDAP%%bin/qmail-ldaplookup
 bin/qmail-local
@@ -45,28 +50,46 @@ bin/qmail-queue
 bin/qmail-remote
 %%LDAP%%bin/qmail-reply
 bin/qmail-rspawn
+%%LDAP%%bin/qmail-secretary
 bin/qmail-send
 bin/qmail-showctl
 bin/qmail-smtpd
 bin/qmail-start
 bin/qmail-tcpok
 bin/qmail-tcpto
+%%LDAP%%bin/qmail-verify
 bin/qreceipt
 bin/qsmhook
 bin/sendmail
 bin/splogger
 bin/tcp-env
-boot/binm1
-boot/binm1+df
-boot/binm2
-boot/binm2+df
-boot/binm3
-boot/binm3+df
-boot/home
-boot/home+df
-boot/maildir
-boot/proc
-boot/proc+df
+%%NOT_LDAP%%boot/binm1
+%%NOT_LDAP%%boot/binm1+df
+%%NOT_LDAP%%boot/binm2
+%%NOT_LDAP%%boot/binm2+df
+%%NOT_LDAP%%boot/binm3
+%%NOT_LDAP%%boot/binm3+df
+%%NOT_LDAP%%boot/home
+%%NOT_LDAP%%boot/home+df
+%%NOT_LDAP%%boot/maildir
+%%NOT_LDAP%%boot/proc
+%%NOT_LDAP%%boot/proc+df
+%%LDAP%%boot/qmail/log/run
+%%LDAP%%boot/qmail/run
+%%LDAP%%boot/qmail-smtpd/log/run
+%%LDAP%%boot/qmail-smtpd/run
+%%LDAP%%boot/qmail-qmqpd/log/run
+%%LDAP%%boot/qmail-qmqpd/run
+%%LDAP%%boot/qmail-pop3d/log/run
+%%LDAP%%boot/qmail-pop3d/run
+%%LDAP%%boot/qmail-imapd/log/run
+%%LDAP%%boot/qmail-imapd/run
+%%LDAP%%boot/qmail-pop3d-ssl/log/run
+%%LDAP%%boot/qmail-pop3d-ssl/run
+%%LDAP%%boot/qmail-imapd-ssl/log/run
+%%LDAP%%boot/qmail-imapd-ssl/run
+%%LDAP%%boot/qmail-pbsdbd/log/run
+%%LDAP%%boot/qmail-pbsdbd/run
 @comment This port installs the following manually (ie. not through qmail-hier)
 configure/config
 configure/config-fast
@@ -86,6 +109,7 @@ scripts/mkaliasdir
 %%PORTDOCS%%%%DOCSDIR%%/BLURB2
 %%PORTDOCS%%%%DOCSDIR%%/BLURB3
 %%PORTDOCS%%%%DOCSDIR%%/BLURB4
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/EXTTODO
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/FILES.spamcontrol
 %%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/HISTORY.spamcontrol
@@ -113,6 +137,7 @@ scripts/mkaliasdir
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/POPBEFORESMTP
 %%PORTDOCS%%%%DOCSDIR%%/PORT_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/PORT_NOTES_FreeBSD_40-RELEASE
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPGROUP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPINSTALL
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPNEWS
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/QLDAPPICTURE
@@ -151,9 +176,43 @@ scripts/mkaliasdir
 %%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/conf-spamcontrol
 %%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/install_spamcontrol.sh
 %%PORTDOCS%%%%DOCSDIR%%/mailer.conf.sample
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/qmail.schema
 %%SPAMCONTROL%%%%PORTDOCS%%%%DOCSDIR%%/tarpitcount
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm bin
+%%LDAP%%@dirrm boot/qmail/env
+%%LDAP%%@dirrm boot/qmail/log
+%%LDAP%%@dirrm boot/qmail-smtpd/env
+%%LDAP%%@dirrm boot/qmail-smtpd/log
+%%LDAP%%@dirrm boot/qmail-smtpd
+%%LDAP%%@dirrm boot/qmail-qmqpd/env
+%%LDAP%%@dirrm boot/qmail-qmqpd/log
+%%LDAP%%@dirrm boot/qmail-qmqpd
+%%LDAP%%@dirrm boot/qmail-pop3d/env
+%%LDAP%%@dirrm boot/qmail-pop3d/log
+%%LDAP%%@dirrm boot/qmail-pop3d
+%%LDAP%%@dirrm boot/qmail-imapd/env
+%%LDAP%%@dirrm boot/qmail-imapd/log
+%%LDAP%%@dirrm boot/qmail-imapd
+%%LDAP%%@dirrm boot/qmail-pop3d-ssl/env
+%%LDAP%%@dirrm boot/qmail-pop3d-ssl/log
+%%LDAP%%@dirrm boot/qmail-pop3d-ssl
+%%LDAP%%@dirrm boot/qmail-imapd-ssl/env
+%%LDAP%%@dirrm boot/qmail-imapd-ssl/log
+%%LDAP%%@dirrm boot/qmail-imapd-ssl
+%%LDAP%%@dirrm boot/qmail-pbsdbd/env
+%%LDAP%%@dirrm boot/qmail-pbsdbd/log
+%%LDAP%%@dirrm boot/qmail-pbsdbd
+%%LDAP%%@dirrm boot/qmail
+%%LDAP%%@dirrm log/qmail
+%%LDAP%%@dirrm log/qmail-smtpd
+%%LDAP%%@dirrm log/qmail-qmqpd
+%%LDAP%%@dirrm log/qmail-pop3d
+%%LDAP%%@dirrm log/qmail-imapd
+%%LDAP%%@dirrm log/qmail-pop3d-ssl
+%%LDAP%%@dirrm log/qmail-imapd-ssl
+%%LDAP%%@dirrm log/qmail-pbsdbd
+%%LDAP%%@dirrm log
 @dirrm boot
 @dirrm configure
 @dirrm scripts

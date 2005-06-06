@@ -22,6 +22,7 @@ DIST_SUBDIR=	qmail
     defined(SLAVE_MYSQL)
 BARRIER_MAILDIRQUOTA_PATCH=	yes
 BARRIER_BLOCKEXEC_PATCH=	yes
+BARRIER_QMAILQUEUE_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -30,6 +31,9 @@ BARRIER_DNS_PATCH=		yes
 BARRIER_BIG_CONCURRENCY_PATCH=	yes
 BARRIER_QMTPC_PATCH=		yes
 BARRIER_DISCBOUNCES_PATCH=	yes
+BARRIER_SENDMAIL_F_PATCH=	yes
+BARRIER_BIG_TODO_PATCH=		yes
+BARRIER_LOCALTIME_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -38,17 +42,6 @@ BARRIER_DISCBOUNCES_PATCH=	yes
     defined(SLAVE_TLS)
 BARRIER_OUTGOINGIP_PATCH=	yes
 BARRIER_RFC2821_PATCH=		yes
-.endif
-
-.if defined(SLAVE_MYSQL) || \
-    defined(SLAVE_SPAMCONTROL)
-BARRIER_QMAILQUEUE_PATCH=	yes
-.endif
-
-.if defined(SLAVE_SPAMCONTROL)
-BARRIER_SENDMAIL_F_PATCH=	yes
-BARRIER_BIG_TODO_PATCH=		yes
-BARRIER_LOCALTIME_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -87,6 +80,7 @@ PATCHFILES+=	patch-qmail-1.03-rfc2821.diff:rfc2821
 .if defined(SLAVE_LDAP)
 PATCH_SITES+=	http://www.nrg4u.com/qmail/:ldap
 PATCHFILES+=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz:ldap
+PATCH_DIST_STRIP+=	-p1
 .elif defined(SLAVE_MYSQL)
 PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
@@ -169,7 +163,11 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		MOREIPME	"Additional control files moreipme & notipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off
 .endif
+.if !defined(SLAVE_LDAP)
 OPTIONS+=	RCDLINK "create rc.d/qmail.sh" on
+.else
+WITHOUT_RCDLINK=	yes
+.endif
 
 ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
@@ -202,9 +200,9 @@ PLIST_SUB+=	README_AUTH="@comment "
 
 .if defined(SLAVE_LDAP)
 PKGMESSAGE_SUFFIX=	-ldap
-PLIST_SUB+=	LDAP=""
+PLIST_SUB+=	LDAP="" NOT_LDAP="@comment "
 .else
-PLIST_SUB+=	LDAP="@comment "
+PLIST_SUB+=	LDAP="@comment " NOT_LDAP=""
 .endif
 
 .if defined(SLAVE_SMTP_AUTH_TLS)
@@ -254,7 +252,8 @@ DOCFILES+=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 .if defined(SLAVE_LDAP)
 DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
 		${WRKSRC}/POPBEFORESMTP ${WRKSRC}/QLDAPTODO \
-		${WRKSRC}/QLDAPPICTURE
+		${WRKSRC}/QLDAPPICTURE ${WRKSRC}/QLDAPGROUP \
+		${WRKSRC}/EXTTODO ${WRKSRC}/qmail.schema
 .elif defined(SLAVE_SMTP_AUTH_TLS)
 DOCFILES+=	${WRKDIR}/SMTP_AUTH+TLS.readme \
 		${WRKSRC}/README.auth
@@ -281,8 +280,10 @@ SCRIPTS+=	qmail-alias2recipients qmail-pwd2recipients \
 		qmail-users2recipients qmail-vpopmail2recipients
 .endif
 
+.if !defined(SLAVE_LDAP)
 BOOTFILES=	home home+df proc proc+df binm1 binm1+df \
 		binm2 binm2+df binm3 binm3+df maildir
+.endif
 
 CONFIGUREPROGS=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
 		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
@@ -296,6 +297,15 @@ NO_MTREE=	yes
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if defined(SLAVE_LDAP)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}2
+
+.if !defined(WITHOUT_TLS)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-with_tls
+USE_OPENSSL=	yes
+.endif
+.endif
 
 .if (defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)) &&\
     (defined(WITH_QMTPC_PATCH)      && !defined(BARRIER_QMTPC_PATCH))
@@ -465,7 +475,7 @@ post-patch:
 			   s|LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" \
 		${WRKSRC}/Makefile
 .if !defined(WITHOUT_TLS)
-	@${REINPLACE_CMD} "s|#TLSON=|TLSON=|; \
+	@${REINPLACE_CMD} "s|#TLS=|TLS=|; \
 			   s|#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|; \
 			   s|#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|; \
 			   s|#OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" \
@@ -510,6 +520,9 @@ do-configure:
 		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+.if defined(SLAVE_LDAP)
+	@${REINPLACE_CMD} 's|^cc |cc -lcrypt |' ${WRKSRC}/conf-ld ${WRKSRC}/conf-cc
+.endif
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
 	&& !defined(BARRIER_BIG_CONCURRENCY_PATCH) \

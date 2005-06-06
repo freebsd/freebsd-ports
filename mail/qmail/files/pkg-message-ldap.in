@@ -11,6 +11,9 @@ Do not forget to read %%PREFIX%%/doc/QLDAPINSTALL. After all,
 this is NOT our old stock qmail. And, %%PREFIX%%/doc/ANTISPAM
 for some antispam control measures.
 
+The qmail.schema file was copied to %%DOCSDIR%%. Remember
+to copy it to ldap's schema directory
+
 You can enable qmail as your default mailer executing:
 > %%PREFIX%%/scripts/enable-qmail
 
