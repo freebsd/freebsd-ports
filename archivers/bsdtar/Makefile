@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	New tar archiver from FreeBSD 5.3
+COMMENT=	A utility to create and manipulate streaming archive files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libarchive.a:${PORTSDIR}/archivers/libarchive
 
