@@ -1175,6 +1175,7 @@ colortail	ports/misc/colortail
 columns		ports/games/columns
 comclear	ports/www/comclear
 comconsole	ports/sysutils/comconsole
+comical		ports/graphics/comical
 commoncpp	ports/devel/commoncpp
 compaq-cc	ports/lang/compaq-cc
 compat22	ports/misc/compat22
