@@ -5667,6 +5667,7 @@ lynx-ssl	ports/www/lynx-ssl
 lyx		ports/print/lyx
 lzma		ports/archivers/lzma
 lzo		ports/archivers/lzo
+lzo2		ports/archivers/lzo2
 lzop		ports/archivers/lzop
 m17n-db		ports/devel/m17n-db
 m17n-docs	ports/devel/m17n-docs
