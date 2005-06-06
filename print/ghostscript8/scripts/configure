@@ -50,6 +50,7 @@ else
 		laserjet ljetplus ljet2p ljet3 ljet3d ljet4 ljet4d lj4dith \
 		cljet5 cljet5c cljet5pr lj5mono lj5gray \
 		pj pjetxl pjxl paintjet \
+		pcl3 \
 		pjxl300 pxlmono pxlcolor \
 		ijs ibmpro jetp3852 imagen fs600 lxm5700m \
 		lxm3200 lx5000 lex2050 lex3200 lex5700 lex7000 \
@@ -240,6 +241,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pjxl"     "HP PaintJet XL color printer" "$status_pjxl" \
   "paintjet" "HP PaintJet color printer (alternate)" "$status_paintjet" \
   "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" "$status_pjxl300" \
+  "pcl3"     "HP PCL 3 (generic) [PCL3]" "$status_pcl3" \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" "$status_pxlmono" \
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" "$status_pxlcolor" \
   "ijs"      "HP Inkjet and other raster devices" "$status_ijs" \

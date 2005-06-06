@@ -12,6 +12,7 @@ PORTEPOCH=	${GS_EPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
+		http://home.vrweb.de/~martin.lottermoser/pcl3dist/:pcl3 \
 		http://www.harsch.net/Download/:dj970 \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
@@ -29,6 +30,7 @@ MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 PKGNAMESUFFIX=	-gpl
 DISTFILES=	${GS_SRCS}:gs_srcs \
 		${HP8XX_SRCS}:hp8xx \
+		${PCL3_SRCS}:pcl3 \
 		${DJ970_SRCS}:dj970 \
 		${MD2K_SRCS}:md2k \
 		${ALPS_SRCS}:ports_jp_gs \
@@ -59,6 +61,9 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"
+ALL_TARGET=	all
+INSTALL_TARGET=	install
+
 PLIST_SUB=	GS_VERSION="${GS_VERSION}" \
 		CIDFONTDIR=${CIDFONTDIR}
 
@@ -121,6 +126,19 @@ CIDFONTDIR=	${PREFIX}/share/ghostscript/${GS_VERSION}/Resource
 HP8XX=		cdj880
 HP8XX_SRCS=	gdevcd8.tar.gz
 
+# PCL3 (hpdj successor now in RELEASE quality)
+# additional driver for HP PCL3 printers, by Martin Lottermoser
+# http://home.vrweb.de/martin.lottermoser/pcl3.html
+ALL_TARGET+=	pcl3opts
+INSTALL_TARGET+=	pcl3-install
+PCL3=		pcl3
+PCL3_VERS=	3.3
+PCL3_NAME=	${PCL3}-${PCL3_VERS}
+PCL3_SRCS=	${PCL3_NAME}.tar.gz
+PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
+MAN1+=		${PCL3_MAN1}
+
+#
 # DJ970 - additional driver for HP DeskJet 970, supports duplex printing
 # http://www.harsch.net/Ghostscript/ghostscript.html
 DJ970=		gdevdj9
@@ -230,6 +248,12 @@ post-extract:
 # for HP8XX driver
 	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_SRCS}
+# for PCL3 driver
+	${ECHO_MSG} ">>>   extracting ${PCL3_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PCL3_SRCS}
+	${LN} -sf ${PCL3_NAME} ${WRKSRC}/${PCL3}
+	${TAR} -C ${WRKSRC}/${PCL3_NAME} -xf \
+		${WRKSRC}/${PCL3_NAME}/${PCL3}.tar
 # for DJ970 driver
 	${ECHO_MSG} ">>>   extracting ${DJ970_SRCS} ..."
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DJ970_SRCS} ${WRKSRC}/src
@@ -300,6 +324,10 @@ pre-configure:
 # for HP8XX driver
 	${ECHO_MSG} ">>>   adding ${HP8XX} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/cdj850.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for PCL3 driver
+	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-7.00.add \
 		>> ${WRKSRC}/src/contrib.mak
 # for DJ970 driver
 	${ECHO_MSG} ">>>   adding ${DJ970} driver to contrib.mak ..."
@@ -447,6 +475,18 @@ post-install:
 .else
 	${STRIP_CMD} ${PREFIX}/bin/gs
 .endif
+# for PCL3 driver, stuff which might be interesting for runtime
+	${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
+	${MKDIR} ${DATADIR}/${GS_VERSION}/${PCL3}
+	${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
+.for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
+	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
+	ps/margins-A4Rotated.ps ps/margins-Env10Rotated.ps \
+	ps/margins-EnvDLRotated.ps ps/margins-Letter.ps \
+	ps/margins-LetterRotated.ps
+	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
+		${DATADIR}/${GS_VERSION}/${PCL3}
+.endfor
 # for EPAG driver
 	${ECHO_MSG} ">>>   installing ${EPAG} utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
@@ -462,6 +502,13 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}
+# for PCL3 driver
+	${ECHO_MSG} ">>>   installing ${PCL3} docs ..."
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${PCL3}
+.for i in NEWS doc/how-to-report.txt
+	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
+		${DOCSDIR}/${GS_VERSION}/${PCL3}
+.endfor
 # for MD2K driver
 	${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${MD2K}

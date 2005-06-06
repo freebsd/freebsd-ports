@@ -7,6 +7,8 @@ Public License, which allows free use, and free copying and redistribution
 under certain conditions (including, in some cases, commercial distribution).
 
 This port includes add-on packages (not part of the official gs release)
+	o PCL driver for HP DeskJet printers
+	  - http://home.vrweb.de/~martin.lottermoser/pcl3.html
 	o HP2200 driver for HP DeskJet 8xx and Business Inkjet 2200
 	  - http://hp.sourceforge.net/gs-hp2200.php
 	o DJ970 driver for HP DeskJet 970CXi
