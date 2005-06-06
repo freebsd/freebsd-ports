@@ -3,7 +3,7 @@
 
     %%PREFIX%%/%%PLADIR%%
 
-Please edit config.php and edit to suit your needs.
+Please edit config.php to suit your needs.
 
 To make phpLDAPadmin available through your web site, 
 I suggest that you add the following to httpd.conf:
