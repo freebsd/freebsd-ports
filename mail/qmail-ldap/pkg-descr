@@ -1,23 +1,24 @@
-What is is:
-
- A patch to stock qmail-1.03 to get all user account information
- from an LDAP database. It primary target are POP toaster with
- huge numbers of users (from thousands up to millions).
+A patch to stock qmail-1.03 to get all user account information
+from an LDAP database. It primary target are POP toaster with
+huge numbers of users (from thousands up to millions).
 
 Some of it's greatest features:
 
- - Users and virtual domains in an LDAP database
- - No local accounts needed
- - Perfect for ISP's to build POP toasters
- - Native mail server clustering
- - Supports size quotas on user maildirs and mbox
- - Automatic creation of home- and maildir's
- - Handles replies with new qmail-reply
- - Extensive logging in qmail-smtpd and qmail-pop3d
- - Supports tarpitting (based on a patch by Chris Johnson)
- - Supports OpenLDAP 1.2.X and Mozilla Directory SDK
- - Includes Antispam-Features (based on a patch by Lindsay Haisley,
-   Rask Lambertsen and Lionel Widdifield)
- [snip]
+    * Users and virtual domains in an LDAP database
+    * No local accounts needed
+    * Perfect for ISP's to build POP toasters
+    * Native mail server clustering
+    * Supports size quotas on user maildirs
+    * Automatic creation of home- and maildir's
+    * Handles replies with new qmail-reply
+    * Extensive logging in qmail-smtpd and qmail-pop3d
+    * Supports tarpitting (based on a patch by Chris Johnson)
+    * Supports OpenLDAP 2.x, Novell NDS
+    * Includes extensive Antispam-Features
+    * Supports automatic maildir creation when the first mail arrives
+    * Support for SHA, SSHA, MD5, SMD5, MD4 and RIPE-MD160
+    * Support for NS-MTA-MD5 encrypted passwords used by Netscape Mailserver
+    * It also supports the password format used by Software.com's Post.Office
+    * Support TLS (SSL) encrytion of SMTP mail transport (by Frederik Vermeulen)
 
 WWW: http://www.nrg4u.com/
