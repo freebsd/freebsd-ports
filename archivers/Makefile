@@ -38,6 +38,7 @@
     SUBDIR += libmspack
     SUBDIR += lzma
     SUBDIR += lzo
+    SUBDIR += lzo2
     SUBDIR += lzop
     SUBDIR += macutils
     SUBDIR += makeself
