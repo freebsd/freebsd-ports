@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -23,7 +23,7 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
 		LDAP "Use LDAP authentication" off
 
 PORT_DBDIR?=	/var/db/ports
-NO_LATEST_LINK=	yes
+LASTEST_LINK=	${PORTNAME}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
 .if exists(${OPTIONSFILE})
