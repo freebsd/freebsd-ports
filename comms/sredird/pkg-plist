@@ -1,4 +1,0 @@
-libexec/sredird
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
