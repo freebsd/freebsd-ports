@@ -1,6 +1,14 @@
 --- lib/Kwiki/Notify/Mail.pm.orig	Tue Jan 25 20:49:23 2005
-+++ lib/Kwiki/Notify/Mail.pm	Sat Jun  4 14:21:01 2005
-@@ -26,6 +26,37 @@
++++ lib/Kwiki/Notify/Mail.pm	Mon Jun  6 11:19:17 2005
+@@ -6,6 +6,7 @@
+ use Kwiki::Plugin '-Base';
+ use mixin 'Kwiki::Installer';
+ use MIME::Lite;
++use CGI;
+ 
+ our $VERSION = '0.03';
+ 
+@@ -26,26 +27,82 @@
  		  );
  }
  
@@ -37,13 +45,20 @@
 +
  sub notify {
      my $hook = pop;
-     my $page = shift;
-@@ -36,16 +67,19 @@
- 
+-    my $page = shift;
++    my $page = $self->hub->edit->pages->current;
+     my $notify_mail_obj = $self->hub->load_class('notify_mail');
+-
+-    my $meta_data = $self->hub->edit->pages->current->metadata;
++    my $meta_data = $page->metadata;
+     my $site_title = $self->hub->config->site_title;
+-
      my $edited_by   = $meta_data->{edit_by}                || 'unknown name';
      my $page_name   = $meta_data->{id}                     || 'unknown page';
 -    my $to          = $notify_mail_obj->config->notify_mail_to   || 'unknown@unknown';
 +    my $to          = $notify_mail_obj->recipient_list();
++    return $self unless $to;
++
      my $from        = $notify_mail_obj->config->notify_mail_from || 'unknown';
      my $subject     = sprintf($notify_mail_obj->config->notify_mail_subject,
  			      $site_title,
@@ -52,15 +67,54 @@
 +    $subject =~ s/\$1/$site_title/g;
 +    $subject =~ s/\$2/$page_name/g;
 +    $subject =~ s/\$3/$edited_by/g;
++
++    my $body;
++
++    my $revs = $self->revision_numbers;
++    if ($#$revs > 0) {
++	$body = "$site_title page $page_name edited by $edited_by\n\n";
++
++	$body .= "See " . CGI::url() . "?action=diff&page_name=" . $page_name .
++	    "&revision_id=" . $revs->[1] . "\n\n"
++	    if $self->hub->have_plugin('diff');
++
++	if ($notify_mail_obj->config->notify_mail_inline_diff) {
++	    my $oldname = $self->file_path . ".rev-" . $revs->[1];
++	    open (OLD, ">", $oldname);
++	    print OLD $self->hub->archive->fetch($page, $revs->[1]);
++	    close OLD;
++	    $body .= "Diffs are as follows:\n\n";
++	    $body .= io("/usr/bin/diff -u $oldname " . $self->file_path .
++		" |")->utf8->all;
++	    unlink $oldname;
++	}
++    } else {
++	$body = "$site_title page $page_name created by $edited_by";
++    }
  
-     my $body        = "$site_title page $page_name edited by $edited_by\n";
- 
+-    my $body        = "$site_title page $page_name edited by $edited_by\n";
+-
 -    $notify_mail_obj->mail_it($to,$from,$subject,$body);
 +    $notify_mail_obj->mail_it($to,$from,$subject,$body) if $to;
      return $self;
  }
  
-@@ -121,7 +155,22 @@
+@@ -96,9 +153,11 @@
+ 
+ =head1 DESCRIPTION
+ 
+-This module allows you to notify yourself by email when some one
+-updates a page.  You can specify the To:, From: and Subject: headers,
+-but the email message body is not currently configurable.
++This module allows you to notify people by email when a page is updated.
++You can specify the To:, From: and Subject: headers, and the mail body
++may include unified diffs.  Furthermore, if the Kwiki::Diff module is
++installed, a link to an sdiff of the changes is also provided in the
++mail body.
+ 
+ A sample email looks like: 
+ 
+@@ -121,7 +180,27 @@
  
  =item * notify_mail_to
  
@@ -81,10 +135,15 @@
 +    HomePage: me@my.domain.com
 +    .*: bigmailbox@my.domain.com
 +    Doc.*: docs@my.domain.com me@my.domain.com
++
++=item * notify_mail_inline_diff
++
++Specify whether inline unified diffs should be added to the mail body.  The
++default is 1 -- diffs are included.
  
  =item * notify_mail_from
  
-@@ -131,9 +180,10 @@
+@@ -131,9 +210,10 @@
  
  Specify a subject line for the mail message.  You can make use of
  sprintf()-type formatting codes (%s is the only one that is relevant).
@@ -98,7 +157,7 @@
  
  Examples:
  
-@@ -168,8 +218,16 @@
+@@ -168,8 +248,16 @@
   Subject: My wiki ProjectDiscussion page NextWeeksAgenda was updated
   by PointyHairedBoss
  
@@ -117,7 +176,7 @@
  
   notify_mail_subject: %s wiki page %s updated by %s
  
-@@ -194,9 +252,6 @@
+@@ -194,9 +282,6 @@
  
  =head1 BUGS
  
@@ -127,13 +186,14 @@
  The debug file is saved to /tmp and should be user configurable.  This
  module was not tested under Windows and certainly /tmp doesn't exist
  there.
-@@ -215,7 +270,8 @@
+@@ -215,7 +300,9 @@
  
  =cut
  __config/notify_mail.yaml__
 -notify_mail_to: nobody@nobody.abc
 +notify_mail_to:
 +notify_mail_topic: NotifyMail
++notify_mail_inline_diff: 1
  notify_mail_from: nobody
  notify_mail_subject: %s wiki page %s updated by %s
  notify_mail_debug: 0
