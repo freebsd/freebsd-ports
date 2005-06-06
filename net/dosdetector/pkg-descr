@@ -1,0 +1,10 @@
+DoSDetector analyzes and detects suspicious IP traffic and alerts about it.
+It can detect worm traffic, SYN flood, icmp flood, udp flood attacks and more.
+
+It's configurable via a rule set; when an IP exceeds the score limit,
+DoSDetector prints a warning.
+
+WWW: http://darkzone.ma.cx/resources/unix/dosdetector/
+
+- msciciel
+msciciel@darkzone.ma.cx
