@@ -1,0 +1,19 @@
+--- Makefile.orig	Mon Jun  6 02:49:25 2005
++++ Makefile	Mon Jun  6 02:49:41 2005
+@@ -2,7 +2,6 @@
+ #EXEC=bsflite.exe
+ #CC=i386-pc-msdosdjgpp-gcc
+ #CC=mingw32-gcc
+-CC=gcc
+ #
+ # Remove -DTIMESTAMPS to remove timestamps on messages/events
+ #
+@@ -18,7 +17,7 @@
+ # Add -DBELL_ON_INCOMING to sound an alert when a message
+ # 	comes in.
+ # 	
+-CFLAGS=-O -DTIMESTAMPS
++CFLAGS+=-DTIMESTAMPS
+ #CFLAGS+=-I/usr/local/djgpp/watt/inc
+ #
+ # Add -lsocket -lnsl for Solaris

@@ -55,6 +55,7 @@
     SUBDIR += bounce
     SUBDIR += brutecopy
     SUBDIR += bsdproxy
+    SUBDIR += bsflite
     SUBDIR += btqueue
     SUBDIR += c3270
     SUBDIR += cacti
