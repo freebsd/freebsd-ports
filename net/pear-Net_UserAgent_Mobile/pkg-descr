@@ -1,0 +1,8 @@
+Net_UserAgent_Mobile parses HTTP_USER_AGENT strings of (mainly Japanese)
+mobile HTTP user agents. It'll be useful in page dispatching by user agents.
+This package was ported from Perl's HTTP::MobileAgent.
+See http://search.cpan.org/search?mode=module&query=HTTP-MobileAgent
+The author of the HTTP::MobileAgent module is
+Tatsuhiko Miyagawa <miyagawa@bulknews.net>
+
+WWW: http://pear.php.net/package/Net_UserAgent_Mobile/
