@@ -1,0 +1,11 @@
+--- lib/Kwiki/Edit/RequireUserName.pm.orig	Mon Jun  6 12:28:29 2005
++++ lib/Kwiki/Edit/RequireUserName.pm	Mon Jun  6 12:34:42 2005
+@@ -30,7 +30,7 @@
+ 
+ sub have_UserName {
+   my $current_name   = $self->hub->users->current->name ||
+-    die "Can't determine current UserName";
++    return undef;
+   my $anonymous_name = $self->config->user_default_name ||
+     die "Can't determine local name of anonymous user";  # set in
+                                                          # config/user.yaml

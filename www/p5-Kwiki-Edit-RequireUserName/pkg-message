@@ -1,0 +1,13 @@
+/* ================================================================= */
+Note: 
+	Kwiki-Edit-RequireUserName plugin installed! Now you should add
+	to your kwiki from your kwiki installation directory:
+
+$ cd cgi-bin/my-kwiki
+$ kwiki -add Kwiki::Edit::UserName
+$ kwiki -add Kwiki::Edit::UserPreferences
+$ kwiki -add Kwiki::Edit::RequireUserName
+
+	(Always) perldoc Kwiki::Edit::RequireUserName for details.
+
+/* ================================================================= */
