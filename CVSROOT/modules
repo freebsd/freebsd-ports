@@ -12621,6 +12621,7 @@ xmlwrapp	ports/textproc/xmlwrapp
 xmmix		ports/audio/xmmix
 xmms		ports/multimedia/xmms
 xmms-a52dec	ports/audio/xmms-a52dec
+xmms-ahx	ports/audio/xmms-ahx
 xmms-alarm	ports/x11-clocks/xmms-alarm
 xmms-arts_output	ports/audio/xmms-arts_output
 xmms-audiofile	ports/audio/xmms-audiofile
