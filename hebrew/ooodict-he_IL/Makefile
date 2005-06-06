@@ -8,6 +8,7 @@
 #
 
 COMMENT=	Hebrew (Israel) MySpell dictionary for OpenOffice.org
+CATEGORIES=	hebrew
 
 LANGPREFIX=	he
 LANGSUFFIX=	IL
