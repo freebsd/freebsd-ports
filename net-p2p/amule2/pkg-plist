@@ -41,19 +41,19 @@ share/locale/sl/LC_MESSAGES/amule.mo
 @unexec rmdir %D/share/locale/et_EE 2>/dev/null || true
 @unexec rmdir %D/share/locale/it_CH/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/it_CH 2>/dev/null || true
-share/gnome/doc/aMule-2.0.1/ABOUT-NLS
-share/gnome/doc/aMule-2.0.1/amulesig.txt
-share/gnome/doc/aMule-2.0.1/amule-win32.HOWTO.txt
-share/gnome/doc/aMule-2.0.1/Changelog
-share/gnome/doc/aMule-2.0.1/Doxyfile
-share/gnome/doc/aMule-2.0.1/ED2K-Links.HOWTO
-share/gnome/doc/aMule-2.0.1/INSTALL
-share/gnome/doc/aMule-2.0.1/license.txt
-share/gnome/doc/aMule-2.0.1/README
-share/gnome/doc/aMule-2.0.1/TODO
-share/gnome/doc/aMule-2.0.1/EC_Protocol.txt
-share/gnome/doc/aMule-2.0.1/socks4.protocol
-@unexec rmdir %D/share/gnome/doc/aMule-2.0.1 2>/dev/null || true
+share/gnome/doc/aMule-2.0.2/ABOUT-NLS
+share/gnome/doc/aMule-2.0.2/amulesig.txt
+share/gnome/doc/aMule-2.0.2/amule-win32.HOWTO.txt
+share/gnome/doc/aMule-2.0.2/Changelog
+share/gnome/doc/aMule-2.0.2/Doxyfile
+share/gnome/doc/aMule-2.0.2/ED2K-Links.HOWTO
+share/gnome/doc/aMule-2.0.2/INSTALL
+share/gnome/doc/aMule-2.0.2/license.txt
+share/gnome/doc/aMule-2.0.2/README
+share/gnome/doc/aMule-2.0.2/TODO
+share/gnome/doc/aMule-2.0.2/EC_Protocol.txt
+share/gnome/doc/aMule-2.0.2/socks4.protocol
+@unexec rmdir %D/share/gnome/doc/aMule-2.0.2 2>/dev/null || true
 @unexec rmdir %D/share/gnome/doc 2>/dev/null || true
 %%PL_CAS%%share/gnome/cas/tmp.html
 %%PL_CAS%%share/gnome/cas/stat.png
@@ -78,7 +78,6 @@ share/gnome/applications/amule.desktop
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue4.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue5.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue6.gif
-%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/blue.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_download.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_kad.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/cp_search.gif
@@ -94,19 +93,66 @@ share/gnome/applications/amule.desktop
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_down.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_ed2klink.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_info.gif
-%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/log.gif
-%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/logo.jpg
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_pause.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_resume.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/l_up.gif
-%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/main_bg.gif
-%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/main_top_bg.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/log.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/logo.jpg
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/red.gif
-%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/top_bar_bg2.gif
-%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/top_bar_bg.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/transparent.gif
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/default/yellow.gif
 %%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver/default 2>/dev/null || true
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/aMule.tmpl
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/add_server.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/arrow_down.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/arrow_down_logout.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/arrow_right.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/arrow_up.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/back.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/black.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/blank1x1.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/blue1.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/blue2.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/blue3.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/blue4.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/blue5.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/blue6.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/cp_download.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/cp_kad.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/cp_search.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/cp_servers.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/cp_settings.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/cp_shared.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/log.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/cp_stats.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/emule.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/green.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/greenpercent.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_cancel.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_connect.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_down.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_ed2klink.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_info.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_pause.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_resume.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/l_up.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login_bottom.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login_downmain.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login_lefttop.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login_righttop.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login_top.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login_topdown.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login_topseperator.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/logo.jpg
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/main_bg.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/main_top_bg.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/main_topbar.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/main_topbardarker.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/main_topbarseperator.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/red.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/transparent.gif
+%%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/yellow.gif
+%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver/chicane 2>/dev/null || true
 %%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver 2>/dev/null || true
 %%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule 2>/dev/null || true
 lib/xchat/plugins/xas.pl
