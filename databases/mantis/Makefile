@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	0.18.2
+PORTVERSION=	1.0.0a2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mantisbt
@@ -20,11 +20,11 @@ USE_APACHE=	yes
 USE_PHP=	yes
 
 do-install:
-	${ECHO} "Installing in ${PREFIX}/www/data/mantis"
-	${MKDIR} ${PREFIX}/www/data/mantis
-	${CP} -R ${WRKSRC}/* ${PREFIX}/www/data/mantis
-	${MV} ${PREFIX}/www/data/mantis/config_inc.php.sample ${PREFIX}/www/data/mantis/config_inc.php
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/data/mantis
+	@${ECHO} "Installing in ${PREFIX}/www/mantis"
+	${MKDIR} ${PREFIX}/www/mantis
+	${CP} -R ${WRKSRC}/* ${PREFIX}/www/mantis
+	${MV} ${PREFIX}/www/mantis/config_inc.php.sample ${PREFIX}/www/mantis/config_inc.php
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/mantis
 
 post-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
