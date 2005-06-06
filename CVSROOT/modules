@@ -837,6 +837,7 @@ bsdsar		ports/sysutils/bsdsar
 bsdtar		ports/archivers/bsdtar
 bsdtris		ports/games/bsdtris
 bsfilter	ports/mail/bsfilter
+bsflite		ports/net/bsflite
 bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
 bsp		ports/games/bsp
