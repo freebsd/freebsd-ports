@@ -1,12 +1,12 @@
---- generic/itk_cmds.c	Mon Aug 28 23:58:00 2000
-+++ generic/itk_cmds.c	Sat Jul 28 08:04:49 2001
-@@ -82,3 +82,5 @@
- 
-+#ifdef USE_ITK_STUBS
- extern ItkStubs itkStubs;
-+#endif
- 
-@@ -105,6 +107,6 @@
+--- generic/itk_cmds.c.orig	Fri Jun 22 04:38:54 2001
++++ generic/itk_cmds.c	Sun Mar 13 21:46:16 2005
+@@ -111,12 +111,14 @@
+ {
+     Tcl_Namespace *itkNs, *parserNs;
+     ClientData parserInfo;
++    #ifdef USE_ITK_STUBS
+     extern ItkStubs itkStubs;
++    #endif
  
 -    if (Tcl_InitStubs(interp, "8.1", 0) == NULL) {
 +    if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL) {
@@ -15,7 +15,11 @@
 -    if (Tk_InitStubs(interp, "8.1", 0) == NULL) {
 +    if (Tk_InitStubs(interp, TK_VERSION, 0) == NULL) {
  	return TCL_ERROR;
-@@ -198,3 +200,8 @@
+     };
+     if (Itcl_InitStubs(interp, ITCL_VERSION, 1) == NULL) {
+@@ -209,7 +211,12 @@
+      *  end-of-the-line?
+      */
      if (Tcl_PkgProvideEx(interp, "Itk", ITCL_VERSION,
 -            (ClientData) &itkStubs) != TCL_OK) {
 +#ifdef USE_ITK_STUBS
@@ -25,3 +29,5 @@
 +#endif
 +		) != TCL_OK) {
  	return TCL_ERROR;
+     }
+     return TCL_OK;
