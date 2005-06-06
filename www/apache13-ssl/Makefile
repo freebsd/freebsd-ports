@@ -21,7 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
 #PATCHFILES=
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
