@@ -1,26 +1,10 @@
-************************************************************
-2 methods to install mantisbt
 
-1/ Quick method
+***********************************************************************
+*                             INSTALL PROCEDURE                       *
+***********************************************************************
 
-
--  You must choose your passwd crypt method and replace the 
-   4th value in the last line of 
-   %%PREFIX%%/www/mantis/sql/db_generate.sql
-
--  After that execute 
-   %%PREFIX%%/bin/mysql -u<username> -p<password> <databasename> < %%PREFIX%%/www/mantis/sql/db_generate.sql
-
--  Edit 
-   %%PREFIX%%/www/mantis/config_inc.php and %%PREFIX%%/www/mantis/default/config_inc1.php
-
-IMPORTANT!!!! :
-	You need to enable register_global in your %%PREFIX%%/etc/php.ini
+Please not that everything has been installed in %%PREFIX%%/www/mantis.
 
 
-2/ Detailed method or upgrading
+Read %%PREFIX%%/www/mantis/doc/INSTALL
 
-Please read the INSTALL file located at:
-%%PREFIX%%/www/mantis/doc
-
-************************************************************
