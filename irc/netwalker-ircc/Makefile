@@ -8,7 +8,7 @@
 PORTNAME=	netwalker-ircc
 PORTVERSION=	0.5.0
 CATEGORIES=	irc
-MASTER_SITES=	http://www.bind.ch/projects/netwalker/netwalker-src/
+MASTER_SITES=	http://critical.ch/netwalker-ircc/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@critical.ch
