@@ -195,23 +195,6 @@ share/themes/Clearlooks-Darjeeling/gtk-2.0/gtkrc
 share/themes/Clearlooks-Decaf_Coffee/gtk-2.0/gtkrc
 share/themes/Clearlooks-Decaf_Coffee/gtk-2.0/lila-brown_iconrc
 share/themes/Clearlooks-DeepSkyM/gtk-2.0/gtkrc
-share/themes/Clearlooks-Edge/gtk-2.0/gtk-redo.png
-share/themes/Clearlooks-Edge/gtk-2.0/gtk-undo.png
-share/themes/Clearlooks-Edge/gtk-2.0/gtkrc
-share/themes/Clearlooks-Edge/gtk-2.0/iconrc
-share/themes/Clearlooks-Edge/gtk-2.0/media-eject.svg
-share/themes/Clearlooks-Edge/gtk-2.0/media-forward.svg
-share/themes/Clearlooks-Edge/gtk-2.0/media-next.svg
-share/themes/Clearlooks-Edge/gtk-2.0/media-pause.svg
-share/themes/Clearlooks-Edge/gtk-2.0/media-play.svg
-share/themes/Clearlooks-Edge/gtk-2.0/media-previous.svg
-share/themes/Clearlooks-Edge/gtk-2.0/media-rewind.svg
-share/themes/Clearlooks-Edge/gtk-2.0/media-stop.svg
-share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-0.png
-share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-max.png
-share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-med.png
-share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-min.png
-share/themes/Clearlooks-Edge/gtk-2.0/stock_volume-mute.png
 share/themes/Clearlooks-F1/gtk-2.0/gtkrc
 share/themes/Clearlooks-GNOME/gtk-2.0/gtkrc
 share/themes/Clearlooks-Gartoon/README
@@ -490,8 +473,6 @@ share/themes/Human-In-Blue/gtk-2.0/stock_up.png
 @dirrm share/themes/Clearlooks-GNOME
 @dirrm share/themes/Clearlooks-F1/gtk-2.0
 @dirrm share/themes/Clearlooks-F1
-@dirrm share/themes/Clearlooks-Edge/gtk-2.0
-@dirrm share/themes/Clearlooks-Edge
 @dirrm share/themes/Clearlooks-DeepSkyM/gtk-2.0
 @dirrm share/themes/Clearlooks-DeepSkyM
 @dirrm share/themes/Clearlooks-Decaf_Coffee/gtk-2.0
