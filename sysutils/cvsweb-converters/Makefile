@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsweb-converters
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/
 
