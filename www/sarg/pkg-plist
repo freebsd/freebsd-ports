@@ -4,7 +4,9 @@ bin/sarg
 etc/sarg/sarg.conf.default
 etc/sarg/css.tpl
 etc/sarg/exclude_codes
-etc/sarg/fonts/Verdana.TTF
+etc/sarg/fonts/FreeSans.ttf
+etc/sarg/fonts/README
+etc/sarg/fonts/license
 etc/sarg/images/datetime.png
 etc/sarg/images/graph.png
 etc/sarg/images/sarg-squidguard-block.png
