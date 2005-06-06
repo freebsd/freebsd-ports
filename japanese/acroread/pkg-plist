@@ -434,3 +434,4 @@ bin/acroread
 @dirrm %%ACRODIR%%/Reader
 @dirrm %%ACRODIR%%/Browser/intellinux
 @dirrm %%ACRODIR%%/Browser
+@dirrm %%ACRODIR%%
