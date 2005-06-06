@@ -21,6 +21,7 @@ RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
+PLIST_FILES=	bin/zssh bin/ztelnet
 MAN1=		zssh.1 ztelnet.1
 
 post-configure:
