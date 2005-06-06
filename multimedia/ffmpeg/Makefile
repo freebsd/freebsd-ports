@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9-pre1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -22,8 +22,9 @@ USE_REINPLACE=	yes
 WANT_SDL=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \
-		--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		--extra-libs"-lm" \
+		--extra-ldflags="-L${WRKSRC}/libavcodec -L${WRKSRC}/libavcodec/libpostproc \
+			 -L${LOCALBASE}/lib -L${X11BASE}/lib " \
+		--extra-libs="-lm" \
 		--disable-debug
 
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
@@ -154,28 +155,29 @@ LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--enable-mp3lame
 .endif
 ## optimization
+# breaks ffmpeg build if defined
+CFLAGS+=		-fno-force-addr
 .if ${OSVERSION} > 502124
 .	ifdef(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
+			${CFLAGS} \
 			-I${X11BASE}/include \
-			-ffast-math -fomit-frame-pointer -fno-unit-at-a-time" \
-			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
+			-ffast-math -fomit-frame-pointer -fno-unit-at-a-time"
 .	else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include \
-			-fomit-frame-pointer -fno-unit-at-a-time" \
-			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
-#			--disable-opts
+			-fomit-frame-pointer -fno-unit-at-a-time"
 .	endif
 .else
+.	ifdef(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
+			${CFLAGS} \
 			-I${X11BASE}/include \
-			-ffast-math -fomit-frame-pointer" \
-			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
+			-ffast-math -fomit-frame-pointer"
 .	else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
-			-I${X11BASE}/include" \
-			--extra-ldflags="-L${WRKSRC}/libavcodec -L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
+			-I${X11BASE}/include"
+.	endif
 .endif
 
 ## vhook
@@ -214,6 +216,15 @@ CONFIGURE_ARGS+=	--enable-gpl
 CONFIGURE_ARGS+=	--enable-shared-pp
 PLIST_FILES+=		include/ffmpeg/postproc/postprocess.h
 PLIST_DIRS+=		include/ffmpeg/postproc
+. ifdef(GPLLIBS)
+CONFIGURE_ARGS+=	--enable-pp
+
+LIB_POSTPROC=		lib/libpostproc.a \
+			lib/libpostproc.so \
+			lib/libpostproc.so.0 \
+			lib/libpostproc.so.${SHLIB_VERSION}
+PLIST_FILES+=		${LIB_POSTPROC}
+. endif
 .endif
 ## ffserver
 .ifdef(WITHOUT_FFMPEG_FFSERVER)
@@ -349,6 +360,11 @@ post-patch:
 		-e 's|#include <SDL|#include <SDL11/SDL|'
 .endif
 
+pre-build:
+.ifndef(WITHOUT_POSTPROCESS)
+	@cd ${WRKSRC}/libavcodec/libpostproc && ${GMAKE}
+.endif
+
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -383,6 +399,14 @@ post-install:
 	@${MKDIR} ${PREFIX}/include/ffmpeg/postproc
 	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/postprocess.h \
 		 ${PREFIX}/include/ffmpeg/postproc/postprocess.h
+. ifdef(GPLLIBS)
+.  for lib in libpostproc.a libpostproc.so
+	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/${lib} \
+		${PREFIX}/lib
+.  endfor
+	@${LN} -sf libpostproc.so ${PREFIX}/lib/libpostproc.so.0
+	@${LN} -sf libpostproc.so ${PREFIX}/lib/libpostproc.so.${SHLIB_VERSION}
+. endif
 .endif
 
 .include <bsd.port.post.mk>

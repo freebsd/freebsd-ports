@@ -1,6 +1,6 @@
 /*
  * FreeBSD video grab interface
- * Copyright (c) 2002 Steve O'Hara-Smith
+ * Copyright (c) 2002,2003,2004,2005 Steve O'Hara-Smith
  * based on
  *           Linux video grab interface
  *           Copyright (c) 2000,2001 Gerard Lantau.
@@ -24,12 +24,17 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 #include "avformat.h"
+#if defined __DragonFly__
+#include <dev/video/meteor/ioctl_meteor.h>
+#include <dev/video/bktr/ioctl_bt848.h>
+#else
 #if __FreeBSD__ >= 502100
 #include <dev/bktr/ioctl_meteor.h>
 #include <dev/bktr/ioctl_bt848.h>
 #else
 #include <machine/ioctl_meteor.h>
 #include <machine/ioctl_bt848.h>
+#endif
 #endif
 #include <unistd.h>
 #include <fcntl.h>
@@ -136,7 +141,6 @@ static int bktr_init (const char *video_device, int width, int height,
 	geo.rows = height;
 	geo.columns = width;
 	geo.frames = 1;
-//	geo.oformat = METEOR_GEO_YUV_422 | METEOR_GEO_YUV_12;
 	geo.oformat = METEOR_GEO_YUV_PACKED;
 
 	switch (format) {
@@ -167,7 +171,7 @@ static int bktr_init (const char *video_device, int width, int height,
 		perror ("METEORSINPUT");
 		return -1;
 	}
-	*video_buf = (u_int8_t *) mmap((caddr_t)0, width*height*2,
+	*video_buf = (u_int8_t *) mmap((void *) 0, width*height*2,
 		PROT_READ, MAP_SHARED, *video_fd, (off_t) 0);
 	if (*video_buf == MAP_FAILED) {
 		perror ("mmap");
@@ -175,8 +179,11 @@ static int bktr_init (const char *video_device, int width, int height,
 	}
 	if (frequency != 0.0) {
 		ioctl_frequency  = (unsigned long)(frequency*16); 
-		if (ioctl(*tuner_fd, TVTUNER_SETFREQ, &ioctl_frequency)<0)
-			perror("TVTUNER_SETFREQ");
+		if (*tuner_fd > 0)
+		{
+			if (ioctl(*tuner_fd, TVTUNER_SETFREQ, &ioctl_frequency)<0)
+				perror("TVTUNER_SETFREQ");
+		}
 	}
 	c = METEOR_CAP_CONTINOUS;
 	ioctl(*video_fd, METEORCAPTUR, &c);
@@ -191,9 +198,12 @@ static void bktr_getframe(u_int64_t per_frame)
 	static u_int64_t last_frame_time = 0;
 
 	curtime = av_gettime();
+	if (!last_frame_time)
+		last_frame_time = curtime;
+
 	if (!last_frame_time
 	    || ((last_frame_time + per_frame) > curtime)) {
-		if (!usleep (last_frame_time + per_frame + per_frame/8 - curtime)) {
+		if (!usleep (last_frame_time + per_frame + per_frame/2 + per_frame/4 - curtime)) {
 			if (!nsignals)
 				printf ("\nSLEPT NO signals - %d microseconds late\n",
 				        (int) (av_gettime() - last_frame_time - per_frame));
@@ -224,16 +234,13 @@ static int grab_read_packet(AVFormatContext *s1, AVPacket *pkt)
 	size = s->width * s->height;
 	halfsize = size << 1;
 
-//	if (av_new_packet(pkt, size + halfsize) < 0)
 	if (av_new_packet(pkt, size + size) < 0)
-		return -EIO;
+		return -AVERROR_IO;
 
 	bktr_getframe (s->per_frame);
 	pkt->pts = av_gettime() & ((1LL << 48) - 1);
 	bf_memcpy (pkt->data, video_buf, size + size);
-//	bf_memcpy (pkt->data, video_buf, size + halfsize);
 
-//	return size + halfsize;
 	return size + size;
 }
 
@@ -265,7 +272,6 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	s->per_frame = ((int64_t)1000000 * s->frame_rate_base) / s->frame_rate;
 
 	st->codec.codec_type = CODEC_TYPE_VIDEO;
-//	st->codec.pix_fmt = PIX_FMT_YUV420P;
 	st->codec.pix_fmt = PIX_FMT_YUV422;
 	st->codec.codec_id = CODEC_ID_RAWVIDEO;
 	st->codec.width = width;
@@ -273,9 +279,9 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	st->codec.frame_rate = frame_rate;
 	st->codec.frame_rate_base = frame_rate_base;
 
-	av_set_pts_info(s1, 48, 1, 1000000); /* 48 bits pts in use */
+	av_set_pts_info(st, 48, 1, 1000000); /* 48 bits pts in use */
 
-   if (ap->standard) {
+	if (ap->standard) {
 		if (!strcasecmp(ap->standard, "pal"))
 		    format = PAL;
 		if (!strcasecmp(ap->standard, "secam"))
@@ -286,7 +292,7 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 
 	if (bktr_init (video_device, width, height, format, &video_buf,
 		       &(s->fd), &(s->tuner_fd), -1, 0.0) < 0)
-		return -EIO;
+		return -AVERROR_IO;
 	return 0;
 }
 
@@ -296,9 +302,11 @@ static int grab_read_close (AVFormatContext *s1)
 
 	int c = METEOR_CAP_STOP_CONT;
 	ioctl(s->fd, METEORCAPTUR, &c);
+	c = METEOR_SIG_MODE_MASK;
+	ioctl(s->fd, METEORSSIGNAL, &c);
 	close(s->fd);
 	close(s->tuner_fd);
-	av_free(s);
+	munmap((void *)video_buf, sizeof(video_buf));
 	return 0;
 }
 
