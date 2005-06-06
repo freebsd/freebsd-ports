@@ -235,6 +235,7 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-en_IE
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-en_NZ
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-en_ZA
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es
+share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_AR
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_ES
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_IR
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_MX
@@ -274,7 +275,6 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-yi
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_CN
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
 %%GNOME:%%share/gnome/applications/abiword.desktop
-%%GNOME:%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 %%GNOME:%%share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
 %%GNOME:%%share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite-%%ABIVERSION%%/templates
@@ -288,4 +288,5 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
 @dirrm share/AbiSuite-%%ABIVERSION%%
 @dirrm lib/AbiWord-%%ABIVERSION%%/plugins
 @dirrm lib/AbiWord-%%ABIVERSION%%
+%%GNOME:%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 %%GNOME:%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

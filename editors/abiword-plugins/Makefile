@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -35,7 +35,7 @@ WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abiword-plugins
 MD5_FILE=	${.CURDIR}/../abiword/distinfo
 
 ABIVERSION=	2.2
-PLIST_SUB+=	"ABIVERSION=${ABIVERSION}"
+PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 
 # NOTE: Please, keep those knobs in the ABC's order.
 
