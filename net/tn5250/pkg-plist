@@ -3,13 +3,10 @@ bin/lp5250d
 bin/scs2ascii
 bin/scs2pdf
 bin/scs2ps
-bin/tn3270d
 bin/tn5250
 bin/tn5250-config
-bin/tn5250d
 bin/xt5250
 include/tn5250/buffer.h
-include/tn5250/codes3270.h
 include/tn5250/codes5250.h
 include/tn5250/conf.h
 include/tn5250/config.h
@@ -18,28 +15,29 @@ include/tn5250/dbuffer.h
 include/tn5250/debug.h
 include/tn5250/display.h
 include/tn5250/field.h
-include/tn5250/host3270.h
-include/tn5250/host5250.h
+include/tn5250/macro.h
+include/tn5250/menu.h
 include/tn5250/printsession.h
 include/tn5250/record.h
+include/tn5250/scrollbar.h
 include/tn5250/scs.h
 include/tn5250/session.h
 include/tn5250/slangterm.h
 include/tn5250/stream.h
 include/tn5250/terminal.h
-include/tn5250/tn3270d.h
-include/tn5250/tn5250d.h
 include/tn5250/utility.h
+include/tn5250/window.h
 include/tn5250/wtd.h
 include/tn5250.h
 lib/lib5250.a
 lib/lib5250.so
 lib/lib5250.so.0
+libdata/pkgconfig/tn5250.pc
 share/aclocal/tn5250.m4
-share/tn5250/README
-share/tn5250/XTerm
-share/tn5250/dialogrc
-share/tn5250/sample.termcap
-share/tn5250/us.5250.kbd
-@dirrm share/tn5250
+%%DATADIR%%/README
+%%DATADIR%%/XTerm
+%%DATADIR%%/dialogrc
+%%DATADIR%%/sample.termcap
+%%DATADIR%%/us.5250.kbd
+@dirrm %%DATADIR%%
 @dirrm include/tn5250
