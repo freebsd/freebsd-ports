@@ -6414,6 +6414,7 @@ ncftp		ports/ftp/ncftp
 ncftp2		ports/ftp/ncftp2
 ncftp3		ports/ftp/ncftp3
 ncftpd		ports/ftp/ncftpd
+ncid		ports/comms/ncid
 nclever		ports/biology/nclever
 ncmpc		ports/audio/ncmpc
 ncnf		ports/devel/ncnf
