@@ -55,6 +55,9 @@ MLINKS=	ilasm.1 al.1 \
 .if ${ARCH} != "i386"
 CONFIGURE_ARGS+=	--without-libffi \
 			--without-libgc
+PLIST_SUB=	I386="@comment "
+.else
+PLIST_SUB=	I386=""
 .endif
 
 post-everything::
