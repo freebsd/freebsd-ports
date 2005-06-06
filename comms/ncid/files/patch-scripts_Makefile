@@ -1,0 +1,17 @@
+*** scripts/Makefile.ori	Mon Jun  6 16:05:09 2005
+--- scripts/Makefile	Mon Jun  6 16:05:29 2005
+***************
+*** 21,32 ****
+  	@if test ! -d $(SHARE); then mkdir $(SHARE); fi
+  	install -m 755 $(SCRIPTS) $(SHARE)
+  	install -m 644 README $(SHARE)/.
+- 	touch install-script
+  
+  install-man:	$(MAN)
+  	cd $(MAN1); rm -f $(MANSRC)
+  	install -m 644 $(MANSRC) $(MAN1)
+- 	touch install-man
+  
+  clean:
+  
+--- 21,30 ----

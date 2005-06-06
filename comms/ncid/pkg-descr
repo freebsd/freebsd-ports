@@ -1,0 +1,8 @@
+NCID is a network based Caller ID package that contains a server to obtain the
+CID information from a modem, and a client to display the CID information on a
+computer, TiVo, text pager, or cell phone. Multiple clients are permitted.
+
+WWW: http://ncid.sourceforge.net
+
+- David
+  <david@freshports.org>

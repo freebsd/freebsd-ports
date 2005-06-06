@@ -59,6 +59,7 @@
     SUBDIR += mserver
     SUBDIR += mwavem
     SUBDIR += nasawash
+    SUBDIR += ncid
     SUBDIR += nokryptia
     SUBDIR += obexapp
     SUBDIR += openobex
