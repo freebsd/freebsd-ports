@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary-to-text file-encoder
 
 MAKEFILE=	makefile
+MAKE_ARGS=	CFLAGS="${CFLAGS}" DEST=${PREFIX}/bin
 PLIST_FILES=	bin/ish
 ALL_TARGET=	ish
 
