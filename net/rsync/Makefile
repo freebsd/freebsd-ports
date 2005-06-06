@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTVERSION=	2.6.5
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org//pub/%SUBDIR%/ \
@@ -18,7 +17,7 @@ MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		http://public.planetmirror.com/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	rsync
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
 
 .if defined(WITH_POPT_PORT)
