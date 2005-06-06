@@ -7703,6 +7703,7 @@ p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
 p5-Kwiki-Archive-SVK	ports/www/p5-Kwiki-Archive-SVK
 p5-Kwiki-Atom	ports/www/p5-Kwiki-Atom
 p5-Kwiki-Diff	ports/www/p5-Kwiki-Diff
+p5-Kwiki-Edit-RequireUserName	ports/www/p5-Kwiki-Edit-RequireUserName
 p5-Kwiki-GDGraphGenerator	ports/www/p5-Kwiki-GDGraphGenerator
 p5-Kwiki-Icons-Gnome	ports/www/p5-Kwiki-Icons-Gnome
 p5-Kwiki-Infobox	ports/www/p5-Kwiki-Infobox
