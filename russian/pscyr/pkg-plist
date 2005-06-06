@@ -1,8 +1,15 @@
+@comment $FreeBSD$
 share/texmf/doc/fonts/pscyr/LICENSE
 share/texmf/doc/fonts/pscyr/PROBLEMS
 share/texmf/doc/fonts/pscyr/README.koi
-share/texmf/dvips/base/t2a.enc
-share/texmf/dvips/config/pscyr.map
+@unexec %%UPDMAP_SYS%% --quiet --nomkmap --disable pscyr.map
+@unexec %%UPDMAP_SYS%% --quiet --disable pscyr2.map
+share/texmf/fonts/enc/dvips/pscyr/t2a.enc
+@dirrm share/texmf/fonts/enc/dvips/pscyr
+share/texmf/fonts/map/dvips/pscyr/pscyr.map
+@dirrm share/texmf/fonts/map/dvips/pscyr
+share/texmf/fonts/map/dvipdfm/pscyr/pscyr2.map
+@dirrm share/texmf/fonts/map/dvipdfm/pscyr
 share/texmf/fonts/afm/public/pscyr/acade1.afm
 share/texmf/fonts/afm/public/pscyr/acade2.afm
 share/texmf/fonts/afm/public/pscyr/acade3.afm
@@ -325,3 +332,7 @@ share/texmf/tex/latex/pscyr/t2aftx.fd
 @dirrm share/texmf/fonts/tfm/public/pscyr
 @dirrm share/texmf/fonts/afm/public/pscyr
 @dirrm share/texmf/doc/fonts/pscyr
+@exec %%MKTEXLSR%%
+@exec %%UPDMAP_SYS%% --quiet --nomkmap --enable Map=pscyr.map
+@exec %%UPDMAP_SYS%% --quiet --enable Map=pscyr2.map
+@unexec %%MKTEXLSR%%

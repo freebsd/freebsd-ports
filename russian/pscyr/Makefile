@@ -8,6 +8,7 @@
 PORTNAME=	PSCyr
 PATCH_LEVEL=	2
 PORTVERSION=	0.4c${PATCH_LEVEL}
+PORTREVISION=	1
 CATEGORIES=	russian print
 MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/psfonts/ \
 		ftp://ftp.vsu.ru/pub/tex/font-packs/pscyr/
@@ -17,24 +18,24 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/${PATCH_LEVEL}$/-patch&/}-tex.tar.gz \
 MAINTAINER=	kappa@freebsd.org.ua
 COMMENT=	Cyrillic PostScript Type1 fonts for use with TeX
 
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 # no other TeX is sufficient
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+MAKE_ENV=	TEXMFDIR=${LOCALBASE}/share/texmf
+PLIST_SUB=	UPDMAP_SYS=${UPDMAP_SYS} \
+		MKTEXLSR=${MKTEXLSR}
 
-post-patch:
-	@${CP} ${WRKDIR}/install.sh ${WRKDIR}/install.sh.orig;
-	@${SED} -e 's/^mv /${INSTALL_DATA} /' \
-		${WRKDIR}/install.sh.orig > ${WRKDIR}/install.sh
+UPDMAP_SYS?=	${LOCALBASE}/bin/updmap-sys
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 do-install:
-	(cd ${WRKDIR}; ${SH} install.sh ${PREFIX})
+	(cd ${WRKDIR}; ${SETENV} ${MAKE_ENV} ${SH} install.sh)
 
 post-install:
-	${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL ${PREFIX}
-
-post-deinstall:
-	${SH} ${PKGDIR}/pkg-deinstall ${PKGNAME} POST-DEINSTALL ${PREFIX}
+	${MKTEXLSR}
+	${UPDMAP_SYS} --quiet --nomkmap --enable Map=pscyr.map
+	${UPDMAP_SYS} --quiet --enable Map=pscyr2.map
 
 .include <bsd.port.mk>
