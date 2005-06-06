@@ -14,6 +14,27 @@ MASTER_SITE_SUBDIR=bsflite
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	A lightweight command line AIM client
 
+USE_REINPLACE=	yes
+
+OSCAR_PORT?=	5190
+
+.include <bsd.port.pre.mk>
+
+.if ${OSCAR_PORT} == "5190"
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Note:"
+	@${ECHO_MSG} "If you're behind a firewall you might want to set OSCAR_PORT"
+	@${ECHO_MSG} "a port other than ${OSCAR_PORT}."
+	@${ECHO_MSG} ""
+.endif
+
+.if ${OSCAR_PORT} != 5190
+post-patch:
+	@${REINPLACE_CMD} -e 's|^\(#define OSCAR_PORT\) 5190|\1 ${OSCAR_PORT}|' \
+		${WRKSRC}/imcomm/imcomm.h
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsflite ${PREFIX}/bin
 	${MKDIR} ${EXAMPLESDIR}
@@ -26,4 +47,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
