@@ -19,9 +19,12 @@ COMMENT=	Translate to and from mail-oriented encoding formats
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/metamail
 
+PLIST_FILES=	bin/mmencode bin/mimencode
 MAN1=		mmencode.1
+MLINKS=		mmencode.1 mimencode.1
 
 ALL_TARGET=	mmencode
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 do-install:
 	@cd ${WRKSRC}		&& ${INSTALL_PROGRAM} mmencode ${PREFIX}/bin
