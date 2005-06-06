@@ -1681,6 +1681,7 @@ dore		ports/graphics/dore
 dosbox		ports/emulators/dosbox
 doscan		ports/security/doscan
 doscmd		ports/emulators/doscmd
+dosdetector	ports/net/dosdetector
 dosunix		ports/converters/dosunix
 dotconf		ports/devel/dotconf
 dotfile		ports/misc/dotfile
