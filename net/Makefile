@@ -586,6 +586,7 @@
     SUBDIR += pear-Net_Socket
     SUBDIR += pear-Net_URL
     SUBDIR += pear-Net_UserAgent_Detect
+    SUBDIR += pear-Net_UserAgent_Mobile
     SUBDIR += pear-SOAP
     SUBDIR += pebrot
     SUBDIR += pecl-radius
