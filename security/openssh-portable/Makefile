@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	4.0.0.1
+PORTVERSION=	4.1.0.1
 .if defined(OPENSSH_SNAPSHOT)
 PORTREVISION!=	date -v-1d +%Y%m%d
 .endif
@@ -21,7 +21,7 @@ DISTNAME=	${DISTNAME2}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
-OPENSSHVERSION=	4.0p1
+OPENSSHVERSION=	4.1p1
 .if defined(OPENSSH_SNAPSHOT)
 MASTER_SITE_SUBDIR2=	snapshot/
 DISTNAME2=	${PORTNAME}-SNAP-${PORTREVISION}
@@ -44,7 +44,7 @@ CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords --without-zlib-version-check
 PRECIOUS=	ssh_config sshd_config \
 		ssh_host_key ssh_host_key.pub \
 		ssh_host_rsa_key ssh_host_rsa_key.pub \
