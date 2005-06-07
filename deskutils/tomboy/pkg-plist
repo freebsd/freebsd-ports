@@ -1,11 +1,11 @@
 bin/tomboy
-lib/dbus-1.0/services/com.beatniksoftware.Tomboy.service
 lib/tomboy/Plugins/PrintNotes.dll
 lib/tomboy/Tomboy.exe
 lib/tomboy/Tomboy.exe.config
 lib/tomboy/libtomboy.so
 libdata/bonobo/servers/GNOME_TomboyApplet.server
 libdata/pkgconfig/tomboy-plugins.pc
+share/dbus-1/services/com.beatniksoftware.Tomboy.service
 share/gnome/gnome-2.0/ui/GNOME_TomboyApplet.xml
 share/gnome/pixmaps/tintin.png
 share/locale/bg/LC_MESSAGES/tomboy.mo
@@ -33,5 +33,7 @@ share/locale/rw/LC_MESSAGES/tomboy.mo
 share/locale/sq/LC_MESSAGES/tomboy.mo
 share/locale/sv/LC_MESSAGES/tomboy.mo
 share/locale/zh_CN/LC_MESSAGES/tomboy.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm lib/tomboy/Plugins
 @dirrm lib/tomboy
