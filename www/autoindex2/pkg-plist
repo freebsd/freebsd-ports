@@ -14,6 +14,8 @@ www/data/AutoIndex/classes/DirItem.php
 www/data/AutoIndex/classes/Display.php
 www/data/AutoIndex/classes/ExceptionDisplay.php
 www/data/AutoIndex/classes/FileItem.php
+www/data/AutoIndex/classes/Ftp.php
+www/data/AutoIndex/classes/Htaccess.php
 www/data/AutoIndex/classes/Icon.php
 www/data/AutoIndex/classes/Image.php
 www/data/AutoIndex/classes/Item.php
@@ -151,6 +153,7 @@ www/data/AutoIndex/index_icons/winxp/uu.png
 www/data/AutoIndex/index_icons/winxp/web.png
 www/data/AutoIndex/index_icons/winxp/xls.png
 www/data/AutoIndex/languages/al.txt
+www/data/AutoIndex/languages/ar.txt
 www/data/AutoIndex/languages/bg.txt
 www/data/AutoIndex/languages/ca.txt
 www/data/AutoIndex/languages/de.txt
@@ -166,7 +169,9 @@ www/data/AutoIndex/languages/no.txt
 www/data/AutoIndex/languages/pl.txt
 www/data/AutoIndex/languages/pt_BR.txt
 www/data/AutoIndex/languages/ru.txt
+www/data/AutoIndex/languages/th.txt
 www/data/AutoIndex/languages/tr.txt
+www/data/AutoIndex/templates/default/alternate.css
 www/data/AutoIndex/templates/default/default.css
 www/data/AutoIndex/templates/default/each_file (alternative with direct links).tpl
 www/data/AutoIndex/templates/default/each_file.tpl
