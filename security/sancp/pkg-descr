@@ -1,0 +1,12 @@
+Sancp is a network security tool designed to collect 
+statistical information regarding network traffic, as 
+well as, collect the traffic itself in pcap format, all 
+for the purpose of: auditing, historical analysis, and 
+network activity discovery. Rules can be used to distinguish 
+normal from abnormal traffic and support tagging connections 
+with: rule id, node id, and status id.  From an intrusion 
+detection standpoint, every connection is an event that must 
+be validated through some means. Sancp uses rules to identify, 
+record, and tag traffic of interest. 'Tagging' a connection 
+is a new feature since v1.4.0 Connections ('stats') can be 
+loaded into a database for further analysis. 

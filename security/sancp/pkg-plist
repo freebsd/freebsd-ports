@@ -1,0 +1,7 @@
+bin/sancp
+etc/sancp.conf-sample
+etc/rc.d/sancp.sh
+%%DOCSDIR%%/LICENSE
+@unexec if [ -f %D/etc/sancp.conf ]  && ! cmp -s %D/etc/sancp.conf %D/etc/sancp.conf-sample; then rm -f %D/etc/sancp.conf; fi
+@unexec  if [ -d /var/log/sancp/ ]   && ! rmdir /var/log/sancp/ >/dev/null 2>&1; then  echo "WARNING: Unable to remove log dir '/var/log/sancp/', its probably not empty" ; fi
+@unexec if [ -f %D/etc/sancp.conf ]; then    echo "WARNING: The %D/etc/sancp.conf file was not removed!"; fi
