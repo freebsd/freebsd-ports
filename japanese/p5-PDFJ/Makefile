@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDFJ
-PORTVERSION=	0.84
+PORTVERSION=	0.86
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://hp1.jonex.ne.jp/%7Enakajima.yasushi/archives/
 
