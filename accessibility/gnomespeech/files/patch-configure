@@ -1,6 +1,17 @@
---- configure.orig	Thu Jan 13 20:21:49 2005
-+++ configure	Thu Jan 13 20:21:57 2005
-@@ -20272,6 +20272,7 @@
+--- configure.orig	Tue Jun  7 02:40:27 2005
++++ configure	Tue Jun  7 02:41:02 2005
+@@ -20213,8 +20213,8 @@
+ 
+ fi
+ if test "x$JAVAC" != "x" ; then
+-  javac_version=`$JAVAC -version 2>&1 | sed -e "1s/javac //" -e "1q" `
+-  echo JAVAC VERSION $javac_version
++#  javac_version=`$JAVAC -version 2>&1 | sed -e "1s/javac //" -e "1q" `
++#  echo JAVAC VERSION $javac_version
+   JAVAC="$JAVAC -source 1.4"
+ fi
+ 
+@@ -20423,6 +20423,7 @@
  fi
  
  # Find the Java Access Bridge
