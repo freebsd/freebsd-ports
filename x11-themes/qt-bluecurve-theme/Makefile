@@ -29,7 +29,7 @@ post-patch:
 do-build:
 	cd ${BUILD_WRKSRC} && \
 	${MOC} -o bluecurve.moc bluecurve.h && \
-	${CXX} ${CXXFLAGS} -Wl,-export-dynamic -shared \
+	${CXX} ${CXXFLAGS} -Wl,-export-dynamic -shared -fPIC \
 		${QT_CFLAGS} ${QT_LIBS} -o bluecurve.so \
 			bluecurve.cpp plugin.cpp
 

@@ -45,7 +45,7 @@ post-patch:
 do-build:
 .for v in 1 2
 	cd ${GTK${v}_WRKSRC} && \
-	${CC} ${CFLAGS} -Wl,-export-dynamic -shared \
+	${CC} ${CFLAGS} -Wl,-export-dynamic -shared -fPIC \
 		${GTK${v}_CFLAGS} ${GTK${v}_LIBS} -o libbluecurve.so \
 			${GTK${v}_SOURCES}
 .endfor
