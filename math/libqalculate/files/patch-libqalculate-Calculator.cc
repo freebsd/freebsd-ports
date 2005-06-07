@@ -1,5 +1,5 @@
---- src/libqalculate/Calculator.cc.orig	Fri Mar 11 14:36:10 2005
-+++ src/libqalculate/Calculator.cc	Fri Mar 11 14:36:17 2005
+--- libqalculate/Calculator.cc.orig	Fri Jun  3 12:25:49 2005
++++ libqalculate/Calculator.cc	Fri Jun  3 12:25:59 2005
 @@ -33,7 +33,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>

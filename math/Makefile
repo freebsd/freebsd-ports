@@ -99,6 +99,7 @@
     SUBDIR += libgmp4
     SUBDIR += libmath++
     SUBDIR += libneural
+    SUBDIR += libqalculate
     SUBDIR += libranlib
     SUBDIR += linalg
     SUBDIR += linpack

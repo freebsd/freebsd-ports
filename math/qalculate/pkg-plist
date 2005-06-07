@@ -1,91 +1,61 @@
-bin/qalc
 bin/qalculate
 bin/qalculate-gtk
-include/libqalculate/Function.h
-include/libqalculate/Calculator.h
-include/libqalculate/DataSet.h
-include/libqalculate/Variable.h
-include/libqalculate/ExpressionItem.h
-include/libqalculate/Number.h
-include/libqalculate/MathStructure.h
-include/libqalculate/Prefix.h
-include/libqalculate/util.h
-include/libqalculate/includes.h
-include/libqalculate/Unit.h
-include/libqalculate/BuiltinFunctions.h
-include/libqalculate/qalculate.h
-lib/libqalculate.so.0
-lib/libqalculate.so
-lib/libqalculate.la
-lib/libqalculate.a
-libdata/pkgconfig/libqalculate.pc
-share/gnome/applnk/Utilities/qalculate.desktop
-share/gnome/applications/qalculate.desktop
-share/gnome/help/qalculate/C/appendixa.xml
-share/gnome/help/qalculate/C/appendixb.xml
-share/gnome/help/qalculate/C/appendixc.xml
-share/gnome/help/qalculate/C/legal.xml
-share/gnome/help/qalculate/C/qalculate.xml
-share/gnome/help/qalculate/C/figures/calculation-history.png
-share/gnome/help/qalculate/C/figures/calculator-buttons-screen.png
-share/gnome/help/qalculate/C/figures/calculator-buttons.png
-share/gnome/help/qalculate/C/figures/completion.png
-share/gnome/help/qalculate/C/figures/convert-number-bases.png
-share/gnome/help/qalculate/C/figures/convert-unit.png
-share/gnome/help/qalculate/C/figures/edit-function.png
-share/gnome/help/qalculate/C/figures/edit-matrix.png
-share/gnome/help/qalculate/C/figures/edit-unit.png
-share/gnome/help/qalculate/C/figures/function-manager.png
-share/gnome/help/qalculate/C/figures/gnuplot.png
-share/gnome/help/qalculate/C/figures/import-csv.png
-share/gnome/help/qalculate/C/figures/insert-function-screen.png
-share/gnome/help/qalculate/C/figures/insert-function.png
-share/gnome/help/qalculate/C/figures/mainwindow-screen.png
-share/gnome/help/qalculate/C/figures/mainwindow.png
-share/gnome/help/qalculate/C/figures/plot-data.png
-share/gnome/help/qalculate/C/figures/plot-settings.png
-share/gnome/help/qalculate/C/figures/store-variable.png
-share/gnome/help/qalculate/C/figures/unit-manager.png
-share/gnome/help/qalculate/C/figures/variable-manager.png
-share/gnome/omf/qalculate/qalculate-C.omf
-share/gnome/qalculate/glade/about.glade
-share/gnome/qalculate/glade/argumentrules.glade
-share/gnome/qalculate/glade/csvexport.glade
-share/gnome/qalculate/glade/csvimport.glade
-share/gnome/qalculate/glade/datasetedit.glade
-share/gnome/qalculate/glade/datasets.glade
-share/gnome/qalculate/glade/decimals.glade
-share/gnome/qalculate/glade/functionedit.glade
-share/gnome/qalculate/glade/functions.glade
-share/gnome/qalculate/glade/main.glade
-share/gnome/qalculate/glade/matrixedit.glade
-share/gnome/qalculate/glade/namesedit.glade
-share/gnome/qalculate/glade/nbases.glade
-share/gnome/qalculate/glade/nbexpression.glade
-share/gnome/qalculate/glade/periodictable.glade
-share/gnome/qalculate/glade/plot.glade
-share/gnome/qalculate/glade/precision.glade
-share/gnome/qalculate/glade/preferences.glade
-share/gnome/qalculate/glade/unit.glade
-share/gnome/qalculate/glade/unitedit.glade
-share/gnome/qalculate/glade/units.glade
-share/gnome/qalculate/glade/unknownedit.glade
-share/gnome/qalculate/glade/variableedit.glade
-share/gnome/qalculate/glade/variables.glade
-share/gnome/qalculate/datasets.xml
-share/gnome/qalculate/elements.xml
-share/gnome/qalculate/functions.xml
-share/gnome/qalculate/planets.xml
-share/gnome/qalculate/prefixes.xml
-share/gnome/qalculate/units.xml
-share/gnome/qalculate/variables.xml
-share/locale/sv/LC_MESSAGES/qalculate.mo
-@dirrm include/libqalculate
-@dirrm share/gnome/applnk/Utilities
-@dirrm share/gnome/applnk
-@dirrm share/gnome/help/qalculate/C/figures
-@dirrm share/gnome/help/qalculate/C
-@dirrm share/gnome/help/qalculate
-@dirrm share/gnome/omf/qalculate
-@dirrm share/gnome/qalculate/glade
-@dirrm share/gnome/qalculate
+share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
+share/gnome/applications/qalculate-gtk.desktop
+share/gnome/help/qalculate-gtk/C/legal.xml
+share/gnome/help/qalculate-gtk/C/appendixa.xml
+share/gnome/help/qalculate-gtk/C/appendixb.xml
+share/gnome/help/qalculate-gtk/C/appendixc.xml
+share/gnome/help/qalculate-gtk/C/qalculate-gtk.xml
+share/gnome/help/qalculate-gtk/C/figures/calculation-history.png
+share/gnome/help/qalculate-gtk/C/figures/calculator-buttons-screen.png
+share/gnome/help/qalculate-gtk/C/figures/calculator-buttons.png
+share/gnome/help/qalculate-gtk/C/figures/completion.png
+share/gnome/help/qalculate-gtk/C/figures/convert-number-bases.png
+share/gnome/help/qalculate-gtk/C/figures/convert-unit.png
+share/gnome/help/qalculate-gtk/C/figures/edit-function.png
+share/gnome/help/qalculate-gtk/C/figures/edit-matrix.png
+share/gnome/help/qalculate-gtk/C/figures/edit-unit.png
+share/gnome/help/qalculate-gtk/C/figures/function-manager.png
+share/gnome/help/qalculate-gtk/C/figures/gnuplot.png
+share/gnome/help/qalculate-gtk/C/figures/import-csv.png
+share/gnome/help/qalculate-gtk/C/figures/insert-function-screen.png
+share/gnome/help/qalculate-gtk/C/figures/insert-function.png
+share/gnome/help/qalculate-gtk/C/figures/mainwindow-screen.png
+share/gnome/help/qalculate-gtk/C/figures/mainwindow.png
+share/gnome/help/qalculate-gtk/C/figures/plot-data.png
+share/gnome/help/qalculate-gtk/C/figures/plot-settings.png
+share/gnome/help/qalculate-gtk/C/figures/store-variable.png
+share/gnome/help/qalculate-gtk/C/figures/unit-manager.png
+share/gnome/help/qalculate-gtk/C/figures/variable-manager.png
+share/gnome/omf/qalculate-gtk/qalculate-gtk-C.omf
+share/gnome/qalculate-gtk/glade/about.glade
+share/gnome/qalculate-gtk/glade/argumentrules.glade
+share/gnome/qalculate-gtk/glade/csvexport.glade
+share/gnome/qalculate-gtk/glade/csvimport.glade
+share/gnome/qalculate-gtk/glade/datasetedit.glade
+share/gnome/qalculate-gtk/glade/datasets.glade
+share/gnome/qalculate-gtk/glade/decimals.glade
+share/gnome/qalculate-gtk/glade/functionedit.glade
+share/gnome/qalculate-gtk/glade/functions.glade
+share/gnome/qalculate-gtk/glade/main.glade
+share/gnome/qalculate-gtk/glade/matrixedit.glade
+share/gnome/qalculate-gtk/glade/namesedit.glade
+share/gnome/qalculate-gtk/glade/nbases.glade
+share/gnome/qalculate-gtk/glade/nbexpression.glade
+share/gnome/qalculate-gtk/glade/periodictable.glade
+share/gnome/qalculate-gtk/glade/plot.glade
+share/gnome/qalculate-gtk/glade/precision.glade
+share/gnome/qalculate-gtk/glade/preferences.glade
+share/gnome/qalculate-gtk/glade/unit.glade
+share/gnome/qalculate-gtk/glade/units.glade
+share/gnome/qalculate-gtk/glade/unitedit.glade
+share/gnome/qalculate-gtk/glade/unknownedit.glade
+share/gnome/qalculate-gtk/glade/variableedit.glade
+share/gnome/qalculate-gtk/glade/variables.glade
+@dirrm share/gnome/help/qalculate-gtk/C/figures
+@dirrm share/gnome/help/qalculate-gtk/C
+@dirrm share/gnome/help/qalculate-gtk
+@dirrm share/gnome/omf/qalculate-gtk
+@dirrm share/gnome/qalculate-gtk/glade
+@dirrm share/gnome/qalculate-gtk

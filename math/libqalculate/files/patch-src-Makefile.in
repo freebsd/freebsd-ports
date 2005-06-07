@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Jun  7 10:42:56 2005
++++ src/Makefile.in	Tue Jun  7 10:44:51 2005
+@@ -530,7 +530,7 @@
+ 
+ 
+ install-exec-local:
+-	cd $(DESTDIR)$(bindir) && rm -f qalculate; $(LN_S) @LN_QALCULATE@ qalculate
++#	cd $(DESTDIR)$(bindir) && rm -f qalculate; $(LN_S) @LN_QALCULATE@ qalculate
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
