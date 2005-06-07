@@ -16,6 +16,7 @@
     SUBDIR += deepforest
     SUBDIR += dpkg
     SUBDIR += dynamite
+    SUBDIR += dzip
     SUBDIR += fastjar
     SUBDIR += fileroller
     SUBDIR += fpc-paszlib

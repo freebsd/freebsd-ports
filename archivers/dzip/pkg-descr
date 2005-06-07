@@ -1,0 +1,11 @@
+Dzip is a program for file compression.  It's advantage over more popular
+compression software is in the size of the program, easily fitting on a
+floppy disk.
+
+It performs just as good as the competition, or slightly better, on average,
+both in compression ratio and time.
+
+Dzip's original purpose was to compress demo recordings of the id Software
+game Quake much better than any other program, and it still does!
+
+WWW: http://speeddemosarchive.com/dzip/
