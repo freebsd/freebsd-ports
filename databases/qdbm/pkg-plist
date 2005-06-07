@@ -27,5 +27,6 @@ include/villa.h
 include/vista.h
 lib/libqdbm.a
 lib/libqdbm.so
-lib/libqdbm.so.10
-lib/libqdbm.so.10.0.0
+lib/libqdbm.so.11
+lib/libqdbm.so.11.1.0
+libdata/pkgconfig/qdbm.pc

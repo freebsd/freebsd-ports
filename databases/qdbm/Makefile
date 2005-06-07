@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.27
+PORTVERSION=	1.8.29
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qdbm.sourceforge.net/
@@ -16,6 +16,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-iconv
@@ -45,10 +46,12 @@ CONFIGURE_ARGS+=	--enable-debug
 USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--enable-pthread
 CFLAGS+=	${PTHREAD_CFLAGS}
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-.endif
+	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 post-build:
 	cd ${WRKSRC}/lab; \
