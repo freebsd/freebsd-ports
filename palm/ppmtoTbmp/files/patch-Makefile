@@ -1,8 +1,0 @@
---- Makefile.old        Sat Jul  6 13:24:04 2002
-+++ Makefile    Sat Jul  6 13:24:12 2002
-@@ -1,5 +1,5 @@
- CFLAGS = -Wall -O2 -I/opt/netpbm/include
--LDLIBS = -lpnm -lppm -lpgm -lpbm
-+LDLIBS = -lnetpbm
-
- BINS = ppmtoTbmp Tbmptopnm
