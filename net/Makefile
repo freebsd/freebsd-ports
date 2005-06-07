@@ -261,6 +261,7 @@
     SUBDIR += jabber-conference
     SUBDIR += jabber-jud
     SUBDIR += jabber-msn
+    SUBDIR += jabber-pyicq
     SUBDIR += jabber-pymsn
     SUBDIR += jabber-xdb_ldap
     SUBDIR += jabber-yahoo

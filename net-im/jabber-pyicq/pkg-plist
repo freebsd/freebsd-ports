@@ -1,0 +1,45 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/etc/jabber-pyicq.xml %D/etc/jabber-pyicq.xml; then rm -f %D/etc/jabber-pyicq.xml; fi
+%%EXAMPLESDIR%%/etc/jabber-pyicq.xml
+@exec [ -f %D/etc/jabber-pyicq.xml ] || cp %B/%f %D/etc/jabber-pyicq.xml
+@unexec if cmp -s %D/lib/jabber/pyicq/config.py.sample %D/lib/jabber/pyicq/config.py; then rm -f %D/lib/jabber/pyicq/config.py; fi
+lib/jabber/pyicq/config.py.sample
+@exec [ -f %D/lib/jabber/pyicq/config.py ] || cp %B/%f %D/lib/jabber/pyicq/config.py
+lib/jabber/pyicq/debug.py
+lib/jabber/pyicq/disco.py
+lib/jabber/pyicq/jabw.py
+lib/jabber/pyicq/lang.py
+lib/jabber/pyicq/legacy/__init__.py
+lib/jabber/pyicq/legacy/glue.py
+lib/jabber/pyicq/legacy/icqt.py
+lib/jabber/pyicq/main.py
+lib/jabber/pyicq/misciq.py
+lib/jabber/pyicq/register.py
+lib/jabber/pyicq/session.py
+lib/jabber/pyicq/stats.py
+lib/jabber/pyicq/tlib/__init__.py
+lib/jabber/pyicq/tlib/countrycodes.py
+lib/jabber/pyicq/tlib/domish.py
+lib/jabber/pyicq/tlib/jabber/__init__.py
+lib/jabber/pyicq/tlib/jabber/client.py
+lib/jabber/pyicq/tlib/jabber/component.py
+lib/jabber/pyicq/tlib/jabber/jid.py
+lib/jabber/pyicq/tlib/jabber/jstrports.py
+lib/jabber/pyicq/tlib/langcodes.py
+lib/jabber/pyicq/tlib/oscar.py
+lib/jabber/pyicq/tlib/socks5.py
+lib/jabber/pyicq/tlib/sockserror.py
+lib/jabber/pyicq/tlib/xmlstream.py
+lib/jabber/pyicq/utils.py
+lib/jabber/pyicq/webadmin/__init__.py
+lib/jabber/pyicq/webadmin/handler.py
+lib/jabber/pyicq/xdb.py
+lib/jabber/pyicq/xmlconfig.py
+@dirrm lib/jabber/pyicq/legacy
+@dirrm lib/jabber/pyicq/tlib/jabber
+@dirrm lib/jabber/pyicq/tlib
+@dirrm lib/jabber/pyicq/webadmin
+@dirrm lib/jabber/pyicq
+@unexec rmdir %D/lib/jabber 2>/dev/null || true
+@dirrm %%EXAMPLESDIR%%/etc
+@dirrm %%EXAMPLESDIR%%
