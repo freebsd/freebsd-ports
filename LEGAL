@@ -73,6 +73,8 @@ bamg*			math/bamg		Contact author personally
 baudline_*		audio/baudline		No redistribution allowed
 BCWipe-*		security/bcwipe		Non-Commercial Distribution and
 						Use Only
+bdc*			security/bdc		License does not allow
+						redistribution
 bicom*			archivers/bicom		Contact author personally
 						regarding commercial use
 bk-*-x86-freebsd*	devel/bitkeeper		Redistribution is not permitted
