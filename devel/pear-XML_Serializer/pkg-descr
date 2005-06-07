@@ -1,20 +1,22 @@
-XML_Serializer serializes complex data structures like arrays or object
+PEAR::XML_Serializer serializes complex data structures like arrays or object
 as XML documents.
-This class helps you generating any XML document you require without the
-need for DOM.
+
+This class helps you generating any XML document you require without the need
+for DOM.
+
 Furthermore this package can be used as a replacement to serialize() and
-unserialize() as it comes with a matching XML_Unserializer that is able to 
-create PHP data strcutures (like arrays and objects) from XML documents,
-if type hints are available.
+unserialize() as it comes with a matching XML_Unserializer that is able to
+create PHP data structures (like arrays and objects) from XML documents, if
+type hints are available.
 
-If you use the XML_Unserialzer on standard XML files, it will try to guess
-how it has to be unserialized. In most cases it does exactly what you 
-expect it to do.
-Try reading a RSS file with XML_Unserializer and you have the whole RSS
-file in a structured array or even a collection of objects, similar to 
-XML_RSS.
+If you use the XML_Unserializer on standard XML files, it will try to guess
+how it has to be unserialized. In most cases it does exactly what you expect
+it to do.
 
-Since version 0.8 the package is able to treat XML documents like the
-simplexml extension of PHP 5.
+Try reading a RSS file with XML_Unserializer and you have the whole RSS file
+in a structured array or even a collection of objects, similar to XML_RSS.
+
+Since version 0.8.0 the package is able to treat XML documents similar to
+the simplexml extension of PHP 5.
 
 WWW: http://pear.php.net/package/XML_Serializer/
