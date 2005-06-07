@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Atom
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -16,7 +16,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 modules for Atom feed and API implementation
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-	${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
 	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-X
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
+CONFIGURE_ARGS+=	create_packlist=0
 
 MAN3=		XML::Atom.3 \
 		XML::Atom::Client.3 \
