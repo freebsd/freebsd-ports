@@ -15,4 +15,4 @@ bin/envuidgid
 bin/envdir
 bin/setlock
 bin/readproctitle
-etc/rc.d/svscan.sh
+etc/rc.d/%%STARTUP_SCRIPT%%
