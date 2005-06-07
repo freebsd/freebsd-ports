@@ -1,0 +1,5 @@
+The main goal of this program is to count bandwidth usage by IP.
+It can be categorized by TCP, ICMP, etc.
+It can sort data, display only specified columns, and much more.
+
+WWW: http://darkzone.ma.cx/resources/unix/traffic/

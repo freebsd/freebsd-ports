@@ -808,6 +808,7 @@
     SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += trackerbt
+    SUBDIR += traffic
     SUBDIR += trafshow
     SUBDIR += trafshow4
     SUBDIR += tramp
