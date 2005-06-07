@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	5.09.0
-PORTREVISION=	1
+PORTVERSION=	5.09.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
+MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/	\
+		http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
 
@@ -22,7 +22,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
 
 USE_GMAKE=	yes
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/pcre" \
-		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib"
+		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib" \
+		OCAMLFIND_DESTDIR="${PREFIX}/lib/ocaml/site-lib"
 .if !defined(WITH_CUSTOM)
 MAKE_ENV+=	NO_CUSTOM=y
 .endif
