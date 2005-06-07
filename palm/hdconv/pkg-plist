@@ -1,3 +1,0 @@
-bin/hdconv
-%%PORTDOCS%%share/doc/hdconv/README
-%%PORTDOCS%%@dirrm share/doc/hdconv
