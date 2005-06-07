@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 MAN1=		${PORTNAME}.1
 
 PORTDOCS=	README
-PLIST_FILES=	bin/ipsumdump
+PLIST_FILES=	bin/ipaggcreate bin/ipsumdump
 
 post-install:
 .if !defined(NOPORTDOCS)
