@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	OOTools
-PORTVERSION=	1.79
+PORTVERSION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DO/DOMIZIO
@@ -20,6 +20,8 @@ PERL_CONFIGURE=	YES
 MAN3=		Class::constr.3 \
 		Class::groups.3 \
 		Class::props.3	\
+		Class::Util.3	\
+		Class::Error.3	\
 		Object::groups.3 \
 		Object::props.3
 

@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Class/props.pm
 %%SITE_PERL%%/Class/constr.pm
 %%SITE_PERL%%/Class/groups.pm
+%%SITE_PERL%%/Class/Util.pm
+%%SITE_PERL%%/Class/Error.pm
 %%SITE_PERL%%/Object/groups.pm
 %%SITE_PERL%%/Object/props.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OOTools/.packlist
