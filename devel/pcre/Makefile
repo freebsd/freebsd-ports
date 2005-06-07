@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	\
 		${PORTNAME}
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library
 
 USE_BZIP2=	yes
