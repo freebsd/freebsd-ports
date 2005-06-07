@@ -1,0 +1,39 @@
+         ***********************************
+         * !!!!!!!!!!! WARNING !!!!!!!!!!! *
+         ***********************************
+
+A startup script, named sancp.sh-sample was installed in
+%%PREFIX%%/etc/rc.d/.  Create a copy named sancp.sh in the
+same directory and enable the script in /etc/rc.conf using 
+the usual rc.subr syntax.  See rc.conf(5) or go to
+http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/configtuning-rcng.html
+
+Configuration files named sancp.conf-sample and sancp.conf
+were installed in %%PREFIX%%/etc.  See the INSTALL doc, located in
+%%PREFIX%%/share/doc/sancp/ for details on configuration 
+options or type "sancp -h" on the commandline.
+
+Note that if you are installing sancp for use with sguil, the 
+sancp.conf file will not be altered unless it is identical to
+the sancp.conf-sample file.  In that case, during the 
+sguil-sensor install, the sancp.conf file will be overwritten with
+the one that comes with squil.  That file needs no editing.  If the
+sancp.conf has been altered (you used sancp for something else) a 
+new conf file, named sguil-sancp.conf-sample will be installed in the 
+%%PREFIX%%/etc/rc.d/directory.  You should use that one for sguil.
+
+Some of the configuration options for sancp are:
+
+-? or -h  this help screen
+-c <filename>  specify the configuration/rules filename
+-d <directory>  specify the directory for output files
+-i <device>  set the network device to listen on (default: 'any')
+-g <gid>   set a group identity
+-u <uid>   set a user identity
+-D (daemon) forks, prints msgs to syslog only and overrides -C option
+-F <bpf filename>  file containing a bpf filter expression, overrides (alternative to -B)
+-V  display version
+
+If you're running sguil, you probably want to use the following flags:
+sancp_flags="-D -P -R -u sancp -g sancp -d /var/log/sancp"
+(don't forget to specify the conf file and interface as well)

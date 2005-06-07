@@ -1,0 +1,42 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+USER=sancp
+GROUP=${USER}
+LOG_DIR=/var/log/sancp
+
+if [ ! -d ${LOG_DIR} ]; then mkdir ${LOG_DIR}; fi
+
+if pw group show "${GROUP}" 2>/dev/null; then
+	echo "You already have a group \"${GROUP}\", so I will use it."
+else
+	if pw groupadd ${GROUP}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if pw user show "${USER}" 2>/dev/null; then
+	echo "You already have a user \"${USER}\", so I will use it."
+	if pw usermod ${USER} -d ${LOG_DIR}
+	then
+		echo "Changed home directory of \"${USER}\" to \"${LOG_DIR}\""
+	else
+		echo "Changing home directory of \"${USER}\" to \"${LOG_DIR}\" failed..."
+		exit 1
+	fi
+else
+	if pw useradd ${USER} -g ${GROUP} -h - \
+		-d ${LOG_DIR} -s /sbin/nologin -c "SANCP Daemon"
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+chown -R ${USER}:${GROUP} ${LOG_DIR}
+chmod 750 ${LOG_DIR}

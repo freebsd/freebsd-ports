@@ -1,0 +1,28 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+USER=sancp
+GROUP=${USER}
+LOG_DIR=/var/log/sancp
+
+# Remove the log directory
+if [ -d ${LOG_DIR} ]; 
+then 
+	rmdir ${LOG_DIR} >/dev/null 2>&1; 
+fi
+
+if pw user show "${USER}" >/dev/null 2>&1; then
+        if ! pw userdel ${USER} ;          
+        then
+                echo "Unable to remove user: ${USER}, remove it manually"
+        fi
+fi
+
+
+if pw group show "${GROUP}" >/dev/null 2>&1; then
+	if ! pw groupdel ${GROUP} ; 
+	then
+		echo "Unable to remove group: ${GROUP}, remove it manually"
+	fi
+fi
+
