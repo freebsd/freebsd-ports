@@ -7,6 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.33
+PORTREVISION?=	1
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -63,6 +64,8 @@ post-patch:
 		${FILESDIR}/dbus.sh > ${WRKSRC}/dbus.sh
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/tools/run-with-tmp-session-bus.sh
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' \
+		${WRKSRC}/bus/session.conf.in
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
