@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -39,6 +39,8 @@ INSTALL_TARGET=	setup check
 
 SAMPLERC=	svscan.sh.sample
 SERVICEDIR?=	/var/service
+STARTUP_SCRIPT?=	${SAMPLERC:S/.sample//}
+PLIST_SUB+=	STARTUP_SCRIPT="${STARTUP_SCRIPT}"
 
 .include <bsd.port.pre.mk>
 
@@ -66,7 +68,7 @@ do-install:
 	done) < ${WRKSRC}/../package/commands
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${SAMPLERC} ${PREFIX}/etc/rc.d/${SAMPLERC:S/.sample//}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${SAMPLERC} ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
 .if !defined(WITHOUT_MAN)
 	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${PREFIX}/man/man8/
 .endif
