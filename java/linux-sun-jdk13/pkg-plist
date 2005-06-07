@@ -1,218 +1,88 @@
 @unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
-%%T%%/jre/bin/i386/green_threads/java
-%%T%%/jre/bin/i386/green_threads/oldjava
-%%T%%/jre/bin/i386/green_threads/javac
-%%T%%/jre/bin/i386/green_threads/oldjavac
-%%T%%/jre/bin/i386/green_threads/javah
-%%T%%/jre/bin/i386/green_threads/keytool
-%%T%%/jre/bin/i386/green_threads/jarsigner
-%%T%%/jre/bin/i386/green_threads/policytool
-%%T%%/jre/bin/i386/green_threads/jar
-%%T%%/jre/bin/i386/green_threads/appletviewer
-%%T%%/jre/bin/i386/green_threads/tnameserv
-%%T%%/jre/bin/i386/green_threads/rmic
-%%T%%/jre/bin/i386/green_threads/rmiregistry
-%%T%%/jre/bin/i386/green_threads/rmid
-%%T%%/jre/bin/i386/green_threads/javap
-%%T%%/jre/bin/i386/green_threads/native2ascii
-%%T%%/jre/bin/i386/green_threads/serialver
-%%T%%/jre/bin/i386/green_threads/oldjdb
-%%T%%/jre/bin/i386/green_threads/javadoc
-%%T%%/jre/bin/i386/green_threads/extcheck
-%%T%%/jre/bin/i386/green_threads/idlj
-%%T%%/jre/bin/i386/green_threads/jdb
-%%T%%/jre/bin/i386/native_threads/java
-%%T%%/jre/bin/i386/native_threads/keytool
-%%T%%/jre/bin/i386/native_threads/policytool
-%%T%%/jre/bin/i386/native_threads/tnameserv
-%%T%%/jre/bin/i386/native_threads/rmiregistry
-%%T%%/jre/bin/i386/native_threads/rmid
-%%T%%/jre/bin/i386/native_threads/java_vm
-%%T%%/jre/bin/i386/realpath
-%%T%%/jre/bin/.java_wrapper
-%%T%%/jre/bin/realpath
-%%T%%/jre/bin/java
-%%T%%/jre/bin/keytool
-%%T%%/jre/bin/policytool
-%%T%%/jre/bin/awt_robot
-%%T%%/jre/bin/tnameserv
-%%T%%/jre/bin/rmiregistry
-%%T%%/jre/bin/rmid
-%%T%%/jre/bin/ControlPanel
-%%T%%/jre/lib/i386/green_threads/libhpi.so
-%%T%%/jre/lib/i386/native_threads/libhpi.so
-%%T%%/jre/lib/i386/classic/Xusage.txt
-%%T%%/jre/lib/i386/classic/libjvm.so
-%%T%%/jre/lib/i386/server/libjvm.so
-%%T%%/jre/lib/i386/server/Xusage.txt
-%%T%%/jre/lib/i386/client/libjvm.so
-%%T%%/jre/lib/i386/client/Xusage.txt
-%%T%%/jre/lib/i386/hotspot
-%%T%%/jre/lib/i386/libverify.so
-%%T%%/jre/lib/i386/libjava.so
-%%T%%/jre/lib/i386/libzip.so
-%%T%%/jre/lib/i386/libhprof.so
-%%T%%/jre/lib/i386/libjcov.so
-%%T%%/jre/lib/i386/libnet.so
-%%T%%/jre/lib/i386/libjsound.so
-%%T%%/jre/lib/i386/libdcpr.so
-%%T%%/jre/lib/i386/libmlib_image.so
-%%T%%/jre/lib/i386/libawt.so
-%%T%%/jre/lib/i386/libfontmanager.so
-%%T%%/jre/lib/i386/libjpeg.so
-%%T%%/jre/lib/i386/libcmm.so
-%%T%%/jre/lib/i386/libioser12.so
-%%T%%/jre/lib/i386/libJdbcOdbc.so
-%%T%%/jre/lib/i386/libagent.so
-%%T%%/jre/lib/i386/libjawt.so
-%%T%%/jre/lib/i386/libpreemptive_close.so
-%%T%%/jre/lib/i386/libjavaplugin_jni.so
-%%T%%/jre/lib/sunrsasign.jar
-%%T%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
-%%T%%/jre/lib/fonts/LucidaTypewriterBold.ttf
-%%T%%/jre/lib/fonts/LucidaTypewriterOblique.ttf
-%%T%%/jre/lib/fonts/LucidaTypewriterBoldOblique.ttf
-%%T%%/jre/lib/fonts/LucidaBrightRegular.ttf
-%%T%%/jre/lib/fonts/LucidaBrightDemiBold.ttf
-%%T%%/jre/lib/fonts/LucidaBrightItalic.ttf
-%%T%%/jre/lib/fonts/LucidaBrightDemiItalic.ttf
-%%T%%/jre/lib/fonts/LucidaSansRegular.ttf
-%%T%%/jre/lib/fonts/LucidaSansDemiBold.ttf
-%%T%%/jre/lib/fonts/LucidaSansOblique.ttf
-%%T%%/jre/lib/fonts/LucidaSansDemiOblique.ttf
-%%T%%/jre/lib/fonts/fonts.dir
-%%T%%/jre/lib/content-types.properties
-%%T%%/jre/lib/tzmappings
-%%T%%/jre/lib/jvm.cfg
-%%T%%/jre/lib/security/java.security
-%%T%%/jre/lib/security/java.policy
-%%T%%/jre/lib/security/cacerts
-%%T%%/jre/lib/jvm.hprof.txt
-%%T%%/jre/lib/jvm.jcov.txt
-%%T%%/jre/lib/flavormap.properties
-%%T%%/jre/lib/images/cursors/cursors.properties
-%%T%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
-%%T%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
-%%T%%/jre/lib/images/cursors/motif_LinkDrop32x32.gif
-%%T%%/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
-%%T%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
-%%T%%/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
-%%T%%/jre/lib/images/cursors/invalid32x32.gif
-%%T%%/jre/lib/audio/soundbank.gm
-%%T%%/jre/lib/psfontj2d.properties
-%%T%%/jre/lib/font.properties
-%%T%%/jre/lib/font.properties.ja
-%%T%%/jre/lib/psfont.properties.ja
-%%T%%/jre/lib/font.properties.zh
-%%T%%/jre/lib/cmm/sRGB.pf
-%%T%%/jre/lib/cmm/GRAY.pf
-%%T%%/jre/lib/cmm/CIEXYZ.pf
-%%T%%/jre/lib/cmm/PYCC.pf
-%%T%%/jre/lib/cmm/LINEAR_RGB.pf
-%%T%%/jre/lib/rt.jar
-%%T%%/jre/lib/i18n.jar
-%%T%%/jre/lib/javaplugin.jar
-%%T%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
-%%T%%/jre/CHANGES
-%%T%%/jre/COPYRIGHT
-%%T%%/jre/LICENSE
-%%T%%/jre/Welcome.html
-%%T%%/jre/README
-%%T%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
-%%T%%/jre/plugin/i386/ns4/javaplugin.so
-%%T%%/jre/ControlPanel.html
-%%T%%/lib/htmlconverter.jar
-%%T%%/lib/tools.jar
-%%T%%/lib/orb.idl
-%%T%%/lib/ir.idl
-%%T%%/lib/i386/libdt_socket.so
-%%T%%/lib/i386/libjdwp.so
-%%T%%/lib/dt.jar
-%%T%%/bin/i386/green_threads/java
-%%T%%/bin/i386/green_threads/oldjava
-%%T%%/bin/i386/green_threads/javac
-%%T%%/bin/i386/green_threads/oldjavac
-%%T%%/bin/i386/green_threads/javah
-%%T%%/bin/i386/green_threads/keytool
-%%T%%/bin/i386/green_threads/jarsigner
-%%T%%/bin/i386/green_threads/policytool
-%%T%%/bin/i386/green_threads/jar
-%%T%%/bin/i386/green_threads/appletviewer
-%%T%%/bin/i386/green_threads/tnameserv
-%%T%%/bin/i386/green_threads/rmic
-%%T%%/bin/i386/green_threads/rmiregistry
-%%T%%/bin/i386/green_threads/rmid
-%%T%%/bin/i386/green_threads/javap
-%%T%%/bin/i386/green_threads/native2ascii
-%%T%%/bin/i386/green_threads/serialver
-%%T%%/bin/i386/green_threads/oldjdb
-%%T%%/bin/i386/green_threads/javadoc
-%%T%%/bin/i386/green_threads/extcheck
-%%T%%/bin/i386/green_threads/idlj
-%%T%%/bin/i386/green_threads/jdb
-%%T%%/bin/i386/native_threads/java
-%%T%%/bin/i386/native_threads/oldjava
-%%T%%/bin/i386/native_threads/javac
-%%T%%/bin/i386/native_threads/oldjavac
-%%T%%/bin/i386/native_threads/javah
-%%T%%/bin/i386/native_threads/keytool
-%%T%%/bin/i386/native_threads/jarsigner
-%%T%%/bin/i386/native_threads/policytool
-%%T%%/bin/i386/native_threads/jar
-%%T%%/bin/i386/native_threads/appletviewer
-%%T%%/bin/i386/native_threads/tnameserv
-%%T%%/bin/i386/native_threads/rmic
-%%T%%/bin/i386/native_threads/rmiregistry
-%%T%%/bin/i386/native_threads/rmid
-%%T%%/bin/i386/native_threads/javap
-%%T%%/bin/i386/native_threads/native2ascii
-%%T%%/bin/i386/native_threads/serialver
-%%T%%/bin/i386/native_threads/oldjdb
-%%T%%/bin/i386/native_threads/javadoc
-%%T%%/bin/i386/native_threads/extcheck
-%%T%%/bin/i386/native_threads/idlj
-%%T%%/bin/i386/native_threads/jdb
-%%T%%/bin/i386/native_threads/java_vm
-%%T%%/bin/i386/realpath
+%%T%%/COPYRIGHT
+%%T%%/LICENSE
+%%T%%/README
+%%T%%/README.html
 %%T%%/bin/.java_wrapper
-%%T%%/bin/realpath
-%%T%%/bin/java
-%%T%%/bin/oldjava
-%%T%%/bin/javac
-%%T%%/bin/oldjavac
-%%T%%/bin/javah
-%%T%%/bin/keytool
-%%T%%/bin/jarsigner
-%%T%%/bin/policytool
-%%T%%/bin/jar
-%%T%%/bin/awt_robot
-%%T%%/bin/appletviewer
-%%T%%/bin/tnameserv
-%%T%%/bin/rmic
-%%T%%/bin/java-rmi.cgi
-%%T%%/bin/rmiregistry
-%%T%%/bin/rmid
-%%T%%/bin/javap
-%%T%%/bin/native2ascii
-%%T%%/bin/serialver
-%%T%%/bin/oldjdb
-%%T%%/bin/javadoc
-%%T%%/bin/extcheck
-%%T%%/bin/idlj
-%%T%%/bin/jdb
 %%T%%/bin/ControlPanel
 %%T%%/bin/HtmlConverter
+%%T%%/bin/appletviewer
+%%T%%/bin/awt_robot
+%%T%%/bin/extcheck
+%%T%%/bin/i386/green_threads/appletviewer
+%%T%%/bin/i386/green_threads/extcheck
+%%T%%/bin/i386/green_threads/idlj
+%%T%%/bin/i386/green_threads/jar
+%%T%%/bin/i386/green_threads/jarsigner
+%%T%%/bin/i386/green_threads/java
+%%T%%/bin/i386/green_threads/javac
+%%T%%/bin/i386/green_threads/javadoc
+%%T%%/bin/i386/green_threads/javah
+%%T%%/bin/i386/green_threads/javap
+%%T%%/bin/i386/green_threads/jdb
+%%T%%/bin/i386/green_threads/keytool
+%%T%%/bin/i386/green_threads/native2ascii
+%%T%%/bin/i386/green_threads/oldjava
+%%T%%/bin/i386/green_threads/oldjavac
+%%T%%/bin/i386/green_threads/oldjdb
+%%T%%/bin/i386/green_threads/policytool
+%%T%%/bin/i386/green_threads/rmic
+%%T%%/bin/i386/green_threads/rmid
+%%T%%/bin/i386/green_threads/rmiregistry
+%%T%%/bin/i386/green_threads/serialver
+%%T%%/bin/i386/green_threads/tnameserv
+%%T%%/bin/i386/native_threads/appletviewer
+%%T%%/bin/i386/native_threads/extcheck
+%%T%%/bin/i386/native_threads/idlj
+%%T%%/bin/i386/native_threads/jar
+%%T%%/bin/i386/native_threads/jarsigner
+%%T%%/bin/i386/native_threads/java
+%%T%%/bin/i386/native_threads/java_vm
+%%T%%/bin/i386/native_threads/javac
+%%T%%/bin/i386/native_threads/javadoc
+%%T%%/bin/i386/native_threads/javah
+%%T%%/bin/i386/native_threads/javap
+%%T%%/bin/i386/native_threads/jdb
+%%T%%/bin/i386/native_threads/keytool
+%%T%%/bin/i386/native_threads/native2ascii
+%%T%%/bin/i386/native_threads/oldjava
+%%T%%/bin/i386/native_threads/oldjavac
+%%T%%/bin/i386/native_threads/oldjdb
+%%T%%/bin/i386/native_threads/policytool
+%%T%%/bin/i386/native_threads/rmic
+%%T%%/bin/i386/native_threads/rmid
+%%T%%/bin/i386/native_threads/rmiregistry
+%%T%%/bin/i386/native_threads/serialver
+%%T%%/bin/i386/native_threads/tnameserv
+%%T%%/bin/i386/realpath
+%%T%%/bin/idlj
+%%T%%/bin/jar
+%%T%%/bin/jarsigner
+%%T%%/bin/java
+%%T%%/bin/java-rmi.cgi
+%%T%%/bin/javac
+%%T%%/bin/javadoc
+%%T%%/bin/javah
+%%T%%/bin/javap
+%%T%%/bin/jdb
+%%T%%/bin/keytool
+%%T%%/bin/native2ascii
+%%T%%/bin/oldjava
+%%T%%/bin/oldjavac
+%%T%%/bin/oldjdb
+%%T%%/bin/policytool
+%%T%%/bin/realpath
+%%T%%/bin/rmic
+%%T%%/bin/rmid
+%%T%%/bin/rmiregistry
+%%T%%/bin/serialver
+%%T%%/bin/tnameserv
+%%T%%/demo/applets/Animator/Animation.class
+%%T%%/demo/applets/Animator/AnimationFrame.class
+%%T%%/demo/applets/Animator/Animator.class
+%%T%%/demo/applets/Animator/Animator.java
+%%T%%/demo/applets/Animator/DescriptionFrame.class
+%%T%%/demo/applets/Animator/ParseException.class
 %%T%%/demo/applets/Animator/audio/0.au
 %%T%%/demo/applets/Animator/audio/1.au
 %%T%%/demo/applets/Animator/audio/2.au
@@ -224,64 +94,63 @@
 %%T%%/demo/applets/Animator/audio/8.au
 %%T%%/demo/applets/Animator/audio/9.au
 %%T%%/demo/applets/Animator/audio/spacemusic.au
-%%T%%/demo/applets/Animator/images/SimpleAnimation/T1.gif
-%%T%%/demo/applets/Animator/images/SimpleAnimation/T2.gif
-%%T%%/demo/applets/Animator/images/Beans/T10.gif
-%%T%%/demo/applets/Animator/images/Beans/T9.gif
-%%T%%/demo/applets/Animator/images/Beans/T7.gif
-%%T%%/demo/applets/Animator/images/Beans/T3.gif
-%%T%%/demo/applets/Animator/images/Beans/T8.gif
-%%T%%/demo/applets/Animator/images/Beans/T6.gif
-%%T%%/demo/applets/Animator/images/Beans/T2.gif
-%%T%%/demo/applets/Animator/images/Beans/T1.gif
-%%T%%/demo/applets/Animator/images/Beans/T5.gif
-%%T%%/demo/applets/Animator/images/Beans/T4.gif
-%%T%%/demo/applets/Animator/images/loading-msg.gif
 %%T%%/demo/applets/Animator/example1.html
 %%T%%/demo/applets/Animator/example2.html
 %%T%%/demo/applets/Animator/example3.html
 %%T%%/demo/applets/Animator/example4.html
-%%T%%/demo/applets/Animator/Animator.java
-%%T%%/demo/applets/Animator/Animator.class
-%%T%%/demo/applets/Animator/Animation.class
-%%T%%/demo/applets/Animator/ParseException.class
-%%T%%/demo/applets/Animator/AnimationFrame.class
-%%T%%/demo/applets/Animator/DescriptionFrame.class
-%%T%%/demo/applets/ArcTest/example1.html
-%%T%%/demo/applets/ArcTest/ArcTest.java
-%%T%%/demo/applets/ArcTest/ArcTest.class
-%%T%%/demo/applets/ArcTest/ArcControls.class
+%%T%%/demo/applets/Animator/images/Beans/T1.gif
+%%T%%/demo/applets/Animator/images/Beans/T10.gif
+%%T%%/demo/applets/Animator/images/Beans/T2.gif
+%%T%%/demo/applets/Animator/images/Beans/T3.gif
+%%T%%/demo/applets/Animator/images/Beans/T4.gif
+%%T%%/demo/applets/Animator/images/Beans/T5.gif
+%%T%%/demo/applets/Animator/images/Beans/T6.gif
+%%T%%/demo/applets/Animator/images/Beans/T7.gif
+%%T%%/demo/applets/Animator/images/Beans/T8.gif
+%%T%%/demo/applets/Animator/images/Beans/T9.gif
+%%T%%/demo/applets/Animator/images/SimpleAnimation/T1.gif
+%%T%%/demo/applets/Animator/images/SimpleAnimation/T2.gif
+%%T%%/demo/applets/Animator/images/loading-msg.gif
 %%T%%/demo/applets/ArcTest/ArcCanvas.class
-%%T%%/demo/applets/BarChart/example1.html
-%%T%%/demo/applets/BarChart/Chart.java
+%%T%%/demo/applets/ArcTest/ArcControls.class
+%%T%%/demo/applets/ArcTest/ArcTest.class
+%%T%%/demo/applets/ArcTest/ArcTest.java
+%%T%%/demo/applets/ArcTest/example1.html
 %%T%%/demo/applets/BarChart/Chart.class
-%%T%%/demo/applets/Blink/example1.html
-%%T%%/demo/applets/Blink/Blink.java
+%%T%%/demo/applets/BarChart/Chart.java
+%%T%%/demo/applets/BarChart/example1.html
 %%T%%/demo/applets/Blink/Blink$1.class
 %%T%%/demo/applets/Blink/Blink.class
-%%T%%/demo/applets/CardTest/example1.html
-%%T%%/demo/applets/CardTest/CardTest.java
+%%T%%/demo/applets/Blink/Blink.java
+%%T%%/demo/applets/Blink/example1.html
 %%T%%/demo/applets/CardTest/CardPanel.class
 %%T%%/demo/applets/CardTest/CardTest.class
-%%T%%/demo/applets/Clock/example1.html
-%%T%%/demo/applets/Clock/Clock2.java
+%%T%%/demo/applets/CardTest/CardTest.java
+%%T%%/demo/applets/CardTest/example1.html
 %%T%%/demo/applets/Clock/Clock2.class
-%%T%%/demo/applets/DitherTest/example1.html
-%%T%%/demo/applets/DitherTest/DitherTest.java
-%%T%%/demo/applets/DitherTest/DitherTest.class
-%%T%%/demo/applets/DitherTest/DitherControls.class
+%%T%%/demo/applets/Clock/Clock2.java
+%%T%%/demo/applets/Clock/example1.html
 %%T%%/demo/applets/DitherTest/DitherCanvas.class
-%%T%%/demo/applets/DrawTest/example1.html
-%%T%%/demo/applets/DrawTest/DrawTest.java
-%%T%%/demo/applets/DrawTest/DrawTest.class
-%%T%%/demo/applets/DrawTest/DrawPanel.class
+%%T%%/demo/applets/DitherTest/DitherControls.class
+%%T%%/demo/applets/DitherTest/DitherTest.class
+%%T%%/demo/applets/DitherTest/DitherTest.java
+%%T%%/demo/applets/DitherTest/example1.html
 %%T%%/demo/applets/DrawTest/DrawControls.class
-%%T%%/demo/applets/Fractal/example1.html
-%%T%%/demo/applets/Fractal/CLSFractal.java
+%%T%%/demo/applets/DrawTest/DrawPanel.class
+%%T%%/demo/applets/DrawTest/DrawTest.class
+%%T%%/demo/applets/DrawTest/DrawTest.java
+%%T%%/demo/applets/DrawTest/example1.html
 %%T%%/demo/applets/Fractal/CLSFractal.class
-%%T%%/demo/applets/Fractal/ContextLSystem.class
+%%T%%/demo/applets/Fractal/CLSFractal.java
 %%T%%/demo/applets/Fractal/CLSRule.class
 %%T%%/demo/applets/Fractal/CLSTurtle.class
+%%T%%/demo/applets/Fractal/ContextLSystem.class
+%%T%%/demo/applets/Fractal/example1.html
+%%T%%/demo/applets/GraphLayout/Edge.class
+%%T%%/demo/applets/GraphLayout/Graph.class
+%%T%%/demo/applets/GraphLayout/Graph.java
+%%T%%/demo/applets/GraphLayout/GraphPanel.class
+%%T%%/demo/applets/GraphLayout/Node.class
 %%T%%/demo/applets/GraphLayout/audio/computer.au
 %%T%%/demo/applets/GraphLayout/audio/drip.au
 %%T%%/demo/applets/GraphLayout/audio/gong.au
@@ -289,142 +158,346 @@
 %%T%%/demo/applets/GraphLayout/example2.html
 %%T%%/demo/applets/GraphLayout/example3.html
 %%T%%/demo/applets/GraphLayout/example4.html
-%%T%%/demo/applets/GraphLayout/Graph.java
-%%T%%/demo/applets/GraphLayout/Node.class
-%%T%%/demo/applets/GraphLayout/Edge.class
-%%T%%/demo/applets/GraphLayout/GraphPanel.class
-%%T%%/demo/applets/GraphLayout/Graph.class
-%%T%%/demo/applets/GraphicsTest/example1.html
-%%T%%/demo/applets/GraphicsTest/AppletFrame.java
-%%T%%/demo/applets/GraphicsTest/GraphicsTest.java
 %%T%%/demo/applets/GraphicsTest/AppletFrame.class
-%%T%%/demo/applets/GraphicsTest/GraphicsPanel.class
-%%T%%/demo/applets/GraphicsTest/GraphicsCards.class
-%%T%%/demo/applets/GraphicsTest/GraphicsTest.class
+%%T%%/demo/applets/GraphicsTest/AppletFrame.java
 %%T%%/demo/applets/GraphicsTest/ArcCard.class
 %%T%%/demo/applets/GraphicsTest/ArcDegreePanel.class
 %%T%%/demo/applets/GraphicsTest/ArcPanel.class
-%%T%%/demo/applets/GraphicsTest/Shape.class
-%%T%%/demo/applets/GraphicsTest/RectShape.class
-%%T%%/demo/applets/GraphicsTest/OvalShape.class
-%%T%%/demo/applets/GraphicsTest/RoundRectShape.class
-%%T%%/demo/applets/GraphicsTest/PolygonShape.class
-%%T%%/demo/applets/GraphicsTest/ShapeTest.class
 %%T%%/demo/applets/GraphicsTest/ColorUtils.class
+%%T%%/demo/applets/GraphicsTest/GraphicsCards.class
+%%T%%/demo/applets/GraphicsTest/GraphicsPanel.class
+%%T%%/demo/applets/GraphicsTest/GraphicsTest.class
+%%T%%/demo/applets/GraphicsTest/GraphicsTest.java
+%%T%%/demo/applets/GraphicsTest/OvalShape.class
+%%T%%/demo/applets/GraphicsTest/PolygonShape.class
+%%T%%/demo/applets/GraphicsTest/RectShape.class
+%%T%%/demo/applets/GraphicsTest/RoundRectShape.class
+%%T%%/demo/applets/GraphicsTest/Shape.class
+%%T%%/demo/applets/GraphicsTest/ShapeTest.class
+%%T%%/demo/applets/GraphicsTest/example1.html
+%%T%%/demo/applets/ImageMap/AniArea.class
+%%T%%/demo/applets/ImageMap/AniArea.java
+%%T%%/demo/applets/ImageMap/ButtonFilter.class
+%%T%%/demo/applets/ImageMap/ButtonFilter.java
+%%T%%/demo/applets/ImageMap/ClickArea.class
+%%T%%/demo/applets/ImageMap/ClickArea.java
+%%T%%/demo/applets/ImageMap/DelayedSoundArea.class
+%%T%%/demo/applets/ImageMap/DelayedSoundArea.java
+%%T%%/demo/applets/ImageMap/HighlightArea.class
+%%T%%/demo/applets/ImageMap/HighlightArea.java
+%%T%%/demo/applets/ImageMap/HighlightFilter.class
+%%T%%/demo/applets/ImageMap/HighlightFilter.java
+%%T%%/demo/applets/ImageMap/HrefButtonArea.class
+%%T%%/demo/applets/ImageMap/HrefButtonArea.java
+%%T%%/demo/applets/ImageMap/ImageMap.class
+%%T%%/demo/applets/ImageMap/ImageMap.java
+%%T%%/demo/applets/ImageMap/ImageMapArea.class
+%%T%%/demo/applets/ImageMap/ImageMapArea.java
+%%T%%/demo/applets/ImageMap/LinkArea.class
+%%T%%/demo/applets/ImageMap/LinkArea.java
+%%T%%/demo/applets/ImageMap/NameArea.class
+%%T%%/demo/applets/ImageMap/NameArea.java
+%%T%%/demo/applets/ImageMap/RoundButtonFilter.class
+%%T%%/demo/applets/ImageMap/RoundButtonFilter.java
+%%T%%/demo/applets/ImageMap/RoundHrefButtonArea.class
+%%T%%/demo/applets/ImageMap/RoundHrefButtonArea.java
+%%T%%/demo/applets/ImageMap/SoundArea.class
+%%T%%/demo/applets/ImageMap/SoundArea.java
+%%T%%/demo/applets/ImageMap/TickerArea.class
+%%T%%/demo/applets/ImageMap/TickerArea.java
 %%T%%/demo/applets/ImageMap/audio/chirp1.au
 %%T%%/demo/applets/ImageMap/audio/hi.au
-%%T%%/demo/applets/ImageMap/images/jim.graham.gif
 %%T%%/demo/applets/ImageMap/example1.html
-%%T%%/demo/applets/ImageMap/sources.html
 %%T%%/demo/applets/ImageMap/imagemapcheat.html
-%%T%%/demo/applets/ImageMap/AniArea.java
-%%T%%/demo/applets/ImageMap/ButtonFilter.java
-%%T%%/demo/applets/ImageMap/ClickArea.java
-%%T%%/demo/applets/ImageMap/DelayedSoundArea.java
-%%T%%/demo/applets/ImageMap/HighlightArea.java
-%%T%%/demo/applets/ImageMap/HighlightFilter.java
-%%T%%/demo/applets/ImageMap/HrefButtonArea.java
-%%T%%/demo/applets/ImageMap/ImageMap.java
-%%T%%/demo/applets/ImageMap/ImageMapArea.java
-%%T%%/demo/applets/ImageMap/LinkArea.java
-%%T%%/demo/applets/ImageMap/NameArea.java
-%%T%%/demo/applets/ImageMap/RoundButtonFilter.java
-%%T%%/demo/applets/ImageMap/RoundHrefButtonArea.java
-%%T%%/demo/applets/ImageMap/SoundArea.java
-%%T%%/demo/applets/ImageMap/TickerArea.java
-%%T%%/demo/applets/ImageMap/AniArea.class
-%%T%%/demo/applets/ImageMap/ImageMapArea.class
-%%T%%/demo/applets/ImageMap/ImageMap.class
-%%T%%/demo/applets/ImageMap/ButtonFilter.class
-%%T%%/demo/applets/ImageMap/ClickArea.class
-%%T%%/demo/applets/ImageMap/DelayedSoundArea.class
-%%T%%/demo/applets/ImageMap/HighlightArea.class
-%%T%%/demo/applets/ImageMap/HighlightFilter.class
-%%T%%/demo/applets/ImageMap/HrefButtonArea.class
-%%T%%/demo/applets/ImageMap/LinkArea.class
-%%T%%/demo/applets/ImageMap/NameArea.class
-%%T%%/demo/applets/ImageMap/RoundButtonFilter.class
-%%T%%/demo/applets/ImageMap/RoundHrefButtonArea.class
-%%T%%/demo/applets/ImageMap/SoundArea.class
-%%T%%/demo/applets/ImageMap/TickerArea.class
+%%T%%/demo/applets/ImageMap/images/jim.graham.gif
+%%T%%/demo/applets/ImageMap/sources.html
+%%T%%/demo/applets/JumpingBox/MouseTrack.class
+%%T%%/demo/applets/JumpingBox/MouseTrack.java
+%%T%%/demo/applets/JumpingBox/example1.html
 %%T%%/demo/applets/JumpingBox/sounds/adapt-or-die.au
+%%T%%/demo/applets/JumpingBox/sounds/cannot.be.completed.au
 %%T%%/demo/applets/JumpingBox/sounds/ip.au
 %%T%%/demo/applets/JumpingBox/sounds/that.hurts.au
-%%T%%/demo/applets/JumpingBox/sounds/cannot.be.completed.au
 %%T%%/demo/applets/JumpingBox/sounds/thin.bell.au
 %%T%%/demo/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
-%%T%%/demo/applets/JumpingBox/example1.html
-%%T%%/demo/applets/JumpingBox/MouseTrack.java
-%%T%%/demo/applets/JumpingBox/MouseTrack.class
-%%T%%/demo/applets/MoleculeViewer/models/benzene.xyz
-%%T%%/demo/applets/MoleculeViewer/models/buckminsterfullerine.xyz
-%%T%%/demo/applets/MoleculeViewer/models/HyaluronicAcid.xyz
-%%T%%/demo/applets/MoleculeViewer/models/cyclohexane.xyz
-%%T%%/demo/applets/MoleculeViewer/models/ethane.xyz
-%%T%%/demo/applets/MoleculeViewer/models/water.xyz
+%%T%%/demo/applets/MoleculeViewer/Atom.class
+%%T%%/demo/applets/MoleculeViewer/Matrix3D.class
+%%T%%/demo/applets/MoleculeViewer/Matrix3D.java
+%%T%%/demo/applets/MoleculeViewer/XYZApp.class
+%%T%%/demo/applets/MoleculeViewer/XYZApp.java
+%%T%%/demo/applets/MoleculeViewer/XYZChemModel.class
 %%T%%/demo/applets/MoleculeViewer/example1.html
 %%T%%/demo/applets/MoleculeViewer/example2.html
 %%T%%/demo/applets/MoleculeViewer/example3.html
-%%T%%/demo/applets/MoleculeViewer/Matrix3D.java
-%%T%%/demo/applets/MoleculeViewer/XYZApp.java
-%%T%%/demo/applets/MoleculeViewer/Matrix3D.class
-%%T%%/demo/applets/MoleculeViewer/XYZChemModel.class
-%%T%%/demo/applets/MoleculeViewer/Atom.class
-%%T%%/demo/applets/MoleculeViewer/XYZApp.class
-%%T%%/demo/applets/NervousText/example1.html
-%%T%%/demo/applets/NervousText/NervousText.java
+%%T%%/demo/applets/MoleculeViewer/models/HyaluronicAcid.xyz
+%%T%%/demo/applets/MoleculeViewer/models/benzene.xyz
+%%T%%/demo/applets/MoleculeViewer/models/buckminsterfullerine.xyz
+%%T%%/demo/applets/MoleculeViewer/models/cyclohexane.xyz
+%%T%%/demo/applets/MoleculeViewer/models/ethane.xyz
+%%T%%/demo/applets/MoleculeViewer/models/water.xyz
 %%T%%/demo/applets/NervousText/NervousText.class
-%%T%%/demo/applets/SimpleGraph/example1.html
-%%T%%/demo/applets/SimpleGraph/GraphApplet.java
+%%T%%/demo/applets/NervousText/NervousText.java
+%%T%%/demo/applets/NervousText/example1.html
 %%T%%/demo/applets/SimpleGraph/GraphApplet.class
-%%T%%/demo/applets/SortDemo/example1.html
-%%T%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
-%%T%%/demo/applets/SortDemo/BubbleSortAlgorithm.java
-%%T%%/demo/applets/SortDemo/QSortAlgorithm.java
-%%T%%/demo/applets/SortDemo/SortAlgorithm.java
-%%T%%/demo/applets/SortDemo/SortItem.java
+%%T%%/demo/applets/SimpleGraph/GraphApplet.java
+%%T%%/demo/applets/SimpleGraph/example1.html
 %%T%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
-%%T%%/demo/applets/SortDemo/SortAlgorithm.class
-%%T%%/demo/applets/SortDemo/SortItem.class
+%%T%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
 %%T%%/demo/applets/SortDemo/BubbleSortAlgorithm.class
+%%T%%/demo/applets/SortDemo/BubbleSortAlgorithm.java
 %%T%%/demo/applets/SortDemo/QSortAlgorithm.class
-%%T%%/demo/applets/SpreadSheet/example1.html
-%%T%%/demo/applets/SpreadSheet/SpreadSheet.java
-%%T%%/demo/applets/SpreadSheet/SpreadSheet.class
-%%T%%/demo/applets/SpreadSheet/SpreadSheetInput.class
-%%T%%/demo/applets/SpreadSheet/InputField.class
+%%T%%/demo/applets/SortDemo/QSortAlgorithm.java
+%%T%%/demo/applets/SortDemo/SortAlgorithm.class
+%%T%%/demo/applets/SortDemo/SortAlgorithm.java
+%%T%%/demo/applets/SortDemo/SortItem.class
+%%T%%/demo/applets/SortDemo/SortItem.java
+%%T%%/demo/applets/SortDemo/example1.html
 %%T%%/demo/applets/SpreadSheet/Cell.class
-%%T%%/demo/applets/SpreadSheet/Node.class
 %%T%%/demo/applets/SpreadSheet/CellUpdater.class
-%%T%%/demo/applets/SymbolTest/example1.html
-%%T%%/demo/applets/SymbolTest/SymbolTest.java
+%%T%%/demo/applets/SpreadSheet/InputField.class
+%%T%%/demo/applets/SpreadSheet/Node.class
+%%T%%/demo/applets/SpreadSheet/SpreadSheet.class
+%%T%%/demo/applets/SpreadSheet/SpreadSheet.java
+%%T%%/demo/applets/SpreadSheet/SpreadSheetInput.class
+%%T%%/demo/applets/SpreadSheet/example1.html
+%%T%%/demo/applets/SymbolTest/SymbolCanvas.class
 %%T%%/demo/applets/SymbolTest/SymbolTest$MyAdapter.class
 %%T%%/demo/applets/SymbolTest/SymbolTest.class
-%%T%%/demo/applets/SymbolTest/SymbolCanvas.class
+%%T%%/demo/applets/SymbolTest/SymbolTest.java
+%%T%%/demo/applets/SymbolTest/example1.html
+%%T%%/demo/applets/TicTacToe/TicTacToe.class
+%%T%%/demo/applets/TicTacToe/TicTacToe.java
 %%T%%/demo/applets/TicTacToe/audio/beep.au
 %%T%%/demo/applets/TicTacToe/audio/ding.au
 %%T%%/demo/applets/TicTacToe/audio/return.au
 %%T%%/demo/applets/TicTacToe/audio/yahoo1.au
 %%T%%/demo/applets/TicTacToe/audio/yahoo2.au
+%%T%%/demo/applets/TicTacToe/example1.html
 %%T%%/demo/applets/TicTacToe/images/cross.gif
 %%T%%/demo/applets/TicTacToe/images/not.gif
-%%T%%/demo/applets/TicTacToe/example1.html
-%%T%%/demo/applets/TicTacToe/TicTacToe.java
-%%T%%/demo/applets/TicTacToe/TicTacToe.class
-%%T%%/demo/applets/WireFrame/models/cube.obj
-%%T%%/demo/applets/WireFrame/models/dinasaur.obj
-%%T%%/demo/applets/WireFrame/models/hughes_500.obj
-%%T%%/demo/applets/WireFrame/models/knoxS.obj
+%%T%%/demo/applets/WireFrame/FileFormatException.class
+%%T%%/demo/applets/WireFrame/Matrix3D.class
+%%T%%/demo/applets/WireFrame/Matrix3D.java
+%%T%%/demo/applets/WireFrame/Model3D.class
+%%T%%/demo/applets/WireFrame/ThreeD.class
+%%T%%/demo/applets/WireFrame/ThreeD.java
 %%T%%/demo/applets/WireFrame/example1.html
 %%T%%/demo/applets/WireFrame/example2.html
 %%T%%/demo/applets/WireFrame/example3.html
 %%T%%/demo/applets/WireFrame/example4.html
-%%T%%/demo/applets/WireFrame/Matrix3D.java
-%%T%%/demo/applets/WireFrame/ThreeD.java
-%%T%%/demo/applets/WireFrame/Matrix3D.class
-%%T%%/demo/applets/WireFrame/FileFormatException.class
-%%T%%/demo/applets/WireFrame/Model3D.class
-%%T%%/demo/applets/WireFrame/ThreeD.class
+%%T%%/demo/applets/WireFrame/models/cube.obj
+%%T%%/demo/applets/WireFrame/models/dinasaur.obj
+%%T%%/demo/applets/WireFrame/models/hughes_500.obj
+%%T%%/demo/applets/WireFrame/models/knoxS.obj
+%%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.class
+%%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.java
+%%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/runnit.bat
+%%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.class
+%%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.java
+%%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase/runnit.bat
+%%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.class
+%%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.java
+%%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/runnit.bat
+%%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.class
+%%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.java
+%%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/runnit.bat
+%%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.class
+%%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.java
+%%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/runnit.bat
+%%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.class
+%%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.java
+%%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase/runnit.bat
+%%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.class
+%%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.java
+%%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/runnit.bat
+%%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.class
+%%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.java
+%%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/runnit.bat
+%%T%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.MDB
+%%T%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.ldb
+%%T%%/demo/jfc/DBDemos/README.txt
+%%T%%/demo/jfc/DBDemos/private.fls
+%%T%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
+%%T%%/demo/jfc/FileChooserDemo/README.txt
+%%T%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
+%%T%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
+%%T%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
+%%T%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
+%%T%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
+%%T%%/demo/jfc/Font2DTest/Font2DTest.html
+%%T%%/demo/jfc/Font2DTest/Font2DTest.jar
+%%T%%/demo/jfc/Font2DTest/README.txt
+%%T%%/demo/jfc/Font2DTest/resources/TextResources.properties
+%%T%%/demo/jfc/Font2DTest/resources/TextResources_de.properties
+%%T%%/demo/jfc/Font2DTest/resources/TextResources_en.properties
+%%T%%/demo/jfc/Font2DTest/resources/TextResources_en_GB.properties
+%%T%%/demo/jfc/Font2DTest/resources/TextResources_ko.properties
+%%T%%/demo/jfc/Font2DTest/resources/resource.data
+%%T%%/demo/jfc/Font2DTest/src/Font2DTest.java
+%%T%%/demo/jfc/Java2D/Java2Demo.html
+%%T%%/demo/jfc/Java2D/Java2Demo.jar
+%%T%%/demo/jfc/Java2D/README.txt
+%%T%%/demo/jfc/Java2D/src/AnimatingControlsSurface.java
+%%T%%/demo/jfc/Java2D/src/AnimatingSurface.java
+%%T%%/demo/jfc/Java2D/src/CloningFeature.java
+%%T%%/demo/jfc/Java2D/src/ControlsSurface.java
+%%T%%/demo/jfc/Java2D/src/CustomControls.java
+%%T%%/demo/jfc/Java2D/src/CustomControlsContext.java
+%%T%%/demo/jfc/Java2D/src/DemoFonts.java
+%%T%%/demo/jfc/Java2D/src/DemoGroup.java
+%%T%%/demo/jfc/Java2D/src/DemoImages.java
+%%T%%/demo/jfc/Java2D/src/DemoPanel.java
+%%T%%/demo/jfc/Java2D/src/GlobalControls.java
+%%T%%/demo/jfc/Java2D/src/GlobalPanel.java
+%%T%%/demo/jfc/Java2D/src/Intro.java
+%%T%%/demo/jfc/Java2D/src/Java2Demo.java
+%%T%%/demo/jfc/Java2D/src/Java2DemoApplet.java
+%%T%%/demo/jfc/Java2D/src/MemoryMonitor.java
+%%T%%/demo/jfc/Java2D/src/PerformanceMonitor.java
+%%T%%/demo/jfc/Java2D/src/RunWindow.java
+%%T%%/demo/jfc/Java2D/src/Surface.java
+%%T%%/demo/jfc/Java2D/src/TextureChooser.java
+%%T%%/demo/jfc/Java2D/src/Tools.java
+%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Arcs.java
+%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/BezierAnim.java
+%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Curves.java
+%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Ellipses.java
+%%T%%/demo/jfc/Java2D/src/demos/Clipping/Areas.java
+%%T%%/demo/jfc/Java2D/src/demos/Clipping/ClipAnim.java
+%%T%%/demo/jfc/Java2D/src/demos/Clipping/Intersection.java
+%%T%%/demo/jfc/Java2D/src/demos/Clipping/Text.java
+%%T%%/demo/jfc/Java2D/src/demos/Colors/BullsEye.java
+%%T%%/demo/jfc/Java2D/src/demos/Colors/ColorConvert.java
+%%T%%/demo/jfc/Java2D/src/demos/Colors/Rotator3D.java
+%%T%%/demo/jfc/Java2D/src/demos/Composite/ACimages.java
+%%T%%/demo/jfc/Java2D/src/demos/Composite/ACrules.java
+%%T%%/demo/jfc/Java2D/src/demos/Composite/FadeAnim.java
+%%T%%/demo/jfc/Java2D/src/demos/Fonts/AllFonts.java
+%%T%%/demo/jfc/Java2D/src/demos/Fonts/AttributedStr.java
+%%T%%/demo/jfc/Java2D/src/demos/Fonts/Highlighting.java
+%%T%%/demo/jfc/Java2D/src/demos/Fonts/Outline.java
+%%T%%/demo/jfc/Java2D/src/demos/Fonts/Tree.java
+%%T%%/demo/jfc/Java2D/src/demos/Images/DukeAnim.java
+%%T%%/demo/jfc/Java2D/src/demos/Images/ImageOps.java
+%%T%%/demo/jfc/Java2D/src/demos/Images/JPEGFlip.java
+%%T%%/demo/jfc/Java2D/src/demos/Images/WarpImage.java
+%%T%%/demo/jfc/Java2D/src/demos/Lines/Caps.java
+%%T%%/demo/jfc/Java2D/src/demos/Lines/Dash.java
+%%T%%/demo/jfc/Java2D/src/demos/Lines/Joins.java
+%%T%%/demo/jfc/Java2D/src/demos/Lines/LineAnim.java
+%%T%%/demo/jfc/Java2D/src/demos/Mix/Balls.java
+%%T%%/demo/jfc/Java2D/src/demos/Mix/BezierScroller.java
+%%T%%/demo/jfc/Java2D/src/demos/Mix/Stars3D.java
+%%T%%/demo/jfc/Java2D/src/demos/Paint/GradAnim.java
+%%T%%/demo/jfc/Java2D/src/demos/Paint/Gradient.java
+%%T%%/demo/jfc/Java2D/src/demos/Paint/Texture.java
+%%T%%/demo/jfc/Java2D/src/demos/Paint/TextureAnim.java
+%%T%%/demo/jfc/Java2D/src/demos/Paths/Append.java
+%%T%%/demo/jfc/Java2D/src/demos/Paths/CurveQuadTo.java
+%%T%%/demo/jfc/Java2D/src/demos/Paths/FillStroke.java
+%%T%%/demo/jfc/Java2D/src/demos/Paths/WindingRule.java
+%%T%%/demo/jfc/Java2D/src/demos/Transforms/Rotate.java
+%%T%%/demo/jfc/Java2D/src/demos/Transforms/SelectTx.java
+%%T%%/demo/jfc/Java2D/src/demos/Transforms/TransformAnim.java
+%%T%%/demo/jfc/Metalworks/HelpFiles/back.gif
+%%T%%/demo/jfc/Metalworks/HelpFiles/credits.html
+%%T%%/demo/jfc/Metalworks/HelpFiles/duke.gif
+%%T%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
+%%T%%/demo/jfc/Metalworks/HelpFiles/metal.html
+%%T%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
+%%T%%/demo/jfc/Metalworks/HelpFiles/swing.html
+%%T%%/demo/jfc/Metalworks/HelpFiles/toc.html
+%%T%%/demo/jfc/Metalworks/Metalworks.jar
+%%T%%/demo/jfc/Metalworks/MyTheme.theme
+%%T%%/demo/jfc/Metalworks/README.txt
+%%T%%/demo/jfc/Metalworks/images/palette_crop.gif
+%%T%%/demo/jfc/Metalworks/images/palette_draw.gif
+%%T%%/demo/jfc/Metalworks/images/palette_hand.gif
+%%T%%/demo/jfc/Metalworks/images/palette_select.gif
+%%T%%/demo/jfc/Metalworks/images/palette_text.gif
+%%T%%/demo/jfc/Metalworks/images/palette_zoom.gif
+%%T%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
+%%T%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
+%%T%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
+%%T%%/demo/jfc/Metalworks/src/DemoMetalTheme.java
+%%T%%/demo/jfc/Metalworks/src/GreenMetalTheme.java
+%%T%%/demo/jfc/Metalworks/src/KhakiMetalTheme.java
+%%T%%/demo/jfc/Metalworks/src/MetalThemeMenu.java
+%%T%%/demo/jfc/Metalworks/src/Metalworks.java
+%%T%%/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
+%%T%%/demo/jfc/Metalworks/src/MetalworksFrame.java
+%%T%%/demo/jfc/Metalworks/src/MetalworksHelp.java
+%%T%%/demo/jfc/Metalworks/src/MetalworksInBox.java
+%%T%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
+%%T%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
+%%T%%/demo/jfc/Metalworks/src/UISwitchListener.java
+%%T%%/demo/jfc/Notepad/Notepad.jar
+%%T%%/demo/jfc/Notepad/README.txt
+%%T%%/demo/jfc/Notepad/resources/Notepad.properties
+%%T%%/demo/jfc/Notepad/resources/Notepad_fr.properties
+%%T%%/demo/jfc/Notepad/resources/Notepad_sv.properties
+%%T%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
+%%T%%/demo/jfc/Notepad/resources/copy.gif
+%%T%%/demo/jfc/Notepad/resources/cut.gif
+%%T%%/demo/jfc/Notepad/resources/new.gif
+%%T%%/demo/jfc/Notepad/resources/open.gif
+%%T%%/demo/jfc/Notepad/resources/paste.gif
+%%T%%/demo/jfc/Notepad/resources/save.gif
+%%T%%/demo/jfc/Notepad/src/ElementTreePanel.java
+%%T%%/demo/jfc/Notepad/src/Notepad.java
+%%T%%/demo/jfc/SampleTree/README.txt
+%%T%%/demo/jfc/SampleTree/SampleTree.jar
+%%T%%/demo/jfc/SampleTree/images/collapsed.gif
+%%T%%/demo/jfc/SampleTree/images/expanded.gif
+%%T%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
+%%T%%/demo/jfc/SampleTree/src/SampleData.java
+%%T%%/demo/jfc/SampleTree/src/SampleTree.java
+%%T%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
+%%T%%/demo/jfc/SampleTree/src/SampleTreeModel.java
+%%T%%/demo/jfc/SimpleExample/README.txt
+%%T%%/demo/jfc/SimpleExample/SimpleExample.jar
+%%T%%/demo/jfc/SimpleExample/src/SimpleExample.java
+%%T%%/demo/jfc/Stylepad/README.txt
+%%T%%/demo/jfc/Stylepad/Stylepad.jar
+%%T%%/demo/jfc/Stylepad/resources/Notepad.properties
+%%T%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
+%%T%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
+%%T%%/demo/jfc/Stylepad/resources/Notepad_zh_CN.properties
+%%T%%/demo/jfc/Stylepad/resources/Stylepad.properties
+%%T%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
+%%T%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
+%%T%%/demo/jfc/Stylepad/resources/alice.gif
+%%T%%/demo/jfc/Stylepad/resources/bold.gif
+%%T%%/demo/jfc/Stylepad/resources/bullets.gif
+%%T%%/demo/jfc/Stylepad/resources/caterpillar.gif
+%%T%%/demo/jfc/Stylepad/resources/center.gif
+%%T%%/demo/jfc/Stylepad/resources/copy.gif
+%%T%%/demo/jfc/Stylepad/resources/cut.gif
+%%T%%/demo/jfc/Stylepad/resources/fg.gif
+%%T%%/demo/jfc/Stylepad/resources/hatter.gif
+%%T%%/demo/jfc/Stylepad/resources/italic.gif
+%%T%%/demo/jfc/Stylepad/resources/left.gif
+%%T%%/demo/jfc/Stylepad/resources/new.gif
+%%T%%/demo/jfc/Stylepad/resources/open.gif
+%%T%%/demo/jfc/Stylepad/resources/paste.gif
+%%T%%/demo/jfc/Stylepad/resources/rabbit.gif
+%%T%%/demo/jfc/Stylepad/resources/rabbit2.gif
+%%T%%/demo/jfc/Stylepad/resources/right.gif
+%%T%%/demo/jfc/Stylepad/resources/save.gif
+%%T%%/demo/jfc/Stylepad/resources/underline.gif
+%%T%%/demo/jfc/Stylepad/src/ElementTreePanel.java
+%%T%%/demo/jfc/Stylepad/src/HelloWorld.java
+%%T%%/demo/jfc/Stylepad/src/Notepad.java
+%%T%%/demo/jfc/Stylepad/src/Stylepad.java
+%%T%%/demo/jfc/Stylepad/src/Wonderland.java
+%%T%%/demo/jfc/SwingApplet/README.txt
+%%T%%/demo/jfc/SwingApplet/SwingApplet.html
+%%T%%/demo/jfc/SwingApplet/SwingApplet.jar
+%%T%%/demo/jfc/SwingApplet/src/SwingApplet.java
+%%T%%/demo/jfc/SwingSet2/README.txt
+%%T%%/demo/jfc/SwingSet2/SwingSet2.html
+%%T%%/demo/jfc/SwingSet2/SwingSet2.jar
+%%T%%/demo/jfc/SwingSet2/SwingSet2Plugin.html
 %%T%%/demo/jfc/SwingSet2/src/AquaTheme.java
 %%T%%/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
 %%T%%/demo/jfc/SwingSet2/src/ButtonDemo.java
@@ -456,140 +529,8 @@
 %%T%%/demo/jfc/SwingSet2/src/TableDemo.java
 %%T%%/demo/jfc/SwingSet2/src/ToolTipDemo.java
 %%T%%/demo/jfc/SwingSet2/src/TreeDemo.java
-%%T%%/demo/jfc/SwingSet2/README.txt
-%%T%%/demo/jfc/SwingSet2/SwingSet2.html
-%%T%%/demo/jfc/SwingSet2/SwingSet2Plugin.html
-%%T%%/demo/jfc/SwingSet2/SwingSet2.jar
-%%T%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
-%%T%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
-%%T%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
-%%T%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
-%%T%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
-%%T%%/demo/jfc/FileChooserDemo/README.txt
-%%T%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
-%%T%%/demo/jfc/Metalworks/HelpFiles/back.gif
-%%T%%/demo/jfc/Metalworks/HelpFiles/credits.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/duke.gif
-%%T%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
-%%T%%/demo/jfc/Metalworks/HelpFiles/metal.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/swing.html
-%%T%%/demo/jfc/Metalworks/HelpFiles/toc.html
-%%T%%/demo/jfc/Metalworks/images/palette_crop.gif
-%%T%%/demo/jfc/Metalworks/images/palette_draw.gif
-%%T%%/demo/jfc/Metalworks/images/palette_hand.gif
-%%T%%/demo/jfc/Metalworks/images/palette_select.gif
-%%T%%/demo/jfc/Metalworks/images/palette_text.gif
-%%T%%/demo/jfc/Metalworks/images/palette_zoom.gif
-%%T%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
-%%T%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
-%%T%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
-%%T%%/demo/jfc/Metalworks/src/DemoMetalTheme.java
-%%T%%/demo/jfc/Metalworks/src/GreenMetalTheme.java
-%%T%%/demo/jfc/Metalworks/src/KhakiMetalTheme.java
-%%T%%/demo/jfc/Metalworks/src/MetalThemeMenu.java
-%%T%%/demo/jfc/Metalworks/src/Metalworks.java
-%%T%%/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
-%%T%%/demo/jfc/Metalworks/src/MetalworksFrame.java
-%%T%%/demo/jfc/Metalworks/src/MetalworksHelp.java
-%%T%%/demo/jfc/Metalworks/src/MetalworksInBox.java
-%%T%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
-%%T%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
-%%T%%/demo/jfc/Metalworks/src/UISwitchListener.java
-%%T%%/demo/jfc/Metalworks/MyTheme.theme
-%%T%%/demo/jfc/Metalworks/README.txt
-%%T%%/demo/jfc/Metalworks/Metalworks.jar
-%%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/runnit.bat
-%%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.class
-%%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.java
-%%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase/runnit.bat
-%%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.class
-%%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.java
-%%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/runnit.bat
-%%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.class
-%%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.java
-%%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/runnit.bat
-%%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.class
-%%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.java
-%%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/runnit.bat
-%%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.class
-%%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.java
-%%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase/runnit.bat
-%%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.class
-%%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.java
-%%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.class
-%%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.java
-%%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/runnit.bat
-%%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/runnit.bat
-%%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.class
-%%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.java
-%%T%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.ldb
-%%T%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.MDB
-%%T%%/demo/jfc/DBDemos/README.txt
-%%T%%/demo/jfc/DBDemos/private.fls
-%%T%%/demo/jfc/SimpleExample/src/SimpleExample.java
-%%T%%/demo/jfc/SimpleExample/README.txt
-%%T%%/demo/jfc/SimpleExample/SimpleExample.jar
-%%T%%/demo/jfc/Notepad/resources/copy.gif
-%%T%%/demo/jfc/Notepad/resources/cut.gif
-%%T%%/demo/jfc/Notepad/resources/new.gif
-%%T%%/demo/jfc/Notepad/resources/Notepad.properties
-%%T%%/demo/jfc/Notepad/resources/Notepad_fr.properties
-%%T%%/demo/jfc/Notepad/resources/Notepad_sv.properties
-%%T%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
-%%T%%/demo/jfc/Notepad/resources/open.gif
-%%T%%/demo/jfc/Notepad/resources/paste.gif
-%%T%%/demo/jfc/Notepad/resources/save.gif
-%%T%%/demo/jfc/Notepad/src/ElementTreePanel.java
-%%T%%/demo/jfc/Notepad/src/Notepad.java
-%%T%%/demo/jfc/Notepad/README.txt
-%%T%%/demo/jfc/Notepad/Notepad.jar
-%%T%%/demo/jfc/Stylepad/resources/alice.gif
-%%T%%/demo/jfc/Stylepad/resources/bold.gif
-%%T%%/demo/jfc/Stylepad/resources/bullets.gif
-%%T%%/demo/jfc/Stylepad/resources/caterpillar.gif
-%%T%%/demo/jfc/Stylepad/resources/center.gif
-%%T%%/demo/jfc/Stylepad/resources/fg.gif
-%%T%%/demo/jfc/Stylepad/resources/hatter.gif
-%%T%%/demo/jfc/Stylepad/resources/italic.gif
-%%T%%/demo/jfc/Stylepad/resources/left.gif
-%%T%%/demo/jfc/Stylepad/resources/rabbit.gif
-%%T%%/demo/jfc/Stylepad/resources/rabbit2.gif
-%%T%%/demo/jfc/Stylepad/resources/right.gif
-%%T%%/demo/jfc/Stylepad/resources/Stylepad.properties
-%%T%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
-%%T%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
-%%T%%/demo/jfc/Stylepad/resources/underline.gif
-%%T%%/demo/jfc/Stylepad/resources/Notepad.properties
-%%T%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
-%%T%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
-%%T%%/demo/jfc/Stylepad/resources/Notepad_zh_CN.properties
-%%T%%/demo/jfc/Stylepad/resources/copy.gif
-%%T%%/demo/jfc/Stylepad/resources/cut.gif
-%%T%%/demo/jfc/Stylepad/resources/new.gif
-%%T%%/demo/jfc/Stylepad/resources/open.gif
-%%T%%/demo/jfc/Stylepad/resources/paste.gif
-%%T%%/demo/jfc/Stylepad/resources/save.gif
-%%T%%/demo/jfc/Stylepad/src/HelloWorld.java
-%%T%%/demo/jfc/Stylepad/src/Notepad.java
-%%T%%/demo/jfc/Stylepad/src/ElementTreePanel.java
-%%T%%/demo/jfc/Stylepad/src/Stylepad.java
-%%T%%/demo/jfc/Stylepad/src/Wonderland.java
-%%T%%/demo/jfc/Stylepad/README.txt
-%%T%%/demo/jfc/Stylepad/Stylepad.jar
-%%T%%/demo/jfc/SampleTree/images/collapsed.gif
-%%T%%/demo/jfc/SampleTree/images/expanded.gif
-%%T%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
-%%T%%/demo/jfc/SampleTree/src/SampleData.java
-%%T%%/demo/jfc/SampleTree/src/SampleTree.java
-%%T%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
-%%T%%/demo/jfc/SampleTree/src/SampleTreeModel.java
-%%T%%/demo/jfc/SampleTree/README.txt
-%%T%%/demo/jfc/SampleTree/SampleTree.jar
-%%T%%/demo/jfc/SwingApplet/src/SwingApplet.java
-%%T%%/demo/jfc/SwingApplet/README.txt
-%%T%%/demo/jfc/SwingApplet/SwingApplet.html
-%%T%%/demo/jfc/SwingApplet/SwingApplet.jar
+%%T%%/demo/jfc/TableExample/README.txt
+%%T%%/demo/jfc/TableExample/TableExample.jar
 %%T%%/demo/jfc/TableExample/src/JDBCAdapter.java
 %%T%%/demo/jfc/TableExample/src/OldJTable.java
 %%T%%/demo/jfc/TableExample/src/TableExample.java
@@ -598,124 +539,63 @@
 %%T%%/demo/jfc/TableExample/src/TableExample4.java
 %%T%%/demo/jfc/TableExample/src/TableMap.java
 %%T%%/demo/jfc/TableExample/src/TableSorter.java
-%%T%%/demo/jfc/TableExample/README.txt
-%%T%%/demo/jfc/TableExample/TableExample.jar
-%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Arcs.java
-%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/BezierAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Curves.java
-%%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Ellipses.java
-%%T%%/demo/jfc/Java2D/src/demos/Clipping/ClipAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Clipping/Text.java
-%%T%%/demo/jfc/Java2D/src/demos/Clipping/Areas.java
-%%T%%/demo/jfc/Java2D/src/demos/Clipping/Intersection.java
-%%T%%/demo/jfc/Java2D/src/demos/Colors/ColorConvert.java
-%%T%%/demo/jfc/Java2D/src/demos/Colors/BullsEye.java
-%%T%%/demo/jfc/Java2D/src/demos/Colors/Rotator3D.java
-%%T%%/demo/jfc/Java2D/src/demos/Composite/ACimages.java
-%%T%%/demo/jfc/Java2D/src/demos/Composite/FadeAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Composite/ACrules.java
-%%T%%/demo/jfc/Java2D/src/demos/Fonts/AllFonts.java
-%%T%%/demo/jfc/Java2D/src/demos/Fonts/Outline.java
-%%T%%/demo/jfc/Java2D/src/demos/Fonts/Highlighting.java
-%%T%%/demo/jfc/Java2D/src/demos/Fonts/Tree.java
-%%T%%/demo/jfc/Java2D/src/demos/Fonts/AttributedStr.java
-%%T%%/demo/jfc/Java2D/src/demos/Images/DukeAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Images/ImageOps.java
-%%T%%/demo/jfc/Java2D/src/demos/Images/WarpImage.java
-%%T%%/demo/jfc/Java2D/src/demos/Images/JPEGFlip.java
-%%T%%/demo/jfc/Java2D/src/demos/Lines/LineAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Lines/Caps.java
-%%T%%/demo/jfc/Java2D/src/demos/Lines/Joins.java
-%%T%%/demo/jfc/Java2D/src/demos/Lines/Dash.java
-%%T%%/demo/jfc/Java2D/src/demos/Mix/Stars3D.java
-%%T%%/demo/jfc/Java2D/src/demos/Mix/Balls.java
-%%T%%/demo/jfc/Java2D/src/demos/Mix/BezierScroller.java
-%%T%%/demo/jfc/Java2D/src/demos/Paths/Append.java
-%%T%%/demo/jfc/Java2D/src/demos/Paths/CurveQuadTo.java
-%%T%%/demo/jfc/Java2D/src/demos/Paths/FillStroke.java
-%%T%%/demo/jfc/Java2D/src/demos/Paths/WindingRule.java
-%%T%%/demo/jfc/Java2D/src/demos/Transforms/Rotate.java
-%%T%%/demo/jfc/Java2D/src/demos/Transforms/SelectTx.java
-%%T%%/demo/jfc/Java2D/src/demos/Transforms/TransformAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Paint/GradAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Paint/TextureAnim.java
-%%T%%/demo/jfc/Java2D/src/demos/Paint/Gradient.java
-%%T%%/demo/jfc/Java2D/src/demos/Paint/Texture.java
-%%T%%/demo/jfc/Java2D/src/DemoPanel.java
-%%T%%/demo/jfc/Java2D/src/GlobalControls.java
-%%T%%/demo/jfc/Java2D/src/MemoryMonitor.java
-%%T%%/demo/jfc/Java2D/src/Surface.java
-%%T%%/demo/jfc/Java2D/src/Java2Demo.java
-%%T%%/demo/jfc/Java2D/src/Tools.java
-%%T%%/demo/jfc/Java2D/src/PerformanceMonitor.java
-%%T%%/demo/jfc/Java2D/src/RunWindow.java
-%%T%%/demo/jfc/Java2D/src/TextureChooser.java
-%%T%%/demo/jfc/Java2D/src/DemoGroup.java
-%%T%%/demo/jfc/Java2D/src/GlobalPanel.java
-%%T%%/demo/jfc/Java2D/src/Java2DemoApplet.java
-%%T%%/demo/jfc/Java2D/src/DemoImages.java
-%%T%%/demo/jfc/Java2D/src/DemoFonts.java
-%%T%%/demo/jfc/Java2D/src/AnimatingSurface.java
-%%T%%/demo/jfc/Java2D/src/AnimatingControlsSurface.java
-%%T%%/demo/jfc/Java2D/src/ControlsSurface.java
-%%T%%/demo/jfc/Java2D/src/Intro.java
-%%T%%/demo/jfc/Java2D/src/CustomControlsContext.java
-%%T%%/demo/jfc/Java2D/src/CustomControls.java
-%%T%%/demo/jfc/Java2D/src/CloningFeature.java
-%%T%%/demo/jfc/Java2D/README.txt
-%%T%%/demo/jfc/Java2D/Java2Demo.html
-%%T%%/demo/jfc/Java2D/Java2Demo.jar
-%%T%%/demo/jfc/Font2DTest/src/Font2DTest.java
-%%T%%/demo/jfc/Font2DTest/README.txt
-%%T%%/demo/jfc/Font2DTest/Font2DTest.html
-%%T%%/demo/jfc/Font2DTest/resources/resource.data
-%%T%%/demo/jfc/Font2DTest/resources/TextResources.properties
-%%T%%/demo/jfc/Font2DTest/resources/TextResources_de.properties
-%%T%%/demo/jfc/Font2DTest/resources/TextResources_en.properties
-%%T%%/demo/jfc/Font2DTest/resources/TextResources_en_GB.properties
-%%T%%/demo/jfc/Font2DTest/resources/TextResources_ko.properties
-%%T%%/demo/jfc/Font2DTest/Font2DTest.jar
-%%T%%/demo/sound/src/JavaSoundApplet.java
-%%T%%/demo/sound/src/JavaSound.java
-%%T%%/demo/sound/src/MidiSynth.java
+%%T%%/demo/jpda/examples.jar
+%%T%%/demo/sound/JavaSound.html
+%%T%%/demo/sound/JavaSound.jar
+%%T%%/demo/sound/README.txt
+%%T%%/demo/sound/media/ambient.rmf
+%%T%%/demo/sound/media/bark.aiff
+%%T%%/demo/sound/media/bong.wav
+%%T%%/demo/sound/media/classical.rmf
+%%T%%/demo/sound/media/modern-rock.rmf
+%%T%%/demo/sound/media/sfx-medley.rmf
+%%T%%/demo/sound/media/spacemusic.au
+%%T%%/demo/sound/media/trance.rmf
+%%T%%/demo/sound/media/trippygaia1.mid
 %%T%%/demo/sound/src/CapturePlayback.java
 %%T%%/demo/sound/src/ControlContext.java
 %%T%%/demo/sound/src/Groove.java
-%%T%%/demo/sound/src/TempoDial.java
+%%T%%/demo/sound/src/JavaSound.java
+%%T%%/demo/sound/src/JavaSoundApplet.java
 %%T%%/demo/sound/src/Juke.java
-%%T%%/demo/sound/README.txt
-%%T%%/demo/sound/JavaSound.html
-%%T%%/demo/sound/media/ambient.rmf
-%%T%%/demo/sound/media/classical.rmf
-%%T%%/demo/sound/media/spacemusic.au
-%%T%%/demo/sound/media/modern-rock.rmf
-%%T%%/demo/sound/media/sfx-medley.rmf
-%%T%%/demo/sound/media/bark.aiff
-%%T%%/demo/sound/media/trippygaia1.mid
-%%T%%/demo/sound/media/trance.rmf
-%%T%%/demo/sound/media/bong.wav
-%%T%%/demo/sound/JavaSound.jar
-%%T%%/demo/jpda/examples.jar
-%%T%%/include/jni.h
-%%T%%/include/linux/jni_md.h
-%%T%%/include/linux/jawt_md.h
-%%T%%/include/jvmdi.h
-%%T%%/include/jvmpi.h
-%%T%%/include/jawt.h
-%%T%%/src.jar
+%%T%%/demo/sound/src/MidiSynth.java
+%%T%%/demo/sound/src/TempoDial.java
 %%T%%/include-old/StubPreamble.h
 %%T%%/include-old/alloc_cache.h
 %%T%%/include-old/bag.h
+%%T%%/include-old/bool.h
 %%T%%/include-old/breakpoints.h
 %%T%%/include-old/byteorder.h
 %%T%%/include-old/common_exceptions.h
 %%T%%/include-old/debug.h
+%%T%%/include-old/dll.h
 %%T%%/include-old/exceptions.h
 %%T%%/include-old/gc.h
+%%T%%/include-old/hpi.h
 %%T%%/include-old/interpreter.h
 %%T%%/include-old/javaString.h
+%%T%%/include-old/java_lang_ClassLoader.h
+%%T%%/include-old/java_lang_String.h
+%%T%%/include-old/java_lang_Thread.h
+%%T%%/include-old/java_lang_ThreadGroup.h
+%%T%%/include-old/jawt.h
 %%T%%/include-old/jit.h
 %%T%%/include-old/jmath.h
+%%T%%/include-old/jvm.h
+%%T%%/include-old/jvmdi.h
+%%T%%/include-old/jvmpi.h
+%%T%%/include-old/linux/byteorder_md.h
+%%T%%/include-old/linux/gc_md.h
+%%T%%/include-old/linux/hpi_md.h
+%%T%%/include-old/linux/io_md.h
+%%T%%/include-old/linux/jawt_md.h
+%%T%%/include-old/linux/jmath_md.h
+%%T%%/include-old/linux/jvm_md.h
+%%T%%/include-old/linux/miscdefs_md.h
+%%T%%/include-old/linux/path_md.h
+%%T%%/include-old/linux/sysmacros_md.h
+%%T%%/include-old/linux/timeval_md.h
+%%T%%/include-old/linux/typedefs_md.h
 %%T%%/include-old/log.h
 %%T%%/include-old/monitor.h
 %%T%%/include-old/monitor_cache.h
@@ -735,33 +615,170 @@
 %%T%%/include-old/util.h
 %%T%%/include-old/vmprofiler.h
 %%T%%/include-old/wrap.h
-%%T%%/include-old/jawt.h
-%%T%%/include-old/jvm.h
-%%T%%/include-old/jvmdi.h
-%%T%%/include-old/jvmpi.h
-%%T%%/include-old/bool.h
-%%T%%/include-old/dll.h
-%%T%%/include-old/hpi.h
-%%T%%/include-old/linux/gc_md.h
-%%T%%/include-old/linux/jmath_md.h
-%%T%%/include-old/linux/miscdefs_md.h
-%%T%%/include-old/linux/sysmacros_md.h
-%%T%%/include-old/linux/typedefs_md.h
-%%T%%/include-old/linux/jawt_md.h
-%%T%%/include-old/linux/jvm_md.h
-%%T%%/include-old/linux/byteorder_md.h
-%%T%%/include-old/linux/hpi_md.h
-%%T%%/include-old/linux/io_md.h
-%%T%%/include-old/linux/path_md.h
-%%T%%/include-old/linux/timeval_md.h
-%%T%%/include-old/java_lang_String.h
-%%T%%/include-old/java_lang_ClassLoader.h
-%%T%%/include-old/java_lang_Thread.h
-%%T%%/include-old/java_lang_ThreadGroup.h
-%%T%%/COPYRIGHT
-%%T%%/README.html
-%%T%%/LICENSE
-%%T%%/README
+%%T%%/include/jawt.h
+%%T%%/include/jni.h
+%%T%%/include/jvmdi.h
+%%T%%/include/jvmpi.h
+%%T%%/include/linux/jawt_md.h
+%%T%%/include/linux/jni_md.h
+%%T%%/jre/CHANGES
+%%T%%/jre/COPYRIGHT
+%%T%%/jre/ControlPanel.html
+%%T%%/jre/LICENSE
+%%T%%/jre/README
+%%T%%/jre/Welcome.html
+%%T%%/jre/bin/.java_wrapper
+%%T%%/jre/bin/ControlPanel
+%%T%%/jre/bin/awt_robot
+%%T%%/jre/bin/i386/green_threads/appletviewer
+%%T%%/jre/bin/i386/green_threads/extcheck
+%%T%%/jre/bin/i386/green_threads/idlj
+%%T%%/jre/bin/i386/green_threads/jar
+%%T%%/jre/bin/i386/green_threads/jarsigner
+%%T%%/jre/bin/i386/green_threads/java
+%%T%%/jre/bin/i386/green_threads/javac
+%%T%%/jre/bin/i386/green_threads/javadoc
+%%T%%/jre/bin/i386/green_threads/javah
+%%T%%/jre/bin/i386/green_threads/javap
+%%T%%/jre/bin/i386/green_threads/jdb
+%%T%%/jre/bin/i386/green_threads/keytool
+%%T%%/jre/bin/i386/green_threads/native2ascii
+%%T%%/jre/bin/i386/green_threads/oldjava
+%%T%%/jre/bin/i386/green_threads/oldjavac
+%%T%%/jre/bin/i386/green_threads/oldjdb
+%%T%%/jre/bin/i386/green_threads/policytool
+%%T%%/jre/bin/i386/green_threads/rmic
+%%T%%/jre/bin/i386/green_threads/rmid
+%%T%%/jre/bin/i386/green_threads/rmiregistry
+%%T%%/jre/bin/i386/green_threads/serialver
+%%T%%/jre/bin/i386/green_threads/tnameserv
+%%T%%/jre/bin/i386/native_threads/java
+%%T%%/jre/bin/i386/native_threads/java_vm
+%%T%%/jre/bin/i386/native_threads/keytool
+%%T%%/jre/bin/i386/native_threads/policytool
+%%T%%/jre/bin/i386/native_threads/rmid
+%%T%%/jre/bin/i386/native_threads/rmiregistry
+%%T%%/jre/bin/i386/native_threads/tnameserv
+%%T%%/jre/bin/i386/realpath
+%%T%%/jre/bin/java
+%%T%%/jre/bin/keytool
+%%T%%/jre/bin/policytool
+%%T%%/jre/bin/realpath
+%%T%%/jre/bin/rmid
+%%T%%/jre/bin/rmiregistry
+%%T%%/jre/bin/tnameserv
+%%T%%/jre/lib/audio/soundbank.gm
+%%T%%/jre/lib/cmm/CIEXYZ.pf
+%%T%%/jre/lib/cmm/GRAY.pf
+%%T%%/jre/lib/cmm/LINEAR_RGB.pf
+%%T%%/jre/lib/cmm/PYCC.pf
+%%T%%/jre/lib/cmm/sRGB.pf
+%%T%%/jre/lib/content-types.properties
+%%T%%/jre/lib/flavormap.properties
+%%T%%/jre/lib/font.properties
+%%T%%/jre/lib/font.properties.ja
+%%T%%/jre/lib/font.properties.zh
+%%T%%/jre/lib/fonts/LucidaBrightDemiBold.ttf
+%%T%%/jre/lib/fonts/LucidaBrightDemiItalic.ttf
+%%T%%/jre/lib/fonts/LucidaBrightItalic.ttf
+%%T%%/jre/lib/fonts/LucidaBrightRegular.ttf
+%%T%%/jre/lib/fonts/LucidaSansDemiBold.ttf
+%%T%%/jre/lib/fonts/LucidaSansDemiOblique.ttf
+%%T%%/jre/lib/fonts/LucidaSansOblique.ttf
+%%T%%/jre/lib/fonts/LucidaSansRegular.ttf
+%%T%%/jre/lib/fonts/LucidaTypewriterBold.ttf
+%%T%%/jre/lib/fonts/LucidaTypewriterBoldOblique.ttf
+%%T%%/jre/lib/fonts/LucidaTypewriterOblique.ttf
+%%T%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
+%%T%%/jre/lib/fonts/fonts.dir
+%%T%%/jre/lib/i18n.jar
+%%T%%/jre/lib/i386/classic/Xusage.txt
+%%T%%/jre/lib/i386/classic/libjvm.so
+%%T%%/jre/lib/i386/client/Xusage.txt
+%%T%%/jre/lib/i386/client/libjvm.so
+%%T%%/jre/lib/i386/green_threads/libhpi.so
+%%T%%/jre/lib/i386/hotspot
+%%T%%/jre/lib/i386/libJdbcOdbc.so
+%%T%%/jre/lib/i386/libagent.so
+%%T%%/jre/lib/i386/libawt.so
+%%T%%/jre/lib/i386/libcmm.so
+%%T%%/jre/lib/i386/libdcpr.so
+%%T%%/jre/lib/i386/libfontmanager.so
+%%T%%/jre/lib/i386/libhprof.so
+%%T%%/jre/lib/i386/libioser12.so
+%%T%%/jre/lib/i386/libjava.so
+%%T%%/jre/lib/i386/libjavaplugin_jni.so
+%%T%%/jre/lib/i386/libjawt.so
+%%T%%/jre/lib/i386/libjcov.so
+%%T%%/jre/lib/i386/libjpeg.so
+%%T%%/jre/lib/i386/libjsound.so
+%%T%%/jre/lib/i386/libmlib_image.so
+%%T%%/jre/lib/i386/libnet.so
+%%T%%/jre/lib/i386/libpreemptive_close.so
+%%T%%/jre/lib/i386/libverify.so
+%%T%%/jre/lib/i386/libzip.so
+%%T%%/jre/lib/i386/native_threads/libhpi.so
+%%T%%/jre/lib/i386/server/Xusage.txt
+%%T%%/jre/lib/i386/server/libjvm.so
+%%T%%/jre/lib/images/cursors/cursors.properties
+%%T%%/jre/lib/images/cursors/invalid32x32.gif
+%%T%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
+%%T%%/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
+%%T%%/jre/lib/images/cursors/motif_LinkDrop32x32.gif
+%%T%%/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
+%%T%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
+%%T%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+%%T%%/jre/lib/javaplugin.jar
+%%T%%/jre/lib/jvm.cfg
+%%T%%/jre/lib/jvm.hprof.txt
+%%T%%/jre/lib/jvm.jcov.txt
+%%T%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/jre/lib/psfont.properties.ja
+%%T%%/jre/lib/psfontj2d.properties
+%%T%%/jre/lib/rt.jar
+%%T%%/jre/lib/security/cacerts
+%%T%%/jre/lib/security/java.policy
+%%T%%/jre/lib/security/java.security
+%%T%%/jre/lib/sunrsasign.jar
+%%T%%/jre/lib/tzmappings
+%%T%%/jre/plugin/i386/ns4/javaplugin.so
+%%T%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
+%%T%%/lib/dt.jar
+%%T%%/lib/htmlconverter.jar
+%%T%%/lib/i386/libdt_socket.so
+%%T%%/lib/i386/libjdwp.so
+%%T%%/lib/ir.idl
+%%T%%/lib/orb.idl
+%%T%%/lib/tools.jar
+%%T%%/man/ja
+%%T%%/man/ja_JP.eucJP/man1/appletviewer.1
+%%T%%/man/ja_JP.eucJP/man1/extcheck.1
+%%T%%/man/ja_JP.eucJP/man1/jar.1
+%%T%%/man/ja_JP.eucJP/man1/jarsigner.1
+%%T%%/man/ja_JP.eucJP/man1/java.1
+%%T%%/man/ja_JP.eucJP/man1/javac.1
+%%T%%/man/ja_JP.eucJP/man1/javadoc.1
+%%T%%/man/ja_JP.eucJP/man1/javah.1
+%%T%%/man/ja_JP.eucJP/man1/javap.1
+%%T%%/man/ja_JP.eucJP/man1/jdb.1
+%%T%%/man/ja_JP.eucJP/man1/keytool.1
+%%T%%/man/ja_JP.eucJP/man1/native2ascii.1
+%%T%%/man/ja_JP.eucJP/man1/rmic.1
+%%T%%/man/ja_JP.eucJP/man1/rmid.1
+%%T%%/man/ja_JP.eucJP/man1/rmiregistry.1
+%%T%%/man/ja_JP.eucJP/man1/serialver.1
+%%T%%/man/ja_JP.eucJP/man1/tnameserv.1
 %%T%%/man/man1/appletviewer.1
 %%T%%/man/man1/extcheck.1
 %%T%%/man/man1/jar.1
@@ -779,183 +796,166 @@
 %%T%%/man/man1/rmiregistry.1
 %%T%%/man/man1/serialver.1
 %%T%%/man/man1/tnameserv.1
-%%T%%/man/ja
-%%T%%/man/ja_JP.eucJP/man1/java.1
-%%T%%/man/ja_JP.eucJP/man1/keytool.1
-%%T%%/man/ja_JP.eucJP/man1/rmid.1
-%%T%%/man/ja_JP.eucJP/man1/rmiregistry.1
-%%T%%/man/ja_JP.eucJP/man1/tnameserv.1
-%%T%%/man/ja_JP.eucJP/man1/appletviewer.1
-%%T%%/man/ja_JP.eucJP/man1/extcheck.1
-%%T%%/man/ja_JP.eucJP/man1/jar.1
-%%T%%/man/ja_JP.eucJP/man1/jarsigner.1
-%%T%%/man/ja_JP.eucJP/man1/javac.1
-%%T%%/man/ja_JP.eucJP/man1/javadoc.1
-%%T%%/man/ja_JP.eucJP/man1/javah.1
-%%T%%/man/ja_JP.eucJP/man1/javap.1
-%%T%%/man/ja_JP.eucJP/man1/jdb.1
-%%T%%/man/ja_JP.eucJP/man1/native2ascii.1
-%%T%%/man/ja_JP.eucJP/man1/rmic.1
-%%T%%/man/ja_JP.eucJP/man1/serialver.1
+%%T%%/src.jar
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
 @exec   %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
-@dirrm %%T%%/jre/bin/i386/green_threads
-@dirrm %%T%%/jre/bin/i386/native_threads
-@dirrm %%T%%/jre/bin/i386
-@dirrm %%T%%/jre/bin
-@dirrm %%T%%/jre/lib/i386/green_threads
-@dirrm %%T%%/jre/lib/i386/native_threads
-@dirrm %%T%%/jre/lib/i386/classic
-@dirrm %%T%%/jre/lib/i386/server
-@dirrm %%T%%/jre/lib/i386/client
-@dirrm %%T%%/jre/lib/i386
-@dirrm %%T%%/jre/lib/ext
-@dirrm %%T%%/jre/lib/fonts
-@dirrm %%T%%/jre/lib/security
-@dirrm %%T%%/jre/lib/images/cursors
-@dirrm %%T%%/jre/lib/images
-@dirrm %%T%%/jre/lib/audio
-@dirrm %%T%%/jre/lib/cmm
-@dirrm %%T%%/jre/lib/locale/de/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/de
-@dirrm %%T%%/jre/lib/locale/es/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/es
-@dirrm %%T%%/jre/lib/locale/fr/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/fr
-@dirrm %%T%%/jre/lib/locale/it/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/it
-@dirrm %%T%%/jre/lib/locale/ja/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/ja
-@dirrm %%T%%/jre/lib/locale/ko/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/ko
-@dirrm %%T%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/ko.UTF-8
-@dirrm %%T%%/jre/lib/locale/sv/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/sv
-@dirrm %%T%%/jre/lib/locale/zh/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/zh
-@dirrm %%T%%/jre/lib/locale/zh.GBK/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/zh.GBK
-@dirrm %%T%%/jre/lib/locale/zh_TW/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/zh_TW
-@dirrm %%T%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
-@dirrm %%T%%/jre/lib/locale/zh_TW.BIG5
-@dirrm %%T%%/jre/lib/locale
-@dirrm %%T%%/jre/lib/applet
-@dirrm %%T%%/jre/lib
+@dirrm %%T%%/man/man1
+@dirrm %%T%%/man/ja_JP.eucJP/man1
+@dirrm %%T%%/man/ja_JP.eucJP
+@dirrm %%T%%/man
+@dirrm %%T%%/lib/i386
+@dirrm %%T%%/lib
 @dirrm %%T%%/jre/plugin/i386/ns600
 @dirrm %%T%%/jre/plugin/i386/ns4
 @dirrm %%T%%/jre/plugin/i386
 @dirrm %%T%%/jre/plugin
+@dirrm %%T%%/jre/lib/security
+@dirrm %%T%%/jre/lib/locale/zh_TW/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/zh_TW.BIG5
+@dirrm %%T%%/jre/lib/locale/zh_TW
+@dirrm %%T%%/jre/lib/locale/zh/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/zh.GBK/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/zh.GBK
+@dirrm %%T%%/jre/lib/locale/zh
+@dirrm %%T%%/jre/lib/locale/sv/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/sv
+@dirrm %%T%%/jre/lib/locale/ko/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/ko.UTF-8
+@dirrm %%T%%/jre/lib/locale/ko
+@dirrm %%T%%/jre/lib/locale/ja/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/ja
+@dirrm %%T%%/jre/lib/locale/it/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/it
+@dirrm %%T%%/jre/lib/locale/fr/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/fr
+@dirrm %%T%%/jre/lib/locale/es/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/es
+@dirrm %%T%%/jre/lib/locale/de/LC_MESSAGES
+@dirrm %%T%%/jre/lib/locale/de
+@dirrm %%T%%/jre/lib/locale
+@dirrm %%T%%/jre/lib/images/cursors
+@dirrm %%T%%/jre/lib/images
+@dirrm %%T%%/jre/lib/i386/server
+@dirrm %%T%%/jre/lib/i386/native_threads
+@dirrm %%T%%/jre/lib/i386/green_threads
+@dirrm %%T%%/jre/lib/i386/client
+@dirrm %%T%%/jre/lib/i386/classic
+@dirrm %%T%%/jre/lib/i386
+@dirrm %%T%%/jre/lib/fonts
+@dirrm %%T%%/jre/lib/ext
+@dirrm %%T%%/jre/lib/cmm
+@dirrm %%T%%/jre/lib/audio
+@dirrm %%T%%/jre/lib/applet
+@dirrm %%T%%/jre/lib
+@dirrm %%T%%/jre/bin/i386/native_threads
+@dirrm %%T%%/jre/bin/i386/green_threads
+@dirrm %%T%%/jre/bin/i386
+@dirrm %%T%%/jre/bin
 @dirrm %%T%%/jre
-@dirrm %%T%%/lib/i386
-@dirrm %%T%%/lib
-@dirrm %%T%%/bin/i386/green_threads
-@dirrm %%T%%/bin/i386/native_threads
-@dirrm %%T%%/bin/i386
-@dirrm %%T%%/bin
-@dirrm %%T%%/demo/applets/Animator/audio
-@dirrm %%T%%/demo/applets/Animator/images/SimpleAnimation
-@dirrm %%T%%/demo/applets/Animator/images/Beans
-@dirrm %%T%%/demo/applets/Animator/images
-@dirrm %%T%%/demo/applets/Animator
-@dirrm %%T%%/demo/applets/ArcTest
-@dirrm %%T%%/demo/applets/BarChart
-@dirrm %%T%%/demo/applets/Blink
-@dirrm %%T%%/demo/applets/CardTest
-@dirrm %%T%%/demo/applets/Clock
-@dirrm %%T%%/demo/applets/DitherTest
-@dirrm %%T%%/demo/applets/DrawTest
-@dirrm %%T%%/demo/applets/Fractal
-@dirrm %%T%%/demo/applets/GraphLayout/audio
-@dirrm %%T%%/demo/applets/GraphLayout
-@dirrm %%T%%/demo/applets/GraphicsTest
-@dirrm %%T%%/demo/applets/ImageMap/audio
-@dirrm %%T%%/demo/applets/ImageMap/images
-@dirrm %%T%%/demo/applets/ImageMap
-@dirrm %%T%%/demo/applets/JumpingBox/sounds
-@dirrm %%T%%/demo/applets/JumpingBox
-@dirrm %%T%%/demo/applets/MoleculeViewer/models
-@dirrm %%T%%/demo/applets/MoleculeViewer
-@dirrm %%T%%/demo/applets/NervousText
-@dirrm %%T%%/demo/applets/SimpleGraph
-@dirrm %%T%%/demo/applets/SortDemo
-@dirrm %%T%%/demo/applets/SpreadSheet
-@dirrm %%T%%/demo/applets/SymbolTest
-@dirrm %%T%%/demo/applets/TicTacToe/audio
-@dirrm %%T%%/demo/applets/TicTacToe/images
-@dirrm %%T%%/demo/applets/TicTacToe
-@dirrm %%T%%/demo/applets/WireFrame/models
-@dirrm %%T%%/demo/applets/WireFrame
-@dirrm %%T%%/demo/applets
-@dirrm %%T%%/demo/jfc/SwingSet2/src
-@dirrm %%T%%/demo/jfc/SwingSet2
-@dirrm %%T%%/demo/jfc/FileChooserDemo/images
-@dirrm %%T%%/demo/jfc/FileChooserDemo/src
-@dirrm %%T%%/demo/jfc/FileChooserDemo
-@dirrm %%T%%/demo/jfc/Metalworks/HelpFiles
-@dirrm %%T%%/demo/jfc/Metalworks/images
-@dirrm %%T%%/demo/jfc/Metalworks/src
-@dirrm %%T%%/demo/jfc/Metalworks
-@dirrm %%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess
-@dirrm %%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase
-@dirrm %%T%%/demo/jfc/DBDemos/CreateCoffees
-@dirrm %%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess
-@dirrm %%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase
-@dirrm %%T%%/demo/jfc/DBDemos/CreateSuppliers
-@dirrm %%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr
-@dirrm %%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase
-@dirrm %%T%%/demo/jfc/DBDemos/InsertCoffees
-@dirrm %%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess
-@dirrm %%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase
-@dirrm %%T%%/demo/jfc/DBDemos/InsertSuppliers
-@dirrm %%T%%/demo/jfc/DBDemos/JavaDB
-@dirrm %%T%%/demo/jfc/DBDemos
-@dirrm %%T%%/demo/jfc/SimpleExample/src
-@dirrm %%T%%/demo/jfc/SimpleExample
-@dirrm %%T%%/demo/jfc/Notepad/resources
-@dirrm %%T%%/demo/jfc/Notepad/src
-@dirrm %%T%%/demo/jfc/Notepad
-@dirrm %%T%%/demo/jfc/Stylepad/resources
-@dirrm %%T%%/demo/jfc/Stylepad/src
-@dirrm %%T%%/demo/jfc/Stylepad
-@dirrm %%T%%/demo/jfc/SampleTree/images
-@dirrm %%T%%/demo/jfc/SampleTree/src
-@dirrm %%T%%/demo/jfc/SampleTree
-@dirrm %%T%%/demo/jfc/SwingApplet/src
-@dirrm %%T%%/demo/jfc/SwingApplet
+@dirrm %%T%%/include/linux
+@dirrm %%T%%/include-old/linux
+@dirrm %%T%%/include-old
+@dirrm %%T%%/include
+@dirrm %%T%%/demo/sound/src
+@dirrm %%T%%/demo/sound/media
+@dirrm %%T%%/demo/sound
+@dirrm %%T%%/demo/jpda
 @dirrm %%T%%/demo/jfc/TableExample/src
 @dirrm %%T%%/demo/jfc/TableExample
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Clipping
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Colors
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Composite
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Fonts
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Images
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Lines
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Mix
-@dirrm %%T%%/demo/jfc/Java2D/src/demos/Paths
+@dirrm %%T%%/demo/jfc/SwingSet2/src
+@dirrm %%T%%/demo/jfc/SwingSet2
+@dirrm %%T%%/demo/jfc/SwingApplet/src
+@dirrm %%T%%/demo/jfc/SwingApplet
+@dirrm %%T%%/demo/jfc/Stylepad/src
+@dirrm %%T%%/demo/jfc/Stylepad/resources
+@dirrm %%T%%/demo/jfc/Stylepad
+@dirrm %%T%%/demo/jfc/SimpleExample/src
+@dirrm %%T%%/demo/jfc/SimpleExample
+@dirrm %%T%%/demo/jfc/SampleTree/src
+@dirrm %%T%%/demo/jfc/SampleTree/images
+@dirrm %%T%%/demo/jfc/SampleTree
+@dirrm %%T%%/demo/jfc/Notepad/src
+@dirrm %%T%%/demo/jfc/Notepad/resources
+@dirrm %%T%%/demo/jfc/Notepad
+@dirrm %%T%%/demo/jfc/Metalworks/src
+@dirrm %%T%%/demo/jfc/Metalworks/images
+@dirrm %%T%%/demo/jfc/Metalworks/HelpFiles
+@dirrm %%T%%/demo/jfc/Metalworks
 @dirrm %%T%%/demo/jfc/Java2D/src/demos/Transforms
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Paths
 @dirrm %%T%%/demo/jfc/Java2D/src/demos/Paint
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Mix
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Lines
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Images
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Fonts
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Composite
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Colors
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Clipping
+@dirrm %%T%%/demo/jfc/Java2D/src/demos/Arcs_Curves
 @dirrm %%T%%/demo/jfc/Java2D/src/demos
 @dirrm %%T%%/demo/jfc/Java2D/src
 @dirrm %%T%%/demo/jfc/Java2D
 @dirrm %%T%%/demo/jfc/Font2DTest/src
 @dirrm %%T%%/demo/jfc/Font2DTest/resources
 @dirrm %%T%%/demo/jfc/Font2DTest
+@dirrm %%T%%/demo/jfc/FileChooserDemo/src
+@dirrm %%T%%/demo/jfc/FileChooserDemo/images
+@dirrm %%T%%/demo/jfc/FileChooserDemo
+@dirrm %%T%%/demo/jfc/DBDemos/JavaDB
+@dirrm %%T%%/demo/jfc/DBDemos/InsertSuppliers/Sybase
+@dirrm %%T%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess
+@dirrm %%T%%/demo/jfc/DBDemos/InsertSuppliers
+@dirrm %%T%%/demo/jfc/DBDemos/InsertCoffees/Sybase
+@dirrm %%T%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr
+@dirrm %%T%%/demo/jfc/DBDemos/InsertCoffees
+@dirrm %%T%%/demo/jfc/DBDemos/CreateSuppliers/Sybase
+@dirrm %%T%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess
+@dirrm %%T%%/demo/jfc/DBDemos/CreateSuppliers
+@dirrm %%T%%/demo/jfc/DBDemos/CreateCoffees/Sybase
+@dirrm %%T%%/demo/jfc/DBDemos/CreateCoffees/MSAccess
+@dirrm %%T%%/demo/jfc/DBDemos/CreateCoffees
+@dirrm %%T%%/demo/jfc/DBDemos
 @dirrm %%T%%/demo/jfc
-@dirrm %%T%%/demo/sound/src
-@dirrm %%T%%/demo/sound/media
-@dirrm %%T%%/demo/sound
-@dirrm %%T%%/demo/jpda
+@dirrm %%T%%/demo/applets/WireFrame/models
+@dirrm %%T%%/demo/applets/WireFrame
+@dirrm %%T%%/demo/applets/TicTacToe/images
+@dirrm %%T%%/demo/applets/TicTacToe/audio
+@dirrm %%T%%/demo/applets/TicTacToe
+@dirrm %%T%%/demo/applets/SymbolTest
+@dirrm %%T%%/demo/applets/SpreadSheet
+@dirrm %%T%%/demo/applets/SortDemo
+@dirrm %%T%%/demo/applets/SimpleGraph
+@dirrm %%T%%/demo/applets/NervousText
+@dirrm %%T%%/demo/applets/MoleculeViewer/models
+@dirrm %%T%%/demo/applets/MoleculeViewer
+@dirrm %%T%%/demo/applets/JumpingBox/sounds
+@dirrm %%T%%/demo/applets/JumpingBox
+@dirrm %%T%%/demo/applets/ImageMap/images
+@dirrm %%T%%/demo/applets/ImageMap/audio
+@dirrm %%T%%/demo/applets/ImageMap
+@dirrm %%T%%/demo/applets/GraphicsTest
+@dirrm %%T%%/demo/applets/GraphLayout/audio
+@dirrm %%T%%/demo/applets/GraphLayout
+@dirrm %%T%%/demo/applets/Fractal
+@dirrm %%T%%/demo/applets/DrawTest
+@dirrm %%T%%/demo/applets/DitherTest
+@dirrm %%T%%/demo/applets/Clock
+@dirrm %%T%%/demo/applets/CardTest
+@dirrm %%T%%/demo/applets/Blink
+@dirrm %%T%%/demo/applets/BarChart
+@dirrm %%T%%/demo/applets/ArcTest
+@dirrm %%T%%/demo/applets/Animator/images/SimpleAnimation
+@dirrm %%T%%/demo/applets/Animator/images/Beans
+@dirrm %%T%%/demo/applets/Animator/images
+@dirrm %%T%%/demo/applets/Animator/audio
+@dirrm %%T%%/demo/applets/Animator
+@dirrm %%T%%/demo/applets
 @dirrm %%T%%/demo
-@dirrm %%T%%/include/linux
-@dirrm %%T%%/include
-@dirrm %%T%%/include-old/linux
-@dirrm %%T%%/include-old
-@dirrm %%T%%/man/man1
-@dirrm %%T%%/man/ja_JP.eucJP/man1
-@dirrm %%T%%/man/ja_JP.eucJP
-@dirrm %%T%%/man
+@dirrm %%T%%/bin/i386/native_threads
+@dirrm %%T%%/bin/i386/green_threads
+@dirrm %%T%%/bin/i386
+@dirrm %%T%%/bin
 @dirrm %%T%%
