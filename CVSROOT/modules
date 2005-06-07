@@ -1777,6 +1777,7 @@ dylan		ports/lang/dylan
 dynamag		ports/x11/dynamag
 dynamechs	ports/graphics/dynamechs
 dynamite	ports/archivers/dynamite
+dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
 e16utils	ports/x11-wm/e16utils
