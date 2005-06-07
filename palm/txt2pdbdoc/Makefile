@@ -14,10 +14,10 @@ MASTER_SITES=	http://tirian.magd.ox.ac.uk/~dom/palm/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts plain text and HTML files to Palm Pilot Doc formats
 
-PREFIX=		${LOCALBASE}/
-
 USE_GMAKE=	yes
+MAKE_ARGS=	MAKE=gmake CC=${CC} CFLAGS="${CFLAGS}" I_ROOT=${PREFIX}
 
+PLIST_FILES=	bin/pdbtxt2html bin/html2pdbtxt bin/txt2pdbdoc
 MAN1=		txt2pdbdoc.1 pdbtxt2html.1 html2pdbtxt.1
 MAN4=		pdb.4 doc.4
 
