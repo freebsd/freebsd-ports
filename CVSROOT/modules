@@ -10657,6 +10657,7 @@ sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
 samplicator	ports/net/samplicator
+sancp		ports/security/sancp
 sanduhr		ports/x11-clocks/sanduhr
 sane-backends	ports/graphics/sane-backends
 sane-frontends	ports/graphics/sane-frontends
