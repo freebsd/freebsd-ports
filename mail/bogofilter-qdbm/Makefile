@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-qdbm
 
 MAINTAINER=	matthias.andree@gmx.de
 
-LIB_DEPENDS=	qdbm.10:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	qdbm.11:${PORTSDIR}/databases/qdbm
 
 CONFLICTS=	bogofilter-[0-9]* bogofilter-tdb-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]*
 
