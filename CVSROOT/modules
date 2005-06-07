@@ -4339,6 +4339,7 @@ jabber-aim	ports/net/jabber-aim
 jabber-conference	ports/net/jabber-conference
 jabber-jud	ports/net/jabber-jud
 jabber-msn	ports/net/jabber-msn
+jabber-pyicq	ports/net/jabber-pyicq
 jabber-pymsn	ports/net/jabber-pymsn
 jabber-xdb_ldap	ports/net/jabber-xdb_ldap
 jabber-yahoo	ports/net/jabber-yahoo
