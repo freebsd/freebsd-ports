@@ -1,6 +1,21 @@
---- Makefile.in.orig	Fri Jun  3 18:28:51 2005
-+++ Makefile.in	Fri Jun  3 18:27:33 2005
-@@ -263,7 +263,7 @@
+--- Makefile.in.orig	Tue May 31 09:57:32 2005
++++ Makefile.in	Tue Jun  7 21:50:08 2005
+@@ -108,7 +108,7 @@
+ 	conftest conftest.c so_locations
+ 
+ # SCIBASE for scilab binaries generation
+-SCIBASE = scilab-3.1.1
++SCIBASE = scilab
+ 
+ PVMBINDISTFILES = \
+ 	$(SCIBASE)/pvm3/Readme \
+@@ -258,23 +258,23 @@
+ 	tests \
+ 	util
+ 
+-DOCNAME=$(SCIBASE)
++DOCNAME=scilab
+ 
  install:
  	@if test `pwd`/..  != $(PREFIX)/lib ; then \
  		install -d $(PREFIX)/lib/$(SCIBASE); \
@@ -8,9 +23,13 @@
 +		( for file in $(INSTBINDISTFILES) @PVMINST1@; do tar cf - $${file}  | (cd $(PREFIX)/lib/$(SCIBASE); tar xf -); done); \
  		(cd $(PREFIX)/lib/$(SCIBASE);touch .binary; make postinstall PREFIX=$(PREFIX) ) \
  	fi
- 	install -d $(PREFIX)/share/doc/$(DOCNAME)/
-@@ -272,9 +272,9 @@
- 	install -d $(PREFIX)/bin
+-	install -d $(PREFIX)/share/doc/$(DOCNAME)/
+-	install ACKNOWLEDGEMENTS CHANGES README_Unix Version.incl \
+-		licence.txt license.txt  $(PREFIX)/share/doc/$(DOCNAME)
++%%PORTDOCS%%	install -d $(PREFIX)/share/doc/$(DOCNAME)/
++%%PORTDOCS%%	install ACKNOWLEDGEMENTS CHANGES README_Unix Version.incl \
++%%PORTDOCS%%		licence.txt license.txt  $(PREFIX)/share/doc/$(DOCNAME)
+ 	install -d $(PREFIX)/bin 
  	$(RM)  $(PREFIX)/bin/scilab
  	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/scilab $(PREFIX)/bin/scilab
 -	$(RM)  $(PREFIX)$/bin/intersciXXX
@@ -20,10 +39,10 @@
 +	$(RM)  $(PREFIX)/bin/intersci-n
  	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/intersci-n $(PREFIX)/bin/intersci-n
  
- # DESTDIR is the final destination of the file
+ # DESTDIR is the final destination of the file 
 @@ -293,7 +293,7 @@
- 	@$(RM) -f -r contrib
- 	@mkdir contrib
+ 	@$(RM) -f -r contrib 
+ 	@mkdir contrib 
  	@mv contrib-loader.sce contrib/loader.sce
 -	@$(RM) man/*/*/*.xml 
 +	@find man -name "*.xml" -print0 | xargs -0 $(RM)

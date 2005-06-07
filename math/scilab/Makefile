@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://scilabsoft.inria.fr/download/stable/
 EXTRACT_SUFX=	-src.tar.gz
@@ -24,8 +25,6 @@ RUN_DEPENDS+=	pvm:${PORTSDIR}/net/pvm \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 PVM_ROOT=	${LOCALBASE}/lib/pvm
-
-NO_CDROM=	"Don't sell for profit."
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -47,7 +46,7 @@ CONFIGURE_ARGS=	--with-tk \
 CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} X11BASE=${X11BASE} F77=${F77} FFLAGS="${FFLAGS}"
 MAKE_ENV=	PVM_INCLUDE=${LOCALBASE}/include
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}" DOCSDIR="share/doc/scilab-${PORTVERSION}"
+PLIST_SUB=	PORTVERSION="${PORTVERSION}" DOCSDIR="share/doc/scilab"
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +64,11 @@ post-patch:
 	${GREP} -lr "<malloc.h>" ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} -e \
 		's/[<"]malloc.h[>"]/<stdlib.h>/'
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's/%%PORTDOCS%%/#/' ${WRKSRC}/Makefile.in
+.else
+	${REINPLACE_CMD} -e 's/%%PORTDOCS%%//' ${WRKSRC}/Makefile.in
+.endif
 
 pre-install:
 	${FIND} ${WRKSRC} -name \*.orig -delete
