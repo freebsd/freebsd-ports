@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Archive
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	antonio@php.net
@@ -17,27 +17,29 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_MAIL "PEAR::Mail support" off \
-		PEAR_MAIL_MIME "PEAR::Mail_Mime support" off
+		PEAR_MAIL_MIME "PEAR::Mail_Mime support" off \
+		PEAR_CACHE_LITE "PEAR::Cache_Lite support" off
 
 CATEGORY=	File
-FILES=		Archive.php Archive/Predicate.php Archive/Reader.php Archive/Writer.php \
-		Archive/Predicate/And.php Archive/Predicate/Current.php \
-		Archive/Predicate/Custom.php Archive/Predicate/Duplicate.php \
-		Archive/Predicate/Ereg.php Archive/Predicate/Eregi.php \
-		Archive/Predicate/Extension.php Archive/Predicate/False.php \
-		Archive/Predicate/Index.php Archive/Predicate/MaxDepth.php \
-		Archive/Predicate/MIME.php Archive/Predicate/MinSize.php \
-		Archive/Predicate/MinTime.php Archive/Predicate/Not.php \
-		Archive/Predicate/Or.php Archive/Predicate/True.php \
-		Archive/Reader/Ar.php Archive/Reader/Archive.php \
-		Archive/Reader/Bzip2.php Archive/Reader/ChangeName.php \
-		Archive/Reader/Concat.php Archive/Reader/Directory.php \
-		Archive/Reader/File.php Archive/Reader/Filter.php \
-		Archive/Reader/Gzip.php Archive/Reader/Memory.php \
-		Archive/Reader/MimeList.php Archive/Reader/Multi.php \
-		Archive/Reader/Relay.php Archive/Reader/Select.php \
-		Archive/Reader/Tar.php Archive/Reader/Uncompress.php \
-		Archive/Reader/Zip.php Archive/Writer/Ar.php \
+FILES=		Archive.php Archive/Predicate.php Archive/Reader.php \
+		Archive/Writer.php Archive/Predicate/And.php \
+		Archive/Predicate/Current.php Archive/Predicate/Custom.php \
+		Archive/Predicate/Duplicate.php Archive/Predicate/Ereg.php \
+		Archive/Predicate/Eregi.php Archive/Predicate/Extension.php \
+		Archive/Predicate/False.php Archive/Predicate/Index.php \
+		Archive/Predicate/MaxDepth.php Archive/Predicate/MIME.php \
+		Archive/Predicate/MinSize.php Archive/Predicate/MinTime.php \
+		Archive/Predicate/Not.php Archive/Predicate/Or.php \
+		Archive/Predicate/True.php Archive/Reader/Ar.php \
+		Archive/Reader/Archive.php Archive/Reader/Bzip2.php \
+		Archive/Reader/ChangeName.php Archive/Reader/Concat.php \
+		Archive/Reader/Directory.php Archive/Reader/File.php \
+		Archive/Reader/Filter.php Archive/Reader/Gzip.php \
+		Archive/Reader/Memory.php Archive/Reader/MimeList.php \
+		Archive/Reader/Multi.php Archive/Reader/Relay.php \
+		Archive/Reader/Select.php Archive/Reader/Tar.php \
+		Archive/Reader/Uncompress.php Archive/Reader/Zip.php \
+		Archive/Writer/AddBaseName.php Archive/Writer/Ar.php \
 		Archive/Writer/Archive.php Archive/Writer/Bzip2.php \
 		Archive/Writer/Files.php Archive/Writer/Gzip.php \
 		Archive/Writer/Mail.php Archive/Writer/Memory.php \
@@ -59,6 +61,10 @@ RUN_DEPENDS+=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail
 
 .if defined(WITH_PEAR_MAIL_MIME)
 RUN_DEPENDS+=	${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
+.endif
+
+.if defined(WITH_PEAR_CACHE_LITE)
+RUN_DEPENDS+=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite
 .endif
 
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
