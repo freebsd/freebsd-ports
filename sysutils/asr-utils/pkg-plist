@@ -1,19 +1,19 @@
 @comment $FreeBSD$
-bin/dptcom
-bin/dpteng
-bin/dptmgr
-bin/dptscom
-bin/dptsig
+%%X11%%bin/dptcom
+%%X11%%bin/dpteng
+%%X11%%bin/dptmgr
+%%X11%%bin/dptscom
+%%X11%%bin/dptsig
 bin/raidutil
-dpt/dptcom
-dpt/dptcom.chk
-dpt/dpteng
-dpt/dptmgr
-dpt/dptmgr.hlp
-dpt/dptmgr.ini
-dpt/dptmgr.rsc
-dpt/dptscom
-dpt/dptsig
+%%X11%%dpt/dptcom
+%%X11%%dpt/dptcom.chk
+%%X11%%dpt/dpteng
+%%X11%%dpt/dptmgr
+%%X11%%dpt/dptmgr.hlp
+%%X11%%dpt/dptmgr.ini
+%%X11%%dpt/dptmgr.rsc
+%%X11%%dpt/dptscom
+%%X11%%dpt/dptsig
 dpt/raidutil
 dpt/read.me
 %%LIBXM%%@cwd %%X11BASE%%

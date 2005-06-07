@@ -20,10 +20,13 @@ COMMENT=	Adaptec ASR RAID Management Software
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes
+BINS=		raidutil
+.ifndef (WITHOUT_X11)
 USE_XLIB=	yes
-BINS=		dptcom dpteng dptscom dptsig raidutil dptmgr
+BINS+=		dptcom dpteng dptscom dptsig dptmgr
+.endif
 
-.if !exists(${X11BASE}/lib/libXm.so.1)
+.if !defined(WITHOUT_X11) && !exists(${X11BASE}/lib/libXm.so.1)
 # we shall install our own libXm.so.1, enable it in pkg-plist
 PLIST_SUB+=	LIBXM=""
 .else
@@ -36,6 +39,8 @@ PLIST_SUB+=	LIBXM="@comment "
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
+.ifndef (WITHOUT_X11)
+PLIST_SUB+=	X11=""
 do-build:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	    ${FILESDIR}/dptmgr.sh.in > ${WRKDIR}/dptmgr.sh
@@ -52,6 +57,15 @@ do-install:
 	    ${PREFIX}/dpt
 .if !exists(${X11BASE}/lib/libXm.so.1)
 	${INSTALL_SCRIPT} ${WRKSRC}/libXm.so.1 ${X11BASE}/lib
+.endif
+.else
+NO_BUILD=	yes
+PLIST_SUB+=	X11="@comment "
+do-install:
+	${MKDIR} ${PREFIX}/dpt
+	cd ${WRKSRC} ; ${INSTALL_PROGRAM} ${BINS} ${PREFIX}/dpt ; \
+		${INSTALL_DATA} read.me ${PREFIX}/dpt
+	${LN} -sf ${PREFIX}/dtp/${BINS} ${PREFIX}/bin
 .endif
 
 .include <bsd.port.post.mk>
