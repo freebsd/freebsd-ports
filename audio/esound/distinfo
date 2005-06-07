@@ -1,2 +1,4 @@
-MD5 (gnome/esound-0.2.35.tar.bz2) = 1566344f80a8909b5e6e4d6b6520c2c1
-SIZE (gnome/esound-0.2.35.tar.bz2) = 384641
+MD5 (gnome/esound-0.2.36.tar.bz2) = 3facb5aa0115cc1c31771b9ad454ae76
+SIZE (gnome/esound-0.2.36.tar.bz2) = 369952
+MD5 (gnome/audio_arts.c?rev=1.1) = c4f0e0214b59bfc282ce67450d4d8669
+SIZE (gnome/audio_arts.c?rev=1.1) = 4089
