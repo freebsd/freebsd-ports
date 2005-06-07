@@ -5298,6 +5298,7 @@ libpreps	ports/devel/libpreps
 libpreps-devel	ports/devel/libpreps-devel
 libpri		ports/misc/libpri
 libpst		ports/mail/libpst
+libqalculate	ports/math/libqalculate
 libqglviewer	ports/graphics/libqglviewer
 libquicktime	ports/multimedia/libquicktime
 libranlib	ports/math/libranlib
