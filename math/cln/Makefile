@@ -18,9 +18,9 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
 USE_GCC=	3.4
-USE_GNOME=	gnomehack gnometarget lthack pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${MANPREFIX}/man \
 		--with-gmp
