@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -73,8 +73,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 #                 e - log errors, p - log passwords in errors,
 #		  v - verbose success and errors with passwords
 # WITHOUT_AUTH_LOG - disables authentication logging
-# WITH_MYSQL_LOG - enable logging to a MySQL database
-# WITH_PGSQL_LOG - enable logging to a PostgreSQL database
+# WITH_MYSQL_LOG - enable auth logging to a MySQL database [deprecateed]
+# WITH_PGSQL_LOG - enable auth logging to a PostgreSQL database [deprecated]
+# WITH_SQL_LOG  - enable auth logging to the selected SQL database
 # QMAIL_DIR     - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
@@ -153,7 +154,7 @@ CONFIGURE_ARGS+=	--enable-auth-module=mysql \
 CONFIGURE_ARGS+=	--enable-mysql-replication
 .endif
 .if defined(WITH_MYSQL_LOG)
-CONFIGURE_ARGS+=	--enable-mysql-logging
+WITH_SQL_LOG=		yes
 .endif
 .if defined(WITH_MYSQL_LIMITS)
 CONFIGURE_ARGS+=	--enable-mysql-limits
@@ -180,8 +181,12 @@ USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--enable-auth-module=pgsql
 
 .if defined(WITH_PGSQL_LOG)
-CONFIGURE_ARGS+=	--enable-pgsql-logging
+WITH_SQL_LOG=		yes
 .endif
+.endif
+
+.if defined(WITH_SQL_LOG)
+CONFIGURE_ARGS+=	--enable-sql-logging
 .endif
 
 .include <bsd.port.pre.mk>
