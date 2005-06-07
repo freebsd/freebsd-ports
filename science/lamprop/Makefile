@@ -27,9 +27,14 @@ MAKE_ENV=	NOPORTDOCS=yes
 PORTDOCS=	LICENSE README NEWS
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-pipe||; s|-fmerge-constants||; s|-fno-unit-at-a-time||; s|--fast-math||' \
-		 ${WRKSRC}/Makefile
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+REP=	's|-pipe||; s|-fmerge-constants||; s|-fno-unit-at-a-time||; s|--fast-math||'
+.if ${ARCH} == "ia64"
+REP=	's|-pipe||; s|-fmerge-constants||; s|--fast-math||'
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e ${REP} ${WRKSRC}/Makefile
+
+.include <bsd.port.post.mk>
