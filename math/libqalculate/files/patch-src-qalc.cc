@@ -1,5 +1,5 @@
---- src/qalc.cc.orig	Fri Mar 11 14:50:18 2005
-+++ src/qalc.cc	Fri Mar 11 14:50:31 2005
+--- src/qalc.cc.orig	Fri Jun  3 12:51:31 2005
++++ src/qalc.cc	Fri Jun  3 12:51:45 2005
 @@ -16,7 +16,7 @@
  #include <time.h>
  #include <pthread.h>
