@@ -2,27 +2,29 @@ bin/qstat
 @unexec if cmp -s %D/etc/qstat.cfg %D/etc/qstat.cfg.default; then rm -f %D/etc/qstat.cfg; fi
 etc/qstat.cfg.default
 @exec [ -f %B/qstat.cfg ] || cp %B/%f %B/qstat.cfg
-%%PORTDOCS%%share/doc/qstat/qstatdoc.html
-%%PORTDOCS%%share/doc/qstat/info/UT2003.txt
-%%PORTDOCS%%share/doc/qstat/info/GhostRecon.txt
-%%PORTDOCS%%share/doc/qstat/info/a2s.txt
-%%PORTDOCS%%share/doc/qstat/template/README.txt
-%%PORTDOCS%%share/doc/qstat/template/brocTh.html
-%%PORTDOCS%%share/doc/qstat/template/brocTp.html
-%%PORTDOCS%%share/doc/qstat/template/brocTs.html
-%%PORTDOCS%%share/doc/qstat/template/brocTt.html
-%%PORTDOCS%%share/doc/qstat/template/ghostreconTh.html
-%%PORTDOCS%%share/doc/qstat/template/ghostreconTp.html
-%%PORTDOCS%%share/doc/qstat/template/ghostreconTs.html
-%%PORTDOCS%%share/doc/qstat/template/ghostreconTt.html
-%%PORTDOCS%%share/doc/qstat/template/tribes2th.html
-%%PORTDOCS%%share/doc/qstat/template/tribes2tp.html
-%%PORTDOCS%%share/doc/qstat/template/tribes2ts.html
-%%PORTDOCS%%share/doc/qstat/template/tribes2tt.html
-%%PORTDOCS%%share/doc/qstat/template/unrealTh.html
-%%PORTDOCS%%share/doc/qstat/template/unrealTp.html
-%%PORTDOCS%%share/doc/qstat/template/unrealTs.html
-%%PORTDOCS%%share/doc/qstat/template/unrealTt.html
-%%PORTDOCS%%@dirrm share/doc/qstat/template
-%%PORTDOCS%%@dirrm share/doc/qstat/info
-%%PORTDOCS%%@dirrm share/doc/qstat
+%%PORTDOCS%%%%DOCSDIR%%/qstatdoc.html
+%%PORTDOCS%%%%DOCSDIR%%/info/UT2003.txt
+%%PORTDOCS%%%%DOCSDIR%%/info/GhostRecon.txt
+%%PORTDOCS%%%%DOCSDIR%%/info/a2s.txt
+%%PORTDOCS%%%%DOCSDIR%%/template/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/template/brocTh.html
+%%PORTDOCS%%%%DOCSDIR%%/template/brocTp.html
+%%PORTDOCS%%%%DOCSDIR%%/template/brocTs.html
+%%PORTDOCS%%%%DOCSDIR%%/template/brocTt.html
+%%PORTDOCS%%%%DOCSDIR%%/template/ghostreconTh.html
+%%PORTDOCS%%%%DOCSDIR%%/template/ghostreconTp.html
+%%PORTDOCS%%%%DOCSDIR%%/template/ghostreconTs.html
+%%PORTDOCS%%%%DOCSDIR%%/template/ghostreconTt.html
+%%PORTDOCS%%%%DOCSDIR%%/template/tribes2th.html
+%%PORTDOCS%%%%DOCSDIR%%/template/tribes2tp.html
+%%PORTDOCS%%%%DOCSDIR%%/template/tribes2ts.html
+%%PORTDOCS%%%%DOCSDIR%%/template/tribes2tt.html
+%%PORTDOCS%%%%DOCSDIR%%/template/unrealTh.html
+%%PORTDOCS%%%%DOCSDIR%%/template/unrealTp.html
+%%PORTDOCS%%%%DOCSDIR%%/template/unrealTs.html
+%%PORTDOCS%%%%DOCSDIR%%/template/unrealTt.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/template
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/info
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec unlink %D/share/nls/POSIX
+@unexec unlink %D/share/nls/en_US.US-ASCII
