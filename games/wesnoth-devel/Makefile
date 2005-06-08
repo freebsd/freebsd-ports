@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -131,5 +131,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/gnome/applications|g ; \
 		s|[$$][(]datadir[)]/icons|${X11BASE}/share/gnome/pixmaps|g' \
 			${WRKSRC}/icons/Makefile.in
+	@${FIND} ${WRKSRC} -name stamp-po -delete
 
 .include <bsd.port.post.mk>

@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	Tue Apr 12 12:40:30 2005
-+++ src/Makefile.in	Tue Apr 12 12:41:54 2005
-@@ -961,10 +961,10 @@
- 	wesconfig.h
+--- src/Makefile.in.orig	Tue Jun  7 19:32:02 2005
++++ src/Makefile.in	Tue Jun  7 19:33:28 2005
+@@ -912,10 +912,10 @@
  
- wesnoth_zip_LDADD = @SDL_LIBS@ @SDL_NET_LIBS@
+ exploder_LDADD = @SDL_IMAGE_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(PNG_LIBS)
+ cutter_LDADD = @SDL_IMAGE_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(PNG_LIBS)
 -AM_CXXFLAGS = -I $(srcdir)/sdl_ttf -I../intl -I$(top_srcdir)/intl @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
 +AM_CXXFLAGS = -I $(srcdir)/sdl_ttf @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
  	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR) -DFIFODIR=\"$(fifodir)\"
