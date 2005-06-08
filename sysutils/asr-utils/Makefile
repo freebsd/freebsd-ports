@@ -65,7 +65,7 @@ do-install:
 	${MKDIR} ${PREFIX}/dpt
 	cd ${WRKSRC} ; ${INSTALL_PROGRAM} ${BINS} ${PREFIX}/dpt ; \
 		${INSTALL_DATA} read.me ${PREFIX}/dpt
-	${LN} -sf ${PREFIX}/dtp/${BINS} ${PREFIX}/bin
+	${LN} -sf ${PREFIX}/dpt/${BINS} ${PREFIX}/bin
 .endif
 
 .include <bsd.port.post.mk>
