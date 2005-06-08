@@ -1,0 +1,11 @@
+--- test/Makefile.in.orig	Sun May  1 07:42:01 2005
++++ test/Makefile.in	Sat Jun  4 23:51:47 2005
+@@ -273,7 +273,7 @@
+ gwentest_SOURCES = gwentest.c
+ gwentest_LDADD = \
+   -L/mingw/lib -L$(top_builddir)/src $(gwenhywfar_libs) \
+-  -L$(top_builddir)/gwenui $(libsui)
++  -L$(top_builddir)/gwenui $(libsui) $(LTLIBINTL)
+ 
+ EXTRA_DIST = README.MSVC gwentest.vcproj
+ all: all-am
