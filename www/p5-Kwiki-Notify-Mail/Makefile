@@ -23,6 +23,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Kwiki::Notify::Mail.3
 
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 ${RM}
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
