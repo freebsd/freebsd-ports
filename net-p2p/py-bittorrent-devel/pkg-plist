@@ -124,6 +124,9 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/KRateLimiter.py
+%%PYTHON_SITELIBDIR%%/khashmir/KRateLimiter.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/KRateLimiter.pyo
 %%PYTHON_SITELIBDIR%%/khashmir/__init__.py
 %%PYTHON_SITELIBDIR%%/khashmir/__init__.pyc
 %%PYTHON_SITELIBDIR%%/khashmir/__init__.pyo
@@ -191,9 +194,14 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyc
 %%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyo
 share/locale/fr/LC_MESSAGES/bittorrent.mo
+share/locale/it/LC_MESSAGES/bittorrent.mo
+share/locale/no/LC_MESSAGES/bittorrent.mo
+share/locale/pt_BR/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/logo
 %%GUI%%@dirrm share/pixmaps/BitTorrent
 %%GUI%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
 @dirrm %%PYTHON_SITELIBDIR%%/khashmir
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
