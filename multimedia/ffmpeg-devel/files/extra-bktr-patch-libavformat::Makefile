@@ -1,0 +1,11 @@
+--- libavformat/Makefile.orig	Mon Jun  6 21:05:05 2005
++++ libavformat/Makefile	Mon Jun  6 21:05:10 2005
+@@ -37,7 +37,7 @@
+ OBJS+= framehook.o 
+ 
+ ifeq ($(CONFIG_VIDEO4LINUX),yes)
+-OBJS+= grab.o
++OBJS+= grab_bsdbktr.o
+ endif
+ 
+ ifeq ($(CONFIG_DV1394),yes)

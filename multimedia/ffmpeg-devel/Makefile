@@ -55,7 +55,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	20050605
+RELEASE_DATE=	20050607
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1
@@ -83,9 +83,6 @@ LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 ##
 GPLLIBS=yes
 WITHOUT_LIBA52=yes
-# video captuure is not working as of yet
-WITH_VIDEO_CAPTURE=no
-CONFIGURE_ARGS+=--disable-v4l
 
 ##
 ## support detection
@@ -99,6 +96,8 @@ WITH_IPV6=	yes
 ##
 .if ${ARCH} != "i386"
 WITHOUT_MMX=	yes
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 .endif
 
 ##
@@ -415,6 +414,11 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 .if ${ARCH} == "i386"
+. ifndef(WITH_VIDEO_CAPTURE)
+	@${ECHO_MSG} 'Define WITH_VIDEO_CAPTURE to enable bktr(4) driver'
+	@${ECHO_MSG} 'video capture'
+	@${ECHO_MSG}
+. else
 .if !(defined(WITH_BKTR_FORMAT) && defined(WITH_BKTR_DEV))
 	@${ECHO_MSG}
 	@${ECHO_MSG} 'If you want to capture from a bktr(4) supported card'
@@ -426,6 +430,7 @@ pre-everything::
 	@${ECHO_MSG} 'Warning: invalid settings will probably dump cores'
 	@${ECHO_MSG}
 .endif
+. endif # WITH_VIDEO_CAPTURE
 .endif # ${ARCH} == i386
 
 post-extract:
