@@ -1,26 +1,12 @@
 bin/camlp4
-bin/camlp4o
-bin/camlp4o.opt
-bin/camlp4r
-bin/camlp4r.opt
 %%TK%%bin/labltk
 bin/mkcamlp4
 bin/ocaml
 %%TK%%bin/ocamlbrowser
-bin/ocamlc
-bin/ocamlc.opt
 bin/ocamlcp
 bin/ocamldebug
-bin/ocamldep
-bin/ocamldep.opt
-bin/ocamldoc
-bin/ocamldoc.opt
-bin/ocamllex
-bin/ocamllex.opt
 bin/ocamlmklib
 bin/ocamlmktop
-bin/ocamlopt
-bin/ocamlopt.opt
 bin/ocamlprof
 bin/ocamlrun
 bin/ocamlyacc
@@ -929,4 +915,3 @@ lib/ocaml/weak.mli
 %%TK%%@dirrm lib/ocaml/labltk
 @dirrm lib/ocaml/camlp4
 @dirrm lib/ocaml/caml
-@dirrm lib/ocaml

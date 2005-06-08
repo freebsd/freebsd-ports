@@ -7,31 +7,31 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.08.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:R}/
 PKGNAMESUFFIX=	${SFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	marwan.burelle@lri.fr
 COMMENT?=	The Objective Caml compiler and programming environment
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11="@comment " TK="@comment "
 WITHOUT_TK=	yes
 SFX=		-nox11
-CONFLICTS=	ocaml-[0-9]* ocaml-notk-*
+CONFLICTS=	ocaml-[0-9]* ocaml-notk-[0-9]*
 .else
 PLIST_SUB+=	X11=""
 USE_XLIB=	yes
 .if defined(WITHOUT_TK)
 PLIST_SUB+=	TK="@comment "
 SFX=		-notk
-CONFLICTS=	ocaml-[0-9]* ocaml-nox11-*
+CONFLICTS=	ocaml-[0-9]* ocaml-nox11-[0-9]*
 .else
 PLIST_SUB+=	TK=""
-CONFLICTS=	ocaml-nox11-* ocaml-notk-*
+CONFLICTS=	ocaml-nox11-[0-9]* ocaml-notk-[0-9]*
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.4:${PORTSDIR}/lang/tcl84 \
 		${LOCALBASE}/include/tk8.4:${PORTSDIR}/x11-toolkits/tk84
@@ -82,6 +82,8 @@ CONFIGURE_ARGS+=	-no-tk
 CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
 .endif
 .endif
+
+MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 
 .include <bsd.port.pre.mk>
 
@@ -135,5 +137,40 @@ post-install:
 		${XARGS} -0 -n 5 -x \
 		${CHMOD} ${SHAREMODE}
 	@${CHMOD} u+w ${PREFIX}/lib/ocaml/ld.conf
-		
+# Do we want .opt version of tools to be the default ?
+.if defined(WITH_OPT_DEFAULT)
+. for module in ${MODOPT}
+# First, we save bytecode version
+	@${MV} ${PREFIX}/bin/${module} ${PREFIX}/bin/${module}.byte
+# Next make .opt version be the default one (as link)
+	@${LN} ${PREFIX}/bin/${module}.opt ${PREFIX}/bin/${module}
+	@${ECHO_CMD} "bin/${module}.opt" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ln %D/%F %B/${module}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rm %B/${module}" >> ${TMPPLIST}
+. endfor
+# Add files to the PLIST
+	@${FIND} ${PREFIX}/bin/ -type f -name \?caml\*.byte -or -name camlp4\?.byte \
+		| ${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+.else
+. for module in ${MODOPT}
+	@${ECHO_CMD} ${module:S|^|bin/|} >> ${TMPPLIST}
+. endfor
+	@${FIND} ${PREFIX}/bin/ -type f -name \?caml\*.opt -or -name camlp4\?.opt \
+		| ${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+.endif
+# Add compiler's libs if required
+.if !defined(WITHOUT_COMPILER_LIB)
+	@${MKDIR}  ${PREFIX}/lib/ocaml/compiler-lib
+	@${INSTALL_DATA} ${WRKSRC}/utils/*.cm* ${PREFIX}/lib/ocaml/compiler-lib
+	@${INSTALL_DATA} ${WRKSRC}/utils/*.o ${PREFIX}/lib/ocaml/compiler-lib
+	@${INSTALL_DATA} ${WRKSRC}/parsing/*.cm* ${PREFIX}/lib/ocaml/compiler-lib
+	@${INSTALL_DATA} ${WRKSRC}/parsing/*.o ${PREFIX}/lib/ocaml/compiler-lib
+	@${INSTALL_DATA} ${WRKSRC}/typing/*.cm* ${PREFIX}/lib/ocaml/compiler-lib
+	@${INSTALL_DATA} ${WRKSRC}/typing/*.o ${PREFIX}/lib/ocaml/compiler-lib
+	@${FIND} ${PREFIX}/lib/ocaml/compiler-lib -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/ocaml/compiler-lib" >> ${TMPPLIST}
+.endif
+	@${ECHO_CMD} "@dirrm lib/ocaml" >> ${TMPPLIST}
+
 .include <bsd.port.post.mk>
