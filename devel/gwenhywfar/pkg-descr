@@ -1,0 +1,17 @@
+This is Gwenhywfar, a multi-platform (*BSD, Linux, MS-Win, etc.)
+helper library for networking and security applications and libraries.
+It is used by several 'finance' ports, and possibly others.
+
+Gwenhywfar includes the following features, among several others:
+- OS abstraction functions for directory and Internet address handling
+  and library loading (src/os/)
+- Networking functions which allow to manage many connections to be used
+  economically even in single threaded applications
+- High-level functions for parsing files with a simplified "XML-like"
+  format and accessing them like a hierarchical database (src/parser/)
+  It is able to process valid XML files, too.
+- High-level cryptographic functions on top of OpenSSL functionality
+  (src/crypt/)
+
+Author:	Martin Preuss <martin@libchipcard.de>
+WWW:	http://gwenhywfar.sourceforge.net/

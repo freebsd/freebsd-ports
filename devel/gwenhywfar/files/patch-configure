@@ -1,0 +1,20 @@
+--- configure.orig	Sun May  1 07:42:05 2005
++++ configure	Sat Jun  4 23:17:50 2005
+@@ -27956,7 +27956,7 @@
+ lprefix="${srcdir}"
+ lprefix=`( cd ${lprefix} ; pwd )`
+ 
+-rm -Rf gwenhywfar &>/dev/null
++rm -Rf gwenhywfar 2>/dev/null
+ mkdir gwenhywfar
+ GWEN_HEADER_FILES="doc/apidoc.h"
+ for d in ${GWEN_HEADER_DIRS}; do
+@@ -27981,7 +27981,7 @@
+ lprefix="${srcdir}"
+ lprefix=`( cd ${lprefix} ; pwd )`
+ for d in ${GWEN_MODULES}; do
+-  rm -Rf gwenhywfar/$d &>/dev/null
++  rm -Rf gwenhywfar/$d 2>/dev/null
+   mkdir gwenhywfar/$d
+   # FIXME: This needs to be fixed again: The sources are in gwenui,
+   # but the headers will be installed in gwenhywfar/ui.

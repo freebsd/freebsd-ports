@@ -337,6 +337,7 @@
     SUBDIR += gtranslator
     SUBDIR += guikachu
     SUBDIR += gvd
+    SUBDIR += gwenhywfar
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hptools

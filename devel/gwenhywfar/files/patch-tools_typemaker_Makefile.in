@@ -1,0 +1,11 @@
+--- tools/typemaker/Makefile.in.orig	Sun May  1 07:42:02 2005
++++ tools/typemaker/Makefile.in	Sat Jun  4 23:48:35 2005
+@@ -279,7 +279,7 @@
+ typemaker_SOURCES = args.c main.c phc.c lhc.c ahc.c code_c.c
+ typemaker_LDADD = \
+   -L$(top_builddir)/src $(gwenhywfar_libs) \
+-  -L/mingw/lib $(PROG_LIBRARIES)
++  -L/mingw/lib $(PROG_LIBRARIES) $(LTLIBINTL)
+ 
+ all: all-am
+ 
