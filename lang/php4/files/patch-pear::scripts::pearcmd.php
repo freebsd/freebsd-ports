@@ -1,7 +1,7 @@
 --- pear/scripts/pearcmd.php.orig	Fri May 16 17:31:37 2003
 +++ pear/scripts/pearcmd.php	Fri May 16 17:36:10 2003
 @@ -1,3 +1,4 @@
-+#!%%PREFIX%%/bin/php -n -q -dsafe_mode=0 -doutput_buffering=1
++#!%%PREFIX%%/bin/php -nq
  <?php
  //
  // +----------------------------------------------------------------------+
