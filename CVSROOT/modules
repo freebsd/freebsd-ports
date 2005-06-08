@@ -3406,6 +3406,7 @@ gvd		ports/devel/gvd
 gview		ports/graphics/gview
 gwave		ports/cad/gwave
 gweled		ports/games/gweled
+gwenhywfar	ports/devel/gwenhywfar
 gwenview	ports/graphics/gwenview
 gwget		ports/ftp/gwget
 gwhich		ports/misc/gwhich
