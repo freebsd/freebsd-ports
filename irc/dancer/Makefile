@@ -14,21 +14,22 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC bot written in C for UNIX, Windows, and AmigaOS
 
+PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+GNU_CONFIGURE=	yes
+MAKE_ARGS+=	CSPECIAL="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+
 do-install:
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_DATA} \
-		${WRKSRC}/example/dancer.config \
-		${WRKSRC}/example/dancer.users \
-		${WRKSRC}/example/dancer.funcs \
-		${WRKSRC}/example/dancer.explain \
-			${PREFIX}/share/${PORTNAME}/
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin/
+	cd ${WRKSRC}/../example && ${INSTALL_DATA} \
+		dancer.config dancer.users \
+		dancer.funcs dancer.explain ${DATADIR}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
 LDFLAGS+=	-lm
-MAKE_ARGS+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .include <bsd.port.post.mk>
