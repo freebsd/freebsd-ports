@@ -47,8 +47,6 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/psprint
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-705.euc
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/gdi/README
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/NEWS
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/hpdj.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lips/Gdevlips.htm
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lxm3200/README
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lxm3200/RELEASE_NOTES
@@ -128,12 +126,6 @@ share/ghostscript/%%GS_VERSION%%/examples/snowflak.ps
 share/ghostscript/%%GS_VERSION%%/examples/tiger.ps
 share/ghostscript/%%GS_VERSION%%/examples/vasarely.ps
 share/ghostscript/%%GS_VERSION%%/examples/waterfal.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/README.hpdj
-share/ghostscript/%%GS_VERSION%%/hpdj/example.mdf
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4Rotated.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-Letter.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-LetterRotated.ps
 share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
 share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.ARP
 share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.Bae
@@ -369,7 +361,6 @@ share/ghostscript/%%GS_VERSION%%/pcl3/margins-Letter.ps
 share/ghostscript/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
 @dirrm share/ghostscript/%%GS_VERSION%%/pcl3
 @dirrm share/ghostscript/%%GS_VERSION%%/lib
-@dirrm share/ghostscript/%%GS_VERSION%%/hpdj
 @dirrm share/ghostscript/%%GS_VERSION%%/examples/cjk
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
@@ -380,7 +371,6 @@ share/ghostscript/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lxm3200
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lips
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpdj
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gdi
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/eplaser
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/epag

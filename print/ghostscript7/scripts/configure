@@ -52,7 +52,7 @@ else
 		cljet5 cljet5c cljet5pr lj5mono lj5gray \
 		pj pjetxl pjxl paintjet \
 		pjxl300 pxlmono pxlcolor \
-		pcl3 hpdj \
+		pcl3 \
 		ijs ibmpro jetp3852 imagen fs600 lxm5700m \
 		lxm3200 lx5000 lex2050 lex3200 lex5700 lex7000 \
 		cp50 necp6 \
@@ -247,7 +247,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" "$status_pxlmono" \
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" "$status_pxlcolor" \
   "pcl3"     "HP PCL 3+ (generic) [PCL3]" "$status_pcl3" \
-  "hpdj"     "HP PCL 3+ (old drv.) [HPDJ]" "$status_hpdj" \
   "ijs"      "HP Inkjet and other raster devices" "$status_ijs" \
   "ibmpro"   "IBM 9-pin Proprinter" "$status_ibmpro" \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" "$status_jetp3852" \
