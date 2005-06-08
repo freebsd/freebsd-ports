@@ -30,6 +30,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/guile/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${X11BASE}/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
+OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
@@ -58,10 +60,13 @@ post-patch:
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .endif
 
-.if exists(${LOCALBASE}/include/openhbci.h) || defined(WITH_OPENHBCI)
-LIB_DEPENDS+=	openhbci.13:${PORTSDIR}/finance/openhbci \
+# WITH_OPENHBCI is old synonym for aqbanking option
+.if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
+LIB_DEPENDS+=	aqbanking.5:${PORTSDIR}/finance/aqbanking \
 		ktoblzcheck.1:${PORTSDIR}/finance/ktoblzcheck
 CONFIGURE_ARGS+=--enable-hbci
+.else
+CONFIGURE_ARGS+=--disable-hbci
 .endif
 
 post-configure:
