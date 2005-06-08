@@ -76,6 +76,7 @@
     SUBDIR += moefonts-cid
     SUBDIR += moettf
     SUBDIR += mplayer-fonts
+    SUBDIR += msttf
     SUBDIR += mule-freewnn
     SUBDIR += muni
     SUBDIR += mutt
