@@ -1,0 +1,23 @@
+bin/xfs_admin
+bin/xfs_db
+bin/xfs_check
+bin/xfs_ncheck
+bin/xfs_freeze
+bin/xfs_growfs
+bin/xfs_info
+bin/xfs_io
+bin/xfs_bmap
+bin/xfs_logprint
+bin/xfs_mkfile
+bin/xfs_rtcp
+sbin/fsck.xfs
+sbin/mkfs.xfs
+sbin/xfs_repair
+%%PORTDOCS%%%%DOCSDIR%%/PORTING
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.gz
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README.LVM
+%%PORTDOCS%%%%DOCSDIR%%/README.quota
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

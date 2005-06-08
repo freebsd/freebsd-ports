@@ -1,0 +1,11 @@
+--- fsck/Makefile.orig	Tue Aug 19 15:39:28 2003
++++ fsck/Makefile	Tue Aug 19 15:41:13 2003
+@@ -35,7 +35,7 @@
+ 
+ LTCOMMAND = fsck.xfs
+ CFILES = xfs_fsck.c
+-LCFLAGS = -s -O3
++LCFLAGS = -s
+ LLDFLAGS += -static
+ 
+ default: $(LTCOMMAND)
