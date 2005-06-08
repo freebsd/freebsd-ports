@@ -3422,6 +3422,7 @@ gxmms		ports/multimedia/gxmms
 gxset		ports/x11/gxset
 gyach		ports/net/gyach
 gyroscope	ports/x11/gyroscope
+gzrecover	ports/archivers/gzrecover
 h2n		ports/dns/h2n
 ha		ports/archivers/ha
 hackbot		ports/security/hackbot
