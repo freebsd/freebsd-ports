@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.18
-PORTREVISION?=	2
+PORTVERSION?=	2.18.1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -16,6 +15,7 @@ MAINTAINER?=	skv@FreeBSD.org
 COMMENT?=	Bug-tracking system developed by Mozilla Project
 
 OPTIONS=	CHARTING_MODULES "Bug charting support" on \
+		GRAPHVIZ "Use GraphViz" off \
 		EMAIL_GATEWAY "Use email gateway" off \
 		EXPORT_IMPORT "Import/export bugs (via XML)" off \
 		CONTRIB	"Install user-contributed scripts" off \
@@ -57,6 +57,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart \
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		${SITE_PERL}/GD/Text/Align.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
+.endif
+
+.ifdef WITH_GRAPHVIZ
+RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
 .ifdef WITH_EMAIL_GATEWAY
