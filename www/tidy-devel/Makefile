@@ -54,12 +54,6 @@ DOCFILES+=	Overview.html checked_by_tidy.gif faq.html grid.gif pending.html	\
 		release-notes.html tidy.css tidy.gif
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Abort during build on ${ARCH}"
-.endif
-
 post-patch:
 .if !defined(WITH_SHLIB)
 	@${CP} ${WRKSRC}/build/gmake/Makefile ${WRKSRC}
@@ -105,4 +99,4 @@ post-install:
 	@${ECHO_MSG} "===>   Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
