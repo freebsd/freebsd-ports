@@ -1,2 +1,0 @@
-Please make sure to edit rc.conf(5) to include -L in the flags for
-rpcbind(8) if necessary.
