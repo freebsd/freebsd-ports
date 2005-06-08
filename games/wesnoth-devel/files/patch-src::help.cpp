@@ -1,6 +1,6 @@
---- src/help.cpp.orig	Tue Apr 12 12:43:10 2005
-+++ src/help.cpp	Tue Apr 12 12:43:20 2005
-@@ -40,7 +40,7 @@
+--- src/help.cpp.orig	Tue Jun  7 19:34:15 2005
++++ src/help.cpp	Tue Jun  7 19:34:22 2005
+@@ -41,7 +41,7 @@
  #include <algorithm>
  #include <iostream>
  #include <list>
