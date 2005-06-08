@@ -24,4 +24,8 @@ DESCR=		${PKGDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../bogofilter
 
+pre-configure:
+	${REINPLACE_CMD} 's/^INTEGRITY_TESTS.*/INTEGRITY_TESTS=t.lock1/' \
+		${WRKSRC}/src/tests/Makefile.in
+
 .include "${MASTERDIR}/Makefile"
