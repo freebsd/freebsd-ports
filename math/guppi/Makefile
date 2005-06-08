@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/Guppi/0.40
 DISTNAME=	Guppi-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A ploting program for GNOME
+COMMENT=	A plotting program for GNOME
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
