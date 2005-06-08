@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
+NOT_FOR_ARCHS=	sparc64
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
