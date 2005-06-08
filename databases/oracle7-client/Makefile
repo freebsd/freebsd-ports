@@ -8,10 +8,8 @@
 PORTNAME=	oracle7-client
 PORTVERSION=	0.02
 CATEGORIES=	databases
-MASTER_SITES=	ftp://www.kuzbass.ru/pub/freebsd/oracle/ \
-		ftp://ftp.atnet.ru/pub/OS/FreeBSD/oracle/ \
-		ftp://ftp.lipetsk.ru/pub/unix/Oracle/FreeBSD/ \
-		ftp://ftp.redcom.ru/pub/Oracle/freebsd-client7/
+MASTER_SITES=	ftp://ftp.atnet.ru/pub/OS/FreeBSD/oracle/ \
+		ftp://www.kuzbass.ru/pub/freebsd/oracle/
 DISTNAME=	oracle7.client.OCI
 
 MAINTAINER=	skv@FreeBSD.org
