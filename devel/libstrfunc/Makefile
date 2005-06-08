@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	libstrfunc
-PORTVERSION=	7.4.6
+PORTVERSION=	8.2
 CATEGORIES=	devel www
-MASTER_SITES=	http://www.spelio.net.ru/soft/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	vlm@spelio.net.ru
+MAINTAINER=	vlm@lionet.info
 COMMENT=	Handles CGI forms, MIME, templates, date conversions, etc
 
 INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
