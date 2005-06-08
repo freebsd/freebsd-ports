@@ -7,9 +7,10 @@
 
 PORTNAME=	javamail
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	java mail
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-upd
 
 MAINTAINER=	java@freebsd.org
 COMMENT=	A set of abstract Java classes that model a mail system
