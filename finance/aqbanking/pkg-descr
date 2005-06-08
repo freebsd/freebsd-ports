@@ -1,0 +1,11 @@
+AqBanking provides a middle layer between the program and the various Online
+Banking libraries (e.g. AqHBCI, OpenHBCI etc).
+
+AqBanking uses various plugins to simplify import and export of financial
+data. It also provides the administration of profiles on a per import/export
+plugin basis.
+
+AqBanking supports plugins which allow lookup and verification of bank code/
+account id pair validity.
+
+WWW:    http://www.aquamaniac.de/aqbanking/

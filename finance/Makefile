@@ -3,6 +3,7 @@
 
     COMMENT = Monetary, financial and related applications
 
+    SUBDIR += aqbanking
     SUBDIR += aqmoney
     SUBDIR += cbb
     SUBDIR += emma
