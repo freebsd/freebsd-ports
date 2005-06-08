@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ "$2" = "PRE-INSTALL" ]; then
+  exit 0
+fi
+
+PKGNAME=$1
+PREFIX=${PKG_PREFIX}
+TTFM=${PREFIX}/bin/ttfm.sh
+
+FONTDIR=${PREFIX}/share/fonts/TrueType
+FONTS="simhei.ttf simsun.ttc tahoma.ttf"
+
+if [ ! -x $TTFM ]; then
+    echo "$TTFM not found!"
+    exit 1
+fi
+
+rm -f $FONTDIR/$PKGNAME
+
+if [ "X$WITHOUT_X" = "X" ]; then
+    for f in $FONTS; do
+        $TTFM --add xttfm $FONTDIR/$f
+    done
+    echo "xttfm" >> $FONTDIR/$PKGNAME
+fi
+
+exit 0

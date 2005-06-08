@@ -1,0 +1,5 @@
+share/fonts/TrueType/simhei.ttf
+share/fonts/TrueType/simsun.ttc
+share/fonts/TrueType/tahoma.ttf
+@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
+@unexec rmdir %D/share/fonts 2>/dev/null || true

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$2" != "DEINSTALL" ]; then
+  exit 0
+fi
+
+PKGNAME=$1
+PREFIX=${PKG_PREFIX}
+TTFM=${PKG_PREFIX}/bin/ttfm.sh
+
+FONTDIR=${PREFIX}/share/fonts/TrueType
+FONTS="simhei.ttf simsun.ttc tahoma.ttf"
+
+if [ -r $FONTDIR/$PKGNAME ]; then
+    for i in `cat $FONTDIR/$PKGNAME`; do
+        for f in $FONTS; do
+            $TTFM --remove $i $f
+        done
+    done
+fi
+
+rm -f $FONTDIR/$PKGNAME
+
+exit 0
