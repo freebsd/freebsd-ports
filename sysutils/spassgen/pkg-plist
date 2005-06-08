@@ -4,9 +4,22 @@ bin/spassgen
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-share/icons/hicolor/128x128/apps/password.png
-share/icons/hicolor/16x16/apps/password.png
-share/icons/hicolor/32x32/apps/password.png
-share/icons/hicolor/48x48/apps/password.png
-share/icons/hicolor/64x64/apps/password.png
+%%DATADIR%%/icons/hicolor/128x128/apps/password.png
+%%DATADIR%%/icons/hicolor/16x16/apps/password.png
+%%DATADIR%%/icons/hicolor/32x32/apps/password.png
+%%DATADIR%%/icons/hicolor/48x48/apps/password.png
+%%DATADIR%%/icons/hicolor/64x64/apps/password.png
+@dirrm %%DATADIR%%/icons/hicolor/128x128/apps
+@dirrm %%DATADIR%%/icons/hicolor/16x16/apps
+@dirrm %%DATADIR%%/icons/hicolor/32x32/apps
+@dirrm %%DATADIR%%/icons/hicolor/48x48/apps
+@dirrm %%DATADIR%%/icons/hicolor/64x64/apps
+@dirrm %%DATADIR%%/icons/hicolor/128x128
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor/64x64
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

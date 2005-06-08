@@ -7,6 +7,7 @@
 
 PORTNAME=	spassgen
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spassgen
@@ -15,8 +16,6 @@ MAINTAINER=	shelton@granch.ru
 COMMENT=	Qt GUI secure password generator
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-BROKEN=		Incomplete pkg-plist
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
@@ -27,7 +26,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 QMAKE_LOCATION=	${LOCALBASE}/bin
 
 MAKE_ENV+=	QTDIR="${QT_PREFIX}"
-DOCSDIR=	share/doc/HTML/en/${PORTNAME}
+
+.include <bsd.port.pre.mk>
 
 pre-build:
 	(cd ${WRKSRC}; \
@@ -38,14 +38,14 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spassgen ${PREFIX}/bin
 .for i in 128x128 16x16 32x32 48x48 64x64
-	${MKDIR} ${PREFIX}/share/icons/hicolor/${i}/apps
-	${INSTALL_DATA} ${WRKSRC}/icons/${i}/password.png ${PREFIX}/share/icons/hicolor/${i}/apps
+	${MKDIR} ${DATADIR}/icons/hicolor/${i}/apps
+	${INSTALL_DATA} ${WRKSRC}/icons/${i}/password.png ${DATADIR}/icons/hicolor/${i}/apps
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 .for i in AUTHORS LICENCE README TODO INSTALL
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
