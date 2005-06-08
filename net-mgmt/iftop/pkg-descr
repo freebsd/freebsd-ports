@@ -1,4 +1,13 @@
-iftop provides real-time bandwidth usage information on a
-specified interface, listed by host pairs.
+iftop listens to network traffic on a named interface,  or
+on  the  first  interface  it can find which looks like an
+external interface if none is specified,  and  displays  a
+table of current bandwidth usage by pairs of hosts.  iftop
+must be run with sufficient  permissions  to  monitor  all
+network  traffic  on  the  interface; see pcap(3) for more
+information, but on most systems this means that  it  must
+be run as root.
 
 WWW: http://www.ex-parrot.com/~pdw/iftop/
+
+- Vasil Dimov
+vd@datamax.bg
