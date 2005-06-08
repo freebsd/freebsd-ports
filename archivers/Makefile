@@ -23,6 +23,7 @@
     SUBDIR += freeze
     SUBDIR += gtar
     SUBDIR += gzip
+    SUBDIR += gzrecover
     SUBDIR += ha
     SUBDIR += hffzip
     SUBDIR += hpack.non-usa.only
