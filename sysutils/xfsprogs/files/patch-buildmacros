@@ -1,0 +1,11 @@
+--- include/buildmacros.orig	Sat Aug 16 01:41:15 2003
++++ include/buildmacros	Sat Aug 16 01:41:48 2003
+@@ -54,8 +54,6 @@
+ 	  $(LFILES:.l=.o) \
+ 	  $(YFILES:%.y=%.tab.o)
+ 
+-INSTALL	= $(TOPDIR)/install-sh -o $(PKG_USER) -g $(PKG_GROUP)
+-
+ SHELL = /bin/sh
+ IMAGES_DIR = $(TOPDIR)/all-images
+ DIST_DIR = $(TOPDIR)/dist

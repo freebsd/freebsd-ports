@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Dec 23 13:35:01 2004
++++ Makefile	Thu Dec 23 13:35:08 2004
+@@ -44,7 +44,7 @@
+ 	Logs/* built .census install.* install-dev.* *.gz
+ 
+ SUBDIRS = include libxfs libxlog libhandle libdisk \
+-	copy db fsck growfs io imap logprint mkfile mkfs repair rtcp \
++	db fsck growfs io imap logprint mkfile mkfs repair rtcp \
+ 	m4 man doc po debian build
+ 
+ default: $(CONFIGURE)

@@ -1,0 +1,11 @@
+--- include/builddefs.in.orig	Thu Dec 23 13:38:50 2004
++++ include/builddefs.in	Thu Dec 23 13:39:02 2004
+@@ -113,7 +113,7 @@
+ PCFLAGS = -I/usr/local/include
+ endif
+ 
+-GCFLAGS = -O1 $(OPTIMIZER) $(DEBUG) -funsigned-char -fno-strict-aliasing -Wall \
++GCFLAGS = $(OPTIMIZER) $(DEBUG) -funsigned-char -fno-strict-aliasing -Wall \
+ 	  -DVERSION=\"$(PKG_VERSION)\" -DLOCALEDIR=\"$(PKG_LOCALE_DIR)\"  \
+ 	  -DPACKAGE=\"$(PKG_NAME)\" -I$(TOPDIR)/include
+ 
