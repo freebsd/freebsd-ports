@@ -1,8 +1,8 @@
---- scripts/Makefile.in.orig	Tue Mar 22 20:27:34 2005
-+++ scripts/Makefile.in	Wed Apr  6 13:16:58 2005
-@@ -336,26 +336,7 @@
- tools_dirs = @tools_dirs@
+--- scripts/Makefile.in.orig	Thu May 26 15:28:18 2005
++++ scripts/Makefile.in	Fri Jun  3 15:09:08 2005
+@@ -333,26 +333,7 @@
  uname_prog = @uname_prog@
+ yassl_dir = @yassl_dir@
  zlib_dir = @zlib_dir@
 -bin_SCRIPTS = @server_scripts@ \
 -			msql2mysql \
@@ -28,7 +28,7 @@
  
  EXTRA_SCRIPTS = make_binary_distribution.sh \
  			make_sharedlib_distribution.sh \
-@@ -386,7 +367,7 @@
+@@ -382,7 +363,7 @@
  			mysqlaccess.conf \
  			mysqlbug
  
@@ -37,12 +37,3 @@
  
  # mysqlbug should be distributed built so that people can report build
  # failures with it.
-@@ -677,8 +658,6 @@
- 
- all: fill_help_tables.sql make_win_src_distribution make_binary_distribution make_sharedlib_distribution
- 
--fill_help_tables.sql: fill_help_tables ../Docs/manual.texi
--		./fill_help_tables < ../Docs/manual.texi > fill_help_tables.sql
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
