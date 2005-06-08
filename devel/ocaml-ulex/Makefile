@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ulex
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -20,8 +20,9 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
-USE_GMAKE=	yes
 ALL_TARGET=	all all.opt
+
+MAKE_ENV=	OCAMLFIND_DESTDIR="${PREFIX}/lib/ocaml/site-lib"
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	doc
@@ -35,7 +36,7 @@ post-install:
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/${PORTNAME}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ocamlfind remove ${PORTNAME} 2>/dev/null || true" >> ${TMPPLIST}
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.css ${DOCSDIR}
