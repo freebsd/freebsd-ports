@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyblosxom
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
@@ -22,7 +22,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for docfile in ChangeLog INSTALL LICENSE README
+.for docfile in INSTALL LICENSE README
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif

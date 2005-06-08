@@ -43,7 +43,6 @@
 %%PYTHON_SITELIBDIR%%/Pyblosxom/tools.py
 %%PYTHON_SITELIBDIR%%/Pyblosxom/tools.pyc
 %%PYTHON_SITELIBDIR%%/Pyblosxom/tools.pyo
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
