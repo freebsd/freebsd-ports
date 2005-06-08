@@ -34,8 +34,7 @@ post-patch:
 		s|-g -O2|${CFLAGS}|; s|pho xpho$$|pho|' \
 		${WRKSRC}/Makefile
 .if defined(WITH_GTK1)
-	@${REINPLACE_CMD} -e 's|^G2FLAGS|#G2FLAGS|' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^G2FLAGS|#&|' ${WRKSRC}/Makefile
 .endif
 
 MAN1=		pho.1
