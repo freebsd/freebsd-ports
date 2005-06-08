@@ -107,6 +107,50 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/TrainingExperience.class
 %%DATADIR%%/hoplugins/Transfers.class
 %%DATADIR%%/hoplugins/commons/plugin.xml
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Czech.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Danish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Deutsch.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/English.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Finnish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/French.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Italiano.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Nederlands.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Polish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Portugues.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Romanian.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Spanish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Deutsch.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/English.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Finnish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/French.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Italiano.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Nederlands.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Polish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Portugues.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Spanish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/svenska.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Deutsch.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/English.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Finnish.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/French.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Italiano.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Nederlands.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Polish.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Portugues.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Spanish.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Czech.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Danish.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Deutsch.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/English.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Finnish.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/French.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Italiano.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Nederlands.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Polish.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Portugues.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Romanian.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Spanish.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Svenska.properties
 %%DATADIR%%/hoplugins/commons/ui/BaseTableModel.class
 %%DATADIR%%/hoplugins/commons/ui/CompositeIcon.class
 %%DATADIR%%/hoplugins/commons/ui/DefaultTableSorter.class
@@ -130,10 +174,10 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/commons/ui/sorter/TableModelHandler.class
 %%DATADIR%%/hoplugins/commons/utils/DateUtil.class
 %%DATADIR%%/hoplugins/commons/utils/HTCalendar.class
-%%DATADIR%%/hoplugins/commons/utils/HTSwedenCalendar.class
-%%DATADIR%%/hoplugins/commons/utils/HTTrainCalendar.class
+%%DATADIR%%/hoplugins/commons/utils/HTCalendarFactory.class
 %%DATADIR%%/hoplugins/commons/utils/ListUtil.class
 %%DATADIR%%/hoplugins/commons/utils/MathUtil.class
+%%DATADIR%%/hoplugins/commons/utils/PluginProperty.class
 %%DATADIR%%/hoplugins/commons/utils/RatingUtil.class
 %%DATADIR%%/hoplugins/commons/vo/MatchRating.class
 %%DATADIR%%/hoplugins/pluginUpdater/DeleteDialog.class
@@ -167,7 +211,6 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/pluginUpdater/sprache/Spanish.properties
 %%DATADIR%%/hoplugins/pluginUpdater/sprache/svenska.properties
 %%DATADIR%%/hoplugins/teamAnalyzer/SystemManager.class
-%%DATADIR%%/hoplugins/teamAnalyzer/TeamAnalyzerProperty.class
 %%DATADIR%%/hoplugins/teamAnalyzer/comparator/AppearanceComparator.class
 %%DATADIR%%/hoplugins/teamAnalyzer/comparator/MatchComparator.class
 %%DATADIR%%/hoplugins/teamAnalyzer/comparator/PerformanceComparator.class
@@ -200,17 +243,6 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/report/SpotReport.class
 %%DATADIR%%/hoplugins/teamAnalyzer/report/TacticReport.class
 %%DATADIR%%/hoplugins/teamAnalyzer/report/TeamReport.class
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Czech.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Danish.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Deutsch.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/English.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Finnish.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/French.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Italiano.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Nederlands.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Polish.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Romanian.properties
-%%DATADIR%%/hoplugins/teamAnalyzer/sprache/Spanish.properties
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/AutoFilterPanel.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/ComboBoxRenderer.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/FilterPanel$1.class
@@ -286,21 +318,15 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/TeamLineup.class
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/UserTeamSpotLineup.class
 %%DATADIR%%/hoplugins/trainingExperience/FutureTrainingManager.class
+%%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager$1.class
+%%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager$SkillupComperator.class
 %%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager.class
-%%DATADIR%%/hoplugins/trainingExperience/TrainingExperienceProperty.class
 %%DATADIR%%/hoplugins/trainingExperience/constants/Skills.class
 %%DATADIR%%/hoplugins/trainingExperience/constants/Trainings.class
 %%DATADIR%%/hoplugins/trainingExperience/dao/DividerDAO.class
 %%DATADIR%%/hoplugins/trainingExperience/dao/EffectDAO.class
 %%DATADIR%%/hoplugins/trainingExperience/dao/TrainingDAO.class
 %%DATADIR%%/hoplugins/trainingExperience/plugin.xml
-%%DATADIR%%/hoplugins/trainingExperience/sprache/English.properties
-%%DATADIR%%/hoplugins/trainingExperience/sprache/Finnish.properties
-%%DATADIR%%/hoplugins/trainingExperience/sprache/Italiano.properties
-%%DATADIR%%/hoplugins/trainingExperience/sprache/Nederlands.properties
-%%DATADIR%%/hoplugins/trainingExperience/sprache/Polish.properties
-%%DATADIR%%/hoplugins/trainingExperience/sprache/Spanish.properties
-%%DATADIR%%/hoplugins/trainingExperience/sprache/svenska.properties
 %%DATADIR%%/hoplugins/trainingExperience/ui/AnalyzerPanel$1.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/AnalyzerPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/ChangeTableRenderer.class
@@ -350,21 +376,16 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/trainingExperience/vo/SkillChange.class
 %%DATADIR%%/hoplugins/trainingExperience/vo/Skillup.class
 %%DATADIR%%/hoplugins/trainingExperience/vo/TrainWeekEffect.class
-%%DATADIR%%/hoplugins/transfers/TransfersProperty.class
 %%DATADIR%%/hoplugins/transfers/constants/TransferTypes.class
 %%DATADIR%%/hoplugins/transfers/dao/BookmarkDAO.class
 %%DATADIR%%/hoplugins/transfers/dao/DividerDAO.class
 %%DATADIR%%/hoplugins/transfers/dao/PlayerMatchesDAO.class
 %%DATADIR%%/hoplugins/transfers/dao/TransferSettingDAO.class
 %%DATADIR%%/hoplugins/transfers/dao/TransferStatusDAO.class
+%%DATADIR%%/hoplugins/transfers/dao/TransferTypeDAO.class
 %%DATADIR%%/hoplugins/transfers/dao/TransfersDAO.class
 %%DATADIR%%/hoplugins/transfers/dao/XMLParser.class
 %%DATADIR%%/hoplugins/transfers/plugin.xml
-%%DATADIR%%/hoplugins/transfers/sprache/Deutsch.properties
-%%DATADIR%%/hoplugins/transfers/sprache/English.properties
-%%DATADIR%%/hoplugins/transfers/sprache/Finnish.properties
-%%DATADIR%%/hoplugins/transfers/sprache/Italiano.properties
-%%DATADIR%%/hoplugins/transfers/sprache/Nederlands.properties
 %%DATADIR%%/hoplugins/transfers/ui/HistoryPane$1.class
 %%DATADIR%%/hoplugins/transfers/ui/HistoryPane$2.class
 %%DATADIR%%/hoplugins/transfers/ui/HistoryPane$3.class
@@ -388,6 +409,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/transfers/ui/component/OptionPanel$1.class
 %%DATADIR%%/hoplugins/transfers/ui/component/OptionPanel.class
 %%DATADIR%%/hoplugins/transfers/ui/component/StartingPanel.class
+%%DATADIR%%/hoplugins/transfers/ui/component/TransferTypeComboBox.class
 %%DATADIR%%/hoplugins/transfers/ui/controller/DividerListener.class
 %%DATADIR%%/hoplugins/transfers/ui/images/in.gif
 %%DATADIR%%/hoplugins/transfers/ui/images/out.gif
@@ -402,6 +424,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/transfers/vo/TransferTotals.class
 %%DATADIR%%/hoplugins/transfers/vo/TransferTypeRecap.class
 %%DATADIR%%/hoplugins/transfers/vo/TransferredPlayer.class
+%%DATADIR%%/hsqldb.jar
 %%DATADIR%%/hsqldb_lic.txt
 %%DATADIR%%/lizenz.txt
 %%DATADIR%%/sprache/Argentina.properties
@@ -435,7 +458,6 @@ bin/hattrickorganizer
 @dirrm %%DATADIR%%/hoplugins/transfers/ui/controller
 @dirrm %%DATADIR%%/hoplugins/transfers/ui/component
 @dirrm %%DATADIR%%/hoplugins/transfers/ui
-@dirrm %%DATADIR%%/hoplugins/transfers/sprache
 @dirrm %%DATADIR%%/hoplugins/transfers/dao
 @dirrm %%DATADIR%%/hoplugins/transfers/constants
 @dirrm %%DATADIR%%/hoplugins/transfers
@@ -444,7 +466,6 @@ bin/hattrickorganizer
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/component
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/bar
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/ui
-@dirrm %%DATADIR%%/hoplugins/trainingExperience/sprache
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/dao
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/constants
 @dirrm %%DATADIR%%/hoplugins/trainingExperience
@@ -455,7 +476,6 @@ bin/hattrickorganizer
 @dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui/controller
 @dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui/component
 @dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ui
-@dirrm %%DATADIR%%/hoplugins/teamAnalyzer/sprache
 @dirrm %%DATADIR%%/hoplugins/teamAnalyzer/report
 @dirrm %%DATADIR%%/hoplugins/teamAnalyzer/manager
 @dirrm %%DATADIR%%/hoplugins/teamAnalyzer/ht
@@ -474,7 +494,12 @@ bin/hattrickorganizer
 @dirrm %%DATADIR%%/hoplugins/commons/ui/info/clearthought
 @dirrm %%DATADIR%%/hoplugins/commons/ui/info
 @dirrm %%DATADIR%%/hoplugins/commons/ui
+@dirrm %%DATADIR%%/hoplugins/commons/sprache/shared
+@dirrm %%DATADIR%%/hoplugins/commons/sprache/Transfers
+@dirrm %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience
+@dirrm %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer
+@dirrm %%DATADIR%%/hoplugins/commons/sprache
 @dirrm %%DATADIR%%/hoplugins/commons
 @dirrm %%DATADIR%%/hoplugins
 @dirrm %%DATADIR%%/flags
-@dirrm share/hattrickorganizer
+@dirrm %%DATADIR%%
