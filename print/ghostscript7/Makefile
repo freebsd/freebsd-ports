@@ -12,9 +12,9 @@ PORTEPOCH=	${GS_EPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
-		http://home.vrweb.de/~martin.lottermoser/pcl3dist/:hpdj_pcl3 \
+		http://home.vrweb.de/martin.lottermoser/pcl3dist/:pcl3 \
 		http://www.harsch.net/Download/:dj970 \
-		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
+		http://www33.ocn.ne.jp/~higamasa/gdevmd2k/:md2k \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
 		ftp://download.canon-sales.co.jp/pub/driver/lasershot/linux/:cpca \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
@@ -31,8 +31,7 @@ MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 PKGNAMESUFFIX=	-gnu
 DISTFILES=	${GS_SRCS}:gs_srcs \
 		${HP8XX_SRCS}:hp8xx \
-		${HPDJ_SRCS}:hpdj_pcl3 \
-		${PCL3_SRCS}:hpdj_pcl3 \
+		${PCL3_SRCS}:pcl3 \
 		${DJ970_SRCS}:dj970 \
 		${GPRINT_SRCS}:gprint \
 		${MD2K_SRCS}:md2k \
@@ -58,6 +57,9 @@ COMMENT=	GNU Postscript interpreter
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+
+# normazile WRKSRC so things like cups-pstoraster may work
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFLICTS=	ghostscript-afpl* ghostscript-gpl*
 USE_BZIP2=	yes
@@ -121,20 +123,7 @@ GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
 HP8XX=		cdj880
 HP8XX_SRCS=	gdevcd8.tar.gz
 
-# HPDJ - additional driver for HP PCL3 printers, by Martin Lottermoser
-# still present, just for the case pcl3 is missing some hpdj feature
-# http://home.vrweb.de/martin.lottermoser/pcl3.html
-#
-# FIXME: This driver is no longer available at Martin Lottermoser's site!
-HPDJ=		hpdj
-HPDJ_VERS=	2.6
-HPDJ_NAME=	${HPDJ}-${HPDJ_VERS}
-HPDJ_SRCS=	${HPDJ_NAME}.tar.gz
-HPDJ_MAN1=	gs-hpdj.1
-MAN1+=		${HPDJ_MAN1}
-
-# PCL3 (hpdj successor now in RELEASE quality)
-# additional driver for HP PCL3 printers, by Martin Lottermoser
+# PCL3 - additional driver for HP PCL3 printers, by Martin Lottermoser
 # http://home.vrweb.de/martin.lottermoser/pcl3.html
 PCL3=		pcl3
 PCL3_VERS=	3.3
@@ -163,7 +152,7 @@ GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
 GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
 # MD2K - additional driver for Alps MD-2000/2010/4000/1300/1500/5000
-# http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/
+# http://www33.ocn.ne.jp/~higamasa/gdevmd2k/
 MD2K=		md2k
 MD2K_VERS=	0.2a
 MD2K_NAME=	gdevmd2k-${MD2K_VERS}
@@ -214,8 +203,8 @@ EPAG_VERS=	3.09
 EPAG_NAME=	${EPAG}-${EPAG_VERS}
 EPAG_SRCS=	${EPAG_NAME}.tar.gz
 
-# EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
-# http://www.epkowa.co.jp/english/linux_e/index.html
+# EPLASER - additional driver for ESC/Page printers, by EPSON AVASYS Corp.
+# http://www.avasys.jp/english/linux_e/index.html
 EPLASER=	eplaser
 EPLASER_VERS=	3.1.4
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
@@ -265,6 +254,8 @@ pre-everything::
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
+# normazile WRKSRC so things like cups-pstoraster may work
+	${LN} -sf ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure,
 # which update unix-gcc.mak to build gs with these new devices!
@@ -272,10 +263,6 @@ post-extract:
 # for HP8XX driver
 	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_SRCS}
-# for HPDJ driver
-	${ECHO_MSG} ">>>   extracting ${HPDJ_SRCS} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRCS}
-	${TAR} -C ${WRKSRC}/src -xf ${WRKSRC}/${HPDJ_NAME}/${HPDJ}.tar
 # for PCL3 driver
 	${ECHO_MSG} ">>>   extracting ${PCL3_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PCL3_SRCS}
@@ -364,10 +351,6 @@ pre-configure:
 # for HP8XX driver
 	${ECHO_MSG} ">>>   adding ${HP8XX} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/cdj850.contrib.mak \
-		>> ${WRKSRC}/src/contrib.mak
-# for HPDJ driver
-	${ECHO_MSG} ">>>   adding ${HPDJ} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/src/contrib.mak-5.94.add \
 		>> ${WRKSRC}/src/contrib.mak
 # for PCL3 driver
 	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
@@ -537,19 +520,6 @@ post-install:
 .else
 	${STRIP_CMD} ${PREFIX}/bin/gs
 .endif
-# for HPDJ driver
-	${ECHO_MSG} ">>>   installing ${HPDJ} manpages ..."
-.for i in ${HPDJ_MAN1}
-	${INSTALL_MAN} ${WRKSRC}/src/${i} ${MANPREFIX}/man/man1
-.endfor
-	${ECHO_MSG} ">>>   creating ${HPDJ} destdir ..."
-	${MKDIR} ${DATADIR}/${GS_VERSION}/${HPDJ}
-	${ECHO_MSG} ">>>   installing files in ${HPDJ} destdir ..."
-.for i in README.hpdj example.mdf margins-A4.ps margins-A4Rotated.ps \
-	margins-Letter.ps margins-LetterRotated.ps
-	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DATADIR}/${GS_VERSION}/${HPDJ}
-.endfor
 # for PCL3 driver
 	${ECHO_MSG} ">>>   installing ${PCL3} utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${PREFIX}/bin
@@ -590,13 +560,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}
-# for HPDJ driver
-	${ECHO_MSG} ">>>   installing ${HPDJ} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${HPDJ}
-.for i in NEWS hpdj.html
-	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DOCSDIR}/${GS_VERSION}/${HPDJ}
-.endfor
 # for PCL3 driver
 	${ECHO_MSG} ">>>   installing ${PCL3} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${PCL3}
