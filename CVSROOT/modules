@@ -3659,6 +3659,7 @@ icbirc		ports/irc/icbirc
 icbm3d		ports/games/icbm3d
 icc		ports/lang/icc
 icc7		ports/lang/icc7
+ice		ports/devel/ice
 icebreaker	ports/games/icebreaker
 icecast		ports/audio/icecast
 icecast2	ports/audio/icecast2
