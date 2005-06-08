@@ -367,6 +367,7 @@
     SUBDIR += i960-rtems-binutils
     SUBDIR += i960-rtems-gcc
     SUBDIR += i960-rtems-gdb
+    SUBDIR += ice
     SUBDIR += icu
     SUBDIR += icu2
     SUBDIR += id-utils

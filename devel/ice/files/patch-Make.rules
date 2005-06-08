@@ -1,0 +1,51 @@
+--- config/Make.rules.orig	Wed May 26 01:09:19 2004
++++ config/Make.rules	Sat May 29 16:02:37 2004
+@@ -12,7 +12,7 @@
+ # if it does not exist.
+ #
+ 
+-prefix			= /opt/Ice-$(VERSION)
++prefix			= $(PREFIX)/Ice-$(VERSION)
+ 
+ #
+ # Define OPTIMIZE as yes if you want to build with
+@@ -91,7 +91,7 @@
+ # directory.
+ #
+ 
+-#DB_HOME		?= /opt/db
++DB_HOME		?= $(LOCALBASE)
+ 
+ #
+ # If OpenSSL is not installed in a standard location where the
+@@ -114,7 +114,7 @@
+ # installation directory.
+ #
+ 
+-#EXPAT_HOME		?= /opt/expat
++EXPAT_HOME		?= $(LOCALBASE)
+ 
+ 
+ #
+@@ -152,8 +152,8 @@
+ install_schemadir	= $(prefix)/schema
+ install_docdir		= $(prefix)/doc
+ 
+-INSTALL			= cp -fp
+-INSTALL_PROGRAM		= ${INSTALL}
++INSTALL			= %%INSTALL_DATA%%
++INSTALL_PROGRAM		= %%INSTALL_PROGRAM%%
+ INSTALL_LIBRARY		= ${INSTALL}
+ INSTALL_DATA		= ${INSTALL}
+ 
+@@ -203,8 +203,8 @@
+ endif
+ 
+ ifneq ($(DB_HOME),)
+-    DB_FLAGS		= -I$(DB_HOME)/include
+-    DB_LIBS		= -L$(DB_HOME)/$(libsubdir) -ldb_cxx
++    DB_FLAGS		= -I$(DB_HOME)/include/db42
++    DB_LIBS		= -L$(DB_HOME)/$(libsubdir) -ldb_cxx-4.2
+ else
+     DB_FLAGS		=
+     DB_LIBS		= -ldb_cxx

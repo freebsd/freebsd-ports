@@ -1,0 +1,5 @@
+The Internet Communications Engine (Ice) is a modern alternative to object
+middleware such as CORBA(TM) or COM/DCOM/COM+. Ice is easy to learn, yet
+provides a powerful network infrastructure for demanding technical applications.
+Ice shines where technologies such as SOAP or XML-RPC are too slow, or do not
+provide sufficient scalability or security.

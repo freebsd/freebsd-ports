@@ -1,0 +1,31 @@
+--- Makefile.orig	Fri May 21 16:33:04 2004
++++ Makefile	Thu Jul 22 19:46:03 2004
+@@ -49,12 +49,14 @@
+ 	    chmod a+rx $(install_slicedir) ; \
+ 	fi
+ 
++ifndef NOPORTDOCS
+ 	@if test ! -d $(install_docdir) ; \
+ 	then \
+ 	    echo "Creating $(install_docdir)..." ; \
+ 	    mkdir $(install_docdir) ; \
+ 	    chmod a+rx $(install_docdir) ; \
+ 	fi
++endif
+ 
+ $(EVERYTHING)::
+ 	@for subdir in $(SUBDIRS); \
+@@ -67,9 +69,11 @@
+ 	@( cd doc && $(MAKE) ) || exit 1
+ 
+ install::
++ifndef NOPORTDOCS
+ 	@( cd doc && $(MAKE) install ) || exit 1
+-	$(INSTALL) ICE_LICENSE $(prefix)
+-	$(INSTALL) LICENSE $(prefix)
++	$(INSTALL) ICE_LICENSE $(install_docdir)
++	$(INSTALL) LICENSE $(install_docdir)
++endif
+ 
+ clean::
+ 	@( cd doc && $(MAKE) clean ) || exit 1
