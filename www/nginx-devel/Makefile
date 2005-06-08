@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.33
+PORTVERSION=	0.1.35
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -35,6 +35,11 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
 		--error-log-path=${LOGDIR}/nginx-error.log \
 		--with-http_stub_status_module \
 		--user=${WWWOWN} --group=${WWWGRP}
+
+.if defined(WITH_OPENSSL_MODULE)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-http_ssl_module
+.endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
 PKGNAMESUFFIX=	-nopcre
