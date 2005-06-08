@@ -1,0 +1,24 @@
+#! /bin/sh
+
+case "$2" in
+    PRE-INSTALL)
+	;;
+
+    POST-INSTALL)
+	for d in \
+		"" \
+		failed.postings \
+		interesting.groups \
+		leaf.node \
+		message.id \
+		out.going \
+		temp.files; do
+		install -d -o news -g news -m 2775 %%SPOOLDIR%%/$d
+	done
+	;;
+
+    *)
+	echo >&2 "Unknown argument in $0 $@"
+	exit 1
+	;;
+esac

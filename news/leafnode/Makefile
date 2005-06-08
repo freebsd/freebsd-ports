@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.3
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
@@ -39,7 +39,8 @@ PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 
 MAN1=		leafnode-version.1 newsq.1
 MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
@@ -51,7 +52,10 @@ DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
 		README-daemontools README.FIRST leafnode.cron.daily \
 		leafnode-SA-2002-01.txt leafnode-SA-2003-01.txt \
-		leafnode-SA-2004-01.txt KNOWNBUGS
+		leafnode-SA-2004-01.txt \
+		leafnode-SA-2005-01.txt \
+		leafnode-SA-2005-02.txt \
+		KNOWNBUGS
 DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
 
 .if !defined(NOPORTDOCS)
@@ -78,8 +82,7 @@ post-install:
 	cd ${WRKSRC}/doc_german && \
 	${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/de.ISO8859-1/man1 && \
 	${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/de.ISO8859-1/man8
-	PKG_PREFIX=${PREFIX} SPOOLDIR=${LEAFNODE_SPOOLDIR} \
-		${SH} pkg-install ${PORTNAME} POST-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
