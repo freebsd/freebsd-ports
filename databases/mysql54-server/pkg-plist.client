@@ -7,10 +7,10 @@ bin/mysqlbug
 bin/mysqlcheck
 bin/mysqldump
 bin/mysqlimport
-bin/mysqlmanager-pwgen
-bin/mysqlmanagerc
 bin/mysqlshow
 bin/mysqltest
+bin/mysqltestmanager-pwgen
+bin/mysqltestmanagerc
 etc/rc.d/000.mysql-client.sh
 include/mysql/errmsg.h
 include/mysql/keycache.h

@@ -1,8 +1,17 @@
---- mysys/default.c.orig	Mon Apr 11 11:17:07 2005
-+++ mysys/default.c	Mon Apr 11 11:27:25 2005
-@@ -703,9 +703,8 @@
-   *ptr++= "sys:/etc/";
- #else
+--- mysys/default.c.orig	Thu May 26 15:26:56 2005
++++ mysys/default.c	Fri Jun  3 17:16:59 2005
+@@ -517,7 +517,7 @@
+   {
+     MY_STAT stat_info;
+     if (!my_stat(name,&stat_info,MYF(0)))
+-      return 1;
++      return 0;
+     /*
+       Ignore world-writable regular files.
+       This is mainly done to protect us to not read a file created by
+@@ -867,9 +867,8 @@
+     *ptr++= env;
+ #endif
    *ptr++= "/etc/";
 +  *ptr++= "%%PREFIX%%/etc/";
  #endif
