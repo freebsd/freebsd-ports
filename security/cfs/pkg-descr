@@ -8,9 +8,6 @@ and the manual pages.  There is a paper describing CFS at:
 
     http://www.crypto.com/papers/cfs.pdf
 
-Under FreeBSD, the mount command for the CFS tree must include
-"-o port=3049,nfsv2".
-
 WWW: http://www.crypto.com/software/
 
 John Polstra <jdp@polstra.com>

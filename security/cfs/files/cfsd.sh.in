@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: cfsd
+# REQUIRE: mountd
+
+#
+# Add the following line to /etc/rc.conf to enable cfsd:
+#
+# cfsd_enable="YES"
+#
+# Additional options:
+#
+# cfsd_port="3049"		# the port to listen to
+# cfsd_mountpoint="/crypt"	# the CFS mountpoint
+#
+
+. %%RC_SUBR%%
+
+name="cfsd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/cfsd"
+start_postcmd="cfsd_poststart"
+stop_precmd="cfsd_prestop"
+
+cfsd_poststart()
+{
+	if [ -n "$cfsd_mountpoint" ]; then
+		mount -o port="$cfsd_port",nfsv2 localhost:%%CFSD_BOOTSTRAP%% "$cfsd_mountpoint"
+	fi
+}
+
+cfsd_prestop()
+{
+	if [ -n "$cfsd_mountpoint" ]; then
+		umount "$cfsd_mountpoint"
+	fi
+}
+
+load_rc_config $name
+: ${cfsd_enable="NO"}
+: ${cfsd_port="3049"}
+: ${cfsd_mountpoint="/crypt"}
+
+command_args="$cfsd_port >/dev/null 2>&1"
+required_dirs="%%CFSD_BOOTSTRAP%% $cfsd_mountpoint"
+
+run_rc_command "$1"

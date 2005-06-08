@@ -3,10 +3,11 @@ bin/cdetach
 bin/cmkdir
 bin/cpasswd
 bin/cfssh
-etc/rc.d/cfsd.sh
 sbin/ccat
 sbin/cfsd
 sbin/cname
 share/doc/cfs/README.install
 share/doc/cfs/notes.ms
+@exec install -d -o root -g wheel -m 0 %%CFSD_BOOTSTRAP%% 2>/dev/null || true
+@unexec rmdir %%CFSD_BOOTSTRAP%% 2>/dev/null || true
 @dirrm share/doc/cfs
