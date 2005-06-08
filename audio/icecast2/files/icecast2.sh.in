@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/audio/icecast2/files/Attic/icecast2.sh,v 1.1 2004-12-10 21:41:23 lofi Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: icecast2
@@ -14,7 +14,7 @@
 #icecast_flags=""
 #
 
-. "/etc/rc.subr"
+. "%%RC_SUBR%%"
 
 name="icecast"
 rcvar=`set_rcvar`
