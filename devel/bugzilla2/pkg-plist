@@ -71,6 +71,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/security-webserver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/security.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/trbl-passwd-encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-relogin-everyone.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trouble-filetemp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/troubleshooting.html
@@ -81,11 +82,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/using.html
 %%PORTDOCS%%%%DOCSDIR%%/html/versions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/voting.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x2868.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x2875.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x2885.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x2890.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x2944.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x2918.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x2925.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x2935.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x2940.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x2994.html
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.xml
 %%PORTDOCS%%%%DOCSDIR%%/images/callouts/1.gif
@@ -174,8 +175,12 @@
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla.procmailrc
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla_email_append.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla_ldapsync.rb
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugcount
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugids
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/buglist
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugs
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugslink
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/makequery
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/query.conf
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cvs-update.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/gnats2bz.pl
