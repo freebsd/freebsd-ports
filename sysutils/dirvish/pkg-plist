@@ -2,5 +2,6 @@ sbin/dirvish
 sbin/dirvish-expire
 sbin/dirvish-locate
 sbin/dirvish-runall
-@exec mkdir -p %D/etc/dirvish
-@dirrm etc/dirvish
+etc/dirvish/default.conf.dist
+etc/dirvish/master.conf.dist
+@unexec rmdir %D/etc/dirvish 2>/dev/null || true
