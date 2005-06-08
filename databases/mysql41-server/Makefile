@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.11
-PORTREVISION?=	1
+PORTVERSION=	4.1.12
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-4.1
@@ -88,6 +88,9 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
 .if ${OSVERSION} < 500000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CXX=		${CC}
 .endif
 .if defined(BUILD_OPTIMIZED)
@@ -119,10 +122,6 @@ PLIST_SUB+=	NDB="@comment "
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	manual.html manual.txt manual_toc.html
-.endif
 
 INFO=		mysql
 
@@ -160,12 +159,6 @@ post-patch:
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
-.endfor
 .endif
 
 .else
