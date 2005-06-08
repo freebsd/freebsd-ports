@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Apr 16 12:24:24 2005
-+++ Makefile	Fri Jun  3 03:11:52 2005
++++ Makefile	Tue Jun  7 04:33:19 2005
 @@ -1,5 +1,5 @@
  # Where is your Xwindows located?
 -X11=/usr/X11R6
@@ -47,10 +47,11 @@
  install:
  	-@mkdir -p $(root)$(prefix)/bin
 -	-@mkdir -p $(root)$(prefix)/lib/mozilla/plugins
-+	-@mkdir -p $(root)$(prefix)/lib/browser_plugins
- 	-@mkdir -p $(root)$(prefix)/share/man/man7
+-	-@mkdir -p $(root)$(prefix)/share/man/man7
 -	-@mkdir -p $(root)/etc
++	-@mkdir -p $(root)$(prefix)/lib/browser_plugins
 +	-@mkdir -p $(root)$(prefix)/etc
++	-@mkdir -p $(root)$(prefix)/man/man7
  	cp mozplugger-helper $(root)$(prefix)/bin/
  	cp mozplugger-controller $(root)$(prefix)/bin/
 -	cp mozplugger.so $(root)$(prefix)/lib/mozilla/plugins/
