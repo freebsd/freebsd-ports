@@ -1,0 +1,7 @@
+Gzrecover attempts to skip over bad data in a gzip archive. It will try to to
+skip over bad data and extract whatever files might be there.
+
+WWW: http://www.urbanophile.com/arenn/hacking/gzrt/
+
+- ehaupt
+ehaupt@critical.ch
