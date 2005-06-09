@@ -33,9 +33,12 @@ share/icons/Clearlooks/24x24/gtk/gtk-refresh.png
 share/icons/Clearlooks/index.theme
 share/themes/Clearlooks-DeepSky/gtk-2.0/gtkrc
 share/themes/Clearlooks-Olive/gtk-2.0/gtkrc
+share/themes/Clearlooks-Quicksilver/gtk-2.0/gtkrc
 %%ENGINE%%share/themes/Clearlooks/gtk-2.0/gtkrc
 share/themes/Clearlooks/index.theme
 @dirrm share/themes/Clearlooks/gtk-2.0
+@dirrm share/themes/Clearlooks-Quicksilver/gtk-2.0
+@dirrm share/themes/Clearlooks-Quicksilver
 @dirrm share/themes/Clearlooks-Olive/gtk-2.0
 @dirrm share/themes/Clearlooks-Olive
 @dirrm share/themes/Clearlooks-DeepSky/gtk-2.0
