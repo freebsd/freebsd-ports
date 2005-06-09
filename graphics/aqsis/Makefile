@@ -20,11 +20,11 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GCC=	3.4
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	gnometarget
 USE_BISON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
