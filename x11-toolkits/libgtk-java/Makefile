@@ -23,6 +23,7 @@ USE_LIBTOOL_VER=15
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
+USE_GCC=	3.4
 USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--without-gcj-compile
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
