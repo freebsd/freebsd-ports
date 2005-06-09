@@ -18,21 +18,15 @@ COMMENT=	A program calculating Feynman diagrams
 LIB_DEPENDS=	ginac-1.3.1:${PORTSDIR}/math/GiNaC
 
 USE_GCC=	3.4
-USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-CFLAGS+=	-O0
+CFLAGS+=	-fpermissive
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600006
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
