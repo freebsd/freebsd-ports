@@ -303,11 +303,17 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
 #				  Implies: WANT_OPENLDAP_VER?=22
 # WANT_OPENLDAP_VER
-#				- Legal values are: 21, 22
+#				- Legal values are: 21, 22, 23
 #				  If set to an unkown value, the port is marked BROKEN.
 # WANT_OPENLDAP_SASL
 #				- If set, the system should use OpenLDAP libraries
 #				  with SASL support.
+##
+# USE_FAM		- If set, this port uses the File Alteration Monitor.
+#
+# WANT_FAM_SYSTEM
+# 				- Legal values are: fam (default), gamin
+# 				  If set to an unknown value, the port is marked BROKEN.
 ##
 # USE_AUTOTOOLS	- If set, this port uses various GNU autotools
 #				  (libtool, autoconf, autoheader, automake et al.)
@@ -354,10 +360,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  If no version is given (by the maintainer via the port or
 #				  by the user via defined variable), try to find the
 #				  currently installed version.  Fall back to default if
-#				  necessary (MySQL4.0 = 40).
+#				  necessary (MySQL4.1 = 41).
 # DEFAULT_MYSQL_VER
 #				- MySQL default version. Can be overriden within a port.
-#				  Default: 40.
+#				  Default: 41.
 # WANT_MYSQL_VER
 #				- Maintainer can set an arbitrary version of MySQL by using it.
 # BROKEN_WITH_MYSQL
@@ -468,10 +474,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
 #
-# CONFLICTS		- A list of package name patterns that the port conflicts with.
-#				  It's possible to use any shell meta-characters for pattern
-#				  matching.
-#				  E.g. apache*-1.2* apache*-1.3.[012345] apache-*+ssl_*
+# CONFLICTS		- A list of package name patterns that the port conflicts
+#				  with, separated by blanks.  The names may include shell
+#				  pattern meta-characters "*", "?", "[", "]", and "!".
+#				  Example: apache*-1.2* apache*-1.3.[012345] apache-*+ssl_*
 #
 # Various directory definitions and variables to control them.
 # You rarely need to redefine any of these except WRKSRC and NO_WRKSUBDIR.
@@ -1347,6 +1353,8 @@ CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 
 WANT_OPENLDAP_VER?=	22
 
+WANT_FAM_SYSTEM?=	fam
+
 # Owner and group of the WWW user
 WWWOWN?=	www
 WWWGRP?=	www
@@ -1457,8 +1465,20 @@ _OPENLDAP_FLAVOUR=
 LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 21
 LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21${_OPENLDAP_FLAVOUR}-client
+.elif ${WANT_OPENLDAP_VER} == 23
+LIB_DEPENDS+=		ldap-2.3.0:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .else
 BROKEN=				"unknown OpenLDAP version: ${WANT_OPENLDAP_VER}"
+.endif
+.endif
+
+.if defined(USE_FAM)
+.if ${WANT_FAM_SYSTEM} == fam
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.elif ${WANT_FAM_SYSTEM} == gamin
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/gamin
+.else
+BROKEN=			"unknown FAM system: ${WANT_FAM_SYSTEM}"
 .endif
 .endif
 
@@ -1644,6 +1664,8 @@ CONFIGURE_ARGS+= \
 	install_path=bin="${PREFIX}/bin" \
 	install_path=libdoc="${MAN3PREFIX}/man/man3" \
 	install_path=bindoc="${MAN1PREFIX}/man/man1"
+.elif defined(PERL_CONFIGURE)
+CONFIGURE_ARGS+=	INSTALLDIRS="site"
 .endif
 
 .if defined(PERL_CONFIGURE)
@@ -1663,7 +1685,7 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 
 .if defined(USE_MYSQL)
-DEFAULT_MYSQL_VER?=	40
+DEFAULT_MYSQL_VER?=	41
 # MySQL client version currently supported.
 MYSQL323_LIBVER=	10
 MYSQL40_LIBVER=		12
@@ -1697,7 +1719,7 @@ BROKEN=	MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and want
 .endif
 
 # And now we are checking if we can use it
-.if exists(${PORTSDIR}/databases/mysql${MYSQL_VER}-client)
+.if defined(MYSQL${MYSQL_VER}_LIBVER)
 .if defined(BROKEN_WITH_MYSQL)
 .	for VER in ${BROKEN_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
@@ -1713,6 +1735,9 @@ BROKEN=		"unknown MySQL version: ${MYSQL_VER}"
 
 .if defined(USE_PGSQL)
 DEFAULT_PGSQL_VER?=	74
+PGSQL73_LIBVER=		3
+PGSQL74_LIBVER=		3
+PGSQL80_LIBVER=		4
 
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/pg_config)
@@ -1732,7 +1757,7 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
 # And now we are checking if we can use it
-.if exists(${PORTSDIR}/databases/postgresql${PGSQL_VER}-client)
+.if defined(PGSQL${PGSQL_VER}_LIBVER)
 .if defined(BROKEN_WITH_PGSQL)
 .	for VER in ${BROKEN_WITH_PGSQL}
 .		if (${PGSQL_VER} == "${VER}")
@@ -1740,7 +1765,7 @@ IGNORE=		"Does not work with postgresql${PGSQL_VER}-client PostgresSQL \(${BROKE
 .		endif
 .	endfor
 .endif # BROKEN_WITH_PGSQL
-LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
+LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 .else
 BROKEN=		"unknown PostgreSQL version: ${PGSQL_VER}"
 .endif # Check for correct version
@@ -2912,25 +2937,25 @@ _OPTIONS_OK=yes
 ################################################################
 
 # Disable checksum
-.if defined(NO_CHECKSUM) && !target(checksum) && defined(_OPTIONS_OK)
+.if defined(NO_CHECKSUM) && !target(checksum)
 checksum: fetch
 	@${DO_NADA}
 .endif
 
 # Disable build
-.if defined(NO_BUILD) && !target(build) && defined(_OPTIONS_OK)
+.if defined(NO_BUILD) && !target(build)
 build: configure
 	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
 .endif
 
 # Disable install
-.if defined(NO_INSTALL) && !target(install) && defined(_OPTIONS_OK)
+.if defined(NO_INSTALL) && !target(install)
 install: build
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 .endif
 
 # Disable package
-.if defined(NO_PACKAGE) && !target(package) && defined(_OPTIONS_OK)
+.if defined(NO_PACKAGE) && !target(package)
 package:
 .if defined(IGNORE_SILENT)
 	@${DO_NADA}
@@ -3034,8 +3059,6 @@ check-vulnerable:
 	else \
 		${ECHO_MSG} "===>  Vulnerability check disabled, database not found"; \
 	fi
-.else
-	@${ECHO_MSG} "===>  Vulnerability check disabled"
 .endif
 
 # Fetch
@@ -4225,7 +4248,7 @@ _DEPEND_ALWAYS=	0
 ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
-	@for i in ${${deptype}_DEPENDS}; do \
+	@for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
 		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
 		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
@@ -4254,7 +4277,24 @@ ${deptype:L}-depends:
 				notfound=1; \
 			fi; \
 		else \
-			if ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
+			case $${prog} in \
+				*\>*|*\<*|*=*)	pkg=yes;; \
+				*)		pkg="";; \
+			esac; \
+			if [ "$$pkg" != "" ]; then \
+				if ${PKG_INFO} "$$prog" > /dev/null 2>&1 ; then \
+					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - found"; \
+					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
+						${ECHO_MSG} "       (but building it anyway)"; \
+						notfound=1; \
+					else \
+						notfound=0; \
+					fi; \
+				else \
+					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
+					notfound=1; \
+				fi; \
+			elif ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
 				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 					${ECHO_MSG} "       (but building it anyway)"; \
@@ -4798,16 +4838,17 @@ ${TMPPLIST}:
 
 .if !target(add-plist-docs)
 add-plist-docs:
-.if defined(PORTDOCS)
+.if defined(PORTDOCS) && !defined(NOPORTDOCS)
 	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
 		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
 		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
 	fi
 .for x in ${PORTDOCS}
-	@if [ ! -e ${DOCSDIR}/${x} ]; then \
-		@${ECHO_CMD} ${DOCSDIR}/${x} | \
+	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
+		if [ ! -e ${DOCSDIR}/${x} ]; then \
+		${ECHO_CMD} ${DOCSDIR}/${x} | \
 			${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}; \
-	fi
+	fi;fi
 .endfor
 	@${FIND} -P ${PORTDOCS:S/^/${DOCSDIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
@@ -4819,6 +4860,7 @@ add-plist-docs:
 .endif
 .endif
 
+.if !target(add-plist-info)
 add-plist-info:
 # Process GNU INFO files at package install/deinstall time
 .if defined(INFO)
@@ -4837,14 +4879,17 @@ add-plist-info:
 .endif
 .endif
 .endif
+.endif
 
 # If we're installing into a non-standard PREFIX, we need to remove that directory at
 # deinstall-time
+.if !target(add-plist-post)
 add-plist-post:
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
+.endif
 .endif
 
 .if !target(install-rc-script)
