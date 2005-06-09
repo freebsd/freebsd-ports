@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b5ffaa2a-ee50-4498-af99-61bc1b163c00">
+    <topic>leafnode -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>leafnode</name>
+	<range><lt>1.11.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://leafnode.sourceforge.net/leafnode-SA-2005-02.txt">
+	  <p>A vulnerability was found in the fetchnews program (the NNTP
+	    client) that may under some circumstances cause a wait for input
+	    that never arrives, fetchnews "hangs". [...]</p>
+	  <p>As only one fetchnews program can run at a time, subsequently
+	    started fetchnews and texpire programs will terminate. [...]</p>
+	  <p>Upgrade your leafnode package to version 1.11.3.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1911</cvename>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2005-02.txt</url>
+      <freebsdpr>ports/82056</freebsdpr>
+      <mlist msgid="20050608215155.GB27234@merlin.emma.line.org">http://marc.theaimsgroup.com/?l=vulnwatch&amp;m=111827180929063</mlist>
+    </references>
+    <dates>
+      <discovery>2005-06-08</discovery>
+      <entry>2005-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe903533-ff96-4c7a-bd3e-4d40efa71897">
     <topic>gforge -- directory traversal vulnerability</topic>
     <affects>
