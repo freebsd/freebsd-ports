@@ -226,6 +226,7 @@
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += howl
+    SUBDIR += htpdate
     SUBDIR += http_ping
     SUBDIR += hx
     SUBDIR += i2p

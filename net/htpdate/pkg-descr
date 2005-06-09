@@ -1,0 +1,9 @@
+The HTTP Time Protocol (HTP) is used to synchronize a computer's time
+with web servers as reference time source. Htpdate will synchronize your
+computer's time by extracting timestamps from HTTP headers found
+in web servers responses. Htpdate can be used as a daemon, to keep your
+computer synchronized.
+Accuracy of htpdate is usually better than 0.5 seconds (even better with
+multiple servers). Htpdate can also work through http proxy.
+
+WWW: http://www.clevervest.com/htp/
