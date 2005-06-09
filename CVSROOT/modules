@@ -3593,6 +3593,7 @@ htmlobject	ports/www/htmlobject
 htmlpp		ports/www/htmlpp
 htmlsection	ports/textproc/htmlsection
 htmltolatex	ports/textproc/htmltolatex
+htpdate		ports/net/htpdate
 http-analyze	ports/www/http-analyze
 http_get	ports/www/http_get
 http_load	ports/www/http_load
