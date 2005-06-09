@@ -8,6 +8,7 @@
 
 PORTNAME=	mtop
 PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,5 +23,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
 PERL_CONFIGURE=	yes
 
 MAN1=	mkill.1 mtop.1
+
+post-patch:
+	${RM} ${WRKSRC}/cpan2spec.pl
 
 .include <bsd.port.mk>
