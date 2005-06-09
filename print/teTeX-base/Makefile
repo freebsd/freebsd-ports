@@ -139,7 +139,8 @@ PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
 		FMTUTIL_SYS=${FMTUTIL_SYS} \
 		UPDMAP_SYS=${UPDMAP_SYS} \
 		SETENV=${SETENV}
-PKGMESSAGE_SUB=	TEXMFDIR=${TEXMFDIR} \
+SUB_FILES=	pkg-message
+SUB_LIST=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
 		PREFIX=${PREFIX}
 OLDCONFIG=	web2c/texmf.cnf web2c/mktex.cnf web2c/fmtutil.cnf \
@@ -152,9 +153,11 @@ OLDCONFIG=	web2c/texmf.cnf web2c/mktex.cnf web2c/fmtutil.cnf \
 		tex/context/config/cont-usr.tex \
 		pdftex/config/pdftex.cfg
 
+# override several user-defined variables because the wrong
+# configurations may break the build.
+MAKE_ENV=	TEXINPUTS= TEXMF= TEXMFCNF=
+
 pre-su-install:
-	${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 .for F in ${OLDCONFIG}
 	if [ -f ${PREFIX}/${TEXMFVARDIR}/${F} ]; then \
 		${RM} -f ${PREFIX}/${TEXMFVARDIR}/${F}; \

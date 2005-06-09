@@ -1,3 +1,7 @@
 You may want to run texconfig to configure teTeX for your
 local environment. You will find teTeX's local documentation
 in %%PREFIX%%/%%TEXMFDISTDIR%%/doc/.
+
+Note that if you have environment variables for teTeX in a wrong
+way (such as TEXINPUTS, TEXMF, TEXMFCNF, and so on),
+they may prevent teTeX from working.
