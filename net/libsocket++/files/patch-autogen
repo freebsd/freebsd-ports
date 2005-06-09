@@ -7,7 +7,7 @@
  fi 
  echo "aclocal..."
 -aclocal
-+${ACLOCAL}
++${ACLOCAL} ${ACLOCAL_FLAGS}
  echo "autoheader..."
 -autoheader
 +${AUTOHEADER}
