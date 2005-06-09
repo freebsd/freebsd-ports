@@ -2,3 +2,5 @@ Cone is a text-based mail client. Cone seamlessly handles multiple POP3,
 IMAP accounts, and local mail folders. Cone is also a simple newsreader.
 Cone is designed to be foolproof enough to be used by inexperienced users,
 but also offers advanced features for power users.
+
+WWW: http://www.courier-mta.org/cone/
