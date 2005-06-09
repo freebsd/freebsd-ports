@@ -2,6 +2,6 @@ mnoGoSearch is a full featured SQL-based search engine for intranet or small
 domain Internet web servers. You can also use it to build specialized search
 engines such as cooking recipies or searching newspaper articles.
 
-Provides pre-built web search frontends in C (via CGI) and PHP.
+Provides pre-built web search frontend in C (via CGI).
 
 WWW: http://www.mnogosearch.org/

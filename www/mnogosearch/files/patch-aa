@@ -1,15 +1,16 @@
---- doc/Makefile.in.orig	Tue Feb 20 14:12:34 2001
-+++ doc/Makefile.in	Tue Feb 20 19:32:44 2001
-@@ -285,9 +285,9 @@
+--- doc/Makefile.in.orig	Mon Mar 28 15:59:54 2005
++++ doc/Makefile.in	Mon May  9 12:58:42 2005
+@@ -687,11 +687,11 @@
  
  
- install-data-local:
+ install-data-local: $(doc_FILES)
 -	$(mkinstalldirs) $(DESTDIR)$(prefix)/doc
--	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/doc/
--	${INSTALL_DATA} ${txt_DOCS} $(DESTDIR)$(prefix)/doc/
 +	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/doc/mnogosearch
-+	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/share/doc/mnogosearch
-+	${INSTALL_DATA} ${txt_DOCS} $(DESTDIR)$(prefix)/share/doc/mnogosearch
+ 	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/doc/
+ 	list='${doc_FILES}'; \
+ 	for p in $$list; do \
+-		${INSTALL_DATA} $(srcdir)/$$p $(DESTDIR)$(prefix)/doc/ ; \
++		${INSTALL_DATA} $(srcdir)/$$p $(DESTDIR)$(prefix)/share/doc/mnogosearch ; \
+ 	done
  
- dist-hook:
- 	cp -rf samples $(distdir)
+ uninstall-local:
