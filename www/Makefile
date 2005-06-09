@@ -146,6 +146,7 @@
     SUBDIR += glibwww
     SUBDIR += gnome-user-share
     SUBDIR += gnuinfo
+    SUBDIR += google-sitemapgen
     SUBDIR += goose
     SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
