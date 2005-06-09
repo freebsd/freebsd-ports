@@ -136,6 +136,10 @@ lib/libILSupport.a
 %%I386%%share/gc/scale.html
 %%I386%%share/gc/simple_example.html
 %%I386%%share/gc/tree.html
+%%I386%%@dirrm include/pnet/gc
+@dirrm include/pnet
+%%I386%%@dirrm lib/pnet/elf
+%%I386%%@dirrm lib/pnet
 @dirrm lib/cscc/plugins
 @unexec rmdir %D/lib/cscc 2>/dev/null || true
-@dirrm include/pnet
+%%I386%%@dirrm share/gc
