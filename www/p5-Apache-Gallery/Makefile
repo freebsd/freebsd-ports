@@ -7,7 +7,7 @@
 
 PORTNAME=	Apache-Gallery
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -51,6 +51,9 @@ ICONS=		application-doc.png application-pdf.png application-rtf.png \
 		video-asf.png video-avi.png \
 		video-mov.png video-mpeg.png video-mpg.png video-wmv.png \
 		video-asf.png agfolder.png
+
+post-patch:
+	@${RM} -f ${WRKSRC}/lib/Apache/Gallery.pm.orig
 
 post-install:
 .if !defined(NOPORTDOCS)
