@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algotutor
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.5
 CATEGORIES=	math
 MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
 EXTRACT_SUFX=	.tgz

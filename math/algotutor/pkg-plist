@@ -19,9 +19,9 @@ bin/gen_at_graph
 %%SITE_PERL%%/algotutor/cgeom/dom
 %%SITE_PERL%%/algotutor/cgeom/graham
 %%SITE_PERL%%/algotutor/cgeom/utils
+%%SITE_PERL%%/algotutor/dp/flwa
 %%SITE_PERL%%/algotutor/dp/lcs
 %%SITE_PERL%%/algotutor/dp/matrixchain
-%%SITE_PERL%%/algotutor/graph/dfs
 %%SITE_PERL%%/algotutor/graph/flwa
 %%SITE_PERL%%/algotutor/graph/pfs
 %%SITE_PERL%%/algotutor/utilalgo
