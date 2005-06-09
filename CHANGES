@@ -10,6 +10,44 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20050609:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were introduced:
+
+  * Improve documentation of CONFLICTS.
+
+  * Fix add-plist-docs target to work correctly with wildcards.
+
+  * Fix USE_MYSQL and USE_PGSQL knobs to work in partitial ports
+    tree.
+
+  * Introduce 2 new variables: USE_FAM and WANT_FAM_SYSTEM.
+
+  * Suppress "Vulnerability check disabled" message if
+    DISABLE_VULNERABILITIES is defined.
+
+  * Switch default MySQL version to 4.1
+
+  * Add support for OpenLDAP v.23
+
+  * Fix add-plist-info and add-plist-post targets to avoid warnings
+    from ports which redefine them.
+
+  * Fix add-plist-docs target to handle NOPORTDOCS knob properly.
+
+  * Use INSTALLDIRS="site" in configure for perl ports.
+
+  * Fix NO_(CHECKSUM|BUILD|INSTALL|PACKAGE) knobs if OPTIONS are
+    defined.
+
+  * Add an ability to depend on versioned installed package.
+    Example:
+
+          BUILD_DEPENDS=p5-Tree-Simple>=1.12:${PORTSDIR}/devel/p5-Tree-Simple
+
+    Please note, it's experimental feature, work is currently in
+    progress.
+
 20050325:
 AUTHOR: jdp@FreeBSD.org
   The CVSup port has been upgraded with a patch to correct the
@@ -24,7 +62,7 @@ AUTHOR: jdp@FreeBSD.org
 20050321:
 AUTHOR: kwm@FreeBSD.org
   The gstreamer-plugins gconf dependencie moved to its own port in devel.
-  When your application needs gstreamer-plug-gconf, just add 
+  When your application needs gstreamer-plug-gconf, just add
   USE_GSTREAMER=gconf to you Makefile
 
 20050319:
