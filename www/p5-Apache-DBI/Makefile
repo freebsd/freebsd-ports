@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-DBI
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	www databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -16,8 +17,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	DBI persistent connection, authentication and authorization
 
 .if defined(WITH_MODPERL2)
-BROKEN=		Broken due the new mod_perl2 API
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .endif
