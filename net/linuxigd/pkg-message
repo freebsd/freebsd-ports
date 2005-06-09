@@ -1,6 +1,0 @@
-*********************************************************************
-
-Please modify ${PREFIX}/etc/linuxigd/gatedesc.xml
-and replace 192.168.0.254 with the IP of your internal interface.
-
-*********************************************************************
