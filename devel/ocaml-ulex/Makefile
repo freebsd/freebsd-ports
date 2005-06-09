@@ -8,6 +8,7 @@
 
 PORTNAME=	ulex
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -21,6 +22,8 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
 ALL_TARGET=	all all.opt
+
+USE_GMAKE=	yes
 
 MAKE_ENV=	OCAMLFIND_DESTDIR="${PREFIX}/lib/ocaml/site-lib"
 
