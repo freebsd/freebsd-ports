@@ -1,6 +1,4 @@
 bin/mkill
 bin/mtop
-lib/cpan2spec.pl
-lib/auto/mtop/.packlist
-@dirrm lib/auto/mtop
-@dirrm lib/auto
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/mtop/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mtop
