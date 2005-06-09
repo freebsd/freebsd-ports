@@ -6,7 +6,6 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	The ISC Dynamic Host Configuration Protocol relay
 
 # Local variables

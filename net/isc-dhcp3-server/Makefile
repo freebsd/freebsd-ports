@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	3-${SUBSYS}
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 USE_REINPLACE=	yes
