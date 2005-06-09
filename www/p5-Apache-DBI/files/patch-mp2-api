@@ -1,0 +1,121 @@
+--- AuthDBI.pm.orig	Mon May 23 09:53:24 2005
++++ AuthDBI.pm	Mon May 23 09:55:38 2005
+@@ -6,13 +6,13 @@
+ # 2: full debug output
+ $Apache::AuthDBI::DEBUG = 0;
+ 
+-use constant MP2 => $mod_perl::VERSION >= 1.99;
++use constant MP2 => $ENV{MOD_PERL_API_VERSION} == 2 ? 1 : 0;
+  
+ BEGIN {
+   my @constants = qw( OK AUTH_REQUIRED FORBIDDEN DECLINED SERVER_ERROR );
+   if (MP2) {
+-    require Apache::Const;
+-    import Apache::Const @constants;
++    require Apache2::Const;
++    import Apache2::Const @constants;
+   }
+   else {
+     require Apache::Constants;
+@@ -25,7 +25,9 @@
+ 
+ sub push_handlers {
+   if ( MP2 ) {
+-    Apache->server->push_handlers(@_);
++    require Apache2::ServerUtil;
++    my $s = Apache2::ServerUtil->server;
++    $s->push_handlers(@_);
+   }
+   else {
+     Apache->push_handlers(@_);
+--- DBI.pm.orig	Mon May 23 09:49:38 2005
++++ DBI.pm	Mon May 23 10:08:40 2005
+@@ -4,6 +4,7 @@
+ # $Id: DBI.pm,v 1.12 2004/02/18 00:18:50 ask Exp $
+ 
+ BEGIN { eval { require Apache } }
++BEGIN { eval { require mod_perl2; require Apache2::Module; } }
+ use DBI ();
+ use Carp qw(carp);
+ 
+@@ -31,11 +32,19 @@
+ sub connect_on_init { 
+     # provide a handler which creates all connections during server startup
+ 
+-    # TODO - Should check for mod_perl 2 and do the right thing there
+-    carp "Apache.pm was not loaded\n" and return unless $INC{'Apache.pm'};
+-    if(!@ChildConnect and Apache->can('push_handlers')) {
+-        Apache->push_handlers(PerlChildInitHandler => \&childinit);
++    if ($ENV{MOD_PERL_API_VERSION} == 2) {
++	if (!@ChildConnect) {
++	    require Apache2::ServerUtil;
++	    my $s = Apache2::ServerUtil->server;
++	    $s->push_handlers(PerlChildInitHandler => \&childinit);
++	}
++    } else {
++	carp "Apache.pm was not loaded\n" and return unless $INC{'Apache.pm'};
++	if (!@ChildConnect and Apache->can('push_handlers')) {
++	    Apache->push_handlers(PerlChildInitHandler => \&childinit);
++	}
+     }
++
+     # store connections
+     push @ChildConnect, [@_];
+ }
+@@ -93,10 +102,16 @@
+ 
+     # this PerlCleanupHandler is supposed to initiate a rollback after the script has finished if AutoCommit is off.
+     my $needCleanup = ($Idx =~ /AutoCommit[^\d]+0/) ? 1 : 0;
+-    # TODO - Fix mod_perl 2.0 here
+     if(!$Rollback{$Idx} and $needCleanup and Apache->can('push_handlers')) {
+         print STDERR "$prefix push PerlCleanupHandler \n" if $Apache::DBI::DEBUG > 1;
+-        Apache->push_handlers("PerlCleanupHandler", \&cleanup);
++	if ($ENV{MOD_PERL_API_VERSION} == 2) {
++		require Apache2::ServerUtil;
++		my $s = Apache2::ServerUtil->server;
++		$s->push_handlers('PerlCleanupHandler', \&cleanup);
++	} else {
++		Apache->push_handlers('PerlCleanupHandler', \&cleanup);
++	}
++	
+         # make sure, that the rollback is called only once for every 
+         # request, even if the script calls connect more than once
+         $Rollback{$Idx} = 1;
+@@ -193,9 +208,21 @@
+ 
+ 
+ # prepare menu item for Apache::Status
+-
+-Apache::Status->menu_item(
+-
++if ($ENV{MOD_PERL_API_VERSION} == 2) {
++    Apache2::Status->menu_item(
++    'DBI' => 'DBI connections',
++    sub {
++        my($r, $q) = @_;
++        my(@s) = qw(<TABLE><TR><TD>Datasource</TD><TD>Username</TD></TR>);
++        for (keys %Connected) {
++            push @s, '<TR><TD>', join('</TD><TD>', (split($;, $_))[0,1]), "</TD></TR>\n";
++        }
++        push @s, '</TABLE>';
++        return \@s;
++    }
++    ) if Apache2::Module::loaded('Apache2::Status');
++} else {
++    Apache::Status->menu_item(
+     'DBI' => 'DBI connections',
+     sub {
+         my($r, $q) = @_;
+@@ -206,10 +233,10 @@
+         push @s, '</TABLE>';
+         return \@s;
+    }
+-
+-) if ($INC{'Apache.pm'}                      # is Apache.pm loaded?
++   ) if ($INC{'Apache.pm'}		      # is Apache.pm loaded?
+       and Apache->can('module')               # really?
+       and Apache->module('Apache::Status'));  # Apache::Status too?
++}
+ 
+ 1;
+ 
