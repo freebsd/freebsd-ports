@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.33
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -73,5 +73,6 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/dbus.sh ${PREFIX}/etc/rc.d
 .endif
+	${MKDIR} ${X11BASE}/share/dbus-1/services
 
 .include <bsd.port.post.mk>
