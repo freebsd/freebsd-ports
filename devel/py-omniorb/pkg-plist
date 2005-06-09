@@ -19,7 +19,7 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2.0
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so.2
-%%PYTHON_SITELIBDIR%%/_omnipymodule.so.2.4
+%%PYTHON_SITELIBDIR%%/_omnipymodule.so.2.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2.0
@@ -309,6 +309,8 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/sslTP.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/tcInternal.py
 %%PYTHON_SITELIBDIR%%/omniORB/tcInternal.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.pyc
 %%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.gif
@@ -469,5 +471,6 @@ include/omniORBpy.h
 @dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection
 @dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS
 @dirrm %%PYTHON_SITELIBDIR%%/omniORB
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be
 @dirrm %%PYTHON_SITELIBDIR%%/CosNaming__POA
 @dirrm %%PYTHON_SITELIBDIR%%/CosNaming
