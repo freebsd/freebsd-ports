@@ -3093,6 +3093,7 @@ gone		ports/misc/gone
 gonvert		ports/misc/gonvert
 gonzui		ports/devel/gonzui
 goobox		ports/audio/goobox
+google-sitemapgen	ports/www/google-sitemapgen
 googolplex	ports/net/googolplex
 goose		ports/www/goose
 gopchop		ports/multimedia/gopchop
