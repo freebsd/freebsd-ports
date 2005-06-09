@@ -48,9 +48,6 @@ MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 
 .include <bsd.port.pre.mk>
 
-pre-install:
-	${MKDIR} ${X11BASE}/share/dbus-1/services
-	
 .if !defined(DBUS_SLAVE)
 .if defined(WITH_QT) && !defined(WITHOUT_QT)
 CONFIGURE_ARGS+=--enable-qt
@@ -75,6 +72,7 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/dbus.sh ${PREFIX}/etc/rc.d
+	${MKDIR} ${X11BASE}/share/dbus-1/services
 .endif
 
 .include <bsd.port.post.mk>
