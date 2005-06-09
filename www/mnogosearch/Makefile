@@ -6,85 +6,88 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.1.21
-PORTREVISION=	1
+PORTVERSION=	3.2.32
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
-
-RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=--enable-phrase \
-		--enable-shared \
+CONFIGURE_ARGS+=--enable-shared \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
-		--localstatedir=/var/mnogosearch
+		--localstatedir=/var/mnogosearch \
+		--datadir=${PREFIX}/share/mnogosearch
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-# OPTIONS not counted, workaround
-WITH_MNOGO_BUILTIN=true
+PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
+SHLIB_VER=	1
+
+OPTIONS=	MNOGO_THREADS "Enable pthreads (unstable)"	off \
+		MNOGO_SSL     "Enable SSL"			on  \
+		MNOGO_ASIAN   "Enable asian charsets"		off \
+		MNOGO_SYSLOG  "Send logs to syslog"             on  \
+		MNOGO_PGSQL   "Use PGSQL"			off \
+		MNOGO_MSQL    "Use MSQL"			off \
+		MNOGO_MYSQL   "Use MySQL"			off \
+		MNOGO_SQLITE  "Use SQLite 2.x"			on
+
+.if !defined(NO_OPENSSL)
+USE_OPENSSL=	yes
 .endif
-OPTIONS=        MNOGO_THREADS "Enable pthreads"                   on  \
-		MNOGO_SSL     "Enable SSL"                        on  \
-		MNOGO_GUESSER "Enable Cyrillic charset guesser"   off \
-		MNOGO_PGSQL   "Use PGSQL (mutually exclusive)"    off \
-		MNOGO_MSQL    "Use MSQL (mutually exclusive)"     off \
-		MNOGO_MYSQL   "Use MySQL (mutually exclusive)"    off \
-		MNOGO_BUILTIN "Use built-in (mutually exclusive)" on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_MNOGO_THREADS)
-CONFIGURE_ARGS+=	--enable-freebsd-pthreads
-CFLAGS+=        ${PTHREAD_CFLAGS}
+.if defined(WITH_MNOGO_THREADS)
+CONFIGURE_ARGS+=	--enable-pthreads
+CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 .endif
 
-.if !defined(NO_OPENSSL) && !defined(WITHOUT_MNOGO_SSL)
-USE_OPENSSL=    yes
+.if !defined(WITHOUT_MNOGO_SSL) || !defined(NO_OPENSSL)
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
-.ifdef USE_OPENSSL
-CONFIGURE_ARGS+= --with-openssl=${OPENSSLBASE}
+.ifdef WITH_MNOGO_ASIAN
+CONFIGURE_ARGS+=	--with-extra-charsets=all
 .endif
 
-# Guesser mode ignores charsets comes from HTTP header or <META> tag
-.if defined(WITH_MNOGO_GUESSER)
-CONFIGURE_ARGS+= --enable-charset-guesser
+.ifdef WITHOUT_MNOGO_SYSLOG
+CONFIGURE_ARGS+=	--disable-syslog
 .endif
 
-.if defined(WITH_MNOGO_PGSQL)
-USE_PGSQL=	yes
+.ifdef WITH_MNOGO_PGSQL
+USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
+.endif
 
-.elif defined(WITH_MNOGO_MSQL)
-LIB_DEPENDS=            msql.1:${PORTSDIR}/databases/msql
+.ifdef WITH_MNOGO_MSQL
+LIB_DEPENDS+=		msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
+.endif
 
-.elif defined(WITH_MNOGO_MYSQL)
-LIB_DEPENDS=		mysqlclient:${PORTSDIR}/databases/mysql41-client
+.ifdef WITH_MNOGO_MYSQL
+LIB_DEPENDS+=		mysqlclient:${PORTSDIR}/databases/mysql41-client
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+.endif
 
-.elif defined(WITH_MNOGO_BUILTIN)
-CONFIGURE_ARGS+=        --with-built-in
+.ifdef WITHOUT_MNOGO_SQLITE
+LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
+.endif
 
-.else
-pre-configure:
-	@${ECHO}
-	@${ECHO} "One of the databases should be choosed."
-	@exit 1
+.if defined(WITHOUT_MNOGO_SQLITE) && !defined(WITH_MNOGO_MYSQL) && \
+    !defined(WITH_MNOGO_MSQL) && !defined(WITH_MNOGO_PGSQL)
+BROKEN=	"You need to select at least one database driver"
 .endif
 
 post-patch:
@@ -95,11 +98,13 @@ pre-install:
 	@${MKDIR} ${PREFIX}/share/mnogosearch
 
 post-install:
-	cd ${WRKSRC} && ${TAR} --create --file - --exclude CVS create | (cd ${PREFIX}/share/mnogosearch && ${TAR} xf -)
+	${LN} -sf libmnogosearch.so \
+		${PREFIX}/lib/libmnogosearch-${PORTVERSION:R}.so.${SHLIB_VER}
 	${CHMOD} 700 /var/mnogosearch/cache
-	${CHOWN} -R www:www /var/mnogosearch/
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/mnogosearch
-	${INSTALL_DATA} ${FILESDIR}/spelld.sh-dist ${PREFIX}/etc/rc.d/
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/mnogosearch
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/samples/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${WRKSRC}/ChangeLog ${DOCSDIR}
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
