@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	transproxy
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	www
-MASTER_SITES=	http://sf.gds.tuwien.ac.at/t/tr/transproxy/ \
-		http://www.nlc.net.au/pub/unix/transproxy/ \
-		http://www.saunders.id.au:9080/transproxy/software/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 EXTRACT_SUFX=	.tgz
 
