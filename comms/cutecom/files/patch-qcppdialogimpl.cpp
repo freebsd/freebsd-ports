@@ -1,11 +1,15 @@
---- qcppdialogimpl.cpp.orig	Wed Oct 13 23:28:30 2004
-+++ qcppdialogimpl.cpp	Fri Oct 15 19:04:08 2004
-@@ -190,11 +190,19 @@
+--- qcppdialogimpl.cpp.orig	Thu Jun  9 21:43:44 2005
++++ qcppdialogimpl.cpp	Thu Jun  9 23:26:47 2005
+@@ -217,11 +217,23 @@
     bool entryFound=false;
     QStringList devices=settings.readListEntry("/cutecom/AllDevices", &entryFound);
     if (!entryFound)
 +#ifdef __FreeBSD__
++#if __FreeBSD_version < 600000
 +      devices<<"/dev/cuaa0"<<"/dev/cuaa1"<<"/dev/cuaa2"<<"/dev/cuaa3";
++#else
++      devices<<"/dev/cuad0"<<"/dev/cuad1"<<"/dev/cuad2"<<"/dev/cuad3";
++#endif
 +#else
        devices<<"/dev/ttyS0"<<"/dev/ttyS1"<<"/dev/ttyS2"<<"/dev/ttyS3";
 +#endif
@@ -20,7 +24,7 @@
  
     QStringList history=settings.readListEntry("/cutecom/History");
  
-@@ -295,7 +303,7 @@
+@@ -326,7 +338,7 @@
        m_sz->addArgument("sh");
        m_sz->addArgument("-c");
  //      QString tmp=QString("sx -vv \"")+filename+"\" < "+m_deviceCb->currentText()+" > "+m_deviceCb->currentText();
@@ -29,7 +33,7 @@
        if (m_protoPb->currentText()=="XModem")
           tmp+="--xmodem ";
        else if (m_protoPb->currentText()=="YModem")
-@@ -414,7 +422,7 @@
+@@ -445,7 +457,7 @@
  
  void QCPPDialogImpl::sendDone()
  {
@@ -38,7 +42,7 @@
  }
  
  bool QCPPDialogImpl::eventFilter(QObject* watched, QEvent *e)
-@@ -773,15 +781,21 @@
+@@ -885,15 +897,21 @@
     case 230400:
        _baud=B230400;
        break;
