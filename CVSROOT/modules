@@ -11619,6 +11619,7 @@ towitoko	ports/devel/towitoko
 tpad		ports/editors/tpad
 tpager		ports/x11-wm/tpager
 tpasm		ports/devel/tpasm
+tpb		ports/deskutils/tpb
 tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
 tpp		ports/misc/tpp
