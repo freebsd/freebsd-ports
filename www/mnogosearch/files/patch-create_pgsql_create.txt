@@ -1,0 +1,11 @@
+--- create/pgsql/create.txt.orig	Tue Feb 15 06:50:33 2005
++++ create/pgsql/create.txt	Tue May 10 14:40:58 2005
+@@ -85,7 +85,7 @@
+ 
+ 
+ CREATE FUNCTION clean_srvinfo() RETURNS trigger 
+-AS 'begin DELETE FROM srvinfo WHERE srv_id=old.rec_id; UPDATE url SET next_index_time=0 WHERE server_id=old.rec_id OR site_id=old.rec_id return NULL; end;'
++AS 'begin DELETE FROM srvinfo WHERE srv_id=old.rec_id; UPDATE url SET next_index_time=0 WHERE server_id=old.rec_id OR site_id=old.rec_id; return NULL; end;'
+ LANGUAGE plpgsql;
+ 
+ 
