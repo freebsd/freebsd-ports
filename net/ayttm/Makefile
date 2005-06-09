@@ -27,13 +27,13 @@ USE_BZIP2=	yes
 USE_GCC=	3.4
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gdkpixbuf gnometarget lthack
+USE_GNOME=	gdkpixbuf gnometarget
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
 USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+GNU_CONFIGURE=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-smtp --enable-jasper-filter
