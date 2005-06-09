@@ -9,3 +9,4 @@ libdata/pkgconfig/gsoap++.pc
 libdata/pkgconfig/gsoap.pc
 libdata/pkgconfig/gsoapck++.pc
 libdata/pkgconfig/gsoapck.pc
+@unexec rmdir %B 2>/dev/null || true
