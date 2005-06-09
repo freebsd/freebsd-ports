@@ -133,6 +133,7 @@
     SUBDIR += teapot
     SUBDIR += timer-applet
     SUBDIR += tomboy
+    SUBDIR += tpb
     SUBDIR += treeline
     SUBDIR += tuxcards
     SUBDIR += vym

@@ -1,0 +1,10 @@
+With TPB it is possible to bind a program to the ThinkPad, Mail, Home and
+Search button. TPB can also run a callback program on each state change with
+the changed state and the new state as options. So it is possible to trigger
+several actions on different events. 
+
+TPB has an on-screen display (OSD) to show volume, mute, brightness and some
+other information. Furthermore TPB supports a software mixer, as the R series
+ThinkPads have no hardware mixer to change the volume.
+
+WWW: http://www.nongnu.org/tpb/
