@@ -3,6 +3,7 @@ bin/crm
 bin/cssdiff
 bin/cssmerge
 bin/cssutil
+bin/osbf-util
 %%PORTDOCS%%%%DOCSDIR%%/CRM114_Mailfilter_HOWTO.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/INTRO.txt
@@ -27,6 +28,4 @@ bin/cssutil
 %%EXAMPLESDIR%%/blacklist.mfp
 %%EXAMPLESDIR%%/priolist.mfp
 %%EXAMPLESDIR%%/whitelist.mfp
-%%EXAMPLESDIR%%/spam.css
-%%EXAMPLESDIR%%/nonspam.css
 @dirrm %%EXAMPLESDIR%%
