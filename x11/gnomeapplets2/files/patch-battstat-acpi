@@ -349,7 +349,7 @@
 +}
 +#endif
 --- battstat/power-management.c.orig	Sun Mar 20 05:20:55 2005
-+++ battstat/power-management.c	Wed May 11 10:22:17 2005
++++ battstat/power-management.c	Thu Jun  9 21:56:14 2005
 @@ -73,9 +73,18 @@ static int pm_initialised;
   * the problem might be.  This error message is not to be freed.
   */
@@ -362,16 +362,16 @@
 +#endif
 +#include "acpi-freebsd.h"
 +
-+struct acpi_info acpiinfo;
-+gboolean using_acpi;
-+int acpi_count;
-+struct apm_info apminfo;
++static struct acpi_info acpiinfo;
++static gboolean using_acpi;
++static int acpi_count;
++static struct apm_info apminfo;
 +
 +gboolean acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info *acpiinfo);
  
  #define APMDEVICE "/dev/apm"
  
-@@ -86,32 +95,45 @@ apm_readinfo (BatteryStatus *status)
+@@ -86,32 +95,46 @@ apm_readinfo (BatteryStatus *status)
       FreeBSD.  Each time this functions is called (once every second)
       the APM device is opened, read from and then closed.
    */
@@ -387,7 +387,8 @@
 -    return ERR_OPEN_APMDEV;
 +  if (using_acpi) {
 +    if (acpi_count <= 0) {
-+      acpi_count = 30;
++      acpi_count = 3;
++      acpi_process_event(&acpiinfo);
 +      acpi_freebsd_read(&apminfo, &acpiinfo);
 +    }
 +    acpi_count--;
@@ -429,7 +430,7 @@
  
    return NULL;
  }
-@@ -339,6 +361,13 @@ power_management_initialise( void )
+@@ -339,6 +362,13 @@ power_management_initialise( void )
          G_IO_IN | G_IO_ERR | G_IO_HUP,
          acpi_callback, NULL);
    }
@@ -443,7 +444,7 @@
  #endif
    pm_initialised = 1;
  
-@@ -360,6 +389,10 @@ power_management_cleanup( void )
+@@ -360,6 +390,10 @@ power_management_cleanup( void )
        g_source_remove(acpiwatch);
       acpiwatch = 0;
       acpi_linux_cleanup(&acpiinfo);
