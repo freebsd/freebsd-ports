@@ -4878,6 +4878,7 @@ kpuzzle		ports/games/kpuzzle
 krb4		ports/security/krb4
 krb5		ports/security/krb5
 krdesktop	ports/net/krdesktop
+krecipes	ports/misc/krecipes
 krefty		ports/deskutils/krefty
 krename		ports/sysutils/krename
 kripp		ports/security/kripp
