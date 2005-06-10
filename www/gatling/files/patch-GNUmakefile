@@ -1,0 +1,92 @@
+--- GNUmakefile.orig	Thu May 19 07:30:48 2005
++++ GNUmakefile	Tue Jun  7 17:19:30 2005
+@@ -1,43 +1,28 @@
+ #DEBUG=1
+-ZLIB=1
+-prefix=/opt/diet
++prefix=${PREFIX}
+ BINDIR=${prefix}/bin
+ MANDIR=${prefix}/man
+ man1dir=$(MANDIR)/man1
+ 
+-TARGETS=gatling httpbench bindbench mmapbench forkbench dl \
+-mktestdata manymapbench ioerr forksbench tlsgatling pthreadbench cgi
+-
+-all: $(TARGETS)
+-
+-CC=gcc
+-CFLAGS=-pipe -Wall
+-LDFLAGS=
+-
+-path = $(subst :, ,$(PATH))
+-diet_path = $(foreach dir,$(path),$(wildcard $(dir)/diet))
+-ifeq ($(strip $(diet_path)),)
+-ifneq ($(wildcard /opt/diet/bin/diet),)
+-DIET=/opt/diet/bin/diet
+-else
+-DIET=
++TARGETS=cgi dl gatling
++ifdef BENCHMARKS
++TARGETS+=httpbench bindbench mmapbench forkbench \
++mktestdata manymapbench ioerr forksbench pthreadbench
+ endif
+-else
+-DIET:=$(strip $(diet_path))
++ifdef TLSGATLING
++TARGETS+=tlsgatling
+ endif
+ 
++all: $(TARGETS)
++
+ # to build without diet libc support, use $ make DIET=
+ # see http://www.fefe.de/dietlibc/ for details about the diet libc
+ 
++DIET=
++
+ ifneq ($(DEBUG),)
+ CFLAGS+=-g
+ LDFLAGS+=-g
+-else
+-CFLAGS+=-O2 -fomit-frame-pointer
+-LDFLAGS+=-s
+-ifneq ($(DIET),)
+-DIET+=-Os
+-endif
+ endif
+ 
+ LDLIBS=-lowfat
+@@ -62,7 +47,7 @@
+ CC:=$(DIET) $(CC)
+ 
+ pthreadbench: pthreadbench.o
+-	$(CC) $< -o $@ -I. $(CFLAGS) $(LDFLAGS) $(LDLIBS) -lpthread
++	$(CC) $< -o $@ -I. $(CFLAGS) $(LDFLAGS) $(LDLIBS) $(PTHREAD_LIBS)
+ 
+ forksbench: forkbench.o
+ 	$(CC) -static -o $@ forkbench.o $(LDFLAGS) $(LDLIBS)
+@@ -70,7 +55,7 @@
+ gatling.o: version.h
+ 
+ tlsgatling: gatling.c ssl.o
+-	-$(CC) -o $@ $^ $(CFLAGS) -DSUPPORT_HTTPS $(LDFLAGS) -lssl -lcrypto $(LDLIBS)
++	$(CC) -o $@ $^ $(CFLAGS) -DSUPPORT_HTTPS $(LDFLAGS) -lssl -lcrypto $(LDLIBS)
+ 
+ cgi: cgi.o
+ 
+@@ -88,9 +73,13 @@
+ 	rm -f trysocket
+ 
+ libiconv: tryiconv.c
+-	if $(DIET) $(CC) $(CFLAGS) -o tryiconv tryiconv.c >/dev/null 2>&1; then echo ""; else \
+-	if $(DIET) $(CC) $(CFLAGS) -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-liconv"; \
+-	fi; fi > libiconv
++ifdef ICONV
++	if $(DIET) $(CC) $(CFLAGS) -L$(LOCALBASE)/lib -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-L$(LOCALBASE)/lib -liconv"; else \
++	echo ""; \
++	fi > libiconv
++else
++	echo "" > libiconv
++endif
+ 	rm -f tryiconv
+ 
+ dummy.c:
