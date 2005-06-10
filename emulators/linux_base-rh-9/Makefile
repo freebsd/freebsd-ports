@@ -54,7 +54,7 @@ COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=		linux_base-6* linux_base-7* linux_base-8* \
+CONFLICTS=		linux_base-7* linux_base-8* \
 			linux_base-debian* linux_base-gentoo* linux_base-suse*
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 ONLY_FOR_ARCHS=		amd64 i386

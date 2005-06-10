@@ -49,7 +49,7 @@ COMMENT=	Basic packages for Linux mode from Red Hat 7.3/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=	linux_base-6* linux_base-7.1* linux_base-debian* \
+CONFLICTS=	linux_base-7.1* linux_base-debian* \
 		linux_base-gentoo* linux_base-rh-9* linux_base-suse-9* \
 		linux-XFree86-libs*
 

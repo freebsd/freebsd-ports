@@ -47,7 +47,7 @@ COMMENT=		Basic packages for Linux mode from SUSE 9.2/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=		linux_base-6* linux_base-7* linux_base-debian* \
+CONFLICTS=		linux_base-7* linux_base-debian* \
 			linux_base-gentoo* linux_base-rh* linux_base-suse-9.1*
 
 RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
