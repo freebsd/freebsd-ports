@@ -7,7 +7,7 @@
 
 PORTNAME=	libgtop2
 PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.10
@@ -32,6 +32,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INFO=		libgtop2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+PKGMESSAGE=	${FILESDIR}/pkg-message
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysdeps_freebsd_Makefile.in
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|int64_t|gint64|g' \
 		${WRKSRC}/include/glibtop/command.h \
@@ -41,5 +48,8 @@ post-patch:
 post-install:
 	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
 	@${CHMOD} 2555 ${PREFIX}/bin/libgtop_server2
+.if ${OSVERSION} >= 600000
+	@${CAT} ${PKGMESSAGE}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
