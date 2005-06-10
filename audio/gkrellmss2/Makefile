@@ -31,16 +31,11 @@ PORTDOCS=	Changelog README Themes
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmss.so \
 		share/locale/ru/LC_MESSAGES/gkrellm-gkrellmss.mo
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|= -O2|=|g ; \
 		 s|= gcc|+=|g' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|PKG_LIBS|PKG_LIB|g' ${WRKSRC}/src/configure
+	@${REINPLACE_CMD} -e 's|PKG_LIBS|PKG_LIB|g' \
+		-e "s|-lfftw3|-L${LOCALBASE}/lib &|g" ${WRKSRC}/src/configure
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gkrellmss.so \
@@ -54,4 +49,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
