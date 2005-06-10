@@ -1,6 +1,14 @@
---- lib/gs_init.ps.orig	Fri Feb  1 12:25:45 2002
-+++ lib/gs_init.ps	Sat Feb  9 01:42:10 2002
-@@ -1274,7 +1274,7 @@
+--- lib/gs_init.ps.orig	Tue Sep  7 00:40:52 2004
++++ lib/gs_init.ps	Tue May 24 22:19:25 2005
+@@ -122,6 +122,7 @@
+ currentdict /DELAYBIND known   /DELAYBIND exch def
+ currentdict /DISKFONTS known   /DISKFONTS exch def
+ currentdict /DOINTERPOLATE .knownget { /INTERPOLATE exch def } if
++currentdict /NOMEDIAATTRS known /NOMEDIAATTRS exch def
+ currentdict /ESTACKPRINT known   /ESTACKPRINT exch def
+ currentdict /FAKEFONTS known   /FAKEFONTS exch def
+ currentdict /FIXEDMEDIA known   /FIXEDMEDIA exch def
+@@ -1420,7 +1421,7 @@
  % Set the default screen and BG/UCR.
  /.setdefaultbgucr {
    systemdict /setblackgeneration known {
@@ -9,8 +17,8 @@
    } if
  } bind def
  /.useloresscreen {	% - .useloresscreen <bool>
-@@ -1874,3 +1874,7 @@
- userdict /AGM_preserve_spots false put
+@@ -2199,3 +2200,7 @@
+ ifelse
  
  % The interpreter will run the initial procedure (start).
 +

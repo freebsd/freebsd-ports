@@ -31,6 +31,7 @@ else
 		lbp1310 lbp1510 lbp1610 lbp1710 lbp1810 lbp1910 \
 		lips2p lips3 lips4 bjc880j lips4v \
 		m8510 coslw2p coslwxl uniprint \
+		dmprt \
 		lj250 declj250 ap3250 epson eps9mid eps9high lp8000 \
 		epag \
 		escpage lp2000 \
@@ -50,8 +51,8 @@ else
 		laserjet ljetplus ljet2p ljet3 ljet3d ljet4 ljet4d lj4dith \
 		cljet5 cljet5c cljet5pr lj5mono lj5gray \
 		pj pjetxl pjxl paintjet \
-		pcl3 \
 		pjxl300 pxlmono pxlcolor \
+		pcl3 \
 		ijs ibmpro jetp3852 imagen fs600 lxm5700m \
 		lxm3200 lx5000 lex2050 lex3200 lex5700 lex7000 \
 		cp50 necp6 \
@@ -62,6 +63,7 @@ else
 		sj48 t4693d2 t4693d4 t4693d8 tek4696 \
 		bmpmono bmpgray bmp16 bmp256 bmp16m bmp32b bmpsep1 bmpsep8 \
 		ccr \
+		cgmmono cgm8 cgm24 \
 		cif \
 		dfaxhigh dfaxlow \
 		xcf xcfcmyk \
@@ -144,6 +146,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "coslw2p"  "CoStar LabelWriter II II/Plus" "$status_coslw2p" \
   "coslwxl"  "CoStar LabelWriter XL" "$status_coslwxl" \
   "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" "$status_uniprint" \
+  "dmprt"    "Configurable dot matrix printer driver [DMPRT]" "$status_dmprt" \
   "lj250"    "DEC LJ250 Companion color printer" "$status_lj250" \
   "declj250" "DEC LJ250 driver (alternate)" "$status_declj250" \
   "ap3250"   "Epson ActionPrinter 3250" "$status_ap3250" \
@@ -241,9 +244,9 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pjxl"     "HP PaintJet XL color printer" "$status_pjxl" \
   "paintjet" "HP PaintJet color printer (alternate)" "$status_paintjet" \
   "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" "$status_pjxl300" \
-  "pcl3"     "HP PCL 3 (generic) [PCL3]" "$status_pcl3" \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" "$status_pxlmono" \
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" "$status_pxlcolor" \
+  "pcl3"     "HP PCL 3+ (generic) [PCL3]" "$status_pcl3" \
   "ijs"      "HP Inkjet and other raster devices" "$status_ijs" \
   "ibmpro"   "IBM 9-pin Proprinter" "$status_ibmpro" \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" "$status_jetp3852" \
