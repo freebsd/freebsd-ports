@@ -12657,6 +12657,7 @@ xmms-fc		ports/audio/xmms-fc
 xmms-finespectrum	ports/graphics/xmms-finespectrum
 xmms-fishmatic	ports/graphics/xmms-fishmatic
 xmms-flac	ports/audio/xmms-flac
+xmms-fxt	ports/audio/xmms-fxt
 xmms-gdancer	ports/graphics/xmms-gdancer
 xmms-goom	ports/graphics/xmms-goom
 xmms-imms	ports/audio/xmms-imms
