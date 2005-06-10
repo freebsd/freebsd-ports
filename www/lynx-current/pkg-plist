@@ -119,3 +119,4 @@ share/lynx_help/lynx_url_support.html
 @dirrm share/doc/lynx
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
+%%NLS%%@unexec rmdir %D/share/locale/rw 2> /dev/null || true
