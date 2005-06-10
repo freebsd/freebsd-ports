@@ -53,7 +53,6 @@ CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .if !defined(INSTALLATION_BASEDIR)
 INSTALLATION_BASEDIR=	OpenOffice.org1.1.4
 .if defined(RDEP)
@@ -64,6 +63,8 @@ BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.1
 RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.1
 .endif
 .endif
+# needed for install stage
+RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=		openoffice
 DICT_DIR=		${INSTALLATION_BASEDIR}/share/dict/ooo
