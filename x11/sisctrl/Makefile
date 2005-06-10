@@ -16,6 +16,7 @@ COMMENT=	Display Control Panel for XFree86/X.org SiS driver
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
+USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
