@@ -1,6 +1,11 @@
---- MP3.pm.orig	Sat Feb 15 00:47:48 2003
-+++ MP3.pm	Sat Jul 19 13:21:56 2003
-@@ -9,7 +9,7 @@
+--- MP3.pm.orig	Mon Oct  6 16:06:10 2003
++++ MP3.pm	Thu Jun  9 15:37:04 2005
+@@ -5,11 +5,11 @@
+ 
+ BEGIN {
+   require mod_perl;
+-  require Apache::compat if $mod_perl::VERSION >= 1.99;
++  require Apache2::compat if $mod_perl::VERSION >= 1.99;
  }
  
  use Apache;
@@ -27,7 +32,7 @@
    my $class = shift;
    my $obj = $class->new(@_) or die "Can't create object: $!";
    return $obj->run();
-@@ -395,14 +397,14 @@
+@@ -415,14 +417,14 @@
    my $self = shift;
    my $dir = shift;
  
