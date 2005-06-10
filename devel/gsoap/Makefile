@@ -18,7 +18,6 @@ COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GNOME=	pkgconfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.7
 
