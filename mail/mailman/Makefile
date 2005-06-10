@@ -7,6 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -83,7 +84,11 @@ PKGOPTS=	${FILESDIR}/pkg-opts
 PLIST_SUB+=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR}
 DOCFILES=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
 	  	README.CONTRIB README.NETSCAPE \
-		README.USERAGENT TODO UPGRADING
+		README.USERAGENT TODO UPGRADING \
+		admin/www/mailman-admin.txt \
+		admin/www/mailman-install.txt \
+		admin/www/mailman-member.txt
+
 IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 
 options:
