@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-MP3
 PORTVERSION=	3.05
+PORTREVISION=	1
 CATEGORIES=	www audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
@@ -41,9 +42,8 @@ RUN_DEPENDS+=	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Makete
 .endif
 
 .if defined(WITH_APACHE2)
-BROKEN=		Broken due the new mod_perl2 API
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 EXTRA_PATCHES=	${PATCHDIR}/mod_perl2.patch
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
