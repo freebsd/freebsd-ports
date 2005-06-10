@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	6.8.99.5
+PORTVERSION=	6.8.99.10
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/snapshots/
 DISTNAME=	xorg-x11-${PORTVERSION}
@@ -130,8 +130,7 @@ MAN4+=		i740.4x \
 		imstt.4x \
 		newport.4x \
 		nsc.4x \
-		via.4x \
-		vmware.4x
+		via.4x
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
@@ -146,7 +145,8 @@ MAN4+=		apm.4x \
 		neomagic.4x \
 		sis.4x \
 		trident.4x \
-		tseng.4x
+		tseng.4x \
+		vmware.4x
 .else
 PLIST_SUB+=	AMD64_I386="@comment "
 .endif
