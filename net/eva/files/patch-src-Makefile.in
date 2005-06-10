@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Apr 16 21:17:25 2005
++++ src/Makefile.in	Sat Apr 16 21:16:18 2005
+@@ -320,7 +320,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -pthread
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+ am__depfiles_maybe = depfiles
+ #>- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/evachatwindowmanager.Po \
