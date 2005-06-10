@@ -513,6 +513,7 @@
     SUBDIR += xmms-faad
     SUBDIR += xmms-fc
     SUBDIR += xmms-flac
+    SUBDIR += xmms-fxt
     SUBDIR += xmms-imms
     SUBDIR += xmms-infopipe
     SUBDIR += xmms-jack
