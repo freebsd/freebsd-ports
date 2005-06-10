@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.6.3
+PORTVERSION=	3.6.4
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	An interactive astronomical ephemeris program
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
