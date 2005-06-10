@@ -30,6 +30,7 @@ COMMENT=	Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
+BROKEN=			"dependent on linux_base-6"
 NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm

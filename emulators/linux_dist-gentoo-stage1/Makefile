@@ -16,7 +16,7 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	"binaries licensed under GNU GPL without accompanying source"
 
-CONFLICTS=	linux_base-6* linux_base-7* linux_base-8* linux_base-debian* \
+CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
 		linux_base-rh* linux_base-suse*
 
 BROKEN=		Incorrect pkg-plist

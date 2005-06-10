@@ -56,7 +56,7 @@ COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gentoo* \
+CONFLICTS=	linux_base-7* linux_base-deb* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
