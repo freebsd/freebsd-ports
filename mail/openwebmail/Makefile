@@ -39,7 +39,7 @@ OPTIONS=	ANTIWORD "AntiWord" off \
 		QUOTA "Quota" off \
 		SPAMCHECK "Spam check (Mail::SpamAssassin)" off \
 		SPAMCHECK_ALL "Spam check for all (default: pop3)" off \
-		SPEEDYCGI "SpeedyCGI" on \
+		SPEEDYCGI "SpeedyCGI" off \
 		TNEF "tnef" off \
 		VIRUSCHECK "Virus check (Clam AntiVirus)" off \
 		VIRUSCHECK_ALL "Virus check for all (default: pop3)" off \
