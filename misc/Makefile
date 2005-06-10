@@ -266,6 +266,7 @@
     SUBDIR += koffice-i18n-zu
     SUBDIR += konq-plugins
     SUBDIR += kp
+    SUBDIR += krecipes
     SUBDIR += ksig
     SUBDIR += kwatch
     SUBDIR += latex-mk
