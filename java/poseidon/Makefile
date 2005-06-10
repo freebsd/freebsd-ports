@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	3.0.1.03
-CATEGORIES=	java
+PORTVERSION=	3.1.0
+CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.gentleware.org/ \
 		http://download.gentleware.org/ \
 		ftp://download.gentleware.biz/ \
 		http://download.gentleware.biz/ \
 		ftp://ftp.beine-computer.de/pub/distfiles/
-DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A popular UML CASE tool
-
-WRKSRC=		${WRKDIR}/${PORTNAME}${EDITION}-3.0.1
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -36,9 +34,6 @@ EDITION=	${WITH_EDITION}
 DATAFILES=	LICENSE.txt lib
 .if ${EDITION} == "PE"
 DATAFILES+=	LICENSE-concurrent.txt
-.endif
-.if ${EDITION} == "CE"
-DATAFILES+=	license-keys.txt
 .endif
 PLIST_FILES=	bin/poseidon %%DATADIR%%/bin/poseidon.sh
 

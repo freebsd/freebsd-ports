@@ -30,7 +30,7 @@ fi
 
 cd "$instdir"
 
-CLASSPATH="../lib/floating-server.jar:../lib/poseidon.jar:../lib/umlplugin.jar"
+CLASSPATH="../lib/poseidon2.jar:../lib/uml14.jar:../lib/printing.jar:../lib/wmf_export.jar:../lib/councurrent_license_server.jar"
 CLASSPATH="$CLASSPATH:$JAVA_HOME/jre/lib/rt.jar" # for compilation
 
 export CLASSPATH
