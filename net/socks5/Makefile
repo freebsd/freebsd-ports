@@ -16,6 +16,7 @@ COMMENT=	SOCKS v5 application layer gateway and clients
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
+BROKEN=		"Application authors no longer supply needed distfiles"
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
