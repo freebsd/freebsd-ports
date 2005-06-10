@@ -325,6 +325,7 @@
     SUBDIR += p5-File-CounterFile
     SUBDIR += p5-File-Sort
     SUBDIR += p5-Geo-Weather
+    SUBDIR += p5-Geography-Countries
     SUBDIR += p5-I18N-Charset
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX
