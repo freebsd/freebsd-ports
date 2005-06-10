@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	5.09.2
+PORTVERSION=	5.10.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/	\
-		http://www.ocaml.info/ocaml_sources/
+MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
 
