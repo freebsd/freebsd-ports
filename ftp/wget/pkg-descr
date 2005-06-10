@@ -1,11 +1,22 @@
-Wget [formerly known as Geturl] is a freely available network utility
-to retrieve files from the World Wide Web using HTTP and FTP, the two
-most widely used Internet protocols.  It works non-interactively, thus
-enabling work in the background, after having logged off.
+GNU wget is a free software package for retrieving files using HTTP,
+HTTPS and FTP, the most widely-used Internet protocols. It is a
+non-interactive command-line tool, so it may easily be called from
+scripts, cron jobs, terminals without X-Windows support, etc.
 
-The recursive retrieval of HTML pages, as well as FTP sites is
-supported -- you can use Wget to make mirrors of archives and home
-pages, or traverse the web like a WWW robot (Wget understands
-/robots.txt).
+GNU wget has many features to make retrieving large files or mirroring
+entire web or FTP sites easy, including:
 
-WWW: http://sunsite.auc.dk/wget/
+ o Can resume aborted downloads, using REST and RANGE
+ o Can use filename wild cards and recursively mirror directories
+ o NLS-based message files for many different languages
+ o Optionally converts absolute links in downloaded documents to
+   relative, so that downloaded documents may link to each other locally
+ o Supports HTTP and SOCKS proxies
+ o Supports HTTP cookies
+ o Supports persistent HTTP connections
+ o Unattended / background operation
+ o Uses local file timestamps to determine whether documents need to
+   be re-downloaded when mirroring
+ o GNU wget is distributed under the GNU General Public License.
+
+WWW: http://www.gnu.org/software/wget/wget.html
