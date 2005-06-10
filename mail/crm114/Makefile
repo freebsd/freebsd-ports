@@ -7,6 +7,7 @@
 
 PORTNAME=	crm114
 PORTVERSION=	20041231
+PORTREVISION=	1
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -17,7 +18,6 @@ MASTER_SITE_SUBDIR=	crm114
 # to avoid the reduncany of the CRM114RELEASENAME and .src and
 # .css extention.
 DISTNAME=	${PORTNAME}-${PORTVERSION}.${CRM114RELEASENAME}.src
-DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	An Markov based SpamFilter
@@ -30,6 +30,7 @@ CRM114RELEASENAME=BlameSanAndreas
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+USE_REINPLACE=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}" \
 		LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
@@ -44,6 +45,10 @@ CRM_FILES=	classifytest.crm exectest.crm inserttest_a.crm \
 		matchtest.crm overalterisolatedtest.crm \
 		windowtest.crm
 
+post-patch:
+	@${REINPLACE_CMD} -Ee 's,^((LD|C)FLAGS.*),#\1,;;s,^(prefix=.*),#\1,' \
+		${WRKSRC}/Makefile
+
 # Peter Jeremy recommended the use of b64decode and md5 20040302
 post-build:
 	${MKDIR} ${WRKSRC}/fbsdinstall
@@ -53,7 +58,7 @@ post-build:
 	${SED} "1s|/usr/bin/crm|${PREFIX}/bin/crm|g" ${WRKSRC}/${i} > ${WRKSRC}/fbsdinstall/${i}
 .endfor
 	${SED} 's|/md5sum/|/md5 -r/|' ${WRKSRC}/mailfilter.crm > ${WRKSRC}/fbsdinstall/mailfilter.crm.md5
-	mv ${WRKSRC}/fbsdinstall/mailfilter.crm.md5 ${WRKSRC}/fbsdinstall/mailfilter.crm
+	${MV} ${WRKSRC}/fbsdinstall/mailfilter.crm.md5 ${WRKSRC}/fbsdinstall/mailfilter.crm
 
 post-install:
 .if !defined(NOPORTDOCS)
