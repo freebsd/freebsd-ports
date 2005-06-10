@@ -1,12 +1,13 @@
-# New ports collection makefile for:   boinc
-# Date created:        01 October 2004
-# Whom:                J.R. Oldroyd <fbsd@opal.com>
+# New ports collection makefile for:	boinc
+# Date created:				01 October 2004
+# Whom:					J.R. Oldroyd <fbsd@opal.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	boinc-client
 PORTVERSION=	4.68.20050601
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/ \
 		${MASTER_SITE_LOCAL}
@@ -51,9 +52,9 @@ BOINC_BINARY=	boinc-client
 PLIST_SUB=	BOINC_BINARY="${BOINC_BINARY}" BOINC_HOME="${BOINC_HOME}" \
 		BOINC_USER="${BOINC_USER}" BOINC_GROUP="${BOINC_GROUP}"
 .if !defined(WITHOUT_X11)
-PLIST_SUB+=	GUI=""
+PLIST_SUB+=	BOINC_GUI=""
 .else
-PLIST_SUB+=	GUI="@comment "
+PLIST_SUB+=	BOINC_GUI="@comment "
 .endif
 
 SUB_FILES=	bin-boinc.sh boinc.1 boinc.sh pkg-install
