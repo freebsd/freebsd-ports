@@ -1,5 +1,6 @@
 bin/eet
 bin/eet-config
+bin/eet_bench
 include/Eet.h
 libdata/pkgconfig/eet.pc
 lib/libeet.a
