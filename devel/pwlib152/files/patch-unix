@@ -1,7 +1,7 @@
-*** make/unix.mak.orig	Thu Aug 28 08:39:18 2003
---- make/unix.mak	Thu Aug 28 08:42:30 2003
-*************** endif # linux
-*** 338,348 ****
+*** make/unix.mak.orig	Thu Jul 24 22:01:42 2003
+--- make/unix.mak	Fri Jun  3 15:13:47 2005
+***************
+*** 358,368 ****
   
   ifeq ($(OSTYPE),FreeBSD)
   
@@ -13,7 +13,7 @@
   
   ifndef OSRELEASE
   OSRELEASE	:= $(shell sysctl -n kern.osreldate)
---- 338,348 ----
+--- 358,368 ----
   
   ifeq ($(OSTYPE),FreeBSD)
   
@@ -25,8 +25,8 @@
   
   ifndef OSRELEASE
   OSRELEASE	:= $(shell sysctl -n kern.osreldate)
-*************** SHELL		:= /bin/sh
-*** 871,881 ****
+***************
+*** 891,901 ****
   
   # Directories
   
@@ -38,7 +38,7 @@
   
   ifndef UNIX_SRC_DIR
   UNIX_SRC_DIR	= $(PWLIBDIR)/src/ptlib/unix
---- 871,881 ----
+--- 891,901 ----
   
   # Directories
   
@@ -50,20 +50,20 @@
   
   ifndef UNIX_SRC_DIR
   UNIX_SRC_DIR	= $(PWLIBDIR)/src/ptlib/unix
-*************** LDFLAGS		+= $(DEBLDFLAGS)
-*** 912,918 ****
+***************
+*** 932,938 ****
   else
   
   ifneq ($(OSTYPE),Darwin)
-!   OPTCCFLAGS	+= -O3 -DNDEBUG
+!   OPTCCFLAGS	+= -Os -DNDEBUG
   else
     OPTCCFLAGS	+= -O2 -DNDEBUG
   endif
---- 912,919 ----
+--- 932,939 ----
   else
   
   ifneq ($(OSTYPE),Darwin)
-! #  OPTCCFLAGS	+= -O3 -DNDEBUG
+! #  OPTCCFLAGS	+= -Os -DNDEBUG
 !   OPTCCFLAGS	+= -DNDEBUG
   else
     OPTCCFLAGS	+= -O2 -DNDEBUG

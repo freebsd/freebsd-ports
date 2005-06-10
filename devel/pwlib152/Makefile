@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pwlib
-PORTVERSION=	1.5.0
-PORTREVISION=	5
+PORTVERSION=	1.5.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.openh323.org/bin/ \
