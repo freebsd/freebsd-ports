@@ -12085,7 +12085,6 @@ wfb2sql		ports/databases/wfb2sql
 wfmath		ports/math/wfmath
 wftk		ports/devel/wftk
 wget		ports/ftp/wget
-wget-devel	ports/ftp/wget-devel
 wget4web	ports/www/wget4web
 wgetpro		ports/ftp/wgetpro
 whatmask	ports/net-mgmt/whatmask
