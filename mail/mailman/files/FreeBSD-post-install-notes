@@ -87,7 +87,7 @@ popular MTAs.
      No modification of MAIL_GID should be required when building the Mailman
      port.  The port is designed to work with Sendmail by default.
 
-     Review the instructions found in README.SENDMAIL in the same directory
+     Review the instructions found in mailman-install.txt in the same directory
      as this file.
 
      No further instructions exist at this time on how to integrate the
@@ -117,15 +117,15 @@ popular MTAs.
 
        # make MAIL_GID=6 install
 
-     Next, follow the instructions in REAME.EXIM found in the same directory
-     as this file.  You can add the macros, transport and router found in
-     README.EXIM verbatim to your Exim's configure file.
+     Next, follow the instructions in mailman-install.txt found in the same
+     directory as this file.  You can add the macros, transport and router
+     found in mailman-install.txt verbatim to your Exim's configure file.
 
-     Note that README.EXIM as installed with the FreeBSD port of Mailman has
-     been patched, and should be trusted over a version of the file obtained
-     from another source.  Specifically, when adding the macros found in
-     README.EXIM, you should set the MAILMAN_USER and MAILMAN_GROUP to the
-     same values as those for Exim, namely:
+     Note that mailman-install.txt as installed with the FreeBSD port of
+     Mailman has been patched, and should be trusted over a version of the
+     file obtained from another source.  Specifically, when adding the
+     macros found in mailman-install.txt, you should set the MAILMAN_USER
+     and MAILMAN_GROUP to the same values as those for Exim, namely:
 
        MAILMAN_USER=mailnull
        MAILMAN_GROUP=mail
@@ -159,16 +159,16 @@ popular MTAs.
      NOTE: the group needs to be 'mailman' if you are using the Mailman
      integration for generating the postfix virtual and aliases files.
 
-     Review the instructions found in README.POSTFIX in the same directory
-     as this file.
+     Review the instructions found in mailman-install.txt in the same
+     directory as this file.
 
 3.4) Qmail
 
      The maintainer of the Mailman port has no information at this time as to
      the required value of MAIL_GID for Mailman to work with Qmail.  :-(
 
-     Review the instructions found in README.QMAIL in the same directory as
-     this file.
+     Review the instructions found in mailman-install.txt in the same
+     directory as this file.
 
      No further instructions exist at this time on how to integrate the
      Mailman port with Qmail.  Please submit any such information to the

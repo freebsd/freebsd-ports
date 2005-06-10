@@ -1919,6 +1919,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.USERAGENT
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/mailman-admin.txt
+%%PORTDOCS%%%%DOCSDIR%%/mailman-install.txt
+%%PORTDOCS%%%%DOCSDIR%%/mailman-member.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/tests/msgs
