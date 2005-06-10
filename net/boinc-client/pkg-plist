@@ -1,5 +1,5 @@
 bin/boinc
-%%GUI%%bin/boincmgr
+%%BOINC_GUI%%bin/boincmgr
 include/BOINC/acct_mgr_client.h
 include/BOINC/app_ipc.h
 include/BOINC/base64.h
@@ -44,9 +44,9 @@ include/BOINC/x_opengl.h
 lib/boinc/%%BOINC_BINARY%%
 lib/libboinc.a
 lib/libboinc_api.a
-%%GUI%%lib/libboinc_graphics_api.a
-%%GUI%%lib/libboinc_graphics_impl.a
-%%GUI%%lib/libboinc_graphics_lib.a
+%%BOINC_GUI%%lib/libboinc_graphics_api.a
+%%BOINC_GUI%%lib/libboinc_graphics_impl.a
+%%BOINC_GUI%%lib/libboinc_graphics_lib.a
 lib/librsaeuro.a
 lib/libboinc_zip.a
 @dirrm include/BOINC
