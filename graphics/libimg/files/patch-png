@@ -1,0 +1,414 @@
+--- imgPNG.c	Tue Jan 15 16:00:08 2002
++++ imgPNG.c	Thu Jun  9 20:11:01 2005
+@@ -104,5 +104,4 @@
+ static void tk_png_error _ANSI_ARGS_((png_structp, png_const_charp));
+ static void tk_png_warning _ANSI_ARGS_((png_structp, png_const_charp));
+-static int load_png_library _ANSI_ARGS_((Tcl_Interp *interp));
+ 
+ /*
+@@ -116,87 +115,4 @@
+ static void	tk_png_flush _ANSI_ARGS_((png_structp));
+ 
+-static struct PngFunctions {
+-    VOID *handle;
+-    png_structp (* create_read_struct) _ANSI_ARGS_((png_const_charp,
+-	png_voidp, png_error_ptr, png_error_ptr));
+-    png_infop (* create_info_struct) _ANSI_ARGS_((png_structp));
+-    png_structp (* create_write_struct) _ANSI_ARGS_((png_const_charp,
+-	png_voidp, png_error_ptr, png_error_ptr));
+-    void (* destroy_read_struct) _ANSI_ARGS_((png_structpp,
+-	png_infopp, png_infopp));
+-    void (* destroy_write_struct) _ANSI_ARGS_((png_structpp, png_infopp));
+-    void (* error) _ANSI_ARGS_((png_structp, png_charp));
+-    png_byte (* get_channels) _ANSI_ARGS_((png_structp, png_infop));
+-    png_voidp (* get_error_ptr) _ANSI_ARGS_((png_structp));
+-    png_voidp (* get_progressive_ptr) _ANSI_ARGS_((png_structp));
+-    png_uint_32 (* get_rowbytes) _ANSI_ARGS_((png_structp, png_infop));
+-    png_uint_32 (* get_IHDR) _ANSI_ARGS_((png_structp, png_infop,
+-	   png_uint_32*, png_uint_32*, int*, int*, int*, int*, int*));
+-    png_uint_32 (* get_valid) _ANSI_ARGS_((png_structp, png_infop, png_uint_32));
+-    void (* read_image) _ANSI_ARGS_((png_structp, png_bytepp));
+-    void (* read_info) _ANSI_ARGS_((png_structp, png_infop));
+-    void (* read_update_info) _ANSI_ARGS_((png_structp, png_infop));
+-    int (* set_interlace_handling) _ANSI_ARGS_ ((png_structp));
+-    void (* set_read_fn) _ANSI_ARGS_((png_structp, png_voidp, png_rw_ptr));
+-    void (* set_text) _ANSI_ARGS_((png_structp, png_infop, png_textp, int));
+-    void (* set_write_fn) _ANSI_ARGS_((png_structp, png_voidp,
+-	    png_rw_ptr, png_voidp));
+-    void (* set_IHDR) _ANSI_ARGS_((png_structp, png_infop, png_uint_32,
+-	    png_uint_32, int, int, int, int, int));
+-    void (* write_end) _ANSI_ARGS_((png_structp, png_infop));
+-    void (* write_info) _ANSI_ARGS_((png_structp, png_infop));
+-    void (* write_row) _ANSI_ARGS_((png_structp, png_bytep));
+-    void (* set_expand) _ANSI_ARGS_((png_structp));
+-    void (* set_filler) _ANSI_ARGS_((png_structp, png_uint_32, int));
+-    void (* set_strip_16) _ANSI_ARGS_((png_structp));
+-    png_uint_32 (* get_sRGB) _ANSI_ARGS_((png_structp, png_infop, int *));
+-    void (* set_sRGB) _ANSI_ARGS_((png_structp, png_infop, int));
+-    png_uint_32 (* get_gAMA) _ANSI_ARGS_((png_structp, png_infop, double *));
+-    void (* set_gAMA) PNGARG((png_structp png_ptr, png_infop, double));
+-    void (* set_gamma) _ANSI_ARGS_((png_structp, double, double));
+-    void (* set_sRGB_gAMA_and_cHRM) _ANSI_ARGS_((png_structp, png_infop, int));
+-    void (* write_iTXt) _ANSI_ARGS_((png_structp, int, png_charp, png_charp,
+-	    png_charp, png_charp));
+-} png = {0};
+-
+-static char *symbols[] = {
+-    "png_create_read_struct",
+-    "png_create_info_struct",
+-    "png_create_write_struct",
+-    "png_destroy_read_struct",
+-    "png_destroy_write_struct",
+-    "png_error",
+-    "png_get_channels",
+-    "png_get_error_ptr",
+-    "png_get_progressive_ptr",
+-    "png_get_rowbytes",
+-    "png_get_IHDR",
+-    "png_get_valid",
+-    "png_read_image",
+-    "png_read_info",
+-    "png_read_update_info",
+-    "png_set_interlace_handling",
+-    "png_set_read_fn",
+-    "png_set_text",
+-    "png_set_write_fn",
+-    "png_set_IHDR",
+-    "png_write_end",
+-    "png_write_info",
+-    "png_write_row",
+-    /* The following symbols are not crucial. All of them
+-       are checked at runtime. */
+-    "png_set_expand",
+-    "png_set_filler",
+-    "png_set_strip_16",
+-    "png_get_sRGB",
+-    "png_set_sRGB",
+-    "png_get_gAMA",
+-    "png_set_gAMA",
+-    "png_set_gamma",
+-    "png_set_sRGB_gAMA_and_cHRM",
+-    "png_write_iTXt", /* Only used to check if libpng has iTXt support at runtime */
+-    (char *) NULL
+-};
+-
+ typedef struct cleanup_info {
+     Tcl_Interp *interp;
+@@ -209,5 +125,5 @@
+     png_const_charp error_msg;
+ {
+-    cleanup_info *info = (cleanup_info *) png.get_error_ptr(png_ptr);
++    cleanup_info *info = (cleanup_info *) png_get_error_ptr(png_ptr);
+     Tcl_AppendResult(info->interp, error_msg, (char *) NULL);
+     longjmp(info->jmpbuf,1);
+@@ -228,7 +144,7 @@
+     png_size_t length;
+ {
+-    if (ImgRead((MFile *) png.get_progressive_ptr(png_ptr),
++    if (ImgRead((MFile *) png_get_progressive_ptr(png_ptr),
+ 	    (char *) data, (size_t) length) != (int) length) {
+-	png.error(png_ptr, "Read Error");
++	png_error(png_ptr, "Read Error");
+     }
+ }
+@@ -240,7 +156,7 @@
+     png_size_t length;
+ {
+-    if (ImgWrite((MFile *) png.get_progressive_ptr(png_ptr),
++    if (ImgWrite((MFile *) png_get_progressive_ptr(png_ptr),
+ 	    (char *) data, (size_t) length) != (int) length) {
+-	png.error(png_ptr, "Write Error");
++	png_error(png_ptr, "Write Error");
+     }
+ }
+@@ -303,15 +219,4 @@
+ }
+ 
+-static int
+-load_png_library(interp)
+-    Tcl_Interp *interp;
+-{
+-    if (ImgLoadLib(interp, PNG_LIB_NAME, &png.handle, symbols, 22)
+-	    != TCL_OK) {
+-	return TCL_ERROR;
+-    }
+-    return TCL_OK;
+-}
+-
+ static int ChnReadPNG(interp, chan, fileName, format, imageHandle,
+ 	destX, destY, width, height, srcX, srcY)
+@@ -329,8 +234,4 @@
+     cleanup_info cleanup;
+ 
+-    if (load_png_library(interp) != TCL_OK) {
+-	return TCL_ERROR;
+-    }
+-
+     handle.data = (char *) chan;
+     handle.state = IMG_CHAN;
+@@ -338,9 +239,9 @@
+     cleanup.interp = interp;
+ 
+-    png_ptr=png.create_read_struct(PNG_LIBPNG_VER_STRING,
++    png_ptr=png_create_read_struct(PNG_LIBPNG_VER_STRING,
+ 	    (png_voidp) &cleanup,tk_png_error,tk_png_warning);
+     if (!png_ptr) return(0); 
+ 
+-    png.set_read_fn(png_ptr, (png_voidp) &handle, tk_png_read);
++    png_set_read_fn(png_ptr, (png_voidp) &handle, tk_png_read);
+ 
+     return CommonReadPNG(png_ptr, format, imageHandle, destX, destY,
+@@ -362,11 +263,7 @@
+     cleanup_info cleanup;
+ 
+-    if (load_png_library(interp) != TCL_OK) {
+-	return TCL_ERROR;
+-    }
+-
+     cleanup.interp = interp;
+ 
+-    png_ptr=png.create_read_struct(PNG_LIBPNG_VER_STRING,
++    png_ptr=png_create_read_struct(PNG_LIBPNG_VER_STRING,
+ 	    (png_voidp) &cleanup,tk_png_error,tk_png_warning);
+     if (!png_ptr) return TCL_ERROR; 
+@@ -374,5 +271,5 @@
+     ImgReadInit(dataObj,'\211',&handle);
+ 
+-    png.set_read_fn(png_ptr,(png_voidp) &handle, tk_png_read);
++    png_set_read_fn(png_ptr,(png_voidp) &handle, tk_png_read);
+ 
+     return CommonReadPNG(png_ptr, format, imageHandle, destX, destY,
+@@ -406,27 +303,27 @@
+     int intent;
+ 
+-    info_ptr=png.create_info_struct(png_ptr);
++    info_ptr=png_create_info_struct(png_ptr);
+     if (!info_ptr) {
+-	png.destroy_read_struct(&png_ptr,NULL,NULL);
++	png_destroy_read_struct(&png_ptr,NULL,NULL);
+ 	return(TCL_ERROR);
+     }
+ 
+-    end_info=png.create_info_struct(png_ptr);
++    end_info=png_create_info_struct(png_ptr);
+     if (!end_info) {
+-	png.destroy_read_struct(&png_ptr,&info_ptr,NULL);
++	png_destroy_read_struct(&png_ptr,&info_ptr,NULL);
+ 	return(TCL_ERROR);
+     }
+ 
+-    if (setjmp((((cleanup_info *) png.get_error_ptr(png_ptr))->jmpbuf))) {
++    if (setjmp((((cleanup_info *) png_get_error_ptr(png_ptr))->jmpbuf))) {
+ 	if (png_data) {
+ 	    ckfree((char *)png_data);
+ 	}
+-	png.destroy_read_struct(&png_ptr, &info_ptr, &end_info);
++	png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+ 	return TCL_ERROR;
+     }
+ 
+-    png.read_info(png_ptr,info_ptr);
++    png_read_info(png_ptr,info_ptr);
+ 
+-    png.get_IHDR(png_ptr, info_ptr, &info_width, &info_height, &bit_depth,
++    png_get_IHDR(png_ptr, info_ptr, &info_width, &info_height, &bit_depth,
+ 	&color_type, &interlace_type, (int *) NULL, (int *) NULL);
+ 
+@@ -447,6 +344,6 @@
+     Tk_PhotoGetImage(imageHandle, &block);
+ 
+-    if (png.set_strip_16 != NULL) {
+-	png.set_strip_16(png_ptr);
++    if (png_set_strip_16 != NULL) {
++	png_set_strip_16(png_ptr);
+     } else if (bit_depth == 16) {
+ 	block.offset[1] = 2;
+@@ -454,11 +351,11 @@
+     }
+ 
+-    if (png.set_expand != NULL) {
+-	png.set_expand(png_ptr);
++    if (png_set_expand != NULL) {
++	png_set_expand(png_ptr);
+     }
+ 
+-    png.read_update_info(png_ptr,info_ptr);
+-    block.pixelSize = png.get_channels(png_ptr, info_ptr);
+-    block.pitch = png.get_rowbytes(png_ptr, info_ptr);
++    png_read_update_info(png_ptr,info_ptr);
++    block.pixelSize = png_get_channels(png_ptr, info_ptr);
++    block.pitch = png_get_rowbytes(png_ptr, info_ptr);
+ 
+     if ((color_type & PNG_COLOR_MASK_COLOR) == 0) {
+@@ -471,5 +368,5 @@
+ 
+     if ((color_type & PNG_COLOR_MASK_ALPHA)
+-	    || png.get_valid(png_ptr, info_ptr, PNG_INFO_tRNS)) {
++	    || png_get_valid(png_ptr, info_ptr, PNG_INFO_tRNS)) {
+ 	/* with alpha channel */
+ 	block.offset[3] = block.pixelSize - 1;
+@@ -479,12 +376,13 @@
+     }
+ 
+-    if (png.get_sRGB && png.get_sRGB(png_ptr, info_ptr, &intent)) {
+-	png.set_sRGB(png_ptr, info_ptr, intent);
+-    } else if (png.get_gAMA) {
++    if (png_get_sRGB(png_ptr, info_ptr, &intent)) {
++	/* XXX does this get/set make sense? */
++	png_set_sRGB(png_ptr, info_ptr, intent);
++    } else {
+ 	double gamma;
+-	if (!png.get_gAMA(png_ptr, info_ptr, &gamma)) {
++	if (!png_get_gAMA(png_ptr, info_ptr, &gamma)) {
+ 	    gamma = 0.45455;
+ 	}
+-	png.set_gamma(png_ptr, 1.0, gamma);
++	png_set_gamma(png_ptr, 1.0, gamma);
+     }
+ 
+@@ -498,10 +396,10 @@
+     block.pixelPtr=(unsigned char *) (png_data[srcY]+srcX*block.pixelSize);
+ 
+-    png.read_image(png_ptr,(png_bytepp) png_data);
++    png_read_image(png_ptr,(png_bytepp) png_data);
+ 
+     ImgPhotoPutBlock(imageHandle,&block,destX,destY,width,height);
+ 
+     ckfree((char *) png_data);
+-    png.destroy_read_struct(&png_ptr,&info_ptr,&end_info);
++    png_destroy_read_struct(&png_ptr,&info_ptr,&end_info);
+ 
+     return(TCL_OK);
+@@ -529,12 +427,7 @@
+     handle.state = IMG_CHAN;
+ 
+-    if (load_png_library(interp) != TCL_OK) {
+-	Tcl_Close(NULL, chan);
+-	return TCL_ERROR;
+-    }
+-
+     cleanup.interp = interp;
+ 
+-    png_ptr=png.create_write_struct(PNG_LIBPNG_VER_STRING,
++    png_ptr=png_create_write_struct(PNG_LIBPNG_VER_STRING,
+ 	    (png_voidp) &cleanup,tk_png_error,tk_png_warning);
+     if (!png_ptr) {
+@@ -543,12 +436,12 @@
+     }
+ 
+-    info_ptr=png.create_info_struct(png_ptr);
++    info_ptr=png_create_info_struct(png_ptr);
+     if (!info_ptr) {
+-	png.destroy_write_struct(&png_ptr,NULL);
++	png_destroy_write_struct(&png_ptr,NULL);
+ 	Tcl_Close(NULL, chan);
+ 	return TCL_ERROR;
+     }
+ 
+-    png.set_write_fn(png_ptr,(png_voidp) &handle, tk_png_write, tk_png_flush);
++    png_set_write_fn(png_ptr,(png_voidp) &handle, tk_png_write, tk_png_flush);
+ 
+     result = CommonWritePNG(interp, png_ptr, info_ptr, format, blockPtr);
+@@ -572,11 +465,7 @@
+     ImgFixStringWriteProc(&data, &interp, &dataPtr, &format, &blockPtr);
+ 
+-    if (load_png_library(interp) != TCL_OK) {
+-	return TCL_ERROR;
+-    }
+-
+     cleanup.interp = interp;
+ 
+-    png_ptr=png.create_write_struct(PNG_LIBPNG_VER_STRING,
++    png_ptr=png_create_write_struct(PNG_LIBPNG_VER_STRING,
+ 	    (png_voidp) &cleanup, tk_png_error, tk_png_warning);
+     if (!png_ptr) {
+@@ -584,11 +473,11 @@
+     }
+ 
+-    info_ptr = png.create_info_struct(png_ptr);
++    info_ptr = png_create_info_struct(png_ptr);
+     if (!info_ptr) {
+-	png.destroy_write_struct(&png_ptr,NULL);
++	png_destroy_write_struct(&png_ptr,NULL);
+ 	return TCL_ERROR;
+     }
+ 
+-    png.set_write_fn(png_ptr, (png_voidp) &handle, tk_png_write, tk_png_flush);
++    png_set_write_fn(png_ptr, (png_voidp) &handle, tk_png_write, tk_png_flush);
+ 
+     ImgWriteInit(dataPtr, &handle);
+@@ -621,9 +510,9 @@
+     tagcount = (tagcount > 1) ? (tagcount/2 - 1) : 0;
+ 
+-    if (setjmp((((cleanup_info *) png.get_error_ptr(png_ptr))->jmpbuf))) {
++    if (setjmp((((cleanup_info *) png_get_error_ptr(png_ptr))->jmpbuf))) {
+ 	if (row_pointers) {
+ 	    ckfree((char *) row_pointers);
+ 	}
+-	png.destroy_write_struct(&png_ptr,&info_ptr);
++	png_destroy_write_struct(&png_ptr,&info_ptr);
+ 	return TCL_ERROR;
+     }
+@@ -652,5 +541,5 @@
+ #if 0 /* The function png_set_filler doesn't seem to work; don't known why :-( */
+     } else if ((blockPtr->pixelSize==4) && (newPixelSize == 3)
+-	    && (png.set_filler != NULL)) {
++	    && (png_set_filler != NULL)) {
+ 	/*
+ 	 * The set_filler() function doesn't need to be called
+@@ -660,16 +549,14 @@
+ 	 * possible with v0.95 and higher.
+ 	 */
+-	png.set_filler(png_ptr, 0, PNG_FILLER_AFTER);
++	png_set_filler(png_ptr, 0, PNG_FILLER_AFTER);
+ 	newPixelSize++;
+ #endif
+     }
+ 
+-    png.set_IHDR(png_ptr, info_ptr, blockPtr->width, blockPtr->height, 8,
++    png_set_IHDR(png_ptr, info_ptr, blockPtr->width, blockPtr->height, 8,
+ 	    color_type, PNG_INTERLACE_ADAM7, PNG_COMPRESSION_TYPE_BASE,
+ 	    PNG_FILTER_TYPE_BASE);
+ 
+-    if (png.set_gAMA) {
+-	png.set_gAMA(png_ptr, info_ptr, 1.0);
+-    }
++    png_set_gAMA(png_ptr, info_ptr, 1.0);
+ 
+     if (tagcount > 0) {
+@@ -686,10 +573,10 @@
+ 	    }
+ 	    text.lang = NULL;
+-	    png.set_text(png_ptr, info_ptr, (png_text *) &text, 1);
++	    png_set_text(png_ptr, info_ptr, (png_text *) &text, 1);
+         }
+     }
+-    png.write_info(png_ptr,info_ptr);
++    png_write_info(png_ptr,info_ptr);
+ 
+-    number_passes = png.set_interlace_handling(png_ptr);
++    number_passes = png_set_interlace_handling(png_ptr);
+ 
+     if (blockPtr->pixelSize != newPixelSize) {
+@@ -709,5 +596,5 @@
+ 		    dst += newPixelSize;
+ 		}
+-		png.write_row(png_ptr, row_pointers);
++		png_write_row(png_ptr, row_pointers);
+ 	    }
+ 	}
+@@ -717,11 +604,11 @@
+ 	for (pass = 0; pass < number_passes; pass++) {
+ 	    for(I=0;I<blockPtr->height;I++) {
+-		png.write_row(png_ptr, (png_bytep) blockPtr->pixelPtr
++		png_write_row(png_ptr, (png_bytep) blockPtr->pixelPtr
+ 			+ I * blockPtr->pitch + blockPtr->offset[0]);
+ 	    }
+ 	}
+     }
+-    png.write_end(png_ptr,NULL);
+-    png.destroy_write_struct(&png_ptr,&info_ptr);
++    png_write_end(png_ptr,NULL);
++    png_destroy_write_struct(&png_ptr,&info_ptr);
+ 
+     return(TCL_OK);

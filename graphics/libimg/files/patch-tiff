@@ -1,0 +1,592 @@
+--- imgTIFF.c	Tue Jan 15 15:59:58 2002
++++ imgTIFF.c	Thu Jun  9 19:57:53 2005
+@@ -4,5 +4,5 @@
+  * A photo image file handler for TIFF files.
+  *
+- * Uses the libtiff.so library, which is dynamically
++ * Uses the libTIFFso library, which is dynamically
+  * loaded only when used.
+  *
+@@ -40,9 +40,9 @@
+ 
+ #ifdef __WIN32__
+-#define TIFF_LIB_NAME "tiff.dll"
++#define TIFF_LIB_NAME "TIFFdll"
+ #endif
+ 
+ #ifndef TIFF_LIB_NAME
+-#define TIFF_LIB_NAME "libtiff.so"
++#define TIFF_LIB_NAME "libTIFFso"
+ #endif
+ 
+@@ -78,73 +78,4 @@
+ };
+ 
+-static struct TiffFunctions {
+-    VOID *handle;
+-    void (* Close) _ANSI_ARGS_((TIFF *));
+-    int (* GetField) _ANSI_ARGS_(TCL_VARARGS(TIFF *, tif));
+-    int (* GetFieldDefaulted) _ANSI_ARGS_(TCL_VARARGS(TIFF *,tif));
+-    TIFF* (* Open) _ANSI_ARGS_((CONST char*, CONST char*));
+-    int (* ReadEncodedStrip) _ANSI_ARGS_((TIFF*, tstrip_t, tdata_t, tsize_t));
+-    int (* ReadRGBAImage) _ANSI_ARGS_((TIFF *, uint32, uint32, uint32*, int));
+-    int (* ReadTile) _ANSI_ARGS_((TIFF *, uint32, uint32, uint32*, int));
+-    int (* SetField) _ANSI_ARGS_(TCL_VARARGS(TIFF *, tif));
+-    tsize_t (* TileSize) _ANSI_ARGS_((TIFF*));
+-    int (* WriteEncodedStrip) _ANSI_ARGS_((TIFF*, tstrip_t, tdata_t, tsize_t));
+-    void (* free) _ANSI_ARGS_((tdata_t));
+-    tdata_t (* malloc) _ANSI_ARGS_((tsize_t));
+-    tdata_t (* memcpy) _ANSI_ARGS_((tdata_t, tdata_t, tsize_t));
+-    tdata_t (* realloc) _ANSI_ARGS_((tdata_t, tsize_t));
+-    TIFFErrorHandler (* SetErrorHandler) _ANSI_ARGS_((TIFFErrorHandler));
+-    TIFFErrorHandler (* SetWarningHandler) _ANSI_ARGS_((TIFFErrorHandler));
+-    TIFF* (* ClientOpen) _ANSI_ARGS_((CONST char*, CONST char*, VOID *,
+-	    TIFFReadWriteProc, TIFFReadWriteProc, TIFFSeekProc,
+-	    TIFFCloseProc, TIFFSizeProc, TIFFMapFileProc, TIFFUnmapFileProc));
+-    TIFFCodec* (*RegisterCODEC) _ANSI_ARGS_((uint16, CONST char*, VOID *));
+-    void (* Error) _ANSI_ARGS_(TCL_VARARGS(CONST char *, arg1));
+-    int (* PredictorInit) _ANSI_ARGS_((TIFF *));
+-    void (* MergeFieldInfo) _ANSI_ARGS_((TIFF *, CONST VOID *, int));
+-    int (* FlushData1) _ANSI_ARGS_((TIFF *));
+-    void (* NoPostDecode) _ANSI_ARGS_((TIFF *, VOID*, tsize_t));
+-    tsize_t (* TileRowSize) _ANSI_ARGS_((TIFF *));
+-    tsize_t (* ScanlineSize) _ANSI_ARGS_((TIFF *));
+-    void (* setByteArray) _ANSI_ARGS_((VOID **, VOID*, long));
+-    int (* VSetField) _ANSI_ARGS_((TIFF *, ttag_t, va_list));
+-    void (* SwabArrayOfShort) _ANSI_ARGS_((uint16*, unsigned long));
+-} tiff = {0};
+-
+-static char *symbols[] = {
+-    "TIFFClose",
+-    "TIFFGetField",
+-    "TIFFGetFieldDefaulted",
+-    "TIFFOpen",
+-    "TIFFReadEncodedStrip",
+-    "TIFFReadRGBAImage",
+-    "TIFFReadTile",
+-    "TIFFSetField",
+-    "TIFFTileSize",
+-    "TIFFWriteEncodedStrip",
+-    /* The following symbols are not crucial. If they cannot be
+-	found, just don't use them. The ClientOpen function is
+-	more difficult to emulate, but even that is possible. */
+-    "_TIFFfree",
+-    "_TIFFmalloc",
+-    "_TIFFmemcpy",
+-    "_TIFFrealloc",
+-    "TIFFSetErrorHandler",
+-    "TIFFSetWarningHandler",
+-    "TIFFClientOpen",
+-    "TIFFRegisterCODEC",	/* not in libtiff.def */
+-    "TIFFError",
+-    "TIFFPredictorInit",	/* not in libtiff.def */
+-    "_TIFFMergeFieldInfo",	/* not in libtiff.def */
+-    "TIFFFlushData1",		/* not in libtiff.def */
+-    "_TIFFNoPostDecode",	/* not in libtiff.def */
+-    "TIFFTileRowSize",
+-    "TIFFScanlineSize",
+-    "_TIFFsetByteArray",	/* not in libtiff.def */
+-    "TIFFVSetField",
+-    "TIFFSwabArrayOfShort",
+-    (char *) NULL
+-};
+-
+ /*
+  * Prototypes for local procedures defined in this file:
+@@ -162,166 +93,5 @@
+ static int ParseWriteFormat _ANSI_ARGS_((Tcl_Interp *interp, Tcl_Obj *format,
+ 	int *comp, char **mode));
+-static int load_tiff_library _ANSI_ARGS_((Tcl_Interp *interp));
+ static void  _TIFFerr    _ANSI_ARGS_((CONST char *, CONST char *, va_list));
+-static void  _TIFFwarn   _ANSI_ARGS_((CONST char *, CONST char *, va_list));
+-void ImgTIFFfree _ANSI_ARGS_((tdata_t data));
+-tdata_t ImgTIFFmalloc _ANSI_ARGS_((tsize_t size));
+-tdata_t ImgTIFFrealloc _ANSI_ARGS_((tdata_t data, tsize_t size));
+-tdata_t ImgTIFFmemcpy _ANSI_ARGS_((tdata_t, tdata_t, tsize_t));
+-void ImgTIFFError _ANSI_ARGS_(TCL_VARARGS(CONST char *, module));
+-int ImgTIFFPredictorInit _ANSI_ARGS_((TIFF *tif));
+-void ImgTIFFMergeFieldInfo _ANSI_ARGS_((TIFF* tif, CONST VOID *voidp, int i));
+-int ImgTIFFFlushData1 _ANSI_ARGS_((TIFF *tif));
+-void ImgTIFFNoPostDecode _ANSI_ARGS_((TIFF *, VOID *, tsize_t));
+-tsize_t ImgTIFFTileRowSize _ANSI_ARGS_((TIFF *));
+-tsize_t ImgTIFFScanlineSize _ANSI_ARGS_((TIFF *));
+-void ImgTIFFsetByteArray _ANSI_ARGS_((VOID **, VOID*, long));
+-int ImgTIFFSetField _ANSI_ARGS_(TCL_VARARGS(TIFF *, tif));
+-tsize_t ImgTIFFTileSize _ANSI_ARGS_((TIFF*));
+-void ImgTIFFSwabArrayOfShort _ANSI_ARGS_((uint16*, unsigned long));
+-
+-/*
+- * External hooks to functions, so they can be called from
+- * imgTIFFzip.c and imgTIFFjpeg.c as well.
+- */
+-
+-void ImgTIFFfree (data)
+-    tdata_t data;
+-{
+-    if (tiff.free) {
+-	tiff.free(data);
+-    } else {
+-	ckfree((char *) data);
+-    }
+-}
+-
+-tdata_t ImgTIFFmalloc(size)
+-    tsize_t size;
+-{
+-    if (tiff.malloc) {
+-	return tiff.malloc(size);
+-    } else {
+-	return ckalloc(size);
+-    }
+-}
+-
+-tdata_t ImgTIFFrealloc(data, size)
+-    tdata_t data;
+-    tsize_t size;
+-{
+-    if (tiff.realloc) {
+-	return tiff.realloc(data, size);
+-    } else {
+-	return ckrealloc(data, size);
+-    }
+-}
+-
+-tdata_t
+-ImgTIFFmemcpy(a,b,c)
+-     tdata_t a;
+-     tdata_t b;
+-     tsize_t c;
+-{
+-    return tiff.memcpy(a,b,c);
+-}
+-
+-void
+-ImgTIFFError TCL_VARARGS_DEF(CONST char *, arg1)
+-{
+-    va_list ap;
+-    CONST char* module;
+-    CONST char* fmt;
+-
+-    module = (CONST char*) TCL_VARARGS_START(CONST char *, arg1, ap);
+-    fmt =  va_arg(ap, CONST char *);
+-    _TIFFerr(module, fmt, ap);
+-    va_end(ap);
+-}
+-
+-int
+-ImgTIFFPredictorInit(tif)
+-    TIFF *tif;
+-{
+-    return tiff.PredictorInit(tif);
+-}
+-
+-void
+-ImgTIFFMergeFieldInfo(tif, voidp, i)
+-    TIFF* tif;
+-    CONST VOID *voidp;
+-    int i;
+-{
+-    tiff.MergeFieldInfo(tif, voidp, i);
+-}
+-
+-int
+-ImgTIFFFlushData1(tif)
+-    TIFF *tif;
+-{
+-    return tiff.FlushData1(tif);
+-}
+-
+-void
+-ImgTIFFNoPostDecode(tif,a,b)
+-    TIFF * tif;
+-    VOID *a;
+-    tsize_t b;
+-{
+-    tiff.NoPostDecode(tif, a, b);
+-}
+-
+-tsize_t
+-ImgTIFFTileRowSize(tif)
+-    TIFF * tif;
+-{
+-    return tiff.TileRowSize(tif);
+-}
+-
+-tsize_t
+-ImgTIFFScanlineSize(tif)
+-    TIFF *tif;
+-{
+-    return tiff.ScanlineSize(tif);
+-}
+-
+-void
+-ImgTIFFsetByteArray(a,b,c)
+-    VOID **a;
+-    VOID *b;
+-    long c;
+-{
+-    tiff.setByteArray(a,b,c);
+-}
+-
+-int
+-ImgTIFFSetField TCL_VARARGS_DEF(TIFF*, arg1)
+-{
+-    va_list ap;
+-    TIFF* tif;
+-    ttag_t tag;
+-    int result;
+-
+-    tif = (TIFF*) TCL_VARARGS_START(TIFF*, arg1, ap);
+-    tag =  va_arg(ap, ttag_t);
+-    result = tiff.VSetField(tif, tag, ap);
+-    va_end(ap);
+-    return result;
+-}
+-
+-tsize_t
+-ImgTIFFTileSize(tif)
+-    TIFF* tif;
+-{
+-    return tiff.TileSize(tif);
+-}
+-
+-void
+-ImgTIFFSwabArrayOfShort(p, l)
+-    uint16* p;
+-    unsigned long l;
+-{
+-    tiff.SwabArrayOfShort(p,l);
+-    return;
+-}
+ 
+ /*
+@@ -369,37 +139,15 @@
+ }
+ 
+-static int
+-load_tiff_library(interp)
+-    Tcl_Interp *interp;
++static void
++initialize(void)
+ {
+-    static int initialized = 0;
+-    if (errorMessage) {
+-	ckfree(errorMessage);
+-	errorMessage = NULL;
+-    }
+-    if (ImgLoadLib(interp, TIFF_LIB_NAME, &tiff.handle, symbols, 10)
+-	    != TCL_OK) {
+-	return TCL_ERROR;
+-    }
+-    if (tiff.SetErrorHandler != NULL) {
+-	tiff.SetErrorHandler(_TIFFerr);
+-    }
+-    if (tiff.SetWarningHandler != NULL) {
+-	tiff.SetWarningHandler(_TIFFwarn);
+-    }
++    static int initialized;
++
+     if (!initialized) {
++	TIFFSetErrorHandler(_TIFFerr);
+ 	initialized = 1;
+-	if (tiff.RegisterCODEC && tiff.Error && tiff.PredictorInit &&
+-		tiff.MergeFieldInfo && tiff.FlushData1 && tiff.NoPostDecode &&
+-		tiff.TileRowSize && tiff.ScanlineSize && tiff.setByteArray &&
+-		tiff.VSetField && tiff.SwabArrayOfShort) {
+-	    tiff.RegisterCODEC(COMPRESSION_DEFLATE, "Deflate", ImgInitTIFFzip);
+-	    tiff.RegisterCODEC(COMPRESSION_JPEG, "JPEG", ImgInitTIFFjpeg);
+-	    tiff.RegisterCODEC(COMPRESSION_PIXARLOG, "PixarLog", ImgInitTIFFpixar);
+-	}
+     }
+-    return TCL_OK;
+ }
+-
++
+ static void _TIFFerr(module, fmt, ap)
+      CONST char *module;
+@@ -423,12 +171,4 @@
+ }
+ 
+-/* warnings are not processed in Tcl */
+-static void _TIFFwarn(module, fmt, ap)
+-     CONST char *module;
+-     CONST char *fmt;
+-     va_list     ap;
+-{
+-}
+-
+ static int
+ mapDummy(fd, base, size)
+@@ -686,12 +426,9 @@
+     TIFF *tif;
+     char tempFileName[256];
+-    int count, result;
++    int result;
+     MFile handle;
+-    char buffer[1024];
+     char *dataPtr = NULL;
+ 
+-    if (load_tiff_library(interp) != TCL_OK) {
+-	return TCL_ERROR;
+-    }
++    initialize();
+ 
+     if (!ImgReadInit(data, '\115', &handle)) {
+@@ -699,36 +436,14 @@
+     }
+ 
+-    if (tiff.ClientOpen) {
+-	tempFileName[0] = 0;
+-	if (handle.state != IMG_STRING) {
+-	    dataPtr = ckalloc((handle.length*3)/4 + 2);
+-	    handle.length = ImgRead(&handle, dataPtr, handle.length);
+-	    handle.data = dataPtr;
+-	}
+-	handle.state = 0;
+-	tif = tiff.ClientOpen("inline data", "r", (thandle_t) &handle,
+-		readString, writeString, seekString, closeDummy,
+-		sizeString, mapDummy, unMapDummy);
+-    } else {
+-	Tcl_Channel outchan;
+-	tmpnam(tempFileName);
+-	outchan = ImgOpenFileChannel(interp, tempFileName, 0644);
+-	if (!outchan) {
+-	    return TCL_ERROR;
+-	}
+-
+-	count = ImgRead(&handle, buffer, 1024);
+-	while (count == 1024) {
+-	    Tcl_Write(outchan, buffer, count);
+-	    count = ImgRead(&handle, buffer, 1024);
+-	}
+-	if (count>0){
+-	    Tcl_Write(outchan, buffer, count);
+-	}
+-	if (Tcl_Close(interp, outchan) == TCL_ERROR) {
+-	    return TCL_ERROR;
+-	}
+-	tif = tiff.Open(tempFileName, "r");
+-    }
++    tempFileName[0] = 0;
++    if (handle.state != IMG_STRING) {
++	dataPtr = ckalloc((handle.length*3)/4 + 2);
++	handle.length = ImgRead(&handle, dataPtr, handle.length);
++	handle.data = dataPtr;
++    }
++    handle.state = 0;
++    tif = TIFFClientOpen("inline data", "r", (thandle_t) &handle,
++	    readString, writeString, seekString, closeDummy,
++	    sizeString, mapDummy, unMapDummy);
+ 
+     if (tif != NULL) {
+@@ -765,41 +480,16 @@
+     TIFF *tif;
+     char tempFileName[256];
+-    int count, result;
+-    char buffer[1024];
+-
+-    if (load_tiff_library(interp) != TCL_OK) {
+-	return TCL_ERROR;
+-    }
++    int result;
++    MFile handle;
+ 
+-    if (tiff.ClientOpen) {
+-	MFile handle;
+-	tempFileName[0] = 0;
+-	handle.data = (char *) chan;
+-	handle.state = IMG_CHAN;
+-	tif = tiff.ClientOpen(fileName, "r", (thandle_t) &handle,
+-		readMFile, writeDummy, seekMFile, closeDummy,
+-		sizeMFile, mapDummy, unMapDummy);
+-    } else {
+-	Tcl_Channel outchan;
+-	tmpnam(tempFileName);
+-	outchan = ImgOpenFileChannel(interp, tempFileName, 0644);
+-	if (!outchan) {
+-	    return TCL_ERROR;
+-	}
++    initialize();
+ 
+-	count = Tcl_Read(chan, buffer, 1024);
+-	while (count == 1024) {
+-	    Tcl_Write(outchan, buffer, count);
+-	    count = Tcl_Read(chan, buffer, 1024);
+-	}
+-	if (count>0){
+-	    Tcl_Write(outchan, buffer, count);
+-	}
+-	if (Tcl_Close(interp, outchan) == TCL_ERROR) {
+-	    return TCL_ERROR;
+-	}
++    tempFileName[0] = 0;
++    handle.data = (char *) chan;
++    handle.state = IMG_CHAN;
++    tif = TIFFClientOpen(fileName, "r", (thandle_t) &handle,
++	readMFile, writeDummy, seekMFile, closeDummy,
++	sizeMFile, mapDummy, unMapDummy);
+ 
+-	tif = tiff.Open(tempFileName, "r");
+-    }
+     if (tif) {
+ 	result = CommonReadTIFF(interp, tif, format, imageHandle,
+@@ -857,12 +547,8 @@
+     block.pixelSize = sizeof (uint32);
+ 
+-    tiff.GetField(tif, TIFFTAG_IMAGEWIDTH, &w);
+-    tiff.GetField(tif, TIFFTAG_IMAGELENGTH, &h);
++    TIFFGetField(tif, TIFFTAG_IMAGEWIDTH, &w);
++    TIFFGetField(tif, TIFFTAG_IMAGELENGTH, &h);
+     npixels = w * h;
+-    if (tiff.malloc == NULL) {
+-	raster = (uint32 *) ckalloc(npixels * sizeof (uint32));
+-    } else {
+-	raster = (uint32 *) tiff.malloc(npixels * sizeof (uint32));
+-    }
++    raster = _TIFFmalloc(npixels * sizeof (uint32));
+     block.width = w;
+     block.height = h;
+@@ -874,10 +560,6 @@
+     }
+ 
+-    if (!tiff.ReadRGBAImage(tif, w, h, raster, 0) || errorMessage) {
+-	if (tiff.free == NULL) {
+-	    ckfree((char *)raster);
+-	} else {
+-	    tiff.free((char *)raster);
+-	}
++    if (!TIFFReadRGBAImage(tif, w, h, raster, 0) || errorMessage) {
++	_TIFFfree(raster);
+ 	if (errorMessage) {
+ 	    Tcl_AppendResult(interp, errorMessage, (char *) NULL);
+@@ -894,10 +576,6 @@
+ 			destY, width, height);
+ 
+-    if (tiff.free == NULL) {
+-	ckfree((char *)raster);
+-    } else {
+-	tiff.free((char *)raster);
+-    }
+-    tiff.Close(tif);
++    _TIFFfree(raster);
++    TIFFClose(tif);
+     return TCL_OK;
+ }
+@@ -917,7 +595,5 @@
+     Tcl_DString data;
+ 
+-    if (load_tiff_library(interp) != TCL_OK) {
+-	return TCL_ERROR;
+-    }
++    initialize();
+ 
+     ImgFixStringWriteProc(&data, &interp, &dataPtr, &format, &blockPtr);
+@@ -927,18 +603,13 @@
+     }
+ 
+-    if (tiff.ClientOpen) {
+-	tempFileName[0] = 0;
+-	Tcl_DStringInit(&dstring);
+-	ImgWriteInit(&dstring, &handle);
+-	tif = tiff.ClientOpen("inline data", mode, (thandle_t) &handle,
+-		readString, writeString, seekString, closeDummy,
+-		sizeString, mapDummy, unMapDummy);
+-    } else {
+-	tmpnam(tempFileName);
+-	tif = tiff.Open(tempFileName,mode);
+-    }
++    tempFileName[0] = 0;
++    Tcl_DStringInit(&dstring);
++    ImgWriteInit(&dstring, &handle);
++    tif = TIFFClientOpen("inline data", mode, (thandle_t) &handle,
++	readString, writeString, seekString, closeDummy,
++	sizeString, mapDummy, unMapDummy);
+ 
+     result = CommonWriteTIFF(interp, tif, comp, blockPtr);
+-    tiff.Close(tif);
++    TIFFClose(tif);
+ 
+     if (result != TCL_OK) {
+@@ -999,8 +670,5 @@
+     }
+ 
+-    if (load_tiff_library(interp) != TCL_OK) {
+-	Tcl_DStringFree(&nameBuffer);
+-	return TCL_ERROR;
+-    }
++    initialize();
+ 
+     if (ParseWriteFormat(interp, format, &comp, &mode) != TCL_OK) {
+@@ -1009,5 +677,5 @@
+     }
+ 
+-    if (!(tif = tiff.Open(fullname, mode))) {
++    if (!(tif = TIFFOpen(fullname, mode))) {
+ 	Tcl_AppendResult(interp, filename, ": ", Tcl_PosixError(interp),
+ 		(char *)NULL);
+@@ -1019,5 +687,5 @@
+ 
+     result = CommonWriteTIFF(interp, tif, comp, blockPtr);
+-    tiff.Close(tif);
++    TIFFClose(tif);
+     return result;
+ }
+@@ -1029,5 +697,5 @@
+     char **mode;
+ {
+-    static char *tiffWriteOptions[] = {"-compression", "-byteorder"};
++    static const char *tiffWriteOptions[] = {"-compression", "-byteorder"};
+     int objc, length, c, i, index;
+     Tcl_Obj **objv;
+@@ -1112,27 +780,27 @@
+     unsigned char *data = NULL;
+ 
+-    tiff.SetField(tif, TIFFTAG_IMAGEWIDTH, blockPtr->width);
+-    tiff.SetField(tif, TIFFTAG_IMAGELENGTH, blockPtr->height);
+-    tiff.SetField(tif, TIFFTAG_COMPRESSION, comp);
+-
+-    tiff.SetField(tif, TIFFTAG_PLANARCONFIG, PLANARCONFIG_CONTIG);
+-    tiff.SetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
+-    tiff.SetField(tif, TIFFTAG_ORIENTATION, ORIENTATION_TOPLEFT);
+-    tiff.SetField(tif, TIFFTAG_ROWSPERSTRIP, blockPtr->height);
+-
+-    tiff.SetField(tif, TIFFTAG_RESOLUTIONUNIT, (int)2);
+-    tiff.SetField(tif, TIFFTAG_XRESOLUTION, (float)1200.0);
+-    tiff.SetField(tif, TIFFTAG_YRESOLUTION, (float)1200.0);
++    TIFFSetField(tif, TIFFTAG_IMAGEWIDTH, blockPtr->width);
++    TIFFSetField(tif, TIFFTAG_IMAGELENGTH, blockPtr->height);
++    TIFFSetField(tif, TIFFTAG_COMPRESSION, comp);
++
++    TIFFSetField(tif, TIFFTAG_PLANARCONFIG, PLANARCONFIG_CONTIG);
++    TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
++    TIFFSetField(tif, TIFFTAG_ORIENTATION, ORIENTATION_TOPLEFT);
++    TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP, blockPtr->height);
++
++    TIFFSetField(tif, TIFFTAG_RESOLUTIONUNIT, (int)2);
++    TIFFSetField(tif, TIFFTAG_XRESOLUTION, (float)1200.0);
++    TIFFSetField(tif, TIFFTAG_YRESOLUTION, (float)1200.0);
+ 
+-    tiff.SetField(tif, TIFFTAG_BITSPERSAMPLE,   8);
++    TIFFSetField(tif, TIFFTAG_BITSPERSAMPLE,   8);
+     if ((blockPtr->offset[0] == blockPtr->offset[1])
+ 	    && (blockPtr->offset[0] == blockPtr->offset[2])) {
+ 	numsamples = 1;
+-	tiff.SetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
+-	tiff.SetField(tif, TIFFTAG_PHOTOMETRIC,    PHOTOMETRIC_MINISBLACK);
++	TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
++	TIFFSetField(tif, TIFFTAG_PHOTOMETRIC,    PHOTOMETRIC_MINISBLACK);
+     } else {
+ 	numsamples = 3;
+-	tiff.SetField(tif, TIFFTAG_SAMPLESPERPIXEL, 3);
+-	tiff.SetField(tif, TIFFTAG_PHOTOMETRIC,     PHOTOMETRIC_RGB);
++	TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 3);
++	TIFFSetField(tif, TIFFTAG_PHOTOMETRIC,     PHOTOMETRIC_RGB);
+     }
+ 
+@@ -1186,5 +854,5 @@
+     }
+ 
+-    tiff.WriteEncodedStrip(tif, 0, data,
++    TIFFWriteEncodedStrip(tif, 0, data,
+ 	    numsamples * blockPtr->width * blockPtr->height);
+     if (data != blockPtr->pixelPtr) {
