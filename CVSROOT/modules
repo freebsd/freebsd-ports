@@ -10273,6 +10273,7 @@ roottail	ports/sysutils/roottail
 rosegarden	ports/audio/rosegarden
 rot		ports/textproc/rot
 rotate		ports/sysutils/rotate
+rote		ports/devel/rote
 rotix		ports/textproc/rotix
 rotorouter	ports/net-mgmt/rotorouter
 rottdc		ports/games/rottdc
