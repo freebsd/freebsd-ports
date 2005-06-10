@@ -11,20 +11,9 @@ gdm_enable=${gdm_enable-"NO"}
 
 name=gdm
 rcvar=`set_rcvar`
-start_cmd=gdm_start
-stop_cmd=gdm_stop
 command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}.pid"
-
-gdm_start() {
-    checkyesno gdm_enable && echo -n " Starting GDM" && \
-    	${command}
-}
-
-gdm_stop() {
-    checkyesno gdm_enable && echo -n " Stopping GDM" && \
-	/usr/bin/killall -m ${name} 2>/dev/null
-}
+procname="%%PREFIX%%/bin/gdm-binary"
 
 load_rc_config ${name}
 run_rc_command "$1"
