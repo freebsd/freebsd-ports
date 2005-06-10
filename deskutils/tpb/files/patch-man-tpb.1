@@ -1,5 +1,5 @@
 --- man/tpb.1.orig	Mon Aug 23 13:01:45 2004
-+++ man/tpb.1	Thu Jun  9 23:49:03 2005
++++ man/tpb.1	Fri Jun 10 15:06:52 2005
 @@ -7,7 +7,7 @@
  With TPB it is possible to bind a program to the ThinkPad, Mail, Home and Search button.
  TPB can also run a callback program on each state change with the changed state and the new state as options. 
@@ -28,7 +28,7 @@
  .TP 8
  .B POLLTIME
  Defines the delay between polls in microseconds. Default is 200000.
-@@ -266,9 +267,11 @@
+@@ -266,14 +267,16 @@
  .B OSDALIGN
  Defines the alignment of the osd. Possible values are left, center and right. Default is left.
  .SH "NOTES"
@@ -36,8 +36,14 @@
 +Requires NVRAM device /dev/nvram on Linux. This must be enabled in your kernel.
  Although the device file must exist. The device file could be created with
  \'mknod /dev/nvram c 10 144\'
-+
-+On FreeBSD you have to load the acpi_ibm(4) driver prior to using TPB.
  
++On FreeBSD you have to load the acpi_ibm(4) driver prior to using TPB.
++
  This program was developed on a Thinkpad Model T21. I don't know if it works on
  other models.
+ .SH EXAMPLE
+-tpb \-\-osd=off \-\-verbose \-\-thinkpad="xterm \-T ntpctl \-e ntpctl"
++tpb \-\-osd=off \-\-verbose \-\-thinkpad="%%X11BASE%%/bin/xterm"
+ .SH COPYRIGHT
+ Copyright 2002-2004, Markus Braun <markus.braun@krawel.de>
+ .PP

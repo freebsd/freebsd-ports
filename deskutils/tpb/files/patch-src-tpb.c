@@ -1,5 +1,5 @@
 --- src/tpb.c.orig	Sun Aug 22 15:45:11 2004
-+++ src/tpb.c	Fri Jun 10 00:11:56 2005
++++ src/tpb.c	Fri Jun 10 15:03:42 2005
 @@ -34,6 +34,10 @@
  #include <unistd.h>
  #include "config.h"
@@ -101,7 +101,7 @@
    /* only use writeback to nvram when cfg.mixersteps is different from DEFAULT_MIXERSTEPS */
    if(cfg.mixersteps != DEFAULT_MIXERSTEPS) {
 +#ifdef __FreeBSD__
-+    u_int n = 0;
++    u_int n = thinkpad_state->volume_level;
 +
 +    if (sysctlbyname("dec.acpi_ibm.0.volume", NULL, NULL, &n, sizeof(n)))
 +      fprintf(stderr, _("Unable to set volume sysctl"));

@@ -6,6 +6,7 @@
 
 PORTNAME=	tpb
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +39,8 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
+		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/src/cfg.h \
 		${WRKSRC}/man/tpb.1
 

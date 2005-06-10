@@ -1,5 +1,5 @@
-With TPB it is possible to bind a program to the ThinkPad, Mail, Home and
-Search button. TPB can also run a callback program on each state change with
+With TPB it is possible to bind programs to the ThinkPad, Mail, Home and
+Search buttons. TPB can also run a callback program on each state change with
 the changed state and the new state as options. So it is possible to trigger
 several actions on different events. 
 
