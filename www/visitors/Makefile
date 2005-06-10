@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	visitors
-PORTVERSION=	0.4a
+PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.hping.org/visitors/
 
@@ -21,10 +21,10 @@ PLIST_FILES=	bin/visitors
 PORTDOCS=	doc.html
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/visitors ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/visitors ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
