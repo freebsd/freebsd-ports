@@ -2019,6 +2019,7 @@ eukleides	ports/math/eukleides
 euler		ports/science/euler
 eval		ports/math/eval
 evangeline	ports/irc/evangeline
+evaq		ports/net/evaq
 evas		ports/graphics/evas
 eventwatcher	ports/sysutils/eventwatcher
 evg		ports/www/evg
