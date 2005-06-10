@@ -1,22 +1,87 @@
 bin/syndigator
+%%SITE_PERL%%/syndigator/RSSReader/Category.pm
+%%SITE_PERL%%/syndigator/RSSReader/Configuration.pm
+%%SITE_PERL%%/syndigator/RSSReader/Exporter/CSV.pm
+%%SITE_PERL%%/syndigator/RSSReader/Exporter/OPML.pm
+%%SITE_PERL%%/syndigator/RSSReader/Exporter.pm
+%%SITE_PERL%%/syndigator/RSSReader/Feed/Message.pm
+%%SITE_PERL%%/syndigator/RSSReader/Feed.pm
+%%SITE_PERL%%/syndigator/RSSReader/Fetcher/FindFeed.pm
+%%SITE_PERL%%/syndigator/RSSReader/Fetcher.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/AddACategory.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/AddAFeedToCategory.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Category/InfoPane.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Category/MessageList.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Category.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/DeleteACategory.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/DeleteAFeed.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Dialog.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/DiscoverFeed.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/DiscoverFeedSilent.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/ExporterDruid.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Feed/InfoPane.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Feed/MessageList.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Feed/Properties.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Feed.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Fetcher.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/GeneralProperties.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/IconFactory.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/ImporterDruid.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/MainWindow.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Message.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/MessageList.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Notifiers/PopUpWindow.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Notifiers/TrayIcon.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Notifiers.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Preferences.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/RenameCategoryWindow.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/SaveConfiguration.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Tree.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/UrlTester.pm
+%%SITE_PERL%%/syndigator/RSSReader/Gtk2UI.pm
+%%SITE_PERL%%/syndigator/RSSReader/Importer/BottomFeeder.pm
+%%SITE_PERL%%/syndigator/RSSReader/Importer/Evolution.pm
+%%SITE_PERL%%/syndigator/RSSReader/Importer/OPML.pm
+%%SITE_PERL%%/syndigator/RSSReader/Importer.pm
+%%SITE_PERL%%/syndigator/RSSReader/Logger.pm
+%%SITE_PERL%%/syndigator/RSSReader/Notifier.pm
+%%SITE_PERL%%/syndigator/RSSReader/Parser/RSS.pm
+%%SITE_PERL%%/syndigator/RSSReader/Parser.pm
+%%SITE_PERL%%/syndigator/RSSReader/UI/Preferences.pm
+%%SITE_PERL%%/syndigator/RSSReader.pm
 share/gnome/applications/syndigator.desktop
-share/gnome/images/closed.png
-share/gnome/images/comment-gs.png
-share/gnome/images/comment.png
-share/gnome/images/fetches_failed.png
-share/gnome/images/fetches_failed_16.png
-share/gnome/images/item-gtk2.png
-share/gnome/images/item-notify-gtk2.png
-share/gnome/images/item-notify.xpm
-share/gnome/images/item.xpm
-share/gnome/images/logo-124x22.xpm
-share/gnome/images/logo-simple.gif
-share/gnome/images/logo-simple.xpm
-share/gnome/images/not_to_keep.xpm
-share/gnome/images/offline.png
-share/gnome/images/online.png
-share/gnome/images/opened.png
-share/gnome/images/post-comment.png
-share/gnome/images/to_keep.png
-share/gnome/images/tokeep-gtk2.png
 share/gnome/pixmaps/syndigator.png
+share/gnome/pixmaps/syndigator/closed.png
+share/gnome/pixmaps/syndigator/comment-gs.png
+share/gnome/pixmaps/syndigator/comment.png
+share/gnome/pixmaps/syndigator/fetches_failed.png
+share/gnome/pixmaps/syndigator/fetches_failed_16.png
+share/gnome/pixmaps/syndigator/item-gtk2.png
+share/gnome/pixmaps/syndigator/item-notify-gtk2.png
+share/gnome/pixmaps/syndigator/item-notify.xpm
+share/gnome/pixmaps/syndigator/item.xpm
+share/gnome/pixmaps/syndigator/logo-124x22.xpm
+share/gnome/pixmaps/syndigator/logo-simple.gif
+share/gnome/pixmaps/syndigator/logo-simple.xpm
+share/gnome/pixmaps/syndigator/not_to_keep.xpm
+share/gnome/pixmaps/syndigator/offline.png
+share/gnome/pixmaps/syndigator/online.png
+share/gnome/pixmaps/syndigator/opened.png
+share/gnome/pixmaps/syndigator/post-comment.png
+share/gnome/pixmaps/syndigator/to_keep.png
+share/gnome/pixmaps/syndigator/tokeep-gtk2.png
+share/gnome/pixmaps/syndigator/trayicon-notify.gif
+share/gnome/pixmaps/syndigator/trayicon.gif
+@dirrm share/gnome/pixmaps/syndigator
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/UI
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Parser
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Importer
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Notifiers
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Feed
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Category
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Fetcher
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Feed
+@dirrm %%SITE_PERL%%/syndigator/RSSReader/Exporter
+@dirrm %%SITE_PERL%%/syndigator/RSSReader
+@dirrm %%SITE_PERL%%/syndigator

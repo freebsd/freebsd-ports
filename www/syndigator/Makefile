@@ -6,8 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	syndigator
-PORTVERSION=	0.14
-PORTREVISION=	2
+PORTVERSION=	0.15.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,27 +14,39 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS feed reader based on Gtk2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
-		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Gnome2.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2/Html2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-Html2 \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		${SITE_PERL}/${PERL_ARCH}/Gtk2/Html2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-Html2
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/.1-/-/}
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehier
 USE_PERL5=	yes
-MAKE_ENV=	SITE_PERL=${SITE_PERL} \
-		GNOMEDIR=${X11BASE}/share/gnome
+NO_BUILD=	yes
 
-post-install:
-	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
-	@${FIND} ${SITE_PERL}/syndigator ! -type d | \
-		${SED} 's,^${LOCALBASE}/,,' >> ${TMPPLIST}
-	@${FIND} ${SITE_PERL}/syndigator -type d | ${SORT} -r | \
-		${SED} 's,^${LOCALBASE}/,@dirrm ,' >> ${TMPPLIST}
+GNOMEDIR=	${PREFIX}/share/gnome
+
+post-patch:
+	@${PERL} -pi -e 's|./lib|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}|g' \
+		${WRKSRC}/syndigator
+	@${PERL} -pi -e 's|./images/|${GNOMEDIR}/pixmaps/${PORTNAME}/|g' \
+		${WRKSRC}/lib/RSSReader/Gtk2UI/IconFactory.pm
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/syndigator ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+	cd ${WRKSRC}/lib && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+	@${MKDIR} ${GNOMEDIR}/applications
+	${INSTALL_DATA} ${WRKSRC}/syndigator.desktop ${GNOMEDIR}/applications
+	@${MKDIR} ${GNOMEDIR}/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icons/*.* ${GNOMEDIR}/pixmaps
+	@${MKDIR} ${GNOMEDIR}/pixmaps/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/images/*.* ${GNOMEDIR}/pixmaps/${PORTNAME}
 
 .include <bsd.port.mk>
