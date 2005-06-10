@@ -16,6 +16,8 @@ COMMENT=	KDEGUI for octave
 
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	yes
 USE_INC_LIBTOOL_VER=13
 USE_QT_VER=	3
