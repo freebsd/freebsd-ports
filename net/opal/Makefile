@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openh323
-PORTVERSION=	1.12.0
-PORTREVISION=	5
+PORTVERSION=	1.12.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
@@ -18,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A H323 Video Conferencing library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build
-
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 .include <bsd.port.pre.mk>
@@ -28,7 +26,7 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 # If it is not present, extract it from the comms/ixj port
 .if !exists(/usr/include/sys/telephony.h)
 .if !exists(/usr/local/include/sys/telephony.h)
-PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
+PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
 .endif
 .endif
 .endif
@@ -40,7 +38,7 @@ USE_BISON=	yes
 
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	259
 GNU_CONFIGURE=	yes
 PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib && make -V WRKSRC
 CONFIGURE_ENV=	PWLIBDIR=${PWLIBDIR} OPENH323DIR=${WRKSRC}

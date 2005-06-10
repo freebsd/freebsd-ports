@@ -1,50 +1,19 @@
-Index: configure.in
-diff -c configure.in.orig configure.in
-*** configure.in.orig	Thu May 22 21:25:00 2003
---- configure.in	Sun Nov 23 22:51:33 2003
+*** configure.in.orig	Mon Jun  6 14:34:14 2005
+--- configure.in	Mon Jun  6 14:41:03 2005
 ***************
-*** 73,85 ****
+*** 109,115 ****
+  if test "${H323_AVCODEC:-unset}" != "unset" ; then
+    AC_SUBST(H323_AVCODEC, 1)
+    AC_DEFINE(H323_AVCODEC, 1, "ffmpeg based avodec found")
+!   AVCODECINCLUDEDIR=/usr/local/include/ffmpeg
+    AVCODECLIBDIR=/usr/local/lib
+    STDCCFLAGS="$STDCCFLAGS -I${AVCODECINCLUDEDIR}"
   
-  dnl ########################################################################
-  dnl get pwlib directory
-! if test "${PWLIBDIR:-unset}" == "unset" ; then
-    PWLIBDIR=`ptlib-config --prefix`
-  fi
-! if test "x$PWLIBDIR" == "x/usr" -o "x$PWLIBDIR" == "x/usr/"; then
-    PWLIBDIR="/usr/share/pwlib/"
-  fi
-! if test "xPWLIBDIR" == "x/usr/local" -o "x$PWLIBDIR" == "x/usr/"; then
-    PWLIBDIR="/usr/local/share/pwlib/"
-  fi
-  echo "PWLib prefix set to.... $PWLIBDIR"
---- 73,85 ----
+--- 109,115 ----
+  if test "${H323_AVCODEC:-unset}" != "unset" ; then
+    AC_SUBST(H323_AVCODEC, 1)
+    AC_DEFINE(H323_AVCODEC, 1, "ffmpeg based avodec found")
+!   AVCODECINCLUDEDIR=/usr/local/include
+    AVCODECLIBDIR=/usr/local/lib
+    STDCCFLAGS="$STDCCFLAGS -I${AVCODECINCLUDEDIR}"
   
-  dnl ########################################################################
-  dnl get pwlib directory
-! if test "${PWLIBDIR:-unset}" = "unset" ; then
-    PWLIBDIR=`ptlib-config --prefix`
-  fi
-! if test "x$PWLIBDIR" = "x/usr" -o "x$PWLIBDIR" = "x/usr/"; then
-    PWLIBDIR="/usr/share/pwlib/"
-  fi
-! if test "xPWLIBDIR" = "x/usr/local" -o "x$PWLIBDIR" = "x/usr/"; then
-    PWLIBDIR="/usr/local/share/pwlib/"
-  fi
-  echo "PWLib prefix set to.... $PWLIBDIR"
-***************
-*** 96,102 ****
-  else
-    AC_CHECK_FILE(/usr/local/include/ffmpeg/avcodec.h, H323_AVCODEC=1)
-    if test "${H323_AVCODEC:-unset}" != "unset" ; then
-!     AVCODECINCLUDEDIR=/usr/local/include/ffmpeg
-      AVCODECLIBDIR=/usr/local/lib
-    fi
-  fi
---- 96,102 ----
-  else
-    AC_CHECK_FILE(/usr/local/include/ffmpeg/avcodec.h, H323_AVCODEC=1)
-    if test "${H323_AVCODEC:-unset}" != "unset" ; then
-!     AVCODECINCLUDEDIR=/usr/local/include
-      AVCODECLIBDIR=/usr/local/lib
-    fi
-  fi
