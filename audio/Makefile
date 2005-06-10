@@ -509,6 +509,7 @@
     SUBDIR += xmms-cdread
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
+    SUBDIR += xmms-defx
     SUBDIR += xmms-faad
     SUBDIR += xmms-fc
     SUBDIR += xmms-flac
