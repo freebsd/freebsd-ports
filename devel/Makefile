@@ -1370,6 +1370,7 @@
     SUBDIR += robodoc
     SUBDIR += root
     SUBDIR += root-doc
+    SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rtplib
     SUBDIR += ruby-amstd
