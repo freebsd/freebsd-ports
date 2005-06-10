@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--enable-bsdlpr --with-printcap=/etc/printcap
 PLIST_SUB+=	LPR=""
 .endif
 
-if defined(WITHOUT_LPR) && !defined(WITH_CUPS)
+.if defined(WITHOUT_LPR) && !defined(WITH_CUPS)
 IGNORE=		You have to define WITH_CUPS or undefine WITHOUT_LPR in order to install this port.
 .endif
 
