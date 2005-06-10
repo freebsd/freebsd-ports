@@ -7570,6 +7570,7 @@ p5-Geo-IP	ports/net/p5-Geo-IP
 p5-Geo-IPfree	ports/net/p5-Geo-IPfree
 p5-Geo-METAR	ports/astro/p5-Geo-METAR
 p5-Geo-Weather	ports/misc/p5-Geo-Weather
+p5-Geography-Countries	ports/misc/p5-Geography-Countries
 p5-Getargs-Long	ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile	ports/devel/p5-Getopt-ArgvFile
 p5-Getopt-Declare	ports/devel/p5-Getopt-Declare
