@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=	--with-cachedir=${CACHEDIR} \
 			--with-cacheowner=${CACHEOWNER}
 .endif
 
-.if defined(WITH_HTTP_LOGIN)
+.if defined(WITH_HTTPS_LOGIN)
 CONFIGURE_ARGS+=	--enable-https=login
 .elif defined(WITH_HTTPS)
 CONFIGURE_ARGS+=	--enable-https
