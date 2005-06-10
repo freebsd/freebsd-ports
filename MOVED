@@ -1514,3 +1514,5 @@ net/archie.el||2005-06-03|master site disappeared
 deskutils/menueditor|deskutils/smeg|2005-06-05|project renamed
 databases/jdbc-oracle816|databases/jdbc-oracle8i|2005-06-05|Obsolete version
 ftp/wget-devel|ftp/wget|2005-06-10|stable version caught up with -devel
+emulators/linux_base-6||2005-06-10|security bugs
+www/netscape7||2005-06-10|security bugs
