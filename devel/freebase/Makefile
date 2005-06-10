@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	freebase
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/3148/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/3931/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	freeride-${PORTVERSION}
 DIST_SUBDIR=	ruby
