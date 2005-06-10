@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050610:
+  AFFECTS: users of ftp/wget built with SSL (default)
+  AUTHOR:  sf@FreeBSD.org
+
+  wget 1.10 now authenticates certificate of remote host before making a
+  SSL connection. To make it work, you should have working CA root
+  certificates list in /etc/ssl/cert.pem.
+
+  If you don't have it there are options:
+  a) install security/ca-roots port and you have done.
+  b) install ftp/curl port and symlink it to /etc/ssl/cert.pem.
+      ln -s /usr/local/share/curl/curl-ca-bundle.crt /etc/ssl/cert.pem
+  c) put your favorite one into certain place.
+
 20050601:
   AFFECTS: users of devel/perforce
   AUTHOR: lth@FreeBSD.org
