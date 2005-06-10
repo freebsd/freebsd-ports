@@ -35,6 +35,7 @@ MAN3=	\
 	format_lastresult.3 format_detach.3 sbuf.3 sbuf_init.3 sbuf_free.3 \
 	sbuf_detach.3 sbuf_clear.3 sbuf_zero.3 sbuf_extend.3 sbuf_add.3 \
 	sbuf_add2.3 sbuf_sprintf.3 sbuf_fetch.3 sbuf_fgets.3 sed.3 \
+	sbuf_trim.3 sbuf2ptr.3 sbuf_len.3 \
 	sed_compile.3 sed_exec.3 sed_free.3 initfdpos.3 initFILEpos.3 \
 	adjfdpos.3 adjFILEpos.3 eq.3 ecq.3 countchar.3 countchar2.3 \
 	countstr.3 replace.3 replace_detach.3 limittextwidth.3 strndup.3 \
