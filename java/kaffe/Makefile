@@ -17,7 +17,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		gmp.6:${PORTSDIR}/math/libgmp4
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		jikes:${PORTSDIR}/java/jikes
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		javavm:${PORTSDIR}/java/javavmwrapper
 
