@@ -7,6 +7,7 @@
 
 PORTNAME=	mnogosearch
 PORTVERSION=	3.2.32
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
@@ -80,7 +81,7 @@ LIB_DEPENDS+=		mysqlclient:${PORTSDIR}/databases/mysql41-client
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
-.ifdef WITHOUT_MNOGO_SQLITE
+.ifndef WITHOUT_MNOGO_SQLITE
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 .endif

@@ -1,5 +1,14 @@
---- doc/Makefile.in.orig	Mon Mar 28 15:59:54 2005
-+++ doc/Makefile.in	Mon May  9 12:58:42 2005
+--- doc/Makefile.in.orig	Mon Mar 28 23:59:54 2005
++++ doc/Makefile.in	Fri Jun 10 15:32:00 2005
+@@ -174,7 +174,7 @@
+ build_vendor = @build_vendor@
+ datadir = @datadir@
+ db_PROGS = @db_PROGS@
+-doc_FILES = ${@doc_FILES@}
++doc_FILES = ${HTML_ALL}
+ efOBJ = @efOBJ@
+ exec_prefix = @exec_prefix@
+ host = @host@
 @@ -687,11 +687,11 @@
  
  
