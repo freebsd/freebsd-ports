@@ -17,6 +17,12 @@ COMMENT=	A free OpenGL-billard game
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"does not compile on sparc64"
+.endif
+
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_GETOPT_LONG=yes
@@ -63,4 +69,4 @@ post-patch:
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${PREFIX}/man/man6/foobillard.6
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
