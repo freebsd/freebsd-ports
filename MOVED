@@ -1513,3 +1513,4 @@ misc/yaucg||2005-06-03|master site disappeared, script probably broken
 net/archie.el||2005-06-03|master site disappeared
 deskutils/menueditor|deskutils/smeg|2005-06-05|project renamed
 databases/jdbc-oracle816|databases/jdbc-oracle8i|2005-06-05|Obsolete version
+ftp/wget-devel|ftp/wget|2005-06-10|stable version caught up with -devel
