@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drivel
-PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTVERSION=	2.0.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +17,7 @@ COMMENT=	The Gnome livejournal client
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack gtksourceview
 USE_BZIP2=	yes
 USE_GMAKE=	yes
