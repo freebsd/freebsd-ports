@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	spamprobe
-PORTVERSION=	0.9h
+PORTVERSION=	1.0a
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
@@ -17,11 +17,17 @@ COMMENT=	Spam detector using Bayesian analysis of word counts
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-default-8bit
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
+MAN1=		spamprobe.1
 PLIST_FILES=	bin/spamprobe
-MAN1=	spamprobe.1
+
+CPPFLAGS=	-I${LOCALBASE}/include/db4
+LDFLAGS=	-L${LOCALBASE}/lib -ldb4
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
