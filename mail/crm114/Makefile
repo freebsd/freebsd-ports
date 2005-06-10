@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20040221
-PORTREVISION=	2
+PORTVERSION=	20041231
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://crm114.sourceforge.net/
 MASTER_SITE_SUBDIR=	crm114
 # Oliver Eikemeier recommended the following construction
 # to avoid the reduncany of the CRM114RELEASENAME and .src and
 # .css extention.
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
-DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME:R}.css.tar.gz
+DISTNAME=	${PORTNAME}-${PORTVERSION}.${CRM114RELEASENAME}.src
+DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	An Markov based SpamFilter
@@ -27,7 +26,7 @@ LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-CRM114RELEASENAME=BlameYokohama
+CRM114RELEASENAME=BlameSanAndreas
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -69,9 +68,6 @@ post-install:
 .endfor
 .for i in ${CRM_FILES}
 	${INSTALL_DATA} ${WRKSRC}/fbsdinstall/${i} ${EXAMPLESDIR}
-.endfor
-.for i in nonspam.css spam.css
-	${INSTALL_DATA} ${WRKSRC}/../${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.css/${i} ${EXAMPLESDIR}
 .endfor
 .endif
 
