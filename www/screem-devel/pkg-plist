@@ -1,10 +1,8 @@
 bin/screem
 lib/screem/plugins/colourWizard.so
-lib/screem/plugins/cssWizard.so
 lib/screem/plugins/css_wizard.so
 lib/screem/plugins/entityWizard.so
 lib/screem/plugins/formWizard.so
-lib/screem/plugins/imageWizard.so
 lib/screem/plugins/linkWizard.so
 lib/screem/plugins/object_wizard.so
 lib/screem/plugins/ssiWizard.so
@@ -61,32 +59,19 @@ share/gnome/help/screem/C/figures/tree.png
 share/gnome/help/screem/C/legal.xml
 share/gnome/help/screem/C/screem.xml
 share/gnome/mime-info/screem.keys
-share/mime/application/vnd.wap.wmlc.xml
-share/mime/application/vnd.wap.wmlscriptc.xml
-share/mime/application/x-screem-tag-tree.xml
-share/mime/application/x-screem.xml
-share/mime/application/xhtml+xml.xml
-share/mime/image/vnd.wap.wbmp.xml
-share/mime/packages/screem.xml
-share/mime/text/html.xml
-share/mime/text/vnd.wap.wml.xml
-share/mime/text/vnd.wap.wmlscript.xml
-share/mime/text/x-component.xml
-share/mime/text/x-javascript.xml
 share/gnome/omf/screem/screem-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
-share/gnome/pixmaps/screem.png
 share/gnome/pixmaps/screem/splash/splash.png
+share/gnome/pixmaps/screem.png
 share/gnome/screem/dtd/HTMLlat1.ent
 share/gnome/screem/dtd/HTMLspecial.ent
 share/gnome/screem/dtd/HTMLsymbols.ent
 share/gnome/screem/dtd/catalog
-share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fframeset.dtd
-share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Floose.dtd
-share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fstrict.dtd
-share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-frameset.dtd
-share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-strict.dtd
-share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-transitional.dtd
+share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fframeset.dtd
+share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Floose.dtd
+share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fstrict.dtd
+share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-frameset.dtd
+share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-strict.dtd
+share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-transitional.dtd
 share/gnome/screem/dtd/screem-tagtree-config.dtd
 share/gnome/screem/dtd/screem-tagtree.dtd
 share/gnome/screem/dtd/xhtml-lat1.ent
@@ -95,13 +80,14 @@ share/gnome/screem/dtd/xhtml-symbol.ent
 share/gnome/screem/features.xml
 share/gnome/screem/glade/css-wizard.glade
 share/gnome/screem/glade/entityWizard.glade
-share/gnome/screem/glade/imageWizard.glade
 share/gnome/screem/glade/linkwizard.glade
 share/gnome/screem/glade/object-wizard.glade
 share/gnome/screem/glade/screem.glade
 share/gnome/screem/glade/ssiwizard.glade
 share/gnome/screem/glade/tablewizard.glade
 share/gnome/screem/glade/uploadwizard.glade
+share/gnome/screem/helpers/Tidy/TidyHTML.desktop
+share/gnome/screem/helpers/Tidy/TidyXML.desktop
 share/gnome/screem/hints/screem_hints.txt
 share/gnome/screem/hints/screem_hints_fr.txt
 share/gnome/screem/hints/screem_hints_pt_BR.txt
@@ -164,7 +150,7 @@ share/gnome/screem/pixmaps/text.xpm
 share/gnome/screem/pixmaps/th.xpm
 share/gnome/screem/pixmaps/todo.png
 share/gnome/screem/pixmaps/tr.xpm
-share/gnome/screem/resources/Images/made.jpg
+share/gnome/screem/resources/Images/made.png
 share/gnome/screem/resources/Javascript/linktitle.js
 share/gnome/screem/resources/Javascript/preload.js
 share/gnome/screem/resources/Javascript/rollover.js
@@ -197,35 +183,55 @@ share/locale/no/LC_MESSAGES/screem.mo
 share/locale/pl/LC_MESSAGES/screem.mo
 share/locale/pt_BR/LC_MESSAGES/screem.mo
 share/locale/ru/LC_MESSAGES/screem.mo
+share/locale/rw/LC_MESSAGES/screem.mo
 share/locale/sk/LC_MESSAGES/screem.mo
 share/locale/sv/LC_MESSAGES/screem.mo
 share/locale/tr/LC_MESSAGES/screem.mo
 share/locale/uk/LC_MESSAGES/screem.mo
 share/locale/vi/LC_MESSAGES/screem.mo
 share/locale/zh_CN/LC_MESSAGES/screem.mo
-@dirrm lib/screem/plugins
-@dirrm lib/screem
+share/mime/application/vnd.wap.wmlc.xml
+share/mime/application/vnd.wap.wmlscriptc.xml
+share/mime/application/x-php-source.xml
+share/mime/application/x-screem-tag-tree.xml
+share/mime/application/x-screem.xml
+share/mime/application/xhtml+xml.xml
+share/mime/image/vnd.wap.wbmp.xml
+share/mime/packages/screem.xml
+share/mime/text/actionscript.xml
+share/mime/text/html.xml
+share/mime/text/javascript.xml
+share/mime/text/vnd.wap.wml.xml
+share/mime/text/vnd.wap.wmlscript.xml
+share/mime/text/x-actionscript.xml
+share/mime/text/x-component.xml
+share/mime/text/x-javascript.xml
+share/mime/text/x-php-source.xml
+share/mime/text/x-php.xml
+@dirrm share/gnome/screem/ui
+@dirrm share/gnome/screem/tagtrees
+@dirrm share/gnome/screem/resources/Templates
+@dirrm share/gnome/screem/resources/PHP3
+@dirrm share/gnome/screem/resources/Javascript
+@dirrm share/gnome/screem/resources/Images
+@dirrm share/gnome/screem/resources/HTML
+@dirrm share/gnome/screem/resources/Applets
+@dirrm share/gnome/screem/resources
+@dirrm share/gnome/screem/pixmaps
+@dirrm share/gnome/screem/hints
+@dirrm share/gnome/screem/helpers/Tidy
+@dirrm share/gnome/screem/helpers
+@dirrm share/gnome/screem/glade
+@dirrm share/gnome/screem/dtd
+@dirrm share/gnome/screem
+@dirrm share/gnome/pixmaps/screem/splash
+@dirrm share/gnome/pixmaps/screem
+@dirrm share/gnome/omf/screem
 @dirrm share/gnome/help/screem/C/figures
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
-@dirrm share/gnome/omf/screem
-@dirrm share/gnome/pixmaps/screem/splash
-@dirrm share/gnome/pixmaps/screem
-@dirrm share/gnome/screem/dtd
-@dirrm share/gnome/screem/glade
-@dirrm share/gnome/screem/hints
-@dirrm share/gnome/screem/pixmaps
-@dirrm share/gnome/screem/resources/Applets
-@dirrm share/gnome/screem/resources/HTML
-@dirrm share/gnome/screem/resources/Images
-@dirrm share/gnome/screem/resources/Javascript
-@dirrm share/gnome/screem/resources/PHP3
-@dirrm share/gnome/screem/resources/Templates
-@dirrm share/gnome/screem/resources
-@dirrm share/gnome/screem/tagtrees
-@dirrm share/gnome/screem/ui
-@dirrm share/gnome/screem
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
+@dirrm lib/screem/plugins
+@dirrm lib/screem
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
