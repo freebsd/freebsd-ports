@@ -4,4 +4,4 @@ Fast, intelligent, automatic spam detector using Bayesian analysis of word
 counts in spam and non-spam email. Intended for use with procmail to
 filter inbound email. No manual rule creation required.
 
-WWW: http://sourceforge.net/projects/spamprobe/
+WWW: http://spamprobe.sourceforge.net/
