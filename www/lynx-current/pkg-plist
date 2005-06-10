@@ -3,72 +3,72 @@ bin/lynx
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
 @exec mkdir -p %D/share/lynx_help
-share/doc/lynx/CHANGES
-share/doc/lynx/COPYHEADER
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYHEADER
 @exec ln -sf %D/%F %D/share/lynx_help/%f
 @unexec rm -f %D/share/lynx_help/%f
-share/doc/lynx/COPYING
+%%DOCSDIR%%/COPYING
 @exec ln -sf %D/%F %D/share/lynx_help/%f
 @unexec rm -f %D/share/lynx_help/%f
-share/doc/lynx/PROBLEMS
-share/doc/lynx/README
-share/doc/lynx/docs/CHANGES2.3
-share/doc/lynx/docs/CHANGES2.4
-share/doc/lynx/docs/CHANGES2.5
-share/doc/lynx/docs/CHANGES2.6
-share/doc/lynx/docs/CHANGES2.7
-share/doc/lynx/docs/CHANGES2.8
-share/doc/lynx/docs/CMU.announce
-share/doc/lynx/docs/CRAWL.announce
-share/doc/lynx/docs/FM.announce
-share/doc/lynx/docs/IBMPC-charsets.announce
-share/doc/lynx/docs/OS-390.announce
-share/doc/lynx/docs/README.TRST
-share/doc/lynx/docs/README.chartrans
-share/doc/lynx/docs/README.defines
-share/doc/lynx/docs/README.jp
-share/doc/lynx/docs/README.rootcerts
-share/doc/lynx/docs/README.ssl
-share/doc/lynx/docs/README.sslcerts
-share/doc/lynx/docs/SOCKETSHR.announce
-share/doc/lynx/docs/TCPWARE.announce
-share/doc/lynx/docs/VMSWAIS.announce
-share/doc/lynx/docs/djgpp.key
-share/doc/lynx/docs/pdcurses.key
-share/doc/lynx/docs/slang.key
-share/doc/lynx/docs/win-386.announce
-share/doc/lynx/samples/blue-background.lss
-share/doc/lynx/samples/bright-blue.lss
-share/doc/lynx/samples/cernrules.txt
-share/doc/lynx/samples/installdirs.html
-share/doc/lynx/samples/jumpsUnix.html
-share/doc/lynx/samples/jumpsVMS.html
-share/doc/lynx/samples/keepviewer
-share/doc/lynx/samples/lynx-keymaps
-share/doc/lynx/samples/lynx.com
-share/doc/lynx/samples/lynx.lss
-share/doc/lynx/samples/lynxdump
-share/doc/lynx/samples/mailcap
-share/doc/lynx/samples/mailto-form.pl
-share/doc/lynx/samples/mild-colors.lss
-share/doc/lynx/samples/mime.types
-share/doc/lynx/test/ALT88592.html
-share/doc/lynx/test/ISO_LATIN1_test.html
-share/doc/lynx/test/README.txt
-share/doc/lynx/test/TestComment.html
-share/doc/lynx/test/c1.html
-share/doc/lynx/test/iso8859-1.html
-share/doc/lynx/test/iso88592.html
-share/doc/lynx/test/koi8-r.html
-share/doc/lynx/test/quickbrown.html
-share/doc/lynx/test/raw8bit.html
-share/doc/lynx/test/sgml.html
-share/doc/lynx/test/spaces.html
-share/doc/lynx/test/special_urls.html
-share/doc/lynx/test/tabtest.html
-share/doc/lynx/test/tags.html
-share/doc/lynx/test/unicode.html
-share/doc/lynx/test/utf-8-demo.html
+%%DOCSDIR%%/PROBLEMS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/docs/CHANGES2.3
+%%DOCSDIR%%/docs/CHANGES2.4
+%%DOCSDIR%%/docs/CHANGES2.5
+%%DOCSDIR%%/docs/CHANGES2.6
+%%DOCSDIR%%/docs/CHANGES2.7
+%%DOCSDIR%%/docs/CHANGES2.8
+%%DOCSDIR%%/docs/CMU.announce
+%%DOCSDIR%%/docs/CRAWL.announce
+%%DOCSDIR%%/docs/FM.announce
+%%DOCSDIR%%/docs/IBMPC-charsets.announce
+%%DOCSDIR%%/docs/OS-390.announce
+%%DOCSDIR%%/docs/README.TRST
+%%DOCSDIR%%/docs/README.chartrans
+%%DOCSDIR%%/docs/README.defines
+%%DOCSDIR%%/docs/README.jp
+%%DOCSDIR%%/docs/README.rootcerts
+%%DOCSDIR%%/docs/README.ssl
+%%DOCSDIR%%/docs/README.sslcerts
+%%DOCSDIR%%/docs/SOCKETSHR.announce
+%%DOCSDIR%%/docs/TCPWARE.announce
+%%DOCSDIR%%/docs/VMSWAIS.announce
+%%DOCSDIR%%/docs/djgpp.key
+%%DOCSDIR%%/docs/pdcurses.key
+%%DOCSDIR%%/docs/slang.key
+%%DOCSDIR%%/docs/win-386.announce
+%%DOCSDIR%%/samples/blue-background.lss
+%%DOCSDIR%%/samples/bright-blue.lss
+%%DOCSDIR%%/samples/cernrules.txt
+%%DOCSDIR%%/samples/installdirs.html
+%%DOCSDIR%%/samples/jumpsUnix.html
+%%DOCSDIR%%/samples/jumpsVMS.html
+%%DOCSDIR%%/samples/keepviewer
+%%DOCSDIR%%/samples/lynx-keymaps
+%%DOCSDIR%%/samples/lynx.com
+%%DOCSDIR%%/samples/lynx.lss
+%%DOCSDIR%%/samples/lynxdump
+%%DOCSDIR%%/samples/mailcap
+%%DOCSDIR%%/samples/mailto-form.pl
+%%DOCSDIR%%/samples/mild-colors.lss
+%%DOCSDIR%%/samples/mime.types
+%%DOCSDIR%%/test/ALT88592.html
+%%DOCSDIR%%/test/ISO_LATIN1_test.html
+%%DOCSDIR%%/test/README.txt
+%%DOCSDIR%%/test/TestComment.html
+%%DOCSDIR%%/test/c1.html
+%%DOCSDIR%%/test/iso8859-1.html
+%%DOCSDIR%%/test/iso88592.html
+%%DOCSDIR%%/test/koi8-r.html
+%%DOCSDIR%%/test/quickbrown.html
+%%DOCSDIR%%/test/raw8bit.html
+%%DOCSDIR%%/test/sgml.html
+%%DOCSDIR%%/test/spaces.html
+%%DOCSDIR%%/test/special_urls.html
+%%DOCSDIR%%/test/tabtest.html
+%%DOCSDIR%%/test/tags.html
+%%DOCSDIR%%/test/unicode.html
+%%DOCSDIR%%/test/utf-8-demo.html
 %%NLS%%share/locale/ca/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/da/LC_MESSAGES/lynx.mo
@@ -113,10 +113,11 @@ share/lynx_help/keystrokes/xterm_help.html
 share/lynx_help/lynx-dev.html
 share/lynx_help/lynx_help_main.html
 share/lynx_help/lynx_url_support.html
-@dirrm share/doc/lynx/samples
-@dirrm share/doc/lynx/test
-@dirrm share/doc/lynx/docs
-@dirrm share/doc/lynx
+@dirrm %%DOCSDIR%%/samples
+@dirrm %%DOCSDIR%%/test
+@dirrm %%DOCSDIR%%/docs
+@dirrm %%DOCSDIR%%
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
-%%NLS%%@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/rw/LC_MESSAGES > /dev/null 2>&1 || true
+%%NLS%%@unexec rmdir %D/share/locale/rw > /dev/null 2>&1 || true
