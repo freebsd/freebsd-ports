@@ -1,0 +1,11 @@
+--- XFaces.ad.orig	Sat Mar 12 16:38:54 1994
++++ XFaces.ad	Fri Jun 10 08:59:11 2005
+@@ -72,7 +72,7 @@
+ !
+ 
+ XFaces.soundPath:	/usr/sounds:/usr/demo/SOUND/sounds
+-XFaces.imagePath:	/usr/images
++XFaces.imagePath:	/usr/X11R6/share/xfaces/images
+ 
+ !
+ !  This is where we look for sounds/images in the "faces" format.
