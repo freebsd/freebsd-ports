@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTVERSION=	0.6.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ed2k-gtk-gui
@@ -20,30 +19,42 @@ COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
 
-USE_GNOME=	gtk20
-USE_GETTEXT=	yes
-USE_ICONV=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehier gnometarget gtk20
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-		--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+MAN1=		ed2k-gtk-gui.1 ed2k_gui.1
 
 DOCSDIR=	${PREFIX}/share/doc/ed2k_gui
-.ifndef(NOPORTDOCS)
-MAN1=		ed2k-gtk-gui.1 ed2k_gui.1
-.endif
+DATADIR=	${PREFIX}/share/ed2k_gui
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-.ifdef(NOPORTDOCS)
-	@${REINPLACE_CMD} -E -e 's|^(SUBDIRS.*)docs|\1|' \
-		${WRKSRC}/Makefile.in
-.endif
-# fix build with GTK 2.4
-	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/ed2k_gui/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(datadir)/app|$$(prefix)/share/gnome/app|g' \
+		 ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^SUBDIRS =.*$$|SUBDIRS =|g' \
+		 ${WRKSRC}/docs/Makefile.in
+	@${REINPLACE_CMD} -e 's|-Wall -g||g ; \
+		 s| == "xyes| = "xyes|g' ${WRKSRC}/configure
 
 post-install:
-	@${LN} -s ed2k_gui ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+	@${LN} -sf ed2k_gui ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/en/index* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/deutsch
+	${INSTALL_DATA} ${WRKSRC}/docs/de/index* ${DOCSDIR}/deutsch
+	@${MKDIR} ${DOCSDIR}/espanol
+	${INSTALL_DATA} ${WRKSRC}/docs/es/index* ${DOCSDIR}/espanol
+	@${MKDIR} ${DOCSDIR}/francais
+	${INSTALL_DATA} ${WRKSRC}/docs/fr/index* ${DOCSDIR}/francais
+	@${MKDIR} ${DOCSDIR}/pl
+	${INSTALL_DATA} ${WRKSRC}/docs/pl/index* ${DOCSDIR}/pl
+.endif
 
 .include <bsd.port.mk>
