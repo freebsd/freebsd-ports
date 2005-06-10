@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1709_RC9a
+DISTVERSION=	1709_RC10
 CATEGORIES=	net java
-MASTER_SITES=	http://download.mercury.to/	\
+MASTER_SITES=	http://rebel.chillhoek.nl/	\
+		http://www.mcroney.com/nss-folder/uploadfileshere/	\
+		http://download.mercury.to/	\
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
 DISTNAME=	${DISTVERSION}
