@@ -196,7 +196,6 @@ libdata/pkgconfig/omniCOSDynamic4.pc
 libdata/pkgconfig/omniDynamic4.pc
 libdata/pkgconfig/omniORB4.pc
 libdata/pkgconfig/omnithread3.pc
-@unexec rmdir %B 2>/dev/null || true
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1.0
