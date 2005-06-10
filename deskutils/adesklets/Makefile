@@ -31,6 +31,8 @@ SUB_FILES=	pkg-message
 
 .if ${OSVERSION} < 500000
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 .endif
 
 .if !defined(NOPORTDOCS)
