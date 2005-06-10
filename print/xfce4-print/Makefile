@@ -55,6 +55,10 @@ CONFIGURE_ARGS+=--enable-bsdlpr --with-printcap=/etc/printcap
 PLIST_SUB+=	LPR=""
 .endif
 
+if defined(WITHOUT_LPR) && !defined(WITH_CUPS)
+IGNORE=		You have to define WITH_CUPS or undefine WITHOUT_LPR in order to install this port.
+.endif
+
 .if defined(WITH_LETTER)
 CONFIGURE_ARGS+=--enable-letter
 BUILD_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
