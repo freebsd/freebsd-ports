@@ -1,0 +1,5 @@
+This module maps country names, and their 2-letter, 3-letter and numerical
+codes, as defined by the ISO-3166 maintenance agency, and defined by the
+UNSD.
+
+WWW: http://search.cpan.org/dist/Geography-Countries/ 

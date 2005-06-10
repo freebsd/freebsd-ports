@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Geography/Countries.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography/Countries/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography/Countries 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Geography 2>/dev/null || true
