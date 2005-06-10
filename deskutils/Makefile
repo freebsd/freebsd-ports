@@ -74,6 +74,7 @@
     SUBDIR += karamba
     SUBDIR += kbirthday
     SUBDIR += kblticker
+    SUBDIR += kchm
     SUBDIR += kdepim3
     SUBDIR += kdissert
     SUBDIR += kickpim

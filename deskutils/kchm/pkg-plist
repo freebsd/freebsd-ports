@@ -1,0 +1,21 @@
+bin/kchm
+lib/libchmmix.la
+lib/kde3/libchmnewpart.la
+lib/kde3/kio_chmnew.la
+include/chmxx.h
+include/chm_lib.h
+include/lzx.h
+share/mimelnk/application/chmmime.desktop
+share/services/chmnew.protocol
+share/icons/hicolor/48x48/apps/chm.png
+share/icons/locolor/16x16/apps/chm.png
+share/icons/hicolor/16x16/apps/chm.png
+share/icons/locolor/32x32/apps/chm.png
+share/icons/hicolor/32x32/apps/chm.png
+share/apps/kchm/chmnew_shell.rc
+share/services/chmnew_part.desktop
+share/apps/chmnewpart/chmnew_part.rc
+share/apps/chmnew/chmnew_shell.rc
+share/servicetypes/kchm.desktop
+@dirrm share/apps/chmnewpart
+@dirrm share/apps/chmnew
