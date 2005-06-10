@@ -1,8 +1,0 @@
-This is a Linux version of the Netscape suite (Web browser, HTML editor, mail
-user agent and news reader). Using the Linux version on FreeBSD is necessary if
-you want to use Linux versions of plugins.  Many plugins are distributed only
-as Linux binaries.  The Macromedia Flash plugin is available, as are the
-Canadian and United States region packs, spell-checker, and talkback.  AOL
-Instant Messenger is omitted (see ports/net/aim).
-
-WWW:  http://channels.netscape.com/ns/browsers/default.jsp/

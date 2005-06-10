@@ -428,9 +428,6 @@ mysqlman.tar.gz		databases/mysqlman	Not redistributable, license
 ncftpd-*		ftp/ncftpd		30 day evaluation license
 netbeans-*		java/netbeans		Restrictive copyright
 netscape-*-us-*		www/netscape*		Crypto; export-controlled
-netscape7/*		www/netscape7		No redistribution
-			{french|german|japanese|portuguese}/netscape7
-						Redistribution is not allowed
 netshow_linux.gz	multimedia/netshow	Commercial software
 nfbtr758.zip		textproc/nfbtrans	Unclear copyright status
 nntpcache-*		news/nntpcache		Commercial or government use

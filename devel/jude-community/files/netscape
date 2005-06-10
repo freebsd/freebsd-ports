@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # add your favorite browser in the top of the list
-for browser in mozilla linux-mozilla firefox linux-mozillafirebird opera linux-opera netscape7-english 
+for browser in mozilla linux-mozilla firefox linux-mozillafirebird opera linux-opera
 do
     type $browser > /dev/null 2>&1 && exec $browser "$@"
 done

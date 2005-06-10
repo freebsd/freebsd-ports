@@ -363,7 +363,6 @@
     SUBDIR += netrik
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
-    SUBDIR += netscape7
     SUBDIR += nginx
     SUBDIR += notftp
     SUBDIR += npc
