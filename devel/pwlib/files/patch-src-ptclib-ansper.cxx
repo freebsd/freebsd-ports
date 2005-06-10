@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- src/ptclib/asner.cxx	2004/06/03 14:44:43	1.1
-+++ src/ptclib/asner.cxx	2004/06/03 14:50:35
-@@ -4926,6 +4926,11 @@
+--- src/ptclib/asnper.cxx	Fri Aug  1 02:11:38 2003
++++ src/ptclib/asnper.cxx	Fri Jun  3 14:32:55 2005
+@@ -1224,6 +1224,11 @@
      return -1;
  
    value += lower;
@@ -15,7 +12,7 @@ $FreeBSD$
    return 0;
  }
  
-@@ -4970,7 +4975,13 @@
+@@ -1268,7 +1273,14 @@
      unsigned base;
      if (!MultiBitDecode(CountBits(upper - lower + 1), base))
        return -1;
@@ -27,10 +24,11 @@ $FreeBSD$
 +      len = upper;
 +
 +    return len;
++
    }
  
    if (upper < 65536)  // 10.9.3.3
-@@ -4981,13 +4992,20 @@
+@@ -1279,13 +1291,20 @@
    if (IsAtEnd())
      return -1;
  
