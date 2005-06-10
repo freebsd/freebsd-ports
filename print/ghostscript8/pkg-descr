@@ -7,10 +7,10 @@ Public License, which allows free use, and free copying and redistribution
 under certain conditions (including, in some cases, commercial distribution).
 
 This port includes add-on packages (not part of the official gs release)
-	o PCL driver for HP DeskJet printers
-	  - http://home.vrweb.de/~martin.lottermoser/pcl3.html
-	o HP2200 driver for HP DeskJet 8xx and Business Inkjet 2200
-	  - http://hp.sourceforge.net/gs-hp2200.php
+	o HP8XX driver for HP DeskJet 880C/882C/895C         
+	  - http://www.gelhaus.net/hp880c/                                      
+	o PCL3 driver for HP DeskJet series
+	  - http://home.vrweb.de/martin.lottermoser/pcl3.html
 	o DJ970 driver for HP DeskJet 970CXi
 	  - http://www.harsch.net/Ghostscript/ghostscript.html
 	o Special drivers for verious printer models
@@ -18,4 +18,5 @@ This port includes add-on packages (not part of the official gs release)
 	o Additional contributed uniprint driver profiles for
 	  - Epson Stylus Color 740 and Epson LQ-1170
 
-WWW: http://www.cs.wisc.edu/~ghost/doc/gnu/index.htm
+WWW: http://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
+     http://www.ghostscript.com/

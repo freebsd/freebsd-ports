@@ -35,6 +35,30 @@ bin/unix-lpr.sh
 bin/wftopfa
 %%SHLIB%%lib/libgs.so
 %%SHLIB%%lib/libgs.so.%%SHLIB_VER%%
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/alps/README.gdevalps
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/bj10v/gdev10v.jis
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/dmprt/gdevdmpr.sj
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/ert.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/gdevepag.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/gsepagif.sh
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/psprint
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/eplaser/readme-eplaser-705.euc
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/gdi/README
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lips/Gdevlips.htm
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/README
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/Z12-Z31-QuickSetup
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/md2k/README.jis
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/MJ700V2C.FAQ
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.mjc
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.mje
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.noz
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/cpem.doc
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/gs-pcl3.html
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/how-to-report.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/pcl3opts.html
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-H
@@ -220,8 +244,6 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/doc/Use.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Xfonts.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/gs.css
-%%DATADIR%%/%%GS_VERSION%%/doc/gs-pcl3.html
-%%DATADIR%%/%%GS_VERSION%%/doc/pcl3opts.html
 %%DATADIR%%/%%GS_VERSION%%/doc/index.html
 %%DATADIR%%/%%GS_VERSION%%/examples/alphabet.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/chess.ps
@@ -276,10 +298,13 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/cid2code.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/cidfmap
 %%DATADIR%%/%%GS_VERSION%%/lib/decrypt.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/dmp_init.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/dmp_site.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/dnj750c.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/dnj750m.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/docie.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/errpage.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/escp_24.src
 %%DATADIR%%/%%GS_VERSION%%/lib/font2c.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/font2pcl.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/ghostpdf.ppd
@@ -479,9 +504,9 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/pcl3/margins-EnvDLRotated.ps
 %%DATADIR%%/%%GS_VERSION%%/pcl3/margins-Letter.ps
 %%DATADIR%%/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
-@dirrm %%DATADIR%%/%%GS_VERSION%%/pcl3
 @exec ln -s -f %D/share/fonts/CIDFont %%CIDFONTDIR%%/CIDFont
 @unexec rm -f %%CIDFONTDIR%%/CIDFont
+@dirrm %%DATADIR%%/%%GS_VERSION%%/pcl3
 @dirrm %%DATADIR%%/%%GS_VERSION%%/lib
 @dirrm %%DATADIR%%/%%GS_VERSION%%/examples
 @dirrm %%DATADIR%%/%%GS_VERSION%%/doc
@@ -491,27 +516,6 @@ bin/wftopfa
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource
 @unexec rmdir %D/%%DATADIR%%/%%GS_VERSION%% 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/alps/README.gdevalps
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/bj10v/gdev10v.jis
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/ert.txt
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/gdevepag.txt
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/gsepagif.sh
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/psprint
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/eplaser/readme-eplaser-705.euc
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/gdi/README
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lips/Gdevlips.htm
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/README
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/Z12-Z31-QuickSetup
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/md2k/README.jis
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/MJ700V2C.FAQ
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.mjc
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.mje
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.noz
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/cpem.doc
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/how-to-report.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/pcl3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/md2k
@@ -520,6 +524,7 @@ bin/wftopfa
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/gdi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/eplaser
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/epag
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/dmprt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/bj10v
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/alps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%
