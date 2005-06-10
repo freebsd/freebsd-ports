@@ -14,9 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libjit implements Just-In-Time compilation functionality
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
-USE_CONFIGURE=	yes
 
 INSTALLS_SHLIB=	yes
 
@@ -30,11 +29,15 @@ BROKEN=		"Segfault during build"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
 .if ${OSVERSION} >=	502128
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
 		${WRKSRC}/config.h.in
+.endif
+
+post-configure: 	 
+.if ${OSVERSION} >=     502123 && ${ARCH} != "amd64" 	 
+	@${REINPLACE_CMD} -e 's|$$pic_flag -DPIC||' \
+		${WRKSRC}/libtool 	 
 .endif
 
 .include <bsd.port.post.mk>
