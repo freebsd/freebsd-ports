@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netams
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netams.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
