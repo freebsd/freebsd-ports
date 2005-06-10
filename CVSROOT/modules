@@ -12650,6 +12650,7 @@ xmms-cdparanoia	ports/audio/xmms-cdparanoia
 xmms-cdread	ports/audio/xmms-cdread
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
+xmms-defx	ports/audio/xmms-defx
 xmms-faad	ports/audio/xmms-faad
 xmms-fc		ports/audio/xmms-fc
 xmms-finespectrum	ports/graphics/xmms-finespectrum
