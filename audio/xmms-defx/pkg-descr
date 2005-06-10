@@ -1,0 +1,12 @@
+DeFX is a multi-effects processor plug-in. DeFX supports 6 types of effects,
+grouped into 4 different modules.
+
+  - Karaoke: removes the song's voices, trying to preserve the bass and drums.
+  - Panning: smoothly selects between the two stereo channels.
+  - Modulation: three classical effects: flange, phaser and chorus.
+  - Reverberation: simulates the reverberation of a huge room.
+
+WWW: http://defx.sourceforge.net/
+
+- Alejandro Pulver
+alejandro@varnet.biz
