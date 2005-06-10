@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sock
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rxsock
@@ -21,13 +20,21 @@ COMMENT=	A function package for Rexx programmers to create sockets
 BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-rexx=regina
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-rexx=regina
+MAKE_ARGS=	INSTALL="${INSTALL}"
 INSTALLS_SHLIB=	yes
+
 DATADIR=	${PREFIX}/share/rx${PORTNAME}
 
-post-extract:
-	@${CHMOD} +x ${WRKSRC}/install-sh
+post-patch:
+	@${REINPLACE_CMD} -e 's|ld -Bdynamic -Bshareable|$${CC} -shared|g' \
+		${WRKSRC}/configure
+.for file in Makefile.in rxsock-config.in
+	@${REINPLACE_CMD} -e 's|-lc||g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
