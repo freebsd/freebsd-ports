@@ -1,0 +1,20 @@
+FX Toolbox plugin for XMMS.
+
+People who enjoyed EaglePlayer II on Amiga, may remember the 8-bit Amplifier,
+which featured a nice Surround effect. This plugin is an attempt to recreate
+the same effect, plus some other goodies.
+
+About the surround effect: it works like a cross echo. Some amount of the left
+channel is delayed of some milliseconds, then added to the right channel, and
+vice-versa.
+
+* Provide a feeling of bigger room (that's what they said :).
+* Reduce ear pressure when using headphones, especially with mods (try it to
+  understand).
+* Despite being nearly a stereo -> mono effect, you can still locate the sound
+  in space, thanks to the delay.
+
+WWW: http://xmms-fxt.sourceforge.net/
+
+- Alejandro Pulver
+alejandro@varnet.biz
