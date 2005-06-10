@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmqtool
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	mail
 MASTER_SITES=	http://jeremy.kister.net/code/qmqtool/ \
 		http://mirror.spingen.com/qmqtool/
