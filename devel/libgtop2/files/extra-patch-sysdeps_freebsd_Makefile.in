@@ -1,0 +1,11 @@
+--- sysdeps/freebsd/Makefile.in.orig	Thu May 12 15:12:13 2005
++++ sysdeps/freebsd/Makefile.in	Thu May 12 15:22:01 2005
+@@ -175,7 +175,7 @@
+ X_PRE_LIBS = @X_PRE_LIBS@
+ libgtop_sysdeps_2_0_la_LIBADD = 
+ libgtop_sysdeps_2_0_la_OBJECTS =  nosuid.lo siglist.lo
+-libgtop_sysdeps_suid_2_0_la_LIBADD = 
++libgtop_sysdeps_suid_2_0_la_LIBADD = -lgeom -ldevstat
+ libgtop_sysdeps_suid_2_0_la_OBJECTS =  open.lo close.lo cpu.lo mem.lo \
+ swap.lo uptime.lo loadavg.lo shm_limits.lo msg_limits.lo sem_limits.lo \
+ proclist.lo procstate.lo procuid.lo proctime.lo procmem.lo \
