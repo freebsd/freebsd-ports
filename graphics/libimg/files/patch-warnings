@@ -1,0 +1,229 @@
+--- imgObj.c	Tue Jan 15 16:00:08 2002
++++ imgObj.c	Thu Jun  9 05:28:23 2005
+@@ -33,5 +33,5 @@
+     return (initialized = IMG_PERL|IMG_OBJS);
+ #else
+-    char *version;
++    const char *version;
+     initialized = IMG_TCL;
+     if (!Tcl_GetCommandInfo(interp,"image", &cmdInfo)) {
+--- imgInit.c	Tue Jan 15 15:59:58 2002
++++ imgInit.c	Thu Jun  9 05:27:40 2005
+@@ -94,5 +94,5 @@
+ {
+     Tk_PhotoImageFormat **formatPtr = Formats;
+-    char *version;
++    const char *version;
+ 
+     if ((version = Tcl_InitStubs(interp, "8.0", 0)) == NULL) {
+--- imgPmap.h	Tue Jan 15 15:59:58 2002
++++ imgPmap.h	Thu Jun  9 05:48:57 2005
+@@ -53,5 +53,5 @@
+     int ncolors;		/* number of colors */
+     int cpp;			/* characters per pixel */
+-    char ** data;		/* The data that defines this pixmap 
++    const char ** data;		/* The data that defines this pixmap 
+ 				 * image (array of strings). It is
+ 				 * converted into an X Pixmap when this
+--- imgPmap.c	Tue Jan 15 15:59:58 2002
++++ imgPmap.c	Thu Jun  9 05:52:31 2005
+@@ -49,6 +53,5 @@
+ 			    Display *display));
+ static void		ImgXpmDelete _ANSI_ARGS_((ClientData clientData));
+-static int		ImgXpmCmd _ANSI_ARGS_((ClientData clientData,
+-			    Tcl_Interp *interp, int argc, char **argv));
++static Tcl_CmdProc	ImgXpmCmd;
+ static void		ImgXpmCmdDeletedProc _ANSI_ARGS_((
+ 			    ClientData clientData));
+@@ -56,11 +59,11 @@
+ 			    PixmapInstance *instancePtr));
+ static int		ImgXpmConfigureMaster _ANSI_ARGS_((
+-			    PixmapMaster *masterPtr, int argc, char **argv,
+-			    int flags));
++			    PixmapMaster *masterPtr, int argc,
++			    const char **argv, int flags));
+ static int		ImgXpmGetData _ANSI_ARGS_((Tcl_Interp *interp,
+ 			    PixmapMaster *masterPtr));
+-static char ** 		ImgXpmGetDataFromFile _ANSI_ARGS_((Tcl_Interp * interp,
++static const char ** 	ImgXpmGetDataFromFile _ANSI_ARGS_((Tcl_Interp * interp,
+ 			    char * string, int * numLines_return));
+-static char ** 		ImgXpmGetDataFromString _ANSI_ARGS_((Tcl_Interp*interp,
++static const char **	ImgXpmGetDataFromString _ANSI_ARGS_((Tcl_Interp*interp,
+ 			    char * string, int * numLines_return));
+ static void 		ImgXpmGetPixmapFromData _ANSI_ARGS_((
+@@ -68,7 +71,7 @@
+ 			    PixmapMaster *masterPtr,
+ 			    PixmapInstance *instancePtr));
+-static char *		GetType _ANSI_ARGS_((char * colorDefn,
++static const char *	GetType _ANSI_ARGS_((const char * colorDefn,
+ 			    int  * type_ret));
+-static char *		GetColor _ANSI_ARGS_((char * colorDefn,
++static const char *	GetColor _ANSI_ARGS_((const char * colorDefn,
+ 			    char * colorName, int * type_ret));
+ 
+@@ -131,6 +134,6 @@
+     PixmapMaster *masterPtr;
+     int i;
+-    char *argvbuf[10];
+-    char **args = argvbuf;
++    const char *argvbuf[10];
++    const char **args = argvbuf;
+ 
+     /*
+@@ -138,5 +141,5 @@
+      */
+     if (argc > 10) {
+-	args = (char **) ckalloc(argc * sizeof(char *));
++	args = (const char **)ckalloc(argc * sizeof(char *));
+     }
+     for (i = 0; i < argc; i++) {
+@@ -197,5 +200,5 @@
+ 				 * overall pixmap image to (reconfigure). */
+     int argc;			/* Number of entries in argv. */
+-    char **argv;		/* Pairs of configuration options for image. */
++    const char **argv;		/* Pairs of configuration options for image. */
+     int flags;			/* Flags to pass to Tk_ConfigureWidget,
+ 				 * such as TK_CONFIG_ARGV_ONLY. */
+@@ -280,8 +283,8 @@
+     PixmapMaster *masterPtr;
+ {
+-    char ** data = NULL;
++    const char ** data = NULL;
+     int  isAllocated = 0;		/* do we need to free "data"? */
+     int listArgc;
+-    char ** listArgv = NULL;
++    const char ** listArgv = NULL;
+     int numLines;
+     int size[2];
+@@ -371,5 +374,6 @@
+ }
+ 
+-static char ** ImgXpmGetDataFromString(interp, string, numLines_return)
++static const char **
++ImgXpmGetDataFromString(interp, string, numLines_return)
+     Tcl_Interp * interp;
+     char * string;
+@@ -379,5 +383,5 @@
+     char * p, * list;
+     int numLines;
+-    char ** data;
++    const char ** data;
+ 
+     /* skip the leading blanks (leading blanks are not defined in the
+@@ -497,8 +501,9 @@
+   error:
+     Tcl_AppendResult(interp, "File format error", NULL);
+-    return (char**) NULL;
++    return NULL;
+ }
+ 
+-static char ** ImgXpmGetDataFromFile(interp, fileName, numLines_return)
++static const char **
++ImgXpmGetDataFromFile(interp, fileName, numLines_return)
+     Tcl_Interp * interp;
+     char * fileName;
+@@ -507,10 +512,10 @@
+     Tcl_Channel chan;
+     int size;
+-    char ** data = (char **) NULL;
++    const char ** data = NULL;
+     char *cmdBuffer = NULL;
+ 
+     chan = ImgOpenFileChannel(interp, fileName, 0);
+     if (!chan) {
+-	return (char **) NULL;
++	return NULL;
+     }
+ 
+@@ -540,10 +545,10 @@
+ 
+ 
+-static char *
++static const char *
+ GetType(colorDefn, type_ret)
+-    char * colorDefn;
++    const char * colorDefn;
+     int  * type_ret;
+ {
+-    char * p = colorDefn;
++    const char * p = colorDefn;
+ 
+     /* skip white spaces */
+@@ -590,7 +595,7 @@
+  * colorName is guaranteed to be big enough
+  */
+-static char *
++static const char *
+ GetColor(colorDefn, colorName, type_ret)
+-    char * colorDefn;
++    const char * colorDefn;
+     char * colorName;		/* if found, name is copied to this array */
+     int  * type_ret;
+@@ -699,5 +704,5 @@
+ 
+     for (i=0; i<masterPtr->ncolors; i++) {
+-	char * colorDefn;		/* the color definition line */
++	const char * colorDefn;		/* the color definition line */
+ 	char * colorName;		/* temp place to hold the color name
+ 					 * defined for one type of visual */
+@@ -790,5 +795,5 @@
+      */
+     for (i=0; i<masterPtr->size[1]; i++) {
+-	char * p = masterPtr->data[i+lOffset];
++	const char * p = masterPtr->data[i+lOffset];
+ 
+ 	for (j=0; j<masterPtr->size[0]; j++) {
+@@ -905,5 +910,5 @@
+     Tcl_Interp *interp;		/* Current interpreter. */
+     int argc;			/* Number of arguments. */
+-    char **argv;		/* Argument strings. */
++    const char *argv[];		/* Argument strings. */
+ {
+     PixmapMaster *masterPtr = (PixmapMaster *) clientData;
+--- imgPS.c	Tue Jan 15 16:00:10 2002
++++ imgPS.c	Thu Jun  9 05:58:04 2005
+@@ -269,5 +269,5 @@
+ {
+ #ifndef MAC_TCL
+-    char *argv[10];
++    const char *argv[10];
+     int len, i, j, fileWidth, fileHeight, maxintensity, index;
+     char *p, type;
+--- imgXPM.c	Tue Jan 15 16:00:08 2002
++++ imgXPM.c	Thu Jun  9 20:33:32 2005
+@@ -287,6 +287,6 @@
+     char buffer[MAX_BUFFER];
+     int i, isMono;
+-    int color1;
+-    unsigned int data;
++    intptr_t color1;
++    uintptr_t data;
+     Tcl_HashEntry *hPtr;
+ 
+@@ -466,5 +466,5 @@
+ 	
+ 	for (i = 0; i < width; ) {
+-	    unsigned int col;
++	    uintptr_t col;
+ 
+ 	    memcpy((char *) &color1, p, byteSize);
+@@ -476,7 +476,7 @@
+ 	     */
+ 	    if (hPtr != (Tcl_HashEntry *)NULL) 
+-	        col = (int)Tcl_GetHashValue(hPtr);
++	        col = (uintptr_t)Tcl_GetHashValue(hPtr);
+ 	    else 
+-	        col = (int)0;
++	        col = 0;
+ 	    
+ 	    /*
+@@ -500,7 +500,7 @@
+ 			hPtr = Tcl_FindHashEntry(&colorTable, (char *) color1);
+ 			if (hPtr != (Tcl_HashEntry *)NULL) 
+-			    col = (int)Tcl_GetHashValue(hPtr);
++			    col = (uintptr_t)Tcl_GetHashValue(hPtr);
+ 			else 
+-			    col = (int)0;
++			    col = 0;
+ 		    }
+ 		} while ((i < width) && col);

@@ -7,7 +7,7 @@
 
 PORTNAME=	libimg
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tkimg
@@ -16,17 +16,16 @@ DISTNAME=	img${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of image format handlers for Tk4.1 and later
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
-		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
+		png:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/img${PORTVERSION}
 
-# We don't need the bundled libraries at all, except for a few headers
-# from libtiff, see comment in files/Makefile.bsd:
+# We don't need the bundled libraries:
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/libz/*' \
-		--exclude '*/compat/*' --exclude '*/libtiff/*.c' \
+		--exclude '*/compat/*' --exclude '*/libtiff/*' \
 		--exclude '*/libjpeg/*' --exclude '*/libpng/*'
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd

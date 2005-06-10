@@ -24,16 +24,11 @@ LDADD=		-lm -lz -L${LOCALBASE}/lib -lpng -ljpeg -ltiff \
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}/generic
-CFLAGS+=	-D__X11__ -I${X11BASE}/include
+CFLAGS+=	-D__X11__ -I${X11BASE}/include -DALLOW_B64
 CFLAGS+=	-I${LOCALBASE}/include/tk${TCL_VER}
 CFLAGS+=	-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -DUSE_TK_STUBS
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include
 CFLAGS+=	-DHAVE_JPEGLIB_H -DHAVE_TIFF_H -DHAVE_DLFCN_H -DHAVE_IMG_H
-
-# This seems terrible... The package uses libtiff's interfaces, which are
-# clearly marked as internal... It includes the libtiff's header files, which
-# libtiff itself does NOT install.	-mi
-CFLAGS+=	-I${.CURDIR}/libtiff
 
 all: pkgIndex.tcl
 
@@ -60,7 +55,7 @@ environ:
 #		fundamentals of this library
 SRCS	=	imgInit.c imgObj.c imgUtil.c imgPmap.c imgUnixPmap.c \
 		imgBMP.c imgGIF.c imgJPEG.c imgPNG.c imgPS.c \
-		imgTIFF.c imgTIFFjpeg.c imgTIFFpixar.c imgTIFFzip.c \
+		imgTIFF.c \
 		imgWindow.c imgXBM.c imgXPM.c
 
 test:	$(SHLIB_NAME)

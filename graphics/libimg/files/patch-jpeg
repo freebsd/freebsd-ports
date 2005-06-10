@@ -1,0 +1,625 @@
+--- imgJPEG.c	Thu Jun  9 06:36:41 2005
++++ imgJPEG.c	Thu Jun  9 20:27:11 2005
+@@ -173,115 +173,4 @@
+ 		    j_common_ptr cinfo));
+ static int	load_jpeg_library _ANSI_ARGS_((Tcl_Interp *interp));
+-static int	CreateCompress _ANSI_ARGS_((j_compress_ptr, int, size_t));
+-static int	CreateDecompress _ANSI_ARGS_((j_decompress_ptr, int, size_t));
+-
+-/*
+- * Stuff to support dynamic loading of libjpeg
+- */
+-
+-static struct JpegFunctions {
+-    VOID *handle;
+-    int (* abort_decompress) _ANSI_ARGS_((j_decompress_ptr));
+-    int (* destroy_compress) _ANSI_ARGS_((j_compress_ptr));
+-    int (* destroy_decompress) _ANSI_ARGS_((j_decompress_ptr));
+-    int (* finish_compress) _ANSI_ARGS_((j_compress_ptr));
+-    int (* finish_decompress) _ANSI_ARGS_((j_decompress_ptr));
+-    int (* read_header) _ANSI_ARGS_((j_decompress_ptr, int));
+-    JDIMENSION (* read_scanlines) _ANSI_ARGS_((j_decompress_ptr,
+-			JSAMPARRAY, JDIMENSION));
+-    boolean (* resync_to_restart) _ANSI_ARGS_((j_decompress_ptr, int));
+-    int (* set_defaults) _ANSI_ARGS_((j_compress_ptr));
+-    int (* start_compress) _ANSI_ARGS_((j_compress_ptr, int));
+-    int (* start_decompress) _ANSI_ARGS_((j_decompress_ptr));
+-    struct jpeg_error_mgr *(* std_error) _ANSI_ARGS_((struct jpeg_error_mgr *));
+-    JDIMENSION (* write_scanlines) _ANSI_ARGS_((j_compress_ptr,
+-			JSAMPARRAY, JDIMENSION));
+-    int (* set_colorspace) _ANSI_ARGS_((j_compress_ptr, J_COLOR_SPACE));
+-    int (* set_quality) _ANSI_ARGS_((j_compress_ptr, int, int));
+-    int (* simple_progression) _ANSI_ARGS_((j_compress_ptr));
+-    int (* CreateCompress) _ANSI_ARGS_((j_compress_ptr, int, size_t));
+-    int (* CreateDecompress) _ANSI_ARGS_((j_decompress_ptr, int, size_t));
+-    int (* create_compress) _ANSI_ARGS_((j_compress_ptr));
+-    int (* create_decompress) _ANSI_ARGS_((j_decompress_ptr));
+-    void (* destroy) _ANSI_ARGS_((j_common_ptr));
+-    JDIMENSION (* write_raw_data) _ANSI_ARGS_((j_compress_ptr,
+-	    JSAMPIMAGE, JDIMENSION));
+-    void (* suppress_tables) _ANSI_ARGS_((j_compress_ptr, boolean));
+-    void (* write_tables) _ANSI_ARGS_((j_compress_ptr));
+-    JDIMENSION (* read_raw_data) _ANSI_ARGS_((j_decompress_ptr,
+-	    JSAMPIMAGE, JDIMENSION));
+-    void (* abort) _ANSI_ARGS_((j_common_ptr));
+-} jpeg = {0};
+-
+-static char *symbols[] = {
+-#ifdef NEED_SHORT_EXTERNAL_NAMES
+-    "jAbrtDecompress",
+-    "jDestCompress",
+-    "jDestDecompress",
+-    "jFinCompress",
+-    "jFinDecompress",
+-    "jReadHeader",
+-    "jReadScanlines",
+-    "jResyncRestart",
+-    "jSetDefaults",
+-    "jStrtCompress",
+-    "jStrtDecompress",
+-    "jStdError",
+-    "jWrtScanlines",
+-    /*	the following 3 symbols are not crucial. They implement
+-	resp. the "-grayscale", "-quality" and "-progressive"
+-	options. If any of the symbols are missing from the
+-	library, the corresponding option just has no effect. */
+-    "jSetColorspace",
+-    "jSetQuality",
+-    "jSimProgress",
+-    "jCreaCompress",
+-    "jCreaDecompress",
+-    "jCreaCompress",
+-    "jCreaDecompress",
+-    "jDestroy",
+-    "jWrtRawData",
+-    "jSuppressTables",
+-    "jWrtTables",
+-    "jReadRawData",
+-    "jAbort",
+-#else
+-    "jpeg_abort_decompress",
+-    "jpeg_destroy_compress",
+-    "jpeg_destroy_decompress",
+-    "jpeg_finish_compress",
+-    "jpeg_finish_decompress",
+-    "jpeg_read_header",
+-    "jpeg_read_scanlines",
+-    "jpeg_resync_to_restart",
+-    "jpeg_set_defaults",
+-    "jpeg_start_compress",
+-    "jpeg_start_decompress",
+-    "jpeg_std_error",
+-    "jpeg_write_scanlines",
+-    /*	the following 3 symbols are not crucial. They implement
+-	resp. the "-grayscale", "-quality" and "-progressive"
+-	options. If any of the symbols are missing from the
+-	library, the corresponding option just has no effect. */
+-    "jpeg_set_colorspace",
+-    "jpeg_set_quality",
+-    "jpeg_simple_progression",
+-    /* In later versions, jpeg_create_compress and jpeg_create_decompress
+-       are macros pointing to jpeg_CreateCompress and jpeg_CreateDecompres.
+-       Which one is found depends on the version. */
+-    "jpeg_CreateCompress",
+-    "jpeg_CreateDecompress",
+-    "jpeg_create_compress",
+-    "jpeg_create_decompress",
+-    "jpeg_destroy",
+-    "jpeg_write_raw_data",
+-    "jpeg_suppress_tables",
+-    "jpeg_write_tables",
+-    "jpeg_read_raw_data",
+-    "jpeg_abort",
+-#endif
+-    (char *) NULL
+-};
+-
+ 
+ static int
+@@ -292,21 +181,10 @@
+     struct my_error_mgr jerror;	/* for controlling libjpeg error handling */
+     int i;
++    static int initialized;
+ 
+-    if (ImgLoadLib(interp, JPEG_LIB_NAME, &jpeg.handle, symbols, 13)
+-	    != TCL_OK) {
+-	return TCL_ERROR;
+-    }
+-    if (jpeg.CreateCompress == NULL) {
+-	if (jpeg.create_compress == NULL) {
+-	    goto load_failed;
+-	}
+-	jpeg.CreateCompress = CreateCompress;
+-    }
+-    if (jpeg.CreateDecompress == NULL) {
+-	if (jpeg.create_decompress == NULL) {
+-	    goto load_failed;
+-	}
+-	jpeg.CreateDecompress = CreateDecompress;
+-    }
++    if (initialized)
++	return TCL_OK;
++
++    initialized = 1;
+ 
+     /* The followin code tries to determine if the JPEG library is
+@@ -322,5 +200,5 @@
+     cinfo = (struct jpeg_compress_struct *)
+ 	    ckalloc(8*sizeof(struct jpeg_compress_struct));
+-    cinfo->err = jpeg.std_error(&jerror.pub);
++    cinfo->err = jpeg_std_error(&jerror.pub);
+     jerror.pub.error_exit = my_error_exit;
+     jerror.pub.output_message = my_output_message;
+@@ -328,18 +206,16 @@
+     if (setjmp(jerror.setjmp_buffer)) {
+       /* If we get here, the JPEG library is invalid. */
+-      jpeg.destroy_compress(cinfo);
++      jpeg_destroy_compress(cinfo);
+       ckfree((char *)cinfo);
+-load_failed:
+       if (interp) {
+-	Tcl_AppendResult(interp, "couldn't load \"", JPEG_LIB_NAME,
+-		"\": please upgrade to at least version 6a", (char *) NULL);
++	Tcl_AppendResult(interp, "JPEG library mismatch, expecting \"",
++	    JPEG_LIB_NAME, NULL);
+       }
+-      ImgLoadFailed(&jpeg.handle);
+       return TCL_ERROR;
+     }
+ 
+-    /* Now we can initialize libjpeg. */
++    /* Now we can initialize libjpeg_ */
+     ((char *) cinfo)[sizeof(struct jpeg_compress_struct)] = 53;
+-    jpeg.CreateCompress(cinfo, JPEG_LIB_VERSION,
++    jpeg_CreateCompress(cinfo, JPEG_LIB_VERSION,
+ 			(size_t) sizeof(struct jpeg_compress_struct));
+     if (((char *) cinfo)[sizeof(struct jpeg_compress_struct)] != 53) {
+@@ -359,5 +235,5 @@
+     cinfo->X_density = 0;
+     cinfo->Y_density = 0;
+-    jpeg.set_defaults(cinfo);
++    jpeg_set_defaults(cinfo);
+ 
+     if ((cinfo->data_precision != BITS_IN_JSAMPLE) ||
+@@ -375,5 +251,5 @@
+ 	}
+     }
+-    jpeg.destroy_compress(cinfo);
++    jpeg_destroy_compress(cinfo);
+     ckfree((char *) cinfo);
+     return TCL_OK;
+@@ -383,13 +259,6 @@
+ ImgLoadJpegLibrary()
+ {
+-    if ((load_jpeg_library(NULL) == TCL_OK)
+-	    && jpeg.destroy
+-	    && jpeg.write_raw_data
+-	    && jpeg.suppress_tables
+-	    && jpeg.write_tables
+-	    && jpeg.read_raw_data
+-	    && jpeg.abort) {
++    if (load_jpeg_library(NULL) == TCL_OK)
+ 	return TCL_OK;
+-    }
+     return TCL_ERROR;
+ }
+@@ -420,179 +289,4 @@
+ 			JSAMPARRAY, JDIMENSION));
+ 
+-static int
+-CreateCompress(cinfo, version, size)
+-    j_compress_ptr cinfo;
+-    int version;
+-    size_t size;
+-{
+-    return jpeg.create_compress(cinfo);
+-}
+-
+-static int
+-CreateDecompress(cinfo, version, size)
+-    j_decompress_ptr cinfo;
+-    int version;
+-    size_t size;
+-{
+-    return jpeg.create_decompress(cinfo);
+-}
+-
+-int
+-Imgjpeg_CreateCompress(cinfo, version, size)
+-    j_compress_ptr cinfo;
+-    int version;
+-    size_t size;
+-{
+-    return jpeg.CreateCompress(cinfo, version, size);
+-}
+-
+-int
+-Imgjpeg_CreateDecompress(cinfo, version, size)
+-    j_decompress_ptr cinfo;
+-    int version;
+-    size_t size;
+-{
+-    return jpeg.CreateDecompress(cinfo, version, size);
+-}
+-
+-boolean
+-Imgjpeg_resync_to_restart(a,b)
+-    j_decompress_ptr a;
+-    int b;
+-{
+-    return jpeg.resync_to_restart(a,b);
+-}
+-
+-JDIMENSION
+-Imgjpeg_read_scanlines(a,b,c)
+-    j_decompress_ptr a;
+-    JSAMPARRAY b;
+-    JDIMENSION c;
+-{
+-    return jpeg.read_scanlines(a,b,c);
+-}
+-
+-int
+-Imgjpeg_set_colorspace(a,b)
+-    j_compress_ptr a;
+-    J_COLOR_SPACE b;
+-{
+-    return jpeg.set_colorspace(a,b);
+-}
+-
+-int
+-Imgjpeg_set_defaults(a)
+-    j_compress_ptr a;
+-{
+-    return jpeg.set_defaults(a);
+-}
+-
+-int
+-Imgjpeg_start_decompress(a)
+-    j_decompress_ptr a;
+-{
+-    return jpeg.start_decompress(a);
+-}
+-
+-void
+-Imgjpeg_destroy(a)
+-    j_common_ptr a;
+-{
+-    jpeg.destroy(a);
+-}
+-
+-struct jpeg_error_mgr *
+-Imgjpeg_std_error(a)
+-    struct jpeg_error_mgr *a;
+-{
+-    return jpeg.std_error(a);
+-}
+-
+-JDIMENSION Imgjpeg_write_raw_data(a,b,c)
+-    j_compress_ptr a;
+-    JSAMPIMAGE b;
+-    JDIMENSION c;
+-{
+-    return jpeg.write_raw_data(a,b,c);
+-}
+-
+-void
+-Imgjpeg_suppress_tables(a,b)
+-    j_compress_ptr a;
+-    boolean b;
+-{
+-    jpeg.suppress_tables(a,b);
+-}
+-
+-void
+-Imgjpeg_abort(a)
+-    j_common_ptr a;
+-{
+-    jpeg.abort(a);
+-}
+-
+-int
+-Imgjpeg_read_header(a,b)
+-    j_decompress_ptr a;
+-    int b;
+-{
+-    return jpeg.read_header(a,b);
+-}
+-
+-int
+-Imgjpeg_start_compress(a,b)
+-    j_compress_ptr a;
+-    int b;
+-{
+-    return jpeg.start_compress(a,b);
+-}
+-
+-void
+-Imgjpeg_write_tables(a)
+-    j_compress_ptr a;
+-{
+-    jpeg.write_tables(a);
+-}
+-
+-int
+-Imgjpeg_finish_decompress(a)
+-    j_decompress_ptr a;
+-{
+-    return jpeg.finish_decompress(a);
+-}
+-
+-int
+-Imgjpeg_finish_compress(a)
+-    j_compress_ptr a;
+-{
+-    return jpeg.finish_compress(a);
+-}
+-
+-JDIMENSION
+-Imgjpeg_read_raw_data(a,b,c)
+-    j_decompress_ptr a;
+-    JSAMPIMAGE b;
+-    JDIMENSION c;
+-{
+-    return jpeg.read_raw_data(a,b,c);
+-}
+-
+-int
+-Imgjpeg_set_quality(a,b,c)
+-    j_compress_ptr a;
+-    int b;
+-    int c;
+-{
+-    return jpeg.set_quality(a,b,c);
+-}
+-
+-JDIMENSION
+-Imgjpeg_write_scanlines(a,b,c)
+-    j_compress_ptr a;
+-    JSAMPARRAY b;
+-    JDIMENSION c;
+-{
+-    return jpeg.write_scanlines(a,b,c);
+-}
+ 
+ 
+@@ -715,5 +409,5 @@
+ 	}
+ 	/* look for SOF0, SOF1, or SOF2, which are the only JPEG variants
+-	 * currently accepted by libjpeg.
++	 * currently accepted by libjpeg_
+ 	 */
+ 	if (buf[0] == (char) 0xc0 || buf[0] == (char) 0xc1
+@@ -794,5 +488,5 @@
+     /* Initialize JPEG error handler */
+     /* We set up the normal JPEG error routines, then override error_exit. */
+-    cinfo.err = jpeg.std_error(&jerror.pub);
++    cinfo.err = jpeg_std_error(&jerror.pub);
+     jerror.pub.error_exit = my_error_exit;
+     jerror.pub.output_message = my_output_message;
+@@ -803,10 +497,10 @@
+       Tcl_AppendResult(interp, "couldn't read JPEG string: ", (char *) NULL);
+       append_jpeg_message(interp, (j_common_ptr) &cinfo);
+-      jpeg.destroy_decompress(&cinfo);
++      jpeg_destroy_decompress(&cinfo);
+       return TCL_ERROR;
+     }
+ 
+-    /* Now we can initialize libjpeg. */
+-    jpeg.CreateDecompress(&cinfo, JPEG_LIB_VERSION,
++    /* Now we can initialize libjpeg_ */
++    jpeg_CreateDecompress(&cinfo, JPEG_LIB_VERSION,
+ 			(size_t) sizeof(struct jpeg_decompress_struct));
+     jpeg_channel_src(&cinfo, chan);
+@@ -817,5 +511,5 @@
+ 
+     /* Reclaim libjpeg's internal resources. */
+-    jpeg.destroy_decompress(&cinfo);
++    jpeg_destroy_decompress(&cinfo);
+ 
+     return result;
+@@ -865,5 +559,5 @@
+     /* Initialize JPEG error handler */
+     /* We set up the normal JPEG error routines, then override error_exit. */
+-    cinfo.err = jpeg.std_error(&jerror.pub);
++    cinfo.err = jpeg_std_error(&jerror.pub);
+     jerror.pub.error_exit = my_error_exit;
+     jerror.pub.output_message = my_output_message;
+@@ -874,10 +568,10 @@
+       Tcl_AppendResult(interp, "couldn't read JPEG string: ", (char *) NULL);
+       append_jpeg_message(interp, (j_common_ptr) &cinfo);
+-      jpeg.destroy_decompress(&cinfo);
++      jpeg_destroy_decompress(&cinfo);
+       return TCL_ERROR;
+     }
+ 
+-    /* Now we can initialize libjpeg. */
+-    jpeg.CreateDecompress(&cinfo, JPEG_LIB_VERSION,
++    /* Now we can initialize libjpeg_ */
++    jpeg_CreateDecompress(&cinfo, JPEG_LIB_VERSION,
+ 			(size_t) sizeof(struct jpeg_decompress_struct));
+     jpeg_obj_src(&cinfo, data);
+@@ -888,5 +582,5 @@
+ 
+     /* Reclaim libjpeg's internal resources. */
+-    jpeg.destroy_decompress(&cinfo);
++    jpeg_destroy_decompress(&cinfo);
+ 
+     return result;
+@@ -926,5 +620,5 @@
+ 				 * in image being read. */
+ {
+-    static char *jpegReadOptions[] = {"-fast", "-grayscale", NULL};
++    static const char *jpegReadOptions[] = {"-fast", "-grayscale", NULL};
+     int fileWidth, fileHeight, stopY, curY, outY, outWidth, outHeight;
+     myblock bl;
+@@ -935,5 +629,5 @@
+ 
+     /* Ready to read header data. */
+-    jpeg.read_header(cinfo, TRUE);
++    jpeg_read_header(cinfo, TRUE);
+ 
+     /* This code only supports 8-bit-precision JPEG files. */
+@@ -972,5 +666,5 @@
+     }
+ 
+-    jpeg.start_decompress(cinfo);
++    jpeg_start_decompress(cinfo);
+ 
+     /* Check dimensions. */
+@@ -1002,5 +696,5 @@
+ 	break;
+     case JCS_RGB:
+-	/* note: this pixel layout assumes default configuration of libjpeg. */
++	/* note: this pixel layout assumes default configuration of libjpeg_ */
+ 	block.pixelSize = 3;
+ 	block.offset[0] = 0;
+@@ -1029,5 +723,5 @@
+     outY = destY;
+     for (curY = 0; curY < stopY; curY++) {
+-      jpeg.read_scanlines(cinfo, buffer, 1);
++      jpeg_read_scanlines(cinfo, buffer, 1);
+       if (curY >= srcY) {
+ 	Tk_PhotoPutBlock(imageHandle, &block, destX, outY, outWidth, 1, TK_PHOTO_COMPOSITE_SET);
+@@ -1038,7 +732,7 @@
+     /* Do normal cleanup if we read the whole image; else early abort */
+     if (cinfo->output_scanline == cinfo->output_height)
+-	jpeg.finish_decompress(cinfo);
++	jpeg_finish_decompress(cinfo);
+     else
+-	jpeg.abort_decompress(cinfo);
++	jpeg_abort_decompress(cinfo);
+ 
+     return TCL_OK;
+@@ -1086,5 +780,5 @@
+     /* Initialize JPEG error handler */
+     /* We set up the normal JPEG error routines, then override error_exit. */
+-    cinfo.err = jpeg.std_error(&jerror.pub);
++    cinfo.err = jpeg_std_error(&jerror.pub);
+     jerror.pub.error_exit = my_error_exit;
+     jerror.pub.output_message = my_output_message;
+@@ -1096,11 +790,11 @@
+ 		       "\": ", (char *) NULL);
+       append_jpeg_message(interp, (j_common_ptr) &cinfo);
+-      jpeg.destroy_compress(&cinfo);
++      jpeg_destroy_compress(&cinfo);
+       Tcl_Close(interp, chan);
+       return TCL_ERROR;
+     }
+ 
+-    /* Now we can initialize libjpeg. */
+-    jpeg.CreateCompress(&cinfo, JPEG_LIB_VERSION,
++    /* Now we can initialize libjpeg_ */
++    jpeg_CreateCompress(&cinfo, JPEG_LIB_VERSION,
+ 			(size_t) sizeof(struct jpeg_compress_struct));
+     jpeg_channel_dest(&cinfo, chan);
+@@ -1109,5 +803,5 @@
+     result = CommonWriteJPEG(interp, &cinfo, format, blockPtr);
+ 
+-    jpeg.destroy_compress(&cinfo);
++    jpeg_destroy_compress(&cinfo);
+     if (Tcl_Close(interp, chan) == TCL_ERROR) {
+ 	return TCL_ERROR;
+@@ -1154,5 +848,5 @@
+     /* Initialize JPEG error handler */
+     /* We set up the normal JPEG error routines, then override error_exit. */
+-    cinfo.err = jpeg.std_error(&jerror.pub);
++    cinfo.err = jpeg_std_error(&jerror.pub);
+     jerror.pub.error_exit = my_error_exit;
+     jerror.pub.output_message = my_output_message;
+@@ -1167,6 +861,6 @@
+     }
+ 
+-    /* Now we can initialize libjpeg. */
+-    jpeg.CreateCompress(&cinfo, JPEG_LIB_VERSION,
++    /* Now we can initialize libjpeg_ */
++    jpeg_CreateCompress(&cinfo, JPEG_LIB_VERSION,
+ 	    (size_t) sizeof(struct jpeg_compress_struct));
+     jpeg_string_dest(&cinfo, dataPtr);
+@@ -1177,5 +871,5 @@
+ writeend:
+ 
+-    jpeg.destroy_compress(&cinfo);
++    jpeg_destroy_compress(&cinfo);
+     if (dataPtr == &data) {
+ 	if (result == TCL_OK) {
+@@ -1210,5 +904,5 @@
+     Tk_PhotoImageBlock *blockPtr;
+ {
+-    static char *jpegWriteOptions[] = {"-grayscale", "-optimize",
++    static const char *jpegWriteOptions[] = {"-grayscale", "-optimize",
+ 	"-progressive", "-quality", "-smooth", NULL};
+     JSAMPROW row_pointer[1];	/* pointer to original data scanlines */
+@@ -1239,5 +933,5 @@
+     cinfo->in_color_space = JCS_RGB;
+ 
+-    jpeg.set_defaults(cinfo);
++    jpeg_set_defaults(cinfo);
+ 
+     /* Parse options, if any, and alter default parameters */
+@@ -1262,7 +956,7 @@
+ 		}
+ 		case 2: {
+-		    if (jpeg.simple_progression != NULL) {
++		    if (jpeg_simple_progression != NULL) {
+ 			/* Select simple progressive mode. */
+-			jpeg.simple_progression(cinfo);
++			jpeg_simple_progression(cinfo);
+ 		    }
+ 		    break;
+@@ -1278,5 +972,5 @@
+ 			return TCL_ERROR;
+ 		    }
+-		    jpeg.set_quality(cinfo, quality, FALSE);
++		    jpeg_set_quality(cinfo, quality, FALSE);
+ 		    break;
+ 		}
+@@ -1301,11 +995,11 @@
+     greenOffset = blockPtr->offset[1] - blockPtr->offset[0];
+     blueOffset = blockPtr->offset[2] - blockPtr->offset[0];
+-    if ((jpeg.set_colorspace != NULL) &&
++    if ((jpeg_set_colorspace != NULL) &&
+ 	    (grayscale || (!greenOffset && !blueOffset))) {
+ 	/* Generate monochrome JPEG file if source block is grayscale. */
+-	jpeg.set_colorspace(cinfo, JCS_GRAYSCALE);
++	jpeg_set_colorspace(cinfo, JCS_GRAYSCALE);
+     }
+ 
+-    jpeg.start_compress(cinfo, TRUE);
++    jpeg_start_compress(cinfo, TRUE);
+     
+     /* note: we assume libjpeg is configured for standard RGB pixel order. */
+@@ -1315,5 +1009,5 @@
+ 	for (h = blockPtr->height; h > 0; h--) {
+ 	    row_pointer[0] = (JSAMPROW) pixLinePtr;
+-	    jpeg.write_scanlines(cinfo, row_pointer, 1);
++	    jpeg_write_scanlines(cinfo, row_pointer, 1);
+ 	    pixLinePtr += blockPtr->pitch;
+ 	}
+@@ -1341,10 +1035,10 @@
+ 		pixelPtr += blockPtr->pixelSize;
+ 	    }
+-	    jpeg.write_scanlines(cinfo, buffer, 1);
++	    jpeg_write_scanlines(cinfo, buffer, 1);
+ 	    pixLinePtr += blockPtr->pitch;
+ 	}
+     }
+ 
+-    jpeg.finish_compress(cinfo);
++    jpeg_finish_compress(cinfo);
+     return TCL_OK;
+ }
+@@ -1370,5 +1064,5 @@
+   src->pub.fill_input_buffer = fill_input_buffer;
+   src->pub.skip_input_data = skip_input_data;
+-  src->pub.resync_to_restart = jpeg.resync_to_restart; /* use default method */
++  src->pub.resync_to_restart = jpeg_resync_to_restart; /* use default method */
+   src->pub.term_source = dummy_source;
+ 
+@@ -1443,5 +1137,5 @@
+   src->pub.fill_input_buffer = fill_input_buffer;
+   src->pub.skip_input_data = skip_input_data;
+-  src->pub.resync_to_restart = jpeg.resync_to_restart; /* use default method */
++  src->pub.resync_to_restart = jpeg_resync_to_restart; /* use default method */
+   src->pub.term_source = dummy_source;
+ 

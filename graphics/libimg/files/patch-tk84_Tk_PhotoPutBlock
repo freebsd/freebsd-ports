@@ -87,8 +87,8 @@
  	    }
  	    break;
      }
---- imgUtil.c.orig	Sat Mar 20 23:09:14 1999
-+++ imgUtil.c	Mon Dec  1 12:47:43 2003
+--- imgUtil.c	Tue Jan 15 15:59:59 2002
++++ imgUtil.c	Thu Jun  9 20:51:49 2005
 @@ -95,7 +95,7 @@
  		}
  		if (end > X) {
@@ -98,7 +98,7 @@
  		}
  		X = end;
  	    }
-@@ -103,7 +103,7 @@
+@@ -103,12 +103,12 @@
  	}
  	blockPtr->pixelPtr = imagePtr;
      } else {
@@ -107,13 +107,20 @@
      }
      return TCL_OK;
  }
-@@ -248,4 +248,4 @@
+ 
+-
++#if 0 /* OS run-time linker is better suited for this job { */
+ /*
+  *----------------------------------------------------------------------
+  *
+@@ -248,4 +248,5 @@
  	dlclose(*handlePtr);
      }
      *handlePtr = IMG_FAILED;
 -}
 \ No newline at end of file
 +}
++#endif /* } */
 --- imgWindow.c.orig	Sat Jan 15 13:25:37 2000
 +++ imgWindow.c	Mon Dec  1 12:52:11 2003
 @@ -378,7 +378,7 @@
