@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpldapadmin
-DISTVERSION=	0.9.6c
+PORTVERSION=	0.9.6c
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -30,10 +30,10 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall${PKGNAMESUFFIX}
 
 PLAUSR?=	pldapadm
 
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%PLADIR%%,${PLADIR},g' \
-		-e 's,%%PLAUSR%%,${PLAUSR},g' \
-		-e 's,%%PLAGRP%%,${PLAGRP},g'
+SED_SCRIPT=	-e 's!%%PREFIX%%!${PREFIX}!g' \
+		-e 's!%%PLADIR%%!${PLADIR}!g' \
+		-e 's!%%PLAUSR%%!${PLAUSR}!g' \
+		-e 's!%%PLAGRP%%!${PLAGRP}!g'
 
 .else
 
@@ -66,14 +66,14 @@ post-patch:
 	${RM} -f ${PLIST}
 	cd ${WRKSRC} ; \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore | \
-	    ${SORT} | ${SED} "s,^\.,%%PLADIR%%,"     >${PLIST} ; \
+	    ${SORT} | ${SED} "s!^\.!%%PLADIR%%!"     >${PLIST} ; \
 	${CAT} ${PKGDIR}/pkg-plist-chunk            >>${PLIST} ; \
 	${FIND} . -type d | ${SORT} -r | ${SED} \
-	    -e "s,^\.$$,@unexec rmdir %D/%%PLADIR%% 2>/dev/null || true," \
-	    -e "s,^\.,@dirrm %%PLADIR%%,"           >>${PLIST}
-	${SED} -e 's,%%PKGNAME%%,${PKGNAME},g' \
-	       -e 's,%%PREFIX%%,${PREFIX},g'   \
-	       -e 's,%%PLADIR%%,${PLADIR},g'   ${MSG_SKEL} > ${PKGMESSAGE}
+	    -e 's!^\.$$!@unexec rmdir %D/%%PLADIR%% 2>/dev/null || true!' \
+	    -e 's!^\.!@dirrm %%PLADIR%%!'           >>${PLIST}
+	${SED} -e 's!%%PKGNAME%%!${PKGNAME}!g' \
+	       -e 's!%%PREFIX%%!${PREFIX}!g'   \
+	       -e 's!%%PLADIR%%!${PLADIR}!g'   ${MSG_SKEL} > ${PKGMESSAGE}
 .if defined(WITH_SUPHP)
 	${SED} ${SED_SCRIPT} ${PKGINST_SKEL}   > ${PKGINSTALL}
 	${SED} ${SED_SCRIPT} ${PKGDEINST_SKEL} > ${PKGDEINSTALL}
