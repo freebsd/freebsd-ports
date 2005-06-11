@@ -1,0 +1,7 @@
+This is a port of IPVS (aka LVS) on FreeBSD. IPVS is a highly scalable 
+and highly available server built on a cluster of real servers, with the 
+load balancer. The architecture of the server cluster is fully 
+transparent to end users, and the users interact as if it were a single
+high-performance virtual server.
+
+WWW: http://dragon.linux-vs.org/~dragonfly/htm/lvs_freebsd.htm

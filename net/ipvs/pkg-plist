@@ -1,0 +1,5 @@
+sbin/ipvsadm
+sbin/ipvsadm-restore
+sbin/ipvsadm-save
+@cwd /boot/modules
+ipvs.ko

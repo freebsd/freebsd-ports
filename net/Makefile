@@ -252,6 +252,7 @@
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
     SUBDIR += ipv6socket_scrub
+    SUBDIR += ipvs
     SUBDIR += ipw-firmware
     SUBDIR += irrd
     SUBDIR += isc-dhcp3-client
