@@ -4,5 +4,5 @@ sbin/%%DRIVERNAME%%control
 %%DATADIR%%/%%RELNAME%%-%%PORTVERSION%%-p.fw
 %%DATADIR%%/%%RELNAME%%-%%PORTVERSION%%.fw
 @dirrm %%DATADIR%%
-%%WITH_MODULE%%@cwd %%KMODDIR%%
-%%WITH_MODULE%%if_%%DRIVERNAME%%.ko
+%%WITH_MODULE%%@cwd /
+%%WITH_MODULE%%%%KMODDIR%%/if_%%DRIVERNAME%%.ko

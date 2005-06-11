@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ipw-firmware
-RELNAME=	ipw2100
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTNAME?=	ipw-firmware
+RELNAME?=	ipw2100
+PORTVERSION?=	1.3
+PORTREVISION?=	1
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/ipw
@@ -17,14 +17,16 @@ DISTFILES=	${RELNAME}-fw-${PORTVERSION}.tgz
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Intel PRO/Wireless 2100 Driver Firmware
 
-DRIVERNAME=	ipw
-DRIVERVERSION=	1.6.4
+DRIVERNAME?=	ipw
+DRIVERVERSION?=	1.6.4
 DRIVERDISTNAME=	${DRIVERNAME}-freebsd-${DRIVERVERSION}
 DISTFILES+=	${DRIVERDISTNAME}.tgz
+FIRMWARES?=	${RELNAME}-${PORTVERSION}-i.fw ${RELNAME}-${PORTVERSION}-p.fw ${RELNAME}-${PORTVERSION}.fw
 
 OPTIONS=	MODULE	"Install ${DRIVERNAME}(4) kernel module"	off
 
 WRKSRC=		${WRKDIR}
+KERNDIR=	/boot/kernel
 KMODDIR=	/boot/modules
 SUB_FILES=	pkg-message
 SUB_LIST=	DRIVERNAME="${DRIVERNAME}" \
@@ -42,10 +44,10 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-# That's a bit arbitrary since I have no idea if ${DRIVERNAME}(4) can be compiled on FreeBSD
-# previous to 5.3-RELEASE. This is just too old, people should move on.
-# I may change this if I get successful reports though.
-# Comment this if you want to test it anyway.
+# That's a bit arbitrary since I have no idea if ${DRIVERNAME}(4) can be
+# compiled on FreeBSD previous to 5.3-RELEASE. This is just too old, people
+# should move on. I may change this if I get successful reports though.
+# Comment this IGNORE line if you want to test it anyway.
 .if ${OSVERSION} < 503000
 IGNORE=		Need a fresh version of RELENG_5
 .endif
@@ -58,12 +60,12 @@ PLIST_SUB+=	WITH_MODULE=""
 MAN4+=		${DRIVERNAME}.4
 . endif
 .else
-PLIST_SUB+=	WITH_MODULE="@comment "
+PLIST_SUB+=	WITH_MODULE="@comment MODULE "
 .endif
 
 # "Might" because people still can include ${DRIVERNAME}(4) support in kernel by extracting
 # its source in src/ and tweaking src/sys/conf/files.
-.if ${OSVERSION} <= 600023 && !exists(${KMODDIR}/if_${DRIVERNAME}.ko) && !defined(WITH_MODULE)
+.if ${OSVERSION} <= 600023 && !exists(${KERNDIR}/if_${DRIVERNAME}.ko) && !defined(WITH_MODULE)
 SUB_LIST+=	MIGHT_NEED_MODULE=""
 .else
 SUB_LIST+=	MIGHT_NEED_MODULE="@comment "
@@ -88,7 +90,7 @@ do-install:
 .else
 	cd ${WRKSRC}/${DRIVERDISTNAME}/src/usr.sbin/${DRIVERNAME}control/; make install ${MAKE_ENV}
 .endif
-.for i in LICENSE ${RELNAME}-${PORTVERSION}-i.fw ${RELNAME}-${PORTVERSION}-p.fw ${RELNAME}-${PORTVERSION}.fw
+.for i in LICENSE ${FIRMWARES}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DATADIR}/
 .endfor
 
