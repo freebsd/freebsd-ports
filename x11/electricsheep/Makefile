@@ -25,6 +25,8 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif
 
+BROKEN=		"Does not compile"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.6.1
 
 USE_X_PREFIX=	yes
@@ -40,6 +42,14 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 LIBTOOLFILES=	configure mpeg2dec/configure flam3/configure
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.else
+BROKEN=		"Incomplete pkg-plist"
+.endif
 
 pre-everything::
 .if !defined(WITH_XSCREENSAVER)
@@ -94,4 +104,5 @@ do-install:
 post-install:
 	@${PREFIX}/bin/esheep-uniqueid > ${DATADIR}/electricsheep-uniqueid
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+
