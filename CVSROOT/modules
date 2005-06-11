@@ -11409,6 +11409,7 @@ tct		ports/sysutils/tct
 tdb		ports/databases/tdb
 tdetect		ports/net/tdetect
 tdiary		ports/www/tdiary
+tdiary-devel	ports/www/tdiary-devel
 tdir		ports/sysutils/tdir
 tdl		ports/devel/tdl
 tdtd.el		ports/textproc/tdtd.el
