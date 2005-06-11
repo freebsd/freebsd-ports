@@ -6,40 +6,39 @@
 #
 
 PORTNAME=		freeglut
-PORTVERSION=		2.2.0
+PORTVERSION=		2.4.0
 CATEGORIES=		x11-toolkits
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An alternative to the OpenGL Utility Toolkit (GLUT) library
+MAINTAINER=		ports@FreeBSD.org
+COMMENT=		An alternative to the OpenGL Utility Toolkit (GLUT) library
 
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
-USE_AUTOHEADER_VER=	213
-USE_INC_LIBTOOL_VER=	13
-HAS_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-USE_XLIB=	yes
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include			\
-		--x-libraries=${X11BASE}/lib			\
-		--enable-replace-glut
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+USE_LIBTOOL_VER=	15
+INSTALLS_SHLIB=		yes
+USE_XLIB=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
+			--x-libraries=${X11BASE}/lib
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-lusbhid"
 
-USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i ""
+USE_REINPLACE=		yes
+REINPLACE_ARGS=		-i ""
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGMESSAGE=		${WRKDIR}/pkg-message
+SUB_FILES=		pkg-message
 
 DOCS=	download.html freeglut.html freeglut_logo.png		\
 	freeglut_user_interface.html index.html ogl_sm.png	\
 	progress.html structure.html
 BINS=	CallbackMaker Fractals Fractals_random Lorenz One shapes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g"	\
-			-e "s|/usr/local|${LOCALBASE}|g"	\
-		${WRKSRC}/aclocal.m4
+.include <bsd.port.pre.mk>
+
+pre-configure:
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/configure
+.endif
 .for fract in /fractals.c _random/fractals_random.c
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g"		\
 		${WRKSRC}/progs/demos/Fractals${fract}
@@ -48,8 +47,6 @@ post-patch:
 post-build:
 	@${MV} ${WRKSRC}/progs/demos/CallbackMaker/.libs/CallbackMaker	\
 		${WRKSRC}/progs/demos/CallbackMaker/.libs/callbackmaker
-	@${CAT} pkg-message | ${SED} 's|%%X11BASE%%|${X11BASE}| ; \
-		s|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -73,4 +70,4 @@ post-install:
 			-e "s|/usr/X11R6|${X11BASE}|"
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
