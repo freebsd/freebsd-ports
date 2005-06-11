@@ -22,6 +22,8 @@ COMMENT=Browser, HTML editor, MUA, news, and IRC client for Linux (unstable)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
+FORBIDDEN=	"multiple suspected security bugs"
+
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
