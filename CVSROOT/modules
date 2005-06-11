@@ -7519,7 +7519,6 @@ p5-File-RsyncP	ports/net/p5-File-RsyncP
 p5-File-Scan	ports/security/p5-File-Scan
 p5-File-Slurp	ports/devel/p5-File-Slurp
 p5-File-Sort	ports/misc/p5-File-Sort
-p5-File-Spec	ports/devel/p5-File-Spec
 p5-File-Sync	ports/devel/p5-File-Sync
 p5-File-Tail	ports/devel/p5-File-Tail
 p5-File-Temp	ports/devel/p5-File-Temp
@@ -8095,6 +8094,7 @@ p5-Parse-Yapp	ports/devel/p5-Parse-Yapp
 p5-ParseLex	ports/devel/p5-ParseLex
 p5-PatchReader	ports/devel/p5-PatchReader
 p5-Path-Class	ports/devel/p5-Path-Class
+p5-PathTools	ports/devel/p5-PathTools
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-Perl6-Export	ports/devel/p5-Perl6-Export
@@ -8116,10 +8116,10 @@ p5-Pod-Coverage	ports/devel/p5-Pod-Coverage
 p5-Pod-DocBook	ports/textproc/p5-Pod-DocBook
 p5-Pod-Escapes	ports/textproc/p5-Pod-Escapes
 p5-Pod-POM	ports/textproc/p5-Pod-POM
+p5-Pod-Parser	ports/textproc/p5-Pod-Parser
 p5-Pod-Simple	ports/textproc/p5-Pod-Simple
 p5-Pod-Stripper	ports/textproc/p5-Pod-Stripper
 p5-Pod-Tree	ports/textproc/p5-Pod-Tree
-p5-PodParser	ports/textproc/p5-PodParser
 p5-PodToHTML	ports/www/p5-PodToHTML
 p5-PostScript-Simple	ports/print/p5-PostScript-Simple
 p5-Prima	ports/x11-toolkits/p5-Prima
