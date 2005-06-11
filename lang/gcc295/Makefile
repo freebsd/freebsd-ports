@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	releases/gcc-2.95.3
 DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_REV}${EXTRACT_SUFX}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection
 
 ONLY_FOR_ARCHS=	alpha i386
