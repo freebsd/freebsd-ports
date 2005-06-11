@@ -65,6 +65,10 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 600028
+BROKEN=		"Does not build on FreeBSD >= 6.0"
+.endif
+
 # XXX: We should build 64-bit flavors on 64-bit platforms, but the
 # 32-bit flavors build there and the 64-bit ones don't.  This probalby
 # needs to be fixed in the globus repo.
