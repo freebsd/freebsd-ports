@@ -28,7 +28,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2 
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnomesystemmonitor \
 		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
 		yelp:${PORTSDIR}/x11/yelp \
-		gdm:${PORTSDIR}/x11/gdm \
+		${X11BASE}/sbin/gdm:${PORTSDIR}/x11/gdm \
 		${X11BASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
 		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnomeaudio2 \
