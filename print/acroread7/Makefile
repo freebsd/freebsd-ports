@@ -10,7 +10,7 @@ PORTVERSION=	7.0.0
 CATEGORIES=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/
-DISTNAME=	AdobeReader_enu-7.0.0-1.i386.rpm
+DISTNAME=	AdobeReader_enu-7.0.0-2.i386.rpm
 EXTRACT_SUFX=
 DIST_SUBDIR=	acroread
 EXTRACT_ONLY=
@@ -23,8 +23,6 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
 		${LINUXBASE}/usr/X11R6/lib/libXext.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
-BROKEN=		Unfetchable
 
 CONFLICTS=	acroread
 
