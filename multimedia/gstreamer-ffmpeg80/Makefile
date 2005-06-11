@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -15,8 +15,6 @@ DISTNAME=	gst-ffmpeg-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
-LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer
-
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -24,6 +22,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
 		gnometarget \
 		gnomeprefix
+USE_GSTREAMER=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
