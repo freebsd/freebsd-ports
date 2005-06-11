@@ -48,6 +48,7 @@
     SUBDIR += qcad-partslib
     SUBDIR += qfsm
     SUBDIR += qmls
+    SUBDIR += qucs
     SUBDIR += sceptre
     SUBDIR += slffea
     SUBDIR += spice
