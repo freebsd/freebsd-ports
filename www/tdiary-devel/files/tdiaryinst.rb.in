@@ -14,7 +14,7 @@ require 'find'
 require 'tempfile'
 
 # 
-$OPT_TDIARYMASTER = "@@@@PREFIX@@@@/share/examples/tdiary"
+$OPT_TDIARYMASTER = "@@@@PREFIX@@@@/share/examples/@@@@TDIARY@@@@"
 $OPT_LANG         = '@@@@LANG@@@@'
 
 module FileUtils16
@@ -215,7 +215,7 @@ class TdiaryInstall
 
   def copyBaseFile
     FileUtils16.cp_r("#{@tdiarymaster}/doc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp_r("#{@tdiarymaster}/erb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
+#   FileUtils16.cp_r("#{@tdiarymaster}/erb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
     FileUtils16.cp_r("#{@tdiarymaster}/misc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
     FileUtils16.cp_r("#{@tdiarymaster}/plugin", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
     FileUtils16.cp_r("#{@tdiarymaster}/skel", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)

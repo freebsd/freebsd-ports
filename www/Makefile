@@ -740,6 +740,7 @@
     SUBDIR += tasks
     SUBDIR += tclhttpd
     SUBDIR += tdiary
+    SUBDIR += tdiary-devel
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += tidy
