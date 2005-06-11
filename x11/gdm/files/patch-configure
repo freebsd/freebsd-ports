@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar  7 20:58:02 2005
-+++ configure	Mon Mar  7 20:59:44 2005
-@@ -21643,6 +21643,8 @@
+--- configure.orig	Sat Jun 11 03:35:18 2005
++++ configure	Sat Jun 11 03:43:21 2005
+@@ -22412,6 +22412,8 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -9,15 +9,16 @@
  $ac_includes_default
  int
  main ()
-@@ -28959,6 +28961,12 @@
-         REBOOT_COMMAND="/sbin/init 6"
+@@ -30210,6 +30212,13 @@
          SUSPEND_COMMAND="/usr/openwin/bin/sys-suspend -n"
+         XSESSION_SHELL=/bin/ksh
          ;;
 +*freebsd*)
 +	GDM_USER_PATH="/bin:/usr/bin"
 +	HALT_COMMAND="/sbin/shutdown -p now;/usr/sbin/shutdown -p now"
 +	REBOOT_COMMAND="/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
 +	SUSPEND_COMMAND="/usr/sbin/zzz"
++	XSESSION_SHELL=/bin/sh
 +	;;
  *)
          GDM_USER_PATH="/bin:/usr/bin"

@@ -1,13 +1,8 @@
-bin/gdm
-bin/gdm-binary
 bin/gdmXnest
 bin/gdmXnestchooser
-bin/gdmchooser
+bin/gdmdynamic
 bin/gdmflexiserver
-bin/gdmgreeter
-bin/gdmlogin
 bin/gdmphotosetup
-bin/gdmsetup
 bin/gdmthemetester
 etc/gdm/Init/Default
 etc/gdm/PostLogin/Default.sample
@@ -28,11 +23,16 @@ etc/gdm/modules/factory-AccessKeyMouseEvents
 lib/gtk-2.0/modules/libdwellmouselistener.so
 lib/gtk-2.0/modules/libkeymouselistener.so
 %%PAM_MISC%%libexec/gdmaskpass
+libexec/gdmchooser
+libexec/gdmlogin
+libexec/gdmgreeter
 libexec/gdmtranslate
+sbin/gdm
+sbin/gdm-binary
 sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdm-stop
-sbin/gdmconfig
+sbin/gdmsetup
 share/gnome/applications/gdmflexiserver-xnest.desktop
 share/gnome/applications/gdmflexiserver.desktop
 share/gnome/applications/gdmsetup.desktop
@@ -115,6 +115,16 @@ share/gnome/pixmaps/gdm.png
 share/gnome/pixmaps/login-photo.png
 share/gnome/pixmaps/nobody.png
 share/gnome/pixmaps/nohost.png
+share/gnome/pixmaps/faces/bonfire.jpg
+share/gnome/pixmaps/faces/cdrom.jpg
+share/gnome/pixmaps/faces/clock.jpg
+share/gnome/pixmaps/faces/daisy.jpg
+share/gnome/pixmaps/faces/dice.jpg
+share/gnome/pixmaps/faces/hollyleaf.jpg
+share/gnome/pixmaps/faces/lamas.jpg
+share/gnome/pixmaps/faces/seal.jpg
+share/gnome/pixmaps/faces/sky.jpg
+share/gnome/pixmaps/faces/skyline.jpg
 share/gnome/xsessions/gnome.desktop
 share/icons/hicolor/16x16/apps/gdm-xnest.png
 share/icons/hicolor/32x32/apps/gdm-setup.png
@@ -162,6 +172,7 @@ share/locale/mn/LC_MESSAGES/gdm.mo
 share/locale/mr/LC_MESSAGES/gdm.mo
 share/locale/ms/LC_MESSAGES/gdm.mo
 share/locale/nb/LC_MESSAGES/gdm.mo
+share/locale/ne/LC_MESSAGES/gdm.mo
 share/locale/nl/LC_MESSAGES/gdm.mo
 share/locale/nn/LC_MESSAGES/gdm.mo
 share/locale/no/LC_MESSAGES/gdm.mo
@@ -219,6 +230,7 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrm share/gnome/gdm/themes
 @dirrm share/gnome/gdm/BuiltInSessions
 @dirrm share/gnome/gdm
+@dirrm share/gnome/pixmaps/faces
 @dirrm etc/pam.d
 @dirrm etc/gdm/modules
 @dirrm etc/gdm/Sessions
