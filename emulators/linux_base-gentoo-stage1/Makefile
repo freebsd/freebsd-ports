@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux_base-gentoo-stage1
-PORTVERSION=	2004.3
+PORTVERSION=	2005.0
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 EXTRACT_ONLY=
@@ -18,8 +18,6 @@ RESTRICTED=	"binaries licensed under GNU GPL without accompanying source"
 
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
 		linux_base-rh* linux_base-suse*
-
-BROKEN=		Incorrect pkg-plist
 
 DIST_SUBDIR=	gentoo-linux
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
@@ -38,11 +36,11 @@ LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
 .endif
 
 .if (${ARCH} == "alpha")
-MASTER_SITE_SUBDIR=	releases/alpha/2004.3/stages
-DISTNAME=	stage1-alpha-2004.3
+MASTER_SITE_SUBDIR=	releases/alpha/${PORTVERSION}/stages
+DISTNAME=	stage1-alpha-${PORTVERSION}
 .elif (${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "ia64")
-MASTER_SITE_SUBDIR=	releases/x86/2004.3/stages/x86
-DISTNAME=		stage1-x86-2004.3
+MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages/x86
+DISTNAME=		stage1-x86-${PORTVERSION}
 .endif
 
 do-extract:
