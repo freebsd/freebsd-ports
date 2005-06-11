@@ -1,42 +1,44 @@
-# New ports collection makefile for:	heyu
-# Date created:		27 December 1999
-# Whom:			plambert@plambert.net
+# New ports collection makefile for:	heyu2
+# Date created:		29 March 2004
+# Whom:			mstowe@chicago.us.mensa.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	heyu
-PORTVERSION=	1.35
-PORTREVISION=	1
+PORTNAME=	heyu2
+PORTVERSION=	2.0.a.5
 CATEGORIES=	misc
-MASTER_SITES=	http://heyu.tanj.com/
-DISTNAME=	x10_heyu
+MASTER_SITES=	http://heyu.tanj.com/heyu2/
+DISTNAME=	heyu2.alpha-5
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	plambert@plambert.net
+MAINTAINER=	mstowe@chicago.us.mensa.org
 COMMENT=	Control a CM11A interface from the command line
 
-IS_INTERACTIVE=	yes
-ALL_TARGET=	heyu
-WRKSRC=		${WRKDIR}/heyu.dir
+#IS_INTERACTIVE=	yes
+ALL_TARGET=	heyu2
+WRKSRC=		${WRKDIR}/heyu2.alpha-5.2.dir
 USE_REINPLACE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	Configure
+CONFIGURE_ARGS=	freebsd
 
-MAN1=		heyu.1 heyuhelper.1
-MAN5=		x10config.5 \
-		x10sched.5
+MAN1=		heyu2.1
+MAN5=		x10config2.5 \
+		x10sched2.5 \
+		x10scripts2.5
 
-do-configure:
-	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
+post-patch:
+	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile.in
 
-pre-patch:
-	(cd ${WRKSRC} && ./Configure freebsd)
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/heyu
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/heyu
-	${INSTALL_DATA} ${WRKSRC}/x10config ${PREFIX}/share/examples/heyu/x10config.sample
-	${INSTALL_DATA} ${WRKSRC}/x10sched.conf.sample ${PREFIX}/share/examples/heyu
-.endif
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/heyu2 ${PREFIX}/bin
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/heyu2.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/x10config2.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/x10sched2.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/x10scripts2.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
