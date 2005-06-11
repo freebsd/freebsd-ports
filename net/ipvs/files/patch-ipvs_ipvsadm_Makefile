@@ -1,0 +1,43 @@
+--- ipvs/ipvsadm/Makefile.orig	Fri May 27 14:10:19 2005
++++ ipvs/ipvsadm/Makefile	Sat Jun 11 12:40:27 2005
+@@ -4,16 +4,13 @@
+ SCHEDULERS = "rr|wrr|lc|wlc|lblc|lblcr|dh|sh|sed|nq"
+ PROGROOT = $(shell basename 'pwd')
+ 
+-CC = gcc
+-CFLAGS = -Wall -Wunused -Wstrict-prototypes -g -O2
++CFLAGS?= -Wall -Wunused -Wstrict-prototypes
+ OBJS = ipvsadm.o dynamic_array.o config_stream.o libipvs.o
+ 
+-SBIN = $(BUILD_ROOT)/sbin
+-MANDIR = usr/share/man
+-MAN = $(BUILD_ROOT)/$(MANDIR)/man8
++SBIN = ${PREFIX}/sbin
++MANDIR = ${MANPREFIX}/man
++MAN = $(MANDIR)/man8
+ INIT = $(BUILD_ROOT)/etc/rc.d/init.d
+-MKDIR = mkdir
+-INSTALL = install
+ 
+ .PHONY = all clean install dist distclean
+ 
+@@ -25,17 +22,14 @@
+ libipvs.o:	libipvs/libipvs.c
+ 
+ install:	ipvsadm
+-	if [ ! -d $(SBIN) ]; then $(MKDIR) -p $(SBIN); fi
++	if [ ! -d $(SBIN) ]; then $(MKDIR) $(SBIN); fi
+ 	$(INSTALL) -m 0755 -s ipvsadm $(SBIN)
+ 	$(INSTALL) -m 0755 ipvsadm-save $(SBIN)
+ 	$(INSTALL) -m 0755 ipvsadm-restore $(SBIN)
+-	[ -d $(MAN) ] || $(MKDIR) -p $(MAN)
++	[ -d $(MAN) ] || $(MKDIR) $(MAN)
+ 	$(INSTALL) -m 0644 ipvsadm.8 $(MAN)
+ 	$(INSTALL) -m 0644 ipvsadm-save.8 $(MAN)
+ 	$(INSTALL) -m 0644 ipvsadm-restore.8 $(MAN)
+-	if [ -d $(INIT) ]; then \
+-	  $(INSTALL) -m 0755 ipvsadm.sh $(INIT)/ipvsadm; \
+-	fi
+  
+ clean:
+ 	rm -f ipvsadm $(NAME).spec $(NAME)-$(VERSION).tar.gz
