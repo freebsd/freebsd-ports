@@ -5565,7 +5565,6 @@ linux-winetools	ports/emulators/linux-winetools
 linux-xmovie		ports/multimedia/linux-xmovie
 linux-ymessenger	ports/net/linux-ymessenger
 linux_base	ports/emulators/linux_base
-linux_base-6	ports/emulators/linux_base-6
 linux_base-8	ports/emulators/linux_base-8
 linux_base-debian	ports/emulators/linux_base-debian
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
@@ -6494,7 +6493,6 @@ netsaint	ports/net-mgmt/netsaint
 netsaint-plugins	ports/net-mgmt/netsaint-plugins
 netscape-remote	ports/www/netscape-remote
 netscape-wrapper	ports/www/netscape-wrapper
-netscape7	ports/www/netscape7
 netscript	ports/net/netscript
 netsed		ports/net/netsed
 netshow		ports/multimedia/netshow
