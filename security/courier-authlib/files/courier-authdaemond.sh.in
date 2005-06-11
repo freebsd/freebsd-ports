@@ -40,7 +40,7 @@ start_cmd="${command} start"
 stop_precmd="echo 'Stopping ${name}.'"
 stop_cmd="${command} stop"
 stop_postcmd="rm -f ${pidfile} ${pidfile}.lock ${socket}"
-restart_cmd="${start_cmd} && ${stop_cmd}"
+restart_cmd="${stop_cmd} && ${start_cmd}"
 required_files="${sysconfdir}/authdaemonrc"
 
 courier_authdaemond_prestart()
