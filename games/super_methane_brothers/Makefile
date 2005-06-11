@@ -19,6 +19,8 @@ COMMENT=	A port of the Amiga platform game of the same name
 LIB_DEPENDS=	clanCore-0.7:${PORTSDIR}/devel/clanlib-devel \
 		mikmod:${PORTSDIR}/audio/libmikmod
 
+BROKEN=		Does not compile
+
 BUILD_WRKSRC=	${WRKSRC}/source/linux
 MAKEFILE=	makefile
 
