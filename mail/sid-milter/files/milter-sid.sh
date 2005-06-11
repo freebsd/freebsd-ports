@@ -9,8 +9,8 @@ fi
 sid_filter_args="-t -r 0"
 case "$1" in
 start)
-	cd /root
 	sh "${0}" wait
+	cd /var/crash
 	rm -f /var/run/sid-filter.pid /var/run/sid-filter
 	%%PREFIX%%/libexec/sid-filter -l -p local:/var/run/sid-filter \
 		-P /var/run/sid-filter.pid ${sid_filter_args}
