@@ -33,7 +33,7 @@ upgrades.
   AUTHOR: netchild@FreeBSD.org
 
   Sylpheed-claws is updated to the GTK2 version now. This results in a new
-  configuration directory. To keep your konfiguration from the GTK1 version
+  configuration directory. To keep your configuration from the GTK1 version
   you can
       cp -rp ~/.sylpheed .sylpheed-gtk2
   before starting the GTK2 version for the first time, or
