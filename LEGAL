@@ -604,6 +604,7 @@ waeiji*.txt		japanese/waeijiro-fpw	The original dictionary is not free
 webcopy-*		www/webcopy		Do not sell for profit
 webfonts/*		x11-fonts/webfonts	Restrictive copyright
 webglimpse-*.src.tar.gz	www/webglimpse		Depends on glimpse
+wgetpro*		ftp/wgetpro		U.S. Patent 6,041,345
 win32/*			multimedia/win32-codecs	Licensing status of the
 						codecs is unknown
 xbarcode-*.tar.gz	graphics/xbarcode	Must not be sold
