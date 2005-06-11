@@ -7,7 +7,7 @@
 
 PORTNAME=	ignorance
 PORTVERSION=	1.3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://bard.sytes.net/ignorance/
 PKGNAMEPREFIX=	gaim-
