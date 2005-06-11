@@ -38,6 +38,22 @@ LDFLAGS=	-L${LOCALBASE}/lib -liconv
 CONFIGURE_ARGS+=	--disable-utf8
 .endif
 
+.if defined(WITHOUT_P2P)
+CONFIGURE_ARGS+=	--disable-peer2peer
+.endif
+
+.if defined(WITHOUT_P2P) || defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+.if defined(WITHOUT_TCL)
+CONFIGURE_ARGS+=	--disable-tcl
+.endif
+
+.if defined(WITHOUT_REMOTE)
+CONFIGURE_ARGS+=	--disable-remote
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/micq.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/micqrc.5 ${MANPREFIX}/man/man5
