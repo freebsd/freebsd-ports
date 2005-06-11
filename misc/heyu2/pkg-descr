@@ -1,12 +1,9 @@
 The CM11A is a device built by the X10 company for controlling
 devices by sending signals through the power lines. It's a small
 box that plugs into an AC outlet and connects to a serial port.
-The CM11A is shipped with Windows software.  Heyu will control your
-X10 devices, set the cm11a interface clock and monitor x10 signals
+The CM11A is shipped with Windows software.  Heyu2 will control your
+X10 devices, set the CM11A interface clock and monitor X10 signals
 on the AC power lines. It will upload macros and timers to your
 CM11A for stand-alone execution.
 
-WWW: http://www.prado.com/~dbs/
-
-- plambert
-plambert@plambert.net
+WWW: http://heyu.tanj.com/heyu2/
