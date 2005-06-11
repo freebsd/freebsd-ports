@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.6.0.9
-PORTREVISION=	2
+PORTVERSION=	2.8.0.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.6
+MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -31,8 +30,6 @@ GDMDIR?=	${PREFIX}/etc/gdm
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		gdm.1
-
-PLIST_SUB=	VERSION="2.6"
 
 OPTIONS=	IPV6 "Enable IPv6 support (This disables IPv4 support)" off
 

@@ -11,9 +11,9 @@ gdm_enable=${gdm_enable-"NO"}
 
 name=gdm
 rcvar=`set_rcvar`
-command="%%PREFIX%%/bin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
-procname="%%PREFIX%%/bin/gdm-binary"
+procname="%%PREFIX%%/sbin/gdm-binary"
 
 load_rc_config ${name}
 run_rc_command "$1"
