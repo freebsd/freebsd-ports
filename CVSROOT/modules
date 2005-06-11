@@ -12683,6 +12683,7 @@ xmms-midi	ports/audio/xmms-midi
 xmms-mp3cue	ports/audio/xmms-mp3cue
 xmms-musepack	ports/audio/xmms-musepack
 xmms-nebulus	ports/graphics/xmms-nebulus
+xmms-openspc	ports/audio/xmms-openspc
 xmms-osssurround	ports/audio/xmms-osssurround
 xmms-paranormal	ports/graphics/xmms-paranormal
 xmms-pipe	ports/audio/xmms-pipe
