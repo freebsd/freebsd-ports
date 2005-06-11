@@ -527,6 +527,7 @@
     SUBDIR += xmms-midi
     SUBDIR += xmms-mp3cue
     SUBDIR += xmms-musepack
+    SUBDIR += xmms-openspc
     SUBDIR += xmms-osssurround
     SUBDIR += xmms-pipe
     SUBDIR += xmms-quix3dn
