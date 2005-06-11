@@ -14,6 +14,8 @@ DISTNAME=	radius-${PORTVERSION}
 MAINTAINER=	vsevolod@highsecure.ru
 COMMENT=	GNU RADIUS server
 
+BROKEN=		Incomplete pkg-plist
+
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
 USE_RC_SUBR=	yes
 USE_SUBMAKE=	yes
