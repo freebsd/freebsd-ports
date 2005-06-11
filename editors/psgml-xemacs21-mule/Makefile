@@ -8,6 +8,8 @@
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A major mode for editing SGML and XML documents for XEmacs with Mule
 
+IGNORE=		hangs during build
+
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../psgml
 
