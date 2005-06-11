@@ -7,6 +7,7 @@
 
 PORTNAME=	RPC-XML
 PORTVERSION=	0.57
+PORTREVISION=	1
 CATEGORIES=	net www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RPC
@@ -16,6 +17,7 @@ MAINTAINER=	martin@matuska.org
 COMMENT=	XML-RPC client and server library for Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -33,10 +35,4 @@ MAN3=		Apache::RPC::Server.3 \
 		RPC::XML::Procedure.3 \
 		RPC::XML::Server.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif # ${PERL_LEVEL} < 500601
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

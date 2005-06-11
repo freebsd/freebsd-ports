@@ -17,7 +17,6 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl/Pollution/Portability
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		Devel::PPPort.3
 

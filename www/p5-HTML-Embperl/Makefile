@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML-Embperl
 PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -19,6 +19,7 @@ COMMENT=	A module to allow embedded perl in HTML documents
 .if !defined(WITHOUT_APACHE)
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session
 #		${SITE_PERL}/Apache/SessionX.pm:${PORTSDIR}/www/p5-Apache-SessionX
 .endif
@@ -34,7 +35,6 @@ CONFIGURE_ENV=	NOAPACHE=true
 
 INSTALL_TARGET=	pure_install
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::Embperl.3 HTML::Embperl::Faq.3 HTML::Embperl::Changes.3 \
 		HTML::Embperl::FeaturesD.3 HTML::Embperl::TipsAndTricks.3 \
 		HTML::Embperl::Intro.3 HTML::Embperl::Session.3 HTML::Embperl::Mail.3 \
@@ -47,8 +47,6 @@ MAN1=		embpexec.pl.1
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 BROKEN=		Incorrect pkg-plist
 .endif
 

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.1.18
-#PORTREVISION=	0
+PORTVERSION=	2.1.18
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -20,10 +20,12 @@ PATCHFILES=	${PORTNAME}-2.1.16-ipv6-20031121.diff.gz
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^1].*
-
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
+
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^1].*
 
 LATEST_LINK=	${PORTNAME}2
 
@@ -114,13 +116,6 @@ DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
-.endif
 
 pre-everything::
 .if !defined(WITH_BDB_VER)

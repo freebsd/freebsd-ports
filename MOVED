@@ -1516,3 +1516,5 @@ databases/jdbc-oracle816|databases/jdbc-oracle8i|2005-06-05|Obsolete version
 ftp/wget-devel|ftp/wget|2005-06-10|stable version caught up with -devel
 emulators/linux_base-6||2005-06-10|security bugs
 www/netscape7||2005-06-10|security bugs
+devel/p5-File-Spec|devel/p5-PathTools|2005-06-11|module was merged with Cwd and renamed
+textproc/p5-PodParser|textproc/p5-Pod-Parser|2005-06-11|module was renamed

@@ -7,6 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
@@ -21,7 +22,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
 
 RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

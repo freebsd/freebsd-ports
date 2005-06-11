@@ -7,6 +7,7 @@
 
 PORTNAME=	Bundle-Sledge
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bundle
@@ -18,6 +19,8 @@ COMMENT=	A bundle to install all modules used for Sledge
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
 
+PM_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 PM_DEPENDS+=	${SITE_PERL}/Apache/Reload.pm:${PORTSDIR}/www/p5-Apache-Reload
 PM_DEPENDS+=	${SITE_PERL}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline
@@ -48,14 +51,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Bundle::Sledge.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500601
-PM_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-PM_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

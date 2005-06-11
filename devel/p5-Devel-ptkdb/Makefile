@@ -18,7 +18,6 @@ COMMENT=	Tk debugger for Perl
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Devel::ptkdb.3
 

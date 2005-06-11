@@ -335,10 +335,10 @@
     SUBDIR += p5-Pod-DocBook
     SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-POM
+    SUBDIR += p5-Pod-Parser
     SUBDIR += p5-Pod-Simple
     SUBDIR += p5-Pod-Stripper
     SUBDIR += p5-Pod-Tree
-    SUBDIR += p5-PodParser
     SUBDIR += p5-RADIUS-UserFile
     SUBDIR += p5-RDF-Core
     SUBDIR += p5-RDF-Notation3

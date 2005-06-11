@@ -7,7 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	2.661
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/
 .if defined(WITH_OLD_DISTFILE)
@@ -77,7 +77,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 .endif
 .if ${PERL_LEVEL} < 500601
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
 .endif
 
 pre-everything::

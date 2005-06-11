@@ -28,12 +28,12 @@ BROKEN=		"Currently does not support -CURRENT"
 .endif
 
 .if ${OSVERSION} <  450000
-IGNORE=		"Not supported on systems prior to 4.5"
+IGNORE=		Not supported on systems prior to 4.5
 .endif
 
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		"This port requires kernel sources"
+IGNORE=		This port requires kernel sources
 .endif
 
 post-install:

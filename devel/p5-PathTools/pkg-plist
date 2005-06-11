@@ -1,14 +1,16 @@
-%%SITE_PERL%%/File/Spec.pm
-%%SITE_PERL%%/File/Spec/Cygwin.pm
-%%SITE_PERL%%/File/Spec/Epoc.pm
-%%SITE_PERL%%/File/Spec/Functions.pm
-%%SITE_PERL%%/File/Spec/Mac.pm
-%%SITE_PERL%%/File/Spec/OS2.pm
-%%SITE_PERL%%/File/Spec/Unix.pm
-%%SITE_PERL%%/File/Spec/VMS.pm
-%%SITE_PERL%%/File/Spec/Win32.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Spec/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Spec
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
-@dirrm %%SITE_PERL%%/File/Spec
-@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cwd/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Cwd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/Cygwin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/Epoc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/Functions.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/Mac.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/OS2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/Unix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/VMS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/Win32.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cwd/Cwd.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cwd/Cwd.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/File/Spec
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cwd
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/File 2>/dev/null || true

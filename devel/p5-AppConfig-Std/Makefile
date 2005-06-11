@@ -7,6 +7,7 @@
 
 PORTNAME=	AppConfig-Std
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	AppConfig
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A subclass of AppConfig that provides standard options
 
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

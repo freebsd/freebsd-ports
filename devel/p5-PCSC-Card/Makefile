@@ -26,7 +26,6 @@ IGNORE=		Requires perl-5.6.0 or better to build correctly
 .endif
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
 
 MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3

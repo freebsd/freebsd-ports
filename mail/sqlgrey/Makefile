@@ -7,7 +7,7 @@
 
 PORTNAME=	sqlgrey
 PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	Greylisting policy server for Postfix using an SQL backend
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/pg.pm:${PORTSDIR}/databases/p5-DBD-Pg

@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Reporter
 PORTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -15,7 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Sends test results to cpan-testers@perl.org
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -26,16 +29,4 @@ MAN3=		Test::Reporter.3 \
 		Test::Reporter::Mail::Util.3 \
 		Test::Reporter::Time::Zone.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-.if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${FILESDIR}/500503-Test::Reporter.pm
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

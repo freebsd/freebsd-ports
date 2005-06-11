@@ -7,6 +7,7 @@
 
 PORTNAME=	Locale-Maketext-Lexicon
 PORTVERSION=	0.49
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -16,7 +17,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Use other catalog formats in Locale::Maketext
 
 BUILD_DEPENDS=	${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Mechanize
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -40,7 +41,7 @@ post-install:
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 .if ${PERL_LEVEL} < 500601
 IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
 .endif

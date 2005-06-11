@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.2.12
-#PORTREVISION=	0
+PORTVERSION=	2.2.12
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -17,6 +17,8 @@ MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
 
@@ -246,13 +248,6 @@ CONFS=		cmu-frontend.conf prefork.conf cmu-backend.conf normal.conf \
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
-.endif
 
 post-patch:
 		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \

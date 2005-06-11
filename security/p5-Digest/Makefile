@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	INSTALLDIRS="site"
 
 MAN3=		Digest.3 Digest::base.3 Digest::file.3
 

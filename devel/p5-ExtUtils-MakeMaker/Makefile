@@ -17,7 +17,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Designed to write a Makefile for an extension module
 
 PERL_CONFIGURE=	YES
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN1=	instmodsh.1
 MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \

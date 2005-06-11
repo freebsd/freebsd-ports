@@ -21,7 +21,6 @@ MAN3=		ExtUtils::Constant.3 ExtUtils::Constant::Base.3 \
 		ExtUtils::Constant::Utils.3 ExtUtils::Constant::XS.3
 
 post-patch:
-	@${PERL} -pi -e 's!^(\s+INSTALLDIRS\s+=>\s+).*$$!$$1"site",!' \
-		${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

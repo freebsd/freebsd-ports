@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Class::Fields.3 Class::Fields::Attribs.3 \
 		Class::Fields::Fuxor.3 Class::Fields::Inherit.3 private.3 \

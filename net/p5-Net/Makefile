@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site < /dev/null
+CONFIGURE_ARGS=	< /dev/null
 
 MAN3=		Net::Cmd.3 \
 		Net::Config.3 \

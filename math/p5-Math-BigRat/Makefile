@@ -23,6 +23,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Math::BigRat.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m/INSTALLDIRS/;' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

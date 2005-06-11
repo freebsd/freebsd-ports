@@ -16,7 +16,6 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Persistency for perl data structures
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS= INSTALLDIRS=site
 
 MAN3=		Storable.3
 

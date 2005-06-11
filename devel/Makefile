@@ -879,7 +879,6 @@
     SUBDIR += p5-File-ReadBackwards
     SUBDIR += p5-File-Remove
     SUBDIR += p5-File-Slurp
-    SUBDIR += p5-File-Spec
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Temp
@@ -1012,6 +1011,7 @@
     SUBDIR += p5-Parse-Yapp
     SUBDIR += p5-ParseLex
     SUBDIR += p5-PatchReader
+    SUBDIR += p5-PathTools
     SUBDIR += p5-Path-Class
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
