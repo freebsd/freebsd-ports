@@ -23,6 +23,8 @@ COMMENT=	Unix MIDI Plugin based on TiMidity++
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 
+BROKEN=		Unfetchable
+
 BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2:timidity
 ZDIST=		unix-sdk-3.0b5.tar.Z:plugin ump_with_volume.tar.Z:ump timdiffs.tar.Z:ump
 
