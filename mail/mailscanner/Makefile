@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.42.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -16,6 +17,8 @@ COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 BUILD_DEPENDS=	\
 	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
+	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 	${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
@@ -52,14 +55,6 @@ MLINKS=		MailScanner.8 mailscanner.8 \
 		MailScanner.conf.5 mailscanner.conf.5
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-.endif
 
 DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \

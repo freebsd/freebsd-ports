@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		ExtUtils::XSBuilder.3 ExtUtils::XSBuilder::PODTemplate.3 \
 		ExtUtils::xsbuilder.osc2002.3

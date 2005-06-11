@@ -8,15 +8,15 @@
 PORTNAME=	libapreq
 PORTVERSION=	1.33
 CATEGORIES=	www perl5 devel
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=     Apache
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache Request Library
 
 .if defined(WITH_MODPERL2)
-IGNORE=		"This port does not support mod_perl2"
+IGNORE=		This port does not support mod_perl2
 .else
 RUN_DEPENDS?=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 BUILD_DEPENDS=	${RUN_DEPENDS} \

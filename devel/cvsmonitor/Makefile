@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsmonitor
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Monitor activity on a CVS Repository
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/Time/Duration.pm:${PORTSDIR}/devel/p5-Time-Duration \
 		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/Class/Default.pm:${PORTSDIR}/devel/p5-Class-Default \

@@ -7,6 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	1.40
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL}/BER.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 
 IGNORE=	only works with old versions (1.0.x) of net/rrdtool

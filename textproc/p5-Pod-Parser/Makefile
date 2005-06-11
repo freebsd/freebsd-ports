@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	PodParser
-PORTVERSION=	1.28
-PORTREVISION=	2
+PORTNAME=	Pod-Parser
+PORTVERSION=	1.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -16,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Modules to work with POD (Plain Old Documentation)
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS="site"
 
 MAN1=		pod2usage.1 podchecker.1 podselect.1
 MAN3=		Pod::Checker.3 Pod::Find.3 Pod::InputObjects.3 \

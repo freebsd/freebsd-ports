@@ -16,7 +16,6 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Math::BigInt - Arbitrary size integer math package
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Math::BigFloat.3 \
 		Math::BigInt.3 \

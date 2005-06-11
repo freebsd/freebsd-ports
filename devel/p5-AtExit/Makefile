@@ -16,7 +16,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	AtExit - Perform exit processing for a program or object
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		AtExit.3
 

@@ -4,4 +4,4 @@ the contents of a file, or Perl's file handles), such as concatenating
 several directory and file names into a single path, or determining
 whether a path is rooted.
 
-WWW: http://search.cpan.org/dist/File-Spec/
+WWW: http://search.cpan.org/dist/PathTools/

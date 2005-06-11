@@ -16,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Log various bits of per-request data
 
 .if defined(WITH_MODPERL2)
-IGNORE=		"This port does not support mod_perl2"
+IGNORE=		This port does not support mod_perl2
 .else
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 BUILD_DEPENDS=	${RUN_DEPENDS}

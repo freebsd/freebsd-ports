@@ -17,7 +17,6 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A perl5 module implementing High resolution time, sleep, and alarm
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS= INSTALLDIRS=site
 
 MAN3=		Time::HiRes.3
 

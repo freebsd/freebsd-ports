@@ -7,6 +7,7 @@
 
 PORTNAME=	Bundle-Slash
 PORTVERSION=	2.32
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bundle
@@ -16,6 +17,7 @@ MAINTAINER=	autrijus@autrijus.org
 COMMENT=	A bundle to install all modules used for Slash
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
@@ -59,10 +61,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Bundle::Slash.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

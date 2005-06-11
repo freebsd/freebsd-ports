@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Harness
 PORTVERSION=	2.42
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -25,7 +26,7 @@ MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 

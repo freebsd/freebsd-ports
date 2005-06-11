@@ -16,7 +16,6 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Efficiently compute time from local and GMT time
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Time::Local.3
 

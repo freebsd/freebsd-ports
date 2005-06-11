@@ -16,7 +16,6 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Provide a pseudo-class NEXT (et al) that allows method redispatch
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		NEXT.3
 

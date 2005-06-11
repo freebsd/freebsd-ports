@@ -16,7 +16,6 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Functions for dealing with RFC-1766-style language tags
 
 PERL_CONFIGURE=	YES
-CONFIGURE_ARGS+=INSTALLDIRS=site
 
 MAN3=		I18N::LangTags.3 I18N::LangTags::Detect.3 I18N::LangTags::List.3
 

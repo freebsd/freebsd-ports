@@ -7,7 +7,7 @@
 
 PORTNAME=	SQL-Translator
 PORTVERSION=	0.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
@@ -17,11 +17,12 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Manipulate structured data definitions (SQL and more)
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Base.pm:${PORTSDIR}/devel/p5-Class-Base \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/Text/RecordParser.pm:${PORTSDIR}/textproc/p5-Text-RecordParser \
@@ -90,8 +91,7 @@ MAN3=		SQL::Translator.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
-		${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO
 EXTRA_PATCHES+=	${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Parser::xSV.pm \
 		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::Diagram.pm \
 		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::GraphViz.pm \

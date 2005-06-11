@@ -17,7 +17,6 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl5 interface to the MD4 message digest algorithm
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		Digest::MD4.3
 

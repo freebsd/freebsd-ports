@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI.pm
 PORTVERSION=	3.10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -16,8 +17,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Simple Common Gateway Interface Class for Perl
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		CGI.3 CGI::Apache.3 CGI::Carp.3 CGI::Cookie.3 \
 		CGI::Fast.3 CGI::Pretty.3 CGI::Push.3 CGI::Switch.3 \
@@ -41,15 +44,7 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-
 post-patch:
-	@${PERL} -i -pe '$$_ = "" if /require 5\.6/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/require 5\.6/d; /INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
 
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

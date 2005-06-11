@@ -7,6 +7,7 @@
 
 PORTNAME=	ldapsh
 PORTVERSION=	2.00
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -37,7 +38,7 @@ PERL_CONFIGURE=	yes
 .if ${PERL_LEVEL} > 500600
 MAN3+=		Net::LDAP::Config.3
 .else
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 .endif
 
 post-patch:

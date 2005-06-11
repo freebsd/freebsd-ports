@@ -9,4 +9,4 @@ Set of modules:
 * Pod::ParseUtils - helpers for POD parsing and conversion
 * Pod::Find - find POD documents in directory trees
 
-WWW: http://search.cpan.org/dist/PodParser/
+WWW: http://search.cpan.org/dist/Pod-Parser/

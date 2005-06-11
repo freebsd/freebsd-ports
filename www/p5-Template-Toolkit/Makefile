@@ -7,6 +7,7 @@
 
 PORTNAME=	Template-Toolkit
 PORTVERSION=	2.14
+PORTREVISION=	2
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
@@ -15,7 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensive Toolkit for template processing
 
-BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=TEXT_AUTOFORMAT "With Text::Autoformat Plugin"		off \
@@ -39,13 +42,6 @@ CONFIGURE_ARGS+=	TT_DBI=n TT_ACCEPT=y
 MASTER_SITE_BACKUP+=	http://www.template-toolkit.org/download/
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-.endif
 
 .if defined(WITH_TEXT_AUTOFORMAT)
 BUILD_DEPENDS+=${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat

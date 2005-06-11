@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML-Mason
 PORTVERSION=	1.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -17,6 +17,7 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	High-performance, dynamic web site authoring system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache
@@ -60,10 +61,6 @@ MAN3=		Bundle::HTML::Mason.3 \
 OPTIONS=	MOD_PERL "with mod_perl dependency" off
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
 
 .if defined(WITH_MOD_PERL)
 .if defined(WITH_APACHE2)

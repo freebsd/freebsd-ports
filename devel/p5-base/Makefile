@@ -16,7 +16,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Set of modules to operate with inheritance and class fields at runtime
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		base.3 fields.3
 

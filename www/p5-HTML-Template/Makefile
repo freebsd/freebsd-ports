@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Template
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -15,22 +16,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module to use HTML Templates from CGI scripts
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Template.3
 
-post-patch:
-	${PERL} -i -pe 's@%%PERL_INC%%@${SITE_PERL}@' ${WRKSRC}/Template.pm
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 && !exists(${SITE_PERL}/File/Spec.pm)
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-.if ${PERL_LEVEL} < 500800 && !exists(${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

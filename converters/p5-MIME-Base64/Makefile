@@ -16,7 +16,6 @@ MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Perl5 module for Base64 and Quoted-Printable encodings
 
 PERL_CONFIGURE=	YES
-CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		MIME::Base64.3 \
 		MIME::QuotedPrint.3

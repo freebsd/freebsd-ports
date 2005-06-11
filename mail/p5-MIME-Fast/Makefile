@@ -28,7 +28,7 @@ MAN3=		MIME::Fast.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	"Perl 5.8 or newer required. Install lang/perl5.8 and try again."
+IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
 .endif
 
 .include <bsd.port.post.mk>

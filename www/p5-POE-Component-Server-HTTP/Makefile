@@ -7,6 +7,7 @@
 
 PORTNAME=	POE-Component-Server-HTTP
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	www devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -18,7 +19,7 @@ COMMENT=	POE Component to create HTTP Servers
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/POE/API/Peek.pm:${PORTSDIR}/devel/p5-POE-API-Peek \
-		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/HTTP/Status.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}

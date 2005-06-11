@@ -17,7 +17,6 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Helps to test various Test::Builder derivatives
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLDIRS=site
 INSTALL_TARGET=	pure_install
 
 MAN3=		Test::Tester.3 Test::Tester::Capture.3 \

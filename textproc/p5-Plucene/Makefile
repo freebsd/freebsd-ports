@@ -7,6 +7,7 @@
 
 PORTNAME=	Plucene
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TM/TMTM
@@ -17,7 +18,7 @@ COMMENT=	Perl port of the Java Lucene search engine
 
 BUILD_DEPENDS=	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
 		${SITE_PERL}/Tie/Array/Sorted.pm:${PORTSDIR}/devel/p5-Tie-Array-Sorted \
-		${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
 		${SITE_PERL}/Class/Virtual.pm:${PORTSDIR}/devel/p5-Class-Virtual \
@@ -104,7 +105,7 @@ MAN3=	Plucene.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	"This port requires perl 5.6 or above."
+IGNORE=	This port requires perl 5.6 or above.
 .endif
 
 .include <bsd.port.post.mk>
