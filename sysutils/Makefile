@@ -472,6 +472,7 @@
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += tmpwatch
+    SUBDIR += topless
     SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tree

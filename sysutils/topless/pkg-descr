@@ -1,0 +1,9 @@
+TOPLESS reads various command output, displays it on the whole screen
+(like "less"), and periodically updates it like "top".
+
+TOPLESS can be used with almost every sort of command,
+but is particularly useful when used with the command
+to monitor the system, such as "ps", "netstat" or "fstat".
+
+Author:	Daichi GOTO <daichi@FreeBSD.org>
+WWW:	http://people.freebsd.org/~daichi/
