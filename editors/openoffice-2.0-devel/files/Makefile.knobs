@@ -68,6 +68,7 @@ pre-fetch:
 	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
 	@${ECHO} "OOo debug support."
 .endif
+#XXX currently broken
 #.if !defined(WITHOUT_MOZILLA)
 #	@${ECHO}
 #	@${ECHO} "You can compile OOo without Mozilla connectivity by"
@@ -82,11 +83,13 @@ pre-fetch:
 	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
 	@${ECHO} "See http://www.freetype.org/patents.html for details"
 .endif
-.if !defined(WITHOUT_JAVA)
-	@${ECHO}
-	@${ECHO} "You can compile OOo without Java support by"
-	@${ECHO} "make -DWITHOUT_JAVA"
-.endif
+#XXX currently broken
+#.if !defined(WITHOUT_JAVA)
+#	@${ECHO}
+#	@${ECHO} "You can compile OOo without Java support by"
+#	@${ECHO} "make -DWITHOUT_JAVA"
+#.endif
+#XXX currently broken
 #.if !defined(WITH_CUPS)
 #	@${ECHO}
 #	@${ECHO} "You can compile OOo with CUPS support by"

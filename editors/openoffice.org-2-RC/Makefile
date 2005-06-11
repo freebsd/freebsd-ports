@@ -48,8 +48,8 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		107
-SNAPDATE=		20050521
+MILESTONE=		109
+SNAPDATE=		20050611
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -83,11 +83,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison-devel:${PORTSDIR}/devel/bison-devel
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		IDL-2.0:${PORTSDIR}/devel/libIDL
+LIB_DEPENDS+=	IDL-2.0:${PORTSDIR}/devel/libIDL
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
@@ -95,6 +91,7 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 
 GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=259
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
