@@ -11607,6 +11607,7 @@ tomboy		ports/deskutils/tomboy
 tome		ports/games/tome
 toolame		ports/audio/toolame
 topaz		ports/math/topaz
+topless		ports/sysutils/topless
 toppler		ports/games/toppler
 tor		ports/security/tor
 torcs		ports/games/torcs
