@@ -15,11 +15,11 @@ echo "browser deflenus langenus psm regus xpcom" > /tmp/checklist.tmp.$$;
 	--checklist "\n\
 Choose which components of Mozilla to download and install. \n\
 Press the space bar to toggle selections." -1 -1 6 \
-"chatzilla"	"IRC client (160 kB)"					ON \
-"inspector"	"DOM inspector (124 kB)"				ON \
-"mail"		"mail and news client (1920 kB)"			ON \
-"spellcheck"	"Spelling checker for mail and news (304 kB)"		ON \
-"venkman"	"JavaScript debugger (224 kB)"				ON \
+"chatzilla"	"IRC client (164 kB)"					ON \
+"inspector"	"DOM inspector (128 kB)"				ON \
+"mail"		"mail and news client (1896 kB)"			ON \
+"spellcheck"	"Spelling checker for mail and news (280 kB)"		ON \
+"venkman"	"JavaScript debugger (212 kB)"				ON \
 2>> /tmp/checklist.tmp.$$
 
 retval=$?
