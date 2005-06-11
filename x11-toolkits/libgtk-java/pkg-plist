@@ -686,7 +686,6 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/treestore/TreeStoreExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/uimanager/UIManagerExample.java
 %%JAVAJARDIR%%/gtk%%GTK_API_VERSION%%.jar
-@unexec rmdir %B 2>/dev/null || true
 share/%%PORTNAME%%/macros/ac_prog_jar.m4
 share/%%PORTNAME%%/macros/ac_prog_javac.m4
 share/%%PORTNAME%%/macros/ac_prog_javac_works.m4
