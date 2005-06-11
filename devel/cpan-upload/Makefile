@@ -15,7 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Script for uploading distributions to CPAN
 
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig/Std.pm:${PORTSDIR}/devel/p5-AppConfig-Std \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
