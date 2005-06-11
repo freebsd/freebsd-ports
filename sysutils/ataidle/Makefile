@@ -31,4 +31,8 @@ do-install:
 IGNORE=		"requires ATAng, available in 5.1-CURRENT or newer"
 .endif
 
+.if ${OSVERSION} > 600028
+BROKEN=		"Does not compile on FreeBSD >= 6.0"
+.endif
+
 .include <bsd.port.post.mk>
