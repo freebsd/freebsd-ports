@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	foomatic-db
-PORTVERSION=	20040107
-PORTREVISION=	2
+PORTVERSION=	20050309
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 NO_CHECKSUM=	${DISTFILES}
@@ -21,14 +20,16 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
-USE_AUTOCONF_VER=	253
+WANT_AUTOMAKE_VER=	15
+USE_AUTOCONF_VER=	259
 
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 CVS_CMD?=	cvs -z3
 CVS_DATE=	${PORTVERSION}
-CVS_SITES?=	pserver:anonymous@cvs.linuxprinting.org:/usr/local/cvs
+CVS_SITES?=	pserver:anonymous@cvs.linuxprinting.org:/var/lib/cvs
+CVS_BRANCH=	foomatic-3_0-branch	# STABLE
 CVS_MODULE=	foomatic-db
 
 #
@@ -41,7 +42,7 @@ do-fetch:
 		cd ${DISTDIR}/${DISTNAME}; \
 		for CVS_SITE in ${CVS_SITES}; do \
 			${ECHO_MSG} ">> Attempting to check out from $${CVS_SITE}."; \
-			if ${CVS_CMD} -d:$${CVS_SITE} co -D "${CVS_DATE}" ${CVS_MODULE}; \
+			if ${CVS_CMD} -d:$${CVS_SITE} co -D "${CVS_DATE}" -r ${CVS_BRANCH} ${CVS_MODULE}; \
 			    then \
 				cd ${DISTDIR}; \
 				${ECHO_MSG} ">> Creating dist tarball in ${DISTDIR}"; \
@@ -62,6 +63,7 @@ do-fetch:
 	fi
 
 pre-configure:
-	@cd ${WRKSRC} && ./make_configure
+	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOCONF}
+		
 
 .include <bsd.port.post.mk>
