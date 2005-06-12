@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		unmakeself
-PORTVERSION=		0.99
+PORTVERSION=		1.0
 CATEGORIES=		archivers
 DISTFILES=
 
@@ -32,7 +32,6 @@ do-build:
 		${FILESDIR}/unmakeself.c ${LDFLAGS}
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/unmakeself ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
