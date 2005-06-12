@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
-MASTER_SITE_SUBDIR=	ahze
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ahze@FreeBSD.org
