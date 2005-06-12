@@ -1,2 +1,5 @@
+%%PAD%%bin/pad-join
+%%PAD%%bin/pad-make-script
+%%PAD%%bin/pad-make-binary
 bin/webjob
 etc/webjob.cfg.sample

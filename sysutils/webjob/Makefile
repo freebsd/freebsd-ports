@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		webjob
-PORTVERSION=		1.4.0
-PORTREVISION=		1
+PORTVERSION=		1.5.0
 CATEGORIES=		sysutils security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	webjob
@@ -18,6 +17,13 @@ COMMENT=		Download and execute a program over HTTP/HTTPS
 
 GNU_CONFIGURE=		YES
 
+.if defined(WITHOUT_PAD)
+PLIST_SUB+=		PAD="@comment "
+.else
+PLIST_SUB+=		PAD=""
+CONFIGURE_ARGS+=	--with-pad-tools
+.endif
+
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--without-ssl
 .else
@@ -25,9 +31,7 @@ USE_OPENSSL=		YES
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-.if defined(NO_STATIC)
-CFLAGS+=
-.else
+.if !defined(NO_STATIC)
 CFLAGS+=		-static
 .endif
 
