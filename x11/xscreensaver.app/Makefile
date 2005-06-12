@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.asleep.net/download/
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	WindowMaker dockapp to control XScreenSaver
 
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 PLIST_FILES=	bin/XScreenSaver.App
 USE_X_PREFIX=	yes

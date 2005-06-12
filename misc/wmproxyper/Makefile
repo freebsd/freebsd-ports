@@ -15,7 +15,7 @@ DISTNAME=	WMProxyPer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays Distributed.net Personal Proxy current status and progress
 
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 PLIST_FILES=	bin/wmproxyper
 USE_GMAKE=	yes
