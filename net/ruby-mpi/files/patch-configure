@@ -1,0 +1,20 @@
+--- configure-orig	Sun Apr 24 22:32:31 2005
++++ configure	Sun Apr 24 22:32:47 2005
+@@ -2778,7 +2778,7 @@
+ 	{ echo "$as_me:$LINENO: WARNING: Could not find Config Ruby module.  Assuming CFLAGS and LIBS for Ruby are in standard path..." >&5
+ echo "$as_me: WARNING: Could not find Config Ruby module.  Assuming CFLAGS and LIBS for Ruby are in standard path..." >&2;}
+ 	RUBY_CFLAGS=""
+-	RUBY_LIBS="-lruby"
++	RUBY_LIBS="-lruby18"
+ else
+ 	echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+@@ -2792,7 +2792,7 @@
+ 	echo "$as_me:$LINENO: checking ruby LIBS" >&5
+ echo $ECHO_N "checking ruby LIBS... $ECHO_C" >&6
+ 	RB_LIB_DIR=`$RUBY -e 'require "rbconfig"; puts Config::CONFIG["libdir"]'`
+-	RUBY_LIBS="-lruby -L$RB_LIB_DIR"
++	RUBY_LIBS="-lruby18 -L$RB_LIB_DIR"
+ 	echo "$as_me:$LINENO: result: $RUBY_LIBS" >&5
+ echo "${ECHO_T}$RUBY_LIBS" >&6
+ fi
