@@ -3849,6 +3849,7 @@ irchat-pj-emacs21	ports/irc/irchat-pj-emacs21
 irchat-pj-xemacs21-mule	ports/irc/irchat-pj-xemacs21-mule
 ircproxy	ports/irc/ircproxy
 ircservices	ports/irc/ircservices
+ireport		ports/devel/ireport
 irit		ports/graphics/irit
 iroffer		ports/irc/iroffer
 ironpython	ports/lang/ironpython
