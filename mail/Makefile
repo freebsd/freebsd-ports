@@ -369,6 +369,7 @@
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postfix-gps
+    SUBDIR += postfix-gps-devel
     SUBDIR += postfix-policyd-spf
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix1
