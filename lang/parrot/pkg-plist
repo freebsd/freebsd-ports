@@ -19,7 +19,6 @@ parrot/docs/intro.pod
 parrot/docs/jit.pod
 parrot/docs/memory_internals.pod
 parrot/docs/mmd.pod
-parrot/docs/nanoparrot.c
 parrot/docs/native_exec.pod
 parrot/docs/overview.pod
 parrot/docs/parrot.pod
@@ -35,6 +34,7 @@ parrot/docs/vtables.pod
 parrot/docs/dev/byteorder.dev
 parrot/docs/dev/jit_i386.dev
 parrot/docs/dev/longopt.dev
+parrot/docs/dev/nanoparrot.c
 parrot/docs/dev/rx.dev
 parrot/docs/pdds/pdd00_pdd.pod
 parrot/docs/pdds/pdd01_overview.pod
@@ -83,7 +83,9 @@ parrot/examples/assembly/lexical2.pasm
 parrot/examples/assembly/lexical3.pasm
 parrot/examples/assembly/life.pasm
 parrot/examples/assembly/local_label.pasm
+parrot/examples/assembly/mandel.imc
 parrot/examples/assembly/mandel.pasm
+parrot/examples/assembly/md5sum.imc
 parrot/examples/assembly/mops.pasm
 parrot/examples/assembly/mops_p.pasm
 parrot/examples/assembly/nanoforth.pasm
@@ -300,7 +302,8 @@ parrot/runtime/parrot/include/timer.pasm
 parrot/runtime/parrot/include/tm.pasm
 parrot/runtime/parrot/include/vtable_methods.pasm
 parrot/runtime/parrot/include/warnings.pasm
-parrot/runtime/parrot/library/PGE.pir
+parrot/runtime/parrot/library/PGE/Dumper.pir
+parrot/runtime/parrot/library/PGE/Glob.pir
 parrot/runtime/parrot/library/SDL.imc
 parrot/runtime/parrot/library/config.imc
 parrot/runtime/parrot/library/config.pbc
@@ -328,8 +331,9 @@ parrot/runtime/parrot/library/Data/Dumper/Base.imc
 parrot/runtime/parrot/library/Data/Dumper/Base.pbc
 parrot/runtime/parrot/library/Data/Dumper/Default.imc
 parrot/runtime/parrot/library/Data/Dumper/Default.pbc
-parrot/runtime/parrot/library/Getopt/Long.imc
+parrot/runtime/parrot/library/Digest/MD5.pir
 parrot/runtime/parrot/library/Getopt/Long.pbc
+parrot/runtime/parrot/library/Getopt/Long.pir
 parrot/runtime/parrot/library/PGE/Class.pir
 parrot/runtime/parrot/library/PGE/RegCounter.pir
 parrot/runtime/parrot/library/SDL/App.imc
@@ -364,10 +368,14 @@ parrot/runtime/parrot/library/Stream/Sub.imc
 parrot/runtime/parrot/library/Stream/Sub.pbc
 parrot/runtime/parrot/library/Stream/Writer.imc
 parrot/runtime/parrot/library/Stream/Writer.pbc
+parrot/runtime/parrot/library/YAML/Parser/Syck.imc
+@dirrm parrot/runtime/parrot/library/YAML/Parser
+@dirrm parrot/runtime/parrot/library/YAML
 @dirrm parrot/runtime/parrot/library/Stream
 @dirrm parrot/runtime/parrot/library/SDL
 @dirrm parrot/runtime/parrot/library/PGE
 @dirrm parrot/runtime/parrot/library/Getopt
+@dirrm parrot/runtime/parrot/library/Digest
 @dirrm parrot/runtime/parrot/library/Data/Dumper
 @dirrm parrot/runtime/parrot/library/Data
 @dirrm parrot/runtime/parrot/library
@@ -396,10 +404,6 @@ parrot/runtime/parrot/library/Stream/Writer.pbc
 @dirrm parrot/docs/pdds
 @dirrm parrot/docs/dev
 @dirrm parrot/docs
-@dirrm parrot/blib/lib/icu/2.6.1
-@dirrm parrot/blib/lib/icu
-@dirrm parrot/blib/lib
-@dirrm parrot/blib
 @dirrm parrot/bin
 @dirrm parrot/LICENSES
 @dirrm parrot
