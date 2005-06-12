@@ -17,6 +17,7 @@ COMMENT=	XRally is a Linux clone of the classic Rally X arcade game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GCC=	2.95
+PTHREAD_LIBS=	-lc_r
 HAS_CONFIGURE=	yes
 USE_PTHREADS=	yes
 USE_BZIP2=	yes
@@ -28,10 +29,4 @@ MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include" \
 		INCLUDES="-I${X11BASE}/include"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 504000
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
