@@ -1507,6 +1507,7 @@
     SUBDIR += terminality
     SUBDIR += tide
     SUBDIR += tigcc
+    SUBDIR += tinylaf
     SUBDIR += tinyq
     SUBDIR += titano
     SUBDIR += tkcon
