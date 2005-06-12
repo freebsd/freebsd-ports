@@ -1,0 +1,5 @@
+lib/kde3/kwin3_crystal.la
+lib/kde3/kwin3_crystal.so
+lib/kde3/kwin_crystal_config.la
+lib/kde3/kwin_crystal_config.so
+share/apps/kwin/crystal.desktop
