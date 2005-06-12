@@ -22,20 +22,6 @@ MAKE_ENV+=	MKDIR="${MKDIR}" KMODDIR="/boot/modules"
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386
-
-.if ${OSVERSION} == 503001
-FREEBSD_VERSION=	5.3
-.elif (${OSVERSION} == 504000 || defined(TRY_STABLE)) && !defined(PACKAGE_BUILDING)
-FREEBSD_VERSION=	5.4
-.else
-IGNORE=	: You need a patched 5.3-RELEASE of 5.4-RELEASE src tree in ${SRCDIR}
-.endif
-
-patch-system: extract
-	@${FIND} ${WRKSRC}/patch/${FREEBSD_VERSION}-RELEASE -type f \
-		-name "*.patch" -exec ${PATCH} -p0 -d ${SRCDIR} -i {} \;
-
 pre-everything::
 	@${ECHO_CMD} "LVS on FreeBSD works only with 5.3-RELEASE and 5.4-RELEASE."
 	@${ECHO_CMD} "However it may work on 5-STABLE. If you are running FreeBSD 5.4-STABLE, define"
@@ -48,6 +34,27 @@ pre-everything::
 	@${ECHO_CMD} "      4. Install your freshly compiled kernel"
 	@${ECHO_CMD} "      5. install the port"
 	@${ECHO_CMD} "      6. reboot your system"
+
+
+.if !defined(SYSTEM_PATCHED)
+.if ${OSVERSION} < 503001 || ${OSVERSION} > 600000 || defined(PACKAGE_BUILDING)
+IGNORE=	Does not compile. If your system is patched to support ipvs, please\
+	define SYSTEM_PATCHED
+.elif ${OSVERSION} == 503001
+FREEBSD_VERSION=	5.4
+.elif (${OSVERSION} == 504000 || defined(TRY_STABLE))
+FREEBSD_VERSION=	5.4
+.else
+IGNORE=	is designed for 5.3-RELEASE and 5.4-RELEASE, define TRY_STABLE\
+	to test it on 5-STABLE
+.endif
+.endif
+
+ONLY_FOR_ARCHS=		i386
+
+patch-system: extract
+	@${FIND} ${WRKSRC}/patch/${FREEBSD_VERSION}-RELEASE -type f \
+		-name "*.patch" -exec ${PATCH} -p0 -d ${SRCDIR} -i {} \;
 
 post-patch:
 	@${INSTALL_DATA} ${FILESDIR}/Makefile ${WRKSRC}
