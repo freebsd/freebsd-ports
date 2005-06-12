@@ -1,0 +1,5 @@
+lib/kde3/kwin3_neos.so
+lib/kde3/kwin3_neos.la
+lib/kde3/kwin_neos_config.so
+lib/kde3/kwin_neos_config.la
+share/apps/kwin/neos.desktop
