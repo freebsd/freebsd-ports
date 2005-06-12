@@ -106,6 +106,7 @@
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-wasp
     SUBDIR += kde-style-lipstik
+    SUBDIR += kde-windeco-crystal
     SUBDIR += kde-windeco-knifty
     SUBDIR += kde-windeco-neos
     SUBDIR += kde-windeco-smoothblend
