@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EIJIRO English - Japanese Dictionary (EPWING V1 format)
 
-EXTRACT_DEPENDS=${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing
+EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
 		${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
@@ -55,7 +55,7 @@ post-extract:
 	  ${ECHO} "###################################################"; \
 	  ${FALSE}; \
 	fi
-	${CP} ${LOCALBASE}/share/doc/freepwing/fpwutils.mk ${WRKSRC}
+	${CP} ${LOCALBASE}/share/freepwing/fpwutils.mk ${WRKSRC}
 
 post-build:
 	cd ${WRKSRC}; ${CP} catalogs.sjis catalogs.txt; \
