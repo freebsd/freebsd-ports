@@ -591,6 +591,7 @@ balsa		ports/mail/balsa
 bamg		ports/math/bamg
 bandwidthd	ports/net-mgmt/bandwidthd
 bar		ports/textproc/bar
+barbecue	ports/graphics/barbecue
 barcode		ports/graphics/barcode
 barnyard	ports/security/barnyard
 barrage		ports/games/barrage
