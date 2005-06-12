@@ -3689,6 +3689,7 @@ icontact	ports/graphics/icontact
 iconv		ports/converters/iconv
 iconv-extra	ports/converters/iconv-extra
 iconv-rfc1345	ports/converters/iconv-rfc1345
+icoutils	ports/graphics/icoutils
 icpld		ports/net/icpld
 icqlib		ports/net/icqlib
 icqlib0		ports/net/icqlib0
