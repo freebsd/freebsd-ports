@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Scoreboard
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
@@ -15,12 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tcornpropst@cox.net
 COMMENT=	Perl interface to the Apache scoreboard structure
 
-.if defined(WITH_MODPERL2)
-BROKEN=		Broken due the new mod_perl2 API
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
-.else
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-.endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES

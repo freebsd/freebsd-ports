@@ -1,26 +1,23 @@
-# New ports collection makefile for:	Apache-Scoreboard
-# Date Created:				08 Oct 2003
-# Whom:					Trevor S. Cornpropst <tcornpropst@cox.net>
+# New ports collection makefile for:	Apache2-Scoreboard
+# Date Created:				11 June 2005
+# Whom:					Philip Paeps <philip@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Apache-Scoreboard
-PORTVERSION=	0.10
+PORTNAME=	Apache2-Scoreboard
+PORTVERSION=	2.06
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
+DISTNAME=	Apache-Scoreboard-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tcornpropst@cox.net
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl interface to the Apache scoreboard structure
 
-.if defined(WITH_MODPERL2)
 BROKEN=		Broken due the new mod_perl2 API
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
-.else
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-.endif
+BUILD_DEPENDS=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
