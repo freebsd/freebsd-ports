@@ -6991,6 +6991,7 @@ p5-Apache-Singleton	ports/www/p5-Apache-Singleton
 p5-Apache-SubProcess	ports/www/p5-Apache-SubProcess
 p5-Apache-Test	ports/www/p5-Apache-Test
 p5-Apache-XBEL	ports/textproc/p5-Apache-XBEL
+p5-Apache2-Scoreboard	ports/www/p5-Apache2-Scoreboard
 p5-ApacheBench	ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig	ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger	ports/databases/p5-ApacheDBILogger
