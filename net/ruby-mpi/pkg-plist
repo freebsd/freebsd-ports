@@ -1,0 +1,38 @@
+bin/mpi_ruby
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/allgather.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/allreduce.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/basic.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bcast.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gather.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/irecv.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/op.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/red.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/redhalt.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/redsubmit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reduce.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rpi.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/MPI
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi_comm.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi_exception.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi_group.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi_keyval.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi_op.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi_request.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/mpi_status.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi_comm.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi_exception.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi_group.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi_keyval.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi_op.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi_request.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/mpi_status.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -709,6 +709,7 @@
     SUBDIR += ruby-dict
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
+    SUBDIR += ruby-mpi
     SUBDIR += ruby-net-geoip
     SUBDIR += ruby-nis
     SUBDIR += ruby-pcap

@@ -1,0 +1,16 @@
+MPI Ruby is a Ruby binding of MPI. The primary goal in making this binding was
+to make the power of MPI available to Ruby users in a way that fits into the
+language's object oriented model.  In order to do this, the buffer and datatype
+management necessary in the C, C++, and Fortran bindings have been removed.
+What this means is that MPI Ruby allows you to treat objects as messages.
+
+MPI Ruby also aims to be a complete binding to MPI in that it offers access to
+nearly all functionality of MPI. While there is not a one-to-one correspondence
+to functions and constants in the Ruby and C/C++/Fortran bindings, all of the
+communication and topology features are available. There are fewer methods in
+the Ruby binding than there are functions in the C/C++/Fortran bindings, but
+this is mainly due to the fact that the programmer no longer needs to deal with
+buffers and datatypes.
+
+Author: Emil Ong
+WWW: http://mpiruby.sourceforge.net/
