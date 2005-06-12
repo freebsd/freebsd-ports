@@ -5,6 +5,7 @@ lib/pluginwrapper/jai.so
 lib/pluginwrapper/java3d.so
 lib/pluginwrapper/java3d_snd.so
 lib/pluginwrapper/pips.so
+lib/pluginwrapper/oci8.so
 lib/pluginwrapper/realplayer.so
 %%EXAMPLESDIR%%/libmap.conf-FreeBSD5-stable
 %%EXAMPLESDIR%%/libmap.conf-FreeBSD5-current
