@@ -1,0 +1,18 @@
+lib/kde3/kstyle_tiblit_config.la
+lib/kde3/kstyle_tiblit_config.so
+lib/kde3/plugins/styles/tiblit.la
+lib/kde3/plugins/styles/tiblit.so
+share/apps/kdisplay/color-schemes/Tiblit-Blue.kcsrc
+share/apps/kdisplay/color-schemes/Tiblit-Coffee.kcsrc
+share/apps/kdisplay/color-schemes/Tiblit-DarkAccents.kcsrc
+share/apps/kdisplay/color-schemes/Tiblit-FadedRoyalty.kcsrc
+share/apps/kdisplay/color-schemes/Tiblit-Geek.kcsrc
+share/apps/kdisplay/color-schemes/Tiblit-Plastik.kcsrc
+share/apps/kdisplay/styleconfs/tiblit_blue.kcmrc
+share/apps/kdisplay/styleconfs/tiblit_coffee.kcmrc
+share/apps/kdisplay/styleconfs/tiblit_darkaccents.kcmrc
+share/apps/kdisplay/styleconfs/tiblit_fadedroyalty.kcmrc
+share/apps/kdisplay/styleconfs/tiblit_geek.kcmrc
+share/apps/kdisplay/styleconfs/tiblit_plastik.kcmrc
+share/apps/kstyle/themes/tiblit.themerc
+@dirrm share/apps/kdisplay/styleconfs
