@@ -5634,6 +5634,7 @@ logtools	ports/www/logtools
 long-exposure-tools	ports/graphics/long-exposure-tools
 lookat		ports/sysutils/lookat
 lookout		ports/mail/lookout
+looks		ports/devel/looks
 lookupd		ports/sysutils/lookupd
 lookupd_ldap	ports/sysutils/lookupd_ldap
 lopster		ports/audio/lopster
