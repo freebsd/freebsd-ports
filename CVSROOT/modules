@@ -10535,6 +10535,7 @@ ruby-mock	ports/devel/ruby-mock
 ruby-mode.el	ports/lang/ruby-mode.el
 ruby-mp3info	ports/audio/ruby-mp3info
 ruby-mp3tag	ports/audio/ruby-mp3tag
+ruby-mpi	ports/net/ruby-mpi
 ruby-msql	ports/databases/ruby-msql
 ruby-musicbrainz	ports/audio/ruby-musicbrainz
 ruby-musicextras	ports/audio/ruby-musicextras
