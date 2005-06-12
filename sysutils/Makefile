@@ -405,6 +405,7 @@
     SUBDIR += rclean
     SUBDIR += rdate
     SUBDIR += rdiff-backup
+    SUBDIR += rdiff-backup-devel
     SUBDIR += readlink
     SUBDIR += reoback
     SUBDIR += rfstool

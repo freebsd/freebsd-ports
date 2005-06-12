@@ -1,0 +1,5 @@
+### ---------------------------------------------------------------------- ###
+### Upgrading to unstable 0.13.x uses a different archive format.          ###
+### So if you downgrade from 0.13.x you HAVE TO re-do the initial seed!    ###
+### Sorry for the inconvenience.                                           ###
+### ---------------------------------------------------------------------- ###
