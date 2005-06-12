@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/tools/archivers/bzip/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A block-sorting file compressor
 
-NO_CDROM=	"Restrictive copyright (don't sell for profit)"
+DEPRECATED=	"see full description"
+RESTRICTED=	"may be covered by patents"
 MAN1=		bzip.1 bunzip.1
 
 PLIST_FILES=	bin/bzip bin/bunzip
