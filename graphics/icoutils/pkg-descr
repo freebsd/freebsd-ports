@@ -1,0 +1,16 @@
+[ excerpt with modifications from developer's site ]
+
+The icoutils are a set of program for extracting and converting
+images in Microsoft Windows(R) icon and cursor files. These files
+usually have the extension .ico or .cur, but they can also be
+embedded in executables and libraries (.dll-files).
+
+The icotool program converts icon and cursor files into a set of
+PNG images. (Each icon/cursor file may contain multiple images,
+usually of different sizes and with different number of colors.)
+Icotool can also create icon/cursor files from PNG images.
+
+Author: Oskar Liljeblad <oskar@osk.mine.nu>
+WWW: http://www.nongnu.org/icoutils/
+
+-- lioux@FreeBSD.org
