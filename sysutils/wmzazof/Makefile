@@ -13,7 +13,7 @@ MASTER_SITES=	http://users.chello.be/cr49940//wmzazof/
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A simple dockapp that displays the uptime, free and used memory
 
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

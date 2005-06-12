@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A one of the most useless dockapps in the world
 
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

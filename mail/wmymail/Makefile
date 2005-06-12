@@ -14,7 +14,7 @@ MASTER_SITES=	http://yath.mine.nu/wmymail/ \
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Check inbox using a WindowMaker DockApp
 
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 RUN_DEPENDS=	fetchmail:${PORTSDIR}/mail/fetchmail
 
 USE_X_PREFIX=	yes
