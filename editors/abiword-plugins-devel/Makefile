@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -177,13 +176,14 @@ PLIST_SUB+=		NROFF:=""
 PLIST_SUB+=		NROFF:="@comment "
 .endif
 
-.if defined(WITH_OPENWRITER) || defined(PACKAGE_BUILDING)
-USE_GNOME+=		libgsf
-CONFIGURE_ARGS+=	--enable-OpenWriter
-PLIST_SUB+=		OPENWRITER:=""
-.else
+# Disable for now, it requires libgsf 1.12.1.
+#.if defined(WITH_OPENWRITER) || defined(PACKAGE_BUILDING)
+#USE_GNOME+=		libgsf
+#CONFIGURE_ARGS+=	--enable-OpenWriter
+#PLIST_SUB+=		OPENWRITER:=""
+#.else
 PLIST_SUB+=		OPENWRITER:="@comment "
-.endif
+#.endif
 
 .if defined(WITH_PDB) # Need to be tested
 CONFIGURE_ARGS+=	--enable-pdb
@@ -311,9 +311,9 @@ pre-everything::
 .if !defined(WITH_NROFF)
 	@${ECHO_MSG} "WITH_NROFF=yes		Nroff/Man file format."
 .endif
-.if !defined(WITH_OPENWRITER)
-	@${ECHO_MSG} "WITH_OPENWRITER=yes	Import/export OpenOffice files."
-.endif
+#.if !defined(WITH_OPENWRITER)
+#	@${ECHO_MSG} "WITH_OPENWRITER=yes	Import/export OpenOffice files."
+#.endif
 .if !defined(WITH_PDB)
 	@${ECHO_MSG} "WITH_PDB=yes		Import/export Palm Database files."
 .endif
