@@ -11540,6 +11540,7 @@ tinyca		ports/security/tinyca
 tinycdb		ports/databases/tinycdb
 tinycobol	ports/lang/tinycobol
 tinyfugue	ports/net/tinyfugue
+tinylaf		ports/devel/tinylaf
 tinyldap	ports/net/tinyldap
 tinymux		ports/games/tinymux
 tinyproxy	ports/www/tinyproxy
