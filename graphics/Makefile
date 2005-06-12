@@ -203,6 +203,7 @@
     SUBDIR += icod
     SUBDIR += icon-slicer
     SUBDIR += icontact
+    SUBDIR += icoutils
     SUBDIR += ida
     SUBDIR += imageindex
     SUBDIR += imagesort
