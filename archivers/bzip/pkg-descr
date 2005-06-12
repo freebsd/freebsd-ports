@@ -1,16 +1,15 @@
-Please use bzip2, which is the successor of this older bzip version.
-This port stays for compatibility reasons.  A discussion of the
-advantages of bzip2 over bzip 0.21 is given on the homepage.
+Use of bzip2, which is intended to replace bzip, is recommended.
+The algorithms used in bzip2 are different and incompatible with
+those used in bzip.  To open .bz archives, you must use bzip, and
+to open .bz2 archives you must use bzip2.  Although bzip2 sometimes
+yields slightly larger output, it is faster, more reliable, maintained,
+much more widely used and is believed to be patent-free.
 
-In short: bzip2 is faster, more reliable and *patent free*
+Julian Seward, the author of bzip, gives this warning:
 
-COMMERCIAL USE of bzip
-
-This program may or may not infringe certain US patents pertaining
-to arithmetic coding and to the block-sorting transformation itself.
-Opinions differ as to the precise legal status of some of the
-algorithms used.  Nevertheless, you should be aware that commercial
-use of this program could render you liable to unfriendly legal
-action.
-
-WWW: http://www.muraroa.demon.co.uk/
+	This program may or may not infringe certain US patents
+	pertaining to arithmetic coding and to the block-sorting
+	transformation itself.  Opinions differ as to the precise
+	legal status of some of the algorithms used.  Nevertheless,
+	you should be aware that commercial use of this program
+	could render you liable to unfriendly legal action.
