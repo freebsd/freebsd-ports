@@ -15,6 +15,8 @@ DISTFILES=	remote.c vroot.h
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to pass commands to running netscape process
 
+DEPRECATED=	"all Netscape browser ports were removed due to security bugs"
+EXPIRATION_DATE=2005-10-12
 USE_XLIB=	yes
 DIST_SUBDIR=	netscape-remote
 NO_WRKSUBDIR=	yes
