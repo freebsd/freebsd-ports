@@ -10168,6 +10168,7 @@ rdb		ports/databases/rdb
 rdesktop	ports/net/rdesktop
 rdfdb		ports/databases/rdfdb
 rdiff-backup	ports/sysutils/rdiff-backup
+rdiff-backup-devel	ports/sysutils/rdiff-backup-devel
 rdigest		ports/security/rdigest
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
