@@ -1,18 +1,16 @@
---- configure.orig	Mon May 17 21:32:49 2004
-+++ configure	Tue May 25 18:19:48 2004
-@@ -2244,6 +2244,15 @@
+--- configure.orig	Thu May 26 21:52:13 2005
++++ configure	Sun Jun 12 11:17:03 2005
+@@ -2491,6 +2491,13 @@
      SENDMAIL_EVAL="$SENDMAIL"
      with_sendmail=yes
  fi
-+#
 +if test -n "$SENDMAIL" -a "$SENDMAIL" != "no"; then
 +    if test -f $SENDMAIL/include/libmilter/mfapi.h -a -f $SENDMAIL/lib/libmilter.a; then
-+        SENDMAIL_OBJ=$SENDMAIL/lib
-+        SENDMAIL_OBJ_EVAL=$SENDMAIL_OBJ
-+        SENDMAIL_LIB=$SENDMAIL_OBJ/libmilter.a
++    SENDMAIL_OBJ=$SENDMAIL/lib
++    SENDMAIL_OBJ_EVAL=$SENDMAIL_OBJ
++    SENDMAIL_LIB=$SENDMAIL_OBJ/libmilter.a
 +    fi
 +fi
-+#
  if test -z "$SENDMAIL"; then
      # prefer a parallel ../sendmail directory
      DEPTH=.

@@ -1,9 +1,9 @@
---- homedir/Makefile.in	Tue May 25 20:37:04 2004
-+++ homedir/Makefile.in	Tue May 25 20:38:04 2004
-@@ -28,11 +28,7 @@
- install:
+--- homedir/Makefile.in.orig	Sun Jun 12 11:09:03 2005
++++ homedir/Makefile.in	Sun Jun 12 11:10:04 2005
+@@ -44,11 +44,7 @@
  	for nm in $(INST_HOMEDIR) $(INST_HOMEDIR)/log; do \
- 	  $(HINSTALL) -m 755 -d $$nm; done
+ 	  if test ! -d $$nm; then \
+ 	    $(HINSTALL) -m 755 -d $$nm; fi; done
 -	if test -s $(INST_HOMEDIR)/dcc_conf; then \
 -	  sh make-dcc_conf -h $(INST_HOMEDIR); \
 -	else \

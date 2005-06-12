@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.2.66
+PORTVERSION=	1.3.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/old/ \
+MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/unix/packages/
 EXTRACT_SUFX=	.tar.Z
@@ -33,16 +33,6 @@ DCCUID?=	112
 DCCGROUP?=	dcc
 DCCGID?=	112
 
-#
-# You can choose the sendmail to be used by specifying
-#
-# WITH_SENDMAIL_BASE=yes
-#  or
-# WITH_SENDMAIL_PORT=yes
-#  or
-# WITHOUT_SENDMAIL=yes
-#
-
 # if no preference was set, check for an up to date base version
 # but give an installed port preference over it.
 
@@ -61,7 +51,7 @@ MILTERBASE=	/usr
 WITH_SENDMAIL=	yes
 .else
 .if !defined(WITHOUT_SENDMAIL)
-BROKEN=		"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes"
+BROKEN=		"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes or WITHOUT_SENDMAIL=yes"
 .endif
 .endif
 .else
@@ -96,6 +86,17 @@ CONFIGURE_ARGS+=	--with-uid=${DCCUSER}
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DCCUSER%%|${DCCUSER}|g' -e 's|%%DCCUID%%|${DCCUID}|g' \
 		-e 's|%%DCCGROUP%%|${DCCGROUP}|g' -e 's|%%DCCGID%%|${DCCGID}|g'
+
+pre-everything::
+	@${ECHO_MSG} ' '
+	@${ECHO_MSG} 'You can choose the sendmail to be used by specifying:'
+	@${ECHO_MSG} ' '
+	@${ECHO_MSG} 'WITH_SENDMAIL_BASE=yes'
+	@${ECHO_MSG} 'or'
+	@${ECHO_MSG} 'WITH_SENDMAIL_PORT=yes'
+	@${ECHO_MSG} 'or'
+	@${ECHO_MSG} 'WITHOUT_SENDMAIL=yes'
+	@${ECHO_MSG} ''
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec \
