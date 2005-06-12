@@ -66,6 +66,7 @@
     SUBDIR += gtksql
     SUBDIR += hk_classes
     SUBDIR += hs-hsql
+    SUBDIR += jasperreports
     SUBDIR += java-sqlrelay
     SUBDIR += jdb
     SUBDIR += jdbc-oracle8i
