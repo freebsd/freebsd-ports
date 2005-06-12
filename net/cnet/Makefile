@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cnet
-PORTVERSION=	1.7.7
-PORTREVISION=	2
+PORTVERSION=	2.0.9
 CATEGORIES=	net tcl84 tk84
-MASTER_SITES=	http://www.cs.uwa.edu.au/cnet/
+MASTER_SITES=	http://www.csse.uwa.edu.au/cnet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,18 +16,15 @@ COMMENT=	A networking simulator
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
-IGNORE=		does not run (core dumps: Arithmetic exception)
-
 USE_REINPLACE=	yes
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 MAN1=		cnet.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|8.2|8.4|g ; \
-		 s|82|84|g' ${WRKSRC}/src/Makefile.freebsd
+	@${REINPLACE_CMD} -e 's|8.3|8.4|g ; \
+		 s|83|84|g' ${WRKSRC}/src/Makefile.freebsd
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/config.h
 
