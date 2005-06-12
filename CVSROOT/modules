@@ -4434,6 +4434,7 @@ jcckit		ports/java/jcckit
 jce-aba		ports/java/jce-aba
 jcifs		ports/net/jcifs
 jclassinfo	ports/devel/jclassinfo
+jcmdline	ports/devel/jcmdline
 jcommon		ports/java/jcommon
 jday		ports/astro/jday
 jdb		ports/databases/jdb
