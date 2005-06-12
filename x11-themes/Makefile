@@ -105,6 +105,7 @@
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-wasp
+    SUBDIR += kde-windeco-smoothblend
     SUBDIR += kdeartwork3
     SUBDIR += kdmtheme
     SUBDIR += lila-xfwm4
