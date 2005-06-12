@@ -4402,6 +4402,7 @@ jargon		ports/misc/jargon
 jarl		ports/net/jarl
 jasmin		ports/java/jasmin
 jasper		ports/graphics/jasper
+jasperreports	ports/databases/jasperreports
 java-beepcore	ports/net/java-beepcore
 java-checkstyle	ports/java/java-checkstyle
 java-commapi	ports/comms/java-commapi
