@@ -236,6 +236,7 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-en_IE
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-en_NZ
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-en_ZA
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es
+share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_AR
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_ES
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_IR
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-es_MX

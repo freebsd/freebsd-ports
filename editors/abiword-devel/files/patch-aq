@@ -1,6 +1,6 @@
---- src/config/abi_defs.mk.orig	Thu Jun 17 14:54:58 2004
-+++ src/config/abi_defs.mk	Thu Jun 17 14:55:04 2004
-@@ -217,11 +217,11 @@
+--- src/config/abi_defs.mk.orig	Sun Jun 12 16:07:25 2005
++++ src/config/abi_defs.mk	Sun Jun 12 16:08:49 2005
+@@ -202,11 +202,11 @@
  ## INSTALL program...
  
  define MAKE_OBJDIR
@@ -10,11 +10,11 @@
  
  define VERIFY_DIRECTORY
 -if test ! -d xxxx; then rm -rf xxxx; mkdir -p  xxxx; fi
-+if test ! -d xxxx; then rm -rf xxxx; $(ABIMKDIR) -p  xxxx; fi
++if test ! -d xxxx; then rm -rf xxxx; $(ABIMKDIR) -p xxxx; fi
  endef
  
  ifeq ($(OS_NAME), WIN32)
-@@ -266,7 +266,9 @@
+@@ -251,7 +251,9 @@
  ##################################################################
  ##################################################################
  
