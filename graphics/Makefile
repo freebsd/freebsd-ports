@@ -25,6 +25,7 @@
     SUBDIR += aview
     SUBDIR += ayam
     SUBDIR += backfract
+    SUBDIR += barbecue
     SUBDIR += barcode
     SUBDIR += batik
     SUBDIR += bbrb
