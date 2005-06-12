@@ -1,0 +1,5 @@
+=============================================================================
+Several compilers are available; if compilation fails with JasperReports
+default, choose the menu item Tools / Options..., then select "Java Compiler"
+in the Compiler tab.
+=============================================================================

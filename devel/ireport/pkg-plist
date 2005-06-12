@@ -1,0 +1,139 @@
+bin/iReport
+%%DATADIR%%/Changelog.txt
+%%DATADIR%%/bin/startup.sh
+%%PORTDOCS%%%%DATADIR%%/docs/cap2.html
+%%PORTDOCS%%%%DATADIR%%/docs/cap3.html
+%%PORTDOCS%%%%DATADIR%%/docs/cap4.html
+%%PORTDOCS%%%%DATADIR%%/docs/cap5.html
+%%PORTDOCS%%%%DATADIR%%/docs/cap6.html
+%%PORTDOCS%%%%DATADIR%%/docs/cap7.html
+%%PORTDOCS%%%%DATADIR%%/docs/cap8.html
+%%PORTDOCS%%%%DATADIR%%/docs/images/logo.gif
+%%PORTDOCS%%%%DATADIR%%/docs/images/logo_igor.gif
+%%PORTDOCS%%%%DATADIR%%/docs/images/manual_p1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/manual_p3.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/manual_p4.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/manual_p5.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/manual_p6.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/new_manual.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/null.gif
+%%PORTDOCS%%%%DATADIR%%/docs/images/regsoft.gif
+%%PORTDOCS%%%%DATADIR%%/docs/images/sflogo.gif
+%%PORTDOCS%%%%DATADIR%%/docs/index.html
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%.html
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/2_2.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_2.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_3.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_4.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_4big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_5.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_5big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_6.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_6big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/3_7.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_1big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_2.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_2big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_3.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_3big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_4.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_4big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_5.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_6.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_6big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_7.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_7big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_8.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/4_8big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/5_1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/5_2.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/5_2big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/5_3.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/5_4.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/5_5.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/5_5big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/6_1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/7_1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/7_1big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/7_2.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/7_2big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/7_3.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/7_3big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_0.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_1big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_2.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_2big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_3.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_3big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_4.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_4big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_5.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_5big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_6.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_6big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_7.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_7big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_8.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_8big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_9.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_9big.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/options1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/stylesheet.css
+%%PORTDOCS%%%%DATADIR%%/docs/manual0.4.1.html
+%%DATADIR%%/fonts/Balker.ttf
+%%DATADIR%%/fonts/Domestic_Manners.ttf
+%%DATADIR%%/fonts/Dustismo.ttf
+%%DATADIR%%/fonts/Dustismo_Roman.ttf
+%%DATADIR%%/fonts/Dustismo_Roman_Bold.ttf
+%%DATADIR%%/fonts/Dustismo_Roman_Italic.ttf
+%%DATADIR%%/fonts/Dustismo_Roman_Italic_Bold.ttf
+%%DATADIR%%/fonts/El_Abogado_Loco.ttf
+%%DATADIR%%/fonts/It wasnt me.ttf
+%%DATADIR%%/fonts/Junkyard.ttf
+%%DATADIR%%/fonts/MarkedFool.ttf
+%%DATADIR%%/fonts/PenguinAttack.ttf
+%%DATADIR%%/fonts/Swift.ttf
+%%DATADIR%%/fonts/Wargames.ttf
+%%DATADIR%%/fonts/Winks.ttf
+%%DATADIR%%/fonts/dustismo_bold.ttf
+%%DATADIR%%/fonts/dustismo_bold_italic.ttf
+%%DATADIR%%/fonts/dustismo_italic.ttf
+%%DATADIR%%/fonts/flatline.ttf
+%%DATADIR%%/fonts/progenisis.ttf
+@exec ln -sf %D/%%JAVAJARDIR%% %D/%%DATADIR%%/lib
+@unexec rm -f %D/%%DATADIR%%/lib
+%%DATADIR%%/plugins/checkupdate.xml
+%%DATADIR%%/plugins/example_1.xml
+%%DATADIR%%/plugins/massive_compiler.xml
+%%DATADIR%%/plugins/oracle_options.xml
+%%DATADIR%%/plugins/text_wizard.xml
+%%DATADIR%%/relnotes%%VER%%.html
+%%DATADIR%%/templates/YBC.gif
+%%DATADIR%%/templates/YBC.xml
+%%DATADIR%%/templates/classicC.gif
+%%DATADIR%%/templates/classicC.xml
+%%DATADIR%%/templates/classicT.gif
+%%DATADIR%%/templates/classicT.xml
+%%DATADIR%%/templates/classic_landscapeT.gif
+%%DATADIR%%/templates/classic_landscapeT.xml
+%%DATADIR%%/templates/grayC.gif
+%%DATADIR%%/templates/grayC.xml
+%%DATADIR%%/templates/grayT.gif
+%%DATADIR%%/templates/grayT.xml
+%%DATADIR%%/templates/gray_landscapeT.gif
+%%DATADIR%%/templates/gray_landscapeT.xml
+%%JAVAJARDIR%%/iReport.jar
+%%JAVAJARDIR%%/jdt-compiler.jar
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/fonts
+%%PORTDOCS%%@dirrm %%DATADIR%%/docs/manual%%VERMAN%%
+%%PORTDOCS%%@dirrm %%DATADIR%%/docs/images
+%%PORTDOCS%%@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@exec ln -sf %D/%%DATADIR%%/docs %D/%%DOCSDIR%%
+%%PORTDOCS%%@unexec rm -f %D/%%DOCSDIR%%

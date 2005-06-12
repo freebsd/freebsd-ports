@@ -378,6 +378,7 @@
     SUBDIR += initutil
     SUBDIR += invitation_to_ruby
     SUBDIR += ipython
+    SUBDIR += ireport
     SUBDIR += itext
     SUBDIR += ixlib
     SUBDIR += jakelib2
