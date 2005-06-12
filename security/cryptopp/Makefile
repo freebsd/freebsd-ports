@@ -25,7 +25,7 @@ USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
 USE_GMAKE=		yes
 MAKEFILE=		GNUmakefile
-CXXFLAGS+=		-fPIC
+CXXFLAGS+=		-fPIC -O0
 
 .include <bsd.port.pre.mk>
 
