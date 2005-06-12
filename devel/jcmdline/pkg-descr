@@ -1,0 +1,9 @@
+The jcmdline package is a Java package with the following goals:
+
+ * Facilitate parsing/handling of command line parameters.
+ * Add consistency to command line parameter parsing and command usage display
+   through all executables of a Java application.
+ * Automatically generate a command usage based upon defined command line
+   parameters.
+
+WWW:	http://jcmdline.sourceforge.net/
