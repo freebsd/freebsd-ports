@@ -11,8 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
 		ftp://ftp.tin.org/pub/libs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	\
-		${PORTNAME}
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library
@@ -26,13 +25,15 @@ PORTDOCS=	*
 .endif
 
 .if defined(WITH_UTF8)
-CONFIGURE_ARGS+=	\
-		--enable-utf8 \
+CONFIGURE_ARGS+=--enable-utf8 \
 		--enable-unicode-properties
 .endif
 
-CONFIGURE_TARGET=	\
-		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.if defined(WITH_LINK_SIZE)
+CONFIGURE_ARGS+=--with-link-size=${WITH_LINK_SIZE}
+.endif
+
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pcregrep.1 pcretest.1
 MAN3=		pcre.3 pcre_compile.3 pcre_config.3 \
