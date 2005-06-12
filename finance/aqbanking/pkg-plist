@@ -112,3 +112,31 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/swift/profiles/swiftmt940.conf
 %%DATADIR%%/imexporters/swift/profiles/swiftmt942.conf
 share/locale/de/LC_MESSAGES/aqbanking.mo
+@dirrm include/aqbanking
+@dirrm include/aqbanking++
+@dirrm lib/aqbanking/plugins/0/bankinfo
+@dirrm lib/aqbanking/plugins/0/imexporters
+@dirrm lib/aqbanking/plugins/0
+@dirrm lib/aqbanking/plugins
+@dirrm lib/aqbanking
+@dirrm lib/gwenhywfar/plugins/17/dbio
+@dirrm lib/gwenhywfar/plugins/17
+@dirrm lib/gwenhywfar/plugins
+@dirrm lib/gwenhywfar
+@dirrm %%DATADIR%%/bankinfo/at
+@dirrm %%DATADIR%%/bankinfo/ch
+@dirrm %%DATADIR%%/bankinfo/de
+@dirrm %%DATADIR%%/bankinfo/us
+@dirrm %%DATADIR%%/bankinfo
+@dirrm %%DATADIR%%/imexporters/csv/profiles
+@dirrm %%DATADIR%%/imexporters/csv
+@dirrm %%DATADIR%%/imexporters/dtaus/profiles
+@dirrm %%DATADIR%%/imexporters/dtaus
+@dirrm %%DATADIR%%/imexporters/ofx/profiles
+@dirrm %%DATADIR%%/imexporters/ofx
+@dirrm %%DATADIR%%/imexporters/openhbci1/profiles
+@dirrm %%DATADIR%%/imexporters/openhbci1
+@dirrm %%DATADIR%%/imexporters/swift/profiles
+@dirrm %%DATADIR%%/imexporters/swift
+@dirrm %%DATADIR%%/imexporters
+@dirrm %%DATADIR%%
