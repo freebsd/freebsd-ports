@@ -384,6 +384,7 @@
     SUBDIR += jam
     SUBDIR += java-util-concurrent
     SUBDIR += jclassinfo
+    SUBDIR += jcmdline
     SUBDIR += jep
     SUBDIR += jrtplib
     SUBDIR += jsap
