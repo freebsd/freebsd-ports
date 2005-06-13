@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20050531
-PORTREVISION=	1
+PORTVERSION=	0.0.20050612
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|} \
 		http://people.freebsd.org/~ahze/distfiles/
