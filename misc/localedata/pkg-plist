@@ -1,0 +1,480 @@
+share/compat/locale/UTF-8/LC_CTYPE
+share/compat/locale/af_ZA.ISO8859-1/LC_MESSAGES
+share/compat/locale/af_ZA.ISO8859-1/LC_MONETARY
+share/compat/locale/af_ZA.ISO8859-1/LC_NUMERIC
+share/compat/locale/am_ET.UTF-8/LC_CTYPE
+share/compat/locale/am_ET.UTF-8/LC_MESSAGES
+share/compat/locale/am_ET.UTF-8/LC_MONETARY
+share/compat/locale/am_ET.UTF-8/LC_NUMERIC
+share/compat/locale/am_ET.UTF-8/LC_TIME
+share/compat/locale/be_BY.CP1131/LC_COLLATE
+share/compat/locale/be_BY.CP1131/LC_CTYPE
+share/compat/locale/be_BY.CP1131/LC_MESSAGES
+share/compat/locale/be_BY.CP1131/LC_MONETARY
+share/compat/locale/be_BY.CP1131/LC_TIME
+share/compat/locale/be_BY.CP1251/LC_COLLATE
+share/compat/locale/be_BY.CP1251/LC_MESSAGES
+share/compat/locale/be_BY.CP1251/LC_MONETARY
+share/compat/locale/be_BY.CP1251/LC_NUMERIC
+share/compat/locale/be_BY.CP1251/LC_TIME
+share/compat/locale/be_BY.ISO8859-5/LC_COLLATE
+share/compat/locale/be_BY.ISO8859-5/LC_MESSAGES
+share/compat/locale/be_BY.ISO8859-5/LC_MONETARY
+share/compat/locale/be_BY.ISO8859-5/LC_TIME
+share/compat/locale/be_BY.UTF-8/LC_MESSAGES
+share/compat/locale/be_BY.UTF-8/LC_MONETARY
+share/compat/locale/be_BY.UTF-8/LC_TIME
+share/compat/locale/bg_BG.CP1251/LC_COLLATE
+share/compat/locale/bg_BG.CP1251/LC_CTYPE
+share/compat/locale/bg_BG.CP1251/LC_MESSAGES
+share/compat/locale/bg_BG.CP1251/LC_MONETARY
+share/compat/locale/bg_BG.CP1251/LC_NUMERIC
+share/compat/locale/bg_BG.CP1251/LC_TIME
+share/compat/locale/bg_BG.UTF-8/LC_MESSAGES
+share/compat/locale/bg_BG.UTF-8/LC_MONETARY
+share/compat/locale/bg_BG.UTF-8/LC_TIME
+share/compat/locale/ca_ES.ISO8859-1/LC_COLLATE
+share/compat/locale/ca_ES.ISO8859-1/LC_MESSAGES
+share/compat/locale/ca_ES.ISO8859-1/LC_MONETARY
+share/compat/locale/ca_ES.ISO8859-1/LC_NUMERIC
+share/compat/locale/ca_ES.ISO8859-1/LC_TIME
+share/compat/locale/ca_ES.ISO8859-15/LC_COLLATE
+share/compat/locale/ca_ES.UTF-8/LC_TIME
+share/compat/locale/cs_CZ.ISO8859-2/LC_COLLATE
+share/compat/locale/cs_CZ.ISO8859-2/LC_MESSAGES
+share/compat/locale/cs_CZ.ISO8859-2/LC_MONETARY
+share/compat/locale/cs_CZ.ISO8859-2/LC_NUMERIC
+share/compat/locale/cs_CZ.ISO8859-2/LC_TIME
+share/compat/locale/cs_CZ.UTF-8/LC_MONETARY
+share/compat/locale/cs_CZ.UTF-8/LC_TIME
+share/compat/locale/da_DK.ISO8859-1/LC_MESSAGES
+share/compat/locale/da_DK.ISO8859-1/LC_MONETARY
+share/compat/locale/da_DK.ISO8859-1/LC_NUMERIC
+share/compat/locale/da_DK.ISO8859-1/LC_TIME
+share/compat/locale/da_DK.UTF-8/LC_TIME
+share/compat/locale/de_AT.ISO8859-1/LC_MONETARY
+share/compat/locale/de_AT.ISO8859-1/LC_TIME
+share/compat/locale/de_AT.UTF-8/LC_TIME
+share/compat/locale/de_CH.ISO8859-1/LC_MONETARY
+share/compat/locale/de_DE.ISO8859-1/LC_COLLATE
+share/compat/locale/de_DE.ISO8859-1/LC_MESSAGES
+share/compat/locale/de_DE.ISO8859-1/LC_MONETARY
+share/compat/locale/de_DE.ISO8859-1/LC_NUMERIC
+share/compat/locale/de_DE.ISO8859-1/LC_TIME
+share/compat/locale/de_DE.ISO8859-15/LC_COLLATE
+share/compat/locale/de_DE.UTF-8/LC_TIME
+share/compat/locale/el_GR.ISO8859-7/LC_COLLATE
+share/compat/locale/el_GR.ISO8859-7/LC_CTYPE
+share/compat/locale/el_GR.ISO8859-7/LC_MESSAGES
+share/compat/locale/el_GR.ISO8859-7/LC_MONETARY
+share/compat/locale/el_GR.ISO8859-7/LC_NUMERIC
+share/compat/locale/el_GR.ISO8859-7/LC_TIME
+share/compat/locale/el_GR.UTF-8/LC_MESSAGES
+share/compat/locale/el_GR.UTF-8/LC_TIME
+share/compat/locale/en_AU.ISO8859-1/LC_MONETARY
+share/compat/locale/en_CA.ISO8859-1/LC_MESSAGES
+share/compat/locale/en_CA.ISO8859-1/LC_MONETARY
+share/compat/locale/en_GB.ISO8859-1/LC_MESSAGES
+share/compat/locale/en_GB.ISO8859-1/LC_MONETARY
+share/compat/locale/en_GB.ISO8859-1/LC_TIME
+share/compat/locale/en_GB.UTF-8/LC_MONETARY
+share/compat/locale/en_IE.UTF-8/LC_MONETARY
+share/compat/locale/en_NZ.ISO8859-1/LC_MONETARY
+share/compat/locale/en_US.ISO8859-1/LC_MESSAGES
+share/compat/locale/en_US.ISO8859-1/LC_MONETARY
+share/compat/locale/en_US.ISO8859-1/LC_NUMERIC
+share/compat/locale/en_US.ISO8859-1/LC_TIME
+share/compat/locale/es_ES.ISO8859-1/LC_COLLATE
+share/compat/locale/es_ES.ISO8859-1/LC_MESSAGES
+share/compat/locale/es_ES.ISO8859-1/LC_MONETARY
+share/compat/locale/es_ES.ISO8859-1/LC_NUMERIC
+share/compat/locale/es_ES.ISO8859-1/LC_TIME
+share/compat/locale/es_ES.ISO8859-15/LC_COLLATE
+share/compat/locale/es_ES.UTF-8/LC_TIME
+share/compat/locale/et_EE.ISO8859-15/LC_COLLATE
+share/compat/locale/et_EE.ISO8859-15/LC_MESSAGES
+share/compat/locale/et_EE.ISO8859-15/LC_MONETARY
+share/compat/locale/et_EE.ISO8859-15/LC_NUMERIC
+share/compat/locale/et_EE.ISO8859-15/LC_TIME
+share/compat/locale/et_EE.UTF-8/LC_TIME
+share/compat/locale/fi_FI.ISO8859-1/LC_MESSAGES
+share/compat/locale/fi_FI.ISO8859-1/LC_MONETARY
+share/compat/locale/fi_FI.ISO8859-1/LC_NUMERIC
+share/compat/locale/fi_FI.ISO8859-1/LC_TIME
+share/compat/locale/fi_FI.UTF-8/LC_TIME
+share/compat/locale/fr_BE.ISO8859-1/LC_MESSAGES
+share/compat/locale/fr_BE.ISO8859-1/LC_MONETARY
+share/compat/locale/fr_BE.ISO8859-1/LC_NUMERIC
+share/compat/locale/fr_CA.ISO8859-1/LC_MONETARY
+share/compat/locale/fr_CH.ISO8859-1/LC_MESSAGES
+share/compat/locale/fr_FR.ISO8859-1/LC_MESSAGES
+share/compat/locale/fr_FR.ISO8859-1/LC_MONETARY
+share/compat/locale/fr_FR.ISO8859-1/LC_NUMERIC
+share/compat/locale/fr_FR.ISO8859-1/LC_TIME
+share/compat/locale/fr_FR.UTF-8/LC_TIME
+share/compat/locale/he_IL.UTF-8/LC_MESSAGES
+share/compat/locale/he_IL.UTF-8/LC_MONETARY
+share/compat/locale/he_IL.UTF-8/LC_TIME
+share/compat/locale/hi_IN.ISCII-DEV/LC_COLLATE
+share/compat/locale/hi_IN.ISCII-DEV/LC_CTYPE
+share/compat/locale/hi_IN.ISCII-DEV/LC_MESSAGES
+share/compat/locale/hi_IN.ISCII-DEV/LC_MONETARY
+share/compat/locale/hi_IN.ISCII-DEV/LC_NUMERIC
+share/compat/locale/hi_IN.ISCII-DEV/LC_TIME
+share/compat/locale/hr_HR.ISO8859-2/LC_MESSAGES
+share/compat/locale/hr_HR.ISO8859-2/LC_MONETARY
+share/compat/locale/hr_HR.ISO8859-2/LC_NUMERIC
+share/compat/locale/hr_HR.ISO8859-2/LC_TIME
+share/compat/locale/hr_HR.UTF-8/LC_TIME
+share/compat/locale/hu_HU.ISO8859-2/LC_MESSAGES
+share/compat/locale/hu_HU.ISO8859-2/LC_MONETARY
+share/compat/locale/hu_HU.ISO8859-2/LC_NUMERIC
+share/compat/locale/hu_HU.ISO8859-2/LC_TIME
+share/compat/locale/hu_HU.UTF-8/LC_TIME
+share/compat/locale/hy_AM.ARMSCII-8/LC_COLLATE
+share/compat/locale/hy_AM.ARMSCII-8/LC_CTYPE
+share/compat/locale/hy_AM.ARMSCII-8/LC_MESSAGES
+share/compat/locale/hy_AM.ARMSCII-8/LC_MONETARY
+share/compat/locale/hy_AM.ARMSCII-8/LC_NUMERIC
+share/compat/locale/hy_AM.ARMSCII-8/LC_TIME
+share/compat/locale/hy_AM.UTF-8/LC_MESSAGES
+share/compat/locale/hy_AM.UTF-8/LC_MONETARY
+share/compat/locale/hy_AM.UTF-8/LC_TIME
+share/compat/locale/is_IS.ISO8859-1/LC_COLLATE
+share/compat/locale/is_IS.ISO8859-1/LC_MESSAGES
+share/compat/locale/is_IS.ISO8859-1/LC_MONETARY
+share/compat/locale/is_IS.ISO8859-1/LC_NUMERIC
+share/compat/locale/is_IS.ISO8859-1/LC_TIME
+share/compat/locale/is_IS.ISO8859-15/LC_COLLATE
+share/compat/locale/is_IS.UTF-8/LC_TIME
+share/compat/locale/it_IT.ISO8859-1/LC_MESSAGES
+share/compat/locale/it_IT.ISO8859-1/LC_MONETARY
+share/compat/locale/it_IT.ISO8859-1/LC_NUMERIC
+share/compat/locale/it_IT.ISO8859-1/LC_TIME
+share/compat/locale/it_IT.UTF-8/LC_TIME
+share/compat/locale/ja_JP.SJIS/LC_CTYPE
+share/compat/locale/ja_JP.SJIS/LC_MESSAGES
+share/compat/locale/ja_JP.SJIS/LC_TIME
+share/compat/locale/ja_JP.UTF-8/LC_MESSAGES
+share/compat/locale/ja_JP.UTF-8/LC_MONETARY
+share/compat/locale/ja_JP.UTF-8/LC_TIME
+share/compat/locale/ja_JP.eucJP/LC_CTYPE
+share/compat/locale/ja_JP.eucJP/LC_MESSAGES
+share/compat/locale/ja_JP.eucJP/LC_MONETARY
+share/compat/locale/ja_JP.eucJP/LC_NUMERIC
+share/compat/locale/ja_JP.eucJP/LC_TIME
+share/compat/locale/kk_KZ.PT154/LC_COLLATE
+share/compat/locale/kk_KZ.PT154/LC_CTYPE
+share/compat/locale/kk_KZ.PT154/LC_MESSAGES
+share/compat/locale/kk_KZ.PT154/LC_MONETARY
+share/compat/locale/kk_KZ.PT154/LC_NUMERIC
+share/compat/locale/kk_KZ.PT154/LC_TIME
+share/compat/locale/kk_KZ.UTF-8/LC_MESSAGES
+share/compat/locale/kk_KZ.UTF-8/LC_MONETARY
+share/compat/locale/kk_KZ.UTF-8/LC_TIME
+share/compat/locale/ko_KR.CP949/LC_CTYPE
+share/compat/locale/ko_KR.UTF-8/LC_MONETARY
+share/compat/locale/ko_KR.UTF-8/LC_TIME
+share/compat/locale/ko_KR.eucKR/LC_CTYPE
+share/compat/locale/ko_KR.eucKR/LC_MESSAGES
+share/compat/locale/ko_KR.eucKR/LC_MONETARY
+share/compat/locale/ko_KR.eucKR/LC_NUMERIC
+share/compat/locale/ko_KR.eucKR/LC_TIME
+share/compat/locale/la_LN.ISO8859-1/LC_COLLATE
+share/compat/locale/la_LN.ISO8859-1/LC_CTYPE
+share/compat/locale/la_LN.ISO8859-1/LC_TIME
+share/compat/locale/la_LN.ISO8859-15/LC_COLLATE
+share/compat/locale/la_LN.ISO8859-15/LC_CTYPE
+share/compat/locale/la_LN.ISO8859-2/LC_COLLATE
+share/compat/locale/la_LN.ISO8859-2/LC_CTYPE
+share/compat/locale/la_LN.ISO8859-4/LC_COLLATE
+share/compat/locale/la_LN.ISO8859-4/LC_CTYPE
+share/compat/locale/la_LN.US-ASCII/LC_COLLATE
+share/compat/locale/la_LN.US-ASCII/LC_CTYPE
+share/compat/locale/lt_LT.ISO8859-13/LC_COLLATE
+share/compat/locale/lt_LT.ISO8859-13/LC_CTYPE
+share/compat/locale/lt_LT.ISO8859-13/LC_MESSAGES
+share/compat/locale/lt_LT.ISO8859-13/LC_MONETARY
+share/compat/locale/lt_LT.ISO8859-13/LC_NUMERIC
+share/compat/locale/lt_LT.ISO8859-13/LC_TIME
+share/compat/locale/lt_LT.ISO8859-4/LC_COLLATE
+share/compat/locale/lt_LT.ISO8859-4/LC_TIME
+share/compat/locale/lt_LT.UTF-8/LC_TIME
+share/compat/locale/nl_BE.ISO8859-1/LC_MONETARY
+share/compat/locale/nl_NL.ISO8859-1/LC_MESSAGES
+share/compat/locale/nl_NL.ISO8859-1/LC_MONETARY
+share/compat/locale/nl_NL.ISO8859-1/LC_NUMERIC
+share/compat/locale/nl_NL.ISO8859-1/LC_TIME
+share/compat/locale/no_NO.ISO8859-1/LC_MESSAGES
+share/compat/locale/no_NO.ISO8859-1/LC_MONETARY
+share/compat/locale/no_NO.ISO8859-1/LC_NUMERIC
+share/compat/locale/no_NO.ISO8859-1/LC_TIME
+share/compat/locale/no_NO.UTF-8/LC_TIME
+share/compat/locale/pl_PL.ISO8859-2/LC_COLLATE
+share/compat/locale/pl_PL.ISO8859-2/LC_MESSAGES
+share/compat/locale/pl_PL.ISO8859-2/LC_MONETARY
+share/compat/locale/pl_PL.ISO8859-2/LC_NUMERIC
+share/compat/locale/pl_PL.ISO8859-2/LC_TIME
+share/compat/locale/pl_PL.UTF-8/LC_MONETARY
+share/compat/locale/pl_PL.UTF-8/LC_TIME
+share/compat/locale/pt_BR.ISO8859-1/LC_MONETARY
+share/compat/locale/pt_BR.ISO8859-1/LC_NUMERIC
+share/compat/locale/pt_BR.ISO8859-1/LC_TIME
+share/compat/locale/pt_BR.UTF-8/LC_TIME
+share/compat/locale/pt_PT.ISO8859-1/LC_MESSAGES
+share/compat/locale/pt_PT.ISO8859-1/LC_MONETARY
+share/compat/locale/pt_PT.ISO8859-1/LC_NUMERIC
+share/compat/locale/pt_PT.ISO8859-1/LC_TIME
+share/compat/locale/pt_PT.UTF-8/LC_TIME
+share/compat/locale/ro_RO.ISO8859-2/LC_MESSAGES
+share/compat/locale/ro_RO.ISO8859-2/LC_MONETARY
+share/compat/locale/ro_RO.ISO8859-2/LC_NUMERIC
+share/compat/locale/ro_RO.ISO8859-2/LC_TIME
+share/compat/locale/ro_RO.UTF-8/LC_TIME
+share/compat/locale/ru_RU.CP1251/LC_COLLATE
+share/compat/locale/ru_RU.CP1251/LC_MESSAGES
+share/compat/locale/ru_RU.CP1251/LC_MONETARY
+share/compat/locale/ru_RU.CP1251/LC_TIME
+share/compat/locale/ru_RU.CP866/LC_COLLATE
+share/compat/locale/ru_RU.CP866/LC_CTYPE
+share/compat/locale/ru_RU.CP866/LC_MESSAGES
+share/compat/locale/ru_RU.CP866/LC_MONETARY
+share/compat/locale/ru_RU.CP866/LC_TIME
+share/compat/locale/ru_RU.ISO8859-5/LC_COLLATE
+share/compat/locale/ru_RU.ISO8859-5/LC_CTYPE
+share/compat/locale/ru_RU.ISO8859-5/LC_MESSAGES
+share/compat/locale/ru_RU.ISO8859-5/LC_MONETARY
+share/compat/locale/ru_RU.ISO8859-5/LC_TIME
+share/compat/locale/ru_RU.KOI8-R/LC_COLLATE
+share/compat/locale/ru_RU.KOI8-R/LC_CTYPE
+share/compat/locale/ru_RU.KOI8-R/LC_MESSAGES
+share/compat/locale/ru_RU.KOI8-R/LC_MONETARY
+share/compat/locale/ru_RU.KOI8-R/LC_NUMERIC
+share/compat/locale/ru_RU.KOI8-R/LC_TIME
+share/compat/locale/ru_RU.UTF-8/LC_MESSAGES
+share/compat/locale/ru_RU.UTF-8/LC_MONETARY
+share/compat/locale/ru_RU.UTF-8/LC_TIME
+share/compat/locale/sk_SK.ISO8859-2/LC_MONETARY
+share/compat/locale/sk_SK.ISO8859-2/LC_NUMERIC
+share/compat/locale/sk_SK.ISO8859-2/LC_TIME
+share/compat/locale/sk_SK.UTF-8/LC_TIME
+share/compat/locale/sl_SI.ISO8859-2/LC_COLLATE
+share/compat/locale/sl_SI.ISO8859-2/LC_MESSAGES
+share/compat/locale/sl_SI.ISO8859-2/LC_MONETARY
+share/compat/locale/sl_SI.ISO8859-2/LC_NUMERIC
+share/compat/locale/sl_SI.ISO8859-2/LC_TIME
+share/compat/locale/sl_SI.UTF-8/LC_TIME
+share/compat/locale/sr_YU.ISO8859-2/LC_MESSAGES
+share/compat/locale/sr_YU.ISO8859-2/LC_MONETARY
+share/compat/locale/sr_YU.ISO8859-2/LC_NUMERIC
+share/compat/locale/sr_YU.ISO8859-2/LC_TIME
+share/compat/locale/sr_YU.ISO8859-5/LC_COLLATE
+share/compat/locale/sr_YU.ISO8859-5/LC_MESSAGES
+share/compat/locale/sr_YU.ISO8859-5/LC_MONETARY
+share/compat/locale/sr_YU.ISO8859-5/LC_NUMERIC
+share/compat/locale/sr_YU.ISO8859-5/LC_TIME
+share/compat/locale/sr_YU.UTF-8/LC_MESSAGES
+share/compat/locale/sr_YU.UTF-8/LC_TIME
+share/compat/locale/sv_SE.ISO8859-1/LC_COLLATE
+share/compat/locale/sv_SE.ISO8859-1/LC_MESSAGES
+share/compat/locale/sv_SE.ISO8859-1/LC_MONETARY
+share/compat/locale/sv_SE.ISO8859-1/LC_NUMERIC
+share/compat/locale/sv_SE.ISO8859-1/LC_TIME
+share/compat/locale/sv_SE.ISO8859-15/LC_COLLATE
+share/compat/locale/sv_SE.UTF-8/LC_TIME
+share/compat/locale/tr_TR.ISO8859-9/LC_MESSAGES
+share/compat/locale/tr_TR.ISO8859-9/LC_MONETARY
+share/compat/locale/tr_TR.ISO8859-9/LC_NUMERIC
+share/compat/locale/tr_TR.ISO8859-9/LC_TIME
+share/compat/locale/tr_TR.UTF-8/LC_TIME
+share/compat/locale/uk_UA.ISO8859-5/LC_COLLATE
+share/compat/locale/uk_UA.ISO8859-5/LC_MESSAGES
+share/compat/locale/uk_UA.ISO8859-5/LC_MONETARY
+share/compat/locale/uk_UA.ISO8859-5/LC_TIME
+share/compat/locale/uk_UA.KOI8-U/LC_COLLATE
+share/compat/locale/uk_UA.KOI8-U/LC_CTYPE
+share/compat/locale/uk_UA.KOI8-U/LC_MESSAGES
+share/compat/locale/uk_UA.KOI8-U/LC_MONETARY
+share/compat/locale/uk_UA.KOI8-U/LC_NUMERIC
+share/compat/locale/uk_UA.KOI8-U/LC_TIME
+share/compat/locale/uk_UA.UTF-8/LC_MESSAGES
+share/compat/locale/uk_UA.UTF-8/LC_MONETARY
+share/compat/locale/uk_UA.UTF-8/LC_TIME
+share/compat/locale/zh_CN.GB18030/LC_CTYPE
+share/compat/locale/zh_CN.GB18030/LC_MESSAGES
+share/compat/locale/zh_CN.GB18030/LC_MONETARY
+share/compat/locale/zh_CN.GB18030/LC_TIME
+share/compat/locale/zh_CN.GB2312/LC_CTYPE
+share/compat/locale/zh_CN.GB2312/LC_MESSAGES
+share/compat/locale/zh_CN.GB2312/LC_MONETARY
+share/compat/locale/zh_CN.GB2312/LC_TIME
+share/compat/locale/zh_CN.GBK/LC_CTYPE
+share/compat/locale/zh_CN.UTF-8/LC_MESSAGES
+share/compat/locale/zh_CN.UTF-8/LC_MONETARY
+share/compat/locale/zh_CN.UTF-8/LC_TIME
+share/compat/locale/zh_CN.eucCN/LC_CTYPE
+share/compat/locale/zh_CN.eucCN/LC_MESSAGES
+share/compat/locale/zh_CN.eucCN/LC_MONETARY
+share/compat/locale/zh_CN.eucCN/LC_NUMERIC
+share/compat/locale/zh_CN.eucCN/LC_TIME
+share/compat/locale/zh_HK.Big5HKSCS/LC_CTYPE
+share/compat/locale/zh_HK.UTF-8/LC_MONETARY
+share/compat/locale/zh_TW.Big5/LC_CTYPE
+share/compat/locale/zh_TW.Big5/LC_MESSAGES
+share/compat/locale/zh_TW.Big5/LC_MONETARY
+share/compat/locale/zh_TW.Big5/LC_TIME
+share/compat/locale/zh_TW.UTF-8/LC_MESSAGES
+share/compat/locale/zh_TW.UTF-8/LC_TIME
+@dirrm share/compat/locale/zh_TW.UTF-8
+@dirrm share/compat/locale/zh_TW.Big5
+@dirrm share/compat/locale/zh_HK.UTF-8
+@dirrm share/compat/locale/zh_HK.Big5HKSCS
+@dirrm share/compat/locale/zh_CN.eucCN
+@dirrm share/compat/locale/zh_CN.UTF-8
+@dirrm share/compat/locale/zh_CN.GBK
+@dirrm share/compat/locale/zh_CN.GB2312
+@dirrm share/compat/locale/zh_CN.GB18030
+@dirrm share/compat/locale/uk_UA.UTF-8
+@dirrm share/compat/locale/uk_UA.KOI8-U
+@dirrm share/compat/locale/uk_UA.ISO8859-5
+@dirrm share/compat/locale/tr_TR.UTF-8
+@dirrm share/compat/locale/tr_TR.ISO8859-9
+@dirrm share/compat/locale/sv_SE.UTF-8
+@dirrm share/compat/locale/sv_SE.ISO8859-15
+@dirrm share/compat/locale/sv_SE.ISO8859-1
+@dirrm share/compat/locale/sr_YU.UTF-8
+@dirrm share/compat/locale/sr_YU.ISO8859-5
+@dirrm share/compat/locale/sr_YU.ISO8859-2
+@dirrm share/compat/locale/sl_SI.UTF-8
+@dirrm share/compat/locale/sl_SI.ISO8859-2
+@dirrm share/compat/locale/sk_SK.UTF-8
+@dirrm share/compat/locale/sk_SK.ISO8859-2
+@dirrm share/compat/locale/ru_RU.UTF-8
+@dirrm share/compat/locale/ru_RU.KOI8-R
+@dirrm share/compat/locale/ru_RU.ISO8859-5
+@dirrm share/compat/locale/ru_RU.CP866
+@dirrm share/compat/locale/ru_RU.CP1251
+@dirrm share/compat/locale/ro_RO.UTF-8
+@dirrm share/compat/locale/ro_RO.ISO8859-2
+@dirrm share/compat/locale/pt_PT.UTF-8
+@dirrm share/compat/locale/pt_PT.ISO8859-15
+@dirrm share/compat/locale/pt_PT.ISO8859-1
+@dirrm share/compat/locale/pt_BR.UTF-8
+@dirrm share/compat/locale/pt_BR.ISO8859-1
+@dirrm share/compat/locale/pl_PL.UTF-8
+@dirrm share/compat/locale/pl_PL.ISO8859-2
+@dirrm share/compat/locale/no_NO.UTF-8
+@dirrm share/compat/locale/no_NO.ISO8859-15
+@dirrm share/compat/locale/no_NO.ISO8859-1
+@dirrm share/compat/locale/nl_NL.UTF-8
+@dirrm share/compat/locale/nl_NL.ISO8859-15
+@dirrm share/compat/locale/nl_NL.ISO8859-1
+@dirrm share/compat/locale/nl_BE.UTF-8
+@dirrm share/compat/locale/nl_BE.ISO8859-15
+@dirrm share/compat/locale/nl_BE.ISO8859-1
+@dirrm share/compat/locale/lt_LT.UTF-8
+@dirrm share/compat/locale/lt_LT.ISO8859-4
+@dirrm share/compat/locale/lt_LT.ISO8859-13
+@dirrm share/compat/locale/la_LN.US-ASCII
+@dirrm share/compat/locale/la_LN.ISO8859-4
+@dirrm share/compat/locale/la_LN.ISO8859-2
+@dirrm share/compat/locale/la_LN.ISO8859-15
+@dirrm share/compat/locale/la_LN.ISO8859-1
+@dirrm share/compat/locale/ko_KR.eucKR
+@dirrm share/compat/locale/ko_KR.UTF-8
+@dirrm share/compat/locale/ko_KR.CP949
+@dirrm share/compat/locale/kk_KZ.UTF-8
+@dirrm share/compat/locale/kk_KZ.PT154
+@dirrm share/compat/locale/ja_JP.eucJP
+@dirrm share/compat/locale/ja_JP.UTF-8
+@dirrm share/compat/locale/ja_JP.SJIS
+@dirrm share/compat/locale/it_IT.UTF-8
+@dirrm share/compat/locale/it_IT.ISO8859-15
+@dirrm share/compat/locale/it_IT.ISO8859-1
+@dirrm share/compat/locale/it_CH.UTF-8
+@dirrm share/compat/locale/it_CH.ISO8859-15
+@dirrm share/compat/locale/it_CH.ISO8859-1
+@dirrm share/compat/locale/is_IS.UTF-8
+@dirrm share/compat/locale/is_IS.ISO8859-15
+@dirrm share/compat/locale/is_IS.ISO8859-1
+@dirrm share/compat/locale/hy_AM.UTF-8
+@dirrm share/compat/locale/hy_AM.ARMSCII-8
+@dirrm share/compat/locale/hu_HU.UTF-8
+@dirrm share/compat/locale/hu_HU.ISO8859-2
+@dirrm share/compat/locale/hr_HR.UTF-8
+@dirrm share/compat/locale/hr_HR.ISO8859-2
+@dirrm share/compat/locale/hi_IN.ISCII-DEV
+@dirrm share/compat/locale/he_IL.UTF-8
+@dirrm share/compat/locale/fr_FR.UTF-8
+@dirrm share/compat/locale/fr_FR.ISO8859-15
+@dirrm share/compat/locale/fr_FR.ISO8859-1
+@dirrm share/compat/locale/fr_CH.UTF-8
+@dirrm share/compat/locale/fr_CH.ISO8859-15
+@dirrm share/compat/locale/fr_CH.ISO8859-1
+@dirrm share/compat/locale/fr_CA.UTF-8
+@dirrm share/compat/locale/fr_CA.ISO8859-15
+@dirrm share/compat/locale/fr_CA.ISO8859-1
+@dirrm share/compat/locale/fr_BE.UTF-8
+@dirrm share/compat/locale/fr_BE.ISO8859-15
+@dirrm share/compat/locale/fr_BE.ISO8859-1
+@dirrm share/compat/locale/fi_FI.UTF-8
+@dirrm share/compat/locale/fi_FI.ISO8859-15
+@dirrm share/compat/locale/fi_FI.ISO8859-1
+@dirrm share/compat/locale/et_EE.UTF-8
+@dirrm share/compat/locale/et_EE.ISO8859-15
+@dirrm share/compat/locale/es_ES.UTF-8
+@dirrm share/compat/locale/es_ES.ISO8859-15
+@dirrm share/compat/locale/es_ES.ISO8859-1
+@dirrm share/compat/locale/en_US.UTF-8
+@dirrm share/compat/locale/en_US.US-ASCII
+@dirrm share/compat/locale/en_US.ISO8859-15
+@dirrm share/compat/locale/en_US.ISO8859-1
+@dirrm share/compat/locale/en_NZ.UTF-8
+@dirrm share/compat/locale/en_NZ.US-ASCII
+@dirrm share/compat/locale/en_NZ.ISO8859-15
+@dirrm share/compat/locale/en_NZ.ISO8859-1
+@dirrm share/compat/locale/en_IE.UTF-8
+@dirrm share/compat/locale/en_GB.UTF-8
+@dirrm share/compat/locale/en_GB.US-ASCII
+@dirrm share/compat/locale/en_GB.ISO8859-15
+@dirrm share/compat/locale/en_GB.ISO8859-1
+@dirrm share/compat/locale/en_CA.UTF-8
+@dirrm share/compat/locale/en_CA.US-ASCII
+@dirrm share/compat/locale/en_CA.ISO8859-15
+@dirrm share/compat/locale/en_CA.ISO8859-1
+@dirrm share/compat/locale/en_AU.UTF-8
+@dirrm share/compat/locale/en_AU.US-ASCII
+@dirrm share/compat/locale/en_AU.ISO8859-15
+@dirrm share/compat/locale/en_AU.ISO8859-1
+@dirrm share/compat/locale/el_GR.UTF-8
+@dirrm share/compat/locale/el_GR.ISO8859-7
+@dirrm share/compat/locale/de_DE.UTF-8
+@dirrm share/compat/locale/de_DE.ISO8859-15
+@dirrm share/compat/locale/de_DE.ISO8859-1
+@dirrm share/compat/locale/de_CH.UTF-8
+@dirrm share/compat/locale/de_CH.ISO8859-15
+@dirrm share/compat/locale/de_CH.ISO8859-1
+@dirrm share/compat/locale/de_AT.UTF-8
+@dirrm share/compat/locale/de_AT.ISO8859-15
+@dirrm share/compat/locale/de_AT.ISO8859-1
+@dirrm share/compat/locale/da_DK.UTF-8
+@dirrm share/compat/locale/da_DK.ISO8859-15
+@dirrm share/compat/locale/da_DK.ISO8859-1
+@dirrm share/compat/locale/cs_CZ.UTF-8
+@dirrm share/compat/locale/cs_CZ.ISO8859-2
+@dirrm share/compat/locale/ca_ES.UTF-8
+@dirrm share/compat/locale/ca_ES.ISO8859-15
+@dirrm share/compat/locale/ca_ES.ISO8859-1
+@dirrm share/compat/locale/bg_BG.UTF-8
+@dirrm share/compat/locale/bg_BG.CP1251
+@dirrm share/compat/locale/be_BY.UTF-8
+@dirrm share/compat/locale/be_BY.ISO8859-5
+@dirrm share/compat/locale/be_BY.CP1251
+@dirrm share/compat/locale/be_BY.CP1131
+@dirrm share/compat/locale/am_ET.UTF-8
+@dirrm share/compat/locale/af_ZA.UTF-8
+@dirrm share/compat/locale/af_ZA.ISO8859-15
+@dirrm share/compat/locale/af_ZA.ISO8859-1
+@dirrm share/compat/locale/UTF-8
+@dirrm share/compat/locale
+@dirrm share/compat
