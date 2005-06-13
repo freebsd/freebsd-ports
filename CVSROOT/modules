@@ -5621,6 +5621,7 @@ lmmon		ports/sysutils/lmmon
 lmon		ports/sysutils/lmon
 lmtp2nntp	ports/mail/lmtp2nntp
 lmtpd		ports/mail/lmtpd
+localedata	ports/misc/localedata
 lockdown	ports/security/lockdown
 lodju		ports/graphics/lodju
 log4c		ports/devel/log4c
