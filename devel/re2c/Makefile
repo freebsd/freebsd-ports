@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	re2c
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.7
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
 GNU_CONFIGURE=	yes
+USE_GCC=	3.4+
 
 PLIST_FILES=	bin/re2c
 MAN1=		re2c.1
