@@ -23,5 +23,6 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		extract.1
+MAN3=		libextractor.3
 
 .include <bsd.port.mk>
