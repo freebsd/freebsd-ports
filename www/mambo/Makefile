@@ -21,7 +21,7 @@ EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
-USE_PHP=	mysql session zlib gd pdf xml
+USE_PHP=	mysql session zlib gd pdf xml pcre
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
