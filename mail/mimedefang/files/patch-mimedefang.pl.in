@@ -1,0 +1,11 @@
+--- mimedefang.pl.in.orig	Sun Jun 12 18:36:52 2005
++++ mimedefang.pl.in	Sun Jun 12 18:37:35 2005
+@@ -191,7 +191,7 @@
+ $FprotdHost = "127.0.0.1:10200";
+ 
+ $SophieSock = "@SPOOLDIR@/sophie";
+-$ClamdSock  = "@SPOOLDIR@/clamd.sock";
++$ClamdSock  = "/var/run/clamav/clamd";
+ $TrophieSock = "@SPOOLDIR@/trophie";
+ 
+ package MIME::Parser::ParanoidFiler;
