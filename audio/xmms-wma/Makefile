@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-wma
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
@@ -25,9 +25,16 @@ ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	lib/xmms/Input/libwma.so
 
-.if defined(ICONV)
-CFLAGS+=	-DICONV
+.if defined(WITH_ICONV)
+CFLAGS+=	-DUSE_ICONV
 USE_ICONV=	yes
+.endif
+
+pre-everything::
+.if !defined(WITH_ICONV)
+	@${ECHO_MSG} "You may specify the following on the command line:"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "WITH_ICONV=yes	Enable tag recoding support using iconv"
 .endif
 
 post-extract:

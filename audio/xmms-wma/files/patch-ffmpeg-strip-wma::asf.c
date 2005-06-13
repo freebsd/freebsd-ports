@@ -1,5 +1,5 @@
 --- ffmpeg-strip-wma/asf.c.orig	Wed May 26 19:16:39 2004
-+++ ffmpeg-strip-wma/asf.c	Sat Dec 11 21:32:58 2004
++++ ffmpeg-strip-wma/asf.c	Mon Jun 13 08:18:01 2005
 @@ -16,10 +16,13 @@
   * License along with this library; if not, write to the Free Software
   * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -24,6 +24,15 @@
  static void tag_recode(char *before, int len)
  {
         int result;
+@@ -842,7 +846,7 @@
+        int length = len;
+ 
+        memcpy(ansb, before, len);
+-       frt = iconv_open(getlocale(), "UNICODE");
++       frt = iconv_open(getlocale(), "UTF-16LE");
+        if (frt == (iconv_t) - 1)
+        {
+            return;
 @@ -859,6 +863,7 @@
  		return;
         return;
