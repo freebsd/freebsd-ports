@@ -33,7 +33,7 @@ PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${RELDIR} \
 do-build:
 	${RM} -Rf ${WRKSRC}/docsrc
 
-pre-install:
+pre-su-install:
 	${MKDIR} ${INSTDIR}
 	${FIND} ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}

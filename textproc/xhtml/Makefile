@@ -40,7 +40,7 @@ CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 post-patch:
 	${SED} -e 's#@@DTDDIR@@#${DTDDIR}#' < ${FILESDIR}/catalog.xml > ${WRKSRC}/catalog.xml
 
-pre-install:
+pre-su-install:
 	@[ -d ${DTDDIR}	 ] || ${MKDIR} ${DTDDIR}
 
 do-install:
