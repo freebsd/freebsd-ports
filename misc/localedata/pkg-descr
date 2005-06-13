@@ -1,0 +1,6 @@
+This package provides compatibility locale data for FreeBSD 6.x to run
+4.x/5.x binaries. When you have a trouble with locale at running a legacy
+binary, you should guide them to find legacy locale data with setting
+PATH_LOCALE environment variable.
+
+env PATH_LOCALE=/usr/local/share/compat/locale command
