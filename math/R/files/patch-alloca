@@ -1,0 +1,55 @@
+--- src/library/grDevices/src/devPS.c.orig	2005-04-18 23:30:30.000000000 +0200
++++ src/library/grDevices/src/devPS.c	2005-06-08 15:35:30.000000000 +0200
+@@ -47,7 +47,7 @@
+ 
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+-#else
++#elif !defined (__FreeBSD__)
+ extern char *alloca(size_t);
+ #endif
+ 
+--- src/main/errors.c.orig	2005-04-18 23:30:00.000000000 +0200
++++ src/main/errors.c	2005-06-08 15:35:30.000000000 +0200
+@@ -39,7 +39,7 @@
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+ #endif
+-#if !HAVE_DECL_ALLOCA
++#if !HAVE_DECL_ALLOCA && !defined(__FreeBSD__)
+ extern char *alloca(size_t);
+ #endif
+ 
+--- src/main/pcre.c.orig	2005-04-18 23:30:01.000000000 +0200
++++ src/main/pcre.c	2005-06-08 15:35:31.000000000 +0200
+@@ -37,7 +37,7 @@
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+ #endif
+-#if !HAVE_DECL_ALLOCA
++#if !HAVE_DECL_ALLOCA && !defined(__FreeBSD__)
+ extern char *alloca(size_t);
+ #endif
+ 
+--- src/main/util.c.orig	2005-04-18 23:30:00.000000000 +0200
++++ src/main/util.c	2005-06-08 15:35:30.000000000 +0200
+@@ -41,7 +41,7 @@
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+ #endif
+-#if !HAVE_DECL_ALLOCA
++#if !HAVE_DECL_ALLOCA && !defined(__FreeBSD__)
+ extern char *alloca(size_t);
+ #endif
+ 
+--- src/main/vfonts.c.orig	2005-04-18 23:30:01.000000000 +0200
++++ src/main/vfonts.c	2005-06-08 15:35:30.000000000 +0200
+@@ -32,7 +32,7 @@
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+ #endif
+-#if !HAVE_DECL_ALLOCA
++#if !HAVE_DECL_ALLOCA && !defined(__FreeBSD__)
+ extern char *alloca(size_t);
+ #endif
+ 
