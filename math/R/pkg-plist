@@ -8,87 +8,6 @@ lib/R/NEWS
 lib/R/ONEWS
 lib/R/RESOURCES
 lib/R/THANKS
-lib/R/afm/AdobeStd.enc
-lib/R/afm/AdobeSym.enc
-lib/R/afm/CM_boldx_10.afm
-lib/R/afm/CM_boldx_italic_10.afm
-lib/R/afm/CM_italic_10.afm
-lib/R/afm/CM_regular_10.afm
-lib/R/afm/CM_symbol_10.afm
-lib/R/afm/ISOLatin1.enc
-lib/R/afm/ISOLatin2.enc
-lib/R/afm/ISOLatin9.enc
-lib/R/afm/MacRoman.enc
-lib/R/afm/PDFDoc.enc
-lib/R/afm/WinAnsi.enc
-lib/R/afm/a010013l.afm
-lib/R/afm/a010015l.afm
-lib/R/afm/a010033l.afm
-lib/R/afm/a010035l.afm
-lib/R/afm/agd_____.afm
-lib/R/afm/agdo____.afm
-lib/R/afm/agw_____.afm
-lib/R/afm/agwo____.afm
-lib/R/afm/b018012l.afm
-lib/R/afm/b018015l.afm
-lib/R/afm/b018032l.afm
-lib/R/afm/b018035l.afm
-lib/R/afm/bkd_____.afm
-lib/R/afm/bkdi____.afm
-lib/R/afm/bkl_____.afm
-lib/R/afm/bkli____.afm
-lib/R/afm/c059013l.afm
-lib/R/afm/c059016l.afm
-lib/R/afm/c059033l.afm
-lib/R/afm/c059036l.afm
-lib/R/afm/cmbxti10.afm
-lib/R/afm/cmti10.afm
-lib/R/afm/cob_____.afm
-lib/R/afm/cobo____.afm
-lib/R/afm/com_____.afm
-lib/R/afm/coo_____.afm
-lib/R/afm/hv______.afm
-lib/R/afm/hvb_____.afm
-lib/R/afm/hvbo____.afm
-lib/R/afm/hvn_____.afm
-lib/R/afm/hvnb____.afm
-lib/R/afm/hvnbo___.afm
-lib/R/afm/hvno____.afm
-lib/R/afm/hvo_____.afm
-lib/R/afm/n019003l.afm
-lib/R/afm/n019004l.afm
-lib/R/afm/n019023l.afm
-lib/R/afm/n019024l.afm
-lib/R/afm/n019043l.afm
-lib/R/afm/n019044l.afm
-lib/R/afm/n019063l.afm
-lib/R/afm/n019064l.afm
-lib/R/afm/n021003l.afm
-lib/R/afm/n021004l.afm
-lib/R/afm/n021023l.afm
-lib/R/afm/n021024l.afm
-lib/R/afm/n022003l.afm
-lib/R/afm/n022004l.afm
-lib/R/afm/n022023l.afm
-lib/R/afm/n022024l.afm
-lib/R/afm/ncb_____.afm
-lib/R/afm/ncbi____.afm
-lib/R/afm/nci_____.afm
-lib/R/afm/ncr_____.afm
-lib/R/afm/p052003l.afm
-lib/R/afm/p052004l.afm
-lib/R/afm/p052023l.afm
-lib/R/afm/p052024l.afm
-lib/R/afm/pob_____.afm
-lib/R/afm/pobi____.afm
-lib/R/afm/poi_____.afm
-lib/R/afm/por_____.afm
-lib/R/afm/s050000l.afm
-lib/R/afm/sy______.afm
-lib/R/afm/tib_____.afm
-lib/R/afm/tibi____.afm
-lib/R/afm/tii_____.afm
-lib/R/afm/tir_____.afm
 lib/R/bin/BATCH
 lib/R/bin/COMPILE
 lib/R/bin/INSTALL
@@ -112,11 +31,11 @@ lib/R/bin/libtool
 lib/R/bin/mkinstalldirs
 lib/R/bin/pager
 lib/R/bin/texi2dvi
+lib/R/doc/CRAN_mirrors.csv
 lib/R/doc/KEYWORDS
 lib/R/doc/KEYWORDS.db
 lib/R/doc/html/R.css
 lib/R/doc/html/about.html
-lib/R/doc/html/faq.html
 lib/R/doc/html/index.html
 lib/R/doc/html/left.jpg
 lib/R/doc/html/logo.jpg
@@ -139,14 +58,10 @@ lib/R/doc/html/search/index.txt
 lib/R/doc/html/template.html
 lib/R/doc/html/thanks.html
 lib/R/doc/html/up.jpg
-lib/R/doc/manual/R-FAQ.html
 lib/R/doc/manual/R-admin.html
-lib/R/doc/manual/R-data.html
-lib/R/doc/manual/R-exts.html
-lib/R/doc/manual/R-intro.html
-lib/R/doc/manual/R-lang.html
 lib/R/etc/Makeconf
 lib/R/etc/Renviron
+lib/R/etc/repositories
 lib/R/include/R.h
 lib/R/include/R_ext/Applic.h
 lib/R/include/R_ext/Arith.h
@@ -169,8 +84,10 @@ lib/R/include/R_ext/PrtUtil.h
 lib/R/include/R_ext/R-ftp-http.h
 lib/R/include/R_ext/RConverters.h
 lib/R/include/R_ext/RS.h
+lib/R/include/R_ext/RStartup.h
 lib/R/include/R_ext/Random.h
 lib/R/include/R_ext/Rdynload.h
+lib/R/include/R_ext/Riconv.h
 lib/R/include/R_ext/Utils.h
 lib/R/include/R_ext/eventloop.h
 lib/R/include/R_ext/libextern.h
@@ -178,6 +95,7 @@ lib/R/include/Rconfig.h
 lib/R/include/Rdefines.h
 lib/R/include/Rdevices.h
 lib/R/include/Rgraphics.h
+lib/R/include/Rinterface.h
 lib/R/include/Rinternals.h
 lib/R/include/Rmath.h
 lib/R/include/Rversion.h
@@ -791,6 +709,7 @@ lib/R/library/MASS/latex/write.matrix.tex
 lib/R/library/MASS/latex/wtloss.tex
 lib/R/library/MASS/libs/MASS.so
 lib/R/library/MASS/man/MASS.Rd.gz
+lib/R/library/MASS/po/en@quot/LC_MESSAGES/R-MASS.mo
 lib/R/library/MASS/scripts/README
 lib/R/library/MASS/scripts/ch01.R
 lib/R/library/MASS/scripts/ch02.R
@@ -857,7 +776,6 @@ lib/R/library/base/R-ex/any.R
 lib/R/library/base/R-ex/aperm.R
 lib/R/library/base/R-ex/append.R
 lib/R/library/base/R-ex/apply.R
-lib/R/library/base/R-ex/approxfun.R
 lib/R/library/base/R-ex/args.R
 lib/R/library/base/R-ex/array.R
 lib/R/library/base/R-ex/as.POSIXlt.R
@@ -903,9 +821,11 @@ lib/R/library/base/R-ex/cut.POSIXt.R
 lib/R/library/base/R-ex/cut.R
 lib/R/library/base/R-ex/data.class.R
 lib/R/library/base/R-ex/data.frame.R
+lib/R/library/base/R-ex/data.matrix.R
 lib/R/library/base/R-ex/date.R
 lib/R/library/base/R-ex/dcf.R
 lib/R/library/base/R-ex/delay.R
+lib/R/library/base/R-ex/delayedAssign.R
 lib/R/library/base/R-ex/deparse.R
 lib/R/library/base/R-ex/det.R
 lib/R/library/base/R-ex/detach.R
@@ -923,6 +843,7 @@ lib/R/library/base/R-ex/duplicated.R
 lib/R/library/base/R-ex/dynload.R
 lib/R/library/base/R-ex/eapply.R
 lib/R/library/base/R-ex/eigen.R
+lib/R/library/base/R-ex/encodeString.R
 lib/R/library/base/R-ex/environment.R
 lib/R/library/base/R-ex/eval.R
 lib/R/library/base/R-ex/exists.R
@@ -951,6 +872,7 @@ lib/R/library/base/R-ex/getLoadedDLLs.R
 lib/R/library/base/R-ex/getNativeSymbolInfo.R
 lib/R/library/base/R-ex/getenv.R
 lib/R/library/base/R-ex/getpid.R
+lib/R/library/base/R-ex/gettext.R
 lib/R/library/base/R-ex/getwd.R
 lib/R/library/base/R-ex/gl.R
 lib/R/library/base/R-ex/grep.R
@@ -963,6 +885,7 @@ lib/R/library/base/R-ex/interaction.R
 lib/R/library/base/R-ex/interactive.R
 lib/R/library/base/R-ex/invisible.R
 lib/R/library/base/R-ex/is.finite.R
+lib/R/library/base/R-ex/is.function.R
 lib/R/library/base/R-ex/is.language.R
 lib/R/library/base/R-ex/is.object.R
 lib/R/library/base/R-ex/is.recursive.R
@@ -970,6 +893,7 @@ lib/R/library/base/R-ex/isR.R
 lib/R/library/base/R-ex/jitter.R
 lib/R/library/base/R-ex/kappa.R
 lib/R/library/base/R-ex/kronecker.R
+lib/R/library/base/R-ex/l10n_info.R
 lib/R/library/base/R-ex/lapply.R
 lib/R/library/base/R-ex/length.R
 lib/R/library/base/R-ex/levels.R
@@ -999,6 +923,7 @@ lib/R/library/base/R-ex/maxCol.R
 lib/R/library/base/R-ex/mean.R
 lib/R/library/base/R-ex/memory.profile.R
 lib/R/library/base/R-ex/merge.R
+lib/R/library/base/R-ex/message.R
 lib/R/library/base/R-ex/missing.R
 lib/R/library/base/R-ex/mode.R
 lib/R/library/base/R-ex/name.R
@@ -1027,7 +952,7 @@ lib/R/library/base/R-ex/pos.to.env.R
 lib/R/library/base/R-ex/pretty.R
 lib/R/library/base/R-ex/print.R
 lib/R/library/base/R-ex/print.default.R
-lib/R/library/base/R-ex/print.matrix.R
+lib/R/library/base/R-ex/prmatrix.R
 lib/R/library/base/R-ex/proc.time.R
 lib/R/library/base/R-ex/prod.R
 lib/R/library/base/R-ex/prop.table.R
@@ -1079,6 +1004,7 @@ lib/R/library/base/R-ex/stop.R
 lib/R/library/base/R-ex/stopifnot.R
 lib/R/library/base/R-ex/strptime.R
 lib/R/library/base/R-ex/strsplit.R
+lib/R/library/base/R-ex/strtrim.R
 lib/R/library/base/R-ex/structure.R
 lib/R/library/base/R-ex/strwrap.R
 lib/R/library/base/R-ex/subset.R
@@ -1184,7 +1110,6 @@ lib/R/library/base/help/any
 lib/R/library/base/help/aperm
 lib/R/library/base/help/append
 lib/R/library/base/help/apply
-lib/R/library/base/help/approxfun
 lib/R/library/base/help/args
 lib/R/library/base/help/array
 lib/R/library/base/help/as.POSIXlt
@@ -1245,6 +1170,7 @@ lib/R/library/base/help/date
 lib/R/library/base/help/dcf
 lib/R/library/base/help/debug
 lib/R/library/base/help/delay
+lib/R/library/base/help/delayedAssign
 lib/R/library/base/help/deparse
 lib/R/library/base/help/deparseOpts
 lib/R/library/base/help/det
@@ -1264,6 +1190,7 @@ lib/R/library/base/help/duplicated
 lib/R/library/base/help/dynload
 lib/R/library/base/help/eapply
 lib/R/library/base/help/eigen
+lib/R/library/base/help/encodeString
 lib/R/library/base/help/environment
 lib/R/library/base/help/eval
 lib/R/library/base/help/exists
@@ -1295,6 +1222,7 @@ lib/R/library/base/help/getLoadedDLLs
 lib/R/library/base/help/getNativeSymbolInfo
 lib/R/library/base/help/getenv
 lib/R/library/base/help/getpid
+lib/R/library/base/help/gettext
 lib/R/library/base/help/getwd
 lib/R/library/base/help/gl
 lib/R/library/base/help/grep
@@ -1316,6 +1244,7 @@ lib/R/library/base/help/isR
 lib/R/library/base/help/jitter
 lib/R/library/base/help/kappa
 lib/R/library/base/help/kronecker
+lib/R/library/base/help/l10n_info
 lib/R/library/base/help/labels
 lib/R/library/base/help/lapply
 lib/R/library/base/help/lazyload
@@ -1349,6 +1278,7 @@ lib/R/library/base/help/maxCol
 lib/R/library/base/help/mean
 lib/R/library/base/help/memory.profile
 lib/R/library/base/help/merge
+lib/R/library/base/help/message
 lib/R/library/base/help/missing
 lib/R/library/base/help/mode
 lib/R/library/base/help/name
@@ -1384,7 +1314,7 @@ lib/R/library/base/help/pretty
 lib/R/library/base/help/print
 lib/R/library/base/help/print.dataframe
 lib/R/library/base/help/print.default
-lib/R/library/base/help/print.matrix
+lib/R/library/base/help/prmatrix
 lib/R/library/base/help/proc.time
 lib/R/library/base/help/prod
 lib/R/library/base/help/prop.table
@@ -1445,6 +1375,7 @@ lib/R/library/base/help/stop
 lib/R/library/base/help/stopifnot
 lib/R/library/base/help/strptime
 lib/R/library/base/help/strsplit
+lib/R/library/base/help/strtrim
 lib/R/library/base/help/structure
 lib/R/library/base/help/strwrap
 lib/R/library/base/help/subset
@@ -1497,6 +1428,7 @@ lib/R/library/base/help/zMethods
 lib/R/library/base/help/zScript
 lib/R/library/base/help/zip.file.extract
 lib/R/library/base/help/zpackages
+lib/R/library/base/help/zutils
 lib/R/library/base/html/00Index.html
 lib/R/library/base/html/Arithmetic.html
 lib/R/library/base/html/AsIs.html
@@ -1551,7 +1483,6 @@ lib/R/library/base/html/any.html
 lib/R/library/base/html/aperm.html
 lib/R/library/base/html/append.html
 lib/R/library/base/html/apply.html
-lib/R/library/base/html/approxfun.html
 lib/R/library/base/html/args.html
 lib/R/library/base/html/array.html
 lib/R/library/base/html/as.POSIXlt.html
@@ -1612,6 +1543,7 @@ lib/R/library/base/html/date.html
 lib/R/library/base/html/dcf.html
 lib/R/library/base/html/debug.html
 lib/R/library/base/html/delay.html
+lib/R/library/base/html/delayedAssign.html
 lib/R/library/base/html/deparse.html
 lib/R/library/base/html/deparseOpts.html
 lib/R/library/base/html/det.html
@@ -1631,6 +1563,7 @@ lib/R/library/base/html/duplicated.html
 lib/R/library/base/html/dynload.html
 lib/R/library/base/html/eapply.html
 lib/R/library/base/html/eigen.html
+lib/R/library/base/html/encodeString.html
 lib/R/library/base/html/environment.html
 lib/R/library/base/html/eval.html
 lib/R/library/base/html/exists.html
@@ -1662,6 +1595,7 @@ lib/R/library/base/html/getLoadedDLLs.html
 lib/R/library/base/html/getNativeSymbolInfo.html
 lib/R/library/base/html/getenv.html
 lib/R/library/base/html/getpid.html
+lib/R/library/base/html/gettext.html
 lib/R/library/base/html/getwd.html
 lib/R/library/base/html/gl.html
 lib/R/library/base/html/grep.html
@@ -1683,6 +1617,7 @@ lib/R/library/base/html/isR.html
 lib/R/library/base/html/jitter.html
 lib/R/library/base/html/kappa.html
 lib/R/library/base/html/kronecker.html
+lib/R/library/base/html/l10n_info.html
 lib/R/library/base/html/labels.html
 lib/R/library/base/html/lapply.html
 lib/R/library/base/html/lazyload.html
@@ -1716,6 +1651,7 @@ lib/R/library/base/html/maxCol.html
 lib/R/library/base/html/mean.html
 lib/R/library/base/html/memory.profile.html
 lib/R/library/base/html/merge.html
+lib/R/library/base/html/message.html
 lib/R/library/base/html/missing.html
 lib/R/library/base/html/mode.html
 lib/R/library/base/html/name.html
@@ -1751,7 +1687,7 @@ lib/R/library/base/html/pretty.html
 lib/R/library/base/html/print.dataframe.html
 lib/R/library/base/html/print.default.html
 lib/R/library/base/html/print.html
-lib/R/library/base/html/print.matrix.html
+lib/R/library/base/html/prmatrix.html
 lib/R/library/base/html/proc.time.html
 lib/R/library/base/html/prod.html
 lib/R/library/base/html/prop.table.html
@@ -1812,6 +1748,7 @@ lib/R/library/base/html/stop.html
 lib/R/library/base/html/stopifnot.html
 lib/R/library/base/html/strptime.html
 lib/R/library/base/html/strsplit.html
+lib/R/library/base/html/strtrim.html
 lib/R/library/base/html/structure.html
 lib/R/library/base/html/strwrap.html
 lib/R/library/base/html/subset.html
@@ -1864,6 +1801,7 @@ lib/R/library/base/html/zMethods.html
 lib/R/library/base/html/zScript.html
 lib/R/library/base/html/zip.file.extract.html
 lib/R/library/base/html/zpackages.html
+lib/R/library/base/html/zutils.html
 lib/R/library/base/latex/Arithmetic.tex
 lib/R/library/base/latex/AsIs.tex
 lib/R/library/base/latex/Bessel.tex
@@ -1917,7 +1855,6 @@ lib/R/library/base/latex/any.tex
 lib/R/library/base/latex/aperm.tex
 lib/R/library/base/latex/append.tex
 lib/R/library/base/latex/apply.tex
-lib/R/library/base/latex/approxfun.tex
 lib/R/library/base/latex/args.tex
 lib/R/library/base/latex/array.tex
 lib/R/library/base/latex/as.POSIXlt.tex
@@ -1978,6 +1915,7 @@ lib/R/library/base/latex/date.tex
 lib/R/library/base/latex/dcf.tex
 lib/R/library/base/latex/debug.tex
 lib/R/library/base/latex/delay.tex
+lib/R/library/base/latex/delayedAssign.tex
 lib/R/library/base/latex/deparse.tex
 lib/R/library/base/latex/deparseOpts.tex
 lib/R/library/base/latex/det.tex
@@ -1997,6 +1935,7 @@ lib/R/library/base/latex/duplicated.tex
 lib/R/library/base/latex/dynload.tex
 lib/R/library/base/latex/eapply.tex
 lib/R/library/base/latex/eigen.tex
+lib/R/library/base/latex/encodeString.tex
 lib/R/library/base/latex/environment.tex
 lib/R/library/base/latex/eval.tex
 lib/R/library/base/latex/exists.tex
@@ -2028,6 +1967,7 @@ lib/R/library/base/latex/getLoadedDLLs.tex
 lib/R/library/base/latex/getNativeSymbolInfo.tex
 lib/R/library/base/latex/getenv.tex
 lib/R/library/base/latex/getpid.tex
+lib/R/library/base/latex/gettext.tex
 lib/R/library/base/latex/getwd.tex
 lib/R/library/base/latex/gl.tex
 lib/R/library/base/latex/grep.tex
@@ -2049,6 +1989,7 @@ lib/R/library/base/latex/isR.tex
 lib/R/library/base/latex/jitter.tex
 lib/R/library/base/latex/kappa.tex
 lib/R/library/base/latex/kronecker.tex
+lib/R/library/base/latex/l10n_info.tex
 lib/R/library/base/latex/labels.tex
 lib/R/library/base/latex/lapply.tex
 lib/R/library/base/latex/lazyload.tex
@@ -2082,6 +2023,7 @@ lib/R/library/base/latex/maxCol.tex
 lib/R/library/base/latex/mean.tex
 lib/R/library/base/latex/memory.profile.tex
 lib/R/library/base/latex/merge.tex
+lib/R/library/base/latex/message.tex
 lib/R/library/base/latex/missing.tex
 lib/R/library/base/latex/mode.tex
 lib/R/library/base/latex/name.tex
@@ -2116,8 +2058,8 @@ lib/R/library/base/latex/pos.to.env.tex
 lib/R/library/base/latex/pretty.tex
 lib/R/library/base/latex/print.dataframe.tex
 lib/R/library/base/latex/print.default.tex
-lib/R/library/base/latex/print.matrix.tex
 lib/R/library/base/latex/print.tex
+lib/R/library/base/latex/prmatrix.tex
 lib/R/library/base/latex/proc.time.tex
 lib/R/library/base/latex/prod.tex
 lib/R/library/base/latex/prop.table.tex
@@ -2178,6 +2120,7 @@ lib/R/library/base/latex/stop.tex
 lib/R/library/base/latex/stopifnot.tex
 lib/R/library/base/latex/strptime.tex
 lib/R/library/base/latex/strsplit.tex
+lib/R/library/base/latex/strtrim.tex
 lib/R/library/base/latex/structure.tex
 lib/R/library/base/latex/strwrap.tex
 lib/R/library/base/latex/subset.tex
@@ -2230,7 +2173,12 @@ lib/R/library/base/latex/zMethods.tex
 lib/R/library/base/latex/zScript.tex
 lib/R/library/base/latex/zip.file.extract.tex
 lib/R/library/base/latex/zpackages.tex
+lib/R/library/base/latex/zutils.tex
 lib/R/library/base/man/base.Rd.gz
+lib/R/library/base/po/en@quot/LC_MESSAGES/R-base.mo
+lib/R/library/base/po/it/LC_MESSAGES/R-base.mo
+lib/R/library/base/po/ja/LC_MESSAGES/R-base.mo
+lib/R/library/base/po/zh_CN/LC_MESSAGES/R-base.mo
 lib/R/library/boot/CONTENTS
 lib/R/library/boot/DESCRIPTION
 lib/R/library/boot/INDEX
@@ -2613,6 +2561,7 @@ lib/R/library/class/latex/reduce.nn.tex
 lib/R/library/class/latex/somgrid.tex
 lib/R/library/class/libs/class.so
 lib/R/library/class/man/class.Rd.gz
+lib/R/library/class/po/en@quot/LC_MESSAGES/R-class.mo
 lib/R/library/cluster/CONTENTS
 lib/R/library/cluster/DESCRIPTION
 lib/R/library/cluster/INDEX
@@ -2625,9 +2574,11 @@ lib/R/library/cluster/NAMESPACE
 lib/R/library/cluster/R-ex/agnes.R
 lib/R/library/cluster/R-ex/agriculture.R
 lib/R/library/cluster/R-ex/animals.R
+lib/R/library/cluster/R-ex/bannerplot.R
 lib/R/library/cluster/R-ex/clara.R
 lib/R/library/cluster/R-ex/clusplot.default.R
 lib/R/library/cluster/R-ex/clusplot.partition.R
+lib/R/library/cluster/R-ex/coef.hclust.R
 lib/R/library/cluster/R-ex/daisy.R
 lib/R/library/cluster/R-ex/diana.R
 lib/R/library/cluster/R-ex/diana.object.R
@@ -2643,6 +2594,7 @@ lib/R/library/cluster/R-ex/plot.diana.R
 lib/R/library/cluster/R-ex/plot.partition.R
 lib/R/library/cluster/R-ex/pltree.twins.R
 lib/R/library/cluster/R-ex/pluton.R
+lib/R/library/cluster/R-ex/predict.ellipsoid.R
 lib/R/library/cluster/R-ex/print.dissimilarity.R
 lib/R/library/cluster/R-ex/ruspini.R
 lib/R/library/cluster/R-ex/silhouette.R
@@ -2668,6 +2620,7 @@ lib/R/library/cluster/help/clusplot
 lib/R/library/cluster/help/clusplot.default
 lib/R/library/cluster/help/clusplot.partition
 lib/R/library/cluster/help/cluster-internal
+lib/R/library/cluster/help/coef.hclust
 lib/R/library/cluster/help/daisy
 lib/R/library/cluster/help/diana
 lib/R/library/cluster/help/diana.object
@@ -2722,6 +2675,7 @@ lib/R/library/cluster/html/clusplot.default.html
 lib/R/library/cluster/html/clusplot.html
 lib/R/library/cluster/html/clusplot.partition.html
 lib/R/library/cluster/html/cluster-internal.html
+lib/R/library/cluster/html/coef.hclust.html
 lib/R/library/cluster/html/daisy.html
 lib/R/library/cluster/html/diana.html
 lib/R/library/cluster/html/diana.object.html
@@ -2775,6 +2729,7 @@ lib/R/library/cluster/latex/clusplot.default.tex
 lib/R/library/cluster/latex/clusplot.partition.tex
 lib/R/library/cluster/latex/clusplot.tex
 lib/R/library/cluster/latex/cluster-internal.tex
+lib/R/library/cluster/latex/coef.hclust.tex
 lib/R/library/cluster/latex/daisy.tex
 lib/R/library/cluster/latex/diana.object.tex
 lib/R/library/cluster/latex/diana.tex
@@ -2900,6 +2855,7 @@ lib/R/library/datasets/R/datasets
 lib/R/library/datasets/data/Rdata.rdb
 lib/R/library/datasets/data/Rdata.rds
 lib/R/library/datasets/data/Rdata.rdx
+lib/R/library/datasets/data/morley.tab
 lib/R/library/datasets/help/AirPassengers
 lib/R/library/datasets/help/AnIndex
 lib/R/library/datasets/help/BJsales
@@ -3187,6 +3143,7 @@ lib/R/library/foreign/help/read.dbf
 lib/R/library/foreign/help/read.dta
 lib/R/library/foreign/help/read.epiinfo
 lib/R/library/foreign/help/read.mtp
+lib/R/library/foreign/help/read.octave
 lib/R/library/foreign/help/read.spss
 lib/R/library/foreign/help/read.ssd
 lib/R/library/foreign/help/read.systat
@@ -3201,6 +3158,7 @@ lib/R/library/foreign/html/read.dbf.html
 lib/R/library/foreign/html/read.dta.html
 lib/R/library/foreign/html/read.epiinfo.html
 lib/R/library/foreign/html/read.mtp.html
+lib/R/library/foreign/html/read.octave.html
 lib/R/library/foreign/html/read.spss.html
 lib/R/library/foreign/html/read.ssd.html
 lib/R/library/foreign/html/read.systat.html
@@ -3214,6 +3172,7 @@ lib/R/library/foreign/latex/read.dbf.tex
 lib/R/library/foreign/latex/read.dta.tex
 lib/R/library/foreign/latex/read.epiinfo.tex
 lib/R/library/foreign/latex/read.mtp.tex
+lib/R/library/foreign/latex/read.octave.tex
 lib/R/library/foreign/latex/read.spss.tex
 lib/R/library/foreign/latex/read.ssd.tex
 lib/R/library/foreign/latex/read.systat.tex
@@ -3235,12 +3194,19 @@ lib/R/library/grDevices/R-ex/Devices.R
 lib/R/library/grDevices/R-ex/Hershey.R
 lib/R/library/grDevices/R-ex/Japanese.R
 lib/R/library/grDevices/R-ex/check.options.R
+lib/R/library/grDevices/R-ex/cm.R
 lib/R/library/grDevices/R-ex/col2rgb.R
+lib/R/library/grDevices/R-ex/colorRamp.R
 lib/R/library/grDevices/R-ex/colors.R
+lib/R/library/grDevices/R-ex/convertColor.R
 lib/R/library/grDevices/R-ex/dev.R
 lib/R/library/grDevices/R-ex/dev2.R
+lib/R/library/grDevices/R-ex/getGraphicsEvent.R
 lib/R/library/grDevices/R-ex/gray.R
+lib/R/library/grDevices/R-ex/gray.colors.R
+lib/R/library/grDevices/R-ex/hcl.R
 lib/R/library/grDevices/R-ex/hsv.R
+lib/R/library/grDevices/R-ex/make.rgb.R
 lib/R/library/grDevices/R-ex/palette.R
 lib/R/library/grDevices/R-ex/palettes.R
 lib/R/library/grDevices/R-ex/pdf.R
@@ -3250,27 +3216,117 @@ lib/R/library/grDevices/R-ex/png.R
 lib/R/library/grDevices/R-ex/postscript.R
 lib/R/library/grDevices/R-ex/postscriptFonts.R
 lib/R/library/grDevices/R-ex/quartzFonts.R
+lib/R/library/grDevices/R-ex/recordGraphics.R
 lib/R/library/grDevices/R-ex/rgb.R
 lib/R/library/grDevices/R-ex/rgb2hsv.R
-lib/R/library/grDevices/R-ex/units.R
 lib/R/library/grDevices/R-ex/x11Fonts.R
 lib/R/library/grDevices/R/grDevices
 lib/R/library/grDevices/R/grDevices.rdb
 lib/R/library/grDevices/R/grDevices.rdx
+lib/R/library/grDevices/afm/AdobeStd.enc
+lib/R/library/grDevices/afm/AdobeSym.enc
+lib/R/library/grDevices/afm/CM_boldx_10.afm
+lib/R/library/grDevices/afm/CM_boldx_italic_10.afm
+lib/R/library/grDevices/afm/CM_italic_10.afm
+lib/R/library/grDevices/afm/CM_regular_10.afm
+lib/R/library/grDevices/afm/CM_symbol_10.afm
+lib/R/library/grDevices/afm/ISOLatin1.enc
+lib/R/library/grDevices/afm/ISOLatin2.enc
+lib/R/library/grDevices/afm/ISOLatin9.enc
+lib/R/library/grDevices/afm/MacRoman.enc
+lib/R/library/grDevices/afm/PDFDoc.enc
+lib/R/library/grDevices/afm/README
+lib/R/library/grDevices/afm/TeXtext.enc
+lib/R/library/grDevices/afm/WinAnsi.enc
+lib/R/library/grDevices/afm/a010013l.afm
+lib/R/library/grDevices/afm/a010015l.afm
+lib/R/library/grDevices/afm/a010033l.afm
+lib/R/library/grDevices/afm/a010035l.afm
+lib/R/library/grDevices/afm/agd_____.afm
+lib/R/library/grDevices/afm/agdo____.afm
+lib/R/library/grDevices/afm/agw_____.afm
+lib/R/library/grDevices/afm/agwo____.afm
+lib/R/library/grDevices/afm/b018012l.afm
+lib/R/library/grDevices/afm/b018015l.afm
+lib/R/library/grDevices/afm/b018032l.afm
+lib/R/library/grDevices/afm/b018035l.afm
+lib/R/library/grDevices/afm/bkd_____.afm
+lib/R/library/grDevices/afm/bkdi____.afm
+lib/R/library/grDevices/afm/bkl_____.afm
+lib/R/library/grDevices/afm/bkli____.afm
+lib/R/library/grDevices/afm/c059013l.afm
+lib/R/library/grDevices/afm/c059016l.afm
+lib/R/library/grDevices/afm/c059033l.afm
+lib/R/library/grDevices/afm/c059036l.afm
+lib/R/library/grDevices/afm/cmbxti10.afm
+lib/R/library/grDevices/afm/cmti10.afm
+lib/R/library/grDevices/afm/cob_____.afm
+lib/R/library/grDevices/afm/cobo____.afm
+lib/R/library/grDevices/afm/com_____.afm
+lib/R/library/grDevices/afm/coo_____.afm
+lib/R/library/grDevices/afm/hv______.afm
+lib/R/library/grDevices/afm/hvb_____.afm
+lib/R/library/grDevices/afm/hvbo____.afm
+lib/R/library/grDevices/afm/hvn_____.afm
+lib/R/library/grDevices/afm/hvnb____.afm
+lib/R/library/grDevices/afm/hvnbo___.afm
+lib/R/library/grDevices/afm/hvno____.afm
+lib/R/library/grDevices/afm/hvo_____.afm
+lib/R/library/grDevices/afm/n019003l.afm
+lib/R/library/grDevices/afm/n019004l.afm
+lib/R/library/grDevices/afm/n019023l.afm
+lib/R/library/grDevices/afm/n019024l.afm
+lib/R/library/grDevices/afm/n019043l.afm
+lib/R/library/grDevices/afm/n019044l.afm
+lib/R/library/grDevices/afm/n019063l.afm
+lib/R/library/grDevices/afm/n019064l.afm
+lib/R/library/grDevices/afm/n021003l.afm
+lib/R/library/grDevices/afm/n021004l.afm
+lib/R/library/grDevices/afm/n021023l.afm
+lib/R/library/grDevices/afm/n021024l.afm
+lib/R/library/grDevices/afm/n022003l.afm
+lib/R/library/grDevices/afm/n022004l.afm
+lib/R/library/grDevices/afm/n022023l.afm
+lib/R/library/grDevices/afm/n022024l.afm
+lib/R/library/grDevices/afm/ncb_____.afm
+lib/R/library/grDevices/afm/ncbi____.afm
+lib/R/library/grDevices/afm/nci_____.afm
+lib/R/library/grDevices/afm/ncr_____.afm
+lib/R/library/grDevices/afm/p052003l.afm
+lib/R/library/grDevices/afm/p052004l.afm
+lib/R/library/grDevices/afm/p052023l.afm
+lib/R/library/grDevices/afm/p052024l.afm
+lib/R/library/grDevices/afm/pob_____.afm
+lib/R/library/grDevices/afm/pobi____.afm
+lib/R/library/grDevices/afm/poi_____.afm
+lib/R/library/grDevices/afm/por_____.afm
+lib/R/library/grDevices/afm/s050000l.afm
+lib/R/library/grDevices/afm/sy______.afm
+lib/R/library/grDevices/afm/tib_____.afm
+lib/R/library/grDevices/afm/tibi____.afm
+lib/R/library/grDevices/afm/tii_____.afm
+lib/R/library/grDevices/afm/tir_____.afm
 lib/R/library/grDevices/help/AnIndex
 lib/R/library/grDevices/help/Devices
 lib/R/library/grDevices/help/Hershey
 lib/R/library/grDevices/help/Japanese
 lib/R/library/grDevices/help/check.options
+lib/R/library/grDevices/help/cm
 lib/R/library/grDevices/help/col2rgb
+lib/R/library/grDevices/help/colorRamp
 lib/R/library/grDevices/help/colors
+lib/R/library/grDevices/help/convertColor
 lib/R/library/grDevices/help/dev
 lib/R/library/grDevices/help/dev.interactive
 lib/R/library/grDevices/help/dev2
 lib/R/library/grDevices/help/dev2bitmap
+lib/R/library/grDevices/help/getGraphicsEvent
 lib/R/library/grDevices/help/grDevices-defunct
 lib/R/library/grDevices/help/gray
+lib/R/library/grDevices/help/gray.colors
+lib/R/library/grDevices/help/hcl
 lib/R/library/grDevices/help/hsv
+lib/R/library/grDevices/help/make.rgb
 lib/R/library/grDevices/help/palette
 lib/R/library/grDevices/help/palettes
 lib/R/library/grDevices/help/pdf
@@ -3281,10 +3337,10 @@ lib/R/library/grDevices/help/postscript
 lib/R/library/grDevices/help/postscriptFonts
 lib/R/library/grDevices/help/quartz
 lib/R/library/grDevices/help/quartzFonts
+lib/R/library/grDevices/help/recordGraphics
 lib/R/library/grDevices/help/recordplot
 lib/R/library/grDevices/help/rgb
 lib/R/library/grDevices/help/rgb2hsv
-lib/R/library/grDevices/help/units
 lib/R/library/grDevices/help/x11
 lib/R/library/grDevices/help/x11Fonts
 lib/R/library/grDevices/help/xfig
@@ -3293,15 +3349,22 @@ lib/R/library/grDevices/html/Devices.html
 lib/R/library/grDevices/html/Hershey.html
 lib/R/library/grDevices/html/Japanese.html
 lib/R/library/grDevices/html/check.options.html
+lib/R/library/grDevices/html/cm.html
 lib/R/library/grDevices/html/col2rgb.html
+lib/R/library/grDevices/html/colorRamp.html
 lib/R/library/grDevices/html/colors.html
+lib/R/library/grDevices/html/convertColor.html
 lib/R/library/grDevices/html/dev.html
 lib/R/library/grDevices/html/dev.interactive.html
 lib/R/library/grDevices/html/dev2.html
 lib/R/library/grDevices/html/dev2bitmap.html
+lib/R/library/grDevices/html/getGraphicsEvent.html
 lib/R/library/grDevices/html/grDevices-defunct.html
+lib/R/library/grDevices/html/gray.colors.html
 lib/R/library/grDevices/html/gray.html
+lib/R/library/grDevices/html/hcl.html
 lib/R/library/grDevices/html/hsv.html
+lib/R/library/grDevices/html/make.rgb.html
 lib/R/library/grDevices/html/palette.html
 lib/R/library/grDevices/html/palettes.html
 lib/R/library/grDevices/html/pdf.html
@@ -3312,10 +3375,10 @@ lib/R/library/grDevices/html/postscript.html
 lib/R/library/grDevices/html/postscriptFonts.html
 lib/R/library/grDevices/html/quartz.html
 lib/R/library/grDevices/html/quartzFonts.html
+lib/R/library/grDevices/html/recordGraphics.html
 lib/R/library/grDevices/html/recordplot.html
 lib/R/library/grDevices/html/rgb.html
 lib/R/library/grDevices/html/rgb2hsv.html
-lib/R/library/grDevices/html/units.html
 lib/R/library/grDevices/html/x11.html
 lib/R/library/grDevices/html/x11Fonts.html
 lib/R/library/grDevices/html/xfig.html
@@ -3323,15 +3386,22 @@ lib/R/library/grDevices/latex/Devices.tex
 lib/R/library/grDevices/latex/Hershey.tex
 lib/R/library/grDevices/latex/Japanese.tex
 lib/R/library/grDevices/latex/check.options.tex
+lib/R/library/grDevices/latex/cm.tex
 lib/R/library/grDevices/latex/col2rgb.tex
+lib/R/library/grDevices/latex/colorRamp.tex
 lib/R/library/grDevices/latex/colors.tex
+lib/R/library/grDevices/latex/convertColor.tex
 lib/R/library/grDevices/latex/dev.interactive.tex
 lib/R/library/grDevices/latex/dev.tex
 lib/R/library/grDevices/latex/dev2.tex
 lib/R/library/grDevices/latex/dev2bitmap.tex
+lib/R/library/grDevices/latex/getGraphicsEvent.tex
 lib/R/library/grDevices/latex/grDevices-defunct.tex
+lib/R/library/grDevices/latex/gray.colors.tex
 lib/R/library/grDevices/latex/gray.tex
+lib/R/library/grDevices/latex/hcl.tex
 lib/R/library/grDevices/latex/hsv.tex
+lib/R/library/grDevices/latex/make.rgb.tex
 lib/R/library/grDevices/latex/palette.tex
 lib/R/library/grDevices/latex/palettes.tex
 lib/R/library/grDevices/latex/pdf.tex
@@ -3342,14 +3412,21 @@ lib/R/library/grDevices/latex/postscript.tex
 lib/R/library/grDevices/latex/postscriptFonts.tex
 lib/R/library/grDevices/latex/quartz.tex
 lib/R/library/grDevices/latex/quartzFonts.tex
+lib/R/library/grDevices/latex/recordGraphics.tex
 lib/R/library/grDevices/latex/recordplot.tex
 lib/R/library/grDevices/latex/rgb.tex
 lib/R/library/grDevices/latex/rgb2hsv.tex
-lib/R/library/grDevices/latex/units.tex
 lib/R/library/grDevices/latex/x11.tex
 lib/R/library/grDevices/latex/x11Fonts.tex
 lib/R/library/grDevices/latex/xfig.tex
+lib/R/library/grDevices/libs/grDevices.so
 lib/R/library/grDevices/man/grDevices.Rd.gz
+lib/R/library/grDevices/po/en@quot/LC_MESSAGES/R-grDevices.mo
+lib/R/library/grDevices/po/en@quot/LC_MESSAGES/grDevices.mo
+lib/R/library/grDevices/po/en_GB/LC_MESSAGES/grDevices.mo
+lib/R/library/grDevices/po/it/LC_MESSAGES/R-grDevices.mo
+lib/R/library/grDevices/po/it/LC_MESSAGES/grDevices.mo
+lib/R/library/grDevices/po/ja/LC_MESSAGES/R-grDevices.mo
 lib/R/library/graphics/CONTENTS
 lib/R/library/graphics/DESCRIPTION
 lib/R/library/graphics/INDEX
@@ -3417,6 +3494,7 @@ lib/R/library/graphics/R-ex/sunflowerplot.R
 lib/R/library/graphics/R-ex/symbols.R
 lib/R/library/graphics/R-ex/text.R
 lib/R/library/graphics/R-ex/title.R
+lib/R/library/graphics/R-ex/units.R
 lib/R/library/graphics/R-ex/xy.coords.R
 lib/R/library/graphics/R-ex/xyz.coords.R
 lib/R/library/graphics/R/graphics
@@ -3491,6 +3569,7 @@ lib/R/library/graphics/help/sunflowerplot
 lib/R/library/graphics/help/symbols
 lib/R/library/graphics/help/text
 lib/R/library/graphics/help/title
+lib/R/library/graphics/help/units
 lib/R/library/graphics/help/xy.coords
 lib/R/library/graphics/help/xyz.coords
 lib/R/library/graphics/html/00Index.html
@@ -3556,6 +3635,7 @@ lib/R/library/graphics/html/sunflowerplot.html
 lib/R/library/graphics/html/symbols.html
 lib/R/library/graphics/html/text.html
 lib/R/library/graphics/html/title.html
+lib/R/library/graphics/html/units.html
 lib/R/library/graphics/html/xy.coords.html
 lib/R/library/graphics/html/xyz.coords.html
 lib/R/library/graphics/latex/abline.tex
@@ -3620,9 +3700,13 @@ lib/R/library/graphics/latex/sunflowerplot.tex
 lib/R/library/graphics/latex/symbols.tex
 lib/R/library/graphics/latex/text.tex
 lib/R/library/graphics/latex/title.tex
+lib/R/library/graphics/latex/units.tex
 lib/R/library/graphics/latex/xy.coords.tex
 lib/R/library/graphics/latex/xyz.coords.tex
 lib/R/library/graphics/man/graphics.Rd.gz
+lib/R/library/graphics/po/en@quot/LC_MESSAGES/R-graphics.mo
+lib/R/library/graphics/po/it/LC_MESSAGES/R-graphics.mo
+lib/R/library/graphics/po/ja/LC_MESSAGES/R-graphics.mo
 lib/R/library/grid/CONTENTS
 lib/R/library/grid/DESCRIPTION
 lib/R/library/grid/INDEX
@@ -3637,12 +3721,10 @@ lib/R/library/grid/R-ex/convertNative.R
 lib/R/library/grid/R-ex/current.viewport.R
 lib/R/library/grid/R-ex/gEdit.R
 lib/R/library/grid/R-ex/gPath.R
+lib/R/library/grid/R-ex/getNames.R
 lib/R/library/grid/R-ex/gpar.R
-lib/R/library/grid/R-ex/grid.add.R
 lib/R/library/grid/R-ex/grid.arrows.R
-lib/R/library/grid/R-ex/grid.collection.R
 lib/R/library/grid/R-ex/grid.convert.R
-lib/R/library/grid/R-ex/grid.copy.R
 lib/R/library/grid/R-ex/grid.draw.R
 lib/R/library/grid/R-ex/grid.edit.R
 lib/R/library/grid/R-ex/grid.frame.R
@@ -3654,7 +3736,7 @@ lib/R/library/grid/R-ex/grid.locator.R
 lib/R/library/grid/R-ex/grid.move.to.R
 lib/R/library/grid/R-ex/grid.plot.and.legend.R
 lib/R/library/grid/R-ex/grid.polygon.R
-lib/R/library/grid/R-ex/grid.remove.R
+lib/R/library/grid/R-ex/grid.record.R
 lib/R/library/grid/R-ex/grid.show.layout.R
 lib/R/library/grid/R-ex/grid.show.viewport.R
 lib/R/library/grid/R-ex/grid.text.R
@@ -3706,6 +3788,7 @@ lib/R/library/grid/help/drawDetails
 lib/R/library/grid/help/editDetails
 lib/R/library/grid/help/gEdit
 lib/R/library/grid/help/gPath
+lib/R/library/grid/help/getNames
 lib/R/library/grid/help/gpar
 lib/R/library/grid/help/grid-internal
 lib/R/library/grid/help/grid.add
@@ -3734,7 +3817,9 @@ lib/R/library/grid/help/grid.points
 lib/R/library/grid/help/grid.polygon
 lib/R/library/grid/help/grid.pretty
 lib/R/library/grid/help/grid.prompt
+lib/R/library/grid/help/grid.record
 lib/R/library/grid/help/grid.rect
+lib/R/library/grid/help/grid.refresh
 lib/R/library/grid/help/grid.remove
 lib/R/library/grid/help/grid.segments
 lib/R/library/grid/help/grid.set
@@ -3768,6 +3853,7 @@ lib/R/library/grid/html/drawDetails.html
 lib/R/library/grid/html/editDetails.html
 lib/R/library/grid/html/gEdit.html
 lib/R/library/grid/html/gPath.html
+lib/R/library/grid/html/getNames.html
 lib/R/library/grid/html/gpar.html
 lib/R/library/grid/html/grid-internal.html
 lib/R/library/grid/html/grid.add.html
@@ -3796,7 +3882,9 @@ lib/R/library/grid/html/grid.points.html
 lib/R/library/grid/html/grid.polygon.html
 lib/R/library/grid/html/grid.pretty.html
 lib/R/library/grid/html/grid.prompt.html
+lib/R/library/grid/html/grid.record.html
 lib/R/library/grid/html/grid.rect.html
+lib/R/library/grid/html/grid.refresh.html
 lib/R/library/grid/html/grid.remove.html
 lib/R/library/grid/html/grid.segments.html
 lib/R/library/grid/html/grid.set.html
@@ -3829,6 +3917,7 @@ lib/R/library/grid/latex/drawDetails.tex
 lib/R/library/grid/latex/editDetails.tex
 lib/R/library/grid/latex/gEdit.tex
 lib/R/library/grid/latex/gPath.tex
+lib/R/library/grid/latex/getNames.tex
 lib/R/library/grid/latex/gpar.tex
 lib/R/library/grid/latex/grid-internal.tex
 lib/R/library/grid/latex/grid.add.tex
@@ -3857,7 +3946,9 @@ lib/R/library/grid/latex/grid.points.tex
 lib/R/library/grid/latex/grid.polygon.tex
 lib/R/library/grid/latex/grid.pretty.tex
 lib/R/library/grid/latex/grid.prompt.tex
+lib/R/library/grid/latex/grid.record.tex
 lib/R/library/grid/latex/grid.rect.tex
+lib/R/library/grid/latex/grid.refresh.tex
 lib/R/library/grid/latex/grid.remove.tex
 lib/R/library/grid/latex/grid.segments.tex
 lib/R/library/grid/latex/grid.set.tex
@@ -3883,6 +3974,11 @@ lib/R/library/grid/latex/vpPath.tex
 lib/R/library/grid/latex/widthDetails.tex
 lib/R/library/grid/libs/grid.so
 lib/R/library/grid/man/grid.Rd.gz
+lib/R/library/grid/po/en@quot/LC_MESSAGES/R-grid.mo
+lib/R/library/grid/po/en@quot/LC_MESSAGES/grid.mo
+lib/R/library/grid/po/it/LC_MESSAGES/grid.mo
+lib/R/library/grid/po/ja/LC_MESSAGES/R-grid.mo
+lib/R/library/grid/po/ja/LC_MESSAGES/grid.mo
 lib/R/library/lattice/CONTENTS
 lib/R/library/lattice/Changes
 lib/R/library/lattice/DESCRIPTION
@@ -3904,6 +4000,7 @@ lib/R/library/lattice/R-ex/lattice.options.R
 lib/R/library/lattice/R-ex/levelplot.R
 lib/R/library/lattice/R-ex/lset.R
 lib/R/library/lattice/R-ex/melanoma.R
+lib/R/library/lattice/R-ex/panel.violin.R
 lib/R/library/lattice/R-ex/print.trellis.R
 lib/R/library/lattice/R-ex/qq.R
 lib/R/library/lattice/R-ex/qqmath.R
@@ -3957,6 +4054,7 @@ lib/R/library/lattice/help/panel.qqmathline
 lib/R/library/lattice/help/panel.stripplot
 lib/R/library/lattice/help/panel.superpose
 lib/R/library/lattice/help/panel.tmd
+lib/R/library/lattice/help/panel.violin
 lib/R/library/lattice/help/panel.xyplot
 lib/R/library/lattice/help/prepanel.functions
 lib/R/library/lattice/help/print.trellis
@@ -4009,6 +4107,7 @@ lib/R/library/lattice/html/panel.qqmathline.html
 lib/R/library/lattice/html/panel.stripplot.html
 lib/R/library/lattice/html/panel.superpose.html
 lib/R/library/lattice/html/panel.tmd.html
+lib/R/library/lattice/html/panel.violin.html
 lib/R/library/lattice/html/panel.xyplot.html
 lib/R/library/lattice/html/prepanel.functions.html
 lib/R/library/lattice/html/print.trellis.html
@@ -4060,6 +4159,7 @@ lib/R/library/lattice/latex/panel.qqmathline.tex
 lib/R/library/lattice/latex/panel.stripplot.tex
 lib/R/library/lattice/latex/panel.superpose.tex
 lib/R/library/lattice/latex/panel.tmd.tex
+lib/R/library/lattice/latex/panel.violin.tex
 lib/R/library/lattice/latex/panel.xyplot.tex
 lib/R/library/lattice/latex/prepanel.functions.tex
 lib/R/library/lattice/latex/print.trellis.tex
@@ -4090,6 +4190,7 @@ lib/R/library/methods/Meta/package.rds
 lib/R/library/methods/NAMESPACE
 lib/R/library/methods/R-ex/GenericFunctions.R
 lib/R/library/methods/R-ex/NextMethod.R
+lib/R/library/methods/R-ex/RMethodUtils.R
 lib/R/library/methods/R-ex/as.R
 lib/R/library/methods/R-ex/getClass.R
 lib/R/library/methods/R-ex/getMethod.R
@@ -4275,6 +4376,8 @@ lib/R/library/methods/latex/validObject.tex
 lib/R/library/methods/latex/zBasicFunsList.tex
 lib/R/library/methods/libs/methods.so
 lib/R/library/methods/man/methods.Rd.gz
+lib/R/library/methods/po/en@quot/LC_MESSAGES/R-methods.mo
+lib/R/library/methods/po/en@quot/LC_MESSAGES/methods.mo
 lib/R/library/mgcv/CONTENTS
 lib/R/library/mgcv/DESCRIPTION
 lib/R/library/mgcv/INDEX
@@ -4287,12 +4390,13 @@ lib/R/library/mgcv/R-ex/Predict.matrix.R
 lib/R/library/mgcv/R-ex/anova.gam.R
 lib/R/library/mgcv/R-ex/exclude.too.far.R
 lib/R/library/mgcv/R-ex/extract.lme.cov.R
+lib/R/library/mgcv/R-ex/fixDependence.R
 lib/R/library/mgcv/R-ex/gam.R
 lib/R/library/mgcv/R-ex/gam.check.R
 lib/R/library/mgcv/R-ex/gam.models.R
 lib/R/library/mgcv/R-ex/gam.neg.bin.R
 lib/R/library/mgcv/R-ex/gam.selection.R
-lib/R/library/mgcv/R-ex/gam.side.conditions.R
+lib/R/library/mgcv/R-ex/gam.side.R
 lib/R/library/mgcv/R-ex/gamm.R
 lib/R/library/mgcv/R-ex/get.var.R
 lib/R/library/mgcv/R-ex/magic.R
@@ -4323,6 +4427,8 @@ lib/R/library/mgcv/help/Predict.matrix
 lib/R/library/mgcv/help/anova.gam
 lib/R/library/mgcv/help/exclude.too.far
 lib/R/library/mgcv/help/extract.lme.cov
+lib/R/library/mgcv/help/fix.family.link
+lib/R/library/mgcv/help/fixDependence
 lib/R/library/mgcv/help/formXtViX
 lib/R/library/mgcv/help/formula.gam
 lib/R/library/mgcv/help/full.score
@@ -4331,16 +4437,21 @@ lib/R/library/mgcv/help/gam.check
 lib/R/library/mgcv/help/gam.control
 lib/R/library/mgcv/help/gam.convergence
 lib/R/library/mgcv/help/gam.fit
+lib/R/library/mgcv/help/gam.fit2
+lib/R/library/mgcv/help/gam.method
 lib/R/library/mgcv/help/gam.models
 lib/R/library/mgcv/help/gam.neg.bin
+lib/R/library/mgcv/help/gam.outer
 lib/R/library/mgcv/help/gam.selection
 lib/R/library/mgcv/help/gam.setup
-lib/R/library/mgcv/help/gam.side.conditions
+lib/R/library/mgcv/help/gam.side
+lib/R/library/mgcv/help/gam2objective
 lib/R/library/mgcv/help/gamObject
 lib/R/library/mgcv/help/gamm
 lib/R/library/mgcv/help/gamm.setup
 lib/R/library/mgcv/help/get.var
 lib/R/library/mgcv/help/influence.gam
+lib/R/library/mgcv/help/initial.sp
 lib/R/library/mgcv/help/interpret.gam
 lib/R/library/mgcv/help/logLik.gam
 lib/R/library/mgcv/help/magic
@@ -4362,6 +4473,7 @@ lib/R/library/mgcv/help/print.gam
 lib/R/library/mgcv/help/residuals.gam
 lib/R/library/mgcv/help/s
 lib/R/library/mgcv/help/smooth.construct
+lib/R/library/mgcv/help/smoothCon
 lib/R/library/mgcv/help/step.gam
 lib/R/library/mgcv/help/summary.gam
 lib/R/library/mgcv/help/te
@@ -4373,6 +4485,8 @@ lib/R/library/mgcv/html/Predict.matrix.html
 lib/R/library/mgcv/html/anova.gam.html
 lib/R/library/mgcv/html/exclude.too.far.html
 lib/R/library/mgcv/html/extract.lme.cov.html
+lib/R/library/mgcv/html/fix.family.link.html
+lib/R/library/mgcv/html/fixDependence.html
 lib/R/library/mgcv/html/formXtViX.html
 lib/R/library/mgcv/html/formula.gam.html
 lib/R/library/mgcv/html/full.score.html
@@ -4380,17 +4494,22 @@ lib/R/library/mgcv/html/gam.check.html
 lib/R/library/mgcv/html/gam.control.html
 lib/R/library/mgcv/html/gam.convergence.html
 lib/R/library/mgcv/html/gam.fit.html
+lib/R/library/mgcv/html/gam.fit2.html
 lib/R/library/mgcv/html/gam.html
+lib/R/library/mgcv/html/gam.method.html
 lib/R/library/mgcv/html/gam.models.html
 lib/R/library/mgcv/html/gam.neg.bin.html
+lib/R/library/mgcv/html/gam.outer.html
 lib/R/library/mgcv/html/gam.selection.html
 lib/R/library/mgcv/html/gam.setup.html
-lib/R/library/mgcv/html/gam.side.conditions.html
+lib/R/library/mgcv/html/gam.side.html
+lib/R/library/mgcv/html/gam2objective.html
 lib/R/library/mgcv/html/gamObject.html
 lib/R/library/mgcv/html/gamm.html
 lib/R/library/mgcv/html/gamm.setup.html
 lib/R/library/mgcv/html/get.var.html
 lib/R/library/mgcv/html/influence.gam.html
+lib/R/library/mgcv/html/initial.sp.html
 lib/R/library/mgcv/html/interpret.gam.html
 lib/R/library/mgcv/html/logLik.gam.html
 lib/R/library/mgcv/html/magic.html
@@ -4412,6 +4531,7 @@ lib/R/library/mgcv/html/print.gam.html
 lib/R/library/mgcv/html/residuals.gam.html
 lib/R/library/mgcv/html/s.html
 lib/R/library/mgcv/html/smooth.construct.html
+lib/R/library/mgcv/html/smoothCon.html
 lib/R/library/mgcv/html/step.gam.html
 lib/R/library/mgcv/html/summary.gam.html
 lib/R/library/mgcv/html/te.html
@@ -4422,6 +4542,8 @@ lib/R/library/mgcv/latex/Predict.matrix.tex
 lib/R/library/mgcv/latex/anova.gam.tex
 lib/R/library/mgcv/latex/exclude.too.far.tex
 lib/R/library/mgcv/latex/extract.lme.cov.tex
+lib/R/library/mgcv/latex/fix.family.link.tex
+lib/R/library/mgcv/latex/fixDependence.tex
 lib/R/library/mgcv/latex/formXtViX.tex
 lib/R/library/mgcv/latex/formula.gam.tex
 lib/R/library/mgcv/latex/full.score.tex
@@ -4429,17 +4551,22 @@ lib/R/library/mgcv/latex/gam.check.tex
 lib/R/library/mgcv/latex/gam.control.tex
 lib/R/library/mgcv/latex/gam.convergence.tex
 lib/R/library/mgcv/latex/gam.fit.tex
+lib/R/library/mgcv/latex/gam.fit2.tex
+lib/R/library/mgcv/latex/gam.method.tex
 lib/R/library/mgcv/latex/gam.models.tex
 lib/R/library/mgcv/latex/gam.neg.bin.tex
+lib/R/library/mgcv/latex/gam.outer.tex
 lib/R/library/mgcv/latex/gam.selection.tex
 lib/R/library/mgcv/latex/gam.setup.tex
-lib/R/library/mgcv/latex/gam.side.conditions.tex
+lib/R/library/mgcv/latex/gam.side.tex
 lib/R/library/mgcv/latex/gam.tex
+lib/R/library/mgcv/latex/gam2objective.tex
 lib/R/library/mgcv/latex/gamObject.tex
 lib/R/library/mgcv/latex/gamm.setup.tex
 lib/R/library/mgcv/latex/gamm.tex
 lib/R/library/mgcv/latex/get.var.tex
 lib/R/library/mgcv/latex/influence.gam.tex
+lib/R/library/mgcv/latex/initial.sp.tex
 lib/R/library/mgcv/latex/interpret.gam.tex
 lib/R/library/mgcv/latex/logLik.gam.tex
 lib/R/library/mgcv/latex/magic.post.proc.tex
@@ -4461,6 +4588,7 @@ lib/R/library/mgcv/latex/print.gam.tex
 lib/R/library/mgcv/latex/residuals.gam.tex
 lib/R/library/mgcv/latex/s.tex
 lib/R/library/mgcv/latex/smooth.construct.tex
+lib/R/library/mgcv/latex/smoothCon.tex
 lib/R/library/mgcv/latex/step.gam.tex
 lib/R/library/mgcv/latex/summary.gam.tex
 lib/R/library/mgcv/latex/te.tex
@@ -5625,6 +5753,7 @@ lib/R/library/nnet/latex/predict.nnet.tex
 lib/R/library/nnet/latex/which.is.max.tex
 lib/R/library/nnet/libs/nnet.so
 lib/R/library/nnet/man/nnet.Rd.gz
+lib/R/library/nnet/po/en@quot/LC_MESSAGES/R-nnet.mo
 lib/R/library/rpart/CONTENTS
 lib/R/library/rpart/DESCRIPTION
 lib/R/library/rpart/INDEX
@@ -5840,6 +5969,7 @@ lib/R/library/spatial/latex/trmat.tex
 lib/R/library/spatial/latex/variogram.tex
 lib/R/library/spatial/libs/spatial.so
 lib/R/library/spatial/man/spatial.Rd.gz
+lib/R/library/spatial/po/en@quot/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/ppdata/agter.dat
 lib/R/library/spatial/ppdata/caveolae.dat
 lib/R/library/spatial/ppdata/cells.dat
@@ -5931,6 +6061,11 @@ lib/R/library/splines/latex/splineOrder.tex
 lib/R/library/splines/latex/xyVector.tex
 lib/R/library/splines/libs/splines.so
 lib/R/library/splines/man/splines.Rd.gz
+lib/R/library/splines/po/en@quot/LC_MESSAGES/R-splines.mo
+lib/R/library/splines/po/en@quot/LC_MESSAGES/splines.mo
+lib/R/library/splines/po/ja/LC_MESSAGES/R-splines.mo
+lib/R/library/splines/po/ja/LC_MESSAGES/splines.mo
+lib/R/library/splines/po/ru/LC_MESSAGES/R-splines.mo
 lib/R/library/stats/CONTENTS
 lib/R/library/stats/COPYRIGHTS.modreg
 lib/R/library/stats/DESCRIPTION
@@ -5965,6 +6100,7 @@ lib/R/library/stats/R-ex/NLSstRtAsymptote.R
 lib/R/library/stats/R-ex/NegBinomial.R
 lib/R/library/stats/R-ex/Normal.R
 lib/R/library/stats/R-ex/Poisson.R
+lib/R/library/stats/R-ex/SSD.R
 lib/R/library/stats/R-ex/SSasymp.R
 lib/R/library/stats/R-ex/SSasympOff.R
 lib/R/library/stats/R-ex/SSasympOrig.R
@@ -5991,8 +6127,10 @@ lib/R/library/stats/R-ex/aggregate.R
 lib/R/library/stats/R-ex/alias.R
 lib/R/library/stats/R-ex/anova.glm.R
 lib/R/library/stats/R-ex/anova.lm.R
+lib/R/library/stats/R-ex/anova.mlm.R
 lib/R/library/stats/R-ex/ansari.test.R
 lib/R/library/stats/R-ex/aov.R
+lib/R/library/stats/R-ex/approxfun.R
 lib/R/library/stats/R-ex/ar.R
 lib/R/library/stats/R-ex/ar.ols.R
 lib/R/library/stats/R-ex/arima.R
@@ -6087,6 +6225,7 @@ lib/R/library/stats/R-ex/mahalanobis.R
 lib/R/library/stats/R-ex/make.link.R
 lib/R/library/stats/R-ex/makepredictcall.R
 lib/R/library/stats/R-ex/mantelhaen.test.R
+lib/R/library/stats/R-ex/mauchley.test.R
 lib/R/library/stats/R-ex/mcnemar.test.R
 lib/R/library/stats/R-ex/median.R
 lib/R/library/stats/R-ex/medpolish.R
@@ -6236,6 +6375,7 @@ lib/R/library/stats/help/NLSstRtAsymptote
 lib/R/library/stats/help/NegBinomial
 lib/R/library/stats/help/Normal
 lib/R/library/stats/help/Poisson
+lib/R/library/stats/help/SSD
 lib/R/library/stats/help/SSasymp
 lib/R/library/stats/help/SSasympOff
 lib/R/library/stats/help/SSasympOrig
@@ -6263,8 +6403,10 @@ lib/R/library/stats/help/alias
 lib/R/library/stats/help/anova
 lib/R/library/stats/help/anova.glm
 lib/R/library/stats/help/anova.lm
+lib/R/library/stats/help/anova.mlm
 lib/R/library/stats/help/ansari.test
 lib/R/library/stats/help/aov
+lib/R/library/stats/help/approxfun
 lib/R/library/stats/help/ar
 lib/R/library/stats/help/ar.ols
 lib/R/library/stats/help/arima
@@ -6370,6 +6512,7 @@ lib/R/library/stats/help/make.link
 lib/R/library/stats/help/makepredictcall
 lib/R/library/stats/help/manova
 lib/R/library/stats/help/mantelhaen.test
+lib/R/library/stats/help/mauchley.test
 lib/R/library/stats/help/mcnemar.test
 lib/R/library/stats/help/median
 lib/R/library/stats/help/medpolish
@@ -6533,6 +6676,7 @@ lib/R/library/stats/html/NLSstRtAsymptote.html
 lib/R/library/stats/html/NegBinomial.html
 lib/R/library/stats/html/Normal.html
 lib/R/library/stats/html/Poisson.html
+lib/R/library/stats/html/SSD.html
 lib/R/library/stats/html/SSasymp.html
 lib/R/library/stats/html/SSasympOff.html
 lib/R/library/stats/html/SSasympOrig.html
@@ -6560,8 +6704,10 @@ lib/R/library/stats/html/alias.html
 lib/R/library/stats/html/anova.glm.html
 lib/R/library/stats/html/anova.html
 lib/R/library/stats/html/anova.lm.html
+lib/R/library/stats/html/anova.mlm.html
 lib/R/library/stats/html/ansari.test.html
 lib/R/library/stats/html/aov.html
+lib/R/library/stats/html/approxfun.html
 lib/R/library/stats/html/ar.html
 lib/R/library/stats/html/ar.ols.html
 lib/R/library/stats/html/arima.html
@@ -6667,6 +6813,7 @@ lib/R/library/stats/html/make.link.html
 lib/R/library/stats/html/makepredictcall.html
 lib/R/library/stats/html/manova.html
 lib/R/library/stats/html/mantelhaen.test.html
+lib/R/library/stats/html/mauchley.test.html
 lib/R/library/stats/html/mcnemar.test.html
 lib/R/library/stats/html/median.html
 lib/R/library/stats/html/medpolish.html
@@ -6829,6 +6976,7 @@ lib/R/library/stats/latex/NLSstRtAsymptote.tex
 lib/R/library/stats/latex/NegBinomial.tex
 lib/R/library/stats/latex/Normal.tex
 lib/R/library/stats/latex/Poisson.tex
+lib/R/library/stats/latex/SSD.tex
 lib/R/library/stats/latex/SSasymp.tex
 lib/R/library/stats/latex/SSasympOff.tex
 lib/R/library/stats/latex/SSasympOrig.tex
@@ -6855,9 +7003,11 @@ lib/R/library/stats/latex/aggregate.tex
 lib/R/library/stats/latex/alias.tex
 lib/R/library/stats/latex/anova.glm.tex
 lib/R/library/stats/latex/anova.lm.tex
+lib/R/library/stats/latex/anova.mlm.tex
 lib/R/library/stats/latex/anova.tex
 lib/R/library/stats/latex/ansari.test.tex
 lib/R/library/stats/latex/aov.tex
+lib/R/library/stats/latex/approxfun.tex
 lib/R/library/stats/latex/ar.ols.tex
 lib/R/library/stats/latex/ar.tex
 lib/R/library/stats/latex/arima.sim.tex
@@ -6963,6 +7113,7 @@ lib/R/library/stats/latex/make.link.tex
 lib/R/library/stats/latex/makepredictcall.tex
 lib/R/library/stats/latex/manova.tex
 lib/R/library/stats/latex/mantelhaen.test.tex
+lib/R/library/stats/latex/mauchley.test.tex
 lib/R/library/stats/latex/mcnemar.test.tex
 lib/R/library/stats/latex/median.tex
 lib/R/library/stats/latex/medpolish.tex
@@ -7102,6 +7253,13 @@ lib/R/library/stats/latex/xtabs.tex
 lib/R/library/stats/latex/zC.tex
 lib/R/library/stats/libs/stats.so
 lib/R/library/stats/man/stats.Rd.gz
+lib/R/library/stats/po/en@quot/LC_MESSAGES/R-stats.mo
+lib/R/library/stats/po/en@quot/LC_MESSAGES/stats.mo
+lib/R/library/stats/po/it/LC_MESSAGES/R-stats.mo
+lib/R/library/stats/po/it/LC_MESSAGES/stats.mo
+lib/R/library/stats/po/ja/LC_MESSAGES/R-stats.mo
+lib/R/library/stats/po/ja/LC_MESSAGES/stats.mo
+lib/R/library/stats/po/zh_CN/LC_MESSAGES/R-stats.mo
 lib/R/library/stats4/CONTENTS
 lib/R/library/stats4/DESCRIPTION
 lib/R/library/stats4/INDEX
@@ -7163,6 +7321,10 @@ lib/R/library/stats4/latex/summary.mle-class.tex
 lib/R/library/stats4/latex/update-methods.tex
 lib/R/library/stats4/latex/vcov-methods.tex
 lib/R/library/stats4/man/stats4.Rd.gz
+lib/R/library/stats4/po/en@quot/LC_MESSAGES/R-stats4.mo
+lib/R/library/stats4/po/it/LC_MESSAGES/R-stats4.mo
+lib/R/library/stats4/po/ja/LC_MESSAGES/R-stats4.mo
+lib/R/library/stats4/po/ru/LC_MESSAGES/R-stats4.mo
 lib/R/library/survival/CONTENTS
 lib/R/library/survival/COPYING
 lib/R/library/survival/DESCRIPTION
@@ -7444,6 +7606,7 @@ lib/R/library/tcltk/help/TkCommands
 lib/R/library/tcltk/help/TkWidgetcmds
 lib/R/library/tcltk/help/TkWidgets
 lib/R/library/tcltk/help/tkStartGUI
+lib/R/library/tcltk/help/tk_select.list
 lib/R/library/tcltk/help/tkpager
 lib/R/library/tcltk/html/00Index.html
 lib/R/library/tcltk/html/TclInterface.html
@@ -7451,15 +7614,21 @@ lib/R/library/tcltk/html/TkCommands.html
 lib/R/library/tcltk/html/TkWidgetcmds.html
 lib/R/library/tcltk/html/TkWidgets.html
 lib/R/library/tcltk/html/tkStartGUI.html
+lib/R/library/tcltk/html/tk_select.list.html
 lib/R/library/tcltk/html/tkpager.html
 lib/R/library/tcltk/latex/TclInterface.tex
 lib/R/library/tcltk/latex/TkCommands.tex
 lib/R/library/tcltk/latex/TkWidgetcmds.tex
 lib/R/library/tcltk/latex/TkWidgets.tex
 lib/R/library/tcltk/latex/tkStartGUI.tex
+lib/R/library/tcltk/latex/tk_select.list.tex
 lib/R/library/tcltk/latex/tkpager.tex
 lib/R/library/tcltk/libs/tcltk.so
 lib/R/library/tcltk/man/tcltk.Rd.gz
+lib/R/library/tcltk/po/en@quot/LC_MESSAGES/R-tcltk.mo
+lib/R/library/tcltk/po/it/LC_MESSAGES/R-tcltk.mo
+lib/R/library/tcltk/po/ja/LC_MESSAGES/R-tcltk.mo
+lib/R/library/tcltk/po/ru/LC_MESSAGES/R-tcltk.mo
 lib/R/library/tools/CONTENTS
 lib/R/library/tools/DESCRIPTION
 lib/R/library/tools/INDEX
@@ -7478,6 +7647,8 @@ lib/R/library/tools/R-ex/makeLazyLoading.R
 lib/R/library/tools/R-ex/md5sum.R
 lib/R/library/tools/R-ex/undoc.R
 lib/R/library/tools/R-ex/vignetteDepends.R
+lib/R/library/tools/R-ex/writePACKAGES.R
+lib/R/library/tools/R-ex/xgettext.R
 lib/R/library/tools/R/tools
 lib/R/library/tools/R/tools.rdb
 lib/R/library/tools/R/tools.rdx
@@ -7500,9 +7671,12 @@ lib/R/library/tools/help/md5sum
 lib/R/library/tools/help/package.dependencies
 lib/R/library/tools/help/read.00Index
 lib/R/library/tools/help/texi2dvi
+lib/R/library/tools/help/tools-defunct
 lib/R/library/tools/help/tools-deprecated
 lib/R/library/tools/help/undoc
 lib/R/library/tools/help/vignetteDepends
+lib/R/library/tools/help/writePACKAGES
+lib/R/library/tools/help/xgettext
 lib/R/library/tools/html/00Index.html
 lib/R/library/tools/html/QC.html
 lib/R/library/tools/html/Rdindex.html
@@ -7522,9 +7696,12 @@ lib/R/library/tools/html/md5sum.html
 lib/R/library/tools/html/package.dependencies.html
 lib/R/library/tools/html/read.00Index.html
 lib/R/library/tools/html/texi2dvi.html
+lib/R/library/tools/html/tools-defunct.html
 lib/R/library/tools/html/tools-deprecated.html
 lib/R/library/tools/html/undoc.html
 lib/R/library/tools/html/vignetteDepends.html
+lib/R/library/tools/html/writePACKAGES.html
+lib/R/library/tools/html/xgettext.html
 lib/R/library/tools/latex/QC.tex
 lib/R/library/tools/latex/Rdindex.tex
 lib/R/library/tools/latex/Rdutils.tex
@@ -7543,11 +7720,20 @@ lib/R/library/tools/latex/md5sum.tex
 lib/R/library/tools/latex/package.dependencies.tex
 lib/R/library/tools/latex/read.00Index.tex
 lib/R/library/tools/latex/texi2dvi.tex
+lib/R/library/tools/latex/tools-defunct.tex
 lib/R/library/tools/latex/tools-deprecated.tex
 lib/R/library/tools/latex/undoc.tex
 lib/R/library/tools/latex/vignetteDepends.tex
+lib/R/library/tools/latex/writePACKAGES.tex
+lib/R/library/tools/latex/xgettext.tex
 lib/R/library/tools/libs/tools.so
 lib/R/library/tools/man/tools.Rd.gz
+lib/R/library/tools/po/en@quot/LC_MESSAGES/R-tools.mo
+lib/R/library/tools/po/en@quot/LC_MESSAGES/tools.mo
+lib/R/library/tools/po/it/LC_MESSAGES/R-tools.mo
+lib/R/library/tools/po/it/LC_MESSAGES/tools.mo
+lib/R/library/tools/po/ja/LC_MESSAGES/tools.mo
+lib/R/library/tools/po/ru/LC_MESSAGES/tools.mo
 lib/R/library/utils/CONTENTS
 lib/R/library/utils/DESCRIPTION
 lib/R/library/utils/INDEX
@@ -7556,9 +7742,11 @@ lib/R/library/utils/Meta/hsearch.rds
 lib/R/library/utils/Meta/nsInfo.rds
 lib/R/library/utils/Meta/package.rds
 lib/R/library/utils/NAMESPACE
+lib/R/library/utils/R-ex/RSiteSearch.R
 lib/R/library/utils/R-ex/Rprof.R
 lib/R/library/utils/R-ex/Sweave.R
 lib/R/library/utils/R-ex/SweaveSyntConv.R
+lib/R/library/utils/R-ex/alarm.R
 lib/R/library/utils/R-ex/apropos.R
 lib/R/library/utils/R-ex/browseEnv.R
 lib/R/library/utils/R-ex/capture.output.R
@@ -7581,11 +7769,14 @@ lib/R/library/utils/R-ex/head.R
 lib/R/library/utils/R-ex/help.R
 lib/R/library/utils/R-ex/help.search.R
 lib/R/library/utils/R-ex/help.start.R
+lib/R/library/utils/R-ex/iconv.R
 lib/R/library/utils/R-ex/installed.packages.R
+lib/R/library/utils/R-ex/localeToCharset.R
 lib/R/library/utils/R-ex/ls_str.R
 lib/R/library/utils/R-ex/make.socket.R
 lib/R/library/utils/R-ex/menu.R
 lib/R/library/utils/R-ex/methods.R
+lib/R/library/utils/R-ex/normalizePath.R
 lib/R/library/utils/R-ex/nsl.R
 lib/R/library/utils/R-ex/object.size.R
 lib/R/library/utils/R-ex/package.skeleton.R
@@ -7599,6 +7790,7 @@ lib/R/library/utils/R-ex/read.fwf.R
 lib/R/library/utils/R-ex/read.socket.R
 lib/R/library/utils/R-ex/recover.R
 lib/R/library/utils/R-ex/savehistory.R
+lib/R/library/utils/R-ex/select.list.R
 lib/R/library/utils/R-ex/sessionInfo.R
 lib/R/library/utils/R-ex/str.R
 lib/R/library/utils/R-ex/summaryRprof.R
@@ -7616,6 +7808,7 @@ lib/R/library/utils/help/LINK
 lib/R/library/utils/help/PkgUtils
 lib/R/library/utils/help/REMOVE
 lib/R/library/utils/help/RHOME
+lib/R/library/utils/help/RSiteSearch
 lib/R/library/utils/help/Rprof
 lib/R/library/utils/help/Rtangle
 lib/R/library/utils/help/RweaveLatex
@@ -7623,11 +7816,13 @@ lib/R/library/utils/help/SHLIB
 lib/R/library/utils/help/Sweave
 lib/R/library/utils/help/SweaveSyntConv
 lib/R/library/utils/help/SweaveUtils
+lib/R/library/utils/help/alarm
 lib/R/library/utils/help/apropos
 lib/R/library/utils/help/browseEnv
 lib/R/library/utils/help/browseURL
 lib/R/library/utils/help/bug.report
 lib/R/library/utils/help/capture.output
+lib/R/library/utils/help/chooseCRANmirror
 lib/R/library/utils/help/citEntry
 lib/R/library/utils/help/citation
 lib/R/library/utils/help/close.socket
@@ -7642,6 +7837,7 @@ lib/R/library/utils/help/edit.data.frame
 lib/R/library/utils/help/example
 lib/R/library/utils/help/file.edit
 lib/R/library/utils/help/fix
+lib/R/library/utils/help/flush.console
 lib/R/library/utils/help/getAnywhere
 lib/R/library/utils/help/getFromNamespace
 lib/R/library/utils/help/getS3method
@@ -7649,13 +7845,17 @@ lib/R/library/utils/help/head
 lib/R/library/utils/help/help
 lib/R/library/utils/help/help.search
 lib/R/library/utils/help/help.start
+lib/R/library/utils/help/iconv
 lib/R/library/utils/help/index.search
 lib/R/library/utils/help/installed.packages
+lib/R/library/utils/help/localeToCharset
 lib/R/library/utils/help/ls_str
 lib/R/library/utils/help/make.packages.html
 lib/R/library/utils/help/make.socket
 lib/R/library/utils/help/menu
 lib/R/library/utils/help/methods
+lib/R/library/utils/help/mirrorAdmin
+lib/R/library/utils/help/normalizePath
 lib/R/library/utils/help/nsl
 lib/R/library/utils/help/object.size
 lib/R/library/utils/help/package.skeleton
@@ -7671,7 +7871,9 @@ lib/R/library/utils/help/read.socket
 lib/R/library/utils/help/recover
 lib/R/library/utils/help/remove.packages
 lib/R/library/utils/help/savehistory
+lib/R/library/utils/help/select.list
 lib/R/library/utils/help/sessionInfo
+lib/R/library/utils/help/setRepositories
 lib/R/library/utils/help/str
 lib/R/library/utils/help/summaryRprof
 lib/R/library/utils/help/toLatex
@@ -7688,6 +7890,7 @@ lib/R/library/utils/html/LINK.html
 lib/R/library/utils/html/PkgUtils.html
 lib/R/library/utils/html/REMOVE.html
 lib/R/library/utils/html/RHOME.html
+lib/R/library/utils/html/RSiteSearch.html
 lib/R/library/utils/html/Rprof.html
 lib/R/library/utils/html/Rtangle.html
 lib/R/library/utils/html/RweaveLatex.html
@@ -7695,11 +7898,13 @@ lib/R/library/utils/html/SHLIB.html
 lib/R/library/utils/html/Sweave.html
 lib/R/library/utils/html/SweaveSyntConv.html
 lib/R/library/utils/html/SweaveUtils.html
+lib/R/library/utils/html/alarm.html
 lib/R/library/utils/html/apropos.html
 lib/R/library/utils/html/browseEnv.html
 lib/R/library/utils/html/browseURL.html
 lib/R/library/utils/html/bug.report.html
 lib/R/library/utils/html/capture.output.html
+lib/R/library/utils/html/chooseCRANmirror.html
 lib/R/library/utils/html/citEntry.html
 lib/R/library/utils/html/citation.html
 lib/R/library/utils/html/close.socket.html
@@ -7714,6 +7919,7 @@ lib/R/library/utils/html/edit.html
 lib/R/library/utils/html/example.html
 lib/R/library/utils/html/file.edit.html
 lib/R/library/utils/html/fix.html
+lib/R/library/utils/html/flush.console.html
 lib/R/library/utils/html/getAnywhere.html
 lib/R/library/utils/html/getFromNamespace.html
 lib/R/library/utils/html/getS3method.html
@@ -7721,13 +7927,17 @@ lib/R/library/utils/html/head.html
 lib/R/library/utils/html/help.html
 lib/R/library/utils/html/help.search.html
 lib/R/library/utils/html/help.start.html
+lib/R/library/utils/html/iconv.html
 lib/R/library/utils/html/index.search.html
 lib/R/library/utils/html/installed.packages.html
+lib/R/library/utils/html/localeToCharset.html
 lib/R/library/utils/html/ls_str.html
 lib/R/library/utils/html/make.packages.html.html
 lib/R/library/utils/html/make.socket.html
 lib/R/library/utils/html/menu.html
 lib/R/library/utils/html/methods.html
+lib/R/library/utils/html/mirrorAdmin.html
+lib/R/library/utils/html/normalizePath.html
 lib/R/library/utils/html/nsl.html
 lib/R/library/utils/html/object.size.html
 lib/R/library/utils/html/package.skeleton.html
@@ -7743,7 +7953,9 @@ lib/R/library/utils/html/read.socket.html
 lib/R/library/utils/html/recover.html
 lib/R/library/utils/html/remove.packages.html
 lib/R/library/utils/html/savehistory.html
+lib/R/library/utils/html/select.list.html
 lib/R/library/utils/html/sessionInfo.html
+lib/R/library/utils/html/setRepositories.html
 lib/R/library/utils/html/str.html
 lib/R/library/utils/html/summaryRprof.html
 lib/R/library/utils/html/toLatex.html
@@ -7752,6 +7964,7 @@ lib/R/library/utils/html/url.show.html
 lib/R/library/utils/html/utils-defunct.html
 lib/R/library/utils/html/utils-deprecated.html
 lib/R/library/utils/html/vignette.html
+lib/R/library/utils/iconvlist
 lib/R/library/utils/latex/BATCH.tex
 lib/R/library/utils/latex/COMPILE.tex
 lib/R/library/utils/latex/INSTALL.tex
@@ -7759,6 +7972,7 @@ lib/R/library/utils/latex/LINK.tex
 lib/R/library/utils/latex/PkgUtils.tex
 lib/R/library/utils/latex/REMOVE.tex
 lib/R/library/utils/latex/RHOME.tex
+lib/R/library/utils/latex/RSiteSearch.tex
 lib/R/library/utils/latex/Rprof.tex
 lib/R/library/utils/latex/Rtangle.tex
 lib/R/library/utils/latex/RweaveLatex.tex
@@ -7766,11 +7980,13 @@ lib/R/library/utils/latex/SHLIB.tex
 lib/R/library/utils/latex/Sweave.tex
 lib/R/library/utils/latex/SweaveSyntConv.tex
 lib/R/library/utils/latex/SweaveUtils.tex
+lib/R/library/utils/latex/alarm.tex
 lib/R/library/utils/latex/apropos.tex
 lib/R/library/utils/latex/browseEnv.tex
 lib/R/library/utils/latex/browseURL.tex
 lib/R/library/utils/latex/bug.report.tex
 lib/R/library/utils/latex/capture.output.tex
+lib/R/library/utils/latex/chooseCRANmirror.tex
 lib/R/library/utils/latex/citEntry.tex
 lib/R/library/utils/latex/citation.tex
 lib/R/library/utils/latex/close.socket.tex
@@ -7785,6 +8001,7 @@ lib/R/library/utils/latex/edit.tex
 lib/R/library/utils/latex/example.tex
 lib/R/library/utils/latex/file.edit.tex
 lib/R/library/utils/latex/fix.tex
+lib/R/library/utils/latex/flush.console.tex
 lib/R/library/utils/latex/getAnywhere.tex
 lib/R/library/utils/latex/getFromNamespace.tex
 lib/R/library/utils/latex/getS3method.tex
@@ -7792,13 +8009,17 @@ lib/R/library/utils/latex/head.tex
 lib/R/library/utils/latex/help.search.tex
 lib/R/library/utils/latex/help.start.tex
 lib/R/library/utils/latex/help.tex
+lib/R/library/utils/latex/iconv.tex
 lib/R/library/utils/latex/index.search.tex
 lib/R/library/utils/latex/installed.packages.tex
+lib/R/library/utils/latex/localeToCharset.tex
 lib/R/library/utils/latex/ls_str.tex
 lib/R/library/utils/latex/make.packages.html.tex
 lib/R/library/utils/latex/make.socket.tex
 lib/R/library/utils/latex/menu.tex
 lib/R/library/utils/latex/methods.tex
+lib/R/library/utils/latex/mirrorAdmin.tex
+lib/R/library/utils/latex/normalizePath.tex
 lib/R/library/utils/latex/nsl.tex
 lib/R/library/utils/latex/object.size.tex
 lib/R/library/utils/latex/package.skeleton.tex
@@ -7814,7 +8035,9 @@ lib/R/library/utils/latex/read.socket.tex
 lib/R/library/utils/latex/recover.tex
 lib/R/library/utils/latex/remove.packages.tex
 lib/R/library/utils/latex/savehistory.tex
+lib/R/library/utils/latex/select.list.tex
 lib/R/library/utils/latex/sessionInfo.tex
+lib/R/library/utils/latex/setRepositories.tex
 lib/R/library/utils/latex/str.tex
 lib/R/library/utils/latex/summaryRprof.tex
 lib/R/library/utils/latex/toLatex.tex
@@ -7824,6 +8047,7 @@ lib/R/library/utils/latex/utils-defunct.tex
 lib/R/library/utils/latex/utils-deprecated.tex
 lib/R/library/utils/latex/vignette.tex
 lib/R/library/utils/man/utils.Rd.gz
+lib/R/library/utils/po/en@quot/LC_MESSAGES/R-utils.mo
 lib/R/modules/R_X11.so
 lib/R/modules/internet.so
 lib/R/modules/lapack.so
@@ -7837,6 +8061,16 @@ lib/R/share/licenses/BSD
 lib/R/share/licenses/GPL-2
 lib/R/share/licenses/LGPL-2
 lib/R/share/licenses/LGPL-2.1
+lib/R/share/locale/de/LC_MESSAGES/R.mo
+lib/R/share/locale/en/LC_MESSAGES/R.mo
+lib/R/share/locale/en@quot/LC_MESSAGES/R.mo
+lib/R/share/locale/en_GB/LC_MESSAGES/R.mo
+lib/R/share/locale/it/LC_MESSAGES/R.mo
+lib/R/share/locale/ja/LC_MESSAGES/R.mo
+lib/R/share/locale/pt_BR/LC_MESSAGES/R.mo
+lib/R/share/locale/ru/LC_MESSAGES/R.mo
+lib/R/share/locale/zh_CN/LC_MESSAGES/R.mo
+lib/R/share/make/check.mk
 lib/R/share/make/config.mk
 lib/R/share/make/shlib.mk
 lib/R/share/make/tests.mk
@@ -7871,10 +8105,32 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/share/perl/R
 @dirrm lib/R/share/perl
 @dirrm lib/R/share/make
+@dirrm lib/R/share/locale/zh_CN/LC_MESSAGES
+@dirrm lib/R/share/locale/zh_CN
+@dirrm lib/R/share/locale/ru/LC_MESSAGES
+@dirrm lib/R/share/locale/ru
+@dirrm lib/R/share/locale/pt_BR/LC_MESSAGES
+@dirrm lib/R/share/locale/pt_BR
+@dirrm lib/R/share/locale/ja/LC_MESSAGES
+@dirrm lib/R/share/locale/ja
+@dirrm lib/R/share/locale/it/LC_MESSAGES
+@dirrm lib/R/share/locale/it
+@dirrm lib/R/share/locale/en_GB/LC_MESSAGES
+@dirrm lib/R/share/locale/en_GB
+@dirrm lib/R/share/locale/en@quot/LC_MESSAGES
+@dirrm lib/R/share/locale/en@quot
+@dirrm lib/R/share/locale/en/LC_MESSAGES
+@dirrm lib/R/share/locale/en
+@dirrm lib/R/share/locale/de/LC_MESSAGES
+@dirrm lib/R/share/locale/de
+@dirrm lib/R/share/locale
 @dirrm lib/R/share/licenses
 @dirrm lib/R/share/R
 @dirrm lib/R/share
 @dirrm lib/R/modules
+@dirrm lib/R/library/utils/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/utils/po/en@quot
+@dirrm lib/R/library/utils/po
 @dirrm lib/R/library/utils/man
 @dirrm lib/R/library/utils/latex
 @dirrm lib/R/library/utils/html
@@ -7884,6 +8140,15 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/utils/R
 @dirrm lib/R/library/utils/Meta
 @dirrm lib/R/library/utils
+@dirrm lib/R/library/tools/po/ru/LC_MESSAGES
+@dirrm lib/R/library/tools/po/ru
+@dirrm lib/R/library/tools/po/ja/LC_MESSAGES
+@dirrm lib/R/library/tools/po/ja
+@dirrm lib/R/library/tools/po/it/LC_MESSAGES
+@dirrm lib/R/library/tools/po/it
+@dirrm lib/R/library/tools/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/tools/po/en@quot
+@dirrm lib/R/library/tools/po
 @dirrm lib/R/library/tools/man
 @dirrm lib/R/library/tools/libs
 @dirrm lib/R/library/tools/latex
@@ -7893,6 +8158,15 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/tools/R
 @dirrm lib/R/library/tools/Meta
 @dirrm lib/R/library/tools
+@dirrm lib/R/library/tcltk/po/ru/LC_MESSAGES
+@dirrm lib/R/library/tcltk/po/ru
+@dirrm lib/R/library/tcltk/po/ja/LC_MESSAGES
+@dirrm lib/R/library/tcltk/po/ja
+@dirrm lib/R/library/tcltk/po/it/LC_MESSAGES
+@dirrm lib/R/library/tcltk/po/it
+@dirrm lib/R/library/tcltk/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/tcltk/po/en@quot
+@dirrm lib/R/library/tcltk/po
 @dirrm lib/R/library/tcltk/man
 @dirrm lib/R/library/tcltk/libs
 @dirrm lib/R/library/tcltk/latex
@@ -7914,6 +8188,15 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/survival/R
 @dirrm lib/R/library/survival/Meta
 @dirrm lib/R/library/survival
+@dirrm lib/R/library/stats4/po/ru/LC_MESSAGES
+@dirrm lib/R/library/stats4/po/ru
+@dirrm lib/R/library/stats4/po/ja/LC_MESSAGES
+@dirrm lib/R/library/stats4/po/ja
+@dirrm lib/R/library/stats4/po/it/LC_MESSAGES
+@dirrm lib/R/library/stats4/po/it
+@dirrm lib/R/library/stats4/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/stats4/po/en@quot
+@dirrm lib/R/library/stats4/po
 @dirrm lib/R/library/stats4/man
 @dirrm lib/R/library/stats4/latex
 @dirrm lib/R/library/stats4/html
@@ -7922,6 +8205,15 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/stats4/R
 @dirrm lib/R/library/stats4/Meta
 @dirrm lib/R/library/stats4
+@dirrm lib/R/library/stats/po/zh_CN/LC_MESSAGES
+@dirrm lib/R/library/stats/po/zh_CN
+@dirrm lib/R/library/stats/po/ja/LC_MESSAGES
+@dirrm lib/R/library/stats/po/ja
+@dirrm lib/R/library/stats/po/it/LC_MESSAGES
+@dirrm lib/R/library/stats/po/it
+@dirrm lib/R/library/stats/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/stats/po/en@quot
+@dirrm lib/R/library/stats/po
 @dirrm lib/R/library/stats/man
 @dirrm lib/R/library/stats/libs
 @dirrm lib/R/library/stats/latex
@@ -7932,6 +8224,13 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/stats/R
 @dirrm lib/R/library/stats/Meta
 @dirrm lib/R/library/stats
+@dirrm lib/R/library/splines/po/ru/LC_MESSAGES
+@dirrm lib/R/library/splines/po/ru
+@dirrm lib/R/library/splines/po/ja/LC_MESSAGES
+@dirrm lib/R/library/splines/po/ja
+@dirrm lib/R/library/splines/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/splines/po/en@quot
+@dirrm lib/R/library/splines/po
 @dirrm lib/R/library/splines/man
 @dirrm lib/R/library/splines/libs
 @dirrm lib/R/library/splines/latex
@@ -7942,6 +8241,9 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/splines/Meta
 @dirrm lib/R/library/splines
 @dirrm lib/R/library/spatial/ppdata
+@dirrm lib/R/library/spatial/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/spatial/po/en@quot
+@dirrm lib/R/library/spatial/po
 @dirrm lib/R/library/spatial/man
 @dirrm lib/R/library/spatial/libs
 @dirrm lib/R/library/spatial/latex
@@ -7961,6 +8263,9 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/rpart/R
 @dirrm lib/R/library/rpart/Meta
 @dirrm lib/R/library/rpart
+@dirrm lib/R/library/nnet/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/nnet/po/en@quot
+@dirrm lib/R/library/nnet/po
 @dirrm lib/R/library/nnet/man
 @dirrm lib/R/library/nnet/libs
 @dirrm lib/R/library/nnet/latex
@@ -7971,6 +8276,7 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/nnet/Meta
 @dirrm lib/R/library/nnet
 @dirrm lib/R/library/nlme/scripts
+@dirrm lib/R/library/nlme/po
 @dirrm lib/R/library/nlme/mlbook
 @dirrm lib/R/library/nlme/man
 @dirrm lib/R/library/nlme/libs
@@ -7991,6 +8297,9 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/mgcv/R
 @dirrm lib/R/library/mgcv/Meta
 @dirrm lib/R/library/mgcv
+@dirrm lib/R/library/methods/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/methods/po/en@quot
+@dirrm lib/R/library/methods/po
 @dirrm lib/R/library/methods/man
 @dirrm lib/R/library/methods/libs
 @dirrm lib/R/library/methods/latex
@@ -8011,6 +8320,13 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/lattice/R
 @dirrm lib/R/library/lattice/Meta
 @dirrm lib/R/library/lattice
+@dirrm lib/R/library/grid/po/ja/LC_MESSAGES
+@dirrm lib/R/library/grid/po/ja
+@dirrm lib/R/library/grid/po/it/LC_MESSAGES
+@dirrm lib/R/library/grid/po/it
+@dirrm lib/R/library/grid/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/grid/po/en@quot
+@dirrm lib/R/library/grid/po
 @dirrm lib/R/library/grid/man
 @dirrm lib/R/library/grid/libs
 @dirrm lib/R/library/grid/latex
@@ -8021,6 +8337,13 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/grid/R
 @dirrm lib/R/library/grid/Meta
 @dirrm lib/R/library/grid
+@dirrm lib/R/library/graphics/po/ja/LC_MESSAGES
+@dirrm lib/R/library/graphics/po/ja
+@dirrm lib/R/library/graphics/po/it/LC_MESSAGES
+@dirrm lib/R/library/graphics/po/it
+@dirrm lib/R/library/graphics/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/graphics/po/en@quot
+@dirrm lib/R/library/graphics/po
 @dirrm lib/R/library/graphics/man
 @dirrm lib/R/library/graphics/latex
 @dirrm lib/R/library/graphics/html
@@ -8030,10 +8353,21 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/graphics/R
 @dirrm lib/R/library/graphics/Meta
 @dirrm lib/R/library/graphics
+@dirrm lib/R/library/grDevices/po/ja/LC_MESSAGES
+@dirrm lib/R/library/grDevices/po/ja
+@dirrm lib/R/library/grDevices/po/it/LC_MESSAGES
+@dirrm lib/R/library/grDevices/po/it
+@dirrm lib/R/library/grDevices/po/en_GB/LC_MESSAGES
+@dirrm lib/R/library/grDevices/po/en_GB
+@dirrm lib/R/library/grDevices/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/grDevices/po/en@quot
+@dirrm lib/R/library/grDevices/po
 @dirrm lib/R/library/grDevices/man
+@dirrm lib/R/library/grDevices/libs
 @dirrm lib/R/library/grDevices/latex
 @dirrm lib/R/library/grDevices/html
 @dirrm lib/R/library/grDevices/help
+@dirrm lib/R/library/grDevices/afm
 @dirrm lib/R/library/grDevices/R-ex
 @dirrm lib/R/library/grDevices/R
 @dirrm lib/R/library/grDevices/Meta
@@ -8067,6 +8401,9 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/cluster/R
 @dirrm lib/R/library/cluster/Meta
 @dirrm lib/R/library/cluster
+@dirrm lib/R/library/class/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/class/po/en@quot
+@dirrm lib/R/library/class/po
 @dirrm lib/R/library/class/man
 @dirrm lib/R/library/class/libs
 @dirrm lib/R/library/class/latex
@@ -8085,6 +8422,15 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/boot/R
 @dirrm lib/R/library/boot/Meta
 @dirrm lib/R/library/boot
+@dirrm lib/R/library/base/po/zh_CN/LC_MESSAGES
+@dirrm lib/R/library/base/po/zh_CN
+@dirrm lib/R/library/base/po/ja/LC_MESSAGES
+@dirrm lib/R/library/base/po/ja
+@dirrm lib/R/library/base/po/it/LC_MESSAGES
+@dirrm lib/R/library/base/po/it
+@dirrm lib/R/library/base/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/base/po/en@quot
+@dirrm lib/R/library/base/po
 @dirrm lib/R/library/base/man
 @dirrm lib/R/library/base/latex
 @dirrm lib/R/library/base/html
@@ -8095,6 +8441,9 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/base/Meta
 @dirrm lib/R/library/base
 @dirrm lib/R/library/MASS/scripts
+@dirrm lib/R/library/MASS/po/en@quot/LC_MESSAGES
+@dirrm lib/R/library/MASS/po/en@quot
+@dirrm lib/R/library/MASS/po
 @dirrm lib/R/library/MASS/man
 @dirrm lib/R/library/MASS/libs
 @dirrm lib/R/library/MASS/latex
@@ -8125,5 +8474,4 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/doc
 @dirrm lib/R/bin/exec
 @dirrm lib/R/bin
-@dirrm lib/R/afm
 @dirrm lib/R
