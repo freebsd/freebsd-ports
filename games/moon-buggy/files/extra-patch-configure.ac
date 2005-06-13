@@ -1,0 +1,11 @@
+--- configure.ac	Mon May 30 13:36:12 2005
++++ configure.ac.orig	Mon May 30 13:35:21 2005
+@@ -67,7 +67,7 @@
+ 
+ AM_CONDITIONAL(short_getopt, test "x$ac_cv_func_getopt_long" != xyes)
+ 
+-SOUND_DIR='$(datadir)/sounds/moon-buggy'
++SOUND_DIR='$(datadir)/moon-buggy'
+ AC_SUBST(SOUND_DIR)
+ 
+ AC_CONFIG_FILES([Makefile])
