@@ -7,6 +7,7 @@
 
 PORTNAME=	wmzazof
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://users.chello.be/cr49940//wmzazof/
 

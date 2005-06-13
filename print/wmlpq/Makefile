@@ -7,6 +7,7 @@
 
 PORTNAME=	wmlpq
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	print windowmaker
 MASTER_SITES=	http://www.ur.uklinux.net/wmlpq/dl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
