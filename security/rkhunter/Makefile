@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.7
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
-MAINTAINER=	vaidab@safe-mail.net
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Rootkit detection tool
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
