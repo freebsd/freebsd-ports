@@ -26,6 +26,9 @@ XBUILD_DIRS=	lib/font programs/Xserver
 XINCLUDE_DIRS=	lib/xtrans
 XMAN_DIRS=	programs/Xserver
 
+# Ensure that we pick up imake's makedepend instead of devel/makedepend
+MAKE_ENV+=	PATH=${X11BASE}/bin:${PATH}
+
 MAN1=		Xprt.1
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
