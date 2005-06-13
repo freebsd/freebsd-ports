@@ -3,7 +3,7 @@
 # Checks if the 'www' user and group exist. If they don't, then
 # an attempt is made to create both.
 #
-# $FreeBSD: /tmp/pcvs/ports/www/tomcat55/Attic/pkg-install,v 1.1 2003-08-13 11:39:38 znerd Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/tomcat55/Attic/pkg-install,v 1.2 2005-06-13 14:08:34 hq Exp $
 #
 
 # Make sure we're called during the 'make install' process
