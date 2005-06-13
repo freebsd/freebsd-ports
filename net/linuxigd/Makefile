@@ -29,6 +29,5 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.sh.sample ${PREFIX}/etc/rc.d
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
