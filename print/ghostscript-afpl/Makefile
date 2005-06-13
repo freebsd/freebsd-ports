@@ -13,7 +13,7 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://www.harsch.net/Download/:dj970 \
-		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
+		http://www33.ocn.ne.jp/~higamasa/gdevmd2k/:md2k \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
 		ftp://download.canon-sales.co.jp/pub/driver/lasershot/linux/:cpca \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
@@ -129,7 +129,7 @@ DJ970=		gdevdj9
 DJ970_SRCS=	${DJ970}.c.gz
 
 # MD2K - additional driver for Alps MD-2000/2010/4000/1300/1500/5000
-# http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/
+# http://www33.ocn.ne.jp/~higamasa/gdevmd2k/
 MD2K=		md2k
 MD2K_VERS=	0.2a
 MD2K_NAME=	gdevmd2k-${MD2K_VERS}
@@ -169,14 +169,13 @@ LIPS_SRCS=	${LIPS_NAME}.tar.gz
 
 # EPAG - additional driver for Epson ESC/Page printers
 # http://www.humblesoft.com/gdevepag.html
-# XXX FIXME
 EPAG=		epag
 EPAG_VERS=	3.09
 EPAG_NAME=	${EPAG}-${EPAG_VERS}
 EPAG_SRCS=	${EPAG_NAME}.tar.gz
 
-# EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
-# http://www.epkowa.co.jp/english/linux_e/index.html
+# EPLASER - additional driver for ESC/Page printers, by EPSON AVASYS Corp.
+# http://www.avasys.jp/english/linux_e/index.html
 EPLASER=	eplaser
 EPLASER_VERS=	3.1.4
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
@@ -194,7 +193,6 @@ GDI_NAME=	Samsung-SmartGDI-all-GS
 GDI_SRCS=	${GDI_NAME}.orig.tar.gz
 
 # LXM3200 - additional driver for Lexmark 3200/Z12/Z22/Z31/Z32
-# XXX FIXME
 LXM3200=	lxm3200
 LXM3200_VERS=	20030501
 LXM3200_NAME=	${LXM3200}-tweaked-${LXM3200_VERS}
