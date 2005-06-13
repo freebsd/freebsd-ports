@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	dns net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -16,7 +16,8 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build
-RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC \
+		ipcount:${PORTSDIR}/net-mgmt/p5-Net-IP
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--online-tests
