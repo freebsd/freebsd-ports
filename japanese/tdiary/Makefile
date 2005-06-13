@@ -10,7 +10,16 @@ CATEGORIES=	japanese www ruby
 MAINTAINER=	jfkimura@yahoo.co.jp
 
 TDIARY_LANG=	tdiary.conf-ja
-CONFLICTS=	tdiary-*
 MASTERDIR?=	${.CURDIR}/../../www/tdiary
+
+.if	defined(WITH_TDIARY_DEVEL)
+CONFLICTS=	tdiary-devel-[0-9]*
+PKGNAMESUFFIX=	-devel
+MASTERDIR=	${.CURDIR}/../../www/tdiary-devel
+MD5_FILE=	${.CURDIR}/../../www/tdiary-devel/distinfo
+.else
+CONFLICTS=	tdiary-[0-9]*
+MD5_FILE=	${.CURDIR}/../../www/tdiary/distinfo
+.endif
 
 .include "${MASTERDIR}/Makefile"
