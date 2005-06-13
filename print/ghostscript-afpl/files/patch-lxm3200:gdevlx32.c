@@ -1,5 +1,5 @@
 --- lxm3200/gdevlx32.c.orig	Wed Apr 23 01:06:20 2003
-+++ lxm3200/gdevlx32.c	Fri Dec 17 19:46:04 2004
++++ lxm3200/gdevlx32.c	Thu May 26 00:11:50 2005
 @@ -422,9 +422,11 @@
   * of the nearest color.
   */
@@ -36,9 +36,12 @@
  																			"lxm3200_print_page(outdata)");
   
  	if(gendata.scanbuf == NULL || 
-@@ -944,11 +946,11 @@
+@@ -943,12 +945,14 @@
+ private void
  freeresources(void)
  {
++	gx_device *pdev;
++
  	if(gendata.scanbuf)
 -		gs_free((char *)gendata.scanbuf, gendata.numbytes, gendata.numblines,
 +		gs_free(pdev->memory, (char *)gendata.scanbuf, gendata.numbytes, gendata.numblines,
