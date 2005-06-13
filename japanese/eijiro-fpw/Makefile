@@ -39,7 +39,7 @@ DICT_PATH:=	${WRKDIR}
 CDROM_PATH=	${NONEXISTENT}
 .endif
 
-MAKE_ARGS:=	PORT_SRCFILE=${DICT_PATH}/${SRCFILE}
+MAKE_ARGS:=	SRCFILE=${DICT_PATH}/${SRCFILE}
 
 post-extract:
 	@if [ -f ${CDROM_PATH}/eijiro-original/*.exe ]; then \

@@ -1,12 +1,11 @@
---- ../orig/eijiro-fpw1.0b/Makefile	Sun Oct  8 23:40:55 2000
-+++ Makefile	Thu Dec 21 12:03:11 2000
-@@ -17,7 +17,8 @@
- #
- EIJIROVER = 37
- SRCDIR = .
--SRCFILE := $(wildcard ${SRCDIR}/EIJI${EIJIROVER}??.TXT)
-+#SRCFILE := $(wildcard ${SRCDIR}/EIJI${EIJIROVER}??.TXT)
-+SRCFILE=${PORT_SRCFILE}
- #SRCFILE = test.txt
+--- Makefile.orig	Sun Oct  8 14:40:55 2000
++++ Makefile	Mon Jun 13 11:55:22 2005
+@@ -47,7 +47,7 @@
+ DIR = eijiro
  
- #
+ FPWPARSER = eijiro-fpw.pl
+-FPWPARSERFLAGS = -- --charset=${CHARSET} ${SRCFILE}
++FPWPARSERFLAGS = -c "${CHARSET}" "${SRCFILE}"
+ 
+ # fpwutils.mk must be located in one of the make include directories or
+ # you should user -I option.
