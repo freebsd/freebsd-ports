@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtorrent
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -14,7 +14,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl		\
-		torrent.2:${PORTSDIR}/net/libtorrent
+		torrent.3:${PORTSDIR}/net/libtorrent
 
 USE_GCC=	3.4
 USE_REINPLACE=	yes
