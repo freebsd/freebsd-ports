@@ -5,8 +5,8 @@ bsfilter is a spam filter using Bayesian(statistical) algorithm.
 - written in Ruby
 - support 3 methods for access
 -- traditional unix-style filter. study and judge local files or pipe
--- IMAP. study and judge mails in an IMAP server
--- POP proxy. run between POP server and MUA
+-- IMAP. study and judge mails in an IMAP server. IMAP over SSL supported
+-- POP proxy. run between POP server and MUA. POP over SSL supported
 - distributed under GPL
 
 Author:	nabeken
