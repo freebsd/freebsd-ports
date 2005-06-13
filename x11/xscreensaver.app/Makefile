@@ -7,6 +7,7 @@
 
 PORTNAME=	XScreenSaver.App
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.asleep.net/download/
 

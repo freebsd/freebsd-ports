@@ -6,7 +6,7 @@
 
 PORTNAME=	wmymail
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail x11
 MASTER_SITES=	http://yath.mine.nu/wmymail/ \
 		http://dockapps.org/files/65/96/
