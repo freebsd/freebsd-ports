@@ -4,19 +4,10 @@ Tomcat 5.x is the current release of Tomcat,
 and builds upon the Tomcat 3.3 and Tomcat 4.1 codebases. 
 The 5.x releases implement the Servlet 2.4 and JSP 2.0 specifications.
 
-Tomcat 5.0.x. Tomcat 5.0 improves on Tomcat 4.1 in many ways, including: 
-
-o Performance optimizations and reduced garbage collection 
-o Refactored application deployer, with an optional standalone deployer 
-  allowing validation and compilation of a web application before 
-  putting it in production 
-o Complete server monitoring using JMX and the manager web application 
-o Scalability and reliability enhancements 
-o Improved Taglibs handling, including advanced pooling and tag plugins 
-o Improved platform integration, with native Windows and Unix wrappers 
-o Embedding of Tomcat using JMX 
-o Enhanced Security Manager support 
-o Integrated session clustering 
-o Expanded documentation 
+Apache Tomcat 5.5 is the current focus of development.
+While it supports the same Servlet and JSP Specification versions
+as Apache Tomcat 5.0.x, there are significant changes in many areas
+under the hood, resulting in improved performance, stability,
+and total cost of ownership.
 
 WWW: http://jakarta.apache.org/tomcat/

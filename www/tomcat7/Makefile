@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	5.0.30
+PORTVERSION=	5.5.9
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
 
 MAINTAINER=	liukang@bjut.edu.cn
-COMMENT=	Open-source Java web server by Apache, 5.0.x branch
-PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/jakarta-tomcat4:pre-everything
+COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
 .if !defined(NOPORTDOCS)
@@ -24,6 +23,7 @@ MAN1=	${CONTROL_SCRIPT_NAME}.1
 .endif
 
 MAJOR_VER=	${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
 LOG_DIR=	${APP_HOME}/logs
 APP_TITLE=	Jakarta Tomcat
@@ -49,8 +49,9 @@ PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
 		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
-		conf/server.xml
+		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
 LATEST_LINK=	${APP_SHORTNAME}
 CONF_EXT=	sample
@@ -82,7 +83,7 @@ post-patch:
 
 .for f in ${REPLACE_FILES}
 	@${ECHO_MSG} -n ">> Customizing `basename $f`..."
-	@(cd ${WRKSRC} && ${SED} \
+	@${SED} \
 	-e "/%%AJP_1_3_PORT%%/s//${AJP_1_3_PORT}/g" \
 	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
 	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
@@ -108,7 +109,7 @@ post-patch:
 	-e "/%%STOP_TIMEOUT%%/s//${STOP_TIMEOUT}/g" \
 	-e "/%%USER%%/s//${USER}/g" \
 	-e "/%%WARP_PORT%%/s//${WARP_PORT}/g" \
-	$f > ${WRKDIR}/`basename $f`)
+	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
