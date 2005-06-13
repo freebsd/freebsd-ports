@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	htpdate
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.clevervest.com/htp/archive/c/
 
