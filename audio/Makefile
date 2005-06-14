@@ -510,6 +510,7 @@
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
     SUBDIR += xmms-defx
+    SUBDIR += xmms-eq
     SUBDIR += xmms-faad
     SUBDIR += xmms-fc
     SUBDIR += xmms-flac
