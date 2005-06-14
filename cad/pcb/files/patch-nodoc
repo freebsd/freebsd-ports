@@ -1,0 +1,22 @@
+--- Makefile.am.orig	Sat Jun 11 14:45:54 2005
++++ Makefile.am	Sat Jun 11 14:46:08 2005
+@@ -2,7 +2,7 @@
+ ##
+ ## Top level automake file for PCB
+ 
+-SUBDIRS=	src lib newlib doc example tools tutorial README_FILES
++SUBDIRS=	src lib newlib example tools tutorial README_FILES
+ 
+ EXTRA_DIST=	autogen.sh globalconst.h README.cvs
+ 
+--- Makefile.in.orig	Sat Jun 11 14:46:00 2005
++++ Makefile.in	Sat Jun 11 14:46:06 2005
+@@ -169,7 +169,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = src lib newlib doc example tools tutorial README_FILES
++SUBDIRS = src lib newlib example tools tutorial README_FILES
+ EXTRA_DIST = autogen.sh globalconst.h README.cvs
+ DISTCLEANFILES = configure.lineno
+ all: config.h

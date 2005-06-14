@@ -1,0 +1,16 @@
+--- configure.orig	Tue Jun 14 02:38:35 2005
++++ configure	Tue Jun 14 02:41:54 2005
+@@ -3612,13 +3612,6 @@
+ done
+ test -n "$WISH" || WISH="none"
+ 
+-if test "X$WISH" = "Xnone" ; then
+-	{ { echo "$as_me:$LINENO: error: Did not find the wish executible.  You need to make sure
+-	that tcl is installed on your system and that wish is in your path" >&5
+-echo "$as_me: error: Did not find the wish executible.  You need to make sure
+-	that tcl is installed on your system and that wish is in your path" >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+ 
+ 
+ cat >>confdefs.h <<_ACEOF

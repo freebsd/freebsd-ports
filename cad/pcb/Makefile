@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcb
-PORTVERSION=	20040215
+PORTVERSION=	20050609
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,15 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		wish:${PORTSDIR}/x11-toolkits/tk84
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		wish:${PORTSDIR}/x11-toolkits/tk84
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-rpath
 
 INFO=		pcb
+
+.if !defined(NOPORTDOCS)
+pre-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/pcb.info ${PREFIX}/info
+.endif
 
 .include <bsd.port.mk>
