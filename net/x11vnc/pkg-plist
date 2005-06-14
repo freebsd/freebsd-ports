@@ -1,0 +1,13 @@
+bin/x11vnc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.LibVNCServer
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/classes/VncViewer.jar
+%%DATADIR%%/classes/index.vnc
+@dirrm %%DATADIR%%/classes
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
