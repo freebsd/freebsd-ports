@@ -8643,6 +8643,7 @@ par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
 paraget		ports/ftp/paraget
 paragui		ports/x11-toolkits/paragui
+paraview	ports/science/paraview
 parchive	ports/archivers/parchive
 pardiff		ports/textproc/pardiff
 pari		ports/math/pari
