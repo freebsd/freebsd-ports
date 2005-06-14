@@ -54,16 +54,16 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
-# FIXME: we are currently getting weird build failures on some 4.x and
-# 5.4 systems, which nobody has been able to track down yet. PR 81788. 
-WITHOUT_LIBJAVA=       yes
+# FIXME: we are currently getting weird build failures with libjava on
+# some 4.x and 5.x systems, which the following seems to work around. PR 81788.
+CONFIGURE_ARGS+=	--disable-rpath
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 SUFFIX=		41
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls \
+CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
