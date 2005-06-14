@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.40
-PORTREVISION=	1
+PORTVERSION=	1.42
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -21,8 +20,6 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
-
-IGNORE=	only works with old versions (1.0.x) of net/rrdtool
 
 OPTIONS=	FPING "Support for fping probes" on
 OPTIONS+=	ECHOPING "Support for EchoPing probes" off
@@ -125,7 +122,6 @@ ETC1=		basepage.html config smokemail config-echoping
 post-extract:
 	@${RM} ${WRKSRC}/lib/BER.pm
 	@${RM} ${WRKSRC}/lib/SNMP_*.pm
-	@${RM} ${WRKSRC}/lib/ISG/.#ParseConfig.pm.1.26
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
