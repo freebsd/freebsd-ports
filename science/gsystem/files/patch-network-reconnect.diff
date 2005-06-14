@@ -1,0 +1,266 @@
+Index: src/worldengine/GXmlDataController.cpp
+===================================================================
+--- src/worldengine/GXmlDataController.cpp	(revision 547)
++++ src/worldengine/GXmlDataController.cpp	(working copy)
+@@ -1306,6 +1306,14 @@
+ 
+ void GXmlDataController::sendUserMessage(QString message, QString destination)
+ {
++  //@todo: this doesn't work???
++//   XMPP::Jid destjid;
++//   destjid.set(destination);
++//   if (!destjid.isValid())
++//   {
++//     qWarning(QString("Destination %1 not a valid JID, not sending message!").arg(destination));
++//     return;
++//   }
+   QDomDocument d;
+   QDomElement e = d.createElement("message");
+   d.appendChild(e);
+Index: src/worldengine/GXmppNetwork.cpp
+===================================================================
+--- src/worldengine/GXmppNetwork.cpp	(revision 547)
++++ src/worldengine/GXmppNetwork.cpp	(working copy)
+@@ -94,19 +94,22 @@
+ : GXmlNetwork(parent,name),
+   Active(FALSE),
+   Connected(FALSE),
++  Connecting(FALSE),
+   XmppLayerCreated(FALSE),
+   XmppConnector(NULL),
+   Tls(NULL),
+   TlsHandler(NULL),
+   Stream(NULL),
+   NetworkId(full_jid),
+-  MessageQueue(new GXmppMessageQueue())
++  MessageQueue(new GXmppMessageQueue()),
++  StayConnected(FALSE)
+ {
+   connect(qApp,SIGNAL(aboutToQuit()),this,SLOT(closeNetwork()));
+ 
+-  QTimer* heartbeat_timer = new QTimer(this,"heartbeat timer");
+-  connect(heartbeat_timer,SIGNAL(timeout()),this,SLOT(sendHeartbeat()));
+-  heartbeat_timer->start(55000);
++//   QTimer* heartbeat_timer = new QTimer(this,"heartbeat timer");
++//   connect(heartbeat_timer,SIGNAL(timeout()),this,SLOT(sendHeartbeat()));
++//   heartbeat_timer->start(55000);
++  // see XMPP::ClientStream::setNoopTime() which is now used
+ }
+ 
+ GXmppNetwork::~GXmppNetwork()
+@@ -123,8 +126,9 @@
+ {
+   if (XmppLayerCreated)
+   {
+-    qWarning("XMPP Layer already created!");
+-    return true;
++    qWarning("XMPP Layer already created! Destroying it first...");
++    this->deleteXmppLayer(true);
++    qWarning("XMPP Layer now destroyed");
+   }
+     
+   //XMPP related setup
+@@ -241,6 +245,11 @@
+     XmppConnector=NULL;
+   }
+   
++  this->Connected = false;
++  this->Connecting = false;
++  this->Active = false;
++  this->XmppLayerCreated = false;
++  
+   return true;
+ }
+ 
+@@ -296,6 +305,14 @@
+ 
+ bool GXmppNetwork::initNetwork()
+ {
++  if (this->Connecting)
++  {
++    qWarning("Already in the process of connecting the network");
++    return false;
++  }
++  
++  this->Connecting = true;
++  
+   QMutexLocker lock(this);
+   if (!this->createXmppLayer())
+   {
+@@ -332,7 +349,7 @@
+     Tls->setCertificateStore(certStore);
+   }
+   
+-//   Stream->setNoopTime(55000); // every 55 seconds
++  Stream->setNoopTime(55000); // every 55 seconds
+   qDebug("Connecting XMPP network with JID " + this->getNetworkId());
+   qDebug("Warning: if you get a segmentation fault next, this probably means");
+   qDebug("         that the server you want to connect to (the domain part");
+@@ -344,15 +361,22 @@
+   return true;
+ }
+ 
++void GXmppNetwork::reconnectNetwork()
++{
++  QTimer::singleShot(100,this,SLOT(initNetwork()));
++}
++
+ bool GXmppNetwork::closeNetwork()
+ {
+   QMutexLocker lock(this);
++  this->StayConnected = false;
+   if (this->Connected)
+   {
+     qDebug("Disconnecting XMPP Stream...");
+     this->Stream->close();
+     this->Connected = false;
+     this->Active = false; // correct place?
++    this->Connecting = false;
+     return true;
+   }
+   else
+@@ -379,6 +403,15 @@
+     qWarning("Destination is empty, not sending message!");
+     return false;
+   }
++  
++  //@todo this doesn't seem to be functional(??)
++  XMPP::Jid destjid(destination);
++  if (!destjid.isValid())
++  {
++    qWarning(QString("Destination %1 not a valid JID, not sending message!").arg(destination));
++    return false;
++  }
++  
+ //   qDebug(QString("type range for user events: %1 to %2").arg(QString::number(QEvent::User)).arg(QString::number(QEvent::MaxUser)));
+   QDomDocument d;
+   QDomElement e = d.createElement("message");
+@@ -386,15 +419,24 @@
+   e.setAttribute("to",destination);
+   e.appendChild(d.importNode(data,"true"));
+   
+-  if (!this->isSubscribed(destination))
++  if (!this->isSubscribed(destination) || !this->isConnected())
+   {
+-    qWarning(QString("Delaying sending of message, destination %1 is not yet available").arg(destination));
++    if (!this->isConnected() && this->StayConnected)
++    {
++      qWarning("Network is not connected! Reconnecting...");
++      this->reconnectNetwork();
++    }
++    else
++    {
++      qWarning(QString("Delaying sending of message, destination %1 is not yet available").arg(destination));
++      this->makeDestinationAvailable(destination);
++    }
+     this->MessageQueue->add(destination,d.toString());
+-    this->makeDestinationAvailable(destination);
+   }
+   else
+   {
+-    QApplication::postEvent(this,new QNetworkSendEvent(d.toString()));
++    this->send(d.toString());
++//     QApplication::postEvent(this,new QNetworkSendEvent(d.toString()));
+   }
+ 
+   return true;
+@@ -455,7 +497,7 @@
+ 
+ bool GXmppNetwork::isConnected()
+ {
+-  if (this->Active && this->Connected && Stream->isAuthenticated())
++  if (this->Active && this->Connected && Stream->isAuthenticated() && Stream->isActive())
+     return true;
+   else
+     return false;
+@@ -505,7 +547,9 @@
+ 
+ void GXmppNetwork::clientStreamConnected()
+ {
++  this->Connecting = false;
+   this->Connected = true;
++  this->StayConnected = true;
+   qDebug("XMPP Stream connected");
+ }
+ 
+@@ -553,7 +597,12 @@
+ 
+ void GXmppNetwork::clientStreamConnectionClosed()
+ {
+-  qDebug("XMPP Stream connection closed");
++  qDebug("XMPP Stream connection closed.");
++  if (this->StayConnected)
++  {
++    qDebug("Using timer for delayed recreation of the XMPP layer...");
++    this->reconnectNetwork();
++  }
+ }
+ 
+ void GXmppNetwork::clientStreamDelayedCloseFinished()
+@@ -765,7 +814,7 @@
+   }
+   else if(err == XMPP::ClientStream::ErrProtocol)
+   {
+-    s = "conntest: XMPP protocol error";
++    s = "XMPP protocol error";
+   }
+   else if(err == XMPP::ClientStream::ErrStream)
+   {
+@@ -870,6 +919,12 @@
+     s = "broken security layer (SASL)";
+ 
+   qWarning(s);
++  
++  if (!this->isConnected() && this->StayConnected)
++  {
++    qWarning("XMPP Stream got disconnected, reconnecting...");
++    QTimer::singleShot(100,this,SLOT(initNetwork()));
++  }
+ }
+ 
+ //END XMPP slots and signals for network management //
+Index: src/worldengine/GXmppNetwork.h
+===================================================================
+--- src/worldengine/GXmppNetwork.h	(revision 547)
++++ src/worldengine/GXmppNetwork.h	(working copy)
+@@ -81,6 +81,11 @@
+   bool Connected;
+   
+   /**
++   * Currently connecting?
++   */
++  bool Connecting;
++  
++  /**
+    * XMPP related objects created.
+    */
+   bool XmppLayerCreated;
+@@ -130,6 +135,14 @@
+    */
+   GXmppMessageQueue* MessageQueue;
+   
++  /**
++   * Set to true if the network should stay connected.
++   * In this case reinitializing the network will be done
++   * automatically if the network got disconnected.
++   * closeNetwork() sets this to false before shutting down.
++   */
++  bool StayConnected;
++  
+   protected slots:
+   
+   /**
+@@ -208,6 +221,13 @@
+    * Initialization.
+    */
+   virtual bool initNetwork();
++  
++  /**
++   * Issues a single shot timer to call initNetwork()
++   * Useful when wanting to reconnect but being in the middle
++   * of something (that is, in a slot)
++   */
++  virtual void reconnectNetwork();
+    
+   /**
+    * Shuts down the network.

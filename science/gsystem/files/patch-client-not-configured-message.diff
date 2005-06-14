@@ -1,0 +1,20 @@
+Index: src/guniverseclient/main.cpp
+===================================================================
+--- src/guniverseclient/main.cpp	(revision 511)
++++ src/guniverseclient/main.cpp	(working copy)
+@@ -35,6 +35,7 @@
+ #include <kmainwindow.h>
+ #include <kcmdlineargs.h>
+ #include <kaboutdata.h>
++#include <kmessagebox.h>
+ 
+ #include <qstring.h>
+ #include <qfile.h>
+@@ -133,6 +134,7 @@
+   else
+   {
+     qWarning(QString("failed to load configuration file: ") + filename);
++    KMessageBox::error(0,QString("The configuration %1 could not be loaded, please run \"god\" to create the desired configuration! Then restart the client. Details can be found in the G System README file.\n\nIf you don't know what to do, contact us at http://www.g-system.at/").arg(filename),"Client not configured!");
+     QTimer::singleShot(10,&a,SLOT(quit()));
+   }
+   
