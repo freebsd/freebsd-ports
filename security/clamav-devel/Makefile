@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20050608
+PORTVERSION=	20050614
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		http://www.galle.com.br/~renato/clamav-devel/
