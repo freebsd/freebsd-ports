@@ -238,7 +238,6 @@ USE_OPENSSL=	yes
 
 .if ${PHP_MODNAME} == "oracle"
 BUILD_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
-RUN_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
 
 CONFIGURE_ARGS+=--with-oracle=${LOCALBASE}/oracle7
 .endif
@@ -456,6 +455,15 @@ CONFIGURE_ARGS+=--disable-mbregex
 .if ${PHP_MODNAME} == "openssl"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
+.endif
+
+.if ${PHP_MODNAME} == "oracle"
+post-patch:
+	@cd ${WRKSRC}; \
+	for lib in c3v6 client common core3 epc generic ncr nlsrtl3 sqlnet wrap; do \
+		/usr/bin/ar x ${LOCALBASE}/oracle7/lib/lib$${lib}.a; \
+	done; \
+	/usr/bin/ar rcs liboracle.a *.o
 .endif
 
 .if ${PHP_MODNAME} == "snmp"
