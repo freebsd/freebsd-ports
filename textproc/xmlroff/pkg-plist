@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/xmlroff
 include/libfo-0.3/area/fo-area.h
 include/libfo-0.3/datatype/fo-datatype.h
@@ -29,7 +30,7 @@ include/libfo-0.3/property/fo-property.h
 include/libfo-0.3/util/fo-hash-table.h
 lib/libfo-0.3.a
 lib/libfo-0.3.so
-lib/libfo-0.3.so.300
+lib/libfo-0.3.so.303
 libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/FoArea.html
 %%DOCSDIR%%/FoAreaArea.html
@@ -274,7 +275,6 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-FoDocGP.html
 %%DOCSDIR%%/xmlroff-FoError.html
 %%DOCSDIR%%/xmlroff-FoFontDesc.html
-%%DOCSDIR%%/xmlroff-FoHashTable.html
 %%DOCSDIR%%/xmlroff-FoLayout.html
 %%DOCSDIR%%/xmlroff-FoLibfoContext.html
 %%DOCSDIR%%/xmlroff-FoNeutralFoIface.html
@@ -287,7 +287,6 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-block-progression-dimensionmaximum.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionminimum.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionoptimum.html
-%%DOCSDIR%%/xmlroff-border.html
 %%DOCSDIR%%/xmlroff-float.html
 %%DOCSDIR%%/xmlroff-fo-block-area.html
 %%DOCSDIR%%/xmlroff-fo-block-block-area.html
@@ -320,7 +319,6 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-keep-with-previouswithin-page.html
 %%DOCSDIR%%/xmlroff-marker.html
 %%DOCSDIR%%/xmlroff-multi-case.html
-%%DOCSDIR%%/xmlroff-multi-properties.html
 %%DOCSDIR%%/xmlroff-multi-switch.html
 %%DOCSDIR%%/xmlroff-repeatable-page-master-alternatives.html
 %%DOCSDIR%%/xmlroff-repeatable-page-master-reference.html
@@ -345,10 +343,21 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-space-startoptimum.html
 %%DOCSDIR%%/xmlroff-space-startprecedence.html
 %%DOCSDIR%%/xmlroff.devhelp
-share/xml/libfo-0.3.1/catalog.xml
-share/xml/libfo-0.3.1/libfo-compat.xsl
-share/xml/libfo-0.3.1/xmlroff.fo
-@dirrm share/xml/libfo-0.3.1
+%%DOCSDIR%%/FoHashTable.html
+%%DOCSDIR%%/border.html
+%%DOCSDIR%%/multi-properties.html
+%%DOCSDIR%%/xmlroff-FoTblr.html
+%%DOCSDIR%%/xmlroff-FoWsc.html
+%%DOCSDIR%%/xmlroff-border-bottom.html
+%%DOCSDIR%%/xmlroff-border-left.html
+%%DOCSDIR%%/xmlroff-border-right.html
+%%DOCSDIR%%/xmlroff-border-style.html
+%%DOCSDIR%%/xmlroff-border-top.html
+%%DOCSDIR%%/xmlroff-border-width.html
+share/xml/libfo-0.3.3/catalog.xml
+share/xml/libfo-0.3.3/libfo-compat.xsl
+share/xml/libfo-0.3.3/xmlroff.fo
+@dirrm share/xml/libfo-0.3.3
 @unexec rmdir %D/share/xml 2>/dev/null || true
 @dirrm %%DOCSDIR%%
 @dirrm include/libfo-0.3/util

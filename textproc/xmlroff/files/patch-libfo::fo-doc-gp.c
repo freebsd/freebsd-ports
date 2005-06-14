@@ -1,6 +1,22 @@
---- libfo/fo-doc-gp.c.orig	Mon Jan 10 13:49:31 2005
-+++ libfo/fo-doc-gp.c	Mon Jan 10 13:50:19 2005
-@@ -1065,6 +1065,9 @@
+--- libfo/fo-doc-gp.c.orig	Thu Mar 31 16:36:10 2005
++++ libfo/fo-doc-gp.c	Tue Jun 14 21:11:30 2005
+@@ -1143,6 +1143,7 @@
+ 			gint              y)
+ {
+   PangoLayoutIter *iter;
++  gint line_number = -1;
+   
+   g_return_if_fail (context != NULL);
+   g_return_if_fail (PANGO_IS_LAYOUT (layout));
+@@ -1152,7 +1153,6 @@
+ 
+   iter = pango_layout_get_iter (layout);
+ 
+-  gint line_number = -1;
+   do
+     {
+       PangoRectangle   logical_rect;
+@@ -1202,6 +1202,9 @@
  			       gfloat   x,
  			       gfloat   y)
  {
@@ -10,7 +26,7 @@
    g_return_if_fail (FO_IS_DOC_GP (fo_doc));
    g_return_if_fail (FO_DOC_GP (fo_doc)->context != NULL);
    g_return_if_fail (FO_IS_AREA_LAYOUT (area_layout));
-@@ -1076,9 +1079,9 @@
+@@ -1213,9 +1216,9 @@
     * lines that are to be rendered.
     */
  
@@ -22,7 +38,7 @@
    if (line_first > 0)
      {
        y1 =
-@@ -1086,12 +1089,12 @@
+@@ -1223,12 +1226,12 @@
  					    line_first - 1);
      }
  
