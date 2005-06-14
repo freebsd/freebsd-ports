@@ -40,6 +40,7 @@
 %%DATADIR%%/lang/hu
 %%DATADIR%%/lang/it
 %%DATADIR%%/lang/ja
+%%DATADIR%%/lang/lt
 %%DATADIR%%/lang/nl
 %%DATADIR%%/lang/no
 %%DATADIR%%/lang/pl
@@ -55,6 +56,7 @@
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/lowerleft.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/lowermiddle.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/lowerright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/main.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/main1.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/main2.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/middleleft1.png
