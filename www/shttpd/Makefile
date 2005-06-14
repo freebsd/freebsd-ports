@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	shttpd
-PORTVERSION=	1.19
+PORTVERSION=	1.24
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	shttpd
-DISTNAME=	shttpd_${PORTVERSION}.c
-EXTRACT_SUFX=
-EXTRACT_ONLY=	#none
+DISTNAME=	shttpd-${PORTVERSION}
 
 MAINTAINER=	valenok@gmail.com
-COMMENT=	Simple embeddable web server with CGI support
+COMMENT=	Small, fast, embeddable web server with CGI, SSL, Authorization
 
-NO_WRKSUBDIR=	yes
-DIST_SUBDIR=	${PORTNAME}
 MAN1=		shttpd.1
 
 .if defined(WITHOUT_SSL)
@@ -27,16 +23,15 @@ PKGNAMESUFFIX=	-nossl
 CFLAGS+=	-DWITH_SSL -lssl -lcrypto
 .endif
 
-PLIST_FILES=	bin/shttpd
-
-post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/
+PLIST_FILES=	bin/shttpd etc/shttpd.conf
 
 do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/shttpd ${WRKSRC}/${DISTNAME}
+	${CC} ${CFLAGS} -DCONFIG=\"${PREFIX}/etc/shttpd.conf\" \
+		${WRKSRC}/shttpd.c -o ${WRKSRC}/shttpd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shttpd ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/shttpd.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/shttpd.conf ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/shttpd.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
