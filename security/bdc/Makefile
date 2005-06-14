@@ -8,7 +8,7 @@
 PORTNAME=	bdc
 PORTVERSION=	7.0.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.bitdefender.com/pub/freebsd/${BDREL}/beta/
+MASTER_SITES=	http://download.bitdefender.com/freebsd/${BDREL}/beta/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd${BDREL}
 
 MAINTAINER=	apircalabu@bitdefender.com
@@ -37,10 +37,10 @@ do-fetch:
 	@${ECHO} "You have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after"
 	@${ECHO} "reading and agreeing to the license at:"
 	@${ECHO} ""
-	@${ECHO} "ftp://ftp.bitdefender.com/pub/freebsd/${BDREL}/beta/LICENSE"
+	@${ECHO} "http://download.bitdefender.com/freebsd/${BDREL}/beta/LICENSE"
 	@${ECHO} ""
 	@${ECHO} "A direct link to the distribution file:"
-	@${ECHO} "ftp://ftp.bitdefender.com/pub/freebsd/${BDREL}/beta/${DISTNAME}${EXTRACT_SUFX}"
+	@${ECHO} "http://download.bitdefender.com/freebsd/${BDREL}/beta/${DISTNAME}${EXTRACT_SUFX}"
 	@${ECHO} ""
 	@${ECHO} "Once the file has been downloaded move it to"
 	@${ECHO} "${DISTDIR} and restart the build."
