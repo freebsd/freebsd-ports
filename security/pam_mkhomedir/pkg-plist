@@ -1,0 +1,4 @@
+%%NOSTATIC%%lib/libpam_mkhomedir.a
+%%PROFILE%%lib/libpam_mkhomedir_p.a
+lib/pam_mkhomedir.so
+lib/pam_mkhomedir.so.2
