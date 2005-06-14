@@ -7,7 +7,7 @@
 
 PORTNAME=	cbview
 PORTVERSION=	0.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://elvine.org/code/cbview/
 
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	COPYING Changes INSTALL README TODO
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|perl -w|env perl -w|g' \
+	@${REINPLACE_CMD} -e 's|perl -w|env perl|g' \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
