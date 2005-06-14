@@ -74,6 +74,7 @@ include/d/%%__GCC_VER%%/std/base64.d
 include/d/%%__GCC_VER%%/std/boxer.d
 include/d/%%__GCC_VER%%/std/compiler.d
 include/d/%%__GCC_VER%%/std/conv.d
+include/d/%%__GCC_VER%%/std/cstream.d
 include/d/%%__GCC_VER%%/std/ctype.d
 include/d/%%__GCC_VER%%/std/date.d
 include/d/%%__GCC_VER%%/std/dateparse.d
