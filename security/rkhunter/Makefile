@@ -10,7 +10,7 @@ PORTVERSION=	1.2.7
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	vaidab@safe-mail.net
 COMMENT=	Rootkit detection tool
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
