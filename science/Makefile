@@ -49,6 +49,7 @@
     SUBDIR += openbabel
     SUBDIR += ovt
     SUBDIR += p5-Chemistry-Elements
+    SUBDIR += paraview
     SUBDIR += psi3
     SUBDIR += py-scipy
     SUBDIR += qcl
