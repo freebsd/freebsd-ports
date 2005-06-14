@@ -607,6 +607,7 @@
     SUBDIR += p5-WWW-SourceForge
     SUBDIR += p5-WWW-Wikipedia
     SUBDIR += p5-WebService-Bloglines
+    SUBDIR += p5-WebService-Technorati
     SUBDIR += p5-ldap-abook
     SUBDIR += p5-libapreq
     SUBDIR += p5-libapreq-static

@@ -1,0 +1,25 @@
+%%SITE_PERL%%/WebService/Technorati.pm
+%%SITE_PERL%%/WebService/Technorati/ApiQuery.pm
+%%SITE_PERL%%/WebService/Technorati/Author.pm
+%%SITE_PERL%%/WebService/Technorati/AuthorinfoApiQuery.pm
+%%SITE_PERL%%/WebService/Technorati/BaseTechnoratiObject.pm
+%%SITE_PERL%%/WebService/Technorati/Blog.pm
+%%SITE_PERL%%/WebService/Technorati/BlogLink.pm
+%%SITE_PERL%%/WebService/Technorati/BloginfoApiQuery.pm
+%%SITE_PERL%%/WebService/Technorati/CosmosApiQuery.pm
+%%SITE_PERL%%/WebService/Technorati/Exception.pm
+%%SITE_PERL%%/WebService/Technorati/LinkQuerySubject.pm
+%%SITE_PERL%%/WebService/Technorati/OutboundApiQuery.pm
+%%SITE_PERL%%/WebService/Technorati/SearchApiQuery.pm
+%%SITE_PERL%%/WebService/Technorati/SearchMatch.pm
+%%SITE_PERL%%/WebService/Technorati/SearchTerm.pm
+@dirrm %%SITE_PERL%%/WebService/Technorati
+%%SITE_PERL%%/WebService/pod2html.pl
+@unexec rmdir %D/%%SITE_PERL%%/WebService 2>/dev/null || true
+%%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject/autosplit.ix
+@dirrm %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject
+@dirrm %%SITE_PERL%%/auto/WebService/Technorati
+@unexec rmdir %D/%%SITE_PERL%%/auto/WebService 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService 2>/dev/null || true
