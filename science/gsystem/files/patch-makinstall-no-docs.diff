@@ -1,0 +1,35 @@
+Index: scripts/makeinstall
+===================================================================
+--- scripts/makeinstall	(revision 508)
++++ scripts/makeinstall	(working copy)
+@@ -93,13 +93,18 @@
+ done
+ cd $current_dir
+ 
+-echo "Installing documentation into $G_PREFIX/share/doc/gsystem"
++if [ -z $G_NO_INST_DOCS ]
++then
+ 
+-mkdir -p $G_PREFIX/share/doc/gsystem
++  echo "Installing documentation into $G_PREFIX/share/doc/gsystem"
++  mkdir -p $G_PREFIX/share/doc/gsystem
++  cp -r ./doc/gdocs/* $G_PREFIX/share/doc/gsystem
+ 
+-cp -r ./doc/gdocs/* $G_PREFIX/share/doc/gsystem
++  checkreturn $?
+ 
+-checkreturn $?
++else
++  echo "Not installing documentation."
++fi
+ 
+ username=`whoami`
+ 
+@@ -129,4 +134,5 @@
+ echo "ENJOY!!"
+ echo ""
+ 
+-exit 0
+\ No newline at end of file
++exit 0
++

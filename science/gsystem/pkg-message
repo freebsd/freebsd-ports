@@ -1,0 +1,8 @@
+To use the G Universe server (guniverse) please create a configuration
+with the god binary in /usr/local/etc/gweconfig.xml.
+
+To use the G Universe client (gunverseclient) please run god
+for every user that wants to connect to the G Universe. The
+configuration should be stored in $HOME/.guniverseclient.xml
+
+The gdemo does not need any configuration.
