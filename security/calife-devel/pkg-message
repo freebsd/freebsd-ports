@@ -1,0 +1,5 @@
+
+This version supports (and encourages you to use) PAM.  A sample 
+configuration file is in ${PREFIX}/etc/pam.d/calife.sample.
+Rename it to "calife" to enable PAM authentication.  It will fall
+back to the previous methods if PAM is not available.
