@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnstop
-PORTVERSION=	20050203
+PORTVERSION=	20050405
 CATEGORIES=	dns
 MASTER_SITES=	http://dns.measurement-factory.com/tools/dnstop/src/
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	Captures and analyzes DNS traffic (or analyzes libpcap dump)
 
 MAN8=		dnstop.8
