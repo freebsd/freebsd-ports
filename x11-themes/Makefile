@@ -144,5 +144,6 @@
     SUBDIR += xenophilia
     SUBDIR += xenostep
     SUBDIR += xmms-bluecurve-theme
+    SUBDIR += xmms-vumeter-skins
 
 .include <bsd.port.subdir.mk>
