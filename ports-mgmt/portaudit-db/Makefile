@@ -10,7 +10,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	security
 DISTFILES=
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	simon@FreeBSD.org
 COMMENT=	Creates a portaudit database from a current ports tree
 
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
