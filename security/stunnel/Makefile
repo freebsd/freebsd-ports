@@ -7,7 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
@@ -35,6 +35,27 @@ PEM_DIR?=	${PREFIX}/etc
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
+
+.if defined(WITH_UCONTEXT) && defined(WITH_FORK) || defined(WITH_UCONTEXT) && defined(WITH_PTHREAD) || defined(WITH_FORK) && defined(WITH_PTHREAD)
+BROKEN=	'The WITH_UCONTEXT, WITH_FORK and WITH_PTHREAD options are mutually exclusive - please specify at most one of them, the default is WITH_PTHREAD'
+.endif
+
+CFLAGS+=-DFORCE_THREADING_MODEL
+.if defined(WITH_UCONTEXT)
+CFLAGS+=-DFORCE_UCONTEXT
+.elif defined(WITH_FORK)
+CFLAGS+=-DFORCE_FORK
+.else
+CFLAGS+=-DFORCE_PTHREAD
+.endif
+
+pre-everything::
+	@${ECHO}
+	@${ECHO} 'You can build ${PORTNAME} with the following options:'
+	@${ECHO} 'WITH_FORK       use the fork(2) model'
+	@${ECHO} 'WITH_PTHREAD    use the pthread(3) model (default)'
+	@${ECHO} 'WITH_UCONTEXT   use the ucontext(3) model'
+	@${ECHO}
 
 post-patch:
 # place files under /var/tmp so that this can be run by an unprivileged user
