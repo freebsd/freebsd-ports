@@ -76,6 +76,7 @@ OPTIONS=	REDIRECT "Enable force-cgi-redirect support" off \
 OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" off
 .endif
 OPTIONS+=	DEBUG "Enable debug" off \
+		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on
 
 EXT_DIR=	20041030
@@ -139,6 +140,10 @@ RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 EXT_DIR:=	${EXT_DIR}-debug
+.endif
+
+.if defined(WITH_MULTIBYTE)
+CONFIGURE_ARGS+=--enable-zend-multibyte
 .endif
 
 PLIST_SUB+=	SAPI_FILE=${SAPI_FILE}
