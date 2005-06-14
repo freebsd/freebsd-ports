@@ -6,24 +6,32 @@
 #
 
 PORTNAME=	yorick-doc
-PORTVERSION=	1.5.07
-PORTREVISION=	1
+PORTVERSION=	1.6.02
 CATEGORIES=	lang math
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/ \
 		ftp://wuarchive.wustl.edu/languages/yorick/
-DISTNAME=	yorick-doc
+DISTNAME=	yorick-${PORTVERSION:R}-${PORTVERSION:E}-doc
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	munro1@llnl.gov
+MAINTAINER=	johans@stack.nl
 COMMENT=	Yorick interpreted language full documentation
 
-WRKSRC=		${WRKDIR}/doc
+WRKSRC=		${WRKDIR}/yorick-${PORTVERSION:R}-${PORTVERSION:E}/doc
+DOCSDIR=	${PREFIX}/share/doc/yorick
 
 NO_BUILD=	true
+PLIST=		${WRKDIR}/pkg-plist
+
+pre-install:
+	@cd ${WRKSRC} && \
+	${FIND} * ! -type d | ${SORT} | ${SED} -e 's|^|%%DOCSDIR%%/|' >> ${PLIST} && \
+	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DOCSDIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm %%DOCSDIR%%' >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC}; ${RM} -f yorick.pdf yorick-info.tgz download.html
-	@if test ! -d ${DATADIR}; then ${MKDIR} ${DATADIR}; fi
-	cd ${WRKSRC}; ${CP} -r * ${DATADIR}
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && \
+	${FIND} * -type d ! -empty -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
+	${FIND} * ! -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 
 .include <bsd.port.mk>
