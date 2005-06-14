@@ -14,6 +14,7 @@ include/libgtop-2.0/glibtop/mountlist.h
 include/libgtop-2.0/glibtop/msg_limits.h
 include/libgtop-2.0/glibtop/netlist.h
 include/libgtop-2.0/glibtop/netload.h
+include/libgtop-2.0/glibtop/open.h
 include/libgtop-2.0/glibtop/parameter.h
 include/libgtop-2.0/glibtop/ppp.h
 include/libgtop-2.0/glibtop/procargs.h
@@ -109,11 +110,11 @@ share/locale/vi/LC_MESSAGES/libgtop-2.0.mo
 share/locale/xh/LC_MESSAGES/libgtop-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgtop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
-@dirrm include/libgtop-2.0/glibtop
-@dirrm include/libgtop-2.0
 @unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/xh 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/mi/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/mi 2> /dev/null || true
+@dirrm include/libgtop-2.0/glibtop
+@dirrm include/libgtop-2.0
