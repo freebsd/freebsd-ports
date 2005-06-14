@@ -22,8 +22,8 @@ USE_REINPLACE=	yes
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
-		MMAP  "Disable mmap(2) support." Off \
-		LAYER2 "Disable Layer-2 support: MAC Adresses and VLANs" Off
+		MMAP  "Enable mmap(2) support." On \
+		LAYER2 "Enable Layer-2 support: MAC Adresses and VLANs" On
 
 .include <bsd.port.pre.mk>
 
@@ -46,15 +46,15 @@ PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
 .if defined(WITHOUT_MMAP)
-CONFIGURE_ARGS+=--enable-mmap
-.else
 CONFIGURE_ARGS+=--disable-mmap
+.else
+CONFIGURE_ARGS+=--enable-mmap
 .endif
 
 .if defined(WITHOUT_LAYER2)
-CONFIGURE_ARGS+=--enable-l2
-.else
 CONFIGURE_ARGS+=--disable-l2
+.else
+CONFIGURE_ARGS+=--enable-l2
 .endif
 
 post-patch:
