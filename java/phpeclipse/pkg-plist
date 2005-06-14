@@ -1,341 +1,503 @@
+eclipse/features/%%QVER%%/feature.xml
+eclipse/features/%%QVER%%/quantum.gif
+eclipse/features/net.sf.eclipsetidy.feature_%%TIDYVER%%/feature.xml
 eclipse/features/%%NSP%%_%%VER%%/cpl-v10.html
 eclipse/features/%%NSP%%_%%VER%%/feature.xml
 eclipse/features/%%NSP%%_%%VER%%/license.html
 eclipse/features/%%NSP%%_%%VER%%/phpeclipse.jpeg
-eclipse/plugins/%%NSEVER%%/cpl-v10.html
-eclipse/plugins/%%NSEVER%%/eclipsetidy.jar
-eclipse/plugins/%%NSEVER%%/help/automatic_checking.gif
-eclipse/plugins/%%NSEVER%%/help/index.html
-eclipse/plugins/%%NSEVER%%/help/introduction.html
-eclipse/plugins/%%NSEVER%%/help/preferences.html
-eclipse/plugins/%%NSEVER%%/help/tasks.html
-eclipse/plugins/%%NSEVER%%/help/tidy.css
-eclipse/plugins/%%NSEVER%%/help/tidy.gif
-eclipse/plugins/%%NSEVER%%/help/toc.xml
-eclipse/plugins/%%NSEVER%%/icons/ctool16/check_misc.gif
-eclipse/plugins/%%NSEVER%%/icons/ctool16/format_misc.gif
-eclipse/plugins/%%NSEVER%%/lib/LICENSE
-eclipse/plugins/%%NSEVER%%/lib/Tidy.jar
-eclipse/plugins/%%NSEVER%%/lib/copyright-software-20021231.html
-eclipse/plugins/%%NSEVER%%/plugin.properties
-eclipse/plugins/%%NSEVER%%/plugin.xml
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/cpl-v10.html
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons/full/obj16/html.png
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/plugin.xml
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/smartyui.jar
-eclipse/plugins/%%NSP%%.core_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.core_%%VER%%/webcore.jar
-eclipse/plugins/%%NSP%%.css.core_%%VER%%/csscore.jar
-eclipse/plugins/%%NSP%%.css.core_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.css.core_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/cssui.jar
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/at_rule_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/class_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/full/ovr16/error_co.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/full/ovr16/warning_co.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/important_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/int_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/property_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/pseudo_class_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/shorthand_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/style_rule_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/style_sheet_obj.gif
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.css.ui_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.debug.core_%%VER%%/.classpath
-eclipse/plugins/%%NSP%%.debug.core_%%VER%%/.project
-eclipse/plugins/%%NSP%%.debug.core_%%VER%%/.template
-eclipse/plugins/%%NSP%%.debug.core_%%VER%%/core.jar
-eclipse/plugins/%%NSP%%.debug.core_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.debug.core_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/.template
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/debug.jar
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/ctool16/run_php.gif
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/dtool16/run_php.gif
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/eview16/arguments_tab.gif
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/obj16/brkp_obj.gif
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.html.ui_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.html.ui_%%VER%%/htmlui.jar
-eclipse/plugins/%%NSP%%.html.ui_%%VER%%/icons/full/obj16/html.png
-eclipse/plugins/%%NSP%%.html.ui_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.js.core_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.js.core_%%VER%%/jscore.jar
-eclipse/plugins/%%NSP%%.js.core_%%VER%%/jscoresrc.zip
-eclipse/plugins/%%NSP%%.js.core_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.js.core_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/class_method.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/class_obj.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/class_variable.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/dyn_class_obj.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/func.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/global_variable.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/instance_method.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/instance_variable.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/js.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons/sample.gif
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/jsui.jar
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.js.ui_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.launching_%%VER%%/.classpath
-eclipse/plugins/%%NSP%%.launching_%%VER%%/.project
-eclipse/plugins/%%NSP%%.launching_%%VER%%/.template
-eclipse/plugins/%%NSP%%.launching_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.launching_%%VER%%/launch.jar
-eclipse/plugins/%%NSP%%.launching_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.launching_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.monitor.core_%%VER%%/monitorcore.jar
-eclipse/plugins/%%NSP%%.monitor.core_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.monitor.core_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/clcl16/clear.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/clcl16/httpHeader.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/clcl16/sortResponseTime.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/cview16/monitorView.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/dlcl16/clear.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/dlcl16/httpHeader.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/dlcl16/sortResponseTime.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/elcl16/clear.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/elcl16/httpHeader.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/elcl16/sortResponseTime.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/eview16/monitorView.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/obj16/host.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/obj16/monitorOff.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/obj16/monitorOn.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/obj16/tcp.gif
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/monitorui.jar
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.news_%%VER%%/about.html
-eclipse/plugins/%%NSP%%.news_%%VER%%/default_feeds.properties
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/clear.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/external_browser.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/headlines.png
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/led_dark_green.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/led_light_green.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/led_red.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/led_yellow.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/link.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/news.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/icons/refresh.gif
-eclipse/plugins/%%NSP%%.news_%%VER%%/lib/xmlrpc-1.2-b1.jar
-eclipse/plugins/%%NSP%%.news_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.news_%%VER%%/rssnews.jar
-eclipse/plugins/%%NSP%%.news_%%VER%%/rssnewssrc.zip
-eclipse/plugins/%%NSP%%.phphelp_%%VER%%/.classpath
-eclipse/plugins/%%NSP%%.phphelp_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.phphelp_%%VER%%/doc.zip
-eclipse/plugins/%%NSP%%.phphelp_%%VER%%/phphelp.jar
-eclipse/plugins/%%NSP%%.phphelp_%%VER%%/phphelp.xml
-eclipse/plugins/%%NSP%%.phphelp_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.phphelp_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/error.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/failure.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/sample.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/start.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/test.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/testerr.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/testfail.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/testok.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/tsuite.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/tsuiteerror.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/tsuitefail.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons/tsuiteok.gif
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/phpunit.jar
-eclipse/plugins/%%NSP%%.phpunit_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/README
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/Custom Copy.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/Structure.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/book.css
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/bookmark_name.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/connect.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/developers.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/getting_started_connections.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/getting_started_perspective.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/logo.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark/add_driver.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark/page1.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark/page2.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark/page2_informix.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark/page2_postgresql.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark/page3.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark/page4.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/newbookmark_menu.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/newbookmark_wizard.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/open_perspective.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/quantum_perspective.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/select_perspective_dialog.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/index.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/jdbc_connection_details.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/jdbc_driver.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/schema_rules.html
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/structure.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/toc.xml
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/.xvpics/fulldata-disabled.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/add.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/add_schema.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/append.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/autocommit.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/big_syn_table.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/bigtable.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/bookmarkfile.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/bookmarks.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/checked.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/class.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/clear.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/close.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/close_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/close_all.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/close_all_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/close_all_disabled.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/close_disabled.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/column.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/commit.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/connect.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/connected.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/copy.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/copy_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/cut.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/delete.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/delete_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/disconnect.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/driver.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/edit.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/entitygroup.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/export.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/export_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/external_jar.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/external_jar_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/filter.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/foreignkey.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/fulldata.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/greentable.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/grid.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/group.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/import.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/import_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/key.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/keycolumn.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/log.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/missingschema.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/missingtable.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/new_bookmark.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/new_bookmark_wizard.jpg
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/next.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/paste.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/paste_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/play.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/previous.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/qmodel.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/quantum-ng.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/quantum.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/quantum32.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/refresh.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/refresh_2x.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/rollback.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/sample.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/schema.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/script.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/sequence.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/statement.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/stop.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/subset.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/success.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/table.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/table_details.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/template.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/torque.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/trigger.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unchecked.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/Thumbs.db
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/bluegroup.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/green_group.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/green_schema.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/green_view_group.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/key.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/key2.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/margarita.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/quantum.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/sequence_group.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/subset.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/table_group.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/view.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused/view_group.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/user.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/view.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/warning.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/xml.gif
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/install.txt
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/plugin.properties
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/plugin.xml
-eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/quantum.jar
-eclipse/plugins/%%NSP%%.ui_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full/cview16/preview.gif
-eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full/obj16/php.gif
-eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full/ovr16/error_co.gif
-eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full/ovr16/warning_co.gif
-eclipse/plugins/%%NSP%%.ui_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.ui_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.ui_%%VER%%/templates/default-templates.properties
-eclipse/plugins/%%NSP%%.ui_%%VER%%/templates/default-templates.xml
-eclipse/plugins/%%NSP%%.ui_%%VER%%/ui.jar
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/defaultBrowsers.xml
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/home/home.html
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/add_favorite.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/nav_backward.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/nav_forward.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/nav_go.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/nav_home.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/nav_print.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/nav_refresh.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16/nav_stop.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/add_favorite.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/nav_backward.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/nav_forward.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/nav_go.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/nav_home.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/nav_print.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/nav_refresh.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16/nav_stop.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/add_favorite.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/nav_backward.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/nav_forward.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/nav_go.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/nav_home.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/nav_print.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/nav_refresh.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16/nav_stop.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/external_browser.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/favorite.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame1.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame10.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame11.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame12.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame13.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame2.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame3.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame4.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame5.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame6.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame7.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame8.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames/frame9.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/internal_browser.gif
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/webbrowser.jar
-eclipse/plugins/%%NSP%%.xml.core_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.xml.core_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.xml.core_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.xml.core_%%VER%%/xmlcore.jar
-eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/cpl-v10.html
-eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/icons/basic/obj16/htmledit.gif
-eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/icons/basic/obj16/xml.png
-eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/icons/element_obj.gif
-eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/plugin.properties
-eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/plugin.xml
-eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/xmlui.jar
+eclipse/features/org.eclipse.team.extras_%%TEAMVER%%/cpl-v10.html
+eclipse/features/org.eclipse.team.extras_%%TEAMVER%%/eclipse_update_120.jpg
+eclipse/features/org.eclipse.team.extras_%%TEAMVER%%/feature.properties
+eclipse/features/org.eclipse.team.extras_%%TEAMVER%%/feature.xml
+eclipse/features/org.eclipse.team.extras_%%TEAMVER%%/license.html
+eclipse/features/org.klomp.eclipse.feature.team.sftp_%%TEAMVER%%/cpl-v10.html
+eclipse/features/org.klomp.eclipse.feature.team.sftp_%%TEAMVER%%/feature.properties
+eclipse/features/org.klomp.eclipse.feature.team.sftp_%%TEAMVER%%/feature.xml
+eclipse/features/org.klomp.eclipse.feature.team.sftp_%%TEAMVER%%/license.html
+eclipse/features/%%OTS%%.subclipse_%%OTSVER%%/feature.properties
+eclipse/features/%%OTS%%.subclipse_%%OTSVER%%/feature.xml
+eclipse/features/%%OTS%%.subclipse_%%OTSVER%%/license.html
+eclipse/plugins/%%QVER%%/.classpath
+eclipse/plugins/%%QVER%%/.project
+eclipse/plugins/%%QVER%%/CPLv1.0.htm
+eclipse/plugins/%%QVER%%/LICENSE.txt
+eclipse/plugins/%%QVER%%/doc/UMLDoc/QuantumUML.mdl
+eclipse/plugins/%%QVER%%/doc/book.css
+eclipse/plugins/%%QVER%%/doc/bookmark_name.html
+eclipse/plugins/%%QVER%%/doc/changelog/changelog_2_4_3.txt
+eclipse/plugins/%%QVER%%/doc/changelog/changelog_2_4_4.txt
+eclipse/plugins/%%QVER%%/doc/changelog/changelog_2_4_5.html
+eclipse/plugins/%%QVER%%/doc/changelog/images/add_driver.jpg
+eclipse/plugins/%%QVER%%/doc/changelog/images/collapse_all.gif
+eclipse/plugins/%%QVER%%/doc/changelog/images/quantum_bookmark_properties_options.jpg
+eclipse/plugins/%%QVER%%/doc/changelog/images/quantum_insert_dialog_default.jpg
+eclipse/plugins/%%QVER%%/doc/changelog/images/quantum_properties_sql.jpg
+eclipse/plugins/%%QVER%%/doc/developers.html
+eclipse/plugins/%%QVER%%/doc/developing_quantum_cvs.html
+eclipse/plugins/%%QVER%%/doc/export_import.html
+eclipse/plugins/%%QVER%%/doc/extension_points.html
+eclipse/plugins/%%QVER%%/doc/getting_started_connections.html
+eclipse/plugins/%%QVER%%/doc/getting_started_perspective.html
+eclipse/plugins/%%QVER%%/doc/images/quantum_bookmark_properties_options.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_bookmark_toolbar_menu.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_bookmark_toolbar_menu_arrow.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_boomark_properties.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_closed_bookmark.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_collapse_all_button.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_custom_copy_example1_menu.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_custom_copy_example1_select.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_delete_wizard.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_expanded_bookmark.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_export.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_export_csv.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_export_dbunit.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/context_menu_expanded.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/context_menu_metadata_after.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/context_menu_metadata_before.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/new_class_generate.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/new_plugin_wizard_page1.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/new_plugin_wizard_page2.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/new_plugin_wizard_page3.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_dependencies.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_dependencies_selection.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_extensions.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_extensions_filled.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_extensions_new_actor.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_extensions_new_actor_filled.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_extensions_selection.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/plugin_xml_overview.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/quantum_plugin_schema_editor.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/quantum_plugin_schema_editor_extension.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/quantum_plugin_schema_editor_extension_label.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/quantum_plugin_workspace.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/quantum_plugin_xml_extension_points.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin/quantum_table_view_context_menu_extended.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_insert_wizard.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_jdbc_driver_view.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_key_column_icon.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_logo.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark/add_driver.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark/page1.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark/page2.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark/page2_informix.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark/page2_postgresql.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark/page3.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark/page4.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark_button.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_newbookmark_menu.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_newbookmark_wizard.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_open_bookmark.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_open_perspective.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_opened_bookmark.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_perspective.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_preferences_custom_copy.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_preferences_databases.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_preferences_root.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_preferences_sql_editor.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_preferences_tree.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_properties_sql.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_select_perspective_dialog.gif
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_log_view.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_log_view_eraser.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_query_empty.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_query_erase_button.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_query_execute_button.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_query_execute_button_open.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_query_full.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_query_status_bar.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_sql_toolbar_menu.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_context_menu.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_properties_columns.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view_close.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view_close_all.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view_context_menu.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view_down_arrow.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view_filter.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view_filter_dialog.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_table_view_reload.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_update_wizard.jpg
+eclipse/plugins/%%QVER%%/doc/images/quantum_view_table_details.jpg
+eclipse/plugins/%%QVER%%/doc/index.html
+eclipse/plugins/%%QVER%%/doc/jdbc_connection_details.html
+eclipse/plugins/%%QVER%%/doc/jdbc_driver.html
+eclipse/plugins/%%QVER%%/doc/jdbc_drivers_view.html
+eclipse/plugins/%%QVER%%/doc/preferences_properties.html
+eclipse/plugins/%%QVER%%/doc/quantum_custom_copy.html
+eclipse/plugins/%%QVER%%/doc/query_editor_view.html
+eclipse/plugins/%%QVER%%/doc/schema_rules.html
+eclipse/plugins/%%QVER%%/doc/sql_log_view.html
+eclipse/plugins/%%QVER%%/doc/table_view.html
+eclipse/plugins/%%QVER%%/doc/toc.xml
+eclipse/plugins/%%QVER%%/doc/working_bookmarks.html
+eclipse/plugins/%%QVER%%/icons/.xvpics/fulldata-disabled.gif
+eclipse/plugins/%%QVER%%/icons/add.gif
+eclipse/plugins/%%QVER%%/icons/add_schema.gif
+eclipse/plugins/%%QVER%%/icons/append.gif
+eclipse/plugins/%%QVER%%/icons/autocommit.gif
+eclipse/plugins/%%QVER%%/icons/big_syn_table.gif
+eclipse/plugins/%%QVER%%/icons/bigtable.gif
+eclipse/plugins/%%QVER%%/icons/bookmarkfile.gif
+eclipse/plugins/%%QVER%%/icons/bookmarks.gif
+eclipse/plugins/%%QVER%%/icons/checked.gif
+eclipse/plugins/%%QVER%%/icons/class.gif
+eclipse/plugins/%%QVER%%/icons/clear.gif
+eclipse/plugins/%%QVER%%/icons/close.gif
+eclipse/plugins/%%QVER%%/icons/close_2x.gif
+eclipse/plugins/%%QVER%%/icons/close_all.gif
+eclipse/plugins/%%QVER%%/icons/close_all_2x.gif
+eclipse/plugins/%%QVER%%/icons/close_all_disabled.gif
+eclipse/plugins/%%QVER%%/icons/close_disabled.gif
+eclipse/plugins/%%QVER%%/icons/collapse_all.gif
+eclipse/plugins/%%QVER%%/icons/collapse_all_2x.gif
+eclipse/plugins/%%QVER%%/icons/column.gif
+eclipse/plugins/%%QVER%%/icons/commit.gif
+eclipse/plugins/%%QVER%%/icons/connect.gif
+eclipse/plugins/%%QVER%%/icons/connected.gif
+eclipse/plugins/%%QVER%%/icons/copy.gif
+eclipse/plugins/%%QVER%%/icons/copy_2x.gif
+eclipse/plugins/%%QVER%%/icons/cut.gif
+eclipse/plugins/%%QVER%%/icons/delete.gif
+eclipse/plugins/%%QVER%%/icons/delete_2x.gif
+eclipse/plugins/%%QVER%%/icons/disconnect.gif
+eclipse/plugins/%%QVER%%/icons/driver.gif
+eclipse/plugins/%%QVER%%/icons/edit.gif
+eclipse/plugins/%%QVER%%/icons/entitygroup.gif
+eclipse/plugins/%%QVER%%/icons/export.gif
+eclipse/plugins/%%QVER%%/icons/export_2x.gif
+eclipse/plugins/%%QVER%%/icons/external_jar.gif
+eclipse/plugins/%%QVER%%/icons/external_jar_2x.gif
+eclipse/plugins/%%QVER%%/icons/filter.gif
+eclipse/plugins/%%QVER%%/icons/foreignkey.gif
+eclipse/plugins/%%QVER%%/icons/fulldata.gif
+eclipse/plugins/%%QVER%%/icons/greentable.gif
+eclipse/plugins/%%QVER%%/icons/grid.gif
+eclipse/plugins/%%QVER%%/icons/group.gif
+eclipse/plugins/%%QVER%%/icons/import.gif
+eclipse/plugins/%%QVER%%/icons/import_2x.gif
+eclipse/plugins/%%QVER%%/icons/key.gif
+eclipse/plugins/%%QVER%%/icons/keycolumn.gif
+eclipse/plugins/%%QVER%%/icons/log.gif
+eclipse/plugins/%%QVER%%/icons/missingschema.gif
+eclipse/plugins/%%QVER%%/icons/missingtable.gif
+eclipse/plugins/%%QVER%%/icons/new_bookmark.gif
+eclipse/plugins/%%QVER%%/icons/new_bookmark_wizard.jpg
+eclipse/plugins/%%QVER%%/icons/next.gif
+eclipse/plugins/%%QVER%%/icons/paste.gif
+eclipse/plugins/%%QVER%%/icons/paste_2x.gif
+eclipse/plugins/%%QVER%%/icons/play.gif
+eclipse/plugins/%%QVER%%/icons/previous.gif
+eclipse/plugins/%%QVER%%/icons/qmodel.gif
+eclipse/plugins/%%QVER%%/icons/quantum-ng.gif
+eclipse/plugins/%%QVER%%/icons/quantum.gif
+eclipse/plugins/%%QVER%%/icons/quantum32.gif
+eclipse/plugins/%%QVER%%/icons/refresh.gif
+eclipse/plugins/%%QVER%%/icons/refresh_2x.gif
+eclipse/plugins/%%QVER%%/icons/rollback.gif
+eclipse/plugins/%%QVER%%/icons/sample.gif
+eclipse/plugins/%%QVER%%/icons/schema.gif
+eclipse/plugins/%%QVER%%/icons/script.gif
+eclipse/plugins/%%QVER%%/icons/sequence.gif
+eclipse/plugins/%%QVER%%/icons/statement.gif
+eclipse/plugins/%%QVER%%/icons/stop.gif
+eclipse/plugins/%%QVER%%/icons/subset.gif
+eclipse/plugins/%%QVER%%/icons/success.gif
+eclipse/plugins/%%QVER%%/icons/table.gif
+eclipse/plugins/%%QVER%%/icons/table_details.gif
+eclipse/plugins/%%QVER%%/icons/template.gif
+eclipse/plugins/%%QVER%%/icons/trigger.gif
+eclipse/plugins/%%QVER%%/icons/unchecked.gif
+eclipse/plugins/%%QVER%%/icons/unused/Thumbs.db
+eclipse/plugins/%%QVER%%/icons/unused/bluegroup.gif
+eclipse/plugins/%%QVER%%/icons/unused/green_group.gif
+eclipse/plugins/%%QVER%%/icons/unused/green_schema.gif
+eclipse/plugins/%%QVER%%/icons/unused/green_view_group.gif
+eclipse/plugins/%%QVER%%/icons/unused/key.gif
+eclipse/plugins/%%QVER%%/icons/unused/key2.gif
+eclipse/plugins/%%QVER%%/icons/unused/margarita.gif
+eclipse/plugins/%%QVER%%/icons/unused/quantum.gif
+eclipse/plugins/%%QVER%%/icons/unused/sequence_group.gif
+eclipse/plugins/%%QVER%%/icons/unused/subset.gif
+eclipse/plugins/%%QVER%%/icons/unused/table_group.gif
+eclipse/plugins/%%QVER%%/icons/unused/view.gif
+eclipse/plugins/%%QVER%%/icons/unused/view_group.gif
+eclipse/plugins/%%QVER%%/icons/user.gif
+eclipse/plugins/%%QVER%%/icons/view.gif
+eclipse/plugins/%%QVER%%/icons/warning.gif
+eclipse/plugins/%%QVER%%/icons/xml.gif
+eclipse/plugins/%%QVER%%/install.txt
+eclipse/plugins/%%QVER%%/plugin.properties
+eclipse/plugins/%%QVER%%/plugin.xml
+eclipse/plugins/%%QVER%%/quantum.jar
+eclipse/plugins/%%QVER%%/schema/data.exsd
+eclipse/plugins/%%QVER%%/schema/metadata.exsd
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/cpl-v10.html
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/eclipsetidy.jar
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/automatic_checking.gif
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/index.html
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/introduction.html
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/preferences.html
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/tasks.html
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/tidy.css
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/tidy.gif
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help/toc.xml
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/icons/ctool16/check_misc.gif
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/icons/ctool16/format_misc.gif
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/lib/LICENSE
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/lib/Tidy.jar
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/lib/copyright-software-20021231.html
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/plugin.properties
+eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%/cpl-v10.html
+eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%/icons/full/obj16/html.png
+eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%/smartyui.jar
+eclipse/plugins/%%NSP%%.core_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.core_%%UIVER%%/webcore.jar
+eclipse/plugins/%%NSP%%.css.core_%%UIVER%%/csscore.jar
+eclipse/plugins/%%NSP%%.css.core_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.css.core_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/cssui.jar
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/at_rule_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/class_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/full/ovr16/error_co.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/full/ovr16/warning_co.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/important_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/int_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/property_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/pseudo_class_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/shorthand_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/style_rule_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/style_sheet_obj.gif
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.debug.core_%%HTMLVER%%/.classpath
+eclipse/plugins/%%NSP%%.debug.core_%%HTMLVER%%/.project
+eclipse/plugins/%%NSP%%.debug.core_%%HTMLVER%%/.template
+eclipse/plugins/%%NSP%%.debug.core_%%HTMLVER%%/core.jar
+eclipse/plugins/%%NSP%%.debug.core_%%HTMLVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.debug.core_%%HTMLVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/.template
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/debug.jar
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/ctool16/run_php.gif
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/dtool16/run_php.gif
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/eview16/arguments_tab.gif
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/obj16/brkp_obj.gif
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%/htmlui.jar
+eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%/icons/full/obj16/html.png
+eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.js.core_%%UIVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.js.core_%%UIVER%%/jscore.jar
+eclipse/plugins/%%NSP%%.js.core_%%UIVER%%/jscoresrc.zip
+eclipse/plugins/%%NSP%%.js.core_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.js.core_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/class_method.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/class_obj.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/class_variable.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/dyn_class_obj.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/func.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/global_variable.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/instance_method.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/instance_variable.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/js.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons/sample.gif
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/jsui.jar
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%/.classpath
+eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%/.project
+eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%/.template
+eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%/launch.jar
+eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.monitor.core_%%UIVER%%/monitorcore.jar
+eclipse/plugins/%%NSP%%.monitor.core_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.monitor.core_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/clcl16/clear.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/clcl16/httpHeader.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/clcl16/sortResponseTime.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/cview16/monitorView.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/dlcl16/clear.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/dlcl16/httpHeader.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/dlcl16/sortResponseTime.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/elcl16/clear.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/elcl16/httpHeader.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/elcl16/sortResponseTime.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/eview16/monitorView.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/obj16/host.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/obj16/monitorOff.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/obj16/monitorOn.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/obj16/tcp.gif
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/monitorui.jar
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/about.html
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/default_feeds.properties
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/clear.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/external_browser.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/headlines.png
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/led_dark_green.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/led_light_green.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/led_red.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/led_yellow.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/link.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/news.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons/refresh.gif
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/lib/xmlrpc-1.2-b1.jar
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/rssnews.jar
+eclipse/plugins/%%NSP%%.news_%%UIVER%%/rssnewssrc.zip
+eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%/.classpath
+eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%/doc.zip
+eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%/phphelp.jar
+eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%/phphelp.xml
+eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/error.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/failure.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/sample.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/start.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/test.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/testerr.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/testfail.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/testok.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/tsuite.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/tsuiteerror.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/tsuitefail.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/icons/tsuiteok.gif
+eclipse/plugins/%%NSP%%.%%UNITVER%%/phpunit.jar
+eclipse/plugins/%%NSP%%.%%UNITVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full/cview16/preview.gif
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full/obj16/php.gif
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full/ovr16/error_co.gif
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full/ovr16/warning_co.gif
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/templates/default-templates.properties
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/templates/default-templates.xml
+eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/ui.jar
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/defaultBrowsers.xml
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/home/home.html
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/add_favorite.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/nav_backward.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/nav_forward.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/nav_go.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/nav_home.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/nav_print.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/nav_refresh.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16/nav_stop.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/add_favorite.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/nav_backward.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/nav_forward.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/nav_go.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/nav_home.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/nav_print.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/nav_refresh.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16/nav_stop.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/add_favorite.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/nav_backward.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/nav_forward.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/nav_go.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/nav_home.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/nav_print.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/nav_refresh.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16/nav_stop.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/external_browser.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/favorite.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame1.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame10.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame11.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame12.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame13.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame2.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame3.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame4.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame5.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame6.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame7.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame8.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames/frame9.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/internal_browser.gif
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/webbrowser.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/about.html
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph1.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph2.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph3.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph4.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph5.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph6.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph7.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs/glyph8.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/wizban/keylock.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/monitorOff.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/monitorOn.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/occurrence.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/preparation.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/step.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/template.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/text.gif
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/commons-httpclient-2.0.2.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/commons-logging.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/itext.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/mysql-connector.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/plog4u.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/radeox.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/velocity-dep-1.4.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/xmlrpc-1.1.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib/xstream-1.1.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/templates/templates.xml
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wiki.jar
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/Plog4UDE.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/Plog4UORG.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikibooksDE.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikibooksEN.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikinewsDE.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikinewsEN.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaAR.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaCA.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaDA.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaDE.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaEN.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaEO.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaES.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaET.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaFI.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaFR.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaHE.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaIA.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaIT.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaJA.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaNL.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaPL.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaPT.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaRO.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaSL.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaSV.properties
+eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis/WikipediaZH.properties
+eclipse/plugins/%%NSP%%.xml.core_%%UIVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.xml.core_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.xml.core_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.xml.core_%%UIVER%%/xmlcore.jar
+eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/cpl-v10.html
+eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/icons/basic/obj16/htmledit.gif
+eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/icons/basic/obj16/xml.png
+eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/icons/element_obj.gif
+eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/plugin.properties
+eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/plugin.xml
+eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/xmlui.jar
 eclipse/plugins/%%NSP%%_%%VER%%/cpl-v10.html
 eclipse/plugins/%%NSP%%_%%VER%%/icons/clcl16/add_exc.gif
 eclipse/plugins/%%NSP%%_%%VER%%/icons/clcl16/alphab_sort_co.gif
@@ -717,6 +879,8 @@ eclipse/plugins/%%NSP%%_%%VER%%/icons/obj16/text_edit.gif
 eclipse/plugins/%%NSP%%_%%VER%%/icons/obj16/translate.gif
 eclipse/plugins/%%NSP%%_%%VER%%/icons/obj16/unknown_obj.gif
 eclipse/plugins/%%NSP%%_%%VER%%/icons/obj16/var_obj.gif
+eclipse/plugins/%%NSP%%_%%VER%%/icons/obj16/xampp_start.gif
+eclipse/plugins/%%NSP%%_%%VER%%/icons/obj16/xampp_stop.gif
 eclipse/plugins/%%NSP%%_%%VER%%/icons/obj16/xmledit.gif
 eclipse/plugins/%%NSP%%_%%VER%%/icons/ovr16/abstract_co.gif
 eclipse/plugins/%%NSP%%_%%VER%%/icons/ovr16/constr_ovr.gif
@@ -763,6 +927,345 @@ eclipse/plugins/%%NSP%%_%%VER%%/plugin.xml
 eclipse/plugins/%%NSP%%_%%VER%%/templates/default-codetemplates.xml
 eclipse/plugins/%%NSP%%_%%VER%%/templates/default-templates.properties
 eclipse/plugins/%%NSP%%_%%VER%%/templates/default-templates.xml
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/about.ini
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/about.mappings
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/about.properties
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/eclipse32.gif
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/plugin.properties
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/plugin.xml
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.team.ftp_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.team.ftp_%%TEAMVER%%/ftpsrc.zip
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.team.webdav_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.team.webdav_%%TEAMVER%%/webdavprovidersrc.zip
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.webdav_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.webdav_%%TEAMVER%%/webdavsrc.zip
+eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%/about.ini
+eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%/about.mappings
+eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%/about.properties
+eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%/eclipse32.gif
+eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%/plugin.properties
+eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%/plugin.xml
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/.options
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html/book.css
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html/cpy.gif
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html/export.html
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html/hglegal2002.htm
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html/import.html
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html/notices.html
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html/synchronization.html
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/ftp.jar
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/basic/wizards/ftpicon_wiz.gif
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/basic/wizban/newconnect_wizban.gif
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/full/wizards/ftpicon_wiz.gif
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/full/wizban/newconnect_wizban.gif
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/plugin.properties
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/plugin.xml
+eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/toc.xml
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/cview16/site_view.gif
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/cview16/synch_synch.gif
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/wizards/davicon_wiz.gif
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/wizban/newconnect_wizban.gif
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/wizban/newsite_wizban.gif
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/plugin.properties
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/plugin.xml
+eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/webdavprovider.jar
+eclipse/plugins/org.eclipse.webdav_%%TEAMVER%%/about.html
+eclipse/plugins/org.eclipse.webdav_%%TEAMVER%%/plugin.properties
+eclipse/plugins/org.eclipse.webdav_%%TEAMVER%%/plugin.xml
+eclipse/plugins/org.eclipse.webdav_%%TEAMVER%%/webdav.jar
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/about.html
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/doc/J2SSH-LICENSE.TXT
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/doc/apache_license.txt
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/doc/cpl-v10.html
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/log4j.properties
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/ssh/conf/authorization.xml
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/ssh/conf/hosts.xml
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/ssh/conf/platform.xml
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/ssh/conf/server.xml
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/ssh/conf/sshtools.xml
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/icons/full/wizards/sftp_v2.xcf
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/icons/full/wizards/sftpicon_wiz.png
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/lib/commons-logging.jar
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/lib/sshtools.jar
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/plugin.properties
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/plugin.xml
+eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/sftp.jar
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/META-INF/MANIFEST.MF
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/fragment.xml
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/intl.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/libapr.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/libapriconv.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/libaprutil.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/libdb42.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/libeay32.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/libsvnjavahl-1.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/ssleay32.dll
+eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/win32.jar
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/SVNPluginCore.jar
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/commons-lang-2.0.jar
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/commons-logging-1.0.4.jar
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/jakarta-regexp-1.3.jar
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/plugin.properties
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/plugin.xml
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/schema/svnPropertyTypes.exsd
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/svnClientAdapter.jar
+eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/svnjavahl.jar
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/SVNPluginUI.jar
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/build.xml
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/changelog.txt
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/cpl-v10.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/dailywork.xml
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/help_contexts.xml
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/book.css
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/dailywork/branches.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/dailywork/diffing.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/dailywork/patches.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/dailywork/synchronize.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/dailywork/workcycle.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/faq/faq.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/faq/glossary.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/faq/subversion-mapping.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/faq/tips-and-tricks.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/gettingstarted/checkout.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/gettingstarted/connecting.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/gettingstarted/importing.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/gettingstarted/new-location.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/gettingstarted/settingup.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/add-repos-wizard.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/add-resource.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/added-status.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/checkout.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/commit-unversioned.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/create-remote-folder.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/move-or-rename-resource.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/new-location.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/new-repos-list.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/quickdiff-reference.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/repos-layout.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/resolve-conflicts.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/select-perspective.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/share-location-file.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/share-location.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/share-module-name.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/share-project.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/share-ready.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/share-working-copy.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images/svn-explorer-perspective.jpg
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/add-keywords.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/add.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/apply-patch.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/branch-tag.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/checkout.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/cleanup.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/commit.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/compare.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/create-patch.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/disconnect.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/edit-conflicts.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/generate-patch.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/history-view.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/mark-resolved.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/merge.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/pending-operations-view.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/preferences.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/properties.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/replace.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/revert.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/set-property.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/share.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/show-annotation.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/show-in-history.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/show-pending-operations.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/show-properties.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/svn-annotations.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/svn-console.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/svn-ignore.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/svn-properties-view.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/svn-repository-view.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/svn-repository.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/switch.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/team-synchronize.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference/update.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/toc.html
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/clear_co.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/collapseall.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/filter_history.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/newstream_wiz.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/pending.png
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/properties.png
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/refresh.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16/synced.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16/checkout.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16/contents.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16/copy_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16/cut_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16/delete.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16/paste_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16/svn_prop_add.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16/annotate_view.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16/console_view.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16/history_view.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16/props_view.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16/rep_editors_view.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16/repo_rep.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16/svn_persp.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dlcl16/clear_co.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dlcl16/filter_history.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dlcl16/refresh.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dtool16/annotate.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dtool16/contents.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dtool16/copy_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dtool16/cut_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dtool16/delete.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dtool16/paste_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/elcl16/clear_co.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/elcl16/collapseall.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/elcl16/filter_history.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/elcl16/refresh.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/elcl16/synced.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/etool16/annotate.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/etool16/contents.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/etool16/copy_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/etool16/cut_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/etool16/delete.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/etool16/paste_edit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph1.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph2.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph3.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph4.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph5.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph6.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph7.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs/glyph8.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16/branches_rep.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16/module_rep.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16/prjversions_rep.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16/repository_rep.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16/synch_synch.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16/tag.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16/versions_rep.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/added_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/confauto_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/conflicted_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/edited_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/external_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/merged_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/no_remotedir_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16/question_ov.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/pending16/fileadd_pending.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/pending16/filedelete_pending.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/pending16/filemodified_pending.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/pending16/folderadd_pending.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/pending16/folderdelete_pending.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/pending16/foldermodified_pending.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/add.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/blame.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/checkout.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/cleanup.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/commit.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/compare.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/conflict.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/copy.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/createrepos.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/delete.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/diff.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/export.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/ignore.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/import.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/log.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/merge.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/patch.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/relocate.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/rename.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/repobrowse.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/resolve.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/revert.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/showchanged.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/switch.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise/update.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizards/newconnect_wiz.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizards/newfolder_wiz.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizards/newlocation_wiz.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizards/svn_synch.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizban/createpatch_wizban.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizban/keywordsub_wizban.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizban/mergestream_wizban.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizban/newconnect_wizban.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizban/newfolder_wizban.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizban/newlocation_wizban.gif
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/plugin.properties
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/plugin.xml
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/toc.xml
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/toc_platformGettingstarted.xml
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/tocgettingstarted.xml
+eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/tocreference.xml
+eclipse/plugins/%%OTS%%.subclipse_%%OTSVER%%/about.html
+eclipse/plugins/%%OTS%%.subclipse_%%OTSVER%%/about.ini
+eclipse/plugins/%%OTS%%.subclipse_%%OTSVER%%/about.properties
+eclipse/plugins/%%OTS%%.subclipse_%%OTSVER%%/plugin.xml
+@dirrm eclipse/plugins/%%OTS%%.subclipse_%%OTSVER%%
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizban
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/wizards
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/tortoise
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/pending16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ovr16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/obj16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/glyphs
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/etool16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/elcl16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dtool16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/dlcl16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/cview16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/ctool16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full/clcl16
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons/full
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/icons
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/reference
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/images
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/gettingstarted
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/faq
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html/dailywork
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%/html
+@dirrm eclipse/plugins/%%OTS%%.subclipse.ui_%%OTSVER%%
+@dirrm eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%/schema
+@dirrm eclipse/plugins/%%OTS%%.subclipse.core_%%OTSVER%%
+@dirrm eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%/META-INF
+@dirrm eclipse/plugins/%%OTS%%.javahl.win32_%%OTSVER%%
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/lib
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/icons/full/wizards
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/icons/full
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/icons
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/ssh/conf
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc/ssh
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/etc
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%/doc
+@dirrm eclipse/plugins/org.klomp.eclipse.team.sftp_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.webdav_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/wizards
+@dirrm eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full/cview16
+@dirrm eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons/full
+@dirrm eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%/icons
+@dirrm eclipse/plugins/org.eclipse.team.webdav_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/full/wizards
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/full
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/basic/wizban
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/basic/wizards
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons/basic
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/icons
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%/doc-html
+@dirrm eclipse/plugins/org.eclipse.team.ftp_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.team.extras_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.webdav_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.team.webdav_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src/org.eclipse.team.ftp_%%TEAMVER%%
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%/src
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_%%TEAMVER%%
 @dirrm eclipse/plugins/%%NSP%%_%%VER%%/templates
 @dirrm eclipse/plugins/%%NSP%%_%%VER%%/icons/wizban
 @dirrm eclipse/plugins/%%NSP%%_%%VER%%/icons/ovr16
@@ -788,76 +1291,103 @@ eclipse/plugins/%%NSP%%_%%VER%%/templates/default-templates.xml
 @dirrm eclipse/plugins/%%NSP%%_%%VER%%/icons/clcl16
 @dirrm eclipse/plugins/%%NSP%%_%%VER%%/icons
 @dirrm eclipse/plugins/%%NSP%%_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/icons/basic/obj16
-@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/icons/basic
-@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.xml.core_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16/frames
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/obj16
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/elcl16
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/dlcl16
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons/clcl16
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%/home
-@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.ui_%%VER%%/templates
-@dirrm eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full/ovr16
-@dirrm eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full/obj16
-@dirrm eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full/cview16
-@dirrm eclipse/plugins/%%NSP%%.ui_%%VER%%/icons/full
-@dirrm eclipse/plugins/%%NSP%%.ui_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/unused
-@dirrm eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons/.xvpics
-@dirrm eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/icons
-@dirrm eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images/new_bookmark
-@dirrm eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc/images
-@dirrm eclipse/plugins/%%NSP%%.quantum.sql_2.4.4/doc
-@dirrm eclipse/plugins/%%NSP%%.quantum.sql_2.4.4
-@dirrm eclipse/plugins/%%NSP%%.phpunit_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.phpunit_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.phphelp_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.news_%%VER%%/lib
-@dirrm eclipse/plugins/%%NSP%%.news_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.news_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/obj16
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/eview16
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/elcl16
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/dlcl16
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/cview16
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons/clcl16
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.monitor.core_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.launching_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.js.ui_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.js.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.js.core_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.html.ui_%%VER%%/icons/full/obj16
-@dirrm eclipse/plugins/%%NSP%%.html.ui_%%VER%%/icons/full
-@dirrm eclipse/plugins/%%NSP%%.html.ui_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.html.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/obj16
-@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/eview16
-@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/dtool16
-@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons/ctool16
-@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.debug.core_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/full/ovr16
-@dirrm eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons/full
-@dirrm eclipse/plugins/%%NSP%%.css.ui_%%VER%%/icons
-@dirrm eclipse/plugins/%%NSP%%.css.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.css.core_%%VER%%
-@dirrm eclipse/plugins/%%NSP%%.core_%%VER%%
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons/full/obj16
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons/full
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%
-@dirrm eclipse/plugins/%%NSEVER%%/lib
-@dirrm eclipse/plugins/%%NSEVER%%/icons/ctool16
-@dirrm eclipse/plugins/%%NSEVER%%/icons
-@dirrm eclipse/plugins/%%NSEVER%%/help
-@dirrm eclipse/plugins/%%NSEVER%%
+@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/icons/basic/obj16
+@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/icons/basic
+@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.xml.ui_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.xml.core_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/wikis
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/templates
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/lib
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/wizban
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full/glyphs
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons/full
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.wiki_%%HTMLVER%%
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16/frames
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/obj16
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/elcl16
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/dlcl16
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons/clcl16
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%/home
+@dirrm eclipse/plugins/%%NSP%%.webbrowser_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/templates
+@dirrm eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full/ovr16
+@dirrm eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full/obj16
+@dirrm eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full/cview16
+@dirrm eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons/full
+@dirrm eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.ui_%%HTMLVER%%
+@dirrm eclipse/plugins/%%NSP%%.%%UNITVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.%%UNITVER%%
+@dirrm eclipse/plugins/%%NSP%%.phphelp_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.news_%%UIVER%%/lib
+@dirrm eclipse/plugins/%%NSP%%.news_%%UIVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.news_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/obj16
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/eview16
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/elcl16
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/dlcl16
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/cview16
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons/clcl16
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.monitor.ui_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.monitor.core_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.launching_%%HTMLVER%%
+@dirrm eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.js.ui_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.js.core_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%/icons/full/obj16
+@dirrm eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%/icons/full
+@dirrm eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.html.ui_%%HTMLVER%%
+@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/obj16
+@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/eview16
+@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/dtool16
+@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons/ctool16
+@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.debug.ui_%%HTMLVER%%
+@dirrm eclipse/plugins/%%NSP%%.debug.core_%%HTMLVER%%
+@dirrm eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/full/ovr16
+@dirrm eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons/full
+@dirrm eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%/icons
+@dirrm eclipse/plugins/%%NSP%%.css.ui_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.css.core_%%UIVER%%
+@dirrm eclipse/plugins/%%NSP%%.core_%%UIVER%%
+@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%/icons/full/obj16
+@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%/icons/full
+@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%UIVER%%
+@dirrm eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/lib
+@dirrm eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/icons/ctool16
+@dirrm eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/icons
+@dirrm eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%/help
+@dirrm eclipse/plugins/net.sf.eclipsetidy_%%TIDYVER%%
+@dirrm eclipse/plugins/%%QVER%%/schema
+@dirrm eclipse/plugins/%%QVER%%/icons/unused
+@dirrm eclipse/plugins/%%QVER%%/icons/.xvpics
+@dirrm eclipse/plugins/%%QVER%%/icons
+@dirrm eclipse/plugins/%%QVER%%/doc/images/quantum_new_bookmark
+@dirrm eclipse/plugins/%%QVER%%/doc/images/quantum_extender_plugin
+@dirrm eclipse/plugins/%%QVER%%/doc/images
+@dirrm eclipse/plugins/%%QVER%%/doc/changelog/images
+@dirrm eclipse/plugins/%%QVER%%/doc/changelog
+@dirrm eclipse/plugins/%%QVER%%/doc/UMLDoc
+@dirrm eclipse/plugins/%%QVER%%/doc
+@dirrm eclipse/plugins/%%QVER%%
+@dirrm eclipse/features/%%OTS%%.subclipse_%%OTSVER%%
+@dirrm eclipse/features/org.klomp.eclipse.feature.team.sftp_%%TEAMVER%%
+@dirrm eclipse/features/org.eclipse.team.extras_%%TEAMVER%%
 @dirrm eclipse/features/%%NSP%%_%%VER%%
+@dirrm eclipse/features/net.sf.eclipsetidy.feature_%%TIDYVER%%
+@unexec rmdir %D/eclipse/features/%%QVER%%/lib 2>/dev/null || true
+@unexec rmdir %D/eclipse/features/%%QVER%%/icons/unused 2>/dev/null || true
+@unexec rmdir %D/eclipse/features/%%QVER%%/icons/.xvpics 2>/dev/null || true
+@unexec rmdir %D/eclipse/features/%%QVER%%/icons 2>/dev/null || true
+@unexec rmdir %D/eclipse/features/%%QVER%%/doc/images 2>/dev/null || true
+@unexec rmdir %D/eclipse/features/%%QVER%%/doc 2>/dev/null || true
+@dirrm eclipse/features/%%QVER%%
+@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
+@unexec rmdir %D/eclipse/features 2>/dev/null || true
+@unexec rmdir %D/eclipse 2>/dev/null || true
