@@ -1,0 +1,19 @@
+XMMS-EQ has been installed.
+
+***WARNING***
+
+This plugin may crash XMMS with the message "Segmentation fault" when enabling
+or disabling it from the GUI.
+
+The temporary solution for this is to edit the XMMS configuration file
+directly. It is usually located at "~/.xmms/config". The section that
+indicates the effect plugins to load is called "xmms". To enable or disable it
+just add or remove the string "libeq.so" to the variable "enabled_eplugins".
+
+For example (XMMS-EQ is enabled):
+
+[xmms]
+
+enabled_eplugins=libeq.so
+
+***WARNING***
