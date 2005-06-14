@@ -1,0 +1,22 @@
+%%SKINSDIR%%/X-skin/background.png
+%%SKINSDIR%%/X-skin/overlay.png
+%%SKINSDIR%%/X-skin/skin.cfg
+%%SKINSDIR%%/X-skin/titlebar_nonselected.png
+%%SKINSDIR%%/X-skin/titlebar_selected.png
+%%SKINSDIR%%/by/background.png
+%%SKINSDIR%%/by/skin.cfg
+%%SKINSDIR%%/by/titlebar_notselected.png
+%%SKINSDIR%%/by/titlebar_selected.png
+%%SKINSDIR%%/classic/background.png
+%%SKINSDIR%%/classic/overlay.png
+%%SKINSDIR%%/classic/skin.cfg
+%%SKINSDIR%%/classic/titlebar_notselected.png
+%%SKINSDIR%%/classic/titlebar_selected.png
+%%SKINSDIR%%/vuskin/background.png
+%%SKINSDIR%%/vuskin/skin.cfg
+%%SKINSDIR%%/vuskin/titlebar_notselected.png
+%%SKINSDIR%%/vuskin/titlebar_selected.png
+@dirrm %%SKINSDIR%%/X-skin
+@dirrm %%SKINSDIR%%/by
+@dirrm %%SKINSDIR%%/classic
+@dirrm %%SKINSDIR%%/vuskin
