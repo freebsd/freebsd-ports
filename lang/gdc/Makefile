@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc
@@ -29,7 +29,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 __GCC_VERSION=	3.4.5
-__GCC_REVISION=	20050524
+__GCC_REVISION=	20050607
 __GCC_VERSIONSTRING=	3.4-${__GCC_REVISION}
 
 .include <bsd.port.pre.mk>
@@ -63,6 +63,16 @@ CONFIGURE_ARGS+=	--program-suffix=${SUFFIX}
 WRKSRC=		${WRKDIR}/gcc-${__GCC_VERSIONSTRING}
 GCCDIR=		${WRKSRC}/gcc
 
+pre-fetch:
+.ifdef 	WITH_UNITTEST
+	@echo ""
+	@echo "Warning:"
+	@echo "         WITH_UNITTEST enabled."
+	@echo "         On FreeBSD, some unit tests will fail."
+	@echo ""
+	@sleep 5
+.endif
+
 post-extract:
 	@${TAR} xjf ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		-C ${GCCDIR}
@@ -72,6 +82,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 		${GCCDIR}/version.c
+
+post-build:
+.ifdef 	WITH_UNITTEST
+	@cd ${WRKSRC} && ${GMAKE} check-target-libphobos
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} -o root -g wheel -m 755 ${GCCDIR}/gdc ${PREFIX}/bin/
