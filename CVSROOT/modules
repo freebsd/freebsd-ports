@@ -909,6 +909,7 @@ calctool	ports/math/calctool
 calculix	ports/cad/calculix
 calibrator	ports/devel/calibrator
 calife		ports/security/calife
+calife-devel		ports/security/calife-devel
 callgen		ports/net/callgen
 callgrind	ports/devel/callgrind
 callid		ports/misc/callid
