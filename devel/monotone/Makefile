@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.16
+PORTVERSION=	0.19
 CATEGORIES=	devel
-MASTER_SITES=	http://www.venge.net/monotone/  \
+MASTER_SITES=	http://www.venge.net/monotone/downloads/ \
 		http://norton.kettering.edu/freebsd/
 
 MAINTAINER=	mwicks@kettering.edu
@@ -17,6 +17,7 @@ COMMENT=	A distributed version control system with digital signatures
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt		\
 		boost_regex.2:${PORTSDIR}/devel/boost
 
+USE_REINPLACE=	yes
 USE_ICONV=	yes
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -24,10 +25,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/monotone
 INFO=		monotone
@@ -36,26 +34,23 @@ MAN1=		monotone.1
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 .endif
-.if !defined(WITHOUT_ADNS)
-LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
-.else
-CONFIGURE_ARGS+=	--with-bundled-adns
-.endif
-.if !defined(WITHOUT_LUA)
+.if defined(WITH_LUA_PORT)
 LIB_DEPENDS+=	lua.5:${PORTSDIR}/lang/lua
-.else
-CONFIGURE_ARGS+=	--with-bundled-lua
+CONFIGURE_ARGS+=	--with-bundled-lua=no
 .endif
-.if !defined(WITHOUT_SQLITE)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
-.else
-CONFIGURE_ARGS+=	--with-bundled-sqlite
+.if defined(WITH_SQLITE_PORT)
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+CONFIGURE_ARGS+=	--with-bundled-sqlite=no
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile on FreeBSD-4.11"
+BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|\($$(CXX) -Wall\)|\1 ${CXXFLAGS}|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
