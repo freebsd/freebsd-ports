@@ -12723,6 +12723,8 @@ xmms-status-plugin	ports/multimedia/xmms-status-plugin
 xmms-tfmx	ports/audio/xmms-tfmx
 xmms-uade	ports/audio/xmms-uade
 xmms-volnorm	ports/audio/xmms-volnorm
+xmms-vumeter	ports/graphics/xmms-vumeter
+xmms-vumeter-skins	ports/x11-themes/xmms-vumeter-skins
 xmms-weasel	ports/multimedia/xmms-weasel
 xmms-wma	ports/audio/xmms-wma
 xmms-xvs	ports/graphics/xmms-xvs
