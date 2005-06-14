@@ -12,7 +12,7 @@ CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	moz-bonobo
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A Netscape/Mozilla plugin using Bonobo controls to display files
 
 BUILD_DEPENDS=		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
