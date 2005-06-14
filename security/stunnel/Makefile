@@ -7,7 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
@@ -32,6 +32,13 @@ MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
 
 PEM_DIR?=	${PREFIX}/etc
 
+OPTIONS=	FORK	"use the fork(3) threading model"	off \
+		PTHREAD	"use the pthread(3) threading model (default)"	on \
+		UCONTEXT	"use the ucontext(3) threading model"	off \
+		IPV6	"enable IPv6 support" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
@@ -48,14 +55,6 @@ CFLAGS+=-DFORCE_FORK
 .else
 CFLAGS+=-DFORCE_PTHREAD
 .endif
-
-pre-everything::
-	@${ECHO}
-	@${ECHO} 'You can build ${PORTNAME} with the following options:'
-	@${ECHO} 'WITH_FORK       use the fork(2) model'
-	@${ECHO} 'WITH_PTHREAD    use the pthread(3) model (default)'
-	@${ECHO} 'WITH_UCONTEXT   use the ucontext(3) model'
-	@${ECHO}
 
 post-patch:
 # place files under /var/tmp so that this can be run by an unprivileged user
@@ -100,8 +99,6 @@ cert:
 	@${ECHO} ""
 	@(cd ${WRKSRC}/tools/; make stunnel.pem)
 	${INSTALL} -m 600 ${WRKSRC}/tools/stunnel.pem ${PEM_DIR}/
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
 .if !defined(WITH_STUNNEL_SSL_ENGINE)
