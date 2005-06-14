@@ -1,0 +1,18 @@
+lib/xmms/Visualization/libvumeter.so
+%%SKINSDIR%%/default/background.png
+%%SKINSDIR%%/default/skin.cfg
+%%SKINSDIR%%/default/titlebar_notselected.png
+%%SKINSDIR%%/default/titlebar_selected.png
+%%SKINSDIR%%/default.mirror/background.png
+%%SKINSDIR%%/default.mirror/overlay.png
+%%SKINSDIR%%/default.mirror/skin.cfg
+%%SKINSDIR%%/default.mirror/titlebar_notselected.png
+%%SKINSDIR%%/default.mirror/titlebar_selected.png
+%%SKINSDIR%%/default.oldxmms/background.png
+%%SKINSDIR%%/default.oldxmms/skin.cfg
+%%SKINSDIR%%/default.oldxmms/titlebar_notselected.png
+%%SKINSDIR%%/default.oldxmms/titlebar_selected.png
+@dirrm %%SKINSDIR%%/default
+@dirrm %%SKINSDIR%%/default.mirror
+@dirrm %%SKINSDIR%%/default.oldxmms
+@dirrm %%SKINSDIR%%
