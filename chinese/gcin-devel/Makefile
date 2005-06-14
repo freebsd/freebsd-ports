@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/misc/
@@ -24,6 +24,8 @@ GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
 PLIST_SUB+=	BOSHIAMY="@comment "
+
+MAN1=		gcin.1 gcin2tab.1
 
 .include <bsd.port.pre.mk>
 

@@ -1,5 +1,5 @@
---- configure.orig	Thu Apr  7 08:59:13 2005
-+++ configure	Thu Apr  7 09:01:06 2005
+--- configure.orig	Tue May 24 19:14:40 2005
++++ configure	Mon Jun 13 23:57:03 2005
 @@ -1,12 +1,12 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -16,7 +16,16 @@
  if [ $? = 0 ]; then
    FREEBSD=1
  else
-@@ -60,7 +60,7 @@
+@@ -50,7 +50,7 @@
+ 
+ bindir=$prefix/bin
+ datadir=$prefix/share
+-mandir=$datadir/man
++mandir=$prefix/man
+ libdir=$prefix/lib
+ includedir=$prefix/include
+ GCIN_VERSION=`cat VERSION.gcin`
+@@ -61,7 +61,7 @@
    OPTFLAGS="-O"
  fi
  
@@ -25,7 +34,7 @@
  echo "MAKE=$MAKE" >> config.mak
  echo "GTKINC=$GTKINC" >> config.mak
  echo "prefix=$prefix" >> config.mak
-@@ -78,8 +78,8 @@
+@@ -81,8 +81,8 @@
  echo "GCIN_SCRIPT_DIR=\$(datadir_r)/gcin/script" >> config.mak
  echo "GCIN_SCRIPT_DIR_i=\$(datadir)/gcin/script" >> config.mak
  echo "OPTFLAGS=$OPTFLAGS" >> config.mak
