@@ -8488,6 +8488,7 @@ p5-WWW-SourceForge	ports/www/p5-WWW-SourceForge
 p5-WWW-Wikipedia	ports/www/p5-WWW-Wikipedia
 p5-Want		ports/devel/p5-Want
 p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
+p5-WebService-Technorati	ports/www/p5-WebService-Technorati
 p5-WordNet-QueryData	ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity	ports/textproc/p5-WordNet-Similarity
 p5-X11-GUITest	ports/x11/p5-X11-GUITest
