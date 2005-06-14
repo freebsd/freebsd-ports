@@ -20,6 +20,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-etcdir=${PREFIX}/etc"
 
+CONFLICTS?=	calife-3.*
+
 MAN1=		calife.1
 MAN5=		calife.auth.5
 
