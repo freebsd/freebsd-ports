@@ -1,0 +1,8 @@
+x11vnc is a VNC server for real X displays.  VNC (Virtual Network Computing)
+is a very useful network graphics protocol which allows multiple simple
+remote viewers to watch and control a single desktop.  x11vnc differs from
+traditional UNIX VNC servers in that it is accessing a real X displays that
+may already be in progress rather than creating it's own X server for clients
+to connect to.
+
+WWW: http://www.karlrunge.com/x11vnc/

@@ -868,6 +868,7 @@
     SUBDIR += wmwave
     SUBDIR += wol
     SUBDIR += wping
+    SUBDIR += x11vnc
     SUBDIR += xarchie
     SUBDIR += xbms
     SUBDIR += xbone
