@@ -1,0 +1,23 @@
+This is a tool that uses ARP poisoning  to  have  a  scenario
+like this: we have a LAN and we want offer connectivity to every-
+one coming here with his laptop for example. It could happen that
+our  customer  has  his  network parameters already configured to
+work correctly in his own LAN, but not working here. We can  have
+then this scenario:
+Customer's  host (10.0.0.2/8 and default gateway set to 10.0.0.1)
+Our LAN (192.168.0.0/24 with real gateway 192.168.0.254).
+All that we want is that our customer plugs his laptop  and  joins
+the  internet without changing nothing of his network parameters.
+Here comes this tool installed in my real gw(192.168.0.254)  It's
+a  sort  of sniffer, because it sniffs broadcast ARP requests for
+the gateway and answers that the gateway is itself In our example
+our  customer's  laptop  sends  this request: arp who-has 10.0.0.1
+tell 10.0.0.2 Now our gateway does the following: 1)  Sends  back
+this  reply to 10.0.0.2: arp reply 10.0.0.1 is-at his_mac_address
+2)Create the alias 10.0.0.254 (ARP is not routable so we need one
+alias  for each subnet that is not our one) 3)Sends itself an ARP
+reply to refresh his ARP cache
+It is different from proxy arp for two reasons: first it runs  in
+user  space,  then in this case we can plug machines belonging to
+whatever subnet, while proxy arp is used in the case of only  two
+different ones.
