@@ -19,17 +19,22 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/pth
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-pthread \
-		--enable-syscall-soft \
 		--enable-optimize \
 		--enable-batch \
 		--includedir="${PREFIX}/include/pth" \
 		--libdir="${PREFIX}/lib/pth"
+
+.if !defined(WITH_SYSCALL_HARD)
+CONFIGURE_ARGS+= --enable-syscall-soft
+.endif
+
 USE_REINPLACE=	yes
 
 MAN1=		pth-config.1 pthread-config.1
 MAN3=		pth.3 pthread.3
 
-OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on
+OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on \
+		SYSCALL_HARD "Build with hard syscalls" off
 
 .include <bsd.port.pre.mk>
 
