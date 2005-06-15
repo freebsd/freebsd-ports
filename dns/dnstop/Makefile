@@ -9,7 +9,7 @@ PORTVERSION=	20050405
 CATEGORIES=	dns
 MASTER_SITES=	http://dns.measurement-factory.com/tools/dnstop/src/
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	mark@foster.cc
 COMMENT=	Captures and analyzes DNS traffic (or analyzes libpcap dump)
 
 MAN8=		dnstop.8
