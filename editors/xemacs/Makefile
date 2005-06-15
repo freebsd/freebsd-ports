@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -24,9 +25,8 @@ XEMACS_REL=	21.4
 XEMACS_VER=	21.4.17
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
-
 USE_BZIP2=	yes
+WANT_GNOME=	yes
 STRIP=
 USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
@@ -45,7 +45,8 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 ALL_TARGET=	all dist
 
-PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
+PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH} \
+		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
 .include <bsd.port.pre.mk>
 
@@ -55,11 +56,13 @@ CONFIGURE_ARGS+=	--with-system-malloc --pdump
 BROKEN=		"Incomplete pkg-plist"
 .endif
 
+.if !defined(WITHOUT_XEMACS_PACKAGES)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
+.endif
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		compface.1:${PORTSDIR}/mail/faces
+		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--with-png --with-jpeg --with-tiff
 USE_XLIB=	yes
 USE_XPM=	yes
@@ -80,6 +83,17 @@ CONFIGURE_ARGS+=	--with-athena=3d
 .else
 CONFIGURE_ARGS+=	--without-x11
 .endif
+
+.if !defined(WITHOUT_X11) && ${HAVE_GNOME:Mgnomehier}!=""
+USE_GNOME+=	gnomehier
+PLIST_SUB+=	DESKTOP=""
+.else
+PLIST_SUB+=	DESKTOP="@comment "
+.endif
+
+post-extract::
+	@${SED} -e 's|@XEMACS_ICON@|${LOCALBASE}/lib/xemacs-${XEMACS_VER}/etc/xemacs-icon.xpm|' \
+		<${FILESDIR}/xemacs.desktop.in >${WRKDIR}/xemacs.desktop
 
 pre-patch:
 .if !defined(WITHOUT_X11)
@@ -114,6 +128,10 @@ post-install::
 .for f in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
 	${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
+.if !defined(WITHOUT_X11) && ${HAVE_GNOME:Mgnomehier}!=""
+	${INSTALL_DATA} ${WRKDIR}/xemacs.desktop \
+		${X11BASE}/share/gnome/applications
+.endif
 # For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
 # Do what PLIST does for pkg_add.
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
