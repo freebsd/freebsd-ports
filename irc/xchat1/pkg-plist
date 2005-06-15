@@ -53,4 +53,3 @@ share/locale/zh_TW.Big5/LC_MESSAGES/xchat.mo
 %%NOGNOME:%%@unexec rmdir %D/etc/X11/applnk/Internet 2>/dev/null || true
 %%NOGNOME:%%@unexec rmdir %D/etc/X11/applnk 2>/dev/null || true
 %%NOGNOME:%%@unexec rmdir %D/etc/X11 2>/dev/null || true
-%%NOGNOME:%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true

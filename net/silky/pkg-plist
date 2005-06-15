@@ -32,5 +32,4 @@ share/locale/sv/LC_MESSAGES/silky.mo
 share/locale/zh_CN/LC_MESSAGES/silky.mo
 share/gnome/apps/Applications/silky.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm %%DATADIR%%

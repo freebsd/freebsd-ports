@@ -264,4 +264,3 @@ share/pixmaps/gajim.png
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%
 @unexec rmdir %D/share/applications > /dev/null 2>&1 | true
-@unexec rmdir %D/share/pixmaps > /dev/null 2>&1 | true

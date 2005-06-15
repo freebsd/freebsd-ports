@@ -2141,7 +2141,6 @@ share/pixmaps/sylpheed-claws.png
 %%THEMES%%@dirrm %%DATADIR%%/themes/tom_2.1.1
 %%THEMES%%@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/es

@@ -313,7 +313,6 @@ share/gg2/themes/white2.theme
 share/locale/nl/LC_MESSAGES/gg2.mo
 share/locale/pl/LC_MESSAGES/gg2.mo
 share/pixmaps/gg2.png
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/gg2/themes
 @dirrm share/gg2/sounds
 @dirrm share/gg2/pixmaps/icons/tlen-classic

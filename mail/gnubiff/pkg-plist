@@ -35,5 +35,4 @@ share/locale/vi/LC_MESSAGES/gnubiff.mo
 @unexec rmdir %D/%%BONOBODIR%% 2> /dev/null || true
 @unexec rmdir %D/%%SHAREDIR%%/gnome-2.0/ui 2> /dev/null || true
 @unexec rmdir %D/%%SHAREDIR%%/gnome-2.0 2> /dev/null || true
-@unexec rmdir %D/%%SHAREDIR%%/pixmaps 2> /dev/null || true
 @dirrm %%SHAREDIR%%/gnubiff

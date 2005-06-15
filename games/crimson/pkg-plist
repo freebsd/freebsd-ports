@@ -30,7 +30,6 @@ share/crimson/sound/select.wav
 share/crimson/cf.dat
 share/crimson/default.tiles
 share/crimson/default.units
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/crimson/levels
 @dirrm share/crimson/locale
 @dirrm share/crimson/music

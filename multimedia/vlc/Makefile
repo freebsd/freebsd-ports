@@ -744,7 +744,6 @@ pre-install:
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/pixmaps 2>/dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
 .if !defined(WITHOUT_WXGTK)

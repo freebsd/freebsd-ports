@@ -277,7 +277,6 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_CN
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
 share/applications/abiword24.desktop
 share/pixmaps/abiword24_48.png
-@unexec rmdir %D/share/pixmaps 2> /dev/null || true
 @unexec rmdir %D/share/applications 2> /dev/null || true
 @dirrm share/AbiSuite-%%ABIVERSION%%/templates
 @dirrm share/AbiSuite-%%ABIVERSION%%/icons

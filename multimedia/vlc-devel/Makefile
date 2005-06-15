@@ -803,7 +803,6 @@ pre-install:
 .endif
 .if defined(WITH_WXGTK) || defined(WITH_SKINS)
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/pixmaps 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}

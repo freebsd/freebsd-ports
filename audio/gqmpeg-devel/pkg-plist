@@ -77,7 +77,6 @@ share/locale/ja/LC_MESSAGES/gqmpeg.mo
 share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
 share/locale/zh_TW/LC_MESSAGES/gqmpeg.mo
 @unexec rmdir %D/share/applications 2>/dev/null || true
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/gqmpeg/skins/mrclean
 @dirrm share/gqmpeg/skins
 @dirrm share/gqmpeg
