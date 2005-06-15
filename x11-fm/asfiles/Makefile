@@ -30,4 +30,12 @@ post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${MV} ${WRKSRC}/src/Files.ad.orig ${WRKSRC}/src/Files.ad
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
+.include <bsd.port.post.mk>

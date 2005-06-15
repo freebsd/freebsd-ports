@@ -33,6 +33,12 @@ MAN3=		Xft.3
 IGNORE=	Xft requires Render extension headers/library to build.
 .endif
 
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
 .if defined(WITH_CJK)
 PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
 		http://bsdchat.com/dist/firefly-cjk-patchset/

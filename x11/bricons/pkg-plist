@@ -8,3 +8,5 @@ include/X11/pixmaps/clock.xpm
 include/X11/pixmaps/editor.xpm
 include/X11/pixmaps/mail.xpm
 include/X11/pixmaps/news.xpm
+%%NEWMTREE%%@unexec rmdir %D/include/X11/bitmaps 2>/dev/null || true
+%%NEWMTREE%%@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true

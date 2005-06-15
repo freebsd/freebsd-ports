@@ -22,12 +22,20 @@ MAN1=		bricons.1
 
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Xbricons
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Xbricons ${PREFIX}/lib/X11/app-defaults
+	${MKDIR} ${PREFIX}/include/X11/bitmaps
 	${INSTALL_DATA} ${WRKSRC}/bitmaps/* ${PREFIX}/include/X11/bitmaps
+	${MKDIR} ${PREFIX}/include/X11/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/*.xpm ${PREFIX}/include/X11/pixmaps
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "     Use ./files/DOTbriconsrc as an example. This  file"

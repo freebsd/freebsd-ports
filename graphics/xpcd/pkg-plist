@@ -11,3 +11,4 @@ lib/X11/xpcd/system.xpcdrc
 @dirrm lib/X11/de/app-defaults
 @dirrm lib/X11/de
 @dirrm lib/X11/xpcd
+%%NEWMTREE%%@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true

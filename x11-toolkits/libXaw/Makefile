@@ -36,12 +36,4 @@ USE_GNOME=	gnomehack pkgconfig
 
 MAN3=		Xaw.3
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} == xorg
-PLIST_SUB+=	NEWMTREE=""
-.else
-PLIST_SUB+=	NEWMTREE="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -35,7 +35,16 @@ do-install:
 .endfor
 	@${CHMOD} 0555 ${PREFIX}/lib/X11/X-Files/X-Files.tcl
 	@${LN} -s ${PREFIX}/lib/X11/X-Files/X-Files.tcl ${PREFIX}/bin/X-Files
+	@${MKDIR} ${X11BASE}/include/X11/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/X-Files.xpm ${X11BASE}/include/X11/pixmaps
 	@${INSTALL_MAN} ${WRKSRC}/X-Files.1x ${X11BASE}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
+.include <bsd.port.post.mk>

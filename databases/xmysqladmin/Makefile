@@ -22,4 +22,15 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	xmysqladmin
 
-.include <bsd.port.mk>
+pre-su-install:
+	@${MKDIR} ${PREFIX}/include/X11/pixmaps
+
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
+.include <bsd.port.post.mk>

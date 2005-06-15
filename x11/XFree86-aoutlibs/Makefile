@@ -22,6 +22,12 @@ USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
 .if ${OSVERSION} >= 500113
 STRIP=
 .endif

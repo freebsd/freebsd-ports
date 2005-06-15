@@ -30,4 +30,12 @@ post-install:
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 \
 	${WRKSRC}/fvwm_icons/*.xpm ${PREFIX}/include/X11/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
+.include <bsd.port.post.mk>

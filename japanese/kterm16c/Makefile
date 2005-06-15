@@ -38,12 +38,6 @@ USE_XPM=	yes
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
 
-.if ${X_WINDOW_SYSTEM:L} == xorg
-PLIST_SUB+=	NEWMTREE=""
-.else
-PLIST_SUB+=	NEWMTREE="@comment "
-.endif
-
 post-extract:
 	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${DIST_SUBDIR}/pcemu1.01alpha.tar.gz \
