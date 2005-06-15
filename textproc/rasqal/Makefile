@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -39,15 +39,12 @@ USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
-LIBTOOLFILES=	configure raptor/configure rasqal/configure
+LIBTOOLFILES=	configure rasqal/configure
 
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include/db${WITH_BDB_VER} -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-bdb-lib="${LOCALBASE}/lib" \
-		--with-bdb-include="${LOCALBASE}/include/db${WITH_BDB_VER}" \
-		--with-bdb-dbname="db${WITH_BDB_VER}" \
-		--with-raptor=system \
+CONFIGURE_ARGS=	--with-raptor=system \
 		--with-rasqal=internal \
 		--with-threestore=no
 
