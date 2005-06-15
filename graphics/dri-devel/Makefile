@@ -41,6 +41,10 @@ DRIMODDIR=	${PREFIX}/lib/modules/dri
 USE_GCC=        3.4
 .endif
 
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE=	requires libGL from X.Org.
+.endif
+
 do-install:
 .if ${ARCH} == i386
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
