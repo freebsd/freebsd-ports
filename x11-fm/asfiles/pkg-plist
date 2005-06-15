@@ -225,3 +225,4 @@ lib/X11/app-defaults/Files.ad
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
 @dirrm share/OffiX
+%%NEWMTREE%%@unexec rmdir %D/include/bitmaps 2>/dev/null || true

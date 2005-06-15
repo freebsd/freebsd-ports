@@ -273,3 +273,4 @@ include/bitmaps/zoo.xbm
 share/OffiX/Files.ad
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
+%%NEWMTREE%%@unexec rmdir %D/include/bitmaps 2>/dev/null || true

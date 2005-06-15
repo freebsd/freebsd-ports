@@ -1,2 +1,3 @@
 bin/xmysqladmin
 include/X11/pixmaps/mysql.xpm
+%%NEWMTREE%%@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true

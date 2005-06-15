@@ -69,3 +69,4 @@ share/examples/workplace/WPPref
 share/examples/workplace/WPSuffix
 @dirrm share/doc/workplace
 @dirrm share/examples/workplace
+%%NEWMTREE%%@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true

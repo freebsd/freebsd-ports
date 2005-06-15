@@ -28,4 +28,12 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 USE_X_PREFIX=	yes
 MAN1=		pcdtoppm.1 pcdview.1 xpcd.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
+.include <bsd.port.post.mk>

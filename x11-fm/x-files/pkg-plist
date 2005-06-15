@@ -23,3 +23,4 @@ lib/X11/X-Files/xfiles.user_pophelp
 lib/X11/X-Files/xfilesrc
 lib/X11/X-Files/xflogo.gif
 @dirrm lib/X11/X-Files
+%%NEWMTREE%%@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true

@@ -14,3 +14,4 @@ lib/aout/libXtst.so.6.1
 lib/aout/liboldX.so.6.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+%%NEWMTREE%%@dirrm lib/aout
