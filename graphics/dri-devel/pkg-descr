@@ -1,3 +1,6 @@
 dri-devel installs DRI OpenGL hardware acceleration drivers from a CVS snapshot.
 
-WWW: http://people.freebsd.org/~anholt/dri/
+WWW: http://dri.sourceforge.net/
+
+- Eric Anholt
+anholt@FreeBSD.org

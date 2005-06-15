@@ -1,8 +1,8 @@
-This package contains the client drivers for the DRI, included with XFree86.
-With an X Server configured for the DRI they allow direct rendering of
+This package contains the current stable release of the client drivers for the
+DRI.  With an X Server configured for the DRI they allow direct rendering of
 hardware-accelerated OpenGL.
 
-WWW: http://www.xfree86.org/
+WWW: http://dri.sourceforge.net/
 
 - Eric Anholt
 anholt@FreeBSD.org
