@@ -807,6 +807,7 @@ bopm		ports/irc/bopm
 borzoi		ports/security/borzoi
 botan		ports/security/botan
 bottlerocket	ports/misc/bottlerocket
+bouml		ports/devel/bouml
 bounce		ports/net/bounce
 bouncycastle	ports/java/bouncycastle
 boxbackup	ports/sysutils/boxbackup
