@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.13
-PORTREVISION=	1
+PORTVERSION=	1.3.14
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://dl.fkb.wormulon.net/lighttpd/ \
@@ -36,24 +35,27 @@ OPTIONS=	OPENSSL		"Enable SSL support"	on \
 		MYSQL		"Enable MYSQL support"	off \
 		IPV6		"Disable IPV6 support"	off
 
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL)
-USE_OPENSSL=	yes
+.if !defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
-.if !defined(WITHOUT_OPENLDAP)
+.if defined(WITH_OPENLDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
