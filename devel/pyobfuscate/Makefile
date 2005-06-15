@@ -9,12 +9,12 @@
 PORTNAME=	pyobfuscate
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/pyobfuscate/
+MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/pyobfuscate/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python source code obfuscator
-
-BROKEN=		Unfetchable
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
