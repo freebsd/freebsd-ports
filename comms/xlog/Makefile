@@ -13,10 +13,8 @@ MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
 MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio logging application
 
-BROKEN=		Configure fails
-
 USE_X_PREFIX=	yes
-USE_GNOME=	libgnomeprint
+USE_GNOME=	libgnomeprint gtk20
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_HAMLIB)
