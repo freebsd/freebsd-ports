@@ -1,0 +1,14 @@
+--- server/Makefile.dist.orig	Tue Jun 14 09:37:50 2005
++++ server/Makefile.dist	Tue Jun 14 09:37:50 2005
+@@ -25,9 +25,9 @@
+ CATMANPAGES = dhcpd.cat8 dhcpd.conf.cat5 dhcpd.leases.cat5
+ SEDMANPAGES = dhcpd.man8 dhcpd.conf.man5 dhcpd.leases.man5
+ SRCS   = dhcpd.c dhcp.c bootp.c confpars.c db.c class.c failover.c \
+-	 omapi.c mdb.c stables.c salloc.c ddns.c
++	 omapi.c mdb.c stables.c salloc.c ddns.c dhcpleasequery.c
+ OBJS   = dhcpd.o dhcp.o bootp.o confpars.o db.o class.o failover.o \
+-	 omapi.o mdb.o stables.o salloc.o ddns.o
++	 omapi.o mdb.o stables.o salloc.o ddns.o dhcpleasequery.o
+ PROG   = dhcpd
+ MAN    = dhcpd.8 dhcpd.conf.5 dhcpd.leases.5
+ 
