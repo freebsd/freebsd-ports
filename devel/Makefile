@@ -88,6 +88,7 @@
     SUBDIR += bonobo-conf
     SUBDIR += boost
     SUBDIR += boost-python
+    SUBDIR += bouml
     SUBDIR += bugbuddy
     SUBDIR += bugzilla
     SUBDIR += buildtool

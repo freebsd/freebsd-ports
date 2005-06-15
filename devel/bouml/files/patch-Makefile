@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Feb 17 18:39:54 2005
++++ Makefile	Tue Jun 14 21:58:51 2005
+@@ -1,8 +1,8 @@
+ # the directory where all the bouml files will be installed
+-BOUML_LIB = /usr/lib/bouml
++BOUML_LIB = %%PREFIX%%/share/bouml
+ 
+ # the directory where the bouml shell script will be installed
+-BOUML_DIR = /usr/bin
++BOUML_DIR = %%PREFIX%%/bin
+ 
+ QMAKE = qmake
+ 
