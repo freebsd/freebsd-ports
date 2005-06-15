@@ -8,7 +8,7 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -34,7 +34,8 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 		DHCP_LDAP "add experimental LDAP backend support" off \
 		DHCP_LDAP_SSL "support LDAP connection over SSL/TLS" on \
 		OPENSSL_BASE "use the base system OpenSSL (required by TLS)" on \
-		OPENSSL_PORT "use OpenSSL from ports (required by TLS)" off
+		OPENSSL_PORT "use OpenSSL from ports (required by TLS)" off \
+		DHCP_LQ "DHCPLEASEQUERY support used by Cisco uBR's" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -54,6 +55,13 @@ USE_OPENSSL=	yes
 # hack to get bsd.openssl.mk included at this late state
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
+.endif
+
+.if ${SUBSYS} == server && defined(WITH_DHCP_LQ)
+# Based on patch from Dmitry Sukhodoev :
+PATCH_SITES=	http://bingo.ru/~raven/FreeBSD/patches/ \
+		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/
+PATCHFILES+=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-dlq-patch
 .endif
 
 # Global variables
@@ -200,7 +208,7 @@ extract-script:
 post-patch: patch-scripts patch-makefile-conf \
 	    patch-makefiles-dist patch-man-pages \
 	    patch-pkgmessage patch-site-conf \
-	    patch-rc-scripts
+	    patch-rc-scripts patch-dlq
 
 patch-scripts:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -257,6 +265,15 @@ patch-pkgmessage:
 	@${REINPLACE_CMD} -e 's|^%%LDAP%%||g' ${PKGMESSAGE}
 .else
 	@${REINPLACE_CMD} -e '/^%%LDAP%%/d' ${PKGMESSAGE}
+.endif
+.endif
+
+patch-dlq:
+.if ${SUBSYS} == server && defined(WITH_DHCP_LQ)
+.if defined(WITH_DHCP_LDAP)
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-dlq-ldap
+.else
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-dlq
 .endif
 .endif
 
