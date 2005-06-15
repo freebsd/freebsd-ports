@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flow-tools
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
@@ -23,7 +23,7 @@ MAN1=	flow-capture.1 flow-cat.1 flow-dscan.1 flow-expire.1	\
 	flow-nfilter.1 flow-print.1 flow-receive.1		\
 	flow-report.1 flow-send.1 flow-split.1 flow-stat.1	\
 	flow-tag.1 flow-tools.1	flow-tools-examples.1 		\
-	flow-xlate.1
+	flow-xlate.1 flow-rptfmt.1 flow-log2rrd.1 flow-rpt2rrd.1
 
 post-patch:
 	${TOUCH} -r ${WRKSRC}/configure.in.orig ${WRKSRC}/configure.in

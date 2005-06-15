@@ -1,7 +1,7 @@
---- configure.in.orig	Wed Dec  3 22:18:15 2003
-+++ configure.in	Wed Jul  7 15:03:57 2004
+--- configure.in.orig	Tue Jun  7 22:41:51 2005
++++ configure.in	Tue Jun  7 22:42:25 2005
 @@ -6,7 +6,7 @@
- AM_INIT_AUTOMAKE(flow-tools, 0.67)
+ AM_INIT_AUTOMAKE(flow-tools, 0.68)
  AM_CONFIG_HEADER(lib/ftconfig.h:lib/ftconfig.h.in) 
  
 -CFLAGS="-g -Wall"

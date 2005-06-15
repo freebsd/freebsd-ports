@@ -1,16 +1,10 @@
-
-$FreeBSD$
-
---- src/flow-fanout.c.orig	Tue Aug 24 10:42:14 2004
-+++ src/flow-fanout.c	Tue Aug 24 10:42:26 2004
-@@ -840,8 +840,8 @@
-       } /* fte.buf_size */
-     
+--- src/flow-fanout.c.orig	Tue Jun  7 22:52:16 2005
++++ src/flow-fanout.c	Tue Jun  7 22:52:39 2005
+@@ -855,6 +855,7 @@
+     } /* if FD_ISSET */
+ 
  skip1:
--
--    } /* if FD_ISSET */
 +	;
-+    		} /* if FD_ISSET */
  
      if (sig_quit_flag) {
        fterr_info("SIGQUIT");
