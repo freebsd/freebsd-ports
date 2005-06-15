@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=XEmacs
+Comment=XEmacs Text Editor
+Exec=xemacs %F
+Terminal=false
+Type=Application
+Icon=@XEMACS_ICON@
+Categories=Application;Utility;TextEditor;
