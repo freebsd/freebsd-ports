@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU gettext package
 
 USE_ICONV=	yes
