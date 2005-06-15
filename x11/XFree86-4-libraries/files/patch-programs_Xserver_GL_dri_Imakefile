@@ -1,0 +1,11 @@
+--- programs/Xserver/GL/dri/Imakefile.orig	Sun Jan 23 01:48:51 2005
++++ programs/Xserver/GL/dri/Imakefile	Sun Jan 23 01:49:41 2005
+@@ -59,7 +59,7 @@
+ 
+      INCLUDES = -I$(SERVERSRC)/include -I$(INCLUDESRC) -I$(XINCLUDESRC) \
+ 		-I$(EXTINCSRC) -I$(MESASRCDIR)/include \
+-		-I$(XF86OSSRC) -I$(XF86COMSRC) \
++		-I$(XF86OSSRC) -I$(XF86OSSRC)/bus -I$(XF86COMSRC) \
+ 		-I../include -I../glx -I$(LIBSRC)/GL/include \
+ 		-I$(SERVERSRC)/mi -I$(FONTINCSRC) \
+ 		-I$(DRMSRCDIR)/shared

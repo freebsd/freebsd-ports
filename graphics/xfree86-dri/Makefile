@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xfree86-dri
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES=	XFree86-4.4.0-src-1.tgz \
-		XFree86-4.4.0-src-2.tgz \
-		XFree86-4.4.0-src-3.tgz
+DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
+		XFree86-${PORTVERSION}-src-2.tgz \
+		XFree86-${PORTVERSION}-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers for XFree86
@@ -24,7 +24,7 @@ EXTRA_PATCHES+=		${FILESDIR}/patch-GL-Imakefile
 ONLY_FOR_ARCHS=		i386 alpha amd64
 
 XBUILD_DIRS=		lib/GL
-XINSTALL_DIRS=		lib/GL/mesa/src/drv
+XINSTALL_DIRS=		lib/GL/mesa/drivers/dri
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>

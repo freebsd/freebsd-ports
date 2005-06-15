@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	clients
-PORTVERSION=	4.4.0
-PORTREVISION=	5
+PORTVERSION=	4.5.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR= ${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	XFree86-4.4.0-src-1.tgz \
-		XFree86-4.4.0-src-2.tgz \
-		XFree86-4.4.0-src-3.tgz \
-		XFree86-4.4.0-src-4.tgz
+DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
+		XFree86-${PORTVERSION}-src-2.tgz \
+		XFree86-${PORTVERSION}-src-3.tgz \
+		XFree86-${PORTVERSION}-src-4.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 client programs and related files
@@ -42,12 +41,7 @@ XINSTALL_MAN_DIRS=	programs
 
 .for pf in patch-bdftruncate.pl patch-ucs2any.pl \
 	   patch-programs::fonttosfnt::read.c \
-	   patch-programs::Imakefile \
-	   patch-programs::xdm::Imakefile \
-	   patch-programs::xdm::session.c \
-	   patch-programs::xdm::socket.c \
-	   patch-programs::xkbcomp::symbols::Imakefile \
-	   patch-programs::xkbcomp::symbols::pc::Imakefile
+	   patch-programs::Imakefile
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 
@@ -94,7 +88,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-4
-IGNORE= is part of XFree86-4
+IGNORE=	is part of XFree86-4
 .endif
 
 .include "${FILESDIR}/manpages"

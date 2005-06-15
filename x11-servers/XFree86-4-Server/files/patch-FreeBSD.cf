@@ -1,6 +1,6 @@
---- config/cf/FreeBSD.cf.orig	Sat Nov  1 20:38:01 2003
-+++ config/cf/FreeBSD.cf	Tue Nov 11 20:47:11 2003
-@@ -172,11 +172,11 @@
+--- config/cf/FreeBSD.cf.orig	Thu Mar  3 03:32:17 2005
++++ config/cf/FreeBSD.cf	Wed Mar 23 10:41:03 2005
+@@ -234,11 +234,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
  #if BuildThreadStubLibrary && (!defined(UseInstalledX11) || !UseInstalledX11)
@@ -16,7 +16,17 @@
  #endif
  
  #define CppCmd			/usr/bin/cpp
-@@ -393,18 +393,8 @@
+@@ -470,6 +470,9 @@
+ #define AsVISOption		-Av9a
+ #define AsOutputArchSize	64
+ #endif
++#ifdef PpcArchitecture
++#define	XF86INT10_BUILD	X86INT10_STUB
++#endif
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
+@@ -491,18 +494,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  

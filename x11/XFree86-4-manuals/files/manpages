@@ -8,6 +8,25 @@ MAN3=	AllPlanes.3 \
 	ClientWhitePointOfCCC.3 \
 	ConnectionNumber.3 \
 	DBE.3 \
+	DMX.3 \
+	DMXAddBackendInput.3 \
+	DMXAddConsoleInput.3 \
+	DMXAddInput.3 \
+	DMXAddScreen.3 \
+	DMXChangeDesktopAttributes.3 \
+	DMXChangeScreensAttributes.3 \
+	DMXForceWindowCreation.3 \
+	DMXGetDesktopAttributes.3 \
+	DMXGetInputAttributes.3 \
+	DMXGetInputCount.3 \
+	DMXGetScreenAttributes.3 \
+	DMXGetScreenCount.3 \
+	DMXGetWindowAttributes.3 \
+	DMXQueryExtension.3 \
+	DMXQueryVersion.3 \
+	DMXRemoveInput.3 \
+	DMXRemoveScreen.3 \
+	DMXSync.3 \
 	DefaultColormap.3 \
 	DefaultColormapOfScreen.3 \
 	DefaultDepth.3 \
@@ -1500,8 +1519,5 @@ MAN3=	AllPlanes.3 \
 	gluTessVertex.3 \
 	gluUnProject.3
 MAN7=	X.7 \
-	X.Org.7 \
-	XConsortium.7 \
-	XProjectTeam.7 \
 	XStandards.7 \
 	Xsecurity.7

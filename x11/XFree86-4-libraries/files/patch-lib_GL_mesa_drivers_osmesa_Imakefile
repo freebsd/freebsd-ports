@@ -1,15 +1,14 @@
---- lib/GL/mesa/src/OSmesa/Imakefile.orig	Tue Apr  3 11:29:33 2001
-+++ lib/GL/mesa/src/OSmesa/Imakefile	Thu Jun  7 02:58:09 2001
-@@ -58,7 +58,7 @@
- LIBNAME = OSMesa
- SOREV = 3.3
+--- lib/GL/mesa/drivers/osmesa/Imakefile.orig	Sun Jan  9 03:32:47 2005
++++ lib/GL/mesa/drivers/osmesa/Imakefile	Sun Jan  9 03:34:41 2005
+@@ -131,6 +131,7 @@
+ #endif
  
--
+ 
 +#if !defined(LibInstall) || LibInstall || (!defined(ModInstall) || ModInstall)
  #if DoNormalLib
  NormalLibraryTarget($(LIBNAME), $(UOBJS))
  InstallLibrary($(LIBNAME),$(USRLIBDIR))
-@@ -77,6 +77,7 @@
+@@ -158,6 +159,7 @@
  #if DoProfileLib
  ProfiledLibraryTarget($(LIBNAME), $(POBJS))
  InstallLibrary($(LIBNAME)_p,$(USRLIBDIR))

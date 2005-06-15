@@ -1,10 +1,7 @@
---- lib/GL/GL/Imakefile.orig	Tue Apr  3 11:29:31 2001
-+++ lib/GL/GL/Imakefile	Sat Oct 20 10:14:30 2001
-@@ -214,14 +214,17 @@
- #undef _LinkBuildLibrary
- #define _LinkBuildLibrary(lib) LinkBuildLibrary(lib)
+--- lib/GL/GL/Imakefile.orig	Sun Jan  9 03:58:13 2005
++++ lib/GL/GL/Imakefile	Sun Jan  9 04:01:26 2005
+@@ -294,11 +294,15 @@
  
--
  #if NormalLibGlx
  NormalLibraryTarget($(LIBNAME),$(UOBJS))
 +#if !defined(LibInstall) || LibInstall
@@ -19,7 +16,7 @@
  #if LinkGLToUsrLib && AlternateUsrLibDir
  install::
  	MakeDir($(DESTDIR)$(SYSTEMUSRLIBDIR))
-@@ -233,11 +236,14 @@
+@@ -310,8 +314,10 @@
  #endif
  #if DebugLibGlx
  DebuggedLibraryTarget($(LIBNAME),$(DOBJS))
@@ -27,11 +24,16 @@
  InstallLibrary($(LIBNAME)_d,$(USRLIBDIR))
  #endif
 +#endif
+ #if ExtraLibGlx && defined(ExtraLibRules)
+ all::
+ 	ExtraLibMkdir()
+@@ -322,7 +328,9 @@
+ #endif
  #if ProfileLibGlx
  ProfiledLibraryTarget($(LIBNAME),$(POBJS))
 +#if !defined(LibInstall) || LibInstall
  InstallLibrary($(LIBNAME)_p,$(USRLIBDIR))
- #endif
--
 +#endif
+ #endif
+ 
  

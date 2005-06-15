@@ -6,21 +6,14 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.4.0
-PORTREVISION=	7
+PORTVERSION=	4.5.0
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
-			anholt/:local
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	XFree86-4.4.0-src-1.tgz:x \
-		XFree86-4.4.0-src-2.tgz:x \
-		XFree86-4.4.0-src-3.tgz:x \
-		Wraphelp2.gz:local
-EXTRACT_ONLY=	XFree86-4.4.0-src-1.tgz \
-		XFree86-4.4.0-src-2.tgz \
-		XFree86-4.4.0-src-3.tgz
+DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
+		XFree86-${PORTVERSION}-src-2.tgz \
+		XFree86-${PORTVERSION}-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
@@ -32,13 +25,17 @@ PATCHDIR=		${MASTERDIR}/files
 
 .for pf in patch-Imake.rules patch-Imake.tmpl \
 			patch-X11.tmpl patch-Xcursor-Imakefile \
-			patch-amd64 patch-c2 patch-dri-Imakefile \
+			patch-c2 \
 			patch-f patch-imake.c \
 			patch-texteroids patch-xditview-Imakefile patch-xdm \
 			patch-xdm_session.c patch-xf86.tmpl \
-			patch-xterm-Imakefile patch-z05 patch-z14 \
-			patch-z15 patch-z30 patch-z32 patch-z34 patch-z35 \
-			patch-z41 patch-z44 patch-z45
+			patch-xterm-Imakefile patch-z14 \
+			patch-z15 patch-z34 patch-z35 \
+			patch-z45 \
+			patch-lib_GL_GL_Imakefile \
+			patch-lib_GL_mesa_drivers_dri_Imakefile \
+			patch-lib_GL_mesa_drivers_osmesa_Imakefile \
+			patch-programs_Xserver_GL_dri_Imakefile
 # patch-startx
 
 EXTRA_PATCHES+=		${.CURDIR}/../../x11/XFree86-4-libraries/files/${pf}
@@ -149,6 +146,12 @@ PLIST_SUB+=	IA64_NA="@comment "
 PLIST_SUB+=	IA64_NA=""
 .endif
 
+.if ${ARCH} == powerpc
+PLIST_SUB+=	PPC_NA="@comment "
+.else
+PLIST_SUB+=	PPC_NA=""
+.endif
+
 .if ${ARCH} == sparc64
 PLIST_SUB+=	SPARC64_NA="@comment "
 PLIST_SUB+=	SPARC64=""
@@ -158,10 +161,8 @@ PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
 MAN4+=		glint.4x \
 		mga.4x \
-		rendition.4x \
 		s3virge.4x \
 		savage.4x \
-		siliconmotion.4x \
 		tdfx.4x \
 		vga.4x
 .endif
@@ -194,17 +195,16 @@ PLIST_SUB+=	AMD64_I386=""
 PLIST_SUB+=	AMD64_I386="@comment "
 .endif
 
-post-extract::
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
-		${WRKSRC}/lib/Xdmcp/Wraphelp.c
-	@${MKDIR} ${WRKDIR}/drmsource
+.if ${ARCH} != powerpc && ${ARCH} != sparc64
+MAN4+=		rendition.4x \
+		siliconmotion.4x
+.endif
 
 post-build:
 	@${RM} -f ${PKGMESSAGE}
 	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
 
 post-install::
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
 	@if [ -f ${PREFIX}/bin/Xwrapper-4 ] ; then \
 	${LN} -sf Xwrapper-4 ${PREFIX}/bin/X; \

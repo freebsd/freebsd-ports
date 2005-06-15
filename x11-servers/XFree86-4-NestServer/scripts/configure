@@ -36,8 +36,10 @@ for i in BuildFonts \
 	BuildFontServer \
 	XVirtualFramebufferServer \
 	XprtServer \
+	XdmxServer \
 	LibHeaders \
 	ForceNormalLib \
+	InstallSecurityConfig \
 	XTrueTypeInstallCConvHeaders
 do \
 	echo "#define $i NO"			>> $LOCALDEF

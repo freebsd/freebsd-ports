@@ -1,0 +1,15 @@
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/Imakefile.orig	Thu Feb 24 16:37:48 2005
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/Imakefile	Thu Feb 24 16:38:50 2005
+@@ -125,6 +125,7 @@
+ 		 $(LN) $${UP}$(DRMBSDDIR)/$$i/Makefile $(DRM_COPY_DIR)/$$i); \
+ 	done
+ 
++/*
+ INSTALL_LIST = $(INSTALL_SHARED) $(INSTALL_BSD)
+ InstallMultiple($(INSTALL_LIST),$(DRMBSDINSTSRCDIR))
+ 
+@@ -138,3 +139,4 @@
+ 			$(DESTDIR)$(DRMBSDINSTSRCDIR)/$$i); \
+ 	done
+ 
++*/

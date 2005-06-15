@@ -84,3 +84,4 @@ lib/X11/fonts/cyrillic/koinil2.pcf.gz
 lib/X11/fonts/cyrillic/proof9x16.pcf.gz
 lib/X11/fonts/cyrillic/screen8x16.pcf.gz
 lib/X11/fonts/cyrillic/screen8x16b.pcf.gz
+@unexec rmdir %D/lib/X11/fonts/cyrillic 2>/dev/null || true

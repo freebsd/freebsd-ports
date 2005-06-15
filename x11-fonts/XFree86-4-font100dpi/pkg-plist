@@ -1896,3 +1896,4 @@ lib/X11/fonts/100dpi/timR24-ISO8859-3.pcf.gz
 lib/X11/fonts/100dpi/timR24-ISO8859-4.pcf.gz
 lib/X11/fonts/100dpi/timR24-ISO8859-9.pcf.gz
 lib/X11/fonts/100dpi/timR24.pcf.gz
+@unexec rmdir %D/lib/X11/fonts/100dpi 2>/dev/null || true
