@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Apr 11 08:26:03 2004
-+++ Imakefile	Sun Apr 11 08:26:24 2004
-@@ -13,13 +13,11 @@
+--- Imakefile.orig	Wed Feb  2 17:35:34 2005
++++ Imakefile	Wed Feb  2 17:36:07 2005
+@@ -8,7 +8,7 @@
  #else
  SUBDIRS = BDF CTEXT FSProtocol GL ICCCM ICE PM Render SM X11 XDMCP \
  	  XIM XLFD XProtocol Xaw Xext Xi Xmu Xserver Xt Xv XvMC \
@@ -8,10 +8,11 @@
 +          i18n rstart xfs xterm xtrans
  #endif
  
- all::
+ AllTarget(specindex.html)
+@@ -21,6 +21,4 @@
+ #endif
  
- MakeSubdirs($(SUBDIRS))
- DependSubdirs($(SUBDIRS))
+ CppRawFileTarget(specindex.html,specindex.cpp,$(SPECINDEXDEFS),NullParameter)
 -
 -InstallDoc(specindex,specindex.html)
  

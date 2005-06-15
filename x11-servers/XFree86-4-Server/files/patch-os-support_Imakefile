@@ -1,0 +1,15 @@
+
+--- patch-support-Imakefile begins here ---
+--- programs/Xserver/hw/xfree86/os-support/Imakefile.orig	Thu Jan 20 03:30:38 2005
++++ programs/Xserver/hw/xfree86/os-support/Imakefile	Thu Jan 20 03:31:37 2005
+@@ -15,6 +15,7 @@
+ 	(defined(SunArchitecture) && defined(SparcArchitecture)) || \
+ 	(defined(KFreeBSDArchitecture) && defined(AlphaArchitecture)) || \
+ 	(defined(KFreeBSDArchitecture) && defined(Sparc64Architecture)) || \
++	(defined(KFreeBSDArchitecture) && defined(PpcArchitecture)) || \
+ 	(defined(KNetBSDArchitecture) && defined(AlphaArchitecture)) || \
+ 	(defined(KNetBSDArchitecture) && defined(PpcArchitecture)) || \
+ 	(defined(KNetBSDArchitecture) && defined(SparcArchitecture)) || \
+--- patch-support-Imakefile ends here ---
+
+

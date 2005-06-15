@@ -6,21 +6,14 @@
 #
 
 PORTNAME=	libraries
-PORTVERSION=	4.4.0
-PORTREVISION=	3
+PORTVERSION=	4.5.0
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
-			anholt/:local
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	XFree86-4.4.0-src-1.tgz:x \
-		XFree86-4.4.0-src-2.tgz:x \
-		XFree86-4.4.0-src-3.tgz:x \
-		Wraphelp2.gz:local
-EXTRACT_ONLY=	XFree86-4.4.0-src-1.tgz \
-		XFree86-4.4.0-src-2.tgz \
-		XFree86-4.4.0-src-3.tgz
+DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
+		XFree86-${PORTVERSION}-src-2.tgz \
+		XFree86-${PORTVERSION}-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 libraries and headers
@@ -28,12 +21,16 @@ COMMENT=	XFree86-4 libraries and headers
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-CONFLICTS=	Mesa-* libX11-* libGL-* libGLU-* libICE-* libSM-* libXau-* \
-		libXaw-* libXcursor-* libXdmcp-* libXext-* libXfont-* libXi-* \
-		libXinerama-* libXmu-* libXp-* libXpm-* libXrandr-* \
-		libXrender-* libXres-* libXt-* libXv-* libXxf86-* libxkbfile-* \
-		panoramixext-* printext-* randrext-* renderext-* resourceext-* \
-		xextensions-* xf86ext-* xlibs-* xorg-libraries-* xpm-* xproto-*
+CONFLICTS=	Mesa-[0-9]* libX11-[0-9]* libGL-[0-9]* libGLU-[0-9]* \
+		libICE-[0-9]* libSM-[0-9]* libXau-[0-9]* libXaw-[0-9]* \
+		libXcursor-[0-9]* libXdmcp-[0-9]* libXext-[0-9]* \
+		libXfont-[0-9]* libXi-[0-9]* libXinerama-[0-9]* libXmu-[0-9]* \
+		libXp-[0-9]* libXpm-[0-9]* libXrandr-[0-9]* libXrender-[0-9]* \
+		libXres-[0-9]* libXt-[0-9]* libXv-[0-9]* libXxf86-[0-9]* \
+		libxkbfile-[0-9]* panoramixext-[0-9]* printext-[0-9]* \
+		randrext-[0-9]* renderext-[0-9]* resourceext-[0-9]* \
+		xextensions-[0-9]* xf86ext-[0-9]* xlibs-[0-9]* \
+		xorg-libraries-[0-9]* xpm-[0-9]* xproto-[0-9]*
 
 USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
@@ -96,7 +93,8 @@ XINSTALL_DIRS=		include lib nls programs/Xserver/include \
 XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
 
 # XFree86 User Config:
-# DebuggableLibraries NO	build with debug libs (require FreeBSD-4 or later)
+# DebuggableLibraries NO	build with debug libs
+#				(requires FreeBSD 4.X or later)
 # ----------------------------------------------------------------------------
 DebuggableLibraries?=	NO
 # End of XFree86 User Config
@@ -108,7 +106,7 @@ DebuggableLibraries?=	NO
 .include "Makefile.inc"
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xfree86-4
-IGNORE= is part of XFree86-4
+IGNORE=	is part of XFree86-4
 .endif
 
 # BuildXF86DRI is false for FreeBSD < 4.1
@@ -118,27 +116,29 @@ PLIST_SUB+=	OSMESA:="@comment "
 PLIST_SUB+=	OSMESA:=""
 .endif
 
-# sparc64 doesn't have a working libc_r yet, and -current doesn't need libXThrStub.
-.if ${MACHINE_ARCH} == "sparc64" || ${OSVERSION} >= 500043
-PLIST_SUB+=	XTHRSTUB:="@comment "
-.else
-PLIST_SUB+=	XTHRSTUB:=""
-.endif
-
-post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
-		${WRKSRC}/lib/Xdmcp/Wraphelp.c
+# sparc64 doesn't have a working libc_r yet, and -current doesn't need
+# libXThrStub.
+#.if ${ARCH} == "sparc64" || ${OSVERSION} >= 500043
+#PLIST_SUB+=	XTHRSTUB:="@comment "
+#.else
+#PLIST_SUB+=	XTHRSTUB:=""
+#.endif
 
 post-patch:
-	${CP} ${FILESDIR}/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
+	${CP} ${FILESDIR}/nls::Compose::microsoft-cp1251 \
+	    ${WRKSRC}/nls/Compose/microsoft-cp1251
 
 post-install:
+	${MKDIR} ${PREFIX}/include/X11/PM
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \
-		${PREFIX}/include/X11/PM
+	    ${PREFIX}/include/X11/PM
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PMproto.h \
-		${PREFIX}/include/X11/PM
+	    ${PREFIX}/include/X11/PM
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/lib/Xcursor/xcursor.pc \
-		${PREFIX}/libdata/pkgconfig
+	    ${PREFIX}/libdata/pkgconfig
+	${MKDIR} ${PREFIX}/lib/X11/xserver
+	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/Xext/SecurityPolicy \
+	    ${PREFIX}/lib/X11/xserver/SecurityPolicy.default
 
 .include <bsd.port.post.mk>

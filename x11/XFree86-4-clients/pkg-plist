@@ -580,7 +580,9 @@ lib/X11/xkb/symbols/iu
 lib/X11/xkb/symbols/jp
 lib/X11/xkb/symbols/kan
 lib/X11/xkb/symbols/keypad
+lib/X11/xkb/symbols/ky
 lib/X11/xkb/symbols/la
+lib/X11/xkb/symbols/lat
 lib/X11/xkb/symbols/level3
 lib/X11/xkb/symbols/lo
 lib/X11/xkb/symbols/lock
@@ -640,6 +642,8 @@ lib/X11/xkb/symbols/pc/ge_ru
 lib/X11/xkb/symbols/pc/guj
 lib/X11/xkb/symbols/pc/gur
 lib/X11/xkb/symbols/pc/hr
+lib/X11/xkb/symbols/pc/hsb
+lib/X11/xkb/symbols/pc/hu
 lib/X11/xkb/symbols/pc/ie
 lib/X11/xkb/symbols/pc/il
 lib/X11/xkb/symbols/pc/il_phonetic
@@ -648,7 +652,9 @@ lib/X11/xkb/symbols/pc/is
 lib/X11/xkb/symbols/pc/it
 lib/X11/xkb/symbols/pc/iu
 lib/X11/xkb/symbols/pc/kan
+lib/X11/xkb/symbols/pc/ky
 lib/X11/xkb/symbols/pc/la
+lib/X11/xkb/symbols/pc/lat
 lib/X11/xkb/symbols/pc/latin
 lib/X11/xkb/symbols/pc/lo
 lib/X11/xkb/symbols/pc/lt
@@ -674,6 +680,7 @@ lib/X11/xkb/symbols/pc/se_FI
 lib/X11/xkb/symbols/pc/se_NO
 lib/X11/xkb/symbols/pc/se_SE
 lib/X11/xkb/symbols/pc/si
+lib/X11/xkb/symbols/pc/sin
 lib/X11/xkb/symbols/pc/sk
 lib/X11/xkb/symbols/pc/sk_qwerty
 lib/X11/xkb/symbols/pc/sr
@@ -687,6 +694,7 @@ lib/X11/xkb/symbols/pc/tj
 lib/X11/xkb/symbols/pc/tml
 lib/X11/xkb/symbols/pc/tr
 lib/X11/xkb/symbols/pc/ua
+lib/X11/xkb/symbols/pc/ur_PK
 lib/X11/xkb/symbols/pc/us
 lib/X11/xkb/symbols/pc/us_intl
 lib/X11/xkb/symbols/pc/uz
@@ -748,6 +756,7 @@ lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
 lib/X11/xman.help
 lib/X11/xsm/system.xsm
+@dirrm lib/X11/fonts/util
 @dirrm lib/X11/icons/default
 @dirrm lib/X11/icons/handhelds/cursors
 @dirrm lib/X11/icons/handhelds
@@ -755,5 +764,48 @@ lib/X11/xsm/system.xsm
 @dirrm lib/X11/icons/redglass
 @dirrm lib/X11/icons/whiteglass/cursors
 @dirrm lib/X11/icons/whiteglass
+@dirrm lib/X11/icons
+@dirrm lib/X11/lbxproxy
+@dirrm lib/X11/proxymngr
+@dirrm lib/X11/rstart/commands/x11r6
+@dirrm lib/X11/rstart/commands
+@dirrm lib/X11/rstart/contexts
+@dirrm lib/X11/rstart
+@dirrm lib/X11/twm
+@dirrm lib/X11/x11perfcomp
 @dirrm lib/X11/xdm/default
+@dirrm lib/X11/xdm/pixmaps
+@dirrm lib/X11/xdm
+@dirrm lib/X11/xedit/lisp/progmodes
+@dirrm lib/X11/xedit/lisp
+@dirrm lib/X11/xedit
+@dirrm lib/X11/xinit
+@dirrm lib/X11/xkb/compat
+@dirrm lib/X11/xkb/compiled
+@dirrm lib/X11/xkb/geometry/digital
 @dirrm lib/X11/xkb/geometry/ibm
+@dirrm lib/X11/xkb/geometry/sgi
+@dirrm lib/X11/xkb/geometry
+@dirrm lib/X11/xkb/keycodes/digital
+@dirrm lib/X11/xkb/keycodes/sgi
+@dirrm lib/X11/xkb/keycodes
+@dirrm lib/X11/xkb/keymap/digital
+@dirrm lib/X11/xkb/keymap/sgi
+@dirrm lib/X11/xkb/keymap/sun
+@dirrm lib/X11/xkb/keymap
+@dirrm lib/X11/xkb/rules
+@dirrm lib/X11/xkb/semantics
+@dirrm lib/X11/xkb/symbols/digital
+@dirrm lib/X11/xkb/symbols/fujitsu
+@dirrm lib/X11/xkb/symbols/hp
+@dirrm lib/X11/xkb/symbols/macintosh
+@dirrm lib/X11/xkb/symbols/nec
+@dirrm lib/X11/xkb/symbols/pc
+@dirrm lib/X11/xkb/symbols/sgi
+@dirrm lib/X11/xkb/symbols/sony
+@dirrm lib/X11/xkb/symbols/sun
+@dirrm lib/X11/xkb/symbols/xfree68
+@dirrm lib/X11/xkb/symbols
+@dirrm lib/X11/xkb/types
+@dirrm lib/X11/xkb
+@dirrm lib/X11/xsm

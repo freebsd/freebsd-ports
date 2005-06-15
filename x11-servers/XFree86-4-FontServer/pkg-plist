@@ -2,3 +2,4 @@
 bin/xfs
 etc/rc.d/xfs.sh
 lib/X11/fs/config.default
+@dirrm lib/X11/fs

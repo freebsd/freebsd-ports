@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	documents
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	XFree86-4.4.0-src-1.tgz \
-		XFree86-4.4.0-src-6.tgz
+DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
+		XFree86-${PORTVERSION}-src-6.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 documentation
@@ -37,6 +37,6 @@ do-configure:
 
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xfree86-4
-IGNORE= is part of XFree86-4
+IGNORE=	is part of XFree86-4
 .endif
 .include <bsd.port.post.mk>

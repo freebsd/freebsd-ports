@@ -6,21 +6,14 @@
 #
 
 PORTNAME=	PrintServer
-PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTVERSION=	4.5.0
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
-			anholt/:local
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	XFree86-4.4.0-src-1.tgz:x \
-		XFree86-4.4.0-src-2.tgz:x \
-		XFree86-4.4.0-src-3.tgz:x \
-		Wraphelp2.gz:local
-EXTRACT_ONLY=	XFree86-4.4.0-src-1.tgz \
-		XFree86-4.4.0-src-2.tgz \
-		XFree86-4.4.0-src-3.tgz
+DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
+		XFree86-${PORTVERSION}-src-2.tgz \
+		XFree86-${PORTVERSION}-src-3.tgz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 print server
@@ -31,10 +24,6 @@ PLIST_FILES=		bin/Xprt
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		programs/Xserver
-
-post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
-		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 do-install:
 	$(INSTALL_PROGRAM) ${WRKSRC}/programs/Xserver/Xprt ${PREFIX}/bin/Xprt

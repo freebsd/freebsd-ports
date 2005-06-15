@@ -1,0 +1,139 @@
+--- cf/Imake.rules.orig	Sun Jun  5 02:56:52 2005
++++ cf/Imake.rules	Sun Jun  5 02:56:37 2005
+@@ -1198,7 +1198,7 @@
+ 
+ #ifndef InstallNamedTarget
+ #define InstallNamedTarget(step,srcname,flags,dest,dstname)		@@\
+-step::									@@\
++step:: srcname								@@\
+ 	MakeDir($(DESTDIR)dest)						@@\
+ 	InstallNamedInline(srcname,flags,dest,dstname)
+ #endif /* InstallNamedTarget */
+@@ -1211,7 +1211,7 @@
+  */
+ #ifndef InstallNamedTargetNoClobber
+ #define InstallNamedTargetNoClobber(step,srcname,flags,dest,dstname)	@@\
+-step::									@@\
++step:: srcname								@@\
+ 	MakeDir($(DESTDIR)dest)						@@\
+ 	@if [ -f $(DESTDIR)dest/dstname ]; then \			@@\
+ 	 echo "Not overwriting existing" $(DESTDIR)dest/dstname; \	@@\
+@@ -1233,7 +1233,7 @@
+  */
+ #ifndef InstallLibrary
+ #define	InstallLibrary(libname,dest)					@@\
+-install::								@@\
++install:: LibraryTargetName(libname)					@@\
+ 	MakeDir($(DESTDIR)dest)						@@\
+ 	$(INSTALL) $(INSTALLFLAGS) $(INSTLIBFLAGS) LibraryTargetName(libname) $(DESTDIR)dest @@\
+ 	RanLibrary($(RANLIBINSTFLAGS) $(DESTDIR)dest/LibraryTargetName(libname))
+@@ -1278,7 +1278,7 @@
+  */
+ #ifndef MergeIntoInstalledLibrary
+ #define MergeIntoInstalledLibrary(tolib,fromlib)			@@\
+-install::								@@\
++install::  fromlib							@@\
+ 	$(SCRIPTSRC)/mergelib $(DESTDIR)tolib fromlib
+ #endif /* MergeIntoInstalledLibrary */
+ 
+@@ -1350,7 +1350,7 @@
+ 									@@\
+ CppManTarget(file, $(EXTRAMANDEFS))					@@\
+ 									@@\
+-install.man::								@@\
++install.man:: file.$(MANNEWSUFFIX)					@@\
+ 	MakeDir($(DESTDIR)destdir)					@@\
+ 	$(INSTALL) -c $(INSTMANFLAGS) file.$(MANNEWSUFFIX) \		@@\
+ 		$(DESTDIR)destdir/dest.suffix
+@@ -1382,7 +1382,7 @@
+ 									@@\
+ CppManTarget(file, $(EXTRAMANDEFS))					@@\
+ 									@@\
+-install.man::								@@\
++install.man:: file.$(MANNEWSUFFIX)					@@\
+ 	MakeDir($(DESTDIR)destdir)					@@\
+ 	$(RM) $(DESTDIR)destdir/dest.$(MANSUFFIX)*			@@\
+ 	$(INSTALL) -c $(INSTMANFLAGS) file.$(MANNEWSUFFIX) \		@@\
+@@ -1396,7 +1396,7 @@
+ 									@@\
+ CppManTarget(file, $(EXTRAMANDEFS))					@@\
+ 									@@\
+-install.man::								@@\
++install.man:: file.$(MANNEWSUFFIX)					@@\
+ 	MakeDir($(DESTDIR)destdir)					@@\
+ 	$(RM) $(DESTDIR)destdir/dest.suffix*				@@\
+ 	$(INSTALL) -c $(INSTMANFLAGS) file.$(MANNEWSUFFIX) \		@@\
+@@ -1406,7 +1406,7 @@
+ 
+ #ifndef InstallMultipleMan
+ #define InstallMultipleMan(list,dest)					@@\
+-install.man::								@@\
++install.man:: list							@@\
+ 	MakeDir($(DESTDIR)dest)						@@\
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac; \			@@\
+ 	for i in list; do \						@@\
+@@ -1507,9 +1507,9 @@
+ dest.suffix.html: file.$(MANNEWSUFFIX) RmanCmdDependency		@@\
+ 	RemoveFiles(dest.suffix.html dest.suffix-html)			@@\
+ 	RunProgram(RMAN,$(RMANOPTIONS) < file.$(MANNEWSUFFIX) \		@@\
+-	  > dest.suffix-html) && $(MV) dest.suffix-html $@		@@\
++	  > dest.suffix-html) && $(MV) dest.suffix-html dest.suffix.html	@@\
+ 									@@\
+-install.man::								@@\
++install.man:: dest.suffix.html						@@\
+ 	MakeDir($(DESTDIR)$(DOCHTMLDIR))				@@\
+ 	@(SUF=`expr suffix \: '\(.\)'`; \				@@\
+ 	 set -x; \							@@\
+@@ -1525,7 +1525,7 @@
+ #ifndef InstallHtmlManPageAliases
+ #if BuildHtmlManPages
+ #define InstallHtmlManPageAliases(file,aliases,suffix)			@@\
+-install.man::								@@\
++install.man:: file.suffix.html						@@\
+ 	@SUF=`expr suffix \: '\(.\)'`; \				@@\
+ 	for i in aliases; do (set -x; \					@@\
+ 	  RemoveFile($(DESTDIR)$(DOCHTMLDIR)/$$i.$$SUF.html); \		@@\
+@@ -1616,7 +1616,7 @@
+  */
+ #ifndef InstallNonExec
+ #define	InstallNonExec(file,dest)					@@\
+-install::								@@\
++install:: file								@@\
+ 	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) file $(DESTDIR)dest
+ #endif /* InstallNonExec */
+ 
+@@ -1756,7 +1756,7 @@
+ 	MakeDir(Concat($(DESTDIR),npath/mdir))				@@\
+ 	@MakeFlagsToShellFlags(i,set +e); \				@@\
+ 	if [ -d Concat($(DESTDIR),opath/cdir) ]; then \			@@\
+-	  RELPATH=`echo opath/cdir | \					@@\
++	  RELPATH=`cd opath/cdir; pwd | \				@@\
+ 		sed -e 's:^/::' -e 's:[^/.][^/]*:..:'g -e 's:/\.$$::'`; \ @@\
+ 	  cd Concat($(DESTDIR),opath/cdir); \				@@\
+ 	  if [ -d rdir -a ! -h rdir ]; then \				@@\
+@@ -1803,7 +1803,7 @@
+ 	MakeDir(Concat($(DESTDIR),npath))				@@\
+ 	@MakeFlagsToShellFlags(i,set +e); \				@@\
+ 	if [ -d Concat($(DESTDIR),opath) ]; then \			@@\
+-	  RELPATH=`echo opath | \					@@\
++	  RELPATH=`cd opath; pwd | \					@@\
+ 		sed -e 's:^.::' -e 's:[^/.][^/]*:..:'g`; \		@@\
+ 	  cd Concat($(DESTDIR),opath); \				@@\
+ 	  if [ -f lfile -a ! -h lfile ]; then \				@@\
+@@ -3607,14 +3607,14 @@
+  */
+ #ifndef InstallDynamicModule
+ #define InstallDynamicModule(module,dest,subdir)			@@\
+-install:: 								@@\
++install:: module							@@\
+ 	MakeDir($(DESTDIR)dest/subdir)					@@\
+ 	$(INSTALL) -c $(INSTDATFLAGS) module $(DESTDIR)dest/subdir
+ #endif
+ 
+ #ifndef InstallDynamicNamedModule
+ #define InstallDynamicNamedModule(module,instname,dest,subdir)		@@\
+-install::								@@\
++install:: module							@@\
+ 	MakeDir($(DESTDIR)dest/subdir)					@@\
+ 	$(INSTALL) -c $(INSTDATFLAGS) module $(DESTDIR)dest/subdir/instname
+ #endif

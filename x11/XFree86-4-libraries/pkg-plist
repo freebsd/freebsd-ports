@@ -1,3 +1,4 @@
+@unexec if cmp -s %D/lib/X11/xserver/SecurityPolicy %D/lib/X11/xserver/SecurityPolicy.default; then rm %D/lib/X11/xserver/SecurityPolicy; fi
 bin/xcursor-config
 include/DPS/ColorSB.h
 include/DPS/ColorSBP.h
@@ -305,6 +306,8 @@ include/X11/extensions/XvMCproto.h
 include/X11/extensions/Xvlib.h
 include/X11/extensions/Xvproto.h
 include/X11/extensions/bigreqstr.h
+include/X11/extensions/dmxext.h
+include/X11/extensions/dmxproto.h
 include/X11/extensions/dpms.h
 include/X11/extensions/dpmsstr.h
 include/X11/extensions/extutil.h
@@ -323,6 +326,7 @@ include/X11/extensions/multibuf.h
 include/X11/extensions/multibufst.h
 include/X11/extensions/panoramiXext.h
 include/X11/extensions/panoramiXproto.h
+include/X11/extensions/panoramiXwrap.h
 include/X11/extensions/randr.h
 include/X11/extensions/randrproto.h
 include/X11/extensions/record.h
@@ -362,12 +366,6 @@ include/X11/extensions/xtrapproto.h
 include/X11/fonts/FS.h
 include/X11/fonts/FSlib.h
 include/X11/fonts/FSproto.h
-include/X11/fonts/codeconv/cconvversion.h
-include/X11/fonts/codeconv/xttcap.h
-include/X11/fonts/codeconv/xttcconv.h
-include/X11/fonts/codeconv/xttcconvP.h
-include/X11/fonts/codeconv/xttcommon.h
-include/X11/fonts/codeconv/xttversion.h
 include/X11/fonts/fontenc.h
 include/X11/fonts/fsmasks.h
 include/X11/keysym.h
@@ -470,11 +468,17 @@ lib/X11/locale/koi8-r/XLC_LOCALE
 lib/X11/locale/koi8-u/Compose
 lib/X11/locale/koi8-u/XI18N_OBJS
 lib/X11/locale/koi8-u/XLC_LOCALE
+lib/X11/locale/lib/common/ximcp.so
 lib/X11/locale/lib/common/ximcp.so.2
+lib/X11/locale/lib/common/xlcDef.so
 lib/X11/locale/lib/common/xlcDef.so.2
+lib/X11/locale/lib/common/xlcUTF8Load.so
 lib/X11/locale/lib/common/xlcUTF8Load.so.2
+lib/X11/locale/lib/common/xlibi18n.so
 lib/X11/locale/lib/common/xlibi18n.so.2
+lib/X11/locale/lib/common/xlocale.so
 lib/X11/locale/lib/common/xlocale.so.2
+lib/X11/locale/lib/common/xomGeneric.so
 lib/X11/locale/lib/common/xomGeneric.so.2
 lib/X11/locale/locale.alias
 lib/X11/locale/locale.dir
@@ -523,6 +527,7 @@ lib/X11/locale/zh_TW.big5/XLC_LOCALE
 lib/X11/locale/zh_TW/Compose
 lib/X11/locale/zh_TW/XI18N_OBJS
 lib/X11/locale/zh_TW/XLC_LOCALE
+lib/X11/xserver/SecurityPolicy.default
 lib/libFS.a
 lib/libFS.so
 lib/libFS.so.6
@@ -550,8 +555,8 @@ lib/libX11.so.6
 lib/libXRes.a
 lib/libXRes.so
 lib/libXRes.so.1
-%%XTHRSTUB:%%lib/libXThrStub.so
-%%XTHRSTUB:%%lib/libXThrStub.so.6
+lib/libXThrStub.so
+lib/libXThrStub.so.6
 lib/libXTrap.a
 lib/libXTrap.so
 lib/libXTrap.so.6
@@ -623,6 +628,9 @@ lib/libXxf86misc.so.1
 lib/libXxf86vm.a
 lib/libXxf86vm.so
 lib/libXxf86vm.so.1
+lib/libdmx.a
+lib/libdmx.so
+lib/libdmx.so.1
 lib/libdps.a
 lib/libdps.so
 lib/libdps.so.1
@@ -647,4 +655,71 @@ lib/libxkbui.a
 lib/libxkbui.so
 lib/libxkbui.so.1
 libdata/pkgconfig/xcursor.pc
+@dirrm include/DPS
+@dirrm include/GL
+@dirrm include/X11/ICE
+@dirrm include/X11/PM
+@dirrm include/X11/SM
+@dirrm include/X11/Xaw
+@dirrm include/X11/Xcursor
+@dirrm include/X11/Xmu
+@dirrm include/X11/extensions
+@dirrm include/X11/fonts
+@dirrm lib/X11/locale/C
+@dirrm lib/X11/locale/armscii-8
+@dirrm lib/X11/locale/el_GR.UTF-8
+@dirrm lib/X11/locale/en_US.UTF-8
+@dirrm lib/X11/locale/georgian-academy
+@dirrm lib/X11/locale/georgian-ps
+@dirrm lib/X11/locale/ibm-cp1133
+@dirrm lib/X11/locale/iscii-dev
+@dirrm lib/X11/locale/isiri-3342
+@dirrm lib/X11/locale/iso8859-1
+@dirrm lib/X11/locale/iso8859-10
+@dirrm lib/X11/locale/iso8859-11
+@dirrm lib/X11/locale/iso8859-13
+@dirrm lib/X11/locale/iso8859-14
+@dirrm lib/X11/locale/iso8859-15
+@dirrm lib/X11/locale/iso8859-2
+@dirrm lib/X11/locale/iso8859-3
+@dirrm lib/X11/locale/iso8859-4
+@dirrm lib/X11/locale/iso8859-5
+@dirrm lib/X11/locale/iso8859-6
+@dirrm lib/X11/locale/iso8859-7
+@dirrm lib/X11/locale/iso8859-8
+@dirrm lib/X11/locale/iso8859-9
+@dirrm lib/X11/locale/iso8859-9e
+@dirrm lib/X11/locale/ja
+@dirrm lib/X11/locale/ja.JIS
+@dirrm lib/X11/locale/ja.SJIS
+@dirrm lib/X11/locale/ja_JP.UTF-8
+@dirrm lib/X11/locale/ko
+@dirrm lib/X11/locale/ko_KR.UTF-8
+@dirrm lib/X11/locale/koi8-c
+@dirrm lib/X11/locale/koi8-r
+@dirrm lib/X11/locale/koi8-u
+@dirrm lib/X11/locale/lib/common
+@dirrm lib/X11/locale/lib
+@dirrm lib/X11/locale/microsoft-cp1251
+@dirrm lib/X11/locale/microsoft-cp1255
+@dirrm lib/X11/locale/microsoft-cp1256
+@dirrm lib/X11/locale/mulelao-1
+@dirrm lib/X11/locale/nokhchi-1
+@dirrm lib/X11/locale/tatar-cyr
+@dirrm lib/X11/locale/th_TH
+@dirrm lib/X11/locale/th_TH.UTF-8
+@dirrm lib/X11/locale/tscii-0
+@dirrm lib/X11/locale/vi_VN.tcvn
+@dirrm lib/X11/locale/vi_VN.viscii
+@dirrm lib/X11/locale/zh_CN
 @dirrm lib/X11/locale/zh_CN.UTF-8
+@dirrm lib/X11/locale/zh_CN.gbk
+@dirrm lib/X11/locale/zh_HK.big5
+@dirrm lib/X11/locale/zh_HK.big5hkscs
+@dirrm lib/X11/locale/zh_TW
+@dirrm lib/X11/locale/zh_TW.UTF-8
+@dirrm lib/X11/locale/zh_TW.big5
+@dirrm lib/X11/locale
+@exec if [ ! -f %D/lib/X11/xserver/SecurityPolicy ]; then cp %D/lib/X11/xserver/SecurityPolicy.default %D/lib/X11/xserver/SecurityPolicy; fi
+@unexec rmdir %D/include/X11/bitmaps 2>/dev/null || true
+@unexec rmdir %D/lib/X11/xserver 2>/dev/null || true

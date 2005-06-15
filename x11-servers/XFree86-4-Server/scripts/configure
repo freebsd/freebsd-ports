@@ -32,7 +32,6 @@ echo "#define XInputDrivers mouse keyboard digitaledge dynapro elo2300 \
 			wacom void citron"	>> $LOCALDEF
 echo "#define BuildXF86DRI ${BuildXF86DRI}"	>> $LOCALDEF
 echo "#define BuildXF86DRM NO"			>> $LOCALDEF
-echo "#define InstSrcDir $WRKDIR/drmsource"	>> $LOCALDEF
 echo "#define HasGlide3 YES"			>> $LOCALDEF
 
 # Install driver manpages as foo.4x so they can easily be accesed by
@@ -55,9 +54,11 @@ for i in \
 	BuildFontServer \
 	XVirtualFramebufferServer \
 	XprtServer \
+	BuildDmx \
 	LibHeaders \
 	LibInstall \
 	ForceNormalLib \
+	InstallSecurityConfig \
 	XTrueTypeInstallCConvHeaders
 do \
 	echo "#define $i NO"			>> $LOCALDEF

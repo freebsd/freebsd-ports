@@ -1,0 +1,11 @@
+--- lib/Imakefile.orig	Sun Jan  9 22:24:32 2005
++++ lib/Imakefile	Sun Jan  9 22:25:09 2005
+@@ -249,7 +249,7 @@
+              $(DPSLIBDIR) $(DPSTKLIBDIR) $(PSRESLIBDIR) $(XINERAMADIR) \
+              $(ZLIBDIR) $(REGEXDIR) $(RENDERLIBDIR) $(FREETYPE2BUILDDIR) \
+              $(LIBXML2BUILDDIR) $(FONTCONFIGBUILDDIR) \
+-             $(XFT1LIBDIR) $(XFTLIBDIR) $(XVMCLIBDIR) $(RANDRLIBDIR) \
++             $(XVMCLIBDIR) $(RANDRLIBDIR) \
+              $(XTRAPLIBDIR) $(XRESLIBDIR) $(XCURSORLIBDIR) $(APPLELIBDIR) \
+ 	     $(DMXLIBDIR)
+ 
