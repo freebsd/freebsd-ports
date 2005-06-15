@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ade/gnu
 DISTNAME=	autoconf-000227
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13 version)
 
 DEPRECATED=	Please use devel/autoconf259 instead
