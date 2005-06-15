@@ -1,5 +1,5 @@
---- configs/Makefile.am.orig	Mon Nov 24 23:01:37 2003
-+++ configs/Makefile.am	Wed Jul  7 14:57:09 2004
+--- configs/Makefile.am.orig	Tue Jun  7 22:43:47 2005
++++ configs/Makefile.am	Tue Jun  7 22:44:44 2005
 @@ -1,6 +1,6 @@
 -ftsymdir=$(localstatedir)/sym
 +ftsymdir=$(localstatedir)/share/flow-tools
@@ -9,12 +9,12 @@
 +ftcfgdir=$(localstatedir)/etc/flow-tools
  ftcfg_DATA = map.cfg tag.cfg filter.cfg stat.cfg mask.cfg xlate.cfg
  
---- configs/Makefile.in.orig	Wed Dec  3 22:20:08 2003
-+++ configs/Makefile.in	Wed Jul  7 14:58:41 2004
-@@ -117,10 +117,10 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- configs/Makefile.in.orig	Tue Jun  7 22:44:14 2005
++++ configs/Makefile.in	Tue Jun  7 22:45:10 2005
+@@ -88,10 +88,10 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
 -ftsymdir = $(localstatedir)/sym
 +ftsymdir = $(localstatedir)/share/flow-tools
  ftsym_DATA = ip-prot.sym ip-type.sym tcp-port.sym asn.sym tag.sym

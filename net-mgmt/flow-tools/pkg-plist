@@ -8,12 +8,15 @@ bin/flow-filter
 bin/flow-gen
 bin/flow-header
 bin/flow-import
+bin/flow-log2rrd
 bin/flow-mask
 bin/flow-merge
 bin/flow-nfilter
 bin/flow-print
 bin/flow-receive
 bin/flow-report
+bin/flow-rpt2rrd
+bin/flow-rptfmt
 bin/flow-send
 bin/flow-split
 bin/flow-stat
