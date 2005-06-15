@@ -1,0 +1,8 @@
+--- Makefile.orig	Wed Jun 15 15:18:23 2005
++++ Makefile	Wed Jun 15 15:18:07 2005
+@@ -1,4 +1,4 @@
+ KMOD=	ng_daphne
+-SRCS= 	ng_daphne.c
++SRCS= 	ng_daphne.c opt_netgraph.h
+ 
+ .include <bsd.kmod.mk>
