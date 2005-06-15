@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (version 2.53)
 
 DEPRECATED=	Please use devel/autoconf259 instead
