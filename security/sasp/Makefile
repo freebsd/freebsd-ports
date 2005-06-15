@@ -8,7 +8,9 @@
 PORTNAME=	sasp
 PORTVERSION=	0.1
 CATEGORIES=	security
-MASTER_SITES=	http://sviat.opengeeks.it/codes/sasp/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~ahze/distfiles/
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	sviat@OpenGEEKS.it
 COMMENT=	A tool that permits to use a gateway whatever IP we have
