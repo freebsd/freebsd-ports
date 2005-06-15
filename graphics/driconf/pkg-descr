@@ -1,0 +1,6 @@
+driconf is an application for configuring DRI drivers at a system or user level,
+with choices applicable to all or to specific applications.  Options are
+advertised to driconf by the DRI drivers.
+
+WWW: http://dri.freedesktop.org/wiki/DriConf
+-- Eric Anholt <anholt@FreeBSD.org>
