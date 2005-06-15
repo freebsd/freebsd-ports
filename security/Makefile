@@ -450,6 +450,7 @@
     SUBDIR += samba-vscan
     SUBDIR += samhain
     SUBDIR += sancp
+    SUBDIR += sasp
     SUBDIR += scanlogd
     SUBDIR += scanssh
     SUBDIR += seahorse
