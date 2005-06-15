@@ -7,7 +7,7 @@
 
 PORTNAME=	mergeant
 PORTVERSION=	0.52
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.52
@@ -26,5 +26,9 @@ INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|Icon=|Icon=${PREFIX}/share/gnome/pixmaps/|g' \
+		${WRKSRC}/mergeant.desktop.in
 
 .include <bsd.port.mk>
