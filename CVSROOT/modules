@@ -1705,6 +1705,7 @@ drexelsnmp	ports/java/drexelsnmp
 drgeo		ports/math/drgeo
 dri		ports/graphics/dri
 dri-devel	ports/graphics/dri-devel
+driconf		ports/graphics/driconf
 driftnet	ports/net-mgmt/driftnet
 driglide	ports/x11-servers/driglide
 drill		ports/dns/drill
