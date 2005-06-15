@@ -70,6 +70,7 @@
     SUBDIR += dore
     SUBDIR += dri
     SUBDIR += dri-devel
+    SUBDIR += driconf
     SUBDIR += drm-kmod
     SUBDIR += duhdraw
     SUBDIR += dvipng
