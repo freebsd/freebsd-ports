@@ -14,6 +14,7 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	A library for opening files over a network
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN3=		fopen_net.3 \
 		fseek_net.3 \
