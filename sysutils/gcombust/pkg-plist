@@ -19,6 +19,5 @@ share/locale/ru/LC_MESSAGES/gcombust.mo
 share/locale/sk/LC_MESSAGES/gcombust.mo
 share/locale/sv/LC_MESSAGES/gcombust.mo
 share/pixmaps/gcombust.xpm
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
 @dirrm share/doc/gcombust

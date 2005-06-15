@@ -50,7 +50,6 @@ share/pixmaps/emelfm2/icon_move2_24.png
 share/pixmaps/emelfm2/icon_move_24.png
 share/pixmaps/emelfm2/icon_up.xpm
 @dirrm share/pixmaps/emelfm2
-@dirrm share/pixmaps
 @dirrm share/applications-registry
 @dirrm share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

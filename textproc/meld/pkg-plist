@@ -85,7 +85,6 @@ share/meld/undo.py
 share/meld/undo.pyc
 share/meld/undo.pyo
 share/pixmaps/meld.png
-@dirrm share/pixmaps
 @dirrm share/meld/glade2/pixmaps
 @dirrm share/meld/glade2
 @dirrm share/meld

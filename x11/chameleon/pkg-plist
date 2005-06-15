@@ -1,3 +1,2 @@
 bin/chameleon
 share/pixmaps/cham.xpm
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true

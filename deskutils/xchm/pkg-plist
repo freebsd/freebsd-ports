@@ -18,4 +18,3 @@ share/pixmaps/xchm-128.xpm
 share/pixmaps/xchm-16.xpm
 share/pixmaps/xchm-32.xpm
 share/pixmaps/xchm-48.xpm
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
