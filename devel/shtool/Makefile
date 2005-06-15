@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	shtool
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_OSSP}
-MASTER_SITE_SUBDIR=	tool/${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Portable Shell Tool
 
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		shtool-arx.1 shtool-echo.1 shtool-fixperm.1 shtool-install.1 \
 		shtool-mdate.1 shtool-mkdir.1 shtool-mkln.1 shtool-mkshadow.1 \
