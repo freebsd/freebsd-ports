@@ -10705,6 +10705,7 @@ sarg		ports/www/sarg
 sarien		ports/games/sarien
 sary		ports/textproc/sary
 sash		ports/shells/sash
+sasp		ports/security/sasp
 satellite	ports/net-mgmt/satellite
 sather		ports/lang/Sather
 sattrack	ports/astro/sattrack
