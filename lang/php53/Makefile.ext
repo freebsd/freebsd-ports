@@ -462,7 +462,7 @@ post-extract:
 .endif
 
 .if ${PHP_MODNAME} == "oracle"
-post-patch:
+pre-configure:
 	@cd ${WRKSRC}; \
 	for lib in c3v6 client common core3 epc generic ncr nlsrtl3 sqlnet wrap; do \
 		/usr/bin/ar x ${LOCALBASE}/oracle7/lib/lib$${lib}.a; \
