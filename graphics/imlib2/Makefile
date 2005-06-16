@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.1
+PORTREVISION=	0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The next generation graphic library for enlightenment package
