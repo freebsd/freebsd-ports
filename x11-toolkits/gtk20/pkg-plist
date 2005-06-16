@@ -278,6 +278,7 @@ share/gtk-2.0/demo/button_box.c
 share/gtk-2.0/demo/changedisplay.c
 share/gtk-2.0/demo/clipboard.c
 share/gtk-2.0/demo/colorsel.c
+share/gtk-2.0/demo/combobox.c
 share/gtk-2.0/demo/dialog.c
 share/gtk-2.0/demo/drawingarea.c
 share/gtk-2.0/demo/editable_cells.c
@@ -300,6 +301,7 @@ share/gtk-2.0/demo/images.c
 share/gtk-2.0/demo/list_store.c
 share/gtk-2.0/demo/menus.c
 share/gtk-2.0/demo/panes.c
+share/gtk-2.0/demo/pickers.c
 share/gtk-2.0/demo/pixbufs.c
 share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/sizegroup.c
