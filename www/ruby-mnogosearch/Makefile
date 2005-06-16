@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby binding to mnoGoSearch
 
-LIB_DEPENDS=	udmsearch.1:${PORTSDIR}/www/mnogosearch
+LIB_DEPENDS=	udmsearch.1:${PORTSDIR}/www/mnogosearch31
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
