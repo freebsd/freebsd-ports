@@ -192,7 +192,7 @@ CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mnogosearch"
-LIB_DEPENDS+=	udmsearch.1:${PORTSDIR}/www/mnogosearch
+LIB_DEPENDS+=	udmsearch.1:${PORTSDIR}/www/mnogosearch31
 
 CONFIGURE_ARGS+=--with-mnogosearch=${LOCALBASE}
 .endif
