@@ -35,13 +35,11 @@ OPTIONS=	OPENSSL		"Enable SSL support"	on \
 		MYSQL		"Enable MYSQL support"	off \
 		IPV6		"Disable IPV6 support"	off
 
-.if !defined(WITHOUT_OPENSSL)
-USE_OPENSSL=	yes
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
