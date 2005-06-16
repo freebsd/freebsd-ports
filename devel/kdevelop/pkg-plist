@@ -1,6 +1,7 @@
 bin/kdevassistant
 bin/kdevdesigner
 bin/kdevelop
+bin/kdevelop-bin
 bin/kdevelop-htdig
 bin/kdevprj2kdevelop
 bin/kdevprofileeditor
