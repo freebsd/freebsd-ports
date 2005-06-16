@@ -51,7 +51,7 @@ MAKE_ENV+=	HOWL_ENABLE=1
 .endif
 
 .ifdef(WITH_MPEG4IP)
-LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mpeg4ip
+LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 MAKE_ENV+=	MPEG4_ENABLE=1
 .endif
 
