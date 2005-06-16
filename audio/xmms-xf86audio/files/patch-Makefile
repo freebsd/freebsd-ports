@@ -1,0 +1,19 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -18,10 +18,10 @@
+ 	install $(PLUGIN) $(PLUGINDIR)
+ 
+ $(PLUGIN) : xf86audio.o
+-	$(CC) $(LIBS) -shared $^ -o $@
++	$(CC) $(LIBS) -shared $? -o $@
+ 
+-%.o : %.c
+-	$(CC) $(CFLAGS) -c $^ -o $@
++.c.o:
++	$(CC) $(CFLAGS) -c $? -o $@
+ 
+ clean :
+ 	rm -f $(PLUGIN) *.o

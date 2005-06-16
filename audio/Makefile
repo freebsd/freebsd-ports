@@ -543,6 +543,7 @@
     SUBDIR += xmms-uade
     SUBDIR += xmms-volnorm
     SUBDIR += xmms-wma
+    SUBDIR += xmms-xf86audio
     SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio

@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+lib/xmms/General/libxf86audio.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
