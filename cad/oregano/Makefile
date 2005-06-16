@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.40.3
-PORTREVISION=	2
-CATEGORIES=	cad
-MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/56/
+PORTVERSION=	0.40.4
+CATEGORIES=	cad gnome
+MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/62/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
@@ -32,7 +31,5 @@ INSTALLS_OMF=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|src/main\.c|${PORTNAME}|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-DGNOME_DISABLE_DEPRECATED=1||g'
 
 .include <bsd.port.post.mk>
