@@ -309,8 +309,6 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/sslTP.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/tcInternal.py
 %%PYTHON_SITELIBDIR%%/omniORB/tcInternal.pyc
-%%PYTHON_SITELIBDIR%%/omniidl_be/__init__.py
-%%PYTHON_SITELIBDIR%%/omniidl_be/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.pyc
 %%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.gif
