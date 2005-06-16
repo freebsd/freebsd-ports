@@ -33,11 +33,20 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #	- Port wishes to use automake, including the configuration step
 #	- Implies GNU_CONFIGURE?=yes and WANT_AUTOMAKE_VER=<value>
 #
+# USE_ACLOCAL_VER=<value>
+#	- Port wishes to use aclocal, including the configuration step
+#	- Implies GNU_CONFIGURE?=yes and WANT_AUTOMAKE_VER=<value>
+#
 # WANT_AUTOMAKE_VER=<value>
 #	- Port needs access to the automake build environment
 #
 # AUTOMAKE_ARGS=...
 #	- Extra arguments passed to automake during configure step
+#
+# ACLOCAL_ARGS=...
+#   - Arguments passed to aclocal during configure step
+#	  Defaults to "--acdir=${ACLOCAL_DIR}" if USE_ACLOCAL_VER specified,
+#	  empty (and unused) otherwise
 #
 #---------------------------------------------------------------------------
 #
@@ -100,11 +109,16 @@ BROKEN=	"WANT_${i} deprecated: replace with WANT_${i}_VER=..."
 .endfor
 
 #---------------------------------------------------------------------------
-# AUTOMAKE
+# AUTOMAKE/ACLOCAL
 #---------------------------------------------------------------------------
 
 .if defined(USE_AUTOMAKE_VER)
 WANT_AUTOMAKE_VER?=	${USE_AUTOMAKE_VER}
+GNU_CONFIGURE?=		yes
+.endif
+
+.if defined(USE_ACLOCAL_VER)
+WANT_AUTOMAKE_VER?=	${USE_ACLOCAL_VER}
 GNU_CONFIGURE?=		yes
 .endif
 
@@ -130,10 +144,12 @@ AUTOMAKE_VERSION=	${WANT_AUTOMAKE_VER}
 AUTOMAKE_DEPENDS=	${AUTOMAKE}:${PORTSDIR}/devel/automake${AUTOMAKE_SUFFIX}
 BUILD_DEPENDS+=		${AUTOMAKE_DEPENDS}
 
-# XXX: here be dragons, for some reason
-#
 . if ${WANT_AUTOMAKE_VER} == 14
 AUTOMAKE_ARGS+=		-i
+. endif
+
+. if defined(USE_ACLOCAL_VER)
+ACLOCAL_ARGS?=		--acdir=${ACLOCAL_DIR}
 . endif
 
 .endif
@@ -300,6 +316,10 @@ AUTOHEADER_ENV+=${AUTOTOOLS_VARS}
 #
 .if !target(run-autotools)
 run-autotools:
+. if defined(USE_ACLOCAL_VER)
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+		${ACLOCAL_ARGS})
+. endif
 . if defined(USE_AUTOMAKE_VER)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
