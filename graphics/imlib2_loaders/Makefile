@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 PORTREVISION=	0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
