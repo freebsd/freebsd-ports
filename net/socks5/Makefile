@@ -9,6 +9,7 @@ PORTNAME=	socks5
 PORTVERSION=	1.0.11
 PORTREVISION=	3
 CATEGORIES=	net security
+MASTER_SITES=	http://freeware.sgi.com/source/socks5/
 DISTNAME=	socks5-v1.0r11
 
 MAINTAINER=	josh@tcbug.org
@@ -16,7 +17,6 @@ COMMENT=	SOCKS v5 application layer gateway and clients
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
-BROKEN=		"Application authors no longer supply needed distfiles"
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
@@ -51,10 +51,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="NEC requires that you grab the dist files from their web site at http://www.socks.nec.com/cgi-bin/download.pl .  Please make sure you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR} and run make again"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
