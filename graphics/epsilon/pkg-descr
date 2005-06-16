@@ -1,0 +1,11 @@
+This is a small, display independent, and quick thumbnailing library.
+The lib itself conforms to the standard put forth by freedesktop.org.
+It seemed better to
+break it out into a component that only depended on what was absolutely
+necessary.  Upon showing raster the wonders of freedesktop.org
+thumbnailing, he proclaimed that it was far to slow, this prompted him
+to write epeg.  Epeg offers very noticeable speed increases to this
+standard, but is only available if the input image is a jpeg file.  If
+the file is anything other than jpg, the traditional freedesktop.org png
+thumbnailing will occur.  To show the speed increase epeg offers,
+Epsilon builds with and without epeg.

@@ -85,6 +85,7 @@
     SUBDIR += epeg
     SUBDIR += epix
     SUBDIR += eps2png
+    SUBDIR += epsilon
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += evas
