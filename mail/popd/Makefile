@@ -7,7 +7,7 @@
 
 PORTNAME=	popd
 PORTVERSION=	2.2.2a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
