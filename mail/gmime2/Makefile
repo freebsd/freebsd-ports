@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.14
+PORTVERSION=	2.1.15
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
@@ -26,17 +26,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 INSTALLS_SHLIB=		yes
 
 LATEST_LINK=	gmime2
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in docs/reference/html/*
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
