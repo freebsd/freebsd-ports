@@ -1,5 +1,6 @@
 bin/driconf
 %%PYTHON_SITELIBDIR%%/dri.py
+%%PYTHON_SITELIBDIR%%/dri.pyc
 %%PYTHON_SITELIBDIR%%/driconf.py
 %%PYTHON_SITELIBDIR%%/driconf.pyc
 share/locale/de/LC_MESSAGES/driconf.mo
