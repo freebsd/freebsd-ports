@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	a library implementing the SSH2 protocol
 
-GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	include/libssh2.h \
@@ -26,10 +26,11 @@ PLIST_FILES=	include/libssh2.h \
 		lib/libssh2.so.0
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:-lcrypto:-lcrypto -lm:g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/ssh2_sample\.o/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|SHLIB_SUFFIX_NAME@ |SHLIB_SUFFIX_NAME@.0 |g' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
-	${MV} ${PREFIX}/lib/libssh2.so ${PREFIX}/lib/libssh2.so.0
-	cd ${PREFIX}/lib; ${LN} -s libssh2.so.0 libssh2.so
+	${LN} -s libssh2.so.0 ${PREFIX}/lib/libssh2.so
 
 .include <bsd.port.mk>
