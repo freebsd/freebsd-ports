@@ -7,6 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.0.40
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
@@ -21,9 +22,7 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 WANT_AUTOCONF_VER=259
-WANT_AUTOCONF_RUN=yes
 WANT_AUTOMAKE_VER=19
-WANT_AUTOMAKE_RUN=yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
