@@ -6,39 +6,26 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.7.2
-PORTREVISION=	2
+PORTVERSION=	0.16.999.010
+PORTREVISION=	0
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
+		evas.1:${PORTSDIR}/graphics/evas \
+		edje.5:${PORTSDIR}/graphics/edje \
+		ecore.1:${PORTSDIR}/x11/ecore \
+		embryo.9:${PORTSDIR}/lang/embryo \
+		eet.9:${PORTSDIR}/devel/eet
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	esound
+USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-fsstd --disable-hints-gnome --disable-hints-kde
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-MAN1=		enlightenment.1
-
-.include <bsd.port.pre.mk>
-
-.if (${MACHINE} == "alpha") && (${X_WINDOW_SYSTEM:L} == xfree86-3)
-CONFIGURE_ARGS+=	--disable-zoom
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| wctype.h||g ; \
-		 s|-ldl||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/scripts/e_gen_menu
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
