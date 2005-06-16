@@ -570,6 +570,7 @@
     SUBDIR += xmedcon
     SUBDIR += xmfract
     SUBDIR += xmms-blursk
+    SUBDIR += xmms-dspectral
     SUBDIR += xmms-finespectrum
     SUBDIR += xmms-fishmatic
     SUBDIR += xmms-gdancer
