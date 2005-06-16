@@ -1845,6 +1845,7 @@ edb		ports/databases/edb
 ede		ports/x11-wm/ede
 edith		ports/editors/edith
 editss		ports/games/editss
+edje		ports/graphics/edje
 edonkey-gui-gtk	ports/net/edonkey-gui-gtk
 edonkey-gui-gtk-urlslave	ports/net/edonkey-gui-gtk-urlslave
 edonkey-gui-java	ports/net/edonkey-gui-java
@@ -1970,6 +1971,7 @@ epix		ports/graphics/epix
 epm		ports/devel/epm
 epplets		ports/x11-wm/epplets
 eps2png		ports/graphics/eps2png
+epsilon		ports/graphics/epsilon
 epsmerge	ports/print/epsmerge
 epsonepl	ports/print/epsonepl
 epstool		ports/graphics/epstool
@@ -1997,6 +1999,7 @@ es-openoffice-1.0	ports/editors/openoffice-1.0-es
 esdl		ports/devel/esdl
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
+esmart		ports/graphics/esmart
 esmtp		ports/mail/esmtp
 esniper		ports/misc/esniper
 esound		ports/audio/esound
@@ -2016,6 +2019,7 @@ ethereal	ports/net/ethereal
 ethereal-lite	ports/net/ethereal-lite
 etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
+etox		ports/x11-toolkits/etox
 ettercap	ports/net-mgmt/ettercap
 etunnel		ports/net/etunnel
 euchre		ports/games/euchre
@@ -2036,6 +2040,7 @@ evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
 eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
+ewl		ports/x11-toolkits/ewl
 exact		ports/mail/exact
 excalibur-configuration	ports/devel/excalibur-configuration
 exctags		ports/devel/ctags
