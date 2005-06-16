@@ -14,9 +14,7 @@ MASTER_SITE_SUBDIR=	libtool
 DISTNAME=	libtool-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	Generic shared library support script (version 1.3)
-
-DEPRECATED=	Please use devel/libtool15 instead
+COMMENT=	Generic shared library support script (1.3)
 
 BUILD_VERSION=	13
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}

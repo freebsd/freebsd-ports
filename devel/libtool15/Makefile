@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	libtool
 DISTNAME=	libtool-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT?=	Generic shared library support script (version 1.5)
+COMMENT?=	Generic shared library support script (1.5)
 
 BUILD_VERSION=	15
 LATEST_LINK?=	libtool${BUILD_VERSION}

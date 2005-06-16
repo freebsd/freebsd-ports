@@ -13,9 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (version 2.53)
-
-DEPRECATED=	Please use devel/autoconf259 instead
+COMMENT=	Automatically configure source code on many Un*x platforms (2.53)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man

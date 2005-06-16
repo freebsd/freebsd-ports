@@ -14,12 +14,11 @@ MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-1.4-p6
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU Standards-compliant Makefile generator (legacy version 1.4)
+COMMENT=	GNU Standards-compliant Makefile generator (1.4)
 
-DEPRECATED=	Please use devel/automake19 instead
+RUN_DEPENDS=	${AUTOCONF_DEPENDS}
 
 WANT_AUTOCONF_VER=213
-WANT_AUTOCONF_RUN=yes
 BUILD_VERSION=	14
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
