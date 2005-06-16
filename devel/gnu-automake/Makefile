@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	automake
-PORTVERSION=	1.8.5
+PORTVERSION=	1.9.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	gnu-
 DISTNAME=	automake-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU Standards-compliant Makefile generator (version 1.8)
+COMMENT=	GNU Standards-compliant Makefile generator (GNU unmodified)
 
 BUILD_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf
 RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf
@@ -29,9 +29,10 @@ NO_MTREE=	yes
 CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/gnu-autotools/bin/autoconf \
 		AUTOHEADER=${LOCALBASE}/gnu-autotools/bin/autoheader \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--infodir=${PREFIX}/info
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+post-patch:
+	@(cd ${WRKSRC}/doc && ${RM} -f *.info*)
 
 .include <bsd.port.mk>

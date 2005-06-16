@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	gnu-
 DISTNAME=	autoconf-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (version 2.59)
+COMMENT=	Automatically configure source code on many Un*x platforms (GNU unmodified)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
@@ -36,8 +36,5 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		autoconf.1 autoheader.1 autom4te.1 autoreconf.1 autoscan.1 \
 		autoupdate.1 config.guess.1 config.sub.1 ifnames.1
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
