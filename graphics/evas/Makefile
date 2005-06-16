@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	evas
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.9.9.010
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A hardware-accelerated canvas API for X-Windows
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
+		edb.1:${PORTSDIR}/databases/edb \
+		eet.9:${PORTSDIR}/devel/eet
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
-USE_FREETYPE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1 \
-			  -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--disable-gl
+USE_LIBTOOL_VER=	15
+USE_FREETYPE2=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack pkgconfig gnometarget
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(WITH_MMX) && (${ARCH} == "i386")
+CONFIGURE_ARGS+=        --enable-mmx
+.endif
+
+.include <bsd.port.post.mk>
