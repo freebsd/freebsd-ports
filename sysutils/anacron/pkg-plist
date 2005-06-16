@@ -1,3 +1,6 @@
 sbin/anacron
-etc/anacrontab.sample
-etc/rc.d/anacron.sh
+@unexec if cmp -s %D/etc/anacrontab.default %D/etc/anacrontab; then rm -f %D/etc/anacrontab; fi
+etc/anacrontab.default
+@exec [ -f %B/anacrontab ] || cp %B/%f %B/anacrontab
+@exec mkdir -p /var/spool/anacron
+@unexec rmdir /var/spool/anacron 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/spool/anacron'."

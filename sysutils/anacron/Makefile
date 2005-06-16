@@ -7,7 +7,7 @@
 
 PORTNAME=	anacron
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anacron
@@ -17,14 +17,27 @@ COMMENT=	Schedules periodic jobs on systems that are not permanently up
 
 MAN8=		anacron.8
 MAN5=		anacrontab.5
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-install:
-	${CAT} ${PKGMESSAGE}
-	${STRIP_CMD} ${PREFIX}/sbin/anacron
+USE_RC_SUBR=	anacron.sh
+SUB_FILES=	pkg-message
+MAKE_ENV=	CC="${CC}"
 
 post-patch:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
+.for f in Makefile anacron.8 anacrontab.5
+	@${REINPLACE_CMD} -e 's|\(/etc/anacrontab\)|${PREFIX}\1|' ${WRKSRC}/${f}
+.endfor
+	@${REINPLACE_CMD} -e 's|^CFLAGS = .*||' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/anacron ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/anacron.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/anacrontab.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_DATA} ${FILESDIR}/anacrontab.default ${PREFIX}/etc
+	[ -f ${PREFIX}/etc/anacrontab ] || ${INSTALL_DATA} ${FILESDIR}/anacrontab.default ${PREFIX}/etc/anacrontab
+	${MKDIR} /var/spool/anacron
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
