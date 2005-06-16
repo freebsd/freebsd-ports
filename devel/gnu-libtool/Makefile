@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	libtool
 PKGNAMEPREFIX=	gnu-
 DISTNAME=	libtool-${PORTVERSION}
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Generic shared library support script (version 1.5)
 
 PREFIX?=	${LOCALBASE}/gnu-autotools
