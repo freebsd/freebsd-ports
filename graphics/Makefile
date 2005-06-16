@@ -87,6 +87,7 @@
     SUBDIR += eps2png
     SUBDIR += epsilon
     SUBDIR += epstool
+    SUBDIR += esmart
     SUBDIR += eterm-bg
     SUBDIR += evas
     SUBDIR += evince

@@ -1,0 +1,40 @@
+bin/esmart-config
+bin/esmart_file_dialog_test
+bin/esmart_test
+include/Esmart/Esmart_Container.h
+include/Esmart/Esmart_Draggies.h
+include/Esmart/Esmart_File_Dialog.h
+include/Esmart/Esmart_Text_Entry.h
+include/Esmart/Esmart_Textarea.h
+include/Esmart/Esmart_Thumb.h
+include/Esmart/Esmart_Trans_X11.h
+lib/libesmart_container.a
+lib/libesmart_container.so
+lib/libesmart_container.so.0
+lib/libesmart_draggies.a
+lib/libesmart_draggies.so
+lib/libesmart_draggies.so.0
+lib/libesmart_file_dialog.a
+lib/libesmart_file_dialog.so
+lib/libesmart_file_dialog.so.0
+lib/libesmart_text_entry.a
+lib/libesmart_text_entry.so
+lib/libesmart_text_entry.so.0
+lib/libesmart_textarea.a
+lib/libesmart_textarea.so
+lib/libesmart_textarea.so.0
+lib/libesmart_thumb.a
+lib/libesmart_thumb.so
+lib/libesmart_thumb.so.0
+lib/libesmart_trans_x11.a
+lib/libesmart_trans_x11.so
+lib/libesmart_trans_x11.so.0
+lib/esmart/layout/default.so
+lib/esmart/layout/engage.so
+lib/esmart/layout/entice.so
+libdata/pkgconfig/esmart.pc
+%%DATADIR%%/esmart.png
+@dirrm %%DATADIR%%
+@dirrm lib/esmart/layout
+@dirrm lib/esmart
+@dirrm include/Esmart
