@@ -7,6 +7,7 @@
 
 PORTNAME=	screem
 PORTVERSION=	0.14.1
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus \
 		croco-0.6.3:${PORTSDIR}/textproc/libcroco
 
 USE_X_PREFIX=	yes
-USE_GNOME=	desktopfileutils gnomehack gnomeprefix gnometarget \
+USE_GNOME=	desktopfileutils gnomehack gnomemenus gnomeprefix gnometarget \
 		gtksourceview intlhack libgnomeprintui libgnomeui libgtkhtml
 USE_XPM=	yes
 USE_REINPLACE=	yes
