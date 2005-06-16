@@ -1,0 +1,6 @@
+lib/xmms/Visualization/libdspectogram.so
+share/xmms/dspectogram_themes/bg_gtk.xpm
+share/xmms/dspectogram_themes/bg_xmms.xpm
+share/xmms/dspectogram_themes/bg_xmms1.xpm
+share/xmms/dspectogram_themes/bg_xmms2.xpm
+@dirrm share/xmms/dspectogram_themes
