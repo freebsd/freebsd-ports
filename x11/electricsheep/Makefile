@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	electricsheep
-PORTVERSION=	2.6d
+PORTVERSION=	2.6.2
+PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
-DISTNAME=	${PORTNAME}-2.6.1
+DISTNAME=	${PORTNAME}-2.6.2
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A nice distributed screensaver
@@ -25,9 +26,7 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif
 
-BROKEN=		"Does not compile"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.6.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.6.2
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
@@ -44,12 +43,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${
 LIBTOOLFILES=	configure mpeg2dec/configure flam3/configure
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.else
-BROKEN=		"Incomplete pkg-plist"
-.endif
 
 pre-everything::
 .if !defined(WITH_XSCREENSAVER)
@@ -85,7 +78,6 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/electricsheep ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/electricsheep-voter ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/uniqueid ${PREFIX}/bin/esheep-uniqueid
 	@${INSTALL_PROGRAM} ${WRKSRC}/flam3/flam3-animate ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/flam3/flam3-convert ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/flam3/flam3-genome ${PREFIX}/bin
@@ -100,9 +92,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/electricsheep.man ${PREFIX}/man/man1/electricsheep.1
 .endif
-
-post-install:
-	@${PREFIX}/bin/esheep-uniqueid > ${DATADIR}/electricsheep-uniqueid
 
 .include <bsd.port.post.mk>
 

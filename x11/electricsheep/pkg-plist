@@ -5,9 +5,8 @@ bin/flam3-animate
 bin/flam3-convert
 bin/flam3-genome
 bin/flam3-render
-bin/esheep-uniqueid
 %%DATADIR%%/electricsheep-frown.png
 %%DATADIR%%/electricsheep-smile.png
 %%DATADIR%%/electricsheep-splash-0.tif
 %%DATADIR%%/electricsheep-splash-1.tif
-@unexec rmdir %%DATADIR%% 2>/dev/null || true
+@dirrm %%DATADIR%%
