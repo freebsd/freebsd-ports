@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	autoconf
 PKGNAMEPREFIX=	gnu-
 DISTNAME=	autoconf-${PORTVERSION}
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (version 2.59)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \

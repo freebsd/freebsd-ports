@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	automake
 PKGNAMEPREFIX=	gnu-
 DISTNAME=	automake-${PORTVERSION}
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (version 1.8)
 
 BUILD_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf
