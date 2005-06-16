@@ -1,0 +1,21 @@
+Enlightenment Database Library
+
+Edb is intended to provide a stable API and file format for archiving 
+configuration, theme, and other data available all the time for access at 
+random really fast. Edb can store any kind of data in key-value pair format. 
+Random access reading and writing is FAST as the core of Edb uses a berkley. 
+Edb provides a convenience API designed to make access fast AND improve access 
+speed by caching open db's until a flush and providing conveience macros too. 
+It also will be used to store image data and geometry data for theme files so 
+the information can be accessed without needing to unarchive files and can be 
+edited without having to unarchive and re-archive, and still be accesses at 
+random really quickly. Documentation is provided as comments in the Edb.h
+header file.
+
+Edb will be used for all config theme and meta data stroage for E17/EFM
+etc. sine it provides FAST random-access read/write of any data wanted
+(binary, string, integert, floating point) withotu the need to
+unpack/repack files - data can be etxracted and put back at whim with a
+simple API from which simple or complex tools can be built.
+
+WWW: http://www.enlightenment.org/pages/edb.html
