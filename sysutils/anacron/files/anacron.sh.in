@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: anacron
+# REQUIRE: LOGIN
+
+#
+# Add the following line to /etc/rc.conf to enable anacron:
+#
+# anacron_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name="anacron"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/anacron"
+
+load_rc_config $name
+: ${anacron_enable="NO"}
+
+run_rc_command "$1"
