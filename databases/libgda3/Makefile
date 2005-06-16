@@ -7,6 +7,7 @@
 
 PORTNAME=	libgda2
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
@@ -71,7 +72,7 @@ WITH_MDB=	yes
 WITH_ODBC=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libsqlite.so.2)
+.if exists(${LOCALBASE}/lib/libsqlite3.so.8)
 WITH_SQLITE=	yes
 .endif
 
@@ -148,7 +149,7 @@ PLIST_SUB+=		ODBC:="@comment "
 .endif
 
 .if !defined(WITHOUT_SQLITE) && defined(WITH_SQLITE)
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 PLIST_SUB+=		SQLITE:=""
 .else
