@@ -14,12 +14,11 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU Standards-compliant Makefile generator (version 1.5)
+COMMENT=	GNU Standards-compliant Makefile generator (1.5)
 
-DEPRECATED=	Please use devel/automake19 instead
+RUN_DEPENDS=	${AUTOCONF_DEPENDS}
 
 WANT_AUTOCONF_VER=253
-WANT_AUTOCONF_RUN=yes
 BUILD_VERSION=	15
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}

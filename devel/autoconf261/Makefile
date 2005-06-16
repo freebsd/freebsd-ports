@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	autoconf
 DISTNAME=	autoconf-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (version 2.59)
+COMMENT=	Automatically configure source code on many Un*x platforms (2.59)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man

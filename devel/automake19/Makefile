@@ -13,10 +13,11 @@ MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU Standards-compliant Makefile generator (version 1.9)
+COMMENT=	GNU Standards-compliant Makefile generator (1.9)
+
+RUN_DEPENDS=	${AUTOCONF_DEPENDS}
 
 WANT_AUTOCONF_VER=259
-WANT_AUTOCONF_RUN=yes
 BUILD_VERSION=	19
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}

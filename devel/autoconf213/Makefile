@@ -14,9 +14,7 @@ MASTER_SITE_SUBDIR=	ade/gnu
 DISTNAME=	autoconf-000227
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13 version)
-
-DEPRECATED=	Please use devel/autoconf259 instead
+COMMENT=	Automatically configure source code on many Un*x platforms (2.13)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4

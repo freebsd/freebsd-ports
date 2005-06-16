@@ -11,6 +11,21 @@
 Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 
 #---------------------------------------------------------------------------
+# IMPORTANT!  READ ME!  YES, THAT MEANS YOU!
+#
+# The "versioned" autotools referenced here are for BUILDING other ports
+# only.  THIS CANNOT BE STRESSED HIGHLY ENOUGH.  Things WILL BREAK if you
+# try to use them for anything other than ports/ work.  This particularly
+# includes use as a run-time dependency.
+#
+# If you need unmodified versions of autotools, such as for use in an
+# IDE, then you MUST use the devel/gnu-* equivalents, and NOT these.
+# See devel/anjuta and devel/kdevelop for examples.
+#
+# You have been WARNED!
+#---------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------
 # Entry points into the autotools system
 #---------------------------------------------------------------------------
 #
@@ -20,10 +35,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #
 # WANT_AUTOMAKE_VER=<value>
 #	- Port needs access to the automake build environment
-#
-# WANT_AUTOMAKE_RUN=yes
-#	- Port also needs access to automake as a run-time dependency
-#	  This is a NULL-OP if neither {USE,WANT}_AUTOMAKE_VER are defined
 #
 # AUTOMAKE_ARGS=...
 #	- Extra arguments passed to automake during configure step
@@ -40,10 +51,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #
 # WANT_AUTOCONF_VER=<value>
 #	- Port needs access to the autoconf build environment
-#
-# WANT_AUTOCONF_RUN=yes
-#	- Port also needs access to autoconf as a run-time dependency
-#	  This is a NULL-OP if neither {USE,WANT}_AUTOCONF_VER are defined
 #
 # AUTOCONF_ARGS=...
 #	- Extra arguments passed to autoconf during configure step
@@ -69,10 +76,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 # WANT_LIBTOOL_VER=<value>
 #	- Port needs access to the libtool build environment
 #
-# WANT_LIBTOOL_RUN=yes
-#	- Port also needs access to autoconf as a run-time dependency
-#	  This is a NULL-OP if neither {USE,WANT}_LIBTOOL_VER are defined
-#
 # LIBTOOLFLAGS=<value>
 #	- Arguments passed to libtool during configure step
 #	  Currently defaults to "--disable-ltlibs", but this will be going
@@ -83,51 +86,10 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #	  Defaults to "aclocal.m4" if autoconf is in use, otherwise "configure"
 #
 #---------------------------------------------------------------------------
-# Major changes:
-#
-# -	USE_AUTOMAKE, USE_AUTOCONF, USE_AUTOHEADER, and USE_LIBTOOL have
-#	been deprecated in favor of USE_<x>_VER=...
-#   As of 4/21/2004, changes should be made as follows:
-#		USE_AUTOMAKE		-> USE_AUTOMAKE_VER=14
-#		USE_AUTOCONF		-> USE_AUTOCONF_VER=213
-#		USE_AUTOHEADER		-> USE_AUTOHEADER_VER=213
-#		USE_LIBTOOL			-> USE_LIBTOOL_VER=13
-#
-# - additional variables WANT_{AUTOMAKE,AUTOCONF,AUTOHEADER,LIBTOOL}_RUN
-#	have been added to include a run-time dependency on the appropriate
-#	autotools port, as part of work in progress to remove ALL explicit
-#	dependencies on autotools in port Makefiles, in favor of using the
-#	autotools knobs
-#
-# - USE_LIBLTDL has been added as a convenience function to provide
-#	a lib dependency on devel/libltdl15, so that if the major version
-#	number changes in future, only one item has to be updated
-#
-# - {WANT,USE}_AUTOMAKE_VER no longer automatically brings in
-#	autoconf as before, to allow for greater flexibility in version
-#	matching, and to simplify bsd.autotools.mk
-#	It is now the port Makefile responsibility to specifically bring
-#	in the "appropriate" version of autoconf if automake is specified.
-#	The mappings are as follows (automake,autoconf pairs):
-#		(14,213) (15,253) (18,259)
-#
-# - Only set GNU_CONFIGURE automatically if USE_<x>_VER is specified,
-#	since WANT_<x>_VER implies that we want the environment, but not
-#	the configuration steps.
-#
-# Things to do:
-# -	Work on killing off as many "old" autotools ports as possible
-#
-# - Bring back the installation of libtool .la files by default, removing
-#	those FreeBSD-specific knobs added to prevent this
-#
-# - Migrate the myriad of autotools-related knobs into a single
-#	USE_AUTOTOOLS=... (to be defined) variable, akin to USE_GNOME=...
 
 #---------------------------------------------------------------------------
 # DEPRECATED ENTRY POINTS
 #---------------------------------------------------------------------------
-
 .for i in AUTOMAKE AUTOCONF AUTOHEADER LIBTOOL
 . if defined(USE_${i})
 BROKEN=	"USE_${i} deprecated: replace with USE_${i}_VER=..."
@@ -167,9 +129,6 @@ AUTOMAKE_VERSION=	${WANT_AUTOMAKE_VER}
 
 AUTOMAKE_DEPENDS=	${AUTOMAKE}:${PORTSDIR}/devel/automake${AUTOMAKE_SUFFIX}
 BUILD_DEPENDS+=		${AUTOMAKE_DEPENDS}
-. if defined(WANT_AUTOMAKE_RUN)
-RUN_DEPENDS+=		${AUTOMAKE_DEPENDS}
-. endif
 
 # XXX: here be dragons, for some reason
 #
@@ -230,9 +189,6 @@ AUTOCONF_VERSION=	${WANT_AUTOCONF_VER}
 
 AUTOCONF_DEPENDS=	${AUTOCONF}:${PORTSDIR}/devel/autoconf${AUTOCONF_SUFFIX}
 BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
-. if defined(WANT_AUTOCONF_RUN) || defined(WANT_AUTOHEADER_RUN)
-RUN_DEPENDS+=		${AUTOCONF_DEPENDS}
-. endif
 
 .endif
 
@@ -283,9 +239,6 @@ LIBTOOL_VARS=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} LIBTOOL_M4=${LIBTOOL_
 
 LIBTOOL_DEPENDS=	${LIBTOOL}:${PORTSDIR}/devel/libtool${LIBTOOL_SUFFIX}
 BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
-. if defined(WANT_LIBTOOL_RUN)
-RUN_DEPENDS+=		${LIBTOOL_DEPENDS}
-. endif
 
 LIBTOOLFLAGS?=		--disable-ltlibs		# XXX: probably not useful
 . if defined(USE_AUTOCONF_VER)
