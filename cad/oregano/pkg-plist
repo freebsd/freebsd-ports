@@ -49,7 +49,12 @@ share/gnome/oregano/samples/12ax7a.oregano
 share/gnome/oregano/samples/555.oregano
 share/gnome/oregano/samples/741.oregano
 share/gnome/oregano/samples/OP177B.oregano
+share/gnome/oregano/samples/carga_capacitor.oregano
 share/gnome/oregano/samples/opamp.oregano
+share/gnome/oregano/samples/opamp_ideal.oregano
+share/gnome/oregano/samples/pasa_altos.oregano
+share/gnome/oregano/samples/simple.oregano
+share/gnome/oregano/samples/simple2.oregano
 share/gnome/oregano/samples/transistors.oregano
 share/gnome/oregano/samples/zener.oregano
 share/gnome/pixmaps/gnome-oregano.svg
