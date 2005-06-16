@@ -471,7 +471,6 @@
     SUBDIR += reallyslick
     SUBDIR += renderpark
     SUBDIR += robot
-    SUBDIR += ruby-evas
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdk_imlib
     SUBDIR += ruby-gdk_pixbuf
