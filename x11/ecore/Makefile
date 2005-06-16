@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	ecore
-PORTVERSION=	0.0.2
+PORTVERSION=	0.9.9.010
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A core event abstraction library
 
+LIB_DEPENDS=	evas.1:${PORTSDIR}/graphics/evas
+
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_LIBTOOL_VER=	15
+USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${PREFIX}/lib/libecore.so.0
+CONFIGURE_ARGS+=	--enable-pthreads
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
