@@ -737,8 +737,10 @@ pre-install:
 	${RM} -rf ${FAKEDIR}/share/doc
 .endif
 		${ECHO_MSG} "@dirrm share/vlc" >> ${PLIST}
+.if !defined(WITHOUT_NLS)
 	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
+.endif
 .if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
