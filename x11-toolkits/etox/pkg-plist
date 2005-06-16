@@ -1,0 +1,30 @@
+bin/etox-config
+include/Etox.h
+lib/libetox.a
+lib/libetox.so
+lib/libetox.so.0
+libdata/pkgconfig/etox.pc
+share/aclocal/etox.m4
+%%DATADIR%%/colors.db
+%%DATADIR%%/fonts/Vera.ttf
+%%DATADIR%%/fonts/andover.ttf
+%%DATADIR%%/fonts/cinema.ttf
+%%DATADIR%%/fonts/grunge.ttf
+%%DATADIR%%/fonts/morpheus.ttf
+%%DATADIR%%/fonts/nationff.ttf
+%%DATADIR%%/fonts/notepad.ttf
+%%DATADIR%%/fonts/sinon.ttf
+%%DATADIR%%/images/bg.png
+%%DATADIR%%/images/panel.png
+%%DATADIR%%/images/panel_button1.png
+%%DATADIR%%/images/panel_button2.png
+%%DATADIR%%/styles/bold.style.db
+%%DATADIR%%/styles/outline.style.db
+%%DATADIR%%/styles/plain.style.db
+%%DATADIR%%/styles/raised.style.db
+%%DATADIR%%/styles/shadow.style.db
+%%DATADIR%%/styles/soft_shadow.style.db
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
