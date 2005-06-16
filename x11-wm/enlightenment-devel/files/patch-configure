@@ -1,0 +1,11 @@
+--- configure.orig	Mon May  9 21:18:37 2005
++++ configure	Mon May  9 21:18:49 2005
+@@ -20125,7 +20125,7 @@
+ done
+ 
+ 
+-MODULE_ARCH="$host_os-$host_cpu"
++MODULE_ARCH=""
+ 
+ 
+ cat >>confdefs.h <<_ACEOF

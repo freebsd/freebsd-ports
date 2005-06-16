@@ -1,498 +1,161 @@
-bin/edox
-bin/eesh
 bin/enlightenment
-bin/epp
-bin/starte16
-etc/X11/dm/Sessions/enlightenment.desktop
-%%DATADIR%%/config/actionclasses.cfg
-%%DATADIR%%/config/actionclasses.cfg.ja
-%%DATADIR%%/config/actionclasses.cfg.ko
-%%DATADIR%%/config/actionclasses.cfg.pl
-%%DATADIR%%/config/backup-borders.cfg
-%%DATADIR%%/config/backup-colormodifiers.cfg
-%%DATADIR%%/config/backup-cursors.cfg
-%%DATADIR%%/config/backup-imageclasses.cfg
-%%DATADIR%%/config/backup-textclasses.cfg
-%%DATADIR%%/config/backup-tooltips.cfg
-%%DATADIR%%/config/control.cfg
-%%DATADIR%%/config/definitions
-%%DATADIR%%/config/icondefs.cfg
-%%DATADIR%%/config/keybindings.cfg
-%%DATADIR%%/config/keybindings.cfg.ja
-%%DATADIR%%/config/keybindings.cfg.ko
-%%DATADIR%%/config/keybindings.cfg.pl
-%%DATADIR%%/config/keybindings.gmc.cfg.ja
-%%DATADIR%%/config/keybindings.gmc.cfg.ko
-%%DATADIR%%/config/keybindings.gmc.cfg.pl
-%%DATADIR%%/config/keybindings.nogmc.cfg.ja
-%%DATADIR%%/config/keybindings.nogmc.cfg.ko
-%%DATADIR%%/config/keybindings.nogmc.cfg.pl
-%%DATADIR%%/config/keybindings.rh.cfg.pl
-%%DATADIR%%/config/menus.cfg
-%%DATADIR%%/config/menus.cfg.ja
-%%DATADIR%%/config/menus.cfg.ko
-%%DATADIR%%/config/menus.cfg.pl
-%%DATADIR%%/config/pix/about.png
-%%DATADIR%%/config/pix/apple.png
-%%DATADIR%%/config/pix/areas.png
-%%DATADIR%%/config/pix/bg.png
-%%DATADIR%%/config/pix/calc.png
-%%DATADIR%%/config/pix/clock.png
-%%DATADIR%%/config/pix/desktops.png
-%%DATADIR%%/config/pix/easter.png
-%%DATADIR%%/config/pix/elogo48.png
-%%DATADIR%%/config/pix/focus.png
-%%DATADIR%%/config/pix/fx.png
-%%DATADIR%%/config/pix/key_blank.png
-%%DATADIR%%/config/pix/key_ctrl.png
-%%DATADIR%%/config/pix/key_lock.png
-%%DATADIR%%/config/pix/key_mod1.png
-%%DATADIR%%/config/pix/key_mod2.png
-%%DATADIR%%/config/pix/key_mod3.png
-%%DATADIR%%/config/pix/key_mod4.png
-%%DATADIR%%/config/pix/key_mod5.png
-%%DATADIR%%/config/pix/key_shift.png
-%%DATADIR%%/config/pix/mon.png
-%%DATADIR%%/config/pix/mouse_0.png
-%%DATADIR%%/config/pix/mouse_1.png
-%%DATADIR%%/config/pix/mouse_2.png
-%%DATADIR%%/config/pix/mouse_3.png
-%%DATADIR%%/config/pix/mouse_4.png
-%%DATADIR%%/config/pix/mouse_5.png
-%%DATADIR%%/config/pix/mouse_any.png
-%%DATADIR%%/config/pix/moveres.png
-%%DATADIR%%/config/pix/note.png
-%%DATADIR%%/config/pix/pager.png
-%%DATADIR%%/config/pix/pawn.png
-%%DATADIR%%/config/pix/place.png
-%%DATADIR%%/config/pix/pumpkin.png
-%%DATADIR%%/config/pix/raise.png
-%%DATADIR%%/config/pix/snapshots.png
-%%DATADIR%%/config/pix/sound.png
-%%DATADIR%%/config/pix/spider.png
-%%DATADIR%%/config/pix/tips.png
-%%DATADIR%%/config/pix/tv2.png
-%%DATADIR%%/config/pix/wait1.png
-%%DATADIR%%/config/pix/wait10.png
-%%DATADIR%%/config/pix/wait11.png
-%%DATADIR%%/config/pix/wait12.png
-%%DATADIR%%/config/pix/wait2.png
-%%DATADIR%%/config/pix/wait3.png
-%%DATADIR%%/config/pix/wait4.png
-%%DATADIR%%/config/pix/wait5.png
-%%DATADIR%%/config/pix/wait6.png
-%%DATADIR%%/config/pix/wait7.png
-%%DATADIR%%/config/pix/wait8.png
-%%DATADIR%%/config/pix/wait9.png
-%%DATADIR%%/config/pix/world.png
-%%DATADIR%%/misc/E-GNOME
-%%DATADIR%%/misc/E-KDE
-%%DATADIR%%/misc/E16
-%%DATADIR%%/misc/starte16
-%%DATADIR%%/misc/Xclients.e-gnome
-%%DATADIR%%/misc/Xclients.e-kde
-%%DATADIR%%/misc/Xclients.enlightenment
-%%DATADIR%%/misc/e-gnome.desktop
-%%DATADIR%%/misc/e-kde.desktop
-%%DATADIR%%/misc/enlightenment.desktop
-%%DATADIR%%/scripts/e_cache_clean
-%%DATADIR%%/scripts/e_cache_query
-%%DATADIR%%/scripts/e_gen_menu
-%%DATADIR%%/themes/winter/ABOUT/MAIN
-%%DATADIR%%/themes/winter/ABOUT/MAIN.ko
-%%DATADIR%%/themes/winter/ABOUT/bg.png
-%%DATADIR%%/themes/winter/ABOUT/vixar.ttf
-%%DATADIR%%/themes/winter/README
-%%DATADIR%%/themes/winter/README.ko
-%%DATADIR%%/themes/winter/backgrounds/backgrounds.cfg
-%%DATADIR%%/themes/winter/backgrounds/images/startup-bg.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_logo.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_ui.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_ui_blue.png
-%%DATADIR%%/themes/winter/backgrounds/images/winter_ui_green.png
-%%DATADIR%%/themes/winter/borders/BORDERLESS/border.cfg
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/border.cfg
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/bl.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/br.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/horiz.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/tl.png
-%%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/tr.png
-%%DATADIR%%/themes/winter/borders/DEFAULT/border.cfg
-%%DATADIR%%/themes/winter/borders/DIALOG/border.cfg
-%%DATADIR%%/themes/winter/borders/DIALOG/border.cfg~
-%%DATADIR%%/themes/winter/borders/FIXED_SIZE/border.cfg
-%%DATADIR%%/themes/winter/borders/ICONBOX/border.cfg
-%%DATADIR%%/themes/winter/borders/MENU/border.cfg
-%%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY/border.cfg
-%%DATADIR%%/themes/winter/borders/PAGER/border.cfg
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb1.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb2.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb3.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb4.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb5.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb6.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb8.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb9l.png
-%%DATADIR%%/themes/winter/borders/PAGER/images/pb9r.png
-%%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT/border.cfg
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/border.cfg
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb1.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb2.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb3.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb4.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb5.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb6.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb8.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb9l.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb9r.png
-%%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT/border.cfg
-%%DATADIR%%/themes/winter/borders/SHAPED/border.cfg
-%%DATADIR%%/themes/winter/borders/TRANSIENT/border.cfg
-%%DATADIR%%/themes/winter/borders/borders.cfg
-%%DATADIR%%/themes/winter/borders/borders.cfg.ko
-%%DATADIR%%/themes/winter/borders/common/Winter.Changelog
-%%DATADIR%%/themes/winter/borders/common/border.cfg
-%%DATADIR%%/themes/winter/borders/common/border.cfg.ko
-%%DATADIR%%/themes/winter/borders/common/images/border-bl-blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bl.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bottom-blue_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bottom.png
-%%DATADIR%%/themes/winter/borders/common/images/border-bottom_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-br-blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-br.png
-%%DATADIR%%/themes/winter/borders/common/images/border-button.png
-%%DATADIR%%/themes/winter/borders/common/images/border-close1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-close1_hilited.png
-%%DATADIR%%/themes/winter/borders/common/images/border-close2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-dot1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-dot2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-iconify1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-iconify1_hilited.png
-%%DATADIR%%/themes/winter/borders/common/images/border-iconify2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-lr.png
-%%DATADIR%%/themes/winter/borders/common/images/border-max1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-max1_hilited.png
-%%DATADIR%%/themes/winter/borders/common/images/border-max2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-minus.png
-%%DATADIR%%/themes/winter/borders/common/images/border-minus2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-plus1.png
-%%DATADIR%%/themes/winter/borders/common/images/border-plus2.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top-blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top-blue_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top-blue_text.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_alternative.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_iconbox.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_iconbox_blue.png
-%%DATADIR%%/themes/winter/borders/common/images/border-top_text.png
-%%DATADIR%%/themes/winter/borders/common/images/border-topmiddle.png
-%%DATADIR%%/themes/winter/borders/common/images/ic_border-l.png
-%%DATADIR%%/themes/winter/borders/common/images/ic_border-r.png
-%%DATADIR%%/themes/winter/borders/common/images/menu-border-bottom.png
-%%DATADIR%%/themes/winter/borders/common/images/menu-border-top.png
-%%DATADIR%%/themes/winter/borders.cfg
-%%DATADIR%%/themes/winter/borders.cfg.ko
-%%DATADIR%%/themes/winter/buttons/buttons.cfg
-%%DATADIR%%/themes/winter/buttons.cfg
-%%DATADIR%%/themes/winter/buttons.cfg.ko
-%%DATADIR%%/themes/winter/colormodifiers.cfg
-%%DATADIR%%/themes/winter/common/images/blank.png
-%%DATADIR%%/themes/winter/common/images/blue_bar.png
-%%DATADIR%%/themes/winter/common/images/light_brushed.png
-%%DATADIR%%/themes/winter/coords/coords.cfg
-%%DATADIR%%/themes/winter/coords/coords.cfg.ko
-%%DATADIR%%/themes/winter/cursors/cursors.cfg
-%%DATADIR%%/themes/winter/cursors.cfg
-%%DATADIR%%/themes/winter/desktops.cfg
-%%DATADIR%%/themes/winter/dialogs/dialogs.cfg
-%%DATADIR%%/themes/winter/dialogs/dialogs.cfg.ko
-%%DATADIR%%/themes/winter/dialogs/images/arrow-down.png
-%%DATADIR%%/themes/winter/dialogs/images/arrow-left.png
-%%DATADIR%%/themes/winter/dialogs/images/arrow-right.png
-%%DATADIR%%/themes/winter/dialogs/images/arrow-up.png
-%%DATADIR%%/themes/winter/dialogs/images/bg.png
-%%DATADIR%%/themes/winter/dialogs/images/button-clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/button-over.png
-%%DATADIR%%/themes/winter/dialogs/images/button-up.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox-checked.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox-checked_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox-checked_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/checkbox_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/indent.png
-%%DATADIR%%/themes/winter/dialogs/images/ondent.png
-%%DATADIR%%/themes/winter/dialogs/images/radio-on.png
-%%DATADIR%%/themes/winter/dialogs/images/radio-on_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/radio-on_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/radio.png
-%%DATADIR%%/themes/winter/dialogs/images/radio_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/radio_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-bar-vert.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-down.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-left.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-right.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-trough-horiz.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-trough-vert.png
-%%DATADIR%%/themes/winter/dialogs/images/scroll-up.png
-%%DATADIR%%/themes/winter/dialogs/images/scrollbar-horiz-deco.png
-%%DATADIR%%/themes/winter/dialogs/images/scrollbar-horiz.png
-%%DATADIR%%/themes/winter/dialogs/images/scrollbar-vert-deco.png
-%%DATADIR%%/themes/winter/dialogs/images/separator.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-h_on.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v_clicked.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v_hilited.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-handle-v_on.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-trough-h.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-trough-v.png
-%%DATADIR%%/themes/winter/dialogs/images/slider-trough.png
-%%DATADIR%%/themes/winter/dialogs/images/trough.png
-%%DATADIR%%/themes/winter/dialogs/images/window-base.png
-%%DATADIR%%/themes/winter/dock/dock.cfg
-%%DATADIR%%/themes/winter/dragbar/dragbar.cfg
-%%DATADIR%%/themes/winter/dragbar/images/a1.png
-%%DATADIR%%/themes/winter/dragbar/images/a1b.png
-%%DATADIR%%/themes/winter/dragbar/images/a2.png
-%%DATADIR%%/themes/winter/dragbar/images/a2b.png
-%%DATADIR%%/themes/winter/dragbar/images/dragbar_horiz.png
-%%DATADIR%%/themes/winter/dragbar/images/dragbar_vert.png
-%%DATADIR%%/themes/winter/epplets/epplets.cfg
-%%DATADIR%%/themes/winter/epplets/epplets.cfg.ko
-%%DATADIR%%/themes/winter/epplets/images/ar_d1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_d2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_d3.png
-%%DATADIR%%/themes/winter/epplets/images/ar_l1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_l2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_l3.png
-%%DATADIR%%/themes/winter/epplets/images/ar_r1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_r2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_r3.png
-%%DATADIR%%/themes/winter/epplets/images/ar_u1.png
-%%DATADIR%%/themes/winter/epplets/images/ar_u2.png
-%%DATADIR%%/themes/winter/epplets/images/ar_u3.png
-%%DATADIR%%/themes/winter/epplets/images/b1.png
-%%DATADIR%%/themes/winter/epplets/images/b2.png
-%%DATADIR%%/themes/winter/epplets/images/b3.png
-%%DATADIR%%/themes/winter/epplets/images/bb1.png
-%%DATADIR%%/themes/winter/epplets/images/bb2.png
-%%DATADIR%%/themes/winter/epplets/images/bg.png
-%%DATADIR%%/themes/winter/epplets/images/bg_v.png
-%%DATADIR%%/themes/winter/epplets/images/blank1.png
-%%DATADIR%%/themes/winter/epplets/images/blank2.png
-%%DATADIR%%/themes/winter/epplets/images/blank3.png
-%%DATADIR%%/themes/winter/epplets/images/close1.png
-%%DATADIR%%/themes/winter/epplets/images/close2.png
-%%DATADIR%%/themes/winter/epplets/images/close3.png
-%%DATADIR%%/themes/winter/epplets/images/config1.png
-%%DATADIR%%/themes/winter/epplets/images/config2.png
-%%DATADIR%%/themes/winter/epplets/images/config3.png
-%%DATADIR%%/themes/winter/epplets/images/da.png
-%%DATADIR%%/themes/winter/epplets/images/eject1.png
-%%DATADIR%%/themes/winter/epplets/images/eject2.png
-%%DATADIR%%/themes/winter/epplets/images/eject3.png
-%%DATADIR%%/themes/winter/epplets/images/ff1.png
-%%DATADIR%%/themes/winter/epplets/images/ff2.png
-%%DATADIR%%/themes/winter/epplets/images/ff3.png
-%%DATADIR%%/themes/winter/epplets/images/help1.png
-%%DATADIR%%/themes/winter/epplets/images/help2.png
-%%DATADIR%%/themes/winter/epplets/images/help3.png
-%%DATADIR%%/themes/winter/epplets/images/next1.png
-%%DATADIR%%/themes/winter/epplets/images/next2.png
-%%DATADIR%%/themes/winter/epplets/images/next3.png
-%%DATADIR%%/themes/winter/epplets/images/pause1.png
-%%DATADIR%%/themes/winter/epplets/images/pause2.png
-%%DATADIR%%/themes/winter/epplets/images/pause3.png
-%%DATADIR%%/themes/winter/epplets/images/pb_h.png
-%%DATADIR%%/themes/winter/epplets/images/pb_v.png
-%%DATADIR%%/themes/winter/epplets/images/play1.png
-%%DATADIR%%/themes/winter/epplets/images/play2.png
-%%DATADIR%%/themes/winter/epplets/images/play3.png
-%%DATADIR%%/themes/winter/epplets/images/prev1.png
-%%DATADIR%%/themes/winter/epplets/images/prev2.png
-%%DATADIR%%/themes/winter/epplets/images/prev3.png
-%%DATADIR%%/themes/winter/epplets/images/repeat1.png
-%%DATADIR%%/themes/winter/epplets/images/repeat2.png
-%%DATADIR%%/themes/winter/epplets/images/repeat3.png
-%%DATADIR%%/themes/winter/epplets/images/rw1.png
-%%DATADIR%%/themes/winter/epplets/images/rw2.png
-%%DATADIR%%/themes/winter/epplets/images/rw3.png
-%%DATADIR%%/themes/winter/epplets/images/s_h.png
-%%DATADIR%%/themes/winter/epplets/images/s_k1.png
-%%DATADIR%%/themes/winter/epplets/images/s_k2.png
-%%DATADIR%%/themes/winter/epplets/images/s_k3.png
-%%DATADIR%%/themes/winter/epplets/images/s_v.png
-%%DATADIR%%/themes/winter/epplets/images/skip1.png
-%%DATADIR%%/themes/winter/epplets/images/skip2.png
-%%DATADIR%%/themes/winter/epplets/images/skip3.png
-%%DATADIR%%/themes/winter/epplets/images/stop1.png
-%%DATADIR%%/themes/winter/epplets/images/stop2.png
-%%DATADIR%%/themes/winter/epplets/images/stop3.png
-%%DATADIR%%/themes/winter/eterm/eterm.cfg
-%%DATADIR%%/themes/winter/eterm/images/a_d_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_d_2.png
-%%DATADIR%%/themes/winter/eterm/images/a_l_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_l_2.png
-%%DATADIR%%/themes/winter/eterm/images/a_r_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_r_2.png
-%%DATADIR%%/themes/winter/eterm/images/a_u_1.png
-%%DATADIR%%/themes/winter/eterm/images/a_u_2.png
-%%DATADIR%%/themes/winter/eterm/images/bg.jpg
-%%DATADIR%%/themes/winter/eterm/images/bt.png
-%%DATADIR%%/themes/winter/eterm/images/mb2.png
-%%DATADIR%%/themes/winter/eterm/images/mb3.png
-%%DATADIR%%/themes/winter/eterm/images/sb1.png
-%%DATADIR%%/themes/winter/eterm/images/sb2.png
-%%DATADIR%%/themes/winter/eterm/images/t.png
-%%DATADIR%%/themes/winter/focuslist/focuslist.cfg
-%%DATADIR%%/themes/winter/focuslist/focuslist.cfg.ko
-%%DATADIR%%/themes/winter/focuslist/images/hbar.png
-%%DATADIR%%/themes/winter/focuslist/images/hbar2.png
-%%DATADIR%%/themes/winter/iconbox/iconbox.cfg
-%%DATADIR%%/themes/winter/iconbox/iconbox.cfg.ko
-%%DATADIR%%/themes/winter/iconbox/images/base_.png
-%%DATADIR%%/themes/winter/iconbox/images/bg.png
-%%DATADIR%%/themes/winter/iconbox/images/blank.png
-%%DATADIR%%/themes/winter/iconbox/images/button-h.png
-%%DATADIR%%/themes/winter/iconbox/images/cover.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-base_h.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-base_v.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-knob.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-knob_active.png
-%%DATADIR%%/themes/winter/iconbox/images/scroll-knob_clicked.png
-%%DATADIR%%/themes/winter/iconbox/images/unused.png
-%%DATADIR%%/themes/winter/imageclasses.cfg
-%%DATADIR%%/themes/winter/imageclasses.cfg.ko
-%%DATADIR%%/themes/winter/init/images/btn3.png
-%%DATADIR%%/themes/winter/init/images/progress_bar.png
-%%DATADIR%%/themes/winter/init/images/text_bg.png
-%%DATADIR%%/themes/winter/init/init.cfg
-%%DATADIR%%/themes/winter/init/init.cfg.ko
-%%DATADIR%%/themes/winter/init.cfg
-%%DATADIR%%/themes/winter/init.cfg.ko
-%%DATADIR%%/themes/winter/menustyles/images/menu-arrow-sel.png
-%%DATADIR%%/themes/winter/menustyles/images/menu-arrow.png
-%%DATADIR%%/themes/winter/menustyles/images/menu-sel.png
-%%DATADIR%%/themes/winter/menustyles/menustyles.cfg
-%%DATADIR%%/themes/winter/menustyles/menustyles.cfg.ko
-%%DATADIR%%/themes/winter/menustyles.cfg
-%%DATADIR%%/themes/winter/menustyles.cfg.ko
-%%DATADIR%%/themes/winter/pager/images/p_bg.png
-%%DATADIR%%/themes/winter/pager/images/p_sel.png
-%%DATADIR%%/themes/winter/pager/images/p_win.png
-%%DATADIR%%/themes/winter/pager/pager.cfg
-%%DATADIR%%/themes/winter/pager/pager.cfg.ko
-%%DATADIR%%/themes/winter/slideouts/slideouts.cfg
-%%DATADIR%%/themes/winter/slideouts.cfg
-%%DATADIR%%/themes/winter/sound/sound.cfg
-%%DATADIR%%/themes/winter/sound.cfg
-%%DATADIR%%/themes/winter/tooltips/images/clear.png
-%%DATADIR%%/themes/winter/tooltips/images/tooltipbg.png
-%%DATADIR%%/themes/winter/tooltips/tooltips.cfg
-%%DATADIR%%/themes/winter/tooltips/tooltips.cfg.ko
-%%DATADIR%%/themes/winter/tooltips.cfg
-%%DATADIR%%/themes/winter/tooltips.cfg.ko
-%%DATADIR%%/themes/winter/ttfonts/COPYRIGHT.Vera
-%%DATADIR%%/themes/winter/ttfonts/LICENSE.Vera
-%%DATADIR%%/themes/winter/ttfonts/Vera.ttf
-%%DATADIR%%/themes/winter/ttfonts/VeraBd.ttf
-%%DATADIR%%/themes/winter/windowmatches.cfg
+bin/enlightenment-config
+bin/enlightenment_eapp
+bin/enlightenment_remote
+include/E_Lib.h
+include/enlightenment/e.h
+include/enlightenment/e_actions.h
+include/enlightenment/e_apps.h
+include/enlightenment/e_atoms.h
+include/enlightenment/e_bindings.h
+include/enlightenment/e_border.h
+include/enlightenment/e_box.h
+include/enlightenment/e_canvas.h
+include/enlightenment/e_config.h
+include/enlightenment/e_container.h
+include/enlightenment/e_datastore.h
+include/enlightenment/e_desk.h
+include/enlightenment/e_dnd.h
+include/enlightenment/e_error.h
+include/enlightenment/e_focus.h
+include/enlightenment/e_font.h
+include/enlightenment/e_gadman.h
+include/enlightenment/e_hints.h
+include/enlightenment/e_icon.h
+include/enlightenment/e_includes.h
+include/enlightenment/e_init.h
+include/enlightenment/e_int_menus.h
+include/enlightenment/e_intl.h
+include/enlightenment/e_ipc.h
+include/enlightenment/e_ipc_codec.h
+include/enlightenment/e_ipc_handlers.h
+include/enlightenment/e_ipc_handlers_list.h
+include/enlightenment/e_layout.h
+include/enlightenment/e_manager.h
+include/enlightenment/e_menu.h
+include/enlightenment/e_module.h
+include/enlightenment/e_moveresize.h
+include/enlightenment/e_msg.h
+include/enlightenment/e_object.h
+include/enlightenment/e_path.h
+include/enlightenment/e_place.h
+include/enlightenment/e_pointer.h
+include/enlightenment/e_popup.h
+include/enlightenment/e_prefix.h
+include/enlightenment/e_resist.h
+include/enlightenment/e_signals.h
+include/enlightenment/e_startup.h
+include/enlightenment/e_table.h
+include/enlightenment/e_test.h
+include/enlightenment/e_theme.h
+include/enlightenment/e_user.h
+include/enlightenment/e_utils.h
+include/enlightenment/e_winlist.h
+include/enlightenment/e_xinerama.h
+include/enlightenment/e_zone.h
+lib/enlightenment/modules/battery/module.so
+lib/enlightenment/modules/battery/module_icon.png
+lib/enlightenment/modules/clock/module.so
+lib/enlightenment/modules/clock/module_icon.png
+lib/enlightenment/modules/cpufreq/freqset
+lib/enlightenment/modules/cpufreq/module.so
+lib/enlightenment/modules/cpufreq/module_icon.png
+lib/enlightenment/modules/dropshadow/menu_icon_close.png
+lib/enlightenment/modules/dropshadow/menu_icon_dark.png
+lib/enlightenment/modules/dropshadow/menu_icon_far.png
+lib/enlightenment/modules/dropshadow/menu_icon_fuzzy.png
+lib/enlightenment/modules/dropshadow/menu_icon_light.png
+lib/enlightenment/modules/dropshadow/menu_icon_medium.png
+lib/enlightenment/modules/dropshadow/menu_icon_sharp.png
+lib/enlightenment/modules/dropshadow/menu_icon_underneath.png
+lib/enlightenment/modules/dropshadow/menu_icon_very_dark.png
+lib/enlightenment/modules/dropshadow/menu_icon_very_far.png
+lib/enlightenment/modules/dropshadow/menu_icon_very_fuzzy.png
+lib/enlightenment/modules/dropshadow/menu_icon_very_light.png
+lib/enlightenment/modules/dropshadow/menu_icon_very_sharp.png
+lib/enlightenment/modules/dropshadow/module.so
+lib/enlightenment/modules/dropshadow/module_icon.png
+lib/enlightenment/modules/ibar/module.so
+lib/enlightenment/modules/ibar/module_icon.png
+lib/enlightenment/modules/ibox/module.so
+lib/enlightenment/modules/ibox/module_icon.png
+lib/enlightenment/modules/pager/module.so
+lib/enlightenment/modules/pager/module_icon.png
+lib/enlightenment/modules/start/module.so
+lib/enlightenment/modules/start/module_icon.png
+lib/enlightenment/modules/temperature/module.so
+lib/enlightenment/modules/temperature/module_icon.png
+lib/enlightenment/modules/test/module.so
+lib/enlightenment/preload/e_hack.so
+lib/libe.a
+lib/libe.so
+lib/libe.so.0
+%%DATADIR%%/data/fonts/Vera.COPYING
+%%DATADIR%%/data/fonts/Vera.ttf
+%%DATADIR%%/data/fonts/VeraBI.ttf
+%%DATADIR%%/data/fonts/VeraBd.ttf
+%%DATADIR%%/data/fonts/VeraIt.ttf
+%%DATADIR%%/data/fonts/VeraMoBI.ttf
+%%DATADIR%%/data/fonts/VeraMoBd.ttf
+%%DATADIR%%/data/fonts/VeraMoIt.ttf
+%%DATADIR%%/data/fonts/VeraMono.ttf
+%%DATADIR%%/data/fonts/VeraSe.ttf
+%%DATADIR%%/data/fonts/VeraSeBd.ttf
+%%DATADIR%%/data/fonts/baekmuk.COPYING
+%%DATADIR%%/data/fonts/dotum.ttf
+%%DATADIR%%/data/fonts/fireflysung.COPYING
+%%DATADIR%%/data/fonts/fireflysung.ttf
+%%DATADIR%%/data/fonts/fonts.alias
+%%DATADIR%%/data/fonts/fonts.dir
+%%DATADIR%%/data/fonts/kochi-gothic.ttf
+%%DATADIR%%/data/fonts/kochi.COPYING
+%%DATADIR%%/data/icons/default.edj
+%%DATADIR%%/data/images/button_in.png
+%%DATADIR%%/data/images/button_out.png
+%%DATADIR%%/data/images/e.png
+%%DATADIR%%/data/images/error_bg.png
+%%DATADIR%%/data/images/pointer.png
+%%DATADIR%%/data/images/pointer_mono.png
+%%DATADIR%%/data/init/init.edj
+%%DATADIR%%/data/other/applications.tar.gz
+%%DATADIR%%/data/other/icon_example.tar.gz
+%%DATADIR%%/data/themes/default.edj
+%%DATADIR%%/doc/documentation.html
+%%DATADIR%%/doc/enlightenment.png
 share/locale/bg/LC_MESSAGES/enlightenment.mo
-share/locale/bs/LC_MESSAGES/enlightenment.mo
-share/locale/da/LC_MESSAGES/enlightenment.mo
+share/locale/cs/LC_MESSAGES/enlightenment.mo
 share/locale/de/LC_MESSAGES/enlightenment.mo
-share/locale/en_US/LC_MESSAGES/enlightenment.mo
 share/locale/es/LC_MESSAGES/enlightenment.mo
+share/locale/fi/LC_MESSAGES/enlightenment.mo
 share/locale/fr/LC_MESSAGES/enlightenment.mo
 share/locale/hu/LC_MESSAGES/enlightenment.mo
+share/locale/it/LC_MESSAGES/enlightenment.mo
 share/locale/ja/LC_MESSAGES/enlightenment.mo
-share/locale/ko/LC_MESSAGES/enlightenment.mo
-share/locale/nl/LC_MESSAGES/enlightenment.mo
-share/locale/no/LC_MESSAGES/enlightenment.mo
 share/locale/pl/LC_MESSAGES/enlightenment.mo
 share/locale/pt/LC_MESSAGES/enlightenment.mo
-share/locale/pt_BR/LC_MESSAGES/enlightenment.mo
 share/locale/ru/LC_MESSAGES/enlightenment.mo
-share/locale/sv/LC_MESSAGES/enlightenment.mo
-share/locale/tr/LC_MESSAGES/enlightenment.mo
-@dirrm %%DATADIR%%/themes/winter/ABOUT
-@dirrm %%DATADIR%%/themes/winter/backgrounds/images
-@dirrm %%DATADIR%%/themes/winter/backgrounds
-@dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS/images
-@dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/DEFAULT/images
-@dirrm %%DATADIR%%/themes/winter/borders/DEFAULT
-@dirrm %%DATADIR%%/themes/winter/borders/DIALOG/images
-@dirrm %%DATADIR%%/themes/winter/borders/DIALOG
-@dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE/images
-@dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE
-@dirrm %%DATADIR%%/themes/winter/borders/ICONBOX/images
-@dirrm %%DATADIR%%/themes/winter/borders/ICONBOX
-@dirrm %%DATADIR%%/themes/winter/borders/MENU/images
-@dirrm %%DATADIR%%/themes/winter/borders/MENU
-@dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY/images
-@dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT
-@dirrm %%DATADIR%%/themes/winter/borders/SHAPED/images
-@dirrm %%DATADIR%%/themes/winter/borders/SHAPED
-@dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT/images
-@dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT
-@dirrm %%DATADIR%%/themes/winter/borders/common/images
-@dirrm %%DATADIR%%/themes/winter/borders/common
-@dirrm %%DATADIR%%/themes/winter/borders
-@dirrm %%DATADIR%%/themes/winter/buttons/images
-@dirrm %%DATADIR%%/themes/winter/buttons
-@dirrm %%DATADIR%%/themes/winter/common/images
-@dirrm %%DATADIR%%/themes/winter/common
-@dirrm %%DATADIR%%/themes/winter/coords/images
-@dirrm %%DATADIR%%/themes/winter/coords
-@dirrm %%DATADIR%%/themes/winter/cursors
-@dirrm %%DATADIR%%/themes/winter/dialogs/images
-@dirrm %%DATADIR%%/themes/winter/dialogs
-@dirrm %%DATADIR%%/themes/winter/dock/images
-@dirrm %%DATADIR%%/themes/winter/dock
-@dirrm %%DATADIR%%/themes/winter/dragbar/images
-@dirrm %%DATADIR%%/themes/winter/dragbar
-@dirrm %%DATADIR%%/themes/winter/epplets/images
-@dirrm %%DATADIR%%/themes/winter/epplets
-@dirrm %%DATADIR%%/themes/winter/eterm/images
-@dirrm %%DATADIR%%/themes/winter/eterm
-@dirrm %%DATADIR%%/themes/winter/focuslist/images
-@dirrm %%DATADIR%%/themes/winter/focuslist
-@dirrm %%DATADIR%%/themes/winter/iconbox/images
-@dirrm %%DATADIR%%/themes/winter/iconbox
-@dirrm %%DATADIR%%/themes/winter/init/images
-@dirrm %%DATADIR%%/themes/winter/init
-@dirrm %%DATADIR%%/themes/winter/menustyles/images
-@dirrm %%DATADIR%%/themes/winter/menustyles
-@dirrm %%DATADIR%%/themes/winter/pager/images
-@dirrm %%DATADIR%%/themes/winter/pager
-@dirrm %%DATADIR%%/themes/winter/slideouts/images
-@dirrm %%DATADIR%%/themes/winter/slideouts
-@dirrm %%DATADIR%%/themes/winter/sound/samples
-@dirrm %%DATADIR%%/themes/winter/sound
-@dirrm %%DATADIR%%/themes/winter/tooltips/images
-@dirrm %%DATADIR%%/themes/winter/tooltips
-@dirrm %%DATADIR%%/themes/winter/ttfonts
-@dirrm %%DATADIR%%/themes/winter
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/config/pix
-@dirrm %%DATADIR%%/config
+share/locale/sl/LC_MESSAGES/enlightenment.mo
+share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/data/themes
+@dirrm %%DATADIR%%/data/other
+@dirrm %%DATADIR%%/data/init
+@dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data/icons
+@dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@unexec rmdir %D/etc/X11/dm/Sessions 2> /dev/null || true
-@unexec rmdir %D/etc/X11/dm 2> /dev/null || true
-@unexec rmdir %D/etc/X11 2> /dev/null || true
-@unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/en_US 2> /dev/null || true
+@dirrm lib/enlightenment/preload
+@dirrm lib/enlightenment/modules/test
+@dirrm lib/enlightenment/modules/temperature
+@dirrm lib/enlightenment/modules/start
+@dirrm lib/enlightenment/modules/pager
+@dirrm lib/enlightenment/modules/ibox
+@dirrm lib/enlightenment/modules/ibar
+@dirrm lib/enlightenment/modules/dropshadow
+@dirrm lib/enlightenment/modules/cpufreq
+@dirrm lib/enlightenment/modules/clock
+@dirrm lib/enlightenment/modules/battery
+@dirrm lib/enlightenment/modules
+@dirrm lib/enlightenment
+@dirrm include/enlightenment
