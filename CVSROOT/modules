@@ -1940,6 +1940,7 @@ enigmail	ports/mail/enigmail
 enigmail-thunderbird	ports/mail/enigmail-thunderbird
 enjoympeg	ports/multimedia/enjoympeg
 enlightenment	ports/x11-wm/enlightenment
+enlightenment-devel	ports/x11-wm/enlightenment-devel
 enlightenment-docs	ports/x11-wm/enlightenment-docs
 enlightenment-theme-BlueSteel	ports/x11-themes/enlightenment-theme-BlueSteel
 enlightenment-theme-BrushedMetal-Tigert	ports/x11-themes/enlightenment-theme-BrushedMetal-Tigert
