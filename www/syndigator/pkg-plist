@@ -85,3 +85,6 @@ share/gnome/pixmaps/syndigator/trayicon.gif
 @dirrm %%SITE_PERL%%/syndigator/RSSReader/Exporter
 @dirrm %%SITE_PERL%%/syndigator/RSSReader
 @dirrm %%SITE_PERL%%/syndigator
+@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
+@unexec rmdir %D/lib/perl5 2>/dev/null || true
