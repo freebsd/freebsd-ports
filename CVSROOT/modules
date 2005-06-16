@@ -12691,6 +12691,7 @@ xmms-cdread	ports/audio/xmms-cdread
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
 xmms-defx	ports/audio/xmms-defx
+xmms-dscope	ports/graphics/xmms-dscope
 xmms-dspectogram	ports/graphics/xmms-dspectogram
 xmms-dspectral	ports/graphics/xmms-dspectral
 xmms-eq		ports/audio/xmms-eq
