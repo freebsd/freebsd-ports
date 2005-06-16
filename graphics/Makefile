@@ -76,6 +76,7 @@
     SUBDIR += dvipng
     SUBDIR += dynamechs
     SUBDIR += ecg2png
+    SUBDIR += edje
     SUBDIR += electriceyes
     SUBDIR += enblend
     SUBDIR += enfle

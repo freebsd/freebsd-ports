@@ -1,0 +1,14 @@
+Edje is a complex graphical design and layout engine. It provides a
+mechanism for allowing configuration data to define visual elements in
+terms of layout, behavior, and appearance.  Edje allows for multiple
+collections of layouts in one file, allowing a complete set of images,
+animations, and controls to exist as a unified whole.
+
+Edje separates the arrangement, appearance, and behavior logic into
+distinct independent entities.  This allows visual objects to share
+image data and configuration information without requiring them to do
+so.  This separation and simplistic event driven style of programming
+can produce almost any look and feel one could want for basic visual
+elements. Anything more complex is likely the domain of an application
+or widget set that may use Edje as a conveneient way of being able to
+configure parts of the display.
