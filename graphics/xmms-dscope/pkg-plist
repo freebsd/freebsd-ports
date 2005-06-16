@@ -1,0 +1,4 @@
+lib/xmms/Visualization/libdscope.so
+share/xmms/dscope_themes/bg_gtk.xpm
+share/xmms/dscope_themes/bg_xmms.xpm
+@dirrm share/xmms/dscope_themes
