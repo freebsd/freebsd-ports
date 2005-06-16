@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jun 14 21:37:46 2005
++++ Makefile.in	Tue Jun 14 21:43:11 2005
+@@ -227,7 +227,7 @@
+ @WITH_GLIB_COMPAT_TRUE@glib_compat_subdirs = glib-compat
+ @WITH_GLIB_COMPAT_FALSE@no_glib_compat_subdirs = gimp-loader pixbuf-loader
+ @WITH_GLIB_COMPAT_TRUE@no_glib_compat_subdirs = 
+-SUBDIRS = $(glib_compat_subdirs) libswfdec test player plugin $(no_glib_compat_subdirs)
++SUBDIRS = $(glib_compat_subdirs) libswfdec plugin
+ DIST_SUBDIRS = \
+ 	gimp-loader \
+ 	glib-compat \
