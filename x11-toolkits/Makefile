@@ -15,6 +15,7 @@
     SUBDIR += efltk
     SUBDIR += erlgtk
     SUBDIR += etox
+    SUBDIR += ewl
     SUBDIR += fl_editor
     SUBDIR += fltk
     SUBDIR += fltk-threads
