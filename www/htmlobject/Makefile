@@ -7,18 +7,22 @@
 #
 
 PORTNAME=	htmlobject
-PORTVERSION=	1.09
+PORTVERSION=	2.26
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	html_object-${PORTVERSION}
+DISTNAME=	lib${PORTNAME}-perl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Document Object
 
 PERL_CONFIGURE=	yes
 
-MAN3=	HTMLObject::Base.3 HTMLObject::FrameSet.3 HTMLObject::GetCookie.3 \
-	HTMLObject::Normal.3 HTMLObject::ReadCookie.3
+MAN3=		HTMLObject::Base.3 HTMLObject::Form.3 \
+		HTMLObject::FrameSet.3 HTMLObject::HDMLCard.3 \
+		HTMLObject::HDMLDeck.3 HTMLObject::Normal.3 \
+		HTMLObject::ReadCookie.3 HTMLObject::Template.3 \
+		HTMLObject::WAP.3 HTMLObject::WMLCard.3 \
+		HTMLObject::WMLDeck.3
 
 .include <bsd.port.mk>

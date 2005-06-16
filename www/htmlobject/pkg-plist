@@ -1,19 +1,38 @@
 %%SITE_PERL%%/HTMLObject/Base.pm
+%%SITE_PERL%%/HTMLObject/CGILib.pm
+%%SITE_PERL%%/HTMLObject/Form.pm
 %%SITE_PERL%%/HTMLObject/FrameSet.pm
-%%SITE_PERL%%/HTMLObject/GetCookie.pm
+%%SITE_PERL%%/HTMLObject/HDMLCard.pm
+%%SITE_PERL%%/HTMLObject/HDMLDeck.pm
 %%SITE_PERL%%/HTMLObject/Normal.pm
 %%SITE_PERL%%/HTMLObject/ReadCookie.pm
+%%SITE_PERL%%/HTMLObject/Template.pm
+%%SITE_PERL%%/HTMLObject/WAP.pm
+%%SITE_PERL%%/HTMLObject/WMLCard.pm
+%%SITE_PERL%%/HTMLObject/WMLDeck.pm
 %%SITE_PERL%%/auto/HTMLObject/Base/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/Form/autosplit.ix
 %%SITE_PERL%%/auto/HTMLObject/FrameSet/autosplit.ix
-%%SITE_PERL%%/auto/HTMLObject/GetCookie/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/HDMLCard/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/HDMLDeck/autosplit.ix
 %%SITE_PERL%%/auto/HTMLObject/Normal/autosplit.ix
 %%SITE_PERL%%/auto/HTMLObject/ReadCookie/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/Template/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/WAP/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/WMLCard/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/WMLDeck/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject/.packlist
-@dirrm %%SITE_PERL%%/HTMLObject
-@dirrm %%SITE_PERL%%/auto/HTMLObject/Base
-@dirrm %%SITE_PERL%%/auto/HTMLObject/FrameSet
-@dirrm %%SITE_PERL%%/auto/HTMLObject/GetCookie
-@dirrm %%SITE_PERL%%/auto/HTMLObject/Normal
-@dirrm %%SITE_PERL%%/auto/HTMLObject/ReadCookie
-@dirrm %%SITE_PERL%%/auto/HTMLObject
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject
+@dirrm %%SITE_PERL%%/auto/HTMLObject/WMLDeck
+@dirrm %%SITE_PERL%%/auto/HTMLObject/WMLCard
+@dirrm %%SITE_PERL%%/auto/HTMLObject/WAP
+@dirrm %%SITE_PERL%%/auto/HTMLObject/Template
+@dirrm %%SITE_PERL%%/auto/HTMLObject/ReadCookie
+@dirrm %%SITE_PERL%%/auto/HTMLObject/Normal
+@dirrm %%SITE_PERL%%/auto/HTMLObject/HDMLDeck
+@dirrm %%SITE_PERL%%/auto/HTMLObject/HDMLCard
+@dirrm %%SITE_PERL%%/auto/HTMLObject/FrameSet
+@dirrm %%SITE_PERL%%/auto/HTMLObject/Form
+@dirrm %%SITE_PERL%%/auto/HTMLObject/Base
+@dirrm %%SITE_PERL%%/auto/HTMLObject
+@dirrm %%SITE_PERL%%/HTMLObject
