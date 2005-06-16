@@ -17,7 +17,6 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/sun_text_sample.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/svg.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/svg_dom_sample.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/svg_gd_simple_1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/svgtest2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/yaph5.cgi
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
