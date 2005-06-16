@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logmon
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edespot.com/code/LogMon/
 DISTNAME=	LogMon-${PORTVERSION}
@@ -17,7 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses-based split window log monitoring program
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/logmon
+PLIST_FILES=	bin/logmon %%EXAMPLESDIR%%/logmon.conf.example
+PLIST_DIRS=	%%EXAMPLESDIR%%
 USE_GMAKE=	yes
+
+post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/logmon.conf.example ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
