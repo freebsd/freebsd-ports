@@ -1,0 +1,4 @@
+lib/xmms/Visualization/libdflowers.so
+share/xmms/dflowers_themes/bg_blueheart.xpm
+share/xmms/dflowers_themes/bg_def.xpm
+@dirrm share/xmms/dflowers_themes
