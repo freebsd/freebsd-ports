@@ -2601,6 +2601,7 @@ gconf2		ports/devel/gconf2
 gconfmm		ports/devel/gconfmm
 gconfmm26	ports/devel/gconfmm26
 gctpc		ports/misc/gctpc
+gcube		ports/emulators/gcube
 gcursor		ports/x11/gcursor
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
