@@ -284,6 +284,7 @@
     SUBDIR += linux-edonkey-tool-list
     SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += linux-opengroupware
+    SUBDIR += localedata
     SUBDIR += logsurfer
     SUBDIR += lr
     SUBDIR += lv
