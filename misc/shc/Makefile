@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shc
-PORTVERSION=	3.7
+PORTVERSION=	3.8.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +19,7 @@ MAN1=		shc.1
 PLIST_FILES=	bin/shc
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o shc shc.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o shc shc.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shc ${PREFIX}/bin
