@@ -391,6 +391,9 @@ macopix-*.tar.gz	games/macopix		Contains commercial character data
 MarathonEvil-*.tar.gz	games/marathon-evil	Bungie/Microsoft do not
 						allow charging for Marathon data
 						files
+marathon2.zip		games/marathon2-data	Bungie/Microsoft do not
+						allow charging for Marathon data
+						files.
 mathfonts-4.1/*		x11-fonts/mathfonts	No redistribution allowed
 mbrola-freebsd/*	audio/mbrola		No commercial, military use
 						voices cannot be sold

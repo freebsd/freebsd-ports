@@ -298,6 +298,7 @@
     SUBDIR += maitretarot
     SUBDIR += mangband
     SUBDIR += marathon-evil
+    SUBDIR += marathon2-data
     SUBDIR += marbles
     SUBDIR += meqcc
     SUBDIR += merlin
