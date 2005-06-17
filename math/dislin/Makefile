@@ -7,7 +7,7 @@
 
 PORTNAME=	dislin
 PORTVERSION=	8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math linux
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/linux/${MACHINE_ARCH}/
 PKGNAMEPREFIX=	linux-
@@ -17,13 +17,12 @@ DIST_SUBDIR=	${MACHINE_ARCH}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 BROKEN=		Unfetchable
 
 ONLY_FOR_ARCHS=	i386 alpha
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_BUILD=	yes
-INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${DISLIN_DIR}/lib
 
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
@@ -38,6 +37,8 @@ do-configure:
 	    <${FILESDIR}/dislin-wrapper.sh >${WRKDIR}/dislin.sh
 	${SED} -e 's,%%DISLIN_DIR%%,${DISLIN_DIR},' \
 	    <${FILESDIR}/pkg-message >${WRKDIR}/pkg-message
+
+# XXX: this is missing "${BRANDELF} -t Linux <executable>"
 
 do-install:
 	(cd ${WRKSRC} && ${ENV} DISLIN=${DISLIN_DIR} ${SH} INSTALL)

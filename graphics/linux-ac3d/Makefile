@@ -7,6 +7,7 @@
 
 PORTNAME=	ac3d
 PORTVERSION=	5.0.21
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://inivis.swmirror.com/
 PKGNAMEPREFIX=	linux-
@@ -16,19 +17,20 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 
-.ifdef(INSTALL_DYNLINKED_VERSION)
-LIB_DEPENDS=	${LINUXBASE}/usr/libGLU.so.1:${PORTSDIR}/graphics/linux_mesa3
-.endif
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs \
+RUN_DEPENDS=	\
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png10 \
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff
+.ifdef(INSTALL_DYNLINKED_VERSION)
+RUN_DEPENDS+=	${LINUXBASE}/usr/libGLU.so.1:${PORTSDIR}/graphics/linux_mesa3
+.endif
 
 RESTRICTED=	"no distribution permitted"
 NO_CDROM=	${RESTRICTED}
 
-NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
 SUB_FILES=	pkg-message
@@ -44,10 +46,6 @@ PLIST_SUB=	DYNAMIC_VERSION=""		\
 PROGRAM=	${PORTNAME}
 .endif
 
-# Linux binary should not be stripped by INSTALL_PROGRAM
-# because as a side effect it brands the binary as FreeBSD.
-STRIP=
-
 .ifndef(INSTALL_DYNLINKED_VERSION)
 pre-everything::
 	@${ECHO_MSG} 'Define INSTALL_DYNLINKED_VERSION=yes to install'
@@ -56,6 +54,9 @@ pre-everything::
 	@${ECHO_MSG} 'It may be useful with hardware accelerated MesaGL.'
 	@${ECHO_MSG} ''
 .endif
+
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/${PROGRAM}
 
 pre-install:
 # Generate startup script

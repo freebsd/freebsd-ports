@@ -20,19 +20,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates a web page with ed2k:// links to all your shared files
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX?=	yes
+USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/edonkey-tool-list
-STRIP=
-
-STRIP_CMD=	${LINUXBASE}/usr/bin/strip
-
-.if exists(/usr/bin/brandelf)
-BRANDELF?=	/usr/bin/brandelf
-.else
-BRANDELF?=	brandelf
-.endif
 
 BINARY_NAME=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -45,9 +36,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 pre-install:
-.if exists(${STRIP_CMD})
 	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
-.endif
 	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
 
 .include <bsd.port.post.mk>

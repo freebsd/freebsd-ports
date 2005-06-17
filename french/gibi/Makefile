@@ -7,7 +7,7 @@
 
 PORTNAME=	gibi
 PORTVERSION=	2000
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	french cad linux
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
@@ -25,7 +25,6 @@ COMMENT=	GIBI est la partie mailleur et post de CASTEM
 
 BUILD_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
 RUN_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs \
 		${SHELL_RUN_GIBI}:${PORTSDIR}/shells/${SHRGDEP}
 
 RESTRICTED=	"Toute personne chargeant le logiciel GIBI s'engage à ne\
@@ -35,6 +34,8 @@ RESTRICTED=	"Toute personne chargeant le logiciel GIBI s'engage à ne\
 ONLY_FOR_ARCHS=	i386
 
 USE_REINPLACE=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 
@@ -93,7 +94,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/${PORTNAME}${ARCHIVER}			\
 		${GIBIDIR}/bin
 	@${BRANDELF} -t Linux ${GIBIDIR}/bin/${PORTNAME}${ARCHIVER}
-	@${BRANDELF} ${GIBIDIR}/DATA/kinstall_${ARCHIVER}
+	@${BRANDELF} -t Linux ${GIBIDIR}/DATA/kinstall_${ARCHIVER}
 	@(cd ${GIBIDIR}/DATA							\
 	&& ./kinstall_${ARCHIVER} < ${FILESDIR}/clef >/dev/null 2>&1		\
 	&& ${CHMOD} 666 USRDAT)

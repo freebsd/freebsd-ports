@@ -7,7 +7,7 @@
 
 PORTNAME=	adom
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.adom.de/adom/download/linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
@@ -15,11 +15,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
 MAINTAINER=	sr-13@mail.ru
 COMMENT=	An rogue-like advanced rpg with color support (binary port)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 NO_CDROM=	Copy of CD must be sent to author
 
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/adom
 NO_BUILD=	yes

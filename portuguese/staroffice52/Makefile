@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	portuguese editors linux
 MASTER_SITES=	http://ftp.ceat.net/pub/linux/text/office/star_office-5.2/ \
 		ftp://ftp.puc-rio.br/pub/StarOffice52/ \
@@ -28,9 +28,11 @@ EXTRACT_ONLY=	109939-03.tar.Z
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Sistema integrado de processador de texto/planilha/e muito mais
 
-FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
+FETCH_DEPENDS=	${LINUX_BASE_PORT}
 
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_CDROM=	'Deve ser obtido diretamente do site da Sun via interface www'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
@@ -180,6 +182,7 @@ do-install:
 		${CP} -Rv $$file ${PREFIX}/office52/ ; \
 	done
 .endif
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 post-install:
 .for file in setup soffice

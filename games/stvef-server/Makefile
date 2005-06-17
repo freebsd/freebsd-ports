@@ -6,7 +6,7 @@
 
 PORTNAME=	stvef-server
 PORTVERSION=	1.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	ftp.multiplay.co.uk/pub/games/fps/eliteforce/patches/linux/ \
 		ftp://3dgamers.in-span.net/pub/3dgamers/games/stveliteforce/ 
@@ -17,19 +17,21 @@ COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
-USE_LINUX_PREFIX=	yes
-USE_LINUX?=	yes
-NO_BUILD=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Linux
-STRIP=
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
-GAMEDIR=	${PREFIX}/usr/games/stvef/
+GAMEDIR=	${PREFIX}/games/stvef/
 
 # files which should be installed with executables perms
 EXECUTABLES=	linuxstvefded_1.2-static linuxstvefded_1.2-glibc2.1.3
+
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/linuxstvefded_1.2-static
+	${BRANDELF} -t Linux ${WRKSRC}/linuxstvefded_1.2-glibc2.1.3
 
 do-install:
 	${MKDIR} ${GAMEDIR}

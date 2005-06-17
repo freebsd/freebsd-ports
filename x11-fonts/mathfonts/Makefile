@@ -8,6 +8,7 @@
 PORTNAME=	mathfonts
 PORTVERSION=	4.1	# Don't upgrade this port if not supported by MathML-enabled Mozilla
 # 			# Please check http://www.mozilla.org/projects/mathml/fonts/
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://support.wolfram.com/mathematica/systems/windows/general/
 DISTNAME=	MathFonts_TrueType
@@ -23,9 +24,9 @@ RESTRICTED=	"no distribution of the fonts allowed"
 NO_CDROM=	${RESTRICTED}
 
 .if !defined(WITHOUT_FULLMATHML)
-BUILD_DEPENDS+=	${LOCALBASE}/Acrobat5/Resource/Font/Symbol:${PORTSDIR}/print/acroread
+BUILD_DEPENDS+=	${X11BASE}/Acrobat5/Resource/Font/Symbol:${PORTSDIR}/print/acroread
 RUN_DEPENDS+=	${FONTSBASE}/texcm-ttf/cmr10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf	\
-		${LOCALBASE}/Acrobat5/Resource/Font/Symbol:${PORTSDIR}/print/acroread
+		${X11BASE}/Acrobat5/Resource/Font/Symbol:${PORTSDIR}/print/acroread
 PLIST_SUB=	ACROREAD=""
 .else
 PLIST_SUB=	ACROREAD="@comment "
@@ -57,7 +58,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.scale ${WRKSRC}/fonts.dir	\
 		${FONTSDIR}
 .if !defined(WITHOUT_FULLMATHML)
-	${LN} -fs ${LOCALBASE}/Acrobat5/Resource/Font/Symbol ${FONTSDIR}
+	${LN} -fs ${X11BASE}/Acrobat5/Resource/Font/Symbol ${FONTSDIR}
 .endif
 
 post-install:

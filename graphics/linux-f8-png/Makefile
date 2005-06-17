@@ -7,7 +7,7 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://mirrors.xmission.com/fedora/core/3/i386/os/Fedora/RPMS/ \
 		http://fedora.cat.pdx.edu/linux/core/3/i386/os/Fedora/RPMS/

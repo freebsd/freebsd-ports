@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.hu-berlin.de/pub/linux/staroffice/german/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/deutsch/ \
@@ -30,11 +30,12 @@ EXTRACT_ONLY=	109939-03.tar.Z
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
-FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+FETCH_DEPENDS=	${LINUX_BASE_PORT}
 
 NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
@@ -192,5 +193,6 @@ post-install:
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" ${LINUXBASE}/bin/sh -c \
 		${PREFIX}/office52/program/setup
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 .include <bsd.port.post.mk>

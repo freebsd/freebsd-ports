@@ -7,7 +7,7 @@
 
 PORTNAME=	utserver
 PORTVERSION=	436
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games linux
 MASTER_SITES=	http://public.planetmirror.com/pub/lokigames/installers/ut/ \
 		http://fileserver.talkware.net/ut/
@@ -22,13 +22,13 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 BROKEN=		Incomplete pkg-plist
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ut-server
 
-UTDIR=		usr/games/ut-server/
+UTDIR=		games/ut-server/
 PLIST_SUB=	UTDIR="${UTDIR}"
 EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755

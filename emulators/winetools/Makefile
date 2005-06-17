@@ -7,7 +7,7 @@
 
 PORTNAME=	winetools
 PORTVERSION=	1.25a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/winetools/}
 PKGNAMEPREFIX=	linux-
@@ -16,16 +16,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A setup and configuration tool for WINE
 
-RUN_DEPENDS=	wine:${PORTSDIR}/emulators/wine \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	wine:${PORTSDIR}/emulators/wine
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/winetools
-
-BRANDELF?=	/usr/bin/brandelf
-STRIP=
 
 post-extract:
 	@${BRANDELF} -t Linux ${WRKDIR}/${PORTNAME}

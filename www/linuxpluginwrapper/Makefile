@@ -19,8 +19,8 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 .include <bsd.port.pre.mk>
 
 .if		!defined(WITHOUT_PLUGINS)
-RUN_DEPENDS=	${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
-RUN_DEPENDS+=	${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
+RUN_DEPENDS=	${X11BASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
+RUN_DEPENDS+=	${X11BASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
 .if		${OSVERSION} >= 500000
 RUN_DEPENDS+=	${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so:${PORTSDIR}/print/acroread7
 .else
@@ -76,6 +76,12 @@ pre-everything::
 .endif
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "s:/usr/local/lib/linux-:${X11BASE}/lib/linux-:g" \
+		-e "s:/usr/local/Acrobat5:${X11BASE}/Acrobat5:g" \
+		${WRKSRC}/misc/libmap*
+
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},' \
@@ -98,13 +104,13 @@ pre-install:
 	@${LN} -sf ${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so \
 		${X11BASE}/lib/browser_plugins/
 .endif
-	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/flashplayer.xpt \
+	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/flashplayer.xpt \
 		${X11BASE}/lib/browser_plugins/
-	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so \
+	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/libflashplayer.so \
 		${X11BASE}/lib/browser_plugins/
-	@${LN} -sf ${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.so \
+	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.so \
 		${X11BASE}/lib/browser_plugins/
-	@${LN} -sf ${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.xpt \
+	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.xpt \
 		${X11BASE}/lib/browser_plugins/
 .endif
 

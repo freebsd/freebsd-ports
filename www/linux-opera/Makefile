@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
@@ -24,21 +25,20 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386-en
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs \
+RUN_DEPENDS=	\
 		${LINUXBASE}/usr/lib/libaspell.so.15:${PORTSDIR}/textproc/linux-aspell \
 		${LINUXBASE}/usr/X11R6/lib/libXm.so.3.0.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 RESTRICTED=	"not redistributable; commercial software"
 
-PREFIX?=	${X11BASE}
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-WITH_LINUX=	yes
+USE_LINUX=	yes
 USE_REINPLACE=	yes
+USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=yes
 
 OPERA_VER=	8.01
 OPERA_DATE=	20050615

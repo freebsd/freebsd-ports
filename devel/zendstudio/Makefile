@@ -7,19 +7,19 @@
 
 PORTNAME=	ZendStudio
 PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 MASTER_SITES=	http://www.zend.com/store/products/zend-studio.php
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A PHP IDE
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 NO_BUILD=	yes
 RESTRICTED=	"Redistribution is not permitted"
 NO_PACKAGES=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -55,5 +55,6 @@ do-install:
 
 post-install:
 	${LN} -s ${PREFIX}/Zend/bin/ZDE ${PREFIX}/bin/ZDE
+# This is missing a "${BRANDELF} -t Linux <executables>"
 
 .include <bsd.port.post.mk>

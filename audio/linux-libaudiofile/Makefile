@@ -7,7 +7,7 @@
 
 PORTNAME=	libaudiofile
 PORTVERSION=	0.1.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org

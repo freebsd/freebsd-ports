@@ -7,6 +7,7 @@
 
 PORTNAME=	freetxl
 PORTVERSION=	10.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/txl/
 DISTNAME=	txl${PORTVERSION}.linux
@@ -14,14 +15,16 @@ DISTNAME=	txl${PORTVERSION}.linux
 MAINTAINER=	ryan@sasknow.com
 COMMENT=	The TXL Programming Language (transformation by example)
 
-USE_LINUX?=	yes
-STRIP=
-NO_BUILD=	yes
+USE_LINUX=	yes
 
 MAN1=		txl.1 txlc.1 txldb.1 txlp.1
 
 PORTDOCS=	00README.txt COPYRIGHT.txt Documents.html Examples.html \
 		FILES.txt Learning.html Support.html
+
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/bin/txl \
+                ${WRKSRC}/bin/txldb
 
 do-install:
 	${INSTALL_PROGRAM} \

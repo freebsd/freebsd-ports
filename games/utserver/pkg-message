@@ -7,8 +7,4 @@ user root.
 ------------------------------------------------------------
 
 If you want to use ngStats and/or ngWorldStats 
-install linux-jdk-1.2.2 from /usr/ports/java/linux-jdk
-
-Install the ASU port from /usr/ports/games/utserver-asu
-for easy installation of addon packages and managing
-server settings.
+install a 1.2 jdk from /usr/ports/java/*jdk12

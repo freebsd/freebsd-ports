@@ -7,6 +7,7 @@
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://mirrors.xmission.com/idsoftware/et/linux/ \
 		http://3dgamers.intelenet.net/pub/3dgamers/games/wolfensteinet/ \
@@ -22,15 +23,11 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 ONLY_FOR_ARCHS=	i386
-PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_PACKAGE=	Package will be 257MB, set FORCE_PACKAGE if you really want to build it
 RESTRICTED=	Redistribution is limited, see license
-NO_BUILD=	yes
-STRIP=		# empty: do not strip(1) linux binaries
 NO_WRKSUBDIR=	yes
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
@@ -43,6 +40,12 @@ do-extract:
 post-patch:
 .for FILE in et etded
 	@${SED} -e 's|@ETDIR@|${ETDIR}|' ${FILESDIR}/${FILE}.in > ${WRKSRC}/${FILE}
+.endfor
+
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/pb/pbweb.x86
+.for FILE in et.x86 etded.x86
+	${BRANDELF} -t Linux ${WRKSRC}/bin/Linux/x86/${FILE}
 .endfor
 
 do-install:

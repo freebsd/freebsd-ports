@@ -7,7 +7,7 @@
 
 PORTNAME=	nwserver
 PORTVERSION=	1.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
 PKGNAMEPREFIX=	linux-
@@ -16,14 +16,12 @@ DISTNAME=	linuxserver${PORTVERSION:S/.//}
 MAINTAINER=	apeiron@coitusmentis.info
 COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
 
-USE_LINUX?=	yes
-NO_BUILD=	yes
+USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}
 
-# Linux binary should not be stripped by INSTALL_PROGRAM
-# because as a side effect it brands the binary as FreeBSD.
-STRIP=
+do-build:
+	${BRANDELF} -t Linux ${WRKDIR}/nwserver
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/fixinstall ${PREFIX}/bin

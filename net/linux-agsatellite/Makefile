@@ -7,7 +7,7 @@
 
 PORTNAME=	agsatellite
 PORTVERSION=	0.520
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net audio linux
 MASTER_SITES=	http://www.audiogalaxy.com/downloads/
 PKGNAMEPREFIX=	linux-
@@ -16,18 +16,15 @@ DISTNAME=	AGSatellite${PORTVERSION:S/.//}-glibc21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client that allows you to share your music on Audiogalaxy(TM)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-STRIP=
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 RESTRICTED=	no response from developer on licensing issues
 
 DOCS=	german_readme.txt license.txt readme.txt
-
-BRANDELF=	/usr/bin/brandelf
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|||;s|email|username|" ${WRKSRC}/*.txt

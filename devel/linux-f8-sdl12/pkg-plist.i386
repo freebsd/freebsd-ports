@@ -6,3 +6,4 @@ usr/lib/libSDL-1.1.so.0
 usr/lib/libSDL-1.2.so.0
 usr/lib/libSDL-1.2.so.0.0.5
 @dirrm usr/doc/SDL-1.2.5
+@unexec rmdir %D/usr/doc 2>&1 >/dev/null || true

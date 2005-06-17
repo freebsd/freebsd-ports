@@ -7,7 +7,7 @@
 
 PORTNAME?=	bjfiltercom
 PORTVERSION?=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://download.canon.jp/pub/driver/bj/linux/
 DISTFILES=	${RPMFILE}
@@ -43,7 +43,7 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	i386
-NO_FILTER_SHLIBS=	yes
+USE_LINUX=	yes
 NO_MTREE=	yes
 RPMREVISION=	1
 .if defined(SLAVE_PORT)
@@ -75,6 +75,8 @@ do-build:
 		-e 's,%%PRMODEL%%,${PRMODEL},g' \
 		-e 's,%%PREFIX%%,${PREFIX},g' \
 			${FILESDIR}/setup > ${WRKDIR}/setup.freebsd
+
+# XXX: this is missing "${BRANDELF} -t Linux <executables>"
 
 do-install:
 	${MKDIR} ${LINUXBASE}/usr/lib/bjlib

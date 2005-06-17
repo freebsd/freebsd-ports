@@ -19,10 +19,10 @@ DISTFILES?=	${PORTNAME}${PORTVERSION:S/.//}cl.zip \
 MAINTAINER?=	pat@FreeBSD.org
 COMMENT?=	Quake III Arena Mod: Rocket Arena 3 for Linux
 
-RUN_DEPENDS=	${LINUXBASE}/usr/games/quake3/q3ded:${Q3SERVER_PORT}
+RUN_DEPENDS=	${LOCALBASE}/games/quake3/q3ded:${Q3SERVER_PORT}
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
@@ -42,7 +42,7 @@ WRKSRC?=	${WRKDIR}/${PORTNAME}
 Q3SUBDIR?=	${PORTNAME}
 .endif
 
-Q3DIR=		usr/games/quake3/${Q3SUBDIR}/
+Q3DIR=		games/quake3/${Q3SUBDIR}/
 
 PLIST_SUB+=	Q3DIR="${Q3DIR}"
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755

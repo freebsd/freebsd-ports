@@ -8,7 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.8a5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
@@ -24,11 +24,10 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux
 
 FORBIDDEN=	"multiple suspected security bugs"
 
-NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
-PREFIX?=	${X11BASE}
 USE_ZIP=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=	${WRKDIR}/xpi
 INSTALL_DIR=	linux-mozilla-devel
 FULL_INSTALL_DIR=	${PREFIX}/lib/linux-mozilla-devel
@@ -89,6 +88,9 @@ do-configure:
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../linux-beonex/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+
+do-build:
+	${BRANDELF} -t ${WRKSRC}/bin/mozilla
 
 pre-install:
 	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}

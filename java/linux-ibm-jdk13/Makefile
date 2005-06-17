@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	9 # SR7
+PORTREVISION=	10 # SR7
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
@@ -19,13 +19,14 @@ COMMENT=	IBM Java Development Kit 1.3 for Linux
 
 FORBIDDEN=	Vulnerabilities in the browser plugin
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-SDK//}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_XLIB=	yes
 JDK_VERSION=	1.3.1
 LATEST_LINK=	linux-ibm-jdk13
 ONLY_FOR_ARCHS=	i386 amd64
@@ -59,6 +60,8 @@ post-patch:
 				&& ${RM} -f $$shfn.tmp) \
 		fi \
 	done
+
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 do-install:
 	${MKDIR} ${APP_HOME}

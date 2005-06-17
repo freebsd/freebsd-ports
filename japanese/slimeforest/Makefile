@@ -7,6 +7,7 @@
 
 PORTNAME=	slimeforest
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	japanese games linux
 MASTER_SITES=	http://lrnj.com/sfa/
 DISTNAME=	sfa
@@ -18,6 +19,7 @@ COMMENT=	A NES RPG game for learning KANA and KANJI (linux version)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL_image-1.2.so.0:${PORTSDIR}/graphics/linux-sdl_image
 
 NO_BUILD=	yes
+USE_LINUX=	yes
 
 WRKSRC=		${WRKDIR}/slimeforest
 FIND_DIRS=		-type d \! -empty

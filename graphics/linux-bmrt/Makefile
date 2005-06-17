@@ -21,10 +21,7 @@ WRKSRC=		${WRKDIR}/BMRT2.6
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"See the License"
-
-# Linux binary should not be stripped by INSTALL_PROGRAM as it uses
-# /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
-STRIP=
+USE_LINUX=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -69,7 +66,7 @@ do-install:
 .endfor
 .for i in ${PROGRAM}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${i} ${PREFIX}/bin
-	/usr/bin/brandelf -t Linux ${PREFIX}/bin/${i}
+	${BRANDELF} -t Linux ${PREFIX}/bin/${i}
 .endfor
 
 post-install:

@@ -21,20 +21,18 @@ COMMENT=	View, distribute and print PDF documents
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
-		${LINUXBASE}/usr/X11R6/lib/libXext.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
 
 CONFLICTS=	acroread
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_REINPLACE=	yes
-USE_LINUX?=	yes
+USE_LINUX=	yes
+USE_XLIB=	yes	# This should be USE_X_PREFIX, doesn't work yet.
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i '' -E
-NO_FILTER_SHLIBS=	yes
-NO_MTREE=	yes
 PLIST=		${WRKDIR}/plist
-PREFIX=		${LINUXBASE}
+PREFIX?=	${LINUXBASE}	# have a look at the USE_XLIB comment
 
 pre-install:
 	@kldstat -v | ${GREP} -E 'linux(aout|elf)' >/dev/null ||\
@@ -57,6 +55,7 @@ do-install:
 		 --nodeps --replacepkgs ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} || ${TRUE}
 	# disable the PPKLite plugin as it requires an LDAP share lib
 	${CHMOD} 0 ${PREFIX}/usr/local/Adobe/Acrobat7.0/Reader/intellinux/plug_ins/PPKLite.api
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 post-install:
 	@${REINPLACE_CMD} 's:Linux:FreeBSD|Linux:g' \

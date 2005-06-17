@@ -280,7 +280,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # XMKMF			- Set to path of `xmkmf' if not in $PATH
 #				  Default: xmkmf -a
 # USE_X_PREFIX	- If set, this port installs in ${X11BASE}.  Implies USE_XLIB.
-# USE_XLIB		- If set, this port uses the X libraries.
+# USE_XLIB		- If set, this port uses the X libraries. In the USE_LINUX
+#				  case the linux X libraries are referenced.
 #
 # USE_FREETYPE	- If set, this port uses the freetype print libraries.
 # USE_GL		- If set, this port uses libGL (not needed with XFree86 4.x
@@ -353,8 +354,23 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_LINUX		- Set to yes to say the port needs emulators/linux_base-8.
 #				  Set to value <X>, if the port needs emulators/linux_base-<X>.
 #				  If set to "7", a dependency is registered to emulators/linux_base.
+#				  Implies appropriate settings for NO_FILTER_SHLIBS,
+#				  STRIP and STRIP_CMD.
 # USE_LINUX_PREFIX
-#				- controls the action of PREFIX (see above).
+#				- controls the action of PREFIX (see above). Only use this
+#				  if the port is a linux infrastructure port (e.g. contains libs
+#				  or a sound server which supports the FreeBSD native one),
+#				  use the default or the X11 prefix if it's a leaf port
+#				  (e.g. a game or program).
+#				  Implies NO_MTREE=yes.
+# OVERRIDE_LINUX_BASE_PORT	- This specifies the default linux base to use, for valid values
+#				  have a look at the description of USE_LINUX. This is an user-only
+#				  variable. Don't use it in any port, it's meant to be used in
+#				  make.conf.
+#
+# LINUX_BASE_PORT		- This is a read-only variable, it gets set to a value which
+#				  is usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
+#				  It honors USE_LINUX=foo and OVERRIDE_LINUX_BASE_PORT.
 ##
 # USE_MYSQL		- Add MySQL client dependency.
 #				  If no version is given (by the maintainer via the port or
@@ -1520,15 +1536,39 @@ LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
 .endif
 
 .if defined(USE_LINUX)
-.	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
-RUN_DEPENDS+=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
+
+# install(1) also does a brandelf on strip, so don't strip with FreeBSD tools.
+STRIP=
+.	if exists(${LINUXBASE}/usr/bin/strip)
+STRIP_CMD=	${LINUXBASE}/usr/bin/strip
 .	else
-.		if ${USE_LINUX} == "7"
-RUN_DEPENDS+= ${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
-.		else
-RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-8
+STRIP_CMD=	${TRUE}
+.	endif
+
+NO_FILTER_SHLIBS=	yes
+
+# Allow the user to specify another linux_base version.
+.	if defined(OVERRIDE_LINUX_BASE_PORT)
+.		if ${USE_LINUX:L} == yes
+USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 .		endif
 .	endif
+
+.	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
+LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
+.	else
+.		if ${USE_LINUX} == "7"
+LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+.		else
+.			if ${USE_LINUX:L} == "yes"
+LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-8
+.			else
+IGNORE=	There is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT.
+.			endif
+.		endif
+.	endif
+
+RUN_DEPENDS+=	${LINUX_BASE_PORT}
 .endif
 
 .if defined(USE_MOTIF)
@@ -1800,7 +1840,11 @@ USE_SUBMAKE=	yes
 .endif
 
 .if defined(USE_XLIB)
+.	if defined(USE_LINUX)
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+.	else
 LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
+.	endif
 # Add explicit X options to avoid problems with false positives in configure
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include

@@ -7,14 +7,14 @@
 
 PORTNAME=	atitd
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games graphics linux
 MASTER_SITES=	http://www.atitd.com/
 DISTNAME=	eClient-linux.run
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
 RUN_DEPENDS=	${X11BASE}/bin/xhost:${X_CLIENTS_PORT}
@@ -28,7 +28,8 @@ RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so:${PORTSDIR}/graphics/linux_glx
 .endif
 
 PLIST_FILES=	bin/atitd
-USE_LINUX?=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 USE_MESA=	yes
 
 ONLY_FOR_ARCHS=	i386
@@ -58,6 +59,7 @@ do-install:
 post-install:
 	@${ECHO_MSG} "===>  Fixing permissions."
 	@${CHOWN} -R atitd:atitd ${PREFIX}/games/atitd
+	@${BRANDELF} -t Linux ${PREFIX}/games/atitd/elaunch
 	@${CHMOD} ug+s ${PREFIX}/games/atitd/elaunch
 	${INSTALL_SCRIPT} ${WRKSRC}/atitd.sh ${PREFIX}/bin/atitd
 	@${ECHO_MSG} "===>  Running the post-install script."

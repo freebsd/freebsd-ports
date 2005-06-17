@@ -7,7 +7,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	5.0r51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
@@ -17,13 +17,13 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@brandon.dvalentine.com
 COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	"Redistribution not allowed"
 
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/flash_linux
 LATEST_LINK=	flash5
 

@@ -7,7 +7,7 @@
 
 PORTNAME?=	to
 PORTVERSION?=	2.2.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	games linux
 MASTER_SITES?=	http://www.netreachgames.com/downloads/to/ \
 		http://downloads.fragism.com/ \
@@ -22,13 +22,12 @@ DISTNAME?=	TacticalOps220
 MAINTAINER?=	pat@FreeBSD.org
 COMMENT?=	Unreal Tournament mod Tactical Ops full server package for Linux
 
-RUN_DEPENDS=	${LINUXBASE}/usr/games/ut-server/System/ucc-bin:${UTSERVER_PORT}
+RUN_DEPENDS=	${LOCALBASE}/games/ut-server/System/ucc-bin:${UTSERVER_PORT}
 
 BROKEN=		Unfetchable
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
-USE_LINUX?=	yes
+USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
@@ -43,13 +42,8 @@ USE_ZIP=	yes
 .ifndef(DO_USE_WRKSUBDIR)
 NO_WRKSUBDIR=	yes
 .endif
-.if defined(DO_USE_STRIP) && exists(${LINUXBASE}/usr/bin/strip)
-STRIP=	${LINUXBASE}/usr/bin/strip
-.else
-STRIP=
-.endif
 
-UTDIR=		usr/games/ut-server/
+UTDIR=		games/ut-server/
 PLIST_SUB+=	UTDIR="${UTDIR}"
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 
@@ -84,6 +78,7 @@ pre-patch:
 # Contributed by <lioux@FreeBSD.org>
 do-install: install-parse-plist install-scripts
 
+# XXX: this is missing a ${BRANDELF} -t Linux <executables>
 install-parse-plist: generate-plist
 	@${PERL} -e 'open(FHANDLER,"${TMPPLIST}");' \
 		-e 'open(FDIR,">${WRKDIR}/dirs.sh.tmp");' \

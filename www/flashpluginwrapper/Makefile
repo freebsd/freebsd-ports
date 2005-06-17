@@ -7,6 +7,7 @@
 
 PORTNAME=	flashpluginwrapper
 PORTVERSION=	0.20021113
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://absolutbsd.org/~petef/
@@ -16,7 +17,7 @@ MAINTAINER=	brandon@dvalentine.com
 COMMENT=	A wrapper allowing use of linux-flashplugin with native mozilla
 DEPRECATED=	"Please use www/linuxpluginwrapper.  This port should be obsoleted.  But, I know many people which cannot upgrade by any reason.  So I won't remove this."
 
-RUN_DEPENDS=	${LOCALBASE}/lib/flash/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin
+RUN_DEPENDS=	${X11BASE}/lib/flash/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes

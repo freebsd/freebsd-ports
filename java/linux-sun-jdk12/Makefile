@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -16,14 +16,15 @@ DISTNAME=	${PORTNAME}-${JDK_VERSION:S/./_/g}-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.2 for Linux
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 LATEST_LINK=	linux-sun-jdk12
 
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_XLIB=	yes
 JDK_VERSION=	1.2.2.017
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -41,6 +42,8 @@ IGNORE=You must manually fetch the Sun Java 2 Standard Edition SDK ${JDK_VERSION
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM} -f
+
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory ${APP_HOME}..."

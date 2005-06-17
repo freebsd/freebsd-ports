@@ -21,15 +21,13 @@ COMMENT=		Audio system for the KDE integrated X11 desktop
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
-USE_LINUX?=		yes
-PREFIX?=		${LINUXBASE}
-NO_MTREE=		yes
+USE_LINUX=		yes
+USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
 
 ONLY_FOR_ARCHS=		i386
 DIST_SUBDIR=		rpm
 NO_BUILD=		yes
-NO_FILTER_SHLIBS=	yes
 PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 

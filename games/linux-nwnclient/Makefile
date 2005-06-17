@@ -7,7 +7,7 @@
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.65
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://content.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
 PKGNAMEPREFIX=	linux-
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata \
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
 NWNDATADIR=	${LOCALBASE}/share/nwndata
 
 PLIST_SUB+=	NWNVERSION="${PORTVERSION:S/.//}"

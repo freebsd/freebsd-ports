@@ -18,7 +18,7 @@ PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${PORTVERSION} != ${PATCHLEVEL}
 DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
-PATCH_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
+PATCH_DEPENDS=		${LINUX_BASE_PORT}
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
@@ -30,7 +30,7 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools*
 
-USE_LINUX?=		yes
+USE_LINUX=		yes
 USE_REINPLACE=		yes
 NO_FILTER_SHLIBS=	yes
 
@@ -191,7 +191,8 @@ do-build:
 	@${CC} ${CFLAGS} -o \
 		${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld \
 		${FILESDIR}/ld.c
-	@${STRIP_CMD} ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
+# We can't use STRIP_CMD, since we need the FreeBSD one, not the Linux one.
+	@/usr/bin/strip ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 	@${CHMOD} 755 ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 
 do-install:

@@ -7,7 +7,7 @@
 
 PORTNAME=	beonex
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	\
 http://ftp.ibiblio.org/pub/packages/infosystems/WWW/clients/beonex/communicator/0.8/\
@@ -27,13 +27,13 @@ RUN_DEPENDS=	\
 	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 PATCHFILES=	linux-beonex-generated-files-${PORTVERSION}.tar.bz2
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 WRKSRC=		${WRKDIR}/beonex-comm
 
 post-extract:
@@ -76,6 +76,7 @@ do-install:
 	${LN} -s ${PREFIX}/lib/linux-beonex/beonex-comm \
 		${PREFIX}/bin/linux-beonex
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${PREFIX}/lib/linux-beonex
+# This is missing a ${BRANDELF} -t Linux <executables>
 
 post-install:
 	@${ECHO_CMD} \

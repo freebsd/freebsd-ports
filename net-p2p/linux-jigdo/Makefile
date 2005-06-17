@@ -21,9 +21,8 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	YES
-USE_LINUX?=	yes
+USE_LINUX=	yes
 NO_BUILD=	yes
-STRIP=
 
 PROGRAMS=	jigdo-file
 SCRIPTS=	jigdo-lite jigdo-mirror
@@ -31,7 +30,7 @@ SCRIPTS=	jigdo-lite jigdo-mirror
 MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
 
 pre-install:
-	@brandelf -t Linux ${WRKSRC}/jigdo-file
+	@${BRANDELF} -t Linux ${WRKSRC}/jigdo-file
 
 do-install:
 .for i in ${PROGRAMS}

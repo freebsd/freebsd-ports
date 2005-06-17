@@ -6,7 +6,7 @@
 
 PORTNAME=	opengroupware
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc www linux
 MASTER_SITES=	http://download.opengroupware.org/packages/freebsd/linux-opengroupware/RPMS/:ogo \
 		http://download.opengroupware.org/packages/freebsd/linux-opengroupware/NGOBJWEB/:ngo \
@@ -22,10 +22,11 @@ MAINTAINER=	frank@opengroupware.org
 COMMENT=	Groupware package including mail, calendar, palm sync and much more
 
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
-INSTALL_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2 \
-		${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake
+
+USE_PGSQL=	yes
 
 #BEGINSET1
 
@@ -105,7 +106,7 @@ SET3=		postgresql-libs-7.2.4-5.80.i386.rpm \
 
 NGOBJWEB_ADAPTOR= opengroupware.org-mod_ngobjweb-200407092000.tar.gz
 PATCHDIR?=	${MASTERDIR}/files
-USE_LINUX?=	yes
+USE_LINUX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	${WRKSRC}/opengroupware.org-mod_ngobjweb/GNUmakefile
 BUILD_WRKSRC?=	${WRKSRC}/opengroupware.org-mod_ngobjweb

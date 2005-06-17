@@ -15,12 +15,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical pre- and post-processor for numerical simulation programs
 
-RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 CONFLICTS=	id-utils-[0-9]* coreutils-[0-9]*
 ONLY_FOR_ARCHS=	amd64 i386
 
-USE_LINUX?=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_WRKSUBDIR=	yes

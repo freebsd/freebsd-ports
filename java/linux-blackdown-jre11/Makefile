@@ -7,7 +7,7 @@
 
 PORTNAME=	jre
 PORTVERSION=	${JRE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://gd.tuwien.ac.at/opsys/linux/java/JDK-${PORTVERSION}/${ARCH}/v3/ \
 		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/JDK-${PORTVERSION}/i386/v3/ \
@@ -20,8 +20,7 @@ DISTNAME=	jre118_v3-glibc-2.1.3
 MAINTAINER=	sime@logos.hr
 COMMENT=	Blackdown Linux Java Runtime Environment 1.1.8
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=     "License doesn\'t allow binary distributions"
@@ -29,6 +28,8 @@ NO_PACKAGE=     "License doesn\'t allow binary distributions"
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	YES
+USE_LINUX=	yes
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/jre118_v3
 JRE_VERSION=	1.1.8
 PLIST_SUB+=	JRE_VERSION=${JRE_VERSION}
@@ -41,6 +42,8 @@ post-patch:
 	${CP} ${FILESDIR}/arch ${WRKSRC}/bin/
 	${CHMOD} a+rx ${WRKSRC}/bin/arch
 	${CHMOD} a+r ${WRKSRC}/README.linux
+
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 do-install:
 	${MKDIR} ${APP_HOME}

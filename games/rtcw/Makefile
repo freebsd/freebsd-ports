@@ -7,7 +7,7 @@
 
 PORTNAME=	rtcw
 PORTVERSION=	1.1b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/old/
 DISTNAME=	wolf-linux-${PORTVERSION}.x86
@@ -17,13 +17,13 @@ MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
-USE_LINUX?=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5_BUILD=yes
-RTCWDIR=	usr/games/rtcw
+RTCWDIR=	games/rtcw
 PLIST_SUB+=	RTCWDIR="${RTCWDIR}"
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 

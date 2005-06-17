@@ -15,17 +15,15 @@ DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}
 MAINTAINER=	cjh@kr.freebsd.org
 COMMENT=	Glibc 2.0 Korean locale for linux compatibility
 
-BUILD_DEPENDS=  ${LINUXBASE}/usr/share/locale/ko:${PORTSDIR}/emulators/linux_base-8
+BUILD_DEPENDS=  ${LINUX_BASE_PORT}
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
+USE_LINUX=	yes
 USE_LINUX_PREFIX=yes
-USE_LINUX?=	yes
-NO_MTREE=	yes
 NO_BUILD=	yes
 EXTRACT_ONLY=	# empty
 NO_WRKSUBDIR=	yes
-NO_FILTER_SHLIBS=	yes
 
 do-install:
 	@zcat ${DISTDIR}/${DISTNAME}.tar.gz |(cd ${PREFIX}; ${PAX} -r)

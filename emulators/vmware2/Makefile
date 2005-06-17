@@ -8,7 +8,7 @@
 
 PORTNAME=	vmware2
 PORTVERSION=	2.0.4.1142
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
@@ -21,8 +21,7 @@ DISTFILES=	VMware-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
 MAINTAINER=	vsilyaev@mindspring.com
 COMMENT=	A virtual machine emulator - a full PC in a window
 
-RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
@@ -45,7 +44,8 @@ VMDIR=		${PREFIX}/lib/vmware
 SRC_BASE?=	/usr/src
 
 ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/vmware-distrib
 GZCAT=		${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/extract
 MAN1=		vmware.1

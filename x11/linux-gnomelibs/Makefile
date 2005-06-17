@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomelibs
 PORTVERSION=	1.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
@@ -17,8 +17,4 @@ RPM_SET=	gnome-libs-${PORTVERSION}-11.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
 
-.if (${MACHINE_ARCH} == "i386")
-MASTER_SITES+= ftp://ftp.redhat.com/pub/redhat/linux/7.1/en/os/i386/RedHat/RPMS/
-.elif (${MACHINE_ARCH} == "alpha")
-MASTER_SITES+= ftp://ftp.redhat.com/pub/redhat/linux/7.1/en/os/alpha/RedHat/RPMS/
-.endif
+MASTER_SITES+= ftp://ftp.redhat.com/pub/redhat/linux/7.1/en/os/${MACHINE_ARCH}/RedHat/RPMS/

@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors linux
 MASTER_SITES=	http://afug.hypermart.net/files/ \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/
@@ -19,13 +19,14 @@ MAINTAINER=	mb@imp.ch
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 
 USE_REINPLACE=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 IS_INTERACTIVE=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_CMD=	${CAT}
@@ -71,6 +72,7 @@ do-install:
 	@/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
 	@${CAT} ${PKGMESSAGE}
 	@-TEMP=${TMPDIR} ${WRKDIR}/so51inst/office51/setup /net
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 	@${INSTALL_DATA} ${WRKDIR}/applicat.rdb ${PREFIX}/Office51/bin
 	@${INSTALL_DATA} ${_DISTDIR}/libofa517li.so ${PREFIX}/Office51/lib

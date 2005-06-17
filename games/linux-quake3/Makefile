@@ -18,14 +18,14 @@ MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Quake III Arena Dedicated Server for Linux
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
-USE_LINUX?=	yes
+USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-Q3DIR=		usr/games/quake3/
-PLIST_SUB+=	Q3DIR="${Q3DIR}"
+Q3BASE=		games
+Q3DIR=		${Q3BASE}/quake3/
+PLIST_SUB+=	Q3DIR="${Q3DIR}" Q3BASE="${Q3BASE}"
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
 do-extract:

@@ -7,14 +7,15 @@
 
 PORTNAME=	expat
 PORTVERSION=	1.95.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library
 
-RUN_DEPENDS=	${LINUXBASE}/sbin/ldconfig:${PORTSDIR}/emulators/linux_base-8
+RUN_DEPENDS=
 
+USE_LINUX=	yes
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${WRKDIR}/plist

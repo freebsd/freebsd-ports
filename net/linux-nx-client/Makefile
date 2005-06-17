@@ -7,7 +7,7 @@
 
 PORTNAME=		linux-nx-client
 PORTVERSION=		1.4.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://www.nomachine.com/download/nxclient/${PORTVERSION}/Linux-Static-Tar/
 DISTNAME=		nxclient-${PORTVERSION}-91.i386
@@ -18,16 +18,13 @@ COMMENT=		The NoMachine NX client
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
 NO_WRKSUBDIR=		yes
-USE_X_PREFIX=		yes
 ONLY_FOR_ARCHS=		i386
+USE_LINUX=		yes
+USE_X_PREFIX=		yes
 NO_BUILD=		yes
 
 NXSRC=			${WRKSRC}/NX
 NXDST=			${PREFIX}/lib/linux-nx-client
-
-# Linux binary should not be stripped by INSTALL_PROGRAM
-# because as a side effect it brands the binary as FreeBSD.
-STRIP=
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
@@ -64,6 +61,7 @@ do-install:
 	${ECHO_CMD} "export NXDIR=${NXDST}" >> ${WRKSRC}/${f}
 	${ECHO_CMD} "exec \$$NXDIR/bin/${f} \"\$$@\"" >> ${WRKSRC}/${f}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+	${BRANDELF} -t Linux ${NXDST}/bin/${f}
 .endfor
 
 .include <bsd.port.mk>

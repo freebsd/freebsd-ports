@@ -10,7 +10,7 @@
 
 PORTNAME=	linux-q3ademo
 PORTVERSION=	1.11.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games graphics linux
 # fetch manually
 MASTER_SITES=
@@ -21,8 +21,9 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux 3d shooter from id Software / Loki Software (demo version)
 
-PREFIX?=	${X11BASE}
 USE_GL=		yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -31,9 +32,6 @@ RUN_DEPENDS +=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_
 .else
 RUN_DEPENDS +=	${LINUXBASE}/lib/libGL.so:${PORTSDIR}/graphics/linux_glx
 .endif
-
-# Linux binary should not be stripped by INSTALL_PROGRAM as it uses /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
-STRIP=
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		may not be automatically fetched due to licensing\
@@ -63,6 +61,8 @@ do-configure:
 	@${ECHO_CMD} "quake=\"./q3demo\"" >> ${WRKSRC}/q3demo
 	@${ECHO_CMD} "\""$$"quake\" "$$"*" >> ${WRKSRC}/q3demo
 	@${ECHO_CMD} "exit "$$"?" >> ${WRKSRC}/q3demo
+	@${BRANDELF} -t Linux ${WRKSRC}/bin/x86/glibc-2.0/q3ded
+	@${BRANDELF} -t Linux ${WRKSRC}/bin/x86/glibc-2.0/q3demo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/q3demo ${PREFIX}/bin

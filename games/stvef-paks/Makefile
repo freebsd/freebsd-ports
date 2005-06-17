@@ -7,7 +7,7 @@
 
 PORTNAME=	stvef-paks
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	#
 DISTFILES=	pak0.pk3
@@ -17,17 +17,17 @@ IGNOREFILES=	${ALLFILES}
 MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux .pk3 files
 
-# Make this a BUILD_ rather than a RUN_DEPEND so that it can create the
+# Make this a BUILD_DEPENDS too, so that it can create the
 # directory hierarchy for us.
-BUILD_DEPENDS=	${PREFIX}/usr/games/stvef/linuxstvefded_1.2-static:${PORTSDIR}/games/stvef-server
+BUILD_DEPENDS=	${X11BASE}/games/stvef/linuxstvefded_1.2-static:${PORTSDIR}/games/stvef-server
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
-USE_LINUX?=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 EXTRACT_ONLY=	# Don't extract anything
-STRIP=
 
-GAMEDIR=	${PREFIX}/usr/games/stvef/
+GAMEDIR=	${PREFIX}/games/stvef/
 
 .include <bsd.port.pre.mk>
 
@@ -45,7 +45,7 @@ do-build:
 	${RM} -f ${PLIST}
 	for file in ${DISTDIR}/stvef/*; do				\
 		b=`basename $$file`;					\
-		${ECHO} usr/games/stvef/baseEF/$$b >> ${PLIST};		\
+		${ECHO_CMD} games/stvef/baseEF/$$b >> ${PLIST};		\
 	done
 
 do-install:

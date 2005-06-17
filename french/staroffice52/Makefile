@@ -8,7 +8,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french editors linux
 MASTER_SITES=	ftp://ftp.cem2.univ-montp2.fr/pub/linux/soft/StarOffice/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/francais/ \
@@ -32,10 +32,11 @@ EXTRACT_ONLY=	109939-03.tar.Z
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Suite bureautique intégrée
 
-FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+FETCH_DEPENDS=	${LINUX_BASE_PORT}
 
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_CDROM=	'Doit être téléchargé depuis le site web de Sun'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
@@ -191,5 +192,6 @@ post-install:
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" ${LINUXBASE}/bin/sh -c \
 		${PREFIX}/office52/program/setup
+# XXX: This is missing a "$BRANDELF} -t Linux <executables>".
 
 .include <bsd.port.post.mk>
