@@ -128,7 +128,7 @@ RUN_DEPENDS+=	clamdscan:${PORTSDIR}/security/clamav
 .endif
 
 .if defined(WITH_WGET)
-RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget-devel
+RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 .endif
 
 .if defined(WITH_ZLIB)
