@@ -1,0 +1,247 @@
+Index: t/conf/modperl_extra.pl
+===================================================================
+--- t/conf/modperl_extra.pl	(revision 187)
++++ t/conf/modperl_extra.pl	(working copy)
+@@ -1,12 +1,10 @@
+-use Apache2;
+-
+ use ModPerl::Util (); #for CORE::GLOBAL::exit
+ 
+-use Apache::RequestRec ();
+-use Apache::RequestIO ();
+-use Apache::RequestUtil ();
++use Apache2::RequestRec ();
++use Apache2::RequestIO ();
++use Apache2::RequestUtil ();
+ 
+-use Apache::Const -compile => ':common';
++use Apache2::Const -compile => ':common';
+ use APR::Const -compile => ':common';
+ 
+ unless ($ENV{MOD_PERL}) {
+Index: t/conf/extra.conf.in
+===================================================================
+--- t/conf/extra.conf.in	(revision 187)
++++ t/conf/extra.conf.in	(working copy)
+@@ -16,7 +16,7 @@
+ # module build first though, see Apache-Test's c-modules for know-how)
+ # LoadModule scoreboard_send_module @ServerRoot@/../apxs/.libs/mod_scoreboard_send.so
+ #<Location /scoreboard2>
+-     SetHandler scoreboard-send-handler
++#     SetHandler scoreboard-send-handler
+ #</Location>
+ 
+ 
+@@ -28,10 +28,10 @@
+ #</Location>
+ 
+ ##### DEVMODE: Remove in production ###
+-PerlModule Apache::Reload
+-PerlInitHandler Apache::Reload
++PerlModule Apache2::Reload
++PerlInitHandler Apache2::Reload
+ PerlSetVar ReloadAll Off
+-PerlSetVar ReloadModules "Apache::VMonitor"
++PerlSetVar ReloadModules "Apache::Scoreboard"
+ PerlSetVar ReloadDebug On
+ 
+ #PerlModule Apache::Response
+Index: t/response/TestInternal/basic.pm
+===================================================================
+--- t/response/TestInternal/basic.pm	(revision 187)
++++ t/response/TestInternal/basic.pm	(working copy)
+@@ -5,13 +5,13 @@
+ 
+ use Apache::Test;
+ 
+-use Apache::Response ();
+-use Apache::RequestRec ();
++use Apache2::Response ();
++use Apache2::RequestRec ();
+ 
+ use Apache::Scoreboard ();
+ use MyTest::Common ();
+ 
+-use Apache::Const -compile => 'OK';
++use Apache2::Const -compile => 'OK';
+ 
+ sub handler {
+     my $r = shift;
+@@ -26,7 +26,7 @@
+     my $image = Apache::Scoreboard->image($r->pool);
+     MyTest::Common::test2($image);
+ 
+-    Apache::OK;
++    Apache2::Const::OK;
+ }
+ 
+ 1;
+Index: lib/Apache/Scoreboard.pm
+===================================================================
+--- lib/Apache/Scoreboard.pm	(revision 187)
++++ lib/Apache/Scoreboard.pm	(working copy)
+@@ -1,6 +1,6 @@
+ package Apache::Scoreboard;
+ 
+-$Apache::Scoreboard::VERSION = '2.06';
++$Apache::Scoreboard::VERSION = '2.07';
+ 
+ use strict;
+ use warnings FATAL => 'all';
+@@ -8,7 +8,7 @@
+ use Carp;
+ 
+ BEGIN {
+-    require mod_perl;
++    require mod_perl2;
+     die "This module was built against mod_perl 2.0 ",
+         "and can't be used with $mod_perl::VERSION, "
+             unless $mod_perl::VERSION > 1.98;
+@@ -31,6 +31,8 @@
+ sub http_fetch {
+     my($self, $url) = @_;
+ 
++    Carp::croak("no url argument was passed") unless $url;
++
+     require LWP::UserAgent;
+     unless ($ua) {
+ 	no strict 'vars';
+Index: Makefile.PL
+===================================================================
+--- Makefile.PL	(revision 187)
++++ Makefile.PL	(working copy)
+@@ -3,8 +3,7 @@
+ use warnings FATAL => 'all';
+ #no warnings 'redefine';
+ 
+-use Apache2;
+-use mod_perl 1.99;
++use mod_perl2;
+ 
+ # XXX: need to check that the same perl is used as the one mod_perl
+ # was built with, otherwise unresolved symbols problems occur:
+@@ -22,7 +21,7 @@
+ # prerequisites
+ my %require = (
+     "Apache::Test" => "1.10", # ipv6 fixes
+-    "mod_perl"     => "1.9917",
++    "mod_perl"     => "2.00",
+ );
+ 
+ my @scripts = qw(t/TEST);
+@@ -31,13 +30,18 @@
+ Apache::TestMM::filter_args();
+ Apache::TestMM::generate_script('t/TEST');
+ 
++# XXX: this is a hack!
++my $extra_inc = "-I%%LOCALBASE%%/include/apache2/modules/perl/";
++
+ ModPerl::MM::WriteMakefile(
+     NAME         => 'Apache::Scoreboard',
+     VERSION_FROM => 'lib/Apache/Scoreboard.pm',
+     PREREQ_PM    => \%require,
+     clean        => {
+         FILES => "@{ clean_files() }",
+-    }
++    },
++    # XXX: this is a hack!
++    INC => join " ", $extra_inc, ModPerl::MM::get_def_opt('INC')
+ );
+ 
+ sub clean_files {
+Index: Changes
+===================================================================
+--- Changes	(revision 187)
++++ Changes	(working copy)
+@@ -1,3 +1,9 @@
++2.07 - dev
++
++Apache::Scoreboard::image() now does magic so that image(new APR::Pool) doesn't segfault    - Stas
++
++ported to modperl 2.0 API changes   - MJH
++
+ 2.06 - Fri Mar 18 13:50:49 EST 2005
+ 
+ fix the buggy reconstruction of the fetched binary image in thaw()
+Index: Scoreboard.xs
+===================================================================
+--- Scoreboard.xs	(revision 187)
++++ Scoreboard.xs	(working copy)
+@@ -2,6 +2,7 @@
+ #include "mod_perl.h"
+ #include "modperl_xs_sv_convert.h"
+ #include "modperl_xs_typedefs.h"
++#include "modperl_xs_util.h"
+ 
+ #include "scoreboard.h"
+ 
+@@ -210,7 +211,7 @@
+ 
+ int
+ scoreboard_send(r)
+-    Apache::RequestRec r
++    Apache2::RequestRec r
+ 
+ 
+ SV *
+@@ -323,26 +324,33 @@
+     OUTPUT:
+     RETVAL
+ 
+-Apache::Scoreboard
+-image(CLASS, pool)
++
++SV *
++image(CLASS, pool_sv)
+     SV *CLASS
+-    APR::Pool pool
++    SV *pool_sv
+     
+-    
++    INIT:
++    modperl_scoreboard_t *image;
++    apr_pool_t *pool = mp_xs_sv2_APR__Pool(pool_sv);
++
+     CODE:
+     image_sanity_check(aTHX);
+ 
+-    RETVAL = (modperl_scoreboard_t *)apr_palloc(pool, sizeof(*RETVAL));
+-    
++    image = (modperl_scoreboard_t *)apr_palloc(pool, sizeof(*image));
++
+     if (ap_exists_scoreboard_image()) {
+-        RETVAL->sb   = ap_scoreboard_image;
+-        RETVAL->pool = pool;
+-        ap_mpm_query(AP_MPMQ_HARD_LIMIT_DAEMONS, &(RETVAL->server_limit));
+-        ap_mpm_query(AP_MPMQ_HARD_LIMIT_THREADS, &(RETVAL->thread_limit));
++        image->sb   = ap_scoreboard_image;
++        image->pool = pool;
++        ap_mpm_query(AP_MPMQ_HARD_LIMIT_DAEMONS, &(image->server_limit));
++        ap_mpm_query(AP_MPMQ_HARD_LIMIT_THREADS, &(image->thread_limit));
+     }
+     else {
+         Perl_croak(aTHX_ "ap_scoreboard_image doesn't exist");
+     }
++    RETVAL = sv_setref_pv(NEWSV(0, 0), "Apache::Scoreboard", (void*)image);
++    /* make sure the pool sticks around as long as this object is alive */
++    mpxs_add_pool_magic(RETVAL, pool_sv);
+ 
+     CLASS = CLASS; /* avoid warnings */
+ 
+Index: Dummy/Makefile.PL
+===================================================================
+--- Dummy/Makefile.PL	(revision 220)
++++ Dummy/Makefile.PL	(working copy)
+@@ -18,7 +18,12 @@
+ 
+ genxs();
+ 
++# XXX: this is a hack!
++my $extra_inc = "-I%%LOCALBASE%%/include/apache2/modules/perl/";
++
+ ModPerl::MM::WriteMakefile(
+     NAME	 => 'Apache::DummyScoreboard',
+     VERSION_FROM => 'DummyScoreboard.pm',
++    # XXX: this is a hack!
++    INC => join " ", $extra_inc, ModPerl::MM::get_def_opt('INC')
+ );
