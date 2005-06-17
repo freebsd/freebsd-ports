@@ -44,7 +44,5 @@ post-install:
 	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
 		${PREFIX}/libexec/autoconf${BUILD_VERSION}/${i}
 .endfor
-	@install-info ${PREFIX}/info/autoconf${BUILD_VERSION}.info \
-		${PREFIX}/info/dir
 
 .include <bsd.port.mk>
