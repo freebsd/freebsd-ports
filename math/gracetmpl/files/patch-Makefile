@@ -1,11 +1,48 @@
---- Makefile.orig	Fri Oct 31 09:21:12 2003
-+++ Makefile	Fri Oct 31 09:22:23 2003
-@@ -52,7 +52,7 @@
- 	$(AR) -r gracetmpl.a gracetmpl.o
- 
- gracetmpldemo: gracetmpldemo.o gracetmpl.o
--	$(CPP) -o gracetmpldemo gracetmpldemo.o gracetmpl.o
-+	$(CPP) ${LDFLAGS} -o gracetmpldemo gracetmpldemo.o gracetmpl.o
- 
- envtest: envtest.o gracetmpl.o
+--- Makefile.orig	Mon Sep 27 16:59:48 2004
++++ Makefile	Sun Jun  5 01:14:44 2005
+@@ -58,10 +58,10 @@
  	$(CPP) -o envtest envtest.o gracetmpl.o
+ 
+ install: all
+-	install -D -m 644 gracetmpl.h $(INC_PREFIX)/gracetmpl.h
+-	install -D -m 644 gracetmpl.a $(LIB_PREFIX)/gracetmpl.a
+-	install -D -m 755 gracetmpldemo $(BIN_PREFIX)/gracetmpldemo
+-	install -D -m 755 gracetmpl-config $(BIN_PREFIX)/gracetmpl-config
++	${BSD_INSTALL_DATA} gracetmpl.h $(INC_PREFIX)/gracetmpl.h
++	${BSD_INSTALL_DATA} gracetmpl.a $(LIB_PREFIX)/libgracetmpl.a
++	${BSD_INSTALL_PROGRAM} gracetmpldemo $(BIN_PREFIX)/gracetmpldemo
++	${BSD_INSTALL_SCRIPT} gracetmpl-config $(BIN_PREFIX)/gracetmpl-config
+ 
+ gracetmpl-config: gracetmpl-config.in Makefile.defs
+ 	sed -e 's!__PREFIX__!$(PREFIX)!g' \
+@@ -79,7 +79,7 @@
+ 
+ pythonwrap:
+ 	@if python python/prereq.py 2>/dev/null; then \
+-	  (cd python; make); \
++	  (cd python; $(MAKE)); \
+ 	else \
+ 	  echo missing python numarray extension.; \
+ 	  echo not building python stuff; \
+@@ -87,7 +87,7 @@
+ 
+ pythonwrap_install:
+ 	@if python python/prereq.py 2>/dev/null; then \
+-	  (cd python; make install); \
++	  (cd python; $(MAKE) install); \
+ 	else \
+ 	  echo not installing python stuff; \
+ 	fi
+@@ -121,10 +121,10 @@
+ 	rm -fr doc/html
+ 
+ test: gracetmpldemo pythonwrap
+-	@cd tests; make
++	@cd tests; $(MAKE)
+ 
+ testpics: gracetmpldemo pythonwrap
+-	@cd tests; make pics
++	@cd tests; $(MAKE) pics
+ 
+ web: doc
+ 	(cd doc/html; tar cvhzf ../../web-`date +%s`.tgz .)

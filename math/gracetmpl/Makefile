@@ -7,46 +7,44 @@
 #
 
 PORTNAME=	gracetmpl
-PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTVERSION=	0.3.2
 CATEGORIES=	math print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric.pth:${PORTSDIR}/math/py-numeric
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric.pth:${PORTSDIR}/math/py-numeric
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an easy way to use existing grace-files as a template
 
-USE_REINPLACE=	yes
-USE_GETOPT_LONG=	yes
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
+
+USE_BZIP2=	yes
 USE_PYTHON=	yes
+USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	PREFIX="${PREFIX}" \
+		BIN_PREFIX="${PREFIX}/bin" \
+		LIB_PREFIX="${PREFIX}/lib" \
+		INC_PREFIX="${PREFIX}/include" \
+		DOC_PREFIX="${DOCSDIR}" \
+		AR="${AR}" \
+		CPP="${CXX} ${LDFLAGS}" \
+		CPPFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
+		CXX="${CXX}"
 ALL_TARGET=	all pythonwrap
-INSTALL_TARGET=	install python_install
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500041
-CFLAGS+=	"${CPPFLAGS}"
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-.endif
+INSTALL_TARGET=	install pythonwrap_install
 
 post-extract:
-	@${CP} -f ${WRKSRC}/Makefile.defs.tmpl ${WRKSRC}/Makefile.defs
+	@${ECHO_CMD} -n > ${WRKSRC}/Makefile.defs
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|^PREFIX|#PREFIX|" ${WRKSRC}/Makefile.defs
-	@${REINPLACE_CMD} -e "s@\(gracetmpl\.a\)@lib\1@g" \
-		-e "s|make|${GMAKE}|" -e "s|install -D|install|" \
-		-e "s|^CPPFLAGS =|CPPFALGS+=|" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s|values\.h|float.h|" ${WRKSRC}/gracetmpl.cpp
+	@${REINPLACE_CMD} -e 's|/gracetmpl\.a|/libgracetmpl.a|g' ${WRKSRC}/gracetmpl-config.in
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${CP} ${WRKSRC}/doc/html/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
