@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.0/
 DISTNAME=	slang-${PORTVERSION}
@@ -27,6 +27,7 @@ INSTALL_TARGET=	install install-elf
 
 MAN1=		slsh.1
 DOCSDIR=	${PREFIX}/share/doc/slang
+DATADIR=	${PREFIX}/share/slsh
 
 OPTIONS=	PCRE "Include pcre support" on \
 		PNG  "Include png support"  on
@@ -41,7 +42,7 @@ PORTDOCS=	*
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
-CONFIGURE_ARGS+=	--disable-pcre
+CONFIGURE_ARGS+=	--without-pcre
 PLIST_SUB+=	PCRE="@comment "
 .endif
 
@@ -49,7 +50,7 @@ PLIST_SUB+=	PCRE="@comment "
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
-CONFIGURE_ARGS+=	--disable-png
+CONFIGURE_ARGS+=	--without-png
 PLIST_SUB+=	PNG="@comment "
 .endif
 
