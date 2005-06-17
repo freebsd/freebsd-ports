@@ -401,6 +401,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.freeradius
 %%DATADIR%%/dictionary.gandalf
 %%DATADIR%%/dictionary.garderos
+%%DATADIR%%/dictionary.gemtek
 %%DATADIR%%/dictionary.itk
 %%DATADIR%%/dictionary.juniper
 %%DATADIR%%/dictionary.karlnet

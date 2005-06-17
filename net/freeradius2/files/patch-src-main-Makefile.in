@@ -1,5 +1,5 @@
---- src/main/Makefile.in.orig	Wed Jun  2 20:17:06 2004
-+++ src/main/Makefile.in	Wed May 11 13:18:27 2005
+--- src/main/Makefile.in.orig	Fri Jun 10 04:35:36 2005
++++ src/main/Makefile.in	Sat Jun 18 11:06:37 2005
 @@ -14,7 +14,7 @@
  CFLAGS		+= -DHOSTINFO=\"${HOSTINFO}\"
  CFLAGS          += -DRADIUSD_VERSION=\"${RADIUSD_VERSION}\"
@@ -34,19 +34,12 @@
  
  radrelay.o: radrelay.c $(INCLUDES)
  	$(CC) $(CFLAGS) -c radrelay.c
-@@ -138,13 +138,13 @@
+@@ -138,7 +138,7 @@
  	$(CC) $(CFLAGS) -c radwho.c
  
- radwho: radwho.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o
--	$(CC) $(LDFLAGS) -o radwho radwho.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o $(LIBS)
-+	$(CC) $(LDFLAGS_MAIN) -o radwho radwho.o mainconfig.o util.o nas.o client.o log.o conffile.o files.o xlat.o $(LIBS)
- 
- radzap.o: radzap.c $(INCLUDES)
- 	$(CC) $(CFLAGS) -c radzap.c
- 
- radzap: radzap.o mainconfig.o util.o nas.o log.o client.o conffile.o files.o xlat.o
--	$(CC) $(CFLAGS) $(LDFLAGS) -o radzap radzap.o mainconfig.o util.o nas.o log.o client.o conffile.o files.o xlat.o $(LIBS)
-+	$(CC) $(CFLAGS) $(LDFLAGS_MAIN) -o radzap radzap.o mainconfig.o util.o nas.o log.o client.o conffile.o files.o xlat.o $(LIBS)
+ radwho: radwho.o util.o log.o conffile.o ../lib/libradius.a
+-	$(CC) $(LDFLAGS) -o radwho radwho.o util.o log.o conffile.o $(LIBS) $(LCRYPT)
++	$(CC) $(LDFLAGS_MAIN) -o radwho radwho.o util.o log.o conffile.o $(LIBS) $(LCRYPT)
  
  clean:
  	rm -rf *.o *.so *~ $(BINARIES) .libs
