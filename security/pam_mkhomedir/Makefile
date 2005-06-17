@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	security
 MASTER_SITES=	http://portal-to-web.de/pam_mkhomedir/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Create HOME with a PAM module on demand
 
 MANCOMPRESSED=	yes
@@ -29,6 +29,7 @@ MAKE_ARGS+=	PROFILE=yes
 WITH_STATIC=	yes
 .else
 PLIST_SUB+=	PROFILE="@comment "
+MAKE_ARGS+=	NOPROFILE=yes
 .endif
 
 .if defined(WITH_STATIC)
