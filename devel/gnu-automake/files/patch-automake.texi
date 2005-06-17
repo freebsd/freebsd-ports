@@ -1,0 +1,7 @@
+--- doc/automake.texi.orig	Sat Feb 12 13:16:20 2005
++++ doc/automake.texi	Thu Jun 16 22:25:41 2005
+@@ -9630,3 +9630,3 @@
+ @multitable {8888-88-88} {8.8-p8} {8888} {888} {8888} {8888 (88)} {8888 (88)} {888} {888}
+-@headitem Date   @tab Rel @tab am @tab acl @tab pm @tab @file{*.am} @tab m4 @tab doc @tab t
++@item Date   @tab Rel @tab am @tab acl @tab pm @tab @file{*.am} @tab m4 @tab doc @tab t
+ @item 1994-09-19 @tab CVS    @tab  141 @tab     @tab      @tab  299 (24) @tab           @tab     @tab
