@@ -32,6 +32,55 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4c005a5e-2541-4d95-80a0-00c76919aa66">
+    <topic>fd_set -- bitmap index overflow in multiple applications</topic>
+    <affects>
+      <package>
+	<name>gatekeeper</name>
+	<range><lt>2.2.1</lt></range>
+      </package>
+      <package>
+	<name>citadel</name>
+	<range><lt>6.29</lt></range>
+      </package>
+      <package>
+	<name>3proxy</name>
+	<range><lt>0.5.b</lt></range>
+      </package>
+      <package>
+	<name>jabber</name>
+	<name>bnc</name>
+	<name>dante</name>
+	<name>rinetd</name>
+	<name>bld</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>3APA3A reports:</p>
+	<blockquote cite="http://www.security.nnov.ru/advisories/sockets.asp">
+	  <p>If programmer fails to check socket number before using
+	    select() or fd_set macros, it's possible to overwrite
+	    memory behind fd_set structure. Very few select() based
+	    application actually check FD_SETSIZE value. <em>[...]</em></p>
+	  <p>Depending on vulnerable application it's possible to
+	    overwrite portions of memory. Impact is close to
+	    off-by-one overflows, code execution doesn't seems
+	    exploitable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.security.nnov.ru/advisories/sockets.asp</url>
+      <mlist msgid="1473827718.20050124233008@security.nnov.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110660879328901</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-12</discovery>
+      <entry>2005-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b5ffaa2a-ee50-4498-af99-61bc1b163c00">
     <topic>leafnode -- denial of service vulnerability</topic>
     <affects>
