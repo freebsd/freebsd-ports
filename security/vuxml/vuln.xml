@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5752a0df-60c5-4876-a872-f12f9a02fa05">
+    <topic>gallery -- cross-site scripting</topic>
+    <affects>
+      <package>
+	<name>gallery</name>
+	<range><lt>1.4.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gallery includes several cross-site scripting vulnerabilities
+	  that could allow malicious content to be injected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1106</cvename>
+      <cvename>CAN-2005-0219</cvename>
+      <cvename>CAN-2005-0220</cvename>
+      <cvename>CAN-2005-0221</cvename>
+      <cvename>CAN-2005-0222</cvename>
+      <bid>11602</bid>
+      <url>http://gallery.menalto.com/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=147</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110608459222364</url>
+    </references>
+    <dates>
+      <discovery>2005-01-26</discovery>
+      <entry>2005-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0512b761-70fb-40d3-9954-aa4565528fa8">
     <topic>kstars -- exploitable set-user-ID application fliccd</topic>
     <affects>
