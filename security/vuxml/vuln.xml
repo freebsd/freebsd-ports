@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0512b761-70fb-40d3-9954-aa4565528fa8">
+    <topic>kstars -- exploitable set-user-ID application fliccd</topic>
+    <affects>
+      <package>
+	<name>kdeedu</name>
+	<range><lt>3.3.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A KDE Security Advisory explains:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20050215-1.txt">
+	  <h1>Overview</h1>
+	  <p>KStars includes support for the Instrument Neutral
+            Distributed Interface (INDI). The build system of this
+            extra 3rd party software contained an installation hook to
+            install fliccd (part of INDI) as SUID root
+            application.</p>
+          <p>Erik Sjölund discovered that the code contains several
+            vulnerabilities that allow stack based buffer
+            overflows.</p>
+	  <h1>Impact</h1>
+	  <p>If the fliccd binary is installed as suid root, it
+            enables root privilege escalation for local users, or, if
+            the daemon is actually running (which it does not by
+            default) and is running as root, remote root privilege
+            escalation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0011</cvename>
+      <url>http://www.kde.org/info/security/advisory-20050215-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-01-05</discovery>
+      <entry>2005-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4c005a5e-2541-4d95-80a0-00c76919aa66">
     <topic>fd_set -- bitmap index overflow in multiple applications</topic>
     <affects>
