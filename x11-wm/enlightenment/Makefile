@@ -17,6 +17,7 @@ COMMENT=	A very artistic X window manager
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
+CONFLICTS=	x11-wm/enlightenment-devel
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	esound
