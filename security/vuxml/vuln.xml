@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12b1a62d-6056-4d90-9e21-45fcde6abae4">
+    <topic>gallery -- remote code injection via HTTP_POST_VARS</topic>
+    <affects>
+      <package>
+	<name>gallery</name>
+	<range><lt>1.4.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A web server running Gallery can be exploited for arbitrary
+	  PHP code execution through the use of a maliciously crafted
+	  URL.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-2124</cvename>
+      <mlist msgid="0c0a01c3e525$1c0ed2b0$c90c030a@bmedirattatg">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107524414317693</mlist>
+    </references>
+    <dates>
+      <discovery>2004-01-27</discovery>
+      <entry>2005-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5752a0df-60c5-4876-a872-f12f9a02fa05">
     <topic>gallery -- cross-site scripting</topic>
     <affects>
