@@ -15,11 +15,11 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 

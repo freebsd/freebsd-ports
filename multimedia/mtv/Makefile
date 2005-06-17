@@ -7,7 +7,7 @@
 
 PORTNAME=	mtv
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia linux
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glibc/packages/TGZ/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
@@ -15,17 +15,18 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance MPEG video player (shareware)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 NO_PACKAGE=	"No redistribution"
 NO_CDROM=	"No redistribution"
-NO_BUILD=	yes
-NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mtv
 
 MAN1=	mtv.1
+
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/mtv ${WRKSRC}/mtvp
 
 do-install:
 	@${MKDIR} ${WRKDIR}/libSDLx11
@@ -34,8 +35,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/libSDLx11/libSDLx11.so.0.9.9 \
 		${LINUXBASE}/usr/X11R6/lib
 	${LINUXBASE}/sbin/ldconfig
-	${INSTALL_SCRIPT} ${WRKSRC}/mtv ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/mtvp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mtv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mtvp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mtv.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/mtv

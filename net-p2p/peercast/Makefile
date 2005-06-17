@@ -18,7 +18,6 @@ COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-STRIP=		# empty: do not strip linux binaries
 
 SUB_FILES=	peercast.sh
 

@@ -40,9 +40,7 @@ EXTRACT_AFTER_ARGS=	|${CPIO} -idum
 EXTRACT_ONLY=
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
-NO_FILTER_SHLIBS=	yes
-NO_MTREE=		yes
-USE_LINUX?=		yes
+USE_LINUX=		yes
 
 .include <bsd.port.pre.mk>
 

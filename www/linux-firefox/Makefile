@@ -17,16 +17,13 @@ MAINTAINER=    voisine@gmail.com
 COMMENT=       Web browser branched from Mozilla
 
 RUN_DEPENDS?=  \
-${LINUXBASE}/usr/lib/libstdc++.so.5:${PORTSDIR}/emulators/linux_base-8 \
 ${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 ${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 ${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
 ${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
-${LINUXBASE}${X11BASE}/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
 ${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 NO_BUILD=      yes
-NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=i386 amd64
 FIREFOX_NAME=  ${PKGNAMEPREFIX}${PORTNAME}
 DESCR=         ${.CURDIR}/pkg-descr
@@ -34,7 +31,6 @@ MD5_FILE=      ${.CURDIR}/distinfo
 PKGMESSAGE=    ${WRKDIR}/pkg-message
 PLIST=         ${WRKDIR}/pkg-plist
 USE_LINUX=     yes
-USE_XLIB=      yes
 USE_X_PREFIX=  yes
 WRKSRC=        ${WRKDIR}/firefox
 

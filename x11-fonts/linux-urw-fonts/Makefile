@@ -7,7 +7,7 @@
 
 PORTNAME=		urw-fonts
 PORTVERSION=		2.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		x11-fonts linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
@@ -25,6 +25,7 @@ pre-install:
 		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
 		${FIND} * -type f -o -type l > ${PLIST}; \
 		${FIND} -d * -type d | ${GREP} -E 'urw|default' | \
-		${SED} -e 's:^:@dirrm :' >> ${PLIST}
+		${SED} -e 's:^:@dirrm :' >> ${PLIST}; \
+		${ECHO_CMD} '@unexec rmdir %D/usr/share/fonts 2>&1 >/dev/null || true' >> ${PLIST}
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

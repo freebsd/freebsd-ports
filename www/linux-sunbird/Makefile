@@ -7,6 +7,7 @@
 
 PORTNAME=      sunbird
 PORTVERSION=   0.2
+PORTREVISION=  1
 CATEGORIES?=   www linux
 MASTER_SITES=  ${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR?=calendar/sunbird/releases/${PORTVERSION}
@@ -17,23 +18,19 @@ MAINTAINER=    voisine@gmail.com
 COMMENT=       Calendaring application branched from Mozilla
 
 RUN_DEPENDS?=  \
-${LINUXBASE}/usr/lib/libstdc++.so.5:${PORTSDIR}/emulators/linux_base-8 \
 ${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 ${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 ${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
 ${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
-${LINUXBASE}${X11BASE}/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
 ${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 NO_BUILD=      yes
-NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=i386
 SUNBIRD_NAME=  ${PKGNAMEPREFIX}${PORTNAME}
 DESCR=         ${.CURDIR}/pkg-descr
 MD5_FILE=      ${.CURDIR}/distinfo
 PLIST=         ${WRKDIR}/pkg-plist
 USE_LINUX=     yes
-USE_XLIB=      yes
 USE_X_PREFIX=  yes
 WRKSRC=        ${WRKDIR}/sunbird
 
@@ -45,6 +42,8 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm lib/${SUNBIRD_NAME}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${SUNBIRD_NAME} >> ${PLIST}
+
+# XXX: This is missing a "${BRANDELF\ -t Linux <executables>".
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${SUNBIRD_NAME}

@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java
 MASTER_SITES=	ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR}/ \
 		ftp://ftp.tux.org/pub/java/${DOWNLOAD_DIR}/
@@ -18,13 +18,14 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Blackdown Java Development Kit 1.4 for Linux
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 EXTRACT_CMD=		${TAIL}
 EXTRACT_BEFORE_ARGS=	+564
 EXTRACT_AFTER_ARGS=	| ${BZIP2_CMD} -dc | ${TAR} xf -
 USE_BZIP2=	yes
+USE_LINUX=	yes
+USE_XLIB=	yes
 LATEST_LINK=	linux-blackdown-jdk14
 
 WRKSRC=		${WRKDIR}/j2sdk${PORTVERSION}
@@ -52,6 +53,8 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/demo/jfc/SwingSet2/resources
 	@${RM} -rf ${WRKSRC}/demo/plugin/jfc/SwingSet2/resources
 	@${ECHO} " [ DONE ]"
+
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 do-install:
 	@${ECHO} -n ">> Creating destination directory ${APP_HOME}..."

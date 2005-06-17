@@ -7,7 +7,7 @@
 
 PORTNAME=	runrev
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 MASTER_SITES=	ftp://ftp.runrev.com/pub/revolution/ \
 		http://www.runrev.com/revolution/engines11/unix/
@@ -19,22 +19,17 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	blackend@FreeBSD.org
 COMMENT=	Revolution is a rapid application development environment
 
-RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
 
 NO_CDROM=	"Sale for profit is not permitted"
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/Revolution-${PORTVERSION}
 DATADIR=	${PREFIX}/share/Revolution-${PORTVERSION}
-
-BRANDELF?=	/usr/bin/brandelf
-# do not strip linux binaries
-STRIP=
-# try using the Linux strip command 
-STRIP_CMD=	${LINUXBASE}/usr/bin/strip
 
 BIN_FILES=	revolution
 LIB_DIRS=	Databases components components/assistants \
@@ -99,9 +94,7 @@ do-install:
 .endfor
 # binaries
 .for file in ${BIN_FILES}
-. if exists(${STRIP_CMD})
 	@${STRIP_CMD} ${WRKSRC}/${file}
-. endif
 	@${BRANDELF} -t Linux ${WRKSRC}/${file}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${DATADIR}/${file}
 .endfor

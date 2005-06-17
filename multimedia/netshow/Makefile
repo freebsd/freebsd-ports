@@ -7,7 +7,7 @@
 
 PORTNAME=	netshow
 PORTVERSION=	2.00.251
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia linux net
 MASTER_SITES=	http://www.microsoft.com/netshow/download/en/beta/
 DISTNAME=	netshow_linux
@@ -16,16 +16,13 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft NetShow video stream player
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 RESTRICTED=	"Commercial software"
 BROKEN=		Unfetchable
 
 ONLY_FOR_ARCHS=	i386
-PLIST_FILES=	bin/netshow
-
-NO_BUILD=	yes
+USE_LINUX=	yes
 USE_X_PREFIX=	yes
+PLIST_FILES=	bin/netshow
 
 pre-extract:
 	@${MKDIR} ${WRKDIR}
@@ -33,8 +30,8 @@ pre-extract:
 do-extract:
 	${GUNZIP_CMD} < ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/netshow
 
-do-patch:
-	brandelf -t Linux ${WRKDIR}/netshow
+do-build:
+	${BRANDELF} -t Linux ${WRKDIR}/netshow
 
 do-install:
 	${INSTALL} -c -o bin -g bin -m 555 ${WRKDIR}/netshow ${PREFIX}/bin/netshow

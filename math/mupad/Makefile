@@ -20,11 +20,9 @@ EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 NO_CDROM=	"unsure to sell for profit"
 
-USE_LINUX?=		yes
+USE_LINUX=		yes
 ONLY_FOR_ARCHS=		i386
 
-INSTALLS_SHLIB=		yes
-NO_FILTER_SHLIBS=	yes
 NO_WRKSUBDIR=		yes
 
 MAN1=		mmg.1 mmgd.1 mupad.1 xmupad.1

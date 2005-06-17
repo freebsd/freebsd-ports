@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	10.0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	https://helixcommunity.org/download.php/1145/
 DISTNAME=	RealPlayer-10.0.4.750-20050401.i586
@@ -21,12 +22,10 @@ RUN_DEPENDS=	\
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes
-
-# Linux binary should not be stripped by INSTALL_PROGRAM
-# because as a side effect it brands the binary as FreeBSD.
-STRIP=
 
 RADIR=		${PREFIX}/lib/RealPlayer
 PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
@@ -73,6 +72,7 @@ do-install:
 	${MKDIR} ${RADIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${RADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/realplay.bin ${RADIR}
+	${BRANDELF} -t Linux ${RADIR}/realplay.bin
 
 .for dir in codecs common lib plugins share/default share/realplay
 	${MKDIR} ${RADIR}/${dir}

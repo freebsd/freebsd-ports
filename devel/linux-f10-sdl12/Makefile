@@ -21,9 +21,10 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (linux version)
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
+USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes
+USE_XLIB=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 ONLY_FOR_ARCHS=	i386 alpha

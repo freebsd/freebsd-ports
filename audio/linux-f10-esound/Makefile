@@ -8,7 +8,7 @@
 PORTNAME=	esound
 CATEGORIES=	audio linux
 PORTVERSION=	0.2.22
-PORTREVISION=	3
+PORTREVISION=	4
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of esound

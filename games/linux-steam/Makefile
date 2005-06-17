@@ -7,7 +7,7 @@
 
 PORTNAME=	steam
 PORTVERSION=	1.0
-PORTREVISOIN=	1
+PORTREVISOIN=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.coreblack.com/files/
 PKGNAMEPREFIX=	linux-
@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	linux-
 MAINTAINER=	hido@coreblack.com
 COMMENT=	Half Life dedicated server running on steam
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 IS_INTERACTIVE=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 INSTALLDIR?=	steam

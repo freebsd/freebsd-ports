@@ -21,7 +21,7 @@ RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
-USE_LINUX?=	yes
+USE_LINUX=	yes
 USE_REINPLACE=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME:C/_.+$//}
 NO_BUILD=	yes
@@ -39,9 +39,9 @@ post-patch:
 
 do-install:
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/usr/doc/${PKGNAME}
+	@${MKDIR} ${PREFIX}/usr/share/doc/${PKGNAME}
 .for ext in linux txt
-	@${INSTALL_DATA} ${WRKSRC}/*.${ext} ${PREFIX}/usr/doc/${PKGNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.${ext} ${PREFIX}/usr/share/doc/${PKGNAME}
 .endfor
 .endif
 # Header file installation

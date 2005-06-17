@@ -8,6 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.8
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
@@ -21,10 +22,10 @@ COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
-PREFIX?=	${X11BASE}
 USE_ZIP=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=	${WRKDIR}/xpi
 INSTALL_DIR=	${PREFIX}/lib/linux-mozilla
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -109,6 +110,7 @@ do-install:
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${INSTALL_DIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${PREFIX}/lib/linux-mozilla/
+# This is missing a ${BRANDELF} -t Linux <executables>
 
 post-install:
 	${SED} -e 's:PREFIX:${PREFIX}:g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}

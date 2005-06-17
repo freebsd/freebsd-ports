@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_devtools
 PORTVERSION=		8.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
@@ -35,17 +35,12 @@ COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-RESTRICTED=		"binaries under GNU GPL without accompanying source"
-
-USE_LINUX?=		yes
-NO_LATEST_LINK=		yes
+USE_LINUX=		8
+USE_LINUX_PREFIX=	yes
 ONLY_FOR_ARCHS=		i386 amd64
 CONFLICTS=		linux_devtools-*
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
-PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
-NO_FILTER_SHLIBS=	yes
-NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
 
 # Let's avoid hardcoding 'en' as the language.
@@ -57,7 +52,7 @@ UPDATES=		XFree86-devel-4.2.1-23.i386.rpm
 
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
-RPMFLAGS=		--root ${LINUXBASE} --dbpath ${DBPATH} --nodeps \
+RPMFLAGS=		--root ${PREFIX} --dbpath ${DBPATH} --nodeps \
 			--replacepkgs --ignoreos
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
@@ -82,17 +77,16 @@ pre-install:
 	cd ${WRKSRC}/tmp; ${FIND} * -type f -o -type l > ${PLIST}; \
 		${FIND} -d * -type d | \
 		${GREP} -vwE "(bin$$|X11R6/include$$|lib$$|man$$|src$$)" | \
-		${SED} -e 's:^:@dirrm :'>> ${PLIST}
+		${SED} -e 's:^:@dirrm :' >> ${PLIST}
+.for dir in lib/gcc-lib src X11R6/bin X11R6/include X11R6/lib X11R6/man X11R6
+	${ECHO_CMD} "@unexec rmdir %D/usr/${dir} >/dev/null 2>&1 || true" >> ${PLIST}
+.endfor
 	${RM} -rf ${WRKSRC}/tmp
 
 do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${MKDIR} ${LINUXBASE}/tmp
-	@${MKDIR} ${LINUXBASE}/var/tmp
-	@${MKDIR} ${LINUXBASE}/dev
-	@${RM} -f ${LINUXBASE}/dev/null
-	@mknod ${LINUXBASE}/dev/null c 2 2
-	@${CHMOD} 666 ${LINUXBASE}/dev/null
+	@${MKDIR} ${PREFIX}/tmp
+	@${MKDIR} ${PREFIX}/var/tmp
 #
 # Install all packages.
 	@for R in ${DISTFILES}; do \
@@ -108,10 +102,10 @@ do-install:
 #
 # Finish
 	@for D in ${REMOVE_DIRS}; do \
-		${RM} -rf ${LINUXBASE}/$$D; \
+		${RM} -rf ${PREFIX}/$$D; \
 	done
 	@for F in ${REMOVE_FILES}; do \
-		${RM} ${LINUXBASE}/$$F; \
+		${RM} ${PREFIX}/$$F; \
 	done
 
 .include <bsd.port.post.mk>

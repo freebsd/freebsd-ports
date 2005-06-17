@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
@@ -22,8 +22,7 @@ DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:v
 MAINTAINER=	orlando@break.net
 COMMENT=	A virtual machine emulator - a full PC in a window
 
-RUN_DEPENDS=	/dev/rtc:${PORTSDIR}/emulators/rtc \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
@@ -39,7 +38,8 @@ VMDIR=		${PREFIX}/lib/vmware
 SRC_BASE?=	/usr/src
 
 ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/vmware-distrib
 GZCAT=		${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/extract
 MAN1=		vmware.1

@@ -16,26 +16,21 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A Sony Playstation emulator (Linux version)
 
 # The binary is built against glibc 2.3, so we need linux_base-8.
-RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
-		${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
-		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
+USE_LINUX=	yes
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
 
-# Linux binary should not be stripped by INSTALL_PROGRAM
-# because as a side effect it brands the binary as FreeBSD.
-STRIP=
-
 .include <bsd.port.pre.mk>
 
 EPSXE=		${PREFIX}/libexec/epsxe
 
-PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/psemupro/plugins
-PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/psemupro/cfg
-PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/psemupro/cfg
+PSEMUPRO_PLUGINS_DIR=	${PREFIX}/lib/psemupro/plugins
+PSEMUPRO_CFGBINS_DIR=	${PREFIX}/libexec/psemupro/cfg
+PSEMUPRO_CFGFILES_DIR=	${PREFIX}/share/psemupro/cfg
 
 do-build:
 	${MKDIR} ${WRKSRC}/FreeBSD
@@ -57,6 +52,7 @@ do-install:
 
 	${MKDIR} ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/epsxe ${EPSXE}
+	${BRANDELF} -t Linux ${EPSXE}
 
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/keycodes.lst ${DATADIR}

@@ -7,12 +7,11 @@
 
 PORTNAME=	acroread
 PORTVERSION=	5.10
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
-.include <bsd.port.pre.mk>
 DISTNAME=	linux-5010
 DIST_SUBDIR=	acroread
 RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
@@ -20,18 +19,19 @@ RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 CONFLICTS=	acroread7
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_REINPLACE=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_BUILD=	yes
-REINPLACE_ARGS=	-i '' -E
-NO_FILTER_SHLIBS=	yes
-
 PLIST_SUB=	"ARCHDIR=intellinux"
 WRKSRC=		${WRKDIR}/installers
+
+.include <bsd.port.pre.mk>
+
+REINPLACE_ARGS=	-i '' -E
 
 do-install:
 	@${MKDIR} ${PREFIX}/Acrobat5

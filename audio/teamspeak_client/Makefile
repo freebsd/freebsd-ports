@@ -21,8 +21,8 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
+USE_LINUX=	yes
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=yes
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/teamspeak_client

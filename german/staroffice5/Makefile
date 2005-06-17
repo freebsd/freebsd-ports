@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.hagenhomes.com/pub/  \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
@@ -21,10 +21,11 @@ MAINTAINER=	mb@imp.ch
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
 IS_INTERACTIVE=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -98,6 +99,7 @@ post-install:
 	@${CHMOD} 100755 ${PREFIX}/Office51/lib/libsdb517li.so
 	@${PERL} -pi -e 's|DefaultDestPath = "${PREFIX}/Office51";|DefaultDestPath = "~/Office51";|' ${PREFIX}/Office51/instdb.ins
 	@${INSTALL_DATA} ${FILESDIR}/dot.sversionrc /root/.sversionrc
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 install-user:
 	${PREFIX}/Office51/bin/setup

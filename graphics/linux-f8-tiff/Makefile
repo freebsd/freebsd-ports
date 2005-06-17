@@ -7,7 +7,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	${MASTER_SITE_SUSE}
 MASTER_SITE_SUBDIR=	i386/update/9.2/rpm/i586
@@ -23,15 +23,14 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 DIST_SUBDIR=	rpm/i386/suse/9.2
 DOCDIRS=	usr/share/doc/libtiff-3.6.1
-NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 PLIST=		${WRKDIR}/plist
 PLIST_DIRS=	usr/share/doc/packages/libtiff usr/share/doc/packages
 PLIST_FILES=	usr/lib/libtiff.so.3 usr/lib/libtiff.so.3.6.1 \
 		usr/share/doc/packages/libtiff/COPYRIGHT \
 		usr/share/doc/packages/libtiff/README
-PREFIX=		${LINUXBASE}
-USE_LINUX?=	yes
+USE_LINUX=	yes
+USE_LINUX_PREFIX=yes
 
 # dummy target so rpm can be in BUILD_DEPENDS
 do-build:
@@ -40,13 +39,10 @@ do-build:
 do-install:
 	${MKDIR} ${WRKSRC}
 	@rpm -U --ignorearch --ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \
-		--nodeps --replacepkgs ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
+		--nodeps --replacepkgs --noscripts ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
 		|| ${TRUE}
 
 post-install:
-	@${RM} -f ${LINUXBASE}/etc/ld.so.cache
-	@${FIND} ${LINUXBASE} -name lib -type d | ${SED} 's:${LINUXBASE}::g' \
-		> ${LINUXBASE}/etc/ld.so.conf
 	@chroot ${LINUXBASE} sbin/ldconfig
 
 .include <bsd.port.mk>

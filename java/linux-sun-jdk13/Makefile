@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -17,9 +17,8 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.3 for Linux
 
-EXTRACT_DEPENDS=${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+EXTRACT_DEPENDS=${LINUX_BASE_PORT}
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
@@ -30,6 +29,8 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///} \
 		JDK_VERSION=${JDK_VERSION}
 
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_XLIB=	yes
 JDK_VERSION=	1.3.1
 JDK_REVISION=	15
 ONLY_FOR_ARCHS=	i386 amd64
@@ -63,6 +64,8 @@ do-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM} -f
+
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 do-install:
 	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}

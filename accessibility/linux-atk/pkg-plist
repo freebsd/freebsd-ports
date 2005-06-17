@@ -20,3 +20,5 @@ usr/share/locale/sv/LC_MESSAGES/atk10.mo
 usr/share/locale/uk/LC_MESSAGES/atk10.mo
 usr/share/locale/vi/LC_MESSAGES/atk10.mo
 @dirrm usr/share/doc/atk-1.2.0
+@unexec rmdir %D/usr/share/locale/he/LC_MESSAGES 2>&1 >/dev/null || true
+@unexec rmdir %D/usr/share/locale/he 2>&1 >/dev/null || true

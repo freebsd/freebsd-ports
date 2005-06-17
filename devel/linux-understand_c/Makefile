@@ -7,7 +7,7 @@
 
 PORTNAME=	understand_c
 PORTVERSION=	1.4.206
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/understand_c/%SUBDIR%/
@@ -18,8 +18,6 @@ DISTNAME=	und_c-14b${PORTVERSION:E}-linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Understand can parse a C/C++ project helping reverse engineer it
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 IGNORE=		"is unfetchable and outdated and new version requires support contract"
 DEPRECATED=	${IGNORE}
 EXPIRATION_DATE=	2005-05-01
@@ -28,11 +26,10 @@ RESTRICTED=	Commercial software
 ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 
 PREFIX_LINUX?=	${LINUXBASE}
-STRIP=		${LINUXBASE}/usr/bin/strip
-BRANDELF?=	/usr/bin/brandelf
-FMT?=		/usr/bin/fmt
 
 CONF_DIRS=	compilers configs fonts license
 CONF_FILES=	compilers/aix.cfg compilers/alpha.cfg \

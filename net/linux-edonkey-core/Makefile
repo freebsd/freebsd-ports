@@ -22,7 +22,6 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-STRIP=
 
 BINARY_NAME_OLD?=	${PORTNAME}clc
 BINARY_NAME=	donkey
@@ -30,7 +29,6 @@ BINARY_NAME=	donkey
 DOC_FILES=	ChangeLog LISEZMOI README changelog.Debian.gz
 
 pre-install:
-
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/bin/${BINARY_NAME_OLD}
 
 do-install:

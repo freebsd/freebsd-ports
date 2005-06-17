@@ -7,7 +7,7 @@
 
 PORTNAME=	mesa
 PORTVERSION=	3.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/linux/redhat/redhat/updates/7.2/en/os/i386/ \
 		ftp://ftp.uni-kl.de/pub/linux/redhat/redhat/updates/7.2/en/os/i386/ \
 		ftp://ftp.icm.edu.pl/mirrors/ftp.redhat.com/pub/redhat/linux/updates/7.2/en/os/i386/ \
@@ -20,8 +20,7 @@ CATEGORIES=	graphics linux
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL, used from Linux programs
 
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
+USE_XLIB=	yes
 BASEVERSION=7.2
 ONLY_FOR_ARCHS=	i386
 PLIST=		${PKGDIR}/pkg-plist

@@ -16,10 +16,9 @@ DISTNAME=	vmware-linux-tools
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=VMware toolbox for guest OS (for VMware 2.x, Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/linux-vmware-toolbox
+USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 .if !defined(BATCH)
@@ -47,7 +46,6 @@ MOUNT_DEV?=	vn0
 .else
 MOUNT_DEV?=	fd0
 .endif
-STRIP=
 
 VMWARE_VER=	2.0.4
 BUILD_VER=	1142
@@ -98,6 +96,7 @@ do-fetch:
 .endif
 
 do-install:
+	${BRANDELF} -t Linux ${WRKSRC}/vmware-toolbox
 	${INSTALL_PROGRAM} ${WRKSRC}/vmware-toolbox ${PREFIX}/bin/linux-vmware-toolbox
 
 .include <bsd.port.post.mk>

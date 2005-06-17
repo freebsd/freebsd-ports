@@ -60,7 +60,7 @@ CONFLICTS=	linux_base-7* linux_base-deb* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
-PREFIX=			${LINUXBASE}
+PREFIX?=		${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
@@ -106,12 +106,6 @@ pre-install:
 	@cd ${WRKSRC}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
 	@${RPM} --initdb --root ${WRKSRC} --dbpath ${DBPATH}
 #
-# Make sure we have a /dev/null in the chrooted environment.
-	@${MKDIR} ${WRKSRC}/dev
-	@${RM} -f ${WRKSRC}/dev/null
-	@mknod ${WRKSRC}/dev/null c 2 2
-	@${CHMOD} 666 ${WRKSRC}/dev/null
-#
 # Install all packages. Ignore dependencies just like the Red Hat installer.
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
@@ -121,7 +115,7 @@ pre-install:
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 	@for F in ${BRAND_FILES}; do \
-		brandelf -t Linux ${WRKSRC}/$$F; \
+		${BRANDELF} -t Linux ${WRKSRC}/$$F; \
 	done
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
 #

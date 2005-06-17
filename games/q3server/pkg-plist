@@ -95,4 +95,5 @@
 %%PORTDOCS%%@dirrm %%Q3DIR%%Docs/PunkBuster
 %%PORTDOCS%%@dirrm %%Q3DIR%%Docs/LinuxFAQ
 %%PORTDOCS%%@dirrm %%Q3DIR%%Docs
-@unexec rmdir %D/%%Q3DIR%% 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/%%Q3DIR%%`` to remove any configuration files, *.pk3 files, and mods left." | fmt
+@unexec rmdir %D/%%Q3DIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/%%Q3DIR%%; rmdir ${PKG_PREFIX}/%%Q3BASE%% >/dev/null 2>&1 || true`` to remove any configuration files, *.pk3 files, and mods left." | fmt
+@unexec rmdir %D/%%Q3BASE%% >/dev/null 2>&1 || true

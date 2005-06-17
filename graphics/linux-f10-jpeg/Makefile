@@ -7,7 +7,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org

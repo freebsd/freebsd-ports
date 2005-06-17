@@ -7,7 +7,7 @@
 
 PORTNAME=	mulberry
 PORTVERSION=	3.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cyrusoft.com/pub/Mulberry/v${PORTVERSION:S/./_/g}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-rh6
@@ -18,10 +18,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A scalable high-performance GUI internet Mail User Agent
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
-NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
@@ -44,10 +43,13 @@ INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 PLUGINSDIR=	${PREFIX}/lib/${PORTNAME}/Plug-ins
 PIXMAPSDIR=	${PREFIX}/share/pixmaps
 
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/${PORTNAME}
+
 do-install:
 	${INSTALL_DIR} ${PLUGINSDIR}
 	${INSTALL_DIR} ${PIXMAPSDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Plug-ins/* ${PLUGINSDIR}
 	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/icons/* ${PIXMAPSDIR}
 .if !defined(NOPORTDOCS)

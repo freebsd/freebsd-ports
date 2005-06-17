@@ -16,10 +16,9 @@ DISTFILES=	edith1.55.common.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A X11 GUI editor for binary and plain text files
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
-USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes
@@ -29,7 +28,6 @@ MANCOMPRESSED=	no
 
 WRKSRC=		${WRKDIR}/edith
 EDITHDIR=	${PREFIX}/lib/edith
-STRIP=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/linux/edith ${PREFIX}/bin

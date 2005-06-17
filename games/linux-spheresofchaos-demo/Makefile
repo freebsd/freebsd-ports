@@ -7,6 +7,7 @@
 
 PORTNAME=	spheresofchaos
 PORTVERSION=	2.06
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://people.FreeBSD.org/~roam/games/ \
 		${MASTER_SITE_LOCAL}
@@ -21,6 +22,7 @@ COMMENT=	An unusual and spectacular shoot-em-up for the PC
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
 USE_ZIP=	yes
+USE_LINUX=	yes
 
 NO_BUILD=	yes
 

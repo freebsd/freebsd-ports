@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050618:
+  AFFECTS: users of alternate linux_base ports
+  AUTHOR: netchild@FreeBSD.org
+
+  The Ports Collection now allows to override the default linux_base port.
+  Specify e.g. OVERRIDE_LINUX_BASE_PORT=rh-9 in /etc/make.conf to use
+  ${PORTSDIR}/emulators/linux_base-rh-9 (the logic is to use
+  ${PORTSDIR}/emulators/linux_base-${OVERRIDE_LINUX_BASE_PORT}).
+
 20050610:
   AFFECTS: users of ftp/wget built with SSL (default)
   AUTHOR:  sf@FreeBSD.org

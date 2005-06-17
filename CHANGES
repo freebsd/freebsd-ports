@@ -10,6 +10,22 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20050618:
+AUTHOR: netchild@FreeBSD.org
+  - USE_LINUX now implies NO_FILTER_SHLIBS=yes. It also doesn't use FreeBSD
+    tools to strip binaries anymore, so it's not neccesary anymore to override
+    STRIP and STRIP_CMD.
+  - USE_LINUX_PREFIX implies NO_MTREE now.
+  - In the USE_LINUX case, USE_XLIB now depends upon the linux X11 libraries
+    instead upon the native FreeBSD libraries.
+  - The variable LINUX_BASE_PORT contains a string which is suitable as an
+    item in *_DEPENDS, so if a port BATCH_DEPENDS or FETCH_DEPENDS upon the
+    default (or overriden) linux base, ${LINUX_BASE_PORT} should be used+
+    instead of a hardcoded reference.
+  - If USE_LINUX or OVERRIDE_LINUX_BASE doesn't point to an existing linux_base
+    port and if USE_LINUX isn't set to "yes" (case insensitive), the port will
+    be marked as IGNORE.
+
 20050609:
 AUTHOR: portmgr@FreeBSD.org
 The following changes were introduced:

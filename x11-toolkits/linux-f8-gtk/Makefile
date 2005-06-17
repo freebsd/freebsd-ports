@@ -9,7 +9,7 @@
 
 PORTNAME?=	gtk
 PORTVERSION?=	1.2
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	x11-toolkits linux
 MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 PKGNAMEPREFIX=	linux-
@@ -19,10 +19,14 @@ MAINTAINER?=	freebsd-emulation@FreeBSD.org
 COMMENT?=	RPM of the Gtk lib
 
 BUILD_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
+# XXX: I haven't checked if every port which includes this Makefile needs
+#      USE_XLIB, so let it be a RUN_DEPENDS?= until the refactoring of the
+#      RPM bits.
 RUN_DEPENDS?=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS?=	i386 alpha amd64
 
+USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
@@ -34,9 +38,9 @@ RPMFLAGS+=	--ignorearch
 DIST_SUBDIR?=	rpm
 EXTRACT_ONLY=
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
 PLIST?=		${PKGDIR}/pkg-plist.${ARCH}
 MD5_FILE?=	${MASTERDIR}/distinfo.${ARCH}
+LINUX_LDCONFIG?=${LINUXBASE}/sbin/ldconfig
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=		en
@@ -62,6 +66,7 @@ do-install:
 		${ECHO_MSG} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R || true ; \
 	done
+	@${LINUX_LDCONFIG}
 
 new-plist:
 	@${RM} -rf ${WRKSRC}/tmp

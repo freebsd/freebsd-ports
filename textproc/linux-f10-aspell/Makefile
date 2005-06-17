@@ -27,10 +27,9 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
 NO_BUILD=		yes
 USE_REINPLACE=		yes
 ONLY_FOR_ARCHS=		i386
+USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
-USE_LINUX?=		yes
 USE_GMAKE=		yes
-NO_FILTER_SHLIBS=	yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
 
 DBPATH=		/var/lib/rpm

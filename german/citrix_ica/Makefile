@@ -7,7 +7,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	6.30.1054
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-de
@@ -15,14 +15,14 @@ DISTNAME=	${PORTNAME}-linuxx86-de
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXaw.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License prohibits redistribution"
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
 NO_WRKSUBDIR=	Yes
-NO_BUILD=       Yes
+NO_BUILD=	Yes
+USE_LINUX=	Yes
+USE_X_PREFIX=	Yes
 
 CDIR=	${PREFIX}/ICAClient
 BINDIR=		${PREFIX}/bin
@@ -85,5 +85,6 @@ do-install:
 	cd ${WRKSRC} && ${LINUXBASE}/bin/sh -c './setupwfc < response'
 	${INSTALL_SCRIPT} ${WRKSRC}/wfcmgr.x ${PREFIX}/bin/wfcmgr
 	${INSTALL_SCRIPT} ${WRKSRC}/wfica.x ${PREFIX}/bin/wfica
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 .include <bsd.port.post.mk>

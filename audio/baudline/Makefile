@@ -17,13 +17,12 @@ DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
-		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_X_PREFIX=	yes
+USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
-STRIP=
 
 # Linux binary should not be stripped by INSTALL_PROGRAM
 # because as a side effect it brands the binary as FreeBSD.

@@ -24,10 +24,9 @@ NO_CDROM=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=		i386
 
-USE_LINUX?=		yes
+USE_LINUX=		yes
 USE_REINPLACE=		yes
 NO_WRKSUBDIR=		yes
-NO_FILTER_SHLIBS=	yes
 
 COMPILERDIR=	compiler70
 PLIST_SUB=	COMPILERDIR=${COMPILERDIR}
@@ -158,7 +157,8 @@ do-build:
 	@${CC} ${CFLAGS} -o \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld \
 		${FILESDIR}/ld.c
-	@${STRIP_CMD} ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld
+# We can't use STRIP_CMD, since we need the FreeBSD one, not the Linux one.
+	@/usr/bin/strip ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld
 
 do-install:

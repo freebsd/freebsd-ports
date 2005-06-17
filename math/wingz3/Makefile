@@ -7,7 +7,7 @@
 
 PORTNAME=	wingzpro
 PORTVERSION=	311
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math linux
 MASTER_SITES=	netu
 EXTRACT_ONLY=
@@ -15,13 +15,12 @@ EXTRACT_ONLY=
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A Commercial Spreadsheet
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 NO_PACKAGE=	"nothing to build. commercial software"
 
 ONLY_FOR_ARCHS=	i386
-
+USE_LINUX=	yes
 USE_X_PREFIX=	yes
+
 NO_BUILD=	yes
 
 do-fetch:
@@ -32,6 +31,8 @@ do-fetch:
 	#	http://www.wingz-us.com/iisg_main/downloads.html
 	# download the ${DISTFILES} and save it to ${DISTDIR}.
 	#
+
+# XXX: this is missing "${BRANDELF} -t Linux <executables>"
 
 do-install:
 	${TAR} -xzp -C ${X11BASE} -f ${DISTDIR}/${DISTFILES}

@@ -7,6 +7,7 @@
 
 PORTNAME=	enemyterritory-fortress
 PORTVERSION=	1.4
+PORTREVISON=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.games.skynet.be/pub/wolfenstein/etf/ \
 		http://www.playlinux.net/pub/files/native/
@@ -20,8 +21,8 @@ COMMENT=	A class-based teamplay modification for Enemy Territory
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386
-PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_PACKAGE=	Distfile is 249MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_WRKSUBDIR=	yes

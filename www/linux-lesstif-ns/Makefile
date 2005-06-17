@@ -7,7 +7,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.92.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www x11-toolkits linux
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/obsolete/ \
@@ -22,15 +22,19 @@ PATCH_SITES=	http://cgi.shikoku.ne.jp/~fun/srpms/
 PATCHFILES=	${DISTNAME}-i18n.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Clone of the Motif library mostly for linux-netscape4
 
-BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools-7
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+DEPRECATED=		No port depends upon this port anymore.
+EXPIRATION_DATE=	2005-08-20
+IGNORE=			Does not build and nobody seems to complain.
+
+# XXX: We should use a RPM instead of building it from source.
+BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools
 
 USE_BZIP2=	yes
-USE_LINUX_PREFIX=	yes
-PREFIX=		${LINUXBASE}${X11BASE}
+USE_LINUX=	yes
+PREFIX?=	${LINUXBASE}${X11BASE}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--host=${MACHINE_ARCH}--linux-gnu \
 		--enable-shared --enable-production \

@@ -7,7 +7,7 @@
 
 PORTNAME=	acu
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils linux
 MASTER_SITES=	# fetch manually
 PKGNAMEPREFIX=	linux-
@@ -30,9 +30,9 @@ IGNORE=		may not be automatically fetched due to licensing\
 .endif
 
 ONLY_FOR_ARCHS=	i386
-PREFIX?=	${X11BASE}
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
 NO_CDROM=	"Redistribution not allowed"
 
 LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
@@ -54,6 +54,9 @@ post-extract:
 	@${ECHO} "becauce acu needs to read ${LINUXBASE}/proc/aironet"
 	@${FALSE}
 .endif
+
+do-build:
+	@${BRANDELF} -t Linux ${WRKSRC}/utilities/acu
 
 do-install:
 	@${MKDIR} ${PREFIX}/bin

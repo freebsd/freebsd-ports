@@ -7,7 +7,7 @@
 
 PORTNAME=	ssamtse
 PORTVERSION=	b1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	# must fetch manually
 DISTFILES=	${PORTNAME}-${PORTVERSION:S|b|beta|}.sh.bin
@@ -16,11 +16,10 @@ EXTRACT_ONLY=
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Serious Sam - The Second Encounter
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_LINUX=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
@@ -59,6 +58,7 @@ post-patch:
 	@${SED} 's|%SSAMDIR%|${SSAMDIR}|g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
+# XXX: this is missing "${BRANDELF} -t Linux <executables>"
 	@${MKDIR} ${SSAMDIR}
 	@${TAR} --bzip2 -C ${SSAMDIR} -xf \
 		${WRKDIR}/ssam/bins.tar.bz2

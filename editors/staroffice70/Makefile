@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors linux
 MASTER_SITES=	ftp://patches.sun.com/patchroot/all_unsigned/:patch \
 		ftp://ftp.sun.co.uk/pub/patches/:patch \
@@ -30,11 +30,11 @@ EXTRACT_ONLY=	116518-06.tar
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
-
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be bought and downloaded direct from Sun via www interface'
 
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 SOVERSION=	${PORTNAME}${PORTVERSION}
@@ -243,6 +243,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-spadmin
 	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-sweb
 	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-swriter
+# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 	@${ECHO} StarOffice7.0 has been installed successfully.  In order to use
 	@${ECHO} it, execute ${PREFIX}/bin/staroffice7.
 	@${ECHO} 

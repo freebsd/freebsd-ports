@@ -7,7 +7,7 @@
 
 PORTNAME=		XFree86-libs
 PORTVERSION=		4.3.99.902
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		x11 linux
 MASTER_SITES=	${MASTER_SITE_SUSE} \
 		ftp://ftp.in2p3.fr/pub/linux/suse/update/9.1/rpm/i586/ \
@@ -27,13 +27,16 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux
 
 CONFLICTS=	linux_base-7* linux_base-deb*
 USE_LINUX_PREFIX=yes
+USE_LINUX=	yes
 MD5_FILE=	${MASTERDIR}/distinfo.i386
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST=		${WRKDIR}/plist
-PLIST_DIRS=	usr/X11R6/lib/X11
+PLIST_DIRS=	usr/X11R6/lib/X11 \
+		usr/X11R6/lib \
+		usr/X11R6/bin \
+		usr/X11R6
 
 pre-install:
 	@${RM} -f ${PLIST}

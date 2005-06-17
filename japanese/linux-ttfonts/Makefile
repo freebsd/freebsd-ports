@@ -7,7 +7,7 @@
 
 PORTNAME=		ttfonts-ja
 PORTVERSION=		1.2
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		japanese x11-fonts linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
@@ -25,6 +25,7 @@ pre-install:
 		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
 		${FIND} * -type f -o -type l > ${PLIST}; \
 		${FIND} -d * -type d | ${GREP} ja | ${SED} -e 's:^:@dirrm :' \
-		>> ${PLIST}
+		>> ${PLIST}; \
+		${ECHO_CMD} '@unexec rmdir %D/usr/share/fonts 2>&1 >/dev/null || true' >> ${PLIST}
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

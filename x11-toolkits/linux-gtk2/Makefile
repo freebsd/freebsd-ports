@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	http://www.infostrategique.com/linuxrpms/legacy/9/
 
@@ -22,30 +22,14 @@ BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-gl
 		${LINUXBASE}/usr/lib/libpng12.so.0.1.2.7:${PORTSDIR}/graphics/linux-png \
 		${LINUXBASE}/usr/lib/libtiff.so.3.6.1:${PORTSDIR}/graphics/linux-tiff \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0.200.1:${PORTSDIR}/x11-toolkits/linux-pango
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
-		${BUILD_DEPENDS}
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 DIST_SUBDIR=	rpm/i386/rh9
-NO_MTREE=	yes
 ONLY_FOR_ARCHS=	i386
-PLIST=		${WRKDIR}/plist
+PLIST=		${PKGDIR}/pkg-plist
+USE_XLIB=	yes
 RESTRICTED=	"binaries under GNU LGPL without accompanying source"
 RPM_SET=	gtk2-2.2.1-4.1.legacy.i386.rpm
-
-pre-install:
-	${RM} -f ${PLIST}
-.for ii in gtk.immodules gdk-pixbuf.loaders
-	${ECHO_CMD} etc/gtk-2.0/${ii} >> ${PLIST}
-.endfor
-	${MKDIR} ${WRKSRC}/tmp
-	cd ${WRKSRC}/tmp; \
-	rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | ${CPIO} -id; \
-		${FIND} * -type f -o -type l >> ${PLIST}; \
-		${FIND} -d * -type d | ${GREP} -E 'gtk|themes' | \
-		${SED} -e 's:^:@dirrm :' >> ${PLIST}; \
-		${FIND} -d * -type d | ${GREP} locale | \
-		${SED} -e 's:^:@unexec rmdir %D/:;s:$$: 2>/dev/null || true:' \
-			>> ${PLIST}
 
 post-install:
 .for ii in gdk-pixbuf-query-loaders gtk-demo gtk-query-immodules-2.0 testgtk testtext

@@ -8,6 +8,7 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 PKGNAMEPREFIX=	linux-
@@ -21,13 +22,13 @@ COMMENT=	A simple library to load images as SDL interfaces (linux version)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
+USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 ONLY_FOR_ARCHS=	i386
 DIST_SUBDIR=	rpm
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
 
 DBPATH=		/var/lib/rpm
 RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \

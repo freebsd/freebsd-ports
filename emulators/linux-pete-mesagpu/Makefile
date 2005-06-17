@@ -7,7 +7,7 @@
 
 PORTNAME=	pete-mesagpu
 PORTVERSION=	1.75
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-
@@ -21,12 +21,10 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 
 ONLY_FOR_ARCHS=	i386
-
-# Linux binary should not be stripped by INSTALL_PROGRAM
-# because as a side effect it brands the binary as FreeBSD.
-STRIP=
 
 MAJOR=		${PORTVERSION:R}
 MINOR=		${PORTVERSION:E}
@@ -34,9 +32,9 @@ PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
 
 .include <bsd.port.pre.mk>
 
-PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/psemupro/plugins
-PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/psemupro/cfg
-PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/psemupro/cfg
+PSEMUPRO_PLUGINS_DIR=	${PREFIX}/lib/psemupro/plugins
+PSEMUPRO_CFGBINS_DIR=	${PREFIX}/libexec/psemupro/cfg
+PSEMUPRO_CFGFILES_DIR=	${PREFIX}/share/psemupro/cfg
 
 do-install:
 	${MKDIR} ${PSEMUPRO_PLUGINS_DIR}

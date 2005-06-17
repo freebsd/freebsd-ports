@@ -7,6 +7,7 @@
 
 PORTNAME=	hohlin
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	games
 #MASTER_SITES=	http://retrospec.sgn.net/download.php?id=63&path=games/hoh/bin/
 #requires post to download
@@ -17,20 +18,22 @@ DISTNAME=	${PORTNAME}-${SHORTPORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Remake of the classic spectrum game Head over Heels
 
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XFree86-libs
-
 WRKSRC=		${WRKDIR}/hoh-install-${PORTVERSION}/
 
 USE_BZIP2=	YES
-NO_BUILD=	YES
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)/\1\2/}
 
 .include <bsd.port.pre.mk>
 
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/data/HoH
+
 do-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/data/HoH ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/data/HoH ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/HoHOriginal.dat ${DATADIR}
 	${MKDIR} ${DATADIR}/Sound
 	${INSTALL_DATA} ${WRKSRC}/data/Sound/Sound.dat ${DATADIR}/Sound/

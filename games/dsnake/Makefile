@@ -7,7 +7,7 @@
 
 PORTNAME=	dsnake
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://bitblaze.com/downloads/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
@@ -20,9 +20,12 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/liballeg.so.4.0:${PORTSDIR}/devel/linux-allegr
 NO_PACKAGE=	Licence forbids any repacking and reselling
 
 ONLY_FOR_ARCHS=	i386
-NO_BUILD=	yes
-PREFIX?=	${X11BASE}
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/DeluxeSnake
+
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/dsnake
 
 do-install:
 	${MKDIR} ${DATADIR}
