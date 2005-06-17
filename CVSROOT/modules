@@ -5791,6 +5791,7 @@ maplay		ports/audio/maplay
 mapserver	ports/graphics/mapserver
 maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
+marathon2-data	ports/games/marathon2-data
 marbles		ports/games/marbles
 marlin		ports/audio/marlin
 mars		ports/cad/mars
