@@ -18,15 +18,10 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/pth
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-pthread \
-		--enable-optimize \
+CONFIGURE_ARGS= --enable-optimize \
 		--enable-batch \
 		--includedir="${PREFIX}/include/pth" \
 		--libdir="${PREFIX}/lib/pth"
-
-.if !defined(WITH_SYSCALL_HARD)
-CONFIGURE_ARGS+= --enable-syscall-soft
-.endif
 
 USE_REINPLACE=	yes
 
@@ -36,7 +31,24 @@ MAN3=		pth.3 pthread.3
 OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on \
 		SYSCALL_HARD "Build with hard syscalls" off
 
+
+#OPTIONS+=	SYSCALL_SOFT_DISABLED "Disable soft syscalls" off \
+#		SYSCALL_SOFT "Disable soft syscalls" on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SYSCALL_HARD)
+CONFIGURE_ARGS+= --enable-syscall-hard --disable-syscall-soft
+.else
+CONFIGURE_ARGS+= --enable-syscall-soft
+CONFIGURE_ARGS+= --enable-pthread
+.endif
+
+#.if defined(WITH_SYSCALL_SOFT_DISABLED)
+#CONFIGURE_ARGS+= --disable-syscall-soft
+#.else
+#CONFIGURE_ARGS+= --enable-syscall-soft
+#.endif
 
 post-patch:
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
