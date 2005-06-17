@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		sudosh
-PORTVERSION=		1.6.3
+PORTVERSION=		1.8.1
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=	--with-logdir=/var/log/sudosh
 CONFIGURE_ENV=		LDFLAGS="-lutil"
 
 MAN1=			sudosh.1
+MAN5=			sudosh.conf.5
 MAN8=			sudosh-replay.8
 
 .include <bsd.port.pre.mk>
