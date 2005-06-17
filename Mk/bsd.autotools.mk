@@ -97,18 +97,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #---------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------
-# DEPRECATED ENTRY POINTS
-#---------------------------------------------------------------------------
-.for i in AUTOMAKE AUTOCONF AUTOHEADER LIBTOOL
-. if defined(USE_${i})
-BROKEN=	"USE_${i} deprecated: replace with USE_${i}_VER=..."
-. endif
-. if defined(WANT_${i})
-BROKEN=	"WANT_${i} deprecated: replace with WANT_${i}_VER=..."
-. endif
-.endfor
-
-#---------------------------------------------------------------------------
 # AUTOMAKE/ACLOCAL
 #---------------------------------------------------------------------------
 
