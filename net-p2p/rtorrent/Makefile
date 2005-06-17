@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtorrent
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -23,7 +23,8 @@ CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_INC_LIBTOOL_VER=	13
 
-PLIST_FILES=	bin/rtorrent
+SUB_FILES=	pkg-message
+
 PORTDOCS=	README
 
 post-patch:
@@ -32,5 +33,8 @@ post-patch:
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${EXAMPLESDIR}/
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
