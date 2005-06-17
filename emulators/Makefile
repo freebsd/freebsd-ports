@@ -26,6 +26,7 @@
     SUBDIR += frodo
     SUBDIR += fuse
     SUBDIR += gbe
+    SUBDIR += gcube
     SUBDIR += generator
     SUBDIR += generator-cbiere
     SUBDIR += gngb

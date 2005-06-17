@@ -1,0 +1,22 @@
+--- Makefile.rules.orig	Fri Jun 17 01:59:11 2005
++++ Makefile.rules	Fri Jun 17 02:00:14 2005
+@@ -1,8 +1,7 @@
+ 
+ SDL_CONFIG=sdl-config
+-LIBS=`$(SDL_CONFIG) --libs` -mno-windows -mcygwin -lz -l$(OPENGL)
+-
+-CFLAGS=-g -Wall -I/usr/include -I/usr/local/include
++LIBS=`$(SDL_CONFIG) --libs` -mno-windows -mcygwin -L/usr/X11R6/lib -lz -l$(OPENGL) %%LDFLAGS%%
++CFLAGS=-g -Wall -I/usr/local/include -I/usr/X11R6/include
+ PROFLAGS=-g -Wall -pg -fprofile-arcs -ftest-coverage
+ OPTFLAGS=-O3 -fno-strict-aliasing -fomit-frame-pointer -ffast-math -march=$(CPU) $(OPTIMIZE)
+ 
+@@ -107,7 +106,7 @@
+ 	$(CC) $(CFLAGS) $^ -o $@ -lz
+ 
+ ppc_disasm.o: ppc_disasm.c
+-	$(CC) -g -c -o $@ $<
++	$(CC) $(CFLAGS) -g -c -o $@ $<	
+ 
+ video_sdl.o: video_sdl.c icon.c
+ 	$(CC) $(CFLAGS) `$(SDL_CONFIG) --cflags` -c -o $@ $< 
