@@ -22,10 +22,8 @@ bin/bluefish
 %%DATADIR%%/icon_r.png
 %%DATADIR%%/icon_unknown.png
 %%DATADIR%%/icon_xml.png
-share/gnome/application-registry/bluefish.applications
+share/gnome/applications/bluefish-project.desktop
 share/gnome/applications/bluefish.desktop
-share/gnome/mime-info/bluefish.keys
-share/gnome/mime-info/bluefish.mime
 share/gnome/pixmaps/bluefish-icon.png
 share/gnome/pixmaps/gnome-application-bluefish-project.png
 share/locale/da/LC_MESSAGES/bluefish.mo

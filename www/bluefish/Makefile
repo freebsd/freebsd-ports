@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
@@ -39,8 +38,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/gnome/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
-		--with-gnome2_4-mime=${PREFIX}/share/gnome/mime-info \
-		--with-gnome2_4-appreg=${PREFIX}/share/gnome/application-registry \
+		--without-gnome2_4-mime \
+		--without-gnome2_4-appreg \
 		--with-icon-path=${PREFIX}/share/gnome/pixmaps
 
 # Turns debugging output on
