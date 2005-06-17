@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	topless
-PORTVERSION=	1.36
+PORTVERSION=	1.41
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~daichi/src/
 
