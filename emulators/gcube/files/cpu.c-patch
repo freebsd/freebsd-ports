@@ -1,0 +1,11 @@
+--- cpu.c.orig	Fri Jun 17 02:20:13 2005
++++ cpu.c	Fri Jun 17 02:20:30 2005
+@@ -45,7 +45,7 @@
+ int RESERVE = 0;
+ __u32 RESERVE_ADDR = 0;
+ 
+-double (*fp_round[]) (double) = { round, trunc, ceil, floor };
++double (*fp_round[]) (double) = { rint, rint, ceil, floor };
+ #define FP_ROUND(D)		(fp_round[FPSCR_RN] (D))
+ 
+ #if 0
