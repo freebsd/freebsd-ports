@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	libtool
-PORTVERSION=	1.5.10
-PORTREVISION?=	1
+PORTVERSION=	1.5.18
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -47,8 +47,6 @@ post-install:
 .for i in libtool libtoolize
 	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
 .endfor
-	@install-info ${PREFIX}/info/libtool${BUILD_VERSION}.info \
-		${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>

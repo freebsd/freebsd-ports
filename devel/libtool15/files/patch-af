@@ -1,6 +1,11 @@
---- libltdl/Makefile.in.orig	Mon Apr 14 17:29:35 2003
-+++ libltdl/Makefile.in	Fri Apr 18 20:27:46 2003
-@@ -404,9 +404,7 @@
+--- libltdl/Makefile.in.orig	Mon May 16 02:34:13 2005
++++ libltdl/Makefile.in	Thu Jun 16 19:29:09 2005
+@@ -224,3 +224,3 @@
+ libltdlc_la_LIBADD = $(LIBADD_DL)
+-ltdldatadir = $(datadir)/libtool/libltdl
++ltdldatadir = $(datadir)/libtool15/libltdl
+ ltdldatafiles = COPYING.LIB README acinclude.m4 aclocal.m4 \
+@@ -437,9 +437,7 @@
  	    if test -d $(srcdir)/$$file && test $$d != $(srcdir); then \
 -	      cp -pR $(srcdir)/$$file $(distdir)$$dir || exit 1; \
 +	      echo no cp -pR $(srcdir)/$$file $(distdir)$$dir || exit 1; \
@@ -12,21 +17,4 @@
 -	    || cp -p $$d/$$file $(distdir)/$$file \
 -	    || exit 1; \
 +	    install -c -o root -g wheel -m 444 $$d/$$file $(distdir)/$$file; \
- 	  fi; \
-@@ -586,4 +584,4 @@
- local-install-files: $(DISTFILES)
--	-rm -rf $(DESTDIR)$(datadir)/libtool/libltdl
--	$(mkinstalldirs) $(DESTDIR)$(datadir)/libtool/libltdl
-+	-rm -rf $(DESTDIR)$(datadir)/libtool15/libltdl
-+	$(mkinstalldirs) $(DESTDIR)$(datadir)/libtool15/libltdl
- 	@for file in $(DISTFILES); do \
-@@ -591,6 +589,6 @@
- 	  if test -d $$d/$$file; then \
--	    cp -r $$d/$$file $(DESTDIR)$(datadir)/libtool/libltdl/$$file; \
-+	    cp -r $$d/$$file $(DESTDIR)$(datadir)/libtool15/libltdl/$$file; \
- 	  else \
--	    test -f $(DESTDIR)$(datadir)/libtool/libltdl/$$file \
--	    || cp $$d/$$file $(DESTDIR)$(datadir)/libtool/libltdl/$$file || :; \
-+	    test -f $(DESTDIR)$(datadir)/libtool15/libltdl/$$file \
-+	    || cp $$d/$$file $(DESTDIR)$(datadir)/libtool15/libltdl/$$file || :; \
  	  fi; \
