@@ -7,6 +7,7 @@ share/aclocal/libtool%%BUILD_VERSION%%.m4
 share/aclocal/ltdl%%BUILD_VERSION%%.m4
 share/libtool%%BUILD_VERSION%%/config.guess
 share/libtool%%BUILD_VERSION%%/config.sub
+share/libtool%%BUILD_VERSION%%/install-sh
 share/libtool%%BUILD_VERSION%%/libltdl/COPYING.LIB
 share/libtool%%BUILD_VERSION%%/libltdl/Makefile.am
 share/libtool%%BUILD_VERSION%%/libltdl/Makefile.in
