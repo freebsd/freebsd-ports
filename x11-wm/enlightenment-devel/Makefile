@@ -21,6 +21,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		embryo.9:${PORTSDIR}/lang/embryo \
 		eet.9:${PORTSDIR}/devel/eet
 
+CONFLICTS=	x11-wm/enlightenment
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
