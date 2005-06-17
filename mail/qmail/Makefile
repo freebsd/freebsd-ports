@@ -467,7 +467,8 @@ post-patch:
 .endfor
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 .elif defined(SLAVE_TLS)
-	@${HEAD} -74 ${DISTDIR}/${DIST_SUBDIR}/tls.patch > ${WRKDIR}/TLS.readme
+	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}.patch > \
+		${WRKDIR}/TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
 .elif defined(SLAVE_LDAP)
