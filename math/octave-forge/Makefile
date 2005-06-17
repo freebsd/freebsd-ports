@@ -14,11 +14,13 @@ MASTER_SITE_SUBDIR=	octave
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull \
-		${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
-		${LOCALBASE}/bin/gcsplit:${PORTSDIR}/sysutils/coreutils
-RUN_DEPENDS=	${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
-		${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull
+BUILD_DEPENDS=	qhull:${PORTSDIR}/math/qhull \
+		octave:${PORTSDIR}/math/octave \
+		gcsplit:${PORTSDIR}/sysutils/coreutils \
+		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
+		bin/qhull:${PORTSDIR}/math/qhull \
+		bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
