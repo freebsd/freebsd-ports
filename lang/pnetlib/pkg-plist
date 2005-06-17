@@ -4,6 +4,7 @@ bin/jsrun
 lib/cscc/lib/0.81.0.1407/ICSharpCode.SharpZipLib.dll
 lib/cscc/lib/2.0.3600.0/Accessibility.dll
 lib/cscc/lib/2.0.3600.0/DotGNU.Images.dll
+lib/cscc/lib/2.0.3600.0/DotGNU.Misc.dll
 lib/cscc/lib/2.0.3600.0/DotGNU.SSL.dll
 lib/cscc/lib/2.0.3600.0/DotGNU.Terminal.dll
 lib/cscc/lib/2.0.3600.0/DotGNU.XmlRpc.dll
@@ -64,6 +65,7 @@ lib/cscc/lib/8.0.1200.0/de/Microsoft.VisualBasic.resources.dll
 lib/cscc/lib/8.0.1200.0/jsrun.exe
 lib/cscc/lib/Accessibility.dll
 lib/cscc/lib/DotGNU.Images.dll
+lib/cscc/lib/DotGNU.Misc.dll
 lib/cscc/lib/DotGNU.SSL.dll
 lib/cscc/lib/DotGNU.Terminal.dll
 lib/cscc/lib/DotGNU.XmlRpc.dll
@@ -129,8 +131,6 @@ lib/cscc/lib/sysglobl.dll
 share/cscc/config/machine.default
 @dirrm share/cscc/config
 @unexec rmdir %D/share/cscc 2>/dev/null || true
-@dirrm lib/cscc/lib/de
-@dirrm lib/cscc/lib/ca
 @unexec rmdir %D/lib/cscc/lib/8.0.1200.0/de 2>/dev/null || true
 @unexec rmdir %D/lib/cscc/lib/8.0.1200.0/ca 2>/dev/null || true
 @unexec rmdir %D/lib/cscc/lib/8.0.1200.0 2>/dev/null || true
@@ -138,5 +138,7 @@ share/cscc/config/machine.default
 @unexec rmdir %D/lib/cscc/lib/2.0.3600.0/ca 2>/dev/null || true
 @unexec rmdir %D/lib/cscc/lib/2.0.3600.0 2>/dev/null || true
 @unexec rmdir %D/lib/cscc/lib/0.81.0.1407 2>/dev/null || true
+@unexec rmdir %D/lib/cscc/lib/ca 2>/dev/null || true
+@unexec rmdir %D/lib/cscc/lib/de 2>/dev/null || true
 @unexec rmdir %D/lib/cscc/lib 2>/dev/null || true
 @unexec rmdir %D/lib/cscc 2>/dev/null || true
