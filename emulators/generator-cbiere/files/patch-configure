@@ -1,0 +1,19 @@
+*** configure.orig	Sun Apr 17 03:19:27 2005
+--- configure	Fri Apr 29 18:25:26 2005
+***************
+*** 4179,4185 ****
+    fi
+  
+    if [ "x$GCCVER" != "xno" ]; then
+!     CFLAGS="$CFLAGS -W -Wall -Wformat=2"
+      if [ "x$WARN" != "xno" ]; then
+        CFLAGS="$CFLAGS -Wstrict-prototypes -Wunused"
+      fi
+--- 4179,4185 ----
+    fi
+  
+    if [ "x$GCCVER" != "xno" ]; then
+! #    CFLAGS="$CFLAGS -W -Wall -Wformat=2"
+      if [ "x$WARN" != "xno" ]; then
+        CFLAGS="$CFLAGS -Wstrict-prototypes -Wunused"
+      fi
