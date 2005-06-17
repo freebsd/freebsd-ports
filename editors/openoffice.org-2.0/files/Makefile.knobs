@@ -105,8 +105,8 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "To build OOo, you should have a lot"
 .if defined(WITH_DEBUG)
-	@${ECHO} "of free diskspace (~ 8GB)."
+	@${ECHO} "of free diskspace (~ 18GB)."
 .else
-	@${ECHO} "of free diskspace (~ 4GB)."
+	@${ECHO} "of free diskspace (~ 8.5GB)."
 .endif
 	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
