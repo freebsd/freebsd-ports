@@ -2007,6 +2007,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%
 %%PORTDOCS%%@unexec /bin/rmdir %D/share/doc/gtkmm-%%API_VERSION%% 2>/dev/null || /usr/bin/true
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books/gtkmm-%%API_VERSION%% 2> /dev/null || /usr/bin/true
 %%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books 2> /dev/null || /usr/bin/true
 %%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp 2> /dev/null || /usr/bin/true
 @dirrm lib/gtkmm-%%API_VERSION%%/proc/m4
