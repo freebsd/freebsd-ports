@@ -16,7 +16,7 @@ Aleph One is OpenGL-accelerated, but performs well without OpenGL if you
 do not have a graphics card with the appropriate functionality (you need
 to use the -g/--nogl option).
 
-WWW: http://www.uni-mainz.de/~bauec002/A1Main.html
+WWW: http://source.bungie.org/
 
 Michael Alyn Miller
 malyn@strangeGizmo.com
