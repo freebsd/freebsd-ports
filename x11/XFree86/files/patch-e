@@ -1,0 +1,81 @@
+--- config/cf/FreeBSD.cf.orig	Wed Jan  9 15:04:16 2002
++++ config/cf/FreeBSD.cf	Wed Jan  9 16:17:59 2002
+@@ -78,7 +78,7 @@
+ #endif
+ 
+ #define CcCmd			cc
+-#define CppCmd			/usr/libexec/cpp
++#define CppCmd			/usr/bin/cpp
+ #define PreProcessCmd		CppCmd
+ #define StandardCppDefines	-traditional
+ #if defined(UseInstalled) && (!defined(XF86LinkKit) || !XF86LinkKit)
+@@ -141,12 +141,12 @@
+  * reason for FreeBSD to assume that it knows where X libraries are installed 
+  * and they can remove it from the list of directories they add to ld.so.cache 
+  * in their /etc/rc file.
++ *
++ * For the ELF case, we default to the ExtraLoadFlags in bsdLib.rules
+  */
+ #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion >= 2)
+ #ifndef ExtraLoadFlags
+-#if UseElfFormat
+-#define ExtraLoadFlags		-Wl,-rpath,$(USRLIBDIRPATH)
+-#else
++#if !UseElfFormat
+ #define ExtraLoadFlags		-Wl,-R,$(USRLIBDIRPATH)
+ #endif
+ #endif
+@@ -330,7 +330,13 @@
+ # define AsmDefines		AsmElfDefines
+ #endif
+ 
++#ifdef i386Architecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines
++#endif
++#ifdef AlphaArchitecture
++#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#define	XFree86ConsoleDefines	-DSYSCONS_SUPPORT
++#endif
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
+@@ -355,14 +361,14 @@
+ /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+ #ifndef DefaultGcc2i386Opt
+ #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2
++#define DefaultGcc2i386Opt
+ #endif
+ #endif
+ 
+ #ifdef i386Architecture
+ # define OptimizedCDebugFlags DefaultGcc2i386Opt
+ #else
+-# define OptimizedCDebugFlags -O2
++# define OptimizedCDebugFlags
+ #endif
+ 
+ #ifndef PreIncDir
+@@ -471,14 +477,18 @@
+ #define DlLibrary		/**/
+ #endif
+ 
++#ifdef AlphaArchitecture
++#define IoLibrary		-lio
++#else
++#define IoLibrary		/**/
++#endif
++
+ #if BuildDynamicLoading
+-#define ServerExtraSysLibs	DlLibrary
++#define ServerExtraSysLibs	DlLibrary IoLibrary
+ #else
+-#define ServerExtraSysLibs	/**/
++#define ServerExtraSysLibs	IoLibrary
+ #endif
+ 
+ #include <bsdLib.rules>
+ 
+-#ifdef i386Architecture
+ #include <xfree86.cf>
+-#endif
