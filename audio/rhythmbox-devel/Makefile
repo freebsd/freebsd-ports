@@ -49,13 +49,6 @@ CONFIGURE_ARGS+=	--with-player=gstreamer
 USE_GSTREAMER+=		flac mad gnomevfs gconf
 .endif
 
-.ifdef (WITH_MONKEYMEDIA)
-CONFIGURE_ARGS+=	--with-metadata=monkeymedia
-.else
-CONFIGURE_ARGS+=	--with-metadata=gstreamer
-USE_GSTREAMER+=		flac mad gnomevfs
-.endif
-
 .ifdef (WITH_IPOD)
 CONFIGURE_ARGS+=	--enable-ipod
 .endif
