@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9fae0f1f-df82-11d9-b875-0001020eed82">
+    <topic>tcpdump -- infinite loops in protocol decoding</topic>
+    <affects>
+      <system>
+        <name>FreeBSD</name>
+        <range><ge>5.4</ge><lt>5.4_2</lt></range>
+        <range><ge>5.3</ge><lt>5.3_16</lt></range>
+      </system>
+      <package>
+	<name>tcpdump</name>
+	<range><lt>3.8.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Problem Description</h1>
+        <p>Several tcpdump protocol decoders contain programming
+          errors which can cause them to go into infinite loops.</p>
+        <h1>Impact</h1>
+        <p>An attacker can inject specially crafted packets into the
+           network which, when processed by tcpdump, could lead to a
+           denial-of-service. After the attack, tcpdump would no
+           longer capture traffic, and would potentially use all
+           available processor time.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1267</cvename>
+      <cvename>CAN-2005-1278</cvename>
+      <cvename>CAN-2005-1279</cvename>
+      <cvename>CAN-2005-1280</cvename>
+      <freebsdsa>SA-05:10.tcpdump</freebsdsa>
+      <mlist msgid="20050426100140.1945.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111454406222040</mlist>
+      <mlist msgid="20050426100057.1748.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111454461300644</mlist>
+    </references>
+    <dates>
+      <discovery>2005-06-09</discovery>
+      <entry>2005-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2701611f-df5c-11d9-b875-0001020eed82">
     <topic>gaim -- Yahoo! remote crash vulnerability</topic>
     <affects>
