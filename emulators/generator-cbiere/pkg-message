@@ -1,0 +1,27 @@
+Generator-CBiere has been installed.
+
+If you are using SDL < 1.2.8 and you only see a black window (with sound), try
+the following (you must have xvattr, otherwise install it from ports):
+
+xvattr -a XV_AUTOPAINT_COLORKEY -v 1
+
+If you enabled the option SDL_AUDIO and your sound is delayed try setting the
+variable "sound_maxfields" and "sound_minfields" in your configuration file
+(usually "~/.genrc") to lower values. Like:
+
+# default: 5
+sound_minfields = 1
+
+# default: 10
+sound_maxfields = 2
+
+If you want AVI recording set the environment variable "SDL_VIDEO_YUV_HWACCEL"
+to "0". This will disable hardware support for YUV overlays, which causes the
+smoothing and the green backround when there are no ROMs loaded. But AVIs will
+be correctly produced.
+
+To gain more performance set the CPUTYPE variable in "make.conf" as appropiate
+(in addition to enabling the build option OPTIMIZED_CFLAGS), then rebuild and
+install generator.
+
+For more information visit: http://www.ghostwhitecrab.com/generator/

@@ -27,6 +27,7 @@
     SUBDIR += fuse
     SUBDIR += gbe
     SUBDIR += generator
+    SUBDIR += generator-cbiere
     SUBDIR += gngb
     SUBDIR += gnuboy
     SUBDIR += grustibus
