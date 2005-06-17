@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
@@ -113,21 +112,22 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
 		radzap.1
-MAN5=		acct_users.5 clients.5 dictionary.5 naslist.5 radiusd.conf.5 \
-		rlm_acct_unique.5 rlm_always.5 rlm_attr_filter.5 \
-		rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 rlm_detail.5 \
-		rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 rlm_passwd.5 \
-		rlm_realm.5 rlm_sql.5 rlm_unix.5 users.5
+MAN5=		acct_users.5 clients.5 clients.conf.5 dictionary.5 naslist.5 \
+		radiusd.conf.5 rlm_acct_unique.5 rlm_always.5 \
+		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
+		rlm_detail.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 \
+		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_unix.5 users.5
 MAN8=		radiusd.8 radrelay.8 radwatch.8 rlm_ippool_tool.8
 
-DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
-		dictionary.alcatel dictionary.alteon dictionary.altiga \
-		dictionary.aptis dictionary.ascend dictionary.bay \
-		dictionary.bristol dictionary.cisco dictionary.cisco.bbsm \
-		dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
-		dictionary.colubris dictionary.columbia_university \
-	       	dictionary.compat dictionary.erx dictionary.foundry \
-	       	dictionary.freeradius dictionary.gandalf dictionary.garderos \
+DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 \
+		dictionary.acc dictionary.alcatel dictionary.alteon \
+		dictionary.altiga dictionary.aptis dictionary.ascend \
+		dictionary.bay dictionary.bristol dictionary.cisco \
+		dictionary.cisco.bbsm dictionary.cisco.vpn3000 \
+		dictionary.cisco.vpn5000 dictionary.colubris \
+		dictionary.columbia_university dictionary.compat \
+		dictionary.erx dictionary.foundry dictionary.freeradius \
+		dictionary.gandalf dictionary.garderos dictionary.gemtek \
 		dictionary.juniper dictionary.karlnet dictionary.livingston \
 		dictionary.localweb dictionary.merit dictionary.microsoft \
 		dictionary.mikrotik dictionary.navini dictionary.nomadix \
