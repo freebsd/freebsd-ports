@@ -880,7 +880,6 @@
 %%PORTDOCS%%@dirrm %%COMPILERDIR%%/doc/f_ug2/whxdata
 %%PORTDOCS%%@dirrm %%COMPILERDIR%%/doc/f_ug2
 %%PORTDOCS%%%%COMPILERDIR%%/doc/fcompindex.htm
-%%PORTDOCS%%%%COMPILERDIR%%/doc/flex_ug.pdf
 %%PORTDOCS%%%%COMPILERDIR%%/doc/for_lang.pdf
 %%PORTDOCS%%%%COMPILERDIR%%/doc/for_lib.pdf
 %%PORTDOCS%%%%COMPILERDIR%%/doc/for_qopl.pdf
@@ -1182,7 +1181,9 @@
 %%COMPILERDIR%%/lib/libimf.a
 %%COMPILERDIR%%/lib/libimf.so
 %%COMPILERDIR%%/lib/libirc.a
+%%COMPILERDIR%%/lib/libirc_nonpic.a
 %%COMPILERDIR%%/lib/libirc_s.a
+%%COMPILERDIR%%/lib/libirc_s_nonpic.a
 %%COMPILERDIR%%/lib/libsvml.a
 %%COMPILERDIR%%/lib/libunwind.a
 @dirrm %%COMPILERDIR%%/lib
