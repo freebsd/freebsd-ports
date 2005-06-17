@@ -561,6 +561,7 @@
     SUBDIR += xfce4-utils
     SUBDIR += xfce4-wavelan-plugin
     SUBDIR += xfsm
+    SUBDIR += xfsprogs
     SUBDIR += xin
     SUBDIR += xloadface
     SUBDIR += xlogmaster

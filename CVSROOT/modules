@@ -12544,6 +12544,7 @@ xfree86-dri	ports/graphics/xfree86-dri
 xfree86_xkb_xml	ports/x11/xfree86_xkb_xml
 xfrisk		ports/games/xfrisk
 xfsm		ports/sysutils/xfsm
+xfsprogs	ports/sysutils/xfsprogs
 xg		ports/x11-toolkits/xg
 xgalaga		ports/games/xgalaga
 xgame		ports/games/xgame
