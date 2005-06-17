@@ -1,0 +1,6 @@
+bin/sdp2rat
+%%SITE_PERL%%/Net/SDP.pm
+%%SITE_PERL%%/Net/SDP/Media.pm
+%%SITE_PERL%%/Net/SDP/Time.pm
+@dirrm %%SITE_PERL%%/Net/SDP
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

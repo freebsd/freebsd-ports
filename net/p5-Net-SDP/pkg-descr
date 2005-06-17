@@ -1,0 +1,9 @@
+Net::SDP is an SDP (Session Description Protocol) parser and generator.
+Net::SDP is object oriented and a single instance of Net::SDP represents
+a single SDP session description.  There are methods to easily get, set
+and create each of the fields in the session description.
+
+The classes Net::SDP::Time and Net::SDP::Media are automatically
+instantiated for each Time Description (t=) and Media Description (m=).
+
+WWW: http://search.cpan.org/dist/Net-SDP/
