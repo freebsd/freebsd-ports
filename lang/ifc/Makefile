@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	8.1.024
+PORTVERSION=	8.1.028
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION:C/p.+$//}
@@ -18,7 +18,6 @@ PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${PORTVERSION} != ${PATCHLEVEL}
 DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
-#PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 PATCH_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 .endif
 
@@ -56,12 +55,12 @@ IFCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
-IGNORE=	"Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${IFC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
+IGNORE=	Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${IFC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again
 .endif
 .endfor
 
 .if exists(${LINUXBASE}/boot/kernel.h)
-BROKEN=	Cannot coexist with linux_devtools
+BROKEN=	"Cannot coexist with linux_devtools"
 .endif
 
 post-extract:
