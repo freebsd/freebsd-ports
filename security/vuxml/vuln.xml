@@ -32,6 +32,68 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2701611f-df5c-11d9-b875-0001020eed82">
+    <topic>gaim -- Yahoo! remote crash vulnerability</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jacopo Ottaviani reports that Gaim can be crashed by being
+	  offered files with names containing non-ASCII
+	  characters via the Yahoo! protocol.</p>
+      </body>
+    </description>
+    <references>
+      <bid>13931</bid>
+      <cvename>CAN-2005-1269</cvename>
+      <url>http://gaim.sourceforge.net/security/index.php?id=18</url>
+    </references>
+    <dates>
+      <discovery>2005-06-10</discovery>
+      <entry>2005-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b6612eee-df5f-11d9-b875-0001020eed82">
+    <topic>gaim -- MSN Remote DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/index.php?id=19">
+	  <p>Remote attackers can cause a denial of service (crash)
+	    via a malformed MSN message that leads to a memory
+	    allocation of a large size, possibly due to an integer
+	    signedness error.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13932</bid>
+      <cvename>CAN-2005-1934</cvename>
+      <url>http://gaim.sourceforge.net/security/index.php?id=19</url>
+    </references>
+    <dates>
+      <discovery>2005-06-10</discovery>
+      <entry>2005-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12b1a62d-6056-4d90-9e21-45fcde6abae4">
     <topic>gallery -- remote code injection via HTTP_POST_VARS</topic>
     <affects>
