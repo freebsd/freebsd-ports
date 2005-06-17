@@ -23,4 +23,10 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 
 .include "${.CURDIR}/../pnet/Makefile.pnet"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build."
+.endif
+
+.include <bsd.port.post.mk>
