@@ -50,7 +50,5 @@ post-install:
 	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
 		${PREFIX}/libexec/automake${BUILD_VERSION}/${i}
 .endfor
-	@install-info ${PREFIX}/info/automake${BUILD_VERSION}.info \
-		${PREFIX}/info/dir
 
 .include <bsd.port.mk>
