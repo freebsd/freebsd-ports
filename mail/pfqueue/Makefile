@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pfqueue
-PORTVERSION=		0.4.0
+PORTVERSION=		0.4.1
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		marcus@corp.grupos.com.br
 COMMENT=		A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
 
-USE_BZIP2=		yes
 USE_REINPLACE=		yes
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
