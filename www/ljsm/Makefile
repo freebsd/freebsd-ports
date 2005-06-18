@@ -7,6 +7,7 @@
 
 PORTNAME=	ljsm
 PORTVERSION=    2.5
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://ryzh.kiev.ua/ljsm/
 EXTRACT_SUFX=	.zip
