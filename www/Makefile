@@ -214,6 +214,7 @@
     SUBDIR += linux-sunbird
     SUBDIR += linuxpluginwrapper
     SUBDIR += ljdeps
+    SUBDIR += ljpms
     SUBDIR += ljsm
     SUBDIR += logtools
     SUBDIR += lws
