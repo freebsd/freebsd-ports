@@ -1,6 +1,6 @@
---- scripts/Makefile.in.orig	Thu May 26 15:28:18 2005
-+++ scripts/Makefile.in	Fri Jun  3 15:09:08 2005
-@@ -333,26 +333,7 @@
+--- scripts/Makefile.in.orig	Sat Jun 11 03:32:05 2005
++++ scripts/Makefile.in	Thu Jun 16 23:09:08 2005
+@@ -333,24 +333,7 @@
  uname_prog = @uname_prog@
  yassl_dir = @yassl_dir@
  zlib_dir = @zlib_dir@
@@ -21,14 +21,12 @@
 -			mysql_explain_log \
 -			mysql_tableinfo \
 -			mysqld_multi \
--			make_win_src_distribution \
--			make_win_binary_distribution \
 -			mysql_create_system_tables
 +bin_SCRIPTS =
  
  EXTRA_SCRIPTS = make_binary_distribution.sh \
  			make_sharedlib_distribution.sh \
-@@ -382,7 +363,7 @@
+@@ -380,7 +363,7 @@
  			mysqlaccess.conf \
  			mysqlbug
  
