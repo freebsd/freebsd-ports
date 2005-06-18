@@ -1,0 +1,6 @@
+bin/blobwars
+%%DATADIR%%/blobwars.pak
+share/applications/blobwars.desktop
+share/pixmaps/blobwars.png
+@dirrm %%DATADIR%%
+@unexec rmdir %D/share/applications 2>/dev/null || true

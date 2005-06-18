@@ -45,6 +45,7 @@
     SUBDIR += battleball
     SUBDIR += biorythm
     SUBDIR += blackjack
+    SUBDIR += blobwars
     SUBDIR += block
     SUBDIR += blockade
     SUBDIR += blue

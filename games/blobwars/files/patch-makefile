@@ -1,0 +1,80 @@
+--- makefile.orig	Mon Apr 25 20:25:37 2005
++++ makefile	Sat Jun 18 01:55:54 2005
+@@ -7,9 +7,8 @@
+ RELEASE = 1
+ USEPAK = 1
+ 
+-PREFIX=$(DESTDIR)/usr
+-BINDIR = $(PREFIX)/games/
+-DATADIR = $(PREFIX)/share/games/parallelrealities/
++BINDIR = $(PREFIX)/bin/
++DATADIR = $(PREFIX)/share/$(PROG)/
+ DOCDIR = $(PREFIX)/share/doc/$(PROG)/
+ ICONDIR = $(PREFIX)/share/icons/
+ KDE = $(PREFIX)/share/applnk/Games/Arcade/
+@@ -35,7 +34,7 @@
+ PAKOBJS = CFileData.o pak.o
+ 
+ # top-level rule to create the program.
+-all: $(PROG) pak
++all: $(PROG) pak buildpak
+ 
+ # compiling other source files.
+ %.o: src/%.cpp src/%.h src/defs.h src/defines.h src/headers.h
+@@ -44,7 +43,7 @@
+ # linking the program.
+ $(PROG): $(GAMEOBJS)
+ 	$(CXX) $(LIBS) $(GAMEOBJS) -o $(PROG)
+-	
++
+ pak: $(PAKOBJS)
+ 	$(CXX) $(LIBS) $(PAKOBJS) -o pak
+ 
+@@ -55,33 +54,20 @@
+ # cleaning everything that can be automatically recreated with "make".
+ clean:
+ 	$(RM) $(GAMEOBJS) mapEditor.o pak.o
+-	
++
+ buildpak:
+ 	./pak data gfx music sound $(PAKNAME)
+ 
+ # install
+ install:
+-
+-	./pak data gfx music sound $(PAKNAME)
+-
+-	mkdir -p $(BINDIR)
+ 	mkdir -p $(DATADIR)
+-	mkdir -p $(DOCDIR)
+-	mkdir -p $(ICONDIR)
+-	mkdir -p $(ICONDIR)mini
+-	mkdir -p $(ICONDIR)large
+-	mkdir -p $(KDE)
+-	mkdir -p $(GNOME)
+-
+-	strip $(PROG)
+-	install -o root -g games -m 755 $(PROG) $(BINDIR)$(PROG)
+-	install -o root -g games -m 644 $(PAKNAME) $(DATADIR)$(PAKNAME)
+-	install -o root -g games -m 644 $(DOCS) $(DOCDIR)
+-	cp $(ICONS)$(PROG).png $(ICONDIR)
+-	cp $(ICONS)$(PROG)-mini.png $(ICONDIR)mini/$(PROG).png
+-	cp $(ICONS)$(PROG)-large.png $(ICONDIR)large/$(PROG).png
+-	cp $(ICONS)$(PROG).desktop $(KDE)
+-	cp $(ICONS)$(PROG).desktop $(GNOME)
++	mkdir -p $(PREFIX)/share/applications
++	mkdir -p $(PREFIX)/share/pixmaps
++
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR)$(PROG)
++	$(BSD_INSTALL_DATA) $(PAKNAME) $(DATADIR)$(PAKNAME)
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).desktop $(PREFIX)/share/applications
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).png $(PREFIX)/share/pixmaps
+ 
+ uninstall:
+ 	$(RM) $(BINDIR)$(PROG)
+@@ -92,4 +78,3 @@
+ 	$(RM) $(ICONDIR)large/$(PROG).png
+ 	$(RM) $(KDE)$(ICONS)$(PROG).desktop
+ 	$(RM) $(GNOME)$(ICONS)$(PROG).desktop
+-	
+\ No newline at end of file
