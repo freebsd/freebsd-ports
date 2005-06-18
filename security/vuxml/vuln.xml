@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cc4ce06b-e01c-11d9-a8bd-000cf18bbe54">
+    <topic>SpamAssassin -- Denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-Mail-SpamAssassin</name>
+	<range><ge>3.0.1</ge><le>3.0.3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache SpamAssassin Security Team reports:</p>
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/spamassassin-announce/200506.mbox/%3c17072.35054.586017.822288@proton.pathname.com%3e">
+          <p>Apache SpamAssassin 3.0.4 was recently released, and
+	    fixes a denial of service vulnerability in versions 3.0.1, 3.0.2,
+	    and 3.0.3.  The vulnerability allows certain misformatted
+	    long message headers to cause spam checking to
+	    take a very long time.</p>
+
+	  <p>While the exploit has yet to be seen in the wild,
+	    we are concerned that there may be attempts to abuse
+	    the vulnerability in the future.  Therefore, we strongly
+	    recommend all users of these versions upgrade to
+	    Apache SpamAssassin 3.0.4 as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1266</cvename>
+      <mlist msgid="c17072.35054.586017.822288@proton.pathname.com">http://mail-archives.apache.org/mod_mbox/spamassassin-announce/200506.mbox/%3c17072.35054.586017.822288@proton.pathname.com%3e</mlist>
+    </references>
+    <dates>
+      <discovery>2004-06-15</discovery>
+      <entry>2004-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e879ca68-e01b-11d9-a8bd-000cf18bbe54">
     <topic>squirrelmail -- Several cross site scripting vulnerabilities</topic>
     <affects>
