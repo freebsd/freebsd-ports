@@ -1,3 +1,17 @@
+%%DIG_TOOLS%%bin/ftimes-dig2ctx.pl
+%%DIG_TOOLS%%bin/hipdig.pl
+%%HASHDIG_TOOLS%%bin/hashdig-bash.pl
+%%HASHDIG_TOOLS%%bin/hashdig-bind.pl
+%%HASHDIG_TOOLS%%bin/hashdig-dump.pl
+%%HASHDIG_TOOLS%%bin/hashdig-filter.pl
+%%HASHDIG_TOOLS%%bin/hashdig-harvest-sunsolve.pl
+%%HASHDIG_TOOLS%%bin/hashdig-harvest.pl
+%%HASHDIG_TOOLS%%bin/hashdig-make.pl
+%%HASHDIG_TOOLS%%bin/hashdig-resolve-sunsolve.pl
+%%HASHDIG_TOOLS%%bin/hashdig-stat.pl
+%%HASHDIG_TOOLS%%bin/hashdig-weed.pl
+%%MAP_TOOLS%%bin/ftimes-map2dbi.pl
+%%MAP_TOOLS%%bin/ftimes-map2mac.pl
 bin/ftimes
 etc/digfull.cfg.sample
 etc/diglean.cfg.sample
