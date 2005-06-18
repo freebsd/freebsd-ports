@@ -1,4 +1,6 @@
 etc/facturier/httpd.conf.facturier
+%%FACT_REP%%/cgi-bin/articlemodif.cgi
+%%FACT_REP%%/cgi-bin/articles.cgi
 %%FACT_REP%%/cgi-bin/cherchcontact.cgi
 %%FACT_REP%%/cgi-bin/clientmodif.cgi
 %%FACT_REP%%/cgi-bin/clients.cgi
@@ -17,11 +19,14 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/cgi-bin/propalcde.cgi
 %%FACT_REP%%/cgi-bin/regler.cgi
 %%FACT_REP%%/cgi-bin/relance.cgi
+%%FACT_REP%%/cgi-bin/rens_article.cgi
+%%FACT_REP%%/cgi-bin/rens_clifact.cgi
 %%FACT_REP%%/cgi-bin/statistiques.cgi
 %%FACT_REP%%/cgi-bin/taches.cgi
 %%FACT_REP%%/cgi-bin/testconnection.cgi
 %%FACT_REP%%/cgi-bin/testhtmldoc.cgi
 %%FACT_REP%%/cgi-bin/utilisateur.cgi
+%%FACT_REP%%/html/UNGI/Articles.pm
 %%FACT_REP%%/html/UNGI/CherchContact.pm
 %%FACT_REP%%/html/UNGI/Clients.pm
 %%FACT_REP%%/html/UNGI/Commande.pm
@@ -103,6 +108,7 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/html/UNGI/icones/annuler.gif
 %%FACT_REP%%/html/UNGI/icones/archive.gif
 %%FACT_REP%%/html/UNGI/icones/archive_a.gif
+%%FACT_REP%%/html/UNGI/icones/article.gif
 %%FACT_REP%%/html/UNGI/icones/boutons_01.gif
 %%FACT_REP%%/html/UNGI/icones/boutons_02.gif
 %%FACT_REP%%/html/UNGI/icones/boutons_03.gif
@@ -119,10 +125,12 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/html/UNGI/icones/conseil/ungips.gif
 %%FACT_REP%%/html/UNGI/icones/consfact.gif
 %%FACT_REP%%/html/UNGI/icones/continuer.gif
+%%FACT_REP%%/html/UNGI/icones/creeart.gif
 %%FACT_REP%%/html/UNGI/icones/creecli.gif
 %%FACT_REP%%/html/UNGI/icones/creer.gif
 %%FACT_REP%%/html/UNGI/icones/creer_facture.gif
 %%FACT_REP%%/html/UNGI/icones/creer_facture2.gif
+%%FACT_REP%%/html/UNGI/icones/creer_larticle.gif
 %%FACT_REP%%/html/UNGI/icones/creer_util1.gif
 %%FACT_REP%%/html/UNGI/icones/creer_util2.gif
 %%FACT_REP%%/html/UNGI/icones/creer_util_client1.gif
@@ -194,6 +202,7 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/html/UNGI/icones/liste2.gif
 %%FACT_REP%%/html/UNGI/icones/log_facture.gif
 %%FACT_REP%%/html/UNGI/icones/log_ungi.gif
+%%FACT_REP%%/html/UNGI/icones/logo_rdl.gif
 %%FACT_REP%%/html/UNGI/icones/logo_ungi.gif
 %%FACT_REP%%/html/UNGI/icones/lum_or.gif
 %%FACT_REP%%/html/UNGI/icones/mensuel.gif
@@ -263,12 +272,11 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/html/UNGI/icones/voirlettre.gif
 %%FACT_REP%%/html/UNGI/lang/Fr.pm
 %%FACT_REP%%/html/UNGI/style.css
+%%FACT_REP%%/html/index.html
 %%FACT_REP%%/html/javascript.js
-%%FACT_REP%%/html/javascript.js.orig
 %%FACT_REP%%/html/temp/duplicata.gif
 %%FACT_REP%%/html/temp/euro2.gif
 %%FACT_REP%%/html/temp/facture.tar.gz
-%%FACT_REP%%/html/temp/log_facture.gif.back
 %%FACT_REP%%/html/temp/log_ungi.gif
 %%FACT_REP%%/html/temp/page1002_1061990822
 %%FACT_REP%%/html/temp/page1002_1061990966
@@ -303,7 +311,6 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/html/temp/page926_1061990822
 %%FACT_REP%%/html/temp/page926_1061990966
 %%FACT_REP%%/html/temp/relance.pdf
-%%FACT_REP%%/html/temp/test.html
 %%FACT_REP%%/lib/Conf.pm
 %%FACT_REP%%/lib/Conf.pm.dist
 %%FACT_REP%%/lib/Conf.pm.orig
@@ -313,9 +320,11 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/lib/lang/Fr.pm.back
 %%FACT_REP%%/lib/statfact.conf
 %%FACT_REP%%/lib/usertype.conf
+%%FACT_REP%%/log/debug.txt
+%%FACT_REP%%/log/debug1.txt
 %%FACT_REP%%/sql/facturier.sql
-%%FACT_REP%%/sql/majpropal.sql
-%%FACT_REP%%/sql/majvers2_0tovers2_1.sql
+%%FACT_REP%%/sql/majvers2.1.1tovers2.1.2.sql
+%%FACT_REP%%/version.txt
 @dirrm etc/facturier
 @dirrm %%FACT_REP%%/cgi-bin
 @dirrm %%FACT_REP%%/html/temp
