@@ -1,0 +1,10 @@
+Waterfall is yet another XMMS spectrum analyzer. While most analyzers only
+show a changing snapshot of the current sound, waterfall shows a scrolling
+spectrogram, a 2-d plot of frequency vs time, with energy represented by
+intensity. There are also options to use color to display stereo
+discrepancies, frequency onsets, or frequency uniformity.
+
+WWW: http://www.aigeek.com/waterfall/
+
+- Alejandro Pulver
+alejandro@varnet.biz

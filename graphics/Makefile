@@ -584,6 +584,7 @@
     SUBDIR += xmms-nebulus
     SUBDIR += xmms-paranormal
     SUBDIR += xmms-vumeter
+    SUBDIR += xmms-waterfall
     SUBDIR += xmms-xvs
     SUBDIR += xmorph
     SUBDIR += xmountains
