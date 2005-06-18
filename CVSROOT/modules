@@ -5625,6 +5625,7 @@ ljcharm		ports/deskutils/ljcharm
 ljclive		ports/deskutils/ljclive
 ljdeps		ports/www/ljdeps
 ljit		ports/deskutils/ljit
+ljpms		ports/www/ljpms
 ljsm		ports/www/ljsm
 lla		ports/net/lla
 llnlxdir	ports/ftp/llnlxdir
