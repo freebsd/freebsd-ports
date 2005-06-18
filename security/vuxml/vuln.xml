@@ -32,6 +32,61 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="63bd4bad-dffe-11d9-b875-0001020eed82">
+    <topic>gzip directory traversal and permission race vulnerabilities</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><le>5.4_2</le></range>
+	<range><ge>5.0</ge><le>5.3_16</le></range>
+	<range><ge>4.11</ge><le>4.11_10</le></range>
+	<range><ge>4.10</ge><le>4.10_15</le></range>
+	<range><ge>4.9</ge><le>4.9_18</le></range>
+	<range><le>4.8_33</le></range>
+      </system>
+      <package>
+	<name>gzip</name>
+	<range><lt>1.3.5_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>Two problems related to extraction of files exist in gzip:</p>
+	<p>The first problem is that gzip does not properly sanitize
+	  filenames containing "/" when uncompressing files using the
+	  -N command line option.</p>
+	<p>The second problem is that gzip does not set permissions on
+	  newly extracted files until after the file has been created
+	  and the file descriptor has been closed.</p>
+	<h1>Impact</h1>
+	<p>The first problem can allow an attacker to overwrite
+	  arbitrary local files when uncompressing a file using the -N
+	  command line option.</p>
+	<p>The second problem can allow a local attacker to change the
+	  permissions of arbitrary local files, on the same partition
+	  as the one the user is uncompressing a file on, by removing
+	  the file the user is uncompressing and replacing it with a
+	  hardlink before the uncompress operation is finished.</p>
+	<h1>Workaround</h1>
+	<p>Do not use the -N command line option on untrusted files
+	  and do not uncompress files in directories where untrusted
+	  users have write access.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0988</cvename>
+      <cvename>CAN-2005-1228</cvename>
+      <freebsdsa>SA-05:11.gzip</freebsdsa>
+      <mlist msgid="7389fc4b05040412574f819112@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111271860708210</mlist>
+      <mlist msgid="7389fc4b0504201224759f31b@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111402732406477</mlist>
+    </references>
+    <dates>
+      <discovery>2005-04-20</discovery>
+      <entry>2005-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9fae0f1f-df82-11d9-b875-0001020eed82">
     <topic>tcpdump -- infinite loops in protocol decoding</topic>
     <affects>
