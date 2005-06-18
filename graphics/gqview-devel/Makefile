@@ -29,14 +29,6 @@ MAN1=		gqview.1
 CONFLICTS=	gqview-1.4* gqview-2.0*
 LATEST_LINK=	gqview-devel
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix/share/doc/gqview-$$VERSION|${DOCSDIR}|g' \
 		${WRKSRC}/configure
