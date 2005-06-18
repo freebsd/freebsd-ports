@@ -1,0 +1,80 @@
+--- Makefile.orig	Wed Nov  3 13:52:59 2004
++++ Makefile	Fri Jun 17 15:58:04 2005
+@@ -39,7 +39,7 @@
+ # Install everything under this directory. If this is empty, then everything
+ # will be installed under /
+ #
+-DESTDIR=
++DESTDIR=/usr/local
+ 
+ #
+ # Set PWLIBDIR variable to the directory containing the sources of 
+@@ -49,7 +49,7 @@ DESTDIR=
+ # compile asterisk-oh323. Do not use the installed library of your
+ # distribution. It won't work.
+ #
+-PWLIBDIR=/root/src/oh323/pwlib
++PWLIBDIR=/usr/ports/devel/pwlib/work/pwlib
+ 
+ #
+ # Set OPENH323LIBDIR variable to the directory containing the sources of
+@@ -59,13 +59,13 @@ PWLIBDIR=/root/src/oh323/pwlib
+ # compile asterisk-oh323. Do not use the installed library of your
+ # distribution. It won't work.
+ #
+-OPENH323DIR=/root/src/oh323/openh323
++OPENH323DIR=/usr/ports/net/openh323/work/openh323
+ 
+ #
+ # Set ASTERISKINCDIR variable to the directory containing the include files of
+ # Asterisk PBX.
+ #
+-ASTERISKINCDIR=/root/src/asterisk/include
++ASTERISKINCDIR=/usr/local/include
+ 
+ #
+ # Set ASTERISKMODDIR variable to the directory where ASTERISK's modules reside.
+@@ -73,7 +73,7 @@ ASTERISKINCDIR=/root/src/asterisk/includ
+ #
+ # Note: This directory is created under $DESTDIR.
+ #
+-ASTERISKMODDIR=/usr/lib/asterisk/modules
++ASTERISKMODDIR=/lib/asterisk/modules
+ 
+ #
+ # Set ASTERISKETCDIR variable to the directory where ASTERISK's configuration
+@@ -91,7 +91,7 @@ ASTERISKETCDIR=/etc/asterisk
+ #
+ # Note: This directory is created under $DESTDIR.
+ #
+-OH323WRAPLIBDIR=/usr/local/lib
++OH323WRAPLIBDIR=/lib
+ 
+ #
+ # Set SSLINCDIR variable to the directory where ssl/crypto
+@@ -159,7 +159,6 @@ SUBDIRS=wrapper asterisk-driver
+ 		rpm rpm_clean help $(SUBDIRS)
+ CC=gcc
+ CPP=g++
+-MAKE=make
+ INSTALL=install
+ TOUCH=touch
+ AR=ar
+@@ -191,7 +190,7 @@ endif
+ ifdef	P_PTHREADS
+ OPENH323USERFLAGS += P_PTHREADS=1
+ endif
+-OPENH323FLAGS=$(shell make $(OPENH323USERFLAGS) --no-print-directory -s \
++OPENH323FLAGS=$(shell $(MAKE) $(OPENH323USERFLAGS) --no-print-directory -s \
+ 		-C $(OPENH323DIR) \
+ 		PWLIBDIR=$(PWLIBDIR) OPENH323DIR=$(OPENH323DIR) ccflags)
+ CPPFLAGS=$(OPENH323FLAGS) -Wall -x c++ -Os
+@@ -223,7 +222,7 @@ install: subdirs_build subdirs_install
+  
+ clean: subdirs_clean rpm_clean
+ 
+-all: subdirs_build subdirs_strip subdirs_install
++all: subdirs_build
+ 
+ subdirs_build:
+ 	for x in $(SUBDIRS); do $(MAKE) -C $$x build || exit 1 ; done
