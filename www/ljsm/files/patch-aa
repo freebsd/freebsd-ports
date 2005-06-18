@@ -1,5 +1,5 @@
 --- ljsm.pl.orig	Sun Dec 21 23:15:16 2003
-+++ ljsm.pl	Thu Aug 12 10:45:13 2004
++++ ljsm.pl	Sat Jun 18 21:31:48 2005
 @@ -57,7 +57,7 @@
  use constant PASSWORD		=> '';
  use constant START_YEAR		=> 2001;	# fetch data back to this year
@@ -9,3 +9,12 @@
  use constant DEBUG_LEVEL	=> 3;		# 0 - quiet, 1 - essential, 2 - verbose
  use constant LOCAL_DIR		=> '';		# local directory to put files into. Leave it empty to put in the current directory. Slash (/, if not empty) in the end required.
  use constant HTTP_PROXY		=> '';		# set proxy URL if you use http proxy
+@@ -296,7 +296,7 @@
+ 		if (defined $exportform) {
+ 			#$exportform->dump();
+ 			$exportform->value('format', 'xml');
+-			$exportform->value('encid', 3); # 6 for KOI-8
++			$exportform->value('encid', 2); # 6 for KOI-8
+ 			# uncomment next line to skip translation between encodings
+ 			# $exportform->value('notranslation', 1);
+ 			
