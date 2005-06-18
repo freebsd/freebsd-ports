@@ -171,6 +171,7 @@
     SUBDIR += gdesklets-sensor-psi_disk
     SUBDIR += gdesklets-sensor-psi_memory
     SUBDIR += gfslicer
+    SUBDIR += gkfreq
     SUBDIR += gkleds2
     SUBDIR += gkrellfire
     SUBDIR += gkrellflynn
