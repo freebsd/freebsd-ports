@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e879ca68-e01b-11d9-a8bd-000cf18bbe54">
+    <topic>squirrelmail -- Several cross site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squirrelmail</name>
+	<name>ja-squirrelmail</name>
+	<range><ge>1.4.0</ge><le>1.4.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A SquirrelMail Security Advisory reports:</p>
+	<blockquote cite="http://www.squirrelmail.org/security/issue/2005-06-15">
+	  <p>Several cross site scripting (XSS) vulnerabilities have been discovered
+	    in SquirrelMail versions 1.4.0 - 1.4.4.</p>
+
+	  <p>The vulnerabilities are in two categories: the majority can be
+	    exploited through URL manipulation, and some by sending a specially
+	    crafted email to a victim. When done very carefully,
+	    this can cause the session of the user to be hijacked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1769</cvename>
+      <url>http://www.squirrelmail.org/security/issue/2005-06-15</url>
+    </references>
+    <dates>
+      <discovery>2005-06-15</discovery>
+      <entry>2005-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="02bc9b7c-e019-11d9-a8bd-000cf18bbe54">
     <topic>acroread -- XML External Entity vulnerability</topic>
     <affects>
