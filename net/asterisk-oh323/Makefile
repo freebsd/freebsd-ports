@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk-oh323
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.inaccessnetworks.com/asterisk-oh323/download/
 
@@ -19,9 +20,14 @@ BUILD_DEPENDS= 	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
 
 USE_GMAKE=	yes
 
-PLIST_FILES=	lib/liboh323wrapd.a
+PLIST_FILES=	lib/liboh323wrap_s.a
 PLIST_FILES+=	lib/asterisk/modules/chan_oh323.so
 PLIST_FILES+=	etc/asterisk/oh323.conf.sample
+
+MAKE_ENV=	MKDIR="${MKDIR}" \
+		PWLIBDIR=${WRKDIRPREFIX}${PORTSDIR}/devel/pwlib/work/pwlib \
+		OPENH323DIR=${WRKDIRPREFIX}${PORTSDIR}/net/openh323/work/openh323 \
+		CPP="${CXX}"
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
