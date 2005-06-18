@@ -48,6 +48,10 @@
 # default: undefined
 # define if you want to enable subversion compatibility.
 #
+# WITH_SCPONLY_SVNSERVE
+# default: undefined
+# define if you want to enable subversion compatibility with svn+ssh://
+#
 # WITH_SCPONLY_UNISON
 # default: undefined
 # define if you want to enable unison compatibility.
@@ -113,6 +117,11 @@ CONFIGURE_ARGS+=--enable-rsync-compat
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-svn-compat
+.endif
+
+.if defined(WITH_SCPONLY_SVNSERVE)
+BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
 .if defined(WITH_SCPONLY_UNISON)
