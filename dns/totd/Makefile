@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	totd
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
