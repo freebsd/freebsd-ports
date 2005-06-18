@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	facturier
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	french finance
 MASTER_SITES=	http://ignu.ungi.org/download/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Logiciel de facturation pour P.M.I. & P.M.E.
 
 RUN_DEPENDS=	${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
-		${PBASE}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql		\
+		${PBASE}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql	\
 		${PBASE}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -23,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_APACHE=	yes
 USE_PERL5_RUN=	yes
+USE_MYSQL=	yes
 USE_REINPLACE=	yes
 
 .if defined(WITH_APACHE2)
@@ -48,9 +48,15 @@ PLIST_SUB=	FACT_REP=${LFACT_REP}
 SS_REPS=	cgi-bin html lib log sql
 REINPLACE_ARGS=	-i.beforeFacturier
 
-PORTDOCS=	COPYING README.txt todo.txt
+PORTDOCS=	README.txt todo.txt
 
+SUB_FILES=	pkg-message
+SUB_LIST=	FACT_REP=${FACT_REP} DBOWN=${DBOWN} DBPWD=${DBPWD}	\
+		DBSERV=${DBSERV}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+TRASHFILES=	lib/Conf.pm~ cgi-bin/.articlemodif.cgi.swp lib/.Conf.pm.swp	\
+		html/UNGI/Editfacturemaj.pm.back html/temp/log_facture.gif.back
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -61,13 +67,8 @@ pre-everything::
 	@${ECHO_MSG} "		(localhost par défaut)."
 	@${ECHO_MSG} ""
 
-post-extract:
-	@(cd ${WRKDIR} &&			\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS}	\
-		${PORTNAME}-version${PORTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
-	@${RM} ${WRKDIR}/${PORTNAME}-version${PORTVERSION}${EXTRACT_SUFX}
-
 post-patch:
+	@${RM} ${TRASHFILES:S|^|${WRKSRC}/|}
 # perl PREFIX safeness
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x \
 		${REINPLACE_CMD} -E -e 's|/usr/bin/perl|${PERL}|'
@@ -75,11 +76,13 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${FACT_REP}
+	@${INSTALL_DATA} ${WRKSRC}/version.txt ${FACT_REP}
 .for REP in ${SS_REPS}
 	@${CP} -Rp ${WRKSRC}/${REP} ${FACT_REP}
 .endfor
 	@${REINPLACE_CMD} -e "s:%%FACT_REP%%:${FACT_REP}:;s:%%PREFIX%%:${PREFIX}:;	\
-		s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:;s:%%DBSERV%%:${DBSERV}:"	\
+		s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:;s:%%DBSERV%%:${DBSERV}:;	\
+		s:%%LOCALBASE%%:${LOCALBASE}:"	\
 		${FACT_CNF}
 	@${RM} ${FACT_CNF}.beforeFacturier
 	@${CP} -p ${FACT_CNF} ${FACT_CNF}.dist
@@ -89,6 +92,7 @@ do-install:
 	@${FIND} ${FACT_REP} -type d -exec ${CHMOD} a+x {} \;
 	@${CHMOD} -R u+x ${FACT_REP}/cgi-bin
 	@${FIND} ${FACT_REP}/lib -type f -exec ${CHMOD} go-r {} \;
+	@${CHMOD} -R 777 ${FACT_REP}/log
 # Configure Apache
 	@(if [ -f ${APACHE_CONF} ] ; then \
 		${MKDIR} ${FACT_INC} ; \
@@ -101,22 +105,14 @@ do-install:
 		${ECHO_CMD} "# Le Facturier's cgi-bin directory" >> ${APACHE_CONF} ; \
 		${ECHO_CMD} "Include ${FACT_INC}" >> ${APACHE_CONF} ; \
 	fi)
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 post-install:
 	@${ECHO_MSG}
-	@${SED} -e "s:/usr/local/www/facturier:${FACT_REP}:"			\
-			-e "s:/usr/local/share/doc/facturier:${DOCSDIR}:"	\
-			-e "s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:"	\
-			-e "s:%%DBSERV%%:${DBSERV}:"				\
-		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 

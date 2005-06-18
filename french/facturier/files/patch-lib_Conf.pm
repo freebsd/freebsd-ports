@@ -1,5 +1,5 @@
---- lib/Conf.pm.orig	Fri Sep 26 14:04:57 2003
-+++ lib/Conf.pm	Mon Oct 13 23:04:13 2003
+--- lib/Conf.pm.orig	Thu Mar 31 10:30:48 2005
++++ lib/Conf.pm	Sat Jun 18 19:09:46 2005
 @@ -70,24 +70,24 @@
  
  #$USERBDD à pour valeur le login d'un utilisateur pouvant se connecter
@@ -52,23 +52,17 @@
   #$HTMLDOC contient le chemin de la commande htmldoc
   #si la commande htmldoc que vous désirez utiliser est dans "/usr/bin/" faire
   #$HTMLDOC="/usr/bin/htmldoc";
-- $HTMLDOC="repertoire-de-htmldoc/htmldoc";
-+ $HTMLDOC="%%PREFIX%%/bin/htmldoc";
-  
+- $HTMLDOC="/usr/local/htmldoc-1.8.22/bin/htmldoc";
++ $HTMLDOC="%%LOCALBASE%%/bin/htmldoc";
  ###################################
  #finvariables serveur à configurer
-@@ -143,12 +143,12 @@
+ ##################################
+@@ -142,7 +142,7 @@
   #$HTMLADRESSE indique au serveur web où se trouve les pages html utilisées par le facturier
   # par apport au DocumentRoot. Si vous avez installé le facturier dans le DocumentRoot
   #vous n'aurez pas besoin de modifier la valeur de $HTMLADRESSE
-- $HTMLADRESSE='/facturier/html';
+- $HTMLADRESSE='/html';
 + $HTMLADRESSE='/../facturier/html';
   $HTMLADRUNGI = "$HTMLADRESSE/UNGI";
   $HTMLADRUNGICONES = "$HTMLADRUNGI/icones";
   
- 
-- #FACTUREAD = repertoire des factures stockées au ormat pdf
-+ #FACTUREAD = repertoire des factures stockées au format pdf
-  $FACTUREAD ="$BASEAD/facture";
- 
- 
