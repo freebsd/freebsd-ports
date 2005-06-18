@@ -12747,6 +12747,7 @@ xmms-uade	ports/audio/xmms-uade
 xmms-volnorm	ports/audio/xmms-volnorm
 xmms-vumeter	ports/graphics/xmms-vumeter
 xmms-vumeter-skins	ports/x11-themes/xmms-vumeter-skins
+xmms-waterfall	ports/graphics/xmms-waterfall
 xmms-weasel	ports/multimedia/xmms-weasel
 xmms-wma	ports/audio/xmms-wma
 xmms-xf86audio	ports/audio/xmms-xf86audio
