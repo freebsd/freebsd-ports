@@ -1,8 +1,5 @@
 bin/devhelp
-bin/devhelp-bin
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/devhelp.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/devhelp.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/devhelp.schemas > /dev/null || /usr/bin/true
+etc/rc.d/000.devhelp.sh
 include/devhelp-1.0/devhelp/dh-base.h
 include/devhelp-1.0/devhelp/dh-book-tree.h
 include/devhelp-1.0/devhelp/dh-error.h
@@ -41,17 +38,21 @@ share/locale/en_GB/LC_MESSAGES/devhelp.mo
 share/locale/es/LC_MESSAGES/devhelp.mo
 share/locale/fi/LC_MESSAGES/devhelp.mo
 share/locale/fr/LC_MESSAGES/devhelp.mo
+share/locale/gu/LC_MESSAGES/devhelp.mo
 share/locale/he/LC_MESSAGES/devhelp.mo
 share/locale/hi/LC_MESSAGES/devhelp.mo
 share/locale/hr/LC_MESSAGES/devhelp.mo
+share/locale/hu/LC_MESSAGES/devhelp.mo
 share/locale/is/LC_MESSAGES/devhelp.mo
 share/locale/it/LC_MESSAGES/devhelp.mo
 share/locale/ja/LC_MESSAGES/devhelp.mo
 share/locale/kn/LC_MESSAGES/devhelp.mo
 share/locale/ko/LC_MESSAGES/devhelp.mo
 share/locale/lv/LC_MESSAGES/devhelp.mo
+share/locale/mk/LC_MESSAGES/devhelp.mo
 share/locale/ml/LC_MESSAGES/devhelp.mo
 share/locale/ms/LC_MESSAGES/devhelp.mo
+share/locale/nb/LC_MESSAGES/devhelp.mo
 share/locale/nl/LC_MESSAGES/devhelp.mo
 share/locale/no/LC_MESSAGES/devhelp.mo
 share/locale/pa/LC_MESSAGES/devhelp.mo
@@ -59,6 +60,7 @@ share/locale/pl/LC_MESSAGES/devhelp.mo
 share/locale/pt/LC_MESSAGES/devhelp.mo
 share/locale/pt_BR/LC_MESSAGES/devhelp.mo
 share/locale/ru/LC_MESSAGES/devhelp.mo
+share/locale/rw/LC_MESSAGES/devhelp.mo
 share/locale/sk/LC_MESSAGES/devhelp.mo
 share/locale/sq/LC_MESSAGES/devhelp.mo
 share/locale/sr/LC_MESSAGES/devhelp.mo
