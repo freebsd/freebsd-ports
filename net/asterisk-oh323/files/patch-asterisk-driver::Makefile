@@ -1,6 +1,9 @@
---- asterisk-driver/Makefile.orig	Mon Oct  4 14:52:09 2004
-+++ asterisk-driver/Makefile	Fri Jun 17 13:51:08 2005
-@@ -33,9 +33,9 @@ TARGET_OBJ=chan_oh323.o
+
+$FreeBSD$
+
+--- asterisk-driver/Makefile.orig
++++ asterisk-driver/Makefile
+@@ -33,9 +33,9 @@
  
  ifndef SKIP_SUFFIX
  	ifeq ($(OH323STAT),1)
@@ -12,7 +15,7 @@
  	endif
  	LIBPTNAME=$(subst lib,,$(basename $(notdir $(LIBPTPATH))))
  	LIBPTSSUF=$(findstring _r_s,$(LIBPTNAME))	# Static lib suffix
-@@ -54,9 +54,9 @@ ifndef SKIP_SUFFIX
+@@ -54,9 +54,9 @@
  		LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/libh323*s.a))
  	else
  		ifdef NOTRACE
@@ -24,7 +27,7 @@
  		endif
  	endif
  	LIBH323NAME=$(subst lib,,$(basename $(notdir $(LIBH323PATH))))
-@@ -76,7 +76,7 @@ else
+@@ -76,7 +76,7 @@
  endif
  
  ifndef SKIP_EXTLIBS
@@ -33,11 +36,23 @@
  endif
  
  CFLAGS += -pipe -Wall -Wstrict-prototypes -Wmissing-prototypes \
-@@ -101,6 +101,7 @@ install:
+@@ -95,14 +95,15 @@
+ 
+ install:
+ 	if [ ! -d $(DESTDIR)$(ASTERISKMODDIR) ]; then \
+-		$(INSTALL) -d $(DESTDIR)$(ASTERISKMODDIR); \
++		$(MKDIR) $(DESTDIR)$(ASTERISKMODDIR); \
+ 	fi
+-	$(INSTALL) $(TARGET) $(DESTDIR)$(ASTERISKMODDIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(ASTERISKMODDIR)
  	if [ ! -d $(DESTDIR)$(ASTERISKETCDIR) ]; then \
- 		$(INSTALL) -d $(DESTDIR)$(ASTERISKETCDIR); \
+-		$(INSTALL) -d $(DESTDIR)$(ASTERISKETCDIR); \
++		$(MKDIR) $(DESTDIR)$(ASTERISKETCDIR); \
  	fi
-+	$(INSTALL) -m 0644 oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf.sample
++	$(BSD_INSTALL_DATA) oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf.sample
  	if [ ! -f $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf ]; then \
- 		$(INSTALL) -m 0644 oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
+-		$(INSTALL) -m 0644 oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
++		$(BSD_INSTALL_DATA) oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
  	fi
+ 	@echo
+ 	@echo " +----------   Asterisk-oh323 Installation Complete   ----------+ "

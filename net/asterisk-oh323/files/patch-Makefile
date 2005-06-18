@@ -1,40 +1,43 @@
---- Makefile.orig	Wed Nov  3 13:52:59 2004
-+++ Makefile	Fri Jun 17 15:58:04 2005
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -39,7 +39,7 @@
  # Install everything under this directory. If this is empty, then everything
  # will be installed under /
  #
 -DESTDIR=
-+DESTDIR=/usr/local
++DESTDIR=$(PREFIX)
  
  #
  # Set PWLIBDIR variable to the directory containing the sources of 
-@@ -49,7 +49,7 @@ DESTDIR=
+@@ -49,7 +49,7 @@
  # compile asterisk-oh323. Do not use the installed library of your
  # distribution. It won't work.
  #
 -PWLIBDIR=/root/src/oh323/pwlib
-+PWLIBDIR=/usr/ports/devel/pwlib/work/pwlib
++PWLIBDIR?=/root/src/oh323/pwlib
  
  #
  # Set OPENH323LIBDIR variable to the directory containing the sources of
-@@ -59,13 +59,13 @@ PWLIBDIR=/root/src/oh323/pwlib
+@@ -59,13 +59,13 @@
  # compile asterisk-oh323. Do not use the installed library of your
  # distribution. It won't work.
  #
 -OPENH323DIR=/root/src/oh323/openh323
-+OPENH323DIR=/usr/ports/net/openh323/work/openh323
++OPENH323DIR?=/root/src/oh323/openh323
  
  #
  # Set ASTERISKINCDIR variable to the directory containing the include files of
  # Asterisk PBX.
  #
 -ASTERISKINCDIR=/root/src/asterisk/include
-+ASTERISKINCDIR=/usr/local/include
++ASTERISKINCDIR=$(LOCALBASE)/include
  
  #
  # Set ASTERISKMODDIR variable to the directory where ASTERISK's modules reside.
-@@ -73,7 +73,7 @@ ASTERISKINCDIR=/root/src/asterisk/includ
+@@ -73,7 +73,7 @@
  #
  # Note: This directory is created under $DESTDIR.
  #
@@ -43,7 +46,7 @@
  
  #
  # Set ASTERISKETCDIR variable to the directory where ASTERISK's configuration
-@@ -91,7 +91,7 @@ ASTERISKETCDIR=/etc/asterisk
+@@ -91,7 +91,7 @@
  #
  # Note: This directory is created under $DESTDIR.
  #
@@ -52,15 +55,19 @@
  
  #
  # Set SSLINCDIR variable to the directory where ssl/crypto
-@@ -159,7 +159,6 @@ SUBDIRS=wrapper asterisk-driver
+@@ -157,9 +157,8 @@
+ SUBDIRS=wrapper asterisk-driver
+ .PHONY: all build install clean subdirs_build subdir_install subdir_clean \
  		rpm rpm_clean help $(SUBDIRS)
- CC=gcc
- CPP=g++
+-CC=gcc
+-CPP=g++
 -MAKE=make
++CC?=gcc
++CPP?=g++
  INSTALL=install
  TOUCH=touch
  AR=ar
-@@ -191,7 +190,7 @@ endif
+@@ -191,12 +190,12 @@
  ifdef	P_PTHREADS
  OPENH323USERFLAGS += P_PTHREADS=1
  endif
@@ -68,8 +75,15 @@
 +OPENH323FLAGS=$(shell $(MAKE) $(OPENH323USERFLAGS) --no-print-directory -s \
  		-C $(OPENH323DIR) \
  		PWLIBDIR=$(PWLIBDIR) OPENH323DIR=$(OPENH323DIR) ccflags)
- CPPFLAGS=$(OPENH323FLAGS) -Wall -x c++ -Os
-@@ -223,7 +222,7 @@ install: subdirs_build subdirs_install
+-CPPFLAGS=$(OPENH323FLAGS) -Wall -x c++ -Os
++CPPFLAGS=$(CXXFLAGS) $(OPENH323FLAGS) -Wall -x c++ -Os
+ ASTERISKINCLUDE=-I$(ASTERISKINCDIR) -I../wrapper
+-CFLAGS=-Wall
++CFLAGS+=-Wall
+ ifdef	HAS_OH323MODS
+ CPPFLAGS += -DHAS_OH323MODS
+ CFLAGS += -DHAS_OH323MODS
+@@ -223,7 +222,7 @@
   
  clean: subdirs_clean rpm_clean
  
