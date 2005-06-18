@@ -1,0 +1,35 @@
+bin/alleyoop
+share/locale/az/LC_MESSAGES/alleyoop.mo
+share/locale/ca/LC_MESSAGES/alleyoop.mo
+share/locale/cs/LC_MESSAGES/alleyoop.mo
+share/locale/de/LC_MESSAGES/alleyoop.mo
+share/locale/el/LC_MESSAGES/alleyoop.mo
+share/locale/en_CA/LC_MESSAGES/alleyoop.mo
+share/locale/en_GB/LC_MESSAGES/alleyoop.mo
+share/locale/es/LC_MESSAGES/alleyoop.mo
+share/locale/fr/LC_MESSAGES/alleyoop.mo
+share/locale/ga/LC_MESSAGES/alleyoop.mo
+share/locale/gu/LC_MESSAGES/alleyoop.mo
+share/locale/hr/LC_MESSAGES/alleyoop.mo
+share/locale/it/LC_MESSAGES/alleyoop.mo
+share/locale/ja/LC_MESSAGES/alleyoop.mo
+share/locale/mn/LC_MESSAGES/alleyoop.mo
+share/locale/ms/LC_MESSAGES/alleyoop.mo
+share/locale/nb/LC_MESSAGES/alleyoop.mo
+share/locale/nl/LC_MESSAGES/alleyoop.mo
+share/locale/no/LC_MESSAGES/alleyoop.mo
+share/locale/pl/LC_MESSAGES/alleyoop.mo
+share/locale/pt/LC_MESSAGES/alleyoop.mo
+share/locale/pt_BR/LC_MESSAGES/alleyoop.mo
+share/locale/ru/LC_MESSAGES/alleyoop.mo
+share/locale/sk/LC_MESSAGES/alleyoop.mo
+share/locale/sq/LC_MESSAGES/alleyoop.mo
+share/locale/sr/LC_MESSAGES/alleyoop.mo
+share/locale/sr@Latn/LC_MESSAGES/alleyoop.mo
+share/locale/sv/LC_MESSAGES/alleyoop.mo
+share/locale/uk/LC_MESSAGES/alleyoop.mo
+share/locale/zh_CN/LC_MESSAGES/alleyoop.mo
+@exec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/etc/gconf/schemas 2>/dev/null || true
+@unexec rmdir %D/etc/gconf 2>/dev/null || true

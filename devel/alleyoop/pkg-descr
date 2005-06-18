@@ -1,0 +1,16 @@
+[ excerpt from developer's www site ]
+
+Alleyoop is a graphical front-end to the increasingly popular
+Valgrind memory checker for x86 GNU/Linux using the Gtk+ widget
+set and other GNOME libraries for the X-Windows environment.
+
+Features include a right-click context menu to intelligently suppress
+errors or launch an editor on the source file/jumping to the exact
+line of the error condition. A searchbar at the top of the viewer
+can be used to limit the viewable errors to those that match the
+regex criteria entered. Also included is a fully functional
+Suppressions editor.
+
+WWW: http://alleyoop.sourceforge.net/
+
+-- lioux@FreeBSD.org

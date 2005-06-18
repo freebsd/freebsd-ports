@@ -30,6 +30,7 @@
     SUBDIR += ald
     SUBDIR += alf
     SUBDIR += allegro
+    SUBDIR += alleyoop
     SUBDIR += anjuta
     SUBDIR += antlr
     SUBDIR += apache-ant
