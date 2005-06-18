@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="02bc9b7c-e019-11d9-a8bd-000cf18bbe54">
+    <topic>acroread -- XML External Entity vulnerability</topic>
+    <affects>
+      <package>
+	<name>acroread7</name>
+	<name>ja-acroread</name>
+	<range><ge>7.0.0</ge><lt>7.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sverre H. Huseby discovered a vulnerability in Adobe Acrobat
+	  and Adobe Reader.
+	  Under certain circumstances, using XML scripts it is possible
+	  to discover the existence of local files.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1306</cvename>
+      <url>http://shh.thathost.com/secadv/adobexxe/</url>
+      <url>http://www.adobe.com/support/techdocs/331710.html</url>
+      <url>http://support.adobe.co.jp/faq/faq/qadoc.sv?226360+002+3</url>
+    </references>
+    <dates>
+      <discovery>2005-06-15</discovery>
+      <entry>2005-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="63bd4bad-dffe-11d9-b875-0001020eed82">
     <topic>gzip -- directory traversal and permission race
       vulnerabilities</topic>
