@@ -48,9 +48,9 @@ PLIST_SUB+=	MOTIF:=""
 ECLIPSE_WS=	gtk
 PLIST_SUB+=	GTK:=""
 PLIST_SUB+=	MOTIF:="@comment "
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA} == "firefox"
-BUILD_DEPENDS+=	firefox:${PORTSDIR}/www/firefox
-BROWSER=	firefox
+.if defined(WITH_MOZILLA)
+BROWSER=	${WITH_MOZILLA}
+BUILD_DEPENDS+=	${BROWSER}:${PORTSDIR}/www/${BROWSER}
 .else
 BUILD_DEPENDS+=	mozilla:${PORTSDIR}/www/mozilla
 BROWSER=	mozilla
