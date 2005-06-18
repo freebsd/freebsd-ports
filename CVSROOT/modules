@@ -306,6 +306,7 @@ alignmargins	ports/print/alignmargins
 alisp		ports/lang/alisp
 allegro		ports/devel/allegro
 allegrogl	ports/graphics/allegrogl
+alleyoop	ports/devel/alleyoop
 alliance	ports/cad/alliance
 alloywm		ports/x11-wm/alloywm
 alltraxclock	ports/x11-clocks/alltraxclock
