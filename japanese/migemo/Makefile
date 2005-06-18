@@ -7,9 +7,14 @@
 
 PORTNAME=	migemo
 PORTVERSION=	0.40
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
-MASTER_SITES=   http://namazu.org/~satoru/migemo/
+MASTER_SITES=   http://namazu.org/~satoru/migemo/ \
+		http://people.freebsd.org/~nobutaka/distfiles/:skkdic
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKKDIC_FILE}.bz2:skkdic
+DIST_SUBDIR=    migemo
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Japanese incremental search tool
@@ -29,10 +34,22 @@ RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 
 CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 
+SKKDIC_FILE=	SKK-JISYO.L-20050618
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
 BROKEN=		"Does not compile on ia64"
+.endif
+
+post-extract:
+.if !defined(EMACS_PORT_NAME)
+	${BZIP2_CMD} -cd ${DISTDIR}/${DIST_SUBDIR}/${SKKDIC_FILE}.bz2 > ${WRKSRC}/SKK-JISYO.L
+.endif
+
+post-configure:
+.if !defined(EMACS_PORT_NAME)
+	(cd ${WRKSRC}; ${CAT} SKK-JISYO.L | ${RUBY} migemo-convert.rb > migemo-dict)
 .endif
 
 post-install:
