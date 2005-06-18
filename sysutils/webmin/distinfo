@@ -1,5 +1,7 @@
 MD5 (webmin-1.210.tar.gz) = afffc264915bf3084561627bc71d68fa
 SIZE (webmin-1.210.tar.gz) = 8447509
+MD5 (bind8-1.210-3.wbm.gz) = 14fa156370654a67eff69b474959acf0
+SIZE (bind8-1.210-3.wbm.gz) = 253016
 MD5 (mysql-1.210-2.wbm.gz) = 4220d9f122086749dee722384480b0b1
 SIZE (mysql-1.210-2.wbm.gz) = 163729
 MD5 (useradmin-1.210-2.wbm.gz) = 38bf24418166c3b72d57913d00c390a8
