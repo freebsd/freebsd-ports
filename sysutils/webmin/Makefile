@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.210
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,8 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	mysql-1.210-2.wbm.gz \
+WEBMIN_MODULES=	bind8-1.210-3.wbm.gz \
+		mysql-1.210-2.wbm.gz \
 		useradmin-1.210-2.wbm.gz
 
 WEBMIN_THEMES=	mscstyle3-1.210-1.wbt.gz
