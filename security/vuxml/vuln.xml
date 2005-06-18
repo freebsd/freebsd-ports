@@ -33,7 +33,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="63bd4bad-dffe-11d9-b875-0001020eed82">
-    <topic>gzip directory traversal and permission race vulnerabilities</topic>
+    <topic>gzip -- directory traversal and permission race
+      vulnerabilities</topic>
     <affects>
       <system>
 	<name>FreeBSD</name>
