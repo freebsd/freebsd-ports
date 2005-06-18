@@ -4,4 +4,4 @@ bin/torify
 etc/rc.d/tor.sh.sample
 etc/tor/torrc.sample
 etc/tor/tor-tsocks.conf.sample
-@dirrm etc/tor
+@unexec rmdir %D/etc/tor 2>/dev/null || true

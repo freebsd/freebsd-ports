@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.0.9.9
-# PORTREVISION=	1
+PORTVERSION=	0.1.0.10
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 
@@ -15,9 +14,9 @@ MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
+LIB_DEPENDS=	event-1.1:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 
@@ -39,6 +38,6 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${CP} ${WRKSRC}/contrib/tor.sh ${LOCALBASE}/etc/rc.d/tor.sh.sample
+	${INSTALL_DATA} ${WRKSRC}/contrib/tor.sh ${PREFIX}/etc/rc.d/tor.sh.sample
 
 .include <bsd.port.mk>
