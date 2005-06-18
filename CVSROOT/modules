@@ -746,6 +746,7 @@ blender-devel	ports/graphics/blender-devel
 bless		ports/editors/bless
 blimitd		ports/sysutils/blimitd
 blitz++		ports/math/blitz++
+blobwars	ports/games/blobwars
 block		ports/games/block
 blockade	ports/games/blockade
 blocksolve95	ports/math/blocksolve95
