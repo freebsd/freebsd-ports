@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radiusclient
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.9
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/radiusclient-ng/
 
