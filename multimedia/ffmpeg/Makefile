@@ -68,6 +68,14 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 #. endif
 .endif
 
+##
+## system version
+##
+.if ${OSVERSION} < 500000
+# postprocess libraries cannot be built
+OSVERSION4_DONT_WORK=yes
+.endif
+
 ## lib detection
 ##
 ##
@@ -217,6 +225,7 @@ CONFIGURE_ARGS+=	--enable-shared-pp
 PLIST_FILES+=		include/ffmpeg/postproc/postprocess.h
 PLIST_DIRS+=		include/ffmpeg/postproc
 . ifdef(GPLLIBS)
+.  ifndef(OSVERSION4_DONT_WORK)
 CONFIGURE_ARGS+=	--enable-pp
 
 LIB_POSTPROC=		lib/libpostproc.a \
@@ -224,6 +233,7 @@ LIB_POSTPROC=		lib/libpostproc.a \
 			lib/libpostproc.so.0 \
 			lib/libpostproc.so.${SHLIB_VERSION}
 PLIST_FILES+=		${LIB_POSTPROC}
+.  endif # OSVERSION4_DONT_WORK
 . endif
 .endif
 ## ffserver
@@ -362,7 +372,9 @@ post-patch:
 
 pre-build:
 .ifndef(WITHOUT_POSTPROCESS)
+.  ifndef(OSVERSION4_DONT_WORK)
 	@cd ${WRKSRC}/libavcodec/libpostproc && ${GMAKE}
+.  endif # OSVERSION4_DONT_WORK
 .endif
 
 post-install:
@@ -400,12 +412,14 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/postprocess.h \
 		 ${PREFIX}/include/ffmpeg/postproc/postprocess.h
 . ifdef(GPLLIBS)
+.  ifndef(OSVERSION4_DONT_WORK)
 .  for lib in libpostproc.a libpostproc.so
 	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/${lib} \
 		${PREFIX}/lib
 .  endfor
 	@${LN} -sf libpostproc.so ${PREFIX}/lib/libpostproc.so.0
 	@${LN} -sf libpostproc.so ${PREFIX}/lib/libpostproc.so.${SHLIB_VERSION}
+.  endif # OSVERSION4_DONT_WORK
 . endif
 .endif
 
