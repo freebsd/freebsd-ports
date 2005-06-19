@@ -1,5 +1,5 @@
---- install.sh.orig	Tue Apr 19 13:21:58 2005
-+++ install.sh	Tue Apr 19 13:36:51 2005
+--- install.sh.orig	Wed Jun 15 04:17:40 2005
++++ install.sh	Sun Jun 19 01:39:11 2005
 @@ -761,10 +761,9 @@
      case "${machine}:${os}" in
  	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
@@ -116,8 +116,8 @@
 -    /usr/X11R6/lib/Acrobat[45]/bin \\
 -    /opt/Acrobat[45]/bin \\
 -    /usr/Acrobat[45]/bin \\
-+    %%LOCALBASE%%/Acrobat4/bin \\
 +    %%LOCALBASE%%/Acrobat5/bin \\
++    %%X11BASE%%/Acrobat5/bin \\
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
@@ -148,7 +148,17 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1222,27 +1185,6 @@
+@@ -1153,9 +1116,6 @@
+ 	    mkdir $mkdirv $mkdirp $share_dir/ini/
+ 	    chmod $chmodv 755 $share_dir/ini
+ 	    cp $cpv $cpf $cpR ini/* $share_dir/ini/
+-	    if test -f $share_dir/ini/pluginpath.ini; then
+-		echo ${str_localdirplugin} >> $share_dir/ini/pluginpath.ini
+-	    fi
+ 	fi
+ 
+ 	# Support old way
+@@ -1222,27 +1182,6 @@
  	mkdir $mkdirv $mkdirp $plugin_dir/
  	chmod $chmodv 755 $plugin_dir
  
@@ -176,7 +186,7 @@
  	if test -f plugins/operamotifwrapper-3
  	    then
  		cp $cpv $cpf plugins/operamotifwrapper-3 $plugin_dir/
-@@ -1250,13 +1192,6 @@
+@@ -1250,13 +1189,6 @@
  		plugin_support='yes'
  	fi
  
@@ -190,7 +200,7 @@
  	if test -f plugins/libnpp.so
  	    then
  		cp $cpv $cpf plugins/libnpp.so $plugin_dir/
-@@ -1293,36 +1228,13 @@
+@@ -1293,36 +1225,13 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -231,7 +241,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1367,15 +1279,16 @@
+@@ -1367,15 +1276,16 @@
  {
      # arg1 = location
  
@@ -253,16 +263,16 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1451,74 +1364,26 @@
+@@ -1451,74 +1361,26 @@
  
      debug_msg 1 "in gnome()"
  
 -    if test -d /opt/gnome/; then
-+    if test -d %%X11BASE%%/share/gnome/; then
- 
+-
 -      # /opt/gnome share
 -      if test -d /opt/gnome/share; then
--
++    if test -d %%X11BASE%%/share/gnome/; then
+ 
 -        # /opt/gnome icon
 -        if test ! -d /opt/gnome/share/pixmaps/; then
 -	  if test -w /opt/gnome/share; then
@@ -302,10 +312,10 @@
 +        cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/linux-opera.xpm
        fi
 -      # end /opt/gnome share
+-
+-    elif test -d /usr/share/gnome/; then
 +      # end %%X11BASE%%/share/gnome icon
  
--    elif test -d /usr/share/gnome/; then
--
 -        # /usr/share/gnome icon
 -        if test ! -d /usr/share/gnome/pixmaps/; then
 -	  if test -w /usr/share/gnome; then
@@ -345,7 +355,7 @@
  }
  
  kde()
-@@ -1527,39 +1392,31 @@
+@@ -1527,39 +1389,31 @@
  
      debug_msg 1 "in kde()"
  
