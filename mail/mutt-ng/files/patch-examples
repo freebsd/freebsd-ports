@@ -1,0 +1,26 @@
+--- contrib/Makefile.in.orig	Fri Apr 29 16:26:53 2005
++++ contrib/Makefile.in	Tue Jun 14 18:36:08 2005
+@@ -12,6 +12,7 @@
+ mandir = @mandir@
+ srcdir = @srcdir@
+ docdir = @docdir@
++samplesdir = $(EXAMPLESDIR)
+ top_srcdir = @top_srcdir@
+ top_builddir = ..
+ INSTALL = @INSTALL@
+@@ -39,12 +40,12 @@
+ check:
+ 
+ install:
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
+ 	for f in $(SAMPLES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir)/samples ;	\
++		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir);	\
+ 	done
+ 	for f in $(srcdir)/iconv/*.rc ; do					\
+-		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/samples/iconv	  ;	\
++		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv	  ;	\
+ 	done
+ 
+ # Nothing needs to be done - uninstall in doc removes samples as well.
