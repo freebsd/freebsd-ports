@@ -56,12 +56,13 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
+L10NHELP?=     helpcontent_01_unix.tgz
 
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP}:help
 .endif
 .if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_07_unix.tgz:help3 \
+DISTFILES+=	helpcontent_01_unix.tgz:help helpcontent_07_unix.tgz:help3 \
 		helpcontent_31_unix.tgz:help  helpcontent_33_unix.tgz:help \
 		helpcontent_34_unix.tgz:help  helpcontent_39_unix.tgz:help \
 		helpcontent_42_unix.tgz:help2 helpcontent_43_unix.tgz:help2 \
@@ -70,7 +71,7 @@ DISTFILES+=	helpcontent_07_unix.tgz:help3 \
 		helpcontent_81_unix.tgz:help  helpcontent_82_unix.tgz:help \
 		helpcontent_86_unix.tgz:help  helpcontent_88_unix.tgz:help \
 		helpcontent_90_unix.tgz:help
-L10NHELPS=	helpcontent_07_unix.tgz \
+L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
 		helpcontent_42_unix.tgz helpcontent_43_unix.tgz \
