@@ -33,6 +33,7 @@ PYTHON_NO_DEPENDS=	yes
 USE_REINPLACE=	yes
 
 SHARED_WRKSRC=	${WRKSRC}/build.shared
+PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
@@ -127,9 +128,8 @@ pre-patch:
 		${WRKSRC}/Lib/site.py
 	${MKDIR} ${WRKSRC}/Lib/plat-freebsd6
 	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd6/
-.if defined(WITH_FPECTL)
+.if defined(WITH_FPECTL) && ${ARCH} == i386
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
-	${REINPLACE_CMD} 's,fpreset,fpset,g' ${WRKSRC}/Modules/fpectlmodule.c
 .endif
 
 post-configure:
@@ -157,6 +157,11 @@ post-build:
 	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}.so python; \
 	${LN} -f lib${PYTHON_VERSION}.so lib${PYTHON_VERSION}.so.1; \
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
+.if !exists(/usr/bin/rpcgen) # the world with NO_NIS
+	${GREP} -v 'nis.so$$' ${PKGDIR}/pkg-plist > ${PLIST}
+.else
+	${CP} ${PKGDIR}/pkg-plist ${PLIST}
+.endif
 
 pre-su-install:
 .for platform in ${PLATFORMS}
