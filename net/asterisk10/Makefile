@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -33,6 +33,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_RC_SUBR=	asterisk.sh
+USE_REINPLACE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MKDIR="${MKDIR}" \
@@ -70,11 +71,11 @@ PLIST_SUB+=	WITH_ZAPTEL=""
 .endif
 
 .if !defined(WITHOUT_MYSQL)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
-RUN_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
+USE_MYSQL=	yes
 .endif
 
 post-patch:
 	${CP} ${FILESDIR}/chan_oss.c ${WRKSRC}/channels
+	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 .include <bsd.port.post.mk>
