@@ -477,6 +477,7 @@
     SUBDIR += libole2
     SUBDIR += liboop
     SUBDIR += libopendaap
+    SUBDIR += libopensync
     SUBDIR += libowfat
     SUBDIR += libpci
     SUBDIR += libpdel

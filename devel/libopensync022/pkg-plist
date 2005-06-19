@@ -1,0 +1,55 @@
+bin/osyncdump
+bin/osyncplugin
+bin/osyncstress
+include/opensync-1.0/opensync/opensync-xml.h
+include/opensync-1.0/opensync/opensync.h
+include/opensync-1.0/opensync/opensync_anchor.h
+include/opensync-1.0/opensync/opensync_change.h
+include/opensync-1.0/opensync/opensync_changecmds.h
+include/opensync-1.0/opensync/opensync_context.h
+include/opensync-1.0/opensync/opensync_convert.h
+include/opensync-1.0/opensync/opensync_convreg.h
+include/opensync-1.0/opensync/opensync_debug.h
+include/opensync-1.0/opensync/opensync_env.h
+include/opensync-1.0/opensync/opensync_error.h
+include/opensync-1.0/opensync/opensync_filter.h
+include/opensync-1.0/opensync/opensync_group.h
+include/opensync-1.0/opensync/opensync_hashtable.h
+include/opensync-1.0/opensync/opensync_member.h
+include/opensync-1.0/opensync/opensync_plugin.h
+include/opensync-1.0/osengine/engine.h
+include/opensync-1.0/osengine/osengine_debug.h
+include/opensync-1.0/osengine/osengine_engine.h
+include/opensync-1.0/osengine/osengine_mapping.h
+include/opensync-1.0/osengine/osengine_status.h
+lib/libopensync-xml.a
+lib/libopensync-xml.so
+lib/libopensync-xml.so.0
+lib/libopensync.a
+lib/libopensync.so
+lib/libopensync.so.0
+lib/libosengine.a
+lib/libosengine.so
+lib/libosengine.so.0
+lib/opensync/formats/contact.so
+lib/opensync/formats/data.so
+lib/opensync/formats/event.so
+lib/opensync/formats/note.so
+lib/opensync/formats/todo.so
+lib/opensync/formats/xml-evolution.so
+lib/opensync/formats/xml-kde.so
+lib/opensync/formats/xml-vcal.so
+lib/opensync/formats/xml-vcard.so
+lib/opensync/formats/xml-vnote.so
+%%PYTHON_SITELIBDIR%%/_opensync.so
+%%PYTHON_SITELIBDIR%%/_opensync.so.0
+%%PYTHON_SITELIBDIR%%/opensync.py
+%%PYTHON_SITELIBDIR%%/opensync.pyc
+%%PYTHON_SITELIBDIR%%/opensync.pyo
+libdata/pkgconfig/opensync-1.0.pc
+libdata/pkgconfig/osengine-1.0.pc
+@dirrm lib/opensync/formats
+@dirrm lib/opensync
+@dirrm include/opensync-1.0/osengine
+@dirrm include/opensync-1.0/opensync
+@dirrm include/opensync-1.0
