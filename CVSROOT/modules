@@ -983,6 +983,7 @@ cdrtools	ports/sysutils/cdrtools
 cdrtools-cjk	ports/sysutils/cdrtools-cjk
 cdrtools-devel	ports/sysutils/cdrtools-devel
 cdsware		ports/textproc/cdsware
+cduce		ports/lang/cduce
 cedet		ports/devel/cedet
 cedet-emacs20	ports/devel/cedet-emacs20
 celestia	ports/astro/celestia
