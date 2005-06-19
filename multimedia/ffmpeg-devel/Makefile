@@ -15,10 +15,7 @@ DISTNAME=	FFMpeg-${RELEASE_DATE}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
-BROKEN=		Incorrect pkg-plist
-
 HAS_CONFIGURE=	yes
-USE_LINUX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -57,7 +54,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	20050616
+RELEASE_DATE=	20050619
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1

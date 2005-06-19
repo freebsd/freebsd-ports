@@ -16,4 +16,3 @@ lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VERSION%%
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavformat.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
