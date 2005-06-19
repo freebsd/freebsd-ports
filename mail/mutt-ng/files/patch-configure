@@ -1,0 +1,22 @@
+--- configure.orig	Tue Jun 14 02:01:04 2005
++++ configure	Sat Jun 18 02:45:18 2005
+@@ -1774,7 +1774,7 @@
+ fi
+ 
+ fi
+-INSTALL_STRIP_PROGRAM="\${SHELL} \$(install_sh) -c -s"
++INSTALL_STRIP_PROGRAM="\${SHELL} \$(install_sh) -c"
+ 
+ # We need awk for the "check" target.  The system "awk" is bad on
+ # some platforms.
+@@ -14037,8 +14037,8 @@
+             for v in / $BDB_VERSIONS; do
+                 if test -r "$d/include/$v/db.h"; then
+                     BDB_INCLUDE_DIR="$d/include/$v"
+-                    if test -d "$d/lib/$v"; then
+-                        BDB_LIB_DIR="$d/lib/$v"
++                    if test -d "$d/lib"; then
++                        BDB_LIB_DIR="$d/lib"
+                         for l in `echo $BDB_VERSIONS`; do
+                             CPPFLAGS="-I$BDB_INCLUDE_DIR $OLDCPPFLAGS"
+                             LIBS="$OLDLIBS -L$BDB_LIB_DIR -l$l"
