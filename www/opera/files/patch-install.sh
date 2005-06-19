@@ -1,16 +1,5 @@
---- install.sh.orig	Fri Feb 25 14:36:52 2005
-+++ install.sh	Wed Mar  2 12:43:44 2005
-@@ -108,8 +108,8 @@
- 
-     if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
-         wrapper_dir="${prefix}/bin"
--        doc_dir="${prefix}/share/doc/opera"
--        share_dir="${prefix}/share/opera"
-+        doc_dir="${prefix}/share/doc/opera"
-+        share_dir="${prefix}/share/opera"
-         exec_dir="${share_dir}/bin"
-         plugin_dir="${share_dir}/plugins"
-     else
+--- install.sh.orig	Fri Apr 15 21:21:52 2005
++++ install.sh	Sat Jun 18 01:45:48 2005
 @@ -373,7 +373,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -29,16 +18,20 @@
  	    wrapper_ibmjava="
  	    IBMJava2-142/jre \\
  	    IBMJava2-141/jre \\
-@@ -794,7 +794,7 @@
- 		error 'os'
- 	;;
-     esac
--    wrapper_file="${wrapper_dir}/opera"
-+    wrapper_file="${wrapper_dir}/opera"
+@@ -798,6 +798,12 @@
      
      wrapper_contain="#!/bin/sh
  
-@@ -850,6 +850,9 @@
++# Location of locale data
++if [ -f %%LOCALBASE%%/share/compat/locale/UTF-8/LC_CTYPE ]; then
++    PATH_LOCALE=%%LOCALBASE%%/share/compat/locale
++    export PATH_LOCALE
++fi
++
+ # Location of the Opera binaries
+ OPERA_BINARYDIR=${str_localdirexec}
+ export OPERA_BINARYDIR
+@@ -850,6 +856,9 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -48,7 +41,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -873,53 +876,12 @@
+@@ -873,53 +882,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -105,7 +98,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -970,11 +932,8 @@
+@@ -970,11 +938,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -119,7 +112,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -985,12 +944,13 @@
+@@ -985,12 +950,13 @@
  LD_LIBRARY_PATH=\"\${OPERA_BINARYDIR}:\${LD_LIBRARY_PATH}\"
  export LD_LIBRARY_PATH
  
@@ -135,7 +128,7 @@
          LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
      fi
  done
-@@ -1080,7 +1040,7 @@
+@@ -1080,7 +1046,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -144,7 +137,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1115,7 +1075,7 @@
+@@ -1115,7 +1081,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -153,7 +146,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1288,36 +1248,13 @@
+@@ -1293,36 +1259,13 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -194,49 +187,16 @@
  
  	fi # OPERADESTDIR
  
-@@ -1345,13 +1282,13 @@
- {
-     # arg1 = location
- 
--    wmconfig_file="${1}/opera"
-+    wmconfig_file="${1}/opera"
- 
--    wmconfig_contain='opera name "Opera"
-+    wmconfig_contain='opera name "Opera"
- opera description "Opera Web Browser"
- opera icon "opera.xpm"
- opera mini-icon "opera.xpm"
--opera exec "opera &"
-+opera exec "opera &"
- opera group "Internet"'
- 
-     echo "${wmconfig_contain}" > ${wmconfig_file}
-@@ -1362,12 +1299,12 @@
- {
-     # arg1 = location
- 
--    desktop_file="${1}/opera.desktop"
-+    desktop_file="${1}/opera.desktop"
- 
-     desktop_contain='[Desktop Entry]
--Name=Opera
-+Name=Opera
- Comment=Web Browser
--Exec=opera
-+Exec=opera
- Icon=opera.xpm
- Terminal=0
- Type=Application'
-@@ -1446,72 +1383,36 @@
+@@ -1451,72 +1394,36 @@
  
      debug_msg 1 "in gnome()"
  
 -    if test -d /opt/gnome/; then
--
--      # /opt/gnome share
--      if test -d /opt/gnome/share; then
 +    if test -d %%X11BASE%%/share/gnome/; then
  
+-      # /opt/gnome share
+-      if test -d /opt/gnome/share; then
+-
 -        # /opt/gnome icon
 -        if test ! -d /opt/gnome/share/pixmaps/; then
 -	  if test -w /opt/gnome/share; then
@@ -322,7 +282,7 @@
     fi
     # Add ximian here
  }
-@@ -1522,39 +1423,31 @@
+@@ -1527,39 +1434,31 @@
  
      debug_msg 1 "in kde()"
  

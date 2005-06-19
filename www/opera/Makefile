@@ -28,10 +28,10 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	8.0
-OPERA_MINVER=	0
+OPERA_VER=	8.01
+OPERA_MINVER=	
 OPERA_REL=	final
-OPERA_DATE=	20050415
+OPERA_DATE=	20050615
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}

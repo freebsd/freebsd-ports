@@ -8,7 +8,6 @@ bin/opera
 %%DATADIR%%/chartables.bin
 %%DATADIR%%/config/opera6rc
 %%DATADIR%%/config/opera6rc.fixed
-%%DATADIR%%/hhd.ssr
 %%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/images/blank.gif
 %%DATADIR%%/images/drive.gif
