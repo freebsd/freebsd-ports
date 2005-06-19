@@ -66,7 +66,6 @@ share/pixmaps/xlog/xlog.xpm
 @unexec rmdir %D/share/applications 2> /dev/null || true
 @unexec rmdir %D/share/applnk/Applications 2> /dev/null || true
 @unexec rmdir %D/share/applnk 2> /dev/null || true
-@unexec rmdir %D/share/pixmaps 2> /dev/null || true
 @unexec rmdir %D/share/application-registry 2> /dev/null || true
 @unexec rmdir %D/share/mimelnk/text 2> /dev/null || true
 @unexec rmdir %D/share/mimelnk 2> /dev/null || true
