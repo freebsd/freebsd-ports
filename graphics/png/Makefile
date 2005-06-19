@@ -25,6 +25,7 @@ ALL_TARGET=	all libpng-config test
 MAKE_FLAGS=	ccopts="${CFLAGS}" ldopts="${LDFLAGS}" -f
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	5
+USE_BZIP2=	yes
 
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
