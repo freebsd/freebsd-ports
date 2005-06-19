@@ -67,7 +67,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
