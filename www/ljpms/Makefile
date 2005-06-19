@@ -7,7 +7,7 @@
 
 PORTNAME=	ljpms
 PORTVERSION=    1.2
-CATEGORIES=	www perl5
+CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://ryzh.kiev.ua/ljsm/
 DISTFILES=	ljpms-1_2.zip
 
