@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clearlooks-themes-extras
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}
@@ -28,6 +27,11 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-theme
 .else
 RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
 .endif
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS})
 
 do-install:
 	@${MKDIR} ${THEME_DIR}
