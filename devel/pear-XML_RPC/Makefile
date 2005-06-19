@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_RPC
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
