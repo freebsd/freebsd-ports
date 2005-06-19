@@ -21,10 +21,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
 
-SUB_FILES=	pkg-message bnbt.sh
-SUB_LIST=	RC_SUBR="${RC_SUBR}"
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	bnbt.sh
 
 PORTDOCS=	footer.html header.html lesser.txt readme.txt users.txt
 
@@ -55,8 +54,6 @@ do-install:
 .endfor
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/bnbt.sh ${PREFIX}/etc/rc.d/bnbt.sh
-	@${ECHO_CMD} "etc/rc.d/bnbt.sh" >> ${TMPPLIST}
 	@${MKDIR} /var/log/${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
 
