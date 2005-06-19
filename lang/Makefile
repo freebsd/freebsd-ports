@@ -17,6 +17,7 @@
     SUBDIR += bwbasic
     SUBDIR += caml-light
     SUBDIR += ccscript
+    SUBDIR += cduce
     SUBDIR += chameleon
     SUBDIR += chicken
     SUBDIR += cim

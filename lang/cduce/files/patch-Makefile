@@ -1,0 +1,17 @@
+--- Makefile.orig	Wed Apr 13 15:03:57 2005
++++ Makefile	Wed Apr 13 15:06:03 2005
+@@ -87,13 +87,12 @@
+ 	$(HIDE)$(MAKE) NATIVE=false $@
+ endif
+ 
+-install: all install_bin install_lib install_doc
++install: all install_bin install_lib
+ 
+ install_bin:
+ 	@echo "Install binaries"
+ 	$(HIDE)mkdir -p $(BINDIR)
+ 	$(HIDE)$(INSTALL) -m755 $(INSTALL_BINARIES) $(BINDIR)/
+-	
+ 
+ install_lib:
+ 	@echo "Build META"
