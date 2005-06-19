@@ -91,7 +91,7 @@ RELEASE_NR=		${PORTVERSION}
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}
 DIST_SUBDIR=		openoffice.org1.1
-SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
+SIMPLEOSVER=		${OSREL:C/\.//g}
 PACKAGE_BASENAME=       OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel
 
 # FIXME (Somehow INDEX build fails)
