@@ -1,0 +1,17 @@
+CDuce is modern programming language, adapted to the manipulation of
+XML documents. With a syntax inspired from ML, it comes with many
+interesting features such as higher order, overloaded functions and
+powerful regular expressions patterns. It also provides an embeded XML
+query language, using the traditional SELECT FROM WHERE form.
+
+This project is a spin-off of a research effort split amongst two CNRS
+labs (the Languages group of ENS in Paris and the Databases group of
+LRI in Orsay), and one INRIA project (the Cristal project). Please see
+the CDuce team page for a list of researchers contributing to this
+research effort. Some technical papers present the theoretical
+foundations of the language.
+
+WWW: http://www.cduce.org
+
+- Burelle Marwan
+marwan.burelle@lri.fr
