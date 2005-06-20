@@ -1,0 +1,5 @@
+A proxy tunnel tool, best used as a wrapper for ssh.
+
+ProxyCommand /usr/sbin/proxy-connect -S socks:1080 %h %p
+
+-Alfred Perlstein <alfred@freebsd.org>
