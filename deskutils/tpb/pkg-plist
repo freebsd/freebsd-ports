@@ -4,3 +4,4 @@ etc/tpbrc.default
 %%NLS%%share/locale/da/LC_MESSAGES/tpb.mo
 %%NLS%%share/locale/de/LC_MESSAGES/tpb.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tpb.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
