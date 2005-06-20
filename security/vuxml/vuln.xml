@@ -32,6 +32,115 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79217c9b-e1d9-11d9-b875-0001020eed82">
+    <topic>opera -- XMLHttpRequest security bypass</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><gt>8.*</gt><lt>8.01</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15008/">
+	  <p>Secunia Research has discovered a vulnerability in Opera,
+	    which can be exploited by malicious people to steal
+	    content or to perform actions on other web sites with the
+	    privileges of the user.</p>
+	  <p>Normally, it should not be possible for the
+	    <code>XMLHttpRequest</code> object to access resources
+	    from outside the domain of which the object was
+	    opened. However, due to insufficient validation of server
+	    side redirects, it is possible to circumvent this
+	    restriction.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1475</cvename>
+      <url>http://secunia.com/advisories/15008/</url>
+      <url>http://secunia.com/secunia_research/2005-4/advisory/</url>
+      <url>http://www.opera.com/freebsd/changelogs/801/#security</url>
+    </references>
+    <dates>
+      <discovery>2005-06-16</discovery>
+      <entry>2005-06-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="40856a51-e1d9-11d9-b875-0001020eed82">
+    <topic>opera -- "javascript:" URL cross-site scripting
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><lt>8.01</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15411/">
+	  <p>Secunia Research has discovered a vulnerability in Opera,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks and to read local files.</p>
+	  <p>The vulnerability is caused due to Opera not properly
+	    restricting the privileges of "javascript:" URLs when
+	    opened in e.g. new windows or frames.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1669</cvename>
+      <url>http://secunia.com/advisories/15411/</url>
+      <url>http://www.opera.com/freebsd/changelogs/801/#security</url>
+    </references>
+    <dates>
+      <discovery>2005-06-16</discovery>
+      <entry>2005-06-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="985bfcf0-e1d7-11d9-b875-0001020eed82">
+    <topic>opera -- redirection cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><gt>8.*</gt><lt>8.01</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15423/">
+	  <p>Secunia Research has discovered a vulnerability in Opera,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks against users.</p>
+	  <p>The vulnerability is caused due to input not being
+	    sanitised, when Opera generates a temporary page for
+	    displaying a redirection when "Automatic redirection" is
+	    disabled (not default setting).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/15423/</url>
+      <url>http://secunia.com/secunia_research/2003-1/advisory/</url>
+      <url>http://www.opera.com/freebsd/changelogs/801/#security</url>
+    </references>
+    <dates>
+      <discovery>2005-06-16</discovery>
+      <entry>2005-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3bf157fa-e1c6-11d9-b875-0001020eed82">
     <topic>sudo -- local race condition vulnerability</topic>
     <affects>
