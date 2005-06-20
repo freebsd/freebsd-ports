@@ -9,7 +9,7 @@ PORTNAME=	calife
 PORTVERSION=	3.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.keltia.net/download/
-DISTNAME=	calife-3.0pre4
+DISTNAME=	calife-3.0pre5
 
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	A lightweight alternative to sudo
