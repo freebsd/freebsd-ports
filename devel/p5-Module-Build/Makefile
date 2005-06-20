@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Module/KWILLIAMS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
