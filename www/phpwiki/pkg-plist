@@ -7,6 +7,11 @@
 %%PHPWIKI%%/admin/wiki_port1_0.php
 %%PHPWIKI%%/admin/wiki_rebuilddbms.php
 %%PHPWIKI%%/admin/zip.php
+%%PHPWIKI%%/images/favicon.ico
+%%PHPWIKI%%/images/ftp.png
+%%PHPWIKI%%/images/http.png
+%%PHPWIKI%%/images/https.png
+%%PHPWIKI%%/images/mailto.png
 %%PHPWIKI%%/images/png.png
 %%PHPWIKI%%/images/signature.png
 %%PHPWIKI%%/images/wikibase.png
@@ -193,40 +198,35 @@
 %%PHPWIKI%%/templates/editlinks.html
 %%PHPWIKI%%/templates/editpage.html
 %%PHPWIKI%%/templates/message.html
-%%PHPWIKI%%/admin/.htaccess
-%%PHPWIKI%%/lib/.htaccess
-%%PHPWIKI%%/locale/.htaccess
-%%PHPWIKI%%/schemas/.htaccess
-%%PHPWIKI%%/templates/.htaccess
-@dirrm %%PHPWIKI%%/admin
-@dirrm %%PHPWIKI%%/images
-@dirrm %%PHPWIKI%%/lib
-@dirrm %%PHPWIKI%%/locale/nl/LC_MESSAGES
-@dirrm %%PHPWIKI%%/locale/nl/pgsrc
-@dirrm %%PHPWIKI%%/locale/nl/templates
-@dirrm %%PHPWIKI%%/locale/nl
-@dirrm %%PHPWIKI%%/locale/po
-@dirrm %%PHPWIKI%%/locale/de/LC_MESSAGES
-@dirrm %%PHPWIKI%%/locale/de/pgsrc
-@dirrm %%PHPWIKI%%/locale/de/templates
-@dirrm %%PHPWIKI%%/locale/de
-@dirrm %%PHPWIKI%%/locale/es/LC_MESSAGES
-@dirrm %%PHPWIKI%%/locale/es/pgsrc
-@dirrm %%PHPWIKI%%/locale/es/templates
-@dirrm %%PHPWIKI%%/locale/es
-@dirrm %%PHPWIKI%%/locale/it/LC_MESSAGES
-@dirrm %%PHPWIKI%%/locale/it/pgsrc
-@dirrm %%PHPWIKI%%/locale/it/templates
-@dirrm %%PHPWIKI%%/locale/it
-@dirrm %%PHPWIKI%%/locale/sv/LC_MESSAGES
-@dirrm %%PHPWIKI%%/locale/sv/pgsrc
-@dirrm %%PHPWIKI%%/locale/sv/templates
-@dirrm %%PHPWIKI%%/locale/sv
-@dirrm %%PHPWIKI%%/locale
-@dirrm %%PHPWIKI%%/pages
-@dirrm %%PHPWIKI%%/pgsrc
-@dirrm %%PHPWIKI%%/schemas
 @dirrm %%PHPWIKI%%/templates
+@dirrm %%PHPWIKI%%/schemas
+@dirrm %%PHPWIKI%%/pgsrc
+@dirrm %%PHPWIKI%%/pages
+@dirrm %%PHPWIKI%%/locale/sv/templates
+@dirrm %%PHPWIKI%%/locale/sv/pgsrc
+@dirrm %%PHPWIKI%%/locale/sv/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/sv
+@dirrm %%PHPWIKI%%/locale/po
+@dirrm %%PHPWIKI%%/locale/nl/templates
+@dirrm %%PHPWIKI%%/locale/nl/pgsrc
+@dirrm %%PHPWIKI%%/locale/nl/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/nl
+@dirrm %%PHPWIKI%%/locale/it/templates
+@dirrm %%PHPWIKI%%/locale/it/pgsrc
+@dirrm %%PHPWIKI%%/locale/it/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/it
+@dirrm %%PHPWIKI%%/locale/es/templates
+@dirrm %%PHPWIKI%%/locale/es/pgsrc
+@dirrm %%PHPWIKI%%/locale/es/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/es
+@dirrm %%PHPWIKI%%/locale/de/templates
+@dirrm %%PHPWIKI%%/locale/de/pgsrc
+@dirrm %%PHPWIKI%%/locale/de/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/de
+@dirrm %%PHPWIKI%%/locale
+@dirrm %%PHPWIKI%%/lib
+@dirrm %%PHPWIKI%%/images
+@dirrm %%PHPWIKI%%/admin
 @dirrm %%PHPWIKI%%
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
