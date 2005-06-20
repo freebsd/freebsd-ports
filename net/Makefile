@@ -631,6 +631,7 @@
     SUBDIR += ppptraf
     SUBDIR += pptpclient
     SUBDIR += ppxp
+    SUBDIR += proxy-connect
     SUBDIR += proxy-suite
     SUBDIR += proxychains
     SUBDIR += prtunnel
