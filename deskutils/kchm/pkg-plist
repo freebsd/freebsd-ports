@@ -1,7 +1,11 @@
 bin/kchm
 lib/libchmmix.la
+lib/libchmmix.so
+lib/libchmmix.so.0
 lib/kde3/libchmnewpart.la
+lib/kde3/libchmnewpart.so
 lib/kde3/kio_chmnew.la
+lib/kde3/kio_chmnew.so
 include/chmxx.h
 include/chm_lib.h
 include/lzx.h
