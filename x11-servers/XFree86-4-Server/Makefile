@@ -7,6 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -90,7 +91,6 @@ MAN4=			citron.4x \
 			wacom.4x
 MAN5=			XF86Config.5 \
 			getconfig.5
-PKGMESSAGE=		${WRKDIR}/.pkg-message
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		lib/font programs/Xserver
@@ -200,14 +200,18 @@ MAN4+=		rendition.4x \
 		siliconmotion.4x
 .endif
 
-post-build:
-	@${RM} -f ${PKGMESSAGE}
-	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
+.if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
+pre-everything::
+	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
+	@${ECHO_MSG} "a normal user, it checks arguments and environment as done in the x11/wrapper"
+	@${ECHO_MSG} "port before handling them normally.  If you are concerned about the security"
+	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm,"
+	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
+	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
 
-post-install::
-	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
-	@if [ -f ${PREFIX}/bin/Xwrapper-4 ] ; then \
-	${LN} -sf Xwrapper-4 ${PREFIX}/bin/X; \
-	fi;
+SCRIPTS_ENV+=	SUID_XSERVER=YES
+.else
+SCRIPTS_ENV+=	SUID_XSERVER=NO
+.endif
 
 .include <bsd.port.post.mk>
