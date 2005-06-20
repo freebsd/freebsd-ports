@@ -28,6 +28,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/ASofterWorld.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Bhag.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/ComicsDotCom.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/CloneManga.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/UComicsEspanol.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/NoNeedForBushido.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/FragileGravity.py
@@ -43,9 +44,11 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/MyPrivateLittleHell.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/AbsurdNotions.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/JamesFrancis.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/Commissioned.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/BizarreUprising.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/GenrezvousPoint.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/SomethingPositive.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/CatAndGirl.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/UComics.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/BadBlood.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Pixel.py
@@ -59,6 +62,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/ButternutSquash.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/VGCats.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/DieselSweeties.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/JoyOfTech.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/PockyBot.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/MegaTokyo.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/QuestionableContent.py
@@ -113,6 +117,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/KingFeatures.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/DoemainOfOurOwn.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/PvPonline.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/TheWotch.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/PastelDefender.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Marilith.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/CrapIDrewOnMyLunchBreak.py
@@ -169,6 +174,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/ASofterWorld.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/Bhag.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/ComicsDotCom.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/CloneManga.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/UComicsEspanol.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/NoNeedForBushido.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/FragileGravity.pyc
@@ -184,9 +190,11 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/MyPrivateLittleHell.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/AbsurdNotions.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/JamesFrancis.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/Commissioned.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/BizarreUprising.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/GenrezvousPoint.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/SomethingPositive.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/CatAndGirl.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/UComics.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/BadBlood.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/Pixel.pyc
@@ -200,6 +208,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/ButternutSquash.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/VGCats.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/DieselSweeties.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/JoyOfTech.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/PockyBot.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/MegaTokyo.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/QuestionableContent.pyc
@@ -254,6 +263,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/KingFeatures.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/DoemainOfOurOwn.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/PvPonline.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/TheWotch.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/PastelDefender.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/Marilith.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/DunnBoyz.pyc
@@ -302,6 +312,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/ASofterWorld.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/Bhag.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/ComicsDotCom.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/CloneManga.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/UComicsEspanol.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/NoNeedForBushido.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/FragileGravity.pyo
@@ -316,9 +327,11 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/MyPrivateLittleHell.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/AbsurdNotions.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/JamesFrancis.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/Commissioned.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/BizarreUprising.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/GenrezvousPoint.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/SomethingPositive.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/CatAndGirl.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/BadBlood.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/UComics.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/Pixel.pyo
@@ -332,6 +345,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/ButternutSquash.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/VGCats.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/DieselSweeties.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/JoyOfTech.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/PockyBot.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/MegaTokyo.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/QuestionableContent.pyo
@@ -386,6 +400,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/KingFeatures.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/DoemainOfOurOwn.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/PvPonline.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/TheWotch.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/PastelDefender.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/Marilith.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/CrapIDrewOnMyLunchBreak.pyo
