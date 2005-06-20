@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gld
-PORTVERSION=	1.5
+PORTVERSION=	1.5.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gasmi.net/down/
 EXTRACT_SUFX=	.tgz
@@ -17,8 +17,6 @@ COMMENT=	Greylisting daemon for Postfix
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 HAS_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/${DISTNAME}.1
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
