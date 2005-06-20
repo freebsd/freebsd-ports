@@ -64,6 +64,7 @@ do \
 	echo "#define $i NO"			>> $LOCALDEF
 done
 
+echo "#define InstallXserverSetUID ${SUID_XSERVER}"	>> $LOCALDEF
 echo "#define BuildServer YES"			>> $LOCALDEF
 echo "#define LibInstallBuild YES"		>> $LOCALDEF
 echo "#define ModInstall YES"			>> $LOCALDEF
