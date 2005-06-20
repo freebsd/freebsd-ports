@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3bf157fa-e1c6-11d9-b875-0001020eed82">
+    <topic>sudo -- local race condition vulnerability</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.6.8.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd C. Miller reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111928183431376">
+	  <p>A race condition in Sudo's command pathname handling
+	    prior to Sudo version 1.6.8p9 that could allow a user with
+	    Sudo privileges to run arbitrary commands.</p>
+	  <p>Exploitation of the bug requires that the user be allowed
+	    to run one or more commands via Sudo and be able to create
+	    symbolic links in the filesystem.  Furthermore, a sudoers
+	    entry giving another user access to the ALL pseudo-command
+	    must follow the user's sudoers entry for the race to
+	    exist.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13993</bid>
+      <mlist msgid="200506201424.j5KEOhQI024645@xerxes.courtesan.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111928183431376</mlist>
+    </references>
+    <dates>
+      <discovery>2005-06-20</discovery>
+      <entry>2005-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b02c1d80-e1bb-11d9-b875-0001020eed82">
     <topic>trac -- file upload/download vulnerability</topic>
     <affects>
