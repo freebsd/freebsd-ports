@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="85069fb6-e15b-11d9-83cf-0010dc5df42d">
+    <topic>Razor-agents -- Denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>razor-agents</name>
+	<range><le>2.71</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia security advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15739/">
+          <p>Two vulnerabilities have been reported in Razor-agents, which can be exploited by malicious people to cause a DoS (Denial of Service).</p>
+	  <ol>
+	    <li>An unspecified error in the preprocessing of certain HTML messages can be exploited to crash the application.</li>
+	    <li>A bug in the discovery logic causes Razor-agents to go into an infinite loop and consume a large amount of memory when discovery fails.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/15739/</url>
+    </references>
+    <dates>
+      <discovery>2005-06-17</discovery>
+      <entry>2005-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc4ce06b-e01c-11d9-a8bd-000cf18bbe54">
     <topic>SpamAssassin -- Denial of service vulnerability</topic>
     <affects>
