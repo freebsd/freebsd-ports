@@ -300,10 +300,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <freebsdsa>SA-05:10.tcpdump</freebsdsa>
       <mlist msgid="20050426100140.1945.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111454406222040</mlist>
       <mlist msgid="20050426100057.1748.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111454461300644</mlist>
+      <mlist msgid="20050619091553.GB982@zaphod.nitro.dk">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111928309502304</mlist>
     </references>
     <dates>
       <discovery>2005-06-09</discovery>
       <entry>2005-06-18</entry>
+      <modified>2005-06-20</modified>
     </dates>
   </vuln>
 
