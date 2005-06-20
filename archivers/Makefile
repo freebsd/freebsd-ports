@@ -102,6 +102,7 @@
     SUBDIR += unshield
     SUBDIR += untar
     SUBDIR += unzip
+    SUBDIR += unzoo
     SUBDIR += upx
     SUBDIR += wzip
     SUBDIR += xdms
