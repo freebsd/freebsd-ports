@@ -7,6 +7,7 @@
 
 PORTNAME=	kchm
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://mesh.dl.sourceforge.net/sourceforge/kchmnew/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
