@@ -67,7 +67,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
@@ -120,8 +120,9 @@ CONFIGURE_ARGS+=--enable-svn-compat
 .endif
 
 .if defined(WITH_SCPONLY_SVNSERVE)
-BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS+=	svnserve:${PORTSDIR}/devel/subversion
 RUN_DEPENDS+=	${BUILD_DEPENDS}
+CONFIGURE_ARGS+=--enable-svnserv-compat
 .endif
 
 .if defined(WITH_SCPONLY_UNISON)
