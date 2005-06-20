@@ -1,0 +1,102 @@
+--- tlsBIO.c	Tue Feb  3 23:02:19 2004
++++ tlsBIO.c	Mon Jun 20 10:18:45 2005
+@@ -30,4 +30,5 @@
+     BioNew,
+     BioFree,
++    NULL
+ };
+ 
+@@ -62,6 +63,6 @@
+     int ret;
+ 
+-    dprintf(stderr,"\nBioWrite(0x%x, <buf>, %d) [0x%x]",
+-	    (unsigned int) bio, bufLen, (unsigned int) chan);
++    dprintf(stderr,"\nBioWrite(%p, <buf>, %d) [%p]",
++	    (void *)bio, bufLen, (void *)chan);
+ 
+     if (channelTypeVersion == TLS_CHANNEL_VERSION_2) {
+@@ -71,6 +72,6 @@
+     }
+ 
+-    dprintf(stderr,"\n[0x%x] BioWrite(%d) -> %d [%d.%d]",
+-	    (unsigned int) chan, bufLen, ret, Tcl_Eof(chan), Tcl_GetErrno());
++    dprintf(stderr,"\n[%p] BioWrite(%d) -> %d [%d.%d]",
++	    (void *) chan, bufLen, ret, Tcl_Eof(chan), Tcl_GetErrno());
+ 
+     BIO_clear_flags(bio, BIO_FLAGS_WRITE|BIO_FLAGS_SHOULD_RETRY);
+@@ -97,6 +98,6 @@
+     int ret = 0;
+ 
+-    dprintf(stderr,"\nBioRead(0x%x, <buf>, %d) [0x%x]",
+-	    (unsigned int) bio, bufLen, (unsigned int) chan);
++    dprintf(stderr,"\nBioRead(%p, <buf>, %d) [%p]",
++	    (void *)bio, bufLen, (void *)chan);
+ 
+     if (buf == NULL) return 0;
+@@ -108,6 +109,6 @@
+     }
+ 
+-    dprintf(stderr,"\n[0x%x] BioRead(%d) -> %d [%d.%d]",
+-	    (unsigned int) chan, bufLen, ret, Tcl_Eof(chan), Tcl_GetErrno());
++    dprintf(stderr,"\n[%p] BioRead(%d) -> %d [%d.%d]",
++	    (void *) chan, bufLen, ret, Tcl_Eof(chan), Tcl_GetErrno());
+ 
+     BIO_clear_flags(bio, BIO_FLAGS_READ|BIO_FLAGS_SHOULD_RETRY);
+@@ -144,7 +145,6 @@
+     int *ip;
+ 
+-    dprintf(stderr,"\nBioCtrl(0x%x, 0x%x, 0x%x, 0x%x)",
+-	    (unsigned int) bio, (unsigned int) cmd, (unsigned int) num,
+-	    (unsigned int) ptr);
++    dprintf(stderr,"\nBioCtrl(%p, 0x%x, 0x%lx, %p)",
++	    (void *)bio, cmd, num, ptr);
+ 
+     switch (cmd) {
+--- tlsIO.c	Mon Feb  4 17:46:31 2002
++++ tlsIO.c	Mon Jun 20 10:18:45 2005
+@@ -287,5 +287,5 @@
+     State *statePtr = (State *) instanceData;
+ 
+-    dprintf(stderr,"\nTlsCloseProc(0x%x)", (unsigned int) statePtr);
++    dprintf(stderr,"\nTlsCloseProc(%p)", instanceData);
+ 
+     if (channelTypeVersion == TLS_CHANNEL_VERSION_1) {
+@@ -413,5 +413,5 @@
+     *errorCodePtr = 0;
+ 
+-    dprintf(stderr,"\nBIO_write(0x%x, %d)", (unsigned int) statePtr, toWrite);
++    dprintf(stderr,"\nBIO_write(%p, %d)", instanceData, toWrite);
+ 
+     if (!SSL_is_init_finished(statePtr->ssl)) {
+@@ -443,6 +443,6 @@
+ 	ERR_clear_error();
+ 	written = BIO_write(statePtr->bio, buf, toWrite);
+-	dprintf(stderr,"\nBIO_write(0x%x, %d) -> [%d]",
+-		(unsigned int) statePtr, toWrite, written);
++	dprintf(stderr,"\nBIO_write(%p, %d) -> [%d]",
++		instanceData, toWrite, written);
+     }
+     if (written <= 0) {
+@@ -851,5 +851,5 @@
+     int err;
+ 
+-    dprintf(stderr,"\nWaitForConnect(0x%x)", (unsigned int) statePtr);
++    dprintf(stderr,"\nWaitForConnect(%p)", (void *)statePtr);
+ 
+     for (;;) {
+--- tls.c	Thu Feb 12 21:09:21 2004
++++ tls.c	Mon Jun 20 10:23:44 2005
+@@ -459,5 +459,5 @@
+     };
+     enum protocol {
+-	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_NONE
++	TLS_SSL2, TLS_SSL3, TLS_TLS1
+     };
+     Tcl_Obj *objPtr;
+@@ -1168,5 +1168,5 @@
+ {
+     const char *commands [] = { "req", NULL };
+-    enum command { C_REQ, C_DUMMY };
++    enum command { C_REQ };
+     int cmd;
+ 
