@@ -32,8 +32,55 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b02c1d80-e1bb-11d9-b875-0001020eed82">
+    <topic>trac -- file upload/download vulnerability</topic>
+    <affects>
+      <package>
+	<name>trac</name>
+	<range><lt>0.8.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports:</p>
+	<blockquote cite="http://www.hardened-php.net/advisory-012005.php">
+	  <p>Trac's wiki and ticket systems allows to add attachments
+	    to wiki entries and bug tracker tickets. These attachments
+	    are stored within directories that are determined by the
+	    id of the corresponding ticket or wiki entry.</p>
+	  <p>Due to a missing validation of the id parameter it is
+	    possible for an attacker to supply arbitrary paths to the
+	    upload and attachment viewer scripts. This means that a
+	    potential attacker can retrieve any file accessible by the
+	    webserver user.</p>
+	  <p>Additionally it is possible to upload arbitrary files (up
+	    to a configured file length) to any place the webserver
+	    has write access too.</p>
+	  <p>For obvious reasons this can lead to the execution of
+	    arbitrary code if it possible to upload files to the
+	    document root or it's subdirectories. One example of a
+	    configuration would be f.e.	 running Trac and
+	    s9y/wordpress with writeable content directories on the
+	    same webserver.</p>
+	  <p>Another potential usage of this exploit would be to abuse
+	    Trac powered webservers as storage for f.e. torrent
+	    files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13990</bid>
+      <url>http://www.hardened-php.net/advisory-012005.php</url>
+      <url>http://projects.edgewall.com/trac/wiki/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2005-06-20</discovery>
+      <entry>2005-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85069fb6-e15b-11d9-83cf-0010dc5df42d">
-    <topic>Razor-agents -- Denial of service vulnerability</topic>
+    <topic>razor-agents -- denial of service vulnerability</topic>
     <affects>
       <package>
 	<name>razor-agents</name>
@@ -44,10 +91,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>A Secunia security advisory reports:</p>
 	<blockquote cite="http://secunia.com/advisories/15739/">
-          <p>Two vulnerabilities have been reported in Razor-agents, which can be exploited by malicious people to cause a DoS (Denial of Service).</p>
+	  <p>Two vulnerabilities have been reported in Razor-agents,
+	    which can be exploited by malicious people to cause a DoS
+	    (Denial of Service).</p>
 	  <ol>
-	    <li>An unspecified error in the preprocessing of certain HTML messages can be exploited to crash the application.</li>
-	    <li>A bug in the discovery logic causes Razor-agents to go into an infinite loop and consume a large amount of memory when discovery fails.</li>
+	    <li>An unspecified error in the preprocessing of certain
+	      HTML messages can be exploited to crash the
+	      application.</li>
+	    <li>A bug in the discovery logic causes Razor-agents to go
+	      into an infinite loop and consume a large amount of
+	      memory when discovery fails.</li>
 	  </ol>
 	</blockquote>
       </body>
@@ -62,23 +115,22 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="cc4ce06b-e01c-11d9-a8bd-000cf18bbe54">
-    <topic>SpamAssassin -- Denial of service vulnerability</topic>
+    <topic>p5-Mail-SpamAssassin -- denial of service vulnerability</topic>
     <affects>
       <package>
 	<name>p5-Mail-SpamAssassin</name>
-	<range><ge>3.0.1</ge><le>3.0.3</le></range>
+	<range><ge>3.0.1</ge><lt>3.0.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Apache SpamAssassin Security Team reports:</p>
 	<blockquote cite="http://mail-archives.apache.org/mod_mbox/spamassassin-announce/200506.mbox/%3c17072.35054.586017.822288@proton.pathname.com%3e">
-          <p>Apache SpamAssassin 3.0.4 was recently released, and
+	  <p>Apache SpamAssassin 3.0.4 was recently released, and
 	    fixes a denial of service vulnerability in versions 3.0.1, 3.0.2,
-	    and 3.0.3.  The vulnerability allows certain misformatted
+	    and 3.0.3.	The vulnerability allows certain misformatted
 	    long message headers to cause spam checking to
 	    take a very long time.</p>
-
 	  <p>While the exploit has yet to be seen in the wild,
 	    we are concerned that there may be attempts to abuse
 	    the vulnerability in the future.  Therefore, we strongly
@@ -112,7 +164,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<blockquote cite="http://www.squirrelmail.org/security/issue/2005-06-15">
 	  <p>Several cross site scripting (XSS) vulnerabilities have been discovered
 	    in SquirrelMail versions 1.4.0 - 1.4.4.</p>
-
 	  <p>The vulnerabilities are in two categories: the majority can be
 	    exploited through URL manipulation, and some by sending a specially
 	    crafted email to a victim. When done very carefully,
