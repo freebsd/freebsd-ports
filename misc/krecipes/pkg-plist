@@ -158,43 +158,9 @@ share/locale/ta/LC_MESSAGES/krecipes.mo
 share/locale/tr/LC_MESSAGES/krecipes.mo
 share/nls/POSIX
 share/nls/en_US.US-ASCII
-@dirrm /share/locale/sr/LC_MESSAGES
-@dirrm /share/locale/sr
-@dirrm /share/locale/sl/LC_MESSAGES
-@dirrm /share/locale/sl
-@dirrm /share/locale/ro/LC_MESSAGES
-@dirrm /share/locale/ro
-@dirrm /share/locale/pt/LC_MESSAGES
-@dirrm /share/locale/pt
-@dirrm /share/locale/pl/LC_MESSAGES
-@dirrm /share/locale/pl
-@dirrm /share/locale/mt/LC_MESSAGES
-@dirrm /share/locale/mt
-@dirrm /share/locale/fi/LC_MESSAGES
-@dirrm /share/locale/fi
-@dirrm /share/locale/ca/LC_MESSAGES
-@dirrm /share/locale/ca
-@dirrm /share/icons/hicolor/64x64/apps
-@dirrm /share/icons/hicolor/64x64
-@dirrm /share/icons/hicolor/48x48/apps
-@dirrm /share/icons/hicolor/48x48
-@dirrm /share/icons/hicolor/32x32/apps
-@dirrm /share/icons/hicolor/32x32
-@dirrm /share/icons/hicolor/22x22/apps
-@dirrm /share/icons/hicolor/22x22
-@dirrm /share/icons/hicolor/16x16/apps
-@dirrm /share/icons/hicolor/16x16
-@dirrm /share/icons/hicolor/128x128/apps
-@dirrm /share/icons/hicolor/128x128
-@dirrm /share/icons/hicolor
-@dirrm /share/icons
 @dirrm /share/doc/HTML/sv/krecipes
-@dirrm /share/doc/HTML/sv
 @dirrm /share/doc/HTML/pt/krecipes
-@dirrm /share/doc/HTML/pt
 @dirrm /share/doc/HTML/en/krecipes
-@dirrm /share/doc/HTML/en
-@dirrm /share/doc/HTML
 @dirrm /share/apps/krecipes/pics
 @dirrm /share/apps/krecipes/layouts
 @dirrm /share/apps/krecipes/icons/crystalsvg/48x48/actions
@@ -209,6 +175,3 @@ share/nls/en_US.US-ASCII
 @dirrm /share/apps/krecipes/icons
 @dirrm /share/apps/krecipes/data
 @dirrm /share/apps/krecipes
-@dirrm /share/apps
-@dirrm /share/applnk/Utilities
-@dirrm /share/applnk
