@@ -21,12 +21,6 @@ USE_OPENSSL=	Yes
 
 WRKSRC=	${WRKDIR}/tls${PORTVERSION:R}
 
-pre-patch:
-	# Fixing the end-of-lines:
-	for f in `${FIND} ${WRKSRC}/.. -type f` ; do \
-		${TR} -d '\015' < $$f > $$f.noms && \
-			${CAT} $$f.noms > $$f && ${RM} $$f.noms; done
-
 PLIST_SUB+=	TCL_VER=${TCL_VER} DISTNAME="${DISTNAME}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
@@ -44,7 +38,7 @@ post-patch:
 		's,package require tls.*,load ${WRKSRC}/libtls.so;\
 			source ${WRKSRC}/tls.tcl,' \
 		${WRKSRC}/tests/*.test
-	# The ciphers.test were meaningless so far:
+	# The tests in ciphers.test are meaningless so far:
 	${MV} ${WRKSRC}/tests/ciphers.test ${WRKSRC}/tests/ciphers.test.broken
 
 post-install:
