@@ -45,8 +45,8 @@ JAVA_BUILD=	jdk
 .if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} <= 492000)
 BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgrade your rtld"
 .endif
-.if exists(${LOCALBASE}/bin/epm)
-BROKEN=		"Please deinstall epm, now it is a part of OpenOffice.org and causes a trouble"
+.if exists(${X11BASE}/bin/fltk-config)
+BROKEN=		"Please deinstall fltk, currently causes a build failure"
 .endif
 
 CODELINE=		680
@@ -102,7 +102,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal
 
 .include <${FILESDIR}/Makefile.knobs>
 
