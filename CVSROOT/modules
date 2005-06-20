@@ -11856,6 +11856,7 @@ unrtf		ports/textproc/unrtf
 unshield	ports/archivers/unshield
 untar		ports/archivers/untar
 unzip		ports/archivers/unzip
+unzoo		ports/archivers/unzoo
 uox3		ports/games/uox3
 up-imapproxy	ports/mail/up-imapproxy
 upclient	ports/misc/upclient
