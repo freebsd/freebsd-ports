@@ -1,0 +1,6 @@
+Tie::iCal represents an RFC2445 iCalendar file as a Perl hash.
+Each key in the hash represents an iCalendar component like VEVENT,
+VTODO or VJOURNAL.  Each component in the file must have a unique UID
+property as specified in the RFC 2445.
+
+WWW: http://search.cpan.org/dist/Tie-iCal/
