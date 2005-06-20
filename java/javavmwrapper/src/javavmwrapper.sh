@@ -226,10 +226,6 @@ sortConfiguration () {
 # Check all of the VMs in the configuration file
 #
 checkVMs () {
-    # Sort the configuration.  This will also remove duplicates and
-    # non-existent VMs
-    sortConfiguration
-
     # Ensure the configuration file exists
     if [ ! -f "${CONF}" ]; then
         exit 0
@@ -240,6 +236,10 @@ checkVMs () {
         echo "${IAM}: error: can't read/write ${CONF} configuration file!" 1>&2
         exit 1
     fi
+
+    # Sort the configuration.  This will also remove duplicates and
+    # non-existent VMs
+    sortConfiguration
 
     # Ensure links are created for every executable for a VM.
     cat "${CONF}" | \
@@ -273,9 +273,10 @@ registerVM () {
 
     # Check that the given VM can be found in the configuration file
     VM=`echo "${1}" | sed -E 's|[[:space:]]*#.*||' 2>/dev/null`
+    REGISTERED=
     if [ ! -z "`grep "${VM}" "${CONF}"`" ]; then
-        echo "${IAM}: error: JavaVM \"${VM}\" is already registered" 1>&2
-        exit 1
+        echo "${IAM}: warning: JavaVM \"${VM}\" is already registered" 1>&2
+        REGISTERED="yes"
     fi
 
     # Check that the VM exists and is "sane"
@@ -301,7 +302,9 @@ registerVM () {
     fi
 
     # Add the VM to the configuration file
-    echo "${1}" >> "${CONF}"
+    if [ "${REGISTERED}" != "yes" ]; then
+        echo "${1}" >> "${CONF}"
+    fi
 
     # Create symbolic links as appropriate if they don't exist.
     JAVA_HOME=`dirname "${VM}"`
