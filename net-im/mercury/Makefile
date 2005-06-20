@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1709_RC10
+DISTVERSION=	1709_RC11f
 CATEGORIES=	net java
-MASTER_SITES=	http://rebel.chillhoek.nl/	\
-		http://www.mcroney.com/nss-folder/uploadfileshere/	\
+MASTER_SITES=	http://70.25.151.230/		\
 		http://download.mercury.to/	\
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
@@ -38,6 +37,15 @@ INSTDIR=	${PREFIX}/${LINSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 SUB_DIRS=	lib resources
 
+.if defined(WITH_VIDEO)	# Experimental
+VIDJAR=		VidConf-libs.jar
+EXTRACT_ONLY+=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${VIDJAR}
+PLIST_SUB+=	VID="" VIDJAR="${VIDJAR}"
+.else
+PLIST_SUB+=	VID="@comment " VIDJAR=""
+.endif
+
 do-install:
 	${MKDIR} ${INSTDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${INSTDIR}
@@ -46,5 +54,8 @@ do-install:
 	cd ${WRKDIR} && ${FIND} ${sd} -type d -exec ${MKDIR} ${INSTDIR}/{} \;
 	cd ${WRKDIR} && ${FIND} ${sd} -type f -exec ${INSTALL_DATA} {} ${INSTDIR}/{} \;
 .endfor
+.if defined(WITH_VIDEO)
+	${INSTALL_DATA} ${_DISTDIR}/${VIDJAR} ${INSTDIR}/lib
+.endif
 
 .include <bsd.port.mk>

@@ -2,9 +2,11 @@ bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%INSTDIR%%/lib/JFlash.jar
 %%INSTDIR%%/lib/Skins.jar
+%%VID%%%%INSTDIR%%/lib/%%VIDJAR%%
 %%INSTDIR%%/lib/XML.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/dllStuff.jar
+%%INSTDIR%%/lib/jdom1_0.jar
 %%INSTDIR%%/lib/looks-1.3b1.jar
 %%INSTDIR%%/lib/xmlpull.jar
 %%INSTDIR%%/resources/AppData/Backgrounds/Default.png
@@ -48,6 +50,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
 %%INSTDIR%%/resources/AppData/SplashWindow/Girl.zip
 %%INSTDIR%%/resources/AppData/SplashWindow/Mercury.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/Thumbs.db
 %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/away.gif
 %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/chat.gif
 %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/dnd.gif
@@ -61,6 +64,20 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/StatusIcons/M_Henk.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_MSN 16b.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_MSN default.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/Thumbs.db
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/a.html
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/away.png
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/block.png
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/busy.png
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/gif/Thumbs.db
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/gif/away.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/gif/block.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/gif/busy.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/gif/offline.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/gif/online.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/icondef.xml
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/offline.png
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/online.png
 %%INSTDIR%%/resources/AppData/StatusIcons/M_Maarten.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-New.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-Old.zip
@@ -183,6 +200,8 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks
+@dirrm %%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7/gif
+@dirrm %%INSTDIR%%/resources/AppData/StatusIcons/M_MSN7
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons
 @dirrm %%INSTDIR%%/resources/AppData/SplashWindow
