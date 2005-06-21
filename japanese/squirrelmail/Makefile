@@ -18,6 +18,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	info@otsune.com
 COMMENT=	A webmail system which accesses mail over IMAP with Japanese patch
 
+BROKEN=		ja patch is not applyed.
+
 USE_GETTEXT=	YES
 
 CONFLICTS=	squirrelmail-1.*
