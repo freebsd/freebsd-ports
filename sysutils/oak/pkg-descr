@@ -1,0 +1,10 @@
+Oak is a program that can be used to monitor syslogs from a collection
+of servers and notify operators when problem conditions arise.  In
+addition to providing immediate notification of critical problems oak
+will also batch less critical problems into summary messages that can
+be sent less often and via any medium.  For example you may wish to
+have oak page you on critical events while sending a summary of less
+important messages to your terminal once an hour.  In addition you
+could send a daily email message summarizing all events.
+
+WWW: http://www.ktools.org/oak/

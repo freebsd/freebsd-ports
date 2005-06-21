@@ -315,6 +315,7 @@
     SUBDIR += nvtv
     SUBDIR += nwclient
     SUBDIR += nwclient602
+    SUBDIR += oak
     SUBDIR += obliterate
     SUBDIR += open
     SUBDIR += openupsd
