@@ -242,9 +242,9 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-remote-desktop.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-run.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-screensaver.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-screenshot.png
-share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-server-config.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-session.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-settings-accessibility-keyboard.png
@@ -611,9 +611,9 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-remote-desktop.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-run.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-screensaver.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-screenshot.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-server-config.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-session.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-settings-accessibility-keyboard.png
@@ -942,9 +942,9 @@ share/icons/LowContrastLargePrint/48x48/apps/gnome-multimedia.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-panel.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-run.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-screenshot.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool-animation.png
+share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-session.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-accessibility-keyboard.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-accessibility-technologies.png
@@ -1209,6 +1209,7 @@ share/locale/fa/LC_MESSAGES/gnome-themes.mo
 share/locale/fi/LC_MESSAGES/gnome-themes.mo
 share/locale/fr/LC_MESSAGES/gnome-themes.mo
 share/locale/ga/LC_MESSAGES/gnome-themes.mo
+share/locale/gl/LC_MESSAGES/gnome-themes.mo
 share/locale/gu/LC_MESSAGES/gnome-themes.mo
 share/locale/he/LC_MESSAGES/gnome-themes.mo
 share/locale/hi/LC_MESSAGES/gnome-themes.mo
@@ -1906,8 +1907,12 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
 @dirrm share/themes/Crux
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
 @unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ug 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/icons/Smokey-Red/96x96/filesystems
 @dirrm share/icons/Smokey-Red/96x96
 @dirrm share/icons/Smokey-Red/72x72/filesystems
