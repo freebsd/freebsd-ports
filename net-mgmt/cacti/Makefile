@@ -7,6 +7,7 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.6e
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
@@ -39,7 +40,7 @@ SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \
-	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.orig
+	${MV} ${WRKSRC}/include/db-settings.php ${WRKSRC}/include/db-settings.php.orig
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
@@ -47,10 +48,10 @@ pre-install:
 do-install:
 	@${MKDIR} ${PREFIX}/${CACTIDIR}; \
 	${CP} -R ${WRKSRC}/* ${PREFIX}/${CACTIDIR}/; \
-	if [ ! -f ${PREFIX}/${CACTIDIR}/include/config.php ]; then \
-		${CP} ${PREFIX}/${CACTIDIR}/include/config.php.orig \
-			${PREFIX}/${CACTIDIR}/include/config.php; \
-	fi; \
+	if [ ! -f ${PREFIX}/${CACTIDIR}/include/db-settings.php ]; then \
+		${CP} ${PREFIX}/${CACTIDIR}/include/db-settings.php.orig \
+			${PREFIX}/${CACTIDIR}/include/db-settings.php; \
+	fi
 
 # Fix permissions
 post-install:

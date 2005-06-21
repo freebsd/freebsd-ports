@@ -126,13 +126,14 @@
 %%CACTIDIR%%/images/transparent_line.gif
 %%CACTIDIR%%/include/auth.php
 %%CACTIDIR%%/include/bottom_footer.php
-@unexec cmp -s %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php && rm -f %D/%%CACTIDIR%%/include/config.php
-%%CACTIDIR%%/include/config.php.orig
-@exec [ ! -f %D/%%CACTIDIR%%/include/config.php ] || cp %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php
+%%CACTIDIR%%/include/config.php
 %%CACTIDIR%%/include/config_arrays.php
 %%CACTIDIR%%/include/config_constants.php
 %%CACTIDIR%%/include/config_form.php
 %%CACTIDIR%%/include/config_settings.php
+@unexec cmp -s %D/%%CACTIDIR%%/include/db-settings.php.orig %D/%%CACTIDIR%%/include/db-settings.php && rm -f %D/%%CACTIDIR%%/include/db-settings.php || true
+%%CACTIDIR%%/include/db-settings.php.orig
+@exec [ -f %D/%%CACTIDIR%%/include/db-settings.php ] || cp %D/%%CACTIDIR%%/include/db-settings.php.orig %D/%%CACTIDIR%%/include/db-settings.php
 %%CACTIDIR%%/include/html/inc_data_source_filter_table.php
 %%CACTIDIR%%/include/html/inc_device_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_filter_table.php
