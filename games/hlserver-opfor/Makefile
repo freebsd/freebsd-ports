@@ -7,6 +7,7 @@
 
 PORTNAME=	opfor
 PORTVERSION=	1.1.0.8
+PORTREVISION=	1
 MASTER_SITES=	http://downloads.planetmirror.com/pub/bluesnews/half-life/opfor/
 DISTNAME=	opfor${PORTVERSION:S/.//g}
 
@@ -17,6 +18,6 @@ WRKSRC=		${WRKDIR}/gearbox
 
 USE_BZIP2=	yes
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"

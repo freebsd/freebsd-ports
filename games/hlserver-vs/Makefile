@@ -7,6 +7,7 @@
 
 PORTNAME=	vs
 PORTVERSION=	5.0
+PORTREVISION=	1
 MASTER_SITES=	ftp://ftp.thaiguy.net/ \
 		http://gamefiles.blueyonder.co.uk/blueyondergames/halflife/modifications/vampireslayer/patches/linux/ \
 		ftp://ftp.daddeln.de/pub/daddeln.de/halflife/Mods/vampire/ \
@@ -19,6 +20,6 @@ COMMENT=	Half-Life mod Vampire Slayer full server package for Linux
 
 WRKSRC=		${WRKDIR}/VS
 
-HALFLIFE_COUNTERSTRIKE_MASTER=  ${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=  ${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"

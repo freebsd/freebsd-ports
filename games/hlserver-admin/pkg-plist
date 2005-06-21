@@ -39,17 +39,15 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Frequently_Asked_Questions_FAQ.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Half_Life_Sounds.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/M00s_Access_Guide.htm
-%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Materials_for_reference_when_installing,_configring_and_using_Admin_Mod.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Materials_for_reference_when_installing,_configuring_and_using_Admin_Mod.htm
-%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Original Admin_Mod_Configuration_Variables_CVARs.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Plugin_Change_Log.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Spawning_Items_Reference.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Where_to_Go_for_Help.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/Introductory_Information.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/License_and_Copyright_Information.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/What_this_document_covers.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Encypted_Passwords.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/How_to_Use_Bots_with_MetaMod_AM_2.50_and_up.htm
-%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Linux_Passwords.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/MySQL_Setup.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Setting_up_server.cfg_and_the_ini_files.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Setting_up_your_ips.ini_file.htm
@@ -63,6 +61,7 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Check_Which_Plugins_Are_Loaded.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Force_Admin_Mod_To_Load_When_The_Map_Starts.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Use_Admin_Mod_Commands_On_Dedicated_Servers.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Use_Weapon_Restriction.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/image1.jpg
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/image10.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/image11.gif
@@ -81,6 +80,8 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image10.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image11.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image12.gif
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image13.gif
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image14.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image2.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image3.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/install_image4.gif
@@ -96,13 +97,14 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/uninstall_image5.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/1st_Time_Linux_Install.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Default_Windows_Installation_of_Admin_Mod.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Extracting_Admin_Mod_the_Right_Way.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Linux_Installation_Information.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Linux_Upgrade_Install.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Manual_Installation_-_Walk-Through.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Manual_Uninstallation_-_Walk-Through.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Running_the_Installation_Script.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Running_the_Uninstallation_Script.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Uninstalling_Admin_Mod.htm
-%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Installing/Unzipping_Admin_Mod_the_Right_Way.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/RoboHHRE.lng
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Scripting_Basics/A_Beginner_s_Guide_to_Scripting.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Scripting_Basics/Compiling_Admin_Mod_Scripts_101.htm
@@ -178,6 +180,7 @@
 %%HLDSDIR%%Adminmod/scripting/binaries/plugin_retribution.amx
 %%HLDSDIR%%Adminmod/scripting/binaries/plugin_spawn.amx
 %%HLDSDIR%%Adminmod/scripting/compiler/sc
+%%HLDSDIR%%Adminmod/scripting/compiler/sc64
 %%HLDSDIR%%Adminmod/scripting/examples/compile
 %%HLDSDIR%%Adminmod/scripting/examples/compile_all
 %%HLDSDIR%%Adminmod/scripting/examples/plugin_CS.sma
@@ -196,6 +199,7 @@
 %%HLDSDIR%%Adminmod/scripting/include/console.inc
 %%HLDSDIR%%Adminmod/scripting/include/core.inc
 %%HLDSDIR%%Adminmod/scripting/include/fixed.inc
+%%HLDSDIR%%Adminmod/scripting/include/math.inc
 %%HLDSDIR%%Adminmod/scripting/include/plugin.inc
 %%HLDSDIR%%Adminmod/scripting/include/string.inc
 %%HLDSDIR%%Adminmod/scripting/myscripts/compile
@@ -226,4 +230,4 @@
 @dirrm %%HLDSDIR%%Adminmod/config/Samples
 @dirrm %%HLDSDIR%%Adminmod/config
 @dirrm %%HLDSDIR%%Adminmod/.amdd
-@dirrm %%HLDSDIR%%Adminmod
+@unexec rmdir %D/%%HLDSDIR%%Adminmod 2>/dev/null || true

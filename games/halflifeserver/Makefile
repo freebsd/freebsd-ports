@@ -5,42 +5,45 @@
 # $FreeBSD$
 #
 
-PORTNAME=	hlds
-PORTVERSION=	3.1.1.1.d
-PORTREVISION=	1
+# XXX: this is the master port to games/hlserver-cs and games/hlserver-dod
+
+PORTNAME?=	hlds
+PORTVERSION?=	1.1.2.0
+.if(${PORTNAME} == hlds)
+PORTEPOCH=	1
+PORTREVISION=	0
+.endif
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.isis.de/members/~hmenze/cs/server/linux/
-DISTFILES=	hlds_l_3111_full.tar.gz \
-		hlds_l_3111d_update.tar.gz
+DISTNAME=	hlds_l_1120_full
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pat@FreeBSD.org
-COMMENT=	Half-Life Dedicated Server for Linux
+COMMENT?=	Steam Enabled Half-Life Dedicated Server with CS and DOD
 
-ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
+ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/hlds_l
 PLIST_SUB=	${PLIST_SUB_FOR_THIS_PORT}
-PLIST_SUB_FOR_THIS_PORT=	HLDSDIR="${HLDSDIR:S/^\///}" LDCONFIG="${LDCONFIG_LINUX}"
+PLIST_SUB_FOR_THIS_PORT=	HLDSDIR="${HLDSDIR:S/^\///}" \
+				HLDSBASE="${HLDSBASE}"
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
-LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
-HLDSDIR=	/usr/games/hlds_l/
+HLDSDIR=	/games/hlds_l/
+HLDSBASE=	games
+HL_PROGRAM=	hlds_run
 
 # files which should be installed with executables perms
-EXECUTABLES=	hltv hlds hlds_run hlds_amd hlds_i486 hlds_i686
+EXECUTABLES=	hltv hlds_run hlds_amd hlds_amd64 hlds_i486 hlds_i686 steam
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/hlds_l_${PORTVERSION:R:S/.//g}_full${EXTRACT_SUFX})
-IGNORE=	"Please download and execute ${DISTNAME}.bin to read valve\'s \
-	agreement and if you agree to the terms, then it will dump the \
-	tarball ${DISTNAME}${EXTRACT_SUFX} to your current directory. \
-	Finally, move ${DISTNAME}${EXTRACT_SUFX} to ${DISTDIR} and run \
-	make again"
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=	"Please download and execute ${DISTNAME}.bin to read Valve\'s \
+	agreement and get the tarball. Move ${DISTNAME}${EXTRACT_SUFX} \
+	to ${DISTDIR} and try again"
 .endif
 
 pre-patch:
@@ -49,7 +52,7 @@ pre-patch:
 		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|rc)" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 
-do-install: install-parse-plist install-run-scripts scan-libs
+do-install: install-parse-plist install-run-scripts
 
 # Contributed by <lioux@FreeBSD.org>
 install-parse-plist: generate-plist
@@ -88,15 +91,12 @@ install-run-scripts:
 .for script in dirs files
 	@${SH} ${WRKDIR}/${script}.sh
 .endfor
-	@if ! (${GREP} -E \"^${HLDSDIR}$$\" ${PREFIX}/etc/ld.so.conf 1>/dev/null 2>&1) ;\
-	then \
-		${ECHO_CMD} ${HLDSDIR} >> ${PREFIX}/etc/ld.so.conf ;\
-	fi
-
-scan-libs:
-	@${LDCONFIG_LINUX}
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} "*README* *README* *README* *README* *README* *README* *README*"
+	@${ECHO_CMD} "------------------------------------------------------------"
+	@${ECHO_CMD} "              Do not run server as root"
+	@${ECHO_CMD} " HLDS ports will be installed in ${PREFIX}/games/hlds_l"
+	@${ECHO_CMD} "------------------------------------------------------------"
 
 .include <bsd.port.post.mk>

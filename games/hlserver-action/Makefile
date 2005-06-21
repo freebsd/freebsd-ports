@@ -7,12 +7,14 @@
 
 PORTNAME=	action
 PORTVERSION=	0.5
+PORTREVISION=	1
 MASTER_SITES=	ftp://ftp.wanadoo.nl/pub/wanadoo/games/HalfLife/Action-Halflife/ \
 		ftp://ftp.exp-network.de/hl/mod/ahl/
 DISTNAME=	action50
 
 COMMENT=	Action Half-Life mod full server package for Linux
+BROKEN=		"Can't fetch file and project went inactive"
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"

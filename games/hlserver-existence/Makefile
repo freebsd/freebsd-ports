@@ -7,12 +7,13 @@
 
 PORTNAME=	existence
 PORTVERSION=	0.1.4.0
+PORTREVISION=	1
 MASTER_SITES=	http://uml-pub.ists.dartmouth.edu/halflife/linux/
 DISTNAME=	x-beta1.4.linux
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Existence (Matrix alike) full server package for Linux
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"

@@ -1,11 +1,5 @@
-This package contains all of the items you'll need to run a
-Half-Life Dedicated Server under FreeBSD (with Linux emulation).
-HLDS will be installed under `/compat/linux/usr/games/hlds_l/`
-Also included with HLDS is TFC and DMC.
+This package contains all of the items you'll need to run
+a Steam Enabled Half-Life Dedicated Server under FreeBSD
+(with Linux emulation).
 
-Visit these following web pages for more information:
-
-WWW: http://half-life.sierra.com/
-
-- Patrick Li
-pat@FreeBSD.org
+WWW: http://www.steampowered.com/

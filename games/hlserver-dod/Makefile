@@ -8,16 +8,13 @@
 PORTNAME=	dod
 PORTVERSION=	1.0b
 PORTEPOCH=	1
-MASTER_SITES=	ftp://ftp.clanserver4u.de/exp/hl/mod/dod/ \
-		ftp://ftp2.extreme-players.de/hl/mod/dod/ \
-		http://mirror.redphive.org/
+PORTREVISION=	2
+PKGNAMEPREFIX=	hlserver-
 
-DISTFILES=	dod_v10_linux${EXTRACT_SUFX} dod_v10b${EXTRACT_SUFX}
+RUN_DEPENDS=	${PREFIX}${HLDSDIR}${HL_PROGRAM}:${HALFLIFE_PORT_MASTER}
 
 COMMENT=	Half-Life mod Day of Defeat full server package for Linux
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../halflifeserver
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
-
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"
