@@ -1,0 +1,95 @@
+%%DATADIR%%/pgsql.sql
+%%DATADIR%%/mysql.sql
+%%DATADIR%%/create_db.pl
+%%PORTDOCS%%%%DOCSDIR%%/docs/clients/cyrus.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/clients/freebsd-courierimap.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/clients/mysql-popper.conf
+%%PORTDOCS%%%%DOCSDIR%%/docs/clients/qpop-mysql.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/clients/freebsd-tpop3d.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-content.conf
+%%PORTDOCS%%%%DOCSDIR%%/docs/database-spec.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/checklist.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/configure
+%%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-helo.conf
+%%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-rcpt.conf
+%%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-spf.conf
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+www/vexim/locale/en_EN/LC_MESSAGES/en.po
+www/vexim/locale/en_EN/LC_MESSAGES/messages.mo
+www/vexim/locale/ro_RO/LC_MESSAGES/messages.mo
+www/vexim/locale/ro_RO/LC_MESSAGES/ro.po
+www/vexim/locale/hu_HU/LC_MESSAGES/hu.po
+www/vexim/locale/hu_HU/LC_MESSAGES/messages.mo
+www/vexim/locale/de_DE/LC_MESSAGES/de.po
+www/vexim/locale/de_DE/LC_MESSAGES/messages.mo
+www/vexim/images/check.gif
+www/vexim/images/trashcan.gif
+www/vexim/config/authpostmaster.php
+www/vexim/config/authsite.php
+www/vexim/config/authuser.php
+www/vexim/config/functions.php
+www/vexim/config/header.php
+www/vexim/config/variables.php
+www/vexim/config/en.po
+www/vexim/config/i18n.php
+www/vexim/config/template.pot
+www/vexim/config/hu.po
+www/vexim/config/httpheaders.php
+www/vexim/sitepasswordsubmit.php
+www/vexim/sitepassword.php
+www/vexim/sitedelete.php
+www/vexim/sitechangesubmit.php
+www/vexim/sitechange.php
+www/vexim/siteaddsubmit.php
+www/vexim/siteadd.php
+www/vexim/site.php
+www/vexim/logout.php
+www/vexim/login.php
+www/vexim/index.php
+www/vexim/adminuserdelete.php
+www/vexim/adminuserchangesubmit.php
+www/vexim/adminuserchange.php
+www/vexim/adminuserblocksubmit.php
+www/vexim/adminuseraddsubmit.php
+www/vexim/adminuseradd.php
+www/vexim/adminuser.php
+www/vexim/adminlists.php
+www/vexim/adminfaildelete.php
+www/vexim/adminfailchangesubmit.php
+www/vexim/adminfailchange.php
+www/vexim/adminfailaddsubmit.php
+www/vexim/adminfailadd.php
+www/vexim/adminfail.php
+www/vexim/admincatchallsubmit.php
+www/vexim/admincatchalladd.php
+www/vexim/admincatchall.php
+www/vexim/adminaliasdelete.php
+www/vexim/adminaliaschangesubmit.php
+www/vexim/userchangesubmit.php
+www/vexim/adminaliasaddsubmit.php
+www/vexim/adminaliasadd.php
+www/vexim/adminalias.php
+www/vexim/admin.php
+www/vexim/adminaliaschange.php
+www/vexim/userchange.php
+www/vexim/userblocksubmit.php
+www/vexim/style.css
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/clients
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm www/vexim/locale/en_EN/LC_MESSAGES
+@dirrm www/vexim/locale/en_EN
+@dirrm www/vexim/locale/ro_RO/LC_MESSAGES
+@dirrm www/vexim/locale/ro_RO
+@dirrm www/vexim/locale/hu_HU/LC_MESSAGES
+@dirrm www/vexim/locale/hu_HU
+@dirrm www/vexim/locale/de_DE/LC_MESSAGES
+@dirrm www/vexim/locale/de_DE
+@dirrm www/vexim/locale
+@dirrm www/vexim/images
+@dirrm www/vexim/config
+@dirrm www/vexim
