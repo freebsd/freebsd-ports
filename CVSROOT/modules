@@ -11950,6 +11950,7 @@ vera		ports/misc/vera
 verlihub	ports/net/verlihub
 verlihub-plugins	ports/net/verlihub-plugins
 vertex		ports/graphics/vertex
+vexim		ports/mail/vexim
 vgb		ports/emulators/vgb
 vgb-bin		ports/emulators/vgb-bin
 vgba-bin	ports/emulators/vgba-bin
