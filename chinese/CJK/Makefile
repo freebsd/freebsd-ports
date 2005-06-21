@@ -16,6 +16,8 @@ DISTNAME=	cjk-${PORTVERSION}
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 
+BROKEN=		"Installation and dependency problems"
+
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \
 		ttf2pk:${PORTSDIR}/print/freetype:build
