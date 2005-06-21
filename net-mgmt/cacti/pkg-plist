@@ -128,7 +128,7 @@
 %%CACTIDIR%%/include/bottom_footer.php
 @unexec cmp -s %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php && rm -f %D/%%CACTIDIR%%/include/config.php
 %%CACTIDIR%%/include/config.php.orig
-@exec [ -f %D/%%CACTIDIR%%/include/config.php ] || cp %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php
+@exec [ ! -f %D/%%CACTIDIR%%/include/config.php ] || cp %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php
 %%CACTIDIR%%/include/config_arrays.php
 %%CACTIDIR%%/include/config_constants.php
 %%CACTIDIR%%/include/config_form.php
