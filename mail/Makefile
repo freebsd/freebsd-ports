@@ -501,6 +501,7 @@
     SUBDIR += up-imapproxy
     SUBDIR += usendmail
     SUBDIR += vbsfilter
+    SUBDIR += vexim
     SUBDIR += vm
     SUBDIR += vm-pop3d
     SUBDIR += vmailmgr
