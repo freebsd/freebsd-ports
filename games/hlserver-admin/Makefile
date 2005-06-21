@@ -1,34 +1,26 @@
 # New ports collection makefile for:    Half Life Admin Mod
 # Date created:				Sun Apr 29 15:58:33 EDT 2001
-# Whom:					pat@databits.net et al
+# Whom:					pat et al
 #
 # $FreeBSD$
 #
 
 PORTNAME=	admin
-PORTVERSION=	2.50.56a
+PORTVERSION=	2.50.60
 PORTEPOCH=	1
-MASTER_SITES=	http://www.adminmod.org/downloads/update/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	halflifeadmin
-DISTNAME=	halflife-admin-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	halflife-admin-2.50.60-linux
 DIST_SUBDIR=	${PORTNAME}
 
 COMMENT=	Popular Half-Life mod server administration tool for Linux
 
-USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/Adminmod
-
-slaveport-post-extract:
-	@${PERL} -pi.orig -e \
-		's|/usr/local/hlds_l|${PREFIX}${HLDSDIR:S/\/$//}|' \
-		${WRKSRC}/install_admin
 
 slaveport-post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/install_admin \
 		${PREFIX}${HLDSDIR}/Adminmod
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"

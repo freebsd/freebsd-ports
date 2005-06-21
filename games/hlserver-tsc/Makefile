@@ -7,6 +7,7 @@
 
 PORTNAME=	tsc
 PORTVERSION=	0.2.5.3.b
+PORTREVISION=	1
 MASTER_SITES=	http://tsc.austin2600.org/ \
 		http://www.mystwalker.de/cs/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/^0.//:S/.b$/beta/}
@@ -24,6 +25,6 @@ slaveport-post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"

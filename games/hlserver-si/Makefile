@@ -7,6 +7,7 @@
 
 PORTNAME=	si
 PORTVERSION=	0.97.0ra
+PORTREVISION=	1
 MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/si/ \
 		ftp://ftp.clanserver4u.de/exp/hl/mod/si/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g:S/0r//}-linux
@@ -16,8 +17,8 @@ COMMENT=	Half-Life mod Science and Industry full server package for Linux
 
 _DONT_INCLUDE_MK_=yes
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"
 
 .include <bsd.port.mk>

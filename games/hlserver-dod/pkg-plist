@@ -1,47 +1,10 @@
-%%HLDSDIR%%dod/MODELS/mapmodels/big_water_tower.mdl
-%%HLDSDIR%%dod/MODELS/mapmodels/hk_neucar_shot.mdl
-%%HLDSDIR%%dod/MODELS/mapmodels/ouitz_tree2.mdl
-%%HLDSDIR%%dod/cached.wad
+%%HLDSDIR%%dod/GameServerConfig.vdf
+%%HLDSDIR%%dod/autoexec.cfg
 %%HLDSDIR%%dod/cl_dlls/client.dll
-%%HLDSDIR%%dod/classes/short_30cal.txt
-%%HLDSDIR%%dod/classes/short_bar.txt
-%%HLDSDIR%%dod/classes/short_bren.txt
-%%HLDSDIR%%dod/classes/short_enfield.txt
-%%HLDSDIR%%dod/classes/short_enfield_scoped.txt
-%%HLDSDIR%%dod/classes/short_garand.txt
-%%HLDSDIR%%dod/classes/short_greasegun.txt
-%%HLDSDIR%%dod/classes/short_k43.txt
-%%HLDSDIR%%dod/classes/short_k98.txt
-%%HLDSDIR%%dod/classes/short_k98_scoped.txt
-%%HLDSDIR%%dod/classes/short_m1carbine.txt
-%%HLDSDIR%%dod/classes/short_mg34.txt
-%%HLDSDIR%%dod/classes/short_mg42.txt
-%%HLDSDIR%%dod/classes/short_mp40.txt
-%%HLDSDIR%%dod/classes/short_mp44.txt
-%%HLDSDIR%%dod/classes/short_para_30cal.txt
-%%HLDSDIR%%dod/classes/short_para_bar.txt
-%%HLDSDIR%%dod/classes/short_para_fg42.txt
-%%HLDSDIR%%dod/classes/short_para_fg42_scoped.txt
-%%HLDSDIR%%dod/classes/short_para_folding_carbine.txt
-%%HLDSDIR%%dod/classes/short_para_garand.txt
-%%HLDSDIR%%dod/classes/short_para_greasegun.txt
-%%HLDSDIR%%dod/classes/short_para_k43.txt
-%%HLDSDIR%%dod/classes/short_para_k98.txt
-%%HLDSDIR%%dod/classes/short_para_k98_scoped.txt
-%%HLDSDIR%%dod/classes/short_para_mg34.txt
-%%HLDSDIR%%dod/classes/short_para_mg42.txt
-%%HLDSDIR%%dod/classes/short_para_mp40.txt
-%%HLDSDIR%%dod/classes/short_para_mp44.txt
-%%HLDSDIR%%dod/classes/short_para_springfield.txt
-%%HLDSDIR%%dod/classes/short_para_tommy.txt
-%%HLDSDIR%%dod/classes/short_random.txt
-%%HLDSDIR%%dod/classes/short_springfield.txt
-%%HLDSDIR%%dod/classes/short_sten.txt
-%%HLDSDIR%%dod/classes/short_tommy.txt
 %%HLDSDIR%%dod/decals.wad
 %%HLDSDIR%%dod/delta.lst
+%%HLDSDIR%%dod/dlls/dod.dll
 %%HLDSDIR%%dod/dlls/dod_i386.so
-%%HLDSDIR%%dod/dod.fgd
 %%HLDSDIR%%dod/dod_anzio.cfg
 %%HLDSDIR%%dod/dod_anzio.wad
 %%HLDSDIR%%dod/dod_avalanche.cfg
@@ -51,10 +14,14 @@
 %%HLDSDIR%%dod/dod_charlie.cfg
 %%HLDSDIR%%dod/dod_charlie.wad
 %%HLDSDIR%%dod/dod_chemille.cfg
+%%HLDSDIR%%dod/dod_chemille.wad
 %%HLDSDIR%%dod/dod_donner.cfg
 %%HLDSDIR%%dod/dod_donner.wad
+%%HLDSDIR%%dod/dod_escape.cfg
+%%HLDSDIR%%dod/dod_escape.wad
 %%HLDSDIR%%dod/dod_flash.cfg
 %%HLDSDIR%%dod/dod_flash.wad
+%%HLDSDIR%%dod/dod_flugplatz.wad
 %%HLDSDIR%%dod/dod_forest.cfg
 %%HLDSDIR%%dod/dod_forest.wad
 %%HLDSDIR%%dod/dod_glider.cfg
@@ -72,7 +39,6 @@
 %%HLDSDIR%%dod/dod_vicenza.wad
 %%HLDSDIR%%dod/dod_zalec.cfg
 %%HLDSDIR%%dod/dod_zalec.wad
-%%HLDSDIR%%dod/dodicon.ico
 %%HLDSDIR%%dod/events/effects/blood.sc
 %%HLDSDIR%%dod/events/effects/bloodstream.sc
 %%HLDSDIR%%dod/events/effects/bodydamage.sc
@@ -80,6 +46,7 @@
 %%HLDSDIR%%dod/events/effects/bubbletrails.sc
 %%HLDSDIR%%dod/events/effects/explosion.sc
 %%HLDSDIR%%dod/events/effects/helmet.sc
+%%HLDSDIR%%dod/events/effects/overheat.sc
 %%HLDSDIR%%dod/events/effects/rockettrail.sc
 %%HLDSDIR%%dod/events/effects/shards.sc
 %%HLDSDIR%%dod/events/effects/smoke.sc
@@ -121,334 +88,116 @@
 %%HLDSDIR%%dod/events/weapons/thompson.sc
 %%HLDSDIR%%dod/events/weapons/webley.sc
 %%HLDSDIR%%dod/gfx.wad
-%%HLDSDIR%%dod/gfx/env/avabk.tga
-%%HLDSDIR%%dod/gfx/env/avadn.tga
-%%HLDSDIR%%dod/gfx/env/avaft.tga
-%%HLDSDIR%%dod/gfx/env/avalf.tga
-%%HLDSDIR%%dod/gfx/env/avart.tga
-%%HLDSDIR%%dod/gfx/env/avaup.tga
-%%HLDSDIR%%dod/gfx/env/grnplsntbk.tga
-%%HLDSDIR%%dod/gfx/env/grnplsntdn.tga
-%%HLDSDIR%%dod/gfx/env/grnplsntft.tga
-%%HLDSDIR%%dod/gfx/env/grnplsntlf.tga
-%%HLDSDIR%%dod/gfx/env/grnplsntrt.tga
-%%HLDSDIR%%dod/gfx/env/grnplsntup.tga
-%%HLDSDIR%%dod/gfx/env/jagdbk.tga
-%%HLDSDIR%%dod/gfx/env/jagddn.tga
-%%HLDSDIR%%dod/gfx/env/jagdft.tga
-%%HLDSDIR%%dod/gfx/env/jagdlf.tga
-%%HLDSDIR%%dod/gfx/env/jagdrt.tga
-%%HLDSDIR%%dod/gfx/env/jagdup.tga
-%%HLDSDIR%%dod/gfx/env/killertomatobk.tga
-%%HLDSDIR%%dod/gfx/env/killertomatodn.tga
-%%HLDSDIR%%dod/gfx/env/killertomatoft.tga
-%%HLDSDIR%%dod/gfx/env/killertomatolf.tga
-%%HLDSDIR%%dod/gfx/env/killertomatort.tga
-%%HLDSDIR%%dod/gfx/env/killertomatoup.tga
-%%HLDSDIR%%dod/gfx/env/kraftstoffbk.tga
-%%HLDSDIR%%dod/gfx/env/kraftstoffdn.tga
-%%HLDSDIR%%dod/gfx/env/kraftstoffft.tga
-%%HLDSDIR%%dod/gfx/env/kraftstofflf.tga
-%%HLDSDIR%%dod/gfx/env/kraftstoffrt.tga
-%%HLDSDIR%%dod/gfx/env/kraftstoffup.tga
-%%HLDSDIR%%dod/gfx/env/morningdew_bk.tga
-%%HLDSDIR%%dod/gfx/env/morningdew_dn.tga
-%%HLDSDIR%%dod/gfx/env/morningdew_ft.tga
-%%HLDSDIR%%dod/gfx/env/morningdew_lf.tga
-%%HLDSDIR%%dod/gfx/env/morningdew_rt.tga
-%%HLDSDIR%%dod/gfx/env/morningdew_up.tga
-%%HLDSDIR%%dod/gfx/env/morningdewbk.tga
-%%HLDSDIR%%dod/gfx/env/morningdewdn.tga
-%%HLDSDIR%%dod/gfx/env/morningdewft.tga
-%%HLDSDIR%%dod/gfx/env/morningdewlf.tga
-%%HLDSDIR%%dod/gfx/env/morningdewrt.tga
-%%HLDSDIR%%dod/gfx/env/morningdewup.tga
-%%HLDSDIR%%dod/gfx/env/rubblebk.tga
-%%HLDSDIR%%dod/gfx/env/rubbledn.tga
-%%HLDSDIR%%dod/gfx/env/rubbleft.tga
-%%HLDSDIR%%dod/gfx/env/rubblelf.tga
-%%HLDSDIR%%dod/gfx/env/rubblert.tga
-%%HLDSDIR%%dod/gfx/env/rubbleup.tga
-%%HLDSDIR%%dod/gfx/env/sildom2bk.tga
-%%HLDSDIR%%dod/gfx/env/sildom2dn.tga
-%%HLDSDIR%%dod/gfx/env/sildom2ft.tga
-%%HLDSDIR%%dod/gfx/env/sildom2lf.tga
-%%HLDSDIR%%dod/gfx/env/sildom2rt.tga
-%%HLDSDIR%%dod/gfx/env/sildom2up.tga
-%%HLDSDIR%%dod/gfx/env/snowcliffbk.tga
-%%HLDSDIR%%dod/gfx/env/snowcliffdn.tga
-%%HLDSDIR%%dod/gfx/env/snowcliffft.tga
-%%HLDSDIR%%dod/gfx/env/snowclifflf.tga
-%%HLDSDIR%%dod/gfx/env/snowcliffrt.tga
-%%HLDSDIR%%dod/gfx/env/snowcliffup.tga
-%%HLDSDIR%%dod/gfx/env/stbk.tga
-%%HLDSDIR%%dod/gfx/env/stdn.tga
-%%HLDSDIR%%dod/gfx/env/stft.tga
-%%HLDSDIR%%dod/gfx/env/stlf.tga
-%%HLDSDIR%%dod/gfx/env/strt.tga
-%%HLDSDIR%%dod/gfx/env/stup.tga
-%%HLDSDIR%%dod/gfx/shell/btns_main.bmp
-%%HLDSDIR%%dod/gfx/shell/cb_checked.bmp
-%%HLDSDIR%%dod/gfx/shell/cb_disabled.bmp
-%%HLDSDIR%%dod/gfx/shell/cb_down.bmp
-%%HLDSDIR%%dod/gfx/shell/cb_empty.bmp
-%%HLDSDIR%%dod/gfx/shell/cb_over.bmp
-%%HLDSDIR%%dod/gfx/shell/cls_d.bmp
-%%HLDSDIR%%dod/gfx/shell/cls_f.bmp
-%%HLDSDIR%%dod/gfx/shell/cls_n.bmp
-%%HLDSDIR%%dod/gfx/shell/colors.lst
-%%HLDSDIR%%dod/gfx/shell/console.bmp
-%%HLDSDIR%%dod/gfx/shell/dedicate.bmp
-%%HLDSDIR%%dod/gfx/shell/divider.bmp
-%%HLDSDIR%%dod/gfx/shell/dnarrowd.bmp
-%%HLDSDIR%%dod/gfx/shell/dnarrowf.bmp
-%%HLDSDIR%%dod/gfx/shell/dnarrowp.bmp
-%%HLDSDIR%%dod/gfx/shell/down.bmp
-%%HLDSDIR%%dod/gfx/shell/favorite.bmp
-%%HLDSDIR%%dod/gfx/shell/gamma.bmp
-%%HLDSDIR%%dod/gfx/shell/head_advanced.bmp
-%%HLDSDIR%%dod/gfx/shell/head_advoptions.bmp
-%%HLDSDIR%%dod/gfx/shell/head_audio.bmp
-%%HLDSDIR%%dod/gfx/shell/head_config.bmp
-%%HLDSDIR%%dod/gfx/shell/head_controls.bmp
-%%HLDSDIR%%dod/gfx/shell/head_creategame.bmp
-%%HLDSDIR%%dod/gfx/shell/head_createroom.bmp
-%%HLDSDIR%%dod/gfx/shell/head_custom.bmp
-%%HLDSDIR%%dod/gfx/shell/head_customize.bmp
-%%HLDSDIR%%dod/gfx/shell/head_filter.bmp
-%%HLDSDIR%%dod/gfx/shell/head_gameopts.bmp
-%%HLDSDIR%%dod/gfx/shell/head_gore.bmp
-%%HLDSDIR%%dod/gfx/shell/head_inetgames.bmp
-%%HLDSDIR%%dod/gfx/shell/head_keyboard.bmp
-%%HLDSDIR%%dod/gfx/shell/head_lan.bmp
-%%HLDSDIR%%dod/gfx/shell/head_load.bmp
-%%HLDSDIR%%dod/gfx/shell/head_multi.bmp
-%%HLDSDIR%%dod/gfx/shell/head_newgame.bmp
-%%HLDSDIR%%dod/gfx/shell/head_readme.bmp
-%%HLDSDIR%%dod/gfx/shell/head_room.bmp
-%%HLDSDIR%%dod/gfx/shell/head_rooms.bmp
-%%HLDSDIR%%dod/gfx/shell/head_save.bmp
-%%HLDSDIR%%dod/gfx/shell/head_saveload.bmp
-%%HLDSDIR%%dod/gfx/shell/head_single.bmp
-%%HLDSDIR%%dod/gfx/shell/head_specgames.bmp
-%%HLDSDIR%%dod/gfx/shell/head_video.bmp
-%%HLDSDIR%%dod/gfx/shell/head_vidmodes.bmp
-%%HLDSDIR%%dod/gfx/shell/head_vidoptions.bmp
-%%HLDSDIR%%dod/gfx/shell/kb_act.lst
-%%HLDSDIR%%dod/gfx/shell/kb_def.lst
-%%HLDSDIR%%dod/gfx/shell/larrowdefault.bmp
-%%HLDSDIR%%dod/gfx/shell/larrowflyover.bmp
-%%HLDSDIR%%dod/gfx/shell/larrowpressed.bmp
-%%HLDSDIR%%dod/gfx/shell/linux.bmp
-%%HLDSDIR%%dod/gfx/shell/listen.bmp
-%%HLDSDIR%%dod/gfx/shell/lock.bmp
-%%HLDSDIR%%dod/gfx/shell/logo.bmp
-%%HLDSDIR%%dod/gfx/shell/min_d.bmp
-%%HLDSDIR%%dod/gfx/shell/min_f.bmp
-%%HLDSDIR%%dod/gfx/shell/min_n.bmp
-%%HLDSDIR%%dod/gfx/shell/nonfav.bmp
-%%HLDSDIR%%dod/gfx/shell/pcg.bmp
-%%HLDSDIR%%dod/gfx/shell/proxy.bmp
-%%HLDSDIR%%dod/gfx/shell/rarrowdefault.bmp
-%%HLDSDIR%%dod/gfx/shell/rarrowflyover.bmp
-%%HLDSDIR%%dod/gfx/shell/rarrowpressed.bmp
-%%HLDSDIR%%dod/gfx/shell/scrn.bmp
-%%HLDSDIR%%dod/gfx/shell/slider.bmp
-%%HLDSDIR%%dod/gfx/shell/sm_dnarf.bmp
-%%HLDSDIR%%dod/gfx/shell/sm_dnarw.bmp
-%%HLDSDIR%%dod/gfx/shell/splash.bmp
-%%HLDSDIR%%dod/gfx/shell/strings.lst
-%%HLDSDIR%%dod/gfx/shell/thumb.bmp
-%%HLDSDIR%%dod/gfx/shell/unlock.bmp
-%%HLDSDIR%%dod/gfx/shell/up.bmp
-%%HLDSDIR%%dod/gfx/shell/uparrowd.bmp
-%%HLDSDIR%%dod/gfx/shell/uparrowf.bmp
-%%HLDSDIR%%dod/gfx/shell/uparrowp.bmp
-%%HLDSDIR%%dod/gfx/shell/windows.bmp
-%%HLDSDIR%%dod/gfx/shell/won_logo.bmp
-%%HLDSDIR%%dod/gfx/vgui/640_30cal.tga
-%%HLDSDIR%%dod/gfx/vgui/640_allied_random.tga
-%%HLDSDIR%%dod/gfx/vgui/640_allies_select.tga
-%%HLDSDIR%%dod/gfx/vgui/640_autoassign.tga
-%%HLDSDIR%%dod/gfx/vgui/640_axis_random.tga
-%%HLDSDIR%%dod/gfx/vgui/640_axis_select.tga
-%%HLDSDIR%%dod/gfx/vgui/640_bar.tga
-%%HLDSDIR%%dod/gfx/vgui/640_bren.tga
-%%HLDSDIR%%dod/gfx/vgui/640_brit_random.tga
-%%HLDSDIR%%dod/gfx/vgui/640_british_select.tga
-%%HLDSDIR%%dod/gfx/vgui/640_cancel.tga
-%%HLDSDIR%%dod/gfx/vgui/640_enfield.tga
-%%HLDSDIR%%dod/gfx/vgui/640_enfield_scoped.tga
-%%HLDSDIR%%dod/gfx/vgui/640_fg42.tga
-%%HLDSDIR%%dod/gfx/vgui/640_fg42_scoped.tga
-%%HLDSDIR%%dod/gfx/vgui/640_folding_carbine.tga
-%%HLDSDIR%%dod/gfx/vgui/640_garand.tga
-%%HLDSDIR%%dod/gfx/vgui/640_greasegun.tga
-%%HLDSDIR%%dod/gfx/vgui/640_k43.tga
-%%HLDSDIR%%dod/gfx/vgui/640_k98.tga
-%%HLDSDIR%%dod/gfx/vgui/640_k98_scoped.tga
-%%HLDSDIR%%dod/gfx/vgui/640_m1carbine.tga
-%%HLDSDIR%%dod/gfx/vgui/640_mg34.tga
-%%HLDSDIR%%dod/gfx/vgui/640_mg42.tga
-%%HLDSDIR%%dod/gfx/vgui/640_mp40.tga
-%%HLDSDIR%%dod/gfx/vgui/640_mp44.tga
-%%HLDSDIR%%dod/gfx/vgui/640_spec_select.tga
-%%HLDSDIR%%dod/gfx/vgui/640_springfield.tga
-%%HLDSDIR%%dod/gfx/vgui/640_sten.tga
-%%HLDSDIR%%dod/gfx/vgui/640_tommy.tga
-%%HLDSDIR%%dod/gfx/vgui/arrowdown.tga
-%%HLDSDIR%%dod/gfx/vgui/arrowup.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/1024_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/1152_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/1280_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/1600_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/320_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/400_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/512_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/640_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/fonts/800_hintmessage text.tga
-%%HLDSDIR%%dod/gfx/vgui/hint_brithead.tga
-%%HLDSDIR%%dod/gfx/vgui/hint_gerhead.tga
-%%HLDSDIR%%dod/gfx/vgui/hint_ushead.tga
-%%HLDSDIR%%dod/gfx/vgui/map_1flag.tga
-%%HLDSDIR%%dod/gfx/vgui/map_2flag.tga
-%%HLDSDIR%%dod/gfx/vgui/map_3flag.tga
-%%HLDSDIR%%dod/gfx/vgui/map_bflag.tga
-%%HLDSDIR%%dod/gfx/vgui/map_gflag.tga
-%%HLDSDIR%%dod/gfx/vgui/map_mgflag.tga
-%%HLDSDIR%%dod/gfx/vgui/map_sflag.tga
-%%HLDSDIR%%dod/gfx/vgui/map_usflag.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_e.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_n.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_ne.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_nw.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_s.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_se.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_sw.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_arrow_w.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_green_x.tga
-%%HLDSDIR%%dod/gfx/vgui/marker_red_x.tga
 %%HLDSDIR%%dod/hlbasics.wad
 %%HLDSDIR%%dod/liblist.gam
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual.html
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/640_enfield.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/bar-content02b.gif
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/dayofdefeat.css
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/dod-playermanualtop.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/filelist.xml
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/hud.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image001.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image002.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image003.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image004.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image005.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image006.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image007.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image008.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image009.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image010.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image011.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image012.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image013.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image014.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image015.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image016.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image017.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image018.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image019.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image020.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image021.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image022.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image023.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image024.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image025.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image026.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image027.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image028.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image029.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image030.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image031.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image032.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image033.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image034.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image035.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image036.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image037.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image038.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image039.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image040.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image041.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image042.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image043.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image044.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image045.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/image046.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_anzio.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_anzio.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_avalanche.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_avalanche.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_caen.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_caen.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie1.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie1.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie2.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie2.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_chemille.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_chemille.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_chemille2.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_donner.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_donner.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_flash.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_flash.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_forest.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_forest.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_glider.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_glider.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_jagd.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_jagd.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kalt.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kalt.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kraftstoff.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kraftstoff.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_merderet.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_merderet.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_vicenza.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_vicenza.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_zalec.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/map_images/dod_zalec.opt
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/texture.jpg
-%%PORTDOCS%%%%HLDSDIR%%dod/manual/manual_images/vgui.jpg
+%%HLDSDIR%%dod/manual/manual.html
+%%HLDSDIR%%dod/manual/manual_images/640_enfield.jpg
+%%HLDSDIR%%dod/manual/manual_images/Bar-Content02b.gif
+%%HLDSDIR%%dod/manual/manual_images/DOD-PlayerManualTop.jpg
+%%HLDSDIR%%dod/manual/manual_images/DayofDefeat.css
+%%HLDSDIR%%dod/manual/manual_images/filelist.xml
+%%HLDSDIR%%dod/manual/manual_images/hud.jpg
+%%HLDSDIR%%dod/manual/manual_images/image001.jpg
+%%HLDSDIR%%dod/manual/manual_images/image002.jpg
+%%HLDSDIR%%dod/manual/manual_images/image003.jpg
+%%HLDSDIR%%dod/manual/manual_images/image004.jpg
+%%HLDSDIR%%dod/manual/manual_images/image005.jpg
+%%HLDSDIR%%dod/manual/manual_images/image006.jpg
+%%HLDSDIR%%dod/manual/manual_images/image007.jpg
+%%HLDSDIR%%dod/manual/manual_images/image008.jpg
+%%HLDSDIR%%dod/manual/manual_images/image009.jpg
+%%HLDSDIR%%dod/manual/manual_images/image010.jpg
+%%HLDSDIR%%dod/manual/manual_images/image011.jpg
+%%HLDSDIR%%dod/manual/manual_images/image012.jpg
+%%HLDSDIR%%dod/manual/manual_images/image013.jpg
+%%HLDSDIR%%dod/manual/manual_images/image014.jpg
+%%HLDSDIR%%dod/manual/manual_images/image015.jpg
+%%HLDSDIR%%dod/manual/manual_images/image016.jpg
+%%HLDSDIR%%dod/manual/manual_images/image017.jpg
+%%HLDSDIR%%dod/manual/manual_images/image018.jpg
+%%HLDSDIR%%dod/manual/manual_images/image019.jpg
+%%HLDSDIR%%dod/manual/manual_images/image020.jpg
+%%HLDSDIR%%dod/manual/manual_images/image021.jpg
+%%HLDSDIR%%dod/manual/manual_images/image022.jpg
+%%HLDSDIR%%dod/manual/manual_images/image023.jpg
+%%HLDSDIR%%dod/manual/manual_images/image024.jpg
+%%HLDSDIR%%dod/manual/manual_images/image025.jpg
+%%HLDSDIR%%dod/manual/manual_images/image026.jpg
+%%HLDSDIR%%dod/manual/manual_images/image027.jpg
+%%HLDSDIR%%dod/manual/manual_images/image028.jpg
+%%HLDSDIR%%dod/manual/manual_images/image029.jpg
+%%HLDSDIR%%dod/manual/manual_images/image030.jpg
+%%HLDSDIR%%dod/manual/manual_images/image031.jpg
+%%HLDSDIR%%dod/manual/manual_images/image032.jpg
+%%HLDSDIR%%dod/manual/manual_images/image033.jpg
+%%HLDSDIR%%dod/manual/manual_images/image034.jpg
+%%HLDSDIR%%dod/manual/manual_images/image035.jpg
+%%HLDSDIR%%dod/manual/manual_images/image036.jpg
+%%HLDSDIR%%dod/manual/manual_images/image037.jpg
+%%HLDSDIR%%dod/manual/manual_images/image038.jpg
+%%HLDSDIR%%dod/manual/manual_images/image039.jpg
+%%HLDSDIR%%dod/manual/manual_images/image040.jpg
+%%HLDSDIR%%dod/manual/manual_images/image041.jpg
+%%HLDSDIR%%dod/manual/manual_images/image042.jpg
+%%HLDSDIR%%dod/manual/manual_images/image043.jpg
+%%HLDSDIR%%dod/manual/manual_images/image044.jpg
+%%HLDSDIR%%dod/manual/manual_images/image045.jpg
+%%HLDSDIR%%dod/manual/manual_images/image046.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_anzio.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_anzio.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_avalanche.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_avalanche.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_caen.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_caen.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie1.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie1.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie2.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_charlie2.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_chemille.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_chemille.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_chemille2.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_donner.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_donner.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_flash.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_flash.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_forest.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_forest.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_glider.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_glider.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_jagd.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_jagd.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kalt.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kalt.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kraftstoff.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_kraftstoff.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_merderet.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_merderet.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_vicenza.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_vicenza.opt
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_zalec.jpg
+%%HLDSDIR%%dod/manual/manual_images/map_images/dod_zalec.opt
+%%HLDSDIR%%dod/manual/manual_images/texture.jpg
+%%HLDSDIR%%dod/manual/manual_images/vgui.jpg
 %%HLDSDIR%%dod/mapcycle.txt
+%%HLDSDIR%%dod/mapmarkers.txt
+%%HLDSDIR%%dod/mapmenu.txt
 %%HLDSDIR%%dod/maps/dod_anzio.bsp
-%%HLDSDIR%%dod/maps/dod_anzio.txt
 %%HLDSDIR%%dod/maps/dod_avalanche.bsp
-%%HLDSDIR%%dod/maps/dod_avalanche.txt
 %%HLDSDIR%%dod/maps/dod_caen.bsp
-%%HLDSDIR%%dod/maps/dod_caen.txt
 %%HLDSDIR%%dod/maps/dod_charlie.bsp
-%%HLDSDIR%%dod/maps/dod_charlie.txt
 %%HLDSDIR%%dod/maps/dod_chemille.bsp
-%%HLDSDIR%%dod/maps/dod_chemille.txt
 %%HLDSDIR%%dod/maps/dod_donner.bsp
-%%HLDSDIR%%dod/maps/dod_donner.txt
+%%HLDSDIR%%dod/maps/dod_escape.bsp
 %%HLDSDIR%%dod/maps/dod_flash.bsp
-%%HLDSDIR%%dod/maps/dod_flash.txt
+%%HLDSDIR%%dod/maps/dod_flugplatz.bsp
 %%HLDSDIR%%dod/maps/dod_forest.bsp
-%%HLDSDIR%%dod/maps/dod_forest.txt
 %%HLDSDIR%%dod/maps/dod_glider.bsp
-%%HLDSDIR%%dod/maps/dod_glider.txt
 %%HLDSDIR%%dod/maps/dod_jagd.bsp
-%%HLDSDIR%%dod/maps/dod_jagd.txt
 %%HLDSDIR%%dod/maps/dod_kalt.bsp
-%%HLDSDIR%%dod/maps/dod_kalt.txt
 %%HLDSDIR%%dod/maps/dod_kraftstoff.bsp
-%%HLDSDIR%%dod/maps/dod_kraftstoff.txt
 %%HLDSDIR%%dod/maps/dod_merderet.bsp
-%%HLDSDIR%%dod/maps/dod_merderet.txt
 %%HLDSDIR%%dod/maps/dod_vicenza.bsp
-%%HLDSDIR%%dod/maps/dod_vicenza.txt
 %%HLDSDIR%%dod/maps/dod_zalec.bsp
-%%HLDSDIR%%dod/maps/dod_zalec.txt
 %%HLDSDIR%%dod/models/allied_ammo.mdl
 %%HLDSDIR%%dod/models/allied_gibs.mdl
 %%HLDSDIR%%dod/models/allied_grunt.mdl
@@ -476,19 +225,24 @@
 %%HLDSDIR%%dod/models/mapmodels/barber_sign.mdl
 %%HLDSDIR%%dod/models/mapmodels/bell.mdl
 %%HLDSDIR%%dod/models/mapmodels/big_water_tower.mdl
+%%HLDSDIR%%dod/models/mapmodels/bomb.mdl
 %%HLDSDIR%%dod/models/mapmodels/bord.mdl
+%%HLDSDIR%%dod/models/mapmodels/bridge_cart.mdl
 %%HLDSDIR%%dod/models/mapmodels/bulb.mdl
 %%HLDSDIR%%dod/models/mapmodels/bunny.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_barrel_brown.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_barrels_pallet.mdl
+%%HLDSDIR%%dod/models/mapmodels/by_blueprints.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_boat_metal.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_canopy.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_cliff_face.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_furniture_group-wreck.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_pipe_set1.mdl
+%%HLDSDIR%%dod/models/mapmodels/by_pipeline_smokestack.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_rubble_set.mdl
 %%HLDSDIR%%dod/models/mapmodels/by_statue_snow.mdl
 %%HLDSDIR%%dod/models/mapmodels/car021.mdl
+%%HLDSDIR%%dod/models/mapmodels/charlie_plans.mdl
 %%HLDSDIR%%dod/models/mapmodels/charlie_shingle.mdl
 %%HLDSDIR%%dod/models/mapmodels/charlie_wire.mdl
 %%HLDSDIR%%dod/models/mapmodels/concretegibs.mdl
@@ -503,10 +257,18 @@
 %%HLDSDIR%%dod/models/mapmodels/dod_jagd_tub.mdl
 %%HLDSDIR%%dod/models/mapmodels/dod_tree1.mdl
 %%HLDSDIR%%dod/models/mapmodels/door1.mdl
+%%HLDSDIR%%dod/models/mapmodels/electric_wire1.mdl
 %%HLDSDIR%%dod/models/mapmodels/end_table1.mdl
 %%HLDSDIR%%dod/models/mapmodels/fern2.mdl
 %%HLDSDIR%%dod/models/mapmodels/fireplace_logs1.mdl
 %%HLDSDIR%%dod/models/mapmodels/flags.mdl
+%%HLDSDIR%%dod/models/mapmodels/flo_becken.mdl
+%%HLDSDIR%%dod/models/mapmodels/flo_bed.mdl
+%%HLDSDIR%%dod/models/mapmodels/flo_bourderline .mdl
+%%HLDSDIR%%dod/models/mapmodels/flo_grass.mdl
+%%HLDSDIR%%dod/models/mapmodels/flo_grass2.mdl
+%%HLDSDIR%%dod/models/mapmodels/flo_nebelwerfer.mdl
+%%HLDSDIR%%dod/models/mapmodels/flo_toilet.mdl
 %%HLDSDIR%%dod/models/mapmodels/forts.mdl
 %%HLDSDIR%%dod/models/mapmodels/freya_radar1.mdl
 %%HLDSDIR%%dod/models/mapmodels/fuel_dump.mdl
@@ -528,35 +290,42 @@
 %%HLDSDIR%%dod/models/mapmodels/kettenkraftrad.mdl
 %%HLDSDIR%%dod/models/mapmodels/kingtiger.mdl
 %%HLDSDIR%%dod/models/mapmodels/lamp.mdl
-%%HLDSDIR%%dod/models/mapmodels/mawibse_lamp_01.mdl
+%%HLDSDIR%%dod/models/mapmodels/me262.mdl
 %%HLDSDIR%%dod/models/mapmodels/messerschmitt_tail.mdl
 %%HLDSDIR%%dod/models/mapmodels/mill.mdl
 %%HLDSDIR%%dod/models/mapmodels/null.mdl
 %%HLDSDIR%%dod/models/mapmodels/ouitz_hill1.mdl
 %%HLDSDIR%%dod/models/mapmodels/ouitz_tree1.mdl
 %%HLDSDIR%%dod/models/mapmodels/ouitz_tree2.mdl
+%%HLDSDIR%%dod/models/mapmodels/p51.mdl
+%%HLDSDIR%%dod/models/mapmodels/pallet.mdl
 %%HLDSDIR%%dod/models/mapmodels/panzer.mdl
 %%HLDSDIR%%dod/models/mapmodels/parachute_flattened2.mdl
 %%HLDSDIR%%dod/models/mapmodels/phone_pole1.mdl
 %%HLDSDIR%%dod/models/mapmodels/pine_tree.mdl
+%%HLDSDIR%%dod/models/mapmodels/pliers.mdl
 %%HLDSDIR%%dod/models/mapmodels/posts.mdl
+%%HLDSDIR%%dod/models/mapmodels/repunzel_bott.mdl
+%%HLDSDIR%%dod/models/mapmodels/repunzel_candle.mdl
+%%HLDSDIR%%dod/models/mapmodels/repunzel_sign.mdl
 %%HLDSDIR%%dod/models/mapmodels/rockgibs.mdl
 %%HLDSDIR%%dod/models/mapmodels/sandbag_gib.mdl
 %%HLDSDIR%%dod/models/mapmodels/sandbags.mdl
+%%HLDSDIR%%dod/models/mapmodels/seg4_lamp1.mdl
 %%HLDSDIR%%dod/models/mapmodels/sherman.mdl
 %%HLDSDIR%%dod/models/mapmodels/smoke_grenade.mdl
 %%HLDSDIR%%dod/models/mapmodels/snow_panzer.mdl
 %%HLDSDIR%%dod/models/mapmodels/stang.mdl
+%%HLDSDIR%%dod/models/mapmodels/steel_supports1.mdl
 %%HLDSDIR%%dod/models/mapmodels/street_lamp1.mdl
 %%HLDSDIR%%dod/models/mapmodels/support_beams1.mdl
 %%HLDSDIR%%dod/models/mapmodels/tiger.mdl
 %%HLDSDIR%%dod/models/mapmodels/tnt_crate.mdl
+%%HLDSDIR%%dod/models/mapmodels/truck.mdl
+%%HLDSDIR%%dod/models/mapmodels/tube.mdl
 %%HLDSDIR%%dod/models/mapmodels/uplant1.mdl
 %%HLDSDIR%%dod/models/mapmodels/uplant1_2x.mdl
-%%HLDSDIR%%dod/models/mapmodels/uplant1_2xt.mdl
-%%HLDSDIR%%dod/models/mapmodels/uplant1t.mdl
 %%HLDSDIR%%dod/models/mapmodels/uplant3.mdl
-%%HLDSDIR%%dod/models/mapmodels/uplant3t.mdl
 %%HLDSDIR%%dod/models/mapmodels/vicenza_tree1.mdl
 %%HLDSDIR%%dod/models/mapmodels/window1.mdl
 %%HLDSDIR%%dod/models/mapmodels/wood_barrel1.mdl
@@ -578,7 +347,6 @@
 %%HLDSDIR%%dod/models/p_barbu.mdl
 %%HLDSDIR%%dod/models/p_bazooka.mdl
 %%HLDSDIR%%dod/models/p_bazooka_l.mdl
-%%HLDSDIR%%dod/models/p_bren.mdl
 %%HLDSDIR%%dod/models/p_bren_l.mdl
 %%HLDSDIR%%dod/models/p_brenbd.mdl
 %%HLDSDIR%%dod/models/p_brenbr.mdl
@@ -640,16 +408,16 @@
 %%HLDSDIR%%dod/models/p_youthk.mdl
 %%HLDSDIR%%dod/models/player.mdl
 %%HLDSDIR%%dod/models/player/axis-inf/axis-inf.mdl
-%%HLDSDIR%%dod/models/player/axis-inf/axis-inft.mdl
+%%HLDSDIR%%dod/models/player/axis-inf/axis-infT.mdl
 %%HLDSDIR%%dod/models/player/axis-para/axis-para.mdl
-%%HLDSDIR%%dod/models/player/axis-para/axis-parat.mdl
+%%HLDSDIR%%dod/models/player/axis-para/axis-paraT.mdl
 %%HLDSDIR%%dod/models/player/brit-inf/brit-inf.mdl
-%%HLDSDIR%%dod/models/player/brit-inf/brit-inft.mdl
+%%HLDSDIR%%dod/models/player/brit-inf/brit-infT.mdl
 %%HLDSDIR%%dod/models/player/us-inf/us-inf.mdl
-%%HLDSDIR%%dod/models/player/us-inf/us-inft.mdl
+%%HLDSDIR%%dod/models/player/us-inf/us-infT.mdl
 %%HLDSDIR%%dod/models/player/us-para/us-para.mdl
-%%HLDSDIR%%dod/models/player/us-para/us-parat.mdl
-%%HLDSDIR%%dod/models/playert.mdl
+%%HLDSDIR%%dod/models/player/us-para/us-paraT.mdl
+%%HLDSDIR%%dod/models/playerT.mdl
 %%HLDSDIR%%dod/models/shell_large.mdl
 %%HLDSDIR%%dod/models/shell_medium.mdl
 %%HLDSDIR%%dod/models/shell_mg42.mdl
@@ -739,8 +507,32 @@
 %%HLDSDIR%%dod/models/w_webley.mdl
 %%HLDSDIR%%dod/models/w_wflag.mdl
 %%HLDSDIR%%dod/motd.txt
-%%PORTDOCS%%%%HLDSDIR%%dod/readme.txt
+%%HLDSDIR%%dod/resource/ClientScheme.res
+%%HLDSDIR%%dod/resource/GameMenu.res
+%%HLDSDIR%%dod/resource/OptionsSubAudio.res
+%%HLDSDIR%%dod/resource/OptionsSubMultiplayer.res
+%%HLDSDIR%%dod/resource/UI/BottomSpectator.res
+%%HLDSDIR%%dod/resource/UI/Classmenu_Allies.res
+%%HLDSDIR%%dod/resource/UI/Classmenu_Allies_Brit.res
+%%HLDSDIR%%dod/resource/UI/Classmenu_Allies_Para.res
+%%HLDSDIR%%dod/resource/UI/Classmenu_Axis.res
+%%HLDSDIR%%dod/resource/UI/Classmenu_Axis_Para.res
+%%HLDSDIR%%dod/resource/UI/HintPanel.res
+%%HLDSDIR%%dod/resource/UI/MOTD.res
+%%HLDSDIR%%dod/resource/UI/ScoreBoard.res
+%%HLDSDIR%%dod/resource/UI/Spectator.res
+%%HLDSDIR%%dod/resource/UI/Teammenu.res
+%%HLDSDIR%%dod/resource/dod_english.txt
+%%HLDSDIR%%dod/resource/game_menu.tga
+%%HLDSDIR%%dod/resource/game_menu_mouseover.tga
+%%HLDSDIR%%dod/resource/logo_game.tga
+%%HLDSDIR%%dod/resource/menu_hl_no_icon.tga
 %%HLDSDIR%%dod/server.cfg
+%%HLDSDIR%%dod/sound/UI/buttonclick.wav
+%%HLDSDIR%%dod/sound/UI/buttonclickrelease.wav
+%%HLDSDIR%%dod/sound/UI/buttonrollover.wav
+%%HLDSDIR%%dod/sound/ambience/ae_radiocall.wav
+%%HLDSDIR%%dod/sound/ambience/ae_snipsnip.wav
 %%HLDSDIR%%dod/sound/ambience/artyboom.wav
 %%HLDSDIR%%dod/sound/ambience/artyhit1.wav
 %%HLDSDIR%%dod/sound/ambience/bell.wav
@@ -768,7 +560,10 @@
 %%HLDSDIR%%dod/sound/ambience/dodambience6.wav
 %%HLDSDIR%%dod/sound/ambience/drboomsplash01.wav
 %%HLDSDIR%%dod/sound/ambience/drips.wav
+%%HLDSDIR%%dod/sound/ambience/fan1.wav
+%%HLDSDIR%%dod/sound/ambience/fan2.wav
 %%HLDSDIR%%dod/sound/ambience/fd.wav
+%%HLDSDIR%%dod/sound/ambience/fd_factory.wav
 %%HLDSDIR%%dod/sound/ambience/flyby.wav
 %%HLDSDIR%%dod/sound/ambience/flybycrash.wav
 %%HLDSDIR%%dod/sound/ambience/foliage.wav
@@ -791,6 +586,8 @@
 %%HLDSDIR%%dod/sound/ambience/merderet-bridgeallie.wav
 %%HLDSDIR%%dod/sound/ambience/merderet-bridgeaxis.wav
 %%HLDSDIR%%dod/sound/ambience/mill.wav
+%%HLDSDIR%%dod/sound/ambience/nebwerf.wav
+%%HLDSDIR%%dod/sound/ambience/nebwerfdist.wav
 %%HLDSDIR%%dod/sound/ambience/owl_hoot.wav
 %%HLDSDIR%%dod/sound/ambience/radio_morse.wav
 %%HLDSDIR%%dod/sound/ambience/thunder1.wav
@@ -1053,9 +850,6 @@
 %%HLDSDIR%%dod/sound/player/ususebazooka.wav
 %%HLDSDIR%%dod/sound/player/ususegrenades.wav
 %%HLDSDIR%%dod/sound/player/usyessir.wav
-%%HLDSDIR%%dod/sound/ui/buttonclick.wav
-%%HLDSDIR%%dod/sound/ui/buttonclickrelease.wav
-%%HLDSDIR%%dod/sound/ui/buttonrollover.wav
 %%HLDSDIR%%dod/sound/weapons/30cal.wav
 %%HLDSDIR%%dod/sound/weapons/30cal_shoot.wav
 %%HLDSDIR%%dod/sound/weapons/ammopickup.wav
@@ -1134,6 +928,7 @@
 %%HLDSDIR%%dod/sound/weapons/mg34_shoot.wav
 %%HLDSDIR%%dod/sound/weapons/mg42_shoot.wav
 %%HLDSDIR%%dod/sound/weapons/mgbolt.wav
+%%HLDSDIR%%dod/sound/weapons/mgoverheat.wav
 %%HLDSDIR%%dod/sound/weapons/mortar.wav
 %%HLDSDIR%%dod/sound/weapons/mortarhit.wav
 %%HLDSDIR%%dod/sound/weapons/mp40_shoot.wav
@@ -1199,6 +994,7 @@
 %%HLDSDIR%%dod/sprites/clip_bullets.spr
 %%HLDSDIR%%dod/sprites/clip_clips.spr
 %%HLDSDIR%%dod/sprites/clip_extras.spr
+%%HLDSDIR%%dod/sprites/customXHair.spr
 %%HLDSDIR%%dod/sprites/dirt.spr
 %%HLDSDIR%%dod/sprites/dirt_clod.spr
 %%HLDSDIR%%dod/sprites/documents_red_hud.spr
@@ -1265,6 +1061,8 @@
 %%HLDSDIR%%dod/sprites/kexplosion1.spr
 %%HLDSDIR%%dod/sprites/large_smoke_01_ind.spr
 %%HLDSDIR%%dod/sprites/mapmarker.spr
+%%HLDSDIR%%dod/sprites/mapmarkers/map_camp.spr
+%%HLDSDIR%%dod/sprites/mapmarkers/map_usflag.spr
 %%HLDSDIR%%dod/sprites/mapsprites/ae_putsatchel2.spr
 %%HLDSDIR%%dod/sprites/mapsprites/ae_satchel2.spr
 %%HLDSDIR%%dod/sprites/mapsprites/ao_bangaloreobj.spr
@@ -1275,7 +1073,6 @@
 %%HLDSDIR%%dod/sprites/mapsprites/caparea.spr
 %%HLDSDIR%%dod/sprites/mapsprites/chim.spr
 %%HLDSDIR%%dod/sprites/mapsprites/documents_red_hud.spr
-%%HLDSDIR%%dod/sprites/mapsprites/dog1_roofdust.spr
 %%HLDSDIR%%dod/sprites/mapsprites/dog1roofdust01.spr
 %%HLDSDIR%%dod/sprites/mapsprites/dog1splash08.spr
 %%HLDSDIR%%dod/sprites/mapsprites/explosion_smoke1.spr
@@ -1288,12 +1085,11 @@
 %%HLDSDIR%%dod/sprites/mapsprites/forest_muzzleflash.spr
 %%HLDSDIR%%dod/sprites/mapsprites/jagd_grass_01.spr
 %%HLDSDIR%%dod/sprites/mapsprites/kexplosion1.spr
-%%HLDSDIR%%dod/sprites/mapsprites/mawibse_grass.spr
-%%HLDSDIR%%dod/sprites/mapsprites/mawibse_grass_01.spr
-%%HLDSDIR%%dod/sprites/mapsprites/mawibse_grass_02.spr
 %%HLDSDIR%%dod/sprites/mapsprites/soldier_tnt.spr
+%%HLDSDIR%%dod/sprites/mapsprites/voiceIcon.spr
 %%HLDSDIR%%dod/sprites/mapsprites/water1.spr
 %%HLDSDIR%%dod/sprites/mapsprites/xsmoke3.spr
+%%HLDSDIR%%dod/sprites/markernull.spr
 %%HLDSDIR%%dod/sprites/metalspark.spr
 %%HLDSDIR%%dod/sprites/mg42.spr
 %%HLDSDIR%%dod/sprites/muzzleflash1.spr
@@ -1303,6 +1099,15 @@
 %%HLDSDIR%%dod/sprites/obj_icons/dod_bunker/icon_obj_custom1_axis.spr
 %%HLDSDIR%%dod/sprites/obj_icons/dod_charlie/icon_obj_custom1_allies.spr
 %%HLDSDIR%%dod/sprites/obj_icons/dod_charlie/icon_obj_custom1_axis.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_escape/icon_obj_custom1_allies.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_escape/icon_obj_custom1_axis.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_escape/icon_obj_custom1_neutral.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_flugplatz/icon_obj_custom1_neutral.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_flugplatz/icon_obj_custom2_allies.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_flugplatz/icon_obj_custom2_alliesusgreen.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_flugplatz/icon_obj_custom2_axis.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_flugplatz/icon_obj_custom2_neutral.spr
+%%HLDSDIR%%dod/sprites/obj_icons/dod_flugplatz/icon_obj_custom3_allies.spr
 %%HLDSDIR%%dod/sprites/obj_icons/dod_forest/icon_obj_custom1_allies.spr
 %%HLDSDIR%%dod/sprites/obj_icons/dod_forest/icon_obj_custom1_axis.spr
 %%HLDSDIR%%dod/sprites/obj_icons/dod_glider/icon_obj_custom1_allies.spr
@@ -1398,6 +1203,8 @@
 %%HLDSDIR%%dod/sprites/wflag.spr
 %%HLDSDIR%%dod/sprites/xsmoke3.spr
 %%HLDSDIR%%dod/sprites/zerogxplode.spr
+%%HLDSDIR%%dod/titles.txt
+%%HLDSDIR%%dod/valve.inf
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_zalec
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_vicenza
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_merderet
@@ -1405,15 +1212,17 @@
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_jagd
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_glider
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_forest
+@dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_flugplatz
+@dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_escape
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_charlie
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons/dod_bunker
 @dirrm %%HLDSDIR%%dod/sprites/obj_icons
 @dirrm %%HLDSDIR%%dod/sprites/mapsprites
+@dirrm %%HLDSDIR%%dod/sprites/mapmarkers
 @dirrm %%HLDSDIR%%dod/sprites/effects/adrian
 @dirrm %%HLDSDIR%%dod/sprites/effects
 @dirrm %%HLDSDIR%%dod/sprites
 @dirrm %%HLDSDIR%%dod/sound/weapons
-@dirrm %%HLDSDIR%%dod/sound/ui
 @dirrm %%HLDSDIR%%dod/sound/player
 @dirrm %%HLDSDIR%%dod/sound/object
 @dirrm %%HLDSDIR%%dod/sound/items
@@ -1422,7 +1231,10 @@
 @dirrm %%HLDSDIR%%dod/sound/common
 @dirrm %%HLDSDIR%%dod/sound/buttons
 @dirrm %%HLDSDIR%%dod/sound/ambience
+@dirrm %%HLDSDIR%%dod/sound/UI
 @dirrm %%HLDSDIR%%dod/sound
+@dirrm %%HLDSDIR%%dod/resource/UI
+@dirrm %%HLDSDIR%%dod/resource
 @dirrm %%HLDSDIR%%dod/models/player/us-para
 @dirrm %%HLDSDIR%%dod/models/player/us-inf
 @dirrm %%HLDSDIR%%dod/models/player/brit-inf
@@ -1432,21 +1244,14 @@
 @dirrm %%HLDSDIR%%dod/models/mapmodels
 @dirrm %%HLDSDIR%%dod/models
 @dirrm %%HLDSDIR%%dod/maps
-%%PORTDOCS%%@dirrm %%HLDSDIR%%dod/manual/manual_images/map_images
-%%PORTDOCS%%@dirrm %%HLDSDIR%%dod/manual/manual_images
-%%PORTDOCS%%@dirrm %%HLDSDIR%%dod/manual
-@dirrm %%HLDSDIR%%dod/gfx/vgui/fonts
-@dirrm %%HLDSDIR%%dod/gfx/vgui
-@dirrm %%HLDSDIR%%dod/gfx/shell
-@dirrm %%HLDSDIR%%dod/gfx/env
+@dirrm %%HLDSDIR%%dod/manual/manual_images/map_images
+@dirrm %%HLDSDIR%%dod/manual/manual_images
+@dirrm %%HLDSDIR%%dod/manual
 @dirrm %%HLDSDIR%%dod/gfx
 @dirrm %%HLDSDIR%%dod/events/weapons
 @dirrm %%HLDSDIR%%dod/events/misc
 @dirrm %%HLDSDIR%%dod/events/effects
 @dirrm %%HLDSDIR%%dod/events
 @dirrm %%HLDSDIR%%dod/dlls
-@dirrm %%HLDSDIR%%dod/classes
 @dirrm %%HLDSDIR%%dod/cl_dlls
-@dirrm %%HLDSDIR%%dod/MODELS/mapmodels
-@dirrm %%HLDSDIR%%dod/MODELS
 @unexec rmdir %D/%%HLDSDIR%%dod 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%dod`` to remove any configuration files and logs left." | fmt

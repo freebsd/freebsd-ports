@@ -7,6 +7,7 @@
 
 PORTNAME=	ns
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 MASTER_SITES=	http://files.games.eftel.com/halflife/ns/ \
 		http://www.jetstreamgames.co.nz/files/pub/halflife/NaturalSelection/ \
 		ftp://ftp2.extreme-players.de/hl/mod/ns/ \
@@ -25,6 +26,6 @@ UNZIP?=		${LOCALBASE}/bin/unzip
 slaveport-post-extract:
 	@cd ${WRKSRC} && ${UNZIP} -a -o -qq ${DISTDIR}/ns-v${PORTVERSION:S/.//g}.zip
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"

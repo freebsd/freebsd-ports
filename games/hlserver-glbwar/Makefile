@@ -7,6 +7,7 @@
 
 PORTNAME=	glbwar
 PORTVERSION=	1.0.0b.1.2
+PORTREVISION=	1
 MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/gw/ \
                 ftp://ftp.clanserver4u.de/exp/hl/mod/gw/
 DISTNAME=	globalwarfare_beta1.2.linux
@@ -16,6 +17,6 @@ COMMENT=	Half-Life mod Global Warfare full server package for Linux
 
 WRKSRC=		${WRKDIR}/globalwarfare
 
-HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
-.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+.include "${HALFLIFE_PORT_MASTER}/Makefile"
