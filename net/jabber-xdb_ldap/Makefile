@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${NON_EXISTENT}:${PORTSDIR}/net/jabber:configure
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 
+FORBIDDEN=	"Site is down after intrusion. Probably this project will never be revived"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 .include <bsd.port.pre.mk>
