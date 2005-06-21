@@ -2,3 +2,5 @@ MD5 (squirrelmail/squirrelmail-1.4.4.tar.bz2) = 285b42bec8967b88ef3c083fcad18634
 SIZE (squirrelmail/squirrelmail-1.4.4.tar.bz2) = 468790
 MD5 (squirrelmail/all_locales-1.4.4-20050122.tar.bz2) = ec7f97d77c706135571732ac7accf961
 SIZE (squirrelmail/all_locales-1.4.4-20050122.tar.bz2) = 2804548
+MD5 (squirrelmail/squirrelmail/sqm-144-xss.patch) = 24d2c376b37edcfa4c2264351e1152e5
+SIZE (squirrelmail/squirrelmail/sqm-144-xss.patch) = 26551
