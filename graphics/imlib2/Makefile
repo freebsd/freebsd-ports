@@ -7,7 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	1.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -39,6 +39,6 @@ CONFIGURE_ARGS+=	--enable-mmx
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|lround|(long int)rint|g' ${WRKSRC}/src/lib/color_helpers.c
+		's|round|rint|g' ${WRKSRC}/src/lib/color_helpers.c
 
 .include <bsd.port.post.mk>
