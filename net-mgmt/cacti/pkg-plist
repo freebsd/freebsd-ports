@@ -136,6 +136,7 @@
 %%CACTIDIR%%/include/html/inc_data_source_filter_table.php
 %%CACTIDIR%%/include/html/inc_device_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_filter_table.php
+%%CACTIDIR%%/include/html/inc_graph_items_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_view_filter_table.php
 %%CACTIDIR%%/include/html/inc_timespan_selector.php
 %%CACTIDIR%%/include/html/inc_timespan_settings.php
@@ -199,6 +200,7 @@
 %%CACTIDIR%%/install/0_8_5a_to_0_8_6.php
 %%CACTIDIR%%/install/0_8_6_to_0_8_6a.php
 %%CACTIDIR%%/install/0_8_6c_to_0_8_6d.php
+%%CACTIDIR%%/install/0_8_6d_to_0_8_6e.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -312,6 +314,7 @@
 %%CACTIDIR%%/lib/html_form_template.php
 %%CACTIDIR%%/lib/html_tree.php
 %%CACTIDIR%%/lib/html_utility.php
+%%CACTIDIR%%/lib/html_validate.php
 %%CACTIDIR%%/lib/import.php
 %%CACTIDIR%%/lib/ping.php
 %%CACTIDIR%%/lib/poller.php
@@ -383,6 +386,7 @@
 @dirrm %%CACTIDIR%%/include/jscalendar/lang
 @dirrm %%CACTIDIR%%/include/jscalendar
 @dirrm %%CACTIDIR%%/include/html
+@dirrm %%CACTIDIR%%/include/gettext
 @dirrm %%CACTIDIR%%/include
 @dirrm %%CACTIDIR%%/images
 @dirrm %%CACTIDIR%%/docs/text

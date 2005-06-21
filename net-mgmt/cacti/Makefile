@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.6d
-PORTREVISION=	1
+PORTVERSION=	0.8.6e
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
@@ -15,10 +14,8 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
 
 # Vendor's patches
-PATCH_SITES=	http://www.cacti.net/downloads/patches/${PORTVERSION}/
-PATCHFILES=	auto_recache_empty_output.patch \
-		poller_output_order_by.patch \
-		rrdtool12_additional_features.patch
+#PATCH_SITES=	http://www.cacti.net/downloads/patches/${PORTVERSION}/
+#PATCHFILES=
 
 PATCH_DIST_STRIP=-p1
 
