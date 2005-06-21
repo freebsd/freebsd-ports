@@ -5,14 +5,15 @@
 %%PYTHON_SITELIBDIR%%/gst/interfaces.so
 %%PYTHON_SITELIBDIR%%/gst/play.so
 libdata/pkgconfig/gst-python-0.8.pc
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
+share/gst-python/2.0/defs/gst-extrafuncs.defs
 share/gst-python/2.0/defs/gst-types.defs
+share/gst-python/examples/audioconcat.py
 share/gst-python/examples/bps.py
 share/gst-python/examples/cp.py
 share/gst-python/examples/f2f.py
 share/gst-python/examples/filesrc.py
 share/gst-python/examples/gst123
+share/gst-python/examples/gstfile.py
 share/gst-python/examples/play.py
 share/gst-python/examples/player.py
 share/gst-python/examples/videoplayer.py
