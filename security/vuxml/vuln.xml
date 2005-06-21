@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="96948a6a-e239-11d9-83cf-0010dc5df42d">
+    <topic>cacti -- potential SQL injection and cross site scripting attacks</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><le>0.8.6d</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>iDEFENSE security group disclosed potential SQL injection
+	  attacks from unchecked user input and two security holes
+	  regarding potential cross site scripting attacks</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.cacti.net/release_notes_0_8_6e.php</url>
+    </references>
+    <dates>
+      <discovery>2005-06-21</discovery>
+      <entry>2005-06-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79217c9b-e1d9-11d9-b875-0001020eed82">
     <topic>opera -- XMLHttpRequest security bypass</topic>
     <affects>
