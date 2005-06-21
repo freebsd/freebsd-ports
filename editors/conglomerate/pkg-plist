@@ -286,10 +286,12 @@ share/locale/pl/LC_MESSAGES/conglomerate.mo
 share/locale/pt/LC_MESSAGES/conglomerate.mo
 share/locale/pt_BR/LC_MESSAGES/conglomerate.mo
 share/locale/ru/LC_MESSAGES/conglomerate.mo
+share/locale/rw/LC_MESSAGES/conglomerate.mo
 share/locale/sq/LC_MESSAGES/conglomerate.mo
 share/locale/sr/LC_MESSAGES/conglomerate.mo
 share/locale/sr@Latn/LC_MESSAGES/conglomerate.mo
 share/locale/sv/LC_MESSAGES/conglomerate.mo
+share/locale/uk/LC_MESSAGES/conglomerate.mo
 share/locale/zh_CN/LC_MESSAGES/conglomerate.mo
 @dirrm share/gnome/pixmaps/conglomerate
 @dirrm share/gnome/omf/conglomerate
