@@ -18,7 +18,6 @@ COMMENT=	A set of utilities and library to manipulate an xfs filesystem
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	yes
 USE_AUTOCONF_VER=	259
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \
