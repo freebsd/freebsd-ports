@@ -1,0 +1,10 @@
+Malint is an MPEG Audio stream validator. It parses an MPEG audio stream and
+prints information about the stream and format violations it finds.
+
+Many of the checks (and information outputs) can be enabled or disabled via
+command line switches.
+
+WWW: http://www.nih.at/malint/
+
+- ehaupt
+ehaupt@critical.ch

@@ -264,6 +264,7 @@
     SUBDIR += mac
     SUBDIR += mad
     SUBDIR += madplay
+    SUBDIR += malint
     SUBDIR += maplay
     SUBDIR += marlin
     SUBDIR += mbox
