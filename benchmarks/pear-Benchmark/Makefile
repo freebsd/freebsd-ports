@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Benchmark
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	benchmarks devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -19,8 +19,8 @@ USE_PHP=	bcmath
 
 CATEGORY=	Benchmark
 FILES=		Timer.php Iterate.php Profiler.php
-DOCS=		timer_example.php
-_DOCSDIR=	doc
+EXAMPLES=	timer_example.php
+_EXAMPLESDIR=	doc
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
