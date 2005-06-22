@@ -23,11 +23,13 @@ MOZILLA_VERSION=	1.7.5
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
 DISTFILES+=	${MOZILLA_SOURCE}:mozsrc
+USE_GNOME+=	libidl
 .endif
 
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=        3
 .endif
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -51,8 +53,8 @@ BROKEN=		"Please deinstall fltk, currently causes a build failure"
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		110
-SNAPDATE=		20050616
+MILESTONE=		111
+SNAPDATE=		20050621
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -82,11 +84,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch \
-		xmkmf:${X_IMAKE_PORT} \
-		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison-devel:${PORTSDIR}/devel/bison-devel
-LIB_DEPENDS+=	IDL-2.0:${PORTSDIR}/devel/libIDL
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
@@ -102,7 +101,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal
 
 .include <${FILESDIR}/Makefile.knobs>
 

@@ -1,0 +1,25 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author:     : <maho@openoffice.org> (JCA)
+Description : libxml2 is not deliver'ed for FreeBSD and Mac OS X
+
+Index: scp2/source/ure/ure.scp
+===================================================================
+RCS file: /cvs/installation/scp2/source/ure/ure.scp,v
+retrieving revision 1.2
+diff -u -r1.2 ure.scp
+--- scp2/source/ure/ure.scp	17 Jun 2005 10:18:35 -0000	1.2
++++ scp2/source/ure/ure.scp	21 Jun 2005 22:24:56 -0000
+@@ -601,7 +601,11 @@
+ #if defined WNT
+     Name = SCP2_URE_DL_NORMAL(libxml2);
+ #else
+-    Name = SCP2_URE_DL_VER(xml2, 2);
++    #ifdef MACOSX
++       Name = STRING(CONCAT3(libxml2,.2.6.17,UNXSUFFIX));
++    #else
++       Name = SCP2_URE_DL_VER(xml2,2.6.17);
++    #endif
+ #endif
+     Styles = (PACKED);
+ End
