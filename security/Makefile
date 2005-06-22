@@ -40,6 +40,7 @@
     SUBDIR += bugs
     SUBDIR += ca-roots
     SUBDIR += calife
+    SUBDIR += calife-devel
     SUBDIR += ccrypt
     SUBDIR += cfs
     SUBDIR += cfv
