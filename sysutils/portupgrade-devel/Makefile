@@ -23,7 +23,7 @@ PATCHFILES=	${DISTNAME}-${PORTVERSION}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	koma2@lovepeers.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
