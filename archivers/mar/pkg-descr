@@ -1,0 +1,11 @@
+A simple binary file format for storing arbitrary meta and user data.
+
+A meta archive uses a simple binary file format to store both meta and user
+data together in a single file. A mar file may be suitable in situations where
+a full-scale database is not. Both the mar library and the accompanying utility
+are written in C with the intention of porting to many platforms.
+
+WWW: http://www.emantic.co.uk/mark/
+
+- ehaupt
+ehaupt@critical.ch

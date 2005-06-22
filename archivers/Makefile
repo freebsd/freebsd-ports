@@ -44,6 +44,7 @@
     SUBDIR += lzop
     SUBDIR += macutils
     SUBDIR += makeself
+    SUBDIR += mar
     SUBDIR += mscompress
     SUBDIR += mtf
     SUBDIR += nomarch
