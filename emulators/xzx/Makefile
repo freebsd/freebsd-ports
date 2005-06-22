@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xzx
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zx-spectrum.net/xzx/files/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
@@ -31,6 +31,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-oss
 
 MAN1=		xzx.1
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-pro
+PORTDOCS=	COPYRIGHT FAQ README
 
 # Prevent configure from trying to run auto* since it's not needed and will
 # error if auto* < 2.54
