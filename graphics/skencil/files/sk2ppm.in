@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec @PYTHON_CMD@ @DATADIR@/sk2ppm.py $@
