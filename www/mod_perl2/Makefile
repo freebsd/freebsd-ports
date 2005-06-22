@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
