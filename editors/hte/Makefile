@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-release
 
-PORTDOCS=	README
 PLIST_FILES=	bin/ht
 
 .include <bsd.port.pre.mk>
@@ -41,6 +40,10 @@ CPPFLAGS=	-I${X11BASE}/include
 LDFLAGS=	-L${X11BASE}/lib
 .endif
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CXXFLAGS=.*$$|CXXFLAGS="$$CXXFLAGS"|g ; \
 		 s|^CFLAGS=.*$$|CFLAGS="$$CFLAGS"|g ; \
@@ -50,8 +53,6 @@ post-patch:
 		's|typedef unsigned int uint;||g' ${WRKSRC}/global.h
 	@${REINPLACE_CMD} -e \
 		's|uint |UINT |g' ${WRKSRC}/htdata.h
-	@${REINPLACE_CMD} -e \
-		's|#include <malloc.h>||g' ${WRKSRC}/cp-demangle.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ht ${PREFIX}/bin
