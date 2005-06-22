@@ -1,0 +1,22 @@
+Index: programs/Xserver/hw/xfree86/xf86config/Cards
+===================================================================
+RCS file: /cvs/xorg/xc/programs/Xserver/hw/xfree86/xf86config/Cards,v
+retrieving revision 1.2
+diff -u -r1.2 Cards
+--- programs/Xserver/hw/xfree86/xf86config/Cards	23 Apr 2004 19:54:19 -0000	1.2
++++ programs/Xserver/hw/xfree86/xf86config/Cards	13 Jun 2005 07:34:09 -0000
+@@ -2865,12 +2865,12 @@
+ # 3Dfx
+ NAME Voodoo Banshee (generic)
+ SERVER SVGA
+-CHIPSET Voodo Banshee
++CHIPSET 3dfx Banshee
+ DRIVER tdfx
+ 
+ NAME Voodoo3 (generic)
+ SERVER SVGA
+-CHIPSET Voodoo3
++CHIPSET 3dfx Voodoo3
+ DRIVER tdfx
+ 
+ NAME Elsa Victory II
