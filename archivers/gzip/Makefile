@@ -7,7 +7,7 @@
 
 PORTNAME=	gzip
 PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://sunfreeware.risq.qc.ca/SOURCES/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/solaris-freeware/SOURCES/ \
