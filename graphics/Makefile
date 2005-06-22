@@ -304,6 +304,7 @@
     SUBDIR += libungif
     SUBDIR += libv3d
     SUBDIR += libvisual
+    SUBDIR += libvisual-plugins
     SUBDIR += libwmf
     SUBDIR += libwpcg
     SUBDIR += linplasma
