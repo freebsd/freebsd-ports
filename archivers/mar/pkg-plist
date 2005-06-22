@@ -1,0 +1,21 @@
+bin/mar
+%%PORTDOCS%%%%DOCSDIR%%/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/files.html
+%%PORTDOCS%%%%DOCSDIR%%/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_defs.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_func.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/group__OpenFlags.html
+%%PORTDOCS%%%%DOCSDIR%%/group__SeekWhence.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/mar__c_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/mar__c_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/mar__storage__c_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/mar__storage__c_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/mar__types__c_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/mar__types__c_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/modules.html
+%%PORTDOCS%%%%DOCSDIR%%/structmar__pair.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
