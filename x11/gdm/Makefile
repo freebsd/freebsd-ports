@@ -36,6 +36,12 @@ OPTIONS=	IPV6 "Enable IPv6 support (This disables IPv4 support)" off
 
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM:L} != "xorg"
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
+.endif
+
 .if exists(/usr/include/security/pam_misc.h)
 PLIST_SUB+=	PAM_MISC=""
 .else
