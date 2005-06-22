@@ -1,0 +1,26 @@
+------------------------------------------------------------------
+You must choose the correct mode depending on how you want to
+use your adapter.
+
+For instance, to download firmware for BSS mode:
+
+  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 -d %%DATADIR%% -m bss
+
+The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
+to /etc/rc.conf to use it :
+
+  - %%DRIVERNAME%%_enable (bool) : defaults to "NO", set it to "YES" to
+    use the startup script.
+  - %%DRIVERNAME%%_interfaces (str) : defaults to "%%DRIVERNAME%%0", override it to
+    change to interface names list (optional).
+  - %%DRIVERNAME%%_mode_<iface> (str) : defaults to "bss", possible values
+    are bss, ibss and sniffer (optional).
+%%MIGHT_NEED_MODULE%%
+%%MIGHT_NEED_MODULE%%Note: 
+%%MIGHT_NEED_MODULE%%
+%%MIGHT_NEED_MODULE%%This port requires %%DRIVERNAME%%(4) driver which has not been MFC'ed to
+%%MIGHT_NEED_MODULE%%RELENG_5. Point your web browser at [1] and install it by hand
+%%MIGHT_NEED_MODULE%%if not already done or rebuild the port with WITH_MODULE=yes.
+%%MIGHT_NEED_MODULE%%
+%%MIGHT_NEED_MODULE%%[1] http://damien.bergamini.free.fr/ipw/
+------------------------------------------------------------------

@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: %%DRIVERNAME%%
+# REQUIRE: LOGIN abi
+# BEFORE:  securelevel
+# KEYWORD: FreeBSD shutdown
+
+# Add the following line to /etc/rc.conf to enable `%%DRIVERNAME%%':
+#
+# %%DRIVERNAME%%_enable="YES"
+#
+
+. "%%RC_SUBR%%"
+
+name="%%DRIVERNAME%%"
+rcvar=`set_rcvar`
+
+start_cmd="%%DRIVERNAME%%_start_cmd"
+stop_cmd="%%DRIVERNAME%%_stop_cmd"
+
+load_rc_config "$name"
+: ${%%DRIVERNAME%%_enable="NO"}
+: ${%%DRIVERNAME%%_interfaces="%%DRIVERNAME%%0"}
+
+command="/usr/local/sbin/%%DRIVERNAME%%control"
+
+%%DRIVERNAME%%_start_cmd()
+{
+	echo -n "Starting %%DRIVERNAME%%"
+	for i in ${%%DRIVERNAME%%_interfaces}; do
+		eval _mode=\$%%DRIVERNAME%%_mode_${i}
+		case ${_mode} in
+		""|bss|ibss|sniffer)
+			;;
+		*)
+			echo "${_mode} - Possible values for %%DRIVERNAME%%_mode_${i} are bss|ibss|sniffer."
+			exit 1
+			;;
+		esac
+
+		eval _mode=\$_%%DRIVERNAME%%_file_${i}
+		echo -n " [${i}:${_mode:=bss}]"
+		${command} -i ${i} -d %%DATADIR%% -m ${_mode:=bss}
+	done
+	echo "."
+}
+
+%%DRIVERNAME%%_stop_cmd()
+{
+	echo "Stopping %%DRIVERNAME%%."
+	for i in ${%%DRIVERNAME%%_interfaces}; do
+		${command} -i ${i} -k
+	done
+}
+
+run_rc_command "$1"
