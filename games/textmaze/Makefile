@@ -7,23 +7,27 @@
 #
 
 PORTNAME=	textmaze
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	games perl5
 MASTER_SITES=	http://www.robobunny.com/projects/textmaze/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Generates mazes on a text terminal and lets you traverse them
 
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
+
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/TextMaze
 NO_BUILD=	yes
 PLIST_FILES=	bin/textmaze
 
 post-patch:
-	@${PERL} -pi -e "s,/usr/local/bin/perl,${PERL},g" ${WRKSRC}/textmaze
+	@${REINPLACE_CMD} -e 's|/usr/local/bin/perl|${PERL}|' \
+		${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/textmaze ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
