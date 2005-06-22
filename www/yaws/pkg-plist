@@ -1,5 +1,6 @@
 bin/yaws
 etc/yaws.conf.sample
+lib/erlang/lib/yaws-%%VERSION%%/ebin/dav.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_type_c.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_types.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws.app
@@ -27,8 +28,10 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_vsn.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws.hrl
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws_api.hrl
+lib/erlang/lib/yaws-%%VERSION%%/include/yaws_dav.hrl
 lib/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 lib/erlang/lib/yaws-%%VERSION%%/priv/setuid_drv.so
+lib/erlang/lib/yaws-%%VERSION%%/src/dav.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/mime_type_c.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/mime_types.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws.erl
@@ -40,6 +43,7 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_compile.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_config.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_content_negotiation.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ctl.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_dav.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.hrl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_html.erl
@@ -253,6 +257,7 @@ www/yaws/todo.yaws
 www/yaws/upload.yaws
 www/yaws/upload0.yaws
 www/yaws/urandom.yaws
+www/yaws/yaws-1.55_to_1.56.patch
 www/yaws/ybed.erl
 www/yaws/yman.yaws
 %%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
