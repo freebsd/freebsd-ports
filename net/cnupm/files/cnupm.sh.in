@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+#
+# Add the following lines to /etc/rc.conf to enable rsyncd:
+#
+# cnupm_enable="YES"
+# cnupm_ifaces="rl0"	# Change this with your interface!
+# cnupm_flags=""		# Set this one to override default flags
+#
+# See cnupm(8) for flags
+#
+
+. %%RC_SUBR%%
+
+name=cnupm
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/cnupm
+cnupm_flags="-ep -f inet -u cnupm"
+
+load_rc_config ${name}
+
+cnupm_enable=${cnupm_enable:-"NO"}
+
+case ${cnupm_enable} in
+[Yy][Ee][Ss])
+	if [ -z ${cnupm_iface} ]; then
+		err 1 "cnupm_iface is not set - edit /etc/rc.conf"
+	fi
+esac
+
+cnupm_flags="-i ${cnupm_iface} ${cnupm_flags:-""}"
+pidfile=~${name}/${name}-${cnupm_iface}.pid
+
+run_rc_command "$1"
