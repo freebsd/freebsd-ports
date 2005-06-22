@@ -1,27 +1,28 @@
 #!/bin/sh
 # $FreeBSD$
 
-# PROVIDE: 0W-httpd
+# PROVIDE: zerowait
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
-# Define these 0Whttpd_* variables in one of these files:
+# Define these zerowait_enable variables in one of these files:
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-0Whttpd_enable=${0Whttpd_enable-"NO"}
-
 . %%RC_SUBR%%
 
-name="0Whttpd"
+name="zerowait"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/0W-httpd"
 args="-c %%PREFIX%%/etc/0W-httpd/httpd.conf"
+required_files="%%PREFIX%%/etc/0W-httpd/httpd.conf"
+pidfile="%%PREFIX%%/0W-httpd/pids/httpd"
 
 load_rc_config $name
+: ${zerowait_enable="NO"}
 
 start_cmd="echo \"Starting ${name}.\"; /usr/bin/limits -U www ${command}"
 

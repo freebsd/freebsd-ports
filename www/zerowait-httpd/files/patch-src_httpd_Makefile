@@ -1,0 +1,15 @@
+--- src/httpd/Makefile.orig	Wed Jun 22 13:16:28 2005
++++ src/httpd/Makefile	Wed Jun 22 13:16:44 2005
+@@ -14,10 +14,10 @@
+ 	$(CC) $(LDFLAGS) $(OBJS) $(COMMON) built.o -o $@
+ 
+ convert-ranges: $(COMMON) Makefile ../Rules.make convert-ranges.c
+-	$(CC) $(CFLAGS) $(LDFLAGS) $@.c $(COMMON) -o $@
++	$(CC) $(CFLAGS) -I.. $(LDFLAGS) $@.c $(COMMON) -o $@
+ 
+ convert-geoip: $(COMMON) Makefile ../Rules.make convert-geoip.c
+-	$(CC) $(CFLAGS) $(LDFLAGS) $@.c $(COMMON) -o $@
++	$(CC) $(CFLAGS) -I.. $(LDFLAGS) $@.c $(COMMON) -o $@
+ 
+ $(COMMON):
+ 	cd ../common &&$(MAKE)

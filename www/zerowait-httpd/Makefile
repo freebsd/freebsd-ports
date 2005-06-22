@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zerowait-httpd
-PORTVERSION=	0.7l
+PORTVERSION=	0.7m
 CATEGORIES=	www
 MASTER_SITES=	http://www.0w.ru/httpd/
 DISTNAME=	0W-httpd-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -15,16 +15,19 @@ MAINTAINER=	vsevolod@highsecure.ru
 COMMENT=	Lightweight and fast http server
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_OPENSSL=	yes
+USE_RC_SUBR=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ARGS=	CFLAGS="${CFLAGS}" CPPFLAGS=-I..
+WWW_USER?=	${WWWOWN}
+WWW_GROUP?=	${WWWGRP}
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,/var/0W,${PREFIX}," ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s,/var/0W,${PREFIX}," ${WRKSRC}/common/settings.h
+pre-build:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%RC_SUBR%%,${RC_SUBR},' \
+			${FILESDIR}/0W-httpd.sh > ${WRKDIR}/0W-httpd.sh
+	@${SH} -c 'cd ${WRKSRC} && ./configure --prefix=${PREFIX} --owner=${WWW_USER} --group=${WWW_GROUP}'
 
 post-install:
-	@${INSTALL_SCRIPT} -m 755 ${FILESDIR}/0W-httpd.sh ${PREFIX}/etc/rc.d/0W-httpd.sh
+	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/0W-httpd.sh ${PREFIX}/etc/rc.d/0W-httpd.sh
 
 .include <bsd.port.mk>
