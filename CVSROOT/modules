@@ -5637,6 +5637,7 @@ llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
 lm-solve	ports/games/lm-solve
 lmbench		ports/benchmarks/lmbench
+lmclock		ports/x11-clocks/lmclock
 lmmon		ports/sysutils/lmmon
 lmon		ports/sysutils/lmon
 lmtp2nntp	ports/mail/lmtp2nntp
