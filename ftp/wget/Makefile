@@ -7,6 +7,7 @@
 
 PORTNAME=	wget
 DISTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
@@ -49,7 +50,7 @@ post-patch:
 # eliminate gmakism
 	${REINPLACE_CMD} -e 's,$$<,$$(srcdir)/wget.texi,' \
 		${WRKSRC}/doc/Makefile.in
-	${REINPLACE_CMD} -e 's,/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
+	${REINPLACE_CMD} -e 's,/usr/local/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
 			 -e 's,@file{},@file{${PREFIX}},' \
 		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi
 
