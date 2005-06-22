@@ -21,7 +21,7 @@
 name=proftpd
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/libexec/proftpd
+command=%%PREFIX%%/sbin/proftpd
 pidfile=/var/run/proftpd.pid
 required_files=%%PREFIX%%/etc/proftpd.conf
 

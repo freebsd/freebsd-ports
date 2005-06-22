@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -16,14 +16,13 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
 		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/distrib/source/ \
 		ftp://mirror.cybercomm.nl/pub/proftpd/distrib/source/
-DISTNAME=	${PORTNAME}-1.2.10
 
 MAINTAINER?=	mharo@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
-MAN8=	proftpd.8 ftpshut.8
+MAN8=	proftpd.8 ftpshut.8 ftpdctl.8
 
 PORTDOCSdoc=	Configuration.html faq.html
 PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
@@ -33,19 +32,12 @@ PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
-SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
-
-USE_RC_SUBR=	yes
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
-SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
-		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
+USE_RC_SUBR=	proftpd.sh
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
+		--sysconfdir=${EXAMPLESDIR}/etc \
 		--disable-sendfile
 
 OPTIONS=	IPV6 "Use IPv6" off \
@@ -175,47 +167,15 @@ pre-configure:
 	@${ECHO_MSG} "==> Configuring with ${MODULES}"
 
 post-configure:
-	@${MV} ${WRKSRC}/Make.rules ${WRKSRC}/Make.rules.pre_sed
-	@${SED}	-e 's: -lnsl::' \
-		< ${WRKSRC}/Make.rules.pre_sed > ${WRKSRC}/Make.rules
-
-	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
-	@${SED}	-e 's:/usr/sbin/proftpd:${PREFIX}/libexec/proftpd:' \
-		-e 's:/usr/sbin:${PREFIX}/sbin:' \
+	${REINPLACE_CMD} -e 's: -lnsl::' ${WRKSRC}/Make.rules
+	${REINPLACE_CMD} -e 's:/usr/sbin:${PREFIX}/sbin:' \
 		-e 's:/usr/bin:${PREFIX}/bin:' \
-		< ${WRKSRC}/src/proftpd.8.pre_sed > ${WRKSRC}/src/proftpd.8
+		${WRKSRC}/src/proftpd.8 ${WRKSRC}/utils/ftpshut.8 \
+		${WRKSRC}/utils/ftpcount.1
 
-	@${MV} ${WRKSRC}/utils/ftpshut.8 ${WRKSRC}/utils/ftpshut.8.pre_sed
-	@${SED}	-e 's:/usr/sbin:${PREFIX}/sbin:' \
-		-e 's:/etc:/var/run:' \
-		< ${WRKSRC}/utils/ftpshut.8.pre_sed > ${WRKSRC}/utils/ftpshut.8
-
-	@${MV} ${WRKSRC}/utils/ftpcount.1 ${WRKSRC}/utils/ftpcount.1.pre_sed
-	@${SED}	-e 's:/usr/bin:${PREFIX}/bin:' \
-		< ${WRKSRC}/utils/ftpcount.1.pre_sed > ${WRKSRC}/utils/ftpcount.1
-
-post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/proftpd.sh > ${WRKSRC}/proftpd.sh
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
-	@${INSTALL_PROGRAM} ${WRKSRC}/ftpwho ${PREFIX}/bin/ftpwho
-	@${INSTALL_PROGRAM} ${WRKSRC}/ftptop ${PREFIX}/bin/ftptop
-	@${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec/proftpd
-	@${INSTALL_PROGRAM} ${WRKSRC}/ftpshut ${PREFIX}/sbin/ftpshut
-	@${INSTALL_MAN} ${WRKSRC}/utils/ftpcount.1 ${PREFIX}/man/man1/ftpcount.1
-	@${INSTALL_MAN} ${WRKSRC}/utils/ftpwho.1 ${PREFIX}/man/man1/ftpwho.1
-	@${INSTALL_MAN} ${WRKSRC}/utils/ftptop.1 ${PREFIX}/man/man1/ftptop.1
-	@${INSTALL_MAN} ${WRKSRC}/src/xferlog.5 ${PREFIX}/man/man5/xferlog.5
-	@${INSTALL_MAN} ${WRKSRC}/utils/ftpshut.8 ${PREFIX}/man/man8/ftpshut.8
-	@${INSTALL_MAN} ${WRKSRC}/src/proftpd.8 ${PREFIX}/man/man8/proftpd.8
-	@${INSTALL_DATA} \
-		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf.default
-	@if [ ! -f ${PREFIX}/etc/proftpd.conf ]; then \
-		${INSTALL_DATA} \
-		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf; \
-	fi
-	@${INSTALL_SCRIPT} ${WRKSRC}/proftpd.sh ${PREFIX}/etc/rc.d/proftpd${RC_SUFX}
+post-install:
+	[ -f ${PREFIX}/etc/proftpd.conf ] || \
+		${CP} ${EXAMPLESDIR}/etc/proftpd.conf ${PREFIX}/etc/proftpd.conf
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/proftpd
