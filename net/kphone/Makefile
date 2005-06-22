@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kphone
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.wirlab.net/kphone/
 
