@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.10
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -46,7 +46,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../man/${MAN1}.gz ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../langDefs/extensions.conf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../extensions.conf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../scriptre.conf ${DATADIR}
 	@${MKDIR} ${DATADIR}/helpmsg
 	${INSTALL_DATA} ${WRKSRC}/../helpmsg/* ${DATADIR}/helpmsg
 	@${MKDIR} ${DATADIR}/langDefs
