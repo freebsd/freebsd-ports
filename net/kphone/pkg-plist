@@ -10,9 +10,12 @@ bin/kphone
 %%DATADIR%%/icons/phonebook.png
 %%DATADIR%%/icons/videocall.png
 %%DATADIR%%/translations/kphone_de.qm
+%%DATADIR%%/translations/kphone_es_ES.qm
 %%DATADIR%%/translations/kphone_fi.qm
 %%DATADIR%%/translations/kphone_fr.qm
+%%DATADIR%%/translations/kphone_hu.qm
 %%DATADIR%%/translations/kphone_pt_BR.qm
+%%DATADIR%%/translations/kphone_sv.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
