@@ -12719,6 +12719,7 @@ xmms-dflowers	ports/graphics/xmms-dflowers
 xmms-dscope	ports/graphics/xmms-dscope
 xmms-dspectogram	ports/graphics/xmms-dspectogram
 xmms-dspectral	ports/graphics/xmms-dspectral
+xmms-efxmms	ports/audio/xmms-efxmms
 xmms-eq		ports/audio/xmms-eq
 xmms-eq-skins	ports/x11-themes/xmms-eq-skins
 xmms-faad	ports/audio/xmms-faad
