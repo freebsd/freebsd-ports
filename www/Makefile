@@ -779,6 +779,7 @@
     SUBDIR += web-traceroute
     SUBDIR += web2ldap
     SUBDIR += webalizer
+    SUBDIR += webcalendar
     SUBDIR += webcheck
     SUBDIR += webcopy
     SUBDIR += webcrawl

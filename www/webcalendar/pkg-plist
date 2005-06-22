@@ -1,0 +1,8 @@
+@comment The full PLIST will be generated in pre-install phase
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WebCalendar-Database.html
+%%PORTDOCS%%%%DOCSDIR%%/WebCalendar-DeveloperGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/WebCalendar-Styling.html
+%%PORTDOCS%%%%DOCSDIR%%/WebCalendar-SysAdmin.html
+%%PORTDOCS%%%%DOCSDIR%%/newwin.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
