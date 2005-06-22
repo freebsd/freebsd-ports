@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	mail
 MASTER_SITES=	http://robtone.mine.nu/postfix/releases/
-PKGNAMEPREFIX=  postfix-
+PKGNAMEPREFIX=	postfix-
 
 MAINTAINER=	robtone@ek-muc.de
 COMMENT=	Weighted policy daemon for postfix
