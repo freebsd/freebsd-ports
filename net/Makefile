@@ -261,6 +261,7 @@
     SUBDIR += isc-dhcp3-devel
     SUBDIR += isc-dhcp3-relay
     SUBDIR += isc-dhcp3-server
+    SUBDIR += iwi-firmware
     SUBDIR += jabber
     SUBDIR += jabber-aim
     SUBDIR += jabber-conference
