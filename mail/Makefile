@@ -54,6 +54,7 @@
     SUBDIR += cyrus-imapd22
     SUBDIR += dbmail
     SUBDIR += dcc-dccd
+    SUBDIR += delatt
     SUBDIR += demime
     SUBDIR += distribute
     SUBDIR += dk-milter
