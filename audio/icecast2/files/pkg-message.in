@@ -1,0 +1,17 @@
+To start icecast at system boot, customize 
+%%PREFIX%%/etc/icecast.xml.sample to your environment and add:
+
+icecast_enable="YES"
+
+to /etc/rc.conf. See the icecast -h command for optional additional
+flags. To specify an alternative config file for example add:
+
+icecast_flags="-c /path/to/your/configuration.xml"
+
+**********************************************************************
+**  Make sure the <changeowner> section in your configuration file  **
+**     is NOT commented out. Icecast will refuse to run as root.    **
+**                                                                  ** 
+** Also make sure that the user you choose is able to write to your **
+**  configured log directory, otherwise icecast will refuse to run. **
+**********************************************************************

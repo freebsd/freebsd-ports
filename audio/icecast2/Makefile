@@ -7,7 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://svn.xiph.org/releases/icecast/
@@ -25,6 +25,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_RC_SUBR=	icecast2.sh
+SUB_FILES+=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
