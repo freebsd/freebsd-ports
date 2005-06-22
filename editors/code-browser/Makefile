@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	1.5
+PORTVERSION=	2.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/code-browser \
 		%%DATADIR%%/languages.cb-config \
-		%%DATADIR%%/user-preferences.cb-config
+		%%DATADIR%%/preferences.cb-config
 PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
@@ -42,12 +42,9 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/code-browser \
-		${PREFIX}/bin/code-browser
+	${INSTALL_PROGRAM} ${WRKSRC}/code-browser ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/config/languages.cb-config \
-		${DATADIR}/languages.cb-config
-	${INSTALL_DATA} ${WRKSRC}/config/user-preferences-x.cb-config \
-		${DATADIR}/user-preferences.cb-config
+	${INSTALL_DATA} ${WRKSRC}/config/languages.cb-config ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/config/preferences.cb-config ${DATADIR}
 
 .include <bsd.port.post.mk>
