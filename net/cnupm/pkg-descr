@@ -1,0 +1,13 @@
+The cnupm is an IP/IPv6 traffic collector daemon; it listens on a network
+interface for IP/IPv6 packets that match the boolean expression (see
+tcpdump(8) for more information) and collects the following statistics:
+
+     o   address family (INET/INET6)
+     o   IP/IPv6 protocol number
+     o   source IP/IPv6 address
+     o   source TCP/UDP port
+     o   destination IP/IPv6 address
+     o   destination TCP/UDP port
+     o   total number of bytes trasferred
+
+WWW: http://pdp-11.org.ru/~form/cnupm
