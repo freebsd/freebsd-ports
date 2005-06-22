@@ -1,0 +1,7 @@
+Test::Warn provides a few convenience methods for testing warning based
+code.
+
+WWW: http://search.cpan.org/dist/Test-Warn/
+
+--Brian
+bminard@flatfoot.ca
