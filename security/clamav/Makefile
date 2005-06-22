@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.85.1
+PORTVERSION=	0.86
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -30,7 +30,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS ChangeLog html
+.endif
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
