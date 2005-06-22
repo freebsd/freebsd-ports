@@ -3920,6 +3920,7 @@ iw-he2		ports/hebrew/he2
 iw-hspell	ports/hebrew/hspell
 iw-kde3-i18n	ports/hebrew/kde3-i18n
 iw-koffice-i18n	ports/hebrew/koffice-i18n
+iwi-firmware	ports/net/iwi-firmware
 iwidgets	ports/x11-toolkits/iwidgets
 ixj		ports/comms/ixj
 ixlib		ports/devel/ixlib
@@ -11851,6 +11852,7 @@ unfs3		ports/net/unfs3
 unicornscan	ports/security/unicornscan
 unidesc		ports/sysutils/unidesc
 unison		ports/net/unison
+unison-devel	ports/net/unison-devel
 unix2dos	ports/converters/unix2dos
 unix2tcp	ports/net/unix2tcp
 unixODBC	ports/databases/unixODBC
