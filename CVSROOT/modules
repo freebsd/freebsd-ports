@@ -5801,6 +5801,7 @@ marathon-evil	ports/games/marathon-evil
 marathon2-data	ports/games/marathon2-data
 marbles		ports/games/marbles
 marlin		ports/audio/marlin
+mar		ports/archivers/mar
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
 masqmail	ports/mail/masqmail
