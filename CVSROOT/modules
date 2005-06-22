@@ -3114,6 +3114,7 @@ gonzui		ports/devel/gonzui
 goobox		ports/audio/goobox
 google-sitemapgen	ports/www/google-sitemapgen
 googolplex	ports/net/googolplex
+goom		ports/graphics/goom
 goose		ports/www/goose
 gopchop		ports/multimedia/gopchop
 gopher		ports/net/gopher
@@ -5427,6 +5428,7 @@ libvanessa_logger	ports/devel/libvanessa_logger
 libvanessa_socket	ports/devel/libvanessa_socket
 libvc		ports/devel/libvc
 libvisual	ports/graphics/libvisual
+libvisual-plugins	ports/graphics/libvisual-plugins
 libvm68k	ports/emulators/libvm68k
 libvncserver	ports/net/libvncserver
 libvorbis	ports/audio/libvorbis
