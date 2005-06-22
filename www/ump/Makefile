@@ -15,15 +15,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/timidity/}:timidity \
 		${MASTER_SITE_NETSCAPE:S/%SUBDIR%/sdk\/plugin\/unix/}:plugin
 DISTFILES=	${BZ2DIST} ${ZDIST}
 
-PATCH_SITES=	http://www.timidity.jp/dist/
+PATCH_SITES=	http://www.timidity.jp/dist/ \
+		http://www.onicos.com/staff/iz/timidity/dist/ \
+			http://www.onicos.com/staff/iz/timidity/dist/
 PATCHFILES=	ump-patch-1.gz ump-patch-2.gz ump-patch-3.gz ump-patch-4.gz
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
-
-BROKEN=		Unfetchable
 
 BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2:timidity
 ZDIST=		unix-sdk-3.0b5.tar.Z:plugin ump_with_volume.tar.Z:ump timdiffs.tar.Z:ump
