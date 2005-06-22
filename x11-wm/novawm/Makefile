@@ -30,6 +30,10 @@ PLIST_FILES=	bin/novawm
 PORTDOCS=	AUTHORS ChangeLog INSTALL README TODO
 .endif
 
+post-extract:
+	@${CHMOD} -R +w ${WRKSRC}/src/xpm/.xvpics
+	@${CHMOD} -R +w ${WRKSRC}/.xvpics
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -38,13 +42,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-
-pre-clean:
-	@-if [ -e ${WRKSRC}/src/xpm/.xvpics ]; then \
-	    ${CHMOD} -R +w ${WRKSRC}/src/xpm/.xvpics 2>/dev/null; \
-	fi
-	@-if [ -e ${WRKSRC}/.xvpics ]; then \
-	    ${CHMOD} -R +w ${WRKSRC}/.xvpics 2>/dev/null; \
-	fi
 
 .include <bsd.port.mk>
