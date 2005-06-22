@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	truevision
-PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTVERSION=	0.5.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,33 +18,41 @@ COMMENT=	The GNOME 3D modeler
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_GL=		yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_PYTHON=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
-AUTOMAKE_ARGS=	--add-missing --include-deps
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
+MAN1=		truevision.1
 
-post-extract:
-	@${FIND} ${WRKSRC} -type l -delete
-	@${FIND} ${WRKSRC} -name "*.o" -delete
-	@${FIND} ${WRKSRC} -name "config.cache" -delete
-	@${REINPLACE_CMD} -e 's/ enum Gdk/Gdk/' ${WRKSRC}/src/glview2d.cc \
-		${WRKSRC}/src/glview3d.cc ${WRKSRC}/src/mapedit.cc \
-		${WRKSRC}/src/slopemap.cc
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
+		`pkg-config --cflags gtkglext-1.0`
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib \
+		`pkg-config --libs gtkglext-1.0`
 
-post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/Truevision
-	${TAR} -C ${WRKSRC} --exclude "CVS" -cf - materials | \
-		${TAR} -C ${PREFIX}/share/gnome/Truevision --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/gnome/Truevision
+post-patch:
+	@${REINPLACE_CMD} -e 's|CXXFLAGS=""||g ; \
+		 s|-I/usr/include/gtkglext-1.0/||g ; \
+		 s|-I/usr/local/include/gtkglext-1.0/||g ; \
+		 s|-I/usr/lib/gtkglext-1.0/include/||g ; \
+		 s|-I/usr/local/lib/gtkglext-1.0/include/||g ; \
+		 s|-I/usr/local/include ||g ; \
+		 s|=share$$|=share/gnome|g ; \
+		 s|=share/pixmap|=share/gnome/pixmap|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-I/usr/include||g ; \
+		 s|-I/usr/local/include||g ; \
+		 s|-I/usr/X11R6/include||g ; \
+		 s|-L/usr/lib||g ; \
+		 s|-L/usr/local/lib||g ; \
+		 s|-L/usr/X11R6/lib||g ; \
+		 s|-O2||g ; \
+		 s|share/application|share/gnome/application|g ; \
+		 s|share/mime-info|share/gnome/mime-info|g ; \
+		 s|^truevisiondoc|#truevisiondoc|g'
 
 .include <bsd.port.mk>
