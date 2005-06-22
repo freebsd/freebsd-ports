@@ -1,9 +1,12 @@
-@unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.default; then rm -f %D/etc/proftpd.conf; fi
 bin/ftpcount
+bin/ftpdctl
 bin/ftptop
 bin/ftpwho
-etc/proftpd.conf.default
-etc/rc.d/proftpd%%RC_SUFX%%
+@unexec if cmp -s %D/etc/proftpd.conf %D/%%EXAMPLESDIR%%/etc/proftpd.conf; then rm -f %D/etc/proftpd.conf; fi
+%%EXAMPLESDIR%%/etc/proftpd.conf
 @exec if [ ! -f %D/etc/proftpd.conf ] ; then cp -p %D/%F %B/proftpd.conf; fi
-libexec/proftpd
 sbin/ftpshut
+sbin/in.proftpd
+sbin/proftpd
+@dirrm %%EXAMPLESDIR%%/etc
+@dirrm %%EXAMPLESDIR%%
