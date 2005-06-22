@@ -5779,6 +5779,7 @@ maketeidtd	ports/textproc/maketeidtd
 maketool	ports/devel/maketool
 makeztxt	ports/palm/makeztxt
 malbolge	ports/lang/malbolge
+malint		ports/audio/malint
 malsync		ports/palm/malsync
 mambo		ports/www/mambo
 man.el		ports/misc/man.el
