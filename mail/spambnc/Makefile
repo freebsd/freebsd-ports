@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20050527
+PORTVERSION=	20050621
 CATEGORIES=	mail
-MASTER_SITES=	http://www.spambouncer.org/	\
-		ftp://ftp.spambouncer.org/
-DISTFILES=	sb-beta.tar.gz index.shtml
+MASTER_SITES=	http://www.spambouncer.org/dist/sb/:tarball	\
+		http://www.spambouncer.org/configure/:doc
+DISTFILES=	sb.tar.gz:tarball	quickstart.shtml:doc
 DIST_SUBDIR=	spambnc-${PORTVERSION}
-EXTRACT_ONLY=	sb-beta.tar.gz
+EXTRACT_ONLY=	sb.tar.gz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Set of procmail recipies which handle known/suspected spam
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-IGNOREFILES=	index.shtml
+IGNOREFILES=	quickstart.shtml
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/.pkg-plist
@@ -28,7 +28,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_DIRS=	functions docs data auxiliary
 
 .if !defined(NOPORTDOCS)
-MASTER_SITES+=	http://www.spambouncer.org/webdev/configure/:upg
+MASTER_SITES+=	http://www.spambouncer.org/configure/:upg
 DISTFILES+=	upgrading.shtml:upg
 IGNOREFILES+=	upgrading.shtml
 .endif
@@ -52,7 +52,7 @@ do-install:
 	cd ${WRKDIR} && ${CP} -Rv * ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/index.shtml \
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickstart.shtml \
 		${DOCSDIR}/documentation.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/upgrading.shtml \
 		${DOCSDIR}/upgrading.html
