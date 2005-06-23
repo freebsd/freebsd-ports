@@ -1,0 +1,91 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+pkgname=$1
+gnugk_user=gnugk
+gnugk_group=gnugk
+gnugk_config=${PKG_PREFIX:-"/usr/local"}/etc/gnugk.ini
+gnugk_logdir="/var/log/gnugk"
+gnugk_piddir="/var/run/gnugk"
+
+if [ -x /usr/sbin/nologin ]; then
+	nologin=/usr/sbin/nologin
+else
+	nologin=/sbin/nologin
+fi
+
+case $2 in
+PRE-INSTALL)
+	echo "===> Pre-installation configuration for ${pkgname}"
+	if ! pw groupshow ${gnugk_group} -q >/dev/null ; then
+		echo "There is no group '${gnugk_group}' on this system, so I will try to create it:"
+		if ! pw groupadd ${gnugk_group} -q -h - ; then
+			echo "Failed to create group \"${gnugk_group}\"!" >&2
+			echo "Please create it manually." >&2
+			exit 1
+		else
+			echo "Group '${gnugk_group}' created successfully:"
+		fi
+	else
+		echo "I will use the existing group '${gnugk_group}':"
+	fi
+	pw groupshow ${gnugk_group}
+
+	if ! pw usershow ${gnugk_user} -q >/dev/null ; then
+		echo "There is no account '${gnugk_user}' on this system, so I will try to create it:"
+		if ! pw useradd -q -n ${gnugk_user} \
+		    -g ${gnugk_group} -d/nonexistent \
+	  	    -c "GNU Gatekeeper pseudo user" \
+		    -s "${nologin}" -h - ; then
+			echo "Failed to create user '${gnugk_user}'!" >&2
+			echo "Please create it manually." >&2
+			exit 1
+		else
+			echo "User '${gnugk_user}' created successfully:"
+		fi
+	else
+		echo "I will use the existing user '${gnugk_user}':"
+	fi
+	pw usershow ${gnugk_user}
+
+	for dir in ${gnugk_logdir} ${gnugk_piddir}; do
+		if [ ! -d ${dir} ]; then
+			echo "Creating ${dir}..."
+			install -d -o ${gnugk_user} -g ${gnugk_group} \
+			    -m 0750 ${dir}
+		fi
+	done
+	;;
+POST-INSTALL)
+	if [ ! -f ${gnugk_config} \
+	    -a -f ${gnugk_config}.default ]; then
+		echo "Creating ${gnugk_config} from default..."
+		install -c -o root -g ${gnugk_group} -m 0640 \
+	    	    ${gnugk_config}.default \
+		    ${gnugk_config}
+	fi
+
+	echo "===> Post-installation informations for ${pkgname}"
+	echo ""
+	echo "     o A sample configuration file for this package is installed"
+	echo "       as ${gnugk_config}."
+	echo "       More example configurations can be found in"
+	echo "       ${PKG_PREFIX}/share/examples/gatekeeper."
+	echo ""
+	echo "     o A log directory has been created in ${gnugk_logdir}."
+	echo ""
+	echo "     To enable gatekeeper, set gnugk_enable=yes in either"
+	echo "     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/gnugk"
+	echo "     See ${PKG_PREFIX}/etc/rc.d/gnugk.sh for more"
+	echo "     configuration options."
+	echo ""
+	;;
+*)
+	exit 64
+	;;
+esac
+exit 0
