@@ -153,6 +153,7 @@
     SUBDIR += fugu
     SUBDIR += gacxtool
     SUBDIR += gaim
+    SUBDIR += gaim-latex
     SUBDIR += gaim-openq
     SUBDIR += gaim-rss-reader
     SUBDIR += gajim
