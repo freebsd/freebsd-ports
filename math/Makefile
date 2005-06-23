@@ -6,6 +6,7 @@
     SUBDIR += GiNaC
     SUBDIR += PDL
     SUBDIR += R
+    SUBDIR += aamath
     SUBDIR += abs
     SUBDIR += add
     SUBDIR += algae

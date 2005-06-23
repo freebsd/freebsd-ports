@@ -1,0 +1,5 @@
+Aamath is a program that reads mathematical expressions in infix notation and
+renders them as ASCII art. It may be useful to send mathematics through
+text-only media, such as e-mail or newsgroups.
+
+WWW:	http://fuse.superglue.se/aamath/
