@@ -1,43 +1,40 @@
---- imapd-ssl.rc.in.orig	Fri Nov 28 06:07:33 2003
-+++ imapd-ssl.rc.in	Wed Jan 28 02:06:31 2004
-@@ -53,6 +53,7 @@ start)
- 		. @sysconfdir@/imapd ; \
+--- imapd-ssl.rc.in.orig	Mon Apr  4 00:47:32 2005
++++ imapd-ssl.rc.in	Tue Jun 21 14:03:03 2005
+@@ -44,6 +44,7 @@
  		. @sysconfdir@/imapd-ssl ; \
+ 		PROXY_HOSTNAME=$PROXY_HOSTNAME ; export PROXY_HOSTNAME ; \
  		IMAP_TLS=1; export IMAP_TLS; \
 +		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
  		@libexecdir@/couriertcpd -address=$SSLADDRESS \
- 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrlogger=@courierlogger@ \
  			-stderrloggername=imapd-ssl \
---- imapd.rc.in.orig	Fri Nov 28 06:07:34 2003
-+++ imapd.rc.in	Wed Jan 28 02:06:40 2004
-@@ -54,6 +54,7 @@ start)
- 				. @sysconfdir@/imapd-ssl ; \
+--- imapd.rc.in.orig	Mon Apr  4 00:47:32 2005
++++ imapd.rc.in	Tue Jun 21 14:03:23 2005
+@@ -45,6 +45,7 @@
  		IMAP_STARTTLS=$IMAPDSTARTTLS ; export IMAP_STARTTLS ; \
+ 		PROXY_HOSTNAME=$PROXY_HOSTNAME ; export PROXY_HOSTNAME ; \
  		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL ; \
 +		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
  		@libexecdir@/couriertcpd -address=$ADDRESS \
- 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrlogger=@courierlogger@ \
  			-stderrloggername=imapd \
---- pop3d-ssl.rc.in.orig	Fri Nov 28 06:07:35 2003
-+++ pop3d-ssl.rc.in	Wed Jan 28 02:06:51 2004
-@@ -49,6 +49,7 @@ start)
+--- pop3d-ssl.rc.in.orig	Mon Apr  4 00:47:32 2005
++++ pop3d-ssl.rc.in	Tue Jun 21 14:03:34 2005
+@@ -39,6 +39,7 @@
  		POP3_TLS=1; export POP3_TLS; \
  		POP3_STARTTLS=NO; export POP3_STARTTLS; \
  		POP3_TLS_REQUIRED=0; export POP3_TLS_REQUIRED; \
 +		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
  		@libexecdir@/couriertcpd -address=$SSLADDRESS \
- 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrlogger=@courierlogger@ \
  			-stderrloggername=pop3d-ssl \
---- pop3d.rc.in.orig	Fri Nov 28 06:07:35 2003
-+++ pop3d.rc.in	Wed Jan 28 02:07:15 2004
-@@ -45,8 +45,8 @@ start)
- 		libexecdir=@libexecdir@ ;
- 		. @sysconfdir@/pop3d ; \
- 				. @sysconfdir@/pop3d-ssl ; \
--		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL ; \
--		export TLS_PROTOCOL ;
-+		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL; export TLS_PROTOCOL ; \
+--- pop3d.rc.in.orig	Mon Apr  4 00:47:32 2005
++++ pop3d.rc.in	Tue Jun 21 14:03:50 2005
+@@ -37,6 +37,7 @@
+ 		PROXY_HOSTNAME=$PROXY_HOSTNAME ; export PROXY_HOSTNAME ; \
+ 		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL ; \
+ 		export TLS_PROTOCOL ;
 +		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
  		@libexecdir@/couriertcpd -address=$ADDRESS \
- 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrlogger=@courierlogger@ \
  			-stderrloggername=pop3d \
