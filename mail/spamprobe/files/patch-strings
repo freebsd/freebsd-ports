@@ -1,0 +1,14 @@
+g++ before 3.x does not have the clear() method on strings
+
+	-mi
+
+--- HashDataFile.cc	Mon Mar 28 14:58:25 2005
++++ HashDataFile.cc	Wed Jun 22 17:27:02 2005
+@@ -233,5 +233,7 @@
+     m_array.reset(0, 0);
+     m_base = 0;
++#if !defined(__GNUC__) || __GNUC__ > 2
+     m_filename.clear();
++#endif
+   }
+ }

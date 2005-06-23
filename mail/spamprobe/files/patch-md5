@@ -1,0 +1,93 @@
+Use OpenSSL's optimized MD5-implementation instead of compiling our own
+
+	-mi
+
+--- Makefile.in	Tue Jun 21 22:23:57 2005
++++ Makefile.in	Wed Jun 22 17:29:23 2005
+@@ -135,5 +135,4 @@
+ 	WordArray.cc\
+ 	hash.c\
+-	md5.c\
+ 	spamprobe.cc\
+ 	util.cc
+@@ -196,5 +195,4 @@
+ 	MBoxMailMessageReader.h\
+ 	MD5Digester.h\
+-	md5.h\
+ 	Message.h\
+ 	MessageHeader.h\
+@@ -266,5 +264,5 @@
+ 	Tokenizer.$(OBJEXT) TraditionalMailMessageParser.$(OBJEXT) \
+ 	UrlOnlyHtmlTokenizer.$(OBJEXT) WordArray.$(OBJEXT) \
+-	hash.$(OBJEXT) md5.$(OBJEXT) spamprobe.$(OBJEXT) util.$(OBJEXT)
++	hash.$(OBJEXT) spamprobe.$(OBJEXT) util.$(OBJEXT)
+ spamprobe_OBJECTS = $(am_spamprobe_OBJECTS)
+ spamprobe_LDADD = $(LDADD)
+@@ -330,5 +328,5 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/UrlOnlyHtmlTokenizer.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/WordArray.Po ./$(DEPDIR)/hash.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/md5.Po ./$(DEPDIR)/spamprobe.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/spamprobe.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/util.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -460,5 +458,4 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/WordArray.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hash.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/md5.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/spamprobe.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/util.Po@am__quote@
+--- MD5Digester.h	Sun Oct 31 18:10:46 2004
++++ MD5Digester.h	Wed Jun 22 17:30:37 2005
+@@ -33,5 +33,5 @@
+ 
+ #include "util.h"
+-#include "md5.h"
++#include <openssl/md5.h>
+ 
+ class MD5Digester
+@@ -41,3 +41,1 @@
+ 
+-  ~MD5Digester();
+- 
+@@ -69,5 +69,5 @@
+ private:
+   string m_digest;
+-  md5_state_s m_state;
++  MD5_CTX m_state;
+   bool m_running;
+ };
+--- MD5Digester.cc	Sun Oct 31 18:10:46 2004
++++ MD5Digester.cc	Wed Jun 22 17:40:07 2005
+@@ -37,9 +37,1 @@
+ 
+-MD5Digester::~MD5Digester()
+-{
+-  if (m_running) {
+-    md5_byte_t raw_digest[32];
+-    md5_finish(&m_state, raw_digest);
+-  }
+-}
+-
+@@ -49,5 +49,5 @@
+ 
+   m_digest.erase();
+-  md5_init(&m_state);
++  MD5_Init(&m_state);
+   m_running = true;
+ }
+@@ -58,5 +58,5 @@
+ 
+   if (value.length() > 0) {
+-    md5_append(&m_state, (md5_byte_t *)value.data(), value.length());
++    MD5_Update(&m_state, value.data(), value.length());
+   }
+ }
+@@ -66,6 +66,6 @@
+   assert(m_running);
+ 
+-  md5_byte_t raw_digest[32];
+-  md5_finish(&m_state, raw_digest);
++  unsigned char raw_digest[MD5_DIGEST_LENGTH];
++  MD5_Final(raw_digest, &m_state);
+ 
+   m_digest.erase();
