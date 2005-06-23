@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 15 21:04:49 2004
-+++ configure	Thu Apr  1 14:56:36 2004
-@@ -10635,6 +10635,9 @@
+--- configure.orig	Sun Jun 19 21:56:23 2005
++++ configure	Thu Jun 23 14:57:09 2005
+@@ -10914,6 +10914,9 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -10,7 +10,7 @@
  #include <resolv.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -10678,6 +10681,9 @@
+@@ -10957,6 +10960,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -20,3 +20,12 @@
  #include <resolv.h>
  _ACEOF
  if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+@@ -13267,7 +13273,7 @@
+ # Check whether --enable-gethostbyname_r or --disable-gethostbyname_r was given.
+ if test "${enable_gethostbyname_r+set}" = set; then
+   enableval="$enable_gethostbyname_r"
+-  disable_gethostbyname_r=$enableval
++  test $enableval = yes && disable_gethostbyname_r=no || disable_gethostbyname_r=yes
+ fi;
+ 
+ if test "$disable_gethostbyname_r" = "yes"; then
