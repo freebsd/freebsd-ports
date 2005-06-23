@@ -6,27 +6,33 @@
 #
 
 PORTNAME=	cups-pstoraster
-PORTVERSION=	7.07
-PORTREVISION=	3
+PORTVERSION=	8.15
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.easysw.com/pub/ghostscript/
-MASTER_SITE_SUBDIR=	ghostscript espgs
-DISTFILES=	ghostscript-${PORTVERSION}${EXTRACT_SUFX} \
-		espgs-${ESPGS_VER}-source${EXTRACT_SUFX}
+MASTER_SITES=	\
+	ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/ \
+	ftp://ftp2.easysw.com/pub/%SUBDIR%/ \
+	ftp://ftp3.easysw.com/pub/%SUBDIR%/ \
+	http://ftp.easysw.com/pub/%SUBDIR%/ \
+	http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR=	ghostscript/test
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNU Postscript interpreter for CUPS printing to non-PS printers
+COMMENT=	Postscript interpreter for CUPS printing to non-PS printers
 
+PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${GHOSTSCRIPT_PORT}:patch
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/${PORTVERSION}/lib/gs_init.ps:${PORTSDIR}/print/ghostscript-gnu
 
-ESPGS_VER=	7.07.1
+ESPGS_VER=	${PORTVERSION}rc3
+
+DISTNAME=	espgs-${ESPGS_VER}-source
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - espgs-${ESPGS_VER}/pstoraster
 ESPGS_WRKSRC=	${WRKDIR}/espgs-${ESPGS_VER}/pstoraster
-WRKSRC=		${WRKDIR}/ghostscript-${PORTVERSION}
+WRKSRC=		${WRKDIRPREFIX}${PORTSDIR}/${GHOSTSCRIPT_PORT}/work/ghostscript
+PATCH_WRKSRC=	${ESPGS_WRKSRC}
 
 USE_BZIP2=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -70,6 +76,5 @@ do-install:
 	${INSTALL_DATA} ${ESPGS_WRKSRC}/${file} ${PREFIX}/share/cups/model
 .endfor
 
-.include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
