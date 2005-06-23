@@ -19,6 +19,8 @@ share/tilp/glade/extprgms-2.glade
 share/tilp/glade/extprgms-2.gladep
 share/tilp/glade/general-2.glade
 share/tilp/glade/general-2.gladep
+share/tilp/glade/logfile-2.glade
+share/tilp/glade/logfile-2.gladep
 share/tilp/glade/manpage-2.glade
 share/tilp/glade/manpage-2.gladep
 share/tilp/glade/pbars-2.glade
@@ -40,9 +42,6 @@ share/tilp/help/Image15.png
 share/tilp/help/Image17.png
 share/tilp/help/Image18.png
 share/tilp/help/Image20.png
-share/tilp/help/Makefile
-share/tilp/help/Makefile.am
-share/tilp/help/Makefile.in
 share/tilp/help/Manual_en.html
 share/tilp/help/Manual_fr.html
 share/tilp/help/action.png
