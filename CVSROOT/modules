@@ -164,6 +164,7 @@ a2ps-letterdj	ports/print/a2ps-letterdj
 aaccli		ports/sysutils/aaccli
 aafid2		ports/security/aafid2
 aalib		ports/graphics/aalib
+aamath		ports/math/aamath
 aap		ports/devel/aap
 abacus		ports/deskutils/abacus
 abc2mtex	ports/print/abc2mtex
