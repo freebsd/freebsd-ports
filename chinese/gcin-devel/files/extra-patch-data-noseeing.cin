@@ -1,0 +1,11 @@
+--- data/noseeing.cin.old	Wed Jun 22 23:26:43 2005
++++ data/noseeing.cin	Wed Jun 22 23:26:43 2005
+@@ -1,7 +1,7 @@
+ %ename   Noseeing
+ %prompt  無瞎瞇
+ %selkey 1234567890
+-%dupsel 16
++%space_style 1
+ %keyname begin
+ a Ａ
+ b Ｂ
