@@ -5,7 +5,6 @@ share/gnome/drivel/glade/drivel.glade
 share/gnome/drivel/languages/livejournal.lang
 share/gnome/help/drivel/C/drivel.xml
 share/gnome/help/drivel/C/legal.xml
-share/gnome/icons/gnome/48x48/mimetypes/gnome-mime-application-x-drivel.png
 share/gnome/mime-info/drivel.keys
 share/gnome/mime-info/drivel.mime
 share/gnome/omf/drivel/drivel-C.omf
@@ -35,6 +34,7 @@ share/gnome/pixmaps/drivel/rightarrow.png
 share/gnome/pixmaps/drivel/user.png
 share/gnome/pixmaps/drivel/tray_livejournal.png
 share/gnome/pixmaps/drivel/xmms.xpm
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-drivel.png
 share/locale/bg/LC_MESSAGES/drivel.mo
 share/locale/cs/LC_MESSAGES/drivel.mo
 share/locale/de/LC_MESSAGES/drivel.mo
