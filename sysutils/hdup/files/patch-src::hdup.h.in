@@ -9,12 +9,3 @@
  #define MCRYPT          "@mcrypt@"
  #define GPG		"@gpg@"
  #define DEFAULT_PROTO   "@ssh@"
-@@ -22,7 +22,7 @@
- #define LZOP_PROG	"@lzop@"
- #define SPLIT_PROG      "@split@"
- #define UNSPLIT_PROG    "@cat@"
--#define ETCFILE         "/etc/hdup/hdup.conf"
-+#define ETCFILE         "@prefix@/etc/hdup/hdup.conf"
- /* /usr/local/etc#"/etc/hdup/hdup.conf") */
- #define REMOTE_HDUP     "@prefix@/sbin/hdup"
- #define REMOTE_HDUP_OPT ""      /* default is empty */
