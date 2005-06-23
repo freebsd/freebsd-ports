@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.42.1
+PORTVERSION=	5.43.0
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	http://expect.nist.gov/src/
 
@@ -18,8 +18,8 @@ LIB_DEPENDS?=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 LIB_DEPENDS?=	tcl84.1:${PORTSDIR}/lang/tcl84
 .endif
 
-EXPECT_VER=	5.42
-LIBEXPECT_VER=	542
+EXPECT_VER=	5.43
+LIBEXPECT_VER=	543
 
 WRKSRC=		${WRKDIR}/expect-${EXPECT_VER}
 INSTALLS_SHLIB=	yes
