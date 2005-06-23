@@ -836,6 +836,7 @@
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison
+    SUBDIR += unison-devel
     SUBDIR += unix2tcp
     SUBDIR += uplog
     SUBDIR += urlendec
