@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drivel
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack gtksourceview
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -47,5 +48,9 @@ pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_RHYTHMBOX=yes to disable rhythmbox backend"
 	@${ECHO_MSG} "Define WITHOUT_GTKSPELL=yes to disable gtkspell"
 	@${ECHO_MSG} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|datadir)/icons/gnome|prefix)/share/icons/gnome|g' \
+		${WRKSRC}/pixmaps/Makefile.in
 
 .include <bsd.port.mk>
