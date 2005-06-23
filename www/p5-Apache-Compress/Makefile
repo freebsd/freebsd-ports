@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Compress
-PORTVERSION=	1.003
+PORTVERSION=	1.005
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache/KWILLIAMS
@@ -25,10 +25,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docfile in README Changes
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
