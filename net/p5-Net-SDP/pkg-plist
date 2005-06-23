@@ -3,7 +3,4 @@ bin/sdp2rat
 %%SITE_PERL%%/Net/SDP/Media.pm
 %%SITE_PERL%%/Net/SDP/Time.pm
 @dirrm %%SITE_PERL%%/Net/SDP
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SDP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SDP
 @unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
