@@ -1,12 +1,12 @@
 sbin/%%DRIVERNAME%%control
 %%DATADIR%%/LICENSE
-%%DATADIR%%/ipw-%%PORTVERSION%%-boot.fw
-%%DATADIR%%/ipw-%%PORTVERSION%%-bss.fw
-%%DATADIR%%/ipw-%%PORTVERSION%%-bss_ucode.fw
-%%DATADIR%%/ipw-%%PORTVERSION%%-ibss.fw
-%%DATADIR%%/ipw-%%PORTVERSION%%-ibss_ucode.fw
-%%DATADIR%%/ipw-%%PORTVERSION%%-sniffer.fw
-%%DATADIR%%/ipw-%%PORTVERSION%%-sniffer_ucode.fw
+%%DATADIR%%/%%DRIVERNAME%%-boot.fw
+%%DATADIR%%/%%DRIVERNAME%%-bss.fw
+%%DATADIR%%/%%DRIVERNAME%%-ucode-bss.fw
+%%DATADIR%%/%%DRIVERNAME%%-ibss.fw
+%%DATADIR%%/%%DRIVERNAME%%-ucode-ibss.fw
+%%DATADIR%%/%%DRIVERNAME%%-sniffer.fw
+%%DATADIR%%/%%DRIVERNAME%%-ucode-sniffer.fw
 @dirrm %%DATADIR%%
 %%WITH_MODULE%%@cwd /
 %%WITH_MODULE%%%%KMODDIR%%/if_%%DRIVERNAME%%.ko
