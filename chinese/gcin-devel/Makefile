@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/misc/
@@ -49,7 +49,8 @@ post-extract:
 	@cd ${WRKSRC}/data/ \
 		&& ${TAR} -zxf ${DISTDIR}/${BOSHIAMYFILE}
 post-patch:
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-data-Makefile
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-data-Makefile \
+		${FILESDIR}/extra-patch-data-noseeing.cin
 PLIST_SUB+=	BOSHIAMY=""
 .endif
 
