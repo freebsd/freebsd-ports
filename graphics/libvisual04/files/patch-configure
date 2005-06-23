@@ -1,0 +1,14 @@
+--- configure.orig	Thu Jun 23 13:09:46 2005
++++ configure	Thu Jun 23 13:10:48 2005
+@@ -25450,7 +25450,11 @@
+         if test x$lv_ix86 = xyes ; then
+                 cat >>$outfile <<_______EOF
+ 
++#if defined(__GNUC__) && __GNUC__ <= 2
++#define VISUAL_ARCH_UNKNOWN
++#else
+ #define VISUAL_ARCH_X86
++#endif
+ _______EOF
+         fi
+ 
