@@ -1,6 +1,6 @@
---- .bochsrc.orig	Sat Jan 17 15:04:24 2004
-+++ .bochsrc	Sat Jan 17 15:13:21 2004
-@@ -66,7 +66,7 @@
+--- .bochsrc.orig	Fri May 13 20:10:58 2005
++++ .bochsrc	Sat Jun 18 06:06:15 2005
+@@ -70,7 +70,7 @@
  # You can also use the environment variable $BXSHARE to specify the
  # location of the BIOS.
  #=======================================================================
@@ -9,19 +9,16 @@
  #romimage: file=bios/BIOS-bochs-2-processors, address=0xf0000
  #romimage: file=bios/BIOS-bochs-4-processors, address=0xf0000
  #romimage: file=bios/rombios.bin, address=0xf0000
-@@ -105,9 +105,9 @@
- # VGAROMIMAGE
+@@ -109,7 +109,7 @@
  # You now need to load a VGA ROM BIOS into C0000.
  #=======================================================================
--#vgaromimage: bios/VGABIOS-lgpl-latest
-+vgaromimage: bios/VGABIOS-lgpl-latest
-+#vgaromimage: bios/VGABIOS-elpin-2.40
- #vgaromimage: bios/VGABIOS-elpin-2.40
--vgaromimage: $BXSHARE/VGABIOS-elpin-2.40
+ #vgaromimage: file=bios/VGABIOS-elpin-2.40
+-vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
++vgaromimage: file=bios/VGABIOS-lgpl-latest
+ #vgaromimage: file=bios/VGABIOS-lgpl-latest-cirrus
  
  #=======================================================================
- # FLOPPYA:
-@@ -286,7 +286,7 @@
+@@ -301,7 +301,7 @@
  # 
  # Default value are sync=none, time0=local
  #=======================================================================
@@ -30,7 +27,7 @@
  
  
  #=======================================================================
-@@ -309,8 +309,8 @@
+@@ -326,8 +326,8 @@
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================
@@ -41,7 +38,7 @@
  
  #=======================================================================
  # LOGPREFIX:
-@@ -350,7 +350,7 @@
+@@ -367,7 +367,7 @@
  # cause bochs to become unstable.  The panic is a "graceful exit," so
  # if you disable it you may get a spectacular disaster instead.
  #=======================================================================
@@ -50,8 +47,8 @@
  error: action=report
  info: action=report
  debug: action=ignore
-@@ -395,7 +395,7 @@
- #   parport1: enabled=1, file="/dev/lp0"
+@@ -422,7 +422,7 @@
+ #   parport2: enabled=1, file="/dev/lp0"
  #   parport1: enabled=0
  #=======================================================================
 -parport1: enabled=1, file="parport.out"
