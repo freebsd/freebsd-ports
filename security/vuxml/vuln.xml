@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="594eb447-e398-11d9-a8bd-000cf18bbe54">
+    <topic>ruby -- arbitrary command execution on XMLRPC server</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<name>ruby_static</name>
+	<range><le>1.8.2_3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nobuhiro IMAI reports:</p>
+	<blockquote cite="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/5237">
+	  <p>the default value modification on
+	    Module#public_instance_methods (from false to true) breaks
+	    s.add_handler(XMLRPC::iPIMethods("sample"), MyHandler.new) style
+	    security protection.</p>
+	  <p>This problem could allow a remote attacker to execute arbitrary
+	    commands on XMLRPC server of libruby.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1992</cvename>
+      <url>http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/5237</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=315064</url>
+    </references>
+    <dates>
+      <discovery>2005-06-22</discovery>
+      <entry>2005-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96948a6a-e239-11d9-83cf-0010dc5df42d">
     <topic>cacti -- potential SQL injection and cross site scripting attacks</topic>
     <affects>
