@@ -7,11 +7,12 @@
 
 PORTNAME=	PLP
 PORTVERSION=	3.18
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://plp.juerd.nl/files/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	apeiron@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Perl embedder superficially resembling PHP
 
 PERL_CONFIGURE=	yes
@@ -23,8 +24,7 @@ MAN3=		PLP.3 PLP::FAQ.3 PLP::Fields.3 PLP::Functions.3 PLP::HowTo.3 \
 .if ${WITH_MOD_PERL} == 1
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .elif ${WITH_MOD_PERL} == 2
-BROKEN=		Broken due the new mod_perl2 API
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mod_perl2.pm
 .else
 IGNORE=	WITH_MOD_PERL must be either '1' or '2', or undefined
@@ -55,7 +55,7 @@ pre-fetch:
 	@${ECHO_CMD} "can expect a 50-200% speed increase with mod_perl support."
 	@${ECHO_CMD}
 	@${ECHO_CMD} "  WITH_MOD_PERL=1  Enables mod_perl 1.x support"
-	@${ECHO_CMD} "  WITH_MOD_PERL=2 Enables unofficial, experimental mod_perl 2.x support"
+	@${ECHO_CMD} "  WITH_MOD_PERL=2  Enables unofficial, experimental mod_perl 2.x support"
 .endif
 	@${ECHO_CMD}
 .include <bsd.port.post.mk>
