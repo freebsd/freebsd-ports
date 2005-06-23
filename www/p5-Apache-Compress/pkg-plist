@@ -1,7 +1,6 @@
 %%SITE_PERL%%/Apache/Compress.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Compress/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Compress
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
