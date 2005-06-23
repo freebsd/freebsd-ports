@@ -213,7 +213,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.2.20050607
+DISTVERSION=	0.8.2.20050622
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
@@ -303,6 +303,7 @@ WXGTK2_PORT=	wxgtk26
 CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
 
+.if !defined(BATCH)
 OPTIONS=	AALIB "Console graphics support" Off \
 		ARTS "Arts audio support" Off \
 		CDROM "Cddb and vcd support" On \
@@ -344,6 +345,7 @@ OPTIONS=	AALIB "Console graphics support" Off \
 		VORBIS "Vorbis support (implies WITH_OGG)" On \
 		WXGTK "WxGtk+2 frontend" On \
 		X264 "H.264 AVC video codec" Off
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -835,7 +837,7 @@ pre-install:
 	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
-.if defined(WITH_MOZILLA_PLUGIN)
+.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
@@ -866,7 +868,7 @@ do-install:
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
 	cd ${FAKEDIR}/share && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${SHAREOWN} ${PREFIX}/share
-.if defined(WITH_MOZILLA_PLUGIN)
+.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	${INSTALL_DATA} ${FAKEDIR}/mozilla/* ${PREFIX}/lib/browser_plugins
 .endif
