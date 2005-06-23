@@ -1,0 +1,17 @@
+--- Makefile.orig	Thu Jun 23 00:12:18 2005
++++ Makefile	Thu Jun 23 15:08:04 2005
+@@ -3,7 +3,7 @@
+ CXXFILES	= parser.cc lexer.cc expr.cc canvas.cc aamath.cc
+ OBJS		= $(CXXFILES:.cc=.o) 
+ TARGET		= aamath
+-CFLAGS		= -Wall -O2 -g -DUSE_READLINE
++CFLAGS		?= -Wall -O2 -g -DUSE_READLINE
+ LFLAGS		= -g
+ LIBS		= -lreadline -ltermcap
+ 
+@@ -21,3 +21,5 @@
+ 
+ clean:
+ 	rm -f *.o lexer.cc parser.h parser.cc $(TARGET)
++
++all: $(TARGET)
