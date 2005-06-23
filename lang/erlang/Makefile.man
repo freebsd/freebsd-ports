@@ -228,6 +228,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	nteventlog.3 \
 	odbc.3 \
 	orber.3 \
+	orber_acl.3 \
 	orber_diagnostics.3 \
 	orber_ifr.3 \
 	orber_tc.3 \
