@@ -254,6 +254,7 @@ USE_GNOME=	gnometarget libxml2
 USE_REINPLACE=	yes
 WANT_SDL=	yes
 USE_ICONV=	yes
+USE_PERL5_BUILD=yes
 
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
