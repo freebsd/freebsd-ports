@@ -11,7 +11,8 @@ bin/bximage
 %%DATADIR%%/VGABIOS-lgpl-README
 %%DATADIR%%/VGABIOS-lgpl-latest
 %%DATADIR%%/VGABIOS-lgpl-latest-debug
-%%DATADIR%%/keymaps/convertmap.pl
+%%DATADIR%%/VGABIOS-lgpl-latest-cirrus
+%%DATADIR%%/VGABIOS-lgpl-latest-cirrus-debug
 %%DATADIR%%/keymaps/sdl-pc-de.map
 %%DATADIR%%/keymaps/sdl-pc-us.map
 %%DATADIR%%/keymaps/x11-pc-be.map
@@ -20,26 +21,24 @@ bin/bximage
 %%DATADIR%%/keymaps/x11-pc-es.map
 %%DATADIR%%/keymaps/x11-pc-fr.map
 %%DATADIR%%/keymaps/x11-pc-it.map
+%%DATADIR%%/keymaps/x11-pc-ru.map
 %%DATADIR%%/keymaps/x11-pc-se.map
 %%DATADIR%%/keymaps/x11-pc-uk.map
 %%DATADIR%%/keymaps/x11-pc-us.map
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
 %%DOCSDIR%%/biossums.txt
 %%DOCSDIR%%/bochsrc-sample.txt
 %%PORTDOCS%%%%DOCSDIR%%/cvs-structure.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/3rdparty.license.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Linux.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Minix.html
 %%PORTDOCS%%%%DOCSDIR%%/html/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/html/codingguidelines.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cosimulation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/guestNT.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/iodebug.html
 %%PORTDOCS%%%%DOCSDIR%%/random.txt
-%%PORTDOCS%%%%DOCSDIR%%/release-prep.txt
 %%PORTDOCS%%@dirrm share/doc/bochs/html
 @dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
