@@ -1,0 +1,11 @@
+=============================================================================
+This port of iSQL-Viewer is configured to automatically detect and use
+the installed JDBC drivers for MySQL and PostgreSQL.
+
+You can add additional JDBC drivers (and dependent JAR files) on a per
+service basis in the tabbed dialog "Resources" which resides inside the
+"Service Manager" dialog.
+
+However, please note that adding JAR files or directories in the preferences
+dialog doesn't have the desired effect in this version.
+=============================================================================

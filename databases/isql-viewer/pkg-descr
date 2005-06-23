@@ -1,0 +1,23 @@
+iSQL-Viewer is an open-source JDBC 2.x compliant database front end written
+in Java. It implements across multiple platforms features of the JDBC API.
+It does everything through a single interface.
+
+iSQL-Viewer works with most database platforms, including PostgreSQL, MySQL,
+Oracle, and Informix. iSQL-Viewer provides a variety of tools and features
+to carry out common database tasks. It includes:
+
+    * Scripting support using JPython and the IBM BSF framework
+    * A guided query builder for creating simple and complex SQL queries
+    * Enhanced object viewing for images, HTML, and other binary format files
+    * A friendly SQL console for executing SQL statements
+    * Batch processing of SQL files
+    * Database introspection
+    * "Bookmarks" to store SQL commands you commonly use
+    * Import and export to popular file formats such as Microsoft Excel, XML, 
+      HTML and ASCII delimited.
+    * Enhanced interface support across platforms
+
+iSQL-Viewer is designed to meet the needs of JDBC Driver developers and
+database developers who work in single or multi-platform environments.
+
+WWW: http://www.isqlviewer.com/
