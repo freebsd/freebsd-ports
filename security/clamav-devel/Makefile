@@ -40,9 +40,7 @@ USE_RC_SUBR=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS ChangeLog html
-.endif
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav

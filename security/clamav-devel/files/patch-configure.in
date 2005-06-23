@@ -1,6 +1,6 @@
---- configure.in.o	Mon Jan 10 20:13:18 2005
-+++ configure.in	Mon Jan 10 20:13:42 2005
-@@ -360,9 +360,6 @@
+--- configure.in.orig	Tue Jun 14 00:41:54 2005
++++ configure.in	Thu Jun 23 15:14:13 2005
+@@ -387,9 +387,6 @@
      ;;
  freebsd*)
      if test "$have_pthreads" = "yes"; then
@@ -10,3 +10,12 @@
  	TH_SAFE="-thread-safe"
  	AC_DEFINE(CL_THREAD_SAFE,1,[thread safe])
  	AC_DEFINE(_REENTRANT,1,[thread safe])
+@@ -732,7 +729,7 @@
+ 
+ AC_ARG_ENABLE(gethostbyname_r,
+ [  --disable-gethostbyname_r	  disable support for gethostbyname_r],
+-disable_gethostbyname_r=$enableval,)
++test $enableval = yes && disable_gethostbyname_r=no || disable_gethostbyname_r=yes,)
+ 
+ if test "$disable_gethostbyname_r" = "yes"; then
+     AC_MSG_RESULT(support disabled)
