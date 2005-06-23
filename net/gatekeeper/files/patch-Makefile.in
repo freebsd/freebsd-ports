@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Jun 20 14:16:12 2005
++++ Makefile.in	Mon Jun 20 14:17:08 2005
+@@ -76,7 +76,7 @@
+ LD_RUN_LIST += $(PWLIBDIR)/lib $(OPENH323DIR)/lib
+ 
+ # compiler/linker flags set by configure script
+-STDCCFLAGS += @STDCCFLAGS@
++STDCCFLAGS += @STDCCFLAGS@ -DPASN_LEANANDMEAN=1
+ LDFLAGS    += @LDFLAGS@
+ ENDLDLIBS  += @ENDLDLIBS@
+ ENDLDFLAGS += @ENDLDFLAGS@
+@@ -111,7 +111,7 @@
+ 
+ # extra targets
+ addpasswd: $(OBJDIR)/addpasswd.o
+-	$(CXX) -o $(OBJDIR)/addpasswd $(CFLAGS) $(OBJDIR)/addpasswd.o $(LDFLAGS) -l$(PTLIB_BASE)$(LIB_TYPE) $(ENDLDLIBS) $(ENDLDFLAGS)
++	$(CXX) -o $(OBJDIR)/addpasswd $(CFLAGS) $(OBJDIR)/addpasswd.o $(LDFLAGS) -l$(PTLIB_BASE)$(LIB_TYPE)_s $(ENDLDLIBS) $(ENDLDFLAGS)
+ 
+ doc:
+ 	$(MAKE) -C docs/manual html

@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: gnugk
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add to /etc/rc.conf to enable gnugk:
+# gnugk_enable="YES"
+#
+# Additional options for /etc/rc.conf
+# gnugk_user="the user that should run gnugk"	(def: gnugk)
+# gnugk_config"path to the config file to use"	(def: /usr/local/etc/gnugk.ini)
+# gnugk_logfile="path to the logfile to log to" (def: /var/log/gnugk/gnugk.log)
+# gnugk_pidfile="path to the pidfile to use"	(def: /var/run/gnugk/gnugk.pid)
+# gnugk_flags="additional flags you need"	(def: -t)
+
+. %%RC_SUBR%%
+
+name="gnugk"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/${name}"
+extra_commands="reload"
+
+load_rc_config $name
+
+gnugk_user=${gnugk_user:-${name}}
+gnugk_config=${gnugk_config:-"%%PREFIX%%/etc/${name}.ini"}
+gnugk_logfile=${gnugk_logfile:-"/var/log/${name}/${name}.log"}
+gnugk_pidfile=${gnugk_pidfile:-"/var/run/${name}/${name}.pid"}
+
+# use some defaults if no flags are specified in /etc/rc.conf
+gnugk_flags=${gnugk_flags:-"-t"}
+
+required_files=${gnugk_conf}
+pidfile=${gnugk_pidfile}
+command_args="-u ${gnugk_user} -c ${gnugk_config} -o ${gnugk_logfile} --pid ${pidfile} >/dev/null &"
+
+run_rc_command "$1"

@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+gnugk_config=${PKG_PREFIX:-"/usr/local"}/etc/gnugk.ini
+gnugk_logdir="/var/log/gnugk"
+gnugk_piddir="/var/run/gnugk"
+
+case $2 in
+DEINSTALL)
+	cmp -s -z ${gnugk_config} ${gnugk_config}.default && rm ${gnugk_config}
+	rmdir ${gnugk_logdir} 2>/dev/null
+	rmdir ${gnugk_piddir} 2>/dev/null
+	;;
+POST-DEINSTALL)
+	echo "===> post-deinstallation information for $1"
+	echo ""
+	echo "     Please note that gatekeeper was not completely removed"
+	echo "     from this system:"
+	echo ""
+	echo "     Any gatekeeper related user accounts were kept."
+	if  [ -f ${gnugk_config} \
+		-o -d ${gnugk_logdir} \
+		-o -d ${gnugk_piddir} ] ; then
+		echo ""
+		echo "     Additionally, the log directory as well as any"
+		echo "     modified configuration files were preserved"
+		echo "     too, in case you want to install an updated version"
+		echo "     of gatekeeper. You need to remove them manually if"
+		echo "     you do not want to use it any longer."
+	fi
+	echo ""
+	;;
+*)
+	exit 64
+	;;
+esac
+exit 0
