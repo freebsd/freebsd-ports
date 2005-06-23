@@ -1698,6 +1698,7 @@ BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 ALL_TARGET?=
 PL_BUILD?=		Build
 CONFIGURE_ARGS+= \
+	create_packlist=0 \
 	install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
 	install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
 	install_path=script="${PREFIX}/bin" \
