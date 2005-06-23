@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libticalcs
-PORTVERSION=	4.5.1
-PORTREVISION=	3
+PORTVERSION=	4.5.9
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -15,19 +14,14 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator library
 
-LIB_DEPENDS=	ticables.10:${PORTSDIR}/comms/libticables \
-		tifiles.5:${PORTSDIR}/devel/libtifiles
+LIB_DEPENDS=	ticables.12:${PORTSDIR}/comms/libticables \
+		tifiles.6:${PORTSDIR}/devel/libtifiles
 
 USE_GETTEXT=	yes
-USE_GNOME=	glib20 pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-MAN1=	ticalcs-config.1
 
 .include <bsd.port.mk>

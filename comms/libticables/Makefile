@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libticables
-PORTVERSION=	3.7.7
-PORTREVISION=	2
+PORTVERSION=	3.9.2
 CATEGORIES=	comms
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -19,14 +18,9 @@ LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	pkgconfig
-USE_LIBTOOL_VER=	13
+USE_GNOME=	gnomehack pkgconfig
+USE_LIBTOOL_VER=	15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-MAN1=	ticables-config.1
 
 .include <bsd.port.mk>

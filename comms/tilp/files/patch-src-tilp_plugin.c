@@ -1,19 +1,18 @@
---- src/tilp_plugin.c.orig	Wed Apr 23 20:51:57 2003
-+++ src/tilp_plugin.c	Thu Apr 24 13:33:41 2003
-@@ -168,6 +168,7 @@
- 	g_dir_close(dir);
- 	DISPLAY(_("Done !\n"));
+--- src/tilp_plugin.c.orig	Mon Feb 14 18:53:16 2005
++++ src/tilp_plugin.c	Mon Feb 14 18:54:11 2005
+@@ -171,6 +171,7 @@
+ 	printl(0, _("Done !\n"));
  
-+#ifndef __BSD__
  	// Scan registry 
- 	DISPLAY(_("Scanning registry... "));
++#ifndef __BSD__
+ 	printl(0, _("scanning registry... "));
  #ifdef __WIN32__
-@@ -229,7 +230,7 @@
+ 	reg_fn = g_strconcat(inst_paths.base_dir, REG_FILE, NULL);
+@@ -231,6 +232,7 @@
  	}
  	fclose(reg);
- 	DISPLAY(_("Done !\n"));
--
+ 	printl(0, _("Done !\n"));
 +#endif
+ 
  	return 0;
  }
- 

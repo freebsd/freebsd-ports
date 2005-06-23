@@ -1,10 +1,17 @@
---- Makefile.in.orig	Wed Aug 27 22:44:39 2003
-+++ Makefile.in	Wed Aug 27 22:45:35 2003
-@@ -185,7 +185,6 @@
+--- Makefile.in.orig	Thu May 26 17:00:53 2005
++++ Makefile.in	Thu Jun 16 20:21:34 2005
+@@ -190,11 +190,11 @@
+ 
  # subdirectories to scan
  SUBDIRS = \
- 	glade help icons man misc pixmaps src win32 \
--	plugins registry \
- 	po intl
+-	build desktop glade help icons intl \
+-	pixmaps po src registry plugins\
++	build glade help icons intl \
++	pixmaps po src\
+ $(am__append_1)
  
+-dist_pkgdata_DATA = COPYING RELEASE ./registry/tilp.registry
++dist_pkgdata_DATA = COPYING RELEASE
  
+ EXTRA_DIST = README.* TODO po/TRANSLATORS
+ subdir = .
