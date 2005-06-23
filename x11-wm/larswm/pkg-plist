@@ -1,13 +1,11 @@
 bin/larsclock
+bin/larsmenu
 bin/larsremote
 bin/larswm
 %%PORTDOCS%%share/doc/larswm/README
+%%PORTDOCS%%share/doc/larswm/README.9menu
 %%PORTDOCS%%share/doc/larswm/README.9wm
 %%PORTDOCS%%share/doc/larswm/ChangeLog
-%%PORTDOCS%%share/doc/larswm/keyboard_refcard.ms
-%%PORTDOCS%%share/doc/larswm/mouse_refcard.ms
-%%PORTDOCS%%share/doc/larswm/sample.barclock
 %%PORTDOCS%%share/doc/larswm/sample.larswmrc
-%%PORTDOCS%%share/doc/larswm/sample.xmodmaprc
 %%PORTDOCS%%share/doc/larswm/sample.xsession
 %%PORTDOCS%%@dirrm share/doc/larswm
