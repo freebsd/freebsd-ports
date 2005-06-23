@@ -30,9 +30,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS ChangeLog html
-.endif
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
