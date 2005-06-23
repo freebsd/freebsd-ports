@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	larswm
-PORTVERSION=	7.2.8
+PORTVERSION=	7.5.3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www-personal.umich.edu/~larsb/larswm/
+MASTER_SITES=	http://home.earthlink.net/~lab1701/larswm/
 
 MAINTAINER=	lab@fnurt.net
 COMMENT=	Tiling Window Manager for X
 
 USE_IMAKE=	yes
 
-MAN1=		larsclock.1 larsremote.1 larswm.1
+MAN1=		larsclock.1 larsmenu.1 larsremote.1 larswm.1
 
-MYPORTDOCS=	ChangeLog README README.9wm keyboard_refcard.ms \
-		mouse_refcard.ms sample.barclock sample.larswmrc \
-		sample.xmodmaprc sample.xsession
+MYPORTDOCS=	ChangeLog README README.9menu README.9wm \
+		sample.larswmrc sample.xsession
 
 post-install:
 .if !defined(NOPORTDOCS)
