@@ -34,13 +34,13 @@ command="/usr/local/sbin/%%DRIVERNAME%%control"
 		eval _mode=\$%%DRIVERNAME%%_mode_${i}
 		case ${_mode} in
 		""|bss)
-			eval _%%DRIVERNAME%%_file_${i}="%%RELNAME%%-%%PORTVERSION%%.fw"
+			eval _%%DRIVERNAME%%_file_${i}="%%DRIVERNAME%%.fw"
 			;;
 		ibss)
-			eval _%%DRIVERNAME%%_file_${i}="%%RELNAME%%-%%PORTVERSION%%-i.fw"
+			eval _%%DRIVERNAME%%_file_${i}="%%DRIVERNAME%%-i.fw"
 			;;
 		monitor)
-			eval _%%DRIVERNAME%%_file_${i}="%%RELNAME%%-%%PORTVERSION%%-p.fw"
+			eval _%%DRIVERNAME%%_file_${i}="%%DRIVERNAME%%-p.fw"
 			;;
 		*)
 			echo "${_mode} - Possible values for %%DRIVERNAME%%_mode_${i} are bss|ibss|monitor."

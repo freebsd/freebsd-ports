@@ -2,9 +2,9 @@
 This port has installed following files in %%DATADIR%%:
 
   - LICENSE : License terms,
-  - %%RELNAME%%-%%PORTVERSION%%-i.fw : IBSS mode (aka ad-hoc mode) firmware,
-  - %%RELNAME%%-%%PORTVERSION%%-p.fw : Monitor mode firmware,
-  - %%RELNAME%%-%%PORTVERSION%%.fw : BSS mode (aka infrastructure mode) firmware.
+  - %%DRIVERNAME%%-i.fw : IBSS mode (aka ad-hoc mode) firmware,
+  - %%DRIVERNAME%%-p.fw : Monitor mode firmware,
+  - %%DRIVERNAME%%.fw : BSS mode (aka infrastructure mode) firmware.
 
 Ensure you've read license terms carefully before you use this
 firmware.
@@ -15,7 +15,7 @@ use your adapter.
 For instance, to download firmware for BSS mode:
 
   # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 \
-	-f %%DATADIR%%/%%RELNAME%%-%%PORTVERSION%%.fw
+	-f %%DATADIR%%/%%DRIVERNAME%%.fw
 
 The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
 to /etc/rc.conf to use it :
