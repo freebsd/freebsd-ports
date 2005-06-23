@@ -1,12 +1,13 @@
-# New ports collection makefile for:   oneko
-# Date created:        5 December 1994
-# Whom:                asami
+# New ports collection makefile for:   am-utils
+# Date created:        2 November 2004
+# Whom:                Jon Wilson <jon@phuq.co.uk>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	am-utils
-PORTVERSION=	6.1.b4
+PORTVERSION=	6.1
+PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
