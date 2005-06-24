@@ -1310,6 +1310,7 @@
     SUBDIR += py-istring
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
+    SUBDIR += py-ll-core
     SUBDIR += py-log4py
     SUBDIR += py-logging
     SUBDIR += py-logilab-common
