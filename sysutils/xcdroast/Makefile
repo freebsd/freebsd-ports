@@ -7,7 +7,7 @@
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/:src \
@@ -19,13 +19,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src new_configure.tar.gz:patch
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+
+OPTIONS=	GTK2	"Enable GTK2 support"		off \
+		NONROOT	"Use xcdroast w/o being root"	off \
+		NLS	"Native language support"	on
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	253
+WANT_GNOME=	yes
 
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
@@ -35,6 +40,15 @@ CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=		xcdroast.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+.else
+PLIST_SUB=	NLS=""
+.endif
 
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=--enable-gtk2
@@ -56,24 +70,19 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Are you sure you want this? If not, hit Ctrl+C right now "
 	@${ECHO_MSG}
+	@${ECHO_MSG} "         This is a security risk! XCDRost will use an own"
+	@${ECHO_MSG} "         wrapping utility which gets a SUID Bit after enabling"
+	@${ECHO_MSG} "         the non-root mode inside the application!"
+	@${ECHO_MSG}
 	sleep 5
-.else
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_NONROOT=yes"
-	@${ECHO} "         Use xcdroast w/o being root."
-	@${ECHO} "         But beware!  This is a security risk! XCDRost will use an"
-	@${ECHO} "         own wrapping utility which gets a SUID Bit after enabling"
-	@${ECHO} "         the non-root mode inside the application!"
-	@${ECHO} "      WITH_GTK2=yes"
-	@${ECHO} "         enables gtk2 support"
-	@${ECHO} ""
-
 .endif
 
 pre-patch:
-	${CP} ${WRKDIR}/aclocal.m4 ${WRKSRC}
-	${CP} ${WRKDIR}/configure ${WRKSRC}
-	${CP} ${WRKDIR}/configure.in ${WRKSRC}
-.include <bsd.port.mk>
+	@${CP} ${WRKDIR}/configure ${WRKSRC}
+	@${TOUCH} ${WRKSRC}/stamp-h.in
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gint in, out|gsize in, out|g' \
+		${WRKSRC}/src/xtools.c
+
+.include <bsd.port.post.mk>
