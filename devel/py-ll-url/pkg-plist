@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/ll/url.py
+%%PYTHON_SITELIBDIR%%/ll/_url.so
+%%PYTHON_SITELIBDIR%%/ll/url.pyc
+%%PYTHON_SITELIBDIR%%/ll/url.pyo

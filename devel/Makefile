@@ -1311,6 +1311,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-ll-core
+    SUBDIR += py-ll-url
     SUBDIR += py-log4py
     SUBDIR += py-logging
     SUBDIR += py-logilab-common

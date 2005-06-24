@@ -1,0 +1,5 @@
+This module contains an RFC2396 compliant implementation of URLs (see the class
+URL) and file like classes for reading data from URLs and writing data to URLs
+(see the classes Resource, ReadResource and WriteResource).
+
+WWW:	http://www.livinglogic.de/Python/url/
