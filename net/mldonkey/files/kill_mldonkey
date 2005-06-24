@@ -1,4 +1,7 @@
+#!/bin/sh
 #
+# $FreeBSD$
+
 # Copyright (c) 2003
 # Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # Holger Lamm <holger@e-gitt.net>
@@ -26,26 +29,26 @@
 # SUCH DAMAGE.
 #
 
-#!/bin/sh
-
 #
 # Add Username and password here
 # like this:
 #
-HTTPUSER="you"
-HTTPPASS="yourpassword"
-
-# Add location and port of mldonkey core
-HTTPURL="127.0.0.1:4080"
+#MLNETUSER="admin"
+#MLNETPASS=""
+#MLNETHOST="127.0.0.1"
+#MLNETPORT="4080"
 
 # internal configuration
 HTTP_COMMAND="/usr/bin/fetch"
-HTTP_COMMAND_ARGS="-1 -q -s"
+HTTP_COMMAND_ARGS="-1 -q -s -o /dev/null"
 
-if [ -n "${HTTPUSER}" -a -n "${HTTPPASS}" ]
-then
-	export HTTP_AUTH=basic:*:${HTTPUSER}:${HTTPPASS}
+if [ -n "${MLNETPASS}" ]; then
+	export HTTP_AUTH=basic:*:${MLNETUSER:-admin}:${MLNETPASS}
 fi
 
-${HTTP_COMMAND} ${HTTP_COMMAND_ARGS} "http://${HTTPURL}/submit?q=kill"
+exec > /dev/null 2>&1
+
+${HTTP_COMMAND} ${HTTP_COMMAND_ARGS} \
+	"http://${MLNETHOST:-127.0.0.1}:${MLNETPORT:-4080}/submit?q=kill" \
+	2>&1 > /dev/null
 
