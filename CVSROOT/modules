@@ -10301,6 +10301,7 @@ ripenc		ports/audio/ripenc
 ripetools	ports/net/ripetools
 ripit		ports/audio/ripit
 ripmime		ports/mail/ripmime
+ripole		ports/textproc/ripole
 rkhunter	ports/security/rkhunter
 rkive		ports/news/rkive
 rl		ports/textproc/rl
