@@ -1,5 +1,8 @@
 %%SITE_PERL%%/POE/Component/Client/HTTP.pm
-%%SITE_PERL%%/POE/Component/Client/HTTP/SSL.pm
+%%SITE_PERL%%/POE/Component/Client/HTTP/Request.pm
+%%SITE_PERL%%/POE/Component/Client/HTTP/RequestFactory.pm
+%%SITE_PERL%%/POE/Filter/HTTPChunk.pm
+%%SITE_PERL%%/POE/Filter/HTTPHead.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP
 @dirrm %%SITE_PERL%%/POE/Component/Client/HTTP
@@ -8,4 +11,5 @@
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE/Component/Client 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Filter 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
