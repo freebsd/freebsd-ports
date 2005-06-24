@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.9.16
+PORTVERSION=	1.9.17
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/gnupg
@@ -18,7 +18,8 @@ COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		ksba.14:${PORTSDIR}/security/libksba \
-		pth.20:${PORTSDIR}/devel/pth
+		pth.20:${PORTSDIR}/devel/pth \
+		usb:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		dirmngr:${PORTSDIR}/security/dirmngr
 
@@ -35,18 +36,6 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/pth" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/pth"
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/opensc-config)
-WITH_OPENSC=	yes
-.endif
-
-.if defined(WITH_OPENSC)
-BUILD_DEPENDS+=	opensc-config:${PORTSDIR}/security/opensc
-PLIST_SUB+=	WITH_OPENSC=""
-.else
-CONFIGURE_ARGS+=	--disable-scdaemon
-PLIST_SUB+=	WITH_OPENSC="@comment "
-.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
