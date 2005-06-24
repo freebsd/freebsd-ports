@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="95ee96f2-e488-11d9-bf22-080020c11455">
+    <topic>linux-realplayer -- RealText parsing heap overflow</topic>
+    <affects>
+      <package>
+	<name>linux-realplayer</name>
+	<range><le>10.0.4_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=250&amp;type=vulnerabilities&amp;flashstatus=false">
+	  <p>Remote exploitation of a heap-based buffer
+	    overflow vulnerability in the RealText file format
+	    parser within various versions of RealNetworks
+	    Inc.'s RealPlayer could allow attackers to
+	    execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1277</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=250&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <url>http://service.real.com/help/faq/security/050623_player/EN/</url>
+    </references>
+    <dates>
+      <discovery>2005-06-23</discovery>
+      <entry>2005-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="594eb447-e398-11d9-a8bd-000cf18bbe54">
     <topic>ruby -- arbitrary command execution on XMLRPC server</topic>
     <affects>
