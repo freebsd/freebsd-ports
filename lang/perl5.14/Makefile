@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -17,10 +16,14 @@ MASTER_SITE_SUBDIR=	../../src \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
 
+PATCH_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.tobez.org/download/port-mirrors/lang/perl58/
+PATCHFILES=	defined-or-5.8.7.bz2
+
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-PERL_VER=	5.8.6
+PERL_VER=	5.8.7
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
@@ -37,7 +40,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
-	-Dcc="${CC}" -Doptimize="${CFLAGS}" -Duseshrplib \
+	-Dcc="${CC}" -Duseshrplib \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
@@ -47,6 +50,12 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUGGING)
+CONFIGURE_ARGS+=	-Doptimize="-g" -DDEBUGGING
+.else
+CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
+.endif
 
 .if defined(ENABLE_SUIDPERL)
 CONFIGURE_ARGS+=	-Dd_dosuid=define
@@ -72,9 +81,9 @@ WITH_PERL_MALLOC=	yes
 .endif
 
 .if defined(WITH_THREADS)
-.if ${ARCH} == "amd64"
-IGNORE=	Threaded perl does not pass tests on ${ARCH}
-.endif
+#XXX .if ${ARCH} == "amd64"
+#XXX IGNORE=	Threaded perl does not pass tests on ${ARCH}
+#XXX .endif
 CONFIGURE_ARGS+=	-Dusethreads=y
 PKGNAMESUFFIX=		-threaded
 # it seems perl malloc has problems with threaded perl on FreeBSD
@@ -124,6 +133,20 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 USE_REINPLACE=	yes
 
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_DEBUGGING=yes	  Build perl with debugging support."
+	@${ECHO} "	WITH_GDBM=yes		  Build GDBM_File extension."
+	@${ECHO} "	WITHOUT_PERL_MALLOC=yes	  Use FreeBSD system malloc"
+	@${ECHO} "				  (uses less memory, but slower)."
+	@${ECHO} "	WITHOUT_PERL_64BITINT=yes Disable 64 bit integers"
+	@${ECHO} "				  (affects only 32-bit platforms)."
+	@${ECHO} "	WITH_THREADS=yes	  Build threaded perl."
+	@${ECHO} "	ENABLE_SUIDPERL=yes	  Also build set-user-id suidperl binary."
+	@${ECHO} ""
+
 post-patch:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
 		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
@@ -132,17 +155,14 @@ post-patch:
 		-e 's|%%MAKE_CONF%%|${__MAKE_CONF}|g;' \
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
+	${SED} -e 's|%%PERL%%|${PERL}|g;' \
+		${FILESDIR}/perl-after-upgrade \
+		> ${WRKDIR}/perl-after-upgrade
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
-.if defined(WITH_THREADS)
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
 		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
 		${WRKSRC}/hints/freebsd.sh
-.else
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
-		-e 's|%%PTHREAD_CFLAGS%%||g;' \
-		${WRKSRC}/hints/freebsd.sh
-.endif
 
 pre-install:
 	@${RM} -f ${PREFIX}/bin/perl${PERL_VER}
@@ -151,6 +171,9 @@ pre-install:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/perl${PERL_VER}
 	@${STRIP_CMD} ${PREFIX}/bin/perl
+	@${PREFIX}/bin/pod2man ${WRKDIR}/perl-after-upgrade >${WRKDIR}/perl-after-upgrade.1
+	@${INSTALL_SCRIPT} ${WRKDIR}/perl-after-upgrade ${PREFIX}/bin/perl-after-upgrade
+	@${INSTALL_MAN} ${WRKDIR}/perl-after-upgrade.1 ${MAN1PREFIX}/man/man1/perl-after-upgrade.1
 	@${LN} -sf ${PREFIX}/bin/perl${PERL_VER} ${PREFIX}/bin/perl5
 .for files in ${BSDPAN_FILES}
 	${MKDIR} ${BSDPAN_DEST}/${files:H}

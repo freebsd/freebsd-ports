@@ -1,0 +1,629 @@
+#! %%PERL%% -w
+# ----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42)
+# <tobez@FreeBSD.org> wrote this file.  As long as you retain this notice you
+# can do whatever you want with this stuff. If we meet some day, and you think
+# this stuff is worth it, you can buy me a beer in return.   Anton Berezin
+# ----------------------------------------------------------------------------
+#
+# $FreeBSD$
+# $Id: perl-after-upgrade,v 1.11 2005/06/23 19:39:00 tobez Exp $
+#
+=pod
+
+=head1 NAME
+
+perl-after-upgrade -- fixup FreeBSD packages that depend on perl
+
+=head1 SYNOPSIS
+
+  perl-after-upgrade
+  perl-after-upgrade -f
+  perl-after-upgrade -v
+
+=head1 DESCRIPTION
+
+The standard procedure after a perl port (either lang/perl5 or
+lang/perl5.8) upgrade is to basically reinstall all other packages that
+depend on perl.  This is always a painful exercise.  The
+perl-after-upgrade utility makes this process mostly unnecessary.
+
+The tool goes through the list of installed packages, looks for those
+that depend on perl, moves files around, modifies shebang lines in those
+scripts in which it is necessary to do so, tries its best to adjust
+dynamically linked binaries that link with libperl.so in the old path,
+and updates the package database.
+
+After installation of the new perl is complete, either by hand from the
+ports collection, or from a package, or via portupgrade, do the
+following:
+
+=over 4
+
+=item o go root;
+
+=item o run perl-after-upgrade utility.
+
+Do not specify any arguments at first, so it does nothing destructive.
+Pay attention to the produced output and especially to errorlist at the
+end, if any;
+
+=item o run the utility again, with B<-f> command line option.
+
+This will actually do the work.  Again, pay attention to the output
+produced;
+
+=item o fix any reported errors;
+
+=item o reinstall required packages:
+
+The utility will tell you what packages that depend on perl it could not
+handle.  It will also tell you why it happened (for example, they were
+compiled against a binary incompatible perl).  If you want such packages
+to remain operational, you will have to reinstall then by hand or via
+portupgrade.
+
+=item o review the files left in the older perl installation.
+
+This is typically /usr/local/lib/perl5/site_perl/5.X.Y/.  There should
+be very little, if any, files in that directory and its subdirectories,
+excepting a number of .ph files;
+
+=item o check that things work as they should;
+
+=item o remove backup files from the package database.
+
+Those will be /var/db/pkg/*/+CONTENTS.bak;
+
+=item o that's all.
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2005 by Anton Berezin
+
+ "THE BEER-WARE LICENSE" (Revision 42)
+ <tobez@FreeBSD.org> wrote this module.  As long as you retain this
+ notice you can do whatever you want with this stuff. If we meet some
+ day, and you think this stuff is worth it, you can buy me a beer in
+ return.
+
+ Anton Berezin
+
+NO WARRANTY OF ANY KIND, USE AT YOUR OWN RISK.
+
+=head1 HISTORY
+
+The first version of this utility was not bundled with perl package on
+FreeBSD.  It was dumber than the current version in several important
+areas.  It was faster.
+
+=head1 CREDITS
+
+Thanks to Mathieu Arnold for discussion.
+
+=head1 SEE ALSO
+
+perl(1).
+
+=cut
+
+my $debug = 0;
+
+# |/-\
+my $pchar = "|";
+my $do_progress = -t *STDOUT;
+sub progress
+{
+	if ($do_progress) {
+		print STDERR "$pchar";
+		$pchar =~ tr<|/\\-><-|/\\>;
+	}
+}
+
+package FreeBSD::Package;
+use IO::File;
+use File::Copy;
+
+sub new
+{
+	my ($pkg, %p) = @_;
+	my $pkgdir = $p{pkgdir} || return undef;
+	my $name = $pkgdir;
+	$name =~ s|.*/||;
+	main::progress();
+	my $c = IO::File->new("< $pkgdir/+CONTENTS");
+	return undef unless $c;
+	my @lines;
+	while (<$c>) {
+		chomp;
+		push @lines, $_;
+	}
+	my $me = bless {
+		pkgdir => $pkgdir,
+		lines  => \@lines,
+		name   => $name,
+	}, $pkg;
+	return $me;
+}
+
+sub name
+{
+	return $_[0]->{name};
+}
+
+sub lines
+{
+	my $me = shift;
+	if (@_ && @_ == 1 && ref(@_) eq 'ARRAY') {
+		$me->{lines} = [@{$_[0]}];
+		$me->{changed} = 1;
+	} elsif (@_) {
+		$me->{lines} = [@_];
+		$me->{changed} = 1;
+	} else {
+		return @{$me->{lines}};
+	}
+}
+
+sub write_back
+{
+	my ($me) = @_;
+
+	return unless $me->{changed};
+	main::progress();
+	my $file = "$me->{pkgdir}/+CONTENTS";
+	copy($file, "$file.bak");
+	my $c = IO::File->new("> $file");
+	return unless $c;
+	for (@{$me->{lines}}) {
+		print $c "$_\n";
+	}
+}
+
+package FreeBSD::Package::DB;
+use strict;
+
+sub new
+{
+	my ($pkg, %p) = @_;
+	my $me = bless {
+		dbdir => $p{dbdir} || $ENV{PKG_DBDIR} || "/var/db/pkg",
+	}, $pkg;
+	$me->{packages} = [ grep { -d } glob "$me->{dbdir}/*" ];
+	$me->reset;
+	return $me;
+}
+
+sub next
+{
+	my ($me) = @_;
+	while (1) {
+		$me->{current}++;
+		if ($me->{current} >= @{$me->{packages}}) {
+			$me->reset;
+			return undef;
+		}
+		my $pkg = FreeBSD::Package->new(pkgdir => $me->{packages}->[$me->{current}]);
+		return $pkg if $pkg;
+	}
+}
+
+sub reset
+{
+	my ($me) = @_;
+	$me->{current} = -1;
+}
+
+package main;
+use Config;
+use File::Temp qw/tempfile/;
+use File::Copy;
+
+my $dry_run = 1;
+my @tmpl;
+my $VERSION = "1.2";
+
+while (@ARGV) {
+	my $opt = shift;
+	if ($opt eq "-f") {
+		$dry_run = 0;
+	} elsif ($opt eq "-d") {
+		$debug = 1;
+	} elsif ($opt eq "-v") {
+		$_ = $0;
+		s|.*/||;
+		print "$_ version $VERSION\n";
+		exit 0;
+	} elsif ($opt =~ /^-/) {
+		$_ = $0;
+		s|.*/||;
+		print "Unknown option `$opt'\n";
+		print "Usage:\n";
+		print "\t$_\n\t$_ -v\n\t$_ -f\n";
+		exit 1;
+	} else {
+		push @tmpl, $opt;
+	}
+}
+
+my $target =
+	$Config::Config{PERL_REVISION} . "." .
+	$Config::Config{PERL_VERSION} . "." .
+	$Config::Config{PERL_SUBVERSION};
+my $source = "";
+my $api_revision = $Config::Config{api_revision} || 0;
+my $api_version = $Config::Config{api_version} || 0;
+my $api_subversion = $Config::Config{api_subversion} || 0;
+if ($api_revision < $Config::Config{PERL_REVISION}) {
+	$source = ".[";
+	for ($api_revision .. $Config::Config{PERL_REVISION}) {
+		$source .= $_;
+	}
+	$source .= "]\\.\\d+\\.\\d+";
+} elsif ($api_revision > $Config::Config{PERL_REVISION}) {
+	die "internal error, this perl is too old\n";
+} else {
+	$source .= "$Config::Config{PERL_REVISION}\\.";
+	if ($api_version < $Config::Config{PERL_VERSION}) {
+		$source .= "[";
+		for ($api_version .. $Config::Config{PERL_VERSION}) {
+			$source .= $_;
+		}
+		$source .= "]\\.\\d+";
+	} elsif ($api_version > $Config::Config{PERL_VERSION}) {
+		die "internal error, this perl is too old\n";
+	} else {
+		$source .= "$Config::Config{PERL_VERSION}\\.";
+		if ($api_subversion < $Config::Config{PERL_SUBVERSION}) {
+			$source .= "[";
+			for ($api_subversion .. $Config::Config{PERL_SUBVERSION}) {
+				$source .= $_;
+			}
+			$source .= "]";
+		} elsif ($api_subversion > $Config::Config{PERL_SUBVERSION}) {
+			die "internal error, this perl is too old\n";
+		} else {
+			$source .= "$Config::Config{PERL_SUBVERSION}\\.";
+		}
+	}
+}
+print STDERR "- Source re: <$source>\n" if $debug;
+
+my $fuzzy_source = "5\\.[\\d._]+";
+print STDERR "- Fuzzy source re: <$fuzzy_source>\n" if $debug;
+
+my @errors;
+my @notes;
+
+sub fix_script
+{
+	my ($file, $target) = @_;
+
+	main::progress();
+	return 1 if $dry_run;
+	my $sf = IO::File->new("< $file");
+	return "" unless $sf;
+	my $line = <$sf>;
+	my $md5 = "";
+	if ($line && $line =~ s|^(\s*#!\s*[\w/]+perl)$fuzzy_source\b|$1$target|) {
+		my $dir = $file;
+		$dir =~ s|/[^/]+$||;
+		my ($fh, $fn) = tempfile(DIR=> $dir);
+		if ($fh) {
+			print $fh $line;
+			while (<$sf>) {
+				print $fh $_;
+			}
+			close $fh;
+			$md5 = `/sbin/md5 -q $fn`;
+			chomp $md5;
+			my $mode = (stat($file))[2] & 07777;
+			unlink $file or do {
+				push @errors, "Failed to unlink $file: $!";
+				unlink $fn;
+				return "";
+			};
+			rename $fn, $file or do {
+				push @errors, "Failed to rename $fn to $file: $!";
+				return "";
+			};
+			chmod $mode, $file;
+		} else {
+			push @errors, "Failed to modify $file: $!";
+		}
+	}
+	return $md5;
+}
+
+sub fix_binary
+{
+	my ($file, $target) = @_;
+
+	main::progress();
+	my $sf = IO::File->new("< $file");
+	return "" unless $sf;
+	my $was = $dry_run ? "would be" : "was";
+	push @notes, "The $file binary $was modified, make sure it works";
+	return 1 if $dry_run;
+	my $md5 = "";
+
+	my $dir = $file;
+	$dir =~ s|/[^/]+$||;
+	my ($fh, $fn) = tempfile(DIR=> $dir);
+	unless ($fn) {
+		push @errors, "Failed to modify $file: $!";
+		return "";
+	}
+
+	while (<$sf>) {
+		s|/lib/perl5/$fuzzy_source/mach/CORE|/lib/perl5/$target/mach/CORE|g;
+		print $fh $_;
+	}
+	close $fh;
+	$md5 = `/sbin/md5 -q $fn`;
+	chomp $md5;
+	my $mode = (stat($file))[2] & 07777;
+	unlink $file or do {
+		push @errors, "Failed to unlink $file: $!";
+		unlink $fn;
+		return "";
+	};
+	rename $fn, $file or do {
+		push @errors, "Failed to rename $fn to $file: $!";
+		return "";
+	};
+	chmod $mode, $file;
+	return $md5;
+}
+
+sub mkdir_recur
+{
+	my ($dir) = @_;
+
+	main::progress();
+	$dir =~ s|/+$||;
+	my $orig = $dir;
+	if ($dir =~ m|^$|) {
+		return 1;
+	} else {
+		$dir =~ s|/[^/]+$||;
+		my $r = mkdir_recur($dir);
+		return $r unless $r;
+		mkdir $orig, 0777;
+		my $e = $!;
+		unless (-d $orig) {
+			push @errors, "Could not create directory $orig: $e";
+			return 0;
+		}
+		return 1;
+	}
+}
+
+sub might_need_to_fix
+{
+	my ($pkg) = @_;
+	my $pkg_name = $pkg->name;
+
+	main::progress();
+	if ($pkg_name =~ /^bsdpan-/) {
+		return 1;
+	}
+	for ($pkg->lines) {
+		if (/^\@pkgdep\s+perl-($fuzzy_source)\S*\s*$/) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub fixable_binary
+{
+	my ($file, $name) = @_;
+
+	main::progress();
+	my $fixable = 0;
+	for (`/usr/bin/ldd $file 2>&1`) {
+		if (/^\s+libperl\.so\s+=>/) {
+			my $found;
+			for (`strings $file`) {
+				if (m</lib/perl5/($fuzzy_source)/mach/CORE>) {
+					$found++;
+					if (length($1) != length($target)) {
+						push @notes, "$name cannot be fixed up (and has to be reinstalled): cannot patch $file due to length difference";
+						print STDERR "- Skipping $name: cannot patch $file due to length difference\n" if $debug;
+						return undef;
+					}
+					print STDERR "- $name: fixable binary $file\n" if $debug && $found < 2;
+					$fixable = 1 if $1 ne $target;
+				}
+			}
+			if (!$found) {
+				push @notes, "$name cannot be fixed up (and has to be reinstalled): $file is using unknown libperl";
+				print STDERR "- Skipping $name: $file is using unknown libperl\n" if $debug;
+				return undef;
+			}
+		}
+	}
+	return $fixable;
+}
+
+sub fixable_shared_lib
+{
+	my ($file, $name) = @_;
+
+	main::progress();
+	my ($old);
+	for (`strings $file`) {
+		if (/^perl_get_sv$/) {
+			push @notes, "$name cannot be fixed up (and has to be reinstalled): $file uses an old perl API";
+			print STDERR "- Skipping $name: $file uses an old perl API\n" if $debug;
+			return 0;
+		}
+	}
+	return 1;
+}
+
+sub cannot_be_fixed
+{
+	my ($pkg, $binaries, $scripts) = @_;
+	my $pkg_name = $pkg->name;
+	my $prefix = "";
+
+	main::progress();
+
+	for ($pkg->lines) {
+		if (/^\@cwd\s+(\S+)\s*$/) {
+			$prefix = $1;
+			next;
+		}
+		my $file = "$prefix/$_";
+		next if -l $file;
+		next if $file =~ /\.gz$/;
+		next if $file =~ /\.bz2$/;
+		my $sf = IO::File->new("< $file");
+		next unless $sf;
+		my $line;
+		sysread $sf, $line, 256;
+
+		# binary executable
+		if ($line && $line =~ /^\177ELF.\x01.\x09.{8}\x02\0/) {
+			my $fixable = fixable_binary($file, $pkg_name);
+			return 0 unless defined $fixable;
+			push @$binaries, $file if $fixable;
+		# shared library - can prevent us from being able to upgrade
+		} elsif ($line && $line =~ /^\177ELF.\x01.\x09.{8}\x03\0/) {
+			return 0 unless fixable_shared_lib($file, $pkg_name);
+		} elsif ($line && $line =~ m<^\s*#!\s*[\w/]+perl($fuzzy_source)\b>) {
+			print STDERR "- $pkg_name: fixable script $file\n" if $debug;
+			push @$scripts, $file if $1 ne $target;
+		}
+		main::progress();
+	}
+}
+
+#
+my $db = FreeBSD::Package::DB->new;
+my ($fixed, $skipped, $tot_moved, $tot_modified) = (0,0,0,0);
+while (my $pkg = $db->next) {
+	my @lines;
+	my $new_md5;
+	my ($adjusted, $moved, $modified) = (0,0,0);
+
+	my $pkg_name = $pkg->name;
+	if (@tmpl) {
+		my $ok;
+		for (@tmpl) {
+			if ($pkg_name =~ /^$_/) {
+				$ok = 1;
+				last;
+			}
+		}
+		next unless $ok;
+	}
+
+	unless (might_need_to_fix($pkg)) {
+		$skipped++;
+		print STDERR "- Skipping $pkg_name, it does not depend on perl\n" if $debug;
+		next;
+	}
+
+	my (@binaries_to_fix, @scripts_to_fix);
+	if (cannot_be_fixed($pkg, \@binaries_to_fix, \@scripts_to_fix)) {
+		$skipped++;
+		next;
+	}
+	if ($debug) {
+		print STDERR "- $pkg_name: ", scalar(@binaries_to_fix), " binaries to fix\n" if @binaries_to_fix;
+		print STDERR "- $pkg_name: ", scalar(@scripts_to_fix), " scripts to fix\n" if @scripts_to_fix;
+	}
+	my %binaries = map { $_ => 1 } @binaries_to_fix;
+	my %scripts = map { $_ => 1 } @scripts_to_fix;
+
+	my $prefix = "";
+	my $pcnt = 0;
+	for ($pkg->lines) {
+		if (/^([^@]\S+)\s*$/) {
+			my $from = "$prefix/$_";
+			local $_;  # we'll need it later
+			$new_md5 = "";
+			unless (-l $from) {  # skip symlinks
+				if ($binaries{$from}) {
+					$new_md5 = fix_binary($from, $target);
+				} elsif ($scripts{$from}) {
+					$new_md5 = fix_script($from, $target);
+				}
+				$modified++ if $new_md5;
+			}
+			my $to = $from;
+			if ($to =~ s|/perl5/$fuzzy_source/|/perl5/$target/|g or $to =~ s|/perl5/site_perl/$fuzzy_source/|/perl5/site_perl/$target/|g) {
+				if ($to ne $from) {
+					my $dir = $to;
+					$dir =~ s|/[^/]+$||;
+					main::progress();
+					unless ($dry_run) {
+						if (mkdir_recur($dir)) {
+							move($from, $to);
+						} else {
+							push @errors, "   could not move $from to $to";
+						}
+					}
+					$moved++;
+					print STDERR "- move: $from => $to\n" if $debug;
+				}
+			}
+		} elsif (/^\@comment\s+MD5:[\da-f]+\s*$/ && $new_md5) {
+			s|MD5:(\S+)|MD5:$new_md5|;
+			$new_md5 = "";
+		} else {
+			$new_md5 = "";
+		}
+		if (/^\@cwd\s+(\S+)\s*$/) {
+			$prefix = $1;
+		} elsif (/^\@pkgdep\s+perl-($fuzzy_source)\S*\s*$/) {
+			if ($target ne $1) {
+				my $perlver = $1;
+				s|perl-\Q$perlver\E|perl-$target|;
+			}
+		}
+		my $old = $_;
+		if (s|/perl5/$fuzzy_source/|/perl5/$target/|g || s|/perl5/site_perl/$fuzzy_source/|/perl5/site_perl/$target/|g) {
+			if ($old ne $_) {
+				$adjusted++;
+				print STDERR "- adjust: $_\n" if $debug;
+			}
+		}
+		push @lines, $_;
+		main::progress() if $pcnt++ % 250 == 0;
+	}
+	unless ($dry_run) {
+		$pkg->lines(@lines);
+		$pkg->write_back;
+	}
+	$fixed++ if $moved || $modified || $adjusted;
+	$tot_modified += $modified;
+	$tot_moved += $moved;
+	print "$pkg_name: $moved moved, $modified modified, $adjusted adjusted\n";
+}
+print "\n---\n";
+print "Fixed $fixed packages ($tot_moved files moved, $tot_modified files modified)\n";
+print "Skipped $skipped packages\n";
+if (@errors) {
+	print "\n**** The script has encountered following problems:\n";
+	for (@errors) {
+		print "$_\n";
+	}
+	print "\n--- Repeating summary:\n";
+	print "Fixed $fixed packages ($tot_moved files moved, $tot_modified files modified)\n";
+	print "Skipped $skipped packages\n";
+}
+if (@notes) {
+	print "\n**** In addition, please pay attention to the following:\n";
+	for (@notes) {
+		print "$_\n";
+	}
+	print "\n--- Repeating summary:\n";
+	print "Fixed $fixed packages ($tot_moved files moved, $tot_modified files modified)\n";
+	print "Skipped $skipped packages\n";
+}

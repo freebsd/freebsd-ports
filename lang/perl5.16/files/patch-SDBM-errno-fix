@@ -1,0 +1,16 @@
+--- ext/SDBM_File/sdbm/sdbm.c.orig	Thu Jun 23 08:06:21 2005
++++ ext/SDBM_File/sdbm/sdbm.c	Thu Jun 23 08:06:57 2005
+@@ -34,11 +34,8 @@
+ /*
+  * externals
+  */
+-#ifndef WIN32
+-#ifndef sun
+-extern int errno;
+-#endif
+-#endif
++
++#include <errno.h>
+ 
+ extern Malloc_t malloc proto((MEM_SIZE));
+ extern Free_t free proto((Malloc_t));
