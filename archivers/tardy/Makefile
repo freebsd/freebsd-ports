@@ -7,17 +7,24 @@
 #
 
 PORTNAME=	tardy
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.canb.auug.org.au/~millerp/
+MASTER_SITES=	http://tardy.sourceforge.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Manipulate the file headers in tar archive files in various ways
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=	tardy.1
+MAN1=		tardy.1
 PLIST_FILES=	bin/tardy
+
+post-patch:
+.for var in CFLAGS LDFLAGS
+	@${REINPLACE_CMD} -e 's|^\(${var}\)\ =\ \(.*\)|\1 ?= \2|' \
+		${WRKSRC}/Makefile.in
+.endfor
 
 .include <bsd.port.mk>
