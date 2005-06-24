@@ -29,12 +29,12 @@ RUN_DEPENDS=	${X11BASE}/lib/xfce4/mcs-plugins/ui_plugin.so:${PORTSDIR}/sysutils/
 		xfce4-iconbox:${PORTSDIR}/misc/xfce4-iconbox \
 		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libxfce.so:${PORTSDIR}/x11-themes/gtk-xfce-engine
 
-.if exists(${X11BASE}/bin/gdm)
+.if exists(${X11BASE}/sbin/gdm)
 WITH_GDM=	yes
 .endif
 
 .if defined(WITH_GDM)
-RUN_DEPENDS+=	${X11BASE}/bin/gdm:${PORTSDIR}/x11/gdm
+RUN_DEPENDS+=	${X11BASE}/sbin/gdm:${PORTSDIR}/x11/gdm
 PLIST_SUB+=	GDM=""
 .else
 PLIST_SUB+=	GDM="@comment "
