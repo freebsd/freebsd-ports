@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcfilms
-PORTVERSION=	5.0
+PORTVERSION=	5.2
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	http://download.gna.org/gcfilms/
 
