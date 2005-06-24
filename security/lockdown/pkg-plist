@@ -1,3 +1,7 @@
 @comment $FreeBSD$
 bin/lockdown
-etc/lockdown.conf.sample
+bin/editfile
+bin/editfstab
+bin/editkernel
+bin/editlogin
+bin/editttys
