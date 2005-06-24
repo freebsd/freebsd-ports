@@ -6,28 +6,23 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.23
+PORTVERSION=	2.5.28.1
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${DOWNLOADVERSION}
-
-PATCH_SITES=	http://www.schraegerpunkt.de/
-PATCHFILES=	mldonkey-${DOWNLOADVERSION}-${PORTVERSION:C/.+\.//}.patch.gz
 
 MAINTAINER?=	holger@e-gitt.net
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		autoconf213:${PORTSDIR}/devel/autoconf213
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-DOWNLOADVERSION=2.5.22
+CONFLICTS=	mldonkey-devel-[0-9]*
 
-CONFLICTS=	mldonkey-devel-[0-9]* mldonkey-{core,gui}-devel-[0.9]*
-
+USE_BZIP2=	yes
+WANT_AUTOCONF_VER=	259
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
 USE_GMAKE=	yes
 ALL_TARGET=	depend opt
 
@@ -38,9 +33,16 @@ ALL_TARGET=	depend opt
 # have no 'without-' flag
 CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
+CONFLICTS+=	mldonkey-core-devel-[0.9]* mldonkey-core-stable-[0.9]* \
+		mldonkey-[0-9]*
 PKGNAMESUFFIX=	-core
 .else
 PLIST_SUB+=	GUI=""
+CONFLICTS+=	mldonkey-gui-devel-[0.9]*
+.if !defined(WITHOUT_CORE)
+CONFLICTS+=	mldonkey-[0-9]*
+USE_RC_SUBR=	yes
+.endif
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
@@ -55,6 +57,8 @@ PLIST_SUB+=	CORE=""	GUICORE=""
 
 DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
 		Install.txt Readme.txt Todo.txt ed2k_links.txt
+PORTDOCS=	${DOCFILES}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -68,14 +72,26 @@ pre-configure:
 	@cd ${WRKSRC}/config && ${AUTOCONF}
 
 post-patch:
+.ifndef(WITHOUT_CORE)
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g ; s|%%RC_SUBR%%|${RC_SUBR}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" ${FILESDIR}/mlnet.sh > \
+		${WRKDIR}/mlnet.sh
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
+.endif
+	${REINPLACE_CMD} -E \
+		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
+		${BUILD_WRKSRC}/config/Makefile.in
+
+post-build:
+	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
+		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 .ifndef(WITHOUT_CORE)
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlnet		${PREFIX}/bin/mlnet-real
 	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mlnet
+	@${INSTALL_SCRIPT} ${WRKDIR}/mlnet.sh		${PREFIX}/etc/rc.d
 .endif
 .ifndef(WITHOUT_GUI)
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlchat		${PREFIX}/bin

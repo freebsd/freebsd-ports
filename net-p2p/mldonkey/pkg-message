@@ -1,7 +1,7 @@
 	ATTENTIONATTENTION:
 
 - If you want to know how to use mldonkey, read "INSTALL" or
-  "FAQ.html" in the port docs (/usr/local/share/doc/mldonkey)
+  "FAQ.html" in the port docs (%%DOCSDIR%%)
 
 - It is not a bad idea to install mplayer. You will be able
   to preview half-downloaded files (if you have the beginning).
