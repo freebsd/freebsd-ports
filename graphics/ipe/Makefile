@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Ipe
-PORTVERSION=	6.0.p12
+PORTNAME=	ipe
+PORTVERSION=	6.0.p23
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cs.uu.nl/~otfried/Ipe/
+MASTER_SITES=	http://ipe.compgeom.org/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	-src.tar.gz
 
@@ -16,8 +16,6 @@ MAINTAINER=	bremner@unb.ca
 COMMENT=	Extensible drawing editor
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-BROKEN=		Unfetchable
 
 USE_GHOSTSCRIPT_RUN=	yes
 
@@ -27,15 +25,16 @@ USE_QT_VER=	3
 MAKE_ENV+=	QTDIR=${QTDIR}
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/libexec/ipe/${PORTVERSION:S/.p/pre/} %%PREFIX%%/lib
+LDCONFIG_DIRS=	%%PREFIX%%/lib
 NO_FILTER_SHLIBS=	1
+MAN1=		figtoipe.1 ipe.1 ipe5toxml.1 ipetoipe.1 ipetopng.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 # the problem is a little more subtle, really. It requires gcc 3
 USE_GCC=	3.4
-BROKEN=		"Does not compile"
+BROKEN=		"Does not compile on 4.x"
 .endif
 
 QTDIR?=		${X11BASE}
@@ -49,6 +48,13 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
+.if !defined(WITH_TEXMF_PREFIX) 
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_TEXMF_PREFIX=somewhere"
+	@${ECHO} "      if your tetex type1 fonts are somewhere non-standard"
+	@${ECHO} ""
+.endif
+
 .if !defined(WITH_BROWSER)
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_BROWSER=myBrowser to use"
@@ -57,6 +63,7 @@ pre-fetch:
 .endif
 
 WITH_BROWSER?=mozilla
+WITH_TEXMF_PREFIX?= ${PREFIX}/share/texmf-dist
 
 # This is my feeble attempt at making qmake play nice with FreeBSD.
 # If you change a variable, you _must_ reconfigure.
@@ -67,5 +74,10 @@ do-configure:
 		"PREFIX=${PREFIX}"  "WWWBROWSER=${WITH_BROWSER}" \
 		"CC=${CC}" "CXX=${CXX}" "LINK=${CXX}" "LINK_SHLIB=${CXX}" \
 		"LOCALBASE=${LOCALBASE}" main.pro
+
+post-install:
+	cd ${WRKSRC}/.. && mkdir -p ${DATADIR} && \
+	sed s@/usr/share/texmf@${WITH_TEXMF_PREFIX}@ \
+	< tetex-fontmap.xml >  	${DATADIR}/fontmap.xml
 
 .include <bsd.port.post.mk>
