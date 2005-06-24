@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang-doc
 PORTVERSION=	r10b6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.se/doc/doc-5.4.8/pdf/ \
