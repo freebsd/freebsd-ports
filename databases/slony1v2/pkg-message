@@ -1,8 +1,0 @@
-For running slony1 you need:
-     slony postgresql superuser with password set
-     slony system user (makes auth. of slony db user easier)
-     TCP/IP enabled in postgresql (for replication of non local db)
-
-There is a perl script slony_setup.pl which helps you to create initial
-configuration. Installing this package do not makes any needed system
-changes.
