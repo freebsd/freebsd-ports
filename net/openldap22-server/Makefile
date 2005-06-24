@@ -29,7 +29,7 @@ MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX?=		-server
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		eik@FreeBSD.org
+MAINTAINER=		vsevolod@highsecure.ru
 COMMENT?=		Open source LDAP server implementation
 
 UNIQUENAME?=		${PKGNAMEPREFIX}openldap22
