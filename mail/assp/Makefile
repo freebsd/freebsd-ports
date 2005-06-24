@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.1.1.b12
+PORTVERSION=	1.1.1.b13
 CATEGORIES=	mail
 MASTER_SITES=	http://opal.com/freebsd/ports/mail/assp/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Anti-Spam SMTP Proxy
-
-# NB: for 1.1.1.b12 Net::DNS::Packet is required even if SPF and DNSBL not used
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
