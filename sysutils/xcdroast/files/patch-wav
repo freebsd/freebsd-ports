@@ -1,0 +1,354 @@
+--- src/main.h.orig	Tue Apr  6 13:37:32 2004
++++ src/main.h	Mon Apr  5 15:44:41 2004
+@@ -175,8 +175,7 @@
+ void wavplay_frontend(GtkWidget *widget);
+ void wavplay_dodouble();
+ 
+-gint is_std_wav_file(guchar *hdr);
+-gint is_in_cd_quality(guchar *hdr);
++off_t is_std_wav_file(int f, off_t *offset);
+ 
+ void dodebug(gint debuglevel, gchar *fmt, ...);
+ void dolog(gint loglevel, gchar *fmt, ...);
+--- src/wav_id.c.orig	Tue Apr  6 13:37:53 2004
++++ src/wav_id.c	Mon Apr  5 15:44:38 2004
+@@ -5,6 +5,11 @@
+ 	machine-independent (work both on big and little endian)
+ 	code to check if we have valid wavheader that is configured
+ 	for cd-quality (16 bit, stereo, 44.1kHz)
++
++	01.04.04 steve wahl
++
++	Do correct RIFF parsing, don't assume a static header style.
++	Code borrowed from cdrecord.
+ */
+ 
+ #ifdef HAVE_CONFIG_H
+@@ -13,62 +18,147 @@
+ 
+ #include "largefile.h"
+ 
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <unistd.h>
+ #include <string.h>
+ #include <glib.h>
+ #include "xcdroast.h"
+ 
++typedef struct {
++	guchar	ckid[4];
++	guchar	cksize[4];
++} chunk_t;
++
++typedef struct {
++	guchar	wave[4];
++} riff_chunk;
++
++typedef struct {
++	guchar	fmt_tag[2];
++	guchar	channels[2];
++	guchar	sample_rate[4];
++	guchar	av_byte_rate[4];
++	guchar	block_size[2];
++	guchar	bits_per_sample[2];
++} fmt_chunk;
++
++#define	WAV_RIFF_MAGIC		"RIFF"		/* Magic for file format     */
++#define	WAV_WAVE_MAGIC		"WAVE"		/* Magic for Waveform Audio  */
++#define	WAV_FMT_MAGIC		"fmt "		/* Start of Waveform format  */
++#define	WAV_DATA_MAGIC		"data"		/* Start of data chunk	     */
++#define	WAV_FORMAT_PCM		0x0001		/* Linear PCM format	     */
++#define	WAV_FORMAT_ULAW		0x0101		/* American ISDN Telephonie  */
++#define	WAV_FORMAT_ALAW		0x0102		/* International ISDN Tel.   */
++#define	WAV_FORMAT_ADPCM	0x0103		/* ADPCM format		     */
++
++#define	le_a_to_u_short(a)	((unsigned short) \
++				((((unsigned char*) a)[0]       & 0xFF) | \
++				 (((unsigned char*) a)[1] << 8  & 0xFF00)))
++
++#ifdef	__STDC__
++#define	le_a_to_u_long(a)	((unsigned long) \
++				((((unsigned char*) a)[0]       & 0xFF) | \
++				 (((unsigned char*) a)[1] << 8  & 0xFF00) | \
++				 (((unsigned char*) a)[2] << 16 & 0xFF0000) | \
++				 (((unsigned char*) a)[3] << 24 & 0xFF000000UL)))
++#else
++#define	le_a_to_u_long(a)	((unsigned long) \
++				((((unsigned char*) a)[0]       & 0xFF) | \
++				 (((unsigned char*) a)[1] << 8  & 0xFF00) | \
++				 (((unsigned char*) a)[2] << 16 & 0xFF0000) | \
++				 (((unsigned char*) a)[3] << 24 & 0xFF000000)))
++#endif
++
+ /* check if valid wav-header */
+ /* endian independent version */
+-/* return 1 if true, 0 if not */
+-
+-gint is_std_wav_file(guchar *hdr) {
+-gchar tmp[MAXLINE];
+-guint wFormatTag;
+-guint fmtOffset;
+-
+-	strncpy(tmp,(char *) hdr+0,4);
+-	if (strncmp(tmp,"RIFF",4) != 0) 
+-		return 0;
+-
+-	strncpy(tmp,(char *) hdr+8,4);
+-	if (strncmp(tmp,(char *)"WAVE",4) != 0) 
+-		return 0;
+-
+-	strncpy(tmp,(char *) hdr+12,4);
+-	if (strncmp(tmp,(char *)"fmt ",4) != 0) 
+-		return 0;
+-
+-	fmtOffset = (hdr[19]<<24) + (hdr[18]<<16) + (hdr[17]<<8) + hdr[16];
+-	strncpy(tmp,(char *) hdr+20+fmtOffset,4);
+-	if (strncmp(tmp,(char *)"data",4) != 0) 
+-		return 0;
+-
+-	wFormatTag = (hdr[21] << 8) + hdr[20];
+-	if (wFormatTag != 1) 
+-		return 0;
+-
+-	return 1;
++/* return number of bytes if valid, 0 if not */
++/* if offset is non NULL, place offset in file to base of wave data there */
++/* leaves file pointer at begining of wave data if valid */
++
++off_t is_std_wav_file(gint f, off_t *offset)
++{
++	chunk_t		chunk;
++	riff_chunk	riff;
++	fmt_chunk	fmt;
++	struct stat	sb;
++	off_t		cursor;
++	gint		gotFormat;
++	mode_t		mode;
++	off_t		size;
++
++	/*
++	 * First check if a bad guy tries to call wavsize()
++	 * with an unappropriate file descriptor.
++	 * return 0 in this case.
++	 */
++
++	if (isatty(f))
++		return (0);
++	if (fstat(f, &sb) < 0)
++		return (0);
++	mode = sb.st_mode & S_IFMT;
++	if (!S_ISREG(mode) && !S_ISBLK(mode) && !S_ISCHR(mode))
++		return (0);
++
++	cursor = (off_t)0;
++	lseek(f, cursor, SEEK_SET);
++	gotFormat = FALSE;
++
++	for (;;) {
++		if (read(f, &chunk, sizeof (chunk)) != sizeof (chunk))
++			goto err;
++		size = (off_t)le_a_to_u_long(chunk.cksize);
++
++		if (strncmp((char *)chunk.ckid, WAV_RIFF_MAGIC, 4) == 0) {
++			/*
++			 * We found (first) RIFF header. Check if a WAVE
++			 * magic follows. Set up size to be able to skip
++			 * past this header.
++			 */
++			if (read(f, &riff, sizeof (riff)) != sizeof (riff))
++				goto err;
++			if (strncmp((char *)riff.wave, WAV_WAVE_MAGIC, 4) != 0)
++				goto err;
++			size = (off_t)sizeof (riff);
++
++		} else if (strncmp((char *)chunk.ckid, WAV_FMT_MAGIC, 4) == 0) {
++			/*
++			 * We found WAVE "fmt " header. Check size (if it is
++			 * valid for a WAVE file) and coding whether it is
++			 * useable for a CD. 
++			 */
++			if (size < (off_t)sizeof (fmt)) goto err;
++			if (sizeof (fmt) != read(f, &fmt, sizeof (fmt))) goto err;
++			if (le_a_to_u_short(fmt.channels) != 2 ||
++			    le_a_to_u_long(fmt.sample_rate) != 44100 ||
++			    le_a_to_u_short(fmt.bits_per_sample) != 16) {
++				goto err;
++			}
++			gotFormat = TRUE;
++
++		} else if (strncmp((char *)chunk.ckid, WAV_DATA_MAGIC, 4) == 0) {
++			/*
++			 * We found WAVE "data" header. This contains the
++			 * size value of the audio part.
++			 */
++			if (!gotFormat) {
++				goto err;
++			}
++			if ((cursor + size + sizeof (chunk)) > sb.st_size)
++				size = sb.st_size - (cursor  + sizeof (chunk));
++			if (offset)
++				*offset = cursor + sizeof (chunk) ;
++			return (size);
++		}
++		cursor += size + sizeof (chunk);
++		lseek(f, cursor, SEEK_SET);	/* Skip over current chunk */
++	}
++err:
++	lseek(f, (off_t)0L, SEEK_SET);
++	return (0);
+ }
+ 
+ 
+-/* check if wav-file is in cd-quality */
+-/* endian independent version */
+-/* return 1 if true, 0 if not */
+-
+-gint is_in_cd_quality(guchar *hdr) {
+-guint nChannels;
+-guint wBitsPerSample;
+-guint nSamplesPerSec;
+-
+-	nChannels = (hdr[23] << 8) + hdr[22];
+-	wBitsPerSample = (hdr[35] << 8) + hdr[34];
+-	nSamplesPerSec = (hdr[27]<<24) + (hdr[26]<<16) + (hdr[25]<<8) + hdr[24];
+-
+-	if (nChannels != 2 || wBitsPerSample != 16 || 
+-	    nSamplesPerSec != 44100)
+-		return 0;
+-
+-	return 1; 
+-}
+ 
+ 
+--- src/wavplay.c.orig	Tue Apr  6 13:38:20 2004
++++ src/wavplay.c	Mon Apr  5 15:45:07 2004
+@@ -64,13 +64,12 @@
+ #include <dmedia/audio.h>
+ #endif
+ 
+-static guchar waveHdr[44];
++static off_t waveBase ;
+ static gint abuf_size;
+ static guchar *audiobuf;
+ 
+ gint read_line(gint fd, gchar *ptr, gint maxlen);
+-gint is_std_wav_file(guchar *hdr);
+-gint is_in_cd_quality(guchar *hdr);
++off_t is_std_wav_file(int f, off_t *offset);
+ 
+ 
+ #if defined(linux) || defined(__FreeBSD__)
+@@ -747,7 +746,6 @@
+ gint oldtick = 0;
+ off_t bytessofar = 0;
+ off_t totalbytes;
+-struct stat stat_buf;
+ gint min,sec;
+ gchar keybuffer[MAXLINE];
+ #if !(defined(linux))
+@@ -830,20 +828,11 @@
+ 	}
+ 
+ 	/* get filesize */
+-	fstat(fd, &stat_buf);
+-	totalbytes = (off_t) (stat_buf.st_size - (off_t)sizeof(waveHdr));
+-
+-	read(fd, &waveHdr, sizeof(waveHdr));
++	totalbytes = is_std_wav_file(fd, &waveBase) ;
+ 
+ 	/* is it a wav-file? */
+-	if (!is_std_wav_file(waveHdr)) {
+-		g_warning("No valid wavfile\n");
+-		exit(0);
+-	}
+-
+-	/* is it in cd-quality? */
+-	if (!is_in_cd_quality(waveHdr)) {
+-		g_warning("wavfile not in cd-quality\n");
++	if (totalbytes == 0) {
++		g_warning("No valid wavfile, or not in cd-quality\n");
+ 		exit(0);
+ 	}
+ 
+@@ -871,7 +860,7 @@
+ 		if (guimode && (read_line(STDIN_FILENO,keybuffer,MAXLINE) > 0)) {
+ 			/* stop command */
+ 			if (g_strncasecmp(keybuffer,"stop",4) == 0) {
+-				lseek(fd, sizeof(waveHdr), SEEK_SET);
++				lseek(fd, waveBase, SEEK_SET);
+ 				bytessofar = 0;
+ 				tick = 0;
+ 				doplay = 0;
+@@ -895,7 +884,7 @@
+ 			if (g_strncasecmp(keybuffer,"set",3) == 0) {
+ 				tick = atoi(keybuffer+3);
+ 				bytessofar = (off_t)tick *CDDAFRAME*75; 
+-				lseek(fd, (off_t)sizeof(waveHdr)+bytessofar,
++				lseek(fd, waveBase+bytessofar,
+ 					SEEK_SET);
+ 				g_print("%s%d\n",doplay?"play":"stop",tick);
+ 				fflush(stdout);
+@@ -911,7 +900,15 @@
+ 		if (doplay) {	
+ 
+ 			/* read from wav-file */
+-			l = read(fd, audiobuf, abuf_size);
++			/* but only up until we reach totalbytes */
++			l = totalbytes - bytessofar ;
++			if (l > abuf_size)
++				l = abuf_size ;
++			if (l < 0)
++				l = 0 ;
++
++			if (l > 0)
++				l = read(fd, audiobuf, l);
+ 			if (l > 0) {
+ #if !(defined(linux))
+ 			/* turn byte order only on non linux platforms */
+@@ -945,7 +942,7 @@
+ 					exit(-1);
+ 				}
+ #endif
+-				bytessofar+=(off_t)abuf_size;
++				bytessofar+=(off_t)l;
+ 
+ 			} else {
+ 				/* read error on wav-file */
+@@ -958,7 +955,7 @@
+ 				doplay = 0;
+ 				if (guimode) {
+ 					/* roll back */
+-					lseek(fd, sizeof(waveHdr), SEEK_SET);
++					lseek(fd, waveBase, SEEK_SET);
+ 					bytessofar = 0;
+ 					tick = 0;
+ 					g_print("done%d\n",tick);
+--- src/xtools.c.orig	Tue Apr  6 13:38:49 2004
++++ src/xtools.c	Mon Apr  5 15:44:44 2004
+@@ -1851,7 +1851,6 @@
+ /* return 1 if, 0 if not */
+ 
+ gint check_wav_file(gchar *wavname) {
+-guchar waveHdr[44];
+ gint fd;
+ 
+ 	fd = open (wavname, O_RDONLY, 0);
+@@ -1859,16 +1858,8 @@
+ 		return 0;
+ 	}
+ 
+-	read(fd, &waveHdr, sizeof(waveHdr));
+-
+-	if (!is_std_wav_file(waveHdr)) {
+-		/* no wav at all */
+-		close(fd);
+-		return 0;
+-	}
+-
+-	/* is it in cd-quality? */
+-	if (!is_in_cd_quality(waveHdr)) {
++	if (!is_std_wav_file(fd, NULL)) {
++		/* no wav at all or not cd-quality */
+ 		close(fd);
+ 		return 0;
+ 	}
