@@ -1,0 +1,26 @@
+**********************************************************************
+
+
+Please read the docs on configuring and runing slony-1.  Unless you specified
+NOPORTDOCS, they are in the %%LOCALBASE%%/share/doc/slony1 directory.
+
+If you are upgrading from a prior version of slony, please read the UPGRADING
+file in the above docs directory.
+
+The script %%LOCALBASE%%/sbin/slon-mkservice can be used to create a control
+directory to run and monitor the slon daemon under svscan from daemontools.
+If you use this, be sure not to set slon_enable="YES" in /etc/rc.conf.
+
+If you prefer to use the standard startup script in %%LOCALBASE%%/etc/rc.d then
+set slon_enable="YES" in /etc/rc.conf to enable the slon.sh script.
+
+To use either of the above startup configurations, you will need to set up a
+%%LOCALBASE%%/etc/slon.conf file to tell slon what to replicate.   This file
+is documented in %%LOCALBASE%%/share/doc/slony1/adminguide/runtime-config.html
+
+%%PERLTOOLS%%To use the perl slony configuration and monitoring tools, you must
+%%PERLTOOLS%%create %%LOCALBASE%%/etc/slon_tools.conf based on the sample file.
+
+
+
+**********************************************************************

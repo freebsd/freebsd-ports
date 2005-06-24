@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# create a slon service directory for use with svscan from deamontools
+
+echo -n 'specify directory for "slon" service like "/var/slon-master": '
+read DIR
+if [ -z "$DIR" ]; then
+ echo "Directory must be non-empty"
+ exit 1;
+fi
+
+echo -n 'System user name for programs to run under (default pgsql): '
+read sysuser
+if [ -z "$sysuser" ]; then
+ echo "User name pgsql being used."
+ sysuser='pgsql'
+fi
+
+mkdir -p ${DIR}/env ${DIR}/supervise || exit 1
+mkdir -p ${DIR}/log/main ${DIR}/log/supervise || exit 1
+
+cat > ${DIR}/run  <<EOF
+#!/bin/sh
+exec 2>&1
+
+exec envdir ./env sh -c 'exec envuidgid ${sysuser} slon -f \${CONFIGFILE}'
+EOF
+chmod +x ${DIR}/run
+
+cat >${DIR}/log/run <<EOF
+#!/bin/sh
+exec setuidgid ${sysuser} multilog t ./main
+EOF
+chmod +x ${DIR}/log/run
+
+echo "%%PREFIX%%/etc/slon.conf" > ${DIR}/env/CONFIGFILE
+
+chown -R ${sysuser} ${DIR}

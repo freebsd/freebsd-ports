@@ -1,0 +1,16 @@
+# sample config file. see share/doc/slony1/runtime-config.html
+# values are overridden by command line options.
+# not all settings are shown here.
+
+syslog 0
+log_level 4
+log_timestamp 1
+
+cluster_name sample
+conn_info 'dbname=pgbench user=postgres host=localhost port=5432'
+
+#sync_interval 100
+#sync_interval_timeout 1000
+#sync_group_maxsize 6
+#vac_frequency 3
+#desired_sync_time 60000
