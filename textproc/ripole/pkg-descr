@@ -1,0 +1,11 @@
+ripOLE is a small program/library designed to pull out attachments from OLE2
+data files (ie, MS Office documents). ripOLE is BSD licenced meaning that
+commercial projects can also use the code without worrying about licence costs
+or legal liabilities.
+
+Currently, ripOLE is in a development phase.  It can extract some files from
+Microsoft Office documents.  Ultimately, what ripOLE should be able to do is
+convert any embedded content in MS Office files back into its original format
+(JPEG, arbitary files, movies etc).
+
+WWW: http://www.pldaniels.com/ripole/
