@@ -22,20 +22,20 @@ USE_GNOME=	gnomehack
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/FEATURES ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/API ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/UML ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/conventions ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/diagrams ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/marshal ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/powerusers ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/requirements ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/riscos ${PREFIX}/share/doc/libsigc++/
-	${INSTALL_DATA} ${WRKSRC}/doc/signals ${PREFIX}/share/doc/libsigc++
-	${INSTALL_DATA} ${WRKSRC}/doc/win32 ${PREFIX}/share/doc/libsigc++
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FEATURES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/API ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/UML ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/conventions ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/diagrams ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/marshal ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/powerusers ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/requirements ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/riscos ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/signals ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/win32 ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
