@@ -1,0 +1,6 @@
+POE::Component::Client::Keepalive creates and manages connections for
+other components.  It maintains a cache of kept-alive connections for
+quick reuse.  It is written specifically for clients that can benefit
+from kept-alive connections, such as HTTP clients.
+
+WWW: http://search.cpan.org/dist/POE-Component-Client-Keepalive/
