@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.36
+PORTVERSION=	0.1.37
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -36,13 +36,17 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
 		--with-http_stub_status_module \
 		--user=${WWWOWN} --group=${WWWGRP}
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--with-debug
+.endif
+
 .if defined(WITH_OPENSSL_MODULE)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
-PKGNAMESUFFIX=	-nopcre
+PKGNAMESUFFIX+=	-nopcre
 CONFIGURE_ARGS+=--without-http_rewrite_module \
 		--without-pcre
 .else
@@ -50,15 +54,15 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 .if defined(WITHOUT_WWW)
-PLIST_SUB+=     WWWDATA="@comment "
+PLIST_SUB+=	WWWDATA="@comment "
 .else
-PLIST_SUB+=     WWWDATA=""
+PLIST_SUB+=	WWWDATA=""
 .endif
 
 .if defined(STOP_BEFORE_REMOVE)
 PLIST_SUB+=	STOP_BEFORE_REMOVE=""
 .else
-PLIST_SUB+=     STOP_BEFORE_REMOVE="@comment "
+PLIST_SUB+=	STOP_BEFORE_REMOVE="@comment "
 .endif
 
 .if defined(START_AFTER_INSTALL)
