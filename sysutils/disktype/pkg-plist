@@ -1,3 +1,0 @@
-bin/disktype
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
