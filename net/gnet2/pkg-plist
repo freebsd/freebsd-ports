@@ -1,4 +1,5 @@
 include/gnet-2.0/base64.h
+include/gnet-2.0/conn-http.h
 include/gnet-2.0/conn.h
 include/gnet-2.0/gnet.h
 include/gnet-2.0/inetaddr.h
@@ -20,38 +21,40 @@ lib/libgnet-2.0.so
 lib/libgnet-2.0.so.0
 libdata/pkgconfig/gnet-2.0.pc
 share/aclocal/gnet-2.0.m4
-share/doc/libgnet2.0-dev/html/gnet/book1.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-base64.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-conn.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-developers-async.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-developers-tips.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-developers.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-examples-other.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-examples.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-gnet.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-inetaddr.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-iochannel.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-ipv6.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-mcast.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-md5.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-overview.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-pack.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-server.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-sha.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-socks.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-tcp.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-udp.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-unix.html
-share/doc/libgnet2.0-dev/html/gnet/gnet-uri.html
-share/doc/libgnet2.0-dev/html/gnet/home.png
-share/doc/libgnet2.0-dev/html/gnet/index.sgml
-share/doc/libgnet2.0-dev/html/gnet/left.png
-share/doc/libgnet2.0-dev/html/gnet/libgnet-reference.html
-share/doc/libgnet2.0-dev/html/gnet/right.png
-share/doc/libgnet2.0-dev/html/gnet/up.png
-@dirrm share/doc/libgnet2.0-dev/html/gnet
-@dirrm share/doc/libgnet2.0-dev/html
-@dirrm share/doc/libgnet2.0-dev
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-base64.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-conn-http.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-conn.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-developers-async.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-developers-tips.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-developers.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-examples-other.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-examples.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-gnet.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-inetaddr.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-iochannel.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-ipv6.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-mcast.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-md5.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-overview.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-pack.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-server.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-sha.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-socks.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-tcp.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-udp.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-unix.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-uri.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/gnet/home.png
+%%PORTDOCS%%%%DOCSDIR%%/gnet/index.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/gnet/left.png
+%%PORTDOCS%%%%DOCSDIR%%/gnet/libgnet-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet/right.png
+%%PORTDOCS%%%%DOCSDIR%%/gnet/style.css
+%%PORTDOCS%%%%DOCSDIR%%/gnet/up.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gnet
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/gnet-2.0/include
 @dirrm lib/gnet-2.0
 @dirrm include/gnet-2.0
