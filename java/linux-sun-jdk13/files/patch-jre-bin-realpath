@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- jre/bin/realpath.orig	Fri Jun 24 11:05:54 2005
++++ jre/bin/realpath	Fri Jun 24 11:06:17 2005
+@@ -7,7 +7,7 @@
+ SVPATH="$PATH"
+ PATH=/bin:/usr/bin
+ case "`uname -m`" in
+-    i[3-6]86)
++    i[3-6]86 | amd64)
+         proc=i386
+         ;;
+     sparc*)
