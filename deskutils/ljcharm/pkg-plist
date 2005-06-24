@@ -3,6 +3,7 @@ bin/charm
 %%PYTHON_SITELIBDIR%%/ljcharm.pyc
 %%PYTHON_SITELIBDIR%%/ljcharm.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/charm.html
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/sample.charmrc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
