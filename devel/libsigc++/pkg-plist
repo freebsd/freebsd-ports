@@ -23,19 +23,19 @@ lib/libsigc.a
 lib/libsigc.so
 lib/libsigc.so.1
 share/aclocal/sigc++.m4
-%%PORTDOCS%%share/doc/libsigc++/API
-%%PORTDOCS%%share/doc/libsigc++/FAQ
-%%PORTDOCS%%share/doc/libsigc++/FEATURES
-%%PORTDOCS%%share/doc/libsigc++/README
-%%PORTDOCS%%share/doc/libsigc++/UML
-%%PORTDOCS%%share/doc/libsigc++/conventions
-%%PORTDOCS%%share/doc/libsigc++/diagrams
-%%PORTDOCS%%share/doc/libsigc++/marshal
-%%PORTDOCS%%share/doc/libsigc++/powerusers
-%%PORTDOCS%%share/doc/libsigc++/requirements
-%%PORTDOCS%%share/doc/libsigc++/riscos
-%%PORTDOCS%%share/doc/libsigc++/signals
-%%PORTDOCS%%share/doc/libsigc++/win32
+%%PORTDOCS%%%%DOCSDIR%%/API
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UML
+%%PORTDOCS%%%%DOCSDIR%%/conventions
+%%PORTDOCS%%%%DOCSDIR%%/diagrams
+%%PORTDOCS%%%%DOCSDIR%%/marshal
+%%PORTDOCS%%%%DOCSDIR%%/powerusers
+%%PORTDOCS%%%%DOCSDIR%%/requirements
+%%PORTDOCS%%%%DOCSDIR%%/riscos
+%%PORTDOCS%%%%DOCSDIR%%/signals
+%%PORTDOCS%%%%DOCSDIR%%/win32
 share/sigc++-1.0/sigc++/macros/basic_signal.h.m4
 share/sigc++-1.0/sigc++/macros/bind.h.m4
 share/sigc++-1.0/sigc++/macros/class_slot.h.m4
@@ -48,7 +48,7 @@ share/sigc++-1.0/sigc++/macros/slot.h.m4
 share/sigc++-1.0/sigc++/macros/template.macros.m4
 @dirrm include/sigc++-1.0/sigc++
 @dirrm include/sigc++-1.0
-%%PORTDOCS%%@dirrm share/doc/libsigc++
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/sigc++-1.0/sigc++/macros
 @dirrm share/sigc++-1.0/sigc++
 @dirrm share/sigc++-1.0
