@@ -7,7 +7,7 @@
 
 PORTNAME=	ccscript
 PORTVERSION=	2.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnutelephony
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gnutelephony
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-event driven class extendible C++ script interpreter
 
-LIB_DEPENDS=	ccgnu2-1.2.1:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
 USE_LIBTOOL_VER=	15

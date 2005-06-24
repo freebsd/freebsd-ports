@@ -7,6 +7,7 @@
 
 PORTNAME=	ccaudio
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnutelephony
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	gnutelephony
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
 
-LIB_DEPENDS=	ccgnu2-1.2.1:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
