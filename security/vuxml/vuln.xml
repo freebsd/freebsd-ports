@@ -32,6 +32,135 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76adaab0-e4e3-11d9-b875-0001020eed82">
+    <topic>ethereal -- multiple protocol dissectors vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><ge>0.8.14</ge><lt>0.10.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Ethreal Security Advisories reports:</p>
+	<blockquote cite="http://www.ethereal.com/appnotes/enpa-sa-00019.html">
+	  <p>An aggressive testing program as well as independent
+	    discovery has turned up a multitude of security issues:</p>
+	  <ul>
+	    <li>The ANSI A dissector was susceptible to format string
+	      vulnerabilities. Discovered by Bryan Fulton.</li>
+	    <li>The GSM MAP dissector could crash.</li>
+	    <li>The AIM dissector could cause a crash.</li>
+	    <li>The DISTCC dissector was susceptible to a buffer
+	      overflow. Discovered by Ilja van Sprundel</li>
+	    <li>The FCELS dissector was susceptible to a buffer
+	      overflow. Discovered by Neil Kettle</li>
+	    <li>The SIP dissector was susceptible to a buffer
+	      overflow. Discovered by Ejovi Nuwere.</li>
+	    <li>The KINK dissector was susceptible to a null pointer
+	      exception, endless looping, and other problems.</li>
+	    <li>The LMP dissector was susceptible to an endless
+	      loop.</li>
+	    <li>The Telnet dissector could abort.</li>
+	    <li>The TZSP dissector could cause a segmentation
+	      fault.</li>
+	    <li>The WSP dissector was susceptible to a null pointer
+	      exception and assertions.</li>
+	    <li>The 802.3 Slow protocols dissector could throw an
+	      assertion.</li>
+	    <li>The BER dissector could throw assertions.</li>
+	    <li>The SMB Mailslot dissector was susceptible to a null
+	      pointer exception and could throw assertions.</li>
+	    <li>The H.245 dissector was susceptible to a null pointer
+	      exception.</li>
+	    <li>The Bittorrent dissector could cause a segmentation
+	      fault.</li>
+	    <li>The SMB dissector could cause a segmentation fault and
+	      throw assertions.</li>
+	    <li>The Fibre Channel dissector could cause a crash.</li>
+	    <li>The DICOM dissector could attempt to allocate large
+	      amounts of memory.</li>
+	    <li>The MGCP dissector was susceptible to a null pointer
+	      exception, could loop indefinitely, and segfault.</li>
+	    <li>The RSVP dissector could loop indefinitely.</li>
+	    <li>The DHCP dissector was susceptible to format string
+	      vulnerabilities, and could abort.</li>
+	    <li>The SRVLOC dissector could crash unexpectedly or go
+	      into an infinite loop.</li>
+	    <li>The EIGRP dissector could loop indefinitely.</li>
+	    <li>The ISIS dissector could overflow a buffer.</li>
+	    <li>The CMIP, CMP, CMS, CRMF, ESS, OCSP, PKIX1Explitit,
+	      PKIX Qualified, and X.509 dissectors could overflow
+	      buffers.</li>
+	    <li>The NDPS dissector could exhaust system memory or
+	      cause an assertion, or crash.</li>
+	    <li>The Q.931 dissector could try to free a null pointer
+	      and overflow a buffer.</li>
+	    <li>The IAX2 dissector could throw an assertion.</li>
+	    <li>The ICEP dissector could try to free the same memory
+	      twice.</li>
+	    <li>The MEGACO dissector was susceptible to an infinite
+	      loop and a buffer overflow.</li>
+	    <li>The DLSw dissector was susceptible to an infinite
+	      loop.</li>
+	    <li>The RPC dissector was susceptible to a null pointer
+	      exception.</li>
+	    <li>The NCP dissector could overflow a buffer or loop for
+	      a large amount of time.</li>
+	    <li>The RADIUS dissector could throw an assertion.</li>
+	    <li>The GSM dissector could access an invalid
+	      pointer.</li>
+	    <li>The SMB PIPE dissector could throw an assertion.</li>
+	    <li>The L2TP dissector was susceptible to an infinite loop.</li>
+	    <li>The SMB NETLOGON dissector could dereference a null
+	      pointer.</li>
+	    <li>The MRDISC dissector could throw an assertion.</li>
+	    <li>The ISUP dissector could overflow a buffer or cause a
+	      segmentation fault.</li>
+	    <li>The LDAP dissector could crash.</li>
+	    <li>The TCAP dissector could overflow a buffer or throw an
+	      assertion.</li>
+	    <li>The NTLMSSP dissector could crash.</li>
+	    <li>The Presentation dissector could overflow a
+	      buffer.</li>
+	    <li>Additionally, a number of dissectors could throw an
+	      assertion when passing an invalid protocol tree item
+	      length.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13391</bid>
+      <bid>13504</bid>
+      <bid>13567</bid>
+      <cvename>CAN-2005-1281</cvename>
+      <cvename>CAN-2005-1456</cvename>
+      <cvename>CAN-2005-1457</cvename>
+      <cvename>CAN-2005-1458</cvename>
+      <cvename>CAN-2005-1459</cvename>
+      <cvename>CAN-2005-1460</cvename>
+      <cvename>CAN-2005-1461</cvename>
+      <cvename>CAN-2005-1462</cvename>
+      <cvename>CAN-2005-1463</cvename>
+      <cvename>CAN-2005-1464</cvename>
+      <cvename>CAN-2005-1465</cvename>
+      <cvename>CAN-2005-1466</cvename>
+      <cvename>CAN-2005-1467</cvename>
+      <cvename>CAN-2005-1468</cvename>
+      <cvename>CAN-2005-1469</cvename>
+      <cvename>CAN-2005-1470</cvename>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00019.html</url>
+    </references>
+    <dates>
+      <discovery>2005-05-04</discovery>
+      <entry>2005-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="691ed622-e499-11d9-a8bd-000cf18bbe54">
     <topic>tor -- information disclosure</topic>
     <affects>
@@ -3581,6 +3710,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>12759</bid>
       <cvename>CAN-2005-0699</cvename>
       <cvename>CAN-2005-0704</cvename>
       <cvename>CAN-2005-0705</cvename>
@@ -3590,6 +3720,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-03-09</discovery>
       <entry>2005-03-14</entry>
+      <modified>2005-06-24</modified>
     </dates>
   </vuln>
 
