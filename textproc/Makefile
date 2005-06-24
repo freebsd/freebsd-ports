@@ -580,6 +580,7 @@
     SUBDIR += resume
     SUBDIR += resume-extensions
     SUBDIR += rfcdiff
+    SUBDIR += ripole
     SUBDIR += rl
     SUBDIR += rman
     SUBDIR += ro-aspell
