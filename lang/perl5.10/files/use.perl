@@ -34,9 +34,9 @@ if [ "x$this" = "xuse.perl" ]; then
 		need_cleanup_make_conf=yes
 		need_cleanup_manpath=yes
 	else
-		echo 'Usage:
-	$0 port       -> /usr/bin/perl is the perl5 port
-	$0 system     -> /usr/bin/perl is the system perl'
+		echo "Usage:
+	${0##*/} port       -> /usr/bin/perl is the perl5 port
+	${0##*/} system     -> /usr/bin/perl is the system perl"
 		exit 2;
 	fi
 else
@@ -77,14 +77,14 @@ link_list="
 	pod2man
 	pod2text
 	s2p
-	splain"
+	splain
+	suidperl"
 if [ $osreldate -ge 500036 ] ; then
 	link_list=""
 fi
 special_link_list="
 	perl
-	perl5
-	suidperl"
+	perl5"
 
 do_remove_links()
 {
@@ -130,11 +130,11 @@ do_create_links()
 	for binary in $special_link_list
 	do
 		if [ -f "/usr/bin/$binary" ] ; then
-			echo "    Removing /usr/bin/$binary"
+			echo "    Backing up /usr/bin/$binary as /usr/bin/$binary.freebsd"
+			/bin/mv -f "/usr/bin/$binary" "/usr/bin/$binary.freebsd"
 		fi
 		bin=`echo $binary | /usr/bin/sed -e 's!perl5!perl!'`
-		bin=`echo $bin | /usr/bin/sed -e 's!suidperl!sperl!'`
-		if [ -e "/usr/bin/$binary.XXX" ] ; then
+		if [ -e "/usr/bin/$binary" ] ; then
 			echo "    *** /usr/bin/$binary is still there, which should not happen"
 		elif [ -e "$PKG_PREFIX/bin/${bin}%%PERL_VERSION%%" ] ; then
 			echo "    Symlinking $PKG_PREFIX/bin/${bin}%%PERL_VERSION%% to /usr/bin/$binary"
@@ -184,6 +184,10 @@ do_base_system_perl()
 				ln -f "$bin" "/usr/bin/$binary"
 			else
 				echo "    *** $bin is NOT there, nothing to restore"
+			fi
+			if [ -f "/usr/bin/$binary.freebsd" ] ; then
+				echo "    Removing backup copy /usr/bin/$binary.freebsd"
+				rm -f "/usr/bin/$binary.freebsd"
 			fi
 		fi
 	done
