@@ -22,7 +22,7 @@ PLIST_FILES=	sbin/sha256
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 600020
+.if ${OSVERSION} > 600020 || ( ${OSVERSION} > 504101 && ${OSVERSION} < 600000 )
 IGNORE=		"sha256 now contained in the base system"
 .endif
 
