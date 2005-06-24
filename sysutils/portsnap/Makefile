@@ -17,7 +17,7 @@ RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600021
+.if ${OSVERSION} < 600021 && ( ${OSVERSION} < 504102 || ${OSVERSION} > 599999 )
 RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
 .endif
 
