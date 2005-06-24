@@ -4,6 +4,7 @@ lib/gcfilms/GCData.pm
 lib/gcfilms/GCDialogs.pm
 lib/gcfilms/GCDisplay.pm
 lib/gcfilms/GCExport.pm
+lib/gcfilms/GCGenres.pm
 lib/gcfilms/GCGraphicComponents.pm
 lib/gcfilms/GCImport.pm
 lib/gcfilms/GCLang.pm
@@ -21,8 +22,8 @@ lib/gcfilms/GCExport/GCExportSQL.pm
 lib/gcfilms/GCExport/GCExportTarGz.pm
 lib/gcfilms/GCExport/GCExportXML.pm
 lib/gcfilms/GCImport/GCImportAMC.pm
-lib/gcfilms/GCImport/GCImportCSV.pm
 lib/gcfilms/GCImport/GCImportBase.pm
+lib/gcfilms/GCImport/GCImportCSV.pm
 lib/gcfilms/GCImport/GCImportDVDProfiler.pm
 lib/gcfilms/GCImport/GCImportGCfilms.pm
 lib/gcfilms/GCLang/EN.pm
@@ -41,8 +42,8 @@ lib/gcfilms/GCPlugins/GCCulturalia.pm
 lib/gcfilms/GCPlugins/GCDVDFr.pm
 lib/gcfilms/GCPlugins/GCDVDPost.pm
 lib/gcfilms/GCPlugins/GCDVDZone2.pm
-lib/gcfilms/GCPlugins/GCImdb.pm
 lib/gcfilms/GCPlugins/GCFilmUP.pm
+lib/gcfilms/GCPlugins/GCImdb.pm
 lib/gcfilms/GCPlugins/GCMonsieurCinema.pm
 lib/gcfilms/GCPlugins/GCMovieClubFR.pm
 lib/gcfilms/GCPlugins/GCMovieClubNL.pm
@@ -71,8 +72,8 @@ share/gcfilms/plugins/culturalia.png
 share/gcfilms/plugins/dvdfr.png
 share/gcfilms/plugins/dvdpost.png
 share/gcfilms/plugins/dvdzone2.png
-share/gcfilms/plugins/imdb.png
 share/gcfilms/plugins/filmup.png
+share/gcfilms/plugins/imdb.png
 share/gcfilms/plugins/mcinema.png
 share/gcfilms/plugins/movieclub.png
 share/gcfilms/style/Gtk/gtkrc
@@ -191,17 +192,17 @@ share/gcfilms/style/kde/vertical.png
 share/gcfilms/style/kde/vertical_hover.png
 share/gcfilms/xml_models/Ant_Movie_Catalog
 share/gcfilms/xml_models/DVDProfiler
-@dirrm lib/gcfilms/GCExport
 @dirrm lib/gcfilms/GCImport
+@dirrm lib/gcfilms/GCExport
 @dirrm lib/gcfilms/GCLang
 @dirrm lib/gcfilms/GCPlugins
 @dirrm lib/gcfilms
 @dirrm share/gcfilms/icons
-@dirrm share/gcfilms/html_models
 @dirrm share/gcfilms/plugins
 @dirrm share/gcfilms/style/Gtk
 @dirrm share/gcfilms/style/Tian
 @dirrm share/gcfilms/style/kde
 @dirrm share/gcfilms/style
+@dirrm share/gcfilms/html_models
 @dirrm share/gcfilms/xml_models
 @dirrm share/gcfilms
