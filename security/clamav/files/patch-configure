@@ -20,12 +20,3 @@
  #include <resolv.h>
  _ACEOF
  if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
-@@ -13267,7 +13273,7 @@
- # Check whether --enable-gethostbyname_r or --disable-gethostbyname_r was given.
- if test "${enable_gethostbyname_r+set}" = set; then
-   enableval="$enable_gethostbyname_r"
--  disable_gethostbyname_r=$enableval
-+  test $enableval = yes && disable_gethostbyname_r=no || disable_gethostbyname_r=yes
- fi;
- 
- if test "$disable_gethostbyname_r" = "yes"; then
