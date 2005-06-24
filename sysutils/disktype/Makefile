@@ -6,16 +6,25 @@
 #
 
 PORTNAME=	disktype
-PORTVERSION=	6
-PORTREVISION=	1
+PORTVERSION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Disk formatting type autodetector
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+
+PLIST_FILES=	bin/disktype
+PORTDOCS=	README
+
+post-patch:
+.for var in CFLAGS LDFLAGS CC
+	@${REINPLACE_CMD} -e 's|^\(${var}\)[ ]*=|\1 ?=|' \
+		${WRKSRC}/Makefile
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
