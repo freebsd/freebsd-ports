@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	commoncpp2
-PORTVERSION=	1.2.7
-PORTEPOCH=	1
+PORTVERSION=	1.3.12
+PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnutelephony
@@ -15,7 +15,14 @@ MASTER_SITE_SUBDIR=	gnutelephony
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
 
-USE_GNOME=	gnomehack gnometarget libxml2
+USE_GNOME=	gnomehack gnometarget
+
+.if !defined(WITHOUT_LIBXML2)
+USE_GNOME+=	libxml2
+.else
+CONFIGURE_ARGS=	--without-libxml2
+.endif
+
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
