@@ -7,15 +7,18 @@
 #
 
 PORTNAME=	ansistyle
-PORTVERSION=	0.2.1
+PORTVERSION=	0.6.1
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/ansistyle/
+MASTER_SITES=	http://ftp.livinglogic.de/ansistyle/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	ANSIStyle-${PORTVERSION}
+DISTNAME=	ll-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	whitekid@gmail.com
 COMMENT=	Add ANSI color capability to output streams
 
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ll/__init__.py:${PORTSDIR}/devel/py-ll-core
+
+USE_PYTHON=	2.4+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
