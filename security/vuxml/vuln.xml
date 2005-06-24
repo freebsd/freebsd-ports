@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="691ed622-e499-11d9-a8bd-000cf18bbe54">
+    <topic>tor -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.1.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Roger Dingledine reports:</p>
+	<blockquote cite="http://archives.seul.org/or/announce/Jun-2005/msg00001.html">
+	  <p>The Tor 0.1.0.10 release from a few days ago
+	    includes a fix for a bug that might allow an attacker
+	    to read arbitrary memory (maybe even keys) from an exit
+	    server's process space.  We haven't heard any reports of
+	    exploits yet, but hey.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://archives.seul.org/or/announce/Jun-2005/msg00001.html</mlist>
+    </references>
+    <dates>
+      <discovery>2005-06-16</discovery>
+      <entry>2005-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="95ee96f2-e488-11d9-bf22-080020c11455">
     <topic>linux-realplayer -- RealText parsing heap overflow</topic>
     <affects>
