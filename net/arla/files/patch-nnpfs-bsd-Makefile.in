@@ -1,0 +1,22 @@
+--- nnpfs/bsd/Makefile.in.orig	Sat Mar 26 11:58:45 2005
++++ nnpfs/bsd/Makefile.in	Sat Jun 25 12:05:51 2005
+@@ -40,7 +40,7 @@
+ 		  -I$(srcdir)/../include
+ 
+ DEFS		   = @DEFS@ $(INCDEFS) -DNNPFS_DEBUG @ARLA_KNFS@
+-CFLAGS = @CFLAGS@ @KERNEL_CFLAGS@ @KERNEL_CPPFLAGS@ -Wno-unused @BSD_WERROR@
++CFLAGS = -fno-builtin @CFLAGS@ @KERNEL_CFLAGS@ @KERNEL_CPPFLAGS@ -Wno-unused @BSD_WERROR@
+ 
+ SYS		= @SYS@
+ 
+@@ -182,6 +182,10 @@
+           fi; \
+ 	elif test -f $(SYS)/tools/vnode_if.awk ; then \
+ 	  awk -f $(SYS)/tools/vnode_if.awk $(SYS)/kern/vnode_if.src -h ; \
++	  if [ "${OSVERSION}" -gt 600000 ] ; then \
++	    awk -f $(SYS)/tools/vnode_if.awk $(SYS)/kern/vnode_if.src -q ; \
++	    awk -f $(SYS)/tools/vnode_if.awk $(SYS)/kern/vnode_if.src -p ; \
++          fi ; \
+ 	else \
+ 	  echo "cannot find any vnode_if script"; exit 1; \
+ 	fi

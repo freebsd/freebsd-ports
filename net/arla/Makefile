@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arla
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
@@ -18,7 +18,15 @@ USE_RC_SUBR=	arla.sh
 USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
-BROKEN=		Broken pkg-plist
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"security/heimdal is broken"
+.elif ${OSVERSION} < 600007
+BROKEN=		"compiles but overwrites files from a dependency (security/heimdal)"
+.else
+BROKEN=		"does not compile"
+.endif
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
@@ -38,14 +46,11 @@ CONFIGURE_ARGS+=--with-krb5=/usr
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} > 500000
-WITHOUT_NNPFS=	YES
-.endif
+MAKE_ENV+=	OSVERSION=${OSVERSION}
 
 MAN1=		afstool.1 arla-send-pr.1 kalog.1 pts.1 rxdebug.1 \
 		tokens.1 udebug.1
-MAN3=		arg_printusage.3 getarg.3 log_close.3 log_get_mask.3 \
+MAN3=		log_close.3 log_get_mask.3 \
 		log_log.3 log_mask2str.3 log_open.3 log_set_mask.3 \
 		log_set_mask_str.3 log_unit_free.3 log_unit_init.3 \
 		log_vlog.3
