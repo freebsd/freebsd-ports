@@ -42,7 +42,8 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 		COMPFACE	"Enable X-Face support." off \
 		JPILOT		"Enable JPilot support." off \
 		LDAP		"Enable LDAP support." off \
-		SSL		"Enable OpenSSL support." on
+		SSL		"Enable OpenSSL support." on \
+		ICON_THEME	"Use icon theme instead of some pixmaps." off
 
 .include <bsd.port.pre.mk>
 
@@ -82,6 +83,10 @@ CONFIGURE_ARGS+=--disable-ldap
 CONFIGURE_ARGS+=--enable-ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
+.endif
+.if defined(WITH_ICON_THEME)
+RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+EXTRA_PATCHES+=	${FILESDIR}/icon-theme.diff
 .endif
 
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
