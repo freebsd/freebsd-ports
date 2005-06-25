@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -167,6 +167,7 @@ pre-configure:
 	@${ECHO_MSG} "==> Configuring with ${MODULES}"
 
 post-configure:
+	${REINPLACE_CMD} -e 's:${EXAMPLESDIR}:${PREFIX}:' ${WRKSRC}/config.h
 	${REINPLACE_CMD} -e 's: -lnsl::' ${WRKSRC}/Make.rules
 	${REINPLACE_CMD} -e 's:/usr/sbin:${PREFIX}/sbin:' \
 		-e 's:/usr/bin:${PREFIX}/bin:' \
