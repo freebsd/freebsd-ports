@@ -1670,7 +1670,6 @@ docbook-xsl	ports/textproc/docbook-xsl
 docbookide.el	ports/textproc/docbookide.el
 docker		ports/x11/docker
 doclifter	ports/textproc/doclifter
-doconfig	ports/sysutils/doconfig
 docproj		ports/textproc/docproj
 docproj-jadetex	ports/textproc/docproj-jadetex
 docproj-nojadetex	ports/textproc/docproj-nojadetex
