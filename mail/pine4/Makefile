@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.62
+PORTVERSION=	4.63
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
@@ -25,13 +25,18 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 LDAP_PREFIX?=	${LOCALBASE}
+.if defined(WANT_OPENLDAP_SASL)
+EXTRA_OPTS=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber -lsasl2"
+.else
+EXTRA_OPTS=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber"
+.endif
 .endif
 
 .if defined(WITHOUT_SSL)
 MAKE_ARGS+=	SSLTYPE=none
 .else
 USE_OPENSSL=	yes
-EXTRA_OPTS=	SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}
+EXTRA_OPTS+=	SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}
 .if defined(WITH_SSL_AND_PLAINTEXT)
 EXTRA_OPTS+=	SSLTYPE=unix
 .else
