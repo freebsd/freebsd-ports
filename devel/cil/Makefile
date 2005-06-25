@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cil
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	devel lang
 MASTER_SITES=	http://manju.cs.berkeley.edu/cil/distrib/
 
