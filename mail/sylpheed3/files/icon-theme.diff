@@ -1,0 +1,333 @@
+diff -ruN ../sylpheed-2.0.0beta3.orig/src/compose.c ./src/compose.c
+--- ../sylpheed-2.0.0beta3.orig/src/compose.c	Tue Jun 21 08:57:48 2005
++++ ./src/compose.c	Sat Jun 25 20:05:20 2005
+@@ -4331,7 +4331,7 @@
+ 	gtk_container_add(GTK_CONTAINER(container), toolbar);
+ 	gtk_widget_set_size_request(toolbar, 1, -1);
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_SEND);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-send", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	send_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					   _("Send"),
+ 					   _("Send message"),
+@@ -4349,7 +4349,7 @@
+ 					   G_CALLBACK(toolbar_send_later_cb),
+ 					   compose);
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	draft_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					    _("Draft"),
+ 					    _("Save to draft folder"),
+@@ -4360,7 +4360,7 @@
+ 
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_PASTE);
++	icon_wid = gtk_image_new_from_icon_name("stock_insert-file", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	insert_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					     _("Insert"),
+ 					     _("Insert file"),
+@@ -4369,7 +4369,7 @@
+ 					     G_CALLBACK(toolbar_insert_cb),
+ 					     compose);
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_ATTACH);
++	icon_wid = gtk_image_new_from_icon_name("stock_attach", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	attach_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					     _("Attach"),
+ 					     _("Attach file"),
+@@ -4380,7 +4380,7 @@
+ 
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	sig_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					  _("Signature"),
+ 					  _("Insert signature"),
+@@ -4390,7 +4390,7 @@
+ 
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_COMPOSE);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-compose", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	exteditor_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 						_("Editor"),
+ 						_("Edit with external editor"),
+@@ -4410,7 +4410,7 @@
+ 
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_ADDRESS_BOOK);
++	icon_wid = gtk_image_new_from_icon_name("stock_addressbook", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	addrbook_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					       _("Address"),
+ 					       _("Address book"),
+diff -ruN ../sylpheed-2.0.0beta3.orig/src/folderview.c ./src/folderview.c
+--- ../sylpheed-2.0.0beta3.orig/src/folderview.c	Thu Jun 23 10:58:40 2005
++++ ./src/folderview.c	Sat Jun 25 20:17:04 2005
+@@ -490,8 +490,8 @@
+ {
+ 	GtkWidget *treeview = folderview->treeview;
+ 
+-	stock_pixbuf_gdk(treeview, STOCK_PIXMAP_INBOX, &inbox_pixbuf);
+-	stock_pixbuf_gdk(treeview, STOCK_PIXMAP_OUTBOX, &outbox_pixbuf);
++	inbox_pixbuf = gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "stock_inbox", 16, 0, NULL);
++	outbox_pixbuf = gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "stock_outbox", 16, 0, NULL);
+ 	stock_pixbuf_gdk(treeview, STOCK_PIXMAP_DIR_CLOSE, &folder_pixbuf);
+ 	stock_pixbuf_gdk(treeview, STOCK_PIXMAP_DIR_OPEN, &folderopen_pixbuf);
+ 	stock_pixbuf_gdk(treeview, STOCK_PIXMAP_DIR_NOSELECT,
+diff -ruN ../sylpheed-2.0.0beta3.orig/src/mainwindow.c ./src/mainwindow.c
+--- ../sylpheed-2.0.0beta3.orig/src/mainwindow.c	Mon Jun 20 10:13:33 2005
++++ ./src/mainwindow.c	Sat Jun 25 20:15:17 2005
+@@ -2188,11 +2188,11 @@
+ 				    GTK_ORIENTATION_HORIZONTAL);
+ 	gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_BOTH);
+ 	gtk_toolbar_set_icon_size(GTK_TOOLBAR(toolbar),
+-				  GTK_ICON_SIZE_SMALL_TOOLBAR);
++				  GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	gtk_container_add(GTK_CONTAINER(container), toolbar);
+ 	gtk_widget_set_size_request(toolbar, 1, -1);
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_RECEIVE);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-receive", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	get_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					  _("Get"),
+ 					  _("Incorporate new mail"),
+@@ -2211,7 +2211,7 @@
+ 
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_SEND);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-send", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	send_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					   _("Send"),
+ 					   _("Send queued message(s)"),
+@@ -2222,7 +2222,7 @@
+ 
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_COMPOSE);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-compose", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	compose_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					      _("Compose"),
+ 					      _("Compose new message"),
+@@ -2231,7 +2231,7 @@
+ 					      G_CALLBACK(toolbar_compose_cb),
+ 					      mainwin);
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_REPLY);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-reply", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	reply_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					    _("Reply"),
+ 					    _("Reply to the message"),
+@@ -2249,8 +2249,7 @@
+ 				  GTK_WIDGET_PTR(reply_combo),
+ 				  _("Reply to the message"), "Reply");
+ 
+-	icon_wid = stock_pixmap_widget
+-		(container, STOCK_PIXMAP_MAIL_REPLY_TO_ALL);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-reply-to-all", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	replyall_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					       _("Reply all"),
+ 					       _("Reply to all"),
+@@ -2259,7 +2258,7 @@
+ 					       G_CALLBACK(toolbar_reply_to_all_cb),
+ 					       mainwin);
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_FORWARD);
++	icon_wid = gtk_image_new_from_icon_name("stock_mail-forward", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	fwd_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					  _("Forward"),
+ 					  _("Forward the message"),
+@@ -2280,7 +2279,7 @@
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+ 	icon_wid = gtk_image_new_from_stock(GTK_STOCK_DELETE,
+-					    GTK_ICON_SIZE_SMALL_TOOLBAR);
++					    GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	delete_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					  _("Delete"),
+ 					  _("Delete the message"),
+@@ -2289,8 +2288,7 @@
+ 					  G_CALLBACK(toolbar_delete_cb),
+ 					  mainwin);
+ 
+-	icon_wid = gtk_image_new_from_stock(GTK_STOCK_CANCEL,
+-					    GTK_ICON_SIZE_SMALL_TOOLBAR);
++	icon_wid = gtk_image_new_from_icon_name("stock_spam", GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	junk_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					   _("Junk"),
+ 					   _("Set as junk mail"),
+@@ -2300,7 +2298,7 @@
+ 					   mainwin);
+ 
+ 	icon_wid = gtk_image_new_from_stock(GTK_STOCK_EXECUTE,
+-					    GTK_ICON_SIZE_SMALL_TOOLBAR);
++					    GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	exec_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					   _("Execute"),
+ 					   _("Execute marked process"),
+@@ -2310,7 +2308,7 @@
+ 					   mainwin);
+ 
+ 	icon_wid = gtk_image_new_from_stock(GTK_STOCK_GO_DOWN,
+-					    GTK_ICON_SIZE_SMALL_TOOLBAR);
++					    GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	next_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					   _("Next"),
+ 					   _("Next unread message"),
+@@ -2322,7 +2320,7 @@
+ #if 0
+ 	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_PREFERENCES);
++	icon_wid = gtk_image_new_from_stock(GTK_STOCK_PREFERENCES, GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	prefs_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					    _("Prefs"),
+ 					    _("Common preferences"),
+@@ -2330,7 +2328,7 @@
+ 					    icon_wid,
+ 					    G_CALLBACK(toolbar_prefs_cb),
+ 					    mainwin);
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_PROPERTIES);
++	icon_wid = gtk_image_new_from_stock(GTK_STOCK_PROPERTIES, GTK_ICON_SIZE_LARGE_TOOLBAR);
+ 	account_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					      _("Account"),
+ 					      _("Account setting"),
+diff -ruN ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.c ./src/stock_pixmap.c
+--- ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.c	Mon May  9 11:29:14 2005
++++ ./src/stock_pixmap.c	Sat Jun 25 20:00:55 2005
+@@ -28,8 +28,6 @@
+ #include "pixmaps/address.xpm"
+ #include "pixmaps/book.xpm"
+ #include "pixmaps/category.xpm"
+-#include "pixmaps/checkbox_off.xpm"
+-#include "pixmaps/checkbox_on.xpm"
+ #include "pixmaps/clip.xpm"
+ #include "pixmaps/complete.xpm"
+ #include "pixmaps/continue.xpm"
+@@ -40,33 +38,16 @@
+ #include "pixmaps/error.xpm"
+ #include "pixmaps/forwarded.xpm"
+ #include "pixmaps/group.xpm"
+-#include "pixmaps/inbox.xpm"
+ #include "pixmaps/interface.xpm"
+ #include "pixmaps/jpilot.xpm"
+ #include "pixmaps/ldap.xpm"
+ #include "pixmaps/linewrap.xpm"
+ #include "pixmaps/mark.xpm"
+ #include "pixmaps/new.xpm"
+-#include "pixmaps/outbox.xpm"
+ #include "pixmaps/replied.xpm"
+-#include "pixmaps/stock_close.xpm"
+-#include "pixmaps/stock_down_arrow.xpm"
+-#include "pixmaps/stock_exec.xpm"
+-#include "pixmaps/stock_mail.xpm"
+-#include "pixmaps/stock_mail_attach.xpm"
+-#include "pixmaps/stock_mail_compose.xpm"
+-#include "pixmaps/stock_mail_forward.xpm"
+-#include "pixmaps/stock_mail_receive.xpm"
+ #include "pixmaps/stock_mail_receive_all.xpm"
+-#include "pixmaps/stock_mail_reply.xpm"
+-#include "pixmaps/stock_mail_reply_to_all.xpm"
+-#include "pixmaps/stock_mail_send.xpm"
+ #include "pixmaps/stock_mail_send_queue.xpm"
+-#include "pixmaps/stock_paste.xpm"
+-#include "pixmaps/stock_preferences.xpm"
+-#include "pixmaps/stock_properties.xpm"
+ #include "pixmaps/sylpheed-logo.xpm"
+-#include "pixmaps/tb_address_book.xpm"
+ #include "pixmaps/trash.xpm"
+ #include "pixmaps/unread.xpm"
+ #include "pixmaps/vcard.xpm"
+@@ -89,8 +70,6 @@
+ 	{address_xpm			, NULL, NULL},
+ 	{book_xpm			, NULL, NULL},
+ 	{category_xpm			, NULL, NULL},
+-	{checkbox_off_xpm		, NULL, NULL},
+-	{checkbox_on_xpm		, NULL, NULL},
+ 	{clip_xpm			, NULL, NULL},
+ 	{complete_xpm			, NULL, NULL},
+ 	{continue_xpm			, NULL, NULL},
+@@ -101,33 +80,16 @@
+ 	{error_xpm			, NULL, NULL},
+ 	{forwarded_xpm			, NULL, NULL},
+ 	{group_xpm			, NULL, NULL},
+-	{inbox_xpm			, NULL, NULL},
+ 	{interface_xpm			, NULL, NULL},
+ 	{jpilot_xpm			, NULL, NULL},
+ 	{ldap_xpm			, NULL, NULL},
+ 	{linewrap_xpm			, NULL, NULL},
+ 	{mark_xpm			, NULL, NULL},
+ 	{new_xpm			, NULL, NULL},
+-	{outbox_xpm			, NULL, NULL},
+ 	{replied_xpm			, NULL, NULL},
+-	{stock_close_xpm		, NULL, NULL},
+-	{stock_down_arrow_xpm		, NULL, NULL},
+-	{stock_exec_xpm			, NULL, NULL},
+-	{stock_mail_xpm			, NULL, NULL},
+-	{stock_mail_attach_xpm		, NULL, NULL},
+-	{stock_mail_compose_xpm		, NULL, NULL},
+-	{stock_mail_forward_xpm		, NULL, NULL},
+-	{stock_mail_receive_xpm		, NULL, NULL},
+ 	{stock_mail_receive_all_xpm	, NULL, NULL},
+-	{stock_mail_reply_xpm		, NULL, NULL},
+-	{stock_mail_reply_to_all_xpm	, NULL, NULL},
+-	{stock_mail_send_xpm		, NULL, NULL},
+ 	{stock_mail_send_queue_xpm	, NULL, NULL},
+-	{stock_paste_xpm		, NULL, NULL},
+-	{stock_preferences_xpm		, NULL, NULL},
+-	{stock_properties_xpm		, NULL, NULL},
+ 	{sylpheed_logo_xpm		, NULL, NULL},
+-	{tb_address_book_xpm		, NULL, NULL},
+ 	{trash_xpm			, NULL, NULL},
+ 	{unread_xpm			, NULL, NULL},
+ 	{vcard_xpm			, NULL, NULL},
+diff -ruN ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.h ./src/stock_pixmap.h
+--- ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.h	Mon May  9 11:29:14 2005
++++ ./src/stock_pixmap.h	Sat Jun 25 19:59:24 2005
+@@ -28,8 +28,6 @@
+ 	STOCK_PIXMAP_ADDRESS,
+ 	STOCK_PIXMAP_BOOK,
+ 	STOCK_PIXMAP_CATEGORY,
+-	STOCK_PIXMAP_CHECKBOX_OFF,
+-	STOCK_PIXMAP_CHECKBOX_ON,
+ 	STOCK_PIXMAP_CLIP,
+ 	STOCK_PIXMAP_COMPLETE,
+ 	STOCK_PIXMAP_CONTINUE,
+@@ -40,33 +38,16 @@
+ 	STOCK_PIXMAP_ERROR,
+ 	STOCK_PIXMAP_FORWARDED,
+ 	STOCK_PIXMAP_GROUP,
+-	STOCK_PIXMAP_INBOX,
+ 	STOCK_PIXMAP_INTERFACE,
+ 	STOCK_PIXMAP_JPILOT,
+ 	STOCK_PIXMAP_LDAP,
+ 	STOCK_PIXMAP_LINEWRAP,
+ 	STOCK_PIXMAP_MARK,
+ 	STOCK_PIXMAP_NEW,
+-	STOCK_PIXMAP_OUTBOX,
+ 	STOCK_PIXMAP_REPLIED,
+-	STOCK_PIXMAP_CLOSE,
+-	STOCK_PIXMAP_DOWN_ARROW,
+-	STOCK_PIXMAP_EXEC,
+-	STOCK_PIXMAP_MAIL,
+-	STOCK_PIXMAP_MAIL_ATTACH,
+-	STOCK_PIXMAP_MAIL_COMPOSE,
+-	STOCK_PIXMAP_MAIL_FORWARD,
+-	STOCK_PIXMAP_MAIL_RECEIVE,
+ 	STOCK_PIXMAP_MAIL_RECEIVE_ALL,
+-	STOCK_PIXMAP_MAIL_REPLY,
+-	STOCK_PIXMAP_MAIL_REPLY_TO_ALL,
+-	STOCK_PIXMAP_MAIL_SEND,
+ 	STOCK_PIXMAP_MAIL_SEND_QUEUE,
+-	STOCK_PIXMAP_PASTE,
+-	STOCK_PIXMAP_PREFERENCES,
+-	STOCK_PIXMAP_PROPERTIES,
+ 	STOCK_PIXMAP_SYLPHEED_LOGO,
+-	STOCK_PIXMAP_ADDRESS_BOOK,
+ 	STOCK_PIXMAP_TRASH,
+ 	STOCK_PIXMAP_UNREAD,
+ 	STOCK_PIXMAP_VCARD,
