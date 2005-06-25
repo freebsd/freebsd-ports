@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Acme/Monta.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Monta/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Monta
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Acme 2>/dev/null || true
