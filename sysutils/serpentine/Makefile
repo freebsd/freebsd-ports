@@ -26,4 +26,26 @@ USE_GMAKE=	yes
 USE_GSTREAMER=	core
 USE_PYTHON=	2.4+
 
-.include <bsd.port.mk>
+OPTIONS=	MUINE "Cd-Burner Plugin for muine audio player" Off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MUINE) || exists(${X11BASE}/bin/muine)
+BUILD_DEPENDS+=	muine:${PORTSDIR}/audio/muine
+RUN_DEPENDS+=	muine:${PORTSDIR}/audio/muine
+PLIST_SUB+=	MUINE=""
+.else
+PLIST_SUB+=	MUINE="@comment "
+.endif
+
+.if defined(WITH_MUINE) || exists(${X11BASE}/bin/muine)
+post-build:
+	cd ${WRKSRC}/muine-plugin && ${GMAKE}
+
+post-install:
+	${MKDIR} ${PREFIX}/lib/muine/plugins
+	${INSTALL_DATA} ${WRKSRC}/muine-plugin/SerpentinePlugin.dll \
+		${PREFIX}/lib/muine/plugins
+.endif
+
+.include <bsd.port.post.mk>
