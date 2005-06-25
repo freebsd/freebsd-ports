@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://us1.networkupstools.org/source/${PORTVERSION:R}/ \
 		http://eu1.networkupstools.org/source/${PORTVERSION:R}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Network UPS Tools
@@ -22,16 +25,17 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-statepath=/var/db/nut \
 		--with-altpidpath=/var/db/nut \
 		--with-pidpath=/var/db/nut
+USE_RC_SUBR=	yes
 
 MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
 MAN8=		apcsmart.8 belkin.8 belkinunv.8 bestuferrups.8 bestups.8 \
-		cyberpower.8 cyberpower1100.8 etapro.8 everups.8 \
+		bestfcom.8 cpsups.8 cyberpower.8 etapro.8 everups.8 \
 		fentonups.8 genericups.8 ippon.8 isbmex.8 liebert.8 \
-		masterguard.8 mge-shut.8 mge-utalk.8 nutupsdrv.8 oneac.8 \
-		powercom.8 sms.8 snmp-ups.8 tripplite.8 tripplitesu.8 \
-		upsc.8 upscmd.8 upsd.8 upsdrvctl.8 upslog.8 upsmon.8 \
-		upsrw.8 upssched.8 victronups.8 safenet.8
+		masterguard.8 metasys.8 mge-shut.8 mge-utalk.8 mustek.8 \
+		nutupsdrv.8 oneac.8 powercom.8 powermust.8 safenet.8 sms.8 \
+		snmp-ups.8 tripplite.8 tripplitesu.8 upsc.8 upscmd.8 upsd.8 \
+		upsdrvctl.8 upslog.8 upsmon.8 upsrw.8 upssched.8 victronups.8 
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-conf
@@ -65,12 +69,14 @@ pre-install:
 .endif
 	@${MKDIR} ${PREFIX}/libexec/nut
 	@${MKDIR} /var/db/nut
-	@${CHOWN} uucp /var/db/nut
+	@${CHOWN} uucp:wheel /var/db/nut
+	@${CHMOD} 0750 /var/db/nut
 
 post-install:
 	@${SED} -e "s#%%PREFIX%%#${PREFIX}#g" \
-		${FILESDIR}/nut.sh.sample > ${PREFIX}/etc/rc.d/nut.sh.sample
-	@${CHMOD} 0755 ${PREFIX}/etc/rc.d/nut.sh.sample
+		-e "s#%%RC_SUBR%%#${RC_SUBR}#g" \
+		<${FILESDIR}/nut.sh.sample >${WRKSRC}/nut.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/nut.sh ${PREFIX}/etc/rc.d/nut.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/cables
 	@${MKDIR} ${DOCSDIR}/drivers
