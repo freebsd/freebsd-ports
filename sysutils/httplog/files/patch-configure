@@ -1,11 +1,11 @@
---- configure.orig	Tue Dec 16 10:40:16 2003
-+++ configure	Tue Dec 16 10:41:45 2003
+--- configure.orig	Sat Jun 25 15:53:38 2005
++++ configure	Sat Jun 25 16:00:31 2005
 @@ -140,7 +140,7 @@
  EOF
  	$CC -o ./dummy ./dummy.c -lz 1>/dev/null 2>&1
  	if [ $? -eq 0 ]; then
 -		if [ `./dummy` = "1.1.3" ]; then
-+		if [ `./dummy` = "1.1.3" -o `./dummy` = "1.1.4" ]; then
++		if :; then
  			use_zlib=yes
  			LDFLAGS="$LDFLAGS -lz"
  			echo "Checking zlib version: `./dummy` found."

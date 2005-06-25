@@ -7,6 +7,7 @@
 
 PORTNAME=	httplog
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://nutbar.chemlab.org/downloads/programs/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -14,9 +15,10 @@ MASTER_SITES=	http://nutbar.chemlab.org/downloads/programs/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache log rollover program with strftime(3) filename support
 
-MAN8=	httplog.8
+MAN8=		httplog.8
 
-DOCS=	ChangeLog README
+PLIST_FILES=	sbin/httplog
+PORTDOCS=	ChangeLog README
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
@@ -33,12 +35,12 @@ do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o httplog httplog.c -lz)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/httplog ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/httplog.8 ${PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/httplog ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/httplog.8 ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
