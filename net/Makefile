@@ -490,6 +490,7 @@
     SUBDIR += p5-IO-INET6
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-Multicast
+    SUBDIR += p5-IP-Country
     SUBDIR += p5-Jabber-Connection
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AIM

@@ -1,0 +1,18 @@
+bin/ip2cc
+%%SITE_PERL%%/IP/Authority.pm
+%%SITE_PERL%%/IP/Country.pm
+%%SITE_PERL%%/IP/Authority/ipauth.gif
+%%SITE_PERL%%/IP/Authority/auth.gif
+%%SITE_PERL%%/IP/Country/Fast.pm
+%%SITE_PERL%%/IP/Country/MaxMind.pm
+%%SITE_PERL%%/IP/Country/Medium.pm
+%%SITE_PERL%%/IP/Country/Slow.pm
+%%SITE_PERL%%/IP/Country/Fast/cc.gif
+%%SITE_PERL%%/IP/Country/Fast/ip.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IP/Country/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IP/Country
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IP
+@dirrm %%SITE_PERL%%/IP/Country/Fast
+@dirrm %%SITE_PERL%%/IP/Country
+@dirrm %%SITE_PERL%%/IP/Authority
+@unexec rmdir %D/%%SITE_PERL%%/IP 2>/dev/null || true
