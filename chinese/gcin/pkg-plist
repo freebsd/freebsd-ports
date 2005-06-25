@@ -25,6 +25,7 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/hsu.kbm
 %%DATADIR%%/table/ibm.kbm
 %%DATADIR%%/table/jyutping.gtab
+%%DATADIR%%/table/nippon.gtab
 %%BOSHIAMY%%%%DATADIR%%/table/noseeing.gtab
 %%DATADIR%%/table/pho-huge.tab
 %%DATADIR%%/table/pho.tab
