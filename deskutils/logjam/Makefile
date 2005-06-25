@@ -7,6 +7,7 @@
 
 PORTNAME=	logjam
 PORTVERSION=	4.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 
@@ -71,5 +72,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libgtkhtml-3.0|libgtkhtml-3.1|g' ${WRKSRC}/configure
+.if defined(WITH_TAGS_PATCH)
+	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/extra-logjam_tags.patch
+.endif
 
 .include <bsd.port.post.mk>
