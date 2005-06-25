@@ -40,9 +40,7 @@ www/snortsms/conf/dsp_conf.php
 www/snortsms/conf/dsp_save_conf.php
 www/snortsms/conf/fbx_Switch.php
 www/snortsms/conf/index.php
-www/snortsms/contrib/snortsms_install.html
 www/snortsms/contrib/SNORTSMS.mysql
-www/snortsms/contrib/snortsms-agent-0.7.0.tgz.gz
 www/snortsms/css/default.css
 www/snortsms/docs/snortsms_install.html
 www/snortsms/dsp_main.php

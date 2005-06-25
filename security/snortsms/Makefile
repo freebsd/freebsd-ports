@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	snortsms
-PORTVERSION=	0.11.3
+PORTVERSION=	0.12.6
 CATEGORIES=	security www
 MASTER_SITES=	http://snortsms.servangle.net/dnloads/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	snortsms@servangle.net
 COMMENT=	A Snort Sensor Management System web interface and monitoring console
