@@ -9,15 +9,17 @@ etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upssched.conf.sample
-etc/rc.d/nut.sh.sample
+@unexec rmdir %D/etc/nut 2>/dev/null || true
+etc/rc.d/nut.sh
 libexec/nut/apcsmart
 libexec/nut/belkin
 libexec/nut/belkinunv
+libexec/nut/bestfcom
 libexec/nut/bestuferrups
 libexec/nut/bestups
 libexec/nut/blazer
+libexec/nut/cpsups
 libexec/nut/cyberpower
-libexec/nut/cyberpower1100
 libexec/nut/esupssmart
 libexec/nut/etapro
 libexec/nut/everups
@@ -27,10 +29,13 @@ libexec/nut/ippon
 libexec/nut/isbmex
 libexec/nut/liebert
 libexec/nut/masterguard
+libexec/nut/metasys
 libexec/nut/mge-shut
 libexec/nut/mge-utalk
+libexec/nut/mustek
 libexec/nut/oneac
 libexec/nut/powercom
+libexec/nut/powermust
 libexec/nut/safenet
 libexec/nut/sms
 libexec/nut/tripplite
@@ -47,6 +52,9 @@ sbin/upssched
 %%CGIETC%%upsset.conf.sample
 %%CGIETC%%upsstats.html.sample
 %%CGIETC%%upsstats-single.html.sample
+%%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%
+%%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%/cables
+%%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%/drivers
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -55,6 +63,7 @@ sbin/upssched
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%%%DOCSDIR%%/big-servers.txt
+%%PORTDOCS%%%%DOCSDIR%%/cables/apc-rs500-serial.txt
 %%PORTDOCS%%%%DOCSDIR%%/cables/apc.txt
 %%PORTDOCS%%%%DOCSDIR%%/cables/ge-imv-victron.txt
 %%PORTDOCS%%%%DOCSDIR%%/cables/imv.txt
@@ -82,9 +91,10 @@ sbin/upssched
 %%PORTDOCS%%%%DOCSDIR%%/sock-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/ssl.txt
 %%PORTDOCS%%%%DOCSDIR%%/upssched.txt
-@dirrm %%DOCSDIR%%/cables
-@dirrm %%DOCSDIR%%/drivers
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cables
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/nut
+@exec if [ ! -d /var/db/nut ]; then mkdir /var/db/nut; chown uucp:wheel /var/db/nut; chmod 0755 /var/db/nut; fi
+@unexec rmdir /var/db/nut 2>/dev/null || true
 %%CGIDIRRM%%
-@unexec rmdir %D/etc/nut 2>/dev/null || true
