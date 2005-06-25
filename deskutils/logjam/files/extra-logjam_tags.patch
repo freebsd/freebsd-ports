@@ -1,0 +1,273 @@
+--- orig/po/en_US.UTF-8.po
++++ po/en_US.UTF-8.po
+@@ -1141,6 +1141,10 @@
+ msgid "_Music:"
+ msgstr "_Music:"
+ 
++#: src/jamview.c:371
++msgid "_Tags:"
++msgstr "_Tags:"
++
+ #: src/jamview.c:430
+ msgid "_Preformatted"
+ msgstr "_Preformatted"
+@@ -1528,6 +1532,10 @@
+ msgid "/View/M_usic"
+ msgstr "/View/M_usic"
+ 
++#: src/menu.c:417
++msgid "/View/_Tags"
++msgstr "/View/_Tags"
++
+ #: src/menu.c:418
+ msgid "/View/_Preformatted"
+ msgstr "/View/_Preformatted"
+
+
+--- orig/protocol/liblivejournal/livejournal/entry.c
++++ protocol/liblivejournal/livejournal/entry.c
+@@ -49,6 +49,8 @@
+ 		newe->mood = g_strdup(e->mood);
+ 	if (e->music)
+ 		newe->music = g_strdup(e->music);
++	if (e->taglist)
++		newe->taglist = g_strdup(e->taglist);
+ 	if (e->pickeyword)
+ 		newe->pickeyword = g_strdup(e->pickeyword);
+ 	return newe;
+@@ -59,6 +61,7 @@
+ 	g_free(e->event);
+ 	g_free(e->mood);
+ 	g_free(e->music);
++	g_free(e->taglist);
+ 	g_free(e->pickeyword);
+ 	g_free(e);
+ }
+@@ -127,7 +130,7 @@
+ 	lj_request_add_int(request, "min",  ptm->tm_min);
+ 
+ 	/* metadata */
+-/* http://www.livejournal.com/admin/schema/?mode=viewdata&table=logproplist */
++	/* http://www.livejournal.com/admin/schema/?mode=viewdata&table=logproplist */
+ 	lj_request_add(request, "prop_current_mood", entry->mood ? entry->mood : "");
+ 	if (entry->moodid)
+ 		lj_request_add_int(request, "prop_current_moodid", entry->moodid);
+@@ -135,6 +138,11 @@
+ 		lj_request_add(request, "prop_current_moodid", "");
+ 	lj_request_add(request, 
+ 			"prop_current_music", entry->music ? entry->music : "");
++	/* only include a prop_taglist if it's non-empty */
++	if( entry->taglist /*&& !strcmp( entry->taglist, "" )*/ ) {
++	  lj_request_add(request, 
++			 "prop_taglist", entry->taglist );
++	}
+ 	lj_request_add(request, 
+ 			"prop_picture_keyword", entry->pickeyword ? entry->pickeyword : "");
+ 	lj_request_add_int(request, "prop_opt_preformatted", entry->preformatted);
+@@ -186,6 +194,12 @@
+ 			g_set_error(err, 0, 0, "Bad UTF-8 in current_music");
+ 			return FALSE;
+ 		}
++	} else if (strcmp(key, "taglist") == 0) {
++		entry->taglist = g_strdup(value);
++		if (!verify_utf8(&entry->taglist)) {
++			g_set_error(err, 0, 0, "Bad UTF-8 in taglist");
++			return FALSE;
++		}
+ 	} else if (strcmp(key, "picture_keyword") == 0) {
+ 		entry->pickeyword = g_strdup(value);
+ 		if (!verify_utf8(&entry->pickeyword)) {
+@@ -254,6 +268,7 @@
+ 		}
+ 	}
+ 	XML_ENTRY_META_SET(music);
++	XML_ENTRY_META_SET(taglist);
+ 	XML_ENTRY_META_SET(pickeyword);
+ 	if (entry->preformatted)
+ 		xmlNewChild(root, NULL, "preformatted", NULL);
+@@ -469,6 +484,7 @@
+ 			}
+ 		}
+ 		else XML_ENTRY_META_GET(music)
++		else XML_ENTRY_META_GET(taglist)
+ 		else XML_ENTRY_META_GET(pickeyword)
+ 		else if (strcmp(cur->name, "preformatted") == 0) {
+ 			entry->preformatted = TRUE;
+@@ -588,6 +604,7 @@
+ 	RFC822_GET(subject)
+ 	else RFC822_GET(mood) /* XXX id */
+ 	else RFC822_GET(music)
++	else RFC822_GET(taglist)
+ 	else RFC822_GET(pickeyword)
+ 	else if (g_ascii_strcasecmp(key, "time") == 0) {
+ 		if (entry) lj_ljdate_to_tm(val, &entry->time);
+@@ -724,6 +741,7 @@
+ 	append_field(str, "Subject", entry->subject, includeempty);
+ 	append_field(str, "Mood", entry->mood, includeempty);
+ 	append_field(str, "Music", entry->music, includeempty);
++	append_field(str, "TagList", entry->taglist, includeempty);
+ 	append_field(str, "PicKeyword", entry->pickeyword, includeempty);
+ 	g_string_append(str, "\n");
+ 	if (entry->event)
+
+
+--- orig/protocol/liblivejournal/livejournal/entry.h
++++ protocol/liblivejournal/livejournal/entry.h
+@@ -52,7 +52,7 @@
+ 	char *event;
+ 
+ 	int moodid;  /* a moodid is only meaningful in the context of a particular LJServer. */
+-	char *mood, *music, *pickeyword;
++	char *mood, *music, *taglist, *pickeyword;
+ 	gboolean preformatted;
+ 	gboolean backdated;
+ 	LJCommentsType comments;
+
+
+--- orig/src/jamdoc.c
++++ src/jamdoc.c
+@@ -238,6 +238,14 @@
+ jam_doc_set_music(JamDoc *doc, const char *music) {
+ 	string_replace(&doc->entry->music, music ? g_strdup(music) : NULL);
+ }
++const char *
++jam_doc_get_taglist(JamDoc *doc) {
++	return doc->entry->taglist;
++}
++void
++jam_doc_set_taglist(JamDoc *doc, const char *taglist) {
++	string_replace(&doc->entry->taglist, taglist ? g_strdup(taglist) : NULL);
++}
+ LJSecurity
+ jam_doc_get_security(JamDoc *doc) {
+ 	return doc->entry->security;
+
+
+--- orig/src/jamdoc.h
++++ src/jamdoc.h
+@@ -63,6 +63,9 @@
+ const char *   jam_doc_get_music(JamDoc *doc);
+ void           jam_doc_set_music(JamDoc *doc, const char *music);
+ 
++const char *   jam_doc_get_taglist(JamDoc *doc);
++void           jam_doc_set_taglist(JamDoc *doc, const char *taglist);
++
+ const char *   jam_doc_get_picture(JamDoc *doc);
+ void           jam_doc_set_picture(JamDoc *doc, const char *keyword);
+ 
+
+
+--- orig/src/jamview.c
++++ src/jamview.c
+@@ -42,6 +42,9 @@
+ 	GtkWidget *musicbar;
+ 	GtkWidget *musicbutton, *music;
+ 
++	GtkWidget *tagsbar;
++	GtkWidget *tags;
++
+ 	GtkWidget *entry;
+ 
+ 	GtkWidget *optionbar;
+@@ -405,6 +408,39 @@
+ 	jam_doc_set_music(view->doc, music);
+ }
+ 
++static void
++tags_add(JamView *view) {
++	view->tags = gtk_entry_new();
++	view->tagsbar = labelled_box_new_sg(_("_Tags:"), view->tags, view->sizegroup);
++	gtk_box_pack_start(GTK_BOX(view), view->tagsbar, FALSE, FALSE, 0);
++	gtk_box_reorder_child(GTK_BOX(view), view->tagsbar, view->musicbar ? 2 : 1);
++	gtk_widget_show_all(view->tagsbar);
++}
++static void
++tags_remove(JamView *view) {
++	jam_doc_set_taglist(view->doc, NULL);
++	gtk_widget_destroy(view->tagsbar);
++	view->tagsbar = view->tags = NULL;
++}
++static gboolean
++tags_visible(JamView *view) {
++	return view->tagsbar != NULL;
++}
++static void
++tags_load(JamView *view) {
++	const char *tags = jam_doc_get_taglist(view->doc);
++	if (tags)
++		show_meta(view, JAM_VIEW_TAGS);
++	if (tags_visible(view))
++		gtk_entry_set_text(GTK_ENTRY(view->tags), tags ? tags : "");
++}
++static void
++tags_store(JamView *view) {
++	const char *tags = gtk_entry_get_text(GTK_ENTRY(view->tags));
++	if (tags[0] == 0) tags = NULL;
++	jam_doc_set_taglist(view->doc, tags);
++}
++
+ 
+ static void
+ option_add(JamView *view) {
+@@ -529,6 +565,7 @@
+ 	{ "mood",         TRUE, STD(mood),         mood_account_changed     },
+ 	{ "picture",      TRUE, STD(picture),      picture_account_changed  },
+ 	{ "music",        TRUE, STD(music),        NULL },
++	{ "tags",         TRUE, STD(tags),         NULL },
+ 	{ "preformatted", TRUE, STD(preformatted), NULL },
+ 	{ "datesel",      TRUE, STD(datesel),      NULL },
+ 	{ "comments",     TRUE, STD(comments),     NULL },
+
+
+--- orig/src/jamview.h
++++ src/jamview.h
+@@ -21,6 +21,7 @@
+ 	JAM_VIEW_MOOD,
+ 	JAM_VIEW_PIC,
+ 	JAM_VIEW_MUSIC,
++	JAM_VIEW_TAGS,
+ 	JAM_VIEW_PREFORMATTED,
+ 	JAM_VIEW_DATESEL,
+ 	JAM_VIEW_COMMENTS,
+
+
+--- orig/src/menu.c
++++ src/menu.c
+@@ -56,6 +56,7 @@
+ 	ACTION_VIEW_MOOD,
+ 	ACTION_VIEW_PICTURE,
+ 	ACTION_VIEW_MUSIC,
++	ACTION_VIEW_TAGS,
+ 	ACTION_VIEW_PREFORMATTED,
+ 	ACTION_VIEW_DATESEL,
+ 	ACTION_VIEW_COMMENTS,
+@@ -414,6 +415,7 @@
+ { N_("/View/Entry _Date"),        NULL, menu_view_cb, ACTION_VIEW_DATESEL,      "<CheckItem>" },
+ { N_("/View/_Mood"),              NULL, menu_view_cb, ACTION_VIEW_MOOD,         "<CheckItem>" },
+ { N_("/View/_Picture"),           NULL, menu_view_cb, ACTION_VIEW_PICTURE,      "<CheckItem>" },
++{ N_("/View/_Tags"),              NULL, menu_view_cb, ACTION_VIEW_TAGS,         "<CheckItem>" },
+ { N_("/View/M_usic"),             NULL, menu_view_cb, ACTION_VIEW_MUSIC,        "<CheckItem>" },
+ { N_("/View/_Preformatted"),      NULL, menu_view_cb, ACTION_VIEW_PREFORMATTED, "<CheckItem>" },
+ { N_("/View/_Comments"),          NULL, menu_view_cb, ACTION_VIEW_COMMENTS,     "<CheckItem>" },
+
+
+--- orig/src/preview.c
++++ src/preview.c
+@@ -179,11 +179,13 @@
+ 		g_string_append(str, "</tr></table><hr/><br/>");
+ 	}
+ 
+-	if (entry->mood || entry->music) {
++	if (entry->mood || entry->music ||entry->taglist) {
+ 		if (entry->mood)
+ 			g_string_append_printf(str, "<i>%s</i>: %s<br/>", _("Current Mood"), entry->mood);
+ 		if (entry->music)
+ 			g_string_append_printf(str, "<i>%s</i>: %s<br/>", _("Current Music"), entry->music);
++		if (entry->taglist)
++			g_string_append_printf(str, "<i>%s</i>: %s<br/>", _("Tags"), entry->taglist);
+ 		g_string_append(str, "<br/>");
+ 	}
+ 
+
+
+
