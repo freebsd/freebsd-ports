@@ -20,6 +20,4 @@ Finally, to start the GCIN input method daemon, use command:
 
   exec gcin &
 
-If you get problem with gcin, please visit http://cle.linux.org.tw/gcin/
-Happy gcining...:-)
 --------------------------------------------------------------------
