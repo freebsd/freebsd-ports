@@ -1,0 +1,13 @@
+Gnome application for writing CD-Audio discs. It aims for simplicity,
+usability and compability. Its features are:
+
+ o Supports multiple formats files, like WAV, MP3, OGG, FLAC and every other
+   gstreamer does
+ o Save and open PLS, M3U and XSPF playlists
+ o Extracts audio from video contents, like an MPEG video
+ o Uses audio metadata for better handling
+ o Supports drag and drop: drop musics directly from Rhythmbox or Nautilus!
+ o Clean and easy to use interface
+ o Easy integration with other applications
+
+WWW: http://s1x.homelinux.net/projects/serpentine
