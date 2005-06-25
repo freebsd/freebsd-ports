@@ -16,8 +16,13 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
-		${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux_mesa3
+		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
+
+.ifdef WITH_NVIDIA_GL
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux_mesa3
+.endif
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
