@@ -10876,6 +10876,7 @@ seq2		ports/misc/seq2
 seqio		ports/biology/seqio
 ser		ports/net/ser
 serialmail	ports/mail/serialmail
+serpentine	ports/sysutils/serpentine
 serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
 ses		ports/math/ses
