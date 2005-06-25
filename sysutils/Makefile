@@ -108,7 +108,6 @@
     SUBDIR += disktype
     SUBDIR += diskusage
     SUBDIR += dmidecode
-    SUBDIR += doconfig
     SUBDIR += dolly
     SUBDIR += dolly+
     SUBDIR += dt
