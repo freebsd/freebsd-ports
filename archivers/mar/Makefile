@@ -8,7 +8,8 @@
 PORTNAME=	mar
 DISTVERSION=	0.5
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.emantic.co.uk/mark/files/
+MASTER_SITES=	http://www.emantic.co.uk/mark/files/ \
+		http://critical.ch/mar/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ehaupt@critical.ch
