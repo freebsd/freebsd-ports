@@ -430,6 +430,7 @@
     SUBDIR += scan_ffs
     SUBDIR += sdd
     SUBDIR += sec
+    SUBDIR += serpentine
     SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
