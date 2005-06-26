@@ -1,0 +1,24 @@
+Index: bin/portsclean.1
+===================================================================
+--- bin/portsclean.1	(revision 32)
++++ bin/portsclean.1	(revision 34)
+@@ -8,7 +8,7 @@
+ .Nd a tool to clean ports/packages garbage
+ .Sh SYNOPSIS
+ .Nm
+-.Op Fl hCDDinPPQQq
++.Op Fl hCDDiLnPPQQq
+ .Sh DESCRIPTION
+ .Nm
+ is a tool to help users clean out the working directories of their ports
+@@ -81,7 +81,9 @@
+ .Pp
+ .It Fl Q
+ .It Fl -quiet
+-Do not write anything to stdout.  Specified twice, do not write
++Do not write anything to stdout.  Specified twice (i.e.
++.Fl QQ ) ,
++do not write
+ anything to stderr either.  This is for internal use.
+ .Pp
+ .It Fl q
