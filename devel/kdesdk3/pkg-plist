@@ -83,6 +83,12 @@ include/kbabel/tagextractor.h
 include/kprofilemethod.h
 include/kspy.h
 include/repository_stub.h
+lib/kde3/cervisia.la
+lib/kde3/cervisia.so
+lib/kde3/cvsaskpass.la
+lib/kde3/cvsaskpass.so
+lib/kde3/cvsservice.la
+lib/kde3/cvsservice.so
 lib/kde3/kabcformat_kdeaccounts.la
 lib/kde3/kabcformat_kdeaccounts.so
 lib/kde3/kbabel_accelstool.la
@@ -162,6 +168,12 @@ lib/libkbabelcommon.so.5
 lib/libkbabeldictplugin.la
 lib/libkbabeldictplugin.so
 lib/libkbabeldictplugin.so.3
+lib/libkdeinit_cervisia.la
+lib/libkdeinit_cervisia.so
+lib/libkdeinit_cvsaskpass.la
+lib/libkdeinit_cvsaskpass.so
+lib/libkdeinit_cvsservice.la
+lib/libkdeinit_cvsservice.so
 lib/libkompareinterface.la
 lib/libkompareinterface.so
 lib/libkompareinterface.so.0

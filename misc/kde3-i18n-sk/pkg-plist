@@ -923,7 +923,6 @@ share/locale/sk/LC_MESSAGES/kbounce.mo
 share/locale/sk/LC_MESSAGES/kbruch.mo
 share/locale/sk/LC_MESSAGES/kbugbuster.mo
 share/locale/sk/LC_MESSAGES/kcalc.mo
-share/locale/sk/LC_MESSAGES/kcardchooser.mo
 share/locale/sk/LC_MESSAGES/kcharselect.mo
 share/locale/sk/LC_MESSAGES/kcharselectapplet.mo
 share/locale/sk/LC_MESSAGES/kcm_krfb.mo
@@ -978,7 +977,6 @@ share/locale/sk/LC_MESSAGES/kcmlaptop.mo
 share/locale/sk/LC_MESSAGES/kcmlaunch.mo
 share/locale/sk/LC_MESSAGES/kcmlayout.mo
 share/locale/sk/LC_MESSAGES/kcmlilo.mo
-share/locale/sk/LC_MESSAGES/kcmlinuz.mo
 share/locale/sk/LC_MESSAGES/kcmlirc.mo
 share/locale/sk/LC_MESSAGES/kcmlocale.mo
 share/locale/sk/LC_MESSAGES/kcmmediacontrol.mo

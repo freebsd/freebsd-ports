@@ -93,6 +93,9 @@ share/doc/HTML/da/KRegExpEditor/linestartendtool.png
 share/doc/HTML/da/KRegExpEditor/lookaheadtools.png
 share/doc/HTML/da/KRegExpEditor/repeattool.png
 share/doc/HTML/da/KRegExpEditor/theEditor.png
+share/doc/HTML/da/akregator/common
+share/doc/HTML/da/akregator/index.cache.bz2
+share/doc/HTML/da/akregator/index.docbook
 share/doc/HTML/da/amor/common
 share/doc/HTML/da/amor/index.cache.bz2
 share/doc/HTML/da/amor/index.docbook
@@ -234,12 +237,15 @@ share/doc/HTML/da/kate-plugins/textfilter.docbook
 share/doc/HTML/da/kate-plugins/xmlcheck.docbook
 share/doc/HTML/da/kate-plugins/xmltools.docbook
 share/doc/HTML/da/kate/advanced.docbook
+share/doc/HTML/da/kate/common
 share/doc/HTML/da/kate/configdialog01.png
 share/doc/HTML/da/kate/configdialog02.png
 share/doc/HTML/da/kate/configuring.docbook
 share/doc/HTML/da/kate/fundamentals.docbook
 share/doc/HTML/da/kate/highlighted.png
 share/doc/HTML/da/kate/highlighting.docbook
+share/doc/HTML/da/kate/index.cache.bz2
+share/doc/HTML/da/kate/index.docbook
 share/doc/HTML/da/kate/kate.png
 share/doc/HTML/da/kate/mdi.docbook
 share/doc/HTML/da/kate/menus.docbook
@@ -518,11 +524,15 @@ share/doc/HTML/da/kdeprint/theory.docbook
 share/doc/HTML/da/kdesu/common
 share/doc/HTML/da/kdesu/index.cache.bz2
 share/doc/HTML/da/kdesu/index.docbook
+share/doc/HTML/da/kdevelop/app-files.docbook
+share/doc/HTML/da/kdevelop/app-menu.docbook
 share/doc/HTML/da/kdevelop/applicationwizard.docbook
 share/doc/HTML/da/kdevelop/common
+share/doc/HTML/da/kdevelop/getting-started.docbook
 share/doc/HTML/da/kdevelop/index.cache.bz2
 share/doc/HTML/da/kdevelop/index.docbook
 share/doc/HTML/da/kdevelop/kdevelop-install.docbook
+share/doc/HTML/da/kdevelop/kdevelop-scripting.docbook
 share/doc/HTML/da/kdevelop/kdevelop-survey.docbook
 share/doc/HTML/da/kdevelop/project-advanced.docbook
 share/doc/HTML/da/kdevelop/project-management.docbook
@@ -534,6 +544,9 @@ share/doc/HTML/da/kdf/index.docbook
 share/doc/HTML/da/kdict/common
 share/doc/HTML/da/kdict/index.cache.bz2
 share/doc/HTML/da/kdict/index.docbook
+share/doc/HTML/da/kdm/common
+share/doc/HTML/da/kdm/index.cache.bz2
+share/doc/HTML/da/kdm/index.docbook
 share/doc/HTML/da/kdm/kdmrc-ref.docbook
 share/doc/HTML/da/kdvi/common
 share/doc/HTML/da/kdvi/index.cache.bz2
@@ -647,6 +660,7 @@ share/doc/HTML/da/khelpcenter/userguide/intro.docbook
 share/doc/HTML/da/khelpcenter/userguide/kde-as-root.docbook
 share/doc/HTML/da/khelpcenter/userguide/kde-edutainment.docbook
 share/doc/HTML/da/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/da/khelpcenter/userguide/kde-office.docbook
 share/doc/HTML/da/khelpcenter/userguide/konsole-intro.docbook
 share/doc/HTML/da/khelpcenter/userguide/messaging-intro.docbook
 share/doc/HTML/da/khelpcenter/userguide/migrator-dictionary.docbook
@@ -934,6 +948,9 @@ share/doc/HTML/da/kmplot/settingsdlg.png
 share/doc/HTML/da/kmplot/stepdlg.png
 share/doc/HTML/da/kmplot/toolbar.png
 share/doc/HTML/da/kmplot/using.docbook
+share/doc/HTML/da/knetattach/common
+share/doc/HTML/da/knetattach/index.cache.bz2
+share/doc/HTML/da/knetattach/index.docbook
 share/doc/HTML/da/knewsticker/common
 share/doc/HTML/da/knewsticker/index.cache.bz2
 share/doc/HTML/da/knewsticker/index.docbook
@@ -962,7 +979,6 @@ share/doc/HTML/da/knode/knode-mail-account.png
 share/doc/HTML/da/knode/knode-new-article.png
 share/doc/HTML/da/knode/knode-news-account.png
 share/doc/HTML/da/knode/knode-post-settings.png
-share/doc/HTML/da/knode/knode-read-news-appearance-dialog.png
 share/doc/HTML/da/knode/knode-read-news-settings.png
 share/doc/HTML/da/knode/knode-reply.png
 share/doc/HTML/da/knode/knode-search.png
@@ -1171,7 +1187,6 @@ share/doc/HTML/da/kppp/kppp-account-login-script-tab.png
 share/doc/HTML/da/kppp/kppp-config.png
 share/doc/HTML/da/kppp/kppp-device-tab.png
 share/doc/HTML/da/kppp/kppp-dialer-tab.png
-share/doc/HTML/da/kppp/kppp-dialler-tab.png
 share/doc/HTML/da/kppp/kppp-faq.docbook
 share/doc/HTML/da/kppp/kppp-graph-tab.png
 share/doc/HTML/da/kppp/kppp-misc-tab.png
@@ -1491,6 +1506,9 @@ share/doc/HTML/da/quanta/working-with-quanta.docbook
 share/doc/HTML/da/scripts/man-adddebug.1.docbook
 share/doc/HTML/da/scripts/man-cheatmake.1.docbook
 share/doc/HTML/da/scripts/man-create_cvsignore.1.docbook
+share/doc/HTML/da/scripts/man-create_makefile.1.docbook
+share/doc/HTML/da/scripts/man-create_makefiles.1.docbook
+share/doc/HTML/da/scripts/man-cvscheck.1.docbook
 share/doc/HTML/da/scripts/man-cvslastchange.1.docbook
 share/doc/HTML/da/scripts/man-cvslastlog.1.docbook
 share/doc/HTML/da/scripts/man-cvsrevertlast.1.docbook
@@ -1625,7 +1643,6 @@ share/locale/da/LC_MESSAGES/kbstateapplet.mo
 share/locale/da/LC_MESSAGES/kbugbuster.mo
 share/locale/da/LC_MESSAGES/kcachegrind.mo
 share/locale/da/LC_MESSAGES/kcalc.mo
-share/locale/da/LC_MESSAGES/kcardchooser.mo
 share/locale/da/LC_MESSAGES/kcharselect.mo
 share/locale/da/LC_MESSAGES/kcharselectapplet.mo
 share/locale/da/LC_MESSAGES/kcm_krfb.mo
@@ -1668,7 +1685,6 @@ share/locale/da/LC_MESSAGES/kcmkonsole.mo
 share/locale/da/LC_MESSAGES/kcmkontactnt.mo
 share/locale/da/LC_MESSAGES/kcmktalkd.mo
 share/locale/da/LC_MESSAGES/kcmkttsd.mo
-share/locale/da/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/da/LC_MESSAGES/kcmkuick.mo
 share/locale/da/LC_MESSAGES/kcmkurifilt.mo
 share/locale/da/LC_MESSAGES/kcmkvaio.mo
@@ -1683,7 +1699,6 @@ share/locale/da/LC_MESSAGES/kcmlaptop.mo
 share/locale/da/LC_MESSAGES/kcmlaunch.mo
 share/locale/da/LC_MESSAGES/kcmlayout.mo
 share/locale/da/LC_MESSAGES/kcmlilo.mo
-share/locale/da/LC_MESSAGES/kcmlinuz.mo
 share/locale/da/LC_MESSAGES/kcmlirc.mo
 share/locale/da/LC_MESSAGES/kcmlocale.mo
 share/locale/da/LC_MESSAGES/kcmmediacontrol.mo
@@ -2218,6 +2233,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/knotes
 @dirrm share/doc/HTML/da/knode
 @dirrm share/doc/HTML/da/knewsticker
+@dirrm share/doc/HTML/da/knetattach
 @dirrm share/doc/HTML/da/kmplot
 @dirrm share/doc/HTML/da/kmouth
 @dirrm share/doc/HTML/da/kmousetool
@@ -2390,6 +2406,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/artsbuilder
 @dirrm share/doc/HTML/da/ark
 @dirrm share/doc/HTML/da/amor
+@dirrm share/doc/HTML/da/akregator
 @dirrm share/doc/HTML/da/KRegExpEditor
 @dirrm share/apps/ktuberling/sounds/da
 @dirrm share/apps/ktuberling/sounds

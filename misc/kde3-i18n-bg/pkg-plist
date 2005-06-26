@@ -97,7 +97,6 @@ share/locale/bg/LC_MESSAGES/kbounce.mo
 share/locale/bg/LC_MESSAGES/kbruch.mo
 share/locale/bg/LC_MESSAGES/kbstateapplet.mo
 share/locale/bg/LC_MESSAGES/kcalc.mo
-share/locale/bg/LC_MESSAGES/kcardchooser.mo
 share/locale/bg/LC_MESSAGES/kcharselect.mo
 share/locale/bg/LC_MESSAGES/kcharselectapplet.mo
 share/locale/bg/LC_MESSAGES/kcm_krfb.mo
@@ -140,7 +139,6 @@ share/locale/bg/LC_MESSAGES/kcmkonsole.mo
 share/locale/bg/LC_MESSAGES/kcmkontactnt.mo
 share/locale/bg/LC_MESSAGES/kcmktalkd.mo
 share/locale/bg/LC_MESSAGES/kcmkttsd.mo
-share/locale/bg/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/bg/LC_MESSAGES/kcmkuick.mo
 share/locale/bg/LC_MESSAGES/kcmkurifilt.mo
 share/locale/bg/LC_MESSAGES/kcmkvaio.mo
@@ -155,7 +153,6 @@ share/locale/bg/LC_MESSAGES/kcmlaptop.mo
 share/locale/bg/LC_MESSAGES/kcmlaunch.mo
 share/locale/bg/LC_MESSAGES/kcmlayout.mo
 share/locale/bg/LC_MESSAGES/kcmlilo.mo
-share/locale/bg/LC_MESSAGES/kcmlinuz.mo
 share/locale/bg/LC_MESSAGES/kcmlirc.mo
 share/locale/bg/LC_MESSAGES/kcmlocale.mo
 share/locale/bg/LC_MESSAGES/kcmmediacontrol.mo

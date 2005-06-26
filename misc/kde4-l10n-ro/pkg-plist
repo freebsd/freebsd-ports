@@ -76,8 +76,6 @@ share/doc/HTML/ro/common/web-docbottom.png
 share/doc/HTML/ro/common/web-doctop.png
 share/doc/HTML/ro/common/x11-license.html
 share/doc/HTML/ro/common/xml.dcl
-share/doc/HTML/ro/khelpcenter/background.png
-share/doc/HTML/ro/khelpcenter/bgtable.png
 share/doc/HTML/ro/khelpcenter/common
 share/doc/HTML/ro/khelpcenter/contact.docbook
 share/doc/HTML/ro/khelpcenter/glossary/common
@@ -87,14 +85,7 @@ share/doc/HTML/ro/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/ro/khelpcenter/help.docbook
 share/doc/HTML/ro/khelpcenter/index.cache.bz2
 share/doc/HTML/ro/khelpcenter/index.docbook
-share/doc/HTML/ro/khelpcenter/kdelogo2.png
-share/doc/HTML/ro/khelpcenter/khelpcenter.png
-share/doc/HTML/ro/khelpcenter/konq.css
-share/doc/HTML/ro/khelpcenter/lines.png
-share/doc/HTML/ro/khelpcenter/lines2.png
 share/doc/HTML/ro/khelpcenter/links.docbook
-share/doc/HTML/ro/khelpcenter/pointers.png
-share/doc/HTML/ro/khelpcenter/shadow1.png
 share/doc/HTML/ro/khelpcenter/support.docbook
 share/doc/HTML/ro/khelpcenter/visualdict/common
 share/doc/HTML/ro/khelpcenter/visualdict/index.cache.bz2
@@ -309,7 +300,6 @@ share/locale/ro/LC_MESSAGES/kbruch.mo
 share/locale/ro/LC_MESSAGES/kbugbuster.mo
 share/locale/ro/LC_MESSAGES/kcachegrind.mo
 share/locale/ro/LC_MESSAGES/kcalc.mo
-share/locale/ro/LC_MESSAGES/kcardchooser.mo
 share/locale/ro/LC_MESSAGES/kcharselect.mo
 share/locale/ro/LC_MESSAGES/kcharselectapplet.mo
 share/locale/ro/LC_MESSAGES/kcm_krfb.mo
@@ -351,7 +341,6 @@ share/locale/ro/LC_MESSAGES/kcmkonsole.mo
 share/locale/ro/LC_MESSAGES/kcmkontactnt.mo
 share/locale/ro/LC_MESSAGES/kcmktalkd.mo
 share/locale/ro/LC_MESSAGES/kcmkttsd.mo
-share/locale/ro/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/ro/LC_MESSAGES/kcmkuick.mo
 share/locale/ro/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ro/LC_MESSAGES/kcmkvaio.mo
@@ -366,7 +355,6 @@ share/locale/ro/LC_MESSAGES/kcmlaptop.mo
 share/locale/ro/LC_MESSAGES/kcmlaunch.mo
 share/locale/ro/LC_MESSAGES/kcmlayout.mo
 share/locale/ro/LC_MESSAGES/kcmlilo.mo
-share/locale/ro/LC_MESSAGES/kcmlinuz.mo
 share/locale/ro/LC_MESSAGES/kcmlirc.mo
 share/locale/ro/LC_MESSAGES/kcmlocale.mo
 share/locale/ro/LC_MESSAGES/kcmmediacontrol.mo
@@ -508,12 +496,15 @@ share/locale/ro/LC_MESSAGES/kio_nfs.mo
 share/locale/ro/LC_MESSAGES/kio_nntp.mo
 share/locale/ro/LC_MESSAGES/kio_pop3.mo
 share/locale/ro/LC_MESSAGES/kio_print.mo
+share/locale/ro/LC_MESSAGES/kio_remote.mo
 share/locale/ro/LC_MESSAGES/kio_settings.mo
 share/locale/ro/LC_MESSAGES/kio_sftp.mo
 share/locale/ro/LC_MESSAGES/kio_sieve.mo
 share/locale/ro/LC_MESSAGES/kio_smb.mo
 share/locale/ro/LC_MESSAGES/kio_smtp.mo
 share/locale/ro/LC_MESSAGES/kio_svn.mo
+share/locale/ro/LC_MESSAGES/kio_system.mo
+share/locale/ro/LC_MESSAGES/kio_trash.mo
 share/locale/ro/LC_MESSAGES/kioexec.mo
 share/locale/ro/LC_MESSAGES/kiten.mo
 share/locale/ro/LC_MESSAGES/kjobviewer.mo

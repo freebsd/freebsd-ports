@@ -730,7 +730,6 @@ share/locale/en_GB/LC_MESSAGES/kbstateapplet.mo
 share/locale/en_GB/LC_MESSAGES/kbugbuster.mo
 share/locale/en_GB/LC_MESSAGES/kcachegrind.mo
 share/locale/en_GB/LC_MESSAGES/kcalc.mo
-share/locale/en_GB/LC_MESSAGES/kcardchooser.mo
 share/locale/en_GB/LC_MESSAGES/kcharselect.mo
 share/locale/en_GB/LC_MESSAGES/kcharselectapplet.mo
 share/locale/en_GB/LC_MESSAGES/kcm_krfb.mo
@@ -773,7 +772,6 @@ share/locale/en_GB/LC_MESSAGES/kcmkonsole.mo
 share/locale/en_GB/LC_MESSAGES/kcmkontactnt.mo
 share/locale/en_GB/LC_MESSAGES/kcmktalkd.mo
 share/locale/en_GB/LC_MESSAGES/kcmkttsd.mo
-share/locale/en_GB/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/en_GB/LC_MESSAGES/kcmkuick.mo
 share/locale/en_GB/LC_MESSAGES/kcmkurifilt.mo
 share/locale/en_GB/LC_MESSAGES/kcmkvaio.mo
@@ -788,7 +786,6 @@ share/locale/en_GB/LC_MESSAGES/kcmlaptop.mo
 share/locale/en_GB/LC_MESSAGES/kcmlaunch.mo
 share/locale/en_GB/LC_MESSAGES/kcmlayout.mo
 share/locale/en_GB/LC_MESSAGES/kcmlilo.mo
-share/locale/en_GB/LC_MESSAGES/kcmlinuz.mo
 share/locale/en_GB/LC_MESSAGES/kcmlirc.mo
 share/locale/en_GB/LC_MESSAGES/kcmlocale.mo
 share/locale/en_GB/LC_MESSAGES/kcmmediacontrol.mo

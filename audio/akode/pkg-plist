@@ -30,5 +30,4 @@ lib/libarts_akode.so
 lib/mcop/akodePlayObject.mcopclass
 lib/mcop/akodearts.mcopclass
 lib/mcop/akodearts.mcoptype
-@dirrm lib/mcop
 @dirrm include/akode

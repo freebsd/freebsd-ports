@@ -238,6 +238,7 @@ share/doc/HTML/it/kaddressbook/index.docbook
 share/doc/HTML/it/kalzium/common
 share/doc/HTML/it/kalzium/index.cache.bz2
 share/doc/HTML/it/kalzium/index.docbook
+share/doc/HTML/it/kalzium/man-kalzium.1.docbook
 share/doc/HTML/it/kamera/common
 share/doc/HTML/it/kamera/index.cache.bz2
 share/doc/HTML/it/kamera/index.docbook
@@ -304,6 +305,7 @@ share/doc/HTML/it/kcharselect/index.docbook
 share/doc/HTML/it/kcoloredit/common
 share/doc/HTML/it/kcoloredit/index.cache.bz2
 share/doc/HTML/it/kcoloredit/index.docbook
+share/doc/HTML/it/kcontrol/arts/midi.docbook
 share/doc/HTML/it/kcontrol/bell/common
 share/doc/HTML/it/kcontrol/bell/index.cache.bz2
 share/doc/HTML/it/kcontrol/bell/index.docbook
@@ -438,6 +440,11 @@ share/doc/HTML/it/kdearch/index.docbook
 share/doc/HTML/it/kdebugdialog/common
 share/doc/HTML/it/kdebugdialog/index.cache.bz2
 share/doc/HTML/it/kdebugdialog/index.docbook
+share/doc/HTML/it/kdelibs/man-artsmessage.1.docbook
+share/doc/HTML/it/kdelibs/man-checkXML.1.docbook
+share/doc/HTML/it/kdelibs/man-dcop.1.docbook
+share/doc/HTML/it/kdelibs/man-kdeoptions.7.docbook
+share/doc/HTML/it/kdelibs/man-qtoptions.7.docbook
 share/doc/HTML/it/kdelirc/irkick/common
 share/doc/HTML/it/kdelirc/irkick/index.cache.bz2
 share/doc/HTML/it/kdelirc/irkick/index.docbook
@@ -512,7 +519,6 @@ share/doc/HTML/it/kdevelop/kdevelop-scripting.docbook
 share/doc/HTML/it/kdevelop/kdevelop-survey.docbook
 share/doc/HTML/it/kdevelop/kdevelop-tabbed-mode.png
 share/doc/HTML/it/kdevelop/kdevelop-toplevel-mode.png
-share/doc/HTML/it/kdevelop/loading-progress-bar.png
 share/doc/HTML/it/kdevelop/open-project.png
 share/doc/HTML/it/kdevelop/open-recent-project.png
 share/doc/HTML/it/kdevelop/project-advanced.docbook
@@ -522,7 +528,6 @@ share/doc/HTML/it/kdevelop/select-user-interface-0.png
 share/doc/HTML/it/kdevelop/select-user-interface.png
 share/doc/HTML/it/kdevelop/setup.docbook
 share/doc/HTML/it/kdevelop/unixdev.docbook
-share/doc/HTML/it/kdevelop/wrong-project-location.png
 share/doc/HTML/it/kdf/common
 share/doc/HTML/it/kdf/index.cache.bz2
 share/doc/HTML/it/kdf/index.docbook
@@ -691,6 +696,9 @@ share/doc/HTML/it/kinfocenter/processor/index.docbook
 share/doc/HTML/it/kinfocenter/protocols/common
 share/doc/HTML/it/kinfocenter/protocols/index.cache.bz2
 share/doc/HTML/it/kinfocenter/protocols/index.docbook
+share/doc/HTML/it/kinfocenter/samba/common
+share/doc/HTML/it/kinfocenter/samba/index.cache.bz2
+share/doc/HTML/it/kinfocenter/samba/index.docbook
 share/doc/HTML/it/kinfocenter/scsi/common
 share/doc/HTML/it/kinfocenter/scsi/index.cache.bz2
 share/doc/HTML/it/kinfocenter/scsi/index.docbook
@@ -952,7 +960,6 @@ share/doc/HTML/it/kooka/index.docbook
 share/doc/HTML/it/kooka/kooka_gocr.png
 share/doc/HTML/it/kooka/kooka_gocr_result.png
 share/doc/HTML/it/kooka/kooka_mainctrl.png
-share/doc/HTML/it/kooka/ocr-select.png
 share/doc/HTML/it/kooka/shortcut0.png
 share/doc/HTML/it/kooka/shortcut1.png
 share/doc/HTML/it/kooka/toolbar.png
@@ -1032,7 +1039,6 @@ share/doc/HTML/it/kscd/kscd2.png
 share/doc/HTML/it/kscd/kscd3.png
 share/doc/HTML/it/kscd/kscd5.png
 share/doc/HTML/it/kscd/kscd6.png
-share/doc/HTML/it/kscd/kscd9.png
 share/doc/HTML/it/kshisen/common
 share/doc/HTML/it/kshisen/index.cache.bz2
 share/doc/HTML/it/kshisen/index.docbook
@@ -1208,7 +1214,6 @@ share/doc/HTML/it/kvoctrain/entry6-dlg.png
 share/doc/HTML/it/kvoctrain/index.cache.bz2
 share/doc/HTML/it/kvoctrain/index.docbook
 share/doc/HTML/it/kvoctrain/lang1-dlg.png
-share/doc/HTML/it/kvoctrain/logo-kvoctrain.png
 share/doc/HTML/it/kvoctrain/mainview.png
 share/doc/HTML/it/kvoctrain/man-spotlight2kvtml.1.docbook
 share/doc/HTML/it/kvoctrain/mu-query-dlg.png
@@ -1399,7 +1404,6 @@ share/locale/it/LC_MESSAGES/kbstateapplet.mo
 share/locale/it/LC_MESSAGES/kbugbuster.mo
 share/locale/it/LC_MESSAGES/kcachegrind.mo
 share/locale/it/LC_MESSAGES/kcalc.mo
-share/locale/it/LC_MESSAGES/kcardchooser.mo
 share/locale/it/LC_MESSAGES/kcharselect.mo
 share/locale/it/LC_MESSAGES/kcharselectapplet.mo
 share/locale/it/LC_MESSAGES/kcm_krfb.mo
@@ -1442,7 +1446,6 @@ share/locale/it/LC_MESSAGES/kcmkonsole.mo
 share/locale/it/LC_MESSAGES/kcmkontactnt.mo
 share/locale/it/LC_MESSAGES/kcmktalkd.mo
 share/locale/it/LC_MESSAGES/kcmkttsd.mo
-share/locale/it/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/it/LC_MESSAGES/kcmkuick.mo
 share/locale/it/LC_MESSAGES/kcmkurifilt.mo
 share/locale/it/LC_MESSAGES/kcmkvaio.mo
@@ -1457,7 +1460,6 @@ share/locale/it/LC_MESSAGES/kcmlaptop.mo
 share/locale/it/LC_MESSAGES/kcmlaunch.mo
 share/locale/it/LC_MESSAGES/kcmlayout.mo
 share/locale/it/LC_MESSAGES/kcmlilo.mo
-share/locale/it/LC_MESSAGES/kcmlinuz.mo
 share/locale/it/LC_MESSAGES/kcmlirc.mo
 share/locale/it/LC_MESSAGES/kcmlocale.mo
 share/locale/it/LC_MESSAGES/kcmmediacontrol.mo
@@ -2000,6 +2002,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kinfocenter/usb
 @dirrm share/doc/HTML/it/kinfocenter/sound
 @dirrm share/doc/HTML/it/kinfocenter/scsi
+@dirrm share/doc/HTML/it/kinfocenter/samba
 @dirrm share/doc/HTML/it/kinfocenter/protocols
 @dirrm share/doc/HTML/it/kinfocenter/processor
 @dirrm share/doc/HTML/it/kinfocenter/pcmcia
@@ -2044,6 +2047,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kdelirc/kcmlirc
 @dirrm share/doc/HTML/it/kdelirc/irkick
 @dirrm share/doc/HTML/it/kdelirc
+@dirrm share/doc/HTML/it/kdelibs
 @dirrm share/doc/HTML/it/kdebugdialog
 @dirrm share/doc/HTML/it/kdearch
 @dirrm share/doc/HTML/it/kde_app_devel
@@ -2087,6 +2091,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kcontrol/clock
 @dirrm share/doc/HTML/it/kcontrol/cache
 @dirrm share/doc/HTML/it/kcontrol/bell
+@dirrm share/doc/HTML/it/kcontrol/arts
 @dirrm share/doc/HTML/it/kcontrol
 @dirrm share/doc/HTML/it/kcoloredit
 @dirrm share/doc/HTML/it/kcharselect

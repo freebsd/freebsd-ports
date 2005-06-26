@@ -114,7 +114,6 @@ share/locale/ca/LC_MESSAGES/kbstateapplet.mo
 share/locale/ca/LC_MESSAGES/kbugbuster.mo
 share/locale/ca/LC_MESSAGES/kcachegrind.mo
 share/locale/ca/LC_MESSAGES/kcalc.mo
-share/locale/ca/LC_MESSAGES/kcardchooser.mo
 share/locale/ca/LC_MESSAGES/kcharselect.mo
 share/locale/ca/LC_MESSAGES/kcharselectapplet.mo
 share/locale/ca/LC_MESSAGES/kcm_krfb.mo
@@ -157,7 +156,6 @@ share/locale/ca/LC_MESSAGES/kcmkonsole.mo
 share/locale/ca/LC_MESSAGES/kcmkontactnt.mo
 share/locale/ca/LC_MESSAGES/kcmktalkd.mo
 share/locale/ca/LC_MESSAGES/kcmkttsd.mo
-share/locale/ca/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/ca/LC_MESSAGES/kcmkuick.mo
 share/locale/ca/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ca/LC_MESSAGES/kcmkvaio.mo
@@ -172,7 +170,6 @@ share/locale/ca/LC_MESSAGES/kcmlaptop.mo
 share/locale/ca/LC_MESSAGES/kcmlaunch.mo
 share/locale/ca/LC_MESSAGES/kcmlayout.mo
 share/locale/ca/LC_MESSAGES/kcmlilo.mo
-share/locale/ca/LC_MESSAGES/kcmlinuz.mo
 share/locale/ca/LC_MESSAGES/kcmlirc.mo
 share/locale/ca/LC_MESSAGES/kcmlocale.mo
 share/locale/ca/LC_MESSAGES/kcmmediacontrol.mo

@@ -57,6 +57,7 @@ share/doc/HTML/zh_CN/common/x11-license.html
 share/doc/HTML/zh_CN/common/xml.dcl
 share/doc/HTML/zh_CN/kdevelop/tip.database
 share/locale/zh_CN/LC_MESSAGES/akregator.mo
+share/locale/zh_CN/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/zh_CN/LC_MESSAGES/alsaplayerui.mo
 share/locale/zh_CN/LC_MESSAGES/amor.mo
 share/locale/zh_CN/LC_MESSAGES/appletproxy.mo
@@ -152,7 +153,6 @@ share/locale/zh_CN/LC_MESSAGES/kbruch.mo
 share/locale/zh_CN/LC_MESSAGES/kbstateapplet.mo
 share/locale/zh_CN/LC_MESSAGES/kbugbuster.mo
 share/locale/zh_CN/LC_MESSAGES/kcalc.mo
-share/locale/zh_CN/LC_MESSAGES/kcardchooser.mo
 share/locale/zh_CN/LC_MESSAGES/kcharselect.mo
 share/locale/zh_CN/LC_MESSAGES/kcharselectapplet.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_krfb.mo
@@ -208,7 +208,6 @@ share/locale/zh_CN/LC_MESSAGES/kcmlaptop.mo
 share/locale/zh_CN/LC_MESSAGES/kcmlaunch.mo
 share/locale/zh_CN/LC_MESSAGES/kcmlayout.mo
 share/locale/zh_CN/LC_MESSAGES/kcmlilo.mo
-share/locale/zh_CN/LC_MESSAGES/kcmlinuz.mo
 share/locale/zh_CN/LC_MESSAGES/kcmlocale.mo
 share/locale/zh_CN/LC_MESSAGES/kcmmediacontrol.mo
 share/locale/zh_CN/LC_MESSAGES/kcmmidi.mo
@@ -270,6 +269,7 @@ share/locale/zh_CN/LC_MESSAGES/kfifteenapplet.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_au.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_avi.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_bmp.mo
+share/locale/zh_CN/LC_MESSAGES/kfile_cert.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_cpp.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_deb.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_desktop.mo
@@ -286,6 +286,7 @@ share/locale/zh_CN/LC_MESSAGES/kfile_ics.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_jpeg.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_lnk.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_m3u.mo
+share/locale/zh_CN/LC_MESSAGES/kfile_mhtml.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_mp3.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_mpc.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_ogg.mo
@@ -323,6 +324,7 @@ share/locale/zh_CN/LC_MESSAGES/kget.mo
 share/locale/zh_CN/LC_MESSAGES/kghostview.mo
 share/locale/zh_CN/LC_MESSAGES/kgpg.mo
 share/locale/zh_CN/LC_MESSAGES/kgreet_classic.mo
+share/locale/zh_CN/LC_MESSAGES/kgreet_winbind.mo
 share/locale/zh_CN/LC_MESSAGES/khangman.mo
 share/locale/zh_CN/LC_MESSAGES/khelpcenter.mo
 share/locale/zh_CN/LC_MESSAGES/khexedit.mo
@@ -542,7 +544,9 @@ share/locale/zh_CN/LC_MESSAGES/kxmlrpcd.mo
 share/locale/zh_CN/LC_MESSAGES/kxsconfig.mo
 share/locale/zh_CN/LC_MESSAGES/kxsldbg.mo
 share/locale/zh_CN/LC_MESSAGES/libcalendarresources.mo
+share/locale/zh_CN/LC_MESSAGES/libdmctl.mo
 share/locale/zh_CN/LC_MESSAGES/libkaddrbk_geo_xxport.mo
+share/locale/zh_CN/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/zh_CN/LC_MESSAGES/libkcal.mo
 share/locale/zh_CN/LC_MESSAGES/libkcalsystem.mo
 share/locale/zh_CN/LC_MESSAGES/libkcddb.mo

@@ -47,6 +47,9 @@ share/doc/HTML/sv/KRegExpEditor/linestartendtool.png
 share/doc/HTML/sv/KRegExpEditor/lookaheadtools.png
 share/doc/HTML/sv/KRegExpEditor/repeattool.png
 share/doc/HTML/sv/KRegExpEditor/theEditor.png
+share/doc/HTML/sv/akregator/common
+share/doc/HTML/sv/akregator/index.cache.bz2
+share/doc/HTML/sv/akregator/index.docbook
 share/doc/HTML/sv/amor/common
 share/doc/HTML/sv/amor/index.cache.bz2
 share/doc/HTML/sv/amor/index.docbook
@@ -682,21 +685,6 @@ share/doc/HTML/sv/kgamma/common
 share/doc/HTML/sv/kgamma/index.cache.bz2
 share/doc/HTML/sv/kgamma/index.docbook
 share/doc/HTML/sv/kget/common
-share/doc/HTML/sv/kget/cr22-action-tool_delay.png
-share/doc/HTML/sv/kget/cr22-action-tool_disconnect.png
-share/doc/HTML/sv/kget/cr22-action-tool_drop_target.png
-share/doc/HTML/sv/kget/cr22-action-tool_expert.png
-share/doc/HTML/sv/kget/cr22-action-tool_logwindow.png
-share/doc/HTML/sv/kget/cr22-action-tool_offline_mode_off.png
-share/doc/HTML/sv/kget/cr22-action-tool_offline_mode_on.png
-share/doc/HTML/sv/kget/cr22-action-tool_paste.png
-share/doc/HTML/sv/kget/cr22-action-tool_pause.png
-share/doc/HTML/sv/kget/cr22-action-tool_queue.png
-share/doc/HTML/sv/kget/cr22-action-tool_restart.png
-share/doc/HTML/sv/kget/cr22-action-tool_resume.png
-share/doc/HTML/sv/kget/cr22-action-tool_shutdown.png
-share/doc/HTML/sv/kget/cr22-action-tool_timer.png
-share/doc/HTML/sv/kget/cr22-action-tool_uselastdir.png
 share/doc/HTML/sv/kget/index.cache.bz2
 share/doc/HTML/sv/kget/index.docbook
 share/doc/HTML/sv/kget/kget1.png
@@ -798,6 +786,7 @@ share/doc/HTML/sv/khelpcenter/userguide/kcontrol.png
 share/doc/HTML/sv/khelpcenter/userguide/kde-as-root.docbook
 share/doc/HTML/sv/khelpcenter/userguide/kde-edutainment.docbook
 share/doc/HTML/sv/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/sv/khelpcenter/userguide/kde-office.docbook
 share/doc/HTML/sv/khelpcenter/userguide/kmag.png
 share/doc/HTML/sv/khelpcenter/userguide/kmousetool.png
 share/doc/HTML/sv/khelpcenter/userguide/kmouth.png
@@ -1916,6 +1905,7 @@ share/doc/HTML/sv/quanta/config-quanta.docbook
 share/doc/HTML/sv/quanta/credits-license.docbook
 share/doc/HTML/sv/quanta/debugging-quanta.docbook
 share/doc/HTML/sv/quanta/doc-view1.png
+share/doc/HTML/sv/quanta/dtd-conversion.png
 share/doc/HTML/sv/quanta/dtep_doc_img15.png
 share/doc/HTML/sv/quanta/dtep_doc_img18.png
 share/doc/HTML/sv/quanta/dtep_doc_img21.png
@@ -1926,6 +1916,7 @@ share/doc/HTML/sv/quanta/dtep_doc_img25.png
 share/doc/HTML/sv/quanta/dtep_doc_img7.png
 share/doc/HTML/sv/quanta/dtep_doc_img8.png
 share/doc/HTML/sv/quanta/edit-upload-profile.png
+share/doc/HTML/sv/quanta/event-editing.png
 share/doc/HTML/sv/quanta/extending-quanta.docbook
 share/doc/HTML/sv/quanta/fundamentals.docbook
 share/doc/HTML/sv/quanta/glossary.docbook
@@ -1936,6 +1927,7 @@ share/doc/HTML/sv/quanta/introduction.docbook
 share/doc/HTML/sv/quanta/man-quanta.1.docbook
 share/doc/HTML/sv/quanta/plugin-edit.png
 share/doc/HTML/sv/quanta/project-1.png
+share/doc/HTML/sv/quanta/project-properties.png
 share/doc/HTML/sv/quanta/project-tree-view-dir-rmb-menu.png
 share/doc/HTML/sv/quanta/project-tree-view-file-rmb-menu.png
 share/doc/HTML/sv/quanta/project-upload-dialog.png
@@ -1948,6 +1940,7 @@ share/doc/HTML/sv/quanta/quantamdi.png
 share/doc/HTML/sv/quanta/script-action.png
 share/doc/HTML/sv/quanta/tag-actions.png
 share/doc/HTML/sv/quanta/taginputex.png
+share/doc/HTML/sv/quanta/team-editing.png
 share/doc/HTML/sv/quanta/template-rmb.png
 share/doc/HTML/sv/quanta/text-action.png
 share/doc/HTML/sv/quanta/toolbars.png
@@ -2113,7 +2106,6 @@ share/locale/sv/LC_MESSAGES/kbstateapplet.mo
 share/locale/sv/LC_MESSAGES/kbugbuster.mo
 share/locale/sv/LC_MESSAGES/kcachegrind.mo
 share/locale/sv/LC_MESSAGES/kcalc.mo
-share/locale/sv/LC_MESSAGES/kcardchooser.mo
 share/locale/sv/LC_MESSAGES/kcharselect.mo
 share/locale/sv/LC_MESSAGES/kcharselectapplet.mo
 share/locale/sv/LC_MESSAGES/kcm_krfb.mo
@@ -2156,7 +2148,6 @@ share/locale/sv/LC_MESSAGES/kcmkonsole.mo
 share/locale/sv/LC_MESSAGES/kcmkontactnt.mo
 share/locale/sv/LC_MESSAGES/kcmktalkd.mo
 share/locale/sv/LC_MESSAGES/kcmkttsd.mo
-share/locale/sv/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/sv/LC_MESSAGES/kcmkuick.mo
 share/locale/sv/LC_MESSAGES/kcmkurifilt.mo
 share/locale/sv/LC_MESSAGES/kcmkvaio.mo
@@ -2171,7 +2162,6 @@ share/locale/sv/LC_MESSAGES/kcmlaptop.mo
 share/locale/sv/LC_MESSAGES/kcmlaunch.mo
 share/locale/sv/LC_MESSAGES/kcmlayout.mo
 share/locale/sv/LC_MESSAGES/kcmlilo.mo
-share/locale/sv/LC_MESSAGES/kcmlinuz.mo
 share/locale/sv/LC_MESSAGES/kcmlirc.mo
 share/locale/sv/LC_MESSAGES/kcmlocale.mo
 share/locale/sv/LC_MESSAGES/kcmmediacontrol.mo
@@ -2876,6 +2866,7 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/artsbuilder
 @dirrm share/doc/HTML/sv/ark
 @dirrm share/doc/HTML/sv/amor
+@dirrm share/doc/HTML/sv/akregator
 @dirrm share/doc/HTML/sv/KRegExpEditor
 @dirrm share/apps/kturtle/examples/sv
 @dirrm share/apps/kturtle/examples

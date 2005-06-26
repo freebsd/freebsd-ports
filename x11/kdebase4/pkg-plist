@@ -1298,6 +1298,7 @@ share/apps/kfontview/kfontviewpart.rc
 share/apps/kfontview/kfontviewui.rc
 share/apps/khelpcenter/glossary.html.in
 share/apps/khelpcenter/glossary.xslt
+share/apps/khelpcenter/index.html.in
 share/apps/khelpcenter/intro.html.in
 share/apps/khelpcenter/khelpcenterui.rc
 share/apps/khelpcenter/plugins/Applications/.directory
@@ -1632,8 +1633,10 @@ share/apps/konsole/WhiteOnBlack.schema
 share/apps/konsole/XTerm.schema
 share/apps/konsole/eventsrc
 share/apps/konsole/freebsd.keytab
+share/apps/konsole/icons/crystalsvg/16x16/actions/activity.png
 share/apps/konsole/icons/crystalsvg/16x16/actions/opentermblue.png
 share/apps/konsole/icons/crystalsvg/16x16/actions/opentermred.png
+share/apps/konsole/icons/crystalsvg/16x16/actions/silence.png
 share/apps/konsole/icons/crystalsvg/22x22/actions/opentermblue.png
 share/apps/konsole/icons/crystalsvg/22x22/actions/opentermred.png
 share/apps/konsole/icons/crystalsvg/32x32/actions/opentermblue.png
