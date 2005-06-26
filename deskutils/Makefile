@@ -17,6 +17,7 @@
     SUBDIR += checkrdf
     SUBDIR += dailystrips
     SUBDIR += dlume
+    SUBDIR += doodle
     SUBDIR += dragstack
     SUBDIR += drivel
     SUBDIR += egroupware
