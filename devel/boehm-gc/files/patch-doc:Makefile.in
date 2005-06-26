@@ -1,9 +1,9 @@
---- doc/Makefile.in.orig	Sun Apr 20 01:19:11 2003
-+++ doc/Makefile.in	Sun Apr 20 01:19:15 2003
-@@ -46,7 +46,7 @@
- mandir = @mandir@
- includedir = @includedir@
- oldincludedir = /usr/include
+--- doc/Makefile.in.orig	Mon May 16 20:28:05 2005
++++ doc/Makefile.in	Fri Jun 17 21:24:36 2005
+@@ -30,7 +30,7 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
